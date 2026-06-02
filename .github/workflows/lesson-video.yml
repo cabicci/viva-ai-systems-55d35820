@@ -13,20 +13,39 @@ on:
         type: boolean
         default: false
 
-concurrency:
-  group: lesson-video-${{ github.ref }}-${{ github.event.inputs.lesson_ids || github.sha }}
-  cancel-in-progress: true
-
 permissions:
   contents: write
 
 jobs:
-  build:
+  plan:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set.outputs.matrix }}
+    steps:
+      - id: set
+        run: |
+          IDS='${{ inputs.lesson_ids }}'
+          JSON=$(echo "$IDS" | tr ',' '\n' | sed 's/^ *//;s/ *$//' | grep -v '^$' \
+            | python3 -c 'import sys,json; print(json.dumps([l.strip() for l in sys.stdin if l.strip()]))')
+          echo "matrix=$JSON" >> "$GITHUB_OUTPUT"
+          echo "Lessons: $JSON"
+
+  build:
+    needs: plan
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        lesson_id: ${{ fromJson(needs.plan.outputs.matrix) }}
+    concurrency:
+      group: lesson-video-${{ github.ref }}-${{ matrix.lesson_id }}
+      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -58,34 +77,31 @@ jobs:
           GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
           GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
           GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          LID: ${{ matrix.lesson_id }}
         run: |
           set -euo pipefail
           FORCE=""
           if [ "${{ inputs.force_script }}" = "true" ]; then FORCE="--force-script"; fi
-          echo '${{ inputs.lesson_ids }}' | tr ',' '\n' | while IFS= read -r lesson_id; do
-            lesson_id="$(echo "$lesson_id" | sed 's/^ *//;s/ *$//')"
-            [ -z "$lesson_id" ] && continue
-            echo "::group::Build $lesson_id"
-            python remotion/scripts/build-lesson.py "$lesson_id" $FORCE
-            echo "::endgroup::"
-          done
+          echo "::group::Build $LID"
+          python remotion/scripts/build-lesson.py "$LID" $FORCE
+          echo "::endgroup::"
 
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: lesson-batch-logs
-          path: /tmp/*/
+          name: logs-${{ matrix.lesson_id }}
+          path: /tmp/${{ matrix.lesson_id }}/
           if-no-files-found: ignore
 
       - name: Upload MP4 artifact (fallback)
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: lesson-batch-mp4
+          name: mp4-${{ matrix.lesson_id }}
           path: |
-            public/lessons/intro/*.mp4
-            remotion/src/lessons-generated/*.gen.ts
+            public/lessons/intro/${{ matrix.lesson_id }}.mp4
+            remotion/src/lessons-generated/${{ matrix.lesson_id }}.gen.ts
           if-no-files-found: error
 
       - name: Upload to Bunny Stream
@@ -93,68 +109,70 @@ jobs:
         env:
           BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
           BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          LID: ${{ matrix.lesson_id }}
         run: |
           set -euo pipefail
           if [ -z "$BUNNY_STREAM_API_KEY" ] || [ -z "$BUNNY_STREAM_LIBRARY_ID" ]; then
             echo "::error::Missing BUNNY_STREAM_API_KEY or BUNNY_STREAM_LIBRARY_ID GitHub secret"
             exit 1
           fi
-          echo '${{ inputs.lesson_ids }}' | tr ',' '\n' | while IFS= read -r lesson_id; do
-            lesson_id="$(echo "$lesson_id" | sed 's/^ *//;s/ *$//')"
-            [ -z "$lesson_id" ] && continue
-            LID="$lesson_id" python .github/scripts/upload_bunny.py
-          done
+          python .github/scripts/upload_bunny.py
 
-      - name: Commit & push lesson registry
+      - name: Commit & push (per-lesson, with retry)
         if: success()
+        env:
+          LID: ${{ matrix.lesson_id }}
+          BRANCH: ${{ github.ref_name }}
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          # Save artifacts to temp so we can re-apply on top of latest origin/main
+
+          # Stash this lesson's artifacts so we can re-apply on top of latest origin/$BRANCH
           SAVE=$(mktemp -d)
-          mkdir -p "$SAVE/gen" "$SAVE/public"
-          cp -r remotion/src/lessons-generated/. "$SAVE/gen/"
-          if [ -d remotion/public/lessons ]; then
-            cp -r remotion/public/lessons "$SAVE/public/" 2>/dev/null || true
-          fi
+          mkdir -p "$SAVE/gen"
+          [ -f "remotion/src/lessons-generated/${LID}.gen.ts" ] && \
+            cp "remotion/src/lessons-generated/${LID}.gen.ts" "$SAVE/gen/"
+          [ -f "public/lessons/intro/${LID}.mp4" ] && \
+            cp "public/lessons/intro/${LID}.mp4" "$SAVE/${LID}.mp4"
+          cp src/lib/bunny-videos.ts "$SAVE/bunny-videos.ts"
+          cp remotion/src/lessonsRegistry.ts "$SAVE/lessonsRegistry.ts"
+
           PUSHED=0
-          for i in 1 2 3 4 5; do
-            git fetch origin ${{ github.ref_name }}
-            git reset --hard origin/${{ github.ref_name }}
-            git clean -fd remotion/src/lessons-generated/ public/lessons/intro/ remotion/public/lessons/ || true
-            rm -rf public/lessons/intro public/intro
-            mkdir -p remotion/src/lessons-generated remotion/public/lessons
-            cp -r "$SAVE/gen/." remotion/src/lessons-generated/
-            if [ -d "$SAVE/public/lessons" ]; then
-              cp -r "$SAVE/public/lessons/." remotion/public/lessons/ 2>/dev/null || true
-            fi
-            echo '${{ inputs.lesson_ids }}' | tr ',' '\n' | while IFS= read -r lesson_id; do
-              lesson_id="$(echo "$lesson_id" | sed 's/^ *//;s/ *$//')"
-              [ -z "$lesson_id" ] && continue
-              LID="$lesson_id" \
-                BUNNY_STREAM_API_KEY="${{ secrets.BUNNY_STREAM_API_KEY }}" \
-                BUNNY_STREAM_LIBRARY_ID="${{ secrets.BUNNY_STREAM_LIBRARY_ID }}" \
-                python .github/scripts/upload_bunny.py
-              LID="$lesson_id" python .github/scripts/update_registry.py
-            done
-            git add -A public/lessons/intro/ public/intro/
-            git add remotion/src/lessons-generated/ remotion/src/lessonsRegistry.ts src/lib/bunny-videos.ts
-            git add remotion/public/lessons/ 2>/dev/null || true
+          for i in 1 2 3 4 5 6 7 8 9 10; do
+            git fetch origin "$BRANCH"
+            git reset --hard "origin/$BRANCH"
+
+            # Re-apply this lesson's artifacts on top of latest tree
+            mkdir -p remotion/src/lessons-generated public/lessons/intro
+            [ -f "$SAVE/gen/${LID}.gen.ts" ] && \
+              cp "$SAVE/gen/${LID}.gen.ts" "remotion/src/lessons-generated/${LID}.gen.ts"
+            [ -f "$SAVE/${LID}.mp4" ] && \
+              cp "$SAVE/${LID}.mp4" "public/lessons/intro/${LID}.mp4"
+
+            # Merge bunny-videos.ts and lessonsRegistry.ts entries for THIS lesson
+            LID="$LID" python .github/scripts/merge_bunny_entry.py "$SAVE/bunny-videos.ts"
+            LID="$LID" python .github/scripts/update_registry.py
+
+            git add "remotion/src/lessons-generated/${LID}.gen.ts" || true
+            git add "public/lessons/intro/${LID}.mp4" || true
+            git add src/lib/bunny-videos.ts remotion/src/lessonsRegistry.ts
+
             if git diff --cached --quiet; then
-              echo "Nothing staged to commit — artifacts already on main."
+              echo "Nothing staged for $LID — already on $BRANCH."
               PUSHED=1
               break
             fi
-            git commit -m "build(lesson): update bunny video registry"
-            if git push origin HEAD:${{ github.ref_name }}; then
+
+            git commit -m "build(lesson): ${LID}"
+            if git push origin "HEAD:$BRANCH"; then
               PUSHED=1
               break
             fi
-            echo "push attempt $i failed, retrying after random sleep..."
-            sleep $((RANDOM % 10 + 5))
+            echo "push attempt $i for $LID failed, retrying after random sleep..."
+            sleep $((RANDOM % 15 + 5))
           done
           if [ "$PUSHED" -ne 1 ]; then
-            echo "::error::Failed to push after 5 attempts"
+            echo "::error::Failed to push $LID after 10 attempts"
             exit 1
           fi
