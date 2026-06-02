@@ -116,8 +116,9 @@ def main() -> int:
     if not os.path.isfile(MP4_PATH):
         sys.stderr.write(f"MP4 not found at {MP4_PATH}\n")
         return 1
-    print(f"[bunny] creating video for {LID}", flush=True)
-    guid = create_video(LID)
+    title = lookup_title(LID)
+    print(f"[bunny] creating video for {LID} (title: {title!r})", flush=True)
+    guid = create_video(title)
     print(f"[bunny] created guid={guid}, uploading {MP4_PATH} ...", flush=True)
     try:
         upload_mp4(guid, MP4_PATH)
