@@ -20,8 +20,18 @@ LIBRARY_ID = os.environ["BUNNY_STREAM_LIBRARY_ID"]
 
 MP4_PATH = f"public/lessons/intro/{LID}.mp4"
 REGISTRY_PATH = "src/lib/bunny-videos.ts"
+CURRICULUM_PATH = "src/lib/curriculum-data.ts"
 BASE = f"https://video.bunnycdn.com/library/{LIBRARY_ID}/videos"
 GUID_OUT = f"/tmp/bunny-guid-{LID}.txt"
+
+
+def lookup_title(lid: str) -> str:
+    try:
+        src = open(CURRICULUM_PATH).read()
+    except FileNotFoundError:
+        return lid
+    m = re.search(rf'"{re.escape(lid)}"\s*,\s*"([^"]+)"', src)
+    return m.group(1) if m else lid
 
 
 def _req(method: str, url: str, *, body: bytes | None = None, ctype: str | None = None) -> bytes:
@@ -116,8 +126,9 @@ def main() -> int:
     if not os.path.isfile(MP4_PATH):
         sys.stderr.write(f"MP4 not found at {MP4_PATH}\n")
         return 1
-    print(f"[bunny] creating video for {LID}", flush=True)
-    guid = create_video(LID)
+    title = lookup_title(LID)
+    print(f"[bunny] creating video for {LID} (title: {title!r})", flush=True)
+    guid = create_video(title)
     print(f"[bunny] created guid={guid}, uploading {MP4_PATH} ...", flush=True)
     try:
         upload_mp4(guid, MP4_PATH)
