@@ -1,0 +1,7 @@
+UPDATE roadmap_items SET notes = notes || E'\n[ai-edit 2026-05-30]: corrected count → 7 lessons. Capstone caseStudy at end ties all 5 angles.', updated_at = now() WHERE id = '7d210540-f881-4f12-918f-91ca0faab144';
+UPDATE roadmap_items SET notes = notes || E'\n[ai-edit 2026-05-30]: corrected count → 29 lessons (was ~20). Last lesson gets capstone caseStudy summarizing Builder journey.', updated_at = now() WHERE id = '392abbbb-83ac-4fa9-b0ea-cb2c877edfbf';
+UPDATE roadmap_items SET notes = notes || E'\n[ai-edit 2026-05-30]: corrected count → 18 lessons (was ~20). Capstone at end.', updated_at = now() WHERE id = '70bfa834-66e7-4651-94ff-62d7fd867c42';
+UPDATE roadmap_items SET notes = notes || E'\n[ai-edit 2026-05-30]: corrected count → 17 lessons (was ~18). Capstone at end.', updated_at = now() WHERE id = '85643df3-b0cd-462c-a6cc-45a3c76ce99f';
+UPDATE roadmap_items SET notes = notes || E'\n[ai-edit 2026-05-30]: corrected count → 12 lessons (was ~15). Capstone at end.', updated_at = now() WHERE id = '01bb8251-0a8c-44fb-bd60-863d0767bc60';
+UPDATE roadmap_items SET notes = notes || E'\n[ai-edit 2026-05-30]: corrected count → 12 lessons (was ~16). Capstone at end.', updated_at = now() WHERE id = '739ac222-5368-45d2-ac34-194ab07da269';
+UPDATE roadmap_items SET status = 'in_progress', notes = notes || E'\n[ai 2026-05-30]: Batch 1 started — Intro path (7 lessons).', updated_at = now() WHERE id = '7d210540-f881-4f12-918f-91ca0faab144';

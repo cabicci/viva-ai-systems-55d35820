@@ -1,0 +1,1 @@
+UPDATE roadmap_items SET status = 'done', notes = notes || E'\n\n[backfill 2026-05-30]: تم التنفيذ فعلياً بتاريخ 18:29 ولكن لم يُسجل — التحديث متأخر بسبب عدم وجود آلية تلقائية لربط تعديلات ملفات الدروس بتحديث الـ roadmap' WHERE id = '8b3c8a81-baaa-496e-8395-381058c8152b';

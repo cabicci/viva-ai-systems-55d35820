@@ -1,0 +1,2 @@
+UPDATE roadmap_items SET status='done', notes = COALESCE(notes,'') || E'\n\n[Resolved] الـ run الأول (26671944573) خلّص بنجاح. setup-your-ai كان فعلاً اسمه intro-setup-your-ai في الـ registry — تم استخدام الـ ID الصحيح في batch 2.', updated_at=now() WHERE id='c3a81c8e-e099-4e3c-94b7-f308bc9894bd';
+UPDATE roadmap_items SET status='done', notes = COALESCE(notes,'') || E'\n\n[Resolved] batch 1 خلّص. مكمّلين بـ batch 2 (run 26672454434) لباقي دروس intro.', updated_at=now() WHERE id='5d7201f9-8938-4ae5-9f19-3d3f08ef0cfc';

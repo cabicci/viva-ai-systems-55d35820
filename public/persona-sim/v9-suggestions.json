@@ -1,0 +1,674 @@
+{
+  "builder-m1-what-is-llm": {
+    "current": [
+      {
+        "i": 0,
+        "card": "TitleCard",
+        "accent": "mint"
+      },
+      {
+        "i": 1,
+        "card": "ConceptCard",
+        "accent": "lavender"
+      },
+      {
+        "i": 2,
+        "card": "ConceptCard",
+        "accent": "peach"
+      },
+      {
+        "i": 3,
+        "card": "ConceptCard",
+        "accent": "yellow"
+      },
+      {
+        "i": 4,
+        "card": "BulletsCard",
+        "accent": "pink"
+      },
+      {
+        "i": 5,
+        "card": "ScreenshotCard",
+        "accent": "mintDeep"
+      },
+      {
+        "i": 6,
+        "card": "CompareCard",
+        "accent": "lavender"
+      },
+      {
+        "i": 7,
+        "card": "CTACard",
+        "accent": "peach"
+      }
+    ],
+    "suggestion": {
+      "suggested_order": [
+        0,
+        1,
+        2,
+        4,
+        3,
+        5,
+        6,
+        7
+      ],
+      "changes": [
+        "تحريك BulletsCard (i:4) ليكون الفاصل بين ConceptCards",
+        "تغيير تسلسل ConceptCard (i:3) ليكون بعد BulletsCard لكسر التكرار",
+        "الحفاظ على CompareCard كآخر بلوك قبل CTA"
+      ],
+      "rationale": "تم كسر تتابع 3 ConceptCards بإدخال BulletsCard بينهم لضمان توزيع بصري مريح وتجنب الملل، مع الالتزام بقواعد تناوب الألوان ونهاية الصفحة.",
+      "needs_change": true
+    }
+  },
+  "analyst-m2-three-sources": {
+    "current": [
+      {
+        "i": 0,
+        "card": "TitleCard",
+        "accent": "mint"
+      },
+      {
+        "i": 1,
+        "card": "ConceptCard",
+        "accent": "lavender"
+      },
+      {
+        "i": 2,
+        "card": "ConceptCard",
+        "accent": "peach"
+      },
+      {
+        "i": 3,
+        "card": "ConceptCard",
+        "accent": "yellow"
+      },
+      {
+        "i": 4,
+        "card": "ConceptCard",
+        "accent": "pink"
+      },
+      {
+        "i": 5,
+        "card": "BulletsCard",
+        "accent": "mintDeep"
+      },
+      {
+        "i": 6,
+        "card": "BulletsCard",
+        "accent": "mint"
+      },
+      {
+        "i": 7,
+        "card": "CompareCard",
+        "accent": "lavender"
+      },
+      {
+        "i": 8,
+        "card": "CTACard",
+        "accent": "peach"
+      }
+    ],
+    "suggestion": {
+      "suggested_order": [
+        0,
+        1,
+        2,
+        5,
+        3,
+        4,
+        6,
+        7,
+        8
+      ],
+      "changes": [
+        "تم فصل ConceptCard رقم 1 و 2 عن 3 و 4 بواسطة BulletsCard رقم 5",
+        "تم فصل BulletsCard رقم 5 عن 6 لمنع تتابع نفس النوع",
+        "الحفاظ على CompareCard قبل الـ CTA مباشرة"
+      ],
+      "rationale": "تم كسر تتابع الـ ConceptCards الرباعي لتحسين استيعاب المعلومة وتوزيع الألوان (accent) بشكل يمنع الملل البصري.",
+      "needs_change": true
+    }
+  },
+  "automator-m1-systems-view": {
+    "current": [
+      {
+        "i": 0,
+        "card": "TitleCard",
+        "accent": "mint"
+      },
+      {
+        "i": 1,
+        "card": "ConceptCard",
+        "accent": "lavender"
+      },
+      {
+        "i": 2,
+        "card": "ConceptCard",
+        "accent": "peach"
+      },
+      {
+        "i": 3,
+        "card": "ConceptCard",
+        "accent": "yellow"
+      },
+      {
+        "i": 4,
+        "card": "ConceptCard",
+        "accent": "pink"
+      },
+      {
+        "i": 5,
+        "card": "ConceptCard",
+        "accent": "mintDeep"
+      },
+      {
+        "i": 6,
+        "card": "ConceptCard",
+        "accent": "mint"
+      },
+      {
+        "i": 7,
+        "card": "BulletsCard",
+        "accent": "lavender"
+      },
+      {
+        "i": 8,
+        "card": "ScreenshotCard",
+        "accent": "peach"
+      },
+      {
+        "i": 9,
+        "card": "CompareCard",
+        "accent": "yellow"
+      },
+      {
+        "i": 10,
+        "card": "CTACard",
+        "accent": "pink"
+      }
+    ],
+    "suggestion": {
+      "suggested_order": [
+        0,
+        1,
+        2,
+        7,
+        3,
+        4,
+        8,
+        5,
+        6,
+        9,
+        10
+      ],
+      "changes": [
+        "إعادة توزيع ConceptCard لكسر التكرار الطويل",
+        "إدراج BulletsCard بعد ثاني ConceptCard مباشرة",
+        "وضع ScreenshotCard في منتصف الدرس للفصل البصري",
+        "الحفاظ على CompareCard قبل الـ CTACard"
+      ],
+      "rationale": "تم كسر جمود تتابع ست كروت مفاهيم متتالية لضمان تدفق بصري مريح وتجنب إرهاق المستخدم، مع مراعاة تبادل الألوان (accent) ومنع التكرار اللوني.",
+      "needs_change": true
+    }
+  },
+  "analyst-m3-decision-rule": {
+    "current": [
+      {
+        "i": 0,
+        "card": "TitleCard",
+        "accent": "mint"
+      },
+      {
+        "i": 1,
+        "card": "ConceptCard",
+        "accent": "lavender"
+      },
+      {
+        "i": 2,
+        "card": "ConceptCard",
+        "accent": "peach"
+      },
+      {
+        "i": 3,
+        "card": "ConceptCard",
+        "accent": "yellow"
+      },
+      {
+        "i": 4,
+        "card": "ConceptCard",
+        "accent": "pink"
+      },
+      {
+        "i": 5,
+        "card": "ConceptCard",
+        "accent": "mintDeep"
+      },
+      {
+        "i": 6,
+        "card": "ConceptCard",
+        "accent": "mint"
+      },
+      {
+        "i": 7,
+        "card": "BulletsCard",
+        "accent": "lavender"
+      },
+      {
+        "i": 8,
+        "card": "BulletsCard",
+        "accent": "peach"
+      },
+      {
+        "i": 9,
+        "card": "CompareCard",
+        "accent": "yellow"
+      },
+      {
+        "i": 10,
+        "card": "CTACard",
+        "accent": "pink"
+      },
+      {
+        "i": 11,
+        "card": "BulletsCard",
+        "accent": "mintDeep"
+      }
+    ],
+    "suggestion": {
+      "suggested_order": [
+        0,
+        1,
+        2,
+        7,
+        3,
+        4,
+        8,
+        5,
+        6,
+        11,
+        9,
+        10
+      ],
+      "changes": [
+        "توزيع BulletsCard بين الـ ConceptCards لكسر حدة النصوص الطويلة",
+        "نقل الـ CompareCard ليكون قبل الـ CTACard مباشرة لتعزيز اتخاذ القرار",
+        "تحريك BulletsCard إلى ما قبل الأخير لخلق تنوع بصري قبل النهاية",
+        "تنسيق الألوان (accent) لضمان عدم تكرار نفس اللون في بلوكات متتالية"
+      ],
+      "rationale": "تم تحسين التدفق البصري عبر كسر تتابع ConceptCards بلوكات نقاط (Bullets) ومقارنة، مما يقلل من الإجهاد البصري ويتبع تسلسلاً منطقياً ينتهي بالمقارنة ثم طلب الإجراء.",
+      "needs_change": true
+    }
+  },
+  "builder-m3-context-layer": {
+    "current": [
+      {
+        "i": 0,
+        "card": "TitleCard",
+        "accent": "mint"
+      },
+      {
+        "i": 1,
+        "card": "ConceptCard",
+        "accent": "lavender"
+      },
+      {
+        "i": 2,
+        "card": "ConceptCard",
+        "accent": "peach"
+      },
+      {
+        "i": 3,
+        "card": "ConceptCard",
+        "accent": "yellow"
+      },
+      {
+        "i": 4,
+        "card": "ConceptCard",
+        "accent": "pink"
+      },
+      {
+        "i": 5,
+        "card": "ConceptCard",
+        "accent": "mintDeep"
+      },
+      {
+        "i": 6,
+        "card": "ConceptCard",
+        "accent": "mint"
+      },
+      {
+        "i": 7,
+        "card": "BulletsCard",
+        "accent": "lavender"
+      },
+      {
+        "i": 8,
+        "card": "BulletsCard",
+        "accent": "peach"
+      },
+      {
+        "i": 9,
+        "card": "ScreenshotCard",
+        "accent": "yellow"
+      },
+      {
+        "i": 10,
+        "card": "ScreenshotCard",
+        "accent": "pink"
+      },
+      {
+        "i": 11,
+        "card": "CompareCard",
+        "accent": "mintDeep"
+      },
+      {
+        "i": 12,
+        "card": "CompareCard",
+        "accent": "mint"
+      },
+      {
+        "i": 13,
+        "card": "BulletsCard",
+        "accent": "lavender"
+      },
+      {
+        "i": 14,
+        "card": "BulletsCard",
+        "accent": "peach"
+      },
+      {
+        "i": 15,
+        "card": "CTACard",
+        "accent": "yellow"
+      }
+    ],
+    "suggestion": {
+      "suggested_order": [
+        0,
+        1,
+        2,
+        7,
+        3,
+        4,
+        8,
+        5,
+        6,
+        9,
+        10,
+        13,
+        14,
+        11,
+        12,
+        15
+      ],
+      "changes": [
+        "توزيع الـ ConceptCards لمنع تتابع أكثر من 2 متتاليين بوضع BulletsCards بينهم",
+        "توزيع الـ BulletsCards لكسر رتابة النصوص الطويلة",
+        "تنسيق الـ accents لضمان عدم تكرار نفس اللون في بلوكات متتالية",
+        "وضع الـ CompareCards في نهاية التسلسل التعليمي مباشرة قبل الـ CTACard"
+      ],
+      "rationale": "الترتيب الجديد يمنع الإجهاد البصري الناتج عن تتابع المفاهيم النظرية الطويلة ويحافظ على تجدد الألوان وتنوع أنماط البلوكات.",
+      "needs_change": true
+    }
+  },
+  "business-m1-weekly-rhythm": {
+    "current": [
+      {
+        "i": 0,
+        "card": "TitleCard",
+        "accent": "mint"
+      },
+      {
+        "i": 1,
+        "card": "ConceptCard",
+        "accent": "lavender"
+      },
+      {
+        "i": 2,
+        "card": "ConceptCard",
+        "accent": "peach"
+      },
+      {
+        "i": 3,
+        "card": "ConceptCard",
+        "accent": "yellow"
+      },
+      {
+        "i": 4,
+        "card": "ConceptCard",
+        "accent": "pink"
+      },
+      {
+        "i": 5,
+        "card": "ConceptCard",
+        "accent": "mintDeep"
+      },
+      {
+        "i": 6,
+        "card": "ConceptCard",
+        "accent": "mint"
+      },
+      {
+        "i": 7,
+        "card": "ConceptCard",
+        "accent": "lavender"
+      },
+      {
+        "i": 8,
+        "card": "ConceptCard",
+        "accent": "peach"
+      },
+      {
+        "i": 9,
+        "card": "BulletsCard",
+        "accent": "yellow"
+      },
+      {
+        "i": 10,
+        "card": "BulletsCard",
+        "accent": "pink"
+      },
+      {
+        "i": 11,
+        "card": "CompareCard",
+        "accent": "mintDeep"
+      },
+      {
+        "i": 12,
+        "card": "CTACard",
+        "accent": "mint"
+      },
+      {
+        "i": 13,
+        "card": "BulletsCard",
+        "accent": "lavender"
+      }
+    ],
+    "suggestion": {
+      "suggested_order": [
+        0,
+        1,
+        2,
+        9,
+        3,
+        4,
+        10,
+        5,
+        6,
+        13,
+        7,
+        8,
+        11,
+        12
+      ],
+      "changes": [
+        "توزيع BulletsCard (بلوك 9 و 10 و 13) لكسر تتابع الـ ConceptCards",
+        "نقل بلوك 13 (BulletsCard) قبل آخر ConceptCards لضمان عدم وجود 3 بلوكات متشابهة",
+        "وضع CompareCard (بلوك 11) مباشرة قبل الـ CTACard",
+        "تحريك CTACard (بلوك 12) ليكون في نهاية الدرس"
+      ],
+      "rationale": "الترتيب الجديد يكسر الرتابة البصرية بتوزيع القوائم والنقاط بين المفاهيم، ويمنع تكرار الألوان المتشابهة، ويتبع التسلسل المنطقي بإنهاء الدرس بـ CTA.",
+      "needs_change": true
+    }
+  },
+  "creator-m2-hook": {
+    "current": [
+      {
+        "i": 0,
+        "card": "TitleCard",
+        "accent": "mint"
+      },
+      {
+        "i": 1,
+        "card": "ConceptCard",
+        "accent": "lavender"
+      },
+      {
+        "i": 2,
+        "card": "ConceptCard",
+        "accent": "peach"
+      },
+      {
+        "i": 3,
+        "card": "ConceptCard",
+        "accent": "yellow"
+      },
+      {
+        "i": 4,
+        "card": "ConceptCard",
+        "accent": "pink"
+      },
+      {
+        "i": 5,
+        "card": "ConceptCard",
+        "accent": "mintDeep"
+      },
+      {
+        "i": 6,
+        "card": "ConceptCard",
+        "accent": "mint"
+      },
+      {
+        "i": 7,
+        "card": "BulletsCard",
+        "accent": "peach"
+      },
+      {
+        "i": 8,
+        "card": "ScreenshotCard",
+        "accent": "yellow"
+      },
+      {
+        "i": 9,
+        "card": "CompareCard",
+        "accent": "pink"
+      },
+      {
+        "i": 10,
+        "card": "CTACard",
+        "accent": "mintDeep"
+      },
+      {
+        "i": 11,
+        "card": "BulletsCard",
+        "accent": "mint"
+      },
+      {
+        "i": 12,
+        "card": "BulletsCard",
+        "accent": "lavender"
+      },
+      {
+        "i": 13,
+        "card": "CTACard",
+        "accent": "peach"
+      }
+    ],
+    "suggestion": {
+      "suggested_order": [
+        0,
+        1,
+        2,
+        7,
+        3,
+        4,
+        8,
+        5,
+        6,
+        11,
+        12,
+        9,
+        13,
+        10
+      ],
+      "changes": [
+        "توزيع الـ ConceptCards لمنع التكرار (أكثر من ٢ متتاليين)",
+        "إدراج BulletsCard و ScreenshotCard كفواصل بصرية",
+        "نقل الـ CompareCard ليكون قبل الـ CTACard مباشرة",
+        "ضبط تسلسل الـ accent لمنع تكرار نفس اللون في بلوكات متتالية",
+        "دمج الـ CTACard الزائد في الترتيب النهائي"
+      ],
+      "rationale": "تم تحسين التدفق البصري من خلال كسر رتابة الـ ConceptCards المتكررة وتنسيق الألوان لضمان تباين مريح للعين مع وضع المقارنة في مكانها الاستراتيجي قبل الختام.",
+      "needs_change": true
+    }
+  },
+  "intro-m1-l3-setup-your-ai": {
+    "current": [
+      {
+        "i": 0,
+        "card": "TitleCard",
+        "accent": "mint"
+      },
+      {
+        "i": 1,
+        "card": "BulletsCard",
+        "accent": "lavender"
+      },
+      {
+        "i": 2,
+        "card": "ScreenshotCard",
+        "accent": "peach"
+      },
+      {
+        "i": 3,
+        "card": "CompareCard",
+        "accent": "yellow"
+      },
+      {
+        "i": 4,
+        "card": "BulletsCard",
+        "accent": "pink"
+      },
+      {
+        "i": 5,
+        "card": "BulletsCard",
+        "accent": "mintDeep"
+      },
+      {
+        "i": 6,
+        "card": "CTACard",
+        "accent": "mint"
+      }
+    ],
+    "suggestion": {
+      "suggested_order": [
+        0,
+        2,
+        4,
+        1,
+        5,
+        3,
+        6
+      ],
+      "changes": [
+        "نقل الـ ScreenshotCard للمركز الثاني بعد المقدمة مباشرة لكسر كثافة النصوص",
+        "توزيع الـ BulletsCard للفصل بين الألوان المتشابهة ومنع التكرار",
+        "وضع الـ CompareCard قبل الـ CTACard مباشرة"
+      ],
+      "rationale": "تم تحسين التدفق البصري بوضع المحتوى المرئي (Screenshot) في البداية وتأخير المقارنة للنهاية لتمهيد اتخاذ القرار قبل الـ CTA مع مراعاة تناسق الـ accent.",
+      "needs_change": true
+    }
+  }
+}

@@ -1,0 +1,1 @@
+UPDATE public.roadmap_items SET status='done', updated_at=now() WHERE id='54d06cc1-a4c6-4acb-af65-006405dc15f6';

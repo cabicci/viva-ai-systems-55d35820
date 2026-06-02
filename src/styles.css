@@ -1,0 +1,316 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Tajawal", "Cairo", system-ui, sans-serif;
+  --font-display: "Tajawal", "Cairo", system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-neon: var(--neon);
+  --color-neon-foreground: var(--neon-foreground);
+  --color-aurora: var(--aurora);
+  --color-business: var(--business);
+}
+
+:root {
+  /* Pastel Educational — calm, airy, focus-friendly.
+     White canvas + soft mint / blue / pink / pale yellow accents. */
+  --radius: 1rem;
+
+  --background: oklch(0.995 0.003 230);
+  --foreground: oklch(0.30 0.04 260);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.30 0.04 260);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.30 0.04 260);
+
+  /* Primary = soft blue (#AEC6CF family, slightly deepened for contrast) */
+  --primary: oklch(0.62 0.08 235);
+  --primary-foreground: oklch(0.99 0.005 230);
+
+  /* Secondary = pastel pink */
+  --secondary: oklch(0.90 0.045 20);
+  --secondary-foreground: oklch(0.32 0.06 20);
+
+  --muted: oklch(0.97 0.012 230);
+  --muted-foreground: oklch(0.50 0.03 250);
+
+  /* Accent = mint green */
+  --accent: oklch(0.88 0.06 165);
+  --accent-foreground: oklch(0.22 0.09 165);
+
+  /* Business = pastel lavender */
+  --business: oklch(0.88 0.055 305);
+
+  --destructive: oklch(0.65 0.16 25);
+  --destructive-foreground: oklch(0.99 0.005 230);
+
+  --border: oklch(0.30 0.04 260 / 0.10);
+  --input: oklch(0.97 0.012 230);
+  --ring: oklch(0.62 0.08 235);
+
+  /* Pastel surface tokens for decorative cards */
+  --pastel-blue: oklch(0.91 0.025 230);
+  --pastel-mint: oklch(0.92 0.03 165);
+  --pastel-pink: oklch(0.92 0.025 20);
+  --pastel-yellow: oklch(0.95 0.04 100);
+  --pastel-lavender: oklch(0.90 0.03 305);
+  --pastel-peach: oklch(0.91 0.06 55);
+  --pastel-cream: oklch(0.94 0.015 55);
+
+  /* Legacy aliases — kept so existing components don't break */
+  --neon: oklch(0.88 0.06 165);
+  --neon-foreground: oklch(0.22 0.09 165);
+  --aurora: oklch(0.62 0.08 235);
+
+  --gradient-hero:
+    radial-gradient(ellipse 60% 50% at 15% 10%, oklch(0.91 0.05 165 / 0.55), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 5%, oklch(0.90 0.045 20 / 0.45), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 50% 100%, oklch(0.97 0.07 100 / 0.55), transparent 60%),
+    linear-gradient(180deg, oklch(1 0 0), oklch(0.99 0.005 230));
+  --gradient-primary: linear-gradient(135deg, oklch(0.68 0.08 235), oklch(0.78 0.07 200));
+  --gradient-accent: linear-gradient(135deg, oklch(0.88 0.06 165), oklch(0.90 0.045 20));
+  --gradient-card: linear-gradient(160deg, oklch(1 0 0), oklch(0.98 0.01 230));
+
+  --shadow-glow: 0 8px 24px -12px oklch(0.62 0.08 235 / 0.30);
+  --shadow-violet: 0 8px 24px -12px oklch(0.88 0.06 165 / 0.35);
+  --shadow-card: 0 12px 40px -20px oklch(0.30 0.04 260 / 0.12);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+
+  html { direction: rtl; }
+
+  body {
+    background: var(--gradient-hero);
+    background-attachment: fixed;
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "ss02";
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-primary) 35%, transparent);
+    color: var(--color-primary-foreground);
+  }
+
+  /* RTL bidi safety: keep inline English technical tokens (code, kbd, samp,
+     and explicit .ltr-inline) rendering as a contiguous LTR run inside
+     Arabic prose. Prevents punctuation/parenthesis flipping. */
+  [dir="rtl"] code,
+  [dir="rtl"] kbd,
+  [dir="rtl"] samp,
+  [dir="rtl"] .ltr-inline {
+    unicode-bidi: isolate;
+    direction: ltr;
+  }
+}
+
+@layer utilities {
+  /* Inline LTR isolation for English/code/numeric fragments inside Arabic text.
+     Use on ratios (5 / 6), percentages (83%), arrows (→), version strings,
+     and any English technical term that visually flips inside RTL paragraphs. */
+  .ltr {
+    display: inline-block;
+    direction: ltr !important;
+    unicode-bidi: isolate !important;
+    white-space: nowrap !important;
+    text-align: left;
+  }
+  .ltr-wrap {
+    direction: ltr !important;
+    unicode-bidi: isolate !important;
+  }
+  /* Inline English term reused inside Arabic prose. */
+  .term {
+    display: inline-block;
+    direction: ltr !important;
+    unicode-bidi: isolate !important;
+    white-space: nowrap !important;
+    font-family: var(--font-sans);
+  }
+
+  .ltr-bidi {
+    display: inline-block !important;
+    direction: ltr !important;
+    unicode-bidi: isolate !important;
+    white-space: nowrap !important;
+    text-align: left !important;
+  }
+
+  .ltr-flex {
+    display: inline-flex !important;
+    direction: ltr !important;
+    unicode-bidi: isolate !important;
+    white-space: nowrap !important;
+    text-align: left !important;
+  }
+
+  .glass {
+    background: var(--gradient-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--color-border);
+  }
+  .glow-primary { box-shadow: var(--shadow-glow); }
+  .glow-violet { box-shadow: var(--shadow-violet); }
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-accent {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(color-mix(in oklab, var(--color-foreground) 6%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in oklab, var(--color-foreground) 6%, transparent) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+  .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+  .animate-float { animation: float 6s ease-in-out infinite; }
+
+  /* === Dashboard interactivity === */
+  @keyframes flame-flicker {
+    0%, 100% { transform: rotate(-3deg) scale(1); filter: drop-shadow(0 0 4px rgba(255,140,60,0.6)); }
+    25% { transform: rotate(2deg) scale(1.08); filter: drop-shadow(0 0 8px rgba(255,180,80,0.9)); }
+    50% { transform: rotate(-2deg) scale(0.96); filter: drop-shadow(0 0 6px rgba(255,120,40,0.7)); }
+    75% { transform: rotate(3deg) scale(1.04); filter: drop-shadow(0 0 10px rgba(255,200,100,0.8)); }
+  }
+  .animate-flame { animation: flame-flicker 1.8s ease-in-out infinite; transform-origin: center bottom; }
+
+  @keyframes sparkle-twinkle {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    50% { transform: scale(1.2) rotate(180deg); opacity: 0.7; }
+  }
+  .animate-twinkle { animation: sparkle-twinkle 3s ease-in-out infinite; }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .animate-spin-slow { animation: spin-slow 8s linear infinite; }
+
+  @keyframes icon-tilt {
+    0%, 100% { transform: rotate(-4deg); }
+    50% { transform: rotate(4deg); }
+  }
+  .animate-tilt { animation: icon-tilt 2.5s ease-in-out infinite; }
+
+  @keyframes chart-bounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-4px) scale(1.08); }
+  }
+  .animate-chart-bounce { animation: chart-bounce 1.8s ease-in-out infinite; }
+
+  @keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-primary) 50%, transparent); }
+    50% { box-shadow: 0 0 24px 4px color-mix(in oklab, var(--color-primary) 40%, transparent); }
+  }
+  .animate-glow-pulse { animation: glow-pulse 2.4s ease-in-out infinite; }
+
+  @keyframes lock-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px) rotate(-8deg); }
+    75% { transform: translateX(2px) rotate(8deg); }
+  }
+  .hover-shake:hover .lock-icon { animation: lock-shake 0.4s ease-in-out; }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-up { animation: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+  @keyframes arrow-nudge {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-4px); }
+  }
+  .group:hover .animate-arrow-nudge,
+  .animate-arrow-nudge-always { animation: arrow-nudge 1s ease-in-out infinite; }
+
+  .card-lift { transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s, border-color 0.3s; }
+  .card-lift:hover { transform: translateY(-4px); border-color: color-mix(in oklab, var(--color-primary) 50%, transparent); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-flame, .animate-twinkle, .animate-spin-slow, .animate-tilt,
+    .animate-glow-pulse, .animate-fade-up, .animate-arrow-nudge-always,
+    .animate-pulse-glow, .animate-float, .animate-chart-bounce { animation: none !important; }
+    .card-lift { transition: none !important; }
+  }
+
+  /* A11y: visible focus ring for keyboard users (does not affect mouse clicks). */
+  :where(a, button, [role="button"], input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  /* A11y: skip-to-content link — hidden until focused via keyboard. */
+  .skip-to-content {
+    position: fixed;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 100;
+    padding: 0.5rem 0.875rem;
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transform: translateY(-150%);
+    transition: transform 0.2s ease;
+  }
+  .skip-to-content:focus-visible {
+    transform: translateY(0);
+    outline: 2px solid var(--color-primary-foreground);
+    outline-offset: 2px;
+  }
+}

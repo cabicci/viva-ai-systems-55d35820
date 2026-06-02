@@ -1,0 +1,4 @@
+UPDATE public.roadmap_items
+SET status='done'::roadmap_status, completed_at=now(), updated_at=now(),
+    notes=COALESCE(notes,'') || E'\n[2026-05-28] A11y baseline shipped: (1) `.skip-to-content` link in src/routes/__root.tsx pointing to #main-content (visible only on keyboard focus, RTL-positioned), (2) `:focus-visible` outline rule in src/styles.css for all interactive elements (does not affect mouse), (3) #main-content id on index `<main>`, (4) verified: lang=ar + dir=rtl in shell, all <img> tags have alt text, mobile menu button has aria-label, prefers-reduced-motion already respected. Further per-page audits deferred until specific complaints surface.'
+WHERE id='0a15f82d-3d5b-4229-902b-993825e6525a';

@@ -1,0 +1,160 @@
+name: Lesson Video Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      lesson_ids:
+        description: "Comma-separated lesson IDs"
+        required: true
+        type: string
+      force_script:
+        description: "Re-generate script even if cached"
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: lesson-video-${{ github.ref }}-${{ github.event.inputs.lesson_ids || github.sha }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Python deps
+        run: pip install requests google-genai
+
+      - name: Install root deps
+        run: bun install --frozen-lockfile
+
+      - name: Install remotion deps
+        run: cd remotion && bun install
+
+      - name: Build lesson video
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+        run: |
+          set -euo pipefail
+          FORCE=""
+          if [ "${{ inputs.force_script }}" = "true" ]; then FORCE="--force-script"; fi
+          echo '${{ inputs.lesson_ids }}' | tr ',' '\n' | while IFS= read -r lesson_id; do
+            lesson_id="$(echo "$lesson_id" | sed 's/^ *//;s/ *$//')"
+            [ -z "$lesson_id" ] && continue
+            echo "::group::Build $lesson_id"
+            python remotion/scripts/build-lesson.py "$lesson_id" $FORCE
+            echo "::endgroup::"
+          done
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lesson-batch-logs
+          path: /tmp/*/
+          if-no-files-found: ignore
+
+      - name: Upload MP4 artifact (fallback)
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lesson-batch-mp4
+          path: |
+            public/lessons/intro/*.mp4
+            remotion/src/lessons-generated/*.gen.ts
+          if-no-files-found: error
+
+      - name: Upload to Bunny Stream
+        if: success()
+        env:
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+        run: |
+          set -euo pipefail
+          if [ -z "$BUNNY_STREAM_API_KEY" ] || [ -z "$BUNNY_STREAM_LIBRARY_ID" ]; then
+            echo "::error::Missing BUNNY_STREAM_API_KEY or BUNNY_STREAM_LIBRARY_ID GitHub secret"
+            exit 1
+          fi
+          echo '${{ inputs.lesson_ids }}' | tr ',' '\n' | while IFS= read -r lesson_id; do
+            lesson_id="$(echo "$lesson_id" | sed 's/^ *//;s/ *$//')"
+            [ -z "$lesson_id" ] && continue
+            LID="$lesson_id" python .github/scripts/upload_bunny.py
+          done
+
+      - name: Commit & push lesson registry
+        if: success()
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Save artifacts to temp so we can re-apply on top of latest origin/main
+          SAVE=$(mktemp -d)
+          mkdir -p "$SAVE/gen" "$SAVE/public"
+          cp -r remotion/src/lessons-generated/. "$SAVE/gen/"
+          if [ -d remotion/public/lessons ]; then
+            cp -r remotion/public/lessons "$SAVE/public/" 2>/dev/null || true
+          fi
+          PUSHED=0
+          for i in 1 2 3 4 5; do
+            git fetch origin ${{ github.ref_name }}
+            git reset --hard origin/${{ github.ref_name }}
+            git clean -fd remotion/src/lessons-generated/ public/lessons/intro/ remotion/public/lessons/ || true
+            rm -rf public/lessons/intro public/intro
+            mkdir -p remotion/src/lessons-generated remotion/public/lessons
+            cp -r "$SAVE/gen/." remotion/src/lessons-generated/
+            if [ -d "$SAVE/public/lessons" ]; then
+              cp -r "$SAVE/public/lessons/." remotion/public/lessons/ 2>/dev/null || true
+            fi
+            echo '${{ inputs.lesson_ids }}' | tr ',' '\n' | while IFS= read -r lesson_id; do
+              lesson_id="$(echo "$lesson_id" | sed 's/^ *//;s/ *$//')"
+              [ -z "$lesson_id" ] && continue
+              LID="$lesson_id" \
+                BUNNY_STREAM_API_KEY="${{ secrets.BUNNY_STREAM_API_KEY }}" \
+                BUNNY_STREAM_LIBRARY_ID="${{ secrets.BUNNY_STREAM_LIBRARY_ID }}" \
+                python .github/scripts/upload_bunny.py
+              LID="$lesson_id" python .github/scripts/update_registry.py
+            done
+            git add -A public/lessons/intro/ public/intro/
+            git add remotion/src/lessons-generated/ remotion/src/lessonsRegistry.ts src/lib/bunny-videos.ts
+            git add remotion/public/lessons/ 2>/dev/null || true
+            if git diff --cached --quiet; then
+              echo "Nothing staged to commit — artifacts already on main."
+              PUSHED=1
+              break
+            fi
+            git commit -m "build(lesson): update bunny video registry"
+            if git push origin HEAD:${{ github.ref_name }}; then
+              PUSHED=1
+              break
+            fi
+            echo "push attempt $i failed, retrying after random sleep..."
+            sleep $((RANDOM % 10 + 5))
+          done
+          if [ "$PUSHED" -ne 1 ]; then
+            echo "::error::Failed to push after 5 attempts"
+            exit 1
+          fi

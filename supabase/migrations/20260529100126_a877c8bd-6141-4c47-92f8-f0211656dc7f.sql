@@ -1,0 +1,1 @@
+UPDATE public.roadmap_items SET completed_at = updated_at WHERE id IN ('9457e775-b6ac-4e00-80c1-6b9232489ff3','48887c0e-1c4e-4e1d-8f28-454eebfd28d7') AND completed_at IS NULL;

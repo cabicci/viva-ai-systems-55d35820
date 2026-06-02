@@ -1,0 +1,29 @@
+<svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" role="img">
+  <style>.t{font-family:'IBM Plex Sans Arabic','Tajawal','Cairo',system-ui,sans-serif}</style>
+  <rect width="800" height="520" fill="#FAFCFE"/>
+  <text class="t" x="400" y="40" text-anchor="middle" font-size="18" font-weight="700" fill="#2B3A55">مثلث الأرقام</text>
+  <text class="t" x="400" y="64" text-anchor="middle" font-size="13" fill="#6B7A93">٣ أرقام بس — والباقي ضوضاء</text>
+  <g stroke="#E5DBEA" stroke-width="2" fill="none">
+    <line x1="400" y1="180" x2="200" y2="420"/>
+    <line x1="400" y1="180" x2="600" y2="420"/>
+    <line x1="200" y1="420" x2="600" y2="420"/>
+  </g>
+  <g>
+    <rect x="285" y="100" width="230" height="130" rx="16" fill="#DCE7EE" stroke="#E3E8F0"/>
+    <text class="t" x="400" y="132" text-anchor="middle" font-size="22" fill="#2B3A55">⌛</text>
+    <text class="t" x="400" y="170" text-anchor="middle" font-size="18" font-weight="700" fill="#2B3A55">Watch Time</text>
+    <text class="t" x="400" y="194" text-anchor="middle" font-size="13" fill="#6B7A93">وقت المشاهدة</text>
+  </g>
+  <g>
+    <rect x="50" y="360" width="230" height="130" rx="16" fill="#D4ECE0" stroke="#E3E8F0"/>
+    <text class="t" x="165" y="392" text-anchor="middle" font-size="22" fill="#2B3A55">❤</text>
+    <text class="t" x="165" y="430" text-anchor="middle" font-size="18" font-weight="700" fill="#2B3A55">Save Rate</text>
+    <text class="t" x="165" y="454" text-anchor="middle" font-size="13" fill="#6B7A93">معدّل الحفظ</text>
+  </g>
+  <g>
+    <rect x="520" y="360" width="230" height="130" rx="16" fill="#F0DDD8" stroke="#E3E8F0"/>
+    <text class="t" x="635" y="392" text-anchor="middle" font-size="22" fill="#2B3A55">+</text>
+    <text class="t" x="635" y="430" text-anchor="middle" font-size="18" font-weight="700" fill="#2B3A55">Follow Rate</text>
+    <text class="t" x="635" y="454" text-anchor="middle" font-size="13" fill="#6B7A93">معدّل المتابعة</text>
+  </g>
+</svg>

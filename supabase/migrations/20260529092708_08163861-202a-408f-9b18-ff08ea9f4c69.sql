@@ -1,0 +1,2 @@
+REVOKE EXECUTE ON FUNCTION public.apply_review_outcome(UUID, TEXT, BOOLEAN) FROM PUBLIC, anon, authenticated;
+REVOKE EXECUTE ON FUNCTION public.process_quiz_attempt_for_review() FROM PUBLIC, anon, authenticated;

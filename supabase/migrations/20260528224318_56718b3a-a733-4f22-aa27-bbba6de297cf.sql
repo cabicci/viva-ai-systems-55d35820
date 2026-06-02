@@ -1,0 +1,1 @@
+UPDATE public.roadmap_items SET status='done'::roadmap_status, completed_at=now(), updated_at=now() WHERE id IN ('c63f4978-2f9d-4591-a400-f7a7de57467c','cbcc6c21-c275-4a1c-a80d-f8ccf6f3a33c','12fce1c6-3c00-4a7e-a540-433987d6cf8d');

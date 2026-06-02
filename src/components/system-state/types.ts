@@ -1,0 +1,1 @@
+export type Status = "live" | "partial" | "placeholder";

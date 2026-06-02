@@ -1,0 +1,1 @@
+UPDATE public.roadmap_items SET notes = COALESCE(notes,'') || E'\n\n[تحديث] تحسين القاموس (concepts blocks) لكل الـ 95 درس:\n- 95/95 درس نجح\n- متوسط المصطلحات قبل: ~4 / بعد: ~6\n- كل المصطلحات الجديدة بأمثلة بلدي من شغل محاسب/تاجر/مسوق\n- مبني على شكاوى أحمد (AI tester)\n- TS structure سليمة' WHERE id='48887c0e-1c4e-4e1d-8f28-454eebfd28d7';

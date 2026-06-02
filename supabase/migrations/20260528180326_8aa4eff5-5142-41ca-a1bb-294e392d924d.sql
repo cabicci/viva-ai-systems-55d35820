@@ -1,0 +1,1 @@
+REVOKE EXECUTE ON FUNCTION public.sync_lesson_status_mirror() FROM PUBLIC, anon, authenticated;

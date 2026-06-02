@@ -1,0 +1,2 @@
+INSERT INTO storage.buckets (id, name, public) VALUES ('audio-assets', 'audio-assets', true) ON CONFLICT (id) DO NOTHING;
+CREATE POLICY "Public read audio-assets" ON storage.objects FOR SELECT USING (bucket_id = 'audio-assets');
