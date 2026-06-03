@@ -1,6 +1,6 @@
 # Roadmap sync marker
 
-[roadmap:cb6f934c-885c-4da8-8df1-1e293fd4351d]
+[roadmap:5ff259e3-2aac-42e2-af3d-342b47263360]
 date: 2026-06-03
 scope: other
 source: user
