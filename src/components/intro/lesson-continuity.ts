@@ -38,9 +38,7 @@ export const LESSON_CONTINUITY: Record<string, string> = {
   "builder-m3-l7-memory-limits":
     "عرفت حدود الذاكرة. الموديول الجاي عن الـ Parameters اللي بتتحكّم في شخصية الموديل.",
   "builder-m4-l8-parameters":
-    "اتحكّمت في الـ Temperature. فيه parameters تانية مهمة: Top-p و Max tokens.",
-  "builder-m4-l8-parameters":
-    "خلصت الـ Parameters. الموديول الجاي بيدخّلك في بناء التطبيق الفعلي: Frontend → Backend → Database.",
+    "اتحكّمت في الـ Parameters كلها (Temperature, Top-p, Max tokens). الموديول الجاي بيدخّلك في بناء التطبيق الفعلي: Frontend → Backend → Database.",
   "builder-m5-l10-frontend":
     "عرفت اللي بيشوفه المستخدم. ورا الكواليس: Backend و الـ API اللي بيشغّل كل حاجة.",
   "builder-m5-l11-backend-api":
