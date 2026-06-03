@@ -5,140 +5,90 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "subtitle": "مش مجرد ردود، دي أفعال حقيقية.",
-    "highlight": "ويستخدم أدوات لوحده",
-    "chip": "HERO",
-    "title": "Agent = AI بياخد قرارات"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "برنامج ذكي",
-    "term": "Agent",
-    "definition": "برنامج ذكي بيفكر ويقرر يستخدم أدوات إيه عشان يخلص مهمة."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "tag": "أداة خارجية",
-    "term": "Tool",
-    "definition": "أي برنامج أو خدمة خارجية الـ Agent يقدر يناديها تخلصه."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "tag": "مدخلات الأداة",
-    "term": "Parameters (Inputs)",
-    "definition": "البيانات أو الخانات اللي الأداة محتاجاها منك عشان تشتغل صح."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "tag": "دايرة تكرار",
-    "term": "Loop (ReAct)",
-    "definition": "دايرة بيلف فيها الـ Agent: يفكر، ينفذ، يشوف النتيجة، ويكرر."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "tag": "حرية الاختيار",
-    "term": "Autonomy (الاستقلالية)",
-    "definition": "قدرة الـ Agent إنه يختار خطواته من غير ما إنت تتدخل."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "tag": "مخطط خطوات",
-    "term": "Multi-step Planner",
-    "definition": "لما الـ Agent يخطط لمجموعة خطوات ورا بعض عشان يوصل لهدف كبير."
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "lavender",
-    "title": "إزاي الـ Tool بتشتغل مع الـ LLM؟",
-    "bullets": [
-      "Tool = function عادية في كودك (مثلاً createBooking، sendEmail، searchProducts).",
-      "بتوصّفها للـ LLM في الـ schema بتاعها (الاسم، الوصف، الـ parameters).",
-      "الموديل بيشوف القايمة دي ضمن الـ prompt ويقرّر إمتى يستخدم أنهي واحد."
-    ]
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "peach",
-    "bullets": [
-      "المستخدم يبعت request.",
-      "الموديل يفكّر، ويرجّع: \"عايز أنادي searchProducts({ query: 'laptop' })\".",
-      "الكود بتاعك ينفّذ الـ function ويرجّع النتيجة للموديل."
-    ],
-    "title": "خطوات الـ Tool Calling Loop (ReAct pattern)"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "yellow",
-    "title": "استكمال الـ Tool Calling Loop",
-    "bullets": [
-      "الموديل ياخد النتيجة، يفكّر تاني، يقرّر: ينادي tool تاني، ولا يخلّص ويرد على المستخدم.",
-      "الـ loop يقف لما الموديل يرجّع رد نهائي بدون tool call."
-    ]
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "pink",
-    "bullets": [
-      "Single-tool: tool واحد بس (chatbot يقدر يبحث في قاعدة بيانات).",
-      "Multi-tool: ٣-١٠ tools (دعم فني يقدر يبحث، ينشئ تذكرة، يبعت إيميل)."
-    ],
-    "title": "أنواع الـ Agents حسب التعقيد"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "mintDeep",
-    "bullets": [
-      "Multi-step planner: agent يخطّط steps قبل ينفّذ (للمهام المعقّدة).",
-      "Multi-agent: agents بتتكلّم مع بعضها (researcher → writer → reviewer)."
-    ],
-    "title": "أنواع الـ Agents الأكثر تعقيدًا"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "mint",
-    "title": "Guardrails ضروريّة للـ Agents",
-    "bullets": [
-      "لكل tool خطير (يمسح، يدفع، يبعت لمستخدمين تانيين) → ضع human-in-the-loop.",
-      "حدّد max_iterations عشان الـ loop ميتعلّقش.",
-      "سجّل كل tool call في DB (audit log) عشان لو حصل غلط تعرف ترجع."
-    ]
-  },
-  {
-    "card": "ScreenshotCard",
-    "accent": "lavender",
-    "src": "lessons/concepts/agents-diagram.jpg",
-    "caption": "الـ Agent مش مجرد LLM بيرد. هو LLM + tools + loop. لما يجي سؤال، الـ agent بيفكّر (Think)، يقرّر يستخدم أي tool (Act)، يشوف النتيجة (Observe)، ويكرّر لحد ما يوصل للإجابة النهائية. ده اللي بيخلّيه يقدر يتعامل مع مهام معقّدة تحتاج بحث، حسابات، أو وصول لبيانات حيّة — مش بس generate نص من اللي اتدرّب عليه.",
-    "eyebrow": "توضيح بصري",
-    "title": "AI Agent: Think → Act → Observe → Repeat"
+    "chip": "البداية",
+    "title": "الـ AI بتاعك بيردّ...",
+    "subtitle": "القفزة من Chatbot بيرد لـ Agent بينفذ",
+    "highlight": "بس مش بيعمل حاجة"
   },
   {
     "card": "CompareCard",
-    "accent": "peach",
-    "left": {
-      "body": "المستخدم: \"عايز ألغي اشتراكي\". الـ AI: \"تمام، عشان تلغي اشتراكك، روح على Settings → Billing → Cancel Subscription، اضغط تأكيد\". المستخدم يقفل الصفحة محبط. النتيجة: قدّمت معلومة بدل ما تعمل الفعل. المستخدم يحس إن الـ AI cosmetic مش حقيقي.",
-      "label": "FAILURE — Chatbot كلامه لذيذ بس عاجز"
-    },
+    "accent": "lavender",
     "right": {
-      "body": "tools = [getSubscription, cancelSubscription, sendConfirmationEmail].\nالمستخدم: \"عايز ألغي اشتراكي\".\nAgent: ينادي getSubscription({ user_id }) → يلاقي Plan: Pro، renews 2026-06-15.\nAgent يرد: \"اشتراكك Pro بيتجدّد 15 يونيو. تأكيد إلغاء؟\"\nالمستخدم: \"نعم\".\nAgent ينادي cancelSubscription({ id, reason: 'user_request' }) ثم sendConfirmationEmail(...).\nAgent يرد: \"تمام، تم الإلغاء. هيكمّل شغّال لحد 15 يونيو وبعدها يقف\".\nالنتيجة: مهمة اتعملت في ٢٠ ثانية بدون ما المستخدم يلمس Settings.",
-      "label": "RIGHT — Agent بينفّذ بنفسه"
+      "body": "العميل: \"عايز ألغي اشتراكي\". الـ Agent: بيستخدم tool اسمها `getSubscription`، \"لقيت اشتراكك Pro بيتجدّد كمان شهرين. أكّد الإلغاء؟\" العميل: \"آه\". الـ Agent: بيستخدم `cancelSubscription`، \"تمام، اتلغى.\"",
+      "label": "صح: Agent إيده في الشغل"
     },
-    "title": "Chatbot يقول vs Agent يعمل"
+    "left": {
+      "body": "العميل: \"عايز ألغي اشتراكي\". الـ AI: \"تمام، عشان تلغي اشتراكك، روح على Settings → Billing → Cancel Subscription، ودوس تأكيد\". النتيجة: العميل قفل الشات محبط.",
+      "label": "فاشل: Chatbot حافظ مش فاهم"
+    },
+    "title": "شوف الفرق: Chatbot بيقول vs. Agent بيعمل"
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "peach",
+    "term": "Agent",
+    "tag": "مخ بيفكر وإيدين بتنفذ",
+    "definition": "برنامج ذكي عنده (مخ) عشان يفكّر ويقرّر، و(إيدين) عشان ينفّذ."
+  },
+  {
+    "card": "ScreenshotCard",
+    "accent": "yellow",
+    "src": "lessons/concepts/agents-diagram.jpg",
+    "caption": "الـ Agent دايرة تفكير وتنفيذ. لما بيجيله طلب، بيفكّر (Think)، ويقرر يستخدم أنهي أداة (Act)، ويشوف نتيجتها (Observe)، ويكرر الدايرة دي لحد ما يوصل للحل النهائي. ده اللي بيخليه يحل مشاكل معقدة.",
+    "title": "الـ Agent بيفكر إزاي",
+    "eyebrow": "تحت الغطا"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "pink",
+    "title": "إزاي الـ Agent بيستخدم الـ Tools بتاعته؟",
+    "bullets": [
+      "الـ Tool هي مجرد function في الكود بتاعك. إنت بتدي للـ LLM قايمة بالـ tools ووصفها.",
+      "الـ Agent بيمشي في دايرة تفكير اسمها (ReAct Loop): يفكّر، يقرر يستخدم tool، يشوف النتيجة، ويكرر.",
+      "الدايرة دي بتقف لما الـ LLM يقرر إنه خلص ويرجع رد نهائي.",
+      "الأمان الأول: أي tool خطيرة لازم تأكيد من اليوزر (Human-in-the-loop) وتحديد أقصى عدد محاولات."
+    ]
   },
   {
     "card": "CTACard",
-    "accent": "yellow",
-    "tagline": "اختبر فهمك بتصميم Agent حقيقي. شوفك في الدرس الجاي: تطبيق على localhost = تطبيق مش موجود.",
-    "eyebrow": "دورك دلوقتي",
-    "title": "صمّم أول Agent لتطبيقك",
-    "highlight": "٣ tools كحد أقصى"
+    "accent": "mintDeep",
+    "tagline": "حلّ الأسئلة اللي جاية عشان تطبق اللي اتعلمته.",
+    "highlight": "اختبر فهمك",
+    "title": "هتعرف تتصرف؟",
+    "eyebrow": "دورك دلوقتي"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "mint",
+    "title": "صمّم Tool واحدة لـ Agent بتاعك",
+    "bullets": [
+      "قوة أي Agent في الـ Tools بتاعته.",
+      "هتفكر في Tool واحدة بس، بتعمل حاجة محددة ومفيدة.",
+      "حدد المهمة الكبيرة اللي الـ Agent بتاعك بيعملها.",
+      "صمّم الـ Tool: اسمها، وصفها، وإيه المعلومة اللي محتاجاها."
+    ]
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "lavender",
+    "title": "مساعد Lovable هو Agent، مش مجرد Chatbot",
+    "bullets": [
+      "المساعد اللي بتستخدمه في المنصة مبني بنفس الطريقة اللي بتتعلمها.",
+      "لو سألته \"وريني تقدّمي\"، بيستخدم tool اسمها `get_user_progress` عشان يجيب بياناتك ويرد عليك.",
+      "الـ Tools المتاحة له: البحث في الدروس، جلب بيانات تقدمك، معرفة الدرس الحالي.",
+      "الـ LLM بيقرر يستخدم أنهي tool حسب سؤالك بالظبط.",
+      "تقدر تشوف الـ tool calls دي بنفسك في صفحة /assistant-runtime."
+    ]
+  },
+  {
+    "card": "CTACard",
+    "accent": "peach",
+    "tagline": "هنشوف إزاي نطبق الكلام ده عملي في الدرس الجاي.",
+    "highlight": "الدرس الجاي",
+    "title": "تطبيق على localhost = تطبيق مش موجود",
+    "eyebrow": "الخطوة الجاية"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [449, 417, 315, 365, 370, 354, 366, 342, 385, 383, 353, 388, 441, 457, 414, 409];
+export const SCENE_FRAMES: number[] = [453, 576, 499, 615, 633, 390, 474, 580, 610];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
