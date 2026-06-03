@@ -77,8 +77,8 @@ const lesson = (
   route?: string,
 ): CurriculumLesson => ({ order, id, title, state, route });
 
-/** All shipped lesson ids — sourced from the new block-based system. */
-const INTRO_SHIPPED = new Set(Object.keys(INTRO_LESSON_CONTENT));
+/** All shipped lesson ids (not just intro) — sourced from the block-based system. */
+const SHIPPED_LESSON_IDS = new Set(Object.keys(INTRO_LESSON_CONTENT));
 
 /**
  * Unified shipped-lesson builder. Every shipped lesson routes to the
@@ -87,7 +87,7 @@ const INTRO_SHIPPED = new Set(Object.keys(INTRO_LESSON_CONTENT));
  */
 const shipped = (pathId: PathId) =>
   (order: number, id: string, title: string): CurriculumLesson =>
-    INTRO_SHIPPED.has(id)
+    SHIPPED_LESSON_IDS.has(id)
       ? lesson(order, id, title, "available", `/learn/${pathId}/${id}`)
       : lesson(order, id, title, "coming-soon");
 
