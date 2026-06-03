@@ -435,11 +435,12 @@ function UnifiedLessonPage() {
                 size="sm"
                 onClick={markCompleted}
               >
-                <Link to="/curriculum">
-                  ارجع للخريطة
+                <Link to="/dashboard">
+                  ارجع للوحة
                   <ArrowLeft className="h-4 w-4" />
                 </Link>
               </Button>
+
             )}
           </div>
         </nav>
