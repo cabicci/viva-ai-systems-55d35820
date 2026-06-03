@@ -5,102 +5,91 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "chip": "أهلًا",
-    "subtitle": "الـ AI مش بيقرا دماغك، بيقرا اللي بتكتبه. كل ما الـ prompt أوضح، الرد أحسن.",
-    "highlight": "٤ قواعد بس",
-    "title": "أول prompt هتكتبه"
+    "highlight": "وجالك كلام فاضي؟",
+    "subtitle": "الـ AI مش بيقرا دماغك. بيقرا اللي بتكتبه بالظبط. المشكلة مش فيه — في إنك مديتوش الـ ٤ حاجات اللي محتاجها عشان يطلّعلك رد ينفع تستخدمه فعلًا.",
+    "title": "كتبت للـ AI «اكتبلي حاجة عن التسويق»",
+    "chip": "TENSION"
   },
   {
     "card": "ConceptCard",
     "accent": "lavender",
-    "tag": "طلب للـ AI",
+    "tag": "طلبك من الـ AI",
     "term": "Prompt",
-    "definition": "هي الرسالة أو الطلب اللي بتكتبه للـ AI عشان ينفذ لك حاجة."
+    "definition": "الرسالة اللي بتكتبها للـ AI"
   },
   {
     "card": "ConceptCard",
     "accent": "peach",
-    "definition": "إنك تحدد للـ AI يتقمص شخصية معينة وهو بيرد عليك.",
-    "term": "Role",
-    "tag": "شخصية الـ AI"
+    "tag": "شخصية الـ AI",
+    "term": "Role (الدور)",
+    "definition": "تخلي الـ AI يتقمّص شخصية"
   },
   {
     "card": "ConceptCard",
     "accent": "yellow",
-    "tag": "شكل الرد",
-    "term": "Format (شكل الرد)",
-    "definition": "الشكل اللي إنت عايز الرد يظهر بيه (جدول، نقط، أو غيره)."
+    "tag": "الصورة الكاملة",
+    "term": "Context (السياق)",
+    "definition": "تفاصيل زيادة تفهّم الـ AI"
   },
   {
     "card": "ConceptCard",
     "accent": "pink",
-    "term": "Context (السياق)",
-    "tag": "تفاصيل زيادة",
-    "definition": "الحكي أو التفاصيل الزيادة اللي بتفهم الـ AI الصورة الكاملة."
+    "definition": "الشكل اللي عايزه للرد",
+    "tag": "كم كلمة، جدول؟",
+    "term": "Format (الشكل)"
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "mintDeep",
-    "definition": "مخ الـ AI اللي بيفهم اللغة وبيعرف يتكلم ويرد زي البشر.",
-    "tag": "مخ الـ AI",
-    "term": "LLM (نموذج لغوي)"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "definition": "إنك تخلي الشغل يتعمل لوحده أوتوماتيك من غير ما تتعب نفسك كل شوية.",
-    "term": "Automation (الأتتمة)",
-    "tag": "شغل آلي"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "lavender",
     "bullets": [
-      "حدّد الدور (Role): الـ AI يتقمص شخصية معينة.",
-      "اكتب السياق (Context): كل التفاصيل اللي الـ AI محتاجها.",
-      "حدّد المهمة بفعل واضح: 'اكتب'، 'لخّص'، 'قارن'.",
-      "اطلب الـ Format: 'في ٥ نقط'، 'في جدول'."
+      "١. Role — حدّد الدور: «إنت محرّر محتوى عربي».",
+      "٢. Context — اكتب السياق: لو هتطلب CV، الصق الإيميل.",
+      "٣. Task — فعل واضح: «اكتب»، «لخّص»، «قارن» .",
+      "٤. Format — اطلب الشكل: «في ٥ نقط»، «في جدول».",
+      "القاعدة الخفيّة: لو الرد ميعجبكش، متغيّرش الـ AI — غيّر الـ prompt."
     ],
-    "title": "الأربع قواعد الذهبية لأي prompt"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "peach",
-    "bullets": [
-      "لو الرد ميعجبكش، غيّر الـ prompt، مش الـ AI. غالبًا المشكلة في سؤالك."
-    ],
-    "title": "القاعدة الخامسة المخفية"
+    "title": "٤ قواعد بتشتغل في ٩٠٪ من الحالات"
   },
   {
     "card": "ScreenshotCard",
-    "accent": "yellow",
+    "accent": "mint",
     "src": "lessons/intro-m1-l2-first-prompt.jpg",
-    "caption": "مساعد المنصة بياخد Role، Context، طلب، و Format. رده بيكون أحسن بكتير لما تكتب الـ prompts بنفس الترتيب.",
     "title": "مساعد المنصة بيشتغل بنفس القواعد",
-    "eyebrow": "شوف بنفسك"
+    "eyebrow": "شوف بنفسك",
+    "caption": "بنبعت للمساعد: Role («إنت مدرّس Lovable») + Context (الدرس اللي إنت فيه) + Format (إجابة قصيرة بالعربي). نفس الـ ٤ قواعد بالظبط."
   },
   {
     "card": "CompareCard",
-    "accent": "pink",
-    "right": {
-      "body": "إنت محرّر محتوى عربي. بفتح كافيه جديد. اكتب ٣ أفكار بوست إنستجرام، ٣ سطور + هاشتاج.",
-      "label": "RIGHT — بالـ ٤ قواعد"
-    },
-    "title": "نفس السؤال، رد مختلف تمامًا",
+    "accent": "lavender",
     "left": {
-      "body": "اكتبلي حاجة عن التسويق. ٥٠٠ كلمة عمومية من غير هدف أو زاوية.",
+      "body": "«اكتبلي حاجة عن التسويق». الرد: ٥٠٠ كلمة عمومية مفيش زاوية ولا جمهور ولا هدف. هتحذفه.",
       "label": "FAILURE — prompt مبهم"
+    },
+    "title": "نفس السؤال — رد مختلف ١٠٠٪",
+    "right": {
+      "body": "«إنت محرّر محتوى (Role). بافتح كافيه جديد في القاهرة (Context). اكتبلي ٣ أفكار بوست إنستجرام (Task)، كل واحد ٣ سطور + Hashtag (Format).» الرد ينفع تنشره فورًا.",
+      "label": "RIGHT — ٤ قواعد"
     }
   },
   {
+    "card": "BulletsCard",
+    "accent": "peach",
+    "bullets": [
+      "Role: «إنت مدرّس مصري بيشرح لمبتدئ».",
+      "Context: «الدرس عنوانه كذا، المتعلم لسه شاف اللي قبله».",
+      "Task + Format: «script ٣٠ ثانية، ٣ فقرات، جملتين كل واحدة، عامية مصرية»."
+    ],
+    "title": "نفس الـ ٤ قواعد بنكتب بيها scripts المنصة"
+  },
+  {
     "card": "CTACard",
-    "accent": "mintDeep",
-    "eyebrow": "دورك دلوقتي",
-    "tagline": "جرب القواعد الأربعة واكتشف قوة الـ AI في حياتك.",
-    "highlight": "اكتب prompts بنفسك",
-    "title": "طبّق اللي اتعلمته"
+    "accent": "yellow",
+    "title": "اختبر فهمك وطبّق الـ ٤ قواعد",
+    "tagline": "حل الـ Quiz واعمل Mission عشان تطبّق اللي اتعلمته.",
+    "highlight": "الـ ٤ قواعد هتغيّر استخدامك للـ AI",
+    "eyebrow": "دورك دلوقتي"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [540, 277, 299, 329, 307, 353, 316, 623, 443, 443, 504, 382];
+export const SCENE_FRAMES: number[] = [529, 357, 366, 417, 463, 703, 430, 533, 567, 448];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
