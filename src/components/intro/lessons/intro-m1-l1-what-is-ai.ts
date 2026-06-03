@@ -61,12 +61,12 @@ export const WHAT_IS_AI_CONTENT: IntroLessonContent = [
   {
     icon: PlayCircle,
     eyebrow: "فيديو الدرس",
-    title: "اتفرّج — الـ AI في ٣٠ ثانية",
+    title: "اتفرّج — الـ AI في دقيقتين",
     tone: "accent",
     block: {
       kind: "lessonVideo",
       url: "/lessons/intro/intro-m1-l1-what-is-ai.mp4",
-      durationLabel: "0:29",
+      durationLabel: "2:30",
       caption: "شرح بصوت أشرف بالعامية — من غير مصطلحات معقدة.",
     },
   },
