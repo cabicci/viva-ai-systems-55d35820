@@ -281,7 +281,10 @@ function ModuleRow({
   onToggle,
   pathId,
   isPro,
+  isAdmin,
   introAllDone,
+  introIds,
+  introCompletedCount,
 }: {
   module: CurriculumModule;
   prevModule: CurriculumModule | undefined;
@@ -294,7 +297,10 @@ function ModuleRow({
   onToggle: () => void;
   pathId: string;
   isPro: boolean;
+  isAdmin: boolean;
   introAllDone: boolean;
+  introIds: string[];
+  introCompletedCount: number;
 }) {
   const status = getModuleStatus(
     m,
@@ -381,10 +387,6 @@ function ModuleRow({
                 const access = getLessonAccess(l, store, orderedIds, getStatus);
                 const sequentialUnlocked = isPro ? l.state === "available" : access.isUnlocked;
                 // Single source of truth — same gate the lesson page uses.
-                const introIds = pathLessonIds(intro);
-                const introCompletedCount = introIds.filter(
-                  (id) => getStatus(id) === "completed",
-                ).length;
                 const gate = decideLessonGate({
                   lessonId: l.id,
                   isPro,
