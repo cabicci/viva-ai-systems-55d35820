@@ -197,7 +197,7 @@ export const generateDnaReport = createServerFn({ method: "POST" })
     // ===== 3. Content DNA =====
     h2("3. Content DNA — المحتوى التعليمي كامل");
     push(`**إجمالي الـ paths:** ${PATHS.length} | **إجمالي الـ lessons:** ${totalLessons()} | **منشور (available):** ${totalAvailableLessons()}`);
-    push(`\n> **Lesson ID convention:** \`{pathId}-{moduleSlug}-{lessonSlug}\` (مثال: \`automator-m1-l1-systems-view\`). الـ id لوحده بيشفّر path + module + ترتيب — متخترعش رقم درس عام زي "الدرس 22".\n`);
+    push(`\n> **Lesson ID convention:** \`{pathId}-{moduleSlug}-{lessonSlug}\` (مثال: \`automator-m2-l1-systems-view\`). الـ id لوحده بيشفّر path + module + ترتيب — متخترعش رقم درس عام زي "الدرس 22".\n`);
 
     for (const path of PATHS) {
       h3(`Path: ${path.title} — \`${path.id}\``);

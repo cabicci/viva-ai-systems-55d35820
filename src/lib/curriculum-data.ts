@@ -386,7 +386,7 @@ function automatorModules(): CurriculumModule[] {
       title: "أنت فين في الخريطة؟",
       subtitle: "ربط Builder + Creator باللي جاي — قبل ما تبدأ.",
       lessons: [
-        automatorShipped(1, "automator-m0-l1-where-you-are", "أنت فين في الخريطة؟"),
+        automatorShipped(1, "automator-m1-l1-where-you-are", "أنت فين في الخريطة؟"),
       ],
     },
     {
@@ -395,9 +395,9 @@ function automatorModules(): CurriculumModule[] {
       title: "Systems Thinking",
       subtitle: "تشوف شغلك كـ نظام — Inputs، Processes، Outputs.",
       lessons: [
-        automatorShipped(1, "automator-m1-l1-systems-view", "كل شغل = System"),
-        automatorShipped(2, "automator-m1-l2-spot-patterns", "شوف الأنماط في يومك"),
-        automatorShipped(3, "automator-m1-l3-decide-what-to-automate", "قرّر إيه يتأتمت"),
+        automatorShipped(1, "automator-m2-l1-systems-view", "كل شغل = System"),
+        automatorShipped(2, "automator-m2-l2-spot-patterns", "شوف الأنماط في يومك"),
+        automatorShipped(3, "automator-m2-l3-decide-what-to-automate", "قرّر إيه يتأتمت"),
       ],
     },
     {
@@ -406,9 +406,9 @@ function automatorModules(): CurriculumModule[] {
       title: "Tools & Building Blocks",
       subtitle: "Make، n8n، Zapier + اللبنات الأساسية لأي Flow.",
       lessons: [
-        automatorShipped(1, "automator-m2-l1-tools-landscape", "Make vs n8n vs Zapier"),
-        automatorShipped(2, "automator-m2-l2-triggers-actions", "Triggers + Actions"),
-        automatorShipped(3, "automator-m2-l3-filters-routers", "Filters & Routers"),
+        automatorShipped(1, "automator-m3-l1-tools-landscape", "Make vs n8n vs Zapier"),
+        automatorShipped(2, "automator-m3-l2-triggers-actions", "Triggers + Actions"),
+        automatorShipped(3, "automator-m3-l3-filters-routers", "Filters & Routers"),
       ],
     },
     {
@@ -418,9 +418,9 @@ function automatorModules(): CurriculumModule[] {
       subtitle: "ربط منتج Builder بالعالم الخارجي — DB، APIs، Errors.",
       level: "technical",
       lessons: [
-        automatorShipped(1, "automator-m3-l1-connect-database", "وصّل الـ DB من Builder"),
-        automatorShipped(2, "automator-m3-l2-webhooks-api", "Webhooks & APIs"),
-        automatorShipped(3, "automator-m3-l3-error-handling", "Error Handling"),
+        automatorShipped(1, "automator-m4-l1-connect-database", "وصّل الـ DB من Builder"),
+        automatorShipped(2, "automator-m4-l2-webhooks-api", "Webhooks & APIs"),
+        automatorShipped(3, "automator-m4-l3-error-handling", "Error Handling"),
       ],
     },
     {
@@ -430,9 +430,9 @@ function automatorModules(): CurriculumModule[] {
       subtitle: "LLMs، RAG، و Agents جوه الـ Flow — مش بس ChatGPT.",
       level: "technical",
       lessons: [
-        automatorShipped(1, "automator-m4-l1-llm-in-flow", "LLM جوه الـ Flow"),
-        automatorShipped(2, "automator-m4-l2-rag-in-n8n", "RAG جوه الـ Automation"),
-        automatorShipped(3, "automator-m4-l3-agents", "Agents بياخدوا قرارات"),
+        automatorShipped(1, "automator-m5-l1-llm-in-flow", "LLM جوه الـ Flow"),
+        automatorShipped(2, "automator-m5-l2-rag-in-n8n", "RAG جوه الـ Automation"),
+        automatorShipped(3, "automator-m5-l3-agents", "Agents بياخدوا قرارات"),
       ],
     },
     {
@@ -441,9 +441,9 @@ function automatorModules(): CurriculumModule[] {
       title: "Customer Journey Automation",
       subtitle: "Leads من Creator → WhatsApp → CRM → Sales، كاملة.",
       lessons: [
-        automatorShipped(1, "automator-m5-l1-lead-capture", "استقبال Leads من Creator"),
-        automatorShipped(2, "automator-m5-l2-whatsapp-flow", "WhatsApp Flow ذكي"),
-        automatorShipped(3, "automator-m5-l3-follow-up", "المتابعة التلقائية + CRM"),
+        automatorShipped(1, "automator-m6-l1-lead-capture", "استقبال Leads من Creator"),
+        automatorShipped(2, "automator-m6-l2-whatsapp-flow", "WhatsApp Flow ذكي"),
+        automatorShipped(3, "automator-m6-l3-follow-up", "المتابعة التلقائية + CRM"),
       ],
     },
     {
@@ -452,7 +452,7 @@ function automatorModules(): CurriculumModule[] {
       title: "Closing the Loop",
       subtitle: "بياناتك جاهزة — Analyst بيستنّاك.",
       lessons: [
-        automatorShipped(1, "automator-m6-l1-closing-loop", "بياناتك جاهزة — اللي جاي"),
+        automatorShipped(1, "automator-m7-l1-closing-loop", "بياناتك جاهزة — اللي جاي"),
       ],
     },
   ];
@@ -467,7 +467,7 @@ function analystModules(): CurriculumModule[] {
       title: "أنت فين في الخريطة؟",
       subtitle: "ربط Automator باللي جاي — بياناتك جاهزة، دلوقتي بتسأل.",
       lessons: [
-        analystShipped(1, "analyst-m0-l1-from-automation-to-insight", "بياناتك جاهزة — دلوقتي بتسأل"),
+        analystShipped(1, "analyst-m1-l1-from-automation-to-insight", "بياناتك جاهزة — دلوقتي بتسأل"),
       ],
     },
     {
@@ -476,8 +476,8 @@ function analystModules(): CurriculumModule[] {
       title: "Analyst Thinking",
       subtitle: "حوّل الشعور لسؤال — والسؤال لقرار.",
       lessons: [
-        analystShipped(1, "analyst-m1-l1-feeling-to-question", "حوّل الشعور لسؤال"),
-        analystShipped(2, "analyst-m1-l2-right-question-rule", "السؤال الصح أهم من الإجابة"),
+        analystShipped(1, "analyst-m2-l1-feeling-to-question", "حوّل الشعور لسؤال"),
+        analystShipped(2, "analyst-m2-l2-right-question-rule", "السؤال الصح أهم من الإجابة"),
       ],
     },
     {
@@ -486,8 +486,8 @@ function analystModules(): CurriculumModule[] {
       title: "جمع البيانات",
       subtitle: "٣ مصادر + AI كأداة تلخيص.",
       lessons: [
-        analystShipped(1, "analyst-m2-l1-three-sources", "المصادر الثلاثة"),
-        analystShipped(2, "analyst-m2-l2-ai-summarization", "AI = أسرع محلّل عندك"),
+        analystShipped(1, "analyst-m3-l1-three-sources", "المصادر الثلاثة"),
+        analystShipped(2, "analyst-m3-l2-ai-summarization", "AI = أسرع محلّل عندك"),
       ],
     },
     {
@@ -496,8 +496,8 @@ function analystModules(): CurriculumModule[] {
       title: "تفسير البيانات",
       subtitle: "Patterns vs Outliers — وكل تفسير ينتهي بقرار.",
       lessons: [
-        analystShipped(1, "analyst-m3-l1-pattern-vs-outlier", "Pattern أم Outlier؟"),
-        analystShipped(2, "analyst-m3-l2-decision-rule", "كل تفسير ينتهي بـ «إذًا هعمل…»"),
+        analystShipped(1, "analyst-m4-l1-pattern-vs-outlier", "Pattern أم Outlier؟"),
+        analystShipped(2, "analyst-m4-l2-decision-rule", "كل تفسير ينتهي بـ «إذًا هعمل…»"),
       ],
     },
     {
@@ -506,8 +506,8 @@ function analystModules(): CurriculumModule[] {
       title: "القرارات والـ Dashboard",
       subtitle: "٤ أرقام + Review أسبوعي = نظام قرار حقيقي.",
       lessons: [
-        analystShipped(1, "analyst-m4-l1-four-numbers-dashboard", "٤ أرقام بس"),
-        analystShipped(2, "analyst-m4-l2-weekly-review-ritual", "Review أسبوعي = ١٥ دقيقة"),
+        analystShipped(1, "analyst-m5-l1-four-numbers-dashboard", "٤ أرقام بس"),
+        analystShipped(2, "analyst-m5-l2-weekly-review-ritual", "Review أسبوعي = ١٥ دقيقة"),
       ],
     },
     {
@@ -516,8 +516,8 @@ function analystModules(): CurriculumModule[] {
       title: "لما الحاجات بتبوظ",
       subtitle: "أخطاء الأسئلة والتفسير — وعلاجها.",
       lessons: [
-        analystShipped(1, "analyst-m5-l1-question-mistakes", "أخطاء الأسئلة"),
-        analystShipped(2, "analyst-m5-l2-interpretation-mistakes", "أخطاء التفسير"),
+        analystShipped(1, "analyst-m6-l1-question-mistakes", "أخطاء الأسئلة"),
+        analystShipped(2, "analyst-m6-l2-interpretation-mistakes", "أخطاء التفسير"),
       ],
     },
     {
@@ -526,7 +526,7 @@ function analystModules(): CurriculumModule[] {
       title: "Closing the Loop",
       subtitle: "قراراتك جاهزة — Business بيستنّاك.",
       lessons: [
-        analystShipped(1, "analyst-m6-l1-from-decisions-to-business", "قراراتك جاهزة → Business بيشغّلها"),
+        analystShipped(1, "analyst-m7-l1-from-decisions-to-business", "قراراتك جاهزة → Business بيشغّلها"),
       ],
     },
   ];
@@ -541,7 +541,7 @@ function businessModules(): CurriculumModule[] {
       title: "أنت فين في الخريطة؟",
       subtitle: "من Operator لـ Leader — دورك بقى مختلف.",
       lessons: [
-        businessShipped(1, "business-m0-l1-from-decisions-to-leadership", "القرارات بقت بتنفّذ نفسها — دورك إيه؟"),
+        businessShipped(1, "business-m1-l1-from-decisions-to-leadership", "القرارات بقت بتنفّذ نفسها — دورك إيه؟"),
       ],
     },
     {
@@ -550,8 +550,8 @@ function businessModules(): CurriculumModule[] {
       title: "Business Thinking",
       subtitle: "Reactive vs Proactive + إيقاع أسبوعي يربط الـ ٤ مسارات.",
       lessons: [
-        businessShipped(1, "business-m1-l1-reactive-vs-proactive", "Reactive vs Proactive"),
-        businessShipped(2, "business-m1-l2-weekly-rhythm", "أسبوعك = ٤ مسارات"),
+        businessShipped(1, "business-m2-l1-reactive-vs-proactive", "Reactive vs Proactive"),
+        businessShipped(2, "business-m2-l2-weekly-rhythm", "أسبوعك = ٤ مسارات"),
       ],
     },
     {
@@ -560,8 +560,8 @@ function businessModules(): CurriculumModule[] {
       title: "إدارة العملاء بالـ AI",
       subtitle: "دورة حياة العميل + Follow-up Flow.",
       lessons: [
-        businessShipped(1, "business-m2-l1-customer-lifecycle", "دورة حياة العميل"),
-        businessShipped(2, "business-m2-l2-retention-flow", "Follow-up Flow"),
+        businessShipped(1, "business-m3-l1-customer-lifecycle", "دورة حياة العميل"),
+        businessShipped(2, "business-m3-l2-retention-flow", "Follow-up Flow"),
       ],
     },
     {
@@ -570,8 +570,8 @@ function businessModules(): CurriculumModule[] {
       title: "إدارة العمليات بالـ AI",
       subtitle: "Strategic / Operational / Administrative — كل نوع في مكانه.",
       lessons: [
-        businessShipped(1, "business-m3-l1-strategic-operational-admin", "٣ أنواع شغل"),
-        businessShipped(2, "business-m3-l2-delegate-or-automate", "Delegate ولا Automate؟"),
+        businessShipped(1, "business-m4-l1-strategic-operational-admin", "٣ أنواع شغل"),
+        businessShipped(2, "business-m4-l2-delegate-or-automate", "Delegate ولا Automate؟"),
       ],
     },
     {
@@ -580,8 +580,8 @@ function businessModules(): CurriculumModule[] {
       title: "النمو والتوسع",
       subtitle: "علامات الجاهزية + ترتيب التوسع الصح.",
       lessons: [
-        businessShipped(1, "business-m4-l1-readiness-signals", "علامات الجاهزية للتوسع"),
-        businessShipped(2, "business-m4-l2-system-then-people", "System الأول — الناس بعدين"),
+        businessShipped(1, "business-m5-l1-readiness-signals", "علامات الجاهزية للتوسع"),
+        businessShipped(2, "business-m5-l2-system-then-people", "System الأول — الناس بعدين"),
       ],
     },
     {
@@ -590,8 +590,8 @@ function businessModules(): CurriculumModule[] {
       title: "لما الحاجات بتبوظ",
       subtitle: "Reactive Relapse و Premature Scaling — أخطر فخّين.",
       lessons: [
-        businessShipped(1, "business-m5-l1-reactive-relapse", "الرجوع لـ Reactive Mode"),
-        businessShipped(2, "business-m5-l2-premature-scaling", "توسع قبل الأوان"),
+        businessShipped(1, "business-m6-l1-reactive-relapse", "الرجوع لـ Reactive Mode"),
+        businessShipped(2, "business-m6-l2-premature-scaling", "توسع قبل الأوان"),
       ],
     },
     {
@@ -600,7 +600,7 @@ function businessModules(): CurriculumModule[] {
       title: "Closing the Loop — النظام الكامل",
       subtitle: "الـ ٥ مسارات في يومك — شخص + AI + System.",
       lessons: [
-        businessShipped(1, "business-m6-l1-full-ecosystem", "الـ ٥ مسارات في يومك"),
+        businessShipped(1, "business-m7-l1-full-ecosystem", "الـ ٥ مسارات في يومك"),
       ],
     },
   ];
