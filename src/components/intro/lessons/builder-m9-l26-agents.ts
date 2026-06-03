@@ -5,105 +5,106 @@ import {
   Image as ImageIcon,
   Scale,
   Rocket,
-  BookOpen, FlaskConical } from "lucide-react";
+  BookOpen,
+  FlaskConical,
+} from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 import agentsDiagram from "@/assets/lessons/concepts/agents-diagram.jpg";
 
 /**
  * Builder · M9 · Lesson 03 — Agents: AI بياخد قرارات
- * Format: Hero → Video → Concept → Platform Screenshot → Failure×Right → Mission
- *
- * يبني على M9.2 (RAG) — RAG بيرد. Agent بيرد ويعمل حاجة (tool calls).
+ * V2: Tension → Quick Win (Comparison) → One Concept → How it works → Mission (Simplified)
  */
 export const BUILDER_M9_AGENTS_BLOCKS: IntroLessonContent = [
   {
     icon: Sparkles,
-    eyebrow: "HERO",
-    title: "Agent = AI بياخد قرارات ويستخدم أدوات لوحده",
+    eyebrow: "البداية",
+    title: "الـ AI بتاعك بيردّ... بس مش بيعمل حاجة",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "RAG (M9.2) بيرد على الأسئلة. بس لو المستخدم قال \"احجزلي ميعاد بكرة الساعة ٤\" — دي مش إجابة، دي عملية.",
-        "Agent = LLM + مجموعة tools (functions) + قدرة يقرّر إمتى ينادي tool ومتى يخلّص. بدل ما يرد بنص، بياخد actions حقيقية.",
-        "Agent مكتوب صح بيعمل في ٣٠ ثانية اللي اليوزر كان هياخد ٥ دقايق يعمله بإيده — ودي القفزة من \"chatbot\" لـ \"عامل ذكي\".",
+        "الدرس اللي فات (RAG) خلّى الـ AI يرد على أسئلة. بس لو اليوزر قال \"احجزلي ميعاد بكرة الساعة ٤\" — دي مش إجابة، ده فعل.",
+        "تخيل الـ AI بتاعك زي موظف خدمة عملاء شاطر في الكلام، بس إيده مربوطة. بيوصفلك الحل، بس مش بيعملهولك.",
+        "الدرس ده هو القفزة من \"Chatbot بيرد\" لـ \"Agent بينفّذ\". هي دي النقلة اللي بتخلي اليوزر يحس إن الـ AI ده مش لعبة، ده مساعد حقيقي بيخلّص شغل.",
       ],
+    },
+  },
+  {
+    icon: Scale,
+    eyebrow: "جرّب بنفسك",
+    title: "شوف الفرق: Chatbot بيقول vs. Agent بيعمل",
+    block: {
+      kind: "comparison",
+      left: {
+        label: "فاشل: Chatbot حافظ مش فاهم",
+        body: "العميل: \"عايز ألغي اشتراكي\".\nالـ AI: \"تمام، عشان تلغي اشتراكك، روح على Settings → Billing → Cancel Subscription، ودوس تأكيد\".\n\nالنتيجة: العميل قفل الشات محبط. إنت اديته معلومة بدل ما تخلّص له طلبه. حس إن الـ AI بتاعك ديكور مش أكتر.",
+      },
+      right: {
+        label: "صح: Agent إيده في الشغل",
+        body: "العميل: \"عايز ألغي اشتراكي\".\nالـ Agent: (بيستخدم tool اسمها `getSubscription`) \"لقيت اشتراكك Pro بيتجدّد كمان شهرين. أكّد الإلغاء؟\"\nالعميل: \"آه\".\nالـ Agent: (بيستخدم tool اسمها `cancelSubscription`) \"تمام، اتلغى. هيفضل شغال معاك لآخر الشهر\".\n\nالنتيجة: المهمة خلصت في ٢٠ ثانية والعميل معملش أي مجهود.",
+      },
     },
   },
   {
     icon: BookOpen,
-    eyebrow: "مصطلحات الدرس",
-    title: "اللي هتسمعه في الدرس ده",
+    eyebrow: "المصطلح الوحيد",
+    title: "إيه هو الـ Agent؟",
     block: {
       kind: "concepts",
       items: [
-        { term: "Agent", meaning: "برنامج ذكي بيفكر ويقرر يستخدم أدوات إيه عشان يخلص مهمة.", example: "زي مسوق معاه شيت إكسيل وقلم وبوصلة، وبيقرر لوحده يستخدم إيه عشان يزود المبيعات." },
-        { term: "Tool", meaning: "أي برنامج أو خدمة خارجية الـ Agent يقدر يناديها تخلصه.", example: "زي ما التاجر بيستخدم \"آلة حاسبة\" أو \"سرش جوجل\" عشان يعرف سعر الدولار." },
-        { term: "Parameters (Inputs)", meaning: "البيانات أو الخانات اللي الأداة محتاجاها منك عشان تشتغل صح.", example: "لو قلت للـ Agent \"ابعت إيميل\"، لازم توصفله الـ Parameters يعني (الإيميل، والمحتوى)." },
-        { term: "Loop (ReAct)", meaning: "دايرة بيلف فيها الـ Agent: يفكر، ينفذ، يشوف النتيجة، ويكرر.", example: "زي المحاسب اللي بيراجع الفواتير فاتورة فاتورة، ويفضل شغال لحد ما يخلصهم كلهم." },
-        { term: "Autonomy (الاستقلالية)", meaning: "قدرة الـ Agent إنه يختار خطواته من غير ما إنت تتدخل.", example: "زي سواق أوبر، إنت بتديله الوجهة (الهدف) وهو بيسوق ويختار الطرق لوحده." },
-        { term: "Multi-step Planner", meaning: "لما الـ Agent يخطط لمجموعة خطوات ورا بعض عشان يوصل لهدف كبير.", example: "زي مدير مشروع بيقسم حملة إعلانية لمراحل: (تصميم، ثم كتابة، ثم نشر)." },
-      ],
-    },
-  },
-  {
-    icon: PlayCircle,
-    eyebrow: "فيديو الدرس",
-    title: "اتفرّج الأول",
-    tone: "accent",
-    block: {
-      kind: "lessonVideo",
-      caption: "Tool Calling، ReAct loop، multi-step agents، وفين تحط human-in-the-loop.",
-    },
-  },
-  {
-    icon: Lightbulb,
-    eyebrow: "الفكرة",
-    title: "Tools + Loop = Agent",
-    block: {
-      kind: "paragraphs",
-      paragraphs: [
-        "Tool = function عادية في كودك (مثلاً createBooking، sendEmail، searchProducts) بتوصّفها للـ LLM في الـ schema بتاعها (الاسم، الوصف، الـ parameters). الموديل بيشوف القايمة دي ضمن الـ prompt ويقرّر إمتى يستخدم أنهي واحد.",
-        "Tool Calling Loop (الـ ReAct pattern):\n  1) المستخدم يبعت request\n  2) الموديل يفكّر، ويرجّع: \"عايز أنادي searchProducts({ query: 'laptop' })\"\n  3) الكود بتاعك ينفّذ الـ function ويرجّع النتيجة للموديل\n  4) الموديل ياخد النتيجة، يفكّر تاني، يقرّر: ينادي tool تاني، ولا يخلّص ويرد على المستخدم\n  5) الـ loop يقف لما الموديل يرجّع رد نهائي بدون tool call.",
-        "أنواع الـ Agents حسب التعقيد:\n  - Single-tool: tool واحد بس (chatbot يقدر يبحث في قاعدة بيانات)\n  - Multi-tool: ٣-١٠ tools (دعم فني يقدر يبحث، ينشئ تذكرة، يبعت إيميل)\n  - Multi-step planner: agent يخطّط steps قبل ينفّذ (للمهام المعقّدة)\n  - Multi-agent: agents بتتكلّم مع بعضها (researcher → writer → reviewer)",
-        "Guardrails ضروريّة: لكل tool خطير (يمسح، يدفع، يبعت لمستخدمين تانيين) → ضع human-in-the-loop (\"تأكّد إنك عايز تحجز ميعاد ٤ مساءً؟ نعم/لا\"). حدّد max_iterations عشان الـ loop ميتعلّقش. سجّل كل tool call في DB (audit log) عشان لو حصل غلط تعرف ترجع.",
+        {
+          term: "Agent",
+          meaning:
+            "برنامج ذكي عنده (مخ) عشان يفكّر ويقرّر، و(إيدين) عشان ينفّذ.",
+          example:
+            "زي الشيف اللي عنده عقل (عشان يبتكر وصفة) وأدوات زي سكينة وبوتاجاز (عشان يطبخ بجد). المخ هو الـ LLM، والأدوات هي الـ Tools.",
+        },
       ],
     },
   },
   {
     icon: ImageIcon,
-    eyebrow: "شوف بنفسك",
-    title: "AI Agent: Think → Act → Observe → Repeat",
+    eyebrow: "تحت الغطا",
+    title: "الـ Agent بيفكر إزاي: فكّر ← نفّذ ← شوف النتيجة ← كرّر",
     tone: "primary",
     block: {
       kind: "screenshot",
       src: agentsDiagram,
-      alt: "Diagram لـ AI Agent: LLM في النص، وحواليه أدوات (Search, Calculator, Database, Email, Calendar)، مع loop بيدور Think → Act → Observe → Repeat",
+      alt: "رسم بياني لـ AI Agent: في النص LLM، وحواليه أدوات (بحث، آلة حاسبة، داتابيز)، وبيلف في دايرة: فكر -> نفذ -> لاحظ -> كرر",
       caption:
-        "الـ Agent مش مجرد LLM بيرد. هو LLM + tools + loop. لما يجي سؤال، الـ agent بيفكّر (Think)، يقرّر يستخدم أي tool (Act)، يشوف النتيجة (Observe)، ويكرّر لحد ما يوصل للإجابة النهائية. ده اللي بيخلّيه يقدر يتعامل مع مهام معقّدة تحتاج بحث، حسابات، أو وصول لبيانات حيّة — مش بس generate نص من اللي اتدرّب عليه.",
-      label: "AI Agent — Tools في Loop",
+        "الـ Agent مش مجرد LLM بيرد وخلاص. هو دايرة تفكير وتنفيذ. لما بيجيله طلب، بيفكّر (Think)، ويقرر يستخدم أنهي أداة (Act)، ويشوف نتيجتها (Observe)، ويكرر الدايرة دي لحد ما يوصل للحل النهائي. ده اللي بيخليه يحل مشاكل معقدة.",
+      label: "دايرة تفكير الـ Agent",
     },
   },
   {
-    icon: Scale,
-    eyebrow: "Failure × Right",
-    title: "Chatbot يقول vs Agent يعمل",
+    icon: Lightbulb,
+    eyebrow: "التفاصيل",
+    title: "إزاي الـ Agent بيستخدم الـ Tools بتاعته؟",
     block: {
-      kind: "comparison",
-      left: {
-        label: "FAILURE — Chatbot كلامه لذيذ بس عاجز",
-        body: "المستخدم: \"عايز ألغي اشتراكي\". الـ AI: \"تمام، عشان تلغي اشتراكك، روح على Settings → Billing → Cancel Subscription، اضغط تأكيد\". المستخدم يقفل الصفحة محبط. النتيجة: قدّمت معلومة بدل ما تعمل الفعل. المستخدم يحس إن الـ AI cosmetic مش حقيقي.",
-      },
-      right: {
-        label: "RIGHT — Agent بينفّذ بنفسه",
-        body: "tools = [getSubscription, cancelSubscription, sendConfirmationEmail].\nالمستخدم: \"عايز ألغي اشتراكي\".\nAgent: ينادي getSubscription({ user_id }) → يلاقي Plan: Pro، renews 2026-06-15.\nAgent يرد: \"اشتراكك Pro بيتجدّد 15 يونيو. تأكيد إلغاء؟\"\nالمستخدم: \"نعم\".\nAgent ينادي cancelSubscription({ id, reason: 'user_request' }) ثم sendConfirmationEmail(...).\nAgent يرد: \"تمام، تم الإلغاء. هيكمّل شغّال لحد 15 يونيو وبعدها يقف\".\nالنتيجة: مهمة اتعملت في ٢٠ ثانية بدون ما المستخدم يلمس Settings.",
-      },
+      kind: "paragraphs",
+      paragraphs: [
+        "الـ Tool هي مجرد function في الكود بتاعك (زي `sendEmail` أو `searchProducts`). إنت بتدي للـ LLM قايمة بالـ tools المتاحة ووصف لكل واحدة، وهو بيقرر لوحده إمتى يستخدمها.",
+        "الـ Agent بيمشي في دايرة تفكير اسمها (ReAct Loop):\n  ١) اليوزر يطلب حاجة.\n  ٢) الـ LLM يفكّر ويرد: \"عايز أستخدم tool اسمها `searchProducts` وأدور على 'لابتوب'\".\n  ٣) الكود بتاعك ينفّذ الـ tool دي ويرجّع النتيجة للـ LLM.\n  ٤) الـ LLM يبص على النتيجة ويفكّر تاني: هل أستخدم tool تانية؟ ولا خلاص أرد على اليوزر؟\n  ٥) الدايرة دي بتقف لما الـ LLM يقرر إنه خلص ويرجع رد نهائي.",
+        "الأمان الأول: أي tool خطيرة (زي الدفع أو مسح بيانات) لازم تحط خطوة تأكيد من اليوزر (Human-in-the-loop). وكمان لازم تحدد أقصى عدد محاولات عشان الـ Agent ميفضلش يلف في الدايرة دي للأبد.",
+      ],
+    },
+  },
+  {
+    icon: PlayCircle,
+    eyebrow: "شرح بالفيديو",
+    title: "شوف الدرس ده عملي",
+    tone: "accent",
+    block: {
+      kind: "lessonVideo",
+      caption:
+        "الفرق بين الـ Agent والـ Chatbot، وإزاي تبني واحد بيفكر وينفذ بجد.",
     },
   },
   {
     icon: Rocket,
-    eyebrow: "دورك دلوقتي",
-    title: "صمّم أول Agent لتطبيقك (3 tools كحد أقصى)",
+    eyebrow: "اختبر نفسك",
+    title: "هتعرف تتصرف؟",
     tone: "accent",
     block: {
       kind: "quiz",
@@ -112,70 +113,68 @@ export const BUILDER_M9_AGENTS_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "عميل جه يشتكي إن المنتج اللي اشتراه فيه عيب ومش لاقي فاتورته. الـ Agent بتاعك عنده tool اسمها `search_user_orders` بتجيب طلبات العميل بناءً على الـ ID بتاعه، و tool تانية اسمها `create_support_ticket` عشان يفتح شكوى. إيه المفروض الـ Agent يعمله الأول؟",
+          question:
+            "عميل بيشتكي إن المنتج اللي اشتراه بايظ ومش لاقي فاتورته. الـ Agent بتاعك عنده tool اسمها `search_user_orders` بتجيب طلبات العميل، و tool تانية اسمها `create_support_ticket` عشان تفتح شكوى. إيه أول حاجة الـ Agent المفروض يعملها؟",
           options: [
             "يستخدم `search_user_orders` الأول عشان يلاقي طلبات العميل ويدور على الفاتورة.",
             "يستخدم `create_support_ticket` على طول عشان يفتح شكوى للعميل.",
-            "يسأل العميل عن رقم الفاتورة أو أي بيانات تانية يقدر بيها يلاقي الطلب."
+            "يسأل العميل عن رقم الفاتورة تاني.",
           ],
           correctIndex: 0,
-          explanation: "الـ System Prompt بيوضّح إن الخطوة الأولى دايمًا البحث عن حل، وده ينطبق على البحث عن بيانات الطلب قبل عمل أي إجراء تاني."
+          explanation:
+            "الصح دايمًا إن الـ Agent يجمع معلومات الأول قبل ما ياخد أي أكشن. زي ما أي موظف شاطر بيعمل.",
         },
         {
           id: "apply2",
           bloom: "apply",
-          question: "العميل في السيناريو اللي فات عايز يرجع المنتج اللي فيه عيب ويرجع له فلوسه. الـ Agent لقى الطلب لكن مفيش tool اسمها `process_refund` والـ FAQs مفيهاش أي معلومة عن استرجاع الفلوس. إيه التصرف الصح للـ Agent في الحالة دي؟",
+          question:
+            "العميل عايز يرجع المنتج البايظ وياخد فلوسه. الـ Agent بتاعك مالقاش أي tool اسمها `process_refund`. إيه التصرف الصح للـ Agent في الحالة دي؟",
           options: [
-            "يقول للعميل إنه مش لاقي حل ويرفض يرجع المنتج.",
-            "يقترح على العميل إنه يفتح تذكرة دعم عشان فريق خدمة العملاء يتولى الموضوع، وياخد موافقة العميل.",
-            "يدور على tool تانية أو يحاول يخمن طريقة ليرجع الفلوس."
+            "يقول للعميل إنه مش هيقدر يساعده.",
+            "يقترح على العميل إنه يفتح تذكرة دعم عشان فريق خدمة العملاء يتدخل، وياخد موافقته الأول.",
+            "يخترع طريقة يرجع بيها الفلوس.",
           ],
           correctIndex: 1,
-          explanation: "الـ System Prompt بيقول: لو مالقيتش إجابة أو المستخدم مش راضي، اقترح تفتح تذكرة واخد موافقته، وده بيحافظ على حدود قدرات الـ Agent."
+          explanation:
+            "لما الـ Agent يوصل لحدود قدراته، أحسن حاجة إنه يسلّم الموضوع لبني آدم (فريق الدعم) بدل ما يفتي.",
         },
         {
           id: "apply3",
           bloom: "apply",
-          question: "الـ Agent بتاعك بيحاول ينفذ tool اسمها `delete_user_data` بناءً على طلب العميل، بس السيستم رجع له `error: 'Auth token expired'`. الـ Agent المفروض يتصرف إزاي بناءً على الـ Guardrails اللي حطيتها؟",
+          question:
+            "الـ Agent بيحاول ينفذ tool اسمها `delete_user_data`، بس السيستم رجّعله error. المفروض يتصرف إزاي؟",
           options: [
-            "يعتذر للعميل ويقول له إنه مش قادر ينفذ الطلب دلوقتي بسبب مشكلة تقنية ويسجل الـ error في الـ audit log.",
-            "يحاول ينفذ نفس الـ tool تاني كذا مرة عشان ممكن تكون مشكلة لحظية.",
-            "ياخد طلب العميل وياجله لوقت تاني لما الـ token يشتغل تاني ويقول للعميل إنه هيرد عليه بعدين."
+            "يعتذر للعميل ويقوله إن فيه مشكلة تقنية، ويسجّل الـ error ده عشان المطورين يشوفوه.",
+            "يفضل يحاول ينفذ نفس الـ tool كذا مرة ورا بعض.",
+            "يقول للعميل إنه هيحاول تاني بعدين.",
           ],
           correctIndex: 0,
-          explanation: "في حالات الفشل، لو الـ Tool رجّع error، الـ Agent لازم يعتذر للمستخدم وميعيدش المحاولة بشكل لا نهائي، ويسجل ده في الـ audit log."
-        }
-      ]
+          explanation:
+            "الأمان أهم حاجة. لو في مشكلة تقنية، الـ Agent لازم يبلغ العميل بصراحة ويسجّل المشكلة، مش يفضل يحاول وخلاص.",
+        },
+      ],
     },
   },
   {
     icon: Rocket,
-    eyebrow: "Mission",
-    title: "صمّم Agent بـ ٣ Tools لمهمة محددة",
+    eyebrow: "مهمتك",
+    title: "صمّم Tool واحدة لـ Agent بتاعك",
     tone: "primary",
     block: {
       kind: "mission",
       intro:
-        "Agent = LLM + tools + loop. هتصمم agent محدد بـ ٣ tools يقدر يخلّص مهمة حقيقية.",
+        "قوة أي Agent في الـ Tools بتاعته. مهمتك بسيطة: هتصمم Tool واحدة بس، بتعمل حاجة محددة ومفيدة.",
       prompt:
-        "في تسليمك:\n\n١) المهمة في سطر (مثال: research agent يجمع تقرير سوق):\n٢) System Prompt للـ agent (الدور + الحدود + متى يستخدم أنهي tool):\n٣) Tools (٣):\n   - Tool 1: name + description + inputs + outputs\n   - Tool 2: ...\n   - Tool 3: ...\n٤) Stopping condition — إمتى الـ loop يقف؟ (max steps / done flag / time)\n٥) سيناريو يفشل فيه الـ agent + إزاي هتتعامل؟",
+        "في تسليمك، جاوب على دول بس:\n\n١) إيه المهمة الكبيرة اللي الـ Agent بتاعك بيعملها؟ (مثال: يساعد العملاء يرجعوا منتجات)\n\n٢) صمّم Tool واحدة بس للمهمة دي:\n   - اسم الـ Tool (بالإنجليزي، زي `find_order`)\n   - وصف بسيط (بتعمل إيه في سطر واحد)\n   - إيه المعلومة اللي محتاجاها عشان تشتغل؟ (مثال: رقم الطلب)",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",
       rubric: [
         {
-          label: "Agent + Tools واضحين",
-          weight: 60,
+          label: "فكرة الـ Tool واضحة",
+          weight: 100,
           criteria: [
-            "System Prompt فيه دور + حدود + قاعدة اختيار tool.",
-            "الـ ٣ tools كل واحدة بـ inputs/outputs محددين.",
-          ],
-        },
-        {
-          label: "Stopping + Failure",
-          weight: 40,
-          criteria: [
-            "Stopping condition معرّفة بشكل قابل للقياس.",
-            "Failure scenario معه استراتيجية مش «هيشتغل بقى».",
+            "اسم الـ Tool ووصفه منطقيين للمهمة.",
+            "المدخلات (المعلومة اللي محتاجاها) محددة وواضحة.",
           ],
         },
       ],
@@ -183,21 +182,21 @@ export const BUILDER_M9_AGENTS_BLOCKS: IntroLessonContent = [
   },
   {
     icon: FlaskConical,
-    eyebrow: "جزء من المنصة",
-    title: "المساعد عنده tools يستخدمها — مش بس بيرد",
+    eyebrow: "مثال من المنصة",
+    title: "مساعد Lovable هو Agent، مش مجرد Chatbot",
     tone: "primary",
     block: {
       kind: "caseStudy",
-      title: "المساعد عنده tools يستخدمها — مش بس بيرد",
+      title: "مساعد Lovable هو Agent، مش مجرد Chatbot",
       summary:
-        "الجزء ده من المنصة اتبنى بمسار Builder — نفس اللي بتتعلمه. المساعد مش LLM عادي. لو سألته «وريني تقدّمي»، هو بياخد قرار يستخدم tool اسمه get_user_progress، يجيب البيانات، ويرد بناءً عليها. ده agent مش chatbot.",
+        "المساعد اللي بتستخدمه في المنصة هنا مبني بنفس الطريقة اللي بتتعلمها. هو مش LLM عادي. لو سألته \"وريني تقدّمي\"، هو بياخد قرار يستخدم tool اسمها get_user_progress، يجيب بياناتك، ويرد عليك بيها. ده agent، مش chatbot.",
       bullets: [
-        "Tools المتاحة: search_knowledge, get_user_progress, get_current_lesson.",
-        "الـ LLM بياخد قرار يستخدم أنهي tool حسب السؤال.",
-        "تقدر تشوف الـ tool calls في /assistant-runtime → «Tools».",
+        "الـ Tools المتاحة له: البحث في الدروس، جلب بيانات تقدمك، معرفة الدرس الحالي.",
+        "الـ LLM بيقرر يستخدم أنهي tool حسب سؤالك بالظبط.",
+        "تقدر تشوف الـ tool calls دي بنفسك في صفحة /assistant-runtime.",
       ],
       pathAngle: "builder",
       link: { label: "افتح /assistant-runtime", href: "/assistant-runtime" },
     },
-  }
+  },
 ];

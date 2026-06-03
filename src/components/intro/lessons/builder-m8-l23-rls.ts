@@ -65,7 +65,7 @@ export const BUILDER_M7_RLS_BLOCKS: IntroLessonContent = [
     eyebrow: "المصطلح الوحيد",
     title: "الـ Policy: حارس شخصي لكل سطر",
     block: {
-      kind: "concept",
+      kind: "concepts",
       term: "Policy (سياسة أمان)",
       meaning:
         "قاعدة أمان بتتكتب على مستوى الداتابيز نفسها، مش في الكود بتاعك. القاعدة دي بتتنفذ تلقائيًا على أي طلب بيانات عشان تفلتره.",
