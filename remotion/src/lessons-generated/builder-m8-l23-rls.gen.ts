@@ -5,123 +5,85 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "title": "RLS: حارس على باب كل سطر",
-    "chip": "أهلًا بيك يا صاحبي",
-    "subtitle": "إزاي تتحكم في مين يشوف إيه بالظبط",
-    "highlight": "في الـ Database"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "واجهة وخلفية",
-    "term": "Frontend & Backend",
-    "definition": "الـ Frontend واجهة الموقع، والـ Backend هو الشغل اللي ورا اللي مش بنشوفه."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "definition": "أمر أو طلب بتبعته للأكسيل أو الـ Database عشان تجيب معلومة معينة.",
-    "tag": "طلب بيانات",
-    "term": "Query (استعلام)"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "tag": "قاعدة صلاحيات",
-    "term": "Policy (سياسة)",
-    "definition": "قاعدة كود بتحدد مين من الموظفين مسموح له يلمس بيانات معينة."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "tag": "صلاحية كاملة",
-    "term": "Service Role (مفتاح الإدارة)",
-    "definition": "مفتاح مع المدير بيدي له صلاحية يدخل على كل حاجة من غير قيود."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "definition": "كود شفرة بيعرف السيستم مين العميل اللي فاتح دلوقتي حالا.",
-    "tag": "معرّف المستخدم",
-    "term": "auth.uid()"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "definition": "سؤال صغير جوه سؤال كبير عشان تصفي البيانات بدقة أكتر.",
-    "tag": "سؤال جوه سؤال",
-    "term": "Subquery (استعلام فرعي)"
+    "subtitle": "أهلًا بيك يا صاحبي!",
+    "highlight": "خطورة تسريب البيانات",
+    "chip": "المشكلة",
+    "title": "إزاي تمنع بيانات عميل تظهر لعميل تاني؟"
   },
   {
     "card": "BulletsCard",
     "accent": "lavender",
     "bullets": [
-      "في M5.3 شفنا إن الجداول فيها column اسمه user_id، بيقول كل سطر يخص مين، بس مفيش حاجة لوحدها بتمنع مستخدم تاني يشوفه."
+      "مجرد إنك عارف الـ ID بتاع حاجة، مش المفروض يديلك الحق تشوفها.",
+      "الدرس اللي فات عرفنا إزاي السيرفر بيتأكد 'إنت مين' بالـ JWT.",
+      "النهاردة هنعرف إزاي الداتابيز نفسها بتتأكد 'إنت مسموح لك تشوف إيه؟'."
     ],
-    "title": "Row Level Security = فلتر بيتلصق على كل query"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "peach",
-    "bullets": [
-      "الـ RLS ميزة مدمجة في PostgreSQL، بتفعّلها على جدول، وتكتب Policy = شرط SQL بيتلصق تلقائيًا على أي query."
-    ],
-    "title": "Row Level Security = فلتر بيتلصق على كل query"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "yellow",
-    "bullets": [
-      "الـ RLS بتشتغل في طبقة الـ Database نفسها، مش في الـ Backend، فلو السيرفر هنج أو فيه خرم، الداتابيز لسه صاحية وقافلة الباب."
-    ],
-    "title": "Row Level Security = فلتر بيتلصق على كل query"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "pink",
-    "bullets": [
-      "لكل عملية (SELECT, INSERT, UPDATE, DELETE) فيه policy منفصلة، وأكتر غلطة إنك تنسى policy لعملية زي الـ DELETE."
-    ],
-    "title": "Row Level Security = فلتر بيتلصق على كل query"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "mintDeep",
-    "bullets": [
-      "الـ Policy بتخلي الـ DB تلقائيًا تضيف `WHERE user_id = <جايني من الـ JWT>` على أي `SELECT` من غير ما الـ Backend يفكّر."
-    ],
-    "title": "Row Level Security = فلتر بيتلصق على كل query"
-  },
-  {
-    "card": "ScreenshotCard",
-    "accent": "mint",
-    "src": "lessons/concepts/rls-diagram.jpg",
-    "caption": "الـ diagram ده بيوضّح إزاي RLS بتشتغل على مستوى الـ Database. الجدول واحد فيه سطور لكل المستخدمين، لكن لما User A يعمل query، الـ Policy (auth.uid() = user_id) بتفلتر تلقائيًا وترجّع له سطوره هو بس. User B و C كل واحد يشوف سطوره. الفلتر مش في كود الـ Backend — هو في الـ DB نفسه، فحتى لو الـ Backend اتخرق، الحماية لسه شغّالة.",
-    "eyebrow": "شوف بنفسك",
-    "title": "إزاي RLS بتفلتر السطور لكل مستخدم"
-  },
-  {
-    "card": "CompareCard",
-    "accent": "lavender",
-    "right": {
-      "body": "فعّل RLS على كل جدول فيه بيانات مستخدمين، واكتب policy لكل عملية. لو الـ Backend نسي يفلتر، أو حد ضرب الـ DB direct، الـ RLS بترفض. اختبر فعليًا: سجّل بحساب A، احفظ بيانات. اعمل logout، سجّل بحساب B، حاول تجيب بيانات A. لو رجّع \"empty\" → الـ RLS شغّالة. لو رجّع البيانات → فيه ثغرة.",
-      "label": "RIGHT — RLS = خط دفاع نهائي في الـ DB"
-    },
-    "title": "ليه الحماية في الـ Backend وحدها مش كفاية",
-    "left": {
-      "body": "لو نسيت فلتر في endpoint واحد بس، البيانات كلها بقت على البحري. لو حد كتب query مباشر للـ DB من غير ما يمر بالـ Backend، الـ filter غير موجود. لو الـ token اتسرّب أو الـ logic فيها bug، مفيش طبقة حماية تانية.",
-      "label": "FAILURE — تعتمد على الـ Backend بس"
-    }
+    "title": "مين اللي بيحمي بياناتك؟"
   },
   {
     "card": "CTACard",
     "accent": "peach",
-    "tagline": "يلا بينا نطبق ونشوف إزاي هتأمن بيانات المستخدمين.",
+    "tagline": "جاوب على السؤال ده عشان تفهم أكتر.",
+    "highlight": "اختبر فهمك",
+    "title": "إيه أنسب شرط عشان كل واحد يشوف حاجته بس؟",
+    "eyebrow": "دورك دلوقتي"
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "yellow",
+    "tag": "حارس بيانات",
+    "term": "Policy (سياسة أمان)",
+    "definition": "قاعدة أمان بتتكتب على مستوى الداتابيز نفسها، مش في الكود بتاعك. القاعدة دي بتتنفذ تلقائيًا على أي طلب بيانات عشان تفلتره."
+  },
+  {
+    "card": "ScreenshotCard",
+    "accent": "pink",
+    "title": "كأن كل مستخدم لابس نضارة بتوريه حاجته بس",
+    "src": "lessons/concepts/rls-diagram.jpg",
+    "eyebrow": "بتشتغل إزاي؟",
+    "caption": "الداتابيز واحدة، وفيها بيانات كل الناس متلخبطة على بعض. بس لما المستخدم 'أحمد' يطلب بياناته، الـ Policy بتشتغل كفلتر وتوريله سطوره هو بس. كأن الداتابيز بتلبّس كل واحد نضارة سحرية بتوريه حاجته بس. الفلتر ده بيحصل في الداتابيز نفسها، مش في الكود."
+  },
+  {
+    "card": "CompareCard",
+    "accent": "mintDeep",
+    "right": {
+      "body": "الـ RLS زي باب حديد على الداتابيز نفسها. حتى لو حرامي نط من شباك الكود المفتوح، هيلاقي الباب الحديد ده مقفول في وشه. ده اسمه 'الأمان متعدد الطبقات' (Defense in Depth)، وهو أساس أي سيستم محترم.",
+      "label": "صح: RLS خط دفاع أخير"
+    },
+    "left": {
+      "body": "هكتب `WHERE user_id = currentUser.id` في كل حتة في الكود. المشكلة: لو نسيتها في مكان واحد بس، الأبلكيشن كله اتفتح. زي ما تكون قافل كل بيبان الشقة وسايب شباك المطبخ مفتوح على الشارع.",
+      "label": "غلط: الأمان في الكود بس"
+    },
+    "title": "ليه الأمان في الكود لوحده مش كفاية؟"
+  },
+  {
+    "card": "CTACard",
+    "accent": "mint",
     "eyebrow": "دورك دلوقتي",
-    "highlight": "طبق اللي اتعلمته في الـ Quiz عشان تفهم أكتر",
-    "title": "ارسم Policies للجدول اللي عملته في M5.3"
+    "tagline": "حلّ الأسئلة دي عشان تتأكد إنك فهمت الدرس كويس.",
+    "highlight": "جاوب على السيناريوهات دي",
+    "title": "اختبر فهمك"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "lavender",
+    "bullets": [
+      "منصتنا اتبنت بنفس اللي بتتعلمه.",
+      "جداول زي `lesson_progress` و `mission_submissions` محمية بـ RLS.",
+      "الـ Policy المستخدمة: `auth.uid() = user_id`.",
+      "الداتابيز خط الدفاع الأخير ضد تسريب البيانات."
+    ],
+    "title": "كل جدول عندنا عليه حارس RLS"
+  },
+  {
+    "card": "CTACard",
+    "accent": "peach",
+    "tagline": "نتقابل في الدرس الجاي.",
+    "highlight": "خط دفاع أخير",
+    "title": "فهمت إزاي الـ RLS بتحمي بياناتك",
+    "eyebrow": "ملخص الدرس"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [519, 221, 201, 307, 316, 280, 297, 347, 403, 383, 519, 352, 507, 957, 531];
+export const SCENE_FRAMES: number[] = [435, 421, 208, 406, 451, 563, 196, 527, 227];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);

@@ -78,7 +78,6 @@ import { SCENES as L_automator_m5_lead_capture_S, SCENE_FRAMES as L_automator_m5
 import { SCENES as L_business_m5_reactive_relapse_S, SCENE_FRAMES as L_business_m5_reactive_relapse_F, TOTAL_FRAMES as L_business_m5_reactive_relapse_T } from "./lessons-generated/business-m5-reactive-relapse.gen";
 import { SCENES as L_business_m2_customer_lifecycle_S, SCENE_FRAMES as L_business_m2_customer_lifecycle_F, TOTAL_FRAMES as L_business_m2_customer_lifecycle_T } from "./lessons-generated/business-m2-customer-lifecycle.gen";
 import { SCENES as L_analyst_m1_right_question_rule_S, SCENE_FRAMES as L_analyst_m1_right_question_rule_F, TOTAL_FRAMES as L_analyst_m1_right_question_rule_T } from "./lessons-generated/analyst-m1-right-question-rule.gen";
-import { SCENES as L_builder_m7_rls_S, SCENE_FRAMES as L_builder_m7_rls_F, TOTAL_FRAMES as L_builder_m7_rls_T } from "./lessons-generated/builder-m8-l23-rls.gen";
 import { SCENES as L_automator_m2_triggers_actions_S, SCENE_FRAMES as L_automator_m2_triggers_actions_F, TOTAL_FRAMES as L_automator_m2_triggers_actions_T } from "./lessons-generated/automator-m2-triggers-actions.gen";
 import { SCENES as L_automator_m0_where_you_are_S, SCENE_FRAMES as L_automator_m0_where_you_are_F, TOTAL_FRAMES as L_automator_m0_where_you_are_T } from "./lessons-generated/automator-m0-where-you-are.gen";
 import { SCENES as L_creator_m5_analytics_S, SCENE_FRAMES as L_creator_m5_analytics_F, TOTAL_FRAMES as L_creator_m5_analytics_T } from "./lessons-generated/creator-m5-analytics.gen";
@@ -107,6 +106,7 @@ import { SCENES as L_builder_m6_l15_first_prompt_to_lovable_S, SCENE_FRAMES as L
 import { SCENES as L_builder_m2_l4_instructions_examples_S, SCENE_FRAMES as L_builder_m2_l4_instructions_examples_F, TOTAL_FRAMES as L_builder_m2_l4_instructions_examples_T } from "./lessons-generated/builder-m2-l4-instructions-examples.gen";
 import { SCENES as L_builder_m9_l24_rag_S, SCENE_FRAMES as L_builder_m9_l24_rag_F, TOTAL_FRAMES as L_builder_m9_l24_rag_T } from "./lessons-generated/builder-m9-l24-rag.gen";
 import { SCENES as L_builder_m8_l22_sessions_jwt_S, SCENE_FRAMES as L_builder_m8_l22_sessions_jwt_F, TOTAL_FRAMES as L_builder_m8_l22_sessions_jwt_T } from "./lessons-generated/builder-m8-l22-sessions-jwt.gen";
+import { SCENES as L_builder_m8_l23_rls_S, SCENE_FRAMES as L_builder_m8_l23_rls_F, TOTAL_FRAMES as L_builder_m8_l23_rls_T } from "./lessons-generated/builder-m8-l23-rls.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -178,7 +178,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m5-reactive-relapse", scenes: L_business_m5_reactive_relapse_S, sceneFrames: L_business_m5_reactive_relapse_F, totalFrames: L_business_m5_reactive_relapse_T },
     { id: "business-m2-customer-lifecycle", scenes: L_business_m2_customer_lifecycle_S, sceneFrames: L_business_m2_customer_lifecycle_F, totalFrames: L_business_m2_customer_lifecycle_T },
     { id: "analyst-m1-right-question-rule", scenes: L_analyst_m1_right_question_rule_S, sceneFrames: L_analyst_m1_right_question_rule_F, totalFrames: L_analyst_m1_right_question_rule_T },
-    { id: "builder-m8-l23-rls", scenes: L_builder_m7_rls_S, sceneFrames: L_builder_m7_rls_F, totalFrames: L_builder_m7_rls_T },
     { id: "automator-m2-triggers-actions", scenes: L_automator_m2_triggers_actions_S, sceneFrames: L_automator_m2_triggers_actions_F, totalFrames: L_automator_m2_triggers_actions_T },
     { id: "automator-m0-where-you-are", scenes: L_automator_m0_where_you_are_S, sceneFrames: L_automator_m0_where_you_are_F, totalFrames: L_automator_m0_where_you_are_T },
     { id: "creator-m5-analytics", scenes: L_creator_m5_analytics_S, sceneFrames: L_creator_m5_analytics_F, totalFrames: L_creator_m5_analytics_T },
@@ -207,5 +206,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m2-l4-instructions-examples", scenes: L_builder_m2_l4_instructions_examples_S, sceneFrames: L_builder_m2_l4_instructions_examples_F, totalFrames: L_builder_m2_l4_instructions_examples_T },
     { id: "builder-m9-l24-rag", scenes: L_builder_m9_l24_rag_S, sceneFrames: L_builder_m9_l24_rag_F, totalFrames: L_builder_m9_l24_rag_T },
     { id: "builder-m8-l22-sessions-jwt", scenes: L_builder_m8_l22_sessions_jwt_S, sceneFrames: L_builder_m8_l22_sessions_jwt_F, totalFrames: L_builder_m8_l22_sessions_jwt_T },
+    { id: "builder-m8-l23-rls", scenes: L_builder_m8_l23_rls_S, sceneFrames: L_builder_m8_l23_rls_F, totalFrames: L_builder_m8_l23_rls_T },
   /* @lesson-entries-end */
 ];
