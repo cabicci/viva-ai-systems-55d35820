@@ -21,7 +21,6 @@ import { SCENES as L_builder_m6_first_prompt_to_lovable_S, SCENE_FRAMES as L_bui
 import { SCENES as L_builder_m6_components_routes_S, SCENE_FRAMES as L_builder_m6_components_routes_F, TOTAL_FRAMES as L_builder_m6_components_routes_T } from "./lessons-generated/builder-m6-l16-components-routes.gen";
 import { SCENES as L_builder_m6_iteration_S, SCENE_FRAMES as L_builder_m6_iteration_F, TOTAL_FRAMES as L_builder_m6_iteration_T } from "./lessons-generated/builder-m6-l17-iteration.gen";
 import { SCENES as L_builder_m7_sessions_jwt_S, SCENE_FRAMES as L_builder_m7_sessions_jwt_F, TOTAL_FRAMES as L_builder_m7_sessions_jwt_T } from "./lessons-generated/builder-m8-l22-sessions-jwt.gen";
-import { SCENES as L_builder_m8_relations_S, SCENE_FRAMES as L_builder_m8_relations_F, TOTAL_FRAMES as L_builder_m8_relations_T } from "./lessons-generated/builder-m7-l20-relations.gen";
 import { SCENES as L_builder_m9_agents_S, SCENE_FRAMES as L_builder_m9_agents_F, TOTAL_FRAMES as L_builder_m9_agents_T } from "./lessons-generated/builder-m9-l26-agents.gen";
 import { SCENES as L_builder_m9_embeddings_S, SCENE_FRAMES as L_builder_m9_embeddings_F, TOTAL_FRAMES as L_builder_m9_embeddings_T } from "./lessons-generated/builder-m9-l25-embeddings.gen";
 import { SCENES as L_builder_m9_rag_S, SCENE_FRAMES as L_builder_m9_rag_F, TOTAL_FRAMES as L_builder_m9_rag_T } from "./lessons-generated/builder-m9-l24-rag.gen";
@@ -107,6 +106,7 @@ import { SCENES as L_builder_m1_l1_what_is_llm_S, SCENE_FRAMES as L_builder_m1_l
 import { SCENES as L_builder_m7_l21_queries_S, SCENE_FRAMES as L_builder_m7_l21_queries_F, TOTAL_FRAMES as L_builder_m7_l21_queries_T } from "./lessons-generated/builder-m7-l21-queries.gen";
 import { SCENES as L_builder_m6_l13_idea_to_page_S, SCENE_FRAMES as L_builder_m6_l13_idea_to_page_F, TOTAL_FRAMES as L_builder_m6_l13_idea_to_page_T } from "./lessons-generated/builder-m6-l13-idea-to-page.gen";
 import { SCENES as L_builder_m5_l11_backend_api_S, SCENE_FRAMES as L_builder_m5_l11_backend_api_F, TOTAL_FRAMES as L_builder_m5_l11_backend_api_T } from "./lessons-generated/builder-m5-l11-backend-api.gen";
+import { SCENES as L_builder_m7_l20_relations_S, SCENE_FRAMES as L_builder_m7_l20_relations_F, TOTAL_FRAMES as L_builder_m7_l20_relations_T } from "./lessons-generated/builder-m7-l20-relations.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -121,7 +121,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m6-l16-components-routes", scenes: L_builder_m6_components_routes_S, sceneFrames: L_builder_m6_components_routes_F, totalFrames: L_builder_m6_components_routes_T },
     { id: "builder-m6-l17-iteration", scenes: L_builder_m6_iteration_S, sceneFrames: L_builder_m6_iteration_F, totalFrames: L_builder_m6_iteration_T },
     { id: "builder-m8-l22-sessions-jwt", scenes: L_builder_m7_sessions_jwt_S, sceneFrames: L_builder_m7_sessions_jwt_F, totalFrames: L_builder_m7_sessions_jwt_T },
-    { id: "builder-m7-l20-relations", scenes: L_builder_m8_relations_S, sceneFrames: L_builder_m8_relations_F, totalFrames: L_builder_m8_relations_T },
     { id: "builder-m9-l26-agents", scenes: L_builder_m9_agents_S, sceneFrames: L_builder_m9_agents_F, totalFrames: L_builder_m9_agents_T },
     { id: "builder-m9-l25-embeddings", scenes: L_builder_m9_embeddings_S, sceneFrames: L_builder_m9_embeddings_F, totalFrames: L_builder_m9_embeddings_T },
     { id: "builder-m9-l24-rag", scenes: L_builder_m9_rag_S, sceneFrames: L_builder_m9_rag_F, totalFrames: L_builder_m9_rag_T },
@@ -207,5 +206,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m7-l21-queries", scenes: L_builder_m7_l21_queries_S, sceneFrames: L_builder_m7_l21_queries_F, totalFrames: L_builder_m7_l21_queries_T },
     { id: "builder-m6-l13-idea-to-page", scenes: L_builder_m6_l13_idea_to_page_S, sceneFrames: L_builder_m6_l13_idea_to_page_F, totalFrames: L_builder_m6_l13_idea_to_page_T },
     { id: "builder-m5-l11-backend-api", scenes: L_builder_m5_l11_backend_api_S, sceneFrames: L_builder_m5_l11_backend_api_F, totalFrames: L_builder_m5_l11_backend_api_T },
+    { id: "builder-m7-l20-relations", scenes: L_builder_m7_l20_relations_S, sceneFrames: L_builder_m7_l20_relations_F, totalFrames: L_builder_m7_l20_relations_T },
   /* @lesson-entries-end */
 ];

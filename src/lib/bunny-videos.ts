@@ -60,7 +60,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "builder-m8-l23-rls": "bb8f8d9d-e106-41dc-acc3-5e3770cbe0f5",
   "builder-m8-l22-sessions-jwt": "f4ad94c0-59da-4b1e-97dc-f1a8aef98683",
   "builder-m7-l21-queries": "194886ee-6f96-47ee-8941-d92123b5050d",
-  "builder-m7-l20-relations": "9fd656e2-cc6c-4e63-9131-29b45f4bf812",
+  "builder-m7-l20-relations": "f8d51402-be1b-4790-9bec-bac6286f67c2",
   "builder-m7-l19-tables-columns": "d241b164-62bb-4d5d-a001-5333034b09c1",
   "builder-m9-l26-agents": "16cfcf64-1fda-4833-a7ce-3ffe08d1bbd4",
   "builder-m9-l25-embeddings": "a45aab94-dfe8-46ec-b852-86a1b873f480",
