@@ -67,7 +67,7 @@ export const BUILDER_M5_TRANSITION_BLOCKS: IntroLessonContent = [
           bloom: "apply",
           question:
             "لما تفتح أبلكيشن 'أوبر' وتشوف الخريطة والزرار بتاع 'اطلب رحلة'، الجزء اللي عينك شايفاه ده اسمه إيه؟",
-          options: ["Frontend", "Backend", "Database"],
+          options: ["الواجهة (Frontend)", "الكواليس (Backend)", "المخزن (Database)"],
           correctIndex: 0,
           explanation:
             "صح! الـ Frontend هو \"الوش\" بتاع الأبلكيشن. كل حاجة بتشوفها وتدوس عليها.",
