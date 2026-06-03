@@ -10,7 +10,7 @@ import img8 from "@/assets/lessons/builder-m1-ai-predicts.jpg";
 import img9 from "@/assets/lessons/builder-m1-l1-what-is-llm.jpg";
 import img10 from "@/assets/lessons/builder-m1-tokens.jpg";
 
-import img11 from "@/assets/lessons/builder-m1-prompt-clarity.jpg";
+import img11 from "@/assets/lessons/builder-m2-l1-prompt-layer.jpg";
 import img12 from "@/assets/lessons/builder-m2-l2-instructions-examples.jpg";
 import img13 from "@/assets/lessons/builder-m2-l3-style-control.jpg";
 
