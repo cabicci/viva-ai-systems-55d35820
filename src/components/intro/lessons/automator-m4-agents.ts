@@ -42,13 +42,13 @@ export const AUTOMATOR_M4_AGENTS_BLOCKS: IntroLessonContent = [
   {
     icon: Link2,
     eyebrow: "🔗 ربط بـ Builder M9",
-    title: "نفس Agent اللي بنيناه — بس في n8n",
+    title: "نفس فكرة الـ Agent — بس في n8n",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "في Builder M9 اتعلمنا إن Agent = LLM + Tools + Loop. نفس المعادلة هنا.",
+        "Builder M9 بيشرح إن Agent = LLM + Tools + Loop. نفس المعادلة هنا.",
         "الفرق: n8n عنده AI Agent node جاهز بيعمل الـ loop لوحده. إنت بتعرّفله الـ tools (HTTP، DB query، send WhatsApp) ويتصرّف.",
-        "لو لسه مكملتش Builder M9: Agent في سطر = AI بياخد قرار يستخدم أنهي أداة ومتى، بدل ما إنت تحدّد كل خطوة. الفكرة بسيطة، التطبيق بقى لعبة.",
+        "لو ما تعرّضتش لمسار Builder قبل كده: Agent في سطر = AI بياخد قرار يستخدم أنهي أداة ومتى، بدل ما إنت تحدّد كل خطوة. الفكرة بسيطة، التطبيق بقى لعبة.",
       ],
     },
   },

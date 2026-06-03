@@ -123,7 +123,7 @@ export const BUILDER_M3_CONTEXT_LAYER_BLOCKS: IntroLessonContent = [
             "الـ AI نفسه ذكاؤه محدود."
           ],
           correctIndex: 0,
-          explanation: "زي ما شفنا، أغلب الردود الغبية سببها إن الـ AI مش فاهم خلفية الموضوع. المشكلة في نقص السياق، مش في ذكاء الـ AI."
+          explanation: "أغلب الردود الغبية سببها إن الـ AI مش فاهم خلفية الموضوع. المشكلة في نقص السياق، مش في ذكاء الـ AI."
         },
         {
           id: "apply3",

@@ -1,9 +1,9 @@
 # Roadmap sync marker
 
-[roadmap:394039f8-ae86-458a-8a74-ba11d1d30f72]
+[roadmap:44d24362-19d1-48bb-aa69-5cb1568c9fce]
 date: 2026-06-03
 scope: other
-source: ai
+source: user
 summary: auto roadmap sync
 
 This file is updated after the matching roadmap_items row is updated.
