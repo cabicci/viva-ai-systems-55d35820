@@ -5,101 +5,70 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "chip": "أهلًا: HERO",
-    "title": "خلصت اللغة — دلوقتي هتدخل عالم الـ Apps",
-    "subtitle": "M1 لحد M4 كانوا عن إزاي تتكلم مع الـ AI.",
-    "highlight": "عالم الـ Apps"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "عدة الميكانيكي",
-    "term": "Stack/Tech Stack",
-    "definition": "توليفة الأدوات واللغات اللي بتستخدمها عشان تبني الأبلكيشن بتاعك."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "tag": "وش المحل",
-    "definition": "واجهة البرنامج، يعني كل حاجة بتشوفها وبتدوس عليها بعينك.",
-    "term": "Frontend"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "definition": "الشغل اللي \"ورا الكواليس\" اللي بيعالج البيانات وينفذ الأوامر.",
-    "term": "Backend (Logic)",
-    "tag": "المدير اللي ورا"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "term": "Database",
-    "definition": "مخزن البيانات، Backend بيحط فيه الحاجة ويرجع يطلبها منه.",
-    "tag": "دفتر الحسابات"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "tag": "شيت الإكسيل",
-    "term": "Tables & Columns",
-    "definition": "طريقة تنظيم الداتا جوه الـ Database في شكل صفوف وأعمدة."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "definition": "رسول أو وسيط بينقل البيانات من أبلكيشن للتاني أو بين أجزاء الأبلكيشن.",
-    "term": "API",
-    "tag": "الماندوب"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "البودي جارد",
-    "definition": "عملية التأكد من شخصية المستخدم (زي اليوزر نيم والباسورد).",
-    "term": "Auth (Authentication)"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "peach",
-    "bullets": [
-      "افتح WhatsApp: الشاشة اللي بتشوفها = Frontend. السيرفر اللي بيوصّل الرسالة = Backend. مكان حفظ الـ chats = Database.",
-      "افتح Instagram: نفس القصة. افتح Uber: نفس القصة.",
-      "الـ 3 دروس الجايين هيشرحوا كل طبقة لوحدها. مش هتبرمج حاجة — هتفهم بس.",
-      "لو الكلام ده حسّيته مفاجئ، طبيعي. اقراه على راحتك."
-    ],
-    "title": "أي App بتستخدمه = ٣ طبقات بس"
-  },
-  {
-    "card": "ScreenshotCard",
-    "accent": "yellow",
-    "src": "lessons/unique/builder-m5-l9-transition.jpg",
-    "caption": "إنت دلوقتي في النص — خرجت من عالم «أكلّم الـ AI» وداخل عالم «أبني App». السهم ده هو M5.",
-    "eyebrow": "بصرياً",
-    "title": "الـ Bridge بين Prompting و Building"
-  },
-  {
-    "card": "CompareCard",
-    "accent": "pink",
-    "left": {
-      "body": "تتسرّع وتقفز للـ Lovable قبل ما تفهم الفرق بين Frontend و Backend. هتلاقي نفسك متلخبط لما الـ AI يقولك «حطّ ده في الـ backend».",
-      "label": "غلط ✗"
-    },
-    "title": "إزاي تتعامل مع الـ 3 دروس الجايين",
-    "right": {
-      "body": "تاخد M5 بهدوء (٣ دروس × ١٠ دقايق). لما تخلّصه، الـ Lovable هيبقى عالم مفهوم مش لغز.",
-      "label": "صح ✓"
-    }
+    "chip": "نقلة جديدة",
+    "title": "الـ AI ذكي، بس مش أبلكيشن.",
+    "subtitle": "إزاي تحوّل \"شات ذكي\" لأبلكيشن كامل الناس تستخدمه؟ ده اللي هنعرفه في الدروس الجاية.",
+    "highlight": "إزاي؟"
   },
   {
     "card": "CTACard",
-    "accent": "mintDeep",
-    "highlight": "حلّل App بتحبه",
-    "tagline": "يلا نطبّق اللي اتعلّمناه ونشوف فهمنا ولا لأ!",
+    "accent": "lavender",
+    "tagline": "حلل أبلكيشن بتستخدمه عشان تفهم مكوناته الأساسية.",
+    "highlight": "شغل الـ AI مش بس كلام",
     "eyebrow": "دورك دلوقتي",
-    "title": "حلّل App بتحبه قبل ما تكمّل"
+    "title": "حلّل أبلكيشن بتستخدمه كل يوم"
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "peach",
+    "tag": "الوش بتاع الأبلكيشن",
+    "term": "Frontend (الواجهة)",
+    "definition": "الوش بتاع الأبلكيشن. كل حاجة عينك شايفاها وصباعك بيدوس عليها."
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "yellow",
+    "tag": "مطبخ الأبلكيشن",
+    "term": "Backend (الكواليس)",
+    "definition": "المطبخ أو العقل اللي بيفكر وبينفذ الأوامر اللي مبتتشفش."
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "pink",
+    "tag": "مخزن البيانات",
+    "term": "Database (المخزن)",
+    "definition": "الأرشيف اللي بنشيّل فيه كل حاجة (بيانات المستخدمين، المنتجات، الرسايل) عشان نرجع لها بعدين."
+  },
+  {
+    "card": "ScreenshotCard",
+    "accent": "mintDeep",
+    "src": "lessons/unique/builder-m5-l9-transition.jpg",
+    "caption": "إنت دلوقتي واقف على الجسر ده. خلصت مرحلة إزاي \"تكلّم\" الـ AI، وداخل على مرحلة إزاي \"تبني\" له بيت يعيش فيه.",
+    "title": "الجسر اللي بين الكلام والبناء",
+    "eyebrow": "شوف بنفسك"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "mint",
+    "bullets": [
+      "اختار فكرة أبلكيشن عايز تبنيه.",
+      "جاوب: الواجهة (Frontend) هيشوف إيه ويدوس على إيه؟",
+      "الكواليس (Backend) إيه اللي هيحصل لما يدوس؟",
+      "المخزن (Database) إيه أهم معلومة هتتخزن؟"
+    ],
+    "title": "مهمتك في ٥ دقايق: حلّل فكرتك"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "lavender",
+    "bullets": [
+      "الـ Frontend: شكل الصفحة والزراير اللي فيها.",
+      "الـ Backend: الكود اللي بيسجّل تقدمك لما بتخلص الدرس.",
+      "الـ Database: المكان اللي متخزّن فيه إنت خلصت كام درس."
+    ],
+    "title": "المنصة دي مش مجرد شات، ده أبلكيشن كامل"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [456, 430, 352, 371, 328, 385, 415, 393, 745, 333, 652, 228];
+export const SCENE_FRAMES: number[] = [435, 311, 442, 465, 429, 375, 310, 339];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
