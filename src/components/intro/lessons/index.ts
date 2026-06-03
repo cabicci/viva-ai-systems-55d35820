@@ -129,7 +129,6 @@ export const INTRO_LESSON_CONTENT: Record<string, IntroLessonContent> = {
   "builder-m3-l6-context-layer": BUILDER_M3_CONTEXT_LAYER_BLOCKS,
   "builder-m3-l7-memory-limits": BUILDER_M3_MEMORY_LIMITS_BLOCKS,
   "builder-m4-l8-parameters": BUILDER_M4_TEMPERATURE_BLOCKS,
-  "builder-m4-l8-parameters": BUILDER_M4_PARAMETERS_BLOCKS,
   "builder-m5-l10-frontend": BUILDER_M5_FRONTEND_BLOCKS,
   "builder-m5-l9-transition": BUILDER_M5_TRANSITION_BLOCKS,
   "builder-m5-l11-backend-api": BUILDER_M5_BACKEND_API_BLOCKS,
