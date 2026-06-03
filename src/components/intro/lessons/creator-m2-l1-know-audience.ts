@@ -100,7 +100,7 @@ export const CREATOR_M3_KNOW_AUDIENCE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "creator-m3-know-audience-apply",
+      lessonId: "creator-m2-l1-know-audience-apply",
       items: [
         {
           id: "apply1",

@@ -7,7 +7,7 @@ import {
   Rocket,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM5WhatsappFlowScreenshot from "@/assets/lessons/unique/automator-m5-whatsapp-flow.jpg";
+import automatorM5WhatsappFlowScreenshot from "@/assets/lessons/unique/automator-m5-l2-whatsapp-flow.jpg";
 /**
  * Automator · M5 · Lesson 02 — WhatsApp Flow ذكي
  */
@@ -104,7 +104,7 @@ export const AUTOMATOR_M5_WHATSAPP_FLOW_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "automator-m5-whatsapp-flow-apply",
+      lessonId: "automator-m5-l2-whatsapp-flow-apply",
       items: [
         {
           id: "apply1",

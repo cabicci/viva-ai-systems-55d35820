@@ -8,7 +8,7 @@ import {
   BookOpen,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import contextLayerScreenshot from "@/assets/lessons/builder-m3-l6-context-layer.jpg";
+import contextLayerScreenshot from "@/assets/lessons/builder-m3-l1-context-layer.jpg";
 
 /**
  * Builder · M3 · Lesson 01 — Context Layer
@@ -99,7 +99,7 @@ export const BUILDER_M3_CONTEXT_LAYER_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "builder-m3-l6-context-layer-apply",
+      lessonId: "builder-m3-l1-context-layer-apply",
       items: [
         {
           id: "apply1",

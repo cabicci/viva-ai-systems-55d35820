@@ -14,7 +14,7 @@ import {
   Layers3,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import transitionImage from "@/assets/lessons/unique/builder-m5-l9-transition.jpg";
+import transitionImage from "@/assets/lessons/unique/builder-m5-l1-transition.jpg";
 
 /**
  * V2 Refactor:
@@ -60,7 +60,7 @@ export const BUILDER_M5_TRANSITION_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "builder-m5-l9-transition-apply",
+      lessonId: "builder-m5-l1-transition-apply",
       items: [
         {
           id: "apply1",

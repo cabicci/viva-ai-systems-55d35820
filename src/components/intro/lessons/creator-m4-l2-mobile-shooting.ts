@@ -7,7 +7,7 @@ import {
   Rocket,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import iphoneScreenshot from "@/assets/lessons/creator-m4-mobile-shooting.jpg";
+import iphoneScreenshot from "@/assets/lessons/creator-m4-l2-mobile-shooting.jpg";
 /**
  * Creator · M4 · Lesson 02 — التصوير بالموبايل
  * Format: Hero → Video → Concept → Platform Screenshot → Failure×Right → Mission
@@ -104,7 +104,7 @@ export const CREATOR_M4_MOBILE_SHOOTING_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "creator-m4-mobile-shooting-apply",
+      lessonId: "creator-m4-l2-mobile-shooting-apply",
       items: [
         {
           id: "apply1",

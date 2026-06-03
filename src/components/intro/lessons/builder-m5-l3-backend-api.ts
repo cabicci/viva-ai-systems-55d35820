@@ -8,7 +8,7 @@ import {
   Brain,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import backendScreenshot from "@/assets/lessons/builder-m5-l11-backend-api.jpg";
+import backendScreenshot from "@/assets/lessons/builder-m5-l3-backend-api.jpg";
 
 /**
  * Builder · M5 · Lesson 11 — Backend & API  (v4 reframing — conceptual split)
@@ -142,7 +142,7 @@ export const BUILDER_M5_BACKEND_API_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "builder-m5-l11-backend-api-apply",
+      lessonId: "builder-m5-l3-backend-api-apply",
       items: [
         {
           id: "apply1",

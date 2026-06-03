@@ -9,7 +9,7 @@ import {
   BookOpen,
   AlertTriangle, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import journeyScreenshot from "@/assets/lessons/unique/automator-m0-where-you-are.jpg";
+import journeyScreenshot from "@/assets/lessons/unique/automator-m0-l1-where-you-are.jpg";
 /**
  * Automator · M0 · Lesson 01 — أنت فين في الخريطة؟
  * يفتح المسار بربط Builder + Creator باللي جاي. كل قرار في الـ Automator
@@ -133,7 +133,7 @@ export const AUTOMATOR_M0_WHERE_YOU_ARE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "automator-m0-where-you-are-apply",
+      lessonId: "automator-m0-l1-where-you-are-apply",
       items: [
         {
           id: "apply1",

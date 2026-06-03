@@ -7,7 +7,7 @@ import {
   Rocket,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import attentionEconomyScreenshot from "@/assets/lessons/creator-m1-attention-economy.jpg";
+import attentionEconomyScreenshot from "@/assets/lessons/creator-m1-l2-attention-economy.jpg";
 
 /**
  * Creator · M1 · Lesson 02 (v2 — unified 5-part rhythm)
@@ -105,7 +105,7 @@ export const CREATOR_M1_ATTENTION_ECONOMY_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "creator-m1-attention-economy-apply",
+      lessonId: "creator-m1-l2-attention-economy-apply",
       items: [
         {
           id: "apply1",

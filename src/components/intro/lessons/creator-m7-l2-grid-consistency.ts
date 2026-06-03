@@ -7,7 +7,7 @@ import {
   Rocket,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import gridImg from "@/assets/lessons/unique/creator-m6-grid-consistency.jpg";
+import gridImg from "@/assets/lessons/unique/creator-m7-l2-grid-consistency.jpg";
 
 export const CREATOR_M6_GRID_CONSISTENCY_BLOCKS: IntroLessonContent = [
   {
@@ -101,7 +101,7 @@ export const CREATOR_M6_GRID_CONSISTENCY_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "creator-m6-grid-consistency-apply",
+      lessonId: "creator-m7-l2-grid-consistency-apply",
       items: [
         {
           id: "apply1",

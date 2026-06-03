@@ -9,7 +9,7 @@ import {
   FlaskConical,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import temperatureScreenshot from "@/assets/lessons/builder-m4-l8-parameters.jpg";
+import temperatureScreenshot from "@/assets/lessons/builder-m4-l1-parameters.jpg";
 
 /**
  * Builder · M4 · Lesson 01 — Temperature
@@ -37,7 +37,7 @@ export const BUILDER_M4_TEMPERATURE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "builder-m4-l8-parameters-apply",
+      lessonId: "builder-m4-l1-parameters-apply",
       items: [
         {
           id: "apply1",

@@ -90,7 +90,7 @@ export const ANALYST_M0_FROM_AUTOMATION_TO_INSIGHT_BLOCKS: IntroLessonContent = 
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "analyst-m0-from-automation-to-insight-apply",
+      lessonId: "analyst-m0-l1-from-automation-to-insight-apply",
       items: [
         {
           id: "apply1",

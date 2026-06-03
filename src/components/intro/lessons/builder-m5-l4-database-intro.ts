@@ -7,7 +7,7 @@ import {
   BrainCircuit,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import databaseScreenshot from "@/assets/lessons/builder-m5-l12-database-intro.jpg";
+import databaseScreenshot from "@/assets/lessons/builder-m5-l4-database-intro.jpg";
 
 /**
  * Builder · M5 · Lesson 12 — Database Intro (v4 reframing)

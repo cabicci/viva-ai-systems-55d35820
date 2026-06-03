@@ -79,7 +79,7 @@ export const BUSINESS_M4_SYSTEM_THEN_PEOPLE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "business-m4-system-then-people-apply",
+      lessonId: "business-m4-l2-system-then-people-apply",
       items: [
         {
           id: "apply1",

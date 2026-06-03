@@ -77,7 +77,7 @@ export const ANALYST_M5_INTERPRETATION_MISTAKES_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "analyst-m5-interpretation-mistakes-apply",
+      lessonId: "analyst-m5-l2-interpretation-mistakes-apply",
       items: [
         {
           id: "apply1",

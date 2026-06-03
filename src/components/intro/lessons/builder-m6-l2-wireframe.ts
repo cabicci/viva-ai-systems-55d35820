@@ -10,7 +10,7 @@ import {
   Layers,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import wireframeImg from "@/assets/lessons/unique/builder-m6-l14-wireframe.jpg";
+import wireframeImg from "@/assets/lessons/unique/builder-m6-l2-wireframe.jpg";
 
 export const BUILDER_M6_WIREFRAME_BLOCKS: IntroLessonContent = [
   {
@@ -112,7 +112,7 @@ export const BUILDER_M6_WIREFRAME_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "builder-m6-l14-wireframe-apply",
+      lessonId: "builder-m6-l2-wireframe-apply",
       items: [
         {
           id: "apply1",

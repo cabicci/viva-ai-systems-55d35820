@@ -80,7 +80,7 @@ export const ANALYST_M4_FOUR_NUMBERS_DASHBOARD_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "analyst-m4-four-numbers-dashboard-apply",
+      lessonId: "analyst-m4-l1-four-numbers-dashboard-apply",
       items: [
         {
           id: "apply1",

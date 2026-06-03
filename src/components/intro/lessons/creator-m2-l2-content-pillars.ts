@@ -101,7 +101,7 @@ export const CREATOR_M3_CONTENT_PILLARS_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "creator-m3-content-pillars-apply",
+      lessonId: "creator-m2-l2-content-pillars-apply",
       items: [
         {
           id: "apply1",

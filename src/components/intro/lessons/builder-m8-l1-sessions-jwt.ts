@@ -151,7 +151,7 @@ export const BUILDER_M7_SESSIONS_JWT_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "builder-m8-l22-sessions-jwt-apply",
+      lessonId: "builder-m8-l1-sessions-jwt-apply",
       items: [
         {
           id: "apply1",

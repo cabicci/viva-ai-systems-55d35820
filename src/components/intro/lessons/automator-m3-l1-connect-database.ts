@@ -7,7 +7,7 @@ import {
   Rocket,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM3ConnectDatabaseScreenshot from "@/assets/lessons/unique/automator-m3-connect-database.jpg";
+import automatorM3ConnectDatabaseScreenshot from "@/assets/lessons/unique/automator-m3-l1-connect-database.jpg";
 /**
  * Automator · M3 · Lesson 01 — وصّل الـ DB من Builder
  */
@@ -114,7 +114,7 @@ export const AUTOMATOR_M3_CONNECT_DATABASE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "automator-m3-connect-database-apply",
+      lessonId: "automator-m3-l1-connect-database-apply",
       items: [
         {
           id: "apply1",

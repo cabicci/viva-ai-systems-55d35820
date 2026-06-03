@@ -85,7 +85,7 @@ export const ANALYST_M1_FEELING_TO_QUESTION_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "analyst-m1-feeling-to-question-apply",
+      lessonId: "analyst-m1-l1-feeling-to-question-apply",
       items: [
         {
           id: "apply1",

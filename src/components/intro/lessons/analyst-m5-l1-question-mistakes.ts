@@ -38,7 +38,7 @@ export const ANALYST_M5_QUESTION_MISTAKES_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "analyst-m5-question-mistakes",
+      lessonId: "analyst-m5-l1-question-mistakes",
       items: [
         {
           id: "q1",
@@ -131,7 +131,7 @@ export const ANALYST_M5_QUESTION_MISTAKES_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "analyst-m5-question-mistakes-apply",
+      lessonId: "analyst-m5-l1-question-mistakes-apply",
       items: [
         {
           id: "apply1",

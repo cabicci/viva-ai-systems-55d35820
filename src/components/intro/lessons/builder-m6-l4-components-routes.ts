@@ -9,7 +9,7 @@ import {
   FlaskConical,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import componentsScreenshot from "@/assets/lessons/builder-m6-l16-components-routes.jpg";
+import componentsScreenshot from "@/assets/lessons/builder-m6-l4-components-routes.jpg";
 
 /**
  * Builder · M6 · Lesson 05 — Components & Routes
@@ -106,7 +106,7 @@ export const BUILDER_M6_COMPONENTS_ROUTES_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "builder-m6-l16-components-routes-apply",
+      lessonId: "builder-m6-l4-components-routes-apply",
       items: [
         {
           id: "apply1",

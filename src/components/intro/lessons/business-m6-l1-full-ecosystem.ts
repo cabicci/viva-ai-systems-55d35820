@@ -84,7 +84,7 @@ export const BUSINESS_M6_FULL_ECOSYSTEM_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "business-m6-full-ecosystem-apply",
+      lessonId: "business-m6-l1-full-ecosystem-apply",
       items: [
         {
           id: "apply1",

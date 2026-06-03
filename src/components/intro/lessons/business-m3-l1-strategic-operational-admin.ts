@@ -78,7 +78,7 @@ export const BUSINESS_M3_STRATEGIC_OPERATIONAL_ADMIN_BLOCKS: IntroLessonContent 
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "business-m3-strategic-operational-admin-apply",
+      lessonId: "business-m3-l1-strategic-operational-admin-apply",
       items: [
         {
           id: "apply1",

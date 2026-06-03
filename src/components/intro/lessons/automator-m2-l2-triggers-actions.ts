@@ -7,7 +7,7 @@ import {
   Rocket,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM2TriggersActionsScreenshot from "@/assets/lessons/unique/automator-m2-triggers-actions.jpg";
+import automatorM2TriggersActionsScreenshot from "@/assets/lessons/unique/automator-m2-l2-triggers-actions.jpg";
 /**
  * Automator · M2 · Lesson 02 — Triggers + Actions
  */
@@ -103,7 +103,7 @@ export const AUTOMATOR_M2_TRIGGERS_ACTIONS_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "automator-m2-triggers-actions-apply",
+      lessonId: "automator-m2-l2-triggers-actions-apply",
       items: [
         {
           id: "apply1",

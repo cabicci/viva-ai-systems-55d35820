@@ -7,7 +7,7 @@ import {
   Image as ImageIcon,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM1DecideWhatToAutomateScreenshot from "@/assets/lessons/unique/automator-m1-decide-what-to-automate.jpg";
+import automatorM1DecideWhatToAutomateScreenshot from "@/assets/lessons/unique/automator-m1-l3-decide-what-to-automate.jpg";
 /**
  * Automator · M1 · Lesson 03 — قرّر إيه يتأتمت
  */
@@ -104,7 +104,7 @@ export const AUTOMATOR_M1_DECIDE_WHAT_TO_AUTOMATE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "automator-m1-decide-what-to-automate-apply",
+      lessonId: "automator-m1-l3-decide-what-to-automate-apply",
       items: [
         {
           id: "apply1",

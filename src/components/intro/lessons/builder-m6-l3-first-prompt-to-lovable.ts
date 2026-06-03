@@ -100,7 +100,7 @@ export const BUILDER_M6_FIRST_PROMPT_TO_LOVABLE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "builder-m6-l15-first-prompt-to-lovable-apply",
+      lessonId: "builder-m6-l3-first-prompt-to-lovable-apply",
       items: [
         {
           id: "apply1",

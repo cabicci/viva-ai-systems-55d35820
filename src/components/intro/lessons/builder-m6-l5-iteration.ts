@@ -9,7 +9,7 @@ import {
   FlaskConical,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import iterationImg from "@/assets/lessons/unique/builder-m6-l17-iteration.jpg";
+import iterationImg from "@/assets/lessons/unique/builder-m6-l5-iteration.jpg";
 
 export const BUILDER_M6_ITERATION_BLOCKS: IntroLessonContent = [
   {
@@ -115,7 +115,7 @@ export const BUILDER_M6_ITERATION_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "builder-m6-l17-iteration-apply",
+      lessonId: "builder-m6-l5-iteration-apply",
       items: [
         {
           id: "apply1",

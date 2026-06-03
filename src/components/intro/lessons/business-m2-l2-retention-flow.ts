@@ -80,7 +80,7 @@ export const BUSINESS_M2_RETENTION_FLOW_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "business-m2-retention-flow-apply",
+      lessonId: "business-m2-l2-retention-flow-apply",
       items: [
         {
           id: "apply1",

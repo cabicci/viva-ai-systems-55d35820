@@ -80,7 +80,7 @@ export const ANALYST_M2_AI_SUMMARIZATION_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "analyst-m2-ai-summarization-apply",
+      lessonId: "analyst-m2-l2-ai-summarization-apply",
       items: [
         {
           id: "apply1",

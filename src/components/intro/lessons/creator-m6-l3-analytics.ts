@@ -99,7 +99,7 @@ export const CREATOR_M5_ANALYTICS_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "creator-m5-analytics-apply",
+      lessonId: "creator-m6-l3-analytics-apply",
       items: [
         {
           id: "apply1",

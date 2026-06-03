@@ -119,7 +119,7 @@ export const BUILDER_M2_PROMPT_LAYER_BLOCKS: IntroLessonContent = [
     title: "جاهز لـ Quiz سريع؟",
     block: {
       kind: "quiz",
-      lessonId: "builder-m2-l3-prompt-layer-apply",
+      lessonId: "builder-m2-l1-prompt-layer-apply",
       items: [
         {
           id: "apply1",

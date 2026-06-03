@@ -80,7 +80,7 @@ export const BUSINESS_M5_PREMATURE_SCALING_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "business-m5-premature-scaling-apply",
+      lessonId: "business-m5-l2-premature-scaling-apply",
       items: [
         {
           id: "apply1",

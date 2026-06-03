@@ -79,7 +79,7 @@ export const ANALYST_M3_PATTERN_VS_OUTLIER_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "analyst-m3-pattern-vs-outlier-apply",
+      lessonId: "analyst-m3-l1-pattern-vs-outlier-apply",
       items: [
         {
           id: "apply1",

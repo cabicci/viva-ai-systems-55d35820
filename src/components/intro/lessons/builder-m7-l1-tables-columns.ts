@@ -9,7 +9,7 @@ import {
   FlaskConical,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import tablesScreenshot from "@/assets/lessons/builder-m7-l19-tables-columns.jpg";
+import tablesScreenshot from "@/assets/lessons/builder-m7-l1-tables-columns.jpg";
 
 /**
  * Builder · M8 · Lesson 01 — Tables & Columns
@@ -116,7 +116,7 @@ export const BUILDER_M8_TABLES_COLUMNS_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "builder-m7-l19-tables-columns-apply",
+      lessonId: "builder-m7-l1-tables-columns-apply",
       items: [
         {
           id: "apply1",

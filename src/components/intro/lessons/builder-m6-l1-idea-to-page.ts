@@ -9,7 +9,7 @@ import {
   FlaskConical,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import ideaToPageScreenshot from "@/assets/lessons/builder-m6-l13-idea-to-page.jpg";
+import ideaToPageScreenshot from "@/assets/lessons/builder-m6-l1-idea-to-page.jpg";
 
 /**
  * Builder · M6 · Lesson 01 — من فكرة لصفحة
@@ -160,7 +160,7 @@ export const BUILDER_M6_IDEA_TO_PAGE_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "quiz",
-      lessonId: "builder-m6-l13-idea-to-page-apply",
+      lessonId: "builder-m6-l1-idea-to-page-apply",
       items: [
         {
           id: "apply1",

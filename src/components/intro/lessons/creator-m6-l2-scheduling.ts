@@ -102,7 +102,7 @@ export const CREATOR_M5_SCHEDULING_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "creator-m5-scheduling-apply",
+      lessonId: "creator-m6-l2-scheduling-apply",
       items: [
         {
           id: "apply1",

@@ -79,7 +79,7 @@ export const BUSINESS_M4_READINESS_SIGNALS_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "business-m4-readiness-signals-apply",
+      lessonId: "business-m4-l1-readiness-signals-apply",
       items: [
         {
           id: "apply1",

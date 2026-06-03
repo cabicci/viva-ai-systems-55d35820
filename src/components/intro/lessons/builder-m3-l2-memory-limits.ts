@@ -8,7 +8,7 @@ import {
   FlaskConical,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import memoryLimitsScreenshot from "@/assets/lessons/builder-m3-l7-memory-limits.jpg";
+import memoryLimitsScreenshot from "@/assets/lessons/builder-m3-l2-memory-limits.jpg";
 
 /**
  * Builder · M3 · Lesson 02 — حدود الذاكرة (Context Window limits)
@@ -90,7 +90,7 @@ export const BUILDER_M3_MEMORY_LIMITS_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "builder-m3-l7-memory-limits-apply",
+      lessonId: "builder-m3-l2-memory-limits-apply",
       items: [
         {
           id: "apply1",

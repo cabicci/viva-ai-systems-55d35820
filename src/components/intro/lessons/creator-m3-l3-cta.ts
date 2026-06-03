@@ -7,7 +7,7 @@ import {
   Rocket,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import ctaScreenshot from "@/assets/lessons/creator-m2-cta.jpg";
+import ctaScreenshot from "@/assets/lessons/creator-m3-l3-cta.jpg";
 
 /**
  * Creator · M2 · Lesson 03 — CTA: ازاي تخلّي المتفرّج يتحرّك
@@ -106,7 +106,7 @@ export const CREATOR_M2_CTA_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "creator-m2-cta-apply",
+      lessonId: "creator-m3-l3-cta-apply",
       items: [
         {
           id: "apply1",

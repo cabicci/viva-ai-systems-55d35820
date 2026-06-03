@@ -7,7 +7,7 @@ import {
   Rocket,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import hookScreenshot from "@/assets/lessons/creator-m2-hook.jpg";
+import hookScreenshot from "@/assets/lessons/creator-m3-l1-hook.jpg";
 
 /**
  * Creator · M2 · Lesson 01 — Hook: أول 3 ثواني
@@ -105,7 +105,7 @@ export const CREATOR_M2_HOOK_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "creator-m2-hook-apply",
+      lessonId: "creator-m3-l1-hook-apply",
       items: [
         {
           id: "apply1",

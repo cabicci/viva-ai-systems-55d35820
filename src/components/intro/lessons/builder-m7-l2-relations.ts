@@ -128,7 +128,7 @@ export const BUILDER_M8_RELATIONS_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "builder-m7-l20-relations-apply",
+      lessonId: "builder-m7-l2-relations-apply",
       items: [
         {
           id: "apply1",

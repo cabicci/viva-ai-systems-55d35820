@@ -81,7 +81,7 @@ export const BUSINESS_M2_CUSTOMER_LIFECYCLE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "business-m2-customer-lifecycle-apply",
+      lessonId: "business-m2-l1-customer-lifecycle-apply",
       items: [
         {
           id: "apply1",

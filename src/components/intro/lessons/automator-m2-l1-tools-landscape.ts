@@ -7,7 +7,7 @@ import {
   Rocket,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM2ToolsLandscapeScreenshot from "@/assets/lessons/unique/automator-m2-tools-landscape.jpg";
+import automatorM2ToolsLandscapeScreenshot from "@/assets/lessons/unique/automator-m2-l1-tools-landscape.jpg";
 /**
  * Automator · M2 · Lesson 01 — Make vs n8n vs Zapier
  */
@@ -101,7 +101,7 @@ export const AUTOMATOR_M2_TOOLS_LANDSCAPE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "automator-m2-tools-landscape-apply",
+      lessonId: "automator-m2-l1-tools-landscape-apply",
       items: [
         {
           id: "apply1",

@@ -9,7 +9,7 @@ import {
   GitCompare,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import instructionsExamplesScreenshot from "@/assets/lessons/builder-m2-l4-instructions-examples.jpg";
+import instructionsExamplesScreenshot from "@/assets/lessons/builder-m2-l2-instructions-examples.jpg";
 
 /**
  * Builder · M2 · Lesson 02 — Instructions vs Examples
@@ -99,7 +99,7 @@ export const BUILDER_M2_INSTRUCTIONS_EXAMPLES_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "builder-m2-l4-instructions-examples-apply",
+      lessonId: "builder-m2-l2-instructions-examples-apply",
       items: [
         {
           id: "apply1",

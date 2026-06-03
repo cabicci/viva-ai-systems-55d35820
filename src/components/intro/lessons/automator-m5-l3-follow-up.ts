@@ -7,7 +7,7 @@ import {
   Rocket,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import schedulingScreenshot from "@/assets/lessons/unique/automator-m5-follow-up.jpg";
+import schedulingScreenshot from "@/assets/lessons/unique/automator-m5-l3-follow-up.jpg";
 
 /**
  * Automator · M5 · Lesson 03 — المتابعة التلقائية + CRM
@@ -105,7 +105,7 @@ export const AUTOMATOR_M5_FOLLOW_UP_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "automator-m5-follow-up-apply",
+      lessonId: "automator-m5-l3-follow-up-apply",
       items: [
         {
           id: "apply1",

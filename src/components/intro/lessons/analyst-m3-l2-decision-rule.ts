@@ -80,7 +80,7 @@ export const ANALYST_M3_DECISION_RULE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "analyst-m3-decision-rule-apply",
+      lessonId: "analyst-m3-l2-decision-rule-apply",
       items: [
         {
           id: "apply1",

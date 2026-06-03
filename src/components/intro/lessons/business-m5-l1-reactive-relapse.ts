@@ -81,7 +81,7 @@ export const BUSINESS_M5_REACTIVE_RELAPSE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "business-m5-reactive-relapse-apply",
+      lessonId: "business-m5-l1-reactive-relapse-apply",
       items: [
         {
           id: "apply1",

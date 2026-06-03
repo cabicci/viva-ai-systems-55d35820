@@ -7,7 +7,7 @@ import {
   Rocket,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM2FiltersRoutersScreenshot from "@/assets/lessons/unique/automator-m2-filters-routers.jpg";
+import automatorM2FiltersRoutersScreenshot from "@/assets/lessons/unique/automator-m2-l3-filters-routers.jpg";
 /**
  * Automator · M2 · Lesson 03 — Filters & Routers
  */
@@ -102,7 +102,7 @@ export const AUTOMATOR_M2_FILTERS_ROUTERS_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "automator-m2-filters-routers-apply",
+      lessonId: "automator-m2-l3-filters-routers-apply",
       items: [
         {
           id: "apply1",

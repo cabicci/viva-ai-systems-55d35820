@@ -81,7 +81,7 @@ export const BUSINESS_M0_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS: IntroLessonContent
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "business-m0-from-decisions-to-leadership-apply",
+      lessonId: "business-m0-l1-from-decisions-to-leadership-apply",
       items: [
         {
           id: "apply1",

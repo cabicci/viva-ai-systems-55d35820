@@ -7,7 +7,7 @@ import {
   Rocket,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import chatgptScreenshot from "@/assets/lessons/creator-m4-ai-writing.jpg";
+import chatgptScreenshot from "@/assets/lessons/creator-m4-l3-ai-writing.jpg";
 /**
  * Creator · M4 · Lesson 03 — AI كمساعد كتابة
  * Format: Hero → Video → Concept → Platform Screenshot → Failure×Right → Mission
@@ -103,7 +103,7 @@ export const CREATOR_M4_AI_WRITING_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "creator-m4-ai-writing-apply",
+      lessonId: "creator-m4-l3-ai-writing-apply",
       items: [
         {
           id: "apply1",

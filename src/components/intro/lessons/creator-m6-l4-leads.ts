@@ -98,7 +98,7 @@ export const CREATOR_M5_LEADS_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "creator-m5-leads-apply",
+      lessonId: "creator-m6-l4-leads-apply",
       items: [
         {
           id: "apply1",

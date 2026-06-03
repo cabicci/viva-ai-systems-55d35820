@@ -79,7 +79,7 @@ export const BUSINESS_M3_DELEGATE_OR_AUTOMATE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "business-m3-delegate-or-automate-apply",
+      lessonId: "business-m3-l2-delegate-or-automate-apply",
       items: [
         {
           id: "apply1",

@@ -77,7 +77,7 @@ export const ANALYST_M2_THREE_SOURCES_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "analyst-m2-three-sources-apply",
+      lessonId: "analyst-m2-l1-three-sources-apply",
       items: [
         {
           id: "apply1",

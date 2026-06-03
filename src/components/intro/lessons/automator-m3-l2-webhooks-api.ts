@@ -7,7 +7,7 @@ import {
   Rocket,
   BookOpen, FlaskConical, HeartHandshake } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM3WebhooksApiScreenshot from "@/assets/lessons/unique/automator-m3-webhooks-api.jpg";
+import automatorM3WebhooksApiScreenshot from "@/assets/lessons/unique/automator-m3-l2-webhooks-api.jpg";
 /**
  * Automator · M3 · Lesson 02 — Webhooks & APIs
  */
@@ -125,7 +125,7 @@ export const AUTOMATOR_M3_WEBHOOKS_API_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "automator-m3-webhooks-api-apply",
+      lessonId: "automator-m3-l2-webhooks-api-apply",
       items: [
         {
           id: "apply1",

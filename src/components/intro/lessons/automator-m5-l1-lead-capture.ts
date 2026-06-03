@@ -7,7 +7,7 @@ import {
   Rocket,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import leadsScreenshot from "@/assets/lessons/unique/automator-m5-lead-capture.jpg";
+import leadsScreenshot from "@/assets/lessons/unique/automator-m5-l1-lead-capture.jpg";
 
 /**
  * Automator · M5 · Lesson 01 — استقبال Leads من Creator
@@ -103,7 +103,7 @@ export const AUTOMATOR_M5_LEAD_CAPTURE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "automator-m5-lead-capture-apply",
+      lessonId: "automator-m5-l1-lead-capture-apply",
       items: [
         {
           id: "apply1",

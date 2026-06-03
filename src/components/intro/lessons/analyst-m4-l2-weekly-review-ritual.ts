@@ -78,7 +78,7 @@ export const ANALYST_M4_WEEKLY_REVIEW_RITUAL_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "analyst-m4-weekly-review-ritual-apply",
+      lessonId: "analyst-m4-l2-weekly-review-ritual-apply",
       items: [
         {
           id: "apply1",

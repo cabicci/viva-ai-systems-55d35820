@@ -7,7 +7,7 @@ import {
   Rocket,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM3ErrorHandlingScreenshot from "@/assets/lessons/unique/automator-m3-error-handling.jpg";
+import automatorM3ErrorHandlingScreenshot from "@/assets/lessons/unique/automator-m3-l3-error-handling.jpg";
 /**
  * Automator · M3 · Lesson 03 — Error Handling
  */
@@ -114,7 +114,7 @@ export const AUTOMATOR_M3_ERROR_HANDLING_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "automator-m3-error-handling-apply",
+      lessonId: "automator-m3-l3-error-handling-apply",
       items: [
         {
           id: "apply1",

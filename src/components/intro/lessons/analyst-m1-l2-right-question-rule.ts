@@ -80,7 +80,7 @@ export const ANALYST_M1_RIGHT_QUESTION_RULE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "analyst-m1-right-question-rule-apply",
+      lessonId: "analyst-m1-l2-right-question-rule-apply",
       items: [
         {
           id: "apply1",

@@ -128,7 +128,7 @@ export const BUILDER_M9_AGENTS_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "builder-m9-l26-agents-apply",
+      lessonId: "builder-m9-l3-agents-apply",
       items: [
         {
           id: "apply1",

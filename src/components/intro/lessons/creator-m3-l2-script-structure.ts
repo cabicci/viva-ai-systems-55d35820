@@ -7,7 +7,7 @@ import {
   Rocket,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import structureScreenshot from "@/assets/lessons/creator-m2-script-structure.jpg";
+import structureScreenshot from "@/assets/lessons/creator-m3-l2-script-structure.jpg";
 
 /**
  * Creator · M2 · Lesson 02 — بنية السكريبت الكاملة
@@ -106,7 +106,7 @@ export const CREATOR_M2_SCRIPT_STRUCTURE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "creator-m2-script-structure-apply",
+      lessonId: "creator-m3-l2-script-structure-apply",
       items: [
         {
           id: "apply1",

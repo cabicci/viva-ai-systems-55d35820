@@ -7,7 +7,7 @@ import {
   Image as ImageIcon,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM1SpotPatternsScreenshot from "@/assets/lessons/unique/automator-m1-spot-patterns.jpg";
+import automatorM1SpotPatternsScreenshot from "@/assets/lessons/unique/automator-m1-l2-spot-patterns.jpg";
 /**
  * Automator · M1 · Lesson 02 — شوف الأنماط في يومك
  */
@@ -103,7 +103,7 @@ export const AUTOMATOR_M1_SPOT_PATTERNS_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "automator-m1-spot-patterns-apply",
+      lessonId: "automator-m1-l2-spot-patterns-apply",
       items: [
         {
           id: "apply1",

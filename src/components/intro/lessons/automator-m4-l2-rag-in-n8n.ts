@@ -8,7 +8,7 @@ import {
   BookOpen,
   Link2, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM4RagInN8NScreenshot from "@/assets/lessons/unique/automator-m4-rag-in-n8n.jpg";
+import automatorM4RagInN8NScreenshot from "@/assets/lessons/unique/automator-m4-l2-rag-in-n8n.jpg";
 /**
  * Automator · M4 · Lesson 02 — RAG جوه الـ Automation
  */
@@ -129,7 +129,7 @@ export const AUTOMATOR_M4_RAG_IN_N8N_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "automator-m4-rag-in-n8n-apply",
+      lessonId: "automator-m4-l2-rag-in-n8n-apply",
       items: [
         {
           id: "apply1",

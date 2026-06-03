@@ -100,7 +100,7 @@ export const CREATOR_M4_THUMBNAILS_CAPTIONS_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "creator-m4-thumbnails-captions-apply",
+      lessonId: "creator-m5-l2-thumbnails-captions-apply",
       items: [
         {
           id: "apply1",

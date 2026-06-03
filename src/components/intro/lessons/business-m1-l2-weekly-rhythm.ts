@@ -82,7 +82,7 @@ export const BUSINESS_M1_WEEKLY_RHYTHM_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "business-m1-weekly-rhythm-apply",
+      lessonId: "business-m1-l2-weekly-rhythm-apply",
       items: [
         {
           id: "apply1",

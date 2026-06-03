@@ -8,7 +8,7 @@ import {
   BookOpen,
   Link2, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM4AgentsScreenshot from "@/assets/lessons/unique/automator-m4-agents.jpg";
+import automatorM4AgentsScreenshot from "@/assets/lessons/unique/automator-m4-l3-agents.jpg";
 /**
  * Automator · M4 · Lesson 03 — Agents بياخدوا قرارات
  */
@@ -130,7 +130,7 @@ export const AUTOMATOR_M4_AGENTS_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "automator-m4-agents-apply",
+      lessonId: "automator-m4-l3-agents-apply",
       items: [
         {
           id: "apply1",

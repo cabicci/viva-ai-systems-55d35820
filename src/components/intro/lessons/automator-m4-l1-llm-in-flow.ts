@@ -8,7 +8,7 @@ import {
   BookOpen,
   Link2, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM4LlmInFlowScreenshot from "@/assets/lessons/unique/automator-m4-llm-in-flow.jpg";
+import automatorM4LlmInFlowScreenshot from "@/assets/lessons/unique/automator-m4-l1-llm-in-flow.jpg";
 /**
  * Automator · M4 · Lesson 01 — LLM جوه الـ Flow
  */
@@ -128,7 +128,7 @@ export const AUTOMATOR_M4_LLM_IN_FLOW_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "automator-m4-llm-in-flow-apply",
+      lessonId: "automator-m4-l1-llm-in-flow-apply",
       items: [
         {
           id: "apply1",

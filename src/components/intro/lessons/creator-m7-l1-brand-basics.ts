@@ -7,7 +7,7 @@ import {
   Rocket,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import brandImg from "@/assets/lessons/unique/creator-m6-brand-basics.jpg";
+import brandImg from "@/assets/lessons/unique/creator-m7-l1-brand-basics.jpg";
 
 export const CREATOR_M6_BRAND_BASICS_BLOCKS: IntroLessonContent = [
   {
@@ -103,7 +103,7 @@ export const CREATOR_M6_BRAND_BASICS_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "creator-m6-brand-basics-apply",
+      lessonId: "creator-m7-l1-brand-basics-apply",
       items: [
         {
           id: "apply1",

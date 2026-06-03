@@ -80,7 +80,7 @@ export const BUSINESS_M1_REACTIVE_VS_PROACTIVE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "business-m1-reactive-vs-proactive-apply",
+      lessonId: "business-m1-l1-reactive-vs-proactive-apply",
       items: [
         {
           id: "apply1",

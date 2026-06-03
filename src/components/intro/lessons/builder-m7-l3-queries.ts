@@ -8,7 +8,7 @@ import {
   BookOpen,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import queriesScreenshot from "@/assets/lessons/builder-m7-l21-queries.jpg";
+import queriesScreenshot from "@/assets/lessons/builder-m7-l3-queries.jpg";
 
 export const BUILDER_M8_QUERIES_BLOCKS: IntroLessonContent = [
   {
@@ -136,7 +136,7 @@ export const BUILDER_M8_QUERIES_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "quiz",
-      lessonId: "builder-m7-l21-queries-apply",
+      lessonId: "builder-m7-l3-queries-apply",
       items: [
         {
           id: "apply1",

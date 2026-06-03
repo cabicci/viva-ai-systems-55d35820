@@ -9,7 +9,7 @@ import {
   FlaskConical,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import styleControlScreenshot from "@/assets/lessons/builder-m2-l5-style-control.jpg";
+import styleControlScreenshot from "@/assets/lessons/builder-m2-l3-style-control.jpg";
 
 export const BUILDER_M2_STYLE_CONTROL_BLOCKS: IntroLessonContent = [
   {
@@ -80,7 +80,7 @@ export const BUILDER_M2_STYLE_CONTROL_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "builder-m2-l5-style-control-apply",
+      lessonId: "builder-m2-l3-style-control-apply",
       items: [
         {
           id: "apply1",

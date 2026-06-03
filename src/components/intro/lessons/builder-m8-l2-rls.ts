@@ -66,7 +66,7 @@ export const BUILDER_M7_RLS_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "builder-m8-l23-rls-quick-win",
+      lessonId: "builder-m8-l2-rls-quick-win",
       items: [
         {
           id: "quick-win-1",
@@ -181,7 +181,7 @@ export const BUILDER_M7_RLS_BLOCKS: IntroLessonContent = [
     title: "جاوب على سيناريوهات الـ AI دي",
     block: {
       kind: "quiz",
-      lessonId: "builder-m8-l23-rls-apply",
+      lessonId: "builder-m8-l2-rls-apply",
       items: [
         {
           id: "apply1",

@@ -7,7 +7,7 @@ import {
   Rocket,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import creatorWhyContentScreenshot from "@/assets/lessons/creator-m1-why-content.jpg";
+import creatorWhyContentScreenshot from "@/assets/lessons/creator-m1-l1-why-content.jpg";
 
 /**
  * Creator · M1 · Lesson 01 (v2 — unified 5-part rhythm)
@@ -105,7 +105,7 @@ export const CREATOR_M1_WHY_CONTENT_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "creator-m1-why-content-apply",
+      lessonId: "creator-m1-l1-why-content-apply",
       items: [
         {
           id: "apply1",

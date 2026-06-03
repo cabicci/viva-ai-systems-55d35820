@@ -7,7 +7,7 @@ import {
   Rocket,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM6ClosingLoopScreenshot from "@/assets/lessons/unique/automator-m6-closing-loop.jpg";
+import automatorM6ClosingLoopScreenshot from "@/assets/lessons/unique/automator-m6-l1-closing-loop.jpg";
 /**
  * Automator · M6 · Lesson 01 — Closing the Loop
  */
@@ -103,7 +103,7 @@ export const AUTOMATOR_M6_CLOSING_LOOP_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "automator-m6-closing-loop-apply",
+      lessonId: "automator-m6-l1-closing-loop-apply",
       items: [
         {
           id: "apply1",

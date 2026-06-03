@@ -7,7 +7,7 @@ import {
   BookMarked,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import frontendScreenshot from "@/assets/lessons/builder-m5-l10-frontend.jpg";
+import frontendScreenshot from "@/assets/lessons/builder-m5-l2-frontend.jpg";
 
 export const BUILDER_M5_FRONTEND_BLOCKS: IntroLessonContent = [
   {

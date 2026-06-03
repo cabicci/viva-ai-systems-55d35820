@@ -7,7 +7,7 @@ import {
   Rocket,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import realityScreenshot from "@/assets/lessons/creator-m4-reality-check.jpg";
+import realityScreenshot from "@/assets/lessons/creator-m4-l1-reality-check.jpg";
 /**
  * Creator · M4 · Lesson 01 — Reality Check
  * Format: Hero → Video → Concept → Platform Screenshot → Failure×Right → Mission
@@ -105,7 +105,7 @@ export const CREATOR_M4_REALITY_CHECK_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "creator-m4-reality-check-apply",
+      lessonId: "creator-m4-l1-reality-check-apply",
       items: [
         {
           id: "apply1",

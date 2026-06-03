@@ -83,7 +83,7 @@ export const ANALYST_M6_FROM_DECISIONS_TO_BUSINESS_BLOCKS: IntroLessonContent = 
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "analyst-m6-from-decisions-to-business-apply",
+      lessonId: "analyst-m6-l1-from-decisions-to-business-apply",
       items: [
         {
           id: "apply1",

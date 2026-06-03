@@ -89,7 +89,7 @@ export const BUILDER_M9_EMBEDDINGS_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "builder-m9-l25-embeddings-apply",
+      lessonId: "builder-m9-l2-embeddings-apply",
       items: [
         {
           id: "apply1",

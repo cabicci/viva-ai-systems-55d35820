@@ -7,7 +7,7 @@ import {
   Image as ImageIcon,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import opsLayersScreenshot from "@/assets/lessons/unique/automator-m1-systems-view.jpg";
+import opsLayersScreenshot from "@/assets/lessons/unique/automator-m1-l1-systems-view.jpg";
 /**
  * Automator · M1 · Lesson 01 — كل شغل = System
  */
@@ -102,7 +102,7 @@ export const AUTOMATOR_M1_SYSTEMS_VIEW_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "automator-m1-systems-view-apply",
+      lessonId: "automator-m1-l1-systems-view-apply",
       items: [
         {
           id: "apply1",
