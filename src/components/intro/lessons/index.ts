@@ -41,7 +41,7 @@ import { BUILDER_M9_RAG_BLOCKS } from "./builder-m9-l1-rag";
 import { BUILDER_M9_AGENTS_BLOCKS } from "./builder-m9-l3-agents";
 import { BUILDER_M10_DEPLOY_DOMAIN_BLOCKS } from "./builder-m10-deploy-domain";
 import { BUILDER_M10_FIRST_USERS_BLOCKS } from "./builder-m10-first-users";
-import { AUTOMATOR_M0_WHERE_YOU_ARE_BLOCKS } from "./automator-m1-l1-where-you-are";
+import { AUTOMATOR_M1_WHERE_YOU_ARE_BLOCKS } from "./automator-m1-l1-where-you-are";
 import { AUTOMATOR_M1_SYSTEMS_VIEW_BLOCKS } from "./automator-m2-l1-systems-view";
 import { AUTOMATOR_M1_SPOT_PATTERNS_BLOCKS } from "./automator-m2-l2-spot-patterns";
 import { AUTOMATOR_M1_DECIDE_WHAT_TO_AUTOMATE_BLOCKS } from "./automator-m2-l3-decide-what-to-automate";
@@ -71,7 +71,7 @@ import { CREATOR_M6_GRID_CONSISTENCY_BLOCKS } from "./creator-m7-l2-grid-consist
 import { INTRO_SETUP_YOUR_AI_CONTENT } from "./intro-m1-l3-setup-your-ai";
 import { BUILDER_M5_TRANSITION_BLOCKS } from "./builder-m5-l1-transition";
 /* Analyst (12) */
-import { ANALYST_M0_FROM_AUTOMATION_TO_INSIGHT_BLOCKS } from "./analyst-m1-l1-from-automation-to-insight";
+import { ANALYST_M1_FROM_AUTOMATION_TO_INSIGHT_BLOCKS } from "./analyst-m1-l1-from-automation-to-insight";
 import { ANALYST_M1_FEELING_TO_QUESTION_BLOCKS } from "./analyst-m2-l1-feeling-to-question";
 import { ANALYST_M1_RIGHT_QUESTION_RULE_BLOCKS } from "./analyst-m2-l2-right-question-rule";
 import { ANALYST_M2_THREE_SOURCES_BLOCKS } from "./analyst-m3-l1-three-sources";
@@ -84,7 +84,7 @@ import { ANALYST_M5_QUESTION_MISTAKES_BLOCKS } from "./analyst-m6-l1-question-mi
 import { ANALYST_M5_INTERPRETATION_MISTAKES_BLOCKS } from "./analyst-m6-l2-interpretation-mistakes";
 import { ANALYST_M6_FROM_DECISIONS_TO_BUSINESS_BLOCKS } from "./analyst-m7-l1-from-decisions-to-business";
 /* Business (12) */
-import { BUSINESS_M0_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS } from "./business-m1-l1-from-decisions-to-leadership";
+import { BUSINESS_M1_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS } from "./business-m1-l1-from-decisions-to-leadership";
 import { BUSINESS_M1_REACTIVE_VS_PROACTIVE_BLOCKS } from "./business-m2-l1-reactive-vs-proactive";
 import { BUSINESS_M1_WEEKLY_RHYTHM_BLOCKS } from "./business-m2-l2-weekly-rhythm";
 import { BUSINESS_M2_CUSTOMER_LIFECYCLE_BLOCKS } from "./business-m3-l1-customer-lifecycle";
@@ -147,7 +147,7 @@ export const INTRO_LESSON_CONTENT: Record<string, IntroLessonContent> = {
   "builder-m9-l3-agents": BUILDER_M9_AGENTS_BLOCKS,
   "builder-m10-deploy-domain": BUILDER_M10_DEPLOY_DOMAIN_BLOCKS,
   "builder-m10-first-users": BUILDER_M10_FIRST_USERS_BLOCKS,
-  "automator-m1-l1-where-you-are": AUTOMATOR_M0_WHERE_YOU_ARE_BLOCKS,
+  "automator-m1-l1-where-you-are": AUTOMATOR_M1_WHERE_YOU_ARE_BLOCKS,
   "automator-m2-l1-systems-view": AUTOMATOR_M1_SYSTEMS_VIEW_BLOCKS,
   "automator-m2-l2-spot-patterns": AUTOMATOR_M1_SPOT_PATTERNS_BLOCKS,
   "automator-m2-l3-decide-what-to-automate": AUTOMATOR_M1_DECIDE_WHAT_TO_AUTOMATE_BLOCKS,
@@ -175,7 +175,7 @@ export const INTRO_LESSON_CONTENT: Record<string, IntroLessonContent> = {
   "creator-m7-l1-brand-basics": CREATOR_M6_BRAND_BASICS_BLOCKS,
   "creator-m7-l2-grid-consistency": CREATOR_M6_GRID_CONSISTENCY_BLOCKS,
   /* Analyst */
-  "analyst-m1-l1-from-automation-to-insight": ANALYST_M0_FROM_AUTOMATION_TO_INSIGHT_BLOCKS,
+  "analyst-m1-l1-from-automation-to-insight": ANALYST_M1_FROM_AUTOMATION_TO_INSIGHT_BLOCKS,
   "analyst-m2-l1-feeling-to-question": ANALYST_M1_FEELING_TO_QUESTION_BLOCKS,
   "analyst-m2-l2-right-question-rule": ANALYST_M1_RIGHT_QUESTION_RULE_BLOCKS,
   "analyst-m3-l1-three-sources": ANALYST_M2_THREE_SOURCES_BLOCKS,
@@ -188,7 +188,7 @@ export const INTRO_LESSON_CONTENT: Record<string, IntroLessonContent> = {
   "analyst-m6-l2-interpretation-mistakes": ANALYST_M5_INTERPRETATION_MISTAKES_BLOCKS,
   "analyst-m7-l1-from-decisions-to-business": ANALYST_M6_FROM_DECISIONS_TO_BUSINESS_BLOCKS,
   /* Business */
-  "business-m1-l1-from-decisions-to-leadership": BUSINESS_M0_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS,
+  "business-m1-l1-from-decisions-to-leadership": BUSINESS_M1_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS,
   "business-m2-l1-reactive-vs-proactive": BUSINESS_M1_REACTIVE_VS_PROACTIVE_BLOCKS,
   "business-m2-l2-weekly-rhythm": BUSINESS_M1_WEEKLY_RHYTHM_BLOCKS,
   "business-m3-l1-customer-lifecycle": BUSINESS_M2_CUSTOMER_LIFECYCLE_BLOCKS,
