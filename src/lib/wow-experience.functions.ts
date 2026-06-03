@@ -80,6 +80,7 @@ export const runWowPath = createServerFn({ method: "POST" })
             { role: "user", content: cfg.user(data.idea) },
           ],
         }),
+        signal: AbortSignal.timeout(30_000),
       });
       if (!res.ok) {
         if (res.status === 429) return { text: "", error: "في ضغط على الـ AI، جرب تاني بعد دقيقة." };
