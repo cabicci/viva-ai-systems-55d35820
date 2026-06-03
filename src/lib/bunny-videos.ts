@@ -102,7 +102,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "intro-m1-l2-first-prompt": "0d1f6938-9d0d-4ed5-aaaa-630926583f16",
   "intro-m1-l6-learn-without-fear": "8f25afbb-0898-425f-8704-e87b18f1bc6c",
   "intro-m1-l3-setup-your-ai": "5d6bb671-df37-4997-a34f-23f1006dda7d",
-  "intro-m1-l1-what-is-ai": "c277b3f7-b9b8-4f4b-b1af-494c26460e3f",
+  "intro-m1-l1-what-is-ai": "16e002fc-755e-4044-b21c-6cbb0470debb",
 };
 
 export function getBunnyEmbedUrl(lessonId: string | undefined): string | undefined {
