@@ -36,6 +36,7 @@ let cacheInitialized = false;
 
 function initCache() {
   if (cacheInitialized) return;
+  if (typeof window === "undefined") return; // SSR guard — mirror learner-events
   cacheInitialized = true;
   // Seed from existing session (async, but writes that happen before
   // it resolves simply skip — same behaviour as a freshly-loaded tab).
