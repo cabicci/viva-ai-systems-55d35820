@@ -43,6 +43,8 @@ export interface CurriculumModule {
   lessons: CurriculumLesson[];
 }
 
+export type PathTier = "user" | "operator" | "builder";
+
 export interface CurriculumPath {
   id: PathId;
   title: string;
@@ -52,10 +54,16 @@ export interface CurriculumPath {
   status: "open" | "soon";
   /** marks the soft onboarding block before the real paths start. */
   kind?: "intro" | "path";
+  /** Three-tier positioning (v14):
+   *  user     = استخدام AI في الشغل (80% من السوق)
+   *  operator = أتمتة متقدمة + RAG + agents
+   *  builder  = بناء منتجات AI كاملة (تقني، اختياري) */
+  tier?: PathTier;
   /** route for the path overview page (when it exists) */
   route?: string;
   modules: CurriculumModule[];
 }
+
 
 /* -------------------------------------------------------------- */
 /*  Helpers                                                       */
