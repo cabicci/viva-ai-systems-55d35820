@@ -5,155 +5,59 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "chip": "HERO",
-    "subtitle": "صمّمت الجداول، ربطتها. دلوقتي إزاي تجيب البيانات وتعرضها للمستخدم؟",
-    "highlight": "= query وراه",
-    "title": "كل رقم بتشوفه على الشاشة"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "lavender",
-    "title": "كل حاجة Query",
-    "bullets": [
-      "كل كرت في الـ dashboard، كل list، كل عداد، كل فلتر — كله بينتهي بـ SELECT.",
-      "الـ query الوحش بيخلّي الصفحة تحمّل في ٦ ثواني. الصح بيخليها تحمّل في ٢٠٠ms من نفس الجداول."
-    ]
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "tag": "طلب معلومات",
-    "term": "Query / SELECT",
-    "definition": "طلب معلومات محددة من قاعدة البيانات عشان تظهرلك على الشاشة."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "tag": "تسريع البحث",
-    "term": "Index / الفهرس",
-    "definition": "زي فهرس الكتاب، بيسرع تدوير السيستم على المعلومة بدل ما يدور في كله."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "tag": "حمولة البيانات",
-    "term": "Payload",
-    "definition": "الحمولة أو البيانات الفعلية اللي مبعوتة في الطلب بتاعك."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "tag": "كمية البيانات",
-    "term": "Bandwidth",
-    "definition": "عرض الطريق اللي البيانات بتمشي فيه، بيحدد كمية المعلومات اللي بتتنقل."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "tag": "قواعد الكود",
-    "term": "Syntax (التقطيت والنقط)",
-    "definition": "القواعد اللي بنرص بيها الكود والرموز عشان الجهاز يفهم قصدنا إيه."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "اختراق البيانات",
-    "term": "SQL Injection (الهكر)",
-    "definition": "طريقة \"خبيثة\" الهكر بيستخدمها عشان يسرق بيانات أو يبوظ السيستم عن طريق خانات الكتابة."
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "peach",
-    "title": "Query = ٤ أسئلة بتقولها للـ DB",
-    "bullets": [
-      "كل query بتجاوب على ٤ أسئلة بالترتيب: عايز إيه (SELECT)، منين (FROM + JOIN)، بشروط إيه (WHERE)، مرتّب وممزّق إزاي (ORDER BY + LIMIT).",
-      "لو فهمت الترتيب ده، تقدر تكتب أي query في الدنيا."
-    ]
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "yellow",
-    "bullets": [
-      "SELECT: حدّد الأعمدة اللي محتاجها بالظبط، مش *.",
-      "SELECT id, title, created_at أحسن من SELECT * لأنها بتقلّل الـ payload وبتسرّع الـ response.",
-      "للأعداد: استعمل SELECT count(*) أو count(distinct user_id)."
-    ],
-    "title": "SELECT: حدّد اللي محتاجه"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "pink",
-    "bullets": [
-      "JOIN: بتربط جدولين عن طريق FK.",
-      "INNER JOIN = بس اللي ليه match.",
-      "LEFT JOIN = كل سطور tasks حتى لو الـ user اتمسح.",
-      "للـ N:M بتعمل JOIN مرتين: tasks → task_tags → tags."
-    ],
-    "title": "JOIN: اربط الجداول"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "mintDeep",
-    "bullets": [
-      "WHERE user_id = $1 AND status = 'pending' بتفلتر.",
-      "ORDER BY created_at desc بترتّب.",
-      "LIMIT 20 OFFSET 0 بتجيب صفحة.",
-      "الـ $1 = parameterized query — مش بتحط القيم في النص مباشرة (ده SQL injection).",
-      "أي عمود بتعمل عليه WHERE أو ORDER BY كتير → اعمله index، وإلا الـ DB هيقرأ الجدول كله كل مرة."
-    ],
-    "title": "WHERE, ORDER BY, LIMIT"
-  },
-  {
-    "card": "ScreenshotCard",
-    "accent": "mint",
-    "caption": "الصفحة دي مش بتعرض جدول خام — دي ٤ queries منفصلين. كرت \"DB جداول = 2\" هو SELECT count(*) FROM information_schema.tables WHERE table_schema='public'. كرت \"الدروس المنشورة 18/85\" هو SELECT count(*) FILTER (WHERE status='published') AS shipped, count(*) AS total FROM lessons. \"24 موديول · 6 مسارات\" = SELECT count(*) FROM modules و count(*) FROM paths. كل رقم تشوفه = query بيجري لما تفتح الصفحة. لو الـ lessons.status من غير index، الـ count ده هياخد ثواني لما الجدول يكبر — ده الفرق بين schema مصمّم صح و schema بيتعب التطبيق.",
-    "src": "lessons/builder-m7-l21-queries.jpg",
-    "eyebrow": "من المنصة",
-    "title": "Case Study — كل عداد في الـ Master Report = query"
-  },
-  {
-    "card": "ScreenshotCard",
-    "accent": "lavender",
-    "src": "lessons/builder-m7-l21-queries.jpg",
-    "eyebrow": "من المنصة",
-    "title": "Case Study — كل عداد في الـ Master Report = query",
-    "caption": "الصفحة دي مش بتعرض جدول خام — دي ٤ queries منفصلين. كرت \"DB جداول = 2\" هو SELECT count(*) FROM information_schema.tables WHERE table_schema='public'. كرت \"الدروس المنشورة 18/85\" هو SELECT count(*) FILTER (WHERE status='published') AS shipped, count(*) AS total FROM lessons. \"24 موديول · 6 مسارات\" = SELECT count(*) FROM modules و count(*) FROM paths. كل رقم تشوفه = query بيجري لما تفتح الصفحة. لو الـ lessons.status من غير index، الـ count ده هياخد ثواني لما الجدول يكبر — ده الفرق بين schema مصمّم صح و schema بيتعب التطبيق."
+    "chip": "المشكلة",
+    "title": "صفحتك بتقعد 6 ثواني تحمّل... والتانية 200 ميللي ثانية.",
+    "subtitle": "أهلًا بيك! الأبليكيشن بطيء وممل، والمشكلة مش في السيرفر.",
+    "highlight": "إيه الفرق؟"
   },
   {
     "card": "CompareCard",
-    "accent": "peach",
+    "accent": "lavender",
+    "title": "شوف الفرق بنفسك بين الطلب الغلط والصح",
     "left": {
-      "body": "const { data } = await supabase.from('tasks').select('*'); const mine = data.filter(t => t.user_id === userId && t.status === 'pending').slice(0, 20). النتيجة: لو الجدول فيه ١٠٠ ألف task، الـ DB بيرجّع كلها للـ Frontend (ميجابايت من البيانات) عشان تستخدم ٢٠ منهم. + RLS مش هيحميك لو نسيت .eq('user_id'، + مفيش index بيتستخدم، + الـ pagination مش حقيقية.",
-      "label": "FAILURE — SELECT * ثم filter في JavaScript"
+      "body": "الـ DB بيرجّع ١٠٠ ألف task (ممكن يبقوا ميجابايتس) عشان تستخدم ٢٠ بس. بطيء، وبيستهلك نت، وغير آمن.",
+      "label": "غلط — هات كل حاجة وبعدين فلتر"
     },
     "right": {
-      "body": "supabase.from('tasks').select('id, title, status, created_at').eq('user_id', userId).eq('status', 'pending').order('created_at', { ascending: false }).range(0, 19). الـ DB بيستخدم index على (user_id, status)، بيرجّع ٢٠ سطر بس بأعمدة محدّدة، الـ pagination حقيقية، والـ RLS بتتطبّق فوقها كطبقة حماية تانية. النتيجة: 200ms بدل 6s، وbandwidth أقل ١٠٠ مرة.",
-      "label": "RIGHT — اسأل الـ DB بالظبط على اللي محتاجه"
-    },
-    "title": "جيب الكل وفلتر في الـ Frontend vs اسأل الـ DB صح"
+      "body": "الـ DB بيرجّع ٢٠ سطر بس بالأعمدة اللي انت عايزها. سريع، خفيف، وآمن. فرق السما من الأرض في الأداء.",
+      "label": "صح — اطلب اللي محتاجه بالظبط"
+    }
   },
   {
-    "card": "CompareCard",
+    "card": "ConceptCard",
+    "accent": "peach",
+    "tag": "سؤال لـ DB",
+    "term": "Query",
+    "definition": "سؤال محدد بتسأله لقاعدة البيانات (DB) عشان تجيبلك حتة داتا معينة."
+  },
+  {
+    "card": "BulletsCard",
     "accent": "yellow",
-    "left": {
-      "body": "const { data } = await supabase.from('tasks').select('*'); const mine = data.filter(t => t.user_id === userId && t.status === 'pending').slice(0, 20). النتيجة: لو الجدول فيه ١٠٠ ألف task، الـ DB بيرجّع كلها للـ Frontend (ميجابايت من البيانات) عشان تستخدم ٢٠ منهم. + RLS مش هيحميك لو نسيت .eq('user_id'، + مفيش index بيتستخدم، + الـ pagination مش حقيقية.",
-      "label": "FAILURE — SELECT * ثم filter في JavaScript"
-    },
-    "right": {
-      "body": "supabase.from('tasks').select('id, title, status, created_at').eq('user_id', userId).eq('status', 'pending').order('created_at', { ascending: false }).range(0, 19). الـ DB بيستخدم index على (user_id, status)، بيرجّع ٢٠ سطر بس بأعمدة محدّدة، الـ pagination حقيقية، والـ RLS بتتطبّق فوقها كطبقة حماية تانية. النتيجة: 200ms بدل 6s، وbandwidth أقل ١٠٠ مرة.",
-      "label": "RIGHT — اسأل الـ DB بالظبط على اللي محتاجه"
-    },
-    "title": "جيب الكل وفلتر في الـ Frontend vs اسأل الـ DB صح"
+    "title": "أي Query في الدنيا عبارة عن 4 أسئلة",
+    "bullets": [
+      "عايز إيه (SELECT): حدد الأعمدة اللي محتاجها بالظبط، مش كل حاجة.",
+      "منين (FROM + JOIN): لو الداتا في جدولين، بتربطهم بـ JOIN.",
+      "بشروط إيه (WHERE): دي الفلاتر بتاعتك، ولو بتفلتر كتير اعمل index.",
+      "مترتب ومتقسم إزاي (ORDER BY + LIMIT): رتب من الأحدث للأقدم، واجيب أول ٢٠ بس."
+    ]
+  },
+  {
+    "card": "ScreenshotCard",
+    "accent": "pink",
+    "eyebrow": "مثال حقيقي",
+    "src": "lessons/builder-m7-l21-queries.jpg",
+    "title": "كل رقم في الداشبورد دي وراه Query",
+    "caption": "الصفحة دي فيها ٤ queries منفصلين. زي كارت \"الدروس المنشورة 18/85\" اللي وراه query بتعد الدروس المنشورة وغير المنشورة. الـ index بيخليها أجزاء من الثانية بدل ثواني طويلة."
   },
   {
     "card": "CTACard",
-    "accent": "pink",
-    "tagline": "خش على الـ quiz وطبّق اللي اتعلّمته، وهنتقابل في درس: الـ AI مش بيقرأ كلامك — بيقرأ أرقام.",
-    "highlight": "على الـ schema بتاعك",
+    "accent": "mintDeep",
     "eyebrow": "دورك دلوقتي",
-    "title": "اكتب ٥ Queries حقيقية"
+    "highlight": "جاوب على الأسئلة دي",
+    "tagline": "يلا نطبق اللي اتعلمناه ونشوف إزاي تكتب الـ Query الصح.",
+    "title": "اختبر فهمك للـ Queries"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [282, 357, 311, 292, 378, 299, 394, 388, 384, 364, 339, 493, 426, 409, 454, 390, 389];
+export const SCENE_FRAMES: number[] = [663, 757, 597, 894, 630, 454];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
