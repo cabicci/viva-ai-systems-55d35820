@@ -126,6 +126,7 @@ export async function updateSubmission(
   submissionId: string,
   patch: UpdateSubmissionInput,
 ): Promise<MissionSubmission> {
+  const userId = await requireUserId();
   const update: Record<string, unknown> = {};
   if (patch.submissionText !== undefined)
     update.submission_text = patch.submissionText;
@@ -137,10 +138,12 @@ export async function updateSubmission(
   if (patch.feedback !== undefined) update.feedback = patch.feedback;
   if (patch.score !== undefined) update.score = patch.score;
 
+  // Defense-in-depth: scope the update to the caller even though RLS does too.
   const { data, error } = await supabase
     .from(TABLE)
     .update(update as never)
     .eq("id", submissionId)
+    .eq("user_id", userId)
     .select()
     .single();
   if (error) throw error;
