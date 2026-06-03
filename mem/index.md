@@ -1,6 +1,7 @@
 # Project Memory
 
 ## Core
+🚫 **ABSOLUTE BAN (user repeated 10+ times)**: NEVER use `spawn_agent` / `acp_subagent--spawn_agent` AND NEVER use Lovable AI Gateway (chat/completions, embeddings, image gen via gateway). Both burn credits. Do ALL research/edits directly with parallel tool calls. For any AI generation use user's own GEMINI_API_KEY / OPENROUTER_API_KEY only. Violating = serious failure.
 Path lineup: Builder, Creator, Automator, Analyst, Business — all 5 complete & published. Never label as "coming soon".
 Path integration / visual journey map deferred until further notice.
 Lesson IDs follow {path}-{module}-{slug} (e.g. `automator-m1-systems-view`). The id itself encodes path + module + order within the path — do NOT invent a global lesson number like "الدرس 22".
