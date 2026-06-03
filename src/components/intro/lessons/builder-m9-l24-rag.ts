@@ -14,14 +14,14 @@ import ragDiagram from "@/assets/lessons/concepts/rag-diagram.jpg";
 export const BUILDER_M9_RAG_BLOCKS: IntroLessonContent = [
   {
     icon: Lightbulb,
-    eyebrow: "تنبيه: درس تقني",
-    title: "ده درس متقدّم — اتخطّاه لو لسه في البداية",
+    eyebrow: "اختياري — للمتقدمين",
+    title: "لو هدفك استخدام AI في شغلك فقط، تقدر تعدّي الدرس ده بأمان",
     tone: "accent",
     block: {
       kind: "paragraphs",
       paragraphs: [
         "الدرس ده بيشرح إزاي تخلّي الـAI يرد من ملفاتك. لو لسه بتتعلم الأساسيات، تقدر تعدّيه دلوقتي وترجعله بعدين — مش هيأثر على باقي رحلتك.",
-        "لو فاهم الأساسيات وعايز تعمّق، يلا نكمل.",
+        "لو فعلًا عايز تبني — يلا نكمل.",
       ],
     },
   },
