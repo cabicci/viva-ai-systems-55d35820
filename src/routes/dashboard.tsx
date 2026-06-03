@@ -18,7 +18,7 @@ import { ReviewsDueCard } from "@/components/dashboard/ReviewsDueCard";
 import { useCountUp } from "@/hooks/use-count-up";
 
 import { StreakCard } from "@/components/dashboard/StreakCard";
-import { useEntitlement, isLessonFree } from "@/lib/entitlements";
+import { useEntitlement, decideLessonGate } from "@/lib/entitlements";
 import { PhaseRibbon } from "@/components/admin/PhaseRibbon";
 
 type DashboardSearch = { path?: string; module?: string; lesson?: string };
@@ -380,14 +380,24 @@ function ModuleRow({
                 const lessonData = getLesson(l.id);
                 const access = getLessonAccess(l, store, orderedIds, getStatus);
                 const sequentialUnlocked = isPro ? l.state === "available" : access.isUnlocked;
-                // Entitlement gate:
-                // - non-intro path + intro not done → locked
-                // - non-intro path + not Pro + not free (path-intro) → paywall
-                let paid: "locked-intro" | "paywall" | null = null;
-                if (!isPro && pathId !== "intro") {
-                  if (!introAllDone) paid = "locked-intro";
-                  else if (!isLessonFree(l.id)) paid = "paywall";
-                }
+                // Single source of truth — same gate the lesson page uses.
+                const introIds = pathLessonIds(intro);
+                const introCompletedCount = introIds.filter(
+                  (id) => getStatus(id) === "completed",
+                ).length;
+                const gate = decideLessonGate({
+                  lessonId: l.id,
+                  isPro,
+                  isAdmin,
+                  introCompletedCount,
+                  introTotal: introIds.length,
+                });
+                const paid: "locked-intro" | "paywall" | null =
+                  gate.kind === "complete-intro-first"
+                    ? "locked-intro"
+                    : gate.kind === "paywall"
+                      ? "paywall"
+                      : null;
                 const lUnlocked = sequentialUnlocked && paid === null;
                 const lDone = access.isCompleted;
                 const lInProgress = access.isInProgress;
