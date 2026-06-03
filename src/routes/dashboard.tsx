@@ -300,6 +300,7 @@ function ModuleRow({
     prevModule,
     getStatus,
     prevModule ? mastery[prevModule.id] : undefined,
+    isPro, // bypassLocks for pro/admin — single source of truth
   );
   const {
     prevDone,
@@ -312,8 +313,6 @@ function ModuleRow({
     prevNotMastered,
     prevMissingMissionCount,
   } = status;
-  const effectiveModuleLocked = !isPro && moduleLocked;
-  const effectivePrevNotMastered = !isPro && prevNotMastered;
 
   return (
     <div
