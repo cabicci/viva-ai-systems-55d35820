@@ -11,100 +11,97 @@ import ragDiagram from "@/assets/lessons/concepts/rag-diagram.jpg";
 
 /**
  * Builder · M9 · Lesson 02 — RAG: AI يرد من بياناتك
- * Format: Hero → Video → Concept → Platform Screenshot → Failure×Right → Mission
+ * V2 Editor: @GPT-4
  *
- * يبني على M9.1 (Embeddings) — دلوقتي بنركّب الـ pipeline كامل: Retrieve → Augment → Generate.
+ * Rules:
+ * 1. No Theory Without Tension: Start with the pain of AI hallucination.
+ * 2. Quick Win in 30s: Move the "try our assistant" case study to the top.
+ * 3. Example Before Term: Use the manager/file cabinet analogy for RAG.
+ * 4. One Term Max: Focus only on "RAG", remove the long list of concepts.
+ * 5. Simple Mission: Change the mission to a single, simple question.
+ * 6. Egyptian Dialect: Full conversion to Cairo Ammiya.
+ * 7. No Repetition: Consolidate the "what is RAG" explanation into one concept block.
+ * 8. Momentum: Create a flow: Problem → Solution Demo → Concept → How-to → Apply.
  */
 export const BUILDER_M9_RAG_BLOCKS: IntroLessonContent = [
   {
-    icon: Sparkles,
-    eyebrow: "HERO",
-    title: "RAG = الـ AI بيرد من بياناتك إنت، مش من معلومات عامة",
+    icon: Scale,
+    eyebrow: "المشكلة",
+    title: "ليه الـ AI بتاعك ساعات بيألّف إجابات؟",
     tone: "primary",
     block: {
-      kind: "paragraphs",
-      paragraphs: [
-        "GPT/Gemini يعرفوا حاجات كتير عن العالم، بس مش يعرفوا حاجة عن مشروعك: أسعار منتجاتك، سياسات شركتك، دروس منصّتك.",
-        "RAG (Retrieval-Augmented Generation) = ٣ خطوات بسيطة: ندوّر في بياناتنا (Retrieve) → نحقن النتايج في الـ prompt (Augment) → نخلّي الـ AI يرد (Generate).",
-        "النتيجة: AI \"يعرف\" مشروعك بدون training، بدون fine-tuning، وبتكلفة ضئيلة.",
+      kind: "comparison",
+      left: {
+        label: "غلط: تسأل الـ AI سؤال مباشر",
+        body: "بتسأل GPT عن سعر منتجك، فيرد: \"سعره 29 دولار\". بس إنت عمرك ما بعته بالسعر ده! الـ AI هنا بيألّف (Hallucination) لأنه مشفش بياناتك، فبيخمّن إجابة شكلها منطقي. النتيجة: العميل ياخد معلومة غلط، ويفقد الثقة فيك.",
+      },
+      right: {
+        label: "صح: تخلّي الـ AI يقرأ بياناتك الأول",
+        body: "قبل ما الـ AI يجاوب، السيستم بتاعك بيدوّر في ملفاتك (زي الأسعار وسياسة الاسترجاع)، ويلاقي الحتة الصح، ويقول للـ AI: \"جاوب من الورقة دي بس\". النتيجة: إجابة دقيقة من بياناتك، مش تأليف. ولو المعلومة مش موجودة، بيقول \"معرفش\" بكل أمانة.",
+      },
+    },
+  },
+  {
+    icon: FlaskConical,
+    eyebrow: "جرّب دلوقتي",
+    title: "شوف مساعد بيرد من بيانات حقيقية",
+    tone: "accent",
+    block: {
+      kind: "caseStudy",
+      title: "المساعد بيستخدم RAG على knowledge_chunks",
+      summary:
+        "المساعد اللي في المنصة هنا مش بيألّف. لما بتسأله، هو الأول بيدوّر في كل الدروس اللي إنت بتدرسها، وبعدين يجاوب من المحتوى ده بالظبط. جرّب اسأله عن أي حاجة اتعلمتها وشوف هيرد إزاي.",
+      bullets: [
+        "knowledge_chunks جدول فيه كل الدروس متقسمة حتت صغيرة (chunks).",
+        "البحث بيتم بالأرقام (vector search) عشان يلاقي أقرب معلومة لسؤالك.",
+        "النتيجة: المساعد بيرد من محتوى المنصة، مش من معلومات Gemini العامة.",
       ],
+      pathAngle: "builder",
+      link: { label: "جرّب المساعد بنفسك", href: "/ai-assistant" },
     },
   },
   {
     icon: BookOpen,
-    eyebrow: "مصطلحات الدرس",
-    title: "اللي هتسمعه في الدرس ده",
+    eyebrow: "الحل السحري",
+    title: "المصطلح الوحيد اللي محتاج تعرفه",
     block: {
       kind: "concepts",
       items: [
-        { term: "Pipeline", meaning: "خطوات ماشية ورا بعض بتسلم بعض عشان تطلع نتيجة نهائية.", example: "زي مراحل شغل الماركتير: بيبدأ ببحث، بعدين كتابة، بعدين تصميم، وبعدين نشر.. كله ورا بعضه." },
-        { term: "Token", meaning: "أصغر وحدة AI بيفهمها؛ ممكن تكون كلمة أو حتة من كلمة.", example: "المحاسب بياخد فاتورة كبيرة، يقرأها حتة حتة (تلاتات تلاتات) عشان يفهم التفاصيل." },
-        { term: "Chunking (and Overlap)", meaning: "تقطيع الكلام لحتت صغيرة عشان الـ AI يعرف يدوّر فيها بدقة.", example: "محاسب بيقطع ملف ضرائب لحتت صغيرة عشان لما يدوّر، يلاقي المعلومة بسرعة." },
-        { term: "K-Nearest Neighbors (Top-k)", meaning: "رقم إنت بتحدده، بيعرف الـ AI يجيبلك كام نتيجة بالظبط.", example: "لو بتدور على فواتير عميل، k=3 يعني الـ AI يجيبلك أكتر 3 فواتير شبه اللي بتطلبه." },
-        { term: "pgvector / Vector Database", meaning: "نوع داتابيز ذكية بتخزن المعلومات في شكل أرقام عشان البحث السريع.", example: "التاجر بيحط بيانات العملاء في جدول خاص بيعرف يدوّر فيه بالمعنى مش بالكلمة." },
-        { term: "Context Injection/RAG", meaning: "تزويد الـ AI بمعلومات من عندك جوه السؤال عشان يجاوب صح.", example: "بدل ما الـ AI يهبد، إنت بتبعتله بيانات \"أرصدة المخزن\" عشان يرد منها." },
+        {
+          term: "RAG (Retrieval-Augmented Generation)",
+          meaning: "طريقة بتخلي الـ AI يرد من بياناتك إنت. بنلاقي (Retrieve) المعلومة الصح من ملفاتك، نضيفها (Augment) لسؤالك، وبعدين نخليه يجاوب (Generate). باختصار: بحث + سؤال = إجابة دقيقة.",
+          example: "تخيل بتسأل مديرك سؤال. بدل ما يجاوب من دماغه، بيفتح الدرج، يطلع الفايل المخصوص بتاع الموضوع ده، ويقرالك منه الإجابة. ده بالظبط اللي بيعمله الـ RAG."
+        },
       ],
     },
   },
   {
     icon: PlayCircle,
-    eyebrow: "فيديو الدرس",
-    title: "اتفرّج الأول",
-    tone: "accent",
+    eyebrow: "شوف بعينك",
+    title: "الـ RAG شغال إزاي خطوة بخطوة",
     block: {
       kind: "lessonVideo",
-      caption: "Pipeline RAG كامل: chunking → embed → store → retrieve → augment → generate.",
-    },
-  },
-  {
-    icon: Lightbulb,
-    eyebrow: "الفكرة",
-    title: "Pipeline من ٣ مراحل — كل مرحلة لها دور واضح",
-    block: {
-      kind: "paragraphs",
-      paragraphs: [
-        "المرحلة 0 — Indexing (مرة واحدة، أو لما المحتوى يتغيّر): تاخد محتواك (دروس، مقالات، docs) → تقسّمه chunks (مثلاً ٥٠٠ token لكل chunk، مع overlap ٥٠ token عشان السياق ميتقطعش) → تعمل embedding لكل chunk → تخزّنه في pgvector. النتيجة: جدول chunks(id, source_id, content, embedding vector(1536)).",
-        "ليه نقسّم لـ chunks أصلاً؟ لو حقنت كتاب كامل في الـ prompt، الـ AI هيغرق في معلومات مش علاقة بالسؤال (وكمان هتدفع tokens كتير). chunks صغيرة = الـ Vector search يلاقي القطعة الأدق، والـ AI يشوف بس ٥-١٠ فقرات علاقة مباشرة. دقة أعلى + تكلفة أقل.",
-        "المرحلة 1 — Retrieve: المستخدم يسأل سؤال. تعمل embedding للسؤال. تعمل query: select content from chunks order by embedding <=> $1 limit 5. بترجع أعلى ٥ chunks تشابهًا بسؤاله. ده اللي شغّال في الـ \"Retrieval Layer\" في الـ runtime بتاع المنصة (٥١٦ chunks مفهرسة).",
-        "المرحلة 2 — Augment: تركّب prompt جديد فيه: السؤال + الـ ٥ chunks كـ context + تعليمات. مثال: \"أنت مساعد. جاوب على السؤال ده استنادًا فقط على المعلومات اللي تحت. لو الإجابة مش موجودة، قول \"مش متأكد\". السياق:\\n[chunk1]\\n[chunk2]\\n...\\nالسؤال: {user_question}\".",
-        "المرحلة 3 — Generate: تبعت الـ prompt للـ LLM (GPT/Gemini). الموديل يولّد إجابة مبنية على الـ context. لو سألت سؤال خارج الـ context، هيقول \"مش متأكد\" بدل ما يخترع (Hallucination). دي القيمة الكبرى للـ RAG: الـ AI بيتقيّد ببياناتك.",
-      ],
+      caption: "فيديو بيشرح الرحلة كاملة: من أول تقطيع الملفات، لتخزينها، للبحث فيها، لحد ما الـ AI يطلع إجابة نهائية.",
     },
   },
   {
     icon: ImageIcon,
-    eyebrow: "شوف بنفسك",
-    title: "RAG Pipeline: السؤال → استرجاع → دمج → إجابة",
+    eyebrow: "تحت الغطا",
+    title: "رحلة السؤال من أول ما بيتكتب لحد الإجابة",
     tone: "primary",
     block: {
       kind: "screenshot",
       src: ragDiagram,
-      alt: "Diagram للـ RAG: السؤال بيتحوّل لـ vector ويدور في document database، أعلى chunks بترجع وتتدمج مع السؤال في prompt واحد للـ LLM، اللي بيطلّع الإجابة النهائية",
+      alt: "رسم بياني للـ RAG: السؤال بيتحول لـ vector ويدور في قاعدة بيانات المستندات، وأكتر chunks شبهه بترجع وتتدمج مع السؤال في prompt واحد للـ LLM، اللي بيطلع الإجابة النهائية.",
       caption:
-        "الـ RAG = Retrieve + Augment + Generate. لما يجي سؤال، الـ system بيدوّر في قاعدة المستندات بـ vector search ويطلّع أعلى chunks علاقة. بعدين بيحقنهم مع السؤال في prompt واحد للـ LLM. اللي بيخلّي الإجابة مبنيّة على معلومات حقيقية من مصدرك، مش هلوسة من الموديل، ومع كل تحديث للمستندات الإجابات بتتحدّث تلقائيًا.",
-      label: "RAG Architecture — الـ 5 خطوات",
+        "لما بتسأل، السيستم بيحوّل سؤالك لأرقام ويدوّر بيها في قاعدة بياناتك عشان يلاقي أكتر حتت شبهه. بعدين ياخد الحتت دي مع سؤالك الأصلي ويبعتهم للـ AI في طلب واحد. كده بنضمن الإجابة تبقى من بياناتك، مش من تأليف الـ AI.",
+      label: "معمارية الـ RAG — الـ 3 خطوات الأساسية",
     },
   },
   {
-    icon: Scale,
-    eyebrow: "Failure × Right",
-    title: "Hallucination vs Grounded Answer",
-    block: {
-      kind: "comparison",
-      left: {
-        label: "FAILURE — تبعت السؤال للـ AI من غير context",
-        body: "const r = await ai.chat({ prompt: userQuestion }). المستخدم يسأل: \"كام سعر الـ Pro plan في تطبيقك؟\". الـ AI ميعرفش — فبيخترع: \"$29 شهريًا\". غلط. أو يسأل عن سياسة الإرجاع — يخترع كلام منطقي بس مش بتاعك. النتيجة: Hallucination، خسارة ثقة، ودعم فني بيتعب يصلّح أخطاء AI.",
-      },
-      right: {
-        label: "RIGHT — Retrieve أولًا، ثم Generate",
-        body: "const queryEmbedding = await embed(userQuestion);\nconst chunks = await db.from('chunks').select('content').order(`embedding <=> '${queryEmbedding}'`).limit(5);\nconst prompt = `جاوب من السياق ده فقط:\\n${chunks.join('\\n')}\\n\\nالسؤال: ${userQuestion}`;\nconst answer = await ai.chat({ prompt });\n\nالنتيجة: لو السعر موجود في docs بتاعتك، الـ AI يرجّعه بدقة. لو مش موجود، يقول \"مش لاقي المعلومة دي\" بدل ما يخترع. + بترجع الـ chunks للمستخدم كـ \"sources\" عشان يتأكد.",
-      },
-    },
-  },
-  {
-    icon: Rocket,
-    eyebrow: "دورك دلوقتي",
-    title: "صمّم RAG Pipeline لتطبيقك على ورق",
+    icon: Lightbulb,
+    eyebrow: "اختبر فهمك",
+    title: "جاوب على الأسئلة دي",
     tone: "accent",
     block: {
       kind: "quiz",
@@ -113,92 +110,66 @@ export const BUILDER_M9_RAG_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "لو عايز تعمل مساعد دعم فني لمتجر إلكتروني عشان يرد على أسئلة الزباين عن المنتجات وسياسات الشحن، إيه أول خطوة هتعملها عشان تجهز بياناتك لـ RAG؟",
+          question: "لو عايز تعمل مساعد دعم فني لمتجر إلكتروني عشان يرد على أسئلة الزباين، إيه أول خطوة هتعملها عشان تجهز بياناتك؟",
           options: [
-            "هتاخد وصف المنتجات وسياسات الشحن وتقسمها قطع صغيرة (chunks) وتخزنها في قاعدة بيانات مع الـ embedding بتاعها.",
+            "هتاخد وصف المنتجات وسياسات الشحن وتقسمها حتت صغيرة (chunks) وتخزنها في قاعدة بيانات مع الـ embedding بتاعها.",
             "هتعمل fine-tuning لموديل AI كبير زي GPT عشان يتعلم تفاصيل المنتجات وسياسات الشحن.",
             "هتكتب بنفسك كل الإجابات المحتملة لأسئلة الزباين وتخزنها في جدول في قاعدة البيانات."
           ],
           correctIndex: 0,
-          explanation: "أول خطوة هي الـ Indexing، بنقسّم المحتوى لـ chunks ونعملها embedding عشان نقدر نبحث فيها بشكل فعال لما يجي سؤال من المستخدم."
+          explanation: "صح! أول خطوة هي الـ Indexing، بنقسّم المحتوى لـ chunks ونعملها embedding عشان نقدر نبحث فيها بسرعة لما يجي سؤال من المستخدم."
         },
         {
           id: "apply2",
           bloom: "apply",
-          question: "بعد ما الزبون يسأل سؤال في مساعد الدعم الفني، إيه اللي بيحصل قبل ما الـ AI يبدأ يكون إجابته؟",
+          question: "بعد ما الزبون يسأل سؤال، إيه اللي بيحصل قبل ما الـ AI يبدأ يكوّن إجابته؟",
           options: [
             "الـ AI بيفتكر كل حاجة يعرفها عن الموضوع وبيبدأ يجاوب.",
-            "النظام بيدور في الـ chunks اللي متخزنة وبيجيب أكتر ٥ قطع شبه سؤال الزبون.",
-            "النظام بيطلب من الزبون إجابات أكتر عشان يفهم قصده بالضبط."
+            "السيستم بيدور في الـ chunks اللي متخزنة وبيجيب أكتر ٥ قطع شبه سؤال الزبون.",
+            "السيستم بيطلب من الزبون معلومات أكتر عشان يفهم قصده بالضبط."
           ],
           correctIndex: 1,
-          explanation: "دي خطوة الـ Retrieval، النظام بيجيب المعلومات المناسبة من قاعدة البيانات (الـ chunks) اللي ليها علاقة بسؤال المستخدم قبل ما يمررها للـ AI."
+          explanation: "بالظبط! دي خطوة الـ Retrieval، السيستم بيجيب المعلومات المناسبة من قاعدة البيانات (الـ chunks) اللي ليها علاقة بسؤال المستخدم قبل ما يمررها للـ AI."
         },
         {
           id: "apply3",
           bloom: "apply",
-          question: "إيه فايدة إنك تحط 'السياق' (chunks) في الـ prompt بتاع الـ AI قبل ما يجاوب على سؤال الزبون؟",
+          question: "إيه فايدة إنك تحط 'السياق' (chunks) في الـ prompt بتاع الـ AI قبل ما يجاوب؟",
           options: [
-            "عشان توفر وقت الـ AI ومايحتاجش يدور على المعلومة بنفسه.",
-            "عشان الـ AI يرد من المعلومات الخاصة بيك بس ومايترجمش معلومات عامة ممكن تكون غلط أو مش دقيقة لمتجرك.",
+            "عشان توفر وقت الـ AI وميحتاجش يدور على المعلومة بنفسه.",
+            "عشان الـ AI يرد من معلوماتك الخاصة بس ومايألّفش إجابات عامة ممكن تكون غلط.",
             "عشان تزيد سرعة استجابة الـ AI مهما كان حجم البيانات اللي بيدور فيها."
           ],
           correctIndex: 1,
-          explanation: "دي خطوة الـ Augment، حقن السياق في الـ prompt بيخلي الـ AI يرد إجابة بناءً على بياناتك الخاصة (Grounded Answer) وبيقلل الـ Hallucinations."
+          explanation: "تمام! دي خطوة الـ Augment، حقن السياق في الـ prompt بيخلي الـ AI يرد إجابة بناءً على بياناتك الخاصة وبيمنع التأليف (Hallucinations)."
         }
       ]
     },
   },
   {
     icon: Rocket,
-    eyebrow: "Mission",
-    title: "صمّم RAG System لاستخدام حقيقي",
+    eyebrow: "Mission: دورك تطبّق",
+    title: "صمم فكرة مساعد ذكي",
     tone: "primary",
     block: {
       kind: "mission",
       intro:
-        "RAG = Retrieval + Generation. هتصمم system كامل من السؤال للرد النهائي.",
+        "دلوقتي إنت فهمت الفكرة. كل الـ Assistants اللي بتستخدمها (زي في Notion أو Intercom) شغالة بنفس المبدأ ده.",
       prompt:
-        "في تسليمك:\n\n١) الـ Use case (مثال: شات بوت يجاوب عن منتجاتك):\n٢) Knowledge base — إيه فيها + كام document تقريباً؟\n٣) Retrieval — k = كام؟ (عدد الـ chunks اللي هترجعهم) + threshold للـ similarity؟\n٤) Prompt template للـ LLM (انسخه — لازم يكون فيه placeholder للـ context):\n٥) Citation strategy — هتورّيله المستخدم المصدر إزاي؟\n٦) Failure case — لو الـ retrieval ما جابش حاجة relevant، الـ system بيرد إزاي؟",
+        "فكر في تطبيق أو بيزنس محتاج مساعد ذكي.\n\nإيه أهم ملف أو قاعدة بيانات هتديها للـ AI عشان يرد على أسئلة العملاء صح؟\n\nمثال: لو بعمل مساعد لعيادة، أهم ملف هو 'قايمة بمواعيد الدكاترة المتاحة'.",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",
       rubric: [
         {
-          label: "RAG system كامل",
-          weight: 60,
+          label: "تسليم كامل",
+          weight: 100,
           criteria: [
-            "كل المكونات (KB / Retrieval / Prompt / Citation) موجودة.",
-            "Prompt template فيه placeholder حقيقي للـ context.",
-          ],
-        },
-        {
-          label: "Failure handling",
-          weight: 40,
-          criteria: [
-            "Failure case معالج مش «هيرد عادي».",
-            "Citation strategy واضحة (link / quote / number).",
+            "حددت البيزنس أو التطبيق بوضوح.",
+            "حددت مصدر المعلومات (Knowledge Base) اللي الـ AI هيستخدمه.",
+            "المثال بتاعك منطقي وبيحل مشكلة حقيقية.",
           ],
         },
       ],
     },
   },
-  {
-    icon: FlaskConical,
-    eyebrow: "جزء من المنصة",
-    title: "المساعد بيستخدم RAG على knowledge_chunks",
-    tone: "primary",
-    block: {
-      kind: "caseStudy",
-      title: "المساعد بيستخدم RAG على knowledge_chunks",
-      summary:
-        "الجزء ده من المنصة اتبنى بمسار Builder — نفس اللي بتتعلمه. لما تسأل المساعد، إحنا مش بنبعت الـ LLM السؤال على طول. بنبحث الأول في جدول knowledge_chunks (محتوى المنصة كله) ونجيب أقرب ٥ chunks، وبعدين نبعتهم مع السؤال.",
-      bullets: [
-        "knowledge_chunks جدول فيه كل الدروس مقسّمة chunks مع embeddings.",
-        "vector similarity search بـ pgvector على الـ embedding column.",
-        "النتيجة: المساعد بيرد من محتوى المنصة، مش من معلومات Gemini العامة.",
-      ],
-      pathAngle: "builder",
-      link: { label: "افتح /ai-assistant", href: "/ai-assistant" },
-    },
-  }
 ];

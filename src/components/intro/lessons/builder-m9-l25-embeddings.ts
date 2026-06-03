@@ -11,100 +11,84 @@ import embeddingsDiagram from "@/assets/lessons/concepts/embeddings-diagram.jpg"
 
 /**
  * Builder · M9 · Lesson 01 — Embeddings: لغة الـ AI الرقمية
- * Format: Hero → Video → Concept → Platform Screenshot → Failure×Right → Mission
+ * V2 Editor: Expert Instructional Designer + Egyptian Dialect Specialist
  *
- * يبني على M8 (Database) — دلوقتي بنخزّن المعنى نفسه كأرقام عشان الـ AI يفهمه.
+ * RULES APPLIED:
+ * 1. No Theory Without Tension: Starts with the pain of DBs not understanding "meaning".
+ * 2. Quick Win in 30s: The visual diagram is now the second block for an immediate "aha" moment.
+ * 3. Example before Term: The visual diagram serves as the sensory example before the "Embedding" concept is formally defined.
+ * 4. One Technical Term: The lesson now focuses exclusively on "Embedding". The long list of concepts is removed.
+ * 5. Simple Mission: The mission is simplified to two direct questions about the user's own project.
+ * 6. Pure Egyptian Dialect: All text is rewritten in Cairo Ammiya.
+ * 7. No Repetition: The dense "الفكرة" block and repetitive "Concepts" block were removed, their essential ideas woven into other sections.
+ * 8. Momentum: The flow is now Problem -> Visual -> Concept -> How-To -> Apply -> Mission -> Real-world proof.
+ *
+ * NOTE: The video block was removed to maintain an active learning flow and avoid passive content, per V2 principles.
  */
 export const BUILDER_M9_EMBEDDINGS_BLOCKS: IntroLessonContent = [
   {
     icon: Sparkles,
-    eyebrow: "HERO",
-    title: "الـ AI مش بيقرأ كلامك — بيقرأ أرقام",
+    eyebrow: "المشكلة",
+    title: "الـ AI مش بيفهم كلامك، بيفهم أرقام",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "في M8 خزّنت بيانات في جداول. الـ DB بيعرف يقارن الأرقام والنصوص بدقة، بس مش بيعرف يفهم \"المعنى\".",
-        "لو سألت الـ DB: \"هات اللي شبه طلبي\"، مش هيعرف يجاوب — لأن الكلام ده مش = أو LIKE، ده تشابه دلالي.",
-        "الحل = Embedding: نحوّل أي نص (سؤال، درس، منتج) لـ vector من أرقام، والمعنى المتشابه بيبقى قريب رياضيًا.",
-      ],
-    },
-  },
-  {
-    icon: BookOpen,
-    eyebrow: "مصطلحات الدرس",
-    title: "اللي هتسمعه في الدرس ده",
-    block: {
-      kind: "concepts",
-      items: [
-        { term: "Chunking", meaning: "تقطيع النص الطويل لحتت صغيرة عشان الـ AI يعرف يعالجها ويفهمها.", example: "زي ما بتقسم مقال طويل لفقرات صغيرة عشان تبعتها في رسالة واتساب لعميلك وتعرف تناقشه فيها." },
-        { term: "Vector (قائمة أرقام) constellations", meaning: "قائمة أرقام بتوصف \"هوية\" الكلمة أو النص عشان الكمبيوتر يفهمها.", example: "تخيل لو بتوصف قميص بـ (لون، مقاس، تمن)، دي قائمة أرقام بتعرف الـ AI القميص ده إيه." },
-        { term: "Embedding", meaning: "عملية تحويل الكلمات لـ Vector (أرقام) عشان الـ AI يقيس معناها.", example: "زي ما تحول مواصفات \"فستان سهرة\" و\"بدلة عريس\" لأرقام بتعبر عن شياكتهم وقيمتهم." },
-        { term: "High-dimensional space (فضاء الأبعاد)", meaning: "تخيل خيالي فيه كذا اتجاه مش بس طول وعرض، بيجمع صفات كتير.", example: "بدل ما توصف الشغل بطول وعرض بس، بتوصفه بمليون حاجة (سعر، جودة، وقت) سوا." },
-        { term: "Similarity (التشابه)", meaning: "قياس المسافة بين رقمين عشان نعرف النصوص قريبة من بعض في المعنى؟", example: "زي ما تدور على \"أكل بيتي\" فيطلع لك \"محشي\" و\"ملوخية\" بدل \"سندوتشات\" سريعة." },
-        { term: "Cosine Distance (<=>)", meaning: "علامة في الكود بتستخدم لقياس المسافة بين معاني الكلمات عشان نقارنهم.", example: "دي الأداة أو المسطرة اللي بتعرف الـ AI \"المسافة\" بين معاني الكلمات بالظبط." },
-        { term: "Vector Database", meaning: "دولاب مخزن كبير بنحط فيه الـ Vectors عشان ندور بالمعنى مش بالكلمة.", example: "زي ما تاجر ملابس يخزن آلاف الموديلات بأرقامها عشان لما زبون يطلب \"حاجة شيك\" تطلع له." },
-      ],
-    },
-  },
-  {
-    icon: PlayCircle,
-    eyebrow: "فيديو الدرس",
-    title: "اتفرّج الأول",
-    tone: "accent",
-    block: {
-      kind: "lessonVideo",
-      caption: "Embedding Models، Vector، Cosine Similarity، و pgvector في Postgres.",
-    },
-  },
-  {
-    icon: Lightbulb,
-    eyebrow: "الفكرة",
-    title: "Embedding = إحداثيات للكلام في فضاء المعنى",
-    block: {
-      kind: "paragraphs",
-      paragraphs: [
-        "تخيّل خريطة عملاقة، فيها كل كلمة وكل جملة لها مكان. الكلام المتشابه في المعنى = نقاط قريبة من بعض. \"عربية\" قريبة من \"سيارة\"، بعيدة عن \"موزة\". الخريطة دي مش 2D — هي مئات أو آلاف الأبعاد (مثلاً 1536 بُعد في OpenAI text-embedding-3-small، أو 3072 في Gemini gemini-embedding-001). كل بُعد = جانب من المعنى.",
-        "الـ Embedding Model = موديل AI متخصّص بس في تحويل النص لـ vector. بتديله نص، بيرجّعلك array من أرقام بطول ثابت (مثلاً ١٥٣٦ أو ٣٠٧٢ رقم زي [0.012, -0.04, 0.83, ...]) حسب الموديل. نفس النص بيدّيك نفس الـ vector دايمًا. النصين المختلفين بنفس المعنى بيدّوا vectors قريبة.",
-        "Cosine Similarity = الزاوية بين vector و vector. قيمتها بين -1 و 1. الـ 1 = نفس الاتجاه (معنى متطابق). 0 = مفيش علاقة. -1 = عكس. ده اللي بنستخدمه نقول: \"هات أقرب ١٠ نصوص لسؤالي\" → ORDER BY cosine_similarity DESC LIMIT 10.",
-        "تخزين في DB: pgvector = extension في Postgres بتضيف نوع column جديد اسمه vector(1536). بتعمل: alter table lessons add column embedding vector(1536). لكل lesson، بتحسب embedding للنص بتاعها وتخزّنه. وقت البحث: select * from lessons order by embedding <=> $1 limit 10 (الـ <=> = cosine distance operator).",
+        "في M8 خزّنت بيانات في جداول. الداتابيز شاطرة قوي في مقارنة الأرقام والنصوص الحرفية، بس مبتعرفش تفهم \"المعنى\".",
+        "لو سألت الداتابيز: \"هاتلي الحاجات اللي شبه طلبي ده\"، هترد تقولك معرفش. لأن كلمة \"شبه\" دي مش عملية حسابية زي `=` أو `LIKE`.",
+        "طب إيه الحل عشان نخلي البحث \"ذكي\" ويفهم المعنى؟ هنا بييجي دور الـ Embeddings.",
       ],
     },
   },
   {
     icon: ImageIcon,
-    eyebrow: "شوف بنفسك",
-    title: "إزاي النص بيتحوّل لـ vector والمعاني المتقاربة بتقع جنب بعض",
+    eyebrow: "جرّب تشوف المعنى بعينك",
+    title: "إزاي الكلام بيتحوّل لخريطة معاني",
     tone: "primary",
     block: {
       kind: "screenshot",
       src: embeddingsDiagram,
-      alt: "Diagram لـ embeddings: جملة بتتحوّل لـ vector أرقام، والـ vectors بتتموضع في فراغ ثلاثي الأبعاد، الجمل المتشابهة قريبة من بعض والمختلفة بعيدة",
+      alt: "رسم بياني للـ embeddings: جملة بتتحول لقايمة أرقام (vector)، والـ vectors دي بتترسم في فضاء ثلاثي الأبعاد، الجمل اللي معناها قريب بتبقى جنب بعضها.",
       caption:
-        "الـ embedding model بياخد النص ويطلّع منه vector — مجموعة أرقام بتمثّل المعنى. الـ vectors بتتموضع في فراغ متعدّد الأبعاد بحيث الجمل اللي معناها قريب (زي \"قطة بتلعب\" و \"كلب بيجري\") تكون قريبة جغرافيًا، والجمل البعيدة في المعنى (زي \"البورصة\" أو \"الفيزياء\") تكون بعيدة. ده اللي بيخلّينا نـ search بالمعنى، مش بالكلمات.",
-      label: "Text Embeddings — من نص لـ vector لـ semantic space",
+        "تخيل إن كل كلمة أو جملة ليها مكان على خريطة. الكلام اللي معناه قريب من بعضه (زي \"قطة بتلعب\" و \"كلب بيجري\") بيبقوا نقط قريبة من بعض. والكلام اللي معناه بعيد (زي \"البورصة\") بيبقى في حتة تانية خالص. هي دي فكرة الـ Embeddings ببساطة.",
+      label: "من نص لـ Vector لخريطة معاني",
+    },
+  },
+  {
+    icon: BookOpen,
+    eyebrow: "المصطلح الوحيد للدرس",
+    title: "Embedding: إحداثيات المعنى",
+    block: {
+      kind: "concepts",
+      items: [
+        {
+          term: "Embedding (تمثيل رقمي للمعنى)",
+          meaning: "عملية تحويل أي حاجة (كلام، صور، صوت) لـ vector (قايمة أرقام طويلة)، عشان الـ AI يقدر يقيس المعنى والتشابه رياضيًا.",
+          example: "زي ما الخريطة بتحوّل مكان زي \"بيتنا\" لإحداثيات (خط طول وعرض)، الـ embedding بيحوّل كلمة \"عربية\" لقايمة من 1536 رقم بتوصف معناها من كل الزوايا."
+        },
+      ],
     },
   },
   {
     icon: Scale,
-    eyebrow: "Failure × Right",
-    title: "البحث بالكلمات vs البحث بالمعنى",
+    eyebrow: "إزاي بتشتغل؟",
+    title: "البحث بالكلمة الحرفية vs. البحث بالمعنى",
     block: {
       kind: "comparison",
       left: {
-        label: "FAILURE — ILIKE %query%",
-        body: "select * from lessons where title ilike '%' || $1 || '%' or body ilike '%' || $1 || '%'. لو المستخدم كتب \"إزاي الـ AI بيعرف يرد؟\"، الـ query هيدوّر على نص حرفي \"إزاي الـ AI\" في العناوين. النتيجة: ٠ نتايج، رغم إن عندك ٥ دروس بتشرح ده بكلمات تانية. أو نتايج كتير ضعيفة لأن الكلمة موجودة بس في سياق مختلف.",
+        label: "غلط — البحث بـ ILIKE",
+        body: "لو اليوزر كتب \"إزاي الـ AI بيرد؟\"، الكود هيدور على جملة \"إزاي الـ AI بيرد\" حرفيًا. غالبًا النتيجة هتبقى صفر، مع إن عندك دروس بتشرح ده بس بكلمات تانية. بحث غبي.",
       },
       right: {
-        label: "RIGHT — embedding + cosine similarity",
-        body: "بتاخد سؤال المستخدم → embedding → select id, title from lessons order by embedding <=> $1 limit 5. النتيجة: أعلى ٥ دروس متشابهة دلاليًا، حتى لو الكلمات مختلفة. \"إزاي الـ AI بيرد؟\" يرجّع دروس عن tokens, sampling, context — رغم إن كلمة \"يرد\" مش فيهم. ده اللي بيخلّي ChatGPT و Perplexity يحسّوا إنهم \"فاهمين\".",
+        label: "صح — البحث بالـ Embedding",
+        body: "بناخد سؤال اليوزر ونحوله لـ embedding. الكود بيدوّر على أقرب 5 دروس لسؤاله في المعنى. النتيجة: هيطلعله دروس عن الـ tokens والـ context، حتى لو كلمة \"يرد\" مش مكتوبة فيهم. بحث ذكي بيحسسك إنه \"فاهمك\".",
       },
     },
   },
   {
     icon: Rocket,
     eyebrow: "دورك دلوقتي",
-    title: "ارسم خطة تخزين Embeddings لمحتوى تطبيقك",
+    title: "إيه أهم حاجة تحوّلها لـ Embedding؟",
     tone: "accent",
     block: {
       kind: "quiz",
@@ -113,38 +97,38 @@ export const BUILDER_M9_EMBEDDINGS_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "مدونة أكلات صحية فيها وصفات كتير، كل وصفة ليها 'اسم' و 'المكونات' و 'طريقة التحضير'. اليوزر عايز يدور على وصفات \"مكوناتها قليلة وسهلة تتحضر بسرعة\". إيه أحسن حقل نعمله embedding عشان الـ AI يفهم قصده؟",
+          question: "في مدونة أكل صحي، كل وصفة ليها 'اسم' و'مكونات' و'طريقة تحضير'. لو اليوزر عايز يدور على \"وصفات سهلة وسريعة\"، إيه أحسن حاجة نعملها embedding؟",
           options: [
-            "اسم الوصفة بس",
-            "طريقة التحضير بس",
-            "نجمع (اسم الوصفة + المكونات + طريقة التحضير) ونعملهم embedding واحد"
+            "اسم الوصفة بس.",
+            "طريقة التحضير بس.",
+            "نلزق (اسم الوصفة + المكونات + طريقة التحضير) في بعض ونعملهم embedding واحد."
           ],
           correctIndex: 2,
-          explanation: "عشان الـ AI يقدر يفهم المعنى الشامل للوصفة وهل هي \"سهلة وسريعة\" لازم يكون عنده كل السياق المتاح في حقول 'اسم الوصفة' و 'المكونات' و 'طريقة التحضير' مجتمعين."
+          explanation: "عشان الـ AI يفهم إن الوصفة \"سهلة وسريعة\"، لازم يشوف الصورة كاملة: اسمها ومكوناتها وطريقة تحضيرها. كل ما تدي له سياق أكتر، فهمه للمعنى بيبقى أعمق."
         },
         {
           id: "apply2",
           bloom: "apply",
-          question: "لو عندك موقع عقارات والعميل بيبحث عن \"شقق واسعة فيها بلكونة كبيرة وإطلالة على النيل\". بيانات الشقة متخزنة كـ 'عنوان'، 'تفاصيل'، 'مساحة'، 'عدد الغرف'. أي من دول ممكن تستخدمه كـ `text_for_embedding`؟",
+          question: "في موقع عقارات، العميل بيدور على \"شقة واسعة ببلكونة كبيرة على النيل\". بيانات الشقة هي 'عنوان'، 'تفاصيل'، 'مساحة'، 'عدد الغرف'. إيه أهم حقل تستخدمه للـ embedding؟",
           options: [
-            "الحقل اللي فيه الـ 'عنوان' بس",
-            "الحقل اللي فيه 'تفاصيل' الشقة (اللي بتوصف مميزاتها بالتفصيل)",
-            "نجمع 'مساحة' و 'عدد الغرف' في الـ embedding"
+            "حقل 'العنوان' بس.",
+            "حقل 'تفاصيل' الشقة (اللي فيه الوصف التفصيلي).",
+            "نجمع 'المساحة' و 'عدد الغرف' كرقم واحد."
           ],
           correctIndex: 1,
-          explanation: "حقل 'تفاصيل' الشقة هو اللي غالبًا بيحتوي على الوصف الغني زي 'بلكونة كبيرة' و 'إطلالة على النيل'، وده اللي الـ AI هيستخدمه للبحث الدلالي عن طريق الـ embedding."
+          explanation: "حقل 'التفاصيل' هو اللي غالبًا فيه الكلام اللي بيوصف الإحساس زي \"بلكونة كبيرة\" و\"إطلالة على النيل\". ده الكنز اللي الـ AI بيستخدمه عشان يفهم قصد العميل بالظبط."
         },
         {
           id: "apply3",
           bloom: "apply",
-          question: "عندك موقع أخبار بيعرض مقالات، وكل مقال ليه 'عنوان' و 'محتوى'. المقالات الطويلة ممكن توصل لـ 5000 كلمة. إزاي تتعامل مع الـ embedding للمقالات دي عشان تضمن دقة البحث وتقليل التكلفة؟",
+          question: "عندك موقع أخبار فيه مقالات طويلة (5000 كلمة). إزاي تعمل embedding للمقالات دي عشان البحث يبقى دقيق والتكلفة قليلة؟",
           options: [
-            "اعمل embedding لـ 'العنوان' بس عشان أوفر",
-            "اعمل embedding لـ 'المحتوى' كله بغض النظر عن طوله",
-            "أقسم 'المحتوى' لأجزاء صغيرة (chunks) وكل جزء ليه الـ embedding بتاعه"
+            "أعمل embedding للعنوان بس عشان أوفر.",
+            "أعمل embedding للمقال كله مرة واحدة.",
+            "أقسّم المقال لحتت صغيرة (chunks) وكل حتة ليها الـ embedding بتاعها."
           ],
           correctIndex: 2,
-          explanation: "النص الطويل (> 8000 token) لازم يتقسّم لـ chunks عشان نضمن إن الـ embedding موديل يشتغل بكفاءة ويتجنب تجاوز limit التوكنز، وكمان عشان البحث يبقى أدق لكل جزء من المقال."
+          explanation: "الموديلات ليها حد أقصى لطول النص. تقسيم المقال الطويل لـ chunks بيضمن إن كل جزء مهم من المعنى ياخد الـ embedding الخاص بيه، وده بيخلي البحث أدق ويرجعلك الفقرة المحددة اللي بتجاوب على السؤال."
         }
       ]
     },
@@ -152,31 +136,31 @@ export const BUILDER_M9_EMBEDDINGS_BLOCKS: IntroLessonContent = [
   {
     icon: Rocket,
     eyebrow: "Mission",
-    title: "صمّم Embedding pipeline لمصدر محتوى حقيقي",
+    title: "صمّم مخزن المعاني لتطبيقك",
     tone: "primary",
     block: {
       kind: "mission",
       intro:
-        "Embeddings = حوّل النص لأرقام بتقيس المعنى. هتصمم pipeline لمصدر محتوى (مدونتك / دروسك / كتالوج منتجاتك).",
+        "الـ Embedding هو اللي بيحوّل النص لأرقام بتقيس المعنى. مهمتك دلوقتي تطبّق ده على فكرة تطبيقك.",
       prompt:
-        "في تسليمك:\n\n١) المصدر (مثال: ٥٠٠ مقال مدونة):\n٢) Chunking — هتقسم النص ازاي؟ (حجم كل chunk + overlap):\n٣) Embedding model — أنهي + ليه (text-embedding-3-small مثلاً)؟\n٤) Storage — فين هتخزّن الـ vectors؟ (Supabase pgvector / Pinecone)\n٥) Index type + dimension:\n٦) لو حد سأل سؤال، الـ flow بالكامل من السؤال للنتيجة (٤-٥ خطوات).",
+        "لتطبيقك اللي بتبنيه، اختار نوع محتوى واحد (مقالات، منتجات، دروس، ...إلخ). جاوب على سؤالين:\n\n١) إيه النص بالظبط اللي هتحوّله لـ embedding عشان البحث يشتغل بالمعنى؟ (مثال: عنوان المنتج + وصفه + مراجعات العملاء)\n\n٢) اكتب مثال لسؤال من مستخدم، وإيه النتايج اللي المفروض تطلعله بناءً على البحث بالمعنى ده.",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",
       rubric: [
         {
-          label: "Pipeline كامل",
-          weight: 60,
+          label: "تحديد النص للـ Embedding",
+          weight: 50,
           criteria: [
-            "Chunking strategy مع رقم محدد للحجم.",
-            "Model + storage + index type كلهم محددين.",
+            "حددت بالظبط إيه الحقول اللي هتتجمع عشان تعمل الـ embedding.",
+            "شرحت ليه اختيارك ده هو اللي هيدي للـ AI أحسن سياق.",
           ],
         },
         {
-          label: "Query flow",
-          weight: 40,
+          label: "مثال للبحث بالمعنى",
+          weight: 50,
           criteria: [
-            "وصفت رحلة السؤال للنتيجة بـ ٤-٥ خطوات.",
-            "Flow فيه embed query + similarity search + ranking.",
+            "كتبت سؤال واقعي من مستخدم.",
+            "وصفت النتايج المتوقعة اللي بتثبت إن البحث فهم المعنى مش الكلمة الحرفية.",
           ],
         },
       ],
@@ -184,21 +168,21 @@ export const BUILDER_M9_EMBEDDINGS_BLOCKS: IntroLessonContent = [
   },
   {
     icon: FlaskConical,
-    eyebrow: "جزء من المنصة",
-    title: "knowledge_chunks فيه عمود embedding من نوع vector",
+    eyebrow: "جزء من منصتنا",
+    title: "إزاي بنستخدم Embeddings في Lovable",
     tone: "primary",
     block: {
       kind: "caseStudy",
-      title: "knowledge_chunks فيه عمود embedding من نوع vector",
+      title: "جدول `knowledge_chunks` فيه عمود `embedding` من نوع `vector`",
       summary:
-        "الجزء ده من المنصة اتبنى بمسار Builder — نفس اللي بتتعلمه. كل chunk من المحتوى متحوّل لـ vector فيه 1536 رقم بيمثّل المعنى. لما تسأل سؤال، بنحوّل سؤالك لنفس النوع من الـ vectors ونبحث عن أقرب الـ chunks بـ cosine similarity.",
+        "الجزء ده من المنصة مبني بنفس الأدوات اللي بتتعلمها. كل قطعة محتوى (chunk) بنحوّلها لـ vector (1536 رقم). لما بتسأل سؤال، بنحوّل سؤالك لنفس النوع من الـ vectors وندور على أقرب chunks ليه في المعنى.",
       bullets: [
-        "بنستخدم pgvector extension في PostgreSQL.",
-        "كل chunk حجم متوسط 500 token = embedding وزنه ~6KB.",
-        "الـ search بـ HNSW index — سرعته milliseconds حتى مع آلاف الـ chunks.",
+        "بنستخدم pgvector extension جوه PostgreSQL.",
+        "كل chunk حجمها حوالي 500 token، والـ embedding بتاعها مساحته 6KB.",
+        "البحث بياخد أجزاء من الثانية حتى مع آلاف الـ chunks.",
       ],
       pathAngle: "builder",
-      link: { label: "افتح /ai-assistant", href: "/ai-assistant" },
+      link: { label: "جرّب الـ AI Assistant", href: "/ai-assistant" },
     },
   }
 ];
