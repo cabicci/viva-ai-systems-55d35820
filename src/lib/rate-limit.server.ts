@@ -34,9 +34,10 @@ export async function enforceRateLimit(
   });
 
   if (error) {
-    // Fail open ONLY for unexpected infra errors — log loudly so we notice.
+    // Fail CLOSED for cost-sensitive AI buckets — better to surface a
+    // transient error than to let runaway cost through on DB instability.
     console.error("[rate-limit] consume_rate_limit failed:", error);
-    return { allowed: true, remaining: opts.maxCalls, resetAt: new Date().toISOString() };
+    throw new Error("الخدمة غير متاحة مؤقتًا. حاول تاني بعد شوية.");
   }
 
   const row = Array.isArray(data) ? data[0] : data;
