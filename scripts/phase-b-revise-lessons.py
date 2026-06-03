@@ -8,17 +8,6 @@ import requests
 
 LESSONS_DIR = pathlib.Path("src/components/intro/lessons")
 ORDER = [
-    "builder-m6-l13-idea-to-page",
-    "builder-m6-l14-wireframe",
-    "builder-m6-l15-first-prompt-to-lovable",
-    "builder-m6-l16-components-routes",
-    "builder-m6-l17-iteration",
-    "builder-m6-l18-debugging",
-    "builder-m7-l19-tables-columns",
-    "builder-m7-l20-relations",
-    "builder-m7-l21-queries",
-    "builder-m8-l22-sessions-jwt",
-    "builder-m8-l23-rls",
     "builder-m9-l24-rag",
     "builder-m9-l25-embeddings",
     "builder-m9-l26-agents",
