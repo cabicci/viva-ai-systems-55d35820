@@ -18,94 +18,73 @@ import tablesScreenshot from "@/assets/lessons/builder-m7-l19-tables-columns.jpg
 export const BUILDER_M8_TABLES_COLUMNS_BLOCKS: IntroLessonContent = [
   {
     icon: Sparkles,
-    eyebrow: "HERO",
-    title: "الجدول هو وحدة البناء — صمّمه صح من الأول",
+    eyebrow: "البداية",
+    title: "غلطة في تصميم الجدول بتدفع تمنها شهور",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "في M5.3 شفت إن الـ Database = جداول.",
-        "النهارده هتتعلّم إزاي تصمّم جدول واحد بشكل صح: إيه أنواع البيانات، إيه القواعد، وإيه أكتر غلط بيخرّب التطبيق بعد أشهر.",
-        "تصميم جدول وحش = ألم لكل حد هيشتغل على المشروع بعدك (وأنت كمان).",
+        "تخيل تطبيقك بعد 6 شهور من الـ launch... شغال تمام، وفجأة كل حاجة بتبطأ وبقت بتضرب أخطاء غريبة.",
+        "السبب؟ غالبًا قرار غلط خدته في ثانيتين وانت بتعمل أول جدول في المشروع. كلمة زي `text` بدل `numeric` ممكن توقّع سيستم كامل لما الداتا تكبر.",
+        "الدرس ده هيوريك إزاي تصمم جداول صح من الأول، عشان تبني أساس يستحمل أي ضغط في المستقبل.",
       ],
     },
   },
   {
+    icon: Scale,
+    eyebrow: "جرّب دلوقتي",
+    title: "اختيار واحد بيفرق بين مشروع ناجح ومشروع فاشل",
+    block: {
+      kind: "comparison",
+      left: {
+        label: "تصميم هيقع بعد شهرين",
+        body: "كله `text` وخلاص: `name text`, `price text`, `items text`. كل حاجة ممكن تبقى فاضية (nullable) عشان \"يمكن نحتاج\". النتيجة؟ لو حبيت تجيب أغلى منتج، السيستم هيتلخبط بين سعر '100.00' و '99.5' ومش هيعرف يرتبهم صح. كارثة.",
+      },
+      right: {
+        label: "تصميم يستحمل ملايين المستخدمين",
+        body: "كل عمود له نوعه المظبوط: `title text not null` (مينفعش يبقى فاضي)، `price numeric` (عشان الفلوس)، `is_published boolean` (عشان أه/لأ)، `created_at timestamptz` (عشان تعرف كل حاجة اتعملت امتى). كده السيستم نفسه بيحميك من الداتا الغلط.",
+      },
+    },
+  },
+  {
+    icon: ImageIcon,
+    eyebrow: "مثال حي",
+    title: "كل صفحة بتشوفها أصلها جدول",
+    tone: "primary",
+    block: {
+      kind: "screenshot",
+      src: tablesScreenshot,
+      alt: "صفحة /system-state بتعرض حالة المنصة الحالية في شكل كروت زي currentPath و currentUser.",
+      caption:
+        "بص على صفحة الـ System State دي. كل كارت (زي `currentPath` أو `currentUser`) هو بالظبط column في جدول، والقيمة اللي تحته هي الداتا اللي في الصف بتاعك. التصميم اللي بيحدد شكل الجدول ده هو اللي بنسميه الـ Schema.",
+      label: "من المنصة — صفحة /system-state",
+    },
+  },
+  {
     icon: BookOpen,
-    eyebrow: "مصطلحات الدرس",
-    title: "اللي هتسمعه في الدرس ده",
+    eyebrow: "المصطلح الوحيد للدرس",
+    title: "الـ Schema: خريطة الكنز بتاعتك",
     block: {
       kind: "concepts",
       items: [
-        { term: "Primary Key (PK)", meaning: "البصمة اللي بتميز كل سطر في الجدول ومبتتكررش أبداً.", example: "زي رقم البطاقة أو كود الصنف، مستحيل يتكرر لعميلين مختلفين." },
-        { term: "snake_case", meaning: "طريقة كتابة أسماء العواميد باستخدام \"شرطة تحتية\" بدل المسافة.", example: "لو بتسجل أسماء الأصناف، بلاش تسيب مسافات، اكتبها كده: item_price عشان السيستم ميهنجش." },
-        { term: "UUID", meaning: "كود طويل ومعقد جداً بنستخدمه كمعرف فريد بدل الكلام العادي.", example: "بدل ما تكتب \"الإسكندرية\"، السيستم بيديله كود طويل ومعقد يضمن إنه عالمي ومبيغلطش." },
-        { term: "Schema", meaning: "رسمة بتوضح تقسيم الجدول، عواميده إيه، ونوع كل بيان فيها.", example: "زي لما توصف \"تاريخ الأوردر\"، \"اسم العميل\"، و\"سعر القطعة\"." },
-        { term: "Bottleneck", meaning: "عنُق الزجاجة، يعني حتة في السيستم بتخلي الشغل يبطأ ويقف.", example: "لما تطلب تقرير مبيعات سنة والسيستم يلف كتير، يبقى فيه زحمة بيانات معطلاه." },
-        { term: "Audit Trail", meaning: "نظام مراقبة بيسجل كل حركة أو تعديل حصل في البيانات.", example: "زي سجل \"مين عدل سعر المنتج ده والساعة كام\" عشان تحاسب الموظفين." },
-        { term: "JSONB", meaning: "نوع بيانات بيشيل معلومات كتير ومرنة جوه خانة واحدة.", example: "زي مخزن فيه \"وصف المنتج\" بخصايص كتير متغيرة (لون، مقاس، خامة)." },
-        { term: "Cascade Delete", meaning: "تأثير الدومينو؛ لما تمسح حاجة، كل اللي مربوط بيها بيتمسح.", example: "لو مسحت \"عميل\"، السيستم بيمسح كل \"فواتيره\" معاه أوتوماتيك عشان الدنيا متنكشش." },
+        { term: "Schema", meaning: "الرسم الهندسي أو الخريطة اللي بتوصف كل جدول في السيستم: عواميده إيه، نوع البيانات في كل عامود، وإيه القواعد اللي بتحكمه.", example: "زي ما بتقول: جدول 'المنتجات' فيه عامود 'السعر' وده لازم يكون رقم عشري ومينفعش يبقى فاضي، وعامود 'اسم_المنتج' وده لازم يكون نص." },
       ],
     },
   },
   {
     icon: PlayCircle,
     eyebrow: "فيديو الدرس",
-    title: "اتفرّج الأول",
+    title: "شوف بعينك: تصميم جدول من الصفر",
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "إزاي تختار نوع كل column، فين تستخدم nullable، وليه primary key مش مجرد رقم.",
-    },
-  },
-  {
-    icon: Lightbulb,
-    eyebrow: "الفكرة",
-    title: "Column = نوع + قاعدة + قيمة افتراضية",
-    block: {
-      kind: "paragraphs",
-      paragraphs: [
-        "كل column في الجدول له تعريف من ٤ أجزاء: الاسم (snake_case، مثلاً user_id) — النوع (uuid، text، integer، boolean، timestamp، jsonb) — القيد (nullable أو not null) — القيمة الافتراضية (default). الـ ٤ بيقرّروا سلوكه.",
-        "أنواع شائعة لازم تعرفها: uuid (للـ ids — أحسن من integer لأنه فريد عالميًا، آمن، مش هيتنبأ بيه)، text (نصوص بأي طول)، integer/bigint (أرقام صحيحة)، numeric (أرقام بفواصل عشرية، للأموال)، boolean (true/false)، timestamptz (تاريخ ووقت بـ timezone)، jsonb (object كامل في عمود).",
-        "Primary Key = العمود اللي بيميّز كل سطر. الأفضل: id uuid primary key default gen_random_uuid(). Foreign Key = column بيشاور على primary key في جدول تاني (مثلاً user_id uuid references users(id) on delete cascade). الـ cascade مهم — لو المستخدم اتمسح، tasks بتاعته تتمسح معاه تلقائيًا.",
-        "أعمدة Audit لازمة في كل جدول جدّي: id (PK)، created_at (timestamptz default now())، updated_at (timestamptz). بيخلّوك تجاوب على \"إمتى ده اتعمل؟\" و \"إمتى آخر تعديل؟\" — أسئلة هتجيلك بعد أسبوع من الـ launch.",
-      ],
-    },
-  },
-  {
-    icon: ImageIcon,
-    eyebrow: "شوف بنفسك",
-    title: "كل سطر في الـ Runtime Context = صف من جدول",
-    tone: "primary",
-    block: {
-      kind: "screenshot",
-      src: tablesScreenshot,
-      alt: "صفحة /system-state — كروت Paths 6، Live Lessons 85/18، Routes 12، وتحت Runtime Context Layer كروت currentPath، currentRoute=system-state/، currentUser=guest",
-      caption:
-        "الصفحة دي بتعرض حالة المنصة بشكل بيشبه صف من جدول. شوف الـ \"Runtime Context Layer\": كل بطاقة (currentPath، currentRoute، currentUser) تشبه column في جدول واحد، والقيم اللي تحتها (—، system-state/، guest) تشبه السطر اللي يخصّك دلوقتي. لو الجدول ده اتخزّن في DB، التعريف هيكون: current_path text nullable, current_route text not null, current_user text default 'guest'. الكروت العلوية (Paths=6, Lessons=85/18, Routes=12) دي نتيجة COUNT أو aggregate من جداول تانية. كل رقم هنا بيرجع لـ schema قرار اتاخد لما الجداول اتعملت في الأول.",
-      label: "من الموقع — صفحة /system-state",
-    },
-  },
-  {
-    icon: Scale,
-    eyebrow: "Failure × Right",
-    title: "غلطات تصميم بتدفع تمنها بعد ٦ شهور",
-    block: {
-      kind: "comparison",
-      left: {
-        label: "FAILURE — كل حاجة text، مفيش defaults، مفيش audit",
-        body: "اعمل الجدول بسرعة: name text، age text، price text، items text (هحط جوّاه list مفصول بفواصل). كل حاجة nullable عشان \"يمكن نحتاج\". مفيش created_at. النتيجة: query سهل بيبقى مستحيل (إزاي تعمل sort بـ price لو هي text \"99.5\"؟)، تقارير غلط، الـ cascade مش شغّال، ومحدش يعرف إمتى البيانات اتدخلت.",
-      },
-      right: {
-        label: "RIGHT — أنواع صح + audit columns + قيود ضرورية",
-        body: "id uuid PK default gen_random_uuid()، user_id uuid references users(id) on delete cascade، title text not null، price numeric(10,2) not null، tags text[] (مصفوفة حقيقية)، metadata jsonb default '{}'، is_published boolean default false، created_at timestamptz default now()، updated_at timestamptz default now(). دلوقتي تقدر تـ sort/filter/aggregate صح، والـ DB بنفسه بيرفض البيانات الناقصة — مش بتعتمد على Frontend.",
-      },
+      caption: "إزاي تختار النوع الصح لكل column، امتى تسيب خانة فاضية (nullable)، وليه الـ id مش مجرد رقم وخلاص.",
     },
   },
   {
     icon: Rocket,
     eyebrow: "دورك دلوقتي",
-    title: "ارفع schema اللي عملته في M5.3 لمستوى production",
+    title: "طبّق اللي اتعلمته",
     tone: "accent",
     block: {
       kind: "quiz",
@@ -114,70 +93,72 @@ export const BUILDER_M8_TABLES_COLUMNS_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "أنت شغال على database لـ 'App' جديد بيسجل بيانات المستخدمين. محتاج تعمل عمود لـ 'id' بتاع كل user. إيه أحسن نوع بيانات تستخدمه وليه؟",
+          question: "بتعمل جدول للمستخدمين (users). إيه أحسن نوع داتا تستخدمه لـ `id` بتاع كل user؟",
           options: [
-            "uuid، لأنه فريد عالميًا ومش هيتنبأ بيه وسهل ربطه بأي نظام تاني.",
-            "integer، لأنه أسرع في البحث ومناسب للأرقام المتسلسلة.",
+            "uuid، لأنه فريد على مستوى العالم، آمن، ومحدش يقدر يخمّنه.",
+            "integer، لأنه أسرع في البحث ومناسب للأرقام اللي ورا بعض.",
             "text، عشان أقدر أدخل أي رمز أو حرف كـ id."
           ],
           correctIndex: 0,
-          explanation: "الـ uuid أحسن من integer لـ ids المستخدمين لأنه بيضمن تفرد عالمي وبيزود الأمان لأنه مش متسلسل، وده بيخليه صعب التنبؤ بيه."
+          explanation: "الـ uuid هو الاختيار الأفضل للـ IDs العامة زي بتاعة المستخدمين. بيخلّي السيستم بتاعك آمن أكتر عشان أرقام الـ IDs مش متسلسلة، وبيضمن إن مفيش اتنين users هياخدوا نفس الـ ID حتى لو شغال على كذا سيرفر."
         },
         {
           id: "apply2",
           bloom: "apply",
-          question: "عندك جدول للمنتجات في متجر إلكتروني. لكل منتج في عمود 'price'. إيه المفروض يكون نوع العمود ده، وهل ينفع يكون not null؟",
+          question: "عندك جدول للمنتجات في متجر إلكتروني، وفيه عامود 'price'. تختارله نوع إيه؟ وهل تسمح إنه يبقى فاضي؟",
           options: [
-            "numeric not null، عشان نقدر نحط فيه أرقام بـ فواصل عشرية (فلوس) وميصحش المنتج ملوش سعر.",
-            "integer nullable، عشان ممكن يكون منتج لسه تحت التسعير وممكن السعر يكون رقم صحيح بس.",
-            "text not null، عشان يمكن السعر يتكتب بصيغة معينة فيها عملة."
+            "numeric و not null، عشان الفلوس لازم تبقى دقيقة ومينفعش منتج من غير سعر.",
+            "integer و nullable، يمكن السعر يكون رقم صحيح بس، وممكن منتج يكون لسه متسعّرش.",
+            "text و not null، عشان يمكن السعر يتكتب بصيغة معينة فيها عملة زي '100 جنيه'."
           ],
           correctIndex: 0,
-          explanation: "الـ numeric هو النوع المناسب للمبالغ المالية لأنه بيتعامل مع أرقام بفواصل عشرية بدقة، والـ 'not null' منطقي لأن المنتج لازم يكون ليه سعر."
+          explanation: "الـ `numeric` هو النوع المخصص للفلوس عشان بيتعامل مع الكسور العشرية بدقة عالية. والمنطقي إنه يكون `not null` لأن كل منتج معروض للبيع لازم يكون له سعر."
         },
         {
           id: "apply3",
           bloom: "apply",
-          question: "لو بتصمم جدول للمهام (tasks) وعاوز تربط كل مهمة بمستخدم معين (user_id). إيه اللي يحصل لما المستخدم ده يتمسح من الجدول الرئيسي؟",
+          question: "بتصمم جدول للمهام (tasks) مربوط بجدول المستخدمين (users). لما تمسح user، إيه المفروض يحصل للمهام بتاعته؟",
           options: [
-            "cascade، بحيث كل المهام المرتبطة بالمستخدم ده تتمسح معاه تلقائيًا عشان الداتا متتراكمش وتفضل نظيفة.",
-            "restrict، بحيث يمنع مسح المستخدم طالما لسه فيه مهام مرتبطة بيه.",
-            "set null، بحيث الـ user_id في المهام بتاعته يبقى null ويتم الحفاظ على المهمة بس من غير ربط بمستخدم."
+            "المهام بتاعته تتمسح معاه أوتوماتيك (cascade)، عشان الداتا تفضل نضيفة ومفيش حاجة 'متشعلقة' في السيستم.",
+            "السيستم يرفض يمسح الـ user طالما لسه عنده مهام (restrict).",
+            "المهام تفضل موجودة بس خانة الـ user_id بتاعتها تبقى فاضية (set null)."
           ],
           correctIndex: 0,
-          explanation: "الـ 'on delete cascade' هو الأنسب هنا. لما المستخدم يتمسح، المفروض المهام اللي كان مسئول عنها تتأثر، ومسحها 'cascading' بيحافظ على نظافة قاعدة البيانات وبيمنع وجود بيانات مالهاش صاحب."
+          explanation: "الأفضل هنا هو الـ cascade delete. لما الـ user يتمسح، مهامه مبتكونش ليها لازمة، فمسحها معاه بيحافظ على قاعدة البيانات نضيفة ومنطقية، وبيمنع وجود داتا ملهاش صاحب."
         }
       ]
     },
   },
   {
     icon: Rocket,
-    eyebrow: "Mission",
-    title: "صمّم Schema لتطبيق حقيقي (٤+ tables)",
+    eyebrow: "مهمتك في 10 دقايق",
+    title: "صلّح الـ Schema المضروب ده",
     tone: "primary",
     block: {
       kind: "mission",
       intro:
-        "Schema سليم = نص المشروع. هترسم ٤+ tables بكل التفاصيل لتطبيق حقيقي من بالك.",
+        "ده schema لجدول 'products' في سيستم e-commerce، بس مليان غلطات هتعمل مشاكل بعدين. مهمتك تصلحه.",
       prompt:
-        "اختار تطبيق (Marketplace / SaaS / Community...) واكتب:\n\nلكل table:\n- Name + وصف:\n- Columns: name | type | nullable? | default? | unique?\n- Indexes (لو فيه):\n- Relations مع tables تانية:\n\nفي الآخر:\n- ايه أكبر قرار صعب اخدته في الـ Schema ولِيه؟\n- لو الـ data كبرت ١٠٠ مرة، فين هيكون الـ bottleneck؟",
+        "**الـ Schema الغلط:**\n- `name`: text\n- `price`: text\n- `in_stock`: text\n- `created_date`: text\n\n**مهمتك:**\nاكتب الـ Schema الصح، مستخدمًا الأنواع والقواعد اللي اتعلمتها. فكّر في:\n1.  أنواع البيانات الصح (للأسعار، للكمية، للتاريخ).\n2.  إيه الخانات اللي مينفعش تبقى فاضية (not null).\n3.  إيه الأعمدة الأساسية اللي ناقصة عشان الجدول يبقى production-ready (زي الـ id).",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",
       rubric: [
         {
-          label: "٤+ tables بـ schema كامل",
-          weight: 60,
+          label: "تصليح الأنواع والقواعد",
+          weight: 70,
           criteria: [
-            "كل column عندها type + nullable + sensible default.",
-            "Relations محددين بأسماء FK واضحة.",
+            "استخدم `numeric` للـ price.",
+            "استخدم `boolean` أو `integer` للـ in_stock.",
+            "استخدم `timestamptz` مع `default now()` للـ created_at.",
+            "حدد `not null` للأعمدة الأساسية زي name و price.",
           ],
         },
         {
-          label: "قرار + Bottleneck",
-          weight: 40,
+          label: "إضافة أعمدة أساسية (Audit)",
+          weight: 30,
           criteria: [
-            "شرحت قرار محدد مش «اخترت uuid».",
-            "Bottleneck معه سبب تقني (index / join / N+1).",
+            "ضاف `id uuid primary key`.",
+            "ضاف `updated_at timestamptz`.",
           ],
         },
       ],
@@ -186,20 +167,20 @@ export const BUILDER_M8_TABLES_COLUMNS_BLOCKS: IntroLessonContent = [
   {
     icon: FlaskConical,
     eyebrow: "جزء من المنصة",
-    title: "جدول lesson_progress = أبسط مثال تطبيقي",
+    title: "أبسط جدول عندنا بيشغّل المنصة",
     tone: "primary",
     block: {
       kind: "caseStudy",
       title: "جدول lesson_progress = أبسط مثال تطبيقي",
       summary:
-        "الجزء ده من المنصة اتبنى بمسار Builder — نفس اللي بتتعلمه. أبسط جدول في المنصة: 6 أعمدة بس — id, user_id, lesson_id, status, created_at, updated_at. ده كل اللي محتاجينه عشان نتابع تقدّمك. ميغرّك بكتر أعمدة من الأول.",
+        "جدول `lesson_progress` اللي بيسجل انت خلصت إيه، هو أبسط مثال عملي. 6 عواميد بس بيعملوا الشغل كله عشان نتابع تقدّمك. الأهمية مش في الكترة، الأهمية في التصميم الصح من الأول.",
       bullets: [
-        "user_id + lesson_id = composite key منطقي (unique constraint).",
-        "status = enum (not-started / in-progress / completed).",
-        "بدأنا بـ 4 أعمدة، زوّدنا 2 لما احتجناهم — مش العكس.",
+        "الـ `user_id` مع الـ `lesson_id` بيعملوا مع بعض مفتاح فريد (unique constraint) عشان نضمن إنك متسجلش نفس الدرس مرتين.",
+        "عامود الـ `status` نوعه متحدد (enum) عشان يقبل قيم معينة بس: 'not-started', 'in-progress', 'completed'.",
+        "بدأنا بـ 4 عواميد بس، وزوّدنا اتنين لما احتجناهم. ابدأ بسيط وكبّر لما تحتاج، مش العكس.",
       ],
       pathAngle: "builder",
-      link: { label: "افتح /dashboard", href: "/dashboard" },
+      link: { label: "افتح الـ Dashboard وشوف تقدّمك", href: "/dashboard" },
     },
   }
 ];
