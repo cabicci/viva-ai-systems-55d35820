@@ -2,6 +2,7 @@ import * as React from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
+import { useEntitlement } from "@/lib/entitlements";
 import { INTRO_LESSON_CONTENT } from "@/components/intro/lessons";
 
 /**
@@ -60,12 +61,13 @@ const QK = ["mission-gate"] as const;
 
 export function useMissionGate(lessonId: string): MissionGateState {
   const { user } = useAuth();
+  const { isAdmin } = useEntitlement();
   const qc = useQueryClient();
   const missionShape = React.useMemo(
     () => getLessonMission(lessonId),
     [lessonId],
   );
-  const requiresMission = !!missionShape?.hasRubric;
+  const requiresMission = !!missionShape?.hasRubric && !isAdmin;
   const missionId = `${lessonId}::mission`;
 
   const { data, isLoading } = useQuery({
