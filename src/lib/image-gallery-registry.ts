@@ -56,7 +56,7 @@ import cr6 from "@/assets/lessons/creator-m4-l1-reality-check.jpg";
 import cr7 from "@/assets/lessons/creator-m4-l2-mobile-shooting.jpg";
 import cr8 from "@/assets/lessons/creator-m4-l3-ai-writing.jpg";
 import cr9 from "@/assets/lessons/unique/creator-m5-l1-editing.jpg";
-import cr10 from "@/assets/lessons/unique/creator-m4-thumbnails.jpg";
+import cr10 from "@/assets/lessons/unique/creator-m5-l2-thumbnails-captions.jpg";
 import cr11 from "@/assets/lessons/unique/creator-m7-l1-brand-basics.jpg";
 import cr12 from "@/assets/lessons/unique/creator-m7-l2-grid-consistency.jpg";
 
