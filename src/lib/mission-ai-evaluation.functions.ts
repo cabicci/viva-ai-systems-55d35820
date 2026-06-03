@@ -246,11 +246,13 @@ export const revealModelMissionAnswer = createServerFn({ method: "POST" })
 
     const { data: row, error: rowErr } = await supabaseAdmin
       .from("mission_submissions")
-      .select("id, user_id, attempt_count, status")
+      .select("id, user_id, mission_id, attempt_count, status")
       .eq("id", data.submissionId)
+      .eq("user_id", userId)
+      .eq("mission_id", data.missionId)
       .maybeSingle();
     if (rowErr) throw new Error("تعذّر التحقق من التسليم.");
-    if (!row || row.user_id !== userId) throw new Error("التسليم غير موجود.");
+    if (!row) throw new Error("التسليم غير موجود.");
 
     // C5 fix: server-side guard — escape hatch is only valid AFTER 2 real
     // attempts and only when the submission isn't already passed. Without
