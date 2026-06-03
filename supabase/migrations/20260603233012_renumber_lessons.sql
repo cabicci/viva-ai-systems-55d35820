@@ -71,7 +71,7 @@ UPDATE public.lesson_progress SET lesson_id = 'builder-m5-l1-transition' WHERE l
 UPDATE public.lesson_progress SET lesson_id = 'builder-m5-l2-frontend' WHERE lesson_id = 'builder-m5-l10-frontend';
 UPDATE public.lesson_progress SET lesson_id = 'builder-m5-l3-backend-api' WHERE lesson_id = 'builder-m5-l11-backend-api';
 UPDATE public.lesson_progress SET lesson_id = 'builder-m5-l4-database-intro' WHERE lesson_id = 'builder-m5-l12-database-intro';
-UPDATE public.lesson_progress SET lesson_id = 'builder-m5-l5-l12b-mini-win' WHERE lesson_id = 'builder-m5-l12b-mini-win';
+UPDATE public.lesson_progress SET lesson_id = 'builder-m5-l5-mini-win' WHERE lesson_id = 'builder-m5-l12b-mini-win';
 UPDATE public.lesson_progress SET lesson_id = 'builder-m6-l1-idea-to-page' WHERE lesson_id = 'builder-m6-l13-idea-to-page';
 UPDATE public.lesson_progress SET lesson_id = 'builder-m6-l2-wireframe' WHERE lesson_id = 'builder-m6-l14-wireframe';
 UPDATE public.lesson_progress SET lesson_id = 'builder-m6-l3-first-prompt-to-lovable' WHERE lesson_id = 'builder-m6-l15-first-prompt-to-lovable';
@@ -156,7 +156,7 @@ UPDATE public.lesson_feedback SET lesson_id = 'builder-m5-l1-transition' WHERE l
 UPDATE public.lesson_feedback SET lesson_id = 'builder-m5-l2-frontend' WHERE lesson_id = 'builder-m5-l10-frontend';
 UPDATE public.lesson_feedback SET lesson_id = 'builder-m5-l3-backend-api' WHERE lesson_id = 'builder-m5-l11-backend-api';
 UPDATE public.lesson_feedback SET lesson_id = 'builder-m5-l4-database-intro' WHERE lesson_id = 'builder-m5-l12-database-intro';
-UPDATE public.lesson_feedback SET lesson_id = 'builder-m5-l5-l12b-mini-win' WHERE lesson_id = 'builder-m5-l12b-mini-win';
+UPDATE public.lesson_feedback SET lesson_id = 'builder-m5-l5-mini-win' WHERE lesson_id = 'builder-m5-l12b-mini-win';
 UPDATE public.lesson_feedback SET lesson_id = 'builder-m6-l1-idea-to-page' WHERE lesson_id = 'builder-m6-l13-idea-to-page';
 UPDATE public.lesson_feedback SET lesson_id = 'builder-m6-l2-wireframe' WHERE lesson_id = 'builder-m6-l14-wireframe';
 UPDATE public.lesson_feedback SET lesson_id = 'builder-m6-l3-first-prompt-to-lovable' WHERE lesson_id = 'builder-m6-l15-first-prompt-to-lovable';
@@ -241,7 +241,7 @@ UPDATE public.lesson_notes SET lesson_id = 'builder-m5-l1-transition' WHERE less
 UPDATE public.lesson_notes SET lesson_id = 'builder-m5-l2-frontend' WHERE lesson_id = 'builder-m5-l10-frontend';
 UPDATE public.lesson_notes SET lesson_id = 'builder-m5-l3-backend-api' WHERE lesson_id = 'builder-m5-l11-backend-api';
 UPDATE public.lesson_notes SET lesson_id = 'builder-m5-l4-database-intro' WHERE lesson_id = 'builder-m5-l12-database-intro';
-UPDATE public.lesson_notes SET lesson_id = 'builder-m5-l5-l12b-mini-win' WHERE lesson_id = 'builder-m5-l12b-mini-win';
+UPDATE public.lesson_notes SET lesson_id = 'builder-m5-l5-mini-win' WHERE lesson_id = 'builder-m5-l12b-mini-win';
 UPDATE public.lesson_notes SET lesson_id = 'builder-m6-l1-idea-to-page' WHERE lesson_id = 'builder-m6-l13-idea-to-page';
 UPDATE public.lesson_notes SET lesson_id = 'builder-m6-l2-wireframe' WHERE lesson_id = 'builder-m6-l14-wireframe';
 UPDATE public.lesson_notes SET lesson_id = 'builder-m6-l3-first-prompt-to-lovable' WHERE lesson_id = 'builder-m6-l15-first-prompt-to-lovable';
@@ -326,7 +326,7 @@ UPDATE public.lesson_quiz_attempts SET lesson_id = 'builder-m5-l1-transition' WH
 UPDATE public.lesson_quiz_attempts SET lesson_id = 'builder-m5-l2-frontend' WHERE lesson_id = 'builder-m5-l10-frontend';
 UPDATE public.lesson_quiz_attempts SET lesson_id = 'builder-m5-l3-backend-api' WHERE lesson_id = 'builder-m5-l11-backend-api';
 UPDATE public.lesson_quiz_attempts SET lesson_id = 'builder-m5-l4-database-intro' WHERE lesson_id = 'builder-m5-l12-database-intro';
-UPDATE public.lesson_quiz_attempts SET lesson_id = 'builder-m5-l5-l12b-mini-win' WHERE lesson_id = 'builder-m5-l12b-mini-win';
+UPDATE public.lesson_quiz_attempts SET lesson_id = 'builder-m5-l5-mini-win' WHERE lesson_id = 'builder-m5-l12b-mini-win';
 UPDATE public.lesson_quiz_attempts SET lesson_id = 'builder-m6-l1-idea-to-page' WHERE lesson_id = 'builder-m6-l13-idea-to-page';
 UPDATE public.lesson_quiz_attempts SET lesson_id = 'builder-m6-l2-wireframe' WHERE lesson_id = 'builder-m6-l14-wireframe';
 UPDATE public.lesson_quiz_attempts SET lesson_id = 'builder-m6-l3-first-prompt-to-lovable' WHERE lesson_id = 'builder-m6-l15-first-prompt-to-lovable';
@@ -411,7 +411,7 @@ UPDATE public.lesson_review_schedule SET lesson_id = 'builder-m5-l1-transition' 
 UPDATE public.lesson_review_schedule SET lesson_id = 'builder-m5-l2-frontend' WHERE lesson_id = 'builder-m5-l10-frontend';
 UPDATE public.lesson_review_schedule SET lesson_id = 'builder-m5-l3-backend-api' WHERE lesson_id = 'builder-m5-l11-backend-api';
 UPDATE public.lesson_review_schedule SET lesson_id = 'builder-m5-l4-database-intro' WHERE lesson_id = 'builder-m5-l12-database-intro';
-UPDATE public.lesson_review_schedule SET lesson_id = 'builder-m5-l5-l12b-mini-win' WHERE lesson_id = 'builder-m5-l12b-mini-win';
+UPDATE public.lesson_review_schedule SET lesson_id = 'builder-m5-l5-mini-win' WHERE lesson_id = 'builder-m5-l12b-mini-win';
 UPDATE public.lesson_review_schedule SET lesson_id = 'builder-m6-l1-idea-to-page' WHERE lesson_id = 'builder-m6-l13-idea-to-page';
 UPDATE public.lesson_review_schedule SET lesson_id = 'builder-m6-l2-wireframe' WHERE lesson_id = 'builder-m6-l14-wireframe';
 UPDATE public.lesson_review_schedule SET lesson_id = 'builder-m6-l3-first-prompt-to-lovable' WHERE lesson_id = 'builder-m6-l15-first-prompt-to-lovable';
@@ -496,7 +496,7 @@ UPDATE public.user_lesson_status SET lesson_id = 'builder-m5-l1-transition' WHER
 UPDATE public.user_lesson_status SET lesson_id = 'builder-m5-l2-frontend' WHERE lesson_id = 'builder-m5-l10-frontend';
 UPDATE public.user_lesson_status SET lesson_id = 'builder-m5-l3-backend-api' WHERE lesson_id = 'builder-m5-l11-backend-api';
 UPDATE public.user_lesson_status SET lesson_id = 'builder-m5-l4-database-intro' WHERE lesson_id = 'builder-m5-l12-database-intro';
-UPDATE public.user_lesson_status SET lesson_id = 'builder-m5-l5-l12b-mini-win' WHERE lesson_id = 'builder-m5-l12b-mini-win';
+UPDATE public.user_lesson_status SET lesson_id = 'builder-m5-l5-mini-win' WHERE lesson_id = 'builder-m5-l12b-mini-win';
 UPDATE public.user_lesson_status SET lesson_id = 'builder-m6-l1-idea-to-page' WHERE lesson_id = 'builder-m6-l13-idea-to-page';
 UPDATE public.user_lesson_status SET lesson_id = 'builder-m6-l2-wireframe' WHERE lesson_id = 'builder-m6-l14-wireframe';
 UPDATE public.user_lesson_status SET lesson_id = 'builder-m6-l3-first-prompt-to-lovable' WHERE lesson_id = 'builder-m6-l15-first-prompt-to-lovable';
@@ -581,7 +581,7 @@ UPDATE public.user_mission_state SET lesson_id = 'builder-m5-l1-transition' WHER
 UPDATE public.user_mission_state SET lesson_id = 'builder-m5-l2-frontend' WHERE lesson_id = 'builder-m5-l10-frontend';
 UPDATE public.user_mission_state SET lesson_id = 'builder-m5-l3-backend-api' WHERE lesson_id = 'builder-m5-l11-backend-api';
 UPDATE public.user_mission_state SET lesson_id = 'builder-m5-l4-database-intro' WHERE lesson_id = 'builder-m5-l12-database-intro';
-UPDATE public.user_mission_state SET lesson_id = 'builder-m5-l5-l12b-mini-win' WHERE lesson_id = 'builder-m5-l12b-mini-win';
+UPDATE public.user_mission_state SET lesson_id = 'builder-m5-l5-mini-win' WHERE lesson_id = 'builder-m5-l12b-mini-win';
 UPDATE public.user_mission_state SET lesson_id = 'builder-m6-l1-idea-to-page' WHERE lesson_id = 'builder-m6-l13-idea-to-page';
 UPDATE public.user_mission_state SET lesson_id = 'builder-m6-l2-wireframe' WHERE lesson_id = 'builder-m6-l14-wireframe';
 UPDATE public.user_mission_state SET lesson_id = 'builder-m6-l3-first-prompt-to-lovable' WHERE lesson_id = 'builder-m6-l15-first-prompt-to-lovable';
@@ -666,7 +666,7 @@ UPDATE public.mission_submissions SET lesson_id = 'builder-m5-l1-transition' WHE
 UPDATE public.mission_submissions SET lesson_id = 'builder-m5-l2-frontend' WHERE lesson_id = 'builder-m5-l10-frontend';
 UPDATE public.mission_submissions SET lesson_id = 'builder-m5-l3-backend-api' WHERE lesson_id = 'builder-m5-l11-backend-api';
 UPDATE public.mission_submissions SET lesson_id = 'builder-m5-l4-database-intro' WHERE lesson_id = 'builder-m5-l12-database-intro';
-UPDATE public.mission_submissions SET lesson_id = 'builder-m5-l5-l12b-mini-win' WHERE lesson_id = 'builder-m5-l12b-mini-win';
+UPDATE public.mission_submissions SET lesson_id = 'builder-m5-l5-mini-win' WHERE lesson_id = 'builder-m5-l12b-mini-win';
 UPDATE public.mission_submissions SET lesson_id = 'builder-m6-l1-idea-to-page' WHERE lesson_id = 'builder-m6-l13-idea-to-page';
 UPDATE public.mission_submissions SET lesson_id = 'builder-m6-l2-wireframe' WHERE lesson_id = 'builder-m6-l14-wireframe';
 UPDATE public.mission_submissions SET lesson_id = 'builder-m6-l3-first-prompt-to-lovable' WHERE lesson_id = 'builder-m6-l15-first-prompt-to-lovable';
@@ -751,7 +751,7 @@ UPDATE public.learner_events SET lesson_id = 'builder-m5-l1-transition' WHERE le
 UPDATE public.learner_events SET lesson_id = 'builder-m5-l2-frontend' WHERE lesson_id = 'builder-m5-l10-frontend';
 UPDATE public.learner_events SET lesson_id = 'builder-m5-l3-backend-api' WHERE lesson_id = 'builder-m5-l11-backend-api';
 UPDATE public.learner_events SET lesson_id = 'builder-m5-l4-database-intro' WHERE lesson_id = 'builder-m5-l12-database-intro';
-UPDATE public.learner_events SET lesson_id = 'builder-m5-l5-l12b-mini-win' WHERE lesson_id = 'builder-m5-l12b-mini-win';
+UPDATE public.learner_events SET lesson_id = 'builder-m5-l5-mini-win' WHERE lesson_id = 'builder-m5-l12b-mini-win';
 UPDATE public.learner_events SET lesson_id = 'builder-m6-l1-idea-to-page' WHERE lesson_id = 'builder-m6-l13-idea-to-page';
 UPDATE public.learner_events SET lesson_id = 'builder-m6-l2-wireframe' WHERE lesson_id = 'builder-m6-l14-wireframe';
 UPDATE public.learner_events SET lesson_id = 'builder-m6-l3-first-prompt-to-lovable' WHERE lesson_id = 'builder-m6-l15-first-prompt-to-lovable';

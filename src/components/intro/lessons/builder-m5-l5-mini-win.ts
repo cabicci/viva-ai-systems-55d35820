@@ -58,7 +58,7 @@ export const BUILDER_M5_MINI_WIN_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "builder-m5-l5-l12b-mini-win-check",
+      lessonId: "builder-m5-l5-mini-win-check",
       items: [
         {
           id: "mw1",
