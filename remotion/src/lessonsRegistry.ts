@@ -87,7 +87,6 @@ import { SCENES as L_builder_m1_l1_what_is_llm_S, SCENE_FRAMES as L_builder_m1_l
 import { SCENES as L_builder_m2_l5_style_control_S, SCENE_FRAMES as L_builder_m2_l5_style_control_F, TOTAL_FRAMES as L_builder_m2_l5_style_control_T } from "./lessons-generated/builder-m2-l5-style-control.gen";
 import { SCENES as L_builder_m3_l6_context_layer_S, SCENE_FRAMES as L_builder_m3_l6_context_layer_F, TOTAL_FRAMES as L_builder_m3_l6_context_layer_T } from "./lessons-generated/builder-m3-l6-context-layer.gen";
 import { SCENES as L_builder_m2_l4_instructions_examples_S, SCENE_FRAMES as L_builder_m2_l4_instructions_examples_F, TOTAL_FRAMES as L_builder_m2_l4_instructions_examples_T } from "./lessons-generated/builder-m2-l4-instructions-examples.gen";
-import { SCENES as L_builder_m6_l17_iteration_S, SCENE_FRAMES as L_builder_m6_l17_iteration_F, TOTAL_FRAMES as L_builder_m6_l17_iteration_T } from "./lessons-generated/builder-m6-l17-iteration.gen";
 import { SCENES as L_builder_m3_l7_memory_limits_S, SCENE_FRAMES as L_builder_m3_l7_memory_limits_F, TOTAL_FRAMES as L_builder_m3_l7_memory_limits_T } from "./lessons-generated/builder-m3-l7-memory-limits.gen";
 import { SCENES as L_builder_m4_l8_parameters_S, SCENE_FRAMES as L_builder_m4_l8_parameters_F, TOTAL_FRAMES as L_builder_m4_l8_parameters_T } from "./lessons-generated/builder-m4-l8-parameters.gen";
 import { SCENES as L_builder_m9_l25_embeddings_S, SCENE_FRAMES as L_builder_m9_l25_embeddings_F, TOTAL_FRAMES as L_builder_m9_l25_embeddings_T } from "./lessons-generated/builder-m9-l25-embeddings.gen";
@@ -107,6 +106,7 @@ import { SCENES as L_builder_m6_l14_wireframe_S, SCENE_FRAMES as L_builder_m6_l1
 import { SCENES as L_builder_m8_l23_rls_S, SCENE_FRAMES as L_builder_m8_l23_rls_F, TOTAL_FRAMES as L_builder_m8_l23_rls_T } from "./lessons-generated/builder-m8-l23-rls.gen";
 import { SCENES as L_builder_m6_l16_components_routes_S, SCENE_FRAMES as L_builder_m6_l16_components_routes_F, TOTAL_FRAMES as L_builder_m6_l16_components_routes_T } from "./lessons-generated/builder-m6-l16-components-routes.gen";
 import { SCENES as L_builder_m8_l22_sessions_jwt_S, SCENE_FRAMES as L_builder_m8_l22_sessions_jwt_F, TOTAL_FRAMES as L_builder_m8_l22_sessions_jwt_T } from "./lessons-generated/builder-m8-l22-sessions-jwt.gen";
+import { SCENES as L_builder_m6_l17_iteration_S, SCENE_FRAMES as L_builder_m6_l17_iteration_F, TOTAL_FRAMES as L_builder_m6_l17_iteration_T } from "./lessons-generated/builder-m6-l17-iteration.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -187,7 +187,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m2-l5-style-control", scenes: L_builder_m2_l5_style_control_S, sceneFrames: L_builder_m2_l5_style_control_F, totalFrames: L_builder_m2_l5_style_control_T },
     { id: "builder-m3-l6-context-layer", scenes: L_builder_m3_l6_context_layer_S, sceneFrames: L_builder_m3_l6_context_layer_F, totalFrames: L_builder_m3_l6_context_layer_T },
     { id: "builder-m2-l4-instructions-examples", scenes: L_builder_m2_l4_instructions_examples_S, sceneFrames: L_builder_m2_l4_instructions_examples_F, totalFrames: L_builder_m2_l4_instructions_examples_T },
-    { id: "builder-m6-l17-iteration", scenes: L_builder_m6_l17_iteration_S, sceneFrames: L_builder_m6_l17_iteration_F, totalFrames: L_builder_m6_l17_iteration_T },
     { id: "builder-m3-l7-memory-limits", scenes: L_builder_m3_l7_memory_limits_S, sceneFrames: L_builder_m3_l7_memory_limits_F, totalFrames: L_builder_m3_l7_memory_limits_T },
     { id: "builder-m4-l8-parameters", scenes: L_builder_m4_l8_parameters_S, sceneFrames: L_builder_m4_l8_parameters_F, totalFrames: L_builder_m4_l8_parameters_T },
     { id: "builder-m9-l25-embeddings", scenes: L_builder_m9_l25_embeddings_S, sceneFrames: L_builder_m9_l25_embeddings_F, totalFrames: L_builder_m9_l25_embeddings_T },
@@ -207,5 +206,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m8-l23-rls", scenes: L_builder_m8_l23_rls_S, sceneFrames: L_builder_m8_l23_rls_F, totalFrames: L_builder_m8_l23_rls_T },
     { id: "builder-m6-l16-components-routes", scenes: L_builder_m6_l16_components_routes_S, sceneFrames: L_builder_m6_l16_components_routes_F, totalFrames: L_builder_m6_l16_components_routes_T },
     { id: "builder-m8-l22-sessions-jwt", scenes: L_builder_m8_l22_sessions_jwt_S, sceneFrames: L_builder_m8_l22_sessions_jwt_F, totalFrames: L_builder_m8_l22_sessions_jwt_T },
+    { id: "builder-m6-l17-iteration", scenes: L_builder_m6_l17_iteration_S, sceneFrames: L_builder_m6_l17_iteration_F, totalFrames: L_builder_m6_l17_iteration_T },
   /* @lesson-entries-end */
 ];

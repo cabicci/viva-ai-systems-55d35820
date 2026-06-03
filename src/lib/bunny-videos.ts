@@ -55,7 +55,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "builder-m6-l18-debugging": "f14273c8-99bd-4898-9896-b3be5e6346e1",
   "builder-m6-l15-first-prompt-to-lovable": "1a36adcc-7d8d-416f-bb00-e61b8a3fdb15",
   "builder-m6-l13-idea-to-page": "82784685-da22-4c9c-a30d-39816ed917af",
-  "builder-m6-l17-iteration": "1b4c8e3d-6e06-4e94-8c52-4a923cac49c2",
+  "builder-m6-l17-iteration": "32299fa1-fe83-4265-93d2-346c353d2575",
   "builder-m6-l14-wireframe": "39b10c59-f878-46f0-bac4-d8bb15978308",
   "builder-m8-l23-rls": "a6e59556-c995-48e5-a9f1-207fac5fa475",
   "builder-m8-l22-sessions-jwt": "c3878dd8-1f2f-40d3-aa3e-8ccd5a2f1415",
