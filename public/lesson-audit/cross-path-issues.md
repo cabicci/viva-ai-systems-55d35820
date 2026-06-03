@@ -1,20 +1,20 @@
 # Cross-path / Sequence Audit
 
-Generated: 2026-06-03T18:29:42.170Z
+Generated: 2026-06-03T18:30:45.345Z
 Files scanned: 95
-Total issues: 272
+Total issues: 296
 
 ## By category
 - **cross-path-info**: 267
-- **next-lesson-ref**: 3
-- **prior-lesson-ref**: 2
+- **prior-lesson-ref**: 23
+- **next-lesson-ref**: 6
 
 ## By path
 - **business**: 83
-- **automator**: 76
-- **analyst**: 56
+- **automator**: 80
+- **analyst**: 59
 - **intro**: 40
-- **builder**: 9
+- **builder**: 26
 - **creator**: 8
 
 ## Top 15 files
@@ -26,13 +26,13 @@ Total issues: 272
 - `business-m0-from-decisions-to-leadership.ts` — 15
 - `analyst-m0-from-automation-to-insight.ts` — 13
 - `automator-m6-closing-loop.ts` — 13
+- `automator-m4-agents.ts` — 7
+- `builder-m5-l12b-mini-win.ts` — 7
 - `analyst-m4-four-numbers-dashboard.ts` — 6
-- `automator-m4-agents.ts` — 6
+- `automator-m4-rag-in-n8n.ts` — 6
 - `automator-m5-follow-up.ts` — 6
-- `creator-m3-content-pillars.ts` — 6
-- `automator-m4-rag-in-n8n.ts` — 5
-- `automator-m5-lead-capture.ts` — 5
-- `automator-m3-connect-database.ts` — 4
+- `automator-m5-lead-capture.ts` — 6
+- `builder-m5-l9-transition.ts` — 6
 
 ## Issues (grouped by file)
 
@@ -64,7 +64,13 @@ Total issues: 272
 - L175 · `cross-path-info` · **mention:automator**
   > اتبنى بمسار Analyst — نفس اللي بتتعلمه. Automator سجّل learner_events و lesson_progress تلقائي. دلوقتي /analytics بيعرض البيانات دي كأسئلة قابلة للإجابة: «أنهي
 
-### analyst-m2-ai-summarization.ts  (1)
+### analyst-m2-ai-summarization.ts  (4)
+- L51 · `prior-lesson-ref` · **في m{N}**
+  > AI بيرجّعلك ملخّص في نقاط — جاهز للقرار في M3.", "ربط بـ Builder M9 (RAG): لو حجم البيانات كبير، تقدر تبني RAG على الـ DB بدل النسخ اليدوي.", ],
+- L102 · `prior-lesson-ref` · **في m{N}**
+  > options: [ "تاخد قرار فوري في M3 بتعديل عملية التوصيل ومراجعة جودة المنتجات", "تتجاهل الشكاوى دي لأنها طبيعية في أي بيزنس",
+- L107 · `prior-lesson-ref` · **في m{N}**
+  > لـ AI بيرجعلك ملخّص في نقاط جاهز للقرار في M3. وبما إن الـ AI بيطلعلك الـ patterns و الشكاوى المتكررة، دي بتكون مؤشرات قوية لمشاكل لازم يتم التحرك عليها فورًا."
 - L52 · `cross-path-info` · **mention:builder**
   > — جاهز للقرار في M3.", "ربط بـ Builder M9 (RAG): لو حجم البيانات كبير، تقدر تبني RAG على الـ DB بدل النسخ اليدوي.", ], }, }, { icon:
 
@@ -216,6 +222,10 @@ Total issues: 272
 - L108 · `cross-path-info` · **mention:business**
   > ات (Intro، Creator، Builder، Automator، Business، Analyst) مع مؤشر تقدّم لكل مرحلة.", caption: "ده فعلًا screenshot من صفحة /dashboard بتاعتنا — اللي إنت
 
+### automator-m1-systems-view.ts  (1)
+- L65 · `prior-lesson-ref` · **في m{N}**
+  > مرة في اليوم يدوي — هنبنيه يشتغل لوحده في M5.", ], }, }, { icon: ImageIcon, eyebrow: "شوف بنفسك", title: "صفحة /operational-layers",
+
 ### automator-m2-filters-routers.ts  (2)
 - L78 · `cross-path-info` · **mention:builder**
   > خدم اختار Creator → خد المسار ده. اختار Builder → مسار تاني. اختار Automator → مسار ثالث. نفس الـ trigger (المستخدم لسه داخل)، بس Routes مختلفة حسب القرار.",
@@ -238,7 +248,9 @@ Total issues: 272
 - L102 · `cross-path-info` · **mention:builder**
   > label: "من المنصة — درس Backend API في Builder", }, }, { icon: Scale, eyebrow: "Failure × Right", title: "إزاي تتجنب أكبر غلطة", blo
 
-### automator-m4-agents.ts  (6)
+### automator-m4-agents.ts  (7)
+- L45 · `prior-lesson-ref` · **اللي اتعلمناه/عملناه/بنيناه**
+  > ط بـ Builder M9", title: "نفس Agent اللي بنيناه — بس في n8n", block: { kind: "paragraphs", paragraphs: [ "في Builder M9 اتعلمنا إن A
 - L44 · `cross-path-info` · **mention:builder**
   > icon: Link2, eyebrow: "🔗 ربط بـ Builder M9", title: "نفس Agent اللي بنيناه — بس في n8n", block: { kind: "paragraphs", paragraphs: [
 - L49 · `cross-path-info` · **mention:builder**
@@ -262,7 +274,9 @@ Total issues: 272
 - L51 · `cross-path-info` · **mention:builder**
   > ورا الكواليس.", "لو لسه مكملتش Builder: الفكرة في سطر — LLM = AI بتبعتله نص وبيرجّعلك نص. متشغلش بالك بالتفاصيل التقنية، ركّز على إزاي تستخدمه في الـ f
 
-### automator-m4-rag-in-n8n.ts  (5)
+### automator-m4-rag-in-n8n.ts  (6)
+- L45 · `prior-lesson-ref` · **اللي اتعلمناه/عملناه/بنيناه**
+  > ربط بـ Builder M9", title: "نفس RAG اللي اتعلمناه — بس بـ nodes", block: { kind: "paragraphs", paragraphs: [ "لو خلّصت Builder M9، إ
 - L44 · `cross-path-info` · **mention:builder**
   > icon: Link2, eyebrow: "🔗 ربط بـ Builder M9", title: "نفس RAG اللي اتعلمناه — بس بـ nodes", block: { kind: "paragraphs", paragraphs:
 - L49 · `cross-path-info` · **mention:builder**
@@ -288,7 +302,9 @@ Total issues: 272
 - L82 · `cross-path-info` · **mention:creator**
   > , label: "من المنصة — درس الجدولة في Creator", }, }, { icon: Scale, eyebrow: "Failure × Right", title: "Sequence بطيئة vs Sequence مزع
 
-### automator-m5-lead-capture.ts  (5)
+### automator-m5-lead-capture.ts  (6)
+- L130 · `prior-lesson-ref` · **زي ما اتعلمنا/شفنا/قلنا/عملنا/فهمنا**
+  > explanation: "الـ Landing Page زي ما اتفقنا لازم يكون الغرض منها 'action' واحد بس، وهنا هو تجميع الإيميلات، عشان كده التركيز على هدف واحد أهم حاجة."
 - L13 · `cross-path-info` · **mention:creator**
   > tor · M5 · Lesson 01 — استقبال Leads من Creator */ export const AUTOMATOR_M5_LEAD_CAPTURE_BLOCKS: IntroLessonContent = [ { icon: Inbox, eyebrow: "HER
 - L62 · `cross-path-info` · **mention:creator**
@@ -340,15 +356,53 @@ Total issues: 272
 - L65 · `cross-path-info` · **mention:analyst**
   > وائم المسارات Builder/Creator/Automator/Analyst", caption: "الداشبورد دي مش مجرد أرقام. كل كارت فيها بيقيس نقطة في رحلتك معانا (Activation و Reten
 
+### builder-m2-l3-prompt-layer.ts  (1)
+- L164 · `prior-lesson-ref` · **اللي اتعلمناه/عملناه/بنيناه**
+  > وع، كان الـ AI هيرد برد دقيق ومفيد، وده اللي اتعلمناه عن أهمية الوضوح.", }, ], }, }, { icon: BookOpen, eyebrow: "ورا الكواليس",
+
+### builder-m3-l6-context-layer.ts  (1)
+- L126 · `prior-lesson-ref` · **زي ما اتعلمنا/شفنا/قلنا/عملنا/فهمنا**
+  > orrectIndex: 0, explanation: "زي ما شفنا، أغلب الردود الغبية سببها إن الـ AI مش فاهم خلفية الموضوع. المشكلة في نقص السياق، مش في ذكاء الـ AI."
+
 ### builder-m5-l11-backend-api.ts  (1)
 - L43 · `prior-lesson-ref` · **الدرس اللي فات**
   > **وش التطبيق (Frontend)**. اتعلمناه في الدرس اللي فات.", "بس فين بيتطبخ الأكل؟ في المطبخ ورا الستار. مفيش عميل بيشوف المطبخ، بس كل طلب لازم يعدّي عليه.
 
-### builder-m5-l12b-mini-win.ts  (2)
+### builder-m5-l12-database-intro.ts  (2)
+- L16 · `prior-lesson-ref` · **في m{N}**
+  > الدرس ده: SQL، Schema، Relations (هتيجي في m7). */ export const BUILDER_M5_DATABASE_INTRO_BLOCKS: IntroLessonContent = [ { icon: Sparkles, eyebrow: "
+- L16 · `next-lesson-ref` · **هتيجي في m{N}**
+  > وع في الدرس ده: SQL، Schema، Relations (هتيجي في m7). */ export const BUILDER_M5_DATABASE_INTRO_BLOCKS: IntroLessonContent = [ { icon: Sparkles, eyeb
+
+### builder-m5-l12b-mini-win.ts  (7)
+- L24 · `prior-lesson-ref` · **في N دروس بس**
+  > ragraphs", paragraphs: [ "في 4 دروس بس فهمت اللي مبرمج محترف بياخد شهور عشان يفهمه: إزاي أي تطبيق في الدنيا بيشتغل من جوه. **بريك سريع** قبل ما نب
+- L11 · `prior-lesson-ref` · **Phase N (label)**
+  > lder · M5 · Lesson 12b — Mini Win after Phase 2 * الهدف: إعطاء المتعلم إحساس نصر بعد ما خلّص Frontend/Backend/Database. * بدون فيديو، بدون مصطلحات جديدة، بس ت
+- L19 · `prior-lesson-ref` · **Phase N (label)**
+  > title: "تشوف إنت بنيت إيه فعلاً في Phase 2", tone: "accent", block: { kind: "paragraphs", paragraphs: [ "في 4 دروس بس فهمت اللي
 - L102 · `next-lesson-ref` · **الموديول الجاي**
   > ك تقوله **إنت عايز إيه**.", "في الموديول الجاي، هنبدأ فعلاً نحوّل فكرة لصفحة شغّالة. الفهم اللي معاك دلوقتي هو السلاح اللي هيخلّيك تطلب من Lovable الحاج
-- L102 · `next-lesson-ref` · **هنبدأ فعلاً**
-  > يز إيه**.", "في الموديول الجاي، هنبدأ فعلاً نحوّل فكرة لصفحة شغّالة. الفهم اللي معاك دلوقتي هو السلاح اللي هيخلّيك تطلب من Lovable الحاجة الصح من أول مر
+- L24 · `next-lesson-ref` · **قبل ما نبدأ نبني فعلاً**
+  > في الدنيا بيشتغل من جوه. **بريك سريع** قبل ما نبدأ نبني فعلاً.", ], }, }, { icon: Layers3, eyebrow: "اللي فهمته لحد دلوقتي", title: "
+- L114 · `next-lesson-ref` · **قبل ما تدخل m{N}**
+  > kind: "mission", intro: "قبل ما تدخل m6، خد التطبيق اللي بتفكر فيه واوصفه بالطبقات الـ 3.", prompt: "اختار فكرة تطبيق عايز تبنيه (م
+- L116 · `next-lesson-ref` · **جاهز للموديول الجاي**
+  > فتكرها = ؟\n\nلو قدرت تكتب التلاتة، إنت جاهز للموديول الجاي.", buttonLabel: "انسخ التعليمات", copiedLabel: "اتنسخت!", rubric: [ {
+
+### builder-m5-l9-transition.ts  (6)
+- L185 · `prior-lesson-ref` · **الدروس اللي فاتت/قبل**
+  > اجة بتشوفها هنا مبنية بنفس الـ ٣ طبقات. الدروس اللي فاتت كانت مجرد كلام مع AI، لكن من دلوقتي إنت بتتعامل مع أبلكيشن حقيقي: صفحات، تخزين بيانات، تسجيل دخول. كل ص
+- L145 · `prior-lesson-ref` · **اللي اتعلمناه/عملناه/بنيناه**
+  > على الشمال فقاعات شات (تمثل الـ prompts اللي اتعلمناها)، وعلى اليمين شاشة أبلكيشن + سيرفر + database (اللي جاي). سهم بيوصل الاتنين.", caption: "إن
+- L32 · `prior-lesson-ref` · **Phase N (label)**
+  > "بعد الدرس ده هتقدر", title: "تبدأ Phase 2 وانت عارف فين رايح", tone: "primary", block: { kind: "paragraphs", paragraphs: [ "في
+- L49 · `prior-lesson-ref` · **Phase N (label)**
+  > ر، إزاي بتكلّمه، إزاي بتتحكم في رده. ده Phase 1.", "من هنا هنبدأ نحوّل الفكرة لتطبيق حقيقي خطوة بخطوة. عميلك لما يفتح موبايله ويكلم AI خاص بيك، هو محتاج
+- L50 · `prior-lesson-ref` · **Phase N (label)**
+  > ظ كلامه، وحاجة تعرفه إن ده هو فعلاً. ده Phase 2.", "**مش مطلوب منك تكون مبرمج.** إحنا مش داخلين كورس Web Development. إحنا بنركّب الـ 3 طبقات اللي بتخلي
+- L52 · `prior-lesson-ref` · **Phase N (label)**
+  > ك.", "هنمشي خطوة بخطوة، وفي آخر Phase 2 هتكون قادر تبني أول AI app حقيقي بنفسك.", ], }, }, { icon: CheckCircle2, eyebrow: "جرّب دل
 
 ### builder-m6-l16-components-routes.ts  (2)
 - L55 · `cross-path-info` · **mention:creator**
@@ -359,6 +413,14 @@ Total issues: 272
 ### builder-m8-l23-rls.ts  (1)
 - L58 · `prior-lesson-ref` · **الدرس اللي فات**
   > ش المفروض يديلك الحق تشوفها.", "الدرس اللي فات عرفنا إزاي السيرفر بيتأكد \"إنت مين\" عن طريق **كارت الدخول المؤقت (JWT)**. النهاردة هنعرف إزاي **المخزن
+
+### builder-m9-l25-embeddings.ts  (1)
+- L34 · `prior-lesson-ref` · **الدروس اللي فاتت/قبل**
+  > raphs", paragraphs: [ "في الدروس اللي فاتت، خزّنت بيانات في المخزن الذكي بتاعك. المخزن ده شاطر قوي في مقارنة الأرقام والنصوص الحرفية، بس مش بيفهم
+
+### builder-m9-l26-agents.ts  (1)
+- L40 · `prior-lesson-ref` · **الدروس اللي فاتت/قبل**
+  > raphs", paragraphs: [ "في الدروس اللي فاتت، خلّينا الـ AI بتاعنا يرد على أسئلة من ملفاتنا (RAG). بس لو العميل بتاعك قاله \"احجزلي ميعاد بكرة الساع
 
 ### business-m0-from-decisions-to-leadership.ts  (15)
 - L14 · `cross-path-info` · **mention:builder**
