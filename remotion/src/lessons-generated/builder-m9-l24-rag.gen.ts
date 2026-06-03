@@ -5,114 +5,66 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "chip": "RAG",
-    "title": "الـ AI بيرد من بياناتك إنت",
-    "subtitle": "إزاي تخلي الـ AI خبير في شغلك",
-    "highlight": "مش من معلومات عامة"
+    "chip": "أهلًا",
+    "title": "ليه الـ AI بتاعك ساعات بيألّف إجابات؟",
+    "subtitle": "حل مشكلة الـ Hallucinations",
+    "highlight": "إزاي تخلي الـ AI ما يألّفش"
   },
   {
-    "card": "BulletsCard",
+    "card": "CompareCard",
     "accent": "lavender",
-    "bullets": [
-      "بنجيب بياناتك (Retrieve)",
-      "نحقنها في السؤال (Augment)",
-      "الـ AI بيرد (Generate)"
-    ],
-    "title": "RAG = AI خبير في مشروعك"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "tag": "تسلسل عمليات",
-    "term": "Pipeline",
-    "definition": "خطوات ماشية ورا بعض بتسلم بعض عشان تطلع نتيجة نهائية."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "tag": "وحدة فهم الـ AI",
-    "term": "Token",
-    "definition": "أصغر وحدة AI بيفهمها؛ ممكن تكون كلمة أو حتة من كلمة."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "tag": "تقطيع البيانات",
-    "term": "Chunking (and Overlap)",
-    "definition": "تقطيع الكلام لحتت صغيرة عشان الـ AI يعرف يدوّر فيها بدقة."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "tag": "تحديد النتائج",
-    "term": "K-Nearest Neighbors (Top-k)",
-    "definition": "رقم إنت بتحدده، بيعرف الـ AI يجيبلك كام نتيجة بالظبط."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "tag": "قاعدة بيانات ذكية",
-    "term": "pgvector / Vector Database",
-    "definition": "نوع داتابيز ذكية بتخزن المعلومات في شكل أرقام عشان البحث السريع."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "تغذية الـ AI",
-    "term": "Context Injection/RAG",
-    "definition": "تزويد الـ AI بمعلومات من عندك جوه السؤال عشان يجاوب صح."
+    "left": {
+      "body": "بتسأل GPT عن سعر منتجك، فيرد: \"سعره 29 دولار\". بس إنت عمرك ما بعته بالسعر ده! الـ AI هنا بيألّف (Hallucination) لأنه مشفش بياناتك، فبيخمّن إجابة شكلها منطقي. النتيجة: العميل ياخد معلومة غلط، ويفقد الثقة فيك.",
+      "label": "غلط: تسأل الـ AI سؤال مباشر"
+    },
+    "title": "ليه الـ AI بتاعك ساعات بيألّف إجابات؟",
+    "right": {
+      "body": "قبل ما الـ AI يجاوب، السيستم بتاعك بيدوّر في ملفاتك (زي الأسعار وسياسة الاسترجاع)، ويلاقي الحتة الصح، ويقول للـ AI: \"جاوب من الورقة دي بس\". النتيجة: إجابة دقيقة من بياناتك، مش تأليف. ولو المعلومة مش موجودة، بيقول \"معرفش\" بكل أمانة.",
+      "label": "صح: تخلّي الـ AI يقرأ بياناتك الأول"
+    }
   },
   {
     "card": "BulletsCard",
     "accent": "peach",
     "bullets": [
-      "بتقسم محتواك لـ chunks صغيرة",
-      "بتعمل embedding لكل chunk",
-      "بتخزنها في pgvector"
+      "knowledge_chunks جدول فيه كل الدروس متقسمة حتت صغيرة (chunks).",
+      "البحث بيتم بالأرقام (vector search) عشان يلاقي أقرب معلومة لسؤالك.",
+      "النتيجة: المساعد بيرد من محتوى المنصة، مش من معلومات Gemini العامة."
     ],
-    "title": "مرحلة Indexing: تجهيز بياناتك"
+    "title": "شوف مساعد بيرد من بيانات حقيقية"
   },
   {
-    "card": "BulletsCard",
+    "card": "ConceptCard",
     "accent": "yellow",
-    "bullets": [
-      "ليه نقسّم لـ chunks؟ عشان الدقة والتكلفة",
-      "بنعمل Retrieve لأكتر ٥ chunks شبه السؤال",
-      "بنضيف الـ chunks دي للسؤال (Augment)",
-      "الـ LLM بيجاوب بناءً على السياق (Generate)"
-    ],
-    "title": "خطوات RAG بعد Indexing"
+    "definition": "طريقة بتخلي الـ AI يرد من بياناتك إنت. بنلاقي (Retrieve) المعلومة الصح من ملفاتك، نضيفها (Augment) لسؤالك، وبعدين نخليه يجاوب (Generate). باختصار: بحث + سؤال = إجابة دقيقة.",
+    "tag": "بحث + سؤال = إجابة",
+    "term": "RAG (Retrieval-Augmented Generation)"
   },
   {
     "card": "ScreenshotCard",
     "accent": "pink",
-    "eyebrow": "توضيح بصري",
-    "title": "RAG Pipeline: السؤال → استرجاع → دمج → إجابة",
+    "caption": "لما بتسأل، السيستم بيحوّل سؤالك لأرقام ويدوّر بيها في قاعدة بياناتك عشان يلاقي أكتر حتت شبهه. بعدين ياخد الحتت دي مع سؤالك الأصلي ويبعتهم للـ AI في طلب واحد. كده بنضمن الإجابة تبقى من بياناتك، مش من تأليف الـ AI.",
+    "eyebrow": "تحت الغطا",
     "src": "lessons/concepts/rag-diagram.jpg",
-    "caption": "الـ RAG = Retrieve + Augment + Generate. لما يجي سؤال، الـ system بيدوّر في قاعدة المستندات بـ vector search ويطلّع أعلى chunks علاقة. بعدين بيحقنهم مع السؤال في prompt واحد للـ LLM. اللي بيخلّي الإجابة مبنيّة على معلومات حقيقية من مصدرك، مش هلوسة من الموديل، ومع كل تحديث للمستندات الإجابات بتتحدّث تلقائيًا."
+    "title": "رحلة السؤال من أول ما بيتكتب لحد الإجابة"
   },
   {
-    "card": "CompareCard",
+    "card": "CTACard",
     "accent": "mintDeep",
-    "title": "Hallucination vs Grounded Answer",
-    "left": {
-      "body": "الـ AI بيخترع إجابات غلط (Hallucination)، وبيخسر ثقة المستخدمين.",
-      "label": "FAILURE — تبعت السؤال للـ AI من غير context"
-    },
-    "right": {
-      "body": "الـ AI بيرد بدقة من بياناتك، ولو المعلومة مش موجودة بيقول 'مش لاقيها'.",
-      "label": "RIGHT — Retrieve أولًا، ثم Generate"
-    }
+    "tagline": "حلّ الأسئلة دي عشان تتأكد إنك فهمت الدرس كويس.",
+    "title": "جاوب على الأسئلة دي",
+    "eyebrow": "اختبر فهمك",
+    "highlight": "اختبر فهمك"
   },
   {
     "card": "CTACard",
     "accent": "mint",
-    "title": "صمّم RAG Pipeline لتطبيقك على ورق",
-    "tagline": "يلا نطبّق اللي اتعلّمناه ونشوف إزاي ممكن نصمم نظام RAG حقيقي.",
-    "highlight": "اختبر فهمك",
-    "eyebrow": "دورك دلوقتي"
+    "highlight": "فكّر في بيزنس أو تطبيق محتاج مساعد ذكي",
+    "eyebrow": "Mission: دورك تطبّق",
+    "title": "صمم فكرة مساعد ذكي",
+    "tagline": "إيه أهم ملف أو قاعدة بيانات هتديها للـ AI عشان يرد صح؟"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [468, 565, 316, 342, 412, 353, 316, 330, 550, 537, 507, 479, 555];
+export const SCENE_FRAMES: number[] = [328, 481, 430, 549, 543, 334, 325];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
