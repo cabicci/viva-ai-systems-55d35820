@@ -96,7 +96,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "creator-m5-scheduling": "5cd42fc6-4972-4b3f-b4c9-a0689ec5009a",
   "creator-m6-brand-basics": "3298475c-da5b-45d9-ad74-f54a32a7a5a6",
   "creator-m6-grid-consistency": "32efdb43-191c-40ac-b464-ad3f80e1131c",
-  "intro-m1-l4-ai-can-cannot": "74881c38-3268-43c6-8e46-1ec6727eb791",
+  "intro-m1-l4-ai-can-cannot": "c4b4863c-9522-4a0b-acf0-6561137d8baa",
   "intro-m1-l5-ai-vs-software": "5a1c5f10-342c-4de2-82ad-d70634800802",
   "intro-m1-l7-choose-your-path": "7088245b-b404-4e4e-b645-100e753b286d",
   "intro-m1-l2-first-prompt": "0d1f6938-9d0d-4ed5-aaaa-630926583f16",
