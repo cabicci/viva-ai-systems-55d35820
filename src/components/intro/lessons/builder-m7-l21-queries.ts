@@ -13,6 +13,18 @@ import queriesScreenshot from "@/assets/lessons/builder-m7-l21-queries.jpg";
 export const BUILDER_M8_QUERIES_BLOCKS: IntroLessonContent = [
   {
     icon: Sparkles,
+    eyebrow: "بعد الدرس ده هتقدر",
+    title: "تجيب أي معلومة من المخزن الذكي بسؤال واضح",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "هتعرف إزاي تطلب من المخزن 'هاتلي محادثات العميل ده من آخر أسبوع'.",
+      ],
+    },
+  },
+  {
+    icon: Sparkles,
     eyebrow: "المشكلة",
     title: "الـ AI بتاعك بياخد 6 ثواني عشان يعرض سجل المحادثات... ليه؟",
     tone: "primary",

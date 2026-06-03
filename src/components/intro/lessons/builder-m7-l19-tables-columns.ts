@@ -20,6 +20,18 @@ import tablesScreenshot from "@/assets/lessons/builder-m7-l19-tables-columns.jpg
 export const BUILDER_M8_TABLES_COLUMNS_BLOCKS: IntroLessonContent = [
   {
     icon: Sparkles,
+    eyebrow: "بعد الدرس ده هتقدر",
+    title: "تنظّم بيانات تطبيقك زي شيت Excel محترف",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "هتعرف إزاي تقرر إيه اللي يبقى عمود وإيه اللي يبقى جدول لوحده.",
+      ],
+    },
+  },
+  {
+    icon: Sparkles,
     eyebrow: "أساس الـ AI بتاعك",
     title: "غلطة في تصميم المخزن بتخلي الـ AI بتاعك غبي",
     tone: "primary",

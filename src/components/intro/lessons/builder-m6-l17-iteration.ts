@@ -14,6 +14,18 @@ import iterationImg from "@/assets/lessons/unique/builder-m6-l17-iteration.jpg";
 export const BUILDER_M6_ITERATION_BLOCKS: IntroLessonContent = [
   {
     icon: Sparkles,
+    eyebrow: "بعد الدرس ده هتقدر",
+    title: "تحسّن تطبيقك خطوة بخطوة بدل ما تبدأ من الأول",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "هتتعلّم الـ iteration loop اللي بيخلّيك تطوّر بدل ما تعيد.",
+      ],
+    },
+  },
+  {
+    icon: Sparkles,
     eyebrow: "الـ AI مش دايماً بيفهمك من أول مرة",
     title: "الـ AI طلعلك واجهة شكلها وحش.. تعمل إيه؟",
     tone: "primary",

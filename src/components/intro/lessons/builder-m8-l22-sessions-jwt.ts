@@ -28,6 +28,18 @@ import jwtDiagram from "@/assets/lessons/concepts/jwt-diagram.jpg";
 export const BUILDER_M7_SESSIONS_JWT_BLOCKS: IntroLessonContent = [
   {
     icon: Sparkles,
+    eyebrow: "بعد الدرس ده هتقدر",
+    title: "كل موظف يشوف بياناته بس",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "بعد الدرس هتعرف إزاي التطبيق يفرّق بين 100 عميل ويعرف مين بيتكلم.",
+      ],
+    },
+  },
+  {
+    icon: Sparkles,
     eyebrow: "المشكلة",
     title: "إزاي الـAI بتاعك بيعرف إن \"ده إنت\"؟",
     tone: "primary",

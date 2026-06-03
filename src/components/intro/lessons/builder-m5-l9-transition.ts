@@ -1,4 +1,5 @@
 import {
+  Sparkles,
   Compass,
   PlayCircle,
   Lightbulb,
@@ -24,7 +25,19 @@ import transitionImage from "@/assets/lessons/unique/builder-m5-l9-transition.jp
  * 5.  **Momentum:** Deletes "Failure x Right" and the placeholder video to keep the flow.
  * 6.  **Egyptian Dialect:** Rewrites all text into pure Cairo Ammiya.
  */
-export const BUILDER_M5_TRANSITION_BLOCKS: IntroLessonContent = [
+export const BUILDER_M5_TRANSITION_BLOCKS: IntroLesson  {
+    icon: Sparkles,
+    eyebrow: "بعد الدرس ده هتقدر",
+    title: "تبدأ Phase 2 وانت عارف فين رايح",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "في الـ 8 دروس الجايين هتبني تطبيق AI كامل. الدرس ده هيوريك الخريطة.",
+      ],
+    },
+  },
+Content = [
   {
     icon: Compass,
     eyebrow: "Phase 2 — AI Execution",

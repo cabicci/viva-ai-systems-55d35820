@@ -15,6 +15,18 @@ import wireframeImg from "@/assets/lessons/unique/builder-m6-l14-wireframe.jpg";
 export const BUILDER_M6_WIREFRAME_BLOCKS: IntroLessonContent = [
   {
     icon: Sparkles,
+    eyebrow: "بعد الدرس ده هتقدر",
+    title: "ترسم واجهة تطبيقك في دقايق",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "بعد الدرس هتقدر ترسم خريطة أي AI app بـ wireframe بسيط في 10 دقايق.",
+      ],
+    },
+  },
+  {
+    icon: Sparkles,
     eyebrow: "نقطة الألم",
     title: "الـ AI بتاعك عبقري، بس الواجهة بتاعته بتطفّش الناس؟",
     tone: "primary",

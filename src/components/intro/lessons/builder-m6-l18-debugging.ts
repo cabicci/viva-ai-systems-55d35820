@@ -14,6 +14,18 @@ import debuggingImg from "@/assets/lessons/unique/builder-m6-l18-debugging.jpg";
 export const BUILDER_M6_DEBUGGING_BLOCKS: IntroLessonContent = [
   {
     icon: Sparkles,
+    eyebrow: "بعد الدرس ده هتقدر",
+    title: "تعرف تعمل إيه لو الدنيا بازت",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "Playbook عملي: لو AI app غلط، هتعرف منين تبدأ تشوف، من غير ما تخاف.",
+      ],
+    },
+  },
+  {
+    icon: Sparkles,
     eyebrow: "لحظة الحقيقة لأي Builder",
     title: "الشاشة بيّضت فجأة؟ مبروك.",
     tone: "primary",

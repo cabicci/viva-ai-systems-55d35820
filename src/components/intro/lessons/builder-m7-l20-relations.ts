@@ -27,6 +27,18 @@ import relationsDiagram from "@/assets/lessons/concepts/relations-diagram.jpg";
 export const BUILDER_M8_RELATIONS_BLOCKS: IntroLessonContent = [
   {
     icon: Sparkles,
+    eyebrow: "بعد الدرس ده هتقدر",
+    title: "تربط بيانات العميل ببعضها صح",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "بعد الدرس هتعرف إزاي تربط كل عميل بمحادثاته مع الـ AI من غير تكرار.",
+      ],
+    },
+  },
+  {
+    icon: Sparkles,
     eyebrow: "المشكلة",
     title: "الـ AI بتاعك بينسى مين بيكلمه",
     tone: "primary",
