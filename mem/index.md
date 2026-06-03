@@ -15,6 +15,7 @@ Lesson ID naming (NEW): `<path>-m<module#>-l<lesson#>-<slug>` e.g. `intro-m1-l1-
 AI generation policy (v2 rebuild): استخدم GEMINI_API_KEY بتاع المستخدم مباشرة — مش Lovable AI Gateway. توفيراً للـ API credits.
 Roadmap logging — FAST MODE (per-lesson work): During content revision, skip per-lesson SQL note updates. Run only `bun run roadmap:log -- --title "<lesson-id>" --summary "<one-line>" --source ai|user` (≤10s). Full notes + parent rollup happen ONCE at end of each path (Intro/Builder/etc) — not per lesson. Non-lesson edits still follow the full rule above.
 Lesson edit = full rebuild with new name from the start: أي تعديل على محتوى درس = rename كامل (ملف + صور + Bunny GUID + DB + كل references) بالاسم الجديد `{path}-m{module}-l{lesson}-{slug}` من أول مرة. والصورة كمان تتولّد من جديد لو المحتوى اتغيّر وبقت مش معبّرة. ممنوع نسيب أي جزء للتعديل بعدين.
+**NEVER use `spawn_agent`** — burns project credits. Do all research/edits directly in main loop with parallel tool calls. No exceptions.
 
 ## Memories
 - [Egyptian Arabic prompt rules](mem://design/egyptian-arabic-prompt-rules) — Full phonetic/grammar/vocab rules + words-to-avoid list + prompt structure for Veo/TTS
