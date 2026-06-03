@@ -107,7 +107,7 @@ import { SCENES as L_analyst_m6_from_decisions_to_business_S, SCENE_FRAMES as L_
 import { SCENES as L_builder_m8_tables_columns_S, SCENE_FRAMES as L_builder_m8_tables_columns_F, TOTAL_FRAMES as L_builder_m8_tables_columns_T } from "./lessons-generated/builder-m8-tables-columns.gen";
 import { SCENES as L_intro_setup_your_ai_S, SCENE_FRAMES as L_intro_setup_your_ai_F, TOTAL_FRAMES as L_intro_setup_your_ai_T } from "./lessons-generated/intro-m1-l3-setup-your-ai.gen";
 import { SCENES as L_intro_first_prompt_S, SCENE_FRAMES as L_intro_first_prompt_F, TOTAL_FRAMES as L_intro_first_prompt_T } from "./lessons-generated/intro-m1-l2-first-prompt.gen";
-import { SCENES as L_intro_m1_l1_what_is_ai_S, SCENE_FRAMES as L_intro_m1_l1_what_is_ai_F, TOTAL_FRAMES as L_intro_m1_l1_what_is_ai_T } from "./lessons-generated/intro-m1-l1-what-is-ai.gen";
+import { SCENES as L_intro_what_is_ai_S, SCENE_FRAMES as L_intro_what_is_ai_F, TOTAL_FRAMES as L_intro_what_is_ai_T } from "./lessons-generated/intro-m1-l1-what-is-ai.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -208,6 +208,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m8-tables-columns", scenes: L_builder_m8_tables_columns_S, sceneFrames: L_builder_m8_tables_columns_F, totalFrames: L_builder_m8_tables_columns_T },
     { id: "intro-m1-l3-setup-your-ai", scenes: L_intro_setup_your_ai_S, sceneFrames: L_intro_setup_your_ai_F, totalFrames: L_intro_setup_your_ai_T },
     { id: "intro-m1-l2-first-prompt", scenes: L_intro_first_prompt_S, sceneFrames: L_intro_first_prompt_F, totalFrames: L_intro_first_prompt_T },
-    { id: "intro-m1-l1-what-is-ai", scenes: L_intro_m1_l1_what_is_ai_S, sceneFrames: L_intro_m1_l1_what_is_ai_F, totalFrames: L_intro_m1_l1_what_is_ai_T },
+    { id: "intro-m1-l1-what-is-ai", scenes: L_intro_what_is_ai_S, sceneFrames: L_intro_what_is_ai_F, totalFrames: L_intro_what_is_ai_T },
   /* @lesson-entries-end */
 ];
