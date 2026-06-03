@@ -127,7 +127,7 @@ export const AUTOMATOR_M5_LEAD_CAPTURE_BLOCKS: IntroLessonContent = [
             "تصمم الصفحة إنها تكون جزء من الموقع الرئيسي بتاعكم ومليانة لينكات تانية"
           ],
           correctIndex: 1,
-          explanation: "الـ Landing Page زي ما اتفقنا لازم يكون الغرض منها 'action' واحد بس، وهنا هو تجميع الإيميلات، عشان كده التركيز على هدف واحد أهم حاجة."
+          explanation: "الـ Landing Page لازم يكون الغرض منها 'action' واحد بس، وهنا هو تجميع الإيميلات، عشان كده التركيز على هدف واحد أهم حاجة."
         },
         {
           id: "apply3",
