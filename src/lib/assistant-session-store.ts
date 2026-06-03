@@ -1,4 +1,5 @@
 import { useSyncExternalStore } from "react";
+import { supabase } from "@/integrations/supabase/client";
 import type { RetrievalResult } from "./platform-retrieval";
 import type { AssistantRuntimeResponsePayload } from "./assistant-runtime";
 
@@ -10,7 +11,7 @@ export interface AssistantSessionState {
   matches: RetrievalResult[];
 }
 
-let state: AssistantSessionState = {
+const EMPTY_STATE: AssistantSessionState = {
   query: "",
   loading: false,
   error: null,
@@ -18,6 +19,7 @@ let state: AssistantSessionState = {
   matches: [],
 };
 
+let state: AssistantSessionState = EMPTY_STATE;
 const listeners = new Set<() => void>();
 
 function emit() {
@@ -26,6 +28,11 @@ function emit() {
 
 export function setAssistantSession(patch: Partial<AssistantSessionState>) {
   state = { ...state, ...patch };
+  emit();
+}
+
+export function resetAssistantSession() {
+  state = EMPTY_STATE;
   emit();
 }
 
@@ -42,4 +49,12 @@ export function useAssistantSession() {
     () => state,
     () => state,
   );
+}
+
+// Drop session state on sign-out so the next account on the same tab
+// doesn't inherit the previous user's assistant query/response.
+if (typeof window !== "undefined") {
+  supabase.auth.onAuthStateChange((event) => {
+    if (event === "SIGNED_OUT") resetAssistantSession();
+  });
 }

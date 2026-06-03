@@ -20,6 +20,23 @@ export interface LearnerEventInput {
   metadata?: Record<string, unknown>;
 }
 
+/* -------------------------------------------------------------- */
+/*  Cached userId — avoids a getSession() round-trip per event.    */
+/* -------------------------------------------------------------- */
+let cachedUserId: string | null = null;
+let cacheInitialized = false;
+
+function initCache() {
+  if (cacheInitialized || typeof window === "undefined") return;
+  cacheInitialized = true;
+  supabase.auth.getSession().then(({ data }) => {
+    cachedUserId = data.session?.user?.id ?? null;
+  });
+  supabase.auth.onAuthStateChange((_event, session) => {
+    cachedUserId = session?.user?.id ?? null;
+  });
+}
+
 /**
  * Fire-and-forget learner event logger.
  * Silent on failure (telemetry must never break the UX).
@@ -27,8 +44,13 @@ export interface LearnerEventInput {
  */
 export async function logLearnerEvent(input: LearnerEventInput): Promise<void> {
   try {
-    const { data: sessionData } = await supabase.auth.getSession();
-    const userId = sessionData.session?.user?.id;
+    initCache();
+    let userId = cachedUserId;
+    if (!userId) {
+      const { data } = await supabase.auth.getSession();
+      userId = data.session?.user?.id ?? null;
+      cachedUserId = userId;
+    }
     if (!userId) return;
 
     await supabase.from("learner_events").insert({
