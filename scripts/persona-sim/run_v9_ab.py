@@ -175,7 +175,7 @@ def main():
         }
 
     md = [f"# Persona Sim v9 — A/B (current vs suggested)\n",
-          f"**التاريخ:** {ts}  ", f"**Model:** `{MODEL}`  ",
+          f"**التاريخ:** {ts}  ", f"**Model:** `{GEMINI_MODEL}`  ",
           f"**الـ Agents:** 20  ", f"**الدروس:** {len(lessons)}  ",
           f"**إجمالي التقييمات:** {len(results)} (ناجحة: {sum(1 for r in results if not r.get('error'))})\n",
           "## القرار لكل درس\n",
