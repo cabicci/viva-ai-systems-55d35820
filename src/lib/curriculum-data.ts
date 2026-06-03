@@ -349,12 +349,12 @@ function builderMilestones(): CurriculumModule[] {
     {
       order: 9,
       id: "builder-m9",
-      title: "AI جوه المنتج (RAG + Agents)",
-      subtitle: "RAG قبل Embeddings (magic قبل mechanics)، وبعدين Agents.",
+      title: "دلوقتي هنخلي التطبيق ذكي بجد",
+      subtitle: "RAG · Embeddings · Agents",
       lessons: [
-        builderShipped(1, "builder-m9-l24-rag", "RAG: AI يرد من بياناتك"),
-        builderShipped(2, "builder-m9-l25-embeddings", "Embeddings: لغة الـ AI الرقمية"),
-        builderShipped(3, "builder-m9-l26-agents", "Agents: AI بياخد قرارات"),
+        builderShipped(1, "builder-m9-l24-rag", "AI يرد من ملفاتك (RAG)"),
+        builderShipped(2, "builder-m9-l25-embeddings", "إزاي الـ AI بيلاقي المعلومة"),
+        builderShipped(3, "builder-m9-l26-agents", "AI بياخد قرارات لوحده (Agents)"),
       ],
     },
   ];
