@@ -87,7 +87,6 @@ import { SCENES as L_builder_m2_l4_instructions_examples_S, SCENE_FRAMES as L_bu
 import { SCENES as L_builder_m3_l7_memory_limits_S, SCENE_FRAMES as L_builder_m3_l7_memory_limits_F, TOTAL_FRAMES as L_builder_m3_l7_memory_limits_T } from "./lessons-generated/builder-m3-l7-memory-limits.gen";
 import { SCENES as L_builder_m5_l10_frontend_S, SCENE_FRAMES as L_builder_m5_l10_frontend_F, TOTAL_FRAMES as L_builder_m5_l10_frontend_T } from "./lessons-generated/builder-m5-l10-frontend.gen";
 import { SCENES as L_builder_m7_l20_relations_S, SCENE_FRAMES as L_builder_m7_l20_relations_F, TOTAL_FRAMES as L_builder_m7_l20_relations_T } from "./lessons-generated/builder-m7-l20-relations.gen";
-import { SCENES as L_builder_m6_l13_idea_to_page_S, SCENE_FRAMES as L_builder_m6_l13_idea_to_page_F, TOTAL_FRAMES as L_builder_m6_l13_idea_to_page_T } from "./lessons-generated/builder-m6-l13-idea-to-page.gen";
 import { SCENES as L_builder_m7_l19_tables_columns_S, SCENE_FRAMES as L_builder_m7_l19_tables_columns_F, TOTAL_FRAMES as L_builder_m7_l19_tables_columns_T } from "./lessons-generated/builder-m7-l19-tables-columns.gen";
 import { SCENES as L_builder_m7_l21_queries_S, SCENE_FRAMES as L_builder_m7_l21_queries_F, TOTAL_FRAMES as L_builder_m7_l21_queries_T } from "./lessons-generated/builder-m7-l21-queries.gen";
 import { SCENES as L_builder_m6_l15_first_prompt_to_lovable_S, SCENE_FRAMES as L_builder_m6_l15_first_prompt_to_lovable_F, TOTAL_FRAMES as L_builder_m6_l15_first_prompt_to_lovable_T } from "./lessons-generated/builder-m6-l15-first-prompt-to-lovable.gen";
@@ -108,6 +107,7 @@ import { SCENES as L_builder_m5_l12b_mini_win_S, SCENE_FRAMES as L_builder_m5_l1
 import { SCENES as L_builder_m5_l9_transition_S, SCENE_FRAMES as L_builder_m5_l9_transition_F, TOTAL_FRAMES as L_builder_m5_l9_transition_T } from "./lessons-generated/builder-m5-l9-transition.gen";
 import { SCENES as L_builder_m1_l2_tokens_training_S, SCENE_FRAMES as L_builder_m1_l2_tokens_training_F, TOTAL_FRAMES as L_builder_m1_l2_tokens_training_T } from "./lessons-generated/builder-m1-l2-tokens-training.gen";
 import { SCENES as L_builder_m6_l14_wireframe_S, SCENE_FRAMES as L_builder_m6_l14_wireframe_F, TOTAL_FRAMES as L_builder_m6_l14_wireframe_T } from "./lessons-generated/builder-m6-l14-wireframe.gen";
+import { SCENES as L_builder_m6_l13_idea_to_page_S, SCENE_FRAMES as L_builder_m6_l13_idea_to_page_F, TOTAL_FRAMES as L_builder_m6_l13_idea_to_page_T } from "./lessons-generated/builder-m6-l13-idea-to-page.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -188,7 +188,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m3-l7-memory-limits", scenes: L_builder_m3_l7_memory_limits_S, sceneFrames: L_builder_m3_l7_memory_limits_F, totalFrames: L_builder_m3_l7_memory_limits_T },
     { id: "builder-m5-l10-frontend", scenes: L_builder_m5_l10_frontend_S, sceneFrames: L_builder_m5_l10_frontend_F, totalFrames: L_builder_m5_l10_frontend_T },
     { id: "builder-m7-l20-relations", scenes: L_builder_m7_l20_relations_S, sceneFrames: L_builder_m7_l20_relations_F, totalFrames: L_builder_m7_l20_relations_T },
-    { id: "builder-m6-l13-idea-to-page", scenes: L_builder_m6_l13_idea_to_page_S, sceneFrames: L_builder_m6_l13_idea_to_page_F, totalFrames: L_builder_m6_l13_idea_to_page_T },
     { id: "builder-m7-l19-tables-columns", scenes: L_builder_m7_l19_tables_columns_S, sceneFrames: L_builder_m7_l19_tables_columns_F, totalFrames: L_builder_m7_l19_tables_columns_T },
     { id: "builder-m7-l21-queries", scenes: L_builder_m7_l21_queries_S, sceneFrames: L_builder_m7_l21_queries_F, totalFrames: L_builder_m7_l21_queries_T },
     { id: "builder-m6-l15-first-prompt-to-lovable", scenes: L_builder_m6_l15_first_prompt_to_lovable_S, sceneFrames: L_builder_m6_l15_first_prompt_to_lovable_F, totalFrames: L_builder_m6_l15_first_prompt_to_lovable_T },
@@ -209,5 +208,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m5-l9-transition", scenes: L_builder_m5_l9_transition_S, sceneFrames: L_builder_m5_l9_transition_F, totalFrames: L_builder_m5_l9_transition_T },
     { id: "builder-m1-l2-tokens-training", scenes: L_builder_m1_l2_tokens_training_S, sceneFrames: L_builder_m1_l2_tokens_training_F, totalFrames: L_builder_m1_l2_tokens_training_T },
     { id: "builder-m6-l14-wireframe", scenes: L_builder_m6_l14_wireframe_S, sceneFrames: L_builder_m6_l14_wireframe_F, totalFrames: L_builder_m6_l14_wireframe_T },
+    { id: "builder-m6-l13-idea-to-page", scenes: L_builder_m6_l13_idea_to_page_S, sceneFrames: L_builder_m6_l13_idea_to_page_F, totalFrames: L_builder_m6_l13_idea_to_page_T },
   /* @lesson-entries-end */
 ];
