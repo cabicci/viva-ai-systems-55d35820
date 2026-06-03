@@ -264,6 +264,9 @@ export const revealModelMissionAnswer = createServerFn({ method: "POST" })
     if (row.status === "passed") {
       throw new Error("المهمة دي تم اجتيازها بالفعل.");
     }
+    if (row.status === "evaluating") {
+      throw new Error("التسليم لسه بيتقيّم — استنّى ثواني وحاول تاني.");
+    }
 
     const systemPrompt = `أنت مدرّس AI بالعربية المصرية البسيطة. الطالب اتعب وحاول مرتين على المهمة دي. هتديله نموذج إجابة كامل ومفيد عشان يفهم الشكل المطلوب — مش عشان يغش، عشان يتعلم. اكتب إجابة قصيرة، عملية، تتبع الـ structure المطلوب في المهمة بالظبط.
 
