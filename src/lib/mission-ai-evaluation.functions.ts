@@ -143,6 +143,8 @@ ${data.submissionText}
         ],
         response_format: { type: "json_object" },
       }),
+      // Fail-fast: never let a hung gateway block the server slot.
+      signal: AbortSignal.timeout(30_000),
     });
 
     if (!res.ok) {
