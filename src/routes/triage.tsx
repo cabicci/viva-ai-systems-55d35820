@@ -45,8 +45,8 @@ function classify(level: Level, goal: Goal): { track: Track; entry: string } {
   if (level === "zero") return { track: "beginner", entry: "intro-m1-l6-learn-without-fear" };
   if (goal === "money") return { track: "money", entry: "intro-m1-l7-choose-your-path" };
   if (goal === "business") return { track: "money", entry: "business-m0-from-decisions-to-leadership" };
-  if (level === "advanced") return { track: "builder", entry: "builder-m2-prompt-layer" };
-  if (goal === "skill" || goal === "career") return { track: "builder", entry: "builder-m1-what-is-llm" };
+  if (level === "advanced") return { track: "builder", entry: "builder-m2-l3-prompt-layer" };
+  if (goal === "skill" || goal === "career") return { track: "builder", entry: "builder-m1-l1-what-is-llm" };
   return { track: "explorer", entry: "intro-m1-l3-setup-your-ai" };
 }
 

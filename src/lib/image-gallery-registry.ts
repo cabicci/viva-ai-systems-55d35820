@@ -7,37 +7,37 @@ import img6 from "@/assets/lessons/intro-m1-l2-first-prompt.jpg";
 import img7 from "@/assets/lessons/intro-m1-l7-choose-your-path.jpg";
 
 import img8 from "@/assets/lessons/builder-m1-ai-predicts.jpg";
-import img9 from "@/assets/lessons/builder-m1-what-is-llm.jpg";
+import img9 from "@/assets/lessons/builder-m1-l1-what-is-llm.jpg";
 import img10 from "@/assets/lessons/builder-m1-tokens.jpg";
 
 import img11 from "@/assets/lessons/builder-m1-prompt-clarity.jpg";
-import img12 from "@/assets/lessons/builder-m2-instructions-examples.jpg";
-import img13 from "@/assets/lessons/builder-m2-style-control.jpg";
+import img12 from "@/assets/lessons/builder-m2-l4-instructions-examples.jpg";
+import img13 from "@/assets/lessons/builder-m2-l5-style-control.jpg";
 
-import img14 from "@/assets/lessons/builder-m3-context-layer.jpg";
-import img15 from "@/assets/lessons/builder-m3-memory-limits.jpg";
+import img14 from "@/assets/lessons/builder-m3-l6-context-layer.jpg";
+import img15 from "@/assets/lessons/builder-m3-l7-memory-limits.jpg";
 
-import img16 from "@/assets/lessons/builder-m4-temperature.jpg";
-import img17 from "@/assets/lessons/builder-m4-parameters.jpg";
+import img16 from "@/assets/lessons/builder-m4-l8-parameters.jpg";
+import img17 from "@/assets/lessons/builder-m4-l8-parameters.jpg";
 
-import img18 from "@/assets/lessons/builder-m5-frontend.jpg";
-import img19 from "@/assets/lessons/builder-m5-backend-api.jpg";
-import img20 from "@/assets/lessons/builder-m5-database-intro.jpg";
-import imgM5Transition from "@/assets/lessons/unique/builder-m5-transition.jpg";
+import img18 from "@/assets/lessons/builder-m5-l10-frontend.jpg";
+import img19 from "@/assets/lessons/builder-m5-l11-backend-api.jpg";
+import img20 from "@/assets/lessons/builder-m5-l12-database-intro.jpg";
+import imgM5Transition from "@/assets/lessons/unique/builder-m5-l9-transition.jpg";
 
-import img21 from "@/assets/lessons/builder-m6-idea-to-page.jpg";
-import img22 from "@/assets/lessons/builder-m6-components-routes.jpg";
-import img23 from "@/assets/lessons/unique/builder-m6-wireframe.jpg";
+import img21 from "@/assets/lessons/builder-m6-l13-idea-to-page.jpg";
+import img22 from "@/assets/lessons/builder-m6-l16-components-routes.jpg";
+import img23 from "@/assets/lessons/unique/builder-m6-l14-wireframe.jpg";
 import img24 from "@/assets/lessons/unique/builder-m6-first-prompt.jpg";
-import img25 from "@/assets/lessons/unique/builder-m6-iteration.jpg";
-import img26 from "@/assets/lessons/unique/builder-m6-debugging.jpg";
+import img25 from "@/assets/lessons/unique/builder-m6-l17-iteration.jpg";
+import img26 from "@/assets/lessons/unique/builder-m6-l18-debugging.jpg";
 
 import img27 from "@/assets/lessons/concepts/jwt-diagram.jpg";
 import img28 from "@/assets/lessons/concepts/rls-diagram.jpg";
 
-import img29 from "@/assets/lessons/builder-m8-tables-columns.jpg";
+import img29 from "@/assets/lessons/builder-m7-l19-tables-columns.jpg";
 import img30 from "@/assets/lessons/concepts/relations-diagram.jpg";
-import img31 from "@/assets/lessons/builder-m8-queries.jpg";
+import img31 from "@/assets/lessons/builder-m7-l21-queries.jpg";
 
 import img32 from "@/assets/lessons/concepts/embeddings-diagram.jpg";
 import img33 from "@/assets/lessons/concepts/rag-diagram.jpg";
@@ -132,41 +132,41 @@ export const IMAGE_GALLERY: GalleryItem[] = [
   { number: 6, slug: "intro-m1-l2-first-prompt", title: "أول برومبت", group: "Intro", image: img6 },
   { number: 7, slug: "intro-m1-l7-choose-your-path", title: "اختر مسارك", group: "Intro", image: img7 },
 
-  { number: 8, slug: "builder-m1-what-is-llm", title: "ما هو الـ LLM", group: "Builder M1", image: img9 },
-  { number: 9, slug: "builder-m1-tokens-training", title: "Tokens و Training", group: "Builder M1", image: img10 },
+  { number: 8, slug: "builder-m1-l1-what-is-llm", title: "ما هو الـ LLM", group: "Builder M1", image: img9 },
+  { number: 9, slug: "builder-m1-l2-tokens-training", title: "Tokens و Training", group: "Builder M1", image: img10 },
 
-  { number: 10, slug: "builder-m2-prompt-layer", title: "طبقة البرومبت", group: "Builder M2", image: img11 },
-  { number: 11, slug: "builder-m2-instructions-examples", title: "Instructions و Examples", group: "Builder M2", image: img12 },
-  { number: 12, slug: "builder-m2-style-control", title: "التحكم في الـ Style", group: "Builder M2", image: img13 },
+  { number: 10, slug: "builder-m2-l3-prompt-layer", title: "طبقة البرومبت", group: "Builder M2", image: img11 },
+  { number: 11, slug: "builder-m2-l4-instructions-examples", title: "Instructions و Examples", group: "Builder M2", image: img12 },
+  { number: 12, slug: "builder-m2-l5-style-control", title: "التحكم في الـ Style", group: "Builder M2", image: img13 },
 
-  { number: 13, slug: "builder-m3-context-layer", title: "طبقة الـ Context", group: "Builder M3", image: img14 },
-  { number: 14, slug: "builder-m3-memory-limits", title: "حدود الذاكرة", group: "Builder M3", image: img15 },
+  { number: 13, slug: "builder-m3-l6-context-layer", title: "طبقة الـ Context", group: "Builder M3", image: img14 },
+  { number: 14, slug: "builder-m3-l7-memory-limits", title: "حدود الذاكرة", group: "Builder M3", image: img15 },
 
-  { number: 15, slug: "builder-m4-temperature", title: "Temperature", group: "Builder M4", image: img16 },
-  { number: 16, slug: "builder-m4-parameters", title: "Parameters", group: "Builder M4", image: img17 },
+  { number: 15, slug: "builder-m4-l8-parameters", title: "Temperature", group: "Builder M4", image: img16 },
+  { number: 16, slug: "builder-m4-l8-parameters", title: "Parameters", group: "Builder M4", image: img17 },
 
-  { number: 17, slug: "builder-m5-frontend", title: "Frontend", group: "Builder M5", image: img18 },
-  { number: 18, slug: "builder-m5-backend-api", title: "Backend و API", group: "Builder M5", image: img19 },
-  { number: 19, slug: "builder-m5-database-intro", title: "مقدمة Database", group: "Builder M5", image: img20 },
-  { number: 71, slug: "builder-m5-transition", title: "Transition من Prompting للـ App", group: "Builder M5", image: imgM5Transition },
+  { number: 17, slug: "builder-m5-l10-frontend", title: "Frontend", group: "Builder M5", image: img18 },
+  { number: 18, slug: "builder-m5-l11-backend-api", title: "Backend و API", group: "Builder M5", image: img19 },
+  { number: 19, slug: "builder-m5-l12-database-intro", title: "مقدمة Database", group: "Builder M5", image: img20 },
+  { number: 71, slug: "builder-m5-l9-transition", title: "Transition من Prompting للـ App", group: "Builder M5", image: imgM5Transition },
 
-  { number: 20, slug: "builder-m6-idea-to-page", title: "من فكرة لصفحة", group: "Builder M6", image: img21 },
-  { number: 21, slug: "builder-m6-wireframe", title: "Wireframe", group: "Builder M6", image: img23 },
-  { number: 22, slug: "builder-m6-components-routes", title: "Components و Routes", group: "Builder M6", image: img22 },
-  { number: 23, slug: "builder-m6-first-prompt-to-lovable", title: "أول برومبت لـ Lovable", group: "Builder M6", image: img24 },
-  { number: 24, slug: "builder-m6-iteration", title: "Iteration", group: "Builder M6", image: img25 },
-  { number: 25, slug: "builder-m6-debugging", title: "Debugging", group: "Builder M6", image: img26 },
+  { number: 20, slug: "builder-m6-l13-idea-to-page", title: "من فكرة لصفحة", group: "Builder M6", image: img21 },
+  { number: 21, slug: "builder-m6-l14-wireframe", title: "Wireframe", group: "Builder M6", image: img23 },
+  { number: 22, slug: "builder-m6-l16-components-routes", title: "Components و Routes", group: "Builder M6", image: img22 },
+  { number: 23, slug: "builder-m6-l15-first-prompt-to-lovable", title: "أول برومبت لـ Lovable", group: "Builder M6", image: img24 },
+  { number: 24, slug: "builder-m6-l17-iteration", title: "Iteration", group: "Builder M6", image: img25 },
+  { number: 25, slug: "builder-m6-l18-debugging", title: "Debugging", group: "Builder M6", image: img26 },
 
-  { number: 26, slug: "builder-m7-sessions-jwt", title: "Sessions و JWT", group: "Builder M7", image: img27 },
-  { number: 27, slug: "builder-m7-rls", title: "RLS", group: "Builder M7", image: img28 },
+  { number: 26, slug: "builder-m8-l22-sessions-jwt", title: "Sessions و JWT", group: "Builder M7", image: img27 },
+  { number: 27, slug: "builder-m8-l23-rls", title: "RLS", group: "Builder M7", image: img28 },
 
-  { number: 28, slug: "builder-m8-tables-columns", title: "Tables و Columns", group: "Builder M8", image: img29 },
-  { number: 29, slug: "builder-m8-relations", title: "Relations", group: "Builder M8", image: img30 },
-  { number: 30, slug: "builder-m8-queries", title: "Queries", group: "Builder M8", image: img31 },
+  { number: 28, slug: "builder-m7-l19-tables-columns", title: "Tables و Columns", group: "Builder M8", image: img29 },
+  { number: 29, slug: "builder-m7-l20-relations", title: "Relations", group: "Builder M8", image: img30 },
+  { number: 30, slug: "builder-m7-l21-queries", title: "Queries", group: "Builder M8", image: img31 },
 
-  { number: 31, slug: "builder-m9-embeddings", title: "Embeddings", group: "Builder M9", image: img32 },
-  { number: 32, slug: "builder-m9-rag", title: "RAG", group: "Builder M9", image: img33 },
-  { number: 33, slug: "builder-m9-agents", title: "Agents", group: "Builder M9", image: img34 },
+  { number: 31, slug: "builder-m9-l25-embeddings", title: "Embeddings", group: "Builder M9", image: img32 },
+  { number: 32, slug: "builder-m9-l24-rag", title: "RAG", group: "Builder M9", image: img33 },
+  { number: 33, slug: "builder-m9-l26-agents", title: "Agents", group: "Builder M9", image: img34 },
 
   { number: 34, slug: "builder-m10-deploy-domain", title: "Deploy و Domain", group: "Builder M10", image: img35 },
   { number: 35, slug: "builder-m10-first-users", title: "أول مستخدمين", group: "Builder M10", image: img36 },

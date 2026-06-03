@@ -17,8 +17,8 @@ ENDPOINT = "https://ai.gateway.lovable.dev/v1/chat/completions"
 
 SAMPLE = [
     "intro-m1-l3-setup-your-ai",
-    "builder-m1-what-is-llm",
-    "builder-m3-context-layer",
+    "builder-m1-l1-what-is-llm",
+    "builder-m3-l6-context-layer",
     "creator-m2-hook",
     "automator-m1-systems-view",
     "analyst-m2-three-sources",

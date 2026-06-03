@@ -378,7 +378,7 @@ function PathBlock({
           <Button asChild variant="violet" size="sm" className="shrink-0">
             <Link
               to="/learn/$pathId/$lessonId"
-              params={{ pathId: "builder", lessonId: "builder-m1-what-is-llm" }}
+              params={{ pathId: "builder", lessonId: "builder-m1-l1-what-is-llm" }}
             >
               ابدأ Builder
               <ArrowRight className="h-4 w-4 rotate-180" />

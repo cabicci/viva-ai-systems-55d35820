@@ -12,7 +12,7 @@ The pipeline reads this file once and:
 
 Schema:
     LESSON = {
-        "id":    "builder-m1-what-is-llm",
+        "id":    "builder-m1-l1-what-is-llm",
         "title": "إيه هو الـ LLM؟",
         "module": "Builder · Module 1",
         "scenes": [Scene, ...],
