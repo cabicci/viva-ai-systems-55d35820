@@ -5,132 +5,76 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "subtitle": "هتتعلم إزاي تترجم فكرة لخريطة صفحات، قبل أي كود.",
-    "highlight": "لصفحة على الشاشة",
-    "chip": "أهلًا HERO",
-    "title": "من فكرة في دماغك"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "رص البضاعة",
-    "term": "Layout Better",
-    "definition": "طريقة توزيع وشكل العناصر في صفحتك."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "tag": "كروكي شقة",
-    "term": "Wireframe",
-    "definition": "رسمة سادة بالأبيض والأسود بتوريك أماكن الحاجات."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "tag": "شقة بالديكور",
-    "term": "Mockup (Visual)",
-    "definition": "تصميم ملون وشيك، بالظبط \"صورة طبق الأصل\" من النتيجة."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "definition": "خريطة بالخطوات اللي اليوزر بيمشيها عشان يخلص حاجة معينة.",
-    "tag": "مسار الزبون",
-    "term": "User Flow"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "tag": "اشتري دلوقتي",
-    "term": "CTA",
-    "definition": "زرار أو جملة هدفها تخلي الزبون ياخد قرار بسرعة."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "tag": "دليفري الأكل",
-    "term": "Promise",
-    "definition": "وعد برمجي إن فيه داتا هتيجي \"كمان شوية\"."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "فيشة الكاتل",
-    "term": "API",
-    "definition": "وسيط بيخلي برنامجين يكلموا بعض وينقلوا داتا."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "tag": "دفاتر المحاسب",
-    "term": "Backend (Database)",
-    "definition": "المخزن اللي بنشيل فيه كل بيانات الموقع بانتظام."
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "yellow",
-    "title": "الصفحة = محطة في رحلة المستخدم",
-    "bullets": [
-      "كل app، مهما كان معقّد، هو مجموعة صفحات أو Routes.",
-      "كل صفحة ليها URL مميز وهدف واحد واضح: تخلي المستخدم يعمل حاجة واحدة."
-    ]
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "pink",
-    "bullets": [
-      "ابدأ بالـ User Flow، مش بالتصميم. اسأل: المستخدم داخل ليه؟",
-      "ارسم خط من نقطة الدخول للنتيجة، وكل محطة في الخط ده = صفحة."
-    ],
-    "title": "ابدأ بالـ User Flow"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "mintDeep",
-    "bullets": [
-      "حدد لكل صفحة: الـ URL، الهدف الواحد، البيانات اللي محتاجة من الـ Backend، والأكشن الأساسي."
-    ],
-    "title": "تحديد عناصر الصفحة"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "mint",
-    "bullets": [
-      "أي صفحة بتعيش في طبقة الـ Frontend، وبتطلب بياناتها من الـ Backend عن طريق API.",
-      "بنركّز على تخطيط الصفحات قبل ما نبنيها."
-    ],
-    "title": "فهم طبقات الـ App"
-  },
-  {
-    "card": "ScreenshotCard",
-    "accent": "lavender",
-    "src": "lessons/builder-m6-l13-idea-to-page.jpg",
-    "title": "صفحة /curriculum بهدف واحد واضح",
-    "caption": "الهدف: أعرّف المستخدم بكل اللي قدامه ويختار من فين يبدأ. الـ URL واضح، البيانات من Backend، والأكشن الأساسي = اضغط على كرت مسار. أي إضافة تانية كانت هتفقد الصفحة هدفها.",
-    "eyebrow": "من المنصة"
+    "chip": "البداية",
+    "title": "عندك فكرة جامدة...",
+    "highlight": "بس تبدأ منين؟",
+    "subtitle": "هتعرف إزاي تحوّل أي فكرة لصفحات حقيقية قبل ما تكتب كود."
   },
   {
     "card": "CompareCard",
-    "accent": "peach",
-    "left": {
-      "body": "ترسم Hero فخم من غير User Flow. هتضطر تعيد كل حاجة.",
-      "label": "FAILURE — تبدأ من التصميم"
-    },
+    "accent": "lavender",
     "right": {
-      "label": "RIGHT — تبدأ من User Flow",
-      "body": "تحدد خطوات المستخدم وهدفه. عندك خريطة، والتصميم بيخدم الـ Flow."
+      "label": "الصح: تبدأ برحلة العميل",
+      "body": "العميل جعان وعايز يطلب أكل. يبقى الرحلة: يفتح التطبيق ← يلاقي المطاعم اللي حواليه ← يختار مطعم ويشوف المنيو ← يضيف أطباق للسلة ← يدفع ← يتابع طلبه. دي الخريطة اللي هتبني عليها كل حاجة."
     },
-    "title": "إزاي تبدأ مشروع جديد بشكل صحيح"
+    "title": "الغلطة اللي ٩٠٪ من الناس بيقعوا فيها",
+    "left": {
+      "body": "بتفتح برنامج تصميم وتبدأ تصمم لوجو وشكل الصفحة الرئيسية. بعد ساعتين، عندك تصميم شكله حلو، بس مش عارف إيه لازمة كل زرار. هتعيد كل ده من الأول.",
+      "label": "الغلط: تبدأ بالألوان والأشكال"
+    }
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "peach",
+    "tag": "رحلة المستخدم",
+    "term": "User Flow",
+    "definition": "الخريطة أو الخطوات اللي العميل بيمشيها عشان يوصل لهدفه جوه تطبيقك."
+  },
+  {
+    "card": "ScreenshotCard",
+    "accent": "yellow",
+    "src": "lessons/builder-m6-l13-idea-to-page.jpg",
+    "caption": "الصفحة دي مثال حي. هدفها واحد بس: تخليك تعرف كل اللي هتتعلمه وتختار هتبدأ منين. مفيش أي حاجة تانية تشتتك. الـ User Flow بتاعها بسيط: المستخدم يدخل ← يشوف الخريطة كلها ← يضغط على أول درس. بس كده.",
+    "eyebrow": "شوف بنفسك",
+    "title": "إزاي ده بيترجم لصفحة حقيقية؟"
   },
   {
     "card": "CTACard",
-    "accent": "yellow",
-    "tagline": "حلّ الأسئلة عشان تطبّق اللي اتعلّمته، ونشوفك في درس Components: ليجو الـ Frontend!",
-    "highlight": "ارسم Sitemap لتطبيقك",
+    "accent": "pink",
+    "title": "ارسم خريطة فكرتك في دقيقتين",
+    "highlight": "ورقة وقلم: User Flow في ٣ خطوات",
     "eyebrow": "دورك دلوقتي",
-    "title": "اختبر فهمك للدرس"
+    "tagline": "يلا بينا نطبق اللي اتعلمناه ونحط أول تصور لفكرتك."
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "mintDeep",
+    "title": "الصفحة = محطة في رحلة العميل",
+    "bullets": [
+      "أي تطبيق في الدنيا هو مجموعة صفحات. كل صفحة ليها هدف واحد بس واضح.",
+      "قبل ما تفكر في شكل الصفحة، فكر في الـ User Flow.",
+      "كل خطوة في الـ User Flow ممكن تبقى صفحة. بقى عندك خريطة واضحة للتطبيق كله."
+    ]
+  },
+  {
+    "card": "CTACard",
+    "accent": "mint",
+    "tagline": "حل الأسئلة دي عشان تتأكد إنك فهمت الدرس كويس.",
+    "title": "اختبر فهمك",
+    "highlight": "سؤال وجواب سريع",
+    "eyebrow": "دورك دلوقتي"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "lavender",
+    "bullets": [
+      "الفكرة: مكان واحد لكل الصور.",
+      "الـ User Flow: يفتح الصفحة ← يلاقي الصور مترتبة ← يضغط على صورة يكبرها.",
+      "التنفيذ: Route + Component + Data. بالظبط زي ما هتتعلم."
+    ],
+    "title": "كل ده مش كلام نظري"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [552, 375, 355, 408, 357, 339, 334, 324, 340, 486, 447, 375, 324, 498, 557, 411];
+export const SCENE_FRAMES: number[] = [736, 375, 643, 641, 438, 725, 300, 623];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
