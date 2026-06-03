@@ -61,12 +61,13 @@ const QK = ["mission-gate"] as const;
 
 export function useMissionGate(lessonId: string): MissionGateState {
   const { user } = useAuth();
+  const { isAdmin } = useEntitlement();
   const qc = useQueryClient();
   const missionShape = React.useMemo(
     () => getLessonMission(lessonId),
     [lessonId],
   );
-  const requiresMission = !!missionShape?.hasRubric;
+  const requiresMission = !!missionShape?.hasRubric && !isAdmin;
   const missionId = `${lessonId}::mission`;
 
   const { data, isLoading } = useQuery({
