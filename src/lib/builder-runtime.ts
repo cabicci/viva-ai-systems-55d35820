@@ -71,6 +71,8 @@ export function getModuleStatus(
   prevModule: CurriculumModule | undefined,
   getStatus: (id: string) => LessonStatus,
   prevMastery?: { isMastered: boolean; missingMissionIds: string[] },
+  /** when true (admin / pro) all gating flags collapse to "unlocked" */
+  bypassLocks = false,
 ): ModuleStatus {
   const prevDone = !prevModule
     ? true
@@ -86,13 +88,16 @@ export function getModuleStatus(
     (l) => l.state === "available" && getStatus(l.id) === "completed",
   ).length;
   const moduleCompleted = hasAvailable && availableCount === doneCount;
-  const prevNotMastered = !prevModule
+  const rawPrevNotMastered = !prevModule
     ? false
     : prevMastery
       ? !prevMastery.isMastered
       : false;
-  const prevMissingMissionCount = prevMastery?.missingMissionIds.length ?? 0;
-  const unlocked = prevDone && !prevNotMastered;
+  const prevNotMastered = bypassLocks ? false : rawPrevNotMastered;
+  const prevMissingMissionCount = bypassLocks
+    ? 0
+    : (prevMastery?.missingMissionIds.length ?? 0);
+  const unlocked = bypassLocks || (prevDone && !prevNotMastered);
   const moduleLocked = !unlocked;
   const soon = unlocked && !hasAvailable;
 
