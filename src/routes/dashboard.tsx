@@ -182,7 +182,10 @@ function Dashboard() {
                       setOpenPathId(openPathId === p.id ? null : p.id)
                     }
                     isPro={isPro || isAdmin}
+                    isAdmin={isAdmin}
                     introAllDone={introAllDone}
+                    introIds={introIds}
+                    introCompletedCount={introDone}
                   />
                 );
               })}
@@ -491,7 +494,10 @@ function PathCard({
   isExpanded,
   onToggleExpand,
   isPro,
+  isAdmin,
   introAllDone,
+  introIds,
+  introCompletedCount,
 }: {
   path: CurriculumPath;
   index: number;
@@ -502,7 +508,10 @@ function PathCard({
   isExpanded: boolean;
   onToggleExpand: () => void;
   isPro: boolean;
+  isAdmin: boolean;
   introAllDone: boolean;
+  introIds: string[];
+  introCompletedCount: number;
 }) {
   const Icon = path.icon;
   const orderedIds = pathLessonIds(path);
