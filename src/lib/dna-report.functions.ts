@@ -88,9 +88,16 @@ export const generateDnaReport = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .handler(async ({ context }) => {
     await assertAdmin(context);
-    const { supabase } = context;
+    // Use service-role client to bypass RLS for cross-user aggregates.
+    // (admin RLS tables like learner_events / mission_submissions return
+    //  silently empty under the user client.)
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    const supabase = supabaseAdmin;
     const now = new Date();
     const stamp = now.toISOString();
+
+    // Cap each aggregate read so a runaway table cannot DoS the DB.
+    const ROW_CAP = 5000;
 
     // ---------- Parallel data collection ----------
     const [
@@ -108,17 +115,17 @@ export const generateDnaReport = createServerFn({ method: "POST" })
       rolesRes,
     ] = await Promise.all([
       safe("user_active_device count", supabase.from("user_active_device").select("user_id", { count: "exact", head: true })),
-      safe("user_subscriptions tiers", supabase.from("user_subscriptions").select("tier,status")),
-      safe("lesson_progress all", supabase.from("lesson_progress").select("user_id,lesson_id,status")),
-      safe("user_lesson_status all", supabase.from("user_lesson_status").select("user_id,lesson_id,status")),
+      safe("user_subscriptions tiers", supabase.from("user_subscriptions").select("tier,status").limit(ROW_CAP)),
+      safe("lesson_progress all", supabase.from("lesson_progress").select("user_id,lesson_id,status").limit(ROW_CAP)),
+      safe("user_lesson_status all", supabase.from("user_lesson_status").select("user_id,lesson_id,status").limit(ROW_CAP)),
       safe("user_activity_time top", supabase.from("user_activity_time").select("user_id,total_seconds").order("total_seconds", { ascending: false }).limit(10)),
-      safe("user_streaks all", supabase.from("user_streaks").select("user_id,current_streak,longest_streak,last_activity_date")),
-      safe("mission_submissions all", supabase.from("mission_submissions").select("status,score,mission_id,evaluated_at,created_at")),
-      safe("learner_events all", supabase.from("learner_events").select("event_type,created_at")),
+      safe("user_streaks all", supabase.from("user_streaks").select("user_id,current_streak,longest_streak,last_activity_date").limit(ROW_CAP)),
+      safe("mission_submissions all", supabase.from("mission_submissions").select("status,score,mission_id,evaluated_at,created_at").limit(ROW_CAP)),
+      safe("learner_events all", supabase.from("learner_events").select("event_type,created_at").order("created_at", { ascending: false }).limit(ROW_CAP)),
       safe("client_error_logs recent", supabase.from("client_error_logs").select("scope,message,created_at").gte("created_at", new Date(Date.now() - 7 * 86400_000).toISOString()).order("created_at", { ascending: false }).limit(50)),
       safe("knowledge_chunks count", supabase.from("knowledge_chunks").select("id", { count: "exact", head: true })),
-      safe("roadmap_items all", supabase.from("roadmap_items").select("*").order("phase").order("sort_order")),
-      safe("user_roles all", supabase.from("user_roles").select("user_id,role")),
+      safe("roadmap_items all", supabase.from("roadmap_items").select("*").order("phase").order("sort_order").limit(1000)),
+      safe("user_roles all", supabase.from("user_roles").select("user_id,role").limit(1000)),
     ]);
 
     // ---------- Compute stats ----------

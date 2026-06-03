@@ -8,7 +8,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
+import { requireAdminBeforeLoad } from "@/lib/admin-route-guard";
+
 export const Route = createFileRoute("/admin/v9-review")({
+  beforeLoad: requireAdminBeforeLoad,
   head: () => ({ meta: [{ title: "v9 Review — مراجعة قرارات Apply" }] }),
   component: () => (
     <AdminGate>

@@ -7,7 +7,13 @@ import { captureError } from "@/lib/error-capture";
 const DEVICE_KEY = "lovable.device_id";
 
 function getDeviceId(): string {
-  if (typeof window === "undefined") return "";
+  // Called only from client-side effects (signIn/onAuthStateChange), so we
+  // throw on SSR rather than returning "" — an empty id would fail the
+  // server-side length check anyway, but a sentinel here makes the misuse
+  // obvious instead of letting it silently no-op.
+  if (typeof window === "undefined") {
+    throw new Error("getDeviceId called on the server");
+  }
   let id = localStorage.getItem(DEVICE_KEY);
   if (!id) {
     id = (crypto.randomUUID?.() ?? Math.random().toString(36).slice(2) + Date.now().toString(36));

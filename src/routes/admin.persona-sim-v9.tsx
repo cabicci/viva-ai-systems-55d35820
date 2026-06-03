@@ -5,7 +5,10 @@ import { ArrowLeft, ChevronDown, ChevronUp, Filter } from "lucide-react";
 import { AdminGate } from "@/components/AdminGate";
 import { Button } from "@/components/ui/button";
 
+import { requireAdminBeforeLoad } from "@/lib/admin-route-guard";
+
 export const Route = createFileRoute("/admin/persona-sim-v9")({
+  beforeLoad: requireAdminBeforeLoad,
   head: () => ({ meta: [{ title: "Persona Sim v9 — مقارنة الترتيب" }] }),
   component: () => (
     <AdminGate>

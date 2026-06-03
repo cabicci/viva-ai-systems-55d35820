@@ -3,12 +3,15 @@ import { assertAdminAccess } from "@/lib/admin.functions";
 
 /**
  * Shared beforeLoad guard for admin/dev-only routes.
- * - SSR: skip (no token available); client re-run + serverFn-level checks enforce.
+ * Runs on BOTH SSR and client. During SSR there's no bearer token, so the
+ * server-fn check rejects and we redirect to /login — preventing the admin
+ * shell from rendering server-side to anonymous viewers. On the client the
+ * real auth state is checked.
+ *
  * - Non-admin authenticated → /dashboard
  * - Unauthenticated / any failure → /login
  */
 export async function requireAdminBeforeLoad() {
-  if (typeof window === "undefined") return;
   try {
     const res = await assertAdminAccess();
     if (!res.isAdmin) {
