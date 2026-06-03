@@ -68,16 +68,19 @@ def build_prompt(persona, desc, lid, a, b):
 def call_ai(prompt, retries=3):
     for i in range(retries):
         try:
-            r = requests.post(ENDPOINT, headers={
-                "Authorization": f"Bearer {API_KEY}", "Content-Type":"application/json",
-            }, json={
-                "model": MODEL,
-                "messages":[{"role":"system","content":SYSTEM},{"role":"user","content":prompt}],
-                "response_format":{"type":"json_object"},
-            }, timeout=60)
+            r = requests.post(
+                f"{GEMINI_URL}?key={next_key()}",
+                json={
+                    "system_instruction": {"parts": [{"text": SYSTEM}]},
+                    "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+                    "generationConfig": {"responseMimeType": "application/json"},
+                },
+                timeout=60,
+            )
             if r.status_code == 429: time.sleep(3*(i+1)); continue
             r.raise_for_status()
-            return json.loads(r.json()["choices"][0]["message"]["content"])
+            txt = r.json()["candidates"][0]["content"]["parts"][0]["text"]
+            return json.loads(txt)
         except Exception as e:
             if i == retries-1: return {"error": str(e)[:200]}
             time.sleep(2)
