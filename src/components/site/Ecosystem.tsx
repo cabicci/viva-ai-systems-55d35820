@@ -77,16 +77,6 @@ export function Ecosystem() {
         ))}
       </div>
 
-      {/* Course categories — color-coded pastel tags */}
-      <div className="mt-20 md:mt-28">
-        <div className="text-center max-w-xl mx-auto mb-10">
-          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">
-            المسارات
-          </p>
-          <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground">
-            خمسة مسارات. اطلّع على التفاصيل.
-          </h3>
-        </div>
 
       {/* Tiered paths — 4 levels (Start → User → Operator → Builder) */}
       <div className="mt-20 md:mt-28">
