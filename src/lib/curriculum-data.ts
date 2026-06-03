@@ -381,8 +381,8 @@ function builderMilestones(): CurriculumModule[] {
 function automatorModules(): CurriculumModule[] {
   return [
     {
-      order: 0,
-      id: "automator-m0",
+      order: 1,
+      id: "automator-m1",
       title: "أنت فين في الخريطة؟",
       subtitle: "ربط Builder + Creator باللي جاي — قبل ما تبدأ.",
       lessons: [
@@ -390,8 +390,8 @@ function automatorModules(): CurriculumModule[] {
       ],
     },
     {
-      order: 1,
-      id: "automator-m1",
+      order: 2,
+      id: "automator-m2",
       title: "Systems Thinking",
       subtitle: "تشوف شغلك كـ نظام — Inputs، Processes، Outputs.",
       lessons: [
@@ -401,8 +401,8 @@ function automatorModules(): CurriculumModule[] {
       ],
     },
     {
-      order: 2,
-      id: "automator-m2",
+      order: 3,
+      id: "automator-m3",
       title: "Tools & Building Blocks",
       subtitle: "Make، n8n، Zapier + اللبنات الأساسية لأي Flow.",
       lessons: [
@@ -412,8 +412,8 @@ function automatorModules(): CurriculumModule[] {
       ],
     },
     {
-      order: 3,
-      id: "automator-m3",
+      order: 4,
+      id: "automator-m4",
       title: "Connecting Your Product",
       subtitle: "ربط منتج Builder بالعالم الخارجي — DB، APIs، Errors.",
       level: "technical",
@@ -424,8 +424,8 @@ function automatorModules(): CurriculumModule[] {
       ],
     },
     {
-      order: 4,
-      id: "automator-m4",
+      order: 5,
+      id: "automator-m5",
       title: "AI-Powered Automation",
       subtitle: "LLMs، RAG، و Agents جوه الـ Flow — مش بس ChatGPT.",
       level: "technical",
@@ -436,8 +436,8 @@ function automatorModules(): CurriculumModule[] {
       ],
     },
     {
-      order: 5,
-      id: "automator-m5",
+      order: 6,
+      id: "automator-m6",
       title: "Customer Journey Automation",
       subtitle: "Leads من Creator → WhatsApp → CRM → Sales، كاملة.",
       lessons: [
@@ -447,8 +447,8 @@ function automatorModules(): CurriculumModule[] {
       ],
     },
     {
-      order: 6,
-      id: "automator-m6",
+      order: 7,
+      id: "automator-m7",
       title: "Closing the Loop",
       subtitle: "بياناتك جاهزة — Analyst بيستنّاك.",
       lessons: [
@@ -462,8 +462,8 @@ function automatorModules(): CurriculumModule[] {
 function analystModules(): CurriculumModule[] {
   return [
     {
-      order: 0,
-      id: "analyst-m0",
+      order: 1,
+      id: "analyst-m1",
       title: "أنت فين في الخريطة؟",
       subtitle: "ربط Automator باللي جاي — بياناتك جاهزة، دلوقتي بتسأل.",
       lessons: [
@@ -471,8 +471,8 @@ function analystModules(): CurriculumModule[] {
       ],
     },
     {
-      order: 1,
-      id: "analyst-m1",
+      order: 2,
+      id: "analyst-m2",
       title: "Analyst Thinking",
       subtitle: "حوّل الشعور لسؤال — والسؤال لقرار.",
       lessons: [
@@ -481,8 +481,8 @@ function analystModules(): CurriculumModule[] {
       ],
     },
     {
-      order: 2,
-      id: "analyst-m2",
+      order: 3,
+      id: "analyst-m3",
       title: "جمع البيانات",
       subtitle: "٣ مصادر + AI كأداة تلخيص.",
       lessons: [
@@ -491,8 +491,8 @@ function analystModules(): CurriculumModule[] {
       ],
     },
     {
-      order: 3,
-      id: "analyst-m3",
+      order: 4,
+      id: "analyst-m4",
       title: "تفسير البيانات",
       subtitle: "Patterns vs Outliers — وكل تفسير ينتهي بقرار.",
       lessons: [
@@ -501,8 +501,8 @@ function analystModules(): CurriculumModule[] {
       ],
     },
     {
-      order: 4,
-      id: "analyst-m4",
+      order: 5,
+      id: "analyst-m5",
       title: "القرارات والـ Dashboard",
       subtitle: "٤ أرقام + Review أسبوعي = نظام قرار حقيقي.",
       lessons: [
@@ -511,8 +511,8 @@ function analystModules(): CurriculumModule[] {
       ],
     },
     {
-      order: 5,
-      id: "analyst-m5",
+      order: 6,
+      id: "analyst-m6",
       title: "لما الحاجات بتبوظ",
       subtitle: "أخطاء الأسئلة والتفسير — وعلاجها.",
       lessons: [
@@ -521,8 +521,8 @@ function analystModules(): CurriculumModule[] {
       ],
     },
     {
-      order: 6,
-      id: "analyst-m6",
+      order: 7,
+      id: "analyst-m7",
       title: "Closing the Loop",
       subtitle: "قراراتك جاهزة — Business بيستنّاك.",
       lessons: [
@@ -536,8 +536,8 @@ function analystModules(): CurriculumModule[] {
 function businessModules(): CurriculumModule[] {
   return [
     {
-      order: 0,
-      id: "business-m0",
+      order: 1,
+      id: "business-m1",
       title: "أنت فين في الخريطة؟",
       subtitle: "من Operator لـ Leader — دورك بقى مختلف.",
       lessons: [
@@ -545,8 +545,8 @@ function businessModules(): CurriculumModule[] {
       ],
     },
     {
-      order: 1,
-      id: "business-m1",
+      order: 2,
+      id: "business-m2",
       title: "Business Thinking",
       subtitle: "Reactive vs Proactive + إيقاع أسبوعي يربط الـ ٤ مسارات.",
       lessons: [
@@ -555,8 +555,8 @@ function businessModules(): CurriculumModule[] {
       ],
     },
     {
-      order: 2,
-      id: "business-m2",
+      order: 3,
+      id: "business-m3",
       title: "إدارة العملاء بالـ AI",
       subtitle: "دورة حياة العميل + Follow-up Flow.",
       lessons: [
@@ -565,8 +565,8 @@ function businessModules(): CurriculumModule[] {
       ],
     },
     {
-      order: 3,
-      id: "business-m3",
+      order: 4,
+      id: "business-m4",
       title: "إدارة العمليات بالـ AI",
       subtitle: "Strategic / Operational / Administrative — كل نوع في مكانه.",
       lessons: [
@@ -575,8 +575,8 @@ function businessModules(): CurriculumModule[] {
       ],
     },
     {
-      order: 4,
-      id: "business-m4",
+      order: 5,
+      id: "business-m5",
       title: "النمو والتوسع",
       subtitle: "علامات الجاهزية + ترتيب التوسع الصح.",
       lessons: [
@@ -585,8 +585,8 @@ function businessModules(): CurriculumModule[] {
       ],
     },
     {
-      order: 5,
-      id: "business-m5",
+      order: 6,
+      id: "business-m6",
       title: "لما الحاجات بتبوظ",
       subtitle: "Reactive Relapse و Premature Scaling — أخطر فخّين.",
       lessons: [
@@ -595,8 +595,8 @@ function businessModules(): CurriculumModule[] {
       ],
     },
     {
-      order: 6,
-      id: "business-m6",
+      order: 7,
+      id: "business-m7",
       title: "Closing the Loop — النظام الكامل",
       subtitle: "الـ ٥ مسارات في يومك — شخص + AI + System.",
       lessons: [
