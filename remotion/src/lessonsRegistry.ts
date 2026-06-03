@@ -11,7 +11,6 @@ export type LessonModule = LessonRendererProps & {
 
 // The build script appends imports + entries below the marker.
 /* @lesson-imports-start */
-import { SCENES as L_builder_m2_instructions_examples_S, SCENE_FRAMES as L_builder_m2_instructions_examples_F, TOTAL_FRAMES as L_builder_m2_instructions_examples_T } from "./lessons-generated/builder-m2-l4-instructions-examples.gen";
 import { SCENES as L_builder_m3_memory_limits_S, SCENE_FRAMES as L_builder_m3_memory_limits_F, TOTAL_FRAMES as L_builder_m3_memory_limits_T } from "./lessons-generated/builder-m3-l7-memory-limits.gen";
 import { SCENES as L_builder_m5_transition_S, SCENE_FRAMES as L_builder_m5_transition_F, TOTAL_FRAMES as L_builder_m5_transition_T } from "./lessons-generated/builder-m5-l9-transition.gen";
 import { SCENES as L_builder_m6_components_routes_S, SCENE_FRAMES as L_builder_m6_components_routes_F, TOTAL_FRAMES as L_builder_m6_components_routes_T } from "./lessons-generated/builder-m6-l16-components-routes.gen";
@@ -107,11 +106,11 @@ import { SCENES as L_builder_m2_l5_style_control_S, SCENE_FRAMES as L_builder_m2
 import { SCENES as L_builder_m3_l6_context_layer_S, SCENE_FRAMES as L_builder_m3_l6_context_layer_F, TOTAL_FRAMES as L_builder_m3_l6_context_layer_T } from "./lessons-generated/builder-m3-l6-context-layer.gen";
 import { SCENES as L_builder_m6_l14_wireframe_S, SCENE_FRAMES as L_builder_m6_l14_wireframe_F, TOTAL_FRAMES as L_builder_m6_l14_wireframe_T } from "./lessons-generated/builder-m6-l14-wireframe.gen";
 import { SCENES as L_builder_m6_l15_first_prompt_to_lovable_S, SCENE_FRAMES as L_builder_m6_l15_first_prompt_to_lovable_F, TOTAL_FRAMES as L_builder_m6_l15_first_prompt_to_lovable_T } from "./lessons-generated/builder-m6-l15-first-prompt-to-lovable.gen";
+import { SCENES as L_builder_m2_l4_instructions_examples_S, SCENE_FRAMES as L_builder_m2_l4_instructions_examples_F, TOTAL_FRAMES as L_builder_m2_l4_instructions_examples_T } from "./lessons-generated/builder-m2-l4-instructions-examples.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
   /* @lesson-entries-start */
-    { id: "builder-m2-l4-instructions-examples", scenes: L_builder_m2_instructions_examples_S, sceneFrames: L_builder_m2_instructions_examples_F, totalFrames: L_builder_m2_instructions_examples_T },
     { id: "builder-m3-l7-memory-limits", scenes: L_builder_m3_memory_limits_S, sceneFrames: L_builder_m3_memory_limits_F, totalFrames: L_builder_m3_memory_limits_T },
     { id: "builder-m5-l9-transition", scenes: L_builder_m5_transition_S, sceneFrames: L_builder_m5_transition_F, totalFrames: L_builder_m5_transition_T },
     { id: "builder-m6-l16-components-routes", scenes: L_builder_m6_components_routes_S, sceneFrames: L_builder_m6_components_routes_F, totalFrames: L_builder_m6_components_routes_T },
@@ -207,5 +206,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m3-l6-context-layer", scenes: L_builder_m3_l6_context_layer_S, sceneFrames: L_builder_m3_l6_context_layer_F, totalFrames: L_builder_m3_l6_context_layer_T },
     { id: "builder-m6-l14-wireframe", scenes: L_builder_m6_l14_wireframe_S, sceneFrames: L_builder_m6_l14_wireframe_F, totalFrames: L_builder_m6_l14_wireframe_T },
     { id: "builder-m6-l15-first-prompt-to-lovable", scenes: L_builder_m6_l15_first_prompt_to_lovable_S, sceneFrames: L_builder_m6_l15_first_prompt_to_lovable_F, totalFrames: L_builder_m6_l15_first_prompt_to_lovable_T },
+    { id: "builder-m2-l4-instructions-examples", scenes: L_builder_m2_l4_instructions_examples_S, sceneFrames: L_builder_m2_l4_instructions_examples_F, totalFrames: L_builder_m2_l4_instructions_examples_T },
   /* @lesson-entries-end */
 ];

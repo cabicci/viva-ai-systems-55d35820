@@ -41,7 +41,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "builder-m1-l1-what-is-llm": "7f735f93-67d0-4256-98c9-5ca413a73f78",
   "builder-m10-deploy-domain": "9acb42f4-cd23-42e5-8936-55d502fc67d5",
   "builder-m10-first-users": "169f80c0-e270-47e6-be80-8cc66650f1c1",
-  "builder-m2-l4-instructions-examples": "ef7b4dd7-6d1b-4c1c-9d08-39b2f7a37faa",
+  "builder-m2-l4-instructions-examples": "67b59072-4f9b-4812-8c87-62eba64d0ed9",
   "builder-m2-l3-prompt-layer": "e3e66e6c-27f3-4a5d-9b7b-9382e484925e",
   "builder-m2-l5-style-control": "33d993a6-79d3-45d6-b016-9e2b1d2b5c63",
   "builder-m3-l6-context-layer": "41f03640-1bc5-4f65-9ecd-664e0bc35cf9",
