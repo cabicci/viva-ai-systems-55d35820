@@ -218,18 +218,34 @@ def call_gemini(persona: dict, retries: int = 4) -> dict:
     return {"error": "max_retries", "persona_id": persona["id"]}
 
 # ---- 5) Run + aggregate ----------------------------------------------------
+CKPT = OUT_DIR / "persona-sim-v12-checkpoint.json"
+
 def main():
     stamp = datetime.utcnow().strftime("%Y%m%d-%H%M%S")
     results = []
-    print(f"Running 100 personas × {len(LESSONS)} lessons via Gemini direct...", flush=True)
+    done_ids = set()
+    if CKPT.exists():
+        try:
+            results = json.loads(CKPT.read_text(encoding="utf-8"))
+            done_ids = {r.get("persona_id") for r in results if "error" not in r}
+            print(f"Resuming: {len(done_ids)} personas already done", flush=True)
+        except Exception:
+            results = []
+    todo = [p for p in PERSONAS if p["id"] not in done_ids]
+    print(f"Running {len(todo)}/{len(PERSONAS)} personas × {len(LESSONS)} lessons", flush=True)
+    if not todo:
+        print("All personas done — generating report only", flush=True)
     t0 = time.time()
-    with ThreadPoolExecutor(max_workers=8) as ex:
-        futs = {ex.submit(call_gemini, p): p for p in PERSONAS}
+    ckpt_lock = threading.Lock()
+    with ThreadPoolExecutor(max_workers=16) as ex:
+        futs = {ex.submit(call_gemini, p): p for p in todo}
         for i, fut in enumerate(as_completed(futs), 1):
             results.append(fut.result())
-            if i % 5 == 0:
+            with ckpt_lock:
+                CKPT.write_text(json.dumps(results, ensure_ascii=False), encoding="utf-8")
+            if i % 3 == 0:
                 ok = sum(1 for r in results if "error" not in r)
-                print(f"  {i}/100 done ({ok} ok) — {time.time()-t0:.0f}s", flush=True)
+                print(f"  +{i}/{len(todo)} ({ok} ok total) — {time.time()-t0:.0f}s", flush=True)
 
     raw_path = OUT_DIR / f"persona-sim-v12-{stamp}-raw.json"
     raw_path.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
