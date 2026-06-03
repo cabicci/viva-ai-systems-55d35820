@@ -80,7 +80,6 @@ import { SCENES as L_automator_m4_llm_node_bridge_S, SCENE_FRAMES as L_automator
 import { SCENES as L_builder_m5_backend_api_S, SCENE_FRAMES as L_builder_m5_backend_api_F, TOTAL_FRAMES as L_builder_m5_backend_api_T } from "./lessons-generated/builder-m5-l11-backend-api.gen";
 import { SCENES as L_builder_m5_frontend_S, SCENE_FRAMES as L_builder_m5_frontend_F, TOTAL_FRAMES as L_builder_m5_frontend_T } from "./lessons-generated/builder-m5-l10-frontend.gen";
 import { SCENES as L_business_m1_weekly_rhythm_S, SCENE_FRAMES as L_business_m1_weekly_rhythm_F, TOTAL_FRAMES as L_business_m1_weekly_rhythm_T } from "./lessons-generated/business-m1-weekly-rhythm.gen";
-import { SCENES as L_builder_m1_what_is_llm_S, SCENE_FRAMES as L_builder_m1_what_is_llm_F, TOTAL_FRAMES as L_builder_m1_what_is_llm_T } from "./lessons-generated/builder-m1-l1-what-is-llm.gen";
 import { SCENES as L_automator_m2_tools_landscape_S, SCENE_FRAMES as L_automator_m2_tools_landscape_F, TOTAL_FRAMES as L_automator_m2_tools_landscape_T } from "./lessons-generated/automator-m2-tools-landscape.gen";
 import { SCENES as L_analyst_m2_three_sources_S, SCENE_FRAMES as L_analyst_m2_three_sources_F, TOTAL_FRAMES as L_analyst_m2_three_sources_T } from "./lessons-generated/analyst-m2-three-sources.gen";
 import { SCENES as L_analyst_m0_from_automation_to_insight_S, SCENE_FRAMES as L_analyst_m0_from_automation_to_insight_F, TOTAL_FRAMES as L_analyst_m0_from_automation_to_insight_T } from "./lessons-generated/analyst-m0-from-automation-to-insight.gen";
@@ -107,6 +106,7 @@ import { SCENES as L_builder_m4_l8_parameters_S, SCENE_FRAMES as L_builder_m4_l8
 import { SCENES as L_builder_m2_l3_prompt_layer_S, SCENE_FRAMES as L_builder_m2_l3_prompt_layer_F, TOTAL_FRAMES as L_builder_m2_l3_prompt_layer_T } from "./lessons-generated/builder-m2-l3-prompt-layer.gen";
 import { SCENES as L_builder_m5_l12_database_intro_S, SCENE_FRAMES as L_builder_m5_l12_database_intro_F, TOTAL_FRAMES as L_builder_m5_l12_database_intro_T } from "./lessons-generated/builder-m5-l12-database-intro.gen";
 import { SCENES as L_builder_m1_l2_tokens_training_S, SCENE_FRAMES as L_builder_m1_l2_tokens_training_F, TOTAL_FRAMES as L_builder_m1_l2_tokens_training_T } from "./lessons-generated/builder-m1-l2-tokens-training.gen";
+import { SCENES as L_builder_m1_l1_what_is_llm_S, SCENE_FRAMES as L_builder_m1_l1_what_is_llm_F, TOTAL_FRAMES as L_builder_m1_l1_what_is_llm_T } from "./lessons-generated/builder-m1-l1-what-is-llm.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -180,7 +180,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m5-l11-backend-api", scenes: L_builder_m5_backend_api_S, sceneFrames: L_builder_m5_backend_api_F, totalFrames: L_builder_m5_backend_api_T },
     { id: "builder-m5-l10-frontend", scenes: L_builder_m5_frontend_S, sceneFrames: L_builder_m5_frontend_F, totalFrames: L_builder_m5_frontend_T },
     { id: "business-m1-weekly-rhythm", scenes: L_business_m1_weekly_rhythm_S, sceneFrames: L_business_m1_weekly_rhythm_F, totalFrames: L_business_m1_weekly_rhythm_T },
-    { id: "builder-m1-l1-what-is-llm", scenes: L_builder_m1_what_is_llm_S, sceneFrames: L_builder_m1_what_is_llm_F, totalFrames: L_builder_m1_what_is_llm_T },
     { id: "automator-m2-tools-landscape", scenes: L_automator_m2_tools_landscape_S, sceneFrames: L_automator_m2_tools_landscape_F, totalFrames: L_automator_m2_tools_landscape_T },
     { id: "analyst-m2-three-sources", scenes: L_analyst_m2_three_sources_S, sceneFrames: L_analyst_m2_three_sources_F, totalFrames: L_analyst_m2_three_sources_T },
     { id: "analyst-m0-from-automation-to-insight", scenes: L_analyst_m0_from_automation_to_insight_S, sceneFrames: L_analyst_m0_from_automation_to_insight_F, totalFrames: L_analyst_m0_from_automation_to_insight_T },
@@ -207,5 +206,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m2-l3-prompt-layer", scenes: L_builder_m2_l3_prompt_layer_S, sceneFrames: L_builder_m2_l3_prompt_layer_F, totalFrames: L_builder_m2_l3_prompt_layer_T },
     { id: "builder-m5-l12-database-intro", scenes: L_builder_m5_l12_database_intro_S, sceneFrames: L_builder_m5_l12_database_intro_F, totalFrames: L_builder_m5_l12_database_intro_T },
     { id: "builder-m1-l2-tokens-training", scenes: L_builder_m1_l2_tokens_training_S, sceneFrames: L_builder_m1_l2_tokens_training_F, totalFrames: L_builder_m1_l2_tokens_training_T },
+    { id: "builder-m1-l1-what-is-llm", scenes: L_builder_m1_l1_what_is_llm_S, sceneFrames: L_builder_m1_l1_what_is_llm_F, totalFrames: L_builder_m1_l1_what_is_llm_T },
   /* @lesson-entries-end */
 ];
