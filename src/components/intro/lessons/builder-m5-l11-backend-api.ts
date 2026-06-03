@@ -21,7 +21,7 @@ export const BUILDER_M5_BACKEND_API_BLOCKS: IntroLessonContent = [
     icon: AlertTriangle,
     eyebrow: "أكبر كارثة في تطبيقات الـ AI",
     title: "لو مفتاح الـ AI اتسرق، هتدفع آلاف",
-    tone: "danger",
+    tone: "warn",
     block: {
       kind: "comparison",
       left: {
