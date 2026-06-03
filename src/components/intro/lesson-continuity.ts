@@ -44,7 +44,9 @@ export const LESSON_CONTINUITY: Record<string, string> = {
   "builder-m5-l11-backend-api":
     "فهمت الـ Backend. آخر قطعة في الـ Stack: مكان تخزين البيانات — الـ Database.",
   "builder-m5-l12-database-intro":
-    "خلصت طبقات التطبيق. الموديول الجاي عن تحويل فكرتك لصفحة فعلية.",
+    "فهمت المخزن الذكي. الدرس الجاي بريك سريع: نشوف إنت فهمت إيه فعلاً قبل ما نكمّل.",
+  "builder-m5-l12b-mini-win":
+    "ثبّتت فهمك للـ 3 طبقات. الموديول الجاي عن تحويل فكرتك لصفحة فعلية في Lovable.",
   "builder-m6-l13-idea-to-page":
     "بنيت أول صفحة. لازم تفهم الـ Components والـ Routes عشان تبني تطبيق متعدد الصفحات.",
   "builder-m6-l16-components-routes":

@@ -309,6 +309,7 @@ function builderMilestones(): CurriculumModule[] {
         builderShipped(2, "builder-m5-l10-frontend", "واجهة التطبيق (Frontend)"),
         builderShipped(3, "builder-m5-l11-backend-api", "كواليس التطبيق وساعي البريد"),
         builderShipped(4, "builder-m5-l12-database-intro", "المخزن الذكي (Database)"),
+        builderShipped(5, "builder-m5-l12b-mini-win", "Mini-Win: شوف إنت فهمت إيه"),
       ],
     },
     {

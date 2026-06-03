@@ -28,6 +28,7 @@ import { BUILDER_M4_TEMPERATURE_BLOCKS } from "./builder-m4-l8-parameters";
 import { BUILDER_M5_FRONTEND_BLOCKS } from "./builder-m5-l10-frontend";
 import { BUILDER_M5_BACKEND_API_BLOCKS } from "./builder-m5-l11-backend-api";
 import { BUILDER_M5_DATABASE_INTRO_BLOCKS } from "./builder-m5-l12-database-intro";
+import { BUILDER_M5_MINI_WIN_BLOCKS } from "./builder-m5-l12b-mini-win";
 import { BUILDER_M6_IDEA_TO_PAGE_BLOCKS } from "./builder-m6-l13-idea-to-page";
 import { BUILDER_M6_COMPONENTS_ROUTES_BLOCKS } from "./builder-m6-l16-components-routes";
 import { BUILDER_M7_SESSIONS_JWT_BLOCKS } from "./builder-m8-l22-sessions-jwt";
@@ -133,6 +134,7 @@ export const INTRO_LESSON_CONTENT: Record<string, IntroLessonContent> = {
   "builder-m5-l9-transition": BUILDER_M5_TRANSITION_BLOCKS,
   "builder-m5-l11-backend-api": BUILDER_M5_BACKEND_API_BLOCKS,
   "builder-m5-l12-database-intro": BUILDER_M5_DATABASE_INTRO_BLOCKS,
+  "builder-m5-l12b-mini-win": BUILDER_M5_MINI_WIN_BLOCKS,
   "builder-m6-l13-idea-to-page": BUILDER_M6_IDEA_TO_PAGE_BLOCKS,
   "builder-m6-l16-components-routes": BUILDER_M6_COMPONENTS_ROUTES_BLOCKS,
   "builder-m8-l22-sessions-jwt": BUILDER_M7_SESSIONS_JWT_BLOCKS,
