@@ -27,11 +27,11 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "automator-m2-triggers-actions": "718098a7-cb1d-4f48-a74e-2c1c27969113",
   "automator-m3-connect-database": "78575b49-af42-44a7-b617-50948f6a7a89",
   "automator-m3-error-handling": "24fc924a-552c-4ffa-a264-c7450d947821",
-  "automator-m3-foundations": "051f3d29-40f1-40bb-987c-125e23217dbf",
+  
   "automator-m3-webhooks-api": "65e775ce-3887-41d7-bc98-4d294293e3d2",
   "automator-m4-agents": "10523a09-a76e-492a-823e-d4fee9c59817",
   "automator-m4-llm-in-flow": "31248253-56e3-43a9-ab5f-990c83831c16",
-  "automator-m4-llm-node-bridge": "5bd14473-7f17-48f8-b373-57929b9a6668",
+  
   "automator-m4-rag-in-n8n": "b422d12f-eaec-44a0-aa46-8ad7fdee8292",
   "automator-m5-follow-up": "18301e39-aab1-4863-94f0-093fc73d5fa5",
   "automator-m5-lead-capture": "087ba311-1211-429b-9340-f3d69d942d8f",
