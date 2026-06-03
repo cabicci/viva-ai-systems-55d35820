@@ -5,95 +5,50 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "subtitle": "Iteration مش ضعف. ده شغل المهندس الأساسي.",
-    "highlight": "وده طبيعي",
-    "title": "أول build مش هيبقى صح",
-    "chip": "أهلًا"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "خطة البيع",
-    "term": "Spec / Wireframe",
-    "definition": "الوصف اللي فيه التفاصيل والطلبات اللي إنت عايز تنفذها بالظبط."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "tag": "طلب كشف حساب",
-    "term": "Prompt",
-    "definition": "الأمر أو الكلام اللي بتكتبه للذكاء الاصطناعي عشان يعملك حاجة."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "definition": "تعديل دقيق جداً على حتة صغيرة بايظة بدل ما نهده كله.",
-    "tag": "تعديل كلمة",
-    "term": "Surgical edit"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "definition": "دورة من: \"جرب ← شوف الغلط ← عدل ← جرب تاني\".",
-    "tag": "تعديل رصة البضاعة",
-    "term": "Iteration / Refine"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "tag": "زرار أخضر يطلع أحمر",
-    "term": "Diff",
-    "definition": "الفرق بين اللي إنت طالبه وبين اللي البرنامج نفذه فعلاً."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "النور قطع",
-    "term": "Regression",
-    "definition": "مشكلة جديدة ظهرت في حاجة كانت شغالة صح، بسبب تعديل عملته."
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "mintDeep",
-    "bullets": [
-      "Step 1 — Prompt: اكتب طلبك (سواء أول مرة أو تعديل).",
-      "Step 2 — Result: شوف الناتج كاملاً. متعدّلش وانت بتقرا — استنى لحد ما الـ build يخلص.",
-      "Step 3 — Review: قارن مع الـ Wireframe/الـ Spec. اكتب على ورقة ٣ حاجات بس: «شغّال»، «ناقص»، «غلط». التفاصيل الصغيرة دلوقتي مش مهمة.",
-      "Step 4 — Refine: اطلب تعديل واحد محدّد. مش «كل حاجة وحشة»، لأ — «الـ Hero Section لازم يبقى أطول بـ ٢٠٪ والـ CTA يبقى أحمر بدل أزرق».",
-      "قاعدة Iteration ذهبية: تعديل واحد في كل prompt. لما تطلب ٥ تعديلات مع بعض، الـ AI بيعمل ٣ منهم صح وبيكسر اتنين تانيين. التعديلات المتفرّقة أسرع وأأمن."
-    ],
-    "title": "Loop من ٤ خطوات — كرّره لحد ما تخلص"
-  },
-  {
-    "card": "ScreenshotCard",
-    "accent": "lavender",
-    "src": "lessons/unique/builder-m6-l17-iteration.jpg",
-    "caption": "الـ Loop ده هو شغلك الحقيقي كـ Builder. كل دورة بتقرّبك من الـ Spec. متستعجلش — متوسط أي صفحة محترفة بياخد ٤-٧ دورات قبل ما تخلص.",
-    "title": "Iteration Loop — ٤ خطوات بتتكرر",
-    "eyebrow": "توضيح بصري"
+    "highlight": "تعمل إيه؟",
+    "title": "الـ AI طلعلك حاجة غلط",
+    "subtitle": "لما تلاقي الألوان والمسافات مش مظبوطة",
+    "chip": "أهلًا، الحقيقة المُرّة"
   },
   {
     "card": "CompareCard",
-    "accent": "peach",
-    "left": {
-      "label": "FAILURE — «حاجة وحشة، عدّل»",
-      "body": "الـ AI ميعرفش إيه الوحش. هيغيّر حاجات عشوائية. ممكن يكسر حاجة كانت شغّالة (Regression). بعد ساعة لقيت الصفحة أسوأ من الأول."
-    },
+    "accent": "lavender",
     "right": {
-      "label": "RIGHT — Surgical Edit",
-      "body": "«في الـ Hero section، الـ headline حالياً ٢ سطور — خليه سطر واحد. الزرار حالياً أزرق — خليه برتقالي #FF6B35. مفيش تغيير في أي حاجة تانية.» تعديل محدّد = نتيجة مضمونة."
+      "label": "صح — تعديل جراحي (Surgical Edit)",
+      "body": "اطلب تعديل محدد: 'الزرار أزرق، خليه برتقاني #FF6B35'. نتيجة مضمونة."
     },
-    "title": "إزاي تطلب تعديل"
+    "title": "إزاي تطلب تعديل صح",
+    "left": {
+      "label": "غلط — «الشكل وحش، صلّحه»",
+      "body": "الـ AI مش بيفهم 'وحش'. هيخمن ويغيّر عشوائي، ممكن يبوظ حاجات كانت شغالة (Regression)."
+    }
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "peach",
+    "title": "شغلك عبارة عن لفّات من 4 خطوات",
+    "bullets": [
+      "دي لفة التحسين (Iteration Loop)",
+      "كل لفة بتقربك للصح",
+      "الخطوات: اطلب (Prompt) -> شوف النتيجة (Result) -> راجع (Review) -> عدّل (Refine)"
+    ]
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "yellow",
+    "tag": "مفهوم أساسي",
+    "term": "Iteration / التكرار والتحسين",
+    "definition": "تعمل لفة كاملة: تجربة، ملاحظة الغلط، تصليحه، وتجربة تاني."
   },
   {
     "card": "CTACard",
-    "accent": "yellow",
+    "accent": "pink",
+    "tagline": "جاوب على الأسئلة عشان تتأكد إنك فهمت إزاي تعمل تعديل صح.",
     "eyebrow": "دورك دلوقتي",
-    "title": "اعمل ٣ دورات Iteration على الـ Build",
-    "highlight": "واختبر فهمك",
-    "tagline": "يلا بينا نطبق اللي اتعلمناه ونشوف مدى استيعابك للمفاهيم!"
+    "highlight": "هل تقدر تعدّل صح؟",
+    "title": "اختبر فهمك للـ Iteration"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [423, 297, 256, 251, 112, 357, 307, 946, 547, 143, 261];
+export const SCENE_FRAMES: number[] = [526, 765, 623, 533, 316];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
