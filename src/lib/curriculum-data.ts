@@ -38,6 +38,8 @@ export interface CurriculumModule {
   id: string;
   title: string;
   subtitle?: string;
+  /** "technical" = module dives into code/JWT/RLS/embeddings → show "تقني — للمتقدمين" badge */
+  level?: "technical";
   lessons: CurriculumLesson[];
 }
 
