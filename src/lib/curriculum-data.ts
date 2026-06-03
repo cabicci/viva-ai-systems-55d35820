@@ -108,17 +108,17 @@ function creatorModules(): CurriculumModule[] {
       lessons: [
         lesson(
           1,
-          "creator-m1-why-content",
+          "creator-m1-l1-why-content",
           "ليه المحتوى مش Posting؟",
           "available",
-          "/learn/creator/creator-m1-why-content",
+          "/learn/creator/creator-m1-l1-why-content",
         ),
         lesson(
           2,
-          "creator-m1-attention-economy",
+          "creator-m1-l2-attention-economy",
           "إيه هو اقتصاد الانتباه؟",
           "available",
-          "/learn/creator/creator-m1-attention-economy",
+          "/learn/creator/creator-m1-l2-attention-economy",
         ),
       ],
     },
@@ -130,17 +130,17 @@ function creatorModules(): CurriculumModule[] {
       lessons: [
         lesson(
           1,
-          "creator-m3-know-audience",
+          "creator-m2-l1-know-audience",
           "اعرف جمهورك فعلًا",
           "available",
-          "/learn/creator/creator-m3-know-audience",
+          "/learn/creator/creator-m2-l1-know-audience",
         ),
         lesson(
           2,
-          "creator-m3-content-pillars",
+          "creator-m2-l2-content-pillars",
           "اختار ٣ Pillars",
           "available",
-          "/learn/creator/creator-m3-content-pillars",
+          "/learn/creator/creator-m2-l2-content-pillars",
         ),
       ],
     },
@@ -152,24 +152,24 @@ function creatorModules(): CurriculumModule[] {
       lessons: [
         lesson(
           1,
-          "creator-m2-hook",
+          "creator-m3-l1-hook",
           "Hook: أول ٣ ثواني",
           "available",
-          "/learn/creator/creator-m2-hook",
+          "/learn/creator/creator-m3-l1-hook",
         ),
         lesson(
           2,
-          "creator-m2-script-structure",
+          "creator-m3-l2-script-structure",
           "بنية السكريبت الكاملة",
           "available",
-          "/learn/creator/creator-m2-script-structure",
+          "/learn/creator/creator-m3-l2-script-structure",
         ),
         lesson(
           3,
-          "creator-m2-cta",
+          "creator-m3-l3-cta",
           "CTA: ازاي تخلّي المتفرّج يتحرّك",
           "available",
-          "/learn/creator/creator-m2-cta",
+          "/learn/creator/creator-m3-l3-cta",
         ),
       ],
     },
@@ -181,24 +181,24 @@ function creatorModules(): CurriculumModule[] {
       lessons: [
         lesson(
           1,
-          "creator-m4-reality-check",
+          "creator-m4-l1-reality-check",
           "Reality Check",
           "available",
-          "/learn/creator/creator-m4-reality-check",
+          "/learn/creator/creator-m4-l1-reality-check",
         ),
         lesson(
           2,
-          "creator-m4-mobile-shooting",
+          "creator-m4-l2-mobile-shooting",
           "التصوير بالموبايل",
           "available",
-          "/learn/creator/creator-m4-mobile-shooting",
+          "/learn/creator/creator-m4-l2-mobile-shooting",
         ),
         lesson(
           3,
-          "creator-m4-ai-writing",
+          "creator-m4-l3-ai-writing",
           "AI كمساعد كتابة",
           "available",
-          "/learn/creator/creator-m4-ai-writing",
+          "/learn/creator/creator-m4-l3-ai-writing",
         ),
       ],
     },
@@ -210,17 +210,17 @@ function creatorModules(): CurriculumModule[] {
       lessons: [
         lesson(
           1,
-          "creator-m4-editing",
+          "creator-m5-l1-editing",
           "المونتاج — Cut, Caption, Pace",
           "available",
-          "/learn/creator/creator-m4-editing",
+          "/learn/creator/creator-m5-l1-editing",
         ),
         lesson(
           2,
-          "creator-m4-thumbnails-captions",
+          "creator-m5-l2-thumbnails-captions",
           "Thumbnails & Captions",
           "available",
-          "/learn/creator/creator-m4-thumbnails-captions",
+          "/learn/creator/creator-m5-l2-thumbnails-captions",
         ),
       ],
     },
@@ -230,10 +230,10 @@ function creatorModules(): CurriculumModule[] {
       title: "Distribute & Measure",
       subtitle: "النشر والجدولة وقراءة الأرقام لجذب Leads حقيقية.",
       lessons: [
-        lesson(1, "creator-m5-platforms", "اختيار المنصات", "available", "/learn/creator/creator-m5-platforms"),
-        lesson(2, "creator-m5-scheduling", "الجدولة والاستمرارية", "available", "/learn/creator/creator-m5-scheduling"),
-        lesson(3, "creator-m5-analytics", "قراءة Analytics بسيطة", "available", "/learn/creator/creator-m5-analytics"),
-        lesson(4, "creator-m5-leads", "من Views لـ Leads", "available", "/learn/creator/creator-m5-leads"),
+        lesson(1, "creator-m6-l1-platforms", "اختيار المنصات", "available", "/learn/creator/creator-m6-l1-platforms"),
+        lesson(2, "creator-m6-l2-scheduling", "الجدولة والاستمرارية", "available", "/learn/creator/creator-m6-l2-scheduling"),
+        lesson(3, "creator-m6-l3-analytics", "قراءة Analytics بسيطة", "available", "/learn/creator/creator-m6-l3-analytics"),
+        lesson(4, "creator-m6-l4-leads", "من Views لـ Leads", "available", "/learn/creator/creator-m6-l4-leads"),
       ],
     },
     {
@@ -244,17 +244,17 @@ function creatorModules(): CurriculumModule[] {
       lessons: [
         lesson(
           1,
-          "creator-m6-brand-basics",
+          "creator-m7-l1-brand-basics",
           "Brand Basics — Colors, Fonts, Logo",
           "available",
-          "/learn/creator/creator-m6-brand-basics",
+          "/learn/creator/creator-m7-l1-brand-basics",
         ),
         lesson(
           2,
-          "creator-m6-grid-consistency",
+          "creator-m7-l2-grid-consistency",
           "Grid Consistency على الـ Profile",
           "available",
-          "/learn/creator/creator-m6-grid-consistency",
+          "/learn/creator/creator-m7-l2-grid-consistency",
         ),
       ],
     },
@@ -285,9 +285,9 @@ function builderMilestones(): CurriculumModule[] {
       title: "Prompt: لغة الكلام مع AI",
       subtitle: "تشريح الـ Prompt — Instructions, Examples, Style.",
       lessons: [
-        builderShipped(1, "builder-m2-l3-prompt-layer", "تشريح الـ Prompt"),
-        builderShipped(2, "builder-m2-l4-instructions-examples", "Instructions vs Examples"),
-        builderShipped(3, "builder-m2-l5-style-control", "Style & Tone"),
+        builderShipped(1, "builder-m2-l1-prompt-layer", "تشريح الـ Prompt"),
+        builderShipped(2, "builder-m2-l2-instructions-examples", "Instructions vs Examples"),
+        builderShipped(3, "builder-m2-l3-style-control", "Style & Tone"),
       ],
     },
     {
@@ -296,8 +296,8 @@ function builderMilestones(): CurriculumModule[] {
       title: "Context Window: ذاكرة الـ AI",
       subtitle: "ليه السياق أهم من السؤال + حدود الذاكرة.",
       lessons: [
-        builderShipped(1, "builder-m3-l6-context-layer", "إيه السياق؟"),
-        builderShipped(2, "builder-m3-l7-memory-limits", "حدود الذاكرة"),
+        builderShipped(1, "builder-m3-l1-context-layer", "إيه السياق؟"),
+        builderShipped(2, "builder-m3-l2-memory-limits", "حدود الذاكرة"),
       ],
     },
     {
@@ -306,7 +306,7 @@ function builderMilestones(): CurriculumModule[] {
       title: "Parameters: لوحة التحكم",
       subtitle: "Temperature, Top-p, Max tokens في درس واحد.",
       lessons: [
-        builderShipped(1, "builder-m4-l8-parameters", "Parameters: Temperature + Top-p + Max tokens"),
+        builderShipped(1, "builder-m4-l1-parameters", "Parameters: Temperature + Top-p + Max tokens"),
       ],
     },
     {
@@ -316,11 +316,11 @@ function builderMilestones(): CurriculumModule[] {
       subtitle: "Frontend · Backend · Database",
       level: "technical",
       lessons: [
-        builderShipped(1, "builder-m5-l9-transition", "Transition — من اللغة للـ App"),
-        builderShipped(2, "builder-m5-l10-frontend", "واجهة التطبيق (Frontend)"),
-        builderShipped(3, "builder-m5-l11-backend-api", "كواليس التطبيق وساعي البريد"),
-        builderShipped(4, "builder-m5-l12-database-intro", "المخزن الذكي (Database)"),
-        builderShipped(5, "builder-m5-l12b-mini-win", "Mini-Win: شوف إنت فهمت إيه"),
+        builderShipped(1, "builder-m5-l1-transition", "Transition — من اللغة للـ App"),
+        builderShipped(2, "builder-m5-l2-frontend", "واجهة التطبيق (Frontend)"),
+        builderShipped(3, "builder-m5-l3-backend-api", "كواليس التطبيق وساعي البريد"),
+        builderShipped(4, "builder-m5-l4-database-intro", "المخزن الذكي (Database)"),
+        builderShipped(5, "builder-m5-l5-l12b-mini-win", "Mini-Win: شوف إنت فهمت إيه"),
       ],
     },
     {
@@ -330,12 +330,12 @@ function builderMilestones(): CurriculumModule[] {
       subtitle: "Components · Routes · Debugging",
       level: "technical",
       lessons: [
-        builderShipped(1, "builder-m6-l13-idea-to-page", "من فكرة لصفحة"),
-        builderShipped(2, "builder-m6-l14-wireframe", "Wireframe — ارسم قبل ما تبني"),
-        builderShipped(3, "builder-m6-l15-first-prompt-to-lovable", "أول Prompt لـ Lovable"),
-        builderShipped(4, "builder-m6-l16-components-routes", "Components & Routes"),
-        builderShipped(5, "builder-m6-l17-iteration", "Iteration Loop"),
-        builderShipped(6, "builder-m6-l18-debugging", "لو الدنيا بازت — Debugging"),
+        builderShipped(1, "builder-m6-l1-idea-to-page", "من فكرة لصفحة"),
+        builderShipped(2, "builder-m6-l2-wireframe", "Wireframe — ارسم قبل ما تبني"),
+        builderShipped(3, "builder-m6-l3-first-prompt-to-lovable", "أول Prompt لـ Lovable"),
+        builderShipped(4, "builder-m6-l4-components-routes", "Components & Routes"),
+        builderShipped(5, "builder-m6-l5-iteration", "Iteration Loop"),
+        builderShipped(6, "builder-m6-l6-debugging", "لو الدنيا بازت — Debugging"),
       ],
     },
     {
@@ -345,9 +345,9 @@ function builderMilestones(): CurriculumModule[] {
       subtitle: "Tables · Relations · Queries",
       level: "technical",
       lessons: [
-        builderShipped(1, "builder-m7-l19-tables-columns", "Tables & Columns"),
-        builderShipped(2, "builder-m7-l20-relations", "Relations بين الجداول"),
-        builderShipped(3, "builder-m7-l21-queries", "Queries: ازاي بتجيب البيانات"),
+        builderShipped(1, "builder-m7-l1-tables-columns", "Tables & Columns"),
+        builderShipped(2, "builder-m7-l2-relations", "Relations بين الجداول"),
+        builderShipped(3, "builder-m7-l3-queries", "Queries: ازاي بتجيب البيانات"),
       ],
     },
     {
@@ -357,8 +357,8 @@ function builderMilestones(): CurriculumModule[] {
       subtitle: "JWT · RLS",
       level: "technical",
       lessons: [
-        builderShipped(1, "builder-m8-l22-sessions-jwt", "كارت الدخول (Sessions & JWT)"),
-        builderShipped(2, "builder-m8-l23-rls", "الحارس الشخصي (RLS)"),
+        builderShipped(1, "builder-m8-l1-sessions-jwt", "كارت الدخول (Sessions & JWT)"),
+        builderShipped(2, "builder-m8-l2-rls", "الحارس الشخصي (RLS)"),
       ],
     },
     {
@@ -368,9 +368,9 @@ function builderMilestones(): CurriculumModule[] {
       subtitle: "RAG · Embeddings · Agents",
       level: "technical",
       lessons: [
-        builderShipped(1, "builder-m9-l24-rag", "AI يرد من ملفاتك (RAG)"),
-        builderShipped(2, "builder-m9-l25-embeddings", "إزاي الـ AI بيلاقي المعلومة"),
-        builderShipped(3, "builder-m9-l26-agents", "AI بياخد قرارات لوحده (Agents)"),
+        builderShipped(1, "builder-m9-l1-rag", "AI يرد من ملفاتك (RAG)"),
+        builderShipped(2, "builder-m9-l2-embeddings", "إزاي الـ AI بيلاقي المعلومة"),
+        builderShipped(3, "builder-m9-l3-agents", "AI بياخد قرارات لوحده (Agents)"),
       ],
     },
   ];
@@ -386,7 +386,7 @@ function automatorModules(): CurriculumModule[] {
       title: "أنت فين في الخريطة؟",
       subtitle: "ربط Builder + Creator باللي جاي — قبل ما تبدأ.",
       lessons: [
-        automatorShipped(1, "automator-m0-where-you-are", "أنت فين في الخريطة؟"),
+        automatorShipped(1, "automator-m0-l1-where-you-are", "أنت فين في الخريطة؟"),
       ],
     },
     {
@@ -395,9 +395,9 @@ function automatorModules(): CurriculumModule[] {
       title: "Systems Thinking",
       subtitle: "تشوف شغلك كـ نظام — Inputs، Processes، Outputs.",
       lessons: [
-        automatorShipped(1, "automator-m1-systems-view", "كل شغل = System"),
-        automatorShipped(2, "automator-m1-spot-patterns", "شوف الأنماط في يومك"),
-        automatorShipped(3, "automator-m1-decide-what-to-automate", "قرّر إيه يتأتمت"),
+        automatorShipped(1, "automator-m1-l1-systems-view", "كل شغل = System"),
+        automatorShipped(2, "automator-m1-l2-spot-patterns", "شوف الأنماط في يومك"),
+        automatorShipped(3, "automator-m1-l3-decide-what-to-automate", "قرّر إيه يتأتمت"),
       ],
     },
     {
@@ -406,9 +406,9 @@ function automatorModules(): CurriculumModule[] {
       title: "Tools & Building Blocks",
       subtitle: "Make، n8n، Zapier + اللبنات الأساسية لأي Flow.",
       lessons: [
-        automatorShipped(1, "automator-m2-tools-landscape", "Make vs n8n vs Zapier"),
-        automatorShipped(2, "automator-m2-triggers-actions", "Triggers + Actions"),
-        automatorShipped(3, "automator-m2-filters-routers", "Filters & Routers"),
+        automatorShipped(1, "automator-m2-l1-tools-landscape", "Make vs n8n vs Zapier"),
+        automatorShipped(2, "automator-m2-l2-triggers-actions", "Triggers + Actions"),
+        automatorShipped(3, "automator-m2-l3-filters-routers", "Filters & Routers"),
       ],
     },
     {
@@ -418,9 +418,9 @@ function automatorModules(): CurriculumModule[] {
       subtitle: "ربط منتج Builder بالعالم الخارجي — DB، APIs، Errors.",
       level: "technical",
       lessons: [
-        automatorShipped(1, "automator-m3-connect-database", "وصّل الـ DB من Builder"),
-        automatorShipped(2, "automator-m3-webhooks-api", "Webhooks & APIs"),
-        automatorShipped(3, "automator-m3-error-handling", "Error Handling"),
+        automatorShipped(1, "automator-m3-l1-connect-database", "وصّل الـ DB من Builder"),
+        automatorShipped(2, "automator-m3-l2-webhooks-api", "Webhooks & APIs"),
+        automatorShipped(3, "automator-m3-l3-error-handling", "Error Handling"),
       ],
     },
     {
@@ -430,9 +430,9 @@ function automatorModules(): CurriculumModule[] {
       subtitle: "LLMs، RAG، و Agents جوه الـ Flow — مش بس ChatGPT.",
       level: "technical",
       lessons: [
-        automatorShipped(1, "automator-m4-llm-in-flow", "LLM جوه الـ Flow"),
-        automatorShipped(2, "automator-m4-rag-in-n8n", "RAG جوه الـ Automation"),
-        automatorShipped(3, "automator-m4-agents", "Agents بياخدوا قرارات"),
+        automatorShipped(1, "automator-m4-l1-llm-in-flow", "LLM جوه الـ Flow"),
+        automatorShipped(2, "automator-m4-l2-rag-in-n8n", "RAG جوه الـ Automation"),
+        automatorShipped(3, "automator-m4-l3-agents", "Agents بياخدوا قرارات"),
       ],
     },
     {
@@ -441,9 +441,9 @@ function automatorModules(): CurriculumModule[] {
       title: "Customer Journey Automation",
       subtitle: "Leads من Creator → WhatsApp → CRM → Sales، كاملة.",
       lessons: [
-        automatorShipped(1, "automator-m5-lead-capture", "استقبال Leads من Creator"),
-        automatorShipped(2, "automator-m5-whatsapp-flow", "WhatsApp Flow ذكي"),
-        automatorShipped(3, "automator-m5-follow-up", "المتابعة التلقائية + CRM"),
+        automatorShipped(1, "automator-m5-l1-lead-capture", "استقبال Leads من Creator"),
+        automatorShipped(2, "automator-m5-l2-whatsapp-flow", "WhatsApp Flow ذكي"),
+        automatorShipped(3, "automator-m5-l3-follow-up", "المتابعة التلقائية + CRM"),
       ],
     },
     {
@@ -452,7 +452,7 @@ function automatorModules(): CurriculumModule[] {
       title: "Closing the Loop",
       subtitle: "بياناتك جاهزة — Analyst بيستنّاك.",
       lessons: [
-        automatorShipped(1, "automator-m6-closing-loop", "بياناتك جاهزة — اللي جاي"),
+        automatorShipped(1, "automator-m6-l1-closing-loop", "بياناتك جاهزة — اللي جاي"),
       ],
     },
   ];
@@ -467,7 +467,7 @@ function analystModules(): CurriculumModule[] {
       title: "أنت فين في الخريطة؟",
       subtitle: "ربط Automator باللي جاي — بياناتك جاهزة، دلوقتي بتسأل.",
       lessons: [
-        analystShipped(1, "analyst-m0-from-automation-to-insight", "بياناتك جاهزة — دلوقتي بتسأل"),
+        analystShipped(1, "analyst-m0-l1-from-automation-to-insight", "بياناتك جاهزة — دلوقتي بتسأل"),
       ],
     },
     {
@@ -476,8 +476,8 @@ function analystModules(): CurriculumModule[] {
       title: "Analyst Thinking",
       subtitle: "حوّل الشعور لسؤال — والسؤال لقرار.",
       lessons: [
-        analystShipped(1, "analyst-m1-feeling-to-question", "حوّل الشعور لسؤال"),
-        analystShipped(2, "analyst-m1-right-question-rule", "السؤال الصح أهم من الإجابة"),
+        analystShipped(1, "analyst-m1-l1-feeling-to-question", "حوّل الشعور لسؤال"),
+        analystShipped(2, "analyst-m1-l2-right-question-rule", "السؤال الصح أهم من الإجابة"),
       ],
     },
     {
@@ -486,8 +486,8 @@ function analystModules(): CurriculumModule[] {
       title: "جمع البيانات",
       subtitle: "٣ مصادر + AI كأداة تلخيص.",
       lessons: [
-        analystShipped(1, "analyst-m2-three-sources", "المصادر الثلاثة"),
-        analystShipped(2, "analyst-m2-ai-summarization", "AI = أسرع محلّل عندك"),
+        analystShipped(1, "analyst-m2-l1-three-sources", "المصادر الثلاثة"),
+        analystShipped(2, "analyst-m2-l2-ai-summarization", "AI = أسرع محلّل عندك"),
       ],
     },
     {
@@ -496,8 +496,8 @@ function analystModules(): CurriculumModule[] {
       title: "تفسير البيانات",
       subtitle: "Patterns vs Outliers — وكل تفسير ينتهي بقرار.",
       lessons: [
-        analystShipped(1, "analyst-m3-pattern-vs-outlier", "Pattern أم Outlier؟"),
-        analystShipped(2, "analyst-m3-decision-rule", "كل تفسير ينتهي بـ «إذًا هعمل…»"),
+        analystShipped(1, "analyst-m3-l1-pattern-vs-outlier", "Pattern أم Outlier؟"),
+        analystShipped(2, "analyst-m3-l2-decision-rule", "كل تفسير ينتهي بـ «إذًا هعمل…»"),
       ],
     },
     {
@@ -506,8 +506,8 @@ function analystModules(): CurriculumModule[] {
       title: "القرارات والـ Dashboard",
       subtitle: "٤ أرقام + Review أسبوعي = نظام قرار حقيقي.",
       lessons: [
-        analystShipped(1, "analyst-m4-four-numbers-dashboard", "٤ أرقام بس"),
-        analystShipped(2, "analyst-m4-weekly-review-ritual", "Review أسبوعي = ١٥ دقيقة"),
+        analystShipped(1, "analyst-m4-l1-four-numbers-dashboard", "٤ أرقام بس"),
+        analystShipped(2, "analyst-m4-l2-weekly-review-ritual", "Review أسبوعي = ١٥ دقيقة"),
       ],
     },
     {
@@ -516,8 +516,8 @@ function analystModules(): CurriculumModule[] {
       title: "لما الحاجات بتبوظ",
       subtitle: "أخطاء الأسئلة والتفسير — وعلاجها.",
       lessons: [
-        analystShipped(1, "analyst-m5-question-mistakes", "أخطاء الأسئلة"),
-        analystShipped(2, "analyst-m5-interpretation-mistakes", "أخطاء التفسير"),
+        analystShipped(1, "analyst-m5-l1-question-mistakes", "أخطاء الأسئلة"),
+        analystShipped(2, "analyst-m5-l2-interpretation-mistakes", "أخطاء التفسير"),
       ],
     },
     {
@@ -526,7 +526,7 @@ function analystModules(): CurriculumModule[] {
       title: "Closing the Loop",
       subtitle: "قراراتك جاهزة — Business بيستنّاك.",
       lessons: [
-        analystShipped(1, "analyst-m6-from-decisions-to-business", "قراراتك جاهزة → Business بيشغّلها"),
+        analystShipped(1, "analyst-m6-l1-from-decisions-to-business", "قراراتك جاهزة → Business بيشغّلها"),
       ],
     },
   ];
@@ -541,7 +541,7 @@ function businessModules(): CurriculumModule[] {
       title: "أنت فين في الخريطة؟",
       subtitle: "من Operator لـ Leader — دورك بقى مختلف.",
       lessons: [
-        businessShipped(1, "business-m0-from-decisions-to-leadership", "القرارات بقت بتنفّذ نفسها — دورك إيه؟"),
+        businessShipped(1, "business-m0-l1-from-decisions-to-leadership", "القرارات بقت بتنفّذ نفسها — دورك إيه؟"),
       ],
     },
     {
@@ -550,8 +550,8 @@ function businessModules(): CurriculumModule[] {
       title: "Business Thinking",
       subtitle: "Reactive vs Proactive + إيقاع أسبوعي يربط الـ ٤ مسارات.",
       lessons: [
-        businessShipped(1, "business-m1-reactive-vs-proactive", "Reactive vs Proactive"),
-        businessShipped(2, "business-m1-weekly-rhythm", "أسبوعك = ٤ مسارات"),
+        businessShipped(1, "business-m1-l1-reactive-vs-proactive", "Reactive vs Proactive"),
+        businessShipped(2, "business-m1-l2-weekly-rhythm", "أسبوعك = ٤ مسارات"),
       ],
     },
     {
@@ -560,8 +560,8 @@ function businessModules(): CurriculumModule[] {
       title: "إدارة العملاء بالـ AI",
       subtitle: "دورة حياة العميل + Follow-up Flow.",
       lessons: [
-        businessShipped(1, "business-m2-customer-lifecycle", "دورة حياة العميل"),
-        businessShipped(2, "business-m2-retention-flow", "Follow-up Flow"),
+        businessShipped(1, "business-m2-l1-customer-lifecycle", "دورة حياة العميل"),
+        businessShipped(2, "business-m2-l2-retention-flow", "Follow-up Flow"),
       ],
     },
     {
@@ -570,8 +570,8 @@ function businessModules(): CurriculumModule[] {
       title: "إدارة العمليات بالـ AI",
       subtitle: "Strategic / Operational / Administrative — كل نوع في مكانه.",
       lessons: [
-        businessShipped(1, "business-m3-strategic-operational-admin", "٣ أنواع شغل"),
-        businessShipped(2, "business-m3-delegate-or-automate", "Delegate ولا Automate؟"),
+        businessShipped(1, "business-m3-l1-strategic-operational-admin", "٣ أنواع شغل"),
+        businessShipped(2, "business-m3-l2-delegate-or-automate", "Delegate ولا Automate؟"),
       ],
     },
     {
@@ -580,8 +580,8 @@ function businessModules(): CurriculumModule[] {
       title: "النمو والتوسع",
       subtitle: "علامات الجاهزية + ترتيب التوسع الصح.",
       lessons: [
-        businessShipped(1, "business-m4-readiness-signals", "علامات الجاهزية للتوسع"),
-        businessShipped(2, "business-m4-system-then-people", "System الأول — الناس بعدين"),
+        businessShipped(1, "business-m4-l1-readiness-signals", "علامات الجاهزية للتوسع"),
+        businessShipped(2, "business-m4-l2-system-then-people", "System الأول — الناس بعدين"),
       ],
     },
     {
@@ -590,8 +590,8 @@ function businessModules(): CurriculumModule[] {
       title: "لما الحاجات بتبوظ",
       subtitle: "Reactive Relapse و Premature Scaling — أخطر فخّين.",
       lessons: [
-        businessShipped(1, "business-m5-reactive-relapse", "الرجوع لـ Reactive Mode"),
-        businessShipped(2, "business-m5-premature-scaling", "توسع قبل الأوان"),
+        businessShipped(1, "business-m5-l1-reactive-relapse", "الرجوع لـ Reactive Mode"),
+        businessShipped(2, "business-m5-l2-premature-scaling", "توسع قبل الأوان"),
       ],
     },
     {
@@ -600,7 +600,7 @@ function businessModules(): CurriculumModule[] {
       title: "Closing the Loop — النظام الكامل",
       subtitle: "الـ ٥ مسارات في يومك — شخص + AI + System.",
       lessons: [
-        businessShipped(1, "business-m6-full-ecosystem", "الـ ٥ مسارات في يومك"),
+        businessShipped(1, "business-m6-l1-full-ecosystem", "الـ ٥ مسارات في يومك"),
       ],
     },
   ];
