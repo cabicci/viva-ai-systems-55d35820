@@ -104,10 +104,10 @@ import { SCENES as L_automator_m0_where_you_are_S, SCENE_FRAMES as L_automator_m
 import { SCENES as L_creator_m5_analytics_S, SCENE_FRAMES as L_creator_m5_analytics_F, TOTAL_FRAMES as L_creator_m5_analytics_T } from "./lessons-generated/creator-m5-analytics.gen";
 import { SCENES as L_analyst_m6_from_decisions_to_business_S, SCENE_FRAMES as L_analyst_m6_from_decisions_to_business_F, TOTAL_FRAMES as L_analyst_m6_from_decisions_to_business_T } from "./lessons-generated/analyst-m6-from-decisions-to-business.gen";
 import { SCENES as L_builder_m8_tables_columns_S, SCENE_FRAMES as L_builder_m8_tables_columns_F, TOTAL_FRAMES as L_builder_m8_tables_columns_T } from "./lessons-generated/builder-m8-tables-columns.gen";
-import { SCENES as L_intro_setup_your_ai_S, SCENE_FRAMES as L_intro_setup_your_ai_F, TOTAL_FRAMES as L_intro_setup_your_ai_T } from "./lessons-generated/intro-m1-l3-setup-your-ai.gen";
 import { SCENES as L_intro_what_is_ai_S, SCENE_FRAMES as L_intro_what_is_ai_F, TOTAL_FRAMES as L_intro_what_is_ai_T } from "./lessons-generated/intro-m1-l1-what-is-ai.gen";
 import { SCENES as L_intro_m1_l4_ai_can_cannot_S, SCENE_FRAMES as L_intro_m1_l4_ai_can_cannot_F, TOTAL_FRAMES as L_intro_m1_l4_ai_can_cannot_T } from "./lessons-generated/intro-m1-l4-ai-can-cannot.gen";
 import { SCENES as L_intro_m1_l2_first_prompt_S, SCENE_FRAMES as L_intro_m1_l2_first_prompt_F, TOTAL_FRAMES as L_intro_m1_l2_first_prompt_T } from "./lessons-generated/intro-m1-l2-first-prompt.gen";
+import { SCENES as L_intro_m1_l3_setup_your_ai_S, SCENE_FRAMES as L_intro_m1_l3_setup_your_ai_F, TOTAL_FRAMES as L_intro_m1_l3_setup_your_ai_T } from "./lessons-generated/intro-m1-l3-setup-your-ai.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -205,9 +205,9 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m5-analytics", scenes: L_creator_m5_analytics_S, sceneFrames: L_creator_m5_analytics_F, totalFrames: L_creator_m5_analytics_T },
     { id: "analyst-m6-from-decisions-to-business", scenes: L_analyst_m6_from_decisions_to_business_S, sceneFrames: L_analyst_m6_from_decisions_to_business_F, totalFrames: L_analyst_m6_from_decisions_to_business_T },
     { id: "builder-m8-tables-columns", scenes: L_builder_m8_tables_columns_S, sceneFrames: L_builder_m8_tables_columns_F, totalFrames: L_builder_m8_tables_columns_T },
-    { id: "intro-m1-l3-setup-your-ai", scenes: L_intro_setup_your_ai_S, sceneFrames: L_intro_setup_your_ai_F, totalFrames: L_intro_setup_your_ai_T },
     { id: "intro-m1-l1-what-is-ai", scenes: L_intro_what_is_ai_S, sceneFrames: L_intro_what_is_ai_F, totalFrames: L_intro_what_is_ai_T },
     { id: "intro-m1-l4-ai-can-cannot", scenes: L_intro_m1_l4_ai_can_cannot_S, sceneFrames: L_intro_m1_l4_ai_can_cannot_F, totalFrames: L_intro_m1_l4_ai_can_cannot_T },
     { id: "intro-m1-l2-first-prompt", scenes: L_intro_m1_l2_first_prompt_S, sceneFrames: L_intro_m1_l2_first_prompt_F, totalFrames: L_intro_m1_l2_first_prompt_T },
+    { id: "intro-m1-l3-setup-your-ai", scenes: L_intro_m1_l3_setup_your_ai_S, sceneFrames: L_intro_m1_l3_setup_your_ai_F, totalFrames: L_intro_m1_l3_setup_your_ai_T },
   /* @lesson-entries-end */
 ];
