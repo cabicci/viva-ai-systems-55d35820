@@ -38,6 +38,8 @@ export interface CurriculumModule {
   id: string;
   title: string;
   subtitle?: string;
+  /** "technical" = module dives into code/JWT/RLS/embeddings → show "تقني — للمتقدمين" badge */
+  level?: "technical";
   lessons: CurriculumLesson[];
 }
 
@@ -304,6 +306,7 @@ function builderMilestones(): CurriculumModule[] {
       id: "builder-m5",
       title: "إزاي التطبيق يشتغل فعلاً",
       subtitle: "Frontend · Backend · Database",
+      level: "technical",
       lessons: [
         builderShipped(1, "builder-m5-l9-transition", "Transition — من اللغة للـ App"),
         builderShipped(2, "builder-m5-l10-frontend", "واجهة التطبيق (Frontend)"),
@@ -317,6 +320,7 @@ function builderMilestones(): CurriculumModule[] {
       id: "builder-m6",
       title: "تحويل الفكرة لتطبيق",
       subtitle: "Components · Routes · Debugging",
+      level: "technical",
       lessons: [
         builderShipped(1, "builder-m6-l13-idea-to-page", "من فكرة لصفحة"),
         builderShipped(2, "builder-m6-l14-wireframe", "Wireframe — ارسم قبل ما تبني"),
@@ -331,6 +335,7 @@ function builderMilestones(): CurriculumModule[] {
       id: "builder-m7",
       title: "إزاي التطبيق يفتكر وينظم البيانات",
       subtitle: "Tables · Relations · Queries",
+      level: "technical",
       lessons: [
         builderShipped(1, "builder-m7-l19-tables-columns", "Tables & Columns"),
         builderShipped(2, "builder-m7-l20-relations", "Relations بين الجداول"),
@@ -342,6 +347,7 @@ function builderMilestones(): CurriculumModule[] {
       id: "builder-m8",
       title: "حماية التطبيق والصلاحيات",
       subtitle: "JWT · RLS",
+      level: "technical",
       lessons: [
         builderShipped(1, "builder-m8-l22-sessions-jwt", "كارت الدخول (Sessions & JWT)"),
         builderShipped(2, "builder-m8-l23-rls", "الحارس الشخصي (RLS)"),
@@ -352,6 +358,7 @@ function builderMilestones(): CurriculumModule[] {
       id: "builder-m9",
       title: "دلوقتي هنخلي التطبيق ذكي بجد",
       subtitle: "RAG · Embeddings · Agents",
+      level: "technical",
       lessons: [
         builderShipped(1, "builder-m9-l24-rag", "AI يرد من ملفاتك (RAG)"),
         builderShipped(2, "builder-m9-l25-embeddings", "إزاي الـ AI بيلاقي المعلومة"),
@@ -401,6 +408,7 @@ function automatorModules(): CurriculumModule[] {
       id: "automator-m3",
       title: "Connecting Your Product",
       subtitle: "ربط منتج Builder بالعالم الخارجي — DB، APIs، Errors.",
+      level: "technical",
       lessons: [
         automatorShipped(1, "automator-m3-connect-database", "وصّل الـ DB من Builder"),
         automatorShipped(2, "automator-m3-webhooks-api", "Webhooks & APIs"),
@@ -412,6 +420,7 @@ function automatorModules(): CurriculumModule[] {
       id: "automator-m4",
       title: "AI-Powered Automation",
       subtitle: "LLMs، RAG، و Agents جوه الـ Flow — مش بس ChatGPT.",
+      level: "technical",
       lessons: [
         automatorShipped(1, "automator-m4-llm-in-flow", "LLM جوه الـ Flow"),
         automatorShipped(2, "automator-m4-rag-in-n8n", "RAG جوه الـ Automation"),
@@ -621,15 +630,15 @@ export const PATHS: CurriculumPath[] = [
     ],
   },
   {
-    id: "builder",
-    title: "Builder",
-    tagline: "من فكرة إلى منتج SaaS حقيقي.",
-    icon: Hammer,
-    accent: "primary",
+    id: "business",
+    title: "Business",
+    tagline: "بناء وقيادة عمل تجاري في عصر الذكاء.",
+    icon: Briefcase,
+    accent: "business",
     status: "open",
     kind: "path",
-    route: "/paths/builder",
-    modules: builderMilestones(),
+    route: "/paths/business",
+    modules: businessModules(),
   },
   {
     id: "creator",
@@ -664,15 +673,15 @@ export const PATHS: CurriculumPath[] = [
     modules: analystModules(),
   },
   {
-    id: "business",
-    title: "Business",
-    tagline: "بناء وقيادة عمل تجاري في عصر الذكاء.",
-    icon: Briefcase,
-    accent: "business",
+    id: "builder",
+    title: "Builder",
+    tagline: "من فكرة إلى منتج SaaS حقيقي — مسار تقني للمتقدمين.",
+    icon: Hammer,
+    accent: "primary",
     status: "open",
     kind: "path",
-    route: "/paths/business",
-    modules: businessModules(),
+    route: "/paths/builder",
+    modules: builderMilestones(),
   },
 ];
 
