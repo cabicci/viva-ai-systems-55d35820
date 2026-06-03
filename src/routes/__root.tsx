@@ -27,8 +27,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "AI Ecosystem Platform — منصة التعلم التنفيذي بالذكاء الاصطناعي" },
       { name: "twitter:description", content: "منظومة تعليمية حية مبنية على الذكاء الاصطناعي. تعلّم بالتنفيذ، ابنِ أنظمة حقيقية، وأطلق أعمالك." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2ff7d28b-6ca1-4afc-8485-fe9bb532111e/id-preview-b6e3732b--db3e0659-63cc-4b7e-8985-61692a4adc4a.lovable.app-1778443747615.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2ff7d28b-6ca1-4afc-8485-fe9bb532111e/id-preview-b6e3732b--db3e0659-63cc-4b7e-8985-61692a4adc4a.lovable.app-1778443747615.png" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ea167ac2-2121-4c2e-bc11-5f44fed37196" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ea167ac2-2121-4c2e-bc11-5f44fed37196" },
     ],
     links: [
       {
