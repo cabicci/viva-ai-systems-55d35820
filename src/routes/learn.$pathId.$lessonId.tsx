@@ -205,7 +205,7 @@ function UnifiedLessonPage() {
     if (isCompleted) return;
     // Mastery gate: if the lesson ships a gated mission, the user can't
     // self-mark complete until the mission is actually passed.
-    if (missionShape?.hasRubric && missionGate.kind !== "passed") return;
+    if (missionShape?.hasRubric && nextLocked) return;
     setStatus(lesson.id, "completed");
     // Only record streak activity on the actual transition to completed,
     // not on every "Next" click of an already-completed lesson.

@@ -312,6 +312,8 @@ function ModuleRow({
     prevNotMastered,
     prevMissingMissionCount,
   } = status;
+  const effectiveModuleLocked = !isPro && moduleLocked;
+  const effectivePrevNotMastered = !isPro && prevNotMastered;
 
   return (
     <div
@@ -340,8 +342,8 @@ function ModuleRow({
           <p className="text-xs text-muted-foreground mt-0.5">
             {moduleDone
               ? "مكتمل"
-              : moduleLocked
-                ? prevNotMastered
+              : effectiveModuleLocked
+                ? effectivePrevNotMastered
                   ? `مقفل · ${prevMissingMissionCount} مهمة لسه`
                   : "مقفل"
                 : soon
@@ -354,7 +356,7 @@ function ModuleRow({
             <CheckCircle2 className="h-4 w-4" />
           </span>
         )}
-        {moduleLocked && (
+        {!moduleDone && effectiveModuleLocked && (
           <span className="hover-shake grid h-8 w-8 place-items-center rounded-lg bg-muted text-muted-foreground shrink-0">
             <Lock className="lock-icon h-3.5 w-3.5" />
           </span>
@@ -377,7 +379,7 @@ function ModuleRow({
               {m.lessons.map((l) => {
                 const lessonData = getLesson(l.id);
                 const access = getLessonAccess(l, store, orderedIds, getStatus);
-                const sequentialUnlocked = access.isUnlocked;
+                const sequentialUnlocked = isPro ? l.state === "available" : access.isUnlocked;
                 // Entitlement gate:
                 // - non-intro path + intro not done → locked
                 // - non-intro path + not Pro + not free (path-intro) → paywall

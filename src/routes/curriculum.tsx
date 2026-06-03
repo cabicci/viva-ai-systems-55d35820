@@ -26,6 +26,7 @@ import { getLessonAccess, getModuleStatus } from "@/lib/builder-runtime";
 import { LessonLink } from "@/components/lesson/LessonLink";
 import { useModulesMastery } from "@/lib/mastery-gate";
 import type { ModuleMastery } from "@/lib/mastery-gate";
+import { useEntitlement } from "@/lib/entitlements";
 
 type CurriculumSearch = { module?: string; lesson?: string };
 
@@ -53,6 +54,7 @@ export const Route = createFileRoute("/curriculum")({
 
 function CurriculumPage() {
   const { store, getStatus } = useLessonProgress();
+  const { isPro } = useEntitlement();
   const search = Route.useSearch();
   const allModules = useMemo(
     () => PATHS.flatMap((p) => p.modules),
@@ -138,6 +140,7 @@ function CurriculumPage() {
                 progress={store}
                 getStatus={getStatus}
                 mastery={mastery}
+                isPro={isPro}
               />
             ));
 
@@ -226,11 +229,13 @@ function PathBlock({
   progress,
   getStatus,
   mastery,
+  isPro,
 }: {
   path: CurriculumPath;
   progress: Record<string, LessonStatus>;
   getStatus: (id: string) => LessonStatus;
   mastery: Record<string, ModuleMastery>;
+  isPro: boolean;
 }) {
   const Icon = path.icon;
   const isOpen = path.status === "open";
@@ -328,6 +333,7 @@ function PathBlock({
               prev ? mastery[prev.id] : undefined,
             );
             const moduleUnlocked = !status.moduleLocked;
+            const effectiveModuleUnlocked = isPro || moduleUnlocked;
             const moduleCompleted = status.moduleCompleted;
 
             return (
@@ -335,7 +341,7 @@ function PathBlock({
                 key={m.id}
                 id={`module-${m.id}`}
                 className={`rounded-2xl p-5 flex flex-col gap-4 transition border border-border/40 bg-background/40 ${
-                  !moduleUnlocked
+                  !effectiveModuleUnlocked
                     ? "opacity-60"
                     : moduleCompleted
                       ? "border-foreground/20"
@@ -365,12 +371,12 @@ function PathBlock({
                       <p className="text-xs text-muted-foreground mt-0.5">{m.subtitle}</p>
                     )}
                   </div>
-                  {!moduleUnlocked && (
+                  {!effectiveModuleUnlocked && (
                     <Lock className="h-4 w-4 text-muted-foreground shrink-0 mt-1" />
                   )}
                 </header>
 
-                {status.moduleLocked && status.prevNotMastered && (
+                {!isPro && status.moduleLocked && status.prevNotMastered && (
                   <p className="text-[11px] font-mono text-amber-300/90 bg-amber-400/[0.07] border border-amber-400/20 rounded-md px-2.5 py-1.5">
                     لازم تعدّي {status.prevMissingMissionCount} مهمة في الـ module اللي قبل عشان ده يفتح
                   </p>
@@ -381,7 +387,7 @@ function PathBlock({
                     <LessonRow
                       key={l.id}
                       lesson={l}
-                      moduleUnlocked={moduleUnlocked}
+                      moduleUnlocked={effectiveModuleUnlocked}
                       orderedIds={orderedIds}
                       progress={progress}
                       getStatus={getStatus}
