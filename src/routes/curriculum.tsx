@@ -331,9 +331,9 @@ function PathBlock({
               prev,
               getStatus,
               prev ? mastery[prev.id] : undefined,
+              isPro, // bypassLocks for pro/admin
             );
             const moduleUnlocked = !status.moduleLocked;
-            const effectiveModuleUnlocked = isPro || moduleUnlocked;
             const moduleCompleted = status.moduleCompleted;
 
             return (
