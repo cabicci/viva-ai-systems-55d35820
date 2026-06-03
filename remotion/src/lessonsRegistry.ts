@@ -11,7 +11,6 @@ export type LessonModule = LessonRendererProps & {
 
 // The build script appends imports + entries below the marker.
 /* @lesson-imports-start */
-import { SCENES as L_builder_m10_first_users_S, SCENE_FRAMES as L_builder_m10_first_users_F, TOTAL_FRAMES as L_builder_m10_first_users_T } from "./lessons-generated/builder-m10-first-users.gen";
 import { SCENES as L_creator_m1_attention_economy_S, SCENE_FRAMES as L_creator_m1_attention_economy_F, TOTAL_FRAMES as L_creator_m1_attention_economy_T } from "./lessons-generated/creator-m1-attention-economy.gen";
 import { SCENES as L_creator_m1_why_content_S, SCENE_FRAMES as L_creator_m1_why_content_F, TOTAL_FRAMES as L_creator_m1_why_content_T } from "./lessons-generated/creator-m1-why-content.gen";
 import { SCENES as L_creator_m2_cta_S, SCENE_FRAMES as L_creator_m2_cta_F, TOTAL_FRAMES as L_creator_m2_cta_T } from "./lessons-generated/creator-m2-cta.gen";
@@ -107,11 +106,11 @@ import { SCENES as L_builder_m9_l25_embeddings_S, SCENE_FRAMES as L_builder_m9_l
 import { SCENES as L_builder_m9_l24_rag_S, SCENE_FRAMES as L_builder_m9_l24_rag_F, TOTAL_FRAMES as L_builder_m9_l24_rag_T } from "./lessons-generated/builder-m9-l24-rag.gen";
 import { SCENES as L_builder_m9_l26_agents_S, SCENE_FRAMES as L_builder_m9_l26_agents_F, TOTAL_FRAMES as L_builder_m9_l26_agents_T } from "./lessons-generated/builder-m9-l26-agents.gen";
 import { SCENES as L_builder_m10_deploy_domain_S, SCENE_FRAMES as L_builder_m10_deploy_domain_F, TOTAL_FRAMES as L_builder_m10_deploy_domain_T } from "./lessons-generated/builder-m10-deploy-domain.gen";
+import { SCENES as L_builder_m10_first_users_S, SCENE_FRAMES as L_builder_m10_first_users_F, TOTAL_FRAMES as L_builder_m10_first_users_T } from "./lessons-generated/builder-m10-first-users.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
   /* @lesson-entries-start */
-    { id: "builder-m10-first-users", scenes: L_builder_m10_first_users_S, sceneFrames: L_builder_m10_first_users_F, totalFrames: L_builder_m10_first_users_T },
     { id: "creator-m1-attention-economy", scenes: L_creator_m1_attention_economy_S, sceneFrames: L_creator_m1_attention_economy_F, totalFrames: L_creator_m1_attention_economy_T },
     { id: "creator-m1-why-content", scenes: L_creator_m1_why_content_S, sceneFrames: L_creator_m1_why_content_F, totalFrames: L_creator_m1_why_content_T },
     { id: "creator-m2-cta", scenes: L_creator_m2_cta_S, sceneFrames: L_creator_m2_cta_F, totalFrames: L_creator_m2_cta_T },
@@ -207,5 +206,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m9-l24-rag", scenes: L_builder_m9_l24_rag_S, sceneFrames: L_builder_m9_l24_rag_F, totalFrames: L_builder_m9_l24_rag_T },
     { id: "builder-m9-l26-agents", scenes: L_builder_m9_l26_agents_S, sceneFrames: L_builder_m9_l26_agents_F, totalFrames: L_builder_m9_l26_agents_T },
     { id: "builder-m10-deploy-domain", scenes: L_builder_m10_deploy_domain_S, sceneFrames: L_builder_m10_deploy_domain_F, totalFrames: L_builder_m10_deploy_domain_T },
+    { id: "builder-m10-first-users", scenes: L_builder_m10_first_users_S, sceneFrames: L_builder_m10_first_users_F, totalFrames: L_builder_m10_first_users_T },
   /* @lesson-entries-end */
 ];

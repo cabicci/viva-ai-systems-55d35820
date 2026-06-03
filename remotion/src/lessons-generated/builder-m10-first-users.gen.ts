@@ -5,94 +5,120 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "subtitle": "التطبيق live، الـ URL شغّال، بس مفيش حد بيستخدمه — وده مش launch.",
     "title": "أول ١٠ مستخدمين",
+    "subtitle": "التطبيق شغال بس مفيش مستخدمين؟ أول ١٠ يحددوا مستقبل منتجك",
     "highlight": "أهم من أول ١٠٠٠",
     "chip": "أهلًا"
   },
   {
     "card": "ConceptCard",
     "accent": "lavender",
+    "term": "Funnel",
     "definition": "المشوار اللي بيمشيه الزبون من أول ما يشوف إعلانك لحد ما يشتري منك.",
-    "tag": "رحلة الزبون",
-    "term": "Funnel"
+    "tag": "رحلة العميل"
   },
   {
     "card": "ConceptCard",
     "accent": "peach",
-    "definition": "أهم رقم في مشروعك بيعرفك إنت بتكبر فعلاً ولا بتضيع وقتك.",
-    "tag": "الرقم الأساسي",
-    "term": "North Star Metric"
+    "tag": "مقياس النجاح",
+    "term": "North Star Metric",
+    "definition": "أهم رقم في مشروعك بيعرفك إنت بتكبر فعلاً ولا بتضيع وقتك."
   },
   {
     "card": "ConceptCard",
     "accent": "yellow",
+    "tag": "المستخدمون الأوائل",
     "term": "Early Adopters (أول ناس)",
-    "definition": "أول ناس بيجربوا فكرتك وهي لسه \"عضم\" وبيستحملوا عيوبها عشان حابينها.",
-    "tag": "المتحمسون الأوائل"
+    "definition": "أول ناس بيجربوا فكرتك وهي لسه \"عضم\" وبيستحملوا عيوبها عشان حابينها."
   },
   {
     "card": "ConceptCard",
     "accent": "pink",
     "term": "Feedback Loop (لفة الرأي)",
     "definition": "تاخد رأي الناس، تعدل فوراً، وترجع توريهم اللي عملته عشان تتطور بسرعة.",
-    "tag": "تطوير مستمر"
+    "tag": "دائرة التحسين"
   },
   {
     "card": "ConceptCard",
     "accent": "mintDeep",
     "term": "Onboarding (ترحيب)",
-    "tag": "سهولة الاستخدام",
-    "definition": "شطارتك في إنك ترحب بالمستخدم وتعرفه يستخدم تطبيقك إزاي في أول دقائق."
+    "definition": "شطارتك في إنك ترحب بالمستخدم وتعرفه يستخدم تطبيقك إزاي في أول دقائق.",
+    "tag": "تسهيل البدء"
   },
   {
     "card": "ConceptCard",
-    "accent": "mint",
-    "tag": "العودة الدائمة",
-    "definition": "إن الزبون \"يعلّق\" معاك ويرجعلك تاني بدل ما يمسح التطبيق بعد مرة.",
-    "term": "Retention (الاستمرارية)"
+    "accent": "lavender",
+    "tag": "ولاء المستخدم",
+    "term": "Retention (الاستمرارية)",
+    "definition": "إن الزبون \"يعلّق\" معاك ويرجعلك تاني بدل ما يمسح التطبيق بعد مرة."
   },
   {
     "card": "BulletsCard",
-    "accent": "lavender",
-    "title": "Acquisition → Activation → Retention → Iteration",
+    "accent": "peach",
     "bullets": [
-      "Acquisition: في البداية، المستخدمين بييجوا من شبكتك المباشرة، Communities متخصصة، و DMs شخصية.",
-      "Activation: فيه فعل واحد لو المستخدم عمله، هيرجع. لو أقل من ٥٠٪ وصلوا للفعل ده، الـ onboarding بايظ.",
-      "Retention: ده الميزان الحقيقي للقيمة. لو ١٠٠ signup وصفر رجعوا = منتج وحش. لو ١٠ signup و٧ رجعوا = منتج ممتاز.",
-      "Iteration: كل أسبوع، كلّم ٣ مستخدمين. اسألهم أسئلة محددة عشان تاخد ٣٠ insight قوي/شهر."
+      "منين بييجوا؟ في البداية، مش من Google ولا Ads. من ٣ مصادر: شبكتك المباشرة، communities متخصّصة، و DMs شخصية.",
+      "١٠ DMs مدروسة > ١٠٠٠ منشور عام."
+    ],
+    "title": "Acquisition"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "yellow",
+    "title": "Activation",
+    "bullets": [
+      "بيوصلوا، بيعملوا الـ \"aha moment\"؟ كل منتج فيه فعل واحد لو المستخدم عمله = هيرجع.",
+      "قس نسبة المستخدمين اللي بيوصلوا للفعل ده في أول session. لو أقل من ٥٠٪، الـ onboarding بايظ."
     ]
   },
   {
+    "card": "BulletsCard",
+    "accent": "pink",
+    "title": "Retention",
+    "bullets": [
+      "بيرجعوا تاني؟ ده الميزان الحقيقي للقيمة.",
+      "متابع W1 أهم من عدد signups. لو ١٠٠ signup و٠ رجعوا = منتج وحش. لو ١٠ signup و٧ رجعوا = منتج ممتاز."
+    ]
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "mintDeep",
+    "bullets": [
+      "اعمل Talk-to-User loop: كل أسبوع، كلّم ٣ مستخدمين (call ١٥ دقيقة).",
+      "أسئلة محدّدة: \"إيه آخر مرة استخدمت التطبيق؟\"، \"إيه اللي حاولت تعمله ومنفعش؟\"، \"لو التطبيق وقف بكرة، هيوحشك في إيه؟\".",
+      "٣ ساعات calls/أسبوع = ٣٠ insight قوي/شهر — مش هتلاقيهم في analytics."
+    ],
+    "title": "Iteration"
+  },
+  {
     "card": "ScreenshotCard",
-    "accent": "peach",
+    "accent": "lavender",
+    "eyebrow": "شوف بنفسك",
+    "src": "lessons/builder-m10-first-users.jpg",
     "caption": "الـ dashboard ده مش بيعرض أرقام عشوائية — كل كرت بيقيس نقطة في funnel الـ Activation/Retention. \"السلسلة 0 يوم\" = streak metric (لو بقت >٧، اليوزر بيرجع). \"دروس مكتملة 0/30\" = depth of engagement. \"Introduction 4/0\" = activation funnel — لو معديش الأربع دروس دي، اليوزر مرشّح يخرج. التطبيق ذكي بيستخدم نفس الأسلوب: يخلّي اليوزر يشوف تقدّمه بصريًا، لأن الأرقام دي بتحرّك سلوكه. لما تـ launch منتجك، كل feature لازم لها metric واضح إنت بتتابعه — مش مهم تعرف \"كم زائر\"، مهم تعرف \"كم وصلوا للقيمة وكم رجعوا\".",
-    "title": "Case Study — كل عداد في dashboard المتعلم = retention metric",
-    "eyebrow": "من المنصة",
-    "src": "lessons/builder-m10-first-users.jpg"
+    "title": "كل عداد في dashboard المتعلم = retention metric"
   },
   {
     "card": "CompareCard",
-    "accent": "yellow",
+    "accent": "peach",
+    "right": {
+      "body": "تجيب ١٠ مستخدمين من شبكتك. كل أسبوع تكلّم ٣ منهم ١٥ دقيقة. تسجّل: إيه عمله، فين علّق، إيه ضايقه. تختار عقدة واحدة بس وتحلّها هذا الأسبوع. تـ deploy. تخبّر المستخدم: \"اللي قلتلي عليه اتعمل\". تكرّر ٤ أسابيع. النتيجة: المنتج بيطوّر للمستخدمين الفعليين، الـ retention بيرتفع، وبتفهم بالظبط مين عميلك المثالي قبل ما تبدأ marketing.",
+      "label": "RIGHT — ١٠ مستخدمين، ٣ calls/أسبوع، تعديل واحد/أسبوع"
+    },
     "left": {
       "label": "FAILURE — تطلق وتستنّى الناس تيجي",
-      "body": "تـ launch وتستنى. تجيب ٥٠٠ زائر، ٢٠ signup، صفر رجعوا. تفسير غلط: 'Marketing ضعيف'. مش بتعرف ليه مش راجعين، ولا مين هما. بتضيف features عشوائية أملًا في إن واحدة تضرب، بس الـ core value مش واضح."
+      "body": "تـ launch على Product Hunt، تعمل tweet، تستنّى. تجيب ٥٠٠ زائر في يوم، ٢٠ signup، صفر رجعوا. تفسير غلط: \"Marketing ضعيف\". تضيف Ads. النتيجة نفسها بـ ١٠× التكلفة. مش بتعرف ليه مش راجعين، مش بتعرف مين هما، مش بتعرف إيه اللي مش شغّال. تضيف features عشوائية أملًا في إن واحدة تضرب — بس الـ core value مش واضح من الأساس."
     },
-    "title": "Build & Pray vs Build → Talk → Iterate",
-    "right": {
-      "body": "تجيب ١٠ مستخدمين من شبكتك. كل أسبوع تكلّم ٣ منهم ١٥ دقيقة. تسجّل إيه عملوه، وفين علّقوا. تختار عقدة واحدة بس وتحلها الأسبوع ده. تـ deploy وتخبر المستخدم. النتيجة: المنتج بيطوّر للمستخدمين الفعليين، الـ retention بيرتفع.",
-      "label": "RIGHT — ١٠ مستخدمين، ٣ calls/أسبوع، تعديل واحد/أسبوع"
-    }
+    "title": "Build & Pray vs Build → Talk → Iterate"
   },
   {
     "card": "CTACard",
-    "accent": "pink",
-    "highlight": "وحدّد الـ metric الواحد",
+    "accent": "yellow",
+    "tagline": "يلا نطبق اللي اتعلمناه ونشوف مدى فهمك للدرس.",
+    "title": "خطة launch من ٤ أسابيع",
     "eyebrow": "دورك دلوقتي",
-    "tagline": "يلا نطبّق ونشوف إزاي تجيب أول ١٠ مستخدمين وتخليهم يرجعوا.",
-    "title": "خطة launch من ٤ أسابيع"
+    "highlight": "وحدّد الـ metric الواحد"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [475, 371, 340, 365, 376, 391, 391, 838, 753, 768, 521];
+export const SCENE_FRAMES: number[] = [762, 479, 499, 501, 535, 473, 499, 671, 655, 677, 820, 1146, 972, 1074];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);

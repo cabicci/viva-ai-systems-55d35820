@@ -40,7 +40,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "builder-m1-l2-tokens-training": "ceb2d5dc-de3d-48f1-89bc-30f9ddc14ff2",
   "builder-m1-l1-what-is-llm": "7f735f93-67d0-4256-98c9-5ca413a73f78",
   "builder-m10-deploy-domain": "d3a47ca4-6822-4771-ab70-be5dc944f3d6",
-  "builder-m10-first-users": "169f80c0-e270-47e6-be80-8cc66650f1c1",
+  "builder-m10-first-users": "2850b125-f849-4aaf-b422-ac16864abe42",
   "builder-m2-l4-instructions-examples": "67b59072-4f9b-4812-8c87-62eba64d0ed9",
   "builder-m2-l3-prompt-layer": "e3e66e6c-27f3-4a5d-9b7b-9382e484925e",
   "builder-m2-l5-style-control": "33d993a6-79d3-45d6-b016-9e2b1d2b5c63",
