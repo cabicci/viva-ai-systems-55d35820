@@ -98,7 +98,6 @@ import { SCENES as L_builder_m8_l23_rls_S, SCENE_FRAMES as L_builder_m8_l23_rls_
 import { SCENES as L_builder_m6_l16_components_routes_S, SCENE_FRAMES as L_builder_m6_l16_components_routes_F, TOTAL_FRAMES as L_builder_m6_l16_components_routes_T } from "./lessons-generated/builder-m6-l16-components-routes.gen";
 import { SCENES as L_builder_m8_l22_sessions_jwt_S, SCENE_FRAMES as L_builder_m8_l22_sessions_jwt_F, TOTAL_FRAMES as L_builder_m8_l22_sessions_jwt_T } from "./lessons-generated/builder-m8-l22-sessions-jwt.gen";
 import { SCENES as L_builder_m6_l17_iteration_S, SCENE_FRAMES as L_builder_m6_l17_iteration_F, TOTAL_FRAMES as L_builder_m6_l17_iteration_T } from "./lessons-generated/builder-m6-l17-iteration.gen";
-import { SCENES as L_builder_m6_l18_debugging_S, SCENE_FRAMES as L_builder_m6_l18_debugging_F, TOTAL_FRAMES as L_builder_m6_l18_debugging_T } from "./lessons-generated/builder-m6-l18-debugging.gen";
 import { SCENES as L_builder_m9_l25_embeddings_S, SCENE_FRAMES as L_builder_m9_l25_embeddings_F, TOTAL_FRAMES as L_builder_m9_l25_embeddings_T } from "./lessons-generated/builder-m9-l25-embeddings.gen";
 import { SCENES as L_builder_m9_l24_rag_S, SCENE_FRAMES as L_builder_m9_l24_rag_F, TOTAL_FRAMES as L_builder_m9_l24_rag_T } from "./lessons-generated/builder-m9-l24-rag.gen";
 import { SCENES as L_builder_m9_l26_agents_S, SCENE_FRAMES as L_builder_m9_l26_agents_F, TOTAL_FRAMES as L_builder_m9_l26_agents_T } from "./lessons-generated/builder-m9-l26-agents.gen";
@@ -107,6 +106,7 @@ import { SCENES as L_builder_m10_first_users_S, SCENE_FRAMES as L_builder_m10_fi
 import { SCENES as L_builder_m5_l12_database_intro_S, SCENE_FRAMES as L_builder_m5_l12_database_intro_F, TOTAL_FRAMES as L_builder_m5_l12_database_intro_T } from "./lessons-generated/builder-m5-l12-database-intro.gen";
 import { SCENES as L_builder_m5_l11_backend_api_S, SCENE_FRAMES as L_builder_m5_l11_backend_api_F, TOTAL_FRAMES as L_builder_m5_l11_backend_api_T } from "./lessons-generated/builder-m5-l11-backend-api.gen";
 import { SCENES as L_builder_m1_l2_tokens_training_S, SCENE_FRAMES as L_builder_m1_l2_tokens_training_F, TOTAL_FRAMES as L_builder_m1_l2_tokens_training_T } from "./lessons-generated/builder-m1-l2-tokens-training.gen";
+import { SCENES as L_builder_m6_l18_debugging_S, SCENE_FRAMES as L_builder_m6_l18_debugging_F, TOTAL_FRAMES as L_builder_m6_l18_debugging_T } from "./lessons-generated/builder-m6-l18-debugging.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -198,7 +198,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m6-l16-components-routes", scenes: L_builder_m6_l16_components_routes_S, sceneFrames: L_builder_m6_l16_components_routes_F, totalFrames: L_builder_m6_l16_components_routes_T },
     { id: "builder-m8-l22-sessions-jwt", scenes: L_builder_m8_l22_sessions_jwt_S, sceneFrames: L_builder_m8_l22_sessions_jwt_F, totalFrames: L_builder_m8_l22_sessions_jwt_T },
     { id: "builder-m6-l17-iteration", scenes: L_builder_m6_l17_iteration_S, sceneFrames: L_builder_m6_l17_iteration_F, totalFrames: L_builder_m6_l17_iteration_T },
-    { id: "builder-m6-l18-debugging", scenes: L_builder_m6_l18_debugging_S, sceneFrames: L_builder_m6_l18_debugging_F, totalFrames: L_builder_m6_l18_debugging_T },
     { id: "builder-m9-l25-embeddings", scenes: L_builder_m9_l25_embeddings_S, sceneFrames: L_builder_m9_l25_embeddings_F, totalFrames: L_builder_m9_l25_embeddings_T },
     { id: "builder-m9-l24-rag", scenes: L_builder_m9_l24_rag_S, sceneFrames: L_builder_m9_l24_rag_F, totalFrames: L_builder_m9_l24_rag_T },
     { id: "builder-m9-l26-agents", scenes: L_builder_m9_l26_agents_S, sceneFrames: L_builder_m9_l26_agents_F, totalFrames: L_builder_m9_l26_agents_T },
@@ -207,5 +206,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m5-l12-database-intro", scenes: L_builder_m5_l12_database_intro_S, sceneFrames: L_builder_m5_l12_database_intro_F, totalFrames: L_builder_m5_l12_database_intro_T },
     { id: "builder-m5-l11-backend-api", scenes: L_builder_m5_l11_backend_api_S, sceneFrames: L_builder_m5_l11_backend_api_F, totalFrames: L_builder_m5_l11_backend_api_T },
     { id: "builder-m1-l2-tokens-training", scenes: L_builder_m1_l2_tokens_training_S, sceneFrames: L_builder_m1_l2_tokens_training_F, totalFrames: L_builder_m1_l2_tokens_training_T },
+    { id: "builder-m6-l18-debugging", scenes: L_builder_m6_l18_debugging_S, sceneFrames: L_builder_m6_l18_debugging_F, totalFrames: L_builder_m6_l18_debugging_T },
   /* @lesson-entries-end */
 ];
