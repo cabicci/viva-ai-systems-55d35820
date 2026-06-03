@@ -9,7 +9,7 @@ import { getPath, pathLessonIds, PATHS, type CurriculumPath } from "@/lib/curric
 import { useLessonProgress, type LessonStatus } from "@/lib/lesson-progress";
 import type { CurriculumModule } from "@/lib/curriculum-data";
 import { getLessonAccess, getModuleStatus } from "@/lib/builder-runtime";
-import { useModulesMastery } from "@/lib/mastery-gate";
+import { useModulesMastery, type ModuleMastery } from "@/lib/mastery-gate";
 import { LessonLink } from "@/components/lesson/LessonLink";
 import { getLesson } from "@/lib/unified-lessons";
 import { WelcomeHint } from "@/components/dashboard/WelcomeHint";
@@ -272,6 +272,7 @@ function Dashboard() {
 function ModuleRow({
   module: m,
   prevModule,
+  prevMastery,
   moduleIndex,
   orderedIds,
   store,
@@ -284,6 +285,7 @@ function ModuleRow({
 }: {
   module: CurriculumModule;
   prevModule: CurriculumModule | undefined;
+  prevMastery: ModuleMastery | undefined;
   moduleIndex: number;
   orderedIds: string[];
   store: Record<string, LessonStatus>;
@@ -294,12 +296,11 @@ function ModuleRow({
   isPro: boolean;
   introAllDone: boolean;
 }) {
-  const { mastery } = useModulesMastery(prevModule ? [prevModule] : []);
   const status = getModuleStatus(
     m,
     prevModule,
     getStatus,
-    prevModule ? mastery[prevModule.id] : undefined,
+    prevMastery,
     isPro, // bypassLocks for pro/admin — single source of truth
   );
   const {
@@ -501,6 +502,8 @@ function PathCard({
   ).length;
   const pct = total ? Math.round((done / total) * 100) : 0;
   const animatedPct = useCountUp(pct, 1100);
+  // One mastery query per path instead of one per module row.
+  const { mastery: pathMastery } = useModulesMastery(path.modules);
   const isOpen = path.status === "open";
   // Per-path pastel color — matches the 5 path colors on the landing page
   // (Builder/Creator/Automator/Analyst/Business) + a distinct 6th for Intro.
@@ -596,6 +599,7 @@ function PathCard({
               key={m.id}
               module={m}
               prevModule={path.modules[i - 1]}
+              prevMastery={path.modules[i - 1] ? pathMastery[path.modules[i - 1].id] : undefined}
               moduleIndex={i}
               orderedIds={orderedIds}
               store={store}
