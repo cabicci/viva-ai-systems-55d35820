@@ -336,7 +336,14 @@ function PathBlock({
                     <p className="text-[11px] font-mono text-muted-foreground">
                       MODULE M{mi + 1}
                     </p>
-                    <h3 className="font-bold text-lg leading-tight">{m.title}</h3>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h3 className="font-bold text-lg leading-tight">{m.title}</h3>
+                      {m.level === "technical" && (
+                        <span className="text-[10px] font-bold tracking-wide px-1.5 py-0.5 rounded bg-amber-400/15 text-amber-300 border border-amber-400/30">
+                          تقني — للمتقدمين
+                        </span>
+                      )}
+                    </div>
                     {m.subtitle && (
                       <p className="text-xs text-muted-foreground mt-0.5">{m.subtitle}</p>
                     )}
