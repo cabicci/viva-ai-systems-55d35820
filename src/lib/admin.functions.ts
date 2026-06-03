@@ -110,11 +110,21 @@ export const getAdminActivity = createServerFn({ method: "GET" })
   .handler(async ({ context }): Promise<AdminActivity> => {
     await assertAdmin(context);
 
-    const { data: usersPage } = await supabaseAdmin.auth.admin.listUsers({
-      page: 1,
-      perPage: 20,
-    });
-    const signups: RecentSignup[] = (usersPage?.users ?? [])
+    // Fetch up to 5 pages (500 users) to keep "Recent signups" accurate
+    // beyond the first 20. listUsers returns by created_at desc by default,
+    // but we re-sort defensively before slicing.
+    const collected: Array<{ id: string; email?: string | null; created_at: string }> = [];
+    for (let page = 1; page <= 5; page++) {
+      const { data: usersPage } = await supabaseAdmin.auth.admin.listUsers({
+        page,
+        perPage: 100,
+      });
+      const batch = usersPage?.users ?? [];
+      if (batch.length === 0) break;
+      collected.push(...batch);
+      if (batch.length < 100) break;
+    }
+    const signups: RecentSignup[] = collected
       .sort(
         (a, b) =>
           new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
