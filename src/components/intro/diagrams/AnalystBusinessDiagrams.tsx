@@ -37,7 +37,7 @@ const Title: FC<{ t: string; s?: string }> = ({ t, s }) => (
 );
 
 /* ============================================================
- * ANALYST · M0 · Decision Loop (Automator → Analyst)
+ * ANALYST · M1 · Decision Loop (Automator → Analyst)
  * ============================================================ */
 export const DecisionLoopDiagram: FC = () => {
   const nodes = [
@@ -514,7 +514,7 @@ export const DecisionBacklogDiagram: FC = () => {
 };
 
 /* ============================================================
- * BUSINESS · M0 · Operator vs Leader (time pie)
+ * BUSINESS · M1 · Operator vs Leader (time pie)
  * ============================================================ */
 const Donut: FC<{ cx: number; cy: number; r: number; segments: { v: number; fill: string; label: string }[] }> = ({ cx, cy, r, segments }) => {
   const total = segments.reduce((a, b) => a + b.v, 0);
