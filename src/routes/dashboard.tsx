@@ -4,7 +4,7 @@ import { Sidebar } from "@/components/dashboard/Sidebar";
 import { useAuth } from "@/lib/auth-context";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { ChevronDown, Play, Lock, CheckCircle2, Clock, Trophy, Timer } from "lucide-react";
+import { ChevronDown, Play, Lock, CheckCircle2, Clock, Trophy } from "lucide-react";
 import { getPath, pathLessonIds, PATHS, type CurriculumPath } from "@/lib/curriculum-data";
 import { useLessonProgress, type LessonStatus } from "@/lib/lesson-progress";
 import type { CurriculumModule } from "@/lib/curriculum-data";
@@ -16,9 +16,9 @@ import { WelcomeHint } from "@/components/dashboard/WelcomeHint";
 import { WelcomeChecklist } from "@/components/dashboard/WelcomeChecklist";
 import { ReviewsDueCard } from "@/components/dashboard/ReviewsDueCard";
 import { useCountUp } from "@/hooks/use-count-up";
-import { usePlatformTime, formatPlatformTime } from "@/hooks/use-platform-time";
+
 import { StreakCard } from "@/components/dashboard/StreakCard";
-import { useEntitlement, isLessonFree } from "@/lib/entitlements";
+import { useEntitlement, decideLessonGate } from "@/lib/entitlements";
 import { PhaseRibbon } from "@/components/admin/PhaseRibbon";
 
 type DashboardSearch = { path?: string; module?: string; lesson?: string };
@@ -182,7 +182,10 @@ function Dashboard() {
                       setOpenPathId(openPathId === p.id ? null : p.id)
                     }
                     isPro={isPro || isAdmin}
+                    isAdmin={isAdmin}
                     introAllDone={introAllDone}
+                    introIds={introIds}
+                    introCompletedCount={introDone}
                   />
                 );
               })}
@@ -281,7 +284,10 @@ function ModuleRow({
   onToggle,
   pathId,
   isPro,
+  isAdmin,
   introAllDone,
+  introIds,
+  introCompletedCount,
 }: {
   module: CurriculumModule;
   prevModule: CurriculumModule | undefined;
@@ -294,7 +300,10 @@ function ModuleRow({
   onToggle: () => void;
   pathId: string;
   isPro: boolean;
+  isAdmin: boolean;
   introAllDone: boolean;
+  introIds: string[];
+  introCompletedCount: number;
 }) {
   const status = getModuleStatus(
     m,
@@ -380,14 +389,20 @@ function ModuleRow({
                 const lessonData = getLesson(l.id);
                 const access = getLessonAccess(l, store, orderedIds, getStatus);
                 const sequentialUnlocked = isPro ? l.state === "available" : access.isUnlocked;
-                // Entitlement gate:
-                // - non-intro path + intro not done → locked
-                // - non-intro path + not Pro + not free (path-intro) → paywall
-                let paid: "locked-intro" | "paywall" | null = null;
-                if (!isPro && pathId !== "intro") {
-                  if (!introAllDone) paid = "locked-intro";
-                  else if (!isLessonFree(l.id)) paid = "paywall";
-                }
+                // Single source of truth — same gate the lesson page uses.
+                const gate = decideLessonGate({
+                  lessonId: l.id,
+                  isPro,
+                  isAdmin,
+                  introCompletedCount,
+                  introTotal: introIds.length,
+                });
+                const paid: "locked-intro" | "paywall" | null =
+                  gate.kind === "complete-intro-first"
+                    ? "locked-intro"
+                    : gate.kind === "paywall"
+                      ? "paywall"
+                      : null;
                 const lUnlocked = sequentialUnlocked && paid === null;
                 const lDone = access.isCompleted;
                 const lInProgress = access.isInProgress;
@@ -479,7 +494,10 @@ function PathCard({
   isExpanded,
   onToggleExpand,
   isPro,
+  isAdmin,
   introAllDone,
+  introIds,
+  introCompletedCount,
 }: {
   path: CurriculumPath;
   index: number;
@@ -490,7 +508,10 @@ function PathCard({
   isExpanded: boolean;
   onToggleExpand: () => void;
   isPro: boolean;
+  isAdmin: boolean;
   introAllDone: boolean;
+  introIds: string[];
+  introCompletedCount: number;
 }) {
   const Icon = path.icon;
   const orderedIds = pathLessonIds(path);
@@ -608,7 +629,10 @@ function PathCard({
               onToggle={() => onToggle(m.id)}
               pathId={path.id}
               isPro={isPro}
+              isAdmin={isAdmin}
               introAllDone={introAllDone}
+              introIds={introIds}
+              introCompletedCount={introCompletedCount}
             />
           ))}
         </div>
@@ -713,33 +737,5 @@ function OverallProgressCard({
   );
 }
 
-function TimeOnPlatformCard({ delay = 0 }: { delay?: number }) {
-  const seconds = usePlatformTime();
-  const { hours, minutes } = formatPlatformTime(seconds);
-  return (
-    <div
-      className={`${STAT_CARD_BASE} flex items-center gap-4`}
-      style={{ ...STAT_CARD_STYLE, animationDelay: `${delay}ms` }}
-    >
-      <div className="grid h-12 w-12 place-items-center rounded-xl bg-[image:var(--gradient-accent)] group-hover:scale-110 transition-transform shrink-0">
-        <Timer className="h-6 w-6 text-accent-foreground animate-tilt" />
-      </div>
-      <div className="min-w-0">
-        <p className="text-xs text-muted-foreground">وقتك على المنصة</p>
-        <p className="text-2xl font-black leading-tight mt-0.5">
-          {hours > 0 && (
-            <>
-              <span dir="ltr" className="tabular-nums">{hours}</span>
-              <span className="text-sm font-bold text-muted-foreground"> س </span>
-            </>
-          )}
-          <span dir="ltr" className="tabular-nums">{minutes}</span>
-          <span className="text-sm font-bold text-muted-foreground"> د</span>
-        </p>
-        <p className="text-xs text-muted-foreground mt-1">
-          {seconds === 0 ? "ابدأ أول جلسة" : "بنحسب الوقت اللي بتقضيه"}
-        </p>
-      </div>
-    </div>
-  );
-}
+// `TimeOnPlatformCard` removed — was never rendered. If we bring back
+// platform-time UI, restore from git history and re-import the hook.

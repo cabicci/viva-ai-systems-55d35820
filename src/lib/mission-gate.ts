@@ -89,17 +89,18 @@ export function useMissionGate(lessonId: string): MissionGateState {
     },
   });
 
+  const userId = user?.id ?? null;
   React.useEffect(() => {
     if (!requiresMission) return;
     const handler = (ev: Event) => {
       const detail = (ev as CustomEvent<{ missionId: string }>).detail;
       if (!detail || detail.missionId === missionId) {
-        qc.invalidateQueries({ queryKey: [...QK, missionId] });
+        qc.invalidateQueries({ queryKey: [...QK, missionId, userId] });
       }
     };
     window.addEventListener(MISSION_PASSED_EVENT, handler);
     return () => window.removeEventListener(MISSION_PASSED_EVENT, handler);
-  }, [requiresMission, missionId, qc]);
+  }, [requiresMission, missionId, qc, userId]);
 
   if (!requiresMission) return { kind: "no-mission" };
   if (!user) return { kind: "needs-mission", missionId };
