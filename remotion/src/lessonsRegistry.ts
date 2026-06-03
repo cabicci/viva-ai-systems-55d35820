@@ -89,7 +89,6 @@ import { SCENES as L_builder_m3_l6_context_layer_S, SCENE_FRAMES as L_builder_m3
 import { SCENES as L_builder_m2_l4_instructions_examples_S, SCENE_FRAMES as L_builder_m2_l4_instructions_examples_F, TOTAL_FRAMES as L_builder_m2_l4_instructions_examples_T } from "./lessons-generated/builder-m2-l4-instructions-examples.gen";
 import { SCENES as L_builder_m3_l7_memory_limits_S, SCENE_FRAMES as L_builder_m3_l7_memory_limits_F, TOTAL_FRAMES as L_builder_m3_l7_memory_limits_T } from "./lessons-generated/builder-m3-l7-memory-limits.gen";
 import { SCENES as L_builder_m4_l8_parameters_S, SCENE_FRAMES as L_builder_m4_l8_parameters_F, TOTAL_FRAMES as L_builder_m4_l8_parameters_T } from "./lessons-generated/builder-m4-l8-parameters.gen";
-import { SCENES as L_builder_m9_l26_agents_S, SCENE_FRAMES as L_builder_m9_l26_agents_F, TOTAL_FRAMES as L_builder_m9_l26_agents_T } from "./lessons-generated/builder-m9-l26-agents.gen";
 import { SCENES as L_builder_m5_l9_transition_S, SCENE_FRAMES as L_builder_m5_l9_transition_F, TOTAL_FRAMES as L_builder_m5_l9_transition_T } from "./lessons-generated/builder-m5-l9-transition.gen";
 import { SCENES as L_builder_m5_l10_frontend_S, SCENE_FRAMES as L_builder_m5_l10_frontend_F, TOTAL_FRAMES as L_builder_m5_l10_frontend_T } from "./lessons-generated/builder-m5-l10-frontend.gen";
 import { SCENES as L_builder_m5_l11_backend_api_S, SCENE_FRAMES as L_builder_m5_l11_backend_api_F, TOTAL_FRAMES as L_builder_m5_l11_backend_api_T } from "./lessons-generated/builder-m5-l11-backend-api.gen";
@@ -107,6 +106,7 @@ import { SCENES as L_builder_m6_l17_iteration_S, SCENE_FRAMES as L_builder_m6_l1
 import { SCENES as L_builder_m6_l18_debugging_S, SCENE_FRAMES as L_builder_m6_l18_debugging_F, TOTAL_FRAMES as L_builder_m6_l18_debugging_T } from "./lessons-generated/builder-m6-l18-debugging.gen";
 import { SCENES as L_builder_m9_l25_embeddings_S, SCENE_FRAMES as L_builder_m9_l25_embeddings_F, TOTAL_FRAMES as L_builder_m9_l25_embeddings_T } from "./lessons-generated/builder-m9-l25-embeddings.gen";
 import { SCENES as L_builder_m9_l24_rag_S, SCENE_FRAMES as L_builder_m9_l24_rag_F, TOTAL_FRAMES as L_builder_m9_l24_rag_T } from "./lessons-generated/builder-m9-l24-rag.gen";
+import { SCENES as L_builder_m9_l26_agents_S, SCENE_FRAMES as L_builder_m9_l26_agents_F, TOTAL_FRAMES as L_builder_m9_l26_agents_T } from "./lessons-generated/builder-m9-l26-agents.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -189,7 +189,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m2-l4-instructions-examples", scenes: L_builder_m2_l4_instructions_examples_S, sceneFrames: L_builder_m2_l4_instructions_examples_F, totalFrames: L_builder_m2_l4_instructions_examples_T },
     { id: "builder-m3-l7-memory-limits", scenes: L_builder_m3_l7_memory_limits_S, sceneFrames: L_builder_m3_l7_memory_limits_F, totalFrames: L_builder_m3_l7_memory_limits_T },
     { id: "builder-m4-l8-parameters", scenes: L_builder_m4_l8_parameters_S, sceneFrames: L_builder_m4_l8_parameters_F, totalFrames: L_builder_m4_l8_parameters_T },
-    { id: "builder-m9-l26-agents", scenes: L_builder_m9_l26_agents_S, sceneFrames: L_builder_m9_l26_agents_F, totalFrames: L_builder_m9_l26_agents_T },
     { id: "builder-m5-l9-transition", scenes: L_builder_m5_l9_transition_S, sceneFrames: L_builder_m5_l9_transition_F, totalFrames: L_builder_m5_l9_transition_T },
     { id: "builder-m5-l10-frontend", scenes: L_builder_m5_l10_frontend_S, sceneFrames: L_builder_m5_l10_frontend_F, totalFrames: L_builder_m5_l10_frontend_T },
     { id: "builder-m5-l11-backend-api", scenes: L_builder_m5_l11_backend_api_S, sceneFrames: L_builder_m5_l11_backend_api_F, totalFrames: L_builder_m5_l11_backend_api_T },
@@ -207,5 +206,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m6-l18-debugging", scenes: L_builder_m6_l18_debugging_S, sceneFrames: L_builder_m6_l18_debugging_F, totalFrames: L_builder_m6_l18_debugging_T },
     { id: "builder-m9-l25-embeddings", scenes: L_builder_m9_l25_embeddings_S, sceneFrames: L_builder_m9_l25_embeddings_F, totalFrames: L_builder_m9_l25_embeddings_T },
     { id: "builder-m9-l24-rag", scenes: L_builder_m9_l24_rag_S, sceneFrames: L_builder_m9_l24_rag_F, totalFrames: L_builder_m9_l24_rag_T },
+    { id: "builder-m9-l26-agents", scenes: L_builder_m9_l26_agents_S, sceneFrames: L_builder_m9_l26_agents_F, totalFrames: L_builder_m9_l26_agents_T },
   /* @lesson-entries-end */
 ];
