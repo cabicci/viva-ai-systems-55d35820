@@ -103,10 +103,11 @@ export function useLearnerContext(): LearnerContext {
       : null;
     const currentMission = currentLesson?.mission ?? null;
 
-    /* progress: count across the path the learner is currently in,
-       fallback to Builder (the only shipped path). */
+    /* progress: count across the path the learner is currently in.
+       Fallback to intro (the universal onboarding path) if we can't
+       infer a path from the route — never silently pick another. */
     const scope =
-      currentPath ?? PATHS.find((p) => p.status === "open") ?? PATHS[0];
+      currentPath ?? PATHS.find((p) => p.id === "intro") ?? PATHS[0];
     const availableIds = scope
       ? scope.modules
           .flatMap((m) => m.lessons)
