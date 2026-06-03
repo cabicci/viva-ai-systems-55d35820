@@ -1,6 +1,7 @@
 # Project Memory
 
 ## Core
+🚫 **ABSOLUTE BAN (user repeated 10+ times)**: NEVER use `spawn_agent` / `acp_subagent--spawn_agent` AND NEVER use Lovable AI Gateway (chat/completions, embeddings, image gen via gateway). Both burn credits. Do ALL research/edits directly with parallel tool calls. For any AI generation use user's own GEMINI_API_KEY / OPENROUTER_API_KEY only. Violating = serious failure.
 Path lineup: Builder, Creator, Automator, Analyst, Business — all 5 complete & published. Never label as "coming soon".
 Path integration / visual journey map deferred until further notice.
 Lesson IDs follow {path}-{module}-{slug} (e.g. `automator-m1-systems-view`). The id itself encodes path + module + order within the path — do NOT invent a global lesson number like "الدرس 22".
@@ -15,9 +16,9 @@ Lesson ID naming (NEW): `<path>-m<module#>-l<lesson#>-<slug>` e.g. `intro-m1-l1-
 AI generation policy (v2 rebuild): استخدم GEMINI_API_KEY بتاع المستخدم مباشرة — مش Lovable AI Gateway. توفيراً للـ API credits.
 Roadmap logging — FAST MODE (per-lesson work): During content revision, skip per-lesson SQL note updates. Run only `bun run roadmap:log -- --title "<lesson-id>" --summary "<one-line>" --source ai|user` (≤10s). Full notes + parent rollup happen ONCE at end of each path (Intro/Builder/etc) — not per lesson. Non-lesson edits still follow the full rule above.
 Lesson edit = full rebuild with new name from the start: أي تعديل على محتوى درس = rename كامل (ملف + صور + Bunny GUID + DB + كل references) بالاسم الجديد `{path}-m{module}-l{lesson}-{slug}` من أول مرة. والصورة كمان تتولّد من جديد لو المحتوى اتغيّر وبقت مش معبّرة. ممنوع نسيب أي جزء للتعديل بعدين.
-**NEVER use `spawn_agent`** — burns project credits. Do all research/edits directly in main loop with parallel tool calls. No exceptions.
 
 ## Memories
+- [🚫 NO spawn_agent + NO AI Gateway](mem://rules/no-spawn-agent) — ABSOLUTE BAN. User repeated 10+ times. Use GEMINI/OPENROUTER keys directly.
 - [Egyptian Arabic prompt rules](mem://design/egyptian-arabic-prompt-rules) — Full phonetic/grammar/vocab rules + words-to-avoid list + prompt structure for Veo/TTS
 - [Batch roadmap logging](mem://rules/batch-roadmap-logging) — Every batch/run is its own roadmap_items row, logged when planned not when started
 - [Auto-trigger lesson video](mem://workflows/auto-trigger-lesson-video) — SUSPENDED during v2 content revision. Default flow now: edit → approval → render
