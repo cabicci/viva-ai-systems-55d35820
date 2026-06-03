@@ -5,131 +5,75 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "highlight": "ده إنت",
-    "title": "إزاي السيرفر بيعرف إن \"ده إنت\"؟",
-    "chip": "أهلًا",
-    "subtitle": "دخلت بإيميل وكلمة سر مرة واحدة، وبعدها كل صفحة بتفتحها بتعرفك من غير ما تكتب تاني."
+    "title": "إزاي السيرفر بيعرف إن",
+    "chip": "المشكلة",
+    "subtitle": "من غير ما تكتب بياناتك كل مرة",
+    "highlight": "\"ده إنت\"؟"
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "lavender",
-    "tag": "يعني إيه؟",
-    "definition": "السيرفر مش بيشيل بياناتك عنده، كل طلب بيبعت هويته من جديد.",
-    "term": "Stateless/Scalable"
+    "bullets": [
+      "دوس F12 (أو right-click → Inspect) عشان تفتح الـDevTools.",
+      "روح على تاب Application، وعلى الشمال افتح Local Storage → lovable.app.",
+      "هتلاقي key اسمه `sb-....-auth-token`. القيمة اللي جنبه هي الـJWT بتاعك! ده الـ'ختم' اللي السيرفر بيعرفك بيه."
+    ],
+    "title": "شوف الـ'ختم' بتاعك بعينك"
   },
   {
     "card": "ConceptCard",
     "accent": "peach",
-    "definition": "الـ Header نوع التوكن، والـ Payload هي بياناتك المشفرة زي اسمك.",
-    "term": "Header vs Payload",
-    "tag": "أجزاء الـ Token"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "tag": "ختم الأمان",
-    "definition": "كود سري بيأكد إن البيانات سليمة ومحدش عدل فيها من ورا السيرفر.",
-    "term": "Signature"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "tag": "توكن إضافي",
-    "term": "Refresh Token",
-    "definition": "توكن احتياطي بيجيب توكن جديد لما الأول وقته يخلص عشان متسجلش دخول تاني."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "definition": "هجمة هكر بيحاول يسرق بياناتك أو التوكن بتاعك عن طريق كود خبيث.",
-    "term": "XSS (Cross-Site Scripting)",
-    "tag": "خطر أمني"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "definition": "كود مشفر فيه بياناتك، المتصفح بيبعته للسيرفر عشان يعرف إنت مين.",
     "term": "JWT (JSON Web Token)",
-    "tag": "هويتك المشفرة"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "lavender",
-    "bullets": [
-      "الـ HTTP أصلاً بروتوكول Stateless، يعني السيرفر بينسى مين كلّمه بمجرد ما يرد.",
-      "عشان يفتكرك بين الطلبات، بنحتاج Session تقول إن الشخص ده مسجّل دخول.",
-      "الـ JWT ده string طويل بيتولّد بعد أول تسجيل دخول ناجح.",
-      "جواه 3 أجزاء: Header، و Payload فيه بياناتك، و Signature."
-    ],
-    "title": "JWT: ختم السيرفر ليك"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "peach",
-    "bullets": [
-      "الـ Signature دي ختم سري عند السيرفر بس، بتأكد إن بياناتك صحيحة.",
-      "كل Request بتبعت الـ JWT في الـ Authorization Header عشان السيرفر يتعرف عليك.",
-      "لو الـ Token اتعدّل بأي شكل، الـ Signature بتتكسر والطلب بيترفض.",
-      "الـ JWT ليه مدة صلاحية وبيخلص، عشان لو اتسرق الضرر يكون محدود بالوقت ده.",
-      "لما صلاحيته تخلص، الـ Frontend بيستخدم Refresh Token عشان يجيب واحد جديد من غير ما تكتب باسورد."
-    ],
-    "title": "إزاي الـ JWT بيشتغل؟"
+    "definition": "كود طويل متشفّر فيه بياناتك (زي الـID بتاعك). المتصفح بيبعته للسيرفر مع كل طلب عشان يثبت له 'أنا فلان'، من غير ما تحتاج تكتب الباسورد كل مرة.",
+    "tag": "إثبات هوية"
   },
   {
     "card": "ScreenshotCard",
     "accent": "yellow",
-    "eyebrow": "دورة حياة الـ JWT",
+    "eyebrow": "الفكرة بالتفصيل",
+    "title": "رحلة الـJWT من أول Login لكل طلب",
     "src": "lessons/concepts/jwt-diagram.jpg",
-    "caption": "لما بتسجل دخول، السيرفر بيولّد JWT متختّم من 3 أجزاء. الـ Frontend بيخزّنه وبيبعته مع كل طلب في الـ Authorization header. السيرفر بيتحقق من التوقيع من غير ما يرجع للـ Database، وده اللي بيخلّي الـ JWT Stateless و Scalable.",
-    "title": "من تسجيل الدخول لكل طلب"
+    "caption": "لما بتعمل Login صح، السيرفر بيولّد الـJWT ده وبيختمه بـ'توقيع' سري محدش يعرفه غيره. التوقيع ده بيضمن إن محتوى الـtoken سليم ومحدش لعب فيه. الـFrontend بياخد الـtoken ده ويخزّنه، ومع كل طلب جديد (زي فتح صفحة)، بيبعته في الـHeader. السيرفر بيتأكد من التوقيع، لو سليم، بيثق في البيانات اللي جواه (زي الـuser ID بتاعك) وينفذ الطلب. الميزة هنا إن السيرفر مش محتاج يرجع للداتابيز كل مرة يتأكد إنت مين، وده بيخلّي الدنيا أسرع."
   },
   {
     "card": "CompareCard",
     "accent": "pink",
-    "right": {
-      "label": "صح: السيرفر يختم ويتحقق",
-      "body": "السيرفر بس اللي بيختم الـ JWT بمفتاح سري. الـ Frontend بيخزّن الـ Token كامل، وأي تعديل فيه بيكسر الـ Signature. السيرفر بيقرأ الـ user ID من الـ Token المتأكد منه، وده أأمن بكتير."
-    },
-    "title": "غلطة المبتدئين في الـ Auth",
+    "title": "أكتر غلطتين بيقع فيهم المبتدئين في الـAuth",
     "left": {
-      "body": "لو خزّنت الـ user ID في الـ Frontend، أي حد ممكن يغيّره من الـ DevTools ويبعت طلب باسم حد تاني. السيرفر مش هيعرف يتأكد ومفيش أمان خالص.",
-      "label": "غلط: تخزّن user_id بس"
+      "body": "\"بعد ما يعمل login، هحفظ الـuserId في localStorage وأبعته مع كل طلب.\" دي كارثة. أي حد يقدر يفتح الـDevTools ويغيّر الـuserId لأي رقم تاني ويبعت طلب للسيرفر. السيرفر معندوش أي طريقة يتأكد بيها إن الرقم ده بتاعك فعلًا، لإن مفيش 'توقيع' أو ختم. كده الـAuthentication بايظة تمامًا.",
+      "label": "غلط — تخزّن user_id بس في الـFrontend"
+    },
+    "right": {
+      "body": "السيرفر بس هو اللي معاه المفتاح السري اللي بيختم بيه الـJWT. الـFrontend بيستلم الـtoken كامل ويخزّنه زي ما هو، وميقدرش يعدّل فيه أي حرف، لإن أي تعديل هيبوّظ التوقيع. كل طلب بيبقى متأمّن، والـBackend بيقرأ الـuser_id من الـtoken اللي هو واثق فيه، مش من حاجة جاية من المستخدم ممكن تكون متعدّلة. الـtoken كمان بيكون له مدة صلاحية قصيرة (زي ساعة)، فلو اتسرق، ضرره محدود بالوقت ده.",
+      "label": "صح — السيرفر هو اللي بيختم وبيتحقق"
     }
   },
   {
     "card": "BulletsCard",
     "accent": "mintDeep",
     "bullets": [
-      "عندك خيارين لتخزين الـ JWT بعد ما السيرفر يديهولك.",
-      "الـ localStorage سهل، بس أي Script خبيث في الصفحة ممكن يقراه، وده خطر XSS عالي.",
-      "الـ httpOnly Cookie ده أأمن، السيرفر بيبعت الـ Token كـ Cookie والـ JavaScript مش بيقدر يقراها أبدًا.",
-      "المتصفح بيبعتها تلقائيًا مع كل Request، وده الـ Default في معظم التطبيقات الحديثة.",
-      "القاعدة: لتطبيقات الـ Production استعمل httpOnly Cookie، والـ localStorage لتجارب داخلية بس."
+      "**localStorage** — سهل، والجافاسكريبت بتقدر تقراه وتكتبه. بس مشكلته إن أي script تاني في الصفحة يقدر يوصل له ويسرقه. خطر الـXSS عالي.",
+      "**httpOnly Cookie** — السيرفر هو اللي بيبعت الـtoken كـCookie ومتعلّم عليه علامة `HttpOnly` بتمنع الجافاسكريبت إنها تقراه. ده أأمن بكتير."
     ],
-    "title": "تخزين الـ JWT: localStorage ولا Cookie؟"
+    "title": "Cookie ولا Local Storage؟ الأأمن إيه؟"
   },
   {
-    "card": "BulletsCard",
+    "card": "CTACard",
     "accent": "mint",
-    "bullets": [
-      "مهمتك ترسم Auth Flow كامل من Signup لحد الـ Refresh.",
-      "وضّح في كل خطوة: المستخدم بيعمل إيه، والـ Backend بيعمل إيه، وإيه اللي بيرجع.",
-      "كمان لازم تحدد فين بنخزّن الـ Token، وليه ده مهم أمنيًا.",
-      "اشرح إزاي الـ Frontend بيرسل الـ Token في الـ API Request.",
-      "وإيه اللي بيحصل لما الـ Token صلاحيته تخلص، وإزاي الـ Refresh Flow بيشتغل.",
-      "وأخيرًا، إيه اللي بيتمسح وفين لما تعمل Logout."
-    ],
-    "title": "ارسم Auth Flow كامل"
+    "tagline": "جهز نفسك للإجابة على كام سؤال عشان تتأكد إنك فهمت كل التفاصيل.",
+    "eyebrow": "دورك دلوقتي",
+    "title": "اختبر فهمك",
+    "highlight": "جاوب على الأسئلة دي"
   },
   {
     "card": "CTACard",
     "accent": "lavender",
-    "tagline": "حل الأسئلة دي عشان تتأكد إنك فهمت الدرس كويس وتعرف تطبق اللي اتعلمته.",
-    "eyebrow": "دورك دلوقتي",
-    "highlight": "حل الأسئلة",
-    "title": "افتح DevTools وشوف JWT بتاعك"
+    "title": "فك شفرة الـJWT بتاعك",
+    "tagline": "انسخ الـJWT بتاعك من الـLocal Storage، وروح على jwt.io عشان تشوف الـPayload بتاعه.",
+    "eyebrow": "مهمتك دلوقتي",
+    "highlight": "وشوف الـUser ID بتاعك"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [568, 391, 287, 247, 271, 271, 293, 671, 856, 753, 850, 1056, 825, 510];
+export const SCENE_FRAMES: number[] = [666, 600, 532, 742, 732, 749, 293, 599];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
