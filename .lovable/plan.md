@@ -1,89 +1,82 @@
-# خطة مراجعة مسار Builder طبقًا للـ V2
+# خطة التحديث بعد Persona Sim v9
 
-## النطاق
+## الخلاصة من الـ 3 آراء + رأيي
 
-- **Builder M1 → M9 فقط** (٢٦ درس). M10 (deploy + first-users) **مؤجل** زي ما اتفقنا في v2.
-- بعد الانتهاء → نعيد persona-sim ونقرر هل نكمل لباقي المسارات.
+الكل متفق على:
 
-## المبادئ الحاكمة (مأخوذة حرفيًا من v2)
+- المكاسب من **UX/visual flow** مش من المحتوى التعليمي
+- النظام نضج (86.5% apply مع رفض حقيقي = صحة)
+- خطر **analysis paralysis** لو كملنا v10
+- لازم **manual gate** قبل التطبيق عشان السلسلة السردية متتكسرش
+- توثيق القواعد كـ Design System Guidelines
 
-1. **No Theory Without Tension** — مفيش مفهوم نظري قبل ما المتعلم يحس بمشكلة.
-2. **Quick Win** في أول 30 ثانية.
-3. مثال حسي قبل المصطلح.
-4. مصطلح تقني واحد كحد أقصى لكل درس.
-5. Mission ≤ 10 دقايق وأبسط من الحالي.
-6. لهجة مصرية + مفيش تكرار.
-7. **Momentum metric** (1-10) بعد كل درس — أهم من boring/confusing.
+## المراحل
 
-## تعديلات الترتيب/الدمج (قبل ما نبدأ الكتابة)
+### المرحلة 1 — Freeze (نفس اليوم)
 
+- git tag `pre-v9-apply` قبل أي تعديل
+- إيقاف أي شغل على persona-sim (مفيش v10)
+- توثيق روح v9 في `roadmap_items` كـ done
 
-| #   | التعديل                                                          | السبب               |
-| --- | ---------------------------------------------------------------- | ------------------- |
-| 1   | `m1-tokens-training` → يتأخر ويتقدّم كـ "إجابة على ألم" مش مقدمة | Tension-First       |
-| 2   | `m4-temperature` + `m4-parameters` → **يندمجوا في درس واحد**     | إزالة تكرار         |
-| 3   | `m7-sessions-jwt` + `m7-rls` → يتأخروا لحد ما يكون فيه app شغّال | يحتاج سياق          |
-| 4   | `m9-embeddings` → ينقل **بعد** `m9-rag`                          | magic قبل mechanics |
+### المرحلة 2 — Reviewed Apply للـ 83 درس
 
+بدل Massive Apply الأعمى:
 
-النتيجة: ٢٦ → ٢٥ درس (بعد دمج temperature+parameters).
+1. سكريبت يقرأ `v9-suggestions.json` ويعمل preview لكل درس (الترتيب القديم vs الجديد جنب بعض)
+2. **manual gate**: 30 ثانية لكل درس — نوافق/نرفض/نعدّل
+3. التطبيق = إعادة ترتيب `SCENES` array حسب `suggested_order` + تطبيق rules:
+  - CTA دايمًا آخر بلوك
+  - منع تتالي لونين متطابقين
+  - سقف 2 ConceptCard متتاليين (نكسرها بـ BulletsCard/QuoteCard)
+4. بعد كل درس → trigger `lesson-video.yml` لإعادة الرندر (batch ≤400 chars)
+5. تسجيل كل تعديل في `roadmap_items` بـ `[ai-edit YYYY-MM-DD]`
 
-## الترتيب الجديد المقترح (Builder M1-M9)
+**التوقع:** 83 درس × 30 ث = ~45 دقيقة مراجعة + شغل auto للباقي
 
-```
-M1  what-is-llm  →  tokens-training (متأخر كإجابة على ألم)
-M2  prompt-layer  →  instructions-examples  →  style-control
-M3  context-layer  →  memory-limits
-M4  parameters-merged (temperature + parameters)
-M5  transition  →  frontend  →  backend-api  →  database-intro
-M6  idea-to-page  →  wireframe  →  first-prompt-to-lovable
-     →  components-routes  →  iteration  →  debugging
-M7  tables-columns  →  queries  →  relations
-     (sessions-jwt + rls يتأخروا لآخر M7)
-M8  (محتوى M8 الحالي يندمج مع M7 — يتراجع لحظيًا)
-M9  rag  →  embeddings  →  agents
-```
+### المرحلة 3 — Design System Guidelines (موازي)
 
-## سير العمل لكل درس (متفق عليه في v2)
+ملف `docs/lesson-design-rules.md` يحتوي:
 
-1. أعرض الدرس (id + blocks الحالية + ملاحظات السيم لو موجودة).
-2. أعرض اقتراح التعديل: **Tension → Quick Win → Wow → ربط بنتيجة**.
-3. إنت تقول: ✅ موافق / ✏️ عدّل / ⏭️ سيبه.
-4. أنفّذ التعديل + Mission مبسّطة (لو فيه) في نفس اللحظة.
-5. ألوگ في `roadmap_items` (`[source:ai]` أو `[source:user]` + `[scope:lessons]`).
-6. أبعت الدرس لـ `lesson-video.yml` (≤400 char في الـ payload — batch بحد أقصى ٣).
-7. لو الدرس اتعمله rename بسبب slug جديد → rename كامل (file + images + Bunny GUID + DB) من أول لحظة.
+- ترتيب البلوكات المعياري
+- قواعد التلوين والكسر
+- موقع الـ CTA
+- hierarchy للموبايل
 
-## الترتيب الزمني للتنفيذ
+يبقى مرجع لأي درس جديد. القواعد دي تتحول لـ lint script على `SCENES` arrays.
 
-**Phase A — تعديلات الهيكل (مرة واحدة، بدون كتابة محتوى):**
+### المرحلة 4 — تأجيل الـ 7 iterate + 6 keep
 
-- دمج `m4-temperature` + `m4-parameters` في درس واحد.
-- نقل `m9-embeddings` لبعد `m9-rag` في `curriculum-data.ts`.
-- إعادة ترتيب `m1-tokens-training` و`m7-sessions-jwt`/`m7-rls`.
-- تحديث `lesson-naming` لو فيه slugs اتغيّرت.
+- مفيش شغل عليهم دلوقتي
+- بعد validation المستخدمين، نقرر لو محتاجين رجوع ليهم
 
-**Phase B — مراجعة محتوى درس-بدرس:**
-نبدأ من `builder-m1-what-is-llm` ونمشي بالترتيب الجديد. كل درس = round صغير معاك للموافقة.
+### المرحلة 5 — Validation حقيقي (الأهم)
 
-**Phase C — إعادة رندر الفيديوهات:**
-كل درس اتغيّر محتواه → batch لـ GitHub Action (٣ فيديوهات في المرة).
+- 15 مستخدم عربي مبتدئ، أعمار مختلفة، مش تقنيين
+- مش launch، مش marketing
+- **المقياس الوحيد:** هل حصل wow moment خلال أول 7 دقايق؟ (مش completion، مش NPS)
+- لو نعم لـ 10+ من 15 → جاهزين للـ soft launch
+- لو لأ → نرجع نشوف أول 3 دروس بس، مش نلف على كل المنصة
 
-**Phase D — قياس الأثر:**
-بعد آخر درس → persona-sim جديد. الهدف: completion 65-75% + momentum > 7.
+## اللي مش هنعمله (صراحةً)
 
-## ملاحظات تقنية
+- ❌ v10 من persona-sim
+- ❌ Massive Apply أعمى من غير مراجعة
+- ❌ تقارير AI جديدة قبل validation البشر
+- ❌ تعديل المسارات/البلوكات/البايبلاين (architecture frozen)
 
-- عمود `momentum_score` موجود في `lesson_feedback` ✅.
-- لازم نتأكد إن الـ Quiz/Mission في كل درس يتراجع لو الـ slug اتغيّر (references في DB + components).
-- كل تعديل = صف في `roadmap_items` + run `bun run roadmap:log`.
+## التفاصيل التقنية
+
+- ملف القرارات: `public/persona-sim/v9-apply-decisions.json` (يتولد من المراجعة اليدوية)
+- سكريبت التطبيق: `scripts/apply-v9-suggestions.ts`
+- سكريبت الـ video re-render: `scripts/trigger-lesson.sh` (موجود) — batched
+- guard: `roadmap:guard` يتأكد إن كل lesson edit عنده marker
 
 ## السؤال قبل ما نبدأ
 
-عاوزني أبدأ بـ **Phase A** (تعديلات الهيكل) دلوقتي، ولا تحب نبدأ مباشرة بـ Phase B من أول درس `builder-m1-what-is-llm` ونعمل الهيكل لما نوصل لنقطة الدمج؟
+المراجعة اليدوية للـ 83 درس: تفضل تعملها كلها مرة واحدة (~45 دقيقة) ولا على دفعات حسب الـ path (Builder الأول، بعدها Creator، إلخ)؟
 
 &nbsp;
 
-ومتنساش اعادة تسمية الملفات بنفس السيناريو بتاع الانترو وتوحيد كل ما هو مرتبط واكد عليا انك فهمت
+فهمني اكتر نقطة نقطة والمطلوب مني؟
 
-و نبداء phase a
+وايه او حاجة هانبتدي بيها؟
