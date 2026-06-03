@@ -629,7 +629,10 @@ function PathCard({
               onToggle={() => onToggle(m.id)}
               pathId={path.id}
               isPro={isPro}
+              isAdmin={isAdmin}
               introAllDone={introAllDone}
+              introIds={introIds}
+              introCompletedCount={introCompletedCount}
             />
           ))}
         </div>
