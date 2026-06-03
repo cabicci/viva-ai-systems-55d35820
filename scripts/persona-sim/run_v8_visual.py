@@ -29,10 +29,10 @@ SAMPLE = [
     "builder-m1-l1-what-is-llm",
     "builder-m3-l6-context-layer",
     "creator-m2-hook",
-    "automator-m1-systems-view",
-    "analyst-m2-three-sources",
-    "analyst-m3-decision-rule",
-    "business-m1-weekly-rhythm",
+    "automator-m2-systems-view",
+    "analyst-m3-three-sources",
+    "analyst-m4-decision-rule",
+    "business-m2-weekly-rhythm",
 ]
 
 PERSONAS = [

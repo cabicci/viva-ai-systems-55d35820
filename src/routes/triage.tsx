@@ -44,7 +44,7 @@ const TIMES: { id: TimeAvail; title: string; sub: string }[] = [
 function classify(level: Level, goal: Goal): { track: Track; entry: string } {
   if (level === "zero") return { track: "beginner", entry: "intro-m1-l6-learn-without-fear" };
   if (goal === "money") return { track: "money", entry: "intro-m1-l7-choose-your-path" };
-  if (goal === "business") return { track: "money", entry: "business-m0-l1-from-decisions-to-leadership" };
+  if (goal === "business") return { track: "money", entry: "business-m1-l1-from-decisions-to-leadership" };
   if (level === "advanced") return { track: "builder", entry: "builder-m2-l1-prompt-layer" };
   if (goal === "skill" || goal === "career") return { track: "builder", entry: "builder-m1-l1-what-is-llm" };
   return { track: "explorer", entry: "intro-m1-l3-setup-your-ai" };

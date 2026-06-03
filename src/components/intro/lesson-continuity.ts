@@ -103,91 +103,91 @@ export const LESSON_CONTINUITY: Record<string, string> = {
     "خلصت مسار Creator كامل. ارجع للخريطة واكمل في مسار تاني.",
 
   /* ---------------- Automator path (17) ---------------- */
-  "automator-m0-l1-where-you-are":
+  "automator-m1-l1-where-you-are":
     "حدّدت موقعك. الموديول الجاي بيعلّمك تشوف شغلك كأنظمة بدل مهام مبعثرة.",
-  "automator-m1-l1-systems-view":
+  "automator-m2-l1-systems-view":
     "اتعلّمت تشوف بالأنظمة. لازم تعرف تتعرّف على الـ Patterns المتكرّرة جوّه شغلك.",
-  "automator-m1-l2-spot-patterns":
+  "automator-m2-l2-spot-patterns":
     "لقيت الـ Patterns. دلوقتي محتاج تقرّر إيه اللي يستاهل تأتمته فعلًا.",
-  "automator-m1-l3-decide-what-to-automate":
+  "automator-m2-l3-decide-what-to-automate":
     "عندك Backlog أتمتة. الموديول الجاي بيقدّملك أدوات السوق: n8n، Zapier، Make.",
-  "automator-m2-l1-tools-landscape":
+  "automator-m3-l1-tools-landscape":
     "اخترت أداتك. اللبنة الأولى في أي Flow: Triggers و Actions.",
-  "automator-m2-l2-triggers-actions":
+  "automator-m3-l2-triggers-actions":
     "بتقدر تشغّل وتنفّذ. الدرس الجاي بيعلّمك توجّه البيانات بـ Filters و Routers.",
-  "automator-m2-l3-filters-routers":
+  "automator-m3-l3-filters-routers":
     "خلصت أساسيات الـ Flow. الموديول الجاي بيوصّلك بمصادر بيانات حقيقية.",
-  "automator-m3-l1-connect-database":
+  "automator-m4-l1-connect-database":
     "وصّلت Database. لازم تعرف Webhooks و APIs عشان تتكلّم مع أي خدمة برّه.",
-  "automator-m3-l2-webhooks-api":
+  "automator-m4-l2-webhooks-api":
     "بتتكلّم مع أي API. آخر درس مهم: Error Handling عشان الـ Flow ميقفش.",
-  "automator-m3-l3-error-handling":
+  "automator-m4-l3-error-handling":
     "Flow صلب ومقاوم للأخطاء. الموديول الجاي بيدخّل الـ AI داخل الـ Flow.",
-  "automator-m4-l1-llm-in-flow":
+  "automator-m5-l1-llm-in-flow":
     "الـ LLM في الـ Flow. الدرس الجاي بيخلّي الـ Flow يستخدم بياناتك: RAG.",
-  "automator-m4-l2-rag-in-n8n":
+  "automator-m5-l2-rag-in-n8n":
     "RAG بيشتغل. آخر درس في الموديول: Agents — Flows بتاخد قرارات.",
-  "automator-m4-l3-agents":
+  "automator-m5-l3-agents":
     "خلصت طبقة الذكاء. الموديول الجاي بيركّب أول Flow حقيقي للـ Leads.",
-  "automator-m5-l1-lead-capture":
+  "automator-m6-l1-lead-capture":
     "بتجمع Leads. الدرس الجاي بينقل المحادثة على WhatsApp تلقائيًا.",
-  "automator-m5-l2-whatsapp-flow":
+  "automator-m6-l2-whatsapp-flow":
     "WhatsApp Flow شغّال. آخر درس: متابعة العميل تلقائيًا (Follow-up).",
-  "automator-m5-l3-follow-up":
+  "automator-m6-l3-follow-up":
     "خلصت نظام Leads كامل. الموديول الأخير بيقفل الـ Loop وبيوصّل كل حاجة ببعضها.",
-  "automator-m6-l1-closing-loop":
+  "automator-m7-l1-closing-loop":
     "خلصت مسار Automator كامل 🎉 — اختار مسار تاني من الخريطة.",
 
   /* ---------------- Analyst path (12) ---------------- */
-  "analyst-m0-l1-from-automation-to-insight":
+  "analyst-m1-l1-from-automation-to-insight":
     "فهمت إن دورك بقى تسأل، مش تجمع. الموديول الجاي بيعلّمك تحوّل أي شعور لسؤال محدّد.",
-  "analyst-m1-l1-feeling-to-question":
+  "analyst-m2-l1-feeling-to-question":
     "حوّلت الشعور لسؤال. الدرس الجاي بيوضّحلك إيه يخلّي السؤال «صح» — ٤ شروط بسيطة.",
-  "analyst-m1-l2-right-question-rule":
+  "analyst-m2-l2-right-question-rule":
     "السؤال صح. الموديول الجاي عن جمع البيانات الـ ٣ مصادر — ووضعهم في مكان واحد.",
-  "analyst-m2-l1-three-sources":
+  "analyst-m3-l1-three-sources":
     "البيانات في مكان واحد. الدرس الجاي بيستخدم AI كمحلّل: ٥٠ رسالة → ملخّص في ٣٠ ثانية.",
-  "analyst-m2-l2-ai-summarization":
+  "analyst-m3-l2-ai-summarization":
     "عندك ملخّصات. الموديول الجاي بيعلّمك تفرّق بين Pattern (نمط) و Outlier (استثناء).",
-  "analyst-m3-l1-pattern-vs-outlier":
+  "analyst-m4-l1-pattern-vs-outlier":
     "بتفرّق بين النمط والاستثناء. الدرس الجاي القاعدة الذهبية: كل تفسير ينتهي بقرار.",
-  "analyst-m3-l2-decision-rule":
+  "analyst-m4-l2-decision-rule":
     "كل insight بقى له action. الموديول الجاي بيركّبهم في Dashboard من ٤ أرقام بس.",
-  "analyst-m4-l1-four-numbers-dashboard":
+  "analyst-m5-l1-four-numbers-dashboard":
     "Dashboard جاهز. الدرس الجاي بيحوّله لـ ritual أسبوعي — ١٥ دقيقة كل أحد.",
-  "analyst-m4-l2-weekly-review-ritual":
+  "analyst-m5-l2-weekly-review-ritual":
     "عندك إيقاع أسبوعي. الموديول الجاي بيتكلّم عن الأخطاء الشائعة في الأسئلة والتفسير.",
-  "analyst-m5-l1-question-mistakes":
+  "analyst-m6-l1-question-mistakes":
     "عرفت أخطاء الأسئلة. الدرس الجاي عن أخطر فخّين في التفسير: Paralysis و Correlation≠Causation.",
-  "analyst-m5-l2-interpretation-mistakes":
+  "analyst-m6-l2-interpretation-mistakes":
     "نظام التحليل اكتمل. آخر درس بيوصّلك بـ Business — اللي بياخد قراراتك ويحوّلها لنظام يومي.",
-  "analyst-m6-l1-from-decisions-to-business":
+  "analyst-m7-l1-from-decisions-to-business":
     "خلصت Analyst كامل 🎉 — ادخل Business وكمّل القفل النهائي للـ ecosystem.",
 
   /* ---------------- Business path (12) ---------------- */
-  "business-m0-l1-from-decisions-to-leadership":
+  "business-m1-l1-from-decisions-to-leadership":
     "بقيت Leader، مش Operator. الموديول الجاي بيعلّمك تحرّر يومك من Reactive Mode.",
-  "business-m1-l1-reactive-vs-proactive":
+  "business-m2-l1-reactive-vs-proactive":
     "يومك بقى Proactive. الدرس الجاي بيوزّع أسبوعك على الـ ٤ مسارات التنفيذية (Creator/Analyst/Automator/Builder).",
-  "business-m1-l2-weekly-rhythm":
+  "business-m2-l2-weekly-rhythm":
     "أسبوعك ليه إيقاع. الموديول الجاي عن إدارة العملاء — من أول تواصل لعميل ثابت.",
-  "business-m2-l1-customer-lifecycle":
+  "business-m3-l1-customer-lifecycle":
     "فهمت دورة العميل. الدرس الجاي بيركّب Follow-up Flow بـ ٣ رسائل (٣ أيام/أسبوعين/شهر).",
-  "business-m2-l2-retention-flow":
+  "business-m3-l2-retention-flow":
     "العملاء بيتحافظ عليهم. الموديول الجاي عن إدارة العمليات — Strategic/Operational/Administrative.",
-  "business-m3-l1-strategic-operational-admin":
+  "business-m4-l1-strategic-operational-admin":
     "كل نوع عرفت مكانه. الدرس الجاي بيعلّمك تختار بين Delegate و Automate لكل مهمة.",
-  "business-m3-l2-delegate-or-automate":
+  "business-m4-l2-delegate-or-automate":
     "٨٠٪ من شغلك مش محتاجك. الموديول الجاي عن النمو والتوسع — العلامات الـ ٤ للجاهزية.",
-  "business-m4-l1-readiness-signals":
+  "business-m5-l1-readiness-signals":
     "عرفت إمتى تكبّر. الدرس الجاي قاعدة ذهبية: System الأول، الناس بعدين.",
-  "business-m4-l2-system-then-people":
+  "business-m5-l2-system-then-people":
     "ترتيب التوسع واضح. الموديول الجاي عن أخطر فخّين: الرجوع Reactive والتوسع قبل الأوان.",
-  "business-m5-l1-reactive-relapse":
+  "business-m6-l1-reactive-relapse":
     "بتعرف ترجع بسرعة. الدرس الجاي عن خطر التوسع قبل الأوان — وعلامات الخطر الواضحة.",
-  "business-m5-l2-premature-scaling":
+  "business-m6-l2-premature-scaling":
     "بتعرف تتفادى الفخ. آخر درس بيقفل الـ ecosystem كامل — الـ ٥ مسارات في يومك.",
-  "business-m6-l1-full-ecosystem":
+  "business-m7-l1-full-ecosystem":
     "خلصت كل المسارات 🎉 — شغلك بقى ecosystem كامل. شخص + AI + System صح = Business حقيقي.",
 };
 
