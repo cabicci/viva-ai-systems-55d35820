@@ -5,6 +5,7 @@ import { PATHS } from "@/lib/curriculum-data";
 import { useLearnerContext } from "@/lib/learner-context";
 import { addBuildLog } from "@/lib/build-logs";
 import { syncMissionState } from "@/lib/cloud-sync";
+import { supabase } from "@/integrations/supabase/client";
 
 /**
  * Mission Runtime — foundation layer.
