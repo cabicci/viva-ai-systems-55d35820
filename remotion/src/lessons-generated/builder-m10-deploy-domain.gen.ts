@@ -5,95 +5,94 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "subtitle": "لو تطبيقك على localhost، محدش هيشوفه. لازم تخليه live على سيرفر ودومين.",
-    "highlight": "تطبيق مش موجود",
     "chip": "أهلًا",
-    "title": "تطبيق على localhost = تطبيق مش موجود"
+    "title": "تطبيق على localhost",
+    "subtitle": "بنيت فرونت إند وباك إند وداتا بيز وأوث ورج... كله شغال على جهازك بس مفيش حد غيرك يقدر يشوفه.",
+    "highlight": "تطبيق مش موجود"
   },
   {
     "card": "ConceptCard",
     "accent": "lavender",
+    "tag": "زي التاجر اللي بيبعت بضاعته للمحل.",
     "term": "Deploy",
-    "tag": "مصطلح",
     "definition": "عملية نقل كودك من جهازك للسيرفر عشان الناس تشوفه."
   },
   {
     "card": "ConceptCard",
     "accent": "peach",
-    "tag": "مصطلح",
-    "definition": "عنوان موقعك اللي الناس بتكتبه في المتصفح (example.com).",
-    "term": "Domain Name"
+    "tag": "زي اسم المحل بتاعك.",
+    "term": "Domain Name",
+    "definition": "عنوان موقعك اللي الناس بتكتبه في المتصفح (example.com)."
   },
   {
     "card": "ConceptCard",
     "accent": "yellow",
     "term": "DNS Records (A & CNAME)",
-    "tag": "مصطلح",
-    "definition": "إعدادات بتربط اسم الدومين بعنوان السيرفر الحقيقي عشان الموقع يفتح."
+    "definition": "إعدادات بتربط اسم الدومين بعنوان السيرفر الحقيقي عشان الموقع يفتح.",
+    "tag": "ربط اسم محلك بالعنوان."
   },
   {
     "card": "ConceptCard",
     "accent": "pink",
-    "tag": "مصطلح",
+    "tag": "قفل بيطمن الزباين.",
     "definition": "شهادة أمان بتخلي موقعك مشفر ومحمي وبتبدأ بـ https.",
     "term": "SSL Certificate (HTTPS)"
   },
   {
     "card": "ConceptCard",
     "accent": "mintDeep",
+    "definition": "تنظيف وتصغير حجم ملفات موقعك عشان يفتح بسرعة للناس.",
     "term": "Bundle & Tree-shaking",
-    "tag": "مصطلح",
-    "definition": "تنظيف وتصغير حجم ملفات موقعك عشان يفتح بسرعة للناس."
+    "tag": "تصغير ملفات موقعك."
   },
   {
     "card": "ConceptCard",
     "accent": "mint",
-    "term": "Environment Variables",
-    "tag": "مصطلح",
-    "definition": "خزنة بتشيل فيها بياناتك السرية (زي كلمة سر الداتا بيز)."
+    "tag": "خزنة بياناتك السرية.",
+    "definition": "خزنة بتشيل فيها بياناتك السرية (زي كلمة سر الداتا بيز).",
+    "term": "Environment Variables"
   },
   {
     "card": "BulletsCard",
     "accent": "lavender",
     "bullets": [
-      "Build: الكود بيتحول لـ HTML/JS/CSS مضغوط، بيحذف اللي مش مستخدم، وبيشغّل tests.",
-      "Host: الـ bundle محتاج server يقدّمه للعالم، Lovable و Vercel بيوفروا hosting سريع.",
-      "DNS + Domain: الدومين اسم، الـ DNS بيحوّله لـ IP، بتشتريه وتضيف CNAME أو A record.",
-      "SSL (HTTPS): المتصفحات الحديثة بترفض أي حاجة بدون HTTPS، وكل host محترم بيوفّره تلقائي.",
-      "Environments: عندك ٣ بيئات على الأقل: local، preview، production، وكل واحدة ليها env vars مختلفة."
+      "Build: الكود بيتحول لـ HTML/JS/CSS مضغوط وسريع.",
+      "Host: سيرفر بيقدم تطبيقك للعالم، وده بيحصل في ثواني.",
+      "DNS + Domain: بيربط اسم موقعك بالـ IP الحقيقي.",
+      "SSL (HTTPS): أمان لموقعك وبيتفعل تلقائيًا."
     ],
     "title": "Deployment = Build + Host + DNS + SSL"
   },
   {
     "card": "ScreenshotCard",
     "accent": "peach",
-    "eyebrow": "من المنصة",
+    "caption": "الصفحة دي بتعرض فلسفة الـ deployment الحديث: كل deploy = entry في build log. Lovable بنفسه بيـ deploy تطبيقك في ثواني — كل تعديل بتعمله بيـ build و publish تلقائيًا على preview URL. لما تضغط Publish، نسخة جديدة بتروح للـ production URL. الفايدة من الـ build log: لو deploy وقع، تشوف بالظبط في أي خطوة.",
+    "title": "\"سجل البناء\" = تاريخ كل deploy",
     "src": "lessons/builder-m10-deploy-domain.jpg",
-    "caption": "الصفحة دي بتعرض فلسفة الـ deployment الحديث: كل deploy = entry في build log. Lovable بنفسه بيـ deploy تطبيقك في ثواني — كل تعديل بتعمله بيـ build و publish تلقائيًا على preview URL (https://id-preview--{id}.lovable.app). لما تضغط Publish، نسخة جديدة بتروح للـ production URL (https://{name}.lovable.app). تقدر تربط custom domain من الإعدادات. الفايدة من الـ build log: لو deploy وقع، تشوف بالظبط في أي خطوة (typescript error؟ missing env var؟ build timeout؟). من غير الـ log، الـ deployment يبقى صندوق أسود.",
-    "title": "Case Study — \"سجل البناء\" = تاريخ كل deploy"
+    "eyebrow": "شوف بنفسك"
   },
   {
     "card": "CompareCard",
     "accent": "yellow",
     "title": "\"شغّال عندي\" vs Deployment Pipeline حقيقي",
-    "right": {
-      "label": "RIGHT — Git-based deploys + previews + secrets مفصولة",
-      "body": "git push → CI builds → preview URL تلقائي لكل branch → tests تشتغل → merge to main → production deploy تلقائي. Secrets في dashboard الـ host (مش في git). كل deploy ليه commit hash و rollback button. لو شي بقى وحش بعد ٥ دقايق، rollback في كليك. النتيجة: تقدر تـ ship يوميًا بدون خوف."
-    },
     "left": {
-      "body": "بتعدّل في الكود في production server بإيدك. بتحط الـ Stripe production key في .env على local وتـ commit بالغلط على GitHub. مفيش preview environment — أي تعديل بيظهر للمستخدمين فورًا. لو deploy فشل، مفيش rollback. النتيجة: leaked secrets، downtime متوقّع، خوف من أي تعديل = تطبيق متجمّد.",
+      "body": "بتعدّل الكود في production server بإيدك. بتحط الـ Stripe production key في .env وتـ commit بالغلط. مفيش preview environment. النتيجة: leaked secrets، downtime متوقّع، خوف من أي تعديل = تطبيق متجمّد.",
       "label": "FAILURE — تـ deploy يدوي وتغيّر env في production مباشرة"
+    },
+    "right": {
+      "body": "git push بيشغل الـ CI، وبيعمل preview URL تلقائي لكل branch. الـ secrets بتكون في dashboard الـ host مش في git. كل deploy ليه commit hash وزرار للـ rollback. النتيجة: تقدر تعمل ship يوميًا بدون خوف.",
+      "label": "RIGHT — Git-based deploys + previews + secrets مفصولة"
     }
   },
   {
     "card": "CTACard",
-    "accent": "pink",
-    "tagline": "يلا بينا نطبق اللي اتعلمناه ونشوف إزاي نعمل deploy صح.",
+    "accent": "mintDeep",
     "eyebrow": "دورك دلوقتي",
-    "highlight": "اعمل Deploy حقيقي",
-    "title": "اعمل Deploy حقيقي — وافحص الـ ٧ نقاط"
+    "tagline": "يلا نطبق اللي اتعلمناه ونختبر فهمك في الكويز ده!",
+    "highlight": "وافحص الـ ٧ نقاط",
+    "title": "اعمل Deploy حقيقي"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [905, 419, 364, 485, 462, 474, 411, 1798, 1063, 1691, 233];
+export const SCENE_FRAMES: number[] = [654, 445, 424, 481, 406, 427, 394, 881, 701, 623, 366];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
