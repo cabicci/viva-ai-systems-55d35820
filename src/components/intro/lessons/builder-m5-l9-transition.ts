@@ -97,7 +97,6 @@ export const BUILDER_M5_TRANSITION_BLOCKS: IntroLessonContent = [
       kind: "concepts",
       items: [
         {
-          icon: MousePointerClick,
           term: "Frontend (الواجهة)",
           meaning:
             "الوش بتاع الأبلكيشن. كل حاجة عينك شايفاها وصباعك بيدوس عليها.",
@@ -105,7 +104,6 @@ export const BUILDER_M5_TRANSITION_BLOCKS: IntroLessonContent = [
             "زي الديكور والمنيو في أي مطعم. ده اللي الزبون بيتعامل معاه مباشرة.",
         },
         {
-          icon: BrainCircuit,
           term: "Backend (الكواليس)",
           meaning:
             "المطبخ أو العقل اللي بيفكر وبينفذ الأوامر اللي مبتتشفش.",
@@ -113,7 +111,6 @@ export const BUILDER_M5_TRANSITION_BLOCKS: IntroLessonContent = [
             "زي الشيف اللي بيطبخ الأكل في المطبخ. الزبون مش بيشوفه، بس هو اللي بيعمل كل الشغل.",
         },
         {
-          icon: Database,
           term: "Database (المخزن)",
           meaning:
             "الأرشيف اللي بنشيّل فيه كل حاجة (بيانات المستخدمين، المنتجات، الرسايل) عشان نرجع لها بعدين.",
