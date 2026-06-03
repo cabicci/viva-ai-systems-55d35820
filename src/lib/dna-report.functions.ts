@@ -410,7 +410,7 @@ export const generateDnaReport = createServerFn({ method: "POST" })
     push(`- **Lesson ID:** \`{pathId}-{moduleSlug}-{lessonSlug}\``);
     push(`- **Design tokens:** ممنوع تكتب لون مباشر زي \`text-white\` أو \`bg-black\`. استخدم semantic tokens من \`src/styles.css\` (\`bg-background\`, \`text-foreground\`, \`bg-primary\`, …).`);
     push(`- **اللغة:** Egyptian Arabic — راجع \`mem://design/egyptian-arabic-prompt-rules\` لقواعد الـ TTS والكلمات الممنوعة.`);
-    push(`- **Paths lineup:** Builder, Creator, Automator, Analyst, Business — كلهم مكتملين ومنشورين. متقولش "coming soon" على أي واحد فيهم.`);
+    push(`- **Paths lineup (dashboard order):** Business → Creator → Analyst → Automator → Builder — كلهم مكتملين ومنشورين. متقولش "coming soon" على أي واحد فيهم.`);
     push(`- **Path integration / visual journey map:** مؤجل لحد إشعار آخر.`);
     push(`- **Server functions:** \`createServerFn\` + \`requireSupabaseAuth\` للمحمي. عمرك ما تستخدم Supabase Edge Functions لـ app-internal logic.`);
     push(`- **Auth:** Google عبر Lovable broker، مش raw \`supabase.auth.signInWithOAuth("google")\`.`);
