@@ -67,7 +67,6 @@ import { SCENES as L_automator_m2_tools_landscape_S, SCENE_FRAMES as L_automator
 import { SCENES as L_analyst_m2_three_sources_S, SCENE_FRAMES as L_analyst_m2_three_sources_F, TOTAL_FRAMES as L_analyst_m2_three_sources_T } from "./lessons-generated/analyst-m2-three-sources.gen";
 import { SCENES as L_analyst_m0_from_automation_to_insight_S, SCENE_FRAMES as L_analyst_m0_from_automation_to_insight_F, TOTAL_FRAMES as L_analyst_m0_from_automation_to_insight_T } from "./lessons-generated/analyst-m0-from-automation-to-insight.gen";
 import { SCENES as L_analyst_m4_weekly_review_ritual_S, SCENE_FRAMES as L_analyst_m4_weekly_review_ritual_F, TOTAL_FRAMES as L_analyst_m4_weekly_review_ritual_T } from "./lessons-generated/analyst-m4-weekly-review-ritual.gen";
-import { SCENES as L_builder_m6_debugging_S, SCENE_FRAMES as L_builder_m6_debugging_F, TOTAL_FRAMES as L_builder_m6_debugging_T } from "./lessons-generated/builder-m6-l18-debugging.gen";
 import { SCENES as L_automator_m5_lead_capture_S, SCENE_FRAMES as L_automator_m5_lead_capture_F, TOTAL_FRAMES as L_automator_m5_lead_capture_T } from "./lessons-generated/automator-m5-lead-capture.gen";
 import { SCENES as L_business_m5_reactive_relapse_S, SCENE_FRAMES as L_business_m5_reactive_relapse_F, TOTAL_FRAMES as L_business_m5_reactive_relapse_T } from "./lessons-generated/business-m5-reactive-relapse.gen";
 import { SCENES as L_business_m2_customer_lifecycle_S, SCENE_FRAMES as L_business_m2_customer_lifecycle_F, TOTAL_FRAMES as L_business_m2_customer_lifecycle_T } from "./lessons-generated/business-m2-customer-lifecycle.gen";
@@ -107,6 +106,7 @@ import { SCENES as L_builder_m4_l8_parameters_S, SCENE_FRAMES as L_builder_m4_l8
 import { SCENES as L_builder_m9_l25_embeddings_S, SCENE_FRAMES as L_builder_m9_l25_embeddings_F, TOTAL_FRAMES as L_builder_m9_l25_embeddings_T } from "./lessons-generated/builder-m9-l25-embeddings.gen";
 import { SCENES as L_builder_m5_l9_transition_S, SCENE_FRAMES as L_builder_m5_l9_transition_F, TOTAL_FRAMES as L_builder_m5_l9_transition_T } from "./lessons-generated/builder-m5-l9-transition.gen";
 import { SCENES as L_builder_m9_l26_agents_S, SCENE_FRAMES as L_builder_m9_l26_agents_F, TOTAL_FRAMES as L_builder_m9_l26_agents_T } from "./lessons-generated/builder-m9-l26-agents.gen";
+import { SCENES as L_builder_m6_l18_debugging_S, SCENE_FRAMES as L_builder_m6_l18_debugging_F, TOTAL_FRAMES as L_builder_m6_l18_debugging_T } from "./lessons-generated/builder-m6-l18-debugging.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -167,7 +167,6 @@ export const LESSONS: LessonModule[] = [
     { id: "analyst-m2-three-sources", scenes: L_analyst_m2_three_sources_S, sceneFrames: L_analyst_m2_three_sources_F, totalFrames: L_analyst_m2_three_sources_T },
     { id: "analyst-m0-from-automation-to-insight", scenes: L_analyst_m0_from_automation_to_insight_S, sceneFrames: L_analyst_m0_from_automation_to_insight_F, totalFrames: L_analyst_m0_from_automation_to_insight_T },
     { id: "analyst-m4-weekly-review-ritual", scenes: L_analyst_m4_weekly_review_ritual_S, sceneFrames: L_analyst_m4_weekly_review_ritual_F, totalFrames: L_analyst_m4_weekly_review_ritual_T },
-    { id: "builder-m6-l18-debugging", scenes: L_builder_m6_debugging_S, sceneFrames: L_builder_m6_debugging_F, totalFrames: L_builder_m6_debugging_T },
     { id: "automator-m5-lead-capture", scenes: L_automator_m5_lead_capture_S, sceneFrames: L_automator_m5_lead_capture_F, totalFrames: L_automator_m5_lead_capture_T },
     { id: "business-m5-reactive-relapse", scenes: L_business_m5_reactive_relapse_S, sceneFrames: L_business_m5_reactive_relapse_F, totalFrames: L_business_m5_reactive_relapse_T },
     { id: "business-m2-customer-lifecycle", scenes: L_business_m2_customer_lifecycle_S, sceneFrames: L_business_m2_customer_lifecycle_F, totalFrames: L_business_m2_customer_lifecycle_T },
@@ -207,5 +206,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m9-l25-embeddings", scenes: L_builder_m9_l25_embeddings_S, sceneFrames: L_builder_m9_l25_embeddings_F, totalFrames: L_builder_m9_l25_embeddings_T },
     { id: "builder-m5-l9-transition", scenes: L_builder_m5_l9_transition_S, sceneFrames: L_builder_m5_l9_transition_F, totalFrames: L_builder_m5_l9_transition_T },
     { id: "builder-m9-l26-agents", scenes: L_builder_m9_l26_agents_S, sceneFrames: L_builder_m9_l26_agents_F, totalFrames: L_builder_m9_l26_agents_T },
+    { id: "builder-m6-l18-debugging", scenes: L_builder_m6_l18_debugging_S, sceneFrames: L_builder_m6_l18_debugging_F, totalFrames: L_builder_m6_l18_debugging_T },
   /* @lesson-entries-end */
 ];

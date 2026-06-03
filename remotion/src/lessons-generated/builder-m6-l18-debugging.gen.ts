@@ -5,118 +5,101 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "subtitle": "إزاي تتعامل مع الـ Errors وتخلّي الـ AI يساعدك يصلّحها.",
-    "chip": "أهلًا",
-    "title": "لما الـ AI يغلط",
-    "highlight": "متخفش"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "إيه اللي باظ؟",
-    "term": "Error message (رسالة الخطأ)",
-    "definition": "رسالة من السيستم بتقولك إن فيه حاجة باظت ومحتاجة تتصلح."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "tag": "فين المشكلة؟",
-    "term": "Stack trace",
-    "definition": "خريطة بتعرفك الـ error بدأ فين ومشي إزاي لحد ما وصل عندك."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "tag": "نافذة المراقبة",
-    "term": "Console (الكونسول)",
-    "definition": "شاشة بنشوف فيها كل اللي بيحصل \"تحت السطح\" في البرنامج."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "definition": "إنك تخلي المشكلة تحصل تاني عن طريق إنك تمشي على نفس خطواتها.",
-    "tag": "إزاي أكررها؟",
-    "term": "Reproduce (تكرار الخطأ)"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "definition": "أي حاجة ظاهرة قدام عين المستخدم، زي الزراير والألوان والكلام.",
-    "tag": "اللي المستخدم بيشوفه",
-    "term": "Frontend (الواجهة)"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "definition": "الكواليس اللي فيها البيانات والقواعد اللي بتشغل البرنامج وبتخزن المعلومات.",
-    "tag": "اللي ورا الكواليس",
-    "term": "Backend (الكواليس)"
+    "chip": "أول خطوة ليك كـ Builder",
+    "title": "الشاشة بيّضت فجأة؟",
+    "subtitle": "إزاي تتعامل مع الـ bugs زي المحترفين.",
+    "highlight": "مبروك."
   },
   {
     "card": "BulletsCard",
     "accent": "lavender",
-    "title": "٤ معلومات تحل ٩٠٪ من الـ errors",
     "bullets": [
-      "الـ Error Message بالظبط: نسخ ولصق زي ما هو.",
-      "الـ Stack Trace أو اسم الملف والسطر."
-    ]
+      "في أي متصفح، دوس F12 هيفتحلك الـ Console.",
+      "الـ Console هو الصندوق الأسود لأي ويب سايت.",
+      "هتلاقي ٩٩٪ من رسائل الـ Error الحمرا مستنياك هناك.",
+      "دي أول حاجة تبص عليها دايماً."
+    ],
+    "title": "أول رد فعل ليك: دوس F12"
   },
   {
     "card": "BulletsCard",
     "accent": "peach",
-    "title": "٤ معلومات تحل ٩٠٪ من الـ errors",
     "bullets": [
-      "خطوات إعادة الإنتاج: إزاي الـ error حصل.",
-      "اللي إنت توقّعته يحصل: إيه المفروض كان يحصل."
-    ]
+      "رسالة الـ Error بالحرف (copy/paste).",
+      "مكان الـ Error (اسم الفايل ورقم السطر).",
+      "إزاي المشكلة حصلت (خطوات التكرار).",
+      "إيه اللي المفروض كان يحصل."
+    ],
+    "title": "٤ معلومات بتحل ٩٠٪ من الـ bugs"
   },
   {
     "card": "BulletsCard",
     "accent": "yellow",
-    "title": "أول خطوة لأي مشكلة",
+    "title": "ده اللي الـ AI محتاجه، بالحرف",
     "bullets": [
-      "افتح Console (F12 في أي متصفح).",
-      "كل error بيظهر هناك، حتى لو الشاشة بيضا."
+      "الـ prompt فيه رسالة الـ Error بالظبط واسم الفايل ورقم السطر",
+      "عشان كده الـ AI رد بتشخيص دقيق وحل مباشر",
+      "لما تقوله «الكود بايظ» بس",
+      "بيرد باحتمالات عامة"
     ]
-  },
-  {
-    "card": "ScreenshotCard",
-    "accent": "pink",
-    "src": "lessons/unique/builder-m6-l18-debugging.jpg",
-    "caption": "الـ AI بيرد بتشخيص دقيق لما ياخد الـ error الفعلي والسياق. مش ١٠ احتمالات.",
-    "eyebrow": "شوف بنفسك",
-    "title": "Error + Context = حل"
   },
   {
     "card": "CompareCard",
-    "accent": "mintDeep",
-    "left": {
-      "body": "الـ AI بيرد بـ ١٠ احتمالات، بتجربهم ومفيش حل. ساعة من وقتك بتضيع.",
-      "label": "غلط: «الصفحة مش شغّالة»"
-    },
+    "accent": "pink",
     "right": {
-      "body": "الـ AI بيقولك الحل في ثواني: «المشكلة في السطر ٤٢، الـ users array undefined. ضيف check». الـ bug اتصلّح في ٣٠ ثانية.",
-      "label": "صح: Error + خطوات + متوقّع"
+      "body": "لما تديله الـ Error والخطوات والمتوقع، الـ AI هيرد بحل دقيق ومباشر في ٣٠ ثانية بس.",
+      "label": "صح: Error + خطوات + المتوقع"
     },
-    "title": "إزاي تطلب مساعدة"
+    "left": {
+      "body": "الـ AI هيرد باحتمالات عامة، زي جرّب refresh أو اتأكد من النت. هتضيع ساعة من وقتك من غير حل.",
+      "label": "غلط: «الصفحة مش شغالة»"
+    },
+    "title": "الفرق بين ساعة ضايعة و٣٠ ثانية"
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "mintDeep",
+    "definition": "رسالة من السيستم بتقولك إن فيه حاجة باظت ومحتاجة تتصلح، وبتوصف نوع المشكلة بالظبط.",
+    "tag": "رسالة الخطأ",
+    "term": "Error Message"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "lavender",
+    "bullets": [
+      "اكتب prompt للـ AI يحل بيه bug (حقيقي أو من خيالك).",
+      "الـ prompt لازم يكون فيه الـ ٤ معلومات اللي اتعلمناها.",
+      "رسالة الـ Error، مكانها، خطوات التكرار، وإيه اللي كان المفروض يحصل."
+    ],
+    "title": "مهمتك: اكتب prompt يحل bug"
   },
   {
     "card": "CTACard",
-    "accent": "mint",
-    "highlight": "واتعامل معاه",
-    "title": "اعمل error متعمّد",
-    "tagline": "طبّق اللي اتعلّمته وحل المشكلة بنفسك في الـ quiz.",
+    "accent": "yellow",
+    "tagline": "جاوب على الأسئلة عشان تطبق اللي اتعلمته وتتأكد إنك بقيت محترف في الـ debugging.",
+    "title": "اختبر نفسك",
+    "highlight": "اتأكد إنك فهمت",
     "eyebrow": "دورك دلوقتي"
   },
   {
+    "card": "BulletsCard",
+    "accent": "mint",
+    "bullets": [
+      "كل error بيحصل عند أي مستخدم بيتبعت لجدول عندنا.",
+      "بنخزن رسالة الـ error كاملة والصفحة اللي حصل فيها.",
+      "بنراجع الـ logs دي أسبوعيًا ونصلّح أكتر أخطاء بتتكرر."
+    ],
+    "title": "/build-logs — كل غلطة بتتحول لدرس"
+  },
+  {
     "card": "CTACard",
-    "accent": "lavender",
-    "title": "متخفش من الـ errors",
-    "highlight": "اعرف توصفها صح",
-    "tagline": "نتقابل في الدرس الجاي: المونتاج مش رفاهية — هو نص الفيديو.",
-    "eyebrow": "ملخص الدرس"
+    "accent": "peach",
+    "tagline": "نتقابل في الدرس الجاي عشان نفهم إزاي المونتاج بيكمل رسالة الفيديو وبيخليه فعال أكتر.",
+    "title": "المونتاج مش رفاهية",
+    "highlight": "هو نص الفيديو",
+    "eyebrow": "الدرس الجاي"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [355, 303, 276, 268, 295, 286, 316, 499, 432, 352, 340, 543, 289, 490];
+export const SCENE_FRAMES: number[] = [663, 544, 498, 558, 603, 513, 558, 378, 592, 432];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
