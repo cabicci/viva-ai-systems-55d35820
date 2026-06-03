@@ -737,6 +737,72 @@ export type Database = {
         }
         Relationships: []
       }
+      user_validation_sessions: {
+        Row: {
+          created_at: string
+          first_3_lessons_completed: boolean
+          id: string
+          notes: string | null
+          reached_wow_within_7min: boolean | null
+          started_at: string
+          updated_at: string
+          user_id: string | null
+          user_label: string | null
+          wow_moment_at: string | null
+        }
+        Insert: {
+          created_at?: string
+          first_3_lessons_completed?: boolean
+          id?: string
+          notes?: string | null
+          reached_wow_within_7min?: boolean | null
+          started_at?: string
+          updated_at?: string
+          user_id?: string | null
+          user_label?: string | null
+          wow_moment_at?: string | null
+        }
+        Update: {
+          created_at?: string
+          first_3_lessons_completed?: boolean
+          id?: string
+          notes?: string | null
+          reached_wow_within_7min?: boolean | null
+          started_at?: string
+          updated_at?: string
+          user_id?: string | null
+          user_label?: string | null
+          wow_moment_at?: string | null
+        }
+        Relationships: []
+      }
+      v9_apply_decisions: {
+        Row: {
+          decided_at: string
+          decided_by: string | null
+          decision: string
+          lesson_id: string
+          new_order: Json | null
+          notes: string | null
+        }
+        Insert: {
+          decided_at?: string
+          decided_by?: string | null
+          decision: string
+          lesson_id: string
+          new_order?: Json | null
+          notes?: string | null
+        }
+        Update: {
+          decided_at?: string
+          decided_by?: string | null
+          decision?: string
+          lesson_id?: string
+          new_order?: Json | null
+          notes?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

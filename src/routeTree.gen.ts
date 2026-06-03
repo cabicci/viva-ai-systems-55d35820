@@ -35,6 +35,7 @@ import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as RoadmapIdRouteImport } from './routes/roadmap.$id'
 import { Route as ImageGalleryPathRouteImport } from './routes/image-gallery.$path'
 import { Route as CreatorWorkbookRouteImport } from './routes/creator.workbook'
+import { Route as AdminV9ReviewRouteImport } from './routes/admin.v9-review'
 import { Route as AdminPersonaSimV9RouteImport } from './routes/admin.persona-sim-v9'
 import { Route as LearnPathIdLessonIdRouteImport } from './routes/learn.$pathId.$lessonId'
 
@@ -168,6 +169,11 @@ const CreatorWorkbookRoute = CreatorWorkbookRouteImport.update({
   path: '/creator/workbook',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminV9ReviewRoute = AdminV9ReviewRouteImport.update({
+  id: '/admin/v9-review',
+  path: '/admin/v9-review',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminPersonaSimV9Route = AdminPersonaSimV9RouteImport.update({
   id: '/admin/persona-sim-v9',
   path: '/admin/persona-sim-v9',
@@ -201,6 +207,7 @@ export interface FileRoutesByFullPath {
   '/system-state': typeof SystemStateRoute
   '/triage': typeof TriageRoute
   '/admin/persona-sim-v9': typeof AdminPersonaSimV9Route
+  '/admin/v9-review': typeof AdminV9ReviewRoute
   '/creator/workbook': typeof CreatorWorkbookRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/roadmap/$id': typeof RoadmapIdRoute
@@ -230,6 +237,7 @@ export interface FileRoutesByTo {
   '/system-state': typeof SystemStateRoute
   '/triage': typeof TriageRoute
   '/admin/persona-sim-v9': typeof AdminPersonaSimV9Route
+  '/admin/v9-review': typeof AdminV9ReviewRoute
   '/creator/workbook': typeof CreatorWorkbookRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/roadmap/$id': typeof RoadmapIdRoute
@@ -261,6 +269,7 @@ export interface FileRoutesById {
   '/system-state': typeof SystemStateRoute
   '/triage': typeof TriageRoute
   '/admin/persona-sim-v9': typeof AdminPersonaSimV9Route
+  '/admin/v9-review': typeof AdminV9ReviewRoute
   '/creator/workbook': typeof CreatorWorkbookRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/roadmap/$id': typeof RoadmapIdRoute
@@ -293,6 +302,7 @@ export interface FileRouteTypes {
     | '/system-state'
     | '/triage'
     | '/admin/persona-sim-v9'
+    | '/admin/v9-review'
     | '/creator/workbook'
     | '/image-gallery/$path'
     | '/roadmap/$id'
@@ -322,6 +332,7 @@ export interface FileRouteTypes {
     | '/system-state'
     | '/triage'
     | '/admin/persona-sim-v9'
+    | '/admin/v9-review'
     | '/creator/workbook'
     | '/image-gallery/$path'
     | '/roadmap/$id'
@@ -352,6 +363,7 @@ export interface FileRouteTypes {
     | '/system-state'
     | '/triage'
     | '/admin/persona-sim-v9'
+    | '/admin/v9-review'
     | '/creator/workbook'
     | '/image-gallery/$path'
     | '/roadmap/$id'
@@ -383,6 +395,7 @@ export interface RootRouteChildren {
   SystemStateRoute: typeof SystemStateRoute
   TriageRoute: typeof TriageRoute
   AdminPersonaSimV9Route: typeof AdminPersonaSimV9Route
+  AdminV9ReviewRoute: typeof AdminV9ReviewRoute
   CreatorWorkbookRoute: typeof CreatorWorkbookRoute
   RoadmapIdRoute: typeof RoadmapIdRoute
   AdminIndexRoute: typeof AdminIndexRoute
@@ -574,6 +587,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CreatorWorkbookRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/v9-review': {
+      id: '/admin/v9-review'
+      path: '/admin/v9-review'
+      fullPath: '/admin/v9-review'
+      preLoaderRoute: typeof AdminV9ReviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/persona-sim-v9': {
       id: '/admin/persona-sim-v9'
       path: '/admin/persona-sim-v9'
@@ -627,6 +647,7 @@ const rootRouteChildren: RootRouteChildren = {
   SystemStateRoute: SystemStateRoute,
   TriageRoute: TriageRoute,
   AdminPersonaSimV9Route: AdminPersonaSimV9Route,
+  AdminV9ReviewRoute: AdminV9ReviewRoute,
   CreatorWorkbookRoute: CreatorWorkbookRoute,
   RoadmapIdRoute: RoadmapIdRoute,
   AdminIndexRoute: AdminIndexRoute,
