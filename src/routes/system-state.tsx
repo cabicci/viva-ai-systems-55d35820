@@ -157,7 +157,7 @@ function SystemStatePage() {
             <div key={m.id} className="glass rounded-2xl p-5 border border-border/30">
               <div className="flex items-center gap-2 mb-3">
                 <span className="font-mono text-[10px] text-muted-foreground">
-                  MODULE 0{m.order}
+                  MODULE {String(m.order).padStart(2, "0")}
                 </span>
                 <h3 className="font-bold text-foreground">{m.title}</h3>
               </div>
@@ -210,7 +210,7 @@ function SystemStatePage() {
               <ul className="space-y-1 text-sm text-muted-foreground">
                 {builder.modules.map((m) => (
                   <li key={m.id}>
-                    <span className="font-mono text-[10px] text-primary mr-2">M0{m.order}</span>
+                    <span className="font-mono text-[10px] text-primary mr-2">M{m.order}</span>
                     {m.title} — {m.lessons.length} lessons
                   </li>
                 ))}
