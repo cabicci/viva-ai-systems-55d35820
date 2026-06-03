@@ -1,8 +1,8 @@
 import { Compass, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, Workflow, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-/** Analyst · M0 · Lesson 01 — Bridge from Automator */
-export const ANALYST_M0_FROM_AUTOMATION_TO_INSIGHT_BLOCKS: IntroLessonContent = [
+/** Analyst · M1 · Lesson 01 — Bridge from Automator */
+export const ANALYST_M1_FROM_AUTOMATION_TO_INSIGHT_BLOCKS: IntroLessonContent = [
   {
     icon: Compass,
     eyebrow: "HERO",
