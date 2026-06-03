@@ -1,16 +1,25 @@
 #!/usr/bin/env python3
 """v9 step 2 — A/B test current vs suggested block order with 20 agents."""
 from __future__ import annotations
-import json, os, sys, time, statistics, glob
+import json, os, sys, time, statistics, glob, itertools, threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
 import requests
 
 OUT_DIR = Path("/mnt/documents")
-API_KEY = os.environ["LOVABLE_API_KEY"]
-MODEL = "google/gemini-3-flash-preview"
-ENDPOINT = "https://ai.gateway.lovable.dev/v1/chat/completions"
+GEMINI_KEYS = [k for k in [
+    os.environ.get("GEMINI_API_KEY"),
+    os.environ.get("GEMINI_API_KEY_2"),
+    os.environ.get("GEMINI_API_KEY_3"),
+    os.environ.get("GEMINI_API_KEY_4"),
+] if k]
+assert GEMINI_KEYS, "No GEMINI_API_KEY* env vars found"
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent"
+_cycle = itertools.cycle(GEMINI_KEYS); _lock = threading.Lock()
+def next_key():
+    with _lock: return next(_cycle)
 
 PERSONAS = [
     ("Designer-Eye", "مصمم UI/UX خبرة 8 سنين. حساس للتسلسل البصري والـ contrast."),
@@ -59,16 +68,19 @@ def build_prompt(persona, desc, lid, a, b):
 def call_ai(prompt, retries=3):
     for i in range(retries):
         try:
-            r = requests.post(ENDPOINT, headers={
-                "Authorization": f"Bearer {API_KEY}", "Content-Type":"application/json",
-            }, json={
-                "model": MODEL,
-                "messages":[{"role":"system","content":SYSTEM},{"role":"user","content":prompt}],
-                "response_format":{"type":"json_object"},
-            }, timeout=60)
+            r = requests.post(
+                f"{GEMINI_URL}?key={next_key()}",
+                json={
+                    "system_instruction": {"parts": [{"text": SYSTEM}]},
+                    "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+                    "generationConfig": {"responseMimeType": "application/json"},
+                },
+                timeout=60,
+            )
             if r.status_code == 429: time.sleep(3*(i+1)); continue
             r.raise_for_status()
-            return json.loads(r.json()["choices"][0]["message"]["content"])
+            txt = r.json()["candidates"][0]["content"]["parts"][0]["text"]
+            return json.loads(txt)
         except Exception as e:
             if i == retries-1: return {"error": str(e)[:200]}
             time.sleep(2)
