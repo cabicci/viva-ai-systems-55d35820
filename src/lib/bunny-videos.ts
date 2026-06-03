@@ -48,7 +48,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "builder-m3-l7-memory-limits": "e088cafe-9605-4248-9748-5efd0c15b943",
   "builder-m4-l8-parameters": "5797ba49-6abf-4100-8488-6ad064175c24",
   "builder-m5-l11-backend-api": "3674fdc4-617a-4bfb-a47f-a311e34bbe1a",
-  "builder-m5-l12-database-intro": "3df2843b-54b6-4f0f-81d6-581ecd1e1c07",
+  "builder-m5-l12-database-intro": "c49817d6-abd9-4d1d-9e49-f01250bdf2d4",
   "builder-m5-l10-frontend": "73e89c22-04a1-4c05-8046-90dbda756aae",
   "builder-m5-l9-transition": "8ccda455-be69-4202-af90-0de2353b1a72",
   "builder-m6-l16-components-routes": "fc72fd20-df15-40d1-ba49-eb066a269134",

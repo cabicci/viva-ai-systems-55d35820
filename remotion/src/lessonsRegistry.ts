@@ -93,7 +93,6 @@ import { SCENES as L_builder_m5_l11_backend_api_S, SCENE_FRAMES as L_builder_m5_
 import { SCENES as L_builder_m7_l20_relations_S, SCENE_FRAMES as L_builder_m7_l20_relations_F, TOTAL_FRAMES as L_builder_m7_l20_relations_T } from "./lessons-generated/builder-m7-l20-relations.gen";
 import { SCENES as L_builder_m6_l13_idea_to_page_S, SCENE_FRAMES as L_builder_m6_l13_idea_to_page_F, TOTAL_FRAMES as L_builder_m6_l13_idea_to_page_T } from "./lessons-generated/builder-m6-l13-idea-to-page.gen";
 import { SCENES as L_builder_m7_l19_tables_columns_S, SCENE_FRAMES as L_builder_m7_l19_tables_columns_F, TOTAL_FRAMES as L_builder_m7_l19_tables_columns_T } from "./lessons-generated/builder-m7-l19-tables-columns.gen";
-import { SCENES as L_builder_m5_l12_database_intro_S, SCENE_FRAMES as L_builder_m5_l12_database_intro_F, TOTAL_FRAMES as L_builder_m5_l12_database_intro_T } from "./lessons-generated/builder-m5-l12-database-intro.gen";
 import { SCENES as L_builder_m7_l21_queries_S, SCENE_FRAMES as L_builder_m7_l21_queries_F, TOTAL_FRAMES as L_builder_m7_l21_queries_T } from "./lessons-generated/builder-m7-l21-queries.gen";
 import { SCENES as L_builder_m6_l15_first_prompt_to_lovable_S, SCENE_FRAMES as L_builder_m6_l15_first_prompt_to_lovable_F, TOTAL_FRAMES as L_builder_m6_l15_first_prompt_to_lovable_T } from "./lessons-generated/builder-m6-l15-first-prompt-to-lovable.gen";
 import { SCENES as L_builder_m6_l14_wireframe_S, SCENE_FRAMES as L_builder_m6_l14_wireframe_F, TOTAL_FRAMES as L_builder_m6_l14_wireframe_T } from "./lessons-generated/builder-m6-l14-wireframe.gen";
@@ -107,6 +106,7 @@ import { SCENES as L_builder_m9_l24_rag_S, SCENE_FRAMES as L_builder_m9_l24_rag_
 import { SCENES as L_builder_m9_l26_agents_S, SCENE_FRAMES as L_builder_m9_l26_agents_F, TOTAL_FRAMES as L_builder_m9_l26_agents_T } from "./lessons-generated/builder-m9-l26-agents.gen";
 import { SCENES as L_builder_m10_deploy_domain_S, SCENE_FRAMES as L_builder_m10_deploy_domain_F, TOTAL_FRAMES as L_builder_m10_deploy_domain_T } from "./lessons-generated/builder-m10-deploy-domain.gen";
 import { SCENES as L_builder_m10_first_users_S, SCENE_FRAMES as L_builder_m10_first_users_F, TOTAL_FRAMES as L_builder_m10_first_users_T } from "./lessons-generated/builder-m10-first-users.gen";
+import { SCENES as L_builder_m5_l12_database_intro_S, SCENE_FRAMES as L_builder_m5_l12_database_intro_F, TOTAL_FRAMES as L_builder_m5_l12_database_intro_T } from "./lessons-generated/builder-m5-l12-database-intro.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -193,7 +193,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m7-l20-relations", scenes: L_builder_m7_l20_relations_S, sceneFrames: L_builder_m7_l20_relations_F, totalFrames: L_builder_m7_l20_relations_T },
     { id: "builder-m6-l13-idea-to-page", scenes: L_builder_m6_l13_idea_to_page_S, sceneFrames: L_builder_m6_l13_idea_to_page_F, totalFrames: L_builder_m6_l13_idea_to_page_T },
     { id: "builder-m7-l19-tables-columns", scenes: L_builder_m7_l19_tables_columns_S, sceneFrames: L_builder_m7_l19_tables_columns_F, totalFrames: L_builder_m7_l19_tables_columns_T },
-    { id: "builder-m5-l12-database-intro", scenes: L_builder_m5_l12_database_intro_S, sceneFrames: L_builder_m5_l12_database_intro_F, totalFrames: L_builder_m5_l12_database_intro_T },
     { id: "builder-m7-l21-queries", scenes: L_builder_m7_l21_queries_S, sceneFrames: L_builder_m7_l21_queries_F, totalFrames: L_builder_m7_l21_queries_T },
     { id: "builder-m6-l15-first-prompt-to-lovable", scenes: L_builder_m6_l15_first_prompt_to_lovable_S, sceneFrames: L_builder_m6_l15_first_prompt_to_lovable_F, totalFrames: L_builder_m6_l15_first_prompt_to_lovable_T },
     { id: "builder-m6-l14-wireframe", scenes: L_builder_m6_l14_wireframe_S, sceneFrames: L_builder_m6_l14_wireframe_F, totalFrames: L_builder_m6_l14_wireframe_T },
@@ -207,5 +206,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m9-l26-agents", scenes: L_builder_m9_l26_agents_S, sceneFrames: L_builder_m9_l26_agents_F, totalFrames: L_builder_m9_l26_agents_T },
     { id: "builder-m10-deploy-domain", scenes: L_builder_m10_deploy_domain_S, sceneFrames: L_builder_m10_deploy_domain_F, totalFrames: L_builder_m10_deploy_domain_T },
     { id: "builder-m10-first-users", scenes: L_builder_m10_first_users_S, sceneFrames: L_builder_m10_first_users_F, totalFrames: L_builder_m10_first_users_T },
+    { id: "builder-m5-l12-database-intro", scenes: L_builder_m5_l12_database_intro_S, sceneFrames: L_builder_m5_l12_database_intro_F, totalFrames: L_builder_m5_l12_database_intro_T },
   /* @lesson-entries-end */
 ];
