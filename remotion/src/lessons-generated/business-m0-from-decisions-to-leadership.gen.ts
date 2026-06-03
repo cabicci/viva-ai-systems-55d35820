@@ -5,128 +5,114 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "subtitle": "Builder + Creator + Automator + Analyst = آلة شغّالة. Business = إنت بقيت بتقود الآلة — مش بتشغّلها يدوي.",
-    "chip": "أهلًا",
+    "highlight": "دورك إيه؟",
     "title": "القرارات بقت بتنفّذ نفسها",
-    "highlight": "دورك إيه؟"
+    "subtitle": "إنت بتقود الآلة، مش بتشغّلها يدوي.",
+    "chip": "أهلًا"
   },
   {
     "card": "ConceptCard",
     "accent": "lavender",
+    "tag": "الشغل اليدوي",
     "definition": "الشخص اللي بيخلص الشغل اليدوي اليومي بنفسه.",
-    "term": "Operator",
-    "tag": "شغل يدوي"
+    "term": "Operator"
   },
   {
     "card": "ConceptCard",
     "accent": "peach",
-    "tag": "تفكير مستقبلي",
     "term": "Strategic",
-    "definition": "التفكير في الخطوات الكبيرة والمستقبلية والخطط بعيدة المدى."
+    "definition": "التفكير في الخطوات الكبيرة والمستقبلية والخطط بعيدة المدى.",
+    "tag": "خطط مستقبلية"
   },
   {
     "card": "ConceptCard",
     "accent": "yellow",
     "term": "Operational",
-    "tag": "إدارة يومية",
+    "tag": "شغل يومي",
     "definition": "إدارة الشغل اليومي والتفاصيل الصغيرة اللي بتمشّي الدنيا دلوقتي."
   },
   {
     "card": "ConceptCard",
     "accent": "pink",
     "term": "Bottleneck",
-    "tag": "عائق للشغل",
-    "definition": "حاجة واحدة معطلة السلسلة كلها وموقفة حال الشغل."
+    "definition": "حاجة واحدة معطلة السلسلة كلها وموقفة حال الشغل.",
+    "tag": "عقبة الشغل"
   },
   {
     "card": "ConceptCard",
     "accent": "mintDeep",
-    "tag": "أطراف مهتمة",
-    "term": "Stakeholders",
-    "definition": "أي حد مهتم أو بيتأثر بقراراتك في الشغل (شركاء، زبائن، موردين)."
+    "definition": "إزاي تعمل نتائج جبارة بمجهود قليل عن طريق النظام.",
+    "tag": "نتائج كبيرة",
+    "term": "Leverage"
   },
   {
     "card": "ConceptCard",
     "accent": "mint",
-    "tag": "نتائج كبيرة",
-    "term": "Leverage",
-    "definition": "إزاي تعمل نتائج جبارة بمجهود قليل عن طريق النظام."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
+    "tag": "مُوجّه الفريق",
     "definition": "الشخص اللي بيحط النظام وبيوجه الفريق عشان يوصلوا للهدف.",
-    "tag": "قائد الفريق",
     "term": "Leader"
   },
   {
     "card": "BulletsCard",
-    "accent": "peach",
-    "title": "٤ مسؤوليات للـ Business Leader",
+    "accent": "lavender",
     "bullets": [
       "إدارة الوقت — تختار إنت تشتغل على إيه، مش الرسائل تختار.",
-      "إدارة العملاء — نظام يخلّي العميل يحس إنه مهم بعد البيع."
-    ]
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "yellow",
-    "bullets": [
+      "إدارة العملاء — نظام يخلّي العميل يحس إنه مهم بعد البيع.",
       "إدارة العمليات — تفرّق بين Strategic و Operational و Administrative.",
       "النمو والتوسع — تعرف إمتى تكبّر وإمتى تثبّت."
     ],
-    "title": "٤ مسؤوليات للـ Business Leader"
+    "title": "4 مسؤوليات للـ Business Leader"
   },
   {
     "card": "BulletsCard",
-    "accent": "pink",
-    "title": "Operator vs Leader — توزيع وقتك",
+    "accent": "peach",
     "bullets": [
-      "اليوم: 80% Operator",
-      "الهدف: 70% Leader",
-      "النظام = leverage."
-    ]
+      "الـ Operator بيقضي 80% من وقته في الشغل اليومي.",
+      "الـ Leader هدفه يقضي 70% من وقته في القيادة.",
+      "النظام هو اللي بيعمل الـ leverage ده."
+    ],
+    "title": "Operator vs Leader — توزيع وقتك"
   },
   {
     "card": "CompareCard",
-    "accent": "mintDeep",
+    "accent": "yellow",
+    "title": "بتشتغل في الشغل vs على الشغل",
     "right": {
-      "body": "بتصمّم systems. الـ revenue بيكبر من غير ما ساعاتك تزيد. النظام = leverage.",
-      "label": "RIGHT — على الشغل"
+      "label": "RIGHT — على الشغل",
+      "body": "بتصمّم systems. الـ revenue بيكبر من غير ما ساعاتك تزيد. النظام = leverage."
     },
     "left": {
-      "body": "كل يوم بتطفي حرائق. الـ revenue مرتبط بساعاتك. إنت = bottleneck.",
-      "label": "FAILURE — في الشغل"
-    },
-    "title": "بتشتغل في الشغل vs على الشغل"
+      "label": "FAILURE — في الشغل",
+      "body": "كل يوم بتطفي حرائق. الـ revenue مرتبط بساعاتك. إنت = bottleneck."
+    }
+  },
+  {
+    "card": "CTACard",
+    "accent": "pink",
+    "highlight": "اختبر فهمك",
+    "title": "صنّف أسبوعك",
+    "eyebrow": "دورك دلوقتي",
+    "tagline": "يلا نطبّق اللي اتعلّمناه ونشوف أسبوعك عامل إزاي!"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "mintDeep",
+    "title": "المنصة دي = ecosystem كامل",
+    "bullets": [
+      "كل قرار في الـ ecosystem موثّق في الـ roadmap.",
+      "أدوات الـ AI بتختصر شغل ٥ ناس.",
+      "الـ leader شغله strategy + decisions، مش execution."
+    ]
   },
   {
     "card": "CTACard",
     "accent": "mint",
-    "highlight": "طبّق اللي اتعلّمته",
-    "title": "صنّف أسبوعك",
-    "eyebrow": "دورك دلوقتي",
-    "tagline": "يلا بينا نطبّق اللي اتعلّمناه ونحل الأسئلة دي"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "lavender",
-    "bullets": [
-      "كل قرار في الـ ecosystem موثّق في /roadmap.",
-      "AI tools بتختصر شغل ٥ ناس.",
-      "الـ leader شغله strategy + decisions، مش execution."
-    ],
-    "title": "المنصة دي = ecosystem كامل، شخص واحد بيديره"
-  },
-  {
-    "card": "CTACard",
-    "accent": "peach",
-    "highlight": "استغل الـ AI صح",
-    "title": "القيادة مش تشغيل — القيادة بناء أنظمة",
-    "eyebrow": "وبكده نكون خلصنا",
-    "tagline": "نتقابل في الدرس الجاي: Reactive vs Proactive"
+    "tagline": "استعد للدرس الجاي: Reactive vs Proactive!",
+    "eyebrow": "ملخص سريع",
+    "highlight": "هتتعلم إزاي تبقى قائد بجد",
+    "title": "القيادة مش مجرد تشغيل"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [435, 355, 345, 357, 353, 336, 395, 393, 441, 447, 413, 549, 285, 468, 509];
+export const SCENE_FRAMES: number[] = [407, 291, 310, 274, 249, 342, 333, 783, 496, 510, 289, 581, 433];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
