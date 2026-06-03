@@ -269,8 +269,8 @@ function builderMilestones(): CurriculumModule[] {
       title: "إيه هو الـ LLM؟",
       subtitle: "الموديل اللي ورا الـ AI، وإزاي بيتدرّب — الأساس قبل أي حاجة.",
       lessons: [
-        builderShipped(1, "builder-m1-what-is-llm", "إيه هو الـ LLM؟"),
-        builderShipped(2, "builder-m1-tokens-training", "Tokens والتدريب"),
+        builderShipped(1, "builder-m1-l1-what-is-llm", "إيه هو الـ LLM؟"),
+        builderShipped(2, "builder-m1-l2-tokens-training", "Tokens والتدريب"),
       ],
     },
     {
@@ -279,9 +279,9 @@ function builderMilestones(): CurriculumModule[] {
       title: "Prompt: لغة الكلام مع AI",
       subtitle: "تشريح الـ Prompt — Instructions, Examples, Style.",
       lessons: [
-        builderShipped(1, "builder-m2-prompt-layer", "تشريح الـ Prompt"),
-        builderShipped(2, "builder-m2-instructions-examples", "Instructions vs Examples"),
-        builderShipped(3, "builder-m2-style-control", "Style & Tone"),
+        builderShipped(1, "builder-m2-l3-prompt-layer", "تشريح الـ Prompt"),
+        builderShipped(2, "builder-m2-l4-instructions-examples", "Instructions vs Examples"),
+        builderShipped(3, "builder-m2-l5-style-control", "Style & Tone"),
       ],
     },
     {
@@ -290,8 +290,8 @@ function builderMilestones(): CurriculumModule[] {
       title: "Context Window: ذاكرة الـ AI",
       subtitle: "ليه السياق أهم من السؤال + حدود الذاكرة.",
       lessons: [
-        builderShipped(1, "builder-m3-context-layer", "إيه السياق؟"),
-        builderShipped(2, "builder-m3-memory-limits", "حدود الذاكرة"),
+        builderShipped(1, "builder-m3-l6-context-layer", "إيه السياق؟"),
+        builderShipped(2, "builder-m3-l7-memory-limits", "حدود الذاكرة"),
       ],
     },
     {
@@ -300,8 +300,8 @@ function builderMilestones(): CurriculumModule[] {
       title: "Parameters: لوحة التحكم",
       subtitle: "Temperature, Top-p, Max tokens — ساعتها بترد إزاي.",
       lessons: [
-        builderShipped(1, "builder-m4-temperature", "Temperature"),
-        builderShipped(2, "builder-m4-parameters", "Top-p & Max tokens"),
+        builderShipped(1, "builder-m4-l8-parameters", "Temperature"),
+        builderShipped(2, "builder-m4-l8-parameters", "Top-p & Max tokens"),
       ],
     },
     {
@@ -310,10 +310,10 @@ function builderMilestones(): CurriculumModule[] {
       title: "تشريح أي App",
       subtitle: "Frontend, Backend, API, Database — كل جزء ليه دور.",
       lessons: [
-        builderShipped(1, "builder-m5-transition", "Transition — من اللغة للـ App"),
-        builderShipped(2, "builder-m5-frontend", "Frontend: اللي بتشوفه"),
-        builderShipped(3, "builder-m5-backend-api", "Backend & API"),
-        builderShipped(4, "builder-m5-database-intro", "Database: مكان البيانات"),
+        builderShipped(1, "builder-m5-l9-transition", "Transition — من اللغة للـ App"),
+        builderShipped(2, "builder-m5-l10-frontend", "Frontend: اللي بتشوفه"),
+        builderShipped(3, "builder-m5-l11-backend-api", "Backend & API"),
+        builderShipped(4, "builder-m5-l12-database-intro", "Database: مكان البيانات"),
       ],
     },
     {
@@ -322,9 +322,9 @@ function builderMilestones(): CurriculumModule[] {
       title: "Design & Plan — قبل ما تبني",
       subtitle: "الفكرة → Sitemap → Wireframe → أول Prompt لـ Lovable.",
       lessons: [
-        builderShipped(1, "builder-m6-idea-to-page", "من فكرة لصفحة"),
-        builderShipped(2, "builder-m6-wireframe", "Wireframe — ارسم قبل ما تبني"),
-        builderShipped(3, "builder-m6-first-prompt-to-lovable", "أول Prompt لـ Lovable"),
+        builderShipped(1, "builder-m6-l13-idea-to-page", "من فكرة لصفحة"),
+        builderShipped(2, "builder-m6-l14-wireframe", "Wireframe — ارسم قبل ما تبني"),
+        builderShipped(3, "builder-m6-l15-first-prompt-to-lovable", "أول Prompt لـ Lovable"),
       ],
     },
     {
@@ -333,9 +333,9 @@ function builderMilestones(): CurriculumModule[] {
       title: "Build & Refine — لما الكود يطلع",
       subtitle: "Components → Iteration → Debugging — دورة التحسين بعد أول build.",
       lessons: [
-        builderShipped(1, "builder-m6-components-routes", "Components & Routes"),
-        builderShipped(2, "builder-m6-iteration", "Iteration Loop"),
-        builderShipped(3, "builder-m6-debugging", "Debugging — لما الـ AI يغلط"),
+        builderShipped(1, "builder-m6-l16-components-routes", "Components & Routes"),
+        builderShipped(2, "builder-m6-l17-iteration", "Iteration Loop"),
+        builderShipped(3, "builder-m6-l18-debugging", "Debugging — لما الـ AI يغلط"),
       ],
     },
     {
@@ -344,8 +344,8 @@ function builderMilestones(): CurriculumModule[] {
       title: "Auth: تسجيل الدخول",
       subtitle: "Sessions, JWT, RLS — ازاي الـ app بيفرق بين المستخدمين.",
       lessons: [
-        builderShipped(1, "builder-m7-sessions-jwt", "Sessions & JWT"),
-        builderShipped(2, "builder-m7-rls", "RLS وحماية بيانات المستخدم"),
+        builderShipped(1, "builder-m8-l22-sessions-jwt", "Sessions & JWT"),
+        builderShipped(2, "builder-m8-l23-rls", "RLS وحماية بيانات المستخدم"),
       ],
     },
     {
@@ -354,9 +354,9 @@ function builderMilestones(): CurriculumModule[] {
       title: "Database: تخزين البيانات",
       subtitle: "Tables, Relations, Queries — بياناتك بتعيش فين.",
       lessons: [
-        builderShipped(1, "builder-m8-tables-columns", "Tables & Columns"),
-        builderShipped(2, "builder-m8-relations", "Relations بين الجداول"),
-        builderShipped(3, "builder-m8-queries", "Queries: ازاي بتجيب البيانات"),
+        builderShipped(1, "builder-m7-l19-tables-columns", "Tables & Columns"),
+        builderShipped(2, "builder-m7-l20-relations", "Relations بين الجداول"),
+        builderShipped(3, "builder-m7-l21-queries", "Queries: ازاي بتجيب البيانات"),
       ],
     },
     {
@@ -365,9 +365,9 @@ function builderMilestones(): CurriculumModule[] {
       title: "AI جوه المنتج (RAG + Embeddings)",
       subtitle: "ازاي تخلي الـ AI يرد من بياناتك إنت، مش من معلومات عامة.",
       lessons: [
-        builderShipped(1, "builder-m9-embeddings", "Embeddings: لغة الـ AI الرقمية"),
-        builderShipped(2, "builder-m9-rag", "RAG: AI يرد من بياناتك"),
-        builderShipped(3, "builder-m9-agents", "Agents: AI بياخد قرارات"),
+        builderShipped(1, "builder-m9-l25-embeddings", "Embeddings: لغة الـ AI الرقمية"),
+        builderShipped(2, "builder-m9-l24-rag", "RAG: AI يرد من بياناتك"),
+        builderShipped(3, "builder-m9-l26-agents", "Agents: AI بياخد قرارات"),
       ],
     },
     {

@@ -17,28 +17,28 @@ import { CREATOR_M5_PLATFORMS_BLOCKS } from "./creator-m5-platforms";
 import { CREATOR_M5_SCHEDULING_BLOCKS } from "./creator-m5-scheduling";
 import { CREATOR_M5_ANALYTICS_BLOCKS } from "./creator-m5-analytics";
 import { CREATOR_M5_LEADS_BLOCKS } from "./creator-m5-leads";
-import { BUILDER_M1_WHAT_IS_LLM_BLOCKS } from "./builder-m1-what-is-llm";
-import { BUILDER_M1_TOKENS_TRAINING_BLOCKS } from "./builder-m1-tokens-training";
-import { BUILDER_M2_PROMPT_LAYER_BLOCKS } from "./builder-m2-prompt-layer";
-import { BUILDER_M2_INSTRUCTIONS_EXAMPLES_BLOCKS } from "./builder-m2-instructions-examples";
-import { BUILDER_M2_STYLE_CONTROL_BLOCKS } from "./builder-m2-style-control";
-import { BUILDER_M3_CONTEXT_LAYER_BLOCKS } from "./builder-m3-context-layer";
-import { BUILDER_M3_MEMORY_LIMITS_BLOCKS } from "./builder-m3-memory-limits";
-import { BUILDER_M4_TEMPERATURE_BLOCKS } from "./builder-m4-temperature";
-import { BUILDER_M4_PARAMETERS_BLOCKS } from "./builder-m4-parameters";
-import { BUILDER_M5_FRONTEND_BLOCKS } from "./builder-m5-frontend";
-import { BUILDER_M5_BACKEND_API_BLOCKS } from "./builder-m5-backend-api";
-import { BUILDER_M5_DATABASE_INTRO_BLOCKS } from "./builder-m5-database-intro";
-import { BUILDER_M6_IDEA_TO_PAGE_BLOCKS } from "./builder-m6-idea-to-page";
-import { BUILDER_M6_COMPONENTS_ROUTES_BLOCKS } from "./builder-m6-components-routes";
-import { BUILDER_M7_SESSIONS_JWT_BLOCKS } from "./builder-m7-sessions-jwt";
-import { BUILDER_M7_RLS_BLOCKS } from "./builder-m7-rls";
-import { BUILDER_M8_TABLES_COLUMNS_BLOCKS } from "./builder-m8-tables-columns";
-import { BUILDER_M8_RELATIONS_BLOCKS } from "./builder-m8-relations";
-import { BUILDER_M8_QUERIES_BLOCKS } from "./builder-m8-queries";
-import { BUILDER_M9_EMBEDDINGS_BLOCKS } from "./builder-m9-embeddings";
-import { BUILDER_M9_RAG_BLOCKS } from "./builder-m9-rag";
-import { BUILDER_M9_AGENTS_BLOCKS } from "./builder-m9-agents";
+import { BUILDER_M1_WHAT_IS_LLM_BLOCKS } from "./builder-m1-l1-what-is-llm";
+import { BUILDER_M1_TOKENS_TRAINING_BLOCKS } from "./builder-m1-l2-tokens-training";
+import { BUILDER_M2_PROMPT_LAYER_BLOCKS } from "./builder-m2-l3-prompt-layer";
+import { BUILDER_M2_INSTRUCTIONS_EXAMPLES_BLOCKS } from "./builder-m2-l4-instructions-examples";
+import { BUILDER_M2_STYLE_CONTROL_BLOCKS } from "./builder-m2-l5-style-control";
+import { BUILDER_M3_CONTEXT_LAYER_BLOCKS } from "./builder-m3-l6-context-layer";
+import { BUILDER_M3_MEMORY_LIMITS_BLOCKS } from "./builder-m3-l7-memory-limits";
+import { BUILDER_M4_TEMPERATURE_BLOCKS } from "./builder-m4-l8-parameters";
+import { BUILDER_M4_PARAMETERS_BLOCKS } from "./builder-m4-l8-parameters";
+import { BUILDER_M5_FRONTEND_BLOCKS } from "./builder-m5-l10-frontend";
+import { BUILDER_M5_BACKEND_API_BLOCKS } from "./builder-m5-l11-backend-api";
+import { BUILDER_M5_DATABASE_INTRO_BLOCKS } from "./builder-m5-l12-database-intro";
+import { BUILDER_M6_IDEA_TO_PAGE_BLOCKS } from "./builder-m6-l13-idea-to-page";
+import { BUILDER_M6_COMPONENTS_ROUTES_BLOCKS } from "./builder-m6-l16-components-routes";
+import { BUILDER_M7_SESSIONS_JWT_BLOCKS } from "./builder-m8-l22-sessions-jwt";
+import { BUILDER_M7_RLS_BLOCKS } from "./builder-m8-l23-rls";
+import { BUILDER_M8_TABLES_COLUMNS_BLOCKS } from "./builder-m7-l19-tables-columns";
+import { BUILDER_M8_RELATIONS_BLOCKS } from "./builder-m7-l20-relations";
+import { BUILDER_M8_QUERIES_BLOCKS } from "./builder-m7-l21-queries";
+import { BUILDER_M9_EMBEDDINGS_BLOCKS } from "./builder-m9-l25-embeddings";
+import { BUILDER_M9_RAG_BLOCKS } from "./builder-m9-l24-rag";
+import { BUILDER_M9_AGENTS_BLOCKS } from "./builder-m9-l26-agents";
 import { BUILDER_M10_DEPLOY_DOMAIN_BLOCKS } from "./builder-m10-deploy-domain";
 import { BUILDER_M10_FIRST_USERS_BLOCKS } from "./builder-m10-first-users";
 import { AUTOMATOR_M0_WHERE_YOU_ARE_BLOCKS } from "./automator-m0-where-you-are";
@@ -60,16 +60,16 @@ import { AUTOMATOR_M5_FOLLOW_UP_BLOCKS } from "./automator-m5-follow-up";
 import { AUTOMATOR_M6_CLOSING_LOOP_BLOCKS } from "./automator-m6-closing-loop";
 import { INTRO_FIRST_PROMPT_CONTENT } from "./intro-m1-l2-first-prompt";
 import { INTRO_CHOOSE_YOUR_PATH_CONTENT } from "./intro-m1-l7-choose-your-path";
-import { BUILDER_M6_WIREFRAME_BLOCKS } from "./builder-m6-wireframe";
-import { BUILDER_M6_FIRST_PROMPT_TO_LOVABLE_BLOCKS } from "./builder-m6-first-prompt-to-lovable";
-import { BUILDER_M6_ITERATION_BLOCKS } from "./builder-m6-iteration";
-import { BUILDER_M6_DEBUGGING_BLOCKS } from "./builder-m6-debugging";
+import { BUILDER_M6_WIREFRAME_BLOCKS } from "./builder-m6-l14-wireframe";
+import { BUILDER_M6_FIRST_PROMPT_TO_LOVABLE_BLOCKS } from "./builder-m6-l15-first-prompt-to-lovable";
+import { BUILDER_M6_ITERATION_BLOCKS } from "./builder-m6-l17-iteration";
+import { BUILDER_M6_DEBUGGING_BLOCKS } from "./builder-m6-l18-debugging";
 import { CREATOR_M4_EDITING_BLOCKS } from "./creator-m4-editing";
 import { CREATOR_M4_THUMBNAILS_CAPTIONS_BLOCKS } from "./creator-m4-thumbnails-captions";
 import { CREATOR_M6_BRAND_BASICS_BLOCKS } from "./creator-m6-brand-basics";
 import { CREATOR_M6_GRID_CONSISTENCY_BLOCKS } from "./creator-m6-grid-consistency";
 import { INTRO_SETUP_YOUR_AI_CONTENT } from "./intro-m1-l3-setup-your-ai";
-import { BUILDER_M5_TRANSITION_BLOCKS } from "./builder-m5-transition";
+import { BUILDER_M5_TRANSITION_BLOCKS } from "./builder-m5-l9-transition";
 /* Analyst (12) */
 import { ANALYST_M0_FROM_AUTOMATION_TO_INSIGHT_BLOCKS } from "./analyst-m0-from-automation-to-insight";
 import { ANALYST_M1_FEELING_TO_QUESTION_BLOCKS } from "./analyst-m1-feeling-to-question";
@@ -122,29 +122,29 @@ export const INTRO_LESSON_CONTENT: Record<string, IntroLessonContent> = {
   "creator-m5-scheduling": CREATOR_M5_SCHEDULING_BLOCKS,
   "creator-m5-analytics": CREATOR_M5_ANALYTICS_BLOCKS,
   "creator-m5-leads": CREATOR_M5_LEADS_BLOCKS,
-  "builder-m1-what-is-llm": BUILDER_M1_WHAT_IS_LLM_BLOCKS,
-  "builder-m1-tokens-training": BUILDER_M1_TOKENS_TRAINING_BLOCKS,
-  "builder-m2-prompt-layer": BUILDER_M2_PROMPT_LAYER_BLOCKS,
-  "builder-m2-instructions-examples": BUILDER_M2_INSTRUCTIONS_EXAMPLES_BLOCKS,
-  "builder-m2-style-control": BUILDER_M2_STYLE_CONTROL_BLOCKS,
-  "builder-m3-context-layer": BUILDER_M3_CONTEXT_LAYER_BLOCKS,
-  "builder-m3-memory-limits": BUILDER_M3_MEMORY_LIMITS_BLOCKS,
-  "builder-m4-temperature": BUILDER_M4_TEMPERATURE_BLOCKS,
-  "builder-m4-parameters": BUILDER_M4_PARAMETERS_BLOCKS,
-  "builder-m5-frontend": BUILDER_M5_FRONTEND_BLOCKS,
-  "builder-m5-transition": BUILDER_M5_TRANSITION_BLOCKS,
-  "builder-m5-backend-api": BUILDER_M5_BACKEND_API_BLOCKS,
-  "builder-m5-database-intro": BUILDER_M5_DATABASE_INTRO_BLOCKS,
-  "builder-m6-idea-to-page": BUILDER_M6_IDEA_TO_PAGE_BLOCKS,
-  "builder-m6-components-routes": BUILDER_M6_COMPONENTS_ROUTES_BLOCKS,
-  "builder-m7-sessions-jwt": BUILDER_M7_SESSIONS_JWT_BLOCKS,
-  "builder-m7-rls": BUILDER_M7_RLS_BLOCKS,
-  "builder-m8-tables-columns": BUILDER_M8_TABLES_COLUMNS_BLOCKS,
-  "builder-m8-relations": BUILDER_M8_RELATIONS_BLOCKS,
-  "builder-m8-queries": BUILDER_M8_QUERIES_BLOCKS,
-  "builder-m9-embeddings": BUILDER_M9_EMBEDDINGS_BLOCKS,
-  "builder-m9-rag": BUILDER_M9_RAG_BLOCKS,
-  "builder-m9-agents": BUILDER_M9_AGENTS_BLOCKS,
+  "builder-m1-l1-what-is-llm": BUILDER_M1_WHAT_IS_LLM_BLOCKS,
+  "builder-m1-l2-tokens-training": BUILDER_M1_TOKENS_TRAINING_BLOCKS,
+  "builder-m2-l3-prompt-layer": BUILDER_M2_PROMPT_LAYER_BLOCKS,
+  "builder-m2-l4-instructions-examples": BUILDER_M2_INSTRUCTIONS_EXAMPLES_BLOCKS,
+  "builder-m2-l5-style-control": BUILDER_M2_STYLE_CONTROL_BLOCKS,
+  "builder-m3-l6-context-layer": BUILDER_M3_CONTEXT_LAYER_BLOCKS,
+  "builder-m3-l7-memory-limits": BUILDER_M3_MEMORY_LIMITS_BLOCKS,
+  "builder-m4-l8-parameters": BUILDER_M4_TEMPERATURE_BLOCKS,
+  "builder-m4-l8-parameters": BUILDER_M4_PARAMETERS_BLOCKS,
+  "builder-m5-l10-frontend": BUILDER_M5_FRONTEND_BLOCKS,
+  "builder-m5-l9-transition": BUILDER_M5_TRANSITION_BLOCKS,
+  "builder-m5-l11-backend-api": BUILDER_M5_BACKEND_API_BLOCKS,
+  "builder-m5-l12-database-intro": BUILDER_M5_DATABASE_INTRO_BLOCKS,
+  "builder-m6-l13-idea-to-page": BUILDER_M6_IDEA_TO_PAGE_BLOCKS,
+  "builder-m6-l16-components-routes": BUILDER_M6_COMPONENTS_ROUTES_BLOCKS,
+  "builder-m8-l22-sessions-jwt": BUILDER_M7_SESSIONS_JWT_BLOCKS,
+  "builder-m8-l23-rls": BUILDER_M7_RLS_BLOCKS,
+  "builder-m7-l19-tables-columns": BUILDER_M8_TABLES_COLUMNS_BLOCKS,
+  "builder-m7-l20-relations": BUILDER_M8_RELATIONS_BLOCKS,
+  "builder-m7-l21-queries": BUILDER_M8_QUERIES_BLOCKS,
+  "builder-m9-l25-embeddings": BUILDER_M9_EMBEDDINGS_BLOCKS,
+  "builder-m9-l24-rag": BUILDER_M9_RAG_BLOCKS,
+  "builder-m9-l26-agents": BUILDER_M9_AGENTS_BLOCKS,
   "builder-m10-deploy-domain": BUILDER_M10_DEPLOY_DOMAIN_BLOCKS,
   "builder-m10-first-users": BUILDER_M10_FIRST_USERS_BLOCKS,
   "automator-m0-where-you-are": AUTOMATOR_M0_WHERE_YOU_ARE_BLOCKS,
@@ -166,10 +166,10 @@ export const INTRO_LESSON_CONTENT: Record<string, IntroLessonContent> = {
   "automator-m6-closing-loop": AUTOMATOR_M6_CLOSING_LOOP_BLOCKS,
   "intro-m1-l2-first-prompt": INTRO_FIRST_PROMPT_CONTENT,
   "intro-m1-l7-choose-your-path": INTRO_CHOOSE_YOUR_PATH_CONTENT,
-  "builder-m6-wireframe": BUILDER_M6_WIREFRAME_BLOCKS,
-  "builder-m6-first-prompt-to-lovable": BUILDER_M6_FIRST_PROMPT_TO_LOVABLE_BLOCKS,
-  "builder-m6-iteration": BUILDER_M6_ITERATION_BLOCKS,
-  "builder-m6-debugging": BUILDER_M6_DEBUGGING_BLOCKS,
+  "builder-m6-l14-wireframe": BUILDER_M6_WIREFRAME_BLOCKS,
+  "builder-m6-l15-first-prompt-to-lovable": BUILDER_M6_FIRST_PROMPT_TO_LOVABLE_BLOCKS,
+  "builder-m6-l17-iteration": BUILDER_M6_ITERATION_BLOCKS,
+  "builder-m6-l18-debugging": BUILDER_M6_DEBUGGING_BLOCKS,
   "creator-m4-editing": CREATOR_M4_EDITING_BLOCKS,
   "creator-m4-thumbnails-captions": CREATOR_M4_THUMBNAILS_CAPTIONS_BLOCKS,
   "creator-m6-brand-basics": CREATOR_M6_BRAND_BASICS_BLOCKS,

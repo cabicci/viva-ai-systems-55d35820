@@ -23,49 +23,49 @@ export const LESSON_CONTINUITY: Record<string, string> = {
     "اخترت مسارك. ادخل عليه من الخريطة دلوقتي وابدأ أول درس — هتلاقي نفسك جاهز تمامًا.",
 
   /* ---------------- Builder path (25) ---------------- */
-  "builder-m1-what-is-llm":
+  "builder-m1-l1-what-is-llm":
     "عرفت إيه الـ LLM. دلوقتي محتاج تعرف وحدته الأساسية: الـ Token وإزاي بيتدرّب.",
-  "builder-m1-tokens-training":
+  "builder-m1-l2-tokens-training":
     "خلصت أساسيات الموديل. الموديول الجاي عن الـ Prompt — اللغة اللي بتكلّمه بيها.",
-  "builder-m2-prompt-layer":
+  "builder-m2-l3-prompt-layer":
     "عرفت تشريح الـ Prompt. الدرس الجاي بيفصّل الفرق بين Instructions و Examples.",
-  "builder-m2-instructions-examples":
+  "builder-m2-l4-instructions-examples":
     "اتعلّمت تقول للـ AI يعمل إيه. الدرس الجاي بيعلّمك تتحكّم في النبرة والأسلوب.",
-  "builder-m2-style-control":
+  "builder-m2-l5-style-control":
     "خلصت تحكّم الـ Prompt. الموديول الجاي عن السياق — الذاكرة اللي بتديها للموديل.",
-  "builder-m3-context-layer":
+  "builder-m3-l6-context-layer":
     "فهمت السياق. لازم تعرف كمان حدوده — قد إيه يقدر يفتكر قبل ما ينسى.",
-  "builder-m3-memory-limits":
+  "builder-m3-l7-memory-limits":
     "عرفت حدود الذاكرة. الموديول الجاي عن الـ Parameters اللي بتتحكّم في شخصية الموديل.",
-  "builder-m4-temperature":
+  "builder-m4-l8-parameters":
     "اتحكّمت في الـ Temperature. فيه parameters تانية مهمة: Top-p و Max tokens.",
-  "builder-m4-parameters":
+  "builder-m4-l8-parameters":
     "خلصت الـ Parameters. الموديول الجاي بيدخّلك في بناء التطبيق الفعلي: Frontend → Backend → Database.",
-  "builder-m5-frontend":
+  "builder-m5-l10-frontend":
     "عرفت اللي بيشوفه المستخدم. ورا الكواليس: Backend و الـ API اللي بيشغّل كل حاجة.",
-  "builder-m5-backend-api":
+  "builder-m5-l11-backend-api":
     "فهمت الـ Backend. آخر قطعة في الـ Stack: مكان تخزين البيانات — الـ Database.",
-  "builder-m5-database-intro":
+  "builder-m5-l12-database-intro":
     "خلصت طبقات التطبيق. الموديول الجاي عن تحويل فكرتك لصفحة فعلية.",
-  "builder-m6-idea-to-page":
+  "builder-m6-l13-idea-to-page":
     "بنيت أول صفحة. لازم تفهم الـ Components والـ Routes عشان تبني تطبيق متعدد الصفحات.",
-  "builder-m6-components-routes":
+  "builder-m6-l16-components-routes":
     "عرفت تركيب الـ App. الموديول الجاي عن حماية المستخدمين: Sessions و RLS.",
-  "builder-m7-sessions-jwt":
+  "builder-m8-l22-sessions-jwt":
     "فهمت إزاي المستخدم بيدخل. الدرس الجاي عن إزاي بياناته بتفضل خاصة بيه: RLS.",
-  "builder-m7-rls":
+  "builder-m8-l23-rls":
     "أمّنت بياناتك. الموديول الجاي بيدخّلك في تصميم الـ Database بشكل احترافي.",
-  "builder-m8-tables-columns":
+  "builder-m7-l19-tables-columns":
     "صمّمت الجداول. لازم تعرف إزاي تربطهم ببعض: Relations.",
-  "builder-m8-relations":
+  "builder-m7-l20-relations":
     "ربطت الجداول. الدرس الجاي بيعلّمك تجيب البيانات منهم: Queries.",
-  "builder-m8-queries":
+  "builder-m7-l21-queries":
     "خلصت تصميم الـ Database. الموديول الجاي بيدخّل الـ AI جوّه تطبيقك: Embeddings و RAG و Agents.",
-  "builder-m9-embeddings":
+  "builder-m9-l25-embeddings":
     "فهمت لغة الـ AI الرقمية. الدرس الجاي بيخلّي الـ AI يرد من بياناتك إنت: RAG.",
-  "builder-m9-rag":
+  "builder-m9-l24-rag":
     "بنيت RAG. آخر درس في الموديول: Agents — AI بياخد قرارات بنفسه.",
-  "builder-m9-agents":
+  "builder-m9-l26-agents":
     "خلصت طبقة الذكاء. الموديول الأخير: تنشر تطبيقك على دومين حقيقي وتجيب أول مستخدمين.",
   "builder-m10-deploy-domain":
     "تطبيقك على الإنترنت. آخر درس: إزاي تجيب أول مستخدمين وتطوّر بناء على فيدباكهم.",
