@@ -299,10 +299,15 @@ export function MissionRubricSection({
             <button
               type="button"
               onClick={skipMission}
-              className="inline-flex items-center gap-1.5 text-[11px] font-mono text-muted-foreground hover:text-foreground transition"
+              disabled={skipping}
+              className="inline-flex items-center gap-1.5 text-[11px] font-mono text-muted-foreground hover:text-foreground transition disabled:opacity-50"
               title="افتح الدرس الجاي من غير ما تسلّم — تقدر ترجع للمهمة وقت ما تحب"
             >
-              <SkipForward className="h-3 w-3" /> تخطّي المهمة دلوقتي
+              {skipping ? (
+                <><Loader2 className="h-3 w-3 animate-spin" /> ثانية…</>
+              ) : (
+                <><SkipForward className="h-3 w-3" /> تخطّي المهمة دلوقتي</>
+              )}
             </button>
           </div>
         </div>
