@@ -120,4 +120,8 @@ export function Ecosystem() {
           ))}
         </div>
       </div>
+    </section>
+  );
+}
+
 
