@@ -84,20 +84,33 @@ export function MissionRubricSection({
   const { user } = useAuth();
   const evaluate = useServerFn(evaluateMissionWithAI);
   const revealAnswer = useServerFn(revealModelMissionAnswer);
+  const skipServer = useServerFn(skipMissionServer);
   const [skipped, setSkipped] = React.useState(false);
+  const [skipping, setSkipping] = React.useState(false);
 
-  function skipMission() {
-    emitMissionPassed(missionId);
-    setSkipped(true);
-    void logLearnerEvent({
-      type: "mission_skipped",
-      pathId: lessonId.split("-")[0] ?? null,
-      moduleId: lessonId.split("-")[1] ?? null,
-      lessonId,
-      missionId,
-      metadata: { failed_attempts: failedAttempts },
-    });
-    toast.success("تخطّيت المهمة — الدرس الجاي اتفتح. ترجعلها وقت ما تحب.");
+  async function skipMission() {
+    if (skipping) return;
+    setSkipping(true);
+    try {
+      // Persist the skip server-side BEFORE invalidating the cache —
+      // otherwise the refetch races and re-locks the gate.
+      await skipServer({ data: { missionId, lessonId } });
+      emitMissionPassed(missionId);
+      setSkipped(true);
+      void logLearnerEvent({
+        type: "mission_skipped",
+        pathId: lessonId.split("-")[0] ?? null,
+        moduleId: lessonId.split("-")[1] ?? null,
+        lessonId,
+        missionId,
+        metadata: { failed_attempts: failedAttempts },
+      });
+      toast.success("تخطّيت المهمة — الدرس الجاي اتفتح. ترجعلها وقت ما تحب.");
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "تعذّر تخطّي المهمة.");
+    } finally {
+      setSkipping(false);
+    }
   }
 
   const templateText = React.useMemo(
