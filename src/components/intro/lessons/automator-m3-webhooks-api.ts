@@ -13,6 +13,19 @@ import automatorM3WebhooksApiScreenshot from "@/assets/lessons/unique/automator-
  */
 export const AUTOMATOR_M3_WEBHOOKS_API_BLOCKS: IntroLessonContent = [
   {
+    icon: Lightbulb,
+    eyebrow: "تنبيه: درس تقني",
+    title: "ده درس متقدّم — اتخطّاه لو لسه في البداية",
+    tone: "accent",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "الدرس ده فيه مفاهيم تقنية للناس اللي شغّالة فعلاً على n8n. لو لسه بتتعلم الأساسيات، تقدر تعدّيه دلوقتي وترجعله بعدين — مش هيأثر على باقي رحلتك.",
+        "لو فاهم الأساسيات وعايز تعمّق، يلا نكمل.",
+      ],
+    },
+  },
+  {
     icon: Webhook,
     eyebrow: "HERO",
     title: "Webhooks & APIs",

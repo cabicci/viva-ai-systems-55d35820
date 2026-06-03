@@ -14,6 +14,19 @@ import automatorM4AgentsScreenshot from "@/assets/lessons/unique/automator-m4-ag
  */
 export const AUTOMATOR_M4_AGENTS_BLOCKS: IntroLessonContent = [
   {
+    icon: Lightbulb,
+    eyebrow: "تنبيه: درس تقني",
+    title: "ده درس متقدّم — اتخطّاه لو لسه في البداية",
+    tone: "accent",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "الدرس ده فيه مفاهيم تقنية للناس اللي شغّالة فعلاً على n8n. لو لسه بتتعلم الأساسيات، تقدر تعدّيه دلوقتي وترجعله بعدين — مش هيأثر على باقي رحلتك.",
+        "لو فاهم الأساسيات وعايز تعمّق، يلا نكمل.",
+      ],
+    },
+  },
+  {
     icon: Bot,
     eyebrow: "HERO",
     title: "Agents بياخدوا قرارات",

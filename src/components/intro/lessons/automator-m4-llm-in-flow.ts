@@ -14,6 +14,19 @@ import automatorM4LlmInFlowScreenshot from "@/assets/lessons/unique/automator-m4
  */
 export const AUTOMATOR_M4_LLM_IN_FLOW_BLOCKS: IntroLessonContent = [
   {
+    icon: Lightbulb,
+    eyebrow: "تنبيه: درس تقني",
+    title: "ده درس متقدّم — اتخطّاه لو لسه في البداية",
+    tone: "accent",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "الدرس ده فيه مفاهيم تقنية للناس اللي شغّالة فعلاً على n8n. لو لسه بتتعلم الأساسيات، تقدر تعدّيه دلوقتي وترجعله بعدين — مش هيأثر على باقي رحلتك.",
+        "لو فاهم الأساسيات وعايز تعمّق، يلا نكمل.",
+      ],
+    },
+  },
+  {
     icon: Sparkles,
     eyebrow: "HERO",
     title: "LLM جوه الـ Workflow",
