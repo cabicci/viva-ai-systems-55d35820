@@ -297,6 +297,7 @@ ${data.missionPrompt}
         ],
         response_format: { type: "json_object" },
       }),
+      signal: AbortSignal.timeout(30_000),
     });
 
     if (!res.ok) {
