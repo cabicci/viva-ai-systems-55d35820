@@ -42,13 +42,13 @@ export const AUTOMATOR_M4_RAG_IN_N8N_BLOCKS: IntroLessonContent = [
   {
     icon: Link2,
     eyebrow: "🔗 ربط بـ Builder M9",
-    title: "نفس RAG اللي اتعلمناه — بس بـ nodes",
+    title: "نفس فكرة الـ RAG — بس بـ nodes",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "لو خلّصت Builder M9، إنت عارف الـ pipeline: Embeddings → Vector Search → LLM Call. نفس الـ 3 خطوات هنا بالظبط.",
+        "لو سبق ودخلت Builder M9، الـ pipeline معروف: Embeddings → Vector Search → LLM Call. نفس الـ 3 خطوات هنا بالظبط.",
         "الفرق: في Builder بتكتب الكود اللي بيعمل الـ pipeline. هنا بتسحب 3 nodes جاهزين في n8n وتربطهم.",
-        "لو لسه مكملتش Builder M9: RAG في جملة = الـ AI يرد من معرفتك إنت (FAQs، مستندات) مش من معرفته العامة. اقرا الباراجراف اللي تحت يكفّيك للدرس.",
+        "لو ما تعرّضتش لمسار Builder قبل كده: RAG في جملة = الـ AI يرد من معرفتك إنت (FAQs، مستندات) مش من معرفته العامة. اقرا الباراجراف اللي تحت يكفّيك للدرس.",
       ],
     },
   },
