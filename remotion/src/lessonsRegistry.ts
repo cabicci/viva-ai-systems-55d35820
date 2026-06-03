@@ -11,7 +11,6 @@ export type LessonModule = LessonRendererProps & {
 
 // The build script appends imports + entries below the marker.
 /* @lesson-imports-start */
-import { SCENES as L_builder_m3_memory_limits_S, SCENE_FRAMES as L_builder_m3_memory_limits_F, TOTAL_FRAMES as L_builder_m3_memory_limits_T } from "./lessons-generated/builder-m3-l7-memory-limits.gen";
 import { SCENES as L_builder_m5_transition_S, SCENE_FRAMES as L_builder_m5_transition_F, TOTAL_FRAMES as L_builder_m5_transition_T } from "./lessons-generated/builder-m5-l9-transition.gen";
 import { SCENES as L_builder_m9_agents_S, SCENE_FRAMES as L_builder_m9_agents_F, TOTAL_FRAMES as L_builder_m9_agents_T } from "./lessons-generated/builder-m9-l26-agents.gen";
 import { SCENES as L_builder_m9_embeddings_S, SCENE_FRAMES as L_builder_m9_embeddings_F, TOTAL_FRAMES as L_builder_m9_embeddings_T } from "./lessons-generated/builder-m9-l25-embeddings.gen";
@@ -107,11 +106,11 @@ import { SCENES as L_builder_m8_l22_sessions_jwt_S, SCENE_FRAMES as L_builder_m8
 import { SCENES as L_builder_m8_l23_rls_S, SCENE_FRAMES as L_builder_m8_l23_rls_F, TOTAL_FRAMES as L_builder_m8_l23_rls_T } from "./lessons-generated/builder-m8-l23-rls.gen";
 import { SCENES as L_builder_m6_l16_components_routes_S, SCENE_FRAMES as L_builder_m6_l16_components_routes_F, TOTAL_FRAMES as L_builder_m6_l16_components_routes_T } from "./lessons-generated/builder-m6-l16-components-routes.gen";
 import { SCENES as L_builder_m6_l17_iteration_S, SCENE_FRAMES as L_builder_m6_l17_iteration_F, TOTAL_FRAMES as L_builder_m6_l17_iteration_T } from "./lessons-generated/builder-m6-l17-iteration.gen";
+import { SCENES as L_builder_m3_l7_memory_limits_S, SCENE_FRAMES as L_builder_m3_l7_memory_limits_F, TOTAL_FRAMES as L_builder_m3_l7_memory_limits_T } from "./lessons-generated/builder-m3-l7-memory-limits.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
   /* @lesson-entries-start */
-    { id: "builder-m3-l7-memory-limits", scenes: L_builder_m3_memory_limits_S, sceneFrames: L_builder_m3_memory_limits_F, totalFrames: L_builder_m3_memory_limits_T },
     { id: "builder-m5-l9-transition", scenes: L_builder_m5_transition_S, sceneFrames: L_builder_m5_transition_F, totalFrames: L_builder_m5_transition_T },
     { id: "builder-m9-l26-agents", scenes: L_builder_m9_agents_S, sceneFrames: L_builder_m9_agents_F, totalFrames: L_builder_m9_agents_T },
     { id: "builder-m9-l25-embeddings", scenes: L_builder_m9_embeddings_S, sceneFrames: L_builder_m9_embeddings_F, totalFrames: L_builder_m9_embeddings_T },
@@ -207,5 +206,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m8-l23-rls", scenes: L_builder_m8_l23_rls_S, sceneFrames: L_builder_m8_l23_rls_F, totalFrames: L_builder_m8_l23_rls_T },
     { id: "builder-m6-l16-components-routes", scenes: L_builder_m6_l16_components_routes_S, sceneFrames: L_builder_m6_l16_components_routes_F, totalFrames: L_builder_m6_l16_components_routes_T },
     { id: "builder-m6-l17-iteration", scenes: L_builder_m6_l17_iteration_S, sceneFrames: L_builder_m6_l17_iteration_F, totalFrames: L_builder_m6_l17_iteration_T },
+    { id: "builder-m3-l7-memory-limits", scenes: L_builder_m3_l7_memory_limits_S, sceneFrames: L_builder_m3_l7_memory_limits_F, totalFrames: L_builder_m3_l7_memory_limits_T },
   /* @lesson-entries-end */
 ];
