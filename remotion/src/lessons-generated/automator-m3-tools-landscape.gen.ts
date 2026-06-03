@@ -66,7 +66,7 @@ export const SCENES: SceneData[] = [
     "card": "ScreenshotCard",
     "accent": "peach",
     "eyebrow": "شوف بنفسك",
-    "src": "lessons/unique/automator-m2-tools-landscape.jpg",
+    "src": "lessons/unique/automator-m3-tools-landscape.jpg",
     "caption": "المنصة بتاعتنا فيها طبقات شغّالة 24/7 — Context، Retrieval، Memory. الـ 3 أدوات اللي بنقارنهم بيعملوا نفس الفكرة بالظبط بس على workflows بتاعتك إنت: كل scenario = طبقة بتسمع لـ trigger وبتنفّذ سلسلة actions.",
     "title": "الطبقات التشغيلية بتاعتنا"
   },

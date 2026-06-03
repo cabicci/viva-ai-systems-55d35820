@@ -86,7 +86,7 @@ export const SCENES: SceneData[] = [
   {
     "card": "ScreenshotCard",
     "accent": "pink",
-    "src": "lessons/unique/automator-m5-whatsapp-flow.jpg",
+    "src": "lessons/unique/automator-m6-whatsapp-flow.jpg",
     "eyebrow": "شوف بنفسك",
     "caption": "المنصة بتعتمد على Context Layer عشان تفهم كل interaction. نفس الفكرة في WhatsApp: كل رسالة لازم يكون وراها context (من العميل ده، إيه اللي تناقشنا فيه، إيه stage بتاعه). الـ automation بيعمل retrieval من CRM الأول قبل ما يرد.",
     "title": "Context Layer بتاعنا"
@@ -96,7 +96,7 @@ export const SCENES: SceneData[] = [
     "accent": "mintDeep",
     "caption": "المنصة بتعتمد على Context Layer عشان تفهم كل interaction. نفس الفكرة في WhatsApp: كل رسالة لازم يكون وراها context (من العميل ده، إيه اللي تناقشنا فيه، إيه stage بتاعه). الـ automation بيعمل retrieval من CRM الأول قبل ما يرد.",
     "title": "Context Layer بتاعنا",
-    "src": "lessons/unique/automator-m5-whatsapp-flow.jpg",
+    "src": "lessons/unique/automator-m6-whatsapp-flow.jpg",
     "eyebrow": "شوف بنفسك"
   },
   {

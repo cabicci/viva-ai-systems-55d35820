@@ -73,7 +73,7 @@ export const SCENES: SceneData[] = [
   {
     "card": "ScreenshotCard",
     "accent": "yellow",
-    "src": "lessons/unique/automator-m6-closing-loop.jpg",
+    "src": "lessons/unique/automator-m7-closing-loop.jpg",
     "caption": "الـ journey ده عبارة عن feedback loop بالظبط: كل خطوة بتتسجّل، وبناءً عليها بتفتح خطوات جديدة. نفس الـ pattern: Creator → Automator → Analyst → Business. كل مسار بيدخّل اللي جاي.",
     "title": "رحلتك في المنصة",
     "eyebrow": "شوف بنفسك"

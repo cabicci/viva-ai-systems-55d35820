@@ -88,7 +88,7 @@ export const SCENES: SceneData[] = [
     "title": "درس Agents في Builder",
     "caption": "في Builder M9 شفنا إن الـ Agent عبارة عن LLM + tools + loop. في Automator هتطبّق نفس الفكرة في n8n: نفس الـ pattern، بس بـ nodes بدل كود.",
     "eyebrow": "شوف بنفسك",
-    "src": "lessons/unique/automator-m4-agents.jpg"
+    "src": "lessons/unique/automator-m5-agents.jpg"
   },
   {
     "card": "CompareCard",

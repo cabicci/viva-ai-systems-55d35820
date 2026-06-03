@@ -86,7 +86,7 @@ export const SCENES: SceneData[] = [
   {
     "card": "ScreenshotCard",
     "accent": "pink",
-    "src": "lessons/unique/automator-m0-where-you-are.jpg",
+    "src": "lessons/unique/automator-m1-where-you-are.jpg",
     "eyebrow": "شوف بنفسك",
     "title": "صفحة /dashboard بتاعتنا",
     "caption": "ده فعلًا screenshot من صفحة /dashboard بتاعتنا — اللي إنت داخل تتعلّم فيها. كل دائرة = مسار، وكل مسار جوّاه دروس. الـ Automator (اللي إنت فيه) مش مسار منفصل — هو طبقة على فوق Builder + Creator. الخريطة دي هي اللي بنبني عليها كل قرار."

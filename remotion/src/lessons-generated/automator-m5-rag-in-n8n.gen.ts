@@ -83,7 +83,7 @@ export const SCENES: SceneData[] = [
     "card": "ScreenshotCard",
     "accent": "pink",
     "eyebrow": "شوف بنفسك",
-    "src": "lessons/unique/automator-m4-rag-in-n8n.jpg",
+    "src": "lessons/unique/automator-m5-rag-in-n8n.jpg",
     "title": "RAG في المنصة بتاعتنا",
     "caption": "مساعد المنصة مش بيرد من تدريب الموديل بس — بيعمل retrieval من الدروس بتاعتنا الأول، وبعدين بيرد. ده اللي هتعمله في n8n: نفس الـ 3 خطوات (Embed → Search → LLM Call) بس كـ nodes."
   },

@@ -81,7 +81,7 @@ export const SCENES: SceneData[] = [
     "card": "ScreenshotCard",
     "accent": "pink",
     "eyebrow": "شوف بنفسك",
-    "src": "lessons/unique/automator-m3-webhooks-api.jpg",
+    "src": "lessons/unique/automator-m4-webhooks-api.jpg",
     "caption": "المنصة بتتكلم مع الـ backend عن طريق endpoints زي اللي شفتها في Builder M5. أي workflow في Make/n8n يقدر يستدعي نفس الـ endpoints دي بنفس الـ keys. كل اللي بنعمله في Automator مبني على نفس الفكرة دي.",
     "title": "الـ backend بتاع المنصة"
   },

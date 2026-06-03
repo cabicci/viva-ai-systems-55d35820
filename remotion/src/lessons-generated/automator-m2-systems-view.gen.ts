@@ -67,7 +67,7 @@ export const SCENES: SceneData[] = [
     "card": "ScreenshotCard",
     "accent": "peach",
     "caption": "دي صفحة /operational-layers بتاعتنا. المنصة نفسها مبنية كـ system: كل طبقة عندها Input محدّد، Process معروف، وOutput بيتغذّى للطبقة اللي بعدها. ده اللي هتعمله مع شغلك إنت — تكسره لطبقات وتشوف الـ Inputs/Outputs بين كل واحدة.",
-    "src": "lessons/unique/automator-m1-systems-view.jpg",
+    "src": "lessons/unique/automator-m2-systems-view.jpg",
     "eyebrow": "شوف بنفسك",
     "title": "صفحة /operational-layers"
   },

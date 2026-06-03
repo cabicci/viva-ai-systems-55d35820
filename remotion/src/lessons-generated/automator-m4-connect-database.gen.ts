@@ -66,7 +66,7 @@ export const SCENES: SceneData[] = [
     "card": "ScreenshotCard",
     "accent": "peach",
     "eyebrow": "شوف بنفسك",
-    "src": "lessons/unique/automator-m3-connect-database.jpg",
+    "src": "lessons/unique/automator-m4-connect-database.jpg",
     "caption": "المنصة دي كلها بياناتها (مستخدمين، تقدّم في الدروس، notes) في DB واحدة. لو عايز أبني automation بتبعت تنبيه لمّا حد يخلّص مسار كامل، الـ workflow هيقرا من نفس الـ DB دي، بنفس الـ keys اللي اتعلّمتها في Builder M5.",
     "title": "الـ DB بتاعتنا"
   },

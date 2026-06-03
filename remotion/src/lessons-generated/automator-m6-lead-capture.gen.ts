@@ -68,7 +68,7 @@ export const SCENES: SceneData[] = [
     "accent": "peach",
     "eyebrow": "شوف بنفسك",
     "caption": "في Creator M5 شفنا إن Views لوحدهم مش هدف — الهدف Leads. هنا هنبني الـ automation اللي بيستقبلهم: trigger = form submission → filter = validate email/phone → router = qualify by intent → actions = CRM + auto-reply + notify sales.",
-    "src": "lessons/unique/automator-m5-lead-capture.jpg",
+    "src": "lessons/unique/automator-m6-lead-capture.jpg",
     "title": "من Views لـ Leads"
   },
   {

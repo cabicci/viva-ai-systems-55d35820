@@ -78,7 +78,7 @@ export const SCENES: SceneData[] = [
     "card": "ScreenshotCard",
     "accent": "yellow",
     "eyebrow": "شوف بنفسك",
-    "src": "lessons/unique/automator-m1-spot-patterns.jpg",
+    "src": "lessons/unique/automator-m2-spot-patterns.jpg",
     "caption": "الـ Master Report بتاعنا = Time Audit أوتوماتيك للمتعلم. بيرصد كل نشاط ويستخرج الـ patterns: «إنت بتفتح المنصة الصبح»، «بتقضي وقت أطول في missions الكتابة». ده هو نفسه التمرين اللي هتعمله — بس على شغلك إنت، يدوي في الأول.",
     "title": "تقرير المنصة"
   },

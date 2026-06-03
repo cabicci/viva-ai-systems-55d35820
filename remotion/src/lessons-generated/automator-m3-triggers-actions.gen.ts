@@ -80,7 +80,7 @@ export const SCENES: SceneData[] = [
   {
     "card": "ScreenshotCard",
     "accent": "pink",
-    "src": "lessons/unique/automator-m2-triggers-actions.jpg",
+    "src": "lessons/unique/automator-m3-triggers-actions.jpg",
     "eyebrow": "شوف بنفسك",
     "caption": "كل خطوة في صفحة /dashboard دي عبارة عن Trigger → Action. المستخدم خلّص درس (Trigger) → سجّل تقدّمه في الـ DB.",
     "title": "رحلة المستخدم في المنصة"
@@ -90,7 +90,7 @@ export const SCENES: SceneData[] = [
     "accent": "mintDeep",
     "caption": "فتحله الدرس اللي بعده + بعتله notification (3 Actions). نفس الفكرة هتطبّقها على شغلك.",
     "title": "رحلة المستخدم في المنصة",
-    "src": "lessons/unique/automator-m2-triggers-actions.jpg",
+    "src": "lessons/unique/automator-m3-triggers-actions.jpg",
     "eyebrow": "شوف بنفسك"
   },
   {

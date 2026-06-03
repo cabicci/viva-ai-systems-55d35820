@@ -83,7 +83,7 @@ export const SCENES: SceneData[] = [
   {
     "card": "ScreenshotCard",
     "accent": "pink",
-    "src": "lessons/unique/automator-m1-decide-what-to-automate.jpg",
+    "src": "lessons/unique/automator-m2-decide-what-to-automate.jpg",
     "eyebrow": "شوف بنفسك",
     "title": "صفحة /behavior-architecture",
     "caption": "صفحة /behavior-architecture بتاعتنا = مكتبة قرارات الأتمتة. كل قاعدة فيها بتجاوب على نفس السؤال اللي بتسأله إنت: «الـ pattern ده يستاهل أتمتة، ولا الإنسان لازم يتدخّل؟». بنفس المنطق ده اختار candidates من الـ audit بتاعك."

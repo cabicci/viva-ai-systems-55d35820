@@ -64,7 +64,7 @@ export const SCENES: SceneData[] = [
   {
     "card": "ScreenshotCard",
     "accent": "peach",
-    "src": "lessons/unique/automator-m2-filters-routers.jpg",
+    "src": "lessons/unique/automator-m3-filters-routers.jpg",
     "eyebrow": "شوف بنفسك",
     "title": "Onboarding في المنصة",
     "caption": "صفحة الـ /onboarding دي عبارة عن router بالظبط: لو المستخدم اختار Creator → خد المسار ده. اختار Builder → مسار تاني. اختار Automator → مسار ثالث. نفس الـ trigger (المستخدم لسه داخل)، بس Routes مختلفة حسب القرار."

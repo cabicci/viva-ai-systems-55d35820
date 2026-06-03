@@ -70,7 +70,7 @@ export const SCENES: SceneData[] = [
     "card": "ScreenshotCard",
     "accent": "peach",
     "caption": "المساعد ده عبارة عن LLM node + سياق المتعلم + system prompt محدّد. الـ flow ورا الكواليس فيه نفس الـ nodes اللي هتبنيها في Make/n8n. الفكرة واحدة، بس بتطبّقها على شغلك.",
-    "src": "lessons/unique/automator-m4-llm-in-flow.jpg",
+    "src": "lessons/unique/automator-m5-llm-in-flow.jpg",
     "eyebrow": "شوف بنفسك",
     "title": "مساعد المنصة"
   },

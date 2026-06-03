@@ -69,7 +69,7 @@ export const SCENES: SceneData[] = [
     "card": "ScreenshotCard",
     "accent": "peach",
     "eyebrow": "شوف بنفسك",
-    "src": "lessons/unique/automator-m5-follow-up.jpg",
+    "src": "lessons/unique/automator-m6-follow-up.jpg",
     "caption": "في Creator M5 شفنا إن الجدولة محتاجة system. هنا هنبني نفس الفكرة بس للـ follow-up: جدول زمني + triggers + actions + evaluation. الـ content calendar بتاع Creator بقى 'follow-up sequence' للـ leads.",
     "title": "الجدولة في Creator"
   },
