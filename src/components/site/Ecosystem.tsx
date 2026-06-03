@@ -9,13 +9,37 @@ const pillars = [
   { icon: Rocket, title: "إطلاق فعلي", desc: "من مجرد فكرة لمنتج أو نظام تقدر استخدمه.", color: "var(--pastel-blue)", anim: "animate-flame" },
 ];
 
-const categories = [
-  { label: "Builder", desc: "ابني تطبيقات وأدوات باستخدام الـ AI.", color: "var(--pastel-blue)" },
-  { label: "Creator", desc: "اعمل محتوى وتصميمات مدعومة بالـ AI.", color: "var(--pastel-pink)" },
-  { label: "Automator", desc: "اعمل أنظمة تشتغل لوحدها وتوفر وقتك.", color: "var(--pastel-mint)" },
-  { label: "Analyst", desc: "حوّل البيانات لأرقام وقرارات واضحة.", color: "var(--pastel-yellow)" },
-  { label: "Business", desc: "حوّل الفكرة لنظام عمل ومنتج وإيرادات.", color: "var(--pastel-lavender)" },
+const tiers = [
+  {
+    eyebrow: "STAGE 00",
+    title: "البداية",
+    desc: "افهم الصورة الكاملة قبل أي مسار.",
+    paths: [{ label: "Intro", color: "var(--pastel-cream)" }],
+  },
+  {
+    eyebrow: "LEVEL 1 · AI USER",
+    title: "استخدم AI",
+    desc: "محتوى، بيانات، وقرارات شغل — من غير كود.",
+    paths: [
+      { label: "Creator", color: "var(--pastel-pink)" },
+      { label: "Business", color: "var(--pastel-lavender)" },
+      { label: "Analyst", color: "var(--pastel-yellow)" },
+    ],
+  },
+  {
+    eyebrow: "LEVEL 2 · AI OPERATOR",
+    title: "شغّل أنظمة",
+    desc: "أتمتة وworkflows ذكية تشتغل لوحدها.",
+    paths: [{ label: "Automator", color: "var(--pastel-mint)" }],
+  },
+  {
+    eyebrow: "LEVEL 3 · AI BUILDER",
+    title: "ابني منتجات",
+    desc: "للي عايز يبني SaaS و تطبيقات AI بنفسه.",
+    paths: [{ label: "Builder", color: "var(--pastel-blue)" }],
+  },
 ];
+
 
 export function Ecosystem() {
   return (
@@ -53,30 +77,45 @@ export function Ecosystem() {
         ))}
       </div>
 
-      {/* Course categories — color-coded pastel tags */}
+
+      {/* Tiered paths — 4 levels (Start → User → Operator → Builder) */}
       <div className="mt-20 md:mt-28">
         <div className="text-center max-w-xl mx-auto mb-10">
           <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">
             المسارات
           </p>
           <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground">
-            خمسة مسارات. اطلّع على التفاصيل.
+            رحلة واحدة، ٤ مراحل واضحة
           </h3>
+          <p className="mt-3 text-sm text-muted-foreground">
+            من فهم الـ AI لحد ما تبني بيه. كل مرحلة بتفتح اللي بعدها.
+          </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4">
-          {categories.map((c) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {tiers.map((t) => (
             <div
-              key={c.label}
-              className="rounded-2xl border border-border/60 bg-card p-5 text-center transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-card)]"
+              key={t.eyebrow}
+              className="rounded-2xl border border-border/60 bg-card p-5 transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-card)]"
             >
-              <span
-                className="inline-block rounded-full px-3 py-1 text-xs font-semibold text-foreground/80"
-                style={{ background: c.color }}
-              >
-                {c.label}
-              </span>
-              <p className="mt-3 text-sm text-muted-foreground leading-snug">{c.desc}</p>
+              <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+                {t.eyebrow}
+              </p>
+              <h4 className="mt-1 text-lg font-bold text-foreground">{t.title}</h4>
+              <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
+                {t.desc}
+              </p>
+              <div className="mt-4 flex flex-wrap gap-1.5">
+                {t.paths.map((p) => (
+                  <span
+                    key={p.label}
+                    className="inline-block rounded-full px-2.5 py-1 text-[11px] font-semibold text-foreground/80"
+                    style={{ background: p.color }}
+                  >
+                    {p.label}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
@@ -84,3 +123,5 @@ export function Ecosystem() {
     </section>
   );
 }
+
+

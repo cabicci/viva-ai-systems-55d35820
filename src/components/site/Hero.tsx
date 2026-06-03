@@ -47,8 +47,9 @@ export function Hero() {
         </h1>
 
         <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
-          منصة عربية بتاخدك خطوة بخطوة من فهم أساسيات الـ AI لحد ما تبني أدوات، أنظمة، ومشاريع حقيقية بنفسك.
+          رحلة واحدة من الصفر: افهم الـ AI، استخدمه في شغلك، شغّل بيه أنظمة، ولو حبيت — ابني بيه منتجاتك.
         </p>
+
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           {loading ? null : user ? (
