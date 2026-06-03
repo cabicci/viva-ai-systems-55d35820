@@ -21,6 +21,7 @@ import {
   type AIEvaluationResult,
   type RevealAnswerResult,
 } from "@/lib/mission-ai-evaluation.functions";
+import { skipMissionServer } from "@/lib/mission-skip.functions";
 import { createSubmission } from "@/lib/mission-evaluation";
 import { useAuth } from "@/lib/auth-context";
 import { emitMissionPassed } from "@/lib/mission-gate";
