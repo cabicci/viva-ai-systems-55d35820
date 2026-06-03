@@ -22,7 +22,7 @@ import {
   type RevealAnswerResult,
 } from "@/lib/mission-ai-evaluation.functions";
 import { skipMissionServer } from "@/lib/mission-skip.functions";
-import { createSubmission } from "@/lib/mission-evaluation";
+import { createSubmission, getLatestSubmissionForMission } from "@/lib/mission-evaluation";
 import { useAuth } from "@/lib/auth-context";
 import { emitMissionPassed } from "@/lib/mission-gate";
 import { logLearnerEvent } from "@/lib/learner-events";
@@ -87,6 +87,31 @@ export function MissionRubricSection({
   const skipServer = useServerFn(skipMissionServer);
   const [skipped, setSkipped] = React.useState(false);
   const [skipping, setSkipping] = React.useState(false);
+
+  // Seed failedAttempts from the server so the "reveal model answer" button
+  // re-appears after a page reload (server is the source of truth for
+  // attempt_count; client-only state would reset to 0 on refresh).
+  React.useEffect(() => {
+    let cancelled = false;
+    if (!user) return;
+    void getLatestSubmissionForMission(missionId)
+      .then((sub) => {
+        if (cancelled || !sub) return;
+        const attempts = Number(sub.attempt_count ?? 0);
+        if (sub.status === "passed") {
+          // Already passed (incl. skipped) — leave UI to the gate logic.
+          return;
+        }
+        if (attempts > 0) setFailedAttempts(attempts);
+        if (sub.id) setLastSubmissionId(sub.id);
+      })
+      .catch(() => {
+        /* silent — telemetry must not break the page */
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [user, missionId]);
 
   async function skipMission() {
     if (skipping) return;

@@ -33,9 +33,12 @@ export function IntroMissionPrompt({
   template?: string;
 }) {
   const [copied, setCopied] = React.useState(false);
+  // Prefer the stable lessonId as the key (unique per mission). Fall back to
+  // a hash of the prompt only when no lessonId is available — the prompt
+  // hash can collide across different missions with similar shapes.
   const storageKey = React.useMemo(
-    () => `mission-started:${hashKey(prompt)}`,
-    [prompt],
+    () => `mission-started:${lessonId ?? `prompt:${hashKey(prompt)}`}`,
+    [lessonId, prompt],
   );
   const [started, setStarted] = React.useState(false);
 

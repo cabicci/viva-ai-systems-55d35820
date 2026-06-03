@@ -17,7 +17,12 @@ export const verifyTurnstile = createServerFn({ method: "POST" })
     body.set("response", data.token);
 
     try {
-      const res = await fetch(TURNSTILE_VERIFY_URL, { method: "POST", body });
+      const res = await fetch(TURNSTILE_VERIFY_URL, {
+        method: "POST",
+        body,
+        // Fail-fast: never let a hung Cloudflare response block the request slot.
+        signal: AbortSignal.timeout(10_000),
+      });
       const json = (await res.json()) as { success: boolean; "error-codes"?: string[] };
       if (!json.success) {
         return { success: false, error: (json["error-codes"]?.[0] ?? "verification_failed") as string };

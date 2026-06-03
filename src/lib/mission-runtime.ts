@@ -5,6 +5,7 @@ import { PATHS } from "@/lib/curriculum-data";
 import { useLearnerContext } from "@/lib/learner-context";
 import { addBuildLog } from "@/lib/build-logs";
 import { syncMissionState } from "@/lib/cloud-sync";
+import { supabase } from "@/integrations/supabase/client";
 
 /**
  * Mission Runtime — foundation layer.
@@ -159,15 +160,50 @@ export interface MissionPersistedRecord {
   submission?: unknown;
 }
 
-const STORAGE_KEY = "mission-runtime:v1";
+const STORAGE_KEY_BASE = "mission-runtime:v1";
 const EVENT = "mission-runtime:changed";
+
+/**
+ * Per-user storage key. Without namespacing, a second user signing into the
+ * same browser would inherit the previous user's mission state. The auth
+ * listener below updates `currentUserId` and broadcasts the EVENT so any
+ * live `useMissionState` re-syncs from the right bucket.
+ */
+let currentUserId: string | null = null;
+let authListenerInitialized = false;
+
+function ensureAuthListener() {
+  if (authListenerInitialized || typeof window === "undefined") return;
+  authListenerInitialized = true;
+  supabase.auth.getSession().then(({ data }) => {
+    const next = data.session?.user?.id ?? null;
+    if (next !== currentUserId) {
+      currentUserId = next;
+      window.dispatchEvent(new Event(EVENT));
+    }
+  });
+  supabase.auth.onAuthStateChange((_event, session) => {
+    const next = session?.user?.id ?? null;
+    if (next !== currentUserId) {
+      currentUserId = next;
+      window.dispatchEvent(new Event(EVENT));
+    }
+  });
+}
+
+function storageKey(): string {
+  return currentUserId
+    ? `${STORAGE_KEY_BASE}:${currentUserId}`
+    : `${STORAGE_KEY_BASE}:anon`;
+}
 
 type Store = Record<string, MissionPersistedRecord>;
 
 function safeRead(): Store {
   if (typeof window === "undefined") return {};
+  ensureAuthListener();
   try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
+    const raw = window.localStorage.getItem(storageKey());
     if (!raw) return {};
     const parsed = JSON.parse(raw);
     return parsed && typeof parsed === "object" ? (parsed as Store) : {};
@@ -178,8 +214,9 @@ function safeRead(): Store {
 
 function safeWrite(store: Store) {
   if (typeof window === "undefined") return;
+  ensureAuthListener();
   try {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(store));
+    window.localStorage.setItem(storageKey(), JSON.stringify(store));
     window.dispatchEvent(new Event(EVENT));
   } catch {
     /* ignore */

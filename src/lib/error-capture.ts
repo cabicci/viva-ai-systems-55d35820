@@ -60,9 +60,17 @@ function shouldReport(key: string): boolean {
   if (last && now - last < 30_000) return false;
   recentReports.set(key, now);
   if (recentReports.size > 100) {
-    // simple cap: drop oldest-ish
-    const firstKey = recentReports.keys().next().value;
-    if (firstKey) recentReports.delete(firstKey);
+    // Proper sweep: drop every entry older than the 30s dedup window so
+    // long-lived sessions don't accumulate stale keys. Fallback: clear all.
+    const cutoff = now - 30_000;
+    let removed = 0;
+    for (const [k, ts] of recentReports) {
+      if (ts < cutoff) {
+        recentReports.delete(k);
+        removed += 1;
+      }
+    }
+    if (removed === 0) recentReports.clear();
   }
   reportsThisMinute += 1;
   return true;
