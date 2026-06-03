@@ -63,7 +63,7 @@ export const BUILDER_M7_SESSIONS_JWT_BLOCKS: IntroLessonContent = [
     eyebrow: "المصطلح الوحيد للدرس",
     title: "إيه هو الـ JWT ده؟",
     block: {
-      kind: "concept",
+      kind: "concepts",
       term: "JWT (JSON Web Token)",
       meaning:
         "كود طويل متشفّر فيه بياناتك (زي الـID بتاعك). المتصفح بيبعته للسيرفر مع كل طلب عشان يثبت له 'أنا فلان'، من غير ما تحتاج تكتب الباسورد كل مرة.",
