@@ -238,7 +238,7 @@ function PersonaSimV9Page() {
             </Button>
             <h1 className="text-2xl font-bold">Persona Sim v9 — مقارنة الترتيب</h1>
             <p className="text-sm text-muted-foreground mt-1">
-              ٨ دروس · ٢٠ agent · ١٦٠ تقييم A/B · الترتيب الحالي مقابل المقترح
+              ٩٦ درس · ٢٠ agent · ١٩٢٠ تقييم A/B · الترتيب الحالي مقابل المقترح
             </p>
           </div>
         </div>
