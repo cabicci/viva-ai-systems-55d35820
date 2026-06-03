@@ -866,6 +866,58 @@ export type Database = {
         }[]
       }
       record_user_activity: { Args: never; Returns: Json }
+      skip_mission_for_user: {
+        Args: { p_lesson_id: string; p_mission_id: string }
+        Returns: {
+          attempt_count: number
+          created_at: string
+          evaluated_at: string | null
+          feedback: string | null
+          id: string
+          lesson_id: string | null
+          mission_id: string
+          score: number | null
+          status: Database["public"]["Enums"]["mission_submission_status"]
+          submission_metadata: Json
+          submission_text: string | null
+          submission_url: string | null
+          submitted_at: string | null
+          updated_at: string
+          user_id: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "mission_submissions"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
+      submit_mission_for_evaluation: {
+        Args: { p_submission_id: string }
+        Returns: {
+          attempt_count: number
+          created_at: string
+          evaluated_at: string | null
+          feedback: string | null
+          id: string
+          lesson_id: string | null
+          mission_id: string
+          score: number | null
+          status: Database["public"]["Enums"]["mission_submission_status"]
+          submission_metadata: Json
+          submission_text: string | null
+          submission_url: string | null
+          submitted_at: string | null
+          updated_at: string
+          user_id: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "mission_submissions"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
     }
     Enums: {
       app_role: "admin" | "moderator" | "user"
