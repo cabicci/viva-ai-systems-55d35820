@@ -300,6 +300,7 @@ function ModuleRow({
     prevModule,
     getStatus,
     prevModule ? mastery[prevModule.id] : undefined,
+    isPro, // bypassLocks for pro/admin — single source of truth
   );
   const {
     prevDone,
@@ -312,8 +313,6 @@ function ModuleRow({
     prevNotMastered,
     prevMissingMissionCount,
   } = status;
-  const effectiveModuleLocked = !isPro && moduleLocked;
-  const effectivePrevNotMastered = !isPro && prevNotMastered;
 
   return (
     <div
@@ -342,8 +341,8 @@ function ModuleRow({
           <p className="text-xs text-muted-foreground mt-0.5">
             {moduleDone
               ? "مكتمل"
-              : effectiveModuleLocked
-                ? effectivePrevNotMastered
+              : moduleLocked
+                ? prevNotMastered
                   ? `مقفل · ${prevMissingMissionCount} مهمة لسه`
                   : "مقفل"
                 : soon
@@ -356,7 +355,7 @@ function ModuleRow({
             <CheckCircle2 className="h-4 w-4" />
           </span>
         )}
-        {!moduleDone && effectiveModuleLocked && (
+        {!moduleDone && moduleLocked && (
           <span className="hover-shake grid h-8 w-8 place-items-center rounded-lg bg-muted text-muted-foreground shrink-0">
             <Lock className="lock-icon h-3.5 w-3.5" />
           </span>

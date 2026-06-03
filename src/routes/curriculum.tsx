@@ -331,9 +331,9 @@ function PathBlock({
               prev,
               getStatus,
               prev ? mastery[prev.id] : undefined,
+              isPro, // bypassLocks for pro/admin
             );
             const moduleUnlocked = !status.moduleLocked;
-            const effectiveModuleUnlocked = isPro || moduleUnlocked;
             const moduleCompleted = status.moduleCompleted;
 
             return (
@@ -341,7 +341,7 @@ function PathBlock({
                 key={m.id}
                 id={`module-${m.id}`}
                 className={`rounded-2xl p-5 flex flex-col gap-4 transition border border-border/40 bg-background/40 ${
-                  !effectiveModuleUnlocked
+                  !moduleUnlocked
                     ? "opacity-60"
                     : moduleCompleted
                       ? "border-foreground/20"
@@ -371,7 +371,7 @@ function PathBlock({
                       <p className="text-xs text-muted-foreground mt-0.5">{m.subtitle}</p>
                     )}
                   </div>
-                  {!effectiveModuleUnlocked && (
+                  {!moduleUnlocked && (
                     <Lock className="h-4 w-4 text-muted-foreground shrink-0 mt-1" />
                   )}
                 </header>
@@ -387,7 +387,7 @@ function PathBlock({
                     <LessonRow
                       key={l.id}
                       lesson={l}
-                      moduleUnlocked={effectiveModuleUnlocked}
+                      moduleUnlocked={moduleUnlocked}
                       orderedIds={orderedIds}
                       progress={progress}
                       getStatus={getStatus}
