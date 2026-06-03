@@ -26,7 +26,7 @@ const stages: Stage[] = [
     level: "LEVEL 1 · AI USER",
     title: "استخدم AI في شغلك",
     subtitle: "٨٠٪ من اللي محتاجه أي حد",
-    paths: ["Creator", "Business", "Analyst"],
+    paths: ["Business", "Creator", "Analyst"],
     desc: "محتوى، تحليل بيانات، قرارات شغل — كل ده من غير ما تكتب سطر كود.",
     icon: User,
     color: "var(--pastel-pink)",

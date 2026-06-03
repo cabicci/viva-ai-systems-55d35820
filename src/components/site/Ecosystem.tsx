@@ -21,8 +21,8 @@ const tiers = [
     title: "استخدم AI",
     desc: "محتوى، بيانات، وقرارات شغل — من غير كود.",
     paths: [
-      { label: "Creator", color: "var(--pastel-pink)" },
       { label: "Business", color: "var(--pastel-lavender)" },
+      { label: "Creator", color: "var(--pastel-pink)" },
       { label: "Analyst", color: "var(--pastel-yellow)" },
     ],
   },
