@@ -13,6 +13,18 @@ import firstPromptImg from "@/assets/lessons/unique/builder-m6-first-prompt.jpg"
 
 export const BUILDER_M6_FIRST_PROMPT_TO_LOVABLE_BLOCKS: IntroLessonContent = [
   {
+    icon: Sparkles,
+    eyebrow: "بعد الدرس ده هتقدر",
+    title: "تكتب أول prompt يبني واجهتك صح",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "هتعرف الفرق بين prompt يطلّع لك واجهة ميه ميه، وprompt يطلّع لك أي كلام.",
+      ],
+    },
+  },
+  {
     icon: Lightbulb,
     eyebrow: "المشكلة",
     title: "ليه الـ AI بيبني واجهة مش اللي في بالي؟",

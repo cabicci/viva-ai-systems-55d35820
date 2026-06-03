@@ -22,6 +22,18 @@ import rlsDiagram from "@/assets/lessons/concepts/rls-diagram.jpg";
 export const BUILDER_M7_RLS_BLOCKS: IntroLessonContent = [
   {
     icon: Sparkles,
+    eyebrow: "بعد الدرس ده هتقدر",
+    title: "العميل A ميشوفش بيانات العميل B",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "هتعرف إزاي تحمي بيانات كل عميل حتى لو في غلطة في الكود.",
+      ],
+    },
+  },
+  {
+    icon: Sparkles,
     eyebrow: "المشكلة",
     title: "إزاي تضمن إن أسرار عميلك مع الـ AI متظهرش لعميل تاني؟",
     tone: "primary",

@@ -28,6 +28,18 @@ import ideaToPageScreenshot from "@/assets/lessons/builder-m6-l13-idea-to-page.j
 export const BUILDER_M6_IDEA_TO_PAGE_BLOCKS: IntroLessonContent = [
   {
     icon: Sparkles,
+    eyebrow: "بعد الدرس ده هتقدر",
+    title: "تحوّل فكرتك لصفحة أول خطوة",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "هتعرف إزاي تبدأ من فكرة في دماغك وتوصل لخطة واضحة قبل أي كود.",
+      ],
+    },
+  },
+  {
+    icon: Sparkles,
     eyebrow: "البداية",
     title: "عندك فكرة AI جامدة... بس تبدأ منين؟",
     tone: "primary",

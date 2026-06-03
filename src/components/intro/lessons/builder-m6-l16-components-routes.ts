@@ -20,6 +20,18 @@ import componentsScreenshot from "@/assets/lessons/builder-m6-l16-components-rou
 export const BUILDER_M6_COMPONENTS_ROUTES_BLOCKS: IntroLessonContent = [
   {
     icon: Sparkles,
+    eyebrow: "بعد الدرس ده هتقدر",
+    title: "تنظّم تطبيقك في أجزاء بدل بلوك واحد",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "بعد الدرس هتعرف إزاي تقسّم تطبيقك لأجزاء صغيرة قابلة لإعادة الاستخدام.",
+      ],
+    },
+  },
+  {
+    icon: Sparkles,
     eyebrow: "المشكلة",
     title: "ليه واجهة الـ AI بتاعك شكلها ملخبط؟",
     tone: "primary",

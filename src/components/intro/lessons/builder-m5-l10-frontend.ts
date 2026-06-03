@@ -11,6 +11,18 @@ import frontendScreenshot from "@/assets/lessons/builder-m5-l10-frontend.jpg";
 
 export const BUILDER_M5_FRONTEND_BLOCKS: IntroLessonContent = [
   {
+    icon: Sparkles,
+    eyebrow: "بعد الدرس ده هتقدر",
+    title: "تعرف فين بالظبط مشكلة أي AI app",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "بعد الدرس هتفرّق بين مشكلة في الواجهة ومشكلة في الكواليس في ثواني.",
+      ],
+    },
+  },
+  {
     icon: Scale,
     eyebrow: "أكتر مشكلة بتواجه أي باني تطبيقات",
     title: "العميل بيقول \"الـ AI مش بيرد\"... المشكلة فين؟",
@@ -112,6 +124,7 @@ export const BUILDER_M5_FRONTEND_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "caseStudy",
+      title: "كل صفحة في المنصة هي واجهة تطبيق",
       summary:
         "الصفحة اللي انت فيها دلوقتي دي، وكل صفحات منصة Lovable، هي **واجهة تطبيق (Frontend)**. الدرس ده نفسه، والـ Dashboard بتاعك، كلهم مبنيين بنفس الأدوات اللي هتتعلمها عشان تبني واجهة تطبيقك الذكي. إحنا بنستخدم أداة اسمها React عشان نبني الواجهات دي، وهي نفس الأداة اللي هتستخدمها في مشروعك.",
       bullets: [
