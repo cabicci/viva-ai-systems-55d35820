@@ -11,7 +11,6 @@ export type LessonModule = LessonRendererProps & {
 
 // The build script appends imports + entries below the marker.
 /* @lesson-imports-start */
-import { SCENES as L_intro_ai_vs_software_S, SCENE_FRAMES as L_intro_ai_vs_software_F, TOTAL_FRAMES as L_intro_ai_vs_software_T } from "./lessons-generated/intro-m1-l5-ai-vs-software.gen";
 import { SCENES as L_builder_m2_prompt_layer_S, SCENE_FRAMES as L_builder_m2_prompt_layer_F, TOTAL_FRAMES as L_builder_m2_prompt_layer_T } from "./lessons-generated/builder-m2-prompt-layer.gen";
 import { SCENES as L_builder_m2_instructions_examples_S, SCENE_FRAMES as L_builder_m2_instructions_examples_F, TOTAL_FRAMES as L_builder_m2_instructions_examples_T } from "./lessons-generated/builder-m2-instructions-examples.gen";
 import { SCENES as L_builder_m2_style_control_S, SCENE_FRAMES as L_builder_m2_style_control_F, TOTAL_FRAMES as L_builder_m2_style_control_T } from "./lessons-generated/builder-m2-style-control.gen";
@@ -108,11 +107,11 @@ import { SCENES as L_intro_what_is_ai_S, SCENE_FRAMES as L_intro_what_is_ai_F, T
 import { SCENES as L_intro_m1_l4_ai_can_cannot_S, SCENE_FRAMES as L_intro_m1_l4_ai_can_cannot_F, TOTAL_FRAMES as L_intro_m1_l4_ai_can_cannot_T } from "./lessons-generated/intro-m1-l4-ai-can-cannot.gen";
 import { SCENES as L_intro_m1_l2_first_prompt_S, SCENE_FRAMES as L_intro_m1_l2_first_prompt_F, TOTAL_FRAMES as L_intro_m1_l2_first_prompt_T } from "./lessons-generated/intro-m1-l2-first-prompt.gen";
 import { SCENES as L_intro_m1_l3_setup_your_ai_S, SCENE_FRAMES as L_intro_m1_l3_setup_your_ai_F, TOTAL_FRAMES as L_intro_m1_l3_setup_your_ai_T } from "./lessons-generated/intro-m1-l3-setup-your-ai.gen";
+import { SCENES as L_intro_m1_l5_ai_vs_software_S, SCENE_FRAMES as L_intro_m1_l5_ai_vs_software_F, TOTAL_FRAMES as L_intro_m1_l5_ai_vs_software_T } from "./lessons-generated/intro-m1-l5-ai-vs-software.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
   /* @lesson-entries-start */
-    { id: "intro-m1-l5-ai-vs-software", scenes: L_intro_ai_vs_software_S, sceneFrames: L_intro_ai_vs_software_F, totalFrames: L_intro_ai_vs_software_T },
     { id: "builder-m2-prompt-layer", scenes: L_builder_m2_prompt_layer_S, sceneFrames: L_builder_m2_prompt_layer_F, totalFrames: L_builder_m2_prompt_layer_T },
     { id: "builder-m2-instructions-examples", scenes: L_builder_m2_instructions_examples_S, sceneFrames: L_builder_m2_instructions_examples_F, totalFrames: L_builder_m2_instructions_examples_T },
     { id: "builder-m2-style-control", scenes: L_builder_m2_style_control_S, sceneFrames: L_builder_m2_style_control_F, totalFrames: L_builder_m2_style_control_T },
@@ -209,5 +208,6 @@ export const LESSONS: LessonModule[] = [
     { id: "intro-m1-l4-ai-can-cannot", scenes: L_intro_m1_l4_ai_can_cannot_S, sceneFrames: L_intro_m1_l4_ai_can_cannot_F, totalFrames: L_intro_m1_l4_ai_can_cannot_T },
     { id: "intro-m1-l2-first-prompt", scenes: L_intro_m1_l2_first_prompt_S, sceneFrames: L_intro_m1_l2_first_prompt_F, totalFrames: L_intro_m1_l2_first_prompt_T },
     { id: "intro-m1-l3-setup-your-ai", scenes: L_intro_m1_l3_setup_your_ai_S, sceneFrames: L_intro_m1_l3_setup_your_ai_F, totalFrames: L_intro_m1_l3_setup_your_ai_T },
+    { id: "intro-m1-l5-ai-vs-software", scenes: L_intro_m1_l5_ai_vs_software_S, sceneFrames: L_intro_m1_l5_ai_vs_software_F, totalFrames: L_intro_m1_l5_ai_vs_software_T },
   /* @lesson-entries-end */
 ];
