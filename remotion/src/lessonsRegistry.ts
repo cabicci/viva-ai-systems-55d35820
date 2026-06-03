@@ -54,7 +54,6 @@ import { SCENES as L_analyst_m5_interpretation_mistakes_S, SCENE_FRAMES as L_ana
 import { SCENES as L_analyst_m2_ai_summarization_S, SCENE_FRAMES as L_analyst_m2_ai_summarization_F, TOTAL_FRAMES as L_analyst_m2_ai_summarization_T } from "./lessons-generated/analyst-m2-ai-summarization.gen";
 import { SCENES as L_business_m2_retention_flow_S, SCENE_FRAMES as L_business_m2_retention_flow_F, TOTAL_FRAMES as L_business_m2_retention_flow_T } from "./lessons-generated/business-m2-retention-flow.gen";
 import { SCENES as L_analyst_m5_question_mistakes_S, SCENE_FRAMES as L_analyst_m5_question_mistakes_F, TOTAL_FRAMES as L_analyst_m5_question_mistakes_T } from "./lessons-generated/analyst-m5-question-mistakes.gen";
-import { SCENES as L_business_m6_full_ecosystem_S, SCENE_FRAMES as L_business_m6_full_ecosystem_F, TOTAL_FRAMES as L_business_m6_full_ecosystem_T } from "./lessons-generated/business-m6-full-ecosystem.gen";
 import { SCENES as L_business_m3_delegate_or_automate_S, SCENE_FRAMES as L_business_m3_delegate_or_automate_F, TOTAL_FRAMES as L_business_m3_delegate_or_automate_T } from "./lessons-generated/business-m3-delegate-or-automate.gen";
 import { SCENES as L_analyst_m3_decision_rule_S, SCENE_FRAMES as L_analyst_m3_decision_rule_F, TOTAL_FRAMES as L_analyst_m3_decision_rule_T } from "./lessons-generated/analyst-m3-decision-rule.gen";
 import { SCENES as L_automator_m3_foundations_S, SCENE_FRAMES as L_automator_m3_foundations_F, TOTAL_FRAMES as L_automator_m3_foundations_T } from "./lessons-generated/automator-m3-foundations.gen";
@@ -108,6 +107,7 @@ import { SCENES as L_builder_m1_l2_tokens_training_S, SCENE_FRAMES as L_builder_
 import { SCENES as L_builder_m6_l14_wireframe_S, SCENE_FRAMES as L_builder_m6_l14_wireframe_F, TOTAL_FRAMES as L_builder_m6_l14_wireframe_T } from "./lessons-generated/builder-m6-l14-wireframe.gen";
 import { SCENES as L_builder_m6_l13_idea_to_page_S, SCENE_FRAMES as L_builder_m6_l13_idea_to_page_F, TOTAL_FRAMES as L_builder_m6_l13_idea_to_page_T } from "./lessons-generated/builder-m6-l13-idea-to-page.gen";
 import { SCENES as L_builder_m7_l19_tables_columns_S, SCENE_FRAMES as L_builder_m7_l19_tables_columns_F, TOTAL_FRAMES as L_builder_m7_l19_tables_columns_T } from "./lessons-generated/builder-m7-l19-tables-columns.gen";
+import { SCENES as L_business_m6_full_ecosystem_S, SCENE_FRAMES as L_business_m6_full_ecosystem_F, TOTAL_FRAMES as L_business_m6_full_ecosystem_T } from "./lessons-generated/business-m6-full-ecosystem.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -155,7 +155,6 @@ export const LESSONS: LessonModule[] = [
     { id: "analyst-m2-ai-summarization", scenes: L_analyst_m2_ai_summarization_S, sceneFrames: L_analyst_m2_ai_summarization_F, totalFrames: L_analyst_m2_ai_summarization_T },
     { id: "business-m2-retention-flow", scenes: L_business_m2_retention_flow_S, sceneFrames: L_business_m2_retention_flow_F, totalFrames: L_business_m2_retention_flow_T },
     { id: "analyst-m5-question-mistakes", scenes: L_analyst_m5_question_mistakes_S, sceneFrames: L_analyst_m5_question_mistakes_F, totalFrames: L_analyst_m5_question_mistakes_T },
-    { id: "business-m6-full-ecosystem", scenes: L_business_m6_full_ecosystem_S, sceneFrames: L_business_m6_full_ecosystem_F, totalFrames: L_business_m6_full_ecosystem_T },
     { id: "business-m3-delegate-or-automate", scenes: L_business_m3_delegate_or_automate_S, sceneFrames: L_business_m3_delegate_or_automate_F, totalFrames: L_business_m3_delegate_or_automate_T },
     { id: "analyst-m3-decision-rule", scenes: L_analyst_m3_decision_rule_S, sceneFrames: L_analyst_m3_decision_rule_F, totalFrames: L_analyst_m3_decision_rule_T },
     { id: "automator-m3-foundations", scenes: L_automator_m3_foundations_S, sceneFrames: L_automator_m3_foundations_F, totalFrames: L_automator_m3_foundations_T },
@@ -209,5 +208,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m6-l14-wireframe", scenes: L_builder_m6_l14_wireframe_S, sceneFrames: L_builder_m6_l14_wireframe_F, totalFrames: L_builder_m6_l14_wireframe_T },
     { id: "builder-m6-l13-idea-to-page", scenes: L_builder_m6_l13_idea_to_page_S, sceneFrames: L_builder_m6_l13_idea_to_page_F, totalFrames: L_builder_m6_l13_idea_to_page_T },
     { id: "builder-m7-l19-tables-columns", scenes: L_builder_m7_l19_tables_columns_S, sceneFrames: L_builder_m7_l19_tables_columns_F, totalFrames: L_builder_m7_l19_tables_columns_T },
+    { id: "business-m6-full-ecosystem", scenes: L_business_m6_full_ecosystem_S, sceneFrames: L_business_m6_full_ecosystem_F, totalFrames: L_business_m6_full_ecosystem_T },
   /* @lesson-entries-end */
 ];

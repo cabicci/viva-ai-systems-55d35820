@@ -5,17 +5,17 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "title": "الـ ٥ مسارات في يومك",
-    "highlight": "شخص واحد + AI + System صح = Business كامل.",
-    "chip": "أهلًا · الـ ٥ مسارات في يومك",
-    "subtitle": "ده اللي كنت بتبنيه على مدار الرحلة."
+    "highlight": "في يومك",
+    "chip": "HERO",
+    "subtitle": "شخص واحد + AI + System صح = Business كامل.",
+    "title": "الـ ٥ مسارات"
   },
   {
     "card": "ConceptCard",
     "accent": "lavender",
-    "tag": "شغل متكامل",
-    "term": "Ecosystem",
-    "definition": "دائرة شغل كاملة، كل حتة فيها بتسلم اللي بعدها عشان المكنة تطلع قماش."
+    "definition": "دائرة شغل كاملة، كل حتة فيها بتسلم اللي بعدها عشان المكنة تطلع قماش.",
+    "tag": "شغل كامل",
+    "term": "Ecosystem"
   },
   {
     "card": "ConceptCard",
@@ -29,7 +29,7 @@ export const SCENES: SceneData[] = [
     "accent": "yellow",
     "term": "Builder & Creator Roles",
     "definition": "الأدوار اللي بتقوم بيها؛ يا بتبني السيستم (Builder) يا بتعمل محتوى يشد الناس (Creator).",
-    "tag": "باني ومُنشئ"
+    "tag": "أدوارك في الشغل"
   },
   {
     "card": "ConceptCard",
@@ -42,15 +42,15 @@ export const SCENES: SceneData[] = [
     "card": "ConceptCard",
     "accent": "mintDeep",
     "term": "Output to Input",
-    "definition": "شغل بيخلص بيبقى هو البنزين اللي بيشغل الخطوة اللي بعدها علطول.",
-    "tag": "مخرجات لمدخلات"
+    "tag": "بنزين الشغل",
+    "definition": "شغل بيخلص بيبقى هو البنزين اللي بيشغل الخطوة اللي بعدها علطول."
   },
   {
     "card": "ConceptCard",
     "accent": "mint",
-    "tag": "روتين العمل",
-    "term": "Operating Cadence index (Cadence)Index",
-    "definition": "الروتين أو الجدول اللي بيمشي عليه الـ Ecosystem عشان ميفصلش منك."
+    "tag": "روتين يومي",
+    "definition": "الروتين أو الجدول اللي بيمشي عليه الـ Ecosystem عشان ميفصلش منك.",
+    "term": "Operating Cadence index (Cadence)Index"
   },
   {
     "card": "ConceptCard",
@@ -61,7 +61,7 @@ export const SCENES: SceneData[] = [
   },
   {
     "card": "BulletsCard",
-    "accent": "mintDeep",
+    "accent": "peach",
     "bullets": [
       "خبرتك + مشكلة حقيقية = نقطة البداية.",
       "Builder: System بيشتغل لوحده (المنتج).",
@@ -75,47 +75,35 @@ export const SCENES: SceneData[] = [
   },
   {
     "card": "BulletsCard",
-    "accent": "peach",
+    "accent": "yellow",
     "bullets": [
       "كل مسار بيغذّي اللي بعديه.",
-      "إنت و الـ AI و السيستم في المركز."
+      "إنت + AI + System في المركز."
     ],
     "title": "الـ ٥ مسارات — Ecosystem واحد"
   },
   {
     "card": "CompareCard",
-    "accent": "yellow",
-    "title": "كل مسار لوحده vs ecosystem",
+    "accent": "pink",
+    "left": {
+      "body": "Builder منفصل عن Creator. Creator منفصل عن Analyst. كل واحد شغّال بس مفيش loop.",
+      "label": "FAILURE — مسارات منفصلة"
+    },
     "right": {
       "body": "كل مسار بيغذّي اللي بعديه. القرار الواحد بيلمس كل المنظومة. الشغل بقى نظام عضوي.",
       "label": "RIGHT — Ecosystem واحد"
     },
-    "left": {
-      "body": "Builder منفصل عن Creator. Creator منفصل عن Analyst. كل واحد شغّال بس مفيش loop.",
-      "label": "FAILURE — مسارات منفصلة"
-    }
+    "title": "كل مسار لوحده vs ecosystem"
   },
   {
     "card": "CTACard",
-    "accent": "pink",
+    "accent": "mintDeep",
+    "tagline": "حل الأسئلة عشان تفهم أكتر إزاي تطبّق المسارات دي في شغلك.",
+    "eyebrow": "دورك دلوقتي",
     "title": "ارسم Ecosystem-ك",
-    "tagline": "وطبق اللي اتعلمته في الدرس ده",
-    "highlight": "اختبر فهمك للـ ٥ مسارات",
-    "eyebrow": "دورك دلوقتي"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "lavender",
-    "bullets": [
-      "الجزء ده من المنصة اتبنى بمسار Business، زي اللي بتتعلمه بالظبط.",
-      "/journey بيوريك تقدّم المتعلم.",
-      "/system-state بيوريك صحة الـ system.",
-      "/roadmap بيوريك المستقبل.",
-      "٣ صفحات بس بتدير Ecosystem كامل بشخص واحد و AI."
-    ],
-    "title": "/journey + /system-state + /roadmap = الـ ecosystem كامل"
+    "highlight": "طبّق اللي اتعلمته"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [316, 301, 330, 335, 241, 271, 286, 257, 748, 333, 677, 297, 589];
+export const SCENE_FRAMES: number[] = [341, 294, 329, 263, 231, 292, 281, 213, 646, 337, 552, 292];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
