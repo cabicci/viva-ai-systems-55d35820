@@ -15,7 +15,6 @@ import { SCENES as L_builder_m2_instructions_examples_S, SCENE_FRAMES as L_build
 import { SCENES as L_builder_m2_style_control_S, SCENE_FRAMES as L_builder_m2_style_control_F, TOTAL_FRAMES as L_builder_m2_style_control_T } from "./lessons-generated/builder-m2-l5-style-control.gen";
 import { SCENES as L_builder_m3_context_layer_S, SCENE_FRAMES as L_builder_m3_context_layer_F, TOTAL_FRAMES as L_builder_m3_context_layer_T } from "./lessons-generated/builder-m3-l6-context-layer.gen";
 import { SCENES as L_builder_m3_memory_limits_S, SCENE_FRAMES as L_builder_m3_memory_limits_F, TOTAL_FRAMES as L_builder_m3_memory_limits_T } from "./lessons-generated/builder-m3-l7-memory-limits.gen";
-import { SCENES as L_builder_m5_database_intro_S, SCENE_FRAMES as L_builder_m5_database_intro_F, TOTAL_FRAMES as L_builder_m5_database_intro_T } from "./lessons-generated/builder-m5-l12-database-intro.gen";
 import { SCENES as L_builder_m5_transition_S, SCENE_FRAMES as L_builder_m5_transition_F, TOTAL_FRAMES as L_builder_m5_transition_T } from "./lessons-generated/builder-m5-l9-transition.gen";
 import { SCENES as L_builder_m6_idea_to_page_S, SCENE_FRAMES as L_builder_m6_idea_to_page_F, TOTAL_FRAMES as L_builder_m6_idea_to_page_T } from "./lessons-generated/builder-m6-l13-idea-to-page.gen";
 import { SCENES as L_builder_m6_wireframe_S, SCENE_FRAMES as L_builder_m6_wireframe_F, TOTAL_FRAMES as L_builder_m6_wireframe_T } from "./lessons-generated/builder-m6-l14-wireframe.gen";
@@ -107,6 +106,7 @@ import { SCENES as L_intro_m1_l6_learn_without_fear_S, SCENE_FRAMES as L_intro_m
 import { SCENES as L_intro_m1_l7_choose_your_path_S, SCENE_FRAMES as L_intro_m1_l7_choose_your_path_F, TOTAL_FRAMES as L_intro_m1_l7_choose_your_path_T } from "./lessons-generated/intro-m1-l7-choose-your-path.gen";
 import { SCENES as L_builder_m4_l8_parameters_S, SCENE_FRAMES as L_builder_m4_l8_parameters_F, TOTAL_FRAMES as L_builder_m4_l8_parameters_T } from "./lessons-generated/builder-m4-l8-parameters.gen";
 import { SCENES as L_builder_m2_l3_prompt_layer_S, SCENE_FRAMES as L_builder_m2_l3_prompt_layer_F, TOTAL_FRAMES as L_builder_m2_l3_prompt_layer_T } from "./lessons-generated/builder-m2-l3-prompt-layer.gen";
+import { SCENES as L_builder_m5_l12_database_intro_S, SCENE_FRAMES as L_builder_m5_l12_database_intro_F, TOTAL_FRAMES as L_builder_m5_l12_database_intro_T } from "./lessons-generated/builder-m5-l12-database-intro.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -115,7 +115,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m2-l5-style-control", scenes: L_builder_m2_style_control_S, sceneFrames: L_builder_m2_style_control_F, totalFrames: L_builder_m2_style_control_T },
     { id: "builder-m3-l6-context-layer", scenes: L_builder_m3_context_layer_S, sceneFrames: L_builder_m3_context_layer_F, totalFrames: L_builder_m3_context_layer_T },
     { id: "builder-m3-l7-memory-limits", scenes: L_builder_m3_memory_limits_S, sceneFrames: L_builder_m3_memory_limits_F, totalFrames: L_builder_m3_memory_limits_T },
-    { id: "builder-m5-l12-database-intro", scenes: L_builder_m5_database_intro_S, sceneFrames: L_builder_m5_database_intro_F, totalFrames: L_builder_m5_database_intro_T },
     { id: "builder-m5-l9-transition", scenes: L_builder_m5_transition_S, sceneFrames: L_builder_m5_transition_F, totalFrames: L_builder_m5_transition_T },
     { id: "builder-m6-l13-idea-to-page", scenes: L_builder_m6_idea_to_page_S, sceneFrames: L_builder_m6_idea_to_page_F, totalFrames: L_builder_m6_idea_to_page_T },
     { id: "builder-m6-l14-wireframe", scenes: L_builder_m6_wireframe_S, sceneFrames: L_builder_m6_wireframe_F, totalFrames: L_builder_m6_wireframe_T },
@@ -207,5 +206,6 @@ export const LESSONS: LessonModule[] = [
     { id: "intro-m1-l7-choose-your-path", scenes: L_intro_m1_l7_choose_your_path_S, sceneFrames: L_intro_m1_l7_choose_your_path_F, totalFrames: L_intro_m1_l7_choose_your_path_T },
     { id: "builder-m4-l8-parameters", scenes: L_builder_m4_l8_parameters_S, sceneFrames: L_builder_m4_l8_parameters_F, totalFrames: L_builder_m4_l8_parameters_T },
     { id: "builder-m2-l3-prompt-layer", scenes: L_builder_m2_l3_prompt_layer_S, sceneFrames: L_builder_m2_l3_prompt_layer_F, totalFrames: L_builder_m2_l3_prompt_layer_T },
+    { id: "builder-m5-l12-database-intro", scenes: L_builder_m5_l12_database_intro_S, sceneFrames: L_builder_m5_l12_database_intro_F, totalFrames: L_builder_m5_l12_database_intro_T },
   /* @lesson-entries-end */
 ];
