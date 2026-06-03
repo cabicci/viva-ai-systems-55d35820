@@ -148,10 +148,20 @@ async function hydrateMissionState(userId: string) {
 
 export function CloudHydration() {
   const { user, loading } = useAuth();
+  const lastUserIdRef = React.useRef<string | null>(null);
 
   React.useEffect(() => {
-    if (loading || !user) return;
-    const userId = user.id;
+    if (loading) return;
+    const userId = user?.id ?? null;
+
+    // User switched / signed out → drop stale hydration marks so the
+    // next account on this tab re-hydrates from cloud.
+    if (lastUserIdRef.current && lastUserIdRef.current !== userId) {
+      hydratedUsers.delete(lastUserIdRef.current);
+    }
+    lastUserIdRef.current = userId;
+
+    if (!userId) return;
     if (hydratedUsers.has(userId)) return;
     hydratedUsers.add(userId);
 
