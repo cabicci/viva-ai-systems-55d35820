@@ -5,95 +5,72 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "chip": "HERO",
-    "subtitle": "أسرع طريقة تخسر يومين هي إنك تبدأ تبني من غير ما ترسم.",
-    "highlight": "قبل ما تبني",
-    "title": "ارسم"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "definition": "ترتيب العناصر في الصفحة عشان العين تشوف الأهم الأول.",
-    "tag": "ترتيب العناصر",
-    "term": "Visual hierarchy"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "definition": "أول جزء بيظهر في الصفحة من غير ما تنزل لتحت.",
-    "tag": "أول جزء في الصفحة",
-    "term": "Above the fold"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "term": "Iteration (التكرار)",
-    "tag": "تكرار التعديل",
-    "definition": "إنك تعيد وتزيد في التصميم وتعدله كذا مرة عشان يتحسن."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "term": "Component (مكون)",
-    "tag": "جزء تصميم متكرر",
-    "definition": "جزء من التصميم (زي زرار أو قائمة) ينفع تستخدمه كذا مرة."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "term": "Wireframe",
-    "definition": "رسم كروكي بسيط بـ 'بوكسات' بيوضح مكان كل حاجة فين.",
-    "tag": "رسم كروكي بسيط"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "term": "Low-fidelity",
-    "tag": "هيكل وبس",
-    "definition": "تصميم 'على الماشي' مفيهوش ألوان ولا صور، هيكل وبس."
+    "subtitle": "الرسمة الكروكي 20 دقيقة، بتوفر ساعات من التعديلات اللي مالهاش لازمة مع الـ AI.",
+    "highlight": "ماتخسرش وقتك",
+    "chip": "أهلًا، نقطة الألم",
+    "title": "بتضيّع وقت في تعديلات مع الـ AI؟"
   },
   {
     "card": "BulletsCard",
     "accent": "lavender",
+    "title": "رسمة زي دي بتنقذ الموقف في دقايق",
     "bullets": [
-      "الـ Wireframe مش تصميم؛ مفيش ألوان، مفيش fonts، مفيش صور.",
-      "هو مجرد مستطيلات بـ Labels زي Header، Hero Image، أو CTA Button.",
-      "هدفه يجاوبك على ٣ أسئلة: إيه اللي فوق الـ Fold؟ فين الـ CTA الرئيسي؟ وإيه ترتيب الـ Sections؟",
-      "لما تكلم Lovable، هتوصف الصفحة بالتفصيل، مش مجرد اسم عام.",
-      "الورقة والقلم أسرع من Figma، أو استخدم Excalidraw لو عايز أداة."
-    ],
-    "title": "بوكسات + Labels — مش تصميم"
+      "ده شكل الـ Wireframe",
+      "مجرد بوكسات بأسامي",
+      "كل بوكس بيقول هيبقى فيه إيه",
+      "بتوضح الفكرة الأساسية قبل ما نكتب سطر كود واحد"
+    ]
   },
   {
-    "card": "ScreenshotCard",
+    "card": "BulletsCard",
     "accent": "peach",
-    "src": "lessons/unique/builder-m6-l14-wireframe.jpg",
-    "caption": "Wireframe زي ده، مرسوم في ١٠ دقايق، بيوفّرلك ٢ ساعة محاولات مع الـ AI. كل بوكس له اسم، كل اسم بيتحوّل لـ component في الـ prompt.",
-    "eyebrow": "توضيح بصري",
-    "title": "Wireframe = هيكل بس"
+    "bullets": [
+      "الـ Wireframe مش تصميم. مجرد مربعات بأسامي الأقسام.",
+      "بيجاوب على 3 أسئلة: إيه اللي اليوزر هيشوفه الأول؟ فين أهم زرار؟ إيه ترتيب الأقسام؟",
+      "بيخلي وصفك للـ AI دقيق، فالرد بيطلع صح من أول مرة.",
+      "الورقة والقلم أسرع، أو Excalidraw لو عايز أداة."
+    ],
+    "title": "بوكسات وكلام، مش تصميم وألوان"
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "yellow",
+    "term": "Wireframe",
+    "definition": "رسم كروكي بسيط بـ 'بوكسات' بيوضح مكان كل حاجة في الصفحة.",
+    "tag": "هيكل الصفحة"
   },
   {
     "card": "CompareCard",
-    "accent": "yellow",
+    "accent": "pink",
     "right": {
-      "label": "RIGHT — ترسم، بعدين تكتب prompt مفصّل",
-      "body": "ورقة + ٢٠ دقيقة → wireframe بـ ٧ بوكسات و asma. الـ prompt بيبقى: «صفحة فيها: [قائمة بـ ٧ section مع وصف سطر لكل واحد]». الـ AI بيطلّع حاجة قريبة جداً من اللي في دماغك من أول مرة."
+      "body": "بورقة وقلم في 20 دقيقة هتعمل wireframe واضح. الـ AI هيطلعلك حاجة قريبة قوي من اللي في دماغك من أول مرة.",
+      "label": "صح: ترسم الأول، بعدين توصف للـ AI"
     },
-    "title": "إزاي تتعامل مع أول صفحة",
+    "title": "إزاي تتعامل مع أول صفحة صح",
     "left": {
-      "label": "FAILURE — تطلب من AI «ابنيلي landing page»",
-      "body": "بدون wireframe، الـ AI بيطلّع تخمين عام. هتشوفه، مش هيعجبك، هترجع تطلب تعديل، يطلّع تخمين تاني. ٥ محاولات و٣ ساعات وانت لسه شايل."
+      "body": "من غير رسمة، الـ AI بيخمّن وبيطلع حاجة عامة. هتضيع ساعات في تعديلات ومحاولات كتير من غير نتيجة.",
+      "label": "غلط: تطلب من الـ AI 'ابنيلي صفحة'"
     }
   },
   {
+    "card": "BulletsCard",
+    "accent": "mintDeep",
+    "bullets": [
+      "كل صفحة هنا كانت Wireframe قبل البنا.",
+      "رسمة 5 دقايق، تعديل كود ساعتين.",
+      "افتح /system-state وشوف الـ layout بنفسك."
+    ],
+    "title": "كل صفحة هنا كانت مجرد Wireframe"
+  },
+  {
     "card": "CTACard",
-    "accent": "pink",
-    "highlight": "لأول صفحة",
+    "accent": "mint",
+    "tagline": "اختبر فهمك للـ Wireframe وطبّق اللي اتعلمته في الدرس ده.",
+    "highlight": "حاول تحل أسئلة الـ Quiz",
     "eyebrow": "دورك دلوقتي",
-    "title": "ارسم Wireframe",
-    "tagline": "يلا نطبق اللي اتعلمناه ونشوف مدى استيعابك للدرس ده."
+    "title": "طبّق اللي فهمته!"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [343, 366, 360, 369, 396, 323, 377, 1361, 406, 905, 231];
+export const SCENE_FRAMES: number[] = [552, 550, 613, 436, 615, 567, 382];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
