@@ -21,6 +21,19 @@ import rlsDiagram from "@/assets/lessons/concepts/rls-diagram.jpg";
  */
 export const BUILDER_M7_RLS_BLOCKS: IntroLessonContent = [
   {
+    icon: Lightbulb,
+    eyebrow: "تنبيه: درس تقني",
+    title: "ده درس متقدّم — اتخطّاه لو لسه في البداية",
+    tone: "accent",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "الدرس ده فيه مفاهيم أمان للناس اللي بتبني تطبيقات حقيقية. لو لسه بتتعلم الأساسيات، تقدر تعدّيه دلوقتي وترجعله بعدين — مش هيأثر على باقي رحلتك.",
+        "لو فاهم الأساسيات وعايز تعمّق، يلا نكمل.",
+      ],
+    },
+  },
+  {
     icon: Sparkles,
     eyebrow: "بعد الدرس ده هتقدر",
     title: "العميل A ميشوفش بيانات العميل B",
