@@ -71,7 +71,8 @@ function findCurriculumLocation(lessonId: string | null): {
 }
 
 function parseLessonIdFromPath(pathname: string): string | null {
-  const m = pathname.match(/^\/lessons\/([^/?#]+)/);
+  // Routes are /learn/{pathId}/{lessonId}
+  const m = pathname.match(/^\/learn\/[^/]+\/([^/?#]+)/);
   return m ? decodeURIComponent(m[1]) : null;
 }
 
