@@ -1,9 +1,9 @@
-import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { useAuth } from "@/lib/auth-context";
 import { useEntitlement } from "@/lib/entitlements";
+
 import {
   getAdminOverview,
   getAdminActivity,
@@ -34,16 +34,12 @@ export const Route = createFileRoute("/admin/")({
 });
 
 function AdminPage() {
-  const { user, loading } = useAuth();
   const { isAdmin, isLoaded } = useEntitlement();
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!loading && !user) navigate({ to: "/login" });
-    else if (isLoaded && user && !isAdmin) navigate({ to: "/dashboard" });
-  }, [loading, isLoaded, user, isAdmin, navigate]);
-
-  if (loading || !isLoaded) {
+  // Auth + admin role are already enforced server-side by requireAdminBeforeLoad.
+  // We only show a defensive loading/blocked state for the brief window before
+  // the client-side entitlement query resolves.
+  if (!isLoaded) {
     return (
       <div className="min-h-screen grid place-items-center">
         <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
@@ -51,7 +47,7 @@ function AdminPage() {
     );
   }
 
-  if (!user || !isAdmin) {
+  if (!isAdmin) {
     return (
       <div className="min-h-screen grid place-items-center p-6">
         <div className="rounded-2xl border border-destructive/30 bg-destructive/5 p-8 text-center max-w-md">
@@ -70,6 +66,7 @@ function AdminPage() {
 
   return <AdminDashboard />;
 }
+
 
 function AdminDashboard() {
   const overviewFn = useServerFn(getAdminOverview);

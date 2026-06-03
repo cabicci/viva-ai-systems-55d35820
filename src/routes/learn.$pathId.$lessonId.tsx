@@ -317,14 +317,24 @@ function UnifiedLessonPage() {
           <PaywallCard pathTitle={meta.label} pathId={pathId} />
         ) : gate.kind === "complete-intro-first" ? (
           <IntroGateCard done={gate.introDone} total={gate.introTotal} />
+        ) : content ? (
+          <IntroLessonRenderer
+            content={content}
+            lessonId={lesson.slug}
+            lessonTitle={lesson.title}
+          />
         ) : (
-          content && (
-            <IntroLessonRenderer
-              content={content}
-              lessonId={lesson.slug}
-              lessonTitle={lesson.title}
-            />
-          )
+          <div className="rounded-2xl border border-amber-400/30 bg-amber-400/[0.06] p-8 text-center space-y-2">
+            <p className="text-sm font-semibold text-amber-300">
+              محتوى الدرس مش متوفر دلوقتي
+            </p>
+            <p className="text-xs text-muted-foreground font-mono">
+              lesson id: {lesson.slug}
+            </p>
+            <p className="text-xs text-muted-foreground">
+              لو شفت الرسالة دي، ابعتها للفريق علشان نضيف المحتوى.
+            </p>
+          </div>
         )}
 
         {isGateReady && gate.kind === "open" && (
