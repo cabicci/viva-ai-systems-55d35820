@@ -87,7 +87,6 @@ import { SCENES as L_builder_m1_l1_what_is_llm_S, SCENE_FRAMES as L_builder_m1_l
 import { SCENES as L_builder_m2_l5_style_control_S, SCENE_FRAMES as L_builder_m2_l5_style_control_F, TOTAL_FRAMES as L_builder_m2_l5_style_control_T } from "./lessons-generated/builder-m2-l5-style-control.gen";
 import { SCENES as L_builder_m3_l6_context_layer_S, SCENE_FRAMES as L_builder_m3_l6_context_layer_F, TOTAL_FRAMES as L_builder_m3_l6_context_layer_T } from "./lessons-generated/builder-m3-l6-context-layer.gen";
 import { SCENES as L_builder_m6_l14_wireframe_S, SCENE_FRAMES as L_builder_m6_l14_wireframe_F, TOTAL_FRAMES as L_builder_m6_l14_wireframe_T } from "./lessons-generated/builder-m6-l14-wireframe.gen";
-import { SCENES as L_builder_m6_l15_first_prompt_to_lovable_S, SCENE_FRAMES as L_builder_m6_l15_first_prompt_to_lovable_F, TOTAL_FRAMES as L_builder_m6_l15_first_prompt_to_lovable_T } from "./lessons-generated/builder-m6-l15-first-prompt-to-lovable.gen";
 import { SCENES as L_builder_m2_l4_instructions_examples_S, SCENE_FRAMES as L_builder_m2_l4_instructions_examples_F, TOTAL_FRAMES as L_builder_m2_l4_instructions_examples_T } from "./lessons-generated/builder-m2-l4-instructions-examples.gen";
 import { SCENES as L_builder_m8_l22_sessions_jwt_S, SCENE_FRAMES as L_builder_m8_l22_sessions_jwt_F, TOTAL_FRAMES as L_builder_m8_l22_sessions_jwt_T } from "./lessons-generated/builder-m8-l22-sessions-jwt.gen";
 import { SCENES as L_builder_m8_l23_rls_S, SCENE_FRAMES as L_builder_m8_l23_rls_F, TOTAL_FRAMES as L_builder_m8_l23_rls_T } from "./lessons-generated/builder-m8-l23-rls.gen";
@@ -107,6 +106,7 @@ import { SCENES as L_builder_m6_l13_idea_to_page_S, SCENE_FRAMES as L_builder_m6
 import { SCENES as L_builder_m7_l19_tables_columns_S, SCENE_FRAMES as L_builder_m7_l19_tables_columns_F, TOTAL_FRAMES as L_builder_m7_l19_tables_columns_T } from "./lessons-generated/builder-m7-l19-tables-columns.gen";
 import { SCENES as L_builder_m5_l12_database_intro_S, SCENE_FRAMES as L_builder_m5_l12_database_intro_F, TOTAL_FRAMES as L_builder_m5_l12_database_intro_T } from "./lessons-generated/builder-m5-l12-database-intro.gen";
 import { SCENES as L_builder_m7_l21_queries_S, SCENE_FRAMES as L_builder_m7_l21_queries_F, TOTAL_FRAMES as L_builder_m7_l21_queries_T } from "./lessons-generated/builder-m7-l21-queries.gen";
+import { SCENES as L_builder_m6_l15_first_prompt_to_lovable_S, SCENE_FRAMES as L_builder_m6_l15_first_prompt_to_lovable_F, TOTAL_FRAMES as L_builder_m6_l15_first_prompt_to_lovable_T } from "./lessons-generated/builder-m6-l15-first-prompt-to-lovable.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -187,7 +187,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m2-l5-style-control", scenes: L_builder_m2_l5_style_control_S, sceneFrames: L_builder_m2_l5_style_control_F, totalFrames: L_builder_m2_l5_style_control_T },
     { id: "builder-m3-l6-context-layer", scenes: L_builder_m3_l6_context_layer_S, sceneFrames: L_builder_m3_l6_context_layer_F, totalFrames: L_builder_m3_l6_context_layer_T },
     { id: "builder-m6-l14-wireframe", scenes: L_builder_m6_l14_wireframe_S, sceneFrames: L_builder_m6_l14_wireframe_F, totalFrames: L_builder_m6_l14_wireframe_T },
-    { id: "builder-m6-l15-first-prompt-to-lovable", scenes: L_builder_m6_l15_first_prompt_to_lovable_S, sceneFrames: L_builder_m6_l15_first_prompt_to_lovable_F, totalFrames: L_builder_m6_l15_first_prompt_to_lovable_T },
     { id: "builder-m2-l4-instructions-examples", scenes: L_builder_m2_l4_instructions_examples_S, sceneFrames: L_builder_m2_l4_instructions_examples_F, totalFrames: L_builder_m2_l4_instructions_examples_T },
     { id: "builder-m8-l22-sessions-jwt", scenes: L_builder_m8_l22_sessions_jwt_S, sceneFrames: L_builder_m8_l22_sessions_jwt_F, totalFrames: L_builder_m8_l22_sessions_jwt_T },
     { id: "builder-m8-l23-rls", scenes: L_builder_m8_l23_rls_S, sceneFrames: L_builder_m8_l23_rls_F, totalFrames: L_builder_m8_l23_rls_T },
@@ -207,5 +206,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m7-l19-tables-columns", scenes: L_builder_m7_l19_tables_columns_S, sceneFrames: L_builder_m7_l19_tables_columns_F, totalFrames: L_builder_m7_l19_tables_columns_T },
     { id: "builder-m5-l12-database-intro", scenes: L_builder_m5_l12_database_intro_S, sceneFrames: L_builder_m5_l12_database_intro_F, totalFrames: L_builder_m5_l12_database_intro_T },
     { id: "builder-m7-l21-queries", scenes: L_builder_m7_l21_queries_S, sceneFrames: L_builder_m7_l21_queries_F, totalFrames: L_builder_m7_l21_queries_T },
+    { id: "builder-m6-l15-first-prompt-to-lovable", scenes: L_builder_m6_l15_first_prompt_to_lovable_S, sceneFrames: L_builder_m6_l15_first_prompt_to_lovable_F, totalFrames: L_builder_m6_l15_first_prompt_to_lovable_T },
   /* @lesson-entries-end */
 ];
