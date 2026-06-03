@@ -4,7 +4,7 @@
 date: 2026-06-03
 scope: other
 source: ai
-summary: [scope:lessons] applied Phase2 reframing on builder-m5-l10-frontend via phase-b-revise-lessons-v3.py (new script, v2 untouched). Frontend now framed as واجهة التطبيق. Bunny re-render triggered.
+summary: [scope:lessons] applied Phase2 reframing on 13 lessons (m5-l11/l12, m6-l13..l18, m7-l19..l21, m8-l22/l23) via phase-b-revise-lessons-v3.py. All Bunny re-renders triggered in 2 batches.
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
