@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { AuthShell } from "./signup";
+import { AuthShell } from "@/components/auth/AuthShell";
 
 export const Route = createFileRoute("/reset-password")({
   head: () => ({ meta: [{ title: "تعيين كلمة مرور جديدة — AI Ecosystem" }] }),

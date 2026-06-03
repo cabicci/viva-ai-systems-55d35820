@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { ArrowLeft } from "lucide-react";
-import { AuthShell } from "./signup";
+import { AuthShell } from "@/components/auth/AuthShell";
 
 export const Route = createFileRoute("/login")({
   head: () => ({ meta: [{ title: "تسجيل الدخول — AI Ecosystem" }] }),
