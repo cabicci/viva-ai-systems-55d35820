@@ -17,7 +17,7 @@
  */
 
 import { supabase } from "@/integrations/supabase/client";
-import type { LessonStatus } from "@/lib/lesson-progress";
+
 import type { MissionState } from "@/lib/mission-runtime";
 import type { BuildLog } from "@/lib/build-logs";
 import { captureWarn } from "@/lib/error-capture";
