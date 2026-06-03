@@ -9,7 +9,7 @@ import {
   FlaskConical,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import promptClarityScreenshot from "@/assets/lessons/builder-m1-prompt-clarity.jpg";
+import promptClarityScreenshot from "@/assets/lessons/builder-m2-l1-prompt-layer.jpg";
 
 /**
  * Builder · M1 · Lesson 02 (v3 — unified 5-part rhythm)

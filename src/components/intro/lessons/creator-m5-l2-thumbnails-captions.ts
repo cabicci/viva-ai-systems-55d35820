@@ -7,7 +7,7 @@ import {
   Rocket,
   BookOpen, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import thumbnailsImg from "@/assets/lessons/unique/creator-m4-thumbnails.jpg";
+import thumbnailsImg from "@/assets/lessons/unique/creator-m5-l2-thumbnails-captions.jpg";
 
 export const CREATOR_M4_THUMBNAILS_CAPTIONS_BLOCKS: IntroLessonContent = [
   {

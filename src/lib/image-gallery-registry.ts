@@ -10,7 +10,7 @@ import img8 from "@/assets/lessons/builder-m1-ai-predicts.jpg";
 import img9 from "@/assets/lessons/builder-m1-l1-what-is-llm.jpg";
 import img10 from "@/assets/lessons/builder-m1-tokens.jpg";
 
-import img11 from "@/assets/lessons/builder-m1-prompt-clarity.jpg";
+import img11 from "@/assets/lessons/builder-m2-l1-prompt-layer.jpg";
 import img12 from "@/assets/lessons/builder-m2-l2-instructions-examples.jpg";
 import img13 from "@/assets/lessons/builder-m2-l3-style-control.jpg";
 
@@ -28,7 +28,7 @@ import imgM5Transition from "@/assets/lessons/unique/builder-m5-l1-transition.jp
 import img21 from "@/assets/lessons/builder-m6-l1-idea-to-page.jpg";
 import img22 from "@/assets/lessons/builder-m6-l4-components-routes.jpg";
 import img23 from "@/assets/lessons/unique/builder-m6-l2-wireframe.jpg";
-import img24 from "@/assets/lessons/unique/builder-m6-first-prompt.jpg";
+import img24 from "@/assets/lessons/unique/builder-m6-l3-first-prompt-to-lovable.jpg";
 import img25 from "@/assets/lessons/unique/builder-m6-l5-iteration.jpg";
 import img26 from "@/assets/lessons/unique/builder-m6-l6-debugging.jpg";
 
@@ -56,7 +56,7 @@ import cr6 from "@/assets/lessons/creator-m4-l1-reality-check.jpg";
 import cr7 from "@/assets/lessons/creator-m4-l2-mobile-shooting.jpg";
 import cr8 from "@/assets/lessons/creator-m4-l3-ai-writing.jpg";
 import cr9 from "@/assets/lessons/unique/creator-m5-l1-editing.jpg";
-import cr10 from "@/assets/lessons/unique/creator-m4-thumbnails.jpg";
+import cr10 from "@/assets/lessons/unique/creator-m5-l2-thumbnails-captions.jpg";
 import cr11 from "@/assets/lessons/unique/creator-m7-l1-brand-basics.jpg";
 import cr12 from "@/assets/lessons/unique/creator-m7-l2-grid-consistency.jpg";
 

@@ -9,7 +9,7 @@ import {
   FlaskConical,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import firstPromptImg from "@/assets/lessons/unique/builder-m6-first-prompt.jpg";
+import firstPromptImg from "@/assets/lessons/unique/builder-m6-l3-first-prompt-to-lovable.jpg";
 
 export const BUILDER_M6_FIRST_PROMPT_TO_LOVABLE_BLOCKS: IntroLessonContent = [
   {
