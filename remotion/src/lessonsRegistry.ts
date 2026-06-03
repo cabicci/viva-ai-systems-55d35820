@@ -16,7 +16,6 @@ import { SCENES as L_builder_m2_instructions_examples_S, SCENE_FRAMES as L_build
 import { SCENES as L_builder_m2_style_control_S, SCENE_FRAMES as L_builder_m2_style_control_F, TOTAL_FRAMES as L_builder_m2_style_control_T } from "./lessons-generated/builder-m2-l5-style-control.gen";
 import { SCENES as L_builder_m3_context_layer_S, SCENE_FRAMES as L_builder_m3_context_layer_F, TOTAL_FRAMES as L_builder_m3_context_layer_T } from "./lessons-generated/builder-m3-l6-context-layer.gen";
 import { SCENES as L_builder_m3_memory_limits_S, SCENE_FRAMES as L_builder_m3_memory_limits_F, TOTAL_FRAMES as L_builder_m3_memory_limits_T } from "./lessons-generated/builder-m3-l7-memory-limits.gen";
-import { SCENES as L_builder_m4_temperature_S, SCENE_FRAMES as L_builder_m4_temperature_F, TOTAL_FRAMES as L_builder_m4_temperature_T } from "./lessons-generated/builder-m4-l8-parameters.gen";
 import { SCENES as L_builder_m5_database_intro_S, SCENE_FRAMES as L_builder_m5_database_intro_F, TOTAL_FRAMES as L_builder_m5_database_intro_T } from "./lessons-generated/builder-m5-l12-database-intro.gen";
 import { SCENES as L_builder_m5_transition_S, SCENE_FRAMES as L_builder_m5_transition_F, TOTAL_FRAMES as L_builder_m5_transition_T } from "./lessons-generated/builder-m5-l9-transition.gen";
 import { SCENES as L_builder_m6_idea_to_page_S, SCENE_FRAMES as L_builder_m6_idea_to_page_F, TOTAL_FRAMES as L_builder_m6_idea_to_page_T } from "./lessons-generated/builder-m6-l13-idea-to-page.gen";
@@ -81,7 +80,6 @@ import { SCENES as L_analyst_m3_decision_rule_S, SCENE_FRAMES as L_analyst_m3_de
 import { SCENES as L_automator_m3_foundations_S, SCENE_FRAMES as L_automator_m3_foundations_F, TOTAL_FRAMES as L_automator_m3_foundations_T } from "./lessons-generated/automator-m3-foundations.gen";
 import { SCENES as L_automator_m4_llm_node_bridge_S, SCENE_FRAMES as L_automator_m4_llm_node_bridge_F, TOTAL_FRAMES as L_automator_m4_llm_node_bridge_T } from "./lessons-generated/automator-m4-llm-node-bridge.gen";
 import { SCENES as L_builder_m1_tokens_training_S, SCENE_FRAMES as L_builder_m1_tokens_training_F, TOTAL_FRAMES as L_builder_m1_tokens_training_T } from "./lessons-generated/builder-m1-l2-tokens-training.gen";
-import { SCENES as L_builder_m4_parameters_S, SCENE_FRAMES as L_builder_m4_parameters_F, TOTAL_FRAMES as L_builder_m4_parameters_T } from "./lessons-generated/builder-m4-l8-parameters.gen";
 import { SCENES as L_builder_m5_backend_api_S, SCENE_FRAMES as L_builder_m5_backend_api_F, TOTAL_FRAMES as L_builder_m5_backend_api_T } from "./lessons-generated/builder-m5-l11-backend-api.gen";
 import { SCENES as L_builder_m5_frontend_S, SCENE_FRAMES as L_builder_m5_frontend_F, TOTAL_FRAMES as L_builder_m5_frontend_T } from "./lessons-generated/builder-m5-l10-frontend.gen";
 import { SCENES as L_business_m1_weekly_rhythm_S, SCENE_FRAMES as L_business_m1_weekly_rhythm_F, TOTAL_FRAMES as L_business_m1_weekly_rhythm_T } from "./lessons-generated/business-m1-weekly-rhythm.gen";
@@ -108,6 +106,7 @@ import { SCENES as L_intro_m1_l3_setup_your_ai_S, SCENE_FRAMES as L_intro_m1_l3_
 import { SCENES as L_intro_m1_l5_ai_vs_software_S, SCENE_FRAMES as L_intro_m1_l5_ai_vs_software_F, TOTAL_FRAMES as L_intro_m1_l5_ai_vs_software_T } from "./lessons-generated/intro-m1-l5-ai-vs-software.gen";
 import { SCENES as L_intro_m1_l6_learn_without_fear_S, SCENE_FRAMES as L_intro_m1_l6_learn_without_fear_F, TOTAL_FRAMES as L_intro_m1_l6_learn_without_fear_T } from "./lessons-generated/intro-m1-l6-learn-without-fear.gen";
 import { SCENES as L_intro_m1_l7_choose_your_path_S, SCENE_FRAMES as L_intro_m1_l7_choose_your_path_F, TOTAL_FRAMES as L_intro_m1_l7_choose_your_path_T } from "./lessons-generated/intro-m1-l7-choose-your-path.gen";
+import { SCENES as L_builder_m4_l8_parameters_S, SCENE_FRAMES as L_builder_m4_l8_parameters_F, TOTAL_FRAMES as L_builder_m4_l8_parameters_T } from "./lessons-generated/builder-m4-l8-parameters.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -117,7 +116,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m2-l5-style-control", scenes: L_builder_m2_style_control_S, sceneFrames: L_builder_m2_style_control_F, totalFrames: L_builder_m2_style_control_T },
     { id: "builder-m3-l6-context-layer", scenes: L_builder_m3_context_layer_S, sceneFrames: L_builder_m3_context_layer_F, totalFrames: L_builder_m3_context_layer_T },
     { id: "builder-m3-l7-memory-limits", scenes: L_builder_m3_memory_limits_S, sceneFrames: L_builder_m3_memory_limits_F, totalFrames: L_builder_m3_memory_limits_T },
-    { id: "builder-m4-l8-parameters", scenes: L_builder_m4_temperature_S, sceneFrames: L_builder_m4_temperature_F, totalFrames: L_builder_m4_temperature_T },
     { id: "builder-m5-l12-database-intro", scenes: L_builder_m5_database_intro_S, sceneFrames: L_builder_m5_database_intro_F, totalFrames: L_builder_m5_database_intro_T },
     { id: "builder-m5-l9-transition", scenes: L_builder_m5_transition_S, sceneFrames: L_builder_m5_transition_F, totalFrames: L_builder_m5_transition_T },
     { id: "builder-m6-l13-idea-to-page", scenes: L_builder_m6_idea_to_page_S, sceneFrames: L_builder_m6_idea_to_page_F, totalFrames: L_builder_m6_idea_to_page_T },
@@ -182,7 +180,6 @@ export const LESSONS: LessonModule[] = [
     { id: "automator-m3-foundations", scenes: L_automator_m3_foundations_S, sceneFrames: L_automator_m3_foundations_F, totalFrames: L_automator_m3_foundations_T },
     { id: "automator-m4-llm-node-bridge", scenes: L_automator_m4_llm_node_bridge_S, sceneFrames: L_automator_m4_llm_node_bridge_F, totalFrames: L_automator_m4_llm_node_bridge_T },
     { id: "builder-m1-l2-tokens-training", scenes: L_builder_m1_tokens_training_S, sceneFrames: L_builder_m1_tokens_training_F, totalFrames: L_builder_m1_tokens_training_T },
-    { id: "builder-m4-l8-parameters", scenes: L_builder_m4_parameters_S, sceneFrames: L_builder_m4_parameters_F, totalFrames: L_builder_m4_parameters_T },
     { id: "builder-m5-l11-backend-api", scenes: L_builder_m5_backend_api_S, sceneFrames: L_builder_m5_backend_api_F, totalFrames: L_builder_m5_backend_api_T },
     { id: "builder-m5-l10-frontend", scenes: L_builder_m5_frontend_S, sceneFrames: L_builder_m5_frontend_F, totalFrames: L_builder_m5_frontend_T },
     { id: "business-m1-weekly-rhythm", scenes: L_business_m1_weekly_rhythm_S, sceneFrames: L_business_m1_weekly_rhythm_F, totalFrames: L_business_m1_weekly_rhythm_T },
@@ -209,5 +206,6 @@ export const LESSONS: LessonModule[] = [
     { id: "intro-m1-l5-ai-vs-software", scenes: L_intro_m1_l5_ai_vs_software_S, sceneFrames: L_intro_m1_l5_ai_vs_software_F, totalFrames: L_intro_m1_l5_ai_vs_software_T },
     { id: "intro-m1-l6-learn-without-fear", scenes: L_intro_m1_l6_learn_without_fear_S, sceneFrames: L_intro_m1_l6_learn_without_fear_F, totalFrames: L_intro_m1_l6_learn_without_fear_T },
     { id: "intro-m1-l7-choose-your-path", scenes: L_intro_m1_l7_choose_your_path_S, sceneFrames: L_intro_m1_l7_choose_your_path_F, totalFrames: L_intro_m1_l7_choose_your_path_T },
+    { id: "builder-m4-l8-parameters", scenes: L_builder_m4_l8_parameters_S, sceneFrames: L_builder_m4_l8_parameters_F, totalFrames: L_builder_m4_l8_parameters_T },
   /* @lesson-entries-end */
 ];
