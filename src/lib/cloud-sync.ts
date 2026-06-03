@@ -17,7 +17,7 @@
  */
 
 import { supabase } from "@/integrations/supabase/client";
-import type { LessonStatus } from "@/lib/lesson-progress";
+
 import type { MissionState } from "@/lib/mission-runtime";
 import type { BuildLog } from "@/lib/build-logs";
 import { captureWarn } from "@/lib/error-capture";
@@ -70,19 +70,9 @@ function swallow(scope: string, err: unknown) {
 /*  lesson status                                                    */
 /* ---------------------------------------------------------------- */
 
-/**
- * @deprecated No-op. `user_lesson_status` is now mirrored automatically
- * by the DB trigger `sync_lesson_status_mirror` on every write to
- * `lesson_progress`. Kept exported only for back-compat with any stale
- * imports; safe to delete once nothing references it.
- */
-export async function syncLessonStatus(
-  _lessonId: string,
-  _status: LessonStatus,
-  _userIdHint?: string | null,
-): Promise<void> {
-  // intentionally empty — see deprecation note above
-}
+// `syncLessonStatus` removed — `user_lesson_status` is mirrored
+// automatically by the DB trigger `sync_lesson_status_mirror` on every
+// write to `lesson_progress`. See cleanup history for context.
 
 /* ---------------------------------------------------------------- */
 /*  mission state                                                    */

@@ -189,10 +189,11 @@ export function useStreak() {
     },
   });
 
+  const recordMutate = record.mutate;
   const recordActivity = React.useCallback(() => {
     if (!userId) return;
-    record.mutate();
-  }, [userId, record]);
+    recordMutate();
+  }, [userId, recordMutate]);
 
   return {
     streak: data ?? { current_streak: 0, longest_streak: 0, last_activity_date: null },
