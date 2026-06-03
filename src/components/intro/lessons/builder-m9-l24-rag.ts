@@ -25,6 +25,20 @@ import ragDiagram from "@/assets/lessons/concepts/rag-diagram.jpg";
  */
 export const BUILDER_M9_RAG_BLOCKS: IntroLessonContent = [
   {
+    icon: Sparkles,
+    eyebrow: "Phase 3 — AI Power",
+    title: "دلوقتي هنخلي تطبيقك ذكي بجد",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "خلصت Phase 1 (فهمت AI) و Phase 2 (بنيت تطبيق له واجهة وداتابيز وتسجيل دخول). تطبيقك دلوقتي شغّال، بس الـ AI اللي جواه لسه بيرد من معلوماته العامة — مش من بياناتك إنت.",
+        "Phase 3 هي اللي بتفرّق تطبيقك عن أي chatbot عادي. هنا الـ AI بيبدأ يقرا ملفاتك، يفتكر محادثاتك، ويتصرف زي موظف عندك مش زي assistant عام.",
+        "أول مفهوم في الـ phase ده — وأهم واحد — اسمه RAG. خلينا نشوف ليه.",
+      ],
+    },
+  },
+  {
     icon: Scale,
     eyebrow: "المشكلة",
     title: "ليه الـ AI بتاعك ساعات بيألّف إجابات؟",
