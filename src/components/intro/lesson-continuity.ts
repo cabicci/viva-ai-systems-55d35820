@@ -18,7 +18,7 @@ export const LESSON_CONTINUITY: Record<string, string> = {
   "intro-m1-l2-first-prompt":
     "اتعلّمت تكتب Prompt صح. الدرس الجاي بيشيل الرهبة من التعلّم نفسه — إزاي تتقن AI من غير ما تكون مبرمج.",
   "intro-m1-l6-learn-without-fear":
-    "جاهز نفسيًا. آخر درس في المقدمة بيساعدك تختار المسار الصح — Builder ولا Creator ولا Automator.",
+    "جاهز نفسيًا. آخر درس في المقدمة بيساعدك تختار المسار الصح — Business ولا Creator ولا Analyst ولا Automator ولا Builder.",
   "intro-m1-l7-choose-your-path":
     "اخترت مسارك. ادخل عليه من الخريطة دلوقتي وابدأ أول درس — هتلاقي نفسك جاهز تمامًا.",
 
@@ -70,7 +70,7 @@ export const LESSON_CONTINUITY: Record<string, string> = {
   "builder-m10-deploy-domain":
     "تطبيقك على الإنترنت. آخر درس: إزاي تجيب أول مستخدمين وتطوّر بناء على فيدباكهم.",
   "builder-m10-first-users":
-    "خلصت مسار Builder كامل 🎉 — اختار مسار تاني من الخريطة (Creator أو Automator).",
+    "خلصت مسار Builder كامل 🎉 — لو لسه عندك مسارات مفتوحة، ارجع للداشبورد واختار التالي بترتيبه (Business → Creator → Analyst → Automator).",
 
   /* ---------------- Creator path (14) ---------------- */
   "creator-m1-why-content":
@@ -168,7 +168,7 @@ export const LESSON_CONTINUITY: Record<string, string> = {
   "business-m0-from-decisions-to-leadership":
     "بقيت Leader، مش Operator. الموديول الجاي بيعلّمك تحرّر يومك من Reactive Mode.",
   "business-m1-reactive-vs-proactive":
-    "يومك بقى Proactive. الدرس الجاي بيوزّع أسبوعك على الـ ٤ مسارات (Builder/Creator/Automator/Analyst).",
+    "يومك بقى Proactive. الدرس الجاي بيوزّع أسبوعك على الـ ٤ مسارات التنفيذية (Creator/Analyst/Automator/Builder).",
   "business-m1-weekly-rhythm":
     "أسبوعك ليه إيقاع. الموديول الجاي عن إدارة العملاء — من أول تواصل لعميل ثابت.",
   "business-m2-customer-lifecycle":

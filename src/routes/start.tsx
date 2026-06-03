@@ -21,12 +21,14 @@ export const Route = createFileRoute("/start")({
 
 type Step = "welcome" | "input" | "running" | "before-after" | "victory";
 
+// Order MUST follow the dashboard PATH_ORDER (single source of truth in curriculum-data).
+// Dashboard order: Business → Creator → Analyst → Automator → Builder
 const PATHS = [
-  { id: "builder" as const,   name: "Builder",   icon: Hammer,    label: "Mini App / موقع",      manual: "٢–٣ شهور", withAi: "أيام قليلة" },
-  { id: "creator" as const,   name: "Creator",   icon: Palette,   label: "٣ Hooks ريلز",         manual: "٣–٤ أسابيع", withAi: "يوم واحد" },
-  { id: "automator" as const, name: "Automator", icon: Cog,       label: "Workflow أتمتة",        manual: "شهر شغل",    withAi: "يومين" },
-  { id: "analyst" as const,   name: "Analyst",   icon: BarChart3, label: "Insight + تقرير",      manual: "٢–٣ أسابيع", withAi: "ساعات" },
   { id: "business" as const,  name: "Business",  icon: Briefcase, label: "قرار + Breakdown",     manual: "أسابيع بحث", withAi: "ساعات" },
+  { id: "creator" as const,   name: "Creator",   icon: Palette,   label: "٣ Hooks ريلز",         manual: "٣–٤ أسابيع", withAi: "يوم واحد" },
+  { id: "analyst" as const,   name: "Analyst",   icon: BarChart3, label: "Insight + تقرير",      manual: "٢–٣ أسابيع", withAi: "ساعات" },
+  { id: "automator" as const, name: "Automator", icon: Cog,       label: "Workflow أتمتة",        manual: "شهر شغل",    withAi: "يومين" },
+  { id: "builder" as const,   name: "Builder",   icon: Hammer,    label: "Mini App / موقع",      manual: "٢–٣ شهور", withAi: "أيام قليلة" },
 ];
 
 const SEEN_KEY = "wow-experience-seen";

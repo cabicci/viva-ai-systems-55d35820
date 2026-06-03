@@ -24,7 +24,7 @@ export const GAPS = [
   { title: "AI Runtime Layer غير موجود", body: "كل ما يخص AI داخل المنصة تعليمي فقط — مفيش assistant أو RAG أو agents مفعّلين فعلًا." },
   { title: "Context Tracking مفقود", body: "المنصة لا تعرف أين المتعلم لحظيًا أو ما هي مهمته الحالية بشكل runtime-aware." },
   { title: "Sequential Unlocks غير مفعّلة", body: "isUnlocked() ترجع true دائمًا — لا يوجد gating تدريجي بين الدروس." },
-  { title: "باقي المسارات coming-soon", body: "Creator / Automator / Analyst / Business مفيهاش دروس منشورة بعد." },
+  { title: "Path integration map deferred", body: "الـ 5 مسارات (Business · Creator · Analyst · Automator · Builder) كلها live ومنشورة — visual journey map بين المسارات مؤجل لإشعار آخر." },
   { title: "Module 03 ناقص درس", body: "درس Human in the Loop معرّف في curriculum لكنه لسه coming-soon." },
   { title: "Module 04 (Real Build) كامل coming-soon", body: "كل دروس البناء الفعلي لسه placeholders." },
   { title: "Mission Tracking مستقل غير موجود", body: "إكمال المهمة مرتبط بإكمال الدرس فقط، لا يوجد سجل مهام منفصل." },

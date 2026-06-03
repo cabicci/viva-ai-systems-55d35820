@@ -174,7 +174,7 @@ export type IntroBlock =
       title: string;
       summary: string;
       bullets: readonly string[];
-      pathAngle?: "builder" | "creator" | "automator" | "analyst" | "business";
+      pathAngle?: "business" | "creator" | "analyst" | "automator" | "builder";
       link?: { label: string; href: string };
     };
 

@@ -99,15 +99,15 @@ export type GalleryItem = {
   diagramId?: LessonDiagramId;
 };
 
-export type GalleryPath = "intro" | "builder" | "creator" | "automator" | "analyst" | "business";
+export type GalleryPath = "intro" | "business" | "creator" | "analyst" | "automator" | "builder";
 
 export const GALLERY_PATHS: { id: GalleryPath; label: string; description: string }[] = [
   { id: "intro", label: "الإنترو", description: "دروس تأسيسية للبداية مع الـ AI." },
-  { id: "builder", label: "البليدر", description: "دروس بناء أول تطبيق بـ Lovable." },
+  { id: "business", label: "البيزنس", description: "دروس الـ AI للبيزنس — قيادة، عملاء، تفويض، توسع." },
   { id: "creator", label: "الكرييتور", description: "دروس صناعة المحتوى — Hook, Script, CTA, تصوير ومونتاج، Brand." },
+  { id: "analyst", label: "الأناليست", description: "دروس تحليل البيانات بالـ AI." },
   { id: "automator", label: "الأوتوميتور", description: "دروس الأتمتة — n8n, Triggers/Actions, Webhooks, LLM في الـ Flow، Agents، Lead Capture و WhatsApp." },
-  { id: "analyst", label: "الأناليست", description: "قريبًا — دروس تحليل البيانات." },
-  { id: "business", label: "البيزنس", description: "قريبًا — دروس الـ AI للبيزنس." },
+  { id: "builder", label: "البليدر", description: "دروس بناء أول تطبيق بـ Lovable." },
 ];
 
 export function getGalleryPath(item: GalleryItem): GalleryPath {

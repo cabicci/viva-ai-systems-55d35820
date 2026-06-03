@@ -95,7 +95,7 @@ describe("curriculum-data: structure", () => {
 
 describe("curriculum-data: helpers", () => {
   it("getPath returns the matching path", () => {
-    for (const id of ["intro", "builder", "creator", "automator", "analyst", "business"] as const) {
+    for (const id of ["intro", "business", "creator", "analyst", "automator", "builder"] as const) {
       expect(getPath(id)?.id).toBe(id);
     }
   });

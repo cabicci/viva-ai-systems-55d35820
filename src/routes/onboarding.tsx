@@ -9,12 +9,14 @@ export const Route = createFileRoute("/onboarding")({
   component: Onboarding,
 });
 
+// Order MUST follow the dashboard PATH_ORDER (single source of truth in curriculum-data).
+// Dashboard order: Business → Creator → Analyst → Automator → Builder
 const paths = [
-  { id: "builder", icon: Hammer, name: "Builder", title: "الباني", desc: "ابدأ ببناء التطبيقات والأنظمة." },
-  { id: "creator", icon: Palette, name: "Creator", title: "المُبدع", desc: "محتوى وتصميم بالـ AI." },
-  { id: "automator", icon: Cog, name: "Automator", title: "المُؤتمت", desc: "أنظمة أتمتة عمليّة." },
-  { id: "analyst", icon: BarChart3, name: "Analyst", title: "المحلّل", desc: "بيانات وقرارات." },
   { id: "business", icon: Briefcase, name: "Business", title: "الأعمال", desc: "أطلق منتجك الخاص." },
+  { id: "creator", icon: Palette, name: "Creator", title: "المُبدع", desc: "محتوى وتصميم بالـ AI." },
+  { id: "analyst", icon: BarChart3, name: "Analyst", title: "المحلّل", desc: "بيانات وقرارات." },
+  { id: "automator", icon: Cog, name: "Automator", title: "المُؤتمت", desc: "أنظمة أتمتة عمليّة." },
+  { id: "builder", icon: Hammer, name: "Builder", title: "الباني", desc: "ابدأ ببناء التطبيقات والأنظمة." },
 ];
 
 const ONBOARDING_KEY = "onboarding:primaryPath";
@@ -22,8 +24,8 @@ const ONBOARDING_KEY = "onboarding:primaryPath";
 function Onboarding() {
   const navigate = useNavigate();
   const [selected, setSelected] = useState<string>(() => {
-    if (typeof window === "undefined") return "builder";
-    return localStorage.getItem(ONBOARDING_KEY) || "builder";
+    if (typeof window === "undefined") return "business";
+    return localStorage.getItem(ONBOARDING_KEY) || "business";
   });
 
   return (
