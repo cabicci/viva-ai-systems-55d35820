@@ -700,6 +700,26 @@ export const PATHS: CurriculumPath[] = [
 ];
 
 /* -------------------------------------------------------------- */
+/*  Single source of truth — dashboard display order               */
+/*  Intro → Business → Creator → Analyst → Automator → Builder    */
+/* -------------------------------------------------------------- */
+
+/** Ordered path ids as shown on /dashboard. The ONLY allowed source
+ * for any UI that lists paths across the platform. */
+export const PATH_ORDER: PathId[] = PATHS.map((p) => p.id);
+
+/** Same as PATH_ORDER but excludes the intro entry. */
+export const PATH_ORDER_NO_INTRO: PathId[] = PATH_ORDER.filter((id) => id !== "intro");
+
+/** Sort any list of items that carry a `pathId`/`id` field by dashboard order. */
+export function sortByPathOrder<T extends { id: string }>(items: T[]): T[] {
+  const rank = new Map(PATH_ORDER.map((id, i) => [id, i] as const));
+  return [...items].sort(
+    (a, b) => (rank.get(a.id as PathId) ?? 999) - (rank.get(b.id as PathId) ?? 999),
+  );
+}
+
+/* -------------------------------------------------------------- */
 /*  Flat ordered lesson ids per path — for progression checks     */
 /* -------------------------------------------------------------- */
 
