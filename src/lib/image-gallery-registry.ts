@@ -28,7 +28,7 @@ import imgM5Transition from "@/assets/lessons/unique/builder-m5-l1-transition.jp
 import img21 from "@/assets/lessons/builder-m6-l1-idea-to-page.jpg";
 import img22 from "@/assets/lessons/builder-m6-l4-components-routes.jpg";
 import img23 from "@/assets/lessons/unique/builder-m6-l2-wireframe.jpg";
-import img24 from "@/assets/lessons/unique/builder-m6-first-prompt.jpg";
+import img24 from "@/assets/lessons/unique/builder-m6-l3-first-prompt-to-lovable.jpg";
 import img25 from "@/assets/lessons/unique/builder-m6-l5-iteration.jpg";
 import img26 from "@/assets/lessons/unique/builder-m6-l6-debugging.jpg";
 
