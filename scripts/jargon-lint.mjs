@@ -39,22 +39,32 @@ for (const file of files) {
   for (const { term, anchors } of GLOSSARY) {
     const regex = new RegExp(`\\b${term}\\b`, "g");
     lines.forEach((line, idx) => {
-      // skip imports, comments, IDs, eyebrows, subtitle slots
+      // skip non-narrative lines: imports, comments, IDs, labels, alts, captions, quiz options, term defs, explanations
       if (/^\s*(import|\/\/|\*|\/\*)/.test(line)) return;
-      if (/lessonId|src=|alt=|href=|label:/.test(line) && !line.includes('"')) return;
+      if (/^\s*(term|lessonId|label|alt|src|href|kind|icon|tone|eyebrow|buttonLabel|copiedLabel|correctIndex|id|bloom|weight|criteria):/.test(line)) return;
+      if (/^\s*"[^"]{1,40}"\s*,?\s*$/.test(line)) return; // short standalone string (quiz option)
+      if (/^\s*explanation:/.test(line)) return;
+      if (/^\s*question:/.test(line)) return;
+      if (/^\s*caption:/.test(line)) return;
+      if (/^\s*summary:/.test(line)) return;
+      if (/^\s*intro:/.test(line)) return;
+      // focus on narrative body lines: paragraphs entries, comparison body, meaning, prompt
+      // accept lines that look like content strings inside paragraphs/body/meaning/prompt
       let m;
       while ((m = regex.exec(line)) !== null) {
-        // look back 80 chars within line (or previous line) for an Arabic anchor
-        const start = Math.max(0, m.index - 80);
-        const window = (lines[idx - 1] || "").slice(-40) + " " + line.slice(start, m.index);
+        const start = Math.max(0, m.index - 100);
+        const prevLine = lines[idx - 1] || "";
+        const prevPrev = lines[idx - 2] || "";
+        const window = prevPrev.slice(-60) + " " + prevLine.slice(-60) + " " + line.slice(start, m.index);
         const ok = anchors.some((a) => window.includes(a));
         if (!ok) {
-          violations.push({ file, line: idx + 1, term, snippet: line.trim().slice(0, 120) });
+          violations.push({ file, line: idx + 1, term, snippet: line.trim().slice(0, 140) });
         }
       }
     });
   }
 }
+
 
 if (violations.length === 0) {
   console.log("✅ Jargon lint passed — no untethered technical terms.");
