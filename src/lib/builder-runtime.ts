@@ -8,7 +8,7 @@
  * each helper just packages logic that already existed at the call sites.
  */
 
-import { isUnlocked, type LessonStatus } from "./lesson-progress";
+import type { LessonStatus } from "./lesson-progress";
 import type { CurriculumLesson, CurriculumModule } from "./curriculum-data";
 
 /* -------------------------------------------------------------- */
@@ -131,14 +131,16 @@ export interface LessonAccess {
 
 export function getLessonAccess(
   lesson: CurriculumLesson,
-  store: Record<string, LessonStatus>,
-  orderedIds: string[],
+  _store: Record<string, LessonStatus>,
+  _orderedIds: string[],
   getStatus: (id: string) => LessonStatus,
   moduleUnlocked = true,
 ): LessonAccess {
   const status = getStatus(lesson.id);
   const isAvailable = lesson.state === "available";
-  const unlocked = isAvailable && isUnlocked(store, orderedIds, lesson.id);
+  // Sequential per-lesson unlocking is disabled by design — see
+  // system-state/data.ts. Availability is decided at the curriculum level.
+  const unlocked = isAvailable;
   return {
     status,
     isAvailable,
