@@ -17,9 +17,14 @@ const paths = [
   { id: "business", icon: Briefcase, name: "Business", title: "الأعمال", desc: "أطلق منتجك الخاص." },
 ];
 
+const ONBOARDING_KEY = "onboarding:primaryPath";
+
 function Onboarding() {
   const navigate = useNavigate();
-  const [selected, setSelected] = useState<string>("builder");
+  const [selected, setSelected] = useState<string>(() => {
+    if (typeof window === "undefined") return "builder";
+    return localStorage.getItem(ONBOARDING_KEY) || "builder";
+  });
 
   return (
     <div className="min-h-screen container mx-auto px-4 py-16 max-w-4xl">
@@ -55,7 +60,11 @@ function Onboarding() {
       </div>
 
       <div className="mt-10 text-center">
-        <Button variant="hero" size="xl" onClick={() => { toast.success("بدأت رحلتك!"); navigate({ to: "/dashboard" }); }}>
+        <Button variant="hero" size="xl" onClick={() => {
+          try { localStorage.setItem(ONBOARDING_KEY, selected); } catch { /* ignore */ }
+          toast.success("بدأت رحلتك!");
+          navigate({ to: "/dashboard", search: { path: selected } });
+        }}>
           ابدأ المنظومة <ArrowLeft className="h-4 w-4" />
         </Button>
       </div>
