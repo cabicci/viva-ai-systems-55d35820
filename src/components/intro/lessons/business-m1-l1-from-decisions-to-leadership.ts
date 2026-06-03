@@ -1,8 +1,8 @@
 import { Crown, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, PieChart, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-/** Business · M0 · Lesson 01 — Entry point: قيادة من اليوم الأول */
-export const BUSINESS_M0_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS: IntroLessonContent = [
+/** Business · M1 · Lesson 01 — Entry point: قيادة من اليوم الأول */
+export const BUSINESS_M1_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS: IntroLessonContent = [
   {
     icon: Crown,
     eyebrow: "HERO",
