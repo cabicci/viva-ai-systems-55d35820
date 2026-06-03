@@ -2,6 +2,7 @@ import * as React from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
+import { useEntitlement } from "@/lib/entitlements";
 import { INTRO_LESSON_CONTENT } from "@/components/intro/lessons";
 
 /**
