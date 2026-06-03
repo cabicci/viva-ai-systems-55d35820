@@ -15,14 +15,14 @@ import automatorM4RagInN8NScreenshot from "@/assets/lessons/unique/automator-m4-
 export const AUTOMATOR_M4_RAG_IN_N8N_BLOCKS: IntroLessonContent = [
   {
     icon: Lightbulb,
-    eyebrow: "تنبيه: درس تقني",
-    title: "ده درس متقدّم — اتخطّاه لو لسه في البداية",
+    eyebrow: "اختياري — للمتقدمين",
+    title: "لو هدفك استخدام AI في شغلك فقط، تقدر تعدّي الدرس ده بأمان",
     tone: "accent",
     block: {
       kind: "paragraphs",
       paragraphs: [
         "الدرس ده فيه مفاهيم تقنية للناس اللي شغّالة فعلاً على n8n. لو لسه بتتعلم الأساسيات، تقدر تعدّيه دلوقتي وترجعله بعدين — مش هيأثر على باقي رحلتك.",
-        "لو فاهم الأساسيات وعايز تعمّق، يلا نكمل.",
+        "لو فعلًا عايز تبني — يلا نكمل.",
       ],
     },
   },

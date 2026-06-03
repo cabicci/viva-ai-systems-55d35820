@@ -43,6 +43,8 @@ export interface CurriculumModule {
   lessons: CurriculumLesson[];
 }
 
+export type PathTier = "user" | "operator" | "builder";
+
 export interface CurriculumPath {
   id: PathId;
   title: string;
@@ -52,10 +54,16 @@ export interface CurriculumPath {
   status: "open" | "soon";
   /** marks the soft onboarding block before the real paths start. */
   kind?: "intro" | "path";
+  /** Three-tier positioning (v14):
+   *  user     = استخدام AI في الشغل (80% من السوق)
+   *  operator = أتمتة متقدمة + RAG + agents
+   *  builder  = بناء منتجات AI كاملة (تقني، اختياري) */
+  tier?: PathTier;
   /** route for the path overview page (when it exists) */
   route?: string;
   modules: CurriculumModule[];
 }
+
 
 /* -------------------------------------------------------------- */
 /*  Helpers                                                       */
@@ -611,6 +619,7 @@ export const PATHS: CurriculumPath[] = [
     accent: "accent",
     status: "open",
     kind: "intro",
+    tier: "user",
     modules: [
       {
         order: 1,
@@ -637,6 +646,7 @@ export const PATHS: CurriculumPath[] = [
     accent: "business",
     status: "open",
     kind: "path",
+    tier: "user",
     route: "/paths/business",
     modules: businessModules(),
   },
@@ -648,18 +658,8 @@ export const PATHS: CurriculumPath[] = [
     accent: "accent",
     status: "open",
     kind: "path",
+    tier: "user",
     modules: creatorModules(),
-  },
-  {
-    id: "automator",
-    title: "Automator",
-    tagline: "أتمتة شغلك مهما كان — Leads، مبيعات، عمليات، Workflows.",
-    icon: Workflow,
-    accent: "primary",
-    status: "open",
-    kind: "path",
-    route: "/paths/automator",
-    modules: automatorModules(),
   },
   {
     id: "analyst",
@@ -669,20 +669,34 @@ export const PATHS: CurriculumPath[] = [
     accent: "accent",
     status: "open",
     kind: "path",
-    route: "/paths/analyst",
+    tier: "user",
     modules: analystModules(),
+  },
+  {
+    id: "automator",
+    title: "Automator",
+    tagline: "أتمتة شغلك مهما كان — Leads، مبيعات، عمليات، Workflows.",
+    icon: Workflow,
+    accent: "primary",
+    status: "open",
+    kind: "path",
+    tier: "operator",
+    route: "/paths/automator",
+    modules: automatorModules(),
   },
   {
     id: "builder",
     title: "Builder",
-    tagline: "من فكرة إلى منتج SaaS حقيقي — مسار تقني للمتقدمين.",
+    tagline: "للي عايز يبني منتجات AI بنفسه — مسار تقني، اختياري تمامًا.",
     icon: Hammer,
     accent: "primary",
     status: "open",
     kind: "path",
+    tier: "builder",
     route: "/paths/builder",
     modules: builderMilestones(),
   },
+
 ];
 
 /* -------------------------------------------------------------- */

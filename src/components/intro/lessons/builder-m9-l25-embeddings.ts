@@ -12,14 +12,14 @@ import embeddingsDiagram from "@/assets/lessons/concepts/embeddings-diagram.jpg"
 export const BUILDER_M9_EMBEDDINGS_BLOCKS: IntroLessonContent = [
   {
     icon: Lightbulb,
-    eyebrow: "تنبيه: درس تقني",
-    title: "ده درس متقدّم — اتخطّاه لو لسه في البداية",
+    eyebrow: "اختياري — للمتقدمين",
+    title: "لو هدفك استخدام AI في شغلك فقط، تقدر تعدّي الدرس ده بأمان",
     tone: "accent",
     block: {
       kind: "paragraphs",
       paragraphs: [
         "الدرس ده بيشرح إزاي الـAI بيفهم 'المعنى' مش الكلمات الحرفية. لو لسه بتتعلم الأساسيات، تقدر تعدّيه دلوقتي وترجعله بعدين — مش هيأثر على باقي رحلتك.",
-        "لو فاهم الأساسيات وعايز تعمّق، يلا نكمل.",
+        "لو فعلًا عايز تبني — يلا نكمل.",
       ],
     },
   },

@@ -1,92 +1,123 @@
-# خطة تنفيذ نتائج تقرير v12
+# خطة v14 — Three-Tier Repositioning
 
-## القاعدة الأساسية
-
-**تجميد كل توليد فيديو على Bunny + رندر Remotion** لحد ما المحتوى النهائي يثبت. يعني:
-
-- مفيش `bash scripts/trigger-lesson.sh` بعد أي تعديل درس.
-- مفيش rebuild لـ orphan videos الـ 9.
-- التعديلات على ملفات `src/components/intro/lessons/*.ts` بس، بدون trigger.
-- نعلّق مؤقتاً قاعدة "auto-trigger lesson video" في الذاكرة (نضيف override: "paused حتى إشعار آخر").
+بناءً على نتائج v13 worst-20، المشكلة **positioning مش محتوى**. الخطة دي بتحل الجذر مش الأعراض.
 
 ---
 
-## المشاكل الـ 3 من التقرير
+## Phase A — Three-Tier System (الجوهر)
 
-1. **Builder بيتحول من "إبداعي" لـ "كورس CS" من m5** — قفزة الـ confusion من 2 لـ 5+ عند JWT/RLS/embeddings.
-2. **Creator/Automator مش أسهل من Builder** — boring + غير مقنعين (conf ~5 / bore ~5.5).
-3. **Business مكسور تجريبياً** — كل التعليقات "سبت الكورس قبل الدرس ده".
+إعادة تنظيم الـ 5 مسارات تحت 3 مستويات واضحة، كل مستوى بـ promise مختلف.
 
----
+### Level 1 — AI User (80% من السوق)
 
-## المراحل
+**Promise:** "استخدم AI في شغلك من غير ما تتعلم برمجة"
 
-### Phase 1 — تجميد الـ video pipeline (5 دقايق)
+- Intro
+- Business (كامل)
+- Creator (كامل)
+- Analyst (كامل)
+- **Automator Lite** = m1 + m2 فقط (workflows + leads بدون RAG/agents)
 
-- تحديث `mem/workflows/auto-trigger-lesson-video.md` بـ banner علوي: **PAUSED — content-freeze mode**.
-- تحديث `mem/index.md` Core: تعليق قاعدة "Lesson video re-render (MANDATORY)" مؤقتاً.
-- لوج `roadmap_items` واحد: "Freeze video pipeline حتى v13".
+### Level 2 — AI Operator
 
-### Phase 2 — إعادة ترتيب المسارات (UI فقط، بدون لمس الدروس)
+**Promise:** "ابني systems متقدمة بـ AI من غير ما تكتب كود"
 
-- في `src/lib/curriculum-data.ts` + `src/components/site/Journey.tsx`: عرض المسارات بترتيب جديد على الـ Dashboard:
-`Intro → Business (concepts) → Creator/Automator/Analyst → Builder (advanced)`.
-- مفيش حذف لأي درس — بس re-order + label واضح إن Builder m5+ "للمتقدمين".
-- إضافة badge "تقني" على Builder m5-m10 و Automator m3-m4.
+- Automator m3 + m4 (RAG practical, agents, webhooks)
 
-### Phase 3 — إصلاح Business (أعلى ROI)
+### Level 3 — AI Builder (Advanced)
 
-- مراجعة كل دروس Business في `src/components/intro/lessons/business-*.ts`.
-- المشكلة مش في المحتوى — المشكلة إن الـ persona وصلها بعد ما اتلخبط في Builder. لما نرتب المسار (Phase 2)، Business هتتقاس من شخصيات داخلة فريش.
-- نعمل sim جديد سريع (v12.1) على Business فقط بـ 20 persona بعد re-order للتأكد إن المشكلة فعلاً كانت order مش محتوى.
+**Promise:** "للي عايز يبني منتجات AI بنفسه — مش المرحلة التالية الطبيعية"
 
-### Phase 4 — إعادة كتابة الدروس المكسورة (Builder m5+ و Automator m3-m4)
+- Builder كامل
 
-الدروس المستهدفة من التقرير:
-
-- **Builder**: L18, L24, L30, L31, L33, L62-67
-- **Automator**: m3-m4 (كل الدروس)
-
-لكل درس:
-
-1. قراءة الملف الحالي + التعليقات السلبية في raw.json.
-2. إعادة كتابة بالـ framing الصح (analogy → mission → concept، مش العكس).
-3. حذف أي JWT/RLS/embedding من Builder m5-m8، تأجيلها لـ m9-m10 مع warning واضح "تقني".
-4. **بدون trigger للفيديو**.
-
-### Phase 5 — تقسيم Automator
-
-- Module 1-2: "Automation Mindset" (بشري، بدون أدوات).
-- Module 3-4: rename لـ "n8n التقني" + warning واضح.
-- تحديث `curriculum-data.ts` بالـ split.
-
-### Phase 6 — Sim v13 شامل (validation)
-
-- بعد ما كل التعديلات تخلص، تشغيل `run_v13_full.py` (نسخة من v12 مع personas جديدة) 3 مرات للتأكد إن:
-  - completion rate ≥ 80%
-  - Builder confusion < 3
-  - Business بقى صحي
-
-### Phase 7 — Unfreeze + bulk video regen
-
-- بعد ما v13 يبقى أخضر، نشيل الـ freeze من الذاكرة.
-- نعمل `trigger-lesson.sh` على **كل** الدروس المعدّلة (batched ≤400 char IDs).
-- نتابع GitHub Actions لحد ما كل الفيديوهات تتجدد على Bunny.
+**التغيير الحرج:** إزالة أي صياغة بتقول "المرحلة التالية" أو "كمّل لـ Builder". Builder = اختيار، مش progression.
 
 ---
 
-## ترتيب التنفيذ (build mode)
+## Phase B — إعادة صياغة التحذيرات
 
-نبدأ بـ Phase 1 + 2 في turn واحد (سريعين)، بعدها كل phase في turn منفصل عشان نراجع قبل ما نكمل.
+بدل `⚠ تنبيه: درس تقني`:
 
-## ملاحظات تقنية
+```
+⚠ لو هدفك استخدام AI في شغلك فقط،
+   ممكن تعدّي الدرس ده بأمان — مش هيأثر على باقي الكورس.
+```
 
-- مفيش schema changes — كله UI + content.
-- `roadmap_items` هتاخد row لكل phase + لكل درس معدّل.
-- لما نوصل Phase 7، أي درس متعدّل من غير trigger هيفشل `roadmap:guard` build — لازم نشيل/نعدّل الـ guard مؤقتاً في Phase 1.
+يتطبق على:
 
-## القرار المطلوب منك
+- كل دروس Builder (المسار كله)
+- Automator m3 + m4 (لما يدخلوا Level 2)
 
-موافق على الترتيب ده؟ أبدأ من Phase 1+2 على طول؟ 
+---
 
-وا فق علي كل ده ونبداء بالترتيب ورا بعضة
+## Phase C — UI/Curriculum changes
+
+### 1. `src/lib/curriculum-data.ts`
+
+- إضافة حقل `tier: "user" | "operator" | "builder"` لكل path
+- Automator يتقسم منطقيًا: m1+m2 = tier "user"، m3+m4 = tier "operator" (نفس المسار، badge مختلف على الموديولات)
+
+### 2. صفحة `/curriculum`
+
+- 3 sections بصرية واضحة:
+  - **"للاستخدام اليومي" (Level 1)** — أخضر، مفتوح للكل
+  - **"للأنظمة المتقدمة" (Level 2)** — أزرق، badge "متقدم"
+  - **"لبناء المنتجات" (Level 3)** — رمادي، badge "للمطورين فقط"
+
+### 3. Landing/Hero copy
+
+- إزالة أي وعد ضمني بإن المستخدم هيطلع "AI engineer"
+- التركيز على Level 1 كـ default journey
+
+### 4. Onboarding
+
+- سؤال واحد: "إيه هدفك من AI؟"
+  - "أستخدمه في شغلي" → Level 1
+  - "أبني systems لشركتي" → Level 1 + 2
+  - "أبني منتجات AI" → كل المستويات
+
+---
+
+## Phase D — Validation (v14 sim)
+
+نفس الـ worst-20 personas، نقيس:
+
+- هل completion في Level 1 وصل >85%؟
+- هل الـ frustration على Builder اختفى (لأنه بقى opt-in واضح)؟
+- هل الـ "حسيت إني بتعلم شغل حد تاني" pattern اختفى من الـ verdicts؟
+
+**Pass criteria:** Level 1 avg completion ≥ 85%، 0 verdicts فيها "مش مكاني".
+
+---
+
+## Phase E — Re-render videos (Phase 7 الأصلية)
+
+بعد ما الصياغة الجديدة للتحذيرات تستقر، نفك التجميد ونعمل re-render للدروس المتأثرة فقط (11 درس: 5 Builder + 6 Automator). Batches ≤400 chars حسب memory.
+
+---
+
+## Roadmap items هتتعمل
+
+1. `v14-phase-a-three-tier-data` — حقل tier + تقسيم Automator
+2. `v14-phase-b-warning-rewrite` — صياغة جديدة في 11 درس
+3. `v14-phase-c-curriculum-ui` — 3 sections + badges
+4. `v14-phase-c-onboarding-question` — سؤال الهدف
+5. `v14-phase-c-landing-copy` — إزالة وعود "engineer"
+6. `v14-phase-d-sim` — worst-20 v14
+7. `v14-phase-e-rerender` — unfreeze + Bunny dispatch
+
+---
+
+## ملاحظات للموافقة
+
+- **مفيش حذف لأي درس** — كله إعادة تنظيم بصري + صياغة
+- **مفيش تغيير في lesson IDs** — الـ Automator m3+m4 يفضلوا بنفس الـ ID، بس tier="operator" على الموديول
+- **Phase E (re-render) لسه موقوفة** لحد ما توافق صراحة بعد Phase D
+
+---
+
+**سؤال واحد قبل البدء:** هل توافق على تقسيم Automator (m1+m2 في Level 1، m3+m4 في Level 2)، ولا تفضّل Automator كله يبقى Level 2 و"Automator Lite" يبقى مسار جديد منفصل؟
+
+&nbsp;
+
+Automator Lite" يبقى مسار جديد منفصل
