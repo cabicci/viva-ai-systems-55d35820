@@ -58,9 +58,9 @@ function parseArgs(): Args {
   return { apply, pathFilter };
 }
 
-/** Strip the {path}-m\d+(-l\d+)? prefix from an id to get the bare slug. */
+/** Strip the {path}-m\d+(-l\d+[a-z]?)? prefix from an id to get the bare slug. */
 function extractSlug(pathId: string, lessonId: string): string {
-  const re = new RegExp(`^${pathId}-m\\d+(?:-l\\d+)?-`);
+  const re = new RegExp(`^${pathId}-m\\d+(?:-l\\d+[a-z]?)?-`);
   return lessonId.replace(re, "");
 }
 
