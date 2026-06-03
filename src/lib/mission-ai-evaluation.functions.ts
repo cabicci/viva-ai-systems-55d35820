@@ -67,14 +67,19 @@ export const evaluateMissionWithAI = createServerFn({ method: "POST" })
     await enforceRateLimit({ userId, bucketKey: "ai:evaluate-mission:daily", maxCalls: 40, windowSeconds: 86400 });
     await enforceRateLimit({ userId, bucketKey: "ai:evaluate-mission:monthly", maxCalls: 500, windowSeconds: 2592000 });
 
-    // Verify the submission belongs to the caller before doing any work.
+    // Verify the submission belongs to the caller AND matches the claimed
+    // missionId. Without the mission_id check an authed user could pair
+    // their own submissionId with an attacker-controlled prompt (prompt-
+    // injection vector into the AI evaluator).
     const { data: row, error: rowErr } = await supabaseAdmin
       .from("mission_submissions")
-      .select("id, user_id")
+      .select("id, user_id, mission_id")
       .eq("id", data.submissionId)
+      .eq("user_id", userId)
+      .eq("mission_id", data.missionId)
       .maybeSingle();
     if (rowErr) throw new Error("تعذّر التحقق من التسليم.");
-    if (!row || row.user_id !== userId) {
+    if (!row) {
       throw new Error("التسليم غير موجود.");
     }
 
