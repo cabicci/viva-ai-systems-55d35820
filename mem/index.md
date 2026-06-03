@@ -18,6 +18,7 @@ Roadmap logging — FAST MODE (per-lesson work): During content revision, skip p
 Lesson edit = full rebuild with new name from the start: أي تعديل على محتوى درس = rename كامل (ملف + صور + Bunny GUID + DB + كل references) بالاسم الجديد `{path}-m{module}-l{lesson}-{slug}` من أول مرة. والصورة كمان تتولّد من جديد لو المحتوى اتغيّر وبقت مش معبّرة. ممنوع نسيب أي جزء للتعديل بعدين.
 
 ## Memories
+- [🚫 NO spawn_agent + NO AI Gateway](mem://rules/no-spawn-agent) — ABSOLUTE BAN. User repeated 10+ times. Use GEMINI/OPENROUTER keys directly.
 - [Egyptian Arabic prompt rules](mem://design/egyptian-arabic-prompt-rules) — Full phonetic/grammar/vocab rules + words-to-avoid list + prompt structure for Veo/TTS
 - [Batch roadmap logging](mem://rules/batch-roadmap-logging) — Every batch/run is its own roadmap_items row, logged when planned not when started
 - [Auto-trigger lesson video](mem://workflows/auto-trigger-lesson-video) — SUSPENDED during v2 content revision. Default flow now: edit → approval → render
