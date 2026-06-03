@@ -75,7 +75,6 @@ import { SCENES as L_business_m3_delegate_or_automate_S, SCENE_FRAMES as L_busin
 import { SCENES as L_analyst_m3_decision_rule_S, SCENE_FRAMES as L_analyst_m3_decision_rule_F, TOTAL_FRAMES as L_analyst_m3_decision_rule_T } from "./lessons-generated/analyst-m3-decision-rule.gen";
 import { SCENES as L_automator_m3_foundations_S, SCENE_FRAMES as L_automator_m3_foundations_F, TOTAL_FRAMES as L_automator_m3_foundations_T } from "./lessons-generated/automator-m3-foundations.gen";
 import { SCENES as L_automator_m4_llm_node_bridge_S, SCENE_FRAMES as L_automator_m4_llm_node_bridge_F, TOTAL_FRAMES as L_automator_m4_llm_node_bridge_T } from "./lessons-generated/automator-m4-llm-node-bridge.gen";
-import { SCENES as L_builder_m5_backend_api_S, SCENE_FRAMES as L_builder_m5_backend_api_F, TOTAL_FRAMES as L_builder_m5_backend_api_T } from "./lessons-generated/builder-m5-l11-backend-api.gen";
 import { SCENES as L_builder_m5_frontend_S, SCENE_FRAMES as L_builder_m5_frontend_F, TOTAL_FRAMES as L_builder_m5_frontend_T } from "./lessons-generated/builder-m5-l10-frontend.gen";
 import { SCENES as L_business_m1_weekly_rhythm_S, SCENE_FRAMES as L_business_m1_weekly_rhythm_F, TOTAL_FRAMES as L_business_m1_weekly_rhythm_T } from "./lessons-generated/business-m1-weekly-rhythm.gen";
 import { SCENES as L_automator_m2_tools_landscape_S, SCENE_FRAMES as L_automator_m2_tools_landscape_F, TOTAL_FRAMES as L_automator_m2_tools_landscape_T } from "./lessons-generated/automator-m2-tools-landscape.gen";
@@ -107,6 +106,7 @@ import { SCENES as L_builder_m1_l2_tokens_training_S, SCENE_FRAMES as L_builder_
 import { SCENES as L_builder_m1_l1_what_is_llm_S, SCENE_FRAMES as L_builder_m1_l1_what_is_llm_F, TOTAL_FRAMES as L_builder_m1_l1_what_is_llm_T } from "./lessons-generated/builder-m1-l1-what-is-llm.gen";
 import { SCENES as L_builder_m7_l21_queries_S, SCENE_FRAMES as L_builder_m7_l21_queries_F, TOTAL_FRAMES as L_builder_m7_l21_queries_T } from "./lessons-generated/builder-m7-l21-queries.gen";
 import { SCENES as L_builder_m6_l13_idea_to_page_S, SCENE_FRAMES as L_builder_m6_l13_idea_to_page_F, TOTAL_FRAMES as L_builder_m6_l13_idea_to_page_T } from "./lessons-generated/builder-m6-l13-idea-to-page.gen";
+import { SCENES as L_builder_m5_l11_backend_api_S, SCENE_FRAMES as L_builder_m5_l11_backend_api_F, TOTAL_FRAMES as L_builder_m5_l11_backend_api_T } from "./lessons-generated/builder-m5-l11-backend-api.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -175,7 +175,6 @@ export const LESSONS: LessonModule[] = [
     { id: "analyst-m3-decision-rule", scenes: L_analyst_m3_decision_rule_S, sceneFrames: L_analyst_m3_decision_rule_F, totalFrames: L_analyst_m3_decision_rule_T },
     { id: "automator-m3-foundations", scenes: L_automator_m3_foundations_S, sceneFrames: L_automator_m3_foundations_F, totalFrames: L_automator_m3_foundations_T },
     { id: "automator-m4-llm-node-bridge", scenes: L_automator_m4_llm_node_bridge_S, sceneFrames: L_automator_m4_llm_node_bridge_F, totalFrames: L_automator_m4_llm_node_bridge_T },
-    { id: "builder-m5-l11-backend-api", scenes: L_builder_m5_backend_api_S, sceneFrames: L_builder_m5_backend_api_F, totalFrames: L_builder_m5_backend_api_T },
     { id: "builder-m5-l10-frontend", scenes: L_builder_m5_frontend_S, sceneFrames: L_builder_m5_frontend_F, totalFrames: L_builder_m5_frontend_T },
     { id: "business-m1-weekly-rhythm", scenes: L_business_m1_weekly_rhythm_S, sceneFrames: L_business_m1_weekly_rhythm_F, totalFrames: L_business_m1_weekly_rhythm_T },
     { id: "automator-m2-tools-landscape", scenes: L_automator_m2_tools_landscape_S, sceneFrames: L_automator_m2_tools_landscape_F, totalFrames: L_automator_m2_tools_landscape_T },
@@ -207,5 +206,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m1-l1-what-is-llm", scenes: L_builder_m1_l1_what_is_llm_S, sceneFrames: L_builder_m1_l1_what_is_llm_F, totalFrames: L_builder_m1_l1_what_is_llm_T },
     { id: "builder-m7-l21-queries", scenes: L_builder_m7_l21_queries_S, sceneFrames: L_builder_m7_l21_queries_F, totalFrames: L_builder_m7_l21_queries_T },
     { id: "builder-m6-l13-idea-to-page", scenes: L_builder_m6_l13_idea_to_page_S, sceneFrames: L_builder_m6_l13_idea_to_page_F, totalFrames: L_builder_m6_l13_idea_to_page_T },
+    { id: "builder-m5-l11-backend-api", scenes: L_builder_m5_l11_backend_api_S, sceneFrames: L_builder_m5_l11_backend_api_F, totalFrames: L_builder_m5_l11_backend_api_T },
   /* @lesson-entries-end */
 ];

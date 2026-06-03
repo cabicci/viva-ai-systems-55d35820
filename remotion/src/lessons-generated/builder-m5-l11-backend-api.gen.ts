@@ -5,115 +5,114 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "highlight": "API = الجرسون",
-    "chip": "تشبيه واحد",
-    "subtitle": "تشبيه بسيط يوضح الـ Backend والـ API",
-    "title": "Backend = المطبخ"
+    "chip": "أكبر كارثة في تطبيقات الـ AI",
+    "subtitle": "ركز عشان ده أهم درس ممكن تتعلمه في الـ AI.",
+    "title": "لو مفتاح الـ AI اتسرق،",
+    "highlight": "هتدفع آلاف"
   },
   {
-    "card": "ConceptCard",
+    "card": "CompareCard",
     "accent": "lavender",
-    "tag": "ملف بيانات منظم",
-    "term": "JSON",
-    "definition": "طريقة لكتابة البيانات زي قايمة الطلبات، الكل بيفهمها عشان منظمة."
+    "left": {
+      "body": "لو حطيت مفتاح الـ AI في الـ Frontend، أي يوزر يقدر يشوفه ويسرقه ويستخدمه على حسابك. هتصحي تلاقي فاتورة بآلاف الدولارات!",
+      "label": "الغلطة القاتلة"
+    },
+    "right": {
+      "body": "الحل إن كل طلب للـ AI يعدّي على الـ Backend الأول. الـ Backend معاه المفتاح السرّي، يكلم الـ AI ويرجع الرد للـ Frontend من غير ما يكشفه.",
+      "label": "الحل الصح"
+    },
+    "title": "حل الكارثة دي بسيط"
   },
   {
-    "card": "ConceptCard",
+    "card": "CTACard",
     "accent": "peach",
-    "tag": "عنوان خدمة محددة",
-    "term": "Endpoint / API URL",
-    "definition": "عنوان محدد لخدمة معينة جوه الموقع بتنفذ حاجة واحدة بس."
+    "tagline": "حل السؤال ده عشان تشوف بنفسك إزاي الـ API بتشتغل في الكواليس!",
+    "eyebrow": "دورك دلوقتي",
+    "title": "شوف الـ API وهي شغالة",
+    "highlight": "إزاي الـ API بتشتغل؟"
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "yellow",
-    "tag": "نوع طلب الداتا",
-    "term": "Method (GET/POST)",
-    "definition": "نوع الطلب؛ GET يعني بتجيب داتا، وPOST يعني بتبعت داتا تتسجل."
+    "bullets": [
+      "تخيل إنك في مطعم.",
+      "الترابيزة، المنيو، الديكور... ده هو الـ Frontend.",
+      "دي الواجهة اللي بتتعامل معاها."
+    ],
+    "title": "الـ Backend هو المطبخ، والـ API هو الجرسون"
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "pink",
-    "tag": "مراقبة كواليس الموقع",
-    "term": "DevTools / Network Tab",
-    "definition": "لوحة التحكم في المتصفح اللي بتراقب منها كواليس الموقع وطلباته."
+    "bullets": [
+      "المطبخ اللي بيجهز الأكل ومحدش غريب بيدخله... ده الـ Backend.",
+      "بيستخدم مكونات سرّية.",
+      "طب إزاي طلبك بيوصل من الترابيزة للمطبخ؟"
+    ],
+    "title": "الـ Backend هو المطبخ، والـ API هو الجرسون"
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "mintDeep",
-    "tag": "طلب ورد من السيرفر",
-    "term": "Request / Response",
-    "definition": "دي دورة التواصل؛ الزبون يطلب حاجة والسيرفر يرد عليه بالنتيجة."
+    "bullets": [
+      "عن طريق الجرسون! الجرسون ده هو الـ API.",
+      "هو الوسيط اللي بياخد طلبك ويرجعلك الأكل الجاهز.",
+      "من غير ما تحتاج تعرف إيه اللي حصل في المطبخ."
+    ],
+    "title": "الـ Backend هو المطبخ، والـ API هو الجرسون"
   },
   {
     "card": "ConceptCard",
+    "accent": "mint",
+    "tag": "وسيط التواصل",
+    "term": "API",
+    "definition": "العقد أو الوسيط اللي بيسمح لجزئين في السيستم (زي الـ Frontend والـ Backend) يكلموا بعض بطريقة منظمة ومفهومة."
+  },
+  {
+    "card": "BulletsCard",
     "accent": "lavender",
-    "tag": "بيانات وهمية مؤقتة",
-    "term": "Placeholder / Mock Data",
-    "definition": "بيانات وهمية بنحطها تسد خانة لحد ما نربط البيانات الحقيقية."
+    "bullets": [
+      "في Lovable، مش محتاج تعمل مشروع Backend منفصل.",
+      "الموضوع أبسط من كده بكتير.",
+      "بتكتب function عادية، بس بتحط قبلها كلمة معينة."
+    ],
+    "title": "الـ Backend بتاعك هو مجرد Function"
   },
   {
     "card": "BulletsCard",
     "accent": "peach",
     "bullets": [
-      "الـ Backend ده كود بيشتغل على سيرفر، مسؤول عن الحسابات وحفظ البيانات والصلاحيات، وأي حاجة سرّية زي الـ API keys بتعيش هنا عشان المستخدم مش بيشوفها.",
-      "الـ API هو العقد بين الـ Frontend والـ Backend، الـ Frontend بيبعت طلب (request) على عنوان محدد (endpoint) والـ Backend بيرد عليه بنتيجة (response) غالبًا بتكون JSON.",
-      "في الـ Stack بتاعنا، الـ Backend بيتكتب جوّه نفس المشروع كـ Server Functions، يعني بتكتبها كـ function عادية بس بـ marker بيقول إنها بتشتغل على السيرفر.",
-      "الـ AI نفسه بيعيش في API بتاعت شركة تانية، والـ Backend بتاعك هو اللي بيكلمه، مش الـ Frontend، وده عشان مفتاح الـ AI سرّي ومينفعش يتحط في الـ Frontend."
+      "الـ Frontend بينادي الـ function دي كأنها عادية.",
+      "المنصة بتحوّلها لـ API request كامل يروح للـ Backend.",
+      "مفتاح الـ AI بتاعك بتحطه في الـ server function، كده بيفضل في أمان."
     ],
-    "title": "Backend = العقل، API = البريد"
+    "title": "الـ Backend بتاعك هو مجرد Function"
   },
   {
     "card": "ScreenshotCard",
     "accent": "yellow",
-    "eyebrow": "شوف بنفسك",
-    "title": "مساعد المنصة بيكلّم Backend في الوقت الحقيقي",
-    "caption": "الصفحة دي مثال حيّ على الفرق بين الطبقتين. الكرت بتاع \"سياق المتعلم الحالي\" بيقولك LOADING، يعني الـ Frontend بعت طلب للـ Backend ومستني الرد. الحقول الفاضية دي placeholders لحد ما الـ JSON يرجع. لما تكتب رسالة وتدوس \"إرسال\"، بيحصل طلب تاني فيه نص رسالتك وسياقك. الـ Backend بياخد ده، يعمل prompt، يبعته للـ AI model عن طريق API key سرّية، ويستنى الرد ويرجّعهولك. الـ Frontend مش بيشوف مفتاح ولا سيرفر، هو بس بينادي function ويستنى رد.",
-    "src": "lessons/builder-m5-l11-backend-api.jpg"
+    "src": "lessons/builder-m5-l11-backend-api.jpg",
+    "eyebrow": "مثال حي من المنصة",
+    "title": "مساعد Lovable بيكلم الـ Backend",
+    "caption": "الصفحة دي مثال حي. أول ما بتفتحها، الـ Frontend بيبعت طلب للـ Backend عشان يعرف إنت مين وفي أنهي درس (ده طلب GET). ولما بتكتب رسالة وتدوس \"إرسال\"، بيبعت طلب تاني فيه رسالتك (ده طلب POST)."
   },
   {
-    "card": "CompareCard",
+    "card": "ScreenshotCard",
     "accent": "pink",
-    "left": {
-      "body": "دي كارثة! أي مستخدم يقدر يشوف المفتاح ويستخدمه، وهتلاقي فاتورة آلاف الدولارات. ده ينطبق على أي سرّي زي مفاتيح Stripe أو Database passwords.",
-      "label": "غلطة: API key في الـ Frontend"
-    },
-    "right": {
-      "body": "كل طلب للـ AI لازم يعدّي على Server Function. الـ Function بتقرا المفتاح من environment variable، تنادي الـ AI، وترجع للـ Frontend الرد بس من غير ما يشوف المفتاح أبدًا. لو الكود بيستخدم secret، مكانه Backend.",
-      "label": "صح: الـ Backend هو البوّاب"
-    },
-    "title": "أكبر غلطة Backend بتقع فيها وإنت مبتدئ"
+    "src": "lessons/builder-m5-l11-backend-api.jpg",
+    "eyebrow": "مثال حي من المنصة",
+    "title": "مساعد Lovable بيكلم الـ Backend",
+    "caption": "الـ Backend ياخد الرسالة، يكلم الـ AI بالمفتاح السرّي، ويرجعلك الرد. كل ده والـ Frontend مش شايف أي مفاتيح."
   },
   {
     "card": "CTACard",
     "accent": "mintDeep",
-    "eyebrow": "دورك دلوقتي",
-    "title": "افتح Network tab",
-    "tagline": "حلّ الأسئلة دي عشان تفهم أكتر إزاي الـ Backend والـ API بيشتغلوا عمليًا.",
-    "highlight": "وشوف API بتشتغل قدامك"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "lavender",
-    "title": "صمّم ٣ API endpoints لتطبيقك",
-    "bullets": [
-      "الـ API هو العقد بين الـ Frontend والـ Backend، والمطلوب منك تصمم ٣ endpoints أساسية بتفاصيلهم.",
-      "لكل endpoint هتحتاج تحدد الـ Method والـ Path، وإيه بيعمل في جملة، والـ Input والـ Output.",
-      "كمان لازم تحدد لو الـ Auth مطلوب وليه، وتذكر ٢ Errors محتملين.",
-      "في الآخر، هتقول أنهي endpoint هو الـ critical اللي لو وقع التطبيق يقف، وليه."
-    ]
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "peach",
-    "title": "كل زرار «احفظ» بيستدعي serverFn جوّاني",
-    "bullets": [
-      "الجزء ده من المنصة اتبنى بنفس المسار اللي بتتعلمه. لما بتسجّل تقدّمك أو بتبعت mission، الـ Frontend بيستدعي serverFn اللي هي الـ Backend بتاعتنا.",
-      "تقدر تشوف كل serverFn بتشتغل في /build-logs، وإحنا بنستخدم TanStack Start serverFn بدل REST endpoints التقليدية.",
-      "كل serverFn بتمر على auth middleware قبل ما تشتغل، والـ /build-logs بيوريك التايملاين الكامل لكل request وردّه."
-    ]
+    "tagline": "في جملة واحدة، جاوب: إيه أهم طلب الـ Frontend هيطلبه من الـ Backend عشان فكرتك تشتغل؟",
+    "eyebrow": "مهمتك دلوقتي",
+    "title": "صمّم أهم API لتطبيقك",
+    "highlight": "كل تطبيق له طلب أساسي واحد هو قلبه."
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [459, 256, 281, 283, 257, 267, 261, 1006, 1150, 1008, 360, 897, 1141];
+export const SCENE_FRAMES: number[] = [295, 435, 275, 277, 316, 316, 327, 346, 411, 333, 343, 421];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
