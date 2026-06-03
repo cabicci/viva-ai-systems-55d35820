@@ -1,18 +1,18 @@
 import { Infinity as InfinityIcon, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, Network, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-/** Business · M6 · Lesson 01 — Full Ecosystem Closing */
+/** Business · M6 · Lesson 01 — خريطة الـ Ecosystem الكامل */
 export const BUSINESS_M6_FULL_ECOSYSTEM_BLOCKS: IntroLessonContent = [
   {
     icon: InfinityIcon,
     eyebrow: "HERO",
-    title: "الـ ٥ مسارات في يومك",
+    title: "الـ ٥ أدوار في بيزنسك",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
         "شخص واحد + AI + System صح = Business كامل.",
-        "ده اللي كنت بتبنيه على مدار الرحلة.",
+        "في الدرس ده بتشوف خريطة الـ 5 أدوار اللي أي بيزنس محتاجها — Business بيقودهم، والمسارات الجاية (Builder · Creator · Automator · Analyst) بتعلّمك تنفّذ كل دور بنفسك أو بالـ AI.",
       ],
     },
   },
@@ -38,7 +38,7 @@ export const BUSINESS_M6_FULL_ECOSYSTEM_BLOCKS: IntroLessonContent = [
     eyebrow: "فيديو الدرس",
     title: "اتفرّج الأول",
     tone: "accent",
-    block: { kind: "lessonVideo", caption: "كل المسارات في صورة واحدة — وإزاي يومك بقى مختلف." },
+    block: { kind: "lessonVideo", caption: "الـ 5 أدوار في صورة واحدة — وإزاي Business بيربطها." },
   },
   {
     icon: Lightbulb,
@@ -133,9 +133,9 @@ export const BUSINESS_M6_FULL_ECOSYSTEM_BLOCKS: IntroLessonContent = [
     block: {
       kind: "mission",
       intro:
-        "إنت دلوقتي شفت الـ ٥ أدوار (Builder/Creator/Automator/Analyst/Business). ارسم إزاي بيتركّبوا في منشأتك.",
+        "شفت الـ ٥ أدوار (Business/Builder/Creator/Automator/Analyst). ارسم إزاي بيتركّبوا في منشأتك دلوقتي — حتى لو لسه ما اتعلمتش تفاصيل التنفيذ، اكتب الموجود فعليًا والفجوة.",
       prompt:
-        "في تسليمك اكتب:\n\n١) Builder عندك: مين/إيه + بيبني إيه:\n٢) Creator: مين/إيه + بيوصل لمين:\n٣) Automator: مين/إيه + بيوصّل إيه بإيه:\n٤) Analyst: مين/إيه + بيجاوب أي سؤال:\n٥) Business (إنت): القرار القيادي اللي بيستفيد من الأربعة + أكبر فجوة في الـ Ecosystem دلوقتي:",
+        "في تسليمك اكتب:\n\n١) Business (إنت): أكبر قرار قيادي مفتوح دلوقتي:\n٢) Builder عندك: مين/إيه + بيبني إيه (أو الفجوة):\n٣) Creator: مين/إيه + بيوصل لمين (أو الفجوة):\n٤) Automator: مين/إيه + بيوصّل إيه بإيه (أو الفجوة):\n٥) Analyst: مين/إيه + بيجاوب أي سؤال (أو الفجوة):",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",
       rubric: [
@@ -166,7 +166,7 @@ export const BUSINESS_M6_FULL_ECOSYSTEM_BLOCKS: IntroLessonContent = [
       kind: "caseStudy",
       title: "/dashboard + /system-state + /roadmap = الـ ecosystem كامل",
       summary:
-        "الجزء ده من المنصة اتبنى بمسار Business — نفس اللي بتتعلمه. /dashboard بيوريك تقدّم المتعلم. /system-state بيوريك صحة الـ system. /roadmap بيوريك المستقبل. ٣ صفحات بس بتدير ecosystem كامل بشخص واحد + AI.",
+        "المنصة دي بتتدار بـ 3 صفحات: /dashboard بيوريك تقدّم المتعلم، /system-state بيوريك صحة الـ system، /roadmap بيوريك المستقبل. شخص واحد + AI بيدير ecosystem كامل — وده النموذج اللي Business بيدرّبك عليه قبل ما تدخل المسارات التنفيذية.",
       bullets: [
         "Past = /dashboard (learner progress).",
         "Present = /system-state (system health).",

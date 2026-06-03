@@ -1,18 +1,18 @@
 import { Crown, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, PieChart, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-/** Business · M0 · Lesson 01 — Bridge from Analyst */
+/** Business · M0 · Lesson 01 — Entry point: قيادة من اليوم الأول */
 export const BUSINESS_M0_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS: IntroLessonContent = [
   {
     icon: Crown,
     eyebrow: "HERO",
-    title: "القرارات بقت بتنفّذ نفسها — دورك إيه؟",
+    title: "Business: تبدأ تقود من اليوم الأول",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "Builder + Creator + Automator + Analyst = آلة شغّالة.",
-        "Business = إنت بقيت بتقود الآلة — مش بتشغّلها يدوي.",
+        "في أي بيزنس فيه فرق بين اللي بيشغّل بإيده، واللي بيقود بنظام.",
+        "Business هو أول مسار في الرحلة — هنا بتتعلّم تفكّر كـ Leader قبل ما تتعلّم تنفّذ بنفسك أو بالـ AI في المسارات الجاية.",
       ],
     },
   },
@@ -110,13 +110,13 @@ export const BUSINESS_M0_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS: IntroLessonContent
         {
           id: "apply3",
           bloom: "apply",
-          question: "باعتبارك رائد أعمال، بتقضي أغلب وقتك في الرد على الإيميلات وبتحاول تكون متاح دايمًا للعملاء اللي بيتصلوا في أي وقت. ده بيوصفك كـ \"Builder\" ولا كـ \"Analyst\" ولا كـ \"Operator\"؟",
+          question: "باعتبارك رائد أعمال، بتقضي أغلب وقتك في الرد على الإيميلات وبتحاول تكون متاح دايمًا للعملاء اللي بيتصلوا في أي وقت. ده بيوصفك كـ \"Leader\" ولا كـ \"Operator\" ولا كـ \"Strategic\"؟",
           options: [
-            "Builder",
-            "Analyst",
-            "Operator"
+            "Leader",
+            "Operator",
+            "Strategic"
           ],
-          correctIndex: 2,
+          correctIndex: 1,
           explanation: "ده بيوصفك كـ 'Operator' لأنك بتنفّذ مهام يومية بشكل يدوي (الرد على الإيميلات والمكالمات)، وده بيصرف انتباهك عن دور الـ Leader في إدارة الوقت واختيار المهام Strategic."
         }
       ]
@@ -130,9 +130,9 @@ export const BUSINESS_M0_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS: IntroLessonContent
     block: {
       kind: "mission",
       intro:
-        "Analyst بياخد قرار من بيانات. Business بياخد قرار قيادي شكل المنشأة بيتغيّر بسببه. اختار واحد ووضّحه.",
+        "القرار القيادي = قرار شكل المنشأة بيتغيّر بسببه (تخصيص موارد، تعيين، إيقاف خط، تغيير اتجاه). اختار واحد لازم تاخده الأسبوع ده ووضّحه.",
       prompt:
-        "في تسليمك اكتب:\n\n١) القرار التحليلي اللي اتطلع من البيانات مؤخرًا:\n٢) القرار القيادي اللي مفروض يتاخد بسببه (تخصيص موارد/تعيين/إيقاف خط/تغيير اتجاه):\n٣) مين الـ Stakeholders اللي القرار ده هيأثّر عليهم:\n٤) إيه الـ trade-off (إيه اللي بتكسبه وإيه اللي بتسيبه):\n٥) موعد محدّد لإعلان القرار:",
+        "في تسليمك اكتب:\n\n١) الموقف أو الملاحظة اللي خلّت القرار ده لازم:\n٢) القرار القيادي نفسه (تخصيص موارد/تعيين/إيقاف خط/تغيير اتجاه):\n٣) مين الـ Stakeholders اللي القرار ده هيأثّر عليهم:\n٤) إيه الـ trade-off (إيه اللي بتكسبه وإيه اللي بتسيبه):\n٥) موعد محدّد لإعلان القرار:",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",
       rubric: [
@@ -163,7 +163,7 @@ export const BUSINESS_M0_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS: IntroLessonContent
       kind: "caseStudy",
       title: "المنصة دي = ecosystem كامل، شخص واحد بيديره",
       summary:
-        "الجزء ده من المنصة اتبنى بمسار Business — نفس اللي بتتعلمه. Builder بنى الـ stack. Creator يكتب الدروس. Automator أتمت الـ workflows. Analyst يقرأ البيانات. شخص واحد بيلعب الـ 5 أدوار بمساعدة AI — وده اللي Business بيتعلّمه.",
+        "المنصة دي اتبنت بـ 5 أدوار: Business بيقود ويقرّر، وتحته 4 أدوار تنفيذية — Builder للنظام، Creator للمحتوى، Automator للأتمتة، Analyst للبيانات. شخص واحد بيلعب الـ 5 أدوار بمساعدة AI. هنا في Business بنبدأ بدور القيادة، وفي المسارات الجاية بتتعلّم كل دور تنفيذي بتفصيله.",
       bullets: [
         "كل قرار في الـ ecosystem موثّق في /roadmap.",
         "AI tools بتختصر شغل ٥ ناس.",

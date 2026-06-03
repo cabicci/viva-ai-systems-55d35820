@@ -165,7 +165,7 @@ export const BUSINESS_M1_WEEKLY_RHYTHM_BLOCKS: IntroLessonContent = [
       kind: "caseStudy",
       title: "أسبوع المنصة = ٤ مسارات + يوم review",
       summary:
-        "الجزء ده من المنصة اتبنى بمسار Business — نفس اللي بتتعلمه. كل يوم مخصّص لمسار: الإثنين Builder (technical)، الثلاثاء Creator (content)، الأربعاء Automator (workflows)، الخميس Analyst (review)، الجمعة Business (strategy). الـ rhythm بيمنع الـ context switching.",
+        "المنصة دي بتتدار بـ Weekly Rhythm: كل يوم مخصّص لدور — الإثنين Builder (technical)، الثلاثاء Creator (content)، الأربعاء Automator (workflows)، الخميس Analyst (review)، الجمعة Business (strategy). الـ rhythm بيمنع الـ context switching. هتتعلّم كل دور بتفصيله في مساره الخاص لاحقًا.",
       bullets: [
         "كل يوم له deep work block 4 ساعات.",
         "Roadmap items متعلّمة بـ tags للمسار.",
