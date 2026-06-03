@@ -62,7 +62,7 @@ export const AUTOMATOR_M1_SYSTEMS_VIEW_BLOCKS: IntroLessonContent = [
         "Inputs — البيانات اللي بتدخل (Lead form، رسالة WhatsApp، Order جديد، Comment، Email).",
         "Processes — الخطوات اللي بتتعمل عليها (Validate → Classify → Decide → Transform).",
         "Outputs — اللي بيطلع في الآخر (رسالة رد، صف في Database، Notification، Task جديدة).",
-        "مثال حي: الرد على رسالة WhatsApp = Input (سؤال العميل) → Process (تفهم الطلب + تدوّر في الـ price list) → Output (رد + إضافة لـ CRM). بتعمله 50 مرة في اليوم يدوي — هنبنيه يشتغل لوحده في M5.",
+        "مثال حي: الرد على رسالة WhatsApp = Input (سؤال العميل) → Process (تفهم الطلب + تدوّر في الـ price list) → Output (رد + إضافة لـ CRM). بتعمله 50 مرة في اليوم يدوي — والـ Automator هدفه يخلّيه يشتغل لوحده.",
       ],
     },
   },
