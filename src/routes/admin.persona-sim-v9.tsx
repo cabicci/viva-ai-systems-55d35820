@@ -77,7 +77,7 @@ const CARD_LABEL: Record<string, string> = {
   ScreenshotCard: "Shot",
 };
 
-function avg(vals: Array<number | undefined>) {
+function avg(vals: Array<number | null | undefined>) {
   const nums = vals.filter((v): v is number => typeof v === "number");
   if (!nums.length) return null;
   return nums.reduce((a, b) => a + b, 0) / nums.length;
