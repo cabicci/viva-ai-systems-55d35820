@@ -1,48 +1,41 @@
 {
-  "generatedAt": "2026-06-03T18:30:45.342Z",
+  "generatedAt": "2026-06-03T18:35:52.715Z",
   "totals": {
     "byCategory": {
       "cross-path-info": 267,
-      "prior-lesson-ref": 23,
-      "next-lesson-ref": 6
+      "next-lesson-ref": 2,
+      "prior-lesson-ref": 9
     },
     "byPath": {
-      "analyst": 59,
-      "automator": 80,
-      "builder": 26,
+      "analyst": 56,
+      "automator": 76,
+      "builder": 15,
       "business": 83,
       "creator": 8,
       "intro": 40
     },
     "byFile": {
       "analyst-m0-from-automation-to-insight.ts": 13,
-      "analyst-m2-ai-summarization.ts": 4,
+      "analyst-m2-ai-summarization.ts": 1,
       "analyst-m2-three-sources.ts": 2,
       "analyst-m4-four-numbers-dashboard.ts": 6,
       "analyst-m6-from-decisions-to-business.ts": 34,
       "automator-m0-where-you-are.ts": 28,
-      "automator-m1-systems-view.ts": 1,
       "automator-m2-filters-routers.ts": 2,
       "automator-m3-connect-database.ts": 4,
       "automator-m3-webhooks-api.ts": 2,
-      "automator-m4-agents.ts": 7,
+      "automator-m4-agents.ts": 6,
       "automator-m4-llm-in-flow.ts": 4,
-      "automator-m4-rag-in-n8n.ts": 6,
+      "automator-m4-rag-in-n8n.ts": 5,
       "automator-m5-follow-up.ts": 6,
-      "automator-m5-lead-capture.ts": 6,
+      "automator-m5-lead-capture.ts": 5,
       "automator-m5-whatsapp-flow.ts": 1,
       "automator-m6-closing-loop.ts": 13,
       "builder-m10-first-users.ts": 3,
-      "builder-m2-l3-prompt-layer.ts": 1,
-      "builder-m3-l6-context-layer.ts": 1,
-      "builder-m5-l11-backend-api.ts": 1,
       "builder-m5-l12-database-intro.ts": 2,
-      "builder-m5-l12b-mini-win.ts": 7,
+      "builder-m5-l12b-mini-win.ts": 2,
       "builder-m5-l9-transition.ts": 6,
       "builder-m6-l16-components-routes.ts": 2,
-      "builder-m8-l23-rls.ts": 1,
-      "builder-m9-l25-embeddings.ts": 1,
-      "builder-m9-l26-agents.ts": 1,
       "business-m0-from-decisions-to-leadership.ts": 15,
       "business-m1-weekly-rhythm.ts": 26,
       "business-m2-customer-lifecycle.ts": 2,
@@ -57,7 +50,7 @@
       "creator-m5-platforms.ts": 2,
       "intro-m1-l7-choose-your-path.ts": 40
     },
-    "total": 296
+    "total": 278
   },
   "issues": [
     {
@@ -167,34 +160,10 @@
     {
       "file": "analyst-m2-ai-summarization.ts",
       "pathId": "analyst",
-      "line": 51,
-      "category": "prior-lesson-ref",
-      "match": "في m{N}",
-      "snippet": "AI بيرجّعلك ملخّص في نقاط — جاهز للقرار في M3.\", \"ربط بـ Builder M9 (RAG): لو حجم البيانات كبير، تقدر تبني RAG على الـ DB بدل النسخ اليدوي.\", ],"
-    },
-    {
-      "file": "analyst-m2-ai-summarization.ts",
-      "pathId": "analyst",
-      "line": 102,
-      "category": "prior-lesson-ref",
-      "match": "في m{N}",
-      "snippet": "options: [ \"تاخد قرار فوري في M3 بتعديل عملية التوصيل ومراجعة جودة المنتجات\", \"تتجاهل الشكاوى دي لأنها طبيعية في أي بيزنس\","
-    },
-    {
-      "file": "analyst-m2-ai-summarization.ts",
-      "pathId": "analyst",
-      "line": 107,
-      "category": "prior-lesson-ref",
-      "match": "في m{N}",
-      "snippet": "لـ AI بيرجعلك ملخّص في نقاط جاهز للقرار في M3. وبما إن الـ AI بيطلعلك الـ patterns و الشكاوى المتكررة، دي بتكون مؤشرات قوية لمشاكل لازم يتم التحرك عليها فورًا.\""
-    },
-    {
-      "file": "analyst-m2-ai-summarization.ts",
-      "pathId": "analyst",
       "line": 52,
       "category": "cross-path-info",
       "match": "mention:builder",
-      "snippet": "— جاهز للقرار في M3.\", \"ربط بـ Builder M9 (RAG): لو حجم البيانات كبير، تقدر تبني RAG على الـ DB بدل النسخ اليدوي.\", ], }, }, { icon:"
+      "snippet": "ي نقاط — جاهز للقرار.\", \"ربط بـ Builder M9 (RAG): لو حجم البيانات كبير، تقدر تبني RAG على الـ DB بدل النسخ اليدوي.\", ], }, }, { icon:"
     },
     {
       "file": "analyst-m2-three-sources.ts",
@@ -757,14 +726,6 @@
       "snippet": "ات (Intro، Creator، Builder، Automator، Business، Analyst) مع مؤشر تقدّم لكل مرحلة.\", caption: \"ده فعلًا screenshot من صفحة /dashboard بتاعتنا — اللي إنت"
     },
     {
-      "file": "automator-m1-systems-view.ts",
-      "pathId": "automator",
-      "line": 65,
-      "category": "prior-lesson-ref",
-      "match": "في m{N}",
-      "snippet": "مرة في اليوم يدوي — هنبنيه يشتغل لوحده في M5.\", ], }, }, { icon: ImageIcon, eyebrow: \"شوف بنفسك\", title: \"صفحة /operational-layers\","
-    },
-    {
       "file": "automator-m2-filters-routers.ts",
       "pathId": "automator",
       "line": 78,
@@ -831,18 +792,10 @@
     {
       "file": "automator-m4-agents.ts",
       "pathId": "automator",
-      "line": 45,
-      "category": "prior-lesson-ref",
-      "match": "اللي اتعلمناه/عملناه/بنيناه",
-      "snippet": "ط بـ Builder M9\", title: \"نفس Agent اللي بنيناه — بس في n8n\", block: { kind: \"paragraphs\", paragraphs: [ \"في Builder M9 اتعلمنا إن A"
-    },
-    {
-      "file": "automator-m4-agents.ts",
-      "pathId": "automator",
       "line": 44,
       "category": "cross-path-info",
       "match": "mention:builder",
-      "snippet": "icon: Link2, eyebrow: \"🔗 ربط بـ Builder M9\", title: \"نفس Agent اللي بنيناه — بس في n8n\", block: { kind: \"paragraphs\", paragraphs: ["
+      "snippet": "icon: Link2, eyebrow: \"🔗 ربط بـ Builder M9\", title: \"نفس فكرة الـ Agent — بس في n8n\", block: { kind: \"paragraphs\", paragraphs: ["
     },
     {
       "file": "automator-m4-agents.ts",
@@ -850,7 +803,7 @@
       "line": 49,
       "category": "cross-path-info",
       "match": "mention:builder",
-      "snippet": "ragraphs\", paragraphs: [ \"في Builder M9 اتعلمنا إن Agent = LLM + Tools + Loop. نفس المعادلة هنا.\", \"الفرق: n8n عنده AI Agent node جاهز بيع"
+      "snippet": "ragraphs\", paragraphs: [ \"Builder M9 بيشرح إن Agent = LLM + Tools + Loop. نفس المعادلة هنا.\", \"الفرق: n8n عنده AI Agent node جاهز بيعمل ال"
     },
     {
       "file": "automator-m4-agents.ts",
@@ -858,7 +811,7 @@
       "line": 51,
       "category": "cross-path-info",
       "match": "mention:builder",
-      "snippet": "sApp) ويتصرّف.\", \"لو لسه مكملتش Builder M9: Agent في سطر = AI بياخد قرار يستخدم أنهي أداة ومتى، بدل ما إنت تحدّد كل خطوة. الفكرة بسيطة، التطبيق بقى لعبة"
+      "snippet": "App) ويتصرّف.\", \"لو ما تعرّضتش لمسار Builder قبل كده: Agent في سطر = AI بياخد قرار يستخدم أنهي أداة ومتى، بدل ما إنت تحدّد كل خطوة. الفكرة بسيطة، التطبي"
     },
     {
       "file": "automator-m4-agents.ts",
@@ -919,18 +872,10 @@
     {
       "file": "automator-m4-rag-in-n8n.ts",
       "pathId": "automator",
-      "line": 45,
-      "category": "prior-lesson-ref",
-      "match": "اللي اتعلمناه/عملناه/بنيناه",
-      "snippet": "ربط بـ Builder M9\", title: \"نفس RAG اللي اتعلمناه — بس بـ nodes\", block: { kind: \"paragraphs\", paragraphs: [ \"لو خلّصت Builder M9، إ"
-    },
-    {
-      "file": "automator-m4-rag-in-n8n.ts",
-      "pathId": "automator",
       "line": 44,
       "category": "cross-path-info",
       "match": "mention:builder",
-      "snippet": "icon: Link2, eyebrow: \"🔗 ربط بـ Builder M9\", title: \"نفس RAG اللي اتعلمناه — بس بـ nodes\", block: { kind: \"paragraphs\", paragraphs:"
+      "snippet": "icon: Link2, eyebrow: \"🔗 ربط بـ Builder M9\", title: \"نفس فكرة الـ RAG — بس بـ nodes\", block: { kind: \"paragraphs\", paragraphs: ["
     },
     {
       "file": "automator-m4-rag-in-n8n.ts",
@@ -938,7 +883,7 @@
       "line": 49,
       "category": "cross-path-info",
       "match": "mention:builder",
-      "snippet": ", paragraphs: [ \"لو خلّصت Builder M9، إنت عارف الـ pipeline: Embeddings → Vector Search → LLM Call. نفس الـ 3 خطوات هنا بالظبط.\", \"الفرق:"
+      "snippet": "paragraphs: [ \"لو سبق ودخلت Builder M9، الـ pipeline معروف: Embeddings → Vector Search → LLM Call. نفس الـ 3 خطوات هنا بالظبط.\", \"الفرق: في"
     },
     {
       "file": "automator-m4-rag-in-n8n.ts",
@@ -946,7 +891,7 @@
       "line": 50,
       "category": "cross-path-info",
       "match": "mention:builder",
-      "snippet": "ـ 3 خطوات هنا بالظبط.\", \"الفرق: في Builder بتكتب الكود اللي بيعمل الـ pipeline. هنا بتسحب 3 nodes جاهزين في n8n وتربطهم.\", \"لو لسه مكملتش Builde"
+      "snippet": "ـ 3 خطوات هنا بالظبط.\", \"الفرق: في Builder بتكتب الكود اللي بيعمل الـ pipeline. هنا بتسحب 3 nodes جاهزين في n8n وتربطهم.\", \"لو ما تعرّضتش لمسار"
     },
     {
       "file": "automator-m4-rag-in-n8n.ts",
@@ -954,7 +899,7 @@
       "line": 51,
       "category": "cross-path-info",
       "match": "mention:builder",
-      "snippet": "ي n8n وتربطهم.\", \"لو لسه مكملتش Builder M9: RAG في جملة = الـ AI يرد من معرفتك إنت (FAQs، مستندات) مش من معرفته العامة. اقرا الباراجراف اللي تحت يكفّيك"
+      "snippet": "n8n وتربطهم.\", \"لو ما تعرّضتش لمسار Builder قبل كده: RAG في جملة = الـ AI يرد من معرفتك إنت (FAQs، مستندات) مش من معرفته العامة. اقرا الباراجراف اللي ت"
     },
     {
       "file": "automator-m4-rag-in-n8n.ts",
@@ -1011,14 +956,6 @@
       "category": "cross-path-info",
       "match": "mention:creator",
       "snippet": ", label: \"من المنصة — درس الجدولة في Creator\", }, }, { icon: Scale, eyebrow: \"Failure × Right\", title: \"Sequence بطيئة vs Sequence مزع"
-    },
-    {
-      "file": "automator-m5-lead-capture.ts",
-      "pathId": "automator",
-      "line": 130,
-      "category": "prior-lesson-ref",
-      "match": "زي ما اتعلمنا/شفنا/قلنا/عملنا/فهمنا",
-      "snippet": "explanation: \"الـ Landing Page زي ما اتفقنا لازم يكون الغرض منها 'action' واحد بس، وهنا هو تجميع الإيميلات، عشان كده التركيز على هدف واحد أهم حاجة.\""
     },
     {
       "file": "automator-m5-lead-capture.ts",
@@ -1197,30 +1134,6 @@
       "snippet": "وائم المسارات Builder/Creator/Automator/Analyst\", caption: \"الداشبورد دي مش مجرد أرقام. كل كارت فيها بيقيس نقطة في رحلتك معانا (Activation و Reten"
     },
     {
-      "file": "builder-m2-l3-prompt-layer.ts",
-      "pathId": "builder",
-      "line": 164,
-      "category": "prior-lesson-ref",
-      "match": "اللي اتعلمناه/عملناه/بنيناه",
-      "snippet": "وع، كان الـ AI هيرد برد دقيق ومفيد، وده اللي اتعلمناه عن أهمية الوضوح.\", }, ], }, }, { icon: BookOpen, eyebrow: \"ورا الكواليس\","
-    },
-    {
-      "file": "builder-m3-l6-context-layer.ts",
-      "pathId": "builder",
-      "line": 126,
-      "category": "prior-lesson-ref",
-      "match": "زي ما اتعلمنا/شفنا/قلنا/عملنا/فهمنا",
-      "snippet": "orrectIndex: 0, explanation: \"زي ما شفنا، أغلب الردود الغبية سببها إن الـ AI مش فاهم خلفية الموضوع. المشكلة في نقص السياق، مش في ذكاء الـ AI.\""
-    },
-    {
-      "file": "builder-m5-l11-backend-api.ts",
-      "pathId": "builder",
-      "line": 43,
-      "category": "prior-lesson-ref",
-      "match": "الدرس اللي فات",
-      "snippet": "**وش التطبيق (Frontend)**. اتعلمناه في الدرس اللي فات.\", \"بس فين بيتطبخ الأكل؟ في المطبخ ورا الستار. مفيش عميل بيشوف المطبخ، بس كل طلب لازم يعدّي عليه."
-    },
-    {
       "file": "builder-m5-l12-database-intro.ts",
       "pathId": "builder",
       "line": 16,
@@ -1239,14 +1152,6 @@
     {
       "file": "builder-m5-l12b-mini-win.ts",
       "pathId": "builder",
-      "line": 24,
-      "category": "prior-lesson-ref",
-      "match": "في N دروس بس",
-      "snippet": "ragraphs\", paragraphs: [ \"في 4 دروس بس فهمت اللي مبرمج محترف بياخد شهور عشان يفهمه: إزاي أي تطبيق في الدنيا بيشتغل من جوه. **بريك سريع** قبل ما نب"
-    },
-    {
-      "file": "builder-m5-l12b-mini-win.ts",
-      "pathId": "builder",
       "line": 11,
       "category": "prior-lesson-ref",
       "match": "Phase N (label)",
@@ -1258,39 +1163,7 @@
       "line": 19,
       "category": "prior-lesson-ref",
       "match": "Phase N (label)",
-      "snippet": "title: \"تشوف إنت بنيت إيه فعلاً في Phase 2\", tone: \"accent\", block: { kind: \"paragraphs\", paragraphs: [ \"في 4 دروس بس فهمت اللي"
-    },
-    {
-      "file": "builder-m5-l12b-mini-win.ts",
-      "pathId": "builder",
-      "line": 102,
-      "category": "next-lesson-ref",
-      "match": "الموديول الجاي",
-      "snippet": "ك تقوله **إنت عايز إيه**.\", \"في الموديول الجاي، هنبدأ فعلاً نحوّل فكرة لصفحة شغّالة. الفهم اللي معاك دلوقتي هو السلاح اللي هيخلّيك تطلب من Lovable الحاج"
-    },
-    {
-      "file": "builder-m5-l12b-mini-win.ts",
-      "pathId": "builder",
-      "line": 24,
-      "category": "next-lesson-ref",
-      "match": "قبل ما نبدأ نبني فعلاً",
-      "snippet": "في الدنيا بيشتغل من جوه. **بريك سريع** قبل ما نبدأ نبني فعلاً.\", ], }, }, { icon: Layers3, eyebrow: \"اللي فهمته لحد دلوقتي\", title: \""
-    },
-    {
-      "file": "builder-m5-l12b-mini-win.ts",
-      "pathId": "builder",
-      "line": 114,
-      "category": "next-lesson-ref",
-      "match": "قبل ما تدخل m{N}",
-      "snippet": "kind: \"mission\", intro: \"قبل ما تدخل m6، خد التطبيق اللي بتفكر فيه واوصفه بالطبقات الـ 3.\", prompt: \"اختار فكرة تطبيق عايز تبنيه (م"
-    },
-    {
-      "file": "builder-m5-l12b-mini-win.ts",
-      "pathId": "builder",
-      "line": 116,
-      "category": "next-lesson-ref",
-      "match": "جاهز للموديول الجاي",
-      "snippet": "فتكرها = ؟\\n\\nلو قدرت تكتب التلاتة، إنت جاهز للموديول الجاي.\", buttonLabel: \"انسخ التعليمات\", copiedLabel: \"اتنسخت!\", rubric: [ {"
+      "snippet": "title: \"تشوف إنت بنيت إيه فعلاً في Phase 2\", tone: \"accent\", block: { kind: \"paragraphs\", paragraphs: [ \"في 4 دروس فهمت اللي مب"
     },
     {
       "file": "builder-m5-l9-transition.ts",
@@ -1355,30 +1228,6 @@
       "category": "cross-path-info",
       "match": "mention:automator",
       "snippet": "Creator بداخله ModuleCard بدرسين، وكرت Automator بداخله موديولين كل واحد فيه LessonRow\", caption: \"بص على أي واجهة احترافية، زي ChatGPT أو حتى ال"
-    },
-    {
-      "file": "builder-m8-l23-rls.ts",
-      "pathId": "builder",
-      "line": 58,
-      "category": "prior-lesson-ref",
-      "match": "الدرس اللي فات",
-      "snippet": "ش المفروض يديلك الحق تشوفها.\", \"الدرس اللي فات عرفنا إزاي السيرفر بيتأكد \\\"إنت مين\\\" عن طريق **كارت الدخول المؤقت (JWT)**. النهاردة هنعرف إزاي **المخزن"
-    },
-    {
-      "file": "builder-m9-l25-embeddings.ts",
-      "pathId": "builder",
-      "line": 34,
-      "category": "prior-lesson-ref",
-      "match": "الدروس اللي فاتت/قبل",
-      "snippet": "raphs\", paragraphs: [ \"في الدروس اللي فاتت، خزّنت بيانات في المخزن الذكي بتاعك. المخزن ده شاطر قوي في مقارنة الأرقام والنصوص الحرفية، بس مش بيفهم"
-    },
-    {
-      "file": "builder-m9-l26-agents.ts",
-      "pathId": "builder",
-      "line": 40,
-      "category": "prior-lesson-ref",
-      "match": "الدروس اللي فاتت/قبل",
-      "snippet": "raphs\", paragraphs: [ \"في الدروس اللي فاتت، خلّينا الـ AI بتاعنا يرد على أسئلة من ملفاتنا (RAG). بس لو العميل بتاعك قاله \\\"احجزلي ميعاد بكرة الساع"
     },
     {
       "file": "business-m0-from-decisions-to-leadership.ts",
