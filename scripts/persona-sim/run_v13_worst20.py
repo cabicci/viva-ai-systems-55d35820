@@ -155,9 +155,8 @@ def run_one(p):
     out = call(p)
     out["_persona"] = p; out["_secs"] = round(time.time() - t0, 1)
     err = "error" in out
-    print(f"  {p['id']} {p['archetype']:20s} {p['flag']:20s} "
-          f"{'ERR' if err else f'{out.get(\"final_completion_pct\",0):3}%'} "
-          f"({out['_secs']}s)", flush=True)
+    status = "ERR" if err else f"{out.get('final_completion_pct', 0):3}%"
+    print(f"  {p['id']} {p['archetype']:20s} {p['flag']:20s} {status} ({out['_secs']}s)", flush=True)
     return out
 
 def main():
