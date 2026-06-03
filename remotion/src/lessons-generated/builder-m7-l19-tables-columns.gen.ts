@@ -5,109 +5,70 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "highlight": "صمّمه صح من الأول",
-    "chip": "أهلًا",
-    "subtitle": "في M5.3 شفت إن الـ Database = جداول. النهارده هتتعلّم إزاي تصمّم جدول واحد بشكل صح: إيه أنواع البيانات، إيه القواعد، وإيه أكتر غلط بيخرّب التطبيق بعد أشهر. تصميم جدول وحش = ألم لكل حد هيشتغل على المشروع بعدك (وأنت كمان).",
-    "title": "الجدول هو وحدة البناء"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "definition": "البصمة اللي بتميز كل سطر في الجدول ومبتتكررش أبداً.",
-    "tag": "رقم البطاقة",
-    "term": "Primary Key (PK)"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "term": "snake_case",
-    "tag": "item_price",
-    "definition": "طريقة كتابة أسماء العواميد باستخدام \"شرطة تحتية\" بدل المسافة."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "term": "UUID",
-    "tag": "كود عالمي",
-    "definition": "كود طويل ومعقد جداً بنستخدمه كمعرف فريد بدل الكلام العادي."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "tag": "رسمة الجدول",
-    "term": "Schema",
-    "definition": "رسمة بتوضح تقسيم الجدول، عواميده إيه، ونوع كل بيان فيها."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "definition": "عنُق الزجاجة، يعني حتة في السيستم بتخلي الشغل يبطأ ويقف.",
-    "term": "Bottleneck",
-    "tag": "شغل بطيء"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "definition": "نظام مراقبة بيسجل كل حركة أو تعديل حصل في البيانات.",
-    "tag": "سجل مراقبة",
-    "term": "Audit Trail"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "definition": "نوع بيانات بيشيل معلومات كتير ومرنة جوه خانة واحدة.",
-    "term": "JSONB",
-    "tag": "معلومات مرنة"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "definition": "تأثير الدومينو؛ لما تمسح حاجة، كل اللي مربوط بيها بيتمسح.",
-    "tag": "تأثير دومينو",
-    "term": "Cascade Delete"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "yellow",
-    "bullets": [
-      "كل column له اسم، نوع، قيد، وقيمة افتراضية.",
-      "الـ uuid أحسن للـ ids لأنه فريد عالميًا وآمن.",
-      "أنواع تانية: text، integer، numeric، boolean، timestamptz، jsonb.",
-      "Primary Key بيميّز السطر، و Foreign Key بيربط بجدول تاني (مع cascade).",
-      "أعمدة الـ Audit زي created_at و updated_at لازمة في كل جدول."
-    ],
-    "title": "الـ Column = نوع + قاعدة + قيمة افتراضية"
-  },
-  {
-    "card": "ScreenshotCard",
-    "accent": "pink",
-    "caption": "الصفحة دي بتعرض حالة المنصة بشكل بيشبه صف من جدول. شوف الـ \"Runtime Context Layer\": كل بطاقة (currentPath، currentRoute، currentUser) تشبه column في جدول واحد، والقيم اللي تحتها (—، system-state/، guest) تشبه السطر اللي يخصّك دلوقتي. لو الجدول ده اتخزّن في DB، التعريف هيكون: current_path text nullable, current_route text not null, current_user text default 'guest'. الكروت العلوية (Paths=6, Lessons=85/18, Routes=12) دي نتيجة COUNT أو aggregate من جداول تانية. كل رقم هنا بيرجع لـ schema قرار اتاخد لما الجداول اتعملت في الأول.",
-    "title": "كل سطر في الـ Runtime Context هو صف من جدول",
-    "src": "lessons/builder-m7-l19-tables-columns.jpg",
-    "eyebrow": "شوف بنفسك"
+    "title": "غلطة في تصميم الجدول بتدفع تمنها",
+    "subtitle": "تخيل تطبيقك بعد 6 شهور من الـ launch... شغال تمام، وفجأة كل حاجة بتبطأ وبقت بتضرب أخطاء غريبة. السبب؟ غالبًا قرار غلط خدته في ثانيتين وانت بتعمل أول جدول في المشروع. كلمة زي `text` بدل `numeric` ممكن توقّع سيستم كامل لما الداتا تكبر.",
+    "highlight": "شهور",
+    "chip": "أهلًا في البداية"
   },
   {
     "card": "CompareCard",
-    "accent": "mintDeep",
-    "title": "غلطات تصميم بتدفع تمنها بعد ٦ شهور",
-    "left": {
-      "body": "اعمل الجدول بسرعة: name text، age text، price text، items text. كل حاجة nullable عشان \"يمكن نحتاج\"، ومفيش created_at. النتيجة: query سهل بيبقى مستحيل، تقارير غلط، الـ cascade مش شغّال، ومحدش يعرف إمتى البيانات اتدخلت.",
-      "label": "الفشل: كل حاجة text، مفيش defaults، مفيش audit"
-    },
+    "accent": "lavender",
     "right": {
-      "body": "id uuid PK، user_id uuid references users(id) on delete cascade، title text not null، price numeric(10,2) not null، tags text[]، metadata jsonb، is_published boolean، created_at timestamptz، updated_at timestamptz. دلوقتي تقدر تـ sort/filter/aggregate صح، والـ DB بنفسه بيرفض البيانات الناقصة.",
-      "label": "الصح: أنواع صح + audit columns + قيود ضرورية"
-    }
+      "body": "كل عمود له نوعه المظبوط: `title text not null` (مينفعش يبقى فاضي)، `price numeric` (عشان الفلوس)، `is_published boolean` (عشان أه/لأ)، `created_at timestamptz` (عشان تعرف كل حاجة اتعملت امتى). كده السيستم نفسه بيحميك من الداتا الغلط.",
+      "label": "تصميم يستحمل ملايين المستخدمين"
+    },
+    "left": {
+      "body": "كله `text` وخلاص: `name text`, `price text`, `items text`. كل حاجة ممكن تبقى فاضية (nullable) عشان \"يمكن نحتاج\". النتيجة؟ لو حبيت تجيب أغلى منتج، السيستم هيتلخبط بين سعر '100.00' و '99.5' ومش هيعرف يرتبهم صح. كارثة.",
+      "label": "تصميم هيقع بعد شهرين"
+    },
+    "title": "اختيار واحد بيفرق بين مشروع ناجح ومشروع فاشل"
+  },
+  {
+    "card": "ScreenshotCard",
+    "accent": "peach",
+    "eyebrow": "مثال حي",
+    "src": "lessons/builder-m7-l19-tables-columns.jpg",
+    "caption": "بص على صفحة الـ System State دي. كل كارت (زي `currentPath` أو `currentUser`) هو بالظبط column في جدول، والقيمة اللي تحته هي الداتا اللي في الصف بتاعك. التصميم اللي بيحدد شكل الجدول ده هو اللي بنسميه الـ Schema.",
+    "title": "كل صفحة بتشوفها أصلها جدول"
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "yellow",
+    "tag": "زي ما بتقول: جدول 'المنتجات' فيه عامود 'السعر' وده لازم يكون رقم عشري ومينفعش يبقى فاضي.",
+    "term": "Schema",
+    "definition": "الرسم الهندسي أو الخريطة اللي بتوصف كل جدول في السيستم: عواميده إيه، نوع البيانات في كل عامود، وإيه القواعد اللي بتحكمه."
   },
   {
     "card": "CTACard",
-    "accent": "mint",
-    "tagline": "يلا نطبّق اللي اتعلّمناه ونشوف فهمنا إيه",
-    "highlight": "اختبر فهمك للدرس",
+    "accent": "pink",
+    "highlight": "طبّق",
     "eyebrow": "دورك دلوقتي",
-    "title": "ارفع schema اللي عملته في M5.3 لمستوى production"
+    "tagline": "يلا بينا نختبر فهمك ونشوف إزاي بتصمم جداول صح.",
+    "title": "طبّق اللي اتعلمته"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "mintDeep",
+    "bullets": [
+      "ده schema لجدول 'products' في سيستم e-commerce، بس مليان غلطات هتعمل مشاكل بعدين.",
+      "مهمتك تصلحه.",
+      "فكّر في أنواع البيانات الصح.",
+      "إيه الخانات اللي مينفعش تبقى فاضية (not null).",
+      "إيه الأعمدة الأساسية اللي ناقصة عشان الجدول يبقى production-ready (زي الـ id)."
+    ],
+    "title": "صلّح الـ Schema المضروب ده"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "mint",
+    "bullets": [
+      "الـ `user_id` مع الـ `lesson_id` بيعملوا مع بعض مفتاح فريد (unique constraint) عشان نضمن إنك متسجلش نفس الدرس مرتين.",
+      "عامود الـ `status` نوعه متحدد (enum) عشان يقبل قيم معينة بس: 'not-started', 'in-progress', 'completed'.",
+      "بدأنا بـ 4 عواميد بس، وزوّدنا اتنين لما احتجناهم. ابدأ بسيط وكبّر لما تحتاج، مش العكس."
+    ],
+    "title": "جدول lesson_progress = أبسط مثال تطبيقي"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [736, 516, 453, 316, 297, 466, 233, 307, 381, 713, 735, 930, 421];
+export const SCENE_FRAMES: number[] = [665, 969, 558, 731, 222, 646, 1128];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);

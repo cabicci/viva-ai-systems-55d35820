@@ -90,7 +90,6 @@ import { SCENES as L_automator_m2_triggers_actions_S, SCENE_FRAMES as L_automato
 import { SCENES as L_automator_m0_where_you_are_S, SCENE_FRAMES as L_automator_m0_where_you_are_F, TOTAL_FRAMES as L_automator_m0_where_you_are_T } from "./lessons-generated/automator-m0-where-you-are.gen";
 import { SCENES as L_creator_m5_analytics_S, SCENE_FRAMES as L_creator_m5_analytics_F, TOTAL_FRAMES as L_creator_m5_analytics_T } from "./lessons-generated/creator-m5-analytics.gen";
 import { SCENES as L_analyst_m6_from_decisions_to_business_S, SCENE_FRAMES as L_analyst_m6_from_decisions_to_business_F, TOTAL_FRAMES as L_analyst_m6_from_decisions_to_business_T } from "./lessons-generated/analyst-m6-from-decisions-to-business.gen";
-import { SCENES as L_builder_m8_tables_columns_S, SCENE_FRAMES as L_builder_m8_tables_columns_F, TOTAL_FRAMES as L_builder_m8_tables_columns_T } from "./lessons-generated/builder-m7-l19-tables-columns.gen";
 import { SCENES as L_intro_what_is_ai_S, SCENE_FRAMES as L_intro_what_is_ai_F, TOTAL_FRAMES as L_intro_what_is_ai_T } from "./lessons-generated/intro-m1-l1-what-is-ai.gen";
 import { SCENES as L_intro_m1_l4_ai_can_cannot_S, SCENE_FRAMES as L_intro_m1_l4_ai_can_cannot_F, TOTAL_FRAMES as L_intro_m1_l4_ai_can_cannot_T } from "./lessons-generated/intro-m1-l4-ai-can-cannot.gen";
 import { SCENES as L_intro_m1_l2_first_prompt_S, SCENE_FRAMES as L_intro_m1_l2_first_prompt_F, TOTAL_FRAMES as L_intro_m1_l2_first_prompt_T } from "./lessons-generated/intro-m1-l2-first-prompt.gen";
@@ -107,6 +106,7 @@ import { SCENES as L_builder_m7_l21_queries_S, SCENE_FRAMES as L_builder_m7_l21_
 import { SCENES as L_builder_m6_l13_idea_to_page_S, SCENE_FRAMES as L_builder_m6_l13_idea_to_page_F, TOTAL_FRAMES as L_builder_m6_l13_idea_to_page_T } from "./lessons-generated/builder-m6-l13-idea-to-page.gen";
 import { SCENES as L_builder_m5_l11_backend_api_S, SCENE_FRAMES as L_builder_m5_l11_backend_api_F, TOTAL_FRAMES as L_builder_m5_l11_backend_api_T } from "./lessons-generated/builder-m5-l11-backend-api.gen";
 import { SCENES as L_builder_m7_l20_relations_S, SCENE_FRAMES as L_builder_m7_l20_relations_F, TOTAL_FRAMES as L_builder_m7_l20_relations_T } from "./lessons-generated/builder-m7-l20-relations.gen";
+import { SCENES as L_builder_m7_l19_tables_columns_S, SCENE_FRAMES as L_builder_m7_l19_tables_columns_F, TOTAL_FRAMES as L_builder_m7_l19_tables_columns_T } from "./lessons-generated/builder-m7-l19-tables-columns.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -190,7 +190,6 @@ export const LESSONS: LessonModule[] = [
     { id: "automator-m0-where-you-are", scenes: L_automator_m0_where_you_are_S, sceneFrames: L_automator_m0_where_you_are_F, totalFrames: L_automator_m0_where_you_are_T },
     { id: "creator-m5-analytics", scenes: L_creator_m5_analytics_S, sceneFrames: L_creator_m5_analytics_F, totalFrames: L_creator_m5_analytics_T },
     { id: "analyst-m6-from-decisions-to-business", scenes: L_analyst_m6_from_decisions_to_business_S, sceneFrames: L_analyst_m6_from_decisions_to_business_F, totalFrames: L_analyst_m6_from_decisions_to_business_T },
-    { id: "builder-m7-l19-tables-columns", scenes: L_builder_m8_tables_columns_S, sceneFrames: L_builder_m8_tables_columns_F, totalFrames: L_builder_m8_tables_columns_T },
     { id: "intro-m1-l1-what-is-ai", scenes: L_intro_what_is_ai_S, sceneFrames: L_intro_what_is_ai_F, totalFrames: L_intro_what_is_ai_T },
     { id: "intro-m1-l4-ai-can-cannot", scenes: L_intro_m1_l4_ai_can_cannot_S, sceneFrames: L_intro_m1_l4_ai_can_cannot_F, totalFrames: L_intro_m1_l4_ai_can_cannot_T },
     { id: "intro-m1-l2-first-prompt", scenes: L_intro_m1_l2_first_prompt_S, sceneFrames: L_intro_m1_l2_first_prompt_F, totalFrames: L_intro_m1_l2_first_prompt_T },
@@ -207,5 +206,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m6-l13-idea-to-page", scenes: L_builder_m6_l13_idea_to_page_S, sceneFrames: L_builder_m6_l13_idea_to_page_F, totalFrames: L_builder_m6_l13_idea_to_page_T },
     { id: "builder-m5-l11-backend-api", scenes: L_builder_m5_l11_backend_api_S, sceneFrames: L_builder_m5_l11_backend_api_F, totalFrames: L_builder_m5_l11_backend_api_T },
     { id: "builder-m7-l20-relations", scenes: L_builder_m7_l20_relations_S, sceneFrames: L_builder_m7_l20_relations_F, totalFrames: L_builder_m7_l20_relations_T },
+    { id: "builder-m7-l19-tables-columns", scenes: L_builder_m7_l19_tables_columns_S, sceneFrames: L_builder_m7_l19_tables_columns_F, totalFrames: L_builder_m7_l19_tables_columns_T },
   /* @lesson-entries-end */
 ];
