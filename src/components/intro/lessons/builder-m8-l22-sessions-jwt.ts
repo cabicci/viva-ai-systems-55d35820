@@ -27,6 +27,19 @@ import jwtDiagram from "@/assets/lessons/concepts/jwt-diagram.jpg";
  */
 export const BUILDER_M7_SESSIONS_JWT_BLOCKS: IntroLessonContent = [
   {
+    icon: Lightbulb,
+    eyebrow: "تنبيه: درس تقني",
+    title: "ده درس متقدّم — اتخطّاه لو لسه في البداية",
+    tone: "accent",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "الدرس ده فيه مفاهيم تقنية للناس اللي بتبني تطبيقات حقيقية. لو لسه بتتعلم الأساسيات، تقدر تعدّيه دلوقتي وترجعله بعدين — مش هيأثر على باقي رحلتك.",
+        "لو فاهم الأساسيات وعايز تعمّق، يلا نكمل.",
+      ],
+    },
+  },
+  {
     icon: Sparkles,
     eyebrow: "بعد الدرس ده هتقدر",
     title: "كل شخص يشوف بياناته هو بس",
