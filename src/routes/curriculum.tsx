@@ -123,12 +123,26 @@ function CurriculumPage() {
           </div>
         </header>
 
-        {/* Sections: البداية → المسارات */}
+        {/* Three-tier sections (v14): User → Operator → Builder */}
         {(() => {
           const intros = PATHS.filter((p) => p.kind === "intro");
-          const realPaths = PATHS.filter((p) => p.kind !== "intro");
+          const userPaths = PATHS.filter((p) => p.kind !== "intro" && p.tier === "user");
+          const operatorPaths = PATHS.filter((p) => p.tier === "operator");
+          const builderPaths = PATHS.filter((p) => p.tier === "builder");
+
+          const renderPaths = (paths: typeof PATHS) =>
+            paths.map((p) => (
+              <PathBlock
+                key={p.id}
+                path={p}
+                progress={store}
+                getStatus={getStatus}
+                mastery={mastery}
+              />
+            ));
+
           return (
-            <div className="space-y-12">
+            <div className="space-y-16">
               {intros.length > 0 && (
                 <section>
                   <SectionHeader
@@ -136,43 +150,46 @@ function CurriculumPage() {
                     title="البداية"
                     subtitle="ابدأ من هنا قبل ما تدخل أي مسار — الأساس اللي بيخلّيك تفهم باقي المنظومة."
                   />
-                  <div className="space-y-10">
-                    {intros.map((p) => (
-                      <PathBlock
-                        key={p.id}
-                        path={p}
-                        progress={store}
-                        getStatus={getStatus}
-                        mastery={mastery}
-                      />
-                    ))}
-                  </div>
+                  <div className="space-y-10">{renderPaths(intros)}</div>
                 </section>
               )}
 
-              {realPaths.length > 0 && (
+              {userPaths.length > 0 && (
                 <section>
                   <SectionHeader
-                    eyebrow="STAGE 02 · PATHS"
-                    title="المسارات"
-                    subtitle="كل مسار رحلة تنفيذية مستقلة — اختر اللي يناسب هدفك وابدأ البناء."
+                    eyebrow="LEVEL 1 · AI USER"
+                    title="استخدم AI في شغلك"
+                    subtitle="80% من اللي محتاجه أي حد — تستخدم AI في شغلك من غير ما تتعلم برمجة. ابدأ هنا."
                   />
-                  <div className="space-y-10">
-                    {realPaths.map((p) => (
-                      <PathBlock
-                        key={p.id}
-                        path={p}
-                        progress={store}
-                        getStatus={getStatus}
-                        mastery={mastery}
-                      />
-                    ))}
-                  </div>
+                  <div className="space-y-10">{renderPaths(userPaths)}</div>
+                </section>
+              )}
+
+              {operatorPaths.length > 0 && (
+                <section>
+                  <SectionHeader
+                    eyebrow="LEVEL 2 · AI OPERATOR"
+                    title="ابني أنظمة وأتمتة متقدمة"
+                    subtitle="للي عايز يبني systems وworkflows ذكية بـ AI من غير ما يكتب كود. الـ Automator m1+m2 لوحدهم مناسبين لـ Level 1، الـ m3+m4 متقدمين."
+                  />
+                  <div className="space-y-10">{renderPaths(operatorPaths)}</div>
+                </section>
+              )}
+
+              {builderPaths.length > 0 && (
+                <section>
+                  <SectionHeader
+                    eyebrow="LEVEL 3 · AI BUILDER · اختياري"
+                    title="ابني منتجات AI بنفسك"
+                    subtitle="مسار تقني للي عايز يبني SaaS وتطبيقات AI بنفسه. ⚠ مش المرحلة التالية الطبيعية — اختاره بس لو ده هدفك فعلًا."
+                  />
+                  <div className="space-y-10">{renderPaths(builderPaths)}</div>
                 </section>
               )}
             </div>
           );
         })()}
+
       </main>
     </div>
   );
