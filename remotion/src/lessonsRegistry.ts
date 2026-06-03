@@ -105,9 +105,9 @@ import { SCENES as L_builder_m6_l18_debugging_S, SCENE_FRAMES as L_builder_m6_l1
 import { SCENES as L_builder_m4_l8_parameters_S, SCENE_FRAMES as L_builder_m4_l8_parameters_F, TOTAL_FRAMES as L_builder_m4_l8_parameters_T } from "./lessons-generated/builder-m4-l8-parameters.gen";
 import { SCENES as L_builder_m5_l11_backend_api_S, SCENE_FRAMES as L_builder_m5_l11_backend_api_F, TOTAL_FRAMES as L_builder_m5_l11_backend_api_T } from "./lessons-generated/builder-m5-l11-backend-api.gen";
 import { SCENES as L_builder_m8_l22_sessions_jwt_S, SCENE_FRAMES as L_builder_m8_l22_sessions_jwt_F, TOTAL_FRAMES as L_builder_m8_l22_sessions_jwt_T } from "./lessons-generated/builder-m8-l22-sessions-jwt.gen";
-import { SCENES as L_builder_m1_l2_tokens_training_S, SCENE_FRAMES as L_builder_m1_l2_tokens_training_F, TOTAL_FRAMES as L_builder_m1_l2_tokens_training_T } from "./lessons-generated/builder-m1-l2-tokens-training.gen";
 import { SCENES as L_builder_m5_l12b_mini_win_S, SCENE_FRAMES as L_builder_m5_l12b_mini_win_F, TOTAL_FRAMES as L_builder_m5_l12b_mini_win_T } from "./lessons-generated/builder-m5-l12b-mini-win.gen";
 import { SCENES as L_builder_m5_l9_transition_S, SCENE_FRAMES as L_builder_m5_l9_transition_F, TOTAL_FRAMES as L_builder_m5_l9_transition_T } from "./lessons-generated/builder-m5-l9-transition.gen";
+import { SCENES as L_builder_m1_l2_tokens_training_S, SCENE_FRAMES as L_builder_m1_l2_tokens_training_F, TOTAL_FRAMES as L_builder_m1_l2_tokens_training_T } from "./lessons-generated/builder-m1-l2-tokens-training.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -206,8 +206,8 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m4-l8-parameters", scenes: L_builder_m4_l8_parameters_S, sceneFrames: L_builder_m4_l8_parameters_F, totalFrames: L_builder_m4_l8_parameters_T },
     { id: "builder-m5-l11-backend-api", scenes: L_builder_m5_l11_backend_api_S, sceneFrames: L_builder_m5_l11_backend_api_F, totalFrames: L_builder_m5_l11_backend_api_T },
     { id: "builder-m8-l22-sessions-jwt", scenes: L_builder_m8_l22_sessions_jwt_S, sceneFrames: L_builder_m8_l22_sessions_jwt_F, totalFrames: L_builder_m8_l22_sessions_jwt_T },
-    { id: "builder-m1-l2-tokens-training", scenes: L_builder_m1_l2_tokens_training_S, sceneFrames: L_builder_m1_l2_tokens_training_F, totalFrames: L_builder_m1_l2_tokens_training_T },
     { id: "builder-m5-l12b-mini-win", scenes: L_builder_m5_l12b_mini_win_S, sceneFrames: L_builder_m5_l12b_mini_win_F, totalFrames: L_builder_m5_l12b_mini_win_T },
     { id: "builder-m5-l9-transition", scenes: L_builder_m5_l9_transition_S, sceneFrames: L_builder_m5_l9_transition_F, totalFrames: L_builder_m5_l9_transition_T },
+    { id: "builder-m1-l2-tokens-training", scenes: L_builder_m1_l2_tokens_training_S, sceneFrames: L_builder_m1_l2_tokens_training_F, totalFrames: L_builder_m1_l2_tokens_training_T },
   /* @lesson-entries-end */
 ];
