@@ -41,7 +41,7 @@ export const runWowPath = createServerFn({ method: "POST" })
   .inputValidator((data: { pathId: string; idea: string }) =>
     z
       .object({
-        pathId: z.enum(["builder", "creator", "automator", "analyst", "business"]),
+        pathId: z.enum(["business", "creator", "analyst", "automator", "builder"]),
         idea: z.string().min(2).max(200),
       })
       .parse(data),

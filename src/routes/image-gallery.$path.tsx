@@ -7,7 +7,7 @@ import {
   type GalleryPath,
 } from "@/lib/image-gallery-registry";
 
-const VALID: GalleryPath[] = ["intro", "builder", "creator", "automator", "analyst", "business"];
+const VALID: GalleryPath[] = ["intro", "business", "creator", "analyst", "automator", "builder"];
 
 export const Route = createFileRoute("/image-gallery/$path")({
   beforeLoad: ({ params }) => {
