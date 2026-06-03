@@ -24,16 +24,10 @@ _cycle = itertools.cycle(GEMINI_KEYS); _lock = threading.Lock()
 def next_key():
     with _lock: return next(_cycle)
 
-SAMPLE = [
-    "intro-m1-l3-setup-your-ai",
-    "builder-m1-l1-what-is-llm",
-    "builder-m3-l6-context-layer",
-    "creator-m2-hook",
-    "automator-m1-systems-view",
-    "analyst-m2-three-sources",
-    "analyst-m3-decision-rule",
-    "business-m1-weekly-rhythm",
-]
+def _all_lessons():
+    return sorted(p.stem.replace(".gen", "") for p in LESSONS_DIR.glob("*.gen.ts"))
+
+SAMPLE = _all_lessons()
 
 SCENE_RE = re.compile(r"export const SCENES:[^=]*=\s*(\[[\s\S]*?\])\s+as SceneData\[\];", re.M)
 
