@@ -157,25 +157,108 @@ function Dashboard() {
           <StreakCard delay={200} />
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-5">
-          {allPaths.map((p, i) => (
-            <PathCard
-              key={p.id}
-              path={p}
-              index={i}
-              store={store}
-              getStatus={getStatus}
-              openId={openId}
-              onToggle={(id) => setOpenId(openId === id ? null : id)}
-              isExpanded={openPathId === p.id}
-              onToggleExpand={() =>
-                setOpenPathId(openPathId === p.id ? null : p.id)
-              }
-              isPro={isPro || isAdmin}
-              introAllDone={introAllDone}
-            />
-          ))}
-        </div>
+        {(() => {
+          const intros = allPaths.filter((p) => p.kind === "intro");
+          const userPaths = allPaths.filter((p) => p.kind !== "intro" && p.tier === "user");
+          const operatorPaths = allPaths.filter((p) => p.tier === "operator");
+          const builderPaths = allPaths.filter((p) => p.tier === "builder");
+
+          let cardIndex = 0;
+          const renderGroup = (paths: typeof allPaths) => (
+            <div className="grid lg:grid-cols-3 gap-5">
+              {paths.map((p) => {
+                const i = cardIndex++;
+                return (
+                  <PathCard
+                    key={p.id}
+                    path={p}
+                    index={i}
+                    store={store}
+                    getStatus={getStatus}
+                    openId={openId}
+                    onToggle={(id) => setOpenId(openId === id ? null : id)}
+                    isExpanded={openPathId === p.id}
+                    onToggleExpand={() =>
+                      setOpenPathId(openPathId === p.id ? null : p.id)
+                    }
+                    isPro={isPro || isAdmin}
+                    introAllDone={introAllDone}
+                  />
+                );
+              })}
+            </div>
+          );
+
+          const TierHeader = ({
+            eyebrow,
+            title,
+            subtitle,
+          }: {
+            eyebrow: string;
+            title: string;
+            subtitle: string;
+          }) => (
+            <div className="mb-4 flex items-end justify-between gap-4 border-b border-border/40 pb-3">
+              <div>
+                <p className="text-[11px] font-mono text-primary tracking-widest mb-1">
+                  {eyebrow}
+                </p>
+                <h2 className="text-xl md:text-2xl font-black">
+                  <span className="text-gradient">{title}</span>
+                </h2>
+                <p className="text-xs md:text-sm text-muted-foreground mt-1 max-w-2xl">
+                  {subtitle}
+                </p>
+              </div>
+            </div>
+          );
+
+          return (
+            <div className="space-y-12">
+              {intros.length > 0 && (
+                <section>
+                  <TierHeader
+                    eyebrow="STAGE 00 · START"
+                    title="ابدأ من هنا"
+                    subtitle="الأساس اللي بيخلّيك تفهم باقي المنظومة قبل أي مسار."
+                  />
+                  {renderGroup(intros)}
+                </section>
+              )}
+              {userPaths.length > 0 && (
+                <section>
+                  <TierHeader
+                    eyebrow="LEVEL 1 · AI USER"
+                    title="استخدم AI في شغلك"
+                    subtitle="٨٠٪ من اللي محتاجه أي حد — محتوى، بيانات، وقرارات بدون كود."
+                  />
+                  {renderGroup(userPaths)}
+                </section>
+              )}
+              {operatorPaths.length > 0 && (
+                <section>
+                  <TierHeader
+                    eyebrow="LEVEL 2 · AI OPERATOR"
+                    title="شغّل أنظمة وأتمتة"
+                    subtitle="ابني workflows ذكية تشتغل لوحدها — برضو من غير كود."
+                  />
+                  {renderGroup(operatorPaths)}
+                </section>
+              )}
+              {builderPaths.length > 0 && (
+                <section>
+                  <TierHeader
+                    eyebrow="LEVEL 3 · AI BUILDER"
+                    title="ابني منتجات AI بنفسك"
+                    subtitle="مسار تقني للي قرر يبني SaaS وتطبيقات AI — اختياري."
+                  />
+                  {renderGroup(builderPaths)}
+                </section>
+              )}
+            </div>
+          );
+        })()}
+
         </div>
       </main>
     </div>
