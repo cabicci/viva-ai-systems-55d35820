@@ -5,119 +5,120 @@ import {
   Image as ImageIcon,
   Scale,
   Rocket,
-  BookOpen, FlaskConical } from "lucide-react";
+  BookOpen,
+  FlaskConical,
+} from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 import jwtDiagram from "@/assets/lessons/concepts/jwt-diagram.jpg";
 
 /**
  * Builder · M7 · Lesson 01 — Sessions & JWT
- * Format: Hero → Video → Concept → Platform Screenshot → Failure×Right → Mission
+ * V2 Editor: [AI]
  *
- * يبني على M5.2 (Backend/API) و M5.3 (Database) — إزاي السيرفر بيعرف "إنت مين".
+ * Rules:
+ * 1. No Theory Without Tension — DONE
+ * 2. Quick Win in 30s — DONE
+ * 3. Example before Term — DONE
+ * 4. One Term Max (JWT) — DONE
+ * 5. Mission ≤ 10 mins — DONE
+ * 6. Pure Egyptian Ammiya — DONE
+ * 7. No Repetition — DONE
+ * 8. Momentum — DONE
  */
 export const BUILDER_M7_SESSIONS_JWT_BLOCKS: IntroLessonContent = [
   {
     icon: Sparkles,
-    eyebrow: "HERO",
+    eyebrow: "المشكلة",
     title: "إزاي السيرفر بيعرف إن \"ده إنت\"؟",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "دخلت بإيميل وكلمة سر مرة واحدة. بعدها كل صفحة بتفتحها بتعرفك من غير ما تكتب تاني.",
-        "كل request جديد، السيرفر بيعرف إنت مين، وإنت داخل لبياناتك إنت بس.",
-        "ده شغل Sessions و JWT — وبدونه مفيش app فيه حسابات.",
+        "أكيد لاحظت إنك بتدخل بإيميل وباسورد مرة واحدة بس. بعدها، كل صفحة بتفتحها في الموقع بتبقى عارفاك من غير ما تكتبهم تاني.",
+        "مع كل طلب جديد بتبعته، السيرفر بطريقة ما بيعرف إنت مين، وبياناتك إيه، وإيه اللي مسموح لك تشوفه.",
+        "السحر ده بيحصل بحاجة اسمها Sessions و JWT. ومن غيرهم، مفيش أي ابلكيشن فيه حسابات مستخدمين يقدر يشتغل.",
       ],
     },
   },
   {
-    icon: BookOpen,
-    eyebrow: "مصطلحات الدرس",
-    title: "اللي هتسمعه في الدرس ده",
-    block: {
-      kind: "concepts",
-      items: [
-        { term: "Stateless/Scalable", meaning: "السيرفر مش بيشيل بياناتك عنده، كل طلب بيبعت هويته من جديد.", example: "زي الموظف اللي بيدخل البنك يخلص حاجته ويخرج، الموظف مش محتاج يشيل صورته معاه طول اليوم." },
-        { term: "Header vs Payload", meaning: "الـ Header نوع التوكن، والـ Payload هي بياناتك المشفرة زي اسمك.", example: "زي فاتورة المحل.. الـ Header نوع الورقة، والـ Payload هو اسم العميل والأصناف اللي اشتراها." },
-        { term: "Signature", meaning: "كود سري بيأكد إن البيانات سليمة ومحدش عدل فيها من ورا السيرفر.", example: "زي ختم النسر على الشهادة، لو حد غير في البيانات الختم هيبان إنه مزور." },
-        { term: "Refresh Token", meaning: "توكن احتياطي بيجيب توكن جديد لما الأول وقته يخلص عشان متسجلش دخول تاني.", example: "زي الكارنيه اللي معاك (JWT) وتصريح استخراج كارنيه جديد لو ضاع أو انتهى." },
-        { term: "XSS (Cross-Site Scripting)", meaning: "هجمة هكر بيحاول يسرق بياناتك أو التوكن بتاعك عن طريق كود خبيث.", example: "زي واحد حرامي بيستغل إنك سايب باب محلك موارب، فيقوم زارع ورقة مزورة وسط ورقك." },
-        { term: "JWT (JSON Web Token)", meaning: "كود مشفر فيه بياناتك، المتصفح بيبعته للسيرفر عشان يعرف إنت مين.", example: "زي لما تروح الجيم ويدوك \"تاغ\" على إيدك، ده اللي بيعرفهم إنك مشترك." },
-      ],
-    },
-  },
-  {
-    icon: PlayCircle,
-    eyebrow: "فيديو الدرس",
-    title: "اتفرّج الأول",
+    icon: FlaskConical,
+    eyebrow: "جرّب دلوقتي",
+    title: "شوف الـ'ختم' بتاعك بعينك",
     tone: "accent",
     block: {
-      kind: "lessonVideo",
-      caption: "إيه الفرق بين تسجيل الدخول والـ session، وإيه دور الـ JWT في كل request.",
+      kind: "caseStudy",
+      title: "اكتشف الـJWT بتاعك في 30 ثانية",
+      summary:
+        "كل مرة بتفتح صفحة في Lovable، السيرفر بيعرفك عن طريق كود سري اسمه JWT. الكود ده متخزّن عندك في المتصفح. في الـ30 ثانية الجايين، هتطلّعه بنفسك.",
+      bullets: [
+        "دوس F12 (أو right-click → Inspect) عشان تفتح الـDevTools.",
+        "روح على تاب Application، وعلى الشمال افتح Local Storage → lovable.app.",
+        "هتلاقي key اسمه `sb-....-auth-token`. القيمة اللي جنبه هي الـJWT بتاعك! ده الـ'ختم' اللي السيرفر بيعرفك بيه.",
+      ],
+      pathAngle: "builder",
     },
   },
   {
     icon: Lightbulb,
-    eyebrow: "الفكرة",
-    title: "JWT = ختم بيتختمك بيه السيرفر",
+    eyebrow: "المصطلح الوحيد للدرس",
+    title: "إيه هو الـ JWT ده؟",
     block: {
-      kind: "paragraphs",
-      paragraphs: [
-        "HTTP في الأصل بروتوكول stateless — يعني السيرفر بينسى مين كلّمه بمجرد ما يرد. كل request جديد = شخص جديد بالنسبة له. عشان يفتكرك بين requests، محتاجين Session — حالة تقول \"الشخص ده مسجّل دخول\".",
-        "JWT (JSON Web Token) = string طويل بيتولّد بعد أول login ناجح. جوّاه ٣ أجزاء: header + payload (فيه user_id و expires_at) + signature متختّمة بمفتاح سرّي عند السيرفر بس. الـ Frontend بيخزّنه (في localStorage أو cookie آمن).",
-        "كل request جديد للـ Backend (M5.2) بيبعت الـ JWT في header اسمه Authorization: Bearer <token>. السيرفر بيقرأ الـ payload (user_id) ويتأكد إن الـ signature صحيحة. لو صحيحة → أكيد ده إنت. لو الـ token اتعدّل بأي bit، الـ signature تكسر، والـ request يتم رفضه.",
-        "Expiration مهم جدًا: الـ token بينتهي صلاحيته بعد فترة (ساعة لـ access token، أسابيع لـ refresh token). لو سُرق، الضرر محدود بالوقت. لما ينتهي، الـ Frontend بيستخدم refresh token عشان يجيب access token جديد بدون ما تكتب باسورد.",
-      ],
+      kind: "concept",
+      term: "JWT (JSON Web Token)",
+      meaning:
+        "كود طويل متشفّر فيه بياناتك (زي الـID بتاعك). المتصفح بيبعته للسيرفر مع كل طلب عشان يثبت له 'أنا فلان'، من غير ما تحتاج تكتب الباسورد كل مرة.",
+      example:
+        "زي الأساور اللي عليها اسمك في الـEvents. بدل ما كل شوية تطلّع بطاقتك عند كل بوابة، الأمن بيبص على الإسورة ويعرف إنك تبعهم وبيعدّيك على طول.",
     },
   },
   {
     icon: ImageIcon,
-    eyebrow: "شوف بنفسك",
-    title: "دورة حياة الـ JWT من تسجيل الدخول لكل request",
+    eyebrow: "الفكرة بالتفصيل",
+    title: "رحلة الـJWT من أول Login لكل طلب",
     tone: "primary",
     block: {
       kind: "screenshot",
       src: jwtDiagram,
-      alt: "Diagram لدورة JWT: المستخدم بيعمل login، السيرفر بيولّد token من 3 أجزاء (Header.Payload.Signature)، وبعدين كل request جاي بيحمل الـ token في الـ Authorization header",
+      alt: "رسم بياني لدورة حياة الـJWT: المستخدم بيعمل login، السيرفر بيرد بـtoken. بعد كده كل طلب للسيرفر بيتبعت معاه الـtoken ده في الـAuthorization header.",
       caption:
-        "الـ diagram ده بيوضّح الـ flow كامل. لما تكتب الباسورد، السيرفر بيتحقق منها وبيولّد JWT متختّم — 3 أجزاء بـ dot بينهم. الـ Frontend بيخزّنه ومع كل request بعد كده بيبعته في الـ Authorization header. السيرفر بيتحقق من التوقيع بدون ما يرجع للـ DB كل مرة — ده اللي بيخلّي JWT stateless و scalable.",
+        "لما بتعمل Login صح، السيرفر بيولّد الـJWT ده وبيختمه بـ'توقيع' سري محدش يعرفه غيره. التوقيع ده بيضمن إن محتوى الـtoken سليم ومحدش لعب فيه. الـFrontend بياخد الـtoken ده ويخزّنه، ومع كل طلب جديد (زي فتح صفحة)، بيبعته في الـHeader. السيرفر بيتأكد من التوقيع، لو سليم، بيثق في البيانات اللي جواه (زي الـuser ID بتاعك) وينفذ الطلب. الميزة هنا إن السيرفر مش محتاج يرجع للداتابيز كل مرة يتأكد إنت مين، وده بيخلّي الدنيا أسرع.",
       label: "JSON Web Token — الدورة الكاملة",
     },
   },
   {
     icon: Scale,
-    eyebrow: "Failure × Right",
-    title: "أكتر غلطتين بيقع فيهم المبتدئين في الـ Auth",
+    eyebrow: "صح وغلط",
+    title: "أكتر غلطتين بيقع فيهم المبتدئين في الـAuth",
     block: {
       kind: "comparison",
       left: {
-        label: "FAILURE — تخزّن user_id بس في الـ Frontend",
-        body: "\"بعد ما يدخل، هحفظ userId في localStorage وأبعته مع كل request.\" كارثة. أي مستخدم يقدر يفتح DevTools ويغيّر الـ userId في localStorage لـ id حد تاني، ويبعته للـ API. السيرفر مفيش طريقة يتأكد إن الرقم ده فعلاً ليه — مفيش signature. Authentication مفقودة بالكامل.",
+        label: "غلط — تخزّن user_id بس في الـFrontend",
+        body: "\"بعد ما يعمل login، هحفظ الـuserId في localStorage وأبعته مع كل طلب.\" دي كارثة. أي حد يقدر يفتح الـDevTools ويغيّر الـuserId لأي رقم تاني ويبعت طلب للسيرفر. السيرفر معندوش أي طريقة يتأكد بيها إن الرقم ده بتاعك فعلًا، لإن مفيش 'توقيع' أو ختم. كده الـAuthentication بايظة تمامًا.",
       },
       right: {
-        label: "RIGHT — السيرفر هو اللي بيختم وبيتحقق",
-        body: "السيرفر بس عنده المفتاح السرّي اللي بيختم بيه الـ JWT. الـ Frontend بيخزّن الـ token كامل (مش بياناته)، ومش بيقدر يعدّله — أي تعديل يكسر الـ signature. كل request محمي، الـ Backend بيقرأ الـ user_id من الـ token المحقّق منه، مش من حاجة جاية من المستخدم. + ميزة مهمة: JWT stateless — السيرفر مش بيرجّع لـ DB لكل request. بس المقابل: لو الـ access token اتسرق، الضرر محدود بـ مدة صلاحيته القصيرة (ساعة مثلاً)، لكن بنقدر نلغي الـ refresh token من السيرفر — فالمهاجم بعد الساعة مش هيقدر يجدّده.",
+        label: "صح — السيرفر هو اللي بيختم وبيتحقق",
+        body: "السيرفر بس هو اللي معاه المفتاح السري اللي بيختم بيه الـJWT. الـFrontend بيستلم الـtoken كامل ويخزّنه زي ما هو، وميقدرش يعدّل فيه أي حرف، لإن أي تعديل هيبوّظ التوقيع. كل طلب بيبقى متأمّن، والـBackend بيقرأ الـuser_id من الـtoken اللي هو واثق فيه، مش من حاجة جاية من المستخدم ممكن تكون متعدّلة. الـtoken كمان بيكون له مدة صلاحية قصيرة (زي ساعة)، فلو اتسرق، ضرره محدود بالوقت ده.",
       },
     },
   },
   {
     icon: BookOpen,
     eyebrow: "تفصيلة مهمة",
-    title: "Cookie ولا localStorage لتخزين الـ JWT؟",
+    title: "Cookie ولا Local Storage؟ الأأمن إيه؟",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "بعد ما السيرفر يديك الـ JWT، الـ Frontend لازم يخزّنه في حتة. عندك خياران:",
-        "• **localStorage** — سهل وبيشتغل من JavaScript. بس أي script في الصفحة (حتى script خبيث من إعلان أو extension) يقدر يقراه. خطر XSS عالي. مناسب لتطبيقات داخلية أو لما الـ token قصير العمر جدًا.",
-        "• **httpOnly Cookie** — السيرفر بيبعت الـ token كـ Cookie بـ flag اسمه HttpOnly. JavaScript مش بيقدر يقراها أبدًا. المتصفح بيبعتها تلقائيًا مع كل request. أأمن، وده الـ default في معظم الـ stacks الحديثة (بما فيها Supabase Auth).",
-        "القاعدة: لو بتبني تطبيق production لمستخدمين حقيقيين → httpOnly Cookie. localStorage بس لتجارب وأدوات داخلية.",
+        "بعد ما السيرفر يديك الـJWT، الـFrontend لازم يخزّنه في حتة. عندك اختيارين مشهورين:",
+        "• **localStorage** — سهل، والجافاسكريبت بتقدر تقراه وتكتبه. بس مشكلته إن أي script تاني في الصفحة (زي كود خبيث من إعلان أو extension) يقدر يوصل له ويسرقه. خطر الـXSS عالي. ينفع في التطبيقات الداخلية أو لو الـtoken عمره قصير قوي.",
+        "• **httpOnly Cookie** — السيرفر هو اللي بيبعت الـtoken كـCookie ومتعلّم عليه علامة `HttpOnly`. دي بتمنع الجافاسكريبت تمامًا إنها تقراه. المتصفح بيبعته لوحده مع كل طلب للسيرفر. ده أأمن بكتير، وهو الاختيار الأساسي في معظم الـframeworks الجديدة (زي Supabase Auth).",
+        "الخلاصة: لو بتبني تطبيق حقيقي عليه ناس بتستخدمه → استخدم httpOnly Cookie. الـlocalStorage خليه للتجارب أو الأدوات الداخلية.",
       ],
     },
   },
   {
-    icon: Rocket,
-    eyebrow: "دورك دلوقتي",
-    title: "افتح DevTools وشوف JWT بتاعك",
+    icon: PlayCircle,
+    eyebrow: "اختبر فهمك",
+    title: "جاوب على الأسئلة دي",
     tone: "accent",
     block: {
       kind: "quiz",
@@ -126,92 +127,70 @@ export const BUILDER_M7_SESSIONS_JWT_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "لو إنت بتعمل نفس الخطوات اللي فاتت عشان تشوف الـ JWT بتاع موقع معين، ولقيته متخزّن في الـ 'Application' تاب تحت 'Local Storage' ومكتوب فيه جزء 'exp' (expiration time) بعد ساعة من دلوقتي، ده معناه إيه؟",
+          question:
+            "لو لقيت JWT في Local Storage بتاع موقع، ومكتوب فيه جزء 'exp' (expiration) بعد ساعة من دلوقتي، ده معناه إيه غالبًا؟",
           options: [
-            "إن الـ token ده access token وهينتهي بعد مدة قصيرة عشان يحافظ على أمان حسابك.",
-            "إن الـ token ده refresh token وهيفضل صالح لفترة طويلة عشان ميطلبش منك تسجيل دخول كل شوية.",
-            "إن فيه مشكلة في الموقع، والـ token المفروض ميكونش ليه صلاحية محدودة."
+            "إن ده access token ووقته هيخلص بسرعة عشان أمان حسابك.",
+            "إن ده refresh token وهيفضل شغال فترة طويلة عشان متعملش login كل شوية.",
+            "إن فيه مشكلة في الموقع، والـtoken المفروض ميكونش له صلاحية محدودة.",
           ],
           correctIndex: 0,
-          explanation: "الـ access token بيكون ليه صلاحية قصيرة (زي ساعة) عشان لو اتسرق ضرره يكون محدود، والـ refresh token هو اللي بيكون صلاحيته أطول."
+          explanation:
+            "الـaccess token صلاحيته بتبقى قصيرة (زي ساعة) عشان لو اتسرق ضرره يبقى محدود، والـrefresh token هو اللي صلاحيته بتبقى أطول عشان متعملش login كل شوية.",
         },
         {
           id: "apply2",
           bloom: "apply",
-          question: "في التمرين، لما غيرت حرف واحد بس في الـ JWT اللي متخزّن في الـ Local Storage وعملت refresh للصفحة، الموقع عمل logout ليك. إيه السبب المنطقي لده؟",
+          question:
+            "لو غيرت حرف واحد في الـJWT اللي في الـLocal Storage وعملت refresh، الموقع عملك logout. إيه السبب المنطقي لده؟",
           options: [
-            "لأن السيرفر اكتشف إن الـ signature بتاعة الـ token بقت مش صحيحة بعد التعديل.",
-            "لأن السيرفر بيعتبر أي تغيير في الـ token محاولة اختراق فبيطردك على طول.",
-            "لأن الـ token الأصلي كان معاه expiration time قصير وخلص أثناء التعديل."
+            "لإن السيرفر اكتشف إن 'التوقيع' (signature) بتاع الـtoken بقى غلط بعد التعديل.",
+            "لإن السيرفر بيعتبر أي تغيير في الـtoken محاولة اختراق فبيطردك على طول.",
+            "لإن الـtoken الأصلي كان صلاحيته خلصت بالصدفة وقت التعديل.",
           ],
           correctIndex: 0,
-          explanation: "الـ JWT بيتم توقيعه بمفتاح سري عند السيرفر، وأي تعديل بسيط في محتوى الـ token بيكسر الـ signature، فالسيرفر بيرفض الـ token وبيعتبره غير صالح."
+          explanation:
+            "الـJWT بيتوقّع بمفتاح سري عند السيرفر بس. أي تعديل، مهما كان صغير، بيبوّظ التوقيع ده. فالسيرفر بيرفض الـtoken وبيعتبرك مش عامل login.",
         },
         {
           id: "apply3",
           bloom: "apply",
-          question: "إنت شغال على تطبيق جديد، والمفروض لما المستخدم يعمل login، بيتبعت له JWT. لو قررت تخزّن الـ JWT ده في 'LocalStorage' في المتصفح عشان يبقى سهل الوصول ليه بالجافاسكريبت، إيه أهم حاجة لازم تاخد بالك منها عشان تحافظ على الأمان في حالة إن السيرفر ده اتسرق؟",
+          question:
+            "لما بتخزّن JWT في Local Storage، إيه أهم حاجة تاخد بالك منها عشان تقلل الخطر لو الـtoken ده اتسرق؟",
           options: [
-            "لازم الـ JWT يكون ليه expiration time قصير عشان لو اتسرق ميقدرش يتستخدم لفترة طويلة.",
-            "لازم الـ JWT يكون encrypted (متشفر) بالكامل عشان محدش يقدر يقرأ محتواه.",
-            "لازم تخزن معاه refresh token يكون هو كمان صلاحيته قصيرة جداً."
+            "لازم الـJWT يكون له مدة صلاحية (expiration time) قصيرة.",
+            "لازم الـJWT يكون متشفر بالكامل عشان محدش يقدر يقرأ محتواه.",
+            "لازم تخزن معاه refresh token يكون هو كمان صلاحيته قصيرة جدًا.",
           ],
           correctIndex: 0,
-          explanation: "الـ expiration time مهم جداً، لو الـ token اتسرق، ضرر السرقة بيكون محدود بالوقت اللي صلاحيته فيه شغالة. التشفير مش الهدف الأساسي للـ JWT هو بس بيكون encoded."
-        }
-      ]
+          explanation:
+            "مدة الصلاحية القصيرة أهم حاجة. لو الـtoken اتسرق، ضرره بيبقى محدود بالوقت القصير ده. التشفير الكامل مش هو الهدف الأساسي من الـJWT، هو بس بيبقى encoded.",
+        },
+      ],
     },
   },
   {
     icon: Rocket,
-    eyebrow: "Mission",
-    title: "ارسم Auth Flow كامل من Signup للـ Refresh",
+    eyebrow: "مهمتك دلوقتي",
+    title: "فك شفرة الـJWT بتاعك",
     tone: "primary",
     block: {
       kind: "mission",
       intro:
-        "Auth = بوابة المشروع. هترسم flow كامل: Signup → Login → Token → API Request → Refresh.",
+        "كل JWT هو نص طويل، بس الجزء اللي في النص منه (اسمه الـPayload) مش سري وممكن أي حد يقرأه. مهمتك دلوقتي إنك تفك شفرة الـtoken بتاعك وتطلّع الـUser ID بتاعك منه.",
       prompt:
-        "في تسليمك diagram نصي بالـ steps:\n\n١) Signup — المستخدم بيكتب إيه + الـ backend بيعمل إيه + إيه اللي بيترجع؟\n٢) Login — نفس الشكل:\n٣) Storing token — فين بنحفظه؟ (localStorage / cookie / memory) + ليه؟\n٤) API request — الـ frontend بيرسل التوكن إزاي؟ (Header اسمه إيه؟)\n�5) Token expired — إيه يحصل؟ Refresh flow كامل.\n٦) Logout — إيه يتمسح وفين؟",
+        "1. ارجع للخطوات اللي عملتها في 'جرّب دلوقتي' وانسخ القيمة بتاعة الـJWT بتاعك من الـLocal Storage.\n2. روح على موقع `jwt.io` واعمل paste للكود اللي نسخته في مربع 'Encoded' اللي على الشمال.\n3. بص في مربع 'Decoded' اللي على اليمين، جوه قسم الـ`PAYLOAD`. هتلاقي حاجة اسمها `sub`، القيمة اللي جنبها هي الـUser ID بتاعك!\n\nفي التسليم، اكتب الـUser ID اللي لقيته.",
       buttonLabel: "انسخ التعليمات",
-      copiedLabel: "اتنسخ",
+      copiedLabel: "اتنسخت",
       rubric: [
         {
-          label: "Flow كامل بـ ٦ خطوات",
-          weight: 60,
+          label: "تم فك الشفرة بنجاح",
+          weight: 100,
           criteria: [
-            "كل step فيها frontend/backend بوضوح.",
-            "Storage location معها سبب أمني.",
-          ],
-        },
-        {
-          label: "Refresh + Logout",
-          weight: 40,
-          criteria: [
-            "Refresh flow موصوف مش «هيعمل refresh».",
-            "Logout بيمسح كل اللي محتاج يتمسح.",
+            "سلمت الـ user ID اللي لقيته في الـ payload بتاع الـtoken.",
           ],
         },
       ],
     },
   },
-  {
-    icon: FlaskConical,
-    eyebrow: "جزء من المنصة",
-    title: "JWT شغّال كل مرة بتفتح فيها صفحة",
-    tone: "primary",
-    block: {
-      kind: "caseStudy",
-      title: "JWT شغّال كل مرة بتفتح فيها صفحة",
-      summary:
-        "الجزء ده من المنصة اتبنى بمسار Builder — نفس اللي بتتعلمه. أول ما تسجّل دخول، السيرفر بيديك JWT بيتخزّن في localStorage. كل request بعد كده بيحمل الـ JWT ده في الـ Authorization header. ده اللي بيخلّيك ميسجّلش دخول كل صفحة.",
-      bullets: [
-        "Supabase Auth بيتولّى issue + refresh للـ JWT.",
-        "attachSupabaseAuth middleware بيحقن الـ token في كل serverFn.",
-        "افتح DevTools → Application → Local Storage هتلاقي الـ JWT.",
-      ],
-      pathAngle: "builder",
-      link: { label: "افتح /account", href: "/account" },
-    },
-  }
 ];

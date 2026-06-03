@@ -18,91 +18,76 @@ import componentsScreenshot from "@/assets/lessons/builder-m6-l16-components-rou
 export const BUILDER_M6_COMPONENTS_ROUTES_BLOCKS: IntroLessonContent = [
   {
     icon: Sparkles,
-    eyebrow: "HERO",
-    title: "Components: ليجو الـ Frontend",
+    eyebrow: "المشكلة",
+    title: "ليه الكود بتاعك بيتحول لـ 'سباجيتي'؟",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "في الدرس اللي فات قسّمت تطبيقك لصفحات (Routes).",
-        "النهارده هتقسّم كل صفحة لقطع أصغر بتتكرّر — Components.",
-        "ده اللي بيخلّي الـ Frontend الحقيقي قابل للصيانة بدل ما يبقى فوضى.",
-      ],
-    },
-  },
-  {
-    icon: BookOpen,
-    eyebrow: "مصطلحات الدرس",
-    title: "اللي هتسمعه في الدرس ده",
-    block: {
-      kind: "concepts",
-      items: [
-        { term: "Frontend", meaning: "وش البرنامج أو الموقع، ده الجزء اللي اليوزر بيشوفه ويتعامل معاه.", example: "زي واجهة المحل اللي الزبون بيشوفها، والبراند والألوان والديكور." },
-        { term: "Component", meaning: "قطعة من واجهة الموقع بتقدر تكرر استخدامها في كذا مكان.", example: "زي زرار \"شراء\" تقدر تستخدمه في كل صفحات متجرك الإلكتروني." },
-        { term: "Props", meaning: "المعلومات اللي بتبعتها للـ Component عشان يغير شكله أو محتواه.", example: "لو عندك كرت صنف، الصنف \"قميص\" والسعر \"200\" هما الـ Props." },
-        { term: "State/Stateful", meaning: "حالة الـ Component الحالية، زي هل الزرار ده مضغوط ولا لأ؟", example: "لو العداد في شيت الإكسيل اتغير من 5 لـ 6، دي حالة جديدة." },
-        { term: "TanStack Router", meaning: "الأداة اللي بتتحكم في نقل اليوزر بين صفحات الموقع المختلفة.", example: "ده المنظم اللي بيقول لو العميل داس \"مشترياتي\" وديه لصفحة الطلبات فوراً." },
-      ],
-    },
-  },
-  {
-    icon: PlayCircle,
-    eyebrow: "فيديو الدرس",
-    title: "اتفرّج الأول",
-    tone: "accent",
-    block: {
-      kind: "lessonVideo",
-      caption: "إيه الـ Component، إزاي بيتغذّى بـ Props، والفرق بينه وبين الـ Route.",
-    },
-  },
-  {
-    icon: Lightbulb,
-    eyebrow: "الفكرة",
-    title: "Component = قالب + بيانات (Props)",
-    block: {
-      kind: "paragraphs",
-      paragraphs: [
-        "Component = قطعة UI قابلة لإعادة الاستخدام. زرار، كرت، modal، header — كل واحد فيهم component. بدل ما تكتب كود الكرت ٢٠ مرة في ٢٠ مكان، بتكتبه مرة واحدة وبتستخدمه ٢٠ مرة بقيم مختلفة.",
-        "القيم اللي بتدخل للـ component اسمها Props. مثلاً <PathCard title=\"Creator\" lessons={2} /> — نفس الـ component، بـ props مختلفة، بيطلع شكل مختلف. ده اللي بيخلّي ٣ كروت مسارات في صفحة واحدة بنفس التصميم بالظبط من غير duplication.",
-        "Routes vs Components — الفرق المهم: الـ Route = صفحة كاملة لها URL (/curriculum). الـ Component = قطعة جوّه الصفحة (PathCard، Sidebar). الـ Route نفسه component، بس مربوط بـ URL في نظام الـ routing (في Lovable: TanStack Router).",
-        "قاعدة التقسيم (single responsibility): كل component يعمل حاجة واحدة. لو لقيت نفسك بتكتب component فيه ٣٠٠ سطر ومسؤول عن header + form + list في نفس الوقت — قسّمه. كل قطعة منهم component لوحده.",
+        "أكتر حاجة محبطة للمبرمج: يغير لون زرار في حتة، وينسى يغيره في ٩ حتت تانية. فجأة، الموقع بتاعك بقى شكله مش متناسق ومليان لخبطة.",
+        "ده بيحصل لما بتكرر نفس الكود بـ copy-paste. في الأول بتبقى حركة سريعة، بس مع الوقت بتبقى كابوس صيانة.",
+        "الدرس ده هيوريك إزاي تبني واجهات زي الليجو: قطع بتركبها جنب بعض، ولما تعدّل قطعة واحدة، التعديل يسمّع في كل مكان بتستخدمها فيه.",
       ],
     },
   },
   {
     icon: ImageIcon,
-    eyebrow: "شوف بنفسك",
-    title: "نفس الـ Component بـ Props مختلفة",
+    eyebrow: "جرّب دلوقتي",
+    title: "بص على أي موقع كبير بعين الـ Developer",
     tone: "primary",
     block: {
       kind: "screenshot",
       src: componentsScreenshot,
       alt: "صفحة /curriculum — كرت Creator بداخله ModuleCard بدرسين، وكرت Automator بداخله موديولين كل واحد فيه LessonRow",
       caption:
-        "الصورة دي بتشرح هرم الـ components في صفحة واحدة. الـ Route = /curriculum. جوّاه: PathCard مرة لـ Creator ومرة لـ Automator — نفس الـ component، props مختلفة (title، icon، subtitle، modules). جوّه كل PathCard فيه ModuleCard (\"Content Thinking\"، \"اللغة الأساسية\"، \"الأدوات\") — برضه نفس الـ component، بيتكرّر بـ data مختلفة. وجوّه كل ModuleCard فيه LessonRow (\"إيه الـ LLM؟\"، \"Prompt الـ\"، \"Frontend vs Backend\"). ٣ levels من الـ components، كل واحد له شغلة واحدة. لو غيّرت تصميم LessonRow في ملف واحد، كل الدروس في كل الصفحات هتتغيّر تلقائيًا.",
-      label: "من الموقع — صفحة /curriculum",
+        "الصفحة دي تبان معقدة، بس هي في الحقيقة تكرار لـ ٣-٤ قوالب بسيطة. فيه \"كرت مسار\" كبير، جواه \"كرت موديول\" أصغر، وجوه كل موديول فيه \"صف دروس\". نفس القوالب بالظبط، بس البيانات اللي جواها مختلفة. دي فكرة الـ Components.",
+      label: "من موقع Lovable — صفحة /curriculum",
+    },
+  },
+  {
+    icon: PlayCircle,
+    eyebrow: "فيديو الدرس",
+    title: "شوف بعينك: إزاي بنبني بالـ Components",
+    tone: "accent",
+    block: {
+      kind: "lessonVideo",
+      caption: "إيه هو الـ Component، وإزاي بيتغذّى بالبيانات (Props)، والفرق بينه وبين الصفحة (Route).",
+    },
+  },
+  {
+    icon: Lightbulb,
+    eyebrow: "الفكرة الأساسية",
+    title: "السر كله: قالب + بيانات = Component",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "تخيل الـ Component ده قطعة ليجو. ممكن يبقى زرار، كارت منتج، أو قايمة جانبية. بدل ما تبني شكل الكارت ٢٠ مرة في ٢٠ مكان، انت بتصمم \"قالب الكارت\" مرة واحدة بس.",
+        "طب إزاي نفس القالب بيعرض منتجات مختلفة؟ عن طريق حاجة اسمها **Props**. الـ Props هي البيانات اللي بتبعتها للقالب. مثلاً، عندك قالب اسمه `ProductCard`، مرة تبعتله `title=\"تيشيرت\"` و `price=\"300\"`، ومرة تانية تبعتله `title=\"بنطلون\"` و `price=\"500\"`. نفس القالب، بيانات مختلفة، نتيجة مختلفة.",
+        "الـ **Route** هو الصفحة الكاملة اللي ليها عنوان في الـ browser (زي `/products`). الـ **Component** هو قطعة جوه الصفحة دي (زي `ProductCard` أو `Sidebar`). الصفحة نفسها (الـ Route) هي مجرد component كبير بيجمع components أصغر جواه.",
+        "قاعدة مهمة: كل component المفروض يعمل حاجة واحدة بس. لو لقيت نفسك بتعمل component واحد فيه ٣٠٠ سطر كود وبيعمل كل حاجة، قسمه لقطع أصغر. ده بيخلي الكود سهل يتفهم ويتصلح.",
+      ],
     },
   },
   {
     icon: Scale,
-    eyebrow: "Failure × Right",
-    title: "متى تعمل Component جديد ومتى لأ",
+    eyebrow: "صح x غلط",
+    title: "امتى تعمل Component وامتى لأ؟",
     block: {
       kind: "comparison",
       left: {
-        label: "FAILURE — كل صفحة تكتب كل حاجة من الأول",
-        body: "\"هكتب كرت المسار في curriculum، وكرت تاني شبهه في dashboard، وكرت تالت في profile.\" نتيجة: ٣ نسخ من نفس الكود. لما تيجي تغيّر اللون، لازم تفتكر كل الأماكن. ولو نسيت واحد، التطبيق هيبقى inconsistent. هتقع في bugs بسبب فرق بسيط بين النسخ.",
+        label: "غلط — كل حاجة من الأول",
+        body: "\"هعمل كارت في صفحة المنتجات، وكارت تاني شبهه في صفحة العروض، وتالت في الداش بورد.\" النتيجة؟ ٣ نسخ من نفس الكود. لما تيجي تغير لون، لازم تفتكر تعدل في الـ ٣ أماكن. ولو نسيت واحد، الموقع شكله هيبوظ.",
       },
       right: {
-        label: "RIGHT — قاعدة \"٣ مرات\" (Rule of Three)",
-        body: "أول مرة بتكتب قطعة UI: اكتبها inline. ثاني مرة بتحتاجها: copy-paste — لسه بدري. ثالث مرة: قف. استخرجها لـ component بـ props. الفايدة: مفيش over-engineering للحاجات اللي بتستخدم مرة، ومفيش chaos للحاجات اللي بتتكرّر. الـ component اسمه يوصف وظيفته (PathCard مش BlueBox).",
+        label: "صح — قاعدة الـ 3 مرات",
+        body: "أول مرة محتاج قطعة UI: اكتبها في مكانها عادي. تاني مرة: ممكن تعمل copy-paste، لسه بدري. تالت مرة: اقف. دي إشارة إنك لازم تطلّع الكود ده في Component منفصل وتستخدمه في الـ ٣ أماكن. كده بتتجنب الفذلكة الزيادة، وفي نفس الوقت بتحافظ على الكود نضيف ومنظم.",
       },
     },
   },
   {
     icon: Rocket,
-    eyebrow: "دورك دلوقتي",
-    title: "حدّد components تطبيقك في ١٠ دقايق",
+    eyebrow: "اختبر نفسك",
+    title: "مخك بيفكر كـ Component Developer؟",
     tone: "accent",
     block: {
       kind: "quiz",
@@ -111,70 +96,71 @@ export const BUILDER_M6_COMPONENTS_ROUTES_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "لو بتصمم صفحة 'كورساتي' على موقع تعليمي، ومحتاج تعرض كروت لكل كورس الطالب مسجل فيه. كل كارت بيعرض اسم الكورس، صورة الكورس، ومدى التقدم فيه (نسبة مئوية). أي من دول أنسب طريقة عشان تستخدم الـ 'CourseCard' component؟",
+          question: "لو بتصمم صفحة 'كورساتي' على موقع تعليمي، ومحتاج تعرض كروت لكل كورس. كل كارت فيه اسم الكورس وصورته ونسبة التقدم. إيه أنسب طريقة تستخدم بيها الـ 'CourseCard' component؟",
           options: [
             "أعمل 'CourseCard' واحد، وأمرر له بيانات كل كورس كـ 'props' عشان يعرض أشكال مختلفة منه.",
-            "أعمل لكل كورس 'component' جديد باسم 'CourseCard1', 'CourseCard2' وهكذا، عشان كل واحد يعرض بيانات كورس معين.",
-            "أدمج الكروت دي كلها في 'MyCoursesPage' component واحد كبير ومقسمهمش، كده كده هما في نفس الصفحة."
+            "أعمل لكل كورس 'component' جديد باسم 'CourseCard1', 'CourseCard2' وهكذا.",
+            "أدمج كل الكروت في component واحد كبير اسمه 'MyCoursesPage' وخلاص."
           ],
           correctIndex: 0,
-          explanation: "الـ Component معمول عشان يتكتب مرة واحدة ويستخدم أكتر من مرة بقيم مختلفة (Props). ده بيقلل الـ duplication وبيخلي الكود مترتب."
+          explanation: "الـ Component معمولة عشان تتكتب مرة وتستخدم كذا مرة ببيانات (Props) مختلفة. ده بيقلل التكرار وبيخلي الكود منظم."
         },
         {
           id: "apply2",
           bloom: "apply",
-          question: "عندك الـ sitemap بتاع تطبيقك، وصفحة الـ '/dashboard' فيها 'Sidebar' على الشمال، 'Navbar' فوق، وفيه 'UserStats' بيعرض إحصائيات المستخدم، و'RecentActivities' بيعرض آخر الأنشطة. إيه الـ components اللي المفروض يتحطوا في الـ '__root.tsx' مرة واحدة بس عشان يظهروا في كل الصفحات؟",
+          question: "في الـ sitemap بتاعك، صفحة الـ '/dashboard' فيها 'Sidebar' و 'Navbar'. المفروض دول يتحطوا فين عشان يظهروا في كل صفحات الموقع؟",
           options: [
-            "الـ 'Sidebar' والـ 'Navbar' بس.",
-            "الـ 'UserStats' والـ 'RecentActivities' بس.",
-            "كل دول: 'Sidebar', 'Navbar', 'UserStats', 'RecentActivities'."
+            "في ملف الـ '__root.tsx' مرة واحدة بس.",
+            "في كل صفحة (route) لوحدها.",
+            "أعملهم component واحد اسمه 'Layout' وأكرره في كل الصفحات."
           ],
           correctIndex: 0,
-          explanation: "الـ Layout components زي الـ 'Sidebar' والـ 'Navbar' بتتحط في الـ '__root.tsx' مرة واحدة عشان تظهر في كل الصفحات، بعكس الـ content components اللي بتظهر في صفحات معينة."
+          explanation: "الـ Layout components زي الـ 'Sidebar' والـ 'Navbar' بتتحط في الملف الرئيسي مرة واحدة عشان تظهر في كل الصفحات، على عكس الـ components اللي بتتغير من صفحة للتانية."
         },
         {
           id: "apply3",
           bloom: "apply",
-          question: "وانت بتقسم صفحة الـ '/profile' بتاعت تطبيقك لـ components، لاحظت إنك عامل component اسمه 'UserProfileSection' بيعرض صورة المستخدم، وبياناته الشخصية، وكمان قائمة بالـ posts بتاعته، وزرار لتعديل البيانات. إيه أفضل خطوة تعملها عشان تلتزم بمبدأ الـ 'single responsibility'؟",
+          question: "وانت بتقسم صفحة البروفايل، عملت component اسمه 'UserProfileSection' بيعرض صورة المستخدم وبياناته وقايمة بالبوستات بتاعته وزرار تعديل. إيه أحسن حاجة تعملها عشان تخلي الكود منظم؟",
           options: [
-            "أسيبه زي ما هو، كده كده كل ده متعلق بالـ 'profile' بتاع المستخدم.",
+            "أسيبه زي ما هو، كلها حاجات ليها علاقة بالبروفايل.",
             "أقسمه لـ components أصغر: 'UserAvatar', 'UserDetails', 'UserPostsList', 'EditProfileButton'.",
-            "أخليه component واحد، بس أحط كل جزء في فايل لوحده عشان الكود يبقى منظم."
+            "أخليه component واحد، بس أحط كل جزء في فايل لوحده."
           ],
           correctIndex: 1,
-          explanation: "قاعدة الـ single responsibility بتقول إن كل component يعمل حاجة واحدة بس. الـ component اللي بيعمل أكتر من حاجة المفروض يتقسم لـ components أصغر كل واحد مسؤول عن وظيفته."
+          explanation: "قاعدة الـ single responsibility بتقول إن كل component المفروض يعمل حاجة واحدة بس. تقسيمه لـ components أصغر بيخلي كل واحد مسؤول عن وظيفته، وده بيسهل الصيانة والتطوير."
         }
       ]
     },
   },
   {
     icon: Rocket,
-    eyebrow: "Mission",
-    title: "اعمل خريطة Routes + Components للتطبيق",
+    eyebrow: "مهمتك",
+    title: "ارسم خريطة الـ Components لتطبيقك",
     tone: "primary",
     block: {
       kind: "mission",
       intro:
-        "Routes = الصفحات، Components = الأجزاء القابلة لإعادة الاستخدام. هترسم الاتنين قبل أي كود.",
+        "قبل ما تكتب سطر كود واحد، لازم تخطط. مهمتك دلوقتي إنك تحلل فكرة تطبيقك وتطلع منها خريطة للـ Routes (الصفحات) والـ Components (القطع).",
       prompt:
-        "في تسليمك:\n\n١) Routes (على الأقل ٤): \n   - / → Home\n   - /xxx → ...\n   - ...\n٢) Components قابلة لإعادة الاستخدام (على الأقل ٥) — كل واحدة بـ Props متوقعة:\n   - Button (variant, size, onClick)\n   - ...\n٣) أنهي صفحة بتستخدم أنهي components؟ (جدول صغير)\n٤) فيه component لازم يكون stateful (له state داخلي) وليه؟",
+        "في ورقة أو أي برنامج رسم، اعمل الآتي:\n\n١) **ارسم شخبطة سريعة للصفحة الرئيسية** بتاعت تطبيقك. مش لازم تبقى فنان، مربعات وخطوط كفاية.\n\n٢) **من الرسمة دي، طلّع قايمة بالـ Components** اللي بتتكرر أو ممكن تتكرر. زي (Button, ProductCard, Header, ...الخ).\n\n٣) **جنب كل Component، اكتب إيه الـ Props (البيانات)** اللي محتاجها عشان شكله أو محتواه يتغير. مثال: `ProductCard` محتاج `(image, title, price)`.\n\n٤) **سؤال بونس:** فيه component منهم محتاج يبقى عنده \"ذاكرة\" داخلية (state)؟ زي مثلاً مربع بحث بيفتكر الكلام اللي كتبته. لو آه، هو إيه وليه؟",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",
       rubric: [
         {
-          label: "Routes + Components واضحين",
+          label: "التحليل الأساسي",
           weight: 60,
           criteria: [
-            "٤+ routes + ٥+ components بأسماء حقيقية.",
-            "Components عندها Props متوقعة مش «zhe button».",
+            "رسمة واضحة للصفحة الرئيسية.",
+            "قايمة فيها ٥+ components على الأقل بأسماء منطقية.",
+            "كل component متحدد له الـ props اللي محتاجها.",
           ],
         },
         {
-          label: "Mapping + State",
+          label: "التفكير المتقدم",
           weight: 40,
           criteria: [
-            "جدول/قائمة بربط Pages × Components.",
-            "حدّدت component stateful بسبب منطقي.",
+            "قادر يحدد component محتاج state.",
+            "شرح منطقي لسبب احتياج الـ state ده.",
           ],
         },
       ],
@@ -182,21 +168,21 @@ export const BUILDER_M6_COMPONENTS_ROUTES_BLOCKS: IntroLessonContent = [
   },
   {
     icon: FlaskConical,
-    eyebrow: "جزء من المنصة",
-    title: "/curriculum مبني من 5 routes + components مشتركة",
+    eyebrow: "مثال حي من المنصة",
+    title: "صفحة المناهج مبنية بنفس الطريقة",
     tone: "primary",
     block: {
       kind: "caseStudy",
       title: "/curriculum مبني من 5 routes + components مشتركة",
       summary:
-        "الجزء ده من المنصة اتبنى بمسار Builder — نفس اللي بتتعلمه. صفحة /curriculum فيها route رئيسي + child routes لكل path. والـ component اللي بيعرض كل lesson card هو نفسه في الـ 5 مسارات — components قابلة لإعادة الاستخدام.",
+        "الجزء ده من المنصة اتبنى بمسار Builder — نفس اللي بتتعلمه. صفحة /curriculum فيها route رئيسي، وكل مسار (Builder, Creator, ...) هو route ابن له. والـ component اللي بيعرض كل درس هو هو في كل المسارات.",
       bullets: [
-        "Route file: curriculum.tsx مع <Outlet /> للـ child routes.",
-        "Component LessonLink مشترك في الـ 5 مسارات.",
-        "أي تغيير في الـ component بيظهر فورًا في كل مكان.",
+        "ملف الـ Route الرئيسي `curriculum.tsx` بيحتوي على الـ child routes.",
+        "الـ Component بتاع `LessonLink` مشترك في كل المسارات.",
+        "أي تغيير في تصميم `LessonLink` بيظهر فورًا في كل مكان.",
       ],
       pathAngle: "builder",
-      link: { label: "افتح /curriculum", href: "/curriculum" },
+      link: { label: "افتح /curriculum وشوف بنفسك", href: "/curriculum" },
     },
   }
 ];

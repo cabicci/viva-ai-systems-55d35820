@@ -8,18 +8,6 @@ import requests
 
 LESSONS_DIR = pathlib.Path("src/components/intro/lessons")
 ORDER = [
-    "builder-m1-l1-what-is-llm",
-    "builder-m1-l2-tokens-training",
-    "builder-m2-l3-prompt-layer",
-    "builder-m2-l4-instructions-examples",
-    "builder-m2-l5-style-control",
-    "builder-m3-l6-context-layer",
-    "builder-m3-l7-memory-limits",
-    "builder-m4-l8-parameters",
-    "builder-m5-l9-transition",
-    "builder-m5-l10-frontend",
-    "builder-m5-l11-backend-api",
-    "builder-m5-l12-database-intro",
     "builder-m6-l13-idea-to-page",
     "builder-m6-l14-wireframe",
     "builder-m6-l15-first-prompt-to-lovable",
