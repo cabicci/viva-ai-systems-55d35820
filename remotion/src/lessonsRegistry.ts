@@ -12,7 +12,6 @@ export type LessonModule = LessonRendererProps & {
 // The build script appends imports + entries below the marker.
 /* @lesson-imports-start */
 import { SCENES as L_builder_m2_instructions_examples_S, SCENE_FRAMES as L_builder_m2_instructions_examples_F, TOTAL_FRAMES as L_builder_m2_instructions_examples_T } from "./lessons-generated/builder-m2-l4-instructions-examples.gen";
-import { SCENES as L_builder_m2_style_control_S, SCENE_FRAMES as L_builder_m2_style_control_F, TOTAL_FRAMES as L_builder_m2_style_control_T } from "./lessons-generated/builder-m2-l5-style-control.gen";
 import { SCENES as L_builder_m3_context_layer_S, SCENE_FRAMES as L_builder_m3_context_layer_F, TOTAL_FRAMES as L_builder_m3_context_layer_T } from "./lessons-generated/builder-m3-l6-context-layer.gen";
 import { SCENES as L_builder_m3_memory_limits_S, SCENE_FRAMES as L_builder_m3_memory_limits_F, TOTAL_FRAMES as L_builder_m3_memory_limits_T } from "./lessons-generated/builder-m3-l7-memory-limits.gen";
 import { SCENES as L_builder_m5_transition_S, SCENE_FRAMES as L_builder_m5_transition_F, TOTAL_FRAMES as L_builder_m5_transition_T } from "./lessons-generated/builder-m5-l9-transition.gen";
@@ -107,12 +106,12 @@ import { SCENES as L_builder_m6_l13_idea_to_page_S, SCENE_FRAMES as L_builder_m6
 import { SCENES as L_builder_m5_l11_backend_api_S, SCENE_FRAMES as L_builder_m5_l11_backend_api_F, TOTAL_FRAMES as L_builder_m5_l11_backend_api_T } from "./lessons-generated/builder-m5-l11-backend-api.gen";
 import { SCENES as L_builder_m7_l20_relations_S, SCENE_FRAMES as L_builder_m7_l20_relations_F, TOTAL_FRAMES as L_builder_m7_l20_relations_T } from "./lessons-generated/builder-m7-l20-relations.gen";
 import { SCENES as L_builder_m7_l19_tables_columns_S, SCENE_FRAMES as L_builder_m7_l19_tables_columns_F, TOTAL_FRAMES as L_builder_m7_l19_tables_columns_T } from "./lessons-generated/builder-m7-l19-tables-columns.gen";
+import { SCENES as L_builder_m2_l5_style_control_S, SCENE_FRAMES as L_builder_m2_l5_style_control_F, TOTAL_FRAMES as L_builder_m2_l5_style_control_T } from "./lessons-generated/builder-m2-l5-style-control.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
   /* @lesson-entries-start */
     { id: "builder-m2-l4-instructions-examples", scenes: L_builder_m2_instructions_examples_S, sceneFrames: L_builder_m2_instructions_examples_F, totalFrames: L_builder_m2_instructions_examples_T },
-    { id: "builder-m2-l5-style-control", scenes: L_builder_m2_style_control_S, sceneFrames: L_builder_m2_style_control_F, totalFrames: L_builder_m2_style_control_T },
     { id: "builder-m3-l6-context-layer", scenes: L_builder_m3_context_layer_S, sceneFrames: L_builder_m3_context_layer_F, totalFrames: L_builder_m3_context_layer_T },
     { id: "builder-m3-l7-memory-limits", scenes: L_builder_m3_memory_limits_S, sceneFrames: L_builder_m3_memory_limits_F, totalFrames: L_builder_m3_memory_limits_T },
     { id: "builder-m5-l9-transition", scenes: L_builder_m5_transition_S, sceneFrames: L_builder_m5_transition_F, totalFrames: L_builder_m5_transition_T },
@@ -207,5 +206,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m5-l11-backend-api", scenes: L_builder_m5_l11_backend_api_S, sceneFrames: L_builder_m5_l11_backend_api_F, totalFrames: L_builder_m5_l11_backend_api_T },
     { id: "builder-m7-l20-relations", scenes: L_builder_m7_l20_relations_S, sceneFrames: L_builder_m7_l20_relations_F, totalFrames: L_builder_m7_l20_relations_T },
     { id: "builder-m7-l19-tables-columns", scenes: L_builder_m7_l19_tables_columns_S, sceneFrames: L_builder_m7_l19_tables_columns_F, totalFrames: L_builder_m7_l19_tables_columns_T },
+    { id: "builder-m2-l5-style-control", scenes: L_builder_m2_l5_style_control_S, sceneFrames: L_builder_m2_l5_style_control_F, totalFrames: L_builder_m2_l5_style_control_T },
   /* @lesson-entries-end */
 ];
