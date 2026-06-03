@@ -25,7 +25,6 @@ import { BUILDER_M2_STYLE_CONTROL_BLOCKS } from "./builder-m2-l5-style-control";
 import { BUILDER_M3_CONTEXT_LAYER_BLOCKS } from "./builder-m3-l6-context-layer";
 import { BUILDER_M3_MEMORY_LIMITS_BLOCKS } from "./builder-m3-l7-memory-limits";
 import { BUILDER_M4_TEMPERATURE_BLOCKS } from "./builder-m4-l8-parameters";
-import { BUILDER_M4_PARAMETERS_BLOCKS } from "./builder-m4-l8-parameters";
 import { BUILDER_M5_FRONTEND_BLOCKS } from "./builder-m5-l10-frontend";
 import { BUILDER_M5_BACKEND_API_BLOCKS } from "./builder-m5-l11-backend-api";
 import { BUILDER_M5_DATABASE_INTRO_BLOCKS } from "./builder-m5-l12-database-intro";
