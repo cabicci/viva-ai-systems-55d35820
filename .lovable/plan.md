@@ -1,158 +1,57 @@
-# خطة تعديل محتوى Builder النهائية (v4)
+## خطة إكمال v4 — المراحل الـ3 المتبقية
 
-استنادًا لنتايج محاكاة الـ 100 persona + توصياتك الـ 10. كل التنفيذ يستخدم `GEMINI_API_KEY` المباشر فقط — **لا spawn_agent، لا Lovable AI Gateway**.
+### Phase 3B — Mini-Win lesson بعد m5
+**الهدف:** إعطاء المتعلم إحساس نصر سريع بعد ما خلّص الجزء التقني الصعب (m5).
 
----
+- إنشاء lesson جديد: `src/components/intro/lessons/builder-m5-l12b-mini-win.ts`
+  - ID: `builder-m5-l12b-mini-win` (نضيفه بعد l12 من غير ما نكسر ترتيب الموديول)
+  - المحتوى: "إنت دلوقتي عارف إزاي التطبيق بيشتغل من جوه — تعالى نشوف ده بيتترجم لإيه في Lovable" (مثال بصري قصير: form → backend → database)
+  - مدة قصيرة (~60-90 ثانية script)
+- تسجيله في `src/lib/curriculum-data.ts` ضمن module 5
+- توليد الـ script عبر `GEMINI_API_KEY` مباشرة (skill/ai-gateway script)
+- Trigger Bunny render
 
-## القواعد الحاكمة (ثابتة في كل تعديل)
+### Phase 4 — Jargon lint pass
+**الهدف:** ضمان تطبيق glossary (Frontend=واجهة، Backend=الكواليس، API=ساعي البريد...) على كل دروس Builder.
 
-1. **الفايدة قبل المصطلح** — أول 20 ثانية = ROI واضح للمتعلم.
-2. **القاموس الإلزامي** — `mem://design/builder-reframing-glossary` (Frontend=واجهة، Backend=الكواليس، API=ساعي البريد، Database=المخزن الذكي، JWT=كارت الدخول، RLS=الحارس).
-3. **3 خطوات لأي مصطلح**: تشبيه ← الفايدة ← الاسم التقني (في الآخر).
-4. **رؤية Builder ثابتة** — مش بنقسمه ولا بنغير هيكله الكبير، بنعدّل الـ framing والمحتوى داخل الدروس + إضافات صغيرة.
-5. **بعد أي تعديل** = تحديث `roadmap_items` بـ `[ai-edit YYYY-MM-DD]` + `bun run roadmap:log` + تشغيل `lesson-video.yml` لإعادة الـ render.
+- كتابة سكريبت `scripts/jargon-lint.mjs`:
+  - يقرأ كل `src/components/intro/lessons/builder-*.ts`
+  - يفحص ظهور مصطلحات إنجليزية (Frontend/Backend/API/Database/JWT/RLS/Schema/Query) من غير ما يكون قبلها التشبيه العربي في أول 200 حرف من الـ block
+  - يطبع تقرير: `lesson → term → line`
+- المراجعة يدوياً: تعديل كل lesson فيها مخالفة (متوقع 5-10 ملفات)
+- Re-render للدروس المعدّلة فقط (batch ≤400 chars)
 
----
+### Phase 5B — m9 كـ Reward
+**الهدف:** تأطير m9 (RAG/embeddings) كمكافأة "خلّي تطبيقك ذكي بجد" بدل ما يبان كموديول تقني تاني.
 
-## المرحلة 1 — إصلاح الانهيارات (Critical Fixes)
+- تحديث عنوان m9 في `src/lib/curriculum-data.ts`:
+  - من: "Embeddings & RAG" → إلى: "خلّي تطبيقك ذكي زي ChatGPT"
+  - subtitle يحتفظ بالاسم التقني
+- تعديل opener لـ `builder-m9-l24-rag.ts`:
+  - شيل أي مقدمة عن "vectors/chunks/embeddings"
+  - افتح بـ: "بعد الدرس ده تطبيقك هيقدر يجاوب على أسئلة من بياناتك إنت — مش بس معلومات عامة"
+  - المصطلحات التقنية تتأخر للنص الثاني
+- تعديل خفيف لباقي دروس m9 (l25, l26 لو موجودين): opener فايدة-أولاً
+- Re-render m9 lessons المعدّلة
 
-### 1A. `builder-m1-l2-tokens-training` (10 quits)
+### قواعد ثابتة (من غير تغيير)
+- ❌ ممنوع `spawn_agent` أو Lovable AI Gateway
+- ✅ كل توليد نص عبر `GEMINI_API_KEY` مباشرة (skill ai-gateway مع `--model google/gemini-3.5-flash`)
+- ✅ كل تعديل → roadmap log + `bun run roadmap:log`
+- ✅ Bunny re-render إجباري لأي درس اتعدل محتواه
+- ✅ Batch lesson IDs ≤400 chars في `scripts/trigger-lesson.sh`
 
-- إزالة أي تشبيه مرفوض (الشاورما إن وُجد) من السكربت والـ scenes.
-- إعادة ترتيب الـ blocks:
-  1. **TitleCard**: "ليه ساعات الـ AI يرد كويس وساعات لأ؟ وليه الحساب أحيانًا يخلص بسرعة؟"
-  2. **BulletsCard**: المشكلة الواقعية (محادثة طويلة → بطء + تكلفة).
-  3. **BigStatCard**: تكلفة بسيطة (1000 token ≈ X قرش).
-  4. **ConceptCard**: فكرة الـ "قطمة" ببساطة.
-  5. **CompareCard**: prompt حشو vs prompt مباشر.
-  6. **ConceptCard**: المصطلح التقني `Token` آخر حاجة.
-  7. **CTACard**: اختبر فهمك.
+### الترتيب المقترح للتنفيذ
+1. **Phase 5B أولاً** (الأسرع، تأثير framing فوري — 1 lesson rewrite + title)
+2. **Phase 3B** (lesson جديد — أطول شوية)
+3. **Phase 4 أخيراً** (lint pass شامل + إصلاحات يدوية)
 
-### 1B. `builder-m5-l11-backend-api` (11 quits, أعلى confusion)
+### Deliverables
+- 2 lessons جديدة/معدّلة (m5-l12b, m9-l24)
+- 1 سكريبت lint
+- 0-10 lessons معدّلة من نتيجة الـ lint
+- curriculum-data.ts: عنوان m9
+- Bunny renders للدروس المعدّلة
+- roadmap log entries
 
-أنت طلبت "قسّم لدرسين" — في curriculum Builder ده يتم بإضافة درس جديد لنفس الموديول (m5) من غير ما نمس بقية الـ path:
-
-- **L11a — "إزاي التطبيق يفكر؟" (Backend بس)**
-  - بدون كلمة API في أول 60–90 ثانية.
-  - الكواليس = العقل اللي بياخد القرار + يكلم الـ AI.
-  - مثال حي من Lovable (function في الكواليس).
-- **L11b — "إزاي التطبيقات تتكلم مع بعض؟" (API)**
-  - مثال WhatsApp + CRM، وموقعك + ChatGPT.
-  - المصطلح API في الآخر.
-  - **ممنوع**: فواتير ضخمة، مفاتيح مسروقة، أي تخويف.
-
-التنفيذ التقني للتقسيم:
-
-- إضافة lesson جديدة في `src/lib/curriculum-data.ts` تحت m5 بعد l11.
-- إنشاء ملفي محتوى: `builder-m5-l11-backend-think.ts` + `builder-m5-l12-api-talk.ts`.
-- إعادة تسمية وترقيم باقي m5 (l12→l13, l13→l14, …) **في نفس الـ shot** (rename كامل للملفات + الصور + Bunny GUID + DB rows + كل المراجع — حسب قاعدة الـ memory).
-
-### 1C. `builder-m5-l12-database-intro` (7 quits → سيصبح l13)
-
-- افتتاحية جديدة: "لو العميل رجع بعد أسبوع، إزاي التطبيق يفتكره؟"
-- التسلسل: Excel sheet → customer list → Database.
-- **ممنوع في هذا الدرس**: SQL، Schema، Relations (تأجل لدروس m7).
-
----
-
-## المرحلة 2 — Reframing لـ m5–m8
-
-### 2A. عناوين الموديولات (في `curriculum-data.ts`)
-
-
-| Module | العنوان الجديد                    | Subtitle (تقني، مكتوب أصغر)     |
-| ------ | --------------------------------- | ------------------------------- |
-| m5     | إزاي التطبيق يشتغل فعلاً          | Frontend · Backend · Database   |
-| m6     | تحويل الفكرة لتطبيق               | Components · Routes · Debugging |
-| m7     | إزاي التطبيق يفتكر وينظم البيانات | Tables · Relations · Queries    |
-| m8     | حماية التطبيق والصلاحيات          | JWT · RLS                       |
-
-
-### 2B. ROI Opener إلزامي
-
-كل lesson في m5–m8 يبدأ بـ **TitleCard فيها سطر واحد**: "بعد الدرس ده هتقدر …"
-
-- JWT → "كل موظف يشوف بياناته بس."
-- Database → "التطبيق يفتكر العميل."
-- Backend → "التطبيق ياخد قرار لوحده."
-- RLS → "العميل A ميشوفش بيانات العميل B."
-
----
-
-## المرحلة 3 — Psychological Design
-
-### 3A. شاشة انتقال بين m4 و m5
-
-- إضافة "interstitial block" جديد (component خفيف في `src/components/intro/`) يظهر مرة واحدة عند الانتقال من آخر درس m4 لأول درس m5:
-  > "لحد هنا فهمت AI كويس. من هنا هنحوّل الفكرة لتطبيق حقيقي خطوة بخطوة. مش مطلوب تكون مبرمج."
-- يتخزن في `lesson_progress` إنه اتعرض، فمش يتكرر.
-
-### 3B. Mini-Win بعد m5
-
-- إضافة درس قصير في نهاية m5: **"AI assistant بيرد على عميل — في 5 دقايق"**
-- Demo سريع + dopamine hit، **قبل** دخول m7 (queries/relations) أو m8 (jwt/rls).
-
----
-
-## المرحلة 4 — تقليل Jargon
-
-كل lesson في m5–m8 يمر على linter يدوي للقاموس:
-
-- أي مصطلح من القاموس يظهر بدون analogy في نفس الـ scene = يتعدّل.
-- أي ScreenshotCard caption طولها > 280 حرف أو فيها 3 مصطلحات تقنية = تتقسم.
-- script: `scripts/lesson-tool.ts --lint-jargon m5-m8` (نوسعه لو لازم).
-
----
-
-## المرحلة 5 — تخفيف الألم
-
-### 5A. `builder-m6-l18-debugging` (5 quits)
-
-- تقصير 50%: نخلي الدرس "لو الدنيا بازت نعمل إيه" — playbook عملي مش deep dive.
-- إزالة أي scenes فيها stack traces أو error logs مفصلة.
-
-### 5B. m9 = Reward Framing
-
-- إعادة كتابة عناوين m9:
-  - "دلوقتي هنخلي التطبيق ذكي بجد"
-  - بدلًا من Embeddings/Chunks/Vectors في العنوان.
-  - الكلمات التقنية تبقى داخل الـ ConceptCard في النص.
-- الـ RAG lesson (16 aha) يفضل كـ flagship — نزود فيه Mini-Win demo.
-
----
-
-## ترتيب التنفيذ المقترح (Phase-by-phase)
-
-
-| #   | Phase            | Files Touched                                | API Calls (Gemini مباشر) |
-| --- | ---------------- | -------------------------------------------- | ------------------------ |
-| 1   | 1A tokens fix    | 1 lesson file + 1 video re-render            | ~1 script rewrite        |
-| 2   | 1B backend split | 2 new lessons + curriculum-data + renames m5 | ~2 script writes         |
-| 3   | 1C database fix  | 1 lesson file + re-render                    | ~1 script rewrite        |
-| 4   | 2A module titles | curriculum-data only                         | 0                        |
-| 5   | 2B ROI opener    | ~16 lessons (m5–m8) edit TitleCard           | ~16 micro-edits          |
-| 6   | 3A interstitial  | 1 new component + progress hook              | 0                        |
-| 7   | 3B mini-win      | 1 new lesson                                 | ~1 script write          |
-| 8   | 4 jargon lint    | script + manual passes                       | 0                        |
-| 9   | 5A debugging cut | 1 lesson file                                | ~1 script rewrite        |
-| 10  | 5B m9 reward     | ~3 lesson titles + RAG enhance               | ~1 script edit           |
-
-
-**كل phase = commit مستقل** + roadmap log + video re-render للدروس المتأثرة (batch ≤400 chars لكل dispatch).
-
----
-
-## Guardrails
-
-- **مفيش حذف من `roadmap_items**` — تحديث status بس.
-- **مفيش spawn_agent، مفيش Lovable AI Gateway.** كل توليد نصي عبر `GEMINI_API_KEY` المباشر (model: `google/gemini-3-flash-preview`).
-- **Rename in one shot** — أي lesson اتعدلت بطريقة جوهرية، نعمل rename كامل + re-render فورًا.
-- **التحقق بعد كل phase**: تشغيل `bun run roadmap:guard` + `bun run roadmap:log`.
-
----
-
-## السؤال قبل التنفيذ
-
-تحب أبدأ بـ **المرحلة 1 بالكامل** (الـ 3 إصلاحات الحرجة) كأول دفعة، ولا نبدأ بالـ **المرحلة 2A فقط** (تغيير عناوين الموديولات — تغيير سريع وتأثيره فوري على كل m5–m8)؟ اعمل كل المراحل بالترتيب
-
-&nbsp;
+**تأكيد:** أبدأ بالترتيب ده (5B → 3B → 4)؟ ولا تفضّل ترتيب تاني؟
