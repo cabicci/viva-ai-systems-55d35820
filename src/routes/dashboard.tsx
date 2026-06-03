@@ -4,7 +4,7 @@ import { Sidebar } from "@/components/dashboard/Sidebar";
 import { useAuth } from "@/lib/auth-context";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { ChevronDown, Play, Lock, CheckCircle2, Clock, Trophy, Timer } from "lucide-react";
+import { ChevronDown, Play, Lock, CheckCircle2, Clock, Trophy } from "lucide-react";
 import { getPath, pathLessonIds, PATHS, type CurriculumPath } from "@/lib/curriculum-data";
 import { useLessonProgress, type LessonStatus } from "@/lib/lesson-progress";
 import type { CurriculumModule } from "@/lib/curriculum-data";
@@ -16,7 +16,7 @@ import { WelcomeHint } from "@/components/dashboard/WelcomeHint";
 import { WelcomeChecklist } from "@/components/dashboard/WelcomeChecklist";
 import { ReviewsDueCard } from "@/components/dashboard/ReviewsDueCard";
 import { useCountUp } from "@/hooks/use-count-up";
-import { usePlatformTime, formatPlatformTime } from "@/hooks/use-platform-time";
+
 import { StreakCard } from "@/components/dashboard/StreakCard";
 import { useEntitlement, isLessonFree } from "@/lib/entitlements";
 import { PhaseRibbon } from "@/components/admin/PhaseRibbon";
@@ -713,33 +713,5 @@ function OverallProgressCard({
   );
 }
 
-function TimeOnPlatformCard({ delay = 0 }: { delay?: number }) {
-  const seconds = usePlatformTime();
-  const { hours, minutes } = formatPlatformTime(seconds);
-  return (
-    <div
-      className={`${STAT_CARD_BASE} flex items-center gap-4`}
-      style={{ ...STAT_CARD_STYLE, animationDelay: `${delay}ms` }}
-    >
-      <div className="grid h-12 w-12 place-items-center rounded-xl bg-[image:var(--gradient-accent)] group-hover:scale-110 transition-transform shrink-0">
-        <Timer className="h-6 w-6 text-accent-foreground animate-tilt" />
-      </div>
-      <div className="min-w-0">
-        <p className="text-xs text-muted-foreground">وقتك على المنصة</p>
-        <p className="text-2xl font-black leading-tight mt-0.5">
-          {hours > 0 && (
-            <>
-              <span dir="ltr" className="tabular-nums">{hours}</span>
-              <span className="text-sm font-bold text-muted-foreground"> س </span>
-            </>
-          )}
-          <span dir="ltr" className="tabular-nums">{minutes}</span>
-          <span className="text-sm font-bold text-muted-foreground"> د</span>
-        </p>
-        <p className="text-xs text-muted-foreground mt-1">
-          {seconds === 0 ? "ابدأ أول جلسة" : "بنحسب الوقت اللي بتقضيه"}
-        </p>
-      </div>
-    </div>
-  );
-}
+// `TimeOnPlatformCard` removed — was never rendered. If we bring back
+// platform-time UI, restore from git history and re-import the hook.

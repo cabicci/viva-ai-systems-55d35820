@@ -168,7 +168,7 @@ function UnifiedLessonPage() {
   const completedCount = lessons.filter(
     (l) => getStatus(l.id) === "completed",
   ).length;
-  const pct = total ? Math.round(((idx + 1) / total) * 100) : 0;
+  const pct = total ? Math.round((completedCount / total) * 100) : 0;
   const isCompleted = getStatus(lesson.id) === "completed";
 
   const [copied, setCopied] = useState(false);
@@ -248,7 +248,7 @@ function UnifiedLessonPage() {
             aria-label="رجوع للخريطة"
             className="fixed top-4 left-4 z-50 inline-flex items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-white/5 transition shadow-md"
           >
-            <ArrowLeft className="h-4 w-4 rotate-180" />
+            <ArrowLeft className="h-4 w-4" />
             <span>رجوع للخريطة</span>
           </Link>
         ) : (
@@ -262,7 +262,7 @@ function UnifiedLessonPage() {
             aria-label="رجوع للوحة"
             className="fixed top-4 left-4 z-50 inline-flex items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-white/5 transition shadow-md"
           >
-            <ArrowLeft className="h-4 w-4 rotate-180" />
+            <ArrowLeft className="h-4 w-4" />
             <span>رجوع للوحة</span>
           </Link>
         )}
