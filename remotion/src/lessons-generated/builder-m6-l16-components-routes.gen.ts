@@ -5,91 +5,100 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "chip": "أهلًا يا صاحبي",
-    "highlight": "ليجو الـ Frontend",
-    "subtitle": "هتقسّم كل صفحة لقطع صغيرة بتتكرّر.",
-    "title": "Components:"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "واجهة المستخدم",
-    "term": "Frontend",
-    "definition": "وش البرنامج أو الموقع، ده الجزء اللي اليوزر بيشوفه ويتعامل معاه."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "tag": "قطعة قابلة لإعادة الاستخدام",
-    "term": "Component",
-    "definition": "قطعة من واجهة الموقع بتقدر تكرر استخدامها في كذا مكان."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "tag": "بيانات الـ Component",
-    "term": "Props",
-    "definition": "المعلومات اللي بتبعتها للـ Component عشان يغير شكله أو محتواه."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "tag": "حالة الـ Component",
-    "term": "State/Stateful",
-    "definition": "حالة الـ Component الحالية، زي هل الزرار ده مضغوط ولا لأ؟"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "tag": "تنقل الصفحات",
-    "term": "TanStack Router",
-    "definition": "الأداة اللي بتتحكم في نقل اليوزر بين صفحات الموقع المختلفة."
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "mint",
-    "bullets": [
-      "Component هو قطعة UI قابلة لإعادة الاستخدام زي زرار أو كرت.",
-      "بتكتب الكود مرة واحدة وتستخدمه كذا مرة بقيم مختلفة.",
-      "القيم اللي بتدخل للـ component اسمها Props.",
-      "الـ Props بتخلي الـ component يطلع أشكال مختلفة بنفس التصميم من غير تكرار.",
-      "الـ Route صفحة كاملة لها URL، والـ Component قطعة جوه الصفحة.",
-      "الـ Route نفسه component بس مربوط بـ URL في نظام الـ routing.",
-      "قاعدة التقسيم (single responsibility): كل component يعمل حاجة واحدة.",
-      "لو الـ component بتاعك كبير ومسؤول عن حاجات كتير، قسّمه."
-    ],
-    "title": "Component = قالب + بيانات (Props)"
+    "subtitle": "إزاي تتجنب تكرار الكود وتبني واجهات منظمة",
+    "highlight": "سباجيتي؟",
+    "chip": "المشكلة",
+    "title": "ليه الكود بتاعك بيتحول لـ "
   },
   {
     "card": "ScreenshotCard",
     "accent": "lavender",
-    "title": "Case Study — نفس الـ Component بـ Props مختلفة",
     "src": "lessons/builder-m6-l16-components-routes.jpg",
-    "eyebrow": "من المنصة",
-    "caption": "الصورة دي بتشرح هرم الـ components في صفحة واحدة. الـ Route هو /curriculum. جواه PathCard مرة لـ Creator ومرة لـ Automator — نفس الـ component، props مختلفة. جوّه كل PathCard فيه ModuleCard — برضه نفس الـ component، بيتكرّر بـ data مختلفة. وجوّه كل ModuleCard فيه LessonRow. 3 levels من الـ components، كل واحد له شغلة واحدة. لو غيّرت تصميم LessonRow في ملف واحد، كل الدروس في كل الصفحات هتتغيّر تلقائيًا."
+    "caption": "الصفحة دي تبان معقدة، بس هي في الحقيقة تكرار لـ ٣-٤ قوالب بسيطة. دي فكرة الـ Components.",
+    "title": "بص على أي موقع كبير بعين الـ Developer",
+    "eyebrow": "جرّب دلوقتي"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "peach",
+    "bullets": [
+      "الـ Component قطعة ليجو: زرار، كارت منتج، قايمة جانبية.",
+      "تصمم \"قالب الكارت\" مرة واحدة بس."
+    ],
+    "title": "السر كله: قالب + بيانات = Component"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "yellow",
+    "title": "الـ Props: بيانات مختلفة لنفس القالب",
+    "bullets": [
+      "الـ Props هي البيانات اللي بتبعتها للقالب.",
+      "قالب `ProductCard` بيعرض منتجات مختلفة بـ `title` و `price`."
+    ]
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "pink",
+    "title": "الـ Route vs الـ Component",
+    "bullets": [
+      "الـ Route: الصفحة الكاملة اللي ليها عنوان في الـ browser (مثال: `/products`).",
+      "الـ Component: قطعة جوه الصفحة دي (مثال: `ProductCard` أو `Sidebar`).",
+      "الصفحة (الـ Route) هي component كبير بيجمع components أصغر."
+    ]
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "mintDeep",
+    "title": "قاعدة مهمة: كل component يعمل حاجة واحدة بس",
+    "bullets": [
+      "كل component المفروض يعمل حاجة واحدة بس.",
+      "لو Component فيه كود كتير، قسمه لقطع أصغر.",
+      "ده بيخلي الكود سهل يتفهم ويتصلح."
+    ]
   },
   {
     "card": "CompareCard",
-    "accent": "peach",
+    "accent": "mint",
     "right": {
-      "body": "أول مرة اكتبها عادي، تاني مرة copy-paste، تالت مرة استخرجها لـ component بـ props. كده مفيش over-engineering ولا chaos.",
-      "label": "RIGHT — قاعدة \"3 مرات\" (Rule of Three)"
+      "label": "صح — قاعدة الـ 3 مرات",
+      "body": "أول مرة: اكتب الكود عادي. تاني مرة: ممكن copy-paste. تالت مرة: طلع الكود في Component منفصل واستخدمه في الـ 3 أماكن. كده الكود نضيف ومنظم."
     },
     "left": {
-      "body": "هتلاقي عندك 3 نسخ من نفس الكود. لما تيجي تغير حاجة، هتنسى أماكن وهتخلي التطبيق inconsistent. هتقع في bugs بسبب فرق بسيط بين النسخ.",
-      "label": "FAILURE — كل صفحة تكتب كل حاجة من الأول"
+      "body": "هعمل كارت في المنتجات، وكارت شبهه في العروض، وتالت في الداش بورد. النتيجة: 3 نسخ من نفس الكود. أي تغيير لازم يتعمل في الـ 3 أماكن، ولو نسيت واحد، الموقع شكله هيبوظ.",
+      "label": "غلط — كل حاجة من الأول"
     },
-    "title": "متى تعمل Component جديد ومتى لأ"
+    "title": "امتى تعمل Component وامتى لأ؟"
   },
   {
     "card": "CTACard",
-    "accent": "yellow",
-    "title": "حدّد components تطبيقك",
+    "accent": "lavender",
+    "highlight": "حل الـ Quiz ده",
     "eyebrow": "دورك دلوقتي",
-    "tagline": "طبّق اللي اتعلّمته عشان تفهم أكتر، وهنتقابل في الدرس الجاي: إزاي السيرفر بيعرف إن \"ده إنت\"؟",
-    "highlight": "في 10 دقايق"
+    "tagline": "اكتشف إزاي تفكر زي الـ Component Developer",
+    "title": "مخك بيفكر كـ Component Developer؟"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "peach",
+    "bullets": [
+      "حلل فكرة تطبيقك وطلع خريطة للـ Routes والـ Components.",
+      "ارسم شخبطة سريعة للصفحة الرئيسية.",
+      "طلع قايمة بالـ Components المتكررة والـ Props اللي محتاجاها.",
+      "فكر لو فيه component محتاج \"ذاكرة\" داخلية (state)."
+    ],
+    "title": "ارسم خريطة الـ Components لتطبيقك"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "yellow",
+    "title": "صفحة المناهج مبنية بنفس الطريقة",
+    "bullets": [
+      "صفحة /curriculum فيها route رئيسي وكل مسار (Builder, Creator) هو route ابن.",
+      "الـ Component بتاع `LessonLink` مشترك في كل المسارات.",
+      "أي تغيير في تصميم `LessonLink` بيظهر فورًا في كل مكان."
+    ]
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [468, 285, 325, 372, 366, 359, 1074, 904, 1001, 346];
+export const SCENE_FRAMES: number[] = [797, 729, 532, 637, 583, 526, 1092, 304, 729, 647];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
