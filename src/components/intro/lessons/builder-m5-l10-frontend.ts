@@ -112,6 +112,7 @@ export const BUILDER_M5_FRONTEND_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "caseStudy",
+      title: "كل صفحة في المنصة هي واجهة تطبيق",
       summary:
         "الصفحة اللي انت فيها دلوقتي دي، وكل صفحات منصة Lovable، هي **واجهة تطبيق (Frontend)**. الدرس ده نفسه، والـ Dashboard بتاعك، كلهم مبنيين بنفس الأدوات اللي هتتعلمها عشان تبني واجهة تطبيقك الذكي. إحنا بنستخدم أداة اسمها React عشان نبني الواجهات دي، وهي نفس الأداة اللي هتستخدمها في مشروعك.",
       bullets: [
