@@ -22,3 +22,4 @@ Lesson edit = full rebuild with new name from the start: أي تعديل على 
 - [Auto-trigger lesson video](mem://workflows/auto-trigger-lesson-video) — SUSPENDED during v2 content revision. Default flow now: edit → approval → render
 - [Lesson naming + approval workflow](mem://rules/lesson-naming-and-approval) — Mandatory lesson reference format + edit→approve→render flow
 - [Content revision plan v2](mem://design/content-revision-plan-v2) — Full v2 doc: Tension-First + Momentum + L1-L30 scope + per-lesson workflow
+- [Builder reframing glossary](mem://design/builder-reframing-glossary) — Binding analogy dictionary for m5–m8 (Frontend→واجهة، Backend→مخ، JWT→إسورة، RLS→حارس) + 3-phase mental anchors + forbidden terms. Apply to every Builder m5–m8 edit.
