@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Flame, Sparkles, Trophy, X } from "lucide-react";
 import { useStreak } from "@/lib/entitlements";
-import { logLearnerEvent } from "@/lib/learner-events";
 
 const XP_PER_LESSON = 10;
 
@@ -18,8 +17,8 @@ function getMilestoneMessage(streak: number, completedCount: number): string | n
 
 /**
  * Toast-style celebration that fires once the lesson transitions to completed.
- * Shows XP gain, current streak, and milestone messages when applicable.
- * Auto-dismisses after 6s; logs an engagement event for analytics.
+ * Telemetry-free: `lesson_completed` is logged by the lesson route's
+ * `markCompleted` handler (single source of truth) to avoid double-counting.
  */
 export function CompletionReward({
   lessonId,
@@ -46,15 +45,6 @@ export function CompletionReward({
     const milestone = getMilestoneMessage(streak.current_streak, completedCount);
     setSnapshot({ streak: streak.current_streak, milestone });
     setShow(true);
-    logLearnerEvent({
-      type: "lesson_completed",
-      lessonId,
-      metadata: {
-        reward_shown: true,
-        streak: streak.current_streak,
-        xp: XP_PER_LESSON,
-      },
-    });
     const t = window.setTimeout(() => setShow(false), 6000);
     return () => window.clearTimeout(t);
   }, [isCompleted, lessonId, streak.current_streak, completedCount]);

@@ -126,6 +126,7 @@ export async function updateSubmission(
   submissionId: string,
   patch: UpdateSubmissionInput,
 ): Promise<MissionSubmission> {
+  const userId = await requireUserId();
   const update: Record<string, unknown> = {};
   if (patch.submissionText !== undefined)
     update.submission_text = patch.submissionText;
@@ -137,10 +138,12 @@ export async function updateSubmission(
   if (patch.feedback !== undefined) update.feedback = patch.feedback;
   if (patch.score !== undefined) update.score = patch.score;
 
+  // Defense-in-depth: scope the update to the caller even though RLS does too.
   const { data, error } = await supabase
     .from(TABLE)
     .update(update as never)
     .eq("id", submissionId)
+    .eq("user_id", userId)
     .select()
     .single();
   if (error) throw error;
@@ -150,27 +153,17 @@ export async function updateSubmission(
 /**
  * Mark a submission as submitted for evaluation.
  *
- * Foundation behavior: flips status to `submitted`, increments
- * `attempt_count`, and stamps `submitted_at`. No AI judging runs yet —
- * the actual evaluator (rubric + hybrid retrieval + AI feedback) will be
- * wired in a later step without changing this contract.
+ * Atomic: backed by the `submit_mission_for_evaluation` SQL function which
+ * increments `attempt_count` + flips status in one statement, preventing
+ * TOCTOU when two requests race on the same draft.
  */
 export async function submitForEvaluation(
   submissionId: string,
 ): Promise<MissionSubmission> {
-  const current = await getSubmission(submissionId);
-  if (!current) throw new Error("mission-evaluation: submission not found");
-
-  const { data, error } = await supabase
-    .from(TABLE)
-    .update({
-      status: "submitted",
-      submitted_at: new Date().toISOString(),
-      attempt_count: (current.attempt_count ?? 0) + 1,
-    } as never)
-    .eq("id", submissionId)
-    .select()
-    .single();
+  const { data, error } = await supabase.rpc("submit_mission_for_evaluation", {
+    p_submission_id: submissionId,
+  });
   if (error) throw error;
+  if (!data) throw new Error("mission-evaluation: submission not found");
   return data as unknown as MissionSubmission;
 }

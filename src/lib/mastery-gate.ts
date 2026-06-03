@@ -55,9 +55,9 @@ export function useModulesMastery(modules: CurriculumModule[]): {
     return Array.from(set);
   }, [modules]);
 
-  const missionIdsKey = allGatedMissionIds.join(",");
   const { data: passedSet = new Set<string>(), isSuccess } = useQuery({
-    queryKey: ["mastery-gate", userId, missionIdsKey],
+    // Array key — avoids the ambiguity of joining IDs into a string.
+    queryKey: ["mastery-gate", userId, allGatedMissionIds],
     enabled: !!userId && allGatedMissionIds.length > 0,
     staleTime: 30_000,
     queryFn: async () => {

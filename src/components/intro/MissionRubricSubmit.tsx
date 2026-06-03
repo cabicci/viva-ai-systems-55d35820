@@ -21,6 +21,7 @@ import {
   type AIEvaluationResult,
   type RevealAnswerResult,
 } from "@/lib/mission-ai-evaluation.functions";
+import { skipMissionServer } from "@/lib/mission-skip.functions";
 import { createSubmission } from "@/lib/mission-evaluation";
 import { useAuth } from "@/lib/auth-context";
 import { emitMissionPassed } from "@/lib/mission-gate";
@@ -83,20 +84,33 @@ export function MissionRubricSection({
   const { user } = useAuth();
   const evaluate = useServerFn(evaluateMissionWithAI);
   const revealAnswer = useServerFn(revealModelMissionAnswer);
+  const skipServer = useServerFn(skipMissionServer);
   const [skipped, setSkipped] = React.useState(false);
+  const [skipping, setSkipping] = React.useState(false);
 
-  function skipMission() {
-    emitMissionPassed(missionId);
-    setSkipped(true);
-    void logLearnerEvent({
-      type: "mission_skipped",
-      pathId: lessonId.split("-")[0] ?? null,
-      moduleId: lessonId.split("-")[1] ?? null,
-      lessonId,
-      missionId,
-      metadata: { failed_attempts: failedAttempts },
-    });
-    toast.success("تخطّيت المهمة — الدرس الجاي اتفتح. ترجعلها وقت ما تحب.");
+  async function skipMission() {
+    if (skipping) return;
+    setSkipping(true);
+    try {
+      // Persist the skip server-side BEFORE invalidating the cache —
+      // otherwise the refetch races and re-locks the gate.
+      await skipServer({ data: { missionId, lessonId } });
+      emitMissionPassed(missionId);
+      setSkipped(true);
+      void logLearnerEvent({
+        type: "mission_skipped",
+        pathId: lessonId.split("-")[0] ?? null,
+        moduleId: lessonId.split("-")[1] ?? null,
+        lessonId,
+        missionId,
+        metadata: { failed_attempts: failedAttempts },
+      });
+      toast.success("تخطّيت المهمة — الدرس الجاي اتفتح. ترجعلها وقت ما تحب.");
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "تعذّر تخطّي المهمة.");
+    } finally {
+      setSkipping(false);
+    }
   }
 
   const templateText = React.useMemo(
@@ -285,10 +299,15 @@ export function MissionRubricSection({
             <button
               type="button"
               onClick={skipMission}
-              className="inline-flex items-center gap-1.5 text-[11px] font-mono text-muted-foreground hover:text-foreground transition"
+              disabled={skipping}
+              className="inline-flex items-center gap-1.5 text-[11px] font-mono text-muted-foreground hover:text-foreground transition disabled:opacity-50"
               title="افتح الدرس الجاي من غير ما تسلّم — تقدر ترجع للمهمة وقت ما تحب"
             >
-              <SkipForward className="h-3 w-3" /> تخطّي المهمة دلوقتي
+              {skipping ? (
+                <><Loader2 className="h-3 w-3 animate-spin" /> ثانية…</>
+              ) : (
+                <><SkipForward className="h-3 w-3" /> تخطّي المهمة دلوقتي</>
+              )}
             </button>
           </div>
         </div>
