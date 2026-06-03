@@ -57,7 +57,6 @@ import { SCENES as L_business_m3_delegate_or_automate_S, SCENE_FRAMES as L_busin
 import { SCENES as L_analyst_m3_decision_rule_S, SCENE_FRAMES as L_analyst_m3_decision_rule_F, TOTAL_FRAMES as L_analyst_m3_decision_rule_T } from "./lessons-generated/analyst-m3-decision-rule.gen";
 import { SCENES as L_automator_m3_foundations_S, SCENE_FRAMES as L_automator_m3_foundations_F, TOTAL_FRAMES as L_automator_m3_foundations_T } from "./lessons-generated/automator-m3-foundations.gen";
 import { SCENES as L_automator_m4_llm_node_bridge_S, SCENE_FRAMES as L_automator_m4_llm_node_bridge_F, TOTAL_FRAMES as L_automator_m4_llm_node_bridge_T } from "./lessons-generated/automator-m4-llm-node-bridge.gen";
-import { SCENES as L_business_m1_weekly_rhythm_S, SCENE_FRAMES as L_business_m1_weekly_rhythm_F, TOTAL_FRAMES as L_business_m1_weekly_rhythm_T } from "./lessons-generated/business-m1-weekly-rhythm.gen";
 import { SCENES as L_automator_m2_tools_landscape_S, SCENE_FRAMES as L_automator_m2_tools_landscape_F, TOTAL_FRAMES as L_automator_m2_tools_landscape_T } from "./lessons-generated/automator-m2-tools-landscape.gen";
 import { SCENES as L_analyst_m2_three_sources_S, SCENE_FRAMES as L_analyst_m2_three_sources_F, TOTAL_FRAMES as L_analyst_m2_three_sources_T } from "./lessons-generated/analyst-m2-three-sources.gen";
 import { SCENES as L_analyst_m0_from_automation_to_insight_S, SCENE_FRAMES as L_analyst_m0_from_automation_to_insight_F, TOTAL_FRAMES as L_analyst_m0_from_automation_to_insight_T } from "./lessons-generated/analyst-m0-from-automation-to-insight.gen";
@@ -108,6 +107,7 @@ import { SCENES as L_builder_m6_l13_idea_to_page_S, SCENE_FRAMES as L_builder_m6
 import { SCENES as L_builder_m7_l19_tables_columns_S, SCENE_FRAMES as L_builder_m7_l19_tables_columns_F, TOTAL_FRAMES as L_builder_m7_l19_tables_columns_T } from "./lessons-generated/builder-m7-l19-tables-columns.gen";
 import { SCENES as L_business_m6_full_ecosystem_S, SCENE_FRAMES as L_business_m6_full_ecosystem_F, TOTAL_FRAMES as L_business_m6_full_ecosystem_T } from "./lessons-generated/business-m6-full-ecosystem.gen";
 import { SCENES as L_business_m0_from_decisions_to_leadership_S, SCENE_FRAMES as L_business_m0_from_decisions_to_leadership_F, TOTAL_FRAMES as L_business_m0_from_decisions_to_leadership_T } from "./lessons-generated/business-m0-from-decisions-to-leadership.gen";
+import { SCENES as L_business_m1_weekly_rhythm_S, SCENE_FRAMES as L_business_m1_weekly_rhythm_F, TOTAL_FRAMES as L_business_m1_weekly_rhythm_T } from "./lessons-generated/business-m1-weekly-rhythm.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -158,7 +158,6 @@ export const LESSONS: LessonModule[] = [
     { id: "analyst-m3-decision-rule", scenes: L_analyst_m3_decision_rule_S, sceneFrames: L_analyst_m3_decision_rule_F, totalFrames: L_analyst_m3_decision_rule_T },
     { id: "automator-m3-foundations", scenes: L_automator_m3_foundations_S, sceneFrames: L_automator_m3_foundations_F, totalFrames: L_automator_m3_foundations_T },
     { id: "automator-m4-llm-node-bridge", scenes: L_automator_m4_llm_node_bridge_S, sceneFrames: L_automator_m4_llm_node_bridge_F, totalFrames: L_automator_m4_llm_node_bridge_T },
-    { id: "business-m1-weekly-rhythm", scenes: L_business_m1_weekly_rhythm_S, sceneFrames: L_business_m1_weekly_rhythm_F, totalFrames: L_business_m1_weekly_rhythm_T },
     { id: "automator-m2-tools-landscape", scenes: L_automator_m2_tools_landscape_S, sceneFrames: L_automator_m2_tools_landscape_F, totalFrames: L_automator_m2_tools_landscape_T },
     { id: "analyst-m2-three-sources", scenes: L_analyst_m2_three_sources_S, sceneFrames: L_analyst_m2_three_sources_F, totalFrames: L_analyst_m2_three_sources_T },
     { id: "analyst-m0-from-automation-to-insight", scenes: L_analyst_m0_from_automation_to_insight_S, sceneFrames: L_analyst_m0_from_automation_to_insight_F, totalFrames: L_analyst_m0_from_automation_to_insight_T },
@@ -209,5 +208,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m7-l19-tables-columns", scenes: L_builder_m7_l19_tables_columns_S, sceneFrames: L_builder_m7_l19_tables_columns_F, totalFrames: L_builder_m7_l19_tables_columns_T },
     { id: "business-m6-full-ecosystem", scenes: L_business_m6_full_ecosystem_S, sceneFrames: L_business_m6_full_ecosystem_F, totalFrames: L_business_m6_full_ecosystem_T },
     { id: "business-m0-from-decisions-to-leadership", scenes: L_business_m0_from_decisions_to_leadership_S, sceneFrames: L_business_m0_from_decisions_to_leadership_F, totalFrames: L_business_m0_from_decisions_to_leadership_T },
+    { id: "business-m1-weekly-rhythm", scenes: L_business_m1_weekly_rhythm_S, sceneFrames: L_business_m1_weekly_rhythm_F, totalFrames: L_business_m1_weekly_rhythm_T },
   /* @lesson-entries-end */
 ];

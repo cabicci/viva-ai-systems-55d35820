@@ -5,78 +5,78 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "title": "بنّاء، صانع، منظّم، محلّل",
-    "highlight": "كل واحد ليه يوم",
-    "subtitle": "كل يوم له هدف واضح، ومخرج محدّد.",
-    "chip": "أسبوعك = ٤ مسارات"
+    "chip": "أسبوعك = ٤ مسارات",
+    "title": "أسبوعك = ٤ مسارات",
+    "subtitle": "كل واحد ليه يوم. كل يوم له هدف واضح، ومخرج محدّد.",
+    "highlight": "(بنّاء · صانع · منظّم · محلّل)"
   },
   {
     "card": "ConceptCard",
     "accent": "lavender",
-    "tag": "تشتيت تركيز",
+    "tag": "تشتيت التركيز",
     "term": "Context Switching",
     "definition": "إنك تنط بين كذا حاجة مختلفة ورا بعض وتشتت دماغك."
   },
   {
     "card": "ConceptCard",
     "accent": "peach",
-    "tag": "تنظيم شغل",
     "term": "Flows/Automator/System",
-    "definition": "خطوات الشغل المترتبة ورا بعض عشان المهمة تخلص."
+    "definition": "خطوات الشغل المترتبة ورا بعض عشان المهمة تخلص.",
+    "tag": "ترتيب الشغل"
   },
   {
     "card": "ConceptCard",
     "accent": "yellow",
-    "tag": "تخطيط مستقبلي",
+    "definition": "وقت التفكير الكبير والتخطيط لمستقبل الشغل، مش شغل يومي.",
     "term": "Strategic Work",
-    "definition": "وقت التفكير الكبير والتخطيط لمستقبل الشغل، مش شغل يومي."
+    "tag": "تفكير للمستقبل"
   },
   {
     "card": "ConceptCard",
     "accent": "pink",
-    "tag": "شغل يومي",
     "term": "Operational Work",
-    "definition": "شغل \"الترس\" اليومي اللي بيمشي الدنيا وبيدخّل فلوس حالاً."
+    "definition": "شغل \"الترس\" اليومي اللي بيمشي الدنيا وبيدخّل فلوس حالاً.",
+    "tag": "شغل يومي"
   },
   {
     "card": "ConceptCard",
     "accent": "mintDeep",
-    "tag": "بناء منتج جديد",
     "term": "Builder Track",
-    "definition": "الوقت اللي بتطلع فيه منتج/خدمة جديدة عشان تكبر شغلك."
+    "definition": "الوقت اللي بتطلع فيه منتج/خدمة جديدة عشان تكبر شغلك.",
+    "tag": "بناء جديد"
   },
   {
     "card": "ConceptCard",
     "accent": "mint",
-    "tag": "إدارة وورق",
+    "tag": "ورق وإدارة",
     "term": "Admin Work",
     "definition": "الأعمال الورقية والإدارية اللي \"بتاكل\" وقت بس مهمة للتنظيم."
   },
   {
     "card": "ConceptCard",
     "accent": "lavender",
-    "tag": "يوم عمل مركز",
+    "definition": "تخصيص يوم كامل لنوع واحد من الشغل عشان ماتتشتتش.",
     "term": "Theme Day/Weekly Rhythm",
-    "definition": "تخصيص يوم كامل لنوع واحد من الشغل عشان ماتتشتتش."
+    "tag": "يوم لتركيز واحد"
   },
   {
     "card": "ConceptCard",
     "accent": "peach",
-    "tag": "يوم للطوارئ",
+    "definition": "يوم \"طوارئ\" في جدولك عشان لو حاجة باظت خلال الأسبوع.",
     "term": "Buffer Day",
-    "definition": "يوم \"طوارئ\" في جدولك عشان لو حاجة باظت خلال الأسبوع."
+    "tag": "يوم للطوارئ"
   },
   {
     "card": "BulletsCard",
     "accent": "yellow",
-    "title": "الجدول الأسبوعي المقترح",
     "bullets": [
       "الاثنين/الثلاثاء — Builder (البنّاء): بناء وتطوير المنتج.",
       "الأربعاء — Creator (صانع المحتوى): محتوى الأسبوع كله.",
       "الخميس — Automator (منظّم العمليات): مراجعة Flows + إصلاح الأخطاء.",
       "الجمعة — Analyst (المحلّل): review أسبوعي + قرار الأسبوع.",
       "السبت/الأحد — Buffer أو راحة (الأحد فيه الـ ١٥ دقيقة review)."
-    ]
+    ],
+    "title": "الجدول الأسبوعي المقترح"
   },
   {
     "card": "BulletsCard",
@@ -89,35 +89,43 @@ export const SCENES: SceneData[] = [
   {
     "card": "CompareCard",
     "accent": "mintDeep",
+    "title": "كل يوم في كل حاجة vs Theme Days",
+    "left": {
+      "body": "Context switching بياكل ٤٠٪ من إنتاجيتك. تعبان والشغل ناقص.",
+      "label": "FAILURE — كل يوم بتبدّل ٥ مرات"
+    },
     "right": {
       "body": "بتدخل عمق كل مسار. الجودة بتعلى والوقت بيقل.",
       "label": "RIGHT — يوم واحد = تركيز واحد"
-    },
-    "title": "كل يوم في كل حاجة vs Theme Days",
-    "left": {
-      "label": "FAILURE — كل يوم بتبدّل ٥ مرات",
-      "body": "Context switching بياكل ٤٠٪ من إنتاجيتك. تعبان والشغل ناقص."
     }
   },
   {
     "card": "CTACard",
     "accent": "mint",
+    "eyebrow": "دورك دلوقتي",
     "title": "صمّم أسبوعك",
-    "highlight": "عشان تشوف إزاي تطبق اللي اتعلمته",
-    "tagline": "حلّ الأسئلة دي",
-    "eyebrow": "دورك دلوقتي"
+    "highlight": "وحل الأسئلة دي",
+    "tagline": "طبق اللي اتعلمته عشان تثبت المعلومة في دماغك."
   },
   {
     "card": "BulletsCard",
     "accent": "lavender",
-    "title": "أسبوع المنصة = ٤ مسارات + يوم review",
     "bullets": [
       "كل يوم له deep work block 4 ساعات.",
       "Roadmap items متعلّمة بـ tags للمسار.",
       "End-of-week review بيتسجّل في /roadmap."
-    ]
+    ],
+    "title": "أسبوع المنصة = ٤ مسارات + يوم review"
+  },
+  {
+    "card": "CTACard",
+    "accent": "peach",
+    "highlight": "فهم رحلة عميلك",
+    "tagline": "جهّز نفسك للدرس الجاي عشان تعرف إزاي كل ده بيأثر على رحلة العميل.",
+    "eyebrow": "الدرس الجاي",
+    "title": "دورة حياة العميل"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [489, 430, 443, 558, 385, 496, 526, 545, 445, 623, 454, 551, 505, 522];
+export const SCENE_FRAMES: number[] = [552, 445, 448, 450, 387, 377, 455, 411, 369, 610, 481, 521, 399, 430, 375];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
