@@ -252,14 +252,10 @@ function creatorModules(): CurriculumModule[] {
 }
 
 /* -------------------------------------------------------------- */
-/*  Builder — 10 milestones (new structure, May 2026)             */
-/*                                                                */
-/*  كل milestone = هدف واضح المتعلم بيقدر يقوله بصوت عالي.        */
-/*  المنصة دي = مرجع حي ("بص الجزء ده اتعمل ازاي")،              */
-/*  والمتعلم بيطبق على مشروعه هو (ERP، متجر، إلخ).                */
-/*                                                                */
-/*  شكل كل درس: فيديو + شرح المفهوم + بص للمنصة                   */
-/*  + Failure & Right + دلوقتي إنت (تمرين على مشروعك).             */
+/*  Builder — 9 modules (v2 structure, June 2026)                 */
+/*  Lesson IDs follow {path}-m{N}-l{seq}-{slug} with l{seq}        */
+/*  continuous 1..26 across the whole path.                       */
+/*  M10 (deploy + first-users) is deferred per v2 scope.          */
 /* -------------------------------------------------------------- */
 function builderMilestones(): CurriculumModule[] {
   return [
@@ -298,10 +294,9 @@ function builderMilestones(): CurriculumModule[] {
       order: 4,
       id: "builder-m4",
       title: "Parameters: لوحة التحكم",
-      subtitle: "Temperature, Top-p, Max tokens — ساعتها بترد إزاي.",
+      subtitle: "Temperature, Top-p, Max tokens في درس واحد.",
       lessons: [
-        builderShipped(1, "builder-m4-l8-parameters", "Temperature"),
-        builderShipped(2, "builder-m4-l8-parameters", "Top-p & Max tokens"),
+        builderShipped(1, "builder-m4-l8-parameters", "Parameters: Temperature + Top-p + Max tokens"),
       ],
     },
     {
@@ -319,38 +314,20 @@ function builderMilestones(): CurriculumModule[] {
     {
       order: 6,
       id: "builder-m6",
-      title: "Design & Plan — قبل ما تبني",
-      subtitle: "الفكرة → Sitemap → Wireframe → أول Prompt لـ Lovable.",
+      title: "بناء الـ App مع Lovable",
+      subtitle: "من فكرة → wireframe → أول prompt → components → iteration → debugging.",
       lessons: [
         builderShipped(1, "builder-m6-l13-idea-to-page", "من فكرة لصفحة"),
         builderShipped(2, "builder-m6-l14-wireframe", "Wireframe — ارسم قبل ما تبني"),
         builderShipped(3, "builder-m6-l15-first-prompt-to-lovable", "أول Prompt لـ Lovable"),
+        builderShipped(4, "builder-m6-l16-components-routes", "Components & Routes"),
+        builderShipped(5, "builder-m6-l17-iteration", "Iteration Loop"),
+        builderShipped(6, "builder-m6-l18-debugging", "Debugging — لما الـ AI يغلط"),
       ],
     },
     {
       order: 7,
-      id: "builder-m7-refine",
-      title: "Build & Refine — لما الكود يطلع",
-      subtitle: "Components → Iteration → Debugging — دورة التحسين بعد أول build.",
-      lessons: [
-        builderShipped(1, "builder-m6-l16-components-routes", "Components & Routes"),
-        builderShipped(2, "builder-m6-l17-iteration", "Iteration Loop"),
-        builderShipped(3, "builder-m6-l18-debugging", "Debugging — لما الـ AI يغلط"),
-      ],
-    },
-    {
-      order: 8,
-      id: "builder-m8-auth",
-      title: "Auth: تسجيل الدخول",
-      subtitle: "Sessions, JWT, RLS — ازاي الـ app بيفرق بين المستخدمين.",
-      lessons: [
-        builderShipped(1, "builder-m8-l22-sessions-jwt", "Sessions & JWT"),
-        builderShipped(2, "builder-m8-l23-rls", "RLS وحماية بيانات المستخدم"),
-      ],
-    },
-    {
-      order: 9,
-      id: "builder-m9-db",
+      id: "builder-m7",
       title: "Database: تخزين البيانات",
       subtitle: "Tables, Relations, Queries — بياناتك بتعيش فين.",
       lessons: [
@@ -360,24 +337,24 @@ function builderMilestones(): CurriculumModule[] {
       ],
     },
     {
-      order: 10,
-      id: "builder-m10-ai",
-      title: "AI جوه المنتج (RAG + Embeddings)",
-      subtitle: "ازاي تخلي الـ AI يرد من بياناتك إنت، مش من معلومات عامة.",
+      order: 8,
+      id: "builder-m8",
+      title: "Auth & Security",
+      subtitle: "Sessions, JWT, RLS — ازاي الـ app بيفرق بين المستخدمين ويحمي بياناتهم.",
       lessons: [
-        builderShipped(1, "builder-m9-l25-embeddings", "Embeddings: لغة الـ AI الرقمية"),
-        builderShipped(2, "builder-m9-l24-rag", "RAG: AI يرد من بياناتك"),
-        builderShipped(3, "builder-m9-l26-agents", "Agents: AI بياخد قرارات"),
+        builderShipped(1, "builder-m8-l22-sessions-jwt", "Sessions & JWT"),
+        builderShipped(2, "builder-m8-l23-rls", "RLS وحماية بيانات المستخدم"),
       ],
     },
     {
-      order: 11,
-      id: "builder-m11-deploy",
-      title: "النشر والتشغيل",
-      subtitle: "Deploy + Domain + أول مستخدمين حقيقيين.",
+      order: 9,
+      id: "builder-m9",
+      title: "AI جوه المنتج (RAG + Agents)",
+      subtitle: "RAG قبل Embeddings (magic قبل mechanics)، وبعدين Agents.",
       lessons: [
-        builderShipped(1, "builder-m10-deploy-domain", "Deploy & Domain"),
-        builderShipped(2, "builder-m10-first-users", "أول مستخدمين + Iteration"),
+        builderShipped(1, "builder-m9-l24-rag", "RAG: AI يرد من بياناتك"),
+        builderShipped(2, "builder-m9-l25-embeddings", "Embeddings: لغة الـ AI الرقمية"),
+        builderShipped(3, "builder-m9-l26-agents", "Agents: AI بياخد قرارات"),
       ],
     },
   ];
