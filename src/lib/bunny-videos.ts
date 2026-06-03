@@ -37,7 +37,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "automator-m5-lead-capture": "087ba311-1211-429b-9340-f3d69d942d8f",
   "automator-m5-whatsapp-flow": "c0d790aa-ab87-45bb-999b-8f17a2bd6d78",
   "automator-m6-closing-loop": "7db1e43a-9ca2-42bb-a85d-561a2fa3cad6",
-  "builder-m1-l2-tokens-training": "75744a53-2cfc-4124-9722-aec1e23c9590",
+  "builder-m1-l2-tokens-training": "33d9e9d2-76d5-44b0-91b2-7d525846d59c",
   "builder-m1-l1-what-is-llm": "7f735f93-67d0-4256-98c9-5ca413a73f78",
   "builder-m10-deploy-domain": "d3a47ca4-6822-4771-ab70-be5dc944f3d6",
   "builder-m10-first-users": "2850b125-f849-4aaf-b422-ac16864abe42",
