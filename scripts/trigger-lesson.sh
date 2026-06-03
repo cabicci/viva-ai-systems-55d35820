@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Usage: ./scripts/trigger-lesson.sh <lesson-id-or-prefix> [--force-script]
 set -euo pipefail
-REPO="${REPO:-cabicci/ai-ecosystem-hub-72-5bf9f6ff}"
+REPO="${REPO:-cabicci/remix-of-ai-canvas}"
 WORKFLOW="${WORKFLOW:-lesson-video.yml}"
 REF="${REF:-main}"
 LESSON="${1:?lesson id required}"
