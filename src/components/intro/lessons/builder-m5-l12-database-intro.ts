@@ -58,7 +58,8 @@ export const BUILDER_M5_DATABASE_INTRO_BLOCKS: IntroLessonContent = [
     eyebrow: "الفكرة الأساسية",
     title: "الداتابيز = شيت إكسيل سوبر",
     block: {
-      kind: "concept",
+      kind: "concepts",
+      items: [{
       term: "الجدول (Table)",
       meaning:
         "هو المكان اللي بنرص فيه البيانات جوه الداتابيز. تخيله بالظبط زي شيت إكسيل منظم.",
