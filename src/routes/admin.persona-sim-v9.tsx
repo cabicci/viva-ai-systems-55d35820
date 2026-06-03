@@ -444,10 +444,17 @@ function PersonaSimV9Page() {
               <ArrowLeft className="h-4 w-4 ml-1" /> رجوع للأدمن
             </Link>
           </Button>
-          <h1 className="text-2xl font-bold">Persona Sim v9 — مقارنة الترتيب</h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            {rows.length} درس · ٢٠ agent · {rows.length * 20} تقييم A/B
-          </p>
+          <div className="flex items-start justify-between gap-3 flex-wrap">
+            <div>
+              <h1 className="text-2xl font-bold">Persona Sim v9 — مقارنة الترتيب</h1>
+              <p className="text-sm text-muted-foreground mt-1">
+                {rows.length} درس · ٢٠ agent · {rows.length * 20} تقييم A/B
+              </p>
+            </div>
+            <Button asChild size="sm" className="bg-emerald-600 hover:bg-emerald-700">
+              <Link to="/admin/v9-review">ابدأ المراجعة اليدوية ←</Link>
+            </Button>
+          </div>
         </div>
 
         {!loading && !error && (
