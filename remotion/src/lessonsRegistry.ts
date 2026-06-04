@@ -113,6 +113,7 @@ import { SCENES as L_business_m1_l2_reactive_vs_proactive_S, SCENE_FRAMES as L_b
 import { SCENES as L_business_m3_l3_system_then_people_S, SCENE_FRAMES as L_business_m3_l3_system_then_people_F, TOTAL_FRAMES as L_business_m3_l3_system_then_people_T } from "./lessons-generated/business-m3-l3-system-then-people.gen";
 import { SCENES as L_business_m3_l2_strategic_operational_admin_S, SCENE_FRAMES as L_business_m3_l2_strategic_operational_admin_F, TOTAL_FRAMES as L_business_m3_l2_strategic_operational_admin_T } from "./lessons-generated/business-m3-l2-strategic-operational-admin.gen";
 import { SCENES as L_business_m1_l3_ai_thinking_partner_S, SCENE_FRAMES as L_business_m1_l3_ai_thinking_partner_F, TOTAL_FRAMES as L_business_m1_l3_ai_thinking_partner_T } from "./lessons-generated/business-m1-l3-ai-thinking-partner.gen";
+import { SCENES as L_business_m3_l1_delegate_or_automate_S, SCENE_FRAMES as L_business_m3_l1_delegate_or_automate_F, TOTAL_FRAMES as L_business_m3_l1_delegate_or_automate_T } from "./lessons-generated/business-m3-l1-delegate-or-automate.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -217,5 +218,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m3-l3-system-then-people", scenes: L_business_m3_l3_system_then_people_S, sceneFrames: L_business_m3_l3_system_then_people_F, totalFrames: L_business_m3_l3_system_then_people_T },
     { id: "business-m3-l2-strategic-operational-admin", scenes: L_business_m3_l2_strategic_operational_admin_S, sceneFrames: L_business_m3_l2_strategic_operational_admin_F, totalFrames: L_business_m3_l2_strategic_operational_admin_T },
     { id: "business-m1-l3-ai-thinking-partner", scenes: L_business_m1_l3_ai_thinking_partner_S, sceneFrames: L_business_m1_l3_ai_thinking_partner_F, totalFrames: L_business_m1_l3_ai_thinking_partner_T },
+    { id: "business-m3-l1-delegate-or-automate", scenes: L_business_m3_l1_delegate_or_automate_S, sceneFrames: L_business_m3_l1_delegate_or_automate_F, totalFrames: L_business_m3_l1_delegate_or_automate_T },
   /* @lesson-entries-end */
 ];
