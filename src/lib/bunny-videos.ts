@@ -85,6 +85,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "business-m4-l2-reactive-relapse": "ec7a97da-bb42-44d4-a3dc-b448d601888a",
   "business-m4-l3-weekly-rhythm": "77572365-f371-4c4d-99e6-ee2ac75043b1",
   "business-m4-l4-full-ecosystem": "7c6f6fa6-9bfa-4f94-9c0a-bdf9a1ee98d1",
+  "business-m4-l5-business-os-dashboard": "0031bb65-57d7-4f57-90c9-5f39723709f0",
   "business-m5-l1-readiness-signals": "40934e45-fdd3-42ed-a4ae-355876782121",
   "business-m5-l2-system-then-people": "6679ccc1-53cc-4bc6-8ce9-4aacced3dd7d",
   "business-m6-l1-reactive-relapse": "d99ff05e-a0cd-4ee4-b012-e378fd329136",

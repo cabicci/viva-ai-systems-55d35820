@@ -122,6 +122,7 @@ import { SCENES as L_business_m4_l2_reactive_relapse_S, SCENE_FRAMES as L_busine
 import { SCENES as L_business_m4_l3_weekly_rhythm_S, SCENE_FRAMES as L_business_m4_l3_weekly_rhythm_F, TOTAL_FRAMES as L_business_m4_l3_weekly_rhythm_T } from "./lessons-generated/business-m4-l3-weekly-rhythm.gen";
 import { SCENES as L_business_m2_l4_pricing_cash_flow_S, SCENE_FRAMES as L_business_m2_l4_pricing_cash_flow_F, TOTAL_FRAMES as L_business_m2_l4_pricing_cash_flow_T } from "./lessons-generated/business-m2-l4-pricing-cash-flow.gen";
 import { SCENES as L_business_m4_l4_full_ecosystem_S, SCENE_FRAMES as L_business_m4_l4_full_ecosystem_F, TOTAL_FRAMES as L_business_m4_l4_full_ecosystem_T } from "./lessons-generated/business-m4-l4-full-ecosystem.gen";
+import { SCENES as L_business_m4_l5_business_os_dashboard_S, SCENE_FRAMES as L_business_m4_l5_business_os_dashboard_F, TOTAL_FRAMES as L_business_m4_l5_business_os_dashboard_T } from "./lessons-generated/business-m4-l5-business-os-dashboard.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -235,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m4-l3-weekly-rhythm", scenes: L_business_m4_l3_weekly_rhythm_S, sceneFrames: L_business_m4_l3_weekly_rhythm_F, totalFrames: L_business_m4_l3_weekly_rhythm_T },
     { id: "business-m2-l4-pricing-cash-flow", scenes: L_business_m2_l4_pricing_cash_flow_S, sceneFrames: L_business_m2_l4_pricing_cash_flow_F, totalFrames: L_business_m2_l4_pricing_cash_flow_T },
     { id: "business-m4-l4-full-ecosystem", scenes: L_business_m4_l4_full_ecosystem_S, sceneFrames: L_business_m4_l4_full_ecosystem_F, totalFrames: L_business_m4_l4_full_ecosystem_T },
+    { id: "business-m4-l5-business-os-dashboard", scenes: L_business_m4_l5_business_os_dashboard_S, sceneFrames: L_business_m4_l5_business_os_dashboard_F, totalFrames: L_business_m4_l5_business_os_dashboard_T },
   /* @lesson-entries-end */
 ];
