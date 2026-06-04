@@ -71,7 +71,7 @@ export const BUSINESS_M4_L5_BUSINESS_OS_DASHBOARD_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "executionTask",
-      intro: "النهارده هتطلع بصفحة Notion (أو أي tool زيه) فيها كل النظام بتاعك. ده الـ output النهائي للمسار.",
+      title: "النهارده هتطلع بصفحة Notion (أو أي tool زيه) فيها كل النظام بتاعك. ده الـ output النهائي للمسار.",
       steps: [
         "افتح Notion. اعمل صفحة جديدة اسمها \"My Business OS\".",
         "Section 1: \"Numbers Today\" — اعمل 4 boxes كبيرة لأهم 4 أرقام. (يدوي دلوقتي، تربطه بـ sheets بعدين.)",
@@ -139,7 +139,7 @@ export const BUSINESS_M4_L5_BUSINESS_OS_DASHBOARD_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "mission",
-      intro: "بقى عندك النظام كامل. مهمتك الأخيرة: تشغّله أسبوع كامل وتوثّق التجربة.",
+      title: "بقى عندك النظام كامل. مهمتك الأخيرة: تشغّله أسبوع كامل وتوثّق التجربة.",
       prompt: "بعد أسبوع شغّال على الـ Dashboard، ضيف في تسليمك:\n\n١) لينك الـ Dashboard (يفضّل screenshot).\n٢) كام قرار اتاخد باستخدام الـ Decision Framework؟\n٣) كام حاجة كنت بتعملها يدوياً اكتشفت إنها بقت في الـ SOPs؟\n٤) إيه أكبر فرق حسيته في يومك؟\n٥) إيه القطعة الجاية اللي محتاج تضيفها للـ Business OS بناءً على تجربتك؟",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",

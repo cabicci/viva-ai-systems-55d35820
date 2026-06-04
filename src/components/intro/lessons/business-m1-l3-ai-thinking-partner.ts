@@ -80,7 +80,7 @@ export const BUSINESS_M1_L3_AI_THINKING_PARTNER_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "executionTask",
-      intro: "كل درس في المسار ده هتطلع منه قطعة من نظام التشغيل بتاعك. النهارده قطعتك: Decision Prompt Template ثابت تستخدمه قبل أي قرار.",
+      title: "كل درس في المسار ده هتطلع منه قطعة من نظام التشغيل بتاعك. النهارده قطعتك: Decision Prompt Template ثابت تستخدمه قبل أي قرار.",
       steps: [
         "افتح ملف Notion أو Google Doc جديد واسمه \"My Decision Framework\".",
         "انسخ الـ prompt اللي فوق وعدّله بكلماتك إنت.",
@@ -144,7 +144,7 @@ export const BUSINESS_M1_L3_AI_THINKING_PARTNER_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "mission",
-      intro: "اختار قرار حقيقي عندك دلوقتي (مش افتراضي). استخدم Decision Framework Prompt اللي عملته. وثّق الحوار كامل.",
+      title: "اختار قرار حقيقي عندك دلوقتي (مش افتراضي). استخدم Decision Framework Prompt اللي عملته. وثّق الحوار كامل.",
       prompt: "في تسليمك اكتب:\n\n١) القرار: [اوصفه في سطر].\n٢) الـ Prompt اللي استخدمته (انسخه كامل).\n٣) الـ ٥ أسئلة اللي AI سألهالك.\n٤) إجاباتك على الأسئلة.\n٥) إيه القرار النهائي بعد الحوار؟ هل اتغير عن الأول؟ ليه؟",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",

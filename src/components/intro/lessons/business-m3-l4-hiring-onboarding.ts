@@ -80,7 +80,7 @@ export const BUSINESS_M3_L4_HIRING_ONBOARDING_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "executionTask",
-      intro: "هتطلع النهارده بـ 3 templates جاهزين تستخدمهم لأي وظيفة جاية.",
+      title: "هتطلع النهارده بـ 3 templates جاهزين تستخدمهم لأي وظيفة جاية.",
       steps: [
         "افتح Notion/Doc جديد اسمه \"My Hiring System\".",
         "اعمل 3 secs: ١) JD Template، ٢) Interview Scorecard، ٣) Onboarding Plan Template.",
@@ -146,7 +146,7 @@ export const BUSINESS_M3_L4_HIRING_ONBOARDING_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "mission",
-      intro: "حتى لو مش هتعيّن دلوقتي — حضّر الـ 3 documents. لما تحتاج، هيكونوا جاهزين.",
+      title: "حتى لو مش هتعيّن دلوقتي — حضّر الـ 3 documents. لما تحتاج، هيكونوا جاهزين.",
       prompt: "في تسليمك ضيف:\n\n١) الوظيفة + الـ 3 outcomes المطلوبة.\n٢) الـ JD الكامل (اللي وَلّده AI، انسخه).\n٣) Interview Scorecard من 5 معايير.\n٤) Onboarding Plan لأسبوع بأسبوع (4 أسابيع).\n٥) أول red flag هترفض على أساسه أي candidate.",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",

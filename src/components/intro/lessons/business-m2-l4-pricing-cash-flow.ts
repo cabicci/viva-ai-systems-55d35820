@@ -79,7 +79,7 @@ export const BUSINESS_M2_L4_PRICING_CASH_FLOW_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "executionTask",
-      intro: "النهارده هتطلع بأداتين شغّالين هتستخدمهم كل شهر.",
+      title: "النهارده هتطلع بأداتين شغّالين هتستخدمهم كل شهر.",
       steps: [
         "افتح Google Sheet جديد. اعمل تابين: \"Products & Margins\" و\"Monthly Cash Flow\".",
         "في التاب الأول: 4 أعمدة (المنتج، السعر، التكلفة المباشرة، الهامش = السعر - التكلفة). املا 5 منتجات أساسية عندك.",
@@ -144,7 +144,7 @@ export const BUSINESS_M2_L4_PRICING_CASH_FLOW_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "mission",
-      intro: "خد منتج/خدمة واحدة من بيزنسك. حط كل أرقامها قدام AI. طلّع تقرير كامل.",
+      title: "خد منتج/خدمة واحدة من بيزنسك. حط كل أرقامها قدام AI. طلّع تقرير كامل.",
       prompt: "في تسليمك اكتب:\n\n١) المنتج/الخدمة + سعرها الحالي.\n٢) كل تكاليفها (مباشرة + غير مباشرة + رسوم/عمولات).\n٣) الـ Prompt اللي استخدمته كامل.\n٤) أسئلة AI ليك + إجاباتك.\n٥) الـ ٣ نتايج اللي طلعت: unit economics, biggest leak, ٣ تعديلات مقترحة.\n٦) أي تعديل هتنفّذ النهارده؟",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",
