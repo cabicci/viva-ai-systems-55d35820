@@ -67,9 +67,9 @@ export const LESSON_CONTINUITY: Record<string, string> = {
     "بنيت RAG. آخر درس في الموديول: Agents — AI بياخد قرارات بنفسه.",
   "builder-m9-l3-agents":
     "خلصت طبقة الذكاء. الموديول الأخير: تنشر تطبيقك على دومين حقيقي وتجيب أول مستخدمين.",
-  "builder-m10-deploy-domain":
+  "builder-m10-l1-deploy-domain":
     "تطبيقك على الإنترنت. آخر درس: إزاي تجيب أول مستخدمين وتطوّر بناء على فيدباكهم.",
-  "builder-m10-first-users":
+  "builder-m10-l2-first-users":
     "خلصت مسار Builder كامل 🎉 — لو لسه عندك مسارات مفتوحة، ارجع للداشبورد واختار التالي بترتيبه (Business → Creator → Analyst → Automator).",
 
   /* ---------------- Creator path (14) ---------------- */

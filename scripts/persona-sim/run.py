@@ -49,16 +49,16 @@ LESSONS = [
 LESSONS = [
     {"id": "builder-m1-l1-what-is-llm",          "title": "إيه هو الـ LLM؟",        "path_id": "builder", "module_id": "builder-m1"},
     {"id": "builder-m1-l2-tokens-training",      "title": "Tokens والتدريب",        "path_id": "builder", "module_id": "builder-m1"},
-    {"id": "builder-m2-l3-prompt-layer",         "title": "طبقة الـ Prompt",        "path_id": "builder", "module_id": "builder-m2"},
-    {"id": "builder-m2-l4-instructions-examples","title": "تعليمات وأمثلة",         "path_id": "builder", "module_id": "builder-m2"},
-    {"id": "builder-m2-l5-style-control",        "title": "تحكّم في الـ Style",     "path_id": "builder", "module_id": "builder-m2"},
-    {"id": "builder-m3-l6-context-layer",        "title": "طبقة الـ Context",       "path_id": "builder", "module_id": "builder-m3"},
-    {"id": "builder-m3-l7-memory-limits",        "title": "حدود الذاكرة",           "path_id": "builder", "module_id": "builder-m3"},
-    {"id": "builder-m4-l8-parameters",           "title": "الـ Parameters",         "path_id": "builder", "module_id": "builder-m4"},
-    {"id": "builder-m4-l8-parameters",          "title": "Temperature و Top-p",    "path_id": "builder", "module_id": "builder-m4"},
-    {"id": "builder-m5-l10-frontend",             "title": "الـ Frontend",           "path_id": "builder", "module_id": "builder-m5"},
-    {"id": "builder-m5-l11-backend-api",          "title": "Backend / API",          "path_id": "builder", "module_id": "builder-m5"},
-    {"id": "builder-m5-l12-database-intro",       "title": "مقدمة الـ Database",     "path_id": "builder", "module_id": "builder-m5"},
+    {"id": "builder-m2-l1-prompt-layer",         "title": "طبقة الـ Prompt",        "path_id": "builder", "module_id": "builder-m2"},
+    {"id": "builder-m2-l2-instructions-examples","title": "تعليمات وأمثلة",         "path_id": "builder", "module_id": "builder-m2"},
+    {"id": "builder-m2-l3-style-control",        "title": "تحكّم في الـ Style",     "path_id": "builder", "module_id": "builder-m2"},
+    {"id": "builder-m3-l1-context-layer",        "title": "طبقة الـ Context",       "path_id": "builder", "module_id": "builder-m3"},
+    {"id": "builder-m3-l2-memory-limits",        "title": "حدود الذاكرة",           "path_id": "builder", "module_id": "builder-m3"},
+    {"id": "builder-m4-l1-parameters",           "title": "الـ Parameters",         "path_id": "builder", "module_id": "builder-m4"},
+    {"id": "builder-m4-l1-parameters",          "title": "Temperature و Top-p",    "path_id": "builder", "module_id": "builder-m4"},
+    {"id": "builder-m5-l2-frontend",             "title": "الـ Frontend",           "path_id": "builder", "module_id": "builder-m5"},
+    {"id": "builder-m5-l3-backend-api",          "title": "Backend / API",          "path_id": "builder", "module_id": "builder-m5"},
+    {"id": "builder-m5-l4-database-intro",       "title": "مقدمة الـ Database",     "path_id": "builder", "module_id": "builder-m5"},
 ]
 
 # ---------------------------------------------------------------------------
