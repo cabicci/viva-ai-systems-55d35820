@@ -541,75 +541,55 @@ function analystModules(): CurriculumModule[] {
   ];
 }
 
-/* Business — standalone leadership path. Closes the full ecosystem. */
+/* Business — 4 modules × 16 lessons. AI Operating System narrative. */
 function businessModules(): CurriculumModule[] {
   return [
     {
       order: 1,
       id: "business-m1",
-      title: "أنت فين في الخريطة؟",
-      subtitle: "من Operator لـ Leader — دورك بقى مختلف.",
+      title: "العقلية — من Operator لـ AI-Driven Leader",
+      subtitle: "دورك بقى مختلف + إزاي تفكر مع AI كـ Thinking Partner.",
       lessons: [
         businessShipped(1, "business-m1-l1-from-decisions-to-leadership", "القرارات بقت بتنفّذ نفسها — دورك إيه؟"),
+        businessShipped(2, "business-m2-l1-reactive-vs-proactive", "Reactive vs Proactive"),
+        businessShipped(3, "business-m1-l3-ai-thinking-partner", "AI كشريك تفكير — Decision Framework"),
       ],
     },
     {
       order: 2,
       id: "business-m2",
-      title: "Business Thinking",
-      subtitle: "Reactive vs Proactive + إيقاع أسبوعي يربط الـ ٤ مسارات.",
+      title: "العميل + الفلوس",
+      subtitle: "دورة حياة العميل، الـ Retention، علامات الجاهزية، والتسعير والـ Cash Flow.",
       lessons: [
-        businessShipped(1, "business-m2-l1-reactive-vs-proactive", "Reactive vs Proactive"),
-        businessShipped(2, "business-m2-l2-weekly-rhythm", "أسبوعك = ٤ مسارات"),
+        businessShipped(1, "business-m3-l1-customer-lifecycle", "دورة حياة العميل"),
+        businessShipped(2, "business-m3-l2-retention-flow", "Retention Flow"),
+        businessShipped(3, "business-m5-l1-readiness-signals", "علامات الجاهزية للتوسع"),
+        businessShipped(4, "business-m2-l4-pricing-cash-flow", "Pricing & Cash Flow Audit"),
       ],
     },
     {
       order: 3,
       id: "business-m3",
-      title: "إدارة العملاء بالـ AI",
-      subtitle: "دورة حياة العميل + Follow-up Flow.",
+      title: "التشغيل + الفريق",
+      subtitle: "Delegate أو Automate، تصنيف الشغل، النظام قبل الناس، وإزاي توظّف صح.",
       lessons: [
-        businessShipped(1, "business-m3-l1-customer-lifecycle", "دورة حياة العميل"),
-        businessShipped(2, "business-m3-l2-retention-flow", "Follow-up Flow"),
+        businessShipped(1, "business-m4-l2-delegate-or-automate", "Delegate ولا Automate؟"),
+        businessShipped(2, "business-m4-l1-strategic-operational-admin", "Strategic / Operational / Admin"),
+        businessShipped(3, "business-m5-l2-system-then-people", "System الأول — الناس بعدين"),
+        businessShipped(4, "business-m3-l4-hiring-onboarding", "Hiring & Onboarding بالـ AI"),
       ],
     },
     {
       order: 4,
       id: "business-m4",
-      title: "إدارة العمليات بالـ AI",
-      subtitle: "Strategic / Operational / Administrative — كل نوع في مكانه.",
+      title: "الاستدامة + الصورة الكاملة",
+      subtitle: "أخطر فخّين + الإيقاع الأسبوعي + الـ Ecosystem الكامل + Business OS Dashboard.",
       lessons: [
-        businessShipped(1, "business-m4-l1-strategic-operational-admin", "٣ أنواع شغل"),
-        businessShipped(2, "business-m4-l2-delegate-or-automate", "Delegate ولا Automate؟"),
-      ],
-    },
-    {
-      order: 5,
-      id: "business-m5",
-      title: "النمو والتوسع",
-      subtitle: "علامات الجاهزية + ترتيب التوسع الصح.",
-      lessons: [
-        businessShipped(1, "business-m5-l1-readiness-signals", "علامات الجاهزية للتوسع"),
-        businessShipped(2, "business-m5-l2-system-then-people", "System الأول — الناس بعدين"),
-      ],
-    },
-    {
-      order: 6,
-      id: "business-m6",
-      title: "لما الحاجات بتبوظ",
-      subtitle: "Reactive Relapse و Premature Scaling — أخطر فخّين.",
-      lessons: [
-        businessShipped(1, "business-m6-l1-reactive-relapse", "الرجوع لـ Reactive Mode"),
-        businessShipped(2, "business-m6-l2-premature-scaling", "توسع قبل الأوان"),
-      ],
-    },
-    {
-      order: 7,
-      id: "business-m7",
-      title: "Closing the Loop — النظام الكامل",
-      subtitle: "الـ ٥ مسارات في يومك — شخص + AI + System.",
-      lessons: [
-        businessShipped(1, "business-m7-l1-full-ecosystem", "الـ ٥ مسارات في يومك"),
+        businessShipped(1, "business-m6-l2-premature-scaling", "توسع قبل الأوان"),
+        businessShipped(2, "business-m6-l1-reactive-relapse", "الرجوع لـ Reactive Mode"),
+        businessShipped(3, "business-m2-l2-weekly-rhythm", "الإيقاع الأسبوعي = ٤ مسارات"),
+        businessShipped(4, "business-m7-l1-full-ecosystem", "الـ ٥ مسارات في يومك"),
+        businessShipped(5, "business-m4-l5-business-os-dashboard", "Business OS Dashboard — كل النظام في صفحة"),
       ],
     },
   ];
