@@ -139,7 +139,7 @@ export const BUSINESS_M4_L5_BUSINESS_OS_DASHBOARD_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "mission",
-      title: "بقى عندك النظام كامل. مهمتك الأخيرة: تشغّله أسبوع كامل وتوثّق التجربة.",
+      intro: "بقى عندك النظام كامل. مهمتك الأخيرة: تشغّله أسبوع كامل وتوثّق التجربة.",
       prompt: "بعد أسبوع شغّال على الـ Dashboard، ضيف في تسليمك:\n\n١) لينك الـ Dashboard (يفضّل screenshot).\n٢) كام قرار اتاخد باستخدام الـ Decision Framework؟\n٣) كام حاجة كنت بتعملها يدوياً اكتشفت إنها بقت في الـ SOPs؟\n٤) إيه أكبر فرق حسيته في يومك؟\n٥) إيه القطعة الجاية اللي محتاج تضيفها للـ Business OS بناءً على تجربتك؟",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",

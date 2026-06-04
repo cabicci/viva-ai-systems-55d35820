@@ -144,7 +144,7 @@ export const BUSINESS_M1_L3_AI_THINKING_PARTNER_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "mission",
-      title: "اختار قرار حقيقي عندك دلوقتي (مش افتراضي). استخدم Decision Framework Prompt اللي عملته. وثّق الحوار كامل.",
+      intro: "اختار قرار حقيقي عندك دلوقتي (مش افتراضي). استخدم Decision Framework Prompt اللي عملته. وثّق الحوار كامل.",
       prompt: "في تسليمك اكتب:\n\n١) القرار: [اوصفه في سطر].\n٢) الـ Prompt اللي استخدمته (انسخه كامل).\n٣) الـ ٥ أسئلة اللي AI سألهالك.\n٤) إجاباتك على الأسئلة.\n٥) إيه القرار النهائي بعد الحوار؟ هل اتغير عن الأول؟ ليه؟",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",
