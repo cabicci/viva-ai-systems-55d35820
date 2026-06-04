@@ -107,7 +107,6 @@ import { SCENES as L_builder_m6_l1_idea_to_page_S, SCENE_FRAMES as L_builder_m6_
 import { SCENES as L_builder_m7_l1_tables_columns_S, SCENE_FRAMES as L_builder_m7_l1_tables_columns_F, TOTAL_FRAMES as L_builder_m7_l1_tables_columns_T } from "./lessons-generated/builder-m7-l1-tables-columns.gen";
 import { SCENES as L_business_m7_l1_full_ecosystem_S, SCENE_FRAMES as L_business_m7_l1_full_ecosystem_F, TOTAL_FRAMES as L_business_m7_l1_full_ecosystem_T } from "./lessons-generated/business-m7-l1-full-ecosystem.gen";
 import { SCENES as L_business_m2_l2_weekly_rhythm_S, SCENE_FRAMES as L_business_m2_l2_weekly_rhythm_F, TOTAL_FRAMES as L_business_m2_l2_weekly_rhythm_T } from "./lessons-generated/business-m2-l2-weekly-rhythm.gen";
-import { SCENES as L_business_m4_l2_reactive_relapse_S, SCENE_FRAMES as L_business_m4_l2_reactive_relapse_F, TOTAL_FRAMES as L_business_m4_l2_reactive_relapse_T } from "./lessons-generated/business-m4-l2-reactive-relapse.gen";
 import { SCENES as L_business_m1_l2_reactive_vs_proactive_S, SCENE_FRAMES as L_business_m1_l2_reactive_vs_proactive_F, TOTAL_FRAMES as L_business_m1_l2_reactive_vs_proactive_T } from "./lessons-generated/business-m1-l2-reactive-vs-proactive.gen";
 import { SCENES as L_business_m3_l3_system_then_people_S, SCENE_FRAMES as L_business_m3_l3_system_then_people_F, TOTAL_FRAMES as L_business_m3_l3_system_then_people_T } from "./lessons-generated/business-m3-l3-system-then-people.gen";
 import { SCENES as L_business_m3_l2_strategic_operational_admin_S, SCENE_FRAMES as L_business_m3_l2_strategic_operational_admin_F, TOTAL_FRAMES as L_business_m3_l2_strategic_operational_admin_T } from "./lessons-generated/business-m3-l2-strategic-operational-admin.gen";
@@ -119,6 +118,7 @@ import { SCENES as L_business_m4_l1_premature_scaling_S, SCENE_FRAMES as L_busin
 import { SCENES as L_business_m3_l4_hiring_onboarding_S, SCENE_FRAMES as L_business_m3_l4_hiring_onboarding_F, TOTAL_FRAMES as L_business_m3_l4_hiring_onboarding_T } from "./lessons-generated/business-m3-l4-hiring-onboarding.gen";
 import { SCENES as L_business_m2_l3_readiness_signals_S, SCENE_FRAMES as L_business_m2_l3_readiness_signals_F, TOTAL_FRAMES as L_business_m2_l3_readiness_signals_T } from "./lessons-generated/business-m2-l3-readiness-signals.gen";
 import { SCENES as L_business_m2_l2_retention_flow_S, SCENE_FRAMES as L_business_m2_l2_retention_flow_F, TOTAL_FRAMES as L_business_m2_l2_retention_flow_T } from "./lessons-generated/business-m2-l2-retention-flow.gen";
+import { SCENES as L_business_m4_l2_reactive_relapse_S, SCENE_FRAMES as L_business_m4_l2_reactive_relapse_F, TOTAL_FRAMES as L_business_m4_l2_reactive_relapse_T } from "./lessons-generated/business-m4-l2-reactive-relapse.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -217,7 +217,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m7-l1-tables-columns", scenes: L_builder_m7_l1_tables_columns_S, sceneFrames: L_builder_m7_l1_tables_columns_F, totalFrames: L_builder_m7_l1_tables_columns_T },
     { id: "business-m7-l1-full-ecosystem", scenes: L_business_m7_l1_full_ecosystem_S, sceneFrames: L_business_m7_l1_full_ecosystem_F, totalFrames: L_business_m7_l1_full_ecosystem_T },
     { id: "business-m2-l2-weekly-rhythm", scenes: L_business_m2_l2_weekly_rhythm_S, sceneFrames: L_business_m2_l2_weekly_rhythm_F, totalFrames: L_business_m2_l2_weekly_rhythm_T },
-    { id: "business-m4-l2-reactive-relapse", scenes: L_business_m4_l2_reactive_relapse_S, sceneFrames: L_business_m4_l2_reactive_relapse_F, totalFrames: L_business_m4_l2_reactive_relapse_T },
     { id: "business-m1-l2-reactive-vs-proactive", scenes: L_business_m1_l2_reactive_vs_proactive_S, sceneFrames: L_business_m1_l2_reactive_vs_proactive_F, totalFrames: L_business_m1_l2_reactive_vs_proactive_T },
     { id: "business-m3-l3-system-then-people", scenes: L_business_m3_l3_system_then_people_S, sceneFrames: L_business_m3_l3_system_then_people_F, totalFrames: L_business_m3_l3_system_then_people_T },
     { id: "business-m3-l2-strategic-operational-admin", scenes: L_business_m3_l2_strategic_operational_admin_S, sceneFrames: L_business_m3_l2_strategic_operational_admin_F, totalFrames: L_business_m3_l2_strategic_operational_admin_T },
@@ -229,5 +228,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m3-l4-hiring-onboarding", scenes: L_business_m3_l4_hiring_onboarding_S, sceneFrames: L_business_m3_l4_hiring_onboarding_F, totalFrames: L_business_m3_l4_hiring_onboarding_T },
     { id: "business-m2-l3-readiness-signals", scenes: L_business_m2_l3_readiness_signals_S, sceneFrames: L_business_m2_l3_readiness_signals_F, totalFrames: L_business_m2_l3_readiness_signals_T },
     { id: "business-m2-l2-retention-flow", scenes: L_business_m2_l2_retention_flow_S, sceneFrames: L_business_m2_l2_retention_flow_F, totalFrames: L_business_m2_l2_retention_flow_T },
+    { id: "business-m4-l2-reactive-relapse", scenes: L_business_m4_l2_reactive_relapse_S, sceneFrames: L_business_m4_l2_reactive_relapse_F, totalFrames: L_business_m4_l2_reactive_relapse_T },
   /* @lesson-entries-end */
 ];

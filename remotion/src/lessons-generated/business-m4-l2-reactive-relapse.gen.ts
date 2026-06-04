@@ -5,49 +5,69 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "chip": "أهلًا بيك يا صاحبي",
-    "title": "بنيت نظام، شغل سليم",
-    "subtitle": "إزاي أحمد وقع في فخ الـ Reactive Relapse؟",
-    "highlight": "وبعدين فجأة رجعت تطفي حرايق"
+    "highlight": "وبعدين فجأة رجعت تطفي حرايق",
+    "subtitle": "أحمد بنى نظامه. SOPs، أتمتة، Strategic Blocks. شهرين كانت حياته أحسن من أي وقت. وبعدين أزمة.",
+    "chip": "أهلًا",
+    "title": "بنيت نظام، شغل سليم"
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "lavender",
-    "term": "Reactive Mode",
-    "definition": "حالة بتكون فيها بتاكل ردود أفعال على الأحداث طول الوقت بدون خطة.",
-    "tag": "أحمد بيرد على واتساب"
+    "bullets": [
+      "مورد رئيسي فشل، موظف ساب، عميل كبير اشتكى. كل ده في أسبوع.",
+      "أحمد ساب الـ Strategic Block والـ SOPs، رجع يرد على الواتساب ٢٤/٧.",
+      "رجع يطفي كل حريقة بنفسه. قال \"مؤقتاً\"، والمؤقت ده فضل شهرين."
+    ],
+    "title": "رجوع أحمد للـ Reactive Mode"
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "peach",
-    "term": "Relapse",
-    "definition": "الرجوع لعادة قديمة بعد ما اتعلمت أحسن.",
-    "tag": "أحمد رجع لـ admin شغل"
+    "bullets": [
+      "راجع لنفس الحالة قبل ما يبني النظام أصلاً.",
+      "الرجوع لـ Reactive Mode مش حدث، هو إدمان.",
+      "كل أزمة بتسحبك. وكل ساعة بتطفي حرايق بتقول لمخك \"ده دوري الحقيقي\"."
+    ],
+    "title": "الـ Reactive Mode إدمان"
   },
   {
     "card": "ConceptCard",
     "accent": "yellow",
-    "tag": "موظف ساب الشغل",
-    "term": "Crisis Trigger",
-    "definition": "حدث محدد بيخلّيك تنسى النظام وترجع للحرايق."
+    "tag": "رد فعل مستمر",
+    "definition": "حالة بتكون فيها بتاكل ردود أفعال على الأحداث طول الوقت بدون خطة.",
+    "term": "Reactive Mode (ريآكتف مود)"
   },
   {
     "card": "ConceptCard",
     "accent": "pink",
-    "tag": "كل سبت، أحمد يحط رقم",
-    "term": "Reactive Audit",
-    "definition": "تشيك أسبوعي بسيط: قضيت كم ساعة strategic vs reactive؟"
+    "tag": "انتكاسة للقديم",
+    "definition": "الرجوع لعادة قديمة بعد ما اتعلمت أحسن.",
+    "term": "Relapse (ريلابس)"
   },
   {
     "card": "ConceptCard",
     "accent": "mintDeep",
-    "term": "System Anchor",
+    "term": "Crisis Trigger (كرايسس تريجر)",
+    "tag": "شرارة الأزمة",
+    "definition": "حدث محدد بيخلّيك تنسى النظام وترجع للحرايق."
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "mint",
+    "term": "Reactive Audit (ريآكتف أوديت)",
+    "tag": "مراجعة أسبوعية",
+    "definition": "تشيك أسبوعي بسيط: قضيت كم ساعة strategic vs reactive؟"
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "lavender",
+    "tag": "مرسى النظام",
     "definition": "ميعاد ثابت بيرجعك للنظام مهما حصل — مش قابل للتأجيل.",
-    "tag": "أحمد بيراجع الـ Time Audit"
+    "term": "System Anchor (سيستم أنكر)"
   },
   {
     "card": "BulletsCard",
-    "accent": "mint",
+    "accent": "peach",
     "bullets": [
       "Strategic Block اتلغى أو اتنقل أكتر من ٣ مرات في أسبوع.",
       "بترد على واتساب فوراً — مش في ميعاد محدّد.",
@@ -58,28 +78,28 @@ export const SCENES: SceneData[] = [
   },
   {
     "card": "BulletsCard",
-    "accent": "lavender",
+    "accent": "yellow",
     "bullets": [
       "\"كل سبت هكلّمك. هقولك: كم ساعة strategic، كم ساعة admin، كم Strategic Block اتلغى، وأكبر أزمة الأسبوع. إنت تقولي: هل أنا في Reactive Relapse؟ على مقياس ١-١٠، إيه الرقم؟ وإيه الـ ٣ خطوات الأسبوع الجاي عشان أرجّع نفسي للنظام؟\""
     ],
-    "title": "Weekly Reactive Audit"
+    "title": "الـ Prompt القاتل: Weekly Reactive Audit"
   },
   {
     "card": "CompareCard",
-    "accent": "peach",
+    "accent": "pink",
     "right": {
-      "body": "أحمد حجز سبت ٧ صباحاً كـ Reactive Audit ثابت. حتى لو في أزمة، بيقعد ٣٠ دقيقة بس. ده بينبّهه قبل ما يتعمّق في الـ relapse.",
-      "label": "RIGHT — System Anchor"
+      "label": "RIGHT — System Anchor",
+      "body": "أحمد حجز سبت ٧ صباحاً كـ Reactive Audit ثابت. حتى لو في أزمة، بيقعد ٣٠ دقيقة بس. ده بينبّهه قبل ما يتعمّق في الـ relapse."
     },
     "title": "علاج مؤقت vs قاعدة دائمة",
     "left": {
-      "body": "أحمد قال \"الأسبوع ده استثناء\". الاستثناء بقى عادة. النظام اتسحب من تحت رجليه في شهرين بدون ما يحس. لما حس، كان صعب يرجع.",
-      "label": "FAILURE — \"مؤقتاً هرجع\""
+      "label": "FAILURE — \"مؤقتاً هرجع\"",
+      "body": "أحمد قال \"الأسبوع ده استثناء\". الاستثناء بقى عادة. النظام اتسحب من تحت رجليه في شهرين بدون ما يحس. لما حس، كان صعب يرجع."
     }
   },
   {
     "card": "BulletsCard",
-    "accent": "yellow",
+    "accent": "mintDeep",
     "bullets": [
       "احجز ميعاد ثابت أسبوعي (٣٠ دقيقة) في الكالندر — اسمه \"Reactive Audit\". اختار وقت مفيش فيه أي حاجة (٧ صباحاً، يوم إجازة).",
       "اكتب الـ ٤ علامات اللي فوق في مكان هتشوفه أثناء الـ Audit.",
@@ -91,22 +111,36 @@ export const SCENES: SceneData[] = [
     "title": "اعمل System Anchor الأسبوع ده"
   },
   {
-    "card": "CTACard",
-    "accent": "pink",
-    "highlight": "حلّ الأسئلة دي",
-    "tagline": "عشان تتأكد إنك هتعرف ترجع للنظام بسهولة.",
-    "title": "اختبر فهمك للـ Reactive Relapse",
-    "eyebrow": "دورك دلوقتي"
+    "card": "BulletsCard",
+    "accent": "mint",
+    "bullets": [
+      "**Strategic Hours الأسبوع ده** (تخطيط، تحليل، قرارات كبيرة): __ ساعة. (هدف: ≥ ١٠)",
+      "**Admin Hours الأسبوع ده** (واتساب، رد على عملاء، مهام تنفيذية): __ ساعة.",
+      "**Strategic Blocks اللي اتلغت أو اتأجلت:** __ مرة. (إنذار: ≥ ٣)",
+      "**أكبر Crisis Trigger الأسبوع:** __ (مورد / موظف / عميل / تقني / فلوس).",
+      "**رددت على واتساب فوراً (بدل ميعاد محدد) قد إيه؟** (نادراً / أحياناً / غالباً / دايماً)",
+      "**شرحت نفس الحاجة لموظف بدل ما تحوّله SOP** كم مرة؟ __",
+      "**آخر مرة فكرت في نمو البيزنس استراتيجياً:** من __ يوم."
+    ],
+    "title": "٧ أسئلة بتديك score دقيق على relapse"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "lavender",
+    "bullets": [
+      "\"دي أرقامي الأسبوع ده: Strategic Hours = X، Admin Hours = Y، Blocks الملغية = Z، أكبر Crisis = [اوصفها سطر]، Reactive Replies = [نادراً/أحياناً/غالباً/دايماً]، شرح يدوي بدل SOP = N مرة، آخر تفكير استراتيجي من D يوم. عايز منك: (١) Relapse Score من ١-١٠ مع تبرير. (٢) أهم ٣ أنماط حمراء شفتها. (٣) خطة الأسبوع الجاي في ٣ خطوات ملموسة — مش نصائح عامة. (٤) Trigger واحد لو ظهر تاني، إيه الـ guardrail اللي يمنع الـ relapse.\""
+    ],
+    "title": "خلي AI يعمل التشخيص بدالك: Auto-Audit Prompt"
   },
   {
     "card": "CTACard",
-    "accent": "mintDeep",
-    "eyebrow": "الخلاصة",
-    "tagline": "وعشان تكمل بناء نظامك، شوف الدرس الجاي: أسبوعك مش ٧ أيام عشوائية — هو ٤ مسارات متوازنة",
-    "title": "الـ Reactive Relapse مش نهاية العالم",
-    "highlight": "بس لازم تكون واعي ليه"
+    "accent": "peach",
+    "eyebrow": "دورك دلوقتي",
+    "title": "اختبر فهمك",
+    "tagline": "حل الأسئلة عشان تتأكد إنك فهمت الدرس كويس.",
+    "highlight": "اختبر فهمك"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [435, 481, 370, 430, 402, 460, 502, 490, 526, 491, 351, 501];
+export const SCENE_FRAMES: number[] = [345, 477, 445, 341, 403, 373, 397, 387, 768, 706, 623, 856, 694, 631, 264];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
