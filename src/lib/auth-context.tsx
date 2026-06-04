@@ -58,10 +58,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (e === "SIGNED_IN" && s?.user && !claimedUserIds.current.has(s.user.id)) {
         claimedUserIds.current.add(s.user.id);
         const deviceId = getDeviceId();
-        const p = supabase.rpc("claim_active_device", { p_device_id: deviceId }).then(({ error }) => {
+        const p = Promise.resolve(
+          supabase.rpc("claim_active_device", { p_device_id: deviceId }),
+        ).then(({ error }) => {
           if (error) captureError("auth:claim_active_device", error);
         });
         claimPromises.current.set(s.user.id, p);
+
       }
       if (e === "SIGNED_OUT") {
         claimedUserIds.current.clear();
