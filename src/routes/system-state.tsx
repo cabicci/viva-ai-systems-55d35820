@@ -236,7 +236,7 @@ function SystemStatePage() {
           <div className="glass rounded-xl p-5 border border-border/40">
             <p className="text-sm font-bold mb-2">Navigation Hierarchy</p>
             <p className="text-xs text-muted-foreground leading-loose font-mono">
-              /dashboard → /curriculum → /paths/&#123;path&#125; → Module → /lessons/&#123;lessonId&#125;
+              /dashboard → /curriculum → Module → /learn/&#123;pathId&#125;/&#123;lessonId&#125;
             </p>
           </div>
         </Section>

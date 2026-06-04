@@ -656,7 +656,6 @@ export const PATHS: CurriculumPath[] = [
     status: "open",
     kind: "path",
     tier: "user",
-    route: "/paths/business",
     modules: businessModules(),
   },
   {
@@ -690,7 +689,6 @@ export const PATHS: CurriculumPath[] = [
     status: "open",
     kind: "path",
     tier: "operator",
-    route: "/paths/automator",
     modules: automatorModules(),
   },
   {
@@ -702,7 +700,6 @@ export const PATHS: CurriculumPath[] = [
     status: "open",
     kind: "path",
     tier: "builder",
-    route: "/paths/builder",
     modules: builderMilestones(),
   },
 
