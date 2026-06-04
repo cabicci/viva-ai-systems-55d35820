@@ -118,6 +118,7 @@ import { SCENES as L_business_m2_l1_customer_lifecycle_S, SCENE_FRAMES as L_busi
 import { SCENES as L_business_m4_l1_premature_scaling_S, SCENE_FRAMES as L_business_m4_l1_premature_scaling_F, TOTAL_FRAMES as L_business_m4_l1_premature_scaling_T } from "./lessons-generated/business-m4-l1-premature-scaling.gen";
 import { SCENES as L_business_m3_l4_hiring_onboarding_S, SCENE_FRAMES as L_business_m3_l4_hiring_onboarding_F, TOTAL_FRAMES as L_business_m3_l4_hiring_onboarding_T } from "./lessons-generated/business-m3-l4-hiring-onboarding.gen";
 import { SCENES as L_business_m2_l3_readiness_signals_S, SCENE_FRAMES as L_business_m2_l3_readiness_signals_F, TOTAL_FRAMES as L_business_m2_l3_readiness_signals_T } from "./lessons-generated/business-m2-l3-readiness-signals.gen";
+import { SCENES as L_business_m2_l2_retention_flow_S, SCENE_FRAMES as L_business_m2_l2_retention_flow_F, TOTAL_FRAMES as L_business_m2_l2_retention_flow_T } from "./lessons-generated/business-m2-l2-retention-flow.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -227,5 +228,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m4-l1-premature-scaling", scenes: L_business_m4_l1_premature_scaling_S, sceneFrames: L_business_m4_l1_premature_scaling_F, totalFrames: L_business_m4_l1_premature_scaling_T },
     { id: "business-m3-l4-hiring-onboarding", scenes: L_business_m3_l4_hiring_onboarding_S, sceneFrames: L_business_m3_l4_hiring_onboarding_F, totalFrames: L_business_m3_l4_hiring_onboarding_T },
     { id: "business-m2-l3-readiness-signals", scenes: L_business_m2_l3_readiness_signals_S, sceneFrames: L_business_m2_l3_readiness_signals_F, totalFrames: L_business_m2_l3_readiness_signals_T },
+    { id: "business-m2-l2-retention-flow", scenes: L_business_m2_l2_retention_flow_S, sceneFrames: L_business_m2_l2_retention_flow_F, totalFrames: L_business_m2_l2_retention_flow_T },
   /* @lesson-entries-end */
 ];
