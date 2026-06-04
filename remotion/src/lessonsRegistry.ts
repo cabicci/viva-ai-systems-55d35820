@@ -109,6 +109,7 @@ import { SCENES as L_business_m7_l1_full_ecosystem_S, SCENE_FRAMES as L_business
 import { SCENES as L_business_m2_l2_weekly_rhythm_S, SCENE_FRAMES as L_business_m2_l2_weekly_rhythm_F, TOTAL_FRAMES as L_business_m2_l2_weekly_rhythm_T } from "./lessons-generated/business-m2-l2-weekly-rhythm.gen";
 import { SCENES as L_business_m4_l2_reactive_relapse_S, SCENE_FRAMES as L_business_m4_l2_reactive_relapse_F, TOTAL_FRAMES as L_business_m4_l2_reactive_relapse_T } from "./lessons-generated/business-m4-l2-reactive-relapse.gen";
 import { SCENES as L_business_m1_l1_from_decisions_to_leadership_S, SCENE_FRAMES as L_business_m1_l1_from_decisions_to_leadership_F, TOTAL_FRAMES as L_business_m1_l1_from_decisions_to_leadership_T } from "./lessons-generated/business-m1-l1-from-decisions-to-leadership.gen";
+import { SCENES as L_business_m1_l2_reactive_vs_proactive_S, SCENE_FRAMES as L_business_m1_l2_reactive_vs_proactive_F, TOTAL_FRAMES as L_business_m1_l2_reactive_vs_proactive_T } from "./lessons-generated/business-m1-l2-reactive-vs-proactive.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -209,5 +210,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m2-l2-weekly-rhythm", scenes: L_business_m2_l2_weekly_rhythm_S, sceneFrames: L_business_m2_l2_weekly_rhythm_F, totalFrames: L_business_m2_l2_weekly_rhythm_T },
     { id: "business-m4-l2-reactive-relapse", scenes: L_business_m4_l2_reactive_relapse_S, sceneFrames: L_business_m4_l2_reactive_relapse_F, totalFrames: L_business_m4_l2_reactive_relapse_T },
     { id: "business-m1-l1-from-decisions-to-leadership", scenes: L_business_m1_l1_from_decisions_to_leadership_S, sceneFrames: L_business_m1_l1_from_decisions_to_leadership_F, totalFrames: L_business_m1_l1_from_decisions_to_leadership_T },
+    { id: "business-m1-l2-reactive-vs-proactive", scenes: L_business_m1_l2_reactive_vs_proactive_S, sceneFrames: L_business_m1_l2_reactive_vs_proactive_F, totalFrames: L_business_m1_l2_reactive_vs_proactive_T },
   /* @lesson-entries-end */
 ];
