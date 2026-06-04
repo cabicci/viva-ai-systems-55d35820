@@ -97,7 +97,7 @@ import { BUSINESS_M4_L2_DELEGATE_OR_AUTOMATE_BLOCKS } from "./business-m3-l1-del
 import { BUSINESS_M4_L5_BUSINESS_OS_DASHBOARD_BLOCKS } from "./business-m4-l5-business-os-dashboard";
 import { BUSINESS_M5_L1_READINESS_SIGNALS_BLOCKS } from "./business-m2-l3-readiness-signals";
 import { BUSINESS_M5_L2_SYSTEM_THEN_PEOPLE_BLOCKS } from "./business-m3-l3-system-then-people";
-import { BUSINESS_M6_L1_REACTIVE_RELAPSE_BLOCKS } from "./business-m4-l2-reactive-relapse";
+import { BUSINESS_M4_L2_REACTIVE_RELAPSE_BLOCKS } from "./business-m4-l2-reactive-relapse";
 import { BUSINESS_M6_L2_PREMATURE_SCALING_BLOCKS } from "./business-m4-l1-premature-scaling";
 import { BUSINESS_M7_L1_FULL_ECOSYSTEM_BLOCKS } from "./business-m4-l4-full-ecosystem";
 
@@ -204,7 +204,7 @@ export const INTRO_LESSON_CONTENT: Record<string, IntroLessonContent> = {
   "business-m3-l3-system-then-people": BUSINESS_M5_L2_SYSTEM_THEN_PEOPLE_BLOCKS,
   "business-m3-l4-hiring-onboarding": BUSINESS_M3_L4_HIRING_ONBOARDING_BLOCKS,
   "business-m4-l1-premature-scaling": BUSINESS_M6_L2_PREMATURE_SCALING_BLOCKS,
-  "business-m4-l2-reactive-relapse": BUSINESS_M6_L1_REACTIVE_RELAPSE_BLOCKS,
+  "business-m4-l2-reactive-relapse": BUSINESS_M4_L2_REACTIVE_RELAPSE_BLOCKS,
   "business-m4-l3-weekly-rhythm": BUSINESS_M2_L2_WEEKLY_RHYTHM_BLOCKS,
   "business-m4-l4-full-ecosystem": BUSINESS_M7_L1_FULL_ECOSYSTEM_BLOCKS,
   "business-m4-l5-business-os-dashboard": BUSINESS_M4_L5_BUSINESS_OS_DASHBOARD_BLOCKS,
