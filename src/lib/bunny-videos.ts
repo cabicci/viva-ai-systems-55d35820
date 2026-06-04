@@ -67,7 +67,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "business-m1-l1-from-decisions-to-leadership": "df9cfa23-851b-47b7-b578-5f7d4903ff7f",
   "business-m1-l2-reactive-vs-proactive": "e39b85c3-275e-47aa-bd74-2ca2f6dcec5c",
   "business-m1-l3-ai-thinking-partner": "06284c99-b7b5-4ec2-b3f6-77439d70acb6",
-  "business-m2-l1-customer-lifecycle": "149b2c20-8885-41dc-9d05-91c8e5812006",
+  "business-m2-l1-customer-lifecycle": "7c0ca5ab-e263-47b4-9c8f-674e8f6fd5a1",
   "business-m2-l1-reactive-vs-proactive": "9ab18665-e91c-46d4-ac12-b26550f50e99",
   "business-m2-l2-retention-flow": "7d66467e-359b-44cc-bce4-c5443f0f4daa",
   "business-m2-l2-weekly-rhythm": "4515f29b-6544-462c-8247-a09b64ede410",

@@ -114,6 +114,7 @@ import { SCENES as L_business_m3_l2_strategic_operational_admin_S, SCENE_FRAMES 
 import { SCENES as L_business_m1_l3_ai_thinking_partner_S, SCENE_FRAMES as L_business_m1_l3_ai_thinking_partner_F, TOTAL_FRAMES as L_business_m1_l3_ai_thinking_partner_T } from "./lessons-generated/business-m1-l3-ai-thinking-partner.gen";
 import { SCENES as L_business_m3_l1_delegate_or_automate_S, SCENE_FRAMES as L_business_m3_l1_delegate_or_automate_F, TOTAL_FRAMES as L_business_m3_l1_delegate_or_automate_T } from "./lessons-generated/business-m3-l1-delegate-or-automate.gen";
 import { SCENES as L_business_m1_l1_from_decisions_to_leadership_S, SCENE_FRAMES as L_business_m1_l1_from_decisions_to_leadership_F, TOTAL_FRAMES as L_business_m1_l1_from_decisions_to_leadership_T } from "./lessons-generated/business-m1-l1-from-decisions-to-leadership.gen";
+import { SCENES as L_business_m2_l1_customer_lifecycle_S, SCENE_FRAMES as L_business_m2_l1_customer_lifecycle_F, TOTAL_FRAMES as L_business_m2_l1_customer_lifecycle_T } from "./lessons-generated/business-m2-l1-customer-lifecycle.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -219,5 +220,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m1-l3-ai-thinking-partner", scenes: L_business_m1_l3_ai_thinking_partner_S, sceneFrames: L_business_m1_l3_ai_thinking_partner_F, totalFrames: L_business_m1_l3_ai_thinking_partner_T },
     { id: "business-m3-l1-delegate-or-automate", scenes: L_business_m3_l1_delegate_or_automate_S, sceneFrames: L_business_m3_l1_delegate_or_automate_F, totalFrames: L_business_m3_l1_delegate_or_automate_T },
     { id: "business-m1-l1-from-decisions-to-leadership", scenes: L_business_m1_l1_from_decisions_to_leadership_S, sceneFrames: L_business_m1_l1_from_decisions_to_leadership_F, totalFrames: L_business_m1_l1_from_decisions_to_leadership_T },
+    { id: "business-m2-l1-customer-lifecycle", scenes: L_business_m2_l1_customer_lifecycle_S, sceneFrames: L_business_m2_l1_customer_lifecycle_F, totalFrames: L_business_m2_l1_customer_lifecycle_T },
   /* @lesson-entries-end */
 ];
