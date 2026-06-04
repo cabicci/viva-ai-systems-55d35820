@@ -2,7 +2,7 @@ import { AlertTriangle, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, MessageS
 import type { IntroLessonContent } from "../intro-lesson-types";
 
 /** Business · M4 · Lesson 02 — الرجوع لـ Reactive Mode */
-export const BUSINESS_M6_L1_REACTIVE_RELAPSE_BLOCKS: IntroLessonContent = [
+export const BUSINESS_M4_L2_REACTIVE_RELAPSE_BLOCKS: IntroLessonContent = [
   {
     icon: AlertTriangle,
     eyebrow: "HERO",
@@ -98,7 +98,7 @@ export const BUSINESS_M6_L1_REACTIVE_RELAPSE_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "business-m6-l1-reactive-relapse-apply",
+      lessonId: "business-m4-l2-reactive-relapse-apply",
       items: [
         {
           id: "apply1",
