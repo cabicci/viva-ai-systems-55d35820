@@ -37,6 +37,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // Track which user ids we've already claimed the active-device row for,
   // so token refreshes / tab focus events don't re-fire `claim_active_device`.
   const claimedUserIds = useRef<Set<string>>(new Set());
+  // Promise that resolves once the claim RPC for the current user finished,
+  // so the device-watcher effect won't read a stale row mid-login and sign us out.
+  const claimPromises = useRef<Map<string, Promise<void>>>(new Map());
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -55,12 +58,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (e === "SIGNED_IN" && s?.user && !claimedUserIds.current.has(s.user.id)) {
         claimedUserIds.current.add(s.user.id);
         const deviceId = getDeviceId();
-        supabase.rpc("claim_active_device", { p_device_id: deviceId }).then(({ error }) => {
+        const p = supabase.rpc("claim_active_device", { p_device_id: deviceId }).then(({ error }) => {
           if (error) captureError("auth:claim_active_device", error);
         });
+        claimPromises.current.set(s.user.id, p);
       }
       if (e === "SIGNED_OUT") {
         claimedUserIds.current.clear();
+        claimPromises.current.clear();
       }
     });
     supabase.auth.getSession().then(({ data }) => {
@@ -91,13 +96,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
     };
 
-    // Initial check
-    supabase
-      .from("user_active_device")
-      .select("device_id")
-      .eq("user_id", userId)
-      .maybeSingle()
-      .then(({ data }) => check(data?.device_id));
+    // Wait for any in-flight claim from this tab to finish before reading the
+    // row — otherwise we race the claim, see the previous device's id, and
+    // sign ourselves out right after a successful login.
+    const pending = claimPromises.current.get(userId) ?? Promise.resolve();
+    pending.then(() => {
+      if (cancelled) return;
+      supabase
+        .from("user_active_device")
+        .select("device_id")
+        .eq("user_id", userId)
+        .maybeSingle()
+        .then(({ data }) => check(data?.device_id));
+    });
 
     const channel = supabase
       .channel(`uad:${userId}`)
@@ -116,6 +127,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       supabase.removeChannel(channel);
     };
   }, [session?.user?.id]);
+
 
   return (
     <Ctx.Provider
