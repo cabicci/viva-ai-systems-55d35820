@@ -1,18 +1,19 @@
-import { Infinity as InfinityIcon, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, Network, FlaskConical } from "lucide-react";
+import { Layers, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, MessageSquare, Sparkles } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-/** Business · M6 · Lesson 01 — خريطة الـ Ecosystem الكامل */
+/** Business · M4 · Lesson 04 — الـ ٥ مسارات في يومك */
 export const BUSINESS_M7_L1_FULL_ECOSYSTEM_BLOCKS: IntroLessonContent = [
   {
-    icon: InfinityIcon,
+    icon: Layers,
     eyebrow: "HERO",
-    title: "الـ ٥ أدوار في بيزنسك",
+    title: "Business مش مسار لوحده — هو اللي بيوصّل الـ ٤ مسارات لبعضها",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "شخص واحد + AI + System صح = Business كامل.",
-        "في الدرس ده بتشوف خريطة الـ 5 أدوار اللي أي بيزنس محتاجها — Business بيقودهم، والمسارات الجاية (Builder · Creator · Automator · Analyst) بتعلّمك تنفّذ كل دور بنفسك أو بالـ AI.",
+        "أحمد دلوقتي عنده نظام تشغيل كامل: Decision Framework، Customer Journey، SOPs، Time Audit، Weekly Rhythm. بس فضل عنده اكتشاف أخير — مسار Business لوحده مش كافي. لازم يربط الـ ٥ مسارات في إيكوسيستم متكامل.",
+        "Builder بيحلّ مشكلة منتج. Creator بيوصّل صوت البيزنس. Automator بيشيل العمليات المتكررة. Analyst بيدّيك الأرقام للقرارات. Business هو الـ conductor اللي بيقول لكل مسار يلعب امتى وإزاي.",
+        "أحمد لما ربط الـ ٥ مسارات: استخدم Analyst عشان يحلّل الـ Retention، Creator عشان يحوّل القصص لمحتوى، Automator عشان يأتمت الـ Retention Flow، Builder عشان يبني تطبيق طلبات. كل ده تحت قيادة Business. نتيجة: بيزنس بيشتغل كمنظومة، مش كقطع متفرّقة.",
       ],
     },
   },
@@ -23,13 +24,11 @@ export const BUSINESS_M7_L1_FULL_ECOSYSTEM_BLOCKS: IntroLessonContent = [
     block: {
       kind: "concepts",
       items: [
-        { term: "Ecosystem", meaning: "دائرة شغل كاملة، كل حتة فيها بتسلم اللي بعدها عشان المكنة تطلع قماش.", example: "زي لما تفتح محل ملابس وتجيب بضاعة وتعمل إعلانات، الترس بيلف وكل خطوة بتساعد التانية." },
-        { term: "Leads parenting (Leads)Line", meaning: "زبون محتمل أبدى اهتمام، لسه مشتراش بس \"خيط\" ممكن يوصلك لبيعة.", example: "لما حد يبعتلك رسالة يسأل عن سعر \"كورس المحاسبة\"، ده كده لسه خيط مش بيعة أكيدة." },
-        { term: "Builder & Creator Roles", meaning: "الأدوار اللي بتقوم بيها؛ يا بتبني السيستم (Builder) يا بتعمل محتوى يشد الناس (Creator).", example: "المحاسب اللي بيسجل القيود هو \"باني\" السيستم، والمسوق اللي بيعمل فيديوهات هو \"صانع\" المحتوى." },
-        { term: "Automator", meaning: "برامج بتربط الشغل ببعضه عشان يشتغل \"أوتوماتيك\" من غير ما تدوس على زراير.", example: "زي ما تربط شيت الإكسيل ببرنامج الفواتير، أول ما تسجل قيد يروح مسمع في المخزن لوحده." },
-        { term: "Output to Input", meaning: "شغل بيخلص بيبقى هو البنزين اللي بيشغل الخطوة اللي بعدها علطول.", example: "لما بوست فيسبوك (مخرج) يجيبلك رقم تليفون زبون، فتاخد الرقم ده (مدخل) وتكلمه تبيعه." },
-        { term: "Operating Cadence index (Cadence)Index", meaning: "الروتين أو الجدول اللي بيمشي عليه الـ Ecosystem عشان ميفصلش منك.", example: "لما تظبط يوم \"السبت\" لمراجعة الحسابات ويوم \"الأحد\" للتسويق، ده بيخلي الشغل ماشي بانتظام." },
-        { term: "Compounding", meaning: "مكاسب بسيطة فوق بعضها، مع الوقت بتعمل خبطة كبيرة ومفاجأة.", example: "لو كل يوم وفرت 10 جنيه، بعد سنة هتلاقي معاك مبلغ يفتح فرع جديد." },
+        { term: "Ecosystem", meaning: "منظومة متكاملة من المسارات الـ ٥ بتشتغل مع بعض بدل ما تكون منعزلة.", example: "أحمد: Business بيقرّر، Analyst بيقيس، Automator بينفّذ، Creator بيوصّل، Builder بيبني." },
+        { term: "Conductor Role", meaning: "دور القائد اللي بيحدّد كل مسار يلعب امتى وإزاي.", example: "أحمد بيقرّر إن Analyst يحلّل قبل ما Creator يكتب." },
+        { term: "Cross-Track Synergy", meaning: "لما مسارين بيشتغلوا مع بعض بيطلّعوا نتيجة أكبر من جمعهم.", example: "Analyst + Creator: بيانات الـ Retention بتحوّل لقصة محتوى." },
+        { term: "Workflow Stack", meaning: "تسلسل واضح: المسار ده بياخد input من فين، وبيدّي output لمين.", example: "Analyst → Business (قرار) → Automator (تنفيذ) → Creator (توصيل)." },
+        { term: "Integration Audit", meaning: "مراجعة دورية: هل المسارات الـ ٥ بتتكلم مع بعض ولا كل واحد لوحده؟", example: "أحمد كل شهر يشوف: هل في مسار شغّال في عزلة؟" },
       ],
     },
   },
@@ -38,49 +37,65 @@ export const BUSINESS_M7_L1_FULL_ECOSYSTEM_BLOCKS: IntroLessonContent = [
     eyebrow: "فيديو الدرس",
     title: "اتفرّج الأول",
     tone: "accent",
-    block: { kind: "lessonVideo", caption: "الـ 5 أدوار في صورة واحدة — وإزاي Business بيربطها." },
+    block: { kind: "lessonVideo", caption: "إزاي الـ ٥ مسارات بتشتغل مع بعض تحت قيادة Business." },
   },
   {
     icon: Lightbulb,
     eyebrow: "الفكرة",
-    title: "الـ Loop الكامل",
+    title: "ربط الـ ٥ مسارات في workflow واحد",
     block: {
       kind: "numberedList",
       items: [
-        "خبرتك + مشكلة حقيقية = نقطة البداية.",
-        "Builder: System بيشتغل لوحده (المنتج).",
-        "Creator: Leads بيجيبها المحتوى.",
-        "Automator: كل حاجة تلقائية (الجمع + المتابعة).",
-        "Analyst: الأرقام بتقولّك إيه اللي اشتغل.",
-        "Business: إنت بتاخد القرارات الاستراتيجية بس — وبتديها للـ ٤ مسارات تنفّذ.",
-        "النتيجة: شغل ينمو، وإنت بتشتغل أقل ساعات بقرار أكبر.",
+        "Analyst — بيكشف المشكلة بالأرقام (مثلاً: Retention 18%).",
+        "Business — بيحدّد القرار (نشتغل على Retention قبل أي حاجة).",
+        "Automator — بيبني الـ workflow (رسالة بعد كل أوردر).",
+        "Creator — بيكتب الرسالة بصوت البراند.",
+        "Builder — بيبني الأداة لو محتاج شيء مخصّص (تطبيق ولاء مثلاً).",
       ],
     },
   },
   {
-    icon: Network,
-    eyebrow: "شوف بنفسك",
-    title: "الـ ٥ مسارات — Ecosystem واحد",
+    icon: MessageSquare,
+    eyebrow: "الـ Prompt القاتل",
+    title: "5-Track Ecosystem Designer",
+    tone: "accent",
     block: {
-      kind: "diagram",
-      id: "ecosystem-loop",
-      caption: "كل مسار بيغذّي اللي بعديه · إنت + AI + System في المركز.",
+      kind: "rule",
+      statement: "\"عندي مشكلة في بيزنسي [اوصفها]. صمّم لي workflow بيستخدم الـ ٥ مسارات (Business, Analyst, Automator, Creator, Builder) بالترتيب. لكل مسار: ١) دوره في الحل. ٢) الـ input اللي بياخده. ٣) الـ output اللي بيدّيه. ٤) أداة AI واحدة محدّدة هستخدمها.\"",
     },
   },
   {
     icon: Scale,
     eyebrow: "Failure × Right",
-    title: "كل مسار لوحده vs ecosystem",
+    title: "مسارات منعزلة vs ecosystem متكامل",
     block: {
       kind: "comparison",
-      left: { label: "FAILURE — مسارات منفصلة", body: "Builder منفصل عن Creator. Creator منفصل عن Analyst. كل واحد شغّال بس مفيش loop." },
-      right: { label: "RIGHT — Ecosystem واحد", body: "كل مسار بيغذّي اللي بعديه. القرار الواحد بيلمس كل المنظومة. الشغل بقى نظام عضوي." },
+      left: { label: "FAILURE — منعزل", body: "أحمد يستخدم Creator لمحتوى عشوائي بدون أرقام من Analyst. يكتب أتمتة بدون قرار من Business. كل مسار شغّال لوحده — نتيجة: شغل كتير، أثر قليل." },
+      right: { label: "RIGHT — ecosystem", body: "أحمد يبدأ من Analyst (إيه المشكلة؟)، يقرّر بـ Business، يبني بـ Automator، يوصّل بـ Creator. كل مسار بيدخل في التاني. نتيجة: شغل أقل، أثر أكبر." },
+    },
+  },
+  {
+    icon: Rocket,
+    eyebrow: "Build Along — قطعتك في الـ Business OS",
+    title: "صمّم workflow حقيقي يربط الـ ٥ مسارات",
+    tone: "accent",
+    block: {
+      kind: "executionTask",
+      title: "آخر قطعة في الـ Business OS = القدرة تربط كل المسارات في حل واحد متكامل.",
+      steps: [
+        "اختار مشكلة حقيقية في بيزنسك دلوقتي (Retention ضعيف، مبيعات ثابتة، فريق مش منتج).",
+        "افتح AI. الصق الـ Prompt القاتل مع المشكلة بتاعتك.",
+        "خد الـ workflow اللي طلع، وارسمه على ورقة كـ flow chart (مربع لكل مسار + سهم بين كل اتنين).",
+        "لكل مسار، حدّد: الأداة اللي هتستخدمها + الوقت المتوقع + المسؤول (إنت، فريق، AI).",
+        "نفّذ أول خطوتين فقط (Analyst + Business) الأسبوع ده. مش لازم تنفّذ الـ ٥ مرة واحدة.",
+        "وثّق الـ workflow في \"Business OS\" بتاعك — هتعيد استخدامه لمشاكل تانية.",
+      ],
     },
   },
   {
     icon: Rocket,
     eyebrow: "دورك دلوقتي",
-    title: "ارسم Ecosystem-ك",
+    title: "اختبر فهمك",
     tone: "accent",
     block: {
       kind: "quiz",
@@ -89,91 +104,71 @@ export const BUSINESS_M7_L1_FULL_ECOSYSTEM_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "أحمد عامل بودكاست، وبيحاول يجيب ضيوف مميزين ويعمل حلقات قوية. بس شايف إن عدد المستمعين مش بيزيد. إيه الإجراء اللي المفروض ياخده أحمد عشان المسارات بتاعته تبقى ماشية صح؟",
+          question: "أحمد عايز يرفع المبيعات. بدأ مباشرة بـ Creator يكتب إعلانات. إيه الغلط؟",
           options: [
-            "يركز أكتر على التسويق المدفوع للحلقة الجاية وبس.",
-            "يراجع مسار 'Builder' ويتأكد إن جودة الصوت والمونتاج احترافية.",
-            "يبدأ يشوف الأرقام في مسار الـ 'Analyst' عشان يعرف إيه الحلقات اللي عجبت الناس وإيه اللي لأ."
+            "مفيش غلط — Creator هو اللي بيجيب مبيعات.",
+            "بدأ من نص المنظومة. لازم Analyst الأول (إيه السبب الحقيقي لقلة المبيعات؟) ثم Business يقرّر الحل، وبعدين Creator.",
+            "كان لازم يبدأ بـ Builder.",
           ],
-          correctIndex: 2,
-          explanation: "مسار الـ 'Analyst' هو اللي بيحلل الأرقام عشان يعرف إيه اللي اشتغل وإيه اللي محتاج يتعدل. ده أساس اتخاذ القرارات الصح."
+          correctIndex: 1,
+          explanation: "Creator بدون Analyst = إعلانات لمشكلة مش متأكد إيه هي. ممكن المشكلة مش في التوعية أصلاً — ممكن في التسعير، الجودة، أو الـ Retention. ابدأ بالتشخيص دايماً، بعدين القرار، بعدين التنفيذ."
         },
         {
           id: "apply2",
           bloom: "apply",
-          question: "سارة بتبيع كروشيه أونلاين. بتعمل تصميمات حلوة، وبتصورها كويس. بس بتلاقي إن عندها متابعين كتير بس مفيش بيع حقيقي. إيه المسار اللي سارة محتاجة تركز عليه عشان تحوّل المتابعين لزباين؟",
+          question: "Cross-Track Synergy: أحمد عنده بيانات Retention من Analyst. إزاي يستفيد Creator منها؟",
           options: [
-            "مسار الـ 'Creator' عشان تعمل محتوى يجيب عملاء محتملين (leads).",
-            "مسار الـ 'Automator' عشان تبعت رسائل تلقائية لكل المتابعين.",
-            "مسار الـ 'Business' عشان تاخد قرار استراتيجي بتغيير نوع المنتجات."
+            "يستخدمها كأرقام إعلانية.",
+            "يحوّل قصص العملاء اللي رجعوا لمحتوى — شهادات، فيديوهات قبل/بعد، \"ليه ٤٧% بيرجعوا\".",
+            "يتجاهلها — مش شغله.",
           ],
-          correctIndex: 0,
-          explanation: "مسار الـ 'Creator' هو المسؤول عن المحتوى اللي بيجيب الـ 'Leads'. التحويل من المتابعين لعملاء محتاج محتوى يجذبهم للشراء."
+          correctIndex: 1,
+          explanation: "Synergy الحقيقي = أرقام Analyst بتتحوّل لقصص Creator. العملاء الراجعين هم أقوى دليل اجتماعي — استخدم قصصهم في المحتوى. ده بيرفع الـ acquisition عن طريق الـ retention. ده اللي بيخلّي المسارات تكسب من بعض."
         },
         {
           id: "apply3",
           bloom: "apply",
-          question: "محمد عنده خدمة استشارات أونلاين، وبيلاقي إن وقت كبير بيضيّع منه في الرد على الإيميلات وتحديد المواعيد ومتابعة الدفعات. إيه المسار اللي المفروض يركز عليه عشان يوفر وقته ده؟",
+          question: "في workflow بتاعك، Builder بياخد input من مين؟",
           options: [
-            "مسار الـ 'Analyst' عشان يشوف أكتر الأوقات اللي بيجي فيها إيميلات.",
-            "مسار الـ 'Automator' عشان يخلي كل الحاجات دي تحصل تلقائي.",
-            "مسار الـ 'Builder' عشان يعمل نظام جديد للمواعيد والدفعات من الصفر."
+            "Creator — عشان يبني واجهة جميلة.",
+            "Business — اللي بيحدّد الحاجة الفعلية للأداة المخصّصة، بناءً على قرار من Analyst.",
+            "من حد، Builder بيشتغل لوحده.",
           ],
           correctIndex: 1,
-          explanation: "مسار الـ 'Automator' وظيفته يحوّل كل العمليات المتكررة إلى حاجات بتتعمل تلقائي، وده بيوفر وقت ومجهود كبير."
+          explanation: "Builder بياخد input من Business اللي بياخد input من Analyst. ده الترتيب الصح: مشكلة → قرار → بناء. لو Builder بيبدأ من غير قرار من Business، بتبني حاجة مش محتاجها — إهدار وقت وفلوس."
         }
       ]
     },
   },
   {
-    icon: Rocket,
+    icon: Sparkles,
     eyebrow: "Mission",
-    title: "ارسم خريطة Ecosystem الـ ٥ مسارات في شغلك",
+    title: "صمّم ونفّذ workflow حقيقي يربط ٥ مسارات",
     tone: "accent",
     block: {
       kind: "mission",
-      intro:
-        "شفت الـ ٥ أدوار (Business/Builder/Creator/Automator/Analyst). ارسم إزاي بيتركّبوا في منشأتك دلوقتي — حتى لو لسه ما اتعلمتش تفاصيل التنفيذ، اكتب الموجود فعليًا والفجوة.",
-      prompt:
-        "في تسليمك اكتب:\n\n١) Business (إنت): أكبر قرار قيادي مفتوح دلوقتي:\n٢) Builder عندك: مين/إيه + بيبني إيه (أو الفجوة):\n٣) Creator: مين/إيه + بيوصل لمين (أو الفجوة):\n٤) Automator: مين/إيه + بيوصّل إيه بإيه (أو الفجوة):\n٥) Analyst: مين/إيه + بيجاوب أي سؤال (أو الفجوة):",
+      intro: "ده الاختبار النهائي للـ Business OS بتاعك. مش درس — هو تخرّج.",
+      prompt: "في تسليمك اكتب:\n\n١) المشكلة الحقيقية اللي اخترتها.\n٢) الـ workflow الكامل (٥ مسارات × دور × input × output × أداة).\n٣) رسم flow chart بسيط (صورة أو وصف بالكلام).\n٤) نتيجة تنفيذ أول خطوتين (Analyst + Business) — إيه اللي اكتشفته؟\n٥) خطة الـ ٣ خطوات الباقية (Automator + Creator + Builder) للأسبوع الجاي.\n٦) كيف الـ Business OS بتاعك بعد التخرّج مختلف عن لما بدأت المسار؟",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",
       rubric: [
         {
-          label: "خريطة متكاملة",
-          weight: 70,
+          label: "Workflow متكامل",
+          weight: 50,
           criteria: [
-            "الـ ٥ أدوار موصوفين بسياق منشأتك مش تعريفات.",
-            "في ربط فعلي بين الأدوار (Output واحد بيدخل التاني).",
+            "الـ ٥ مسارات موجودة وبترتيب منطقي.",
+            "كل مسار بياخد input من اللي قبله وبيدّي output للي بعده.",
           ],
         },
         {
-          label: "وعي بالفجوة",
-          weight: 30,
+          label: "تنفيذ وتأمل",
+          weight: 50,
           criteria: [
-            "حدّدت فجوة محدّدة + خطوة لسدّها.",
+            "في تنفيذ فعلي لأول خطوتين.",
+            "في تأمل صادق على التحوّل من بداية المسار للنهاية.",
           ],
         },
       ],
     },
   },
-  {
-    icon: FlaskConical,
-    eyebrow: "جزء من المنصة",
-    title: "/dashboard + /system-state + /roadmap = الـ ecosystem كامل",
-    tone: "primary",
-    block: {
-      kind: "caseStudy",
-      title: "/dashboard + /system-state + /roadmap = الـ ecosystem كامل",
-      summary:
-        "المنصة دي بتتدار بـ 3 صفحات: /dashboard بيوريك تقدّم المتعلم، /system-state بيوريك صحة الـ system، /roadmap بيوريك المستقبل. شخص واحد + AI بيدير ecosystem كامل — وده النموذج اللي Business بيدرّبك عليه قبل ما تدخل المسارات التنفيذية.",
-      bullets: [
-        "Past = /dashboard (learner progress).",
-        "Present = /system-state (system health).",
-        "Future = /roadmap (strategic decisions).",
-      ],
-      pathAngle: "business",
-      link: { label: "افتح /dashboard", href: "/dashboard" },
-    },
-  }
 ];

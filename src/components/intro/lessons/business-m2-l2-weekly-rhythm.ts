@@ -1,17 +1,19 @@
-import { CalendarDays, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, CalendarRange, FlaskConical } from "lucide-react";
+import { Calendar, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, MessageSquare, Sparkles } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
+/** Business · M4 · Lesson 03 — الإيقاع الأسبوعي = ٤ مسارات */
 export const BUSINESS_M2_L2_WEEKLY_RHYTHM_BLOCKS: IntroLessonContent = [
   {
-    icon: CalendarDays,
+    icon: Calendar,
     eyebrow: "HERO",
-    title: "أسبوعك = ٤ مسارات (بنّاء · صانع · منظّم · محلّل)",
+    title: "أسبوعك مش ٧ أيام عشوائية — هو ٤ مسارات متوازنة",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "Builder (بنّاء)، Creator (صانع محتوى)، Automator (منظّم العمليات)، Analyst (محلّل) — كل واحد ليه يوم.",
-        "كل يوم له هدف واضح، ومخرج محدّد.",
+        "أحمد بعد ما بنى نظامه، فضل عنده مشكلة: كل أسبوع كان مختلف عن اللي قبله. أسبوع كله مبيعات، أسبوع كله توظيف، أسبوع كله أزمات. كان حاسس إنه شغّال صح، بس مفيش إيقاع.",
+        "الإيقاع هو اللي بيفرّق بين بيزنس قوي وبيزنس بيدور في حلقات. لما أحمد قسّم أسبوعه لـ ٤ مسارات ثابتة — Growth، Operations، People، Self — كل مسار خد يوم أو يومين بانتظام.",
+        "النتيجة بعد شهرين: مفيش مهمة بتتنسى، مفيش مسار بياكل التاني، وأحمد عرف يقيس تقدّمه أسبوعياً في كل مسار. النهارده هتبني الإيقاع ده لنفسك — قطعة أخيرة في نظام التشغيل بتاعك.",
       ],
     },
   },
@@ -22,14 +24,12 @@ export const BUSINESS_M2_L2_WEEKLY_RHYTHM_BLOCKS: IntroLessonContent = [
     block: {
       kind: "concepts",
       items: [
-        { term: "Context Switching", meaning: "إنك تنط بين كذا حاجة مختلفة ورا بعض وتشتت دماغك.", example: "تكون فاتح ميزانية العميل وبالك معاه، وفجأة ترد على مكالمة لمورد بيحكي في أسعار تانية خالص. تشتيت بيضيع تركيزك." },
-        { term: "Flows/Automator/System", meaning: "خطوات الشغل المترتبة ورا بعض عشان المهمة تخلص.", example: "لو إنت محاسب، الـ Flow هو الخطوات من أول ما تستلم الفاتورة لحد ما تسجلها وتنزل في الحسابات." },
-        { term: "Strategic Work", meaning: "وقت التفكير الكبير والتخطيط لمستقبل الشغل، مش شغل يومي.", example: "صاحب محل ملابس بيقعد يحلل مبيعات السنة اللي فاتت عشان يقرر هيفتح فرع جديد فين." },
-        { term: "Operational Work", meaning: "شغل \"الترس\" اليومي اللي بيمشي الدنيا وبيدخّل فلوس حالاً.", example: "صاحب المحل بيتابع حركة البيع، بيرد على الزباين، وبيشوف البضاعة اللي نقصت." },
-        { term: "Builder Track", meaning: "الوقت اللي بتطلع فيه منتج/خدمة جديدة عشان تكبر شغلك.", example: "مدرس بيحضر حصة جديدة أو بيسجل فيديو كورس هيبيعه بعدين، ده بناء للمصلحة." },
-        { term: "Admin Work", meaning: "الأعمال الورقية والإدارية اللي \"بتاكل\" وقت بس مهمة للتنظيم.", example: "لما محاسب يجمع فواتير الكهرباء أو يرتب ملفات قديمة، حاجات لابد منها بس مابتجيبش فلوس." },
-        { term: "Theme Day/Weekly Rhythm", meaning: "تخصيص يوم كامل لنوع واحد من الشغل عشان ماتتشتتش.", example: "تخلي يوم الأحد كله للحسابات والورق، ويوم الاثنين كله بيع وقبض. أسرع وأركز." },
-        { term: "Buffer Day", meaning: "يوم \"طوارئ\" في جدولك عشان لو حاجة باظت خلال الأسبوع.", example: "يوم الخميس سايبه فاضي، لو عميل اتأخر أو مشوار مصلحة حكومية طلعلك فجأة." },
+        { term: "Weekly Rhythm", meaning: "نمط أسبوعي ثابت بيوزّع تركيزك على المسارات الأساسية للبيزنس.", example: "أحمد: السبت Growth، الأحد Operations، الاتنين People، الثلاثا Self." },
+        { term: "Growth Track", meaning: "كل اللي بيكبّر البيزنس — تسويق، منتج جديد، علاقات، تحليل أرقام.", example: "أحمد كل سبت يحلّل أرقام الأسبوع ويخطّط لتجربة جديدة." },
+        { term: "Operations Track", meaning: "تشغيل اليومي — جودة، فريق، عمليات، تحسين SOPs.", example: "أحمد الأحد يراجع جودة الأكل ويعدّل SOPs لو فيها مشاكل." },
+        { term: "People Track", meaning: "كل اللي بيتعلق بالناس — تدريب، تقييم، تحفيز، توظيف.", example: "أحمد الاتنين يقعد ساعة مع كل موظف بدوره." },
+        { term: "Self Track", meaning: "إنت — صحتك، تعلّمك، تفكيرك. بدون ده، الباقي بينهار.", example: "أحمد الثلاثا يقرا، يمشي، يفكر بدون بيزنس." },
+        { term: "Rhythm Audit", meaning: "مراجعة أسبوعية: هل المسارات الأربعة أخدت حقها؟", example: "أحمد كل خميس يشوف: هل خصصت وقت كافي لكل مسار؟" },
       ],
     },
   },
@@ -38,47 +38,64 @@ export const BUSINESS_M2_L2_WEEKLY_RHYTHM_BLOCKS: IntroLessonContent = [
     eyebrow: "فيديو الدرس",
     title: "اتفرّج الأول",
     tone: "accent",
-    block: { kind: "lessonVideo", caption: "إزاي توزّع أيامك بين الـ ٤ مسارات بدل ما تشتّت كل يوم." },
+    block: { kind: "lessonVideo", caption: "إزاي تخلّي أسبوعك إيقاع منتظم بدل ما يكون فوضى." },
   },
   {
     icon: Lightbulb,
     eyebrow: "الفكرة",
-    title: "الجدول الأسبوعي المقترح",
+    title: "الـ ٤ مسارات اللي لازم أسبوعك يلمسهم",
     block: {
       kind: "numberedList",
       items: [
-        "الاثنين/الثلاثاء — Builder (البنّاء): بناء وتطوير المنتج.",
-        "الأربعاء — Creator (صانع المحتوى): محتوى الأسبوع كله.",
-        "الخميس — Automator (منظّم العمليات): مراجعة Flows + إصلاح الأخطاء.",
-        "الجمعة — Analyst (المحلّل): review أسبوعي + قرار الأسبوع.",
-        "السبت/الأحد — Buffer أو راحة (الأحد فيه الـ ١٥ دقيقة review).",
+        "Growth — البيزنس بيكبر إزاي؟",
+        "Operations — البيزنس بيشتغل إزاي يومياً؟",
+        "People — الناس اللي معاك بيتطوّروا إزاي؟",
+        "Self — إنت بتتجدّد إزاي؟",
       ],
     },
   },
   {
-    icon: CalendarRange,
-    eyebrow: "شوف بنفسك",
-    title: "أسبوعك على ٤ مسارات",
+    icon: MessageSquare,
+    eyebrow: "الـ Prompt القاتل",
+    title: "Weekly Rhythm Designer",
+    tone: "accent",
     block: {
-      kind: "diagram",
-      id: "weekly-theme-days",
-      caption: "يوم لكل تركيز — Builder · Creator · Automator · Analyst + Buffer.",
+      kind: "rule",
+      statement: "\"عندي بيزنس [اوصفه] وأسبوعي ٦ أيام شغل. صمّم لي Weekly Rhythm بـ ٤ مسارات (Growth, Operations, People, Self). لكل يوم في الأسبوع، حدّد المسار الرئيسي، وأهم ٣ مهام تقترحها فيه. خلّي الـ Self مش أقل من يوم كامل أو ٤ ساعات أسبوعياً.\"",
     },
   },
   {
     icon: Scale,
     eyebrow: "Failure × Right",
-    title: "كل يوم في كل حاجة vs Theme Days",
+    title: "أسبوع عشوائي vs أسبوع بإيقاع",
     block: {
       kind: "comparison",
-      left: { label: "FAILURE — كل يوم بتبدّل ٥ مرات", body: "Context switching بياكل ٤٠٪ من إنتاجيتك. تعبان والشغل ناقص." },
-      right: { label: "RIGHT — يوم واحد = تركيز واحد", body: "بتدخل عمق كل مسار. الجودة بتعلى والوقت بيقل." },
+      left: { label: "FAILURE — عشوائي", body: "أحمد يصحى ويسأل \"إيه أكتر حاجة عاجلة؟\" والإجابة بتحدّد يومه. النتيجة: Growth بياخد ١ يوم في الشهر، Self بياخد صفر، People بيتنسى." },
+      right: { label: "RIGHT — إيقاع", body: "أحمد عارف من أول الأسبوع: السبت Growth، الأحد Operations، الاتنين People، الثلاثا Self. كل مسار بياخد حقّه. مش بيتنسى. البيزنس متوازن." },
+    },
+  },
+  {
+    icon: Rocket,
+    eyebrow: "Build Along — قطعتك في الـ Business OS",
+    title: "صمّم Weekly Rhythm ونفّذه أسبوع",
+    tone: "accent",
+    block: {
+      kind: "executionTask",
+      title: "ده آخر قطعة في الـ Business OS بتاعك. بعد ما تركّبها، النظام مكتمل.",
+      steps: [
+        "افتح AI. الصق الـ Prompt القاتل وعبّيه ببياناتك.",
+        "خد الـ Rhythm اللي طلعلك واكتبه في الكالندر — كل يوم بمساره ومهامه.",
+        "في الـ ٤ مسارات، خلّي Self مش أقل من يوم كامل (أو ٤ ساعات موزّعة).",
+        "نفّذ الأسبوع كامل بالـ Rhythm.",
+        "في آخر الأسبوع، اعمل Rhythm Audit: كل مسار خد حقّه ولا في مسار اتعدى عليه؟",
+        "عدّل الـ Rhythm للأسبوع الجاي بناءً على الـ Audit.",
+      ],
     },
   },
   {
     icon: Rocket,
     eyebrow: "دورك دلوقتي",
-    title: "صمّم أسبوعك",
+    title: "اختبر فهمك",
     tone: "accent",
     block: {
       kind: "quiz",
@@ -87,92 +104,71 @@ export const BUSINESS_M2_L2_WEEKLY_RHYTHM_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "أنت رائد أعمال بتدير مشروع جديد، وعاوز تطبق نظام الـ 'Weekly Rhythm' عشان تزود إنتاجيتك. لو قررت تخلي يوم التلات مخصص لبناء وتطوير المنتج بتاعك وإضافة مميزات جديدة، ده يُعتبر تطبيق لأي مسار من المسارات الأربعة؟",
+          question: "أحمد عمل Rhythm: ٥ أيام Operations + يوم Growth + صفر Self. التشخيص؟",
           options: [
-            "Builder",
-            "Creator",
-            "Automator",
-            "Analyst"
+            "ممتاز — التشغيل أهم حاجة.",
+            "خطر — مفيش Self هيعمل burnout، ومسار Growth ضعيف هيوقف النمو.",
+            "عادي — هي بداية.",
           ],
-          correctIndex: 0,
-          explanation: "مسار الـ Builder هو المخصص لبناء وتطوير المنتج، وده بيتناسب مع تخصيص يوم الثلاثاء للمهمة دي."
+          correctIndex: 1,
+          explanation: "Rhythm بدون Self = قنبلة موقوتة. كل صاحب بيزنس بينهار بعد ٦-١٢ شهر بدون Self time. وGrowth يوم واحد مش كافي لبيزنس عايز ينمو. التوازن هو السرّ، مش التركيز على مسار واحد."
         },
         {
           id: "apply2",
           bloom: "apply",
-          question: "لو قررت في شغلك إن يوم الأربعاء هيكون مخصص بالكامل لإنتاج كل المحتوى التسويقي بتاع الأسبوع (بوستات سوشيال ميديا، مقالات، فيديوهات)، ده بيجسد أي مصطلح من المصطلحات اللي اتعلمتها في الدرس؟",
+          question: "اليوم People في Rhythm أحمد، بس فيه أزمة في الـ Operations. إيه الصح؟",
           options: [
-            "Weekly Rhythm",
-            "Theme Day",
-            "Buffer Day"
+            "يلغي People ويهتم بالأزمة.",
+            "يخصّص ساعة للأزمة (الحد الأدنى)، ويكمل People زي ما هو.",
+            "يبدّل اليومين — يعمل Operations النهارده وPeople بكره.",
           ],
           correctIndex: 1,
-          explanation: "الـ Theme Day هو يوم له تركيز واحد بس، وده اللي حصل لما خصصت يوم الأربعاء كله لإنتاج المحتوى عشان تزود التركيز وتقلل تبديل المهام."
+          explanation: "الإيقاع لو اتكسر مرة، هيتكسر كل أسبوع. الأزمات هتفضل موجودة. الحل: حل الأزمة في الحد الأدنى من الوقت، وكمل المسار اللي مخطّطله. لو الأزمة كبيرة فعلاً (نار، صحة) — استثناء، مش قاعدة."
         },
         {
           id: "apply3",
           bloom: "apply",
-          question: "سارة عندها مشروع أونلاين، ولاحظت إنها بتضيع وقت كبير في مراجعة الأخطاء التقنية وحل المشاكل اللي بتظهر في الموقع كل يوم. عشان تحل المشكلة دي وتطبق نظام الـ 'Weekly Rhythm' بشكل صح، المفروض تخصص يوم إيه للمهام دي؟",
+          question: "بعد شهر من الـ Rhythm، أحمد لقى إن Growth أكتر مسار بيتأجل. السبب الأكثر احتمالاً؟",
           options: [
-            "الخميس للـ Automator",
-            "الجمعة للـ Analyst",
-            "السبت/الأحد للراحة"
+            "الـ Rhythm غلط من أوله.",
+            "Growth مش عاجل، فبيتأكل من الـ Operations العاجل دايماً — محتاج Strategic Block محمي.",
+            "Growth مش مهم.",
           ],
-          correctIndex: 0,
-          explanation: "مسار الـ Automator مخصص لمراجعة الـ Flows وإصلاح الأخطاء، وده بيتناسب مع تخصيص يوم الخميس للمهام دي عشان تتحل بشكل مركز."
+          correctIndex: 1,
+          explanation: "Growth = important but not urgent. الـ Operations = urgent. اللي مش عاجل بياكله العاجل دايماً. الحل: حماية يوم Growth بنفس صرامة الـ Strategic Block — مش حد يقاطع، مش ميعاد يتبدّل."
         }
       ]
     },
   },
   {
-    icon: Rocket,
+    icon: Sparkles,
     eyebrow: "Mission",
-    title: "صمّم Weekly Rhythm للأسبوع الجاي",
+    title: "نفّذ Weekly Rhythm كامل أسبوع",
     tone: "accent",
     block: {
       kind: "mission",
-      intro:
-        "القيادة بلا إيقاع = فوضى. حدّد ٣-٤ مواعيد ثابتة في الأسبوع لكل نوع قرار.",
-      prompt:
-        "في تسليمك اكتب:\n\n١) Strategic block (يوم + ساعة): إيه اللي بتراجعه فيه؟\n٢) Operational block (يوم + ساعة): إيه اللي بتقرّره فيه؟\n٣) Admin block (يوم + ساعة): إيه اللي بتخلّصه فيه؟\n٤) إيه اللي مش هتقرّره خارج الـ blocks دي:\n٥) إزاي هتحمي الـ blocks (مين يعرف، إيه القنوات اللي بتقفلها):",
+      intro: "الـ Rhythm مش نظرية — هو ممارسة. الأسبوع ده اختبار حقيقي.",
+      prompt: "في تسليمك اكتب:\n\n١) الـ Weekly Rhythm كامل (٦ أيام × مسار × أهم ٣ مهام).\n٢) صورة من الكالندر بعد ما حطيته.\n٣) في آخر الأسبوع: كل مسار خد كم ساعة فعلاً؟\n٤) أكبر تحدي في الالتزام بالـ Rhythm — وإزاي تعاملت.\n٥) تعديل واحد للأسبوع الجاي.",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",
       rubric: [
         {
-          label: "إيقاع ملموس",
-          weight: 70,
+          label: "Rhythm متوازن",
+          weight: 50,
           criteria: [
-            "الثلات blocks لهم أيام/ساعات محدّدة.",
-            "كل block ليه نوع قرار واحد بالظبط.",
+            "الـ ٤ مسارات ظاهرة، مش مسار طاغي.",
+            "Self مش أقل من ٤ ساعات.",
           ],
         },
         {
-          label: "حماية الإيقاع",
-          weight: 30,
+          label: "تنفيذ حقيقي",
+          weight: 50,
           criteria: [
-            "في خطة واضحة لحماية الـ blocks (ما الذي يُغلق/يُؤجل).",
+            "في تتبع فعلي للساعات لكل مسار.",
+            "في تأمل واضح في التحدي والتعديل.",
           ],
         },
       ],
     },
   },
-  {
-    icon: FlaskConical,
-    eyebrow: "جزء من المنصة",
-    title: "أسبوع المنصة = ٤ مسارات + يوم review",
-    tone: "primary",
-    block: {
-      kind: "caseStudy",
-      title: "أسبوع المنصة = ٤ مسارات + يوم review",
-      summary:
-        "المنصة دي بتتدار بـ Weekly Rhythm: كل يوم مخصّص لدور — الإثنين Builder (technical)، الثلاثاء Creator (content)، الأربعاء Automator (workflows)، الخميس Analyst (review)، الجمعة Business (strategy). الـ rhythm بيمنع الـ context switching. هتتعلّم كل دور بتفصيله في مساره الخاص لاحقًا.",
-      bullets: [
-        "كل يوم له deep work block 4 ساعات.",
-        "Roadmap items متعلّمة بـ tags للمسار.",
-        "End-of-week review بيتسجّل في /roadmap.",
-      ],
-      pathAngle: "business",
-      link: { label: "افتح /roadmap", href: "/roadmap" },
-    },
-  }
 ];
