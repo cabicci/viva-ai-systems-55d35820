@@ -1,55 +1,156 @@
-# خطة: تصحيح صياغة مسار Business
+# خطة بروديكت Business كامل (مرة واحدة)
 
-## المشكلة
+الهدف: مسار Business يوصل **9.5/10** — متوازن، عملي، ومبني حوالين قصة واحدة.
 
-Business هو أول مسار بعد المقدمة، لكن المحتوى الحالي مكتوب كأن الشخص خلّص Builder + Creator + Automator + Analyst قبله. ده بيخلق تنافر مع الترتيب الفعلي.
+---
 
-## النطاق
+## 1. الهيكل الجديد: 4 Modules × 15 درس
 
-13 ملف Business + ملف Bridge من Analyst. **محتوى فقط** — ولا تغيير في ترتيب، أو DB، أو UI.
+```
+M1 — العقلية (3 دروس)
+  L1: AI Operating System (مش أدوات، نظام تفكير)
+  L2: Reactive vs Proactive (إزاي AI بيقلب الـ mode)
+  L3: AI as Thinking Partner [جديد] — Decision Framework
 
-## الملفات و التعديل المطلوب
+M2 — العميل + الفلوس (4 دروس)
+  L4: Customer Lifecycle بالـ AI
+  L5: Retention Flow (Build Along: فلو احتفاظ كامل)
+  L6: Readiness Signals
+  L7: Pricing & Cash Flow [جديد] — AI في التسعير والكاش
 
-### 1. `business-m0-from-decisions-to-leadership.ts` (الأهم)
+M3 — التشغيل + الفريق (4 دروس)
+  L8: Delegate or Automate (Framework القرار)
+  L9: Strategic / Operational / Admin
+  L10: System then People
+  L11: Hiring & Onboarding [جديد] — AI في التوظيف
 
-- العنوان «Bridge from Analyst» → يتغيّر لمدخل مستقل: «Business: تبدأ تقود من اليوم الأول».
-- السطر «Builder + Creator + Automator + Analyst = آلة شغّالة» → يتشال ويتعوّض بصياغة عن الفرق بين **تشغيل يدوي** vs **قيادة بنظام** بدون افتراض إن الشخص بنى أي مسار قبل كده.
-- السطر «الجزء ده من المنصة اتبنى بمسار Business — نفس اللي بتتعلمه. Builder بنى الـ stack...» → يتعاد صياغته يركّز على Business كنقطة بداية، مع ذكر إن المسارات التانية بتيجي بعدها كأدوات تنفيذية تحت قيادتك.
-- أسئلة الاختيارات اللي فيها «Builder/Analyst/Operator» تتحوّل لمصطلحات Business عامة (Operator vs Leader) من غير ما تفترض معرفة سابقة بالمسارات.
+M4 — الاستدامة + الصورة الكاملة (4 دروس)
+  L12: Premature Scaling
+  L13: Reactive Relapse (Weekly Rhythm)
+  L14: Full Ecosystem (الـ 5 مسارات في يوم واحد)
+  L15: Your AI Business OS [جديد] — تجميع كل الـ Build Along في نظام واحد
+```
 
-### 2. `analyst-m6-from-decisions-to-business.ts`
+**15 درس بدل 12.** كل module متوازن (3-4 دروس).
 
-ده ملف Bridge من Analyst → Business. بما إن Business بقى **قبل** Analyst في الترتيب، الملف ده:
+---
 
-- يا إما يتشال نهائيًا
-- يا إما يتحوّل لـ Bridge عكسي (من Analyst يرجع للـ Business loop) — محتاج تأكيدك في خطوة منفصلة.
-- **في الخطة دي:** نسيب الملف كما هو ونعلّمه `// TODO: revisit ordering` عشان ميأثرش على build، ونرجعله في pass تاني.
+## 2. الـ Case Study الموحّد
 
-### 3. باقي ملفات Business (m1 → m6)
+**"أحمد — صاحب مطعم في المعادي"**
 
-السطور اللي فيها إشارات صريحة لـ «Builder/Creator/Automator/Analyst» كرحلة سابقة (مش كأدوات/أدوار) تتعاد صياغتها:
+- بيظهر في كل درس بمرحلة مختلفة من رحلته
+- L1: أحمد reactive، بيطفي حرايق
+- L7: أحمد بيكتشف إنه بيخسر 18% من كل طلب
+- L11: أحمد بيوظف Operations Manager بالـ AI
+- L15: أحمد عنده Business OS كامل شغّال
 
-- `business-m6-full-ecosystem.ts` — السطور 41, 51-54, 76, 92-111: تتحوّل من «كل المسارات اللي اتعلمتها» → «الأدوار الـ5 اللي أي بيزنس بيحتاجها (هتتعلم تفاصيلها في المسارات الجاية)».
-- باقي الملفات (m1-m5): الإشارات أغلبها كـ **مصطلحات أدوار** مش كرحلة سابقة، فالتعديل أخف — بس مراجعة سطر-بسطر مع إضافة تنويه «هتتعلمها بتفصيل في مسارها» أول مرة بيتذكر المصطلح.
+كل درس فيه scene قصير من رحلته → بيخلي المسار قصة مش محاضرات.
 
-## القاعدة العامة للصياغة الجديدة
+---
 
-- ❌ «بعد ما خلّصنا/اتعلمنا/بنينا في المسارات السابقة»
-- ✅ «دي الأدوار اللي بيزنسك محتاجها — Business بيعلّمك تقودهم، والمسارات الجاية بتعلّمك تنفّذهم بنفسك أو بالـAI»
+## 3. Build Along — نظام واحد بيتبني عبر 15 درس
 
-## مش داخل في الخطة
+كل درس بيضيف **قطعة** للـ "AI Business OS" الشخصي للمتعلم:
 
-- ترتيب المسارات (ثابت).
-- DB / Hero / UI / Navigation.
-- ملف `analyst-m6-from-decisions-to-business.ts` — هنرجعله بعد ما نخلّص Business.
-- إعادة توليد فيديوهات Bunny — هتتعمل تلقائيًا بعد التعديل حسب قاعدة الـCore memory.
 
-## Roadmap logging
+| الدرس | القطعة اللي بتتبني                          |
+| ----- | ------------------------------------------- |
+| L1    | Mindset Audit (ورقة تشخيص)                  |
+| L2    | Proactive Trigger List                      |
+| L3    | Decision Prompt Template                    |
+| L4    | Customer Journey Map                        |
+| L5    | Retention Flow كامل (Notion)                |
+| L6    | Readiness Scorecard                         |
+| L7    | Pricing Calculator + Cash Tracker           |
+| L8    | Delegate/Automate Matrix                    |
+| L9    | Task Classifier                             |
+| L10   | SOP Template                                |
+| L11   | JD + Onboarding Generator                   |
+| L12   | Scale Readiness Check                       |
+| L13   | Weekly Review Ritual                        |
+| L14   | Ecosystem Map                               |
+| L15   | **Business OS Dashboard** (تجميع كل ما سبق) |
 
-كل ملف يتعدّل → entry في `roadmap_items` بـ `[source:user]` + `[ai-edit YYYY-MM-DD]: [scope:lessons] rewrote bridge framing — Business as first path`.
 
-## الحجم المتوقّع
+في نهاية المسار: المتعلم عنده نظام شخصي شغّال، مش مجرد معلومات.
 
-~13 ملف، تعديلات سطحية في 10 منهم، إعادة كتابة جوهرية في 2 (m0 + m6).
+---
 
-spawn_agent. ده اصلا اتفقنا ما يشتغل
+## 4. Framework الكتابة لكل درس
+
+```
+1. Hook (Case Study scene — أحمد بيواجه مشكلة)
+2. Promise (هتطلع بإيه من الدرس)
+3. Concept (المفهوم + إزاي AI بيغيّره)
+4. Build Along (تبني القطعة بتاعتك دلوقتي)
+5. Output (الـ artifact اللي طلعت بيه)
+6. Next (إزاي بيوصل بالدرس الجاي)
+```
+
+---
+
+## 5. خطة التنفيذ (Sequential — مرة واحدة)
+
+### Phase A — Restructure (يوم 1)
+
+1. Rename + reorganize ملفات `src/components/intro/lessons/business-*` على الـ pattern: `business-m{1-4}-l{1-15}-{slug}.ts`
+2. تحديث `curriculum-data.ts` بـ 4 modules
+3. تحديث `lessonsRegistry.ts`
+4. Migration في DB: تحديث lesson_ids
+5. Trigger video re-render للـ renames (batch ≤400 chars)
+
+### Phase B — Write Content (أيام 2-4)
+
+- إعادة كتابة الـ 12 درس الموجودين بالـ framework الجديد + Case Study + Build Along
+- كتابة الـ 3 دروس الجديدة (L3, L7, L11, L15 — فعلياً 4 جديدة بحساب L15)
+- كل درس: hook → promise → concept → build along → output → next
+
+### Phase C — Build Along Artifacts (يوم 5)
+
+- إنشاء الـ templates/sheets/prompts المطلوبة في كل Build Along
+- L15: Dashboard component يجمع كل الـ outputs
+
+### Phase D — Re-render + QA (يوم 6)
+
+- Trigger `lesson-video.yml` لكل الـ 15 درس (batched)
+- مراجعة الفيديوهات بعد generate
+- تحديث roadmap_items بكل خطوة
+
+---
+
+## 6. ملفات هتتعدل / تتعمل
+
+**ملفات جديدة:**
+
+- 4 ملفات دروس جديدة في `src/components/intro/lessons/`
+- 15 build-along artifact (templates/components)
+- `src/components/business/BusinessOSDashboard.tsx` (للـ L15)
+
+**ملفات هتتعدل:**
+
+- 12 ملف درس موجود (rename + rewrite)
+- `src/lib/curriculum-data.ts`
+- `src/components/business/lessons/lessonsRegistry.ts`
+- Migration واحدة لتحديث lesson_ids في DB
+
+**Roadmap logging:** كل خطوة بـ `[source:ai]` marker + `bun run roadmap:log`.
+
+---
+
+## التقييم المتوقع: **9.5/10**
+
+- ✅ Modules متوازنة (4 × 3-4 دروس)
+- ✅ Cash + People + Decision Framework مُغطّيين
+- ✅ Case Study موحّد عبر كل المسار
+- ✅ Build Along بمخرج ملموس في كل درس
+- ✅ AI Operating System كخيط ناظم واضح
+- ✅ Wow factor: المتعلم بيطلع بنظام شخصي شغّال
+
+**مدة التنفيذ التقديرية:** 6 أيام عمل متتالية.
+
+هل أبدأ؟
+
+عندي سؤال جاوب عليه الاول ليه ٦ ايام مهو احنا نخلص دلوقتي؟ 
+
+الحاجة التاني لازم كل الدروس يكون ليها علاقة بال ai مش كلام نظري اداري
