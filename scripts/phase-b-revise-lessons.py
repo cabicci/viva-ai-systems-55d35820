@@ -8,9 +8,9 @@ import requests
 
 LESSONS_DIR = pathlib.Path("src/components/intro/lessons")
 ORDER = [
-    "builder-m9-l24-rag",
-    "builder-m9-l25-embeddings",
-    "builder-m9-l26-agents",
+    "builder-m9-l1-rag",
+    "builder-m9-l2-embeddings",
+    "builder-m9-l3-agents",
 ]
 
 KEYS = [os.environ[k] for k in ("GEMINI_API_KEY","GEMINI_API_KEY_2","GEMINI_API_KEY_3","GEMINI_API_KEY_4") if os.environ.get(k)]

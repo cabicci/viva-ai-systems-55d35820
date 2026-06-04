@@ -6,24 +6,24 @@ cd "$(dirname "$0")/../.."
 export REMOTION_CONCURRENCY="${REMOTION_CONCURRENCY:-4}"
 
 LESSONS=(
-  creator-m1-why-content
-  creator-m1-attention-economy
-  creator-m3-know-audience
-  creator-m3-content-pillars
-  creator-m2-hook
-  creator-m2-script-structure
-  creator-m2-cta
-  creator-m4-reality-check
-  creator-m4-mobile-shooting
-  creator-m4-ai-writing
-  creator-m4-editing
-  creator-m4-thumbnails-captions
-  creator-m5-platforms
-  creator-m5-scheduling
-  creator-m5-analytics
-  creator-m5-leads
-  creator-m6-brand-basics
-  creator-m6-grid-consistency
+  creator-m1-l1-why-content
+  creator-m1-l2-attention-economy
+  creator-m2-l1-know-audience
+  creator-m2-l2-content-pillars
+  creator-m3-l1-hook
+  creator-m3-l2-script-structure
+  creator-m3-l3-cta
+  creator-m4-l1-reality-check
+  creator-m4-l2-mobile-shooting
+  creator-m4-l3-ai-writing
+  creator-m5-l1-editing
+  creator-m5-l2-thumbnails-captions
+  creator-m6-l1-platforms
+  creator-m6-l2-scheduling
+  creator-m6-l3-analytics
+  creator-m6-l4-leads
+  creator-m7-l1-brand-basics
+  creator-m7-l2-grid-consistency
 )
 
 mkdir -p /tmp/build-creator-logs

@@ -39,8 +39,8 @@ import { BUILDER_M8_QUERIES_BLOCKS } from "./builder-m7-l3-queries";
 import { BUILDER_M9_EMBEDDINGS_BLOCKS } from "./builder-m9-l2-embeddings";
 import { BUILDER_M9_RAG_BLOCKS } from "./builder-m9-l1-rag";
 import { BUILDER_M9_AGENTS_BLOCKS } from "./builder-m9-l3-agents";
-import { BUILDER_M10_DEPLOY_DOMAIN_BLOCKS } from "./builder-m10-deploy-domain";
-import { BUILDER_M10_FIRST_USERS_BLOCKS } from "./builder-m10-first-users";
+import { BUILDER_M10_DEPLOY_DOMAIN_BLOCKS } from "./builder-m10-l1-deploy-domain";
+import { BUILDER_M10_FIRST_USERS_BLOCKS } from "./builder-m10-l2-first-users";
 import { AUTOMATOR_M1_L1_WHERE_YOU_ARE_BLOCKS } from "./automator-m1-l1-where-you-are";
 import { AUTOMATOR_M2_L1_SYSTEMS_VIEW_BLOCKS } from "./automator-m2-l1-systems-view";
 import { AUTOMATOR_M2_L2_SPOT_PATTERNS_BLOCKS } from "./automator-m2-l2-spot-patterns";
@@ -145,8 +145,8 @@ export const INTRO_LESSON_CONTENT: Record<string, IntroLessonContent> = {
   "builder-m9-l2-embeddings": BUILDER_M9_EMBEDDINGS_BLOCKS,
   "builder-m9-l1-rag": BUILDER_M9_RAG_BLOCKS,
   "builder-m9-l3-agents": BUILDER_M9_AGENTS_BLOCKS,
-  "builder-m10-deploy-domain": BUILDER_M10_DEPLOY_DOMAIN_BLOCKS,
-  "builder-m10-first-users": BUILDER_M10_FIRST_USERS_BLOCKS,
+  "builder-m10-l1-deploy-domain": BUILDER_M10_DEPLOY_DOMAIN_BLOCKS,
+  "builder-m10-l2-first-users": BUILDER_M10_FIRST_USERS_BLOCKS,
   "automator-m1-l1-where-you-are": AUTOMATOR_M1_L1_WHERE_YOU_ARE_BLOCKS,
   "automator-m2-l1-systems-view": AUTOMATOR_M2_L1_SYSTEMS_VIEW_BLOCKS,
   "automator-m2-l2-spot-patterns": AUTOMATOR_M2_L2_SPOT_PATTERNS_BLOCKS,

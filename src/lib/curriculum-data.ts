@@ -262,10 +262,8 @@ function creatorModules(): CurriculumModule[] {
 }
 
 /* -------------------------------------------------------------- */
-/*  Builder — 9 modules (v2 structure, June 2026)                 */
-/*  Lesson IDs follow {path}-m{N}-l{seq}-{slug} with l{seq}        */
-/*  continuous 1..26 across the whole path.                       */
-/*  M10 (deploy + first-users) is deferred per v2 scope.          */
+/*  Builder — 10 modules (v2 structure, June 2026)                */
+/*  Lesson IDs follow {path}-m{N}-l{lesson}-{slug}.               */
 /* -------------------------------------------------------------- */
 function builderMilestones(): CurriculumModule[] {
   return [
@@ -371,6 +369,17 @@ function builderMilestones(): CurriculumModule[] {
         builderShipped(1, "builder-m9-l1-rag", "AI يرد من ملفاتك (RAG)"),
         builderShipped(2, "builder-m9-l2-embeddings", "إزاي الـ AI بيلاقي المعلومة"),
         builderShipped(3, "builder-m9-l3-agents", "AI بياخد قرارات لوحده (Agents)"),
+      ],
+    },
+    {
+      order: 10,
+      id: "builder-m10",
+      title: "إطلاق المنتج وجلب أول مستخدمين",
+      subtitle: "Deploy · Domain · First users · Iteration",
+      level: "technical",
+      lessons: [
+        builderShipped(1, "builder-m10-l1-deploy-domain", "Deploy و Domain"),
+        builderShipped(2, "builder-m10-l2-first-users", "أول مستخدمين"),
       ],
     },
   ];
@@ -647,7 +656,6 @@ export const PATHS: CurriculumPath[] = [
     status: "open",
     kind: "path",
     tier: "user",
-    route: "/paths/business",
     modules: businessModules(),
   },
   {
@@ -681,7 +689,6 @@ export const PATHS: CurriculumPath[] = [
     status: "open",
     kind: "path",
     tier: "operator",
-    route: "/paths/automator",
     modules: automatorModules(),
   },
   {
@@ -693,7 +700,6 @@ export const PATHS: CurriculumPath[] = [
     status: "open",
     kind: "path",
     tier: "builder",
-    route: "/paths/builder",
     modules: builderMilestones(),
   },
 

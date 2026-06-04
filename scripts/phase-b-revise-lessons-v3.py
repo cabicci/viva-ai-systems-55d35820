@@ -6,7 +6,7 @@ Phase B v3 — Builder m5-m8 reframing.
 إنه دخل CS course.
 
 استخدام:
-    python3 scripts/phase-b-revise-lessons-v3.py builder-m5-l10-frontend [...]
+    python3 scripts/phase-b-revise-lessons-v3.py builder-m5-l2-frontend [...]
 أو من غير args يشتغل على ORDER الافتراضي.
 """
 import os, sys, json, time, pathlib, re
@@ -16,9 +16,9 @@ LESSONS_DIR = pathlib.Path("src/components/intro/lessons")
 
 # الترتيب الافتراضي لو ما اتبعتش args
 DEFAULT_ORDER = [
-    "builder-m5-l10-frontend",
-    "builder-m5-l11-backend-api",
-    "builder-m5-l12-database-intro",
+    "builder-m5-l2-frontend",
+    "builder-m5-l3-backend-api",
+    "builder-m5-l4-database-intro",
     # m6/m7/m8 يتضافوا بعد ما نراجع m5
 ]
 
