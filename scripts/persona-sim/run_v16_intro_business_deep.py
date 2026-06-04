@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-Persona Sim v15 — 10 personas × (Intro + Business) deep walk-through.
+Persona Sim v16 — 10 personas × (Intro + Business) deep walk-through.
 
 For EACH lesson: persona reads the full lesson text, writes a detailed comment
 (3-6 sentences), then attempts the mission with a real submission. Uses Gemini
 API DIRECTLY (4 rotating keys) — NO Lovable AI Gateway, NO Lovable credits.
 
 Output:
-  /mnt/documents/persona-sim-v15-{stamp}.md
-  /mnt/documents/persona-sim-v15-{stamp}-raw.json
+  /mnt/documents/persona-sim-v16-{stamp}.md
+  /mnt/documents/persona-sim-v16-{stamp}-raw.json
 """
 from __future__ import annotations
 import json, os, re, time, threading
@@ -201,7 +201,7 @@ def call_gemini(persona: dict, idx: int, lesson: dict, retries: int = 4) -> dict
             time.sleep(2 * (attempt + 1))
 
 # ---- 5) Run ---------------------------------------------------------------
-CKPT = OUT_DIR / "persona-sim-v15-checkpoint.json"
+CKPT = OUT_DIR / "persona-sim-v16-checkpoint.json"
 
 def main():
     stamp = datetime.utcnow().strftime("%Y%m%d-%H%M%S")
@@ -235,7 +235,7 @@ def main():
                 ok = sum(1 for r in results if "error" not in r)
                 print(f"  +{n}/{len(tasks)} done ({ok} ok total) — {time.time()-t0:.0f}s", flush=True)
 
-    raw_path = OUT_DIR / f"persona-sim-v15-{stamp}-raw.json"
+    raw_path = OUT_DIR / f"persona-sim-v16-{stamp}-raw.json"
     raw_path.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
 
     # Build markdown report
@@ -246,7 +246,7 @@ def main():
     for pid in by_persona:
         by_persona[pid].sort(key=lambda x: x.get("_idx", 999))
 
-    md = [f"# Persona Sim v15 — 10 personas × (Intro + Business)",
+    md = [f"# Persona Sim v16 — 10 personas × (Intro + Business)",
           f"_generated {stamp} UTC · model {MODEL} · direct Gemini API_\n",
           f"- Personas: {len(PERSONAS)}",
           f"- Lessons per persona: {len(LESSONS)} (Intro {sum(1 for p,_ in LESSON_ORDER if p=='intro')} + Business {sum(1 for p,_ in LESSON_ORDER if p=='business')})",
@@ -278,7 +278,7 @@ def main():
             md.append("")
         md.append("---\n")
 
-    md_path = OUT_DIR / f"persona-sim-v15-{stamp}.md"
+    md_path = OUT_DIR / f"persona-sim-v16-{stamp}.md"
     md_path.write_text("\n".join(md), encoding="utf-8")
 
     print(f"\n✅ Done in {time.time()-t0:.0f}s", flush=True)
