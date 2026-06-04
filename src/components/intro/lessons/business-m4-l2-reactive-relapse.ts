@@ -92,6 +92,33 @@ export const BUSINESS_M4_L2_REACTIVE_RELAPSE_BLOCKS: IntroLessonContent = [
     },
   },
   {
+    icon: BookOpen,
+    eyebrow: "Mini Audit Template — جاهز للنسخ",
+    title: "٧ أسئلة بتديك score دقيق على relapse",
+    block: {
+      kind: "numberedList",
+      items: [
+        "**Strategic Hours الأسبوع ده** (تخطيط، تحليل، قرارات كبيرة): \\_\\_ ساعة. (هدف: ≥ ١٠)",
+        "**Admin Hours الأسبوع ده** (واتساب، رد على عملاء، مهام تنفيذية): \\_\\_ ساعة.",
+        "**Strategic Blocks اللي اتلغت أو اتأجلت:** \\_\\_ مرة. (إنذار: ≥ ٣)",
+        "**أكبر Crisis Trigger الأسبوع:** \\_\\_ (مورد / موظف / عميل / تقني / فلوس).",
+        "**رددت على واتساب فوراً (بدل ميعاد محدد) قد إيه؟** (نادراً / أحياناً / غالباً / دايماً)",
+        "**شرحت نفس الحاجة لموظف بدل ما تحوّله SOP** كم مرة؟ \\_\\_",
+        "**آخر مرة فكرت في نمو البيزنس استراتيجياً:** من \\_\\_ يوم.",
+      ],
+    },
+  },
+  {
+    icon: MessageSquare,
+    eyebrow: "Auto-Audit Prompt — الصق وادي الأرقام",
+    title: "خلي AI يعمل التشخيص بدالك",
+    tone: "accent",
+    block: {
+      kind: "rule",
+      statement: "\"دي أرقامي الأسبوع ده: Strategic Hours = X، Admin Hours = Y، Blocks الملغية = Z، أكبر Crisis = [اوصفها سطر]، Reactive Replies = [نادراً/أحياناً/غالباً/دايماً]، شرح يدوي بدل SOP = N مرة، آخر تفكير استراتيجي من D يوم. عايز منك: (١) Relapse Score من ١-١٠ مع تبرير. (٢) أهم ٣ أنماط حمراء شفتها. (٣) خطة الأسبوع الجاي في ٣ خطوات ملموسة — مش نصائح عامة. (٤) Trigger واحد لو ظهر تاني، إيه الـ guardrail اللي يمنع الـ relapse.\"",
+    },
+  },
+  {
     icon: Rocket,
     eyebrow: "دورك دلوقتي",
     title: "اختبر فهمك",
