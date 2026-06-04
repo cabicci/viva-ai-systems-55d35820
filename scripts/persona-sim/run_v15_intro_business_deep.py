@@ -183,7 +183,13 @@ def call_gemini(persona: dict, idx: int, lesson: dict, retries: int = 4) -> dict
             if not txt:
                 raise RuntimeError(f"empty: {json.dumps(jr)[:200]}")
             txt = re.sub(r"^```(?:json)?\s*|\s*```$", "", txt.strip())
-            data = json.loads(txt)
+            try:
+                data = json.loads(txt)
+            except json.JSONDecodeError:
+                # Gemini sometimes emits raw newlines inside Arabic strings.
+                # Fall back to json-repair for a tolerant parse.
+                from json_repair import repair_json
+                data = json.loads(repair_json(txt))
             data["_archetype"] = persona["arch"]
             data["_path"] = lesson["path"]
             data["_idx"] = idx + 1
