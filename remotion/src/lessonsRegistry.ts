@@ -108,6 +108,7 @@ import { SCENES as L_builder_m7_l1_tables_columns_S, SCENE_FRAMES as L_builder_m
 import { SCENES as L_business_m7_l1_full_ecosystem_S, SCENE_FRAMES as L_business_m7_l1_full_ecosystem_F, TOTAL_FRAMES as L_business_m7_l1_full_ecosystem_T } from "./lessons-generated/business-m7-l1-full-ecosystem.gen";
 import { SCENES as L_business_m1_l1_from_decisions_to_leadership_S, SCENE_FRAMES as L_business_m1_l1_from_decisions_to_leadership_F, TOTAL_FRAMES as L_business_m1_l1_from_decisions_to_leadership_T } from "./lessons-generated/business-m1-l1-from-decisions-to-leadership.gen";
 import { SCENES as L_business_m2_l2_weekly_rhythm_S, SCENE_FRAMES as L_business_m2_l2_weekly_rhythm_F, TOTAL_FRAMES as L_business_m2_l2_weekly_rhythm_T } from "./lessons-generated/business-m2-l2-weekly-rhythm.gen";
+import { SCENES as L_business_m4_l2_reactive_relapse_S, SCENE_FRAMES as L_business_m4_l2_reactive_relapse_F, TOTAL_FRAMES as L_business_m4_l2_reactive_relapse_T } from "./lessons-generated/business-m4-l2-reactive-relapse.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -207,5 +208,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m7-l1-full-ecosystem", scenes: L_business_m7_l1_full_ecosystem_S, sceneFrames: L_business_m7_l1_full_ecosystem_F, totalFrames: L_business_m7_l1_full_ecosystem_T },
     { id: "business-m1-l1-from-decisions-to-leadership", scenes: L_business_m1_l1_from_decisions_to_leadership_S, sceneFrames: L_business_m1_l1_from_decisions_to_leadership_F, totalFrames: L_business_m1_l1_from_decisions_to_leadership_T },
     { id: "business-m2-l2-weekly-rhythm", scenes: L_business_m2_l2_weekly_rhythm_S, sceneFrames: L_business_m2_l2_weekly_rhythm_F, totalFrames: L_business_m2_l2_weekly_rhythm_T },
+    { id: "business-m4-l2-reactive-relapse", scenes: L_business_m4_l2_reactive_relapse_S, sceneFrames: L_business_m4_l2_reactive_relapse_F, totalFrames: L_business_m4_l2_reactive_relapse_T },
   /* @lesson-entries-end */
 ];
