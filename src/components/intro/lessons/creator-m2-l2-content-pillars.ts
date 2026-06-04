@@ -69,13 +69,13 @@ export const CREATOR_M3_CONTENT_PILLARS_BLOCKS: IntroLessonContent = [
   {
     icon: ImageIcon,
     eyebrow: "شوف بنفسك",
-    title: "٣ Pillars — Educate, Entertain, Inspire",
+    title: "مثال توضيحي — Educate · Entertain · Inspire",
     tone: "primary",
     block: {
       kind: "diagram",
       id: "content-pillars",
-      caption: "دي بنية الـ ٣ Pillars اللي محتواك كله هيتبني عليها: عمود التعليم (Educate)، عمود الترفيه (Entertain)، عمود الإلهام (Inspire). مش ٣٠ موضوع متشتّت — ٣ Pillars واضحين بيخلّوا الجمهور يفهم إنت بتقدّم إيه بالظبط. أي فيديو لازم ينتمي لواحد منهم.",
-      label: "Content Pillars — ٣ أعمدة",
+      caption: "رسم توضيحي فقط — مش القالب اللي تنسخه. الـ ٣ Pillars عندك لازم تطلع من نيتشك + ألم الجمهور + قيمة منتجك (الفقرة اللي فوق). Educate / Entertain / Inspire هنا مثال لشكل الأعمدة، مش محاور جاهزة لازم تستخدمها.",
+      label: "مثال — شكل ٣ أعمدة (مش قالب جاهز)",
     },
   },
   {
