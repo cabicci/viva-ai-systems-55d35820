@@ -85,21 +85,21 @@ import { ANALYST_M6_L2_INTERPRETATION_MISTAKES_BLOCKS } from "./analyst-m6-l2-in
 import { ANALYST_M7_L1_FROM_DECISIONS_TO_BUSINESS_BLOCKS } from "./analyst-m7-l1-from-decisions-to-business";
 /* Business (16 — 4 modules) */
 import { BUSINESS_M1_L1_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS } from "./business-m1-l1-from-decisions-to-leadership";
-import { BUSINESS_M2_L1_REACTIVE_VS_PROACTIVE_BLOCKS } from "./business-m2-l1-reactive-vs-proactive";
+import { BUSINESS_M2_L1_REACTIVE_VS_PROACTIVE_BLOCKS } from "./business-m1-l2-reactive-vs-proactive";
 import { BUSINESS_M1_L3_AI_THINKING_PARTNER_BLOCKS } from "./business-m1-l3-ai-thinking-partner";
-import { BUSINESS_M2_L2_WEEKLY_RHYTHM_BLOCKS } from "./business-m2-l2-weekly-rhythm";
+import { BUSINESS_M2_L2_WEEKLY_RHYTHM_BLOCKS } from "./business-m4-l3-weekly-rhythm";
 import { BUSINESS_M2_L4_PRICING_CASH_FLOW_BLOCKS } from "./business-m2-l4-pricing-cash-flow";
-import { BUSINESS_M3_L1_CUSTOMER_LIFECYCLE_BLOCKS } from "./business-m3-l1-customer-lifecycle";
-import { BUSINESS_M3_L2_RETENTION_FLOW_BLOCKS } from "./business-m3-l2-retention-flow";
+import { BUSINESS_M3_L1_CUSTOMER_LIFECYCLE_BLOCKS } from "./business-m2-l1-customer-lifecycle";
+import { BUSINESS_M3_L2_RETENTION_FLOW_BLOCKS } from "./business-m2-l2-retention-flow";
 import { BUSINESS_M3_L4_HIRING_ONBOARDING_BLOCKS } from "./business-m3-l4-hiring-onboarding";
-import { BUSINESS_M4_L1_STRATEGIC_OPERATIONAL_ADMIN_BLOCKS } from "./business-m4-l1-strategic-operational-admin";
-import { BUSINESS_M4_L2_DELEGATE_OR_AUTOMATE_BLOCKS } from "./business-m4-l2-delegate-or-automate";
+import { BUSINESS_M4_L1_STRATEGIC_OPERATIONAL_ADMIN_BLOCKS } from "./business-m3-l2-strategic-operational-admin";
+import { BUSINESS_M4_L2_DELEGATE_OR_AUTOMATE_BLOCKS } from "./business-m3-l1-delegate-or-automate";
 import { BUSINESS_M4_L5_BUSINESS_OS_DASHBOARD_BLOCKS } from "./business-m4-l5-business-os-dashboard";
-import { BUSINESS_M5_L1_READINESS_SIGNALS_BLOCKS } from "./business-m5-l1-readiness-signals";
-import { BUSINESS_M5_L2_SYSTEM_THEN_PEOPLE_BLOCKS } from "./business-m5-l2-system-then-people";
-import { BUSINESS_M6_L1_REACTIVE_RELAPSE_BLOCKS } from "./business-m6-l1-reactive-relapse";
-import { BUSINESS_M6_L2_PREMATURE_SCALING_BLOCKS } from "./business-m6-l2-premature-scaling";
-import { BUSINESS_M7_L1_FULL_ECOSYSTEM_BLOCKS } from "./business-m7-l1-full-ecosystem";
+import { BUSINESS_M5_L1_READINESS_SIGNALS_BLOCKS } from "./business-m2-l3-readiness-signals";
+import { BUSINESS_M5_L2_SYSTEM_THEN_PEOPLE_BLOCKS } from "./business-m3-l3-system-then-people";
+import { BUSINESS_M6_L1_REACTIVE_RELAPSE_BLOCKS } from "./business-m4-l2-reactive-relapse";
+import { BUSINESS_M6_L2_PREMATURE_SCALING_BLOCKS } from "./business-m4-l1-premature-scaling";
+import { BUSINESS_M7_L1_FULL_ECOSYSTEM_BLOCKS } from "./business-m4-l4-full-ecosystem";
 
 /**
  * Registry of full Introduction lesson bodies, keyed by route slug.
@@ -193,19 +193,19 @@ export const INTRO_LESSON_CONTENT: Record<string, IntroLessonContent> = {
   "analyst-m7-l1-from-decisions-to-business": ANALYST_M7_L1_FROM_DECISIONS_TO_BUSINESS_BLOCKS,
   /* Business — 4 modules × 16 lessons */
   "business-m1-l1-from-decisions-to-leadership": BUSINESS_M1_L1_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS,
-  "business-m2-l1-reactive-vs-proactive": BUSINESS_M2_L1_REACTIVE_VS_PROACTIVE_BLOCKS,
+  "business-m1-l2-reactive-vs-proactive": BUSINESS_M2_L1_REACTIVE_VS_PROACTIVE_BLOCKS,
   "business-m1-l3-ai-thinking-partner": BUSINESS_M1_L3_AI_THINKING_PARTNER_BLOCKS,
-  "business-m3-l1-customer-lifecycle": BUSINESS_M3_L1_CUSTOMER_LIFECYCLE_BLOCKS,
-  "business-m3-l2-retention-flow": BUSINESS_M3_L2_RETENTION_FLOW_BLOCKS,
-  "business-m5-l1-readiness-signals": BUSINESS_M5_L1_READINESS_SIGNALS_BLOCKS,
+  "business-m2-l1-customer-lifecycle": BUSINESS_M3_L1_CUSTOMER_LIFECYCLE_BLOCKS,
+  "business-m2-l2-retention-flow": BUSINESS_M3_L2_RETENTION_FLOW_BLOCKS,
+  "business-m2-l3-readiness-signals": BUSINESS_M5_L1_READINESS_SIGNALS_BLOCKS,
   "business-m2-l4-pricing-cash-flow": BUSINESS_M2_L4_PRICING_CASH_FLOW_BLOCKS,
-  "business-m4-l2-delegate-or-automate": BUSINESS_M4_L2_DELEGATE_OR_AUTOMATE_BLOCKS,
-  "business-m4-l1-strategic-operational-admin": BUSINESS_M4_L1_STRATEGIC_OPERATIONAL_ADMIN_BLOCKS,
-  "business-m5-l2-system-then-people": BUSINESS_M5_L2_SYSTEM_THEN_PEOPLE_BLOCKS,
+  "business-m3-l1-delegate-or-automate": BUSINESS_M4_L2_DELEGATE_OR_AUTOMATE_BLOCKS,
+  "business-m3-l2-strategic-operational-admin": BUSINESS_M4_L1_STRATEGIC_OPERATIONAL_ADMIN_BLOCKS,
+  "business-m3-l3-system-then-people": BUSINESS_M5_L2_SYSTEM_THEN_PEOPLE_BLOCKS,
   "business-m3-l4-hiring-onboarding": BUSINESS_M3_L4_HIRING_ONBOARDING_BLOCKS,
-  "business-m6-l2-premature-scaling": BUSINESS_M6_L2_PREMATURE_SCALING_BLOCKS,
-  "business-m6-l1-reactive-relapse": BUSINESS_M6_L1_REACTIVE_RELAPSE_BLOCKS,
-  "business-m2-l2-weekly-rhythm": BUSINESS_M2_L2_WEEKLY_RHYTHM_BLOCKS,
-  "business-m7-l1-full-ecosystem": BUSINESS_M7_L1_FULL_ECOSYSTEM_BLOCKS,
+  "business-m4-l1-premature-scaling": BUSINESS_M6_L2_PREMATURE_SCALING_BLOCKS,
+  "business-m4-l2-reactive-relapse": BUSINESS_M6_L1_REACTIVE_RELAPSE_BLOCKS,
+  "business-m4-l3-weekly-rhythm": BUSINESS_M2_L2_WEEKLY_RHYTHM_BLOCKS,
+  "business-m4-l4-full-ecosystem": BUSINESS_M7_L1_FULL_ECOSYSTEM_BLOCKS,
   "business-m4-l5-business-os-dashboard": BUSINESS_M4_L5_BUSINESS_OS_DASHBOARD_BLOCKS,
 };
