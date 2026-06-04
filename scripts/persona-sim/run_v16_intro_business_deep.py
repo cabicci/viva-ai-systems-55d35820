@@ -190,6 +190,9 @@ def call_gemini(persona: dict, idx: int, lesson: dict, retries: int = 4) -> dict
                 # Fall back to json-repair for a tolerant parse.
                 from json_repair import repair_json
                 data = json.loads(repair_json(txt))
+            # Force-pin identifiers from input — never trust IDs the model returns.
+            data["persona_id"] = persona["id"]
+            data["lesson_id"] = lesson["id"]
             data["_archetype"] = persona["arch"]
             data["_path"] = lesson["path"]
             data["_idx"] = idx + 1
