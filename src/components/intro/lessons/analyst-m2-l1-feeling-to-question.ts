@@ -2,7 +2,7 @@ import { Brain, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, Table2, FlaskCon
 import type { IntroLessonContent } from "../intro-lesson-types";
 
 /** Analyst · M1 · Lesson 01 — Feeling → Question */
-export const ANALYST_M1_FEELING_TO_QUESTION_BLOCKS: IntroLessonContent = [
+export const ANALYST_M2_L1_FEELING_TO_QUESTION_BLOCKS: IntroLessonContent = [
   {
     icon: Brain,
     eyebrow: "HERO",

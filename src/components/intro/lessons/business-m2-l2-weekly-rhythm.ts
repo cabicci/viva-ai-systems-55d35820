@@ -1,7 +1,7 @@
 import { CalendarDays, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, CalendarRange, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-export const BUSINESS_M1_WEEKLY_RHYTHM_BLOCKS: IntroLessonContent = [
+export const BUSINESS_M2_L2_WEEKLY_RHYTHM_BLOCKS: IntroLessonContent = [
   {
     icon: CalendarDays,
     eyebrow: "HERO",

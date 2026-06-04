@@ -1,7 +1,7 @@
 import { AlertOctagon, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, TrendingUp, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-export const BUSINESS_M5_PREMATURE_SCALING_BLOCKS: IntroLessonContent = [
+export const BUSINESS_M6_L2_PREMATURE_SCALING_BLOCKS: IntroLessonContent = [
   {
     icon: AlertOctagon,
     eyebrow: "HERO",

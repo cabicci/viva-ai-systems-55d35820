@@ -1,7 +1,7 @@
 import { ArrowRightCircle, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, ListChecks, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-export const ANALYST_M3_DECISION_RULE_BLOCKS: IntroLessonContent = [
+export const ANALYST_M4_L2_DECISION_RULE_BLOCKS: IntroLessonContent = [
   {
     icon: ArrowRightCircle,
     eyebrow: "HERO",

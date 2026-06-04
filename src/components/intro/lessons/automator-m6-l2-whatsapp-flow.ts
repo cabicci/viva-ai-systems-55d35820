@@ -11,7 +11,7 @@ import automatorM5WhatsappFlowScreenshot from "@/assets/lessons/unique/automator
 /**
  * Automator · M5 · Lesson 02 — WhatsApp Flow ذكي
  */
-export const AUTOMATOR_M5_WHATSAPP_FLOW_BLOCKS: IntroLessonContent = [
+export const AUTOMATOR_M6_L2_WHATSAPP_FLOW_BLOCKS: IntroLessonContent = [
   {
     icon: MessageCircle,
     eyebrow: "HERO",

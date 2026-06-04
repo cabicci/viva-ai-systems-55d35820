@@ -11,7 +11,7 @@ import automatorM2FiltersRoutersScreenshot from "@/assets/lessons/unique/automat
 /**
  * Automator · M2 · Lesson 03 — Filters & Routers
  */
-export const AUTOMATOR_M2_FILTERS_ROUTERS_BLOCKS: IntroLessonContent = [
+export const AUTOMATOR_M3_L3_FILTERS_ROUTERS_BLOCKS: IntroLessonContent = [
   {
     icon: GitBranch,
     eyebrow: "HERO",

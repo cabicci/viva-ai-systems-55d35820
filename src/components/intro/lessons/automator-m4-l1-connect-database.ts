@@ -11,7 +11,7 @@ import automatorM3ConnectDatabaseScreenshot from "@/assets/lessons/unique/automa
 /**
  * Automator · M3 · Lesson 01 — وصّل الـ DB من Builder
  */
-export const AUTOMATOR_M3_CONNECT_DATABASE_BLOCKS: IntroLessonContent = [
+export const AUTOMATOR_M4_L1_CONNECT_DATABASE_BLOCKS: IntroLessonContent = [
   {
     icon: Lightbulb,
     eyebrow: "اختياري — للمتقدمين",

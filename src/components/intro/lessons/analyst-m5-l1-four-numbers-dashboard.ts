@@ -1,7 +1,7 @@
 import { LayoutDashboard, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, BarChart3, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-export const ANALYST_M4_FOUR_NUMBERS_DASHBOARD_BLOCKS: IntroLessonContent = [
+export const ANALYST_M5_L1_FOUR_NUMBERS_DASHBOARD_BLOCKS: IntroLessonContent = [
   {
     icon: LayoutDashboard,
     eyebrow: "HERO",

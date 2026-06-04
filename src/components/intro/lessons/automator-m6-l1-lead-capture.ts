@@ -12,7 +12,7 @@ import leadsScreenshot from "@/assets/lessons/unique/automator-m6-l1-lead-captur
 /**
  * Automator · M5 · Lesson 01 — استقبال Leads من Creator
  */
-export const AUTOMATOR_M5_LEAD_CAPTURE_BLOCKS: IntroLessonContent = [
+export const AUTOMATOR_M6_L1_LEAD_CAPTURE_BLOCKS: IntroLessonContent = [
   {
     icon: Inbox,
     eyebrow: "HERO",

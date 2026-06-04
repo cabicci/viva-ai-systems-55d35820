@@ -12,7 +12,7 @@ import automatorM4AgentsScreenshot from "@/assets/lessons/unique/automator-m5-l3
 /**
  * Automator · M4 · Lesson 03 — Agents بياخدوا قرارات
  */
-export const AUTOMATOR_M4_AGENTS_BLOCKS: IntroLessonContent = [
+export const AUTOMATOR_M5_L3_AGENTS_BLOCKS: IntroLessonContent = [
   {
     icon: Lightbulb,
     eyebrow: "اختياري — للمتقدمين",

@@ -1,7 +1,7 @@
 import { Layers3, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, BarChart3, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-export const BUSINESS_M3_STRATEGIC_OPERATIONAL_ADMIN_BLOCKS: IntroLessonContent = [
+export const BUSINESS_M4_L1_STRATEGIC_OPERATIONAL_ADMIN_BLOCKS: IntroLessonContent = [
   {
     icon: Layers3,
     eyebrow: "HERO",

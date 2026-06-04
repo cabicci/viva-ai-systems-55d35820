@@ -1,7 +1,7 @@
 import { Repeat, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, MessageSquare, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-export const BUSINESS_M2_RETENTION_FLOW_BLOCKS: IntroLessonContent = [
+export const BUSINESS_M3_L2_RETENTION_FLOW_BLOCKS: IntroLessonContent = [
   {
     icon: Repeat,
     eyebrow: "HERO",

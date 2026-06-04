@@ -15,7 +15,7 @@ import journeyScreenshot from "@/assets/lessons/unique/automator-m1-l1-where-you
  * يفتح المسار بربط Builder + Creator باللي جاي. كل قرار في الـ Automator
  * بيتبني على إن المتعلم خلّص (أو هيخلّص) Builder و Creator.
  */
-export const AUTOMATOR_M1_WHERE_YOU_ARE_BLOCKS: IntroLessonContent = [
+export const AUTOMATOR_M1_L1_WHERE_YOU_ARE_BLOCKS: IntroLessonContent = [
   {
     icon: Map,
     eyebrow: "HERO",

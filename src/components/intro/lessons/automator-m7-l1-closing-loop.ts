@@ -11,7 +11,7 @@ import automatorM6ClosingLoopScreenshot from "@/assets/lessons/unique/automator-
 /**
  * Automator · M6 · Lesson 01 — Closing the Loop
  */
-export const AUTOMATOR_M6_CLOSING_LOOP_BLOCKS: IntroLessonContent = [
+export const AUTOMATOR_M7_L1_CLOSING_LOOP_BLOCKS: IntroLessonContent = [
   {
     icon: Flag,
     eyebrow: "HERO",

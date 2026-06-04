@@ -11,7 +11,7 @@ import automatorM3WebhooksApiScreenshot from "@/assets/lessons/unique/automator-
 /**
  * Automator · M3 · Lesson 02 — Webhooks & APIs
  */
-export const AUTOMATOR_M3_WEBHOOKS_API_BLOCKS: IntroLessonContent = [
+export const AUTOMATOR_M4_L2_WEBHOOKS_API_BLOCKS: IntroLessonContent = [
   {
     icon: Lightbulb,
     eyebrow: "اختياري — للمتقدمين",

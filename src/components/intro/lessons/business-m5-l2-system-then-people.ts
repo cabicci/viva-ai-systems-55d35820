@@ -1,7 +1,7 @@
 import { Cog, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, GitCompare, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-export const BUSINESS_M4_SYSTEM_THEN_PEOPLE_BLOCKS: IntroLessonContent = [
+export const BUSINESS_M5_L2_SYSTEM_THEN_PEOPLE_BLOCKS: IntroLessonContent = [
   {
     icon: Cog,
     eyebrow: "HERO",

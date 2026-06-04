@@ -1,7 +1,7 @@
 import { ShieldAlert, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, LineChart, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-export const ANALYST_M5_INTERPRETATION_MISTAKES_BLOCKS: IntroLessonContent = [
+export const ANALYST_M6_L2_INTERPRETATION_MISTAKES_BLOCKS: IntroLessonContent = [
   {
     icon: ShieldAlert,
     eyebrow: "HERO",

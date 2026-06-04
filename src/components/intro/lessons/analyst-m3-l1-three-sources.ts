@@ -1,7 +1,7 @@
 import { Database, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, Table2, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-export const ANALYST_M2_THREE_SOURCES_BLOCKS: IntroLessonContent = [
+export const ANALYST_M3_L1_THREE_SOURCES_BLOCKS: IntroLessonContent = [
   {
     icon: Database,
     eyebrow: "HERO",

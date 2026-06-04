@@ -1,7 +1,7 @@
 import { Activity, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, LineChart, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-export const ANALYST_M3_PATTERN_VS_OUTLIER_BLOCKS: IntroLessonContent = [
+export const ANALYST_M4_L1_PATTERN_VS_OUTLIER_BLOCKS: IntroLessonContent = [
   {
     icon: Activity,
     eyebrow: "HERO",

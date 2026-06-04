@@ -11,7 +11,7 @@ import automatorM2TriggersActionsScreenshot from "@/assets/lessons/unique/automa
 /**
  * Automator · M2 · Lesson 02 — Triggers + Actions
  */
-export const AUTOMATOR_M2_TRIGGERS_ACTIONS_BLOCKS: IntroLessonContent = [
+export const AUTOMATOR_M3_L2_TRIGGERS_ACTIONS_BLOCKS: IntroLessonContent = [
   {
     icon: Zap,
     eyebrow: "HERO",

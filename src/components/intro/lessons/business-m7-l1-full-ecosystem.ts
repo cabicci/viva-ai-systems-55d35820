@@ -2,7 +2,7 @@ import { Infinity as InfinityIcon, PlayCircle, Lightbulb, Scale, Rocket, BookOpe
 import type { IntroLessonContent } from "../intro-lesson-types";
 
 /** Business · M6 · Lesson 01 — خريطة الـ Ecosystem الكامل */
-export const BUSINESS_M6_FULL_ECOSYSTEM_BLOCKS: IntroLessonContent = [
+export const BUSINESS_M7_L1_FULL_ECOSYSTEM_BLOCKS: IntroLessonContent = [
   {
     icon: InfinityIcon,
     eyebrow: "HERO",

@@ -1,7 +1,7 @@
 import { Sparkles, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, Workflow, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-export const ANALYST_M2_AI_SUMMARIZATION_BLOCKS: IntroLessonContent = [
+export const ANALYST_M3_L2_AI_SUMMARIZATION_BLOCKS: IntroLessonContent = [
   {
     icon: Sparkles,
     eyebrow: "HERO",

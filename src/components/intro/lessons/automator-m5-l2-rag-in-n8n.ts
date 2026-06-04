@@ -12,7 +12,7 @@ import automatorM4RagInN8NScreenshot from "@/assets/lessons/unique/automator-m5-
 /**
  * Automator · M4 · Lesson 02 — RAG جوه الـ Automation
  */
-export const AUTOMATOR_M4_RAG_IN_N8N_BLOCKS: IntroLessonContent = [
+export const AUTOMATOR_M5_L2_RAG_IN_N8N_BLOCKS: IntroLessonContent = [
   {
     icon: Lightbulb,
     eyebrow: "اختياري — للمتقدمين",

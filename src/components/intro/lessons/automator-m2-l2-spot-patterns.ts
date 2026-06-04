@@ -11,7 +11,7 @@ import automatorM1SpotPatternsScreenshot from "@/assets/lessons/unique/automator
 /**
  * Automator · M1 · Lesson 02 — شوف الأنماط في يومك
  */
-export const AUTOMATOR_M1_SPOT_PATTERNS_BLOCKS: IntroLessonContent = [
+export const AUTOMATOR_M2_L2_SPOT_PATTERNS_BLOCKS: IntroLessonContent = [
   {
     icon: Search,
     eyebrow: "HERO",

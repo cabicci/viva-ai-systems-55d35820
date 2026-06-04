@@ -1,7 +1,7 @@
 import { TrendingDown, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, RefreshCcw, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-export const BUSINESS_M5_REACTIVE_RELAPSE_BLOCKS: IntroLessonContent = [
+export const BUSINESS_M6_L1_REACTIVE_RELAPSE_BLOCKS: IntroLessonContent = [
   {
     icon: TrendingDown,
     eyebrow: "HERO",

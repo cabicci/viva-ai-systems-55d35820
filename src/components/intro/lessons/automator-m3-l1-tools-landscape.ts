@@ -11,7 +11,7 @@ import automatorM2ToolsLandscapeScreenshot from "@/assets/lessons/unique/automat
 /**
  * Automator · M2 · Lesson 01 — Make vs n8n vs Zapier
  */
-export const AUTOMATOR_M2_TOOLS_LANDSCAPE_BLOCKS: IntroLessonContent = [
+export const AUTOMATOR_M3_L1_TOOLS_LANDSCAPE_BLOCKS: IntroLessonContent = [
   {
     icon: Workflow,
     eyebrow: "HERO",

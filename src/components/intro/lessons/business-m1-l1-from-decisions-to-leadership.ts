@@ -2,7 +2,7 @@ import { Crown, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, PieChart, FlaskC
 import type { IntroLessonContent } from "../intro-lesson-types";
 
 /** Business · M1 · Lesson 01 — Entry point: قيادة من اليوم الأول */
-export const BUSINESS_M1_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS: IntroLessonContent = [
+export const BUSINESS_M1_L1_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS: IntroLessonContent = [
   {
     icon: Crown,
     eyebrow: "HERO",

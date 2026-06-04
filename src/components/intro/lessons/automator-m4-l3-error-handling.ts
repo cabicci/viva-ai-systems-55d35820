@@ -11,7 +11,7 @@ import automatorM3ErrorHandlingScreenshot from "@/assets/lessons/unique/automato
 /**
  * Automator · M3 · Lesson 03 — Error Handling
  */
-export const AUTOMATOR_M3_ERROR_HANDLING_BLOCKS: IntroLessonContent = [
+export const AUTOMATOR_M4_L3_ERROR_HANDLING_BLOCKS: IntroLessonContent = [
   {
     icon: Lightbulb,
     eyebrow: "اختياري — للمتقدمين",

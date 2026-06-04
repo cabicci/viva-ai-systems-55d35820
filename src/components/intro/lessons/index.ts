@@ -41,23 +41,23 @@ import { BUILDER_M9_RAG_BLOCKS } from "./builder-m9-l1-rag";
 import { BUILDER_M9_AGENTS_BLOCKS } from "./builder-m9-l3-agents";
 import { BUILDER_M10_DEPLOY_DOMAIN_BLOCKS } from "./builder-m10-deploy-domain";
 import { BUILDER_M10_FIRST_USERS_BLOCKS } from "./builder-m10-first-users";
-import { AUTOMATOR_M1_WHERE_YOU_ARE_BLOCKS } from "./automator-m1-l1-where-you-are";
-import { AUTOMATOR_M1_SYSTEMS_VIEW_BLOCKS } from "./automator-m2-l1-systems-view";
-import { AUTOMATOR_M1_SPOT_PATTERNS_BLOCKS } from "./automator-m2-l2-spot-patterns";
-import { AUTOMATOR_M1_DECIDE_WHAT_TO_AUTOMATE_BLOCKS } from "./automator-m2-l3-decide-what-to-automate";
-import { AUTOMATOR_M2_TOOLS_LANDSCAPE_BLOCKS } from "./automator-m3-l1-tools-landscape";
-import { AUTOMATOR_M2_TRIGGERS_ACTIONS_BLOCKS } from "./automator-m3-l2-triggers-actions";
-import { AUTOMATOR_M2_FILTERS_ROUTERS_BLOCKS } from "./automator-m3-l3-filters-routers";
-import { AUTOMATOR_M3_CONNECT_DATABASE_BLOCKS } from "./automator-m4-l1-connect-database";
-import { AUTOMATOR_M3_WEBHOOKS_API_BLOCKS } from "./automator-m4-l2-webhooks-api";
-import { AUTOMATOR_M3_ERROR_HANDLING_BLOCKS } from "./automator-m4-l3-error-handling";
-import { AUTOMATOR_M4_LLM_IN_FLOW_BLOCKS } from "./automator-m5-l1-llm-in-flow";
-import { AUTOMATOR_M4_RAG_IN_N8N_BLOCKS } from "./automator-m5-l2-rag-in-n8n";
-import { AUTOMATOR_M4_AGENTS_BLOCKS } from "./automator-m5-l3-agents";
-import { AUTOMATOR_M5_LEAD_CAPTURE_BLOCKS } from "./automator-m6-l1-lead-capture";
-import { AUTOMATOR_M5_WHATSAPP_FLOW_BLOCKS } from "./automator-m6-l2-whatsapp-flow";
-import { AUTOMATOR_M5_FOLLOW_UP_BLOCKS } from "./automator-m6-l3-follow-up";
-import { AUTOMATOR_M6_CLOSING_LOOP_BLOCKS } from "./automator-m7-l1-closing-loop";
+import { AUTOMATOR_M1_L1_WHERE_YOU_ARE_BLOCKS } from "./automator-m1-l1-where-you-are";
+import { AUTOMATOR_M2_L1_SYSTEMS_VIEW_BLOCKS } from "./automator-m2-l1-systems-view";
+import { AUTOMATOR_M2_L2_SPOT_PATTERNS_BLOCKS } from "./automator-m2-l2-spot-patterns";
+import { AUTOMATOR_M2_L3_DECIDE_WHAT_TO_AUTOMATE_BLOCKS } from "./automator-m2-l3-decide-what-to-automate";
+import { AUTOMATOR_M3_L1_TOOLS_LANDSCAPE_BLOCKS } from "./automator-m3-l1-tools-landscape";
+import { AUTOMATOR_M3_L2_TRIGGERS_ACTIONS_BLOCKS } from "./automator-m3-l2-triggers-actions";
+import { AUTOMATOR_M3_L3_FILTERS_ROUTERS_BLOCKS } from "./automator-m3-l3-filters-routers";
+import { AUTOMATOR_M4_L1_CONNECT_DATABASE_BLOCKS } from "./automator-m4-l1-connect-database";
+import { AUTOMATOR_M4_L2_WEBHOOKS_API_BLOCKS } from "./automator-m4-l2-webhooks-api";
+import { AUTOMATOR_M4_L3_ERROR_HANDLING_BLOCKS } from "./automator-m4-l3-error-handling";
+import { AUTOMATOR_M5_L1_LLM_IN_FLOW_BLOCKS } from "./automator-m5-l1-llm-in-flow";
+import { AUTOMATOR_M5_L2_RAG_IN_N8N_BLOCKS } from "./automator-m5-l2-rag-in-n8n";
+import { AUTOMATOR_M5_L3_AGENTS_BLOCKS } from "./automator-m5-l3-agents";
+import { AUTOMATOR_M6_L1_LEAD_CAPTURE_BLOCKS } from "./automator-m6-l1-lead-capture";
+import { AUTOMATOR_M6_L2_WHATSAPP_FLOW_BLOCKS } from "./automator-m6-l2-whatsapp-flow";
+import { AUTOMATOR_M6_L3_FOLLOW_UP_BLOCKS } from "./automator-m6-l3-follow-up";
+import { AUTOMATOR_M7_L1_CLOSING_LOOP_BLOCKS } from "./automator-m7-l1-closing-loop";
 import { INTRO_FIRST_PROMPT_CONTENT } from "./intro-m1-l2-first-prompt";
 import { INTRO_CHOOSE_YOUR_PATH_CONTENT } from "./intro-m1-l7-choose-your-path";
 import { BUILDER_M6_WIREFRAME_BLOCKS } from "./builder-m6-l2-wireframe";
@@ -71,31 +71,31 @@ import { CREATOR_M6_GRID_CONSISTENCY_BLOCKS } from "./creator-m7-l2-grid-consist
 import { INTRO_SETUP_YOUR_AI_CONTENT } from "./intro-m1-l3-setup-your-ai";
 import { BUILDER_M5_TRANSITION_BLOCKS } from "./builder-m5-l1-transition";
 /* Analyst (12) */
-import { ANALYST_M1_FROM_AUTOMATION_TO_INSIGHT_BLOCKS } from "./analyst-m1-l1-from-automation-to-insight";
-import { ANALYST_M1_FEELING_TO_QUESTION_BLOCKS } from "./analyst-m2-l1-feeling-to-question";
-import { ANALYST_M1_RIGHT_QUESTION_RULE_BLOCKS } from "./analyst-m2-l2-right-question-rule";
-import { ANALYST_M2_THREE_SOURCES_BLOCKS } from "./analyst-m3-l1-three-sources";
-import { ANALYST_M2_AI_SUMMARIZATION_BLOCKS } from "./analyst-m3-l2-ai-summarization";
-import { ANALYST_M3_PATTERN_VS_OUTLIER_BLOCKS } from "./analyst-m4-l1-pattern-vs-outlier";
-import { ANALYST_M3_DECISION_RULE_BLOCKS } from "./analyst-m4-l2-decision-rule";
-import { ANALYST_M4_FOUR_NUMBERS_DASHBOARD_BLOCKS } from "./analyst-m5-l1-four-numbers-dashboard";
-import { ANALYST_M4_WEEKLY_REVIEW_RITUAL_BLOCKS } from "./analyst-m5-l2-weekly-review-ritual";
-import { ANALYST_M5_QUESTION_MISTAKES_BLOCKS } from "./analyst-m6-l1-question-mistakes";
-import { ANALYST_M5_INTERPRETATION_MISTAKES_BLOCKS } from "./analyst-m6-l2-interpretation-mistakes";
-import { ANALYST_M6_FROM_DECISIONS_TO_BUSINESS_BLOCKS } from "./analyst-m7-l1-from-decisions-to-business";
+import { ANALYST_M1_L1_FROM_AUTOMATION_TO_INSIGHT_BLOCKS } from "./analyst-m1-l1-from-automation-to-insight";
+import { ANALYST_M2_L1_FEELING_TO_QUESTION_BLOCKS } from "./analyst-m2-l1-feeling-to-question";
+import { ANALYST_M2_L2_RIGHT_QUESTION_RULE_BLOCKS } from "./analyst-m2-l2-right-question-rule";
+import { ANALYST_M3_L1_THREE_SOURCES_BLOCKS } from "./analyst-m3-l1-three-sources";
+import { ANALYST_M3_L2_AI_SUMMARIZATION_BLOCKS } from "./analyst-m3-l2-ai-summarization";
+import { ANALYST_M4_L1_PATTERN_VS_OUTLIER_BLOCKS } from "./analyst-m4-l1-pattern-vs-outlier";
+import { ANALYST_M4_L2_DECISION_RULE_BLOCKS } from "./analyst-m4-l2-decision-rule";
+import { ANALYST_M5_L1_FOUR_NUMBERS_DASHBOARD_BLOCKS } from "./analyst-m5-l1-four-numbers-dashboard";
+import { ANALYST_M5_L2_WEEKLY_REVIEW_RITUAL_BLOCKS } from "./analyst-m5-l2-weekly-review-ritual";
+import { ANALYST_M6_L1_QUESTION_MISTAKES_BLOCKS } from "./analyst-m6-l1-question-mistakes";
+import { ANALYST_M6_L2_INTERPRETATION_MISTAKES_BLOCKS } from "./analyst-m6-l2-interpretation-mistakes";
+import { ANALYST_M7_L1_FROM_DECISIONS_TO_BUSINESS_BLOCKS } from "./analyst-m7-l1-from-decisions-to-business";
 /* Business (12) */
-import { BUSINESS_M1_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS } from "./business-m1-l1-from-decisions-to-leadership";
-import { BUSINESS_M1_REACTIVE_VS_PROACTIVE_BLOCKS } from "./business-m2-l1-reactive-vs-proactive";
-import { BUSINESS_M1_WEEKLY_RHYTHM_BLOCKS } from "./business-m2-l2-weekly-rhythm";
-import { BUSINESS_M2_CUSTOMER_LIFECYCLE_BLOCKS } from "./business-m3-l1-customer-lifecycle";
-import { BUSINESS_M2_RETENTION_FLOW_BLOCKS } from "./business-m3-l2-retention-flow";
-import { BUSINESS_M3_STRATEGIC_OPERATIONAL_ADMIN_BLOCKS } from "./business-m4-l1-strategic-operational-admin";
-import { BUSINESS_M3_DELEGATE_OR_AUTOMATE_BLOCKS } from "./business-m4-l2-delegate-or-automate";
-import { BUSINESS_M4_READINESS_SIGNALS_BLOCKS } from "./business-m5-l1-readiness-signals";
-import { BUSINESS_M4_SYSTEM_THEN_PEOPLE_BLOCKS } from "./business-m5-l2-system-then-people";
-import { BUSINESS_M5_REACTIVE_RELAPSE_BLOCKS } from "./business-m6-l1-reactive-relapse";
-import { BUSINESS_M5_PREMATURE_SCALING_BLOCKS } from "./business-m6-l2-premature-scaling";
-import { BUSINESS_M6_FULL_ECOSYSTEM_BLOCKS } from "./business-m7-l1-full-ecosystem";
+import { BUSINESS_M1_L1_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS } from "./business-m1-l1-from-decisions-to-leadership";
+import { BUSINESS_M2_L1_REACTIVE_VS_PROACTIVE_BLOCKS } from "./business-m2-l1-reactive-vs-proactive";
+import { BUSINESS_M2_L2_WEEKLY_RHYTHM_BLOCKS } from "./business-m2-l2-weekly-rhythm";
+import { BUSINESS_M3_L1_CUSTOMER_LIFECYCLE_BLOCKS } from "./business-m3-l1-customer-lifecycle";
+import { BUSINESS_M3_L2_RETENTION_FLOW_BLOCKS } from "./business-m3-l2-retention-flow";
+import { BUSINESS_M4_L1_STRATEGIC_OPERATIONAL_ADMIN_BLOCKS } from "./business-m4-l1-strategic-operational-admin";
+import { BUSINESS_M4_L2_DELEGATE_OR_AUTOMATE_BLOCKS } from "./business-m4-l2-delegate-or-automate";
+import { BUSINESS_M5_L1_READINESS_SIGNALS_BLOCKS } from "./business-m5-l1-readiness-signals";
+import { BUSINESS_M5_L2_SYSTEM_THEN_PEOPLE_BLOCKS } from "./business-m5-l2-system-then-people";
+import { BUSINESS_M6_L1_REACTIVE_RELAPSE_BLOCKS } from "./business-m6-l1-reactive-relapse";
+import { BUSINESS_M6_L2_PREMATURE_SCALING_BLOCKS } from "./business-m6-l2-premature-scaling";
+import { BUSINESS_M7_L1_FULL_ECOSYSTEM_BLOCKS } from "./business-m7-l1-full-ecosystem";
 
 /**
  * Registry of full Introduction lesson bodies, keyed by route slug.
@@ -147,23 +147,23 @@ export const INTRO_LESSON_CONTENT: Record<string, IntroLessonContent> = {
   "builder-m9-l3-agents": BUILDER_M9_AGENTS_BLOCKS,
   "builder-m10-deploy-domain": BUILDER_M10_DEPLOY_DOMAIN_BLOCKS,
   "builder-m10-first-users": BUILDER_M10_FIRST_USERS_BLOCKS,
-  "automator-m1-l1-where-you-are": AUTOMATOR_M1_WHERE_YOU_ARE_BLOCKS,
-  "automator-m2-l1-systems-view": AUTOMATOR_M1_SYSTEMS_VIEW_BLOCKS,
-  "automator-m2-l2-spot-patterns": AUTOMATOR_M1_SPOT_PATTERNS_BLOCKS,
-  "automator-m2-l3-decide-what-to-automate": AUTOMATOR_M1_DECIDE_WHAT_TO_AUTOMATE_BLOCKS,
-  "automator-m3-l1-tools-landscape": AUTOMATOR_M2_TOOLS_LANDSCAPE_BLOCKS,
-  "automator-m3-l2-triggers-actions": AUTOMATOR_M2_TRIGGERS_ACTIONS_BLOCKS,
-  "automator-m3-l3-filters-routers": AUTOMATOR_M2_FILTERS_ROUTERS_BLOCKS,
-  "automator-m4-l1-connect-database": AUTOMATOR_M3_CONNECT_DATABASE_BLOCKS,
-  "automator-m4-l2-webhooks-api": AUTOMATOR_M3_WEBHOOKS_API_BLOCKS,
-  "automator-m4-l3-error-handling": AUTOMATOR_M3_ERROR_HANDLING_BLOCKS,
-  "automator-m5-l1-llm-in-flow": AUTOMATOR_M4_LLM_IN_FLOW_BLOCKS,
-  "automator-m5-l2-rag-in-n8n": AUTOMATOR_M4_RAG_IN_N8N_BLOCKS,
-  "automator-m5-l3-agents": AUTOMATOR_M4_AGENTS_BLOCKS,
-  "automator-m6-l1-lead-capture": AUTOMATOR_M5_LEAD_CAPTURE_BLOCKS,
-  "automator-m6-l2-whatsapp-flow": AUTOMATOR_M5_WHATSAPP_FLOW_BLOCKS,
-  "automator-m6-l3-follow-up": AUTOMATOR_M5_FOLLOW_UP_BLOCKS,
-  "automator-m7-l1-closing-loop": AUTOMATOR_M6_CLOSING_LOOP_BLOCKS,
+  "automator-m1-l1-where-you-are": AUTOMATOR_M1_L1_WHERE_YOU_ARE_BLOCKS,
+  "automator-m2-l1-systems-view": AUTOMATOR_M2_L1_SYSTEMS_VIEW_BLOCKS,
+  "automator-m2-l2-spot-patterns": AUTOMATOR_M2_L2_SPOT_PATTERNS_BLOCKS,
+  "automator-m2-l3-decide-what-to-automate": AUTOMATOR_M2_L3_DECIDE_WHAT_TO_AUTOMATE_BLOCKS,
+  "automator-m3-l1-tools-landscape": AUTOMATOR_M3_L1_TOOLS_LANDSCAPE_BLOCKS,
+  "automator-m3-l2-triggers-actions": AUTOMATOR_M3_L2_TRIGGERS_ACTIONS_BLOCKS,
+  "automator-m3-l3-filters-routers": AUTOMATOR_M3_L3_FILTERS_ROUTERS_BLOCKS,
+  "automator-m4-l1-connect-database": AUTOMATOR_M4_L1_CONNECT_DATABASE_BLOCKS,
+  "automator-m4-l2-webhooks-api": AUTOMATOR_M4_L2_WEBHOOKS_API_BLOCKS,
+  "automator-m4-l3-error-handling": AUTOMATOR_M4_L3_ERROR_HANDLING_BLOCKS,
+  "automator-m5-l1-llm-in-flow": AUTOMATOR_M5_L1_LLM_IN_FLOW_BLOCKS,
+  "automator-m5-l2-rag-in-n8n": AUTOMATOR_M5_L2_RAG_IN_N8N_BLOCKS,
+  "automator-m5-l3-agents": AUTOMATOR_M5_L3_AGENTS_BLOCKS,
+  "automator-m6-l1-lead-capture": AUTOMATOR_M6_L1_LEAD_CAPTURE_BLOCKS,
+  "automator-m6-l2-whatsapp-flow": AUTOMATOR_M6_L2_WHATSAPP_FLOW_BLOCKS,
+  "automator-m6-l3-follow-up": AUTOMATOR_M6_L3_FOLLOW_UP_BLOCKS,
+  "automator-m7-l1-closing-loop": AUTOMATOR_M7_L1_CLOSING_LOOP_BLOCKS,
   "intro-m1-l2-first-prompt": INTRO_FIRST_PROMPT_CONTENT,
   "intro-m1-l7-choose-your-path": INTRO_CHOOSE_YOUR_PATH_CONTENT,
   "builder-m6-l2-wireframe": BUILDER_M6_WIREFRAME_BLOCKS,
@@ -175,29 +175,29 @@ export const INTRO_LESSON_CONTENT: Record<string, IntroLessonContent> = {
   "creator-m7-l1-brand-basics": CREATOR_M6_BRAND_BASICS_BLOCKS,
   "creator-m7-l2-grid-consistency": CREATOR_M6_GRID_CONSISTENCY_BLOCKS,
   /* Analyst */
-  "analyst-m1-l1-from-automation-to-insight": ANALYST_M1_FROM_AUTOMATION_TO_INSIGHT_BLOCKS,
-  "analyst-m2-l1-feeling-to-question": ANALYST_M1_FEELING_TO_QUESTION_BLOCKS,
-  "analyst-m2-l2-right-question-rule": ANALYST_M1_RIGHT_QUESTION_RULE_BLOCKS,
-  "analyst-m3-l1-three-sources": ANALYST_M2_THREE_SOURCES_BLOCKS,
-  "analyst-m3-l2-ai-summarization": ANALYST_M2_AI_SUMMARIZATION_BLOCKS,
-  "analyst-m4-l1-pattern-vs-outlier": ANALYST_M3_PATTERN_VS_OUTLIER_BLOCKS,
-  "analyst-m4-l2-decision-rule": ANALYST_M3_DECISION_RULE_BLOCKS,
-  "analyst-m5-l1-four-numbers-dashboard": ANALYST_M4_FOUR_NUMBERS_DASHBOARD_BLOCKS,
-  "analyst-m5-l2-weekly-review-ritual": ANALYST_M4_WEEKLY_REVIEW_RITUAL_BLOCKS,
-  "analyst-m6-l1-question-mistakes": ANALYST_M5_QUESTION_MISTAKES_BLOCKS,
-  "analyst-m6-l2-interpretation-mistakes": ANALYST_M5_INTERPRETATION_MISTAKES_BLOCKS,
-  "analyst-m7-l1-from-decisions-to-business": ANALYST_M6_FROM_DECISIONS_TO_BUSINESS_BLOCKS,
+  "analyst-m1-l1-from-automation-to-insight": ANALYST_M1_L1_FROM_AUTOMATION_TO_INSIGHT_BLOCKS,
+  "analyst-m2-l1-feeling-to-question": ANALYST_M2_L1_FEELING_TO_QUESTION_BLOCKS,
+  "analyst-m2-l2-right-question-rule": ANALYST_M2_L2_RIGHT_QUESTION_RULE_BLOCKS,
+  "analyst-m3-l1-three-sources": ANALYST_M3_L1_THREE_SOURCES_BLOCKS,
+  "analyst-m3-l2-ai-summarization": ANALYST_M3_L2_AI_SUMMARIZATION_BLOCKS,
+  "analyst-m4-l1-pattern-vs-outlier": ANALYST_M4_L1_PATTERN_VS_OUTLIER_BLOCKS,
+  "analyst-m4-l2-decision-rule": ANALYST_M4_L2_DECISION_RULE_BLOCKS,
+  "analyst-m5-l1-four-numbers-dashboard": ANALYST_M5_L1_FOUR_NUMBERS_DASHBOARD_BLOCKS,
+  "analyst-m5-l2-weekly-review-ritual": ANALYST_M5_L2_WEEKLY_REVIEW_RITUAL_BLOCKS,
+  "analyst-m6-l1-question-mistakes": ANALYST_M6_L1_QUESTION_MISTAKES_BLOCKS,
+  "analyst-m6-l2-interpretation-mistakes": ANALYST_M6_L2_INTERPRETATION_MISTAKES_BLOCKS,
+  "analyst-m7-l1-from-decisions-to-business": ANALYST_M7_L1_FROM_DECISIONS_TO_BUSINESS_BLOCKS,
   /* Business */
-  "business-m1-l1-from-decisions-to-leadership": BUSINESS_M1_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS,
-  "business-m2-l1-reactive-vs-proactive": BUSINESS_M1_REACTIVE_VS_PROACTIVE_BLOCKS,
-  "business-m2-l2-weekly-rhythm": BUSINESS_M1_WEEKLY_RHYTHM_BLOCKS,
-  "business-m3-l1-customer-lifecycle": BUSINESS_M2_CUSTOMER_LIFECYCLE_BLOCKS,
-  "business-m3-l2-retention-flow": BUSINESS_M2_RETENTION_FLOW_BLOCKS,
-  "business-m4-l1-strategic-operational-admin": BUSINESS_M3_STRATEGIC_OPERATIONAL_ADMIN_BLOCKS,
-  "business-m4-l2-delegate-or-automate": BUSINESS_M3_DELEGATE_OR_AUTOMATE_BLOCKS,
-  "business-m5-l1-readiness-signals": BUSINESS_M4_READINESS_SIGNALS_BLOCKS,
-  "business-m5-l2-system-then-people": BUSINESS_M4_SYSTEM_THEN_PEOPLE_BLOCKS,
-  "business-m6-l1-reactive-relapse": BUSINESS_M5_REACTIVE_RELAPSE_BLOCKS,
-  "business-m6-l2-premature-scaling": BUSINESS_M5_PREMATURE_SCALING_BLOCKS,
-  "business-m7-l1-full-ecosystem": BUSINESS_M6_FULL_ECOSYSTEM_BLOCKS,
+  "business-m1-l1-from-decisions-to-leadership": BUSINESS_M1_L1_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS,
+  "business-m2-l1-reactive-vs-proactive": BUSINESS_M2_L1_REACTIVE_VS_PROACTIVE_BLOCKS,
+  "business-m2-l2-weekly-rhythm": BUSINESS_M2_L2_WEEKLY_RHYTHM_BLOCKS,
+  "business-m3-l1-customer-lifecycle": BUSINESS_M3_L1_CUSTOMER_LIFECYCLE_BLOCKS,
+  "business-m3-l2-retention-flow": BUSINESS_M3_L2_RETENTION_FLOW_BLOCKS,
+  "business-m4-l1-strategic-operational-admin": BUSINESS_M4_L1_STRATEGIC_OPERATIONAL_ADMIN_BLOCKS,
+  "business-m4-l2-delegate-or-automate": BUSINESS_M4_L2_DELEGATE_OR_AUTOMATE_BLOCKS,
+  "business-m5-l1-readiness-signals": BUSINESS_M5_L1_READINESS_SIGNALS_BLOCKS,
+  "business-m5-l2-system-then-people": BUSINESS_M5_L2_SYSTEM_THEN_PEOPLE_BLOCKS,
+  "business-m6-l1-reactive-relapse": BUSINESS_M6_L1_REACTIVE_RELAPSE_BLOCKS,
+  "business-m6-l2-premature-scaling": BUSINESS_M6_L2_PREMATURE_SCALING_BLOCKS,
+  "business-m7-l1-full-ecosystem": BUSINESS_M7_L1_FULL_ECOSYSTEM_BLOCKS,
 };

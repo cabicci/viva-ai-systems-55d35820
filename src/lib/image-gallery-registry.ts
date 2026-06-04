@@ -143,7 +143,7 @@ export const IMAGE_GALLERY: GalleryItem[] = [
   { number: 14, slug: "builder-m3-l2-memory-limits", title: "حدود الذاكرة", group: "Builder M3", image: img15 },
 
   { number: 15, slug: "builder-m4-l1-parameters", title: "Temperature", group: "Builder M4", image: img16 },
-  { number: 16, slug: "builder-m4-l1-parameters", title: "Parameters", group: "Builder M4", image: img17 },
+  { number: 16, slug: "builder-m4-l1-parameters", lessonSlug: "builder-m4-l1-parameters", title: "Parameters (Top-p)", group: "Builder M4", image: img17 },
 
   { number: 17, slug: "builder-m5-l2-frontend", title: "Frontend", group: "Builder M5", image: img18 },
   { number: 18, slug: "builder-m5-l3-backend-api", title: "Backend و API", group: "Builder M5", image: img19 },
