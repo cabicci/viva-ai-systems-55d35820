@@ -76,7 +76,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "business-m4-l2-delegate-or-automate": "01752bf7-34fa-4409-a08d-8ceab27fa12a",
   "business-m3-l1-delegate-or-automate": "01752bf7-34fa-4409-a08d-8ceab27fa12a",
   "business-m4-l1-strategic-operational-admin": "df064a24-ceb7-4e6f-80ee-d11bd32c41a7",
-  "business-m3-l2-strategic-operational-admin": "df064a24-ceb7-4e6f-80ee-d11bd32c41a7",
+  "business-m3-l2-strategic-operational-admin": "128a00b8-dcc5-4004-8848-167e1957097e",
   "business-m5-l1-readiness-signals": "40934e45-fdd3-42ed-a4ae-355876782121",
   "business-m2-l3-readiness-signals": "40934e45-fdd3-42ed-a4ae-355876782121",
   "business-m5-l2-system-then-people": "6679ccc1-53cc-4bc6-8ce9-4aacced3dd7d",
