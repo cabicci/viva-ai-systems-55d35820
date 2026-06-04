@@ -11,7 +11,7 @@ import opsLayersScreenshot from "@/assets/lessons/unique/automator-m2-l1-systems
 /**
  * Automator · M1 · Lesson 01 — كل شغل = System
  */
-export const AUTOMATOR_M1_SYSTEMS_VIEW_BLOCKS: IntroLessonContent = [
+export const AUTOMATOR_M2_L1_SYSTEMS_VIEW_BLOCKS: IntroLessonContent = [
   {
     icon: Workflow,
     eyebrow: "HERO",

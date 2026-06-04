@@ -1,7 +1,7 @@
 import { CalendarClock, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, Timer, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-export const ANALYST_M4_WEEKLY_REVIEW_RITUAL_BLOCKS: IntroLessonContent = [
+export const ANALYST_M5_L2_WEEKLY_REVIEW_RITUAL_BLOCKS: IntroLessonContent = [
   {
     icon: CalendarClock,
     eyebrow: "HERO",

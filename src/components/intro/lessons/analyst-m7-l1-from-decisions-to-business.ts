@@ -2,7 +2,7 @@ import { Flag, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, Kanban, FlaskConi
 import type { IntroLessonContent } from "../intro-lesson-types";
 
 /** Analyst · M6 · Lesson 01 — Bridge to Business */
-export const ANALYST_M6_FROM_DECISIONS_TO_BUSINESS_BLOCKS: IntroLessonContent = [
+export const ANALYST_M7_L1_FROM_DECISIONS_TO_BUSINESS_BLOCKS: IntroLessonContent = [
   {
     icon: Flag,
     eyebrow: "HERO",

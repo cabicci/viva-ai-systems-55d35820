@@ -1,7 +1,7 @@
 import { Clock, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, Timer, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-export const BUSINESS_M1_REACTIVE_VS_PROACTIVE_BLOCKS: IntroLessonContent = [
+export const BUSINESS_M2_L1_REACTIVE_VS_PROACTIVE_BLOCKS: IntroLessonContent = [
   {
     icon: Clock,
     eyebrow: "HERO",

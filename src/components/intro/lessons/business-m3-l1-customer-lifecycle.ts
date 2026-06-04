@@ -1,7 +1,7 @@
 import { Users, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, Filter, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-export const BUSINESS_M2_CUSTOMER_LIFECYCLE_BLOCKS: IntroLessonContent = [
+export const BUSINESS_M3_L1_CUSTOMER_LIFECYCLE_BLOCKS: IntroLessonContent = [
   {
     icon: Users,
     eyebrow: "HERO",

@@ -12,7 +12,7 @@ import schedulingScreenshot from "@/assets/lessons/unique/automator-m6-l3-follow
 /**
  * Automator · M5 · Lesson 03 — المتابعة التلقائية + CRM
  */
-export const AUTOMATOR_M5_FOLLOW_UP_BLOCKS: IntroLessonContent = [
+export const AUTOMATOR_M6_L3_FOLLOW_UP_BLOCKS: IntroLessonContent = [
   {
     icon: Repeat,
     eyebrow: "HERO",

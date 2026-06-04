@@ -1,7 +1,7 @@
 import { AlertTriangle, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, Replace, Brain, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-export const ANALYST_M5_QUESTION_MISTAKES_BLOCKS: IntroLessonContent = [
+export const ANALYST_M6_L1_QUESTION_MISTAKES_BLOCKS: IntroLessonContent = [
   {
     icon: AlertTriangle,
     eyebrow: "HERO",

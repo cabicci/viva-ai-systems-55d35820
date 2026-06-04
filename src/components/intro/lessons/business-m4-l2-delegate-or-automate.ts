@@ -1,7 +1,7 @@
 import { Shuffle, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, Grid2x2, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-export const BUSINESS_M3_DELEGATE_OR_AUTOMATE_BLOCKS: IntroLessonContent = [
+export const BUSINESS_M4_L2_DELEGATE_OR_AUTOMATE_BLOCKS: IntroLessonContent = [
   {
     icon: Shuffle,
     eyebrow: "HERO",

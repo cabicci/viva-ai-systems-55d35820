@@ -11,7 +11,7 @@ import automatorM1DecideWhatToAutomateScreenshot from "@/assets/lessons/unique/a
 /**
  * Automator · M1 · Lesson 03 — قرّر إيه يتأتمت
  */
-export const AUTOMATOR_M1_DECIDE_WHAT_TO_AUTOMATE_BLOCKS: IntroLessonContent = [
+export const AUTOMATOR_M2_L3_DECIDE_WHAT_TO_AUTOMATE_BLOCKS: IntroLessonContent = [
   {
     icon: GitBranch,
     eyebrow: "HERO",

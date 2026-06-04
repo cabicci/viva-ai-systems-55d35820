@@ -12,7 +12,7 @@ import automatorM4LlmInFlowScreenshot from "@/assets/lessons/unique/automator-m5
 /**
  * Automator · M4 · Lesson 01 — LLM جوه الـ Flow
  */
-export const AUTOMATOR_M4_LLM_IN_FLOW_BLOCKS: IntroLessonContent = [
+export const AUTOMATOR_M5_L1_LLM_IN_FLOW_BLOCKS: IntroLessonContent = [
   {
     icon: Lightbulb,
     eyebrow: "اختياري — للمتقدمين",

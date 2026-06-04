@@ -1,7 +1,7 @@
 import { Gauge, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, Activity, FlaskConical } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-export const BUSINESS_M4_READINESS_SIGNALS_BLOCKS: IntroLessonContent = [
+export const BUSINESS_M5_L1_READINESS_SIGNALS_BLOCKS: IntroLessonContent = [
   {
     icon: Gauge,
     eyebrow: "HERO",
