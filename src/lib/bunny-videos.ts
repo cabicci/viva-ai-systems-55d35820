@@ -80,7 +80,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "business-m5-l1-readiness-signals": "40934e45-fdd3-42ed-a4ae-355876782121",
   "business-m2-l3-readiness-signals": "40934e45-fdd3-42ed-a4ae-355876782121",
   "business-m5-l2-system-then-people": "6679ccc1-53cc-4bc6-8ce9-4aacced3dd7d",
-  "business-m3-l3-system-then-people": "6679ccc1-53cc-4bc6-8ce9-4aacced3dd7d",
+  "business-m3-l3-system-then-people": "68761e6a-18c6-4e61-9672-f10767f11c9d",
   "business-m6-l2-premature-scaling": "89aba28f-62cd-495b-80e3-fa4eb54762e8",
   "business-m4-l1-premature-scaling": "89aba28f-62cd-495b-80e3-fa4eb54762e8",
   "business-m6-l1-reactive-relapse": "d99ff05e-a0cd-4ee4-b012-e378fd329136",

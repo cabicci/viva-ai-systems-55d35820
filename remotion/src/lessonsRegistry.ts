@@ -110,6 +110,7 @@ import { SCENES as L_business_m2_l2_weekly_rhythm_S, SCENE_FRAMES as L_business_
 import { SCENES as L_business_m4_l2_reactive_relapse_S, SCENE_FRAMES as L_business_m4_l2_reactive_relapse_F, TOTAL_FRAMES as L_business_m4_l2_reactive_relapse_T } from "./lessons-generated/business-m4-l2-reactive-relapse.gen";
 import { SCENES as L_business_m1_l1_from_decisions_to_leadership_S, SCENE_FRAMES as L_business_m1_l1_from_decisions_to_leadership_F, TOTAL_FRAMES as L_business_m1_l1_from_decisions_to_leadership_T } from "./lessons-generated/business-m1-l1-from-decisions-to-leadership.gen";
 import { SCENES as L_business_m1_l2_reactive_vs_proactive_S, SCENE_FRAMES as L_business_m1_l2_reactive_vs_proactive_F, TOTAL_FRAMES as L_business_m1_l2_reactive_vs_proactive_T } from "./lessons-generated/business-m1-l2-reactive-vs-proactive.gen";
+import { SCENES as L_business_m3_l3_system_then_people_S, SCENE_FRAMES as L_business_m3_l3_system_then_people_F, TOTAL_FRAMES as L_business_m3_l3_system_then_people_T } from "./lessons-generated/business-m3-l3-system-then-people.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -211,5 +212,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m4-l2-reactive-relapse", scenes: L_business_m4_l2_reactive_relapse_S, sceneFrames: L_business_m4_l2_reactive_relapse_F, totalFrames: L_business_m4_l2_reactive_relapse_T },
     { id: "business-m1-l1-from-decisions-to-leadership", scenes: L_business_m1_l1_from_decisions_to_leadership_S, sceneFrames: L_business_m1_l1_from_decisions_to_leadership_F, totalFrames: L_business_m1_l1_from_decisions_to_leadership_T },
     { id: "business-m1-l2-reactive-vs-proactive", scenes: L_business_m1_l2_reactive_vs_proactive_S, sceneFrames: L_business_m1_l2_reactive_vs_proactive_F, totalFrames: L_business_m1_l2_reactive_vs_proactive_T },
+    { id: "business-m3-l3-system-then-people", scenes: L_business_m3_l3_system_then_people_S, sceneFrames: L_business_m3_l3_system_then_people_F, totalFrames: L_business_m3_l3_system_then_people_T },
   /* @lesson-entries-end */
 ];
