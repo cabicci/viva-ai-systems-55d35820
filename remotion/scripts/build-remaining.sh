@@ -9,17 +9,17 @@ PREP_JOBS="${PREP_JOBS:-3}"
 export REMOTION_CONCURRENCY="${REMOTION_CONCURRENCY:-4}"
 
 LESSONS=(
-  builder-m6-l18-debugging
-  builder-m8-l23-rls
-  builder-m8-l22-sessions-jwt
-  builder-m7-l19-tables-columns
-  builder-m7-l20-relations
-  builder-m7-l21-queries
-  builder-m9-l25-embeddings
-  builder-m9-l24-rag
-  builder-m9-l26-agents
-  builder-m10-deploy-domain
-  builder-m10-first-users
+  builder-m6-l6-debugging
+  builder-m8-l2-rls
+  builder-m8-l1-sessions-jwt
+  builder-m7-l1-tables-columns
+  builder-m7-l2-relations
+  builder-m7-l3-queries
+  builder-m9-l2-embeddings
+  builder-m9-l1-rag
+  builder-m9-l3-agents
+  builder-m10-l1-deploy-domain
+  builder-m10-l2-first-users
 )
 
 mkdir -p /tmp/build-remaining-logs
