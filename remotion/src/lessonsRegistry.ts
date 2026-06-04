@@ -120,6 +120,7 @@ import { SCENES as L_business_m2_l3_readiness_signals_S, SCENE_FRAMES as L_busin
 import { SCENES as L_business_m2_l2_retention_flow_S, SCENE_FRAMES as L_business_m2_l2_retention_flow_F, TOTAL_FRAMES as L_business_m2_l2_retention_flow_T } from "./lessons-generated/business-m2-l2-retention-flow.gen";
 import { SCENES as L_business_m4_l2_reactive_relapse_S, SCENE_FRAMES as L_business_m4_l2_reactive_relapse_F, TOTAL_FRAMES as L_business_m4_l2_reactive_relapse_T } from "./lessons-generated/business-m4-l2-reactive-relapse.gen";
 import { SCENES as L_business_m4_l3_weekly_rhythm_S, SCENE_FRAMES as L_business_m4_l3_weekly_rhythm_F, TOTAL_FRAMES as L_business_m4_l3_weekly_rhythm_T } from "./lessons-generated/business-m4-l3-weekly-rhythm.gen";
+import { SCENES as L_business_m2_l4_pricing_cash_flow_S, SCENE_FRAMES as L_business_m2_l4_pricing_cash_flow_F, TOTAL_FRAMES as L_business_m2_l4_pricing_cash_flow_T } from "./lessons-generated/business-m2-l4-pricing-cash-flow.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -231,5 +232,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m2-l2-retention-flow", scenes: L_business_m2_l2_retention_flow_S, sceneFrames: L_business_m2_l2_retention_flow_F, totalFrames: L_business_m2_l2_retention_flow_T },
     { id: "business-m4-l2-reactive-relapse", scenes: L_business_m4_l2_reactive_relapse_S, sceneFrames: L_business_m4_l2_reactive_relapse_F, totalFrames: L_business_m4_l2_reactive_relapse_T },
     { id: "business-m4-l3-weekly-rhythm", scenes: L_business_m4_l3_weekly_rhythm_S, sceneFrames: L_business_m4_l3_weekly_rhythm_F, totalFrames: L_business_m4_l3_weekly_rhythm_T },
+    { id: "business-m2-l4-pricing-cash-flow", scenes: L_business_m2_l4_pricing_cash_flow_S, sceneFrames: L_business_m2_l4_pricing_cash_flow_F, totalFrames: L_business_m2_l4_pricing_cash_flow_T },
   /* @lesson-entries-end */
 ];
