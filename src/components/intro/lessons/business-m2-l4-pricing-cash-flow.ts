@@ -144,7 +144,7 @@ export const BUSINESS_M2_L4_PRICING_CASH_FLOW_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "mission",
-      title: "خد منتج/خدمة واحدة من بيزنسك. حط كل أرقامها قدام AI. طلّع تقرير كامل.",
+      intro: "خد منتج/خدمة واحدة من بيزنسك. حط كل أرقامها قدام AI. طلّع تقرير كامل.",
       prompt: "في تسليمك اكتب:\n\n١) المنتج/الخدمة + سعرها الحالي.\n٢) كل تكاليفها (مباشرة + غير مباشرة + رسوم/عمولات).\n٣) الـ Prompt اللي استخدمته كامل.\n٤) أسئلة AI ليك + إجاباتك.\n٥) الـ ٣ نتايج اللي طلعت: unit economics, biggest leak, ٣ تعديلات مقترحة.\n٦) أي تعديل هتنفّذ النهارده؟",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",
