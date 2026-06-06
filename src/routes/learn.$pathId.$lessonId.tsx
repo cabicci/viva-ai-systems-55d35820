@@ -30,6 +30,7 @@ import {
 import { useLessonGate, useStreak } from "@/lib/entitlements";
 import { PaywallCard, IntroGateCard } from "@/components/learn/PaywallCard";
 import { useMissionGate, getLessonMission } from "@/lib/mission-gate";
+import { MISSION_PASS_THRESHOLD } from "@/lib/mission-ai-evaluation.functions";
 import { Lock } from "lucide-react";
 import { logLearnerEvent } from "@/lib/learner-events";
 import { LessonNotes } from "@/components/learn/LessonNotes";
@@ -356,7 +357,7 @@ function UnifiedLessonPage() {
                 المهمة لازم تعدّي قبل الدرس الجاي
               </p>
               <p className="text-foreground/80 text-[13px]">
-                ابعت تسليمك في خانة المهمة فوق، ولما تجيب ٧٠٪ أو أكتر، الزرار هيتفتح.
+                ابعت تسليمك في خانة المهمة فوق، ولما تجيب {MISSION_PASS_THRESHOLD}٪ أو أكتر، الزرار هيتفتح.
               </p>
             </div>
           </div>

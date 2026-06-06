@@ -61,8 +61,10 @@ export function IntroGateCard({
       <div className="space-y-2">
         <h2 className="text-2xl font-black">اكمل المقدمة الأول</h2>
         <p className="text-sm text-muted-foreground max-w-md mx-auto">
-          عشان تفتح أي مسار، لازم تخلّص الـ {total} دروس بتوع المقدمة. لسه
-          متبقّي {Math.max(total - done, 0)} درس.
+          المسارات المهنية هتفتح بعد إنهاء المقدمة — ٧ دروس قصيرة.
+        </p>
+        <p className="text-sm text-muted-foreground max-w-md mx-auto">
+          لسه متبقّي {Math.max(total - done, 0)} من {total} دروس.
         </p>
       </div>
       <Button asChild variant="hero" size="lg">

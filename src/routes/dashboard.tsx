@@ -606,7 +606,7 @@ function PathCard({
           {path.id !== "intro" && !introAllDone && !isPro && (
             <div className="rounded-xl border border-accent/30 bg-accent/10 px-4 py-3 text-sm text-foreground/85 flex items-center gap-2">
               <Lock className="h-4 w-4 text-accent shrink-0" />
-              <span>اكمل المقدمة الأول عشان تفتح دروس المسار.</span>
+              <span>المسارات المهنية هتفتح بعد إنهاء المقدمة — ٧ دروس قصيرة.</span>
             </div>
           )}
           {path.id !== "intro" && introAllDone && !isPro && (

@@ -34,6 +34,7 @@ function Onboarding() {
         <p className="text-primary text-sm font-semibold mb-2">خطوة ١ من ١</p>
         <h1 className="text-4xl md:text-5xl font-black">اختر <span className="text-gradient">مسارك الأول</span></h1>
         <p className="text-muted-foreground mt-3">يمكنك تغييره أو إضافة مسارات أخرى لاحقًا.</p>
+        <p className="text-sm text-muted-foreground/90 mt-2">المسارات المهنية هتفتح بعد إنهاء المقدمة — ٧ دروس قصيرة.</p>
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
