@@ -163,9 +163,9 @@ export const AUTOMATOR_M4_L1_CONNECT_DATABASE_BLOCKS: IntroLessonContent = [
     block: {
       kind: "mission",
       intro:
-        "DB في الـ workflow = Memory للـ automation. هتصمم flow بيكتب + يقرأ + يحدّث.",
+        "DB في الـ workflow = Memory للـ automation. هتصمم flow بيكتب + يقرأ + يحدّث.\n\nلو لسه مبتدئ:\nتسليم مبسّط مقبول —\nجدول بـ ٣ أعمدة + إمتى البيانات تتكتب + إمتى تتقري.\nمش لازم Service Role أو technical setup.",
       prompt:
-        "في تسليمك:\n\n١) Use case + الـ table اللي هتشتغل عليه (اسم + ٤-٥ columns):\n٢) Insert flow — إمتى بنضيف row؟ من فين الـ data؟\n٣) Read flow — إمتى بنقرأ؟ بـ ايه condition؟ (WHERE clause)\n٤) Update flow — إمتى بنحدّث؟ ايه الـ trigger؟\n٥) Duplicate prevention — إزاي هتمنع تكرار row؟ (unique constraint / upsert / check قبل insert)\n٦) لو الـ DB ضربت، الـ workflow يعمل إيه؟ (retry / queue / fail silently)",
+        "في تسليمك — اختَر مستوى واحد:\n\n【تسليم مبسّط — مقبول بالكامل】\n١) Use case في سطر + جدول بـ ٣ أعمدة (اسم كل عمود):\n٢) إمتى البيانات تتكتب؟ من فين؟\n٣) إمتى البيانات تتقري؟ مين بيستخدمها؟\n(مش لازم Service Role أو queues أو WHERE clause)\n\n【تسليم كامل — اختياري】\n٤) Update flow — إمتى بنحدّث؟ ايه الـ trigger؟\n٥) Duplicate prevention — إزاي هتمنع تكرار row؟\n٦) لو الـ DB ضربت، الـ workflow يعمل إيه؟ (retry / queue / fail silently)",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",
       rubric: [
@@ -173,16 +173,16 @@ export const AUTOMATOR_M4_L1_CONNECT_DATABASE_BLOCKS: IntroLessonContent = [
           label: "CRUD operations واضحة",
           weight: 60,
           criteria: [
-            "Insert/Read/Update كلهم متعرّفين بـ trigger وdata.",
-            "Schema بسيط فيه ٤-٥ columns بأنواع.",
+            "التسليم المبسّط: جدول ٣ أعمدة + إمتى تتكتب + إمتى تتقري — مقبول بالكامل.",
+            "التسليم الكامل (اختياري): Insert/Read/Update متعرّفين بـ trigger وdata + schema أوضح.",
           ],
         },
         {
           label: "Duplicates + Failures",
           weight: 40,
           criteria: [
-            "Duplicate prevention بآلية حقيقية مش «هتأكد».",
-            "Failure handling بخطة فعلية مش «هيرسل error».",
+            "مش مطلوب Service Role أو queues للتسليم المبسّط.",
+            "لو اخترت التعمق: Duplicate prevention + Failure handling بخطة فعلية.",
           ],
         },
       ],

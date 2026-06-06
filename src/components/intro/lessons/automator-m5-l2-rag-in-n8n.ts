@@ -178,9 +178,9 @@ export const AUTOMATOR_M5_L2_RAG_IN_N8N_BLOCKS: IntroLessonContent = [
     block: {
       kind: "mission",
       intro:
-        "RAG في n8n = Knowledge base + Query + LLM + Response. هتصممه step-by-step لمصدر حقيقي.",
+        "RAG في n8n = Knowledge base + Query + LLM + Response. هتصممه step-by-step لمصدر حقيقي.\n\nلو لسه مبتدئ:\nصمّم الفكرة بس:\n١) فين المعرفة؟\n٢) الـ AI هيقراها إزاي؟\n٣) هيستخدمها يرد إزاي؟\nالتفاصيل التقنية اختيارية.",
       prompt:
-        "في تسليمك:\n\n١) Knowledge source (مثال: FAQ شركة + ٥٠ ملف PDF منتجات):\n٢) Indexing workflow:\n   - كل قد إيه بيشتغل؟\n   - Chunking + Embedding + Storage (أنهي vector DB)؟\n٣) Query workflow:\n   - Trigger (مثال: webhook من شات)\n   - Steps: embed query → search → top-k → format context → LLM → response\n٤) Citation — هترجّع للمستخدم المصدر إزاي؟\n٥) لو الـ retrieval ما لقاش حاجة relevant، الـ flow يعمل إيه؟",
+        "في تسليمك — اختَر مستوى واحد:\n\n【تسليم مبسّط — مقبول بالكامل】\n١) فين المعرفة؟ (FAQ، ملفات، موقع…)\n٢) الـ AI هيقراها إزاي؟ (بكلماتك — مش لازم vector DB)\n٣) هيستخدمها يرد إزاي؟ (مثال سؤال + جواب متوقع)\n\n【تسليم كامل — اختياري】\n٤) Indexing: كل قد إيه + Chunking + Embedding + Storage\n٥) Query: trigger + steps (embed → search → LLM → response)\n٦) Citation + fallback لو ما لقاش حاجة relevant",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",
       rubric: [
@@ -188,16 +188,16 @@ export const AUTOMATOR_M5_L2_RAG_IN_N8N_BLOCKS: IntroLessonContent = [
           label: "Pipeline + Query flow",
           weight: 60,
           criteria: [
-            "Indexing وQuery كلهم موصوفين بـ steps.",
-            "Chunking + embedding + storage محددين.",
+            "التسليم المبسّط: المعرفة + القراءة + الرد الثلاثة واضحين — مقبول بالكامل.",
+            "التسليم الكامل (اختياري): Indexing وQuery موصوفين بـ steps + chunking/embedding/storage.",
           ],
         },
         {
           label: "Citation + Fallback",
           weight: 40,
           criteria: [
-            "Citation strategy واضحة.",
-            "Fallback مش «هيرد فاضي».",
+            "التفاصيل التقنية (vector DB، citation) اختيارية للمبتدئ.",
+            "لو اخترت التعمق: Citation strategy + fallback مش «هيرد فاضي».",
           ],
         },
       ],

@@ -95,6 +95,18 @@ export const AUTOMATOR_M3_L1_TOOLS_LANDSCAPE_BLOCKS: IntroLessonContent = [
     },
   },
   {
+    icon: Lightbulb,
+    eyebrow: "اختياري",
+    title: "لو عندك ١٠ دقائق",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "جرّب automation بسيط جدًا — Form → Email لنفسك.",
+        "مش مطلوب للتسليم. بس هتحس الفرق.",
+      ],
+    },
+  },
+  {
     icon: Rocket,
     eyebrow: "دورك دلوقتي",
     title: "اختار أداة لمشروعك",

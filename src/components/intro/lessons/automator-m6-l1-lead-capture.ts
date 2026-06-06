@@ -23,6 +23,7 @@ export const AUTOMATOR_M6_L1_LEAD_CAPTURE_BLOCKS: IntroLessonContent = [
       paragraphs: [
         "المحتوى جاب عين.",
         "هنا بنبني الجسر بين Views وشغلك.",
+        "مش لازم إعلان أو محتوى — أي استفسار، طلب خدمة، حجز، أو رسالة واتساب تعتبر Lead.",
       ],
     },
   },
@@ -152,9 +153,9 @@ export const AUTOMATOR_M6_L1_LEAD_CAPTURE_BLOCKS: IntroLessonContent = [
     block: {
       kind: "mission",
       intro:
-        "Lead capture = خط أول لاي business. هتصممه من الـ form للـ DB للـ notification للـ welcome.",
+        "Lead capture = خط أول لأي تواصل جاي من بره — بيزنس، خدمة، حجز، طلب، أو استفسار. هتصممه من المصدر للـ DB للـ notification للـ welcome.",
       prompt:
-        "في تسليمك:\n\n١) المصدر — الفورم/الـ landing page + الـ fields:\n٢) Validation — إيه اللي هترفضه؟ (Bad emails / duplicates / spam)\n٣) Storage — هتستخدم قاعدة بيانات إيه؟ وإيه العواميد (الخانات) اللي هتسجل فيها البيانات؟\n٤) Notification — مين بيتبلّغ + إزاي + إمتى؟\n٥) Welcome message — هترسله إزاي؟ (Email / WhatsApp) + إيه فيه؟\n٦) Tag/Segment — Lead بيتصنف إزاي تلقائياً؟",
+        "في تسليمك:\n\n١) المصدر — الفورم/الـ landing page أو قناة تانية + الـ fields:\n   (أمثلة: استفسار واتساب، Google Form، حجز عيادة، طلب خدمة، طلب HR — أو إعلان كورس/منتج)\n٢) Validation — إيه اللي هترفضه؟ (Bad emails / duplicates / spam)\n٣) Storage — هتستخدم قاعدة بيانات إيه؟ وإيه العواميد (الخانات) اللي هتسجل فيها البيانات؟\n٤) Notification — مين بيتبلّغ + إزاي + إمتى؟\n٥) Welcome message — هترسله إزاي؟ (Email / WhatsApp) + إيه فيه؟\n٦) Tag/Segment — Lead بيتصنف إزاي تلقائياً؟",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",
       rubric: [

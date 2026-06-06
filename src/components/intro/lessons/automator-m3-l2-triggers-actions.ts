@@ -152,9 +152,9 @@ export const AUTOMATOR_M3_L2_TRIGGERS_ACTIONS_BLOCKS: IntroLessonContent = [
     block: {
       kind: "mission",
       intro:
-        "Workflow بسيط = Trigger واحد + Actions متتالية. هتصممه بالتفصيل قبل أي tool.",
+        "Workflow بسيط = Trigger واحد + Actions متتالية. هتصممه بالتفصيل قبل أي tool.\n\nمثال بيانات بشرية بسيطة:\nالاسم: خالد\nالتليفون: 010xxxx\nالخدمة: استفسار مطبخ",
       prompt:
-        "في تسليمك:\n\n١) Goal الـ Workflow في سطر:\n٢) Trigger:\n   - النوع (Webhook / Schedule / Event):\n   - الـ payload المتوقع (مثال JSON):\n٣) Action 1:\n   - الـ tool/service:\n   - Input من الـ trigger:\n   - Output:\n٤) Action 2: نفس الشكل (يستخدم output الـ action 1):\n٥) Action 3: نفس الشكل\n٦) Success — إزاي تعرف إنه اشتغل تمام؟",
+        "في تسليمك:\n\n١) Goal الـ Workflow في سطر:\n٢) Trigger:\n   - النوع (Webhook / Schedule / Event):\n   - البيانات المتوقعة (جدول أو JSON — اللي يريحك):\n٣) Action 1:\n   - الـ tool/service:\n   - Input من الـ trigger:\n   - Output:\n٤) Action 2: نفس الشكل (يستخدم output الـ action 1):\n٥) Action 3: نفس الشكل\n٦) Success — إزاي تعرف إنه اشتغل تمام؟",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",
       rubric: [
