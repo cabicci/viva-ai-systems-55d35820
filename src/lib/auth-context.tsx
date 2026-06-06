@@ -78,6 +78,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setSession(null);
       } else {
         setSession(s);
+        // Also claim the device on initial load — otherwise the device
+        // watcher reads a stale row (from a previous device/origin) and
+        // signs the user out right after the page loads.
+        if (s?.user && !claimedUserIds.current.has(s.user.id)) {
+          claimedUserIds.current.add(s.user.id);
+          const deviceId = getDeviceId();
+          const p = Promise.resolve(
+            supabase.rpc("claim_active_device", { p_device_id: deviceId }),
+          ).then(({ error }) => {
+            if (error) captureError("auth:claim_active_device", error);
+          });
+          claimPromises.current.set(s.user.id, p);
+        }
       }
       setLoading(false);
     });
