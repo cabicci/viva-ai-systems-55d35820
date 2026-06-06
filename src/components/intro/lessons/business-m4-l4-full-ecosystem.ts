@@ -143,12 +143,12 @@ export const BUSINESS_M7_L1_FULL_ECOSYSTEM_BLOCKS: IntroLessonContent = [
   {
     icon: Sparkles,
     eyebrow: "Mission",
-    title: "صمّم ونفّذ workflow حقيقي يربط ٥ مسارات",
+    title: "صمّم workflow — Business + Analyst أو ٥ مسارات",
     tone: "accent",
     block: {
       kind: "mission",
-      intro: "ده الاختبار النهائي للـ Business OS بتاعك. مش درس — هو تخرّج.",
-      prompt: "في تسليمك اكتب:\n\n١) المشكلة الحقيقية اللي اخترتها.\n٢) الـ workflow الكامل (٥ مسارات × دور × input × output × أداة).\n٣) رسم flow chart بسيط (صورة أو وصف بالكلام).\n٤) نتيجة تنفيذ أول خطوتين (Analyst + Business) — إيه اللي اكتشفته؟\n٥) خطة الـ ٣ خطوات الباقية (Automator + Creator + Builder) للأسبوع الجاي.\n٦) كيف الـ Business OS بتاعك بعد التخرّج مختلف عن لما بدأت المسار؟",
+      intro: "صمّم workflow يربط مساراتك ببعض — مش لازم تكون خلصت كل المسارات.\n\nلو لسه ما دخلتش مسارات تانية:\nابدأ بمسارين بس: Business + Analyst.\nباقي المسارات اختيارية.",
+      prompt: "في تسليمك — اختَر مستوى واحد:\n\n【تسليم مبسّط — مقبول بالكامل】\n١) المشكلة الحقيقية اللي اخترتها.\n٢) workflow بمسارين: Business + Analyst (دور × input × output لكل واحد).\n٣) رسم flow chart بسيط (صورة أو وصف بالكلام).\n٤) نتيجة تنفيذ خطوة واحدة على الأقل — إيه اللي اكتشفته؟\n\n【تسليم كامل — اختياري】\n٥) workflow بـ ٥ مسارات × دور × input × output × أداة.\n٦) خطة Automator + Creator + Builder للأسبوع الجاي.\n٧) كيف الـ Business OS مختلف عن بداية المسار؟",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",
       rubric: [
@@ -156,16 +156,16 @@ export const BUSINESS_M7_L1_FULL_ECOSYSTEM_BLOCKS: IntroLessonContent = [
           label: "Workflow متكامل",
           weight: 50,
           criteria: [
-            "الـ ٥ مسارات موجودة وبترتيب منطقي.",
-            "كل مسار بياخد input من اللي قبله وبيدّي output للي بعده.",
+            "التسليم المبسّط: Business + Analyst واضحين بترتيب منطقي — مقبول بالكامل.",
+            "التسليم الكامل (اختياري): ٥ مسارات كل واحد بياخد input من اللي قبله.",
           ],
         },
         {
           label: "تنفيذ وتأمل",
           weight: 50,
           criteria: [
-            "في تنفيذ فعلي لأول خطوتين.",
-            "في تأمل صادق على التحوّل من بداية المسار للنهاية.",
+            "التسليم المبسّط: خطوة تنفيذ واحدة على الأقل — مقبول بالكامل.",
+            "التسليم الكامل (اختياري): تنفيذ خطوتين + تأمل على التحوّل.",
           ],
         },
       ],

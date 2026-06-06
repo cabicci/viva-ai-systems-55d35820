@@ -14,6 +14,7 @@ export const BUSINESS_M3_L4_HIRING_ONBOARDING_BLOCKS: IntroLessonContent = [
         "أحمد عيّن أول Operations Manager. خد قرار في يومين، Job Description نصف صفحة، interview 20 دقيقة. بعد 3 شهور، الراجل مشي، وأحمد رجع تاني بيشيل كل حاجة بنفسه.",
         "بعد ما اتعلم، رجع تاني للتوظيف — بس المرة دي بالـ AI. كتب JD مفصّل بمساعدة AI، عمل interview script، حضّر onboarding plan كامل قبل أول يوم. الموظف اللي عيّنه بقى منتج من أول أسبوع.",
         "AI مش بيوظّف بدالك — بس بيخليك توظف صح. الفرق بين أحمد القديم والجديد مش في الفلوس، في النظام.",
+        "مش جاهز توظّف؟\nحضّر الأدوات لأول مساعد أو فريلانسر أو شريك — نفس الفكرة.",
       ],
     },
   },
@@ -142,12 +143,12 @@ export const BUSINESS_M3_L4_HIRING_ONBOARDING_BLOCKS: IntroLessonContent = [
   {
     icon: UserCheck,
     eyebrow: "Mission",
-    title: "اعمل JD + Scorecard + Onboarding لأول وظيفة محتاجها",
+    title: "حضّر دليل دور — مساعد أو موظف",
     tone: "accent",
     block: {
       kind: "mission",
-      intro: "حتى لو مش هتعيّن دلوقتي — حضّر الـ 3 documents. لما تحتاج، هيكونوا جاهزين.",
-      prompt: "في تسليمك ضيف:\n\n١) الوظيفة + الـ 3 outcomes المطلوبة.\n٢) الـ JD الكامل (اللي وَلّده AI، انسخه).\n٣) Interview Scorecard من 5 معايير.\n٤) Onboarding Plan لأسبوع بأسبوع (4 أسابيع).\n٥) أول red flag هترفض على أساسه أي candidate.",
+      intro: "حتى لو مش هتعيّن دلوقتي — حضّر الأدوات. لما تحتاج مساعد أو فريلانسر أو شريك، هيكونوا جاهزين.\n\nلو لسه مبتدئ: وصف الدور + ٣ نتايج + ٣ أسئلة مقابلة — كفاية.",
+      prompt: "في تسليمك — اختَر مستوى واحد:\n\n【تسليم مبسّط — مقبول بالكامل】\n١) الدور (مساعد / فريلانسر / شريك) + ٣ نتايج بسيطة.\n٢) وصف الدور في ٥–٨ سطور (من AI).\n٣) ٣ أسئلة مقابلة + ٣ معايير تقييم.\n\n【تسليم كامل — اختياري】\n٤) JD كامل + Interview Scorecard (٥ معايير).\n٥) Onboarding Plan أسبوع بأسبوع (٤ أسابيع).\n٦) أول red flag هترفض على أساسه أي candidate.",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",
       rubric: [
@@ -155,16 +156,16 @@ export const BUSINESS_M3_L4_HIRING_ONBOARDING_BLOCKS: IntroLessonContent = [
           label: "Outcomes واضحة وقابلة للقياس",
           weight: 50,
           criteria: [
-            "الـ 3 outcomes مش مبهمة — كل واحد فيه رقم/معيار محدد.",
-            "الـ JD متبني عليهم مش على title عام.",
+            "التسليم المبسّط: دور + ٣ نتايج + وصف واضح — مقبول بالكامل.",
+            "التسليم الكامل (اختياري): outcomes بأرقام + JD مبني عليهم.",
           ],
         },
         {
           label: "Scorecard + Onboarding عملي",
           weight: 50,
           criteria: [
-            "الـ Scorecard فيه 5 معايير محددة، مش \"شاطر/كويس\".",
-            "الـ Onboarding أسبوع بأسبوع بمهام واضحة.",
+            "التسليم المبسّط: ٣ أسئلة + ٣ معايير تقييم — مقبول.",
+            "التسليم الكامل (اختياري): Scorecard ٥ معايير + Onboarding أسبوع بأسبوع.",
           ],
         },
       ],

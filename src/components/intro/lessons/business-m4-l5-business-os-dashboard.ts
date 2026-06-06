@@ -14,6 +14,7 @@ export const BUSINESS_M4_L5_BUSINESS_OS_DASHBOARD_BLOCKS: IntroLessonContent = [
         "على مدار 15 درس، بنيت قطعة وراء قطعة. Decision Framework. Customer Journey Map. Retention Flow. Pricing Calculator. SOPs. JD Templates. Weekly Review Ritual. كل واحدة لوحدها أداة — لما تتجمع، بقت نظام تشغيل كامل.",
         "أحمد لما جمعهم في dashboard واحد، كل صباح بقى بيفتح صفحة واحدة بتقوله: الأرقام النهارده، أول قرار محتاج يتاخد، أحدث feedback من عميل، حالة الـ team. 10 دقايق وبقى عارف يعمل إيه في يومه كله.",
         "النهارده هتعمل الـ Dashboard ده. هيبقى صفحتك المرجعية لكل قرار، كل أسبوع، كل تخطيط. ده اللي بيخلّيك Leader مش Operator — نظام بدالك مش عقلك بس.",
+        "لو لسه مبتدئ:\nDashboard مبسّط بـ ٣ أقسام يكفي:\nقرارات — أرقام اليوم — ملاحظات.\nGoogle Doc أو ورقة مقبولين.",
       ],
     },
   },
@@ -135,12 +136,12 @@ export const BUSINESS_M4_L5_BUSINESS_OS_DASHBOARD_BLOCKS: IntroLessonContent = [
   {
     icon: Sparkles,
     eyebrow: "Final Mission — الـ Capstone",
-    title: "شغّل الـ Business OS لأسبوع كامل",
+    title: "شغّل الـ Business OS — نسخة مبسّطة أو أسبوع كامل",
     tone: "accent",
     block: {
       kind: "mission",
-      intro: "بقى عندك النظام كامل. مهمتك الأخيرة: تشغّله أسبوع كامل وتوثّق التجربة.",
-      prompt: "بعد أسبوع شغّال على الـ Dashboard، ضيف في تسليمك:\n\n١) لينك الـ Dashboard (يفضّل screenshot).\n٢) كام قرار اتاخد باستخدام الـ Decision Framework؟\n٣) كام حاجة كنت بتعملها يدوياً اكتشفت إنها بقت في الـ SOPs؟\n٤) إيه أكبر فرق حسيته في يومك؟\n٥) إيه القطعة الجاية اللي محتاج تضيفها للـ Business OS بناءً على تجربتك؟",
+      intro: "وثّق تجربتك مع الـ Business OS.\n\nلو لسه مبتدئ: Dashboard بـ ٣ أقسام (قرارات / أرقام اليوم / ملاحظات) في Google Doc أو ورقة — تسليم مبسّط مقبول، مش لازم أسبوع كامل.\n\nلو متقدم: شغّله أسبوع كامل وتوثّق التجربة.",
+      prompt: "في تسليمك — اختَر مستوى واحد:\n\n【تسليم مبسّط — مقبول بالكامل】\n١) لينك أو screenshot لـ Dashboard بـ ٣ أقسام: قرارات / أرقام اليوم / ملاحظات (Google Doc أو ورقة).\n٢) كام قرار سجّلته الأسبوع ده؟\n٣) إيه أكبر فرق حسيته؟\n\n【تسليم كامل — اختياري】\n٤) Dashboard بـ ٥ sections + أسبوع استخدام حقيقي.\n٥) كام حاجة اكتشفت إنها بقت في الـ SOPs؟\n٦) إيه القطعة الجاية للـ Business OS بناءً على تجربتك؟",
       buttonLabel: "انسخ التعليمات",
       copiedLabel: "اتنسخ",
       rubric: [
@@ -148,16 +149,16 @@ export const BUSINESS_M4_L5_BUSINESS_OS_DASHBOARD_BLOCKS: IntroLessonContent = [
           label: "النظام شغّال فعلاً",
           weight: 50,
           criteria: [
-            "Dashboard موجود ومكتمل بالـ 5 sections.",
-            "في استخدام حقيقي لأسبوع — مش mock.",
+            "التسليم المبسّط: ٣ أقسام (قرارات / أرقام اليوم / ملاحظات) — مقبول بالكامل.",
+            "التسليم الكامل (اختياري): Dashboard بـ ٥ sections + استخدام حقيقي لأسبوع.",
           ],
         },
         {
           label: "تأمل + خطوة جاية",
           weight: 50,
           criteria: [
-            "في فرق ملموس مذكور (وقت، قرارات، تركيز).",
-            "في خطوة تطوير محددة للأسبوع الجاي.",
+            "التسليم المبسّط: فرق أو ملاحظة واحدة على الأقل — مقبول.",
+            "التسليم الكامل (اختياري): فرق ملموس + خطوة تطوير للأسبوع الجاي.",
           ],
         },
       ],
