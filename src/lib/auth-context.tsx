@@ -1,8 +1,7 @@
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import type { Session, User } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
-import { toast } from "sonner";
-import { captureError } from "@/lib/error-capture";
+import { captureError, captureWarn } from "@/lib/error-capture";
 
 const DEVICE_KEY = "lovable.device_id";
 
@@ -97,7 +96,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return () => sub.subscription.unsubscribe();
   }, []);
 
-  // Watch active device row; sign out if another device claims the session.
+  // Watch active device row for diagnostics only. Auto-signing out here caused
+  // false kicks across preview / published domains and made admin login unstable.
   useEffect(() => {
     if (!session?.user) return;
     const userId = session.user.id;
@@ -107,8 +107,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const check = (rowDeviceId: string | null | undefined) => {
       if (cancelled) return;
       if (rowDeviceId && rowDeviceId !== deviceId) {
-        toast.error("تم تسجيل دخولك من جهاز تاني، هتطلع من هنا.");
-        supabase.auth.signOut();
+        captureWarn("auth:active_device_mismatch", {
+          reason: "device row differs from current browser; keeping session active",
+        });
       }
     };
 
