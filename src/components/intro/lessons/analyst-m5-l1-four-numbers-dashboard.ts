@@ -130,7 +130,7 @@ export const ANALYST_M5_L1_FOUR_NUMBERS_DASHBOARD_BLOCKS: IntroLessonContent = [
     block: {
       kind: "mission",
       intro:
-        "Dashboard فيه ٢٠ رسم = ديكور. اختار ٤ أرقام لو اتحرّكوا، شغلك بيتحرّك معاهم.",
+        "Dashboard فيه ٢٠ رسم = ديكور. اختار ٤ أرقام تناسب شغلك — بيزنس أو تعلم أو محتوى — لو اتحرّكوا، شغلك بيتحرّك معاهم.",
       prompt:
         "في تسليمك اكتب:\n\n١) المجال/المشروع اللي الـ Dashboard ليه:\n٢) الأربع أرقام بالظبط (Metric + Window) + ليه دول بالذات:\n٣) الـ Target/Threshold لكل رقم:\n٤) لينك أو screenshot للـ Dashboard اللي بنيته (Sheet/Looker/Notion/أي حاجة):\n٥) القرار اللي هياتاخد لو أي رقم خرج عن الـ Target:",
       buttonLabel: "انسخ التعليمات",

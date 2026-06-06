@@ -129,7 +129,7 @@ export const ANALYST_M2_L2_RIGHT_QUESTION_RULE_BLOCKS: IntroLessonContent = [
     block: {
       kind: "mission",
       intro:
-        "القاعدة: Metric + Window + Comparator + Threshold. خد سؤال شغّال عندك دلوقتي وطبّق القاعدة عليه.",
+        "القاعدة: Metric + Window + Comparator + Threshold. خد سؤال شغّال عندك دلوقتي وطبّق القاعدة عليه. ده checklist للسؤال اللي كتبته في الدرس اللي فات — هنضيف Threshold وموعد مراجعة.",
       prompt:
         "في تسليمك اكتب:\n\n١) السؤال الأصلي زي ما هو في دماغك:\n٢) أعد كتابته بالقاعدة الكاملة: [Metric] في [Window] مقارنة بـ [Comparator] أعلى/أقل من [Threshold]؟\n٣) ليه الـ Threshold ده بالظبط (مش رقم عشوائي):\n٤) الإجابة اللي طلعت:\n٥) القرار اللي هياتاخد لو الإجابة فوق/تحت الـ Threshold:",
       buttonLabel: "انسخ التعليمات",

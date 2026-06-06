@@ -56,6 +56,7 @@ export const ANALYST_M3_L1_THREE_SOURCES_BLOCKS: IntroLessonContent = [
         "WhatsApp/تواصل — رسائل العملاء + أسئلتهم + طلباتهم. دي التوب عشان بتسمع فيها كلام الزبون بلسانه.",
         "Sales — فواتير + عروض أسعار + مبالغ. الأعلى لأنها بترجمة فعلية للقيمة.",
         "Notes — أفكار + قرارات + ملاحظاتك إنت. متوسطة — بتديك السياق وراء الأرقام.",
+        "لو مش بيزنس: Messages/Notes · Tasks completed · Personal tracker — نفس فكرة ٣ مصادر.",
         "لو Automator شغّال صح، الـ ٣ بيتجمّعوا تلقائي في Sheet/Notion/CRM واحد.",
       ],
     },

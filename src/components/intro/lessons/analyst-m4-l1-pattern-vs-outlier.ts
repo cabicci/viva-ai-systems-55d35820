@@ -12,6 +12,7 @@ export const ANALYST_M4_L1_PATTERN_VS_OUTLIER_BLOCKS: IntroLessonContent = [
       paragraphs: [
         "حاجة بتتكرّر = Pattern — اتعامل معاها كنظام.",
         "حاجة حصلت مرّة = Outlier — افهم سببها.",
+        "قبل ما تتصرف على رقم واحد — اسأل: ده بيتكرر ولا صدفة؟",
       ],
     },
   },
