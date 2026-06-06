@@ -1,21 +1,12 @@
-## الخلاصة
-السكريبت اتوقف عند 423 من 820 call بسبب timeout. الـ checkpoint موجود وسليم.
+## الهدف
+رفع قفل الصيانة عن `/signup` وإرجاع الصفحة تشتغل عادي.
 
 ## الخطوات
-1. **تشغيل السكريبت تاني** — `python scripts/persona-sim/run_v17_intro_business_creator_20.py` — هيقرأ الـ checkpoint ويكمل الـ 397 call المتبقية فقط. باستخدام Gemini API مباشرة (مفيش Lovable credits).
-2. **timeout = 600s** (الحد الأقصى للـ sandbox). لو ما خلصش، نعيد التشغيل مرة أو اتنين — كل run بيكمل من آخر checkpoint تلقائياً.
-3. **توليد التقرير** — `/mnt/documents/persona-sim-v17-{stamp}.md`:
-   - Executive summary: top 15 أعلى drop_risk
-   - Jargon counter عبر كل المسارات
-   - Per-lesson: متوسط الـ conf/bore/drop، أكتر confusion_points تكراراً
-   - Per-persona journey: فين كل برسونا اتلخبط/سقط
-   - Raw JSON جنبه
-4. **تسليم النتائج** كـ `<presentation-artifact>` للـ MD + JSON.
-5. **روadmap log**: إضافة entry `[source:user] persona-sim v17 completed` في `roadmap_items` + `bun run roadmap:log`.
+1. تعديل `src/routes/signup.tsx`: شيل `beforeLoad` اللي بيعمل redirect لـ `/`، ورجّع المكوّن الأصلي للتسجيل (Email/Password + Google عن طريق `lovable.auth.signInWithOAuth`).
+2. التأكد إن الراوت بيستخدم نفس الـ AuthShell ونفس نمط `/login` عشان الشكل متناسق.
+3. تحقّق إن `supabase.auth.signUp` بيبعت `emailRedirectTo: window.location.origin`.
+4. تسجيل العملية في `roadmap_items` ([source:user] + [ai-edit]) وتشغيل `bun run roadmap:log`.
 
-## ملاحظات تقنية
-- مفيش تعديل في كود المنصة نفسها — السكريبت بيقرأ الـ lessons فقط.
-- مفيش استهلاك Lovable AI credits (Gemini direct).
-- لو الـ checkpoint عنده corruption، نبدأ من نقطة آخر persona مكتملة.
-
-موافق أبدأ؟
+## ملاحظات
+- مفيش تغيير في DB أو RLS — auth شغّال بالفعل.
+- التأكيد بالإيميل هيفضل مطلوب (مش هنفعّل auto-confirm).
