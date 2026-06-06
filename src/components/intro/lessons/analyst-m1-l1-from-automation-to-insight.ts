@@ -13,6 +13,7 @@ export const ANALYST_M1_L1_FROM_AUTOMATION_TO_INSIGHT_BLOCKS: IntroLessonContent
       paragraphs: [
         "Automator خلّى البيانات تتجمّع لوحدها.",
         "Analyst بيحوّلها لقرار.",
+        "حتى لو مفيش أتمتة أو dashboard — ورقة أو Google Sheet صغير يكفي تبدأ.",
       ],
     },
   },

@@ -49,6 +49,7 @@ export const ANALYST_M5_L1_FOUR_NUMBERS_DASHBOARD_BLOCKS: IntroLessonContent = [
         "Conversion % — كام منهم اشترى؟",
         "Revenue — كام فلوس دخلت فعلاً؟",
         "Retention — كام عميل قديم رجع؟",
+        "لو مش بيزنس: Progress · Responses · Results · Repeat behavior — نفس قاعدة ٤ أرقام بس.",
         "كل رقم جنبه: قيمة الأسبوع ده، الأسبوع اللي فات، السهم (↑/↓).",
       ],
     },
