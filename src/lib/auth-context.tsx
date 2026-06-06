@@ -96,35 +96,36 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return () => sub.subscription.unsubscribe();
   }, []);
 
-  // Watch active device row for diagnostics only. Auto-signing out here caused
-  // false kicks across preview / published domains and made admin login unstable.
+  // Single-device enforcement: only kicks AFTER our own claim has settled,
+  // so we never race our own login and false-sign-out.
   useEffect(() => {
     if (!session?.user) return;
     const userId = session.user.id;
     const deviceId = getDeviceId();
     let cancelled = false;
+    let claimSettled = false;
 
-    const check = (rowDeviceId: string | null | undefined) => {
-      if (cancelled) return;
+    const enforce = (rowDeviceId: string | null | undefined) => {
+      if (cancelled || !claimSettled) return;
       if (rowDeviceId && rowDeviceId !== deviceId) {
         captureWarn("auth:active_device_mismatch", {
-          reason: "device row differs from current browser; keeping session active",
+          reason: "another device claimed the session — signing out",
         });
+        supabase.auth.signOut();
       }
     };
 
-    // Wait for any in-flight claim from this tab to finish before reading the
-    // row — otherwise we race the claim, see the previous device's id, and
-    // sign ourselves out right after a successful login.
+    // Wait for our own claim RPC to finish, then verify the row reflects us.
     const pending = claimPromises.current.get(userId) ?? Promise.resolve();
     pending.then(() => {
       if (cancelled) return;
+      claimSettled = true;
       supabase
         .from("user_active_device")
         .select("device_id")
         .eq("user_id", userId)
         .maybeSingle()
-        .then(({ data }) => check(data?.device_id));
+        .then(({ data }) => enforce(data?.device_id));
     });
 
     const channel = supabase
@@ -134,7 +135,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         { event: "*", schema: "public", table: "user_active_device", filter: `user_id=eq.${userId}` },
         (payload) => {
           const row = (payload.new ?? payload.old) as { device_id?: string } | null;
-          check(row?.device_id);
+          enforce(row?.device_id);
         },
       )
       .subscribe();
