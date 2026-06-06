@@ -15,6 +15,29 @@ const ErrorLogInput = z.object({
   extra: z.record(z.string(), z.unknown()).optional().nullable(),
 });
 
+const ANON_RATE_LIMIT_USER_ID = "00000000-0000-0000-0000-000000000001";
+const ERROR_LOG_BUCKET_KEY = "error-log";
+
+/** Fail open on RPC errors; returns false only when the limit is exceeded. */
+async function consumeErrorLogRateLimit(
+  userId: string,
+  maxCalls: number,
+): Promise<boolean> {
+  try {
+    const { data, error } = await supabaseAdmin.rpc("consume_rate_limit", {
+      p_user_id: userId,
+      p_bucket_key: ERROR_LOG_BUCKET_KEY,
+      p_max_calls: maxCalls,
+      p_window_seconds: 60,
+    });
+    if (error) return true;
+    const row = Array.isArray(data) ? data[0] : data;
+    return Boolean(row?.allowed);
+  } catch {
+    return true;
+  }
+}
+
 export const logClientError = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => ErrorLogInput.parse(data))
   .handler(async ({ data }) => {
@@ -43,6 +66,12 @@ export const logClientError = createServerFn({ method: "POST" })
           resolvedUserId = null;
         }
       }
+
+      const rateLimitAllowed = await consumeErrorLogRateLimit(
+        resolvedUserId ?? ANON_RATE_LIMIT_USER_ID,
+        resolvedUserId ? 30 : 20,
+      );
+      if (!rateLimitAllowed) return { ok: false as const };
 
       await supabaseAdmin.from("client_error_logs").insert({
         scope: data.scope,

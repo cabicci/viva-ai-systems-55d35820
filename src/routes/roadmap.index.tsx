@@ -18,6 +18,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { AdminGate } from "@/components/AdminGate";
+import { requireAdminBeforeLoad } from "@/lib/admin-route-guard";
 import { useAuth } from "@/lib/auth-context";
 import { Sidebar } from "@/components/dashboard/Sidebar";
 import { PhaseRibbon } from "@/components/admin/PhaseRibbon";
@@ -278,6 +279,7 @@ function DnaReportsArchive() {
 
 export const Route = createFileRoute("/roadmap/")({
   head: () => ({ meta: [{ title: "Roadmap — خريطة الشغل" }] }),
+  beforeLoad: requireAdminBeforeLoad,
   component: RoadmapPage,
 });
 

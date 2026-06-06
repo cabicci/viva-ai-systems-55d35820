@@ -15,6 +15,7 @@ import {
   Trash2,
 } from "lucide-react";
 import { AdminGate } from "@/components/AdminGate";
+import { requireAdminBeforeLoad } from "@/lib/admin-route-guard";
 import { Sidebar } from "@/components/dashboard/Sidebar";
 import { PhaseRibbon } from "@/components/admin/PhaseRibbon";
 import { Button } from "@/components/ui/button";
@@ -46,6 +47,7 @@ const STATUS_LABELS: Record<RoadmapStatus, string> = {
 
 export const Route = createFileRoute("/roadmap/$id")({
   head: () => ({ meta: [{ title: "تفاصيل بند — Roadmap" }] }),
+  beforeLoad: requireAdminBeforeLoad,
   component: RoadmapItemPage,
 });
 
