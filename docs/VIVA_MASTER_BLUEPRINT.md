@@ -69,7 +69,11 @@ Launch means learners can progress with confidence. Polish can follow; trust can
 
 ### Beginner-safe rule
 
-*TBD*
+Every lesson must protect the learner's dignity and confidence.
+
+If a learner is confused, the content or product failed—not the learner. Copy, missions, UI labels, and assistant responses must never imply the learner is slow, careless, or unprepared. Instructions must be forgiving, explicit, and recoverable.
+
+When friction appears, fix the lesson or flow before asking the learner to try harder.
 
 ### English-term first-use rule
 
@@ -77,37 +81,85 @@ Rule:
 Any English term used for the first time in a lesson must immediately include a simple Arabic explanation or translation.
 After first explanation, reuse is allowed without repetition.
 
+English is part of the real AI world, but it must never become a hidden test. Tool names, product labels, and common industry terms are allowed only when they help the learner operate in real tools. The first appearance must be explained in simple Arabic right away. Later reuse does not need repetition.
+
 ### No hidden prerequisites
 
-*TBD*
+Do not assume tools, accounts, concepts, workflows, or prior knowledge unless they were already taught in the product.
+
+A lesson may not require:
+
+- A paid tool the learner was never introduced to
+- A prior lesson the UI does not clearly unlock
+- Coding, dashboards, automations, or data the learner has not been shown how to obtain
+- Cultural or business context that was never explained
+
+If a prerequisite exists, state it plainly before the learner needs it.
 
 ### One Aha per lesson
 
-*TBD*
+Each lesson should deliver one main Aha moment.
+
+That means one central insight the learner can remember, repeat, and apply. Supporting examples, glossary items, and side notes are allowed, but they must serve the same Aha—not compete with it.
+
+If a lesson tries to teach three big ideas at once, split the lesson or cut scope.
 
 ### Mission must feel winnable
 
-*TBD*
+Missions must feel possible, small, and clear on the first honest attempt.
+
+A good mission tells the learner:
+
+- What to do
+- With what kind of input
+- In roughly how much effort
+- What "good enough" looks like
+
+Missions must not feel like exams, trick questions, or vague creative tests. The learner should believe success is reachable before they submit.
 
 ### Mobile-first learning
 
-*TBD*
+Mobile is the primary learning surface.
+
+Lessons must remain readable, tappable, and completable on a phone before they are optimized for desktop. That affects paragraph length, block density, mission input size, button placement, and scroll length.
+
+If a lesson only works comfortably on a wide screen, it is not ready.
 
 ### Lesson energy curve
 
-*TBD*
+A lesson should move through this energy curve:
+
+1. **Orientation** — why this matters now
+2. **Explanation** — the core idea in plain language
+3. **Example** — something concrete the learner recognizes
+4. **Action** — a mission or step they can do
+5. **Confidence** — proof they made progress and can continue
+
+The curve should rise, not flatten. Avoid long explanation blocks with no action, and avoid dropping the learner into action with no orientation.
 
 ### Max cognitive load per screen
 
-*TBD*
+Limit what the learner must process on one screen.
+
+Each visible block should ask for one main kind of attention: read, compare, watch, answer, or act. Do not stack multiple new concepts, long lists, dense diagrams, and mission instructions in the same visual moment.
+
+When in doubt, split content into another block or shorten the screen.
 
 ### No persona overreaction
 
-*TBD*
+Persona feedback should guide decisions, not trigger panic edits.
+
+A single isolated complaint does not automatically mean the lesson is broken. Look for patterns, severity, and repetition thresholds before rewriting content. Persona review exists to improve judgment—not to create endless reactive churn.
+
+Fix real blockers. Ignore noise. Document the decision.
 
 ### Anti perfection-loop rule
 
-*TBD*
+Do not keep revising the same lesson forever.
+
+When evidence is strong enough—persona review, audit findings, build stability, and beginner clarity—freeze the decision and move on. Perfection loops delay launch, burn review energy, and often improve wording while breaking lesson rhythm.
+
+Good enough, verified, and stable beats endlessly polished and still moving.
 
 ## 3. Phase Roadmap
 
