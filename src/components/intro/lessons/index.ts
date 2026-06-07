@@ -87,7 +87,7 @@ import { ANALYST_M5_AB_TESTING_BLOCKS } from "./analyst-m5-ab-testing";
 import { ANALYST_M6_L1_QUESTION_MISTAKES_BLOCKS } from "./analyst-m6-l1-question-mistakes";
 import { ANALYST_M6_L2_INTERPRETATION_MISTAKES_BLOCKS } from "./analyst-m6-l2-interpretation-mistakes";
 import { ANALYST_M7_L1_FROM_DECISIONS_TO_BUSINESS_BLOCKS } from "./analyst-m7-l1-from-decisions-to-business";
-/* Business (17 — 4 modules) */
+/* Business — 17 registry artifacts; learner path exposes 13 lessons (4 archived slugs kept for stability) */
 import { BUSINESS_M1_L1_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS } from "./business-m1-l1-from-decisions-to-leadership";
 import { BUSINESS_M2_L1_REACTIVE_VS_PROACTIVE_BLOCKS } from "./business-m1-l2-reactive-vs-proactive";
 import { BUSINESS_M1_L3_AI_THINKING_PARTNER_BLOCKS } from "./business-m1-l3-ai-thinking-partner";
@@ -200,7 +200,7 @@ export const INTRO_LESSON_CONTENT: Record<string, IntroLessonContent> = {
   "analyst-m5-ab-testing": ANALYST_M5_AB_TESTING_BLOCKS,
   "analyst-m6-l1-question-mistakes": ANALYST_M6_L1_QUESTION_MISTAKES_BLOCKS,
   "analyst-m7-l1-from-decisions-to-business": ANALYST_M7_L1_FROM_DECISIONS_TO_BUSINESS_BLOCKS,
-  /* Business — 4 modules × 16 lessons */
+  /* Business — 13 learner-path lessons (+ 4 archived slugs in registry) */
   "business-m1-l1-from-decisions-to-leadership": BUSINESS_M1_L1_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS,
   "business-m1-l2-reactive-vs-proactive": BUSINESS_M2_L1_REACTIVE_VS_PROACTIVE_BLOCKS,
   "business-m1-l3-ai-thinking-partner": BUSINESS_M1_L3_AI_THINKING_PARTNER_BLOCKS,
