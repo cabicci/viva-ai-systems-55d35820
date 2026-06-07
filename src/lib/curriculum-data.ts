@@ -523,7 +523,8 @@ function analystModules(): CurriculumModule[] {
       subtitle: "٤ أرقام + Review أسبوعي = نظام قرار حقيقي.",
       lessons: [
         analystShipped(1, "analyst-m5-l1-four-numbers-dashboard", "٤ أرقام بس"),
-        analystShipped(2, "analyst-m5-l2-weekly-review-ritual", "Review أسبوعي = ١٥ دقيقة"),
+        analystShipped(2, "analyst-m4-automated-dashboard", "رقم واحد يتحدّث لوحده"),
+        analystShipped(3, "analyst-m5-l2-weekly-review-ritual", "Review أسبوعي = ١٥ دقيقة"),
       ],
     },
     {
@@ -532,8 +533,9 @@ function analystModules(): CurriculumModule[] {
       title: "لما الحاجات بتبوظ",
       subtitle: "أخطاء الأسئلة والتفسير — وعلاجها.",
       lessons: [
-        analystShipped(1, "analyst-m6-l1-question-mistakes", "أخطاء الأسئلة"),
-        analystShipped(2, "analyst-m6-l2-interpretation-mistakes", "أخطاء التفسير"),
+        analystShipped(1, "analyst-m6-l2-interpretation-mistakes", "أخطاء التفسير"),
+        analystShipped(2, "analyst-m5-ab-testing", "اختبار A/B بسيط"),
+        analystShipped(3, "analyst-m6-l1-question-mistakes", "أخطاء الأسئلة"),
       ],
     },
     {

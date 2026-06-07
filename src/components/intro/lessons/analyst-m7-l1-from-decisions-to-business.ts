@@ -1,85 +1,124 @@
-import { Flag, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, Kanban, FlaskConical } from "lucide-react";
+import {
+  Sparkles,
+  AlertCircle,
+  PlayCircle,
+  Lightbulb,
+  Scale,
+  Rocket,
+  BookOpen,
+  CheckCircle2,
+  Image as ImageIcon,
+} from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-/** Analyst · M6 · Lesson 01 — Bridge to Business */
+/** Analyst · M7 · From Decisions to Business — من القرارات للبيزنس (v3: Lesson Shape pilot) */
 export const ANALYST_M7_L1_FROM_DECISIONS_TO_BUSINESS_BLOCKS: IntroLessonContent = [
   {
-    icon: Flag,
-    eyebrow: "HERO",
-    title: "قراراتك جاهزة — Business بيشغّلها",
+    icon: Sparkles,
+    eyebrow: "بداية الدرس",
+    title: "هتفهم إيه النهاردة؟",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "Analyst بيقولك «خد القرار ده».",
-        "Business بيحوّله لنظام يومي + علاقات + توسع.",
+        "هتفهم إيه؟ القرارات الأسبوعية الصغيرة بتتجمّع لهدف أكبر — مش قرارات معزولة.",
+        "ليه دلوقتي؟ بعد الريفيو والأسئلة والتفسير، محتاج تربط قراراتك باتجاه البيزنس.",
+        "هتعمل إيه بعد الدرس؟ هتكتب هدف ٦ شهور + ٣ أرقام تتابع التقدّم.",
       ],
     },
   },
   {
+    icon: AlertCircle,
+    eyebrow: "موقف مألوف",
+    title: "قرارات كتير — ومفيش اتجاه",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "كل أسبوع قرار: «نزود منشورات» — «نخفّض سعر» — «نجرب حملة» — ومفيش صورة للهدف الكبير.",
+        "Analyst بيطلّع قرارات. Business بيحوّلها لنظام يومي — بس من غير هدف، القرارات بتتشتت.",
+        "الـ AI يساعدك تربط القرار بالهدف وتسأل «ده بيقرّبنا ولا بيشتّتنا؟» — إنت تختار الأولوية.",
+      ],
+    },
+  },
+  {
+    icon: Lightbulb,
+    eyebrow: "الفكرة الأساسية",
+    title: "قرارات أسبوعية → هدف ٦ شهور",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "كل قرار أسبوعي لازم يخدم هدف أكبر — وإلا بيبقى busy work.",
+        "Decision Backlog: قائمة قرارات Analyst — Business يحوّلها لـ To Do · Doing · Done.",
+        "٣ أرقام progress تربط الأسبوع بالهدف: مثلاً leads، conversion، revenue — أو progress، responses، results.",
+        "Feedback loop: Business يرجّع feedback لـ Builder/Creator/Automator — والدورة تبدأ من جديد.",
+      ],
+    },
+  },
+  {
+    icon: Scale,
+    eyebrow: "مثال من الحياة",
+    title: "قرارات في الدرج vs قرارات في نظام",
+    block: {
+      kind: "comparison",
+      left: {
+        label: "قائمة قرارات بتطول",
+        body: "Analyst بيطلّع قرارات أسبوعيًا. مفيش حد بينفّذ. بعد شهرين = document ميّت.",
+      },
+      right: {
+        label: "قرار → owner → deadline",
+        body: "كل قرار له مكان في النظام. التنفيذ بقى جزء من الشغل اليومي — مش «لما نفضى».",
+      },
+    },
+  },
+  {
     icon: BookOpen,
-    eyebrow: "مصطلحات الدرس",
-    title: "اللي هتسمعه في الدرس ده",
+    eyebrow: "كلمتين بس",
+    title: "مصطلحين للربط",
     block: {
       kind: "concepts",
       items: [
-        { term: "Leads (العملاء المحتملين)", meaning: "ناس عينيها على شغلك وممكن يشتروا بس لسه مطلعوش المحفظة.", example: "إنت شغال في محل لبس، الـ Leads هم الناس اللي دخلوا سألو بكام بس لسه مشتريش." },
-        { term: "Kanban Board", meaning: "طريقة تنظيم شغل بتشوف فيها الحاجة وهي بتتحرك من البداية للنهاية.", example: "لو عامل سبورة معلق عليها ورق \"قيد التنفيذ\" و\"خلص\"، ده الـ Kanban بكل بساطة." },
-        { term: "Dashboard (لوحة تحكم)", meaning: "شاشة بتجمع لك أهم الأرقام والمؤشرات عشان تتابع شغلك بلمحة.", example: "زي لوحة العدادات في العربية؛ بتعرفك البنزين والسرعة، الـ Dashboard بتعرفك مبيعاتك ومكسبك." },
-        { term: "Analyst vs. Business", meaning: "الـ Analyst بيفهم البيانات، والـ Business هو صاحب القرار اللي بيوجه الشغل.", example: "الـ Analyst بيفصص الأرقام، والـ Business هو اللي بياخد القرار النهائي هيصرف فين." },
-        { term: "Academic Exercise (تمرين أكاديمي)", meaning: "كلام نظري أو دراسة على الورق بعيد عن واقع السوق والصعوبات.", example: "لو قلت لك إن البيع هيزيد 50% \"نظرياً\" بس الحقيقة السوق ميت، ده تمرين أكاديمي." },
-        { term: "Feedback Loop (الدائرة المغلقة)", meaning: "عملية متكررة بتبدأ من خطوة وتلف ترجع لنفس النقطة عشان تحسن النتائج.", example: "لو بعت رسالة شكر آلياً لكل واحد يشتري، إنت كده عملت دايرة مقفولة." },
-        { term: "Operational System (نظام التشغيل)", meaning: "برامج أو أدوات بتنفذ الخطوات اليومية المتكررة بدل ما تعملها بإيدك.", example: "السيستم اللي على الكاشير بيطلع فواتير لوحده بدل ما تكتبها بورقة وقلم." },
+        {
+          term: "Decision Backlog (مخزون قرارات)",
+          meaning: "قائمة قرارات Analyst جاهزة للتنفيذ — كل واحد له owner وموعد.",
+          example: "«تجربة رد ٢٤ ساعة» — Owner: فريق مبيعات — Deadline: الجمعة.",
+        },
+        {
+          term: "Progress Numbers (أرقام التقدّم)",
+          meaning: "٣ أرقام تقيس إذا القرارات الأسبوعية بتقرّبك من الهدف الكبير.",
+          example: "هدف ٦ شهور: ١٠٠ عميل — تتابع: leads، conversion، retention.",
+        },
       ],
     },
   },
   {
     icon: PlayCircle,
     eyebrow: "فيديو الدرس",
-    title: "اتفرّج الأول",
+    title: "اتفرّج — من Analyst لـ Business",
     tone: "accent",
-    block: { kind: "lessonVideo", caption: "ملخّص رحلة Analyst وإزاي قراراتك بتدخل Business." },
-  },
-  {
-    icon: Lightbulb,
-    eyebrow: "الفكرة",
-    title: "Loop كامل: Builder → Creator → Automator → Analyst → Business",
     block: {
-      kind: "numberedList",
-      items: [
-        "Builder بنى المنتج → بيانات.",
-        "Creator جاب الـ Reach → leads.",
-        "Automator وصّل كل ده → جمعها في مكان واحد.",
-        "Analyst سأل وفسّر → قرارات.",
-        "Business بياخد القرارات دي ويحوّلها لنظام يومي + علاقات عملاء + خطط توسع.",
-        "وبعدين Business بيدّي feedback يرجع Builder/Creator/Automator — وتبدأ الدورة من جديد بمستوى أعلى.",
-      ],
+      kind: "lessonVideo",
+      caption:
+        "إزاي قرارات Analyst تدخل نظام Business — والـ AI يساعدك تربطهم بالهدف. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
     },
   },
   {
-    icon: Kanban,
-    eyebrow: "شوف بنفسك",
-    title: "Decision Backlog → Business System",
+    icon: ImageIcon,
+    eyebrow: "شوفها ببساطة",
+    title: "Decision Backlog → نظام تنفيذ",
+    tone: "primary",
     block: {
       kind: "diagram",
       id: "decision-backlog",
-      caption: "قرارات Analyst بتدخل Kanban التنفيذ — To Do · Doing · Done.",
-    },
-  },
-  {
-    icon: Scale,
-    eyebrow: "Failure × Right",
-    title: "قرارات في درج vs قرارات في نظام",
-    block: {
-      kind: "comparison",
-      left: { label: "FAILURE — قائمة قرارات بتطول", body: "Analyst بيطلّع قرارات أسبوعيًا. مفيش حد بينفّذ. بعد شهرين بقت document ميّت." },
-      right: { label: "RIGHT — Business بيشغّلها", body: "كل قرار له owner + deadline + مكان في الـ system. التنفيذ بقى تلقائي." },
+      label: "من القرار للتنفيذ",
+      caption:
+        "قرارات Analyst → Kanban (To Do · Doing · Done) — كل قرار له owner. استخدم الرسم في المهمة.",
     },
   },
   {
     icon: Rocket,
-    eyebrow: "دورك دلوقتي",
-    title: "جهّز Decision Backlog",
+    eyebrow: "تأكيد سريع",
+    title: "سؤال واحد — مش امتحان",
     tone: "accent",
     block: {
       kind: "quiz",
@@ -88,91 +127,61 @@ export const ANALYST_M7_L1_FROM_DECISIONS_TO_BUSINESS_BLOCKS: IntroLessonContent
         {
           id: "apply1",
           bloom: "apply",
-          question: "الـAnalyst في شركتك قرر إن أفضل طريقة لزيادة المبيعات هي تقديم خصم 15% على أول طلب لكل عميل جديد. لو أنت الـBusiness، إيه أول خطوة هتعملها عشان تحوّل القرار ده لسيستم شغال بدماغ لوحده؟",
+          question:
+            "Analyst قرر: «خصم ١٥٪ لأول طلب». إيه أول خطوة Business عشان يحوّله لنظام؟",
           options: [
-            "هتطلب من فريق الـIT يبرمج الخصم ده في نظام الطلبات الأونلاين بحيث يتطبق تلقائي.",
-            "هتتصل بكل العملاء الجداد يدويًا عشان تبلغهم بالخصم وتطبقه.",
-            "هتعمل إعلان على السوشيال ميديا بس عن الخصم وتستنى الناس تتفاعل."
+            "برمجة الخصم في نظام الطلبات — يتطبق تلقائي من غير تدخل يدوي كل مرة.",
+            "اتصال يدوي بكل عميل جديد.",
+            "إعلان بس — واستنى الناس تتفاعل.",
           ],
           correctIndex: 0,
-          explanation: "الـBusiness بيحول القرار لنظام يومي (Operational System)، وده بيتم ببرمجة الخصم في النظام عشان يتطبق أوتوماتيك من غير تدخل يدوي كل مرة."
+          explanation:
+            "Business يحوّل القرار لنظام يومي — مش فعل لمرة واحدة. التلقائي = قرار يعيش.",
         },
-        {
-          id: "apply2",
-          bloom: "apply",
-          question: "الـAnalyst اكتشف إن أغلب Leads اللي بتيجي من حملات الـCreator على فيسبوك مش بيتحولوا لعملاء بسبب تأخر الرد عليهم. إيه اللي المفروض الـBusiness يعمله عشان يعالج المشكلة دي ويبني 'Business Path' أقوى؟",
-          options: [
-            "هتطلب من الـCreator يعمل حملات إعلانية أكتر عشان يعوض النقص في التحويل.",
-            "هتعمل نظام آلي للرد الفوري على Leads الجداد وتحويلهم لفريق المبيعات خلال دقايق.",
-            "هتستنى الـ Leads يتجمعوا وبعدين تبعتلهم إيميل جماعي كل أسبوع."
-          ],
-          correctIndex: 1,
-          explanation: "الـBusiness بياخد القرارات ويحولها لنظام يومي، والـ 'Business Path' بيتضمن قيادة الشغل وتحسينه. الرد الآلي السريع بيضمن تحويل الـLeads بفاعلية أكتر وده بيحسن المسار."
-        },
-        {
-          id: "apply3",
-          bloom: "apply",
-          question: "بعد ما الـAnalyst قدّم Decision Backlog بخمس قرارات استراتيجية لتحسين تجربة العملاء، إيه أهم حاجة الـBusiness محتاج يركز عليها عشان يضمن إن القرارات دي مش هتفضل 'في الدرج' وتتحول لحركة فعلية وتوسع؟",
-          options: [
-            "هيبدأ يحط خطة عمل مفصلة لكل قرار ويخصص له الموارد اللازمة (فريق، ميزانية، وقت).",
-            "هيحط القرارات دي في ملف واحد ويراجعها تاني الشهر الجاي.",
-            "هيبعت القرارات دي للـBuilder عشان يبدأ في تنفيذها بدون ما يعمل خطة."
-          ],
-          correctIndex: 0,
-          explanation: "الـBusiness بياخد القرارات ويحولها لنظام يومي (Operational System) وعلاقات عملاء وخطط توسع. ده بيتطلب تخطيط مفصل وتخصيص موارد لضمان التنفيذ وتحويلها لواقع بدل ما تكون مجرد قرارات مكتوبة."
-        }
-      ]
+      ],
     },
   },
   {
     icon: Rocket,
-    eyebrow: "Mission",
-    title: "حوّل قرار تحليلي لخطوة Business",
+    eyebrow: "مهمتك",
+    title: "هدف ٦ شهور + ٣ أرقام تقدّم",
     tone: "accent",
     block: {
       kind: "mission",
       intro:
-        "تحليل من غير تنفيذ = تمرين أكاديمي. خد أحدث قرار اتطلع من بياناتك وخلّيه فعل عملي واضح — تجاري أو شخصي أو فريق. أي قرار محتاج خطوة + مسؤول + موعد.",
+        "المهمة دي ربط استراتيجي — مش خطة طويلة. اكتب هدف واحد لـ ٦ شهور + ٣ أرقام تتابع التقدّم + قرار أسبوعي واحد يخدم الهدف.\n\nممكن الـ AI يساعدك تصيغ — إنت تختار النهائي.",
       prompt:
-        "في تسليمك اكتب:\n\n١) الـ Insight النهائي (سطر):\n٢) القرار التحليلي (سطر):\n٣) فعل عملي محدّد (تجاري أو شخصي أو فريق) — تغيير سعر/توقف حملة/تعديل عرض/تشقلب ميزانية/خطوة شخصية أو فريقية...:\n٤) مين المسؤول + متى تتنفّذ:\n٥) المؤشّر اللي هيقولك إن الخطوة شغّالة (متى تراجع):",
-      buttonLabel: "انسخ التعليمات",
-      copiedLabel: "اتنسخ",
+        "في تسليمك اكتب:\n\n١) الهدف لـ ٦ شهور (جملة واحدة واضحة):\n٢) ٣ أرقام progress (Metric + ليه دول):\n٣) قرار أسبوعي واحد من الريفيو يخدم الهدف:\n٤) Owner + Deadline للقرار:\n٥) إزاي هتراجع التقدّم كل شهر:",
+      buttonLabel: "انسخ خطوات المهمة",
+      copiedLabel: "اتنسخت ✓",
+      template:
+        "هدف ٦ شهور:\n[جملة واحدة — مثال: ١٠٠ عميل متكرر]\n\n٣ أرقام progress:\n1. [Metric + Target]\n2. [Metric + Target]\n3. [Metric + Target]\n\nقرار أسبوعي يخدم الهدف:\n[Action + Owner + Deadline]\n\nمراجعة شهرية:\n[إمتى + إزاي]",
       rubric: [
         {
-          label: "ترجمة لفعل",
-          weight: 70,
-          criteria: [
-            "الخطوة محدّدة قابلة للتنفيذ (مش توصية عامة).",
-            "مسؤول + موعد تنفيذ واضحين.",
-          ],
+          label: "هدف + أرقام",
+          weight: 60,
+          criteria: ["هدف ٦ شهور واضح + ٣ أرقام progress مربوطة."],
         },
         {
-          label: "حلقة قياس",
-          weight: 30,
-          criteria: [
-            "مؤشّر محدّد + موعد مراجعة.",
-          ],
+          label: "ربط أسبوعي",
+          weight: 40,
+          criteria: ["قرار أسبوعي واحد يخدم الهدف — مش منفصل عنه."],
         },
       ],
     },
   },
   {
-    icon: FlaskConical,
-    eyebrow: "جزء من المنصة",
-    title: "كل قرار من Analyst → roadmap_item جديد",
+    icon: CheckCircle2,
+    eyebrow: "خلّصت الربط",
+    title: "إيه اللي عندك دلوقتي؟",
     tone: "primary",
     block: {
-      kind: "caseStudy",
-      title: "كل قرار من Analyst → roadmap_item جديد",
-      summary:
-        "الجزء ده من المنصة اتبنى بمسار Analyst — نفس اللي بتتعلمه. Analyst لاحظ pattern → سجّل قرار في /roadmap → الـ pattern اتحوّل لـ action → Business بيتابع التنفيذ في الأسبوع الجاي. ده الـ closing loop اللي بيخلّي الـ insights تتحوّل لـ outcomes.",
-      bullets: [
-        "كل insight له roadmap_item مرتبط.",
-        "الـ item بياخد phase حسب أولوية الـ insight.",
-        "الـ completion rate للقرارات نفسها بنتابعها.",
+      kind: "paragraphs",
+      paragraphs: [
+        "فهمت إيه؟ القرارات الأسبوعية بتتجمّع لهدف أكبر — والـ AI يساعدك تربطهم.",
+        "تقدر تعمل إيه؟ عندك هدف ٦ شهور + ٣ أرقام + قرار أسبوعي مربوط.",
+        "اللي جاي: Business Path — تحوّل القرارات لنظام يومي وعلاقات وتوسع.",
       ],
-      pathAngle: "analyst",
-      link: { label: "افتح /roadmap", href: "/roadmap" },
     },
-  }
+  },
 ];

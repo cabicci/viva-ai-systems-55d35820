@@ -1,79 +1,125 @@
-import { ShieldAlert, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, LineChart, FlaskConical } from "lucide-react";
+import {
+  Sparkles,
+  AlertCircle,
+  PlayCircle,
+  Lightbulb,
+  Scale,
+  Rocket,
+  BookOpen,
+  CheckCircle2,
+  Image as ImageIcon,
+} from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
+/** Analyst · M6 · Interpretation Mistakes — أخطاء التفسير (v3: Lesson Shape pilot) */
 export const ANALYST_M6_L2_INTERPRETATION_MISTAKES_BLOCKS: IntroLessonContent = [
   {
-    icon: ShieldAlert,
-    eyebrow: "HERO",
-    title: "أخطاء التفسير",
+    icon: Sparkles,
+    eyebrow: "بداية الدرس",
+    title: "هتفهم إيه النهاردة؟",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "البيانات صح — التفسير غلط.",
-        "أخطر فخّين: Analysis Paralysis و Correlation ≠ Causation.",
+        "هتفهم إيه؟ البيانات ممكن تكون صح — والقرار غلط لو قرأتها غلط.",
+        "ليه دلوقتي؟ بعد ما الريفيو الأسبوعي بقى عادة، محتاج تتجنّب ٤ فخاخ تفسير قبل ما تتسرّع في القرار.",
+        "هتعمل إيه بعد الدرس؟ هتحل ٣ mini scenarios — correlation، عيّنة صغيرة، vanity metric، recency bias.",
       ],
     },
   },
   {
+    icon: AlertCircle,
+    eyebrow: "موقف مألوف",
+    title: "الأرقام واضحة — والقرار طلع غلط",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "«المبيعات زادت لما شغّلنا أغاني هادية» — قررت تعتمدها طول الوقت. بعد شهر نزلت.",
+        "«الـ retention بقت ٨٠٪!» — فرحت. لما شفت العدد الكلي، اكتشفت إن الناس اللي بتسيب اتشالت.",
+        "الـ AI يساعدك تسأل «هل ده سبب ولا صدفة؟» — إنت تقرر قبل ما تبني قرار كبير.",
+      ],
+    },
+  },
+  {
+    icon: Lightbulb,
+    eyebrow: "الفكرة الأساسية",
+    title: "٤ فخاخ تفسير — وعلاجهم",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "Correlation ≠ Causation: حاجتين بيتحركوا مع بعض مش معناه واحد سبب التاني. اسأل: في حاجة تالتة؟",
+        "عيّنة صغيرة: ٣ عملاء مش «السوق». متاخدش قرار كبير من ٥ حالات.",
+        "Vanity metric: لايكات ومشاهدات مش دايمًا = مبيعات. اسأل: الرقم ده بيخدم قرار إيه؟",
+        "Recency bias: آخر أسبوع مش كل القصة. قارن بفترة أطول قبل ما تتسرّع.",
+        "قرار صغير قابل للتراجع > قرار كبير مبني على «حاسس».",
+      ],
+    },
+  },
+  {
+    icon: Scale,
+    eyebrow: "مثال من الحياة",
+    title: "تفسير سريع vs تفسير حذر",
+    block: {
+      kind: "comparison",
+      left: {
+        label: "«الأغاني سبب الزيادة»",
+        body: "Correlation اتعاملت كـ Causation. ممكن الصبح = زبائن أكتر — مش الموسيقى.",
+      },
+      right: {
+        label: "«هجرّب أسبوع واحد»",
+        body: "تجربة صغيرة: أغاني vs بدون — نفس الوقت — تقيس المبيعات. بيانات جديدة الأسبوع الجاي.",
+      },
+    },
+  },
+  {
     icon: BookOpen,
-    eyebrow: "مصطلحات الدرس",
-    title: "اللي هتسمعه في الدرس ده",
+    eyebrow: "كلمتين بس",
+    title: "مصطلحين للتفسير",
     block: {
       kind: "concepts",
       items: [
-        { term: "Analysis Paralysis (حيرة التحليل)", meaning: "لما تغرق في التحليل وتخاف تاخد قرار فتعطل وتضيع الفرصة.", example: "زي تاجر خايف يشتري قماش جديد فبيفضل يحلل تقارير السوق لحد ما الموسم يخلص منه." },
-        { term: "Correlation (ارتباط)", meaning: "حاجتين بيتحركوا مع بعض في نفس الوقت من غير ما يكونوا مأثرين على بعض.", example: "زي لما مبيعات الآيس كريم والتكييفات يزيدوا سوا، بس ده مش معناه إن الآيس كريم بيشغل التكييف." },
-        { term: "Causation (سببية)", meaning: "لما حاجة تكون هي السبب المباشر والوحيد في وجود حاجة تانية.", example: "لما تدفع فلوس في إعلانات فالمبيعات تزيد؛ هنا السلب والنتيجة واضحين." },
-        { term: "Test / Trial (تجربة)", meaning: "تجربة عملية في السوق عشان نتأكد من فرضية معينة قبل ما نعممها.", example: "صاحب محل بيجرب يغير مكان الفاترينة أسبوع ويشوف الزبائن هتزيد ولا لأ قبل ما يهد المحل." },
-        { term: "Controlled Experiment", meaning: "إنك تجرب فكرتك على سكيل صغير أوي عشان لو غلطت متخسرش كتير.", example: "محاسب بيجرب يقلل بند الرفاهية بنسبة صغيرة كعينة، بدل ما يقطع الميزانية كلها ويخسر الموظفين." },
+        {
+          term: "Correlation (ارتباط)",
+          meaning: "حاجتين بيتحركوا مع بعض — من غير ما يكون واحد سبب التاني.",
+          example: "آيس كريم وغرق بيزيدوا سوا — السبب الحرارة.",
+        },
+        {
+          term: "Vanity Metric (رقم شكلي)",
+          meaning: "رقم يبان حلو بس مش بيخدم قرار حقيقي.",
+          example: "١٠٠٠ لايك — بس مفيش طلبات.",
+        },
       ],
     },
   },
   {
     icon: PlayCircle,
     eyebrow: "فيديو الدرس",
-    title: "اتفرّج الأول",
+    title: "اتفرّج — فخاخ التفسير",
     tone: "accent",
-    block: { kind: "lessonVideo", caption: "أمثلة على أخطاء تفسير بتكلّف فلوس." },
-  },
-  {
-    icon: Lightbulb,
-    eyebrow: "الفكرة",
-    title: "علاج الفخّين",
     block: {
-      kind: "numberedList",
-      items: [
-        "Analysis Paralysis → القرار الغلط أحسن من مفيش قرار. حدّد deadline + جرّب صغيّر (test).",
-        "Correlation ≠ Causation → قبل ما تقول «X سبب Y»، اسأل: في حاجة تانية ممكن تكون السبب؟ جرّب تغيّر X بس وشوف.",
-        "قاعدة ذهبية: قرار صغير قابل للتراجع > قرار كبير مبني على «حاسس».",
-      ],
+      kind: "lessonVideo",
+      caption:
+        "أمثلة على أخطاء تفسير بتكلّف فلوس — وإزاي الـ AI يساعدك تسأل قبل ما تقرر. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
     },
   },
   {
-    icon: LineChart,
-    eyebrow: "شوف بنفسك",
+    icon: ImageIcon,
+    eyebrow: "شوفها ببساطة",
     title: "Correlation ≠ Causation",
+    tone: "primary",
     block: {
       kind: "diagram",
       id: "correlation-causation",
-      caption: "آيس كريم وغرق بيتحرّكوا مع بعض — السبب الحقيقي حاجة تالتة (الحرارة).",
-    },
-  },
-  {
-    icon: Scale,
-    eyebrow: "Failure × Right",
-    title: "تحليل مثالي vs قرار كافي",
-    block: {
-      kind: "comparison",
-      left: { label: "FAILURE — «لسه محتاج بيانات أكتر»", body: "أسبوعين في التحليل. الفرصة عدّت. المنافس اتحرّك." },
-      right: { label: "RIGHT — «بيانات كافية = جرّب»", body: "قرار صغير الأسبوع ده. النتيجة بياناتك الأسبوع الجاي. تعلّم بالتنفيذ." },
+      label: "ارتباط vs سببية",
+      caption:
+        "آيس كريم وغرق بيتحرّكوا مع بعض — السبب الحقيقي حاجة تالتة (الحرارة). استخدم الرسم في الـ scenarios.",
     },
   },
   {
     icon: Rocket,
-    eyebrow: "دورك دلوقتي",
-    title: "اكسر Paralysis",
+    eyebrow: "تأكيد سريع",
+    title: "سؤال واحد — مش امتحان",
     tone: "accent",
     block: {
       kind: "quiz",
@@ -82,91 +128,61 @@ export const ANALYST_M6_L2_INTERPRETATION_MISTAKES_BLOCKS: IntroLessonContent = 
         {
           id: "apply1",
           bloom: "apply",
-          question: "أنت مدير مشروع جديد، وفيه تحدي كبير في البروجريس اللي بيحصل في أول كام يوم. بدأت تحلل بيانات كتير عن أداء الفريق، وتشوف كل خطوة، بس كل ما تحلل أكتر تحس إنك تايه ومش عارف تاخد قرار عشان عايز تفهم كل التفاصيل. تفتكر أنسب حاجة تعملها عشان تتخطى الموقف ده هي إيه؟",
+          question:
+            "صاحب كافيه لاحظ: أغاني هادية الصبح = مبيعات أعلى. قرر يشغّلها طول الوقت. إيه الغلطة؟",
           options: [
-            "تحدد ديدلاين صغير أسبوع عشان تاخد قرار، وتجرب حل مبدئي وتشوف نتيجته.",
-            "تطلب بيانات أكتر من كل الأقسام المتعلقة بالمشروع عشان تضمن إن تحليلك كامل.",
-            "تطلب اجتماع مطول مع كل أفراد الفريق عشان يفهموا حجم المشكلة ويتعاونوا في التحليل."
+            "Correlation ≠ Causation — ممكن في سبب تالت (وقت اليوم، نوع زبائن).",
+            "Analysis Paralysis — بيتأخر في القرار.",
+            "Vanity metric — اللايكات مش مهمة.",
           ],
           correctIndex: 0,
-          explanation: "الحالة دي بتوصف الـ Analysis Paralysis بالظبط. الحل هو تاخد قرار سريع ومبدئي (حتى لو مش كامل) وتجرب تشوف نتيجته، بدل ما تفضل تحلل لمالانهاية."
+          explanation:
+            "الارتباط مش سببية. محتاج تجربة: نفس الوقت، متغيّر واحد — أو تقارن بفترة أطول.",
         },
-        {
-          id: "apply2",
-          bloom: "apply",
-          question: "صاحب كافيه لاحظ إن لما بيشغل أغاني هادية الصبح، المبيعات بتزيد بشكل ملحوظ. قرر يعتمد الأغاني الهادية طول الوقت عشان يضمن زيادة المبيعات. هو كده طبق أنهي مبدأ بشكل غلط؟",
-          options: [
-            "Correlation ≠ Causation",
-            "Analysis Paralysis",
-            "القرار الغلط أحسن من مفيش قرار"
-          ],
-          correctIndex: 0,
-          explanation: "صاحب الكافيه شاف Correlation (الأغاني الهادية مع زيادة المبيعات) واعتبرها Causation (الأغاني الهادية هي اللي سببت الزيادة). ممكن تكون في عوامل تانية هي السبب الحقيقي."
-        },
-        {
-          id: "apply3",
-          bloom: "apply",
-          question: "مدير تسويق في شركة بيشوف إن عدد اللايكات على بوستات السوشيال ميديا بيزيد مع زيادة عدد الإيميلات اللي بيبعتها للفانز بتاعته. استنتج إن الإيميلات هي السبب المباشر لزيادة التفاعل على البوستات. عشان يتأكد إن تحليله صح ومش مجرد صدفة، إيه الخطوة اللي المفروض يعملها؟",
-          options: [
-            "يجرب يبعت إيميلات لجروب معين ومايبعتش لجروب تاني، ويقيس التفاعل في المجموعتين.",
-            "يزود عدد الإيميلات اللي بيبعتها بشكل كبير ويشوف لو عدد اللايكات زادت أكتر.",
-            "يشوف عدد الكومنتات والشير مش اللايكات بس، عشان يتأكد إن التفاعل حقيقي."
-          ],
-          correctIndex: 0,
-          explanation: "عشان تتأكد من الـ Causation، محتاج تعمل تجربة تتحكم فيها في المتغير اللي بتدرسه (الإيميلات في الحالة دي) وتقارن النتائج، وده اللي بيعمله الـ experiment اللي في الإجابة."
-        }
-      ]
+      ],
     },
   },
   {
     icon: Rocket,
-    eyebrow: "Mission",
-    title: "اصطاد آخر غلطة تفسير عملتها",
+    eyebrow: "مهمتك",
+    title: "٣ mini scenarios — تشخيص + علاج",
     tone: "accent",
     block: {
       kind: "mission",
       intro:
-        "كلنا بنغلط في تفسير الأرقام. ارجع لقرار اخدته من بيانات في آخر شهر وحدّد الغلطة.",
+        "المهمة دي تطبيق على ٣ مواقف — مش نظري. لكل scenario: نوع الغلطة + إزاي تتجنّبه + قرار أصح.\n\nالـ AI يساعدك تصيغ التشخيص — إنت تختار الحكم النهائي.",
       prompt:
-        "في تسليمك اكتب:\n\n١) القرار الأصلي والـ Insight اللي بنيته عليه:\n٢) نوع الغلطة (Correlation = Causation / Sample صغيّر / Cherry-picking / Survivorship / غيرها):\n٣) إزاي عرفت بعد كده إنها غلطة:\n٤) لو رجعت بالزمن: الـ Insight الصحّ كان إيه:\n٥) قاعدة شخصية واحدة هتمنع نفس الغلطة في المستقبل:",
-      buttonLabel: "انسخ التعليمات",
-      copiedLabel: "اتنسخ",
+        "في تسليمك اكتب لكل scenario:\n\n── Scenario ١: Correlation vs Causation ──\nالموقف: [اكتب أو انسخ من الدرس]\nنوع الغلطة:\nقرار أصح:\n\n── Scenario ٢: عيّنة صغيرة ──\n[نفس الهيكل]\n\n── Scenario ٣: Vanity metric أو Recency bias ──\n[نفس الهيكل]",
+      buttonLabel: "انسخ خطوات المهمة",
+      copiedLabel: "اتنسخت ✓",
+      template:
+        "── Scenario ١: Correlation vs Causation ──\nالموقف:\n[مثال: مبيعات زادت مع تغيير X]\nنوع الغلطة: [Correlation = Causation]\nقرار أصح: [تجربة صغيرة / متغيّر واحد]\n\n── Scenario ٢: عيّنة صغيرة ──\nالموقف:\n[مثال: ٣ عملاء راضيين]\nنوع الغلطة: [Sample صغير]\nقرار أصح: [توسيع العيّنة / انتظار]\n\n── Scenario ٣: Vanity / Recency ──\nالموقف:\n[مثال: لايكات زادت / آخر أسبوع ممتاز]\nنوع الغلطة: [Vanity / Recency bias]\nقرار أصح: [رقم يخدم قرار / مقارنة أطول]",
       rubric: [
         {
-          label: "تشخيص أمين",
-          weight: 70,
-          criteria: [
-            "الغلطة مصنّفة بنوع واضح.",
-            "في دليل/سبب إنها غلطة فعلًا.",
-          ],
+          label: "تشخيص الفخ",
+          weight: 50,
+          criteria: ["كل scenario له نوع غلطة واضح."],
         },
         {
-          label: "قاعدة وقاية",
-          weight: 30,
-          criteria: [
-            "في قاعدة شخصية محدّدة هتطبّقها.",
-          ],
+          label: "قرار أصح",
+          weight: 50,
+          criteria: ["قرار صغير أو تجربة — مش تعميم من غير دليل."],
         },
       ],
     },
   },
   {
-    icon: FlaskConical,
-    eyebrow: "جزء من المنصة",
-    title: "غلطة تفسير حقيقية: «الـ retention بقت 80%»",
+    icon: CheckCircle2,
+    eyebrow: "خلّصت التفسير",
+    title: "إيه اللي عندك دلوقتي؟",
     tone: "primary",
     block: {
-      kind: "caseStudy",
-      title: "غلطة تفسير حقيقية: «الـ retention بقت 80%»",
-      summary:
-        "الجزء ده من المنصة اتبنى بمسار Analyst — نفس اللي بتتعلمه. شفنا في analytics إن retention قفز لـ 80%. فرحنا. لما عمّقنا في الـ data، اكتشفنا إن العدد الكلي للمستخدمين قل (الناس اللي بتسيب اتشالت). الـ retention مش زاد — الـ denominator اتغيّر.",
-      bullets: [
-        "دايمًا اعرض absolute numbers جنب الـ percentages.",
-        "Drill-down متاح في كل widget — مش بس rollup.",
-        "Cohort analysis بدل aggregate لتجنب الـ bias.",
+      kind: "paragraphs",
+      paragraphs: [
+        "فهمت إيه؟ البيانات الصح + تفسير غلط = قرار غلط — والـ AI يساعدك تسأل قبل ما تتسرّع.",
+        "تقدر تعمل إيه؟ عندك ٣ scenarios محلولة تقدر تراجعهم في الريفيو الأسبوعي.",
+        "اللي جاي: A/B Testing — غيّر حاجة واحدة، قيس نتيجة واحدة.",
       ],
-      pathAngle: "analyst",
-      link: { label: "افتح /analytics", href: "/analytics" },
     },
-  }
+  },
 ];

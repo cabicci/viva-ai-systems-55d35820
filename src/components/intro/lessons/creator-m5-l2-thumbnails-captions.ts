@@ -21,7 +21,7 @@ export const CREATOR_M4_THUMBNAILS_CAPTIONS_BLOCKS: IntroLessonContent = [
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "حتى المحتوى القوي محتاج باب واضح يخلي الناس تدخل.",
+        "بعد ما عرفت تطلع من فكرة واحدة أكتر من شكل محتوى، السؤال دلوقتي: إزاي تخلي كل نسخة منهم تتشاف وتتفتح؟",
         "الـ Thumbnail والكابشن أول قرار للمشاهد: يدوس أو يعدي.",
       ],
     },

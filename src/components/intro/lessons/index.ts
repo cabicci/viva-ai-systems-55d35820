@@ -71,7 +71,7 @@ import { CREATOR_M6_BRAND_BASICS_BLOCKS } from "./creator-m7-l1-brand-basics";
 import { CREATOR_M6_GRID_CONSISTENCY_BLOCKS } from "./creator-m7-l2-grid-consistency";
 import { INTRO_SETUP_YOUR_AI_CONTENT } from "./intro-m1-l3-setup-your-ai";
 import { BUILDER_M5_TRANSITION_BLOCKS } from "./builder-m5-l1-transition";
-/* Analyst (12) */
+/* Analyst (14) */
 import { ANALYST_M1_L1_FROM_AUTOMATION_TO_INSIGHT_BLOCKS } from "./analyst-m1-l1-from-automation-to-insight";
 import { ANALYST_M2_L1_FEELING_TO_QUESTION_BLOCKS } from "./analyst-m2-l1-feeling-to-question";
 import { ANALYST_M2_L2_RIGHT_QUESTION_RULE_BLOCKS } from "./analyst-m2-l2-right-question-rule";
@@ -79,8 +79,10 @@ import { ANALYST_M3_L1_THREE_SOURCES_BLOCKS } from "./analyst-m3-l1-three-source
 import { ANALYST_M3_L2_AI_SUMMARIZATION_BLOCKS } from "./analyst-m3-l2-ai-summarization";
 import { ANALYST_M4_L1_PATTERN_VS_OUTLIER_BLOCKS } from "./analyst-m4-l1-pattern-vs-outlier";
 import { ANALYST_M4_L2_DECISION_RULE_BLOCKS } from "./analyst-m4-l2-decision-rule";
+import { ANALYST_M4_AUTOMATED_DASHBOARD_BLOCKS } from "./analyst-m4-automated-dashboard";
 import { ANALYST_M5_L1_FOUR_NUMBERS_DASHBOARD_BLOCKS } from "./analyst-m5-l1-four-numbers-dashboard";
 import { ANALYST_M5_L2_WEEKLY_REVIEW_RITUAL_BLOCKS } from "./analyst-m5-l2-weekly-review-ritual";
+import { ANALYST_M5_AB_TESTING_BLOCKS } from "./analyst-m5-ab-testing";
 import { ANALYST_M6_L1_QUESTION_MISTAKES_BLOCKS } from "./analyst-m6-l1-question-mistakes";
 import { ANALYST_M6_L2_INTERPRETATION_MISTAKES_BLOCKS } from "./analyst-m6-l2-interpretation-mistakes";
 import { ANALYST_M7_L1_FROM_DECISIONS_TO_BUSINESS_BLOCKS } from "./analyst-m7-l1-from-decisions-to-business";
@@ -190,9 +192,11 @@ export const INTRO_LESSON_CONTENT: Record<string, IntroLessonContent> = {
   "analyst-m4-l1-pattern-vs-outlier": ANALYST_M4_L1_PATTERN_VS_OUTLIER_BLOCKS,
   "analyst-m4-l2-decision-rule": ANALYST_M4_L2_DECISION_RULE_BLOCKS,
   "analyst-m5-l1-four-numbers-dashboard": ANALYST_M5_L1_FOUR_NUMBERS_DASHBOARD_BLOCKS,
+  "analyst-m4-automated-dashboard": ANALYST_M4_AUTOMATED_DASHBOARD_BLOCKS,
   "analyst-m5-l2-weekly-review-ritual": ANALYST_M5_L2_WEEKLY_REVIEW_RITUAL_BLOCKS,
-  "analyst-m6-l1-question-mistakes": ANALYST_M6_L1_QUESTION_MISTAKES_BLOCKS,
   "analyst-m6-l2-interpretation-mistakes": ANALYST_M6_L2_INTERPRETATION_MISTAKES_BLOCKS,
+  "analyst-m5-ab-testing": ANALYST_M5_AB_TESTING_BLOCKS,
+  "analyst-m6-l1-question-mistakes": ANALYST_M6_L1_QUESTION_MISTAKES_BLOCKS,
   "analyst-m7-l1-from-decisions-to-business": ANALYST_M7_L1_FROM_DECISIONS_TO_BUSINESS_BLOCKS,
   /* Business — 4 modules × 16 lessons */
   "business-m1-l1-from-decisions-to-leadership": BUSINESS_M1_L1_FROM_DECISIONS_TO_LEADERSHIP_BLOCKS,

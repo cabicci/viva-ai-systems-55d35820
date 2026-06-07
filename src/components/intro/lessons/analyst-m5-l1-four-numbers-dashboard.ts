@@ -1,83 +1,124 @@
-import { LayoutDashboard, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, BarChart3, FlaskConical } from "lucide-react";
+import {
+  Sparkles,
+  AlertCircle,
+  PlayCircle,
+  Lightbulb,
+  Scale,
+  Rocket,
+  BookOpen,
+  CheckCircle2,
+  Image as ImageIcon,
+} from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
+/** Analyst · M5 · L1 — Four Numbers Dashboard (v3: Lesson Shape pilot) */
 export const ANALYST_M5_L1_FOUR_NUMBERS_DASHBOARD_BLOCKS: IntroLessonContent = [
   {
-    icon: LayoutDashboard,
-    eyebrow: "HERO",
-    title: "٤ أرقام بس",
+    icon: Sparkles,
+    eyebrow: "بداية الدرس",
+    title: "هتفهم إيه النهاردة؟",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "Dashboard فيه ٢٠ رقم = مفيش Dashboard.",
-        "٤ أرقام إنت بتقرأهم كل أسبوع = نظام فعلي.",
+        "هتفهم إيه؟ الـ Dashboard المفيد يبدأ بأرقام قرار قليلة — مش ٥٠ رسم تفتحها وتقفلها.",
+        "ليه دلوقتي؟ في الموديول اللي فات كل insight بقى له action. دلوقتي محتاج ٤ أرقام تلخّص «هل شغلي ماشي؟» كل أسبوع.",
+        "هتعمل إيه بعد الدرس؟ هترسم Dashboard من ٤ أرقام لمشروعك أو شغلك.",
       ],
     },
   },
   {
+    icon: AlertCircle,
+    eyebrow: "موقف مألوف",
+    title: "Dashboard فيه ٢٠ رقم — ومفيش قرار",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "بتفتح Sheet أو أداة فيها charts كتير — بتقعد ١٠ دقايق — وتقفل من غير ما تعرف «إيه اللي محتاج أعمله؟»",
+        "المشكلة مش نقص بيانات — المشكلة زحمة. كل رقم إضافي بيأخّر القرار.",
+        "Dashboard مش عشان تبان محترف — Dashboard عشان في ثواني تعرف: في مشكلة ولا لأ؟",
+      ],
+    },
+  },
+  {
+    icon: Lightbulb,
+    eyebrow: "الفكرة الأساسية",
+    title: "٤ أرقام قرار — مش ٤٠ metric",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "اختار ٤ أرقام بس — لو واحد فيهم اتغيّر، قرارك يتغيّر. مش أي رقم «حلو يتعرض».",
+        "كل رقم جنبه: قيمة الأسبوع ده، الأسبوع اللي فات، وسهم (↑/↓) — عشان المقارنة جزء من العرض.",
+        "بيزنس: Leads · Conversion · Revenue · Retention. مش بيزنس: Progress · Responses · Results · Repeat.",
+        "لو عندك أكتر من ٤ — اسأل: «لو شلت ده، هقرّر إزاي؟» اللي مش بيجاوب = مش dashboard.",
+      ],
+    },
+  },
+  {
+    icon: Scale,
+    eyebrow: "مثال من الحياة",
+    title: "٢٠ رقم vs ٤ أرقام قرار",
+    block: {
+      kind: "comparison",
+      left: {
+        label: "Dashboard مليان",
+        body: "١٥ chart — views، clicks، time on page، bounce… بتفتحه وتقفله. نهاية الأسبوع: «حاسس إن في حاجة غلط» بس مش عارف إيه.",
+      },
+      right: {
+        label: "٤ أرقام واضحة",
+        body: "Leads ١٢٠ (↑) · Conversion ٨٪ (↓) · Revenue ١٥k (↑) · Retention ٣٠٪ (↓). في ثانية: Conversion و Retention محتاجين قرار.",
+      },
+    },
+  },
+  {
     icon: BookOpen,
-    eyebrow: "مصطلحات الدرس",
-    title: "اللي هتسمعه في الدرس ده",
+    eyebrow: "كلمتين بس",
+    title: "مصطلحين للـ Dashboard",
     block: {
       kind: "concepts",
       items: [
-        { term: "Dashboard", meaning: "شاشة واحدة بتعرض أهم الأرقام عشان تتابع حال شغلك بسرعة.", example: "زي لوحة عدادات العربية اللي بتعرفك البنزين والسرعة، بتعرفك حال الشغل كله في شاشة واحدة." },
-        { term: "KPI (Key Performance Indicator)", meaning: "رقم محدد بيعرفك إنت ماشي صح ولا عاكك في الشغل.", example: "صاحب مطعم بيعتبر عدد الوجبات اللي اتباعت في اليوم هي الـ KPI الأهم عنده." },
-        { term: "Metric", meaning: "أي رقم تقدر تقيسه في الشغل زي عدد الزوار أو المبيعات.", example: "لو عندك محل موبايلات، \"الأرباح\" دي Metric، لكن \"صافي ربح نهائي\" ده الـ KPI." },
-        { term: "Retention", meaning: "نسبة الزبائن اللي اشتروا منك قبل كده ورجعوا لك تاني.", example: "تاجر ملابس بيشوف كم واحد اشترى منه السنة اللي فاتت ورجع يشتري تاني السنة دي." },
-        { term: "Threshold", meaning: "الرقم اللي لو زدت أو قليت عنه يبدأ القلق ولازم تتحرك.", example: "لو إيرادات الشغل نزلت عن 1000 جنيه في اليوم، جرس الإنذار يضرب فوراً." },
-        { term: "Creator vs Automator", meaning: "أدوار بتعملها؛ الأول بيصمم اللوحة، والتاني بيخلي الأرقام تتحدث تلقائي.", example: "إنت كـ Creator بتحدد إيه الأرقام اللي تظهر، والـ Automator هو اللي بيحدثها لوحده." },
+        {
+          term: "KPI (مؤشر قرار)",
+          meaning: "رقم محدّد — لو اتغيّر، قرارك يتغيّر.",
+          example: "Conversion % — لو نزل، محتاج تراجع خطوة البيع.",
+        },
+        {
+          term: "Threshold (حد قرار)",
+          meaning: "الرقم اللي لو عدّاه — لازم action.",
+          example: "لو Retention نزل عن ٣٥٪ → اجتماع متابعة عملاء.",
+        },
       ],
     },
   },
   {
     icon: PlayCircle,
     eyebrow: "فيديو الدرس",
-    title: "اتفرّج الأول",
+    title: "اتفرّج — ٤ أرقام بس",
     tone: "accent",
-    block: { kind: "lessonVideo", caption: "إزاي تختار ٤ أرقام بس بتلخّص شغلك كله." },
-  },
-  {
-    icon: Lightbulb,
-    eyebrow: "الفكرة",
-    title: "الـ ٤ أرقام الأساسية",
     block: {
-      kind: "numberedList",
-      items: [
-        "Leads — كام واحد تواصل معاك الأسبوع ده؟ (مصدره: Creator + Automator).",
-        "Conversion % — كام منهم اشترى؟",
-        "Revenue — كام فلوس دخلت فعلاً؟",
-        "Retention — كام عميل قديم رجع؟",
-        "لو مش بيزنس: Progress · Responses · Results · Repeat behavior — نفس قاعدة ٤ أرقام بس.",
-        "كل رقم جنبه: قيمة الأسبوع ده، الأسبوع اللي فات، السهم (↑/↓).",
-      ],
+      kind: "lessonVideo",
+      caption:
+        "إزاي تختار ٤ أرقام بتلخّص شغلك — وتقرأهم كل أسبوع.",
     },
   },
   {
-    icon: BarChart3,
-    eyebrow: "شوف بنفسك",
-    title: "Dashboard أسبوع 42 — أرقام حقيقية",
+    icon: ImageIcon,
+    eyebrow: "شوفها ببساطة",
+    title: "Dashboard أسبوعي من ٤ خانات",
+    tone: "primary",
     block: {
       kind: "diagram",
       id: "four-kpi-dashboard",
-      caption: "Leads · Conversion · Revenue · Retention — مع الأسبوع اللي فات والسهم.",
-    },
-  },
-  {
-    icon: Scale,
-    eyebrow: "Failure × Right",
-    title: "٢٠ رقم vs ٤ أرقام",
-    block: {
-      kind: "comparison",
-      left: { label: "FAILURE — Dashboard مليان", body: "بتفتحه وبتقفله من غير ما تقرّر حاجة. الكتير = صفر." },
-      right: { label: "RIGHT — ٤ أرقام واضحة", body: "في ثانيتين بتعرف لو فيه مشكلة. القرار جاهز قبل ما تخلص الأرقام." },
+      label: "Four KPI Dashboard",
+      caption:
+        "٤ أرقام — كل واحد: الأسبوع ده، اللي فات، والسهم. لو واحد أحمر، تعرف فين القرار.",
     },
   },
   {
     icon: Rocket,
-    eyebrow: "دورك دلوقتي",
-    title: "ابني أول Dashboard في Sheet",
+    eyebrow: "تأكيد سريع",
+    title: "سؤال واحد — مش امتحان",
     tone: "accent",
     block: {
       kind: "quiz",
@@ -86,91 +127,67 @@ export const ANALYST_M5_L1_FOUR_NUMBERS_DASHBOARD_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "لو الداتا بتاعتك الأسبوع اللي فات كانت 100 Lead و Conversion% 10%، والأسبوع ده بقيت 120 Lead و Conversion% 8%. إيه أهم حاجة تركز عليها في الـ ٤ أرقام بتاعتك عشان تحسن الأداء؟",
+          question:
+            "Leads زادت ٢٠٪ — Conversion نزل من ١٢٪ لـ ٨٪ — Revenue ثابت. إيه أول رقم تركّز عليه في الـ ٤؟",
           options: [
-            "الـ Conversion % عشان هو اللي قل فمحتاج اهتمام أكتر.",
-            "الـ Leads عشان زيادة عددهم مؤشر كويس.",
-            "الـ Revenue عشان في النهاية هو اللي بيفرق."
-          ],
-          correctIndex: 0,
-          explanation: "رغم زيادة الـ Leads، نقص الـ Conversion % معناه إن فيه مشكلة في تحويل العملاء المهتمين لمشترين، وده بيأثر مباشرة على الـ Revenue."
-        },
-        {
-          id: "apply2",
-          bloom: "apply",
-          question: "أنت عملت حملة تسويقية جديدة ولقيت إن الـ Leads زادت من 50 لـ 150 والأسبوع ده الـ Revenue بتاعك بقى X. الأسبوع اللي فات كان Y. إيه اللي المفروض تشوفه جنب قيمة الـ Revenue في الـ Dashboard بتاعتك؟",
-          options: [
-            "قيمة الأسبوع اللي فات (Y) وسهم لفوق (↑).",
-            "قيمة الأسبوع اللي فات (Y) وسهم لتحت (↓).",
-            "قيمة الأسبوع اللي فات (Y) وبدون سهم عشان الأرقام لسه جديدة."
-          ],
-          correctIndex: 0,
-          explanation: "الـ Dashboard لازم يوريني قيمة الأسبوع ده (X) والأسبوع اللي فات (Y) عشان أقارن، وبما إن الـ Leads زادت، متوقع الـ Revenue يزيد، فسهم لفوق هيكون مناسب."
-        },
-        {
-          id: "apply3",
-          bloom: "apply",
-          question: "مديرك سألك إيه اللي بيحصل مع العملاء القدام. بصيت على الـ Dashboard بتاعك ولقيت إن الـ Retention بتاعة الأسبوع ده 30% والأسبوع اللي فات كانت 40%. إيه أول رد فعل أو سؤال هيكون عندك؟",
-          options: [
-            "تمام يا فندم، بنجيب عملاء جدد فالـ Retention مش أولويتنا دلوقتي.",
-            "محتاجين نعرف ليه العملاء القدام مابقوش يرجعوا زي الأول ونشوف إيه اللي اتغير.",
-            "ممكن نزود حملات تسويقية للعملاء الجداد عشان نعوض النقص في الـ Retention."
+            "Leads — لأنها زادت.",
+            "Conversion — لأنه نزل رغم زيادة الطلبات، وده بيأثّر على Revenue.",
+            "Revenue — لأنه ثابت فمفيش مشكلة.",
           ],
           correctIndex: 1,
-          explanation: "نقص الـ Retention مؤشر لإن فيه مشكلة مع العملاء الحاليين، والـ KPI ده مهم جداً لصحة الشغل، فلازم نفهم أسباب النقص ونعالجها."
-        }
-      ]
+          explanation:
+            "Leads و Conversion مع بعض يوضّحوا الصورة. Conversion نزل = مشكلة في التحويل — ده رقم قرار.",
+        },
+      ],
     },
   },
   {
     icon: Rocket,
-    eyebrow: "Mission",
-    title: "ابني Dashboard من ٤ أرقام بس",
+    eyebrow: "مهمتك",
+    title: "ارسم Dashboard من ٤ أرقام",
     tone: "accent",
     block: {
       kind: "mission",
       intro:
-        "Dashboard فيه ٢٠ رسم = ديكور. اختار ٤ أرقام تناسب شغلك — بيزنس أو تعلم أو محتوى — لو اتحرّكوا، شغلك بيتحرّك معاهم.",
+        "المهمة دي تصميم عملي — مش ديكور. اختار ٤ أرقام لمشروعك أو شغلك واكتبهم في شكل dashboard بسيط (Sheet، Notion، ورقة).\n\nمش مطلوب أداة معقّدة — مطلوب ٤ أرقام تقدر تقراهم كل أسبوع وتقرّر.",
       prompt:
-        "في تسليمك اكتب:\n\n١) المجال/المشروع اللي الـ Dashboard ليه:\n٢) الأربع أرقام بالظبط (Metric + Window) + ليه دول بالذات:\n٣) الـ Target/Threshold لكل رقم:\n٤) لينك أو screenshot للـ Dashboard اللي بنيته (Sheet/Looker/Notion/أي حاجة):\n٥) القرار اللي هياتاخد لو أي رقم خرج عن الـ Target:",
-      buttonLabel: "انسخ التعليمات",
-      copiedLabel: "اتنسخ",
+        "في تسليمك اكتب:\n\n١) المشروع/الشغل اللي الـ Dashboard ليه:\n٢) الأربع أرقام (Metric + ليه اخترته):\n٣) لكل رقم: قيمة الأسبوع ده · الأسبوع اللي فات · Threshold:\n٤) لو رقم واحد طلع أحمر — إيه القرار؟\n٥) لينك أو وصف بسيط لشكل الـ Dashboard:",
+      buttonLabel: "انسخ خطوات المهمة",
+      copiedLabel: "اتنسخت ✓",
+      template:
+        "المشروع:\n[إيه الشغل]\n\n٤ أرقام:\n1. [Metric] — ليه:\n2.\n3.\n4.\n\nقيم + Threshold:\n[لكل رقم: ده · فات · حد]\n\nقرار لو أحمر:\n[action واحد]\n\nشكل الـ Dashboard:\n[وصف أو لينك]",
       rubric: [
         {
-          label: "تركيز ودقّة",
-          weight: 70,
+          label: "تركيز واختيار",
+          weight: 50,
           criteria: [
-            "أربع أرقام بالظبط — مش أكتر.",
-            "كل رقم له Target/Threshold مبرّر.",
+            "أربع أرقام بالظبط — كل واحد مبرّر.",
+            "كل رقم مربوط بقرار محتمل.",
           ],
         },
         {
-          label: "Dashboard موجود",
-          weight: 30,
+          label: "مقارنة وThreshold",
+          weight: 50,
           criteria: [
-            "في لينك/screenshot لـ Dashboard فعلي اتبنى.",
+            "في قيمة الأسبوع ده واللي فات.",
+            "في Threshold أو حد قرار لكل رقم.",
           ],
         },
       ],
     },
   },
   {
-    icon: FlaskConical,
-    eyebrow: "جزء من المنصة",
-    title: "/dashboard فيه ٤ widgets بس",
+    icon: CheckCircle2,
+    eyebrow: "خلّصت الـ Dashboard",
+    title: "إيه اللي عندك دلوقتي؟",
     tone: "primary",
     block: {
-      kind: "caseStudy",
-      title: "/dashboard فيه ٤ widgets بس",
-      summary:
-        "الجزء ده من المنصة اتبنى بمسار Analyst — نفس اللي بتتعلمه. /dashboard بتاع المتعلم متظبّط بنفس القاعدة: ٤ widgets بس — Welcome, Streak, Reviews Due, Sidebar. أي زيادة كانت بتشتّت. حذفنا 6 widgets قبل ما نوصل للنسخة دي.",
-      bullets: [
-        "Streak: رقم واحد بسيط.",
-        "Reviews Due: عدد + CTA واحد.",
-        "Welcome Checklist: 4 خطوات بس.",
+      kind: "paragraphs",
+      paragraphs: [
+        "فهمت إيه؟ Dashboard مفيد = ٤ أرقام قرار تقراهم كل أسبوع — مش زحمة charts.",
+        "تقدر تعمل إيه؟ عندك ٤ أرقام تبدأ بيهم أي مراجعة أسبوعية.",
+        "اللي جاي: Automated Dashboard — خلّي رقم واحد من الأربعة يتحدّث لوحده.",
       ],
-      pathAngle: "analyst",
-      link: { label: "افتح /dashboard", href: "/dashboard" },
     },
-  }
+  },
 ];
