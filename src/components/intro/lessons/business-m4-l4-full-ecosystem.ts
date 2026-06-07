@@ -1,173 +1,187 @@
-import { Layers, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, MessageSquare, Sparkles } from "lucide-react";
+import {
+  Sparkles,
+  AlertCircle,
+  PlayCircle,
+  Lightbulb,
+  Scale,
+  Rocket,
+  BookOpen,
+  CheckCircle2,
+  Image as ImageIcon,
+} from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-/** Business · M4 · Lesson 04 — الـ ٥ مسارات في يومك */
+/** Business · M4 · Lesson 04 — Full Ecosystem (v3: Lesson Shape pilot) */
 export const BUSINESS_M7_L1_FULL_ECOSYSTEM_BLOCKS: IntroLessonContent = [
   {
-    icon: Layers,
-    eyebrow: "HERO",
-    title: "Business مش مسار لوحده — هو اللي بيوصّل الـ ٤ مسارات لبعضها",
+    icon: Sparkles,
+    eyebrow: "بداية الدرس",
+    title: "هتفهم إيه النهاردة؟",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "أحمد دلوقتي عنده نظام تشغيل كامل: Decision Framework، Customer Journey، SOPs، Time Audit، Weekly Rhythm. بس فضل عنده اكتشاف أخير — مسار Business لوحده مش كافي. لازم يربط الـ ٥ مسارات في إيكوسيستم متكامل.",
-        "Builder بيحلّ مشكلة منتج. Creator بيوصّل صوت البيزنس. Automator بيشيل العمليات المتكررة. Analyst بيدّيك الأرقام للقرارات. Business هو الـ conductor اللي بيقول لكل مسار يلعب امتى وإزاي.",
-        "أحمد لما ربط الـ ٥ مسارات: استخدم Analyst عشان يحلّل الـ Retention، Creator عشان يحوّل القصص لمحتوى، Automator عشان يأتمت الـ Retention Flow، Builder عشان يبني تطبيق طلبات. كل ده تحت قيادة Business. نتيجة: بيزنس بيشتغل كمنظومة، مش كقطع متفرّقة.",
+        "هتفهم إيه؟ المسارات الخمسة تشتغل مع بعض كنظام تشغيل بالـ AI — مش مسارات منفصلة للتباهي.",
+        "ليه دلوقتي؟ خلّصت أساس Business من قرار لعميل لنظام لمراجعة. النهاردة الصورة الكاملة.",
+        "هتعمل إيه بعد الدرس؟ هتربط هدفك الحالي بأهم مسارين — وتشرح ليه.",
+      ],
+    },
+  },
+  {
+    icon: AlertCircle,
+    eyebrow: "موقف مألوف",
+    title: "عايز Business و Creator و Builder وكل حاجة",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "الحماس يخليك تفتح كل المسارات — وبعد شهر مفيش نتيجة ملموسة في أي اتجاه.",
+        "Business يحدّد الاتجاه والتشغيل. الباقي يخدم هدف — مش العكس.",
+        "Builder مسار عمق اختياري لبناء أدوات — مش الوعد الأساسي. أغلب أصحاب البيزنس يبدأوا بـ User و Operator.",
+      ],
+    },
+  },
+  {
+    icon: Lightbulb,
+    eyebrow: "الفكرة الأساسية",
+    title: "٥ مسارات — دور واحد لكل واحد",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "Business: اتجاه، قرار، تشغيل، عميل، نظام — القائد.",
+        "Creator: محتوى وثقة وجمهور — يخلق طلب ووعي.",
+        "Analyst: أرقام وقرارات — يقرأ الواقع مش الإحساس.",
+        "Automator: شغل متكرر يشتغل لوحده — يحرّر وقتك.",
+        "Builder: أدوات وتطبيقات — لما تحتاج منتج مخصص؛ اختياري وعميق.",
       ],
     },
   },
   {
     icon: BookOpen,
-    eyebrow: "مصطلحات الدرس",
-    title: "اللي هتسمعه في الدرس ده",
+    eyebrow: "كلمتين بس",
+    title: "مصطلحين للخريطة",
     block: {
       kind: "concepts",
       items: [
-        { term: "Ecosystem", meaning: "منظومة متكاملة من المسارات الـ ٥ بتشتغل مع بعض بدل ما تكون منعزلة.", example: "أحمد: Business بيقرّر، Analyst بيقيس، Automator بينفّذ، Creator بيوصّل، Builder بيبني." },
-        { term: "Conductor Role", meaning: "دور القائد اللي بيحدّد كل مسار يلعب امتى وإزاي.", example: "أحمد بيقرّر إن Analyst يحلّل قبل ما Creator يكتب." },
-        { term: "Cross-Track Synergy", meaning: "لما مسارين بيشتغلوا مع بعض بيطلّعوا نتيجة أكبر من جمعهم.", example: "Analyst + Creator: بيانات الـ Retention بتحوّل لقصة محتوى." },
-        { term: "Workflow Stack", meaning: "تسلسل واضح: المسار ده بياخد input من فين، وبيدّي output لمين.", example: "Analyst → Business (قرار) → Automator (تنفيذ) → Creator (توصيل)." },
-        { term: "Integration Audit", meaning: "مراجعة دورية: هل المسارات الـ ٥ بتتكلم مع بعض ولا كل واحد لوحده؟", example: "أحمد كل شهر يشوف: هل في مسار شغّال في عزلة؟" },
+        {
+          term: "Business OS (نظام التشغيل)",
+          meaning: "Business يجمع القرار والإيقاع والعميل — والمسارات التانية تغذّيه.",
+          example: "قرار عرض جديد (Business) + محتوى (Creator) + متابعة (Automator).",
+        },
+        {
+          term: "Builder (باني — اختياري)",
+          meaning: "لبناء تطبيق أو أداة مخصصة — مش شرط لكل صاحب بيزنس.",
+          example: "لو مشكلتك متابعة عملاء — Automator يكفي؛ Builder لما تحتاج منتج خاص.",
+        },
       ],
     },
   },
   {
     icon: PlayCircle,
     eyebrow: "فيديو الدرس",
-    title: "اتفرّج الأول",
-    tone: "accent",
-    block: { kind: "lessonVideo", caption: "إزاي الـ ٥ مسارات بتشتغل مع بعض تحت قيادة Business." },
-  },
-  {
-    icon: Lightbulb,
-    eyebrow: "الفكرة",
-    title: "ربط الـ ٥ مسارات في workflow واحد",
-    block: {
-      kind: "numberedList",
-      items: [
-        "Analyst — بيكشف المشكلة بالأرقام (مثلاً: Retention 18%).",
-        "Business — بيحدّد القرار (نشتغل على Retention قبل أي حاجة).",
-        "Automator — بيبني الـ workflow (رسالة بعد كل أوردر).",
-        "Creator — بيكتب الرسالة بصوت البراند.",
-        "Builder — بيبني الأداة لو محتاج شيء مخصّص (تطبيق ولاء مثلاً).",
-      ],
-    },
-  },
-  {
-    icon: MessageSquare,
-    eyebrow: "الـ Prompt القاتل",
-    title: "5-Track Ecosystem Designer",
+    title: "اتفرّج — النظام الكامل",
     tone: "accent",
     block: {
-      kind: "rule",
-      statement: "\"عندي مشكلة في بيزنسي [اوصفها]. صمّم لي workflow بيستخدم الـ ٥ مسارات (Business, Analyst, Automator, Creator, Builder) بالترتيب. لكل مسار: ١) دوره في الحل. ٢) الـ input اللي بياخده. ٣) الـ output اللي بيدّيه. ٤) أداة AI واحدة محدّدة هستخدمها.\"",
+      kind: "lessonVideo",
+      caption:
+        "إزاي المسارات الخمسة تتكامل. لو معندكش وقت، كمل قراية.",
     },
   },
   {
     icon: Scale,
-    eyebrow: "Failure × Right",
-    title: "مسارات منعزلة vs ecosystem متكامل",
+    eyebrow: "مثال من الحياة",
+    title: "كل المسارات vs مساران مرتبطان بهدف",
     block: {
       kind: "comparison",
-      left: { label: "FAILURE — منعزل", body: "أحمد يستخدم Creator لمحتوى عشوائي بدون أرقام من Analyst. يكتب أتمتة بدون قرار من Business. كل مسار شغّال لوحده — نتيجة: شغل كتير، أثر قليل." },
-      right: { label: "RIGHT — ecosystem", body: "أحمد يبدأ من Analyst (إيه المشكلة؟)، يقرّر بـ Business، يبني بـ Automator، يوصّل بـ Creator. كل مسار بيدخل في التاني. نتيجة: شغل أقل، أثر أكبر." },
+      left: {
+        label: "تشتت",
+        body: "أول درس من كل مسار. مفيش مشروع ولا محتوى ولا أتمتة واضحة.",
+      },
+      right: {
+        label: "تركيز + دعم",
+        body: "هدف واحد. مساران يخدمونه — الباقي لاحقًا.",
+      },
+    },
+  },
+  {
+    icon: ImageIcon,
+    eyebrow: "شوفها ببساطة",
+    title: "حلقة النظام المتكامل",
+    tone: "primary",
+    block: {
+      kind: "diagram",
+      id: "ecosystem-loop",
+      label: "Ecosystem",
+      caption:
+        "Business في الوسط يوجّه. Creator و Analyst و Automator يغذّوا التشغيل. Builder عند الحاجة فقط.",
     },
   },
   {
     icon: Rocket,
-    eyebrow: "Build Along — قطعتك في الـ Business OS",
-    title: "صمّم workflow حقيقي يربط الـ ٥ مسارات",
+    eyebrow: "تأكيد سريع",
+    title: "سؤال واحد — مش امتحان",
     tone: "accent",
     block: {
-      kind: "executionTask",
-      title: "آخر قطعة في الـ Business OS = القدرة تربط كل المسارات في حل واحد متكامل.",
-      steps: [
-        "اختار مشكلة حقيقية في بيزنسك دلوقتي (Retention ضعيف، مبيعات ثابتة، فريق مش منتج).",
-        "افتح AI. الصق الـ Prompt القاتل مع المشكلة بتاعتك.",
-        "خد الـ workflow اللي طلع، وارسمه على ورقة كـ flow chart (مربع لكل مسار + سهم بين كل اتنين).",
-        "لكل مسار، حدّد: الأداة اللي هتستخدمها + الوقت المتوقع + المسؤول (إنت، فريق، AI).",
-        "نفّذ أول خطوتين فقط (Analyst + Business) الأسبوع ده. مش لازم تنفّذ الـ ٥ مرة واحدة.",
-        "وثّق الـ workflow في \"Business OS\" بتاعك — هتعيد استخدامه لمشاكل تانية.",
+      kind: "quiz",
+      lessonId: "business-m4-l4-full-ecosystem-apply",
+      items: [
+        {
+          id: "apply1",
+          bloom: "apply",
+          question:
+            "هدفك: تقليل وقت المتابعة اليدوية للعملاء. أنسب مسار مساعد ثاني؟",
+          options: [
+            "Builder — تبني تطبيق فورًا.",
+            "Automator — أتمتة المتابعة المتكررة.",
+            "Creator — محتوى بس.",
+          ],
+          correctIndex: 1,
+          explanation:
+            "مهمة متكررة = Automator. Builder اختياري لاحقًا لو محتاج أداة مخصصة جدًا.",
+        },
       ],
     },
   },
   {
     icon: Rocket,
-    eyebrow: "دورك دلوقتي",
-    title: "اختبر فهمك",
-    tone: "accent",
-    block: {
-      kind: "quiz",
-      lessonId: "business-m7-l1-full-ecosystem-apply",
-      items: [
-        {
-          id: "apply1",
-          bloom: "apply",
-          question: "أحمد عايز يرفع المبيعات. بدأ مباشرة بـ Creator يكتب إعلانات. إيه الغلط؟",
-          options: [
-            "مفيش غلط — Creator هو اللي بيجيب مبيعات.",
-            "بدأ من نص المنظومة. لازم Analyst الأول (إيه السبب الحقيقي لقلة المبيعات؟) ثم Business يقرّر الحل، وبعدين Creator.",
-            "كان لازم يبدأ بـ Builder.",
-          ],
-          correctIndex: 1,
-          explanation: "Creator بدون Analyst = إعلانات لمشكلة مش متأكد إيه هي. ممكن المشكلة مش في التوعية أصلاً — ممكن في التسعير، الجودة، أو الـ Retention. ابدأ بالتشخيص دايماً، بعدين القرار، بعدين التنفيذ."
-        },
-        {
-          id: "apply2",
-          bloom: "apply",
-          question: "Cross-Track Synergy: أحمد عنده بيانات Retention من Analyst. إزاي يستفيد Creator منها؟",
-          options: [
-            "يستخدمها كأرقام إعلانية.",
-            "يحوّل قصص العملاء اللي رجعوا لمحتوى — شهادات، فيديوهات قبل/بعد، \"ليه ٤٧% بيرجعوا\".",
-            "يتجاهلها — مش شغله.",
-          ],
-          correctIndex: 1,
-          explanation: "Synergy الحقيقي = أرقام Analyst بتتحوّل لقصص Creator. العملاء الراجعين هم أقوى دليل اجتماعي — استخدم قصصهم في المحتوى. ده بيرفع الـ acquisition عن طريق الـ retention. ده اللي بيخلّي المسارات تكسب من بعض."
-        },
-        {
-          id: "apply3",
-          bloom: "apply",
-          question: "في workflow بتاعك، Builder بياخد input من مين؟",
-          options: [
-            "Creator — عشان يبني واجهة جميلة.",
-            "Business — اللي بيحدّد الحاجة الفعلية للأداة المخصّصة، بناءً على قرار من Analyst.",
-            "من حد، Builder بيشتغل لوحده.",
-          ],
-          correctIndex: 1,
-          explanation: "Builder بياخد input من Business اللي بياخد input من Analyst. ده الترتيب الصح: مشكلة → قرار → بناء. لو Builder بيبدأ من غير قرار من Business، بتبني حاجة مش محتاجها — إهدار وقت وفلوس."
-        }
-      ]
-    },
-  },
-  {
-    icon: Sparkles,
-    eyebrow: "Mission",
-    title: "صمّم workflow — Business + Analyst أو ٥ مسارات",
+    eyebrow: "مهمتك · ختام النظام",
+    title: "هدفك + مساران",
     tone: "accent",
     block: {
       kind: "mission",
-      intro: "صمّم workflow يربط مساراتك ببعض — مش لازم تكون خلصت كل المسارات.\n\nلو لسه ما دخلتش مسارات تانية:\nابدأ بمسارين بس: Business + Analyst.\nباقي المسارات اختيارية.",
-      prompt: "في تسليمك — اختَر مستوى واحد:\n\n【تسليم مبسّط — مقبول بالكامل】\n١) المشكلة الحقيقية اللي اخترتها.\n٢) workflow بمسارين: Business + Analyst (دور × input × output لكل واحد).\n٣) رسم flow chart بسيط (صورة أو وصف بالكلام).\n٤) نتيجة تنفيذ خطوة واحدة على الأقل — إيه اللي اكتشفته؟\n\n【تسليم كامل — اختياري】\n٥) workflow بـ ٥ مسارات × دور × input × output × أداة.\n٦) خطة Automator + Creator + Builder للأسبوع الجاي.\n٧) كيف الـ Business OS مختلف عن بداية المسار؟",
-      buttonLabel: "انسخ التعليمات",
-      copiedLabel: "اتنسخ",
+      intro:
+        "دي مهمة ربط النظام. اكتب هدفك الحالي في البيزنس (الشهرين الجايين). اختار مسارين من الخمسة الأكثر صلة — واشرح في ٢–٣ جمل ليه.\n\nمش مطلوب تخلص مسارات — مطلوب تركيز واضح.",
+      prompt:
+        "في تسليمك اكتب:\n\n١) هدفي الحالي (جملة أو جملتين):\n٢) المسار الأول:\n٣) ليه المسار الأول (٢–٣ جمل):\n٤) المسار الثاني:\n٥) ليه المسار الثاني (٢–٣ جمل):",
+      buttonLabel: "انسخ خطوات المهمة",
+      copiedLabel: "اتنسخت ✓",
+      template:
+        "١) الهدف:\n   [مثال: رفع عملاء راجعين ٢٠٪]\n\n٢) مسار ١: [Business / Creator / Analyst / Automator / Builder]\n٣) ليه:\n   [٢–٣ جمل]\n\n٤) مسار ٢: [...]\n٥) ليه:\n   [٢–٣ جمل]",
       rubric: [
         {
-          label: "Workflow متكامل",
+          label: "هدف حقيقي",
           weight: 50,
-          criteria: [
-            "التسليم المبسّط: Business + Analyst واضحين بترتيب منطقي — مقبول بالكامل.",
-            "التسليم الكامل (اختياري): ٥ مسارات كل واحد بياخد input من اللي قبله.",
-          ],
+          criteria: ["هدف مربوط ببيزنسك — مش فضول عام."],
         },
         {
-          label: "تنفيذ وتأمل",
+          label: "ربط منطقي",
           weight: 50,
-          criteria: [
-            "التسليم المبسّط: خطوة تنفيذ واحدة على الأقل — مقبول بالكامل.",
-            "التسليم الكامل (اختياري): تنفيذ خطوتين + تأمل على التحوّل.",
-          ],
+          criteria: ["مساران مع تبرير واضح — Builder مش افتراضي لكل حد."],
         },
+      ],
+    },
+  },
+  {
+    icon: CheckCircle2,
+    eyebrow: "خلّصت خريطة النظام",
+    title: "إيه اللي عندك دلوقتي؟",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "فهمت إيه؟ Business يقود — والمسارات التانية أدوات في نظام تشغيل واحد.",
+        "تقدر تعمل إيه؟ تعرف مسارين تخدم هدفك دلوقتي — من غير تشتت.",
+        "اللي جاي: لوحة تحكم بسيطة — ٤ أرقام وإشارات وملخص AI أسبوعي.",
       ],
     },
   },

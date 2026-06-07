@@ -1,101 +1,123 @@
-import { Users, PlayCircle, Lightbulb, Scale, Rocket, BookOpen, FileText, UserCheck } from "lucide-react";
+import {
+  Sparkles,
+  AlertCircle,
+  PlayCircle,
+  Lightbulb,
+  Scale,
+  Rocket,
+  BookOpen,
+  CheckCircle2,
+} from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-/** Business · M3 · Lesson 04 — التوظيف والـ Onboarding بالـ AI */
+/** Business · M3 · Lesson 04 — Hiring & Onboarding (v3: Lesson Shape pilot) */
 export const BUSINESS_M3_L4_HIRING_ONBOARDING_BLOCKS: IntroLessonContent = [
   {
-    icon: Users,
-    eyebrow: "HERO",
-    title: "أول موظف بتعيّنه — لو غلط، البيزنس بيتأخّر سنة",
+    icon: Sparkles,
+    eyebrow: "بداية الدرس",
+    title: "هتفهم إيه النهاردة؟",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "أحمد عيّن أول Operations Manager. خد قرار في يومين، Job Description نصف صفحة، interview 20 دقيقة. بعد 3 شهور، الراجل مشي، وأحمد رجع تاني بيشيل كل حاجة بنفسه.",
-        "بعد ما اتعلم، رجع تاني للتوظيف — بس المرة دي بالـ AI. كتب JD مفصّل بمساعدة AI، عمل interview script، حضّر onboarding plan كامل قبل أول يوم. الموظف اللي عيّنه بقى منتج من أول أسبوع.",
-        "AI مش بيوظّف بدالك — بس بيخليك توظف صح. الفرق بين أحمد القديم والجديد مش في الفلوس، في النظام.",
-        "مش جاهز توظّف؟\nحضّر الأدوات لأول مساعد أو فريلانسر أو شريك — نفس الفكرة.",
+        "هتفهم إيه؟ التوظيف بدون دور واضح يزود شغل الإدارة — والـ AI يساعد في صياغة التوقعات وخطة الأسبوع الأول.",
+        "ليه دلوقتي؟ بعد ما بنيت SOP، التوظيف يبقى «مين ينفّذ النظام» — مش «حد يساعدني بكل حاجة».",
+        "هتعمل إيه بعد الدرس؟ هتكتب دور قد تحتاجه لاحقًا: نتيجة الدور، ٣ مسؤوليات، وقائمة أسبوع أول.",
+      ],
+    },
+  },
+  {
+    icon: AlertCircle,
+    eyebrow: "موقف مألوف",
+    title: "«محتاج حد يساعدني» — ومش عارف في إيه",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "إعلان توظيف عام يجذب ناس مش مناسبة. أول أسبوع يبقى شرح عشوائي — وإنت ترجع Operator.",
+        "توظيف ناجح = دور محدد + نتيجة قابلة للقياس + SOP موجود + أسبوع أول مكتوب.",
+        "الـ AI يصيغ مسودة وصف الدور، قائمة مسؤوليات، وخطة أسبوع — إنت تراجع وتربطها بـ SOP اللي عندك.",
+      ],
+    },
+  },
+  {
+    icon: Lightbulb,
+    eyebrow: "الفكرة الأساسية",
+    title: "دور واضح — onboarding مبني على نظام",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "النتيجة: إيه اللي يتغيّر بعد ٣٠–٩٠ يوم؟ مثال: «رد على ٨٠٪ استفسارات الشحن من غير تصعيد».",
+        "المسؤوليات: ٣ حاجات محددة — مش «يساعد في كل حاجة».",
+        "الأسبوع الأول: قراءة SOP، مراقبة، تنفيذ بإشراف، اختبار قصير — الـ AI يساعدك ترتّب القائمة.",
+        "الحكم البشري يفضل في الاختيار والتقييم — الـ AI للمسودات والتنظيم.",
       ],
     },
   },
   {
     icon: BookOpen,
-    eyebrow: "مصطلحات الدرس",
-    title: "اللي هتسمعه في الدرس ده",
+    eyebrow: "كلمتين بس",
+    title: "مصطلحين للتوظيف",
     block: {
       kind: "concepts",
       items: [
-        { term: "Job Description (JD)", meaning: "وصف مفصّل للوظيفة: المسؤوليات، النتايج المطلوبة، المعايير، الـ red flags.", example: "بدل \"محتاج Operations Manager\"، تطلع JD فيه ٥ مسؤوليات + ٣ KPIs + ٣ شروط لازم تتحقق في أول 30 يوم." },
-        { term: "Outcome-Based Hiring", meaning: "بتوظف على أساس النتايج اللي محتاجها مش على الـ titles.", example: "مش \"محتاج محاسب\" → \"محتاج حد يقفل حساباتي الشهرية في 3 أيام بدل 10\"." },
-        { term: "Interview Scorecard", meaning: "كارت تقييم بمعايير ثابتة لكل candidate — يمنعك تختار بالـ \"feeling\".", example: "٥ معايير، كل واحد من 1-5، بتقارن الـ candidates بالأرقام مش بالانطباع." },
-        { term: "Onboarding Plan", meaning: "خطة الـ 30 يوم الأول للموظف الجديد — مكتوبة قبل أول يوم.", example: "اليوم 1-7: فهم النظام. 8-14: shadow. 15-30: ينفّذ بمراجعة. اليوم 31: مستقل." },
-        { term: "AI-Augmented Hiring", meaning: "استخدام AI في كل خطوة: كتابة JD، فحص CVs، interview questions، evaluating answers.", example: "بدل أسبوع تجهيز، نص يوم. وكل خطوة أعلى جودة." },
+        {
+          term: "Role Outcome (نتيجة الدور)",
+          meaning: "إيه اللي يتحسّن في البيزنس لما الدور يشتغل صح.",
+          example: "«متابعة العملاء بعد الشراء تتم ١٠٠٪ خلال ٤٨ ساعة».",
+        },
+        {
+          term: "Onboarding (الأسبوع الأول)",
+          meaning: "خطة دخول منظمة — مش «اتفرج عليا وأنا شغال».",
+          example: "يوم ١: SOP. يوم ٢–٣: تنفيذ مع مراجعة. يوم ٥: اختبار حالة حقيقية.",
+        },
       ],
     },
   },
   {
     icon: PlayCircle,
     eyebrow: "فيديو الدرس",
-    title: "اتفرّج الأول",
-    tone: "accent",
-    block: { kind: "lessonVideo", caption: "إزاي تعيّن أول موظف صح من المرة الأولى بمساعدة AI." },
-  },
-  {
-    icon: Lightbulb,
-    eyebrow: "الفكرة",
-    title: "٤ خطوات توظيف بالـ AI",
-    block: {
-      kind: "numberedList",
-      items: [
-        "اكتب الـ JD بمساعدة AI من الـ Outcomes اللي محتاجها — مش من الـ Title.",
-        "وَلّد Interview Questions موجّهة لكل outcome — كل سؤال بيختبر معيار محدد.",
-        "اعمل Scorecard ثابت — كل candidate يتقيّم بنفس المعايير.",
-        "حضّر Onboarding Plan كامل قبل أول يوم — لازم الموظف يعرف بالظبط هيتعلّم إيه في كل أسبوع.",
-      ],
-    },
-  },
-  {
-    icon: FileText,
-    eyebrow: "الـ Prompt القاتل",
-    title: "JD Generator Prompt",
+    title: "اتفرّج — توظيف مربوط بنظام",
     tone: "accent",
     block: {
-      kind: "rule",
-      statement: "\"عايز أعيّن [الوظيفة] في [نوع البيزنس]. النتايج المطلوبة في أول 90 يوم: [اذكرهم]. حجم البيزنس: [اذكره]. اكتبلي JD فيه: ١) ٥ مسؤوليات يومية، ٢) ٣ KPIs قابلة للقياس، ٣) ٥ مهارات لازمة + ٣ مفضّلة، ٤) ٣ red flags لازم أشوفهم في الـ interview، ٥) Onboarding Plan لأول 30 يوم.\"",
+      kind: "lessonVideo",
+      caption:
+        "دور واضح وأسبوع أول مع مساعدة الـ AI. لو معندكش وقت، كمل قراية.",
     },
   },
   {
     icon: Scale,
-    eyebrow: "Failure × Right",
-    title: "توظيف عشوائي vs توظيف بالـ AI",
+    eyebrow: "مثال من الحياة",
+    title: "«حد يساعدني» vs دور محدد",
     block: {
       kind: "comparison",
-      left: { label: "FAILURE — توظيف بالـ feeling", body: "JD نصف صفحة. Interview أسئلة عامة. اختيار بالانطباع. أول شهر فوضى — الموظف مش عارف ينفّذ إيه. بعد 3 شهور إما يمشي أو يطرد." },
-      right: { label: "RIGHT — توظيف بالـ AI", body: "JD مبني على outcomes. Interview بـ scorecard. Onboarding plan جاهز. الموظف منتج من أول أسبوع. الـ retention أعلى 3 أضعاف." },
+      left: {
+        label: "دور ضبابي",
+        body: "موظف يسأل كل ساعة. إنت تشرح. الجودة تعتمد على مزاجك.",
+      },
+      right: {
+        label: "دور + SOP + أسبوع أول",
+        body: "AI يساعد في الوصف والقائمة. الموظف يتبع النظام — إنت تقيّم النتيجة.",
+      },
     },
   },
   {
-    icon: Rocket,
-    eyebrow: "Build Along — قطعتك في الـ Business OS",
-    title: "اعمل JD + Onboarding Generator بتاعك",
-    tone: "accent",
+    icon: Lightbulb,
+    eyebrow: "شوفها ببساطة",
+    title: "أسبوع أول في ٣ خطوات",
     block: {
-      kind: "executionTask",
-      title: "هتطلع النهارده بـ 3 templates جاهزين تستخدمهم لأي وظيفة جاية.",
+      kind: "flow",
       steps: [
-        "افتح Notion/Doc جديد اسمه \"My Hiring System\".",
-        "اعمل 3 secs: ١) JD Template، ٢) Interview Scorecard، ٣) Onboarding Plan Template.",
-        "خد الـ JD Prompt اللي فوق ووَلّد JD لأول وظيفة محتاجها (حتى لو مش هتعيّن دلوقتي).",
-        "وَلّد 5 interview questions لكل KPI من الـ KPIs الـ 3.",
-        "اعمل Scorecard من 5 معايير. كل واحد سلم من 1-5 + ملاحظات.",
-        "اعمل Onboarding Plan لـ 30 يوم: أسبوع بأسبوع، فيه مهام محددة ومخرجات.",
+        "اقرأ SOP + شوف مثال حي",
+        "نفّذ بإشراف + سجّل الأسئلة",
+        "اختبار حالة واحدة + مراجعة",
       ],
     },
   },
   {
     icon: Rocket,
-    eyebrow: "دورك دلوقتي",
-    title: "اختبر فهمك",
+    eyebrow: "تأكيد سريع",
+    title: "سؤال واحد — مش امتحان",
     tone: "accent",
     block: {
       kind: "quiz",
@@ -104,70 +126,59 @@ export const BUSINESS_M3_L4_HIRING_ONBOARDING_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "صاحبة براند ملابس عايزة تعيّن \"حد يساعدها\". إيه أول حاجة تطلبها من AI؟",
+          question: "عندك SOP لرد العملاء. محتاج حد للمتابعة. أحسن وصف للدور؟",
           options: [
-            "يكتبلها إعلان توظيف.",
-            "يسألها ٥ أسئلة عن النتايج اللي محتاجاها قبل ما يكتب JD.",
-            "يقترحلها مرتب.",
+            "«مساعد عام لكل حاجة في البيزنس».",
+            "«تنفيذ SOP رد العملاء + تقرير أسبوعي بالاستثناءات».",
+            "«يستخدم AI بدالك في كل القرارات».",
           ],
           correctIndex: 1,
-          explanation: "\"حد يساعدها\" مش وظيفة. AI الكويس بيرفض يكتب JD قبل ما يفهم الـ outcomes. ممكن تحتاج مساعدة في الشحن، أو في الـ CS، أو في المخزون — كل واحدة وظيفة مختلفة."
+          explanation:
+            "دور مربوط بنظام موجود ونتيجة قابلة للقياس — مش مساعدة عامة.",
         },
-        {
-          id: "apply2",
-          bloom: "apply",
-          question: "في الـ Interview، عندك 3 candidates. واحد فيهم كاريزما عالية بس مفيش حاجة في الـ Scorecard بتاعه أعلى من 3. التانيين الـ score بتاعهم 4-5. مين تاخد؟",
-          options: [
-            "صاحب الكاريزما — \"الشخصية مهمة\".",
-            "أعلى Scorecard — الأرقام مش بتكدب.",
-            "أول واحد قابلته.",
-          ],
-          correctIndex: 1,
-          explanation: "كل ما تختار بالكاريزما والإحساس، كل ما تطلع موظف مش مناسب. الـ Scorecard اتعمل تحديداً عشان يمنعك من الـ bias ده. لو الكاريزما مهمة، لازم تضيفها كمعيار في الـ scorecard من الأول."
-        },
-        {
-          id: "apply3",
-          bloom: "apply",
-          question: "عيّنت Operations Manager. أول يوم. مفيش Onboarding Plan جاهز. إيه أرجح اللي هيحصل في 90 يوم؟",
-          options: [
-            "هيتعلم بنفسه ويبقى ممتاز.",
-            "هيقضي أول شهر مرتبك، شهرين يحاول يلحق، وغالباً هيمشي.",
-            "هيكون منتج من أول أسبوع.",
-          ],
-          correctIndex: 1,
-          explanation: "الـ Onboarding مش luxury — هو الفرق بين موظف منتج وموظف ضائع. بدون خطة، الموظف بيقضي وقته يدوّر على دوره بدل ما يأديه."
-        }
-      ]
+      ],
     },
   },
   {
-    icon: UserCheck,
-    eyebrow: "Mission",
-    title: "حضّر دليل دور — مساعد أو موظف",
+    icon: Rocket,
+    eyebrow: "مهمتك",
+    title: "دور مستقبلي + أسبوع أول",
     tone: "accent",
     block: {
       kind: "mission",
-      intro: "حتى لو مش هتعيّن دلوقتي — حضّر الأدوات. لما تحتاج مساعد أو فريلانسر أو شريك، هيكونوا جاهزين.\n\nلو لسه مبتدئ: وصف الدور + ٣ نتايج + ٣ أسئلة مقابلة — كفاية.",
-      prompt: "في تسليمك — اختَر مستوى واحد:\n\n【تسليم مبسّط — مقبول بالكامل】\n١) الدور (مساعد / فريلانسر / شريك) + ٣ نتايج بسيطة.\n٢) وصف الدور في ٥–٨ سطور (من AI).\n٣) ٣ أسئلة مقابلة + ٣ معايير تقييم.\n\n【تسليم كامل — اختياري】\n٤) JD كامل + Interview Scorecard (٥ معايير).\n٥) Onboarding Plan أسبوع بأسبوع (٤ أسابيع).\n٦) أول red flag هترفض على أساسه أي candidate.",
-      buttonLabel: "انسخ التعليمات",
-      copiedLabel: "اتنسخ",
+      intro:
+        "فكّر في دور قد تحتاجه خلال ٣–٦ شهور (مش لازم توظّف النهاردة). اكتب نتيجة الدور، ٣ مسؤوليات، وقائمة أسبوع أول — والـ AI يساعدك في الصياغة لو حابب.\n\nالتخطيط يقلّل الفوضى لما التوظيف ييجي.",
+      prompt:
+        "في تسليمك اكتب:\n\n١) اسم الدور:\n٢) نتيجة الدور بعد ٦٠–٩٠ يوم (جملة):\n٣) مسؤولية ١:\n٤) مسؤولية ٢:\n٥) مسؤولية ٣:\n٦) أسبوع أول — ٥ بنود checklist:",
+      buttonLabel: "انسخ خطوات المهمة",
+      copiedLabel: "اتنسخت ✓",
+      template:
+        "١) الدور:\n   [مثال: متابعة عملاء]\n\n٢) النتيجة:\n   [جملة قابلة للقياس]\n\n٣–٥) المسؤوليات:\n   ١) [...]  ٢) [...]  ٣) [...]\n\n٦) أسبوع أول:\n   □ [...]\n   □ [...]\n   □ [...]\n   □ [...]\n   □ [...]",
       rubric: [
         {
-          label: "Outcomes واضحة وقابلة للقياس",
-          weight: 50,
-          criteria: [
-            "التسليم المبسّط: دور + ٣ نتايج + وصف واضح — مقبول بالكامل.",
-            "التسليم الكامل (اختياري): outcomes بأرقام + JD مبني عليهم.",
-          ],
+          label: "دور محدد",
+          weight: 60,
+          criteria: ["نتيجة + ٣ مسؤوليات — مش «يساعد في كل حاجة»."],
         },
         {
-          label: "Scorecard + Onboarding عملي",
-          weight: 50,
-          criteria: [
-            "التسليم المبسّط: ٣ أسئلة + ٣ معايير تقييم — مقبول.",
-            "التسليم الكامل (اختياري): Scorecard ٥ معايير + Onboarding أسبوع بأسبوع.",
-          ],
+          label: "onboarding عملي",
+          weight: 40,
+          criteria: ["قائمة أسبوع أول فيها خطوات تنفيذ ومراجعة."],
         },
+      ],
+    },
+  },
+  {
+    icon: CheckCircle2,
+    eyebrow: "خلّصت أساس الفريق",
+    title: "إيه اللي عندك دلوقتي؟",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "فهمت إيه؟ التوظيف امتداد للنظام — والـ AI يساعد في التخطيط مش في اختيار الشخص.",
+        "تقدر تعمل إيه؟ عندك وصف دور وأسبوع أول جاهزين لما تحتاجهم.",
+        "اللي جاي: التوسّع — ومتى يكون مبكرًا يكسر الأنظمة الضعيفة.",
       ],
     },
   },

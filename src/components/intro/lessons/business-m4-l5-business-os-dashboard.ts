@@ -1,94 +1,124 @@
-import { LayoutDashboard, PlayCircle, Lightbulb, Trophy, Rocket, BookOpen, Compass, Sparkles } from "lucide-react";
+import {
+  Sparkles,
+  AlertCircle,
+  PlayCircle,
+  Lightbulb,
+  Scale,
+  Rocket,
+  BookOpen,
+  CheckCircle2,
+  Image as ImageIcon,
+} from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 
-/** Business · M4 · Lesson 05 — الـ Business OS Dashboard — تجميع كل اللي بنيته */
+/** Business · M4 · Lesson 05 — Business OS Dashboard (v3: Lesson Shape pilot) */
 export const BUSINESS_M4_L5_BUSINESS_OS_DASHBOARD_BLOCKS: IntroLessonContent = [
   {
-    icon: LayoutDashboard,
-    eyebrow: "HERO",
-    title: "النظام بتاعك الشخصي خلص — دي اللحظة اللي بتغيّر كل حاجة",
+    icon: Sparkles,
+    eyebrow: "ختام المسار",
+    title: "هتفهم إيه النهاردة؟",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "على مدار 15 درس، بنيت قطعة وراء قطعة. Decision Framework. Customer Journey Map. Retention Flow. Pricing Calculator. SOPs. JD Templates. Weekly Review Ritual. كل واحدة لوحدها أداة — لما تتجمع، بقت نظام تشغيل كامل.",
-        "أحمد لما جمعهم في dashboard واحد، كل صباح بقى بيفتح صفحة واحدة بتقوله: الأرقام النهارده، أول قرار محتاج يتاخد، أحدث feedback من عميل، حالة الـ team. 10 دقايق وبقى عارف يعمل إيه في يومه كله.",
-        "النهارده هتعمل الـ Dashboard ده. هيبقى صفحتك المرجعية لكل قرار، كل أسبوع، كل تخطيط. ده اللي بيخلّيك Leader مش Operator — نظام بدالك مش عقلك بس.",
-        "لو لسه مبتدئ:\nDashboard مبسّط بـ ٣ أقسام يكفي:\nقرارات — أرقام اليوم — ملاحظات.\nGoogle Doc أو ورقة مقبولين.",
+        "هتفهم إيه؟ لوحة Business OS مش جدار أرقام — ٤–٥ أرقام، إشارات، وملخص AI أسبوعي لقرار واحد.",
+        "ليه دلوقتي؟ ربطت المسارات وصمّمت مراجعة أسبوعية. النهاردة تجمع كل ده في لوحة تحكم بسيطة.",
+        "هتعمل إيه بعد الدرس؟ هتصمّم لوحة: ٤ أرقام، ٣ إشارات متكررة، و Prompt ملخص أسبوعي للـ AI.",
+      ],
+    },
+  },
+  {
+    icon: AlertCircle,
+    eyebrow: "موقف مألوف",
+    title: "شيت فيه ٤٠ عمود — ومش بتفتحه",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "لوحات معقّدة تموت لوحدها. صاحب بيزنس محتاج ٤ أرقام يعرفهم كل جمعة — و٣ إشارات تحذّره قبل الأزمة.",
+        "الإشارات: شكاوى متكررة، كاش ضيق، مهام معلّقة، عميل كبير غاضب — حسب بيزنسك.",
+        "الـ AI يقرأ الأرقام والملاحظات ويطلع ملخص: «إيه الأهم؟ إيه قرار الأسبوع؟» — إنت توافق أو تعدّل.",
+      ],
+    },
+  },
+  {
+    icon: Lightbulb,
+    eyebrow: "الفكرة الأساسية",
+    title: "لوحة بسيطة = قرار أسبوعي",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "٤ أرقام فقط: اختار اللي يحرّك بيزنسك (مبيعات، هامش، راجعين، كاش، طلبات) — مش كل KPI في العالم.",
+        "٣ إشارات: أحداث أو أنماط تكررت الأسبوع ده — الـ AI يساعدك تلخّصها من رسائل وملاحظات.",
+        "Prompt ملخص أسبوعي: «هذه أرقامي وإشاراتي — إيه الأهم؟ اقترح قرارًا واحدًا للأسبوع الجاي.»",
+        "ابدأ بورقة أو شيت واحد — مش منصة BI. البساطة تخلّيك تفتحها كل أسبوع.",
       ],
     },
   },
   {
     icon: BookOpen,
-    eyebrow: "مصطلحات الدرس",
-    title: "اللي هتسمعه في الدرس ده",
+    eyebrow: "كلمتين بس",
+    title: "مصطلحين للوحة",
     block: {
       kind: "concepts",
       items: [
-        { term: "Business OS", meaning: "نظام تشغيل شخصي للبيزنس — مكان واحد بيجمع كل قراراتك وأرقامك وأنظمتك.", example: "بدل 10 ملفات متفرقة، صفحة واحدة فيها كل حاجة بتحتاجها." },
-        { term: "Dashboard", meaning: "لوحة بصرية بتعرض أهم الأرقام والمؤشرات بشكل فوري.", example: "أحمد بيفتح Notion صباحاً يلاقي: المبيعات أمبارح، أعلى منتج، عدد الـ leads، أحدث شكوى." },
-        { term: "Single Source of Truth", meaning: "مرجع وحيد لكل المعلومات — لا تكرار ولا تضارب.", example: "السعر مكتوب في مكان واحد. لو تغيّر، يتغيّر في مكان واحد. باقي النظام يأخذ منه." },
-        { term: "Decision Cadence", meaning: "إيقاع ثابت لاتخاذ القرارات — يومي، أسبوعي، شهري.", example: "كل يوم: 10 دقايق صباحاً. كل أسبوع: ساعة جمعة. كل شهر: نص يوم آخر شهر." },
-        { term: "Compound System", meaning: "نظام بيكبر قيمته مع الوقت لأن كل جزء بيغذّي الباقي.", example: "الـ feedback من العملاء يغذّي الـ SOPs. الـ SOPs تغذّي الـ hiring. الـ hiring يغذّي الـ scaling." },
+        {
+          term: "Control Panel (لوحة تحكم)",
+          meaning: "مكان واحد للأرقام والإشارات — تفتحه في المراجعة الأسبوعية.",
+          example: "صفحة Notion أو تبويب شيت — ٤ أرقام + ٣ إشارات + آخر قرار.",
+        },
+        {
+          term: "Signal (إشارة)",
+          meaning: "نمط أو حدث متكرر يستاهل انتباه — مش رقم رئيسي.",
+          example: "٣ شكاوى عن التأخير في أسبوع واحد.",
+        },
       ],
     },
   },
   {
     icon: PlayCircle,
     eyebrow: "فيديو الدرس",
-    title: "اتفرّج الأول",
+    title: "اتفرّج — لوحة قبل التعقيد",
     tone: "accent",
-    block: { kind: "lessonVideo", caption: "إزاي تجمع كل اللي بنيته في نظام تشغيل واحد." },
-  },
-  {
-    icon: Lightbulb,
-    eyebrow: "الفكرة",
-    title: "٥ Sections لازم تكون في الـ Dashboard بتاعك",
     block: {
-      kind: "numberedList",
-      items: [
-        "Numbers Today — أهم 4 أرقام بتاريخ اليوم (مبيعات، leads، شكاوى، cash).",
-        "Decisions Pending — القرارات اللي محتاجة تتاخد + الـ Decision Framework جنب كل واحد.",
-        "Systems & SOPs — لينكات لكل الـ SOPs والـ templates اللي بنيتها.",
-        "Customer Pulse — آخر 5 feedback + الـ retention flow status.",
-        "Team & Hiring — حالة الـ team + الـ JDs الجاهزة لأي توظيف.",
-      ],
+      kind: "lessonVideo",
+      caption:
+        "تصميم لوحة Business OS بسيطة. لو معندكش وقت، كمل قراية.",
     },
   },
   {
-    icon: Compass,
-    eyebrow: "الـ Prompt القاتل",
-    title: "Dashboard Architect Prompt",
-    tone: "accent",
+    icon: Scale,
+    eyebrow: "مثال من الحياة",
+    title: "٤٠ رقم vs ٤ أرقام + قرار",
     block: {
-      kind: "rule",
-      statement: "\"عندي بيزنس [النوع، الحجم، عدد الموظفين]. عندي الأنظمة دي جاهزة: [list من اللي بنيته في المسار]. عايز أعمل Notion Dashboard مفرد. اقترحلي: ١) Layout بـ 5 sections، ٢) إيه يدخل لكل section، ٣) إيه التحديث المطلوب يومي/أسبوعي/شهري، ٤) إزاي أربط الأنظمة مع بعض عشان مكررش بيانات.\"",
+      kind: "comparison",
+      left: {
+        label: "لوحة ضخمة",
+        body: "تتعمل مرة وما تتفتحش. القرارات لسه بالإحساس.",
+      },
+      right: {
+        label: "لوحة ٤+٣+AI",
+        body: "كل جمعة: أرقام، إشارات، ملخص، قرار واحد مسجّل.",
+      },
     },
   },
   {
-    icon: Trophy,
-    eyebrow: "Build Along — القطعة الأخيرة في الـ Business OS",
-    title: "اجمع كل اللي بنيته في Dashboard واحد",
-    tone: "accent",
+    icon: ImageIcon,
+    eyebrow: "شوفها ببساطة",
+    title: "٤ مؤشرات أساسية",
+    tone: "primary",
     block: {
-      kind: "executionTask",
-      title: "النهارده هتطلع بصفحة Notion (أو أي tool زيه) فيها كل النظام بتاعك. ده الـ output النهائي للمسار.",
-      steps: [
-        "افتح Notion. اعمل صفحة جديدة اسمها \"My Business OS\".",
-        "Section 1: \"Numbers Today\" — اعمل 4 boxes كبيرة لأهم 4 أرقام. (يدوي دلوقتي، تربطه بـ sheets بعدين.)",
-        "Section 2: \"Decisions Pending\" — اعمل list. كل قرار جنبه لينك للـ Decision Framework اللي عملته في درس M1-L3.",
-        "Section 3: \"Systems & SOPs\" — اعمل toggle list. حط لينكات لكل اللي بنيته: Customer Journey, Retention Flow, Pricing Calculator, SOPs, JD Templates.",
-        "Section 4: \"Customer Pulse\" — اربط بالـ Retention Flow اللي بنيته في M2-L2. ضيف \"آخر 5 feedback\".",
-        "Section 5: \"Team & Hiring\" — لينكات للـ Hiring System اللي بنيته في M3-L4.",
-        "في آخر الصفحة: \"Decision Cadence\" — يومي 10 دقايق، أسبوعي ساعة جمعة، شهري نص يوم آخر شهر.",
-        "احفظ اللينك. ده هيبقى الصفحة الأولى اللي تفتحها كل يوم.",
-      ],
+      kind: "diagram",
+      id: "four-kpi-dashboard",
+      label: "Business OS Dashboard",
+      caption:
+        "أربعة أرقام في الأعلى — إشارات على الجنب — قرار الأسبوع في الأسفل. توسّع لما تلتزم بالمراجعة.",
     },
   },
   {
     icon: Rocket,
-    eyebrow: "دورك دلوقتي",
-    title: "اختبر فهمك",
+    eyebrow: "تأكيد سريع",
+    title: "سؤال واحد — مش امتحان",
     tone: "accent",
     block: {
       kind: "quiz",
@@ -97,70 +127,59 @@ export const BUSINESS_M4_L5_BUSINESS_OS_DASHBOARD_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "بعد ما عملت الـ Dashboard، لاحظت إن السعر بتاع منتج موجود في 3 أماكن مختلفة. إيه المشكلة؟",
+          question: "أول لوحة Business OS. أحسن بداية؟",
           options: [
-            "مش مشكلة، التكرار بيخلّي البيانات متاحة.",
-            "مشكلة كبيرة — مفيش Single Source of Truth. لو السعر اتغيّر، هتنسى مكان من التلاتة.",
-            "مشكلة في الـ design.",
+            "٢٠ KPI من كل مجال — عشان «تكون شامل».",
+            "٤ أرقام + ٣ إشارات + مراجعة أسبوعية مع AI.",
+            "منصة BI معقدة قبل ما تعرف إيه المهم.",
           ],
           correctIndex: 1,
-          explanation: "ده أكبر سبب لانهيار الأنظمة. لازم يكون كل معلومة في مكان واحد، والباقي يلينكلها. بدون كده، النظام بيكون متضارب وبيفقد قيمته بسرعة."
+          explanation:
+            "اللوحة للقرار مش للعرض. ابدأ صغير — زوّد لما المراجعة تبقى عادة.",
         },
-        {
-          id: "apply2",
-          bloom: "apply",
-          question: "أحمد بقاله أسبوعين بيفتح الـ Dashboard كل صباح. لاحظ إنه بيتعامل مع نفس النوع من القرارات أسبوعياً. إيه الخطوة الأذكى؟",
-          options: [
-            "يتجاهل اللي بيتكرر.",
-            "ياخد القرارات المتكررة ويحوّلها لـ SOPs، فيتفرّغ للقرارات الجديدة.",
-            "يلغي الـ Dashboard.",
-          ],
-          correctIndex: 1,
-          explanation: "ده الـ Compound System شغّال. الـ Dashboard مش بس بيعرض، هو بيكشفلك الـ patterns. اللي بيتكرر = يستحق نظام، مش قرار يومي."
-        },
-        {
-          id: "apply3",
-          bloom: "apply",
-          question: "بعد شهر من استخدام الـ Dashboard، الفلوس زادت 15% والشغل بإيدك قل 30%. إيه السبب الأساسي؟",
-          options: [
-            "صدفة.",
-            "الأنظمة بتشتغل بدالك في الـ background، إنت بقيت تركّز على القرارات بدل التنفيذ.",
-            "السوق اتحسن.",
-          ],
-          correctIndex: 1,
-          explanation: "ده الهدف الكامل من المسار. الـ Operator بيشغّل بإيده. الـ Leader بيدير النظام. الـ Dashboard بقى عقلك التاني — والـ Decision Framework بقى أداتك الأساسية."
-        }
-      ]
+      ],
     },
   },
   {
-    icon: Sparkles,
-    eyebrow: "Final Mission — الـ Capstone",
-    title: "شغّل الـ Business OS — نسخة مبسّطة أو أسبوع كامل",
+    icon: Rocket,
+    eyebrow: "مهمتك · ختام Business",
+    title: "صمّم لوحة Business OS",
     tone: "accent",
     block: {
       kind: "mission",
-      intro: "وثّق تجربتك مع الـ Business OS.\n\nلو لسه مبتدئ: Dashboard بـ ٣ أقسام (قرارات / أرقام اليوم / ملاحظات) في Google Doc أو ورقة — تسليم مبسّط مقبول، مش لازم أسبوع كامل.\n\nلو متقدم: شغّله أسبوع كامل وتوثّق التجربة.",
-      prompt: "في تسليمك — اختَر مستوى واحد:\n\n【تسليم مبسّط — مقبول بالكامل】\n١) لينك أو screenshot لـ Dashboard بـ ٣ أقسام: قرارات / أرقام اليوم / ملاحظات (Google Doc أو ورقة).\n٢) كام قرار سجّلته الأسبوع ده؟\n٣) إيه أكبر فرق حسيته؟\n\n【تسليم كامل — اختياري】\n٤) Dashboard بـ ٥ sections + أسبوع استخدام حقيقي.\n٥) كام حاجة اكتشفت إنها بقت في الـ SOPs؟\n٦) إيه القطعة الجاية للـ Business OS بناءً على تجربتك؟",
-      buttonLabel: "انسخ التعليمات",
-      copiedLabel: "اتنسخ",
+      intro:
+        "دي مهمة بناء ختامية. صمّم لوحة بسيطة: ٤ أرقام تتابعها، ٣ إشارات متكررة تهمك، و Prompt واحد تسأله للـ AI كل أسبوع لملخص وقرار.\n\nمش مطلوب شيت جاهز — مطلوب تصميم تقدر تنفّذه في أسبوع.",
+      prompt:
+        "في تسليمك اكتب:\n\n١) الرقم ١ + مصدره (منين هتجيبه):\n٢) الرقم ٢ + مصدره:\n٣) الرقم ٣ + مصدره:\n٤) الرقم ٤ + مصدره:\n٥) الإشارة ١:\n٦) الإشارة ٢:\n٧) الإشارة ٣:\n٨) Prompt الملخص الأسبوعي للـ AI (انسخه كامل):",
+      buttonLabel: "انسخ خطوات المهمة",
+      copiedLabel: "اتنسخت ✓",
+      template:
+        "أرقام:\n١) [...] — من [شيت/نظام]\n٢) [...] — من [...]\n٣) [...] — من [...]\n٤) [...] — من [...]\n\nإشارات:\n١) [...]  ٢) [...]  ٣) [...]\n\nPrompt أسبوعي:\n\"هذه أرقامي: [...]. إشاراتي: [...]. إيه الأهم؟ اقترح قرارًا واحدًا للأسبوع الجاي.\"",
       rubric: [
         {
-          label: "النظام شغّال فعلاً",
-          weight: 50,
-          criteria: [
-            "التسليم المبسّط: ٣ أقسام (قرارات / أرقام اليوم / ملاحظات) — مقبول بالكامل.",
-            "التسليم الكامل (اختياري): Dashboard بـ ٥ sections + استخدام حقيقي لأسبوع.",
-          ],
+          label: "لوحة عملية",
+          weight: 60,
+          criteria: ["٤ أرقام + ٣ إشارات — كل واحد له معنى في بيزنسك."],
         },
         {
-          label: "تأمل + خطوة جاية",
-          weight: 50,
-          criteria: [
-            "التسليم المبسّط: فرق أو ملاحظة واحدة على الأقل — مقبول.",
-            "التسليم الكامل (اختياري): فرق ملموس + خطوة تطوير للأسبوع الجاي.",
-          ],
+          label: "Prompt ملخص",
+          weight: 40,
+          criteria: ["Prompt واضح يطلب ملخصًا وقرارًا واحدًا."],
         },
+      ],
+    },
+  },
+  {
+    icon: CheckCircle2,
+    eyebrow: "خلّصت مسار Business",
+    title: "إيه اللي عندك دلوقتي؟",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "فهمت إيه؟ Business OS = قرار + إيقاع + عميل + نظام + مراجعة — والـ AI في كل طبقة.",
+        "تقدر تعمل إيه؟ عندك لوحة بسيطة ومسار واضح — وتعرف أي مسار تاني يخدمك.",
+        "اللي جاي: Offer ودرسات إضافية في الهيكل النهائي — دلوقتي طبّق اللوحة أول جمعة وشوف الفرق.",
       ],
     },
   },
