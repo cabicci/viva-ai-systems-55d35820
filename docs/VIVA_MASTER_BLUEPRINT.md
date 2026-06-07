@@ -401,150 +401,393 @@ CTAs must appear where the learner is ready—not where the designer wants decor
 
 ## 6. UX & Product Audit System
 
+Audit the product as a beginner would experience it—not as the team imagines it.
+
+The core question: can a new learner enter, understand where they are, know what to do next, recover from confusion, and trust the platform?
+
 ### Onboarding
 
-*TBD*
+Check whether first-time entry is calm and orienting.
+
+- Is the first screen clear about what Viva is and is not?
+- Does onboarding avoid asking for decisions the learner cannot yet understand?
+- Are path choices explained without hidden future consequences?
+- Does the learner know Intro must come before career paths if that is the product rule?
+
+Fail if onboarding creates false confidence or immediate confusion.
 
 ### Dashboard
 
-*TBD*
+Check whether the dashboard answers three questions instantly:
+
+- Where am I?
+- What can I do now?
+- What unlocks next?
+
+The dashboard must not feel like an admin panel. Progress, next lesson, and locked paths must be visible without hunting.
 
 ### Path unlocks
 
-*TBD*
+Path unlocks must be understandable before they are encountered.
+
+- Are lock reasons visible in plain Arabic?
+- Does the learner know how many Intro lessons remain?
+- Are paid or Pro gates explained without surprise?
+- Is there a clear next action from every locked state?
+
+Fail if a locked path feels like rejection instead of guidance.
 
 ### Assistant usage
 
-*TBD*
+The assistant must support learning—not replace it, bypass missions, or create dependency.
+
+Check:
+
+- Is the assistant easy to find when needed but not distracting when not?
+- Does it stay within curriculum context?
+- Can a learner complete the lesson without the assistant if instructions are clear?
+- Does assistant behavior build trust rather than mystery or overpromising?
+
+Fail if the assistant becomes the only way to understand the lesson.
 
 ### Navigation
 
-*TBD*
+Navigation must be predictable on mobile and desktop.
+
+- Can the learner return to dashboard, current path, and next lesson without getting lost?
+- Are back/next actions consistent across lesson types?
+- Does RTL layout remain coherent across routes?
+
+Fail if the learner needs product memory to move around.
 
 ### Progress clarity
 
-*TBD*
+Progress must feel earned and legible.
+
+- Can the learner see completed vs available vs locked lessons?
+- Do missions clearly affect progression?
+- Are streaks or counts motivating rather than confusing?
+- Is partial progress preserved and visible after reload?
+
+Fail if the learner cannot tell whether they moved forward.
 
 ### Dead-end detection
 
-*TBD*
+Hunt for screens where the learner has no obvious next step.
+
+Common dead ends:
+
+- Mission failed with no recovery guidance
+- Locked next lesson with no explanation
+- Empty states with no CTA
+- Completed lesson with no forward path
+- Assistant or auth errors with no way back to learning
+
+Every dead end is a product defect until fixed or explicitly messaged.
 
 ### Loading/error states
 
-*TBD*
+Loading and errors must protect trust.
+
+- Loading states should explain what is happening in simple language
+- Errors must not blame the learner
+- Auth, network, mission evaluation, and assistant failures need recovery paths
+- Retry actions must be visible and safe
+
+Fail if an error feels like the platform broke or the learner did something wrong.
 
 ## 7. Technical Audit System
 
+Technical audit confirms production readiness, user safety, data protection, cost control, and stable AI/product behavior.
+
 ### Security
 
-*TBD*
+Review the system for trust-breaking exposure.
+
+- Secrets never belong in client code or public repos
+- Admin and roadmap surfaces must be protected
+- Client-write paths to sensitive tables must be justified and constrained
+- Security fixes take priority over feature polish
+
+Fail open only where explicitly designed; otherwise fail closed.
 
 ### Auth
 
-*TBD*
+Auth must be simple, recoverable, and predictable for beginners.
+
+- Signup, login, reset, and session recovery flows must work cleanly
+- Auth gates on missions or progress must be explained before blocking action
+- Logged-out and logged-in states must not corrupt lesson progress expectations
 
 ### Roles & RLS
 
-*TBD*
+Roles and Row Level Security must match real product intent.
+
+- Learners can only read/write what belongs to them
+- Admin privileges are narrow and auditable
+- Service-role paths are server-only
+- No policy assumes trust in the client
+
+Audit every table that stores learner progress, submissions, notes, or logs.
 
 ### API exposure
 
-*TBD*
+Expose only what the product truly needs.
+
+- Public endpoints must be intentional
+- Server functions and edge functions must have clear ownership
+- Sensitive operations stay off the client
+- Generated or internal routes must not leak admin behavior
 
 ### Rate limiting
 
-*TBD*
+Rate limiting protects cost, abuse, and stability.
+
+- AI evaluation, assistant calls, and error logging need sane caps
+- Limits should fail safely without breaking core learning when possible
+- Abuse patterns should be detectable and throttleable
 
 ### Abuse prevention
 
-*TBD*
+Prevent predictable misuse without punishing normal beginners.
+
+Watch for:
+
+- Spam submissions
+- Automated assistant abuse
+- Client-side trust in unauthenticated writes
+- Expensive loops triggered by UI or retry behavior
 
 ### Logging & observability
 
-*TBD*
+The team must be able to see what failed and why.
+
+- Client errors should be logged with restraint
+- Server failures need enough context to debug
+- AI runtime failures must be traceable
+- Logging must not leak secrets or learner-sensitive content
+
+No observability means no confident launch.
 
 ### Performance
 
-*TBD*
+Performance affects trust, especially on mobile.
+
+- Lesson pages should load without painful delay
+- Heavy assets must not block first understanding
+- Mission submission feedback must feel responsive enough to preserve confidence
+- Build and runtime performance regressions must be caught before release
 
 ### Architecture review
 
-*TBD*
+Architecture must stay understandable and maintainable.
+
+- Curriculum, lesson content, routing, assistant, and auth boundaries stay separate
+- Generated files remain generated
+- Legacy surfaces are not silently expanded
+- New work follows existing platform patterns unless a documented decision says otherwise
 
 ### Edge cases
 
-*TBD*
+Test the uncomfortable paths:
+
+- First visit vs returning learner
+- Logged out mid-mission
+- Failed mission twice
+- Reload during submission
+- Mobile keyboard covering mission input
+- Locked path after partial Intro completion
+- Assistant unavailable
+
+Edge-case failure is still launch failure if it blocks trust or completion.
 
 ## 8. Persona Diagnostic Framework
 
+Personas are diagnostic tools—not final truth.
+
+They simulate how different Arabic-speaking beginners may experience the product. Their purpose is to produce decisions, not endless comments.
+
 ### Persona philosophy
 
-*TBD*
+Use personas to stress-test clarity, trust, and flow—not to win arguments or force rewrites from one imagined opinion.
+
+Rules:
+
+- Look for repeated patterns, not isolated complaints
+- Score consistently using the same dimensions
+- Separate product defects from preference
+- End every diagnostic cycle with a decision: continue, revise, pause, or freeze
 
 ### Egypt segmentation
 
-*TBD*
+Represent learners who prefer direct Egyptian Arabic, practical examples, mobile-first usage, and low tolerance for academic or English-heavy friction.
+
+Test for:
+
+- Natural tone
+- Tool instructions that feel realistic locally
+- Missions that do not assume business sophistication
 
 ### Gulf segmentation
 
-*TBD*
+Represent learners who may have stronger formal exposure, higher service expectations, and comfort with business-oriented examples.
+
+Test for:
+
+- Clarity without oversimplification that feels childish
+- Professional trust signals
+- Respectful tone and clean progression
 
 ### Levant segmentation
 
-*TBD*
+Represent learners sensitive to dialect naturalness, social tone, and explanation style.
+
+Test for:
+
+- Whether Arabic feels human rather than translated
+- Whether examples feel culturally plausible
+- Whether emotional pacing stays encouraging
 
 ### North Africa segmentation
 
-*TBD*
+Represent learners who may face mixed French/English exposure, varied tool access, and strong mobile dependence.
+
+Test for:
+
+- Terminology load
+- Tool availability assumptions
+- Mission feasibility without premium infrastructure
 
 ### Arab diaspora segmentation
 
-*TBD*
+Represent learners who may be more comfortable with English product language but still need Arabic-first learning and beginner-safe pacing.
+
+Test for:
+
+- Whether English terms help or alienate
+- Whether the product still feels built for Arab learners, not imported Western courseware
+- Whether mobile and mission clarity remain strong
 
 ### Persona scoring model
 
-- **Clarity:** *TBD*
-- **Flow:** *TBD*
-- **Fatigue:** *TBD*
-- **Motivation:** *TBD*
-- **Mission understanding:** *TBD*
-- **UI understanding:** *TBD*
-- **Trust:** *TBD*
-- **Mobile readability:** *TBD*
+Score each lesson or flow from 1–5 on:
+
+- **Clarity:** Does the learner understand what this screen or lesson is saying?
+- **Flow:** Can they move forward without guessing the next step?
+- **Fatigue:** Does the experience feel too long, dense, or draining?
+- **Motivation:** Do they want to continue after this section?
+- **Mission understanding:** Do they understand what the mission requires before submitting?
+- **UI understanding:** Do buttons, locks, progress, and navigation make sense?
+- **Trust:** Does the product feel safe, honest, and reliable?
+- **Mobile readability:** Is the experience viable on phone?
+
+Low scores across multiple personas matter more than one dramatic quote from a single persona.
 
 ### Severity model
 
-*TBD*
+Persona findings inherit the project severity model.
+
+- Repeated low scores or trust breaks become High or Critical
+- One-off tone preferences stay Low or Ignore
+- Mission misunderstanding is usually High
+- Completion blockers are Critical
 
 ### Repetition thresholds
 
-*TBD*
+Do not rewrite based on a single isolated reaction.
+
+Default thresholds:
+
+- **Critical:** one reproducible trust/completion break is enough
+- **High:** same issue appears in 2+ personas or 2+ lessons in the same pattern
+- **Medium:** repeated friction in one path but not universal
+- **Low:** one persona, one lesson, no completion impact
+- **Ignore:** preference, unsupported opinion, or non-reproducible noise
 
 ### Diagnostic rules
 
-*TBD*
+Run persona diagnostics only on stabilized content.
+
+Process:
+
+1. Define the lesson or flow under test
+2. Run all relevant segments
+3. Score with the model
+4. Group findings by pattern and severity
+5. Recommend a gate: continue, revise, pause, or freeze
+6. Document the decision
+
+Persona output without a decision is incomplete.
 
 ## 9. Scoring & Severity Model
 
+All reviews—content, UX, technical, and persona—use the same severity language.
+
 ### Critical
 
-*TBD*
+Blocks trust, safety, completion, or correctness.
+
+Examples:
+
+- Learner cannot finish a required mission honestly
+- Security or auth exposure
+- Hidden prerequisite that stops progress
+- Assistant or product behavior that misleads
+- Data handling that risks learner safety or integrity
+
+Critical issues stop forward motion until fixed or explicitly accepted by decision gate.
 
 ### High
 
-*TBD*
+Serious repeated issue affecting learning or product flow.
+
+Examples:
+
+- Mission wording unclear across multiple attempts
+- Path unlock confusion
+- Repeated cognitive overload
+- Assistant gaps that repeatedly block understanding
+- Progress state that confuses learners
+
+High issues must be scheduled before real user exposure.
 
 ### Medium
 
-*TBD*
+Meaningful friction, but not blocking.
+
+Examples:
+
+- One lesson is denser than necessary
+- A diagram needs clearer captioning
+- A CTA could be better placed
+- Minor terminology inconsistency
+
+Medium issues can ship only if tracked and not multiplied across a path.
 
 ### Low
 
-*TBD*
+Polish or minor clarity issue.
+
+Examples:
+
+- Wording improvement with no behavior change
+- Small visual rhythm tweak
+- Non-blocking stylistic preference
+
+Low issues should not delay phase movement unless they accumulate into a pattern.
 
 ### Ignore
 
-*TBD*
+Isolated noise, preference, or unsupported opinion.
+
+Examples:
+
+- One persona dislikes a valid example style
+- Taste disagreement without learning impact
+- Non-reproducible complaint
+- Suggestion that violates blueprint rules
+
+Ignore does not mean "forgotten." It means "not actionable now."
 
 ## 10. Decision Gates
 
