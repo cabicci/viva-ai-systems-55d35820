@@ -179,6 +179,7 @@ export const CREATOR_M4_EDITING_BLOCKS: IntroLessonContent = [
       paragraphs: [
         "المونتاج الذكي بيختصر المسافة بين فكرتك وعقل المشاهد.",
         "كل مرة تحرر بوعي، جودة المحتوى وثقتك بتعلى خطوة.",
+        "اللي جاي: Repurposing — من فكرة واحدة لأكتر من شكل محتوى.",
       ],
     },
   },
