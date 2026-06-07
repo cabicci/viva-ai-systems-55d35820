@@ -559,12 +559,13 @@ function businessModules(): CurriculumModule[] {
       order: 2,
       id: "business-m2",
       title: "العميل + الفلوس",
-      subtitle: "دورة حياة العميل، الـ Retention، علامات الجاهزية، والتسعير والـ Cash Flow.",
+      subtitle: "دورة حياة العميل، العرض، الـ Retention، علامات الجاهزية، والتسعير والـ Cash Flow.",
       lessons: [
         businessShipped(1, "business-m2-l1-customer-lifecycle", "دورة حياة العميل"),
-        businessShipped(2, "business-m2-l2-retention-flow", "Retention Flow"),
-        businessShipped(3, "business-m2-l3-readiness-signals", "علامات الجاهزية للتوسع"),
-        businessShipped(4, "business-m2-l4-pricing-cash-flow", "Pricing & Cash Flow Audit"),
+        businessShipped(2, "business-m2-build-your-offer", "ابني عرضك — التحويل مش المنتج"),
+        businessShipped(3, "business-m2-l2-retention-flow", "Retention Flow"),
+        businessShipped(4, "business-m2-l3-readiness-signals", "علامات الجاهزية للتوسع"),
+        businessShipped(5, "business-m2-l4-pricing-cash-flow", "Pricing & Cash Flow Audit"),
       ],
     },
     {
