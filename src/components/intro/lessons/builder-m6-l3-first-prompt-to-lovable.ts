@@ -1,102 +1,127 @@
 import {
   Sparkles,
+  AlertCircle,
   PlayCircle,
   Lightbulb,
-  Image as ImageIcon,
   Scale,
   Rocket,
   BookOpen,
-  FlaskConical,
+  CheckCircle2,
+  Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 import firstPromptImg from "@/assets/lessons/unique/builder-m6-l3-first-prompt-to-lovable.jpg";
 
+/** Builder · M6 · Lesson 03 — First Prompt to Lovable (v3: Lesson Shape pilot) */
 export const BUILDER_M6_FIRST_PROMPT_TO_LOVABLE_BLOCKS: IntroLessonContent = [
   {
     icon: Sparkles,
-    eyebrow: "بعد الدرس ده هتقدر",
-    title: "تكتب أول prompt يبني واجهتك صح",
+    eyebrow: "بداية الدرس",
+    title: "هتفهم إيه النهاردة؟",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "هتعرف الفرق بين prompt يطلّع لك واجهة ميه ميه، وprompt يطلّع لك أي كلام.",
+        "هتفهم إيه؟ أول prompt محتاج: goal + users + pages + style + constraints.",
+        "ليه دلوقتي؟ عندك Wireframe — دلوقتي حوّله لطلب Lovable يفهمك.",
+        "هتعمل إيه بعد الدرس؟ هتكتب أول prompt كامل — جاهز للنسخ في Lovable.",
+      ],
+    },
+  },
+  {
+    icon: AlertCircle,
+    eyebrow: "موقف مألوف",
+    title: "«اعملي واجهة» — ويطلع مش اللي في بالك",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "كتبت «ابنيلي واجهة AI» — طلع ألوان فاقعة وأقسام مش عايزها.",
+        "AI بيبني اللي بتكتبه — مش اللي بتتمناه. ٣ كلمات = تخمين كامل.",
+        "الحل: Prompt Spec — وصفة فيها ٥ أجزاء واضحة.",
       ],
     },
   },
   {
     icon: Lightbulb,
-    eyebrow: "المشكلة",
-    title: "ليه الـ AI بيبني واجهة مش اللي في بالي؟",
+    eyebrow: "الفكرة الأساسية",
+    title: "أول prompt = goal + users + pages + style + constraints",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "أكيد جربت تطلب من AI حاجة وطلعلك نتيجة أي كلام. كتبتله 'ابنيلي واجهة لـ AI بيقترح وصفات قهوة'، فجابلك تصميم ألوانه فاقعة، وأقسام مش هي اللي عايزها، وصور من بتاعت الإعلانات.",
-        "المشكلة مش في الـ AI. المشكلة إننا بنتعامل معاه كأنه بيقرأ أفكارنا. الـ AI بيبني الواجهة اللي بتكتبها بالحرف، مش اللي بتتمناها.",
+        "Goal: الهدف — إيه نوع الواجهة ولإيه؟",
+        "Users: لمين — مين هيستخدمها؟",
+        "Pages: الأقسام — اذكر Wireframe بالاسم.",
+        "Style: الستايل — ألوان، نبرة، mood.",
+        "Constraints: الحدود — إيه اللي مش عايزه في النسخة الأولى.",
       ],
     },
   },
   {
-    icon: Sparkles,
-    eyebrow: "جرّب دلوقتي",
-    title: "شوف الفرق لما توصف طلبك للـ AI",
-    tone: "primary",
-    block: {
-      kind: "screenshot",
-      src: firstPromptImg,
-      alt: "مثال لواجهة Lovable — prompt على الشمال، preview على اليمين",
-      caption:
-        "دي الواجهة اللي العميل هيكلّم منها الـ AI بتاعك. بص الـ prompt هنا مش مجرد 'اعملي واجهة'. مكتوب فيه نوع الواجهة (صفحة هبوط)، والنشاط (كافيه عنده AI باريستا)، والأقسام المطلوبة بالاسم. النتيجة؟ قريبة جدًا من اللي في دماغنا من أول مرة.",
-      label: "Lovable — مثال أول prompt صح",
-    },
-  },
-  {
-    icon: PlayCircle,
-    eyebrow: "فيديو الدرس",
-    title: "اتفرّج الأول",
-    tone: "accent",
-    block: {
-      kind: "lessonVideo",
-      caption: "مثال حي — طلب غامض vs وصفة واضحة للـ AI، والفرق في الناتج.",
-    },
-  },
-  {
     icon: Scale,
-    eyebrow: "السر",
-    title: "الفرق بين طلب غامض ووصفة واضحة للـ AI",
+    eyebrow: "مثال من الحياة",
+    title: "«ابني واجهة» vs Prompt Spec",
     block: {
       kind: "comparison",
       left: {
-        label: "غامض 👎: «ابني واجهة لكافيه»",
-        body: "٣ كلمات. بتسيب الـ AI يخمّن كل حاجة: الألوان، الأقسام، الصور، إزاي العميل هيكلم الـ AI أصلًا. هتفضل تعدّل عليه ٦ مرات عشان توصل للي عايزه.",
+        label: "٣ كلمات",
+        body: "«ابنيلي واجهة كافيه» — AI يخمّن كل حاجة. ٦ تعديلات. لسه مش مظبوط.",
       },
       right: {
-        label: "واضح 👍: وصفة لواجهة تطبيق ذكي",
-        body: "«(١) الهدف: واجهة تطبيق (Landing page) لكافيه عنده AI باريستا. (٢) النطاق: صفحة واحدة بس. (٣) الأقسام: قسم رئيسي فيه سؤال 'إيه مودك النهارده؟'، منيو بـ ٦ مشروبات بيقترحها الـ AI، قسم تواصل. (٤) الستايل: دافي، ألوان بنّي وبيج. (٥) الممنوعات: متعملش login.» ده prompt يطلع نتيجة تتنشر.",
+        label: "Prompt Spec",
+        body: "Goal: landing page لكافيه + AI باريستا. Users: زباين ٢٠–٣٥. Pages: hero + منيو ٦ مشروبات + تواصل. Style: دافي، بنّي وبيج. Constraints: من غير login.",
       },
     },
   },
   {
     icon: BookOpen,
-    eyebrow: "مصطلح الدرس",
-    title: "مواصفات الواجهة (Prompt Spec)",
+    eyebrow: "كلمتين بس",
+    title: "مصطلحين للبداية",
     block: {
       kind: "concepts",
       items: [
         {
-          term: "مواصفات الواجهة (Prompt Spec)",
-          meaning:
-            "الروشتة التفصيلية اللي بتوصف فيها للـ AI إنت عايز واجهة تطبيقك شكلها إيه بالظبط، وإيه لأ.",
-          example:
-            "زي ما بتروح لترزي وتديله مواصفات البدلة: المقاس، لون القماش، عدد الزراير. الـ Spec هو مواصفات الواجهة اللي الـ AI هيبنيها عشان الناس تكلم الـ AI بتاعك من خلالها.",
+          term: "Prompt Spec (مواصفات الواجهة)",
+          meaning: "الوصفة الكاملة — goal, users, pages, style, constraints.",
+          example: "زي مواصفات بدلة للترزي: مقاس، لون، عدد زراير.",
+        },
+        {
+          term: "Scope (النطاق)",
+          meaning: "إيه اللي في النسخة دي — وإيه اللي بعدين.",
+          example: "«صفحة واحدة بس — Home» — مش «موقع كامل».",
         },
       ],
     },
   },
   {
-    icon: FlaskConical,
-    eyebrow: "اختبر نفسك",
-    title: "هتعرف توصف للـ AI اللي في دماغك؟",
+    icon: PlayCircle,
+    eyebrow: "فيديو الدرس",
+    title: "اتفرّج — prompt غامض vs واضح",
+    tone: "accent",
+    block: {
+      kind: "lessonVideo",
+      caption:
+        "مثال حي — الفرق في الناتج لما Prompt Spec كامل. لو معندكش وقت، كمل قراية.",
+    },
+  },
+  {
+    icon: ImageIcon,
+    eyebrow: "شوفها ببساطة",
+    title: "Prompt → Preview",
+    tone: "primary",
+    block: {
+      kind: "screenshot",
+      src: firstPromptImg,
+      alt: "Lovable — prompt على الشمال، preview على اليمين.",
+      caption:
+        "الـ prompt مش «اعملي واجهة» — فيه goal، نشاط، أقسام بالاسم، وستايل. النتيجة أقرب من أول مرة.",
+      label: "Prompt Spec",
+    },
+  },
+  {
+    icon: Rocket,
+    eyebrow: "تأكيد سريع",
+    title: "سؤال واحد — مش امتحان",
     tone: "accent",
     block: {
       kind: "quiz",
@@ -106,97 +131,66 @@ export const BUILDER_M6_FIRST_PROMPT_TO_LOVABLE_BLOCKS: IntroLessonContent = [
           id: "apply1",
           bloom: "apply",
           question:
-            "إنت بتبني واجهة لـ AI بيساعد الناس تلاقي شقق. وعايزه يبني الصفحة الرئيسية بس. إيه أحسن طريقة تحدد بيها النطاق (Scope)؟",
+            "عايز Lovable يبني Home Page بس — من غير login. إيه أحسن جزء في Prompt Spec؟",
           options: [
-            "النطاق: صفحة واحدة بس، هي الـ Home Page.",
-            "اعملي صفحة رئيسية لشركة عقارات وخلاص.",
-            "دي صفحة شركة عقارات، ظبطها.",
+            "Constraints: صفحة واحدة (Home) — من غير login في النسخة الأولى.",
+            "«اعملي موقع كامل».",
+            "Style: ألوان حلوة.",
           ],
           correctIndex: 0,
           explanation:
-            "عشان تمنع الـ AI يخمن، لازم تحدد النطاق بوضوح: 'صفحة واحدة بس، وهي كذا'.",
-        },
-        {
-          id: "apply2",
-          bloom: "apply",
-          question:
-            "الديزاينر بعتلك رسمة لواجهة التطبيق. إزاي توصف للـ AI أول قسم، اللي هو فيه صورة كبيرة شمال، وعنوان وزرار يمين عشان العميل يبدأ المحادثة مع الـ AI؟",
-          options: [
-            "القسم الأول: صورة وعنوان وزرار.",
-            "القسم الأول: Hero section فيه صورة على الشمال، وجنبه عنوان رئيسي وزرار 'ابدأ المحادثة'.",
-            "القسم الأول: hero، فيه صورة شمال وعنوان وزرار يمين.",
-          ],
-          correctIndex: 1,
-          explanation:
-            "كل ما كنت وصفي أكتر في تفاصيل القسم ('زرار ابدأ المحادثة' بدل 'زرار يمين')، كل ما الـ AI فهم قصدك بالظبط ومطلعش حاجة غريبة.",
-        },
-        {
-          id: "apply3",
-          bloom: "apply",
-          question:
-            "بتبني واجهة لـ AI بيعمل خطط أكل صحي، ومش عايز أي حاجة ليها علاقة بالدفع تظهر في النسخة الأولية دي. إيه أحسن حاجة تكتبها في جزء 'الممنوعات'؟",
-          options: [
-            "مش عايزين دفع أو طلبات دلوقتي.",
-            "الممنوعات: تجنب أي forms للدفع أو الطلبات في النسخة دي.",
-            "ابعد عن صفحات الدفع والطلبات.",
-          ],
-          correctIndex: 1,
-          explanation:
-            "استخدام كلمات واضحة ومحددة في 'الممنوعات' بيخلي الـ AI يعرف حدوده فين بالظبط.",
+            "Constraints + Scope بيحدّدوا الحدود — AI مش يخمّن features زيادة.",
         },
       ],
     },
   },
   {
     icon: Rocket,
-    eyebrow: "دورك دلوقتي",
-    title: "اكتب prompt يبني قسم واحد من واجهة تطبيقك",
-    tone: "primary",
+    eyebrow: "مهمتك",
+    title: "اكتب أول prompt لـ Lovable",
+    tone: "accent",
     block: {
       kind: "mission",
       intro:
-        "أول prompt بتكتبه بيحدد 70% من نجاح تطبيقك الذكي. دلوقتي هتطبق اللي اتعلمته وتكتب prompt بسيط وواضح عشان تبني أول حتة في الواجهة اللي الناس هتكلم منها الـ AI بتاعك.",
+        "المهمة دي كتابة — مش تنفيذ. استخدم Wireframe من الدرس اللي فات.\n\n١٠–١٥ دقيقة.",
       prompt:
-        "لمشروع 'مساعد بيطري ذكي' (AI بيشخّص أمراض الحيوانات الأليفة مبدئيًا)، اكتب prompt من 3 أجزاء عشان تبني أول قسم في الواجهة:\n\n1. الهدف: [اكتب الهدف، زي 'واجهة عشان صاحب الحيوان يوصف الأعراض']\n2. الأقسام: [اوصف قسم الـ Hero بس، زي 'على اليمين مربع نص كبير عشان يكتب الأعراض، وعلى الشمال صورة قطة وكلب']\n3. الستايل: [اختار لونين أساسيين ونبرة بصرية، زي 'مودرن ومطمن']",
-      buttonLabel: "انسخ المطلوب",
-      copiedLabel: "اتنسخ",
+        "في تسليمك اكتب Prompt Spec كامل:\n\n**Goal:** [نوع الواجهة + إيه اللي بتعمله]\n**Users:** [مين هيستخدمها]\n**Pages:** [اذكر أقسام Wireframe — hero، أقسام، إلخ]\n**Style:** [لونين + mood — مثلاً: modern، أزرق فاتح]\n**Constraints:** [إيه اللي مش في النسخة الأولى — مثلاً: من غير دفع]\n\n(جاهز للنسخ في Lovable)",
+      buttonLabel: "انسخ خطوات المهمة",
+      copiedLabel: "اتنسخت ✓",
+      template:
+        "Goal:\n[ ]\n\nUsers:\n[ ]\n\nPages:\n- [قسم ١]: [ ]\n- [قسم ٢]: [ ]\n\nStyle:\n[لونين + mood]\n\nConstraints:\n- [ ]\n- [ ]",
       rubric: [
         {
-          label: "وضوح الـ Prompt",
+          label: "الخمسة موجودين",
           weight: 60,
           criteria: [
-            "الـ 3 أجزاء مكتوبين ومش فاضيين.",
-            "وصف قسم الـ Hero فيه تفاصيل كافية (يمين وشمال).",
+            "Goal, Users, Pages, Style, Constraints — كلهم مكتوبين.",
+            "Pages مربوطة بـ Wireframe — مش عامة.",
           ],
         },
         {
-          label: "الستايل والتحديد",
+          label: "جاهز للنسخ",
           weight: 40,
           criteria: [
-            "الستايل فيه لونين على الأقل ونبرة واضحة.",
-            "الهدف محدد ومش عام (مش مجرد 'موقع كويس').",
+            "Style فيه لونين على الأقل.",
+            "Constraints تحدّد إيه «مش دلوقتي».",
           ],
         },
       ],
     },
   },
   {
-    icon: Sparkles,
-    eyebrow: "من كواليس lovable",
-    title: "ده الـ prompt اللي بنى واجهة المنصة دي",
+    icon: CheckCircle2,
+    eyebrow: "خلّصت البداية",
+    title: "إيه اللي عندك دلوقتي؟",
     tone: "primary",
     block: {
-      kind: "caseStudy",
-      title: "ده الـ prompt اللي بنى واجهة المنصة دي",
-      summary:
-        "الجزء اللي إنت فيه ده من المنصة هو واجهة تطبيق ذكي بيعلمك تبني تطبيقات ذكية. أول prompt كتبناه كان بسيط جدًا: «اعمل landing page لمنصة تعليم AI بالعربي، فيها hero section و5 مسارات تعليمية». النتيجة الأولية للواجهة دي ظهرت في 30 ثانية، وكملنا عليها من ساعتها.",
-      bullets: [
-        "بدأنا بنطاق صغير جدًا: واجهة رئيسية وبس.",
-        "كل جزء جديد في المنصة بيبدأ بـ prompt منفصل.",
-        "تقدر ترجع لكل النسخ الأولى في الـ git history بتاع المشروع لو حابب.",
+      kind: "paragraphs",
+      paragraphs: [
+        "فهمت إيه؟ أول prompt = ٥ أجزاء. AI يبني اللي بتكتبه — مش اللي بتتمناه.",
+        "تقدر تعمل إيه؟ عندك Prompt Spec جاهز — انسخه في Lovable وابدأ.",
+        "اللي جاي: Components & Routes — إزاي الصفحات تتربط ببعض.",
       ],
-      pathAngle: "builder",
-      link: { label: "افتح الصفحة الرئيسية", href: "/" },
     },
   },
 ];
