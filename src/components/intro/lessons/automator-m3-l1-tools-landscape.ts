@@ -1,115 +1,126 @@
 import {
-  Workflow,
+  Sparkles,
+  AlertCircle,
   PlayCircle,
   Lightbulb,
-  Image as ImageIcon,
   Scale,
   Rocket,
-  BookOpen, FlaskConical } from "lucide-react";
+  BookOpen,
+  CheckCircle2,
+  Image as ImageIcon,
+} from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 import automatorM2ToolsLandscapeScreenshot from "@/assets/lessons/unique/automator-m3-l1-tools-landscape.jpg";
-/**
- * Automator · M2 · Lesson 01 — Make vs n8n vs Zapier
- */
+
+/** Automator · M3 · Lesson 01 — Tools Landscape (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M3_L1_TOOLS_LANDSCAPE_BLOCKS: IntroLessonContent = [
   {
-    icon: Workflow,
-    eyebrow: "HERO",
-    title: "Make vs n8n vs Zapier",
+    icon: Sparkles,
+    eyebrow: "بداية الدرس",
+    title: "هتفهم إيه النهاردة؟",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "3 أدوات بنفس الفكرة.",
-        "بس كل واحدة ليها مكانها الصح.",
+        "هتفهم إيه؟ الأدوات مختلفة — Zapier، Make، n8n — بس التفكير واحد: مُشغّل → خطوات → نتيجة.",
+        "ليه دلوقتي؟ بعد ما اخترت أول مهمة للأتمتة، محتاج أداة تناسب حجمك — مش أشهر اسم.",
+        "هتعمل إيه بعد الدرس؟ هتختار أداة واحدة لمرشّح الأتمتة بتاعك — ولِيه.",
       ],
     },
   },
   {
+    icon: AlertCircle,
+    eyebrow: "موقف مألوف",
+    title: "«Zapier أشهر» — وبعد شهر الاشتراك غالي",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "بتختار أداة لأنها مشهورة — أو لأنها مجانية — من غير ما تشوف: كام مهمة/شهر؟ محتاج logic ولا خطوات بسيطة؟",
+        "الأداة مش الهدف. الهدف = العامل الافتراضي ينفّذ النمط اللي اخترته.",
+        "اختيار غلط = وقت ضايع في التعلّم — مش في توفير الوقت.",
+      ],
+    },
+  },
+  {
+    icon: Lightbulb,
+    eyebrow: "الفكرة الأساسية",
+    title: "الأدوات مختلفة — التفكير واحد",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "Zapier — الأسهل، integrations جاهزة كتير، مناسب لـ workflows بسيطة وقليلة. أغلى نسبيًا.",
+        "Make — توازن: visual واضح، scenarios متوسطة، أرخص من Zapier. مناسب لمعظم البدايات.",
+        "n8n — أقوى، open-source، self-hosted ممكن. محتاج مجهود أكتر — مناسب لـ workflows كتير أو معقّدة.",
+        "القاعدة: اختار حسب حجمك وتعقيدك — مش حسب يوتيوب. التفكير (مُشغّل → خطوات → نتيجة) ثابت في كل أداة.",
+      ],
+    },
+  },
+  {
+    icon: Scale,
+    eyebrow: "مثال من الحياة",
+    title: "اختيار بالشهرة vs اختيار بالحجم",
+    block: {
+      kind: "comparison",
+      left: {
+        label: "«Zapier لأنه مشهور»",
+        body: "نور فتحت Zapier لـ «فورم → إيميل» — ٥ مرات/شهر. اشتراك ٢٠$/شهر لمهمة بسيطة. الأداة أكبر من الحاجة.",
+      },
+      right: {
+        label: "«Make لأن الحجم متوسط»",
+        body: "نور استخدمت Make free tier — نفس «فورم → إيميل» — ٣٠ دقيقة setup. وفّرت فلوس وتعلّمت التفكير.",
+      },
+    },
+  },
+  {
     icon: BookOpen,
-    eyebrow: "مصطلحات الدرس",
-    title: "اللي هتسمعه في الدرس ده",
+    eyebrow: "كلمتين بس",
+    title: "مصطلحين للأدوات",
     block: {
       kind: "concepts",
       items: [
-        { term: "Workflow (سير العمل)", meaning: "طريق متخطط لخطوات الشغل وبتمشي لوحدها من غير ما تتدخل.", example: "لما زبون يبعت لك رسالة على واتساب، البرنامج يرد عليه ويبعت بياناته لشت الشغل لوحده." },
-        { term: "Trigger (المُشغّل)", meaning: "الشرارة أو \"الخبطة\" اللي بتنبه البرنامج إنه يبدأ يشتغل دلوقت.", example: "أول ما زبون يسجل بياناته في إعلان فيسبوك، ده \"الترجر\" اللي بيخلي البرنامج يبدأ يتحرك فوراً." },
-        { term: "Integration (الربط)", meaning: "توصيل برنامجين ببعض عشان يكلموا بعض ويتبادلوا بيانات.", example: "لو عايز تربط شيت الإكسيل بالواتساب عشان يبعت فواتير، العملية دي اسمها \"إنتيجريشن\"." },
-        { term: "No-Code (من غير كود خالص)", meaning: "أدوات بتخليك تعمل برامج معقدة من غير ما تلمس الكود.", example: "زي ما تبني موقع بـ WordPress من غير ما تكتب سطر كود واحد، مجرد سحب وإفلات." },
-        { term: "Self-hosted (استضافة ذاتية)", meaning: "إنك تشغل البرنامج على جهازك أو سيرفرك الخاص بدل ما تأجره جاهز.", example: "عارف لما تسطب ويندوز على لابتوبك؟ السيلف هوستد إنك تحط البرنامج على كمبيوتر (سيرفر) إنت اللي بتديره." },
-        { term: "Open Source (مصدر مفتوح)", meaning: "برامج كودها متاح للكل، تقدر تستخدمها وتعدل فيها ببلاش من غير اشتراك.", example: "برامج n8n \"الأوبن سورس\" بتكون ببلاش لأن المبرمجين شغالين فيها مع بعض ومحدش بيمتلكها لوحده." },
+        {
+          term: "No-Code (من غير كود)",
+          meaning: "أدوات تبني فيها العامل الافتراضي بسحب وإفلات — مش كورس برمجة.",
+          example: "Make scenario: فورم → شيت → واتساب.",
+        },
+        {
+          term: "Integration (ربط)",
+          meaning: "توصيل برنامجين عشان يتبادلوا بيانات — ده اللي الأداة بتعمله.",
+          example: "Google Forms ↔ Google Sheets.",
+        },
       ],
     },
   },
   {
     icon: PlayCircle,
     eyebrow: "فيديو الدرس",
-    title: "اتفرّج الأول",
+    title: "اتفرّج — مقارنة سريعة للأدوات",
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "مقارنة سريعة بين الـ 3 أدوات وإمتى تستخدم كل واحدة.",
-    },
-  },
-  {
-    icon: Lightbulb,
-    eyebrow: "الفكرة",
-    title: "كلهم بيعملوا نفس الحاجة، بس بشكل مختلف",
-    block: {
-      kind: "numberedList",
-      items: [
-        "Zapier — الأسهل، الأغلى، أكتر integrations جاهزة. خيار مثالي لو لسه بتقول يا هادي في الأتمتة والـ workflows البسيطة.",
-        "Make (سابقًا Integromat) — توازن بين السهولة والقوة. visual interface حلو، أرخص من Zapier، فيه scenarios معقّدة.",
-        "n8n — الأقوى، open-source، تقدر تستضيفه بنفسك ببلاش. محتاج منك مجهود ووقت أكتر في الأول عشان تفهمه بس مفيش سقف للي تقدر تعمله.",
-      ],
+      caption:
+        "Zapier vs Make vs n8n — إمتى تستخدم كل واحدة. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
     },
   },
   {
     icon: ImageIcon,
-    eyebrow: "شوف بنفسك",
-    title: "الطبقات التشغيلية بتاعتنا",
+    eyebrow: "شوفها ببساطة",
+    title: "طبقات شغّالة — نفس فكرة أي أداة",
     tone: "primary",
     block: {
       kind: "screenshot",
       src: automatorM2ToolsLandscapeScreenshot,
-      alt: "سكرين شوت من المنصة",
+      alt: "رسم طبقات — كل طبقة تستقبل مدخل وتنفّذ وتطلع مخرج.",
       caption:
-        "المنصة بتاعتنا فيها طبقات شغّالة 24/7 — Context، Retrieval، Memory. الـ 3 أدوات اللي بنقارنهم بيعملوا نفس الفكرة بالظبط بس على workflows بتاعتك إنت: كل scenario = طبقة بتسمع لـ trigger وبتنفّذ سلسلة actions.",
-      label: "من المنصة — صفحة /operational-layers",
-    },
-  },
-  {
-    icon: Scale,
-    eyebrow: "Failure × Right",
-    title: "اختيار الأداة الصح",
-    block: {
-      kind: "comparison",
-      left: {
-        label: "FAILURE — بتختار الأرخص أو الأشهر",
-        body: "بتفتح Zapier لأنه شهير، وبعد شهر تكتشف إن الـ workflow بتاعك محتاج 50 task في اليوم والاشتراك بقى 80$ شهري. أو بتفتح n8n وبتقعد أسبوع تحاول تشغّله.",
-      },
-      right: {
-        label: "RIGHT — بتختار حسب الحجم والتعقيد",
-        body: "Workflow بسيط وقليل (>100 task/شهر) → Zapier. متوسط ومحتاج logic → Make. كتير ومعقّد أو محتاج تحكّم كامل → n8n. الأداة معمولة عشان تريحك، مش عشان تدوخك وراها.",
-      },
-    },
-  },
-  {
-    icon: Lightbulb,
-    eyebrow: "اختياري",
-    title: "لو عندك ١٠ دقائق",
-    block: {
-      kind: "paragraphs",
-      paragraphs: [
-        "جرّب automation بسيط جدًا — Form → Email لنفسك.",
-        "مش مطلوب للتسليم. بس هتحس الفرق.",
-      ],
+        "أي أداة أتمتة = طبقات: حاجة تدخل (مُشغّل) → خطوات → حاجة تطلع. Zapier و Make و n8n نفس الفكرة — اختلاف في السهولة والسعر والقوة.",
+      label: "طبقات الأتمتة",
     },
   },
   {
     icon: Rocket,
-    eyebrow: "دورك دلوقتي",
-    title: "اختار أداة لمشروعك",
+    eyebrow: "تأكيد سريع",
+    title: "سؤال واحد — مش امتحان",
     tone: "accent",
     block: {
       kind: "quiz",
@@ -118,92 +129,67 @@ export const AUTOMATOR_M3_L1_TOOLS_LANDSCAPE_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "أنت لسه بتبدأ في الأتمتة ومش عايز توجع دماغك بكود أو تعقيدات، وميزانيتك مش مشكلة كبيرة. عايز تبني workflow بسيط يبعت إيميل أوتوماتيك كل ما يجيلك رد على فورم معين. هتختار أنهي أداة؟",
+          question:
+            "لسه في البداية، عندك workflow واحد بسيط: «فورم → إيميل ترحيب» — ٢٠ مرة/شهر. ميزانيتك محدودة. أنسب أداة؟",
           options: [
-            "Zapier",
-            "Make",
-            "n8n"
+            "Make — free tier كافي، visual واضح، مناسب للبداية.",
+            "n8n self-hosted — أقوى حتى لو محتاج أسبوع setup.",
+            "Zapier Pro — أغلى بس أشهر.",
           ],
           correctIndex: 0,
-          explanation: "Zapier هو الأسهل للمبتدئين ولـ workflows البسيطة، ورغم إنه أغلى بس ده مش عائق في السيناريو ده. بيوفر أكتر integrations جاهزة وده بيختصر عليك وقت ومجهود كبير."
+          explanation:
+            "بداية + workflow بسيط + ميزانية = Make. التفكير واحد — الأداة تخدم الحجم.",
         },
-        {
-          id: "apply2",
-          bloom: "apply",
-          question: "شركتك عندها متطلبات أمان عالية وعايزة تتحكم في كل حاجة بنفسها، ومش عايزة تعتمد على خدمة خارجية لاستضافة الـ workflows بتاعتها. كمان فريقك الفني عنده استعداد يبذل مجهود في التعلم عشان يبني workflows معقدة جدًا. إيه الأداة الأنسب ليكم؟",
-          options: [
-            "Zapier",
-            "Make",
-            "n8n"
-          ],
-          correctIndex: 2,
-          explanation: "n8n بيسمحلك تشغله Self-hosted على سيرفراتك، وده بيديك تحكم كامل في الأمان والبيانات. كمان هو مفتوح المصدر والأقوى وتقدر تعمل بيه أي حاجة تقريبًا، وده مناسب للتعقيد العالي اللي الشركة محتاجاه."
-        },
-        {
-          id: "apply3",
-          bloom: "apply",
-          question: "عندك مشروع متوسط، وعايز تبني workflows فيها شوية تعقيدات ولوجيك معين، بس في نفس الوقت مش عايز تدفع كتير زي Zapier، ومش مستعد تتعمق أوي في الـ Self-hosting زي n8n. إيه الأداة اللي هتديك التوازن ده؟",
-          options: [
-            "Zapier",
-            "Make",
-            "n8n"
-          ],
-          correctIndex: 1,
-          explanation: "Make (سابقًا Integromat) بيقدم توازن كويس بين السهولة والقوة، وجهة المستخدم بتاعته كويسة (visual interface) وبيسمحلك تبني scenarios معقدة، وفي نفس الوقت أرخص من Zapier، وده بيخليه الخيار الأمثل للمشاريع المتوسطة اللي بتدور على قيمة مقابل سعر."
-        }
-      ]
+      ],
     },
   },
   {
     icon: Rocket,
-    eyebrow: "Mission",
-    title: "اختار الـ Tool المناسب لـ ٣ سيناريوهات",
-    tone: "primary",
+    eyebrow: "مهمتك",
+    title: "اختار أداة واحدة — ولِيه",
+    tone: "accent",
     block: {
       kind: "mission",
       intro:
-        "Make / n8n / Zapier / Pipedream — كل واحد ليه نقطة قوة. هتاخد ٣ سيناريوهات وتختار الـ tool لكل واحد بسبب.",
+        "خد مرشّح الأتمتة الأول من الدرس اللي فات — واختار أداة واحدة (Zapier / Make / n8n / غيره).\n\n١٠ دقيقة كفاية — مش مطلوب تبني Flow.",
       prompt:
-        "لكل سيناريو من ٣ اكتب:\n\nسيناريو X:\n- وصف في سطرين:\n- الـ tool المختار:\n- ٢ أسباب تقنية للاختيار:\n- لو اضطريت تختار tool تاني، أنهي ولِيه؟\n\nالسيناريوهات:\n١) أتمتة شغل سوشيال (بوست على ٥ منصات + رد على كومنتات).\n٢) Internal tool لشركة (ربط CRM + DB + Slack).\n٣) Personal automation (إيميل + Notion + Calendar).",
-      buttonLabel: "انسخ التعليمات",
-      copiedLabel: "اتنسخ",
+        "في تسليمك اكتب:\n\n١) مرشّح الأتمتة (المهمة/النمط):\n\n٢) الأداة المختارة:\n\n٣) ٢ سبب للاختيار (حجم، تكرار، ميزانية، تعقيد):\n\n٤) لو اضطريت تختار أداة تانية — أنهي ولِيه؟\n\n٥) جملة: إزاي هتبني «فورم → [خطوة] → [نتيجة]» في الأداة دي (بالكلام — مش screenshot):",
+      buttonLabel: "انسخ خطوات المهمة",
+      copiedLabel: "اتنسخت ✓",
+      template:
+        "مرشّح الأتمتة:\n[مهمة/نمط]\n\nالأداة:\n[Zapier / Make / n8n / ...]\n\nسبب ١:\n[...]\nسبب ٢:\n[...]\n\nبديل:\n[أداة + لِيه]\n\nخطة بناء:\n[مُشغّل → خطوات → نتيجة بالكلام]",
       rubric: [
         {
-          label: "٣ قرارات مبررة",
+          label: "اختيار مبرّر",
           weight: 60,
           criteria: [
-            "كل tool معاه ٢ أسباب تقنية مش «أسهل».",
-            "البدائل معها سبب ضدها مش بس مزاياها.",
+            "أداة مربوطة بمرشّح محدّد.",
+            "سببان عمليان — مش «أسهل» بس.",
           ],
         },
         {
-          label: "Fit للسيناريو",
+          label: "فهم التفكير",
           weight: 40,
           criteria: [
-            "الاختيار مناسب طبيعة السيناريو (technical vs no-code).",
-            "ما اختارتش نفس الـ tool لـ ٣ سيناريوهات.",
+            "بديل مع سبب.",
+            "خطة بناء تصف مُشغّل → نتيجة.",
           ],
         },
       ],
     },
   },
   {
-    icon: FlaskConical,
-    eyebrow: "جزء من المنصة",
-    title: "اخترنا serverFn بدل Make/n8n — ليه؟",
+    icon: CheckCircle2,
+    eyebrow: "خلّصت الأدوات",
+    title: "إيه اللي عندك دلوقتي؟",
     tone: "primary",
     block: {
-      kind: "caseStudy",
-      title: "اخترنا serverFn بدل Make/n8n — ليه؟",
-      summary:
-        "الجزء ده من المنصة اتبنى بمسار Automator — نفس اللي بتتعلمه. Make و n8n و Zapier حلول رهيبة، بس لمنصة كاملة محتاجة logic داخلي معقّد، اخترنا TanStack serverFn. كل tool له use case — مش tool واحد بيحل كل شيء.",
-      bullets: [
-        "serverFn = type-safe + جوّه نفس الكود.",
-        "n8n مناسب لـ integrations خارجية متعددة.",
-        "Make مناسب لـ business users بدون كود.",
+      kind: "paragraphs",
+      paragraphs: [
+        "فهمت إيه؟ الأدوات مختلفة — التفكير (مُشغّل → خطوات → نتيجة) واحد في كلهم.",
+        "تقدر تعمل إيه؟ عندك أداة مختارة لمرشّح الأتمتة الأول — جاهزة للتصميم.",
+        "اللي جاي: Triggers + Actions — «لما ده يحصل، اعمل كده».",
       ],
-      pathAngle: "automator",
-      link: { label: "افتح /assistant-runtime", href: "/assistant-runtime" },
     },
-  }
+  },
 ];

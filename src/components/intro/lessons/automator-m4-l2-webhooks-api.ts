@@ -1,127 +1,126 @@
 import {
-  Webhook,
+  Sparkles,
+  AlertCircle,
   PlayCircle,
   Lightbulb,
-  Image as ImageIcon,
   Scale,
   Rocket,
-  BookOpen, FlaskConical, HeartHandshake } from "lucide-react";
+  BookOpen,
+  CheckCircle2,
+  Image as ImageIcon,
+} from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 import automatorM3WebhooksApiScreenshot from "@/assets/lessons/unique/automator-m4-l2-webhooks-api.jpg";
-/**
- * Automator · M3 · Lesson 02 — Webhooks & APIs
- */
+
+/** Automator · M4 · L2 — Webhooks & API (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M4_L2_WEBHOOKS_API_BLOCKS: IntroLessonContent = [
   {
-    icon: Lightbulb,
-    eyebrow: "اختياري — للمتقدمين",
-    title: "لو هدفك استخدام AI في شغلك فقط، تقدر تعدّي الدرس ده بأمان",
-    tone: "accent",
-    block: {
-      kind: "paragraphs",
-      paragraphs: [
-        "الدرس ده فيه مفاهيم تقنية للناس اللي شغّالة فعلاً على n8n. لو لسه بتتعلم الأساسيات، تقدر تعدّيه دلوقتي وترجعله بعدين — مش هيأثر على باقي رحلتك.",
-        "لو فعلًا عايز تبني — يلا نكمل.",
-      ],
-    },
-  },
-  {
-    icon: Webhook,
-    eyebrow: "HERO",
-    title: "Webhooks & APIs",
+    icon: Sparkles,
+    eyebrow: "بداية الدرس",
+    title: "هتفهم إيه النهاردة؟",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "ببساطة: ده الطريقة اللي البرامج بتتكلم بيها مع بعض.",
-        "متخضش من الأسماء — الفكرة سهلة جدًا وهنشرحها خطوة خطوة.",
+        "هتفهم إيه؟ Webhook = تطبيق يقول لتطبيق تاني «حصل حاجة» — من غير ما تسأل كل شوية.",
+        "ليه دلوقتي؟ بعد ما عرفت فين البيانات بتتخزّن، محتاج تعرف إزاي التطبيقات بتكلّم بعض.",
+        "هتعمل إيه بعد الدرس؟ هتشرح use case واحد لـ webhook + إيه البيانات اللي بتتبعت.",
       ],
     },
   },
   {
-    icon: HeartHandshake,
-    eyebrow: "اطمن",
-    title: "مش لازم تحفظ كل حاجة",
-    tone: "accent",
+    icon: AlertCircle,
+    eyebrow: "موقف مألوف",
+    title: "«الأوتوميشن بيسأل كل دقيقة: فيه جديد؟»",
+    tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "الدرس ده فيه كلمات تقنية كتير — عادي متفهمهاش كلها من أول مرة.",
-        "ركّز بس على فكرتين: API = إنت بتسأل. Webhook = حد بيقولك. خلاص كده.",
-        "باقي المصطلحات (Token، HMAC، Payload…) هتشوفها في الـ nodes جاهزة، مش هتكتبها بإيدك.",
+        "الـ workflow بيفضل يسأل الموقع كل دقيقة: «في طلب جديد؟» — ٩٩ مرة الجواب لأ. بياكل وقت ومهام على الفاضي.",
+        "العميل دفع — بس الأوتوميشن عرف بعد ٦٠ ثانية. الرسالة الترحيبية اتأخّرت.",
+        "العامل الافتراضي محتاج يتعلّم: إمتى يستنى يتبلّغ؟ (Webhook) — وإمتى يروح يسأل بنفسه؟ (API).",
       ],
+    },
+  },
+  {
+    icon: Lightbulb,
+    eyebrow: "الفكرة الأساسية",
+    title: "API = إنت بتسأل. Webhook = هما بيقولولك",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "API: إنت بتبعت request — «هاتلي الطلبات النهارده». إنت اللي بدأت.",
+        "Webhook: التطبيق التاني بيبعتلك — «في طلب جديد دلوقتي!» — أول ما الحدث يحصل.",
+        "الـ Payload = البيانات جوه الرسالة: اسم العميل، المبلغ، التاريخ.",
+        "في Make وn8n فيه nodes جاهزة — مش لازم تكتب كود.",
+      ],
+    },
+  },
+  {
+    icon: Scale,
+    eyebrow: "مثال من الحياة",
+    title: "تسأل كل دقيقة vs يتبلّغك فورًا",
+    block: {
+      kind: "comparison",
+      left: {
+        label: "Polling — تسأل كل دقيقة",
+        body: "الأوتوميشن يسأل «فيه طلب؟» ١٤٤٠ مرة في اليوم. بطيء، مكلف، ومتأخر.",
+      },
+      right: {
+        label: "Webhook — يتبلّغك",
+        body: "الموقع يبعتلك فور الدفع: اسم + مبلغ + إيميل. الأوتوميشن يشتغل في نفس الثانية.",
+      },
     },
   },
   {
     icon: BookOpen,
-    eyebrow: "٣ كلمات بس",
-    title: "الكلمات اللي تهمك دلوقتي",
+    eyebrow: "كلمتين بس",
+    title: "مصطلحين للتواصل",
     block: {
       kind: "concepts",
       items: [
-        { term: "API", meaning: "إنت بتسأل برنامج تاني وبيرد عليك.", example: "زي ما تكلم 16528 وتسأل عن رصيدك — إنت اللي بدأت المكالمة." },
-        { term: "Webhook", meaning: "برنامج تاني بيرن عليك أول ما يحصل حاجة.", example: "زي رنة فودافون كاش لما حد يحولك فلوس — هي اللي جاتلك من غير ما تسأل." },
-        { term: "Payload", meaning: "البيانات اللي بتتبعت جوه الرسالة.", example: "زي اسم العميل ورقم تليفونه اللي جوه الرسالة." },
+        {
+          term: "Webhook",
+          meaning: "إشعار فوري: تطبيق يبعت لتطبيق تاني لما حدث يحصل.",
+          example: "عميل دفع → الموقع يبعت webhook للأوتوميشن.",
+        },
+        {
+          term: "Payload",
+          meaning: "البيانات جوه الرسالة — اللي الأوتوميشن هيستخدمها.",
+          example: "{ name: «أحمد», amount: 500, email: «...» }.",
+        },
       ],
     },
   },
   {
     icon: PlayCircle,
     eyebrow: "فيديو الدرس",
-    title: "اتفرّج الأول",
+    title: "اتفرّج — Webhook vs API",
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "الفرق بين API call و Webhook، وإزاي تستخدمهم في nodes حقيقية.",
-    },
-  },
-  {
-    icon: Lightbulb,
-    eyebrow: "الفكرة",
-    title: "فكرتين بس مش أكتر",
-    block: {
-      kind: "paragraphs",
-      paragraphs: [
-        "API = إنت اللي بتروح تسأل. مثال: 'هاتلي أوردرات النهارده'.",
-        "Webhook = هي اللي بتيجيلك. مثال: 'في أوردر جديد دلوقتي!'.",
-        "والأحلى: في n8n وMake فيه nodes جاهزة للاتنين — مش هتكتب كود.",
-      ],
+      caption:
+        "الفرق بين «إنت بتسأل» و«هما بيقولولك» — وإزاي تستخدمهم في workflow. لو معندكش وقت، كمل قراية.",
     },
   },
   {
     icon: ImageIcon,
-    eyebrow: "شوف بنفسك",
-    title: "الـ backend بتاع المنصة",
+    eyebrow: "شوفها ببساطة",
+    title: "تطبيق بيكلّم تطبيق",
     tone: "primary",
     block: {
       kind: "screenshot",
       src: automatorM3WebhooksApiScreenshot,
-      alt: "سكرين شوت من المنصة",
+      alt: "مثال على endpoint يستقبل بيانات",
       caption:
-        "المنصة بتتكلم مع الـ backend عن طريق endpoints زي اللي شفتها في Builder M5. أي workflow في Make/n8n يقدر يستدعي نفس الـ endpoints دي بنفس الـ keys. كل اللي بنعمله في Automator مبني على نفس الفكرة دي.",
-      label: "من المنصة — درس Backend API في Builder",
-    },
-  },
-  {
-    icon: Scale,
-    eyebrow: "Failure × Right",
-    title: "إزاي تتجنب أكبر غلطة",
-    block: {
-      kind: "comparison",
-      left: {
-        label: "غلط — بتجرب على طول",
-        body: "بتربط الـ node وتشغّله، وييجي رد '401 Unauthorized'، وتفضل ساعة تدور على السبب.",
-      },
-      right: {
-        label: "صح — اقرا الـ docs الأول",
-        body: "تفتح صفحة الـ API بتاع الخدمة، تشوف بيطلب مفتاح إزاي، تحطه في الـ node، وتجرب. ٥ دقايق بس.",
-      },
+        "التطبيقات بتتكلم عن طريق endpoints — نفس الفكرة في أي أوتوميشن: webhook يستقبل، API يبعت. البيانات = الـ Payload.",
+      label: "Endpoint — نقطة استقبال البيانات",
     },
   },
   {
     icon: Rocket,
-    eyebrow: "دورك دلوقتي",
-    title: "Webhook + API في scenario واحد",
+    eyebrow: "تأكيد سريع",
+    title: "سؤال واحد — مش امتحان",
     tone: "accent",
     block: {
       kind: "quiz",
@@ -130,92 +129,67 @@ export const AUTOMATOR_M4_L2_WEBHOOKS_API_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "إنت عايز تعمل أتمتة إن كل ما عميل جديد يسجل في موقعك الإلكتروني (اللي بيبعت Webhook)، بياناته تتبعت أوتوماتيك لـ CRM (نظام إدارة علاقات العملاء) بتاعك عن طريق API. إيه الـ HTTP Method اللي هتستخدمه عشان تضيف بيانات العميل الجديد ده للـ CRM؟",
+          question:
+            "عايز أول ما عميل يدفع على الموقع، الأوتوميشن يبعت رسالة ترحيب فورًا. إيه الأنسب؟",
           options: [
-            "GET",
-            "POST",
-            "DELETE"
+            "Webhook من بوابة الدفع — تبلّغك لحظة الدفع.",
+            "الأوتوميشن يسأل الموقع كل ٥ دقايق لو فيه دفع جديد.",
+            "تدخل يدوي كل ما تشوف إشعار دفع.",
           ],
-          correctIndex: 1,
-          explanation: "بنستخدم الـ POST لما بنحب ننشئ (نضيف) بيانات جديدة في الـ API، وده اللي هيحصل هنا عشان نضيف بيانات العميل في الـ CRM."
+          correctIndex: 0,
+          explanation:
+            "حدث لحظي محتاج webhook — «هما بيقولولك». Polling بطيء ومكلف.",
         },
-        {
-          id: "apply2",
-          bloom: "apply",
-          question: "لو عايز تجيب معلومات عن منتج معين من API بتاع متجر إلكتروني، ومحتاج تبعتله الـ ID بتاع المنتج ده عشان يجيبلك بياناته. الجزء اللي بيحتوي على البيانات دي في الـ request بنسميه إيه؟",
-          options: [
-            "Webhook",
-            "Payload",
-            "Endpoint"
-          ],
-          correctIndex: 1,
-          explanation: "الـ Payload هو البيانات اللي بتتبعت في الـ request، وهنا بيانات المنتج (الـ ID) هي اللي هتتبعت."
-        },
-        {
-          id: "apply3",
-          bloom: "apply",
-          question: "إيه الفرق الجوهري بين الـ API Call والـ Webhook في طريقة تبادل المعلومات بين الأنظمة؟",
-          options: [
-            "الـ API Call بيستخدم الـ GET بس، والـ Webhook بيستخدم الـ POST بس.",
-            "الـ API Call أنت اللي بتبعت الـ request، والـ Webhook الخدمة هي اللي بتبعتلك الـ request لما حدث يحصل.",
-            "الـ Webhook بيرجعلك JSON، والـ API Call بيرجعلك XML بس."
-          ],
-          correctIndex: 1,
-          explanation: "في الـ API Call إنت اللي بتروح تجيب المعلومة، لكن في الـ Webhook الخدمة هي اللي بتبعتلك المعلومة لما يحصل حدث معين، وده الفرق الأساسي بينهم."
-        }
-      ]
+      ],
     },
   },
   {
     icon: Rocket,
-    eyebrow: "تطبيق بسيط",
-    title: "اختر سيناريو واحد واكتبه",
-    tone: "primary",
+    eyebrow: "مهمتك",
+    title: "اشرح webhook use case واحد",
+    tone: "accent",
     block: {
       kind: "mission",
       intro:
-        "مش هتكتب كود — بس تفكر في سيناريو حقيقي وتكتبه في ٣ سطور.",
+        "المهمة دي شرح — مش بناء. اختار حدث حقيقي في شغلك واكتب: إيه اللي بيحصل؟ إيه البيانات اللي بتتبعت؟\n\nممكن الـ AI يقترح صياغة — إنت تختار النهائي.",
       prompt:
-        "اكتب في ٣ سطور:\n\n١) السيناريو: إيه الحاجة اللي لما تحصل عايز السيستم يتحرك؟ (مثال: عميل جديد سجّل)\n٢) النوع: ده API (أنا بسأل) ولا Webhook (هما بيقولولي)؟\n٣) بعدها هيحصل إيه؟ (مثال: يتبعتله رسالة ترحيب)",
-      buttonLabel: "انسخ التعليمات",
-      copiedLabel: "اتنسخ",
+        "في تسليمك اكتب:\n\n١) الحدث (إيه اللي بيحصل — مثال: عميل سجّل / دفع / ملأ فورم):\n٢) مين بيبعت الـ webhook (أنهي تطبيق):\n٣) مين بيستقبل (الأوتوميشن بيعمل إيه بعدها):\n٤) الـ Payload — ٣ حقول على الأقل (اسم الحقل + مثال قيمة):\n٥) ليه webhook أحسن من «أسأل كل دقيقة» في الحالة دي:",
+      buttonLabel: "انسخ خطوات المهمة",
+      copiedLabel: "اتنسخت ✓",
+      template:
+        "الحدث:\n[إيه اللي بيحصل — مثال: عميل دفع أونلاين]\n\nمين بيبعت:\n[التطبيق — مثال: Stripe / Paymob / الموقع]\n\nمين بيستقبل:\n[الأوتوميشن — مثال: n8n workflow «ترحيب بعد الدفع»]\n\nPayload (٣ حقول):\n1. [customer_name] = «أحمد»\n2. [amount] = 500\n3. [email] = «ahmed@...»\n\nليه webhook:\n[جملة — مثال: الدفع لحظي — محتاج رد فوري مش استعلام كل دقيقة]",
       rubric: [
         {
-          label: "السيناريو واضح",
+          label: "حدث واتجاه",
           weight: 50,
           criteria: [
-            "في حدث محدد (مش كلام عام).",
-            "اخترت API أو Webhook وعارف ليه.",
+            "حدث محدّد — مش كلام عام.",
+            "واضح مين بيبعت ومين بيستقبل.",
           ],
         },
         {
-          label: "النتيجة واضحة",
+          label: "Payload",
           weight: 50,
           criteria: [
-            "عارف هيحصل إيه بعد ما الحدث يجي.",
-            "تقدر تشرحه لحد تاني في جملة.",
+            "٣ حقول على الأقل بأمثلة قيم.",
+            "سبب webhook واضح مقارنة بـ polling.",
           ],
         },
       ],
     },
   },
   {
-    icon: FlaskConical,
-    eyebrow: "جزء من المنصة",
-    title: "Webhook callbacks في /api/public/*",
+    icon: CheckCircle2,
+    eyebrow: "خلّصت Webhooks",
+    title: "إيه اللي عندك دلوقتي؟",
     tone: "primary",
     block: {
-      kind: "caseStudy",
-      title: "Webhook callbacks في /api/public/*",
-      summary:
-        "الجزء ده من المنصة اتبنى بمسار Automator — نفس اللي بتتعلمه. لو ربطنا الـ payment provider، الـ webhook بيوصل على /api/public/payment-webhook. الـ endpoint بيتحقّق من signature الأول، ثم بيحدّث user_subscriptions. ده الـ pattern اللي اتعلّمته بالظبط.",
-      bullets: [
-        "Endpoints تحت /api/public/* مفتوحة بدون auth.",
-        "أول حاجة: HMAC signature verification.",
-        "بعدها: parse + validate Zod schema قبل أي write.",
+      kind: "paragraphs",
+      paragraphs: [
+        "فهمت إيه؟ Webhook = تطبيق يقول لتطبيق «حصل حاجة» — والـ Payload هو البيانات اللي بتتبعت.",
+        "تقدر تعمل إيه؟ عندك use case واحد جاهز تشرحه أو تبنيه.",
+        "اللي جاي: Error Handling — لما الأتمتة تفشل، محتاج تنبيه قبل ما العميل يتأذى.",
       ],
-      pathAngle: "automator",
-      link: { label: "افتح /system-state", href: "/system-state" },
     },
-  }
+  },
 ];

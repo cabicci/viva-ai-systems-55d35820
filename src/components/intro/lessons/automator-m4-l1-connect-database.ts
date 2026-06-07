@@ -1,116 +1,126 @@
 import {
-  Database,
+  Sparkles,
+  AlertCircle,
   PlayCircle,
   Lightbulb,
-  Image as ImageIcon,
   Scale,
   Rocket,
-  BookOpen, FlaskConical } from "lucide-react";
+  BookOpen,
+  CheckCircle2,
+  Image as ImageIcon,
+} from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 import automatorM3ConnectDatabaseScreenshot from "@/assets/lessons/unique/automator-m4-l1-connect-database.jpg";
-/**
- * Automator · M3 · Lesson 01 — وصّل الـ DB من Builder
- */
+
+/** Automator · M4 · L1 — Connect Database (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M4_L1_CONNECT_DATABASE_BLOCKS: IntroLessonContent = [
   {
-    icon: Lightbulb,
-    eyebrow: "اختياري — للمتقدمين",
-    title: "لو هدفك استخدام AI في شغلك فقط، تقدر تعدّي الدرس ده بأمان",
-    tone: "accent",
-    block: {
-      kind: "paragraphs",
-      paragraphs: [
-        "الدرس ده فيه مفاهيم تقنية للناس اللي شغّالة فعلاً على n8n. لو لسه بتتعلم الأساسيات، تقدر تعدّيه دلوقتي وترجعله بعدين — مش هيأثر على باقي رحلتك.",
-        "لو فعلًا عايز تبني — يلا نكمل.",
-      ],
-    },
-  },
-  {
-    icon: Database,
-    eyebrow: "HERO",
-    title: "وصّل الـ Automation بالـ Database",
+    icon: Sparkles,
+    eyebrow: "بداية الدرس",
+    title: "هتفهم إيه النهاردة؟",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "الـ workflow بقى يقدر يقرا ويكتب",
-        "في نفس الـ DB بتاعت منتجك.",
+        "هتفهم إيه؟ الأتمتة بتبقى أقوى لما تحفظ بيانات منظمة — مش بس تبعت رسالة وتنسى.",
+        "ليه دلوقتي؟ الـ workflow بيقرأ ويكتب — ومن غير مكان واضّح للبيانات، الشغل المتكرر بيتكرر يدوي.",
+        "هتعمل إيه بعد الدرس؟ هتختار فين الـ workflow بيخزّن البيانات + إيه الحقول اللي محتاجها.",
       ],
     },
   },
   {
+    icon: AlertCircle,
+    eyebrow: "موقف مألوف",
+    title: "«العميل اتسجّل — ومش لاقيين بياناته»",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "الأوتوميشن بيبعت إيميل ترحيب — تمام. بس لما المبيعات تسأل «مين العميل ده؟» — مفيش سجل.",
+        "البيانات راحت في الإيميل بس — مش في مكان منظم تقدر ترجعله كل يوم.",
+        "العامل الافتراضي محتاج ذاكرة: فين بيحفظ؟ إيه الحقول؟ إمتى بيقرأ؟ — من غير ده الشغل المتكرر بيرجع يدوي.",
+      ],
+    },
+  },
+  {
+    icon: Lightbulb,
+    eyebrow: "الفكرة الأساسية",
+    title: "DB = ذاكرة الأتمتة",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "كل lead أو طلب محتاج يتسجّل في مكان واحد — جدول أو شيت منظم بحقول ثابتة.",
+        "اكتب: إمتى البيانات تتكتب؟ (بعد التسجيل) — إمتى تتقري؟ (تقرير يومي، متابعة).",
+        "٣ حقول كفاية للبداية: اسم، تواصل، تاريخ/حالة — مش لازم ٢٠ عمود.",
+        "الـ workflow بيقرأ من نفس المكان اللي بيكتب فيه — ده اللي بيخلي الشغل المتكرر يشتغل لوحده.",
+      ],
+    },
+  },
+  {
+    icon: Scale,
+    eyebrow: "مثال من الحياة",
+    title: "رسالة وخلاص vs سجل منظم",
+    block: {
+      kind: "comparison",
+      left: {
+        label: "إيميل بس",
+        body: "الأوتوميشن بيبعت إيميل — البيانات في صندوق الوارد. بعد أسبوع: مين سجّل؟ محدش عارف.",
+      },
+      right: {
+        label: "سجل + إيميل",
+        body: "نفس الأوتوميشن يكتب صف في جدول (اسم، تليفون، تاريخ) + يبعت إيميل. المتابعة تلقائية.",
+      },
+    },
+  },
+  {
     icon: BookOpen,
-    eyebrow: "مصطلحات الدرس",
-    title: "اللي هتسمعه في الدرس ده",
+    eyebrow: "كلمتين بس",
+    title: "مصطلحين للتخزين",
     block: {
       kind: "concepts",
       items: [
-        { term: "Schema (التقسيمة)", meaning: "الخريطة أو \"التقسيمة\" اللي بتحدد شكل الجداول والبيانات جوه الداتا.", example: "زي لما تقسم دفتر الحسابات خانات: اسم العميل، التاريخ، والمبلغ المدفوع." },
-        { term: "Native vs API", meaning: "الـ Native إضافة جوه السيستم نفسه، والـ API وسيط بيكلم داتا بعيدة.", example: "زي لما تروح تطلع بضاعة بنفسك (Native) أو تبعت مندوب شركة شحن يجيبها لك (API)." },
-        { term: "Connection String", meaning: "زي \"لينك\" طويل فيه عنوان ومفتاح الداتا عشان البرنامج يفتحها.", example: "زي \"عقد الإيجار\" اللي فيه العنوان والمفتاح عشان البرنامج يوصل للداتا." },
-        { term: "RLS (Security Rules)", meaning: "قواعد أمان بتحدد لكل موظف يشوف إيه ومايشوفش إيه في الداتا.", example: "زي ما تدي للمحاسب صلاحية يشوف \"أرقام المبيعات\" بس، وميشوفش \"أرباح الشركة\" الإجمالية." },
-        { term: "Service Role Key", meaning: "مفتاح سري فيه صلاحيات المدير الكبير، بيعدي من أي حماقية أو قيود.", example: "زي \"مفتاح الخزنة\" اللي مع صاحب الشغل، بيفتح كل حاجة وممنوع حد غيره يشيله." },
-        { term: "Queue (الطابور)", meaning: "طابور بينظم الشغل لما الطلبات تزيد فجأة عشان السيستم ميهنجش.", example: "لو جالك 100 أوردر مرة واحدة، بتحطهم في \"نوتة\" وتنفذهم بالترتيب عشان متنساش حد." },
+        {
+          term: "Schema (شكل الجدول)",
+          meaning: "الحقول اللي بتحفظها — اسم كل عمود ونوعه.",
+          example: "leads: name, phone, status, created_at.",
+        },
+        {
+          term: "CRUD (قراءة وكتابة)",
+          meaning: "Create = اكتب. Read = اقرأ. Update = حدّث. Delete = امسح.",
+          example: "تسجيل جديد → Create. تقرير يومي → Read.",
+        },
       ],
     },
   },
   {
     icon: PlayCircle,
     eyebrow: "فيديو الدرس",
-    title: "اتفرّج الأول",
+    title: "اتفرّج — ربط الـ DB",
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "إزاي تربط Make/n8n بالـ DB بتاعت Builder بأمان.",
-    },
-  },
-  {
-    icon: Lightbulb,
-    eyebrow: "الفكرة",
-    title: "3 طرق لربط DB",
-    block: {
-      kind: "numberedList",
-      items: [
-        "Native Module — لو الأداة فيها module جاهز لـ Supabase/Postgres، استخدمه. بسيط وآمن.",
-        "HTTP + REST API — تستدعي endpoints الـ DB مباشرة بـ Service Role Key. مرن جدًا.",
-        "Webhook من الـ DB — الـ DB نفسها بتبعت إشارة (Database Webhook) للـ workflow لما حاجة تتغيّر.",
-      ],
+      caption:
+        "إزاي تختار فين الـ workflow بيخزّن وإيه الحقول — من غير تعقيد. لو معندكش وقت، كمل قراية.",
     },
   },
   {
     icon: ImageIcon,
-    eyebrow: "شوف بنفسك",
-    title: "الـ DB بتاعتنا",
+    eyebrow: "شوفها ببساطة",
+    title: "بيانات منظمة ورا الـ workflow",
     tone: "primary",
     block: {
       kind: "screenshot",
       src: automatorM3ConnectDatabaseScreenshot,
-      alt: "سكرين شوت من المنصة",
+      alt: "مثال على بيانات منظمة في جدول",
       caption:
-        "المنصة دي كلها بياناتها (مستخدمين، تقدّم في الدروس، notes) في DB واحدة. لو عايز أبني automation بتبعت تنبيه لمّا حد يخلّص مسار كامل، الـ workflow هيقرا من نفس الـ DB دي، بنفس الـ keys اللي اتعلّمتها في Builder M5.",
-      label: "من المنصة — مقدمة الـ DB في Builder",
-    },
-  },
-  {
-    icon: Scale,
-    eyebrow: "Failure × Right",
-    title: "إزاي تأمّن الاتصال",
-    block: {
-      kind: "comparison",
-      left: {
-        label: "FAILURE — Service Key في الـ workflow على المكشوف",
-        body: "بتلصق الـ key في node عادي. لو حد فتح الـ scenario يقدر يشوفه. ولو الـ workflow اتشارك كـ template، الـ key اتسرّب لكل الناس.",
-      },
-      right: {
-        label: "RIGHT — Connection محفوظ كـ Credential",
-        body: "بتعرّف الـ connection مرة واحدة كـ Credential مشفّر، والـ nodes بتشاور عليه باسم. الـ key نفسه ميظهرش في أي export.",
-      },
+        "كل حدث (تسجيل، تقدّم، طلب) بيتسجّل في مكان واحد. الـ workflow يقرأ ويكتب من نفس المصدر — مش ملفات متفرقة.",
+      label: "DB — ذاكرة الشغل المتكرر",
     },
   },
   {
     icon: Rocket,
-    eyebrow: "دورك دلوقتي",
-    title: "اعمل أول read query",
+    eyebrow: "تأكيد سريع",
+    title: "سؤال واحد — مش امتحان",
     tone: "accent",
     block: {
       kind: "quiz",
@@ -119,92 +129,67 @@ export const AUTOMATOR_M4_L1_CONNECT_DATABASE_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "مديرك طلب منك تعمل workflow عشان تبعت إيميلات تهنئة للعملاء الجداد كل يوم الصبح. بيانات العملاء موجودة في جدول 'customers_new' في الـ DB بتاعتكم. إيه أنسب طريقة توصل بيها الـ workflow ده بالـ DB؟",
+          question:
+            "أوتوميشن بيسجّل عملاء جداد كل يوم. المبيعات محتاجة تقرير بأسماءهم. إيه الأهم؟",
           options: [
-            "أستخدم الـ module الجاهز بتاع Supabase/Postgres لو متوفر في أداة الـ Automation.",
-            "أستخدم الـ HTTP + REST API عشان أبعت queries للـ DB بـ Service Role Key.",
-            "أفعل Database Webhook في الـ DB عشان تبعت للـ workflow تلقائي."
+            "الـ workflow يكتب كل عميل في جدول منظم بحقول ثابتة — ويقرأ منه للتقرير.",
+            "يبعت إيميل للمبيعات بكل تسجيل — من غير سجل مركزي.",
+            "يحفظ في ملاحظات عشوائية على الموبايل.",
           ],
           correctIndex: 0,
-          explanation: "الـ Native Module هو الأبسط والأكثر أمانًا لو متاح، وبيخلي الشغل على الـ DB مباشر وسهل من غير ما تحتاج تكتب أكواد كتير أو تقلق من تفاصيل الـ APIs."
+          explanation:
+            "السجل المنظم = ذاكرة الأتمتة. إيميل من غير جدول = الشغل المتكرر يرجع يدوي.",
         },
-        {
-          id: "apply2",
-          bloom: "apply",
-          question: "فيه جدول 'orders' في الـ DB، وعايز أول ما أي طلب جديد يتضاف، الـ workflow يبعت إشعار للمخزن. إيه أنسب طريقة تعمل بيها ده بأقل تدخل يدوي؟",
-          options: [
-            "أعمل Schedule في الـ workflow عشان يقرا الجدول كل دقيقة ويشوف لو فيه طلبات جديدة.",
-            "أستخدم Database Webhook يتبعت من الـ DB للـ workflow لما الطلب يتضاف.",
-            "أستدعي الـ DB بـ HTTP requests كل شوية عشان أتحقق من التغييرات."
-          ],
-          correctIndex: 1,
-          explanation: "الـ Database Webhook هو الأنسب للحالة دي عشان بيخلي الـ DB تبعت إشارة للـ workflow تلقائي أول ما يحصل تغيير، وده أسرع وأكفأ من إن الـ workflow يفضل يستعلم عن التغييرات باستمرار."
-        },
-        {
-          id: "apply3",
-          bloom: "apply",
-          question: "الشركة بتاعتك محتاجة تعمل تقرير يومي عن 'أكثر 10 منتجات مبيعًا' من الـ DB، والتقرير ده بيتعمل بـ query معقد. إيه اللي المفروض تعمله عشان تضمن إن الـ workflow يقدر ينفذ الـ query ده؟",
-          options: [
-            "أُضمن إن الـ Connection String اللي بستخدمه صح وموجه للـ DB الصح.",
-            "أستخدم Service Role Key عشان أضمن إن الـ workflow له صلاحية ينفذ الـ query ده ويتجاوز الـ RLS.",
-            "أركز على إني أخلي الـ workflow يقرا 5 صفوف بس من أي جدول عشان أتأكد إن الاتصال شغال."
-          ],
-          correctIndex: 1,
-          explanation: "الـ Service Role Key ضروري هنا عشان يدي صلاحيات إدارية للـ workflow ويتجاوز الـ RLS، وده يضمن إن الـ workflow يقدر ينفذ الـ query المعقد ده من غير مشاكل صلاحيات."
-        }
-      ]
+      ],
     },
   },
   {
     icon: Rocket,
-    eyebrow: "Mission",
-    title: "صمّم Workflow بيكتب وبيقرأ من Database",
-    tone: "primary",
+    eyebrow: "مهمتك",
+    title: "حدّد فين البيانات بتتخزّن",
+    tone: "accent",
     block: {
       kind: "mission",
       intro:
-        "DB في الـ workflow = Memory للـ automation. هتصمم flow بيكتب + يقرأ + يحدّث.\n\nلو لسه مبتدئ:\nتسليم مبسّط مقبول —\nجدول بـ ٣ أعمدة + إمتى البيانات تتكتب + إمتى تتقري.\nمش لازم Service Role أو technical setup.",
+        "المهمة دي تصميم — مش ربط تقني إلزامي. اختار workflow عندك وحدّد: فين البيانات بتتحفظ؟ وإيه الحقول؟\n\nممكن الـ AI يقترح أعمدة — إنت تختار النهائي.",
       prompt:
-        "في تسليمك — اختَر مستوى واحد:\n\n【تسليم مبسّط — مقبول بالكامل】\n١) Use case في سطر + جدول بـ ٣ أعمدة (اسم كل عمود):\n٢) إمتى البيانات تتكتب؟ من فين؟\n٣) إمتى البيانات تتقري؟ مين بيستخدمها؟\n(مش لازم Service Role أو queues أو WHERE clause)\n\n【تسليم كامل — اختياري】\n٤) Update flow — إمتى بنحدّث؟ ايه الـ trigger؟\n٥) Duplicate prevention — إزاي هتمنع تكرار row؟\n٦) لو الـ DB ضربت، الـ workflow يعمل إيه؟ (retry / queue / fail silently)",
-      buttonLabel: "انسخ التعليمات",
-      copiedLabel: "اتنسخ",
+        "في تسليمك اكتب:\n\n١) الـ Workflow (سطر — إيه الشغل المتكرر):\n٢) فين البيانات بتتخزّن (جدول / شيت / CRM — اسم المكان):\n٣) ٣ حقول على الأقل (اسم كل حقل + إيه اللي بيتحفظ):\n٤) إمتى تتكتب؟ (بعد إيه trigger):\n٥) إمتى تتقري؟ (مين بيستخدمها وليه):",
+      buttonLabel: "انسخ خطوات المهمة",
+      copiedLabel: "اتنسخت ✓",
+      template:
+        "Workflow:\n[الشغل المتكرر — مثال: تسجيل leads من فورم]\n\nمكان التخزين:\n[جدول / شيت / CRM — مثال: جدول leads في Google Sheets]\n\nالحقول:\n1. [اسم الحقل — مثال: name] → [إيه بيتحفظ]\n2. [phone] → [رقم التواصل]\n3. [status] → [جديد / متابع / مغلق]\n\nإمتى تتكتب:\n[بعد إيه — مثال: أول ما الفورم يتملّى]\n\nإمتى تتقري:\n[مين + ليه — مثال: تقرير يومي الساعة ٩ للمبيعات]",
       rubric: [
         {
-          label: "CRUD operations واضحة",
+          label: "مكان + حقول",
           weight: 60,
           criteria: [
-            "التسليم المبسّط: جدول ٣ أعمدة + إمتى تتكتب + إمتى تتقري — مقبول بالكامل.",
-            "التسليم الكامل (اختياري): Insert/Read/Update متعرّفين بـ trigger وdata + schema أوضح.",
+            "مكان تخزين محدّد — مش «هنشوف».",
+            "٣ حقول على الأقل بأسماء واضحة.",
           ],
         },
         {
-          label: "Duplicates + Failures",
+          label: "كتابة وقراءة",
           weight: 40,
           criteria: [
-            "مش مطلوب Service Role أو queues للتسليم المبسّط.",
-            "لو اخترت التعمق: Duplicate prevention + Failure handling بخطة فعلية.",
+            "إمتى تتكتب مربوطة بالـ trigger.",
+            "إمتى تتقري فيها مستخدم واضح.",
           ],
         },
       ],
     },
   },
   {
-    icon: FlaskConical,
-    eyebrow: "جزء من المنصة",
-    title: "كل serverFn بتتكلم مع PostgreSQL",
+    icon: CheckCircle2,
+    eyebrow: "خلّصت التخزين",
+    title: "إيه اللي عندك دلوقتي؟",
     tone: "primary",
     block: {
-      kind: "caseStudy",
-      title: "كل serverFn بتتكلم مع PostgreSQL",
-      summary:
-        "الجزء ده من المنصة اتبنى بمسار Automator — نفس اللي بتتعلمه. serverFn = code python بيشغّل queries على PostgreSQL. الـ Automation الحقيقية هي إن كل request من frontend بيمر على layer واحد بـ business logic + DB connection — مش بنفتح connections كل مرة.",
-      bullets: [
-        "Pooled connections من Supabase — مفيش overhead.",
-        "كل serverFn بياخد supabase client من middleware.",
-        "Queries كلها typed بـ TypeScript من types.ts.",
+      kind: "paragraphs",
+      paragraphs: [
+        "فهمت إيه؟ الأتمتة أقوى لما عندها ذاكرة منظمة — مكان + حقول + إمتى تكتب وتقرأ.",
+        "تقدر تعمل إيه؟ عندك خطة تخزين جاهزة لـ workflow حقيقي.",
+        "اللي جاي: Webhooks & APIs — لما تطبيق يقول لتطبيق تاني «حصل حاجة».",
       ],
-      pathAngle: "automator",
-      link: { label: "افتح /system-state", href: "/system-state" },
     },
-  }
+  },
 ];

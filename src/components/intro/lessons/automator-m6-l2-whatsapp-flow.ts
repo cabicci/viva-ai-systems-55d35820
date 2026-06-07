@@ -1,106 +1,126 @@
 import {
-  MessageCircle,
+  Sparkles,
+  AlertCircle,
   PlayCircle,
   Lightbulb,
-  Image as ImageIcon,
   Scale,
   Rocket,
-  BookOpen, FlaskConical } from "lucide-react";
+  BookOpen,
+  CheckCircle2,
+  Image as ImageIcon,
+} from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 import automatorM5WhatsappFlowScreenshot from "@/assets/lessons/unique/automator-m6-l2-whatsapp-flow.jpg";
-/**
- * Automator · M5 · Lesson 02 — WhatsApp Flow ذكي
- */
+
+/** Automator · M6 · WhatsApp Flow ذكي (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M6_L2_WHATSAPP_FLOW_BLOCKS: IntroLessonContent = [
   {
-    icon: MessageCircle,
-    eyebrow: "HERO",
-    title: "WhatsApp Flow ذكي",
+    icon: Sparkles,
+    eyebrow: "بداية الدرس",
+    title: "هتفهم إيه النهاردة؟",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "مش بس ردّ آلي.",
-        "محادثة بتفهم وتقرّر.",
+        "هتفهم إيه؟ أوتوميشن واتساب يساعد في التأكيدات والأسئلة الشائعة — بس محتاج ثقة وموافقة العميل.",
+        "ليه دلوقتي؟ بعد ما عرفت تستقبل leads، القناة الأقرب للعميل محتاجة ردود ذكية مش مزعجة.",
+        "هتعمل إيه بعد الدرس؟ هتصمّم flow رد آلي واحد بشرط تحويل لبشري.",
       ],
     },
   },
   {
+    icon: AlertCircle,
+    eyebrow: "موقف مألوف",
+    title: "البوت رد — والعميل حسّ إنه اتهاجم",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "شغّلت رسائل واتساب تلقائية لكل اللي سجّلوا. نفس الرسالة لكل الناس — حتى اللي ماطلبوش حاجة.",
+        "العملاء بيعملوا block. الرقم بيتبلّغ. سمعتك بتتأثر.",
+        "واتساب قناة شخصية — الأوتوميشن لازم يخدم مش يزعج. ثقة + موافقة + رد مفيد = شغل. سبام = خسارة.",
+      ],
+    },
+  },
+  {
+    icon: Lightbulb,
+    eyebrow: "الفكرة الأساسية",
+    title: "رد آلي مفيد + تحويل لبشري لما محتاج",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "واتساب automation مناسب لـ: تأكيد طلب، إجابة FAQ، تذكير موعد، متابعة lead سجّل بنفسه.",
+        "العميل يبدأ أو يوافق — مش إنت اللي تبعت لكل الناس من غير سبب.",
+        "الـ Flow: رسالة واردة → فهم النية → رد مناسب → لو معقّد: تحويل لموظف.",
+        "كل رسالة تحدّث سياق المحادثة — مش رسالة معزولة من غير ذاكرة.",
+      ],
+    },
+  },
+  {
+    icon: Scale,
+    eyebrow: "مثال من الحياة",
+    title: "بث جماعي vs محادثة بموافقة",
+    block: {
+      kind: "comparison",
+      left: {
+        label: "بث من غير سبب",
+        body: "نفس العرض لـ ٥٠٠ رقم. محدش طلب. block وبلاغات. الرقم يتحظر.",
+      },
+      right: {
+        label: "رد بعد اهتمام",
+        body: "العميل سجّل أو بعت الأول. رد تأكيد + إجابة سؤاله. لو طلب «أكلم حد» → تحويل فوري لموظف.",
+      },
+    },
+  },
+  {
     icon: BookOpen,
-    eyebrow: "مصطلحات الدرس",
-    title: "اللي هتسمعه في الدرس ده",
+    eyebrow: "كلمتين بس",
+    title: "مصطلحين لواتساب",
     block: {
       kind: "concepts",
       items: [
-        { term: "Webhook", meaning: "زي \"مخبر\" بيبلغ برنامجك أول ما حاجة تحصل على واتساب.", example: "لو زبون بعت \"السعر كام\"، الـ Webhook يروح يبلغ البرنامج بتاعك فوراً عشان يرد عليه." },
-        { term: "Broadcast", meaning: "إرسال رسالة لواحدة لمجموعة أرقام كبيرة في نفس الوقت.", example: "التاجر بيستخدمها عشان يبعت عروض العيد لكل الزباين اللي عنده في رسالة واحدة." },
-        { term: "Context Layer / Retrieval", meaning: "قدرة الذكاء الاصطناعي إنه يفتكر الكلام اللي دار بينك وبين الزبون.", example: "زي ما حد يبعتلك \"رقمك كام\" فترد عليه \"أنا قلتلك قبل كده إنه 010..\" عشان فاكر كلامه." },
-        { term: "Template Message", meaning: "رسالة جاهزة واتساب لازم يوافق عليها قبل ما تبعتها للناس.", example: "لو بعت رسالة \"تم الشحن\"، دي لازم واتساب يوافق عليها الأول." },
-        { term: "LLM Node (الرد الذكي)", meaning: "عقل الذكاء الاصطناعي اللي بيفهم الكلام وبيرد عليه من غير برمجة.", example: "صاحب محل هدوم بيستخدمها عشان يخلي البوت يرد كأنه بياع شاطر وفاهم الموضة." },
-        { term: "WhatsApp Cloud API", meaning: "طريقة رسمية وسهلة من شركة \"ميتا\" عشان تربط واتساب ببرنامجك.", example: "لو لسه بتبدأ وجربت الـ Cloud دي أرخص ومباشرة من غير وسيط." },
-        { term: "Twilio", meaning: "شركة وسيطة بتوفرلك أدوات احترافية لربط الواتساب والرسائل ببرامجك.", example: "شركات الشحن الكبيرة بتستخدمه عشان يربطوا رسايلهم بسيستم عالمي مضمون." },
+        {
+          term: "Consent (موافقة)",
+          meaning: "العميل بدأ التواصل أو وافق صراحة — مش إنت اللي بادئ من غير طلب.",
+          example: "ملّا فورم واختار «تواصلوا معايا على واتساب» = موافقة.",
+        },
+        {
+          term: "Handoff (تحويل)",
+          meaning: "لما الرد الآلي يوقف وموظف يكمل المحادثة — شرط واضح مش استثناء.",
+          example: "«عايز أكلم حد» أو «الشكوى معقّدة» → تحويل لخدمة العملاء.",
+        },
       ],
     },
   },
   {
     icon: PlayCircle,
     eyebrow: "فيديو الدرس",
-    title: "اتفرّج الأول",
+    title: "اتفرّج — واتساب بثقة",
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "إزاي تبني WhatsApp flow متكامل — من أول رسالة لآخر follow-up.",
-    },
-  },
-  {
-    icon: Lightbulb,
-    eyebrow: "الفكرة",
-    title: "الـ Flow الكامل",
-    block: {
-      kind: "numberedList",
-      items: [
-        "Trigger: رسالة واردة من عميل (Webhook من WhatsApp Business API).",
-        "Filter: رسالة spam بتترمي، رسالة معتمدة بتكمل.",
-        "Router: صنّف النية — استفسار / شكوى / شراء / متابعة.",
-        "LLM Node: صياغة رد مناسب لو ردّ فوري.",
-        "Action: حفظ في CRM، تنبيه فريق، ردّ تلقائي، أو تحويل لـ human.",
-      ],
+      caption:
+        "إزاي تبني flow واتساب يرد بفايدة ويحوّل لبشري لما محتاج. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
     },
   },
   {
     icon: ImageIcon,
-    eyebrow: "شوف بنفسك",
-    title: "Context Layer بتاعنا",
+    eyebrow: "لقطة بصرية",
+    title: "مسار الرسالة للرد للتحويل",
     tone: "primary",
     block: {
       kind: "screenshot",
       src: automatorM5WhatsappFlowScreenshot,
-      alt: "سكرين شوت من المنصة",
+      alt: "مخطط يوضح flow واتساب من استقبال الرسالة للرد أو التحويل لموظف.",
       caption:
-        "المنصة بتعتمد على Context Layer عشان تفهم كل interaction. نفس الفكرة في WhatsApp: كل رسالة لازم يكون وراها context (من العميل ده، إيه اللي تناقشنا فيه، إيه stage بتاعه). الـ automation بيعمل retrieval من CRM الأول قبل ما يرد.",
-      label: "من المنصة — صفحة /operational-layers",
-    },
-  },
-  {
-    icon: Scale,
-    eyebrow: "Failure × Right",
-    title: "Broadcast vs Conversation",
-    block: {
-      kind: "comparison",
-      left: {
-        label: "FAILURE — بتهاجم الناس بـ broadcast",
-        body: "بتبعت نفس الرسالة لـ 500 واحد من غير ما يكونوا طلبوا حاجة. WhatsApp بيبلّغك. الناس بيبلّغوا. الرقم بيتحظر.",
-      },
-      right: {
-        label: "RIGHT — Conversation بعد consent",
-        body: "العميل ملّأ form أو ابعت رسالة الأول. ردّك تلقائي بس مفيد. كل رسالة جاية بتعمل update للـ context. العميل بيفضل موجود عشان المحادثة بتتكيّف معاه.",
-      },
+        "رسالة واردة → فهم → رد أو تحويل. السياق محفوظ عشان الرد يكون مناسب مش عام.",
+      label: "automator-m6-l2-whatsapp-flow",
     },
   },
   {
     icon: Rocket,
-    eyebrow: "دورك دلوقتي",
-    title: "ارسم WhatsApp Flow على ورقة",
+    eyebrow: "تأكيد سريع",
+    title: "سؤال واحد — مش امتحان",
     tone: "accent",
     block: {
       kind: "quiz",
@@ -109,92 +129,61 @@ export const AUTOMATOR_M6_L2_WHATSAPP_FLOW_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "عميل بعت رسالة: 'عايز أطلب منتج معين رقم (أ)، ممكن؟'. إيه أول خطوة الـ WhatsApp Flow الذكي المفروض يعملها بعد ما يستقبل الرسالة دي؟",
+          question:
+            "عميل بعت «عايز أتكلم مع حد» بعد ما البوت رد على سؤال بسيط. أحسن تصرف؟",
           options: [
-            "يصنّف الرسالة ويشوف نية العميل (Router).",
-            "يبعتله رد آلي بـ 'مرحباً بك'.",
-            "يحوّل المحادثة لموظف خدمة عملاء."
+            "البوت يكمل يحاول يجاوب من FAQ.",
+            "تحويل فوري لموظف — ده شرط handoff واضح.",
+            "تبعتله رسالة «انتظر ٢٤ ساعة».",
           ],
-          correctIndex: 0,
-          explanation: "أول خطوة بعد استلام أي رسالة هي تصنيف نية العميل (Router) عشان السيستم يعرف يتصرف صح، زي ما وضحنا في فكرة 'صنّف النية'."
+          correctIndex: 1,
+          explanation:
+            "طلب التحدث مع حد = handoff. الأوتوميشن خدم — والبشري يكمل لما العميل يطلب.",
         },
-        {
-          id: "apply2",
-          bloom: "apply",
-          question: "عميل بعت رسالة: 'فين طلبيتي؟'. لو السيستم لقى إن العميل ده ليه طلب سابق وعايز يعرف حالته، إيه الإجراء المناسب اللي ممكن يعمله الـ 'Action' Node؟",
-          options: [
-            "يرد عليه بـ Template Message فيها تفاصيل تتبع الطلب.",
-            "يسجل الرسالة دي في CRM على إنها شكوى.",
-            "يعمل Broadcast لكل العملاء بتوع المتابعة."
-          ],
-          correctIndex: 0,
-          explanation: "في حالة السؤال عن الطلبية، الـ Action Node ممكن يستخدم Template Message جاهزة عشان يرد بتفاصيل تتبع الطلب، وده يعتبر رد تلقائي فعال زي ما ذكرنا في 'Action: ردّ تلقائي'."
-        },
-        {
-          id: "apply3",
-          bloom: "apply",
-          question: "لو عميل بعت رسالة 'إيه أسعاركم؟' والـ WhatsApp Flow بتاعك مبرمج إنه يرد بـ List Message فيها كل الأسعار. تصنيف الرسالة دي بيقع تحت أي مصطلح من المصطلحات اللي اتكلمنا عليها؟",
-          options: [
-            "Interactive Message.",
-            "Template Message.",
-            "Broadcast."
-          ],
-          correctIndex: 0,
-          explanation: "الـ List Message اللي فيها اختيارات تعتبر نوع من أنواع الـ Interactive Message، ودي رسالة فيها أزرار أو قائمة زي ما وضحنا في المصطلحات."
-        }
-      ]
+      ],
     },
   },
   {
     icon: Rocket,
-    eyebrow: "Mission",
-    title: "صمّم WhatsApp flow بـ ٣ branches",
-    tone: "primary",
+    eyebrow: "مهمتك",
+    title: "flow رد آلي + شرط تحويل",
+    tone: "accent",
     block: {
       kind: "mission",
       intro:
-        "WhatsApp = القناة الأقرب للعميل. هتصمم flow بـ trigger + router + ٣ ردود مختلفة حسب نية الرسالة.",
+        "المهمة تصميم محادثة واحدة — مش بناء API. اختار سيناريو عندك (تأكيد، FAQ، متابعة) وحدّد الرد الآلي وإمتى يتحوّل لبشري.\n\nمش مطلوب ربط تقني — مطلوب flow واضح بشرط handoff.",
       prompt:
-        "في تسليمك:\n\n١) Use case + الـ Bot هيتعامل مع إيه؟\n٢) Trigger — إزاي بتستقبل الرسالة (WhatsApp Cloud API / Twilio / أداة)?\n٣) Intent detection — إزاي بتعرف نية الرسالة؟ (Keywords / LLM classifier)\n٤) Branch 1 — Greeting → رد:\n٥) Branch 2 — Question عن منتج → رد:\n٦) Branch 3 — يطلب مساعدة بشري → escalation:\n٧) Memory — الـ Bot بيتذكر الـ conversation context إزاي؟",
-      buttonLabel: "انسخ التعليمات",
-      copiedLabel: "اتنسخ",
+        "في تسليمك اكتب:\n\n١) السيناريو: [تأكيد طلب / FAQ / …]\n٢) الرسالة اللي تبدأ الـ Flow: [مثال من العميل]\n٣) الرد الآلي: [إيه بيقوله البوت]\n٤) شرط التحويل: [إمتى يتحوّل لموظف؟]\n٥) مين يستلم التحويل؟\n\n+ جملة: إزاي بتضمن إن العميل حسّ إنه مش سبام؟",
+      buttonLabel: "انسخ خطوات المهمة",
+      copiedLabel: "اتنسخت ✓",
+      template:
+        "السيناريو:\n[…]\n\nرسالة العميل:\n[مثال]\n\nالرد الآلي:\n[نص أو ملخص]\n\nشرط التحويل:\n[متى + ليه]\n\nيستلم التحويل:\n[مين]\n\nضد السبام:\n[جملة واحدة]",
       rubric: [
         {
-          label: "Flow + ٣ branches",
+          label: "Flow واضح",
           weight: 60,
-          criteria: [
-            "Intent detection بآلية محددة.",
-            "الـ ٣ branches بـ ردود فعلية مختلفة.",
-          ],
+          criteria: ["سيناريو + رد آلي + شرط تحويل محدد."],
         },
         {
-          label: "Escalation + Memory",
+          label: "ثقة وموافقة",
           weight: 40,
-          criteria: [
-            "Escalation بـ trigger محدد + شخص محدد.",
-            "Memory بآلية حقيقية مش «هيفتكر».",
-          ],
+          criteria: ["واضح إزاي العميل بدأ أو وافق — مش بث عشوائي."],
         },
       ],
     },
   },
   {
-    icon: FlaskConical,
-    eyebrow: "جزء من المنصة",
-    title: "Assistant flow في /ai-assistant = same idea",
+    icon: CheckCircle2,
+    eyebrow: "خلّصت واتساب",
+    title: "إيه اللي عندك دلوقتي؟",
     tone: "primary",
     block: {
-      kind: "caseStudy",
-      title: "Assistant flow في /ai-assistant = same idea",
-      summary:
-        "الجزء ده من المنصة اتبنى بمسار Automator — نفس اللي بتتعلمه. بدل WhatsApp، عندنا في-app messaging مع الـ assistant. State بيتحفظ في session. ولو سألت سؤال ورجعت بعد ساعة، بيفتكر إنت إيه آخر سؤال سألته. نفس الـ stateful flow.",
-      bullets: [
-        "Session state في assistant-session-store.",
-        "كل سؤال + رد بيتخزّن مع timestamp.",
-        "تقدر ترجع لـ thread قديم في أي وقت.",
+      kind: "paragraphs",
+      paragraphs: [
+        "فهمت إيه؟ واتساب automation مفيد بثقة وموافقة — مش بث مزعج.",
+        "تقدر تعمل إيه؟ عندك flow رد آلي واحد بشرط تحويل لبشري.",
+        "اللي جاي: Follow-up — المتابعة اللي بتضيع فيها المبيعات.",
       ],
-      pathAngle: "automator",
-      link: { label: "افتح /ai-assistant", href: "/ai-assistant" },
     },
-  }
+  },
 ];

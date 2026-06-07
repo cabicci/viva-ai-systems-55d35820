@@ -1,132 +1,126 @@
 import {
-  Bot,
+  Sparkles,
+  AlertCircle,
   PlayCircle,
   Lightbulb,
-  Image as ImageIcon,
   Scale,
   Rocket,
   BookOpen,
-  Link2, FlaskConical } from "lucide-react";
+  CheckCircle2,
+  Image as ImageIcon,
+} from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 import automatorM4AgentsScreenshot from "@/assets/lessons/unique/automator-m5-l3-agents.jpg";
-/**
- * Automator · M4 · Lesson 03 — Agents بياخدوا قرارات
- */
+
+/** Automator · M5 · Agents بياخدوا قرارات (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M5_L3_AGENTS_BLOCKS: IntroLessonContent = [
   {
-    icon: Lightbulb,
-    eyebrow: "اختياري — للمتقدمين",
-    title: "لو هدفك استخدام AI في شغلك فقط، تقدر تعدّي الدرس ده بأمان",
-    tone: "accent",
-    block: {
-      kind: "paragraphs",
-      paragraphs: [
-        "الدرس ده فيه مفاهيم تقنية للناس اللي شغّالة فعلاً على n8n. لو لسه بتتعلم الأساسيات، تقدر تعدّيه دلوقتي وترجعله بعدين — مش هيأثر على باقي رحلتك.",
-        "لو فعلًا عايز تبني — يلا نكمل.",
-      ],
-    },
-  },
-  {
-    icon: Bot,
-    eyebrow: "HERO",
-    title: "Agents بياخدوا قرارات",
+    icon: Sparkles,
+    eyebrow: "بداية الدرس",
+    title: "هتفهم إيه النهاردة؟",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "Workflow بينفّذ خطوات معروفة.",
-        "Agent بيقرّر هو الخطوة الجاية إيه.",
+        "هتفهم إيه؟ الـ Agent يختار الخطوات نحو هدف — بس محتاج حدود وأدوات محددة عشان يفضل آمن.",
+        "ليه دلوقتي؟ بعد LLM وRAG، الخطوة الجاية لما المسار مش ثابت — والقرار لازم يتخذ جوه السير.",
+        "هتعمل إيه بعد الدرس؟ هتحدّد هدف agent آمن، الأدوات المسموحة، وحد واحد يمنعه يعدّي الخط.",
       ],
     },
   },
   {
-    icon: Link2,
-    eyebrow: "🔗 ربط بـ Builder M9",
-    title: "نفس فكرة الـ Agent — بس في n8n",
+    icon: AlertCircle,
+    eyebrow: "موقف مألوف",
+    title: "الرد الآلي عمل حاجة ماحدش طلبها",
+    tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "Builder M9 بيشرح إن Agent = LLM + Tools + Loop. نفس المعادلة هنا.",
-        "الفرق: n8n عنده AI Agent node جاهز بيعمل الـ loop لوحده. إنت بتعرّفله الـ tools (HTTP، DB query، send WhatsApp) ويتصرّف.",
-        "لو ما تعرّضتش لمسار Builder قبل كده: Agent في سطر = AI بياخد قرار يستخدم أنهي أداة ومتى، بدل ما إنت تحدّد كل خطوة. الفكرة بسيطة، التطبيق بقى لعبة.",
+        "شغّلت «مساعد ذكي» يتعامل مع شكاوى العملاء. يوم واحد بعت رسائل تأكيد لكل العملاء — حتى اللي ماشتكاش.",
+        "أو: دخل في حلقة — بيبعت ويبعت من غير ما يوصل لحل.",
+        "المشكلة مش الذكاء — المشكلة غياب الحدود. Agent بدون هدف واضح وأدوات محدودة = مخاطرة على شغلك وسمعتك.",
       ],
+    },
+  },
+  {
+    icon: Lightbulb,
+    eyebrow: "الفكرة الأساسية",
+    title: "Workflow ثابت vs Agent يختار الخطوة",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "Workflow عادي: أ → ب → ج. كل مرة نفس المسار. ممتاز للشغل المتكرر المعروف.",
+        "Agent: هدف + أدوات محددة. هو يقرر يستخدم أنهي أداة وبأي ترتيب — لحد ما يوصل للهدف أو يقف.",
+        "مناسب لما الطلبات مختلفة: شكوى تقنية، طلب تعديل، استفسار فاتورة — كل واحد محتاج خطوات مختلفة.",
+        "القاعدة: Agent ذكي + حدود واضحة + أدوات قليلة = آمن. Agent مفتوح = خطر.",
+      ],
+    },
+  },
+  {
+    icon: Scale,
+    eyebrow: "مثال من الحياة",
+    title: "Agent مفتوح vs Agent مضبوط",
+    block: {
+      kind: "comparison",
+      left: {
+        label: "بدون حدود",
+        body: "«حل مشكلة العميل» + كل الأدوات متاحة. ممكن يبعت رسائل لكل الناس، يدخل حلقة، أو ينفّذ إجراء غلط.",
+      },
+      right: {
+        label: "بحدود وأدوات",
+        body: "«صنّف الشكوى واقترح حل أو حوّل لموظف» + أدوات: قراءة CRM، بحث FAQ، إرسال مسودة رد. أي إرسال فعلي يحتاج موافقة.",
+      },
     },
   },
   {
     icon: BookOpen,
-    eyebrow: "مصطلحات الدرس",
-    title: "اللي هتسمعه في الدرس ده",
+    eyebrow: "كلمتين بس",
+    title: "مصطلحين للـ Agent",
     block: {
       kind: "concepts",
       items: [
-        { term: "JSON (فورمات البيانات)", meaning: "طريقة تنظيم البيانات عشان البرامج تفهمها وتبدلها مع بعض بسهولة.", example: "زي ورقة \"بيانات العميل\" اللي فيها (الاسم: فلان، المبلغ: 100) بس مكتوبة بشكل البرنامج بيفهمه ويطلعه في كشف الحساب." },
-        { term: "Arguments (المعطيات)", meaning: "المعلومات أو الأرقام اللي لازم تديها للأداة عشان تعرف تشتغل.", example: "لو عايز الـ Agent يحول فلوس، الـ Arguments هي (رقم الحساب والمبلغ)؛ دي \"البيانات\" اللي من غيرها المهمة مش هتكمل." },
-        { term: "Nodes (النقطة)", meaning: "محطة أو خطوة واحدة جوه \"خريطة الشغل\" اللي الـ Agent بيمشي عليها.", example: "لو بتعمل خريطة لرد آلي، أول Node هي \"استلام الرسالة\"، وتاني Node هي \"البحث في المخزن\". كل واحدة خطوة محددة." },
-        { term: "API / HTTP (الوصلة)", meaning: "وصلة \"سحرية\" بتخلي برنامجين مختلفين يبعتوا بيانات لبعض ويشتغلوا سوا.", example: "الـ API هو \"الفيشة\" اللي بتوصل موقع المحل ببرنامج الشحن عشان يبعتله بيانات الأوردرات أوتوماتيك." },
-        { term: "Tokens (تكلفة التشغيل)", meaning: "العملة اللي بتدفعها لشركة الـ AI مقابل كل كلمة بيكتبها أو بيقرأها.", example: "زي شحن العداد بالكارت؛ كل ما الـ Agent يفكر أو يرد على زبون بيخصم \"وحدات\" من الرصيد اللي إنت شاحنه." },
-        { term: "Tool (الأداة)", meaning: "مهمة أو وظيفة الـ Agent معاه صلاحية يفتحها ويستخدمها عشان يخلص شغله.", example: "زي ما بتدي \"الآلة الحاسبة\" للمحاسب عشان يجمع، إنت بتدي \"أداة بحث\" للـ Agent عشان يدور على الأسعار." },
-        { term: "Agent (الآجنت)", meaning: "موظف ذكي بيفكر ويستخدم أدوات عشان يوصل لهدف إنت محدده.", example: "محاسب آلي بتبعتله فواتيرك، بيفضل يراجعها ويستخدم \"آلة حاسبة\" لحد ما يخلص ميزانية الشهر لوحده." },
+        {
+          term: "Agent (وكيل)",
+          meaning: "نظام بياخد هدف ويختار خطوات وأدوات للوصول له — مش مسار ثابت مسبقًا.",
+          example: "«حل استفسار العميل» — يقرأ الرسالة، يبحث في FAQ، يقترح رد أو يحوّل لبشري.",
+        },
+        {
+          term: "Boundary (حد)",
+          meaning: "قاعدة توقّف الـ Agent عند حد معيّن — عدد خطوات، أدوات خارج النطاق، موافقة بشرية.",
+          example: "«مابعتش رسالة للعميل من غير موافقة» أو «أقصى ٥ خطوات وبعدين توقف».",
+        },
       ],
     },
   },
   {
     icon: PlayCircle,
     eyebrow: "فيديو الدرس",
-    title: "اتفرّج الأول",
+    title: "اتفرّج — Agent بحدود",
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "الفرق بين workflow ثابت و agent بياخد قرارات.",
-    },
-  },
-  {
-    icon: Lightbulb,
-    eyebrow: "الفكرة",
-    title: "Workflow vs Agent",
-    block: {
-      kind: "paragraphs",
-      paragraphs: [
-        "في الـ workflow العادي، إنت اللي بترتّب الخطوات: A → B → C. لو حصل حاجة برّه التوقّع، الـ scenario بيقف.",
-        "في الـ agent، إنت بتدّيله: هدف + مجموعة tools. هو اللي بيقرّر يستخدم أنهي tool وبأي ترتيب.",
-        "n8n عنده AI Agent node جاهز. بتعرّفله الـ tools (HTTP, DB query, send WhatsApp) وهو بيشتغل عليهم بناءً على الـ goal.",
-        "Agents مناسبة لما الخطوات مش ثابتة (دعم فني، research، تنفيذ طلبات معقّدة).",
-      ],
+      caption:
+        "الفرق بين سير ثابت وagent يختار الخطوات — وإزاي تحط حدود. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
     },
   },
   {
     icon: ImageIcon,
-    eyebrow: "شوف بنفسك",
-    title: "درس Agents في Builder",
+    eyebrow: "لقطة بصرية",
+    title: "هدف + أدوات + حدود",
     tone: "primary",
     block: {
       kind: "screenshot",
       src: automatorM4AgentsScreenshot,
-      alt: "سكرين شوت من المنصة",
+      alt: "مخطط يوضح agent بيهدف لهدف واحد بأدوات محدودة وحدود واضحة.",
       caption:
-        "في Builder M9 شفنا إن الـ Agent عبارة عن LLM + tools + loop. في Automator هتطبّق نفس الفكرة في n8n: نفس الـ pattern، بس بـ nodes بدل كود.",
-      label: "من المنصة — درس Agents في Builder",
-    },
-  },
-  {
-    icon: Scale,
-    eyebrow: "Failure × Right",
-    title: "Agent بدون حدود vs Agent مضبوط",
-    block: {
-      kind: "comparison",
-      left: {
-        label: "FAILURE — Agent مفتوح على آخره",
-        body: "بتدّيله access لكل الـ tools من غير قواعد. بيدخل loop لانهائي بيستدعي tools كل ثانية، بياكلك tokens، أو ممكن ينفّذ action ضارة (يبعت رسالة غلط لـ 1000 عميل).",
-      },
-        right: {
-          label: "RIGHT — Agent بحدود واضحة",
-          body: "بتحدّد: max steps = 10، tools محدودة (read only في الأول)، أي action تأثيرها كبير (send, delete, charge) بتمرّ على human approval. الـ agent ذكي بس مش طايش.",
-        },
+        "الثلاثية: هدف واحد واضح، أدوات قليلة مسموحة، حد يوقفه لو عدّى. من غيرها الـ Agent خطر.",
+      label: "automator-m5-l3-agents",
     },
   },
   {
     icon: Rocket,
-    eyebrow: "دورك دلوقتي",
-    title: "صمّم أول agent على ورقة",
+    eyebrow: "تأكيد سريع",
+    title: "سؤال واحد — مش امتحان",
     tone: "accent",
     block: {
       kind: "quiz",
@@ -135,92 +129,61 @@ export const AUTOMATOR_M5_L3_AGENTS_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "مدربك طلب منك تعمل أوتوميشن لموظف دعم فني بيستقبل شكاوى العملاء. الشكاوى دي ممكن تكون عن مشاكل تقنية، أو عايز يغيّر عنوانه، أو استفسار عن فاتورة. إنت هتقرّر هتستخدم Agent ولا workflow عادي؟",
+          question:
+            "شكاوى العملاء أنواعها كتير ومش كل شكوى نفس الخطوات. Workflow ثابت ولا Agent؟",
           options: [
-            "أستخدم Agent عشان أنواع الشكاوى كتير والخطوات مش ثابتة.",
-            "أستخدم workflow عادي عشان كل شكوى ليها خطوات محددة ومعروفة.",
-            "أستخدم workflow عادي بس أحط فيه شروط كتير عشان يغطي كل الاحتمالات."
-          ],
-          correctIndex: 0,
-          explanation: "الـ Agents مناسبة لما الخطوات مش ثابتة زي حالات الدعم الفني، لأن الـ Agent بيقرّر Tool المناسبة للتعامل مع الشكوى."
-        },
-        {
-          id: "apply2",
-          bloom: "apply",
-          question: "أحمد عايز يعمل أوتوميشن لعملية الـ Onboarding للموظفين الجداد. العملية دي ثابتة: بيبعت ميل ترحيب، بيضيفه على الـ HR system، وبيعمله account على سيستم الشركة. إيه الأنسب لعملية زي دي؟",
-          options: [
-            "Agent يقدر يختار الـ tools المناسبة للـ Onboarding.",
-            "Workflow عادي بيرتّب الخطوات A → B → C بشكل تسلسلي.",
-            "Agent بس هحطله شرط الموافقة البشرية على كل خطوة."
+            "Workflow ثابت بشروط كتير لكل احتمال.",
+            "Agent بهدف واضح وأدوات محددة وحد يمنع الإرسال بدون موافقة.",
+            "Agent مفتوح بكل الأدوات عشان يكون «ذكي».",
           ],
           correctIndex: 1,
-          explanation: "الـ Workflow العادي مناسب لما الخطوات معروفة وثابتة ومتوقعة، زي خطوات الـ Onboarding اللي ليها تسلسل محدد."
+          explanation:
+            "الشكاوى المتنوعة تحتاج قرار مرن — بس لازم حدود وأدوات محدودة. مفتوح = مخاطرة.",
         },
-        {
-          id: "apply3",
-          bloom: "apply",
-          question: "إنت شغال على Agent وطلب منك تدّيله 'Tools' معينة. إيه من اللي جاي ده يعتبر 'Tool' لـ Agent؟",
-          options: [
-            "الهدف اللي الـ Agent عايز يوصله.",
-            "إنه يقرّر يستدعى الـ 'Slack API' عشان يبعت رسالة.",
-            "الـ 'Loop' اللي الـ Agent بيعملها عشان يوصل للقرار."
-          ],
-          correctIndex: 1,
-          explanation: "الـ 'Tool' هي function/API الـ Agent مسموحله يستدعيها عشان ينفذ مهمة، زي استدعاء Slack API لإرسال رسالة."
-        }
-      ]
+      ],
     },
   },
   {
     icon: Rocket,
-    eyebrow: "Mission",
-    title: "صمّم Agent يقدر يستخدم ٢ tools في حلقة",
-    tone: "primary",
+    eyebrow: "مهمتك",
+    title: "هدف آمن + أدوات + حد واحد",
+    tone: "accent",
     block: {
       kind: "mission",
       intro:
-        "Agent في الـ workflow = LLM + memory + tools. هتصممه بحدود واضحة وstopping condition.",
+        "المهمة تصميم حماية — مش بناء agent. اختار شغل عندك فيه خطوات مش ثابتة وحدّد إزاي agent آمن يتعامل معاه.\n\nمش مطلوب كود — مطلوب هدف + أدوات مسموحة + حد واحد واضح.",
       prompt:
-        "في تسليمك:\n\n١) المهمة (مثال: customer support agent يحل مشكلة من ٣ tools):\n٢) System Prompt للـ agent (دور + متى يستخدم أنهي tool + حدود):\n٣) Tool 1: name + input/output + متى يستخدمه:\n٤) Tool 2: نفس الشكل\n٥) Memory — الـ agent بيتذكّر إيه بين الـ iterations؟\n٦) Stopping condition — إمتى يقف؟ (Max iterations / done flag / time)\n٧) Escalation — لو فشل، يحوّل لمين؟",
-      buttonLabel: "انسخ التعليمات",
-      copiedLabel: "اتنسخ",
+        "في تسليمك اكتب:\n\n١) الهدف: الـ Agent يعمل إيه بالظبط؟ (جملة واحدة)\n٢) أداة ١ مسموحة: [إيه بتعمل]\n٣) أداة ٢ مسموحة: [إيه بتعمل]\n٤) حد واحد: [إيه خارج النطاق أو إمتى يقف]\n٥) لو فشل أو عدّى الحد: [مين يستلم؟]\n\n+ جملة: ليه الحد ده مهم لشغلك؟",
+      buttonLabel: "انسخ خطوات المهمة",
+      copiedLabel: "اتنسخت ✓",
+      template:
+        "الهدف:\n[جملة واحدة]\n\nأداة ١:\n[اسم + وظيفة]\n\nأداة ٢:\n[اسم + وظيفة]\n\nالحد:\n[قاعدة واحدة واضحة]\n\nلو فشل:\n[تحويل لـ …]\n\nليه الحد مهم:\n[جملة واحدة]",
       rubric: [
         {
-          label: "Agent + Tools",
+          label: "هدف وأدوات",
           weight: 60,
-          criteria: [
-            "System Prompt فيه قاعدة اختيار tool واضحة.",
-            "Memory + iterations معرّفين.",
-          ],
+          criteria: ["هدف محدد + أداتين بوظيفة واضحة — مش «كل حاجة»."],
         },
         {
-          label: "Stop + Escalate",
+          label: "حد وتحويل",
           weight: 40,
-          criteria: [
-            "Stopping condition قابلة للقياس.",
-            "Escalation path مش «هيرسل إيميل».",
-          ],
+          criteria: ["حد قابل للتطبيق + مسار تحويل لو فشل."],
         },
       ],
     },
   },
   {
-    icon: FlaskConical,
-    eyebrow: "جزء من المنصة",
-    title: "المساعد = Agent بتتولّى قرارات tool selection",
+    icon: CheckCircle2,
+    eyebrow: "خلّصت Agents",
+    title: "إيه اللي عندك دلوقتي؟",
     tone: "primary",
     block: {
-      kind: "caseStudy",
-      title: "المساعد = Agent بتتولّى قرارات tool selection",
-      summary:
-        "الجزء ده من المنصة اتبنى بمسار Automator — نفس اللي بتتعلمه. المساعد مش workflow ثابت. بياخد قرار: «المستخدم بيسأل عن تقدّمه؟ هاستخدم get_user_progress. بيسأل عن مفهوم؟ هاستخدم search_knowledge». Agent مش flow.",
-      bullets: [
-        "Function calling في Gemini = Agent capability.",
-        "Tool registry محدّد في كود + descriptions واضحة.",
-        "كل tool call بيتسجّل في /assistant-runtime → Tools tab.",
+      kind: "paragraphs",
+      paragraphs: [
+        "فهمت إيه؟ الـ Agent يختار الخطوات — بس محتاج هدف وأدوات وحدود عشان يفضل آمن.",
+        "تقدر تعمل إيه؟ عندك تصميم agent آمن لشغل متكرر فيه مسارات مختلفة.",
+        "اللي جاي: Lead Capture — إزاي ماحدش مهتم يقع من الشبكة.",
       ],
-      pathAngle: "automator",
-      link: { label: "افتح /assistant-runtime", href: "/assistant-runtime" },
     },
-  }
+  },
 ];

@@ -51,6 +51,7 @@ import { AUTOMATOR_M3_L3_FILTERS_ROUTERS_BLOCKS } from "./automator-m3-l3-filter
 import { AUTOMATOR_M4_L1_CONNECT_DATABASE_BLOCKS } from "./automator-m4-l1-connect-database";
 import { AUTOMATOR_M4_L2_WEBHOOKS_API_BLOCKS } from "./automator-m4-l2-webhooks-api";
 import { AUTOMATOR_M4_L3_ERROR_HANDLING_BLOCKS } from "./automator-m4-l3-error-handling";
+import { AUTOMATOR_M3_TESTING_AUTOMATION_BLOCKS } from "./automator-m3-testing-automation";
 import { AUTOMATOR_M5_L1_LLM_IN_FLOW_BLOCKS } from "./automator-m5-l1-llm-in-flow";
 import { AUTOMATOR_M5_L2_RAG_IN_N8N_BLOCKS } from "./automator-m5-l2-rag-in-n8n";
 import { AUTOMATOR_M5_L3_AGENTS_BLOCKS } from "./automator-m5-l3-agents";
@@ -165,6 +166,7 @@ export const INTRO_LESSON_CONTENT: Record<string, IntroLessonContent> = {
   "automator-m4-l1-connect-database": AUTOMATOR_M4_L1_CONNECT_DATABASE_BLOCKS,
   "automator-m4-l2-webhooks-api": AUTOMATOR_M4_L2_WEBHOOKS_API_BLOCKS,
   "automator-m4-l3-error-handling": AUTOMATOR_M4_L3_ERROR_HANDLING_BLOCKS,
+  "automator-m3-testing-automation": AUTOMATOR_M3_TESTING_AUTOMATION_BLOCKS,
   "automator-m5-l1-llm-in-flow": AUTOMATOR_M5_L1_LLM_IN_FLOW_BLOCKS,
   "automator-m5-l2-rag-in-n8n": AUTOMATOR_M5_L2_RAG_IN_N8N_BLOCKS,
   "automator-m5-l3-agents": AUTOMATOR_M5_L3_AGENTS_BLOCKS,

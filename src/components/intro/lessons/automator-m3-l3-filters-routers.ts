@@ -1,104 +1,126 @@
 import {
-  GitBranch,
+  Sparkles,
+  AlertCircle,
   PlayCircle,
   Lightbulb,
-  Image as ImageIcon,
   Scale,
   Rocket,
-  BookOpen, FlaskConical } from "lucide-react";
+  BookOpen,
+  CheckCircle2,
+  Image as ImageIcon,
+} from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 import automatorM2FiltersRoutersScreenshot from "@/assets/lessons/unique/automator-m3-l3-filters-routers.jpg";
-/**
- * Automator · M2 · Lesson 03 — Filters & Routers
- */
+
+/** Automator · M3 · L3 — Filters & Routers (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M3_L3_FILTERS_ROUTERS_BLOCKS: IntroLessonContent = [
   {
-    icon: GitBranch,
-    eyebrow: "HERO",
-    title: "Filters & Routers",
+    icon: Sparkles,
+    eyebrow: "بداية الدرس",
+    title: "هتفهم إيه النهاردة؟",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "مش كل البيانات الجاية لازم تتعالج بنفس الطريقة.",
-        "هنا بييجي دور الفلاتر والمسارات.",
+        "هتفهم إيه؟ الأتمتة بتبقى مفيدة لما تختار المسار الصح حسب الشرط — مش لما كل حاجة تمشي في خط واحد.",
+        "ليه دلوقتي؟ بعد Triggers + Actions، محتاج تفرّق: استفسار سعر ≠ شكوى ≠ متابعة — وكل واحد ليه رد مختلف.",
+        "هتعمل إيه بعد الدرس؟ هتضيف if/then واحد لـ workflow بتاعك: لو [شرط] → [مسار أو فعل].",
       ],
     },
   },
   {
+    icon: AlertCircle,
+    eyebrow: "موقف مألوف",
+    title: "«نفس الرد لكل الرسائل» — والعميل زعل",
+    tone: "primary",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "عندك أوتوميشن بيرد على رسائل الواتساب. حد بيسأل عن السعر — جاله «شكرًا لتواصلك». حد بيشتكي — نفس الرد.",
+        "الشغل المتكرر مش المشكلة — المشكلة إن الـ workflow مفيهوش قرار: كل حاجة في نفس المسار.",
+        "العامل الافتراضي محتاج يعرف: إمتى أكمّل؟ إمتى أوقف؟ إمتى أروّح لمسار تاني؟ — ده شغل الفلتر والـ Router.",
+      ],
+    },
+  },
+  {
+    icon: Lightbulb,
+    eyebrow: "الفكرة الأساسية",
+    title: "Filter = بوّابة. Router = مفترق طرق",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "Filter: لو الشرط اتحقّق → البيانات تعدّي. لو لأ → الـ workflow يقف هنا. مثال: «لو فيه رقم تليفون → كمّل».",
+        "Router: نفس الـ trigger، بس بيتقسم على مسارات حسب الشرط. مثال: سعر → مسار مبيعات. شكوى → مسار دعم.",
+        "if/then واحد يغيّر تجربة العميل — من رد عام لرد مناسب للحالة.",
+        "ابدأ بشرط واحد واضح — مش ١٠ فروع من أول يوم.",
+      ],
+    },
+  },
+  {
+    icon: Scale,
+    eyebrow: "مثال من الحياة",
+    title: "مسار واحد vs مسار حسب الحالة",
+    block: {
+      kind: "comparison",
+      left: {
+        label: "مسار واحد لكل حاجة",
+        body: "كل lead ياخد نفس الإيميل والنفس الرد — العميل اللي بيشتكي يحس إنك مش سامعه.",
+      },
+      right: {
+        label: "if/then واحد",
+        body: "لو الرسالة فيها «سعر» → ابعت قائمة أسعار. غير كده → حوّل لدعم. كل حالة ردها مناسب.",
+      },
+    },
+  },
+  {
     icon: BookOpen,
-    eyebrow: "مصطلحات الدرس",
-    title: "اللي هتسمعه في الدرس ده",
+    eyebrow: "كلمتين بس",
+    title: "مصطلحين للمسارات",
     block: {
       kind: "concepts",
       items: [
-        { term: "Workflow (طريقة العمل)", meaning: "سلسلة خطوات ورا بعض بتخلص شغلانة معينة من غير تدخل منك.", example: "زي خطوات أوتوماتيكية بتبدأ من أول ما الزبون يطلب أوردر لحد ما يوصله تأكيد بالموبايل." },
-        { term: "Trigger (المُشغل)", meaning: "الشرارة أو \"الزناد\" اللي بيخلي الـ Workflow يبدأ يشتغل أوتوماتيك.", example: "لما يجيلك إيميل جديد (الزناد) السيستم يتحرك ويبدأ ينفذ الخطوات اللي إنت ظبطتها." },
-        { term: "Router (المُوزع)", meaning: "بوابة بتوزع الشغل على كذا طريق حسب شروط إنت اللي محددها.", example: "لو العميل من \"القاهرة\" ابعتله منديوب شحن كذا، لو من \"إسكندرية\" ابعت التاني." },
-        { term: "Filter (الفلتر)", meaning: "بوابة بتسمح للبيانات تعدي أو تترفض بناءً على شرط معين.", example: "لو العميل اشترى بأكتر من 1000 جنيه، دخلّه في مسار \"الخصم\"، غير كده وقّفه." },
-        { term: "Fallback Path (المسار الاحتياطي)", meaning: "الطريق الاحتياطي اللي البيانات بتمشي فيه لو مفيش أي شرط تاني نفع.", example: "عملت مَسارين للعملاء (VIP) و(جديد)، طب لو عميل مش متسجل؟ هيروح في \"الاحتياطي\"." },
-        { term: "Overlap (التداخل)", meaning: "لما البيانات ينطبق عليها أكتر من شرط في نفس الوقت وتمشي فيهم.", example: "لو العميل (VIP) وكمان (اشترى بـ 2000 جنيه)، كده الـ Router هيشغّل المسارين مع بعض." },
+        {
+          term: "Filter (فلتر)",
+          meaning: "بوّابة: الشرط اتحقّق → يعدّي. لأ → يقف.",
+          example: "لو مفيش إيميل في الفورم → ما تكمّلش التسجيل.",
+        },
+        {
+          term: "Router (موزّع)",
+          meaning: "مفترق طرق: نفس الـ trigger، مسارات مختلفة حسب الشرط.",
+          example: "VIP → رسالة خاصة. عميل جديد → رسالة ترحيب.",
+        },
       ],
     },
   },
   {
     icon: PlayCircle,
     eyebrow: "فيديو الدرس",
-    title: "اتفرّج الأول",
+    title: "اتفرّج — Filter vs Router",
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "الفرق بين Filter و Router وإمتى تستخدم كل واحد.",
-    },
-  },
-  {
-    icon: Lightbulb,
-    eyebrow: "الفكرة",
-    title: "Filter = بوّابة. Router = مفترق طرق",
-    block: {
-      kind: "paragraphs",
-      paragraphs: [
-        "Filter بيشتغل كبوّابة: لو الشرط اتحقّق، البيانات بتعدّي. لو لأ، الـ workflow بيقف هنا.",
-        "مثال: 'لو الرسالة فيها كلمة سعر → كمّل. غير كده → اوقف'.",
-        "Router بيشتغل كمفترق طرق: نفس الـ trigger، بس بيتقسم على مسارات مختلفة حسب الشرط.",
-        "مثال: لو العميل من مصر → ابعت رد بالعربي + سعر بالجنيه. لو من السعودية → عربي + ريال. غير كده → إنجليزي + دولار.",
-      ],
+      caption:
+        "إزاي تضيف if/then لـ workflow — متى Filter ومتى Router. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
     },
   },
   {
     icon: ImageIcon,
-    eyebrow: "شوف بنفسك",
-    title: "Onboarding في المنصة",
+    eyebrow: "شوفها ببساطة",
+    title: "نفس الـ trigger — مسارات مختلفة",
     tone: "primary",
     block: {
       kind: "screenshot",
       src: automatorM2FiltersRoutersScreenshot,
-      alt: "سكرين شوت من المنصة",
+      alt: "مثال على Router بيوزّع حسب الاختيار",
       caption:
-        "صفحة الـ /onboarding دي عبارة عن router بالظبط: لو المستخدم اختار Creator → خد المسار ده. اختار Builder → مسار تاني. اختار Automator → مسار ثالث. نفس الـ trigger (المستخدم لسه داخل)، بس Routes مختلفة حسب القرار.",
-      label: "من المنصة — صفحة /onboarding",
-    },
-  },
-  {
-    icon: Scale,
-    eyebrow: "Failure × Right",
-    title: "إمتى Filter وإمتى Router",
-    block: {
-      kind: "comparison",
-      left: {
-        label: "FAILURE — workflow واحد لكل الحالات",
-        body: "بتعمل scenario واحد بيتعامل مع كل الـ leads بنفس الطريقة — حد بيسأل عن السعر زي حد بيشتكي زي حد بيعمل follow-up. الردود بتطلع غريبة وعامة.",
-      },
-      right: {
-        label: "RIGHT — Router بيوزّع، Filter بينضّف",
-        body: "Filter في الأول بيرمي spam. Router بعد كده بيوزّع: استفسار سعر → مسار المبيعات. شكوى → مسار الدعم. متابعة → مسار CRM. كل حالة بتاخد رد مناسب ليها.",
-      },
+        "نفس الحدث (مستخدم دخل) — بس المسار بيتغيّر حسب الاختيار. نفس الفكرة في شغلك: lead جديد → مسار. شكوى → مسار تاني.",
+      label: "Router — شرط واحد يحدّد المسار",
     },
   },
   {
     icon: Rocket,
-    eyebrow: "دورك دلوقتي",
-    title: "ارسم Router لـ leads بتاعتك",
+    eyebrow: "تأكيد سريع",
+    title: "سؤال واحد — مش امتحان",
     tone: "accent",
     block: {
       kind: "quiz",
@@ -107,92 +129,67 @@ export const AUTOMATOR_M3_L3_FILTERS_ROUTERS_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "مدير الماركتنج في شركتك عايز يعمل أوتوميشن لإيميلات العملاء. لو العميل اشترى منتج غالي (فوق 5000 جنيه)، يجيله إيميل شكر خاص من المدير. أما لو اشترى منتج عادي (5000 جنيه أو أقل)، يجيله إيميل شكر أوتوماتيكي عادي. إيه الأسلوب الأنسب عشان تحقق ده؟",
+          question:
+            "عميل اشترى فوق ٥٠٠٠ جنيه → إيميل شكر خاص. تحت ٥٠٠٠ → إيميل عادي. إيه الأنسب؟",
           options: [
-            "أستخدم Router يفرّق بين قيمة الشراء.",
-            "أستخدم Filter يوقّف الإيميلات للعملاء العاديين.",
-            "أستخدم Filter يوقّف الإيميلات للعملاء اللي اشتروا منتجات غالية."
+            "Router يفرّق حسب قيمة الشراء — مسارين مختلفين.",
+            "Filter يوقّف الإيميلات للعملاء العاديين.",
+            "مسار واحد للكل — الإيميل واحد.",
           ],
           correctIndex: 0,
-          explanation: "الـ Router هو الأنسب هنا لأننا محتاجين نوجه البيانات لمسارين مختلفين (إيميل خاص أو إيميل عادي) بناءً على شرط واحد وهو قيمة الشراء، ومفيش حاجة هتتوقف."
+          explanation:
+            "محتاج مسارين مختلفين حسب الشرط — ده Router. Filter يوقّف أو يمرّر، مش يوزّع.",
         },
-        {
-          id: "apply2",
-          bloom: "apply",
-          question: "تطبيق مطعم عايز يتأكد إن كل الأوردرات الجديدة اللي بتوصل فيها رقم تليفون العميل عشان يقدروا يوصلوا ليه. لو مفيش رقم تليفون، الأوردر المفروض ميتعديش مرحلة الدفع وتظهر رسالة للعميل. إيه الأداة اللي تحقق الشرط ده بكفاءة؟",
-          options: [
-            "أستخدم Router يوجّه الأوردرات اللي فيها رقم تليفون لمسار واللي مفيهوش لمسار تاني.",
-            "أستخدم Filter يمنع الأوردرات اللي مفيهوش رقم تليفون من إنها تكمل.",
-            "أضيف Fallback Path عشان الأوردرات اللي مفيهوش رقم تليفون."
-          ],
-          correctIndex: 1,
-          explanation: "الـ Filter هو الأداة المثالية هنا لأنه بيشتغل كبوّابة: لو الشرط (وجود رقم تليفون) اتحقّق، الأوردر بيكمل. لو لأ، الـ workflow بيقف عند النقطة دي."
-        },
-        {
-          id: "apply3",
-          bloom: "apply",
-          question: "أنت بتدير خدمة عملاء أوتوماتيكية للرد على استفسارات العملاء. لو العميل سأل عن 'أسعار المنتجات'، السيستم يرد بقائمة الأسعار. لو سأل عن 'طرق الدفع'، السيستم يرد بطرق الدفع. لو استفساره مش من الاتنين دول، السيستم يحوله لدعم فني. إيه أفضل طريقة لتصميم الـ workflow ده؟",
-          options: [
-            "أستخدم 3 Filters كل واحد بيشوف نوع الاستفسار.",
-            "أستخدم Router بـ 3 مسارات: مسار للأسعار، مسار لطرق الدفع، ومسار Fallback للدعم الفني.",
-            "أستخدم Filter واحد بيوقف كل الاستفسارات اللي مش عن الأسعار والدفع."
-          ],
-          correctIndex: 1,
-          explanation: "الـ Router هو الأنسب لأنه بيسمح للبيانات تتقسم على أكتر من مسار حسب شرط (نوع الاستفسار) مع وجود Fallback Path للحالات اللي مفيش ليها مسار محدد، وهو ده مفهوم نقطة التفرّع."
-        }
-      ]
+      ],
     },
   },
   {
     icon: Rocket,
-    eyebrow: "Mission",
-    title: "صمّم Router بـ ٣ Branches لـ Workflow",
-    tone: "primary",
+    eyebrow: "مهمتك",
+    title: "ضيف if/then واحد لـ workflow",
+    tone: "accent",
     block: {
       kind: "mission",
       intro:
-        "Router = القرار في الـ workflow. هتاخد use case وتصمم ٣ branches بـ conditions واضحة.",
+        "المهمة دي تصميم — مش بناء إلزامي. اختار workflow متكرر عندك وضيف شرط واحد يغيّر المسار أو يوقف التنفيذ.\n\nممكن الـ AI يقترح صياغة — إنت تختار النهائي.",
       prompt:
-        "في تسليمك:\n\n١) الـ Use case (مثال: routing رسايل WhatsApp حسب النوع):\n٢) Router conditions:\n   - Branch 1: condition + action:\n   - Branch 2: condition + action:\n   - Branch 3 (default/fallback): condition + action:\n٣) لو رسالة جت بتطابق branch 1 و branch 2 — أنهي يفوز؟ كتبت قاعدة الـ precedence إزاي؟\n٤) Test cases — اكتب ٣ inputs مختلفة + أنهي branch هتتطابق مع كل واحد.",
-      buttonLabel: "انسخ التعليمات",
-      copiedLabel: "اتنسخ",
+        "في تسليمك اكتب:\n\n١) الـ Workflow (سطر — إيه الشغل المتكرر):\n٢) الـ Trigger (إيه اللي بيبدّي الشغل):\n٣) if/then واحد:\n   - الشرط (if):\n   - المسار أو الفعل (then):\n   - وإلا (else) — لو فيه:\n٤) مثال input واحد لكل مسار:",
+      buttonLabel: "انسخ خطوات المهمة",
+      copiedLabel: "اتنسخت ✓",
+      template:
+        "Workflow:\n[الشغل المتكرر — مثال: رد على رسائل واتساب]\n\nTrigger:\n[إيه اللي بيبدّي — مثال: رسالة واتساب جديدة]\n\nif/then:\nif [الشرط — مثال: الرسالة فيها كلمة «سعر»]\nthen [المسار — مثال: ابعت قائمة أسعار]\nelse [بديل — مثال: حوّل لدعم فني]\n\nأمثلة:\n- Input: «عايز أعرف السعر» → [أنهي مسار]\n- Input: «الطلب متأخر» → [أنهي مسار]",
       rubric: [
         {
-          label: "Router + branches",
-          weight: 60,
+          label: "شرط واضح",
+          weight: 50,
           criteria: [
-            "٣ branches بـ conditions منفصلة فعلاً.",
-            "فيه fallback/default branch.",
+            "if/then واحد محدّد — مش كلام عام.",
+            "الشرط قابل للاختبار (نعم/لأ).",
           ],
         },
         {
-          label: "Precedence + Tests",
-          weight: 40,
+          label: "مسارات مختلفة",
+          weight: 50,
           criteria: [
-            "قاعدة الـ precedence واضحة للـ overlaps.",
-            "الـ ٣ test cases مغطّيين الـ branches الـ ٣.",
+            "then وelse بيعملوا حاجة مختلفة فعلًا.",
+            "مثال input لكل مسار.",
           ],
         },
       ],
     },
   },
   {
-    icon: FlaskConical,
-    eyebrow: "جزء من المنصة",
-    title: "Filters في كل query — مش كل البيانات لكل request",
+    icon: CheckCircle2,
+    eyebrow: "خلّصت المسارات",
+    title: "إيه اللي عندك دلوقتي؟",
     tone: "primary",
     block: {
-      kind: "caseStudy",
-      title: "Filters في كل query — مش كل البيانات لكل request",
-      summary:
-        "الجزء ده من المنصة اتبنى بمسار Automator — نفس اللي بتتعلمه. لما /dashboard بيطلب lesson_progress، مش بيجيب كل التقدّم لكل المستخدمين. RLS + WHERE clauses بتفلتر للـ user الحالي بس. ده الـ Filter في أبسط صوره.",
-      bullets: [
-        "RLS policy = filter تلقائي على مستوى الـ DB.",
-        "WHERE user_id = auth.uid() في كل query.",
-        "بدون filters: 1000 صف. مع filters: 50 صف — أسرع 20 مرة.",
+      kind: "paragraphs",
+      paragraphs: [
+        "فهمت إيه؟ الأتمتة بتبقى أذكى لما تختار المسار حسب الشرط — Filter يوقف أو يمرّر، Router يوزّع.",
+        "تقدر تعمل إيه؟ عندك if/then واحد جاهز تضيفه لـ workflow حقيقي.",
+        "اللي جاي: ربط الـ DB — لما الأتمتة تحفظ بيانات منظمة مش بس ترد.",
       ],
-      pathAngle: "automator",
-      link: { label: "افتح /dashboard", href: "/dashboard" },
     },
-  }
+  },
 ];

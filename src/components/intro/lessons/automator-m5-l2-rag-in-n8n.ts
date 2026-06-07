@@ -1,131 +1,126 @@
 import {
-  BookMarked,
+  Sparkles,
+  AlertCircle,
   PlayCircle,
   Lightbulb,
-  Image as ImageIcon,
   Scale,
   Rocket,
   BookOpen,
-  Link2, FlaskConical } from "lucide-react";
+  CheckCircle2,
+  Image as ImageIcon,
+} from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
 import automatorM4RagInN8NScreenshot from "@/assets/lessons/unique/automator-m5-l2-rag-in-n8n.jpg";
-/**
- * Automator · M4 · Lesson 02 — RAG جوه الـ Automation
- */
+
+/** Automator · M5 · RAG جوه الـ Automation (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M5_L2_RAG_IN_N8N_BLOCKS: IntroLessonContent = [
   {
-    icon: Lightbulb,
-    eyebrow: "اختياري — للمتقدمين",
-    title: "لو هدفك استخدام AI في شغلك فقط، تقدر تعدّي الدرس ده بأمان",
-    tone: "accent",
-    block: {
-      kind: "paragraphs",
-      paragraphs: [
-        "الدرس ده فيه مفاهيم تقنية للناس اللي شغّالة فعلاً على n8n. لو لسه بتتعلم الأساسيات، تقدر تعدّيه دلوقتي وترجعله بعدين — مش هيأثر على باقي رحلتك.",
-        "لو فعلًا عايز تبني — يلا نكمل.",
-      ],
-    },
-  },
-  {
-    icon: BookMarked,
-    eyebrow: "HERO",
-    title: "RAG جوه الـ Workflow",
+    icon: Sparkles,
+    eyebrow: "بداية الدرس",
+    title: "هتفهم إيه النهاردة؟",
     tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "الـ LLM لوحده مش عارف منتجك.",
-        "RAG بيخلّيه يرد من معرفتك إنت.",
+        "هتفهم إيه؟ RAG يخلي الأوتوميشن يجاوب من معرفتك — أسئلة شائعة، أسعار، سياسات — مش من تخمين.",
+        "ليه دلوقتي؟ بعد ما عرفت تضيف خطوة AI، محتاج تضمن إن الردود مبنية على بياناتك مش على خيال الموديل.",
+        "هتعمل إيه بعد الدرس؟ هتختار مصدر FAQ أو مستند واحد تربطه بالأوتوميشن.",
       ],
     },
   },
   {
-    icon: Link2,
-    eyebrow: "🔗 ربط بـ Builder M9",
-    title: "نفس فكرة الـ RAG — بس بـ nodes",
+    icon: AlertCircle,
+    eyebrow: "موقف مألوف",
+    title: "البوت قال سعر غلط — والعميل صدّق",
+    tone: "primary",
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "لو سبق ودخلت Builder M9، الـ pipeline معروف: Embeddings → Vector Search → LLM Call. نفس الـ 3 خطوات هنا بالظبط.",
-        "الفرق: في Builder بتكتب الكود اللي بيعمل الـ pipeline. هنا بتسحب 3 nodes جاهزين في n8n وتربطهم.",
-        "لو ما تعرّضتش لمسار Builder قبل كده: RAG في جملة = الـ AI يرد من معرفتك إنت (FAQs، مستندات) مش من معرفته العامة. اقرا الباراجراف اللي تحت يكفّيك للدرس.",
+        "شغّلت رد آلي ذكي على استفسارات العملاء. عميل سأل «سعر الباقة الذهبية؟» — البوت رد برقم من عنده.",
+        "الرقم غلط. العميل زعل أو اشترى بتوقعات غلط. إنت بتصلّح يدوي وبتعتذر.",
+        "المشكلة: الـ AI بيجاوب من معرفة عامة مش من ملفاتك. RAG بيحل ده — يبحث في مصادرك الأول وبعدين يكتب الرد.",
       ],
+    },
+  },
+  {
+    icon: Lightbulb,
+    eyebrow: "الفكرة الأساسية",
+    title: "RAG = ابحث في معرفتك — وبعدين اكتب الرد",
+    block: {
+      kind: "paragraphs",
+      paragraphs: [
+        "بدون RAG: السؤال → AI → رد من تخمين. ممكن يكون صح — وممكن يخترع.",
+        "مع RAG: السؤال → بحث في FAQs/مستنداتك → أهم المقتطفات + السؤال → AI يكتب رد مبني على المصدر.",
+        "مرة واحدة: تجهّز مصادرك (أسئلة شائعة، قائمة أسعار، سياسة استرجاع).",
+        "كل سؤال: الأوتوميشن يسحب المقتطف المناسب ويرد منه — مش من فراغ.",
+      ],
+    },
+  },
+  {
+    icon: Scale,
+    eyebrow: "مثال من الحياة",
+    title: "تخمين vs رد من مصدرك",
+    block: {
+      kind: "comparison",
+      left: {
+        label: "AI بدون RAG",
+        body: "«إيه مدة التوصيل؟» — البوت يخمّن «٢–٣ أيام» من معرفة عامة. عندك مناطق بتوصل في ٥ أيام — العميل مستني غلط.",
+      },
+      right: {
+        label: "AI + RAG",
+        body: "«إيه مدة التوصيل؟» — الأوتوميشن يسحب من جدول التوصيل بتاعك: «القاهرة ١–٢ يوم، الصعيد ٣–٥». الرد دقيق من ملفك.",
+      },
     },
   },
   {
     icon: BookOpen,
-    eyebrow: "مصطلحات الدرس",
-    title: "اللي هتسمعه في الدرس ده",
+    eyebrow: "كلمتين بس",
+    title: "مصطلحين لـ RAG",
     block: {
       kind: "concepts",
       items: [
-        { term: "Chunking", meaning: "تقطيع الملفات الطويلة لحتت صغيرة عشان الذكاء الاصطناعي يفهمها براحته.", example: "لو معاك عقد ٥٠ صفحة، بتقسمه لفقرات عشان الكمبيوتر ميتوهش وهو بيقرا كل ده مرة واحدة." },
-        { term: "Embeddings", meaning: "تحويل الكلام لأرقام بتعبر عن معناه عشان الكمبيوتر يفهمه ويقارنه.", example: "زي ما البار كود بيعبر عن سعر المنتج، الـ Embedding بيعبر عن \"معنى\" الكلمة في شكل أرقام." },
-        { term: "Vector DB (Database)", meaning: "مخزن شاطر بيسيف البيانات بالأرقام ويخليك تدور فيها بالمعنى مش بالكلمة.", example: "زي أرشيف المحاسب، بتدور فيه بالمعنى؛ لو سألت عن \"الفلوس\" يطلعلك \"الخزنة، الفواتير، والرواتب\" في ثانية." },
-        { term: "Indexing", meaning: "عملية تنظيم وتجهيز ملفاتك وتخزينها في المخزن عشان تبقى جاهزة للبحث.", example: "مرحلة \"تستيف\" البضاعة؛ بترتب ملفاتك وتخزنها في الـ Vector DB عشان لما تحتاجها تلاقيها جاهزة." },
-        { term: "Retrieval", meaning: "إنك تشد وتطلع المعلومة المناسبة من الداتابيز وقت ما الذكاء الاصطناعي يحتاجها.", example: "مرحلة \"سحب\" الملف؛ لما العميل يسأل، السيستم بيجري يجيب المعلومة الصح من وسط مليون ورقة." },
-        { term: "RAG (Retrieval-Augmented Generation)", meaning: "إنك تخلي الذكاء الاصطناعي يذاكر ملفاتك أنت قبل ما يجاوب على أي سؤال.", example: "زي موظف شاطر قدامه \"كتالوج\" المحل؛ بيبص فيه الأول وبعدين يرد على العميل بذكاء." },
-        { term: "Connecting Nodes", meaning: "توصيل أدوات الشغل ببعض في n8n عشان المهام تنفذ بعضها أوتوماتيك.", example: "تخيلها زي الوصلات؛ بتوصل \"أداة استقبال الإيميلات\" بـ \"أداة الرد الآلي\" بخط عشان يشتغلوا ورا بعض." },
+        {
+          term: "Knowledge Source (مصدر المعرفة)",
+          meaning: "المكان اللي الأوتوميشن يقرأ منه — FAQ، Google Doc، قائمة أسعار، سياسات.",
+          example: "شيت فيه ٥٠ سؤال شائع وإجابتهم — ده مصدرك الأول.",
+        },
+        {
+          term: "Retrieval (الاسترجاع)",
+          meaning: "لما سؤال يوصل، النظام يسحب أقرب مقتطف من مصدرك قبل ما يكتب الرد.",
+          example: "سؤال عن الضمان → يسحب فقرة «سياسة الضمان ١٢ شهر» من الملف.",
+        },
       ],
     },
   },
   {
     icon: PlayCircle,
     eyebrow: "فيديو الدرس",
-    title: "اتفرّج الأول",
+    title: "اتفرّج — RAG في الأوتوميشن",
     tone: "accent",
     block: {
       kind: "lessonVideo",
-      caption: "إزاي تبني RAG pipeline كامل جوه n8n/Make.",
-    },
-  },
-  {
-    icon: Lightbulb,
-    eyebrow: "الفكرة",
-    title: "RAG = خطوتين قبل الـ LLM",
-    block: {
-      kind: "numberedList",
-      items: [
-        "Indexing (مرة واحدة): الـ docs/FAQ بتاعتك → chunks → embeddings → تتخزّن في Vector DB.",
-        "Retrieval (وقت كل سؤال): سؤال المستخدم → embedding → بحث في الـ Vector DB → جايب top 3 chunks.",
-        "Generation: الـ chunks دي + السؤال بيتبعتوا للـ LLM كـ context، فبيرد من بياناتك إنت مش من المعرفة العامة.",
-      ],
+      caption:
+        "إزاي تربط مصدر معرفة بسير الردود الآلية. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
     },
   },
   {
     icon: ImageIcon,
-    eyebrow: "شوف بنفسك",
-    title: "RAG في المنصة بتاعتنا",
+    eyebrow: "لقطة بصرية",
+    title: "مسار السؤال للمصدر للرد",
     tone: "primary",
     block: {
       kind: "screenshot",
       src: automatorM4RagInN8NScreenshot,
-      alt: "سكرين شوت من المنصة",
+      alt: "مخطط يوضح مسار السؤال عبر الاسترجاع من المعرفة ثم توليد الرد.",
       caption:
-        "مساعد المنصة مش بيرد من تدريب الموديل بس — بيعمل retrieval من الدروس بتاعتنا الأول، وبعدين بيرد. ده اللي هتعمله في n8n: نفس الـ 3 خطوات (Embed → Search → LLM Call) بس كـ nodes.",
-      label: "من المنصة — درس RAG في Builder",
-    },
-  },
-  {
-    icon: Scale,
-    eyebrow: "Failure × Right",
-    title: "Plain LLM vs RAG",
-    block: {
-      kind: "comparison",
-      left: {
-        label: "FAILURE — LLM بدون RAG",
-        body: "بتسأل البوت 'سعر المنتج X؟'. الـ LLM ميعرفش، فيخترع رقم. العميل يجي يشتري بالسعر ده وإنت في ورطة.",
-      },
-      right: {
-        label: "RIGHT — LLM + RAG",
-        body: "بتعمل retrieval من Vector DB فيها الـ price list. الـ chunk اللي فيه السعر بيتحط في الـ prompt. الـ LLM يرد بالسعر الصح بصياغة لطيفة. غلطة الاختراع ماتحصلش.",
-      },
+        "السؤال يمرّ على مصدرك الأول — وبعدين الـ AI يصيغ الرد. المعرفة ثابتة؛ الصياغة مرنة.",
+      label: "automator-m5-l2-rag-in-n8n",
     },
   },
   {
     icon: Rocket,
-    eyebrow: "دورك دلوقتي",
-    title: "ابني RAG flow بسيط",
+    eyebrow: "تأكيد سريع",
+    title: "سؤال واحد — مش امتحان",
     tone: "accent",
     block: {
       kind: "quiz",
@@ -134,92 +129,61 @@ export const AUTOMATOR_M5_L2_RAG_IN_N8N_BLOCKS: IntroLessonContent = [
         {
           id: "apply1",
           bloom: "apply",
-          question: "لو عندك شركة تأمين وعايز تعمل تشات بوت يرد على أسئلة العملاء عن وثائق التأمين بتاعتك بالظبط، إيه أهم خطوة لازم تعملها قبل ما التشات بوت يبدأ يرد على الناس؟",
+          question:
+            "عندك بوت يرد على أسئلة العملاء عن منتجاتك — وبيرد أرقام غلط أحيانًا. أحسن خطوة أولى؟",
           options: [
-            "تاخد كل وثائق التأمين بتاعتك وتحوّلها لـ embeddings وتخزّنها في Vector DB.",
-            "تدرب موديل لغة كبير (LLM) مخصوص على وثائق التأمين بتاعتك من الصفر.",
-            "تظبط الـ prompt بتاع الـ LLM عشان يبقى friendly مع العملاء."
-          ],
-          correctIndex: 0,
-          explanation: "الخطوة دي (اللي بنسميها Indexing) هي اللي بتخلي الـ LLM يقدر يوصل للمعلومات المحددة بتاعتك عن طريق RAG، بدل ما يعتمد على معرفته العامة."
-        },
-        {
-          id: "apply2",
-          bloom: "apply",
-          question: "عميل سأل التشات بوت بتاعك: 'إيه تغطية حادث السيارة في وثيقة التأمين الذهبية؟'. التشات بوت استخدم RAG ولقى 3 قطع نصية (chunks) مرتبطة بالسؤال ده. إيه اللي المفروض يحصل بعد كده عشان الـ LLM يدي إجابة دقيقة؟",
-          options: [
-            "الـ LLM يروح يبحث في معرفته العامة عن 'تأمين السيارات' ويرد.",
-            "الـ 3 قطع دول هيتبعُتوا للـ LLM كـ context مع سؤال العميل عشان يرد بناءً عليهم.",
-            "التشات بوت هيقول للعميل يديله رقم وثيقته عشان يدور بنفسه."
+            "تكتب system prompt أطول يقوله «متخمّنش».",
+            "تختار مصدر FAQ أو قائمة أسعار وتربطه بالأوتوميشن قبل كل رد.",
+            "توقف البوت وترد يدوي على كل الأسئلة.",
           ],
           correctIndex: 1,
-          explanation: "دي خطوة الـ Generation، الـ chunks المترجعة من الـ Vector DB هي دي الـ context اللي بيتبعت للـ LLM عشان يرد، وده بيضمن إنه يرد من معلومات محددة."
+          explanation:
+            "RAG بيحل جذر المشكلة — الرد ييجي من مصدرك مش من تخمين. الـ prompt لوحده مش كفاية.",
         },
-        {
-          id: "apply3",
-          bloom: "apply",
-          question: "بتعمل تشات بوت للعملاء باستخدام RAG، ولقيت إن على طول العملاء بيشتكوا إن البوت بيرد إجابات عامة ومش مرتبطة بمنتجاتك، مع إنك عملت indexing لكل بياناتك. تفتكر إيه ممكن تكون المشكلة في الـ workflow بتاعك؟",
-          options: [
-            "يمكن الـ embeddings بتاعت الأسئلة مش بتطلع مظبوطة فمش بتجيب الـ chunks الصح من الـ Vector DB.",
-            "الـ LLM اللي بتستخدمه قديم ومحتاج تحديث.",
-            "السيرفر اللي عليه الـ Vector DB بطيء."
-          ],
-          correctIndex: 0,
-          explanation: "لو الـ embeddings بتاعت السؤال مش دقيقة، الـ Vector DB مش هتعرف تجيب الـ chunks المناسبة، وبالتالي الـ LLM مش هيلاقي الـ context الصح ويرد من معرفته العامة."
-        }
-      ]
+      ],
     },
   },
   {
     icon: Rocket,
-    eyebrow: "Mission",
-    title: "صمّم RAG Workflow في n8n لمصدر حقيقي",
-    tone: "primary",
+    eyebrow: "مهمتك",
+    title: "اختار مصدر FAQ أو مستند واحد",
+    tone: "accent",
     block: {
       kind: "mission",
       intro:
-        "RAG في n8n = Knowledge base + Query + LLM + Response. هتصممه step-by-step لمصدر حقيقي.\n\nلو لسه مبتدئ:\nصمّم الفكرة بس:\n١) فين المعرفة؟\n٢) الـ AI هيقراها إزاي؟\n٣) هيستخدمها يرد إزاي؟\nالتفاصيل التقنية اختيارية.",
+        "المهمة اختيار عملي — مش بناء تقني. اختار مصدر معرفة واحد عندك (أو هتعمله) وتشرح إزاي الأوتوميشن هيسحب منه.\n\nمش مطلوب vector database — مطلوب مصدر واضح + مثال سؤال وجواب.",
       prompt:
-        "في تسليمك — اختَر مستوى واحد:\n\n【تسليم مبسّط — مقبول بالكامل】\n١) فين المعرفة؟ (FAQ، ملفات، موقع…)\n٢) الـ AI هيقراها إزاي؟ (بكلماتك — مش لازم vector DB)\n٣) هيستخدمها يرد إزاي؟ (مثال سؤال + جواب متوقع)\n\n【تسليم كامل — اختياري】\n٤) Indexing: كل قد إيه + Chunking + Embedding + Storage\n٥) Query: trigger + steps (embed → search → LLM → response)\n٦) Citation + fallback لو ما لقاش حاجة relevant",
-      buttonLabel: "انسخ التعليمات",
-      copiedLabel: "اتنسخ",
+        "في تسليمك اكتب:\n\n١) المصدر: FAQ / Doc / شيت — إيه بالظبط؟\n٢) ٣ أسئلة العملاء بيسألوها فعلًا:\n٣) لكل سؤال: أنهي جزء في المصدر هيجاوبه؟\n٤) لو المصدر مافيهوش الإجابة — الرد البديل إيه؟\n\n+ جملة: ليه المصدر ده أهم واحد تبدأ بيه؟",
+      buttonLabel: "انسخ خطوات المهمة",
+      copiedLabel: "اتنسخت ✓",
+      template:
+        "المصدر:\n[نوع + مكان]\n\nسؤال ١: [السؤال]\n→ المقتطف: [منين في المصدر]\n\nسؤال ٢: [السؤال]\n→ المقتطف: [منين]\n\nسؤال ٣: [السؤال]\n→ المقتطف: [منين]\n\nلو مافيش إجابة:\n[الرد البديل]\n\nليه أهم مصدر:\n[جملة واحدة]",
       rubric: [
         {
-          label: "Pipeline + Query flow",
+          label: "مصدر حقيقي",
           weight: 60,
-          criteria: [
-            "التسليم المبسّط: المعرفة + القراءة + الرد الثلاثة واضحين — مقبول بالكامل.",
-            "التسليم الكامل (اختياري): Indexing وQuery موصوفين بـ steps + chunking/embedding/storage.",
-          ],
+          criteria: ["مصدر محدد — مش «هحط كل الملفات»."],
         },
         {
-          label: "Citation + Fallback",
+          label: "ربط سؤال بمصدر",
           weight: 40,
-          criteria: [
-            "التفاصيل التقنية (vector DB، citation) اختيارية للمبتدئ.",
-            "لو اخترت التعمق: Citation strategy + fallback مش «هيرد فاضي».",
-          ],
+          criteria: ["٣ أسئلة مربوطة بمقتطفات + fallback لو مافيش إجابة."],
         },
       ],
     },
   },
   {
-    icon: FlaskConical,
-    eyebrow: "جزء من المنصة",
-    title: "RAG في المساعد = نفس الفكرة بدل n8n",
+    icon: CheckCircle2,
+    eyebrow: "خلّصت RAG",
+    title: "إيه اللي عندك دلوقتي؟",
     tone: "primary",
     block: {
-      kind: "caseStudy",
-      title: "RAG في المساعد = نفس الفكرة بدل n8n",
-      summary:
-        "الجزء ده من المنصة اتبنى بمسار Automator — نفس اللي بتتعلمه. نفس الـ pattern: vector search → context retrieval → LLM call. الفرق إنها اتعملت داخل serverFn بدل n8n workflow. الـ idea اللي اتعلّمتها متطبّقة بلغة كود.",
-      bullets: [
-        "Step 1: embed سؤال المستخدم.",
-        "Step 2: search في knowledge_chunks بـ cosine similarity.",
-        "Step 3: inject أعلى 5 chunks في الـ LLM prompt.",
+      kind: "paragraphs",
+      paragraphs: [
+        "فهمت إيه؟ RAG يخلي الأوتوميشن يجاوب من معرفتك — مش من تخمين.",
+        "تقدر تعمل إيه؟ عندك مصدر واحد مختار وجاهز تربطه بسير الردود.",
+        "اللي جاي: Agents — لما الخطوات مش ثابتة والـ AI يختار الطريق.",
       ],
-      pathAngle: "automator",
-      link: { label: "افتح /ai-assistant", href: "/ai-assistant" },
     },
-  }
+  },
 ];

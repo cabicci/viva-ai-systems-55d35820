@@ -437,6 +437,7 @@ function automatorModules(): CurriculumModule[] {
         automatorShipped(1, "automator-m4-l1-connect-database", "وصّل الـ DB من Builder"),
         automatorShipped(2, "automator-m4-l2-webhooks-api", "Webhooks & APIs"),
         automatorShipped(3, "automator-m4-l3-error-handling", "Error Handling"),
+        automatorShipped(4, "automator-m3-testing-automation", "اختبر قبل ما تطلع"),
       ],
     },
     {
