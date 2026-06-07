@@ -4,27 +4,66 @@
 
 ### Purpose
 
-*TBD*
+Viva AI Systems is an Arabic-first learning platform that teaches people how to use AI practically in everyday life and work.
+
+The product is not a path to becoming a software engineer. Its purpose is to help learners make better decisions, create useful content, analyze information, automate repetitive work, and build simple solutions with AI assistance—starting from zero background and growing real capability step by step.
+
+Success means a learner leaves a lesson knowing what to do next, not just what a term means.
 
 ### Who We Serve
 
-*TBD*
+We serve Arabic-speaking beginners who may have:
+
+- No coding experience
+- No prior AI experience
+- Low confidence with technology
+- Uneven English comfort with AI product language
+
+Many learners are professionals, creators, operators, or small-business owners who want practical outcomes—not a computer science curriculum. Some will later choose deeper technical paths; most will not. The platform must work for both without assuming engineering ambition.
 
 ### Beginner-first principle
 
-*TBD*
+Every lesson, mission, screen, and explanation must assume the learner is seeing the idea for the first time.
+
+That means:
+
+- No hidden prerequisites
+- No implied tools, accounts, or workflows the learner has not been shown
+- No jargon without immediate plain-language support
+- No mission that feels impossible on the first attempt
+
+Complexity is allowed only after confidence is earned. If a learner feels lost, confused, or stupid, the product failed—not the learner.
 
 ### Arabic-first principle
 
-*TBD*
+Arabic is the primary language of learning, thinking, and instruction.
+
+English appears where the real AI world uses it—tool names, product labels, common industry terms—but never as a barrier. When an English term appears for the first time, it must be explained immediately in simple Arabic. After that, reuse is fine.
+
+The tone should feel natural to an Egyptian and broader Arab learner: direct, respectful, practical, and free of academic or translated stiffness.
 
 ### AI confidence before technical depth
 
-*TBD*
+Viva must build AI confidence before technical depth.
+
+Learners should first believe they can use AI, then understand when to use it, then learn how to use it well. Technical concepts—APIs, databases, workflows, builders—come after trust, clarity, and small wins.
+
+Builder is optional depth for learners who want to go further. It is not the default promise of the platform. The default promise is practical AI capability anyone can apply.
 
 ### Launch philosophy
 
-*TBD*
+We do not chase perfection, but we do not launch with broken trust.
+
+A lesson, path, or feature is not ready for real users if it creates:
+
+- Confusing missions
+- Weak or misleading assistant behavior
+- Intimidating lesson flow
+- Hidden assumptions about tools, skill, or prior lessons
+
+Internal AI and persona review comes before real user exposure. Content stability comes before video regeneration. We ship when the learning experience is clear, winnable, and trustworthy—not when every visual or edge case is perfect.
+
+Launch means learners can progress with confidence. Polish can follow; trust cannot be repaired easily after it is lost.
 
 ## 2. Non-Negotiable Rules
 
