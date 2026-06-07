@@ -791,62 +791,205 @@ Ignore does not mean "forgotten." It means "not actionable now."
 
 ## 10. Decision Gates
 
+Every major review cycle must end in a gate decision. Findings without a gate create drift.
+
 ### Continue
 
-*TBD*
+Use **Continue** when:
+
+- No open Critical issues remain
+- High issues are accepted, scheduled, or isolated enough not to block the current phase
+- The team has enough evidence to move to the next planned step
+
+**Protects:** momentum, phase order, and against endless local tinkering.
 
 ### Pause
 
-*TBD*
+Use **Pause** when:
+
+- Evidence is incomplete or contradictory
+- A blocker needs investigation before more changes
+- Sync, build, auth, assistant, or data behavior is not yet understood
+- The team risks making changes on unstable ground
+
+**Protects:** the product from reactive edits and the team from guessing.
 
 ### Revise
 
-*TBD*
+Use **Revise** when:
+
+- Persona, content, UX, or technical review found actionable High or Critical issues
+- Lesson promises, missions, or flow need targeted correction
+- The issue is clear, scoped, and worth fixing before moving forward
+
+**Protects:** learner trust and content quality without jumping straight to freeze or video work.
 
 ### Freeze
 
-*TBD*
+Use **Freeze** when:
+
+- Critical and High content issues are resolved or explicitly accepted
+- Lesson text, missions, terminology, and learning promises are stable enough for media and launch prep
+- Further casual rewriting would create churn instead of value
+
+**Protects:** content stability, video investment, and launch confidence.
 
 ## 11. Content Freeze Rules
 
-*TBD*
+Content freeze begins only after Critical and High content issues are resolved or explicitly accepted with documented rationale.
+
+Once frozen:
+
+- Lesson text does not change casually
+- Missions do not get rewritten without reason
+- Terminology rules stay consistent
+- Lesson order and learning promise stay stable unless a documented exception is approved
+
+A freeze covers:
+
+- Lesson copy
+- Mission prompts and rubric intent
+- Terminology handling
+- Block order when it affects the learning promise
+- The learner-facing promise of what the lesson teaches and asks them to do
+
+Changes after freeze require a documented reason:
+
+- What changed
+- Why freeze had to break
+- Which paths or lessons are affected
+- Whether video regeneration is now required
+
+Freeze is not "perfect." It means stable enough to stop churn and protect downstream work.
 
 ## 12. Video Regeneration Readiness
 
+Videos regenerate only after **content lock** and **visual lock**.
+
+Do not regenerate videos while lessons are still moving.
+
 ### Preconditions
 
-*TBD*
+All of the following must be true:
+
+- Lesson text is stable
+- Missions are stable
+- Terminology is stable
+- Visual timing rules are stable
+- Video placement rules are stable
+- No open Critical content issues remain
+- High content issues are resolved or explicitly accepted
+
+If any of these are still moving, video work waits.
 
 ### Content lock requirements
 
-*TBD*
+Content lock means:
+
+- Frozen lesson text is approved for media production
+- Mission instructions match the lesson promise
+- Captions, narration, and on-screen references will not change meaning after render
+- English terms in video match the lesson's first-use rules
+
+No content lock, no regeneration.
 
 ### Visual lock requirements
 
-*TBD*
+Visual lock means:
+
+- Block rhythm and hierarchy are approved
+- Video timing rules are confirmed
+- Diagram timing and placement are confirmed
+- Mobile readability standards are met
+- CTA and mission placement will not shift after render
+
+Visual lock protects render cost and prevents mismatched media.
 
 ## 13. Cursor ↔ Lovable Workflow
 
+Use the right tool for the right kind of change.
+
 ### When Cursor changes
 
-*TBD*
+Prefer Cursor for:
+
+- Documentation and governance updates
+- Code review and audit-driven fixes
+- Controlled refactors
+- System-wide or cross-file changes
+- Git-safe work that needs diff discipline and scoped commits
+
+Cursor is the default for careful, reviewable, multi-file work.
 
 ### When Lovable changes
 
-*TBD*
+Prefer Lovable for:
+
+- Product and UI feature iteration when safe
+- Quick app-level changes
+- Visual and product exploration
+- Fast iteration on isolated product surfaces
+
+Lovable is useful for movement, not for unscoped rewrites of core learning logic without review.
 
 ### GitHub sync rule
 
-*TBD*
+Always sync before new work.
+
+Before editing docs, content, or code:
+
+1. Check `git status`
+2. Fetch from `origin`
+3. Confirm whether local and remote have diverged
+4. Integrate remote changes before starting new scoped work
+
+Never assume the local workspace is current.
 
 ### Rebase rule
 
-*TBD*
+When local commits exist and Lovable/GitHub has moved ahead:
+
+- Rebase local docs or code commits on top of `origin/main` when needed
+- Do not force push
+- Resolve conflicts carefully and preserve both remote product changes and local scoped work
+
+Rebase keeps history clean without overwriting Lovable changes.
 
 ### Push rule
 
-*TBD*
+Push only after confirming changed files and scope.
+
+Before every push:
+
+1. Review `git status`
+2. Review the diff
+3. Confirm only intended files are included
+4. Confirm commit message matches the actual scope
+5. Push to `origin/main` only when the branch is ready
+
+No drive-by pushes. No bundled unrelated files.
 
 ## 14. Current Project Status Logic
 
-*TBD*
+`docs/CURRENT_STATUS.md` is the live project snapshot.
+
+It answers:
+
+- What phase are we in?
+- What is done?
+- What is in progress?
+- What is blocked?
+- What is the latest production commit?
+- What is the next planned step?
+
+Update `CURRENT_STATUS.md` when:
+
+- The current phase changes
+- A path review moves from in progress to completed
+- A blocker appears or clears
+- A major decision gate is recorded
+- A production commit changes the known launch baseline
+
+Keep it short and factual.
+
+Do not turn it into a second blueprint, audit log, or essay. The blueprint defines the system. `CURRENT_STATUS.md` reports the current state against that system.
