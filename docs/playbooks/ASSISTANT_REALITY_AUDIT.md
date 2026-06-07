@@ -18,6 +18,38 @@ The next required step is a live behavioral audit of the assistant, still read-o
 
 Code inspection alone cannot confirm corpus state, retrieval quality, answer trust, or mobile UX under real login.
 
+## Confirmed knowledge_chunks status
+
+- The `knowledge_chunks` table exists in production.
+- Current production row count: **0**.
+- `source_type` grouping is empty.
+
+## Decision
+
+**Do not seed `knowledge_chunks` now.**
+
+Reason:
+The assistant knowledge base must be generated from the final frozen curriculum, not from temporary lesson content that will still change during code review, content review, mission redesign, UI/UX review, theme review, and video regeneration.
+
+## Correct timing for seeding
+
+`knowledge_chunks` should be populated only after:
+
+1. Code review is complete.
+2. Content review is complete.
+3. Missions are stabilized.
+4. UI/UX and theme decisions are stable.
+5. Videos are regenerated or ready for regeneration.
+6. Content Freeze is confirmed.
+
+## Current severity
+
+**High planned gap.**
+
+This is not an immediate fix task.
+
+It becomes an implementation task after Content Freeze.
+
 ## Recommended next audit step
 
 Live Assistant Reality Audit (behavioral, read-only):
