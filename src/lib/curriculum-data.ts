@@ -206,7 +206,7 @@ function creatorModules(): CurriculumModule[] {
       order: 5,
       id: "creator-m5-polish",
       title: "Polish — مونتاج وشكل خارجي",
-      subtitle: "المونتاج + Thumbnails & Captions — اللمسة اللي بتخلّي المحتوى يلمع.",
+      subtitle: "المونتاج + Repurposing + Thumbnails & Captions — اللمسة اللي بتضاعف المحتوى.",
       lessons: [
         lesson(
           1,
@@ -217,6 +217,13 @@ function creatorModules(): CurriculumModule[] {
         ),
         lesson(
           2,
+          "creator-m4-repurposing",
+          "Repurposing — مضاعف المحتوى",
+          "available",
+          "/learn/creator/creator-m4-repurposing",
+        ),
+        lesson(
+          3,
           "creator-m5-l2-thumbnails-captions",
           "Thumbnails & Captions",
           "available",

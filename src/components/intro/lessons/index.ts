@@ -65,6 +65,7 @@ import { BUILDER_M6_FIRST_PROMPT_TO_LOVABLE_BLOCKS } from "./builder-m6-l3-first
 import { BUILDER_M6_ITERATION_BLOCKS } from "./builder-m6-l5-iteration";
 import { BUILDER_M6_DEBUGGING_BLOCKS } from "./builder-m6-l6-debugging";
 import { CREATOR_M4_EDITING_BLOCKS } from "./creator-m5-l1-editing";
+import { CREATOR_M4_REPURPOSING_BLOCKS } from "./creator-m4-repurposing";
 import { CREATOR_M4_THUMBNAILS_CAPTIONS_BLOCKS } from "./creator-m5-l2-thumbnails-captions";
 import { CREATOR_M6_BRAND_BASICS_BLOCKS } from "./creator-m7-l1-brand-basics";
 import { CREATOR_M6_GRID_CONSISTENCY_BLOCKS } from "./creator-m7-l2-grid-consistency";
@@ -176,6 +177,7 @@ export const INTRO_LESSON_CONTENT: Record<string, IntroLessonContent> = {
   "builder-m6-l5-iteration": BUILDER_M6_ITERATION_BLOCKS,
   "builder-m6-l6-debugging": BUILDER_M6_DEBUGGING_BLOCKS,
   "creator-m5-l1-editing": CREATOR_M4_EDITING_BLOCKS,
+  "creator-m4-repurposing": CREATOR_M4_REPURPOSING_BLOCKS,
   "creator-m5-l2-thumbnails-captions": CREATOR_M4_THUMBNAILS_CAPTIONS_BLOCKS,
   "creator-m7-l1-brand-basics": CREATOR_M6_BRAND_BASICS_BLOCKS,
   "creator-m7-l2-grid-consistency": CREATOR_M6_GRID_CONSISTENCY_BLOCKS,
