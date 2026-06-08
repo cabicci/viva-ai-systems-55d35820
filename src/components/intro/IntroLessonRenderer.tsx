@@ -8,8 +8,6 @@ import { QuizBlock } from "./QuizBlock";
 import { getBunnyEmbedUrl } from "@/lib/bunny-videos";
 import { getValueHook } from "./value-hooks";
 
-const VIDEO_SKIP_NOTICE = "الفيديو لسه — كمّل قراية 👌";
-
 function lessonVideoHasSource(
   block: Extract<IntroBlock, { kind: "lessonVideo" }>,
   lessonId?: string,
@@ -19,9 +17,14 @@ function lessonVideoHasSource(
 
 function VideoSkipNotice() {
   return (
-    <p className="text-center text-xs text-muted-foreground/90 py-0.5">
-      {VIDEO_SKIP_NOTICE}
-    </p>
+    <div className="text-center py-1 space-y-1.5" dir="rtl">
+      <span className="inline-flex items-center gap-1 rounded-full border border-accent/20 bg-accent/[0.06] px-2.5 py-1 text-[11px] text-muted-foreground">
+        🎬 فيديو اختياري
+      </span>
+      <p className="text-xs text-muted-foreground/90 leading-relaxed px-2">
+        لو معندكش وقت، كمّل قراية — الدرس مكتفي لوحده
+      </p>
+    </div>
   );
 }
 
@@ -118,14 +121,14 @@ export function IntroLessonRenderer({
         </aside>
       )}
       {hasMission && (
-        <p className="text-center sm:text-right -mt-1">
+        <div className="flex justify-center sm:justify-end -mt-1">
           <a
             href="#mission"
-            className="inline-flex items-center gap-1 text-xs text-primary/75 hover:text-primary transition"
+            className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/[0.08] px-4 py-2.5 text-xs font-medium text-primary/90 hover:bg-primary/[0.12] hover:text-primary transition min-h-[44px]"
           >
             روح للمهمة ↓
           </a>
-        </p>
+        </div>
       )}
       {content.map((section, i) => {
         if (
