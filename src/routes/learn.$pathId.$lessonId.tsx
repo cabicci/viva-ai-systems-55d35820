@@ -30,7 +30,6 @@ import {
 import { useLessonGate, useStreak } from "@/lib/entitlements";
 import { PaywallCard, IntroGateCard } from "@/components/learn/PaywallCard";
 import { useMissionGate, getLessonMission } from "@/lib/mission-gate";
-import { MISSION_PASS_THRESHOLD } from "@/lib/mission-ai-evaluation.functions";
 import { Lock } from "lucide-react";
 import { logLearnerEvent } from "@/lib/learner-events";
 import { LessonNotes } from "@/components/learn/LessonNotes";
@@ -350,14 +349,14 @@ function UnifiedLessonPage() {
           nextLessonHref={next ? `/learn/${pathId}/${next.slug}` : undefined}
         />
         {nextLocked && missionShape?.hasRubric && (
-          <div className="mt-8 rounded-2xl border border-amber-400/30 bg-amber-400/[0.06] p-4 flex items-start gap-3">
-            <Lock className="h-4 w-4 text-amber-400 mt-0.5 shrink-0" />
+          <div className="mt-8 rounded-2xl border border-primary/25 bg-primary/[0.04] p-4 flex items-start gap-3">
+            <Lock className="h-4 w-4 text-primary mt-0.5 shrink-0" />
             <div className="text-sm leading-relaxed">
-              <p className="font-semibold text-amber-300 mb-1">
-                المهمة لازم تعدّي قبل الدرس الجاي
+              <p className="font-semibold text-foreground mb-1">
+                محتاجة محاولة بسيطة قبل الخطوة الجاية
               </p>
               <p className="text-foreground/80 text-[13px]">
-                ابعت تسليمك في خانة المهمة فوق، ولما تجيب {MISSION_PASS_THRESHOLD}٪ أو أكتر، الزرار هيتفتح.
+                علشان تفتح الخطوة الجاية، ابعت محاولة حقيقية وخد Feedback بسيط.
               </p>
             </div>
           </div>

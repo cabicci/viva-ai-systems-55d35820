@@ -1,17 +1,17 @@
 import * as React from "react";
+import { Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import {
   CheckCircle2,
   ChevronDown,
   ChevronUp,
-  ClipboardCheck,
+  ListChecks,
   Loader2,
   Lightbulb,
   HelpCircle,
   Send,
   Sparkles,
   FileText,
-  XCircle,
   SkipForward,
 } from "lucide-react";
 import { toast } from "sonner";
@@ -32,6 +32,36 @@ export type MissionRubric = readonly {
   weight: number;
   criteria: readonly string[];
 }[];
+
+type FeedbackState = {
+  label: string;
+  hint: string;
+};
+
+/** Learner-facing friendly state — internal score/pass logic unchanged. */
+function getFeedbackState(result: AIEvaluationResult): FeedbackState {
+  if (result.passed) {
+    return {
+      label: "Clear",
+      hint: "واضح إنك فهمت الفكرة الأساسية. تقدر تكمل، ولو حبيت تطوّر إجابتك بعدين ارجع لها.",
+    };
+  }
+  const scores =
+    result.perCriterion.length > 0
+      ? result.perCriterion.map((c) => c.score)
+      : [result.overallScore];
+  const weakest = Math.min(...scores);
+  if (weakest < 40) {
+    return {
+      label: "محتاج توضيح بسيط",
+      hint: "إجابتك ماشية في الاتجاه الصح، بس محتاجة توضيح بسيط.",
+    };
+  }
+  return {
+    label: "جرّب تضيف النقطة دي",
+    hint: "جرّب تضيف مثال أو خطوة عملية واحدة عشان إجابتك تبقى أقوى.",
+  };
+}
 
 /**
  * Build a fill-in-the-blank scaffold from a mission prompt that contains
@@ -130,9 +160,9 @@ export function MissionRubricSection({
         missionId,
         metadata: { failed_attempts: failedAttempts },
       });
-      toast.success("تخطّيت المهمة — الدرس الجاي اتفتح. ترجعلها وقت ما تحب.");
+      toast.success("كمّل براحتك — ترجع للمهمة وقت ما تحب.");
     } catch (e) {
-      toast.error(e instanceof Error ? e.message : "تعذّر تخطّي المهمة.");
+      toast.error(e instanceof Error ? e.message : "تعذّر المتابعة دلوقتي. حاول تاني.");
     } finally {
       setSkipping(false);
     }
@@ -150,10 +180,7 @@ export function MissionRubricSection({
   }
 
   async function submit() {
-    if (!user) {
-      toast.error("لازم تسجّل الدخول قبل ما تبعت المهمة.");
-      return;
-    }
+    if (!user) return;
     if (text.trim().length < 20) {
       toast.error("التسليم قصير أوي. اكتب على الأقل ٢٠ حرف.");
       return;
@@ -192,8 +219,11 @@ export function MissionRubricSection({
         },
       });
       setResult(r);
+      const state = getFeedbackState(r);
       toast.success(
-        r.passed ? "ممتاز! المهمة عدّت ✓" : "محتاج تحسين بسيط — شوف الـ feedback",
+        r.passed
+          ? "تمام — واضح إنك فهمت الفكرة الأساسية."
+          : `${state.label} — شوف الـ Feedback تحت.`,
       );
       if (r.passed) {
         emitMissionPassed(missionId);
@@ -202,7 +232,7 @@ export function MissionRubricSection({
       }
     } catch (err) {
       toast.error(
-        err instanceof Error ? err.message : "فشل التقييم. حاول تاني.",
+        err instanceof Error ? err.message : "تعذّر الحصول على Feedback. حاول تاني.",
       );
     } finally {
       setSubmitting(false);
@@ -223,64 +253,66 @@ export function MissionRubricSection({
       });
       setReveal(r);
       emitMissionPassed(missionId);
-      toast.success("اتفتح الدرس التالي — اقرأ النموذج وقارنه بمحاولتك");
+      toast.success("اقرأ المثال وقارنه بمحاولتك — ده للتعلّم مش للغش.");
     } catch (err) {
       toast.error(
-        err instanceof Error ? err.message : "تعذّر توليد النموذج. حاول تاني.",
+        err instanceof Error ? err.message : "تعذّر توليد المثال. حاول تاني.",
       );
     } finally {
       setRevealing(false);
     }
   }
 
+  const checklistHints = React.useMemo(() => {
+    const hints: string[] = [];
+    for (const c of rubric) {
+      for (const cr of c.criteria) {
+        hints.push(cr);
+      }
+    }
+    return hints;
+  }, [rubric]);
+
   return (
     <div className="space-y-3 pt-3 border-t border-primary/15">
-      {/* Rubric accordion */}
-      <button
-        type="button"
-        onClick={() => setOpen((o) => !o)}
-        className="flex items-center justify-between w-full text-xs font-mono text-primary hover:opacity-80 transition"
-      >
-        <span className="inline-flex items-center gap-1.5">
-          <ClipboardCheck className="h-3.5 w-3.5" /> إزاي هاتقيّم نفسك؟
-        </span>
-        {open ? (
-          <ChevronUp className="h-3.5 w-3.5" />
-        ) : (
-          <ChevronDown className="h-3.5 w-3.5" />
-        )}
-      </button>
-      {open && (
-        <div className="rounded-lg border border-primary/15 bg-primary/[0.03] p-3 space-y-3">
-          {rubric.map((c, i) => (
-            <div key={i} className="space-y-1">
-              <div className="flex items-center justify-between gap-2">
-                <p className="text-sm font-semibold">{c.label}</p>
-                <span className="text-[10px] font-mono text-primary">
-                  {c.weight}%
-                </span>
-              </div>
-              <ul className="space-y-1 pr-3">
-                {c.criteria.map((cr, j) => (
-                  <li
-                    key={j}
-                    className="text-xs text-muted-foreground leading-relaxed flex gap-1.5"
-                  >
-                    <span className="text-primary mt-0.5">•</span>
-                    <span>{cr}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+      {/* Simple checklist hints — no weights */}
+      {checklistHints.length > 0 && (
+        <>
+          <button
+            type="button"
+            onClick={() => setOpen((o) => !o)}
+            className="flex items-center justify-between w-full text-xs text-primary hover:opacity-80 transition"
+          >
+            <span className="inline-flex items-center gap-1.5">
+              <ListChecks className="h-3.5 w-3.5" /> نقاط تساعدك ترتب إجابتك
+            </span>
+            {open ? (
+              <ChevronUp className="h-3.5 w-3.5" />
+            ) : (
+              <ChevronDown className="h-3.5 w-3.5" />
+            )}
+          </button>
+          {open && (
+            <ul className="rounded-lg border border-primary/15 bg-primary/[0.03] p-3 space-y-2">
+              {checklistHints.map((hint, i) => (
+                <li
+                  key={i}
+                  className="text-xs text-muted-foreground leading-relaxed flex gap-2"
+                >
+                  <CheckCircle2 className="h-3.5 w-3.5 text-primary/70 mt-0.5 shrink-0" />
+                  <span>{hint}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </>
       )}
 
       {/* Submit form */}
       {!result && !skipped && (
         <div className="space-y-2">
-          <label className="text-xs font-mono text-muted-foreground">
-            تسليمك (الصق إجابتك أو لينك)
+          <label className="text-xs text-muted-foreground">
+            إجابتك (اكتب ببساطة — مش لازم تكون مثالية)
           </label>
           {templateText && text.trim().length === 0 && (
             <button
@@ -298,43 +330,58 @@ export function MissionRubricSection({
             placeholder={
               templateText
                 ? "اكتب من الصفر، أو اضغط «ابدأ من تيمبليت جاهز» فوق."
-                : "اكتب أو الصق هنا..."
+                : "اكتب إجابتك هنا ببساطة… مش لازم تكون مثالية."
             }
             rows={5}
             className="w-full rounded-lg border border-white/10 bg-white/[0.02] p-3 text-sm leading-relaxed resize-y focus:outline-none focus:border-accent/40"
             dir="rtl"
           />
-          <div className="flex items-center gap-2 flex-wrap">
-            <button
-              type="button"
-              onClick={submit}
-              disabled={submitting}
-              className="inline-flex items-center gap-2 rounded-lg border border-accent/30 bg-accent/15 px-3 py-2 text-xs font-semibold text-accent hover:bg-accent/25 transition disabled:opacity-50"
-            >
-              {submitting ? (
-                <>
-                  <Loader2 className="h-3.5 w-3.5 animate-spin" /> جاري التقييم...
-                </>
-              ) : (
-                <>
-                  <Send className="h-3.5 w-3.5" /> ابعت للمراجعة بالـ AI
-                </>
-              )}
-            </button>
-            <button
-              type="button"
-              onClick={skipMission}
-              disabled={skipping}
-              className="inline-flex items-center gap-1.5 text-[11px] font-mono text-muted-foreground hover:text-foreground transition disabled:opacity-50"
-              title="افتح الدرس الجاي من غير ما تسلّم — تقدر ترجع للمهمة وقت ما تحب"
-            >
-              {skipping ? (
-                <><Loader2 className="h-3 w-3 animate-spin" /> ثانية…</>
-              ) : (
-                <><SkipForward className="h-3 w-3" /> تخطّي المهمة دلوقتي</>
-              )}
-            </button>
-          </div>
+          {!user && (
+            <div className="rounded-lg border border-primary/20 bg-primary/[0.04] p-3 space-y-2">
+              <p className="text-sm leading-relaxed text-foreground/85">
+                علشان نحفظ تقدمك وتاخد Feedback، سجّل دخولك الأول.
+              </p>
+              <Link
+                to="/login"
+                className="inline-flex items-center gap-2 rounded-lg border border-accent/30 bg-accent/15 px-3 py-2 text-xs font-semibold text-accent hover:bg-accent/25 transition"
+              >
+                سجّل دخولك واحفظ تقدمي
+              </Link>
+            </div>
+          )}
+          {user && (
+            <div className="flex items-center gap-2 flex-wrap">
+              <button
+                type="button"
+                onClick={submit}
+                disabled={submitting}
+                className="inline-flex items-center gap-2 rounded-lg border border-accent/30 bg-accent/15 px-3 py-2 text-xs font-semibold text-accent hover:bg-accent/25 transition disabled:opacity-50"
+              >
+                {submitting ? (
+                  <>
+                    <Loader2 className="h-3.5 w-3.5 animate-spin" /> جاري تجهيز الـ Feedback...
+                  </>
+                ) : (
+                  <>
+                    <Send className="h-3.5 w-3.5" /> ابعت وخد Feedback
+                  </>
+                )}
+              </button>
+              <button
+                type="button"
+                onClick={skipMission}
+                disabled={skipping}
+                className="inline-flex items-center gap-1.5 text-[11px] text-muted-foreground hover:text-foreground transition disabled:opacity-50"
+                title="كمّل الدرس وارجع للمهمة وقت ما تحب"
+              >
+                {skipping ? (
+                  <><Loader2 className="h-3 w-3 animate-spin" /> ثانية…</>
+                ) : (
+                  <><SkipForward className="h-3 w-3" /> مش جاهز دلوقتي — كمّل وارجع لها بعدين</>
+                )}
+              </button>
+            </div>
+          )}
         </div>
       )}
 
@@ -354,7 +401,7 @@ export function MissionRubricSection({
         <div className="rounded-xl border border-primary/25 bg-primary/[0.05] p-3 text-sm leading-relaxed text-foreground/90 inline-flex items-start gap-2">
           <SkipForward className="h-4 w-4 text-primary mt-0.5 shrink-0" />
           <span>
-            تخطّيت المهمة. الدرس الجاي اتفتح — لما تحب ترجع وتجرّبها.
+            مش جاهز دلوقتي — كمّل براحتك وارجع للمهمة وقت ما تحب.
           </span>
         </div>
       )}
@@ -379,35 +426,28 @@ function EvaluationResultCard({
   reveal: RevealAnswerResult | null;
   onSkip: () => void;
 }) {
+  const feedbackState = getFeedbackState(result);
   const canReveal = !result.passed && failedAttempts >= 2 && !reveal;
   const canSkip = !result.passed && !reveal;
   return (
     <div className="rounded-xl border border-accent/25 bg-accent/[0.05] p-4 space-y-3">
-      <div className="flex items-center justify-between flex-wrap gap-2">
-        <p className="text-sm font-mono inline-flex items-center gap-1.5">
-          {result.passed ? (
-            <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-          ) : (
-            <XCircle className="h-4 w-4 text-amber-400" />
-          )}
-          {result.passed ? "عدّيت ✓" : "محتاج تحسين"}
-        </p>
-        <span className="text-lg font-bold tabular-nums">
-          {result.overallScore}
-          <span className="text-xs text-muted-foreground">/100</span>
-        </span>
+      <div className="flex items-start gap-2">
+        <Sparkles className="h-4 w-4 text-accent mt-0.5 shrink-0" />
+        <div className="space-y-1 min-w-0">
+          <p className="text-sm font-semibold text-foreground">
+            {feedbackState.label}
+          </p>
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            {feedbackState.hint}
+          </p>
+        </div>
       </div>
 
       {result.perCriterion.length > 0 && (
         <ul className="space-y-2 border-t border-accent/15 pt-3">
           {result.perCriterion.map((c, i) => (
             <li key={i} className="space-y-1">
-              <div className="flex items-center justify-between gap-2">
-                <p className="text-xs font-semibold">{c.label}</p>
-                <span className="text-[10px] font-mono tabular-nums text-muted-foreground">
-                  {c.score}/100
-                </span>
-              </div>
+              <p className="text-xs font-semibold">{c.label}</p>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 {c.feedback}
               </p>
@@ -433,8 +473,8 @@ function EvaluationResultCard({
       )}
 
       {result.socraticQuestion && result.socraticQuestion.trim().length > 0 && (
-        <div className="rounded-lg border border-amber-400/25 bg-amber-400/[0.06] p-3 space-y-1.5">
-          <p className="text-[11px] font-mono text-amber-300 inline-flex items-center gap-1.5">
+        <div className="rounded-lg border border-primary/20 bg-primary/[0.04] p-3 space-y-1.5">
+          <p className="text-[11px] text-primary inline-flex items-center gap-1.5">
             <HelpCircle className="h-3.5 w-3.5" /> فكّر في السؤال ده
           </p>
           <p className="text-sm leading-relaxed text-foreground/90">
@@ -450,8 +490,8 @@ function EvaluationResultCard({
 
       {reveal && (
         <div className="rounded-lg border border-primary/25 bg-primary/[0.06] p-3 space-y-2 border-t border-primary/20">
-          <p className="text-xs font-mono text-primary inline-flex items-center gap-1.5">
-            <Lightbulb className="h-3.5 w-3.5" /> نموذج إجابة للتعلّم
+          <p className="text-xs text-primary inline-flex items-center gap-1.5">
+            <Lightbulb className="h-3.5 w-3.5" /> مثال يساعدك
           </p>
           <pre className="whitespace-pre-wrap text-sm leading-relaxed font-sans text-foreground/90">
             {reveal.modelAnswer}
@@ -468,19 +508,19 @@ function EvaluationResultCard({
             <button
               type="button"
               onClick={onRetry}
-              className="text-[11px] font-mono text-muted-foreground hover:text-accent transition"
+              className="text-[11px] text-muted-foreground hover:text-accent transition"
             >
-              ابعت محاولة جديدة
+              حسّن إجابتي
             </button>
           )}
           {canSkip && (
             <button
               type="button"
               onClick={onSkip}
-              className="inline-flex items-center gap-1.5 text-[11px] font-mono text-muted-foreground hover:text-foreground transition"
-              title="افتح الدرس الجاي من غير ما تكمّل المحاولة"
+              className="inline-flex items-center gap-1.5 text-[11px] text-muted-foreground hover:text-foreground transition"
+              title="كمّل الدرس وارجع للمهمة وقت ما تحب"
             >
-              <SkipForward className="h-3 w-3" /> تخطّي المهمة
+              <SkipForward className="h-3 w-3" /> مش جاهز دلوقتي — كمّل وارجع لها بعدين
             </button>
           )}
           {canReveal && (
@@ -496,7 +536,7 @@ function EvaluationResultCard({
                 </>
               ) : (
                 <>
-                  <Lightbulb className="h-3 w-3" /> وريني نموذج إجابة وافتح الدرس
+                  <Lightbulb className="h-3 w-3" /> شوف مثال يساعدك
                 </>
               )}
             </button>

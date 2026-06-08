@@ -81,16 +81,16 @@ export function IntroMissionPrompt({
   }
 
   return (
-    <div className="space-y-3">
+    <div className="rounded-2xl border border-primary/20 bg-primary/[0.03] p-4 space-y-3">
       <div className="flex items-start justify-between gap-3 flex-wrap">
-        <p className="flex-1 min-w-0">{intro}</p>
+        <p className="flex-1 min-w-0 text-sm leading-relaxed">{intro}</p>
         {started && (
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 text-[10px] font-mono text-accent shrink-0">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 text-[10px] text-accent shrink-0">
             <Sparkles className="h-3 w-3" /> بدأت المهمة
           </span>
         )}
       </div>
-      <div className="rounded-xl border border-primary/20 bg-primary/[0.05] p-3 text-sm leading-relaxed text-foreground/90">
+      <div className="rounded-xl border border-primary/15 bg-background/40 p-3 text-sm leading-relaxed text-foreground/90">
         {prompt}
       </div>
       <button
