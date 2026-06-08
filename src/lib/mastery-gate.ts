@@ -11,6 +11,8 @@ import type { CurriculumModule } from "@/lib/curriculum-data";
  *
  * Source of truth: `mission_submissions.status = 'passed'` for every
  * shipped lesson in the module that ships with a rubric-backed mission.
+ * Skipped rows (`submission_metadata.skipped = true`) unlock the lesson
+ * via mission-gate but do not count here.
  */
 
 export interface ModuleMastery {
@@ -63,12 +65,20 @@ export function useModulesMastery(modules: CurriculumModule[]): {
     queryFn: async () => {
       const { data, error } = await supabase
         .from("mission_submissions")
-        .select("mission_id")
+        .select("mission_id, submission_metadata")
         .eq("user_id", userId!)
         .eq("status", "passed")
         .in("mission_id", allGatedMissionIds);
       if (error) throw error;
-      return new Set((data ?? []).map((r) => r.mission_id as string));
+      return new Set(
+        (data ?? [])
+          .filter((r) => {
+            const meta =
+              (r.submission_metadata as Record<string, unknown> | null) ?? {};
+            return meta.skipped !== true;
+          })
+          .map((r) => r.mission_id as string),
+      );
     },
   });
 
