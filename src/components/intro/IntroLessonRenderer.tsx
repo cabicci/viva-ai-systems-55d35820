@@ -8,6 +8,23 @@ import { QuizBlock } from "./QuizBlock";
 import { getBunnyEmbedUrl } from "@/lib/bunny-videos";
 import { getValueHook } from "./value-hooks";
 
+const VIDEO_SKIP_NOTICE = "الفيديو لسه — كمّل قراية 👌";
+
+function lessonVideoHasSource(
+  block: Extract<IntroBlock, { kind: "lessonVideo" }>,
+  lessonId?: string,
+): boolean {
+  return Boolean(getBunnyEmbedUrl(lessonId) || block.url);
+}
+
+function VideoSkipNotice() {
+  return (
+    <p className="text-center text-xs text-muted-foreground/90 py-0.5">
+      {VIDEO_SKIP_NOTICE}
+    </p>
+  );
+}
+
 /**
  * Resolve a video URL (legacy `/lessons/intro/{slug}.mp4` or any other path)
  * to a Bunny Stream iframe embed when we have a GUID for that lesson slug.
@@ -78,8 +95,9 @@ export function IntroLessonRenderer({
   lessonTitle?: string;
 }) {
   const hook = getValueHook(lessonId);
+  const hasMission = content.some((s) => s.block.kind === "mission");
   return (
-    <article className="space-y-5 md:space-y-7">
+    <article className="space-y-4 md:space-y-7">
       {hook && (
         <aside
           dir="rtl"
@@ -99,18 +117,36 @@ export function IntroLessonRenderer({
           </div>
         </aside>
       )}
-      {content.map((section, i) => (
-        <IntroSection
-          key={i}
-          index={i + 1}
-          icon={section.icon}
-          eyebrow={section.eyebrow}
-          title={section.title}
-          tone={section.tone}
-        >
-          <BlockBody block={section.block} lessonId={lessonId} lessonTitle={lessonTitle} />
-        </IntroSection>
-      ))}
+      {hasMission && (
+        <p className="text-center sm:text-right -mt-1">
+          <a
+            href="#mission"
+            className="inline-flex items-center gap-1 text-xs text-primary/75 hover:text-primary transition"
+          >
+            روح للمهمة ↓
+          </a>
+        </p>
+      )}
+      {content.map((section, i) => {
+        if (
+          section.block.kind === "lessonVideo" &&
+          !lessonVideoHasSource(section.block, lessonId)
+        ) {
+          return <VideoSkipNotice key={i} />;
+        }
+        return (
+          <IntroSection
+            key={i}
+            index={i + 1}
+            icon={section.icon}
+            eyebrow={section.eyebrow}
+            title={section.title}
+            tone={section.tone}
+          >
+            <BlockBody block={section.block} lessonId={lessonId} lessonTitle={lessonTitle} />
+          </IntroSection>
+        );
+      })}
     </article>
   );
 }
@@ -166,17 +202,19 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
 
     case "mission":
       return (
-        <IntroMissionPrompt
-          intro={block.intro}
-          prompt={block.prompt}
-          buttonLabel={block.buttonLabel}
-          copiedLabel={block.copiedLabel}
-          rubric={block.rubric}
-          lessonId={block.lessonId ?? lessonId}
-          missionId={block.missionId}
-          lessonTitle={lessonTitle}
-          template={block.template}
-        />
+        <div id="mission" className="scroll-mt-24">
+          <IntroMissionPrompt
+            intro={block.intro}
+            prompt={block.prompt}
+            buttonLabel={block.buttonLabel}
+            copiedLabel={block.copiedLabel}
+            rubric={block.rubric}
+            lessonId={block.lessonId ?? lessonId}
+            missionId={block.missionId}
+            lessonTitle={lessonTitle}
+            template={block.template}
+          />
+        </div>
       );
 
     case "checklist":
@@ -210,17 +248,7 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
 
     case "video": {
       if (!block.url) {
-        return (
-          <div className="rounded-xl border border-dashed border-white/10 bg-white/[0.02] p-5 text-center space-y-1.5">
-            <PlayCircle className="h-6 w-6 mx-auto text-muted-foreground" />
-            <p className="text-sm text-muted-foreground">
-              {block.caption ?? "الفيديو سيضاف قريبًا"}
-            </p>
-            <p className="text-[10px] font-mono text-muted-foreground/70">
-              VIDEO · COMING SOON
-            </p>
-          </div>
-        );
+        return <VideoSkipNotice />;
       }
       const src = resolveVideoSource(block.url, lessonId);
       return (
@@ -489,19 +517,7 @@ function LessonVideoBlock({
 }) {
   const [errored, setErrored] = React.useState(false);
   if (!url || errored) {
-    return (
-      <div className="rounded-2xl border border-dashed border-accent/30 bg-accent/[0.04] p-6 text-center space-y-2">
-        <div className="mx-auto grid h-10 w-10 place-items-center rounded-full bg-accent/10">
-          <PlayCircle className="h-5 w-5 text-accent" />
-        </div>
-        <p className="text-sm text-foreground">
-          {caption ?? "الفيديو التعليمي للدرس ده هيتضاف قريب."}
-        </p>
-        <p className="text-[10px] font-mono text-accent/80">
-          LESSON VIDEO · COMING SOON
-        </p>
-      </div>
-    );
+    return <VideoSkipNotice />;
   }
   return (
     <figure className="space-y-2">

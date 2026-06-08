@@ -27,7 +27,7 @@ import {
   type CurriculumLesson,
   type PathId,
 } from "@/lib/curriculum-data";
-import { useLessonGate, useStreak } from "@/lib/entitlements";
+import { useEntitlement, useLessonGate, useStreak } from "@/lib/entitlements";
 import { PaywallCard, IntroGateCard } from "@/components/learn/PaywallCard";
 import { useMissionGate, getLessonMission } from "@/lib/mission-gate";
 import { Lock } from "lucide-react";
@@ -147,6 +147,7 @@ function UnifiedLessonPage() {
   const { from } = Route.useSearch();
   const { getStatus, setStatus, isLoaded: isProgressLoaded } = useLessonProgress();
   const { recordActivity } = useStreak();
+  const { isAdmin } = useEntitlement();
   const meta = PATH_META[pathId];
   const Icon = meta.icon;
   const toneClasses =
@@ -284,19 +285,21 @@ function UnifiedLessonPage() {
             {lesson.title}
           </h1>
 
-          <button
-            type="button"
-            onClick={copyLessonId}
-            aria-label="نسخ معرّف الدرس"
-            className="mt-3 inline-flex items-center gap-2 rounded-lg border border-border/60 bg-muted/30 px-3 py-1.5 text-[12px] font-mono text-foreground/80 hover:bg-muted/50 hover:text-foreground transition"
-          >
-            <span className="select-all">{lesson.slug}</span>
-            {copied ? (
-              <Check className="h-3.5 w-3.5 text-primary" />
-            ) : (
-              <Copy className="h-3.5 w-3.5 opacity-70" />
-            )}
-          </button>
+          {isAdmin && (
+            <button
+              type="button"
+              onClick={copyLessonId}
+              aria-label="نسخ معرّف الدرس"
+              className="mt-3 inline-flex items-center gap-2 rounded-lg border border-border/60 bg-muted/30 px-3 py-1.5 text-[12px] font-mono text-foreground/80 hover:bg-muted/50 hover:text-foreground transition"
+            >
+              <span className="select-all">{lesson.slug}</span>
+              {copied ? (
+                <Check className="h-3.5 w-3.5 text-primary" />
+              ) : (
+                <Copy className="h-3.5 w-3.5 opacity-70" />
+              )}
+            </button>
+          )}
 
           <div className="mt-5">
             <div className="flex items-center justify-between text-[11px] text-muted-foreground mb-1.5 font-mono">

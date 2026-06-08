@@ -1,5 +1,5 @@
 import * as React from "react";
-import { CheckCircle2, Copy, Sparkles } from "lucide-react";
+import { CheckCircle2, ChevronDown, ChevronUp, Copy, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 import {
   MissionRubricSection,
@@ -41,6 +41,7 @@ export function IntroMissionPrompt({
     [lessonId, prompt],
   );
   const [started, setStarted] = React.useState(false);
+  const [promptOpen, setPromptOpen] = React.useState(false);
 
   React.useEffect(() => {
     try {
@@ -90,24 +91,43 @@ export function IntroMissionPrompt({
           </span>
         )}
       </div>
-      <div className="rounded-xl border border-primary/15 bg-background/40 p-3 text-sm leading-relaxed text-foreground/90">
-        {prompt}
-      </div>
-      <button
-        type="button"
-        onClick={copyPrompt}
-        className="inline-flex items-center gap-2 rounded-lg border border-primary/30 bg-primary/15 px-3 py-2 text-xs font-semibold text-primary hover:bg-primary/25 transition"
-      >
-        {copied ? (
+      <div className="space-y-2">
+        <button
+          type="button"
+          onClick={() => setPromptOpen((o) => !o)}
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:opacity-80 transition"
+          aria-expanded={promptOpen}
+        >
+          {promptOpen ? (
+            <ChevronUp className="h-3.5 w-3.5" />
+          ) : (
+            <ChevronDown className="h-3.5 w-3.5" />
+          )}
+          ورّيني خطوات المهمة
+        </button>
+        {promptOpen && (
           <>
-            <CheckCircle2 className="h-3.5 w-3.5" /> {copiedLabel}
-          </>
-        ) : (
-          <>
-            <Copy className="h-3.5 w-3.5" /> {buttonLabel}
+            <div className="rounded-xl border border-primary/15 bg-background/40 p-3 text-sm leading-relaxed text-foreground/90">
+              {prompt}
+            </div>
+            <button
+              type="button"
+              onClick={copyPrompt}
+              className="inline-flex items-center gap-2 rounded-lg border border-primary/30 bg-primary/15 px-3 py-2 text-xs font-semibold text-primary hover:bg-primary/25 transition"
+            >
+              {copied ? (
+                <>
+                  <CheckCircle2 className="h-3.5 w-3.5" /> {copiedLabel}
+                </>
+              ) : (
+                <>
+                  <Copy className="h-3.5 w-3.5" /> {buttonLabel}
+                </>
+              )}
+            </button>
           </>
         )}
-      </button>
+      </div>
 
       {rubric && rubric.length > 0 && lessonId && (
         <MissionRubricSection
