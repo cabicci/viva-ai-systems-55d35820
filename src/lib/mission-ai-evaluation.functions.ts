@@ -61,6 +61,18 @@ export const evaluateMissionWithAI = createServerFn({ method: "POST" })
       throw new Error("LOVABLE_API_KEY is not configured");
     }
 
+    const releaseSubmittedRow = async () => {
+      // submit_mission_for_evaluation leaves status=submitted; on eval failure
+      // flip back so the same row can be retried (RPC only accepts draft/needs_revision/failed).
+      await supabaseAdmin
+        .from("mission_submissions")
+        .update({ status: "needs_revision" })
+        .eq("id", data.submissionId)
+        .eq("user_id", userId)
+        .eq("status", "submitted");
+    };
+
+    try {
     // Rate limit: hourly + daily + monthly cost caps per user.
     // Hourly: burst protection. Daily/monthly: cost cap.
     await enforceRateLimit({ userId, bucketKey: "ai:evaluate-mission", maxCalls: 10, windowSeconds: 3600 });
@@ -208,6 +220,10 @@ ${data.submissionText}
     }
 
     return result;
+    } catch (err) {
+      await releaseSubmittedRow();
+      throw err;
+    }
   });
 
 function clamp(n: number, min: number, max: number): number {
@@ -246,7 +262,7 @@ export const revealModelMissionAnswer = createServerFn({ method: "POST" })
 
     const { data: row, error: rowErr } = await supabaseAdmin
       .from("mission_submissions")
-      .select("id, user_id, mission_id, attempt_count, status")
+      .select("id, user_id, mission_id, attempt_count, status, submission_metadata")
       .eq("id", data.submissionId)
       .eq("user_id", userId)
       .eq("mission_id", data.missionId)
@@ -254,18 +270,33 @@ export const revealModelMissionAnswer = createServerFn({ method: "POST" })
     if (rowErr) throw new Error("تعذّر التحقق من التسليم.");
     if (!row) throw new Error("التسليم غير موجود.");
 
-    // C5 fix: server-side guard — escape hatch is only valid AFTER 2 real
-    // attempts and only when the submission isn't already passed. Without
-    // this a client could call reveal directly on a fresh draft to skip
-    // the mission entirely.
-    if ((row.attempt_count ?? 0) < 2) {
-      throw new Error("لازم تحاول مرتين قبل ما تشوف نموذج الإجابة.");
-    }
+    const existingMeta =
+      (row.submission_metadata as Record<string, unknown> | null) ?? {};
+
+    // Legacy rows: passed + revealed still count as done — do not re-reveal.
     if (row.status === "passed") {
       throw new Error("المهمة دي تم اجتيازها بالفعل.");
     }
     if (row.status === "evaluating") {
       throw new Error("التسليم لسه بيتقيّم — استنّى ثواني وحاول تاني.");
+    }
+
+    // Idempotent: return stored model answer without re-unlocking or re-scoring.
+    if (
+      existingMeta.revealed === true &&
+      typeof existingMeta.modelAnswer === "string"
+    ) {
+      return {
+        modelAnswer: String(existingMeta.modelAnswer).slice(0, 4000),
+        note: String(
+          existingMeta.note ?? "ده نموذج للتعلّم — قارنه بمحاولتك.",
+        ),
+      };
+    }
+
+    // Server-side guard — escape hatch only after 2 real submit attempts.
+    if ((row.attempt_count ?? 0) < 2) {
+      throw new Error("لازم تحاول مرتين قبل ما تشوف نموذج الإجابة.");
     }
 
     const systemPrompt = `أنت مدرّس AI بالعربية المصرية البسيطة. الطالب اتعب وحاول مرتين على المهمة دي. هتديله نموذج إجابة كامل ومفيد عشان يفهم الشكل المطلوب — مش عشان يغش، عشان يتعلم. اكتب إجابة قصيرة، عملية، تتبع الـ structure المطلوب في المهمة بالظبط.
@@ -325,15 +356,12 @@ ${data.missionPrompt}
       note: String(parsed.note ?? "ده نموذج للتعلّم — قارنه بمحاولتك."),
     };
 
-    // Mark the submission as passed (escape hatch — score = threshold).
+    // Persist model answer only — do not pass/unlock; learner must resubmit.
     const { error: updErr } = await supabaseAdmin
       .from("mission_submissions")
       .update({
-        status: "passed",
-        score: MISSION_PASS_THRESHOLD,
-        feedback: "تم فتح الدرس التالي بعد عرض نموذج الإجابة. ارجع للنموذج وقارنه بمحاولتك.",
-        evaluated_at: new Date().toISOString(),
         submission_metadata: {
+          ...existingMeta,
           revealed: true,
           modelAnswer: result.modelAnswer,
           note: result.note,

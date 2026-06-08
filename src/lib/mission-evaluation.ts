@@ -57,6 +57,19 @@ export interface UpdateSubmissionInput {
 
 const TABLE = "mission_submissions" as const;
 
+/** Statuses eligible for in-place retry (no new row). */
+const REUSABLE_STATUSES: MissionSubmissionStatus[] = [
+  "draft",
+  "needs_revision",
+  "failed",
+];
+
+export function isReusableSubmissionStatus(
+  status: MissionSubmissionStatus,
+): boolean {
+  return REUSABLE_STATUSES.includes(status);
+}
+
 async function requireUserId(): Promise<string> {
   const { data, error } = await supabase.auth.getUser();
   if (error || !data.user) {
@@ -120,6 +133,75 @@ export async function getLatestSubmissionForMission(
     .maybeSingle();
   if (error) throw error;
   return (data as unknown as MissionSubmission) ?? null;
+}
+
+/**
+ * Latest submission row that can be updated and resubmitted in place
+ * (draft / needs_revision / failed).
+ */
+export async function getReusableSubmissionForMission(
+  missionId: string,
+  lessonId?: string | null,
+): Promise<MissionSubmission | null> {
+  const userId = await requireUserId();
+  let query = supabase
+    .from(TABLE)
+    .select("*")
+    .eq("user_id", userId)
+    .eq("mission_id", missionId)
+    .in("status", REUSABLE_STATUSES);
+  if (lessonId) query = query.eq("lesson_id", lessonId);
+  const { data, error } = await query
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  if (error) throw error;
+  return (data as unknown as MissionSubmission) ?? null;
+}
+
+/**
+ * Latest in-progress submission for hydrate (non-passed, same user/mission/lesson).
+ * Prefers reusable rows; falls back to `submitted` rows left after a failed eval.
+ */
+export async function getActiveSubmissionForMission(
+  missionId: string,
+  lessonId?: string | null,
+): Promise<MissionSubmission | null> {
+  const reusable = await getReusableSubmissionForMission(missionId, lessonId);
+  if (reusable) return reusable;
+
+  const userId = await requireUserId();
+  let query = supabase
+    .from(TABLE)
+    .select("*")
+    .eq("user_id", userId)
+    .eq("mission_id", missionId)
+    .eq("status", "submitted");
+  if (lessonId) query = query.eq("lesson_id", lessonId);
+  const { data, error } = await query
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  if (error) throw error;
+  return (data as unknown as MissionSubmission) ?? null;
+}
+
+/**
+ * Reuse an open submission row when possible; otherwise create a new draft.
+ */
+export async function prepareSubmissionForAttempt(
+  input: CreateSubmissionInput,
+): Promise<MissionSubmission> {
+  const reusable = await getReusableSubmissionForMission(
+    input.missionId,
+    input.lessonId,
+  );
+  if (reusable) {
+    return updateSubmission(reusable.id, {
+      submissionText: input.submissionText ?? null,
+    });
+  }
+  return createSubmission(input);
 }
 
 export async function updateSubmission(

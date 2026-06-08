@@ -22,7 +22,11 @@ import {
   type RevealAnswerResult,
 } from "@/lib/mission-ai-evaluation.functions";
 import { skipMissionServer } from "@/lib/mission-skip.functions";
-import { createSubmission, getLatestSubmissionForMission } from "@/lib/mission-evaluation";
+import {
+  getActiveSubmissionForMission,
+  prepareSubmissionForAttempt,
+  submitForEvaluation,
+} from "@/lib/mission-evaluation";
 import { useAuth } from "@/lib/auth-context";
 import { emitMissionPassed } from "@/lib/mission-gate";
 import { logLearnerEvent } from "@/lib/learner-events";
@@ -106,8 +110,8 @@ export function MissionRubricSection({
   const [text, setText] = React.useState("");
   const [submitting, setSubmitting] = React.useState(false);
   const [result, setResult] = React.useState<AIEvaluationResult | null>(null);
-  // Count of failed attempts on this lesson page (resets on reload).
-  const [failedAttempts, setFailedAttempts] = React.useState(0);
+  // Server-backed attempt_count on the reused submission row.
+  const [attemptCount, setAttemptCount] = React.useState(0);
   const [lastSubmissionId, setLastSubmissionId] = React.useState<string | null>(null);
   const [reveal, setReveal] = React.useState<RevealAnswerResult | null>(null);
   const [revealing, setRevealing] = React.useState(false);
@@ -118,22 +122,30 @@ export function MissionRubricSection({
   const [skipped, setSkipped] = React.useState(false);
   const [skipping, setSkipping] = React.useState(false);
 
-  // Seed failedAttempts from the server so the "reveal model answer" button
-  // re-appears after a page reload (server is the source of truth for
-  // attempt_count; client-only state would reset to 0 on refresh).
+  // Hydrate attempt_count, reveal state, and draft text from the server.
   React.useEffect(() => {
     let cancelled = false;
     if (!user) return;
-    void getLatestSubmissionForMission(missionId)
+    void getActiveSubmissionForMission(missionId, lessonId)
       .then((sub) => {
         if (cancelled || !sub) return;
-        const attempts = Number(sub.attempt_count ?? 0);
         if (sub.status === "passed") {
-          // Already passed (incl. skipped) — leave UI to the gate logic.
+          // Already passed (incl. skipped / legacy revealed) — gate handles unlock.
           return;
         }
-        if (attempts > 0) setFailedAttempts(attempts);
-        if (sub.id) setLastSubmissionId(sub.id);
+        setAttemptCount(Number(sub.attempt_count ?? 0));
+        setLastSubmissionId(sub.id);
+        if (sub.submission_text) setText(sub.submission_text);
+
+        const meta = sub.submission_metadata ?? {};
+        if (meta.revealed === true && typeof meta.modelAnswer === "string") {
+          setReveal({
+            modelAnswer: String(meta.modelAnswer),
+            note: String(
+              meta.note ?? "ده نموذج للتعلّم — قارنه بمحاولتك.",
+            ),
+          });
+        }
       })
       .catch(() => {
         /* silent — telemetry must not break the page */
@@ -141,7 +153,7 @@ export function MissionRubricSection({
     return () => {
       cancelled = true;
     };
-  }, [user, missionId]);
+  }, [user, missionId, lessonId]);
 
   async function skipMission() {
     if (skipping) return;
@@ -158,7 +170,7 @@ export function MissionRubricSection({
         moduleId: lessonId.split("-")[1] ?? null,
         lessonId,
         missionId,
-        metadata: { failed_attempts: failedAttempts },
+        metadata: { failed_attempts: attemptCount },
       });
       toast.success("كمّل براحتك — ترجع للمهمة وقت ما تحب.");
     } catch (e) {
@@ -187,13 +199,16 @@ export function MissionRubricSection({
     }
     setSubmitting(true);
     try {
-      // 1) Create the submission row (server triggers force status='draft').
-      const submission = await createSubmission({
+      // 1) Reuse open row or create draft; 2) mark submitted + increment attempt_count.
+      const submission = await prepareSubmissionForAttempt({
         missionId,
         lessonId,
         submissionText: text,
       });
       setLastSubmissionId(submission.id);
+      const submitted = await submitForEvaluation(submission.id);
+      setAttemptCount(submitted.attempt_count);
+
       const [pathId, moduleId] = lessonId.split("-");
       void logLearnerEvent({
         type: "mission_submitted",
@@ -201,9 +216,13 @@ export function MissionRubricSection({
         moduleId: moduleId ?? null,
         lessonId,
         missionId,
-        metadata: { submission_id: submission.id, length: text.length },
+        metadata: {
+          submission_id: submission.id,
+          length: text.length,
+          attempt_count: submitted.attempt_count,
+        },
       });
-      // 2) Call AI evaluator — it persists score/feedback/status server-side.
+      // 3) AI evaluator persists score/feedback/status server-side.
       const r = await evaluate({
         data: {
           submissionId: submission.id,
@@ -227,8 +246,6 @@ export function MissionRubricSection({
       );
       if (r.passed) {
         emitMissionPassed(missionId);
-      } else {
-        setFailedAttempts((n) => n + 1);
       }
     } catch (err) {
       toast.error(
@@ -252,8 +269,8 @@ export function MissionRubricSection({
         },
       });
       setReveal(r);
-      emitMissionPassed(missionId);
-      toast.success("اقرأ المثال وقارنه بمحاولتك — ده للتعلّم مش للغش.");
+      setResult(null);
+      toast.success("اقرأ المثال، ثم حسّن إجابتك بكلامك وابعتها تاني.");
     } catch (err) {
       toast.error(
         err instanceof Error ? err.message : "تعذّر توليد المثال. حاول تاني.",
@@ -308,8 +325,46 @@ export function MissionRubricSection({
         </>
       )}
 
-      {/* Submit form */}
-      {!result && !skipped && (
+      {!skipped && !reveal && !result && attemptCount >= 2 && lastSubmissionId && (
+        <div className="flex justify-end">
+          <button
+            type="button"
+            onClick={onReveal}
+            disabled={revealing}
+            className="inline-flex items-center gap-1.5 rounded-lg border border-primary/30 bg-primary/15 px-3 py-1.5 text-[11px] font-semibold text-primary hover:bg-primary/25 transition disabled:opacity-50"
+          >
+            {revealing ? (
+              <>
+                <Loader2 className="h-3 w-3 animate-spin" /> جاري التوليد...
+              </>
+            ) : (
+              <>
+                <Lightbulb className="h-3 w-3" /> شوف مثال يساعدك
+              </>
+            )}
+          </button>
+        </div>
+      )}
+
+      {reveal && !skipped && (
+        <div className="rounded-lg border border-primary/25 bg-primary/[0.06] p-3 space-y-2">
+          <p className="text-xs text-primary inline-flex items-center gap-1.5">
+            <Lightbulb className="h-3.5 w-3.5" /> مثال يساعدك
+          </p>
+          <pre className="whitespace-pre-wrap text-sm leading-relaxed font-sans text-foreground/90">
+            {reveal.modelAnswer}
+          </pre>
+          <p className="text-[11px] text-muted-foreground leading-relaxed">
+            {reveal.note}
+          </p>
+          <p className="text-sm leading-relaxed text-foreground/90 border-t border-primary/15 pt-2">
+            اقرأ المثال، ثم حسّن إجابتك بكلامك وابعتها تاني.
+          </p>
+        </div>
+      )}
+
+      {/* Submit form — stays open after reveal for post-reveal resubmit */}
+      {!skipped && (!result || reveal) && (
         <div className="space-y-2">
           <label className="text-xs text-muted-foreground">
             إجابتك (اكتب ببساطة — مش لازم تكون مثالية)
@@ -385,14 +440,13 @@ export function MissionRubricSection({
         </div>
       )}
 
-      {result && !skipped && (
+      {result && !skipped && !reveal && (
         <EvaluationResultCard
           result={result}
-          failedAttempts={failedAttempts}
+          attemptCount={attemptCount}
           onRetry={() => setResult(null)}
           onReveal={onReveal}
           revealing={revealing}
-          reveal={reveal}
           onSkip={skipMission}
         />
       )}
@@ -411,24 +465,22 @@ export function MissionRubricSection({
 
 function EvaluationResultCard({
   result,
-  failedAttempts,
+  attemptCount,
   onRetry,
   onReveal,
   revealing,
-  reveal,
   onSkip,
 }: {
   result: AIEvaluationResult;
-  failedAttempts: number;
+  attemptCount: number;
   onRetry: () => void;
   onReveal: () => void;
   revealing: boolean;
-  reveal: RevealAnswerResult | null;
   onSkip: () => void;
 }) {
   const feedbackState = getFeedbackState(result);
-  const canReveal = !result.passed && failedAttempts >= 2 && !reveal;
-  const canSkip = !result.passed && !reveal;
+  const canReveal = !result.passed && attemptCount >= 2;
+  const canSkip = !result.passed;
   return (
     <div className="rounded-xl border border-accent/25 bg-accent/[0.05] p-4 space-y-3">
       <div className="flex items-start gap-2">
@@ -488,61 +540,45 @@ function EvaluationResultCard({
         </div>
       )}
 
-      {reveal && (
-        <div className="rounded-lg border border-primary/25 bg-primary/[0.06] p-3 space-y-2 border-t border-primary/20">
-          <p className="text-xs text-primary inline-flex items-center gap-1.5">
-            <Lightbulb className="h-3.5 w-3.5" /> مثال يساعدك
-          </p>
-          <pre className="whitespace-pre-wrap text-sm leading-relaxed font-sans text-foreground/90">
-            {reveal.modelAnswer}
-          </pre>
-          <p className="text-[11px] text-muted-foreground leading-relaxed">
-            {reveal.note}
-          </p>
-        </div>
-      )}
-
-      {!reveal && (
-        <div className="flex items-center justify-between gap-3 flex-wrap pt-1">
-          {!result.passed && (
-            <button
-              type="button"
-              onClick={onRetry}
-              className="text-[11px] text-muted-foreground hover:text-accent transition"
-            >
-              حسّن إجابتي
-            </button>
-          )}
-          {canSkip && (
-            <button
-              type="button"
-              onClick={onSkip}
-              className="inline-flex items-center gap-1.5 text-[11px] text-muted-foreground hover:text-foreground transition"
-              title="كمّل الدرس وارجع للمهمة وقت ما تحب"
-            >
-              <SkipForward className="h-3 w-3" /> مش جاهز دلوقتي — كمّل وارجع لها بعدين
-            </button>
-          )}
-          {canReveal && (
-            <button
-              type="button"
-              onClick={onReveal}
-              disabled={revealing}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-primary/30 bg-primary/15 px-3 py-1.5 text-[11px] font-semibold text-primary hover:bg-primary/25 transition disabled:opacity-50"
-            >
-              {revealing ? (
-                <>
-                  <Loader2 className="h-3 w-3 animate-spin" /> جاري التوليد...
-                </>
-              ) : (
-                <>
-                  <Lightbulb className="h-3 w-3" /> شوف مثال يساعدك
-                </>
-              )}
-            </button>
-          )}
-        </div>
-      )}
+      <div className="flex items-center justify-between gap-3 flex-wrap pt-1">
+        {!result.passed && (
+          <button
+            type="button"
+            onClick={onRetry}
+            className="text-[11px] text-muted-foreground hover:text-accent transition"
+          >
+            حسّن إجابتي
+          </button>
+        )}
+        {canSkip && (
+          <button
+            type="button"
+            onClick={onSkip}
+            className="inline-flex items-center gap-1.5 text-[11px] text-muted-foreground hover:text-foreground transition"
+            title="كمّل الدرس وارجع للمهمة وقت ما تحب"
+          >
+            <SkipForward className="h-3 w-3" /> مش جاهز دلوقتي — كمّل وارجع لها بعدين
+          </button>
+        )}
+        {canReveal && (
+          <button
+            type="button"
+            onClick={onReveal}
+            disabled={revealing}
+            className="inline-flex items-center gap-1.5 rounded-lg border border-primary/30 bg-primary/15 px-3 py-1.5 text-[11px] font-semibold text-primary hover:bg-primary/25 transition disabled:opacity-50"
+          >
+            {revealing ? (
+              <>
+                <Loader2 className="h-3 w-3 animate-spin" /> جاري التوليد...
+              </>
+            ) : (
+              <>
+                <Lightbulb className="h-3 w-3" /> شوف مثال يساعدك
+              </>
+            )}
+          </button>
+        )}
+      </div>
     </div>
   );
 }
