@@ -9,7 +9,7 @@ export function Navbar() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link to="/" className="flex items-center" aria-label="مسارات">
           <img
-            src="/brand/masaarat-logo-horizontal.png"
+            src="/brand/masaarat-logo-horizontal-rtl.png"
             alt="مسارات"
             className="h-8 md:h-10 w-auto select-none"
             draggable={false}
