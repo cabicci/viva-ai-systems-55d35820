@@ -1,16 +1,19 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/lib/auth-context";
-import { MasaaratMark } from "./MasaaratMark";
 
 export function Navbar() {
   const { user } = useAuth();
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-surface-overlay backdrop-blur-xl">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link to="/" className="flex items-center gap-2 font-bold" aria-label="مسارات · masaarat.ai">
-          <MasaaratMark size={32} className="shrink-0" />
-          <span className="text-foreground tracking-tight text-lg" style={{ color: "#0E3A45" }}>مسارات</span>
+        <Link to="/" className="flex items-center" aria-label="مسارات">
+          <img
+            src="/brand/masaarat-logo-horizontal.png"
+            alt="مسارات"
+            className="h-8 md:h-10 w-auto select-none"
+            draggable={false}
+          />
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           <a href="#ecosystem" className="hover:text-foreground transition">المسارات</a>
