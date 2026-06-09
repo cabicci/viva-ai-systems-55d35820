@@ -140,7 +140,7 @@ export const generateDnaReport = createServerFn({ method: "POST" })
     push(`> **Generated:** ${stamp}`);
     push(`> **Purpose:** الملف ده هو DNA المنصة. أي حد يقراه يفهم كل اللي بنبنيه ويقدر يكمل من نفس النقطة من غير ما يرجعلنا.`);
     h2("1. نظرة عامة");
-    push(`- **اسم المنصة:** AI Ecosystem Hub`);
+    push(`- **اسم المنصة:** مسارات · masaarat.ai`);
     push(`- **الجمهور:** مبتدئين عرب (لهجة مصرية) عايزين يتعلموا الـ AI من الصفر.`);
     push(`- **الـ Tech Stack:**`);
     push(`  - Frontend/SSR: **TanStack Start v1** + React 19 + Vite 7`);
