@@ -3,6 +3,7 @@ import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
 import { enforceRateLimit } from "./rate-limit.server";
+import { callAI } from "./ai-providers.server";
 
 /**
  * AI-powered mission evaluation.
