@@ -90,6 +90,73 @@ function IconsPreviewPage() {
       </header>
 
       <main className="container mx-auto px-4 py-8 max-w-5xl space-y-12">
+        {/* Business Pilot Section */}
+        <section>
+          <h2 className="text-lg font-bold mb-2 text-center">
+            🧪 Pilot: Business — 3 Concept Directions
+          </h2>
+          <p className="text-center text-xs text-muted-foreground mb-6">
+            مبني مباشرة على رمز الهوية. اختر اتجاه واحد قبل توسيع باقي الأيقونات.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[1, 2, 3].map((n) => {
+              const desc = {
+                1: {
+                  title: "Concept 1 — Briefcase Block",
+                  body: "بلوك ليلكي ناعم صغير تحت الرمز يلمح للحقيبة. الرمز يظل هو البطل.",
+                },
+                2: {
+                  title: "Concept 2 — Briefcase Handle",
+                  body: "قوس ليلكي رفيع فوق الرمز كأنه يد حقيبة. أنحف وأكثر إيحاءً.",
+                },
+                3: {
+                  title: "Concept 3 — Clasp Line",
+                  body: "خط أفقي ليلكي يمرّ عبر العمود المركزي مثل قفل حقيبة. أقل تدخل.",
+                },
+              }[n]!;
+              return (
+                <div
+                  key={n}
+                  className="rounded-xl border border-border/60 bg-white p-5 flex flex-col gap-4"
+                  dir="ltr"
+                >
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="flex flex-col items-center gap-1.5 p-3 rounded-lg bg-muted/30">
+                      <img
+                        src={`/brand/icons/concepts/business-pilot/business-concept-${n}.png`}
+                        alt={`Concept ${n} static`}
+                        width={96}
+                        height={96}
+                        style={{ width: 96, height: 96 }}
+                      />
+                      <span className="text-[10px] text-muted-foreground font-mono">static .png</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-1.5 p-3 rounded-lg bg-muted/30">
+                      <object
+                        type="image/svg+xml"
+                        data={`/brand/icons/concepts/business-pilot/business-concept-${n}.svg`}
+                        width={96}
+                        height={96}
+                        style={{ width: 96, height: 96 }}
+                        aria-label={`Concept ${n} animated`}
+                      />
+                      <span className="text-[10px] text-muted-foreground font-mono">animated .svg</span>
+                    </div>
+                  </div>
+                  <div dir="rtl" className="text-right">
+                    <p className="text-sm font-bold">{desc.title}</p>
+                    <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{desc.body}</p>
+                    <p className="text-[10px] font-mono text-muted-foreground mt-2">
+                      business-concept-{n}.{`{png,svg}`}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
         {/* Concepts Section */}
         <section>
           <h2 className="text-lg font-bold mb-4 text-center">🎨 Concept Icons (PNG) — من Gemini</h2>
