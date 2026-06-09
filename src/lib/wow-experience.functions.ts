@@ -62,39 +62,23 @@ export const runWowPath = createServerFn({ method: "POST" })
       maxCalls: 40,
       windowSeconds: 86400,
     });
-    const apiKey = process.env.LOVABLE_API_KEY;
-    if (!apiKey) {
-      return { text: "", error: "AI غير متاح حالياً." };
-    }
     const cfg = PATH_PROMPTS[data.pathId];
     try {
-      const res = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          model: "google/gemini-3-flash-preview",
-          messages: [
-            { role: "system", content: cfg.system },
-            { role: "user", content: cfg.user(data.idea) },
-          ],
-        }),
-        signal: AbortSignal.timeout(30_000),
+      const { content } = await callAI({
+        model: "google/gemini-3-flash-preview",
+        messages: [
+          { role: "system", content: cfg.system },
+          { role: "user", content: cfg.user(data.idea) },
+        ],
+        timeoutMs: 30_000,
       });
-      if (!res.ok) {
-        if (res.status === 429) return { text: "", error: "في ضغط على الـ AI، جرب تاني بعد دقيقة." };
-        if (res.status === 402) return { text: "", error: "خلصت رصيد الـ AI." };
-        return { text: "", error: `حصلت مشكلة (${res.status}).` };
-      }
-      const json = (await res.json()) as {
-        choices?: Array<{ message?: { content?: string } }>;
-      };
-      const text = json.choices?.[0]?.message?.content?.trim() ?? "";
+      const text = content.trim();
       return { text, error: null as string | null };
-    } catch (err) {
+    } catch (err: unknown) {
       console.error("runWowPath failed", err);
+      const msg = err instanceof Error ? err.message : "";
+      if (msg.includes("429")) return { text: "", error: "في ضغط على الـ AI، جرب تاني بعد دقيقة." };
+      if (msg.includes("402")) return { text: "", error: "خلصت رصيد الـ AI." };
       return { text: "", error: "حصل خطأ في الاتصال بالـ AI." };
     }
   });
