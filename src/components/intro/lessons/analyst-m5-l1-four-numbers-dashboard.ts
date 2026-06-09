@@ -21,8 +21,8 @@ export const ANALYST_M5_L1_FOUR_NUMBERS_DASHBOARD_BLOCKS: IntroLessonContent = [
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "هتفهم إيه؟ الـ Dashboard المفيد يبدأ بأرقام قرار قليلة — مش ٥٠ رسم تفتحها وتقفلها.",
-        "ليه دلوقتي؟ في الموديول اللي فات كل insight بقى له action. دلوقتي محتاج ٤ أرقام تلخّص «هل شغلي ماشي؟» كل أسبوع.",
+        "هتفهم إيه؟ الـ Dashboard (شاشة فيها أهم الأرقام) المفيد يبدأ بأرقام قرار قليلة — مش ٥٠ رسم.",
+        "ليه دلوقتي؟ في الموديول اللي فات كل استنتاج بقى له Action (خطوة أو تصرف حصل فعلًا). دلوقتي محتاج ٤ أرقام تلخّص «هل شغلي ماشي؟» كل أسبوع.",
         "هتعمل إيه بعد الدرس؟ هترسم Dashboard من ٤ أرقام لمشروعك أو شغلك.",
       ],
     },
@@ -37,7 +37,7 @@ export const ANALYST_M5_L1_FOUR_NUMBERS_DASHBOARD_BLOCKS: IntroLessonContent = [
       paragraphs: [
         "بتفتح Sheet أو أداة فيها charts كتير — بتقعد ١٠ دقايق — وتقفل من غير ما تعرف «إيه اللي محتاج أعمله؟»",
         "المشكلة مش نقص بيانات — المشكلة زحمة. كل رقم إضافي بيأخّر القرار.",
-        "Dashboard مش عشان تبان محترف — Dashboard عشان في ثواني تعرف: في مشكلة ولا لأ؟",
+        "الـ Dashboard (شاشة فيها أهم الأرقام) مش عشان تبان محترف — عشان في ثواني تعرف: في مشكلة ولا لأ؟",
       ],
     },
   },
@@ -50,7 +50,7 @@ export const ANALYST_M5_L1_FOUR_NUMBERS_DASHBOARD_BLOCKS: IntroLessonContent = [
       paragraphs: [
         "اختار ٤ أرقام بس — لو واحد فيهم اتغيّر، قرارك يتغيّر. مش أي رقم «حلو يتعرض».",
         "كل رقم جنبه: قيمة الأسبوع ده، الأسبوع اللي فات، وسهم (↑/↓) — عشان المقارنة جزء من العرض.",
-        "بيزنس: Leads · Conversion · Revenue · Retention. مش بيزنس: Progress · Responses · Results · Repeat.",
+        "بيزنس: Leads (ناس أبدت اهتمام وممكن تبقى عميل) · Conversion · Revenue · Retention (الناس كملت ورجعت تاني). مش بيزنس: Progress · Responses · Results · Repeat.",
         "لو عندك أكتر من ٤ — اسأل: «لو شلت ده، هقرّر إزاي؟» اللي مش بيجاوب = مش dashboard.",
       ],
     },
@@ -67,7 +67,7 @@ export const ANALYST_M5_L1_FOUR_NUMBERS_DASHBOARD_BLOCKS: IntroLessonContent = [
       },
       right: {
         label: "٤ أرقام واضحة",
-        body: "Leads ١٢٠ (↑) · Conversion ٨٪ (↓) · Revenue ١٥k (↑) · Retention ٣٠٪ (↓). في ثانية: Conversion و Retention محتاجين قرار.",
+        body: "Leads ١٢٠ (↑) · Conversion ٨٪ (↓) · Revenue ١٥k (↑) · Retention (الناس كملت ورجعت تاني) ٣٠٪ (↓). في ثانية: Conversion و Retention محتاجين قرار.",
       },
     },
   },
@@ -85,8 +85,8 @@ export const ANALYST_M5_L1_FOUR_NUMBERS_DASHBOARD_BLOCKS: IntroLessonContent = [
         },
         {
           term: "Threshold (حد قرار)",
-          meaning: "الرقم اللي لو عدّاه — لازم action.",
-          example: "لو Retention نزل عن ٣٥٪ → اجتماع متابعة عملاء.",
+          meaning: "الرقم اللي لو عدّاه — لازم Action (خطوة أو تصرف حصل فعلًا).",
+          example: "لو Retention (الناس كملت ورجعت تاني) نزل عن ٣٥٪ → اجتماع متابعة عملاء.",
         },
       ],
     },
