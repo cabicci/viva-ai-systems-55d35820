@@ -383,9 +383,16 @@ Deno.serve(async (req) => {
   }
   // Embeddings still use OpenAI (keeps existing 1536-dim chunks intact).
   // If OPENAI_API_KEY is missing, semantic retrieval silently degrades.
-  const semanticChunks = openaiKey
+  let semanticChunks = openaiKey
     ? await semanticRetrieve(query, resolvedPathId, openaiKey)
     : [];
+
+  // Defensive client-side filter: drop weak matches even if RPC returned them.
+  const semanticBeforeFilter = semanticChunks.length;
+  semanticChunks = semanticChunks.filter(
+    (c) => c.similarity >= SEMANTIC_MIN_SIMILARITY,
+  );
+  const semanticAfterFilter = semanticChunks.length;
 
   // Dedupe semantic vs keyword by lessonId + first 80 chars of content.
   const keyOf = (lid: string | null | undefined, text: string) =>
