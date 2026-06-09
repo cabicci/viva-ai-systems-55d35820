@@ -113,7 +113,7 @@ async function consumeRateLimit(
 
 // Hybrid retrieval tuning.
 const SEMANTIC_MAX = 5;
-const SEMANTIC_MIN_SIMILARITY = 0.2;
+const SEMANTIC_MIN_SIMILARITY = 0.35;
 const SEMANTIC_STRONG_SIMILARITY = 0.45;
 const EMBEDDING_MODEL = "text-embedding-3-small";
 const EMBEDDING_DIM = 1536;
