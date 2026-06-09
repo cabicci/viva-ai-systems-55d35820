@@ -3,19 +3,19 @@ import type { FC } from "react";
 /**
  * Pastel diagrams used inside Creator lessons.
  * All text is real SVG <text> so Arabic renders perfectly at any size.
- * Palette: blue #AEC6CF · mint #B5E5D0 · blush #F5C8D0 · lavender #D6CCE8 · peach #F5D5B8
+ * Palette: design tokens from styles.css (--pastel-* + semantic accents).
  */
 
 const PALETTE = {
-  blue: "#DCE7EE",
-  mint: "#D4ECE0",
-  blush: "#F0DDD8",
-  lavender: "#E5DBEA",
-  peach: "#F2DBC4",
-  bg: "#FAFCFE",
-  ink: "#2B3A55",
-  inkSoft: "#6B7A93",
-  stroke: "#E3E8F0",
+  blue: "var(--pastel-blue)",
+  mint: "var(--pastel-mint)",
+  blush: "var(--pastel-pink)",
+  lavender: "var(--pastel-lavender)",
+  peach: "var(--pastel-peach)",
+  bg: "var(--pastel-cream)",
+  ink: "var(--foreground)",
+  inkSoft: "var(--muted-foreground)",
+  stroke: "var(--border)",
 };
 
 const FONT = "'IBM Plex Sans Arabic','Tajawal','Cairo',system-ui,sans-serif";
@@ -77,7 +77,7 @@ export const AudiencePersonaDiagram: FC = () => (
   <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" role="img">
     <rect width="800" height="520" fill={PALETTE.bg} />
     {/* center persona */}
-    <circle cx="400" cy="260" r="78" fill="#fff" stroke={PALETTE.lavender} strokeWidth="3" />
+    <circle cx="400" cy="260" r="78" fill="var(--card)" stroke={PALETTE.lavender} strokeWidth="3" />
     <circle cx="400" cy="232" r="26" fill={PALETTE.lavender} />
     <path d="M348 300 Q400 252 452 300 L452 322 L348 322 Z" fill={PALETTE.lavender} />
     <text x="400" y="362" textAnchor="middle" fontFamily={FONT} fontSize="14" fontWeight="700" fill={PALETTE.ink}>Persona</text>
@@ -142,7 +142,7 @@ export const SchedulingCalendarDiagram: FC = () => {
 
       {days.map((d, i) => (
         <g key={d}>
-          <rect x={startX + i * colW} y={headerY} width={colW - 8} height={36} rx={8} fill="#fff" stroke={PALETTE.stroke} />
+          <rect x={startX + i * colW} y={headerY} width={colW - 8} height={36} rx={8} fill="var(--card)" stroke={PALETTE.stroke} />
           <text x={startX + i * colW + (colW - 8) / 2} y={headerY + 23} textAnchor="middle" fontFamily={FONT} fontSize="13" fontWeight="700" fill={PALETTE.ink}>{d}</text>
         </g>
       ))}
@@ -269,11 +269,11 @@ export const PatternVsOutlierDiagram: FC = () => {
         y1={yScale(baselineMean)}
         x2={chartX + chartW}
         y2={yScale(baselineMean)}
-        stroke="#6BAE8E"
+        stroke="var(--accent-success)"
         strokeWidth="1.5"
         strokeDasharray="5 4"
       />
-      <text x={chartX + chartW + 6} y={yScale(baselineMean) + 4} fontFamily={FONT} fontSize="11" fill="#4E8C72">متوسط 44</text>
+      <text x={chartX + chartW + 6} y={yScale(baselineMean) + 4} fontFamily={FONT} fontSize="11" fill="var(--accent-success-foreground)">متوسط 44</text>
 
       {/* Line */}
       <polyline
@@ -293,8 +293,8 @@ export const PatternVsOutlierDiagram: FC = () => {
               cx={xAt(i)}
               cy={yScale(v)}
               r={isOutlier ? 8 : 4}
-              fill={isOutlier ? "#E47B6B" : "#fff"}
-              stroke={isOutlier ? "#C4543E" : PALETTE.ink}
+              fill={isOutlier ? "var(--accent-danger)" : "var(--card)"}
+              stroke={isOutlier ? "var(--accent-danger-foreground)" : PALETTE.ink}
               strokeWidth={isOutlier ? 3 : 1.5}
             />
             <text
@@ -318,12 +318,12 @@ export const PatternVsOutlierDiagram: FC = () => {
           y1={yScale(data[outlierIdx]) - 14}
           x2={xAt(outlierIdx) + 60}
           y2={yScale(data[outlierIdx]) - 50}
-          stroke="#C4543E"
+          stroke="var(--accent-danger-foreground)"
           strokeWidth="1.5"
         />
-        <rect x={xAt(outlierIdx) + 50} y={yScale(data[outlierIdx]) - 86} width="190" height="42" rx="8" fill={PALETTE.blush} stroke="#E5BAB1" />
-        <text x={xAt(outlierIdx) + 145} y={yScale(data[outlierIdx]) - 68} textAnchor="middle" fontFamily={FONT} fontSize="12" fontWeight="700" fill="#8C3C2A">Outlier — 89 lead</text>
-        <text x={xAt(outlierIdx) + 145} y={yScale(data[outlierIdx]) - 52} textAnchor="middle" fontFamily={FONT} fontSize="11" fill="#8C3C2A">حملة إعلان مدفوعة مرّة واحدة</text>
+        <rect x={xAt(outlierIdx) + 50} y={yScale(data[outlierIdx]) - 86} width="190" height="42" rx="8" fill={PALETTE.blush} stroke="var(--accent-danger)" />
+        <text x={xAt(outlierIdx) + 145} y={yScale(data[outlierIdx]) - 68} textAnchor="middle" fontFamily={FONT} fontSize="12" fontWeight="700" fill="var(--accent-danger-foreground)">Outlier — 89 lead</text>
+        <text x={xAt(outlierIdx) + 145} y={yScale(data[outlierIdx]) - 52} textAnchor="middle" fontFamily={FONT} fontSize="11" fill="var(--accent-danger-foreground)">حملة إعلان مدفوعة مرّة واحدة</text>
       </g>
 
       {/* Pattern legend */}
@@ -385,17 +385,17 @@ export const CustomerLifecycleFunnelDiagram: FC = () => {
 
       {/* Side metrics */}
       <g>
-        <rect x={560} y={90} width={200} height={140} rx={14} fill="#fff" stroke={PALETTE.stroke} />
+        <rect x={560} y={90} width={200} height={140} rx={14} fill="var(--card)" stroke={PALETTE.stroke} />
         <text x={660} y={120} textAnchor="middle" fontFamily={FONT} fontSize="13" fontWeight="700" fill={PALETTE.ink}>اقتصاديات العميل</text>
 
         <text x={580} y={150} fontFamily={FONT} fontSize="12" fill={PALETTE.inkSoft}>CAC (تكلفة الجلب)</text>
-        <text x={740} y={150} textAnchor="end" fontFamily={FONT} fontSize="13" fontWeight="700" fill="#C4543E">100ج</text>
+        <text x={740} y={150} textAnchor="end" fontFamily={FONT} fontSize="13" fontWeight="700" fill="var(--accent-danger-foreground)">100ج</text>
 
         <text x={580} y={175} fontFamily={FONT} fontSize="12" fill={PALETTE.inkSoft}>LTV (مرة واحدة)</text>
         <text x={740} y={175} textAnchor="end" fontFamily={FONT} fontSize="13" fontWeight="700" fill={PALETTE.ink}>250ج</text>
 
         <text x={580} y={200} fontFamily={FONT} fontSize="12" fill={PALETTE.inkSoft}>LTV (مع رجوع)</text>
-        <text x={740} y={200} textAnchor="end" fontFamily={FONT} fontSize="13" fontWeight="700" fill="#4E8C72">800ج</text>
+        <text x={740} y={200} textAnchor="end" fontFamily={FONT} fontSize="13" fontWeight="700" fill="var(--accent-success-foreground)">800ج</text>
 
         <line x1={580} y1={212} x2={740} y2={212} stroke={PALETTE.stroke} />
       </g>
@@ -405,7 +405,7 @@ export const CustomerLifecycleFunnelDiagram: FC = () => {
         <text x={660} y={278} textAnchor="middle" fontFamily={FONT} fontSize="12" fontWeight="700" fill={PALETTE.ink}>قاعدة الـ 5x</text>
         <text x={660} y={298} textAnchor="middle" fontFamily={FONT} fontSize="11" fill={PALETTE.inkSoft}>عميل راجع = ٣.٢ أضعاف</text>
         <text x={660} y={314} textAnchor="middle" fontFamily={FONT} fontSize="11" fill={PALETTE.inkSoft}>الربح من عميل جديد</text>
-        <text x={660} y={335} textAnchor="middle" fontFamily={FONT} fontSize="11" fontWeight="700" fill="#4E8C72">ركّز ٧٠٪ على الاحتفاظ</text>
+        <text x={660} y={335} textAnchor="middle" fontFamily={FONT} fontSize="11" fontWeight="700" fill="var(--accent-success-foreground)">ركّز ٧٠٪ على الاحتفاظ</text>
       </g>
 
       {/* Bottom takeaway */}
@@ -480,7 +480,7 @@ export const FeelingToQuestionTableDiagram: FC = () => {
               const text = [r.feel, r.q, r.base, r.act][ci];
               return (
                 <g key={ci}>
-                  <rect x={c.x} y={y} width={c.w} height={rowH} rx={10} fill="#fff" stroke={PALETTE.stroke} />
+                  <rect x={c.x} y={y} width={c.w} height={rowH} rx={10} fill="var(--card)" stroke={PALETTE.stroke} />
                   <foreignObject x={c.x + 8} y={y + 8} width={c.w - 16} height={rowH - 16}>
                     <div
                       style={{

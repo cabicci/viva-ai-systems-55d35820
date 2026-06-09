@@ -69,6 +69,12 @@ The platform is built around learning journeys and paths, not generic AI chatbot
 ### Critical dependency
 ⚠️ Major color/icon/visual changes may require selective video regeneration.
 
+### Visual Freeze — Button variant legacy aliases (frozen)
+- `neon`, `violet`, and `hero` are **frozen legacy aliases** in `src/components/ui/button.tsx`.
+- They currently map to the pastel visual system (`--pastel-lavender`, `--pastel-peach`, `--pastel-yellow`).
+- **Do not create new color-named button variants.**
+- Future variants should be **semantic** (e.g. primary, destructive, warning), not color-named.
+
 ---
 
 ## 1. Platform Architecture ✅ LOCKED

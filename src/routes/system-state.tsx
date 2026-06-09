@@ -64,6 +64,8 @@ function SystemStatePage() {
   return (
     <div className="min-h-screen flex" dir="rtl">
       <style>{`
+        /* Print/export-only colors below — hard-coded hex isolated for PDF output;
+           not part of the live theme; do not reuse outside @media print. */
         @media print {
           @page { size: A4; margin: 14mm; }
           html, body { background: #ffffff !important; }

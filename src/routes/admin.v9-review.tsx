@@ -49,12 +49,12 @@ type Decision = {
 };
 
 const ACCENT_COLOR: Record<string, string> = {
-  mint: "#a7f3d0",
-  lavender: "#c4b5fd",
-  peach: "#fed7aa",
-  yellow: "#fde68a",
-  pink: "#fbcfe8",
-  mintDeep: "#34d399",
+  mint: "var(--pastel-mint)",
+  lavender: "var(--pastel-lavender)",
+  peach: "var(--pastel-peach)",
+  yellow: "var(--pastel-yellow)",
+  pink: "var(--pastel-pink)",
+  mintDeep: "var(--accent)",
 };
 
 const CARD_LABEL: Record<string, string> = {
@@ -81,7 +81,7 @@ function reorder(
 }
 
 function BlockTile({ block, idx }: { block: Block; idx: number }) {
-  const bg = ACCENT_COLOR[block.accent] ?? "#e5e7eb";
+  const bg = ACCENT_COLOR[block.accent] ?? "var(--muted)";
   return (
     <div
       className="flex flex-col items-center justify-center rounded-lg border-2 px-2 py-2 text-center min-w-[64px]"
