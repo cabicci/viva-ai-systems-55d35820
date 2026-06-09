@@ -77,6 +77,90 @@ The platform is built around learning journeys and paths, not generic AI chatbot
 
 ---
 
+## Naming / Brand Audit
+
+Status: ✅ NAMING DECISION LOCKED (memo) · 🟡 Learner-surface rename pending
+
+Audit verdict (2026-06): **CONDITIONAL PASS** — structure and Arabic voice are sound; learner UI still ships legacy product names.
+
+### Naming Decision Memo — masaarat.ai Brand Lock
+
+**Owner decision:** The project brand is **masaarat.ai** only.
+
+#### Decision
+
+| Item | Value |
+|------|-------|
+| Public brand | **masaarat.ai** |
+| Arabic display name | **مسارات** |
+| Domain | masaarat.ai (reserved) |
+
+#### Retired names (do not use as product names)
+
+- Viva AI Systems
+- AI Ecosystem
+- AI Ecosystem Platform
+- AI Ecosystem Hub
+
+**Rules:**
+
+- Retired names must not appear in learner-facing UI.
+- **Viva AI Systems** is not the internal codename for this project going forward.
+- **Ecosystem** / **منظومة** may be used only as a descriptive metaphor (living system, connected paths), not as the product name.
+
+#### Canonical learner labels
+
+| Concept | Label |
+|---------|-------|
+| Platform | مسارات |
+| Domain | masaarat.ai |
+| Assistant | مساعد المنصة |
+| Lesson | درس |
+| Mission | مهمة |
+| Path | مسار |
+| Dashboard | اللوحة |
+| Feedback | ملاحظات / توجيه |
+
+#### Path display names
+
+| Slug ID | Arabic display |
+|---------|----------------|
+| intro | المقدمة |
+| business | الأعمال |
+| creator | المحتوى |
+| analyst | التحليل |
+| automator | الأتمتة |
+| builder | البناء |
+
+#### Level display names
+
+| Level | Arabic display |
+|-------|----------------|
+| Stage 00 | مرحلة البداية |
+| Level 1 — AI User | المستوى ١ — مستخدم AI |
+| Level 2 — AI Operator | المستوى ٢ — مشغّل AI |
+| Level 3 — AI Builder | المستوى ٣ — باني AI |
+
+#### Implementation note (not started)
+
+**P0 rename batch — learner-facing surfaces first:**
+
+- `__root.tsx` meta / SEO / JSON-LD
+- Navbar
+- Sidebar
+- Footer
+- Landing hero
+- `PATH_META` / `PATHS` display titles
+- `ai-assistant.tsx`
+- Assistant runtime prompt wording
+- Learn missing-content error state
+- Mission feedback label `Clear`
+- Canonical URL / og URL
+
+**Docs cleanup batch (gradual):** Replace legacy **Viva AI Systems** and retired product-name references in docs where appropriate. This tracker title and other docs may still carry legacy naming until that pass runs.
+
+---
+
 ## 1. Platform Architecture ✅ LOCKED
 
 - ✅ Master Blueprint completed (`docs/VIVA_MASTER_BLUEPRINT.md`)
