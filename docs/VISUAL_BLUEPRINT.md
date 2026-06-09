@@ -373,3 +373,35 @@ token set.
 - No component edits this phase.
 - No `styles.css` edits this phase.
 - No visual refactor.
+
+---
+
+## F1.a — Semantic Color Tokens (added)
+
+New tokens authored in `src/styles.css` (OKLCH, pastel-aligned). Components are **not yet migrated** — these are pre-positioned for the F1 replacement sweep.
+
+### Surface tokens
+| Token | Value | Use |
+|---|---|---|
+| `--surface-overlay` | `oklch(1 0 0 / 0.70)` | Soft white-glass over hero/imagery |
+| `--surface-glass` | `oklch(1 0 0 / 0.45)` | Frosted floating panels |
+| `--surface-scrim` | `oklch(0.20 0.03 260 / 0.50)` | Modal/sheet backdrop |
+| `--border-onColor` | `oklch(1 0 0 / 0.40)` | Border on colored/hero surfaces |
+
+### Accent / status tokens (pastel-aligned)
+| Token | Value |
+|---|---|
+| `--accent-warning` / `-foreground` | `oklch(0.92 0.10 90)` / `oklch(0.32 0.10 75)` |
+| `--accent-success` / `-foreground` | `oklch(0.88 0.08 160)` / `oklch(0.28 0.09 160)` |
+| `--accent-danger` / `-foreground` | `oklch(0.88 0.07 20)` / `oklch(0.34 0.13 22)` |
+| `--accent-info` / `-foreground` | `oklch(0.90 0.05 235)` / `oklch(0.30 0.08 235)` |
+
+All tokens are mapped under `@theme inline` → exposed as Tailwind utilities: `bg-surface-overlay`, `bg-surface-glass`, `bg-surface-scrim`, `border-border-onColor`, `bg-accent-warning`, `text-accent-warning-foreground`, etc.
+
+### Dark mode
+Project has no `.dark` overrides yet (light-only pastel identity). Dark-mode counterparts deferred to a later phase when dark theme is introduced.
+
+### Status
+- Tokens defined ✅
+- Components migrated ❌ (F1 sweep)
+- Visual change: none (tokens unused so far)
