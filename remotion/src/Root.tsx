@@ -3,6 +3,7 @@ import { LessonRenderer } from "./LessonRenderer";
 import { LESSONS } from "./lessonsRegistry";
 import { IntroVideo } from "./intro/IntroVideo";
 import introManifest from "./intro/intro.manifest.json";
+import { BRAND_INTRO_FRAMES } from "./theme";
 
 export const RemotionRoot = () => (
   <>
@@ -20,7 +21,8 @@ export const RemotionRoot = () => (
         key={l.id}
         id={l.id}
         component={LessonRenderer}
-        durationInFrames={l.totalFrames}
+        // Brand intro prepended in LessonRenderer — extend duration accordingly.
+        durationInFrames={l.totalFrames + BRAND_INTRO_FRAMES}
         fps={30}
         width={1920}
         height={1080}
