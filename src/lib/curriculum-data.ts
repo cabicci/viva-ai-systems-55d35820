@@ -571,7 +571,7 @@ function businessModules(): CurriculumModule[] {
       subtitle: "دورة حياة العميل، العرض، الـ Retention، وعلامات الجاهزية للتوسع.",
       lessons: [
         businessShipped(1, "business-m2-l1-customer-lifecycle", "دورة حياة العميل"),
-        businessShipped(2, "business-m2-build-your-offer", "ابني عرضك — التحويل مش المنتج"),
+        businessShipped(2, "business-m2-l2-build-your-offer", "ابني عرضك — التحويل مش المنتج"),
         businessShipped(3, "business-m2-l2-retention-flow", "Retention Flow"),
         businessShipped(4, "business-m2-l3-readiness-signals", "علامات الجاهزية للتوسع"),
       ],

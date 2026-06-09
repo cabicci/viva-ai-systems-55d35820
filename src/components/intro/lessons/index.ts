@@ -94,7 +94,7 @@ import { BUSINESS_M1_L3_AI_THINKING_PARTNER_BLOCKS } from "./business-m1-l3-ai-t
 import { BUSINESS_M2_L2_WEEKLY_RHYTHM_BLOCKS } from "./business-m4-l3-weekly-rhythm";
 import { BUSINESS_M2_L4_PRICING_CASH_FLOW_BLOCKS } from "./business-m2-l4-pricing-cash-flow";
 import { BUSINESS_M3_L1_CUSTOMER_LIFECYCLE_BLOCKS } from "./business-m2-l1-customer-lifecycle";
-import { BUSINESS_M2_BUILD_YOUR_OFFER_BLOCKS } from "./business-m2-build-your-offer";
+import { BUSINESS_M2_BUILD_YOUR_OFFER_BLOCKS } from "./business-m2-l2-build-your-offer";
 import { BUSINESS_M3_L2_RETENTION_FLOW_BLOCKS } from "./business-m2-l2-retention-flow";
 import { BUSINESS_M3_L4_HIRING_ONBOARDING_BLOCKS } from "./business-m3-l4-hiring-onboarding";
 import { BUSINESS_M4_L1_STRATEGIC_OPERATIONAL_ADMIN_BLOCKS } from "./business-m3-l2-strategic-operational-admin";
@@ -205,7 +205,7 @@ export const INTRO_LESSON_CONTENT: Record<string, IntroLessonContent> = {
   "business-m1-l2-reactive-vs-proactive": BUSINESS_M2_L1_REACTIVE_VS_PROACTIVE_BLOCKS,
   "business-m1-l3-ai-thinking-partner": BUSINESS_M1_L3_AI_THINKING_PARTNER_BLOCKS,
   "business-m2-l1-customer-lifecycle": BUSINESS_M3_L1_CUSTOMER_LIFECYCLE_BLOCKS,
-  "business-m2-build-your-offer": BUSINESS_M2_BUILD_YOUR_OFFER_BLOCKS,
+  "business-m2-l2-build-your-offer": BUSINESS_M2_BUILD_YOUR_OFFER_BLOCKS,
   "business-m2-l2-retention-flow": BUSINESS_M3_L2_RETENTION_FLOW_BLOCKS,
   "business-m2-l3-readiness-signals": BUSINESS_M5_L1_READINESS_SIGNALS_BLOCKS,
   "business-m2-l4-pricing-cash-flow": BUSINESS_M2_L4_PRICING_CASH_FLOW_BLOCKS,
