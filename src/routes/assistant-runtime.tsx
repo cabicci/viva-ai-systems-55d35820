@@ -27,6 +27,13 @@ import {
 import { Button } from "@/components/ui/button";
 import { Plug } from "lucide-react";
 import { requireAdminBeforeLoad } from "@/lib/admin-route-guard";
+import {
+  previewAssistantSeed,
+  runAssistantSeed,
+  SEED_CONFIRMATION_TEXT,
+  type SeedReport,
+} from "@/lib/assistant-seed.functions";
+import { useServerFn } from "@tanstack/react-start";
 
 export const Route = createFileRoute("/assistant-runtime")({
   beforeLoad: requireAdminBeforeLoad,
