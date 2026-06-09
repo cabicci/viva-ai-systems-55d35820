@@ -1,10 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#1E2B4A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Analyst insight">
-  <title>Analyst insight</title>
-  <!-- insight card -->
-  <rect x="3.5" y="4.5" width="17" height="15" rx="2.2"/>
-  <!-- trendline + dots -->
-  <path d="M6.5 15.5l3.5-3.5 3 2 4.5-5.5" stroke="#2DD4BF"/>
-  <circle cx="10" cy="12" r="1.1" fill="#7FB8E8" stroke="#7FB8E8"/>
-  <circle cx="13" cy="14" r="1.1" fill="#B8A8E0" stroke="#B8A8E0"/>
-  <circle cx="17.5" cy="8.5" r="1.1" fill="#2DD4BF" stroke="#2DD4BF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Analyst path">
+  <title>Analyst path</title>
+  <!-- outer blue arc (widest, underneath) -->
+  <path d="M6 48 Q32 16 58 48" stroke="#7FB8E8" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- mint left arc -->
+  <path d="M14 48 Q22 22 32 22" stroke="#2DD4BF" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- lilac right arc -->
+  <path d="M32 22 Q42 22 50 48" stroke="#B8A8E0" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- central mint pillar with arrow tip pointing down -->
+  <path d="M28.5 8 H35.5 A1.5 1.5 0 0 1 37 9.5 V26 H40 L32 34 L24 26 H27 V9.5 A1.5 1.5 0 0 1 28.5 8 Z" fill="#2DD4BF"/>
+  <circle cx="46" cy="22" r="1.8" fill="#B8A8E0"/><circle cx="51" cy="18" r="1.8" fill="#2DD4BF"/><circle cx="56" cy="14" r="1.8" fill="#7FB8E8"/>
 </svg>
