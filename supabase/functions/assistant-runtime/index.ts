@@ -17,8 +17,16 @@
 
 // Restrict CORS to known origins (preview + published + local dev).
 const ALLOWED_ORIGINS = new Set<string>([
+  // Current project (viva-ai-systems)
+  "https://viva-ai-systems.lovable.app",
+  "https://658adce0-747d-4c8e-90e3-d22225070b94.lovableproject.com",
+  "https://id-preview--658adce0-747d-4c8e-90e3-d22225070b94.lovable.app",
+  "https://project--658adce0-747d-4c8e-90e3-d22225070b94.lovable.app",
+  "https://project--658adce0-747d-4c8e-90e3-d22225070b94-dev.lovable.app",
+  // Legacy / other previews kept for compatibility
   "https://ai-ecosystem-hub-72.lovable.app",
   "https://id-preview--db3e0659-63cc-4b7e-8985-61692a4adc4a.lovable.app",
+  // Local dev
   "http://localhost:5173",
   "http://localhost:3000",
 ]);
