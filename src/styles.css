@@ -38,6 +38,20 @@
   --color-neon-foreground: var(--neon-foreground);
   --color-aurora: var(--aurora);
   --color-business: var(--business);
+
+  /* F1.a — semantic surface / accent tokens (visual freeze) */
+  --color-surface-overlay: var(--surface-overlay);
+  --color-surface-glass: var(--surface-glass);
+  --color-surface-scrim: var(--surface-scrim);
+  --color-border-onColor: var(--border-onColor);
+  --color-accent-warning: var(--accent-warning);
+  --color-accent-warning-foreground: var(--accent-warning-foreground);
+  --color-accent-success: var(--accent-success);
+  --color-accent-success-foreground: var(--accent-success-foreground);
+  --color-accent-danger: var(--accent-danger);
+  --color-accent-danger-foreground: var(--accent-danger-foreground);
+  --color-accent-info: var(--accent-info);
+  --color-accent-info-foreground: var(--accent-info-foreground);
 }
 
 :root {
