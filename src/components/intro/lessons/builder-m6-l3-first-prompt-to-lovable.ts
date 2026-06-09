@@ -22,9 +22,10 @@ export const BUILDER_M6_FIRST_PROMPT_TO_LOVABLE_BLOCKS: IntroLessonContent = [
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "هتفهم إيه؟ أول prompt محتاج: goal + users + pages + style + constraints.",
-        "ليه دلوقتي؟ عندك Wireframe — دلوقتي حوّله لطلب Lovable يفهمك.",
-        "هتعمل إيه بعد الدرس؟ هتكتب أول prompt كامل — جاهز للنسخ في Lovable.",
+        "هتفهم إيه؟ أول prompt محتاج ٥ أجزاء بس: goal + users + pages + style + constraints.",
+        "ليه دلوقتي؟ عندك Wireframe — دلوقتي حوّله لطلب Lovable يفهمك من أول مرة.",
+        "هتعمل إيه بعد الدرس؟ مسودة prompt جاهزة للنسخ — مش كود ولا برمجة.",
+        "Lovable = مساعد بناء يقرأ وصفك ويطلعلك واجهة. إنت بتوصف — مش بتبرمج.",
       ],
     },
   },
@@ -37,8 +38,8 @@ export const BUILDER_M6_FIRST_PROMPT_TO_LOVABLE_BLOCKS: IntroLessonContent = [
       kind: "paragraphs",
       paragraphs: [
         "كتبت «ابنيلي واجهة AI» — طلع ألوان فاقعة وأقسام مش عايزها.",
-        "AI بيبني اللي بتكتبه — مش اللي بتتمناه. ٣ كلمات = تخمين كامل.",
-        "الحل: Prompt Spec — وصفة فيها ٥ أجزاء واضحة.",
+        "Lovable بيبني اللي بتكتبه حرفيًا — مش اللي بتتمناه. ٣ كلمات = تخمين كامل.",
+        "الحل آمن وبسيط: اكتب وصفة ٥ أجزاء — انسخها في Lovable وشوف النتيجة. غلط؟ عدّل الوصف وجرّب تاني.",
       ],
     },
   },
@@ -152,9 +153,9 @@ export const BUILDER_M6_FIRST_PROMPT_TO_LOVABLE_BLOCKS: IntroLessonContent = [
     block: {
       kind: "mission",
       intro:
-        "المهمة دي كتابة — مش تنفيذ. استخدم Wireframe من الدرس اللي فات.\n\n١٠–١٥ دقيقة.",
+        "المهمة مسودة للنسخ — مش تنفيذ ولا كود. استخدم Wireframe من الدرس اللي فات.\n\n١٠–١٥ دقيقة. انسخ الناتج في Lovable لما تحب — مش مطلوب دلوقتي.",
       prompt:
-        "في تسليمك اكتب Prompt Spec كامل:\n\n**Goal:** [نوع الواجهة + إيه اللي بتعمله]\n**Users:** [مين هيستخدمها]\n**Pages:** [اذكر أقسام Wireframe — hero، أقسام، إلخ]\n**Style:** [لونين + mood — مثلاً: modern، أزرق فاتح]\n**Constraints:** [إيه اللي مش في النسخة الأولى — مثلاً: من غير دفع]\n\n(جاهز للنسخ في Lovable)",
+        "في تسليمك اكتب مسودة prompt للنسخ:\n\n**Goal:** [نوع الواجهة + إيه اللي بتعمله]\n**Users:** [مين هيستخدمها]\n**Pages:** [اذكر أقسام Wireframe — hero، أقسام، إلخ]\n**Style:** [لونين + mood — مثلاً: modern، أزرق فاتح]\n**Constraints:** [إيه اللي مش في النسخة الأولى — مثلاً: من غير login]\n\n(جاهز للنسخ في Lovable — مش مطلوب تفتح الأداة دلوقتي)",
       buttonLabel: "انسخ خطوات المهمة",
       copiedLabel: "اتنسخت ✓",
       template:
@@ -187,8 +188,8 @@ export const BUILDER_M6_FIRST_PROMPT_TO_LOVABLE_BLOCKS: IntroLessonContent = [
     block: {
       kind: "paragraphs",
       paragraphs: [
-        "فهمت إيه؟ أول prompt = ٥ أجزاء. AI يبني اللي بتكتبه — مش اللي بتتمناه.",
-        "تقدر تعمل إيه؟ عندك Prompt Spec جاهز — انسخه في Lovable وابدأ.",
+        "فهمت إيه؟ أول prompt = ٥ أجزاء. Lovable مساعد بناء — إنت بتوصف مش بتبرمج.",
+        "تقدر تعمل إيه؟ عندك مسودة جاهزة للنسخ في Lovable لما تحب.",
         "اللي جاي: Components & Routes — إزاي الصفحات تتربط ببعض.",
       ],
     },
