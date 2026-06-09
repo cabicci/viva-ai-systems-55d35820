@@ -580,6 +580,9 @@ ${retrievalBlock}
         keywordCount: keywordFiltered.length,
         resolvedPathId,
         pathResolutionReason,
+        semanticBeforeFilter,
+        semanticAfterFilter,
+        minSimilarityThreshold: SEMANTIC_MIN_SIMILARITY,
         topLessonIds: [
           ...new Set([
             ...semanticChunks.map((c) => c.lessonId).filter((x): x is string => typeof x === "string"),
