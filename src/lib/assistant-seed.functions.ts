@@ -432,25 +432,28 @@ export const runAssistantSeed = createServerFn({ method: "POST" })
       }
     }
 
-    // Delete only source_type='lesson' rows for allowed slugs.
+    // Delete only source_type='lesson' rows for allowed slugs (match by lesson_id
+    // column so it works regardless of source_id formatting).
     const { error: delErr, count: deletedCount } = await supabaseAdmin
       .from("knowledge_chunks")
       .delete({ count: "exact" })
       .eq("source_type", "lesson")
-      .in("source_id", allowedIds);
+      .in("lesson_id", allowedIds);
     if (delErr) throw new Error(`Delete failed: ${delErr.message}`);
 
     // Insert in modest batches to keep payloads small.
     const insertRows = plan.chunks.map((c, idx) => ({
       source_type: "lesson",
-      source_id: c.lessonId,
+      // Unique constraint is (source_type, source_id); include chunk index so
+      // multiple chunks per lesson don't collide.
+      source_id: `${c.lessonId}#${c.chunkIndex}`,
       path_id: c.pathId,
       module_id: c.moduleId,
       lesson_id: c.lessonId,
       title: c.title,
       content: c.content,
       embedding: allEmbeddings[idx],
-      metadata: { chunk_index: c.chunkIndex },
+      metadata: { chunk_index: c.chunkIndex, lesson_slug: c.lessonId },
     }));
 
     let inserted = 0;
