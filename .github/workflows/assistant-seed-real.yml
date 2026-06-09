@@ -1,0 +1,50 @@
+name: Assistant Knowledge Seed Real
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_real_seed:
+        description: "Type SEED_100_LEARNER_LESSONS to authorize real seed"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: pip install requests "psycopg[binary]"
+
+      - name: Require explicit real-seed confirmation
+        run: |
+          if [ "${{ inputs.confirm_real_seed }}" != "SEED_100_LEARNER_LESSONS" ]; then
+            echo "ABORT: confirm_real_seed must be exactly SEED_100_LEARNER_LESSONS"
+            exit 1
+          fi
+
+      - name: Pre-run warnings
+        run: |
+          echo "WARNING: This will call OpenAI embeddings"
+          echo "WARNING: This will write to Supabase knowledge_chunks"
+          echo "WARNING: Scope must be 100 learner lessons only"
+
+      - name: Run real knowledge seed
+        env:
+          DRY_RUN: "false"
+          REQUIRE_CONFIRM_SEED: "true"
+          CONFIRM_SEED_100_LESSONS: "true"
+          MAX_EMBEDDING_REQUESTS: "150"
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: python scripts/seed-knowledge/run.py
