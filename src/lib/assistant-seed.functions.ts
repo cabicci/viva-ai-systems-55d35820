@@ -432,12 +432,13 @@ export const runAssistantSeed = createServerFn({ method: "POST" })
       }
     }
 
-    // Delete only source_type='lesson' rows for allowed slugs.
+    // Delete only source_type='lesson' rows for allowed slugs (match by lesson_id
+    // column so it works regardless of source_id formatting).
     const { error: delErr, count: deletedCount } = await supabaseAdmin
       .from("knowledge_chunks")
       .delete({ count: "exact" })
       .eq("source_type", "lesson")
-      .in("source_id", allowedIds);
+      .in("lesson_id", allowedIds);
     if (delErr) throw new Error(`Delete failed: ${delErr.message}`);
 
     // Insert in modest batches to keep payloads small.
