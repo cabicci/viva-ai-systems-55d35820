@@ -9,6 +9,17 @@ export type SceneAccent =
   | "pink"
   | "mintDeep";
 
+// Approved text-length limits for the design system.
+// Enforced by scripts/lesson-text-lint.ts (reports, never deletes).
+export const TEXT_LIMITS = {
+  titleMaxChars: 60,
+  highlightMaxChars: 24,
+  subtitleMaxChars: 140,
+  bulletMaxChars: 80,
+  compareBodyMaxChars: 160,
+  maxBullets: 5,
+} as const;
+
 export type SceneData =
   | {
       card: "TitleCard";
