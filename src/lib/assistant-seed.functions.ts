@@ -457,9 +457,14 @@ export const runAssistantSeed = createServerFn({ method: "POST" })
     const INSERT_BATCH = 100;
     for (let i = 0; i < insertRows.length; i += INSERT_BATCH) {
       const slice = insertRows.slice(i, i + INSERT_BATCH);
+      // pgvector column accepts string form "[n,n,...]" via supabase-js.
+      const payload = slice.map((r) => ({
+        ...r,
+        embedding: `[${(r.embedding as number[]).join(",")}]`,
+      })) as unknown as never;
       const { error: insErr } = await supabaseAdmin
         .from("knowledge_chunks")
-        .insert(slice);
+        .insert(payload);
       if (insErr) throw new Error(`Insert failed: ${insErr.message}`);
       inserted += slice.length;
     }
