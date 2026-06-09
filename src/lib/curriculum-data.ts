@@ -534,9 +534,9 @@ function analystModules(): CurriculumModule[] {
       title: "لما الحاجات بتبوظ",
       subtitle: "أخطاء الأسئلة والتفسير — وعلاجها.",
       lessons: [
-        analystShipped(1, "analyst-m6-l2-interpretation-mistakes", "أخطاء التفسير"),
+        analystShipped(1, "analyst-m6-l1-question-mistakes", "أخطاء الأسئلة"),
         analystShipped(2, "analyst-m5-ab-testing", "اختبار A/B بسيط"),
-        analystShipped(3, "analyst-m6-l1-question-mistakes", "أخطاء الأسئلة"),
+        analystShipped(3, "analyst-m6-l2-interpretation-mistakes", "أخطاء التفسير"),
       ],
     },
     {
