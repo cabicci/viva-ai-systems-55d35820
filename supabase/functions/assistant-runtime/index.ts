@@ -465,19 +465,28 @@ Deno.serve(async (req) => {
   • **Temperature ≠ Top-p**: temperature بيتحكم في حدة توزيع الاحتمالات، top-p (nucleus) بيقص الـ tail عند احتمال تراكمي معين.
   لو مش متأكد من تفصيلة تقنية، قول "مش متأكد 100%" بدل ما تخمّن.`;
 
+  const semanticCountForPrompt = semanticChunks.length;
+  const keywordCountForPrompt = keywordFiltered.length;
   const userPrompt = `سؤال المتعلم:
 ${query}
 
 سياق المتعلم الحالي:
 ${ctxBlock}
 
+سياق الاسترجاع (Retrieval meta):
+- resolvedPathId: ${resolvedPathId ?? "—"}
+- pathResolutionReason: ${pathResolutionReason}
+- semanticCount: ${semanticCountForPrompt}
+- keywordCount: ${keywordCountForPrompt}
+
 محتوى مرتبط من المنصة (Retrieval):
 ${retrievalBlock}
 
 تعليمات الإجابة:
-- استخدم Retrieval إن كان مرتبطًا.
-- لو غير مرتبط، اعترف بذلك واقترح أقرب درس.
-- اربط الإجابة بسياق المتعلم الحالي إن أمكن.`;
+- لو semanticCount > 0 أو keywordCount > 0: ابني الإجابة من المحتوى المسترجع الأول، واستخدم معرفتك العامة بس للتبسيط.
+- لو resolvedPathId محدد: أطّر الإجابة في سياق المسار ده.
+- لو semanticCount = 0 و keywordCount = 0: ابدأ بـ "في المنصة حالياً ده مش متغطى في درس مخصص." وبعدين سطر "بشكل عام..." بشرح عام مختصر. متدّعيش إن الموضوع في الدروس.
+- اربط الإجابة بسياق المتعلم الحالي إن أمكن.
 
   try {
     const aiRes = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
