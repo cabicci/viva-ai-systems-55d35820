@@ -113,7 +113,7 @@ async function consumeRateLimit(
 
 // Hybrid retrieval tuning.
 const SEMANTIC_MAX = 5;
-const SEMANTIC_MIN_SIMILARITY = 0.2;
+const SEMANTIC_MIN_SIMILARITY = 0.35;
 const SEMANTIC_STRONG_SIMILARITY = 0.45;
 const EMBEDDING_MODEL = "text-embedding-3-small";
 const EMBEDDING_DIM = 1536;
@@ -383,9 +383,16 @@ Deno.serve(async (req) => {
   }
   // Embeddings still use OpenAI (keeps existing 1536-dim chunks intact).
   // If OPENAI_API_KEY is missing, semantic retrieval silently degrades.
-  const semanticChunks = openaiKey
+  let semanticChunks = openaiKey
     ? await semanticRetrieve(query, resolvedPathId, openaiKey)
     : [];
+
+  // Defensive client-side filter: drop weak matches even if RPC returned them.
+  const semanticBeforeFilter = semanticChunks.length;
+  semanticChunks = semanticChunks.filter(
+    (c) => c.similarity >= SEMANTIC_MIN_SIMILARITY,
+  );
+  const semanticAfterFilter = semanticChunks.length;
 
   // Dedupe semantic vs keyword by lessonId + first 80 chars of content.
   const keyOf = (lid: string | null | undefined, text: string) =>
@@ -573,6 +580,9 @@ ${retrievalBlock}
         keywordCount: keywordFiltered.length,
         resolvedPathId,
         pathResolutionReason,
+        semanticBeforeFilter,
+        semanticAfterFilter,
+        minSimilarityThreshold: SEMANTIC_MIN_SIMILARITY,
         topLessonIds: [
           ...new Set([
             ...semanticChunks.map((c) => c.lessonId).filter((x): x is string => typeof x === "string"),
