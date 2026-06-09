@@ -57,10 +57,6 @@ export const evaluateMissionWithAI = createServerFn({ method: "POST" })
   .inputValidator((input) => InputSchema.parse(input))
   .handler(async ({ data, context }): Promise<AIEvaluationResult> => {
     const userId = context.userId;
-    const apiKey = process.env.LOVABLE_API_KEY;
-    if (!apiKey) {
-      throw new Error("LOVABLE_API_KEY is not configured");
-    }
 
     const releaseSubmittedRow = async () => {
       // submit_mission_for_evaluation leaves status=submitted; on eval failure
