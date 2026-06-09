@@ -24,8 +24,51 @@ export const palette = {
   white: "#FBF7EE",
 };
 
+// Canvas: 1920x1080. Safe area: 1680x880 (120 horizontal, 100 vertical).
+// Mobile-safe center: 1400x787.
+export const safeArea = {
+  width: 1680,
+  height: 880,
+  padX: 120,
+  padY: 100,
+  mobileCenterWidth: 1400,
+  mobileCenterHeight: 787,
+};
+
+// Typography scale — Arabic-tuned. Never use negative letter-spacing on Arabic.
+export const type = {
+  display: 132, // big stat / hero highlight
+  h1: 110,      // title H1
+  h1Small: 96,
+  subtitle: 34,
+  bodyLg: 36,
+  body: 32,
+  caption: 28,
+  captionSm: 26,
+  // Line-heights
+  lhHeading: 1.2,
+  lhBody: 1.4,
+  lhBodyRelaxed: 1.5,
+  // Letter-spacing — Arabic MUST be 0
+  lsArabic: 0,
+};
+
+// Brand intro length in frames (30fps → ~2.5s)
+export const BRAND_INTRO_FRAMES = 75;
+
 export const rtl: React.CSSProperties = {
   direction: "rtl",
   fontFamily: cairo,
   textAlign: "right",
+  letterSpacing: 0,
+};
+
+// Reusable safe-area frame for any scene root.
+export const safeFrame: React.CSSProperties = {
+  ...rtl,
+  paddingLeft: safeArea.padX,
+  paddingRight: safeArea.padX,
+  paddingTop: safeArea.padY,
+  paddingBottom: safeArea.padY,
+  justifyContent: "center",
 };
