@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Post-Assistant P0 — Production Hardening
+Post-Assistant P0.2 — Ready for Visual Freeze Planning
 
 ## Completed
 
@@ -23,10 +23,17 @@ Post-Assistant P0 — Production Hardening
 - 8-lesson terminology pass completed — 133637b
 - Curriculum Freeze Contract committed — a3f1ecb
 - Assistant P0 semantic seed + retrieval smoke test PASS
+- knowledge_chunks seeded (100 learner lessons / 198 chunks)
+- Path-aware retrieval filtering completed
+- Builder fallback removed
+- Prompt grounding hardening P0.1 completed
+- Semantic similarity threshold P0.2 completed
+- Unsupported-topic fallback completed
+- Assistant production hardening completed
 
 ## In Progress
 
-None
+Visual Freeze Planning
 
 ## Blocked
 
@@ -34,8 +41,13 @@ None
 
 ## Latest Production Commit
 
-TBD — updated after next commit
+897cd96ca4739ba68cac54d6bdc10ed58db0594a
 
 ## Next Planned Step
 
-Production hardening / prompt tightening / visual freeze planning
+Visual Blueprint Freeze before any visual refactor
+
+## Latest Assistant Milestone
+
+Assistant P0.2 PASS
+
