@@ -37,6 +37,7 @@ import { Route as ImageGalleryPathRouteImport } from './routes/image-gallery.$pa
 import { Route as CreatorWorkbookRouteImport } from './routes/creator.workbook'
 import { Route as AdminV9ReviewRouteImport } from './routes/admin.v9-review'
 import { Route as AdminPersonaSimV9RouteImport } from './routes/admin.persona-sim-v9'
+import { Route as AdminIconsPreviewRouteImport } from './routes/admin.icons-preview'
 import { Route as LearnPathIdLessonIdRouteImport } from './routes/learn.$pathId.$lessonId'
 
 const Char91indexChar93Route = Char91indexChar93RouteImport.update({
@@ -179,6 +180,11 @@ const AdminPersonaSimV9Route = AdminPersonaSimV9RouteImport.update({
   path: '/admin/persona-sim-v9',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminIconsPreviewRoute = AdminIconsPreviewRouteImport.update({
+  id: '/admin/icons-preview',
+  path: '/admin/icons-preview',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LearnPathIdLessonIdRoute = LearnPathIdLessonIdRouteImport.update({
   id: '/learn/$pathId/$lessonId',
   path: '/learn/$pathId/$lessonId',
@@ -206,6 +212,7 @@ export interface FileRoutesByFullPath {
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
   '/triage': typeof TriageRoute
+  '/admin/icons-preview': typeof AdminIconsPreviewRoute
   '/admin/persona-sim-v9': typeof AdminPersonaSimV9Route
   '/admin/v9-review': typeof AdminV9ReviewRoute
   '/creator/workbook': typeof CreatorWorkbookRoute
@@ -236,6 +243,7 @@ export interface FileRoutesByTo {
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
   '/triage': typeof TriageRoute
+  '/admin/icons-preview': typeof AdminIconsPreviewRoute
   '/admin/persona-sim-v9': typeof AdminPersonaSimV9Route
   '/admin/v9-review': typeof AdminV9ReviewRoute
   '/creator/workbook': typeof CreatorWorkbookRoute
@@ -268,6 +276,7 @@ export interface FileRoutesById {
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
   '/triage': typeof TriageRoute
+  '/admin/icons-preview': typeof AdminIconsPreviewRoute
   '/admin/persona-sim-v9': typeof AdminPersonaSimV9Route
   '/admin/v9-review': typeof AdminV9ReviewRoute
   '/creator/workbook': typeof CreatorWorkbookRoute
@@ -301,6 +310,7 @@ export interface FileRouteTypes {
     | '/start'
     | '/system-state'
     | '/triage'
+    | '/admin/icons-preview'
     | '/admin/persona-sim-v9'
     | '/admin/v9-review'
     | '/creator/workbook'
@@ -331,6 +341,7 @@ export interface FileRouteTypes {
     | '/start'
     | '/system-state'
     | '/triage'
+    | '/admin/icons-preview'
     | '/admin/persona-sim-v9'
     | '/admin/v9-review'
     | '/creator/workbook'
@@ -362,6 +373,7 @@ export interface FileRouteTypes {
     | '/start'
     | '/system-state'
     | '/triage'
+    | '/admin/icons-preview'
     | '/admin/persona-sim-v9'
     | '/admin/v9-review'
     | '/creator/workbook'
@@ -394,6 +406,7 @@ export interface RootRouteChildren {
   StartRoute: typeof StartRoute
   SystemStateRoute: typeof SystemStateRoute
   TriageRoute: typeof TriageRoute
+  AdminIconsPreviewRoute: typeof AdminIconsPreviewRoute
   AdminPersonaSimV9Route: typeof AdminPersonaSimV9Route
   AdminV9ReviewRoute: typeof AdminV9ReviewRoute
   CreatorWorkbookRoute: typeof CreatorWorkbookRoute
@@ -601,6 +614,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminPersonaSimV9RouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/icons-preview': {
+      id: '/admin/icons-preview'
+      path: '/admin/icons-preview'
+      fullPath: '/admin/icons-preview'
+      preLoaderRoute: typeof AdminIconsPreviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/learn/$pathId/$lessonId': {
       id: '/learn/$pathId/$lessonId'
       path: '/learn/$pathId/$lessonId'
@@ -646,6 +666,7 @@ const rootRouteChildren: RootRouteChildren = {
   StartRoute: StartRoute,
   SystemStateRoute: SystemStateRoute,
   TriageRoute: TriageRoute,
+  AdminIconsPreviewRoute: AdminIconsPreviewRoute,
   AdminPersonaSimV9Route: AdminPersonaSimV9Route,
   AdminV9ReviewRoute: AdminV9ReviewRoute,
   CreatorWorkbookRoute: CreatorWorkbookRoute,
@@ -657,3 +678,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
