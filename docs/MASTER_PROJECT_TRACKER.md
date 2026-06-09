@@ -21,6 +21,47 @@
 
 ---
 
+## Brand Identity (Locked)
+
+Status: ✅ LOCKED
+
+### Official platform name
+**masaarat.ai**
+
+### Brand meaning
+"مسارات" = guided learning paths, progress, discovery, direction, choice.
+
+### Brand positioning
+Arabic-first AI learning platform focused on guided paths rather than generic chatbot experience.
+
+### Visual direction (locked)
+- Calm
+- Guided
+- Premium educational
+- Trustworthy
+- Arabic-first
+- Beginner-friendly
+- Not generic AI SaaS
+
+### Explicitly rejected direction
+- Generic robot/brain AI visuals
+- Neon futuristic aesthetic
+- Default Lovable/Lucide identity
+- Generic startup AI look
+
+### Future implications
+| Item | Status |
+|------|--------|
+| Logo system should reflect paths/journeys/progress | 🟡 |
+| Icon system should become custom identity (non-generic) | 🟡 |
+| Path-specific subtle identities may exist under one umbrella | 🟡 |
+| Final visual freeze affects videos and may require selective regeneration | 🟡 |
+
+### Critical warning
+⚠️ Major visual/color/icon changes before final freeze may require re-generating affected videos.
+
+---
+
 ## 1. Platform Architecture ✅ LOCKED
 
 - ✅ Master Blueprint completed (`docs/VIVA_MASTER_BLUEPRINT.md`)
