@@ -65,7 +65,6 @@ import { SCENES as L_business_m6_l1_reactive_relapse_S, SCENE_FRAMES as L_busine
 import { SCENES as L_business_m3_l1_customer_lifecycle_S, SCENE_FRAMES as L_business_m3_l1_customer_lifecycle_F, TOTAL_FRAMES as L_business_m3_l1_customer_lifecycle_T } from "./lessons-generated/business-m3-l1-customer-lifecycle.gen";
 import { SCENES as L_analyst_m2_l2_right_question_rule_S, SCENE_FRAMES as L_analyst_m2_l2_right_question_rule_F, TOTAL_FRAMES as L_analyst_m2_l2_right_question_rule_T } from "./lessons-generated/analyst-m2-l2-right-question-rule.gen";
 import { SCENES as L_automator_m3_l2_triggers_actions_S, SCENE_FRAMES as L_automator_m3_l2_triggers_actions_F, TOTAL_FRAMES as L_automator_m3_l2_triggers_actions_T } from "./lessons-generated/automator-m3-l2-triggers-actions.gen";
-import { SCENES as L_automator_m1_l1_where_you_are_S, SCENE_FRAMES as L_automator_m1_l1_where_you_are_F, TOTAL_FRAMES as L_automator_m1_l1_where_you_are_T } from "./lessons-generated/automator-m1-l1-where-you-are.gen";
 import { SCENES as L_creator_m6_l3_analytics_S, SCENE_FRAMES as L_creator_m6_l3_analytics_F, TOTAL_FRAMES as L_creator_m6_l3_analytics_T } from "./lessons-generated/creator-m6-l3-analytics.gen";
 import { SCENES as L_analyst_m7_l1_from_decisions_to_business_S, SCENE_FRAMES as L_analyst_m7_l1_from_decisions_to_business_F, TOTAL_FRAMES as L_analyst_m7_l1_from_decisions_to_business_T } from "./lessons-generated/analyst-m7-l1-from-decisions-to-business.gen";
 import { SCENES as L_intro_m1_l4_ai_can_cannot_S, SCENE_FRAMES as L_intro_m1_l4_ai_can_cannot_F, TOTAL_FRAMES as L_intro_m1_l4_ai_can_cannot_T } from "./lessons-generated/intro-m1-l4-ai-can-cannot.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_business_m4_l5_business_os_dashboard_S, SCENE_FRAMES as L_b
 import { SCENES as L_creator_m1_l1_why_content_S, SCENE_FRAMES as L_creator_m1_l1_why_content_F, TOTAL_FRAMES as L_creator_m1_l1_why_content_T } from "./lessons-generated/creator-m1-l1-why-content.gen";
 import { SCENES as L_intro_m1_l1_what_is_ai_S, SCENE_FRAMES as L_intro_m1_l1_what_is_ai_F, TOTAL_FRAMES as L_intro_m1_l1_what_is_ai_T } from "./lessons-generated/intro-m1-l1-what-is-ai.gen";
 import { SCENES as L_business_m1_l1_from_decisions_to_leadership_S, SCENE_FRAMES as L_business_m1_l1_from_decisions_to_leadership_F, TOTAL_FRAMES as L_business_m1_l1_from_decisions_to_leadership_T } from "./lessons-generated/business-m1-l1-from-decisions-to-leadership.gen";
+import { SCENES as L_automator_m1_l1_where_you_are_S, SCENE_FRAMES as L_automator_m1_l1_where_you_are_F, TOTAL_FRAMES as L_automator_m1_l1_where_you_are_T } from "./lessons-generated/automator-m1-l1-where-you-are.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -179,7 +179,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m3-l1-customer-lifecycle", scenes: L_business_m3_l1_customer_lifecycle_S, sceneFrames: L_business_m3_l1_customer_lifecycle_F, totalFrames: L_business_m3_l1_customer_lifecycle_T },
     { id: "analyst-m2-l2-right-question-rule", scenes: L_analyst_m2_l2_right_question_rule_S, sceneFrames: L_analyst_m2_l2_right_question_rule_F, totalFrames: L_analyst_m2_l2_right_question_rule_T },
     { id: "automator-m3-l2-triggers-actions", scenes: L_automator_m3_l2_triggers_actions_S, sceneFrames: L_automator_m3_l2_triggers_actions_F, totalFrames: L_automator_m3_l2_triggers_actions_T },
-    { id: "automator-m1-l1-where-you-are", scenes: L_automator_m1_l1_where_you_are_S, sceneFrames: L_automator_m1_l1_where_you_are_F, totalFrames: L_automator_m1_l1_where_you_are_T },
     { id: "creator-m6-l3-analytics", scenes: L_creator_m6_l3_analytics_S, sceneFrames: L_creator_m6_l3_analytics_F, totalFrames: L_creator_m6_l3_analytics_T },
     { id: "analyst-m7-l1-from-decisions-to-business", scenes: L_analyst_m7_l1_from_decisions_to_business_S, sceneFrames: L_analyst_m7_l1_from_decisions_to_business_F, totalFrames: L_analyst_m7_l1_from_decisions_to_business_T },
     { id: "intro-m1-l4-ai-can-cannot", scenes: L_intro_m1_l4_ai_can_cannot_S, sceneFrames: L_intro_m1_l4_ai_can_cannot_F, totalFrames: L_intro_m1_l4_ai_can_cannot_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m1-l1-why-content", scenes: L_creator_m1_l1_why_content_S, sceneFrames: L_creator_m1_l1_why_content_F, totalFrames: L_creator_m1_l1_why_content_T },
     { id: "intro-m1-l1-what-is-ai", scenes: L_intro_m1_l1_what_is_ai_S, sceneFrames: L_intro_m1_l1_what_is_ai_F, totalFrames: L_intro_m1_l1_what_is_ai_T },
     { id: "business-m1-l1-from-decisions-to-leadership", scenes: L_business_m1_l1_from_decisions_to_leadership_S, sceneFrames: L_business_m1_l1_from_decisions_to_leadership_F, totalFrames: L_business_m1_l1_from_decisions_to_leadership_T },
+    { id: "automator-m1-l1-where-you-are", scenes: L_automator_m1_l1_where_you_are_S, sceneFrames: L_automator_m1_l1_where_you_are_F, totalFrames: L_automator_m1_l1_where_you_are_T },
   /* @lesson-entries-end */
 ];

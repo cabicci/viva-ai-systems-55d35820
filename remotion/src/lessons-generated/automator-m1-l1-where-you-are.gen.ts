@@ -5,140 +5,84 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "title": "إنت مش في درس",
-    "highlight": "إنت في خريطة",
-    "chip": "أهلًا",
-    "subtitle": "Builder بنى المنتج، Creator جاب الناس، Automator هيخلّي كل ده يشتغل لوحده."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "زبون محتمل",
-    "definition": "زبون محتمل حد عينيه زغللت على اللي بتقدمه بس لسه مطلعش المحفظة.",
-    "term": "Leads"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "term": "Automator",
-    "tag": "بيشغّل السيستم",
-    "definition": "الشخص اللي بيبني النظام اللي بيخلي السيستم يشتغل بدالك وأنت نايم."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "term": "Workflow",
-    "tag": "خطوات شغل",
-    "definition": "خطوات ورا بعض بتخلص شغلانة معينة (بداية ← عمليات ← نتيجة)."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "term": "Make / n8n",
-    "tag": "أدوات الربط",
-    "definition": "مواقع (مش برامج تحميل) بتوصل وتجمع أدواتك في مكان واحد."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "tag": "واجهة ومطبخ",
-    "definition": "الـ Frontend اللي المستخدم بيشوفه، والـ Backend المطبخ والكواليس اللي فيها البيانات.",
-    "term": "Frontend & Backend"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "term": "API",
-    "tag": "وصلة برامج",
-    "definition": "الرسول أو \"الوصلة\" اللي بتخلي برنامجين يكلموا بعض وينقلوا داتا."
+    "highlight": "قبل ما تبني أي أتمتة",
+    "chip": "بداية الدرس",
+    "subtitle": "لازم تعرف أنهي مهام متكرّرة بتاكل وقتك كل أسبوع.",
+    "title": "هتفهم إيه النهاردة؟"
   },
   {
     "card": "BulletsCard",
     "accent": "lavender",
-    "title": "تقدر تبدأ من هنا مباشرة",
+    "title": "بتفتح أدوات — ومش عارف تبدأ منين",
     "bullets": [
-      "Builder مش شرط. تقدر تبدأ Automator من غيره خالص.",
-      "M1 و M2 هنا مش محتاجين أي خلفية تقنية — هتفهمهم لو إنت لسه في بداية الرحلة.",
-      "بس لما توصل لـ M3 (ربط Database و APIs)، لو حسيت إن المصطلحات صعبة، ارجع لـ Builder M5 وارجعلنا تاني.",
-      "خلاصة: ابدأ، وشوف. مفيش حاجة هتتكسر."
+      "بتسمع عن Make و Zapier و n8n — وتفتح يوتيوب وتبني Flow — وبعد أسبوع لسه بتعمل نفس الشغل بإيدك.",
+      "المشكلة مش الأداة. المشكلة إنك ما عرفتش أنهي مهمة بتتكرّر وبتضيع وقتك فعلًا.",
+      "العامل الافتراضي مش بيظهر من فراغ — بيشتغل على مهام واضحة ومتكرّرة إنت حدّدتها الأول."
     ]
   },
   {
     "card": "BulletsCard",
     "accent": "peach",
+    "title": "شوف الوقت الضايع — بعدين سلّم للعامل الافتراضي",
     "bullets": [
-      "Builder → Creator",
-      "Automator (إنت هنا)",
-      "Analyst → Business"
-    ],
-    "title": "٥ مسارات — قطعة واحدة"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "yellow",
-    "bullets": [
-      "لو دخلت Automator قبل ما يبقى عندك منتج (Builder) أو جمهور (Creator) — هتشغّل إيه لوحده؟ أو هتأتمت الهوا؟",
-      "علشان كده الترتيب مهم: الـ Automator بيربط اللي بنيته بالناس اللي جذبتهم، وبيحوّل الـ Leads لـ مبيعات، الـ Support لـ نظام، والـ Operations لـ Workflows.",
-      "نهاية المسار ده، كل اللي خرج من Creator (Leads، Comments، DMs) هيدخل نظام أنت بنيته — من غير ما تفتح لاب توب."
-    ],
-    "title": "Automator مش مسار منفصل"
-  },
-  {
-    "card": "ScreenshotCard",
-    "accent": "pink",
-    "src": "lessons/unique/automator-m1-l1-where-you-are.jpg",
-    "eyebrow": "شوف بنفسك",
-    "title": "صفحة /dashboard بتاعتنا",
-    "caption": "ده فعلًا screenshot من صفحة /dashboard بتاعتنا — اللي إنت داخل تتعلّم فيها. كل دائرة = مسار، وكل مسار جوّاه دروس. الـ Automator (اللي إنت فيه) مش مسار منفصل — هو طبقة على فوق Builder + Creator. الخريطة دي هي اللي بنبني عليها كل قرار."
+      "Automator = بناء «عامل افتراضي» يكرّر شغلك المتكرّر: ردود، نقل بيانات، تذكيرات، متابعة.",
+      "Builder بنى المنتج. Creator جاب الناس. Automator يربط الاتنين ويوفّر ساعات كل أسبوع.",
+      "الخطوة الأولى مش أداة — هي Audit: أي مهمة بتعملها أكتر من مرتين في الأسبوع؟ كام دقيقة كل مرة؟",
+      "لما تعرف الـ ٥ مهام الأكثر تكرارًا، هتعرف فين العامل الافتراضي يشتغل الأول."
+    ]
   },
   {
     "card": "CompareCard",
-    "accent": "mintDeep",
-    "right": {
-      "body": "بتشوف شغلك ككل (المنتج + الجمهور + المبيعات + المتابعة) وبتسأل: أنهي خطوة بتتكرّر؟ أنهي بيانات بتنتقل من مكان لمكان؟ كل Flow بيخدم هدف واضح في الخريطة.",
-      "label": "RIGHT — Automation = نظام"
-    },
-    "title": "إزاي تفكّر في الـ Automation",
+    "accent": "yellow",
+    "title": "بناء أدوات vs معرفة فين الوقت بيروح",
     "left": {
-      "body": "بتتعلم Make، n8n، Zapier كأدوات منفصلة. بتعمل Flow هنا، Flow هناك، من غير ما تربطهم بحاجة حقيقية. النتيجة: شغل ضايع وأدوات بتلغي اشتراكها.",
-      "label": "FAILURE — Automation = أدوات"
+      "body": "أحمد فتح Make وبنى ٣ Flows — بس لسه بيبعت إيميلات ترحيب بإيده ساعة كل يوم. الأتمتة مش على المهمة اللي بتضيع وقته.",
+      "label": "بناء من غير Audit"
+    },
+    "right": {
+      "body": "أحمد عدّد: إيميل ترحيب × ٢٠ عميل × ٣ دقايق = ساعة يوميًا. أول Flow = إيميل ترحيب أوتوماتيك. وفّر ٥ ساعات في الأسبوع.",
+      "label": "Audit الأول"
     }
   },
   {
-    "card": "CTACard",
-    "accent": "mint",
-    "eyebrow": "دورك دلوقتي",
-    "title": "ارسم خريطتك في 5 سطور",
-    "tagline": "حل الأسئلة دي عشان تثبت فهمك للمفاهيم الأساسية.",
-    "highlight": "طبّق اللي اتعلّمته"
+    "card": "ConceptCard",
+    "accent": "pink",
+    "tag": "جرد الوقت",
+    "term": "Time Audit (جرد الوقت)",
+    "definition": "تسجيل المهام المتكرّرة ووقت كل واحدة — عشان تعرف فين العامل الافتراضي يشتغل."
   },
   {
-    "card": "CTACard",
+    "card": "ConceptCard",
+    "accent": "mintDeep",
+    "tag": "سير العمل",
+    "term": "Workflow (سير العمل)",
+    "definition": "خطوات ثابتة من بداية لنهاية — زي ما العامل الافتراضي يمشي عليها كل مرة."
+  },
+  {
+    "card": "ScreenshotCard",
     "accent": "lavender",
-    "eyebrow": "دورك دلوقتي",
-    "title": "اعمل Audit لأسبوعك",
-    "tagline": "قبل ما تأتمت، لازم تشوف فين أصلاً الوقت بيتسرّب. اعمل Audit بسيط لأسبوع شغلك.",
-    "highlight": "شوف فين الوقت بيضيع"
+    "title": "خريطة الرحلة — ٥ مسارات متصلة",
+    "src": "lessons/unique/automator-m1-l1-where-you-are.jpg",
+    "caption": "كل مسار = مرحلة في الرحلة. Builder (منتج) → Creator (جمهور) → Automator (عامل افتراضي يوفر وقت). إنت في Automator — بس الخريطة بتوريك إزاي القرارات هنا بتكمّل اللي فات.",
+    "eyebrow": "شوفها ببساطة"
   },
   {
-    "card": "BulletsCard",
+    "card": "CTACard",
     "accent": "peach",
-    "title": "/dashboard — خريطتك عبر المسارات الـ 5",
-    "bullets": [
-      "Map view لكل مسار + مكانك فيه.",
-      "تقدر تشوف cross-references بين الدروس.",
-      "كل مسار بيتفتح لما تخلص prerequisites."
-    ]
+    "highlight": "إزاي تبدأ صح؟",
+    "eyebrow": "دورك دلوقتي",
+    "tagline": "حل السؤال عشان تتأكد إنك فهمت الخطوة الأولى صح.",
+    "title": "سؤال واحد — مش امتحان"
   },
   {
     "card": "CTACard",
     "accent": "yellow",
-    "tagline": "نتقابل في الدرس الجاي عشان نكمل رحلة الأتمتة.",
-    "highlight": "هنتكلم عن الأنظمة",
-    "eyebrow": "الدرس الجاي",
-    "title": "أي شغل بتعمله = نظام"
+    "tagline": "نتقابل في الدرس الجاي عشان نكمل رحلتنا.",
+    "title": "إيه اللي عندك دلوقتي؟",
+    "highlight": "جاهز للخطوة الجاية",
+    "eyebrow": "خلّصت البداية"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [328, 397, 393, 433, 409, 463, 364, 405, 316, 445, 466, 552, 277, 357, 394, 259];
+export const SCENE_FRAMES: number[] = [605, 540, 771, 543, 527, 431, 535, 408, 448];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
