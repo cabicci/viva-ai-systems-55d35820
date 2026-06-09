@@ -8,8 +8,10 @@ import {
   CompareCard,
   CTACard,
   ScreenshotCard,
+  BrandIntroCard,
   type SceneData,
 } from "./lesson-cards";
+import { BRAND_INTRO_FRAMES } from "./theme";
 
 export type LessonRendererProps = {
   scenes: SceneData[];
@@ -39,8 +41,9 @@ export const LessonRenderer: React.FC<LessonRendererProps> = ({
   scenes,
   sceneFrames,
 }) => {
+  // Every lesson video starts with the Masaarat brand intro.
   const starts: number[] = [];
-  let acc = 0;
+  let acc = BRAND_INTRO_FRAMES;
   for (const d of sceneFrames) {
     starts.push(acc);
     acc += d;
@@ -48,6 +51,9 @@ export const LessonRenderer: React.FC<LessonRendererProps> = ({
   return (
     <AbsoluteFill>
       <Background />
+      <Sequence from={0} durationInFrames={BRAND_INTRO_FRAMES}>
+        <BrandIntroCard />
+      </Sequence>
       {scenes.map((scene, i) => (
         <Sequence
           key={i}
