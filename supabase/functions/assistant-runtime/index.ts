@@ -356,12 +356,35 @@ Deno.serve(async (req) => {
   }
 
   // ---- Hybrid retrieval -------------------------------------------------
-  // Default scope: builder. Override only when learner has explicit path.
-  const scopePathId = learnerContext.currentPath ?? "builder";
+  // Path resolution order:
+  //   1. Explicit mention in the user message (creator/business/...).
+  //   2. learnerContext.currentPath when no explicit mention.
+  //   3. null → no path filter (let semantic similarity decide across corpus).
+  const PATH_KEYWORDS: Array<{ id: string; patterns: RegExp[] }> = [
+    { id: "creator", patterns: [/\bcreator\b/i, /كريتور/, /صانع\s*محتوى/, /content\s*system/i] },
+    { id: "business", patterns: [/\bbusiness\b/i, /بيزنس/, /أعمال/, /عميل/, /customer\s*lifecycle/i] },
+    { id: "analyst", patterns: [/\banalyst\b/i, /تحليل/, /\bdata\b/i, /\bdashboard\b/i] },
+    { id: "automator", patterns: [/\bautomator\b/i, /automation/i, /أتمتة/, /workflow/i] },
+    { id: "builder", patterns: [/\bbuilder\b/i, /بيلدر/, /\bRAG\b/i, /\bJWT\b/i, /\blovable\b/i] },
+    { id: "intro", patterns: [/\bintro\b/i, /مقدمة/, /أول\s*درس/, /AI\s*ببساطة/i] },
+  ];
+  let resolvedPathId: string | null = null;
+  let pathResolutionReason: "explicit_message" | "learner_context" | "none" = "none";
+  for (const { id, patterns } of PATH_KEYWORDS) {
+    if (patterns.some((rx) => rx.test(query))) {
+      resolvedPathId = id;
+      pathResolutionReason = "explicit_message";
+      break;
+    }
+  }
+  if (!resolvedPathId && learnerContext.currentPath) {
+    resolvedPathId = learnerContext.currentPath;
+    pathResolutionReason = "learner_context";
+  }
   // Embeddings still use OpenAI (keeps existing 1536-dim chunks intact).
   // If OPENAI_API_KEY is missing, semantic retrieval silently degrades.
   const semanticChunks = openaiKey
-    ? await semanticRetrieve(query, scopePathId, openaiKey)
+    ? await semanticRetrieve(query, resolvedPathId, openaiKey)
     : [];
 
   // Dedupe semantic vs keyword by lessonId + first 80 chars of content.
@@ -528,6 +551,8 @@ ${retrievalBlock}
       retrieval: {
         semanticCount: semanticChunks.length,
         keywordCount: keywordFiltered.length,
+        resolvedPathId,
+        pathResolutionReason,
         topLessonIds: [
           ...semanticChunks.map((c) => c.lessonId).filter(Boolean),
           ...keywordFiltered
