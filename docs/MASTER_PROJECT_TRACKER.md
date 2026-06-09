@@ -28,37 +28,46 @@ Status: ✅ LOCKED
 ### Official platform name
 **masaarat.ai**
 
-### Brand meaning
-"مسارات" = guided learning paths, progress, discovery, direction, choice.
+### Meaning
+"مسارات" = guided learning paths, progress, discovery, direction, and learner choice.
 
-### Brand positioning
-Arabic-first AI learning platform focused on guided paths rather than generic chatbot experience.
+### Core concept
+The platform is built around learning journeys and paths, not generic AI chatbot usage.
 
-### Visual direction (locked)
+### Brand personality
 - Calm
 - Guided
-- Premium educational
 - Trustworthy
+- Premium educational
 - Arabic-first
 - Beginner-friendly
-- Not generic AI SaaS
+- Structured progress
+- Practical AI
+
+### Visual identity direction (locked)
+- Path / journey metaphor
+- Subtle progress language
+- Movement, guidance, discovery
+- Warm premium education
+- Not futuristic-neon AI
 
 ### Explicitly rejected direction
-- Generic robot/brain AI visuals
-- Neon futuristic aesthetic
-- Default Lovable/Lucide identity
-- Generic startup AI look
+❌ Generic robot AI  
+❌ Glowing brain / cyber visuals  
+❌ Neon startup SaaS aesthetic  
+❌ Default Lovable / Lucide look  
+❌ Random icon language
 
 ### Future implications
 | Item | Status |
 |------|--------|
 | Logo system should reflect paths/journeys/progress | 🟡 |
-| Icon system should become custom identity (non-generic) | 🟡 |
-| Path-specific subtle identities may exist under one umbrella | 🟡 |
-| Final visual freeze affects videos and may require selective regeneration | 🟡 |
+| Custom icon identity required before final launch | 🟡 |
+| Path-specific subtle identities allowed under one umbrella | 🟡 |
+| Visual freeze must happen before final video regeneration | 🟡 |
 
-### Critical warning
-⚠️ Major visual/color/icon changes before final freeze may require re-generating affected videos.
+### Critical dependency
+⚠️ Major color/icon/visual changes may require selective video regeneration.
 
 ---
 
@@ -258,16 +267,18 @@ Current visual score (per blueprint): **68/100**.
 
 ## 15. Immediate Next Priorities
 
-1. **Visual Freeze F1.c** — replace hardcoded colors in secondary learner files
-2. **Visual Freeze F2** — typography scale authoring
-3. **Lesson-image audit** (Section 7) — full pass, classify gaps
-4. **Video regeneration audit** — diff edited lessons since last batch vs Bunny
-5. **Visual Freeze F3–F8** — spacing, elevation, motion, finalization
-6. **Mobile UX formal pass** — sidebar, tap targets, scroll fatigue
-7. **In-lesson assistant status verification + finalization**
-8. **Security scan** — RLS, admin, rate limiting, service-key review
-9. **Analytics baseline** — assistant metrics + learner funnel
-10. **Final video re-render lock** — only after Visual Freeze F8 complete
+1. **Naming & file unification audit**
+2. **Lesson placement verification**
+3. **Lesson image audit** (Section 7) — full pass, classify gaps
+4. **Video impact audit** — diff edited lessons since last batch vs Bunny
+5. **Visual Freeze continuation** (F1.c–F8)
+6. **Custom icon identity direction**
+7. **Final visual freeze**
+8. **Selective video regeneration** — only after visual freeze complete
+9. **Mobile UX formal pass** — sidebar, tap targets, scroll fatigue
+10. **Security scan** — RLS, admin, rate limiting, service-key review
+
+> Reason: Avoid redesign work that later forces rework of videos/content.
 
 ---
 
