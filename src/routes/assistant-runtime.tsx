@@ -27,6 +27,13 @@ import {
 import { Button } from "@/components/ui/button";
 import { Plug } from "lucide-react";
 import { requireAdminBeforeLoad } from "@/lib/admin-route-guard";
+import {
+  previewAssistantSeed,
+  runAssistantSeed,
+  SEED_CONFIRMATION_TEXT,
+  type SeedReport,
+} from "@/lib/assistant-seed.functions";
+import { useServerFn } from "@tanstack/react-start";
 
 export const Route = createFileRoute("/assistant-runtime")({
   beforeLoad: requireAdminBeforeLoad,
@@ -525,8 +532,101 @@ function AssistantRuntimePage() {
             </div>
           </div>
         </section>
+        {/* 6 — Admin-only: Knowledge seed (P0) */}
+        <AssistantSeedPanel />
       </main>
     </div>
+  );
+}
+
+/* ---------- Admin-only seed panel ---------- */
+function AssistantSeedPanel() {
+  const preview = useServerFn(previewAssistantSeed);
+  const runSeed = useServerFn(runAssistantSeed);
+  const [report, setReport] = useState<SeedReport | null>(null);
+  const [err, setErr] = useState<string | null>(null);
+  const [loading, setLoading] = useState<"idle" | "preview" | "real">("idle");
+  const [confirm, setConfirm] = useState("");
+
+  async function doPreview() {
+    setLoading("preview");
+    setErr(null);
+    try {
+      const r = await preview();
+      setReport(r);
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : "Unknown error");
+    } finally {
+      setLoading("idle");
+    }
+  }
+
+  async function doRealSeed() {
+    if (confirm !== SEED_CONFIRMATION_TEXT) return;
+    setLoading("real");
+    setErr(null);
+    try {
+      const r = await runSeed({ data: { dryRun: false, confirmationText: confirm } });
+      setReport(r);
+    } catch (e) {
+      setErr(e instanceof Error ? e.message : "Unknown error");
+    } finally {
+      setLoading("idle");
+    }
+  }
+
+  const canRunReal = confirm === SEED_CONFIRMATION_TEXT && loading === "idle";
+
+  return (
+    <section className="glass rounded-2xl p-6 border border-primary/30 mb-6">
+      <div className="flex items-start gap-3 mb-4">
+        <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/15 text-primary shrink-0">
+          <Database className="h-5 w-5" />
+        </span>
+        <div>
+          <p className="font-mono text-[10px] tracking-widest text-primary mb-1">
+            ADMIN · KNOWLEDGE SEED (P0)
+          </p>
+          <h3 className="text-lg font-bold mb-1">Assistant Knowledge Seed</h3>
+          <p className="text-xs text-muted-foreground leading-loose">
+            Dry-run افتراضي — مفيش OpenAI ولا كتابة في DB. الـ Real seed محمي بـ
+            admin role وكلمة تأكيد بالظبط:{" "}
+            <code className="font-mono text-primary">{SEED_CONFIRMATION_TEXT}</code>
+          </p>
+        </div>
+      </div>
+
+      <div className="flex flex-wrap gap-2 mb-4">
+        <Button onClick={doPreview} disabled={loading !== "idle"} variant="outline">
+          {loading === "preview" ? "جاري…" : "Run Dry-Run Preview"}
+        </Button>
+        <Input
+          value={confirm}
+          onChange={(e) => setConfirm(e.target.value)}
+          placeholder={SEED_CONFIRMATION_TEXT}
+          className="font-mono max-w-sm"
+        />
+        <Button
+          onClick={doRealSeed}
+          disabled={!canRunReal}
+          variant="destructive"
+        >
+          {loading === "real" ? "جاري…" : "Run Real Seed"}
+        </Button>
+      </div>
+
+      {err && (
+        <div className="rounded-lg border border-destructive/40 bg-destructive/10 text-destructive text-xs p-3 mb-3 font-mono">
+          {err}
+        </div>
+      )}
+
+      {report && (
+        <pre className="rounded-lg border border-border/40 bg-background/60 text-[11px] p-3 overflow-auto max-h-96 font-mono">
+{JSON.stringify(report, null, 2)}
+        </pre>
+      )}
+    </section>
   );
 }
 
