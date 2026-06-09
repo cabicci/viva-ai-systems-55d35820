@@ -58,7 +58,6 @@ import { SCENES as L_automator_m4_l1_connect_database_S, SCENE_FRAMES as L_autom
 import { SCENES as L_automator_m5_l1_llm_in_flow_S, SCENE_FRAMES as L_automator_m5_l1_llm_in_flow_F, TOTAL_FRAMES as L_automator_m5_l1_llm_in_flow_T } from "./lessons-generated/automator-m5-l1-llm-in-flow.gen";
 import { SCENES as L_automator_m3_l1_tools_landscape_S, SCENE_FRAMES as L_automator_m3_l1_tools_landscape_F, TOTAL_FRAMES as L_automator_m3_l1_tools_landscape_T } from "./lessons-generated/automator-m3-l1-tools-landscape.gen";
 import { SCENES as L_analyst_m3_l1_three_sources_S, SCENE_FRAMES as L_analyst_m3_l1_three_sources_F, TOTAL_FRAMES as L_analyst_m3_l1_three_sources_T } from "./lessons-generated/analyst-m3-l1-three-sources.gen";
-import { SCENES as L_analyst_m1_l1_from_automation_to_insight_S, SCENE_FRAMES as L_analyst_m1_l1_from_automation_to_insight_F, TOTAL_FRAMES as L_analyst_m1_l1_from_automation_to_insight_T } from "./lessons-generated/analyst-m1-l1-from-automation-to-insight.gen";
 import { SCENES as L_analyst_m5_l2_weekly_review_ritual_S, SCENE_FRAMES as L_analyst_m5_l2_weekly_review_ritual_F, TOTAL_FRAMES as L_analyst_m5_l2_weekly_review_ritual_T } from "./lessons-generated/analyst-m5-l2-weekly-review-ritual.gen";
 import { SCENES as L_automator_m6_l1_lead_capture_S, SCENE_FRAMES as L_automator_m6_l1_lead_capture_F, TOTAL_FRAMES as L_automator_m6_l1_lead_capture_T } from "./lessons-generated/automator-m6-l1-lead-capture.gen";
 import { SCENES as L_business_m6_l1_reactive_relapse_S, SCENE_FRAMES as L_business_m6_l1_reactive_relapse_F, TOTAL_FRAMES as L_business_m6_l1_reactive_relapse_T } from "./lessons-generated/business-m6-l1-reactive-relapse.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_creator_m1_l1_why_content_S, SCENE_FRAMES as L_creator_m1_l
 import { SCENES as L_intro_m1_l1_what_is_ai_S, SCENE_FRAMES as L_intro_m1_l1_what_is_ai_F, TOTAL_FRAMES as L_intro_m1_l1_what_is_ai_T } from "./lessons-generated/intro-m1-l1-what-is-ai.gen";
 import { SCENES as L_business_m1_l1_from_decisions_to_leadership_S, SCENE_FRAMES as L_business_m1_l1_from_decisions_to_leadership_F, TOTAL_FRAMES as L_business_m1_l1_from_decisions_to_leadership_T } from "./lessons-generated/business-m1-l1-from-decisions-to-leadership.gen";
 import { SCENES as L_automator_m1_l1_where_you_are_S, SCENE_FRAMES as L_automator_m1_l1_where_you_are_F, TOTAL_FRAMES as L_automator_m1_l1_where_you_are_T } from "./lessons-generated/automator-m1-l1-where-you-are.gen";
+import { SCENES as L_analyst_m1_l1_from_automation_to_insight_S, SCENE_FRAMES as L_analyst_m1_l1_from_automation_to_insight_F, TOTAL_FRAMES as L_analyst_m1_l1_from_automation_to_insight_T } from "./lessons-generated/analyst-m1-l1-from-automation-to-insight.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -172,7 +172,6 @@ export const LESSONS: LessonModule[] = [
     { id: "analyst-m4-l2-decision-rule", scenes: L_analyst_m4_l2_decision_rule_S, sceneFrames: L_analyst_m4_l2_decision_rule_F, totalFrames: L_analyst_m4_l2_decision_rule_T },
     { id: "automator-m3-l1-tools-landscape", scenes: L_automator_m3_l1_tools_landscape_S, sceneFrames: L_automator_m3_l1_tools_landscape_F, totalFrames: L_automator_m3_l1_tools_landscape_T },
     { id: "analyst-m3-l1-three-sources", scenes: L_analyst_m3_l1_three_sources_S, sceneFrames: L_analyst_m3_l1_three_sources_F, totalFrames: L_analyst_m3_l1_three_sources_T },
-    { id: "analyst-m1-l1-from-automation-to-insight", scenes: L_analyst_m1_l1_from_automation_to_insight_S, sceneFrames: L_analyst_m1_l1_from_automation_to_insight_F, totalFrames: L_analyst_m1_l1_from_automation_to_insight_T },
     { id: "analyst-m5-l2-weekly-review-ritual", scenes: L_analyst_m5_l2_weekly_review_ritual_S, sceneFrames: L_analyst_m5_l2_weekly_review_ritual_F, totalFrames: L_analyst_m5_l2_weekly_review_ritual_T },
     { id: "automator-m6-l1-lead-capture", scenes: L_automator_m6_l1_lead_capture_S, sceneFrames: L_automator_m6_l1_lead_capture_F, totalFrames: L_automator_m6_l1_lead_capture_T },
     { id: "business-m6-l1-reactive-relapse", scenes: L_business_m6_l1_reactive_relapse_S, sceneFrames: L_business_m6_l1_reactive_relapse_F, totalFrames: L_business_m6_l1_reactive_relapse_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "intro-m1-l1-what-is-ai", scenes: L_intro_m1_l1_what_is_ai_S, sceneFrames: L_intro_m1_l1_what_is_ai_F, totalFrames: L_intro_m1_l1_what_is_ai_T },
     { id: "business-m1-l1-from-decisions-to-leadership", scenes: L_business_m1_l1_from_decisions_to_leadership_S, sceneFrames: L_business_m1_l1_from_decisions_to_leadership_F, totalFrames: L_business_m1_l1_from_decisions_to_leadership_T },
     { id: "automator-m1-l1-where-you-are", scenes: L_automator_m1_l1_where_you_are_S, sceneFrames: L_automator_m1_l1_where_you_are_F, totalFrames: L_automator_m1_l1_where_you_are_T },
+    { id: "analyst-m1-l1-from-automation-to-insight", scenes: L_analyst_m1_l1_from_automation_to_insight_S, sceneFrames: L_analyst_m1_l1_from_automation_to_insight_F, totalFrames: L_analyst_m1_l1_from_automation_to_insight_T },
   /* @lesson-entries-end */
 ];

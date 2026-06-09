@@ -5,120 +5,86 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "highlight": "دلوقتي بتسأل",
-    "subtitle": "Automator بيجمع، Analyst بيحوّل لقرار.",
-    "chip": "أهلًا",
-    "title": "بياناتك جاهزة"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "definition": "شاشة بتجمع أهم الأرقام اللي بتهمّك في صور ورسومات سهلة ومباشرة.",
-    "tag": "شاشة أرقام",
-    "term": "Dashboard"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "definition": "الناس بتقع منك فين في السكة، في المراحل اللي بيمشي فيها الزبون لحد ما يشتري.",
-    "tag": "خسارة زباين",
-    "term": "Funnel drop-off"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "tag": "فهم عميق",
-    "term": "Insight",
-    "definition": "فهم عميق وخلاصة بتطلعها من وسط الدوشة عشان تاخد قرار يغير شكل شغلك."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "definition": "الشخص اللي بيبرمج الأدوات عشان تجميع البيانات يحصل بشكل أوتوماتيك.",
-    "tag": "مبرمج بيانات",
-    "term": "Automator"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "tag": "محلل بيانات",
-    "term": "Analyst",
-    "definition": "الشخص اللي بيمسك البيانات الجاهزة ويفسرها عشان يطلع نصايح وفهم للشغل."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "definition": "تجربة المستخدم، يعني إزاي الزبون بيتعامل مع موقعك أو برنامجك بسهولة وبدون كلكعة.",
-    "tag": "سهولة استخدام",
-    "term": "UX"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "مهم vs تافه",
-    "term": "Signal vs Noise",
-    "definition": "البيانات المهمة اللي بتاخد عليها قرار (Signal) مقابل الدوشة والبيانات التافهة (Noise)."
+    "subtitle": "Automator بيجمع، Analyst بيحوّل لقرار. ورقة أو Google Sheet يكفي.",
+    "highlight": "البيانات الجاهزة بداية مش نهاية.",
+    "title": "هتفهم إيه النهاردة؟",
+    "chip": "بداية الدرس"
   },
   {
     "card": "BulletsCard",
-    "accent": "peach",
-    "title": "Automator بيجمع، Analyst بيسأل",
+    "accent": "lavender",
     "bullets": [
-      "Builder بنى المنتج وكل click و order بيتسجّل.",
-      "Creator جاب الـ Reach وكل view و lead بيتحفظ.",
-      "Automator وصّل كل ده في مكان واحد.",
-      "Analyst بيقف قدام الكومة دي ويسأل: إيه اللي بيشتغل وإيه لأ؟"
-    ]
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "yellow",
-    "bullets": [
-      "الـ Dashboard بدون سؤال بيكون مجرد ديكور.",
-      "السؤال المحدّد هو اللي بيوصلك لقرار في نفس اليوم."
+      "Dashboard فيه ٢٠ رسم بياني. بتفتحه يوميًا وتقول «حلو». بس مفيش حاجة اتغيّرت في شغلك بسببه.",
+      "البيانات بقت ديكور — مش أداة قرار. Automator خلّى الكومة تكبر، بس من غير سؤال محدّد مش هتعرف تتحرّك.",
+      "الـ AI يساعدك تصيغ الأسئلة وتلخّص الأرقام — إنت تقرر إيه السؤال اللي يستاهل وقتك وإيه القرار اللي هتاخده."
     ],
-    "title": "Decision Loop - ٥ مراحل"
+    "title": "بتفتح التقرير كل يوم — ومفيش قرار اتغيّر"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "peach",
+    "bullets": [
+      "Builder بنى المنتج — كل click وكل order بيتسجّل. Creator جاب الـ Reach — كل view وكل lead بيتحفظ.",
+      "Automator وصّل كل ده في مكان واحد: CRM أو Sheet أو قاعدة بيانات.",
+      "Analyst بيقف قدام البيانات ويسأل: إيه اللي بيشتغل؟ إيه اللي مش بيشتغل؟ إيه القرار اللي لازم آخده الأسبوع ده؟",
+      "الأرقام لوحدها مش insight — الـ insight بيطلع لما السؤال يوصّلك لقرار تقدر تنفّذه."
+    ],
+    "title": "Automator بيجمع — Analyst بيسأل"
   },
   {
     "card": "CompareCard",
-    "accent": "pink",
-    "right": {
-      "body": "بتفتح الـ Dashboard بسؤال زي «ليه الـ Conversion نزل ٥٪؟»، وتطلع بقرار وتنفذه.",
-      "label": "صح: بتدخل ومعاك سؤال"
-    },
-    "title": "بيانات بدون سؤال vs بيانات بسؤال",
+    "accent": "yellow",
     "left": {
-      "body": "الـ Dashboard مليان رسوم بيانية، بتفتحه كل يوم وتقول حلو، ومفيش قرار بيتغير.",
-      "label": "فشل: بتتفرّج على Dashboard"
-    }
+      "body": "بتفتح تقرير المبيعات كل صباح. بتشوف الأرقام وتمشي. مفيش سؤال محدّد — ومفيش قرار.",
+      "label": "بتتفرّج بس"
+    },
+    "right": {
+      "body": "«ليه الـ Conversion نزل ٥٪ الأسبوع ده؟» — بتفتح التقرير بسؤال واحد، تطلع بقرار محدّد، تنفّذه نفس اليوم.",
+      "label": "بتدخل بسؤال"
+    },
+    "title": "بتتفرّج على الأرقام vs بتدخل بسؤال"
   },
   {
-    "card": "CTACard",
+    "card": "ConceptCard",
+    "accent": "pink",
+    "tag": "أرقام وحقائق",
+    "definition": "أرقام وحقائق مجمّعة — مبيعات، زيارات، طلبات، شكاوى.",
+    "term": "Data (بيانات)"
+  },
+  {
+    "card": "ConceptCard",
     "accent": "mintDeep",
-    "eyebrow": "دورك دلوقتي",
-    "tagline": "يلا نطبق اللي اتعلمناه!",
-    "title": "اكتب ٣ أسئلة بياناتك تجاوبها",
-    "highlight": "وقرار من كل سؤال"
+    "tag": "فهم للعمل",
+    "definition": "فهم يخلّيك تعرف إيه اللي تعمله — مش مجرد رقم على الشاشة.",
+    "term": "Insight (رؤية)"
   },
   {
     "card": "BulletsCard",
     "accent": "mint",
     "bullets": [
-      "البيانات الخام موجودة من غير تدخل يدوي.",
-      "كل widget هو سؤال محدّد وإجابة بيانية.",
-      "الـ Analyst شغله الأساسي يسأل، مش يجمع بيانات."
+      "Dashboard بدون سؤال = ديكور.",
+      "سؤال محدّد → إجابة → قرار → تنفيذ → مراجعة.",
+      "ابداً من السؤال في المهمة."
     ],
-    "title": "/analytics — البيانات جاهزة، ابدأ تسأل"
+    "title": "حلقة القرار — ٥ مراحل"
   },
   {
     "card": "CTACard",
     "accent": "lavender",
-    "eyebrow": "الخلاصة",
-    "tagline": "اشوفك في الدرس الجاي: حوّل الشعور لسؤال!",
-    "title": "البيانات جاهزة، السؤال هو الناقص",
-    "highlight": "حوّل الشعور لسؤال"
+    "tagline": "جاوب على السؤال ده عشان تتأكد إنك فهمت.",
+    "highlight": "اختبر فهمك وإزاي تطبق",
+    "eyebrow": "دورك دلوقتي",
+    "title": "سؤال واحد — مش امتحان"
+  },
+  {
+    "card": "CTACard",
+    "accent": "peach",
+    "tagline": "تقدر تطبق اللي اتعلمته. شوفك في الدرس الجاي!",
+    "highlight": "فهمت إيه؟ وجود أرقام مش نفس فهمك إيه اللي تعمله",
+    "eyebrow": "خلّصت البداية",
+    "title": "إيه اللي عندك دلوقتي؟"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [202, 276, 309, 263, 214, 222, 258, 239, 523, 265, 617, 263, 426, 264];
+export const SCENE_FRAMES: number[] = [765, 939, 1051, 862, 666, 546, 754, 412, 523];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);

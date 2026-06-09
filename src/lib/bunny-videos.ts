@@ -6,7 +6,7 @@
 export const BUNNY_LIBRARY_ID = "670679";
 
 export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
-  "analyst-m1-l1-from-automation-to-insight": "0d1ceb9b-36c5-4a26-9174-675f94d9679e",
+  "analyst-m1-l1-from-automation-to-insight": "d534655d-7ed2-49d1-a97d-6c7359d4aed2",
   "analyst-m2-l1-feeling-to-question": "819a07bb-400d-475b-9731-d9a2146ee98f",
   "analyst-m2-l2-right-question-rule": "f044c1d2-a886-4d24-8ddd-2f9a36d38a1b",
   "analyst-m3-l1-three-sources": "65042486-94bf-4c3d-8d96-2b074b6a0de3",
