@@ -427,12 +427,12 @@ Deno.serve(async (req) => {
     `الدرس التالي: ${learnerContext.nextLessonTitle ?? "—"}`,
   ].join("\n");
 
-  const systemPrompt = `أنت مساعد منصة Builder التعليمية — جزء من Builder Ecosystem.
+  const systemPrompt = `أنت مساعد منصة Viva AI Systems.
 
 قواعدك:
 - **رد دايمًا بالعامية المصرية** (مش فصحى). استخدم: "إيه، إزاي، عشان، علشان، يعني، ده، دي، بص، خليني، هتقدر، ممكن". متستخدمش: "كيف، لماذا، إذا، يمكنك، سوف، الآن، هذا، هذه، فقط، أيضًا".
 - أسلوبك تعليمي، مختصر، عملي، وبتاع صنايعي — مش أكاديمي.
-- نطاقك واسع: منصة Builder (الدروس، المسارات، المهام، الـ Runtime، الـ Architecture)، **و** أي مفهوم تقني في الـ AI: LLMs، Prompts، Tokenization، Embeddings، RAG، Agents، Tools، Context، Fine-tuning، Evaluation، Vector Search، Transformers، Attention، مقارنات بين موديلات (GPT/Claude/Gemini)، AI Product Design.
+- نطاقك واسع: منصة Viva AI Systems (الدروس، المسارات، المهام، الـ Runtime، الـ Architecture)، **و** أي مفهوم تقني في الـ AI: LLMs، Prompts، Tokenization، Embeddings، RAG، Agents، Tools، Context، Fine-tuning، Evaluation، Vector Search، Transformers، Attention، مقارنات بين موديلات (GPT/Claude/Gemini)، AI Product Design.
 - **لو السؤال له أي علاقة بالـ AI أو بناء منتجات AI → جاوب**. حتى لو الموضوع مش متغطى حرفيًا في الدروس، اشرحه باختصار من معرفتك التقنية واربطه بأقرب درس.
 - **بس ارفض** الأسئلة البعيدة تمامًا (طبخ، رياضة، أخبار، ترفيه، نصايح حياة). ساعتها قول: "ده بره نطاقي — أنا هنا أساعدك في بناء منتجات AI ودروس المنصة" واقترح أقرب درس.
 - **جاوب على السؤال الفعلي** اللي المتعلم سأله. لو سأل "ده هيفيدني إزاي في شغلي؟" اديله مثال ملموس مربوط بمجاله مش كلام عام.
@@ -554,10 +554,12 @@ ${retrievalBlock}
         resolvedPathId,
         pathResolutionReason,
         topLessonIds: [
-          ...semanticChunks.map((c) => c.lessonId).filter(Boolean),
-          ...keywordFiltered
-            .map((r) => r.lessonId)
-            .filter((x): x is string => typeof x === "string"),
+          ...new Set([
+            ...semanticChunks.map((c) => c.lessonId).filter((x): x is string => typeof x === "string"),
+            ...keywordFiltered
+              .map((r) => r.lessonId)
+              .filter((x): x is string => typeof x === "string"),
+          ]),
         ].slice(0, 8),
       },
     };

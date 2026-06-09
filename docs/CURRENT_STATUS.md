@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Pre-Assistant P0 — Conditional Curriculum Freeze
+Post-Assistant P0 — Production Hardening
 
 ## Completed
 
@@ -22,10 +22,11 @@ Pre-Assistant P0 — Conditional Curriculum Freeze
 - 6 technical lesson fixes completed — f45ba9f
 - 8-lesson terminology pass completed — 133637b
 - Curriculum Freeze Contract committed — a3f1ecb
+- Assistant P0 semantic seed + retrieval smoke test PASS
 
 ## In Progress
 
-- Assistant P0 preparation
+None
 
 ## Blocked
 
@@ -33,8 +34,8 @@ None
 
 ## Latest Production Commit
 
-a3f1ecb
+TBD — updated after next commit
 
 ## Next Planned Step
 
-Assistant P0 — seed knowledge_chunks using 100 learner slugs only, excluding 4 archived Business lessons, per CURRICULUM_FREEZE_CONTRACT.md
+Production hardening / prompt tightening / visual freeze planning
