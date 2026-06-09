@@ -2,6 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { enforceRateLimit } from "@/lib/rate-limit.server";
+import { callAI } from "@/lib/ai-providers.server";
 
 const PATH_PROMPTS: Record<string, { system: string; user: (idea: string) => string }> = {
   builder: {
