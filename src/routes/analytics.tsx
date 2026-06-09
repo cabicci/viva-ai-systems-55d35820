@@ -18,7 +18,7 @@ import { Sidebar } from "@/components/dashboard/Sidebar";
 export const Route = createFileRoute("/analytics")({
   head: () => ({
     meta: [
-      { title: "تحليلاتي — AI Ecosystem" },
+      { title: "تحليلاتي — مسارات" },
       {
         name: "description",
         content: "إحصائيات رحلتك التعليمية: التقدم، الـ streak، والمهام.",

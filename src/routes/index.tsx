@@ -10,15 +10,16 @@ import { Footer } from "@/components/site/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "منصة عربية لتعلّم الذكاء الاصطناعي بالتطبيق" },
-      { name: "description", content: "منصة عربية بتاخدك خطوة بخطوة من فهم أساسيات الـ AI لحد ما تبني أدوات، أنظمة، ومشاريع حقيقية بنفسك." },
-      { property: "og:title", content: "منصة عربية لتعلّم الذكاء الاصطناعي بالتطبيق" },
-      { property: "og:description", content: "منصة عربية بتاخدك خطوة بخطوة من فهم أساسيات الـ AI لحد ما تبني أدوات، أنظمة، ومشاريع حقيقية بنفسك." },
-      { name: "twitter:title", content: "منصة عربية لتعلّم الذكاء الاصطناعي بالتطبيق" },
-      { name: "twitter:description", content: "منصة عربية بتاخدك خطوة بخطوة من فهم أساسيات الـ AI لحد ما تبني أدوات، أنظمة، ومشاريع حقيقية بنفسك." },
+      { title: "مسارات — masaarat.ai | تعلّم الذكاء الاصطناعي بالتطبيق" },
+      { name: "description", content: "مسارات بتاخدك خطوة بخطوة من فهم أساسيات الـ AI لحد ما تبني أدوات، أنظمة، ومشاريع حقيقية بنفسك." },
+      { property: "og:title", content: "مسارات — masaarat.ai | تعلّم الذكاء الاصطناعي بالتطبيق" },
+      { property: "og:description", content: "مسارات بتاخدك خطوة بخطوة من فهم أساسيات الـ AI لحد ما تبني أدوات، أنظمة، ومشاريع حقيقية بنفسك." },
+      { property: "og:url", content: "https://masaarat.ai" },
+      { name: "twitter:title", content: "مسارات — masaarat.ai | تعلّم الذكاء الاصطناعي بالتطبيق" },
+      { name: "twitter:description", content: "مسارات بتاخدك خطوة بخطوة من فهم أساسيات الـ AI لحد ما تبني أدوات، أنظمة، ومشاريع حقيقية بنفسك." },
     ],
     links: [
-      { rel: "canonical", href: "https://ai-ecosystem-hub-72.lovable.app/" },
+      { rel: "canonical", href: "https://masaarat.ai/" },
     ],
   }),
   component: Index,

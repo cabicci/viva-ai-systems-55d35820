@@ -12,7 +12,7 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/start")({
   head: () => ({
     meta: [
-      { title: "ابدأ — أول دقيقتين في AI Ecosystem" },
+      { title: "ابدأ — أول دقيقتين في مسارات" },
       { name: "description", content: "شوف المنصة بتعمل إيه في دقيقتين، قبل ما تبدأ التعلم." },
     ],
   }),

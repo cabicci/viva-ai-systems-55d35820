@@ -9,7 +9,7 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/triage")({
   head: () => ({
     meta: [
-      { title: "خليني أعرفك — AI Ecosystem" },
+      { title: "خليني أعرفك — مسارات" },
       { name: "description", content: "٣ أسئلة بس عشان نوصّلك للدرس المناسب ليك." },
     ],
   }),

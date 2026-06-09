@@ -18,14 +18,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "AI Ecosystem Platform — منصة التعلم التنفيذي بالذكاء الاصطناعي" },
-      { name: "description", content: "منظومة تعليمية حية مبنية على الذكاء الاصطناعي. تعلّم بالتنفيذ، ابنِ أنظمة حقيقية، وأطلق أعمالك." },
-      { property: "og:title", content: "AI Ecosystem Platform — منصة التعلم التنفيذي بالذكاء الاصطناعي" },
-      { property: "og:description", content: "منظومة تعليمية حية مبنية على الذكاء الاصطناعي. تعلّم بالتنفيذ، ابنِ أنظمة حقيقية، وأطلق أعمالك." },
+      { title: "مسارات — masaarat.ai | تعلّم الذكاء الاصطناعي بالتطبيق" },
+      { name: "description", content: "مسارات — منظومة تعليمية عربية حية مبنية على الذكاء الاصطناعي. تعلّم بالتنفيذ، ابنِ أنظمة حقيقية، وأطلق أعمالك." },
+      { property: "og:title", content: "مسارات — masaarat.ai | تعلّم الذكاء الاصطناعي بالتطبيق" },
+      { property: "og:description", content: "مسارات — منظومة تعليمية عربية حية مبنية على الذكاء الاصطناعي. تعلّم بالتنفيذ، ابنِ أنظمة حقيقية، وأطلق أعمالك." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://masaarat.ai" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "AI Ecosystem Platform — منصة التعلم التنفيذي بالذكاء الاصطناعي" },
+      { name: "twitter:title", content: "مسارات — masaarat.ai | تعلّم الذكاء الاصطناعي بالتطبيق" },
       { name: "twitter:description", content: "منظومة تعليمية حية مبنية على الذكاء الاصطناعي. تعلّم بالتنفيذ، ابنِ أنظمة حقيقية، وأطلق أعمالك." },
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ea167ac2-2121-4c2e-bc11-5f44fed37196" },
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ea167ac2-2121-4c2e-bc11-5f44fed37196" },
@@ -38,6 +39,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" },
+      { rel: "canonical", href: "https://masaarat.ai" },
     ],
     scripts: [
       {
@@ -47,10 +49,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@graph": [
             {
               "@type": "EducationalOrganization",
-              "@id": "https://ai-ecosystem-hub-72.lovable.app/#organization",
-              name: "AI Ecosystem Platform",
-              alternateName: "منصة AI Ecosystem",
-              url: "https://ai-ecosystem-hub-72.lovable.app",
+              "@id": "https://masaarat.ai/#organization",
+              name: "مسارات",
+              alternateName: "masaarat.ai",
+              url: "https://masaarat.ai",
               description:
                 "منظومة تعليمية حية مبنية على الذكاء الاصطناعي. تعلّم بالتنفيذ، ابنِ أنظمة حقيقية، وأطلق أعمالك.",
               inLanguage: "ar",
@@ -59,15 +61,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             },
             {
               "@type": "WebSite",
-              "@id": "https://ai-ecosystem-hub-72.lovable.app/#website",
-              url: "https://ai-ecosystem-hub-72.lovable.app",
-              name: "AI Ecosystem Platform",
+              "@id": "https://masaarat.ai/#website",
+              url: "https://masaarat.ai",
+              name: "مسارات",
+              alternateName: "masaarat.ai",
               inLanguage: "ar",
-              publisher: { "@id": "https://ai-ecosystem-hub-72.lovable.app/#organization" },
+              publisher: { "@id": "https://masaarat.ai/#organization" },
             },
             {
               "@type": "ItemList",
-              "@id": "https://ai-ecosystem-hub-72.lovable.app/#paths",
+              "@id": "https://masaarat.ai/#paths",
               name: "مسارات التعلم بالذكاء الاصطناعي",
               itemListOrder: "https://schema.org/ItemListUnordered",
               numberOfItems: 5,
@@ -75,10 +78,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 {
                   "@type": "Course",
                   position: 1,
-                  name: "Builder — بناء تطبيقات AI",
+                  name: "البناء — بناء تطبيقات AI",
                   description:
                     "اتعلّم تبني تطبيقات وأنظمة AI من الصفر باستخدام LLMs، RAG، Agents، وقواعد بيانات.",
-                  provider: { "@id": "https://ai-ecosystem-hub-72.lovable.app/#organization" },
+                  provider: { "@id": "https://masaarat.ai/#organization" },
                   inLanguage: "ar",
                   educationalLevel: "Beginner to Advanced",
                   hasCourseInstance: { "@type": "CourseInstance", courseMode: "Online", courseWorkload: "PT80H" },
@@ -87,10 +90,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 {
                   "@type": "Course",
                   position: 2,
-                  name: "Creator — صناعة المحتوى بـ AI",
+                  name: "المحتوى — صناعة المحتوى بـ AI",
                   description:
                     "اتعلّم صناعة محتوى يوصل ويبيع: هوك، سكريبت، CTA، تصوير موبايل، Analytics.",
-                  provider: { "@id": "https://ai-ecosystem-hub-72.lovable.app/#organization" },
+                  provider: { "@id": "https://masaarat.ai/#organization" },
                   inLanguage: "ar",
                   educationalLevel: "Beginner to Intermediate",
                   hasCourseInstance: { "@type": "CourseInstance", courseMode: "Online", courseWorkload: "PT40H" },
@@ -99,10 +102,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 {
                   "@type": "Course",
                   position: 3,
-                  name: "Automator — أتمتة العمليات بـ n8n و AI",
+                  name: "الأتمتة — أتمتة العمليات بـ n8n و AI",
                   description:
                     "اتعلّم تأتمت شغلك: Triggers/Actions، Webhooks، RAG في n8n، WhatsApp flows.",
-                  provider: { "@id": "https://ai-ecosystem-hub-72.lovable.app/#organization" },
+                  provider: { "@id": "https://masaarat.ai/#organization" },
                   inLanguage: "ar",
                   educationalLevel: "Beginner to Advanced",
                   hasCourseInstance: { "@type": "CourseInstance", courseMode: "Online", courseWorkload: "PT50H" },
@@ -111,10 +114,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 {
                   "@type": "Course",
                   position: 4,
-                  name: "Analyst — تحليل البيانات واتخاذ القرار",
+                  name: "التحليل — تحليل البيانات واتخاذ القرار",
                   description:
                     "من السؤال الصح للقرار: AI summarization، patterns vs outliers، dashboards أسبوعية.",
-                  provider: { "@id": "https://ai-ecosystem-hub-72.lovable.app/#organization" },
+                  provider: { "@id": "https://masaarat.ai/#organization" },
                   inLanguage: "ar",
                   educationalLevel: "Beginner to Intermediate",
                   hasCourseInstance: { "@type": "CourseInstance", courseMode: "Online", courseWorkload: "PT35H" },
@@ -123,10 +126,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 {
                   "@type": "Course",
                   position: 5,
-                  name: "Business — قيادة المنظومة",
+                  name: "الأعمال — قيادة المنظومة",
                   description:
                     "من القرارات للقيادة: weekly rhythm، customer lifecycle، delegate-or-automate، scaling.",
-                  provider: { "@id": "https://ai-ecosystem-hub-72.lovable.app/#organization" },
+                  provider: { "@id": "https://masaarat.ai/#organization" },
                   inLanguage: "ar",
                   educationalLevel: "Intermediate to Advanced",
                   hasCourseInstance: { "@type": "CourseInstance", courseMode: "Online", courseWorkload: "PT30H" },

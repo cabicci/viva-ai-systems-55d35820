@@ -46,7 +46,7 @@ type FeedbackState = {
 function getFeedbackState(result: AIEvaluationResult): FeedbackState {
   if (result.passed) {
     return {
-      label: "Clear",
+      label: "واضح",
       hint: "واضح إنك فهمت الفكرة الأساسية. تقدر تكمل، ولو حبيت تطوّر إجابتك بعدين ارجع لها.",
     };
   }

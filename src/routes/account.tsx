@@ -37,10 +37,10 @@ import {
 export const Route = createFileRoute("/account")({
   head: () => ({
     meta: [
-      { title: "حسابي — AI Ecosystem" },
+      { title: "حسابي — مسارات" },
       {
         name: "description",
-        content: "إدارة حسابك واشتراكك على منصة AI Ecosystem.",
+        content: "إدارة حسابك واشتراكك على منصة مسارات.",
       },
     ],
   }),

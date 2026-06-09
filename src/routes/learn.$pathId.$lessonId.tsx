@@ -46,12 +46,12 @@ const PATH_META: Record<
   PathId,
   { label: string; icon: LucideIcon; tone: "accent" | "primary" }
 > = {
-  intro: { label: "Introduction", icon: Sparkles, tone: "accent" },
-  builder: { label: "Builder", icon: Hammer, tone: "primary" },
-  creator: { label: "Creator", icon: Palette, tone: "accent" },
-  automator: { label: "Automator", icon: Workflow, tone: "primary" },
-  analyst: { label: "Analyst", icon: BarChart3, tone: "accent" },
-  business: { label: "Business", icon: Briefcase, tone: "primary" },
+  intro: { label: "المقدمة", icon: Sparkles, tone: "accent" },
+  builder: { label: "البناء", icon: Hammer, tone: "primary" },
+  creator: { label: "المحتوى", icon: Palette, tone: "accent" },
+  automator: { label: "الأتمتة", icon: Workflow, tone: "primary" },
+  analyst: { label: "التحليل", icon: BarChart3, tone: "accent" },
+  business: { label: "الأعمال", icon: Briefcase, tone: "primary" },
 };
 
 const VALID_PATHS = Object.keys(PATH_META) as PathId[];
@@ -100,8 +100,8 @@ export const Route = createFileRoute("/learn/$pathId/$lessonId")({
     );
     const title = lesson ? `${lesson.title} — ${meta.label}` : meta.label;
     const description = lesson
-      ? `${lesson.title} — درس من مسار ${meta.label} في منظومة التعلم التنفيذي بالذكاء الاصطناعي.`
-      : `درس من مسار ${meta.label} في منظومة التعلم التنفيذي بالذكاء الاصطناعي.`;
+      ? `${lesson.title} — درس من مسار ${meta.label} على مسارات (masaarat.ai).`
+      : `درس من مسار ${meta.label} على مسارات (masaarat.ai).`;
     return {
       meta: [
         { title },
@@ -331,11 +331,8 @@ function UnifiedLessonPage() {
             <p className="text-sm font-semibold text-accent-warning-foreground">
               محتوى الدرس مش متوفر دلوقتي
             </p>
-            <p className="text-xs text-muted-foreground font-mono">
-              lesson id: {lesson.slug}
-            </p>
             <p className="text-xs text-muted-foreground">
-              لو شفت الرسالة دي، ابعتها للفريق علشان نضيف المحتوى.
+              لو شفت الرسالة دي، تواصل مع الفريق علشان نضيف المحتوى.
             </p>
           </div>
         )}

@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import { AuthShell } from "@/components/auth/AuthShell";
 
 export const Route = createFileRoute("/forgot-password")({
-  head: () => ({ meta: [{ title: "إعادة تعيين كلمة المرور — AI Ecosystem" }] }),
+  head: () => ({ meta: [{ title: "إعادة تعيين كلمة المرور — مسارات" }] }),
   component: ForgotPasswordPage,
 });
 

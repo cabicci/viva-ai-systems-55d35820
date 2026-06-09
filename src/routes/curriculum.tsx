@@ -33,15 +33,15 @@ type CurriculumSearch = { module?: string; lesson?: string };
 export const Route = createFileRoute("/curriculum")({
   head: () => ({
     meta: [
-      { title: "خريطة المنهج — AI Ecosystem" },
+      { title: "خريطة المنهج — مسارات" },
       {
         name: "description",
         content:
           "خريطة تعليمية شاملة للمنظومة — كل المسارات والوحدات والدروس وحالة التقدّم في مكان واحد.",
       },
-      { property: "og:title", content: "خريطة المنهج — AI Ecosystem" },
+      { property: "og:title", content: "خريطة المنهج — مسارات" },
       { property: "og:description", content: "خريطة تعليمية شاملة لكل المسارات والوحدات والدروس في منظومة التعلم التنفيذي." },
-      { name: "twitter:title", content: "خريطة المنهج — AI Ecosystem" },
+      { name: "twitter:title", content: "خريطة المنهج — مسارات" },
       { name: "twitter:description", content: "خريطة تعليمية شاملة لكل المسارات والوحدات والدروس في منظومة التعلم التنفيذي." },
     ],
   }),

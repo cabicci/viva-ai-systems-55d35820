@@ -29,7 +29,7 @@ export function Hero() {
           className="mx-auto inline-flex items-center gap-2 rounded-full border border-border/60 bg-white/70 px-4 py-1.5 text-xs text-muted-foreground shadow-sm backdrop-blur"
         >
           <Sparkles className="h-3.5 w-3.5 animate-twinkle" style={{ color: "oklch(0.55 0.10 235)" }} />
-          <span>منصة عربية لتعلّم الذكاء الاصطناعي بالتطبيق</span>
+          <span>مسارات · masaarat.ai — تعلّم الذكاء الاصطناعي بالتطبيق</span>
         </div>
 
         <h1 className="mt-8 font-black text-4xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-foreground">
@@ -47,7 +47,7 @@ export function Hero() {
         </h1>
 
         <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
-          رحلة واحدة من الصفر: افهم الـ AI، استخدمه في شغلك، شغّل بيه أنظمة، ولو حبيت — ابني بيه منتجاتك.
+          على مسارات، رحلة واحدة من الصفر: افهم الـ AI، استخدمه في شغلك، شغّل بيه أنظمة، ولو حبيت — ابني بيه منتجاتك.
         </p>
 
 

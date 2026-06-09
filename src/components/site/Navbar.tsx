@@ -15,7 +15,7 @@ export function Navbar() {
           >
             <GraduationCap className="h-5 w-5 text-foreground animate-float" />
           </span>
-          <span className="text-foreground tracking-tight">AI Ecosystem</span>
+          <span className="text-foreground tracking-tight">مسارات</span>
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
           <a href="#ecosystem" className="hover:text-foreground transition">المسارات</a>

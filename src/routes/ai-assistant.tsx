@@ -5,11 +5,11 @@ import { AssistantPanel } from "@/components/assistant/AssistantPanel";
 export const Route = createFileRoute("/ai-assistant")({
   head: () => ({
     meta: [
-      { title: "مساعد المنصة — AI Assistant" },
+      { title: "مساعد المنصة — مسارات" },
       {
         name: "description",
         content:
-          "مساعد المنصة الواعي بسياق المتعلم: يربط أسئلتك بدروس ومهام منصة Builder.",
+          "مساعد المنصة الواعي بسياق المتعلم: يربط أسئلتك بدروس ومهام كل المسارات على masaarat.ai.",
       },
     ],
   }),
@@ -22,11 +22,11 @@ function AIAssistantPage() {
       <div className="mx-auto max-w-3xl px-4 py-12 space-y-8">
         <header className="space-y-3">
           <Badge variant="outline" className="text-xs tracking-widest">
-            AI ASSISTANT
+            مساعد المنصة
           </Badge>
           <h1 className="text-3xl md:text-4xl font-bold">مساعد المنصة</h1>
           <p className="text-muted-foreground leading-relaxed">
-            اسأل عن الدروس، المهام، أو الخطوة التالية داخل رحلة البناء.
+            اسأل عن الدروس، المهام، أو الخطوة التالية في أي مسار على مسارات.
           </p>
         </header>
 

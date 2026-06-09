@@ -609,7 +609,7 @@ function businessModules(): CurriculumModule[] {
 export const PATHS: CurriculumPath[] = [
   {
     id: "intro",
-    title: "Introduction",
+    title: "المقدمة",
     tagline: "دخول عالم الـ AI — من غير خوف ومن غير كود.",
     icon: Sparkles,
     accent: "accent",
@@ -636,7 +636,7 @@ export const PATHS: CurriculumPath[] = [
   },
   {
     id: "business",
-    title: "Business",
+    title: "الأعمال",
     tagline: "بناء وقيادة عمل تجاري في عصر الذكاء.",
     icon: Briefcase,
     accent: "business",
@@ -647,7 +647,7 @@ export const PATHS: CurriculumPath[] = [
   },
   {
     id: "creator",
-    title: "Creator",
+    title: "المحتوى",
     tagline: "صناعة محتوى احترافية — من الفكرة للنشر للـ Leads.",
     icon: Palette,
     accent: "accent",
@@ -658,7 +658,7 @@ export const PATHS: CurriculumPath[] = [
   },
   {
     id: "analyst",
-    title: "Analyst",
+    title: "التحليل",
     tagline: "تحليل البيانات وفهم الأنماط مع الـ AI.",
     icon: BarChart3,
     accent: "accent",
@@ -669,7 +669,7 @@ export const PATHS: CurriculumPath[] = [
   },
   {
     id: "automator",
-    title: "Automator",
+    title: "الأتمتة",
     tagline: "أتمتة شغلك مهما كان — Leads، مبيعات، عمليات، Workflows.",
     icon: Workflow,
     accent: "primary",
@@ -680,7 +680,7 @@ export const PATHS: CurriculumPath[] = [
   },
   {
     id: "builder",
-    title: "Builder",
+    title: "البناء",
     tagline: "للي عايز يبني منتجات AI بنفسه — مسار تقني، اختياري تمامًا.",
     icon: Hammer,
     accent: "primary",

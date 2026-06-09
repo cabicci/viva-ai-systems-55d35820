@@ -24,7 +24,7 @@ import { PhaseRibbon } from "@/components/admin/PhaseRibbon";
 type DashboardSearch = { path?: string; module?: string; lesson?: string };
 
 export const Route = createFileRoute("/dashboard")({
-  head: () => ({ meta: [{ title: "اللوحة — AI Ecosystem" }] }),
+  head: () => ({ meta: [{ title: "اللوحة — مسارات" }] }),
   validateSearch: (raw: Record<string, unknown>): DashboardSearch => ({
     path: typeof raw.path === "string" ? raw.path : undefined,
     module: typeof raw.module === "string" ? raw.module : undefined,

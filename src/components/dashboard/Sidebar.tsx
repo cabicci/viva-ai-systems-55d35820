@@ -124,7 +124,7 @@ export function Sidebar() {
         <span className="grid h-8 w-8 place-items-center rounded-lg bg-[image:var(--gradient-primary)] glow-primary">
           <Sparkles className="h-4 w-4 text-primary-foreground" />
         </span>
-        <span className="text-gradient">AI Ecosystem</span>
+        <span className="text-gradient">مسارات</span>
       </Link>
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
@@ -141,7 +141,7 @@ export function Sidebar() {
             <span className="grid h-9 w-9 place-items-center rounded-xl bg-[image:var(--gradient-primary)] glow-primary">
               <Sparkles className="h-5 w-5 text-primary-foreground" />
             </span>
-            <span className="text-gradient">AI Ecosystem</span>
+            <span className="text-gradient">مسارات</span>
           </Link>
           <nav className="space-y-1 flex-1 overflow-y-auto min-h-0 -mx-1 px-1">
             <NavItems onNavigate={() => setOpen(false)} />
@@ -166,7 +166,7 @@ export function Sidebar() {
         <span className="grid h-9 w-9 place-items-center rounded-xl bg-[image:var(--gradient-primary)] glow-primary">
           <Sparkles className="h-5 w-5 text-primary-foreground" />
         </span>
-        <span className="text-gradient">AI Ecosystem</span>
+        <span className="text-gradient">مسارات</span>
       </Link>
 
       <nav className="space-y-1 flex-1 overflow-y-auto min-h-0 -mx-1 px-1">

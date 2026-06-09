@@ -17,7 +17,7 @@ export function AuthShell({
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-[image:var(--gradient-primary)] glow-primary">
             <Sparkles className="h-5 w-5 text-primary-foreground" />
           </span>
-          <span className="text-gradient">AI Ecosystem</span>
+          <span className="text-gradient">مسارات</span>
         </Link>
         <div className="absolute -bottom-40 -left-20 h-[500px] w-[500px] rounded-full bg-primary/30 blur-[120px] animate-pulse-glow" />
         <div className="absolute top-20 -right-20 h-[400px] w-[400px] rounded-full bg-accent/30 blur-[100px] animate-pulse-glow" />
@@ -37,7 +37,7 @@ export function AuthShell({
               <span className="grid h-9 w-9 place-items-center rounded-xl bg-[image:var(--gradient-primary)]">
                 <Sparkles className="h-5 w-5 text-primary-foreground" />
               </span>
-              <span className="text-gradient">AI Ecosystem</span>
+              <span className="text-gradient">مسارات</span>
             </Link>
           </div>
           <h1 className="text-3xl font-bold">{title}</h1>

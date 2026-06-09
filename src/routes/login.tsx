@@ -9,7 +9,7 @@ import { ArrowLeft } from "lucide-react";
 import { AuthShell } from "@/components/auth/AuthShell";
 
 export const Route = createFileRoute("/login")({
-  head: () => ({ meta: [{ title: "تسجيل الدخول — AI Ecosystem" }] }),
+  head: () => ({ meta: [{ title: "تسجيل الدخول — مسارات" }] }),
   component: LoginPage,
 });
 

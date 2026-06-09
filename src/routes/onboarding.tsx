@@ -5,7 +5,7 @@ import { Hammer, Palette, Cog, BarChart3, Briefcase, Check, ArrowLeft } from "lu
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/onboarding")({
-  head: () => ({ meta: [{ title: "ابدأ — AI Ecosystem" }] }),
+  head: () => ({ meta: [{ title: "ابدأ — مسارات" }] }),
   component: Onboarding,
 });
 
