@@ -172,3 +172,204 @@ These must be resolved (or explicitly deferred) before final sign-off at F8:
 ---
 
 _F0 baseline established. Proceed to F1 only after explicit approval._
+
+---
+
+## F1 — Hardcoded Color Replacement Map
+
+Read-only audit of hardcoded Tailwind color utilities across `src/`. Semantic
+token classes (`text-primary`, `bg-background`, `text-muted-foreground`,
+`border-border`, `bg-card`, etc.) are intentionally excluded.
+
+### Totals
+
+- Total hardcoded color hits: **169**
+- Files affected: **28**
+- Top repeated classes:
+  - `bg-white` × 37
+  - `border-white` × 14
+  - `bg-black` × 8
+  - `border-amber-400` × 7
+  - `bg-amber-400` × 7
+  - `text-slate-700` × 6
+  - `text-amber-300` × 6
+  - `border-rose-300` × 4
+  - `border-emerald-300` × 4
+  - `text-white` × 3
+
+### Priority Buckets
+
+- **P0 — Learner-facing** (must replace before freeze):
+  IntroLessonRenderer, IntroSection, QuizBlock, MissionRubricSubmit,
+  CompletionReward, DifficultyPrompt, Sidebar, Navbar, Hero,
+  BackToDashboard, Journey, WelcomeChecklist, WelcomeHint,
+  `routes/dashboard.tsx`, `routes/curriculum.tsx`,
+  `routes/learn.$pathId.$lessonId.tsx`, `routes/account.tsx`.
+- **P1 — Admin / shared infra**:
+  `routes/admin.v9-review.tsx`, `routes/admin.persona-sim-v9.tsx`,
+  `routes/analytics.tsx`, `routes/system-state.tsx`,
+  `routes/build-logs.tsx`, `routes/behavior-architecture.tsx`,
+  `routes/creator.workbook.tsx`, `lib/dna-report.functions.ts`
+  (PDF render — keep raw color for print fidelity, flag only).
+- **P2 — Decorative / low-risk**:
+  `components/ui/dialog.tsx` & `components/ui/sheet.tsx` (`bg-black` =
+  shadcn overlay default), `components/image-gallery/GalleryGrid.tsx`.
+
+### Replacement Map (semantic targets)
+
+| Hardcoded class                       | Recommended token / replacement                              | Token exists? |
+|---------------------------------------|--------------------------------------------------------------|---------------|
+| `bg-white` (cards, panels, sheets)    | `bg-card` (most cases) / `bg-popover` (overlays)             | ✅            |
+| `bg-white` (badge/contrast chip)      | `bg-background` over colored surface                         | ✅            |
+| `border-white` (on colored surfaces)  | `border-border` or new `--border-onColor` token              | ⚠️ new        |
+| `bg-white/10` `bg-white/20` (alpha)   | new `--surface-overlay` / `--surface-overlay-strong`         | ⚠️ new        |
+| `text-white`                          | `text-primary-foreground` / `text-card-foreground`           | ✅            |
+| `bg-black` (overlays in dialog/sheet) | keep (shadcn primitive), document exemption                  | n/a           |
+| `bg-black` (PDF/render-only)          | keep (export fidelity)                                       | n/a           |
+| `border-amber-400` / `bg-amber-400`   | `--accent-warning` (pastel amber)                            | ⚠️ new        |
+| `text-amber-300` / `text-amber-200`   | `--accent-warning-foreground`                                | ⚠️ new        |
+| `bg-amber-50` `bg-amber-100` (admin)  | `--accent-warning-soft`                                      | ⚠️ new        |
+| `text-amber-800` / `text-amber-900`   | `--accent-warning-strong-foreground`                         | ⚠️ new        |
+| `border-emerald-400` / `bg-emerald-*` | `--accent-success` family                                    | ⚠️ new        |
+| `text-emerald-100..300`               | `--accent-success-foreground` (on dark)                      | ⚠️ new        |
+| `bg-emerald-50/100` `text-emerald-8*` | `--accent-success-soft` / `--accent-success-strong-fg`       | ⚠️ new        |
+| `bg-emerald-600/700`                  | `--accent-success-strong`                                    | ⚠️ new        |
+| `border-rose-*` / `bg-rose-*` / text  | `--accent-danger` family (replaces ad-hoc destructive use)   | ⚠️ partial (`--destructive` exists, no soft variants) |
+| `text-red-200/300` `bg-red-400`       | unify under `--accent-danger` (drop red, keep rose)          | ⚠️ new        |
+| `text-slate-600..900` (admin text)    | `text-foreground` / `text-muted-foreground`                  | ✅            |
+| `bg-slate-50..200` (admin surfaces)   | `bg-muted` / `bg-card`                                       | ✅            |
+| `border-slate-200/300`                | `border-border`                                              | ✅            |
+| `text-sky-400` (account icon)         | `--path-builder` accent token                                | ✅            |
+| `text-orange-400` (account icon)      | `--path-creator` accent token                                | ✅            |
+| `text-amber-400` (account icon)       | `--path-automator` accent token                              | ✅            |
+| `text-emerald-400` (account icon)     | `--path-analyst` accent token                                | ✅            |
+
+### Per-file Findings (high-signal)
+
+**P0 — `src/components/intro/IntroLessonRenderer.tsx`** (8 hits, lines 171,
+192, 259, 339, 362–363, 448, 527, 547): mix of `bg-white/10`,
+`border-white/20`, `bg-amber-400`, `text-amber-300`, `bg-black/40`,
+`text-white`. Used for video shell, hint chips, mission CTAs, lesson nav.
+→ requires `--surface-overlay`, `--accent-warning`, and a documented
+on-dark overlay scale before replacement.
+
+**P0 — `src/components/intro/IntroSection.tsx`** (7 hits, lines 14, 20–21,
+43): badge/header chrome over gradient hero. → same overlay + warning
+tokens.
+
+**P0 — `src/components/intro/QuizBlock.tsx`** (12 hits, lines 138–175):
+correct/incorrect state colors (`emerald-*`, `red-*`, `white/*`).
+→ needs `--accent-success` and `--accent-danger` families.
+
+**P0 — `src/components/intro/MissionRubricSubmit.tsx`** (line 391):
+`bg-white/10 border-white/20` chrome → `--surface-overlay`.
+
+**P0 — `src/components/learn/DifficultyPrompt.tsx`** (11 hits, lines
+98–138): three-tier difficulty pills (rose / amber / emerald).
+→ `--accent-danger / warning / success`.
+
+**P0 — `src/components/learn/CompletionReward.tsx`** (line 69):
+`text-amber-300` star → `--accent-warning-foreground`.
+
+**P0 — `src/components/dashboard/Sidebar.tsx`** (5 hits, lines 63, 92,
+133, 155, 180): all `bg-white/*` for active state chips on the gradient
+sidebar. → `--surface-overlay` family.
+
+**P0 — `src/components/dashboard/WelcomeHint.tsx` & `WelcomeChecklist.tsx`**
+(4 hits): `bg-white` panels → `bg-card` or overlay token depending on
+context.
+
+**P0 — `src/components/site/Navbar.tsx`** (line 9): `bg-white/80`
+backdrop → `bg-background/80` or `--surface-glass` token.
+
+**P0 — `src/components/site/Hero.tsx`** (3 hits, lines 29, 72, 87):
+`bg-white/10` chrome over hero → `--surface-overlay`.
+
+**P0 — `src/components/site/BackToDashboard.tsx`** (line 29):
+`bg-white/10` pill → `--surface-overlay`.
+
+**P0 — `src/components/site/Journey.tsx`** (line 124): `bg-white/10`
+chrome → `--surface-overlay`.
+
+**P0 — `src/routes/curriculum.tsx`** (8 hits, lines 365, 380, 472–473,
+506–507): warning chips (`amber-*`) + `bg-white/*` thumbs.
+→ `--accent-warning` + `--surface-overlay`.
+
+**P0 — `src/routes/dashboard.tsx`** (line 341): `bg-white/10` → overlay.
+
+**P0 — `src/routes/learn.$pathId.$lessonId.tsx`** (5 hits, lines 250,
+264, 330–331): `bg-white/*` chrome + `amber-400` warning state.
+→ overlay + warning tokens.
+
+**P0 — `src/routes/account.tsx`** (5 hits, lines 321–336, 423): path
+icon colors (orange/amber/sky/emerald) + `bg-white/10` chip.
+→ already-existing `--path-*` tokens + overlay.
+
+**P1 — `src/routes/admin.v9-review.tsx`** (29 hits): full
+slate/emerald/amber/rose admin palette (text, surface, border, button
+states). → batch replacement once accent families exist; admin theme can
+ship after learner-facing F-phases.
+
+**P1 — `src/routes/admin.persona-sim-v9.tsx`** (24 hits): same pattern
+as `admin.v9-review.tsx`.
+
+**P1 — `src/routes/analytics.tsx`** (3 hits, lines 274, 309, 335):
+`bg-white/10` overlay → overlay token.
+
+**P1 — `src/routes/system-state.tsx`** (line 321): `bg-white/10`.
+
+**P1 — `src/routes/build-logs.tsx`** (4 hits, lines 143, 169, 171, 196):
+`bg-white/*` + `border-white/*` chrome → overlay tokens.
+
+**P1 — `src/routes/behavior-architecture.tsx`** (line 528): overlay.
+
+**P1 — `src/routes/creator.workbook.tsx`** (3 hits, lines 173, 186):
+`border-white/*` + `bg-black/*` print-styled card → overlay + exempt.
+
+**P1 — `src/lib/dna-report.functions.ts`** (line 411): inline PDF HTML —
+`text-white bg-black` for print. **Exempt** from token migration; flag
+only.
+
+**P2 — `src/components/ui/dialog.tsx` & `sheet.tsx`** (line 24 each):
+`bg-black/80` overlay = shadcn default. **Exempt**; document as the
+single sanctioned `bg-black` usage in primitives.
+
+**P2 — `src/components/image-gallery/GalleryGrid.tsx`** (lines 72, 99):
+`bg-black/50 text-white` overlay for image captions. → `--surface-scrim`
+new token, or accept as primitive-level exemption.
+
+### Recommended Replacement Order
+
+1. **F1.a — Token authoring (blocks replacement):** define new tokens in
+   `src/styles.css` (no component edits yet):
+   - `--surface-overlay`, `--surface-overlay-strong`, `--surface-scrim`
+   - `--border-onColor`
+   - `--accent-warning`, `--accent-warning-soft`, `--accent-warning-foreground`,
+     `--accent-warning-strong`, `--accent-warning-strong-foreground`
+   - `--accent-success` family (same shape)
+   - `--accent-danger` family (extend `--destructive` with soft + strong-fg)
+   - `--surface-glass` (frosted Navbar)
+2. **F1.b — P0 learner-facing sweep** (single, mechanical pass):
+   IntroLessonRenderer, IntroSection, QuizBlock, MissionRubricSubmit,
+   CompletionReward, DifficultyPrompt, Sidebar, Navbar, Hero,
+   BackToDashboard, Journey, WelcomeHint, WelcomeChecklist,
+   dashboard/curriculum/learn/account routes.
+3. **F1.c — P1 admin sweep:** `admin.v9-review.tsx`,
+   `admin.persona-sim-v9.tsx`, analytics, system-state, build-logs,
+   behavior-architecture, creator.workbook.
+4. **F1.d — Exemption ledger:** document `dialog.tsx` / `sheet.tsx` /
+   `dna-report.functions.ts` / `GalleryGrid.tsx` overlays as sanctioned
+   raw-color usages in this blueprint.
+
+### Classes That Must Wait for New Tokens
+
+All `bg-white/*`, `border-white/*`, `amber-*`, `emerald-*`, `rose-*`,
+`red-*` instances depend on F1.a tokens. Only `slate-*`, `bg-white`
+(opaque), and path-icon colors can be replaced today using the existing
+token set.
+
+### Non-Goals (re-confirmed)
+
+- No component edits this phase.
+- No `styles.css` edits this phase.
+- No visual refactor.
