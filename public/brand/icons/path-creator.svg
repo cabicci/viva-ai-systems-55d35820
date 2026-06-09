@@ -1,10 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#1E2B4A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Creator frame">
-  <title>Creator frame</title>
-  <!-- content frame -->
-  <rect x="3.5" y="4.5" width="14" height="14" rx="2.5"/>
-  <!-- play / lens center -->
-  <circle cx="10.5" cy="11.5" r="3" stroke="#7FB8E8"/>
-  <!-- spark accent (top-right, mint + lilac) -->
-  <path d="M19 3.5v3M17.5 5h3" stroke="#2DD4BF"/>
-  <path d="M20.5 8.5v2M19.5 9.5h2" stroke="#B8A8E0"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Creator path">
+  <title>Creator path</title>
+  <!-- outer blue arc (widest, underneath) -->
+  <path d="M6 48 Q32 16 58 48" stroke="#7FB8E8" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- mint left arc -->
+  <path d="M14 48 Q22 22 32 22" stroke="#2DD4BF" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- lilac right arc -->
+  <path d="M32 22 Q42 22 50 48" stroke="#B8A8E0" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- central mint pillar with arrow tip pointing down -->
+  <path d="M28.5 8 H35.5 A1.5 1.5 0 0 1 37 9.5 V26 H40 L32 34 L24 26 H27 V9.5 A1.5 1.5 0 0 1 28.5 8 Z" fill="#2DD4BF"/>
+  <path d="M50 14 L52 18 L56 20 L52 22 L50 26 L48 22 L44 20 L48 18 Z" fill="#B8A8E0"/>
 </svg>

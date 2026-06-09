@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#1E2B4A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="AI connected nodes">
-  <title>AI connected nodes</title>
-  <!-- connection lines -->
-  <path d="M6.5 6.5l5 3 6-3M6.5 17.5l5-3 6 3M11.5 9.5v5"/>
-  <!-- nodes -->
-  <circle cx="6.5" cy="6.5" r="2" stroke="#7FB8E8"/>
-  <circle cx="17.5" cy="6.5" r="2" stroke="#B8A8E0"/>
-  <circle cx="11.5" cy="9.5" r="2" fill="#2DD4BF" stroke="#2DD4BF"/>
-  <circle cx="11.5" cy="14.5" r="2" stroke="#2DD4BF"/>
-  <circle cx="6.5" cy="17.5" r="2" stroke="#B8A8E0"/>
-  <circle cx="17.5" cy="17.5" r="2" stroke="#7FB8E8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="AI brain">
+  <title>AI brain</title>
+  <!-- outer blue arc (widest, underneath) -->
+  <path d="M6 48 Q32 16 58 48" stroke="#7FB8E8" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- mint left arc -->
+  <path d="M14 48 Q22 22 32 22" stroke="#2DD4BF" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- lilac right arc -->
+  <path d="M32 22 Q42 22 50 48" stroke="#B8A8E0" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- central mint pillar with arrow tip pointing down -->
+  <path d="M28.5 8 H35.5 A1.5 1.5 0 0 1 37 9.5 V26 H40 L32 34 L24 26 H27 V9.5 A1.5 1.5 0 0 1 28.5 8 Z" fill="#2DD4BF"/>
+  <line x1="46" y1="16" x2="52" y2="20" stroke="#B8A8E0" stroke-width="1.4"/><line x1="52" y1="20" x2="56" y2="14" stroke="#B8A8E0" stroke-width="1.4"/><line x1="46" y1="16" x2="56" y2="14" stroke="#B8A8E0" stroke-width="1.4" opacity="0.6"/><circle cx="46" cy="16" r="2" fill="#2DD4BF"/><circle cx="52" cy="20" r="2" fill="#7FB8E8"/><circle cx="56" cy="14" r="2" fill="#B8A8E0"/>
 </svg>

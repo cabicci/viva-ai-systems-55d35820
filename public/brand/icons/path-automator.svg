@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#1E2B4A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Automator loop">
-  <title>Automator loop</title>
-  <!-- step nodes -->
-  <circle cx="5" cy="6.5" r="2" stroke="#2DD4BF"/>
-  <circle cx="19" cy="12" r="2" stroke="#7FB8E8"/>
-  <circle cx="5" cy="17.5" r="2" stroke="#B8A8E0"/>
-  <!-- flowing path between them -->
-  <path d="M7 6.5c4 0 6 2.2 6 5.5s-2 5.5-6 5.5"/>
-  <path d="M13 12h4"/>
-  <!-- arrow tip on return -->
-  <path d="M6.4 18.9l-1.4-1.4 1.4-1.4" stroke="#1E2B4A"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Automator path">
+  <title>Automator path</title>
+  <!-- outer blue arc (widest, underneath) -->
+  <path d="M6 48 Q32 16 58 48" stroke="#7FB8E8" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- mint left arc -->
+  <path d="M14 48 Q22 22 32 22" stroke="#2DD4BF" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- lilac right arc -->
+  <path d="M32 22 Q42 22 50 48" stroke="#B8A8E0" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- central mint pillar with arrow tip pointing down -->
+  <path d="M28.5 8 H35.5 A1.5 1.5 0 0 1 37 9.5 V26 H40 L32 34 L24 26 H27 V9.5 A1.5 1.5 0 0 1 28.5 8 Z" fill="#2DD4BF"/>
+  <circle cx="50" cy="18" r="4" stroke="#B8A8E0" stroke-width="2" fill="none"/><circle cx="50" cy="18" r="1.4" fill="#2DD4BF"/>
 </svg>
