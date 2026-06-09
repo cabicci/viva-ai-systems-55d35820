@@ -443,14 +443,16 @@ export const runAssistantSeed = createServerFn({ method: "POST" })
     // Insert in modest batches to keep payloads small.
     const insertRows = plan.chunks.map((c, idx) => ({
       source_type: "lesson",
-      source_id: c.lessonId,
+      // Unique constraint is (source_type, source_id); include chunk index so
+      // multiple chunks per lesson don't collide.
+      source_id: `${c.lessonId}#${c.chunkIndex}`,
       path_id: c.pathId,
       module_id: c.moduleId,
       lesson_id: c.lessonId,
       title: c.title,
       content: c.content,
       embedding: allEmbeddings[idx],
-      metadata: { chunk_index: c.chunkIndex },
+      metadata: { chunk_index: c.chunkIndex, lesson_slug: c.lessonId },
     }));
 
     let inserted = 0;
