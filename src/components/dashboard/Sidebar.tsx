@@ -157,7 +157,7 @@ export function Sidebar() {
     {/* Desktop sidebar */}
     <aside className="hidden lg:flex w-64 flex-col glass border-l border-border/50 p-5 sticky top-0 h-screen">
       <Link to="/" className="flex items-center mb-8" aria-label="مسارات">
-        <img src="/brand/masaarat-logo-horizontal-rtl.png" alt="مسارات" className="h-10 w-auto select-none" draggable={false} />
+        <img src="/brand/masaarat-logo-horizontal-rtl.png" alt="مسارات" className="h-9 w-auto select-none" draggable={false} />
       </Link>
 
       <nav className="space-y-1 flex-1 overflow-y-auto min-h-0 -mx-1 px-1">
