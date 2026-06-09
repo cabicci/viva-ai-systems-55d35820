@@ -1,10 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { requireAdminBeforeLoad } from "@/lib/admin-route-guard";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/admin/icons-preview")({
-  beforeLoad: requireAdminBeforeLoad,
   head: () => ({ meta: [{ title: "Icon Preview — Masaarat Brand System" }] }),
   component: IconsPreviewPage,
 });
@@ -27,9 +25,9 @@ function IconsPreviewPage() {
         <div className="container mx-auto px-4 h-14 flex items-center justify-between">
           <h1 className="font-bold text-base">معاينة أيقونات الهوية — Masaarat</h1>
           <Button asChild variant="ghost" size="sm">
-            <Link to="/admin">
+            <Link to="/">
               <ArrowLeft className="h-4 w-4 rotate-180 ml-1" />
-              لوحة الإدارة
+              الرئيسية
             </Link>
           </Button>
         </div>
