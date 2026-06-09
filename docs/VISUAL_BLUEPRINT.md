@@ -405,3 +405,45 @@ Project has no `.dark` overrides yet (light-only pastel identity). Dark-mode cou
 - Tokens defined ✅
 - Components migrated ❌ (F1 sweep)
 - Visual change: none (tokens unused so far)
+
+---
+
+## F1.b — P0 Learner-Facing Replacement Sweep (applied)
+
+Hardcoded Tailwind color classes replaced with semantic tokens. No layout/spacing/copy changes.
+
+| File | Replacements |
+|---|---|
+| `src/components/intro/IntroLessonRenderer.tsx` | 9 |
+| `src/components/dashboard/Sidebar.tsx` | 5 |
+| `src/components/site/Navbar.tsx` | 1 |
+| `src/routes/dashboard.tsx` | 1 |
+| `src/routes/curriculum.tsx` | 5 |
+| `src/routes/learn.$pathId.$lessonId.tsx` | 4 |
+| **Total** | **25** |
+
+### Mapping used
+- `bg-white/[0.02|0.03|0.06]`, `bg-white/5` → `bg-foreground/5` (subtle hover surface, token-driven)
+- `border-white/10` → `border-border`
+- `bg-white/80` (Navbar) → `bg-surface-overlay`
+- `bg-white` (solid card) → `bg-card`
+- `bg-black/40 | /50 | /70` → `bg-surface-scrim`
+- `text-white/90` → `text-primary-foreground`
+- `bg-amber-400/*`, `border-amber-400/*`, `text-amber-300*` → `bg-accent-warning/*`, `border-accent-warning/*`, `text-accent-warning-foreground`
+
+### Remaining hardcoded colors in edited files
+None. All six files are now token-only.
+
+### Deferred classes
+- `dialog.tsx` / `sheet.tsx` shadcn scrim (`bg-black/...`) — intentionally exempt
+- `dna-report.functions.ts` PDF render — exempt
+- `GalleryGrid.tsx` caption overlay — exempt
+
+### Next batch (F1.c candidates)
+- `src/components/intro/IntroSection.tsx`
+- `src/components/intro/QuizBlock.tsx`
+- `src/components/intro/MissionRubricSubmit.tsx`
+- `src/components/intro/CompletionReward.tsx`
+- `src/components/intro/DifficultyPrompt.tsx`
+- `src/components/site/Hero.tsx`, `BackToDashboard.tsx`, `Journey.tsx`, `WelcomeHint.tsx`, `WelcomeChecklist.tsx`
+- `src/routes/learn.tsx`, `src/routes/account.tsx`
