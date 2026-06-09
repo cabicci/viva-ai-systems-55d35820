@@ -60,7 +60,7 @@ export function Sidebar() {
             key={i}
             to={it.to}
             onClick={onNavigate}
-            className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition ${active ? "bg-primary/10 text-primary border border-primary/30" : "text-muted-foreground hover:bg-white/5 hover:text-foreground"}`}
+            className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition ${active ? "bg-primary/10 text-primary border border-primary/30" : "text-muted-foreground hover:bg-foreground/5 hover:text-foreground"}`}
           >
             <it.icon className="h-4 w-4" /> {it.label}
           </Link>
@@ -89,7 +89,7 @@ export function Sidebar() {
                   key={i}
                   to={it.to}
                   onClick={onNavigate}
-                  className={`flex items-center gap-3 rounded-lg px-3 py-2 text-xs transition ${active ? "bg-primary/10 text-primary" : "text-muted-foreground hover:bg-white/5 hover:text-foreground"}`}
+                  className={`flex items-center gap-3 rounded-lg px-3 py-2 text-xs transition ${active ? "bg-primary/10 text-primary" : "text-muted-foreground hover:bg-foreground/5 hover:text-foreground"}`}
                 >
                   <it.icon className="h-3.5 w-3.5" /> {it.label}
                 </Link>
@@ -130,7 +130,7 @@ export function Sidebar() {
         <SheetTrigger asChild>
           <button
             aria-label="فتح القائمة"
-            className="grid h-9 w-9 place-items-center rounded-lg border border-border/50 hover:bg-white/5 transition"
+            className="grid h-9 w-9 place-items-center rounded-lg border border-border/50 hover:bg-foreground/5 transition"
           >
             <Menu className="h-5 w-5" />
           </button>
@@ -152,7 +152,7 @@ export function Sidebar() {
           </div>
           <button
             onClick={() => { setOpen(false); signOut(); }}
-            className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-muted-foreground hover:bg-white/5 hover:text-foreground transition"
+            className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-muted-foreground hover:bg-foreground/5 hover:text-foreground transition"
           >
             <LogOut className="h-4 w-4" /> تسجيل خروج
           </button>
@@ -177,7 +177,7 @@ export function Sidebar() {
         <p className="text-xs text-muted-foreground">مرحبًا</p>
         <p className="text-sm font-semibold truncate">{user?.email ?? "ضيف"}</p>
       </div>
-      <button onClick={() => signOut()} className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-muted-foreground hover:bg-white/5 hover:text-foreground transition">
+      <button onClick={() => signOut()} className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-muted-foreground hover:bg-foreground/5 hover:text-foreground transition">
         <LogOut className="h-4 w-4" /> تسجيل خروج
       </button>
     </aside>

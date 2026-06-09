@@ -168,7 +168,7 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
     case "comparison":
       return (
         <div className="grid sm:grid-cols-2 gap-3">
-          <div className="rounded-xl border border-white/10 bg-white/[0.02] p-3">
+          <div className="rounded-xl border border-border bg-foreground/5 p-3">
             <p className="text-[11px] font-mono text-muted-foreground mb-1">
               {block.left.label}
             </p>
@@ -189,7 +189,7 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
     case "flow":
       return (
         <div className="flex items-center gap-2 flex-wrap text-xs font-mono">
-          <span className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5">
+          <span className="rounded-lg border border-border bg-foreground/5 px-3 py-1.5">
             {block.steps[0]}
           </span>
           <ArrowLeft className="h-3.5 w-3.5 text-muted-foreground" />
@@ -256,7 +256,7 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
       const src = resolveVideoSource(block.url, lessonId);
       return (
         <figure className="space-y-2">
-          <div className="aspect-video w-full overflow-hidden rounded-xl border border-white/10 bg-black/40">
+          <div className="aspect-video w-full overflow-hidden rounded-xl border border-border bg-surface-scrim">
             {src.embed ? (
               <iframe
                 src={src.embed}
@@ -336,7 +336,7 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
     case "toolBlock": {
       if (!block.name && !block.description) return null;
       return (
-        <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4 space-y-1">
+        <div className="rounded-xl border border-border bg-foreground/5 p-4 space-y-1">
           <p className="text-[11px] font-mono text-muted-foreground flex items-center gap-1.5">
             <Wrench className="h-3.5 w-3.5" /> TOOL
           </p>
@@ -359,8 +359,8 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
     case "warning": {
       if (!block.title && !block.body) return null;
       return (
-        <div className="rounded-xl border border-amber-400/30 bg-amber-400/[0.06] p-4 space-y-1">
-          <p className="text-[11px] font-mono text-amber-300 flex items-center gap-1.5">
+        <div className="rounded-xl border border-accent-warning/40 bg-accent-warning/20 p-4 space-y-1">
+          <p className="text-[11px] font-mono text-accent-warning-foreground flex items-center gap-1.5">
             <AlertTriangle className="h-3.5 w-3.5" /> {block.title ?? "تنبيه"}
           </p>
           {block.body && <p>{block.body}</p>}
@@ -445,7 +445,7 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
       const label = block.label ?? "DIAGRAM";
       return (
         <figure className="space-y-2">
-          <div className="overflow-hidden rounded-2xl border border-primary/20 bg-white">
+          <div className="overflow-hidden rounded-2xl border border-primary/20 bg-card">
             <Diagram />
           </div>
           {block.caption && (
@@ -524,7 +524,7 @@ function LessonVideoBlock({
   }
   return (
     <figure className="space-y-2">
-      <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-accent/20 bg-black/50 shadow-lg shadow-accent/5">
+      <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-accent/20 bg-surface-scrim shadow-lg shadow-accent/5">
         {isEmbed ? (
           <iframe
             src={url}
@@ -544,7 +544,7 @@ function LessonVideoBlock({
           />
         )}
         {durationLabel && (
-          <span className="pointer-events-none absolute bottom-2 right-2 rounded-md bg-black/70 px-2 py-0.5 text-[10px] font-mono text-white/90">
+          <span className="pointer-events-none absolute bottom-2 right-2 rounded-md bg-surface-scrim px-2 py-0.5 text-[10px] font-mono text-primary-foreground">
             {durationLabel}
           </span>
         )}

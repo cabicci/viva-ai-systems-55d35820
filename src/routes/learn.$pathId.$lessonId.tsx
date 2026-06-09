@@ -247,7 +247,7 @@ function UnifiedLessonPage() {
             to="/curriculum"
             search={{ module: lesson.moduleId, lesson: lesson.id }}
             aria-label="رجوع للخريطة"
-            className="fixed top-4 left-4 z-50 inline-flex items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-white/5 transition shadow-md"
+            className="fixed top-4 left-4 z-50 inline-flex items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md"
           >
             <ArrowLeft className="h-4 w-4" />
             <span>رجوع للخريطة</span>
@@ -261,7 +261,7 @@ function UnifiedLessonPage() {
               lesson: lesson.id,
             }}
             aria-label="رجوع للوحة"
-            className="fixed top-4 left-4 z-50 inline-flex items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-white/5 transition shadow-md"
+            className="fixed top-4 left-4 z-50 inline-flex items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md"
           >
             <ArrowLeft className="h-4 w-4" />
             <span>رجوع للوحة</span>
@@ -327,8 +327,8 @@ function UnifiedLessonPage() {
             lessonTitle={lesson.title}
           />
         ) : (
-          <div className="rounded-2xl border border-amber-400/30 bg-amber-400/[0.06] p-8 text-center space-y-2">
-            <p className="text-sm font-semibold text-amber-300">
+          <div className="rounded-2xl border border-accent-warning/40 bg-accent-warning/20 p-8 text-center space-y-2">
+            <p className="text-sm font-semibold text-accent-warning-foreground">
               محتوى الدرس مش متوفر دلوقتي
             </p>
             <p className="text-xs text-muted-foreground font-mono">
