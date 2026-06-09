@@ -551,6 +551,8 @@ ${retrievalBlock}
       retrieval: {
         semanticCount: semanticChunks.length,
         keywordCount: keywordFiltered.length,
+        resolvedPathId,
+        pathResolutionReason,
         topLessonIds: [
           ...semanticChunks.map((c) => c.lessonId).filter(Boolean),
           ...keywordFiltered
