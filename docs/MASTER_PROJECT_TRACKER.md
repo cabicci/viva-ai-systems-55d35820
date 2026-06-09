@@ -220,6 +220,46 @@ Exceptions (slug `m{N}` ≠ module id, accepted):
   - Expose links through admin index
 - **Freeze decision:** Does not block Batch #1 merge — pre-existing and unrelated to token fixes. Must be resolved or explicitly accepted before final admin UI freeze.
 
+### F1.d Visual Freeze Lock Plan
+
+**Tracker snapshot:** `main` @ `b61bac1` (Batch #1 `40f4d5d` + deferred admin SSR auth note).
+
+#### 1. Current status
+- **F1.c Batch #1 complete** — critical token blockers merged (`40f4d5d`).
+- **Token criticals resolved** — admin persona palettes, `LessonDiagrams.tsx`, `system-state` print isolation.
+- **system-state print/export isolated** — hard-coded hex confined to `@media print` with documented comment.
+- **Button legacy aliases documented** — `neon`, `violet`, `hero` frozen (see Brand Identity §Visual Freeze).
+- **Admin SSR auth documented** — deferred known issue (see Admin UI / Deferred Issues above).
+
+#### 2. Lock criteria (F1.d)
+- No hard-coded visual hex in locked learner/admin visual surfaces except documented print/export isolation.
+- Font remains **Tajawal** only.
+- Icon library remains **lucide-react** only.
+- CSS motion only — **no framer-motion**.
+- RTL utilities remain canonical.
+- Button legacy aliases frozen — **no new color-named variants**.
+- Visual changes after lock require explicit reason (regression fix, accessibility, or approved launch polish).
+
+#### 3. Known exclusions / deferred
+- Admin SSR auth access issue (`/admin/v9-review`, `/admin/persona-sim-v9`).
+- Dark mode tokens.
+- Card variants system.
+- Shadow scale narrowing.
+- Admin theme namespace.
+- `GalleryGrid` `bg-[#FAFCFE]` wrapper (pre-existing; out of Batch #1 scope).
+- Legacy hex in other non–Batch #1 diagram files (e.g. `ANALYST_BUSINESS_DIAGRAMS` and gallery thumbnails not edited in Batch #1).
+
+#### 4. Recommended F1.d decision
+- **CONDITIONAL LOCK** — not an absolute lock.
+- **Learner visual system** can be locked for P0 launch polish.
+- **Admin visual access** remains deferred until SSR auth issue is resolved or explicitly accepted.
+- **No large visual refactor** before launch polish unless a new **Critical** visual blocker appears.
+
+#### 5. Next step after F1.d
+1. **Naming / Brand Audit**
+2. **Bunny / media cleanup**
+3. **Launch polish**
+
 Current visual score (per blueprint): **68/100**.
 
 ---
