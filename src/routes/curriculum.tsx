@@ -362,7 +362,7 @@ function PathBlock({
                     <div className="flex items-center gap-2 flex-wrap">
                       <h3 className="font-bold text-lg leading-tight">{m.title}</h3>
                       {m.level === "technical" && (
-                        <span className="text-[10px] font-bold tracking-wide px-1.5 py-0.5 rounded bg-amber-400/15 text-amber-300 border border-amber-400/30">
+                        <span className="text-[10px] font-bold tracking-wide px-1.5 py-0.5 rounded bg-accent-warning/40 text-accent-warning-foreground border border-accent-warning/40">
                           تقني — للمتقدمين
                         </span>
                       )}
@@ -377,7 +377,7 @@ function PathBlock({
                 </header>
 
                 {!isPro && status.moduleLocked && status.prevNotMastered && (
-                  <p className="text-[11px] font-mono text-amber-300/90 bg-amber-400/[0.07] border border-amber-400/20 rounded-md px-2.5 py-1.5">
+                  <p className="text-[11px] font-mono text-accent-warning-foreground bg-accent-warning/20 border border-accent-warning/30 rounded-md px-2.5 py-1.5">
                     لازم تعدّي {status.prevMissingMissionCount} مهمة في الـ module اللي قبل عشان ده يفتح
                   </p>
                 )}
@@ -469,8 +469,8 @@ function LessonRow({
             : inProgress
               ? "bg-primary/20 text-primary"
               : isAvailable
-                ? "bg-white/5 text-foreground"
-                : "bg-white/5 text-muted-foreground"
+                ? "bg-foreground/5 text-foreground"
+                : "bg-foreground/5 text-muted-foreground"
         }`}
       >
         {badge}
@@ -503,8 +503,8 @@ function LessonRow({
           from="curriculum"
           className={`${baseClasses} ${
             isIntroRoute
-              ? "hover:bg-white/5 hover:border-accent/30"
-              : "hover:bg-white/5 hover:border-primary/20"
+              ? "hover:bg-foreground/5 hover:border-accent/30"
+              : "hover:bg-foreground/5 hover:border-primary/20"
           }`}
         >
           {content}

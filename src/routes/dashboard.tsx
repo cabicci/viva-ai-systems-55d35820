@@ -338,7 +338,7 @@ function ModuleRow({
       <button
         type="button"
         onClick={onToggle}
-        className="w-full flex items-center justify-between gap-3 p-4 text-right hover:bg-white/[0.02] transition"
+        className="w-full flex items-center justify-between gap-3 p-4 text-right hover:bg-foreground/5 transition"
       >
         <span
           dir="ltr"
