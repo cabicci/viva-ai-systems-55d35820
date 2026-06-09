@@ -68,7 +68,6 @@ import { SCENES as L_automator_m3_l2_triggers_actions_S, SCENE_FRAMES as L_autom
 import { SCENES as L_automator_m1_l1_where_you_are_S, SCENE_FRAMES as L_automator_m1_l1_where_you_are_F, TOTAL_FRAMES as L_automator_m1_l1_where_you_are_T } from "./lessons-generated/automator-m1-l1-where-you-are.gen";
 import { SCENES as L_creator_m6_l3_analytics_S, SCENE_FRAMES as L_creator_m6_l3_analytics_F, TOTAL_FRAMES as L_creator_m6_l3_analytics_T } from "./lessons-generated/creator-m6-l3-analytics.gen";
 import { SCENES as L_analyst_m7_l1_from_decisions_to_business_S, SCENE_FRAMES as L_analyst_m7_l1_from_decisions_to_business_F, TOTAL_FRAMES as L_analyst_m7_l1_from_decisions_to_business_T } from "./lessons-generated/analyst-m7-l1-from-decisions-to-business.gen";
-import { SCENES as L_intro_m1_l1_what_is_ai_S, SCENE_FRAMES as L_intro_m1_l1_what_is_ai_F, TOTAL_FRAMES as L_intro_m1_l1_what_is_ai_T } from "./lessons-generated/intro-m1-l1-what-is-ai.gen";
 import { SCENES as L_intro_m1_l4_ai_can_cannot_S, SCENE_FRAMES as L_intro_m1_l4_ai_can_cannot_F, TOTAL_FRAMES as L_intro_m1_l4_ai_can_cannot_T } from "./lessons-generated/intro-m1-l4-ai-can-cannot.gen";
 import { SCENES as L_intro_m1_l2_first_prompt_S, SCENE_FRAMES as L_intro_m1_l2_first_prompt_F, TOTAL_FRAMES as L_intro_m1_l2_first_prompt_T } from "./lessons-generated/intro-m1-l2-first-prompt.gen";
 import { SCENES as L_intro_m1_l3_setup_your_ai_S, SCENE_FRAMES as L_intro_m1_l3_setup_your_ai_F, TOTAL_FRAMES as L_intro_m1_l3_setup_your_ai_T } from "./lessons-generated/intro-m1-l3-setup-your-ai.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_business_m2_l4_pricing_cash_flow_S, SCENE_FRAMES as L_busin
 import { SCENES as L_business_m4_l4_full_ecosystem_S, SCENE_FRAMES as L_business_m4_l4_full_ecosystem_F, TOTAL_FRAMES as L_business_m4_l4_full_ecosystem_T } from "./lessons-generated/business-m4-l4-full-ecosystem.gen";
 import { SCENES as L_business_m4_l5_business_os_dashboard_S, SCENE_FRAMES as L_business_m4_l5_business_os_dashboard_F, TOTAL_FRAMES as L_business_m4_l5_business_os_dashboard_T } from "./lessons-generated/business-m4-l5-business-os-dashboard.gen";
 import { SCENES as L_creator_m1_l1_why_content_S, SCENE_FRAMES as L_creator_m1_l1_why_content_F, TOTAL_FRAMES as L_creator_m1_l1_why_content_T } from "./lessons-generated/creator-m1-l1-why-content.gen";
+import { SCENES as L_intro_m1_l1_what_is_ai_S, SCENE_FRAMES as L_intro_m1_l1_what_is_ai_F, TOTAL_FRAMES as L_intro_m1_l1_what_is_ai_T } from "./lessons-generated/intro-m1-l1-what-is-ai.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -182,7 +182,6 @@ export const LESSONS: LessonModule[] = [
     { id: "automator-m1-l1-where-you-are", scenes: L_automator_m1_l1_where_you_are_S, sceneFrames: L_automator_m1_l1_where_you_are_F, totalFrames: L_automator_m1_l1_where_you_are_T },
     { id: "creator-m6-l3-analytics", scenes: L_creator_m6_l3_analytics_S, sceneFrames: L_creator_m6_l3_analytics_F, totalFrames: L_creator_m6_l3_analytics_T },
     { id: "analyst-m7-l1-from-decisions-to-business", scenes: L_analyst_m7_l1_from_decisions_to_business_S, sceneFrames: L_analyst_m7_l1_from_decisions_to_business_F, totalFrames: L_analyst_m7_l1_from_decisions_to_business_T },
-    { id: "intro-m1-l1-what-is-ai", scenes: L_intro_m1_l1_what_is_ai_S, sceneFrames: L_intro_m1_l1_what_is_ai_F, totalFrames: L_intro_m1_l1_what_is_ai_T },
     { id: "intro-m1-l4-ai-can-cannot", scenes: L_intro_m1_l4_ai_can_cannot_S, sceneFrames: L_intro_m1_l4_ai_can_cannot_F, totalFrames: L_intro_m1_l4_ai_can_cannot_T },
     { id: "intro-m1-l2-first-prompt", scenes: L_intro_m1_l2_first_prompt_S, sceneFrames: L_intro_m1_l2_first_prompt_F, totalFrames: L_intro_m1_l2_first_prompt_T },
     { id: "intro-m1-l3-setup-your-ai", scenes: L_intro_m1_l3_setup_your_ai_S, sceneFrames: L_intro_m1_l3_setup_your_ai_F, totalFrames: L_intro_m1_l3_setup_your_ai_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m4-l4-full-ecosystem", scenes: L_business_m4_l4_full_ecosystem_S, sceneFrames: L_business_m4_l4_full_ecosystem_F, totalFrames: L_business_m4_l4_full_ecosystem_T },
     { id: "business-m4-l5-business-os-dashboard", scenes: L_business_m4_l5_business_os_dashboard_S, sceneFrames: L_business_m4_l5_business_os_dashboard_F, totalFrames: L_business_m4_l5_business_os_dashboard_T },
     { id: "creator-m1-l1-why-content", scenes: L_creator_m1_l1_why_content_S, sceneFrames: L_creator_m1_l1_why_content_F, totalFrames: L_creator_m1_l1_why_content_T },
+    { id: "intro-m1-l1-what-is-ai", scenes: L_intro_m1_l1_what_is_ai_S, sceneFrames: L_intro_m1_l1_what_is_ai_F, totalFrames: L_intro_m1_l1_what_is_ai_T },
   /* @lesson-entries-end */
 ];
