@@ -122,7 +122,7 @@ export const BUSINESS_M2_BUILD_YOUR_OFFER_BLOCKS: IntroLessonContent = [
     tone: "accent",
     block: {
       kind: "quiz",
-      lessonId: "business-m2-build-your-offer-apply",
+      lessonId: "business-m2-l2-build-your-offer-apply",
       items: [
         {
           id: "apply1",

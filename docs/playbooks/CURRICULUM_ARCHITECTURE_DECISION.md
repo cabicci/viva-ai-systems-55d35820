@@ -75,7 +75,7 @@ The final recommended curriculum architecture is **100 lessons total**.
 
 | Slug | Track |
 |------|-------|
-| `business-m2-build-your-offer` | Business |
+| `business-m2-l2-build-your-offer` | Business |
 | `creator-m4-repurposing` | Creator |
 | `automator-m3-testing-automation` | Automator |
 | `analyst-m4-automated-dashboard` | Analyst |
@@ -127,7 +127,7 @@ Add these 5 lessons later during implementation (not in this documentation step)
 
 ### Business
 
-- **Slug:** `business-m2-build-your-offer`
+- **Slug:** `business-m2-l2-build-your-offer`
 - **Position:** after customer lifecycle
 
 ### Creator
