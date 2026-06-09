@@ -297,32 +297,15 @@ ${data.missionPrompt}
   "note": "<جملة قصيرة بتفكّر الطالب إن ده نموذج للتعلّم، اقرأه وقارنه بمحاولتك>"
 }`;
 
-    const res = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: "google/gemini-2.5-flash",
-        messages: [
-          { role: "system", content: systemPrompt },
-          { role: "user", content: userPrompt },
-        ],
-        response_format: { type: "json_object" },
-      }),
-      signal: AbortSignal.timeout(30_000),
+    const { content: raw } = await callAI({
+      model: "google/gemini-2.5-flash",
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: userPrompt },
+      ],
+      responseFormat: { type: "json_object" },
+      timeoutMs: 30_000,
     });
-
-    if (!res.ok) {
-      const text = await res.text().catch(() => "");
-      console.error(`[revealModelMissionAnswer] gateway error ${res.status}:`, text);
-      throw new Error("تعذّر توليد نموذج الإجابة. حاول مرة أخرى.");
-    }
-
-    const json = await res.json();
-    const raw = json?.choices?.[0]?.message?.content;
-    if (typeof raw !== "string") throw new Error("تعذّر قراءة نموذج الإجابة.");
 
     let parsed: RevealAnswerResult;
     try {
