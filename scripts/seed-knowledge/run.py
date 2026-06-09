@@ -41,6 +41,15 @@ ARCHIVED_BUSINESS_SLUGS = frozenset({
 })
 
 EXPECTED_LEARNER_COUNT = 100
+PATH_IDS = ("intro", "business", "creator", "analyst", "automator", "builder")
+EXPECTED_PATH_COUNTS = {
+    "intro": 7,
+    "business": 13,
+    "creator": 19,
+    "analyst": 14,
+    "automator": 18,
+    "builder": 29,
+}
 EMBED_BATCH_SIZE = 64
 EMBED_MODEL = "text-embedding-3-small"
 EMBED_DIM = 1536
@@ -191,13 +200,28 @@ def chunk_text(text: str, size: int = 600, overlap: int = 80) -> list[str]:
     return chunks
 
 
-def derive_meta(slug: str, text: str) -> tuple[str, str | None, str]:
+def path_id_from_slug(slug: str) -> str:
     if slug.startswith(("builder-", "creator-", "automator-", "analyst-", "business-")):
-        path_id = slug.split("-", 1)[0]
+        return slug.split("-", 1)[0]
+    return "intro"
+
+
+def planned_seed_counts_by_path(planned_slugs: list[str]) -> dict[str, int]:
+    counts = {path_id: 0 for path_id in PATH_IDS}
+    for slug in planned_slugs:
+        path_id = path_id_from_slug(slug)
+        if path_id not in counts:
+            fail(f"Unexpected path_id for slug {slug}: {path_id}")
+        counts[path_id] += 1
+    return counts
+
+
+def derive_meta(slug: str, text: str) -> tuple[str, str | None, str]:
+    path_id = path_id_from_slug(slug)
+    if path_id != "intro":
         m = re.match(r"([a-z]+-m\d+)", slug)
         module_id = m.group(1) if m else None
     else:
-        path_id = "intro"
         module_id = None
     title = slug
     for line in text.split("\n"):
@@ -256,6 +280,19 @@ def print_dry_run_report(
     plan: dict,
 ) -> None:
     archived_in_registry = sorted(ARCHIVED_BUSINESS_SLUGS & registry.keys())
+    counts_by_path = planned_seed_counts_by_path(planned_slugs)
+    total_from_path_counts = sum(counts_by_path.values())
+    slug_count = len(planned_slugs)
+    if total_from_path_counts != slug_count:
+        fail(
+            f"planned_seed_total_from_path_counts ({total_from_path_counts}) "
+            f"!= planned_seed_slugs_count ({slug_count})"
+        )
+    if counts_by_path != EXPECTED_PATH_COUNTS:
+        fail(
+            f"planned_seed_counts_by_path mismatch: expected {EXPECTED_PATH_COUNTS}, "
+            f"got {counts_by_path}"
+        )
     report = {
         "dry_run": DRY_RUN,
         "db_writes_disabled": DRY_RUN or not CONFIRM_SEED_100,
@@ -265,7 +302,9 @@ def print_dry_run_report(
         "total_learner_slugs_paths": len(learner_slugs),
         "archived_excluded_slugs": sorted(ARCHIVED_BUSINESS_SLUGS),
         "archived_in_registry_not_on_path": archived_in_registry,
-        "planned_seed_slugs_count": len(planned_slugs),
+        "planned_seed_counts_by_path": counts_by_path,
+        "planned_seed_total_from_path_counts": total_from_path_counts,
+        "planned_seed_slugs_count": slug_count,
         "planned_seed_slugs": planned_slugs,
         "missing_content_slugs": [],
         "total_chunks": plan["total_chunks"],
