@@ -12,7 +12,6 @@ export type LessonModule = LessonRendererProps & {
 // The build script appends imports + entries below the marker.
 /* @lesson-imports-start */
 import { SCENES as L_creator_m1_l2_attention_economy_S, SCENE_FRAMES as L_creator_m1_l2_attention_economy_F, TOTAL_FRAMES as L_creator_m1_l2_attention_economy_T } from "./lessons-generated/creator-m1-l2-attention-economy.gen";
-import { SCENES as L_creator_m1_l1_why_content_S, SCENE_FRAMES as L_creator_m1_l1_why_content_F, TOTAL_FRAMES as L_creator_m1_l1_why_content_T } from "./lessons-generated/creator-m1-l1-why-content.gen";
 import { SCENES as L_creator_m3_l3_cta_S, SCENE_FRAMES as L_creator_m3_l3_cta_F, TOTAL_FRAMES as L_creator_m3_l3_cta_T } from "./lessons-generated/creator-m3-l3-cta.gen";
 import { SCENES as L_creator_m3_l1_hook_S, SCENE_FRAMES as L_creator_m3_l1_hook_F, TOTAL_FRAMES as L_creator_m3_l1_hook_T } from "./lessons-generated/creator-m3-l1-hook.gen";
 import { SCENES as L_creator_m3_l2_script_structure_S, SCENE_FRAMES as L_creator_m3_l2_script_structure_F, TOTAL_FRAMES as L_creator_m3_l2_script_structure_T } from "./lessons-generated/creator-m3-l2-script-structure.gen";
@@ -123,12 +122,12 @@ import { SCENES as L_business_m4_l3_weekly_rhythm_S, SCENE_FRAMES as L_business_
 import { SCENES as L_business_m2_l4_pricing_cash_flow_S, SCENE_FRAMES as L_business_m2_l4_pricing_cash_flow_F, TOTAL_FRAMES as L_business_m2_l4_pricing_cash_flow_T } from "./lessons-generated/business-m2-l4-pricing-cash-flow.gen";
 import { SCENES as L_business_m4_l4_full_ecosystem_S, SCENE_FRAMES as L_business_m4_l4_full_ecosystem_F, TOTAL_FRAMES as L_business_m4_l4_full_ecosystem_T } from "./lessons-generated/business-m4-l4-full-ecosystem.gen";
 import { SCENES as L_business_m4_l5_business_os_dashboard_S, SCENE_FRAMES as L_business_m4_l5_business_os_dashboard_F, TOTAL_FRAMES as L_business_m4_l5_business_os_dashboard_T } from "./lessons-generated/business-m4-l5-business-os-dashboard.gen";
+import { SCENES as L_creator_m1_l1_why_content_S, SCENE_FRAMES as L_creator_m1_l1_why_content_F, TOTAL_FRAMES as L_creator_m1_l1_why_content_T } from "./lessons-generated/creator-m1-l1-why-content.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
   /* @lesson-entries-start */
     { id: "creator-m1-l2-attention-economy", scenes: L_creator_m1_l2_attention_economy_S, sceneFrames: L_creator_m1_l2_attention_economy_F, totalFrames: L_creator_m1_l2_attention_economy_T },
-    { id: "creator-m1-l1-why-content", scenes: L_creator_m1_l1_why_content_S, sceneFrames: L_creator_m1_l1_why_content_F, totalFrames: L_creator_m1_l1_why_content_T },
     { id: "creator-m3-l3-cta", scenes: L_creator_m3_l3_cta_S, sceneFrames: L_creator_m3_l3_cta_F, totalFrames: L_creator_m3_l3_cta_T },
     { id: "creator-m3-l1-hook", scenes: L_creator_m3_l1_hook_S, sceneFrames: L_creator_m3_l1_hook_F, totalFrames: L_creator_m3_l1_hook_T },
     { id: "creator-m3-l2-script-structure", scenes: L_creator_m3_l2_script_structure_S, sceneFrames: L_creator_m3_l2_script_structure_F, totalFrames: L_creator_m3_l2_script_structure_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m2-l4-pricing-cash-flow", scenes: L_business_m2_l4_pricing_cash_flow_S, sceneFrames: L_business_m2_l4_pricing_cash_flow_F, totalFrames: L_business_m2_l4_pricing_cash_flow_T },
     { id: "business-m4-l4-full-ecosystem", scenes: L_business_m4_l4_full_ecosystem_S, sceneFrames: L_business_m4_l4_full_ecosystem_F, totalFrames: L_business_m4_l4_full_ecosystem_T },
     { id: "business-m4-l5-business-os-dashboard", scenes: L_business_m4_l5_business_os_dashboard_S, sceneFrames: L_business_m4_l5_business_os_dashboard_F, totalFrames: L_business_m4_l5_business_os_dashboard_T },
+    { id: "creator-m1-l1-why-content", scenes: L_creator_m1_l1_why_content_S, sceneFrames: L_creator_m1_l1_why_content_F, totalFrames: L_creator_m1_l1_why_content_T },
   /* @lesson-entries-end */
 ];

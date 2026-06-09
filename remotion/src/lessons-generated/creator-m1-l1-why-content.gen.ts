@@ -5,126 +5,80 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "chip": "أهلًا",
-    "highlight": "نشر",
-    "title": "المحتوى مش Posting",
-    "subtitle": "المحتوى = نظام تأثير مقصود."
+    "chip": "بداية واضحة",
+    "subtitle": "الشغل الحقيقي مش في النشر الكتير، لكن إنك تبني نظام يخلي كل قطعة محتوى ليها هدف.",
+    "highlight": "عشوائية",
+    "title": "المحتوى مش بوستات"
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "lavender",
-    "tag": "نشر عشوائي",
-    "term": "Posting",
-    "definition": "إنك تنزل أي حاجة وخلاص من غير هدف أو خطة واضحة."
+    "bullets": [
+      "ناس كتير بتنشر يوميًا، بس مفيش تفاعل حقيقي.",
+      "المشكلة غالبًا مش في الجهد، المشكلة إن النشر بيحصل من غير اتجاه ثابت."
+    ],
+    "title": "ليه التعب كبير والنتيجة ضعيفة؟"
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "peach",
-    "term": "Content System",
-    "tag": "خطة محتوى",
-    "definition": "خطة بتحدد بتكلم مين وليه، عشان البوستات تجيب مفعول."
+    "bullets": [
+      "لما المحتوى يبقى سيستم، كل بوست بيخدم وعد واضح لجمهور محدد.",
+      "الـ AI يساعدك تطلع أفكار، لكن قرارك أنت هو الأهم."
+    ],
+    "title": "سيستم محتوى = قرارات ثابتة"
   },
   {
-    "card": "ConceptCard",
+    "card": "CompareCard",
     "accent": "yellow",
-    "term": "Audience",
-    "tag": "جمهور مستهدف",
-    "definition": "الشخص المعين اللي إنت مستهدفه وعايز تحل له مشكلته."
+    "right": {
+      "body": "رسالة ثابتة ونوع محتوى متكرر، فالجمهور يفهمك أسرع ويثق فيك أكتر.",
+      "label": "نظام محتوى"
+    },
+    "title": "بوست عابر ولا نظام متكرر؟",
+    "left": {
+      "body": "فكرة كل يوم من الصفر، فتعب أعلى ونتائج متذبذبة.",
+      "label": "نشر عابر"
+    }
   },
   {
     "card": "ConceptCard",
     "accent": "pink",
-    "definition": "زبائن مهتمة بجد بدأت تسأل وتتفاعل معاك مش مجرد لايك.",
-    "term": "Leads",
-    "tag": "عملاء محتملين"
+    "tag": "نظام محتوى",
+    "term": "Content System",
+    "definition": "طريقة شغل فيها جمهور محدد + مشكلة واضحة + نوع محتوى متكرر."
   },
   {
     "card": "ConceptCard",
     "accent": "mintDeep",
-    "tag": "بيان تأسيسي",
-    "term": "Manifesto",
-    "definition": "كلمتين بكتبهم لنفسي بحدد فيهم أنا ليه بعمل محتوى وعايز إيه."
+    "definition": "الوعد اللي الناس بتتوقعه منك كل مرة.",
+    "term": "Content Promise",
+    "tag": "وعد المحتوى"
   },
   {
     "card": "ConceptCard",
     "accent": "mint",
-    "tag": "النتيجة المطلوبة",
-    "term": "Outcome",
-    "definition": "الهدف أو التأثير اللي عايز توصله للناس بعد ما يشوفوا البوست."
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "lavender",
-    "bullets": [
-      "النشر العشوائي بيجيب Views مؤقتة بتيجي وتروح، ومحدش بيفتكرك بعدها.",
-      "المحتوى كنظام بيبني سلسلة واضحة: انتباه ← ثقة ← جمهور ← Leads ← نمو حقيقي للبيزنس."
-    ],
-    "title": "نشر vs نظام"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "peach",
-    "bullets": [
-      "كل قطعة محتوى ليها هدف (Purpose)، جمهور محدّد (Audience)، رسالة واحدة (Message)، ونتيجة متوقعة (Outcome) مكتوبة قبل ما تتنشر.",
-      "الفرق مش في عدد البوستات — الفرق إن في خلفها قرار."
-    ],
-    "title": "نشر vs نظام"
+    "definition": "شكل محتوى تقدر تعيده بسهولة من غير ما تحس إنك بتبدأ من الصفر.",
+    "tag": "شكل متكرر",
+    "term": "Repeatable Format"
   },
   {
     "card": "ScreenshotCard",
-    "accent": "yellow",
-    "src": "lessons/creator-m1-l1-why-content.jpg",
-    "caption": "المنصة نفسها مثال حي. كل عنوان، كل مسار، كل درس — اتحطّ بقرار.",
-    "eyebrow": "شوف بنفسك",
-    "title": "خريطة المنظومة"
-  },
-  {
-    "card": "CompareCard",
-    "accent": "pink",
-    "left": {
-      "label": "FAILURE — بتنشر عشان تفضل ظاهر",
-      "body": "بتدوّر على فكرة كل يوم، تنزل أي حاجة، وتقيس النجاح بعدد البوستات. الناس بتشوفك بس مش بتفتكرك."
-    },
-    "right": {
-      "body": "قبل أي محتوى بتسأل: لمين؟ ليه؟ ايه الرسالة؟ وايه النتيجة المتوقعة؟ كل قطعة بتضيف لطوبة في بناء أكبر.",
-      "label": "RIGHT — بتنشر عشان تبني تأثير"
-    },
-    "title": "إزاي تفكّر في المحتوى صح"
-  },
-  {
-    "card": "CTACard",
-    "accent": "mint",
-    "tagline": "اختبر فهمك للمفاهيم اللي فاتت وطبقها.",
-    "highlight": "حلّ الأسئلة",
-    "eyebrow": "دورك دلوقتي",
-    "title": "طبّق اللي اتعلمته"
-  },
-  {
-    "card": "BulletsCard",
     "accent": "lavender",
-    "bullets": [
-      "كل lesson فيه quiz + mission — مفيش محتوى استهلاكي.",
-      "/journey بيوريك إنت فين والـ outcome إيه."
-    ],
-    "title": "/journey و /curriculum — محتوى منظّم بهدف"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "peach",
-    "bullets": [
-      "حذفنا ١٢ درس مكنش لهم mission واضح خلال آخر شهرين."
-    ],
-    "title": "/journey و /curriculum — محتوى منظّم بهدف"
+    "src": "lessons/creator-m1-l1-why-content.jpg",
+    "eyebrow": "لقطة بصرية",
+    "caption": "الترتيب ده بيوضح إن كل جزء ليه دور، وده بالظبط معنى إن المحتوى يبقى نظام.",
+    "title": "شكل السيستم وهو مرتب"
   },
   {
     "card": "CTACard",
-    "accent": "yellow",
-    "highlight": "جاهز للخطوة الجاية؟",
-    "eyebrow": "الدرس الجاي",
-    "title": "اقتصاد الانتباه",
-    "tagline": "هنعرف إزاي تجذب وتستغل انتباه جمهورك صح."
+    "accent": "peach",
+    "eyebrow": "دورك دلوقتي",
+    "highlight": "وثبّت فهمك",
+    "title": "سؤال واحد للتطبيق",
+    "tagline": "حل السؤال عشان تطبق اللي اتعلمته وتثبت فهمك."
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [239, 223, 256, 169, 193, 295, 219, 413, 361, 360, 347, 225, 286, 304, 273];
+export const SCENE_FRAMES: number[] = [460, 442, 414, 503, 477, 419, 445, 457, 328];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
