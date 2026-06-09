@@ -75,6 +75,87 @@ The platform is built around learning journeys and paths, not generic AI chatbot
 - **Do not create new color-named button variants.**
 - Future variants should be **semantic** (e.g. primary, destructive, warning), not color-named.
 
+### Brand Visual Identity Lock Brief — masaarat.ai
+
+Status: ✅ VISUAL DIRECTION LOCKED (brief) · 🟡 Phase 1 implementation pending
+
+Deep audit verdict (2026-06): **CONDITIONAL PASS** — pastel OKLCH theme and path-based UX fit مسارات; logo, favicon, OG, and unified BrandMark are not built yet.
+
+#### Decision
+
+- **Keep** the existing pastel OKLCH visual system.
+- **Do not** re-theme from zero.
+- **Primary brand language:** Arabic-first · calm · guided · intelligent · premium enough · beginner-safe.
+- **Primary brand color:** soft blue — existing `--primary` token.
+- **Secondary guidance/progress color:** mint — existing `--accent` token.
+- **Supporting path colors:** pink, yellow, lavender, peach, cream — **path accents only**, not global brand fields.
+
+#### Logo direction
+
+| Item | Direction |
+|------|-----------|
+| Primary wordmark | **مسارات** |
+| Secondary text | **masaarat.ai** |
+| Symbol | Path / route / progress / guided journey motif |
+
+**Acceptable symbol ideas:**
+
+- Layered path lines
+- Forked route
+- Nodes connected by a path
+- Progress route with one highlighted current step
+- Abstract Arabic **م** — only if legible at favicon size
+
+**Rejected symbol ideas:**
+
+- Sparkles
+- Graduation cap
+- Robot
+- Brain
+- Generic AI starburst
+- Six different path icons as the main brand
+
+#### BrandMark rule
+
+- Create **one `BrandMark` component** later (not started).
+- **Same mark** must be used in: Navbar · Sidebar · AuthShell · Footer (where appropriate) · favicon source · OG image.
+- Lucide icons may remain inside lessons/UI, but **not** as the permanent brand mark.
+
+#### Favicon direction
+
+- Symbol-only mark.
+- Must work at **16×16** and **32×32**.
+- Do **not** use full Arabic word in favicon.
+- Deliverables: `favicon.ico`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` (if manifest is used).
+
+#### OG / social preview direction
+
+- **1200×630**, Arabic-first.
+- Include: مسارات wordmark · masaarat.ai · short Arabic tagline · subtle path motif · blue/mint pastel background.
+- Must **replace** gpt-engineer / Lovable-hosted `og:image`.
+- Remove or replace `twitter:site` **@Lovable**.
+
+#### Implementation phases (after this brief — not started)
+
+**Phase 1:**
+
+- Create `BrandMark` component
+- Replace Navbar / Sidebar / Auth mark
+- Add favicon / app icons
+- Wire `__root.tsx` icon links
+- Replace OG image and social meta
+- Update landing path chips to Arabic (`Ecosystem.tsx`)
+
+**Phase 2 (optional):**
+
+- Footer mark reinforcement
+- Admin / dev title cleanup
+- Docs legacy rename cleanup
+
+#### Freeze rule
+
+⚠️ **Do not proceed to Bunny / media cleanup** until Phase 1 brand visual implementation is complete and smoke-tested.
+
 ---
 
 ## Naming / Brand Audit
