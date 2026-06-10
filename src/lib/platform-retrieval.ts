@@ -1,6 +1,8 @@
 import { useMemo } from "react";
 import { LESSONS, type LessonContent } from "@/lib/unified-lessons";
 import { PATHS } from "@/lib/curriculum-data";
+import { INTRO_LESSON_CONTENT } from "@/components/intro/lessons";
+import type { IntroLessonContent } from "@/components/intro/intro-lesson-types";
 
 /**
  * Retrieval Layer — frontend-only internal search across local platform
@@ -27,7 +29,8 @@ export type MatchType =
   | "takeaways"
   | "mission"
   | "goal"
-  | "tag";
+  | "tag"
+  | "lessonBlock";
 
 export interface RetrievalChunk {
   lessonId: string;
@@ -168,8 +171,146 @@ function lessonToChunks(l: LessonContent): RetrievalChunk[] {
   return chunks;
 }
 
+function pushLessonBlock(
+  chunks: RetrievalChunk[],
+  base: Omit<RetrievalChunk, "matchType" | "text">,
+  text: unknown,
+) {
+  if (typeof text === "string" && text.trim().length > 0) {
+    chunks.push({ ...base, matchType: "lessonBlock", text: text.trim() });
+  }
+}
+
+/** Flatten rendered lesson blocks (INTRO_LESSON_CONTENT) into searchable chunks. */
+function introContentToChunks(
+  lessonId: string,
+  lessonTitle: string,
+  moduleTitle: string,
+  blocks: IntroLessonContent,
+): RetrievalChunk[] {
+  const base = { lessonId, lessonTitle, moduleTitle };
+  const chunks: RetrievalChunk[] = [];
+
+  for (const section of blocks) {
+    pushLessonBlock(chunks, base, section.title);
+    const b = section.block as Record<string, unknown>;
+    if (!b || typeof b !== "object") continue;
+
+    switch (b.kind) {
+      case "paragraphs":
+        if (Array.isArray(b.paragraphs)) {
+          for (const p of b.paragraphs) pushLessonBlock(chunks, base, p);
+        }
+        break;
+      case "comparison": {
+        const left = b.left as { label?: string; body?: string } | undefined;
+        const right = b.right as { label?: string; body?: string } | undefined;
+        pushLessonBlock(chunks, base, left?.label);
+        pushLessonBlock(chunks, base, left?.body);
+        pushLessonBlock(chunks, base, right?.label);
+        pushLessonBlock(chunks, base, right?.body);
+        break;
+      }
+      case "quote":
+        pushLessonBlock(chunks, base, b.quote);
+        break;
+      case "flow":
+        if (Array.isArray(b.steps)) {
+          for (const s of b.steps) pushLessonBlock(chunks, base, s);
+        }
+        break;
+      case "mission":
+        pushLessonBlock(chunks, base, b.intro);
+        pushLessonBlock(chunks, base, b.prompt);
+        break;
+      case "checklist":
+      case "numberedList":
+        if (Array.isArray(b.items)) {
+          for (const s of b.items) pushLessonBlock(chunks, base, s);
+        }
+        break;
+      case "rule":
+        pushLessonBlock(chunks, base, b.statement);
+        break;
+      case "executionTask":
+        pushLessonBlock(chunks, base, b.title);
+        if (Array.isArray(b.steps)) {
+          for (const s of b.steps) pushLessonBlock(chunks, base, s);
+        }
+        pushLessonBlock(chunks, base, b.expectedResult);
+        break;
+      case "toolBlock":
+        pushLessonBlock(chunks, base, b.name);
+        pushLessonBlock(chunks, base, b.description);
+        break;
+      case "warning":
+        pushLessonBlock(chunks, base, b.title);
+        pushLessonBlock(chunks, base, b.body);
+        break;
+      case "screenshot":
+        pushLessonBlock(chunks, base, b.caption);
+        pushLessonBlock(chunks, base, b.alt);
+        break;
+      case "concepts":
+        if (Array.isArray(b.items)) {
+          for (const it of b.items as Array<{
+            term?: string;
+            meaning?: string;
+            example?: string;
+          }>) {
+            pushLessonBlock(chunks, base, it?.term);
+            pushLessonBlock(chunks, base, it?.meaning);
+            pushLessonBlock(chunks, base, it?.example);
+          }
+        }
+        break;
+      case "diagram":
+        pushLessonBlock(chunks, base, b.caption);
+        pushLessonBlock(chunks, base, b.label);
+        break;
+      case "quiz":
+        if (Array.isArray(b.items)) {
+          for (const q of b.items as Array<{
+            question?: string;
+            options?: string[];
+            explanation?: string;
+          }>) {
+            pushLessonBlock(chunks, base, q?.question);
+            if (Array.isArray(q?.options)) {
+              for (const o of q.options) pushLessonBlock(chunks, base, o);
+            }
+            pushLessonBlock(chunks, base, q?.explanation);
+          }
+        }
+        break;
+      case "caseStudy":
+        pushLessonBlock(chunks, base, b.title);
+        pushLessonBlock(chunks, base, b.summary);
+        if (Array.isArray(b.bullets)) {
+          for (const s of b.bullets) pushLessonBlock(chunks, base, s);
+        }
+        break;
+      default:
+        pushLessonBlock(chunks, base, b.title);
+        pushLessonBlock(chunks, base, b.body);
+        pushLessonBlock(chunks, base, b.caption);
+        break;
+    }
+  }
+
+  return chunks;
+}
+
 /* Pre-built corpus (cheap to compute once, cached at module-load) */
-const CORPUS: RetrievalChunk[] = LESSONS.flatMap(lessonToChunks);
+const CORPUS: RetrievalChunk[] = [
+  ...LESSONS.flatMap(lessonToChunks),
+  ...LESSONS.flatMap((l) => {
+    const blocks = INTRO_LESSON_CONTENT[l.id];
+    if (!blocks) return [];
+    const moduleTitle = MODULE_INDEX[l.id] ?? l.stage;
+    return introContentToChunks(l.id, l.title, moduleTitle, blocks);
+  }),
+];
 
 /* ---------- Scoring ---------- */
 
@@ -205,6 +346,7 @@ const TYPE_WEIGHT: Record<MatchType, number> = {
   failures: 1.5,
   goal: 1.2,
   tag: 1,
+  lessonBlock: 2.2,
 };
 
 function scoreChunk(qTokens: string[], qNorm: string, c: RetrievalChunk): number {
@@ -247,6 +389,10 @@ export interface SearchOptions {
   minScore?: number;
   /** dedupe so each lesson appears at most N times (default 3) */
   perLessonCap?: number;
+  /** boost chunks from the learner's current lesson */
+  preferLessonId?: string | null;
+  /** mild boost for chunks in the current path */
+  preferPathId?: string | null;
 }
 
 export function searchPlatformContent(
@@ -260,10 +406,19 @@ export function searchPlatformContent(
   const limit = opts.limit ?? 8;
   const minScore = opts.minScore ?? 0.05;
   const cap = opts.perLessonCap ?? 3;
+  const preferLessonId = opts.preferLessonId ?? null;
+  const preferPathId = opts.preferPathId ?? null;
 
   const scored: RetrievalResult[] = [];
   for (const c of CORPUS) {
-    const s = scoreChunk(qTokens, qNorm, c);
+    let s = scoreChunk(qTokens, qNorm, c);
+    if (preferLessonId && c.lessonId === preferLessonId) s += 4;
+    if (
+      preferPathId &&
+      c.lessonId.startsWith(`${preferPathId}-`)
+    ) {
+      s += 1.5;
+    }
     if (s >= minScore) {
       scored.push({
         lessonId: c.lessonId,

@@ -165,7 +165,8 @@ function extractLessonText(
         if (Array.isArray(b.items)) {
           for (const it of b.items) {
             pushIfString(parts, it?.term);
-            pushIfString(parts, it?.definition);
+            pushIfString(parts, it?.meaning);
+            pushIfString(parts, it?.example);
           }
         }
         break;
@@ -173,8 +174,8 @@ function extractLessonText(
         pushIfString(parts, b.caption);
         break;
       case "quiz":
-        if (Array.isArray(b.questions)) {
-          for (const q of b.questions) {
+        if (Array.isArray(b.items)) {
+          for (const q of b.items) {
             pushIfString(parts, q?.question);
             if (Array.isArray(q?.options)) {
               for (const o of q.options) pushIfString(parts, o);

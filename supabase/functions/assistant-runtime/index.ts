@@ -29,6 +29,7 @@ const ALLOWED_ORIGINS = new Set<string>([
   // Local dev
   "http://localhost:5173",
   "http://localhost:3000",
+  "http://localhost:8080",
 ]);
 
 function corsHeadersFor(req: Request): Record<string, string> {
@@ -128,6 +129,10 @@ interface LearnerContextInput {
   completedLessonsCount?: number | null;
   totalLessonsCount?: number | null;
   nextLessonTitle?: string | null;
+  currentMission?: {
+    intro?: string | null;
+    prompt?: string | null;
+  } | null;
 }
 
 interface RetrievalResultInput {
@@ -190,6 +195,8 @@ async function embedQuery(
 async function semanticRetrieve(
   query: string,
   pathId: string | null,
+  moduleId: string | null,
+  lessonId: string | null,
   apiKey: string,
 ): Promise<SemanticChunk[]> {
   const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
@@ -216,8 +223,8 @@ async function semanticRetrieve(
           query_embedding: embedding,
           match_count: SEMANTIC_MAX,
           p_path_id: pathId,
-          p_module_id: null,
-          p_lesson_id: null,
+          p_module_id: moduleId,
+          p_lesson_id: lessonId,
           min_similarity: SEMANTIC_MIN_SIMILARITY,
         }),
       },
@@ -381,11 +388,35 @@ Deno.serve(async (req) => {
     resolvedPathId = learnerContext.currentPath;
     pathResolutionReason = "learner_context";
   }
+  const resolvedModuleId = learnerContext.currentModule ?? null;
+  const resolvedLessonId = learnerContext.currentLesson ?? null;
+
   // Embeddings still use OpenAI (keeps existing 1536-dim chunks intact).
   // If OPENAI_API_KEY is missing, semantic retrieval silently degrades.
   let semanticChunks = openaiKey
-    ? await semanticRetrieve(query, resolvedPathId, openaiKey)
+    ? await semanticRetrieve(
+        query,
+        resolvedPathId,
+        resolvedModuleId,
+        resolvedLessonId,
+        openaiKey,
+      )
     : [];
+
+  // Lesson filter can be too narrow for cross-topic questions — widen once if empty.
+  if (
+    openaiKey &&
+    semanticChunks.length === 0 &&
+    resolvedLessonId
+  ) {
+    semanticChunks = await semanticRetrieve(
+      query,
+      resolvedPathId,
+      resolvedModuleId,
+      null,
+      openaiKey,
+    );
+  }
 
   // Defensive client-side filter: drop weak matches even if RPC returned them.
   const semanticBeforeFilter = semanticChunks.length;
@@ -426,12 +457,26 @@ Deno.serve(async (req) => {
 
   const retrievalBlock = `[SEMANTIC CONTEXT]\n${semanticBlock}\n\n[KEYWORD CONTEXT]\n${keywordBlock}`;
 
+  const missionIntro = learnerContext.currentMission?.intro?.trim() ?? "";
+  const missionPrompt = learnerContext.currentMission?.prompt?.trim() ?? "";
+  const missionBlock =
+    missionIntro || missionPrompt
+      ? [
+          "مهمة الدرس الحالي (للتوجيه فقط — لا تكتب الإجابة بدل المتعلم):",
+          missionIntro ? `مقدمة المهمة: ${missionIntro}` : null,
+          missionPrompt ? `طلب المهمة: ${missionPrompt}` : null,
+        ]
+          .filter(Boolean)
+          .join("\n")
+      : "— لا توجد مهمة نشطة في السياق الحالي —";
+
   const ctxBlock = [
     `المسار الحالي: ${learnerContext.currentPathTitle ?? learnerContext.currentPath ?? "—"}`,
     `الموديول الحالي: ${learnerContext.currentModuleTitle ?? learnerContext.currentModule ?? "—"}`,
     `الدرس الحالي: ${learnerContext.currentLessonTitle ?? learnerContext.currentLesson ?? "—"}`,
     `الدروس المكتملة: ${learnerContext.completedLessonsCount ?? 0} / ${learnerContext.totalLessonsCount ?? 0}`,
     `الدرس التالي: ${learnerContext.nextLessonTitle ?? "—"}`,
+    missionBlock,
   ].join("\n");
 
   const systemPrompt = `أنت مساعد منصة مسارات (masaarat.ai).
@@ -462,6 +507,12 @@ Deno.serve(async (req) => {
 - **لما السؤال عام أو مبهم بس فيه retrieval**: ابدأ بإطار المنصة والدروس المسترجعة، مش بشرح أكاديمي عام.
 - ابقى متماشي مع فلسفة الدروس: Problem → Flow → Runtime → Architecture، MVP صغير حقيقي، استرجاع قبل توليد.
 - متخترعش دروس أو ميزات مش موجودة.
+- **سلامة المهام (إلزامي)**:
+  • **ممنوع** تكتب إجابة المهمة كاملة أو تسلّم نص جاهز للتسليم نيابةً عن المتعلم.
+  • لو طلب "اعمل المهمة بدالي" أو "اكتبلي الإجابة" أو "سلّمها بدالي" → **ارفض بلطف** وقول إنك بتساعده يفهم ويحاول بنفسه.
+  • ساعد بـ: أسئلة توجيهية (Socratic)، تلميحات صغيرة، أمثلة منفصلة (مش نسخة المهمة)، ومعايير التقييم (rubric) بصياغة توجيهية — من غير ما تكتب النص النهائي.
+  • خلّي كلمات المتعلم وصياغته هي اللي تظهر في التسليم؛ شجّعه يكتب بنفسه حتى لو بسيط.
+  • لو فيه مهمة في السياق: اربط التوجيه بمقدمة المهمة وطلبها، بس **ما تملاش الإجابة**.
 - أجوبة قصيرة (2-5 جمل غالبًا)، مركّزة، وقابلة للتنفيذ.
 - متقولش إنك OpenAI أو أي مزود — انت "مساعد المنصة".
 - **دقة تقنية (لازم)** — متخلطش بين المفاهيم دي، لأن الخبير بيكتشفها فورًا:
@@ -493,7 +544,9 @@ ${retrievalBlock}
 - لو semanticCount > 0 أو keywordCount > 0: ابني الإجابة من المحتوى المسترجع الأول، واستخدم معرفتك العامة بس للتبسيط.
 - لو resolvedPathId محدد: أطّر الإجابة في سياق المسار ده.
 - لو semanticCount = 0 و keywordCount = 0: ابدأ بـ "في المنصة حالياً ده مش متغطى في درس مخصص." وبعدين سطر "بشكل عام..." بشرح عام مختصر. متدّعيش إن الموضوع في الدروس.
-- اربط الإجابة بسياق المتعلم الحالي إن أمكن.`;
+- اربط الإجابة بسياق المتعلم الحالي إن أمكن.
+- لو السؤال عن المهمة: وجّه واسأل ووضّح المعايير — **لا تكتب نص التسليم**.
+- لو resolvedLessonId محدد: أعطِ أولوية لمحتوى الدرس الحالي في الاسترجاع والشرح.`;
 
 
 

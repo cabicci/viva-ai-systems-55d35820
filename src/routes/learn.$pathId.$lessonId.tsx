@@ -36,6 +36,7 @@ import { LessonNotes } from "@/components/learn/LessonNotes";
 import { DifficultyPrompt } from "@/components/learn/DifficultyPrompt";
 import { ReadingProgressBar } from "@/components/learn/ReadingProgressBar";
 import { CompletionReward } from "@/components/learn/CompletionReward";
+import { AssistantPanel } from "@/components/assistant/AssistantPanel";
 
 /* --------------------------------------------------------------
  *  Unified lesson runtime — one page for every path's lessons.
@@ -348,6 +349,12 @@ function UnifiedLessonPage() {
           isCompleted={isCompleted}
           nextLessonHref={next ? `/learn/${pathId}/${next.slug}` : undefined}
         />
+        <section className="mt-8 rounded-2xl border border-border/60 p-5">
+          <h2 className="text-sm font-semibold text-muted-foreground mb-4">
+            مساعد المنصة
+          </h2>
+          <AssistantPanel compact />
+        </section>
         {nextLocked && missionShape?.hasRubric && (
           <div className="mt-8 rounded-2xl border border-primary/25 bg-primary/[0.04] p-4 flex items-start gap-3">
             <Lock className="h-4 w-4 text-primary mt-0.5 shrink-0" />

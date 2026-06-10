@@ -19,6 +19,10 @@ export interface AssistantRuntimeRequestPayload {
     completedLessonsCount?: number | null;
     totalLessonsCount?: number | null;
     nextLessonTitle?: string | null;
+    currentMission?: {
+      intro?: string | null;
+      prompt?: string | null;
+    } | null;
   };
   retrievalResults?: unknown[];
 }

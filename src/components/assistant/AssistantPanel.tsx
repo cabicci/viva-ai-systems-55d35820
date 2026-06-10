@@ -34,7 +34,11 @@ export function AssistantPanel({ compact = false }: Props) {
     if (!q || loading) return;
     setAssistantSession({ loading: true, error: null, query: "" });
     try {
-      const retrievalResults = searchPlatformContent(q, { limit: 5 });
+      const retrievalResults = searchPlatformContent(q, {
+        limit: 5,
+        preferLessonId: ctx.currentLesson?.id ?? null,
+        preferPathId: ctx.currentPath?.id ?? null,
+      });
       const res = await callAssistantRuntime({
         query: q,
         learnerContext: {
@@ -47,6 +51,12 @@ export function AssistantPanel({ compact = false }: Props) {
           completedLessonsCount: ctx.completedLessonsCount,
           totalLessonsCount: ctx.totalLessonsCount,
           nextLessonTitle: ctx.nextLesson?.title ?? null,
+          currentMission: ctx.currentMission
+            ? {
+                intro: ctx.currentMission.intro ?? null,
+                prompt: ctx.currentMission.prompt ?? null,
+              }
+            : null,
         },
         retrievalResults,
       });
@@ -119,7 +129,7 @@ export function AssistantPanel({ compact = false }: Props) {
           value={query}
           onChange={(e) => setAssistantSession({ query: e.target.value })}
           placeholder="اسأل مساعد المنصة..."
-          rows={4}
+          rows={compact ? 3 : 4}
           className="resize-none text-base"
           dir="rtl"
         />
@@ -146,23 +156,25 @@ export function AssistantPanel({ compact = false }: Props) {
             <h2 className="text-sm font-semibold text-muted-foreground">
               إجابة المساعد
             </h2>
-            <div className="flex items-center gap-1.5 flex-wrap">
-              <Badge
-                variant={response.contextDetected ? "secondary" : "outline"}
-                className="text-[10px]"
-              >
-                {response.contextDetected ? "CONTEXT ✓" : "NO CONTEXT"}
-              </Badge>
-              <Badge variant="outline" className="text-[10px]">
-                RETRIEVAL: {response.retrievalCount}
-              </Badge>
-              <Badge
-                variant={response.runtime === "connected" ? "secondary" : "outline"}
-                className="text-[10px]"
-              >
-                {response.runtime.toUpperCase()}
-              </Badge>
-            </div>
+            {!compact && (
+              <div className="flex items-center gap-1.5 flex-wrap">
+                <Badge
+                  variant={response.contextDetected ? "secondary" : "outline"}
+                  className="text-[10px]"
+                >
+                  {response.contextDetected ? "CONTEXT ✓" : "NO CONTEXT"}
+                </Badge>
+                <Badge variant="outline" className="text-[10px]">
+                  RETRIEVAL: {response.retrievalCount}
+                </Badge>
+                <Badge
+                  variant={response.runtime === "connected" ? "secondary" : "outline"}
+                  className="text-[10px]"
+                >
+                  {response.runtime.toUpperCase()}
+                </Badge>
+              </div>
+            )}
           </div>
 
           {response.answer ? (
@@ -173,7 +185,7 @@ export function AssistantPanel({ compact = false }: Props) {
             <div className="text-sm text-muted-foreground">{response.message}</div>
           )}
 
-          {matches.length > 0 && (
+          {!compact && matches.length > 0 && (
             <div className="pt-3 border-t border-border space-y-2">
               <h3 className="text-xs font-semibold text-muted-foreground">
                 محتوى مرتبط من المنصة
@@ -217,17 +229,19 @@ export function AssistantPanel({ compact = false }: Props) {
             </div>
           )}
 
-          <details className="pt-3 border-t border-border">
-            <summary className="text-[11px] uppercase tracking-wider text-muted-foreground cursor-pointer select-none">
-              Debug · Raw runtime payload
-            </summary>
-            <pre
-              className="mt-2 text-[11px] text-muted-foreground bg-muted/20 p-3 rounded-md overflow-x-auto leading-relaxed"
-              dir="ltr"
-            >
+          {!compact && (
+            <details className="pt-3 border-t border-border">
+              <summary className="text-[11px] uppercase tracking-wider text-muted-foreground cursor-pointer select-none">
+                Debug · Raw runtime payload
+              </summary>
+              <pre
+                className="mt-2 text-[11px] text-muted-foreground bg-muted/20 p-3 rounded-md overflow-x-auto leading-relaxed"
+                dir="ltr"
+              >
 {JSON.stringify(response, null, 2)}
-            </pre>
-          </details>
+              </pre>
+            </details>
+          )}
         </Card>
       )}
 
