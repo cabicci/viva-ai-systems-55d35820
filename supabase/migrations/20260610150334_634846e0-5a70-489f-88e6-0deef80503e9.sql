@@ -1,0 +1,1 @@
+REVOKE DELETE ON public.knowledge_chunks FROM sandbox_exec;

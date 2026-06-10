@@ -1,0 +1,1 @@
+GRANT DELETE ON public.knowledge_chunks TO sandbox_exec;
