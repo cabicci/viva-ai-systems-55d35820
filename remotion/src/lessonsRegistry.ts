@@ -118,11 +118,11 @@ import { SCENES as L_business_m4_l3_weekly_rhythm_S, SCENE_FRAMES as L_business_
 import { SCENES as L_business_m2_l4_pricing_cash_flow_S, SCENE_FRAMES as L_business_m2_l4_pricing_cash_flow_F, TOTAL_FRAMES as L_business_m2_l4_pricing_cash_flow_T } from "./lessons-generated/business-m2-l4-pricing-cash-flow.gen";
 import { SCENES as L_business_m4_l4_full_ecosystem_S, SCENE_FRAMES as L_business_m4_l4_full_ecosystem_F, TOTAL_FRAMES as L_business_m4_l4_full_ecosystem_T } from "./lessons-generated/business-m4-l4-full-ecosystem.gen";
 import { SCENES as L_business_m4_l5_business_os_dashboard_S, SCENE_FRAMES as L_business_m4_l5_business_os_dashboard_F, TOTAL_FRAMES as L_business_m4_l5_business_os_dashboard_T } from "./lessons-generated/business-m4-l5-business-os-dashboard.gen";
-import { SCENES as L_creator_m1_l1_why_content_S, SCENE_FRAMES as L_creator_m1_l1_why_content_F, TOTAL_FRAMES as L_creator_m1_l1_why_content_T } from "./lessons-generated/creator-m1-l1-why-content.gen";
 import { SCENES as L_intro_m1_l1_what_is_ai_S, SCENE_FRAMES as L_intro_m1_l1_what_is_ai_F, TOTAL_FRAMES as L_intro_m1_l1_what_is_ai_T } from "./lessons-generated/intro-m1-l1-what-is-ai.gen";
 import { SCENES as L_business_m1_l1_from_decisions_to_leadership_S, SCENE_FRAMES as L_business_m1_l1_from_decisions_to_leadership_F, TOTAL_FRAMES as L_business_m1_l1_from_decisions_to_leadership_T } from "./lessons-generated/business-m1-l1-from-decisions-to-leadership.gen";
 import { SCENES as L_automator_m1_l1_where_you_are_S, SCENE_FRAMES as L_automator_m1_l1_where_you_are_F, TOTAL_FRAMES as L_automator_m1_l1_where_you_are_T } from "./lessons-generated/automator-m1-l1-where-you-are.gen";
 import { SCENES as L_analyst_m1_l1_from_automation_to_insight_S, SCENE_FRAMES as L_analyst_m1_l1_from_automation_to_insight_F, TOTAL_FRAMES as L_analyst_m1_l1_from_automation_to_insight_T } from "./lessons-generated/analyst-m1-l1-from-automation-to-insight.gen";
+import { SCENES as L_creator_m1_l1_why_content_S, SCENE_FRAMES as L_creator_m1_l1_why_content_F, TOTAL_FRAMES as L_creator_m1_l1_why_content_T } from "./lessons-generated/creator-m1-l1-why-content.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -232,10 +232,10 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m2-l4-pricing-cash-flow", scenes: L_business_m2_l4_pricing_cash_flow_S, sceneFrames: L_business_m2_l4_pricing_cash_flow_F, totalFrames: L_business_m2_l4_pricing_cash_flow_T },
     { id: "business-m4-l4-full-ecosystem", scenes: L_business_m4_l4_full_ecosystem_S, sceneFrames: L_business_m4_l4_full_ecosystem_F, totalFrames: L_business_m4_l4_full_ecosystem_T },
     { id: "business-m4-l5-business-os-dashboard", scenes: L_business_m4_l5_business_os_dashboard_S, sceneFrames: L_business_m4_l5_business_os_dashboard_F, totalFrames: L_business_m4_l5_business_os_dashboard_T },
-    { id: "creator-m1-l1-why-content", scenes: L_creator_m1_l1_why_content_S, sceneFrames: L_creator_m1_l1_why_content_F, totalFrames: L_creator_m1_l1_why_content_T },
     { id: "intro-m1-l1-what-is-ai", scenes: L_intro_m1_l1_what_is_ai_S, sceneFrames: L_intro_m1_l1_what_is_ai_F, totalFrames: L_intro_m1_l1_what_is_ai_T },
     { id: "business-m1-l1-from-decisions-to-leadership", scenes: L_business_m1_l1_from_decisions_to_leadership_S, sceneFrames: L_business_m1_l1_from_decisions_to_leadership_F, totalFrames: L_business_m1_l1_from_decisions_to_leadership_T },
     { id: "automator-m1-l1-where-you-are", scenes: L_automator_m1_l1_where_you_are_S, sceneFrames: L_automator_m1_l1_where_you_are_F, totalFrames: L_automator_m1_l1_where_you_are_T },
     { id: "analyst-m1-l1-from-automation-to-insight", scenes: L_analyst_m1_l1_from_automation_to_insight_S, sceneFrames: L_analyst_m1_l1_from_automation_to_insight_F, totalFrames: L_analyst_m1_l1_from_automation_to_insight_T },
+    { id: "creator-m1-l1-why-content", scenes: L_creator_m1_l1_why_content_S, sceneFrames: L_creator_m1_l1_why_content_F, totalFrames: L_creator_m1_l1_why_content_T },
   /* @lesson-entries-end */
 ];
