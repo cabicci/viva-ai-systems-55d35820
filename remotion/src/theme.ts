@@ -24,6 +24,12 @@ export const palette = {
   white: "#FBF7EE",
 };
 
+// Reusable pastel gradient — mirrors the platform's --gradient-hero
+// (mint + lavender + soft yellow over a light blue/white base).
+// Use this for scene backgrounds instead of palette.cream.
+export const bgGradient =
+  "linear-gradient(135deg, #EAF5FF 0%, #DCEFE3 30%, #E8E0F2 65%, #FBF1D6 100%)";
+
 // Canvas: 1920x1080. Safe area: 1680x880 (120 horizontal, 100 vertical).
 // Mobile-safe center: 1400x787.
 export const safeArea = {
