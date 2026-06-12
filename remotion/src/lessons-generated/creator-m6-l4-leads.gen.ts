@@ -5,119 +5,99 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "highlight": "Leads بتعيّشك.",
-    "chip": "أهلًا بيك يا صانع!",
-    "subtitle": "إزاي تحوّل المتفرّج لزبون محتمل.",
-    "title": "Views بتعجبك."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "term": "Lead (لييد)",
-    "tag": "زبون مهتم",
-    "definition": "الزبون المحتمل اللي مهتم بيك وساب بياناته أو جه سألك."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "tag": "طلب للجمهور",
-    "definition": "اختصار لـ Call to Action، يعني الطلب اللي بتطلبه من الناس تعمله.",
-    "term": "CTA (سي تي إيه)"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "term": "Conversion (تحويل)",
-    "tag": "تحويل متفرج لزبون",
-    "definition": "يعني الشخص اتحول من مجرد متفرج لزبون عمل اللي إنت عايزه."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "term": "Funnel (القمع)",
-    "tag": "مراحل البيع",
-    "definition": "مراحل البيع اللي بتمشي مع الزبون من أول ما يعرفك لحد ما يشتري."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "term": "Lead Magnet (المغناطيس)",
-    "tag": "هدية مقابل بيانات",
-    "definition": "هدية مجانية بتديها للناس عشان يرضوا يدوك بياناتهم (إيميل أو رقم)."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "tag": "تسخين الزبون",
-    "definition": "سلسلة رسايل أوتوماتيك بتبعتها للزبون عشان تسخن الشراء في دماغه.",
-    "term": "Nurture Sequence (تسخين)"
+    "subtitle": "المتابعين مهمين، بس لازم يكون فيه طريق واضح للـ Leads.",
+    "highlight": "من غير كوبري",
+    "title": "المتابع مش عميل",
+    "chip": "بداية الدرس"
   },
   {
     "card": "BulletsCard",
     "accent": "lavender",
     "bullets": [
-      "١. Bio Link واضح: لينك واحد في الـ Bio. صفحة بسيطة فيها CTA واحد: «احصل على [Lead Magnet] مجانًا»."
+      "ناس كتير بتتابعك وتستفيد، لكن لحظة القرار تضيع لأن الخطوة الجاية مش واضحة لهم.",
+      "لو ما فيش CTA بسيط وقيمة أولية، المتابع يفضل متابع لفترة طويلة من غير ما يتحول لعميل محتمل."
     ],
-    "title": "Funnel ٤ خطوات بسيط"
+    "title": "فجوة بين الانتباه والشراء"
   },
   {
     "card": "BulletsCard",
     "accent": "peach",
     "bullets": [
-      "٢. Lead Magnet: حاجة مجانية ذات قيمة — Template, Checklist, Mini-course بـ ٥ فيديوهات، PDF فيه ١٠ Hooks جاهزين. الجمهور بيدّيك Email/WhatsApp مقابلها."
+      "المحتوى يبني ثقة، والـ CTA ينقل الشخص لخطوة محددة: تحميل هدية بسيطة، أو رسالة بكلمة مفتاحية، أو تسجيل قصير.",
+      "الهدف في المرحلة دي مش البيع الفوري، الهدف تجمع ليدز جادة تقدر تتابع معها بشكل محترم.",
+      "كل ما الكوبري بسيط وواضح، التحويل يزيد بدون ضغط أو إلحاح."
     ],
-    "title": "تفاصيل الـ Lead Magnet"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "yellow",
-    "bullets": [
-      "٣. Nurture Sequence: ٣–٥ Emails أو WhatsApp messages بتديهم قيمة قبل أي عرض. القاعدة: ٨٠٪ قيمة + ٢٠٪ عرض.",
-      "٤. العرض المدفوع: استشارة، كورس، أداة، خدمة. الـ CTA بيبقى طبيعي لإن الجمهور بقى يثق فيك."
-    ],
-    "title": "Nurture Sequence والعرض المدفوع"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "pink",
-    "bullets": [
-      "قاعدة ذهبية: من كل ١٠ فيديوهات، فيديو واحد بس فيه Soft CTA للـ Lead Magnet. الباقي قيمة خالصة."
-    ],
-    "title": "القاعدة الذهبية"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "mintDeep",
-    "bullets": [
-      "ده شكل الـ Funnel البسيط اللي بيحوّل المتفرّج لعميل.",
-      "كل طبقة بتفقد جزء من الناس — طبيعي.",
-      "من غير الـ Funnel ده، الـ Views بتفضل ترفيه مجاني للجمهور.",
-      "الفرق بين صانع محتوى مشهور وفقير، وصانع محتوى عنده دخل = الـ ٤ طبقات دي بالظبط."
-    ],
-    "title": "Lead Funnel — ٤ طبقات"
+    "title": "اعمل كوبري صغير وواضح"
   },
   {
     "card": "CompareCard",
-    "accent": "mint",
-    "left": {
-      "body": "الجمهور بيحس إنك بياع، الـ Trust بيختفي، والـ Engagement بيقع. وحتى لو حد اشترى، مفيش بيانات بتفضل معاك بعد ما المنصة تخسر صلاحيتها.",
-      "label": "FAILURE — «اشترك في الكورس بتاعي» في آخر كل فيديو"
-    },
+    "accent": "yellow",
     "right": {
-      "label": "RIGHT — «حمّل الـ Template مجاني من الرابط في الـ Bio»",
-      "body": "بتدّي قيمة الأول، بتاخد Email، بتبني علاقة، وبعدين بتعرض المدفوع. الـ Conversion بيبقى أعلى ٥–١٠ أضعاف."
+      "body": "قيمة مجانية بسيطة + CTA محدد + متابعة. النتيجة: ليدز أكثر جودة حتى لو المشاهدات أقل.",
+      "label": "بكوبري واضح"
     },
-    "title": "إزاي تحوّل Views لـ Leads"
+    "left": {
+      "label": "من غير كوبري",
+      "body": "محتوى جميل وتفاعل كويس، لكن مفيش خطوة انتقال واضحة. النتيجة: جمهور واسع وتحويل ضعيف."
+    },
+    "title": "متابعين بس ولا نظام تحويل؟"
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "pink",
+    "tag": "عميل محتمل",
+    "term": "Lead",
+    "definition": "شخص مهتم فعلا ومستعد ياخد خطوة للتواصل أو التسجيل."
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "mintDeep",
+    "tag": "هدية مجانية",
+    "definition": "قيمة مجانية بسيطة مقابل وسيلة تواصل.",
+    "term": "Lead Magnet"
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "mint",
+    "tag": "دعوة للعمل",
+    "term": "CTA",
+    "definition": "دعوة واضحة لخطوة واحدة بعد المحتوى."
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "lavender",
+    "bullets": [
+      "كل مرحلة تقلل العدد لكن تزود الجودة.",
+      "المهم يكون الانتقال من مرحلة لمرحلة واضح."
+    ],
+    "title": "قمع الـ Leads من المحتوى"
   },
   {
     "card": "CTACard",
-    "accent": "lavender",
-    "title": "صمّم Funnel الـ Leads بتاعك",
-    "highlight": "طبّق اللي اتعلمته",
-    "eyebrow": "دورك دلوقتي",
-    "tagline": "جاوب على الأسئلة وطبق اللي اتعلمته عشان تحول الـ Views لـ Leads. استنانا في الدرس الجاي: إيه هو الـ LLM؟"
+    "accent": "peach",
+    "highlight": "بسؤال سريع",
+    "title": "اختبر فهمك",
+    "tagline": "شاركنا إجابتك في التعليقات عشان نشوف فهمك للدرس.",
+    "eyebrow": "دورك دلوقتي"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "yellow",
+    "bullets": [
+      "دلوقتي مش هتعتمد على الصدفة. عندك خطوة تحويل واضحة تشتغل عليها وتتطور بالأرقام.",
+      "كذا تبني Creator business متوازن: محتوى يوصل، ونظام يحول."
+    ],
+    "title": "دلوقتي عندك كوبري للـ Leads"
+  },
+  {
+    "card": "CTACard",
+    "accent": "pink",
+    "tagline": "نتقابل في الدرس الجاي عشان نكمل رحلة بناء البيزنس بتاعك.",
+    "highlight": "ودخل ثابت",
+    "title": "ابني كوبري لـ Leads أكتر",
+    "eyebrow": "الخلاصة"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [403, 381, 359, 437, 354, 400, 378, 401, 407, 461, 384, 478, 592, 340];
+export const SCENE_FRAMES: number[] = [486, 450, 556, 603, 335, 388, 339, 330, 299, 400, 291];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);

@@ -20,7 +20,6 @@ import { SCENES as L_creator_m5_l1_editing_S, SCENE_FRAMES as L_creator_m5_l1_ed
 import { SCENES as L_creator_m4_mobile_shooting_S, SCENE_FRAMES as L_creator_m4_mobile_shooting_F, TOTAL_FRAMES as L_creator_m4_mobile_shooting_T } from "./lessons-generated/creator-m4-mobile-shooting.gen";
 import { SCENES as L_creator_m4_reality_check_S, SCENE_FRAMES as L_creator_m4_reality_check_F, TOTAL_FRAMES as L_creator_m4_reality_check_T } from "./lessons-generated/creator-m4-reality-check.gen";
 import { SCENES as L_creator_m5_l2_thumbnails_captions_S, SCENE_FRAMES as L_creator_m5_l2_thumbnails_captions_F, TOTAL_FRAMES as L_creator_m5_l2_thumbnails_captions_T } from "./lessons-generated/creator-m5-l2-thumbnails-captions.gen";
-import { SCENES as L_creator_m6_l4_leads_S, SCENE_FRAMES as L_creator_m6_l4_leads_F, TOTAL_FRAMES as L_creator_m6_l4_leads_T } from "./lessons-generated/creator-m6-l4-leads.gen";
 import { SCENES as L_creator_m6_l1_platforms_S, SCENE_FRAMES as L_creator_m6_l1_platforms_F, TOTAL_FRAMES as L_creator_m6_l1_platforms_T } from "./lessons-generated/creator-m6-l1-platforms.gen";
 import { SCENES as L_creator_m6_l2_scheduling_S, SCENE_FRAMES as L_creator_m6_l2_scheduling_F, TOTAL_FRAMES as L_creator_m6_l2_scheduling_T } from "./lessons-generated/creator-m6-l2-scheduling.gen";
 import { SCENES as L_creator_m7_l2_grid_consistency_S, SCENE_FRAMES as L_creator_m7_l2_grid_consistency_F, TOTAL_FRAMES as L_creator_m7_l2_grid_consistency_T } from "./lessons-generated/creator-m7-l2-grid-consistency.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_creator_m1_l1_why_content_S, SCENE_FRAMES as L_creator_m1_l
 import { SCENES as L_analyst_m1_l1_from_automation_to_insight_S, SCENE_FRAMES as L_analyst_m1_l1_from_automation_to_insight_F, TOTAL_FRAMES as L_analyst_m1_l1_from_automation_to_insight_T } from "./lessons-generated/analyst-m1-l1-from-automation-to-insight.gen";
 import { SCENES as L_analyst_m6_l1_question_mistakes_S, SCENE_FRAMES as L_analyst_m6_l1_question_mistakes_F, TOTAL_FRAMES as L_analyst_m6_l1_question_mistakes_T } from "./lessons-generated/analyst-m6-l1-question-mistakes.gen";
 import { SCENES as L_builder_m1_l2_tokens_training_S, SCENE_FRAMES as L_builder_m1_l2_tokens_training_F, TOTAL_FRAMES as L_builder_m1_l2_tokens_training_T } from "./lessons-generated/builder-m1-l2-tokens-training.gen";
+import { SCENES as L_creator_m6_l4_leads_S, SCENE_FRAMES as L_creator_m6_l4_leads_F, TOTAL_FRAMES as L_creator_m6_l4_leads_T } from "./lessons-generated/creator-m6-l4-leads.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -136,7 +136,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m4-l2-mobile-shooting", scenes: L_creator_m4_mobile_shooting_S, sceneFrames: L_creator_m4_mobile_shooting_F, totalFrames: L_creator_m4_mobile_shooting_T },
     { id: "creator-m4-l1-reality-check", scenes: L_creator_m4_reality_check_S, sceneFrames: L_creator_m4_reality_check_F, totalFrames: L_creator_m4_reality_check_T },
     { id: "creator-m5-l2-thumbnails-captions", scenes: L_creator_m5_l2_thumbnails_captions_S, sceneFrames: L_creator_m5_l2_thumbnails_captions_F, totalFrames: L_creator_m5_l2_thumbnails_captions_T },
-    { id: "creator-m6-l4-leads", scenes: L_creator_m6_l4_leads_S, sceneFrames: L_creator_m6_l4_leads_F, totalFrames: L_creator_m6_l4_leads_T },
     { id: "creator-m6-l1-platforms", scenes: L_creator_m6_l1_platforms_S, sceneFrames: L_creator_m6_l1_platforms_F, totalFrames: L_creator_m6_l1_platforms_T },
     { id: "creator-m6-l2-scheduling", scenes: L_creator_m6_l2_scheduling_S, sceneFrames: L_creator_m6_l2_scheduling_F, totalFrames: L_creator_m6_l2_scheduling_T },
     { id: "creator-m7-l2-grid-consistency", scenes: L_creator_m7_l2_grid_consistency_S, sceneFrames: L_creator_m7_l2_grid_consistency_F, totalFrames: L_creator_m7_l2_grid_consistency_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "analyst-m1-l1-from-automation-to-insight", scenes: L_analyst_m1_l1_from_automation_to_insight_S, sceneFrames: L_analyst_m1_l1_from_automation_to_insight_F, totalFrames: L_analyst_m1_l1_from_automation_to_insight_T },
     { id: "analyst-m6-l1-question-mistakes", scenes: L_analyst_m6_l1_question_mistakes_S, sceneFrames: L_analyst_m6_l1_question_mistakes_F, totalFrames: L_analyst_m6_l1_question_mistakes_T },
     { id: "builder-m1-l2-tokens-training", scenes: L_builder_m1_l2_tokens_training_S, sceneFrames: L_builder_m1_l2_tokens_training_F, totalFrames: L_builder_m1_l2_tokens_training_T },
+    { id: "creator-m6-l4-leads", scenes: L_creator_m6_l4_leads_S, sceneFrames: L_creator_m6_l4_leads_F, totalFrames: L_creator_m6_l4_leads_T },
   /* @lesson-entries-end */
 ];
