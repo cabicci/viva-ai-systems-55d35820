@@ -48,7 +48,6 @@ import { SCENES as L_business_m5_l2_system_then_people_S, SCENE_FRAMES as L_busi
 import { SCENES as L_business_m6_l2_premature_scaling_S, SCENE_FRAMES as L_business_m6_l2_premature_scaling_F, TOTAL_FRAMES as L_business_m6_l2_premature_scaling_T } from "./lessons-generated/business-m6-l2-premature-scaling.gen";
 import { SCENES as L_analyst_m3_l2_ai_summarization_S, SCENE_FRAMES as L_analyst_m3_l2_ai_summarization_F, TOTAL_FRAMES as L_analyst_m3_l2_ai_summarization_T } from "./lessons-generated/analyst-m3-l2-ai-summarization.gen";
 import { SCENES as L_business_m3_l2_retention_flow_S, SCENE_FRAMES as L_business_m3_l2_retention_flow_F, TOTAL_FRAMES as L_business_m3_l2_retention_flow_T } from "./lessons-generated/business-m3-l2-retention-flow.gen";
-import { SCENES as L_analyst_m6_l1_question_mistakes_S, SCENE_FRAMES as L_analyst_m6_l1_question_mistakes_F, TOTAL_FRAMES as L_analyst_m6_l1_question_mistakes_T } from "./lessons-generated/analyst-m6-l1-question-mistakes.gen";
 import { SCENES as L_business_m4_l2_delegate_or_automate_S, SCENE_FRAMES as L_business_m4_l2_delegate_or_automate_F, TOTAL_FRAMES as L_business_m4_l2_delegate_or_automate_T } from "./lessons-generated/business-m4-l2-delegate-or-automate.gen";
 import { SCENES as L_analyst_m4_l2_decision_rule_S, SCENE_FRAMES as L_analyst_m4_l2_decision_rule_F, TOTAL_FRAMES as L_analyst_m4_l2_decision_rule_T } from "./lessons-generated/analyst-m4-l2-decision-rule.gen";
 import { SCENES as L_automator_m4_l1_connect_database_S, SCENE_FRAMES as L_automator_m4_l1_connect_database_F, TOTAL_FRAMES as L_automator_m4_l1_connect_database_T } from "./lessons-generated/automator-m4-l1-connect-database.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_business_m4_l4_full_ecosystem_S, SCENE_FRAMES as L_business
 import { SCENES as L_business_m1_l2_reactive_vs_proactive_S, SCENE_FRAMES as L_business_m1_l2_reactive_vs_proactive_F, TOTAL_FRAMES as L_business_m1_l2_reactive_vs_proactive_T } from "./lessons-generated/business-m1-l2-reactive-vs-proactive.gen";
 import { SCENES as L_creator_m1_l1_why_content_S, SCENE_FRAMES as L_creator_m1_l1_why_content_F, TOTAL_FRAMES as L_creator_m1_l1_why_content_T } from "./lessons-generated/creator-m1-l1-why-content.gen";
 import { SCENES as L_analyst_m1_l1_from_automation_to_insight_S, SCENE_FRAMES as L_analyst_m1_l1_from_automation_to_insight_F, TOTAL_FRAMES as L_analyst_m1_l1_from_automation_to_insight_T } from "./lessons-generated/analyst-m1-l1-from-automation-to-insight.gen";
+import { SCENES as L_analyst_m6_l1_question_mistakes_S, SCENE_FRAMES as L_analyst_m6_l1_question_mistakes_F, TOTAL_FRAMES as L_analyst_m6_l1_question_mistakes_T } from "./lessons-generated/analyst-m6-l1-question-mistakes.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -164,7 +164,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m6-l2-premature-scaling", scenes: L_business_m6_l2_premature_scaling_S, sceneFrames: L_business_m6_l2_premature_scaling_F, totalFrames: L_business_m6_l2_premature_scaling_T },
     { id: "analyst-m3-l2-ai-summarization", scenes: L_analyst_m3_l2_ai_summarization_S, sceneFrames: L_analyst_m3_l2_ai_summarization_F, totalFrames: L_analyst_m3_l2_ai_summarization_T },
     { id: "business-m3-l2-retention-flow", scenes: L_business_m3_l2_retention_flow_S, sceneFrames: L_business_m3_l2_retention_flow_F, totalFrames: L_business_m3_l2_retention_flow_T },
-    { id: "analyst-m6-l1-question-mistakes", scenes: L_analyst_m6_l1_question_mistakes_S, sceneFrames: L_analyst_m6_l1_question_mistakes_F, totalFrames: L_analyst_m6_l1_question_mistakes_T },
     { id: "business-m4-l2-delegate-or-automate", scenes: L_business_m4_l2_delegate_or_automate_S, sceneFrames: L_business_m4_l2_delegate_or_automate_F, totalFrames: L_business_m4_l2_delegate_or_automate_T },
     { id: "analyst-m4-l2-decision-rule", scenes: L_analyst_m4_l2_decision_rule_S, sceneFrames: L_analyst_m4_l2_decision_rule_F, totalFrames: L_analyst_m4_l2_decision_rule_T },
     { id: "automator-m3-l1-tools-landscape", scenes: L_automator_m3_l1_tools_landscape_S, sceneFrames: L_automator_m3_l1_tools_landscape_F, totalFrames: L_automator_m3_l1_tools_landscape_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m1-l2-reactive-vs-proactive", scenes: L_business_m1_l2_reactive_vs_proactive_S, sceneFrames: L_business_m1_l2_reactive_vs_proactive_F, totalFrames: L_business_m1_l2_reactive_vs_proactive_T },
     { id: "creator-m1-l1-why-content", scenes: L_creator_m1_l1_why_content_S, sceneFrames: L_creator_m1_l1_why_content_F, totalFrames: L_creator_m1_l1_why_content_T },
     { id: "analyst-m1-l1-from-automation-to-insight", scenes: L_analyst_m1_l1_from_automation_to_insight_S, sceneFrames: L_analyst_m1_l1_from_automation_to_insight_F, totalFrames: L_analyst_m1_l1_from_automation_to_insight_T },
+    { id: "analyst-m6-l1-question-mistakes", scenes: L_analyst_m6_l1_question_mistakes_S, sceneFrames: L_analyst_m6_l1_question_mistakes_F, totalFrames: L_analyst_m6_l1_question_mistakes_T },
   /* @lesson-entries-end */
 ];
