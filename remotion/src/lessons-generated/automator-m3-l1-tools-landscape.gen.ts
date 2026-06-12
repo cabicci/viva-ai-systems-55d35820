@@ -5,93 +5,87 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "subtitle": "3 أدوات بنفس الفكرة. بس كل واحدة ليها مكانها الصح.",
-    "title": "Make vs n8n vs Zapier",
-    "highlight": "Make vs n8n vs Zapier",
-    "chip": "Workflow"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "سير العمل",
-    "term": "Workflow (سير العمل)",
-    "definition": "طريق متخطط لخطوات الشغل وبتمشي لوحدها من غير ما تتدخل."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "tag": "الشرارة",
-    "term": "Trigger (المُشغّل)",
-    "definition": "الشرارة أو \"الخبطة\" اللي بتنبه البرنامج إنه يبدأ يشتغل دلوقت."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "tag": "توصيل برامج",
-    "term": "Integration (الربط)",
-    "definition": "توصيل برنامجين ببعض عشان يكلموا بعض ويتبادلوا بيانات."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "tag": "من غير كود",
-    "term": "No-Code (من غير كود خالص)",
-    "definition": "أدوات بتخليك تعمل برامج معقدة من غير ما تلمس الكود."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "tag": "سيرفرك الخاص",
-    "term": "Self-hosted (استضافة ذاتية)",
-    "definition": "إنك تشغل البرنامج على جهازك أو سيرفرك الخاص بدل ما تأجره جاهز."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "tag": "كود متاح",
-    "term": "Open Source (مصدر مفتوح)",
-    "definition": "برامج كودها متاح للكل، تقدر تستخدمها وتعدل فيها ببلاش من غير اشتراك."
+    "subtitle": "مُشغّل ← خطوات ← نتيجة",
+    "chip": "بداية الدرس",
+    "highlight": "الأدوات مختلفة — التفكير واحد",
+    "title": "هتفهم إيه النهاردة؟"
   },
   {
     "card": "BulletsCard",
     "accent": "lavender",
     "bullets": [
-      "Zapier — الأسهل، الأغلى، أكتر integrations جاهزة. خيار مثالي لو لسه بتقول يا هادي في الأتمتة والـ workflows البسيطة.",
-      "Make (سابقًا Integromat) — توازن بين السهولة والقوة. visual interface حلو، أرخص من Zapier، فيه scenarios معقّدة.",
-      "n8n — الأقوى، open-source، تقدر تستضيفه بنفسك ببلاش. محتاج منك مجهود ووقت أكتر في الأول عشان تفهمه بس مفيش سقف للي تقدر تعمله."
+      "تختار أداة عشان مشهورة أو مجانية.",
+      "مبتشوفش: كام مهمة/شهر؟ محتاج logic ولا خطوات بسيطة؟",
+      "الأداة مش الهدف — الهدف العامل الافتراضي ينفّذ النمط.",
+      "اختيار غلط = وقت ضايع في التعلّم، مش في توفير الوقت."
     ],
-    "title": "كلهم بيعملوا نفس الحاجة، بس بشكل مختلف"
+    "title": "«Zapier أشهر» — وبعد شهر الاشتراك غالي"
   },
   {
-    "card": "ScreenshotCard",
+    "card": "BulletsCard",
     "accent": "peach",
-    "eyebrow": "شوف بنفسك",
-    "src": "lessons/unique/automator-m3-l1-tools-landscape.jpg",
-    "caption": "المنصة بتاعتنا فيها طبقات شغّالة 24/7 — Context، Retrieval، Memory. الـ 3 أدوات اللي بنقارنهم بيعملوا نفس الفكرة بالظبط بس على workflows بتاعتك إنت: كل scenario = طبقة بتسمع لـ trigger وبتنفّذ سلسلة actions.",
-    "title": "الطبقات التشغيلية بتاعتنا"
+    "bullets": [
+      "Zapier: أسهل، integrations كتير، لـ workflows بسيطة، أغلى.",
+      "Make: توازن، visual واضح، scenarios متوسطة، أرخص من Zapier.",
+      "n8n: أقوى، open-source، self-hosted، لـ workflows معقّدة.",
+      "القاعدة: اختار حسب حجمك وتعقيدك — التفكير واحد."
+    ],
+    "title": "الأدوات مختلفة — التفكير واحد"
   },
   {
     "card": "CompareCard",
     "accent": "yellow",
-    "left": {
-      "label": "FAILURE — بتختار الأرخص أو الأشهر",
-      "body": "بتفتح Zapier لأنه شهير، وبعد شهر تكتشف إن الـ workflow بتاعك محتاج 50 task في اليوم والاشتراك بقى 80$ شهري. أو بتفتح n8n وبتقعد أسبوع تحاول تشغّله."
-    },
-    "title": "اختيار الأداة الصح",
+    "title": "اختيار بالشهرة vs اختيار بالحجم",
     "right": {
-      "label": "RIGHT — بتختار حسب الحجم والتعقيد",
-      "body": "Workflow بسيط وقليل (>100 task/شهر) → Zapier. متوسط ومحتاج logic → Make. كتير ومعقّد أو محتاج تحكّم كامل → n8n. الأداة معمولة عشان تريحك، مش عشان تدوخك وراها."
+      "body": "نور استخدمت Make free tier — نفس «فورم → إيميل» — ٣٠ دقيقة setup. وفّرت فلوس وتعلّمت التفكير.",
+      "label": "«Make لأن الحجم متوسط»"
+    },
+    "left": {
+      "body": "نور فتحت Zapier لـ «فورم → إيميل» — ٥ مرات/شهر. اشتراك ٢٠$/شهر لمهمة بسيطة. الأداة أكبر من الحاجة.",
+      "label": "«Zapier لأنه مشهور»"
     }
   },
   {
-    "card": "CTACard",
+    "card": "ConceptCard",
     "accent": "pink",
-    "tagline": "يلا نطبق ونشوف هتختار أنهي أداة لكل سيناريو.",
-    "highlight": "اختار أداة لمشروعك",
+    "tag": "سحب وإفلات",
+    "definition": "أدوات تبني فيها العامل الافتراضي بسحب وإفلات — مش كورس برمجة.",
+    "term": "No-Code (من غير كود)"
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "mintDeep",
+    "term": "Integration (ربط)",
+    "tag": "ربط برامج",
+    "definition": "توصيل برنامجين عشان يتبادلوا بيانات — ده اللي الأداة بتعمله."
+  },
+  {
+    "card": "ScreenshotCard",
+    "accent": "mint",
+    "eyebrow": "شوفها ببساطة",
+    "src": "lessons/unique/automator-m3-l1-tools-landscape.jpg",
+    "title": "طبقات شغّالة — نفس فكرة أي أداة",
+    "caption": "أي أداة أتمتة = طبقات: حاجة تدخل (مُشغّل) ← خطوات ← حاجة تطلع. Zapier و Make و n8n نفس الفكرة — اختلاف في السهولة والسعر والقوة."
+  },
+  {
+    "card": "CTACard",
+    "accent": "lavender",
+    "tagline": "جاوب على السؤال ده عشان تشوف مدى فهمك للدرس.",
     "eyebrow": "دورك دلوقتي",
-    "title": "اختار أداة لمشروعك"
+    "highlight": "اختار الأداة الأنسب",
+    "title": "سؤال واحد — مش امتحان"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "peach",
+    "bullets": [
+      "فهمت إيه؟ الأدوات مختلفة — التفكير (مُشغّل ← خطوات ← نتيجة) واحد.",
+      "تقدر تعمل إيه؟ عندك أداة مختارة لمرشّح الأتمتة الأول — جاهزة للتصميم.",
+      "اللي جاي: Triggers + Actions — «لما ده يحصل، اعمل كده»."
+    ],
+    "title": "إيه اللي عندك دلوقتي؟"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [273, 286, 235, 243, 223, 245, 269, 245, 340, 289, 253];
+export const SCENE_FRAMES: number[] = [816, 688, 1338, 930, 804, 441, 616, 623, 785];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
