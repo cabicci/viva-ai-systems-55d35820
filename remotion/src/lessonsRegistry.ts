@@ -40,7 +40,6 @@ import { SCENES as L_automator_m2_l2_spot_patterns_S, SCENE_FRAMES as L_automato
 import { SCENES as L_business_m4_l1_strategic_operational_admin_S, SCENE_FRAMES as L_business_m4_l1_strategic_operational_admin_F, TOTAL_FRAMES as L_business_m4_l1_strategic_operational_admin_T } from "./lessons-generated/business-m4-l1-strategic-operational-admin.gen";
 import { SCENES as L_analyst_m4_l1_pattern_vs_outlier_S, SCENE_FRAMES as L_analyst_m4_l1_pattern_vs_outlier_F, TOTAL_FRAMES as L_analyst_m4_l1_pattern_vs_outlier_T } from "./lessons-generated/analyst-m4-l1-pattern-vs-outlier.gen";
 import { SCENES as L_business_m5_l1_readiness_signals_S, SCENE_FRAMES as L_business_m5_l1_readiness_signals_F, TOTAL_FRAMES as L_business_m5_l1_readiness_signals_T } from "./lessons-generated/business-m5-l1-readiness-signals.gen";
-import { SCENES as L_analyst_m2_l1_feeling_to_question_S, SCENE_FRAMES as L_analyst_m2_l1_feeling_to_question_F, TOTAL_FRAMES as L_analyst_m2_l1_feeling_to_question_T } from "./lessons-generated/analyst-m2-l1-feeling-to-question.gen";
 import { SCENES as L_business_m2_l1_reactive_vs_proactive_S, SCENE_FRAMES as L_business_m2_l1_reactive_vs_proactive_F, TOTAL_FRAMES as L_business_m2_l1_reactive_vs_proactive_T } from "./lessons-generated/business-m2-l1-reactive-vs-proactive.gen";
 import { SCENES as L_analyst_m5_l1_four_numbers_dashboard_S, SCENE_FRAMES as L_analyst_m5_l1_four_numbers_dashboard_F, TOTAL_FRAMES as L_analyst_m5_l1_four_numbers_dashboard_T } from "./lessons-generated/analyst-m5-l1-four-numbers-dashboard.gen";
 import { SCENES as L_business_m5_l2_system_then_people_S, SCENE_FRAMES as L_business_m5_l2_system_then_people_F, TOTAL_FRAMES as L_business_m5_l2_system_then_people_T } from "./lessons-generated/business-m5-l2-system-then-people.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_builder_m1_l2_tokens_training_S, SCENE_FRAMES as L_builder_
 import { SCENES as L_creator_m6_l4_leads_S, SCENE_FRAMES as L_creator_m6_l4_leads_F, TOTAL_FRAMES as L_creator_m6_l4_leads_T } from "./lessons-generated/creator-m6-l4-leads.gen";
 import { SCENES as L_builder_m1_l1_what_is_llm_S, SCENE_FRAMES as L_builder_m1_l1_what_is_llm_F, TOTAL_FRAMES as L_builder_m1_l1_what_is_llm_T } from "./lessons-generated/builder-m1-l1-what-is-llm.gen";
 import { SCENES as L_builder_m10_l2_first_users_S, SCENE_FRAMES as L_builder_m10_l2_first_users_F, TOTAL_FRAMES as L_builder_m10_l2_first_users_T } from "./lessons-generated/builder-m10-l2-first-users.gen";
+import { SCENES as L_analyst_m2_l1_feeling_to_question_S, SCENE_FRAMES as L_analyst_m2_l1_feeling_to_question_F, TOTAL_FRAMES as L_analyst_m2_l1_feeling_to_question_T } from "./lessons-generated/analyst-m2-l1-feeling-to-question.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -156,7 +156,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m4-l1-strategic-operational-admin", scenes: L_business_m4_l1_strategic_operational_admin_S, sceneFrames: L_business_m4_l1_strategic_operational_admin_F, totalFrames: L_business_m4_l1_strategic_operational_admin_T },
     { id: "analyst-m4-l1-pattern-vs-outlier", scenes: L_analyst_m4_l1_pattern_vs_outlier_S, sceneFrames: L_analyst_m4_l1_pattern_vs_outlier_F, totalFrames: L_analyst_m4_l1_pattern_vs_outlier_T },
     { id: "business-m5-l1-readiness-signals", scenes: L_business_m5_l1_readiness_signals_S, sceneFrames: L_business_m5_l1_readiness_signals_F, totalFrames: L_business_m5_l1_readiness_signals_T },
-    { id: "analyst-m2-l1-feeling-to-question", scenes: L_analyst_m2_l1_feeling_to_question_S, sceneFrames: L_analyst_m2_l1_feeling_to_question_F, totalFrames: L_analyst_m2_l1_feeling_to_question_T },
     { id: "business-m2-l1-reactive-vs-proactive", scenes: L_business_m2_l1_reactive_vs_proactive_S, sceneFrames: L_business_m2_l1_reactive_vs_proactive_F, totalFrames: L_business_m2_l1_reactive_vs_proactive_T },
     { id: "analyst-m5-l1-four-numbers-dashboard", scenes: L_analyst_m5_l1_four_numbers_dashboard_S, sceneFrames: L_analyst_m5_l1_four_numbers_dashboard_F, totalFrames: L_analyst_m5_l1_four_numbers_dashboard_T },
     { id: "business-m5-l2-system-then-people", scenes: L_business_m5_l2_system_then_people_S, sceneFrames: L_business_m5_l2_system_then_people_F, totalFrames: L_business_m5_l2_system_then_people_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m6-l4-leads", scenes: L_creator_m6_l4_leads_S, sceneFrames: L_creator_m6_l4_leads_F, totalFrames: L_creator_m6_l4_leads_T },
     { id: "builder-m1-l1-what-is-llm", scenes: L_builder_m1_l1_what_is_llm_S, sceneFrames: L_builder_m1_l1_what_is_llm_F, totalFrames: L_builder_m1_l1_what_is_llm_T },
     { id: "builder-m10-l2-first-users", scenes: L_builder_m10_l2_first_users_S, sceneFrames: L_builder_m10_l2_first_users_F, totalFrames: L_builder_m10_l2_first_users_T },
+    { id: "analyst-m2-l1-feeling-to-question", scenes: L_analyst_m2_l1_feeling_to_question_S, sceneFrames: L_analyst_m2_l1_feeling_to_question_F, totalFrames: L_analyst_m2_l1_feeling_to_question_T },
   /* @lesson-entries-end */
 ];
