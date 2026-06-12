@@ -20,7 +20,6 @@ import { SCENES as L_automator_m5_l1_llm_in_flow_S, SCENE_FRAMES as L_automator_
 import { SCENES as L_business_m4_l1_strategic_operational_admin_S, SCENE_FRAMES as L_business_m4_l1_strategic_operational_admin_F, TOTAL_FRAMES as L_business_m4_l1_strategic_operational_admin_T } from "./lessons-generated/business-m4-l1-strategic-operational-admin.gen";
 import { SCENES as L_business_m5_l1_readiness_signals_S, SCENE_FRAMES as L_business_m5_l1_readiness_signals_F, TOTAL_FRAMES as L_business_m5_l1_readiness_signals_T } from "./lessons-generated/business-m5-l1-readiness-signals.gen";
 import { SCENES as L_business_m2_l1_reactive_vs_proactive_S, SCENE_FRAMES as L_business_m2_l1_reactive_vs_proactive_F, TOTAL_FRAMES as L_business_m2_l1_reactive_vs_proactive_T } from "./lessons-generated/business-m2-l1-reactive-vs-proactive.gen";
-import { SCENES as L_analyst_m5_l1_four_numbers_dashboard_S, SCENE_FRAMES as L_analyst_m5_l1_four_numbers_dashboard_F, TOTAL_FRAMES as L_analyst_m5_l1_four_numbers_dashboard_T } from "./lessons-generated/analyst-m5-l1-four-numbers-dashboard.gen";
 import { SCENES as L_business_m5_l2_system_then_people_S, SCENE_FRAMES as L_business_m5_l2_system_then_people_F, TOTAL_FRAMES as L_business_m5_l2_system_then_people_T } from "./lessons-generated/business-m5-l2-system-then-people.gen";
 import { SCENES as L_business_m6_l2_premature_scaling_S, SCENE_FRAMES as L_business_m6_l2_premature_scaling_F, TOTAL_FRAMES as L_business_m6_l2_premature_scaling_T } from "./lessons-generated/business-m6-l2-premature-scaling.gen";
 import { SCENES as L_business_m3_l2_retention_flow_S, SCENE_FRAMES as L_business_m3_l2_retention_flow_F, TOTAL_FRAMES as L_business_m3_l2_retention_flow_T } from "./lessons-generated/business-m3-l2-retention-flow.gen";
@@ -130,6 +129,7 @@ import { SCENES as L_business_m4_l1_premature_scaling_S, SCENE_FRAMES as L_busin
 import { SCENES as L_builder_m5_l2_frontend_S, SCENE_FRAMES as L_builder_m5_l2_frontend_F, TOTAL_FRAMES as L_builder_m5_l2_frontend_T } from "./lessons-generated/builder-m5-l2-frontend.gen";
 import { SCENES as L_automator_m4_l3_error_handling_S, SCENE_FRAMES as L_automator_m4_l3_error_handling_F, TOTAL_FRAMES as L_automator_m4_l3_error_handling_T } from "./lessons-generated/automator-m4-l3-error-handling.gen";
 import { SCENES as L_automator_m4_l2_webhooks_api_S, SCENE_FRAMES as L_automator_m4_l2_webhooks_api_F, TOTAL_FRAMES as L_automator_m4_l2_webhooks_api_T } from "./lessons-generated/automator-m4-l2-webhooks-api.gen";
+import { SCENES as L_analyst_m5_l1_four_numbers_dashboard_S, SCENE_FRAMES as L_analyst_m5_l1_four_numbers_dashboard_F, TOTAL_FRAMES as L_analyst_m5_l1_four_numbers_dashboard_T } from "./lessons-generated/analyst-m5-l1-four-numbers-dashboard.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -140,7 +140,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m4-l1-strategic-operational-admin", scenes: L_business_m4_l1_strategic_operational_admin_S, sceneFrames: L_business_m4_l1_strategic_operational_admin_F, totalFrames: L_business_m4_l1_strategic_operational_admin_T },
     { id: "business-m5-l1-readiness-signals", scenes: L_business_m5_l1_readiness_signals_S, sceneFrames: L_business_m5_l1_readiness_signals_F, totalFrames: L_business_m5_l1_readiness_signals_T },
     { id: "business-m2-l1-reactive-vs-proactive", scenes: L_business_m2_l1_reactive_vs_proactive_S, sceneFrames: L_business_m2_l1_reactive_vs_proactive_F, totalFrames: L_business_m2_l1_reactive_vs_proactive_T },
-    { id: "analyst-m5-l1-four-numbers-dashboard", scenes: L_analyst_m5_l1_four_numbers_dashboard_S, sceneFrames: L_analyst_m5_l1_four_numbers_dashboard_F, totalFrames: L_analyst_m5_l1_four_numbers_dashboard_T },
     { id: "business-m5-l2-system-then-people", scenes: L_business_m5_l2_system_then_people_S, sceneFrames: L_business_m5_l2_system_then_people_F, totalFrames: L_business_m5_l2_system_then_people_T },
     { id: "business-m6-l2-premature-scaling", scenes: L_business_m6_l2_premature_scaling_S, sceneFrames: L_business_m6_l2_premature_scaling_F, totalFrames: L_business_m6_l2_premature_scaling_T },
     { id: "business-m3-l2-retention-flow", scenes: L_business_m3_l2_retention_flow_S, sceneFrames: L_business_m3_l2_retention_flow_F, totalFrames: L_business_m3_l2_retention_flow_T },
@@ -249,5 +248,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m5-l2-frontend", scenes: L_builder_m5_l2_frontend_S, sceneFrames: L_builder_m5_l2_frontend_F, totalFrames: L_builder_m5_l2_frontend_T },
     { id: "automator-m4-l3-error-handling", scenes: L_automator_m4_l3_error_handling_S, sceneFrames: L_automator_m4_l3_error_handling_F, totalFrames: L_automator_m4_l3_error_handling_T },
     { id: "automator-m4-l2-webhooks-api", scenes: L_automator_m4_l2_webhooks_api_S, sceneFrames: L_automator_m4_l2_webhooks_api_F, totalFrames: L_automator_m4_l2_webhooks_api_T },
+    { id: "analyst-m5-l1-four-numbers-dashboard", scenes: L_analyst_m5_l1_four_numbers_dashboard_S, sceneFrames: L_analyst_m5_l1_four_numbers_dashboard_F, totalFrames: L_analyst_m5_l1_four_numbers_dashboard_T },
   /* @lesson-entries-end */
 ];
