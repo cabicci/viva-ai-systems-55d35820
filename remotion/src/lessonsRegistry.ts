@@ -11,7 +11,6 @@ export type LessonModule = LessonRendererProps & {
 
 // The build script appends imports + entries below the marker.
 /* @lesson-imports-start */
-import { SCENES as L_creator_m1_l2_attention_economy_S, SCENE_FRAMES as L_creator_m1_l2_attention_economy_F, TOTAL_FRAMES as L_creator_m1_l2_attention_economy_T } from "./lessons-generated/creator-m1-l2-attention-economy.gen";
 import { SCENES as L_creator_m3_l3_cta_S, SCENE_FRAMES as L_creator_m3_l3_cta_F, TOTAL_FRAMES as L_creator_m3_l3_cta_T } from "./lessons-generated/creator-m3-l3-cta.gen";
 import { SCENES as L_creator_m3_l1_hook_S, SCENE_FRAMES as L_creator_m3_l1_hook_F, TOTAL_FRAMES as L_creator_m3_l1_hook_T } from "./lessons-generated/creator-m3-l1-hook.gen";
 import { SCENES as L_creator_m3_l2_script_structure_S, SCENE_FRAMES as L_creator_m3_l2_script_structure_F, TOTAL_FRAMES as L_creator_m3_l2_script_structure_T } from "./lessons-generated/creator-m3-l2-script-structure.gen";
@@ -123,11 +122,11 @@ import { SCENES as L_intro_m1_l7_choose_your_path_S, SCENE_FRAMES as L_intro_m1_
 import { SCENES as L_business_m4_l3_weekly_rhythm_S, SCENE_FRAMES as L_business_m4_l3_weekly_rhythm_F, TOTAL_FRAMES as L_business_m4_l3_weekly_rhythm_T } from "./lessons-generated/business-m4-l3-weekly-rhythm.gen";
 import { SCENES as L_creator_m2_l1_know_audience_S, SCENE_FRAMES as L_creator_m2_l1_know_audience_F, TOTAL_FRAMES as L_creator_m2_l1_know_audience_T } from "./lessons-generated/creator-m2-l1-know-audience.gen";
 import { SCENES as L_business_m4_l2_reactive_relapse_S, SCENE_FRAMES as L_business_m4_l2_reactive_relapse_F, TOTAL_FRAMES as L_business_m4_l2_reactive_relapse_T } from "./lessons-generated/business-m4-l2-reactive-relapse.gen";
+import { SCENES as L_creator_m1_l2_attention_economy_S, SCENE_FRAMES as L_creator_m1_l2_attention_economy_F, TOTAL_FRAMES as L_creator_m1_l2_attention_economy_T } from "./lessons-generated/creator-m1-l2-attention-economy.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
   /* @lesson-entries-start */
-    { id: "creator-m1-l2-attention-economy", scenes: L_creator_m1_l2_attention_economy_S, sceneFrames: L_creator_m1_l2_attention_economy_F, totalFrames: L_creator_m1_l2_attention_economy_T },
     { id: "creator-m3-l3-cta", scenes: L_creator_m3_l3_cta_S, sceneFrames: L_creator_m3_l3_cta_F, totalFrames: L_creator_m3_l3_cta_T },
     { id: "creator-m3-l1-hook", scenes: L_creator_m3_l1_hook_S, sceneFrames: L_creator_m3_l1_hook_F, totalFrames: L_creator_m3_l1_hook_T },
     { id: "creator-m3-l2-script-structure", scenes: L_creator_m3_l2_script_structure_S, sceneFrames: L_creator_m3_l2_script_structure_F, totalFrames: L_creator_m3_l2_script_structure_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m4-l3-weekly-rhythm", scenes: L_business_m4_l3_weekly_rhythm_S, sceneFrames: L_business_m4_l3_weekly_rhythm_F, totalFrames: L_business_m4_l3_weekly_rhythm_T },
     { id: "creator-m2-l1-know-audience", scenes: L_creator_m2_l1_know_audience_S, sceneFrames: L_creator_m2_l1_know_audience_F, totalFrames: L_creator_m2_l1_know_audience_T },
     { id: "business-m4-l2-reactive-relapse", scenes: L_business_m4_l2_reactive_relapse_S, sceneFrames: L_business_m4_l2_reactive_relapse_F, totalFrames: L_business_m4_l2_reactive_relapse_T },
+    { id: "creator-m1-l2-attention-economy", scenes: L_creator_m1_l2_attention_economy_S, sceneFrames: L_creator_m1_l2_attention_economy_F, totalFrames: L_creator_m1_l2_attention_economy_T },
   /* @lesson-entries-end */
 ];
