@@ -5,136 +5,81 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "subtitle": "لما حد يشوف ٣ بوستات بتاعتك بدون اسمك، يعرف إنك إنت — ده Brand. ٣ قرارات بس كفاية تبدأ: لون، خط، شكل لوجو بسيط.",
-    "chip": "Brand مش لوجو",
-    "highlight": "إحساس",
-    "title": "Brand هو إحساس"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "definition": "كود بالأرقام والحروف بيعرف الكمبيوتر اللون اللي إنت اخترته بالظبط.",
-    "term": "Hex Code",
-    "tag": "كود اللون"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "definition": "الكلمة أو الزرار اللي بيخلي الزبون ياخد خطوة فعلية.",
-    "term": "CTA (Call to Action)",
-    "tag": "دعوة للفعل"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "definition": "هو ملف الخط اللي بتنزله وتستخدمه فعلاً وإنت بتصمم.",
-    "term": "Font",
-    "tag": "ملف الخط"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "term": "Typeface",
-    "tag": "عائلة الخط",
-    "definition": "دي \"عيلة الخط\" الكبيرة اللي جواها كذا شكل وحجم."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "definition": "الـ Serif خطوط ببروز (شنبات)، والـ Sans خطوط سادة وناعمة.",
-    "term": "Sans vs Serif",
-    "tag": "خطوط ببروز أو سادة"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "definition": "إحساس الزبون ناحية شغلك، ميكس بين شكلك وطريقتك.",
-    "tag": "إحساس الزبون",
-    "term": "Brand"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "term": "Primary / Accent colors",
-    "tag": "ألوان أساسية ومكملة",
-    "definition": "اللون اللي مسيطر على شغلك واللون الصغير اللي بينطقه."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "tag": "لوجو نصي",
-    "term": "Wordmark",
-    "definition": "لوجو معتمد على كتابة اسم البراند بشكل فني مميز."
+    "highlight": "من موقفك",
+    "title": "الناس تفتكرك",
+    "subtitle": "مش من ألوانك",
+    "chip": "أهلًا، بداية الدرس"
   },
   {
     "card": "BulletsCard",
-    "accent": "yellow",
+    "accent": "lavender",
+    "title": "محتوى حلو شكلا لكنه بلا بصمة",
     "bullets": [
-      "Primary (اللون الأشهر اللي هيوصّفك)",
-      "Accent (مكمّل للـ CTAs)",
-      "Dark (نصوص وخلفيات داكنة)",
-      "Light (خلفيات فاتحة)"
-    ],
-    "title": "القرار ١: Palette من ٤ ألوان"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "pink",
-    "title": "القرار ٢: Typeface اتنين بس",
-    "bullets": [
-      "واحد للـ Headings (Display أو Serif مميّز)",
-      "واحد للـ Body (Sans-serif نظيف)"
+      "كتير من الكريتورز يبدلوا ألوان وفونتات كل شوية، لكن ما يقدروش يتقال عنهم جملة واحدة مميزة.",
+      "لما موقفك مش واضح، المتابع يشوفك محتوى عام قابل للاستبدال حتى لو التصميم جميل."
     ]
   },
   {
     "card": "BulletsCard",
-    "accent": "mintDeep",
-    "title": "القرار ٣: Wordmark بسيط",
+    "accent": "peach",
+    "title": "POV ثابت = ذاكرة أقوى",
     "bullets": [
-      "اسمك مكتوب بخطك مع لمسة بسيطة",
-      "لا تدفع لـ Logo Designer قبل ١٠٠٠ متابع"
+      "الـ POV هو الجملة اللي تلخص أنت شايف الدنيا إزاي في مجالك، وبتخلي المحتوى كله يمشي في خط واحد.",
+      "الألوان بتخدم الـ POV مش العكس. يعني الأول تعرف موقفك، بعدين تختار شكل يخدمه.",
+      "لما موقفك ثابت، حتى مواضيع مختلفة تفضل متصلة بنفس الهوية الذهنية عند الجمهور."
     ]
   },
   {
-    "card": "BulletsCard",
+    "card": "CompareCard",
+    "accent": "yellow",
+    "right": {
+      "body": "POV ثابت يقود المحتوى، والتصميم يدعمه. النتيجة إن الناس تفتكرك من طريقة التفكير قبل الشكل.",
+      "label": "براند بموقف واضح"
+    },
+    "title": "براند شكلي مقابل براند بموقف",
+    "left": {
+      "body": "تصميم منظم لكن الرسالة بتتغير كل يوم. الناس تحب الشكل لكن ما تعرفش أنت واقف فين.",
+      "label": "براند شكلي فقط"
+    }
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "pink",
+    "tag": "موقف مميز",
+    "definition": "الجملة اللي توضح موقفك المختلف في مجالك.",
+    "term": "POV (Point of View)"
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "mintDeep",
+    "tag": "وعد للجمهور",
+    "term": "Brand Promise",
+    "definition": "الوعد اللي الجمهور يتوقعه منك كل مرة يتابعك."
+  },
+  {
+    "card": "ConceptCard",
     "accent": "mint",
-    "bullets": [
-      "Brand Document = ملف فيه الـ ٣ قرارات",
-      "ساعة شغل = اتساق سنة كاملة",
-      "الـ Boredom = Recognition، ثبّت ٦ شهور على الأقل"
-    ],
-    "title": "Brand Document وقاعدة الـ Brand"
+    "term": "Consistency",
+    "definition": "ثبات الرسالة والنبرة مع الوقت.",
+    "tag": "رسالة ثابتة"
   },
   {
     "card": "ScreenshotCard",
     "accent": "lavender",
     "src": "lessons/unique/creator-m7-l1-brand-basics.jpg",
-    "caption": "نموذج لـ Brand Document بسيط. ٤ ألوان مع كودهم، خط Heading وخط Body، لوجو بسيط. الـ Designer بياخد أسبوع لكتر التفاصيل — إنت محتاج ساعة. ابدأ بسيط وطوّر بعدين.",
-    "eyebrow": "شوف بنفسك",
-    "title": "Brand Document — ٣ قرارات في صفحة"
-  },
-  {
-    "card": "CompareCard",
-    "accent": "peach",
-    "right": {
-      "body": "كل بوست بـ palette + خط واحد. حتى لو الـ content مختلف، الشكل ثابت. بعد ٢٠ بوست، حد يشوف بوست جديد بدون اسمك، هيعرف إنه بتاعك. ده Brand شغّال.",
-      "label": "RIGHT — palette ثابتة + خط ثابت"
-    },
-    "title": "غلطة المبتدئ في الـ Brand",
-    "left": {
-      "label": "FAILURE — كل بوست بشكل مختلف",
-      "body": "النهارده ألوان فاتحة، بكرة داكنة، بعده Trendy aesthetic مع GIF. الجمهور بيـscroll عـ الـ feed بتاعك ومش بيحس إنه واحد. مفيش ثقة، مفيش recognition."
-    }
+    "caption": "الصورة بتوضح إزاي الشكل يخدم الفكرة الأساسية، مش ياخد مكانها.",
+    "title": "مثال عملي لهوية واضحة",
+    "eyebrow": "شكل بصري"
   },
   {
     "card": "CTACard",
-    "accent": "yellow",
-    "eyebrow": "دورك دلوقتي",
-    "tagline": "طبق اللي اتعلمته في الدرس ده وجاوب على الأسئلة عشان تعمل Brand Document بتاعك.",
-    "highlight": "Brand Document",
-    "title": "اعمل Brand Document في ساعة"
+    "accent": "peach",
+    "title": "سؤال واحد للتثبيت",
+    "tagline": "جاوب على السؤال عشان تثبت المعلومات دي في دماغك.",
+    "highlight": "اختبر فهمك",
+    "eyebrow": "دورك دلوقتي"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [767, 264, 316, 227, 237, 363, 257, 373, 245, 601, 588, 429, 604, 651, 1079, 375];
+export const SCENE_FRAMES: number[] = [384, 408, 390, 526, 417, 331, 397, 423, 313];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
