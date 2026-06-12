@@ -5,136 +5,85 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "chip": "أهلًا بيك",
-    "highlight": "RAG",
-    "subtitle": "الـ LLM لوحده مش عارف منتجك. RAG بيخلّيه يرد من معرفتك إنت.",
-    "title": "RAG جوه الـ Workflow"
+    "subtitle": "ليه دلوقتي؟ عشان عميلك ياخد إجابة صح من ملفاتك. هتعمل إيه بعد الدرس؟ هترسم workflow بسيط: سؤال → مصدر → رد. ده مختلف عن Builder، هنا RAG جوه سير عملك.",
+    "chip": "بداية الدرس",
+    "title": "هتفهم إيه النهاردة؟",
+    "highlight": "RAG = الرد الآلي يجاوب من مستندات شغلك"
   },
   {
     "card": "BulletsCard",
     "accent": "lavender",
+    "title": "البوت قال سعر غلط — والعميل صدّق",
     "bullets": [
-      "لو خلصت Builder M9، عارف الـ pipeline: Embeddings، Vector Search، LLM Call. هما نفس الـ 3 خطوات بالظبط.",
-      "الفرق إن في Builder بتكتب الكود، هنا بتسحب 3 nodes جاهزين في n8n وتوصلهم.",
-      "لو مكملتش Builder M9: الـ RAG يعني الـ AI يرد من معرفتك إنت، مش من معرفته العامة. كفاية تقرا اللي جاي."
-    ],
-    "title": "نفس RAG اللي اتعلمناه — بس بـ nodes"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "term": "Chunking",
-    "definition": "تقطيع الملفات الطويلة لحتت صغيرة عشان الذكاء الاصطناعي يفهمها براحته.",
-    "tag": "تقطيع الملفات"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "term": "Embeddings",
-    "definition": "تحويل الكلام لأرقام بتعبر عن معناه عشان الكمبيوتر يفهمه ويقارنه.",
-    "tag": "تحويل الكلام لأرقام"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "term": "Vector DB (Database)",
-    "definition": "مخزن شاطر بيسيف البيانات بالأرقام ويخليك تدور فيها بالمعنى مش بالكلمة.",
-    "tag": "مخزن بيانات ذكي"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "term": "Indexing",
-    "definition": "عملية تنظيم وتجهيز ملفاتك وتخزينها في المخزن عشان تبقى جاهزة للبحث.",
-    "tag": "تجهيز الملفات"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "tag": "استخراج المعلومة",
-    "term": "Retrieval",
-    "definition": "إنك تشد وتطلع المعلومة المناسبة من الداتابيز وقت ما الذكاء الاصطناعي يحتاجها."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "term": "RAG (Retrieval-Augmented Generation)",
-    "definition": "إنك تخلي الذكاء الاصطناعي يذاكر ملفاتك أنت قبل ما يجاوب على أي سؤال.",
-    "tag": "AI من معرفتك"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "tag": "توصيل الأدوات",
-    "term": "Connecting Nodes",
-    "definition": "توصيل أدوات الشغل ببعض في n8n عشان المهام تنفذ بعضها أوتوماتيك."
+      "شغّلت رد آلي ذكي على استفسارات العملاء. عميل سأل «سعر الباقة الذهبية؟» — البوت رد برقم من عنده.",
+      "الرقم غلط. العميل زعل أو اشترى بتوقعات غلط. إنت بتصلّح يدوي وبتعتذر.",
+      "المشكلة: الـ AI بيجاوب من معرفة عامة مش من ملفاتك. RAG بيحل ده — يبحث في مصادرك الأول وبعدين يكتب الرد."
+    ]
   },
   {
     "card": "BulletsCard",
-    "accent": "yellow",
+    "accent": "peach",
     "bullets": [
-      "Indexing (مرة واحدة): الـ docs/FAQ بتاعتك → chunks → embeddings → تتخزّن في Vector DB.",
-      "Retrieval (وقت كل سؤال): سؤال المستخدم → embedding → بحث في الـ Vector DB → جايب top 3 chunks.",
-      "Generation: الـ chunks دي + السؤال بيتبعتوا للـ LLM كـ context، فبيرد من بياناتك إنت مش من المعرفة العامة."
+      "بدون RAG: السؤال → AI → رد من تخمين. ممكن يكون صح — وممكن يخترع.",
+      "مع RAG في Automator: السؤال → سحب من FAQ أو شيت الأسعار → AI يصيغ الرد من المقتطف.",
+      "مرة واحدة: جهّز مصدر واحد (أسئلة شائعة، قائمة أسعار، سياسة استرجاع).",
+      "كل سؤال جديد: السير يشتغل لوحده — يسحب المقتطف ويرد. مش محتاج تفتح n8n أو Make دلوقتي."
     ],
-    "title": "RAG = خطوتين قبل الـ LLM"
-  },
-  {
-    "card": "ScreenshotCard",
-    "accent": "pink",
-    "eyebrow": "شوف بنفسك",
-    "src": "lessons/unique/automator-m5-l2-rag-in-n8n.jpg",
-    "title": "RAG في المنصة بتاعتنا",
-    "caption": "مساعد المنصة مش بيرد من تدريب الموديل بس — بيعمل retrieval من الدروس بتاعتنا الأول، وبعدين بيرد. ده اللي هتعمله في n8n: نفس الـ 3 خطوات (Embed → Search → LLM Call) بس كـ nodes."
+    "title": "RAG = ابحث في معرفتك — وبعدين اكتب الرد"
   },
   {
     "card": "CompareCard",
-    "accent": "mintDeep",
+    "accent": "yellow",
     "left": {
-      "label": "FAILURE — LLM بدون RAG",
-      "body": "بتسأل البوت 'سعر المنتج X؟'. الـ LLM ميعرفش، فيخترع رقم. العميل يجي يشتري بالسعر ده وإنت في ورطة."
+      "label": "AI بدون RAG",
+      "body": "«إيه مدة التوصيل؟» — البوت يخمّن «٢–٣ أيام» من معرفة عامة. عندك مناطق بتوصل في ٥ أيام — العميل مستني غلط."
     },
-    "title": "Plain LLM vs RAG",
     "right": {
-      "label": "RIGHT — LLM + RAG",
-      "body": "بتعمل retrieval من Vector DB فيها الـ price list. الـ chunk اللي فيه السعر بيتحط في الـ prompt. الـ LLM يرد بالسعر الصح بصياغة لطيفة. غلطة الاختراع ماتحصلش."
-    }
+      "label": "AI + RAG",
+      "body": "«إيه مدة التوصيل؟» — الأوتوميشن يسحب من جدول التوصيل بتاعك: «القاهرة ١–٢ يوم، الصعيد ٣–٥». الرد دقيق من ملفك."
+    },
+    "title": "تخمين vs رد من مصدرك"
   },
   {
-    "card": "CTACard",
+    "card": "ConceptCard",
+    "accent": "pink",
+    "tag": "مكان القراءة",
+    "term": "Knowledge Source (مصدر المعرفة)",
+    "definition": "المكان اللي الأوتوميشن يقرأ منه — FAQ، Google Doc، قائمة أسعار، سياسات."
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "mintDeep",
+    "tag": "عملية السحب",
+    "term": "Retrieval (الاسترجاع)",
+    "definition": "لما سؤال يوصل، النظام يسحب أقرب مقتطف من مصدرك قبل ما يكتب الرد."
+  },
+  {
+    "card": "ScreenshotCard",
     "accent": "mint",
-    "title": "ابني RAG flow بسيط",
-    "highlight": "ابني RAG flow بسيط",
-    "eyebrow": "دورك دلوقتي",
-    "tagline": "يلا نطبق ونشوف إزاي نبني RAG flow بسيط بنفسك."
-  },
-  {
-    "card": "CTACard",
-    "accent": "lavender",
-    "tagline": "يلا نطبق وننفذ RAG workflow كامل في n8n لمصدر حقيقي.",
-    "title": "صمّم RAG Workflow في n8n لمصدر حقيقي",
-    "highlight": "صمّم RAG Workflow",
-    "eyebrow": "Mission"
+    "caption": "السؤال يمرّ على مصدرك الأول — وبعدين الـ AI يصيغ الرد. المعرفة ثابتة؛ الصياغة مرنة.",
+    "title": "مسار السؤال للمصدر للرد",
+    "src": "lessons/unique/automator-m5-l2-rag-in-n8n.jpg",
+    "eyebrow": "لقطة بصرية"
   },
   {
     "card": "BulletsCard",
-    "accent": "peach",
+    "accent": "lavender",
     "bullets": [
-      "Step 1: embed سؤال المستخدم.",
-      "Step 2: search في knowledge_chunks بـ cosine similarity.",
-      "Step 3: inject أعلى 5 chunks في الـ LLM prompt."
+      "فهمت إيه؟ في Automator، RAG = الرد الآلي من مستندات شغلك — مش تخمين ولا بناء تطبيق.",
+      "تقدر تعمل إيه؟ عندك رسمة workflow: سؤال → مصدر → رد."
     ],
-    "title": "RAG في المساعد = نفس الفكرة بدل n8n"
+    "title": "إيه اللي عندك دلوقتي؟"
   },
   {
     "card": "CTACard",
-    "accent": "yellow",
-    "tagline": "دلوقتي عرفت إزاي الـ RAG بيشتغل. نتقابل في الدرس الجاي عشان نشوف 'Agents بياخدوا قرارات'.",
-    "highlight": "شوفك في الدرس الجاي",
-    "eyebrow": "الخلاصة",
-    "title": "RAG بيخلي الـ AI أذكى"
+    "accent": "peach",
+    "title": "جاوب على سؤال سريع",
+    "highlight": "عشان تتأكد إنك فهمت RAG",
+    "eyebrow": "دورك دلوقتي",
+    "tagline": "اختبر فهمك لـ RAG في سؤال واحد بس!"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [502, 569, 390, 364, 429, 419, 375, 484, 414, 726, 531, 571, 379, 402, 547, 496];
+export const SCENE_FRAMES: number[] = [499, 526, 541, 570, 501, 516, 471, 471, 261];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);

@@ -28,7 +28,6 @@ import { SCENES as L_automator_m2_l3_decide_what_to_automate_S, SCENE_FRAMES as 
 import { SCENES as L_automator_m5_l3_agents_S, SCENE_FRAMES as L_automator_m5_l3_agents_F, TOTAL_FRAMES as L_automator_m5_l3_agents_T } from "./lessons-generated/automator-m5-l3-agents.gen";
 import { SCENES as L_automator_m5_l1_llm_in_flow_S, SCENE_FRAMES as L_automator_m5_l1_llm_in_flow_F, TOTAL_FRAMES as L_automator_m5_l1_llm_in_flow_T } from "./lessons-generated/automator-m5-l1-llm-in-flow.gen";
 import { SCENES as L_automator_m2_l1_systems_view_S, SCENE_FRAMES as L_automator_m2_l1_systems_view_F, TOTAL_FRAMES as L_automator_m2_l1_systems_view_T } from "./lessons-generated/automator-m2-l1-systems-view.gen";
-import { SCENES as L_automator_m5_l2_rag_in_n8n_S, SCENE_FRAMES as L_automator_m5_l2_rag_in_n8n_F, TOTAL_FRAMES as L_automator_m5_l2_rag_in_n8n_T } from "./lessons-generated/automator-m5-l2-rag-in-n8n.gen";
 import { SCENES as L_automator_m3_l3_filters_routers_S, SCENE_FRAMES as L_automator_m3_l3_filters_routers_F, TOTAL_FRAMES as L_automator_m3_l3_filters_routers_T } from "./lessons-generated/automator-m3-l3-filters-routers.gen";
 import { SCENES as L_automator_m6_l3_follow_up_S, SCENE_FRAMES as L_automator_m6_l3_follow_up_F, TOTAL_FRAMES as L_automator_m6_l3_follow_up_T } from "./lessons-generated/automator-m6-l3-follow-up.gen";
 import { SCENES as L_automator_m6_l2_whatsapp_flow_S, SCENE_FRAMES as L_automator_m6_l2_whatsapp_flow_F, TOTAL_FRAMES as L_automator_m6_l2_whatsapp_flow_T } from "./lessons-generated/automator-m6-l2-whatsapp-flow.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_builder_m1_l1_what_is_llm_S, SCENE_FRAMES as L_builder_m1_l
 import { SCENES as L_builder_m10_l2_first_users_S, SCENE_FRAMES as L_builder_m10_l2_first_users_F, TOTAL_FRAMES as L_builder_m10_l2_first_users_T } from "./lessons-generated/builder-m10-l2-first-users.gen";
 import { SCENES as L_analyst_m2_l1_feeling_to_question_S, SCENE_FRAMES as L_analyst_m2_l1_feeling_to_question_F, TOTAL_FRAMES as L_analyst_m2_l1_feeling_to_question_T } from "./lessons-generated/analyst-m2-l1-feeling-to-question.gen";
 import { SCENES as L_business_m2_l1_customer_lifecycle_S, SCENE_FRAMES as L_business_m2_l1_customer_lifecycle_F, TOTAL_FRAMES as L_business_m2_l1_customer_lifecycle_T } from "./lessons-generated/business-m2-l1-customer-lifecycle.gen";
+import { SCENES as L_automator_m5_l2_rag_in_n8n_S, SCENE_FRAMES as L_automator_m5_l2_rag_in_n8n_F, TOTAL_FRAMES as L_automator_m5_l2_rag_in_n8n_T } from "./lessons-generated/automator-m5-l2-rag-in-n8n.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -144,7 +144,6 @@ export const LESSONS: LessonModule[] = [
     { id: "automator-m5-l3-agents", scenes: L_automator_m5_l3_agents_S, sceneFrames: L_automator_m5_l3_agents_F, totalFrames: L_automator_m5_l3_agents_T },
     { id: "automator-m5-l1-llm-in-flow", scenes: L_automator_m5_l1_llm_in_flow_S, sceneFrames: L_automator_m5_l1_llm_in_flow_F, totalFrames: L_automator_m5_l1_llm_in_flow_T },
     { id: "automator-m2-l1-systems-view", scenes: L_automator_m2_l1_systems_view_S, sceneFrames: L_automator_m2_l1_systems_view_F, totalFrames: L_automator_m2_l1_systems_view_T },
-    { id: "automator-m5-l2-rag-in-n8n", scenes: L_automator_m5_l2_rag_in_n8n_S, sceneFrames: L_automator_m5_l2_rag_in_n8n_F, totalFrames: L_automator_m5_l2_rag_in_n8n_T },
     { id: "automator-m3-l3-filters-routers", scenes: L_automator_m3_l3_filters_routers_S, sceneFrames: L_automator_m3_l3_filters_routers_F, totalFrames: L_automator_m3_l3_filters_routers_T },
     { id: "automator-m6-l3-follow-up", scenes: L_automator_m6_l3_follow_up_S, sceneFrames: L_automator_m6_l3_follow_up_F, totalFrames: L_automator_m6_l3_follow_up_T },
     { id: "automator-m6-l2-whatsapp-flow", scenes: L_automator_m6_l2_whatsapp_flow_S, sceneFrames: L_automator_m6_l2_whatsapp_flow_F, totalFrames: L_automator_m6_l2_whatsapp_flow_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m10-l2-first-users", scenes: L_builder_m10_l2_first_users_S, sceneFrames: L_builder_m10_l2_first_users_F, totalFrames: L_builder_m10_l2_first_users_T },
     { id: "analyst-m2-l1-feeling-to-question", scenes: L_analyst_m2_l1_feeling_to_question_S, sceneFrames: L_analyst_m2_l1_feeling_to_question_F, totalFrames: L_analyst_m2_l1_feeling_to_question_T },
     { id: "business-m2-l1-customer-lifecycle", scenes: L_business_m2_l1_customer_lifecycle_S, sceneFrames: L_business_m2_l1_customer_lifecycle_F, totalFrames: L_business_m2_l1_customer_lifecycle_T },
+    { id: "automator-m5-l2-rag-in-n8n", scenes: L_automator_m5_l2_rag_in_n8n_S, sceneFrames: L_automator_m5_l2_rag_in_n8n_F, totalFrames: L_automator_m5_l2_rag_in_n8n_T },
   /* @lesson-entries-end */
 ];
