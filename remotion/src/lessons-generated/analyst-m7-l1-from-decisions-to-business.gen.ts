@@ -5,114 +5,86 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "highlight": "Business بيشغّلها",
-    "chip": "أهلًا",
-    "subtitle": "Analyst بيقولك «خد القرار ده». Business بيحوّله لنظام يومي + علاقات + توسع.",
-    "title": "قراراتك جاهزة"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "عملاء محتملين",
-    "term": "Leads (العملاء المحتملين)",
-    "definition": "ناس عينيها على شغلك وممكن يشتروا بس لسه مطلعوش المحفظة."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "definition": "طريقة تنظيم شغل بتشوف فيها الحاجة وهي بتتحرك من البداية للنهاية.",
-    "tag": "تنظيم الشغل",
-    "term": "Kanban Board"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "tag": "لوحة تحكم",
-    "term": "Dashboard (لوحة تحكم)",
-    "definition": "شاشة بتجمع لك أهم الأرقام والمؤشرات عشان تتابع شغلك بلمحة."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "definition": "الـ Analyst بيفهم البيانات، والـ Business هو صاحب القرار اللي بيوجه الشغل.",
-    "tag": "فرق الأدوار",
-    "term": "Analyst vs. Business"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "tag": "دراسة نظرية",
-    "term": "Academic Exercise (تمرين أكاديمي)",
-    "definition": "كلام نظري أو دراسة على الورق بعيد عن واقع السوق والصعوبات."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "tag": "تحسين مستمر",
-    "term": "Feedback Loop (الدائرة المغلقة)",
-    "definition": "عملية متكررة بتبدأ من خطوة وتلف ترجع لنفس النقطة عشان تحسن النتائج."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "definition": "برامج أو أدوات بتنفذ الخطوات اليومية المتكررة بدل ما تعملها بإيدك.",
-    "tag": "أتمتة الشغل",
-    "term": "Operational System (نظام التشغيل)"
+    "subtitle": "بعد الريفيو والأسئلة والتفسير، محتاج تربط قراراتك باتجاه البيزنس.",
+    "highlight": "القرارات الأسبوعية الصغيرة بتتجمّع لهدف أكبر",
+    "title": "هتفهم إيه النهاردة؟",
+    "chip": "بداية الدرس"
   },
   {
     "card": "BulletsCard",
-    "accent": "peach",
-    "title": "الـ Loop الكامل",
+    "accent": "lavender",
     "bullets": [
-      "Builder بنى المنتج → بيانات.",
-      "Creator جاب الـ Reach → leads.",
-      "Automator وصّل كل ده → جمعها في مكان واحد.",
-      "Analyst سأل وفسّر → قرارات.",
-      "Business بياخد القرارات دي ويحوّلها لنظام يومي + علاقات عملاء + خطط توسع.",
-      "وبعدين Business بيدّي feedback يرجع Builder/Creator/Automator — وتبدأ الدورة من جديد بمستوى أعلى."
-    ]
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "yellow",
-    "bullets": [
-      "قرارات الـ Analyst بتدخل في Kanban للتنفيذ.",
-      "بتمر بمراحل To Do، Doing، لحد ما تبقى Done."
+      "كل أسبوع قرار: «نزود منشورات» — «نخفّض سعر» — «نجرب حملة» — ومفيش صورة للهدف الكبير.",
+      "Analyst بيطلّع قرارات. Business بيحوّلها لنظام يومي — بس من غير هدف، القرارات بتتشتت.",
+      "الـ AI يساعدك تربط القرار بالهدف وتسأل «ده بيقرّبنا ولا بيشتّتنا؟» — إنت تختار الأولوية."
     ],
-    "title": "من قرارات لـ Business System"
+    "title": "قرارات كتير — ومفيش اتجاه"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "peach",
+    "bullets": [
+      "كل قرار أسبوعي لازم يخدم هدف أكبر — وإلا بيبقى busy work.",
+      "Decision Backlog: قائمة قرارات Analyst — Business يحوّلها لـ To Do · Doing · Done.",
+      "٣ أرقام progress تربط الأسبوع بالهدف: مثلاً leads، conversion، revenue — أو progress، responses، results.",
+      "Feedback loop: Business يرجّع feedback لـ Builder/Creator/Automator — والدورة تبدأ من جديد."
+    ],
+    "title": "قرارات أسبوعية → هدف ٦ شهور"
   },
   {
     "card": "CompareCard",
-    "accent": "pink",
-    "right": {
-      "label": "RIGHT — Business بيشغّلها",
-      "body": "كل قرار له owner + deadline + مكان في الـ system. التنفيذ بقى تلقائي."
-    },
-    "title": "قرارات في درج ولا نظام؟",
+    "accent": "yellow",
+    "title": "قرارات في الدرج vs قرارات في نظام",
     "left": {
-      "body": "Analyst بيطلّع قرارات أسبوعيًا. مفيش حد بينفّذ. بعد شهرين بقت document ميّت.",
-      "label": "FAILURE — قائمة قرارات بتطول"
+      "label": "قائمة قرارات بتطول",
+      "body": "Analyst بيطلّع قرارات أسبوعيًا. مفيش حد بينفّذ. بعد شهرين = document ميّت."
+    },
+    "right": {
+      "label": "قرار → owner → deadline",
+      "body": "كل قرار له مكان في النظام. التنفيذ بقى جزء من الشغل اليومي — مش «لما نفضى»."
     }
   },
   {
-    "card": "CTACard",
+    "card": "ConceptCard",
+    "accent": "pink",
+    "term": "Decision Backlog (مخزون قرارات)",
+    "definition": "قائمة قرارات Analyst جاهزة للتنفيذ — كل واحد له owner وموعد.",
+    "tag": "تجربة رد ٢٤ ساعة"
+  },
+  {
+    "card": "ConceptCard",
     "accent": "mintDeep",
-    "tagline": "حل الأسئلة عشان تحوّل القرارات لأكشن حقيقي.",
-    "title": "جهّز الـ Decision Backlog",
-    "eyebrow": "دورك دلوقتي",
-    "highlight": "وابدأ التطبيق"
+    "term": "Progress Numbers (أرقام التقدّم)",
+    "tag": "leads، conversion، retention",
+    "definition": "٣ أرقام تقيس إذا القرارات الأسبوعية بتقرّبك من الهدف الكبير."
   },
   {
     "card": "BulletsCard",
     "accent": "mint",
     "bullets": [
-      "كل insight له roadmap_item مرتبط بيه.",
-      "الـ item بياخد phase حسب أولوية الـ insight.",
-      "معدل إنجاز القرارات بنتابعه أول بأول."
+      "قرارات Analyst بتتحول لـ Kanban.",
+      "الـ Kanban ده بيبقى فيه 3 مراحل: To Do · Doing · Done.",
+      "كل قرار لازم يكون ليه owner مسؤول عنه."
     ],
-    "title": "الـ Analyst بيحوّل القرار لـ Roadmap Item"
+    "title": "من القرار للتنفيذ"
+  },
+  {
+    "card": "CTACard",
+    "accent": "lavender",
+    "tagline": "فكّر كويس، وشوف إزاي تحوّل القرارات لنظام يومي وشغل حقيقي.",
+    "highlight": "Analyst قرر: «خصم ١٥٪ لأول طلب». إيه أول خطوة Business عشان يحوّله لنظام؟",
+    "eyebrow": "دورك دلوقتي",
+    "title": "سؤال واحد — مش امتحان"
+  },
+  {
+    "card": "CTACard",
+    "accent": "peach",
+    "tagline": "الدرس الجاي هنشوف Business Path، إزاي تحوّل القرارات لنظام يومي وتوسع.",
+    "highlight": "فهمت إيه؟ القرارات الأسبوعية بتتجمّع لهدف أكبر",
+    "eyebrow": "خلّصت الربط",
+    "title": "إيه اللي عندك دلوقتي؟"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [327, 405, 411, 357, 373, 385, 449, 405, 909, 477, 747, 400, 581];
+export const SCENE_FRAMES: number[] = [556, 765, 937, 767, 774, 699, 617, 576, 742];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
