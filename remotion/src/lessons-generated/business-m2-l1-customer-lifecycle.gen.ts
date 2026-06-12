@@ -5,133 +5,97 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "highlight": "أهلًا",
-    "title": "هو رحلة من 5 محطات",
-    "subtitle": "أحمد كان بيخسر 60% من العملاء بعد أول أوردر... لحد ما اكتشف الـ Customer Journey Map.",
-    "chip": "العميل مش صفقة"
+    "title": "هتفهم إيه النهاردة؟",
+    "subtitle": "الـ AI يحسّن كل محطة.",
+    "chip": "أهلًا",
+    "highlight": "العميل رحلة مش صفقة."
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "lavender",
-    "tag": "أحمد: إعلان فيسبوك → كومنت → أوردر → أكل → رسالة بعد الأكل → ريڤيو.",
-    "term": "Customer Journey",
-    "definition": "كل المحطات اللي العميل بيعدّي عليها من أول ما يسمع عنك لحد ما يرشّحك لصحابه."
+    "bullets": [
+      "كتير بيشوفوا العميل = «حد اشترى وخلاص».",
+      "نسبة الرجوع ضعيفة — والتكلفة تزيد كل شهر.",
+      "المشكلة غالبًا في محطة ضعيفة في الرحلة.",
+      "الـ AI يساعدك بس لازم تعرف فين التسريب."
+    ],
+    "title": "بتصرف على إعلانات — والعملاء مش بيرجعوا"
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "peach",
-    "tag": "حد شاف بوست المطعم على فيسبوك أو سمع من صاحبه.",
-    "term": "Awareness",
-    "definition": "العميل بدأ يعرف إنك موجود."
+    "bullets": [
+      "Awareness (وعي): العميل عرف إنك موجود.",
+      "Consideration (تفكير): بيقارن بينك وبين غيرك.",
+      "Purchase (شراء): أول صفقة فعلية.",
+      "Retention (احتفاظ): يرجع تاني.",
+      "Advocacy (ترشيح): يقول لغيره.",
+      "الـ AI يساعد في الرسائل، بس التشخيص يبدأ من رسم الرحلة."
+    ],
+    "title": "٥ محطات — وكل محطة فرصة"
   },
   {
     "card": "ConceptCard",
     "accent": "yellow",
-    "tag": "حد طلب أوردر فعلاً.",
-    "term": "Acquisition",
-    "definition": "تحوّل من \"عارفك\" لـ \"اشترى منك\"."
+    "definition": "كل المحطات من أول سماع عنك لحد الترشيح — مش لحظة الشراء بس.",
+    "tag": "من السماع للترشيح",
+    "term": "Customer Journey (رحلة العميل)"
   },
   {
     "card": "ConceptCard",
     "accent": "pink",
-    "tag": "أحمد بعد التحسين: 47 من كل 100 عميل يرجعوا في الشهر.",
-    "term": "Retention",
-    "definition": "نسبة العملاء اللي بيرجعوا تاني."
+    "tag": "فين التسريب؟",
+    "term": "Weakest Stage (أضعف محطة)",
+    "definition": "المحطة اللي أكتر ناس بتقع عندها — تحسينها أغلبًا أرخص من جلب عملاء جداد."
   },
   {
-    "card": "ConceptCard",
+    "card": "CompareCard",
     "accent": "mintDeep",
-    "tag": "العميل بيقول لصحابه: \"المطعم ده تحفة، اطلبوا منهم\".",
-    "term": "Advocacy",
-    "definition": "العميل بقى مرشّح ليك ببلاش."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "tag": "أحمد كان عنده leak كبير بين \"اشترى\" و \"رجع\" — 60% بيختفوا.",
-    "term": "Funnel Leak",
-    "definition": "نقطة في الرحلة الناس بتقع منها وما تكمّلش."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "رسالة واتساب شكر، تذكير بالمناسبة، عرض خاص.",
-    "term": "Touchpoint",
-    "definition": "أي لحظة تلامس فيها العميل بعد البيع."
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "peach",
-    "title": "الـ 5 محطات اللي لازم ترسمها",
-    "bullets": [
-      "Awareness — إزاي العميل بيعرف بوجودك؟ (إعلان، صديق، Google).",
-      "Acquisition — إيه اللي بيخلّيه يقرّر يجرّب أول مرة؟"
-    ]
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "yellow",
-    "title": "الـ 5 محطات اللي لازم ترسمها",
-    "bullets": [
-      "Activation — أول تجربة فعلية. هي إيجابية ولا سلبية؟",
-      "Retention — هل في سبب يرجع تاني؟ لو لأ، هتفقده.",
-      "Advocacy — هل في حاجة بتخلّيه يرشّحك؟ مش بيحصل لوحده."
-    ]
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "pink",
-    "bullets": [
-      "عندي بيزنس [النوع، الموقع، نوع العميل].",
-      "عميلي النموذجي [وصف بشري: العمر، الدخل، الموقف اللي بيشتري فيه]."
-    ],
-    "title": "Customer Journey Mapper"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "mintDeep",
-    "title": "Customer Journey Mapper",
-    "bullets": [
-      "ارسملي Customer Journey بـ 5 stages (Awareness, Acquisition, Activation, Retention, Advocacy).",
-      "في كل stage حدّدلي: ١) إيه اللي بيحصل فعلًا دلوقتي؟ ٢) إيه الـ leak المتوقّع؟ ٣) Touchpoint واحد رخيص ممكن أضيفه يقلّل الـ leak."
-    ]
+    "right": {
+      "body": "ترسم الرحلة، تكتشف إن المتابعة بعد الشراء ضعيفة. رسالة بسيطة + متابعة بالـ AI — نفس العملاء يرجعوا أكتر.",
+      "label": "تصلّح أضعف محطة"
+    },
+    "left": {
+      "body": "تزود الإعلانات. العملاء الجداد ييجوا — بس نفس النسبة ما بترجعش. التكلفة تطلع والربح يثبت.",
+      "label": "تركّز على جلب جداد بس"
+    },
+    "title": "إعلانات أكتر vs إصلاح محطة ضعيفة"
   },
   {
     "card": "BulletsCard",
     "accent": "mint",
+    "title": "خريطة الـ ٥ محطات",
     "bullets": [
-      "افتح ورقة (أو Notion). ارسم 5 أعمدة: Awareness, Acquisition, Activation, Retention, Advocacy."
-    ],
-    "title": "ارسم Journey Map بتاعك في 15 دقيقة"
+      "فكّرها قمع: كل محطة فيها ناس بتكمل وناس بتوقف.",
+      "الهدف تعرف فين التسريب.",
+      "مش بس تملى القمع من فوق."
+    ]
   },
   {
-    "card": "BulletsCard",
+    "card": "CTACard",
     "accent": "lavender",
-    "bullets": [
-      "افتح AI. الصق الـ Prompt القاتل وعبّيه ببياناتك إنت — مش أحمد.",
-      "خد رد AI واملا الـ 5 أعمدة بـ: \"اللي بيحصل دلوقتي\" في كل محطة."
-    ],
-    "title": "ارسم Journey Map بتاعك في 15 دقيقة"
+    "eyebrow": "دورك دلوقتي",
+    "title": "سؤال واحد — مش امتحان",
+    "tagline": "جاوب السؤال عشان تتأكد إنك فهمت الدرس.",
+    "highlight": "اختبر فهمك"
   },
   {
-    "card": "BulletsCard",
+    "card": "CTACard",
     "accent": "peach",
-    "bullets": [
-      "تحت كل عمود اكتب: الـ Leak اللي AI افترضه + Touchpoint مقترح.",
-      "اختار محطة واحدة فيها أكبر Leak. ده هيبقى مشروعك الأسبوع ده.",
-      "اكتب جنبها: \"الـ Touchpoint اللي هضيفه = [محدّد]، التكلفة = [بالجنيه أو الوقت]، الميعاد = [تاريخ التطبيق].\""
-    ],
-    "title": "ارسم Journey Map بتاعك في 15 دقيقة"
+    "highlight": "طبق اللي اتعلمته",
+    "tagline": "المهمة دي تطبيق على بيزنسك — مش نظرية.",
+    "eyebrow": "مهمتك",
+    "title": "ارسم رحلة عميل — وحدّد الضعف"
   },
   {
     "card": "CTACard",
     "accent": "yellow",
-    "eyebrow": "دورك دلوقتي",
-    "tagline": "طبّق اللي اتعلّمته وجاوب على الأسئلة دي. الدرس الجاي: 3 رسائل بتفصل بين \"اختفى\" و \"رجع 5 مرات\".",
-    "highlight": "اختبر فهمك",
-    "title": "اختبر فهمك"
+    "eyebrow": "خلّصت بداية النمو",
+    "title": "إيه اللي عندك دلوقتي؟",
+    "tagline": "شوفك في الدرس الجاي.",
+    "highlight": "ملخص الدرس"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [491, 445, 345, 377, 381, 377, 420, 425, 364, 547, 453, 471, 407, 402, 485, 299];
+export const SCENE_FRAMES: number[] = [623, 775, 1063, 370, 379, 793, 414, 274, 283, 439];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
