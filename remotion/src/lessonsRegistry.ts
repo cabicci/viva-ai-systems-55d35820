@@ -64,7 +64,6 @@ import { SCENES as L_business_m1_l3_ai_thinking_partner_S, SCENE_FRAMES as L_bus
 import { SCENES as L_business_m3_l1_delegate_or_automate_S, SCENE_FRAMES as L_business_m3_l1_delegate_or_automate_F, TOTAL_FRAMES as L_business_m3_l1_delegate_or_automate_T } from "./lessons-generated/business-m3-l1-delegate-or-automate.gen";
 import { SCENES as L_business_m4_l1_premature_scaling_S, SCENE_FRAMES as L_business_m4_l1_premature_scaling_F, TOTAL_FRAMES as L_business_m4_l1_premature_scaling_T } from "./lessons-generated/business-m4-l1-premature-scaling.gen";
 import { SCENES as L_business_m3_l4_hiring_onboarding_S, SCENE_FRAMES as L_business_m3_l4_hiring_onboarding_F, TOTAL_FRAMES as L_business_m3_l4_hiring_onboarding_T } from "./lessons-generated/business-m3-l4-hiring-onboarding.gen";
-import { SCENES as L_business_m2_l3_readiness_signals_S, SCENE_FRAMES as L_business_m2_l3_readiness_signals_F, TOTAL_FRAMES as L_business_m2_l3_readiness_signals_T } from "./lessons-generated/business-m2-l3-readiness-signals.gen";
 import { SCENES as L_business_m2_l4_pricing_cash_flow_S, SCENE_FRAMES as L_business_m2_l4_pricing_cash_flow_F, TOTAL_FRAMES as L_business_m2_l4_pricing_cash_flow_T } from "./lessons-generated/business-m2-l4-pricing-cash-flow.gen";
 import { SCENES as L_business_m4_l5_business_os_dashboard_S, SCENE_FRAMES as L_business_m4_l5_business_os_dashboard_F, TOTAL_FRAMES as L_business_m4_l5_business_os_dashboard_T } from "./lessons-generated/business-m4-l5-business-os-dashboard.gen";
 import { SCENES as L_intro_m1_l1_what_is_ai_S, SCENE_FRAMES as L_intro_m1_l1_what_is_ai_F, TOTAL_FRAMES as L_intro_m1_l1_what_is_ai_T } from "./lessons-generated/intro-m1-l1-what-is-ai.gen";
@@ -125,6 +124,7 @@ import { SCENES as L_automator_m2_l3_decide_what_to_automate_S, SCENE_FRAMES as 
 import { SCENES as L_automator_m6_l3_follow_up_S, SCENE_FRAMES as L_automator_m6_l3_follow_up_F, TOTAL_FRAMES as L_automator_m6_l3_follow_up_T } from "./lessons-generated/automator-m6-l3-follow-up.gen";
 import { SCENES as L_analyst_m3_l1_three_sources_S, SCENE_FRAMES as L_analyst_m3_l1_three_sources_F, TOTAL_FRAMES as L_analyst_m3_l1_three_sources_T } from "./lessons-generated/analyst-m3-l1-three-sources.gen";
 import { SCENES as L_builder_m3_l1_context_layer_S, SCENE_FRAMES as L_builder_m3_l1_context_layer_F, TOTAL_FRAMES as L_builder_m3_l1_context_layer_T } from "./lessons-generated/builder-m3-l1-context-layer.gen";
+import { SCENES as L_business_m2_l3_readiness_signals_S, SCENE_FRAMES as L_business_m2_l3_readiness_signals_F, TOTAL_FRAMES as L_business_m2_l3_readiness_signals_T } from "./lessons-generated/business-m2-l3-readiness-signals.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -180,7 +180,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m3-l1-delegate-or-automate", scenes: L_business_m3_l1_delegate_or_automate_S, sceneFrames: L_business_m3_l1_delegate_or_automate_F, totalFrames: L_business_m3_l1_delegate_or_automate_T },
     { id: "business-m4-l1-premature-scaling", scenes: L_business_m4_l1_premature_scaling_S, sceneFrames: L_business_m4_l1_premature_scaling_F, totalFrames: L_business_m4_l1_premature_scaling_T },
     { id: "business-m3-l4-hiring-onboarding", scenes: L_business_m3_l4_hiring_onboarding_S, sceneFrames: L_business_m3_l4_hiring_onboarding_F, totalFrames: L_business_m3_l4_hiring_onboarding_T },
-    { id: "business-m2-l3-readiness-signals", scenes: L_business_m2_l3_readiness_signals_S, sceneFrames: L_business_m2_l3_readiness_signals_F, totalFrames: L_business_m2_l3_readiness_signals_T },
     { id: "business-m2-l4-pricing-cash-flow", scenes: L_business_m2_l4_pricing_cash_flow_S, sceneFrames: L_business_m2_l4_pricing_cash_flow_F, totalFrames: L_business_m2_l4_pricing_cash_flow_T },
     { id: "business-m4-l5-business-os-dashboard", scenes: L_business_m4_l5_business_os_dashboard_S, sceneFrames: L_business_m4_l5_business_os_dashboard_F, totalFrames: L_business_m4_l5_business_os_dashboard_T },
     { id: "intro-m1-l1-what-is-ai", scenes: L_intro_m1_l1_what_is_ai_S, sceneFrames: L_intro_m1_l1_what_is_ai_F, totalFrames: L_intro_m1_l1_what_is_ai_T },
@@ -241,5 +240,6 @@ export const LESSONS: LessonModule[] = [
     { id: "automator-m6-l3-follow-up", scenes: L_automator_m6_l3_follow_up_S, sceneFrames: L_automator_m6_l3_follow_up_F, totalFrames: L_automator_m6_l3_follow_up_T },
     { id: "analyst-m3-l1-three-sources", scenes: L_analyst_m3_l1_three_sources_S, sceneFrames: L_analyst_m3_l1_three_sources_F, totalFrames: L_analyst_m3_l1_three_sources_T },
     { id: "builder-m3-l1-context-layer", scenes: L_builder_m3_l1_context_layer_S, sceneFrames: L_builder_m3_l1_context_layer_F, totalFrames: L_builder_m3_l1_context_layer_T },
+    { id: "business-m2-l3-readiness-signals", scenes: L_business_m2_l3_readiness_signals_S, sceneFrames: L_business_m2_l3_readiness_signals_F, totalFrames: L_business_m2_l3_readiness_signals_T },
   /* @lesson-entries-end */
 ];
