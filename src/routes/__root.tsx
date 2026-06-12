@@ -32,6 +32,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ea167ac2-2121-4c2e-bc11-5f44fed37196" },
     ],
     links: [
+      { rel: "icon", href: "/brand/masaarat-icon.png", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/brand/masaarat-icon.png" },
       {
         rel: "stylesheet",
         href: appCss,
