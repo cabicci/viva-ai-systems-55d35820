@@ -34,7 +34,6 @@ import { SCENES as L_builder_m9_l1_rag_S, SCENE_FRAMES as L_builder_m9_l1_rag_F,
 import { SCENES as L_builder_m9_l3_agents_S, SCENE_FRAMES as L_builder_m9_l3_agents_F, TOTAL_FRAMES as L_builder_m9_l3_agents_T } from "./lessons-generated/builder-m9-l3-agents.gen";
 import { SCENES as L_builder_m10_l1_deploy_domain_S, SCENE_FRAMES as L_builder_m10_l1_deploy_domain_F, TOTAL_FRAMES as L_builder_m10_l1_deploy_domain_T } from "./lessons-generated/builder-m10-l1-deploy-domain.gen";
 import { SCENES as L_builder_m5_l4_database_intro_S, SCENE_FRAMES as L_builder_m5_l4_database_intro_F, TOTAL_FRAMES as L_builder_m5_l4_database_intro_T } from "./lessons-generated/builder-m5-l4-database-intro.gen";
-import { SCENES as L_builder_m5_l3_backend_api_S, SCENE_FRAMES as L_builder_m5_l3_backend_api_F, TOTAL_FRAMES as L_builder_m5_l3_backend_api_T } from "./lessons-generated/builder-m5-l3-backend-api.gen";
 import { SCENES as L_builder_m5_l5_mini_win_S, SCENE_FRAMES as L_builder_m5_l5_mini_win_F, TOTAL_FRAMES as L_builder_m5_l5_mini_win_T } from "./lessons-generated/builder-m5-l5-mini-win.gen";
 import { SCENES as L_builder_m6_l1_idea_to_page_S, SCENE_FRAMES as L_builder_m6_l1_idea_to_page_F, TOTAL_FRAMES as L_builder_m6_l1_idea_to_page_T } from "./lessons-generated/builder-m6-l1-idea-to-page.gen";
 import { SCENES as L_business_m7_l1_full_ecosystem_S, SCENE_FRAMES as L_business_m7_l1_full_ecosystem_F, TOTAL_FRAMES as L_business_m7_l1_full_ecosystem_T } from "./lessons-generated/business-m7-l1-full-ecosystem.gen";
@@ -130,6 +129,7 @@ import { SCENES as L_builder_m5_l2_frontend_S, SCENE_FRAMES as L_builder_m5_l2_f
 import { SCENES as L_automator_m4_l3_error_handling_S, SCENE_FRAMES as L_automator_m4_l3_error_handling_F, TOTAL_FRAMES as L_automator_m4_l3_error_handling_T } from "./lessons-generated/automator-m4-l3-error-handling.gen";
 import { SCENES as L_automator_m4_l2_webhooks_api_S, SCENE_FRAMES as L_automator_m4_l2_webhooks_api_F, TOTAL_FRAMES as L_automator_m4_l2_webhooks_api_T } from "./lessons-generated/automator-m4-l2-webhooks-api.gen";
 import { SCENES as L_analyst_m5_l1_four_numbers_dashboard_S, SCENE_FRAMES as L_analyst_m5_l1_four_numbers_dashboard_F, TOTAL_FRAMES as L_analyst_m5_l1_four_numbers_dashboard_T } from "./lessons-generated/analyst-m5-l1-four-numbers-dashboard.gen";
+import { SCENES as L_builder_m5_l3_backend_api_S, SCENE_FRAMES as L_builder_m5_l3_backend_api_F, TOTAL_FRAMES as L_builder_m5_l3_backend_api_T } from "./lessons-generated/builder-m5-l3-backend-api.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -153,7 +153,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m9-l3-agents", scenes: L_builder_m9_l3_agents_S, sceneFrames: L_builder_m9_l3_agents_F, totalFrames: L_builder_m9_l3_agents_T },
     { id: "builder-m10-l1-deploy-domain", scenes: L_builder_m10_l1_deploy_domain_S, sceneFrames: L_builder_m10_l1_deploy_domain_F, totalFrames: L_builder_m10_l1_deploy_domain_T },
     { id: "builder-m5-l4-database-intro", scenes: L_builder_m5_l4_database_intro_S, sceneFrames: L_builder_m5_l4_database_intro_F, totalFrames: L_builder_m5_l4_database_intro_T },
-    { id: "builder-m5-l3-backend-api", scenes: L_builder_m5_l3_backend_api_S, sceneFrames: L_builder_m5_l3_backend_api_F, totalFrames: L_builder_m5_l3_backend_api_T },
     { id: "builder-m5-l5-mini-win", scenes: L_builder_m5_l5_mini_win_S, sceneFrames: L_builder_m5_l5_mini_win_F, totalFrames: L_builder_m5_l5_mini_win_T },
     { id: "builder-m6-l1-idea-to-page", scenes: L_builder_m6_l1_idea_to_page_S, sceneFrames: L_builder_m6_l1_idea_to_page_F, totalFrames: L_builder_m6_l1_idea_to_page_T },
     { id: "business-m7-l1-full-ecosystem", scenes: L_business_m7_l1_full_ecosystem_S, sceneFrames: L_business_m7_l1_full_ecosystem_F, totalFrames: L_business_m7_l1_full_ecosystem_T },
@@ -249,5 +248,6 @@ export const LESSONS: LessonModule[] = [
     { id: "automator-m4-l3-error-handling", scenes: L_automator_m4_l3_error_handling_S, sceneFrames: L_automator_m4_l3_error_handling_F, totalFrames: L_automator_m4_l3_error_handling_T },
     { id: "automator-m4-l2-webhooks-api", scenes: L_automator_m4_l2_webhooks_api_S, sceneFrames: L_automator_m4_l2_webhooks_api_F, totalFrames: L_automator_m4_l2_webhooks_api_T },
     { id: "analyst-m5-l1-four-numbers-dashboard", scenes: L_analyst_m5_l1_four_numbers_dashboard_S, sceneFrames: L_analyst_m5_l1_four_numbers_dashboard_F, totalFrames: L_analyst_m5_l1_four_numbers_dashboard_T },
+    { id: "builder-m5-l3-backend-api", scenes: L_builder_m5_l3_backend_api_S, sceneFrames: L_builder_m5_l3_backend_api_F, totalFrames: L_builder_m5_l3_backend_api_T },
   /* @lesson-entries-end */
 ];
