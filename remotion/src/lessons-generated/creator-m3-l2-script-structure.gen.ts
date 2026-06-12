@@ -5,123 +5,90 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "subtitle": "Hook → Problem → Proof → CTA",
-    "highlight": "بيمشي على نفس البنية",
-    "chip": "HERO",
-    "title": "كل فيديو ناجح"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "نص الفيديو",
-    "term": "Script (سكريبت)",
-    "definition": "الكلام اللي بتكتبه وتجهزه قبل ما تبدأ تصوير الفيديو."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "definition": "أول كام ثانية في الفيديو اللي بتخطف بيهم عين اللي بيتفرج.",
-    "term": "Hook (خُطّاف)",
-    "tag": "جاذب الانتباه"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "definition": "دي الوعود اللي بتقولها أو التحدي اللي هتحله للمشاهد في الفيديو.",
-    "term": "Problem/Promise",
-    "tag": "تحدي / وعد"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "definition": "إثبات إن كلامك صح، سواء بأرقام أو تجربة حقيقية أو نتيحة.",
-    "term": "Proof (دليل)",
-    "tag": "دليل الإثبات"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "term": "CTA (اطلب فعل)",
-    "tag": "دعوة للفعل",
-    "definition": "طلب صريح بتطلبه من الناس يعملوه في آخر الفيديو."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "definition": "الهيكل أو الترتيب اللي بيمشي عليه الفيديو بتاعك.",
-    "term": "Structure (البنية)",
-    "tag": "ترتيب الفيديو"
+    "title": "السكربت الواضح يوفر وقتك",
+    "subtitle": "خطاف ثم قيمة ثم دليل ثم طلب واضح.",
+    "highlight": "ترتيب يمنع اللخبطة",
+    "chip": "بداية الدرس"
   },
   {
     "card": "BulletsCard",
     "accent": "lavender",
     "bullets": [
-      "الـ Hook بيخطف العين ويقول للمتفرج: «استنى، ده ليك»."
+      "من غير بنية، الفيديو يطول ويضيع منه الهدف.",
+      "المشاهد غالبًا يخرج قبل ما توصل لرسالتك الأساسية."
     ],
-    "title": "دور كل جزء في البنية"
+    "title": "الارتجال بيضيع الفكرة"
   },
   {
     "card": "BulletsCard",
     "accent": "peach",
     "bullets": [
-      "الـ Problem بيسمّي الألم بدقّة، ولو المتفرج حسّ بيه، هيكمل معاك."
+      "ابدأ بجملة توقف المشاهد، بعدها قدم القيمة الأساسية بوضوح.",
+      "ادعم الكلام بدليل أو مثال واقعي، وفي النهاية اطلب خطوة واحدة فقط.",
+      "الـ AI يقدر يساعدك ترتب المسودة بسرعة، لكن القرار النهائي لنبرة السكربت ودقته لازم يكون منك."
     ],
-    "title": "دور كل جزء في البنية"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "yellow",
-    "bullets": [
-      "الـ Proof بيدّي دليل: نتيجة، تجربة شخصية، مثال محسوس."
-    ],
-    "title": "دور كل جزء في البنية"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "pink",
-    "bullets": [
-      "الـ CTA بيقول للمتفرج يعمل إيه دلوقتي، طلب واحد ومحدّد."
-    ],
-    "title": "دور كل جزء في البنية"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "mintDeep",
-    "bullets": [
-      "البنية دي إيقاع، مش قالب جامد، كل جملة في السكريبت تحت جزء من الأربعة."
-    ],
-    "title": "دور كل جزء في البنية"
-  },
-  {
-    "card": "ScreenshotCard",
-    "accent": "mint",
-    "src": "lessons/creator-m3-l2-script-structure.jpg",
-    "caption": "ده شكل سكريبت 60 ثانية. الـ Proof بياخد أكبر مساحة زمنية — ده اللي بيقنع. الـ Hook الأقصر — بس أهم.",
-    "title": "بنية السكريبت — 4 أجزاء بثواني محدّدة",
-    "eyebrow": "شوف بنفسك"
+    "title": "خطاف ثم قيمة ثم دليل ثم CTA"
   },
   {
     "card": "CompareCard",
-    "accent": "lavender",
+    "accent": "yellow",
+    "title": "سكربت مرتب ولا كلام مشتت؟",
     "right": {
-      "label": "RIGHT — بتكتب 4 سطور قبل التصوير",
-      "body": "بتكتب: Hook، Problem، Proof، CTA. النتيجة: فيديو محكوم في 60 ثانية بفكرة واحدة قوية."
+      "body": "كل جزء له وظيفة، فالمشاهد يفهم بسرعة ويعرف يعمل إيه بعد الفيديو.",
+      "label": "ببنية واضحة"
     },
-    "title": "إزاي تكتب سكريبت حقيقي",
     "left": {
-      "label": "FAILURE — بترتجل قدام الكاميرا",
-      "body": "بتفتح الكاميرا وبتحاول تفتكر فكرة. النتيجة: فيديو 3 دقايق فيه فكرة واحدة ضايعة وسط الكلام."
+      "body": "أفكار متداخلة وطلبات متعددة في الآخر، فالتأثير يضعف.",
+      "label": "بدون بنية"
     }
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "pink",
+    "tag": "طريقة مختصرة تنفذها فورًا.",
+    "definition": "الجزء اللي يقدم الفكرة أو الخطوة الأساسية مباشرة.",
+    "term": "Value Block"
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "mintDeep",
+    "tag": "نتيجة رقمية أو مثال عملي.",
+    "definition": "دليل بسيط يثبت إن الكلام قابل للتطبيق.",
+    "term": "Proof"
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "mint",
+    "tag": "جرب الخطوة دي النهاردة وابعتلي النتيجة.",
+    "definition": "طلب واحد واضح بعد انتهاء السكربت.",
+    "term": "CTA"
+  },
+  {
+    "card": "ScreenshotCard",
+    "accent": "lavender",
+    "title": "شكل السكربت المتوازن",
+    "caption": "التوزيع الواضح على أجزاء قصيرة بيخلي السكربت مركز وسهل التنفيذ.",
+    "src": "lessons/creator-m3-l2-script-structure.jpg",
+    "eyebrow": "لقطة بصرية"
   },
   {
     "card": "CTACard",
     "accent": "peach",
-    "highlight": "بالبنية الأربعة",
+    "tagline": "جاوب على السؤال عشان تتأكد إنك فهمت كل حاجة.",
+    "highlight": "اختبر فهمك للدرس",
     "eyebrow": "دورك دلوقتي",
-    "title": "اختبر فهمك للبنية",
-    "tagline": "حل الأسئلة عشان تطبق اللي اتعلمته"
+    "title": "سؤال واحد للتطبيق"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "yellow",
+    "bullets": [
+      "دلوقتي تقدر ترتب أفكارك بسرعة وتنتج محتوى أوضح بثقة أعلى.",
+      "كمّل بنفس المنهج: طبّق المخطط على أكتر من فكرة وراقب التحسن في التفاعل."
+    ],
+    "title": "بقى عندك قالب تنفيذ واضح"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [276, 232, 255, 253, 294, 295, 255, 295, 316, 316, 300, 300, 307, 294, 419];
+export const SCENE_FRAMES: number[] = [414, 421, 738, 562, 445, 315, 377, 382, 337, 579];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);

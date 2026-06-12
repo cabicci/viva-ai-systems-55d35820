@@ -12,7 +12,6 @@ export type LessonModule = LessonRendererProps & {
 // The build script appends imports + entries below the marker.
 /* @lesson-imports-start */
 import { SCENES as L_creator_m3_l3_cta_S, SCENE_FRAMES as L_creator_m3_l3_cta_F, TOTAL_FRAMES as L_creator_m3_l3_cta_T } from "./lessons-generated/creator-m3-l3-cta.gen";
-import { SCENES as L_creator_m3_l2_script_structure_S, SCENE_FRAMES as L_creator_m3_l2_script_structure_F, TOTAL_FRAMES as L_creator_m3_l2_script_structure_T } from "./lessons-generated/creator-m3-l2-script-structure.gen";
 import { SCENES as L_creator_m4_ai_writing_S, SCENE_FRAMES as L_creator_m4_ai_writing_F, TOTAL_FRAMES as L_creator_m4_ai_writing_T } from "./lessons-generated/creator-m4-ai-writing.gen";
 import { SCENES as L_creator_m5_l1_editing_S, SCENE_FRAMES as L_creator_m5_l1_editing_F, TOTAL_FRAMES as L_creator_m5_l1_editing_T } from "./lessons-generated/creator-m5-l1-editing.gen";
 import { SCENES as L_creator_m4_mobile_shooting_S, SCENE_FRAMES as L_creator_m4_mobile_shooting_F, TOTAL_FRAMES as L_creator_m4_mobile_shooting_T } from "./lessons-generated/creator-m4-mobile-shooting.gen";
@@ -125,12 +124,12 @@ import { SCENES as L_business_m2_l2_retention_flow_S, SCENE_FRAMES as L_business
 import { SCENES as L_builder_m2_l2_instructions_examples_S, SCENE_FRAMES as L_builder_m2_l2_instructions_examples_F, TOTAL_FRAMES as L_builder_m2_l2_instructions_examples_T } from "./lessons-generated/builder-m2-l2-instructions-examples.gen";
 import { SCENES as L_analyst_m4_automated_dashboard_S, SCENE_FRAMES as L_analyst_m4_automated_dashboard_F, TOTAL_FRAMES as L_analyst_m4_automated_dashboard_T } from "./lessons-generated/analyst-m4-automated-dashboard.gen";
 import { SCENES as L_automator_m6_l2_whatsapp_flow_S, SCENE_FRAMES as L_automator_m6_l2_whatsapp_flow_F, TOTAL_FRAMES as L_automator_m6_l2_whatsapp_flow_T } from "./lessons-generated/automator-m6-l2-whatsapp-flow.gen";
+import { SCENES as L_creator_m3_l2_script_structure_S, SCENE_FRAMES as L_creator_m3_l2_script_structure_F, TOTAL_FRAMES as L_creator_m3_l2_script_structure_T } from "./lessons-generated/creator-m3-l2-script-structure.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
   /* @lesson-entries-start */
     { id: "creator-m3-l3-cta", scenes: L_creator_m3_l3_cta_S, sceneFrames: L_creator_m3_l3_cta_F, totalFrames: L_creator_m3_l3_cta_T },
-    { id: "creator-m3-l2-script-structure", scenes: L_creator_m3_l2_script_structure_S, sceneFrames: L_creator_m3_l2_script_structure_F, totalFrames: L_creator_m3_l2_script_structure_T },
     { id: "creator-m4-l3-ai-writing", scenes: L_creator_m4_ai_writing_S, sceneFrames: L_creator_m4_ai_writing_F, totalFrames: L_creator_m4_ai_writing_T },
     { id: "creator-m5-l1-editing", scenes: L_creator_m5_l1_editing_S, sceneFrames: L_creator_m5_l1_editing_F, totalFrames: L_creator_m5_l1_editing_T },
     { id: "creator-m4-l2-mobile-shooting", scenes: L_creator_m4_mobile_shooting_S, sceneFrames: L_creator_m4_mobile_shooting_F, totalFrames: L_creator_m4_mobile_shooting_T },
@@ -241,5 +240,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m2-l2-instructions-examples", scenes: L_builder_m2_l2_instructions_examples_S, sceneFrames: L_builder_m2_l2_instructions_examples_F, totalFrames: L_builder_m2_l2_instructions_examples_T },
     { id: "analyst-m4-automated-dashboard", scenes: L_analyst_m4_automated_dashboard_S, sceneFrames: L_analyst_m4_automated_dashboard_F, totalFrames: L_analyst_m4_automated_dashboard_T },
     { id: "automator-m6-l2-whatsapp-flow", scenes: L_automator_m6_l2_whatsapp_flow_S, sceneFrames: L_automator_m6_l2_whatsapp_flow_F, totalFrames: L_automator_m6_l2_whatsapp_flow_T },
+    { id: "creator-m3-l2-script-structure", scenes: L_creator_m3_l2_script_structure_S, sceneFrames: L_creator_m3_l2_script_structure_F, totalFrames: L_creator_m3_l2_script_structure_T },
   /* @lesson-entries-end */
 ];
