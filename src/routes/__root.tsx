@@ -25,11 +25,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://masaarat.ai" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "مسارات — masaarat.ai | تعلّم الذكاء الاصطناعي بالتطبيق" },
       { name: "twitter:description", content: "منظومة تعليمية حية مبنية على الذكاء الاصطناعي. تعلّم بالتنفيذ، ابنِ أنظمة حقيقية، وأطلق أعمالك." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ea167ac2-2121-4c2e-bc11-5f44fed37196" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/ea167ac2-2121-4c2e-bc11-5f44fed37196" },
+      { property: "og:image", content: "https://masaarat.ai/brand/masaarat-og.png" },
+      { name: "twitter:image", content: "https://masaarat.ai/brand/masaarat-og.png" },
     ],
     links: [
       { rel: "icon", href: "/brand/masaarat-icon.png", type: "image/png" },
