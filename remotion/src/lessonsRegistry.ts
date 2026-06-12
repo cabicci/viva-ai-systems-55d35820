@@ -51,7 +51,6 @@ import { SCENES as L_analyst_m5_l2_weekly_review_ritual_S, SCENE_FRAMES as L_ana
 import { SCENES as L_business_m6_l1_reactive_relapse_S, SCENE_FRAMES as L_business_m6_l1_reactive_relapse_F, TOTAL_FRAMES as L_business_m6_l1_reactive_relapse_T } from "./lessons-generated/business-m6-l1-reactive-relapse.gen";
 import { SCENES as L_business_m3_l1_customer_lifecycle_S, SCENE_FRAMES as L_business_m3_l1_customer_lifecycle_F, TOTAL_FRAMES as L_business_m3_l1_customer_lifecycle_T } from "./lessons-generated/business-m3-l1-customer-lifecycle.gen";
 import { SCENES as L_automator_m3_l2_triggers_actions_S, SCENE_FRAMES as L_automator_m3_l2_triggers_actions_F, TOTAL_FRAMES as L_automator_m3_l2_triggers_actions_T } from "./lessons-generated/automator-m3-l2-triggers-actions.gen";
-import { SCENES as L_builder_m2_l1_prompt_layer_S, SCENE_FRAMES as L_builder_m2_l1_prompt_layer_F, TOTAL_FRAMES as L_builder_m2_l1_prompt_layer_T } from "./lessons-generated/builder-m2-l1-prompt-layer.gen";
 import { SCENES as L_builder_m2_l3_style_control_S, SCENE_FRAMES as L_builder_m2_l3_style_control_F, TOTAL_FRAMES as L_builder_m2_l3_style_control_T } from "./lessons-generated/builder-m2-l3-style-control.gen";
 import { SCENES as L_builder_m3_l1_context_layer_S, SCENE_FRAMES as L_builder_m3_l1_context_layer_F, TOTAL_FRAMES as L_builder_m3_l1_context_layer_T } from "./lessons-generated/builder-m3-l1-context-layer.gen";
 import { SCENES as L_builder_m2_l2_instructions_examples_S, SCENE_FRAMES as L_builder_m2_l2_instructions_examples_F, TOTAL_FRAMES as L_builder_m2_l2_instructions_examples_T } from "./lessons-generated/builder-m2-l2-instructions-examples.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_automator_m1_l1_where_you_are_S, SCENE_FRAMES as L_automato
 import { SCENES as L_automator_m5_l3_agents_S, SCENE_FRAMES as L_automator_m5_l3_agents_F, TOTAL_FRAMES as L_automator_m5_l3_agents_T } from "./lessons-generated/automator-m5-l3-agents.gen";
 import { SCENES as L_automator_m2_l1_systems_view_S, SCENE_FRAMES as L_automator_m2_l1_systems_view_F, TOTAL_FRAMES as L_automator_m2_l1_systems_view_T } from "./lessons-generated/automator-m2-l1-systems-view.gen";
 import { SCENES as L_analyst_m7_l1_from_decisions_to_business_S, SCENE_FRAMES as L_analyst_m7_l1_from_decisions_to_business_F, TOTAL_FRAMES as L_analyst_m7_l1_from_decisions_to_business_T } from "./lessons-generated/analyst-m7-l1-from-decisions-to-business.gen";
+import { SCENES as L_builder_m2_l1_prompt_layer_S, SCENE_FRAMES as L_builder_m2_l1_prompt_layer_F, TOTAL_FRAMES as L_builder_m2_l1_prompt_layer_T } from "./lessons-generated/builder-m2-l1-prompt-layer.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -165,7 +165,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m6-l1-reactive-relapse", scenes: L_business_m6_l1_reactive_relapse_S, sceneFrames: L_business_m6_l1_reactive_relapse_F, totalFrames: L_business_m6_l1_reactive_relapse_T },
     { id: "business-m3-l1-customer-lifecycle", scenes: L_business_m3_l1_customer_lifecycle_S, sceneFrames: L_business_m3_l1_customer_lifecycle_F, totalFrames: L_business_m3_l1_customer_lifecycle_T },
     { id: "automator-m3-l2-triggers-actions", scenes: L_automator_m3_l2_triggers_actions_S, sceneFrames: L_automator_m3_l2_triggers_actions_F, totalFrames: L_automator_m3_l2_triggers_actions_T },
-    { id: "builder-m2-l1-prompt-layer", scenes: L_builder_m2_l1_prompt_layer_S, sceneFrames: L_builder_m2_l1_prompt_layer_F, totalFrames: L_builder_m2_l1_prompt_layer_T },
     { id: "builder-m2-l3-style-control", scenes: L_builder_m2_l3_style_control_S, sceneFrames: L_builder_m2_l3_style_control_F, totalFrames: L_builder_m2_l3_style_control_T },
     { id: "builder-m3-l1-context-layer", scenes: L_builder_m3_l1_context_layer_S, sceneFrames: L_builder_m3_l1_context_layer_F, totalFrames: L_builder_m3_l1_context_layer_T },
     { id: "builder-m2-l2-instructions-examples", scenes: L_builder_m2_l2_instructions_examples_S, sceneFrames: L_builder_m2_l2_instructions_examples_F, totalFrames: L_builder_m2_l2_instructions_examples_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "automator-m5-l3-agents", scenes: L_automator_m5_l3_agents_S, sceneFrames: L_automator_m5_l3_agents_F, totalFrames: L_automator_m5_l3_agents_T },
     { id: "automator-m2-l1-systems-view", scenes: L_automator_m2_l1_systems_view_S, sceneFrames: L_automator_m2_l1_systems_view_F, totalFrames: L_automator_m2_l1_systems_view_T },
     { id: "analyst-m7-l1-from-decisions-to-business", scenes: L_analyst_m7_l1_from_decisions_to_business_S, sceneFrames: L_analyst_m7_l1_from_decisions_to_business_F, totalFrames: L_analyst_m7_l1_from_decisions_to_business_T },
+    { id: "builder-m2-l1-prompt-layer", scenes: L_builder_m2_l1_prompt_layer_S, sceneFrames: L_builder_m2_l1_prompt_layer_F, totalFrames: L_builder_m2_l1_prompt_layer_T },
   /* @lesson-entries-end */
 ];
