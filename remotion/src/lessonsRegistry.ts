@@ -11,7 +11,6 @@ export type LessonModule = LessonRendererProps & {
 
 // The build script appends imports + entries below the marker.
 /* @lesson-imports-start */
-import { SCENES as L_creator_m3_l3_cta_S, SCENE_FRAMES as L_creator_m3_l3_cta_F, TOTAL_FRAMES as L_creator_m3_l3_cta_T } from "./lessons-generated/creator-m3-l3-cta.gen";
 import { SCENES as L_creator_m4_ai_writing_S, SCENE_FRAMES as L_creator_m4_ai_writing_F, TOTAL_FRAMES as L_creator_m4_ai_writing_T } from "./lessons-generated/creator-m4-ai-writing.gen";
 import { SCENES as L_creator_m5_l1_editing_S, SCENE_FRAMES as L_creator_m5_l1_editing_F, TOTAL_FRAMES as L_creator_m5_l1_editing_T } from "./lessons-generated/creator-m5-l1-editing.gen";
 import { SCENES as L_creator_m4_mobile_shooting_S, SCENE_FRAMES as L_creator_m4_mobile_shooting_F, TOTAL_FRAMES as L_creator_m4_mobile_shooting_T } from "./lessons-generated/creator-m4-mobile-shooting.gen";
@@ -125,11 +124,11 @@ import { SCENES as L_analyst_m3_l1_three_sources_S, SCENE_FRAMES as L_analyst_m3
 import { SCENES as L_builder_m3_l1_context_layer_S, SCENE_FRAMES as L_builder_m3_l1_context_layer_F, TOTAL_FRAMES as L_builder_m3_l1_context_layer_T } from "./lessons-generated/builder-m3-l1-context-layer.gen";
 import { SCENES as L_business_m2_l3_readiness_signals_S, SCENE_FRAMES as L_business_m2_l3_readiness_signals_F, TOTAL_FRAMES as L_business_m2_l3_readiness_signals_T } from "./lessons-generated/business-m2-l3-readiness-signals.gen";
 import { SCENES as L_automator_m3_l1_tools_landscape_S, SCENE_FRAMES as L_automator_m3_l1_tools_landscape_F, TOTAL_FRAMES as L_automator_m3_l1_tools_landscape_T } from "./lessons-generated/automator-m3-l1-tools-landscape.gen";
+import { SCENES as L_creator_m3_l3_cta_S, SCENE_FRAMES as L_creator_m3_l3_cta_F, TOTAL_FRAMES as L_creator_m3_l3_cta_T } from "./lessons-generated/creator-m3-l3-cta.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
   /* @lesson-entries-start */
-    { id: "creator-m3-l3-cta", scenes: L_creator_m3_l3_cta_S, sceneFrames: L_creator_m3_l3_cta_F, totalFrames: L_creator_m3_l3_cta_T },
     { id: "creator-m4-l3-ai-writing", scenes: L_creator_m4_ai_writing_S, sceneFrames: L_creator_m4_ai_writing_F, totalFrames: L_creator_m4_ai_writing_T },
     { id: "creator-m5-l1-editing", scenes: L_creator_m5_l1_editing_S, sceneFrames: L_creator_m5_l1_editing_F, totalFrames: L_creator_m5_l1_editing_T },
     { id: "creator-m4-l2-mobile-shooting", scenes: L_creator_m4_mobile_shooting_S, sceneFrames: L_creator_m4_mobile_shooting_F, totalFrames: L_creator_m4_mobile_shooting_T },
@@ -241,5 +240,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m3-l1-context-layer", scenes: L_builder_m3_l1_context_layer_S, sceneFrames: L_builder_m3_l1_context_layer_F, totalFrames: L_builder_m3_l1_context_layer_T },
     { id: "business-m2-l3-readiness-signals", scenes: L_business_m2_l3_readiness_signals_S, sceneFrames: L_business_m2_l3_readiness_signals_F, totalFrames: L_business_m2_l3_readiness_signals_T },
     { id: "automator-m3-l1-tools-landscape", scenes: L_automator_m3_l1_tools_landscape_S, sceneFrames: L_automator_m3_l1_tools_landscape_F, totalFrames: L_automator_m3_l1_tools_landscape_T },
+    { id: "creator-m3-l3-cta", scenes: L_creator_m3_l3_cta_S, sceneFrames: L_creator_m3_l3_cta_F, totalFrames: L_creator_m3_l3_cta_T },
   /* @lesson-entries-end */
 ];
