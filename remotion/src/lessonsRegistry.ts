@@ -46,7 +46,6 @@ import { SCENES as L_analyst_m5_l2_weekly_review_ritual_S, SCENE_FRAMES as L_ana
 import { SCENES as L_business_m6_l1_reactive_relapse_S, SCENE_FRAMES as L_business_m6_l1_reactive_relapse_F, TOTAL_FRAMES as L_business_m6_l1_reactive_relapse_T } from "./lessons-generated/business-m6-l1-reactive-relapse.gen";
 import { SCENES as L_business_m3_l1_customer_lifecycle_S, SCENE_FRAMES as L_business_m3_l1_customer_lifecycle_F, TOTAL_FRAMES as L_business_m3_l1_customer_lifecycle_T } from "./lessons-generated/business-m3-l1-customer-lifecycle.gen";
 import { SCENES as L_automator_m3_l2_triggers_actions_S, SCENE_FRAMES as L_automator_m3_l2_triggers_actions_F, TOTAL_FRAMES as L_automator_m3_l2_triggers_actions_T } from "./lessons-generated/automator-m3-l2-triggers-actions.gen";
-import { SCENES as L_builder_m2_l3_style_control_S, SCENE_FRAMES as L_builder_m2_l3_style_control_F, TOTAL_FRAMES as L_builder_m2_l3_style_control_T } from "./lessons-generated/builder-m2-l3-style-control.gen";
 import { SCENES as L_builder_m3_l1_context_layer_S, SCENE_FRAMES as L_builder_m3_l1_context_layer_F, TOTAL_FRAMES as L_builder_m3_l1_context_layer_T } from "./lessons-generated/builder-m3-l1-context-layer.gen";
 import { SCENES as L_builder_m3_l2_memory_limits_S, SCENE_FRAMES as L_builder_m3_l2_memory_limits_F, TOTAL_FRAMES as L_builder_m3_l2_memory_limits_T } from "./lessons-generated/builder-m3-l2-memory-limits.gen";
 import { SCENES as L_builder_m5_l2_frontend_S, SCENE_FRAMES as L_builder_m5_l2_frontend_F, TOTAL_FRAMES as L_builder_m5_l2_frontend_T } from "./lessons-generated/builder-m5-l2-frontend.gen";
@@ -125,6 +124,7 @@ import { SCENES as L_builder_m2_l2_instructions_examples_S, SCENE_FRAMES as L_bu
 import { SCENES as L_analyst_m4_automated_dashboard_S, SCENE_FRAMES as L_analyst_m4_automated_dashboard_F, TOTAL_FRAMES as L_analyst_m4_automated_dashboard_T } from "./lessons-generated/analyst-m4-automated-dashboard.gen";
 import { SCENES as L_automator_m6_l2_whatsapp_flow_S, SCENE_FRAMES as L_automator_m6_l2_whatsapp_flow_F, TOTAL_FRAMES as L_automator_m6_l2_whatsapp_flow_T } from "./lessons-generated/automator-m6-l2-whatsapp-flow.gen";
 import { SCENES as L_creator_m3_l2_script_structure_S, SCENE_FRAMES as L_creator_m3_l2_script_structure_F, TOTAL_FRAMES as L_creator_m3_l2_script_structure_T } from "./lessons-generated/creator-m3-l2-script-structure.gen";
+import { SCENES as L_builder_m2_l3_style_control_S, SCENE_FRAMES as L_builder_m2_l3_style_control_F, TOTAL_FRAMES as L_builder_m2_l3_style_control_T } from "./lessons-generated/builder-m2-l3-style-control.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -162,7 +162,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m6-l1-reactive-relapse", scenes: L_business_m6_l1_reactive_relapse_S, sceneFrames: L_business_m6_l1_reactive_relapse_F, totalFrames: L_business_m6_l1_reactive_relapse_T },
     { id: "business-m3-l1-customer-lifecycle", scenes: L_business_m3_l1_customer_lifecycle_S, sceneFrames: L_business_m3_l1_customer_lifecycle_F, totalFrames: L_business_m3_l1_customer_lifecycle_T },
     { id: "automator-m3-l2-triggers-actions", scenes: L_automator_m3_l2_triggers_actions_S, sceneFrames: L_automator_m3_l2_triggers_actions_F, totalFrames: L_automator_m3_l2_triggers_actions_T },
-    { id: "builder-m2-l3-style-control", scenes: L_builder_m2_l3_style_control_S, sceneFrames: L_builder_m2_l3_style_control_F, totalFrames: L_builder_m2_l3_style_control_T },
     { id: "builder-m3-l1-context-layer", scenes: L_builder_m3_l1_context_layer_S, sceneFrames: L_builder_m3_l1_context_layer_F, totalFrames: L_builder_m3_l1_context_layer_T },
     { id: "builder-m3-l2-memory-limits", scenes: L_builder_m3_l2_memory_limits_S, sceneFrames: L_builder_m3_l2_memory_limits_F, totalFrames: L_builder_m3_l2_memory_limits_T },
     { id: "builder-m5-l2-frontend", scenes: L_builder_m5_l2_frontend_S, sceneFrames: L_builder_m5_l2_frontend_F, totalFrames: L_builder_m5_l2_frontend_T },
@@ -241,5 +240,6 @@ export const LESSONS: LessonModule[] = [
     { id: "analyst-m4-automated-dashboard", scenes: L_analyst_m4_automated_dashboard_S, sceneFrames: L_analyst_m4_automated_dashboard_F, totalFrames: L_analyst_m4_automated_dashboard_T },
     { id: "automator-m6-l2-whatsapp-flow", scenes: L_automator_m6_l2_whatsapp_flow_S, sceneFrames: L_automator_m6_l2_whatsapp_flow_F, totalFrames: L_automator_m6_l2_whatsapp_flow_T },
     { id: "creator-m3-l2-script-structure", scenes: L_creator_m3_l2_script_structure_S, sceneFrames: L_creator_m3_l2_script_structure_F, totalFrames: L_creator_m3_l2_script_structure_T },
+    { id: "builder-m2-l3-style-control", scenes: L_builder_m2_l3_style_control_S, sceneFrames: L_builder_m2_l3_style_control_F, totalFrames: L_builder_m2_l3_style_control_T },
   /* @lesson-entries-end */
 ];
