@@ -16,7 +16,6 @@ import { SCENES as L_creator_m3_l3_cta_S, SCENE_FRAMES as L_creator_m3_l3_cta_F,
 import { SCENES as L_creator_m3_l1_hook_S, SCENE_FRAMES as L_creator_m3_l1_hook_F, TOTAL_FRAMES as L_creator_m3_l1_hook_T } from "./lessons-generated/creator-m3-l1-hook.gen";
 import { SCENES as L_creator_m3_l2_script_structure_S, SCENE_FRAMES as L_creator_m3_l2_script_structure_F, TOTAL_FRAMES as L_creator_m3_l2_script_structure_T } from "./lessons-generated/creator-m3-l2-script-structure.gen";
 import { SCENES as L_creator_m2_l2_content_pillars_S, SCENE_FRAMES as L_creator_m2_l2_content_pillars_F, TOTAL_FRAMES as L_creator_m2_l2_content_pillars_T } from "./lessons-generated/creator-m2-l2-content-pillars.gen";
-import { SCENES as L_creator_m2_l1_know_audience_S, SCENE_FRAMES as L_creator_m2_l1_know_audience_F, TOTAL_FRAMES as L_creator_m2_l1_know_audience_T } from "./lessons-generated/creator-m2-l1-know-audience.gen";
 import { SCENES as L_creator_m4_ai_writing_S, SCENE_FRAMES as L_creator_m4_ai_writing_F, TOTAL_FRAMES as L_creator_m4_ai_writing_T } from "./lessons-generated/creator-m4-ai-writing.gen";
 import { SCENES as L_creator_m5_l1_editing_S, SCENE_FRAMES as L_creator_m5_l1_editing_F, TOTAL_FRAMES as L_creator_m5_l1_editing_T } from "./lessons-generated/creator-m5-l1-editing.gen";
 import { SCENES as L_creator_m4_mobile_shooting_S, SCENE_FRAMES as L_creator_m4_mobile_shooting_F, TOTAL_FRAMES as L_creator_m4_mobile_shooting_T } from "./lessons-generated/creator-m4-mobile-shooting.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_intro_m1_l5_ai_vs_software_S, SCENE_FRAMES as L_intro_m1_l5
 import { SCENES as L_intro_m1_l6_learn_without_fear_S, SCENE_FRAMES as L_intro_m1_l6_learn_without_fear_F, TOTAL_FRAMES as L_intro_m1_l6_learn_without_fear_T } from "./lessons-generated/intro-m1-l6-learn-without-fear.gen";
 import { SCENES as L_intro_m1_l7_choose_your_path_S, SCENE_FRAMES as L_intro_m1_l7_choose_your_path_F, TOTAL_FRAMES as L_intro_m1_l7_choose_your_path_T } from "./lessons-generated/intro-m1-l7-choose-your-path.gen";
 import { SCENES as L_business_m4_l3_weekly_rhythm_S, SCENE_FRAMES as L_business_m4_l3_weekly_rhythm_F, TOTAL_FRAMES as L_business_m4_l3_weekly_rhythm_T } from "./lessons-generated/business-m4-l3-weekly-rhythm.gen";
+import { SCENES as L_creator_m2_l1_know_audience_S, SCENE_FRAMES as L_creator_m2_l1_know_audience_F, TOTAL_FRAMES as L_creator_m2_l1_know_audience_T } from "./lessons-generated/creator-m2-l1-know-audience.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -132,7 +132,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m3-l1-hook", scenes: L_creator_m3_l1_hook_S, sceneFrames: L_creator_m3_l1_hook_F, totalFrames: L_creator_m3_l1_hook_T },
     { id: "creator-m3-l2-script-structure", scenes: L_creator_m3_l2_script_structure_S, sceneFrames: L_creator_m3_l2_script_structure_F, totalFrames: L_creator_m3_l2_script_structure_T },
     { id: "creator-m2-l2-content-pillars", scenes: L_creator_m2_l2_content_pillars_S, sceneFrames: L_creator_m2_l2_content_pillars_F, totalFrames: L_creator_m2_l2_content_pillars_T },
-    { id: "creator-m2-l1-know-audience", scenes: L_creator_m2_l1_know_audience_S, sceneFrames: L_creator_m2_l1_know_audience_F, totalFrames: L_creator_m2_l1_know_audience_T },
     { id: "creator-m4-l3-ai-writing", scenes: L_creator_m4_ai_writing_S, sceneFrames: L_creator_m4_ai_writing_F, totalFrames: L_creator_m4_ai_writing_T },
     { id: "creator-m5-l1-editing", scenes: L_creator_m5_l1_editing_S, sceneFrames: L_creator_m5_l1_editing_F, totalFrames: L_creator_m5_l1_editing_T },
     { id: "creator-m4-l2-mobile-shooting", scenes: L_creator_m4_mobile_shooting_S, sceneFrames: L_creator_m4_mobile_shooting_F, totalFrames: L_creator_m4_mobile_shooting_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "intro-m1-l6-learn-without-fear", scenes: L_intro_m1_l6_learn_without_fear_S, sceneFrames: L_intro_m1_l6_learn_without_fear_F, totalFrames: L_intro_m1_l6_learn_without_fear_T },
     { id: "intro-m1-l7-choose-your-path", scenes: L_intro_m1_l7_choose_your_path_S, sceneFrames: L_intro_m1_l7_choose_your_path_F, totalFrames: L_intro_m1_l7_choose_your_path_T },
     { id: "business-m4-l3-weekly-rhythm", scenes: L_business_m4_l3_weekly_rhythm_S, sceneFrames: L_business_m4_l3_weekly_rhythm_F, totalFrames: L_business_m4_l3_weekly_rhythm_T },
+    { id: "creator-m2-l1-know-audience", scenes: L_creator_m2_l1_know_audience_S, sceneFrames: L_creator_m2_l1_know_audience_F, totalFrames: L_creator_m2_l1_know_audience_T },
   /* @lesson-entries-end */
 ];
