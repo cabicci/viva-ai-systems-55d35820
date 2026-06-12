@@ -89,7 +89,6 @@ import { SCENES as L_business_m2_l3_readiness_signals_S, SCENE_FRAMES as L_busin
 import { SCENES as L_business_m2_l2_retention_flow_S, SCENE_FRAMES as L_business_m2_l2_retention_flow_F, TOTAL_FRAMES as L_business_m2_l2_retention_flow_T } from "./lessons-generated/business-m2-l2-retention-flow.gen";
 import { SCENES as L_business_m2_l4_pricing_cash_flow_S, SCENE_FRAMES as L_business_m2_l4_pricing_cash_flow_F, TOTAL_FRAMES as L_business_m2_l4_pricing_cash_flow_T } from "./lessons-generated/business-m2-l4-pricing-cash-flow.gen";
 import { SCENES as L_business_m4_l5_business_os_dashboard_S, SCENE_FRAMES as L_business_m4_l5_business_os_dashboard_F, TOTAL_FRAMES as L_business_m4_l5_business_os_dashboard_T } from "./lessons-generated/business-m4-l5-business-os-dashboard.gen";
-import { SCENES as L_automator_m1_l1_where_you_are_S, SCENE_FRAMES as L_automator_m1_l1_where_you_are_F, TOTAL_FRAMES as L_automator_m1_l1_where_you_are_T } from "./lessons-generated/automator-m1-l1-where-you-are.gen";
 import { SCENES as L_intro_m1_l1_what_is_ai_S, SCENE_FRAMES as L_intro_m1_l1_what_is_ai_F, TOTAL_FRAMES as L_intro_m1_l1_what_is_ai_T } from "./lessons-generated/intro-m1-l1-what-is-ai.gen";
 import { SCENES as L_intro_m1_l3_setup_your_ai_S, SCENE_FRAMES as L_intro_m1_l3_setup_your_ai_F, TOTAL_FRAMES as L_intro_m1_l3_setup_your_ai_T } from "./lessons-generated/intro-m1-l3-setup-your-ai.gen";
 import { SCENES as L_intro_m1_l2_first_prompt_S, SCENE_FRAMES as L_intro_m1_l2_first_prompt_F, TOTAL_FRAMES as L_intro_m1_l2_first_prompt_T } from "./lessons-generated/intro-m1-l2-first-prompt.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_analyst_m2_l2_right_question_rule_S, SCENE_FRAMES as L_anal
 import { SCENES as L_automator_m2_l2_spot_patterns_S, SCENE_FRAMES as L_automator_m2_l2_spot_patterns_F, TOTAL_FRAMES as L_automator_m2_l2_spot_patterns_T } from "./lessons-generated/automator-m2-l2-spot-patterns.gen";
 import { SCENES as L_builder_m6_l2_wireframe_S, SCENE_FRAMES as L_builder_m6_l2_wireframe_F, TOTAL_FRAMES as L_builder_m6_l2_wireframe_T } from "./lessons-generated/builder-m6-l2-wireframe.gen";
 import { SCENES as L_automator_m6_l1_lead_capture_S, SCENE_FRAMES as L_automator_m6_l1_lead_capture_F, TOTAL_FRAMES as L_automator_m6_l1_lead_capture_T } from "./lessons-generated/automator-m6-l1-lead-capture.gen";
+import { SCENES as L_automator_m1_l1_where_you_are_S, SCENE_FRAMES as L_automator_m1_l1_where_you_are_F, TOTAL_FRAMES as L_automator_m1_l1_where_you_are_T } from "./lessons-generated/automator-m1-l1-where-you-are.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -203,7 +203,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m2-l2-retention-flow", scenes: L_business_m2_l2_retention_flow_S, sceneFrames: L_business_m2_l2_retention_flow_F, totalFrames: L_business_m2_l2_retention_flow_T },
     { id: "business-m2-l4-pricing-cash-flow", scenes: L_business_m2_l4_pricing_cash_flow_S, sceneFrames: L_business_m2_l4_pricing_cash_flow_F, totalFrames: L_business_m2_l4_pricing_cash_flow_T },
     { id: "business-m4-l5-business-os-dashboard", scenes: L_business_m4_l5_business_os_dashboard_S, sceneFrames: L_business_m4_l5_business_os_dashboard_F, totalFrames: L_business_m4_l5_business_os_dashboard_T },
-    { id: "automator-m1-l1-where-you-are", scenes: L_automator_m1_l1_where_you_are_S, sceneFrames: L_automator_m1_l1_where_you_are_F, totalFrames: L_automator_m1_l1_where_you_are_T },
     { id: "intro-m1-l1-what-is-ai", scenes: L_intro_m1_l1_what_is_ai_S, sceneFrames: L_intro_m1_l1_what_is_ai_F, totalFrames: L_intro_m1_l1_what_is_ai_T },
     { id: "intro-m1-l3-setup-your-ai", scenes: L_intro_m1_l3_setup_your_ai_S, sceneFrames: L_intro_m1_l3_setup_your_ai_F, totalFrames: L_intro_m1_l3_setup_your_ai_T },
     { id: "intro-m1-l2-first-prompt", scenes: L_intro_m1_l2_first_prompt_S, sceneFrames: L_intro_m1_l2_first_prompt_F, totalFrames: L_intro_m1_l2_first_prompt_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "automator-m2-l2-spot-patterns", scenes: L_automator_m2_l2_spot_patterns_S, sceneFrames: L_automator_m2_l2_spot_patterns_F, totalFrames: L_automator_m2_l2_spot_patterns_T },
     { id: "builder-m6-l2-wireframe", scenes: L_builder_m6_l2_wireframe_S, sceneFrames: L_builder_m6_l2_wireframe_F, totalFrames: L_builder_m6_l2_wireframe_T },
     { id: "automator-m6-l1-lead-capture", scenes: L_automator_m6_l1_lead_capture_S, sceneFrames: L_automator_m6_l1_lead_capture_F, totalFrames: L_automator_m6_l1_lead_capture_T },
+    { id: "automator-m1-l1-where-you-are", scenes: L_automator_m1_l1_where_you_are_S, sceneFrames: L_automator_m1_l1_where_you_are_F, totalFrames: L_automator_m1_l1_where_you_are_T },
   /* @lesson-entries-end */
 ];
