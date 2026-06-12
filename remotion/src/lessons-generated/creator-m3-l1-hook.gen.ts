@@ -5,124 +5,88 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "title": "أول 3 ثواني",
-    "subtitle": "المتفرّج بيقرّر يكمّل أو يـ Scroll في أقل من 3 ثواني.",
-    "chip": "أهلًا بيك",
-    "highlight": "بتقرّر كل حاجة"
+    "subtitle": "أهلًا، قبل ما القيمة توصل، لازم المشاهد يقرر يكمل. الخطاف القوي في البداية هو اللي بيدي لباقي المحتوى فرصة يعيش.",
+    "chip": "بداية الدرس",
+    "highlight": "بتحسم القرار",
+    "title": "أول ثواني"
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "lavender",
-    "term": "Feed/Scroll",
-    "tag": "قلّب في المحتوى",
-    "definition": "الصفحة اللي بتقعد تقلب فيها في فيسبوك وتشوف منشورات الناس."
+    "bullets": [
+      "كتير بيبدأوا بمقدمة طويلة فتضيع أول لحظة حاسمة.",
+      "المشاهد غالبًا مش هيدي فرصة تانية لو البداية ما شدتوش."
+    ],
+    "title": "محتوى قوي وبداية ضعيفة"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "peach",
+    "bullets": [
+      "الخطاف مش مجرد جملة حلوة، هو وعد سريع بفايدة أو فضول يخلي المشاهد يكمّل.",
+      "الـ AI يقدر يقترح لك صيغ متعددة للخطاف، لكن اختيار الأنسب لنبرة جمهورك ومساحة الفيديو يرجع لحكمك."
+    ],
+    "title": "الخطاف وعد سريع وواضح"
+  },
+  {
+    "card": "CompareCard",
+    "accent": "yellow",
+    "title": "مقدمة تقليدية ولا خطاف مباشر؟",
+    "right": {
+      "body": "سؤال أو وعد واضح من أول جملة، فيحصل توقف وتكملة.",
+      "label": "خطاف مباشر"
+    },
+    "left": {
+      "body": "تحيات طويلة وتعريفات، فيتسرب المشاهد قبل القيمة.",
+      "label": "بداية تقليدية"
+    }
   },
   {
     "card": "ConceptCard",
-    "accent": "peach",
-    "tag": "يصطاد المشاهد",
-    "definition": "أول جملة أو لقطة بتصطاد المشاهد وتخليه يفرمل وما يقلبش.",
+    "accent": "pink",
+    "tag": "يوقف المشاهد",
+    "definition": "أول جملة أو لقطة تقفل فرصة التخطي السريع.",
     "term": "Hook"
   },
   {
     "card": "ConceptCard",
-    "accent": "yellow",
-    "tag": "يكسر الملل",
-    "definition": "حاجة مفاجئة تكسر الملل وتخلي العين تركز غصب عنها.",
-    "term": "Pattern Interrupt"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "term": "Curiosity Gap",
-    "definition": "سؤال أو معلومة ناقصة تخلي الواحد عاوز يكمل عشان يعرف الإجابة.",
-    "tag": "سؤال ناقص"
-  },
-  {
-    "card": "ConceptCard",
     "accent": "mintDeep",
-    "term": "Reel",
-    "tag": "فيديو قصير",
-    "definition": "فيديو طولي قصير (زي تيك توك) معمول عشان ينتشر بسرعة."
+    "tag": "مفاجأة بصرية",
+    "definition": "افتتاحية مختلفة عن المتوقع تخلي العين توقف.",
+    "term": "Pattern Break"
   },
   {
     "card": "ConceptCard",
     "accent": "mint",
-    "definition": "النسبة اللي بتقولك قد إيه من الناس كملوا الفيديو للآخر.",
-    "tag": "إكمال المشاهدة",
-    "term": "Retention"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "peach",
-    "title": "ليه أول 3 ثواني = البوابة؟",
-    "bullets": [
-      "الـ Feed بيتحرك بسرعة جنونية.",
-      "الـ Hook بيكسر التوقع أو بيفتح فضول.",
-      "أقوى Hooks: رقم صادم، سؤال مباشر، نتيجة قبل الشرح.",
-      "الـ Hook: أول جملة + لقطة + صوت."
-    ]
+    "tag": "المشاهدة المبدئية",
+    "definition": "نسبة الناس اللي قررت تكمل بعد أول ثواني.",
+    "term": "Retention Start"
   },
   {
     "card": "ScreenshotCard",
-    "accent": "yellow",
-    "src": "lessons/creator-m3-l1-hook.jpg",
-    "caption": "فيديو واحد بيوقّف العين في الـ Feed.",
-    "eyebrow": "شوف بنفسك",
-    "title": "Hook الصفحة الرئيسية"
-  },
-  {
-    "card": "CompareCard",
-    "accent": "pink",
-    "title": "إزاي تكتب Hook حقيقي؟",
-    "right": {
-      "label": "RIGHT",
-      "body": "بتبتدي بالنتيجة: '3 أخطاء بتضيّع 90%'."
-    },
-    "left": {
-      "body": "بتعرّف نفسك أو تشكر المتابعين.",
-      "label": "FAILURE"
-    }
-  },
-  {
-    "card": "CTACard",
-    "accent": "mintDeep",
-    "tagline": "جاوب على الأسئلة عشان تشوف استوعبت إيه.",
-    "eyebrow": "دورك دلوقتي",
-    "title": "اختبر فهمك للـ Hook",
-    "highlight": "طبق اللي اتعلمته"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "mint",
-    "title": "صمّم 3 Hooks لفيديو/Reel",
-    "bullets": [
-      "اختار فكرة فيديو واكتب 3 Hooks.",
-      "Hook 1: سؤال يخاطب ألم/فضول.",
-      "Hook 2: رقم/حقيقة صادمة.",
-      "Hook 3: وعد أو تناقض.",
-      "اختار Hook واحد وقول ليه اخترته."
-    ]
-  },
-  {
-    "card": "BulletsCard",
     "accent": "lavender",
-    "bullets": [
-      "كل hero قصير: 5-10 كلمات.",
-      "بيستخدم تباين (زي «المبيعات وحشة مش سؤال»).",
-      "بيخليك تكمل قراءة تلقائي."
-    ],
-    "title": "أول جملة في كل درس = Hook"
+    "src": "lessons/creator-m3-l1-hook.jpg",
+    "title": "مثال لخطاف ملفت",
+    "caption": "الفكرة إن أول ثانية تبقى مختلفة وواضحة كفاية تخلي المشاهد يديك فرصة.",
+    "eyebrow": "لقطة بصرية"
   },
   {
     "card": "CTACard",
     "accent": "peach",
-    "title": "الـ Hook هو مفتاح الفيديو",
-    "tagline": "نتقابل في الدرس الجاي: كل فيديو ناجح بيمشي على نفس البنية.",
-    "eyebrow": "ملخص سريع",
-    "highlight": "اخطف العين في 3 ثواني"
+    "tagline": "جاوب على السؤال عشان تثبت فهمك للدرس ده.",
+    "eyebrow": "دورك دلوقتي",
+    "highlight": "اختبر فهمك",
+    "title": "سؤال واحد للتطبيق"
+  },
+  {
+    "card": "CTACard",
+    "accent": "yellow",
+    "highlight": "جهز بداياتك",
+    "title": "بقيت جاهز تبني بداية قوية",
+    "tagline": "دلوقتي تقدر تكتب بدايات توقف المشاهد وتدي محتواك فرصة. شوفك في الدرس الجاي.",
+    "eyebrow": "إقفال الدرس"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [397, 285, 273, 292, 294, 273, 247, 819, 423, 528, 304, 478, 496, 467];
+export const SCENE_FRAMES: number[] = [295, 269, 457, 402, 245, 263, 277, 316, 237, 263];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
