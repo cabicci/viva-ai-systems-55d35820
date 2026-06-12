@@ -129,6 +129,7 @@ import { SCENES as L_builder_m7_l3_queries_S, SCENE_FRAMES as L_builder_m7_l3_qu
 import { SCENES as L_creator_m4_repurposing_S, SCENE_FRAMES as L_creator_m4_repurposing_F, TOTAL_FRAMES as L_creator_m4_repurposing_T } from "./lessons-generated/creator-m4-repurposing.gen";
 import { SCENES as L_creator_m5_l1_editing_S, SCENE_FRAMES as L_creator_m5_l1_editing_F, TOTAL_FRAMES as L_creator_m5_l1_editing_T } from "./lessons-generated/creator-m5-l1-editing.gen";
 import { SCENES as L_automator_m4_l1_connect_database_S, SCENE_FRAMES as L_automator_m4_l1_connect_database_F, TOTAL_FRAMES as L_automator_m4_l1_connect_database_T } from "./lessons-generated/automator-m4-l1-connect-database.gen";
+import { SCENES as L_analyst_m5_ab_testing_S, SCENE_FRAMES as L_analyst_m5_ab_testing_F, TOTAL_FRAMES as L_analyst_m5_ab_testing_T } from "./lessons-generated/analyst-m5-ab-testing.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -247,5 +248,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m4-repurposing", scenes: L_creator_m4_repurposing_S, sceneFrames: L_creator_m4_repurposing_F, totalFrames: L_creator_m4_repurposing_T },
     { id: "creator-m5-l1-editing", scenes: L_creator_m5_l1_editing_S, sceneFrames: L_creator_m5_l1_editing_F, totalFrames: L_creator_m5_l1_editing_T },
     { id: "automator-m4-l1-connect-database", scenes: L_automator_m4_l1_connect_database_S, sceneFrames: L_automator_m4_l1_connect_database_F, totalFrames: L_automator_m4_l1_connect_database_T },
+    { id: "analyst-m5-ab-testing", scenes: L_analyst_m5_ab_testing_S, sceneFrames: L_analyst_m5_ab_testing_F, totalFrames: L_analyst_m5_ab_testing_T },
   /* @lesson-entries-end */
 ];
