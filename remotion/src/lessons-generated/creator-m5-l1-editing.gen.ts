@@ -5,150 +5,76 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "subtitle": "أهلًا بيك في درس جديد! لو التصوير 100% والمونتاج صفر، الفيديو هيطلع 20% بس. لكن مع Cuts ذكية وكابشنز وإيقاع موسيقى، الفيديو ده هينتشر.",
-    "highlight": "هو نص الفيديو",
-    "chip": "HERO",
-    "title": "المونتاج مش رفاهية"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "لقطات إضافية",
-    "term": "B-roll",
-    "definition": "صور زيادة بتغطي كلامك عشان توضح الفكرة وتكسر الملل."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "tag": "ذكاء المنصة",
-    "term": "Algorithm (خوارزمية)",
-    "definition": "نظام ذكي بيقرر يوري الفيديو لمين بناءً على اهتماماتهم."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "tag": "مقاس الشاشة",
-    "term": "16:9 (Aspect Ratio)",
-    "definition": "شكل الفيديو العريض بتاع زمان (زي شاشة التلفزيون أو اللاب توب)."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "tag": "سرعة الفيديو",
-    "term": "Pacing (الإيقاع)",
-    "definition": "سرعة تنقل اللقطات وتتابع الأحداث عشان المشاهد ميزهقش."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "tag": "إيقاع المزيكا",
-    "term": "Beat",
-    "definition": "خبطة أو \"دقة\" المزيكا اللي بتمشي معاها حركة الفيديو."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "tag": "أول لقطة",
-    "term": "Hook frame",
-    "definition": "أول لقطة في الفيديو، هدفها تشد انتباه الشخص اللي بيقلب."
+    "subtitle": "العرض الضعيف بيخلي الرسالة تضيع، المونتاج بيشيل الزوائد.",
+    "highlight": "مش بس يجمّلها",
+    "chip": "أهلًا يا صاحبي",
+    "title": "المونتاج بيوضح رسالتك"
   },
   {
     "card": "BulletsCard",
     "accent": "lavender",
-    "title": "القاعدة الأولى: الفيديو مضغوط قوي",
     "bullets": [
-      "شيل أي سكتة أطول من ٠.٥ ثانية، وكل «أه» و «يعني» و «اممم». الفيديو لازم يكون مضغوط قوي، خصوصًا أول ٥ ثواني."
-    ]
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "peach",
-    "bullets": [
-      "حط Captions على كل كلمة، عشان ٨٥٪ من الـ Reels بتتشاف من غير صوت. استخدمها وراجعها بس."
+      "كلام مكرر، سكتات طويلة، بدايات بطيئة.",
+      "المشاهد ممكن يسيب الفيديو بسرعة.",
+      "التحرير مش رفاهية، هو احترام لوقت المتفرج."
     ],
-    "title": "القاعدة التانية: كابشنز على كل كلمة"
+    "title": "النسخة الخام غالبًا مشتتة"
   },
   {
     "card": "BulletsCard",
+    "accent": "peach",
+    "bullets": [
+      "اسأل: كل جملة بتخدم الفكرة؟",
+      "احذف المكرر أو اللي برا الموضوع.",
+      "خلي الإيقاع متماسك: بداية، نقطة، قفلة.",
+      "لو الصوت أو الصورة مشتتين، اختصر أو استبدل."
+    ],
+    "title": "شيل الزايد وخلي المسار واضح"
+  },
+  {
+    "card": "CompareCard",
     "accent": "yellow",
-    "title": "القاعدة التالتة: غيّر اللقطة باستمرار",
-    "bullets": [
-      "غيّر اللقطة كل ٢-٣ ثواني. حتى لو نفس المكان، Zoom in، B-roll، Text overlay. السكون = scroll. الحركة = engagement."
-    ]
+    "right": {
+      "label": "الأسلوب الواضح",
+      "body": "بتختار اللقطات اللي بتخدم الفكرة بس، المعنى يوصل بسرعة وثقة."
+    },
+    "title": "تكديس لقطات ولا رسالة مركزة؟",
+    "left": {
+      "body": "كل اللقطات بدون فلترة، زحمة تفاصيل.",
+      "label": "الأسلوب المربك"
+    }
   },
   {
-    "card": "BulletsCard",
+    "card": "ConceptCard",
     "accent": "pink",
-    "title": "القاعدة الرابعة: الموسيقى هي العصب",
-    "bullets": [
-      "الموسيقى هي العصب. ابدأ بـ Trending sound، حط الـ cuts على الـ beat. الـ Algorithm بيعطّل أولوية للـ Reels اللي بتستخدم Trending sounds."
-    ]
+    "term": "Pacing",
+    "definition": "سرعة انتقال الفيديو بين الجمل واللقطات.",
+    "tag": "إيقاع الفيديو"
   },
   {
-    "card": "BulletsCard",
+    "card": "ConceptCard",
     "accent": "mintDeep",
-    "title": "أداة واحدة بس كافية للبداية",
-    "bullets": [
-      "أداة واحدة بس تكفّي للبداية: CapCut Mobile (مجاني، فيه auto-captions، beat sync، و text styles). متبدأش بـ Premier ولا Final Cut — overkill."
-    ]
+    "term": "Cut for Clarity",
+    "definition": "قص الجزء اللي يشتت عشان المعنى يبقى أوضح.",
+    "tag": "قص للوضوح"
   },
   {
     "card": "ScreenshotCard",
     "accent": "mint",
-    "src": "lessons/unique/creator-m5-l1-editing.jpg",
-    "eyebrow": "شوف بنفسك",
-    "title": "التايم لاين = قصة بصرية",
-    "caption": "لاحظ الـ Hook في أول ٣ ثواني عليه caption كبير. كل ٢-٣ ثواني فيه قطع. الموسيقى مرسومة كـ waveform عشان تظبط الـ cuts على الـ beats. ده شكل مونتاج Reel ناجح."
+    "caption": "النسخة المعدلة أقصر وأوضح، كل جزء له وظيفة ومفيش حشو يضيع التركيز.",
+    "title": "شوف الفرق قبل وبعد التحرير",
+    "eyebrow": "مثال بصري",
+    "src": "lessons/unique/creator-m5-l1-editing.jpg"
   },
   {
-    "card": "CompareCard",
+    "card": "CTACard",
     "accent": "lavender",
-    "right": {
-      "body": "نفس الـ ٦٠ ثانية → اتقصّت لـ ٣٥ ثانية. كل سكتة اتشالت. Captions على كل كلمة بـ ألوان واضحة. Background music trending بـ beat synced cuts. الـ Retention ٧٥٪+. الـ Algorithm بيوزّعه.",
-      "label": "صح — مونتاج ١٥ دقيقة"
-    },
-    "title": "نفس اللقطة — نتيجة مختلفة",
-    "left": {
-      "body": "صوّرت نفسك بتشرح ٦٠ ثانية، رفعته زي ما هو. فيه ٤ سكتات و ٢ «اممم» و الصوت واطي و مفيش captions. الـ Retention تحت ١٥٪. السلام.",
-      "label": "فشل — رفع خام"
-    }
-  },
-  {
-    "card": "CTACard",
-    "accent": "peach",
-    "highlight": "مونتاج كامل",
-    "tagline": "يلا نطبق اللي اتعلمناه ونعمل أول ريل مونتاج كامل، عشان نشوف مدى استيعابك للدرس.",
-    "title": "اعمل أول Reel",
+    "tagline": "حل السؤال عشان تأكد فهمك للدرس.",
+    "title": "المونتاج قرار مش تجميل",
+    "highlight": "إيه أفضل قرار؟",
     "eyebrow": "دورك دلوقتي"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "yellow",
-    "title": "اعمل تشيك ليست مونتاج ريل قبل النشر",
-    "bullets": [
-      "كل Reel هينزل، يعدّي على نفس الـ Checklist. لو فشل بند واحد، الفيديو يرجع للمونتاج مش يتنشر.",
-      "في تسليمك اكتب Checklist من ٧ بنود لازم تعدّي عليهم قبل نشر أي Reel، مرتبطة بالـ ٤ قواعد."
-    ]
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "pink",
-    "title": "كل lesson عدّى بـ ٣-٥ مراجعات قبل النشر",
-    "bullets": [
-      "الجزء ده من المنصة اتبنى بمسار Creator — نفس اللي بتتعلمه.",
-      "أول draft للدرس بيكون ٣ ضعف الحجم النهائي. بنقص ونقص لحد ما يبقى essential بس.",
-      "الـ editing هو اللي بيخلّي الدرس قابل للقراءة في ١٠ دقايق بدل ٣٠."
-    ]
-  },
-  {
-    "card": "CTACard",
-    "accent": "mintDeep",
-    "eyebrow": "لخصنا الدرس",
-    "tagline": "شوفك في الدرس الجاي: الـ Thumbnail = نص نجاح اليوتيوب",
-    "title": "المونتاج هو نص نجاح الفيديو",
-    "highlight": "يلا طبق اللي اتعلمته في الكويز"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [509, 232, 251, 300, 252, 175, 202, 430, 352, 465, 345, 301, 496, 1024, 315, 645, 681, 445];
+export const SCENE_FRAMES: number[] = [351, 483, 589, 615, 390, 427, 406, 339];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
