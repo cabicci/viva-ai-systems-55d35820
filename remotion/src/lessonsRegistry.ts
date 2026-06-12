@@ -31,7 +31,6 @@ import { SCENES as L_automator_m5_l1_llm_in_flow_S, SCENE_FRAMES as L_automator_
 import { SCENES as L_analyst_m5_l2_weekly_review_ritual_S, SCENE_FRAMES as L_analyst_m5_l2_weekly_review_ritual_F, TOTAL_FRAMES as L_analyst_m5_l2_weekly_review_ritual_T } from "./lessons-generated/analyst-m5-l2-weekly-review-ritual.gen";
 import { SCENES as L_business_m6_l1_reactive_relapse_S, SCENE_FRAMES as L_business_m6_l1_reactive_relapse_F, TOTAL_FRAMES as L_business_m6_l1_reactive_relapse_T } from "./lessons-generated/business-m6-l1-reactive-relapse.gen";
 import { SCENES as L_business_m3_l1_customer_lifecycle_S, SCENE_FRAMES as L_business_m3_l1_customer_lifecycle_F, TOTAL_FRAMES as L_business_m3_l1_customer_lifecycle_T } from "./lessons-generated/business-m3-l1-customer-lifecycle.gen";
-import { SCENES as L_builder_m5_l2_frontend_S, SCENE_FRAMES as L_builder_m5_l2_frontend_F, TOTAL_FRAMES as L_builder_m5_l2_frontend_T } from "./lessons-generated/builder-m5-l2-frontend.gen";
 import { SCENES as L_builder_m8_l2_rls_S, SCENE_FRAMES as L_builder_m8_l2_rls_F, TOTAL_FRAMES as L_builder_m8_l2_rls_T } from "./lessons-generated/builder-m8-l2-rls.gen";
 import { SCENES as L_builder_m9_l2_embeddings_S, SCENE_FRAMES as L_builder_m9_l2_embeddings_F, TOTAL_FRAMES as L_builder_m9_l2_embeddings_T } from "./lessons-generated/builder-m9-l2-embeddings.gen";
 import { SCENES as L_builder_m9_l1_rag_S, SCENE_FRAMES as L_builder_m9_l1_rag_F, TOTAL_FRAMES as L_builder_m9_l1_rag_T } from "./lessons-generated/builder-m9-l1-rag.gen";
@@ -130,6 +129,7 @@ import { SCENES as L_creator_m5_l1_editing_S, SCENE_FRAMES as L_creator_m5_l1_ed
 import { SCENES as L_automator_m4_l1_connect_database_S, SCENE_FRAMES as L_automator_m4_l1_connect_database_F, TOTAL_FRAMES as L_automator_m4_l1_connect_database_T } from "./lessons-generated/automator-m4-l1-connect-database.gen";
 import { SCENES as L_analyst_m5_ab_testing_S, SCENE_FRAMES as L_analyst_m5_ab_testing_F, TOTAL_FRAMES as L_analyst_m5_ab_testing_T } from "./lessons-generated/analyst-m5-ab-testing.gen";
 import { SCENES as L_business_m4_l1_premature_scaling_S, SCENE_FRAMES as L_business_m4_l1_premature_scaling_F, TOTAL_FRAMES as L_business_m4_l1_premature_scaling_T } from "./lessons-generated/business-m4-l1-premature-scaling.gen";
+import { SCENES as L_builder_m5_l2_frontend_S, SCENE_FRAMES as L_builder_m5_l2_frontend_F, TOTAL_FRAMES as L_builder_m5_l2_frontend_T } from "./lessons-generated/builder-m5-l2-frontend.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -150,7 +150,6 @@ export const LESSONS: LessonModule[] = [
     { id: "analyst-m5-l2-weekly-review-ritual", scenes: L_analyst_m5_l2_weekly_review_ritual_S, sceneFrames: L_analyst_m5_l2_weekly_review_ritual_F, totalFrames: L_analyst_m5_l2_weekly_review_ritual_T },
     { id: "business-m6-l1-reactive-relapse", scenes: L_business_m6_l1_reactive_relapse_S, sceneFrames: L_business_m6_l1_reactive_relapse_F, totalFrames: L_business_m6_l1_reactive_relapse_T },
     { id: "business-m3-l1-customer-lifecycle", scenes: L_business_m3_l1_customer_lifecycle_S, sceneFrames: L_business_m3_l1_customer_lifecycle_F, totalFrames: L_business_m3_l1_customer_lifecycle_T },
-    { id: "builder-m5-l2-frontend", scenes: L_builder_m5_l2_frontend_S, sceneFrames: L_builder_m5_l2_frontend_F, totalFrames: L_builder_m5_l2_frontend_T },
     { id: "builder-m8-l2-rls", scenes: L_builder_m8_l2_rls_S, sceneFrames: L_builder_m8_l2_rls_F, totalFrames: L_builder_m8_l2_rls_T },
     { id: "builder-m9-l2-embeddings", scenes: L_builder_m9_l2_embeddings_S, sceneFrames: L_builder_m9_l2_embeddings_F, totalFrames: L_builder_m9_l2_embeddings_T },
     { id: "builder-m9-l1-rag", scenes: L_builder_m9_l1_rag_S, sceneFrames: L_builder_m9_l1_rag_F, totalFrames: L_builder_m9_l1_rag_T },
@@ -249,5 +248,6 @@ export const LESSONS: LessonModule[] = [
     { id: "automator-m4-l1-connect-database", scenes: L_automator_m4_l1_connect_database_S, sceneFrames: L_automator_m4_l1_connect_database_F, totalFrames: L_automator_m4_l1_connect_database_T },
     { id: "analyst-m5-ab-testing", scenes: L_analyst_m5_ab_testing_S, sceneFrames: L_analyst_m5_ab_testing_F, totalFrames: L_analyst_m5_ab_testing_T },
     { id: "business-m4-l1-premature-scaling", scenes: L_business_m4_l1_premature_scaling_S, sceneFrames: L_business_m4_l1_premature_scaling_F, totalFrames: L_business_m4_l1_premature_scaling_T },
+    { id: "builder-m5-l2-frontend", scenes: L_builder_m5_l2_frontend_S, sceneFrames: L_builder_m5_l2_frontend_F, totalFrames: L_builder_m5_l2_frontend_T },
   /* @lesson-entries-end */
 ];
