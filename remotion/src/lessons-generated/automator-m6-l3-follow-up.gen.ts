@@ -5,96 +5,84 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "chip": "أهلًا",
-    "subtitle": "Lead دخل. ردّت. سكت.",
-    "highlight": "الـ automation هيكمل المحادثة.",
-    "title": "المتابعة اللي بتشتغل لوحدها"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "definition": "زبون مهتم بس لسه مشتراش، مجرد \"طرف خيط\" لبيعة محتملة.",
-    "tag": "عميل محتمل",
-    "term": "Lead"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "definition": "الدفتر الرقمي اللي شايل بيانات عملائك وكل اللي حصل مابينكم.",
-    "tag": "نظام إدارة العملاء",
-    "term": "CRM (Customer Relationship Management)"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "tag": "حدث البدء",
-    "term": "Trigger",
-    "definition": "الشرارة أو \"الخبطة\" اللي بتخلي السيستم يبدأ ينفذ خطوات ورا بعض."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "definition": "إنك \"توجب\" مع الزبون بمعلومات ومتابعة عشان تسخن البيعة.",
-    "tag": "تغذية Lead",
-    "term": "Lead Nurturing"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "tag": "تسلسل متابعة",
-    "term": "Follow-up Sequence (أو Automation)",
-    "definition": "مجموعة رسائل أو خطوات مترتبة ورا بعض بتشتغل لوحدها بالوقت."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "tag": "رسالة إنهاء متابعة",
-    "term": "Break-up Message",
-    "definition": "رسالة \"آخر فرصة\" بتعرف فيها الزبون إنك هتوقف متابعة معاه."
+    "subtitle": "الأوتوميشن بيخليها منتظمة ومش معتمدة على ذاكرتك.",
+    "chip": "أهلًا - بداية الدرس",
+    "highlight": "المتابعة",
+    "title": "هتفهم إيه النهاردة؟"
   },
   {
     "card": "BulletsCard",
     "accent": "lavender",
-    "title": "الـ Sequence بتتحرّك لوحدها",
     "bullets": [
-      "اليوم 0: Lead دخل ← ردّ ترحيب فوري + resource مفيد.",
-      "اليوم 2: لو مافتحش الإيميل ← WhatsApp reminder.",
-      "اليوم 5: لو ماتفاعلش ← رسالة قصيرة بسؤال واحد.",
-      "اليوم 7: لو اتفاعل ← تحويل لـ human (فريق المبيعات).",
-      "اليوم 14: لو ماتفاعلش نهائيًا ← tag 'cold' ونقل لـ nurture sequence بطيئة.",
-      "كل step في الـ sequence بتتنفّذ أو بتتخطّى حسب سلوك الـ lead، مش حسب الوقت بس."
-    ]
+      "Lead سجّل واستلم رد ترحيب. قلت «هكلمه بكرة». بكرة في شغل تاني. الأسبوع عدى.",
+      "العميل فتح إيميل من حد تاني. الصفقة راحت — مش عشان المنتج وحش، عشان المتابعة وقفت.",
+      "المشكلة مش نقص اهتمام منك — المشكلة مفيش نظام يكمل المحادثة لو إنت مش فاضي."
+    ],
+    "title": "ردّيت مرة — وسكتّوا الاتنين"
   },
   {
-    "card": "ScreenshotCard",
+    "card": "BulletsCard",
     "accent": "peach",
-    "eyebrow": "شوف بنفسك",
-    "src": "lessons/unique/automator-m6-l3-follow-up.jpg",
-    "caption": "في Creator M5 شفنا إن الجدولة محتاجة system. هنا هنبني نفس الفكرة بس للـ follow-up: جدول زمني + triggers + actions + evaluation. الـ content calendar بتاع Creator بقى 'follow-up sequence' للـ leads.",
-    "title": "الجدولة في Creator"
+    "bullets": [
+      "Follow-up مش رسالة واحدة — تسلسل: يوم ٠ ترحيب، يوم ٢ تذكير، يوم ٥ سؤال واحد.",
+      "كل خطوة لها هدف مختلف — مش نفس «تفتكر العرض؟» كل يومين.",
+      "الأوتوميشن يوقف لو العميل رد، أو يحوّل لبشري لو بقى مهتم.",
+      "المتابعة المنتظمة = فرص أكتر — من غير إزعاج."
+    ],
+    "title": "تسلسل متابعة = خطوات بوقت وسلوك"
   },
   {
     "card": "CompareCard",
     "accent": "yellow",
     "right": {
-      "body": "فتح الإيميل ← ننتقل لـ WhatsApp. رد على رسالة ← human takeover. ماتفاعلش أبدًا ← nurture monthly. كل touchpoint مختلفة عن اللي قبله ومبنية على اللي حصل.",
-      "label": "RIGHT — Sequence بتتكيّف مع سلوك الـ lead"
+      "label": "تسلسل أوتوماتيك",
+      "body": "يوم ٠: ترحيب + مورد. يوم ٢: تذكير لطيف. يوم ٥: سؤال واحد. رد؟ يوقف ويحوّل لبشري."
     },
-    "title": "Sequence بطيئة vs Sequence مزعجة",
+    "title": "متابعة عشوائية vs تسلسل منتظم",
     "left": {
-      "label": "FAILURE — تكرار من غير context",
-      "body": "بتبعت نفس الرسالة كل يومين لمدة شهر. 'تفتكر العرض؟' 'العرض لسه موجود!' 'العرض ممكن ينتهي!' الـ lead بيحظرك وبيتكتب مقال عن 'الشركة المزعجة دي'."
+      "label": "حسب المزاج",
+      "body": "«هكلمه لما أفضى». ساعات ترد، ساعات تنسى. العميل مش عارف إنت مهتم ولا لأ."
     }
   },
   {
-    "card": "CTACard",
+    "card": "ConceptCard",
     "accent": "pink",
-    "tagline": "يلا نطبق ونبني أول sequence ليك!",
-    "eyebrow": "دورك دلوقتي",
-    "highlight": "طبق اللي اتعلمته",
-    "title": "اكتب Sequence أول Lead"
+    "definition": "خطوات رسائل مترتبة بوقت — كل واحدة هدفها مختلف.",
+    "tag": "مترتبة بوقت",
+    "term": "Follow-up Sequence (تسلسل متابعة)"
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "mintDeep",
+    "definition": "إمتى التسلسل يقف — العميل رد، طلب إلغاء، أو اشتري.",
+    "tag": "إمتى يقف التسلسل",
+    "term": "Stop Condition (شرط التوقف)"
+  },
+  {
+    "card": "ScreenshotCard",
+    "accent": "mint",
+    "src": "lessons/unique/automator-m6-l3-follow-up.jpg",
+    "caption": "كل touchpoint هدفه مختلف — مش تكرار نفس الرسالة. الوقت + المحتوى + شرط التوقف.",
+    "eyebrow": "لقطة بصرية",
+    "title": "جدول المتابعة على ٣ خطوات"
+  },
+  {
+    "card": "CTACard",
+    "accent": "lavender",
+    "highlight": "اختبر فهمك",
+    "title": "سؤال واحد — مش امتحان",
+    "tagline": "حل السؤال عشان تتأكد إنك فهمت كويس.",
+    "eyebrow": "دورك دلوقتي"
+  },
+  {
+    "card": "CTACard",
+    "accent": "peach",
+    "tagline": "المتابعة بتضيع فيها المبيعات، والأوتوميشن بيخليها منتظمة. شوفك في الدرس الجاي!",
+    "eyebrow": "لخص اللي فات",
+    "highlight": "وفر وقتك ومبيعاتك",
+    "title": "المتابعة أهم حاجة"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [417, 555, 472, 493, 465, 485, 427, 595, 519, 511, 463];
+export const SCENE_FRAMES: number[] = [637, 747, 796, 723, 376, 465, 486, 401, 445];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
