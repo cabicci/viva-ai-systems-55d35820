@@ -72,7 +72,6 @@ import { SCENES as L_builder_m3_l2_memory_limits_S, SCENE_FRAMES as L_builder_m3
 import { SCENES as L_builder_m5_l2_frontend_S, SCENE_FRAMES as L_builder_m5_l2_frontend_F, TOTAL_FRAMES as L_builder_m5_l2_frontend_T } from "./lessons-generated/builder-m5-l2-frontend.gen";
 import { SCENES as L_builder_m7_l2_relations_S, SCENE_FRAMES as L_builder_m7_l2_relations_F, TOTAL_FRAMES as L_builder_m7_l2_relations_T } from "./lessons-generated/builder-m7-l2-relations.gen";
 import { SCENES as L_builder_m7_l3_queries_S, SCENE_FRAMES as L_builder_m7_l3_queries_F, TOTAL_FRAMES as L_builder_m7_l3_queries_T } from "./lessons-generated/builder-m7-l3-queries.gen";
-import { SCENES as L_builder_m6_l3_first_prompt_to_lovable_S, SCENE_FRAMES as L_builder_m6_l3_first_prompt_to_lovable_F, TOTAL_FRAMES as L_builder_m6_l3_first_prompt_to_lovable_T } from "./lessons-generated/builder-m6-l3-first-prompt-to-lovable.gen";
 import { SCENES as L_builder_m8_l2_rls_S, SCENE_FRAMES as L_builder_m8_l2_rls_F, TOTAL_FRAMES as L_builder_m8_l2_rls_T } from "./lessons-generated/builder-m8-l2-rls.gen";
 import { SCENES as L_builder_m6_l4_components_routes_S, SCENE_FRAMES as L_builder_m6_l4_components_routes_F, TOTAL_FRAMES as L_builder_m6_l4_components_routes_T } from "./lessons-generated/builder-m6-l4-components-routes.gen";
 import { SCENES as L_builder_m6_l5_iteration_S, SCENE_FRAMES as L_builder_m6_l5_iteration_F, TOTAL_FRAMES as L_builder_m6_l5_iteration_T } from "./lessons-generated/builder-m6-l5-iteration.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_business_m4_l2_reactive_relapse_S, SCENE_FRAMES as L_busine
 import { SCENES as L_creator_m1_l2_attention_economy_S, SCENE_FRAMES as L_creator_m1_l2_attention_economy_F, TOTAL_FRAMES as L_creator_m1_l2_attention_economy_T } from "./lessons-generated/creator-m1-l2-attention-economy.gen";
 import { SCENES as L_business_m1_l1_from_decisions_to_leadership_S, SCENE_FRAMES as L_business_m1_l1_from_decisions_to_leadership_F, TOTAL_FRAMES as L_business_m1_l1_from_decisions_to_leadership_T } from "./lessons-generated/business-m1-l1-from-decisions-to-leadership.gen";
 import { SCENES as L_creator_m6_l3_analytics_S, SCENE_FRAMES as L_creator_m6_l3_analytics_F, TOTAL_FRAMES as L_creator_m6_l3_analytics_T } from "./lessons-generated/creator-m6-l3-analytics.gen";
+import { SCENES as L_builder_m6_l3_first_prompt_to_lovable_S, SCENE_FRAMES as L_builder_m6_l3_first_prompt_to_lovable_F, TOTAL_FRAMES as L_builder_m6_l3_first_prompt_to_lovable_T } from "./lessons-generated/builder-m6-l3-first-prompt-to-lovable.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -186,7 +186,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m5-l2-frontend", scenes: L_builder_m5_l2_frontend_S, sceneFrames: L_builder_m5_l2_frontend_F, totalFrames: L_builder_m5_l2_frontend_T },
     { id: "builder-m7-l2-relations", scenes: L_builder_m7_l2_relations_S, sceneFrames: L_builder_m7_l2_relations_F, totalFrames: L_builder_m7_l2_relations_T },
     { id: "builder-m7-l3-queries", scenes: L_builder_m7_l3_queries_S, sceneFrames: L_builder_m7_l3_queries_F, totalFrames: L_builder_m7_l3_queries_T },
-    { id: "builder-m6-l3-first-prompt-to-lovable", scenes: L_builder_m6_l3_first_prompt_to_lovable_S, sceneFrames: L_builder_m6_l3_first_prompt_to_lovable_F, totalFrames: L_builder_m6_l3_first_prompt_to_lovable_T },
     { id: "builder-m8-l2-rls", scenes: L_builder_m8_l2_rls_S, sceneFrames: L_builder_m8_l2_rls_F, totalFrames: L_builder_m8_l2_rls_T },
     { id: "builder-m6-l4-components-routes", scenes: L_builder_m6_l4_components_routes_S, sceneFrames: L_builder_m6_l4_components_routes_F, totalFrames: L_builder_m6_l4_components_routes_T },
     { id: "builder-m6-l5-iteration", scenes: L_builder_m6_l5_iteration_S, sceneFrames: L_builder_m6_l5_iteration_F, totalFrames: L_builder_m6_l5_iteration_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m1-l2-attention-economy", scenes: L_creator_m1_l2_attention_economy_S, sceneFrames: L_creator_m1_l2_attention_economy_F, totalFrames: L_creator_m1_l2_attention_economy_T },
     { id: "business-m1-l1-from-decisions-to-leadership", scenes: L_business_m1_l1_from_decisions_to_leadership_S, sceneFrames: L_business_m1_l1_from_decisions_to_leadership_F, totalFrames: L_business_m1_l1_from_decisions_to_leadership_T },
     { id: "creator-m6-l3-analytics", scenes: L_creator_m6_l3_analytics_S, sceneFrames: L_creator_m6_l3_analytics_F, totalFrames: L_creator_m6_l3_analytics_T },
+    { id: "builder-m6-l3-first-prompt-to-lovable", scenes: L_builder_m6_l3_first_prompt_to_lovable_S, sceneFrames: L_builder_m6_l3_first_prompt_to_lovable_F, totalFrames: L_builder_m6_l3_first_prompt_to_lovable_T },
   /* @lesson-entries-end */
 ];

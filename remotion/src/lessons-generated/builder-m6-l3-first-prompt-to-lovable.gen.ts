@@ -5,48 +5,77 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "chip": "المشكلة",
-    "highlight": "مش اللي في بالي؟",
-    "title": "ليه الـ AI بيبني واجهة",
-    "subtitle": "الـ AI بيبني الواجهة اللي بتكتبها بالحرف، مش اللي بتتمناها."
+    "title": "هتفهم إيه النهاردة؟",
+    "subtitle": "Goal + Users + Pages + Style + Constraints.",
+    "chip": "بداية الدرس",
+    "highlight": "أول prompt محتاج ٥ أجزاء بس"
   },
   {
-    "card": "ScreenshotCard",
+    "card": "BulletsCard",
     "accent": "lavender",
-    "eyebrow": "جرّب دلوقتي",
-    "caption": "دي الواجهة اللي العميل هيكلّم منها الـ AI بتاعك. بص الـ prompt هنا مش مجرد 'اعملي واجهة'. مكتوب فيه نوع الواجهة (صفحة هبوط)، والنشاط (كافيه عنده AI باريستا)، والأقسام المطلوبة بالاسم. النتيجة؟ قريبة جدًا من اللي في دماغنا من أول مرة.",
-    "src": "lessons/unique/builder-m6-first-prompt.jpg",
-    "title": "شوف الفرق لما توصف طلبك للـ AI"
+    "bullets": [
+      "كتبت «ابنيلي واجهة AI» — طلع ألوان فاقعة وأقسام مش عايزها.",
+      "Lovable بيبني اللي بتكتبه حرفيًا — مش اللي بتتمناه. ٣ كلمات = تخمين كامل.",
+      "الحل آمن وبسيط: اكتب وصفة ٥ أجزاء — انسخها في Lovable وجرّب."
+    ],
+    "title": "«اعملي واجهة» — ويطلع مش اللي في بالك"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "peach",
+    "bullets": [
+      "Goal: نوع الواجهة وهدفها.",
+      "Users: مين هيستخدمها.",
+      "Pages: أقسام الـ Wireframe.",
+      "Style: الألوان والنبرة والمود.",
+      "Constraints: إيه اللي مش عايزينه."
+    ],
+    "title": "أول prompt = ٥ أجزاء أساسية"
   },
   {
     "card": "CompareCard",
-    "accent": "peach",
-    "title": "الفرق بين طلب غامض ووصفة واضحة للـ AI",
+    "accent": "yellow",
     "right": {
-      "body": "«(١) الهدف: واجهة تطبيق (Landing page) لكافيه عنده AI باريستا. (٢) النطاق: صفحة واحدة بس. (٣) الأقسام: قسم رئيسي فيه سؤال 'إيه مودك النهارده؟'، منيو بـ ٦ مشروبات بيقترحها الـ AI، قسم تواصل. (٤) الستايل: دافي، ألوان بنّي وبيج. (٥) الممنوعات: متعملش login.» ده prompt يطلع نتيجة تتنشر.",
-      "label": "واضح 👍: وصفة لواجهة تطبيق ذكي"
+      "label": "Prompt Spec",
+      "body": "Goal: landing page لكافيه + AI باريستا. Users: زباين ٢٠–٣٥. Pages: hero + منيو ٦ مشروبات + تواصل. Style: دافي، بنّي وبيج. Constraints: من غير login."
     },
+    "title": "«ابني واجهة» vs Prompt Spec",
     "left": {
-      "body": "٣ كلمات. بتسيب الـ AI يخمّن كل حاجة: الألوان، الأقسام، الصور، إزاي العميل هيكلم الـ AI أصلًا. هتفضل تعدّل عليه ٦ مرات عشان توصل للي عايزه.",
-      "label": "غامض 👎: «ابني واجهة لكافيه»"
+      "body": "«ابنيلي واجهة كافيه» — AI يخمّن كل حاجة. ٦ تعديلات. لسه مش مظبوط.",
+      "label": "٣ كلمات"
     }
   },
   {
     "card": "ConceptCard",
-    "accent": "yellow",
-    "definition": "الروشتة التفصيلية اللي بتوصف فيها للـ AI إنت عايز واجهة تطبيقك شكلها إيه بالظبط، وإيه لأ.",
-    "tag": "وصف دقيق للـ AI",
-    "term": "مواصفات الواجهة (Prompt Spec)"
+    "accent": "pink",
+    "tag": "وصفة كاملة",
+    "term": "Prompt Spec (مواصفات الواجهة)",
+    "definition": "الوصفة الكاملة — goal, users, pages, style, constraints."
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "mintDeep",
+    "definition": "إيه اللي في النسخة دي — وإيه اللي بعدين.",
+    "tag": "النسخة الحالية",
+    "term": "Scope (النطاق)"
+  },
+  {
+    "card": "ScreenshotCard",
+    "accent": "mint",
+    "src": "lessons/unique/builder-m6-l3-first-prompt-to-lovable.jpg",
+    "title": "Prompt → Preview",
+    "caption": "الـ prompt مش «اعملي واجهة» — فيه goal، نشاط، أقسام بالاسم، وستايل. النتيجة أقرب من أول مرة.",
+    "eyebrow": "شوفها ببساطة"
   },
   {
     "card": "CTACard",
-    "accent": "pink",
-    "tagline": "يلا نختبر فهمك ونشوف هتعرف توصف للـ AI اللي في بالك بالظبط ولا لأ.",
-    "highlight": "اللي في دماغك؟",
-    "title": "هتعرف توصف للـ AI",
+    "accent": "lavender",
+    "tagline": "شارك في السؤال عشان تتأكد إنك فهمت كويس.",
+    "title": "اختبر فهمك",
+    "highlight": "اختار أحسن جزء في الـ Prompt Spec",
     "eyebrow": "دورك دلوقتي"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [559, 531, 684, 504, 315];
+export const SCENE_FRAMES: number[] = [420, 591, 511, 540, 360, 387, 454, 406];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
