@@ -5,109 +5,87 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "highlight": "هو اللي بيوصّل الـ ٤ مسارات لبعضها",
-    "subtitle": "أحمد دلوقتي عنده نظام تشغيل كامل، بس اكتشف إن مسار Business لوحده مش كافي. لازم يربط الـ ٥ مسارات في إيكوسيستم متكامل.",
-    "chip": "أهلًا، مسار Business",
-    "title": "Business مش مسار لوحده"
+    "title": "المسارات الـ ٥",
+    "subtitle": "مش مسارات منفصلة للتباهي",
+    "highlight": "كنظام تشغيل للـ AI",
+    "chip": "أهلًا، بداية الدرس"
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "lavender",
-    "tag": "Business بيقرّر، Analyst بيقيس.",
-    "term": "Ecosystem",
-    "definition": "منظومة متكاملة من المسارات الـ ٥ بتشتغل مع بعض بدل ما تكون منعزلة."
+    "title": "تشتت المسارات",
+    "bullets": [
+      "الحماس يخليك تفتح كل المسارات — وبعد شهر مفيش نتيجة ملموسة في أي اتجاه.",
+      "Business يحدّد الاتجاه والتشغيل. الباقي يخدم هدف — مش العكس.",
+      "Builder مسار عمق اختياري لبناء أدوات — مش الوعد الأساسي. أغلب أصحاب البيزنس يبدأوا بـ User و Operator."
+    ]
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "peach",
-    "term": "Conductor Role",
-    "definition": "دور القائد اللي بيحدّد كل مسار يلعب امتى وإزاي.",
-    "tag": "أحمد بيقرّر إن Analyst يحلّل."
+    "bullets": [
+      "Business: اتجاه، قرار، تشغيل، عميل، نظام — القائد.",
+      "Creator: محتوى وثقة وجمهور — يخلق طلب ووعي.",
+      "Analyst: أرقام وقرارات — يقرأ الواقع مش الإحساس.",
+      "Automator: شغل متكرر يشتغل لوحده — يحرّر وقتك.",
+      "Builder: أدوات وتطبيقات — لما تحتاج منتج مخصص؛ اختياري وعميق."
+    ],
+    "title": "دور كل مسار"
   },
   {
     "card": "ConceptCard",
     "accent": "yellow",
-    "tag": "Analyst + Creator: بيانات بتتحوّل لقصة.",
-    "term": "Cross-Track Synergy",
-    "definition": "لما مسارين بيشتغلوا مع بعض بيطلّعوا نتيجة أكبر من جمعهم."
+    "tag": "نظام تشغيل",
+    "term": "Business OS",
+    "definition": "البيزنس بيجمع القرار والإيقاع والعميل، والمسارات التانية بتغذيه."
   },
   {
     "card": "ConceptCard",
     "accent": "pink",
-    "term": "Workflow Stack",
-    "definition": "تسلسل واضح: المسار ده بياخد input من فين، وبيدّي output لمين.",
-    "tag": "Analyst → Business → Automator → Creator."
+    "tag": "باني (اختياري)",
+    "term": "Builder",
+    "definition": "بناء تطبيق أو أداة مخصصة، اختياري مش أساسي لكل بيزنس."
   },
   {
-    "card": "ConceptCard",
+    "card": "CompareCard",
     "accent": "mintDeep",
-    "term": "Integration Audit",
-    "definition": "مراجعة دورية: هل المسارات الـ ٥ بتتكلم مع بعض ولا كل واحد لوحده؟",
-    "tag": "أحمد كل شهر يشوف: هل في مسار شغّال في عزلة؟"
+    "right": {
+      "label": "تركيز ودعم",
+      "body": "هدف واحد، مسارين يخدموه، والباقي بعدين."
+    },
+    "title": "الفرق بين التشتت والتركيز",
+    "left": {
+      "body": "تبدأ كل المسارات، مفيش مشروع أو محتوى أو أتمتة واضحة.",
+      "label": "تشتت"
+    }
   },
   {
     "card": "BulletsCard",
     "accent": "mint",
     "bullets": [
-      "Analyst — بيكشف المشكلة بالأرقام (مثلاً: Retention 18%).",
-      "Business — بيحدّد القرار (نشتغل على Retention قبل أي حاجة).",
-      "Automator — بيبني الـ workflow (رسالة بعد كل أوردر).",
-      "Creator — بيكتب الرسالة بصوت البراند.",
-      "Builder — بيبني الأداة لو محتاج شيء مخصّص (تطبيق ولاء مثلاً)."
+      "Business في الوسط يوجّه.",
+      "Creator و Analyst و Automator يغذّوا التشغيل.",
+      "Builder عند الحاجة فقط."
     ],
-    "title": "إزاي نربط الـ ٥ مسارات في workflow واحد؟"
+    "title": "النظام المتكامل"
   },
   {
-    "card": "BulletsCard",
+    "card": "CTACard",
     "accent": "lavender",
-    "bullets": [
-      "\"عندي مشكلة في بيزنسي [اوصفها]. صمّم لي workflow بيستخدم الـ ٥ مسارات (Business, Analyst, Automator, Creator, Builder) بالترتيب. لكل مسار: ١) دوره في الحل. ٢) الـ input اللي بياخده. ٣) الـ output اللي بيدّيه. ٤) أداة AI واحدة محدّدة هستخدمها.\""
-    ],
-    "title": "الـ Prompt القاتل: 5-Track Ecosystem Designer"
+    "highlight": "إزاي تطبق اللي فهمته؟",
+    "tagline": "حل السؤال عشان تختبر فهمك وتثبت المعلومة.",
+    "title": "سؤال سريع",
+    "eyebrow": "دورك دلوقتي"
   },
   {
-    "card": "CompareCard",
+    "card": "CTACard",
     "accent": "peach",
-    "right": {
-      "body": "أحمد يبدأ من Analyst (إيه المشكلة؟)، يقرّر بـ Business، يبني بـ Automator، يوصّل بـ Creator. كل مسار بيدخل في التاني. نتيجة: شغل أقل، أثر أكبر.",
-      "label": "RIGHT — ecosystem"
-    },
-    "left": {
-      "body": "أحمد يستخدم Creator لمحتوى عشوائي بدون أرقام من Analyst. يكتب أتمتة بدون قرار من Business. كل مسار شغّال لوحده — نتيجة: شغل كتير، أثر قليل.",
-      "label": "FAILURE — منعزل"
-    },
-    "title": "مسارات منعزلة vs ecosystem متكامل"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "yellow",
-    "bullets": [
-      "اختار مشكلة حقيقية في بيزنسك دلوقتي (Retention ضعيف، مبيعات ثابتة، فريق مش منتج).",
-      "افتح AI. الصق الـ Prompt القاتل مع المشكلة بتاعتك.",
-      "خد الـ workflow اللي طلع، وارسمه على ورقة كـ flow chart (مربع لكل مسار + سهم بين كل اتنين).",
-      "لكل مسار، حدّد: الأداة اللي هتستخدمها + الوقت المتوقع + المسؤول (إنت، فريق، AI).",
-      "نفّذ أول خطوتين فقط (Analyst + Business) الأسبوع ده. مش لازم تنفّذ الـ ٥ مرة واحدة.",
-      "وثّق الـ workflow في \"Business OS\" بتاعك — هتعيد استخدامه لمشاكل تانية."
-    ],
-    "title": "صمّم workflow حقيقي يربط الـ ٥ مسارات"
-  },
-  {
-    "card": "CTACard",
-    "accent": "pink",
-    "title": "اختبر فهمك",
-    "eyebrow": "دورك دلوقتي",
-    "tagline": "خش دلوقتي وجاوب على الأسئلة عشان تتأكد إنك فهمت",
-    "highlight": "شوف إزاي تربط كل حاجة ببعضها"
-  },
-  {
-    "card": "CTACard",
-    "accent": "mintDeep",
-    "title": "صمّم ونفّذ workflow حقيقي يربط ٥ مسارات",
-    "eyebrow": "Mission",
-    "tagline": "نتقابل في الدرس الجاي: النظام بتاعك الشخصي خلص — دي اللحظة اللي بتغيّر كل حاجة",
-    "highlight": "ده الاختبار النهائي للـ Business OS بتاعك. مش درس — هو تخرّج."
+    "eyebrow": "مهمتك · ختام النظام",
+    "tagline": "اربط هدفك الحالي بأهم مسارين واشرح ليه. جرب النظام أسبوع وارجع لأي درس محتاجه.",
+    "title": "هدفك + مسارين",
+    "highlight": "ابدأ تطبيق النظام دلوقتي!"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [647, 357, 376, 437, 468, 442, 843, 642, 930, 846, 354, 583];
+export const SCENE_FRAMES: number[] = [510, 557, 648, 619, 595, 492, 485, 414, 478];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);

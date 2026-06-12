@@ -103,7 +103,6 @@ import { SCENES as L_business_m3_l4_hiring_onboarding_S, SCENE_FRAMES as L_busin
 import { SCENES as L_business_m2_l3_readiness_signals_S, SCENE_FRAMES as L_business_m2_l3_readiness_signals_F, TOTAL_FRAMES as L_business_m2_l3_readiness_signals_T } from "./lessons-generated/business-m2-l3-readiness-signals.gen";
 import { SCENES as L_business_m2_l2_retention_flow_S, SCENE_FRAMES as L_business_m2_l2_retention_flow_F, TOTAL_FRAMES as L_business_m2_l2_retention_flow_T } from "./lessons-generated/business-m2-l2-retention-flow.gen";
 import { SCENES as L_business_m2_l4_pricing_cash_flow_S, SCENE_FRAMES as L_business_m2_l4_pricing_cash_flow_F, TOTAL_FRAMES as L_business_m2_l4_pricing_cash_flow_T } from "./lessons-generated/business-m2-l4-pricing-cash-flow.gen";
-import { SCENES as L_business_m4_l4_full_ecosystem_S, SCENE_FRAMES as L_business_m4_l4_full_ecosystem_F, TOTAL_FRAMES as L_business_m4_l4_full_ecosystem_T } from "./lessons-generated/business-m4-l4-full-ecosystem.gen";
 import { SCENES as L_business_m4_l5_business_os_dashboard_S, SCENE_FRAMES as L_business_m4_l5_business_os_dashboard_F, TOTAL_FRAMES as L_business_m4_l5_business_os_dashboard_T } from "./lessons-generated/business-m4-l5-business-os-dashboard.gen";
 import { SCENES as L_automator_m1_l1_where_you_are_S, SCENE_FRAMES as L_automator_m1_l1_where_you_are_F, TOTAL_FRAMES as L_automator_m1_l1_where_you_are_T } from "./lessons-generated/automator-m1-l1-where-you-are.gen";
 import { SCENES as L_analyst_m1_l1_from_automation_to_insight_S, SCENE_FRAMES as L_analyst_m1_l1_from_automation_to_insight_F, TOTAL_FRAMES as L_analyst_m1_l1_from_automation_to_insight_T } from "./lessons-generated/analyst-m1-l1-from-automation-to-insight.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_business_m1_l1_from_decisions_to_leadership_S, SCENE_FRAMES
 import { SCENES as L_creator_m6_l3_analytics_S, SCENE_FRAMES as L_creator_m6_l3_analytics_F, TOTAL_FRAMES as L_creator_m6_l3_analytics_T } from "./lessons-generated/creator-m6-l3-analytics.gen";
 import { SCENES as L_builder_m6_l3_first_prompt_to_lovable_S, SCENE_FRAMES as L_builder_m6_l3_first_prompt_to_lovable_F, TOTAL_FRAMES as L_builder_m6_l3_first_prompt_to_lovable_T } from "./lessons-generated/builder-m6-l3-first-prompt-to-lovable.gen";
 import { SCENES as L_analyst_m6_l2_interpretation_mistakes_S, SCENE_FRAMES as L_analyst_m6_l2_interpretation_mistakes_F, TOTAL_FRAMES as L_analyst_m6_l2_interpretation_mistakes_T } from "./lessons-generated/analyst-m6-l2-interpretation-mistakes.gen";
+import { SCENES as L_business_m4_l4_full_ecosystem_S, SCENE_FRAMES as L_business_m4_l4_full_ecosystem_F, TOTAL_FRAMES as L_business_m4_l4_full_ecosystem_T } from "./lessons-generated/business-m4-l4-full-ecosystem.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -217,7 +217,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m2-l3-readiness-signals", scenes: L_business_m2_l3_readiness_signals_S, sceneFrames: L_business_m2_l3_readiness_signals_F, totalFrames: L_business_m2_l3_readiness_signals_T },
     { id: "business-m2-l2-retention-flow", scenes: L_business_m2_l2_retention_flow_S, sceneFrames: L_business_m2_l2_retention_flow_F, totalFrames: L_business_m2_l2_retention_flow_T },
     { id: "business-m2-l4-pricing-cash-flow", scenes: L_business_m2_l4_pricing_cash_flow_S, sceneFrames: L_business_m2_l4_pricing_cash_flow_F, totalFrames: L_business_m2_l4_pricing_cash_flow_T },
-    { id: "business-m4-l4-full-ecosystem", scenes: L_business_m4_l4_full_ecosystem_S, sceneFrames: L_business_m4_l4_full_ecosystem_F, totalFrames: L_business_m4_l4_full_ecosystem_T },
     { id: "business-m4-l5-business-os-dashboard", scenes: L_business_m4_l5_business_os_dashboard_S, sceneFrames: L_business_m4_l5_business_os_dashboard_F, totalFrames: L_business_m4_l5_business_os_dashboard_T },
     { id: "automator-m1-l1-where-you-are", scenes: L_automator_m1_l1_where_you_are_S, sceneFrames: L_automator_m1_l1_where_you_are_F, totalFrames: L_automator_m1_l1_where_you_are_T },
     { id: "analyst-m1-l1-from-automation-to-insight", scenes: L_analyst_m1_l1_from_automation_to_insight_S, sceneFrames: L_analyst_m1_l1_from_automation_to_insight_F, totalFrames: L_analyst_m1_l1_from_automation_to_insight_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m6-l3-analytics", scenes: L_creator_m6_l3_analytics_S, sceneFrames: L_creator_m6_l3_analytics_F, totalFrames: L_creator_m6_l3_analytics_T },
     { id: "builder-m6-l3-first-prompt-to-lovable", scenes: L_builder_m6_l3_first_prompt_to_lovable_S, sceneFrames: L_builder_m6_l3_first_prompt_to_lovable_F, totalFrames: L_builder_m6_l3_first_prompt_to_lovable_T },
     { id: "analyst-m6-l2-interpretation-mistakes", scenes: L_analyst_m6_l2_interpretation_mistakes_S, sceneFrames: L_analyst_m6_l2_interpretation_mistakes_F, totalFrames: L_analyst_m6_l2_interpretation_mistakes_T },
+    { id: "business-m4-l4-full-ecosystem", scenes: L_business_m4_l4_full_ecosystem_S, sceneFrames: L_business_m4_l4_full_ecosystem_F, totalFrames: L_business_m4_l4_full_ecosystem_T },
   /* @lesson-entries-end */
 ];
