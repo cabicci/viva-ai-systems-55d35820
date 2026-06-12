@@ -19,7 +19,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "analyst-m6-l2-interpretation-mistakes": "6b6ec469-e796-4f42-b29a-09caf1e66237",
   "analyst-m7-l1-from-decisions-to-business": "5750aa87-ce37-41a1-9bd0-c9e6374bb216",
   "automator-m1-l1-where-you-are": "09294ed9-d51c-4091-a8de-666f6a049f23",
-  "automator-m2-l1-systems-view": "9327b34c-2b02-4f0a-b03e-878bede4ab07",
+  "automator-m2-l1-systems-view": "0821f806-e6b2-487e-8a08-90d3161db265",
   "automator-m2-l2-spot-patterns": "89befdc9-f299-41d7-bb56-910a08dcff2b",
   "automator-m2-l3-decide-what-to-automate": "85dcfb11-4243-4e2f-b707-be7076cf3451",
   "automator-m3-l1-tools-landscape": "cb2fdab3-0200-406e-8b1d-d5ada142a120",
