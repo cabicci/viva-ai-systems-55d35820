@@ -36,7 +36,6 @@ import { SCENES as L_automator_m5_l1_llm_in_flow_S, SCENE_FRAMES as L_automator_
 import { SCENES as L_analyst_m5_l2_weekly_review_ritual_S, SCENE_FRAMES as L_analyst_m5_l2_weekly_review_ritual_F, TOTAL_FRAMES as L_analyst_m5_l2_weekly_review_ritual_T } from "./lessons-generated/analyst-m5-l2-weekly-review-ritual.gen";
 import { SCENES as L_business_m6_l1_reactive_relapse_S, SCENE_FRAMES as L_business_m6_l1_reactive_relapse_F, TOTAL_FRAMES as L_business_m6_l1_reactive_relapse_T } from "./lessons-generated/business-m6-l1-reactive-relapse.gen";
 import { SCENES as L_business_m3_l1_customer_lifecycle_S, SCENE_FRAMES as L_business_m3_l1_customer_lifecycle_F, TOTAL_FRAMES as L_business_m3_l1_customer_lifecycle_T } from "./lessons-generated/business-m3-l1-customer-lifecycle.gen";
-import { SCENES as L_builder_m3_l2_memory_limits_S, SCENE_FRAMES as L_builder_m3_l2_memory_limits_F, TOTAL_FRAMES as L_builder_m3_l2_memory_limits_T } from "./lessons-generated/builder-m3-l2-memory-limits.gen";
 import { SCENES as L_builder_m5_l2_frontend_S, SCENE_FRAMES as L_builder_m5_l2_frontend_F, TOTAL_FRAMES as L_builder_m5_l2_frontend_T } from "./lessons-generated/builder-m5-l2-frontend.gen";
 import { SCENES as L_builder_m7_l2_relations_S, SCENE_FRAMES as L_builder_m7_l2_relations_F, TOTAL_FRAMES as L_builder_m7_l2_relations_T } from "./lessons-generated/builder-m7-l2-relations.gen";
 import { SCENES as L_builder_m7_l3_queries_S, SCENE_FRAMES as L_builder_m7_l3_queries_F, TOTAL_FRAMES as L_builder_m7_l3_queries_T } from "./lessons-generated/builder-m7-l3-queries.gen";
@@ -127,6 +126,7 @@ import { SCENES as L_builder_m4_l1_parameters_S, SCENE_FRAMES as L_builder_m4_l1
 import { SCENES as L_builder_m8_l1_sessions_jwt_S, SCENE_FRAMES as L_builder_m8_l1_sessions_jwt_F, TOTAL_FRAMES as L_builder_m8_l1_sessions_jwt_T } from "./lessons-generated/builder-m8-l1-sessions-jwt.gen";
 import { SCENES as L_business_m3_l1_delegate_or_automate_S, SCENE_FRAMES as L_business_m3_l1_delegate_or_automate_F, TOTAL_FRAMES as L_business_m3_l1_delegate_or_automate_T } from "./lessons-generated/business-m3-l1-delegate-or-automate.gen";
 import { SCENES as L_analyst_m4_l2_decision_rule_S, SCENE_FRAMES as L_analyst_m4_l2_decision_rule_F, TOTAL_FRAMES as L_analyst_m4_l2_decision_rule_T } from "./lessons-generated/analyst-m4-l2-decision-rule.gen";
+import { SCENES as L_builder_m3_l2_memory_limits_S, SCENE_FRAMES as L_builder_m3_l2_memory_limits_F, TOTAL_FRAMES as L_builder_m3_l2_memory_limits_T } from "./lessons-generated/builder-m3-l2-memory-limits.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -152,7 +152,6 @@ export const LESSONS: LessonModule[] = [
     { id: "analyst-m5-l2-weekly-review-ritual", scenes: L_analyst_m5_l2_weekly_review_ritual_S, sceneFrames: L_analyst_m5_l2_weekly_review_ritual_F, totalFrames: L_analyst_m5_l2_weekly_review_ritual_T },
     { id: "business-m6-l1-reactive-relapse", scenes: L_business_m6_l1_reactive_relapse_S, sceneFrames: L_business_m6_l1_reactive_relapse_F, totalFrames: L_business_m6_l1_reactive_relapse_T },
     { id: "business-m3-l1-customer-lifecycle", scenes: L_business_m3_l1_customer_lifecycle_S, sceneFrames: L_business_m3_l1_customer_lifecycle_F, totalFrames: L_business_m3_l1_customer_lifecycle_T },
-    { id: "builder-m3-l2-memory-limits", scenes: L_builder_m3_l2_memory_limits_S, sceneFrames: L_builder_m3_l2_memory_limits_F, totalFrames: L_builder_m3_l2_memory_limits_T },
     { id: "builder-m5-l2-frontend", scenes: L_builder_m5_l2_frontend_S, sceneFrames: L_builder_m5_l2_frontend_F, totalFrames: L_builder_m5_l2_frontend_T },
     { id: "builder-m7-l2-relations", scenes: L_builder_m7_l2_relations_S, sceneFrames: L_builder_m7_l2_relations_F, totalFrames: L_builder_m7_l2_relations_T },
     { id: "builder-m7-l3-queries", scenes: L_builder_m7_l3_queries_S, sceneFrames: L_builder_m7_l3_queries_F, totalFrames: L_builder_m7_l3_queries_T },
@@ -243,5 +242,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m8-l1-sessions-jwt", scenes: L_builder_m8_l1_sessions_jwt_S, sceneFrames: L_builder_m8_l1_sessions_jwt_F, totalFrames: L_builder_m8_l1_sessions_jwt_T },
     { id: "business-m3-l1-delegate-or-automate", scenes: L_business_m3_l1_delegate_or_automate_S, sceneFrames: L_business_m3_l1_delegate_or_automate_F, totalFrames: L_business_m3_l1_delegate_or_automate_T },
     { id: "analyst-m4-l2-decision-rule", scenes: L_analyst_m4_l2_decision_rule_S, sceneFrames: L_analyst_m4_l2_decision_rule_F, totalFrames: L_analyst_m4_l2_decision_rule_T },
+    { id: "builder-m3-l2-memory-limits", scenes: L_builder_m3_l2_memory_limits_S, sceneFrames: L_builder_m3_l2_memory_limits_F, totalFrames: L_builder_m3_l2_memory_limits_T },
   /* @lesson-entries-end */
 ];
