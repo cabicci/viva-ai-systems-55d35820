@@ -25,7 +25,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "automator-m2-l3-decide-what-to-automate": "f2262e79-4434-407f-82f0-0dc0301be311",
   "automator-m3-l1-tools-landscape": "23e85eab-3a92-42df-a956-0ec195ea7ffc",
   "automator-m3-l2-triggers-actions": "490c995a-fdf0-4dc9-ad5a-20a3dc26709d",
-  "automator-m3-l3-filters-routers": "5d1e27e7-21c7-450e-b1fc-9455ec3c9dd1",
+  "automator-m3-l3-filters-routers": "41ea4839-a8ff-4b48-8601-3524b9a7fe07",
   "automator-m3-testing-automation": "860eb183-9df2-41fb-80a1-4bc336d8d173",
   "automator-m4-l1-connect-database": "78575b49-af42-44a7-b617-50948f6a7a89",
   "automator-m4-l2-webhooks-api": "65e775ce-3887-41d7-bc98-4d294293e3d2",
