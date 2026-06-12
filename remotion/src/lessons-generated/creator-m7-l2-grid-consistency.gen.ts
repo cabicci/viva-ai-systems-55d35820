@@ -5,112 +5,90 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "title": "الـ Profile هو الـ Landing Page بتاعك",
-    "subtitle": "زائر جديد بيشوف Bio + ٩ بوستات قبل ما يقرّر يـFollow ولا لأ. ٣ ثواني فقط. لازم الـ Grid يدّيله إحساس واحد واضح.",
-    "highlight": "Landing Page",
-    "chip": "HERO"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "term": "Landing Page",
-    "tag": "زي البياع اللي بيفرد فرشته",
-    "definition": "صفحة الهبوط، أول صفحة بيوصلها الزبون وتاخد عينه."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "term": "Grid/Layout/Pattern",
-    "tag": "تاجر القماش اللي بيرص تاتوابه",
-    "definition": "رصة البوستات جنب بعضها في بروفايلك وشكلها العام."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "term": "Primary/Accent colors",
-    "tag": "المحاسب اللي بيستخدم قلم أحمر للهوامش",
-    "definition": "اللون الأساسي للبراند، واللون الفرعي اللي بينطق التصميم."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "term": "Audit",
-    "tag": "صاحب محل بيجرد البضاعة",
-    "definition": "مراجعة وجرد لبروفايلك عشان تشوف إيه اللي محتاج يتصلح."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "tag": "براند ملابس بيحط طبقة ظل",
-    "definition": "طبقة لون خفيفة بتتحط فوق الصورة عشان توضح الكلام.",
-    "term": "Overlay/Filters"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "term": "Hero post/Pinned post",
-    "tag": "صاحب مطعم بيثبت بوست المنيو",
-    "definition": "البوست اللي بتثبته في أول البروفايل عشان يعرّف الناس بيك."
+    "subtitle": "أي شخص جديد بيدخل بروفايلك بياخد قرار سريع جدا: أكمل متابعة ولا أمشي. الاتساق في الجريد بيقلل الحيرة وبيوضح نوع المحتوى قبل ما يقرأ Caption واحد.",
+    "highlight": "يفهمك بسرعة",
+    "title": "الاتساق يساعد الغريب",
+    "chip": "بداية الدرس"
   },
   {
     "card": "BulletsCard",
     "accent": "lavender",
+    "title": "جريد عشوائي = رسالة مشوشة",
     "bullets": [
-      "لون واحد مهيمن على الـ Grid (٧٠٪ Primary، ٣٠٪ Accents).",
-      "Covers موحدة لكل الـ Reels (نفس الـ template، الخط، الـ layout)."
-    ],
-    "title": "Grid Consistency — ٤ مبادئ"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "peach",
-    "title": "باقي المبادئ",
-    "bullets": [
-      "رتم في الـ Layout (صورة - Reel - صورة - Reel).",
-      "Hero Posts متثبتة (أهم ٣ بوستات).",
-      "استخدم Preview app للتخطيط."
+      "لو كل بوست له لون وستايل مختلف، الزائر يحس إن الحساب ده بلا اتجاه حتى لو المحتوى نفسه قوي.",
+      "التشتت البصري يخلي المتابع الجديد ما يفهمش إنت بتساعده في إيه بالضبط."
     ]
   },
   {
-    "card": "ScreenshotCard",
-    "accent": "yellow",
-    "src": "lessons/unique/creator-m7-l2-grid-consistency.jpg",
-    "caption": "لاحظ كل التايل بـ نفس مدى الألوان (cream + terracotta + black). نفس الخط في العناوين. الزائر بيشوف الـ profile ده ويعرف فوراً: «ده Creator في الـ lifestyle بـ هوية واضحة». الثقة بتبني نفسها.",
-    "eyebrow": "شوف بنفسك",
-    "title": "Grid متّسق = ثقة فورية"
+    "card": "BulletsCard",
+    "accent": "peach",
+    "title": "ثبات بسيط يوصل المعنى أسرع",
+    "bullets": [
+      "الاتساق مش معناه كل بوست نسخة من التاني، لكنه يعني نفس الروح: ألوان قريبة، خط ثابت، ونوع أغلفة مفهوم.",
+      "لما الجريد واضح، أي شخص جديد يقدر يحدد مجالك وقيمتك بسرعة، وده يرفع جودة المتابعين مش بس العدد.",
+      "ابدأ بقواعد قليلة تقدر تلتزم بيها فعلا بدل نظام معقد ما يكملش أسبوعين."
+    ]
   },
   {
     "card": "CompareCard",
-    "accent": "pink",
-    "title": "زائر جديد — رد فعل مختلف",
-    "left": {
-      "body": "كل بوست بلون مختلف، خط مختلف، style مختلف. الزائر يـscroll، يحس بـ chaos، مش بيفهم إنت بتعمل إيه، يرجع. مفيش Follow.",
-      "label": "FAILURE — Grid عشوائي"
-    },
+    "accent": "yellow",
     "right": {
-      "body": "نفس الـ palette، نفس الخط، Covers مصمّمة لكل Reel. الزائر يشوف الـ Grid ٣ ثواني، يفهم القيمة، يضغط Follow. الـ Brand بيشتغل قبل ما يقرا حتى Caption واحد.",
-      "label": "RIGHT — Grid موحّد"
-    }
+      "body": "ستايل واضح ومتكرر. الزائر يفهم الهوية في ثواني ويكون مستعد يتابع بثقة.",
+      "label": "جريد متسق"
+    },
+    "left": {
+      "label": "جريد غير متسق",
+      "body": "ألوان وخطوط متغيرة طول الوقت. الزائر يخرج بسرعة لأنه مش فاهم الخط العام."
+    },
+    "title": "انطباع أولي مشوش مقابل واضح"
   },
   {
-    "card": "CTACard",
+    "card": "ConceptCard",
+    "accent": "pink",
+    "tag": "مثلا: تعليمي، قصة، دعوة إجراء ثم تكرار نفس الدورة.",
+    "term": "Grid Pattern",
+    "definition": "الترتيب البصري المتكرر في شكل البوستات."
+  },
+  {
+    "card": "ConceptCard",
     "accent": "mintDeep",
-    "tagline": "يلا نطبّق ونشوف إزاي تعمل Grid احترافي يجذب الزوار! وقابلني في \"بياناتك جاهزة — دلوقتي بتسأل\".",
-    "highlight": "Grid موحّد",
-    "eyebrow": "دورك دلوقتي",
-    "title": "خطّط أول ٩ بوستات بـ Grid موحّد"
+    "tag": "نفس الفونت ونفس مكان العنوان في كل غلاف.",
+    "term": "Cover Consistency",
+    "definition": "ثبات شكل أغلفة الفيديوهات في الخط واللون العام."
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "mint",
+    "tag": "هل اللون والنبرة والـ cover مطابقين للنمط؟",
+    "term": "Visual Checklist",
+    "definition": "قائمة مراجعة قبل النشر تضمن ثبات الهوية."
+  },
+  {
+    "card": "ScreenshotCard",
+    "accent": "lavender",
+    "caption": "المثال يوضح إزاي التناسق يخلي الرسالة مفهومة حتى قبل قراءة التفاصيل.",
+    "src": "lessons/unique/creator-m7-l2-grid-consistency.jpg",
+    "title": "مثال جريد متسق",
+    "eyebrow": "شكل بصري"
   },
   {
     "card": "BulletsCard",
-    "accent": "mint",
+    "accent": "yellow",
+    "title": "كده خلصت Creator Track بروح واضحة",
     "bullets": [
-      "Container max-width: 1280px ثابت.",
-      "Gutter: 24px على desktop، 16px على mobile.",
-      "Cards بنفس aspect ratio لكل الـ grids."
-    ],
-    "title": "Grid system واحد في كل صفحات المنصة"
+      "وصلت لآخر درس في المسار، ومعاك دلوقتي نظام Creator متكامل: منصة، جدول، تحليل، تحويل، وهوية، واتساق.",
+      "من هنا فصاعدا شغلك مش عشوائي. أنت بتشتغل كصانع محتوى واعي ببناء أصل طويل المدى."
+    ]
+  },
+  {
+    "card": "CTACard",
+    "accent": "peach",
+    "title": "سؤال واحد للتثبيت",
+    "tagline": "يلا نطبق اللي اتعلمناه في سؤال سريع.",
+    "eyebrow": "دورك دلوقتي",
+    "highlight": "اختبر فهمك"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [483, 360, 358, 414, 297, 391, 387, 514, 478, 465, 479, 377, 456];
+export const SCENE_FRAMES: number[] = [525, 487, 765, 646, 414, 379, 463, 301, 619, 303];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);

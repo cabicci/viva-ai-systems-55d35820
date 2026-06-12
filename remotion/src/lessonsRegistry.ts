@@ -18,7 +18,6 @@ import { SCENES as L_creator_m4_mobile_shooting_S, SCENE_FRAMES as L_creator_m4_
 import { SCENES as L_creator_m4_reality_check_S, SCENE_FRAMES as L_creator_m4_reality_check_F, TOTAL_FRAMES as L_creator_m4_reality_check_T } from "./lessons-generated/creator-m4-reality-check.gen";
 import { SCENES as L_creator_m5_l2_thumbnails_captions_S, SCENE_FRAMES as L_creator_m5_l2_thumbnails_captions_F, TOTAL_FRAMES as L_creator_m5_l2_thumbnails_captions_T } from "./lessons-generated/creator-m5-l2-thumbnails-captions.gen";
 import { SCENES as L_creator_m6_l1_platforms_S, SCENE_FRAMES as L_creator_m6_l1_platforms_F, TOTAL_FRAMES as L_creator_m6_l1_platforms_T } from "./lessons-generated/creator-m6-l1-platforms.gen";
-import { SCENES as L_creator_m7_l2_grid_consistency_S, SCENE_FRAMES as L_creator_m7_l2_grid_consistency_F, TOTAL_FRAMES as L_creator_m7_l2_grid_consistency_T } from "./lessons-generated/creator-m7-l2-grid-consistency.gen";
 import { SCENES as L_automator_m2_l3_decide_what_to_automate_S, SCENE_FRAMES as L_automator_m2_l3_decide_what_to_automate_F, TOTAL_FRAMES as L_automator_m2_l3_decide_what_to_automate_T } from "./lessons-generated/automator-m2-l3-decide-what-to-automate.gen";
 import { SCENES as L_automator_m5_l1_llm_in_flow_S, SCENE_FRAMES as L_automator_m5_l1_llm_in_flow_F, TOTAL_FRAMES as L_automator_m5_l1_llm_in_flow_T } from "./lessons-generated/automator-m5-l1-llm-in-flow.gen";
 import { SCENES as L_automator_m3_l3_filters_routers_S, SCENE_FRAMES as L_automator_m3_l3_filters_routers_F, TOTAL_FRAMES as L_automator_m3_l3_filters_routers_T } from "./lessons-generated/automator-m3-l3-filters-routers.gen";
@@ -125,6 +124,7 @@ import { SCENES as L_automator_m6_l2_whatsapp_flow_S, SCENE_FRAMES as L_automato
 import { SCENES as L_creator_m3_l2_script_structure_S, SCENE_FRAMES as L_creator_m3_l2_script_structure_F, TOTAL_FRAMES as L_creator_m3_l2_script_structure_T } from "./lessons-generated/creator-m3-l2-script-structure.gen";
 import { SCENES as L_builder_m2_l3_style_control_S, SCENE_FRAMES as L_builder_m2_l3_style_control_F, TOTAL_FRAMES as L_builder_m2_l3_style_control_T } from "./lessons-generated/builder-m2-l3-style-control.gen";
 import { SCENES as L_builder_m6_l5_iteration_S, SCENE_FRAMES as L_builder_m6_l5_iteration_F, TOTAL_FRAMES as L_builder_m6_l5_iteration_T } from "./lessons-generated/builder-m6-l5-iteration.gen";
+import { SCENES as L_creator_m7_l2_grid_consistency_S, SCENE_FRAMES as L_creator_m7_l2_grid_consistency_F, TOTAL_FRAMES as L_creator_m7_l2_grid_consistency_T } from "./lessons-generated/creator-m7-l2-grid-consistency.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -136,7 +136,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m4-l1-reality-check", scenes: L_creator_m4_reality_check_S, sceneFrames: L_creator_m4_reality_check_F, totalFrames: L_creator_m4_reality_check_T },
     { id: "creator-m5-l2-thumbnails-captions", scenes: L_creator_m5_l2_thumbnails_captions_S, sceneFrames: L_creator_m5_l2_thumbnails_captions_F, totalFrames: L_creator_m5_l2_thumbnails_captions_T },
     { id: "creator-m6-l1-platforms", scenes: L_creator_m6_l1_platforms_S, sceneFrames: L_creator_m6_l1_platforms_F, totalFrames: L_creator_m6_l1_platforms_T },
-    { id: "creator-m7-l2-grid-consistency", scenes: L_creator_m7_l2_grid_consistency_S, sceneFrames: L_creator_m7_l2_grid_consistency_F, totalFrames: L_creator_m7_l2_grid_consistency_T },
     { id: "automator-m2-l3-decide-what-to-automate", scenes: L_automator_m2_l3_decide_what_to_automate_S, sceneFrames: L_automator_m2_l3_decide_what_to_automate_F, totalFrames: L_automator_m2_l3_decide_what_to_automate_T },
     { id: "automator-m5-l1-llm-in-flow", scenes: L_automator_m5_l1_llm_in_flow_S, sceneFrames: L_automator_m5_l1_llm_in_flow_F, totalFrames: L_automator_m5_l1_llm_in_flow_T },
     { id: "automator-m3-l3-filters-routers", scenes: L_automator_m3_l3_filters_routers_S, sceneFrames: L_automator_m3_l3_filters_routers_F, totalFrames: L_automator_m3_l3_filters_routers_T },
@@ -241,5 +240,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m3-l2-script-structure", scenes: L_creator_m3_l2_script_structure_S, sceneFrames: L_creator_m3_l2_script_structure_F, totalFrames: L_creator_m3_l2_script_structure_T },
     { id: "builder-m2-l3-style-control", scenes: L_builder_m2_l3_style_control_S, sceneFrames: L_builder_m2_l3_style_control_F, totalFrames: L_builder_m2_l3_style_control_T },
     { id: "builder-m6-l5-iteration", scenes: L_builder_m6_l5_iteration_S, sceneFrames: L_builder_m6_l5_iteration_F, totalFrames: L_builder_m6_l5_iteration_T },
+    { id: "creator-m7-l2-grid-consistency", scenes: L_creator_m7_l2_grid_consistency_S, sceneFrames: L_creator_m7_l2_grid_consistency_F, totalFrames: L_creator_m7_l2_grid_consistency_T },
   /* @lesson-entries-end */
 ];
