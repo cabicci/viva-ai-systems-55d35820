@@ -11,13 +11,125 @@
 
 | Field | Value |
 |------|------|
-| Current Phase | Visual Freeze — F1.b complete, F1.c queued |
-| Launch Readiness | ~70% (estimate; videos + visual freeze + mobile polish gate launch) |
+| Current Phase | **Phase 4 — Brand Visual Identity Lock Brief** (docs step; implementation not started) |
+| Previous phase | Phase 3 — AI Assistant P0 ✅ FROZEN |
+| Launch Readiness | ~70% (estimate; brand identity lock + visual implementation gate launch polish) |
 | Critical blockers | 0 |
-| High-priority open items | Visual Freeze F1.c–F8, Video regeneration audit, Mobile UX pass |
-| Last major milestone | Assistant P0.2 PASS + Visual Freeze F1.b token replacement (P0 learner surfaces) |
-| Last commit snapshot | `98974375` — "Replaced hardcoded colors F1.b" |
-| Last production commit (per CURRENT_STATUS) | `897cd96c` |
+| High-priority open items | Brand Visual Identity Lock → implementation plan → BrandMark/logo/favicon/OG → visual QA; Visual Freeze F1.c–F8; Video regeneration audit; Mobile UX pass |
+| Last major milestone | Assistant P0 FROZEN on production masaarat.ai (`b6ecd2a`) |
+| Last commit snapshot | `b6ecd2a` — "Added P0 QA tests" (local + origin/main synced) |
+| Last production commit (per CURRENT_STATUS) | `b6ecd2a` (masaarat.ai) |
+
+---
+
+## Phase 4 — Brand Visual Identity Lock Brief
+
+Status: 🟡 **BRIEF LOCK STEP** (docs only — no `src/`, no assets, no deploy)
+
+> **Context:** Phase 3 — AI Assistant P0 is **FROZEN**. Production QA on masaarat.ai passed logged-out and logged-in assistant flows. This section locks the brand visual identity brief before any implementation work.
+
+### Phase 3 closure (Assistant P0 — FROZEN ✅)
+
+| Check | Result |
+|-------|--------|
+| Logged-out assistant | ✅ PASS — Arabic login message; no POST to `/functions/v1/assistant-runtime` |
+| Logged-in assistant | ✅ PASS — HTTP 200 |
+| Authorization | ✅ Real user JWT (not `sb_publishable`) |
+| Auth errors | ✅ No 401 |
+| CORS | ✅ No CORS blocker |
+| Lesson context | ✅ PASS |
+| Mission integrity | ✅ PASS |
+| Out-of-scope redirect | ✅ PASS |
+| Mobile usability | ✅ PASS |
+| Placement QA | ✅ PASS |
+| In-lesson flow | ✅ `AssistantPanel` compact embedded on learn route |
+| `/ai-assistant` off-lesson NO CONTEXT | ✅ Expected — not a blocker |
+| Recommendation | **Freeze Assistant P0 = yes** |
+
+### 1. Current brand
+
+| Item | Value |
+|------|-------|
+| Arabic name | **مسارات** |
+| Domain / public brand | **masaarat.ai** |
+| Meaning | Guided learning paths, progress, discovery, direction, learner choice |
+
+**Legacy names — not public-facing (retired):**
+
+- Viva AI Systems
+- AI Ecosystem
+- AI Ecosystem Platform
+- AI Ecosystem Hub
+
+These must not appear as product names in learner-facing UI, SEO, or social metadata.
+
+### 2. Brand personality
+
+- Calm
+- Guided
+- Beginner-safe
+- Arabic-first
+- Practical
+- Trustworthy
+- **Not** flashy
+- **Not** tech-intimidating
+
+### 3. Visual direction
+
+| Element | Direction |
+|---------|-----------|
+| Wordmark | **مسارات** |
+| Symbol | Path / route / guided journey / progress |
+| Primary color | Soft blue — existing `--primary` OKLCH token |
+| Secondary | Mint — existing `--accent` OKLCH token |
+| Theme system | **Keep** existing pastel OKLCH system — no full re-theme |
+| Typography | **Tajawal** remains suitable |
+
+Supporting path pastels (pink, yellow, lavender, peach, cream) stay **path accents only**, not global brand fields.
+
+### 4. Explicitly forbidden identity directions
+
+- ❌ Sparkles
+- ❌ Graduation cap
+- ❌ Robot
+- ❌ Brain
+- ❌ Generic AI starburst
+- ❌ Harsh neon AI look
+- ❌ Full re-theme from zero
+
+### 5. Required deliverables (after this brief — not started)
+
+Implementation follows this brief; **none of these are in scope for the brief step itself.**
+
+1. **`BrandMark` component** — one unified mark for Navbar, Sidebar, AuthShell, Footer (where appropriate)
+2. **Logo / wordmark** — مسارات + masaarat.ai lockup direction
+3. **Favicon / app icons** — symbol-only; legible at 16×16 and 32×32; no full Arabic word in favicon
+4. **OG / social image** — 1200×630, Arabic-first; replace legacy hosted `og:image`
+5. **Replace split icon usage** — Lucide may remain inside lessons/UI, not as permanent brand mark
+6. **Fix remaining English path labels** where learner-facing (e.g. path chips, display titles)
+7. **Fix social metadata** — e.g. replace legacy `twitter:site` if still pointing at Lovable
+
+### 6. Non-goals for this step (brief only)
+
+- No `src/` changes
+- No asset generation
+- No favicon creation
+- No OG image creation
+- No Bunny / media cleanup
+- No video work
+- No deployment
+- No theme token changes
+- No UI component changes
+
+### 7. Phase order (locked sequence)
+
+1. **Brand brief** ← **current step** (this section)
+2. **Implementation plan** (scope files, acceptance checks)
+3. **BrandMark / logo / favicon / OG** (Phase 4 implementation)
+4. **Visual QA** (smoke on Navbar, Sidebar, auth, social meta, favicon)
+5. **Bunny / media cleanup** — **after** brand identity lock and visual QA
+
+⚠️ Do not proceed to Bunny / media cleanup until Phase 4 brand visual implementation is complete and smoke-tested.
 
 ---
 
@@ -340,19 +452,22 @@ Exceptions (slug `m{N}` ≠ module id, accepted):
 
 ---
 
-## 9. Assistant (AI Teacher) ✅ LOCKED (P0.2)
+## 9. Assistant (AI Teacher) ✅ LOCKED (P0 — FROZEN)
 
 | Phase | Status |
 |------|------|
 | P0 semantic seed + retrieval smoke | ✅ PASS |
 | P0.1 prompt grounding hardening | ✅ |
 | P0.2 semantic similarity threshold | ✅ |
+| Auth: user JWT + logged-out guard | ✅ (`aed96c6` / production `b6ecd2a`) |
 | Seed: knowledge_chunks | ✅ 100 learner lessons / 198 chunks |
-| Retrieval | ✅ Path-aware filtering |
+| Retrieval | ✅ Path-aware + lesson-aware keyword corpus |
 | Grounding | ✅ Hardened |
-| Fallback behavior | ✅ Unsupported-topic fallback active; Builder fallback removed |
+| Mission integrity | ✅ No full submission; coaching only |
+| Fallback behavior | ✅ Unsupported-topic fallback active |
 | Production hardening | ✅ |
-| In-lesson assistant | ❓ Status not explicitly tracked in CURRENT_STATUS — needs verification |
+| In-lesson assistant | ✅ `AssistantPanel` compact on learn route |
+| Production P0 QA (masaarat.ai) | ✅ FROZEN — logged-out + logged-in PASS |
 
 ---
 
@@ -421,8 +536,8 @@ Exceptions (slug `m{N}` ≠ module id, accepted):
 - **No large visual refactor** before launch polish unless a new **Critical** visual blocker appears.
 
 #### 5. Next step after F1.d
-1. **Naming / Brand Audit**
-2. **Bunny / media cleanup**
+1. **Phase 4 — Brand Visual Identity Lock Brief** (docs) → implementation plan → BrandMark/logo/favicon/OG
+2. **Bunny / media cleanup** (after brand visual implementation + QA)
 3. **Launch polish**
 
 Current visual score (per blueprint): **68/100**.
@@ -471,7 +586,7 @@ Current visual score (per blueprint): **68/100**.
 4. Video regeneration audit + re-render of any changed lessons (Section 8)
 5. Mobile UX pass (Section 11)
 6. Formal security scan + admin/rate-limit verification (Section 12)
-7. In-lesson assistant status verified (Section 9)
+7. In-lesson assistant status verified (Section 9) ✅
 
 ### Can wait after launch
 - Naming normalization for the 4 placement-exception slugs
@@ -491,16 +606,15 @@ Current visual score (per blueprint): **68/100**.
 
 ## 15. Immediate Next Priorities
 
-1. **Naming & file unification audit**
-2. **Lesson placement verification**
-3. **Lesson image audit** (Section 7) — full pass, classify gaps
-4. **Video impact audit** — diff edited lessons since last batch vs Bunny
-5. **Visual Freeze continuation** (F1.c–F8)
-6. **Custom icon identity direction**
-7. **Final visual freeze**
-8. **Selective video regeneration** — only after visual freeze complete
-9. **Mobile UX formal pass** — sidebar, tap targets, scroll fatigue
-10. **Security scan** — RLS, admin, rate limiting, service-key review
+1. **Phase 4 brand implementation plan** (BrandMark, logo, favicon, OG, learner-facing labels)
+2. **Lesson image audit** (Section 7) — full pass, classify gaps
+3. **Video impact audit** — diff edited lessons since last batch vs Bunny
+4. **Visual Freeze continuation** (F1.c–F8)
+5. **Custom icon identity direction**
+6. **Final visual freeze**
+7. **Selective video regeneration** — only after visual freeze complete
+8. **Mobile UX formal pass** — sidebar, tap targets, scroll fatigue
+9. **Security scan** — RLS, admin, rate limiting, service-key review
 
 > Reason: Avoid redesign work that later forces rework of videos/content.
 
@@ -512,7 +626,7 @@ Current visual score (per blueprint): **68/100**.
 - Lesson image audit (no formal pass yet)
 - Mobile UX state across breakpoints
 - RLS / admin / rate-limit posture
-- In-lesson assistant status
+- In-lesson assistant status ✅ (Section 9 — P0 FROZEN)
 - Eyebrow close review completion per path
 - Markdown cleanup status across all missions
 - Central content-debt log
