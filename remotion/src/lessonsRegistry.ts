@@ -75,7 +75,6 @@ import { SCENES as L_builder_m9_l2_embeddings_S, SCENE_FRAMES as L_builder_m9_l2
 import { SCENES as L_builder_m9_l1_rag_S, SCENE_FRAMES as L_builder_m9_l1_rag_F, TOTAL_FRAMES as L_builder_m9_l1_rag_T } from "./lessons-generated/builder-m9-l1-rag.gen";
 import { SCENES as L_builder_m9_l3_agents_S, SCENE_FRAMES as L_builder_m9_l3_agents_F, TOTAL_FRAMES as L_builder_m9_l3_agents_T } from "./lessons-generated/builder-m9-l3-agents.gen";
 import { SCENES as L_builder_m10_l1_deploy_domain_S, SCENE_FRAMES as L_builder_m10_l1_deploy_domain_F, TOTAL_FRAMES as L_builder_m10_l1_deploy_domain_T } from "./lessons-generated/builder-m10-l1-deploy-domain.gen";
-import { SCENES as L_builder_m10_l2_first_users_S, SCENE_FRAMES as L_builder_m10_l2_first_users_F, TOTAL_FRAMES as L_builder_m10_l2_first_users_T } from "./lessons-generated/builder-m10-l2-first-users.gen";
 import { SCENES as L_builder_m5_l4_database_intro_S, SCENE_FRAMES as L_builder_m5_l4_database_intro_F, TOTAL_FRAMES as L_builder_m5_l4_database_intro_T } from "./lessons-generated/builder-m5-l4-database-intro.gen";
 import { SCENES as L_builder_m6_l6_debugging_S, SCENE_FRAMES as L_builder_m6_l6_debugging_F, TOTAL_FRAMES as L_builder_m6_l6_debugging_T } from "./lessons-generated/builder-m6-l6-debugging.gen";
 import { SCENES as L_builder_m4_l1_parameters_S, SCENE_FRAMES as L_builder_m4_l1_parameters_F, TOTAL_FRAMES as L_builder_m4_l1_parameters_T } from "./lessons-generated/builder-m4-l1-parameters.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_analyst_m6_l1_question_mistakes_S, SCENE_FRAMES as L_analys
 import { SCENES as L_builder_m1_l2_tokens_training_S, SCENE_FRAMES as L_builder_m1_l2_tokens_training_F, TOTAL_FRAMES as L_builder_m1_l2_tokens_training_T } from "./lessons-generated/builder-m1-l2-tokens-training.gen";
 import { SCENES as L_creator_m6_l4_leads_S, SCENE_FRAMES as L_creator_m6_l4_leads_F, TOTAL_FRAMES as L_creator_m6_l4_leads_T } from "./lessons-generated/creator-m6-l4-leads.gen";
 import { SCENES as L_builder_m1_l1_what_is_llm_S, SCENE_FRAMES as L_builder_m1_l1_what_is_llm_F, TOTAL_FRAMES as L_builder_m1_l1_what_is_llm_T } from "./lessons-generated/builder-m1-l1-what-is-llm.gen";
+import { SCENES as L_builder_m10_l2_first_users_S, SCENE_FRAMES as L_builder_m10_l2_first_users_F, TOTAL_FRAMES as L_builder_m10_l2_first_users_T } from "./lessons-generated/builder-m10-l2-first-users.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -189,7 +189,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m9-l1-rag", scenes: L_builder_m9_l1_rag_S, sceneFrames: L_builder_m9_l1_rag_F, totalFrames: L_builder_m9_l1_rag_T },
     { id: "builder-m9-l3-agents", scenes: L_builder_m9_l3_agents_S, sceneFrames: L_builder_m9_l3_agents_F, totalFrames: L_builder_m9_l3_agents_T },
     { id: "builder-m10-l1-deploy-domain", scenes: L_builder_m10_l1_deploy_domain_S, sceneFrames: L_builder_m10_l1_deploy_domain_F, totalFrames: L_builder_m10_l1_deploy_domain_T },
-    { id: "builder-m10-l2-first-users", scenes: L_builder_m10_l2_first_users_S, sceneFrames: L_builder_m10_l2_first_users_F, totalFrames: L_builder_m10_l2_first_users_T },
     { id: "builder-m5-l4-database-intro", scenes: L_builder_m5_l4_database_intro_S, sceneFrames: L_builder_m5_l4_database_intro_F, totalFrames: L_builder_m5_l4_database_intro_T },
     { id: "builder-m6-l6-debugging", scenes: L_builder_m6_l6_debugging_S, sceneFrames: L_builder_m6_l6_debugging_F, totalFrames: L_builder_m6_l6_debugging_T },
     { id: "builder-m4-l1-parameters", scenes: L_builder_m4_l1_parameters_S, sceneFrames: L_builder_m4_l1_parameters_F, totalFrames: L_builder_m4_l1_parameters_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m1-l2-tokens-training", scenes: L_builder_m1_l2_tokens_training_S, sceneFrames: L_builder_m1_l2_tokens_training_F, totalFrames: L_builder_m1_l2_tokens_training_T },
     { id: "creator-m6-l4-leads", scenes: L_creator_m6_l4_leads_S, sceneFrames: L_creator_m6_l4_leads_F, totalFrames: L_creator_m6_l4_leads_T },
     { id: "builder-m1-l1-what-is-llm", scenes: L_builder_m1_l1_what_is_llm_S, sceneFrames: L_builder_m1_l1_what_is_llm_F, totalFrames: L_builder_m1_l1_what_is_llm_T },
+    { id: "builder-m10-l2-first-users", scenes: L_builder_m10_l2_first_users_S, sceneFrames: L_builder_m10_l2_first_users_F, totalFrames: L_builder_m10_l2_first_users_T },
   /* @lesson-entries-end */
 ];
