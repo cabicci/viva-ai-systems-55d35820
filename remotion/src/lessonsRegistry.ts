@@ -76,7 +76,6 @@ import { SCENES as L_builder_m5_l3_backend_api_S, SCENE_FRAMES as L_builder_m5_l
 import { SCENES as L_builder_m8_l1_sessions_jwt_S, SCENE_FRAMES as L_builder_m8_l1_sessions_jwt_F, TOTAL_FRAMES as L_builder_m8_l1_sessions_jwt_T } from "./lessons-generated/builder-m8-l1-sessions-jwt.gen";
 import { SCENES as L_builder_m5_l5_mini_win_S, SCENE_FRAMES as L_builder_m5_l5_mini_win_F, TOTAL_FRAMES as L_builder_m5_l5_mini_win_T } from "./lessons-generated/builder-m5-l5-mini-win.gen";
 import { SCENES as L_builder_m5_l1_transition_S, SCENE_FRAMES as L_builder_m5_l1_transition_F, TOTAL_FRAMES as L_builder_m5_l1_transition_T } from "./lessons-generated/builder-m5-l1-transition.gen";
-import { SCENES as L_builder_m6_l2_wireframe_S, SCENE_FRAMES as L_builder_m6_l2_wireframe_F, TOTAL_FRAMES as L_builder_m6_l2_wireframe_T } from "./lessons-generated/builder-m6-l2-wireframe.gen";
 import { SCENES as L_builder_m6_l1_idea_to_page_S, SCENE_FRAMES as L_builder_m6_l1_idea_to_page_F, TOTAL_FRAMES as L_builder_m6_l1_idea_to_page_T } from "./lessons-generated/builder-m6-l1-idea-to-page.gen";
 import { SCENES as L_builder_m7_l1_tables_columns_S, SCENE_FRAMES as L_builder_m7_l1_tables_columns_F, TOTAL_FRAMES as L_builder_m7_l1_tables_columns_T } from "./lessons-generated/builder-m7-l1-tables-columns.gen";
 import { SCENES as L_business_m7_l1_full_ecosystem_S, SCENE_FRAMES as L_business_m7_l1_full_ecosystem_F, TOTAL_FRAMES as L_business_m7_l1_full_ecosystem_T } from "./lessons-generated/business-m7-l1-full-ecosystem.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_creator_m6_l2_scheduling_S, SCENE_FRAMES as L_creator_m6_l2
 import { SCENES as L_builder_m6_l4_components_routes_S, SCENE_FRAMES as L_builder_m6_l4_components_routes_F, TOTAL_FRAMES as L_builder_m6_l4_components_routes_T } from "./lessons-generated/builder-m6-l4-components-routes.gen";
 import { SCENES as L_analyst_m2_l2_right_question_rule_S, SCENE_FRAMES as L_analyst_m2_l2_right_question_rule_F, TOTAL_FRAMES as L_analyst_m2_l2_right_question_rule_T } from "./lessons-generated/analyst-m2-l2-right-question-rule.gen";
 import { SCENES as L_automator_m2_l2_spot_patterns_S, SCENE_FRAMES as L_automator_m2_l2_spot_patterns_F, TOTAL_FRAMES as L_automator_m2_l2_spot_patterns_T } from "./lessons-generated/automator-m2-l2-spot-patterns.gen";
+import { SCENES as L_builder_m6_l2_wireframe_S, SCENE_FRAMES as L_builder_m6_l2_wireframe_F, TOTAL_FRAMES as L_builder_m6_l2_wireframe_T } from "./lessons-generated/builder-m6-l2-wireframe.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -190,7 +190,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m8-l1-sessions-jwt", scenes: L_builder_m8_l1_sessions_jwt_S, sceneFrames: L_builder_m8_l1_sessions_jwt_F, totalFrames: L_builder_m8_l1_sessions_jwt_T },
     { id: "builder-m5-l5-mini-win", scenes: L_builder_m5_l5_mini_win_S, sceneFrames: L_builder_m5_l5_mini_win_F, totalFrames: L_builder_m5_l5_mini_win_T },
     { id: "builder-m5-l1-transition", scenes: L_builder_m5_l1_transition_S, sceneFrames: L_builder_m5_l1_transition_F, totalFrames: L_builder_m5_l1_transition_T },
-    { id: "builder-m6-l2-wireframe", scenes: L_builder_m6_l2_wireframe_S, sceneFrames: L_builder_m6_l2_wireframe_F, totalFrames: L_builder_m6_l2_wireframe_T },
     { id: "builder-m6-l1-idea-to-page", scenes: L_builder_m6_l1_idea_to_page_S, sceneFrames: L_builder_m6_l1_idea_to_page_F, totalFrames: L_builder_m6_l1_idea_to_page_T },
     { id: "builder-m7-l1-tables-columns", scenes: L_builder_m7_l1_tables_columns_S, sceneFrames: L_builder_m7_l1_tables_columns_F, totalFrames: L_builder_m7_l1_tables_columns_T },
     { id: "business-m7-l1-full-ecosystem", scenes: L_business_m7_l1_full_ecosystem_S, sceneFrames: L_business_m7_l1_full_ecosystem_F, totalFrames: L_business_m7_l1_full_ecosystem_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m6-l4-components-routes", scenes: L_builder_m6_l4_components_routes_S, sceneFrames: L_builder_m6_l4_components_routes_F, totalFrames: L_builder_m6_l4_components_routes_T },
     { id: "analyst-m2-l2-right-question-rule", scenes: L_analyst_m2_l2_right_question_rule_S, sceneFrames: L_analyst_m2_l2_right_question_rule_F, totalFrames: L_analyst_m2_l2_right_question_rule_T },
     { id: "automator-m2-l2-spot-patterns", scenes: L_automator_m2_l2_spot_patterns_S, sceneFrames: L_automator_m2_l2_spot_patterns_F, totalFrames: L_automator_m2_l2_spot_patterns_T },
+    { id: "builder-m6-l2-wireframe", scenes: L_builder_m6_l2_wireframe_S, sceneFrames: L_builder_m6_l2_wireframe_F, totalFrames: L_builder_m6_l2_wireframe_T },
   /* @lesson-entries-end */
 ];
