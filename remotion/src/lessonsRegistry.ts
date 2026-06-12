@@ -128,11 +128,11 @@ import { SCENES as L_builder_m5_l1_transition_S, SCENE_FRAMES as L_builder_m5_l1
 import { SCENES as L_analyst_m4_l1_pattern_vs_outlier_S, SCENE_FRAMES as L_analyst_m4_l1_pattern_vs_outlier_F, TOTAL_FRAMES as L_analyst_m4_l1_pattern_vs_outlier_T } from "./lessons-generated/analyst-m4-l1-pattern-vs-outlier.gen";
 import { SCENES as L_automator_m3_l3_filters_routers_S, SCENE_FRAMES as L_automator_m3_l3_filters_routers_F, TOTAL_FRAMES as L_automator_m3_l3_filters_routers_T } from "./lessons-generated/automator-m3-l3-filters-routers.gen";
 import { SCENES as L_builder_m7_l2_relations_S, SCENE_FRAMES as L_builder_m7_l2_relations_F, TOTAL_FRAMES as L_builder_m7_l2_relations_T } from "./lessons-generated/builder-m7-l2-relations.gen";
+import { SCENES as L_creator_m4_l3_ai_writing_S, SCENE_FRAMES as L_creator_m4_l3_ai_writing_F, TOTAL_FRAMES as L_creator_m4_l3_ai_writing_T } from "./lessons-generated/creator-m4-l3-ai-writing.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
   /* @lesson-entries-start */
-    { id: "creator-m4-l3-ai-writing", scenes: L_creator_m4_ai_writing_S, sceneFrames: L_creator_m4_ai_writing_F, totalFrames: L_creator_m4_ai_writing_T },
     { id: "creator-m5-l1-editing", scenes: L_creator_m5_l1_editing_S, sceneFrames: L_creator_m5_l1_editing_F, totalFrames: L_creator_m5_l1_editing_T },
     { id: "creator-m5-l2-thumbnails-captions", scenes: L_creator_m5_l2_thumbnails_captions_S, sceneFrames: L_creator_m5_l2_thumbnails_captions_F, totalFrames: L_creator_m5_l2_thumbnails_captions_T },
     { id: "creator-m6-l1-platforms", scenes: L_creator_m6_l1_platforms_S, sceneFrames: L_creator_m6_l1_platforms_F, totalFrames: L_creator_m6_l1_platforms_T },
@@ -245,5 +245,6 @@ export const LESSONS: LessonModule[] = [
     { id: "analyst-m4-l1-pattern-vs-outlier", scenes: L_analyst_m4_l1_pattern_vs_outlier_S, sceneFrames: L_analyst_m4_l1_pattern_vs_outlier_F, totalFrames: L_analyst_m4_l1_pattern_vs_outlier_T },
     { id: "automator-m3-l3-filters-routers", scenes: L_automator_m3_l3_filters_routers_S, sceneFrames: L_automator_m3_l3_filters_routers_F, totalFrames: L_automator_m3_l3_filters_routers_T },
     { id: "builder-m7-l2-relations", scenes: L_builder_m7_l2_relations_S, sceneFrames: L_builder_m7_l2_relations_F, totalFrames: L_builder_m7_l2_relations_T },
+    { id: "creator-m4-l3-ai-writing", scenes: L_creator_m4_l3_ai_writing_S, sceneFrames: L_creator_m4_l3_ai_writing_F, totalFrames: L_creator_m4_l3_ai_writing_T },
   /* @lesson-entries-end */
 ];
