@@ -5,52 +5,89 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "subtitle": "في 4 دروس بس فهمت اللي مبرمج محترف بياخد شهور عشان يفهمه: إزاي أي تطبيق في الدنيا بيشتغل من جوه. بريك سريع قبل ما نبدأ نبني فعلاً.",
-    "chip": "أهلًا، بعد الدرس ده هتقدر",
-    "highlight": "Phase 2",
-    "title": "تشوف إنت بنيت إيه فعلاً"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "ديكور المطعم والمنيو",
-    "term": "الواجهة (Frontend)",
-    "definition": "اللي العميل بيشوفه ويدوس عليه"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "definition": "العقل اللي بيستقبل الطلبات وينفّذها",
-    "term": "الكواليس (Backend)",
-    "tag": "المطبخ اللي بيطبخ"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "definition": "المكان اللي التطبيق بيفتكر فيه كل حاجة",
-    "term": "المخزن الذكي (Database)",
-    "tag": "مخزن المكونات"
+    "subtitle": "Mini Win قبل الكمال",
+    "highlight": "صغير ومنشور",
+    "chip": "بداية الدرس",
+    "title": "هتفهم إيه النهاردة؟"
   },
   {
     "card": "BulletsCard",
-    "accent": "pink",
-    "title": "Lovable بيعمل التلاتة بنفسه",
+    "accent": "lavender",
     "bullets": [
-      "إنت فاهم الـ 3 طبقات دلوقتي.",
-      "مش لازم تكتب الكود بإيدك.",
-      "Lovable بيبني الواجهة، وبيجهّز الكواليس، وبيعمل المخزن.",
-      "إنت دورك تقوله إنت عايز إيه."
+      "عندك ٢٠ feature في دماغك: login، دفع، ٥ لغات، dashboard، notifications...",
+      "بعد شهر لسه بتخطّط — ومفيش حاجة شغّالة قدام حد حقيقي.",
+      "المشكلة مش الفكرة. المشكلة إنك مستني «الكمال» قبل ما تجرب."
+    ],
+    "title": "بتخطّط لتطبيق ضخم — ومش بتبدأ"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "peach",
+    "title": "صغير ومنشور > كامل ومش متجرب",
+    "bullets": [
+      "Mini Win = أصغر نسخة من تطبيقك تقدر تنشرها وتجربها مع مستخدم حقيقي.",
+      "صفحة واحدة + action واحد + نتيجة واحدة = كفاية للبداية.",
+      "Feedback من ٣ مستخدمين أهم من ٣٠ feature مفيش حد جربهم.",
+      "Phase 2 خلّصت المفاهيم — Phase 3 هتبني. Mini Win هو جسرك."
     ]
   },
   {
-    "card": "CTACard",
+    "card": "CompareCard",
+    "accent": "yellow",
+    "title": "تطبيق كامل في دماغك vs Mini Win",
+    "right": {
+      "body": "صفحة واحدة: اكتب سؤال → AI يرد. ٥ أصدقاء جربوا. عرفت إيه يشتغل وإيه لأ.",
+      "label": "Mini Win في أسبوع"
+    },
+    "left": {
+      "body": "٣ شهور تخطيط. login + دفع + ١٠ صفحات. مفيش حد جرب — ومفيش feedback.",
+      "label": "«هعمل كل حاجة الأول»"
+    }
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "pink",
+    "tag": "مش prototype",
+    "term": "Mini Win (انتصار صغير)",
+    "definition": "أصغر نسخة منشورة تثبت إن الفكرة تشتغل — مش prototype في دماغك."
+  },
+  {
+    "card": "ConceptCard",
     "accent": "mintDeep",
-    "tagline": "اربط كل طبقة بشغلها",
-    "highlight": "في 30 ثانية",
+    "definition": "نفس الفكرة بالإنجليزي — أقل منتج يقدر يوصل قيمة حقيقية.",
+    "term": "MVP (Minimum Viable Product)",
+    "tag": "أقل منتج قيمة"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "mint",
+    "bullets": [
+      "Frontend: العميل يشوف ويدوس.",
+      "Backend: AI يشتغل ورا.",
+      "Database: التطبيق يفتكر.",
+      "Mini Win = أقل حاجة في كل طبقة — بس تشتغل end-to-end."
+    ],
+    "title": "٣ طبقات — جاهزة للبناء"
+  },
+  {
+    "card": "CTACard",
+    "accent": "lavender",
+    "tagline": "جاوب على السؤال عشان تتأكد إنك فهمت.",
+    "title": "سؤال واحد سريع",
     "eyebrow": "دورك دلوقتي",
-    "title": "اختبر نفسك"
+    "highlight": "تأكيد فهمك للدرس"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "peach",
+    "title": "إيه اللي عندك دلوقتي؟",
+    "bullets": [
+      "فهمت إيه؟ صغير ومنشور > كامل ومش متجرب. Mini Win = جسرك لـ Phase 3.",
+      "تقدر تعمل إيه؟ عندك تعريف Mini Win + حدود + ٣ testers.",
+      "اللي جاي: من فكرة لصفحة — إزاي أي idea تبقى شاشات وخطوات."
+    ]
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [484, 382, 357, 453, 436, 330];
+export const SCENE_FRAMES: number[] = [383, 430, 784, 529, 427, 540, 435, 306, 672];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
