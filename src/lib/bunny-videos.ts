@@ -80,7 +80,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "business-m3-l1-delegate-or-automate": "4556e864-df46-4efe-9d91-8831c1f77653",
   "business-m3-l2-retention-flow": "7d66467e-359b-44cc-bce4-c5443f0f4daa",
   "business-m3-l2-strategic-operational-admin": "d94fa209-0900-4f0c-95d6-f3e66f51e279",
-  "business-m3-l3-system-then-people": "68761e6a-18c6-4e61-9672-f10767f11c9d",
+  "business-m3-l3-system-then-people": "46cdf6ce-cf9a-4b63-9be6-d1ea72a192a5",
   "business-m3-l4-hiring-onboarding": "e4e53b77-1287-4316-b38f-02a386f059c4",
   "business-m4-l1-premature-scaling": "3cd8d029-1a89-4f5c-9746-0249c08c76ff",
   "business-m4-l1-strategic-operational-admin": "df064a24-ceb7-4e6f-80ee-d11bd32c41a7",
