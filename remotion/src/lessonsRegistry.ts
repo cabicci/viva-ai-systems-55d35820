@@ -40,7 +40,6 @@ import { SCENES as L_automator_m3_l1_tools_landscape_S, SCENE_FRAMES as L_automa
 import { SCENES as L_analyst_m5_l2_weekly_review_ritual_S, SCENE_FRAMES as L_analyst_m5_l2_weekly_review_ritual_F, TOTAL_FRAMES as L_analyst_m5_l2_weekly_review_ritual_T } from "./lessons-generated/analyst-m5-l2-weekly-review-ritual.gen";
 import { SCENES as L_business_m6_l1_reactive_relapse_S, SCENE_FRAMES as L_business_m6_l1_reactive_relapse_F, TOTAL_FRAMES as L_business_m6_l1_reactive_relapse_T } from "./lessons-generated/business-m6-l1-reactive-relapse.gen";
 import { SCENES as L_business_m3_l1_customer_lifecycle_S, SCENE_FRAMES as L_business_m3_l1_customer_lifecycle_F, TOTAL_FRAMES as L_business_m3_l1_customer_lifecycle_T } from "./lessons-generated/business-m3-l1-customer-lifecycle.gen";
-import { SCENES as L_builder_m3_l1_context_layer_S, SCENE_FRAMES as L_builder_m3_l1_context_layer_F, TOTAL_FRAMES as L_builder_m3_l1_context_layer_T } from "./lessons-generated/builder-m3-l1-context-layer.gen";
 import { SCENES as L_builder_m3_l2_memory_limits_S, SCENE_FRAMES as L_builder_m3_l2_memory_limits_F, TOTAL_FRAMES as L_builder_m3_l2_memory_limits_T } from "./lessons-generated/builder-m3-l2-memory-limits.gen";
 import { SCENES as L_builder_m5_l2_frontend_S, SCENE_FRAMES as L_builder_m5_l2_frontend_F, TOTAL_FRAMES as L_builder_m5_l2_frontend_T } from "./lessons-generated/builder-m5-l2-frontend.gen";
 import { SCENES as L_builder_m7_l2_relations_S, SCENE_FRAMES as L_builder_m7_l2_relations_F, TOTAL_FRAMES as L_builder_m7_l2_relations_T } from "./lessons-generated/builder-m7-l2-relations.gen";
@@ -125,6 +124,7 @@ import { SCENES as L_automator_m3_l2_triggers_actions_S, SCENE_FRAMES as L_autom
 import { SCENES as L_automator_m2_l3_decide_what_to_automate_S, SCENE_FRAMES as L_automator_m2_l3_decide_what_to_automate_F, TOTAL_FRAMES as L_automator_m2_l3_decide_what_to_automate_T } from "./lessons-generated/automator-m2-l3-decide-what-to-automate.gen";
 import { SCENES as L_automator_m6_l3_follow_up_S, SCENE_FRAMES as L_automator_m6_l3_follow_up_F, TOTAL_FRAMES as L_automator_m6_l3_follow_up_T } from "./lessons-generated/automator-m6-l3-follow-up.gen";
 import { SCENES as L_analyst_m3_l1_three_sources_S, SCENE_FRAMES as L_analyst_m3_l1_three_sources_F, TOTAL_FRAMES as L_analyst_m3_l1_three_sources_T } from "./lessons-generated/analyst-m3-l1-three-sources.gen";
+import { SCENES as L_builder_m3_l1_context_layer_S, SCENE_FRAMES as L_builder_m3_l1_context_layer_F, TOTAL_FRAMES as L_builder_m3_l1_context_layer_T } from "./lessons-generated/builder-m3-l1-context-layer.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -156,7 +156,6 @@ export const LESSONS: LessonModule[] = [
     { id: "analyst-m5-l2-weekly-review-ritual", scenes: L_analyst_m5_l2_weekly_review_ritual_S, sceneFrames: L_analyst_m5_l2_weekly_review_ritual_F, totalFrames: L_analyst_m5_l2_weekly_review_ritual_T },
     { id: "business-m6-l1-reactive-relapse", scenes: L_business_m6_l1_reactive_relapse_S, sceneFrames: L_business_m6_l1_reactive_relapse_F, totalFrames: L_business_m6_l1_reactive_relapse_T },
     { id: "business-m3-l1-customer-lifecycle", scenes: L_business_m3_l1_customer_lifecycle_S, sceneFrames: L_business_m3_l1_customer_lifecycle_F, totalFrames: L_business_m3_l1_customer_lifecycle_T },
-    { id: "builder-m3-l1-context-layer", scenes: L_builder_m3_l1_context_layer_S, sceneFrames: L_builder_m3_l1_context_layer_F, totalFrames: L_builder_m3_l1_context_layer_T },
     { id: "builder-m3-l2-memory-limits", scenes: L_builder_m3_l2_memory_limits_S, sceneFrames: L_builder_m3_l2_memory_limits_F, totalFrames: L_builder_m3_l2_memory_limits_T },
     { id: "builder-m5-l2-frontend", scenes: L_builder_m5_l2_frontend_S, sceneFrames: L_builder_m5_l2_frontend_F, totalFrames: L_builder_m5_l2_frontend_T },
     { id: "builder-m7-l2-relations", scenes: L_builder_m7_l2_relations_S, sceneFrames: L_builder_m7_l2_relations_F, totalFrames: L_builder_m7_l2_relations_T },
@@ -241,5 +240,6 @@ export const LESSONS: LessonModule[] = [
     { id: "automator-m2-l3-decide-what-to-automate", scenes: L_automator_m2_l3_decide_what_to_automate_S, sceneFrames: L_automator_m2_l3_decide_what_to_automate_F, totalFrames: L_automator_m2_l3_decide_what_to_automate_T },
     { id: "automator-m6-l3-follow-up", scenes: L_automator_m6_l3_follow_up_S, sceneFrames: L_automator_m6_l3_follow_up_F, totalFrames: L_automator_m6_l3_follow_up_T },
     { id: "analyst-m3-l1-three-sources", scenes: L_analyst_m3_l1_three_sources_S, sceneFrames: L_analyst_m3_l1_three_sources_F, totalFrames: L_analyst_m3_l1_three_sources_T },
+    { id: "builder-m3-l1-context-layer", scenes: L_builder_m3_l1_context_layer_S, sceneFrames: L_builder_m3_l1_context_layer_F, totalFrames: L_builder_m3_l1_context_layer_T },
   /* @lesson-entries-end */
 ];
