@@ -5,94 +5,84 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "chip": "أهلًا",
-    "title": "تطبيق على localhost",
-    "subtitle": "بنيت فرونت إند وباك إند وداتا بيز وأوث ورج... كله شغال على جهازك بس مفيش حد غيرك يقدر يشوفه.",
-    "highlight": "تطبيق مش موجود"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "زي التاجر اللي بيبعت بضاعته للمحل.",
-    "term": "Deploy",
-    "definition": "عملية نقل كودك من جهازك للسيرفر عشان الناس تشوفه."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "tag": "زي اسم المحل بتاعك.",
-    "term": "Domain Name",
-    "definition": "عنوان موقعك اللي الناس بتكتبه في المتصفح (example.com)."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "term": "DNS Records (A & CNAME)",
-    "definition": "إعدادات بتربط اسم الدومين بعنوان السيرفر الحقيقي عشان الموقع يفتح.",
-    "tag": "ربط اسم محلك بالعنوان."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "tag": "قفل بيطمن الزباين.",
-    "definition": "شهادة أمان بتخلي موقعك مشفر ومحمي وبتبدأ بـ https.",
-    "term": "SSL Certificate (HTTPS)"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "definition": "تنظيف وتصغير حجم ملفات موقعك عشان يفتح بسرعة للناس.",
-    "term": "Bundle & Tree-shaking",
-    "tag": "تصغير ملفات موقعك."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "tag": "خزنة بياناتك السرية.",
-    "definition": "خزنة بتشيل فيها بياناتك السرية (زي كلمة سر الداتا بيز).",
-    "term": "Environment Variables"
+    "highlight": "إطلاق التطبيق",
+    "subtitle": "لينك عام وأسرار محمية",
+    "title": "هتفهم إيه النهاردة؟",
+    "chip": "بداية الدرس"
   },
   {
     "card": "BulletsCard",
     "accent": "lavender",
     "bullets": [
-      "Build: الكود بيتحول لـ HTML/JS/CSS مضغوط وسريع.",
-      "Host: سيرفر بيقدم تطبيقك للعالم، وده بيحصل في ثواني.",
-      "DNS + Domain: بيربط اسم موقعك بالـ IP الحقيقي.",
-      "SSL (HTTPS): أمان لموقعك وبيتفعل تلقائيًا."
+      "كل حاجة شغالة على localhost.",
+      "لو بعت لينك 'localhost:5173' لصاحبك — مش هيفتح عنده.",
+      "التطبيق لسه فكرة على جهازك."
     ],
-    "title": "Deployment = Build + Host + DNS + SSL"
+    "title": "تطبيق جامد — بس محبوس على جهازك"
   },
   {
-    "card": "ScreenshotCard",
+    "card": "BulletsCard",
     "accent": "peach",
-    "caption": "الصفحة دي بتعرض فلسفة الـ deployment الحديث: كل deploy = entry في build log. Lovable بنفسه بيـ deploy تطبيقك في ثواني — كل تعديل بتعمله بيـ build و publish تلقائيًا على preview URL. لما تضغط Publish، نسخة جديدة بتروح للـ production URL. الفايدة من الـ build log: لو deploy وقع، تشوف بالظبط في أي خطوة.",
-    "title": "\"سجل البناء\" = تاريخ كل deploy",
-    "src": "lessons/builder-m10-l1-deploy-domain.jpg",
-    "eyebrow": "شوف بنفسك"
+    "bullets": [
+      "Deploy = الكود يروح سيرفر — الناس تفتحه من URL عام.",
+      "الأسرار تروح «خزنة» على السيرفر — Environment Variables.",
+      "الفرق: اللي الناس تشوفه (لينك، واجهة) vs اللي لازم يفضل مخفي (مفاتيح)."
+    ],
+    "title": "لينك عام + أسرار محمية"
   },
   {
     "card": "CompareCard",
     "accent": "yellow",
-    "title": "\"شغّال عندي\" vs Deployment Pipeline حقيقي",
-    "left": {
-      "body": "بتعدّل الكود في production server بإيدك. بتحط الـ Stripe production key في .env وتـ commit بالغلط. مفيش preview environment. النتيجة: leaked secrets، downtime متوقّع، خوف من أي تعديل = تطبيق متجمّد.",
-      "label": "FAILURE — تـ deploy يدوي وتغيّر env في production مباشرة"
-    },
     "right": {
-      "body": "git push بيشغل الـ CI، وبيعمل preview URL تلقائي لكل branch. الـ secrets بتكون في dashboard الـ host مش في git. كل deploy ليه commit hash وزرار للـ rollback. النتيجة: تقدر تعمل ship يوميًا بدون خوف.",
-      "label": "RIGHT — Git-based deploys + previews + secrets مفصولة"
+      "body": "الكود Public — المفاتيح في خزنة السيرفر بس. اللينك عام، الأسرار محمية.",
+      "label": "صح — سر في Env Vars"
+    },
+    "title": "مفتاح في الكود vs مفتاح في خزنة",
+    "left": {
+      "body": "مفتاح OpenAI في ملف على GitHub — أي حد يشوفه ويستخدمه على حسابك. كارثة مالية وأمان.",
+      "label": "غلط — سر في الكود"
     }
   },
   {
-    "card": "CTACard",
+    "card": "ConceptCard",
+    "accent": "pink",
+    "tag": "من localhost → `https://my-ai-app.com`.",
+    "term": "Deploy (إطلاق)",
+    "definition": "نقل التطبيق من جهازك لسيرفر — URL عام أي حد يفتحه."
+  },
+  {
+    "card": "ConceptCard",
     "accent": "mintDeep",
+    "tag": "OPENAI_API_KEY في إعدادات Production — مش في الكود.",
+    "term": "Environment Variables",
+    "definition": "خزنة أسرار على السيرفر — مفاتيح API وكلمات سر المخزن."
+  },
+  {
+    "card": "ScreenshotCard",
+    "accent": "mint",
+    "eyebrow": "شوفها ببساطة",
+    "title": "سجل البناء — إطلاق ناجح",
+    "src": "lessons/builder-m10-l1-deploy-domain.jpg",
+    "caption": "كل deploy = نسخة جديدة على الإنترنت. سجل البناء يورّيك إيه نجح وإيه فشل — مش صندوق أسود."
+  },
+  {
+    "card": "CTACard",
+    "accent": "lavender",
+    "highlight": "اختبر فهمك",
+    "tagline": "جاوب على السؤال عشان تتأكد إن المعلومة وصلت.",
     "eyebrow": "دورك دلوقتي",
-    "tagline": "يلا نطبق اللي اتعلمناه ونختبر فهمك في الكويز ده!",
-    "highlight": "وافحص الـ ٧ نقاط",
-    "title": "اعمل Deploy حقيقي"
+    "title": "سؤال واحد — مش امتحان"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "peach",
+    "bullets": [
+      "فهمت إيه؟ Deploy = لينك عام. الأسرار = في خزنة — مش في الكود.",
+      "تقدر تعمل إيه؟ عندك قايمة عام vs سري جاهزة قبل الإطلاق."
+    ],
+    "title": "إيه اللي عندك دلوقتي؟"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [654, 445, 424, 481, 406, 427, 394, 881, 701, 623, 366];
+export const SCENE_FRAMES: number[] = [457, 497, 557, 525, 467, 479, 448, 391, 505];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
