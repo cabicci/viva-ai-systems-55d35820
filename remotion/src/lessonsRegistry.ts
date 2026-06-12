@@ -50,7 +50,6 @@ import { SCENES as L_business_m3_l1_customer_lifecycle_S, SCENE_FRAMES as L_busi
 import { SCENES as L_automator_m3_l2_triggers_actions_S, SCENE_FRAMES as L_automator_m3_l2_triggers_actions_F, TOTAL_FRAMES as L_automator_m3_l2_triggers_actions_T } from "./lessons-generated/automator-m3-l2-triggers-actions.gen";
 import { SCENES as L_builder_m2_l3_style_control_S, SCENE_FRAMES as L_builder_m2_l3_style_control_F, TOTAL_FRAMES as L_builder_m2_l3_style_control_T } from "./lessons-generated/builder-m2-l3-style-control.gen";
 import { SCENES as L_builder_m3_l1_context_layer_S, SCENE_FRAMES as L_builder_m3_l1_context_layer_F, TOTAL_FRAMES as L_builder_m3_l1_context_layer_T } from "./lessons-generated/builder-m3-l1-context-layer.gen";
-import { SCENES as L_builder_m2_l2_instructions_examples_S, SCENE_FRAMES as L_builder_m2_l2_instructions_examples_F, TOTAL_FRAMES as L_builder_m2_l2_instructions_examples_T } from "./lessons-generated/builder-m2-l2-instructions-examples.gen";
 import { SCENES as L_builder_m3_l2_memory_limits_S, SCENE_FRAMES as L_builder_m3_l2_memory_limits_F, TOTAL_FRAMES as L_builder_m3_l2_memory_limits_T } from "./lessons-generated/builder-m3-l2-memory-limits.gen";
 import { SCENES as L_builder_m5_l2_frontend_S, SCENE_FRAMES as L_builder_m5_l2_frontend_F, TOTAL_FRAMES as L_builder_m5_l2_frontend_T } from "./lessons-generated/builder-m5-l2-frontend.gen";
 import { SCENES as L_builder_m7_l2_relations_S, SCENE_FRAMES as L_builder_m7_l2_relations_F, TOTAL_FRAMES as L_builder_m7_l2_relations_T } from "./lessons-generated/builder-m7-l2-relations.gen";
@@ -124,6 +123,7 @@ import { SCENES as L_creator_m3_l1_hook_S, SCENE_FRAMES as L_creator_m3_l1_hook_
 import { SCENES as L_creator_m7_l1_brand_basics_S, SCENE_FRAMES as L_creator_m7_l1_brand_basics_F, TOTAL_FRAMES as L_creator_m7_l1_brand_basics_T } from "./lessons-generated/creator-m7-l1-brand-basics.gen";
 import { SCENES as L_business_m2_l2_build_your_offer_S, SCENE_FRAMES as L_business_m2_l2_build_your_offer_F, TOTAL_FRAMES as L_business_m2_l2_build_your_offer_T } from "./lessons-generated/business-m2-l2-build-your-offer.gen";
 import { SCENES as L_business_m2_l2_retention_flow_S, SCENE_FRAMES as L_business_m2_l2_retention_flow_F, TOTAL_FRAMES as L_business_m2_l2_retention_flow_T } from "./lessons-generated/business-m2-l2-retention-flow.gen";
+import { SCENES as L_builder_m2_l2_instructions_examples_S, SCENE_FRAMES as L_builder_m2_l2_instructions_examples_F, TOTAL_FRAMES as L_builder_m2_l2_instructions_examples_T } from "./lessons-generated/builder-m2-l2-instructions-examples.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -165,7 +165,6 @@ export const LESSONS: LessonModule[] = [
     { id: "automator-m3-l2-triggers-actions", scenes: L_automator_m3_l2_triggers_actions_S, sceneFrames: L_automator_m3_l2_triggers_actions_F, totalFrames: L_automator_m3_l2_triggers_actions_T },
     { id: "builder-m2-l3-style-control", scenes: L_builder_m2_l3_style_control_S, sceneFrames: L_builder_m2_l3_style_control_F, totalFrames: L_builder_m2_l3_style_control_T },
     { id: "builder-m3-l1-context-layer", scenes: L_builder_m3_l1_context_layer_S, sceneFrames: L_builder_m3_l1_context_layer_F, totalFrames: L_builder_m3_l1_context_layer_T },
-    { id: "builder-m2-l2-instructions-examples", scenes: L_builder_m2_l2_instructions_examples_S, sceneFrames: L_builder_m2_l2_instructions_examples_F, totalFrames: L_builder_m2_l2_instructions_examples_T },
     { id: "builder-m3-l2-memory-limits", scenes: L_builder_m3_l2_memory_limits_S, sceneFrames: L_builder_m3_l2_memory_limits_F, totalFrames: L_builder_m3_l2_memory_limits_T },
     { id: "builder-m5-l2-frontend", scenes: L_builder_m5_l2_frontend_S, sceneFrames: L_builder_m5_l2_frontend_F, totalFrames: L_builder_m5_l2_frontend_T },
     { id: "builder-m7-l2-relations", scenes: L_builder_m7_l2_relations_S, sceneFrames: L_builder_m7_l2_relations_F, totalFrames: L_builder_m7_l2_relations_T },
@@ -239,5 +238,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m7-l1-brand-basics", scenes: L_creator_m7_l1_brand_basics_S, sceneFrames: L_creator_m7_l1_brand_basics_F, totalFrames: L_creator_m7_l1_brand_basics_T },
     { id: "business-m2-l2-build-your-offer", scenes: L_business_m2_l2_build_your_offer_S, sceneFrames: L_business_m2_l2_build_your_offer_F, totalFrames: L_business_m2_l2_build_your_offer_T },
     { id: "business-m2-l2-retention-flow", scenes: L_business_m2_l2_retention_flow_S, sceneFrames: L_business_m2_l2_retention_flow_F, totalFrames: L_business_m2_l2_retention_flow_T },
+    { id: "builder-m2-l2-instructions-examples", scenes: L_builder_m2_l2_instructions_examples_S, sceneFrames: L_builder_m2_l2_instructions_examples_F, totalFrames: L_builder_m2_l2_instructions_examples_T },
   /* @lesson-entries-end */
 ];
