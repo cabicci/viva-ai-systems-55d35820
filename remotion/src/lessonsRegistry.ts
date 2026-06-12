@@ -46,7 +46,6 @@ import { SCENES as L_business_m2_l1_reactive_vs_proactive_S, SCENE_FRAMES as L_b
 import { SCENES as L_analyst_m5_l1_four_numbers_dashboard_S, SCENE_FRAMES as L_analyst_m5_l1_four_numbers_dashboard_F, TOTAL_FRAMES as L_analyst_m5_l1_four_numbers_dashboard_T } from "./lessons-generated/analyst-m5-l1-four-numbers-dashboard.gen";
 import { SCENES as L_business_m5_l2_system_then_people_S, SCENE_FRAMES as L_business_m5_l2_system_then_people_F, TOTAL_FRAMES as L_business_m5_l2_system_then_people_T } from "./lessons-generated/business-m5-l2-system-then-people.gen";
 import { SCENES as L_business_m6_l2_premature_scaling_S, SCENE_FRAMES as L_business_m6_l2_premature_scaling_F, TOTAL_FRAMES as L_business_m6_l2_premature_scaling_T } from "./lessons-generated/business-m6-l2-premature-scaling.gen";
-import { SCENES as L_analyst_m6_l2_interpretation_mistakes_S, SCENE_FRAMES as L_analyst_m6_l2_interpretation_mistakes_F, TOTAL_FRAMES as L_analyst_m6_l2_interpretation_mistakes_T } from "./lessons-generated/analyst-m6-l2-interpretation-mistakes.gen";
 import { SCENES as L_analyst_m3_l2_ai_summarization_S, SCENE_FRAMES as L_analyst_m3_l2_ai_summarization_F, TOTAL_FRAMES as L_analyst_m3_l2_ai_summarization_T } from "./lessons-generated/analyst-m3-l2-ai-summarization.gen";
 import { SCENES as L_business_m3_l2_retention_flow_S, SCENE_FRAMES as L_business_m3_l2_retention_flow_F, TOTAL_FRAMES as L_business_m3_l2_retention_flow_T } from "./lessons-generated/business-m3-l2-retention-flow.gen";
 import { SCENES as L_analyst_m6_l1_question_mistakes_S, SCENE_FRAMES as L_analyst_m6_l1_question_mistakes_F, TOTAL_FRAMES as L_analyst_m6_l1_question_mistakes_T } from "./lessons-generated/analyst-m6-l1-question-mistakes.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_creator_m1_l2_attention_economy_S, SCENE_FRAMES as L_creato
 import { SCENES as L_business_m1_l1_from_decisions_to_leadership_S, SCENE_FRAMES as L_business_m1_l1_from_decisions_to_leadership_F, TOTAL_FRAMES as L_business_m1_l1_from_decisions_to_leadership_T } from "./lessons-generated/business-m1-l1-from-decisions-to-leadership.gen";
 import { SCENES as L_creator_m6_l3_analytics_S, SCENE_FRAMES as L_creator_m6_l3_analytics_F, TOTAL_FRAMES as L_creator_m6_l3_analytics_T } from "./lessons-generated/creator-m6-l3-analytics.gen";
 import { SCENES as L_builder_m6_l3_first_prompt_to_lovable_S, SCENE_FRAMES as L_builder_m6_l3_first_prompt_to_lovable_F, TOTAL_FRAMES as L_builder_m6_l3_first_prompt_to_lovable_T } from "./lessons-generated/builder-m6-l3-first-prompt-to-lovable.gen";
+import { SCENES as L_analyst_m6_l2_interpretation_mistakes_S, SCENE_FRAMES as L_analyst_m6_l2_interpretation_mistakes_F, TOTAL_FRAMES as L_analyst_m6_l2_interpretation_mistakes_T } from "./lessons-generated/analyst-m6-l2-interpretation-mistakes.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -162,7 +162,6 @@ export const LESSONS: LessonModule[] = [
     { id: "analyst-m5-l1-four-numbers-dashboard", scenes: L_analyst_m5_l1_four_numbers_dashboard_S, sceneFrames: L_analyst_m5_l1_four_numbers_dashboard_F, totalFrames: L_analyst_m5_l1_four_numbers_dashboard_T },
     { id: "business-m5-l2-system-then-people", scenes: L_business_m5_l2_system_then_people_S, sceneFrames: L_business_m5_l2_system_then_people_F, totalFrames: L_business_m5_l2_system_then_people_T },
     { id: "business-m6-l2-premature-scaling", scenes: L_business_m6_l2_premature_scaling_S, sceneFrames: L_business_m6_l2_premature_scaling_F, totalFrames: L_business_m6_l2_premature_scaling_T },
-    { id: "analyst-m6-l2-interpretation-mistakes", scenes: L_analyst_m6_l2_interpretation_mistakes_S, sceneFrames: L_analyst_m6_l2_interpretation_mistakes_F, totalFrames: L_analyst_m6_l2_interpretation_mistakes_T },
     { id: "analyst-m3-l2-ai-summarization", scenes: L_analyst_m3_l2_ai_summarization_S, sceneFrames: L_analyst_m3_l2_ai_summarization_F, totalFrames: L_analyst_m3_l2_ai_summarization_T },
     { id: "business-m3-l2-retention-flow", scenes: L_business_m3_l2_retention_flow_S, sceneFrames: L_business_m3_l2_retention_flow_F, totalFrames: L_business_m3_l2_retention_flow_T },
     { id: "analyst-m6-l1-question-mistakes", scenes: L_analyst_m6_l1_question_mistakes_S, sceneFrames: L_analyst_m6_l1_question_mistakes_F, totalFrames: L_analyst_m6_l1_question_mistakes_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m1-l1-from-decisions-to-leadership", scenes: L_business_m1_l1_from_decisions_to_leadership_S, sceneFrames: L_business_m1_l1_from_decisions_to_leadership_F, totalFrames: L_business_m1_l1_from_decisions_to_leadership_T },
     { id: "creator-m6-l3-analytics", scenes: L_creator_m6_l3_analytics_S, sceneFrames: L_creator_m6_l3_analytics_F, totalFrames: L_creator_m6_l3_analytics_T },
     { id: "builder-m6-l3-first-prompt-to-lovable", scenes: L_builder_m6_l3_first_prompt_to_lovable_S, sceneFrames: L_builder_m6_l3_first_prompt_to_lovable_F, totalFrames: L_builder_m6_l3_first_prompt_to_lovable_T },
+    { id: "analyst-m6-l2-interpretation-mistakes", scenes: L_analyst_m6_l2_interpretation_mistakes_S, sceneFrames: L_analyst_m6_l2_interpretation_mistakes_F, totalFrames: L_analyst_m6_l2_interpretation_mistakes_T },
   /* @lesson-entries-end */
 ];
