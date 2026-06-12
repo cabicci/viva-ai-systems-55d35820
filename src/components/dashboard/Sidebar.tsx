@@ -20,6 +20,7 @@ import {
 import { useAuth } from "@/lib/auth-context";
 import { useEntitlement } from "@/lib/entitlements";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
+import { BrandMark } from "@/components/brand/BrandMark";
 import { useEffect, useState } from "react";
 
 const items = [
@@ -121,7 +122,7 @@ export function Sidebar() {
       dir="rtl"
     >
       <Link to="/" className="flex items-center" aria-label="مسارات">
-        <img src="/brand/masaarat-logo-lockup.png" alt="مسارات" className="h-8 w-auto select-none" draggable={false} />
+        <BrandMark className="h-8" />
       </Link>
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
@@ -135,7 +136,7 @@ export function Sidebar() {
         <SheetContent side="right" className="w-72 p-5 flex flex-col" dir="rtl">
           <SheetTitle className="sr-only">القائمة</SheetTitle>
           <Link to="/" onClick={() => setOpen(false)} className="flex items-center mb-6" aria-label="مسارات">
-            <img src="/brand/masaarat-logo-lockup.png" alt="مسارات" className="h-9 w-auto select-none" draggable={false} />
+            <BrandMark className="h-9" />
           </Link>
           <nav className="space-y-1 flex-1 overflow-y-auto min-h-0 -mx-1 px-1">
             <NavItems onNavigate={() => setOpen(false)} />
@@ -157,7 +158,7 @@ export function Sidebar() {
     {/* Desktop sidebar */}
     <aside className="hidden lg:flex w-64 flex-col glass border-l border-border/50 p-5 sticky top-0 h-screen">
       <Link to="/" className="flex items-center mb-8" aria-label="مسارات">
-        <img src="/brand/masaarat-logo-lockup.png" alt="مسارات" className="h-9 w-auto select-none" draggable={false} />
+        <BrandMark className="h-9" />
       </Link>
 
       <nav className="space-y-1 flex-1 overflow-y-auto min-h-0 -mx-1 px-1">
