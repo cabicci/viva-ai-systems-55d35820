@@ -129,6 +129,7 @@ import { SCENES as L_builder_m7_l2_relations_S, SCENE_FRAMES as L_builder_m7_l2_
 import { SCENES as L_creator_m4_l3_ai_writing_S, SCENE_FRAMES as L_creator_m4_l3_ai_writing_F, TOTAL_FRAMES as L_creator_m4_l3_ai_writing_T } from "./lessons-generated/creator-m4-l3-ai-writing.gen";
 import { SCENES as L_business_m3_l3_system_then_people_S, SCENE_FRAMES as L_business_m3_l3_system_then_people_F, TOTAL_FRAMES as L_business_m3_l3_system_then_people_T } from "./lessons-generated/business-m3-l3-system-then-people.gen";
 import { SCENES as L_builder_m7_l3_queries_S, SCENE_FRAMES as L_builder_m7_l3_queries_F, TOTAL_FRAMES as L_builder_m7_l3_queries_T } from "./lessons-generated/builder-m7-l3-queries.gen";
+import { SCENES as L_creator_m4_repurposing_S, SCENE_FRAMES as L_creator_m4_repurposing_F, TOTAL_FRAMES as L_creator_m4_repurposing_T } from "./lessons-generated/creator-m4-repurposing.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -246,5 +247,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m4-l3-ai-writing", scenes: L_creator_m4_l3_ai_writing_S, sceneFrames: L_creator_m4_l3_ai_writing_F, totalFrames: L_creator_m4_l3_ai_writing_T },
     { id: "business-m3-l3-system-then-people", scenes: L_business_m3_l3_system_then_people_S, sceneFrames: L_business_m3_l3_system_then_people_F, totalFrames: L_business_m3_l3_system_then_people_T },
     { id: "builder-m7-l3-queries", scenes: L_builder_m7_l3_queries_S, sceneFrames: L_builder_m7_l3_queries_F, totalFrames: L_builder_m7_l3_queries_T },
+    { id: "creator-m4-repurposing", scenes: L_creator_m4_repurposing_S, sceneFrames: L_creator_m4_repurposing_F, totalFrames: L_creator_m4_repurposing_T },
   /* @lesson-entries-end */
 ];
