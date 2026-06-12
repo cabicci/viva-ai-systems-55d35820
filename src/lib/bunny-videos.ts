@@ -118,8 +118,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "intro-m1-l4-ai-can-cannot": "b139cfa2-e80e-4dd6-ab6d-e79ed8d34522",
   "intro-m1-l5-ai-vs-software": "49f45275-18f2-42f8-b9eb-53bcab98098a",
   "intro-m1-l6-learn-without-fear": "8a8fac75-7728-4b81-b407-4b3304670098",
-  "intro-m1-l7-choose-your-path": "c294a3e5-6a52-448b-a415-8abcd929ba6b",
-
+  "intro-m1-l7-choose-your-path": "bc5773b0-0ec3-4611-a2f5-89b19bc8407f",
 };
 
 export function getBunnyEmbedUrl(lessonId: string | undefined): string | undefined {
