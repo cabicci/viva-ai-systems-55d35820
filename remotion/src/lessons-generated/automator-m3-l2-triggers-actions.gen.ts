@@ -5,146 +5,86 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "title": "كل automation",
-    "subtitle": "وبتخلص بـ Action أو أكتر.",
-    "highlight": "بتبدأ بـ Trigger",
-    "chip": "Triggers + Actions"
+    "highlight": "كل أتمتة = «لما ده يحصل، اعمل كده» — مُشغّل (Trigger) + فعل أو أكتر (Action).",
+    "title": "هتفهم إيه النهاردة؟",
+    "subtitle": "بعد ما اخترت الأداة، محتاج تصمّم أول workflow للعامل الافتراضي — قبل ما تفتح أي شاشة. هتعمل إيه بعد الدرس؟ هتصمّم workflow واحد: مُشغّل → ٢–٣ actions.",
+    "chip": "بداية الدرس"
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "lavender",
-    "tag": "بيانات الرسالة",
-    "term": "Payload / JSON",
-    "definition": "دي البيانات اللي بتتنقل بين البرامج، زي علبة بيانات كده."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "term": "Input / Output",
-    "definition": "الـ Input هو اللي بتدخله، والـ Output هو النتيجة اللي بتطلع.",
-    "tag": "مدخلات ومخرجات"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "term": "Database / DB",
-    "definition": "المكان اللي بتخزن فيه بيانات شغلك بشكل منظم ومحمي.",
-    "tag": "تخزين بيانات"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "term": "API / HTTP Request",
-    "definition": "الطريقة اللي البرامج بتكلم بيها بعض وتطلب بيانات.",
-    "tag": "تواصل برامج"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "tag": "سؤال متكرر",
-    "term": "Polling",
-    "definition": "الأداة بتسأل الموقع \"فيه جديد؟\" كل فترة معينة."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "tag": "إشعار فوري",
-    "term": "Webhook",
-    "definition": "الخدمة بتبعت البيانات للأداة \"فورا\" أول ما حاجة تحصل."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "term": "Trigger & Action",
-    "definition": "الـ Trigger هو الشرارة اللي بتبدأ الشغل، والـ Action هو التنفيذ.",
-    "tag": "شرارة وتنفيذ"
+    "bullets": [
+      "بتفتح الأداة وتضيف actions — بس المُشغّل مش واضح. الـ Flow يشتغل… بس مش في الوقت الصح.",
+      "العامل الافتراضي محتاج يعرف: إيه الحدث اللي يصحّيه؟ وإيه اللي ينفّذه بعد ما يصحى؟",
+      "«لما X → اعمل Y» — ده جملة واحدة تصمّم بيها أي أتمتة."
+    ],
+    "title": "بتبني Flow — من غير ما تعرف «لما إيه؟»"
   },
   {
     "card": "BulletsCard",
     "accent": "peach",
     "bullets": [
-      "حاجة بتحصل (Trigger) → خطوة أو أكتر بتتنفّذ كرد فعل (Actions).",
-      "Triggers أنواع: Schedule، Webhook، Polling، Manual.",
-      "Actions أنواع: HTTP request، إضافة صف في DB، إرسال إيميل/رسالة، استدعاء AI، تحويل بيانات."
+      "Trigger (المُشغّل): الحدث اللي يبدأ الشغل — فورم اتملّى، رسالة وصلت، الساعة ٩ الصبح.",
+      "Action (الفعل): اللي العامل الافتراضي ينفّذه — يبعت إيميل، يضيف صف، يرسل واتساب.",
+      "أنواع Triggers شائعة: Schedule (موعد)، Webhook (إشعار فوري لما حاجة تحصل)، Event (حدث في تطبيق).",
+      "Actions متسلسلة: output الـ action الأول = input للتاني. زي سير ورا بعض.",
+      "مثال: «لما حد يملى فورم → سجّل في شيت → ابعت واتساب ترحيب»."
     ],
-    "title": "كل workflow هيكلها بسيط"
+    "title": "لما ده يحصل → اعمل كده"
   },
   {
-    "card": "BulletsCard",
+    "card": "CompareCard",
     "accent": "yellow",
-    "bullets": [
-      "كل action بياخد output الـ action اللي قبله كـ input. فالـ workflow عاملة زي السير اللي ماشي ورا بعضه."
-    ],
-    "title": "كل workflow هيكلها بسيط"
-  },
-  {
-    "card": "ScreenshotCard",
-    "accent": "pink",
-    "src": "lessons/unique/automator-m3-l2-triggers-actions.jpg",
-    "eyebrow": "شوف بنفسك",
-    "caption": "كل خطوة في صفحة /dashboard دي عبارة عن Trigger → Action. المستخدم خلّص درس (Trigger) → سجّل تقدّمه في الـ DB.",
-    "title": "رحلة المستخدم في المنصة"
-  },
-  {
-    "card": "ScreenshotCard",
-    "accent": "mintDeep",
-    "caption": "فتحله الدرس اللي بعده + بعتله notification (3 Actions). نفس الفكرة هتطبّقها على شغلك.",
-    "title": "رحلة المستخدم في المنصة",
-    "src": "lessons/unique/automator-m3-l2-triggers-actions.jpg",
-    "eyebrow": "شوف بنفسك"
-  },
-  {
-    "card": "CompareCard",
-    "accent": "mint",
-    "left": {
-      "body": "بتخلّي الـ workflow يسأل كل دقيقة 'في رسالة جديدة؟'. بتاكل tasks كتير، وبتدفع فلوس على مشاوير على الفاضي، والـ response بيتأخّر دقيقة كاملة.",
-      "label": "FAILURE — Polling لكل حاجة"
-    },
+    "title": "Actions من غير Trigger vs «لما… اعمل…»",
     "right": {
-      "label": "RIGHT — Webhook لما يكون متاح",
-      "body": "بتخلّي الخدمة (WhatsApp، Stripe، Typeform) تبعتلك فورًا لما حاجة تحصل. سرعة فورية، tasks أقل بكتير، تكلفة أقل."
-    },
-    "title": "Polling vs Webhook"
-  },
-  {
-    "card": "CompareCard",
-    "accent": "lavender",
-    "title": "Polling vs Webhook",
-    "right": {
-      "label": "RIGHT — Webhook لما يكون متاح",
-      "body": "بتخلّي الخدمة (WhatsApp، Stripe، Typeform) تبعتلك فورًا لما حاجة تحصل. سرعة فورية، tasks أقل بكتير، تكلفة أقل."
+      "label": "Trigger + Actions",
+      "body": "«لما فورم جديد → إيميل ترحيب». هبة ما بتفتحش الأداة — العامل الافتراضي يشتغل لوحده."
     },
     "left": {
-      "body": "بتخلّي الـ workflow يسأل كل دقيقة 'في رسالة جديدة؟'. بتاكل tasks كتير، وبتدفع فلوس على مشاوير على الفاضي، والـ response بيتأخّر دقيقة كاملة.",
-      "label": "FAILURE — Polling لكل حاجة"
+      "body": "هبة بنت Flow يبعت إيميل — بس مش عارفة «إمتى». بتضغط تشغيل يدوي كل مرة. ده مش عامل افتراضي.",
+      "label": "Actions بس"
     }
   },
   {
-    "card": "CTACard",
-    "accent": "peach",
-    "highlight": "ابني أول scenario",
-    "eyebrow": "دورك دلوقتي",
-    "tagline": "يلا بينا نطبق اللي اتعلمناه ونشوف فهمنا إيه في الكويز ده.",
-    "title": "ابني أول scenario في 5 دقائق"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "yellow",
-    "bullets": [
-      "Trigger: lesson_completed → DB function تتولّى الباقي.",
-      "Actions متسلسلة: update streak → schedule review → award badge."
-    ],
-    "title": "كل learner_event = Trigger في المنصة"
-  },
-  {
-    "card": "BulletsCard",
+    "card": "ConceptCard",
     "accent": "pink",
+    "term": "Trigger (المُشغّل)",
+    "tag": "مثال: عميل اشترى كورس (Webhook من بوابة الدفع).",
+    "definition": "«لما…» — الحدث اللي يصحّي العامل الافتراضي."
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "mintDeep",
+    "term": "Action (الفعل)",
+    "tag": "مثال: ابعت واتساب فيه رابط الكورس.",
+    "definition": "«اعمل…» — الخطوة اللي بتتنفّذ بعد المُشغّل."
+  },
+  {
+    "card": "ScreenshotCard",
+    "accent": "mint",
+    "eyebrow": "شوفها ببساطة",
+    "src": "lessons/unique/automator-m3-l2-triggers-actions.jpg",
+    "title": "كل خطوة = مُشغّل → action",
+    "caption": "أي مسار = حدث (مُشغّل) → action أو أكتر. مثال: «خلّصت مهمة» → «سجّل» + «افتح التالية» + «ذكّر». نفس الفكرة على شغلك."
+  },
+  {
+    "card": "CTACard",
+    "accent": "lavender",
+    "tagline": "حل السؤال ده عشان تتأكد إنك فهمت",
+    "eyebrow": "دورك دلوقتي",
+    "highlight": "فكر في تصميم workflow",
+    "title": "صمّم أتمتة صح"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "peach",
     "bullets": [
-      "كله شغّال بـ Postgres functions و triggers."
+      "فهمت إيه؟ كل أتمتة = «لما ده يحصل → اعمل كده» — مُشغّل + actions.",
+      "تقدر تعمل إيه؟ عندك workflow مصمّم جاهز — تقدر تبنيه في الأداة اللي اخترتها."
     ],
-    "title": "كل learner_event = Trigger في المنصة"
+    "title": "إيه اللي عندك دلوقتي؟"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [432, 413, 316, 371, 352, 354, 361, 408, 473, 347, 403, 423, 376, 427, 393, 391, 417];
+export const SCENE_FRAMES: number[] = [480, 457, 472, 451, 462, 331, 437, 268, 426];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
