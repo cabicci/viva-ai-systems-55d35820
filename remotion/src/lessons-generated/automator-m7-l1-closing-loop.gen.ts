@@ -5,101 +5,86 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "subtitle": "مش هنوقف هنا. البيانات اللي جمعتها = كنز.",
-    "highlight": "— اللي جاي",
-    "title": "بياناتك جاهزة",
-    "chip": "أهلًا"
+    "subtitle": "هترسم رحلة end-to-end من lead لحد follow-up.",
+    "highlight": "أوتوميشنات منفصلة قوية — لكن لما تتربط في رحلة عميل واحدة بتبقى نظام.",
+    "chip": "بداية الدرس",
+    "title": "هتفهم إيه النهاردة؟"
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "lavender",
-    "definition": "المقاييس أو الأرقام اللي بتعرفك إنت ناجح ولا لأ.",
-    "tag": "مقاييس النجاح",
-    "term": "Metrics"
+    "title": "كل حاجة شغّالة — بس مافيش صورة كاملة",
+    "bullets": [
+      "عندك فورم يستقبل leads. واتساب بيرد. متابعة بترسل رسائل. كل واحد شغّال.",
+      "بس ماتعرفش: إيه القناة اللي بيجيب leads أحسن؟ إيه رسالة المتابعة اللي بتفتح ردود؟ فين بيتعطل العميل؟",
+      "أوتوميشنات منفصلة بدون ربط = شغل كتير بدون تعلّم. الربط يولّد بيانات — والبيانات تدخلك Analyst."
+    ]
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "peach",
-    "tag": "سحب العملاء",
-    "term": "Lead Capture",
-    "definition": "خطف أو سحب بيانات العملاء المهتمين عشان نكلمهم بعدين."
+    "title": "رحلة واحدة = Lead → رد → متابعة → بيانات",
+    "bullets": [
+      "Lead capture: يمسك الاهتمام ويسجّله.",
+      "WhatsApp / رد فوري: يخدم العميل بثقة.",
+      "Follow-up: يكمل المحادثة لو سكت.",
+      "كل خطوة تسجّل: مصدر، وقت، قناة، رد، تحويل. ده اللي Analyst هيقرأه."
+    ]
   },
   {
-    "card": "ConceptCard",
+    "card": "CompareCard",
     "accent": "yellow",
-    "definition": "مراجعة دقيقة لكل اللي حصل عشان نتأكد إنه مظبوط.",
-    "tag": "مراجعة دقيقة",
-    "term": "Audit"
+    "left": {
+      "body": "فورم شغّال، واتساب شغّال، متابعة شغّالة — بس مافيش خريطة. «إيه اللي نفع؟» — مافيش إجابة.",
+      "label": "أوتوميشنات منفصلة"
+    },
+    "title": "جزر منفصلة vs رحلة متصلة",
+    "right": {
+      "body": "Lead من إعلان → تسجيل → رد واتساب → متابعة يوم ٢ و٥ → تحويل أو إغلاق. كل خطوة مسجّلة — تقدر تسأل وتتحسّن.",
+      "label": "رحلة عميل واحدة"
+    }
   },
   {
     "card": "ConceptCard",
     "accent": "pink",
-    "definition": "خنقة أو حتة سد في الشغل بتعطل كل اللي وراها.",
-    "tag": "عقبة الشغل",
-    "term": "Bottlenecks"
+    "tag": "مسار كامل",
+    "term": "Customer Journey (رحلة العميل)",
+    "definition": "المسار الكامل من أول اهتمام لحد متابعة أو شراء — مش خطوة واحدة."
   },
   {
     "card": "ConceptCard",
     "accent": "mintDeep",
     "tag": "تحسين مستمر",
-    "term": "Feedback Loop",
-    "definition": "دائرة تغذية بياخد فيها نتائج شغله عشان يحسن المرة الجاية."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "tag": "مسار البيانات",
-    "term": "Data Pipeline",
-    "definition": "سير أو مسار البيانات من ساعة ما تتجمع لحد التحليل."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "definition": "فحص البيانات عشان تفهم إيه اللي حصل وتعرف تقرر.",
-    "tag": "فهم البيانات",
-    "term": "Analytics"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "peach",
-    "title": "إنت مش بس بتوصل tools — إنت بتبني System",
-    "bullets": [
-      "Creator جاب Views → Lead Capture خزّنهم → CRM حافظهم → Follow-up نقلهم → WhatsApp Flow ساعدهم.",
-      "كل step في الـ flow بيسجّل data: وقت، channel، response، conversion.",
-      "الـ data دي تقدر تسألها: إيه الـ channel الأحسن؟ إيه وقت الـ follow-up المثالي؟ إيه الـ message اللي فتحت أكتر؟",
-      "الإجابات = قرارات أفضل = نظام بيتحسّن لوحده."
-    ]
+    "term": "Feedback Loop (حلقة تحسين)",
+    "definition": "البيانات اللي الأوتوميشن يسجّلها ترجع تقولك إيه يتحسّن."
   },
   {
     "card": "ScreenshotCard",
-    "accent": "yellow",
+    "accent": "mint",
+    "caption": "كل مرحلة تغذّي اللي بعدها وتسجّل بيانات. الرحلة المتصلة = أسئلة Analyst هيجاوب عليها.",
     "src": "lessons/unique/automator-m7-l1-closing-loop.jpg",
-    "caption": "الـ journey ده عبارة عن feedback loop بالظبط: كل خطوة بتتسجّل، وبناءً عليها بتفتح خطوات جديدة. نفس الـ pattern: Creator → Automator → Analyst → Business. كل مسار بيدخّل اللي جاي.",
-    "title": "رحلتك في المنصة",
-    "eyebrow": "شوف بنفسك"
+    "eyebrow": "لقطة بصرية",
+    "title": "الرحلة من Lead للمتابعة"
   },
   {
-    "card": "CompareCard",
-    "accent": "pink",
-    "left": {
-      "body": "بتشغّل 10 scenarios وتنسى تراجعهم. ماتعرفش إيه بيشتغل وإيه مش بيشتغل. الـ bills بتيجي وتدفع من غير ما تعرف إيه القيمة اللي رجعت.",
-      "label": "FAILURE — بتبني وتنسى"
-    },
-    "title": "Automation بدون data vs Automation بـ data",
-    "right": {
-      "body": "كل scenario بيسجّل success/failure/response time. بتعمل review أسبوعي: إيه اللي بيعطل؟ إيه اللي بياكل tasks كتير؟ إيه اللي بيجيب results؟ بتطفى الوحش وتحسّن الحلو.",
-      "label": "RIGHT — كل automation = مصدر بيانات"
-    }
+    "card": "BulletsCard",
+    "accent": "lavender",
+    "bullets": [
+      "فهمت إيه؟ أوتوميشنات مربوطة = رحلة عميل + بيانات للتحسين.",
+      "تقدر تعمل إيه؟ عندك خريطة end-to-end من lead لحد follow-up.",
+      "اللي جاي: مسار Analyst — تقرأ البيانات اللي نظامك بقى يولّدها وتاخد قرارات أحسن."
+    ],
+    "title": "إيه اللي عندك دلوقتي؟"
   },
   {
     "card": "CTACard",
-    "accent": "mintDeep",
-    "highlight": "طبق اللي اتعلمته",
-    "tagline": "حل الأسئلة دي عشان تتأكد إنك فهمت الدرس كويس.",
+    "accent": "peach",
+    "highlight": "إيه أحسن سؤال تسأله للبيانات؟",
     "eyebrow": "دورك دلوقتي",
-    "title": "جاهّز لـ Analyst"
+    "title": "سؤال واحد — مش امتحان",
+    "tagline": "جاوب على السؤال عشان تتأكد إنك فهمت الدرس كويس."
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [286, 203, 250, 233, 233, 211, 222, 237, 745, 580, 775, 297];
+export const SCENE_FRAMES: number[] = [705, 918, 976, 1037, 550, 647, 543, 707, 373];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
