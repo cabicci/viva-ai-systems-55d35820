@@ -21,7 +21,6 @@ import { SCENES as L_creator_m4_mobile_shooting_S, SCENE_FRAMES as L_creator_m4_
 import { SCENES as L_creator_m4_reality_check_S, SCENE_FRAMES as L_creator_m4_reality_check_F, TOTAL_FRAMES as L_creator_m4_reality_check_T } from "./lessons-generated/creator-m4-reality-check.gen";
 import { SCENES as L_creator_m5_l2_thumbnails_captions_S, SCENE_FRAMES as L_creator_m5_l2_thumbnails_captions_F, TOTAL_FRAMES as L_creator_m5_l2_thumbnails_captions_T } from "./lessons-generated/creator-m5-l2-thumbnails-captions.gen";
 import { SCENES as L_creator_m6_l1_platforms_S, SCENE_FRAMES as L_creator_m6_l1_platforms_F, TOTAL_FRAMES as L_creator_m6_l1_platforms_T } from "./lessons-generated/creator-m6-l1-platforms.gen";
-import { SCENES as L_creator_m6_l2_scheduling_S, SCENE_FRAMES as L_creator_m6_l2_scheduling_F, TOTAL_FRAMES as L_creator_m6_l2_scheduling_T } from "./lessons-generated/creator-m6-l2-scheduling.gen";
 import { SCENES as L_creator_m7_l2_grid_consistency_S, SCENE_FRAMES as L_creator_m7_l2_grid_consistency_F, TOTAL_FRAMES as L_creator_m7_l2_grid_consistency_T } from "./lessons-generated/creator-m7-l2-grid-consistency.gen";
 import { SCENES as L_creator_m7_l1_brand_basics_S, SCENE_FRAMES as L_creator_m7_l1_brand_basics_F, TOTAL_FRAMES as L_creator_m7_l1_brand_basics_T } from "./lessons-generated/creator-m7-l1-brand-basics.gen";
 import { SCENES as L_automator_m2_l3_decide_what_to_automate_S, SCENE_FRAMES as L_automator_m2_l3_decide_what_to_automate_F, TOTAL_FRAMES as L_automator_m2_l3_decide_what_to_automate_T } from "./lessons-generated/automator-m2-l3-decide-what-to-automate.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_builder_m10_l2_first_users_S, SCENE_FRAMES as L_builder_m10
 import { SCENES as L_analyst_m2_l1_feeling_to_question_S, SCENE_FRAMES as L_analyst_m2_l1_feeling_to_question_F, TOTAL_FRAMES as L_analyst_m2_l1_feeling_to_question_T } from "./lessons-generated/analyst-m2-l1-feeling-to-question.gen";
 import { SCENES as L_business_m2_l1_customer_lifecycle_S, SCENE_FRAMES as L_business_m2_l1_customer_lifecycle_F, TOTAL_FRAMES as L_business_m2_l1_customer_lifecycle_T } from "./lessons-generated/business-m2-l1-customer-lifecycle.gen";
 import { SCENES as L_automator_m5_l2_rag_in_n8n_S, SCENE_FRAMES as L_automator_m5_l2_rag_in_n8n_F, TOTAL_FRAMES as L_automator_m5_l2_rag_in_n8n_T } from "./lessons-generated/automator-m5-l2-rag-in-n8n.gen";
+import { SCENES as L_creator_m6_l2_scheduling_S, SCENE_FRAMES as L_creator_m6_l2_scheduling_F, TOTAL_FRAMES as L_creator_m6_l2_scheduling_T } from "./lessons-generated/creator-m6-l2-scheduling.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -137,7 +137,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m4-l1-reality-check", scenes: L_creator_m4_reality_check_S, sceneFrames: L_creator_m4_reality_check_F, totalFrames: L_creator_m4_reality_check_T },
     { id: "creator-m5-l2-thumbnails-captions", scenes: L_creator_m5_l2_thumbnails_captions_S, sceneFrames: L_creator_m5_l2_thumbnails_captions_F, totalFrames: L_creator_m5_l2_thumbnails_captions_T },
     { id: "creator-m6-l1-platforms", scenes: L_creator_m6_l1_platforms_S, sceneFrames: L_creator_m6_l1_platforms_F, totalFrames: L_creator_m6_l1_platforms_T },
-    { id: "creator-m6-l2-scheduling", scenes: L_creator_m6_l2_scheduling_S, sceneFrames: L_creator_m6_l2_scheduling_F, totalFrames: L_creator_m6_l2_scheduling_T },
     { id: "creator-m7-l2-grid-consistency", scenes: L_creator_m7_l2_grid_consistency_S, sceneFrames: L_creator_m7_l2_grid_consistency_F, totalFrames: L_creator_m7_l2_grid_consistency_T },
     { id: "creator-m7-l1-brand-basics", scenes: L_creator_m7_l1_brand_basics_S, sceneFrames: L_creator_m7_l1_brand_basics_F, totalFrames: L_creator_m7_l1_brand_basics_T },
     { id: "automator-m2-l3-decide-what-to-automate", scenes: L_automator_m2_l3_decide_what_to_automate_S, sceneFrames: L_automator_m2_l3_decide_what_to_automate_F, totalFrames: L_automator_m2_l3_decide_what_to_automate_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "analyst-m2-l1-feeling-to-question", scenes: L_analyst_m2_l1_feeling_to_question_S, sceneFrames: L_analyst_m2_l1_feeling_to_question_F, totalFrames: L_analyst_m2_l1_feeling_to_question_T },
     { id: "business-m2-l1-customer-lifecycle", scenes: L_business_m2_l1_customer_lifecycle_S, sceneFrames: L_business_m2_l1_customer_lifecycle_F, totalFrames: L_business_m2_l1_customer_lifecycle_T },
     { id: "automator-m5-l2-rag-in-n8n", scenes: L_automator_m5_l2_rag_in_n8n_S, sceneFrames: L_automator_m5_l2_rag_in_n8n_F, totalFrames: L_automator_m5_l2_rag_in_n8n_T },
+    { id: "creator-m6-l2-scheduling", scenes: L_creator_m6_l2_scheduling_S, sceneFrames: L_creator_m6_l2_scheduling_F, totalFrames: L_creator_m6_l2_scheduling_T },
   /* @lesson-entries-end */
 ];
