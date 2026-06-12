@@ -24,7 +24,6 @@ import { SCENES as L_creator_m6_l1_platforms_S, SCENE_FRAMES as L_creator_m6_l1_
 import { SCENES as L_creator_m7_l2_grid_consistency_S, SCENE_FRAMES as L_creator_m7_l2_grid_consistency_F, TOTAL_FRAMES as L_creator_m7_l2_grid_consistency_T } from "./lessons-generated/creator-m7-l2-grid-consistency.gen";
 import { SCENES as L_creator_m7_l1_brand_basics_S, SCENE_FRAMES as L_creator_m7_l1_brand_basics_F, TOTAL_FRAMES as L_creator_m7_l1_brand_basics_T } from "./lessons-generated/creator-m7-l1-brand-basics.gen";
 import { SCENES as L_automator_m2_l3_decide_what_to_automate_S, SCENE_FRAMES as L_automator_m2_l3_decide_what_to_automate_F, TOTAL_FRAMES as L_automator_m2_l3_decide_what_to_automate_T } from "./lessons-generated/automator-m2-l3-decide-what-to-automate.gen";
-import { SCENES as L_automator_m5_l3_agents_S, SCENE_FRAMES as L_automator_m5_l3_agents_F, TOTAL_FRAMES as L_automator_m5_l3_agents_T } from "./lessons-generated/automator-m5-l3-agents.gen";
 import { SCENES as L_automator_m5_l1_llm_in_flow_S, SCENE_FRAMES as L_automator_m5_l1_llm_in_flow_F, TOTAL_FRAMES as L_automator_m5_l1_llm_in_flow_T } from "./lessons-generated/automator-m5-l1-llm-in-flow.gen";
 import { SCENES as L_automator_m2_l1_systems_view_S, SCENE_FRAMES as L_automator_m2_l1_systems_view_F, TOTAL_FRAMES as L_automator_m2_l1_systems_view_T } from "./lessons-generated/automator-m2-l1-systems-view.gen";
 import { SCENES as L_automator_m3_l3_filters_routers_S, SCENE_FRAMES as L_automator_m3_l3_filters_routers_F, TOTAL_FRAMES as L_automator_m3_l3_filters_routers_T } from "./lessons-generated/automator-m3-l3-filters-routers.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_automator_m2_l2_spot_patterns_S, SCENE_FRAMES as L_automato
 import { SCENES as L_builder_m6_l2_wireframe_S, SCENE_FRAMES as L_builder_m6_l2_wireframe_F, TOTAL_FRAMES as L_builder_m6_l2_wireframe_T } from "./lessons-generated/builder-m6-l2-wireframe.gen";
 import { SCENES as L_automator_m6_l1_lead_capture_S, SCENE_FRAMES as L_automator_m6_l1_lead_capture_F, TOTAL_FRAMES as L_automator_m6_l1_lead_capture_T } from "./lessons-generated/automator-m6-l1-lead-capture.gen";
 import { SCENES as L_automator_m1_l1_where_you_are_S, SCENE_FRAMES as L_automator_m1_l1_where_you_are_F, TOTAL_FRAMES as L_automator_m1_l1_where_you_are_T } from "./lessons-generated/automator-m1-l1-where-you-are.gen";
+import { SCENES as L_automator_m5_l3_agents_S, SCENE_FRAMES as L_automator_m5_l3_agents_F, TOTAL_FRAMES as L_automator_m5_l3_agents_T } from "./lessons-generated/automator-m5-l3-agents.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -140,7 +140,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m7-l2-grid-consistency", scenes: L_creator_m7_l2_grid_consistency_S, sceneFrames: L_creator_m7_l2_grid_consistency_F, totalFrames: L_creator_m7_l2_grid_consistency_T },
     { id: "creator-m7-l1-brand-basics", scenes: L_creator_m7_l1_brand_basics_S, sceneFrames: L_creator_m7_l1_brand_basics_F, totalFrames: L_creator_m7_l1_brand_basics_T },
     { id: "automator-m2-l3-decide-what-to-automate", scenes: L_automator_m2_l3_decide_what_to_automate_S, sceneFrames: L_automator_m2_l3_decide_what_to_automate_F, totalFrames: L_automator_m2_l3_decide_what_to_automate_T },
-    { id: "automator-m5-l3-agents", scenes: L_automator_m5_l3_agents_S, sceneFrames: L_automator_m5_l3_agents_F, totalFrames: L_automator_m5_l3_agents_T },
     { id: "automator-m5-l1-llm-in-flow", scenes: L_automator_m5_l1_llm_in_flow_S, sceneFrames: L_automator_m5_l1_llm_in_flow_F, totalFrames: L_automator_m5_l1_llm_in_flow_T },
     { id: "automator-m2-l1-systems-view", scenes: L_automator_m2_l1_systems_view_S, sceneFrames: L_automator_m2_l1_systems_view_F, totalFrames: L_automator_m2_l1_systems_view_T },
     { id: "automator-m3-l3-filters-routers", scenes: L_automator_m3_l3_filters_routers_S, sceneFrames: L_automator_m3_l3_filters_routers_F, totalFrames: L_automator_m3_l3_filters_routers_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m6-l2-wireframe", scenes: L_builder_m6_l2_wireframe_S, sceneFrames: L_builder_m6_l2_wireframe_F, totalFrames: L_builder_m6_l2_wireframe_T },
     { id: "automator-m6-l1-lead-capture", scenes: L_automator_m6_l1_lead_capture_S, sceneFrames: L_automator_m6_l1_lead_capture_F, totalFrames: L_automator_m6_l1_lead_capture_T },
     { id: "automator-m1-l1-where-you-are", scenes: L_automator_m1_l1_where_you_are_S, sceneFrames: L_automator_m1_l1_where_you_are_F, totalFrames: L_automator_m1_l1_where_you_are_T },
+    { id: "automator-m5-l3-agents", scenes: L_automator_m5_l3_agents_S, sceneFrames: L_automator_m5_l3_agents_F, totalFrames: L_automator_m5_l3_agents_T },
   /* @lesson-entries-end */
 ];

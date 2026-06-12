@@ -5,113 +5,92 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "title": "Agents بياخدوا قرارات",
-    "subtitle": "Agent بيقرّر هو الخطوة الجاية إيه.",
-    "highlight": "Workflow بينفّذ خطوات معروفة.",
-    "chip": "أهلًا"
+    "subtitle": "ليه دلوقتي؟ بعد LLM وRAG، الخطوة الجاية لما المسار مش ثابت — والقرار لازم يتخذ جوه السير. هتعمل إيه بعد الدرس؟ هتحدّد هدف agent آمن، الأدوات المسموحة، وحد واحد يمنعه يعدّي الخط.",
+    "highlight": "الـ Agent يختار الخطوات نحو هدف — بس محتاج حدود وأدوات محددة عشان يفضل آمن.",
+    "chip": "بداية الدرس",
+    "title": "هتفهم إيه النهاردة؟"
   },
   {
     "card": "BulletsCard",
     "accent": "lavender",
-    "title": "نفس الـ Agent اللي بنيناه — بس في n8n",
     "bullets": [
-      "في Builder M9 اتعلمنا إن Agent هو LLM + Tools + Loop. نفس المعادلة هنا.",
-      "الفرق إن n8n عنده AI Agent node جاهز بيعمل الـ loop لوحده.",
-      "إنت بتعرّفله الـ tools زي HTTP أو DB query وهو بيتصرّف.",
-      "الـ Agent = AI بياخد قرار يستخدم أنهي أداة ومتى، بدل ما إنت تحدّد كل خطوة."
-    ]
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "definition": "طريقة تنظيم البيانات عشان البرامج تفهمها وتبدلها مع بعض بسهولة.",
-    "tag": "تنظيم بيانات",
-    "term": "JSON (فورمات البيانات)"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "tag": "معلومات للأداة",
-    "term": "Arguments (المعطيات)",
-    "definition": "المعلومات أو الأرقام اللي لازم تديها للأداة عشان تعرف تشتغل."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "definition": "محطة أو خطوة واحدة جوه \"خريطة الشغل\" اللي الـ Agent بيمشي عليها.",
-    "tag": "خطوة عمل",
-    "term": "Nodes (النقطة)"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "tag": "وصلة برامج",
-    "term": "API / HTTP (الوصلة)",
-    "definition": "وصلة \"سحرية\" بتخلي برنامجين مختلفين يبعتوا بيانات لبعض ويشتغلوا سوا."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "tag": "عملة AI",
-    "term": "Tokens (تكلفة التشغيل)",
-    "definition": "العملة اللي بتدفعها لشركة الـ AI مقابل كل كلمة بيكتبها أو بيقرأها."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "وظيفة Agent",
-    "term": "Tool (الأداة)",
-    "definition": "مهمة أو وظيفة الـ Agent معاه صلاحية يفتحها ويستخدمها عشان يخلص شغله."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "tag": "موظف ذكي",
-    "term": "Agent (الآجنت)",
-    "definition": "موظف ذكي بيفكر ويستخدم أدوات عشان يوصل لهدف إنت محدده."
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "yellow",
-    "bullets": [
-      "في الـ workflow العادي، إنت بترتّب الخطوات A ثم B ثم C.",
-      "لو حصل حاجة برّه التوقّع، الـ scenario بيقف.",
-      "لكن في الـ Agent، إنت بتدّيله هدف ومجموعة tools، وهو بيقرّر يستخدم أنهي tool.",
-      "n8n عنده AI Agent node جاهز بيشتغل على الـ goal اللي بتحدده.",
-      "الـ Agents مناسبة لما الخطوات مش ثابتة زي الدعم الفني أو تنفيذ طلبات معقّدة."
+      "شغّلت «مساعد ذكي» يتعامل مع شكاوى العملاء. يوم واحد بعت رسائل تأكيد لكل العملاء — حتى اللي ماشتكاش.",
+      "أو: دخل في حلقة — بيبعت ويبعت من غير ما يوصل لحل.",
+      "المشكلة مش الذكاء — المشكلة غياب الحدود. Agent بدون هدف واضح وأدوات محدودة = مخاطرة على شغلك وسمعتك."
     ],
-    "title": "Workflow vs Agent"
+    "title": "الرد الآلي عمل حاجة ماحدش طلبها"
   },
   {
-    "card": "ScreenshotCard",
-    "accent": "pink",
-    "title": "درس Agents في Builder",
-    "caption": "في Builder M9 شفنا إن الـ Agent عبارة عن LLM + tools + loop. في Automator هتطبّق نفس الفكرة في n8n: نفس الـ pattern، بس بـ nodes بدل كود.",
-    "eyebrow": "شوف بنفسك",
-    "src": "lessons/unique/automator-m5-l3-agents.jpg"
+    "card": "BulletsCard",
+    "accent": "peach",
+    "bullets": [
+      "Workflow عادي: أ → ب → ج. كل مرة نفس المسار. ممتاز للشغل المتكرر المعروف.",
+      "Agent: هدف + أدوات محددة. هو يقرر يستخدم أنهي أداة وبأي ترتيب — لحد ما يوصل للهدف أو يقف.",
+      "مناسب لما الطلبات مختلفة: شكوى تقنية، طلب تعديل، استفسار فاتورة — كل واحد محتاج خطوات مختلفة.",
+      "القاعدة: Agent ذكي + حدود واضحة + أدوات قليلة = آمن. Agent مفتوح = خطر."
+    ],
+    "title": "Workflow ثابت vs Agent يختار الخطوة"
   },
   {
     "card": "CompareCard",
-    "accent": "mintDeep",
+    "accent": "yellow",
+    "title": "Agent مفتوح vs Agent مضبوط",
     "right": {
-      "body": "بتحدّد له: max steps = 10، وtools محدودة زي read only في الأول. أي action تأثيرها كبير زي send أو delete لازم تمرّ على human approval. الـ agent ذكي بس مش طايش.",
-      "label": "RIGHT — Agent بحدود واضحة"
+      "body": "«صنّف الشكوى واقترح حل أو حوّل لموظف» + أدوات: قراءة CRM، بحث FAQ، إرسال مسودة رد. أي إرسال فعلي يحتاج موافقة.",
+      "label": "بحدود وأدوات"
     },
-    "title": "Agent بدون حدود vs Agent مضبوط",
     "left": {
-      "body": "بتدّيله access لكل الـ tools من غير قواعد. بيدخل loop لانهائي بيستدعي tools كل ثانية، بياكلك tokens، أو ممكن ينفّذ action ضارة زي إنه يبعت رسالة غلط لـ 1000 عميل.",
-      "label": "FAILURE — Agent مفتوح على آخره"
+      "body": "«حل مشكلة العميل» + كل الأدوات متاحة. ممكن يبعت رسائل لكل الناس، يدخل حلقة، أو ينفّذ إجراء غلط.",
+      "label": "بدون حدود"
     }
   },
   {
-    "card": "CTACard",
+    "card": "ConceptCard",
+    "accent": "pink",
+    "term": "Agent (وكيل)",
+    "definition": "نظام بياخد هدف ويختار خطوات وأدوات للوصول له — مش مسار ثابت مسبقًا.",
+    "tag": "مش مسار ثابت"
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "mintDeep",
+    "term": "Boundary (حد)",
+    "definition": "قاعدة توقّف الـ Agent عند حد معيّن — عدد خطوات، أدوات خارج النطاق، موافقة بشرية.",
+    "tag": "توقّف الـ Agent"
+  },
+  {
+    "card": "ScreenshotCard",
     "accent": "mint",
-    "title": "صمّم أول agent على ورقة",
-    "tagline": "يلا نطبّق اللي اتعلّمناه في أسئلة سريعة.",
-    "highlight": "صمّم أول agent على ورقة",
-    "eyebrow": "دورك دلوقتي"
+    "eyebrow": "لقطة بصرية",
+    "src": "lessons/unique/automator-m5-l3-agents.jpg",
+    "caption": "الثلاثية: هدف واحد واضح، أدوات قليلة مسموحة، حد يوقفه لو عدّى. من غيرها الـ Agent خطر.",
+    "title": "هدف + أدوات + حدود"
+  },
+  {
+    "card": "CTACard",
+    "accent": "lavender",
+    "highlight": "تأكيد سريع لفهمك",
+    "eyebrow": "دورك دلوقتي",
+    "tagline": "جاوب على السؤال عشان تتأكد إنك فهمت الفرق",
+    "title": "سؤال واحد"
+  },
+  {
+    "card": "CTACard",
+    "accent": "peach",
+    "highlight": "حدّد هدف آمن، أدوات مسموحة، وحد يمنعه يعدّي الخط.",
+    "eyebrow": "مهمتك",
+    "tagline": "صمّم agent آمن لشغل عندك فيه مسارات مختلفة.",
+    "title": "تصميم Agent آمن"
+  },
+  {
+    "card": "CTACard",
+    "accent": "yellow",
+    "tagline": "شوفك في الدرس الجاي!",
+    "title": "خلاصة الدرس",
+    "highlight": "الـ Agent يختار الخطوات — بس محتاج هدف وأدوات وحدود عشان يفضل آمن.",
+    "eyebrow": "خلّصت Agents"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [307, 673, 323, 307, 247, 396, 369, 315, 276, 894, 450, 907, 203];
+export const SCENE_FRAMES: number[] = [640, 657, 564, 672, 586, 597, 514, 425, 522, 617];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
