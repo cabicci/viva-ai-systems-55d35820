@@ -46,10 +46,24 @@ export interface AssistantRuntimeResponsePayload {
 export async function callAssistantRuntime(
   payload: AssistantRuntimeRequestPayload,
 ): Promise<AssistantRuntimeResponsePayload> {
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+
+  const accessToken = session?.access_token;
+  if (!accessToken) {
+    throw new Error(
+      "سجّل دخولك الأول عشان مساعد المنصة يقدر يساعدك.",
+    );
+  }
+
   const { data, error } = await supabase.functions.invoke<
     AssistantRuntimeResponsePayload
   >("assistant-runtime", {
     body: payload,
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
   });
 
   if (error) {
