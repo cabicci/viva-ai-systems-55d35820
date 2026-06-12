@@ -85,7 +85,6 @@ import { SCENES as L_builder_m5_l3_backend_api_S, SCENE_FRAMES as L_builder_m5_l
 import { SCENES as L_builder_m8_l1_sessions_jwt_S, SCENE_FRAMES as L_builder_m8_l1_sessions_jwt_F, TOTAL_FRAMES as L_builder_m8_l1_sessions_jwt_T } from "./lessons-generated/builder-m8-l1-sessions-jwt.gen";
 import { SCENES as L_builder_m5_l5_mini_win_S, SCENE_FRAMES as L_builder_m5_l5_mini_win_F, TOTAL_FRAMES as L_builder_m5_l5_mini_win_T } from "./lessons-generated/builder-m5-l5-mini-win.gen";
 import { SCENES as L_builder_m5_l1_transition_S, SCENE_FRAMES as L_builder_m5_l1_transition_F, TOTAL_FRAMES as L_builder_m5_l1_transition_T } from "./lessons-generated/builder-m5-l1-transition.gen";
-import { SCENES as L_builder_m1_l2_tokens_training_S, SCENE_FRAMES as L_builder_m1_l2_tokens_training_F, TOTAL_FRAMES as L_builder_m1_l2_tokens_training_T } from "./lessons-generated/builder-m1-l2-tokens-training.gen";
 import { SCENES as L_builder_m6_l2_wireframe_S, SCENE_FRAMES as L_builder_m6_l2_wireframe_F, TOTAL_FRAMES as L_builder_m6_l2_wireframe_T } from "./lessons-generated/builder-m6-l2-wireframe.gen";
 import { SCENES as L_builder_m6_l1_idea_to_page_S, SCENE_FRAMES as L_builder_m6_l1_idea_to_page_F, TOTAL_FRAMES as L_builder_m6_l1_idea_to_page_T } from "./lessons-generated/builder-m6-l1-idea-to-page.gen";
 import { SCENES as L_builder_m7_l1_tables_columns_S, SCENE_FRAMES as L_builder_m7_l1_tables_columns_F, TOTAL_FRAMES as L_builder_m7_l1_tables_columns_T } from "./lessons-generated/builder-m7-l1-tables-columns.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_business_m1_l2_reactive_vs_proactive_S, SCENE_FRAMES as L_b
 import { SCENES as L_creator_m1_l1_why_content_S, SCENE_FRAMES as L_creator_m1_l1_why_content_F, TOTAL_FRAMES as L_creator_m1_l1_why_content_T } from "./lessons-generated/creator-m1-l1-why-content.gen";
 import { SCENES as L_analyst_m1_l1_from_automation_to_insight_S, SCENE_FRAMES as L_analyst_m1_l1_from_automation_to_insight_F, TOTAL_FRAMES as L_analyst_m1_l1_from_automation_to_insight_T } from "./lessons-generated/analyst-m1-l1-from-automation-to-insight.gen";
 import { SCENES as L_analyst_m6_l1_question_mistakes_S, SCENE_FRAMES as L_analyst_m6_l1_question_mistakes_F, TOTAL_FRAMES as L_analyst_m6_l1_question_mistakes_T } from "./lessons-generated/analyst-m6-l1-question-mistakes.gen";
+import { SCENES as L_builder_m1_l2_tokens_training_S, SCENE_FRAMES as L_builder_m1_l2_tokens_training_F, TOTAL_FRAMES as L_builder_m1_l2_tokens_training_T } from "./lessons-generated/builder-m1-l2-tokens-training.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -199,7 +199,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m8-l1-sessions-jwt", scenes: L_builder_m8_l1_sessions_jwt_S, sceneFrames: L_builder_m8_l1_sessions_jwt_F, totalFrames: L_builder_m8_l1_sessions_jwt_T },
     { id: "builder-m5-l5-mini-win", scenes: L_builder_m5_l5_mini_win_S, sceneFrames: L_builder_m5_l5_mini_win_F, totalFrames: L_builder_m5_l5_mini_win_T },
     { id: "builder-m5-l1-transition", scenes: L_builder_m5_l1_transition_S, sceneFrames: L_builder_m5_l1_transition_F, totalFrames: L_builder_m5_l1_transition_T },
-    { id: "builder-m1-l2-tokens-training", scenes: L_builder_m1_l2_tokens_training_S, sceneFrames: L_builder_m1_l2_tokens_training_F, totalFrames: L_builder_m1_l2_tokens_training_T },
     { id: "builder-m6-l2-wireframe", scenes: L_builder_m6_l2_wireframe_S, sceneFrames: L_builder_m6_l2_wireframe_F, totalFrames: L_builder_m6_l2_wireframe_T },
     { id: "builder-m6-l1-idea-to-page", scenes: L_builder_m6_l1_idea_to_page_S, sceneFrames: L_builder_m6_l1_idea_to_page_F, totalFrames: L_builder_m6_l1_idea_to_page_T },
     { id: "builder-m7-l1-tables-columns", scenes: L_builder_m7_l1_tables_columns_S, sceneFrames: L_builder_m7_l1_tables_columns_F, totalFrames: L_builder_m7_l1_tables_columns_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m1-l1-why-content", scenes: L_creator_m1_l1_why_content_S, sceneFrames: L_creator_m1_l1_why_content_F, totalFrames: L_creator_m1_l1_why_content_T },
     { id: "analyst-m1-l1-from-automation-to-insight", scenes: L_analyst_m1_l1_from_automation_to_insight_S, sceneFrames: L_analyst_m1_l1_from_automation_to_insight_F, totalFrames: L_analyst_m1_l1_from_automation_to_insight_T },
     { id: "analyst-m6-l1-question-mistakes", scenes: L_analyst_m6_l1_question_mistakes_S, sceneFrames: L_analyst_m6_l1_question_mistakes_F, totalFrames: L_analyst_m6_l1_question_mistakes_T },
+    { id: "builder-m1-l2-tokens-training", scenes: L_builder_m1_l2_tokens_training_S, sceneFrames: L_builder_m1_l2_tokens_training_F, totalFrames: L_builder_m1_l2_tokens_training_T },
   /* @lesson-entries-end */
 ];
