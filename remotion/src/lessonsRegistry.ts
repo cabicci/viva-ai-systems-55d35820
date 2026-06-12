@@ -61,7 +61,6 @@ import { SCENES as L_builder_m8_l1_sessions_jwt_S, SCENE_FRAMES as L_builder_m8_
 import { SCENES as L_builder_m5_l5_mini_win_S, SCENE_FRAMES as L_builder_m5_l5_mini_win_F, TOTAL_FRAMES as L_builder_m5_l5_mini_win_T } from "./lessons-generated/builder-m5-l5-mini-win.gen";
 import { SCENES as L_builder_m5_l1_transition_S, SCENE_FRAMES as L_builder_m5_l1_transition_F, TOTAL_FRAMES as L_builder_m5_l1_transition_T } from "./lessons-generated/builder-m5-l1-transition.gen";
 import { SCENES as L_builder_m6_l1_idea_to_page_S, SCENE_FRAMES as L_builder_m6_l1_idea_to_page_F, TOTAL_FRAMES as L_builder_m6_l1_idea_to_page_T } from "./lessons-generated/builder-m6-l1-idea-to-page.gen";
-import { SCENES as L_builder_m7_l1_tables_columns_S, SCENE_FRAMES as L_builder_m7_l1_tables_columns_F, TOTAL_FRAMES as L_builder_m7_l1_tables_columns_T } from "./lessons-generated/builder-m7-l1-tables-columns.gen";
 import { SCENES as L_business_m7_l1_full_ecosystem_S, SCENE_FRAMES as L_business_m7_l1_full_ecosystem_F, TOTAL_FRAMES as L_business_m7_l1_full_ecosystem_T } from "./lessons-generated/business-m7-l1-full-ecosystem.gen";
 import { SCENES as L_business_m2_l2_weekly_rhythm_S, SCENE_FRAMES as L_business_m2_l2_weekly_rhythm_F, TOTAL_FRAMES as L_business_m2_l2_weekly_rhythm_T } from "./lessons-generated/business-m2-l2-weekly-rhythm.gen";
 import { SCENES as L_business_m3_l3_system_then_people_S, SCENE_FRAMES as L_business_m3_l3_system_then_people_F, TOTAL_FRAMES as L_business_m3_l3_system_then_people_T } from "./lessons-generated/business-m3-l3-system-then-people.gen";
@@ -125,6 +124,7 @@ import { SCENES as L_builder_m6_l5_iteration_S, SCENE_FRAMES as L_builder_m6_l5_
 import { SCENES as L_creator_m7_l2_grid_consistency_S, SCENE_FRAMES as L_creator_m7_l2_grid_consistency_F, TOTAL_FRAMES as L_creator_m7_l2_grid_consistency_T } from "./lessons-generated/creator-m7-l2-grid-consistency.gen";
 import { SCENES as L_builder_m6_l6_debugging_S, SCENE_FRAMES as L_builder_m6_l6_debugging_F, TOTAL_FRAMES as L_builder_m6_l6_debugging_T } from "./lessons-generated/builder-m6-l6-debugging.gen";
 import { SCENES as L_analyst_m3_l2_ai_summarization_S, SCENE_FRAMES as L_analyst_m3_l2_ai_summarization_F, TOTAL_FRAMES as L_analyst_m3_l2_ai_summarization_T } from "./lessons-generated/analyst-m3-l2-ai-summarization.gen";
+import { SCENES as L_builder_m7_l1_tables_columns_S, SCENE_FRAMES as L_builder_m7_l1_tables_columns_F, TOTAL_FRAMES as L_builder_m7_l1_tables_columns_T } from "./lessons-generated/builder-m7-l1-tables-columns.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -177,7 +177,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m5-l5-mini-win", scenes: L_builder_m5_l5_mini_win_S, sceneFrames: L_builder_m5_l5_mini_win_F, totalFrames: L_builder_m5_l5_mini_win_T },
     { id: "builder-m5-l1-transition", scenes: L_builder_m5_l1_transition_S, sceneFrames: L_builder_m5_l1_transition_F, totalFrames: L_builder_m5_l1_transition_T },
     { id: "builder-m6-l1-idea-to-page", scenes: L_builder_m6_l1_idea_to_page_S, sceneFrames: L_builder_m6_l1_idea_to_page_F, totalFrames: L_builder_m6_l1_idea_to_page_T },
-    { id: "builder-m7-l1-tables-columns", scenes: L_builder_m7_l1_tables_columns_S, sceneFrames: L_builder_m7_l1_tables_columns_F, totalFrames: L_builder_m7_l1_tables_columns_T },
     { id: "business-m7-l1-full-ecosystem", scenes: L_business_m7_l1_full_ecosystem_S, sceneFrames: L_business_m7_l1_full_ecosystem_F, totalFrames: L_business_m7_l1_full_ecosystem_T },
     { id: "business-m2-l2-weekly-rhythm", scenes: L_business_m2_l2_weekly_rhythm_S, sceneFrames: L_business_m2_l2_weekly_rhythm_F, totalFrames: L_business_m2_l2_weekly_rhythm_T },
     { id: "business-m3-l3-system-then-people", scenes: L_business_m3_l3_system_then_people_S, sceneFrames: L_business_m3_l3_system_then_people_F, totalFrames: L_business_m3_l3_system_then_people_T },
@@ -241,5 +240,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m7-l2-grid-consistency", scenes: L_creator_m7_l2_grid_consistency_S, sceneFrames: L_creator_m7_l2_grid_consistency_F, totalFrames: L_creator_m7_l2_grid_consistency_T },
     { id: "builder-m6-l6-debugging", scenes: L_builder_m6_l6_debugging_S, sceneFrames: L_builder_m6_l6_debugging_F, totalFrames: L_builder_m6_l6_debugging_T },
     { id: "analyst-m3-l2-ai-summarization", scenes: L_analyst_m3_l2_ai_summarization_S, sceneFrames: L_analyst_m3_l2_ai_summarization_F, totalFrames: L_analyst_m3_l2_ai_summarization_T },
+    { id: "builder-m7-l1-tables-columns", scenes: L_builder_m7_l1_tables_columns_S, sceneFrames: L_builder_m7_l1_tables_columns_F, totalFrames: L_builder_m7_l1_tables_columns_T },
   /* @lesson-entries-end */
 ];
