@@ -79,7 +79,6 @@ import { SCENES as L_business_m3_l1_delegate_or_automate_S, SCENE_FRAMES as L_bu
 import { SCENES as L_business_m4_l1_premature_scaling_S, SCENE_FRAMES as L_business_m4_l1_premature_scaling_F, TOTAL_FRAMES as L_business_m4_l1_premature_scaling_T } from "./lessons-generated/business-m4-l1-premature-scaling.gen";
 import { SCENES as L_business_m3_l4_hiring_onboarding_S, SCENE_FRAMES as L_business_m3_l4_hiring_onboarding_F, TOTAL_FRAMES as L_business_m3_l4_hiring_onboarding_T } from "./lessons-generated/business-m3-l4-hiring-onboarding.gen";
 import { SCENES as L_business_m2_l3_readiness_signals_S, SCENE_FRAMES as L_business_m2_l3_readiness_signals_F, TOTAL_FRAMES as L_business_m2_l3_readiness_signals_T } from "./lessons-generated/business-m2-l3-readiness-signals.gen";
-import { SCENES as L_business_m2_l2_retention_flow_S, SCENE_FRAMES as L_business_m2_l2_retention_flow_F, TOTAL_FRAMES as L_business_m2_l2_retention_flow_T } from "./lessons-generated/business-m2-l2-retention-flow.gen";
 import { SCENES as L_business_m2_l4_pricing_cash_flow_S, SCENE_FRAMES as L_business_m2_l4_pricing_cash_flow_F, TOTAL_FRAMES as L_business_m2_l4_pricing_cash_flow_T } from "./lessons-generated/business-m2-l4-pricing-cash-flow.gen";
 import { SCENES as L_business_m4_l5_business_os_dashboard_S, SCENE_FRAMES as L_business_m4_l5_business_os_dashboard_F, TOTAL_FRAMES as L_business_m4_l5_business_os_dashboard_T } from "./lessons-generated/business-m4-l5-business-os-dashboard.gen";
 import { SCENES as L_intro_m1_l1_what_is_ai_S, SCENE_FRAMES as L_intro_m1_l1_what_is_ai_F, TOTAL_FRAMES as L_intro_m1_l1_what_is_ai_T } from "./lessons-generated/intro-m1-l1-what-is-ai.gen";
@@ -124,6 +123,7 @@ import { SCENES as L_creator_m2_l2_content_pillars_S, SCENE_FRAMES as L_creator_
 import { SCENES as L_creator_m3_l1_hook_S, SCENE_FRAMES as L_creator_m3_l1_hook_F, TOTAL_FRAMES as L_creator_m3_l1_hook_T } from "./lessons-generated/creator-m3-l1-hook.gen";
 import { SCENES as L_creator_m7_l1_brand_basics_S, SCENE_FRAMES as L_creator_m7_l1_brand_basics_F, TOTAL_FRAMES as L_creator_m7_l1_brand_basics_T } from "./lessons-generated/creator-m7-l1-brand-basics.gen";
 import { SCENES as L_business_m2_l2_build_your_offer_S, SCENE_FRAMES as L_business_m2_l2_build_your_offer_F, TOTAL_FRAMES as L_business_m2_l2_build_your_offer_T } from "./lessons-generated/business-m2-l2-build-your-offer.gen";
+import { SCENES as L_business_m2_l2_retention_flow_S, SCENE_FRAMES as L_business_m2_l2_retention_flow_F, TOTAL_FRAMES as L_business_m2_l2_retention_flow_T } from "./lessons-generated/business-m2-l2-retention-flow.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -194,7 +194,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m4-l1-premature-scaling", scenes: L_business_m4_l1_premature_scaling_S, sceneFrames: L_business_m4_l1_premature_scaling_F, totalFrames: L_business_m4_l1_premature_scaling_T },
     { id: "business-m3-l4-hiring-onboarding", scenes: L_business_m3_l4_hiring_onboarding_S, sceneFrames: L_business_m3_l4_hiring_onboarding_F, totalFrames: L_business_m3_l4_hiring_onboarding_T },
     { id: "business-m2-l3-readiness-signals", scenes: L_business_m2_l3_readiness_signals_S, sceneFrames: L_business_m2_l3_readiness_signals_F, totalFrames: L_business_m2_l3_readiness_signals_T },
-    { id: "business-m2-l2-retention-flow", scenes: L_business_m2_l2_retention_flow_S, sceneFrames: L_business_m2_l2_retention_flow_F, totalFrames: L_business_m2_l2_retention_flow_T },
     { id: "business-m2-l4-pricing-cash-flow", scenes: L_business_m2_l4_pricing_cash_flow_S, sceneFrames: L_business_m2_l4_pricing_cash_flow_F, totalFrames: L_business_m2_l4_pricing_cash_flow_T },
     { id: "business-m4-l5-business-os-dashboard", scenes: L_business_m4_l5_business_os_dashboard_S, sceneFrames: L_business_m4_l5_business_os_dashboard_F, totalFrames: L_business_m4_l5_business_os_dashboard_T },
     { id: "intro-m1-l1-what-is-ai", scenes: L_intro_m1_l1_what_is_ai_S, sceneFrames: L_intro_m1_l1_what_is_ai_F, totalFrames: L_intro_m1_l1_what_is_ai_T },
@@ -239,5 +238,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m3-l1-hook", scenes: L_creator_m3_l1_hook_S, sceneFrames: L_creator_m3_l1_hook_F, totalFrames: L_creator_m3_l1_hook_T },
     { id: "creator-m7-l1-brand-basics", scenes: L_creator_m7_l1_brand_basics_S, sceneFrames: L_creator_m7_l1_brand_basics_F, totalFrames: L_creator_m7_l1_brand_basics_T },
     { id: "business-m2-l2-build-your-offer", scenes: L_business_m2_l2_build_your_offer_S, sceneFrames: L_business_m2_l2_build_your_offer_F, totalFrames: L_business_m2_l2_build_your_offer_T },
+    { id: "business-m2-l2-retention-flow", scenes: L_business_m2_l2_retention_flow_S, sceneFrames: L_business_m2_l2_retention_flow_F, totalFrames: L_business_m2_l2_retention_flow_T },
   /* @lesson-entries-end */
 ];
