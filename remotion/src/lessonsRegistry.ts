@@ -44,7 +44,6 @@ import { SCENES as L_builder_m6_l1_idea_to_page_S, SCENE_FRAMES as L_builder_m6_
 import { SCENES as L_business_m7_l1_full_ecosystem_S, SCENE_FRAMES as L_business_m7_l1_full_ecosystem_F, TOTAL_FRAMES as L_business_m7_l1_full_ecosystem_T } from "./lessons-generated/business-m7-l1-full-ecosystem.gen";
 import { SCENES as L_business_m2_l2_weekly_rhythm_S, SCENE_FRAMES as L_business_m2_l2_weekly_rhythm_F, TOTAL_FRAMES as L_business_m2_l2_weekly_rhythm_T } from "./lessons-generated/business-m2-l2-weekly-rhythm.gen";
 import { SCENES as L_business_m1_l3_ai_thinking_partner_S, SCENE_FRAMES as L_business_m1_l3_ai_thinking_partner_F, TOTAL_FRAMES as L_business_m1_l3_ai_thinking_partner_T } from "./lessons-generated/business-m1-l3-ai-thinking-partner.gen";
-import { SCENES as L_business_m4_l1_premature_scaling_S, SCENE_FRAMES as L_business_m4_l1_premature_scaling_F, TOTAL_FRAMES as L_business_m4_l1_premature_scaling_T } from "./lessons-generated/business-m4-l1-premature-scaling.gen";
 import { SCENES as L_business_m3_l4_hiring_onboarding_S, SCENE_FRAMES as L_business_m3_l4_hiring_onboarding_F, TOTAL_FRAMES as L_business_m3_l4_hiring_onboarding_T } from "./lessons-generated/business-m3-l4-hiring-onboarding.gen";
 import { SCENES as L_business_m2_l4_pricing_cash_flow_S, SCENE_FRAMES as L_business_m2_l4_pricing_cash_flow_F, TOTAL_FRAMES as L_business_m2_l4_pricing_cash_flow_T } from "./lessons-generated/business-m2-l4-pricing-cash-flow.gen";
 import { SCENES as L_business_m4_l5_business_os_dashboard_S, SCENE_FRAMES as L_business_m4_l5_business_os_dashboard_F, TOTAL_FRAMES as L_business_m4_l5_business_os_dashboard_T } from "./lessons-generated/business-m4-l5-business-os-dashboard.gen";
@@ -130,6 +129,7 @@ import { SCENES as L_creator_m4_repurposing_S, SCENE_FRAMES as L_creator_m4_repu
 import { SCENES as L_creator_m5_l1_editing_S, SCENE_FRAMES as L_creator_m5_l1_editing_F, TOTAL_FRAMES as L_creator_m5_l1_editing_T } from "./lessons-generated/creator-m5-l1-editing.gen";
 import { SCENES as L_automator_m4_l1_connect_database_S, SCENE_FRAMES as L_automator_m4_l1_connect_database_F, TOTAL_FRAMES as L_automator_m4_l1_connect_database_T } from "./lessons-generated/automator-m4-l1-connect-database.gen";
 import { SCENES as L_analyst_m5_ab_testing_S, SCENE_FRAMES as L_analyst_m5_ab_testing_F, TOTAL_FRAMES as L_analyst_m5_ab_testing_T } from "./lessons-generated/analyst-m5-ab-testing.gen";
+import { SCENES as L_business_m4_l1_premature_scaling_S, SCENE_FRAMES as L_business_m4_l1_premature_scaling_F, TOTAL_FRAMES as L_business_m4_l1_premature_scaling_T } from "./lessons-generated/business-m4-l1-premature-scaling.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -163,7 +163,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m7-l1-full-ecosystem", scenes: L_business_m7_l1_full_ecosystem_S, sceneFrames: L_business_m7_l1_full_ecosystem_F, totalFrames: L_business_m7_l1_full_ecosystem_T },
     { id: "business-m2-l2-weekly-rhythm", scenes: L_business_m2_l2_weekly_rhythm_S, sceneFrames: L_business_m2_l2_weekly_rhythm_F, totalFrames: L_business_m2_l2_weekly_rhythm_T },
     { id: "business-m1-l3-ai-thinking-partner", scenes: L_business_m1_l3_ai_thinking_partner_S, sceneFrames: L_business_m1_l3_ai_thinking_partner_F, totalFrames: L_business_m1_l3_ai_thinking_partner_T },
-    { id: "business-m4-l1-premature-scaling", scenes: L_business_m4_l1_premature_scaling_S, sceneFrames: L_business_m4_l1_premature_scaling_F, totalFrames: L_business_m4_l1_premature_scaling_T },
     { id: "business-m3-l4-hiring-onboarding", scenes: L_business_m3_l4_hiring_onboarding_S, sceneFrames: L_business_m3_l4_hiring_onboarding_F, totalFrames: L_business_m3_l4_hiring_onboarding_T },
     { id: "business-m2-l4-pricing-cash-flow", scenes: L_business_m2_l4_pricing_cash_flow_S, sceneFrames: L_business_m2_l4_pricing_cash_flow_F, totalFrames: L_business_m2_l4_pricing_cash_flow_T },
     { id: "business-m4-l5-business-os-dashboard", scenes: L_business_m4_l5_business_os_dashboard_S, sceneFrames: L_business_m4_l5_business_os_dashboard_F, totalFrames: L_business_m4_l5_business_os_dashboard_T },
@@ -249,5 +248,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m5-l1-editing", scenes: L_creator_m5_l1_editing_S, sceneFrames: L_creator_m5_l1_editing_F, totalFrames: L_creator_m5_l1_editing_T },
     { id: "automator-m4-l1-connect-database", scenes: L_automator_m4_l1_connect_database_S, sceneFrames: L_automator_m4_l1_connect_database_F, totalFrames: L_automator_m4_l1_connect_database_T },
     { id: "analyst-m5-ab-testing", scenes: L_analyst_m5_ab_testing_S, sceneFrames: L_analyst_m5_ab_testing_F, totalFrames: L_analyst_m5_ab_testing_T },
+    { id: "business-m4-l1-premature-scaling", scenes: L_business_m4_l1_premature_scaling_S, sceneFrames: L_business_m4_l1_premature_scaling_F, totalFrames: L_business_m4_l1_premature_scaling_T },
   /* @lesson-entries-end */
 ];
