@@ -5,100 +5,84 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "subtitle": "إزاي تتعامل مع الأخطاء في السيستم بتاعك",
-    "chip": "HERO",
-    "title": "الـ Error هو القاعدة",
-    "highlight": "مش الاستثناء"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "definition": "البيانات أو \"الشيلة\" اللي مبعوتة جوه الـ Request.",
-    "tag": "البيانات المبعوتة",
-    "term": "Payload"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "definition": "إننا نخلي الأوتوميشن يحاول ينفذ الخطوة تاني لما تفشل.",
-    "tag": "محاولة تانية",
-    "term": "Retry"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "definition": "مكان (زي درج) بتترمي فيه الطلبات اللي فشلت بعد كذا محاولة.",
-    "tag": "طلبات فاشلة",
-    "term": "Dead Letter Queue (DLQ)"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "definition": "خطة بديلة (طريق طوارئ) بيمشي فيها الأوتوميشن لو حصلت غلطة.",
-    "term": "Error Handler / Catch",
-    "tag": "خطة بديلة"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "term": "Idempotent",
-    "tag": "نفس النتيجة",
-    "definition": "إنك تكرر الأكشن كذا مرة بنفس النتيجة من غير لخبطة."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "definition": "كل المعلومات والبيانات اللي محيطة بالخطوة اللي شغالة دلوقتي.",
-    "tag": "معلومات محيطة",
-    "term": "Context"
+    "highlight": "الأتمتة بتفشل",
+    "title": "هتفهم إيه النهاردة؟",
+    "subtitle": "السؤال إزاي هتعرف قبل ما العميل يتأذى.",
+    "chip": "بداية الدرس"
   },
   {
     "card": "BulletsCard",
     "accent": "lavender",
     "bullets": [
-      "Retry — جرّب تاني تلقائيًا. كتير من الأخطاء مؤقتة (rate limit، timeout).",
-      "Catch / Error Handler — لو فشل بعد الـ retries، نفّذ مسار بديل (سجّل الـ error + ابعت تنبيه)."
+      "الـ API بتاع الرسائل فشل من أسبوع، والأوتوميشن وقف صامت.",
+      "العملاء فكروا إنكم تجاهلتوهم، واكتشفت المشكلة لما عميل كبير اتصل بنفسه.",
+      "العامل الافتراضي محتاج قاعدة: لو الخطوة دي فشلت → حد يتبلّغ فورًا."
     ],
-    "title": "3 طبقات حماية لكل scenario"
+    "title": "«٢٠٠ عميل ملقوش رد» — ومحدش عرف"
   },
   {
     "card": "BulletsCard",
     "accent": "peach",
+    "title": "فشل متوقّع + تنبيه قبل الألم",
     "bullets": [
-      "Logs + Alerts — كل error بيتسجّل، والـ errors المهمة بتبعت notification فورًا (Slack/Email/WhatsApp)."
-    ],
-    "title": "3 طبقات حماية لكل scenario"
-  },
-  {
-    "card": "ScreenshotCard",
-    "accent": "yellow",
-    "eyebrow": "شوف بنفسك",
-    "title": "الطبقات التشغيلية",
-    "src": "lessons/unique/automator-m4-l3-error-handling.jpg",
-    "caption": "كل طبقة في الـ /operational-layers بتاعتنا فيها error handling خاص بيها. لو الـ Retrieval Layer فشلت تجيب context، النظام مش بيقف — بيرجع لرد افتراضي وبيلوج الـ error. ده اللي هتعمله في الـ workflows بتاعتك بالظبط."
+      "Retry: جرّب تاني، كتير من الأخطاء بتكون مؤقتة، ٢-٣ محاولات كفاية.",
+      "لو فشل بعد الـ retries: سجّل الخطأ وبلّغ حد، بلاش تسكت.",
+      "قاعدة تنبيه واحدة ممكن تغيّر كل حاجة: لو الخطوة X فشلت → واتساب أو إيميل لـ Y.",
+      "الهدف: تعرف في دقايق، مش بعد أسبوع."
+    ]
   },
   {
     "card": "CompareCard",
-    "accent": "pink",
+    "accent": "yellow",
     "right": {
-      "label": "RIGHT — Error بيحوّل لإشارة",
-      "body": "Retry 3 مرات → لو فشل، الـ payload بيتخزّن في جدول 'failed_jobs' + رسالة WhatsApp بتيجيلك. تقدر تراجع وتصلّح يدوي وترجّع تشغّل."
+      "label": "تنبيه فوري",
+      "body": "Retry ٣ مرات → فشل → واتساب ليك + السجل في جدول failed. تعرف في ٥ دقايق."
     },
     "left": {
-      "label": "FAILURE — الـ scenario بيقف صامت",
-      "body": "API فشل، الـ scenario توقّف، ومحدش عرف. بعد أسبوع تكتشف إن 200 عميل ملقوش رد. الـ error حصل من غير صوت."
+      "label": "فشل صامت",
+      "body": "API وقف — الـ workflow سكت. ٢٠٠ عميل من غير رد. اكتشفت بعد ٧ أيام."
     },
-    "title": "Error = Silence vs Signal"
+    "title": "فشل صامت vs إشارة فورية"
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "pink",
+    "term": "Retry (إعادة محاولة)",
+    "tag": "جرّب تاني",
+    "definition": "الأوتوميشن بيحاول تاني أوتوماتيك لما خطوة تفشل."
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "mintDeep",
+    "term": "Alert (تنبيه)",
+    "tag": "إشعار طوارئ",
+    "definition": "إشعار لحد يقدر يتصرف — بعد ما الـ retries تخلص."
+  },
+  {
+    "card": "ScreenshotCard",
+    "accent": "mint",
+    "eyebrow": "شوفها ببساطة",
+    "src": "lessons/unique/automator-m4-l3-error-handling.jpg",
+    "caption": "كل طبقة في الشغل المتكرر محتاجة خطة بديلة: لو فشلت ← إيه البديل؟ مش «نوقف وننسى».",
+    "title": "طبقات الحماية"
   },
   {
     "card": "CTACard",
-    "accent": "mintDeep",
-    "highlight": "الأخطاء مش هتختفي، لكن تقدر تحولها لفرصة.",
-    "tagline": "طبق اللي اتعلمته في الـ Quiz عشان السيستم بتاعك يبقى أحسن.",
-    "eyebrow": "دورك دلوقتي",
-    "title": "أضف Error Handler لأي scenario عندك"
+    "accent": "lavender",
+    "highlight": "طبق اللي فهمته",
+    "title": "سؤال واحد — مش امتحان",
+    "tagline": "جاوب على السؤال عشان تتأكد إنك فهمت الدرس.",
+    "eyebrow": "دورك دلوقتي"
+  },
+  {
+    "card": "CTACard",
+    "accent": "peach",
+    "highlight": "فهمت إزاي تتعامل مع الأخطاء",
+    "title": "إيه اللي عندك دلوقتي؟",
+    "tagline": "تقدر دلوقتي تعمل قاعدة تنبيه واحدة جاهزة تضيفها لأي workflow عندك. شوفك في الدرس الجاي!",
+    "eyebrow": "خلّصت معالجة الأخطاء"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [405, 448, 369, 400, 401, 426, 400, 461, 349, 376, 639, 485];
+export const SCENE_FRAMES: number[] = [327, 395, 340, 323, 307, 329, 334, 264, 329];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
