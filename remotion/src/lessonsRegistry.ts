@@ -34,7 +34,6 @@ import { SCENES as L_automator_m4_l1_connect_database_S, SCENE_FRAMES as L_autom
 import { SCENES as L_automator_m7_l1_closing_loop_S, SCENE_FRAMES as L_automator_m7_l1_closing_loop_F, TOTAL_FRAMES as L_automator_m7_l1_closing_loop_T } from "./lessons-generated/automator-m7-l1-closing-loop.gen";
 import { SCENES as L_automator_m4_l3_error_handling_S, SCENE_FRAMES as L_automator_m4_l3_error_handling_F, TOTAL_FRAMES as L_automator_m4_l3_error_handling_T } from "./lessons-generated/automator-m4-l3-error-handling.gen";
 import { SCENES as L_automator_m4_l2_webhooks_api_S, SCENE_FRAMES as L_automator_m4_l2_webhooks_api_F, TOTAL_FRAMES as L_automator_m4_l2_webhooks_api_T } from "./lessons-generated/automator-m4-l2-webhooks-api.gen";
-import { SCENES as L_automator_m2_l2_spot_patterns_S, SCENE_FRAMES as L_automator_m2_l2_spot_patterns_F, TOTAL_FRAMES as L_automator_m2_l2_spot_patterns_T } from "./lessons-generated/automator-m2-l2-spot-patterns.gen";
 import { SCENES as L_business_m4_l1_strategic_operational_admin_S, SCENE_FRAMES as L_business_m4_l1_strategic_operational_admin_F, TOTAL_FRAMES as L_business_m4_l1_strategic_operational_admin_T } from "./lessons-generated/business-m4-l1-strategic-operational-admin.gen";
 import { SCENES as L_analyst_m4_l1_pattern_vs_outlier_S, SCENE_FRAMES as L_analyst_m4_l1_pattern_vs_outlier_F, TOTAL_FRAMES as L_analyst_m4_l1_pattern_vs_outlier_T } from "./lessons-generated/analyst-m4-l1-pattern-vs-outlier.gen";
 import { SCENES as L_business_m5_l1_readiness_signals_S, SCENE_FRAMES as L_business_m5_l1_readiness_signals_F, TOTAL_FRAMES as L_business_m5_l1_readiness_signals_T } from "./lessons-generated/business-m5-l1-readiness-signals.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_automator_m5_l2_rag_in_n8n_S, SCENE_FRAMES as L_automator_m
 import { SCENES as L_creator_m6_l2_scheduling_S, SCENE_FRAMES as L_creator_m6_l2_scheduling_F, TOTAL_FRAMES as L_creator_m6_l2_scheduling_T } from "./lessons-generated/creator-m6-l2-scheduling.gen";
 import { SCENES as L_builder_m6_l4_components_routes_S, SCENE_FRAMES as L_builder_m6_l4_components_routes_F, TOTAL_FRAMES as L_builder_m6_l4_components_routes_T } from "./lessons-generated/builder-m6-l4-components-routes.gen";
 import { SCENES as L_analyst_m2_l2_right_question_rule_S, SCENE_FRAMES as L_analyst_m2_l2_right_question_rule_F, TOTAL_FRAMES as L_analyst_m2_l2_right_question_rule_T } from "./lessons-generated/analyst-m2-l2-right-question-rule.gen";
+import { SCENES as L_automator_m2_l2_spot_patterns_S, SCENE_FRAMES as L_automator_m2_l2_spot_patterns_F, TOTAL_FRAMES as L_automator_m2_l2_spot_patterns_T } from "./lessons-generated/automator-m2-l2-spot-patterns.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -150,7 +150,6 @@ export const LESSONS: LessonModule[] = [
     { id: "automator-m7-l1-closing-loop", scenes: L_automator_m7_l1_closing_loop_S, sceneFrames: L_automator_m7_l1_closing_loop_F, totalFrames: L_automator_m7_l1_closing_loop_T },
     { id: "automator-m4-l3-error-handling", scenes: L_automator_m4_l3_error_handling_S, sceneFrames: L_automator_m4_l3_error_handling_F, totalFrames: L_automator_m4_l3_error_handling_T },
     { id: "automator-m4-l2-webhooks-api", scenes: L_automator_m4_l2_webhooks_api_S, sceneFrames: L_automator_m4_l2_webhooks_api_F, totalFrames: L_automator_m4_l2_webhooks_api_T },
-    { id: "automator-m2-l2-spot-patterns", scenes: L_automator_m2_l2_spot_patterns_S, sceneFrames: L_automator_m2_l2_spot_patterns_F, totalFrames: L_automator_m2_l2_spot_patterns_T },
     { id: "business-m4-l1-strategic-operational-admin", scenes: L_business_m4_l1_strategic_operational_admin_S, sceneFrames: L_business_m4_l1_strategic_operational_admin_F, totalFrames: L_business_m4_l1_strategic_operational_admin_T },
     { id: "analyst-m4-l1-pattern-vs-outlier", scenes: L_analyst_m4_l1_pattern_vs_outlier_S, sceneFrames: L_analyst_m4_l1_pattern_vs_outlier_F, totalFrames: L_analyst_m4_l1_pattern_vs_outlier_T },
     { id: "business-m5-l1-readiness-signals", scenes: L_business_m5_l1_readiness_signals_S, sceneFrames: L_business_m5_l1_readiness_signals_F, totalFrames: L_business_m5_l1_readiness_signals_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m6-l2-scheduling", scenes: L_creator_m6_l2_scheduling_S, sceneFrames: L_creator_m6_l2_scheduling_F, totalFrames: L_creator_m6_l2_scheduling_T },
     { id: "builder-m6-l4-components-routes", scenes: L_builder_m6_l4_components_routes_S, sceneFrames: L_builder_m6_l4_components_routes_F, totalFrames: L_builder_m6_l4_components_routes_T },
     { id: "analyst-m2-l2-right-question-rule", scenes: L_analyst_m2_l2_right_question_rule_S, sceneFrames: L_analyst_m2_l2_right_question_rule_F, totalFrames: L_analyst_m2_l2_right_question_rule_T },
+    { id: "automator-m2-l2-spot-patterns", scenes: L_automator_m2_l2_spot_patterns_S, sceneFrames: L_automator_m2_l2_spot_patterns_F, totalFrames: L_automator_m2_l2_spot_patterns_T },
   /* @lesson-entries-end */
 ];

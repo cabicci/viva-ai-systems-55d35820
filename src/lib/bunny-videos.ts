@@ -20,7 +20,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "analyst-m7-l1-from-decisions-to-business": "5750aa87-ce37-41a1-9bd0-c9e6374bb216",
   "automator-m1-l1-where-you-are": "1471e169-a6a3-4eb7-8f9a-58c57e633c9b",
   "automator-m2-l1-systems-view": "9327b34c-2b02-4f0a-b03e-878bede4ab07",
-  "automator-m2-l2-spot-patterns": "23df4110-918e-4673-a688-fc6074a26402",
+  "automator-m2-l2-spot-patterns": "89befdc9-f299-41d7-bb56-910a08dcff2b",
   "automator-m2-l3-decide-what-to-automate": "85dcfb11-4243-4e2f-b707-be7076cf3451",
   "automator-m3-l1-tools-landscape": "cb2fdab3-0200-406e-8b1d-d5ada142a120",
   "automator-m3-l2-triggers-actions": "718098a7-cb1d-4f48-a74e-2c1c27969113",
