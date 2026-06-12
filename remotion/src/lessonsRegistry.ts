@@ -52,7 +52,6 @@ import { SCENES as L_builder_m5_l2_frontend_S, SCENE_FRAMES as L_builder_m5_l2_f
 import { SCENES as L_builder_m7_l2_relations_S, SCENE_FRAMES as L_builder_m7_l2_relations_F, TOTAL_FRAMES as L_builder_m7_l2_relations_T } from "./lessons-generated/builder-m7-l2-relations.gen";
 import { SCENES as L_builder_m7_l3_queries_S, SCENE_FRAMES as L_builder_m7_l3_queries_F, TOTAL_FRAMES as L_builder_m7_l3_queries_T } from "./lessons-generated/builder-m7-l3-queries.gen";
 import { SCENES as L_builder_m8_l2_rls_S, SCENE_FRAMES as L_builder_m8_l2_rls_F, TOTAL_FRAMES as L_builder_m8_l2_rls_T } from "./lessons-generated/builder-m8-l2-rls.gen";
-import { SCENES as L_builder_m6_l5_iteration_S, SCENE_FRAMES as L_builder_m6_l5_iteration_F, TOTAL_FRAMES as L_builder_m6_l5_iteration_T } from "./lessons-generated/builder-m6-l5-iteration.gen";
 import { SCENES as L_builder_m9_l2_embeddings_S, SCENE_FRAMES as L_builder_m9_l2_embeddings_F, TOTAL_FRAMES as L_builder_m9_l2_embeddings_T } from "./lessons-generated/builder-m9-l2-embeddings.gen";
 import { SCENES as L_builder_m9_l1_rag_S, SCENE_FRAMES as L_builder_m9_l1_rag_F, TOTAL_FRAMES as L_builder_m9_l1_rag_T } from "./lessons-generated/builder-m9-l1-rag.gen";
 import { SCENES as L_builder_m9_l3_agents_S, SCENE_FRAMES as L_builder_m9_l3_agents_F, TOTAL_FRAMES as L_builder_m9_l3_agents_T } from "./lessons-generated/builder-m9-l3-agents.gen";
@@ -125,6 +124,7 @@ import { SCENES as L_analyst_m4_automated_dashboard_S, SCENE_FRAMES as L_analyst
 import { SCENES as L_automator_m6_l2_whatsapp_flow_S, SCENE_FRAMES as L_automator_m6_l2_whatsapp_flow_F, TOTAL_FRAMES as L_automator_m6_l2_whatsapp_flow_T } from "./lessons-generated/automator-m6-l2-whatsapp-flow.gen";
 import { SCENES as L_creator_m3_l2_script_structure_S, SCENE_FRAMES as L_creator_m3_l2_script_structure_F, TOTAL_FRAMES as L_creator_m3_l2_script_structure_T } from "./lessons-generated/creator-m3-l2-script-structure.gen";
 import { SCENES as L_builder_m2_l3_style_control_S, SCENE_FRAMES as L_builder_m2_l3_style_control_F, TOTAL_FRAMES as L_builder_m2_l3_style_control_T } from "./lessons-generated/builder-m2-l3-style-control.gen";
+import { SCENES as L_builder_m6_l5_iteration_S, SCENE_FRAMES as L_builder_m6_l5_iteration_F, TOTAL_FRAMES as L_builder_m6_l5_iteration_T } from "./lessons-generated/builder-m6-l5-iteration.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -168,7 +168,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m7-l2-relations", scenes: L_builder_m7_l2_relations_S, sceneFrames: L_builder_m7_l2_relations_F, totalFrames: L_builder_m7_l2_relations_T },
     { id: "builder-m7-l3-queries", scenes: L_builder_m7_l3_queries_S, sceneFrames: L_builder_m7_l3_queries_F, totalFrames: L_builder_m7_l3_queries_T },
     { id: "builder-m8-l2-rls", scenes: L_builder_m8_l2_rls_S, sceneFrames: L_builder_m8_l2_rls_F, totalFrames: L_builder_m8_l2_rls_T },
-    { id: "builder-m6-l5-iteration", scenes: L_builder_m6_l5_iteration_S, sceneFrames: L_builder_m6_l5_iteration_F, totalFrames: L_builder_m6_l5_iteration_T },
     { id: "builder-m9-l2-embeddings", scenes: L_builder_m9_l2_embeddings_S, sceneFrames: L_builder_m9_l2_embeddings_F, totalFrames: L_builder_m9_l2_embeddings_T },
     { id: "builder-m9-l1-rag", scenes: L_builder_m9_l1_rag_S, sceneFrames: L_builder_m9_l1_rag_F, totalFrames: L_builder_m9_l1_rag_T },
     { id: "builder-m9-l3-agents", scenes: L_builder_m9_l3_agents_S, sceneFrames: L_builder_m9_l3_agents_F, totalFrames: L_builder_m9_l3_agents_T },
@@ -241,5 +240,6 @@ export const LESSONS: LessonModule[] = [
     { id: "automator-m6-l2-whatsapp-flow", scenes: L_automator_m6_l2_whatsapp_flow_S, sceneFrames: L_automator_m6_l2_whatsapp_flow_F, totalFrames: L_automator_m6_l2_whatsapp_flow_T },
     { id: "creator-m3-l2-script-structure", scenes: L_creator_m3_l2_script_structure_S, sceneFrames: L_creator_m3_l2_script_structure_F, totalFrames: L_creator_m3_l2_script_structure_T },
     { id: "builder-m2-l3-style-control", scenes: L_builder_m2_l3_style_control_S, sceneFrames: L_builder_m2_l3_style_control_F, totalFrames: L_builder_m2_l3_style_control_T },
+    { id: "builder-m6-l5-iteration", scenes: L_builder_m6_l5_iteration_S, sceneFrames: L_builder_m6_l5_iteration_F, totalFrames: L_builder_m6_l5_iteration_T },
   /* @lesson-entries-end */
 ];
