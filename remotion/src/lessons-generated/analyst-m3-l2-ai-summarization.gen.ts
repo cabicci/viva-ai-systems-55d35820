@@ -5,142 +5,85 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "highlight": "٣٠ ثانية",
-    "chip": "HERO",
-    "subtitle": "هتوفر ساعتين قراءة!",
-    "title": "AI = أسرع محلّل عندك"
+    "highlight": "الـ AI يقدر يلخّص بياناتك في ثواني",
+    "chip": "بداية الدرس",
+    "title": "هتفهم إيه النهاردة؟",
+    "subtitle": "بس لازم تديله سؤال واضح وسياق محدّد."
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "lavender",
-    "term": "Database (DB)",
-    "definition": "المكان اللي بتخزن وترتب فيه كل بيانات شغلك.",
-    "tag": "تخزين البيانات"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "term": "RAG",
-    "definition": "تقنية بتخلي الـ AI يجاوب من بياناتك الخاصة مش من النت.",
-    "tag": "إجابات من بياناتك"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "term": "Patterns (أنماط)",
-    "definition": "تكرار معين أو \"فولة\" ثابتة بتظهر وسط الأرقام والبيانات.",
-    "tag": "تكرارات ثابتة"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "term": "Summarization",
-    "definition": "تلخيص دش كتير وكلام طويل في نص صغير ومفيد.",
-    "tag": "تلخيص البيانات"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "term": "Classification (تنسيق)",
-    "definition": "ترتيب البيانات وتوزيعها في مجموعات حسب نوعها.",
-    "tag": "تصنيف البيانات"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "tag": "استخراج معلومات",
-    "term": "Extraction (استخراج)",
-    "definition": "إنك تنقي معلومة معينة ومهمة من وسط زحمة كلام."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "أكواد الدروس",
-    "term": "رموز الوحدات (M3, M9)",
-    "definition": "رموز تنظيمية عشان تعرف إنت في أنهي درس بالظبط."
+    "bullets": [
+      "كتير بيبعتوا ٥٠ رسالة للـ AI ويقولوا «لخّصل». النتيجة: جمل عامة مش بتساعد في قرار.",
+      "المشكلة مش الـ AI — المشكلة إن السؤال فاضي. من غير سياق ومن غير سؤال محدّد، أي ملخّص هيبان «حلو» بس مش مفيد.",
+      "الـ AI أسرع محلّل عندك — إنت اللي بتحدّد: إيه اللي عايز تعرفه؟ وإيه اللي هيتغيّر لو عرفته؟"
+    ],
+    "title": "«لخّصلي ده» — والـ AI يطلع كلام عام"
   },
   {
     "card": "BulletsCard",
     "accent": "peach",
     "bullets": [
-      "انسخ البيانات (رسائل/فواتير/ملاحظات) في Claude أو GPT."
+      "السؤال: مش «لخّصل» — «إيه أكتر ٣ مشاكل تكرّرت؟» أو «إيه اللي اتغيّر عن الأسبوع اللي فات؟»",
+      "السياق: نوع البيانات، الفترة، ومصدرها — «دي رسائل عملاء آخر ٧ أيام» أو «دي ١٥ صف من شيت المبيعات».",
+      "المخرج المطلوب: ٣ ملاحظات محددة + قرار واحد ممكن تاخده — مش وصف عام للبيانات.",
+      "الـ AI بيقرأ بدالك — إنت بتتحقق وتقرّر. لو الملاحظة مش مربوطة بقرار، اطلب تاني بسؤال أوضح."
     ],
-    "title": "Prompt جاهز للتحليل"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "yellow",
-    "bullets": [
-      "Prompt: «دي رسائل عملاء آخر أسبوع. استخرج: ١) كام طلب؟ ٢) أكتر ٣ أسئلة تكرّرت؟ ٣) في أي شكوى متكرّرة؟ ٤) أي pattern غير عادي؟»",
-      "الـ AI بيرجّعلك ملخّص في نقاط — جاهز للقرار في M3."
-    ],
-    "title": "مثال للـ Prompt"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "pink",
-    "title": "ربط بـ Builder M9",
-    "bullets": [
-      "لو حجم البيانات كبير، تقدر تبني RAG على الـ DB بدل النسخ اليدوي."
-    ]
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "mintDeep",
-    "bullets": [
-      "نفس الـ Prompt يشتغل على أي حجم بيانات — الوقت بيرجع لك."
-    ],
-    "title": "٥٠ رسالة → ٤ مخرجات في ٣٠ ثانية"
+    "title": "ملخّص مفيد = سؤال + سياق + قرار محتمل"
   },
   {
     "card": "CompareCard",
-    "accent": "mint",
-    "title": "قراءة يدوية vs AI",
+    "accent": "yellow",
+    "title": "Prompt فاضي vs Prompt جاهز للقرار",
     "right": {
-      "body": "١٠ دقايق أسبوعيًا. وقتك كله بقى في القرار، مش في القراءة.",
-      "label": "RIGHT — AI بيلخّص، إنت بتقرّر"
+      "label": "سؤال + سياق",
+      "body": "«دي ٤٠ رسالة واتساب آخر أسبوع. استخرج: ١) أكتر ٣ شكاوى تكرّرت ٢) أي طلب جديد ظهر ٣) قرار واحد ممكن أاخده الأسبوع ده». النتيجة جاهزة للتنفيذ."
     },
     "left": {
-      "body": "ساعتين أسبوعيًا. بعد شهر بتزهق وبتبطّل التحليل خالص.",
-      "label": "FAILURE — بتقرا كل حاجة بإيدك"
+      "label": "سؤال فاضي",
+      "body": "«لخّصلي الرسائل دي». النتيجة: «العملاء عندهم أسئلة متنوعة» — ومش عارف تعمل إيه."
     }
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "pink",
+    "tag": "سؤال واضح",
+    "term": "Summarization (تلخيص)",
+    "definition": "تحويل بيانات كتير لملاحظات قليلة — بس بشرط سؤال واضح."
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "mintDeep",
+    "term": "Context (سياق)",
+    "definition": "معلومات تخلي الـ AI يفهم إيه البيانات دي ولمين.",
+    "tag": "معلومات للـ AI"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "mint",
+    "bullets": [
+      "بيانات + سؤال + سياق → ٣ ملاحظات → قرار واحد.",
+      "نفس المسار يشتغل على رسائل، فواتير، أو أي جدول صغير."
+    ],
+    "title": "مسار التلخيص"
   },
   {
     "card": "CTACard",
     "accent": "lavender",
-    "title": "حلّل آخر ٥٠ رسالة بـ AI",
-    "tagline": "اكتشف الـ Insights بنفسك",
-    "highlight": "٣٠ ثانية",
-    "eyebrow": "دورك دلوقتي"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "peach",
-    "bullets": [
-      "الجزء ده من المنصة اتبنى بمسار Analyst — نفس اللي بتتعلمه.",
-      "بدل ما نقرا كل mission submission يدوي، عملنا serverFn بتاخد كل الـ submissions في فترة وتطلّع AI summary: «60% فهموا الـ concept، 30% اختلطت عليهم خطوة 3». ساعتين شغل بقت 5 ثواني."
-    ],
-    "title": "Mission AI evaluation = AI بيلخّص ١٠٠ submission"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "yellow",
-    "bullets": [
-      "mission_submissions كلها بتتبعت لـ Gemini.",
-      "Prompt: «لخّص أنماط الفهم والصعوبات في 5 نقاط».",
-      "النتيجة بتظهر في /analytics → Mission Insights."
-    ],
-    "title": "إزاي بنستخدم AI في تقييم الـ Missions"
+    "tagline": "عشان تتأكد إنك فهمت إزاي تعمل ملخص مفيد.",
+    "eyebrow": "دورك دلوقتي",
+    "title": "طبّق اللي فهمته",
+    "highlight": "جاوب على سؤال سريع"
   },
   {
     "card": "CTACard",
-    "accent": "pink",
-    "highlight": "وفر وقتك ومجهودك",
-    "eyebrow": "الدرس الجاي",
-    "tagline": "نتقابل في الدرس الجاي: Pattern أم Outlier؟",
-    "title": "AI = أسرع محلّل عندك"
+    "accent": "peach",
+    "title": "الملخص المفيد",
+    "highlight": "السؤال والسياق هما مفتاح الـ AI",
+    "tagline": "هتفهم إزاي الـ AI بيلخّص بسرعة، وإزاي تطلع منه ملاحظات وقرارات.",
+    "eyebrow": "خلّصت الدرس"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [447, 510, 424, 373, 407, 421, 454, 393, 435, 586, 405, 466, 552, 348, 451, 456, 406];
+export const SCENE_FRAMES: number[] = [654, 633, 593, 665, 550, 607, 520, 414, 565];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);

@@ -33,7 +33,6 @@ import { SCENES as L_business_m2_l1_reactive_vs_proactive_S, SCENE_FRAMES as L_b
 import { SCENES as L_analyst_m5_l1_four_numbers_dashboard_S, SCENE_FRAMES as L_analyst_m5_l1_four_numbers_dashboard_F, TOTAL_FRAMES as L_analyst_m5_l1_four_numbers_dashboard_T } from "./lessons-generated/analyst-m5-l1-four-numbers-dashboard.gen";
 import { SCENES as L_business_m5_l2_system_then_people_S, SCENE_FRAMES as L_business_m5_l2_system_then_people_F, TOTAL_FRAMES as L_business_m5_l2_system_then_people_T } from "./lessons-generated/business-m5-l2-system-then-people.gen";
 import { SCENES as L_business_m6_l2_premature_scaling_S, SCENE_FRAMES as L_business_m6_l2_premature_scaling_F, TOTAL_FRAMES as L_business_m6_l2_premature_scaling_T } from "./lessons-generated/business-m6-l2-premature-scaling.gen";
-import { SCENES as L_analyst_m3_l2_ai_summarization_S, SCENE_FRAMES as L_analyst_m3_l2_ai_summarization_F, TOTAL_FRAMES as L_analyst_m3_l2_ai_summarization_T } from "./lessons-generated/analyst-m3-l2-ai-summarization.gen";
 import { SCENES as L_business_m3_l2_retention_flow_S, SCENE_FRAMES as L_business_m3_l2_retention_flow_F, TOTAL_FRAMES as L_business_m3_l2_retention_flow_T } from "./lessons-generated/business-m3-l2-retention-flow.gen";
 import { SCENES as L_business_m4_l2_delegate_or_automate_S, SCENE_FRAMES as L_business_m4_l2_delegate_or_automate_F, TOTAL_FRAMES as L_business_m4_l2_delegate_or_automate_T } from "./lessons-generated/business-m4-l2-delegate-or-automate.gen";
 import { SCENES as L_analyst_m4_l2_decision_rule_S, SCENE_FRAMES as L_analyst_m4_l2_decision_rule_F, TOTAL_FRAMES as L_analyst_m4_l2_decision_rule_T } from "./lessons-generated/analyst-m4-l2-decision-rule.gen";
@@ -125,6 +124,7 @@ import { SCENES as L_builder_m2_l3_style_control_S, SCENE_FRAMES as L_builder_m2
 import { SCENES as L_builder_m6_l5_iteration_S, SCENE_FRAMES as L_builder_m6_l5_iteration_F, TOTAL_FRAMES as L_builder_m6_l5_iteration_T } from "./lessons-generated/builder-m6-l5-iteration.gen";
 import { SCENES as L_creator_m7_l2_grid_consistency_S, SCENE_FRAMES as L_creator_m7_l2_grid_consistency_F, TOTAL_FRAMES as L_creator_m7_l2_grid_consistency_T } from "./lessons-generated/creator-m7-l2-grid-consistency.gen";
 import { SCENES as L_builder_m6_l6_debugging_S, SCENE_FRAMES as L_builder_m6_l6_debugging_F, TOTAL_FRAMES as L_builder_m6_l6_debugging_T } from "./lessons-generated/builder-m6-l6-debugging.gen";
+import { SCENES as L_analyst_m3_l2_ai_summarization_S, SCENE_FRAMES as L_analyst_m3_l2_ai_summarization_F, TOTAL_FRAMES as L_analyst_m3_l2_ai_summarization_T } from "./lessons-generated/analyst-m3-l2-ai-summarization.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -151,7 +151,6 @@ export const LESSONS: LessonModule[] = [
     { id: "analyst-m5-l1-four-numbers-dashboard", scenes: L_analyst_m5_l1_four_numbers_dashboard_S, sceneFrames: L_analyst_m5_l1_four_numbers_dashboard_F, totalFrames: L_analyst_m5_l1_four_numbers_dashboard_T },
     { id: "business-m5-l2-system-then-people", scenes: L_business_m5_l2_system_then_people_S, sceneFrames: L_business_m5_l2_system_then_people_F, totalFrames: L_business_m5_l2_system_then_people_T },
     { id: "business-m6-l2-premature-scaling", scenes: L_business_m6_l2_premature_scaling_S, sceneFrames: L_business_m6_l2_premature_scaling_F, totalFrames: L_business_m6_l2_premature_scaling_T },
-    { id: "analyst-m3-l2-ai-summarization", scenes: L_analyst_m3_l2_ai_summarization_S, sceneFrames: L_analyst_m3_l2_ai_summarization_F, totalFrames: L_analyst_m3_l2_ai_summarization_T },
     { id: "business-m3-l2-retention-flow", scenes: L_business_m3_l2_retention_flow_S, sceneFrames: L_business_m3_l2_retention_flow_F, totalFrames: L_business_m3_l2_retention_flow_T },
     { id: "business-m4-l2-delegate-or-automate", scenes: L_business_m4_l2_delegate_or_automate_S, sceneFrames: L_business_m4_l2_delegate_or_automate_F, totalFrames: L_business_m4_l2_delegate_or_automate_T },
     { id: "analyst-m4-l2-decision-rule", scenes: L_analyst_m4_l2_decision_rule_S, sceneFrames: L_analyst_m4_l2_decision_rule_F, totalFrames: L_analyst_m4_l2_decision_rule_T },
@@ -241,5 +240,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m6-l5-iteration", scenes: L_builder_m6_l5_iteration_S, sceneFrames: L_builder_m6_l5_iteration_F, totalFrames: L_builder_m6_l5_iteration_T },
     { id: "creator-m7-l2-grid-consistency", scenes: L_creator_m7_l2_grid_consistency_S, sceneFrames: L_creator_m7_l2_grid_consistency_F, totalFrames: L_creator_m7_l2_grid_consistency_T },
     { id: "builder-m6-l6-debugging", scenes: L_builder_m6_l6_debugging_S, sceneFrames: L_builder_m6_l6_debugging_F, totalFrames: L_builder_m6_l6_debugging_T },
+    { id: "analyst-m3-l2-ai-summarization", scenes: L_analyst_m3_l2_ai_summarization_S, sceneFrames: L_analyst_m3_l2_ai_summarization_F, totalFrames: L_analyst_m3_l2_ai_summarization_T },
   /* @lesson-entries-end */
 ];
