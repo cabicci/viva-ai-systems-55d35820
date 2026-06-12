@@ -69,6 +69,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "business-m1-l3-ai-thinking-partner": "06284c99-b7b5-4ec2-b3f6-77439d70acb6",
   "business-m2-l1-customer-lifecycle": "534a68de-98dd-42d7-b3e1-007c1e105c41",
   "business-m2-l1-reactive-vs-proactive": "9ab18665-e91c-46d4-ac12-b26550f50e99",
+  "business-m2-l2-build-your-offer": "59746f39-a1bd-4665-bd7b-54b46cdea560",
   "business-m2-l2-retention-flow": "19c447db-b8d9-4743-a1c7-d07dd9ffcf75",
   "business-m2-l2-weekly-rhythm": "4515f29b-6544-462c-8247-a09b64ede410",
   "business-m2-l3-readiness-signals": "25d2b892-5514-46ec-9231-a050a64430ca",
@@ -119,6 +120,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "intro-m1-l5-ai-vs-software": "49f45275-18f2-42f8-b9eb-53bcab98098a",
   "intro-m1-l6-learn-without-fear": "8a8fac75-7728-4b81-b407-4b3304670098",
   "intro-m1-l7-choose-your-path": "bc5773b0-0ec3-4611-a2f5-89b19bc8407f",
+
 };
 
 export function getBunnyEmbedUrl(lessonId: string | undefined): string | undefined {

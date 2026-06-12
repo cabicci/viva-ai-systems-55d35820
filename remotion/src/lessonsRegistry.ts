@@ -123,6 +123,7 @@ import { SCENES as L_builder_m2_l1_prompt_layer_S, SCENE_FRAMES as L_builder_m2_
 import { SCENES as L_creator_m2_l2_content_pillars_S, SCENE_FRAMES as L_creator_m2_l2_content_pillars_F, TOTAL_FRAMES as L_creator_m2_l2_content_pillars_T } from "./lessons-generated/creator-m2-l2-content-pillars.gen";
 import { SCENES as L_creator_m3_l1_hook_S, SCENE_FRAMES as L_creator_m3_l1_hook_F, TOTAL_FRAMES as L_creator_m3_l1_hook_T } from "./lessons-generated/creator-m3-l1-hook.gen";
 import { SCENES as L_creator_m7_l1_brand_basics_S, SCENE_FRAMES as L_creator_m7_l1_brand_basics_F, TOTAL_FRAMES as L_creator_m7_l1_brand_basics_T } from "./lessons-generated/creator-m7-l1-brand-basics.gen";
+import { SCENES as L_business_m2_l2_build_your_offer_S, SCENE_FRAMES as L_business_m2_l2_build_your_offer_F, TOTAL_FRAMES as L_business_m2_l2_build_your_offer_T } from "./lessons-generated/business-m2-l2-build-your-offer.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -237,5 +238,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m2-l2-content-pillars", scenes: L_creator_m2_l2_content_pillars_S, sceneFrames: L_creator_m2_l2_content_pillars_F, totalFrames: L_creator_m2_l2_content_pillars_T },
     { id: "creator-m3-l1-hook", scenes: L_creator_m3_l1_hook_S, sceneFrames: L_creator_m3_l1_hook_F, totalFrames: L_creator_m3_l1_hook_T },
     { id: "creator-m7-l1-brand-basics", scenes: L_creator_m7_l1_brand_basics_S, sceneFrames: L_creator_m7_l1_brand_basics_F, totalFrames: L_creator_m7_l1_brand_basics_T },
+    { id: "business-m2-l2-build-your-offer", scenes: L_business_m2_l2_build_your_offer_S, sceneFrames: L_business_m2_l2_build_your_offer_F, totalFrames: L_business_m2_l2_build_your_offer_T },
   /* @lesson-entries-end */
 ];
