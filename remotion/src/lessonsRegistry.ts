@@ -18,7 +18,6 @@ import { SCENES as L_creator_m4_mobile_shooting_S, SCENE_FRAMES as L_creator_m4_
 import { SCENES as L_creator_m4_reality_check_S, SCENE_FRAMES as L_creator_m4_reality_check_F, TOTAL_FRAMES as L_creator_m4_reality_check_T } from "./lessons-generated/creator-m4-reality-check.gen";
 import { SCENES as L_creator_m5_l2_thumbnails_captions_S, SCENE_FRAMES as L_creator_m5_l2_thumbnails_captions_F, TOTAL_FRAMES as L_creator_m5_l2_thumbnails_captions_T } from "./lessons-generated/creator-m5-l2-thumbnails-captions.gen";
 import { SCENES as L_creator_m6_l1_platforms_S, SCENE_FRAMES as L_creator_m6_l1_platforms_F, TOTAL_FRAMES as L_creator_m6_l1_platforms_T } from "./lessons-generated/creator-m6-l1-platforms.gen";
-import { SCENES as L_automator_m2_l3_decide_what_to_automate_S, SCENE_FRAMES as L_automator_m2_l3_decide_what_to_automate_F, TOTAL_FRAMES as L_automator_m2_l3_decide_what_to_automate_T } from "./lessons-generated/automator-m2-l3-decide-what-to-automate.gen";
 import { SCENES as L_automator_m5_l1_llm_in_flow_S, SCENE_FRAMES as L_automator_m5_l1_llm_in_flow_F, TOTAL_FRAMES as L_automator_m5_l1_llm_in_flow_T } from "./lessons-generated/automator-m5-l1-llm-in-flow.gen";
 import { SCENES as L_automator_m3_l3_filters_routers_S, SCENE_FRAMES as L_automator_m3_l3_filters_routers_F, TOTAL_FRAMES as L_automator_m3_l3_filters_routers_T } from "./lessons-generated/automator-m3-l3-filters-routers.gen";
 import { SCENES as L_automator_m6_l3_follow_up_S, SCENE_FRAMES as L_automator_m6_l3_follow_up_F, TOTAL_FRAMES as L_automator_m6_l3_follow_up_T } from "./lessons-generated/automator-m6-l3-follow-up.gen";
@@ -125,6 +124,7 @@ import { SCENES as L_builder_m6_l6_debugging_S, SCENE_FRAMES as L_builder_m6_l6_
 import { SCENES as L_analyst_m3_l2_ai_summarization_S, SCENE_FRAMES as L_analyst_m3_l2_ai_summarization_F, TOTAL_FRAMES as L_analyst_m3_l2_ai_summarization_T } from "./lessons-generated/analyst-m3-l2-ai-summarization.gen";
 import { SCENES as L_builder_m7_l1_tables_columns_S, SCENE_FRAMES as L_builder_m7_l1_tables_columns_F, TOTAL_FRAMES as L_builder_m7_l1_tables_columns_T } from "./lessons-generated/builder-m7-l1-tables-columns.gen";
 import { SCENES as L_automator_m3_l2_triggers_actions_S, SCENE_FRAMES as L_automator_m3_l2_triggers_actions_F, TOTAL_FRAMES as L_automator_m3_l2_triggers_actions_T } from "./lessons-generated/automator-m3-l2-triggers-actions.gen";
+import { SCENES as L_automator_m2_l3_decide_what_to_automate_S, SCENE_FRAMES as L_automator_m2_l3_decide_what_to_automate_F, TOTAL_FRAMES as L_automator_m2_l3_decide_what_to_automate_T } from "./lessons-generated/automator-m2-l3-decide-what-to-automate.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -136,7 +136,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m4-l1-reality-check", scenes: L_creator_m4_reality_check_S, sceneFrames: L_creator_m4_reality_check_F, totalFrames: L_creator_m4_reality_check_T },
     { id: "creator-m5-l2-thumbnails-captions", scenes: L_creator_m5_l2_thumbnails_captions_S, sceneFrames: L_creator_m5_l2_thumbnails_captions_F, totalFrames: L_creator_m5_l2_thumbnails_captions_T },
     { id: "creator-m6-l1-platforms", scenes: L_creator_m6_l1_platforms_S, sceneFrames: L_creator_m6_l1_platforms_F, totalFrames: L_creator_m6_l1_platforms_T },
-    { id: "automator-m2-l3-decide-what-to-automate", scenes: L_automator_m2_l3_decide_what_to_automate_S, sceneFrames: L_automator_m2_l3_decide_what_to_automate_F, totalFrames: L_automator_m2_l3_decide_what_to_automate_T },
     { id: "automator-m5-l1-llm-in-flow", scenes: L_automator_m5_l1_llm_in_flow_S, sceneFrames: L_automator_m5_l1_llm_in_flow_F, totalFrames: L_automator_m5_l1_llm_in_flow_T },
     { id: "automator-m3-l3-filters-routers", scenes: L_automator_m3_l3_filters_routers_S, sceneFrames: L_automator_m3_l3_filters_routers_F, totalFrames: L_automator_m3_l3_filters_routers_T },
     { id: "automator-m6-l3-follow-up", scenes: L_automator_m6_l3_follow_up_S, sceneFrames: L_automator_m6_l3_follow_up_F, totalFrames: L_automator_m6_l3_follow_up_T },
@@ -241,5 +240,6 @@ export const LESSONS: LessonModule[] = [
     { id: "analyst-m3-l2-ai-summarization", scenes: L_analyst_m3_l2_ai_summarization_S, sceneFrames: L_analyst_m3_l2_ai_summarization_F, totalFrames: L_analyst_m3_l2_ai_summarization_T },
     { id: "builder-m7-l1-tables-columns", scenes: L_builder_m7_l1_tables_columns_S, sceneFrames: L_builder_m7_l1_tables_columns_F, totalFrames: L_builder_m7_l1_tables_columns_T },
     { id: "automator-m3-l2-triggers-actions", scenes: L_automator_m3_l2_triggers_actions_S, sceneFrames: L_automator_m3_l2_triggers_actions_F, totalFrames: L_automator_m3_l2_triggers_actions_T },
+    { id: "automator-m2-l3-decide-what-to-automate", scenes: L_automator_m2_l3_decide_what_to_automate_S, sceneFrames: L_automator_m2_l3_decide_what_to_automate_F, totalFrames: L_automator_m2_l3_decide_what_to_automate_T },
   /* @lesson-entries-end */
 ];
