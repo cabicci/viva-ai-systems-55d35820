@@ -66,7 +66,6 @@ import { SCENES as L_builder_m5_l2_frontend_S, SCENE_FRAMES as L_builder_m5_l2_f
 import { SCENES as L_builder_m7_l2_relations_S, SCENE_FRAMES as L_builder_m7_l2_relations_F, TOTAL_FRAMES as L_builder_m7_l2_relations_T } from "./lessons-generated/builder-m7-l2-relations.gen";
 import { SCENES as L_builder_m7_l3_queries_S, SCENE_FRAMES as L_builder_m7_l3_queries_F, TOTAL_FRAMES as L_builder_m7_l3_queries_T } from "./lessons-generated/builder-m7-l3-queries.gen";
 import { SCENES as L_builder_m8_l2_rls_S, SCENE_FRAMES as L_builder_m8_l2_rls_F, TOTAL_FRAMES as L_builder_m8_l2_rls_T } from "./lessons-generated/builder-m8-l2-rls.gen";
-import { SCENES as L_builder_m6_l4_components_routes_S, SCENE_FRAMES as L_builder_m6_l4_components_routes_F, TOTAL_FRAMES as L_builder_m6_l4_components_routes_T } from "./lessons-generated/builder-m6-l4-components-routes.gen";
 import { SCENES as L_builder_m6_l5_iteration_S, SCENE_FRAMES as L_builder_m6_l5_iteration_F, TOTAL_FRAMES as L_builder_m6_l5_iteration_T } from "./lessons-generated/builder-m6-l5-iteration.gen";
 import { SCENES as L_builder_m9_l2_embeddings_S, SCENE_FRAMES as L_builder_m9_l2_embeddings_F, TOTAL_FRAMES as L_builder_m9_l2_embeddings_T } from "./lessons-generated/builder-m9-l2-embeddings.gen";
 import { SCENES as L_builder_m9_l1_rag_S, SCENE_FRAMES as L_builder_m9_l1_rag_F, TOTAL_FRAMES as L_builder_m9_l1_rag_T } from "./lessons-generated/builder-m9-l1-rag.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_analyst_m2_l1_feeling_to_question_S, SCENE_FRAMES as L_anal
 import { SCENES as L_business_m2_l1_customer_lifecycle_S, SCENE_FRAMES as L_business_m2_l1_customer_lifecycle_F, TOTAL_FRAMES as L_business_m2_l1_customer_lifecycle_T } from "./lessons-generated/business-m2-l1-customer-lifecycle.gen";
 import { SCENES as L_automator_m5_l2_rag_in_n8n_S, SCENE_FRAMES as L_automator_m5_l2_rag_in_n8n_F, TOTAL_FRAMES as L_automator_m5_l2_rag_in_n8n_T } from "./lessons-generated/automator-m5-l2-rag-in-n8n.gen";
 import { SCENES as L_creator_m6_l2_scheduling_S, SCENE_FRAMES as L_creator_m6_l2_scheduling_F, TOTAL_FRAMES as L_creator_m6_l2_scheduling_T } from "./lessons-generated/creator-m6-l2-scheduling.gen";
+import { SCENES as L_builder_m6_l4_components_routes_S, SCENE_FRAMES as L_builder_m6_l4_components_routes_F, TOTAL_FRAMES as L_builder_m6_l4_components_routes_T } from "./lessons-generated/builder-m6-l4-components-routes.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -180,7 +180,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m7-l2-relations", scenes: L_builder_m7_l2_relations_S, sceneFrames: L_builder_m7_l2_relations_F, totalFrames: L_builder_m7_l2_relations_T },
     { id: "builder-m7-l3-queries", scenes: L_builder_m7_l3_queries_S, sceneFrames: L_builder_m7_l3_queries_F, totalFrames: L_builder_m7_l3_queries_T },
     { id: "builder-m8-l2-rls", scenes: L_builder_m8_l2_rls_S, sceneFrames: L_builder_m8_l2_rls_F, totalFrames: L_builder_m8_l2_rls_T },
-    { id: "builder-m6-l4-components-routes", scenes: L_builder_m6_l4_components_routes_S, sceneFrames: L_builder_m6_l4_components_routes_F, totalFrames: L_builder_m6_l4_components_routes_T },
     { id: "builder-m6-l5-iteration", scenes: L_builder_m6_l5_iteration_S, sceneFrames: L_builder_m6_l5_iteration_F, totalFrames: L_builder_m6_l5_iteration_T },
     { id: "builder-m9-l2-embeddings", scenes: L_builder_m9_l2_embeddings_S, sceneFrames: L_builder_m9_l2_embeddings_F, totalFrames: L_builder_m9_l2_embeddings_T },
     { id: "builder-m9-l1-rag", scenes: L_builder_m9_l1_rag_S, sceneFrames: L_builder_m9_l1_rag_F, totalFrames: L_builder_m9_l1_rag_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m2-l1-customer-lifecycle", scenes: L_business_m2_l1_customer_lifecycle_S, sceneFrames: L_business_m2_l1_customer_lifecycle_F, totalFrames: L_business_m2_l1_customer_lifecycle_T },
     { id: "automator-m5-l2-rag-in-n8n", scenes: L_automator_m5_l2_rag_in_n8n_S, sceneFrames: L_automator_m5_l2_rag_in_n8n_F, totalFrames: L_automator_m5_l2_rag_in_n8n_T },
     { id: "creator-m6-l2-scheduling", scenes: L_creator_m6_l2_scheduling_S, sceneFrames: L_creator_m6_l2_scheduling_F, totalFrames: L_creator_m6_l2_scheduling_T },
+    { id: "builder-m6-l4-components-routes", scenes: L_builder_m6_l4_components_routes_S, sceneFrames: L_builder_m6_l4_components_routes_F, totalFrames: L_builder_m6_l4_components_routes_T },
   /* @lesson-entries-end */
 ];
