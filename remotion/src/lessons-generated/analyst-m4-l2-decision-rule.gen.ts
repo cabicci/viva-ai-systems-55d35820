@@ -5,105 +5,87 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "chip": "أهلًا",
-    "title": "كل تفسير ينتهي بـ «إذًا هعمل…»",
-    "subtitle": "تفسير من غير قرار = وقت ضايع. كل insight لازم يطلّع action.",
-    "highlight": "إذًا هعمل…"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "فهم من الأرقام",
-    "term": "Insight",
-    "definition": "فهم جديد وواضح طلعته من الأرقام بيعرفك الدنيا ماشية إزاي."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "tag": "خطوة فعلية",
-    "term": "Action",
-    "definition": "القرار أو الخطوة اللي هتاخدها فعلياً بناءً على اللي فهمته."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "tag": "مقياس أداء",
-    "term": "Metric",
-    "definition": "حاجة بنقيس بيها الأداء، زي المسطرة اللي بنقيس بيها الشغل."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "tag": "الخط الأحمر",
-    "term": "Threshold",
-    "definition": "الرقم \"الخط الأحمر\" اللي لو عديناه لازم ناخد تصرف فوراً."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "tag": "شكل واستخدام",
-    "term": "UI/UX",
-    "definition": "شكل الموقع أو التطبيق وإزاي الزبون بيستخدمه بسهولة."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "tag": "مقارنة فكرتين",
-    "term": "A/B Testing",
-    "definition": "تجربة بنقارن فيها بين فكرتين عشان نشوف أنهي واحدة نتيجتها أحسن."
+    "title": "هتفهم إيه النهاردة؟",
+    "chip": "بداية الدرس",
+    "subtitle": "القرار محتاج مقارنة وأرقام مرتبطة.",
+    "highlight": "رقم واحد ممكن يضلّلك"
   },
   {
     "card": "BulletsCard",
     "accent": "lavender",
     "bullets": [
-      "Insight: «٧٠٪ من العملاء بيسألوا عن السعر قبل المنتج».",
-      "Action: «أضيف السعر في أول رسالة على WhatsApp».",
-      "Owner: «أنا».",
-      "Deadline: «الأربعاء».",
-      "من غير الـ ٤ عناصر دي = القرار مش هيتنفّذ."
+      "مدير بيقول: «المبيعات نزلت ١٠٪». الفريق بي panics — خصومات، إعلانات، اجتماعات طوارئ.",
+      "حد بيسأل: «نزلت مقارنة بإيه؟» — طلع مقارنة بأسبوع فيه عرض خاص. مقارنة بالشهر اللي فات: ثابتة.",
+      "رقم من غير مقارنة = نصف قصة. القرار الصح يبدأ بـ: مقارنة بإيه؟ وإيه الرقم التاني اللي يفسّر الصورة؟"
     ],
-    "title": "Insight → Action → Owner → Deadline"
+    "title": "«المبيعات نزلت ١٠٪» — وقفّت كل حاجة"
   },
   {
     "card": "BulletsCard",
     "accent": "peach",
+    "title": "قاعدة القرار: ٣ أسئلة قبل أي action",
     "bullets": [
-      "مثال حقيقي بـ ٤ خانات — من غير الـ ٤ القرار مش هيتنفّذ."
-    ],
-    "title": "Insight → Action → Owner → Deadline"
+      "١) Compared to what? — مقارنة بإيه؟ (الأسبوع اللي فات، نفس الفترة السنة اللي اللي فاتت، الهدف)",
+      "٢) What related number matters? — إيه الرقم المرتبط؟ (مبيعات نزلت — بس الطلبات زادت؟ التحويل هو المشكلة)",
+      "٣) What action would change? — إيه اللي هييتغيّر لو اتخذت قرار؟ (مين ينفّذ؟ إمتى؟)",
+      "من غير الـ ٣ أسئلة دول — أي «insight» ممكن يكون كلام في الهوا."
+    ]
   },
   {
     "card": "CompareCard",
     "accent": "yellow",
-    "left": {
-      "body": "البيانات قالتلك حاجة. مفيش حد عمل حاجة. نفس المشكلة الأسبوع الجاي.",
-      "label": "FAILURE — «إيه ده مثير للاهتمام»"
-    },
-    "title": "تفسير ميّت vs قرار حي",
     "right": {
-      "body": "كل insight بيتحوّل لـ task لها owner و deadline. الأسبوع الجاي بتقيس الأثر.",
-      "label": "RIGHT — «إذًا الأربعاء أنا هعمل…»"
+      "body": "«التحويل ٨٪ — كان ١٢٪ الأسبوع اللي فات، والطلبات زادت». قرار: «نراجع رسالة التسعير — أنا — الأربعاء».",
+      "label": "رقم + مقارنة + action"
+    },
+    "title": "رقم لوحده vs رقم في سياق قرار",
+    "left": {
+      "body": "«التحويل ٨٪». قرار: «نزوّد الإعلانات». — مش عارفين لو ٨٪ كويس ولا وحش.",
+      "label": "رقم من غير مقارنة"
     }
   },
   {
-    "card": "CTACard",
+    "card": "ConceptCard",
     "accent": "pink",
-    "title": "حوّل ٣ insights لـ ٣ قرارات",
-    "tagline": "حلّ الأسئلة اللي جاية وطبّق اللي اتعلّمته عشان تحوّل الـ insights لقرارات حقيقية.",
-    "highlight": "٣ قرارات",
+    "tag": "رقم المقارنة",
+    "term": "Baseline (خط أساس)",
+    "definition": "الرقم اللي بتقارن عليه — «الطبيعي» قبل ما تحكم."
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "mintDeep",
+    "tag": "شرط + فعل",
+    "term": "Decision Rule (قاعدة قرار)",
+    "definition": "لو [شرط بأرقام] → [action محدّد]."
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "mint",
+    "title": "Decision Chain",
+    "bullets": [
+      "رقم → مقارنة بإيه",
+      "رقم مرتبط → action",
+      "من غير السلسلة دي القرار مش هيتنفّذ."
+    ]
+  },
+  {
+    "card": "CTACard",
+    "accent": "lavender",
+    "tagline": "طبّق اللي اتعلّمته في سؤال سريع عشان تأكد فهمك.",
+    "title": "سؤال واحد",
+    "highlight": "مش امتحان",
     "eyebrow": "دورك دلوقتي"
   },
   {
     "card": "BulletsCard",
-    "accent": "mintDeep",
+    "accent": "peach",
     "bullets": [
-      "كل widget له action واحد مقترح على الأقل.",
-      "Actions بتظهر كزرار، مش كنص.",
-      "بنتابع كم action اتنفّذ vs كم اتعرض."
+      "فهمت إيه؟ رقم واحد مش كفاية — القرار محتاج مقارنة، رقم مرتبط، وaction واضح.",
+      "تقدر تعمل إيه؟ تقدر توقّف أي «insight» وتسأل الـ ٣ أسئلة قبل ما تتحرّك."
     ],
-    "title": "كل insight في /analytics جنبه action مقترح"
+    "title": "إيه اللي عندك دلوقتي؟"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [395, 279, 280, 215, 263, 259, 265, 341, 240, 606, 489, 406];
+export const SCENE_FRAMES: number[] = [451, 511, 497, 553, 419, 499, 401, 316, 480];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
