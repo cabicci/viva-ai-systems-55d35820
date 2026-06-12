@@ -14,7 +14,6 @@ export type LessonModule = LessonRendererProps & {
 import { SCENES as L_creator_m3_l3_cta_S, SCENE_FRAMES as L_creator_m3_l3_cta_F, TOTAL_FRAMES as L_creator_m3_l3_cta_T } from "./lessons-generated/creator-m3-l3-cta.gen";
 import { SCENES as L_creator_m3_l1_hook_S, SCENE_FRAMES as L_creator_m3_l1_hook_F, TOTAL_FRAMES as L_creator_m3_l1_hook_T } from "./lessons-generated/creator-m3-l1-hook.gen";
 import { SCENES as L_creator_m3_l2_script_structure_S, SCENE_FRAMES as L_creator_m3_l2_script_structure_F, TOTAL_FRAMES as L_creator_m3_l2_script_structure_T } from "./lessons-generated/creator-m3-l2-script-structure.gen";
-import { SCENES as L_creator_m2_l2_content_pillars_S, SCENE_FRAMES as L_creator_m2_l2_content_pillars_F, TOTAL_FRAMES as L_creator_m2_l2_content_pillars_T } from "./lessons-generated/creator-m2-l2-content-pillars.gen";
 import { SCENES as L_creator_m4_ai_writing_S, SCENE_FRAMES as L_creator_m4_ai_writing_F, TOTAL_FRAMES as L_creator_m4_ai_writing_T } from "./lessons-generated/creator-m4-ai-writing.gen";
 import { SCENES as L_creator_m5_l1_editing_S, SCENE_FRAMES as L_creator_m5_l1_editing_F, TOTAL_FRAMES as L_creator_m5_l1_editing_T } from "./lessons-generated/creator-m5-l1-editing.gen";
 import { SCENES as L_creator_m4_mobile_shooting_S, SCENE_FRAMES as L_creator_m4_mobile_shooting_F, TOTAL_FRAMES as L_creator_m4_mobile_shooting_T } from "./lessons-generated/creator-m4-mobile-shooting.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_automator_m5_l3_agents_S, SCENE_FRAMES as L_automator_m5_l3
 import { SCENES as L_automator_m2_l1_systems_view_S, SCENE_FRAMES as L_automator_m2_l1_systems_view_F, TOTAL_FRAMES as L_automator_m2_l1_systems_view_T } from "./lessons-generated/automator-m2-l1-systems-view.gen";
 import { SCENES as L_analyst_m7_l1_from_decisions_to_business_S, SCENE_FRAMES as L_analyst_m7_l1_from_decisions_to_business_F, TOTAL_FRAMES as L_analyst_m7_l1_from_decisions_to_business_T } from "./lessons-generated/analyst-m7-l1-from-decisions-to-business.gen";
 import { SCENES as L_builder_m2_l1_prompt_layer_S, SCENE_FRAMES as L_builder_m2_l1_prompt_layer_F, TOTAL_FRAMES as L_builder_m2_l1_prompt_layer_T } from "./lessons-generated/builder-m2-l1-prompt-layer.gen";
+import { SCENES as L_creator_m2_l2_content_pillars_S, SCENE_FRAMES as L_creator_m2_l2_content_pillars_F, TOTAL_FRAMES as L_creator_m2_l2_content_pillars_T } from "./lessons-generated/creator-m2-l2-content-pillars.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -130,7 +130,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m3-l3-cta", scenes: L_creator_m3_l3_cta_S, sceneFrames: L_creator_m3_l3_cta_F, totalFrames: L_creator_m3_l3_cta_T },
     { id: "creator-m3-l1-hook", scenes: L_creator_m3_l1_hook_S, sceneFrames: L_creator_m3_l1_hook_F, totalFrames: L_creator_m3_l1_hook_T },
     { id: "creator-m3-l2-script-structure", scenes: L_creator_m3_l2_script_structure_S, sceneFrames: L_creator_m3_l2_script_structure_F, totalFrames: L_creator_m3_l2_script_structure_T },
-    { id: "creator-m2-l2-content-pillars", scenes: L_creator_m2_l2_content_pillars_S, sceneFrames: L_creator_m2_l2_content_pillars_F, totalFrames: L_creator_m2_l2_content_pillars_T },
     { id: "creator-m4-l3-ai-writing", scenes: L_creator_m4_ai_writing_S, sceneFrames: L_creator_m4_ai_writing_F, totalFrames: L_creator_m4_ai_writing_T },
     { id: "creator-m5-l1-editing", scenes: L_creator_m5_l1_editing_S, sceneFrames: L_creator_m5_l1_editing_F, totalFrames: L_creator_m5_l1_editing_T },
     { id: "creator-m4-l2-mobile-shooting", scenes: L_creator_m4_mobile_shooting_S, sceneFrames: L_creator_m4_mobile_shooting_F, totalFrames: L_creator_m4_mobile_shooting_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "automator-m2-l1-systems-view", scenes: L_automator_m2_l1_systems_view_S, sceneFrames: L_automator_m2_l1_systems_view_F, totalFrames: L_automator_m2_l1_systems_view_T },
     { id: "analyst-m7-l1-from-decisions-to-business", scenes: L_analyst_m7_l1_from_decisions_to_business_S, sceneFrames: L_analyst_m7_l1_from_decisions_to_business_F, totalFrames: L_analyst_m7_l1_from_decisions_to_business_T },
     { id: "builder-m2-l1-prompt-layer", scenes: L_builder_m2_l1_prompt_layer_S, sceneFrames: L_builder_m2_l1_prompt_layer_F, totalFrames: L_builder_m2_l1_prompt_layer_T },
+    { id: "creator-m2-l2-content-pillars", scenes: L_creator_m2_l2_content_pillars_S, sceneFrames: L_creator_m2_l2_content_pillars_F, totalFrames: L_creator_m2_l2_content_pillars_T },
   /* @lesson-entries-end */
 ];
