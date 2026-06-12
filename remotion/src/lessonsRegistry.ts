@@ -14,7 +14,6 @@ export type LessonModule = LessonRendererProps & {
 import { SCENES as L_creator_m4_ai_writing_S, SCENE_FRAMES as L_creator_m4_ai_writing_F, TOTAL_FRAMES as L_creator_m4_ai_writing_T } from "./lessons-generated/creator-m4-ai-writing.gen";
 import { SCENES as L_creator_m4_mobile_shooting_S, SCENE_FRAMES as L_creator_m4_mobile_shooting_F, TOTAL_FRAMES as L_creator_m4_mobile_shooting_T } from "./lessons-generated/creator-m4-mobile-shooting.gen";
 import { SCENES as L_creator_m4_reality_check_S, SCENE_FRAMES as L_creator_m4_reality_check_F, TOTAL_FRAMES as L_creator_m4_reality_check_T } from "./lessons-generated/creator-m4-reality-check.gen";
-import { SCENES as L_automator_m5_l1_llm_in_flow_S, SCENE_FRAMES as L_automator_m5_l1_llm_in_flow_F, TOTAL_FRAMES as L_automator_m5_l1_llm_in_flow_T } from "./lessons-generated/automator-m5-l1-llm-in-flow.gen";
 import { SCENES as L_business_m4_l1_strategic_operational_admin_S, SCENE_FRAMES as L_business_m4_l1_strategic_operational_admin_F, TOTAL_FRAMES as L_business_m4_l1_strategic_operational_admin_T } from "./lessons-generated/business-m4-l1-strategic-operational-admin.gen";
 import { SCENES as L_business_m5_l1_readiness_signals_S, SCENE_FRAMES as L_business_m5_l1_readiness_signals_F, TOTAL_FRAMES as L_business_m5_l1_readiness_signals_T } from "./lessons-generated/business-m5-l1-readiness-signals.gen";
 import { SCENES as L_business_m2_l1_reactive_vs_proactive_S, SCENE_FRAMES as L_business_m2_l1_reactive_vs_proactive_F, TOTAL_FRAMES as L_business_m2_l1_reactive_vs_proactive_T } from "./lessons-generated/business-m2-l1-reactive-vs-proactive.gen";
@@ -22,7 +21,6 @@ import { SCENES as L_business_m5_l2_system_then_people_S, SCENE_FRAMES as L_busi
 import { SCENES as L_business_m6_l2_premature_scaling_S, SCENE_FRAMES as L_business_m6_l2_premature_scaling_F, TOTAL_FRAMES as L_business_m6_l2_premature_scaling_T } from "./lessons-generated/business-m6-l2-premature-scaling.gen";
 import { SCENES as L_business_m3_l2_retention_flow_S, SCENE_FRAMES as L_business_m3_l2_retention_flow_F, TOTAL_FRAMES as L_business_m3_l2_retention_flow_T } from "./lessons-generated/business-m3-l2-retention-flow.gen";
 import { SCENES as L_business_m4_l2_delegate_or_automate_S, SCENE_FRAMES as L_business_m4_l2_delegate_or_automate_F, TOTAL_FRAMES as L_business_m4_l2_delegate_or_automate_T } from "./lessons-generated/business-m4-l2-delegate-or-automate.gen";
-import { SCENES as L_automator_m5_l1_llm_in_flow_S, SCENE_FRAMES as L_automator_m5_l1_llm_in_flow_F, TOTAL_FRAMES as L_automator_m5_l1_llm_in_flow_T } from "./lessons-generated/automator-m5-l1-llm-in-flow.gen";
 import { SCENES as L_business_m6_l1_reactive_relapse_S, SCENE_FRAMES as L_business_m6_l1_reactive_relapse_F, TOTAL_FRAMES as L_business_m6_l1_reactive_relapse_T } from "./lessons-generated/business-m6-l1-reactive-relapse.gen";
 import { SCENES as L_business_m3_l1_customer_lifecycle_S, SCENE_FRAMES as L_business_m3_l1_customer_lifecycle_F, TOTAL_FRAMES as L_business_m3_l1_customer_lifecycle_T } from "./lessons-generated/business-m3-l1-customer-lifecycle.gen";
 import { SCENES as L_builder_m9_l3_agents_S, SCENE_FRAMES as L_builder_m9_l3_agents_F, TOTAL_FRAMES as L_builder_m9_l3_agents_T } from "./lessons-generated/builder-m9-l3-agents.gen";
@@ -130,11 +128,11 @@ import { SCENES as L_analyst_m5_l2_weekly_review_ritual_S, SCENE_FRAMES as L_ana
 import { SCENES as L_builder_m9_l2_embeddings_S, SCENE_FRAMES as L_builder_m9_l2_embeddings_F, TOTAL_FRAMES as L_builder_m9_l2_embeddings_T } from "./lessons-generated/builder-m9-l2-embeddings.gen";
 import { SCENES as L_builder_m9_l1_rag_S, SCENE_FRAMES as L_builder_m9_l1_rag_F, TOTAL_FRAMES as L_builder_m9_l1_rag_T } from "./lessons-generated/builder-m9-l1-rag.gen";
 import { SCENES as L_builder_m5_l4_database_intro_S, SCENE_FRAMES as L_builder_m5_l4_database_intro_F, TOTAL_FRAMES as L_builder_m5_l4_database_intro_T } from "./lessons-generated/builder-m5-l4-database-intro.gen";
+import { SCENES as L_automator_m5_l1_llm_in_flow_S, SCENE_FRAMES as L_automator_m5_l1_llm_in_flow_F, TOTAL_FRAMES as L_automator_m5_l1_llm_in_flow_T } from "./lessons-generated/automator-m5-l1-llm-in-flow.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
   /* @lesson-entries-start */
-    { id: "automator-m5-l1-llm-in-flow", scenes: L_automator_m5_l1_llm_in_flow_S, sceneFrames: L_automator_m5_l1_llm_in_flow_F, totalFrames: L_automator_m5_l1_llm_in_flow_T },
     { id: "business-m4-l1-strategic-operational-admin", scenes: L_business_m4_l1_strategic_operational_admin_S, sceneFrames: L_business_m4_l1_strategic_operational_admin_F, totalFrames: L_business_m4_l1_strategic_operational_admin_T },
     { id: "business-m5-l1-readiness-signals", scenes: L_business_m5_l1_readiness_signals_S, sceneFrames: L_business_m5_l1_readiness_signals_F, totalFrames: L_business_m5_l1_readiness_signals_T },
     { id: "business-m2-l1-reactive-vs-proactive", scenes: L_business_m2_l1_reactive_vs_proactive_S, sceneFrames: L_business_m2_l1_reactive_vs_proactive_F, totalFrames: L_business_m2_l1_reactive_vs_proactive_T },
@@ -249,5 +247,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m9-l2-embeddings", scenes: L_builder_m9_l2_embeddings_S, sceneFrames: L_builder_m9_l2_embeddings_F, totalFrames: L_builder_m9_l2_embeddings_T },
     { id: "builder-m9-l1-rag", scenes: L_builder_m9_l1_rag_S, sceneFrames: L_builder_m9_l1_rag_F, totalFrames: L_builder_m9_l1_rag_T },
     { id: "builder-m5-l4-database-intro", scenes: L_builder_m5_l4_database_intro_S, sceneFrames: L_builder_m5_l4_database_intro_F, totalFrames: L_builder_m5_l4_database_intro_T },
+    { id: "automator-m5-l1-llm-in-flow", scenes: L_automator_m5_l1_llm_in_flow_S, sceneFrames: L_automator_m5_l1_llm_in_flow_F, totalFrames: L_automator_m5_l1_llm_in_flow_T },
   /* @lesson-entries-end */
 ];

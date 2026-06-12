@@ -31,7 +31,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "automator-m4-l1-connect-database": "e8551177-97e5-42d6-91bf-a1bc597364da",
   "automator-m4-l2-webhooks-api": "e7e604e0-7971-42a6-a726-bb1879689948",
   "automator-m4-l3-error-handling": "0969fe18-00d6-4b86-ac62-5a5e5447b412",
-  "automator-m5-l1-llm-in-flow": "31248253-56e3-43a9-ab5f-990c83831c16",
+  "automator-m5-l1-llm-in-flow": "71474654-16c4-4185-9536-f17c498b74c1",
   "automator-m5-l2-rag-in-n8n": "d6430b07-eccd-4726-9e5a-5f2df678e282",
   "automator-m5-l3-agents": "7a29cf43-b0d0-4b36-8abb-cf4092fd7090",
   "automator-m6-l1-lead-capture": "ef00f52b-c114-4880-b275-49ed490ec129",

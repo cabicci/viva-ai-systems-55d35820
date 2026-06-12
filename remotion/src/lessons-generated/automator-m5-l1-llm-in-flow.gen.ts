@@ -5,72 +5,85 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "subtitle": "الفرق هو مين بيقرأ الـ output.",
-    "chip": "أهلًا HERO",
-    "title": "LLM في Builder ≠ LLM في n8n",
-    "highlight": "نفس الموديل، استخدام مختلف تماماً."
+    "title": "هتفهم إيه النهاردة؟",
+    "subtitle": "مش بس نقل بيانات",
+    "highlight": "AI",
+    "chip": "أهلًا"
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "lavender",
-    "tag": "خطوة في الـ workflow",
-    "term": "Node (محطة)",
-    "definition": "خطوة واحدة جوه الـ workflow بتاخد input وترجّع output للخطوة اللي بعدها."
+    "bullets": [
+      "عميل بعت رسالة طويلة على واتساب. الأتمتة نقلتها لجدول — والفريق بيقرأها يدوي ويصنّفها ويرد.",
+      "نفس الشغل المتكرر كل يوم: قراءة، فهم، تصنيف، صياغة رد. الأتمتة نقلت البيانات بس — ماعملتش الشغل اللي بياكل وقت.",
+      "الـ AI يساعدك في الخطوة دي: يقرأ النص، يطلع التصنيف، يلخّص المطلوب، أو يكتب مسودة رد — إنت تراجع وتقرر."
+    ],
+    "title": "الرسالة وصلت — بس محدش فهم المطلوب"
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "peach",
-    "tag": "رد LLM في JSON",
-    "term": "Structured Output (Output منظم)",
-    "definition": "رد الـ LLM في شكل JSON ثابت بأعمدة محددة، مش نص حر."
+    "bullets": [
+      "قبل كده: Trigger → Action → حفظ. البيانات بتتحرك بس مافيش «فهم».",
+      "مع خطوة AI: نفس الـ Flow يقرأ المحتوى ويطلع نتيجة منظمة — تصنيف، ملخص، أو مسودة رد.",
+      "أمثلة من الشغل المتكرر: تصنيف شكوى/استفسار، استخراج اسم ورقم من رسالة عربي، تلخيص طلب، صياغة رد ترحيب.",
+      "الـ AI مش بيستبدل النظام — بيضيف خطوة تفكير واحدة جوه سير شغلك."
+    ],
+    "title": "خطوة AI = قراءة وفهم وكتابة — مش نقل بس"
   },
   {
-    "card": "ConceptCard",
+    "card": "CompareCard",
     "accent": "yellow",
-    "tag": "إعداد لـ JSON",
-    "term": "JSON Mode",
-    "definition": "إعداد في الـ LLM يضمن إن الرد دايماً يطلع JSON صالح للتحليل البرمجي."
+    "right": {
+      "label": "خطوة AI",
+      "body": "رسالة واتساب → AI يصنّفها (شكوى/استفسار/طلب) ويستخرج الاسم والرقم → الـ Flow يوجّهها تلقائي للفرع المناणुب ويبعت مسودة رد."
+    },
+    "title": "نقل بيانات vs فهم وكتابة",
+    "left": {
+      "label": "نقل بس",
+      "body": "رسالة واتساب → تتسجّل في الشيت زي ما هي. حد من الفريق يقرأها ويصنّفها ويرد. كل Leads = شغل يدوي."
+    }
   },
   {
     "card": "ConceptCard",
     "accent": "pink",
-    "tag": "الـ node اللي بعد LLM",
-    "term": "Downstream Node",
-    "definition": "المحطة اللي بعد الـ LLM في الـ workflow — هي اللي هتقرا الرد وتتصرف عليه."
+    "tag": "ذكاء صناعي",
+    "term": "LLM Step (خطوة ذكاء)",
+    "definition": "خطوة في الـ Flow بتبعت نص للـ AI وترجع نتيجة — تصنيف، ملخص، أو نص جاهز."
   },
   {
-    "card": "BulletsCard",
+    "card": "ConceptCard",
     "accent": "mintDeep",
-    "bullets": [
-      "في Builder (M1): الـ LLM = محادثة لوحدها. اللي بيقرا الرد = إنسان. النص الحر مفيد.",
-      "في n8n (M4): الـ LLM = محطة جوه pipeline. اللي بيقرا الرد = الـ node اللي بعدها. النص الحر يكسر الـ workflow.",
-      "علشان كده structured output (JSON) مش اختيار — هو شرط الـ pipeline يكمل.",
-      "Prompt engineering في Builder بيركز على نبرة وأسلوب. في n8n بيركز على schema و output format."
-    ],
-    "title": "نفس الموديل، عقليتين مختلفتين"
+    "term": "Structured Output (رد منظم)",
+    "tag": "تنسيق الرد",
+    "definition": "تطلب من الـ AI يرد بشكل محدد عشان الخطوة اللي بعدها تفهمه من غير تدخل يدوي."
   },
   {
-    "card": "CompareCard",
+    "card": "ScreenshotCard",
     "accent": "mint",
-    "title": "تكتب الـ Prompt إزاي؟",
-    "right": {
-      "body": "\"حلّل الرسالة وارجع JSON بالشكل ده فقط: {\\\"sentiment\\\":\\\"happy|angry|neutral\\\",\\\"reply\\\":\\\"...\\\",\\\"priority\\\":\\\"low|high\\\"}.\" — الـ output يقدر يتحوّل لـ branches و alerts و DB rows مباشرة.",
-      "label": "RIGHT — Prompt مكتوب كأن نظام هيقراه"
-    },
-    "left": {
-      "body": "\"شوف الرسالة دي وقولي العميل متضايق ولا لأ، وقترح رد مناسب.\" — الرد هيرجع نص حر، الـ node اللي بعده مش هيعرف يقرأه، الـ workflow هيقف.",
-      "label": "FAILURE — Prompt مكتوب كأن إنسان هيقراه"
-    }
+    "caption": "الفكرة: استقبال → فهم بالـ AI → قرار أو رد. الخطوة الوسطى هي اللي بتوفر الشغل اليدوي المتكرر.",
+    "title": "خطوة AI في منتصف السير",
+    "src": "lessons/unique/automator-m5-l1-llm-in-flow.jpg",
+    "eyebrow": "لقطة بصرية"
   },
   {
     "card": "CTACard",
     "accent": "lavender",
-    "highlight": "اختبر فهمك",
-    "title": "٥ أسئلة قصيرة قبل ما تكمل",
+    "highlight": "تأكيد فهمك",
     "eyebrow": "دورك دلوقتي",
-    "tagline": "يلا نراجع اللي فات ونشوف فهمت إيه."
+    "title": "سؤال واحد",
+    "tagline": "حل سؤال سريع عشان تتأكد إنك فهمت."
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "peach",
+    "title": "إيه اللي عندك دلوقتي؟",
+    "bullets": [
+      "فهمت إيه؟ الـ AI في الأوتوميشن يقرأ ويصنّف ويلخّص ويكتب — مش بس ينقل بيانات.",
+      "تقدر تعمل إيه؟ عندك خطوة AI واحدة موصوفة وجاهزة تضيفها لسير شغلك."
+    ]
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [423, 353, 457, 387, 351, 640, 617, 285];
+export const SCENE_FRAMES: number[] = [551, 690, 981, 765, 636, 670, 529, 355, 475];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
