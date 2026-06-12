@@ -47,7 +47,6 @@ import { SCENES as L_builder_m9_l1_rag_S, SCENE_FRAMES as L_builder_m9_l1_rag_F,
 import { SCENES as L_builder_m9_l3_agents_S, SCENE_FRAMES as L_builder_m9_l3_agents_F, TOTAL_FRAMES as L_builder_m9_l3_agents_T } from "./lessons-generated/builder-m9-l3-agents.gen";
 import { SCENES as L_builder_m10_l1_deploy_domain_S, SCENE_FRAMES as L_builder_m10_l1_deploy_domain_F, TOTAL_FRAMES as L_builder_m10_l1_deploy_domain_T } from "./lessons-generated/builder-m10-l1-deploy-domain.gen";
 import { SCENES as L_builder_m5_l4_database_intro_S, SCENE_FRAMES as L_builder_m5_l4_database_intro_F, TOTAL_FRAMES as L_builder_m5_l4_database_intro_T } from "./lessons-generated/builder-m5-l4-database-intro.gen";
-import { SCENES as L_builder_m4_l1_parameters_S, SCENE_FRAMES as L_builder_m4_l1_parameters_F, TOTAL_FRAMES as L_builder_m4_l1_parameters_T } from "./lessons-generated/builder-m4-l1-parameters.gen";
 import { SCENES as L_builder_m5_l3_backend_api_S, SCENE_FRAMES as L_builder_m5_l3_backend_api_F, TOTAL_FRAMES as L_builder_m5_l3_backend_api_T } from "./lessons-generated/builder-m5-l3-backend-api.gen";
 import { SCENES as L_builder_m8_l1_sessions_jwt_S, SCENE_FRAMES as L_builder_m8_l1_sessions_jwt_F, TOTAL_FRAMES as L_builder_m8_l1_sessions_jwt_T } from "./lessons-generated/builder-m8-l1-sessions-jwt.gen";
 import { SCENES as L_builder_m5_l5_mini_win_S, SCENE_FRAMES as L_builder_m5_l5_mini_win_F, TOTAL_FRAMES as L_builder_m5_l5_mini_win_T } from "./lessons-generated/builder-m5-l5-mini-win.gen";
@@ -127,6 +126,7 @@ import { SCENES as L_automator_m7_l1_closing_loop_S, SCENE_FRAMES as L_automator
 import { SCENES as L_creator_m4_l1_reality_check_S, SCENE_FRAMES as L_creator_m4_l1_reality_check_F, TOTAL_FRAMES as L_creator_m4_l1_reality_check_T } from "./lessons-generated/creator-m4-l1-reality-check.gen";
 import { SCENES as L_business_m3_l2_strategic_operational_admin_S, SCENE_FRAMES as L_business_m3_l2_strategic_operational_admin_F, TOTAL_FRAMES as L_business_m3_l2_strategic_operational_admin_T } from "./lessons-generated/business-m3-l2-strategic-operational-admin.gen";
 import { SCENES as L_creator_m4_l2_mobile_shooting_S, SCENE_FRAMES as L_creator_m4_l2_mobile_shooting_F, TOTAL_FRAMES as L_creator_m4_l2_mobile_shooting_T } from "./lessons-generated/creator-m4-l2-mobile-shooting.gen";
+import { SCENES as L_builder_m4_l1_parameters_S, SCENE_FRAMES as L_builder_m4_l1_parameters_F, TOTAL_FRAMES as L_builder_m4_l1_parameters_T } from "./lessons-generated/builder-m4-l1-parameters.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -163,7 +163,6 @@ export const LESSONS: LessonModule[] = [
     { id: "builder-m9-l3-agents", scenes: L_builder_m9_l3_agents_S, sceneFrames: L_builder_m9_l3_agents_F, totalFrames: L_builder_m9_l3_agents_T },
     { id: "builder-m10-l1-deploy-domain", scenes: L_builder_m10_l1_deploy_domain_S, sceneFrames: L_builder_m10_l1_deploy_domain_F, totalFrames: L_builder_m10_l1_deploy_domain_T },
     { id: "builder-m5-l4-database-intro", scenes: L_builder_m5_l4_database_intro_S, sceneFrames: L_builder_m5_l4_database_intro_F, totalFrames: L_builder_m5_l4_database_intro_T },
-    { id: "builder-m4-l1-parameters", scenes: L_builder_m4_l1_parameters_S, sceneFrames: L_builder_m4_l1_parameters_F, totalFrames: L_builder_m4_l1_parameters_T },
     { id: "builder-m5-l3-backend-api", scenes: L_builder_m5_l3_backend_api_S, sceneFrames: L_builder_m5_l3_backend_api_F, totalFrames: L_builder_m5_l3_backend_api_T },
     { id: "builder-m8-l1-sessions-jwt", scenes: L_builder_m8_l1_sessions_jwt_S, sceneFrames: L_builder_m8_l1_sessions_jwt_F, totalFrames: L_builder_m8_l1_sessions_jwt_T },
     { id: "builder-m5-l5-mini-win", scenes: L_builder_m5_l5_mini_win_S, sceneFrames: L_builder_m5_l5_mini_win_F, totalFrames: L_builder_m5_l5_mini_win_T },
@@ -243,5 +242,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m4-l1-reality-check", scenes: L_creator_m4_l1_reality_check_S, sceneFrames: L_creator_m4_l1_reality_check_F, totalFrames: L_creator_m4_l1_reality_check_T },
     { id: "business-m3-l2-strategic-operational-admin", scenes: L_business_m3_l2_strategic_operational_admin_S, sceneFrames: L_business_m3_l2_strategic_operational_admin_F, totalFrames: L_business_m3_l2_strategic_operational_admin_T },
     { id: "creator-m4-l2-mobile-shooting", scenes: L_creator_m4_l2_mobile_shooting_S, sceneFrames: L_creator_m4_l2_mobile_shooting_F, totalFrames: L_creator_m4_l2_mobile_shooting_T },
+    { id: "builder-m4-l1-parameters", scenes: L_builder_m4_l1_parameters_S, sceneFrames: L_builder_m4_l1_parameters_F, totalFrames: L_builder_m4_l1_parameters_T },
   /* @lesson-entries-end */
 ];
