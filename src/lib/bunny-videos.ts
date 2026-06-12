@@ -114,7 +114,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "creator-m7-l2-grid-consistency": "32efdb43-191c-40ac-b464-ad3f80e1131c",
   "intro-m1-l1-what-is-ai": "5831030f-4c9f-4a8c-b171-eef993cb3d36",
   "intro-m1-l2-first-prompt": "42dc65b7-2849-4d38-ae17-de5337e964dc",
-  "intro-m1-l3-setup-your-ai": "1e22036b-85f4-46df-bbf7-ab86b347d2d3",
+  "intro-m1-l3-setup-your-ai": "b15ad0ce-96ac-49ba-873d-f38eca221dc3",
   "intro-m1-l4-ai-can-cannot": "c4b4863c-9522-4a0b-acf0-6561137d8baa",
   "intro-m1-l5-ai-vs-software": "0122a71c-aee3-427d-ac0f-a6d3872de2d7",
   "intro-m1-l6-learn-without-fear": "2da0615c-d22a-40f4-9265-04f980c84a3a",
