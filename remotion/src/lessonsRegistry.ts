@@ -54,7 +54,6 @@ import { SCENES as L_analyst_m5_l2_weekly_review_ritual_S, SCENE_FRAMES as L_ana
 import { SCENES as L_automator_m6_l1_lead_capture_S, SCENE_FRAMES as L_automator_m6_l1_lead_capture_F, TOTAL_FRAMES as L_automator_m6_l1_lead_capture_T } from "./lessons-generated/automator-m6-l1-lead-capture.gen";
 import { SCENES as L_business_m6_l1_reactive_relapse_S, SCENE_FRAMES as L_business_m6_l1_reactive_relapse_F, TOTAL_FRAMES as L_business_m6_l1_reactive_relapse_T } from "./lessons-generated/business-m6-l1-reactive-relapse.gen";
 import { SCENES as L_business_m3_l1_customer_lifecycle_S, SCENE_FRAMES as L_business_m3_l1_customer_lifecycle_F, TOTAL_FRAMES as L_business_m3_l1_customer_lifecycle_T } from "./lessons-generated/business-m3-l1-customer-lifecycle.gen";
-import { SCENES as L_analyst_m2_l2_right_question_rule_S, SCENE_FRAMES as L_analyst_m2_l2_right_question_rule_F, TOTAL_FRAMES as L_analyst_m2_l2_right_question_rule_T } from "./lessons-generated/analyst-m2-l2-right-question-rule.gen";
 import { SCENES as L_automator_m3_l2_triggers_actions_S, SCENE_FRAMES as L_automator_m3_l2_triggers_actions_F, TOTAL_FRAMES as L_automator_m3_l2_triggers_actions_T } from "./lessons-generated/automator-m3-l2-triggers-actions.gen";
 import { SCENES as L_analyst_m7_l1_from_decisions_to_business_S, SCENE_FRAMES as L_analyst_m7_l1_from_decisions_to_business_F, TOTAL_FRAMES as L_analyst_m7_l1_from_decisions_to_business_T } from "./lessons-generated/analyst-m7-l1-from-decisions-to-business.gen";
 import { SCENES as L_builder_m2_l1_prompt_layer_S, SCENE_FRAMES as L_builder_m2_l1_prompt_layer_F, TOTAL_FRAMES as L_builder_m2_l1_prompt_layer_T } from "./lessons-generated/builder-m2-l1-prompt-layer.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_business_m2_l1_customer_lifecycle_S, SCENE_FRAMES as L_busi
 import { SCENES as L_automator_m5_l2_rag_in_n8n_S, SCENE_FRAMES as L_automator_m5_l2_rag_in_n8n_F, TOTAL_FRAMES as L_automator_m5_l2_rag_in_n8n_T } from "./lessons-generated/automator-m5-l2-rag-in-n8n.gen";
 import { SCENES as L_creator_m6_l2_scheduling_S, SCENE_FRAMES as L_creator_m6_l2_scheduling_F, TOTAL_FRAMES as L_creator_m6_l2_scheduling_T } from "./lessons-generated/creator-m6-l2-scheduling.gen";
 import { SCENES as L_builder_m6_l4_components_routes_S, SCENE_FRAMES as L_builder_m6_l4_components_routes_F, TOTAL_FRAMES as L_builder_m6_l4_components_routes_T } from "./lessons-generated/builder-m6-l4-components-routes.gen";
+import { SCENES as L_analyst_m2_l2_right_question_rule_S, SCENE_FRAMES as L_analyst_m2_l2_right_question_rule_F, TOTAL_FRAMES as L_analyst_m2_l2_right_question_rule_T } from "./lessons-generated/analyst-m2-l2-right-question-rule.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -168,7 +168,6 @@ export const LESSONS: LessonModule[] = [
     { id: "automator-m6-l1-lead-capture", scenes: L_automator_m6_l1_lead_capture_S, sceneFrames: L_automator_m6_l1_lead_capture_F, totalFrames: L_automator_m6_l1_lead_capture_T },
     { id: "business-m6-l1-reactive-relapse", scenes: L_business_m6_l1_reactive_relapse_S, sceneFrames: L_business_m6_l1_reactive_relapse_F, totalFrames: L_business_m6_l1_reactive_relapse_T },
     { id: "business-m3-l1-customer-lifecycle", scenes: L_business_m3_l1_customer_lifecycle_S, sceneFrames: L_business_m3_l1_customer_lifecycle_F, totalFrames: L_business_m3_l1_customer_lifecycle_T },
-    { id: "analyst-m2-l2-right-question-rule", scenes: L_analyst_m2_l2_right_question_rule_S, sceneFrames: L_analyst_m2_l2_right_question_rule_F, totalFrames: L_analyst_m2_l2_right_question_rule_T },
     { id: "automator-m3-l2-triggers-actions", scenes: L_automator_m3_l2_triggers_actions_S, sceneFrames: L_automator_m3_l2_triggers_actions_F, totalFrames: L_automator_m3_l2_triggers_actions_T },
     { id: "analyst-m7-l1-from-decisions-to-business", scenes: L_analyst_m7_l1_from_decisions_to_business_S, sceneFrames: L_analyst_m7_l1_from_decisions_to_business_F, totalFrames: L_analyst_m7_l1_from_decisions_to_business_T },
     { id: "builder-m2-l1-prompt-layer", scenes: L_builder_m2_l1_prompt_layer_S, sceneFrames: L_builder_m2_l1_prompt_layer_F, totalFrames: L_builder_m2_l1_prompt_layer_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "automator-m5-l2-rag-in-n8n", scenes: L_automator_m5_l2_rag_in_n8n_S, sceneFrames: L_automator_m5_l2_rag_in_n8n_F, totalFrames: L_automator_m5_l2_rag_in_n8n_T },
     { id: "creator-m6-l2-scheduling", scenes: L_creator_m6_l2_scheduling_S, sceneFrames: L_creator_m6_l2_scheduling_F, totalFrames: L_creator_m6_l2_scheduling_T },
     { id: "builder-m6-l4-components-routes", scenes: L_builder_m6_l4_components_routes_S, sceneFrames: L_builder_m6_l4_components_routes_F, totalFrames: L_builder_m6_l4_components_routes_T },
+    { id: "analyst-m2-l2-right-question-rule", scenes: L_analyst_m2_l2_right_question_rule_S, sceneFrames: L_analyst_m2_l2_right_question_rule_F, totalFrames: L_analyst_m2_l2_right_question_rule_T },
   /* @lesson-entries-end */
 ];
