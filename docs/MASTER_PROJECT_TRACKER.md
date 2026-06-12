@@ -11,7 +11,7 @@
 
 | Field | Value |
 |------|------|
-| Current Phase | **Phase 4 — Brand Visual Identity Lock Brief** (docs step; implementation not started) |
+| Current Phase | **Phase 4 — Brand Implementation Plan** (docs locked; controlled batches not started) |
 | Previous phase | Phase 3 — AI Assistant P0 ✅ FROZEN |
 | Launch Readiness | ~70% (estimate; brand identity lock + visual implementation gate launch polish) |
 | Critical blockers | 0 |
@@ -24,7 +24,7 @@
 
 ## Phase 4 — Brand Visual Identity Lock Brief
 
-Status: 🟡 **BRIEF LOCK STEP** (docs only — no `src/`, no assets, no deploy)
+Status: 🟡 **IMPLEMENTATION PLAN LOCKED** (docs only — batches 1–6 not started; no `src/`, no assets, no deploy)
 
 > **Context:** Phase 3 — AI Assistant P0 is **FROZEN**. Production QA on masaarat.ai passed logged-out and logged-in assistant flows. This section locks the brand visual identity brief before any implementation work.
 
@@ -123,13 +123,123 @@ Implementation follows this brief; **none of these are in scope for the brief st
 
 ### 7. Phase order (locked sequence)
 
-1. **Brand brief** ← **current step** (this section)
-2. **Implementation plan** (scope files, acceptance checks)
-3. **BrandMark / logo / favicon / OG** (Phase 4 implementation)
-4. **Visual QA** (smoke on Navbar, Sidebar, auth, social meta, favicon)
+1. **Brand brief** ✅ (this section, §1–§6)
+2. **Implementation plan** ✅ ← **current docs step** (§8 below)
+3. **Controlled batches 1–5** (Phase 4 implementation — one batch at a time)
+4. **Visual QA** (Batch 6 — smoke on Navbar, Sidebar, auth, social meta, favicon)
 5. **Bunny / media cleanup** — **after** brand identity lock and visual QA
 
 ⚠️ Do not proceed to Bunny / media cleanup until Phase 4 brand visual implementation is complete and smoke-tested.
+
+### 8. Brand Implementation Plan — Controlled Batches
+
+Status: ✅ **PLAN LOCKED** (docs only — execution not started)
+
+> **Audit baseline (read-only, pre-plan):** Live logo usage is `/brand/masaarat-logo-lockup.png` (Sidebar ×3). `public/brand/README.md` incorrectly documents Navbar as `masaarat-logo-horizontal.png`. Footer is text-only. No favicon in `public/` root; no `rel="icon"` / `apple-touch-icon` in `src/routes/__root.tsx`. OG/Twitter image still points to legacy GPT Engineer / Lovable-hosted URL; `twitter:site` is `@Lovable`. Forbidden assets exist under `public/brand/icons/` (`ai-brain`, `ai-spark`). Sidebar admin dev link uses Lucide `Brain` for “Assistant Runtime”. Untracked `src/components/brand/BrandMark.tsx` is a hand-drawn SVG — **out of scope** until replaced by approved-crop wiring.
+
+**Global rules (all batches):**
+
+- No AI-generated random icon packs
+- No robot / brain / sparkles / starburst as brand identity
+- No full re-theme — existing pastel OKLCH stays; **Tajawal** stays
+- Logo and symbol assets must come from approved brand files under `public/brand/` — **no regenerated art, no hand-drawn SVG approximations**
+- Do **not** use untracked `src/components/brand/BrandMark.tsx`
+- One batch at a time; smoke-check before the next batch
+
+---
+
+#### Batch 1 — Source alignment / no visual risk
+
+**Goal:** Align documentation and source-of-truth references without changing learner-visible UI.
+
+| Action | Detail |
+|--------|--------|
+| Update `public/brand/README.md` | Later — document actual usage: lockup is `/brand/masaarat-logo-lockup.png` (Sidebar, Navbar, AuthShell as applicable) |
+| Approved lockup source | Keep `/brand/masaarat-logo-lockup.png` as the approved full lockup |
+| Icon source candidate | Treat `/brand/masaarat-icon.png` as favicon/app-icon source **only if file exists** (confirmed present) |
+| Do not use | Untracked `BrandMark.tsx`; do not redraw logo or symbol |
+| Do not | Create, delete, or move assets in this batch |
+
+**Acceptance:** README matches code references; no `src/` visual changes; no asset mutations.
+
+---
+
+#### Batch 2 — BrandMark wiring
+
+**Goal:** Single tracked component; DRY logo placement; no theme changes.
+
+| Action | Detail |
+|--------|--------|
+| Create tracked `BrandMark` | New component under `src/components/brand/` that references **approved image assets** (`masaarat-logo-lockup.png`, horizontal/icon variants as needed) — **not** hand-drawn SVG |
+| Replace repeated usage | Sidebar `<img src="/brand/masaarat-logo-lockup.png">` (mobile header, drawer, desktop) → one safe component; extend to Navbar / AuthShell when in batch scope |
+| Out of scope | Re-theme, token changes, new colors |
+
+**Acceptance:** All targeted placements use one component; images still load from approved PNG paths; no SVG redraw.
+
+---
+
+#### Batch 3 — Favicon / app icons
+
+**Goal:** Browser tab and install surfaces use approved symbol-only mark.
+
+| Action | Detail |
+|--------|--------|
+| Source | Approved icon crop — `/brand/masaarat-icon.png` (or crops derived from identity sheet in a **future asset batch** if additional sizes needed) |
+| Meta wiring | Add `rel="icon"` and `apple-touch-icon` in `src/routes/__root.tsx` (root meta only) **after** confirming final asset paths |
+| Legibility | Must read clearly at **16×16** and **32×32**; no full Arabic word in favicon |
+
+**Acceptance:** Favicon visible in browser tab; apple-touch resolves; paths stable on masaarat.ai.
+
+---
+
+#### Batch 4 — OG / social
+
+**Goal:** Replace legacy Lovable / GPT Engineer social metadata with masaarat.ai brand.
+
+| Action | Detail |
+|--------|--------|
+| Branded OG image | Create and host on **masaarat.ai** (1200×630, Arabic-first, aligned with identity sheet) |
+| Replace legacy URL | Remove `storage.googleapis.com/gpt-engineer-file-uploads/...` from `og:image` and `twitter:image` in `__root.tsx` |
+| Twitter site | Remove or replace `@Lovable` **only when official handle is confirmed**; otherwise **omit** `twitter:site` |
+
+**Acceptance:** Social preview cards show masaarat branding; no Lovable/GPT Engineer URLs in meta; no stale `@Lovable` unless intentionally kept.
+
+---
+
+#### Batch 5 — Forbidden icon cleanup
+
+**Goal:** Remove generic AI / graduation iconography from learner-facing brand surfaces.
+
+| Action | Detail |
+|--------|--------|
+| Replace usage | `Sparkles`, `GraduationCap`, `Brain`, `Bot`, and references to `ai-brain` / `ai-spark` under `public/brand/icons/` |
+| Direction | Calm path / progress / navigation concepts instead |
+| Priority | Learner-facing first; admin-only icons (e.g. Sidebar dev `Brain` on “Assistant Runtime”) lower priority but must not leak into learner brand identity |
+| Asset policy | Quarantine or stop referencing forbidden assets; do not introduce new random icon packs |
+
+**Acceptance:** Learner routes and landing pillars free of forbidden brand symbols; brand asset folder usage aligned with §4 forbidden list.
+
+---
+
+#### Batch 6 — Visual QA
+
+**Goal:** Smoke-test all Phase 4 visual changes before Bunny / media work.
+
+| Surface | Check |
+|---------|-------|
+| Desktop | Navbar, Sidebar, Footer, auth, dashboard |
+| Mobile | Sidebar drawer, header lockup, touch targets |
+| Favicon | Tab preview, 16×16 / 32×32 legibility |
+| Social | OG/Twitter card preview (masaarat.ai URL) |
+| Learner pages | Learn route, path chips, no forbidden icons as brand |
+| Auth pages | AuthShell lockup |
+| Dashboard / Sidebar | Lockup + nav icons consistent with brief |
+
+**Acceptance:** All checks pass on production or staging before marking Phase 4 implementation complete.
+
+---
+
+**Batch execution order (locked):** 1 → 2 → 3 → 4 → 5 → 6. Do not skip Batch 1 doc alignment before Batch 2 wiring.
 
 ---
 
