@@ -5,168 +5,86 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "subtitle": "وتقرّر.",
-    "highlight": "محادثة بتفهم",
-    "title": "مش بس ردّ آلي.",
-    "chip": "WhatsApp Flow ذكي"
+    "subtitle": "تأكيدات وأسئلة شائعة، بس بثقة العميل وموافقته.",
+    "highlight": "أتمتة واتساب",
+    "chip": "أهلًا | بداية الدرس",
+    "title": "هتفهم إيه النهاردة؟"
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "lavender",
-    "tag": "مخبر واتساب",
-    "term": "Webhook",
-    "definition": "زي \"مخبر\" بيبلغ برنامجك أول ما حاجة تحصل على واتساب."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "term": "Broadcast",
-    "definition": "إرسال رسالة لواحدة لمجموعة أرقام كبيرة في نفس الوقت.",
-    "tag": "رسالة جماعية"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "term": "Context Layer / Retrieval",
-    "definition": "قدرة الذكاء الاصطناعي إنه يفتكر الكلام اللي دار بينك وبين الزبون.",
-    "tag": "الذاكرة الذكية"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "tag": "رسالة موافق عليها",
-    "term": "Template Message",
-    "definition": "رسالة جاهزة واتساب لازم يوافق عليها قبل ما تبعتها للناس."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "tag": "العقل المدبر",
-    "term": "LLM Node (الرد الذكي)",
-    "definition": "عقل الذكاء الاصطناعي اللي بيفهم الكلام وبيرد عليه من غير برمجة."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "tag": "ربط واتساب سهل",
-    "term": "WhatsApp Cloud API",
-    "definition": "طريقة رسمية وسهلة من شركة \"ميتا\" عشان تربط واتساب ببرنامجك."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "وسيط احترافي",
-    "term": "Twilio",
-    "definition": "شركة وسيطة بتوفرلك أدوات احترافية لربط الواتساب والرسائل ببرامجك."
+    "bullets": [
+      "شغّلت رسائل واتساب تلقائية لكل اللي سجّلوا، حتى اللي ماطلبوش حاجة.",
+      "العملاء بيعملوا block، الرقم بيتبلّغ، وسمعتك بتتأثر.",
+      "واتساب قناة شخصية، الأتمتة لازم تخدم مش تزعج، ثقة وموافقة ورد مفيد هو الشغل الصح."
+    ],
+    "title": "البوت رد — والعميل حسّ إنه اتهاجم"
   },
   {
     "card": "BulletsCard",
     "accent": "peach",
     "bullets": [
-      "Trigger: رسالة واردة من عميل (Webhook من WhatsApp Business API).",
-      "Filter: رسالة spam بتترمي، رسالة معتمدة بتكمل.",
-      "Router: صنّف النية — استفسار / شكوى / شراء / متابعة.",
-      "LLM Node: صياغة رد مناسب لو ردّ فوري.",
-      "Action: حفظ في CRM، تنبيه فريق، ردّ تلقائي، أو تحويل لـ human."
+      "أتمتة واتساب مناسبة لتأكيد طلب، إجابة أسئلة شائعة، تذكير موعد، أو متابعة Leads سجّل بنفسه.",
+      "العميل هو اللي يبدأ أو يوافق، مش إنت اللي تبعت من غير سبب.",
+      "الـ Flow بيبدأ برسالة واردة، نفهم النية، نرد مناسب، ولو معقّد نحول لموظف.",
+      "كل رسالة تحدّث سياق المحادثة، مش رسالة معزولة من غير ذاكرة."
     ],
-    "title": "الـ Flow الكامل"
+    "title": "رد آلي مفيد + تحويل لبشري لما محتاج"
   },
   {
-    "card": "BulletsCard",
+    "card": "CompareCard",
     "accent": "yellow",
-    "bullets": [
-      "Trigger: رسالة واردة من عميل (Webhook من WhatsApp Business API).",
-      "Filter: رسالة spam بتترمي، رسالة معتمدة بتكمل.",
-      "Router: صنّف النية — استفسار / شكوى / شراء / متابعة.",
-      "LLM Node: صياغة رد مناسب لو ردّ فوري.",
-      "Action: حفظ في CRM، تنبيه فريق، ردّ تلقائي، أو تحويل لـ human."
-    ],
-    "title": "الـ Flow الكامل"
+    "right": {
+      "body": "العميل سجّل أو بعت الأول. رد تأكيد + إجابة سؤاله. لو طلب «أكلم حد» → تحويل فوري لموظف.",
+      "label": "رد بعد اهتمام"
+    },
+    "title": "بث جماعي vs محادثة بموافقة",
+    "left": {
+      "body": "نفس العرض لـ ٥٠٠ رقم. محدش طلب. block وبلاغات. الرقم يتحظر.",
+      "label": "بث من غير سبب"
+    }
   },
   {
-    "card": "ScreenshotCard",
+    "card": "ConceptCard",
     "accent": "pink",
-    "src": "lessons/unique/automator-m6-l2-whatsapp-flow.jpg",
-    "eyebrow": "شوف بنفسك",
-    "caption": "المنصة بتعتمد على Context Layer عشان تفهم كل interaction. نفس الفكرة في WhatsApp: كل رسالة لازم يكون وراها context (من العميل ده، إيه اللي تناقشنا فيه، إيه stage بتاعه). الـ automation بيعمل retrieval من CRM الأول قبل ما يرد.",
-    "title": "Context Layer بتاعنا"
+    "tag": "موافقة صريحة",
+    "term": "Consent (موافقة)",
+    "definition": "العميل بدأ التواصل أو وافق صراحة — مش إنت اللي بادئ من غير طلب."
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "mintDeep",
+    "definition": "لما الرد الآلي يوقف وموظف يكمل المحادثة — شرط واضح مش استثناء.",
+    "tag": "تحويل لموظف",
+    "term": "Handoff (تحويل)"
   },
   {
     "card": "ScreenshotCard",
-    "accent": "mintDeep",
-    "caption": "المنصة بتعتمد على Context Layer عشان تفهم كل interaction. نفس الفكرة في WhatsApp: كل رسالة لازم يكون وراها context (من العميل ده، إيه اللي تناقشنا فيه، إيه stage بتاعه). الـ automation بيعمل retrieval من CRM الأول قبل ما يرد.",
-    "title": "Context Layer بتاعنا",
-    "src": "lessons/unique/automator-m6-l2-whatsapp-flow.jpg",
-    "eyebrow": "شوف بنفسك"
-  },
-  {
-    "card": "CompareCard",
     "accent": "mint",
-    "right": {
-      "body": "العميل ملّأ form أو ابعت رسالة الأول. ردّك تلقائي بس مفيد. كل رسالة جاية بتعمل update للـ context. العميل بيفضل موجود عشان المحادثة بتتكيّف معاه.",
-      "label": "RIGHT — Conversation بعد consent"
-    },
-    "title": "Broadcast vs Conversation",
-    "left": {
-      "label": "FAILURE — بتهاجم الناس بـ broadcast",
-      "body": "بتبعت نفس الرسالة لـ 500 واحد من غير ما يكونوا طلبوا حاجة. WhatsApp بيبلّغك. الناس بيبلّغوا. الرقم بيتحظر."
-    }
-  },
-  {
-    "card": "CompareCard",
-    "accent": "lavender",
-    "left": {
-      "body": "بتبعت نفس الرسالة لـ 500 واحد من غير ما يكونوا طلبوا حاجة. WhatsApp بيبلّغك. الناس بيبلّغوا. الرقم بيتحظر.",
-      "label": "FAILURE — بتهاجم الناس بـ broadcast"
-    },
-    "right": {
-      "body": "العميل ملّأ form أو ابعت رسالة الأول. ردّك تلقائي بس مفيد. كل رسالة جاية بتعمل update للـ context. العميل بيفضل موجود عشان المحادثة بتتكيّف معاه.",
-      "label": "RIGHT — Conversation بعد consent"
-    },
-    "title": "Broadcast vs Conversation"
-  },
-  {
-    "card": "CompareCard",
-    "accent": "peach",
-    "right": {
-      "body": "العميل ملّأ form أو ابعت رسالة الأول. ردّك تلقائي بس مفيد. كل رسالة جاية بتعمل update للـ context. العميل بيفضل موجود عشان المحادثة بتتكيّف معاه.",
-      "label": "RIGHT — Conversation بعد consent"
-    },
-    "title": "Broadcast vs Conversation",
-    "left": {
-      "label": "FAILURE — بتهاجم الناس بـ broadcast",
-      "body": "بتبعت نفس الرسالة لـ 500 واحد من غير ما يكونوا طلبوا حاجة. WhatsApp بيبلّغك. الناس بيبلّغوا. الرقم بيتحظر."
-    }
+    "src": "lessons/unique/automator-m6-l2-whatsapp-flow.jpg",
+    "caption": "رسالة واردة → فهم → رد أو تحويل. السياق محفوظ عشان الرد يكون مناسب مش عام.",
+    "eyebrow": "لقطة بصرية",
+    "title": "مسار الرسالة للرد للتحويل"
   },
   {
     "card": "CTACard",
-    "accent": "yellow",
+    "accent": "lavender",
+    "highlight": "عميل طلب «أكلم حد»",
     "eyebrow": "دورك دلوقتي",
-    "tagline": "جاوب على الأسئلة عشان تطبق اللي اتعلمته وتفهم أكتر.",
-    "title": "ارسم WhatsApp Flow على ورقة",
-    "highlight": "اختبر فهمك"
+    "title": "سؤال واحد — مش امتحان",
+    "tagline": "إيه أحسن تصرف للبوت؟"
   },
   {
     "card": "BulletsCard",
-    "accent": "pink",
-    "title": "Assistant flow في /ai-assistant = same idea",
+    "accent": "peach",
     "bullets": [
-      "Session state في assistant-session-store.",
-      "كل سؤال + رد بيتخزّن مع timestamp.",
-      "تقدر ترجع لـ thread قديم في أي وقت."
-    ]
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "mintDeep",
-    "bullets": [
-      "Session state في assistant-session-store.",
-      "كل سؤال + رد بيتخزّن مع timestamp.",
-      "تقدر ترجع لـ thread قديم في أي وقت."
+      "فهمت إن أتمتة واتساب مفيدة بثقة وموافقة، مش بث مزعج.",
+      "دلوقتي تقدر تعمل Flow لرد آلي واحد بشرط تحويل لبشري.",
+      "هنتقابل في الدرس الجاي."
     ],
-    "title": "Assistant flow في /ai-assistant = same idea"
+    "title": "إيه اللي عندك دلوقتي؟"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [348, 283, 316, 353, 376, 379, 337, 394, 371, 409, 277, 353, 331, 219, 395, 378, 353, 439];
+export const SCENE_FRAMES: number[] = [279, 576, 631, 649, 315, 413, 403, 425, 420];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);

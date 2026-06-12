@@ -24,7 +24,6 @@ import { SCENES as L_automator_m2_l3_decide_what_to_automate_S, SCENE_FRAMES as 
 import { SCENES as L_automator_m5_l1_llm_in_flow_S, SCENE_FRAMES as L_automator_m5_l1_llm_in_flow_F, TOTAL_FRAMES as L_automator_m5_l1_llm_in_flow_T } from "./lessons-generated/automator-m5-l1-llm-in-flow.gen";
 import { SCENES as L_automator_m3_l3_filters_routers_S, SCENE_FRAMES as L_automator_m3_l3_filters_routers_F, TOTAL_FRAMES as L_automator_m3_l3_filters_routers_T } from "./lessons-generated/automator-m3-l3-filters-routers.gen";
 import { SCENES as L_automator_m6_l3_follow_up_S, SCENE_FRAMES as L_automator_m6_l3_follow_up_F, TOTAL_FRAMES as L_automator_m6_l3_follow_up_T } from "./lessons-generated/automator-m6-l3-follow-up.gen";
-import { SCENES as L_automator_m6_l2_whatsapp_flow_S, SCENE_FRAMES as L_automator_m6_l2_whatsapp_flow_F, TOTAL_FRAMES as L_automator_m6_l2_whatsapp_flow_T } from "./lessons-generated/automator-m6-l2-whatsapp-flow.gen";
 import { SCENES as L_automator_m4_l1_connect_database_S, SCENE_FRAMES as L_automator_m4_l1_connect_database_F, TOTAL_FRAMES as L_automator_m4_l1_connect_database_T } from "./lessons-generated/automator-m4-l1-connect-database.gen";
 import { SCENES as L_automator_m7_l1_closing_loop_S, SCENE_FRAMES as L_automator_m7_l1_closing_loop_F, TOTAL_FRAMES as L_automator_m7_l1_closing_loop_T } from "./lessons-generated/automator-m7-l1-closing-loop.gen";
 import { SCENES as L_automator_m4_l3_error_handling_S, SCENE_FRAMES as L_automator_m4_l3_error_handling_F, TOTAL_FRAMES as L_automator_m4_l3_error_handling_T } from "./lessons-generated/automator-m4-l3-error-handling.gen";
@@ -125,6 +124,7 @@ import { SCENES as L_business_m2_l2_build_your_offer_S, SCENE_FRAMES as L_busine
 import { SCENES as L_business_m2_l2_retention_flow_S, SCENE_FRAMES as L_business_m2_l2_retention_flow_F, TOTAL_FRAMES as L_business_m2_l2_retention_flow_T } from "./lessons-generated/business-m2-l2-retention-flow.gen";
 import { SCENES as L_builder_m2_l2_instructions_examples_S, SCENE_FRAMES as L_builder_m2_l2_instructions_examples_F, TOTAL_FRAMES as L_builder_m2_l2_instructions_examples_T } from "./lessons-generated/builder-m2-l2-instructions-examples.gen";
 import { SCENES as L_analyst_m4_automated_dashboard_S, SCENE_FRAMES as L_analyst_m4_automated_dashboard_F, TOTAL_FRAMES as L_analyst_m4_automated_dashboard_T } from "./lessons-generated/analyst-m4-automated-dashboard.gen";
+import { SCENES as L_automator_m6_l2_whatsapp_flow_S, SCENE_FRAMES as L_automator_m6_l2_whatsapp_flow_F, TOTAL_FRAMES as L_automator_m6_l2_whatsapp_flow_T } from "./lessons-generated/automator-m6-l2-whatsapp-flow.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -142,7 +142,6 @@ export const LESSONS: LessonModule[] = [
     { id: "automator-m5-l1-llm-in-flow", scenes: L_automator_m5_l1_llm_in_flow_S, sceneFrames: L_automator_m5_l1_llm_in_flow_F, totalFrames: L_automator_m5_l1_llm_in_flow_T },
     { id: "automator-m3-l3-filters-routers", scenes: L_automator_m3_l3_filters_routers_S, sceneFrames: L_automator_m3_l3_filters_routers_F, totalFrames: L_automator_m3_l3_filters_routers_T },
     { id: "automator-m6-l3-follow-up", scenes: L_automator_m6_l3_follow_up_S, sceneFrames: L_automator_m6_l3_follow_up_F, totalFrames: L_automator_m6_l3_follow_up_T },
-    { id: "automator-m6-l2-whatsapp-flow", scenes: L_automator_m6_l2_whatsapp_flow_S, sceneFrames: L_automator_m6_l2_whatsapp_flow_F, totalFrames: L_automator_m6_l2_whatsapp_flow_T },
     { id: "automator-m4-l1-connect-database", scenes: L_automator_m4_l1_connect_database_S, sceneFrames: L_automator_m4_l1_connect_database_F, totalFrames: L_automator_m4_l1_connect_database_T },
     { id: "automator-m7-l1-closing-loop", scenes: L_automator_m7_l1_closing_loop_S, sceneFrames: L_automator_m7_l1_closing_loop_F, totalFrames: L_automator_m7_l1_closing_loop_T },
     { id: "automator-m4-l3-error-handling", scenes: L_automator_m4_l3_error_handling_S, sceneFrames: L_automator_m4_l3_error_handling_F, totalFrames: L_automator_m4_l3_error_handling_T },
@@ -241,5 +240,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m2-l2-retention-flow", scenes: L_business_m2_l2_retention_flow_S, sceneFrames: L_business_m2_l2_retention_flow_F, totalFrames: L_business_m2_l2_retention_flow_T },
     { id: "builder-m2-l2-instructions-examples", scenes: L_builder_m2_l2_instructions_examples_S, sceneFrames: L_builder_m2_l2_instructions_examples_F, totalFrames: L_builder_m2_l2_instructions_examples_T },
     { id: "analyst-m4-automated-dashboard", scenes: L_analyst_m4_automated_dashboard_S, sceneFrames: L_analyst_m4_automated_dashboard_F, totalFrames: L_analyst_m4_automated_dashboard_T },
+    { id: "automator-m6-l2-whatsapp-flow", scenes: L_automator_m6_l2_whatsapp_flow_S, sceneFrames: L_automator_m6_l2_whatsapp_flow_F, totalFrames: L_automator_m6_l2_whatsapp_flow_T },
   /* @lesson-entries-end */
 ];
