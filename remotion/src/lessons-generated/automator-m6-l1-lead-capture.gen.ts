@@ -5,104 +5,84 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "subtitle": "المحتوى جاب عين. هنا بنبني الجسر بين Views وشغلك.",
-    "chip": "أهلًا",
-    "title": "من Views لـ Leads",
-    "highlight": "لـ DB"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "lavender",
-    "tag": "صفحة هدف واحد",
-    "term": "Landing Page",
-    "definition": "صفحة هدفها حاجة واحدة بس، زي إن الزبون يسجل بياناته."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "peach",
-    "tag": "خانات البيانات",
-    "term": "Form (النموذج)",
-    "definition": "الخانات اللي الزبون بيملاها ببياناته عشان يتواصل معاك."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "yellow",
-    "term": "Database / DB (قاعدة بيانات)",
-    "tag": "مخزن البيانات",
-    "definition": "المخزن اللي بتشيل فيه بيانات الزبائن وتكون مترتبة ومنظمة."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "term": "CRM",
-    "tag": "متابعة العملاء",
-    "definition": "برنامج ذكي بتابع عليه علاقتك بالزبون من أول ما سجل لحد ما اشترى."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "definition": "كود صغير بتزوده في آخر اللينك عشان تعرف الزبون جالك منين.",
-    "tag": "تتبع المصدر",
-    "term": "UTM (علامة تتبع)"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mint",
-    "definition": "رسول بياخد البيانات من برنامج يوديها لبرنامج تاني في لحظتها.",
-    "term": "Webhook (المخبر)",
-    "tag": "ناقل بيانات فوري"
+    "chip": "أهلًا، بداية الدرس",
+    "highlight": "Lead capture automation",
+    "title": "هتفهم إيه النهاردة؟",
+    "subtitle": "يمنع الناس المهتمة تضيع"
   },
   {
     "card": "BulletsCard",
     "accent": "lavender",
-    "title": "المسار الكامل: Content → Landing Page → Form → DB → Automation",
     "bullets": [
-      "المحتوى بيجيب traffic.",
-      "Landing Page بتخلي المشاهد ياخد خطوة فعلية واحدة (بريد/رقم/طلب).",
-      "Form Submission بيروح لـ DB أو بيتبعت Webhook للـ automation tool.",
-      "Automation بياخد الـ data: يرد فورًا، يصنّف، يسجّل، يبعت تنبيه."
-    ]
+      "حد ملّا فورم أو بعت رسالة «عايز أعرف السعر». إنت شفتها متأخر — أو نسيت ترد.",
+      "بعد يومين لقيت الرسالة في الإيميل تحت ٥٠ رسالة تانية. العميل اشترى من حد تاني.",
+      "المشكلة مش نقص اهتمام — المشكلة مفيش نظام يمسك كل lead فورًا ويسجّله ويرد."
+    ],
+    "title": "«كان مهتم — وبعدين ضاع»"
   },
   {
-    "card": "ScreenshotCard",
+    "card": "BulletsCard",
     "accent": "peach",
-    "eyebrow": "شوف بنفسك",
-    "caption": "في Creator M5 شفنا إن Views لوحدهم مش هدف — الهدف Leads. هنا هنبني الـ automation اللي بيستقبلهم: trigger = form submission → filter = validate email/phone → router = qualify by intent → actions = CRM + auto-reply + notify sales.",
-    "src": "lessons/unique/automator-m6-l1-lead-capture.jpg",
-    "title": "من Views لـ Leads"
+    "bullets": [
+      "Lead = أي حد أبدى اهتمام: فورم، واتساب، طلب حجز، استفسار خدمة.",
+      "Lead capture automation: لحظة التسجيل → حفظ في مكان واحد → رد ترحيب فوري → تنبيه لمن يتابع.",
+      "مش لازم إعلان أو محتوى — أي قناة فيها اهتمام محتاجة نفس الجسر.",
+      "الهدف: ماحدش يقع من الشبكة لأنك مش فاضي أو نسيت."
+    ],
+    "title": "كل lead = تسجيل فوري + رد + تنبيه"
   },
   {
     "card": "CompareCard",
     "accent": "yellow",
     "right": {
-      "body": "كل lead بيتسجّل فورًا في DB بتاعته UTM tagged. الـ automation بيرد على طول بإيميل/رسالة ترحيب. فريق المبيعات بيشوف في الـ CRM تاريخ كل lead ومصدره. مفيش نسخ ولا لصق.",
-      "label": "RIGHT — Form → webhook → automation → CRM"
+      "label": "Lead capture automation",
+      "body": "الفورم → تسجيل فوري + مصدر (منين جالك) + رد ترحيب أوتوماتيك + تنبيه لفريق المتابعة. كل lead موثّق من ثانية واحدة."
     },
-    "title": "Form بيتبعت لـ email وخلاص vs Form بيدخل system",
+    "title": "إيميل وخلاص vs نظام استقبال",
     "left": {
-      "body": "كل lead بيوصلك إيميل. إنت بتفتح وتنسخ الـ data وتلصّقها في Excel. لو نزل 50 lead في يوم، بتقعد تنسخ وتلصّق لغاية ما تنام. فريق المبيعات بيدوخوا ويسألوا 'الـ leads منين؟'.",
-      "label": "FAILURE — تستنّى الـ form تيجي في الإيميل"
+      "label": "استقبال يدوي",
+      "body": "الفورم يبعت إيميل. إنت بتفتح وتنسخ للشيت. ٣٠ lead في يوم = فوضى ونسيان. «مين ده؟ جالنا منين؟»"
     }
   },
   {
-    "card": "BulletsCard",
+    "card": "ConceptCard",
     "accent": "pink",
-    "bullets": [
-      "DB trigger handle_new_user() بيتنفّذ تلقائي.",
-      "بينشئ profile + user_streaks في same transaction.",
-      "Redirect لـ /onboarding بدل صفحة فاضية."
-    ],
-    "title": "Signup form → user record → onboarding flow"
+    "term": "Lead (عميل محتمل)",
+    "tag": "محتمل",
+    "definition": "حد أبدى اهتمام بس لسه ماشتريش — استفسار، تسجيل، طلب عرض."
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "mintDeep",
+    "term": "Webhook (إشعار فوري)",
+    "tag": "إشعار",
+    "definition": "إشارة فورية للأوتوميشن إن حاجة حصلت — زي تسجيل فورم جديد."
+  },
+  {
+    "card": "ScreenshotCard",
+    "accent": "mint",
+    "caption": "التسجيل → الحفظ → الرد الفوري → التنبيه. أربع خطوات تمنع الضياع.",
+    "title": "مسار Lead من التسجيل للمتابعة",
+    "src": "lessons/unique/automator-m6-l1-lead-capture.jpg",
+    "eyebrow": "لقطة بصرية"
   },
   {
     "card": "CTACard",
-    "accent": "mintDeep",
-    "highlight": "Lead Capture Flow",
-    "eyebrow": "دورك دلوقتي",
-    "title": "اعمل Lead Capture Flow",
-    "tagline": "يلا بينا نختبر فهمك ونشوف هتعمل إيه. وماتنساش تستعد للدرس الجاي عن WhatsApp Flow ذكي!"
+    "accent": "lavender",
+    "tagline": "إيه أحسن نظام عشان مفيش حد يضيع؟",
+    "highlight": "٥٠ شخص سجّلوا في فورم النهاردة",
+    "title": "سؤال واحد — مش امتحان",
+    "eyebrow": "دورك دلوقتي"
+  },
+  {
+    "card": "CTACard",
+    "accent": "peach",
+    "tagline": "شوفك في الدرس الجاي!",
+    "highlight": "ارسم workflow استقبال lead",
+    "title": "طبّق اللي اتعلّمته",
+    "eyebrow": "خلّصت الدرس"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [378, 309, 336, 349, 345, 316, 397, 693, 545, 589, 510, 430];
+export const SCENE_FRAMES: number[] = [599, 739, 709, 742, 559, 621, 585, 574, 549];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
