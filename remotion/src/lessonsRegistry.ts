@@ -66,7 +66,6 @@ import { SCENES as L_analyst_m2_l2_right_question_rule_S, SCENE_FRAMES as L_anal
 import { SCENES as L_automator_m3_l2_triggers_actions_S, SCENE_FRAMES as L_automator_m3_l2_triggers_actions_F, TOTAL_FRAMES as L_automator_m3_l2_triggers_actions_T } from "./lessons-generated/automator-m3-l2-triggers-actions.gen";
 import { SCENES as L_creator_m6_l3_analytics_S, SCENE_FRAMES as L_creator_m6_l3_analytics_F, TOTAL_FRAMES as L_creator_m6_l3_analytics_T } from "./lessons-generated/creator-m6-l3-analytics.gen";
 import { SCENES as L_analyst_m7_l1_from_decisions_to_business_S, SCENE_FRAMES as L_analyst_m7_l1_from_decisions_to_business_F, TOTAL_FRAMES as L_analyst_m7_l1_from_decisions_to_business_T } from "./lessons-generated/analyst-m7-l1-from-decisions-to-business.gen";
-import { SCENES as L_intro_m1_l6_learn_without_fear_S, SCENE_FRAMES as L_intro_m1_l6_learn_without_fear_F, TOTAL_FRAMES as L_intro_m1_l6_learn_without_fear_T } from "./lessons-generated/intro-m1-l6-learn-without-fear.gen";
 import { SCENES as L_intro_m1_l7_choose_your_path_S, SCENE_FRAMES as L_intro_m1_l7_choose_your_path_F, TOTAL_FRAMES as L_intro_m1_l7_choose_your_path_T } from "./lessons-generated/intro-m1-l7-choose-your-path.gen";
 import { SCENES as L_builder_m2_l1_prompt_layer_S, SCENE_FRAMES as L_builder_m2_l1_prompt_layer_F, TOTAL_FRAMES as L_builder_m2_l1_prompt_layer_T } from "./lessons-generated/builder-m2-l1-prompt-layer.gen";
 import { SCENES as L_builder_m1_l1_what_is_llm_S, SCENE_FRAMES as L_builder_m1_l1_what_is_llm_F, TOTAL_FRAMES as L_builder_m1_l1_what_is_llm_T } from "./lessons-generated/builder-m1-l1-what-is-llm.gen";
@@ -123,6 +122,7 @@ import { SCENES as L_intro_m1_l3_setup_your_ai_S, SCENE_FRAMES as L_intro_m1_l3_
 import { SCENES as L_intro_m1_l2_first_prompt_S, SCENE_FRAMES as L_intro_m1_l2_first_prompt_F, TOTAL_FRAMES as L_intro_m1_l2_first_prompt_T } from "./lessons-generated/intro-m1-l2-first-prompt.gen";
 import { SCENES as L_intro_m1_l4_ai_can_cannot_S, SCENE_FRAMES as L_intro_m1_l4_ai_can_cannot_F, TOTAL_FRAMES as L_intro_m1_l4_ai_can_cannot_T } from "./lessons-generated/intro-m1-l4-ai-can-cannot.gen";
 import { SCENES as L_intro_m1_l5_ai_vs_software_S, SCENE_FRAMES as L_intro_m1_l5_ai_vs_software_F, TOTAL_FRAMES as L_intro_m1_l5_ai_vs_software_T } from "./lessons-generated/intro-m1-l5-ai-vs-software.gen";
+import { SCENES as L_intro_m1_l6_learn_without_fear_S, SCENE_FRAMES as L_intro_m1_l6_learn_without_fear_F, TOTAL_FRAMES as L_intro_m1_l6_learn_without_fear_T } from "./lessons-generated/intro-m1-l6-learn-without-fear.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -180,7 +180,6 @@ export const LESSONS: LessonModule[] = [
     { id: "automator-m3-l2-triggers-actions", scenes: L_automator_m3_l2_triggers_actions_S, sceneFrames: L_automator_m3_l2_triggers_actions_F, totalFrames: L_automator_m3_l2_triggers_actions_T },
     { id: "creator-m6-l3-analytics", scenes: L_creator_m6_l3_analytics_S, sceneFrames: L_creator_m6_l3_analytics_F, totalFrames: L_creator_m6_l3_analytics_T },
     { id: "analyst-m7-l1-from-decisions-to-business", scenes: L_analyst_m7_l1_from_decisions_to_business_S, sceneFrames: L_analyst_m7_l1_from_decisions_to_business_F, totalFrames: L_analyst_m7_l1_from_decisions_to_business_T },
-    { id: "intro-m1-l6-learn-without-fear", scenes: L_intro_m1_l6_learn_without_fear_S, sceneFrames: L_intro_m1_l6_learn_without_fear_F, totalFrames: L_intro_m1_l6_learn_without_fear_T },
     { id: "intro-m1-l7-choose-your-path", scenes: L_intro_m1_l7_choose_your_path_S, sceneFrames: L_intro_m1_l7_choose_your_path_F, totalFrames: L_intro_m1_l7_choose_your_path_T },
     { id: "builder-m2-l1-prompt-layer", scenes: L_builder_m2_l1_prompt_layer_S, sceneFrames: L_builder_m2_l1_prompt_layer_F, totalFrames: L_builder_m2_l1_prompt_layer_T },
     { id: "builder-m1-l1-what-is-llm", scenes: L_builder_m1_l1_what_is_llm_S, sceneFrames: L_builder_m1_l1_what_is_llm_F, totalFrames: L_builder_m1_l1_what_is_llm_T },
@@ -237,5 +236,6 @@ export const LESSONS: LessonModule[] = [
     { id: "intro-m1-l2-first-prompt", scenes: L_intro_m1_l2_first_prompt_S, sceneFrames: L_intro_m1_l2_first_prompt_F, totalFrames: L_intro_m1_l2_first_prompt_T },
     { id: "intro-m1-l4-ai-can-cannot", scenes: L_intro_m1_l4_ai_can_cannot_S, sceneFrames: L_intro_m1_l4_ai_can_cannot_F, totalFrames: L_intro_m1_l4_ai_can_cannot_T },
     { id: "intro-m1-l5-ai-vs-software", scenes: L_intro_m1_l5_ai_vs_software_S, sceneFrames: L_intro_m1_l5_ai_vs_software_F, totalFrames: L_intro_m1_l5_ai_vs_software_T },
+    { id: "intro-m1-l6-learn-without-fear", scenes: L_intro_m1_l6_learn_without_fear_S, sceneFrames: L_intro_m1_l6_learn_without_fear_F, totalFrames: L_intro_m1_l6_learn_without_fear_T },
   /* @lesson-entries-end */
 ];
