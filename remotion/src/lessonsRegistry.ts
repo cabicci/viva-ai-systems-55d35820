@@ -125,6 +125,7 @@ import { SCENES as L_business_m2_l3_readiness_signals_S, SCENE_FRAMES as L_busin
 import { SCENES as L_automator_m3_l1_tools_landscape_S, SCENE_FRAMES as L_automator_m3_l1_tools_landscape_F, TOTAL_FRAMES as L_automator_m3_l1_tools_landscape_T } from "./lessons-generated/automator-m3-l1-tools-landscape.gen";
 import { SCENES as L_creator_m3_l3_cta_S, SCENE_FRAMES as L_creator_m3_l3_cta_F, TOTAL_FRAMES as L_creator_m3_l3_cta_T } from "./lessons-generated/creator-m3-l3-cta.gen";
 import { SCENES as L_automator_m7_l1_closing_loop_S, SCENE_FRAMES as L_automator_m7_l1_closing_loop_F, TOTAL_FRAMES as L_automator_m7_l1_closing_loop_T } from "./lessons-generated/automator-m7-l1-closing-loop.gen";
+import { SCENES as L_creator_m4_l1_reality_check_S, SCENE_FRAMES as L_creator_m4_l1_reality_check_F, TOTAL_FRAMES as L_creator_m4_l1_reality_check_T } from "./lessons-generated/creator-m4-l1-reality-check.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -132,7 +133,6 @@ export const LESSONS: LessonModule[] = [
     { id: "creator-m4-l3-ai-writing", scenes: L_creator_m4_ai_writing_S, sceneFrames: L_creator_m4_ai_writing_F, totalFrames: L_creator_m4_ai_writing_T },
     { id: "creator-m5-l1-editing", scenes: L_creator_m5_l1_editing_S, sceneFrames: L_creator_m5_l1_editing_F, totalFrames: L_creator_m5_l1_editing_T },
     { id: "creator-m4-l2-mobile-shooting", scenes: L_creator_m4_mobile_shooting_S, sceneFrames: L_creator_m4_mobile_shooting_F, totalFrames: L_creator_m4_mobile_shooting_T },
-    { id: "creator-m4-l1-reality-check", scenes: L_creator_m4_reality_check_S, sceneFrames: L_creator_m4_reality_check_F, totalFrames: L_creator_m4_reality_check_T },
     { id: "creator-m5-l2-thumbnails-captions", scenes: L_creator_m5_l2_thumbnails_captions_S, sceneFrames: L_creator_m5_l2_thumbnails_captions_F, totalFrames: L_creator_m5_l2_thumbnails_captions_T },
     { id: "creator-m6-l1-platforms", scenes: L_creator_m6_l1_platforms_S, sceneFrames: L_creator_m6_l1_platforms_F, totalFrames: L_creator_m6_l1_platforms_T },
     { id: "automator-m5-l1-llm-in-flow", scenes: L_automator_m5_l1_llm_in_flow_S, sceneFrames: L_automator_m5_l1_llm_in_flow_F, totalFrames: L_automator_m5_l1_llm_in_flow_T },
@@ -241,5 +241,6 @@ export const LESSONS: LessonModule[] = [
     { id: "automator-m3-l1-tools-landscape", scenes: L_automator_m3_l1_tools_landscape_S, sceneFrames: L_automator_m3_l1_tools_landscape_F, totalFrames: L_automator_m3_l1_tools_landscape_T },
     { id: "creator-m3-l3-cta", scenes: L_creator_m3_l3_cta_S, sceneFrames: L_creator_m3_l3_cta_F, totalFrames: L_creator_m3_l3_cta_T },
     { id: "automator-m7-l1-closing-loop", scenes: L_automator_m7_l1_closing_loop_S, sceneFrames: L_automator_m7_l1_closing_loop_F, totalFrames: L_automator_m7_l1_closing_loop_T },
+    { id: "creator-m4-l1-reality-check", scenes: L_creator_m4_l1_reality_check_S, sceneFrames: L_creator_m4_l1_reality_check_F, totalFrames: L_creator_m4_l1_reality_check_T },
   /* @lesson-entries-end */
 ];
