@@ -5,7 +5,7 @@ import {
   Workflow,
   BarChart3,
   Briefcase,
-  Sparkles,
+  Map as MapIcon,
 } from "lucide-react";
 import { INTRO_LESSON_CONTENT } from "@/components/intro/lessons";
 
@@ -611,7 +611,7 @@ export const PATHS: CurriculumPath[] = [
     id: "intro",
     title: "المقدمة",
     tagline: "دخول عالم الـ AI — من غير خوف ومن غير كود.",
-    icon: Sparkles,
+    icon: MapIcon,
     accent: "accent",
     status: "open",
     kind: "intro",

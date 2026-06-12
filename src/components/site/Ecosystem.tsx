@@ -1,10 +1,10 @@
-import { Brain, Workflow, Rocket, Database, Bot, Layers } from "lucide-react";
+import { Route, Workflow, Rocket, Database, MessageCircle, Layers } from "lucide-react";
 
 const pillars = [
-  { icon: Brain, title: "تعلم عملي", desc: "كل درس وراه مهمة بسيطة تطبقها بنفسك.", color: "var(--pastel-mint)", anim: "animate-pulse-glow" },
+  { icon: Route, title: "تعلم عملي", desc: "كل درس وراه مهمة بسيطة تطبقها بنفسك.", color: "var(--pastel-mint)", anim: "animate-float" },
   { icon: Workflow, title: "تفكير منظم", desc: "هتفهم الصورة الكبيرة، مش مجرد معلومات متفرقة.", color: "var(--pastel-blue)", anim: "animate-float" },
-  { icon: Bot, title: "AI معاك في كل درس", desc: "مساعد ذكي يشرحلك ويساعدك لما تتوه.", color: "var(--pastel-pink)", anim: "animate-tilt" },
-  { icon: Layers, title: "5 مسارات متصلة", desc: "اختار المسار اللي يناسب هدفك وابدأ منه.", color: "var(--pastel-yellow)", anim: "animate-twinkle" },
+  { icon: MessageCircle, title: "AI معاك في كل درس", desc: "مساعد ذكي يشرحلك ويساعدك لما تتوه.", color: "var(--pastel-pink)", anim: "animate-float" },
+  { icon: Layers, title: "5 مسارات متصلة", desc: "اختار المسار اللي يناسب هدفك وابدأ منه.", color: "var(--pastel-yellow)", anim: "animate-float" },
   { icon: Database, title: "ابني حاجة حقيقية", desc: "هتبني تطبيقات، أتمتة، تحليلات، وأفكار قابلة للتنفيذ.", color: "var(--pastel-mint)", anim: "animate-chart-bounce" },
   { icon: Rocket, title: "إطلاق فعلي", desc: "من مجرد فكرة لمنتج أو نظام تقدر استخدمه.", color: "var(--pastel-blue)", anim: "animate-flame" },
 ];

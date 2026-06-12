@@ -1,4 +1,4 @@
-import { Sparkles, User, Cog, Hammer, ArrowLeft } from "lucide-react";
+import { Compass, User, Cog, Hammer, ArrowLeft } from "lucide-react";
 
 type Stage = {
   level: string;
@@ -6,7 +6,7 @@ type Stage = {
   subtitle: string;
   paths: string[];
   desc: string;
-  icon: typeof Sparkles;
+  icon: typeof Compass;
   color: string;
   anim: string;
 };
@@ -18,9 +18,9 @@ const stages: Stage[] = [
     subtitle: "اتفهم الـ AI من أوله",
     paths: ["Intro"],
     desc: "أساسيات لازم تعرفها قبل أي مسار — تفكير، أدوات، عقلية.",
-    icon: Sparkles,
+    icon: Compass,
     color: "var(--pastel-cream)",
-    anim: "animate-twinkle",
+    anim: "animate-float",
   },
   {
     level: "LEVEL 1 · AI USER",

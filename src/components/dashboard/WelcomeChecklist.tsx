@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "@tanstack/react-router";
-import { Check, Circle, Sparkles, ArrowLeft } from "lucide-react";
+import { Check, Circle, ListChecks, ArrowLeft } from "lucide-react";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
@@ -116,7 +116,7 @@ export function WelcomeChecklist() {
       <div className="flex items-start justify-between gap-3 mb-3">
         <div className="flex items-center gap-2">
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-[image:var(--gradient-primary)] glow-primary">
-            <Sparkles className="h-5 w-5 text-primary-foreground" />
+            <ListChecks className="h-5 w-5 text-primary-foreground" />
           </span>
           <div>
             <h2 className="text-base font-bold">رحلة أول أسبوع</h2>

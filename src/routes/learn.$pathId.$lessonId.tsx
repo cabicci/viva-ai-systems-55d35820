@@ -3,7 +3,7 @@ import {
   ArrowLeft,
   ArrowRight,
   CheckCircle2,
-  Sparkles,
+  Map as MapIcon,
   Hammer,
   Palette,
   Workflow,
@@ -11,6 +11,7 @@ import {
   Briefcase,
   Copy,
   Check,
+  Milestone,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { useMemo, useState } from "react";
@@ -47,7 +48,7 @@ const PATH_META: Record<
   PathId,
   { label: string; icon: LucideIcon; tone: "accent" | "primary" }
 > = {
-  intro: { label: "المقدمة", icon: Sparkles, tone: "accent" },
+  intro: { label: "المقدمة", icon: MapIcon, tone: "accent" },
   builder: { label: "البناء", icon: Hammer, tone: "primary" },
   creator: { label: "المحتوى", icon: Palette, tone: "accent" },
   automator: { label: "الأتمتة", icon: Workflow, tone: "primary" },
@@ -374,7 +375,7 @@ function UnifiedLessonPage() {
           <p
             className={`text-[11px] font-mono flex items-center gap-1.5 mb-2 ${continuityLabelClass}`}
           >
-            <Sparkles className="h-3.5 w-3.5" />
+            <Milestone className="h-3.5 w-3.5" />
             {next ? "الدرس الجاي" : "آخر درس في المسار"}
           </p>
           <p className="text-[15px] leading-[1.9] text-foreground/90">

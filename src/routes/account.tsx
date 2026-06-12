@@ -5,7 +5,7 @@ import {
   User as UserIcon,
   Mail,
   Calendar,
-  Sparkles,
+  BadgeCheck,
   Flame,
   Clock,
   BookCheck,
@@ -263,7 +263,7 @@ function AccountPage() {
                   </span>
                 </div>
               </div>
-              <Sparkles
+              <BadgeCheck
                 className={`h-5 w-5 ${isPro ? "text-primary" : "text-muted-foreground"}`}
               />
             </div>

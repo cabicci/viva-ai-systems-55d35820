@@ -1,5 +1,5 @@
 import * as React from "react";
-import { CheckCircle2, ChevronDown, ChevronUp, Copy, Sparkles } from "lucide-react";
+import { CheckCircle2, ChevronDown, ChevronUp, Copy, Flag } from "lucide-react";
 import { toast } from "sonner";
 import {
   MissionRubricSection,
@@ -87,7 +87,7 @@ export function IntroMissionPrompt({
         <p className="flex-1 min-w-0 text-sm leading-relaxed">{intro}</p>
         {started && (
           <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 text-[10px] text-accent shrink-0">
-            <Sparkles className="h-3 w-3" /> بدأت المهمة
+            <Flag className="h-3 w-3" /> بدأت المهمة
           </span>
         )}
       </div>

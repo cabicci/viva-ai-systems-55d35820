@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Hammer, Palette, Cog, BarChart3, Briefcase, Sparkles, Check, ArrowLeft, Loader2, Trophy, Zap } from "lucide-react";
+import { Hammer, Palette, Cog, BarChart3, Briefcase, Compass, BookOpen, Check, ArrowLeft, Loader2, Trophy, Zap } from "lucide-react";
 import { runWowPath } from "@/lib/wow-experience.functions";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
@@ -139,7 +139,7 @@ function WelcomeStep({ name, onContinue }: { name: string; onContinue: () => voi
   return (
     <div className="text-center py-12 md:py-24 animate-fade-up">
       <div className="inline-grid h-20 w-20 place-items-center rounded-2xl bg-[image:var(--gradient-primary)] glow-primary mb-8">
-        <Sparkles className="h-10 w-10 text-primary-foreground" />
+        <Compass className="h-10 w-10 text-primary-foreground" />
       </div>
       <h1 className="text-4xl md:text-6xl font-black leading-tight">
         أهلاً {name ? <span className="text-gradient">{name}</span> : "بيك"} 👋
@@ -357,7 +357,7 @@ function VictoryStep({ successCount, onFinish }: { successCount: number; onFinis
 
       <div className="grid sm:grid-cols-3 gap-3 max-w-xl mx-auto mt-10">
         <Stat icon={Zap} label="مسارات" value="5" />
-        <Stat icon={Sparkles} label="دروس" value="88+" />
+        <Stat icon={BookOpen} label="دروس" value="88+" />
         <Stat icon={Trophy} label="بادج أول" value="✓" />
       </div>
 

@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Sparkles } from "lucide-react";
+import { ArrowLeft, Compass } from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
 
 export function Hero() {
@@ -28,7 +28,7 @@ export function Hero() {
         <div
           className="mx-auto inline-flex items-center gap-2 rounded-full border border-border/60 bg-white/70 px-4 py-1.5 text-xs text-muted-foreground shadow-sm backdrop-blur"
         >
-          <Sparkles className="h-3.5 w-3.5 animate-twinkle" style={{ color: "oklch(0.55 0.10 235)" }} />
+          <Compass className="h-3.5 w-3.5" style={{ color: "oklch(0.55 0.10 235)" }} />
           <span>مسارات · masaarat.ai — تعلّم الذكاء الاصطناعي بالتطبيق</span>
         </div>
 

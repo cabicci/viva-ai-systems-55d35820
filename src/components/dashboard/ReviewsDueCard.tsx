@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
-import { Brain, ArrowLeft } from "lucide-react";
+import { RefreshCw, ArrowLeft } from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
 import { getDueReviews } from "@/lib/spaced-repetition.functions";
 import { getLesson } from "@/lib/unified-lessons";
@@ -56,7 +56,7 @@ export function ReviewsDueCard() {
       <div className="flex items-center justify-between gap-3 flex-wrap mb-4">
         <div className="flex items-center gap-2.5">
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-accent/15 text-accent shrink-0">
-            <Brain className="h-5 w-5" />
+            <RefreshCw className="h-5 w-5" />
           </span>
           <div>
             <h3 className="font-bold leading-tight">مراجعات النهارده</h3>

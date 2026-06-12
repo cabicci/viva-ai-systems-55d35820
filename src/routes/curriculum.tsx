@@ -10,7 +10,6 @@ import {
   Lock,
   Map as MapIcon,
   Play,
-  Sparkles,
   ArrowRight,
 } from "lucide-react";
 import {
@@ -276,7 +275,7 @@ function PathBlock({
       {isIntro && (
         <div className="mb-5 flex items-center gap-2">
           <span className="inline-flex items-center gap-1.5 rounded-full glass border border-foreground/10 px-3 py-1 text-[11px] font-mono text-foreground/70 uppercase tracking-widest">
-            <Sparkles className="h-3 w-3" /> Start Here
+            <MapIcon className="h-3 w-3" /> Start Here
           </span>
           <span className="text-[11px] text-muted-foreground">
             ابدأ من هنا قبل ما تدخل المسارات.

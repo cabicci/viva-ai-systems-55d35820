@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Brain, Target, Clock, ArrowLeft, Loader2, Check } from "lucide-react";
+import { CircleHelp, Target, Clock, ArrowLeft, Loader2, Check } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
 import { toast } from "sonner";
@@ -134,7 +134,7 @@ function TriagePage() {
       {step === 1 && (
         <div className="grid md:grid-cols-3 gap-3">
           {LEVELS.map((l) => (
-            <Card key={l.id} id={l.id} title={l.title} sub={l.sub} selected={level === l.id} onClick={() => setLevel(l.id)} icon={Brain} />
+            <Card key={l.id} id={l.id} title={l.title} sub={l.sub} selected={level === l.id} onClick={() => setLevel(l.id)} icon={CircleHelp} />
           ))}
         </div>
       )}

@@ -10,7 +10,7 @@ import {
   Lightbulb,
   HelpCircle,
   Send,
-  Sparkles,
+  ClipboardCheck,
   FileText,
   SkipForward,
 } from "lucide-react";
@@ -484,7 +484,7 @@ function EvaluationResultCard({
   return (
     <div className="rounded-xl border border-accent/25 bg-accent/[0.05] p-4 space-y-3">
       <div className="flex items-start gap-2">
-        <Sparkles className="h-4 w-4 text-accent mt-0.5 shrink-0" />
+        <ClipboardCheck className="h-4 w-4 text-accent mt-0.5 shrink-0" />
         <div className="space-y-1 min-w-0">
           <p className="text-sm font-semibold text-foreground">
             {feedbackState.label}
@@ -516,7 +516,7 @@ function EvaluationResultCard({
 
       {result.nextStep && (
         <p className="text-xs text-primary leading-relaxed inline-flex items-start gap-1.5">
-          <Sparkles className="h-3.5 w-3.5 shrink-0 mt-0.5" />
+          <ClipboardCheck className="h-3.5 w-3.5 shrink-0 mt-0.5" />
           <span>
             <span className="font-semibold">الخطوة الجاية: </span>
             {result.nextStep}

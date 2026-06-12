@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Flame, Sparkles, Trophy, X } from "lucide-react";
+import { Flame, CheckCircle2, Trophy, X } from "lucide-react";
 import { useStreak } from "@/lib/entitlements";
 
 const XP_PER_LESSON = 10;
@@ -63,7 +63,7 @@ export function CompletionReward({
         </div>
         <div className="flex-1 min-w-0">
           <p className="text-sm font-bold flex items-center gap-1.5">
-            <Sparkles className="h-3.5 w-3.5 text-primary" />
+            <CheckCircle2 className="h-3.5 w-3.5 text-primary" />
             +{XP_PER_LESSON} XP
             {snapshot.streak > 0 && (
               <span className="inline-flex items-center gap-1 text-xs font-mono text-amber-300 mr-2">
