@@ -64,7 +64,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "builder-m9-l1-rag": "e5f31522-72fa-4d36-8ff8-8651b4675617",
   "builder-m9-l2-embeddings": "8b4b13d1-d99a-4ee2-a1fc-3fcb82cca634",
   "builder-m9-l3-agents": "af9d9d70-3446-4a01-84ed-dc50efb95fe6",
-  "business-m1-l1-from-decisions-to-leadership": "ea162ffb-bb5b-461f-b1a3-165eb5e74604",
+  "business-m1-l1-from-decisions-to-leadership": "75ee2857-e07d-4a8a-b95c-826203746f7a",
   "business-m1-l2-reactive-vs-proactive": "e39b85c3-275e-47aa-bd74-2ca2f6dcec5c",
   "business-m1-l3-ai-thinking-partner": "06284c99-b7b5-4ec2-b3f6-77439d70acb6",
   "business-m2-l1-customer-lifecycle": "7c0ca5ab-e263-47b4-9c8f-674e8f6fd5a1",
