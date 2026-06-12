@@ -82,7 +82,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "business-m4-l1-premature-scaling": "3cd8d029-1a89-4f5c-9746-0249c08c76ff",
   "business-m4-l1-strategic-operational-admin": "df064a24-ceb7-4e6f-80ee-d11bd32c41a7",
   "business-m4-l2-delegate-or-automate": "01752bf7-34fa-4409-a08d-8ceab27fa12a",
-  "business-m4-l2-reactive-relapse": "ec7a97da-bb42-44d4-a3dc-b448d601888a",
+  "business-m4-l2-reactive-relapse": "4cf3b6b4-f96e-4304-9195-2fb5e6979cb0",
   "business-m4-l3-weekly-rhythm": "51ecfc57-a5ee-4ac8-82f8-0eee016ce2b0",
   "business-m4-l4-full-ecosystem": "7c6f6fa6-9bfa-4f94-9c0a-bdf9a1ee98d1",
   "business-m4-l5-business-os-dashboard": "0031bb65-57d7-4f57-90c9-5f39723709f0",
