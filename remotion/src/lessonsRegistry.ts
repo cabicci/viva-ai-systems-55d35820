@@ -124,6 +124,7 @@ import { SCENES as L_creator_m7_l1_brand_basics_S, SCENE_FRAMES as L_creator_m7_
 import { SCENES as L_business_m2_l2_build_your_offer_S, SCENE_FRAMES as L_business_m2_l2_build_your_offer_F, TOTAL_FRAMES as L_business_m2_l2_build_your_offer_T } from "./lessons-generated/business-m2-l2-build-your-offer.gen";
 import { SCENES as L_business_m2_l2_retention_flow_S, SCENE_FRAMES as L_business_m2_l2_retention_flow_F, TOTAL_FRAMES as L_business_m2_l2_retention_flow_T } from "./lessons-generated/business-m2-l2-retention-flow.gen";
 import { SCENES as L_builder_m2_l2_instructions_examples_S, SCENE_FRAMES as L_builder_m2_l2_instructions_examples_F, TOTAL_FRAMES as L_builder_m2_l2_instructions_examples_T } from "./lessons-generated/builder-m2-l2-instructions-examples.gen";
+import { SCENES as L_analyst_m4_automated_dashboard_S, SCENE_FRAMES as L_analyst_m4_automated_dashboard_F, TOTAL_FRAMES as L_analyst_m4_automated_dashboard_T } from "./lessons-generated/analyst-m4-automated-dashboard.gen";
 /* @lesson-imports-end */
 
 export const LESSONS: LessonModule[] = [
@@ -239,5 +240,6 @@ export const LESSONS: LessonModule[] = [
     { id: "business-m2-l2-build-your-offer", scenes: L_business_m2_l2_build_your_offer_S, sceneFrames: L_business_m2_l2_build_your_offer_F, totalFrames: L_business_m2_l2_build_your_offer_T },
     { id: "business-m2-l2-retention-flow", scenes: L_business_m2_l2_retention_flow_S, sceneFrames: L_business_m2_l2_retention_flow_F, totalFrames: L_business_m2_l2_retention_flow_T },
     { id: "builder-m2-l2-instructions-examples", scenes: L_builder_m2_l2_instructions_examples_S, sceneFrames: L_builder_m2_l2_instructions_examples_F, totalFrames: L_builder_m2_l2_instructions_examples_T },
+    { id: "analyst-m4-automated-dashboard", scenes: L_analyst_m4_automated_dashboard_S, sceneFrames: L_analyst_m4_automated_dashboard_F, totalFrames: L_analyst_m4_automated_dashboard_T },
   /* @lesson-entries-end */
 ];
