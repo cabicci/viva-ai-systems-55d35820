@@ -38,3 +38,11 @@ public/**/*.mp4
 .env
 .env.local
 .env.*.local
+
+# Persona-sim — internal QA only; never deploy to public/
+public/persona-sim/
+scripts/persona-sim/output/
+scripts/persona-sim/**/persona-sim-p100-*
+scripts/persona-sim/**/*-raw.json
+scripts/persona-sim/**/*checkpoint*.json
+scripts/persona-sim/**/*.heatmap.csv

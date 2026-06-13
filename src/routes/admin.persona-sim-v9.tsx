@@ -1,11 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
 import { useMemo, useState } from "react";
 import { ArrowLeft, ChevronDown, ChevronUp, Filter } from "lucide-react";
 import { AdminGate } from "@/components/AdminGate";
 import { Button } from "@/components/ui/button";
 
 import { requireAdminBeforeLoad } from "@/lib/admin-route-guard";
+import {
+  getPersonaSimV9AbRaw,
+  getPersonaSimV9Suggestions,
+} from "@/lib/persona-sim.functions";
 
 export const Route = createFileRoute("/admin/persona-sim-v9")({
   beforeLoad: requireAdminBeforeLoad,
@@ -332,13 +337,16 @@ function PersonaSimV9Page() {
   >("all");
   const [sortBy, setSortBy] = useState<"delta" | "pct" | "lesson">("delta");
 
+  const fetchSuggestions = useServerFn(getPersonaSimV9Suggestions);
+  const fetchAbRaw = useServerFn(getPersonaSimV9AbRaw);
+
   const sugQ = useQuery<Suggestions>({
     queryKey: ["v9-suggestions"],
-    queryFn: () => fetch("/persona-sim/v9-suggestions.json").then((r) => r.json()),
+    queryFn: () => fetchSuggestions(),
   });
   const abQ = useQuery<AbRow[]>({
     queryKey: ["v9-ab-raw"],
-    queryFn: () => fetch("/persona-sim/v9-ab-raw.json").then((r) => r.json()),
+    queryFn: async () => (await fetchAbRaw()) as unknown as AbRow[],
   });
 
   const rows: LessonRow[] = useMemo(() => {

@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
 import { useMemo, useState } from "react";
 import { ArrowLeft, Check, X, Edit3 } from "lucide-react";
 import { AdminGate } from "@/components/AdminGate";
@@ -9,6 +10,10 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
 import { requireAdminBeforeLoad } from "@/lib/admin-route-guard";
+import {
+  getPersonaSimV9AbRaw,
+  getPersonaSimV9Suggestions,
+} from "@/lib/persona-sim.functions";
 
 export const Route = createFileRoute("/admin/v9-review")({
   beforeLoad: requireAdminBeforeLoad,
@@ -111,19 +116,16 @@ function BlockRow({ blocks, label }: { blocks: Block[]; label: string }) {
 
 function V9ReviewPage() {
   const qc = useQueryClient();
+  const fetchSuggestions = useServerFn(getPersonaSimV9Suggestions);
+  const fetchAbRaw = useServerFn(getPersonaSimV9AbRaw);
+
   const sugQ = useQuery<Suggestions>({
     queryKey: ["v9-suggestions"],
-    queryFn: async () => {
-      const r = await fetch("/persona-sim/v9-suggestions.json");
-      return r.json();
-    },
+    queryFn: () => fetchSuggestions(),
   });
   const abQ = useQuery<AbRow[]>({
     queryKey: ["v9-ab"],
-    queryFn: async () => {
-      const r = await fetch("/persona-sim/v9-ab-raw.json");
-      return r.json();
-    },
+    queryFn: async () => (await fetchAbRaw()) as unknown as AbRow[],
   });
   const decisionsQ = useQuery<Decision[]>({
     queryKey: ["v9-decisions"],
