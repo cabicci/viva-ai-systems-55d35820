@@ -1,7 +1,14 @@
 import { createServerFn } from "@tanstack/react-start";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
-import { supabaseAdmin } from "@/integrations/supabase/client.server";
 import { z } from "zod";
+
+// IMPORTANT: do NOT import `@/integrations/supabase/client.server` at the top
+// level — server-fn modules only strip handler bodies from the client bundle.
+// Load the admin client inside each `.handler()` via dynamic import.
+async function loadSupabaseAdmin() {
+  const mod = await import("@/integrations/supabase/client.server");
+  return mod.supabaseAdmin;
+}
 
 /**
  * Admin-only stats. Each handler:
@@ -109,6 +116,7 @@ export const getAdminActivity = createServerFn({ method: "GET" })
   .middleware([requireSupabaseAuth])
   .handler(async ({ context }): Promise<AdminActivity> => {
     await assertAdmin(context);
+    const supabaseAdmin = await loadSupabaseAdmin();
 
     // Fetch up to 5 pages (500 users) to keep "Recent signups" accurate
     // beyond the first 20. listUsers returns by created_at desc by default,
@@ -194,6 +202,7 @@ export const listUsers = createServerFn({ method: "GET" })
   .inputValidator((input: unknown) => listUsersInput.parse(input ?? {}))
   .handler(async ({ data, context }): Promise<AdminUsersPage> => {
     await assertAdmin(context);
+    const supabaseAdmin = await loadSupabaseAdmin();
 
     const { page, pageSize } = data;
     const { data: res, error } = await supabaseAdmin.auth.admin.listUsers({

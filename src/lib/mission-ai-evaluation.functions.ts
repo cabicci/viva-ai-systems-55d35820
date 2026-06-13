@@ -1,9 +1,15 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
-import { supabaseAdmin } from "@/integrations/supabase/client.server";
 import { enforceRateLimit } from "./rate-limit.server";
 import { callAI } from "./ai-providers.server";
+
+// Load supabaseAdmin dynamically inside handlers so its top-level import
+// never reaches the client bundle.
+async function loadSupabaseAdmin() {
+  const mod = await import("@/integrations/supabase/client.server");
+  return mod.supabaseAdmin;
+}
 
 /**
  * AI-powered mission evaluation.
@@ -57,6 +63,7 @@ export const evaluateMissionWithAI = createServerFn({ method: "POST" })
   .inputValidator((input) => InputSchema.parse(input))
   .handler(async ({ data, context }): Promise<AIEvaluationResult> => {
     const userId = context.userId;
+    const supabaseAdmin = await loadSupabaseAdmin();
 
     const releaseSubmittedRow = async () => {
       // submit_mission_for_evaluation leaves status=submitted; on eval failure
@@ -228,6 +235,9 @@ export const revealModelMissionAnswer = createServerFn({ method: "POST" })
   .inputValidator((input) => RevealInputSchema.parse(input))
   .handler(async ({ data, context }): Promise<RevealAnswerResult> => {
     const userId = context.userId;
+    const supabaseAdmin = await loadSupabaseAdmin();
+
+
 
     // Rate limit: hourly + daily + monthly caps for the escape-hatch reveal.
     await enforceRateLimit({ userId, bucketKey: "ai:reveal-answer", maxCalls: 30, windowSeconds: 3600 });

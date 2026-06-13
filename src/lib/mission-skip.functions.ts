@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+import { enforceRateLimit } from "./rate-limit.server";
 
 /**
  * Skip a mission — persists a `passed` submission with metadata.skipped=true
@@ -20,6 +21,13 @@ export const skipMissionServer = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .inputValidator((input) => Input.parse(input))
   .handler(async ({ data, context }): Promise<{ id: string }> => {
+    // Light per-user cap — skipping is cheap but should not be spammable.
+    await enforceRateLimit({
+      userId: context.userId,
+      bucketKey: "mission:skip",
+      maxCalls: 30,
+      windowSeconds: 3600,
+    });
     // Use the user-authed client so the SQL function sees auth.uid() = caller.
     const { data: row, error } = await context.supabase.rpc(
       "skip_mission_for_user",

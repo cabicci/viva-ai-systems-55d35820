@@ -5,6 +5,26 @@ import { captureError, captureWarn } from "@/lib/error-capture";
 
 const DEVICE_KEY = "lovable.device_id";
 
+// Silence cosmetic supabase-js refresh-token console noise (e.g. anonymous
+// visitors with a stale local token). Real auth errors still surface via
+// onAuthStateChange / signIn responses. Browser-only, install once.
+if (typeof window !== "undefined" && !(window as { __vivaAuthNoiseFilter?: boolean }).__vivaAuthNoiseFilter) {
+  (window as { __vivaAuthNoiseFilter?: boolean }).__vivaAuthNoiseFilter = true;
+  const origError = console.error.bind(console);
+  const NOISY = /(Invalid Refresh Token|refresh_token_not_found|Refresh Token Not Found|Auth session missing)/i;
+  console.error = (...args: unknown[]) => {
+    try {
+      const msg = args.map((a) => {
+        if (a instanceof Error) return a.message;
+        if (typeof a === "string") return a;
+        try { return JSON.stringify(a); } catch { return String(a); }
+      }).join(" ");
+      if (NOISY.test(msg)) return;
+    } catch { /* fall through */ }
+    origError(...args);
+  };
+}
+
 function getDeviceId(): string {
   // Called only from client-side effects (signIn/onAuthStateChange), so we
   // throw on SSR rather than returning "" — an empty id would fail the
