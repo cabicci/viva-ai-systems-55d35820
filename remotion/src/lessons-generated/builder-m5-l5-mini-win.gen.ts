@@ -5,89 +5,52 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "subtitle": "Mini Win قبل الكمال",
-    "highlight": "صغير ومنشور",
-    "chip": "بداية الدرس",
-    "title": "هتفهم إيه النهاردة؟"
+    "subtitle": "في 4 دروس بس فهمت اللي مبرمج محترف بياخد شهور عشان يفهمه: إزاي أي تطبيق في الدنيا بيشتغل من جوه. بريك سريع قبل ما نبدأ نبني فعلاً.",
+    "chip": "أهلًا، بعد الدرس ده هتقدر",
+    "highlight": "Phase 2",
+    "title": "تشوف إنت بنيت إيه فعلاً"
   },
   {
-    "card": "BulletsCard",
+    "card": "ConceptCard",
     "accent": "lavender",
-    "bullets": [
-      "عندك ٢٠ feature في دماغك: login، دفع، ٥ لغات، dashboard، notifications...",
-      "بعد شهر لسه بتخطّط — ومفيش حاجة شغّالة قدام حد حقيقي.",
-      "المشكلة مش الفكرة. المشكلة إنك مستني «الكمال» قبل ما تجرب."
-    ],
-    "title": "بتخطّط لتطبيق ضخم — ومش بتبدأ"
+    "tag": "ديكور المطعم والمنيو",
+    "term": "الواجهة (Frontend)",
+    "definition": "اللي العميل بيشوفه ويدوس عليه"
   },
   {
-    "card": "BulletsCard",
+    "card": "ConceptCard",
     "accent": "peach",
-    "title": "صغير ومنشور > كامل ومش متجرب",
-    "bullets": [
-      "Mini Win = أصغر نسخة من تطبيقك تقدر تنشرها وتجربها مع مستخدم حقيقي.",
-      "صفحة واحدة + action واحد + نتيجة واحدة = كفاية للبداية.",
-      "Feedback من ٣ مستخدمين أهم من ٣٠ feature مفيش حد جربهم.",
-      "Phase 2 خلّصت المفاهيم — Phase 3 هتبني. Mini Win هو جسرك."
-    ]
+    "definition": "العقل اللي بيستقبل الطلبات وينفّذها",
+    "term": "الكواليس (Backend)",
+    "tag": "المطبخ اللي بيطبخ"
   },
   {
-    "card": "CompareCard",
+    "card": "ConceptCard",
     "accent": "yellow",
-    "title": "تطبيق كامل في دماغك vs Mini Win",
-    "right": {
-      "body": "صفحة واحدة: اكتب سؤال → AI يرد. ٥ أصدقاء جربوا. عرفت إيه يشتغل وإيه لأ.",
-      "label": "Mini Win في أسبوع"
-    },
-    "left": {
-      "body": "٣ شهور تخطيط. login + دفع + ١٠ صفحات. مفيش حد جرب — ومفيش feedback.",
-      "label": "«هعمل كل حاجة الأول»"
-    }
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "tag": "مش prototype",
-    "term": "Mini Win (انتصار صغير)",
-    "definition": "أصغر نسخة منشورة تثبت إن الفكرة تشتغل — مش prototype في دماغك."
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "definition": "نفس الفكرة بالإنجليزي — أقل منتج يقدر يوصل قيمة حقيقية.",
-    "term": "MVP (Minimum Viable Product)",
-    "tag": "أقل منتج قيمة"
+    "definition": "المكان اللي التطبيق بيفتكر فيه كل حاجة",
+    "term": "المخزن الذكي (Database)",
+    "tag": "مخزن المكونات"
   },
   {
     "card": "BulletsCard",
-    "accent": "mint",
+    "accent": "pink",
+    "title": "Lovable بيعمل التلاتة بنفسه",
     "bullets": [
-      "Frontend: العميل يشوف ويدوس.",
-      "Backend: AI يشتغل ورا.",
-      "Database: التطبيق يفتكر.",
-      "Mini Win = أقل حاجة في كل طبقة — بس تشتغل end-to-end."
-    ],
-    "title": "٣ طبقات — جاهزة للبناء"
+      "إنت فاهم الـ 3 طبقات دلوقتي.",
+      "مش لازم تكتب الكود بإيدك.",
+      "Lovable بيبني الواجهة، وبيجهّز الكواليس، وبيعمل المخزن.",
+      "إنت دورك تقوله إنت عايز إيه."
+    ]
   },
   {
     "card": "CTACard",
-    "accent": "lavender",
-    "tagline": "جاوب على السؤال عشان تتأكد إنك فهمت.",
-    "title": "سؤال واحد سريع",
+    "accent": "mintDeep",
+    "tagline": "اربط كل طبقة بشغلها",
+    "highlight": "في 30 ثانية",
     "eyebrow": "دورك دلوقتي",
-    "highlight": "تأكيد فهمك للدرس"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "peach",
-    "title": "إيه اللي عندك دلوقتي؟",
-    "bullets": [
-      "فهمت إيه؟ صغير ومنشور > كامل ومش متجرب. Mini Win = جسرك لـ Phase 3.",
-      "تقدر تعمل إيه؟ عندك تعريف Mini Win + حدود + ٣ testers.",
-      "اللي جاي: من فكرة لصفحة — إزاي أي idea تبقى شاشات وخطوات."
-    ]
+    "title": "اختبر نفسك"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [383, 430, 784, 529, 427, 540, 435, 306, 672];
+export const SCENE_FRAMES: number[] = [484, 382, 357, 453, 436, 330];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);

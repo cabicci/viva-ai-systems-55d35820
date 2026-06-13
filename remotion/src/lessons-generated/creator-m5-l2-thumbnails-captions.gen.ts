@@ -5,90 +5,127 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "chip": "بداية الدرس",
-    "highlight": "باب الدخول",
-    "subtitle": "بعد ما عرفت تطلع من فكرة واحدة أكتر من شكل محتوى، السؤال دلوقتي: إزاي تخلي كل نسخة منهم تتشاف وتتفتح؟ الـ Thumbnail والكابشن أول قرار للمشاهد: يدوس أو يعدي.",
-    "title": "الـ Thumbnail والكابشن هم باب الدخول"
+    "title": "الـ Thumbnail",
+    "subtitle": "محتوى ٥٠٪ + Thumbnail قوي = آلاف المشاهدات.",
+    "highlight": "نص نجاح اليوتيوب",
+    "chip": "أهلًا بيك"
   },
   {
-    "card": "BulletsCard",
+    "card": "ConceptCard",
     "accent": "lavender",
-    "bullets": [
-      "لو الصورة باهتة أو النص طويل ومش واضح، المشاهد مش هيدي فرصة للفيديو.",
-      "كمان لو أول سطر في الكابشن ممل، القارئ مش هيكمل للنقطة المهمة."
-    ],
-    "title": "باب ضعيف بيخسر محتوى ممتاز"
+    "definition": "ده بطل الصورة أو الحاجة الأساسية اللي عينك بتروح لها أول ما بتشوف التصميم.",
+    "tag": "بطل الصورة",
+    "term": "Subject (العنصر الأساسي)"
   },
   {
-    "card": "BulletsCard",
+    "card": "ConceptCard",
     "accent": "peach",
-    "bullets": [
-      "Thumbnail جيد: نص قليل، تباين قوي، وفكرة واضحة من أول نظرة.",
-      "الكابشن الجيد: أول سطر Hook، وبعده جملة توضح الفايدة بسرعة.",
-      "اختبر ٢ أو ٣ بدايات للكابشن، واختار اللي يوصل المعنى أسرع.",
-      "متخلطش الرسائل: كل Thumbnail له وعد واحد واضح."
-    ],
-    "title": "خلي الباب واضح وسريع الفهم"
+    "tag": "فرق الألوان",
+    "term": "Contrast (التباين)",
+    "definition": "فرق الألوان ووضوحها اللي بيخلي الصورة \"تنطق\" وتتشاف بسهولة وسط زحمة الصور."
   },
   {
-    "card": "CompareCard",
+    "card": "ConceptCard",
     "accent": "yellow",
-    "right": {
-      "body": "Thumbnail مركز بكلمات قليلة وكابشن يبدأ بجملة مشوقة مرتبطة بالفائدة.",
-      "label": "الأسلوب الأقوى"
-    },
-    "title": "نص مزحوم vs رسالة تفتح الباب",
-    "left": {
-      "body": "Thumbnail فيه كلام كتير وكابشن يبدأ بمقدمة طويلة، فالمشاهد يزهق قبل ما يفهم.",
-      "label": "الأسلوب الضعيف"
-    }
+    "tag": "صورة الغلاف",
+    "term": "Thumbnail (صورة الغلاف)",
+    "definition": "الصورة الصغيرة اللي بتعمل \"واجهة\" للفيديو وتحمس الناس تدوس وتتفرج."
   },
   {
     "card": "ConceptCard",
     "accent": "pink",
-    "term": "Hook Line",
-    "definition": "أول سطر يشد الانتباه بسرعة.",
-    "tag": "شد الانتباه"
+    "definition": "حسبة بسيطة بتعرفنا كام واحد داس من كل 100 شافوا الصورة قدامهم.",
+    "term": "CTR (نسبة الضغط)",
+    "tag": "نسبة الضغط"
   },
   {
     "card": "ConceptCard",
     "accent": "mintDeep",
-    "term": "Thumbnail Text",
-    "definition": "الكلمات القليلة الظاهرة على صورة الغلاف.",
-    "tag": "نص الصورة"
+    "tag": "وصف الفيديو",
+    "term": "Caption (وصف الفيديو)",
+    "definition": "الكلام اللي بيتكتب تحت الفيديو أو البوست عشان يشرح تفاصيل زيادة."
   },
   {
-    "card": "ConceptCard",
+    "card": "BulletsCard",
     "accent": "mint",
-    "tag": "نسبة الضغط",
-    "term": "CTR",
-    "definition": "نسبة الناس اللي ضغطت بعد ما شافت العنوان والصورة."
+    "bullets": [
+      "١. Subject واضح: وش، منتج، أو Object كبير في النص، ومفيش زحمة.",
+      "عين المتفرج بتقرّر في ٠.٣ ثانية."
+    ],
+    "title": "عشان تعمل Thumbnail قوي، ركّز في ٣ عناصر"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "lavender",
+    "bullets": [
+      "٢. ٢-٤ كلمات بخط ضخم، مش جملة كاملة.",
+      "أمثلة: «STOP DOING THIS»، «I WAS WRONG».",
+      "الـ Thumbnail بـ ١٠ كلمات = مفيش حد بيقراها."
+    ],
+    "title": "٢-٤ كلمات بخط ضخم، مش جملة كاملة"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "peach",
+    "bullets": [
+      "٣. Contrast عالي: ألوان متضادة (أصفر مع أسود، أبيض مع أحمر).",
+      "لو الـ Thumbnail اختفى في خلفية رمادية = ضعيف."
+    ],
+    "title": "٣. Contrast عالي بألوان متضادة"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "yellow",
+    "bullets": [
+      "للـ Caption: أول سطر هو الـ hook، ابدأ بسؤال أو جملة مفاجئة.",
+      "استخدم ٣ Templates بس في كل فيديوهاتك.",
+      "الـ Consistency (الاتساق) أهم من التنوّع."
+    ],
+    "title": "نصايح مهمة للـ Caption والـ Templates"
   },
   {
     "card": "ScreenshotCard",
+    "accent": "pink",
+    "eyebrow": "شوف بنفسك",
+    "src": "lessons/unique/creator-m4-thumbnails.jpg",
+    "caption": "كل thumbnail هنا فيه ٢-٤ كلمات بس، ألوان مضادة، والكلمات قابلة للقراءة من بعيد.",
+    "title": "Thumbnails قوية = ٣ كلمات + ألوان مضادة"
+  },
+  {
+    "card": "CompareCard",
+    "accent": "mintDeep",
+    "title": "إزاي تختار Thumbnail",
+    "left": {
+      "body": "بتاخد screenshot عشوائي من الفيديو، تكتب عليه عنوان الفيديو كامل. الـ thumbnail باهت، الكلام كتير، مفيش حاجة بتجذب. CTR تحت ٢٪.",
+      "label": "FAILURE — Screenshot من الفيديو"
+    },
+    "right": {
+      "body": "صورة وش بتعبير قوي (دهشة، إيجابية)، ٣ كلمات بـ خط ضخم («I WAS WRONG»)، خلفية بلون متضاد. CTR ٨-١٢٪. نفس الفيديو، ٥× مشاهدات.",
+      "label": "RIGHT — صورة مخصّصة + ٣ كلمات"
+    }
+  },
+  {
+    "card": "CompareCard",
+    "accent": "mint",
+    "right": {
+      "label": "RIGHT — صورة مخصّصة + ٣ كلمات",
+      "body": "صورة وش بتعبير قوي (دهشة، إيجابية)، ٣ كلمات بـ خط ضخم («I WAS WRONG»)، خلفية بلون متضاد. CTR ٨-١٢٪. نفس الفيديو، ٥× مشاهدات."
+    },
+    "title": "إزاي تختار Thumbnail",
+    "left": {
+      "label": "FAILURE — Screenshot من الفيديو",
+      "body": "بتاخد screenshot عشوائي من الفيديو، تكتب عليه عنوان الفيديو كامل. الـ thumbnail باهت، الكلام كتير، مفيش حاجة بتجذب. CTR تحت ٢٪."
+    }
+  },
+  {
+    "card": "CTACard",
     "accent": "lavender",
-    "caption": "المهم في المثال إن الرسالة واضحة من أول ثانية: نص قليل، قراءة سهلة، ووعد مفهوم.",
-    "title": "نماذج Thumbnail وكابشن",
-    "src": "lessons/unique/creator-m5-l2-thumbnails-captions.jpg",
-    "eyebrow": "مثال بصري"
-  },
-  {
-    "card": "CTACard",
-    "accent": "peach",
-    "highlight": "الكابشن",
+    "tagline": "هتلاقي أسئلة تطبيق هتساعدك تفهم أكتر إزاي تختار Thumbnail صح.",
+    "title": "طبّق اللي اتعلمته في أسئلة تطبيق",
     "eyebrow": "دورك دلوقتي",
-    "title": "أفضل بداية للكابشن",
-    "tagline": "شوف إزاي تختار أفضل باب دخول لمحتواك دلوقتي!"
-  },
-  {
-    "card": "CTACard",
-    "accent": "yellow",
-    "highlight": "أقوى",
-    "eyebrow": "قفلة واثقة",
-    "tagline": "ابدأ طبق اللي اتعلمته وشوف الفرق في تفاعل جمهورك!",
-    "title": "دلوقتي باب المحتوى عندك أقوى"
+    "highlight": "صمّم Thumbnails لفيديوهاتك"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [443, 432, 556, 485, 247, 211, 205, 371, 264, 384];
+export const SCENE_FRAMES: number[] = [553, 436, 417, 504, 453, 443, 427, 442, 383, 491, 537, 479, 573, 399];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);

@@ -5,85 +5,125 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "title": "هتفهم إيه النهاردة؟",
-    "subtitle": "يبدأ بـ ٤ أرقام قرار، مش ٥٠ رسم.",
-    "highlight": "الـ Dashboard المفيد",
-    "chip": "أهلًا في درس جديد"
+    "subtitle": "نظام فعلي.",
+    "title": "Dashboard فيه ٢٠ رقم = مفيش Dashboard.",
+    "highlight": "٤ أرقام إنت بتقرأهم كل أسبوع",
+    "chip": "٤ أرقام بس"
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "lavender",
+    "term": "Dashboard",
+    "definition": "شاشة واحدة بتعرض أهم الأرقام عشان تتابع حال شغلك بسرعة.",
+    "tag": "متابعة سريعة"
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "peach",
+    "tag": "مؤشر أداء أساسي",
+    "term": "KPI (Key Performance Indicator)",
+    "definition": "رقم محدد بيعرفك إنت ماشي صح ولا عاكك في الشغل."
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "yellow",
+    "tag": "رقم قياس",
+    "term": "Metric",
+    "definition": "أي رقم تقدر تقيسه في الشغل زي عدد الزوار أو المبيعات."
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "pink",
+    "tag": "ولاء العملاء",
+    "term": "Retention",
+    "definition": "نسبة الزبائن اللي اشتروا منك قبل كده ورجعوا لك تاني."
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "mintDeep",
+    "term": "Threshold",
+    "definition": "الرقم اللي لو زدت أو قليت عنه يبدأ القلق ولازم تتحرك.",
+    "tag": "حد الخطر"
+  },
+  {
+    "card": "ConceptCard",
+    "accent": "mint",
+    "tag": "مصمم ومُحدث",
+    "term": "Creator vs Automator",
+    "definition": "أدوار بتعملها؛ الأول بيصمم اللوحة، والتاني بيخلي الأرقام تتحدث تلقائي."
   },
   {
     "card": "BulletsCard",
     "accent": "lavender",
+    "title": "الـ ٤ أرقام الأساسية",
     "bullets": [
-      "بتفتح Sheet أو أداة فيها Charts كتير، بتقعد ١٠ دقايق وتقفل من غير ما تعرف «إيه اللي محتاج أعمله؟»",
-      "المشكلة مش نقص بيانات، المشكلة زحمة. كل رقم إضافي بيأخّر القرار.",
-      "الـ Dashboard مش عشان تبان محترف، عشان في ثواني تعرف: في مشكلة ولا لأ؟"
-    ],
-    "title": "Dashboard فيه ٢٠ رقم — ومفيش قرار"
+      "Leads — كام واحد تواصل معاك الأسبوع ده؟ (مصدره: Creator + Automator).",
+      "Conversion % — كام منهم اشترى؟",
+      "Revenue — كام فلوس دخلت فعلاً؟",
+      "Retention — كام عميل قديم رجع؟",
+      "كل رقم جنبه: قيمة الأسبوع ده، الأسبوع اللي فات، السهم (↑/↓)."
+    ]
   },
   {
     "card": "BulletsCard",
     "accent": "peach",
     "bullets": [
-      "اختار ٤ أرقام بس — لو واحد فيهم اتغيّر، قرارك يتغيّر. مش أي رقم «حلو يتعرض».",
-      "كل رقم جنبه: قيمة الأسبوع ده، الأسبوع اللي فات، وسهم (↑/↓) — عشان المقارنة جزء من العرض.",
-      "بيزنس: Leads · Conversion · Revenue · Retention. مش بيزنس: Progress · Responses · Results · Repeat.",
-      "لو عندك أكتر من ٤ — اسأل: «لو شلت ده، هقرّر إزاي؟» اللي مش بيجاوب = مش dashboard."
+      "Leads",
+      "Conversion",
+      "Revenue",
+      "Retention",
+      "مع الأسبوع اللي فات والسهم."
     ],
-    "title": "٤ أرقام قرار — مش ٤٠ metric"
+    "title": "Dashboard أسبوع 42 — أرقام حقيقية"
   },
   {
     "card": "CompareCard",
     "accent": "yellow",
     "left": {
-      "body": "١٥ chart — views، clicks، time on page، bounce… بتفتحه وتقفله. نهاية الأسبوع: «حاسس إن في حاجة غلط» بس مش عارف إيه.",
-      "label": "Dashboard مليان"
+      "body": "بتفتحه وبتقفله من غير ما تقرّر حاجة. الكتير = صفر.",
+      "label": "FAILURE — Dashboard مليان"
     },
-    "title": "٢٠ رقم vs ٤ أرقام قرار",
+    "title": "٢٠ رقم vs ٤ أرقام",
     "right": {
-      "body": "Leads ١٢٠ (↑) · Conversion ٨٪ (↓) · Revenue ١٥k (↑) · Retention (الناس كملت ورجعت تاني) ٣٠٪ (↓). في ثانية: Conversion و Retention محتاجين قرار.",
-      "label": "٤ أرقام واضحة"
+      "body": "في ثانيتين بتعرف لو فيه مشكلة. القرار جاهز قبل ما تخلص الأرقام.",
+      "label": "RIGHT — ٤ أرقام واضحة"
     }
   },
   {
-    "card": "ConceptCard",
+    "card": "CTACard",
     "accent": "pink",
-    "tag": "مؤشر قرار",
-    "term": "KPI (مؤشر قرار)",
-    "definition": "رقم محدّد — لو اتغيّر، قرارك يتغيّر."
+    "eyebrow": "دورك دلوقتي",
+    "highlight": "ابني أول Dashboard",
+    "tagline": "حل الأسئلة دي عشان تطبق اللي اتعلمته.",
+    "title": "ابني أول Dashboard في Sheet"
   },
   {
-    "card": "ConceptCard",
+    "card": "CTACard",
     "accent": "mintDeep",
-    "term": "Threshold (حد قرار)",
-    "definition": "الرقم اللي لو عدّاه — لازم Action (خطوة أو تصرف حصل فعلًا).",
-    "tag": "حد قرار"
+    "eyebrow": "Mission",
+    "highlight": "ابني Dashboard من ٤ أرقام بس",
+    "tagline": "Dashboard فيه ٢٠ رسم = ديكور. اختار ٤ أرقام لو اتحرّكوا، شغلك بيتحرّك معاهم.",
+    "title": "ابني Dashboard من ٤ أرقام بس"
   },
   {
     "card": "BulletsCard",
     "accent": "mint",
+    "title": "/dashboard فيه ٤ widgets بس",
     "bullets": [
-      "٤ أرقام — كل واحد: الأسبوع ده، اللي فات، والسهم.",
-      "لو واحد أحمر، تعرف فين القرار."
-    ],
-    "title": "Dashboard أسبوعي من ٤ خانات"
+      "Streak: رقم واحد بسيط.",
+      "Reviews Due: عدد + CTA واحد.",
+      "Welcome Checklist: 4 خطوات بس."
+    ]
   },
   {
     "card": "CTACard",
     "accent": "lavender",
-    "tagline": "حل السؤال عشان تتأكد إنك فهمت صح.",
-    "highlight": "تأكيد سريع",
-    "eyebrow": "دورك دلوقتي",
-    "title": "إيه أول رقم تركز عليه؟"
-  },
-  {
-    "card": "CTACard",
-    "accent": "peach",
-    "eyebrow": "خلّصت الدرس",
-    "title": "الـ Dashboard المفيد",
-    "tagline": "شوفك في الدرس الجاي عشان نخلّي الـ Dashboard ده يتحدّث لوحده.",
-    "highlight": "٤ أرقام قرار"
+    "tagline": "نتقابل في الدرس الجاي: Review أسبوعي = ١٥ دقيقة.",
+    "title": "٤ أرقام بس",
+    "highlight": "نظام متابعة حقيقي",
+    "eyebrow": "الخلاصة"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [549, 571, 633, 757, 478, 499, 498, 468, 588];
+export const SCENE_FRAMES: number[] = [460, 436, 448, 427, 355, 393, 396, 604, 407, 421, 292, 436, 456, 303];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);

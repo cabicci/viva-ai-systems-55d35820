@@ -5,92 +5,58 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "highlight": "الـ Agent محتاج هدف + أدوات + حدود",
-    "title": "هتفهم إيه النهاردة؟",
-    "subtitle": "مش بس ردود كلام.",
-    "chip": "بداية الدرس"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "lavender",
-    "bullets": [
-      "العميل: «عايز ألغي اشتراكي». الـ AI: «روح Settings → Billing → Cancel».",
-      "العميل قفل الشات متضايق — إنت رميتله تعليمات بدل ما تخلّص له المشكلة.",
-      "Chatbot بيرد. Agent بينفّذ — بس لازم أدوات محددة وحدود واضحة."
-    ],
-    "title": "الـ AI وصف الحل — بس ما نفّذش"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "peach",
-    "bullets": [
-      "Agent = AI ياخد قرارات ويستخدم tools (functions) عشان ينفّذ في العالم الحقيقي.",
-      "Tools زي `cancelSubscription` أو `searchOrders` — الـ Agent يختار إمتى يستخدمهم.",
-      "Boundaries (حدود): إيه خارج النطاق — زي «ما تمسحش بيانات من غير تأكيد» أو «ما تدفعش من غير موافقة»."
-    ],
-    "title": "Agent = هدف + أدوات + حدود"
+    "chip": "البداية",
+    "title": "الـ AI بتاعك بيردّ...",
+    "subtitle": "الدرس ده هو القفزة من Chatbot بيرد لـ Agent بينفّذ.",
+    "highlight": "بس مش بيعمل حاجة"
   },
   {
     "card": "CompareCard",
-    "accent": "yellow",
-    "title": "Chatbot بيقول vs Agent بيعمل",
-    "left": {
-      "label": "Chatbot — كلام بس",
-      "body": "«عشان تلغي، اعمل كذا وكذا». العميل لسه محتاج يتحرك بنفسه — حس إن الـ AI ديكور."
-    },
+    "accent": "lavender",
     "right": {
-      "body": "يستخدم `getSubscription` → يسأل «أكّد الإلغاء؟» → `cancelSubscription`. المهمة خلصت في ٢٠ ثانية.",
-      "label": "Agent — تنفيذ"
+      "body": "العميل: \"عايز ألغي اشتراكي\". الـ Agent: (بيستخدم tool اسمها `getSubscription`) \"لقيت اشتراكك Pro. أكّد الإلغاء؟\" العميل: \"آه\". الـ Agent: (بيستخدم tool اسمها `cancelSubscription`) \"تمام، اتلغى\". النتيجة: المهمة خلصت في ٢٠ ثانية والعميل معملش أي مجهود.",
+      "label": "صح: Agent إيده في الشغل"
+    },
+    "title": "شوف الفرق: Chatbot بيقول vs. Agent بيعمل",
+    "left": {
+      "label": "فاشل: Chatbot حافظ مش فاهم",
+      "body": "العميل: \"عايز ألغي اشتراكي\". الـ AI: \"تمام، عشان تلغي، روح Settings → Billing → Cancel Subscription\". النتيجة: العميل قفل الشات محبط. حس إن الـ AI بتاعك ديكور مش أكتر."
     }
   },
   {
     "card": "ConceptCard",
-    "accent": "pink",
-    "definition": "AI ياخد قرارات وينفّذ — مش بس يرد بكلام.",
-    "tag": "يلغي اشتراك، يغيّر ميعاد",
-    "term": "Agent"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "tag": "زي الشيف بيستخدم سكينة",
-    "term": "Tool (أداة)",
-    "definition": "function في الكود الـ Agent يقدر يستدعيها — زي `sendEmail` أو `findOrder`."
+    "accent": "peach",
+    "term": "Agent",
+    "definition": "برنامج ذكي عنده (مخ) عشان يفكّر ويقرّر، و(إيدين) عشان ينفّذ.",
+    "tag": "مخ وإيدين"
   },
   {
     "card": "ScreenshotCard",
-    "accent": "mint",
+    "accent": "yellow",
     "src": "lessons/concepts/agents-diagram.jpg",
-    "caption": "Think → Act (أداة) → Observe (النتيجة) → كرّر لحد ما المهمة تخلص. ده اللي يخلّيه يحل مشاكل من كذا خطوة.",
-    "title": "دايرة تفكير الـ Agent",
-    "eyebrow": "شوفها ببساطة"
-  },
-  {
-    "card": "CTACard",
-    "accent": "lavender",
-    "highlight": "الـ Agent يبدأ بإيه؟",
-    "eyebrow": "دورك دلوقتي",
-    "tagline": "جمع معلومات قبل ما تنفّذ.",
-    "title": "سؤال واحد — مش امتحان"
+    "caption": "الـ Agent مش مجرد LLM بيرد وخلاص. هو دايرة تفكير وتنفيذ. لما بيجيله طلب، بيفكّر (Think)، ويقرر يستخدم أنهي أداة (Act)، ويشوف نتيجتها (Observe)، ويكرر الدايرة دي لحد ما يوصل للحل النهائي. ده اللي بيخليه يحل مشاكل معقدة.",
+    "eyebrow": "تحت الغطا",
+    "title": "الـ Agent بيفكر إزاي: فكّر ← نفّذ ← شوف النتيجة ← كرّر"
   },
   {
     "card": "BulletsCard",
-    "accent": "peach",
+    "accent": "pink",
+    "title": "إزاي الـ Agent بيستخدم الـ Tools بتاعته؟",
     "bullets": [
-      "فهمت إيه؟ Agent = هدف + tools + حدود — مش chatbot بس.",
-      "تقدر تعمل إيه؟ عندك تصميم Agent بأداتين وحد واحد."
-    ],
-    "title": "إيه اللي عندك دلوقتي؟"
+      "الـ Tool هي مجرد function في الكود بتاعك، إنت بتدي للـ LLM قايمة بيها ووصف لكل واحدة، وهو بيقرر إمتى يستخدمها.",
+      "الـ Agent بيمشي في دايرة تفكير اسمها ReAct Loop: اليوزر يطلب، الـ LLM يفكّر ويطلب tool، الكود ينفّذ ويرجع النتيجة للـ LLM، الـ LLM يفكّر تاني لحد ما يوصل لرد نهائي.",
+      "الأمان الأول: أي tool خطيرة لازم خطوة تأكيد من اليوزر (Human-in-the-loop)، وتحديد أقصى عدد محاولات عشان الـ Agent ميفضلش يلف للأبد."
+    ]
   },
   {
     "card": "CTACard",
-    "accent": "yellow",
-    "highlight": "الـ Agent مش chatbot",
-    "eyebrow": "الخلاصة",
-    "tagline": "نتقابل في الدرس الجاي!",
-    "title": "ملخص الدرس"
+    "accent": "mintDeep",
+    "eyebrow": "دورك دلوقتي",
+    "title": "هتعرف تتصرف؟",
+    "tagline": "حل الأسئلة دي عشان تتأكد إنك فهمت إزاي الـ Agent بيفكر وبيشتغل صح.",
+    "highlight": "اختبر فهمك للـ Agents"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [420, 613, 715, 616, 399, 612, 501, 415, 423, 329];
+export const SCENE_FRAMES: number[] = [789, 807, 559, 679, 1377, 371];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);

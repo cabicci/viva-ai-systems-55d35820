@@ -4,94 +4,63 @@ import type { SceneData } from "../lesson-cards";
 export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
-    "accent": "mint",
-    "highlight": "Frontend = تشوف",
-    "title": "هتفهم إيه النهاردة؟",
-    "subtitle": "Backend = يشتغل",
-    "chip": "بداية الدرس"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "lavender",
-    "bullets": [
-      "العميل بيقول «التطبيق مش شغال» — بس إيه بالظبط؟",
-      "لو مش عارف المشكلة في الشكل ولا الشغل هتضيّع وقت.",
-      "أول خطوة: حدّد الطبقة، واجهة (Frontend) ولا كواليس (Backend)."
-    ],
-    "title": "«الـ AI مش بيرد» — المشكلة فين؟"
-  },
-  {
-    "card": "BulletsCard",
-    "accent": "peach",
-    "bullets": [
-      "Frontend: كل حاجة على الشاشة زي الزراير والنصوص.",
-      "Backend: الشغل اللي مش بتشوفه زي كلام الـ AI أو حفظ البيانات.",
-      "زي المطعم: المنيو والترابيزة Frontend، والمطبخ Backend."
-    ],
-    "title": "Frontend = تشوف — Backend = يشتغل"
+    "accent": "mintDeep",
+    "subtitle": "كل اللي عينك بتشوفه وبتتفاعل معاه.",
+    "chip": "أهلًا",
+    "title": "الـ Frontend عامل إزاي؟",
+    "highlight": "واجهة أي تطبيق"
   },
   {
     "card": "CompareCard",
-    "accent": "yellow",
-    "title": "زرار مش شكله — vs رد مش بيوصل",
+    "accent": "mint",
+    "title": "الزرار مش شغال... المشكلة فين؟",
     "right": {
-      "label": "مشكلة Backend",
-      "body": "الزرار شغال بس مفيش رد، أو رسالة خطأ. المشكلة في الشغل اللي ورا."
+      "body": "قبل ما تطلب مساعدة، لازم تحدد المشكلة في أنهي طبقة. لو الزرار شكله بايظ أو مش موجود، دي مشكلة Frontend. لو بتدوس وبيحمّل وبعدين يدي error، غالبًا المشكلة Backend. أول خطوة دايمًا: حدد الطبقة.",
+      "label": "الطريقة الصح"
     },
     "left": {
-      "body": "الزرار رمادي ومش بيداس، أو الشاشة فاضية. المشكلة في الشكل.",
-      "label": "مشكلة Frontend"
+      "body": "\"الزرار مش شغال\" — جملة عامة قوي. مش شغال إزاي؟ مش بيظهر أصلًا؟ ولا بيظهر بس مينفعش تدوس عليه؟ ولا بتدوس ومفيش حاجة بتحصل؟ كل سؤال من دول إجابته في حتة مختلفة خالص.",
+      "label": "الغلطة الشائعة"
     }
   },
   {
-    "card": "ConceptCard",
-    "accent": "pink",
-    "term": "Frontend (الواجهة)",
-    "definition": "الوش — كل حاجة العميل يشوفها ويتعامل معاها على الشاشة.",
-    "tag": "مربع الكتابة"
-  },
-  {
-    "card": "ConceptCard",
-    "accent": "mintDeep",
-    "term": "Backend (الكواليس)",
-    "definition": "العقل — يستقبل الطلب، يكلّم AI، ويرجّع الرد.",
-    "tag": "بيكلم AI"
-  },
-  {
     "card": "ScreenshotCard",
-    "accent": "mint",
-    "src": "lessons/builder-m5-l2-frontend.jpg",
-    "eyebrow": "شوفها ببساطة",
-    "title": "الكود اللي بيبني الشاشة",
-    "caption": "افتح أي تطبيق AI، واعمل Inspect. اللي بتشوفه ده Frontend — الكود اللي بنى الشاشة."
-  },
-  {
-    "card": "CTACard",
     "accent": "lavender",
-    "tagline": "حل سؤال سريع عشان تتأكد إنك فهمت.",
-    "highlight": "Frontend ولا Backend؟",
-    "title": "طب مربع الكتابة ده إيه؟",
-    "eyebrow": "دورك دلوقتي"
+    "eyebrow": "دوس F12 أو كليك يمين → Inspect",
+    "src": "lessons/builder-m5-l2-frontend.jpg",
+    "title": "اكشف أي موقع بالـ Inspector",
+    "caption": "روح على أي موقع بتحبه دلوقتي، ودوس كليك يمين واختار \"Inspect\". الشاشة اللي هتتفتحلك دي هي الـ Inspector، واللي بتوريك كواليس أي موقع. كل الكلام اللي شبه الإنجليزي ده (HTML و CSS) هو ده الـ Frontend. جرّب بنفسك."
   },
   {
     "card": "BulletsCard",
     "accent": "peach",
     "bullets": [
-      "فهمت إن الـ Frontend تشوف والـ Backend يشتغل.",
-      "أول خطوة في أي مشكلة هي تحديد الطبقة.",
-      "تقدر تفرق بين أجزاء التطبيق وتعرف فين المشكلة."
+      "الـ Frontend هو واجهة أي تطبيق: الديكور، المنيو، كل بكسل بتشوفه.",
+      "بيتعمل بـ HTML للهيكل، CSS للديكور، و JavaScript للتفاعل والحركة.",
+      "الكود ده بيشتغل على جهازك إنت في المتصفح.",
+      "عشان كده، ممنوع تحط أي معلومات سرية في الـ Frontend."
     ],
-    "title": "إيه اللي عندك دلوقتي؟"
+    "title": "الـ Frontend عامل زي واجهة المحل"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "yellow",
+    "bullets": [
+      "كل جزء في الـ dashboard هو component معمول بـ React.",
+      "الألوان والستايل كلها معمولة بـ Tailwind CSS.",
+      "جرّب تفتح الـ Inspector على أي حتة في الصفحة وهتشوف بنفسك الكود بتاعها."
+    ],
+    "title": "كل صفحة في المنصة هي Frontend"
   },
   {
     "card": "CTACard",
-    "accent": "yellow",
-    "tagline": "كمل رحلتك في عالم الـ AI!",
-    "highlight": "استنى الجديد!",
-    "title": "نتقابل في الدرس الجاي",
-    "eyebrow": "الدرس الجاي"
+    "accent": "pink",
+    "tagline": "نتقابل في الدرس الجاي عشان نكمل رحلتنا!",
+    "title": "الـ Frontend هو الواجهة",
+    "highlight": "كل اللي عينك بتشوفه وبتتفاعل معاه",
+    "eyebrow": "ملخص سريع"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [413, 456, 445, 583, 384, 441, 408, 382, 423, 246];
+export const SCENE_FRAMES: number[] = [370, 405, 497, 375, 336, 387];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);

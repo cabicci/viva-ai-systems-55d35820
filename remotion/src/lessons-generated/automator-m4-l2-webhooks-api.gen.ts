@@ -5,86 +5,118 @@ export const SCENES: SceneData[] = [
   {
     "card": "TitleCard",
     "accent": "mint",
-    "highlight": "Webhook",
-    "chip": "بداية الدرس",
-    "subtitle": "تطبيق بيكلم تطبيق تاني من غير ما تسأل كل شوية",
-    "title": "هتفهم إيه النهاردة؟"
+    "subtitle": "اللغة اللي بتتكلم بيها الـ systems مع بعض. لو فهمتها، تقدر توصّل أي حاجة بأي حاجة.",
+    "title": "Webhooks & APIs",
+    "highlight": "Webhooks & APIs",
+    "chip": "أهلًا"
   },
   {
-    "card": "BulletsCard",
+    "card": "ConceptCard",
     "accent": "lavender",
-    "bullets": [
-      "الـ workflow بيفضل يسأل الموقع كل دقيقة: «في طلب جديد؟» والجواب لأ ٩٩ مرة.",
-      "العميل دفع، بس الأوتوميشن عرف بعد ٦٠ ثانية، والرسالة الترحيبية اتأخّرت.",
-      "محتاجين نعرف إمتى نستنى نتبلّغ (Webhook) وإمتى نسأل بنفسنا (API)."
-    ],
-    "title": "الأوتوميشن بيسأل كل دقيقة: فيه جديد؟"
+    "tag": "عنوان بيانات",
+    "term": "Endpoint",
+    "definition": "عنوان أو رابط معين بيبعت عليه السيستم البيانات عشان ينفذ مهمة محددة."
   },
   {
-    "card": "BulletsCard",
+    "card": "ConceptCard",
     "accent": "peach",
-    "bullets": [
-      "الـ API: إنت بتبعت طلب عشان تاخد بيانات، إنت اللي بتبدأ.",
-      "الـ Webhook: التطبيق التاني هو اللي بيبعتلك أول ما حدث يحصل.",
-      "الـ Payload: دي البيانات اللي بتكون جوه الرسالة، زي اسم العميل والمبلغ.",
-      "في أدوات زي Make و n8n، فيه nodes جاهزة تسهل عليك ده."
-    ],
-    "title": "الفرق الأساسي: إنت اللي بتسأل ولا هما اللي بيقولولك؟"
+    "tag": "شنطة البيانات",
+    "term": "Payload",
+    "definition": "المعلومات أو \"الشنطة\" اللي شايفتها الرسالة وبتتنقل من سيستم للتاني."
   },
   {
-    "card": "CompareCard",
+    "card": "ConceptCard",
     "accent": "yellow",
-    "right": {
-      "body": "الموقع يبعتلك فور الدفع. الأوتوميشن يشتغل في نفس الثانية.",
-      "label": "Webhook — يتبلّغك"
-    },
-    "title": "إيه الأحسن: تسأل كل دقيقة ولا يتبلّغك فورًا؟",
-    "left": {
-      "body": "الأوتوميشن يسأل ١٤٤٠ مرة في اليوم. بطيء، مكلف، ومتأخر.",
-      "label": "Polling — تسأل كل دقيقة"
-    }
+    "tag": "مفتاح تعريف",
+    "term": "API Key",
+    "definition": "كود تعريف ثابت بيعرف السيستم إنت مين عشان يرضى يديك البيانات."
   },
   {
     "card": "ConceptCard",
     "accent": "pink",
-    "term": "Webhook",
-    "definition": "إشعار فوري: تطبيق يبعت لتطبيق تاني لما حدث يحصل.",
-    "tag": "إشعار فوري"
+    "tag": "مفتاح مؤقت",
+    "term": "Bearer Token",
+    "definition": "زي الـ API Key بس متطور وأمان أكتر، وبيكون له وقت وينتهي."
   },
   {
     "card": "ConceptCard",
     "accent": "mintDeep",
-    "term": "Payload",
-    "definition": "البيانات اللي بتكون جوه رسالة الـ Webhook.",
-    "tag": "البيانات المُرسلة"
+    "tag": "إشعار فوري",
+    "term": "Webhook",
+    "definition": "رسالة فورية بيبعتها سيستم لسيستم تاني أول ما حاجة تحصل (زي ما الأوردر يتنفذ)."
   },
   {
-    "card": "ScreenshotCard",
+    "card": "ConceptCard",
     "accent": "mint",
-    "caption": "التطبيقات بتتكلم عن طريق نقاط استقبال البيانات، والـ Payload هي البيانات دي.",
-    "eyebrow": "شوفها ببساطة",
-    "title": "تطبيق بيكلّم تطبيق",
-    "src": "lessons/unique/automator-m4-l2-webhooks-api.jpg"
+    "tag": "بصمة أمان",
+    "term": "HMAC Signature",
+    "definition": "بصمة أمان بتضمن إن البيانات اللي وصلت حقيقية ومحدش غير فيها في السكة."
   },
   {
-    "card": "CTACard",
+    "card": "ConceptCard",
     "accent": "lavender",
-    "highlight": "إيه الأنسب هنا؟",
-    "eyebrow": "دورك دلوقتي",
-    "tagline": "اختار الإجابة الصح عشان الأوتوميشن يشتغل صح.",
-    "title": "عايز رسالة ترحيب فورًا بعد الدفع؟"
+    "tag": "نوع الطلب",
+    "term": "HTTP Methods",
+    "definition": "نوع الطلب اللي بتحدده للسيستم، إنت عايز \"تاخد\" معلومة ولا \"تضيف\" معلومة جديدة."
   },
   {
     "card": "BulletsCard",
     "accent": "peach",
     "bullets": [
-      "فهمت إن الـ Webhook هو تطبيق يقول لتطبيق «حصل حاجة» — والـ Payload هو البيانات اللي بتتبعت.",
-      "دلوقتي تقدر تشرح استخدام واحد للـ Webhook أو حتى تبنيه.",
-      "في الدرس الجاي هنشوف إزاي نتعامل مع الأخطاء في الأتمتة."
+      "API Call: إنت اللي بتروح. بتبعت request لـ endpoint وبتستنّى رد (مثلاً: 'هاتلي كل الـ orders النهارده').",
+      "Webhook: هي اللي بتيجيلك. بتدّي URL بتاعك للخدمة، وهي بتبعتلك payload كل ما حدث يحصل (مثلاً: 'في order جديد!')."
     ],
-    "title": "خلاصة اللي فهمته عن Webhooks"
+    "title": "API بتسأل. Webhook بيتقالك"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "yellow",
+    "bullets": [
+      "كلهم بيستخدموا نفس الـ HTTP methods وبيتبعتوا JSON عادةً.",
+      "في n8n/Make/Zapier فيه nodes جاهزة لـ HTTP Request وWebhook — مش محتاج تكتب كود."
+    ],
+    "title": "API بتسأل. Webhook بيتقالك"
+  },
+  {
+    "card": "ScreenshotCard",
+    "accent": "pink",
+    "eyebrow": "شوف بنفسك",
+    "src": "lessons/unique/automator-m4-l2-webhooks-api.jpg",
+    "caption": "المنصة بتتكلم مع الـ backend عن طريق endpoints زي اللي شفتها في Builder M5. أي workflow في Make/n8n يقدر يستدعي نفس الـ endpoints دي بنفس الـ keys. كل اللي بنعمله في Automator مبني على نفس الفكرة دي.",
+    "title": "الـ backend بتاع المنصة"
+  },
+  {
+    "card": "CompareCard",
+    "accent": "mintDeep",
+    "right": {
+      "label": "RIGHT — Header صح من أول مرة",
+      "body": "بتبص في docs الـ API، تشوف بيطلب إيه (Bearer Token، API Key، Basic Auth)، تضيفه في الـ headers، وتختبر الـ request في Postman الأول قبل ما تحطه في الـ scenario."
+    },
+    "left": {
+      "label": "FAILURE — بتبعت بدون auth",
+      "body": "بتعمل HTTP request لـ endpoint من غير header للـ key. الـ API بيرد 401 Unauthorized، وإنت بتقعد ساعة تدوّر السبب في كل حتة."
+    },
+    "title": "Authentication في الـ requests"
+  },
+  {
+    "card": "BulletsCard",
+    "accent": "mint",
+    "bullets": [
+      "Endpoints تحت /api/public/* مفتوحة بدون auth.",
+      "أول حاجة: HMAC signature verification.",
+      "بعدها: parse + validate Zod schema قبل أي write."
+    ],
+    "title": "Webhook callbacks في /api/public/*"
+  },
+  {
+    "card": "CTACard",
+    "accent": "lavender",
+    "tagline": "حلّ الأسئلة اللي جاية عشان تطبق اللي اتعلمته وتثبّت المعلومة، وبعدها نتقابل في الدرس الجاي: الـ Error هو القاعدة، مش الاستثناء.",
+    "highlight": "جاهز للتطبيق؟",
+    "eyebrow": "دورك دلوقتي",
+    "title": "Webhook + API في scenario واحد"
   }
 ] as SceneData[];
 
-export const SCENE_FRAMES: number[] = [312, 511, 550, 420, 420, 493, 474, 534, 491];
+export const SCENE_FRAMES: number[] = [417, 299, 337, 379, 316, 316, 395, 399, 493, 483, 510, 535, 520, 358];
 export const TOTAL_FRAMES = SCENE_FRAMES.reduce((a, b) => a + b, 0);
