@@ -1,7 +1,7 @@
 # Viva AI Systems — Master Project Tracker
 
 > Single source of truth for project status. Documentation only.
-> Reconciled from: `docs/CURRENT_STATUS.md`, `docs/VISUAL_BLUEPRINT.md`, `docs/playbooks/CURRICULUM_FREEZE_CONTRACT.md`, repo reality (2026-06-09).
+> Reconciled from: `docs/CURRENT_STATUS.md`, `docs/VISUAL_BLUEPRINT.md`, `docs/playbooks/CURRICULUM_FREEZE_CONTRACT.md`, repo reality (2026-06-04, baseline `cc84946`).
 >
 > Status legend: ✅ LOCKED · 🟡 IN PROGRESS · 🔴 BLOCKED · ⏸️ DEFERRED · ⚪ NOT STARTED · ❓ UNKNOWN (needs verification)
 
@@ -11,14 +11,16 @@
 
 | Field | Value |
 |------|------|
-| Current Phase | **Phase 4 — Brand Implementation Plan** (docs locked; controlled batches not started) |
+| Current Phase | **P0 Launch Ready With Warnings** — Aggressive Controlled Launch Ready |
 | Previous phase | Phase 3 — AI Assistant P0 ✅ FROZEN |
-| Launch Readiness | ~70% (estimate; brand identity lock + visual implementation gate launch polish) |
+| Launch Readiness | Production-ready for controlled launch; polish/video/mobile deferred per P0 Constitution |
 | Critical blockers | 0 |
-| High-priority open items | Brand Visual Identity Lock → implementation plan → BrandMark/logo/favicon/OG → visual QA; Visual Freeze F1.c–F8; Video regeneration audit; Mobile UX pass |
-| Last major milestone | Assistant P0 FROZEN on production masaarat.ai (`b6ecd2a`) |
-| Last commit snapshot | `b6ecd2a` — "Added P0 QA tests" (local + origin/main synced) |
-| Last production commit (per CURRENT_STATUS) | `b6ecd2a` (masaarat.ai) |
+| High-priority open items | Brand visual implementation; Visual Freeze F1.c–F8; video audit; mobile UX — **post-launch hardening**, not launch gates |
+| Last major milestone | P0 launch hardening: canonical fix + standalone assistant auth (`cc84946`) |
+| Last commit snapshot | `cc84946` — "fix: require auth for standalone assistant page" (local + origin/main synced) |
+| Last production commit (per CURRENT_STATUS) | `cc84946` (masaarat.ai) |
+
+**Current launch decision:** P0 aggressive controlled launch is **allowed with warnings**. Remaining items are post-launch hardening/cleanup unless live user evidence elevates them to Critical/High. Supersedes pre-constitution perfection gating in §14 below.
 
 ---
 
@@ -43,7 +45,7 @@ Status: 🟡 **IMPLEMENTATION PLAN LOCKED** (docs only — batches 1–6 not sta
 | Mobile usability | ✅ PASS |
 | Placement QA | ✅ PASS |
 | In-lesson flow | ✅ `AssistantPanel` compact embedded on learn route |
-| `/ai-assistant` off-lesson NO CONTEXT | ✅ Expected — not a blocker |
+| `/ai-assistant` standalone | ✅ Auth-gated — anonymous redirect to `/login` (`cc84946`); logged-in users retain full page |
 | Recommendation | **Freeze Assistant P0 = yes** |
 
 ### 1. Current brand
@@ -550,7 +552,7 @@ Exceptions (slug `m{N}` ≠ module id, accepted):
 
 ---
 
-## 8. Videos 🟡 IN PROGRESS / 🔴 GATING LAUNCH
+## 8. Videos 🟡 IN PROGRESS (post-launch dependency)
 
 - ✅ Bulk generation completed for shipped lessons (per workflow history)
 - ❓ Per-lesson Bunny coverage table — not centrally maintained here
@@ -570,6 +572,7 @@ Exceptions (slug `m{N}` ≠ module id, accepted):
 | P0.1 prompt grounding hardening | ✅ |
 | P0.2 semantic similarity threshold | ✅ |
 | Auth: user JWT + logged-out guard | ✅ (`aed96c6` / production `b6ecd2a`) |
+| Standalone `/ai-assistant` auth gate | ✅ Anonymous → `/login` (`cc84946`); does not affect in-lesson panel |
 | Seed: knowledge_chunks | ✅ 100 learner lessons / 198 chunks |
 | Retrieval | ✅ Path-aware + lesson-aware keyword corpus |
 | Grounding | ✅ Hardened |
@@ -691,16 +694,21 @@ Current visual score (per blueprint): **68/100**.
 
 **P0 operating model:** `docs/playbooks/P0_LAUNCH_CONSTITUTION.md` — Aggressive Launch + Rapid Iteration. Launch is not gated on visual perfection; Critical trust/security issues still block.
 
-**Security launch blockers (closed):** workbook admin lock, persona-sim internal-only, legal draft pages, admin route guards (Batch A1/A2).
+**Current launch decision (2026-06):** P0 aggressive controlled launch is **allowed with warnings**. Critical blockers = 0. Mega Source-of-Truth Audit and production route/source smoke: **PASS WITH WARNINGS**.
 
-### Must before launch
-1. Visual Freeze F1.c → F8 complete
-2. Typography scale defined and applied
-3. Lesson-image audit complete (Section 7)
-4. Video regeneration audit + re-render of any changed lessons (Section 8)
-5. Mobile UX pass (Section 11)
-6. Formal security scan + admin/rate-limit verification (Section 12)
-7. In-lesson assistant status verified (Section 9) ✅
+**Security launch blockers (closed):** workbook admin lock, persona-sim internal-only (+ local `public/persona-sim` leak cleaned), legal draft pages, admin route guards (Batch A1/A2), duplicate canonical fixed (`0d58a49`), standalone `/ai-assistant` auth-gated (`cc84946`).
+
+### Superseded: pre-constitution "Must before launch"
+
+> ⚠️ The list below reflected pre-P0 perfection gating. **Superseded by P0 Launch Constitution** — do not treat as launch blockers unless a new Critical trust/security issue is proven.
+
+1. Visual Freeze F1.c → F8 complete — **post-launch polish**
+2. Typography scale defined and applied — **post-launch polish**
+3. Lesson-image audit complete (Section 7) — **post-launch**
+4. Video regeneration audit + re-render of any changed lessons (Section 8) — **post-launch** (unless content edit triggers CI)
+5. Mobile UX pass (Section 11) — **post-launch**
+6. Formal security scan + admin/rate-limit verification (Section 12) — **recommended**; P0 Safe Fixes applied; not blocking after Batch A1/A2
+7. In-lesson assistant status verified (Section 9) ✅ **closed**
 
 ### Can wait after launch
 - Naming normalization for the 4 placement-exception slugs

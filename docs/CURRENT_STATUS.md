@@ -2,7 +2,9 @@
 
 ## Current Phase
 
-Post-Assistant P0.2 — Ready for Visual Freeze Planning
+**P0 Launch Ready With Warnings** — Aggressive Controlled Launch Ready
+
+Operating model: `docs/playbooks/P0_LAUNCH_CONSTITUTION.md`.
 
 ## Completed
 
@@ -32,24 +34,35 @@ Post-Assistant P0.2 — Ready for Visual Freeze Planning
 - Assistant production hardening completed
 - P0 Launch Constitution committed — Aggressive Controlled Launch + Rapid Iteration (`docs/playbooks/P0_LAUNCH_CONSTITUTION.md`)
 - Launch blockers Batch A1/A2 closed (route guards, legal drafts, persona-sim secured)
+- P0 Safe Fixes published and verified (strict validators, rate limits, dynamic admin load) — with auth-limitation warning documented
+- Duplicate homepage canonical fixed and verified on production — `0d58a49`
+- Standalone `/ai-assistant` auth-gated (anonymous → `/login`); verified on production — `cc84946`
+- In-lesson assistant: `AssistantPanel` compact embedded on every open lesson (`/learn/$pathId/$lessonId`)
+- `public/persona-sim` local leak cleaned; assets secured under `src/data/` + admin-only server fns
+- Mega Source-of-Truth Audit: **PASS WITH WARNINGS**
+- Production route/source smoke: **PASS WITH WARNINGS**
 
 ## In Progress
 
-Visual Freeze Planning
+- Post-launch hardening and cleanup (warnings only — not launch blockers)
+- Visual Freeze Planning (deferred polish per P0 Constitution)
 
 ## Blocked
 
 None
 
+## Launch blockers
+
+**Critical / High: 0 open.** Remaining items are warnings and post-launch hardening unless newly proven Critical.
+
 ## Latest Production Commit
 
-897cd96ca4739ba68cac54d6bdc10ed58db0594a
+cc84946e4b59c06b9d4299383d7a5700d6ccc8d8
 
 ## Next Planned Step
 
-Visual Blueprint Freeze before any visual refactor
+Aggressive Controlled Launch → 72h observation → evidence-driven rapid fixes (per P0 Launch Constitution)
 
 ## Latest Assistant Milestone
 
-Assistant P0.2 PASS
-
+Assistant P0.2 PASS · standalone page auth-gated · in-lesson embedding confirmed

@@ -180,3 +180,4 @@ Sequence: Launch → 72h observe → rapid fix → P1
 | Date | Change |
 |------|--------|
 | 2026-06-09 | Initial P0 Launch Constitution — Aggressive Launch + Rapid Iteration |
+| 2026-06-04 | Status reconciliation: duplicate canonical fixed (`0d58a49`); standalone `/ai-assistant` auth-gated (`cc84946`); in-lesson assistant confirmed; `public/persona-sim` leak closed; Mega audit PASS WITH WARNINGS; Critical blockers = 0 |
