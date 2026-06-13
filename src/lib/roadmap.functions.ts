@@ -1,6 +1,17 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+import { enforceRateLimit } from "./rate-limit.server";
+
+async function limitWrites(userId: string) {
+  // Admin-only write fns — generous per-user cap to stop runaway loops/bugs.
+  await enforceRateLimit({
+    userId,
+    bucketKey: "roadmap:write",
+    maxCalls: 120,
+    windowSeconds: 3600,
+  });
+}
 
 const PHASES = ["A", "B", "C", "D", "inbox"] as const;
 const STATUSES = ["todo", "in_progress", "done", "deferred"] as const;
