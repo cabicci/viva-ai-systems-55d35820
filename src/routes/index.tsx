@@ -18,9 +18,6 @@ export const Route = createFileRoute("/")({
       { name: "twitter:title", content: "مسارات — masaarat.ai | تعلّم الذكاء الاصطناعي بالتطبيق" },
       { name: "twitter:description", content: "مسارات بتاخدك خطوة بخطوة من فهم أساسيات الـ AI لحد ما تبني أدوات، أنظمة، ومشاريع حقيقية بنفسك." },
     ],
-    links: [
-      { rel: "canonical", href: "https://masaarat.ai/" },
-    ],
   }),
   component: Index,
 });
