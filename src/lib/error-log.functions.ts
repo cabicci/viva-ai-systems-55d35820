@@ -1,9 +1,15 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-import { supabaseAdmin } from "@/integrations/supabase/client.server";
 import type { Json } from "@/integrations/supabase/types";
 import { getRequestHeader } from "@tanstack/react-start/server";
 import { createClient } from "@supabase/supabase-js";
+
+// IMPORTANT: load `supabaseAdmin` dynamically inside the handler so its
+// top-level import never reaches the client bundle.
+async function loadSupabaseAdmin() {
+  const mod = await import("@/integrations/supabase/client.server");
+  return mod.supabaseAdmin;
+}
 
 const ErrorLogInput = z.object({
   scope: z.string().min(1).max(120).default("unknown"),
@@ -24,6 +30,7 @@ async function consumeErrorLogRateLimit(
   maxCalls: number,
 ): Promise<boolean> {
   try {
+    const supabaseAdmin = await loadSupabaseAdmin();
     const { data, error } = await supabaseAdmin.rpc("consume_rate_limit", {
       p_user_id: userId,
       p_bucket_key: ERROR_LOG_BUCKET_KEY,
@@ -73,6 +80,7 @@ export const logClientError = createServerFn({ method: "POST" })
       );
       if (!rateLimitAllowed) return { ok: false as const };
 
+      const supabaseAdmin = await loadSupabaseAdmin();
       await supabaseAdmin.from("client_error_logs").insert({
         scope: data.scope,
         message: data.message,
