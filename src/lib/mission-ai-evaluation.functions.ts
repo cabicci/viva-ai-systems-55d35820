@@ -63,6 +63,7 @@ export const evaluateMissionWithAI = createServerFn({ method: "POST" })
   .inputValidator((input) => InputSchema.parse(input))
   .handler(async ({ data, context }): Promise<AIEvaluationResult> => {
     const userId = context.userId;
+    const supabaseAdmin = await loadSupabaseAdmin();
 
     const releaseSubmittedRow = async () => {
       // submit_mission_for_evaluation leaves status=submitted; on eval failure
