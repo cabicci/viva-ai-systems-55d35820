@@ -235,6 +235,9 @@ export const revealModelMissionAnswer = createServerFn({ method: "POST" })
   .inputValidator((input) => RevealInputSchema.parse(input))
   .handler(async ({ data, context }): Promise<RevealAnswerResult> => {
     const userId = context.userId;
+    const supabaseAdmin = await loadSupabaseAdmin();
+
+
 
     // Rate limit: hourly + daily + monthly caps for the escape-hatch reveal.
     await enforceRateLimit({ userId, bucketKey: "ai:reveal-answer", maxCalls: 30, windowSeconds: 3600 });
