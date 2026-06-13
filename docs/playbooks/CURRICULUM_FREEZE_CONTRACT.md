@@ -3,6 +3,8 @@
 **Status:** Active as of Assistant P0 prep  
 **Purpose:** Document the current curriculum source of truth and RAG seed scope. No content, registry, or slug changes until Assistant P0 is complete.
 
+**Related:** Launch timing and P0 iteration rules — `docs/playbooks/P0_LAUNCH_CONSTITUTION.md` (does not override this freeze on lesson counts or slugs).
+
 ---
 
 ## Source of truth

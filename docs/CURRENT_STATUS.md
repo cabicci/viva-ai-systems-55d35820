@@ -30,6 +30,8 @@ Post-Assistant P0.2 — Ready for Visual Freeze Planning
 - Semantic similarity threshold P0.2 completed
 - Unsupported-topic fallback completed
 - Assistant production hardening completed
+- P0 Launch Constitution committed — Aggressive Controlled Launch + Rapid Iteration (`docs/playbooks/P0_LAUNCH_CONSTITUTION.md`)
+- Launch blockers Batch A1/A2 closed (route guards, legal drafts, persona-sim secured)
 
 ## In Progress
 

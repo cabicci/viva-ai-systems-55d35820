@@ -689,6 +689,10 @@ Current visual score (per blueprint): **68/100**.
 
 ## 14. Launch Readiness
 
+**P0 operating model:** `docs/playbooks/P0_LAUNCH_CONSTITUTION.md` — Aggressive Launch + Rapid Iteration. Launch is not gated on visual perfection; Critical trust/security issues still block.
+
+**Security launch blockers (closed):** workbook admin lock, persona-sim internal-only, legal draft pages, admin route guards (Batch A1/A2).
+
 ### Must before launch
 1. Visual Freeze F1.c → F8 complete
 2. Typography scale defined and applied

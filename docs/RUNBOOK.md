@@ -1,6 +1,8 @@
 # RUNBOOK — العمليات الحساسة والطوارئ
 
 > كل سيناريو هنا له خطوات قصيرة ومرتّبة. اقرأ الخطوة كلها قبل ما تنفّذ.
+>
+> **P0 incident severity (Critical same-day / High 24–72h / Medium batch):** `docs/playbooks/P0_LAUNCH_CONSTITUTION.md` §E.
 
 ---
 

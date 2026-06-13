@@ -352,6 +352,7 @@ After this document is reviewed and approved:
 ## References
 
 - `docs/VIVA_MASTER_BLUEPRINT.md`
+- `docs/playbooks/P0_LAUNCH_CONSTITUTION.md`
 - `docs/playbooks/LESSON_SHAPE_CONSTITUTION.md`
 - `docs/playbooks/MISSION_CONSTITUTION.md`
 - `docs/playbooks/MISSION_TARGET_DESIGN.md`

@@ -65,6 +65,8 @@ Internal AI and persona review comes before real user exposure. Content stabilit
 
 Launch means learners can progress with confidence. Polish can follow; trust cannot be repaired easily after it is lost.
 
+**P0 operating model:** For launch timing, KPIs, incident severity, and hard boundaries during first real users, see `docs/playbooks/P0_LAUNCH_CONSTITUTION.md` (Aggressive Controlled Launch + Rapid Iteration).
+
 ## 2. Non-Negotiable Rules
 
 ### Beginner-safe rule

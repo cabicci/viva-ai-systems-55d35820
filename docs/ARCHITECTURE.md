@@ -132,6 +132,8 @@
 | سجل الدروس v2 | `src/components/intro/lessons/index.ts` |
 | سجل الدروس legacy | `src/lib/lessons-data.ts` |
 | Schema الـ DB | Lovable → Cloud → Database (live) |
+| P0 launch operating model | `docs/playbooks/P0_LAUNCH_CONSTITUTION.md` |
+| Curriculum freeze | `docs/playbooks/CURRICULUM_FREEZE_CONTRACT.md` |
 
 لو فيه تعارض بين أي ملفين، ابدأ من `brain-identity.ts` (الفلسفة) ثم `curriculum-data.ts` (التنفيذ).
 
