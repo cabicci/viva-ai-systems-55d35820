@@ -1,9 +1,15 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
-import { supabaseAdmin } from "@/integrations/supabase/client.server";
 import { enforceRateLimit } from "./rate-limit.server";
 import { callAI } from "./ai-providers.server";
+
+// Load supabaseAdmin dynamically inside handlers so its top-level import
+// never reaches the client bundle.
+async function loadSupabaseAdmin() {
+  const mod = await import("@/integrations/supabase/client.server");
+  return mod.supabaseAdmin;
+}
 
 /**
  * AI-powered mission evaluation.
