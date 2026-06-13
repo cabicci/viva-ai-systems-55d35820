@@ -2,6 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { z } from "zod";
 import { PATHS, totalLessons, totalAvailableLessons } from "@/lib/curriculum-data";
+import { enforceRateLimit } from "./rate-limit.server";
 
 async function assertAdmin(context: { supabase: any; userId: string }) {
   const { data, error } = await context.supabase.rpc("has_role", {
@@ -88,6 +89,13 @@ export const generateDnaReport = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .handler(async ({ context }) => {
     await assertAdmin(context);
+    // Heavy aggregate report — cap per-admin generation rate to protect DB.
+    await enforceRateLimit({
+      userId: context.userId,
+      bucketKey: "dna-report:generate",
+      maxCalls: 6,
+      windowSeconds: 3600,
+    });
     // Use service-role client to bypass RLS for cross-user aggregates.
     // (admin RLS tables like learner_events / mission_submissions return
     //  silently empty under the user client.)
