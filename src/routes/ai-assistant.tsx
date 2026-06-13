@@ -1,6 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
 import { AssistantPanel } from "@/components/assistant/AssistantPanel";
+import { useAuth } from "@/lib/auth-context";
 
 export const Route = createFileRoute("/ai-assistant")({
   head: () => ({
@@ -17,6 +19,15 @@ export const Route = createFileRoute("/ai-assistant")({
 });
 
 function AIAssistantPage() {
+  const { user, loading } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!loading && !user) navigate({ to: "/login" });
+  }, [loading, user, navigate]);
+
+  if (loading || !user) return null;
+
   return (
     <div dir="rtl" className="min-h-screen text-foreground" style={{ background: "var(--gradient-hero)" }}>
       <div className="mx-auto max-w-3xl px-4 py-12 space-y-8">
