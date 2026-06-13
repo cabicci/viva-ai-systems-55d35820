@@ -1,5 +1,10 @@
 import { createServerFn } from "@tanstack/react-start";
+import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+
+// No client input expected; strict empty-object validator hardens the
+// endpoint against unexpected payloads.
+const EmptyInput = z.object({}).strict().optional();
 
 /**
  * Spaced Repetition — read-only API for the learner.
@@ -19,6 +24,7 @@ export type DueReview = {
 
 export const getDueReviews = createServerFn({ method: "GET" })
   .middleware([requireSupabaseAuth])
+  .inputValidator((input: unknown) => EmptyInput.parse(input ?? {}))
   .handler(async ({ context }): Promise<DueReview[]> => {
     const { supabase, userId } = context;
     const { data, error } = await supabase
