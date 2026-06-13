@@ -126,6 +126,7 @@ export const createRoadmapItem = createServerFn({ method: "POST" })
   .inputValidator((input: unknown) => createSchema.parse(input))
   .handler(async ({ data, context }) => {
     await assertAdmin(context);
+    await limitWrites(context.userId);
     const { supabase } = context;
     const { data: row, error } = await supabase
       .from("roadmap_items")
@@ -158,6 +159,7 @@ export const updateRoadmapItem = createServerFn({ method: "POST" })
   .inputValidator((input: unknown) => updateSchema.parse(input))
   .handler(async ({ data, context }) => {
     await assertAdmin(context);
+    await limitWrites(context.userId);
     const { supabase } = context;
     const patch: {
       title?: string;
@@ -190,6 +192,7 @@ export const deleteRoadmapItem = createServerFn({ method: "POST" })
   .inputValidator((input: unknown) => z.object({ id: z.string().uuid() }).parse(input))
   .handler(async ({ data, context }) => {
     await assertAdmin(context);
+    await limitWrites(context.userId);
     const { supabase } = context;
     const { error } = await supabase.from("roadmap_items").delete().eq("id", data.id);
     if (error) throw new Error(error.message);
@@ -212,6 +215,7 @@ export const logCompletedWork = createServerFn({ method: "POST" })
   .inputValidator((input: unknown) => logCompletedSchema.parse(input))
   .handler(async ({ data, context }) => {
     await assertAdmin(context);
+    await limitWrites(context.userId);
     const { supabase } = context;
     const now = new Date().toISOString();
     const { data: row, error } = await supabase
