@@ -11,10 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as Char91indexChar93RouteImport } from './routes/[index]'
 import { Route as TriageRouteImport } from './routes/triage'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SystemStateRouteImport } from './routes/system-state'
 import { Route as StartRouteImport } from './routes/start'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as OperationalLayersRouteImport } from './routes/operational-layers'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as LoginRouteImport } from './routes/login'
@@ -50,6 +52,11 @@ const TriageRoute = TriageRouteImport.update({
   path: '/triage',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SystemStateRoute = SystemStateRouteImport.update({
   id: '/system-state',
   path: '/system-state',
@@ -68,6 +75,11 @@ const SignupRoute = SignupRouteImport.update({
 const ResetPasswordRoute = ResetPasswordRouteImport.update({
   id: '/reset-password',
   path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OperationalLayersRoute = OperationalLayersRouteImport.update({
@@ -207,10 +219,12 @@ export interface FileRoutesByFullPath {
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/operational-layers': typeof OperationalLayersRoute
+  '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/signup': typeof SignupRoute
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
+  '/terms': typeof TermsRoute
   '/triage': typeof TriageRoute
   '/admin/icons-preview': typeof AdminIconsPreviewRoute
   '/admin/persona-sim-v9': typeof AdminPersonaSimV9Route
@@ -238,10 +252,12 @@ export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/operational-layers': typeof OperationalLayersRoute
+  '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/signup': typeof SignupRoute
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
+  '/terms': typeof TermsRoute
   '/triage': typeof TriageRoute
   '/admin/icons-preview': typeof AdminIconsPreviewRoute
   '/admin/persona-sim-v9': typeof AdminPersonaSimV9Route
@@ -271,10 +287,12 @@ export interface FileRoutesById {
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/operational-layers': typeof OperationalLayersRoute
+  '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/signup': typeof SignupRoute
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
+  '/terms': typeof TermsRoute
   '/triage': typeof TriageRoute
   '/admin/icons-preview': typeof AdminIconsPreviewRoute
   '/admin/persona-sim-v9': typeof AdminPersonaSimV9Route
@@ -305,10 +323,12 @@ export interface FileRouteTypes {
     | '/login'
     | '/onboarding'
     | '/operational-layers'
+    | '/privacy'
     | '/reset-password'
     | '/signup'
     | '/start'
     | '/system-state'
+    | '/terms'
     | '/triage'
     | '/admin/icons-preview'
     | '/admin/persona-sim-v9'
@@ -336,10 +356,12 @@ export interface FileRouteTypes {
     | '/login'
     | '/onboarding'
     | '/operational-layers'
+    | '/privacy'
     | '/reset-password'
     | '/signup'
     | '/start'
     | '/system-state'
+    | '/terms'
     | '/triage'
     | '/admin/icons-preview'
     | '/admin/persona-sim-v9'
@@ -368,10 +390,12 @@ export interface FileRouteTypes {
     | '/login'
     | '/onboarding'
     | '/operational-layers'
+    | '/privacy'
     | '/reset-password'
     | '/signup'
     | '/start'
     | '/system-state'
+    | '/terms'
     | '/triage'
     | '/admin/icons-preview'
     | '/admin/persona-sim-v9'
@@ -401,10 +425,12 @@ export interface RootRouteChildren {
   LoginRoute: typeof LoginRoute
   OnboardingRoute: typeof OnboardingRoute
   OperationalLayersRoute: typeof OperationalLayersRoute
+  PrivacyRoute: typeof PrivacyRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
   SignupRoute: typeof SignupRoute
   StartRoute: typeof StartRoute
   SystemStateRoute: typeof SystemStateRoute
+  TermsRoute: typeof TermsRoute
   TriageRoute: typeof TriageRoute
   AdminIconsPreviewRoute: typeof AdminIconsPreviewRoute
   AdminPersonaSimV9Route: typeof AdminPersonaSimV9Route
@@ -430,6 +456,13 @@ declare module '@tanstack/react-router' {
       path: '/triage'
       fullPath: '/triage'
       preLoaderRoute: typeof TriageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/system-state': {
@@ -458,6 +491,13 @@ declare module '@tanstack/react-router' {
       path: '/reset-password'
       fullPath: '/reset-password'
       preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/operational-layers': {
@@ -661,10 +701,12 @@ const rootRouteChildren: RootRouteChildren = {
   LoginRoute: LoginRoute,
   OnboardingRoute: OnboardingRoute,
   OperationalLayersRoute: OperationalLayersRoute,
+  PrivacyRoute: PrivacyRoute,
   ResetPasswordRoute: ResetPasswordRoute,
   SignupRoute: SignupRoute,
   StartRoute: StartRoute,
   SystemStateRoute: SystemStateRoute,
+  TermsRoute: TermsRoute,
   TriageRoute: TriageRoute,
   AdminIconsPreviewRoute: AdminIconsPreviewRoute,
   AdminPersonaSimV9Route: AdminPersonaSimV9Route,
@@ -678,3 +720,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

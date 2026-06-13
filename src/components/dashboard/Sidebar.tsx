@@ -27,11 +27,11 @@ const items = [
   { to: "/dashboard", label: "اللوحة", icon: LayoutDashboard },
   { to: "/ai-assistant", label: "مساعد المنصة", icon: MessageCircle },
   { to: "/analytics", label: "تحليلاتي", icon: BarChart3 },
-  { to: "/image-gallery", label: "معرض الصور", icon: Images },
   { to: "/account", label: "حسابي", icon: User },
 ];
 
 const devItems = [
+  { to: "/image-gallery", label: "معرض الصور", icon: Images },
   { to: "/roadmap", label: "Roadmap", icon: MapIcon },
   { to: "/assistant-runtime", label: "Assistant Runtime", icon: Brain },
   { to: "/system-state", label: "System State", icon: Activity },

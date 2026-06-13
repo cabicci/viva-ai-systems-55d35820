@@ -1,13 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { ArrowLeft, BookOpen, Copy, Check, Download, Palette } from "lucide-react";
+import { AdminGate } from "@/components/AdminGate";
 import { Sidebar } from "@/components/dashboard/Sidebar";
 import { Button } from "@/components/ui/button";
+import { requireAdminBeforeLoad } from "@/lib/admin-route-guard";
 import { getPath } from "@/lib/curriculum-data";
 import { INTRO_LESSON_CONTENT } from "@/components/intro/lessons";
 import type { IntroLessonSection } from "@/components/intro/intro-lesson-types";
 
 export const Route = createFileRoute("/creator/workbook")({
+  beforeLoad: requireAdminBeforeLoad,
   head: () => ({
     meta: [
       { title: "Creator Workbook — كل مهام مسار Creator في كتاب واحد" },
@@ -18,7 +21,11 @@ export const Route = createFileRoute("/creator/workbook")({
       },
     ],
   }),
-  component: CreatorWorkbookPage,
+  component: () => (
+    <AdminGate>
+      <CreatorWorkbookPage />
+    </AdminGate>
+  ),
 });
 
 type WorkbookEntry = {

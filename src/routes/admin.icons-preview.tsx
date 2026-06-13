@@ -1,10 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
+import { AdminGate } from "@/components/AdminGate";
 import { Button } from "@/components/ui/button";
+import { requireAdminBeforeLoad } from "@/lib/admin-route-guard";
 
 export const Route = createFileRoute("/admin/icons-preview")({
+  beforeLoad: requireAdminBeforeLoad,
   head: () => ({ meta: [{ title: "Icon Preview — Masaarat Brand System" }] }),
-  component: IconsPreviewPage,
+  component: () => (
+    <AdminGate>
+      <IconsPreviewPage />
+    </AdminGate>
+  ),
 });
 
 const SVG_ICONS = [
