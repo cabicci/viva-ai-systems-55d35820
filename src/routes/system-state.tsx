@@ -37,7 +37,7 @@ export const Route = createFileRoute("/system-state")({
   beforeLoad: requireAdminBeforeLoad,
   head: () => ({
     meta: [
-      { title: "System State — AI Ecosystem" },
+      { title: "مسارات — System State" },
       {
         name: "description",
         content:

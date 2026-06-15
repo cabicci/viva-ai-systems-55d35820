@@ -26,7 +26,7 @@ export const Route = createFileRoute("/behavior-architecture")({
   beforeLoad: requireAdminBeforeLoad,
   head: () => ({
     meta: [
-      { title: "Behavior Architecture — AI Ecosystem" },
+      { title: "مسارات — Behavior Architecture" },
       {
         name: "description",
         content:

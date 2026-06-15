@@ -19,7 +19,7 @@ export const Route = createFileRoute("/operational-layers")({
   beforeLoad: requireAdminBeforeLoad,
   head: () => ({
     meta: [
-      { title: "Operational Layers — AI Ecosystem" },
+      { title: "مسارات — Operational Layers" },
       {
         name: "description",
         content: "خريطة الطبقات التشغيلية الحقيقية لمنصة الـ AI Ecosystem.",

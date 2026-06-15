@@ -28,7 +28,7 @@ import { Button } from "@/components/ui/button";
 import { PhaseRibbon } from "@/components/admin/PhaseRibbon";
 
 export const Route = createFileRoute("/admin/")({
-  head: () => ({ meta: [{ title: "لوحة الإدارة — AI Ecosystem" }] }),
+  head: () => ({ meta: [{ title: "لوحة الإدارة — مسارات" }] }),
   beforeLoad: requireAdminBeforeLoad,
   component: AdminPage,
 });

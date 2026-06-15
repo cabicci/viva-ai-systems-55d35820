@@ -39,7 +39,7 @@ export const Route = createFileRoute("/assistant-runtime")({
   beforeLoad: requireAdminBeforeLoad,
   head: () => ({
     meta: [
-      { title: "Assistant Runtime — AI Ecosystem" },
+      { title: "مسارات — Assistant Runtime" },
       {
         name: "description",
         content:
