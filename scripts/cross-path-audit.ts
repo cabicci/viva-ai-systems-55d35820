@@ -12,13 +12,13 @@
  * as informational mentions per the approved policy. They're listed under
  * `cross-path-info` for human review.
  *
- * Output: public/lesson-audit/cross-path-issues.json + .md summary.
+ * Output: scripts/lesson-audit/output/cross-path-issues.json + .md summary.
  */
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
 const LESSONS_DIR = path.resolve("src/components/intro/lessons");
-const OUT_DIR = path.resolve("public/lesson-audit");
+const OUT_DIR = path.resolve("scripts/lesson-audit/output");
 
 type Category =
   | "prior-lesson-ref"

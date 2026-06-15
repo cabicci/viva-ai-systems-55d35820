@@ -3,7 +3,7 @@ import { dirname, extname, join, relative } from "node:path";
 
 const ROOT = process.cwd();
 const TEXT_EXTENSIONS = new Set([".ts", ".tsx", ".js", ".jsx", ".json", ".mjs", ".cjs", ".md", ".sh"]);
-const SEARCH_DIRS = ["src", "remotion", "scripts", "public/lesson-audit"];
+const SEARCH_DIRS = ["src", "remotion", "scripts", "scripts/lesson-audit/output"];
 
 const args = process.argv.slice(2);
 const command = args[0];
