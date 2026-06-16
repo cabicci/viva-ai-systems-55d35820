@@ -43,6 +43,8 @@ public/**/*.mp4
 public/persona-sim/
 public/lesson-audit/
 scripts/persona-sim/output/
+# Generated lesson-audit outputs (regenerate via scripts/cross-path-audit.ts)
+scripts/lesson-audit/output/
 # Local-only P100 persona-sim runners (keep on disk; exclude from git + roadmap:guard)
 scripts/persona-sim/run_p100_*.ts
 scripts/persona-sim/**/persona-sim-p100-*

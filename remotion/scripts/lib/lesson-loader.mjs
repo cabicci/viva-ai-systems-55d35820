@@ -9,6 +9,57 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = path.resolve(__dirname, "../../..");
 const LESSONS_DIR = path.join(PROJECT_ROOT, "src/components/intro/lessons");
+const CURRICULUM_FILE = path.join(PROJECT_ROOT, "src/lib/curriculum-data.ts");
+
+/** PATH order in curriculum-data.ts (intro → business → creator → analyst → automator → builder). */
+const PATH_IDS = ["intro", "business", "creator", "analyst", "automator", "builder"];
+
+/**
+ * Learner lesson order from PATHS in curriculum-data.ts (regex scrape — keep in sync manually).
+ * Do not use INTRO_LESSON_CONTENT registry key order; it differs from learner navigation.
+ */
+function readPathsLessonOrder() {
+  const txt = fs.readFileSync(CURRICULUM_FILE, "utf8");
+  const order = [];
+  for (let i = 0; i < PATH_IDS.length; i++) {
+    const pathId = PATH_IDS[i];
+    const start = txt.indexOf(`id: "${pathId}"`);
+    if (start === -1) continue;
+    let end = txt.length;
+    for (let j = i + 1; j < PATH_IDS.length; j++) {
+      const next = txt.indexOf(`id: "${PATH_IDS[j]}"`, start + 1);
+      if (next !== -1) {
+        end = Math.min(end, next);
+      }
+    }
+    const section = txt.slice(start, end);
+    const re =
+      /(?:lesson\(\s*\d+\s*,\s*"([^"]+)"|(?:builderShipped|automatorShipped|analystShipped|businessShipped|shippedLesson)\(\s*\d+\s*,\s*"([^"]+)")/g;
+    let m;
+    while ((m = re.exec(section)) !== null) {
+      const id = m[1] || m[2];
+      if (id) order.push(id);
+    }
+  }
+  return order;
+}
+
+// Parse the lesson registry to learn the ordered list of lesson IDs.
+function readLessonOrder() {
+  const pathsOrder = readPathsLessonOrder();
+  if (pathsOrder.length > 0) return pathsOrder;
+  // Fallback: registry key order (legacy — should not run in normal repo state).
+  const indexFile = path.join(
+    PROJECT_ROOT,
+    "src/components/intro/lessons/index.ts",
+  );
+  const txt = fs.readFileSync(indexFile, "utf8");
+  const ids = [];
+  const re = /^\s*"([a-z0-9-]+)"\s*:\s*[A-Z0-9_]+_(?:BLOCKS|CONTENT)\s*,/gm;
+  let m;
+  while ((m = re.exec(txt)) !== null) ids.push(m[1]);
+  return ids;
+}
 
 function normalizeLessonId(input) {
   const raw = String(input || "").trim();
@@ -21,30 +72,6 @@ function normalizeLessonId(input) {
     .filter((name) => name.endsWith(".ts") && name !== "index.ts")
     .map((name) => name.replace(/\.ts$/, ""));
   return stems.find((stem) => stem.endsWith(raw)) || raw;
-}
-
-// Parse the lesson registry to learn the ordered list of lesson IDs.
-function readLessonOrder() {
-  const introOrder = [
-    "intro-m1-l1-what-is-ai",
-    "intro-m1-l2-first-prompt",
-    "intro-m1-l3-setup-your-ai",
-    "intro-m1-l4-ai-can-cannot",
-    "intro-m1-l5-ai-vs-software",
-    "intro-m1-l6-learn-without-fear",
-    "intro-m1-l7-choose-your-path",
-  ];
-  const indexFile = path.join(
-    PROJECT_ROOT,
-    "src/components/intro/lessons/index.ts",
-  );
-  const txt = fs.readFileSync(indexFile, "utf8");
-  // Match keys inside the central map: "lesson-id": SOMETHING_BLOCKS/CONTENT,
-  const ids = [];
-  const re = /^\s*"([a-z0-9-]+)"\s*:\s*[A-Z0-9_]+_(?:BLOCKS|CONTENT)\s*,/gm;
-  let m;
-  while ((m = re.exec(txt)) !== null) ids.push(m[1]);
-  return [...introOrder, ...ids.filter((id) => !introOrder.includes(id))];
 }
 
 function findHeroTitle(blocks) {

@@ -4,7 +4,7 @@
 date: 2026-06-16
 scope: other
 source: ai
-summary: [roadmap: archived lesson source-of-truth cleanup] Scope: adds archived Business lesson manifest and aligns continuity/gallery references; no learner path/content/mission/database/video changes.
+summary: [roadmap: stale drift artifact cleanup] Scope: removes stale generated audit outputs and aligns Remotion/loader references where safe; no curriculum/content/mission/database/video regeneration changes.
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

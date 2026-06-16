@@ -1,5 +1,10 @@
 # مراجعة شاملة عميقة — 2026-06-15
 
+> **⚠️ Historical audit only — NOT current source of truth.**  
+> Many Critical/High findings below were resolved or were false positives as of 2026-06.  
+> For launch status use `docs/CURRENT_STATUS.md` and `docs/playbooks/P0_LAUNCH_CONSTITUTION.md`.  
+> Do not treat blocker tables here as active work items.
+
 > **الخلاصة:** المشروع في وضع صحي عام (104 درس + فيديو، 24 جدول مع RLS مفعّل، طبقة الـ design tokens منظّمة)، بس فيه **4 مشاكل حرجة** لازم تتعالج فوراً، و**12 مشكلة عالية**، و**18 متوسطة/منخفضة**. أبرز الـ blockers: تكرار lesson ID في Business، صلاحيات `anon` واسعة على كل الجداول، rate-limit function بدون حماية، و`min-h-screen` على الموبايل.
 
 نطاق المراجعة (read-only): المحتوى/الدروس + الكود/المعمارية + قاعدة البيانات/الـRLS + الـUI/UX.
