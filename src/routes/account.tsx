@@ -19,7 +19,7 @@ import {
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
-import { AuthLoadingShell, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
+import { AuthSessionGate, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
 import { useEntitlement, useStreak } from "@/lib/entitlements";
 import { captureError } from "@/lib/error-capture";
 import { LESSONS } from "@/lib/unified-lessons";
@@ -70,19 +70,23 @@ function formatDuration(totalSeconds: number) {
 }
 
 function AccountPage() {
-  const { user, loading, signOut } = useAuth();
+  return (
+    <AuthSessionGate>
+      <AccountContent />
+    </AuthSessionGate>
+  );
+}
+
+function AccountContent() {
+  const { user, signOut } = useAuth();
   const ent = useEntitlement();
   const { streak } = useStreak();
   const [sendingReset, setSendingReset] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [deleting, setDeleting] = useState(false);
 
-  if (loading || !user) {
-    return <AuthLoadingShell />;
-  }
-
-  const userId = user.id;
-  const email = user?.email ?? "";
+  const userId = user!.id;
+  const email = user!.email ?? "";
   const admin = ent.isAdmin;
 
   // All curriculum lesson IDs (intro + 5 paths). Intro lessons live in

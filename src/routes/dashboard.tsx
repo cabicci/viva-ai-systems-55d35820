@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Sidebar } from "@/components/dashboard/Sidebar";
 import { useAuth } from "@/lib/auth-context";
-import { AuthLoadingShell, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
+import { AuthSessionGate, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { ChevronDown, Play, Lock, CheckCircle2, Clock, Trophy } from "lucide-react";
@@ -32,11 +32,19 @@ export const Route = createFileRoute("/dashboard")({
     module: typeof raw.module === "string" ? raw.module : undefined,
     lesson: typeof raw.lesson === "string" ? raw.lesson : undefined,
   }),
-  component: Dashboard,
+  component: DashboardPage,
 });
 
+function DashboardPage() {
+  return (
+    <AuthSessionGate>
+      <Dashboard />
+    </AuthSessionGate>
+  );
+}
+
 function Dashboard() {
-  const { user, loading } = useAuth();
+  const { user } = useAuth();
   const search = Route.useSearch();
   const { store, getStatus } = useLessonProgress();
   const { isPro, isAdmin } = useEntitlement();
@@ -61,11 +69,8 @@ function Dashboard() {
     return () => clearTimeout(t);
   }, [search.path, search.module, search.lesson]);
 
-  if (loading || !user) {
-    return <AuthLoadingShell />;
-  }
-  const metadata = user.user_metadata as { full_name?: string } | null | undefined;
-  const name = metadata?.full_name || user.email?.split("@")[0] || "حبيبنا";
+  const metadata = user!.user_metadata as { full_name?: string } | null | undefined;
+  const name = metadata?.full_name || user!.email?.split("@")[0] || "حبيبنا";
 
   // Introduction (onboarding) progress
   const intro = getPath("intro")!;

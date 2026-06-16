@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
-import { redirect } from "@tanstack/react-router";
+import { useEffect, type ReactNode } from "react";
+import { redirect, useNavigate } from "@tanstack/react-router";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
@@ -36,10 +36,25 @@ export function AuthLoadingShell() {
   );
 }
 
+/**
+ * Client gate after beforeLoad: spinner only while auth hydrates.
+ * Once settled, anonymous users redirect to /login (never a permanent spinner).
+ */
 export function AuthSessionGate({ children }: { children: ReactNode }) {
   const { user, loading } = useAuth();
+  const navigate = useNavigate();
 
-  if (loading || !user) {
+  useEffect(() => {
+    if (!loading && !user) {
+      navigate({ to: "/login", replace: true });
+    }
+  }, [loading, user, navigate]);
+
+  if (loading) {
+    return <AuthLoadingShell />;
+  }
+
+  if (!user) {
     return <AuthLoadingShell />;
   }
 
