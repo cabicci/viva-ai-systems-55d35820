@@ -1,4 +1,8 @@
-# Viva AI Systems — Master Blueprint
+# Master Blueprint — مسارات (masaarat.ai)
+
+> **Filename note:** `VIVA_MASTER_BLUEPRINT.md` is retained for history; current public brand is **مسارات / masaarat.ai**.
+>
+> **Historical note:** This document may use legacy project names in the body. Use `docs/CURRENT_STATUS.md` and `docs/playbooks/P0_LAUNCH_CONSTITUTION.md` for current launch source of truth.
 
 ## 1. Vision & Launch Philosophy
 

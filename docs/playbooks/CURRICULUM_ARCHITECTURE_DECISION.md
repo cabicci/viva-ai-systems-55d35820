@@ -1,4 +1,6 @@
-# Viva AI Systems — Curriculum Architecture Decision
+# Curriculum Architecture Decision — مسارات (masaarat.ai)
+
+> **Historical note:** This document may use legacy project names. Current public brand is **مسارات / masaarat.ai**. Use `docs/CURRENT_STATUS.md` and `docs/playbooks/P0_LAUNCH_CONSTITUTION.md` for current launch source of truth.
 
 ## Purpose
 

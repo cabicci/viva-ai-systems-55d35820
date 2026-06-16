@@ -1,5 +1,7 @@
 # Assistant Reality Audit
 
+> **Historical note:** Point-in-time audit inventory; may not reflect current runtime. Current public brand is **مسارات / masaarat.ai**. Use `docs/CURRENT_STATUS.md` and `docs/playbooks/P0_LAUNCH_CONSTITUTION.md` for current launch source of truth.
+
 ## Current audit stage
 
 Inventory completed. No code changes made.

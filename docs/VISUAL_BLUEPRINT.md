@@ -1,4 +1,6 @@
-# Viva AI Systems — Visual Blueprint
+# Visual Blueprint — مسارات (masaarat.ai)
+
+> **Historical note:** This document may use legacy project names. Current public brand is **مسارات / masaarat.ai**. Use `docs/CURRENT_STATUS.md` and `docs/playbooks/P0_LAUNCH_CONSTITUTION.md` for current launch source of truth.
 
 > Baseline document for Visual Freeze Phase F0. Documentation only. No code or token values changed.
 > Source of truth: `src/styles.css` (316 lines, audited 2026-06-09).

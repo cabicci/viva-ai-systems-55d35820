@@ -1,4 +1,4 @@
-# Viva AI Systems — Master Project Tracker
+# مسارات (masaarat.ai) — Master Project Tracker
 
 > Single source of truth for project status. Documentation only.
 > Reconciled from: `docs/CURRENT_STATUS.md`, `docs/VISUAL_BLUEPRINT.md`, `docs/playbooks/CURRICULUM_FREEZE_CONTRACT.md`, repo reality (2026-06-04, baseline `cc84946`).
@@ -137,7 +137,7 @@ Implementation follows this brief; **none of these are in scope for the brief st
 
 Status: ✅ **PLAN LOCKED** (docs only — execution not started)
 
-> **Audit baseline (read-only, pre-plan):** Live logo usage is `/brand/masaarat-logo-lockup.png` (Sidebar ×3). `public/brand/README.md` incorrectly documents Navbar as `masaarat-logo-horizontal.png`. Footer is text-only. No favicon in `public/` root; no `rel="icon"` / `apple-touch-icon` in `src/routes/__root.tsx`. OG/Twitter image still points to legacy GPT Engineer / Lovable-hosted URL; `twitter:site` is `@Lovable`. Forbidden assets exist under `public/brand/icons/` (`ai-brain`, `ai-spark`). Sidebar admin dev link uses Lucide `Brain` for “Assistant Runtime”. Untracked `src/components/brand/BrandMark.tsx` is a hand-drawn SVG — **out of scope** until replaced by approved-crop wiring.
+> **Audit baseline (2026-06, verified in code):** Live logo: `/brand/masaarat-logo-lockup.png`. Favicon + apple-touch in `src/routes/__root.tsx` → `/brand/masaarat-icon.png`. OG/Twitter image → `https://masaarat.ai/brand/masaarat-og.png`; no `twitter:site` / `@Lovable` in root meta. Remaining brand batch work: forbidden icon cleanup (Batch 5), visual QA (Batch 6). Stale pre-2026 notes about GPT Engineer OG / missing favicon are **obsolete**.
 
 **Global rules (all batches):**
 
@@ -182,6 +182,8 @@ Status: ✅ **PLAN LOCKED** (docs only — execution not started)
 
 #### Batch 3 — Favicon / app icons
 
+> **Status (2026-06):** Wired in `src/routes/__root.tsx`; verify on deploy.
+
 **Goal:** Browser tab and install surfaces use approved symbol-only mark.
 
 | Action | Detail |
@@ -195,6 +197,8 @@ Status: ✅ **PLAN LOCKED** (docs only — execution not started)
 ---
 
 #### Batch 4 — OG / social
+
+> **Status (2026-06):** Root meta uses `https://masaarat.ai/brand/masaarat-og.png`; legacy GPT Engineer / `@Lovable` social meta removed from code.
 
 **Goal:** Replace legacy Lovable / GPT Engineer social metadata with masaarat.ai brand.
 
@@ -356,8 +360,8 @@ Deep audit verdict (2026-06): **CONDITIONAL PASS** — pastel OKLCH theme and pa
 
 - **1200×630**, Arabic-first.
 - Include: مسارات wordmark · masaarat.ai · short Arabic tagline · subtle path motif · blue/mint pastel background.
-- Must **replace** gpt-engineer / Lovable-hosted `og:image`.
-- Remove or replace `twitter:site` **@Lovable**.
+- Must **replace** legacy gpt-engineer / Lovable-hosted `og:image` — **done in `__root.tsx` (2026-06)**.
+- `twitter:site` / `@Lovable` — **not present** in root meta (2026-06).
 
 #### Implementation phases (after this brief — not started)
 
@@ -462,7 +466,7 @@ Audit verdict (2026-06): **CONDITIONAL PASS** — structure and Arabic voice are
 - Mission feedback label `Clear`
 - Canonical URL / og URL
 
-**Docs cleanup batch (gradual):** Replace legacy **Viva AI Systems** and retired product-name references in docs where appropriate. This tracker title and other docs may still carry legacy naming until that pass runs.
+**Docs cleanup batch (gradual):** Legacy **Viva AI Systems** naming in historical docs clarified in Batch 4C (2026-06). Retired product names must not reappear in learner-facing UI or SEO.
 
 ---
 

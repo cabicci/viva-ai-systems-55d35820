@@ -1,5 +1,7 @@
 # RUNBOOK — العمليات الحساسة والطوارئ
 
+> **Product:** مسارات (masaarat.ai). References to Lovable below describe hosting/tooling operations, not the public product brand.
+
 > كل سيناريو هنا له خطوات قصيرة ومرتّبة. اقرأ الخطوة كلها قبل ما تنفّذ.
 >
 > **P0 incident severity (Critical same-day / High 24–72h / Medium batch):** `docs/playbooks/P0_LAUNCH_CONSTITUTION.md` §E.

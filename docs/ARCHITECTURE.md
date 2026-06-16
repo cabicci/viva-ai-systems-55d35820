@@ -1,5 +1,7 @@
 # ARCHITECTURE — الخريطة المعمارية
 
+> **Product:** مسارات (masaarat.ai). References to Lovable below describe hosting/tooling, not the public product brand.
+
 > الملف ده بيجاوب على سؤال واحد: "أنا عايز أعدّل X، أروح فين؟"
 
 ---

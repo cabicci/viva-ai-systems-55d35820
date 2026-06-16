@@ -1,5 +1,7 @@
 # Lesson Shape Constitution
 
+> **Historical note:** This document may use legacy project names. Current public brand is **مسارات / masaarat.ai**. Use `docs/CURRENT_STATUS.md` and `docs/playbooks/P0_LAUNCH_CONSTITUTION.md` for current launch source of truth.
+
 ## Purpose
 
 This document defines the standard lesson experience for Viva AI Systems before content review and visual implementation.

@@ -1,4 +1,4 @@
-# Viva AI Systems — Current Status
+# مسارات (masaarat.ai) — Current Status
 
 ## Current Phase
 

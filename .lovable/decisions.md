@@ -1,5 +1,7 @@
 # Decisions Log
 
+> **Product:** مسارات (masaarat.ai). Table entries may reference Lovable as infrastructure/tooling decisions.
+
 سجل لكل قرار مهم اتاخد على المنصة. الأحدث في الأول. كل قرار له تاريخ + مجال + القرار + السبب + الحالة.
 
 القاعدة: قبل ما أقترح أي تغيير يمس نظام موجود، أبص هنا أشوف فيه قرار قديم متعارض.
