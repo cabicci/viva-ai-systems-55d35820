@@ -7,9 +7,11 @@ import { Hammer, Palette, Cog, BarChart3, Briefcase, Compass, BookOpen, Check, A
 import { runWowPath } from "@/lib/wow-experience.functions";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
+import { AuthSessionGate, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/start")({
+  beforeLoad: requireAuthBeforeLoad,
   head: () => ({
     meta: [
       { title: "ابدأ — أول دقيقتين في مسارات" },
@@ -34,6 +36,14 @@ const PATHS = [
 const SEEN_KEY = "wow-experience-seen";
 
 function StartPage() {
+  return (
+    <AuthSessionGate>
+      <StartContent />
+    </AuthSessionGate>
+  );
+}
+
+function StartContent() {
   const navigate = useNavigate();
   const { user } = useAuth();
   const runFn = useServerFn(runWowPath);
