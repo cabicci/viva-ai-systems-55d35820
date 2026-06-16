@@ -18,6 +18,11 @@ import { z } from "zod";
 import { PATHS } from "@/lib/curriculum-data";
 import { INTRO_LESSON_CONTENT } from "@/components/intro/lessons";
 import type { IntroLessonContent } from "@/components/intro/intro-lesson-types";
+import {
+  ARCHIVED_LESSON_ID_SET,
+  ARCHIVED_LESSON_IDS,
+  isArchivedLessonId,
+} from "@/lib/archived-lessons";
 
 /* -------------------------------------------------------------- */
 /* Constants                                                       */
@@ -31,12 +36,9 @@ export const CHUNK_MAX_CHARS = 1500;
 export const CHUNK_OVERLAP_CHARS = 150;
 export const EMBEDDING_MODEL = "text-embedding-3-small";
 
-export const ARCHIVED_BUSINESS_SLUGS = new Set<string>([
-  "business-m1-l3-ai-thinking-partner",
-  "business-m2-l4-pricing-cash-flow",
-  "business-m3-l4-hiring-onboarding",
-  "business-m4-l5-business-os-dashboard",
-]);
+export { ARCHIVED_LESSON_IDS, isArchivedLessonId };
+/** @deprecated Prefer ARCHIVED_LESSON_IDS / isArchivedLessonId from archived-lessons.ts */
+export const ARCHIVED_BUSINESS_SLUGS = ARCHIVED_LESSON_ID_SET;
 
 /* -------------------------------------------------------------- */
 /* Types                                                           */
@@ -248,7 +250,7 @@ function buildPlan(): {
       for (const lesson of mod.lessons) {
         const id = lesson.id;
         if (seen.has(id)) continue;
-        if (ARCHIVED_BUSINESS_SLUGS.has(id)) {
+        if (isArchivedLessonId(id)) {
           archivedFound.push(id);
           continue;
         }
@@ -302,7 +304,7 @@ function summarize(
 
   const archivedIncluded = plan.lessons
     .map((l) => l.lessonId)
-    .filter((id) => ARCHIVED_BUSINESS_SLUGS.has(id));
+    .filter((id) => isArchivedLessonId(id));
 
   if (plan.lessons.length !== EXPECTED_LESSON_COUNT) {
     warnings.push(
@@ -332,7 +334,7 @@ function summarize(
     executed: opts.executed,
     plannedLessonCount: plan.lessons.length,
     expectedLessonCount: EXPECTED_LESSON_COUNT,
-    archivedExcluded: Array.from(ARCHIVED_BUSINESS_SLUGS),
+    archivedExcluded: [...ARCHIVED_LESSON_IDS],
     missingContent: plan.missing,
     archivedFoundInPlan: archivedIncluded,
     totalChunks,

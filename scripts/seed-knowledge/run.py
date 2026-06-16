@@ -33,6 +33,7 @@ LESSONS_DIR = ROOT / "src/components/intro/lessons"
 INDEX_FILE = LESSONS_DIR / "index.ts"
 CURRICULUM_FILE = ROOT / "src/lib/curriculum-data.ts"
 
+# Keep in sync with src/lib/archived-lessons.ts ARCHIVED_LESSON_IDS
 ARCHIVED_BUSINESS_SLUGS = frozenset({
     "business-m1-l3-ai-thinking-partner",
     "business-m2-l4-pricing-cash-flow",

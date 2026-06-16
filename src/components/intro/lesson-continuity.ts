@@ -164,30 +164,30 @@ export const LESSON_CONTINUITY: Record<string, string> = {
   "analyst-m7-l1-from-decisions-to-business":
     "خلصت Analyst كامل 🎉 — ادخل Business وكمّل القفل النهائي للـ ecosystem.",
 
-  /* ---------------- Business path (12) ---------------- */
+  /* ---------------- Business path (13 learner) ---------------- */
   "business-m1-l1-from-decisions-to-leadership":
     "بقيت Leader، مش Operator. الموديول الجاي بيعلّمك تحرّر يومك من Reactive Mode.",
-  "business-m2-l1-reactive-vs-proactive":
+  "business-m1-l2-reactive-vs-proactive":
     "يومك بقى Proactive. الدرس الجاي بيوزّع أسبوعك على الـ ٤ مسارات التنفيذية (Creator/Analyst/Automator/Builder).",
-  "business-m2-l2-weekly-rhythm":
-    "أسبوعك ليه إيقاع. الموديول الجاي عن إدارة العملاء — من أول تواصل لعميل ثابت.",
-  "business-m3-l1-customer-lifecycle":
+  "business-m2-l1-customer-lifecycle":
     "فهمت دورة العميل. الدرس الجاي بيركّب Follow-up Flow بـ ٣ رسائل (٣ أيام/أسبوعين/شهر).",
-  "business-m3-l2-retention-flow":
+  "business-m2-l2-retention-flow":
     "العملاء بيتحافظ عليهم. الموديول الجاي عن إدارة العمليات — Strategic/Operational/Administrative.",
-  "business-m4-l1-strategic-operational-admin":
-    "كل نوع عرفت مكانه. الدرس الجاي بيعلّمك تختار بين Delegate و Automate لكل مهمة.",
-  "business-m4-l2-delegate-or-automate":
-    "٨٠٪ من شغلك مش محتاجك. الموديول الجاي عن النمو والتوسع — العلامات الـ ٤ للجاهزية.",
-  "business-m5-l1-readiness-signals":
+  "business-m2-l3-readiness-signals":
     "عرفت إمتى تكبّر. الدرس الجاي قاعدة ذهبية: System الأول، الناس بعدين.",
-  "business-m5-l2-system-then-people":
+  "business-m3-l1-delegate-or-automate":
+    "٨٠٪ من شغلك مش محتاجك. الموديول الجاي عن النمو والتوسع — العلامات الـ ٤ للجاهزية.",
+  "business-m3-l2-strategic-operational-admin":
+    "كل نوع عرفت مكانه. الدرس الجاي بيعلّمك تختار بين Delegate و Automate لكل مهمة.",
+  "business-m3-l3-system-then-people":
     "ترتيب التوسع واضح. الموديول الجاي عن أخطر فخّين: الرجوع Reactive والتوسع قبل الأوان.",
-  "business-m6-l1-reactive-relapse":
-    "بتعرف ترجع بسرعة. الدرس الجاي عن خطر التوسع قبل الأوان — وعلامات الخطر الواضحة.",
-  "business-m6-l2-premature-scaling":
+  "business-m4-l1-premature-scaling":
     "بتعرف تتفادى الفخ. آخر درس بيقفل الـ ecosystem كامل — الـ ٥ مسارات في يومك.",
-  "business-m7-l1-full-ecosystem":
+  "business-m4-l2-reactive-relapse":
+    "بتعرف ترجع بسرعة. الدرس الجاي عن خطر التوسع قبل الأوان — وعلامات الخطر الواضحة.",
+  "business-m4-l3-weekly-rhythm":
+    "أسبوعك ليه إيقاع. الموديول الجاي عن إدارة العملاء — من أول تواصل لعميل ثابت.",
+  "business-m4-l4-full-ecosystem":
     "خلصت كل المسارات 🎉 — شغلك بقى ecosystem كامل. شخص + AI + System صح = Business حقيقي.",
 };
 

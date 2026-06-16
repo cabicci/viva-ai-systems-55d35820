@@ -551,7 +551,7 @@ function analystModules(): CurriculumModule[] {
   ];
 }
 
-/* Business — 4 modules × 16 lessons. AI Operating System narrative. */
+/* Business — 4 modules, 13 learner lessons (registry may include 4 archived slugs). */
 function businessModules(): CurriculumModule[] {
   return [
     {
