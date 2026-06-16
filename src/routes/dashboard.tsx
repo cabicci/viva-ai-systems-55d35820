@@ -1,7 +1,8 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Sidebar } from "@/components/dashboard/Sidebar";
 import { useAuth } from "@/lib/auth-context";
+import { AuthLoadingShell, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { ChevronDown, Play, Lock, CheckCircle2, Clock, Trophy } from "lucide-react";
@@ -24,6 +25,7 @@ import { PhaseRibbon } from "@/components/admin/PhaseRibbon";
 type DashboardSearch = { path?: string; module?: string; lesson?: string };
 
 export const Route = createFileRoute("/dashboard")({
+  beforeLoad: requireAuthBeforeLoad,
   head: () => ({ meta: [{ title: "اللوحة — مسارات" }] }),
   validateSearch: (raw: Record<string, unknown>): DashboardSearch => ({
     path: typeof raw.path === "string" ? raw.path : undefined,
@@ -35,7 +37,6 @@ export const Route = createFileRoute("/dashboard")({
 
 function Dashboard() {
   const { user, loading } = useAuth();
-  const navigate = useNavigate();
   const search = Route.useSearch();
   const { store, getStatus } = useLessonProgress();
   const { isPro, isAdmin } = useEntitlement();
@@ -60,11 +61,9 @@ function Dashboard() {
     return () => clearTimeout(t);
   }, [search.path, search.module, search.lesson]);
 
-  useEffect(() => {
-    if (!loading && !user) navigate({ to: "/login" });
-  }, [loading, user, navigate]);
-
-  if (loading || !user) return null;
+  if (loading || !user) {
+    return <AuthLoadingShell />;
+  }
   const metadata = user.user_metadata as { full_name?: string } | null | undefined;
   const name = metadata?.full_name || user.email?.split("@")[0] || "حبيبنا";
 

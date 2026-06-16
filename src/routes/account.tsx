@@ -1,4 +1,4 @@
-import { createFileRoute, redirect, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import {
@@ -19,6 +19,7 @@ import {
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
+import { AuthLoadingShell, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
 import { useEntitlement, useStreak } from "@/lib/entitlements";
 import { captureError } from "@/lib/error-capture";
 import { LESSONS } from "@/lib/unified-lessons";
@@ -35,6 +36,7 @@ import {
 } from "@/components/ui/dialog";
 
 export const Route = createFileRoute("/account")({
+  beforeLoad: requireAuthBeforeLoad,
   head: () => ({
     meta: [
       { title: "حسابي — مسارات" },
@@ -75,13 +77,11 @@ function AccountPage() {
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [deleting, setDeleting] = useState(false);
 
-  // Redirect-style guard at render (loader is isomorphic; supabase session
-  // lives on the client). If still loading, show a thin shell.
-  if (typeof window !== "undefined" && !loading && !user) {
-    throw redirect({ to: "/login" });
+  if (loading || !user) {
+    return <AuthLoadingShell />;
   }
 
-  const userId = user?.id ?? null;
+  const userId = user.id;
   const email = user?.email ?? "";
   const admin = ent.isAdmin;
 

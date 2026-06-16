@@ -1,4 +1,4 @@
-import { createFileRoute, redirect, Link } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 import {
@@ -13,9 +13,11 @@ import {
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
+import { AuthSessionGate, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
 import { Sidebar } from "@/components/dashboard/Sidebar";
 
 export const Route = createFileRoute("/analytics")({
+  beforeLoad: requireAuthBeforeLoad,
   head: () => ({
     meta: [
       { title: "تحليلاتي — مسارات" },
@@ -27,6 +29,14 @@ export const Route = createFileRoute("/analytics")({
   }),
   component: AnalyticsPage,
 });
+
+function AnalyticsPage() {
+  return (
+    <AuthSessionGate>
+      <AnalyticsContent />
+    </AuthSessionGate>
+  );
+}
 
 type CountMap = Record<string, number>;
 
@@ -60,14 +70,9 @@ function StatCard({
   );
 }
 
-function AnalyticsPage() {
-  const { user, loading } = useAuth();
-
-  if (!loading && !user) {
-    throw redirect({ to: "/login" });
-  }
-
-  const userId = user?.id ?? null;
+function AnalyticsContent() {
+  const { user } = useAuth();
+  const userId = user!.id;
 
   const { data, isLoading } = useQuery({
     enabled: !!userId,

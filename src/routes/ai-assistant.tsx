@@ -1,10 +1,11 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { createFileRoute } from "@tanstack/react-router";
 import { Badge } from "@/components/ui/badge";
 import { AssistantPanel } from "@/components/assistant/AssistantPanel";
 import { useAuth } from "@/lib/auth-context";
+import { AuthLoadingShell, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
 
 export const Route = createFileRoute("/ai-assistant")({
+  beforeLoad: requireAuthBeforeLoad,
   head: () => ({
     meta: [
       { title: "مساعد المنصة — مسارات" },
@@ -20,13 +21,10 @@ export const Route = createFileRoute("/ai-assistant")({
 
 function AIAssistantPage() {
   const { user, loading } = useAuth();
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!loading && !user) navigate({ to: "/login" });
-  }, [loading, user, navigate]);
-
-  if (loading || !user) return null;
+  if (loading || !user) {
+    return <AuthLoadingShell />;
+  }
 
   return (
     <div dir="rtl" className="min-h-dvh text-foreground" style={{ background: "var(--gradient-hero)" }}>
