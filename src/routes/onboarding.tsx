@@ -1,5 +1,7 @@
-import { createFileRoute, redirect } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { createFileRoute, redirect, useNavigate } from "@tanstack/react-router";
 import { supabase } from "@/integrations/supabase/client";
+import { useAuth } from "@/lib/auth-context";
 import { AuthLoadingShell, hasValidSession } from "@/lib/auth-route-guard";
 
 /** Legacy URL compatibility: /onboarding no longer hosts a separate flow. */
@@ -20,5 +22,13 @@ export const Route = createFileRoute("/onboarding")({
 });
 
 function OnboardingLegacyRedirect() {
+  const { user, loading } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (loading) return;
+    navigate({ to: user ? "/dashboard" : "/login", replace: true });
+  }, [loading, user, navigate]);
+
   return <AuthLoadingShell />;
 }
