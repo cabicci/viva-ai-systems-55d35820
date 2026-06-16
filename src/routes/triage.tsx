@@ -1,12 +1,14 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { CircleHelp, Target, Clock, ArrowLeft, Loader2, Check } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
+import { AuthSessionGate, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/triage")({
+  beforeLoad: requireAuthBeforeLoad,
   head: () => ({
     meta: [
       { title: "خليني أعرفك — مسارات" },
@@ -51,17 +53,21 @@ function classify(level: Level, goal: Goal): { track: Track; entry: string } {
 }
 
 function TriagePage() {
-  const { user, loading } = useAuth();
+  return (
+    <AuthSessionGate>
+      <TriageContent />
+    </AuthSessionGate>
+  );
+}
+
+function TriageContent() {
+  const { user } = useAuth();
   const navigate = useNavigate();
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [level, setLevel] = useState<Level | null>(null);
   const [goal, setGoal] = useState<Goal | null>(null);
   const [timeAvail, setTimeAvail] = useState<TimeAvail | null>(null);
   const [saving, setSaving] = useState(false);
-
-  useEffect(() => {
-    if (!loading && !user) navigate({ to: "/login" });
-  }, [loading, user, navigate]);
 
   async function save() {
     if (!user || !level || !goal || !timeAvail) return;
@@ -111,8 +117,6 @@ function TriagePage() {
       <p className="text-sm text-muted-foreground">{sub}</p>
     </button>
   );
-
-  if (loading) return null;
 
   return (
     <div className="min-h-dvh container mx-auto px-4 py-12 max-w-3xl" dir="rtl">
