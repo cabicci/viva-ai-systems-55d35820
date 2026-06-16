@@ -30,7 +30,7 @@ export const Route = createFileRoute("/behavior-architecture")({
       {
         name: "description",
         content:
-          "خريطة سلوك المنصة الداخلية — كيف يعمل الـ AI Ecosystem كنظام حي يتفاعل مع المتعلم.",
+          "خريطة سلوك منصة مسارات (masaarat.ai) — كيف تعمل المنصة كنظام حي يتفاعل مع المتعلم.",
       },
     ],
   }),
@@ -134,7 +134,7 @@ const BEHAVIORS: {
   {
     icon: Activity,
     no: "04",
-    title: "Live Ecosystem",
+    title: "Live Platform",
     body: "المنصة نفسها تتطور علنًا أمام المتعلم.",
     tone: "accent",
   },
@@ -214,7 +214,7 @@ const LAYERS: {
   {
     no: "08",
     icon: Network,
-    title: "Ecosystem Awareness Layer",
+    title: "Platform Awareness Layer",
     desc: "بتربط الدروس والمهام والأنظمة و الـ Business Logic.",
     felt: "كل حاجة بتحس إنها جزء من نفس الكيان الواحد.",
     tone: "accent",
@@ -260,7 +260,7 @@ const VIDEOS: {
     no: "05",
     icon: PlayCircle,
     title: "System Videos",
-    purpose: "Explain ecosystem connections",
+    purpose: "Explain platform layer connections",
     tone: "primary",
   },
 ];
@@ -281,7 +281,7 @@ const PHASES: { no: string; title: string; tone: "primary" | "accent" }[] = [
   { no: "Phase 2", title: "Context-Aware Learning", tone: "primary" },
   { no: "Phase 3", title: "AI Retrieval Experience", tone: "accent" },
   { no: "Phase 4", title: "Interactive AI Assistant", tone: "primary" },
-  { no: "Phase 5", title: "Agentic Ecosystem Behavior", tone: "accent" },
+  { no: "Phase 5", title: "Agentic Platform Behavior", tone: "accent" },
   {
     no: "Phase 6",
     title: "Full AI-Native Operational Environment",
@@ -347,7 +347,7 @@ function BehaviorArchitecturePage() {
               Behavior Architecture
             </h1>
             <p className="text-muted-foreground leading-loose max-w-2xl text-[15px] md:text-base whitespace-pre-line">
-              {`المنصة ليست مجموعة صفحات ودروس.\nالمنصة نفسها AI-Native Ecosystem حي يتفاعل ويتطور أمام المتعلم.`}
+              {`المنصة ليست مجموعة صفحات ودروس.\nمسارات (masaarat.ai) منصة AI-native حيّة تتفاعل وتتطور أمام المتعلم.`}
             </p>
           </div>
         </header>
@@ -365,7 +365,7 @@ function BehaviorArchitecturePage() {
               ))}
             </div>
             <p className="text-muted-foreground leading-loose text-center mt-8 max-w-xl mx-auto">
-              المستخدم لا يدخل لقراءة كورس. هو يدخل للمشاركة داخل Ecosystem حي.
+              المستخدم لا يدخل لقراءة كورس. هو يدخل للمشاركة داخل منصة مسارات حيّة.
             </p>
           </div>
         </Section>
@@ -500,11 +500,11 @@ function BehaviorArchitecturePage() {
           </div>
         </Section>
 
-        {/* SECTION 5 — Ecosystem Synchronization */}
+        {/* SECTION 5 — Platform synchronization */}
         <Section
           no="05"
-          label="ECOSYSTEM SYNCHRONIZATION"
-          title="تزامن الـ Ecosystem"
+          label="PLATFORM SYNCHRONIZATION"
+          title="تزامن طبقات المنصة"
         >
           <div className="glass rounded-2xl p-6 md:p-10 border border-border/30">
             <div className="flex flex-col items-center">
@@ -517,7 +517,7 @@ function BehaviorArchitecturePage() {
               ))}
             </div>
             <p className="text-muted-foreground leading-loose text-center mt-8 max-w-xl mx-auto">
-              كل شيء داخل المنصة يجب أن يكون متصلًا بنفس الـ Ecosystem.
+              كل شيء داخل مسارات يجب أن يكون متصلًا بنفس المنصة والمنهج.
             </p>
           </div>
         </Section>
@@ -531,7 +531,7 @@ function BehaviorArchitecturePage() {
               CORE PRINCIPLE
             </p>
             <h2 className="text-2xl md:text-4xl font-black text-primary-foreground leading-[1.4] whitespace-pre-line">
-              {`المتعلم لا يدرس الـ Ecosystem...\nهو يعيش داخله.`}
+              {`المتعلم لا يدرس عن المنصة من برّه...\nهو يعيش داخل مسارات.`}
             </h2>
           </div>
         </section>

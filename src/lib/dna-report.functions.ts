@@ -158,8 +158,10 @@ export const generateDnaReport = createServerFn({ method: "POST" })
     push(`  - Styling: **Tailwind v4** + semantic tokens في \`src/styles.css\``);
     push(`  - AI: **Lovable AI Gateway** (Gemini + GPT models) + ElevenLabs + D-ID + Bunny Stream`);
     push(`- **URLs:**`);
-    push(`  - Preview: \`https://id-preview--db3e0659-63cc-4b7e-8985-61692a4adc4a.lovable.app\``);
-    push(`  - Published: \`https://ai-ecosystem-hub-72.lovable.app\``);
+    push(`  - Public: \`https://masaarat.ai\``);
+    push(`  - Legacy/dev deploy (internal diagnostics only):`);
+    push(`    - Preview: \`https://id-preview--db3e0659-63cc-4b7e-8985-61692a4adc4a.lovable.app\``);
+    push(`    - Historical publish slug: \`https://ai-ecosystem-hub-72.lovable.app\``);
 
     // ===== 2. Architecture =====
     h2("2. Architecture Map");

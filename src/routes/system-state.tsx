@@ -287,7 +287,7 @@ function SystemStatePage() {
             <CompRow area="Lesson Engine" files="src/components/lesson/LessonEngine.tsx" items="مسؤول عن render الدرس + completion." />
             <CompRow area="Mission" files="src/components/lesson/MissionCard.tsx" items="MissionCard." />
             <CompRow area="Dashboard / Nav" files="src/components/dashboard/Sidebar.tsx" items="Sidebar الرئيسي للصفحات الداخلية." />
-            <CompRow area="Site / Landing" files="src/components/site/*" items="Hero · Journey · Ecosystem · Philosophy · CTA · Navbar · Footer." />
+            <CompRow area="Site / Landing" files="src/components/site/*" items="Hero · Journey · Paths · Philosophy · CTA · Navbar · Footer." />
             <CompRow area="UI Primitives" files="src/components/ui/*" items="shadcn primitives (button, card, dialog, ...)." />
           </div>
         </Section>

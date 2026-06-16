@@ -6,7 +6,7 @@ export const ROUTES: {
   purpose: string;
   status: Status;
 }[] = [
-  { path: "/", title: "Landing — Hero & Ecosystem", purpose: "نقطة الدخول السينمائية للـ Ecosystem.", status: "live" },
+  { path: "/", title: "Landing — Hero & Paths", purpose: "نقطة الدخول السينمائية لمسارات (masaarat.ai).", status: "live" },
   { path: "/login", title: "تسجيل الدخول", purpose: "Auth — Email/Password عبر Lovable Cloud.", status: "live" },
   { path: "/signup", title: "إنشاء حساب", purpose: "Auth — Sign up جديد.", status: "live" },
   { path: "/onboarding", title: "Onboarding (legacy)", purpose: "Legacy redirect — anonymous → /login, signed-in → /dashboard.", status: "partial" },
@@ -15,7 +15,7 @@ export const ROUTES: {
   { path: "/curriculum", title: "All Paths", purpose: "نظرة عامة على كل المسارات والوحدات والدروس.", status: "live" },
   { path: "/learn/$pathId/$lessonId", title: "Lesson Engine", purpose: "محرك عرض الدرس باستخدام بيانات `INTRO_LESSON_CONTENT`.", status: "live" },
   { path: "/operational-layers", title: "Operational Layers", purpose: "خريطة الطبقات التشغيلية للمنصة (Internal).", status: "live" },
-  { path: "/behavior-architecture", title: "Behavior Architecture", purpose: "خريطة سلوك المنصة كـ AI-Native Ecosystem (Internal).", status: "live" },
+  { path: "/behavior-architecture", title: "Behavior Architecture", purpose: "خريطة سلوك منصة مسارات (Internal).", status: "live" },
   { path: "/system-state", title: "System State", purpose: "هذه الصفحة — Snapshot داخلي للمنصة (Internal).", status: "live" },
   { path: "/assistant-runtime", title: "Assistant Runtime", purpose: "Internal shell — يربط Context + Retrieval قبل توصيل أي AI خارجي.", status: "live" },
 ];

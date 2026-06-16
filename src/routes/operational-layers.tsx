@@ -22,7 +22,7 @@ export const Route = createFileRoute("/operational-layers")({
       { title: "مسارات — Operational Layers" },
       {
         name: "description",
-        content: "خريطة الطبقات التشغيلية الحقيقية لمنصة الـ AI Ecosystem.",
+        content: "خريطة الطبقات التشغيلية لمنصة مسارات (masaarat.ai).",
       },
     ],
   }),
@@ -58,7 +58,7 @@ const LAYERS: Layer[] = [
     title: "Retrieval Layer",
     subtitle: "طبقة الاسترجاع",
     description:
-      "بتبحث في دروس المنصة، المهام، المستندات، ومعرفة الـ Ecosystem قبل أي رد من الـ AI.",
+      "بتبحث في دروس المنصة، المهام، المستندات، ومعرفة مسارات قبل أي رد من الـ AI.",
     tone: "accent",
   },
   {
@@ -107,8 +107,8 @@ const LAYERS: Layer[] = [
   {
     no: "08",
     icon: Network,
-    title: "Ecosystem Awareness Layer",
-    subtitle: "طبقة وعي الـ Ecosystem",
+    title: "Platform Awareness Layer",
+    subtitle: "طبقة وعي المنصة",
     description:
       "بتربط الدروس، المهام، الأنظمة، الـ Business Logic، وتطوّر المنصة في كيان واحد.",
     tone: "accent",
@@ -133,7 +133,7 @@ function OperationalLayersPage() {
           <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-accent/15 blur-3xl" />
           <div className="relative">
             <p className="font-mono text-[11px] tracking-widest text-primary mb-4">
-              INTERNAL · ECOSYSTEM MAP
+              INTERNAL · PLATFORM MAP
             </p>
             <h1 className="text-3xl md:text-5xl font-black leading-[1.3] mb-5">
               الطبقات التشغيلية للمنصة
@@ -205,7 +205,7 @@ function OperationalLayersPage() {
               READ-ONLY · VISUALIZATION
             </p>
             <h2 className="text-xl md:text-2xl font-black text-primary-foreground leading-[1.4]">
-              كل طبقة بتعمل لوحدها — وكلهم مع بعض بيكوّنوا الـ Ecosystem
+              كل طبقة بتعمل لوحدها — وكلهم مع بعض بيكوّنوا منصة مسارات
             </h2>
           </div>
         </section>

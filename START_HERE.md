@@ -2,19 +2,19 @@
 
 > أنت AI أو إنسان لسه فاتح المشروع لأول مرة؟ اقرأ الملف ده لحد الآخر. لو خلصته وعندك سؤال، يبقى السؤال محتاج قرار قيادي مش معلومة تقنية.
 
-الملف ده بيلخّص ويوحّد: `HANDOFF.md` + `docs/RUNBOOK.md` + `docs/ARCHITECTURE.md` + `src/data/brain-identity.ts`. الملفات دي لسه موجودة كمراجع تفصيلية، لكن الملف ده هو نقطة الدخول.
+الملف ده بيلخّص ويوحّد: `HANDOFF.md` + `docs/RUNBOOK.md` + `docs/ARCHITECTURE.md`. الملفات دي لسه موجودة كمراجع تفصيلية، لكن الملف ده هو نقطة الدخول.
 
 ---
 
 ## 1. ايه المشروع
 
-**The Arabic AI Learning Ecosystem** — منصة عربية لتعلّم الذكاء الاصطناعي عبر:
+**مسارات (masaarat.ai)** — منصة عربية لتعلّم الذكاء الاصطناعي عبر:
 - كتاب أساسي (المرجع الفكري).
 - 5 مسارات: Intro · Builder · Creator · Automator · Analyst · Business.
 - مهام تطبيقية وبناء حقيقي داخل كل درس.
 - مساعد AI مقيّد بسياق المنصة (يعلّم، لا يحل بدلًا عن المتعلم).
 
-المصدر الكامل للهوية: `src/data/brain-identity.ts` (`PROJECT_IDENTITY`).
+الهوية العامة: `public/brand/README.md` · المنهج: `src/lib/curriculum-data.ts`.
 
 ## 2. ايه المشروع **مش** هو
 
@@ -36,7 +36,7 @@
 | Context-aware teaching | المساعد يعرف فين أنت في المنهج. |
 | العربية أولًا | RTL ولغة طبيعية، مش ترجمة. |
 
-المصدر: `EDUCATIONAL_PHILOSOPHY` في `brain-identity.ts`.
+المصدر: القسم 3 في `HANDOFF.md`.
 
 ## 4. البنية التقنية (صفحة واحدة)
 
@@ -70,7 +70,7 @@
 | المساعد التعليمي | `src/lib/assistant-runtime.ts` + `supabase/functions/assistant-runtime/` |
 | Retrieval (pgvector) | `src/lib/retrieval/` + `supabase/functions/semantic-search/` |
 | ضخّ المحتوى للـ corpus | `supabase/functions/ingest-curriculum-knowledge/` |
-| الهوية / الفلسفة | `src/data/brain-identity.ts` |
+| الهوية / الفلسفة | `public/brand/README.md` + `HANDOFF.md` §3 |
 | Roadmap والقرارات | `src/data/master-report-data.ts` |
 | اللاندنج | `src/components/site/*` |
 | لوحة المتعلم | `src/routes/dashboard.tsx` + `src/components/dashboard/Sidebar.tsx` |
@@ -185,7 +185,7 @@ RLS مقفولة على كل الجداول الشخصية بـ `auth.uid() = us
 
 | المعنى | الملف |
 |---|---|
-| الهوية والفلسفة | `src/data/brain-identity.ts` |
+| الهوية والفلسفة | `public/brand/README.md` + `HANDOFF.md` |
 | Roadmap والقرارات | `src/data/master-report-data.ts` |
 | خريطة المنهج | `src/lib/curriculum-data.ts` |
 | سجل دروس v2 | `src/components/intro/lessons/index.ts` |
@@ -193,7 +193,7 @@ RLS مقفولة على كل الجداول الشخصية بـ `auth.uid() = us
 | قواعد ذاكرة الـ AI | `mem/index.md` |
 | Schema الـ DB | Lovable → Cloud → Database (live) |
 
-لو فيه تعارض بين ملفين → ابدأ من `brain-identity.ts` (الفلسفة) ثم `curriculum-data.ts` (التنفيذ).
+لو فيه تعارض بين ملفين → ابدأ من `HANDOFF.md` (الفلسفة) ثم `curriculum-data.ts` (التنفيذ).
 
 ---
 

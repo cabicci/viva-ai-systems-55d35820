@@ -6,13 +6,13 @@
 
 ## 1. ايه المشروع ده؟
 
-**The Arabic AI Learning Ecosystem** — منصة عربية لتعلّم الذكاء الاصطناعي من خلال:
+**مسارات (masaarat.ai)** — منصة عربية لتعلّم الذكاء الاصطناعي من خلال:
 - كتاب أساسي (المرجع الفكري).
 - 5 مسارات تعلّم (Builder · Creator · Automator · Analyst · Business).
 - مهام تطبيقية وبناء حقيقي داخل كل درس.
 - مساعد AI (Assistant) مقيّد دلاليًا بسياق المنصة — يعلّم ولا يحل بدلًا عن المتعلم.
 
-المصدر الكامل للهوية في: `src/data/brain-identity.ts` (ثابت `PROJECT_IDENTITY`).
+الهوية العامة: `public/brand/README.md` · المنهج: `src/lib/curriculum-data.ts`.
 
 ## 2. ايه اللي المشروع ده **مش** هو
 
@@ -34,7 +34,7 @@
 | Context-aware teaching | المساعد يعرف فين أنت في المنهج. |
 | العربية أولًا | RTL ولغة طبيعية، مش ترجمة. |
 
-المصدر: `EDUCATIONAL_PHILOSOPHY` في `src/data/brain-identity.ts`.
+المصدر: القسم 3 في هذا الملف.
 
 ## 4. البنية التقنية (صفحة واحدة)
 
@@ -66,7 +66,7 @@
 | المساعد التعليمي | `src/lib/assistant-runtime.ts` + `supabase/functions/assistant-runtime/` |
 | Retrieval (بحث دلالي) | `src/lib/retrieval/` + `supabase/functions/semantic-search/` |
 | ضخّ المحتوى للـ corpus | `supabase/functions/ingest-curriculum-knowledge/` |
-| Brain Center (مصدر الحقيقة) | `src/data/brain-identity.ts` + `src/data/master-report-data.ts` |
+| Brand + curriculum SSOT | `public/brand/README.md` + `src/lib/curriculum-data.ts` |
 | اللاندنج | `src/components/site/*` |
 | لوحة المتعلم | `src/routes/dashboard.tsx` |
 | Auth (login/signup/reset) | `src/routes/login.tsx`, `signup.tsx`, `forgot-password.tsx`, `reset-password.tsx` |
@@ -124,7 +124,7 @@
 - ❌ لا تعمل migrations على schemas: `auth`, `storage`, `realtime`, `vault`, `supabase_functions`.
 - ❌ لا تستخدم anonymous sign-ups أبدًا.
 - ❌ لا تخزّن الـ roles على جدول `profiles` — لازم جدول `user_roles` منفصل (privilege escalation).
-- ❌ لا تضيف ميزة كبيرة قبل تحديث Brain Center (`brain-identity.ts` / `master-report-data.ts`).
+- ❌ لا تضيف ميزة كبيرة قبل تحديث المنهج (`curriculum-data.ts`) أو الهوية (`public/brand/README.md`).
 - ❌ لا تضيف Edge Function جديدة — استخدم `createServerFn` من `@tanstack/react-start`. الـ edge functions الموجودة (3 فقط) محفوظة لأسباب تاريخية.
 
 ## 12. روابط مفيدة
@@ -137,4 +137,4 @@
 
 ---
 
-لو لسه عندك سؤال بعد قراءة الملفات الـ 3 (HANDOFF + RUNBOOK + ARCHITECTURE) و `brain-identity.ts`، يبقى السؤال محتاج قرار قيادي مش معلومة تقنية.
+لو لسه عندك سؤال بعد قراءة الملفات الـ 3 (HANDOFF + RUNBOOK + ARCHITECTURE)، يبقى السؤال محتاج قرار قيادي مش معلومة تقنية.
