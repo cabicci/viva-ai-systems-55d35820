@@ -9,7 +9,7 @@ export const ROUTES: {
   { path: "/", title: "Landing — Hero & Ecosystem", purpose: "نقطة الدخول السينمائية للـ Ecosystem.", status: "live" },
   { path: "/login", title: "تسجيل الدخول", purpose: "Auth — Email/Password عبر Lovable Cloud.", status: "live" },
   { path: "/signup", title: "إنشاء حساب", purpose: "Auth — Sign up جديد.", status: "live" },
-  { path: "/onboarding", title: "Onboarding", purpose: "تجهيز المتعلم قبل الدخول للوحة.", status: "live" },
+  { path: "/onboarding", title: "Onboarding (legacy)", purpose: "Legacy redirect — anonymous → /login, signed-in → /dashboard.", status: "partial" },
   { path: "/dashboard", title: "لوحة المتعلم", purpose: "نقطة الانطلاق الشخصية بعد الدخول.", status: "live" },
   { path: "/curriculum", title: "خريطة المنهج", purpose: "كل المسارات والوحدات والدروس وحالة التقدم.", status: "live" },
   { path: "/curriculum", title: "All Paths", purpose: "نظرة عامة على كل المسارات والوحدات والدروس.", status: "live" },

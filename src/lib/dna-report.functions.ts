@@ -168,7 +168,7 @@ export const generateDnaReport = createServerFn({ method: "POST" })
     const ROUTES = [
       ["/", "Landing page"],
       ["/login, /signup, /forgot-password, /reset-password", "Auth"],
-      ["/onboarding", "Onboarding بعد signup"],
+      ["/onboarding", "Legacy redirect (→ /login or /dashboard)"],
       ["/dashboard", "لوحة المتعلّم الرئيسية"],
       ["/curriculum", "عرض كل الـ paths والـ modules"],
       ["/learn/$pathId/$lessonId", "صفحة الدرس الواحد (الـ engine الأساسي)"],

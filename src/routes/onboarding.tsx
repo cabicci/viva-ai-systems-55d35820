@@ -1,76 +1,24 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Hammer, Palette, Cog, BarChart3, Briefcase, Check, ArrowLeft } from "lucide-react";
-import { toast } from "sonner";
+import { createFileRoute, redirect } from "@tanstack/react-router";
+import { supabase } from "@/integrations/supabase/client";
+import { AuthLoadingShell, hasValidSession } from "@/lib/auth-route-guard";
+
+/** Legacy URL compatibility: /onboarding no longer hosts a separate flow. */
+async function legacyOnboardingRedirectBeforeLoad() {
+  if (typeof window === "undefined") return;
+
+  const { data } = await supabase.auth.getSession();
+  throw redirect({
+    to: hasValidSession(data.session) ? "/dashboard" : "/login",
+    replace: true,
+  });
+}
 
 export const Route = createFileRoute("/onboarding")({
+  beforeLoad: legacyOnboardingRedirectBeforeLoad,
   head: () => ({ meta: [{ title: "ابدأ — مسارات" }] }),
-  component: Onboarding,
+  component: OnboardingLegacyRedirect,
 });
 
-// Order MUST follow the dashboard PATH_ORDER (single source of truth in curriculum-data).
-// Dashboard order: Business → Creator → Analyst → Automator → Builder
-const paths = [
-  { id: "business", icon: Briefcase, name: "Business", title: "الأعمال", desc: "أطلق منتجك الخاص." },
-  { id: "creator", icon: Palette, name: "Creator", title: "المُبدع", desc: "محتوى وتصميم بالـ AI." },
-  { id: "analyst", icon: BarChart3, name: "Analyst", title: "المحلّل", desc: "بيانات وقرارات." },
-  { id: "automator", icon: Cog, name: "Automator", title: "المُؤتمت", desc: "أنظمة أتمتة عمليّة." },
-  { id: "builder", icon: Hammer, name: "Builder", title: "الباني", desc: "ابدأ ببناء التطبيقات والأنظمة." },
-];
-
-const ONBOARDING_KEY = "onboarding:primaryPath";
-
-function Onboarding() {
-  const navigate = useNavigate();
-  const [selected, setSelected] = useState<string>(() => {
-    if (typeof window === "undefined") return "business";
-    return localStorage.getItem(ONBOARDING_KEY) || "business";
-  });
-
-  return (
-    <div className="min-h-dvh container mx-auto px-4 py-16 max-w-4xl">
-      <div className="text-center mb-12">
-        <p className="text-primary text-sm font-semibold mb-2">خطوة ١ من ١</p>
-        <h1 className="text-4xl md:text-5xl font-black">اختر <span className="text-gradient">مسارك الأول</span></h1>
-        <p className="text-muted-foreground mt-3">يمكنك تغييره أو إضافة مسارات أخرى لاحقًا.</p>
-        <p className="text-sm text-muted-foreground/90 mt-2">المسارات المهنية هتفتح بعد إنهاء المقدمة — ٧ دروس قصيرة.</p>
-      </div>
-
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {paths.map((p) => {
-          const isSel = selected === p.id;
-          return (
-            <button
-              key={p.id}
-              onClick={() => setSelected(p.id)}
-              className={`glass rounded-2xl p-5 text-right relative transition-all hover:-translate-y-1 ${isSel ? "border-primary glow-primary" : "hover:border-primary/40"}`}
-            >
-              {isSel && (
-                <span className="absolute top-3 left-3 grid h-6 w-6 place-items-center rounded-full bg-primary">
-                  <Check className="h-4 w-4 text-primary-foreground" />
-                </span>
-              )}
-              <div className="grid h-12 w-12 place-items-center rounded-xl bg-[image:var(--gradient-primary)] mb-3">
-                <p.icon className="h-6 w-6 text-primary-foreground" />
-              </div>
-              <h3 className="font-bold text-lg">{p.title}</h3>
-              <p className="text-xs text-primary font-mono mb-1">{p.name}</p>
-              <p className="text-sm text-muted-foreground">{p.desc}</p>
-            </button>
-          );
-        })}
-      </div>
-
-      <div className="mt-10 text-center">
-        <Button variant="hero" size="xl" onClick={() => {
-          try { localStorage.setItem(ONBOARDING_KEY, selected); } catch { /* ignore */ }
-          toast.success("بدأت رحلتك!");
-          navigate({ to: "/dashboard", search: { path: selected } });
-        }}>
-          ابدأ المنظومة <ArrowLeft className="h-4 w-4" />
-        </Button>
-      </div>
-    </div>
-  );
+function OnboardingLegacyRedirect() {
+  return <AuthLoadingShell />;
 }
