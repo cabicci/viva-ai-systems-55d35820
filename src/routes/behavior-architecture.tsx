@@ -325,7 +325,7 @@ function Section({
 
 function BehaviorArchitecturePage() {
   return (
-    <div className="min-h-screen flex" dir="rtl">
+    <div className="min-h-dvh flex" dir="rtl">
       <Sidebar />
       <main className="flex-1 p-6 md:p-10 max-w-6xl mx-auto w-full">
         <Link

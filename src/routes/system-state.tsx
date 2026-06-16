@@ -62,28 +62,27 @@ function SystemStatePage() {
   const liveLessons = LESSONS.length;
 
   return (
-    <div className="min-h-screen flex" dir="rtl">
+    <div className="min-h-dvh flex" dir="rtl">
       <style>{`
-        /* Print/export-only colors below — hard-coded hex isolated for PDF output;
-           not part of the live theme; do not reuse outside @media print. */
+        /* Print/export — semantic theme tokens for reliable PDF output. */
         @media print {
           @page { size: A4; margin: 14mm; }
-          html, body { background: #ffffff !important; }
+          html, body { background: var(--background) !important; }
           aside, [data-print-hide] { display: none !important; }
           main { max-width: 100% !important; padding: 0 !important; }
           .glass {
-            background: #ffffff !important;
-            border: 1px solid #e5e7eb !important;
+            background: var(--card) !important;
+            border: 1px solid var(--border) !important;
             backdrop-filter: none !important;
             box-shadow: none !important;
           }
           .glow-primary, [class*="bg-[image:var(--gradient-primary)]"] {
-            background: #f3f4f6 !important;
-            color: #111111 !important;
+            background: var(--muted) !important;
+            color: var(--foreground) !important;
           }
           [class*="blur-3xl"] { display: none !important; }
-          * { color: #111 !important; }
-          .text-muted-foreground { color: #444 !important; }
+          * { color: var(--foreground) !important; }
+          .text-muted-foreground { color: var(--muted-foreground) !important; }
           section, header { break-inside: avoid; page-break-inside: avoid; }
           h1, h2, h3 { break-after: avoid; }
         }

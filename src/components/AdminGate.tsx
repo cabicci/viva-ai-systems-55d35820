@@ -21,7 +21,7 @@ export function AdminGate({ children }: { children: ReactNode }) {
 
   if (loading || !isLoaded) {
     return (
-      <div className="min-h-screen grid place-items-center">
+      <div className="min-h-dvh grid place-items-center">
         <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
       </div>
     );
@@ -29,7 +29,7 @@ export function AdminGate({ children }: { children: ReactNode }) {
 
   if (!user || !isAdmin) {
     return (
-      <div className="min-h-screen grid place-items-center p-6">
+      <div className="min-h-dvh grid place-items-center p-6">
         <div className="rounded-2xl border border-destructive/30 bg-destructive/5 p-8 text-center max-w-md">
           <ShieldAlert className="h-10 w-10 mx-auto text-destructive mb-3" />
           <h1 className="text-xl font-bold mb-2">صفحة محظورة</h1>

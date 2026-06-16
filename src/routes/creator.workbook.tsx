@@ -123,7 +123,7 @@ function CreatorWorkbookPage() {
   }
 
   return (
-    <div className="min-h-screen flex" dir="rtl">
+    <div className="min-h-dvh flex" dir="rtl">
       <Sidebar />
       <main className="flex-1 max-w-[52rem] mx-auto w-full px-4 sm:px-6 py-8 md:py-12">
         <Link

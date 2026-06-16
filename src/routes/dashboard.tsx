@@ -116,7 +116,7 @@ function Dashboard() {
     : null;
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-dvh flex">
       <Sidebar />
       <main className="flex-1 max-w-6xl mx-auto w-full">
         <PhaseRibbon />

@@ -115,7 +115,7 @@ function TriagePage() {
   if (loading) return null;
 
   return (
-    <div className="min-h-screen container mx-auto px-4 py-12 max-w-3xl" dir="rtl">
+    <div className="min-h-dvh container mx-auto px-4 py-12 max-w-3xl" dir="rtl">
       <div className="text-center mb-8">
         <p className="text-primary text-sm font-semibold mb-2">سؤال {step} من ٣</p>
         <h1 className="text-3xl md:text-4xl font-black mb-2">

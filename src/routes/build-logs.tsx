@@ -111,7 +111,7 @@ function BuildLogsPage() {
   const groups = React.useMemo(() => groupByDay(logs), [logs]);
 
   return (
-    <div className="min-h-screen flex" dir="rtl">
+    <div className="min-h-dvh flex" dir="rtl">
       <Sidebar />
       <main className="flex-1">
         <div className="max-w-3xl mx-auto w-full p-6 md:p-10 space-y-8">

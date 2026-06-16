@@ -41,7 +41,7 @@ function AdminPage() {
   // the client-side entitlement query resolves.
   if (!isLoaded) {
     return (
-      <div className="min-h-screen grid place-items-center">
+      <div className="min-h-dvh grid place-items-center">
         <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
       </div>
     );
@@ -49,7 +49,7 @@ function AdminPage() {
 
   if (!isAdmin) {
     return (
-      <div className="min-h-screen grid place-items-center p-6">
+      <div className="min-h-dvh grid place-items-center p-6">
         <div className="rounded-2xl border border-destructive/30 bg-destructive/5 p-8 text-center max-w-md">
           <ShieldAlert className="h-10 w-10 mx-auto text-destructive mb-3" />
           <h1 className="text-xl font-bold mb-2">صفحة محظورة</h1>
@@ -100,7 +100,7 @@ function AdminDashboard() {
   });
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-dvh bg-background">
       <PhaseRibbon />
       <header className="border-b border-border/60 bg-card/50 backdrop-blur sticky top-0 z-30">
         <div className="container mx-auto px-4 h-14 flex items-center justify-between">

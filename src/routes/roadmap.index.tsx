@@ -305,7 +305,7 @@ const isAiItem = (it: RoadmapItem) =>
 function RoadmapPage() {
   return (
     <AdminGate>
-      <div className="min-h-screen flex bg-background" dir="rtl">
+      <div className="min-h-dvh flex bg-background" dir="rtl">
         <Sidebar />
         <main className="flex-1 max-w-5xl mx-auto w-full">
           <PhaseRibbon />

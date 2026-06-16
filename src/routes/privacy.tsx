@@ -17,7 +17,7 @@ export const Route = createFileRoute("/privacy")({
 
 function PrivacyPage() {
   return (
-    <div className="min-h-screen flex flex-col" dir="rtl">
+    <div className="min-h-dvh flex flex-col" dir="rtl">
       <Navbar />
       <main id="main-content" className="flex-1 container mx-auto px-4 py-12 max-w-3xl">
         <header className="mb-10">

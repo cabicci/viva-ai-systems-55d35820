@@ -29,7 +29,7 @@ function Onboarding() {
   });
 
   return (
-    <div className="min-h-screen container mx-auto px-4 py-16 max-w-4xl">
+    <div className="min-h-dvh container mx-auto px-4 py-16 max-w-4xl">
       <div className="text-center mb-12">
         <p className="text-primary text-sm font-semibold mb-2">خطوة ١ من ١</p>
         <h1 className="text-4xl md:text-5xl font-black">اختر <span className="text-gradient">مسارك الأول</span></h1>

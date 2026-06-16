@@ -29,7 +29,7 @@ function AIAssistantPage() {
   if (loading || !user) return null;
 
   return (
-    <div dir="rtl" className="min-h-screen text-foreground" style={{ background: "var(--gradient-hero)" }}>
+    <div dir="rtl" className="min-h-dvh text-foreground" style={{ background: "var(--gradient-hero)" }}>
       <div className="mx-auto max-w-3xl px-4 py-12 space-y-8">
         <header className="space-y-3">
           <Badge variant="outline" className="text-xs tracking-widest">

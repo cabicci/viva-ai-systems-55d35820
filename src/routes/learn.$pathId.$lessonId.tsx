@@ -127,7 +127,7 @@ export const Route = createFileRoute("/learn/$pathId/$lessonId")({
   },
   component: UnifiedLessonPage,
   notFoundComponent: () => (
-    <div className="min-h-screen grid place-items-center" dir="rtl">
+    <div className="min-h-dvh grid place-items-center" dir="rtl">
       <div className="text-center space-y-3">
         <p className="text-muted-foreground">الدرس مش موجود.</p>
         <Button asChild variant="glass">
@@ -137,7 +137,7 @@ export const Route = createFileRoute("/learn/$pathId/$lessonId")({
     </div>
   ),
   errorComponent: ({ error }) => (
-    <div className="min-h-screen grid place-items-center p-6" dir="rtl">
+    <div className="min-h-dvh grid place-items-center p-6" dir="rtl">
       <p className="text-sm text-destructive">{error.message}</p>
     </div>
   ),
@@ -235,7 +235,7 @@ function UnifiedLessonPage() {
   }, [lesson.id, lesson.moduleId, pathId]);
 
   return (
-    <div className="min-h-screen flex" dir="rtl">
+    <div className="min-h-dvh flex" dir="rtl">
       <Sidebar />
       <ReadingProgressBar />
       <CompletionReward
@@ -249,7 +249,7 @@ function UnifiedLessonPage() {
             to="/curriculum"
             search={{ module: lesson.moduleId, lesson: lesson.id }}
             aria-label="رجوع للخريطة"
-            className="fixed top-4 left-4 z-50 inline-flex items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md"
+            className="fixed top-4 start-4 z-50 inline-flex items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md"
           >
             <ArrowLeft className="h-4 w-4" />
             <span>رجوع للخريطة</span>
@@ -263,7 +263,7 @@ function UnifiedLessonPage() {
               lesson: lesson.id,
             }}
             aria-label="رجوع للوحة"
-            className="fixed top-4 left-4 z-50 inline-flex items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md"
+            className="fixed top-4 start-4 z-50 inline-flex items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md"
           >
             <ArrowLeft className="h-4 w-4" />
             <span>رجوع للوحة</span>

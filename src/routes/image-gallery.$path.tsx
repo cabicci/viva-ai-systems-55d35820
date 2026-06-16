@@ -40,7 +40,7 @@ function PathGalleryPage() {
   const items = getGalleryItemsByPath(path as GalleryPath);
 
   return (
-    <div className="flex min-h-screen w-full" dir="rtl">
+    <div className="flex min-h-dvh w-full" dir="rtl">
       <Sidebar />
       <main className="flex-1 p-4 md:p-8">
         <header className="mb-6">

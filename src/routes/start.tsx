@@ -100,7 +100,7 @@ function StartPage() {
   const successCount = PATHS.filter((p) => results[p.id]?.status === "done").length;
 
   return (
-    <div dir="rtl" className="min-h-screen grid-bg relative overflow-hidden">
+    <div dir="rtl" className="min-h-dvh grid-bg relative overflow-hidden">
       <div className="absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-primary/20 blur-[120px] animate-pulse-glow" />
       <div className="absolute -bottom-40 -left-40 h-[500px] w-[500px] rounded-full bg-accent/20 blur-[120px] animate-pulse-glow" />
 

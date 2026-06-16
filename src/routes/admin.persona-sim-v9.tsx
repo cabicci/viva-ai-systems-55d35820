@@ -447,7 +447,7 @@ function PersonaSimV9Page() {
   const error = sugQ.error || abQ.error;
 
   return (
-    <div className="min-h-screen bg-background" dir="rtl">
+    <div className="min-h-dvh bg-background" dir="rtl">
       <div className="max-w-6xl mx-auto p-6 space-y-6">
         <div>
           <Button asChild variant="ghost" size="sm" className="mb-2">

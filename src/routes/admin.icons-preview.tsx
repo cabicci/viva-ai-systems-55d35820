@@ -83,7 +83,7 @@ function IconGrid({ icons, ext }: { icons: typeof SVG_ICONS; ext: string }) {
 
 function IconsPreviewPage() {
   return (
-    <div className="min-h-screen bg-background" dir="rtl">
+    <div className="min-h-dvh bg-background" dir="rtl">
       <header className="border-b border-border/60 bg-card/50 backdrop-blur sticky top-0 z-30">
         <div className="container mx-auto px-4 h-14 flex items-center justify-between">
           <h1 className="font-bold text-base">معاينة أيقونات الهوية — Masaarat</h1>

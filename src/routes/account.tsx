@@ -185,7 +185,7 @@ function AccountPage() {
   const avatarLetter = (email[0] ?? "?").toUpperCase();
 
   return (
-    <div className="min-h-screen flex" dir="rtl">
+    <div className="min-h-dvh flex" dir="rtl">
       <Sidebar />
       <main className="flex-1 px-4 sm:px-6 lg:px-10 py-8 max-w-5xl mx-auto w-full">
         {/* Header */}

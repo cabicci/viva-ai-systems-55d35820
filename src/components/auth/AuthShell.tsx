@@ -10,7 +10,7 @@ export function AuthShell({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-dvh flex">
       <div className="hidden lg:flex flex-1 relative grid-bg overflow-hidden p-16 flex-col justify-between">
         <Link to="/" className="flex items-center relative z-10" aria-label="مسارات">
           <img src="/brand/masaarat-logo-lockup.png" alt="مسارات" className="h-10 w-auto select-none" draggable={false} />

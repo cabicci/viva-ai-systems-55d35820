@@ -232,7 +232,7 @@ function V9ReviewPage() {
   const loading = sugQ.isLoading || abQ.isLoading || decisionsQ.isLoading;
 
   return (
-    <div className="min-h-screen bg-background" dir="rtl">
+    <div className="min-h-dvh bg-background" dir="rtl">
       <div className="max-w-6xl mx-auto p-6 space-y-6">
         <div className="flex items-center justify-between gap-4">
           <div>

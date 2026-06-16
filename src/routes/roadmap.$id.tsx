@@ -54,7 +54,7 @@ export const Route = createFileRoute("/roadmap/$id")({
 function RoadmapItemPage() {
   return (
     <AdminGate>
-      <div className="min-h-screen flex bg-background" dir="rtl">
+      <div className="min-h-dvh flex bg-background" dir="rtl">
         <Sidebar />
         <main className="flex-1 max-w-3xl mx-auto w-full">
           <PhaseRibbon />
