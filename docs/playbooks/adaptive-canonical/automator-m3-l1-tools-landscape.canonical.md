@@ -45,7 +45,7 @@
 | **Quiz intent** | Simple form→email workflow + limited budget = Make free tier |
 | **Concepts locked** | No-Code, Integration |
 | **Prerequisites** | `automator-m2-l3-decide-what-to-automate` |
-| **Next lesson (batch)** | `automator-m3-l3-filters-routers` — skips `automator-m3-l2-triggers-actions` (already canonical in prior batch) |
+| **Next lesson continuity** | `automator-m3-l2-triggers-actions` — PATHS sequential next |
 
 ### Derivation method
 
@@ -111,7 +111,7 @@ blocks:
   - role: mission
     intent: Pick one tool for first candidate — 2 reasons + alternate + verbal Trigger → output plan
   - role: confidence_close
-    intent: Tool chosen; batch next = Filters & Routers (m3-l2 canonical exists separately)
+    intent: Tool chosen; next = Triggers + Actions
 
 mission:
   type: practice
@@ -131,20 +131,20 @@ mission:
 termsLocked: [No-Code, Integration, Zapier, Make, n8n, Trigger, workflow]
 
 links:
-  nextLessonId: automator-m3-l3-filters-routers
-  continuityNote: Batch skips m3-l2 (already canonical); next = Filters & Routers — route by condition
+  nextLessonId: automator-m3-l2-triggers-actions
+  continuityNote: Triggers + Actions — build blocks of any Flow
 
 slugValidation:
   validatedAt: 2026-06-04
   lessonId: pass
   productionFile: pass
   prerequisites: pass
-  nextLessonId: pending-path-validation
+  nextLessonId: pass
   missionRubric: pass
   quizAnswer: pass
 ```
 
-> **Slug note:** PATHS sequential next after `automator-m3-l1` is `automator-m3-l2-triggers-actions`. This accelerated batch links to `automator-m3-l3-filters-routers` because m3-l2 already has a canonical draft.
+> **Slug note:** PATHS sequential next after `automator-m3-l1` is `automator-m3-l2-triggers-actions` — recorded in §3 YAML and slugValidation.
 
 ---
 
@@ -215,7 +215,7 @@ slugValidation:
 
 - **فهمت:** الأدوات مختلفة — التفكير (**مُشغّل → خطوات → نتيجة**) واحد في الجميع.
 - **تستطيع:** لديك أداة مختارة لمرشّح الأتمتة الأول — جاهزة للتصميم.
-- **التالي:** **Filters & Routers** — عندما يحتاج **مسار العمل (workflow)** قرارًا حسب الشرط.
+- **التالي:** **Triggers + Actions (المُشغّلات والأفعال)** — لبنات أي **تدفق عمل (Flow)**.
 
 ---
 
@@ -295,7 +295,7 @@ Downstream locales from MSA only. Tool names (Zapier, Make, n8n) preserved from 
 | 9 | English terms glossed | ⚠ needs human review |
 | 10 | Video = production ref only | ☑ pass |
 | 11 | Localization UX documented | ☑ pass |
-| 12 | Slug validation — nextLessonId batch skip documented | ⚠ pending-path-validation |
+| 12 | Slug validation passed | ☑ pass |
 | 13 | Draft self-assessment | ☑ pass |
 | 14 | Human reviewer score recorded — scale pass rule met | ☐ **pending** |
 | 15 | Draft / not production-ready | ☑ confirmed |

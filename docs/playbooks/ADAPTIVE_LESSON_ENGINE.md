@@ -314,9 +314,32 @@ Read-only audit of §9c batch had **no hard blockers** — this **accelerated ex
 
 **Excluded from batch selection:** all 18 prior canonical slugs, all archived Business slugs, Intro path lessons. `automator-m3-l2-triggers-actions` skipped (already canonical from prototype).
 
-**Self-audit (2026-06-04):** **PASS WITH NOTES** — all 25: template complete, `slugValidation` present, rubric/quiz keys match production read-only check, `humanReviewerSignOff: pending`. Soft notes: `automator-m3-l1` nextLessonId uses `pending-path-validation` (batch skips existing m3-l2 canonical); read-aloud pending.
+**Self-audit (2026-06-04):** **PASS WITH NOTES** — all 25: template complete, `slugValidation` present, rubric/quiz keys match production read-only check, `humanReviewerSignOff: pending`. Soft notes: read-aloud pending; `automator-m3-l1` nextLessonId corrected to `automator-m3-l2-triggers-actions` in final corpus pass.
 
-**Combined corpus:** 43 MSA canonical drafts (3 prototype + 5 pilot + 10 batch + 25 accelerated) — docs-only until human review gates pass per artifact.
+**Combined corpus (through accelerated batch):** 43 MSA canonical drafts — docs-only until human review gates pass per artifact.
+
+---
+
+## 9e. Final corpus completion batch (2026-06-04)
+
+After §9d accelerated batch self-audit (**PASS WITH NOTES**), this pass completes **all remaining learner-path lessons** — fifty-seven additional drafts plus one metadata fix.
+
+**Metadata fix:** [`automator-m3-l1-tools-landscape.canonical.md`](adaptive-canonical/automator-m3-l1-tools-landscape.canonical.md) — `nextLessonId` updated from `pending-path-validation` to PATHS sequential next `automator-m3-l2-triggers-actions`; `slugValidation.nextLessonId: pass`.
+
+**Final batch scope (57 lessons · `2026-06-04.5-draft`):**
+
+| Path | Count | Coverage |
+|------|-------|----------|
+| **Intro** | 6 | All except existing `intro-m1-l2-first-prompt` |
+| **Creator** | 11 | M4 L2 through M7 L2 |
+| **Builder** | 21 | M5 L1 through M10 L2 |
+| **Automator** | 9 | M4 L2–L3, testing, M5, M6 |
+| **Analyst** | 6 | M4 automated dashboard through M7 closing |
+| **Business** | 4 | M4 L1–L4 |
+
+**Self-audit (2026-06-04):** **PASS WITH NOTES** — all 57 new drafts: template §1–§8 present, `slugValidation` included, `humanReviewerSignOff: pending`, rubric/quiz keys match production read-only spot-check. Soft notes: some Automator/Analyst/Business §4 blocks shorter than Creator/Builder (~250–300 lines); read-aloud and MSA naturalness pending human review.
+
+**Combined corpus:** **100 / 100** learner-path MSA canonical drafts — docs-only · all **draft / not production-ready** · human sign-off pending per artifact · no runtime integration.
 
 ---
 
@@ -442,7 +465,9 @@ The Adaptive Lesson Engine is the right long-term architecture for Masaarat's mu
 
 **25-lesson accelerated batch:** twenty-five early-to-mid path lessons — see §9d. Self-audit **PASS WITH NOTES**; human sign-off pending.
 
-**Combined:** 43 canonical drafts · docs-only · no runtime integration.
+**Final corpus completion:** fifty-seven remaining learner-path lessons — see §9e. Self-audit **PASS WITH NOTES**; human sign-off pending.
+
+**Combined:** **100 / 100** learner-path canonical drafts · docs-only · no runtime integration · corpus **complete**.
 
 **Superseded:** multi-locale sample package (`adaptive-samples/intro-m1-l2-first-prompt.sample.md`) — removed; workflow reset to MSA canonical-first.
 
