@@ -274,7 +274,49 @@ Human approval of the 3-lesson prototype and 5-lesson pilot (`3524b65`) unlocked
 
 **Excluded from batch selection:** all 8 prior canonical slugs (3 prototype + 5 pilot), all archived Business slugs, Intro path lessons.
 
-**Combined corpus:** 18 MSA canonical drafts (3 prototype + 5 pilot + 10 batch) — docs-only until human review gates pass per artifact.
+**Read-only audit (2026-06-04):** **PASS WITH NOTES** — no hard blockers. All 10 drafts: template §1–§8 present, `slugValidation` pass, rubric/quiz keys match production, `humanReviewerSignOff: pending`, `reviewStatus: draft / not production-ready`. Soft notes: read-aloud pending; §5 future-generation notes thinner on some; minor glossary style variance.
+
+**Combined corpus (through 10-lesson batch):** 18 MSA canonical drafts — docs-only until human review gates pass per artifact.
+
+---
+
+## 9d. 25-lesson MSA canonical accelerated batch (2026-06-04)
+
+Read-only audit of §9c batch had **no hard blockers** — this **accelerated expansion** adds twenty-five additional early-to-mid path lessons (five per learner path). All follow [`MSA_CANONICAL_TEMPLATE.md`](adaptive-canonical/MSA_CANONICAL_TEMPLATE.md). **Draft / not production-ready** · `humanReviewerSignOff: pending` · no runtime integration · human review deferred unless hard drift found.
+
+| # | Path | `lessonId` | Canonical draft |
+|---|------|------------|-----------------|
+| 1 | **Creator** | `creator-m2-l2-content-pillars` | [`creator-m2-l2-content-pillars.canonical.md`](adaptive-canonical/creator-m2-l2-content-pillars.canonical.md) |
+| 2 | **Creator** | `creator-m3-l1-hook` | [`creator-m3-l1-hook.canonical.md`](adaptive-canonical/creator-m3-l1-hook.canonical.md) |
+| 3 | **Creator** | `creator-m3-l2-script-structure` | [`creator-m3-l2-script-structure.canonical.md`](adaptive-canonical/creator-m3-l2-script-structure.canonical.md) |
+| 4 | **Creator** | `creator-m3-l3-cta` | [`creator-m3-l3-cta.canonical.md`](adaptive-canonical/creator-m3-l3-cta.canonical.md) |
+| 5 | **Creator** | `creator-m4-l1-reality-check` | [`creator-m4-l1-reality-check.canonical.md`](adaptive-canonical/creator-m4-l1-reality-check.canonical.md) |
+| 6 | **Analyst** | `analyst-m3-l1-three-sources` | [`analyst-m3-l1-three-sources.canonical.md`](adaptive-canonical/analyst-m3-l1-three-sources.canonical.md) |
+| 7 | **Analyst** | `analyst-m3-l2-ai-summarization` | [`analyst-m3-l2-ai-summarization.canonical.md`](adaptive-canonical/analyst-m3-l2-ai-summarization.canonical.md) |
+| 8 | **Analyst** | `analyst-m4-l1-pattern-vs-outlier` | [`analyst-m4-l1-pattern-vs-outlier.canonical.md`](adaptive-canonical/analyst-m4-l1-pattern-vs-outlier.canonical.md) |
+| 9 | **Analyst** | `analyst-m4-l2-decision-rule` | [`analyst-m4-l2-decision-rule.canonical.md`](adaptive-canonical/analyst-m4-l2-decision-rule.canonical.md) |
+| 10 | **Analyst** | `analyst-m5-l1-four-numbers-dashboard` | [`analyst-m5-l1-four-numbers-dashboard.canonical.md`](adaptive-canonical/analyst-m5-l1-four-numbers-dashboard.canonical.md) |
+| 11 | **Builder** | `builder-m2-l2-instructions-examples` | [`builder-m2-l2-instructions-examples.canonical.md`](adaptive-canonical/builder-m2-l2-instructions-examples.canonical.md) |
+| 12 | **Builder** | `builder-m2-l3-style-control` | [`builder-m2-l3-style-control.canonical.md`](adaptive-canonical/builder-m2-l3-style-control.canonical.md) |
+| 13 | **Builder** | `builder-m3-l1-context-layer` | [`builder-m3-l1-context-layer.canonical.md`](adaptive-canonical/builder-m3-l1-context-layer.canonical.md) |
+| 14 | **Builder** | `builder-m3-l2-memory-limits` | [`builder-m3-l2-memory-limits.canonical.md`](adaptive-canonical/builder-m3-l2-memory-limits.canonical.md) |
+| 15 | **Builder** | `builder-m4-l1-parameters` | [`builder-m4-l1-parameters.canonical.md`](adaptive-canonical/builder-m4-l1-parameters.canonical.md) |
+| 16 | **Business** | `business-m2-l2-retention-flow` | [`business-m2-l2-retention-flow.canonical.md`](adaptive-canonical/business-m2-l2-retention-flow.canonical.md) |
+| 17 | **Business** | `business-m2-l3-readiness-signals` | [`business-m2-l3-readiness-signals.canonical.md`](adaptive-canonical/business-m2-l3-readiness-signals.canonical.md) |
+| 18 | **Business** | `business-m3-l1-delegate-or-automate` | [`business-m3-l1-delegate-or-automate.canonical.md`](adaptive-canonical/business-m3-l1-delegate-or-automate.canonical.md) |
+| 19 | **Business** | `business-m3-l2-strategic-operational-admin` | [`business-m3-l2-strategic-operational-admin.canonical.md`](adaptive-canonical/business-m3-l2-strategic-operational-admin.canonical.md) |
+| 20 | **Business** | `business-m3-l3-system-then-people` | [`business-m3-l3-system-then-people.canonical.md`](adaptive-canonical/business-m3-l3-system-then-people.canonical.md) |
+| 21 | **Automator** | `automator-m2-l3-decide-what-to-automate` | [`automator-m2-l3-decide-what-to-automate.canonical.md`](adaptive-canonical/automator-m2-l3-decide-what-to-automate.canonical.md) |
+| 22 | **Automator** | `automator-m3-l1-tools-landscape` | [`automator-m3-l1-tools-landscape.canonical.md`](adaptive-canonical/automator-m3-l1-tools-landscape.canonical.md) |
+| 23 | **Automator** | `automator-m3-l3-filters-routers` | [`automator-m3-l3-filters-routers.canonical.md`](adaptive-canonical/automator-m3-l3-filters-routers.canonical.md) |
+| 24 | **Automator** | `automator-m4-l1-connect-database` | [`automator-m4-l1-connect-database.canonical.md`](adaptive-canonical/automator-m4-l1-connect-database.canonical.md) |
+| 25 | **Automator** | `automator-m7-l1-closing-loop` | [`automator-m7-l1-closing-loop.canonical.md`](adaptive-canonical/automator-m7-l1-closing-loop.canonical.md) |
+
+**Excluded from batch selection:** all 18 prior canonical slugs, all archived Business slugs, Intro path lessons. `automator-m3-l2-triggers-actions` skipped (already canonical from prototype).
+
+**Self-audit (2026-06-04):** **PASS WITH NOTES** — all 25: template complete, `slugValidation` present, rubric/quiz keys match production read-only check, `humanReviewerSignOff: pending`. Soft notes: `automator-m3-l1` nextLessonId uses `pending-path-validation` (batch skips existing m3-l2 canonical); read-aloud pending.
+
+**Combined corpus:** 43 MSA canonical drafts (3 prototype + 5 pilot + 10 batch + 25 accelerated) — docs-only until human review gates pass per artifact.
 
 ---
 
@@ -396,9 +438,11 @@ The Adaptive Lesson Engine is the right long-term architecture for Masaarat's mu
 
 **5-lesson pilot set:** five path-entry lessons — see §9b. Human sign-off recorded (`3524b65`); not production-ready.
 
-**10-lesson batch:** ten early-path lessons — see §9c. All drafts pending human sign-off; not production-ready.
+**10-lesson batch:** ten early-path lessons — see §9c. Read-only audit **PASS WITH NOTES**; human sign-off pending.
 
-**Combined:** 18 canonical drafts · docs-only · no runtime integration.
+**25-lesson accelerated batch:** twenty-five early-to-mid path lessons — see §9d. Self-audit **PASS WITH NOTES**; human sign-off pending.
+
+**Combined:** 43 canonical drafts · docs-only · no runtime integration.
 
 **Superseded:** multi-locale sample package (`adaptive-samples/intro-m1-l2-first-prompt.sample.md`) — removed; workflow reset to MSA canonical-first.
 

@@ -1,0 +1,306 @@
+# Adaptive Lesson Engine — MSA Canonical Draft
+
+## 1. Metadata
+
+| Field | Value |
+|-------|-------|
+| **artifactType** | `msa-canonical-draft` |
+| **lessonId** | `automator-m3-l1-tools-landscape` |
+| **pathId** | `automator` |
+| **moduleId** | `automator-m3` |
+| **productionTitle (ar-EG)** | Make vs n8n vs Zapier |
+| **productionRoute** | `/learn/automator/automator-m3-l1-tools-landscape` |
+| **productionFile (read-only)** | `src/components/intro/lessons/automator-m3-l1-tools-landscape.ts` |
+| **productionLocale** | `ar-EG` (Egyptian Arabic — **immutable**, live experience) |
+| **canonicalVersion** | `2026-06-04.4-draft` |
+| **derivedAt** | 2026-06-04 |
+| **pilotSet** | **25-lesson MSA canonical accelerated batch** |
+| **reviewStatus** | **draft / not production-ready** |
+| **oneAha** | Tools differ (Zapier, Make, n8n) — thinking stays Trigger → steps → output |
+| **workflowPosition** | Egyptian production → **this MSA canonical** → future Gulf / English / other locales |
+| **templateReference** | [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) · templateVersion `2026-06-04` |
+| **humanReviewerSignOff** | **pending** |
+| **humanReviewerSignOffDate** | **pending** |
+
+> **Important:** This file is a **draft** MSA canonical source only — **not production-ready**. **Human reviewer sign-off: pending** — not approved for production rollout, localization, or controlled batch scale until a named reviewer records scores and checklist sign-off. It does **not** modify the live lesson, Bunny video, mission runtime, assistant/RAG seed, or any production file.
+
+---
+
+## 2. Source preservation summary
+
+### What is frozen
+
+| Asset | Status |
+|-------|--------|
+| `automator-m3-l1-tools-landscape.ts` | **Frozen** |
+| Bunny video | **Frozen** |
+| PATHS / runtime | **Frozen** |
+
+### What this artifact preserves
+
+| Element | Production value |
+|---------|------------------|
+| **Learning objective** | Choose one tool for first automation candidate by volume, budget, complexity — not fame |
+| **Mission rubric** | 60% justified choice · 40% understanding thinking |
+| **Quiz intent** | Simple form→email workflow + limited budget = Make free tier |
+| **Concepts locked** | No-Code, Integration |
+| **Prerequisites** | `automator-m2-l3-decide-what-to-automate` |
+| **Next lesson (batch)** | `automator-m3-l3-filters-routers` — skips `automator-m3-l2-triggers-actions` (already canonical in prior batch) |
+
+### Derivation method
+
+Read-only extraction + MSA normalization.
+
+---
+
+## 3. Structured canonical source
+
+```yaml
+lessonId: automator-m3-l1-tools-landscape
+canonicalVersion: 2026-06-04.4-draft
+templateVersion: 2026-06-04
+derivedFrom:
+  productionLocale: ar-EG
+  productionFile: src/components/intro/lessons/automator-m3-l1-tools-landscape.ts
+  derivationMethod: read-only extraction + MSA normalization
+
+meta:
+  title: Tools Landscape
+  oneAha: "Tools differ — thinking stays Trigger → steps → output in every platform"
+  difficulty: intro
+  estimatedMinutes: 12
+  prerequisites: [automator-m2-l3-decide-what-to-automate]
+
+objectives:
+  - id: obj-1
+    statement: Learner compares Zapier, Make, n8n by ease, price, power — same Trigger → steps → output model.
+    measurable: true
+  - id: obj-2
+    statement: Learner picks one tool for first automation candidate with two practical reasons and verbal build plan.
+    measurable: true
+
+concepts:
+  - id: concept-no-code
+    term: No-Code
+    termEn: No-Code
+    definition: Build virtual worker flows by drag-and-drop — not a programming course.
+    mustPreserve: true
+  - id: concept-integration
+    term: Integration
+    termEn: Integration
+    definition: Connecting two apps so they exchange data — what the tool does.
+    mustPreserve: true
+
+blocks:
+  - role: orientation
+    intent: Tools differ; pick one for candidate after lesson; Trigger → steps → output unchanged
+  - role: tension
+    intent: Picking Zapier because famous — $20/month for 5×/month simple task
+  - role: core
+    intent: Zapier / Make / n8n tradeoffs; choose by volume and complexity not YouTube
+  - role: comparison
+    intent: Famous tool vs right-size Make for simple workflow
+  - role: glossary
+    intent: No-Code (من غير كود); Integration (ربط)
+  - role: video
+    intent: Optional Zapier vs Make vs n8n — production Bunny unchanged
+  - role: screenshot
+    intent: Layered automation — same idea in any tool
+  - role: quiz
+    intent: Simple form→email + limited budget = Make
+  - role: mission
+    intent: Pick one tool for first candidate — 2 reasons + alternate + verbal Trigger → output plan
+  - role: confidence_close
+    intent: Tool chosen; batch next = Filters & Routers (m3-l2 canonical exists separately)
+
+mission:
+  type: practice
+  intent: Take first automation candidate from prior lesson; choose one tool (Zapier/Make/n8n/other) with 2 reasons, alternate with why, and verbal build plan — 10 min, no Flow build required
+  rubricIntent:
+    - dimension: justified_choice
+      weight: 60
+      criteria: Tool tied to specific candidate; two practical reasons not just "easiest"
+    - dimension: thinking_understanding
+      weight: 40
+      criteria: Alternate with reason; build plan describes Trigger → output
+  forbiddenAssistantBehaviors:
+    - write_full_submission
+    - auto_pass_mission
+    - pick_tool_for_learner_without_learner_context
+
+termsLocked: [No-Code, Integration, Zapier, Make, n8n, Trigger, workflow]
+
+links:
+  nextLessonId: automator-m3-l3-filters-routers
+  continuityNote: Batch skips m3-l2 (already canonical); next = Filters & Routers — route by condition
+
+slugValidation:
+  validatedAt: 2026-06-04
+  lessonId: pass
+  productionFile: pass
+  prerequisites: pass
+  nextLessonId: pending-path-validation
+  missionRubric: pass
+  quizAnswer: pass
+```
+
+> **Slug note:** PATHS sequential next after `automator-m3-l1` is `automator-m3-l2-triggers-actions`. This accelerated batch links to `automator-m3-l3-filters-routers` because m3-l2 already has a canonical draft.
+
+---
+
+## 4. Arabic MSA canonical lesson text
+
+### Orientation — بداية الدرس
+
+- **ماذا ستفهم؟** الأدوات مختلفة — Zapier، Make، n8n — لكن التفكير واحد: **مُشغّل (Trigger)** → خطوات → **نتيجة (Output)**.
+- **لماذا الآن؟** بعد أن اخترت أول مهمة للأتمتة، تحتاج أداة تناسب حجمك — وليس أشهر اسم.
+- **ماذا بعد الدرس؟** ستختار أداة واحدة لمرشّح الأتمتة — ولماذا.
+
+### Tension — موقف مألوف
+
+- «Zapier أشهر» — وبعد شهر الاشتراك غالٍ.
+- تختار أداة لأنها مشهورة — أو لأنها مجانية — دون أن تسأل: كم مهمة/شهر؟ هل تحتاج منطقًا أم خطوات بسيطة؟
+- الأداة ليست الهدف. الهدف = العامل الافتراضي ينفّذ النمط الذي اخترته.
+- اختيار خاطئ = وقت ضائع في التعلّم — وليس في توفير الوقت.
+
+### Core idea — الأدوات مختلفة — التفكير واحد
+
+- **Zapier** — الأسهل، **ربط (Integration)** جاهز كثير، مناسب لـ **مسارات عمل (workflows)** بسيطة وقليلة. أغلى نسبيًا.
+- **Make** — توازن: مرئي واضح، سيناريوهات متوسطة، أرخص من Zapier. مناسب لمعظم البدايات.
+- **n8n** — أقوى، مفتوح المصدر، يمكن استضافته ذاتيًا. يحتاج مجهودًا أكبر — مناسب لـ **مسارات عمل** كثيرة أو معقّدة.
+- **القاعدة:** اختر حسب حجمك وتعقيدك — وليس حسب يوتيوب. التفكير (**مُشغّل → خطوات → نتيجة**) ثابت في كل أداة.
+
+### Comparison — اختيار بالشهرة vs اختيار بالحجم
+
+| «Zapier لأنه مشهور» | «Make لأن الحجم متوسط» |
+|---------------------|------------------------|
+| نور فتحت Zapier لـ «نموذج → بريد» — ٥ مرات/شهر. اشتراك ٢٠$/شهر لمهمة بسيطة. الأداة أكبر من الحاجة. | نور استخدمت Make free tier — نفس «نموذج → بريد» — ٣٠ دقيقة إعداد. وفّرت مالًا وتعلّمت التفكير. |
+
+### Glossary — مصطلحان للأدوات
+
+| المصطلح | المعنى | مثال |
+|---------|--------|------|
+| **No-Code (من غير كود)** | أدوات تبني فيها العامل الافتراضي بسحب وإفلات — وليس دورة برمجة | Make: نموذج → جدول → واتساب |
+| **Integration (ربط)** | توصيل برنامجين ليتبادلا بيانات — هذا ما تفعله الأداة | Google Forms ↔ Google Sheets |
+
+### Video block (production reference only)
+
+> في الإنتاج: فيديو Bunny — Zapier vs Make vs n8n: متى تستخدم كل واحدة. **لا يُعاد توليده**.
+
+### Screenshot block (intent)
+
+أي أداة أتمتة = طبقات: شيء يدخل (**مُشغّل**) → خطوات → شيء يخرج. Zapier و Make و n8n نفس الفكرة — اختلاف في السهولة والسعر والقوة.
+
+### Quiz — تأكيد سريع
+
+**السؤال:** في البداية، عندك **مسار عمل (workflow)** واحد بسيط: «نموذج → بريد ترحيب» — ٢٠ مرة/شهر. ميزانيتك محدودة. أنسب أداة؟
+
+- **الإجابة الصحيحة (correctIndex: 0):** **Make — free tier كافٍ، مرئي واضح، مناسب للبداية**
+- **التفسير:** بداية + **مسار عمل** بسيط + ميزانية = Make. التفكير واحد — الأداة تخدم الحجم.
+
+### Mission — اختر أداة واحدة — ولماذا
+
+**المقدمة:** خذ مرشّح الأتمتة الأول من الدرس السابق — واختر أداة واحدة (Zapier / Make / n8n / غيرها). ١٠ دقائق كافية — لا يلزم بناء **تدفق عمل (Flow)**.
+
+**التسليم:** مرشّح الأتمتة · الأداة المختارة · سببان للاختيار · بديل ولماذا · خطة بناء (**مُشغّل → خطوات → نتيجة** بالكلام)
+
+**معايير التقييم:**
+
+| البعد | الوزن | المعيار |
+|-------|-------|---------|
+| اختيار مبرّر | 60% | أداة مربوطة بمرشّح محدّد؛ سببان عمليان — وليس «أسهل» فقط |
+| فهم التفكير | 40% | بديل مع سبب؛ خطة بناء تصف **مُشغّل → نتيجة** |
+
+### Confidence close
+
+- **فهمت:** الأدوات مختلفة — التفكير (**مُشغّل → خطوات → نتيجة**) واحد في الجميع.
+- **تستطيع:** لديك أداة مختارة لمرشّح الأتمتة الأول — جاهزة للتصميم.
+- **التالي:** **Filters & Routers** — عندما يحتاج **مسار العمل (workflow)** قرارًا حسب الشرط.
+
+---
+
+## 5. Future generation notes
+
+Downstream locales from MSA only. Tool names (Zapier, Make, n8n) preserved from production. Deferred: Bunny · Remotion · RAG · runtime.
+
+---
+
+## 6. Localization UX notes
+
+| Priority | Source | Rule |
+|----------|--------|------|
+| 1 | Explicit user locale | Manual **always wins** |
+| 2 | Saved preference | Persisted |
+| 3 | Geo suggestion | Auto-suggest |
+| 4 | Default | **Egyptian Arabic production** |
+
+---
+
+## 7. Quality scoring
+
+### Draft self-assessment (not final)
+
+| Dimension | Score (/5) | Notes |
+|-----------|------------|-------|
+| Objective preservation | 4 | Pending human review |
+| Concept preservation | 5 | No-Code, Integration; Zapier/Make/n8n from production |
+| Beginner clarity | 4 | Pending read-aloud |
+| MSA simplicity | 4 | Pending dialect scan |
+| Mission consistency | 5 | 60/40 rubric matches production |
+| Quiz integrity | 5 | correctIndex 0 — Make answer unchanged |
+| Assistant boundaries | 4 | forbiddenAssistantBehaviors listed |
+| Localization readiness | 4 | §5–§6 present |
+
+| Draft self-assessment average | 4.25 / 5 (informational only) |
+
+### Human reviewer score (required before scale)
+
+| Dimension | Score (/5) | Notes |
+|-----------|------------|-------|
+| Objective preservation | — | **pending** |
+| Concept preservation | — | **pending** |
+| Beginner clarity | — | **pending** |
+| MSA simplicity | — | **pending** |
+| Mission consistency | — | **pending** |
+| Quiz integrity | — | **pending** |
+| Assistant boundaries | — | **pending** |
+| Localization readiness | — | **pending** |
+
+| Human reviewer average | **pending — not yet scored** |
+| **Production-ready?** | **no** |
+
+### Human reviewer sign-off
+
+| Field | Value |
+|-------|-------|
+| **Reviewer** | **pending** |
+| **Date** | **pending** |
+| **Decision** | **pending** |
+| **Controlled batch authorization** | **pending** |
+
+---
+
+## 8. Review checklist
+
+| # | Check | Status |
+|---|-------|--------|
+| 1 | Egyptian production untouched | ☑ pass |
+| 2 | Bunny untouched | ☑ pass |
+| 3 | Template reference | ☑ pass |
+| 4 | Objectives preserved | ⚠ needs human review |
+| 5 | No hallucinated concepts | ☑ pass |
+| 6 | Mission rubric 60/40 | ☑ pass |
+| 7 | Quiz unchanged (correctIndex: 0) | ☑ pass |
+| 8 | MSA from Egyptian | ⚠ needs human review |
+| 9 | English terms glossed | ⚠ needs human review |
+| 10 | Video = production ref only | ☑ pass |
+| 11 | Localization UX documented | ☑ pass |
+| 12 | Slug validation — nextLessonId batch skip documented | ⚠ pending-path-validation |
+| 13 | Draft self-assessment | ☑ pass |
+| 14 | Human reviewer score recorded — scale pass rule met | ☐ **pending** |
+| 15 | Draft / not production-ready | ☑ confirmed |
+| 16 | Human reviewer sign-off (name + date) | ☐ **pending** |
+
+---
+
+*Artifact owner: Adaptive Lesson Engine · 25-lesson MSA canonical accelerated batch · Draft only.*
