@@ -242,7 +242,7 @@ Selection criteria: one clear Aha each, mission present, English terms to locali
 | Stage | Output | Gate |
 |-------|--------|------|
 | **1. Read Egyptian production** | Snapshot of live TS blocks + mission rubric (read-only) | No production file edits |
-| **2. Derive MSA canonical** | `*.canonical.md` per lesson using [`MSA_CANONICAL_TEMPLATE.md`](adaptive-canonical/MSA_CANONICAL_TEMPLATE.md): intent + MSA draft text + quality scores | Objectives/concepts/mission intent validated against live lesson; pass rule (≥4.3/5 avg, no dimension &lt;4/5) |
+| **2. Derive MSA canonical** | `*.canonical.md` per lesson using [`MSA_CANONICAL_TEMPLATE.md`](adaptive-canonical/MSA_CANONICAL_TEMPLATE.md): intent + MSA draft text + draft self-assessment + slug validation | Objectives/concepts/mission intent validated; slug validation gate passed; **human reviewer score required before scale** |
 | **3. Gulf from MSA (`ar-Gulf`)** | `localePackage` draft | Gulf naturalness review; derived from MSA, not Egyptian copy-paste |
 | **4. English from MSA (`en`)** | `localePackage` draft | Plain English; same objectives checklist |
 | **5. Mission localization** | Mission block in each package | Mission constitution pass; assistant forbidden behaviors explicit |
@@ -252,7 +252,7 @@ Selection criteria: one clear Aha each, mission present, English terms to locali
 
 Prototype **stops after stage 7** with draft/reviewed packages stored under `docs/playbooks/adaptive-canonical/` (and future sandbox dirs). **No learner-facing deploy.**
 
-**Extraction standard:** All MSA canonical drafts **must** follow [`adaptive-canonical/MSA_CANONICAL_TEMPLATE.md`](adaptive-canonical/MSA_CANONICAL_TEMPLATE.md) — required sections, MSA style rules, /5 quality rubric, review checklist, and reusable generation prompt. No one-off canonical formats.
+**Extraction standard:** All MSA canonical drafts **must** follow [`adaptive-canonical/MSA_CANONICAL_TEMPLATE.md`](adaptive-canonical/MSA_CANONICAL_TEMPLATE.md) — required sections, MSA style + English-term gloss policy, slug validation gate, draft self-assessment (not final), human reviewer score before scale, and review checklist. No one-off canonical formats.
 
 ---
 

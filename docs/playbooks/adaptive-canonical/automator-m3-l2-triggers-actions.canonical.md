@@ -18,8 +18,9 @@
 | **oneAha** | Every automation = Trigger + Actions — «when this happens → do that» |
 | **workflowPosition** | Egyptian production → **this MSA canonical** → future Gulf / English / other locales |
 | **templateReference** | [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) · templateVersion `2026-06-04` |
+| **humanReviewerSignOff** | **pending** |
 
-> **Important:** This file is a **draft** MSA canonical source only — **not production-ready**. It does **not** modify the live lesson, Bunny video, mission runtime, assistant/RAG seed, or any production file. Human review and passing quality scores are required before any downstream use.
+> **Important:** This file is a **draft** MSA canonical source only — **not production-ready**. **Human reviewer sign-off pending.** It does **not** modify the live lesson, Bunny video, mission runtime, assistant/RAG seed, or any production file.
 
 ---
 
@@ -139,6 +140,15 @@ termsLocked: [Trigger, Action, Schedule, Webhook, Event]
 links:
   nextLessonId: automator-m3-l3-filters-routers
   continuityNote: Filters & Routers — when «when…» needs a routing decision
+
+slugValidation:
+  validatedAt: 2026-06-05
+  lessonId: pass
+  productionFile: pass
+  prerequisites: pass
+  nextLessonId: pass
+  missionRubric: pass
+  quizAnswer: pass
 ```
 
 ---
@@ -149,15 +159,15 @@ links:
 
 ### Orientation — ماذا ستفهم؟
 
-- **ماذا ستفهم؟** كل أتمتة = «لما هذا يحصل، افعل ذلك» — **Trigger (المُشغّل)** + فعل أو أكثر (**Action**).
-- **لماذا الآن؟** بعد اختيار الأداة، تحتاج تصميم أول **workflow** للعامل الافتراضي — قبل فتح أي شاشة.
-- **ماذا بعد الدرس؟** ستصمّم **workflow** واحدًا: مُشغّل → ٢–٣ actions.
+- **ماذا ستفهم؟** كل أتمتة = «لما هذا يحصل، افعل ذلك» — **Trigger (المُشغّل)** + **Action (فعل)** واحد أو أكثر.
+- **لماذا الآن؟** بعد اختيار الأداة، تحتاج تصميم أول **مسار عمل (workflow)** للعامل الافتراضي — قبل فتح أي شاشة.
+- **ماذا بعد الدرس؟** ستصمّم **مسار عمل (workflow)** واحدًا: مُشغّل → ٢–٣ **أفعال (Actions)**.
 
 ### Tension — موقف مألوف
 
-تبني Flow — من دون أن تعرف «لما ماذا؟»
+تبني **تدفق عمل (Flow)** — من دون أن تعرف «لما ماذا؟»
 
-تفتح الأداة وتضيف actions — لكن المُشغّل غير واضح. الـ Flow يعمل… لكن ليس في الوقت الصحيح.
+تفتح الأداة وتضيف **أفعال (Actions)** — لكن **المُشغّل (Trigger)** غير واضح. **تدفق العمل (Flow)** يعمل… لكن ليس في الوقت الصحيح.
 
 العامل الافتراضي يحتاج أن يعرف: ما الحدث الذي يوقظه؟ وما الذي ينفّذه بعد أن يستيقظ؟
 
@@ -169,21 +179,21 @@ links:
 
 - **Trigger (المُشغّل):** الحدث الذي يبدأ العمل — نموذج اكتمل، رسالة وصلت، الساعة ٩ صباحًا.
 - **Action (الفعل):** ما ينفّذه العامل الافتراضي — يرسل بريدًا، يضيف صفًا، يرسل واتساب.
-- أنواع **Triggers** شائعة: **Schedule (موعد)**، **Webhook (إشعار فوري لما يحدث شيء)**، **Event (حدث في تطبيق)**.
-- Actions متسلسلة: مخرجات action الأول = مدخلات الثاني. كسلسلة وراء بعض.
+- أنواع **Triggers (مُشغّلات)** شائعة: **Schedule (موعد)**، **Webhook (إشعار فوري من نظام خارجي)**، **Event (حدث في تطبيق)**.
+- **أفعال (Actions)** متسلسلة: مخرجات **الفعل (Action)** الأول = مدخلات الثاني. كسلسلة وراء بعض.
 - **مثال:** «لما يملأ أحد النموذج → سجّل في جدول → أرسل واتساب ترحيب».
 
 ### Comparison — مثال من الحياة
 
-| Actions فقط | Trigger + Actions |
-|-------------|-------------------|
-| بنت Flow يرسل بريدًا — لكن لا تعرف «متى». تضغط تشغيلًا يدويًا كل مرة. هذا ليس عاملًا افتراضيًا | «لما نموذج جديد → بريد ترحيب». لا تفتح الأداة — العامل الافتراضي يعمل وحده |
+| أفعال (Actions) فقط | Trigger (مُشغّل) + Actions (أفعال) |
+|---------------------|-------------------------------------|
+| بنت **تدفق عمل (Flow)** يرسل بريدًا — لكن لا تعرف «متى». تضغط تشغيلًا يدويًا كل مرة. هذا ليس عاملًا افتراضيًا | «لما نموذج جديد → بريد ترحيب». لا تفتح الأداة — العامل الافتراضي يعمل وحده |
 
 ### Glossary — مصطلحان للـ workflow
 
 | المصطلح | المعنى | مثال |
 |---------|--------|------|
-| **Trigger (المُشغّل)** | «لما…» — الحدث الذي يوقظ العامل الافتراضي | عميل اشترى دورة (**Webhook** من بوابة الدفع) |
+| **Trigger (المُشغّل)** | «لما…» — الحدث الذي يوقظ العامل الافتراضي | عميل اشترى دورة (**Webhook (إشعار فوري)** من بوابة الدفع) |
 | **Action (الفعل)** | «افعل…» — الخطوة التي تُنفَّذ بعد المُشغّل | أرسل واتساب فيه رابط الدخول |
 
 ### Video block (production reference only)
@@ -192,22 +202,22 @@ links:
 
 ### Screenshot block (intent)
 
-صورة توضيحية: كل خطوة = مُشغّل → action. مثال: «أنهيت مهمة» → «سجّل» + «افتح التالية» + «ذكّر». (الأصل البصري في الإنتاج المصري يبقى كما هو.)
+صورة توضيحية: كل خطوة = **مُشغّل (Trigger)** → **فعل (Action)**. مثال: «أنهيت مهمة» → «سجّل» + «افتح التالية» + «ذكّر». (الأصل البصري في الإنتاج المصري يبقى كما هو.)
 
 ### Quiz — تأكيد سريع
 
 **السؤال:** أريد أول ما يشتري عميل دورة، أن يصله واتساب فورًا فيه رابط الدخول. ما التصميم الصحيح؟
 
-- **الإجابة الصحيحة:** Trigger: **Webhook** من بوابة الدفع (شراء جديد). Action: إرسال واتساب.
-- **التفسير:** الشراء = حدث فوري → Webhook. «لما يشتري → أرسل واتساب» — هذا تصميم العامل الافتراضي.
+- **الإجابة الصحيحة:** **Trigger (مُشغّل):** **Webhook (إشعار فوري)** من بوابة الدفع (شراء جديد). **Action (فعل):** إرسال واتساب.
+- **التفسير:** الشراء = حدث فوري → **Webhook (إشعار فوري)**. «لما يشتري → أرسل واتساب» — هذا تصميم العامل الافتراضي.
 
 *(الخيارات الخاطئة المحفوظة من الإنتاج: Schedule كل ساعة للبحث عن مشتريات؛ Manual لكل عميل.)*
 
 ### Mission — مهمتك (intent + MSA draft labels)
 
-**المقدمة:** صمّم workflow لمرشّح الأتمتة لديك — Trigger واحد + ٢–٣ Actions. تصميم على ورقة — لا بناء في الأداة. ١٠–١٥ دقيقة كافية.
+**المقدمة:** صمّم **مسار عمل (workflow)** لمرشّح الأتمتة لديك — **Trigger (مُشغّل)** واحد + ٢–٣ **Actions (أفعال)**. تصميم على ورقة — لا بناء في الأداة. ١٠–١٥ دقيقة كافية.
 
-**التسليم:** الهدف في سطر · Trigger (نوع + «لما…» + البيانات) · Action 1 و 2 (مع ربط المدخلات) · (اختياري) Action 3 · Success — كيف تعرف أنه اشتغل؟
+**التسليم:** الهدف في سطر · **Trigger (مُشغّل)** (نوع + «لما…» + البيانات) · **Action 1** و **Action 2** (مع ربط المدخلات) · (اختياري) Action 3 · **Success (نجاح)** — كيف تعرف أنه اشتغل؟
 
 **معايير التقييم (من الإنتاج — unchanged weights):**
 
@@ -218,9 +228,9 @@ links:
 
 ### Confidence close — ماذا لديك الآن؟
 
-- **فهمت:** كل أتمتة = «لما هذا يحصل → افعل ذلك» — مُشغّل + actions.
-- **تستطيع:** لديك workflow مصمّم جاهز — تستطيع بناءه في الأداة التي اخترتها.
-- **التالي:** Filters & Routers — عندما «لما…» يحتاج قرارًا: إلى أين تذهب؟
+- **فهمت:** كل أتمتة = «لما هذا يحصل → افعل ذلك» — **مُشغّل (Trigger)** + **أفعال (Actions)**.
+- **تستطيع:** لديك **مسار عمل (workflow)** مصمّم جاهز — تستطيع بناءه في الأداة التي اخترتها.
+- **التالي:** **Filters & Routers (فلاتر ومسارات)** — عندما «لما…» يحتاج قرارًا: إلى أين تذهب؟
 
 ---
 
@@ -263,25 +273,41 @@ Manual locale choice overrides automatic detection. Egyptian remains default.
 
 ## 7. Quality scoring
 
-Per [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) §9 — scores **1–5**; pass rule: no dimension below **4/5**, average **≥ 4.3/5**.
+Per [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) §9 — **draft self-assessment is not final**; scale requires **human reviewer score**.
+
+### Draft self-assessment (not final)
+
+Informational only — does **not** authorize scale or production use.
 
 | Dimension | Score (/5) | Notes |
 |-----------|------------|-------|
-| **Objective preservation** | 4 | Objectives present; ⚠ human review: Trigger+Action design outcome clarity |
-| **Concept preservation** | 5 | Trigger, Action, Schedule, Webhook, Event only — no drift |
-| **Beginner clarity** | 4 | Simple MSA; ⚠ human review: automator path technical pacing |
-| **MSA simplicity** | 4 | Neutral MSA; ⚠ human review: dialect residue scan |
-| **Mission consistency** | 5 | 60/40 rubric and paper-design intent match production |
-| **Quiz integrity** | 5 | Webhook + WhatsApp answer and instant-event reasoning unchanged |
-| **Assistant boundaries** | 4 | forbiddenAssistantBehaviors listed; ⚠ human review: no workflow-build refusal phrasing |
-| **Localization readiness** | 4 | §5–§6 present; ⚠ human review: EN technical glossary consistency |
+| **Objective preservation** | 4 | Objectives present; pending human review |
+| **Concept preservation** | 5 | Trigger, Action, Schedule, Webhook, Event only |
+| **Beginner clarity** | 4 | Glosses added for Flow/workflow/Actions; pending read-aloud |
+| **MSA simplicity** | 4 | Neutral MSA; pending dialect scan |
+| **Mission consistency** | 5 | 60/40 rubric matches production |
+| **Quiz integrity** | 5 | Webhook + WhatsApp answer unchanged |
+| **Assistant boundaries** | 4 | forbiddenAssistantBehaviors listed |
+| **Localization readiness** | 4 | §5–§6 present |
 
-| Metric | Value |
-|--------|-------|
-| **Average** | **4.375 / 5** |
-| **Pass rule (≥ 4.3, all ≥ 4)** | **pass (provisional — pending human sign-off)** |
-| **Scored by** | draft self-assessment · 2026-06-04 |
-| **Production-ready?** | **no** — draft only until checklist §8 complete |
+| Draft self-assessment average | 4.375 / 5 (informational only) |
+
+### Human reviewer score (required before scale)
+
+| Dimension | Score (/5) | Reviewer | Date |
+|-----------|------------|----------|------|
+| Objective preservation | — | pending | — |
+| Concept preservation | — | pending | — |
+| Beginner clarity | — | pending | — |
+| MSA simplicity | — | pending | — |
+| Mission consistency | — | pending | — |
+| Quiz integrity | — | pending | — |
+| Assistant boundaries | — | pending | — |
+| Localization readiness | — | pending | — |
+
+| Human reviewer average | **not scored** |
+| **Scale pass (≥ 4.3, all ≥ 4)** | **not met — human reviewer sign-off pending** |
+| **Production-ready?** | **no** |
 
 ---
 
@@ -302,9 +328,11 @@ Per [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) §10.
 | 9 | English AI terms glossed on first use | ⚠ needs human review |
 | 10 | Video block = production reference only | ☑ pass |
 | 11 | Localization UX priority documented | ☑ pass |
-| 12 | Quality scores recorded — pass rule met (provisional) | ⚠ needs human review |
-| 13 | **Draft / not production-ready** stated explicitly | ☑ confirmed |
-| 14 | Human reviewer sign-off | ☐ pending |
+| 12 | Slug validation gate passed | ☑ pass |
+| 13 | Draft self-assessment recorded (informational only) | ☑ pass |
+| 14 | Human reviewer score recorded — scale pass rule met | ☐ pending |
+| 15 | **Draft / not production-ready** stated explicitly | ☑ confirmed |
+| 16 | Human reviewer sign-off (name + date) | ☐ **Human reviewer sign-off pending.** |
 
 ---
 

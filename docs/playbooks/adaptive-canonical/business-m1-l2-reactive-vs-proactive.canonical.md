@@ -18,8 +18,9 @@
 | **oneAha** | Reduce repetitive Reactive work with AI — make room for Proactive work that moves the business |
 | **workflowPosition** | Egyptian production → **this MSA canonical** → future Gulf / English / other locales |
 | **templateReference** | [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) · templateVersion `2026-06-04` |
+| **humanReviewerSignOff** | **pending** |
 
-> **Important:** This file is a **draft** MSA canonical source only — **not production-ready**. It does **not** modify the live lesson, Bunny video, mission runtime, assistant/RAG seed, or any production file. Human review and passing quality scores are required before any downstream use.
+> **Important:** This file is a **draft** MSA canonical source only — **not production-ready**. **Human reviewer sign-off pending.** It does **not** modify the live lesson, Bunny video, mission runtime, assistant/RAG seed, or any production file.
 
 ---
 
@@ -71,7 +72,7 @@ meta:
   oneAha: "Reduce repetitive Reactive work with AI to open space for Proactive work"
   difficulty: intro
   estimatedMinutes: 12
-  prerequisites: [business-m1-l1-recurring-decision]
+  prerequisites: [business-m1-l1-from-decisions-to-leadership]
 
 objectives:
   - id: obj-1
@@ -137,8 +138,17 @@ mission:
 termsLocked: [Reactive, Proactive, AI]
 
 links:
-  nextLessonId: business-m1-l3-customer-lifecycle
-  continuityNote: Customer lifecycle — journey not single deal; AI improves each stage
+  nextLessonId: business-m2-l1-customer-lifecycle
+  continuityNote: Customer lifecycle (PATHS next) — journey not single deal; production close text aligns; lesson-continuity.ts message differs
+
+slugValidation:
+  validatedAt: 2026-06-05
+  lessonId: pass
+  productionFile: pass
+  prerequisites: pass
+  nextLessonId: pass
+  missionRubric: pass
+  quizAnswer: pass
 ```
 
 ---
@@ -260,25 +270,41 @@ Manual locale choice overrides automatic detection. Egyptian remains default.
 
 ## 7. Quality scoring
 
-Per [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) §9 — scores **1–5**; pass rule: no dimension below **4/5**, average **≥ 4.3/5**.
+Per [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) §9 — **draft self-assessment is not final**; scale requires **human reviewer score**.
+
+### Draft self-assessment (not final)
+
+Informational only — does **not** authorize scale or production use.
 
 | Dimension | Score (/5) | Notes |
 |-----------|------------|-------|
-| **Objective preservation** | 4 | Objectives present; ⚠ human review: confirm classification + AI choice outcomes |
-| **Concept preservation** | 5 | Reactive, Proactive, AI only — no drift |
-| **Beginner clarity** | 4 | Simple MSA; ⚠ human review: business-owner audience read-aloud |
-| **MSA simplicity** | 4 | Neutral MSA; ⚠ human review: scan for dialect residue |
-| **Mission consistency** | 5 | 60/40 rubric and honest-diagnosis intent match production |
-| **Quiz integrity** | 5 | Reactive answer + «who decided priorities» reasoning unchanged |
-| **Assistant boundaries** | 4 | forbiddenAssistantBehaviors listed; ⚠ human review: refusal phrasing |
-| **Localization readiness** | 4 | §5–§6 present; ⚠ human review: Gulf business tone notes |
+| **Objective preservation** | 4 | Objectives present; pending human review |
+| **Concept preservation** | 5 | Reactive, Proactive, AI only |
+| **Beginner clarity** | 4 | Simple MSA; pending business-owner read-aloud |
+| **MSA simplicity** | 4 | Neutral MSA; pending dialect scan |
+| **Mission consistency** | 5 | 60/40 rubric matches production |
+| **Quiz integrity** | 5 | Reactive answer unchanged |
+| **Assistant boundaries** | 4 | forbiddenAssistantBehaviors listed |
+| **Localization readiness** | 4 | §5–§6 present |
 
-| Metric | Value |
-|--------|-------|
-| **Average** | **4.375 / 5** |
-| **Pass rule (≥ 4.3, all ≥ 4)** | **pass (provisional — pending human sign-off)** |
-| **Scored by** | draft self-assessment · 2026-06-04 |
-| **Production-ready?** | **no** — draft only until checklist §8 complete |
+| Draft self-assessment average | 4.375 / 5 (informational only) |
+
+### Human reviewer score (required before scale)
+
+| Dimension | Score (/5) | Reviewer | Date |
+|-----------|------------|----------|------|
+| Objective preservation | — | pending | — |
+| Concept preservation | — | pending | — |
+| Beginner clarity | — | pending | — |
+| MSA simplicity | — | pending | — |
+| Mission consistency | — | pending | — |
+| Quiz integrity | — | pending | — |
+| Assistant boundaries | — | pending | — |
+| Localization readiness | — | pending | — |
+
+| Human reviewer average | **not scored** |
+| **Scale pass (≥ 4.3, all ≥ 4)** | **not met — human reviewer sign-off pending** |
+| **Production-ready?** | **no** |
 
 ---
 
@@ -299,9 +325,11 @@ Per [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) §10.
 | 9 | English AI terms glossed on first use | ⚠ needs human review |
 | 10 | Video block = production reference only | ☑ pass |
 | 11 | Localization UX priority documented | ☑ pass |
-| 12 | Quality scores recorded — pass rule met (provisional) | ⚠ needs human review |
-| 13 | **Draft / not production-ready** stated explicitly | ☑ confirmed |
-| 14 | Human reviewer sign-off | ☐ pending |
+| 12 | Slug validation gate passed | ☑ pass |
+| 13 | Draft self-assessment recorded (informational only) | ☑ pass |
+| 14 | Human reviewer score recorded — scale pass rule met | ☐ pending |
+| 15 | **Draft / not production-ready** stated explicitly | ☑ confirmed |
+| 16 | Human reviewer sign-off (name + date) | ☐ **Human reviewer sign-off pending.** |
 
 ---
 

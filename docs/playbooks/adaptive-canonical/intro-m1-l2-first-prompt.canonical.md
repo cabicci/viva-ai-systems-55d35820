@@ -18,8 +18,9 @@
 | **oneAha** | A clear prompt = Role + Context + Task + Format — not magic words |
 | **workflowPosition** | Egyptian production → **this MSA canonical** → future Gulf / English / other locales |
 | **templateReference** | [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) · templateVersion `2026-06-04` |
+| **humanReviewerSignOff** | **pending** |
 
-> **Important:** This file is a **draft** MSA canonical source only — **not production-ready**. It does **not** modify the live lesson, Bunny video, mission runtime, assistant/RAG seed, or any production file. Human review and passing quality scores are required before any downstream use.
+> **Important:** This file is a **draft** MSA canonical source only — **not production-ready**. **Human reviewer sign-off pending.** It does **not** modify the live lesson, Bunny video, mission runtime, assistant/RAG seed, or any production file.
 
 ---
 
@@ -60,6 +61,7 @@
 ```yaml
 lessonId: intro-m1-l2-first-prompt
 canonicalVersion: 2026-06-04.1-draft
+templateVersion: 2026-06-04
 derivedFrom:
   productionLocale: ar-EG
   productionFile: src/components/intro/lessons/intro-m1-l2-first-prompt.ts
@@ -138,6 +140,15 @@ termsLocked: [Prompt, Context, Role, Task, Format, AI]
 links:
   nextLessonId: intro-m1-l3-setup-your-ai
   continuityNote: Next lesson opens first AI and sends a simple message — applies this prompt pattern
+
+slugValidation:
+  validatedAt: 2026-06-05
+  lessonId: pass
+  productionFile: pass
+  prerequisites: pass
+  nextLessonId: pass
+  missionRubric: pass
+  quizAnswer: pass
 ```
 
 ---
@@ -290,27 +301,41 @@ When platform localization ships (future — not implemented by this draft):
 
 ## 7. Quality scoring
 
-Per [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) §9 — scores **1–5**; pass rule: no dimension below **4/5**, average **≥ 4.3/5**.
+Per [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) §9 — **draft self-assessment is not final**; scale requires **human reviewer score**.
+
+### Draft self-assessment (not final)
+
+Informational only — does **not** authorize scale or production use.
 
 | Dimension | Score (/5) | Notes |
 |-----------|------------|-------|
-| **Objective preservation** | 4 | Objectives present; ⚠ human review: confirm measurability in MSA wording |
-| **Concept preservation** | 5 | Prompt, Context, four-part framework only — no drift |
-| **Beginner clarity** | 4 | Simple sentences; ⚠ human review: read-aloud for beginner audience |
-| **MSA simplicity** | 4 | Neutral MSA; ⚠ human review: scan for residual dialect or stiff formal phrases |
+| **Objective preservation** | 4 | Objectives present; pending human review |
+| **Concept preservation** | 5 | Prompt, Context, four-part framework only |
+| **Beginner clarity** | 4 | Simple sentences; pending read-aloud review |
+| **MSA simplicity** | 4 | Neutral MSA; pending dialect/formality scan |
 | **Mission consistency** | 5 | 70/30 rubric and task intent match production |
-| **Quiz integrity** | 5 | Context-first answer and explanation unchanged |
-| **Assistant boundaries** | 4 | forbiddenAssistantBehaviors listed; ⚠ human review: expand forbidden patterns if needed |
-| **Localization readiness** | 4 | §5–§6 present; ⚠ human review: Gulf/EN generation notes when chartered |
+| **Quiz integrity** | 5 | Context-first answer unchanged |
+| **Assistant boundaries** | 4 | forbiddenAssistantBehaviors listed |
+| **Localization readiness** | 4 | §5–§6 present |
 
-| Metric | Value |
-|--------|-------|
-| **Average** | **4.375 / 5** |
-| **Pass rule (≥ 4.3, all ≥ 4)** | **pass (provisional — pending human sign-off)** |
-| **Scored by** | draft self-assessment · 2026-06-04 |
-| **Production-ready?** | **no** — draft only until checklist §8 complete |
+| Draft self-assessment average | 4.375 / 5 (informational only) |
 
-Items marked ⚠ require human reviewer confirmation before treating this artifact as reviewed.
+### Human reviewer score (required before scale)
+
+| Dimension | Score (/5) | Reviewer | Date |
+|-----------|------------|----------|------|
+| Objective preservation | — | pending | — |
+| Concept preservation | — | pending | — |
+| Beginner clarity | — | pending | — |
+| MSA simplicity | — | pending | — |
+| Mission consistency | — | pending | — |
+| Quiz integrity | — | pending | — |
+| Assistant boundaries | — | pending | — |
+| Localization readiness | — | pending | — |
+
+| Human reviewer average | **not scored** |
+| **Scale pass (≥ 4.3, all ≥ 4)** | **not met — human reviewer sign-off pending** |
+| **Production-ready?** | **no** |
 
 ---
 
@@ -330,10 +355,12 @@ Per [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) §10.
 | 8 | MSA text derived from Egyptian — not Gulf/EN back-translated | ⚠ needs human review |
 | 9 | English terms explained on first use in MSA draft | ⚠ needs human review |
 | 10 | Video block marked production-reference only — no regen implied | ☑ pass |
-| 11 | Localization UX priority documented (manual > saved > geo > Egyptian default) | ☑ pass |
-| 12 | Quality scores recorded — pass rule met (provisional) | ⚠ needs human review |
-| 13 | **Draft / not production-ready** stated explicitly | ☑ confirmed |
-| 14 | Human reviewer sign-off | ☐ pending |
+| 11 | Localization UX priority documented | ☑ pass |
+| 12 | Slug validation gate passed | ☑ pass |
+| 13 | Draft self-assessment recorded (informational only) | ☑ pass |
+| 14 | Human reviewer score recorded — scale pass rule met | ☐ pending |
+| 15 | **Draft / not production-ready** stated explicitly | ☑ confirmed |
+| 16 | Human reviewer sign-off (name + date) | ☐ **Human reviewer sign-off pending.** |
 
 ---
 

@@ -1,7 +1,7 @@
 # MSA Canonical Extraction — System Template
 
 **Status:** Reusable extraction standard · docs-only  
-**Effective:** 2026-06-04  
+**Effective:** 2026-06-04 · **Revised:** 2026-06-05 (audit review gates)  
 **Applies to:** All future `*.canonical.md` drafts under `docs/playbooks/adaptive-canonical/`  
 **Does not modify:** production lesson files, Bunny videos, Remotion, missions runtime, assistant/RAG seed, or platform UX
 
@@ -73,7 +73,7 @@ Every `*.canonical.md` must include these sections in order:
 | 4 | **Arabic MSA canonical lesson text** | Block-by-block MSA prose derived from Egyptian production |
 | 5 | **Future generation notes** | Downstream locales from MSA; deferred video/RAG/runtime |
 | 6 | **Localization UX notes** | Locale resolution priority (see §8) |
-| 7 | **Quality scoring** | /5 scores per dimension + pass/fail result |
+| 7 | **Quality scoring** | Draft self-assessment + human reviewer score (required before scale) |
 | 8 | **Review checklist** | Human sign-off items with status |
 
 Optional appendices (lesson-specific): assistant boundary notes, video production-reference callout.
@@ -95,6 +95,17 @@ Apply when writing §4 (MSA lesson text):
 | **Neutral MSA** | Remove Egyptian dialect surface forms (e.g. «هتفهم», «عايز», «مفيش») — same meaning in MSA. |
 | **No UX redesign** | Block roles match production shape; do not invent new block types or reorder pedagogical flow. |
 
+### English-term gloss policy (MSA §4)
+
+| Rule | Guidance |
+|------|----------|
+| **First use** | Explain every English AI/automation term in Arabic on first appearance: **Prompt (طلب)**, **Trigger (مُشغّل)**, **Webhook (إشعار فوري)**. |
+| **Keep English when useful** | Retain the English term in parentheses after the Arabic gloss — learners see both once, then Arabic or short form. |
+| **No unexplained lowercase technical words** | Do not leave bare `flow`, `workflow`, `actions`, `webhook` in MSA prose without a gloss. |
+| **Automator / Builder paths** | Arabic gloss **first**, English in parentheses: **مسار عمل (workflow)**, **تدفق عمل (Flow)**, **أفعال (Actions)**. |
+| **After first use** | May use Arabic short form or agreed English acronym if already glossed in the same lesson. |
+| **No new concepts via gloss** | Glosses clarify existing production terms only — do not introduce tools or frameworks absent from the source lesson. |
+
 ---
 
 ## 5. Forbidden drift
@@ -110,6 +121,32 @@ Extractors and reviewers must reject drafts that:
 | **No video regeneration implication** | Video block = production Bunny reference only; no render/upload/publish language |
 
 Also forbidden: editing production files, changing PATHS/slugs, implying Egyptian copy will be replaced by MSA, or adapting Gulf/English directly from Egyptian (must pass through MSA canonical).
+
+### Slug validation gate (required before acceptance)
+
+Before any canonical draft is accepted for review or scale, validate against PATHS / known registry (read-only — e.g. `src/lib/curriculum-data.ts`, `src/components/intro/lessons/index.ts`):
+
+| Check | Rule | On failure |
+|-------|------|------------|
+| **lessonId** | Exists in PATHS or known lesson registry | Reject draft |
+| **productionFile** | Path exists and matches `lessonId` | Reject draft |
+| **prerequisites[]** | Each slug exists in PATHS | Fix slug or remove; do not invent |
+| **nextLessonId** | Next sequential lesson in PATHS for that path, **or** explicit sentinel `pending-path-validation` | Never invent a slug; use sentinel if PATHS order is uncertain |
+| **mission rubric weights** | Match production TS `rubric[].weight` exactly | Reject until fixed |
+| **quiz correct answer** | `correctIndex` and pedagogical reasoning match production | Reject until fixed |
+
+Record validation in §3 YAML when helpful:
+
+```yaml
+slugValidation:
+  validatedAt: YYYY-MM-DD
+  lessonId: pass | fail
+  productionFile: pass | fail
+  prerequisites: pass | fail
+  nextLessonId: pass | pending-path-validation
+  missionRubric: pass | fail
+  quizAnswer: pass | fail
+```
 
 ---
 
@@ -214,7 +251,22 @@ Manual locale choice overrides automatic detection. Egyptian remains default for
 
 ## 9. Quality scoring rubric (/5)
 
-Score each dimension **1–5** after draft extraction. Record scores in §7 of the artifact.
+§7 of each artifact has **two score blocks**. They are not interchangeable.
+
+### 9a. Draft self-assessment (generator — not final)
+
+After extraction, the generator may score each dimension **1–5** as a **draft self-assessment** only.
+
+| Policy | Rule |
+|--------|------|
+| **Purpose** | Surface likely gaps for human review — not approval |
+| **Label** | Must be titled **«Draft self-assessment (not final)»** |
+| **Pass claim** | Generator **must not** mark the artifact as passed, production-ready, or cleared for scale based on self-assessment alone |
+| **Provisional wording** | Use «informational only» or «pending human review» |
+
+### 9b. Human reviewer score (required before scale)
+
+A named human reviewer records scores in **«Human reviewer score»** before any batch scale or downstream locale work.
 
 | Dimension | 1 (fail) | 3 (acceptable) | 5 (excellent) |
 |-----------|----------|----------------|---------------|
@@ -222,22 +274,23 @@ Score each dimension **1–5** after draft extraction. Record scores in §7 of t
 | **Concept preservation** | New concepts or tools introduced | Only production concepts | termsLocked honored; no drift |
 | **Beginner clarity** | Confusing or expert-level | Readable for target learner | Simple, scannable, one-idea-per-beat |
 | **MSA simplicity** | Dialect-heavy or overly formal | Neutral MSA throughout | Simple, warm MSA; no academic tone |
-| **Mission consistency** | Weights or task changed | 70/30 (or prod weights) + intent intact | Mission copy clearly matches production intent |
+| **Mission consistency** | Weights or task changed | Production weights + intent intact | Mission copy clearly matches production intent |
 | **Quiz integrity** | Wrong answer or reasoning | Correct answer preserved | Question + explanation match pedagogy |
 | **Assistant boundaries** | Missing or weak forbidden behaviors | forbiddenAssistantBehaviors listed | Clear: no mission solve, no topic pick |
 | **Localization readiness** | Missing UX priority or downstream notes | §5–§6 present | MSA clearly marked as spine for Gulf/EN |
 
-### Pass / fail rule
+### Pass / fail rules
 
-| Rule | Threshold |
-|------|-----------|
-| **Minimum per dimension** | No score **below 4/5** |
-| **Average** | **≥ 4.3/5** across all eight dimensions |
-| **Human gate** | Review checklist signed; `reviewStatus` stays draft until pass |
+| Gate | Rule | Threshold |
+|------|------|-----------|
+| **Draft self-assessment** | Informational only | Does **not** authorize scale |
+| **Human reviewer score** | Required for scale | No dimension **below 4/5**; average **≥ 4.3/5** |
+| **Human sign-off** | §8 item 14 + reviewer name/date | **Human reviewer sign-off pending** until recorded |
+| **reviewStatus** | Stays `draft / not production-ready` until human gate passes | Never faked |
 
-**Fail action:** Revise MSA text or structured source; re-score. Do not publish or wire to runtime.
+**Fail action:** Revise MSA text or structured source; re-run slug validation; human re-score. Do not publish or wire to runtime.
 
-**Example calculation:** scores `(4,5,4,4,5,4,4,4)` → average = 4.25 → **fail** (below 4.3). Scores `(4,5,4,4,5,5,4,4)` → average = 4.375 → **pass** if all ≥ 4.
+**Example (human reviewer):** scores `(4,5,4,4,5,5,4,4)` → average = 4.375 → **pass** if all ≥ 4 and sign-off recorded.
 
 ---
 
@@ -258,9 +311,11 @@ Copy into §8 of each artifact; mark ☐ pending · ☑ pass · ⚠ needs human 
 | 9 | English AI terms glossed on first use |
 | 10 | Video block = production reference only |
 | 11 | Localization UX priority documented |
-| 12 | Quality scores recorded — pass rule met |
-| 13 | **Draft / not production-ready** stated explicitly |
-| 14 | Human reviewer sign-off |
+| 12 | Slug validation gate passed (§5) or failures documented |
+| 13 | Draft self-assessment recorded (informational only) |
+| 14 | Human reviewer score recorded — scale pass rule met |
+| 15 | **Draft / not production-ready** stated explicitly |
+| 16 | Human reviewer sign-off (name + date) — **pending until real review** |
 
 ---
 
@@ -297,8 +352,8 @@ PRODUCE these sections:
 4. Arabic MSA canonical lesson text (block-by-block)
 5. Future generation notes
 6. Localization UX notes (manual > saved > geo > Egyptian default)
-7. Quality scoring (/5) — self-score then mark items needing human review
-8. Review checklist
+7. Quality scoring — draft self-assessment (not final) + empty human reviewer score table
+8. Review checklist — human sign-off pending
 
 Lesson: `{lessonId}`
 Path: `{pathId}`
