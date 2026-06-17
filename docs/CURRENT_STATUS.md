@@ -6,7 +6,7 @@
 
 Operating model: `docs/playbooks/P0_LAUNCH_CONSTITUTION.md`.
 
-Drift cleanup: **complete enough for launch** (Final Drift Re-audit PASS — launch blockers 0, high runtime blockers 0).
+Drift cleanup: **complete** (Final Drift Re-audit PASS — launch blockers 0, high runtime blockers 0). Remotion registry aligned — technical cleanup closed.
 
 ## Completed
 
@@ -46,6 +46,13 @@ Drift cleanup: **complete enough for launch** (Final Drift Re-audit PASS — lau
 - Final Drift Re-audit: **PASS** — launch blockers 0; PATHS 100; registry/content 104 (100 learner + 4 archived Business); RAG seed 100; Bunny playback 100/100
 - Production route/source smoke: **PASS** (post onboarding hotfix — no spinner, no redirect loop, no protected content exposed)
 - Onboarding legacy redirect hotfix — `26b8758`
+- Remotion registry aligned (100/100 learner; 104 total = 100 learner + 4 archived) — `6a6a40e`
+
+## Video layer
+
+- **Bunny playback:** 100/100 learner GUIDs
+- **Remotion registry:** 100/100 learner coverage; 104 total entries (100 learner + 4 archived Business retained for asset stability)
+- PATHS and Bunny GUIDs unchanged; no video regeneration or upload in `6a6a40e`
 
 ## In Progress
 
@@ -60,21 +67,13 @@ None
 
 **Critical / High / High runtime: 0 open.** Remaining items are post-launch hardening unless live evidence elevates them.
 
-## Known post-launch (non-blocking)
-
-- Remotion registry missing `analyst-m5-ab-testing` — affects **future video regeneration pipeline only**; Bunny learner playback remains **100/100** (GUID exists).
-
 ## Latest Production Commit
 
 26b87589d563ee9b9399b64339026516aa28e83e
 
 ## Next Planned Step
 
-Choose one (all valid post-drift):
-
-1. **Launch / marketing preparation** — aggressive controlled launch + 72h observation (per P0 Launch Constitution)
-2. **Optional small Remotion alignment batch** — add `analyst-m5-ab-testing` before future video regeneration (not required for current playback)
-3. **Post-launch hardening backlog** — system-state GAPS refresh, doc/tooling sync, visual polish
+**Launch / marketing preparation** — aggressive controlled launch + 72h observation (per P0 Launch Constitution). Post-launch hardening backlog (system-state GAPS refresh, doc/tooling sync, visual polish) as needed after launch.
 
 ## Latest Assistant Milestone
 

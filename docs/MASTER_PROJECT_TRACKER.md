@@ -1,7 +1,7 @@
 # مسارات (masaarat.ai) — Master Project Tracker
 
 > Single source of truth for project status. Documentation only.
-> Reconciled from: `docs/CURRENT_STATUS.md`, `docs/VISUAL_BLUEPRINT.md`, `docs/playbooks/CURRICULUM_FREEZE_CONTRACT.md`, repo reality (2026-06-04, production `26b8758`).
+> Reconciled from: `docs/CURRENT_STATUS.md`, `docs/VISUAL_BLUEPRINT.md`, `docs/playbooks/CURRICULUM_FREEZE_CONTRACT.md`, repo reality (2026-06-04, production `26b8758`; Remotion alignment `6a6a40e`).
 >
 > Status legend: ✅ LOCKED · 🟡 IN PROGRESS · 🔴 BLOCKED · ⏸️ DEFERRED · ⚪ NOT STARTED · ❓ UNKNOWN (needs verification)
 
@@ -13,21 +13,20 @@
 |------|------|
 | Current Phase | **P0 Launch Ready** — Aggressive Controlled Launch Ready |
 | Previous phase | Phase 3 — AI Assistant P0 ✅ FROZEN |
-| Launch Readiness | Production live; drift cleanup complete enough for launch; polish/video/mobile deferred per P0 Constitution |
+| Launch Readiness | Production live; technical cleanup closed; drift + Remotion registry aligned; polish/mobile deferred per P0 Constitution |
 | Critical blockers | 0 |
 | High runtime blockers | 0 |
 | High-priority open items | Brand visual implementation; Visual Freeze F1.c–F8; video audit; mobile UX — **post-launch hardening**, not launch gates |
-| Drift cleanup | **Complete enough for launch** — Final Drift Re-audit PASS (Batches 1–4C + onboarding hotfix) |
+| Drift cleanup | **Complete** — Final Drift Re-audit PASS (Batches 1–4C + onboarding hotfix) |
+| Video layer | Bunny playback **100/100** · Remotion registry **100/100** learner (104 total = 100 + 4 archived) — aligned `6a6a40e` |
 | Production smoke | **PASS** — `/`, auth redirects, `/onboarding` → `/login`, legal pages; no spinner/loop/leak |
-| Last major milestone | Post-drift launch status + onboarding redirect hotfix (`26b8758`) |
-| Last commit snapshot | `26b8758` — "fix: prevent onboarding redirect spinner" (local + origin/main synced) |
-| Last production commit (per CURRENT_STATUS) | `26b8758` (masaarat.ai) |
+| Last major milestone | Remotion registry alignment (`6a6a40e`) — restored `analyst-m5-ab-testing`; no regen/upload |
+| Last commit snapshot | `6a6a40e` — "fix: align remotion registry with learner path" (local + origin/main synced) |
+| Last production commit (per CURRENT_STATUS) | `26b8758` (masaarat.ai runtime); registry fix `6a6a40e` (Remotion-only) |
 
-**Current launch decision:** P0 aggressive controlled launch is **ready**. Critical blockers = 0; high runtime blockers = 0. Remaining items are post-launch hardening unless live user evidence elevates them. Supersedes pre-constitution perfection gating in §14 below.
+**Current launch decision:** P0 aggressive controlled launch is **ready**. Critical blockers = 0; high runtime blockers = 0. **Technical cleanup closed.** Remaining items are post-launch hardening unless live user evidence elevates them. Supersedes pre-constitution perfection gating in §14 below.
 
-**Known post-launch (non-blocking):** Remotion registry missing `analyst-m5-ab-testing` — future video regeneration only; Bunny learner playback 100/100.
-
-**Next recommended options:** launch/marketing preparation · optional Remotion alignment batch · post-launch hardening backlog.
+**Next recommended options:** launch/marketing preparation · post-launch hardening backlog.
 
 ---
 
