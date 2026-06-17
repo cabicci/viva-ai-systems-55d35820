@@ -332,9 +332,11 @@ The Adaptive Lesson Engine is the right long-term architecture for Masaarat's mu
 | Artifact | Status | Notes |
 |----------|--------|-------|
 | [`adaptive-canonical/MSA_CANONICAL_TEMPLATE.md`](adaptive-canonical/MSA_CANONICAL_TEMPLATE.md) | **active standard** | Reusable extraction template — **all future** `*.canonical.md` drafts must follow this file |
-| [`adaptive-canonical/intro-m1-l2-first-prompt.canonical.md`](adaptive-canonical/intro-m1-l2-first-prompt.canonical.md) | **draft / docs-only** | First sample canonical · follows template · not production-ready · does not modify live lesson or Bunny video |
+| [`adaptive-canonical/intro-m1-l2-first-prompt.canonical.md`](adaptive-canonical/intro-m1-l2-first-prompt.canonical.md) | **draft / docs-only** | Intro path sample · follows template · not production-ready |
+| [`adaptive-canonical/business-m1-l2-reactive-vs-proactive.canonical.md`](adaptive-canonical/business-m1-l2-reactive-vs-proactive.canonical.md) | **draft / docs-only** | Business path · Reactive vs Proactive · follows template · not production-ready |
+| [`adaptive-canonical/automator-m3-l2-triggers-actions.canonical.md`](adaptive-canonical/automator-m3-l2-triggers-actions.canonical.md) | **draft / docs-only** | Automator path · Triggers & Actions · follows template · not production-ready |
 
-Additional prototype lessons (`business-m1-l2-reactive-vs-proactive`, `automator-m3-l2-triggers-actions`) remain planned; not yet canonicalized.
+**Prototype set:** three lessons × MSA canonical drafts — complete for Phase 1 sandbox (draft/review only; no runtime integration).
 
 **Superseded:** multi-locale sample package (`adaptive-samples/intro-m1-l2-first-prompt.sample.md`) — removed; workflow reset to MSA canonical-first.
 
