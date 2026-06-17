@@ -17,8 +17,9 @@
 | **reviewStatus** | **draft / not production-ready** |
 | **oneAha** | A clear prompt = Role + Context + Task + Format — not magic words |
 | **workflowPosition** | Egyptian production → **this MSA canonical** → future Gulf / English / other locales |
+| **templateReference** | [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) · templateVersion `2026-06-04` |
 
-> **Important:** This file is a draft MSA canonical source only. It does **not** modify the live lesson, Bunny video, mission runtime, assistant/RAG seed, or any production file.
+> **Important:** This file is a **draft** MSA canonical source only — **not production-ready**. It does **not** modify the live lesson, Bunny video, mission runtime, assistant/RAG seed, or any production file. Human review and passing quality scores are required before any downstream use.
 
 ---
 
@@ -287,43 +288,52 @@ When platform localization ships (future — not implemented by this draft):
 
 ---
 
-## 7. Quality scoring rubric
+## 7. Quality scoring
 
-Use this rubric when reviewing MSA canonical drafts and downstream locale packages derived from them.
+Per [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) §9 — scores **1–5**; pass rule: no dimension below **4/5**, average **≥ 4.3/5**.
 
-| Dimension | Weight | Score 0 (fail) | Score 1 (pass) | Score 2 (strong) |
-|-----------|--------|----------------|----------------|------------------|
-| **Objective fidelity** | 25% | Objectives added, removed, or changed vs production | All production objectives preserved | Objectives preserved and clearly measurable in MSA text |
-| **Concept preservation** | 20% | New tools/promises not in production | Only Prompt, Context, four-part framework | Locked terms consistent; no dialect-only concepts smuggled in |
-| **Mission intent** | 20% | Rubric weights or dimensions changed | 70/30 structure + real topic preserved | Mission intro/prompt/template intent clear in MSA |
-| **MSA neutrality** | 15% | Egyptian dialect surface forms dominate | Neutral MSA readable throughout | Consistent MSA; English terms glossed once |
-| **Block parity** | 10% | Missing block roles vs production | Same block sequence and intent | Each block intent mappable to production eyebrow/title |
-| **Quiz integrity** | 10% | Wrong answer or changed reasoning | Context-first answer preserved | Explanation matches production pedagogical intent |
+| Dimension | Score (/5) | Notes |
+|-----------|------------|-------|
+| **Objective preservation** | 4 | Objectives present; ⚠ human review: confirm measurability in MSA wording |
+| **Concept preservation** | 5 | Prompt, Context, four-part framework only — no drift |
+| **Beginner clarity** | 4 | Simple sentences; ⚠ human review: read-aloud for beginner audience |
+| **MSA simplicity** | 4 | Neutral MSA; ⚠ human review: scan for residual dialect or stiff formal phrases |
+| **Mission consistency** | 5 | 70/30 rubric and task intent match production |
+| **Quiz integrity** | 5 | Context-first answer and explanation unchanged |
+| **Assistant boundaries** | 4 | forbiddenAssistantBehaviors listed; ⚠ human review: expand forbidden patterns if needed |
+| **Localization readiness** | 4 | §5–§6 present; ⚠ human review: Gulf/EN generation notes when chartered |
 
-**Pass threshold:** ≥ 85% weighted score with no dimension at 0.
+| Metric | Value |
+|--------|-------|
+| **Average** | **4.375 / 5** |
+| **Pass rule (≥ 4.3, all ≥ 4)** | **pass (provisional — pending human sign-off)** |
+| **Scored by** | draft self-assessment · 2026-06-04 |
+| **Production-ready?** | **no** — draft only until checklist §8 complete |
 
-**MSA canonical-specific gate:** reviewer confirms text was derived from Egyptian production read-only and does not contradict live lesson meaning.
+Items marked ⚠ require human reviewer confirmation before treating this artifact as reviewed.
 
 ---
 
 ## 8. Review checklist
 
+Per [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) §10.
+
 | # | Check | Status |
 |---|-------|--------|
-| 1 | Egyptian production file untouched | ☐ pending |
-| 2 | Bunny video mapping untouched | ☐ pending |
-| 3 | Objectives preserved (four-part prompt + one real prompt mission) | ☐ pending |
-| 4 | No hallucinated concepts beyond Prompt, Context, Role, Task, Format, AI | ☐ pending |
-| 5 | Mission rubric weights match production (70% structure / 30% real topic) | ☐ pending |
-| 6 | Quiz intent preserved (context first for Ahmed email) | ☐ pending |
-| 7 | MSA text derived from Egyptian — not Gulf/EN back-translated | ☐ pending |
-| 8 | English terms explained on first use in MSA draft | ☐ pending |
-| 9 | Video block marked production-reference only — no regen implied | ☐ pending |
-| 10 | Downstream locales documented as MSA-derived (not Egyptian-direct) | ☐ pending |
-| 11 | Localization UX priority documented (manual > saved > geo > Egyptian default) | ☐ pending |
-| 12 | Quality rubric applied — score recorded | ☐ pending |
-| 13 | Ready for human review | ☐ pending |
-| 14 | **Not ready for production until approved** | ✅ confirmed |
+| 1 | Egyptian production file untouched | ☑ pass (read-only derivation) |
+| 2 | Bunny video mapping untouched | ☑ pass |
+| 3 | Template reference present | ☑ pass |
+| 4 | Objectives preserved (four-part prompt + one real prompt mission) | ⚠ needs human review |
+| 5 | No hallucinated concepts beyond Prompt, Context, Role, Task, Format, AI | ☑ pass |
+| 6 | Mission rubric weights match production (70% structure / 30% real topic) | ☑ pass |
+| 7 | Quiz intent preserved (context first for Ahmed email) | ☑ pass |
+| 8 | MSA text derived from Egyptian — not Gulf/EN back-translated | ⚠ needs human review |
+| 9 | English terms explained on first use in MSA draft | ⚠ needs human review |
+| 10 | Video block marked production-reference only — no regen implied | ☑ pass |
+| 11 | Localization UX priority documented (manual > saved > geo > Egyptian default) | ☑ pass |
+| 12 | Quality scores recorded — pass rule met (provisional) | ⚠ needs human review |
+| 13 | **Draft / not production-ready** stated explicitly | ☑ confirmed |
+| 14 | Human reviewer sign-off | ☐ pending |
 
 ---
 

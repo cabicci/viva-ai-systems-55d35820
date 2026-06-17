@@ -242,7 +242,7 @@ Selection criteria: one clear Aha each, mission present, English terms to locali
 | Stage | Output | Gate |
 |-------|--------|------|
 | **1. Read Egyptian production** | Snapshot of live TS blocks + mission rubric (read-only) | No production file edits |
-| **2. Derive MSA canonical** | `*.canonical.md` per lesson: intent + MSA draft text | Objectives/concepts/mission intent validated against live lesson |
+| **2. Derive MSA canonical** | `*.canonical.md` per lesson using [`MSA_CANONICAL_TEMPLATE.md`](adaptive-canonical/MSA_CANONICAL_TEMPLATE.md): intent + MSA draft text + quality scores | Objectives/concepts/mission intent validated against live lesson; pass rule (≥4.3/5 avg, no dimension &lt;4/5) |
 | **3. Gulf from MSA (`ar-Gulf`)** | `localePackage` draft | Gulf naturalness review; derived from MSA, not Egyptian copy-paste |
 | **4. English from MSA (`en`)** | `localePackage` draft | Plain English; same objectives checklist |
 | **5. Mission localization** | Mission block in each package | Mission constitution pass; assistant forbidden behaviors explicit |
@@ -251,6 +251,8 @@ Selection criteria: one clear Aha each, mission present, English terms to locali
 | **8. Future: video script → Remotion → Bunny** | `videoScript` + optional render | **Not in prototype execution** — production Bunny unchanged |
 
 Prototype **stops after stage 7** with draft/reviewed packages stored under `docs/playbooks/adaptive-canonical/` (and future sandbox dirs). **No learner-facing deploy.**
+
+**Extraction standard:** All MSA canonical drafts **must** follow [`adaptive-canonical/MSA_CANONICAL_TEMPLATE.md`](adaptive-canonical/MSA_CANONICAL_TEMPLATE.md) — required sections, MSA style rules, /5 quality rubric, review checklist, and reusable generation prompt. No one-off canonical formats.
 
 ---
 
@@ -329,7 +331,8 @@ The Adaptive Lesson Engine is the right long-term architecture for Masaarat's mu
 
 | Artifact | Status | Notes |
 |----------|--------|-------|
-| [`adaptive-canonical/intro-m1-l2-first-prompt.canonical.md`](adaptive-canonical/intro-m1-l2-first-prompt.canonical.md) | **draft / docs-only** | MSA canonical derived from Egyptian production · not production-ready · does not modify live lesson or Bunny video |
+| [`adaptive-canonical/MSA_CANONICAL_TEMPLATE.md`](adaptive-canonical/MSA_CANONICAL_TEMPLATE.md) | **active standard** | Reusable extraction template — **all future** `*.canonical.md` drafts must follow this file |
+| [`adaptive-canonical/intro-m1-l2-first-prompt.canonical.md`](adaptive-canonical/intro-m1-l2-first-prompt.canonical.md) | **draft / docs-only** | First sample canonical · follows template · not production-ready · does not modify live lesson or Bunny video |
 
 Additional prototype lessons (`business-m1-l2-reactive-vs-proactive`, `automator-m3-l2-triggers-actions`) remain planned; not yet canonicalized.
 
