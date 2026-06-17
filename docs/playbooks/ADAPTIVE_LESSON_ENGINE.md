@@ -334,4 +334,14 @@ The Adaptive Lesson Engine is the right long-term architecture for Masaarat’s 
 
 ---
 
+## Prototype sample outputs
+
+| Sample | Status | Notes |
+|--------|--------|-------|
+| [`adaptive-samples/intro-m1-l2-first-prompt.sample.md`](adaptive-samples/intro-m1-l2-first-prompt.sample.md) | **draft / docs-only** | First one-lesson package: `ar-MSA-v0`, `ar-EG-v0`, `ar-Gulf-v0`, `en-v0` · missions · assistant profiles · video outline · `prototype-v0` |
+
+Additional prototype lessons (`business-m1-l2-reactive-vs-proactive`, `automator-m3-l2-triggers-actions`) remain planned; not yet sampled.
+
+---
+
 *Document owner: Masaarat curriculum architecture · Prototype design only · No implementation authorized by this file.*
