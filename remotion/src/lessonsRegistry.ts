@@ -20,6 +20,7 @@ import { SCENES as L_automator_m5_l1_llm_in_flow_S, SCENE_FRAMES as L_automator_
 import { SCENES as L_automator_m4_l1_connect_database_S, SCENE_FRAMES as L_automator_m4_l1_connect_database_F, TOTAL_FRAMES as L_automator_m4_l1_connect_database_T } from "./lessons-generated/automator-m4-l1-connect-database.gen";
 import { SCENES as L_automator_m4_l3_error_handling_S, SCENE_FRAMES as L_automator_m4_l3_error_handling_F, TOTAL_FRAMES as L_automator_m4_l3_error_handling_T } from "./lessons-generated/automator-m4-l3-error-handling.gen";
 import { SCENES as L_automator_m4_l2_webhooks_api_S, SCENE_FRAMES as L_automator_m4_l2_webhooks_api_F, TOTAL_FRAMES as L_automator_m4_l2_webhooks_api_T } from "./lessons-generated/automator-m4-l2-webhooks-api.gen";
+import { SCENES as L_analyst_m5_ab_testing_S, SCENE_FRAMES as L_analyst_m5_ab_testing_F, TOTAL_FRAMES as L_analyst_m5_ab_testing_T } from "./lessons-generated/analyst-m5-ab-testing.gen";
 import { SCENES as L_analyst_m5_l1_four_numbers_dashboard_S, SCENE_FRAMES as L_analyst_m5_l1_four_numbers_dashboard_F, TOTAL_FRAMES as L_analyst_m5_l1_four_numbers_dashboard_T } from "./lessons-generated/analyst-m5-l1-four-numbers-dashboard.gen";
 import { SCENES as L_analyst_m5_l2_weekly_review_ritual_S, SCENE_FRAMES as L_analyst_m5_l2_weekly_review_ritual_F, TOTAL_FRAMES as L_analyst_m5_l2_weekly_review_ritual_T } from "./lessons-generated/analyst-m5-l2-weekly-review-ritual.gen";
 import { SCENES as L_builder_m5_l2_frontend_S, SCENE_FRAMES as L_builder_m5_l2_frontend_F, TOTAL_FRAMES as L_builder_m5_l2_frontend_T } from "./lessons-generated/builder-m5-l2-frontend.gen";
@@ -128,6 +129,7 @@ export const LESSONS: LessonModule[] = [
     { id: "automator-m4-l3-error-handling", scenes: L_automator_m4_l3_error_handling_S, sceneFrames: L_automator_m4_l3_error_handling_F, totalFrames: L_automator_m4_l3_error_handling_T },
     { id: "automator-m4-l2-webhooks-api", scenes: L_automator_m4_l2_webhooks_api_S, sceneFrames: L_automator_m4_l2_webhooks_api_F, totalFrames: L_automator_m4_l2_webhooks_api_T },
     { id: "analyst-m5-l1-four-numbers-dashboard", scenes: L_analyst_m5_l1_four_numbers_dashboard_S, sceneFrames: L_analyst_m5_l1_four_numbers_dashboard_F, totalFrames: L_analyst_m5_l1_four_numbers_dashboard_T },
+    { id: "analyst-m5-ab-testing", scenes: L_analyst_m5_ab_testing_S, sceneFrames: L_analyst_m5_ab_testing_F, totalFrames: L_analyst_m5_ab_testing_T },
     { id: "analyst-m5-l2-weekly-review-ritual", scenes: L_analyst_m5_l2_weekly_review_ritual_S, sceneFrames: L_analyst_m5_l2_weekly_review_ritual_F, totalFrames: L_analyst_m5_l2_weekly_review_ritual_T },
     { id: "builder-m5-l2-frontend", scenes: L_builder_m5_l2_frontend_S, sceneFrames: L_builder_m5_l2_frontend_F, totalFrames: L_builder_m5_l2_frontend_T },
     { id: "builder-m8-l2-rls", scenes: L_builder_m8_l2_rls_S, sceneFrames: L_builder_m8_l2_rls_F, totalFrames: L_builder_m8_l2_rls_T },
