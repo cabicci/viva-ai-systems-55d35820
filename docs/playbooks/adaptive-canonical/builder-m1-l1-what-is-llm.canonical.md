@@ -1,0 +1,295 @@
+# Adaptive Lesson Engine — MSA Canonical Draft
+
+## 1. Metadata
+
+| Field | Value |
+|-------|-------|
+| **artifactType** | `msa-canonical-draft` |
+| **lessonId** | `builder-m1-l1-what-is-llm` |
+| **pathId** | `builder` |
+| **moduleId** | `builder-m1` |
+| **productionTitle (ar-EG)** | إيه هو الـ LLM؟ |
+| **productionRoute** | `/learn/builder/builder-m1-l1-what-is-llm` |
+| **productionFile (read-only)** | `src/components/intro/lessons/builder-m1-l1-what-is-llm.ts` |
+| **productionLocale** | `ar-EG` (Egyptian Arabic — **immutable**, live experience) |
+| **canonicalVersion** | `2026-06-04.2-draft` |
+| **derivedAt** | 2026-06-04 |
+| **pilotSet** | **5-lesson MSA canonical pilot** (Builder path) |
+| **reviewStatus** | **draft / not production-ready** |
+| **oneAha** | LLM = smart autocomplete for sentences — predicts language, does not guarantee truth |
+| **workflowPosition** | Egyptian production → **this MSA canonical** → future Gulf / English / other locales |
+| **templateReference** | [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) · templateVersion `2026-06-04` |
+| **humanReviewerSignOff** | **pending** |
+
+> **Important:** This file is a **draft** MSA canonical source only — **not production-ready**. **Human reviewer sign-off pending.** It does **not** modify the live lesson, Bunny video, mission runtime, assistant/RAG seed, or any production file.
+
+---
+
+## 2. Source preservation summary
+
+### What is frozen
+
+| Asset | Status |
+|-------|--------|
+| `builder-m1-l1-what-is-llm.ts` | **Frozen** |
+| Bunny video | **Frozen** |
+| PATHS / runtime | **Frozen** |
+
+### What this artifact preserves
+
+| Element | Production value |
+|---------|------------------|
+| **Learning objective** | LLM completes language like smart autocomplete — not truth engine; verify facts before showing users |
+| **Mission rubric** | 50% real question + answer · 50% verification + product responsibility link |
+| **Quiz intent** | Wrong confident news answer — model predicts from training data, not live news |
+| **Concepts locked** | LLM, Hallucination, AI |
+| **Next lesson** | Tokens and training |
+
+### Derivation method
+
+Read-only extraction + MSA normalization.
+
+---
+
+## 3. Structured canonical source
+
+```yaml
+lessonId: builder-m1-l1-what-is-llm
+canonicalVersion: 2026-06-04.2-draft
+templateVersion: 2026-06-04
+derivedFrom:
+  productionLocale: ar-EG
+  productionFile: src/components/intro/lessons/builder-m1-l1-what-is-llm.ts
+  derivationMethod: read-only extraction + MSA normalization
+
+meta:
+  title: What Is an LLM
+  oneAha: "LLM predicts best next text — not verified truth"
+  difficulty: intro
+  estimatedMinutes: 12
+  prerequisites: []
+
+objectives:
+  - id: obj-1
+    statement: Learner explains LLM as language prediction (smart autocomplete) — not search or truth guarantee.
+    measurable: true
+  - id: obj-2
+    statement: Learner asks one verifiable question, checks AI answer, links result to product responsibility for facts.
+    measurable: true
+
+concepts:
+  - id: concept-llm
+    term: LLM
+    termEn: Large Language Model
+    definition: Smart sentence autocomplete — predicts plausible text, does not query a fact database.
+    mustPreserve: true
+  - id: concept-hallucination
+    term: Hallucination
+    termEn: Hallucination
+    definition: AI invents confident wrong information — plausible sentence, wrong content.
+    mustPreserve: true
+
+blocks:
+  - role: orientation
+    intent: First Builder lesson — optional path; real question + verification after
+  - role: tension
+    intent: Confident wrong answer — feels like it knows but completes language
+  - role: core
+    intent: LLM = autocomplete at sentence level; verification is builder responsibility
+  - role: comparison
+    intent: Treating as Google vs treating as language assistant with verification
+  - role: glossary
+    intent: LLM (نموذج لغوي كبير); Hallucination (هلوسة)
+  - role: video
+    intent: Optional LLM explainer — production Bunny unchanged
+  - role: screenshot
+    intent: AI assistant UI — question + context + guessed reply
+  - role: quiz
+    intent: Wrong news details — predicts from old training, not live feed
+  - role: mission
+    intent: Ask verifiable question; verify; link to product fact responsibility
+  - role: confidence_close
+    intent: LLM not truth; next = tokens and training
+
+mission:
+  type: practice
+  intent: Ask AI one verifiable fact question; record answer; verify via source; note right/wrong and why it matters for users
+  rubricIntent:
+    - dimension: question_and_answer
+      weight: 50
+      criteria: Clear question and answer; question has verifiable fact
+    - dimension: verification_and_build
+      weight: 50
+      criteria: Real verification step; links result to product responsibility for facts
+  forbiddenAssistantBehaviors:
+    - write_full_submission
+    - auto_pass_mission
+    - verify_facts_for_learner
+
+termsLocked: [LLM, Hallucination, AI]
+
+links:
+  nextLessonId: builder-m1-l2-tokens-training
+  continuityNote: Tokens and training — why long requests cost more
+
+slugValidation:
+  validatedAt: 2026-06-04
+  lessonId: pass
+  productionFile: pass
+  prerequisites: pass
+  nextLessonId: pass
+  missionRubric: pass
+  quizAnswer: pass
+```
+
+---
+
+## 4. Arabic MSA canonical lesson text
+
+### Orientation — بداية الدرس
+
+- **ماذا ستفهم؟** كيف «المساعد الذكي» يكمّل الكلام — مثل **autocomplete (إكمال تلقائي)** ذكي — **ولا يضمن الحقيقة**.
+- **لماذا الآن؟** أول درس في **Builder (البناء)** — مسار Level 3 **اختياري**. إذا هدفك استخدام **AI** في عملك، ليس مطلوبًا إكمال المسار.
+- **ماذا بعد الدرس؟** سؤال واقعي + طريقة **تحقق** بسيطة — لا برمجة.
+
+### Tension — موقف مألوف
+
+- سألت ChatGPT أو Gemini سؤالًا — ردّ بثقة بمعلومة — وبعد ساعة وجدتها **غير صحيحة**.
+- يبدو أنه «يعرف» — لكن الحقيقة أنه **يكمل الكلام الأنسب** مثل **autocomplete** متطوّر.
+- عندما تبني منتجًا فيه **AI**، المستخدم سيعتمد على الردود. إذا لم تفهم الفرق، ستبني ميزة **تضلّل** من دون قصد.
+
+### Core idea — الفكرة الأساسية
+
+**يخمّن الكلام الأنسب — لا يتحقق من الحقيقة**
+
+- **LLM (نموذج لغوي كبير)** = **autocomplete (إكمال تلقائي)** ذكي على مستوى جمل كاملة. يتوقّع الكلام الأنسب — **لا يبحث في Google**.
+- عندما يردّ بثقة، هذا **ليس** دليلًا أنه «يفهم» — بل أن الجملة **شكلها منطقي**.
+- في **Builder**: أي مساعد في منتجك يعمل بنفس المنطق. **التحقق من الحقائق مسؤوليتك** — لا الموديل.
+- استخدمه في الكتابة والتلخيص والأفكار. **راجع** أي أرقام أو تواريخ قبل عرضها للمستخدم.
+
+### Comparison — Google vs مساعد لغوي
+
+| خطأ: كأنه Google | صح: كمساعد لغوي |
+|------------------|-----------------|
+| تفترض كل إجابة حقيقة. ميزة «اسأل أي شيء» بدون تحذير أو تحقق — المستخدم يصدم عند معلومة **مختلقة (Hallucination)** | تستغله في ما يجيده، وتعطيه سياقًا ومصادرًا، وتضيف **خطوة تحقق** للحقائق |
+
+### Glossary — مصطلحان للبداية
+
+| المصطلح | المعنى | مثال |
+|---------|--------|------|
+| **LLM (نموذج لغوي كبير)** | **autocomplete** ذكي للجمل — يتوقّع الكلام الأنسب، لا يبحث في قاعدة بيانات | ChatGPT و Claude و Gemini — كلهم **LLM** تحت الغطاء |
+| **Hallucination (هلوسة)** | عندما **AI** يختلق معلومة **بثقة** — جملة شكلها صحيح لكن المحتوى خطأ | يذكر شخصًا أو تاريخًا خطأ في إجابة «مؤكدة» |
+
+### Video block (production reference only)
+
+> في الإنتاج: فيديو Bunny اختياري — **LLM** = توقّع اللغة لا الحقيقة. **لا يُعاد توليده**.
+
+### Screenshot block (intent)
+
+واجهة مساعد **AI** — سؤال + سياق + رد مُخمَّن. المساعد ليس مبرمجًا بإجابات جاهزة. (الأصل البصري في الإنتاج يبقى كما هو.)
+
+### Quiz — تأكيد سريع
+
+**السؤال:** سألت **AI** عن خبر حصل أمس — ردّ بتفاصيل كلها خطأ بثقة. ما أقرب سبب؟
+
+- **الإجابة الصحيحة:** يخمّن من **البيانات القديمة** التي تدرب عليها — **غير متصل** بأخبار لحظية.
+- **التفسير:** **AI** يتوقّع أقرب كلام منطقي — لا يتحقق من الخبر. عند بناء ميزة **AI**، خطّط للتحقق من الحقائق.
+
+### Mission — سؤال واقعي + طريقة تحقق
+
+**المقدمة:** جرّب بنفسك — اسأل أي **AI** سؤالًا فيه حقيقة قابلة للتحقق (تاريخ، رقم، اسم). ١٠ دقائق كافية.
+
+**التسليم:** السؤال · رد **AI** · طريقة التحقق · صح/خطأ · لماذا يهم لو ستعرض ردود **AI** للمستخدمين
+
+**معايير التقييم:**
+
+| البعد | الوزن | المعيار |
+|-------|-------|---------|
+| سؤال ورد حقيقي | 50% | السؤال والرد واضحان؛ السؤال فيه حقيقة قابلة للتحقق |
+| تحقق وربط بالبناء | 50% | طريقة تحقق فعلية؛ ربط النتيجة بمسؤولية المنتج عن الحقائق |
+
+### Confidence close
+
+- **فهمت:** **LLM** = **autocomplete** ذكي — لا ضمان للحقيقة. **Builder** Level 3 اختياري.
+- **تستطيع:** استخدامه للكتابة والأفكار — والتحقق من الحقائق قبل العرض.
+- **التالي:** **Tokens (الرموز)** والتدريب — لماذا الطلب الطويل أبطأ وأغلى.
+
+---
+
+## 5. Future generation notes
+
+Downstream `ar-Gulf` / `en` from this MSA only. Deferred: Bunny · Remotion · RAG · runtime.
+
+---
+
+## 6. Localization UX notes
+
+| Priority | Source | Rule |
+|----------|--------|------|
+| 1 | Explicit user-selected locale | Manual choice **always wins** |
+| 2 | Saved preference | Persisted |
+| 3 | Geo suggestion | Auto-suggest |
+| 4 | Default | **Egyptian Arabic production** |
+
+---
+
+## 7. Quality scoring
+
+### Draft self-assessment (not final)
+
+| Dimension | Score (/5) | Notes |
+|-----------|------------|-------|
+| Objective preservation | 4 | Pending human review |
+| Concept preservation | 5 | LLM, Hallucination only |
+| Beginner clarity | 4 | Pending read-aloud |
+| MSA simplicity | 4 | Pending dialect scan |
+| Mission consistency | 5 | 50/50 rubric matches production |
+| Quiz integrity | 5 | Training-data answer unchanged |
+| Assistant boundaries | 4 | forbiddenAssistantBehaviors listed |
+| Localization readiness | 4 | §5–§6 present |
+
+| Draft self-assessment average | 4.375 / 5 (informational only) |
+
+### Human reviewer score (required before scale)
+
+| Dimension | Score (/5) | Reviewer | Date |
+|-----------|------------|----------|------|
+| Objective preservation | — | pending | — |
+| Concept preservation | — | pending | — |
+| Beginner clarity | — | pending | — |
+| MSA simplicity | — | pending | — |
+| Mission consistency | — | pending | — |
+| Quiz integrity | — | pending | — |
+| Assistant boundaries | — | pending | — |
+| Localization readiness | — | pending | — |
+
+| Human reviewer average | **not scored** |
+| **Scale pass** | **not met — sign-off pending** |
+| **Production-ready?** | **no** |
+
+---
+
+## 8. Review checklist
+
+| # | Check | Status |
+|---|-------|--------|
+| 1 | Egyptian production untouched | ☑ pass |
+| 2 | Bunny untouched | ☑ pass |
+| 3 | Template reference | ☑ pass |
+| 4 | Objectives preserved | ⚠ needs human review |
+| 5 | No hallucinated concepts | ☑ pass |
+| 6 | Mission rubric 50/50 | ☑ pass |
+| 7 | Quiz unchanged | ☑ pass |
+| 8 | MSA from Egyptian | ⚠ needs human review |
+| 9 | English terms glossed | ⚠ needs human review |
+| 10 | Video = production ref only | ☑ pass |
+| 11 | Localization UX documented | ☑ pass |
+| 12 | Slug validation passed | ☑ pass |
+| 13 | Draft self-assessment | ☑ pass |
+| 14 | Human reviewer score | ☐ pending |
+| 15 | Draft / not production-ready | ☑ confirmed |
+| 16 | Human sign-off | ☐ **pending** |
+
+---
+
+*Artifact owner: Adaptive Lesson Engine · 5-lesson MSA canonical pilot · Draft only.*

@@ -233,7 +233,25 @@ Selection criteria: one clear Aha each, mission present, English terms to locali
 | 2 | **Business** | `business-m1-l2-reactive-vs-proactive` | Reactive vs Proactive | Leadership framing; English pair terms; mindset shift |
 | 3 | **Automator** | `automator-m3-l2-triggers-actions` | Triggers & Actions | Workflow vocabulary; diagram-friendly; technical glossaries |
 
-**Not in prototype:** Builder, Analyst, Creator, archived Business slugs.
+**Not in 3-lesson prototype:** Builder, Analyst, Creator, archived Business slugs.
+
+---
+
+## 9b. 5-lesson MSA canonical pilot (2026-06-04)
+
+Human-approved gate for the 3-lesson prototype (`481d9a2`) unlocked this **controlled pilot set** — five additional path-entry lessons, one per remaining learner path category. All follow [`MSA_CANONICAL_TEMPLATE.md`](adaptive-canonical/MSA_CANONICAL_TEMPLATE.md). **Draft / not production-ready** · `humanReviewerSignOff: pending` · no runtime integration.
+
+| # | Path | `lessonId` | Canonical draft |
+|---|------|------------|-----------------|
+| 1 | **Creator** | `creator-m1-l1-why-content` | [`creator-m1-l1-why-content.canonical.md`](adaptive-canonical/creator-m1-l1-why-content.canonical.md) |
+| 2 | **Analyst** | `analyst-m1-l1-from-automation-to-insight` | [`analyst-m1-l1-from-automation-to-insight.canonical.md`](adaptive-canonical/analyst-m1-l1-from-automation-to-insight.canonical.md) |
+| 3 | **Builder** | `builder-m1-l1-what-is-llm` | [`builder-m1-l1-what-is-llm.canonical.md`](adaptive-canonical/builder-m1-l1-what-is-llm.canonical.md) |
+| 4 | **Business** | `business-m2-l1-customer-lifecycle` | [`business-m2-l1-customer-lifecycle.canonical.md`](adaptive-canonical/business-m2-l1-customer-lifecycle.canonical.md) |
+| 5 | **Automator** | `automator-m1-l1-where-you-are` | [`automator-m1-l1-where-you-are.canonical.md`](adaptive-canonical/automator-m1-l1-where-you-are.canonical.md) |
+
+**Excluded from pilot selection:** the three prototype slugs above, all archived Business slugs (`business-m1-l3-ai-thinking-partner`, `business-m2-l4-pricing-cash-flow`, `business-m3-l4-hiring-onboarding`, `business-m4-l5-business-os-dashboard`).
+
+**Combined corpus:** 8 MSA canonical drafts (3 prototype + 5 pilot) — docs-only until human review gates pass per artifact.
 
 ---
 
@@ -334,9 +352,18 @@ The Adaptive Lesson Engine is the right long-term architecture for Masaarat's mu
 | [`adaptive-canonical/MSA_CANONICAL_TEMPLATE.md`](adaptive-canonical/MSA_CANONICAL_TEMPLATE.md) | **active standard** | Reusable extraction template — **all future** `*.canonical.md` drafts must follow this file |
 | [`adaptive-canonical/intro-m1-l2-first-prompt.canonical.md`](adaptive-canonical/intro-m1-l2-first-prompt.canonical.md) | **draft / docs-only** | Intro path sample · follows template · not production-ready |
 | [`adaptive-canonical/business-m1-l2-reactive-vs-proactive.canonical.md`](adaptive-canonical/business-m1-l2-reactive-vs-proactive.canonical.md) | **draft / docs-only** | Business path · Reactive vs Proactive · follows template · not production-ready |
-| [`adaptive-canonical/automator-m3-l2-triggers-actions.canonical.md`](adaptive-canonical/automator-m3-l2-triggers-actions.canonical.md) | **draft / docs-only** | Automator path · Triggers & Actions · follows template · not production-ready |
+| [`adaptive-canonical/automator-m3-l2-triggers-actions.canonical.md`](adaptive-canonical/automator-m3-l2-triggers-actions.canonical.md) | **draft / approved-for-pilot** | Automator path · Triggers & Actions · 3-lesson prototype gate passed |
+| [`adaptive-canonical/creator-m1-l1-why-content.canonical.md`](adaptive-canonical/creator-m1-l1-why-content.canonical.md) | **draft / docs-only** | 5-lesson pilot · Creator path entry |
+| [`adaptive-canonical/analyst-m1-l1-from-automation-to-insight.canonical.md`](adaptive-canonical/analyst-m1-l1-from-automation-to-insight.canonical.md) | **draft / docs-only** | 5-lesson pilot · Analyst path entry |
+| [`adaptive-canonical/builder-m1-l1-what-is-llm.canonical.md`](adaptive-canonical/builder-m1-l1-what-is-llm.canonical.md) | **draft / docs-only** | 5-lesson pilot · Builder path entry |
+| [`adaptive-canonical/business-m2-l1-customer-lifecycle.canonical.md`](adaptive-canonical/business-m2-l1-customer-lifecycle.canonical.md) | **draft / docs-only** | 5-lesson pilot · Business (non-archived) |
+| [`adaptive-canonical/automator-m1-l1-where-you-are.canonical.md`](adaptive-canonical/automator-m1-l1-where-you-are.canonical.md) | **draft / docs-only** | 5-lesson pilot · Automator path entry |
 
-**Prototype set:** three lessons × MSA canonical drafts — complete for Phase 1 sandbox (draft/review only; no runtime integration).
+**Prototype set:** three lessons × MSA canonical drafts — human-approved for controlled 5-lesson pilot (`481d9a2`).
+
+**5-lesson pilot set:** five path-entry lessons — see §9b. All drafts pending human sign-off; not production-ready.
+
+**Combined:** 8 canonical drafts · docs-only · no runtime integration.
 
 **Superseded:** multi-locale sample package (`adaptive-samples/intro-m1-l2-first-prompt.sample.md`) — removed; workflow reset to MSA canonical-first.
 
