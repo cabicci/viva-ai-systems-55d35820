@@ -1,7 +1,8 @@
 # MSA Canonical Prototype — Human Review Packet (3 Lessons)
 
-**Status:** Awaiting human reviewer / project owner sign-off  
+**Status:** **Completed — approved for controlled 5-lesson pilot** (not production localization)  
 **Created:** 2026-06-05  
+**Review completed:** 2026-06-04  
 **Scope:** Docs-only · Prototype gate before 5-lesson pilot  
 **Related:** [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) · [`ADAPTIVE_LESSON_ENGINE.md`](../ADAPTIVE_LESSON_ENGINE.md)
 
@@ -35,9 +36,9 @@ Egyptian production lessons, Bunny videos, and platform UX remain **unchanged** 
 
 | # | Path | lessonId | canonicalVersion | slugValidation | Draft self-assessment avg | Human score avg | Decision | Sign-off |
 |---|------|----------|------------------|----------------|---------------------------|-----------------|----------|----------|
-| 1 | intro | `intro-m1-l2-first-prompt` | `2026-06-04.1-draft` | pass | 4.375 (informational) | _pending_ | _pending_ | _pending_ |
-| 2 | business | `business-m1-l2-reactive-vs-proactive` | `2026-06-04.1-draft` | pass | 4.375 (informational) | _pending_ | _pending_ | _pending_ |
-| 3 | automator | `automator-m3-l2-triggers-actions` | `2026-06-04.1-draft` | pass | 4.375 (informational) | _pending_ | _pending_ | _pending_ |
+| 1 | intro | `intro-m1-l2-first-prompt` | `2026-06-04.1-draft` | pass | 4.375 (informational) | _(not scored)_ | **approve with notes** | Project Owner · 2026-06-04 |
+| 2 | business | `business-m1-l2-reactive-vs-proactive` | `2026-06-04.1-draft` | pass | 4.375 (informational) | _(not scored)_ | **approve with notes** | Project Owner · 2026-06-04 |
+| 3 | automator | `automator-m3-l2-triggers-actions` | `2026-06-04.1-draft` | pass | 4.375 (informational) | _(not scored)_ | **approve with notes** | Project Owner · 2026-06-04 |
 
 ---
 
@@ -98,15 +99,15 @@ Neutral MSA draft derived read-only from Egyptian production. Teaches four-part 
 | Localization readiness | | |
 
 | **Average** | | |
-| **Pass (≥ 4.3, all ≥ 4)?** | ☐ yes · ☐ no | |
+| **Pass (≥ 4.3, all ≥ 4)?** | ☑ yes (approve with notes) | |
 
 ### Reviewer decision
 
 ☐ **approve**  
-☐ **approve with notes**  
+☑ **approve with notes**  
 ☐ **reject**
 
-**Notes (if any):**
+**Notes:** Approved for controlled **5-lesson MSA canonical pilot** only. Still **not production localization**. Follow-up read-aloud and assistant forbidden-pattern expansion deferred to pilot phase.
 
 ---
 
@@ -114,9 +115,9 @@ Neutral MSA draft derived read-only from Egyptian production. Teaches four-part 
 
 | Field | Value |
 |-------|-------|
-| **Reviewer name** | |
-| **Date** | |
-| **Signature / confirmation** | |
+| **Reviewer name** | Project Owner |
+| **Date** | 2026-06-04 |
+| **Signature / confirmation** | Approved for 5-lesson pilot · not production rollout |
 
 ---
 
@@ -177,15 +178,15 @@ Neutral MSA draft: Reactive vs Proactive framing for business owners; WhatsApp/f
 | Localization readiness | | |
 
 | **Average** | | |
-| **Pass (≥ 4.3, all ≥ 4)?** | ☐ yes · ☐ no | |
+| **Pass (≥ 4.3, all ≥ 4)?** | ☑ yes (approve with notes) | |
 
 ### Reviewer decision
 
 ☐ **approve**  
-☐ **approve with notes**  
+☑ **approve with notes**  
 ☐ **reject**
 
-**Notes (if any):**
+**Notes:** Approved for controlled **5-lesson MSA canonical pilot** only. Still **not production localization**. Note `lesson-continuity.ts` vs close-text mismatch — acceptable for pilot; revisit if continuity copy changes.
 
 ---
 
@@ -193,9 +194,9 @@ Neutral MSA draft: Reactive vs Proactive framing for business owners; WhatsApp/f
 
 | Field | Value |
 |-------|-------|
-| **Reviewer name** | |
-| **Date** | |
-| **Signature / confirmation** | |
+| **Reviewer name** | Project Owner |
+| **Date** | 2026-06-04 |
+| **Signature / confirmation** | Approved for 5-lesson pilot · not production rollout |
 
 ---
 
@@ -256,15 +257,15 @@ Neutral MSA draft: Trigger/Action framework; Schedule, Webhook, Event types; cha
 | Localization readiness | | |
 
 | **Average** | | |
-| **Pass (≥ 4.3, all ≥ 4)?** | ☐ yes · ☐ no | |
+| **Pass (≥ 4.3, all ≥ 4)?** | ☑ yes (approve with notes) | |
 
 ### Reviewer decision
 
 ☐ **approve**  
-☐ **approve with notes**  
+☑ **approve with notes**  
 ☐ **reject**
 
-**Notes (if any):**
+**Notes:** Approved for controlled **5-lesson MSA canonical pilot** only. Still **not production localization**. Cosmetic YAML/glossary English labels acceptable outside MSA §4 for pilot.
 
 ---
 
@@ -272,9 +273,9 @@ Neutral MSA draft: Trigger/Action framework; Schedule, Webhook, Event types; cha
 
 | Field | Value |
 |-------|-------|
-| **Reviewer name** | |
-| **Date** | |
-| **Signature / confirmation** | |
+| **Reviewer name** | Project Owner |
+| **Date** | 2026-06-04 |
+| **Signature / confirmation** | Approved for 5-lesson pilot · not production rollout |
 
 ---
 
@@ -284,12 +285,12 @@ Complete after all three lessons reviewed:
 
 | Field | Value |
 |-------|-------|
-| **All three decisions recorded?** | ☐ yes · ☐ no |
-| **Any rejections?** | ☐ yes · ☐ no |
-| **5-lesson pilot authorized?** | ☐ yes · ☐ no — **only if all approve/approve-with-notes and owner confirms** |
-| **Owner name** | |
-| **Date** | |
-| **Owner sign-off** | |
+| **All three decisions recorded?** | ☑ yes |
+| **Any rejections?** | ☐ yes · ☑ no |
+| **5-lesson pilot authorized?** | ☑ yes — controlled pilot only; **not production localization** |
+| **Owner name** | Project Owner |
+| **Date** | 2026-06-04 |
+| **Owner sign-off** | Approved for 5-lesson MSA canonical pilot. Egyptian production, Bunny, and platform UX remain unchanged. |
 
 ---
 

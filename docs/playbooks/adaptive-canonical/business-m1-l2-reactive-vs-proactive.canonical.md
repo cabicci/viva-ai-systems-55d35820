@@ -18,9 +18,10 @@
 | **oneAha** | Reduce repetitive Reactive work with AI — make room for Proactive work that moves the business |
 | **workflowPosition** | Egyptian production → **this MSA canonical** → future Gulf / English / other locales |
 | **templateReference** | [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) · templateVersion `2026-06-04` |
-| **humanReviewerSignOff** | **pending** |
+| **humanReviewerSignOff** | **approved-for-pilot** |
+| **humanReviewerSignOffDate** | 2026-06-04 |
 
-> **Important:** This file is a **draft** MSA canonical source only — **not production-ready**. **Human reviewer sign-off pending.** It does **not** modify the live lesson, Bunny video, mission runtime, assistant/RAG seed, or any production file.
+> **Important:** This file is a **draft** MSA canonical source only — **not production-ready**. **Human reviewer sign-off: approved-for-pilot** (Project Owner · 2026-06-04) — approved only to proceed to the **5-lesson MSA canonical pilot**, **not** production rollout or localization. It does **not** modify the live lesson, Bunny video, mission runtime, assistant/RAG seed, or any production file.
 
 ---
 
@@ -289,21 +290,20 @@ Informational only — does **not** authorize scale or production use.
 
 | Draft self-assessment average | 4.375 / 5 (informational only) |
 
-### Human reviewer score (required before scale)
+### Human reviewer sign-off (via review packet)
 
-| Dimension | Score (/5) | Reviewer | Date |
-|-----------|------------|----------|------|
-| Objective preservation | — | pending | — |
-| Concept preservation | — | pending | — |
-| Beginner clarity | — | pending | — |
-| MSA simplicity | — | pending | — |
-| Mission consistency | — | pending | — |
-| Quiz integrity | — | pending | — |
-| Assistant boundaries | — | pending | — |
-| Localization readiness | — | pending | — |
+Recorded in [`HUMAN_REVIEW_PACKET_3_LESSONS.md`](HUMAN_REVIEW_PACKET_3_LESSONS.md) — per-dimension scores not recorded; decision **approve with notes**.
 
-| Human reviewer average | **not scored** |
-| **Scale pass (≥ 4.3, all ≥ 4)** | **not met — human reviewer sign-off pending** |
+| Field | Value |
+|-------|-------|
+| **Reviewer** | Project Owner |
+| **Date** | 2026-06-04 |
+| **Decision** | approve with notes |
+| **Pilot authorization** | yes — **5-lesson MSA canonical pilot only** |
+| **Note** | Approved only to proceed to 5-lesson MSA canonical pilot — **not** production rollout or localization |
+
+| Human reviewer average | **not scored — approve with notes via packet** |
+| **5-lesson pilot authorized?** | **yes — approved-for-pilot** |
 | **Production-ready?** | **no** |
 
 ---
@@ -327,9 +327,9 @@ Per [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) §10.
 | 11 | Localization UX priority documented | ☑ pass |
 | 12 | Slug validation gate passed | ☑ pass |
 | 13 | Draft self-assessment recorded (informational only) | ☑ pass |
-| 14 | Human reviewer score recorded — scale pass rule met | ☐ pending |
+| 14 | Human reviewer sign-off recorded — pilot gate met | ☑ pass (approve with notes · 2026-06-04) |
 | 15 | **Draft / not production-ready** stated explicitly | ☑ confirmed |
-| 16 | Human reviewer sign-off (name + date) | ☐ **Human reviewer sign-off pending.** |
+| 16 | Human reviewer sign-off (name + date) | ☑ **Project Owner · 2026-06-04 · approved-for-pilot** |
 
 ---
 
