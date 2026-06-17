@@ -251,7 +251,30 @@ Human-approved gate for the 3-lesson prototype (`481d9a2`) unlocked this **contr
 
 **Excluded from pilot selection:** the three prototype slugs above, all archived Business slugs (`business-m1-l3-ai-thinking-partner`, `business-m2-l4-pricing-cash-flow`, `business-m3-l4-hiring-onboarding`, `business-m4-l5-business-os-dashboard`).
 
-**Combined corpus:** 8 MSA canonical drafts (3 prototype + 5 pilot) — docs-only until human review gates pass per artifact.
+**Combined corpus (through pilot):** 8 MSA canonical drafts (3 prototype + 5 pilot) — docs-only until human review gates pass per artifact.
+
+---
+
+## 9c. 10-lesson MSA canonical controlled batch (2026-06-04)
+
+Human approval of the 3-lesson prototype and 5-lesson pilot (`3524b65`) unlocked this **controlled expansion batch** — ten additional early-path lessons (two per learner path). All follow [`MSA_CANONICAL_TEMPLATE.md`](adaptive-canonical/MSA_CANONICAL_TEMPLATE.md). **Draft / not production-ready** · `humanReviewerSignOff: pending` · no runtime integration.
+
+| # | Path | `lessonId` | Canonical draft |
+|---|------|------------|-----------------|
+| 1 | **Creator** | `creator-m1-l2-attention-economy` | [`creator-m1-l2-attention-economy.canonical.md`](adaptive-canonical/creator-m1-l2-attention-economy.canonical.md) |
+| 2 | **Creator** | `creator-m2-l1-know-audience` | [`creator-m2-l1-know-audience.canonical.md`](adaptive-canonical/creator-m2-l1-know-audience.canonical.md) |
+| 3 | **Analyst** | `analyst-m2-l1-feeling-to-question` | [`analyst-m2-l1-feeling-to-question.canonical.md`](adaptive-canonical/analyst-m2-l1-feeling-to-question.canonical.md) |
+| 4 | **Analyst** | `analyst-m2-l2-right-question-rule` | [`analyst-m2-l2-right-question-rule.canonical.md`](adaptive-canonical/analyst-m2-l2-right-question-rule.canonical.md) |
+| 5 | **Builder** | `builder-m1-l2-tokens-training` | [`builder-m1-l2-tokens-training.canonical.md`](adaptive-canonical/builder-m1-l2-tokens-training.canonical.md) |
+| 6 | **Builder** | `builder-m2-l1-prompt-layer` | [`builder-m2-l1-prompt-layer.canonical.md`](adaptive-canonical/builder-m2-l1-prompt-layer.canonical.md) |
+| 7 | **Business** | `business-m1-l1-from-decisions-to-leadership` | [`business-m1-l1-from-decisions-to-leadership.canonical.md`](adaptive-canonical/business-m1-l1-from-decisions-to-leadership.canonical.md) |
+| 8 | **Business** | `business-m2-l2-build-your-offer` | [`business-m2-l2-build-your-offer.canonical.md`](adaptive-canonical/business-m2-l2-build-your-offer.canonical.md) |
+| 9 | **Automator** | `automator-m2-l1-systems-view` | [`automator-m2-l1-systems-view.canonical.md`](adaptive-canonical/automator-m2-l1-systems-view.canonical.md) |
+| 10 | **Automator** | `automator-m2-l2-spot-patterns` | [`automator-m2-l2-spot-patterns.canonical.md`](adaptive-canonical/automator-m2-l2-spot-patterns.canonical.md) |
+
+**Excluded from batch selection:** all 8 prior canonical slugs (3 prototype + 5 pilot), all archived Business slugs, Intro path lessons.
+
+**Combined corpus:** 18 MSA canonical drafts (3 prototype + 5 pilot + 10 batch) — docs-only until human review gates pass per artifact.
 
 ---
 
@@ -358,12 +381,24 @@ The Adaptive Lesson Engine is the right long-term architecture for Masaarat's mu
 | [`adaptive-canonical/builder-m1-l1-what-is-llm.canonical.md`](adaptive-canonical/builder-m1-l1-what-is-llm.canonical.md) | **draft / docs-only** | 5-lesson pilot · Builder path entry |
 | [`adaptive-canonical/business-m2-l1-customer-lifecycle.canonical.md`](adaptive-canonical/business-m2-l1-customer-lifecycle.canonical.md) | **draft / docs-only** | 5-lesson pilot · Business (non-archived) |
 | [`adaptive-canonical/automator-m1-l1-where-you-are.canonical.md`](adaptive-canonical/automator-m1-l1-where-you-are.canonical.md) | **draft / docs-only** | 5-lesson pilot · Automator path entry |
+| [`adaptive-canonical/creator-m1-l2-attention-economy.canonical.md`](adaptive-canonical/creator-m1-l2-attention-economy.canonical.md) | **draft / docs-only** | 10-lesson batch · Creator M1 L2 |
+| [`adaptive-canonical/creator-m2-l1-know-audience.canonical.md`](adaptive-canonical/creator-m2-l1-know-audience.canonical.md) | **draft / docs-only** | 10-lesson batch · Creator M2 L1 |
+| [`adaptive-canonical/analyst-m2-l1-feeling-to-question.canonical.md`](adaptive-canonical/analyst-m2-l1-feeling-to-question.canonical.md) | **draft / docs-only** | 10-lesson batch · Analyst M2 L1 |
+| [`adaptive-canonical/analyst-m2-l2-right-question-rule.canonical.md`](adaptive-canonical/analyst-m2-l2-right-question-rule.canonical.md) | **draft / docs-only** | 10-lesson batch · Analyst M2 L2 |
+| [`adaptive-canonical/builder-m1-l2-tokens-training.canonical.md`](adaptive-canonical/builder-m1-l2-tokens-training.canonical.md) | **draft / docs-only** | 10-lesson batch · Builder M1 L2 |
+| [`adaptive-canonical/builder-m2-l1-prompt-layer.canonical.md`](adaptive-canonical/builder-m2-l1-prompt-layer.canonical.md) | **draft / docs-only** | 10-lesson batch · Builder M2 L1 |
+| [`adaptive-canonical/business-m1-l1-from-decisions-to-leadership.canonical.md`](adaptive-canonical/business-m1-l1-from-decisions-to-leadership.canonical.md) | **draft / docs-only** | 10-lesson batch · Business M1 L1 |
+| [`adaptive-canonical/business-m2-l2-build-your-offer.canonical.md`](adaptive-canonical/business-m2-l2-build-your-offer.canonical.md) | **draft / docs-only** | 10-lesson batch · Business M2 L2 |
+| [`adaptive-canonical/automator-m2-l1-systems-view.canonical.md`](adaptive-canonical/automator-m2-l1-systems-view.canonical.md) | **draft / docs-only** | 10-lesson batch · Automator M2 L1 |
+| [`adaptive-canonical/automator-m2-l2-spot-patterns.canonical.md`](adaptive-canonical/automator-m2-l2-spot-patterns.canonical.md) | **draft / docs-only** | 10-lesson batch · Automator M2 L2 |
 
 **Prototype set:** three lessons × MSA canonical drafts — human-approved for controlled 5-lesson pilot (`481d9a2`).
 
-**5-lesson pilot set:** five path-entry lessons — see §9b. All drafts pending human sign-off; not production-ready.
+**5-lesson pilot set:** five path-entry lessons — see §9b. Human sign-off recorded (`3524b65`); not production-ready.
 
-**Combined:** 8 canonical drafts · docs-only · no runtime integration.
+**10-lesson batch:** ten early-path lessons — see §9c. All drafts pending human sign-off; not production-ready.
+
+**Combined:** 18 canonical drafts · docs-only · no runtime integration.
 
 **Superseded:** multi-locale sample package (`adaptive-samples/intro-m1-l2-first-prompt.sample.md`) — removed; workflow reset to MSA canonical-first.
 
