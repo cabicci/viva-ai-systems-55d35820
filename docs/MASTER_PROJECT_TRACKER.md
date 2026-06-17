@@ -1,7 +1,7 @@
 # مسارات (masaarat.ai) — Master Project Tracker
 
 > Single source of truth for project status. Documentation only.
-> Reconciled from: `docs/CURRENT_STATUS.md`, `docs/VISUAL_BLUEPRINT.md`, `docs/playbooks/CURRICULUM_FREEZE_CONTRACT.md`, repo reality (2026-06-04, baseline `cc84946`).
+> Reconciled from: `docs/CURRENT_STATUS.md`, `docs/VISUAL_BLUEPRINT.md`, `docs/playbooks/CURRICULUM_FREEZE_CONTRACT.md`, repo reality (2026-06-04, production `26b8758`).
 >
 > Status legend: ✅ LOCKED · 🟡 IN PROGRESS · 🔴 BLOCKED · ⏸️ DEFERRED · ⚪ NOT STARTED · ❓ UNKNOWN (needs verification)
 
@@ -11,16 +11,23 @@
 
 | Field | Value |
 |------|------|
-| Current Phase | **P0 Launch Ready With Warnings** — Aggressive Controlled Launch Ready |
+| Current Phase | **P0 Launch Ready** — Aggressive Controlled Launch Ready |
 | Previous phase | Phase 3 — AI Assistant P0 ✅ FROZEN |
-| Launch Readiness | Production-ready for controlled launch; polish/video/mobile deferred per P0 Constitution |
+| Launch Readiness | Production live; drift cleanup complete enough for launch; polish/video/mobile deferred per P0 Constitution |
 | Critical blockers | 0 |
+| High runtime blockers | 0 |
 | High-priority open items | Brand visual implementation; Visual Freeze F1.c–F8; video audit; mobile UX — **post-launch hardening**, not launch gates |
-| Last major milestone | P0 launch hardening: canonical fix + standalone assistant auth (`cc84946`) |
-| Last commit snapshot | `cc84946` — "fix: require auth for standalone assistant page" (local + origin/main synced) |
-| Last production commit (per CURRENT_STATUS) | `cc84946` (masaarat.ai) |
+| Drift cleanup | **Complete enough for launch** — Final Drift Re-audit PASS (Batches 1–4C + onboarding hotfix) |
+| Production smoke | **PASS** — `/`, auth redirects, `/onboarding` → `/login`, legal pages; no spinner/loop/leak |
+| Last major milestone | Post-drift launch status + onboarding redirect hotfix (`26b8758`) |
+| Last commit snapshot | `26b8758` — "fix: prevent onboarding redirect spinner" (local + origin/main synced) |
+| Last production commit (per CURRENT_STATUS) | `26b8758` (masaarat.ai) |
 
-**Current launch decision:** P0 aggressive controlled launch is **allowed with warnings**. Remaining items are post-launch hardening/cleanup unless live user evidence elevates them to Critical/High. Supersedes pre-constitution perfection gating in §14 below.
+**Current launch decision:** P0 aggressive controlled launch is **ready**. Critical blockers = 0; high runtime blockers = 0. Remaining items are post-launch hardening unless live user evidence elevates them. Supersedes pre-constitution perfection gating in §14 below.
+
+**Known post-launch (non-blocking):** Remotion registry missing `analyst-m5-ab-testing` — future video regeneration only; Bunny learner playback 100/100.
+
+**Next recommended options:** launch/marketing preparation · optional Remotion alignment batch · post-launch hardening backlog.
 
 ---
 
@@ -698,7 +705,7 @@ Current visual score (per blueprint): **68/100**.
 
 **P0 operating model:** `docs/playbooks/P0_LAUNCH_CONSTITUTION.md` — Aggressive Launch + Rapid Iteration. Launch is not gated on visual perfection; Critical trust/security issues still block.
 
-**Current launch decision (2026-06):** P0 aggressive controlled launch is **allowed with warnings**. Critical blockers = 0. Mega Source-of-Truth Audit and production route/source smoke: **PASS WITH WARNINGS**.
+**Current launch decision (2026-06):** P0 aggressive controlled launch is **ready**. Critical blockers = 0; high runtime blockers = 0. Final Drift Re-audit **PASS**. Production smoke **PASS** (post onboarding hotfix `26b8758`). Drift cleanup complete enough for launch.
 
 **Security launch blockers (closed):** workbook admin lock, persona-sim internal-only (+ local `public/persona-sim` leak cleaned), legal draft pages, admin route guards (Batch A1/A2), duplicate canonical fixed (`0d58a49`), standalone `/ai-assistant` auth-gated (`cc84946`).
 

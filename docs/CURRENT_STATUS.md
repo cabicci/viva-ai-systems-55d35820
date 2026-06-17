@@ -2,9 +2,11 @@
 
 ## Current Phase
 
-**P0 Launch Ready With Warnings** — Aggressive Controlled Launch Ready
+**P0 Launch Ready** — Aggressive Controlled Launch Ready
 
 Operating model: `docs/playbooks/P0_LAUNCH_CONSTITUTION.md`.
+
+Drift cleanup: **complete enough for launch** (Final Drift Re-audit PASS — launch blockers 0, high runtime blockers 0).
 
 ## Completed
 
@@ -40,11 +42,14 @@ Operating model: `docs/playbooks/P0_LAUNCH_CONSTITUTION.md`.
 - In-lesson assistant: `AssistantPanel` compact embedded on every open lesson (`/learn/$pathId/$lessonId`)
 - `public/persona-sim` local leak cleaned; assets secured under `src/data/` + admin-only server fns
 - Mega Source-of-Truth Audit: **PASS WITH WARNINGS**
-- Production route/source smoke: **PASS WITH WARNINGS**
+- Drift cleanup Batches 1–4C completed (route auth, brand/naming, stale audit artifacts, Remotion loader drift)
+- Final Drift Re-audit: **PASS** — launch blockers 0; PATHS 100; registry/content 104 (100 learner + 4 archived Business); RAG seed 100; Bunny playback 100/100
+- Production route/source smoke: **PASS** (post onboarding hotfix — no spinner, no redirect loop, no protected content exposed)
+- Onboarding legacy redirect hotfix — `26b8758`
 
 ## In Progress
 
-- Post-launch hardening and cleanup (warnings only — not launch blockers)
+- Post-launch hardening and cleanup (non-blocking backlog only)
 - Visual Freeze Planning (deferred polish per P0 Constitution)
 
 ## Blocked
@@ -53,15 +58,23 @@ None
 
 ## Launch blockers
 
-**Critical / High: 0 open.** Remaining items are warnings and post-launch hardening unless newly proven Critical.
+**Critical / High / High runtime: 0 open.** Remaining items are post-launch hardening unless live evidence elevates them.
+
+## Known post-launch (non-blocking)
+
+- Remotion registry missing `analyst-m5-ab-testing` — affects **future video regeneration pipeline only**; Bunny learner playback remains **100/100** (GUID exists).
 
 ## Latest Production Commit
 
-cc84946e4b59c06b9d4299383d7a5700d6ccc8d8
+26b87589d563ee9b9399b64339026516aa28e83e
 
 ## Next Planned Step
 
-Aggressive Controlled Launch → 72h observation → evidence-driven rapid fixes (per P0 Launch Constitution)
+Choose one (all valid post-drift):
+
+1. **Launch / marketing preparation** — aggressive controlled launch + 72h observation (per P0 Launch Constitution)
+2. **Optional small Remotion alignment batch** — add `analyst-m5-ab-testing` before future video regeneration (not required for current playback)
+3. **Post-launch hardening backlog** — system-state GAPS refresh, doc/tooling sync, visual polish
 
 ## Latest Assistant Milestone
 
