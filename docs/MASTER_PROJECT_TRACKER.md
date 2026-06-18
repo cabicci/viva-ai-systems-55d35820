@@ -21,7 +21,7 @@
 | Video layer | Bunny playback **100/100** · Remotion registry **100/100** learner (104 total = 100 + 4 archived) — aligned `6a6a40e` |
 | Production smoke | **PASS** — `/`, auth redirects, `/onboarding` → `/login`, legal pages; no spinner/loop/leak |
 | Last major milestone | Remotion registry alignment (`6a6a40e`) — restored `analyst-m5-ab-testing`; no regen/upload |
-| Last commit snapshot | `6a6a40e` — "fix: align remotion registry with learner path" (local + origin/main synced) |
+| Last commit snapshot | `f355a9c` — MSA canonical API audit fixes; gate docs pending this commit |
 | Last production commit (per CURRENT_STATUS) | `26b8758` (masaarat.ai runtime); registry fix `6a6a40e` (Remotion-only) |
 
 **Current launch decision:** P0 aggressive controlled launch is **ready**. Critical blockers = 0; high runtime blockers = 0. **Technical cleanup closed.** Remaining items are post-launch hardening unless live user evidence elevates them. Supersedes pre-constitution perfection gating in §14 below.
@@ -736,7 +736,33 @@ Current visual score (per blueprint): **68/100**.
 
 ---
 
-## 15. Immediate Next Priorities
+## 15. Adaptive Lesson Engine — MSA Canonical ✅ DOCS GATE CLOSED
+
+> **Scope:** Design + offline `*.canonical.md` drafts only. Egyptian production, Bunny, Remotion registry, PATHS, missions, and assistant runtime **unchanged**.
+
+| Milestone | Status | Ref |
+|-----------|--------|-----|
+| Engine playbook + template | ✅ | `ADAPTIVE_LESSON_ENGINE.md` · `MSA_CANONICAL_TEMPLATE.md` |
+| Corpus coverage | ✅ **100 / 100** learner-path lessons | `a88e251` |
+| API audit runner | ✅ Hardened (timeout, retry, resume, lock, checkpoint) | `b1f7826` |
+| Full API audit (Anthropic `claude-sonnet-4-6`) | ✅ | Initial: 3 PASS · 95 PASS WITH NOTES · 2 CONTENT FAIL · 0 ERROR_RETRY_REQUIRED |
+| Targeted content fixes | ✅ | `analyst-m5-ab-testing` · `business-m4-l2-reactive-relapse` — `f355a9c` |
+| Targeted re-audit | ✅ Both **PASS WITH NOTES** | |
+| **Final corpus QA** | ✅ **3 PASS · 97 PASS WITH NOTES · 0 CONTENT FAIL · 0 ERROR_RETRY_REQUIRED** | §9f `ADAPTIVE_LESSON_ENGINE.md` |
+| Human reviewer sign-off | ⏸️ **pending** per artifact | Not production-ready |
+| Runtime locale wiring | ⏸️ NOT STARTED | Gate 1 below |
+| Video script / render from canonical | ⏸️ NOT STARTED | Gate 2 below |
+| Assistant / mission localization | ⏸️ NOT STARTED | Gate 3 below |
+
+**Next architecture gates (not launch blockers):**
+
+1. Language / runtime architecture
+2. Media / video script / render architecture
+3. Assistant / mission localization architecture
+
+---
+
+## 16. Immediate Next Priorities
 
 1. **Phase 4 brand implementation plan** (BrandMark, logo, favicon, OG, learner-facing labels)
 2. **Lesson image audit** (Section 7) — full pass, classify gaps

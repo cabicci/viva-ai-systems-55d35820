@@ -343,6 +343,63 @@ After §9d accelerated batch self-audit (**PASS WITH NOTES**), this pass complet
 
 ---
 
+## 9f. API audit gate — corpus QA complete (2026-06-18)
+
+After §9e corpus completion (`a88e251`), an **AI-assisted read-only audit** compared every `*.canonical.md` draft against its frozen Egyptian production lesson. Pipeline: [`API_AUDIT_PIPELINE.md`](adaptive-canonical/API_AUDIT_PIPELINE.md) · runner `scripts/adaptive-canonical/audit-canonical.ts` · hardened `b1f7826`.
+
+| Field | Value |
+|-------|-------|
+| **Reviewer** | Anthropic · `claude-sonnet-4-6` |
+| **Corpus audited** | 100 / 100 learner-path lessons |
+| **Production / runtime** | **Unchanged** — Egyptian lessons, Bunny, Remotion, PATHS, missions frozen |
+| **Artifact status** | All canonical drafts remain **draft / not production-ready** · `humanReviewerSignOff: pending` |
+
+### Initial full audit (100 lessons)
+
+| Result | Count |
+|--------|-------|
+| PASS | 3 |
+| PASS WITH NOTES | 95 |
+| CONTENT FAIL | 2 |
+| ERROR_RETRY_REQUIRED | 0 |
+
+**CONTENT FAIL lessons (initial):**
+
+| lessonId | Blocker type | Fix commit |
+|----------|--------------|------------|
+| `analyst-m5-ab-testing` | `moduleId` contradiction (`analyst-m6` → `analyst-m5`) + §4 too thin | `f355a9c` |
+| `business-m4-l2-reactive-relapse` | §4 bullet skeleton — not voice-over/localization ready | `f355a9c` |
+
+### Targeted re-audit (post-fix)
+
+| lessonId | Result |
+|----------|--------|
+| `analyst-m5-ab-testing` | **PASS WITH NOTES** |
+| `business-m4-l2-reactive-relapse` | **PASS WITH NOTES** |
+
+### Final corpus QA result
+
+| Result | Count |
+|--------|-------|
+| PASS | 3 |
+| PASS WITH NOTES | 97 |
+| CONTENT FAIL | 0 |
+| ERROR_RETRY_REQUIRED | 0 |
+
+**Gate status:** **API audit content failures resolved** — no hard blockers remain for docs-only canonical corpus QA. Soft notes (read-aloud polish, glossary consistency, diagram alt-text) are deferred to human review batches.
+
+**Not in scope (explicit):** production wiring · runtime locale switching · video script render · Bunny regen · assistant/RAG localization · human sign-off upgrade.
+
+### Next architecture gates (post-audit)
+
+1. **Language / runtime architecture** — how MSA canonical feeds learner locale without replacing Egyptian default
+2. **Media / video script / render architecture** — Gulf/EN script derivation; Remotion/Bunny only when chartered
+3. **Assistant / mission localization architecture** — mission packages + retrieval pins from canonical version
+
+**Local audit artifacts:** `reports/API_AUDIT_*.md` may exist on disk for debugging; checkpoint/lock/JSON files are gitignored — this section is the committed gate record.
+
+---
+
 ## 10. Prototype stages (MSA canonical-first)
 
 | Stage | Output | Gate |
