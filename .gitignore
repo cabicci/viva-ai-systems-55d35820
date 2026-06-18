@@ -51,3 +51,6 @@ scripts/persona-sim/**/persona-sim-p100-*
 scripts/persona-sim/**/*-raw.json
 scripts/persona-sim/**/*checkpoint*.json
 scripts/persona-sim/**/*.heatmap.csv
+
+# Canonical API audit runtime lock (never commit)
+docs/playbooks/adaptive-canonical/reports/.audit.lock
