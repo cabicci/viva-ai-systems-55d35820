@@ -1,10 +1,10 @@
-# Adaptive Lesson Engine — MSA Canonical Draft
+# Adaptive Lesson Engine — MSA Canonical Lesson Script
 
 ## 1. Metadata
 
 | Field | Value |
 |-------|-------|
-| **artifactType** | `msa-canonical-draft` |
+| **artifactType** | `msa-canonical-script` |
 | **lessonId** | `builder-m1-l1-what-is-llm` |
 | **pathId** | `builder` |
 | **moduleId** | `builder-m1` |
@@ -12,10 +12,12 @@
 | **productionRoute** | `/learn/builder/builder-m1-l1-what-is-llm` |
 | **productionFile (read-only)** | `src/components/intro/lessons/builder-m1-l1-what-is-llm.ts` |
 | **productionLocale** | `ar-EG` (Egyptian Arabic — **immutable**, live experience) |
-| **canonicalVersion** | `2026-06-04.2-draft` |
+| **canonicalVersion** | `2026-06-18.1-polished` |
 | **derivedAt** | 2026-06-04 |
 | **pilotSet** | **5-lesson MSA canonical pilot** (Builder path) |
-| **reviewStatus** | **draft / not production-ready** |
+| **reviewStatus** | **polished / not production-wired** |
+| **scriptLayer** | **MSA Canonical Lesson Script** — API-reviewed · architecture-ready · not production-wired / not rendered / not runtime-localized |
+| **polishPass** | `2026-06-18` |
 | **oneAha** | LLM = smart autocomplete for sentences — predicts language, does not guarantee truth |
 | **workflowPosition** | Egyptian production → **this MSA canonical** → future Gulf / English / other locales |
 | **templateReference** | [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) · templateVersion `2026-06-04` |
@@ -56,7 +58,7 @@ Read-only extraction + MSA normalization.
 
 ```yaml
 lessonId: builder-m1-l1-what-is-llm
-canonicalVersion: 2026-06-04.2-draft
+canonicalVersion: 2026-06-18.1-polished
 templateVersion: 2026-06-04
 derivedFrom:
   productionLocale: ar-EG
@@ -147,6 +149,8 @@ slugValidation:
 
 ## 4. Arabic MSA canonical lesson text
 
+> **Dialect:** Modern Standard Arabic (neutral) · **Role:** final MSA canonical lesson script for downstream locale derivation · **Not:** live Egyptian copy · **Not:** production-wired or rendered
+
 ### Orientation — بداية الدرس
 
 - **ماذا ستفهم؟** كيف «المساعد الذكي» يكمّل الكلام — مثل **autocomplete (إكمال تلقائي)** ذكي — **ولا يضمن الحقيقة**.
@@ -191,6 +195,8 @@ slugValidation:
 
 ### Quiz — تأكيد سريع
 
+> **Quiz key (unchanged):** correctIndex: 0
+
 **السؤال:** سألت **AI** عن خبر حصل أمس — ردّ بتفاصيل كلها خطأ بثقة. ما أقرب سبب؟
 
 - **الإجابة الصحيحة:** يخمّن من **البيانات القديمة** التي تدرب عليها — **غير متصل** بأخبار لحظية.
@@ -223,6 +229,33 @@ Downstream `ar-Gulf` / `en` from this MSA only. Deferred: Bunny · Remotion · R
 
 ---
 
+### Script layer status (polish lock — 2026-06-18)
+
+| Field | Value |
+|-------|-------|
+| **Layer** | MSA Canonical Lesson Script |
+| **API audit** | 100/100 reviewed (Anthropic) — 0 CONTENT FAIL |
+| **Polish pass** | 2026-06-18 — read-aloud naturalness, gloss normalization, quiz reasoning, mission clarity |
+| **Production wiring** | **Not wired** — Egyptian `ar-EG` remains default UX |
+| **Video / render** | **Not rendered** — Bunny production videos frozen |
+| **Runtime localization** | **Not active** — no locale switch in `src/` |
+| **Human sign-off** | **pending** — not production-ready for rollout |
+
+### Feeds next architecture stages (when chartered)
+
+1. Runtime language / locale architecture
+2. Video script / voice-over pipeline
+3. Assistant localization
+4. Mission localization packages
+5. Gulf / English / other locale generation from MSA — **not** from Egyptian directly
+
+### Explicitly deferred
+
+- Remotion render / Bunny upload / publish
+- Runtime locale switching in `src/`
+- Mission evaluator changes
+- Assistant/RAG seed from canonical
+- Replacing Egyptian on-page copy with this MSA text
 ## 6. Localization UX notes
 
 | Priority | Source | Rule |
@@ -242,7 +275,7 @@ Downstream `ar-Gulf` / `en` from this MSA only. Deferred: Bunny · Remotion · R
 |-----------|------------|-------|
 | Objective preservation | 4 | Pending human review |
 | Concept preservation | 5 | LLM, Hallucination only |
-| Beginner clarity | 4 | Pending read-aloud |
+| Beginner clarity | 4 | Polish pass 2026-06-18; pending human read-aloud |
 | MSA simplicity | 4 | Pending dialect scan |
 | Mission consistency | 5 | 50/50 rubric matches production |
 | Quiz integrity | 5 | Training-data answer unchanged |
@@ -287,9 +320,9 @@ Recorded in [`HUMAN_REVIEW_PACKET_5_LESSONS.md`](HUMAN_REVIEW_PACKET_5_LESSONS.m
 | 12 | Slug validation passed | ☑ pass |
 | 13 | Draft self-assessment | ☑ pass |
 | 14 | Human reviewer sign-off recorded — next-batch gate met | ☑ pass (approve with notes · 2026-06-04) |
-| 15 | Draft / not production-ready | ☑ confirmed |
+| 15 | Polished / not production-wired | ☑ confirmed |
 | 16 | Human sign-off | ☑ **Project Owner · 2026-06-04 · approved-for-next-batch** |
 
 ---
 
-*Artifact owner: Adaptive Lesson Engine · 5-lesson MSA canonical pilot · Draft only.*
+*Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*

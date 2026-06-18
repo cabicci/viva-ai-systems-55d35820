@@ -1,10 +1,10 @@
-# Adaptive Lesson Engine — MSA Canonical Draft
+# Adaptive Lesson Engine — MSA Canonical Lesson Script
 
 ## 1. Metadata
 
 | Field | Value |
 |-------|-------|
-| **artifactType** | `msa-canonical-draft` |
+| **artifactType** | `msa-canonical-script` |
 | **lessonId** | `intro-m1-l2-first-prompt` |
 | **pathId** | `intro` |
 | **moduleId** | `intro-m1` |
@@ -12,9 +12,11 @@
 | **productionRoute** | `/learn/intro/intro-m1-l2-first-prompt` |
 | **productionFile (read-only)** | `src/components/intro/lessons/intro-m1-l2-first-prompt.ts` |
 | **productionLocale** | `ar-EG` (Egyptian Arabic — **immutable**, live experience) |
-| **canonicalVersion** | `2026-06-04.1-draft` |
+| **canonicalVersion** | `2026-06-18.1-polished` |
 | **derivedAt** | 2026-06-04 |
-| **reviewStatus** | **draft / not production-ready** |
+| **reviewStatus** | **polished / not production-wired** |
+| **scriptLayer** | **MSA Canonical Lesson Script** — API-reviewed · architecture-ready · not production-wired / not rendered / not runtime-localized |
+| **polishPass** | `2026-06-18` |
 | **oneAha** | A clear prompt = Role + Context + Task + Format — not magic words |
 | **workflowPosition** | Egyptian production → **this MSA canonical** → future Gulf / English / other locales |
 | **templateReference** | [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) · templateVersion `2026-06-04` |
@@ -61,7 +63,7 @@
 
 ```yaml
 lessonId: intro-m1-l2-first-prompt
-canonicalVersion: 2026-06-04.1-draft
+canonicalVersion: 2026-06-18.1-polished
 templateVersion: 2026-06-04
 derivedFrom:
   productionLocale: ar-EG
@@ -208,6 +210,8 @@ slugValidation:
 
 ### Quiz — تأكيد سريع
 
+> **Quiz key (unchanged):** correctIndex: 0
+
 **السؤال:** أحمد كتب: «اكتب إيميلًا لوظيفة جديدة». ما أهم إضافة أولًا؟
 
 - **الإجابة الصحيحة:** سياق — من أحمد، ما الوظيفة، ولماذا هذا الإيميل.
@@ -258,7 +262,7 @@ slugValidation:
 ### Version pin chain (future)
 
 ```
-canonicalVersion: 2026-06-04.1-draft
+canonicalVersion: 2026-06-18.1-polished
     │
     ├── localeVersion: ar-Gulf.* (future, from MSA)
     ├── localeVersion: en.* (future, from MSA)
@@ -278,6 +282,33 @@ canonicalVersion: 2026-06-04.1-draft
 
 ---
 
+### Script layer status (polish lock — 2026-06-18)
+
+| Field | Value |
+|-------|-------|
+| **Layer** | MSA Canonical Lesson Script |
+| **API audit** | 100/100 reviewed (Anthropic) — 0 CONTENT FAIL |
+| **Polish pass** | 2026-06-18 — read-aloud naturalness, gloss normalization, quiz reasoning, mission clarity |
+| **Production wiring** | **Not wired** — Egyptian `ar-EG` remains default UX |
+| **Video / render** | **Not rendered** — Bunny production videos frozen |
+| **Runtime localization** | **Not active** — no locale switch in `src/` |
+| **Human sign-off** | **pending** — not production-ready for rollout |
+
+### Feeds next architecture stages (when chartered)
+
+1. Runtime language / locale architecture
+2. Video script / voice-over pipeline
+3. Assistant localization
+4. Mission localization packages
+5. Gulf / English / other locale generation from MSA — **not** from Egyptian directly
+
+### Explicitly deferred
+
+- Remotion render / Bunny upload / publish
+- Runtime locale switching in `src/`
+- Mission evaluator changes
+- Assistant/RAG seed from canonical
+- Replacing Egyptian on-page copy with this MSA text
 ## 6. Localization UX notes
 
 When platform localization ships (future — not implemented by this draft):
@@ -312,7 +343,7 @@ Informational only — does **not** authorize scale or production use.
 |-----------|------------|-------|
 | **Objective preservation** | 4 | Objectives present; pending human review |
 | **Concept preservation** | 5 | Prompt, Context, four-part framework only |
-| **Beginner clarity** | 4 | Simple sentences; pending read-aloud review |
+| **Beginner clarity** | 4 | Simple sentences; polish pass 2026-06-18; pending human read-aloud review |
 | **MSA simplicity** | 4 | Neutral MSA; pending dialect/formality scan |
 | **Mission consistency** | 5 | 70/30 rubric and task intent match production |
 | **Quiz integrity** | 5 | Context-first answer unchanged |
@@ -364,4 +395,4 @@ Per [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) §10.
 
 ---
 
-*Artifact owner: Adaptive Lesson Engine prototype · MSA canonical-first workflow · Draft only · Does not modify production lesson, video, or runtime.*
+*Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*

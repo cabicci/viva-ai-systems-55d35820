@@ -736,9 +736,9 @@ Current visual score (per blueprint): **68/100**.
 
 ---
 
-## 15. Adaptive Lesson Engine — MSA Canonical ✅ DOCS GATE CLOSED
+## 15. Adaptive Lesson Engine — MSA Canonical ✅ SCRIPT LAYER LOCKED
 
-> **Scope:** Design + offline `*.canonical.md` drafts only. Egyptian production, Bunny, Remotion registry, PATHS, missions, and assistant runtime **unchanged**.
+> **Scope:** Offline `*.canonical.md` **MSA Canonical Lesson Scripts** only. Egyptian production, Bunny, Remotion registry, PATHS, missions, and assistant runtime **unchanged**.
 
 | Milestone | Status | Ref |
 |-----------|--------|-----|
@@ -749,8 +749,9 @@ Current visual score (per blueprint): **68/100**.
 | Dry-run contamination fix | ✅ | Re-audited `analyst-m1-l1` · `analyst-m2-l1` · `analyst-m2-l2` — all **PASS WITH NOTES** (real API) |
 | Targeted content fixes | ✅ | `analyst-m5-ab-testing` · `business-m4-l2-reactive-relapse` — `f355a9c` |
 | Targeted re-audit | ✅ Both **PASS WITH NOTES** | |
-| **Final corpus QA** | ✅ **0 PASS · 100 PASS WITH NOTES · 0 CONTENT FAIL · 0 ERROR_RETRY_REQUIRED** | §9f `ADAPTIVE_LESSON_ENGINE.md` |
-| Human reviewer sign-off | ⏸️ **pending** per artifact | Not production-ready |
+| **Final corpus QA** | ✅ **0 PASS · 100 PASS WITH NOTES · 0 CONTENT FAIL · 0 ERROR_RETRY_REQUIRED** | §9f |
+| **Polish + script lock** | ✅ **100 / 100** · `2026-06-18.1-polished` · **polished / not production-wired** | §9g |
+| Human reviewer sign-off | ⏸️ **pending** per artifact | Not production-wired |
 | Runtime locale wiring | ⏸️ NOT STARTED | Gate 1 below |
 | Video script / render from canonical | ⏸️ NOT STARTED | Gate 2 below |
 | Assistant / mission localization | ⏸️ NOT STARTED | Gate 3 below |

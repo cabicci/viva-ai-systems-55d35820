@@ -1,10 +1,10 @@
-# Adaptive Lesson Engine — MSA Canonical Draft
+# Adaptive Lesson Engine — MSA Canonical Lesson Script
 
 ## 1. Metadata
 
 | Field | Value |
 |-------|-------|
-| **artifactType** | `msa-canonical-draft` |
+| **artifactType** | `msa-canonical-script` |
 | **lessonId** | `analyst-m1-l1-from-automation-to-insight` |
 | **pathId** | `analyst` |
 | **moduleId** | `analyst-m1` |
@@ -12,10 +12,12 @@
 | **productionRoute** | `/learn/analyst/analyst-m1-l1-from-automation-to-insight` |
 | **productionFile (read-only)** | `src/components/intro/lessons/analyst-m1-l1-from-automation-to-insight.ts` |
 | **productionLocale** | `ar-EG` (Egyptian Arabic — **immutable**, live experience) |
-| **canonicalVersion** | `2026-06-04.2-draft` |
+| **canonicalVersion** | `2026-06-18.1-polished` |
 | **derivedAt** | 2026-06-04 |
 | **pilotSet** | **5-lesson MSA canonical pilot** (Analyst path) |
-| **reviewStatus** | **draft / not production-ready** |
+| **reviewStatus** | **polished / not production-wired** |
+| **scriptLayer** | **MSA Canonical Lesson Script** — API-reviewed · architecture-ready · not production-wired / not rendered / not runtime-localized |
+| **polishPass** | `2026-06-18` |
 | **oneAha** | Having numbers ≠ knowing what to do — Analyst asks before opening any report |
 | **workflowPosition** | Egyptian production → **this MSA canonical** → future Gulf / English / other locales |
 | **templateReference** | [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) · templateVersion `2026-06-04` |
@@ -58,7 +60,7 @@ Read-only extraction from Egyptian TS + MSA normalization. No production writes.
 
 ```yaml
 lessonId: analyst-m1-l1-from-automation-to-insight
-canonicalVersion: 2026-06-04.2-draft
+canonicalVersion: 2026-06-18.1-polished
 templateVersion: 2026-06-04
 derivedFrom:
   productionLocale: ar-EG
@@ -195,6 +197,8 @@ slugValidation:
 
 ### Quiz — تأكيد سريع
 
+> **Quiz key (unchanged):** correctIndex: 2
+
 **السؤال:** لاحظت أن كثيرًا من الزبائن يضيفون منتجات للسلة ولا يشترون. ما أفضل أول سؤال للبيانات؟
 
 - **الإجابة الصحيحة:** **أين بالضبط** يترك الزبائن عملية الشراء (**funnel drop-off**)؟
@@ -232,6 +236,33 @@ Deferred: Bunny regen · Remotion · RAG seed · runtime · PATHS changes.
 
 ---
 
+### Script layer status (polish lock — 2026-06-18)
+
+| Field | Value |
+|-------|-------|
+| **Layer** | MSA Canonical Lesson Script |
+| **API audit** | 100/100 reviewed (Anthropic) — 0 CONTENT FAIL |
+| **Polish pass** | 2026-06-18 — read-aloud naturalness, gloss normalization, quiz reasoning, mission clarity |
+| **Production wiring** | **Not wired** — Egyptian `ar-EG` remains default UX |
+| **Video / render** | **Not rendered** — Bunny production videos frozen |
+| **Runtime localization** | **Not active** — no locale switch in `src/` |
+| **Human sign-off** | **pending** — not production-ready for rollout |
+
+### Feeds next architecture stages (when chartered)
+
+1. Runtime language / locale architecture
+2. Video script / voice-over pipeline
+3. Assistant localization
+4. Mission localization packages
+5. Gulf / English / other locale generation from MSA — **not** from Egyptian directly
+
+### Explicitly deferred
+
+- Remotion render / Bunny upload / publish
+- Runtime locale switching in `src/`
+- Mission evaluator changes
+- Assistant/RAG seed from canonical
+- Replacing Egyptian on-page copy with this MSA text
 ## 6. Localization UX notes
 
 | Priority | Source | Rule |
@@ -251,7 +282,7 @@ Deferred: Bunny regen · Remotion · RAG seed · runtime · PATHS changes.
 |-----------|------------|-------|
 | **Objective preservation** | 4 | Pending human review |
 | **Concept preservation** | 5 | Data, Insight only — no new tools |
-| **Beginner clarity** | 4 | Pending read-aloud |
+| **Beginner clarity** | 4 | Polish pass 2026-06-18; pending human read-aloud |
 | **MSA simplicity** | 4 | Pending dialect scan |
 | **Mission consistency** | 5 | 60/40 rubric matches production |
 | **Quiz integrity** | 5 | Funnel drop-off answer unchanged |
@@ -301,4 +332,4 @@ Recorded in [`HUMAN_REVIEW_PACKET_5_LESSONS.md`](HUMAN_REVIEW_PACKET_5_LESSONS.m
 
 ---
 
-*Artifact owner: Adaptive Lesson Engine · 5-lesson MSA canonical pilot · Draft only.*
+*Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*

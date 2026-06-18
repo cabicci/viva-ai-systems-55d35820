@@ -1,10 +1,10 @@
-# Adaptive Lesson Engine — MSA Canonical Draft
+# Adaptive Lesson Engine — MSA Canonical Lesson Script
 
 ## 1. Metadata
 
 | Field | Value |
 |-------|-------|
-| **artifactType** | `msa-canonical-draft` |
+| **artifactType** | `msa-canonical-script` |
 | **lessonId** | `analyst-m5-ab-testing` |
 | **pathId** | `analyst` |
 | **moduleId** | `analyst-m5` |
@@ -12,10 +12,12 @@
 | **productionRoute** | `/learn/analyst/analyst-m5-ab-testing` |
 | **productionFile (read-only)** | `src/components/intro/lessons/analyst-m5-ab-testing.ts` |
 | **productionLocale** | `ar-EG` (Egyptian Arabic — **immutable**, live experience) |
-| **canonicalVersion** | `2026-06-04.5-draft` |
+| **canonicalVersion** | `2026-06-18.1-polished` |
 | **derivedAt** | 2026-06-18 |
 | **pilotSet** | **final corpus completion batch** |
-| **reviewStatus** | **draft / not production-ready** |
+| **reviewStatus** | **polished / not production-wired** |
+| **scriptLayer** | **MSA Canonical Lesson Script** — API-reviewed · architecture-ready · not production-wired / not rendered / not runtime-localized |
+| **polishPass** | `2026-06-18` |
 | **oneAha** | A/B = one change, one metric — not random experiments |
 | **workflowPosition** | Egyptian production → **this MSA canonical** → future Gulf / English / other locales |
 | **templateReference** | [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) · templateVersion `2026-06-04` |
@@ -57,7 +59,7 @@ Read-only extraction + MSA normalization from Egyptian production blocks.
 
 ```yaml
 lessonId: analyst-m5-ab-testing
-canonicalVersion: 2026-06-04.5-draft
+canonicalVersion: 2026-06-18.1-polished
 templateVersion: 2026-06-04
 derivedFrom:
   productionLocale: ar-EG
@@ -144,6 +146,8 @@ slugValidation:
 
 ## 4. Arabic MSA canonical lesson text
 
+> **Dialect:** Modern Standard Arabic (neutral) · **Role:** final MSA canonical lesson script for downstream locale derivation · **Not:** live Egyptian copy · **Not:** production-wired or rendered
+
 ### Orientation — بداية الدرس
 
 - **ماذا ستفهم؟** **A/B Test (اختبار A/B)** يعني أن تغيّر **شيئًا واحدًا** وتقيس **نتيجة واحدة** — **وليس** تجارب عشوائية متعددة في نفس الوقت.
@@ -185,6 +189,8 @@ slugValidation:
 **Pattern (نمط) مقابل Outlier (قيمة شاذة)** (معرّف: `pattern-vs-outlier`): نتيجة **A/B** تحتاج **نمطًا** مستقرًا — **وليس** قفزة **يوم واحد** شاذة. **استخدم** هذا التمييز عند تفسير النتائج **وفي المهمة**.
 
 ### Quiz — تأكيد سريع
+
+> **Quiz key (unchanged):** correctIndex: 0
 
 **السؤال:** غيّرت **العنوان** و**الصورة** و**السعر** — **زادت المبيعات**. **ما المشكلة؟**
 
@@ -250,6 +256,33 @@ Downstream locales (Gulf, English) derive from this MSA canonical — **not** fr
 
 ---
 
+### Script layer status (polish lock — 2026-06-18)
+
+| Field | Value |
+|-------|-------|
+| **Layer** | MSA Canonical Lesson Script |
+| **API audit** | 100/100 reviewed (Anthropic) — 0 CONTENT FAIL |
+| **Polish pass** | 2026-06-18 — read-aloud naturalness, gloss normalization, quiz reasoning, mission clarity |
+| **Production wiring** | **Not wired** — Egyptian `ar-EG` remains default UX |
+| **Video / render** | **Not rendered** — Bunny production videos frozen |
+| **Runtime localization** | **Not active** — no locale switch in `src/` |
+| **Human sign-off** | **pending** — not production-ready for rollout |
+
+### Feeds next architecture stages (when chartered)
+
+1. Runtime language / locale architecture
+2. Video script / voice-over pipeline
+3. Assistant localization
+4. Mission localization packages
+5. Gulf / English / other locale generation from MSA — **not** from Egyptian directly
+
+### Explicitly deferred
+
+- Remotion render / Bunny upload / publish
+- Runtime locale switching in `src/`
+- Mission evaluator changes
+- Assistant/RAG seed from canonical
+- Replacing Egyptian on-page copy with this MSA text
 ## 6. Localization UX notes
 
 | Priority | Source | Rule |
@@ -271,7 +304,7 @@ Manual locale choice overrides automatic detection. Egyptian remains default for
 |-----------|------------|-------|
 | Objective preservation | 4 | Pending human review |
 | Concept preservation | 5 | Production concepts locked |
-| Beginner clarity | 4 | Pending read-aloud |
+| Beginner clarity | 4 | Polish pass 2026-06-18; pending human read-aloud |
 | MSA simplicity | 4 | Pending dialect scan |
 | Mission consistency | 5 | Rubric weights match production |
 | Quiz integrity | 5 | correctIndex 0 unchanged |
@@ -330,4 +363,4 @@ Manual locale choice overrides automatic detection. Egyptian remains default for
 
 ---
 
-*Artifact owner: Adaptive Lesson Engine · final corpus completion batch · Draft only.*
+*Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*

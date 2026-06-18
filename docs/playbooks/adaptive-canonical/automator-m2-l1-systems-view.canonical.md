@@ -1,10 +1,10 @@
-# Adaptive Lesson Engine — MSA Canonical Draft
+# Adaptive Lesson Engine — MSA Canonical Lesson Script
 
 ## 1. Metadata
 
 | Field | Value |
 |-------|-------|
-| **artifactType** | `msa-canonical-draft` |
+| **artifactType** | `msa-canonical-script` |
 | **lessonId** | `automator-m2-l1-systems-view` |
 | **pathId** | `automator` |
 | **moduleId** | `automator-m2` |
@@ -12,10 +12,12 @@
 | **productionRoute** | `/learn/automator/automator-m2-l1-systems-view` |
 | **productionFile (read-only)** | `src/components/intro/lessons/automator-m2-l1-systems-view.ts` |
 | **productionLocale** | `ar-EG` (Egyptian Arabic — **immutable**, live experience) |
-| **canonicalVersion** | `2026-06-04.3-draft` |
+| **canonicalVersion** | `2026-06-18.1-polished` |
 | **derivedAt** | 2026-06-18 |
 | **pilotSet** | **10-lesson MSA canonical controlled batch** |
-| **reviewStatus** | **draft / not production-ready** |
+| **reviewStatus** | **polished / not production-wired** |
+| **scriptLayer** | **MSA Canonical Lesson Script** — API-reviewed · architecture-ready · not production-wired / not rendered / not runtime-localized |
+| **polishPass** | `2026-06-18` |
 | **oneAha** | Every repeating task = Trigger → Process → Output — foundation for virtual worker handoff |
 | **workflowPosition** | Egyptian production → **this MSA canonical** → future Gulf / English / other locales |
 | **templateReference** | [`MSA_CANONICAL_TEMPLATE.md`](MSA_CANONICAL_TEMPLATE.md) · templateVersion `2026-06-04` |
@@ -57,7 +59,7 @@ Read-only extraction + MSA normalization.
 
 ```yaml
 lessonId: automator-m2-l1-systems-view
-canonicalVersion: 2026-06-04.3-draft
+canonicalVersion: 2026-06-18.1-polished
 templateVersion: 2026-06-04
 derivedFrom:
   productionLocale: ar-EG
@@ -148,6 +150,8 @@ slugValidation:
 
 ## 4. Arabic MSA canonical lesson text
 
+> **Dialect:** Modern Standard Arabic (neutral) · **Role:** final MSA canonical lesson script for downstream locale derivation · **Not:** live Egyptian copy · **Not:** production-wired or rendered
+
 ### Orientation — بداية الدرس
 
 - **ماذا ستفهم؟** أي مهمة متكررة = نظام: **مُشغّل (Trigger)** → عملية → **نتيجة (Output)**. عندما تراها هكذا، تستطيع تسليمها للعامل الافتراضي.
@@ -191,6 +195,8 @@ slugValidation:
 
 ### Quiz — تأكيد سريع
 
+> **Quiz key (unchanged):** correctIndex: 0
+
 **السؤال:** عميل يرسل رسالة على فيسبوك يسأل عن سعر منتج. في «نظام الرد»، ما **المُشغّل (Trigger)**؟
 
 - **الإجابة الصحيحة:** **رسالة العميل الجديدة**
@@ -219,10 +225,39 @@ slugValidation:
 
 ## 5. Future generation notes
 
-Downstream locales from MSA only. Trigger/Process/Output model preserved. Deferred: Bunny · Remotion · RAG · runtime.
+### Downstream locale packages
+
+All Gulf / English / other locales derive from this MSA canonical script — **not** from Egyptian dialect copy directly.
 
 ---
 
+### Script layer status (polish lock — 2026-06-18)
+
+| Field | Value |
+|-------|-------|
+| **Layer** | MSA Canonical Lesson Script |
+| **API audit** | 100/100 reviewed (Anthropic) — 0 CONTENT FAIL |
+| **Polish pass** | 2026-06-18 — read-aloud naturalness, gloss normalization, quiz reasoning, mission clarity |
+| **Production wiring** | **Not wired** — Egyptian `ar-EG` remains default UX |
+| **Video / render** | **Not rendered** — Bunny production videos frozen |
+| **Runtime localization** | **Not active** — no locale switch in `src/` |
+| **Human sign-off** | **pending** — not production-ready for rollout |
+
+### Feeds next architecture stages (when chartered)
+
+1. Runtime language / locale architecture
+2. Video script / voice-over pipeline
+3. Assistant localization
+4. Mission localization packages
+5. Gulf / English / other locale generation from MSA — **not** from Egyptian directly
+
+### Explicitly deferred
+
+- Remotion render / Bunny upload / publish
+- Runtime locale switching in `src/`
+- Mission evaluator changes
+- Assistant/RAG seed from canonical
+- Replacing Egyptian on-page copy with this MSA text
 ## 6. Localization UX notes
 
 | Priority | Source | Rule |
@@ -242,7 +277,7 @@ Downstream locales from MSA only. Trigger/Process/Output model preserved. Deferr
 |-----------|------------|-------|
 | Objective preservation | 4 | Pending human review |
 | Concept preservation | 5 | Trigger, Output — Process referenced from production |
-| Beginner clarity | 4 | Pending read-aloud |
+| Beginner clarity | 4 | Polish pass 2026-06-18; pending human read-aloud |
 | MSA simplicity | 4 | Pending dialect scan |
 | Mission consistency | 5 | 70/30 rubric matches production |
 | Quiz integrity | 5 | Customer-message trigger answer unchanged |
@@ -296,9 +331,9 @@ Downstream locales from MSA only. Trigger/Process/Output model preserved. Deferr
 | 12 | Slug validation passed | ☑ pass |
 | 13 | Draft self-assessment | ☑ pass |
 | 14 | Human reviewer score recorded — scale pass rule met | ☐ **pending** |
-| 15 | Draft / not production-ready | ☑ confirmed |
+| 15 | Polished / not production-wired | ☑ confirmed |
 | 16 | Human reviewer sign-off (name + date) | ☐ **pending** |
 
 ---
 
-*Artifact owner: Adaptive Lesson Engine · 10-lesson MSA canonical controlled batch · Draft only.*
+*Artifact owner: Adaptive Lesson Engine · MSA Canonical Lesson Script · Polish lock 2026-06-18 · Not production-wired.*

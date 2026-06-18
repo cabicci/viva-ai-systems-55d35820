@@ -398,7 +398,7 @@ Three lessons were skipped in the initial `--all --resume` run because a prior `
 | CONTENT FAIL | 0 |
 | ERROR_RETRY_REQUIRED | 0 |
 
-**Gate status:** **100 / 100 lessons API-reviewed** (Anthropic) — no hard blockers remain for docs-only canonical corpus QA. The prior **3 PASS · 97 PASS WITH NOTES** tally counted dry-run skips as `PASS`; corrected gate is **0 PASS · 100 PASS WITH NOTES**. Soft notes (read-aloud polish, glossary consistency, diagram alt-text) are deferred to human review batches.
+**Gate status:** **100 / 100 lessons API-reviewed** (Anthropic) — no hard blockers remain for docs-only canonical corpus QA. The prior **3 PASS · 97 PASS WITH NOTES** tally counted dry-run skips as `PASS`; corrected gate is **0 PASS · 100 PASS WITH NOTES**. Soft notes from API audit informed the polish pass (§9g).
 
 **Not in scope (explicit):** production wiring · runtime locale switching · video script render · Bunny regen · assistant/RAG localization · human sign-off upgrade.
 
@@ -409,6 +409,40 @@ Three lessons were skipped in the initial `--all --resume` run because a prior `
 3. **Assistant / mission localization architecture** — mission packages + retrieval pins from canonical version
 
 **Local audit artifacts:** `reports/API_AUDIT_*.md` may exist on disk for debugging; checkpoint/lock/JSON files are gitignored — this section is the committed gate record.
+
+---
+
+## 9g. MSA canonical polish + script lock (2026-06-18)
+
+After §9f API audit gate (`f2cd9ec`), a **final polish pass** applied API soft-note themes across all **100 / 100** `*.canonical.md` lesson scripts. Artifacts are now treated as **MSA Canonical Lesson Scripts** — architecture-ready source text, **not** temporary outline drafts.
+
+| Field | Value |
+|-------|-------|
+| **Script layer** | `msa-canonical-script` · `canonicalVersion: 2026-06-18.1-polished` |
+| **reviewStatus** | **polished / not production-wired** |
+| **Polish scope** | MSA read-aloud naturalness cues · §4 dialect block · quiz key labels + reasoning · §5 architecture handoff notes · English-term gloss normalization on first use where applicable |
+| **Preserved unchanged** | `lessonId` · rubric weights · quiz `correctIndex` · production Egyptian source · PATHS · assistant forbidden behaviors |
+| **Still not active** | Not production-wired · not video-rendered · not runtime-localized · not on live website |
+
+### Polish themes addressed (corpus-wide)
+
+| Theme | Action |
+|-------|--------|
+| Draft vs final script framing | Metadata + §5 lock block — scripts labeled **MSA Canonical Lesson Script** |
+| Thin §5 future-generation notes | Expanded with architecture feed list + explicit deferred wiring |
+| Quiz downstream safety | `correctIndex` surfaced in §4 where missing; reasoning preserved from production |
+| Read-aloud / gloss soft notes | Dialect guidance block in §4; glossary-first gloss pattern retained |
+| Over-polish guard | Strong §4 scripts not rewritten for length; no new concepts/tools |
+
+### Script layer feeds (when chartered)
+
+1. Runtime language / locale architecture
+2. Video script / voice-over pipeline
+3. Assistant localization
+4. Mission localization packages
+5. Gulf / English / other locale generation from MSA — **not** from Egyptian directly
+
+**Gate status:** **MSA canonical script layer polished and locked** for architecture work. Human `humanReviewerSignOff` remains **pending** per artifact — polish lock ≠ production rollout approval.
 
 ---
 
