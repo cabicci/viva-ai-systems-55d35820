@@ -48,7 +48,7 @@ Drift cleanup: **complete** (Final Drift Re-audit PASS — launch blockers 0, hi
 - Onboarding legacy redirect hotfix — `26b8758`
 - Remotion registry aligned (100/100 learner; 104 total = 100 learner + 4 archived) — `6a6a40e`
 - **MSA canonical corpus complete** — 100/100 learner-path `*.canonical.md` drafts (docs-only) — `a88e251`
-- **MSA canonical API audit gate complete** — Anthropic reviewer; final QA **3 PASS · 97 PASS WITH NOTES · 0 CONTENT FAIL · 0 ERROR_RETRY_REQUIRED**; targeted fixes `f355a9c` — gate recorded `ADAPTIVE_LESSON_ENGINE.md` §9f
+- **MSA canonical API audit gate complete** — Anthropic reviewer; **corrected** final QA **0 PASS · 100 PASS WITH NOTES · 0 CONTENT FAIL · 0 ERROR_RETRY_REQUIRED** (initial 3 `PASS` were dry-run checkpoint contamination; three analyst lessons re-audited with real API); targeted fixes `f355a9c` — gate recorded `ADAPTIVE_LESSON_ENGINE.md` §9f
 
 ## Video layer
 

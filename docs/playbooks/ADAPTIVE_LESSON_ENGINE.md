@@ -358,10 +358,12 @@ After §9e corpus completion (`a88e251`), an **AI-assisted read-only audit** com
 
 | Result | Count |
 |--------|-------|
-| PASS | 3 |
+| PASS | 3 † |
 | PASS WITH NOTES | 95 |
 | CONTENT FAIL | 2 |
 | ERROR_RETRY_REQUIRED | 0 |
+
+† **Later corrected:** the 3 `PASS` entries were **dry-run checkpoint contamination** — lessons skipped by `--all --resume` after `--limit 3 --dry-run`, **not** real API-reviewed `PASS`. See **correction** below.
 
 **CONTENT FAIL lessons (initial):**
 
@@ -377,16 +379,26 @@ After §9e corpus completion (`a88e251`), an **AI-assisted read-only audit** com
 | `analyst-m5-ab-testing` | **PASS WITH NOTES** |
 | `business-m4-l2-reactive-relapse` | **PASS WITH NOTES** |
 
-### Final corpus QA result
+### Dry-run contamination correction (2026-06-18)
+
+Three lessons were skipped in the initial `--all --resume` run because a prior `--limit 3 --dry-run` had written `PASS` to checkpoint. Real Anthropic API re-audit (no `--resume`):
+
+| lessonId | Result |
+|----------|--------|
+| `analyst-m1-l1-from-automation-to-insight` | **PASS WITH NOTES** |
+| `analyst-m2-l1-feeling-to-question` | **PASS WITH NOTES** |
+| `analyst-m2-l2-right-question-rule` | **PASS WITH NOTES** |
+
+### Final corpus QA result (corrected)
 
 | Result | Count |
 |--------|-------|
-| PASS | 3 |
-| PASS WITH NOTES | 97 |
+| PASS | 0 |
+| PASS WITH NOTES | 100 |
 | CONTENT FAIL | 0 |
 | ERROR_RETRY_REQUIRED | 0 |
 
-**Gate status:** **API audit content failures resolved** — no hard blockers remain for docs-only canonical corpus QA. Soft notes (read-aloud polish, glossary consistency, diagram alt-text) are deferred to human review batches.
+**Gate status:** **100 / 100 lessons API-reviewed** (Anthropic) — no hard blockers remain for docs-only canonical corpus QA. The prior **3 PASS · 97 PASS WITH NOTES** tally counted dry-run skips as `PASS`; corrected gate is **0 PASS · 100 PASS WITH NOTES**. Soft notes (read-aloud polish, glossary consistency, diagram alt-text) are deferred to human review batches.
 
 **Not in scope (explicit):** production wiring · runtime locale switching · video script render · Bunny regen · assistant/RAG localization · human sign-off upgrade.
 

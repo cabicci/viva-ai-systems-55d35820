@@ -745,10 +745,11 @@ Current visual score (per blueprint): **68/100**.
 | Engine playbook + template | ✅ | `ADAPTIVE_LESSON_ENGINE.md` · `MSA_CANONICAL_TEMPLATE.md` |
 | Corpus coverage | ✅ **100 / 100** learner-path lessons | `a88e251` |
 | API audit runner | ✅ Hardened (timeout, retry, resume, lock, checkpoint) | `b1f7826` |
-| Full API audit (Anthropic `claude-sonnet-4-6`) | ✅ | Initial: 3 PASS · 95 PASS WITH NOTES · 2 CONTENT FAIL · 0 ERROR_RETRY_REQUIRED |
+| Full API audit (Anthropic `claude-sonnet-4-6`) | ✅ | Initial: 3 PASS † · 95 PASS WITH NOTES · 2 CONTENT FAIL · 0 ERROR_RETRY_REQUIRED |
+| Dry-run contamination fix | ✅ | Re-audited `analyst-m1-l1` · `analyst-m2-l1` · `analyst-m2-l2` — all **PASS WITH NOTES** (real API) |
 | Targeted content fixes | ✅ | `analyst-m5-ab-testing` · `business-m4-l2-reactive-relapse` — `f355a9c` |
 | Targeted re-audit | ✅ Both **PASS WITH NOTES** | |
-| **Final corpus QA** | ✅ **3 PASS · 97 PASS WITH NOTES · 0 CONTENT FAIL · 0 ERROR_RETRY_REQUIRED** | §9f `ADAPTIVE_LESSON_ENGINE.md` |
+| **Final corpus QA** | ✅ **0 PASS · 100 PASS WITH NOTES · 0 CONTENT FAIL · 0 ERROR_RETRY_REQUIRED** | §9f `ADAPTIVE_LESSON_ENGINE.md` |
 | Human reviewer sign-off | ⏸️ **pending** per artifact | Not production-ready |
 | Runtime locale wiring | ⏸️ NOT STARTED | Gate 1 below |
 | Video script / render from canonical | ⏸️ NOT STARTED | Gate 2 below |

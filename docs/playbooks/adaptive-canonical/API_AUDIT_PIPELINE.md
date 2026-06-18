@@ -105,6 +105,14 @@ bun scripts/adaptive-canonical/audit-canonical.ts --limit 3 --dry-run
 
 ---
 
+## Checkpoint hygiene
+
+- **`--dry-run` writes `PASS` to checkpoint** with `apiReviewed: false`. **`--resume` skips** lessons with `PASS` or `PASS WITH NOTES`.
+- **Do not** run `--all --resume` after a dry-run without re-auditing affected lessons (or clearing checkpoint). Dry-run `PASS` entries are **not** API-reviewed.
+- **Committed gate (corrected 2026-06-18):** **0 PASS · 100 PASS WITH NOTES · 0 CONTENT FAIL · 0 ERROR_RETRY_REQUIRED** — all 100 learner-path lessons API-reviewed via Anthropic. Three analyst lessons were re-audited after dry-run contamination was detected in the initial resume tally.
+
+---
+
 ## Script layout
 
 ```
