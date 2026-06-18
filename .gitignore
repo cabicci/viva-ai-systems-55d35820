@@ -52,8 +52,7 @@ scripts/persona-sim/**/*-raw.json
 scripts/persona-sim/**/*checkpoint*.json
 scripts/persona-sim/**/*.heatmap.csv
 
-# Canonical API audit runtime artifacts (regenerate locally; gate recorded in ADAPTIVE_LESSON_ENGINE.md §9f)
-docs/playbooks/adaptive-canonical/reports/API_AUDIT_checkpoint.json
-docs/playbooks/adaptive-canonical/reports/API_AUDIT_checkpoint.md
+# Canonical API audit local reports (regenerate locally; gate recorded in ADAPTIVE_LESSON_ENGINE.md §9f–§9g)
+docs/playbooks/adaptive-canonical/reports/*.md
 docs/playbooks/adaptive-canonical/reports/*.json
 docs/playbooks/adaptive-canonical/reports/.audit.lock
