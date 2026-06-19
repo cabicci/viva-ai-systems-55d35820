@@ -11,16 +11,17 @@
 ```text
 ┌─────────────────────────────────────────────┐
 │  Browser (React 19 + TanStack Router)       │
-│  src/routes/  →  / · /dashboard · /intro/$  │
-│                  /lessons/$ · /paths/$      │
+│  src/routes/  →  / · /dashboard · /curriculum│
+│                  /learn/$pathId/$lessonId   │
 └────────────────────┬────────────────────────┘
                      │
 ┌────────────────────▼────────────────────────┐
 │  Lesson Layer                               │
-│   v2: IntroLessonRenderer                   │
+│   IntroLessonRenderer                       │
+│        ← src/lib/unified-lessons.ts         │
+│           (adapter: PATHS + registry)       │
 │        ← INTRO_LESSON_CONTENT (registry)    │
 │        ← <lesson-id>.ts (blocks)            │
-│   legacy: LessonEngine  (لا توسّعه)         │
 └────────────────────┬────────────────────────┘
                      │
 ┌────────────────────▼────────────────────────┐
@@ -62,17 +63,18 @@
 | تعديل الـ navigation العلوي | `src/components/site/Navbar.tsx` |
 | إضافة route جديد | أنشئ ملف في `src/routes/` (الـ Vite plugin يولّد `routeTree.gen.ts` تلقائيًا) |
 
-## 3. v2 vs Legacy (لا تخلط بينهم)
+## 3. الحالة الحالية (Current State)
 
-| | v2 (الحالي) | Legacy |
-|---|---|---|
-| نوع المحتوى | `IntroLessonContent` (blocks) | `Lesson` في `lessons-data.ts` |
-| Renderer | `IntroLessonRenderer` | `LessonEngine` |
-| Route pattern | `/intro/<slug>`, `/builder/<slug>`, `/creator/<slug>` | `/lessons/<id>` |
-| سجل | `INTRO_LESSON_CONTENT` في `intro/lessons/index.ts` | `LESSONS` في `lessons-data.ts` |
-| الحالة | كل درس جديد لازم v2 | للقراءة فقط، **متوسّعش فيه** |
+| البند | الحالة |
+|---|---|
+| Current learner route | `/learn/$pathId/$lessonId` |
+| Current lesson adapter | `src/lib/unified-lessons.ts` |
+| Active learner lessons | 100 |
+| Archived Business lessons | 4 internal/archive-only lessons — not counted for learners |
+| Egyptian production content | locked — do not edit |
+| Localization | docs-only — not runtime-wired |
 
-لو لقيت درس legacy ومش راضي يستجيب لتعديلات v2: ده مقصود. لازم تنقله بإعادة كتابته كـ blocks file جديد + تسجيل في v2 + شيله من Builder/Creator nav.
+> **ملاحظة:** النظام القديم (`lessons-data.ts` + `LessonEngine` + `/lessons/<id>`) متوقف — للقراءة فقط ولا يُوسّع.
 
 ## 4. Server-side: Server Functions vs Edge Functions
 
@@ -106,7 +108,7 @@
 ## 7. مفاتيح الـ stack
 
 - **TanStack Start v1** — لا تستخدم `entry-client.tsx` / `entry-server.tsx` / `vinxi`. كل حاجة عبر `src/router.tsx` + `src/routes/__root.tsx`.
-- **Routing:** flat dot-separated (مثال: `paths.builder.module-04.tsx` = `/paths/builder/module-04`). ممنوع `src/pages/`.
+- **Routing:** flat dot-separated (مثال: `learn.$pathId.$lessonId.tsx` = `/learn/builder/<lessonId>`). ممنوع `src/pages/`.
 - **Tailwind v4:** عبر `src/styles.css` + CSS `@import` + theme variables (مفيش `tailwind.config.js` تقليدي).
 - **Cloudflare Workers runtime:** بعض Node APIs مش متاحة (`child_process`, `sharp`, `puppeteer`). راجع knowledge `server-runtime`.
 
@@ -132,7 +134,9 @@
 | Roadmap والقرارات | `src/data/master-report-data.ts` |
 | خريطة المنهج | `src/lib/curriculum-data.ts` |
 | سجل الدروس v2 | `src/components/intro/lessons/index.ts` |
-| سجل الدروس legacy | `src/lib/lessons-data.ts` |
+| Lesson adapter / runtime consumers | `src/lib/unified-lessons.ts` |
+| Archived slugs | `src/lib/archived-lessons.ts` |
+| Localization Phase 0 | `docs/playbooks/ADAPTIVE_RUNTIME_LOCALIZATION_ARCHITECTURE.md` — docs-only, not runtime-wired |
 | Schema الـ DB | Lovable → Cloud → Database (live) |
 | P0 launch operating model | `docs/playbooks/P0_LAUNCH_CONSTITUTION.md` |
 | Curriculum freeze | `docs/playbooks/CURRICULUM_FREEZE_CONTRACT.md` |
