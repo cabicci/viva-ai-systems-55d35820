@@ -66,7 +66,6 @@
 | تعديل عنوان/حالة مسار | `src/lib/curriculum-data.ts` (داخل `PATHS`) |
 | محتوى دروس v2 | `src/components/intro/lessons/<id>.ts` |
 | سجل الدروس v2 | `src/components/intro/lessons/index.ts` |
-| LessonEngine (legacy) | `src/components/lesson/LessonEngine.tsx` — **لا توسّعه** |
 | المساعد التعليمي | `src/lib/assistant-runtime.ts` + `supabase/functions/assistant-runtime/` |
 | Retrieval (pgvector) | `src/lib/retrieval/` + `supabase/functions/semantic-search/` |
 | ضخّ المحتوى للـ corpus | `supabase/functions/ingest-curriculum-knowledge/` |
@@ -104,15 +103,18 @@
 
 تخطّي الخطوة 3 = الدرس مش هيظهر في الـ dashboard ولا في خريطة المنهج. بعد التعديل: `rg "<lesson-id>" src/lib/curriculum-data.ts` للتأكد.
 
-## 9. v2 vs Legacy
+## 9. الحالة الحالية (Current State)
 
-| | v2 (الحالي) | Legacy |
-|---|---|---|
-| المحتوى | `IntroLessonContent` blocks | `Lesson` في `lessons-data.ts` |
-| Renderer | `IntroLessonRenderer` | `LessonEngine` |
-| Route | `/intro/<slug>`, `/builder/<slug>`, … | `/lessons/<id>` |
-| سجل | `INTRO_LESSON_CONTENT` | `LESSONS` |
-| الحالة | كل درس جديد v2 | للقراءة فقط — **متوسّعش** |
+| البند | الحالة |
+|---|---|
+| Current learner route | `/learn/$pathId/$lessonId` |
+| Current lesson adapter | `src/lib/unified-lessons.ts` |
+| Active learner lessons | 100 |
+| Archived Business lessons | 4 internal/archive-only lessons — not counted for learners |
+| Egyptian production content | locked — do not edit |
+| Localization | docs-only — not runtime-wired |
+
+> **ملاحظة:** النظام القديم (`lessons-data.ts` + `LessonEngine` + `/lessons/<id>`) متوقف — للقراءة فقط ولا يُوسّع.
 
 ## 10. ممنوعات (Hard Rules)
 
