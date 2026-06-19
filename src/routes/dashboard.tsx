@@ -15,6 +15,7 @@ import { LessonLink } from "@/components/lesson/LessonLink";
 import { getLesson } from "@/lib/unified-lessons";
 import { WelcomeHint } from "@/components/dashboard/WelcomeHint";
 import { WelcomeChecklist } from "@/components/dashboard/WelcomeChecklist";
+import { StartWowBanner } from "@/components/dashboard/StartWowBanner";
 import { ReviewsDueCard } from "@/components/dashboard/ReviewsDueCard";
 import { useCountUp } from "@/hooks/use-count-up";
 
@@ -126,6 +127,7 @@ function Dashboard() {
         <PhaseRibbon />
         <div className="p-6 md:p-10">
         <WelcomeHint show={noProgress} />
+        <StartWowBanner />
         <WelcomeChecklist />
         <ReviewsDueCard />
         <div className="flex items-end justify-between flex-wrap gap-4 mb-10 animate-fade-up">

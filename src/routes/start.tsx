@@ -5,7 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Hammer, Palette, Cog, BarChart3, Briefcase, Compass, BookOpen, Check, ArrowLeft, Loader2, Trophy, Zap } from "lucide-react";
 import { runWowPath } from "@/lib/wow-experience.functions";
-import { supabase } from "@/integrations/supabase/client";
+import {
+  logLearnerEvent,
+  markWowExperienceSeen,
+} from "@/lib/learner-events";
 import { useAuth } from "@/lib/auth-context";
 import { AuthSessionGate, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
 import { toast } from "sonner";
@@ -14,8 +17,12 @@ export const Route = createFileRoute("/start")({
   beforeLoad: requireAuthBeforeLoad,
   head: () => ({
     meta: [
-      { title: "ابدأ — أول دقيقتين في مسارات" },
-      { name: "description", content: "شوف المنصة بتعمل إيه في دقيقتين، قبل ما تبدأ التعلم." },
+      { title: "ابدأ — تجربة سريعة | مسارات" },
+      {
+        name: "description",
+        content:
+          "تجربة اختيارية: اكتشف ما تستطيع المنصة فعله في دقيقتين قبل أن تبدأ التعلّم.",
+      },
     ],
   }),
   component: StartPage,
@@ -32,8 +39,6 @@ const PATHS = [
   { id: "automator" as const, name: "Automator", icon: Cog,       label: "Workflow أتمتة",        manual: "شهر شغل",    withAi: "يومين" },
   { id: "builder" as const,   name: "Builder",   icon: Hammer,    label: "Mini App / موقع",      manual: "٢–٣ شهور", withAi: "أيام قليلة" },
 ];
-
-const SEEN_KEY = "wow-experience-seen";
 
 function StartPage() {
   return (
@@ -57,27 +62,20 @@ function StartContent() {
   const userName = (user?.user_metadata?.full_name as string) || (user?.email?.split("@")[0]) || "";
 
   function skip() {
-    try { localStorage.setItem(SEEN_KEY, "1"); } catch { /* noop */ }
+    markWowExperienceSeen();
+    void logLearnerEvent({ type: "wow_skipped" });
     navigate({ to: "/dashboard" });
   }
 
   function finish() {
-    try { localStorage.setItem(SEEN_KEY, "1"); } catch { /* noop */ }
-    // Fire-and-forget event log
-    void (async () => {
-      if (!user?.id) return;
-      await supabase.from("learner_events").insert({
-        user_id: user.id,
-        event_type: "wow_completed",
-        metadata: { idea },
-      });
-    })();
+    markWowExperienceSeen();
+    void logLearnerEvent({ type: "wow_completed", metadata: { idea } });
     navigate({ to: "/dashboard" });
   }
 
   async function startRunning() {
     if (idea.trim().length < 2) {
-      toast.error("اكتب فكرة قصيرة الأول (مثال: محل ورد).");
+      toast.error("اكتب فكرة قصيرة أولاً (مثال: محل ورد).");
       return;
     }
     setStep("running");
@@ -99,7 +97,7 @@ function StartContent() {
           console.error(p.id, err);
           setResults((prev) => ({
             ...prev,
-            [p.id]: { status: "error", text: "", error: "مفيش رد من الـ AI." },
+            [p.id]: { status: "error", text: "", error: "لم يصل رد من المساعد." },
           }));
         }
       }),
@@ -152,17 +150,19 @@ function WelcomeStep({ name, onContinue }: { name: string; onContinue: () => voi
         <Compass className="h-10 w-10 text-primary-foreground" />
       </div>
       <h1 className="text-4xl md:text-6xl font-black leading-tight">
-        أهلاً {name ? <span className="text-gradient">{name}</span> : "بيك"} 👋
+        أهلاً {name ? <span className="text-gradient">{name}</span> : "بك"} 👋
       </h1>
       <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-        قبل ما تبدأ التعلم، خلّيني أوريك المنصة بتعمل إيه فعلاً.
+        قبل أن تبدأ التعلّم، اعرض لك ما تفعله المنصة فعلاً.
         <br />
         <span className="text-foreground font-semibold">في أقل من دقيقتين.</span>
       </p>
       <Button variant="hero" size="xl" className="mt-10" onClick={onContinue}>
-        يلا نشوف <ArrowLeft className="h-5 w-5" />
+        لنبدأ <ArrowLeft className="h-5 w-5" />
       </Button>
-      <p className="mt-4 text-xs text-muted-foreground">من غير ما تعمل أي حاجة. أنا اللي هشتغل قدامك.</p>
+      <p className="mt-4 text-xs text-muted-foreground">
+        تجربة اختيارية — المساعد يعمل فقط بعد ضغطك أنت.
+      </p>
     </div>
   );
 }
@@ -173,10 +173,10 @@ function InputStep({ idea, setIdea, onContinue }: { idea: string; setIdea: (v: s
     <div className="py-12 md:py-20 animate-fade-up max-w-2xl mx-auto">
       <p className="text-primary text-sm font-bold tracking-widest text-center">السؤال الوحيد</p>
       <h2 className="text-3xl md:text-5xl font-black text-center mt-3 leading-tight">
-        إيه <span className="text-gradient">المشروع</span> اللي في دماغك دلوقتي؟
+        ما المشروع الذي يدور في ذهنك؟
       </h2>
       <p className="text-center text-muted-foreground mt-4">
-        اكتب اسمه أو فكرته في سطر — والـ AI هيشتغل عليه قدامك دلوقتي.
+        اكتب فكرة في سطر واحد — ثم شغّل المسارات الخمسة عندما تكون جاهزاً.
       </p>
       <form
         onSubmit={(e) => {
@@ -206,7 +206,7 @@ function InputStep({ idea, setIdea, onContinue }: { idea: string; setIdea: (v: s
           ))}
         </div>
         <Button type="submit" variant="hero" size="xl" className="w-full" disabled={idea.trim().length < 2}>
-          شغّل الـ ٥ AI 🚀
+          شغّل المسارات الخمسة
         </Button>
       </form>
     </div>
@@ -227,9 +227,10 @@ function RunningStep({
   return (
     <div className="py-8 animate-fade-up">
       <div className="text-center mb-8">
-        <p className="text-primary text-sm font-bold tracking-widest">شغّال دلوقتي</p>
+        <p className="text-primary text-sm font-bold tracking-widest">جاري التنفيذ</p>
         <h2 className="text-2xl md:text-4xl font-black mt-2">
-          الـ ٥ AI بيشتغلوا على <span className="text-gradient">"{idea}"</span>
+          المسارات الخمسة تعمل على{" "}
+          <span className="text-gradient">&quot;{idea}&quot;</span>
         </h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -239,7 +240,7 @@ function RunningStep({
       </div>
       <div className="mt-10 text-center">
         <Button variant="hero" size="xl" disabled={!allDone} onClick={onNext}>
-          {allDone ? <>كمل <ArrowLeft className="h-5 w-5" /></> : "الـ AI شغّال..."}
+          {allDone ? <>متابعة <ArrowLeft className="h-5 w-5" /></> : "جاري المعالجة..."}
         </Button>
       </div>
     </div>
@@ -326,24 +327,28 @@ function useTypewriter(target: string, msPerChar: number) {
 function BeforeAfterStep({ onNext }: { onNext: () => void }) {
   return (
     <div className="py-12 md:py-20 animate-fade-up text-center">
-      <p className="text-primary text-sm font-bold tracking-widest">لحظة صدق</p>
+      <p className="text-primary text-sm font-bold tracking-widest">مقارنة توضيحية</p>
       <h2 className="text-3xl md:text-5xl font-black mt-3">
-        اللي شفته دلوقتي كان هياخد...
+        ما شاهدته يختصر خطواتاً كثيرة
       </h2>
       <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-3xl mx-auto">
         <div className="glass rounded-2xl p-8 border border-destructive/30">
-          <p className="text-xs font-bold tracking-widest text-destructive">قبل AI</p>
-          <p className="text-5xl md:text-7xl font-black mt-4">شهور<span className="text-2xl"> شغل</span></p>
-          <p className="mt-3 text-sm text-muted-foreground">موقع + سوشيال + أتمتة + تقارير + قرار — يدوي.</p>
+          <p className="text-xs font-bold tracking-widest text-destructive">يدوياً</p>
+          <p className="text-3xl md:text-4xl font-black mt-4">أسابيع من التنسيق</p>
+          <p className="mt-3 text-sm text-muted-foreground">
+            قرار، محتوى، أتمتة، تقارير — خطوات متتابعة بجهد أكبر.
+          </p>
         </div>
         <div className="glass rounded-2xl p-8 border border-primary/50 glow-primary">
-          <p className="text-xs font-bold tracking-widest text-primary">دلوقتي بالـ AI</p>
-          <p className="text-5xl md:text-7xl font-black mt-4 text-gradient">أيام<span className="text-2xl"> قليلة</span></p>
-          <p className="mt-3 text-sm text-muted-foreground">نفس الـ ٥ مخرجات، شغّالة وجاهزة.</p>
+          <p className="text-xs font-bold tracking-widest text-primary">مع المنصة</p>
+          <p className="text-3xl md:text-4xl font-black mt-4 text-gradient">مسودات أولى أسرع</p>
+          <p className="mt-3 text-sm text-muted-foreground">
+            خمسة اتجاهات على فكرتك — ثم تعمّق عبر 100 درساً نشطاً.
+          </p>
         </div>
       </div>
       <Button variant="hero" size="xl" className="mt-12" onClick={onNext}>
-        كمل <ArrowLeft className="h-5 w-5" />
+        متابعة <ArrowLeft className="h-5 w-5" />
       </Button>
     </div>
   );
@@ -355,24 +360,25 @@ function VictoryStep({ successCount, onFinish }: { successCount: number; onFinis
       <div className="inline-grid h-28 w-28 place-items-center rounded-full bg-[image:var(--gradient-primary)] glow-primary mb-6 animate-pulse-glow">
         <Trophy className="h-14 w-14 text-primary-foreground" />
       </div>
-      <p className="text-primary text-sm font-bold tracking-widest">إنجاز #1</p>
+      <p className="text-primary text-sm font-bold tracking-widest">خطوتك الأولى</p>
       <h1 className="text-4xl md:text-6xl font-black mt-3 leading-tight">
-        أنت بالفعل بنيت <span className="text-gradient">بالـ AI</span> ✨
+        جرّبت <span className="text-gradient">المنصة</span> عملياً
       </h1>
       <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
         {successCount === 5
-          ? "الـ ٥ مسارات اشتغلوا قدامك."
-          : `${successCount} من ٥ مسارات اشتغلوا قدامك.`} ده مجرد طعم — المنصة فيها ٨٨ درس يعلموك تعمل ده بإيدك وتطوّره.
+          ? "المسارات الخمسة أنتجت مخرجات أمامك."
+          : `${successCount} من 5 مسارات أنتجت مخرجات.`}{" "}
+        هذه لمحة سريعة — المنصة تضم 100 درساً نشطاً لتتعلّم وتطوّر بنفسك.
       </p>
 
       <div className="grid sm:grid-cols-3 gap-3 max-w-xl mx-auto mt-10">
         <Stat icon={Zap} label="مسارات" value="5" />
-        <Stat icon={BookOpen} label="دروس" value="88+" />
-        <Stat icon={Trophy} label="بادج أول" value="✓" />
+        <Stat icon={BookOpen} label="دروس نشطة" value="100" />
+        <Stat icon={Trophy} label="الخطوة التالية" value="→" />
       </div>
 
       <Button variant="hero" size="xl" className="mt-12" onClick={onFinish}>
-        يلا للـ Dashboard <ArrowLeft className="h-5 w-5" />
+        إلى لوحة التحكم <ArrowLeft className="h-5 w-5" />
       </Button>
       <p className="mt-4 text-xs text-muted-foreground">
         <Link to="/" className="hover:text-foreground transition">للصفحة الرئيسية</Link>

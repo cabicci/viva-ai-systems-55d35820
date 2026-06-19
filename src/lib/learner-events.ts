@@ -9,7 +9,29 @@ export type LearnerEventType =
   | "quiz_attempted"
   | "quiz_predicted"
   | "path_selected"
-  | "difficulty_feedback";
+  | "difficulty_feedback"
+  | "wow_completed"
+  | "wow_skipped";
+
+export const WOW_EXPERIENCE_SEEN_KEY = "wow-experience-seen";
+
+export function isWowExperienceSeen(): boolean {
+  try {
+    if (typeof window === "undefined") return false;
+    return localStorage.getItem(WOW_EXPERIENCE_SEEN_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+export function markWowExperienceSeen(): void {
+  try {
+    if (typeof window === "undefined") return;
+    localStorage.setItem(WOW_EXPERIENCE_SEEN_KEY, "1");
+  } catch {
+    // intentionally silent
+  }
+}
 
 export interface LearnerEventInput {
   type: LearnerEventType;
