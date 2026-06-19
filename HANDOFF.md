@@ -53,6 +53,8 @@
 | Creator | M1 درسين v2 |
 | Automator / Analyst / Business | هياكل مبدئية فقط |
 
+> **Current launch state:** all **100** learner-path lessons are active in `PATHS`; **4** Business lesson files are archived/internal only. See `docs/CURRENT_STATUS.md`.
+
 للتفاصيل افتح `src/lib/curriculum-data.ts` وابحث عن `PATHS`.
 
 ## 6. أين يعيش كل شيء؟
@@ -61,8 +63,8 @@
 |---|---|
 | محتوى الدروس (v2) | `src/components/intro/lessons/<lesson-id>.ts` |
 | سجل الدروس | `src/components/intro/lessons/index.ts` |
+| Lesson adapter (dashboard, missions, RAG consumers) | `src/lib/unified-lessons.ts` |
 | المنهج (paths/modules/lessons) | `src/lib/curriculum-data.ts` |
-| LessonEngine (legacy، لا توسّعه) | `src/components/lesson/LessonEngine.tsx` |
 | المساعد التعليمي | `src/lib/assistant-runtime.ts` + `supabase/functions/assistant-runtime/` |
 | Retrieval (بحث دلالي) | `src/lib/retrieval/` + `supabase/functions/semantic-search/` |
 | ضخّ المحتوى للـ corpus | `supabase/functions/ingest-curriculum-knowledge/` |
@@ -93,17 +95,24 @@
 
 1. **محتوى:** `src/components/intro/lessons/<lesson-id>.ts` (نوع `IntroLessonContent`).
 2. **تسجيل:** `src/components/intro/lessons/index.ts` → ضيف `INTRO_LESSON_CONTENT[<lesson-id>] = ...`.
-3. **منهج:** `src/lib/curriculum-data.ts` → ضيف `lesson(...)` في الموديول الصح بـ `state="available"` و `route="/<path>/<lesson-id>"`.
+3. **منهج:** `src/lib/curriculum-data.ts` → ضيف `lesson(...)` في الموديول الصح بـ `state="available"` و `route="/learn/<pathId>/<lesson-id>"`.
 
 تخطي الخطوة 3 = الدرس مش هيظهر في الـ dashboard ولا في خريطة المنهج، حتى لو الـ route شغّال.
 
 بعد التعديل: ابحث عن الـ lesson id في `curriculum-data.ts` للتأكد إنه اتسجّل فعلاً.
 
-## 9. v2 vs Legacy
+## 9. الحالة الحالية (Current State)
 
-- **v2 (الحالي):** نظام blocks في `IntroLessonContent`، يُعرض عبر `IntroLessonRenderer`. كل درس = ملف blocks.
-- **Legacy:** `LessonEngine` القديم في `src/components/lesson/`. **متوسّعش فيه.** الدروس القديمة لسه شغّالة، لكن أي درس جديد v2.
-- **مثال على نقل:** `temperature-and-parameters` legacy لسه في الكود لكن اتشال من نافيجيشن Builder M1، واتقسم لدرسين v2: `builder-m1-temperature-basics` و `builder-m1-parameters-family`.
+| البند | الحالة |
+|---|---|
+| Current learner route | `/learn/$pathId/$lessonId` |
+| Current lesson adapter | `src/lib/unified-lessons.ts` |
+| Active learner lessons | 100 |
+| Archived Business lessons | 4 internal/archive-only — not counted for learners |
+| Egyptian production content | locked — do not edit |
+| Localization | docs-only — not runtime-wired (`docs/playbooks/ADAPTIVE_RUNTIME_LOCALIZATION_ARCHITECTURE.md`) |
+
+> **ملاحظة:** النظام القديم (`lessons-data.ts` + `LessonEngine` + `/lessons/<id>`) متوقف — للقراءة فقط ولا يُوسّع.
 
 ## 10. القرارات المفتوحة (محتاجة حسم من القيادة)
 

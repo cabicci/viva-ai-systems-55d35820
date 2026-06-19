@@ -25,13 +25,13 @@ Do **not** document or wire `masaarat-logo-horizontal.png` as the Navbar lockup 
 | `masaarat-logo-lockup-sm.png` | Smaller lockup crop — use only when a compact lockup is needed; prefer lockup component wiring in Batch 2. |
 | `masaarat-logo-horizontal.png` | Horizontal crop (symbol + مسارات, no `masaarat.ai`). **Not** the current Navbar/Sidebar runtime source. |
 | `masaarat-logo-horizontal-rtl.png` | RTL horizontal variant. Reserved for future placements; not current runtime lockup. |
-| `masaarat-icon.png` | Symbol-only mark. **Candidate** favicon / app icon source only (file confirmed present). Not wired in meta yet — Batch 3. |
+| `masaarat-icon.png` | Symbol-only mark. **Wired** in `src/routes/__root.tsx` as favicon + apple-touch-icon (`/brand/masaarat-icon.png`). |
 
 ## Rules
 
 - Do **NOT** redesign or reinterpret the logo. Use approved crops from this folder or from `masaarat-identity-sheet.png`.
 - Do **NOT** use the previous SVG approximation (`MasaaratMark.tsx`, removed).
-- Do **NOT** use untracked `src/components/brand/BrandMark.tsx` unless it is reviewed and converted to an **approved asset-based** implementation (PNG crops, not hand-drawn SVG).
+- Do **NOT** use untracked hand-drawn SVG marks. Runtime **`src/components/brand/BrandMark.tsx`** uses approved **`/brand/masaarat-logo-lockup.png`** (PNG lockup, not SVG).
 - For new placements, crop from `masaarat-identity-sheet.png` rather than redrawing.
 - No AI-generated random icon packs. No regenerated art for logo or symbol.
 

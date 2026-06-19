@@ -1,14 +1,16 @@
 # Intro Connected Rewrite Plan
 
+> **Historical / archive-only document — not the current source of truth.** Intro L2–L7 connected rewrite is **complete** per `docs/CURRENT_STATUS.md`. Keep for planning history only; do not treat open items here as active work.
+
 ## Purpose
 
 This document plans the rewrite of Intro L2–L7 as one connected beginner journey — not as isolated lesson edits.
 
 Implementation may happen in batches, but the curriculum logic must be planned across the full Intro path first.
 
-**Governing context:** Curriculum architecture is frozen at 100 lessons. Intro stays at 7 lessons. L1 is already piloted. L2–L7 still use the old v2 stack and need a connected rewrite aligned with pilot standards.
+**Governing context (historical):** Curriculum architecture is frozen at 100 lessons. Intro stays at 7 lessons. L1 was piloted first; L2–L7 were planned for a connected rewrite aligned with pilot standards.
 
-**Status:** Planning only — no lesson file edits in this step.
+**Status:** **Completed** — planning artifact only. Egyptian production lesson files remain locked; see `docs/playbooks/CURRICULUM_FREEZE_CONTRACT.md`.
 
 ---
 

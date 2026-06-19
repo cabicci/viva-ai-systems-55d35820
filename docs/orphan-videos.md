@@ -1,5 +1,7 @@
 # Orphan Bunny Videos — Audit & Decision
 
+> **Historical audit log.** Last full audit below: **2026-05-28**. For current launch status use `docs/CURRENT_STATUS.md` — **Bunny playback 100/100** learner GUIDs (104 registry entries including 4 archived Business lessons).
+
 Last audit: 2026-05-28
 
 ## What's an "orphan"?
@@ -17,7 +19,11 @@ comm -23 /tmp/bunny_ids.txt /tmp/lesson_files.txt   # orphan videos
 comm -13 /tmp/bunny_ids.txt /tmp/lesson_files.txt   # lessons missing video
 ```
 
-## Current state (2026-05-28)
+## Current state (2026-05-28 audit — superseded counts)
+
+> **Current (per `CURRENT_STATUS.md`):** **100/100** learner Bunny GUIDs · **0** lessons missing video · re-run audit method after bulk renames only.
+
+Historical snapshot from 2026-05-28:
 
 - **Total Bunny videos:** 98 GUIDs registered (95 originals + 3 aliases).
 - **Lessons without video:** 0 (excluding `index.ts` which is the barrel file).
