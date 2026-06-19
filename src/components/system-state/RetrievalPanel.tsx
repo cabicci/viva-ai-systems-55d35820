@@ -21,11 +21,19 @@ export function RetrievalPanel() {
       <div className="glass rounded-2xl p-5 border border-primary/25 space-y-4">
         <div className="flex items-start justify-between gap-3 flex-wrap">
           <p className="text-xs text-muted-foreground leading-loose max-w-2xl">
-            بحث محلي داخل محتوى المنصة فقط (
+            بحث frontend عبر{" "}
             <code className="font-mono text-primary">
               searchPlatformContent()
             </code>
-            ). بدون AI وبدون vectors — تحضير لطبقات RAG القادمة.
+            {" "}— يكمّل RAG backend (
+            <code className="font-mono text-primary">
+              knowledge_chunks
+            </code>
+            {" "}·{" "}
+            <code className="font-mono text-primary">
+              match_knowledge_chunks()
+            </code>
+            ). implemented; live smoke test not performed in this cleanup.
           </p>
           <span className="font-mono text-[10px] tracking-widest text-muted-foreground">
             CORPUS · {RETRIEVAL_CORPUS_SIZE} chunks

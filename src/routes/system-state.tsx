@@ -53,12 +53,6 @@ export const Route = createFileRoute("/system-state")({
 });
 
 function SystemStatePage() {
-  const builder = PATHS.find((p) => p.id === "builder")!;
-  const otherPaths = PATHS.filter((p) => p.id !== "builder");
-
-  const totalLessons = PATHS.flatMap((p) => p.modules).flatMap(
-    (m) => m.lessons,
-  ).length;
   const liveLessons = LESSONS.length;
 
   return (
@@ -118,8 +112,8 @@ function SystemStatePage() {
             </p>
             <div className="grid sm:grid-cols-3 gap-3 mt-6 max-w-xl">
               <Stat label="Routes" value={String(ROUTES.length)} />
-              <Stat label="Live Lessons" value={`${liveLessons} / ${totalLessons}`} />
-              <Stat label="Paths" value={`${PATHS.length}`} />
+              <Stat label="Active Lessons" value={`${liveLessons} / 100`} />
+              <Stat label="Paths (live)" value={`${PATHS.length}`} />
             </div>
           </div>
         </header>
@@ -151,10 +145,26 @@ function SystemStatePage() {
         <Section no="02" icon={BookOpen} label="LESSON SYSTEM STATE" title="حالة نظام الدروس">
           <p className="text-sm text-muted-foreground leading-loose">
             مصدر الحقيقة:{" "}
-            <code className="font-mono text-primary">src/lib/lessons-data.ts</code> + محرك الدرس{" "}
-            <code className="font-mono text-primary">src/components/lesson/LessonEngine.tsx</code>.
+            <code className="font-mono text-primary">src/lib/unified-lessons.ts</code>{" "}
+            · الراوت{" "}
+            <code className="font-mono text-primary">/learn/$pathId/$lessonId</code>{" "}
+            · العرض عبر{" "}
+            <code className="font-mono text-primary">IntroLessonRenderer</code>.
+            الهدف: 100 درس نشط للمتعلم — 4 دروس Business مؤرشفة داخليًا (
+            <code className="font-mono text-primary">archived-lessons</code>
+            ) ولا تُحسب. legacy متوقف:{" "}
+            <code className="font-mono text-primary">lessons-data.ts</code> ·{" "}
+            <code className="font-mono text-primary">LessonEngine.tsx</code> — لا
+            تُوسَّع.
           </p>
-          {builder.modules.map((m) => (
+          {PATHS.map((path) => (
+            <div key={path.id} className="space-y-3">
+              <div className="flex items-center gap-2 flex-wrap">
+                <h3 className="font-bold text-foreground">{path.title}</h3>
+                <StatusPill status="live" />
+                <code className="font-mono text-[10px] text-muted-foreground">{path.id}</code>
+              </div>
+              {path.modules.map((m) => (
             <div key={m.id} className="glass rounded-2xl p-5 border border-border/30">
               <div className="flex items-center gap-2 mb-3">
                 <span className="font-mono text-[10px] text-muted-foreground">
@@ -181,6 +191,8 @@ function SystemStatePage() {
                 ))}
               </div>
             </div>
+              ))}
+            </div>
           ))}
           <div className="glass rounded-xl p-5 border border-border/40">
             <p className="text-sm text-foreground/90 mb-2 font-bold">
@@ -202,37 +214,23 @@ function SystemStatePage() {
 
         <Section no="03" icon={MapIcon} label="CURRICULUM MAP STATE" title="حالة خريطة المنهج">
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="glass rounded-2xl p-5 border border-primary/25">
-              <div className="flex items-center gap-2 mb-2">
-                <h3 className="font-bold">Builder Path</h3>
-                <StatusPill status="live" />
+            {PATHS.map((p) => (
+              <div key={p.id} className="glass rounded-2xl p-5 border border-border/40">
+                <div className="flex items-center gap-2 mb-2">
+                  <h3 className="font-bold">{p.title}</h3>
+                  <StatusPill status="live" />
+                </div>
+                <p className="text-xs text-muted-foreground mb-3">{p.tagline}</p>
+                <ul className="space-y-1 text-sm text-muted-foreground">
+                  {p.modules.map((m) => (
+                    <li key={m.id}>
+                      <span className="font-mono text-[10px] text-primary mr-2">M{m.order}</span>
+                      {m.title} — {m.lessons.length} lessons
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <p className="text-xs text-muted-foreground mb-3">{builder.tagline}</p>
-              <ul className="space-y-1 text-sm text-muted-foreground">
-                {builder.modules.map((m) => (
-                  <li key={m.id}>
-                    <span className="font-mono text-[10px] text-primary mr-2">M{m.order}</span>
-                    {m.title} — {m.lessons.length} lessons
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="glass rounded-2xl p-5 border border-border/40">
-              <div className="flex items-center gap-2 mb-2">
-                <h3 className="font-bold">المسارات الأخرى</h3>
-                <StatusPill status="live" />
-              </div>
-              <ul className="space-y-1 text-sm text-muted-foreground">
-                {otherPaths.map((p) => (
-                  <li key={p.id}>
-                    <span className="font-mono text-[10px] text-accent mr-2">
-                      {p.id.toUpperCase()}
-                    </span>
-                    {p.title} — {p.tagline}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            ))}
           </div>
           <div className="glass rounded-xl p-5 border border-border/40">
             <p className="text-sm font-bold mb-2">Navigation Hierarchy</p>
@@ -246,59 +244,60 @@ function SystemStatePage() {
           <div className="grid md:grid-cols-2 gap-4">
             <Info title="مصدر الحقيقة" body="src/lib/lesson-progress.ts — Hook عبر React Query متصل بجدول lesson_progress في Lovable Cloud." />
             <Info title="الحالات المدعومة" body="not-started · in-progress · completed (مخزّنة per user_id + lesson_id)." />
-            <Info title="ما الذي يُكمل الدرس؟" body="setStatus('completed') من داخل LessonEngine — عند وصول المتعلم لنهاية الدرس وضغط زر الإتمام." />
-            <Info title="Unlock Logic" body="حاليًا غير مفعّل — كل الدروس المتاحة مفتوحة بدون gating." />
+            <Info title="ما الذي يُكمل الدرس؟" body="setStatus('completed') من داخل /learn/$pathId/$lessonId (IntroLessonRenderer) — عند وصول المتعلم لنهاية الدرس وضغط زر الإتمام." />
+            <Info title="Unlock Logic" body="حاليًا غير مفعّل — isUnlocked() ترجع true دائمًا؛ كل الدروس المتاحة مفتوحة بدون gating تدريجي." />
             <Info title="Saved Progress" body="Persisted server-side per user. عند تسجيل الدخول التقدّم بيتحمّل أوتوماتيك." />
-            <Info title="Learner Flow" body="Landing → Sign up → Onboarding → Dashboard → Curriculum → Lesson → Mark Complete." />
+            <Info title="Learner Flow" body="Landing → Sign up → Dashboard → Curriculum → /learn/$pathId/$lessonId → Mark Complete. (/onboarding legacy redirect فقط.)" />
           </div>
         </Section>
 
         <Section no="05" icon={Sparkles} label="AI SYSTEM STATE" title="حالة أنظمة الـ AI">
           <div className="grid md:grid-cols-2 gap-4">
-            <AIRow title="Assistant" status="placeholder" body="مفهوم معروض داخل دروس (Multimodal/RAG/Agent) لكن لا يوجد runtime assistant مفعّل بعد." />
-            <AIRow title="Retrieval (RAG)" status="placeholder" body="معرّف تعليميًا فقط — لا يوجد Knowledge Base متصل أو vector store." />
-            <AIRow title="Contextual Logic" status="placeholder" body="لا يوجد context tracker حقيقي يقرأ موقع المتعلم لحظيًا." />
-            <AIRow title="Multimodal" status="placeholder" body="درس تعليمي فقط — لا يوجد vision pipeline متصل." />
-            <AIRow title="Mission Guidance" status="partial" body="Mission Cards ثابتة داخل الدرس، بدون AI guidance حي." />
-            <AIRow title="Workflow / Agents" status="placeholder" body="معرّف كمفهوم — لا يوجد agent runtime أو tool-use منفّذ." />
+            <AIRow title="Assistant" status="live" body="/ai-assistant + assistant-runtime Edge Function — implemented; live smoke test not performed in this cleanup." />
+            <AIRow title="Retrieval (RAG)" status="live" body="knowledge_chunks (pgvector) + match_knowledge_chunks() + searchPlatformContent() — implemented; live smoke test not performed in this cleanup." />
+            <AIRow title="Contextual Logic" status="live" body="useLearnerContext() — يقرأ المسار/الوحدة/الدرس/التقدّم لحظيًا." />
+            <AIRow title="Multimodal" status="partial" body="درس + Assistant نصّي — vision pipeline غير متصل بعد." />
+            <AIRow title="Mission Guidance" status="partial" body="Mission blocks ثابتة داخل الدرس + Mission Runtime Foundation — بدون AI guidance حي بعد." />
+            <AIRow title="Workflow / Agents" status="placeholder" body="Agent runtime و tool-use — خارج النطاق الحالي." />
           </div>
         </Section>
 
         <Section no="06" icon={Target} label="MISSION SYSTEM STATE" title="حالة نظام المهام">
           <div className="grid md:grid-cols-2 gap-4">
-            <Info title="هيكل المهمة" body="MissionCard داخل lessons-data.ts — عنوان + خطوات أو نص قصير." />
+            <Info title="هيكل المهمة" body="Mission block داخل محتوى الدرس (unified-lessons + INTRO_LESSON_CONTENT) — عنوان + خطوات أو نص قصير." />
             <Info title="الاتصال بالدرس" body="كل درس متاح فيه Mission واحدة في نهايته." />
-            <Info title="إكمال المهمة" body="حاليًا تعليمي — مفيش tracking مستقل للـ mission completion (مرتبط بإكمال الدرس فقط)." />
-            <Info title="Mission Library" body="غير موجودة — مفيش صفحة /missions منفصلة بعد." />
+            <Info title="إكمال المهمة" body="Mission Runtime Foundation موجود — تتبّع مستقل وحفظ DB ما زال جزئيًا (راجع Mission Runtime Panel)." />
+            <Info title="Mission Library" body="لا توجد صفحة /missions منفصلة — admin/internal — needs operational decision." />
           </div>
         </Section>
 
         <Section no="07" icon={Film} label="VIDEO SYSTEM STATE" title="حالة نظام الفيديو">
           <div className="grid md:grid-cols-2 gap-4">
-            <AIRow title="Cinematic Intro" status="placeholder" body="مذكور في Behavior Architecture — مفيش player مدمج بعد." />
-            <AIRow title="Build / Failure / Mission Videos" status="placeholder" body="غير متصلة بالدروس حاليًا." />
-            <AIRow title="Lesson ↔ Video Relationship" status="placeholder" body="المخطط: Video = Lesson + Mission + Real Platform Context — غير منفّذ." />
+            <AIRow title="Lesson Videos (Bunny)" status="live" body="Bunny embed عبر IntroLessonRenderer — documented as 100/100 learner videos; fresh Bunny probe not performed in this cleanup." />
+            <AIRow title="Remotion Pipeline" status="live" body="طبقة إنتاج Remotion موجودة — خارج نطاق هذا الـ snapshot." />
+            <AIRow title="Lesson ↔ Video Relationship" status="live" body="video block داخل rhythm الدرس — مربوط بـ getBunnyEmbedUrl()." />
+            <AIRow title="Cinematic / Build / Failure Videos" status="partial" body="أنواع فيديو إضافية في Behavior Architecture — ليست كلها مدمجة في كل درس." />
           </div>
         </Section>
 
         <Section no="08" icon={Layers} label="UI COMPONENT MAP" title="خريطة المكوّنات المعاد استخدامها">
           <div className="grid md:grid-cols-2 gap-3">
-            <CompRow area="Lesson Blocks" files="src/components/lesson/blocks.tsx" items="Section · ConceptCard · DialogueLine · ModelRow · ComparisonCard · CoreRuleBanner · Chip" />
-            <CompRow area="Lesson Engine" files="src/components/lesson/LessonEngine.tsx" items="مسؤول عن render الدرس + completion." />
-            <CompRow area="Mission" files="src/components/lesson/MissionCard.tsx" items="MissionCard." />
+            <CompRow area="Lesson Renderer" files="src/components/intro/IntroLessonRenderer.tsx" items="عرض الدرس + video blocks + completion." />
+            <CompRow area="Lesson Content" files="src/lib/unified-lessons.ts · src/components/intro/lessons/*" items="100 active learner lessons + intro content modules." />
+            <CompRow area="Assistant" files="src/components/assistant/AssistantPanel.tsx" items="مساعد المنصة — Context + Retrieval + Edge Function." />
             <CompRow area="Dashboard / Nav" files="src/components/dashboard/Sidebar.tsx" items="Sidebar الرئيسي للصفحات الداخلية." />
             <CompRow area="Site / Landing" files="src/components/site/*" items="Hero · Journey · Paths · Philosophy · CTA · Navbar · Footer." />
             <CompRow area="UI Primitives" files="src/components/ui/*" items="shadcn primitives (button, card, dialog, ...)." />
           </div>
         </Section>
 
-        <Section no="09" icon={Database} label="DATABASE / STORAGE PLACEHOLDERS" title="افتراضات الـ Frontend">
+        <Section no="09" icon={Database} label="DATABASE / STORAGE" title="مصادر البيانات">
           <div className="grid md:grid-cols-2 gap-4">
-            <Info title="Lessons" body="Static — معرّفة محليًا في src/lib/lessons-data.ts (مفيش lessons table في الـ DB)." />
-            <Info title="Missions" body="Static — جزء من بيانات الدرس نفسه." />
+            <Info title="Lessons" body="Static — unified-lessons.ts + intro lesson modules (مفيش lessons table في الـ DB)." />
+            <Info title="Missions" body="Static — جزء من بيانات الدرس؛ Mission Runtime Foundation للقراءة." />
             <Info title="Progress" body="جدول lesson_progress في Lovable Cloud (user_id, lesson_id, status) مع RLS." />
-            <Info title="User State" body="مدار عبر Supabase Auth + auth-context. مفيش profiles table مرتبط بعد." />
-            <Info title="AI Systems" body="مفيش AI tables أو vector store أو edge functions منشورة بعد." />
+            <Info title="User State" body="Supabase Auth + auth-context + user_roles للـ admin." />
+            <Info title="AI Systems" body="knowledge_chunks (pgvector) + match_knowledge_chunks() + assistant-runtime Edge Function." />
             <Info title="Notes" body="جدول lesson_notes في DB بدون واجهة حاليًا — متروك لميزة لاحقة." />
           </div>
         </Section>
@@ -331,24 +330,24 @@ function SystemStatePage() {
               <div>
                 <p className="font-bold mb-2">Completed runtime foundations:</p>
                 <ul className="list-disc pr-5 space-y-1 text-primary-foreground/95">
-                  <li>Context Layer Foundation</li>
-                  <li>Retrieval Layer Foundation</li>
-                  <li>Assistant Runtime Shell</li>
+                  <li>100 active learner lessons via unified-lessons (5 live paths)</li>
+                  <li>Context Layer + useLearnerContext()</li>
+                  <li>Retrieval Layer + RAG (knowledge_chunks / pgvector)</li>
+                  <li>Assistant Runtime + assistant-runtime Edge Function</li>
+                  <li>Video runtime (Bunny embed in IntroLessonRenderer — documented 100/100)</li>
                   <li>Mission Runtime Foundation</li>
-                  <li>Build Logs Runtime Foundation</li>
-                  <li>Build Logs Timeline View</li>
+                  <li>Build Logs Runtime Foundation + admin /build-logs</li>
                   <li>Cloud sync hydration for build logs + missions</li>
                   <li>Admin role via user_roles + has_role()</li>
                 </ul>
               </div>
               <div>
-                <p className="font-bold mb-2">Still not implemented:</p>
+                <p className="font-bold mb-2">Open / pending:</p>
                 <ul className="list-disc pr-5 space-y-1 text-primary-foreground/95">
-                  <li>Real AI API via secure Edge Function</li>
-                  <li>Vector database / embeddings</li>
-                  <li>Public Build Logs page</li>
-                  <li>Video runtime</li>
-                  <li>Agent runtime</li>
+                  <li>Sequential unlock gating (isUnlocked always true)</li>
+                  <li>Agent runtime + multimodal vision</li>
+                  <li>Build Logs learner visibility — admin/internal — needs operational decision</li>
+                  <li>Mission persistence — partial (see Mission Runtime Panel)</li>
                 </ul>
               </div>
             </div>

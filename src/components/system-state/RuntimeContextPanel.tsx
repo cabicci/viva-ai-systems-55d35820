@@ -16,8 +16,9 @@ export function RuntimeContextPanel() {
           <p className="text-xs text-muted-foreground leading-loose max-w-2xl">
             مخرجات{" "}
             <code className="font-mono text-primary">useLearnerContext()</code>{" "}
-            — البنية التحتية لطبقات الـ Retrieval والـ Assistant القادمة. غير
-            ظاهرة للمتعلم.
+            — Context Layer متصل ويغذّي Retrieval و Assistant Runtime. غير ظاهر
+            للمتعلم مباشرة؛ implemented; live smoke test not performed in this
+            cleanup.
           </p>
           <StatusPill status={ctx.isReady ? "live" : "partial"} />
         </div>

@@ -43,7 +43,7 @@ export const Route = createFileRoute("/assistant-runtime")({
       {
         name: "description",
         content:
-          "صفحة اختبار داخلية للـ AI Assistant Shell — Context + Retrieval فقط، بدون توليد إجابات.",
+          "Admin diagnostics — حالة Assistant Runtime والتحقق من Context + Retrieval + Edge Function + pgvector.",
       },
     ],
   }),
@@ -201,14 +201,15 @@ function AssistantRuntimePage() {
           <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-accent/15 blur-3xl" />
           <div className="relative">
             <p className="font-mono text-[11px] tracking-widest text-primary mb-4">
-              INTERNAL · ASSISTANT SHELL
+              INTERNAL · ASSISTANT RUNTIME
             </p>
             <h1 className="text-3xl md:text-5xl font-black leading-[1.3] mb-5">
               Assistant Runtime
             </h1>
             <p className="text-muted-foreground leading-loose max-w-2xl text-[15px] md:text-base">
-              صفحة اختبار داخلية لتحضير الـ AI Assistant: تربط بين Context
-              Layer و Retrieval Layer قبل توصيل أي AI خارجي.
+              Admin diagnostics لحالة Assistant Runtime والتحقق — Context Layer،
+              Retrieval، Edge Function، و pgvector. implemented; live smoke test
+              not performed in this cleanup.
             </p>
           </div>
         </header>
@@ -224,8 +225,8 @@ function AssistantRuntimePage() {
             <StatusRow
               icon={Sparkles}
               title="Assistant"
-              status="placeholder"
-              note="Placeholder — Not connected yet."
+              status="connected"
+              note="/ai-assistant + callAssistantRuntime() — implemented; live smoke test not performed in this cleanup."
             />
             <StatusRow
               icon={Brain}
@@ -237,19 +238,19 @@ function AssistantRuntimePage() {
               icon={SearchIcon}
               title="Retrieval Layer"
               status="connected"
-              note={`searchPlatformContent — ${RETRIEVAL_CORPUS_SIZE} chunks.`}
+              note={`searchPlatformContent — ${RETRIEVAL_CORPUS_SIZE} chunks (frontend) + knowledge_chunks pgvector (backend).`}
             />
             <StatusRow
               icon={Sparkles}
               title="AI API"
-              status="placeholder"
-              note="Not connected — لا يوجد Gateway مفعّل."
+              status="connected"
+              note="assistant-runtime Edge Function — implemented; live smoke test not performed in this cleanup."
             />
             <StatusRow
               icon={Database}
               title="Vector Store"
-              status="placeholder"
-              note="Not connected — لا يوجد embeddings store."
+              status="connected"
+              note="knowledge_chunks + match_knowledge_chunks() — implemented; live smoke test not performed in this cleanup."
             />
           </div>
         </Section>
@@ -370,8 +371,8 @@ function AssistantRuntimePage() {
         <Section
           no="04"
           icon={Sparkles}
-          label="FUTURE ASSISTANT FLOW"
-          title="رحلة الـ Assistant القادمة"
+          label="ASSISTANT FLOW"
+          title="رحلة الـ Assistant (مرجع)"
         >
           <div className="glass rounded-2xl p-6 md:p-10 border border-border/30">
             <div className="flex flex-col items-center">
@@ -396,10 +397,11 @@ function AssistantRuntimePage() {
           <div className="glass rounded-2xl p-5 border border-primary/25 space-y-4">
             <div className="flex items-start justify-between gap-3 flex-wrap">
               <p className="text-xs text-muted-foreground leading-loose max-w-2xl">
-                نقطة الاتصال الآمنة الأولى مع الـ Backend Runtime
-                (<code>assistant-runtime</code> Edge Function). يستقبل الـ Query
-                + Learner Context + Retrieval Results ويُرجع payload منظّم
-                مؤقت بدون أي استدعاء AI حقيقي بعد.
+                نقطة الاتصال الآمنة مع{" "}
+                <code>assistant-runtime</code> Edge Function. يستقبل Query +
+                Learner Context + Retrieval Results — implemented; live smoke
+                test not performed in this cleanup (استخدم Test Backend Runtime
+                أدناه).
               </p>
               <span
                 className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 text-[10px] font-mono ${
@@ -509,8 +511,8 @@ function AssistantRuntimePage() {
             )}
 
             <div className="rounded-lg border border-destructive/25 p-3 text-xs text-foreground/90 leading-loose bg-destructive/5">
-              لا يتم إرسال أي مفاتيح API للواجهة الأمامية. كل الاتصال
-              المستقبلي بالـ AI سيتم عبر Backend Runtime آمن.
+              لا يتم إرسال أي مفاتيح API للواجهة الأمامية — كل الاتصال بالـ AI
+              عبر Backend Runtime آمن (Edge Function).
             </div>
           </div>
         </Section>
@@ -526,8 +528,9 @@ function AssistantRuntimePage() {
                 SAFETY NOTE
               </p>
               <p className="text-sm text-foreground/90 leading-loose">
-                هذه الصفحة لا تولّد إجابات AI حقيقية بعد. هي فقط لاختبار أن
-                المنصة أصبحت تفهم السياق وتسترجع المحتوى قبل تشغيل الـ AI.
+                Admin diagnostics — للتحقق من أن Context و Retrieval و Edge
+                Function يعملون كما متوقّع. implemented; live smoke test not
+                performed in this cleanup.
               </p>
             </div>
           </div>
