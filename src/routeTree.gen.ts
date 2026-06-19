@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as Char91indexChar93RouteImport } from './routes/[index]'
-import { Route as TriageRouteImport } from './routes/triage'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SystemStateRouteImport } from './routes/system-state'
 import { Route as StartRouteImport } from './routes/start'
@@ -45,11 +44,6 @@ import { Route as LearnPathIdLessonIdRouteImport } from './routes/learn.$pathId.
 const Char91indexChar93Route = Char91indexChar93RouteImport.update({
   id: '/index',
   path: '/index',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TriageRoute = TriageRouteImport.update({
-  id: '/triage',
-  path: '/triage',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TermsRoute = TermsRouteImport.update({
@@ -225,7 +219,6 @@ export interface FileRoutesByFullPath {
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
   '/terms': typeof TermsRoute
-  '/triage': typeof TriageRoute
   '/admin/icons-preview': typeof AdminIconsPreviewRoute
   '/admin/persona-sim-v9': typeof AdminPersonaSimV9Route
   '/admin/v9-review': typeof AdminV9ReviewRoute
@@ -258,7 +251,6 @@ export interface FileRoutesByTo {
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
   '/terms': typeof TermsRoute
-  '/triage': typeof TriageRoute
   '/admin/icons-preview': typeof AdminIconsPreviewRoute
   '/admin/persona-sim-v9': typeof AdminPersonaSimV9Route
   '/admin/v9-review': typeof AdminV9ReviewRoute
@@ -293,7 +285,6 @@ export interface FileRoutesById {
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
   '/terms': typeof TermsRoute
-  '/triage': typeof TriageRoute
   '/admin/icons-preview': typeof AdminIconsPreviewRoute
   '/admin/persona-sim-v9': typeof AdminPersonaSimV9Route
   '/admin/v9-review': typeof AdminV9ReviewRoute
@@ -329,7 +320,6 @@ export interface FileRouteTypes {
     | '/start'
     | '/system-state'
     | '/terms'
-    | '/triage'
     | '/admin/icons-preview'
     | '/admin/persona-sim-v9'
     | '/admin/v9-review'
@@ -362,7 +352,6 @@ export interface FileRouteTypes {
     | '/start'
     | '/system-state'
     | '/terms'
-    | '/triage'
     | '/admin/icons-preview'
     | '/admin/persona-sim-v9'
     | '/admin/v9-review'
@@ -396,7 +385,6 @@ export interface FileRouteTypes {
     | '/start'
     | '/system-state'
     | '/terms'
-    | '/triage'
     | '/admin/icons-preview'
     | '/admin/persona-sim-v9'
     | '/admin/v9-review'
@@ -431,7 +419,6 @@ export interface RootRouteChildren {
   StartRoute: typeof StartRoute
   SystemStateRoute: typeof SystemStateRoute
   TermsRoute: typeof TermsRoute
-  TriageRoute: typeof TriageRoute
   AdminIconsPreviewRoute: typeof AdminIconsPreviewRoute
   AdminPersonaSimV9Route: typeof AdminPersonaSimV9Route
   AdminV9ReviewRoute: typeof AdminV9ReviewRoute
@@ -449,13 +436,6 @@ declare module '@tanstack/react-router' {
       path: '/index'
       fullPath: '/index'
       preLoaderRoute: typeof Char91indexChar93RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/triage': {
-      id: '/triage'
-      path: '/triage'
-      fullPath: '/triage'
-      preLoaderRoute: typeof TriageRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/terms': {
@@ -707,7 +687,6 @@ const rootRouteChildren: RootRouteChildren = {
   StartRoute: StartRoute,
   SystemStateRoute: SystemStateRoute,
   TermsRoute: TermsRoute,
-  TriageRoute: TriageRoute,
   AdminIconsPreviewRoute: AdminIconsPreviewRoute,
   AdminPersonaSimV9Route: AdminPersonaSimV9Route,
   AdminV9ReviewRoute: AdminV9ReviewRoute,
