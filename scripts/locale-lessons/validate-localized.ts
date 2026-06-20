@@ -1,6 +1,13 @@
-import type { AdaptationTargetLocale } from "../../src/lib/locale-lessons/types.ts";
+import type {
+  AdaptationTargetLocale,
+  LocalizedSampleManifest,
+} from "../../src/lib/locale-lessons/types.ts";
 import { ADAPTATION_TARGET_LOCALES } from "../../src/lib/locale-lessons/types.ts";
+import { validateSampleTargetPackage } from "./generate-localized-samples.ts";
 import {
+  manifestPathForLocale,
+  pathExists,
+  readJsonFile,
   validateMsaSourcePackage,
   validateTargetPackage,
 } from "./lib/source-package.ts";
@@ -37,10 +44,32 @@ async function main() {
 
   let exitCode = 0;
   for (const locale of targets) {
+    const manifestPath = manifestPathForLocale(locale);
+    const hasManifest = await pathExists(manifestPath);
+
+    if (hasManifest) {
+      const manifest = await readJsonFile<LocalizedSampleManifest | { packageStatus?: string }>(
+        manifestPath,
+      );
+      if (manifest.packageStatus === "sample") {
+        const sample = await validateSampleTargetPackage(locale);
+        console.log(
+          sample.ok
+            ? `${locale}: SAMPLE OK (${sample.count}/3 sample lessons, package incomplete)`
+            : `${locale}: SAMPLE INVALID (${sample.count}/3)`,
+        );
+        if (!sample.ok) {
+          exitCode = 1;
+          for (const error of sample.errors) console.error(`  - ${error}`);
+        }
+        continue;
+      }
+    }
+
     const result = await validateTargetPackage(locale);
     if (result.foundLessonCount === 0) {
       console.log(
-        `${locale}: not generated yet (0/${result.expectedLessonCount}) — expected in Phase 2B dry-run`,
+        `${locale}: not generated yet (0/${result.expectedLessonCount})`,
       );
       continue;
     }

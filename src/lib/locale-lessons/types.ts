@@ -75,6 +75,16 @@ export interface LocalizedLessonManifest {
   lessonIds: string[];
 }
 
+/** Phase 2C — incomplete sample package manifest (3 lessons only). */
+export interface LocalizedSampleManifest extends LocalizedLessonManifest {
+  packageStatus: "sample";
+  incomplete: true;
+  requiredLessonCount: typeof REQUIRED_LESSON_COUNT;
+  sampleLessonIds: string[];
+  provider: string;
+  providerModel: string;
+}
+
 /** Constraints enforced by adaptation prompts and validation. */
 export interface AdaptationConstraints {
   preserveLessonId: true;

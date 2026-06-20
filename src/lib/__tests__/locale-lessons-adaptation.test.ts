@@ -5,16 +5,20 @@ import { ARCHIVED_LESSON_ID_SET } from "@/lib/archived-lessons";
 import type {
   AdaptationPlanManifest,
   LocalizedLessonManifest,
+  LocalizedSampleManifest,
 } from "@/lib/locale-lessons/types";
 import { ADAPTATION_TARGET_LOCALES, REQUIRED_LESSON_COUNT } from "@/lib/locale-lessons/types";
 import { buildAdaptationPrompt } from "../../../scripts/locale-lessons/prompts/build-prompt.ts";
 import { buildAdaptationPlan } from "../../../scripts/locale-lessons/plan-adaptation.ts";
+import { validateSampleTargetPackage } from "../../../scripts/locale-lessons/generate-localized-samples.ts";
 import {
   loadMsaLessonPackage,
+  manifestPathForLocale,
   validateMsaSourcePackage,
   validateTargetPackage,
 } from "../../../scripts/locale-lessons/lib/source-package.ts";
 import { activeLessonIds } from "../../../scripts/locale-lessons/lib/active-lesson-ids.ts";
+import { SAMPLE_LESSON_COUNT } from "../../../scripts/locale-lessons/lib/sample-lesson-ids.ts";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
 const MSA_MANIFEST = path.join(REPO_ROOT, "src/lib/locale-lessons/ar-MSA/manifest.json");
@@ -29,14 +33,29 @@ describe("locale-lessons adaptation pipeline", () => {
     expect(result.archivedIncluded).toEqual([]);
   });
 
-  it("requires target packages to have all 100 lessons when present", async () => {
+  it("treats target packages as sample (3) or empty — never valid at full 100 until complete", async () => {
     for (const target of ADAPTATION_TARGET_LOCALES) {
+      const manifestPath = manifestPathForLocale(target);
+      if (existsSync(manifestPath)) {
+        const manifest = JSON.parse(
+          readFileSync(manifestPath, "utf8"),
+        ) as LocalizedSampleManifest;
+        if (manifest.packageStatus === "sample") {
+          const sample = await validateSampleTargetPackage(target);
+          expect(sample.ok).toBe(true);
+          expect(sample.count).toBe(SAMPLE_LESSON_COUNT);
+          continue;
+        }
+      }
+
       const result = await validateTargetPackage(target);
-      expect(result.foundLessonCount).toBe(0);
+      if (result.foundLessonCount === 0) {
+        expect(result.ok).toBe(false);
+        continue;
+      }
+
+      expect(result.foundLessonCount).not.toBe(REQUIRED_LESSON_COUNT);
       expect(result.ok).toBe(false);
-      expect(result.errors.some((e) => e.includes("not valid until all 100"))).toBe(
-        true,
-      );
     }
   });
 

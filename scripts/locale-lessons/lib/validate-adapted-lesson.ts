@@ -1,0 +1,116 @@
+import type {
+  AdaptationTargetLocale,
+  AdaptedLessonPackage,
+  LocalizedLessonPackage,
+} from "../../../src/lib/locale-lessons/types.ts";
+
+function extractJsonObject(raw: string): string {
+  const trimmed = raw.trim();
+  if (trimmed.startsWith("{")) return trimmed;
+  const fenced = trimmed.match(/```(?:json)?\n([\s\S]*?)```/);
+  if (fenced?.[1]) return fenced[1].trim();
+  const match = trimmed.match(/\{[\s\S]*\}/);
+  if (!match) {
+    throw new Error("Provider response did not contain a JSON object");
+  }
+  return match[0];
+}
+
+export function parseAdaptedLessonJson(raw: string): AdaptedLessonPackage {
+  const jsonText = extractJsonObject(raw);
+  const parsed = JSON.parse(jsonText) as AdaptedLessonPackage;
+  return parsed;
+}
+
+export function validateAdaptedLessonPackage(
+  source: LocalizedLessonPackage,
+  adapted: AdaptedLessonPackage,
+  targetLocale: AdaptationTargetLocale,
+): string[] {
+  const errors: string[] = [];
+
+  if (adapted.locale !== targetLocale) {
+    errors.push(`locale must be ${targetLocale}, got ${adapted.locale}`);
+  }
+  if (adapted.lessonId !== source.lessonId) {
+    errors.push(
+      `lessonId must remain ${source.lessonId}, got ${adapted.lessonId}`,
+    );
+  }
+  if (adapted.pathId && source.pathId && adapted.pathId !== source.pathId) {
+    errors.push(`pathId must remain ${source.pathId}, got ${adapted.pathId}`);
+  }
+  if (adapted.sections.length !== source.sections.length) {
+    errors.push(
+      `section count must remain ${source.sections.length}, got ${adapted.sections.length}`,
+    );
+  }
+
+  for (let i = 0; i < source.sections.length; i++) {
+    const srcSection = source.sections[i];
+    const adaptedSection = adapted.sections[i];
+    if (!adaptedSection) continue;
+    if (adaptedSection.role !== srcSection.role) {
+      errors.push(
+        `section ${i} role must remain ${srcSection.role}, got ${adaptedSection.role}`,
+      );
+    }
+    if (
+      srcSection.quiz?.correctIndex !== undefined &&
+      adaptedSection.quiz?.correctIndex !== undefined &&
+      adaptedSection.quiz.correctIndex !== srcSection.quiz.correctIndex
+    ) {
+      errors.push(
+        `quiz correctIndex must remain ${srcSection.quiz.correctIndex} for ${source.lessonId}`,
+      );
+    }
+    const srcRubric = srcSection.mission?.rubric ?? [];
+    const adaptedRubric = adaptedSection.mission?.rubric ?? [];
+    if (srcRubric.length > 0 && adaptedRubric.length !== srcRubric.length) {
+      errors.push(`mission rubric row count changed for ${source.lessonId}`);
+    }
+    for (let r = 0; r < srcRubric.length; r++) {
+      if (adaptedRubric[r]?.weight !== srcRubric[r]?.weight) {
+        errors.push(
+          `rubric weight must remain ${srcRubric[r]?.weight} for ${source.lessonId}`,
+        );
+      }
+    }
+  }
+
+  if (!adapted.title?.trim()) {
+    errors.push("title must be non-empty");
+  }
+  if (!adapted.sections.some((section) => section.contentMarkdown.trim())) {
+    errors.push("at least one section must include contentMarkdown");
+  }
+
+  return errors;
+}
+
+export function finalizeAdaptedPackage(
+  source: LocalizedLessonPackage,
+  adapted: AdaptedLessonPackage,
+  targetLocale: AdaptationTargetLocale,
+  sourcePackagePath: string,
+  generatedAt: string,
+): AdaptedLessonPackage {
+  return {
+    ...adapted,
+    locale: targetLocale,
+    lessonId: source.lessonId,
+    pathId: source.pathId,
+    moduleId: source.moduleId,
+    productionRoute: source.productionRoute,
+    canonicalVersion: source.canonicalVersion,
+    nextLessonId: source.nextLessonId,
+    estimatedMinutes: source.estimatedMinutes,
+    adaptedFrom: {
+      locale: "ar-MSA",
+      lessonId: source.lessonId,
+      canonicalVersion: source.canonicalVersion,
+      sourcePackagePath,
+    },
+    generatedAt,
+  };
+}
