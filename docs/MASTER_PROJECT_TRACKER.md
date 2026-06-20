@@ -612,16 +612,10 @@ Exceptions (slug `m{N}` ≠ module id, accepted):
 
 ### Visual Freeze — Admin UI / Deferred Issues
 
-#### Admin SSR auth access issue
-- **Affected routes:** `/admin/v9-review`, `/admin/persona-sim-v9`
-- **Issue:** Direct URL / headless access triggers SSR admin guard before client session is available, causing redirect to `/login`.
-- **Impact:** Blocks authenticated visual smoke-check for these admin diagnostic pages.
-- **Status:** Deferred; not part of Visual Freeze Batch #1 (merged `40f4d5d`).
-- **Possible future fixes:**
-  - Move routes under authenticated client-only layout
-  - Set route SSR disabled if appropriate
-  - Expose links through admin index
-- **Freeze decision:** Does not block Batch #1 merge — pre-existing and unrelated to token fixes. Must be resolved or explicitly accepted before final admin UI freeze.
+#### Admin SSR auth access issue *(historical — routes removed in admin cleanup)*
+- **Former routes:** `/admin/v9-review`, `/admin/persona-sim-v9` (deleted; no longer registered)
+- **Issue:** Direct URL / headless access triggered SSR admin guard before client session was available, causing redirect to `/login`.
+- **Status:** Obsolete — routes removed. Active admin hub is `/admin/` (Sidebar: «لوحة الإدارة»).
 
 ### F1.d Visual Freeze Lock Plan
 
@@ -644,7 +638,7 @@ Exceptions (slug `m{N}` ≠ module id, accepted):
 - Visual changes after lock require explicit reason (regression fix, accessibility, or approved launch polish).
 
 #### 3. Known exclusions / deferred
-- Admin SSR auth access issue (`/admin/v9-review`, `/admin/persona-sim-v9`).
+- Admin SSR auth access issue *(historical — v9/persona-sim admin routes removed)*.
 - Dark mode tokens.
 - Card variants system.
 - Shadow scale narrowing.

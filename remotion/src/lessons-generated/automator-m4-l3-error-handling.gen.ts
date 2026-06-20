@@ -75,7 +75,7 @@ export const SCENES: SceneData[] = [
     "eyebrow": "شوف بنفسك",
     "title": "الطبقات التشغيلية",
     "src": "lessons/unique/automator-m4-l3-error-handling.jpg",
-    "caption": "كل طبقة في الـ /operational-layers بتاعتنا فيها error handling خاص بيها. لو الـ Retrieval Layer فشلت تجيب context، النظام مش بيقف — بيرجع لرد افتراضي وبيلوج الـ error. ده اللي هتعمله في الـ workflows بتاعتك بالظبط."
+    "caption": "كل طبقة في الطبقات التشغيلية بتاعتنا فيها error handling خاص بيها. لو الـ Retrieval Layer فشلت تجيب context، النظام مش بيقف — بيرجع لرد افتراضي وبيلوج الـ error. ده اللي هتعمله في الـ workflows بتاعتك بالظبط."
   },
   {
     "card": "CompareCard",

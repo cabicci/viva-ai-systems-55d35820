@@ -130,7 +130,7 @@
 - **M1:** مفيش dark mode (`.dark {}` block غير معرّف) رغم إن variant معدّ. شيلوه أو اعمله.
 - **M2:** background blob divs مش `aria-hidden`.
 - **M3:** Sidebar mobile hamburger `<SheetTrigger>` بدون `aria-label`.
-- **M4:** `<img>` بدون `alt` في `admin.icons-preview.tsx` (3 مرات) + `GalleryGrid.tsx`.
+- **M4:** `<img>` بدون `alt` في `GalleryGrid.tsx` *(historical: `admin.icons-preview.tsx` route removed)*.
 - **M5:** Gallery lightbox overlay div بـ`onClick` بدون role/keyboard handler/Escape.
 - **M6:** مفيش `pendingComponent` على routes تقيلة (`dashboard`, `analytics`, `learn`).
 - **M7:** `text-right` بدل `text-start` في 3 مواقع.

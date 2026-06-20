@@ -208,11 +208,12 @@ token classes (`text-primary`, `bg-background`, `text-muted-foreground`,
   `routes/dashboard.tsx`, `routes/curriculum.tsx`,
   `routes/learn.$pathId.$lessonId.tsx`, `routes/account.tsx`.
 - **P1 — Admin / shared infra**:
-  `routes/admin.v9-review.tsx`, `routes/admin.persona-sim-v9.tsx`,
-  `routes/analytics.tsx`, `routes/system-state.tsx`,
-  `routes/build-logs.tsx`, `routes/behavior-architecture.tsx`,
-  `routes/creator.workbook.tsx`, `lib/dna-report.functions.ts`
+  `routes/admin.index.tsx`, `routes/analytics.tsx`,
+  `routes/system-state.tsx`, `routes/build-logs.tsx`,
+  `routes/assistant-runtime.tsx`, `lib/dna-report.functions.ts`
   (PDF render — keep raw color for print fidelity, flag only).
+  *(Historical — removed in admin cleanup: `admin.v9-review`, `admin.persona-sim-v9`,
+  `behavior-architecture`, `creator.workbook`, `icons-preview`.)*
 - **P2 — Decorative / low-risk**:
   `components/ui/dialog.tsx` & `components/ui/sheet.tsx` (`bg-black` =
   shadcn overlay default), `components/image-gallery/GalleryGrid.tsx`.
@@ -307,13 +308,8 @@ chrome → `--surface-overlay`.
 icon colors (orange/amber/sky/emerald) + `bg-white/10` chip.
 → already-existing `--path-*` tokens + overlay.
 
-**P1 — `src/routes/admin.v9-review.tsx`** (29 hits): full
-slate/emerald/amber/rose admin palette (text, surface, border, button
-states). → batch replacement once accent families exist; admin theme can
-ship after learner-facing F-phases.
-
-**P1 — `src/routes/admin.persona-sim-v9.tsx`** (24 hits): same pattern
-as `admin.v9-review.tsx`.
+**P1 — `src/routes/admin.index.tsx`**: admin dashboard palette — same
+accent-family migration as other P1 admin surfaces.
 
 **P1 — `src/routes/analytics.tsx`** (3 hits, lines 274, 309, 335):
 `bg-white/10` overlay → overlay token.
@@ -322,11 +318,6 @@ as `admin.v9-review.tsx`.
 
 **P1 — `src/routes/build-logs.tsx`** (4 hits, lines 143, 169, 171, 196):
 `bg-white/*` + `border-white/*` chrome → overlay tokens.
-
-**P1 — `src/routes/behavior-architecture.tsx`** (line 528): overlay.
-
-**P1 — `src/routes/creator.workbook.tsx`** (3 hits, lines 173, 186):
-`border-white/*` + `bg-black/*` print-styled card → overlay + exempt.
 
 **P1 — `src/lib/dna-report.functions.ts`** (line 411): inline PDF HTML —
 `text-white bg-black` for print. **Exempt** from token migration; flag
@@ -356,9 +347,8 @@ new token, or accept as primitive-level exemption.
    CompletionReward, DifficultyPrompt, Sidebar, Navbar, Hero,
    BackToDashboard, Journey, WelcomeHint, WelcomeChecklist,
    dashboard/curriculum/learn/account routes.
-3. **F1.c — P1 admin sweep:** `admin.v9-review.tsx`,
-   `admin.persona-sim-v9.tsx`, analytics, system-state, build-logs,
-   behavior-architecture, creator.workbook.
+3. **F1.c — P1 admin sweep:** `admin.index.tsx`, analytics,
+   system-state, build-logs, assistant-runtime.
 4. **F1.d — Exemption ledger:** document `dialog.tsx` / `sheet.tsx` /
    `dna-report.functions.ts` / `GalleryGrid.tsx` overlays as sanctioned
    raw-color usages in this blueprint.

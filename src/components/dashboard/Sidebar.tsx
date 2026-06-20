@@ -14,6 +14,7 @@ import {
   ChevronDown,
   User,
   BarChart3,
+  ShieldCheck,
 } from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
 import { useEntitlement } from "@/lib/entitlements";
@@ -29,6 +30,7 @@ const items = [
 ];
 
 const devItems = [
+  { to: "/admin", label: "لوحة الإدارة", icon: ShieldCheck },
   { to: "/image-gallery", label: "معرض الصور", icon: Images },
   { to: "/roadmap", label: "Roadmap", icon: MapIcon },
   { to: "/assistant-runtime", label: "Assistant Runtime", icon: Brain },
