@@ -1,0 +1,87 @@
+{
+  "locale": "ar-MSA",
+  "lessonId": "automator-m5-l3-agents",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "automator",
+  "moduleId": "automator-m5",
+  "productionRoute": "/learn/automator/automator-m5-l3-agents",
+  "titleEn": "Agents",
+  "title": "بداية الدرس",
+  "summary": "Agent chooses steps toward goal — needs boundaries and limited tools",
+  "estimatedMinutes": 12,
+  "nextLessonId": "automator-m6-l1-lead-capture",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation — بداية الدرس",
+      "subtitle": "بداية الدرس",
+      "contentMarkdown": "- **ماذا ستفهم؟** **Agent (وكيل)** يختار خطوات نحو هدف — بحدود وأدوات محددة.\n- **لماذا الآن؟** بعد **LLM** و**RAG** — قرار داخل السير عندما المسار غير ثابت.",
+      "bullets": [
+        "**ماذا ستفهم؟** **Agent (وكيل)** يختار خطوات نحو هدف — بحدود وأدوات محددة.",
+        "**لماذا الآن؟** بعد **LLM** و**RAG** — قرار داخل السير عندما المسار غير ثابت."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension — الرد الآلي فعل ما لم يُطلب",
+      "subtitle": "الرد الآلي فعل ما لم يُطلب",
+      "contentMarkdown": "- رسائل تأكيد لكل العملاء — حتى من لم يشتكِ. أو حلقة بلا نهاية.\n- **Agent** بلا **Boundary (حد)** = مخاطرة.",
+      "bullets": [
+        "رسائل تأكيد لكل العملاء — حتى من لم يشتكِ. أو حلقة بلا نهاية.",
+        "**Agent** بلا **Boundary (حد)** = مخاطرة."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core idea — Workflow ثابت vs Agent",
+      "subtitle": "Workflow ثابت vs Agent",
+      "contentMarkdown": "- **Workflow:** أ → ب → ج — ممتاز للمتكرر المعروف.\n- **Agent:** هدف + أدوات — يقرر الترتيب حتى الهدف أو التوقف.\n- **Agent** ذكي + حدود + أدوات قليلة = آمن.",
+      "bullets": [
+        "**Workflow:** أ → ب → ج — ممتاز للمتكرر المعروف.",
+        "**Agent:** هدف + أدوات — يقرر الترتيب حتى الهدف أو التوقف.",
+        "**Agent** ذكي + حدود + أدوات قليلة = آمن."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz — correctIndex: 1",
+      "subtitle": "correctIndex: 1",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 1\n\n- خيار 1: Workflow ثابت بشروط كتير لكل احتمال.\n- ****الإجابة الصحيحة** (correctIndex: 1):** Agent بهدف واضح وأدوات محددة وحد يمنع الإرسال بدون موافقة.\n- خيار 3: Agent مفتوح بكل الأدوات عشان يكون «ذكي».\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+      "bullets": [
+        "خيار 1: Workflow ثابت بشروط كتير لكل احتمال.",
+        "****الإجابة الصحيحة** (correctIndex: 1):** Agent بهدف واضح وأدوات محددة وحد يمنع الإرسال بدون موافقة.",
+        "خيار 3: Agent مفتوح بكل الأدوات عشان يكون «ذكي»."
+      ],
+      "tables": [],
+      "quiz": {
+        "correctIndex": 1,
+        "options": [
+          "خيار 1: Workflow ثابت بشروط كتير لكل احتمال.",
+          "خيار 3: Agent مفتوح بكل الأدوات عشان يكون «ذكي»."
+        ],
+        "explanation": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission",
+      "contentMarkdown": "| هدف وأدوات | 60% |\n| حد وتحويل | 40% |",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence close",
+      "contentMarkdown": "- **التالي:** **Lead Capture**.\n\n---",
+      "bullets": [
+        "**التالي:** **Lead Capture**."
+      ],
+      "tables": []
+    }
+  ],
+  "sourceFile": "docs/playbooks/adaptive-canonical/automator-m5-l3-agents.canonical.md",
+  "generatedAt": "2026-06-20T22:27:43.614Z"
+}

@@ -1,0 +1,85 @@
+{
+  "locale": "ar-MSA",
+  "lessonId": "analyst-m4-automated-dashboard",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "analyst",
+  "moduleId": "analyst-m5",
+  "productionRoute": "/learn/analyst/analyst-m4-automated-dashboard",
+  "titleEn": "Automated Dashboard",
+  "title": "بداية الدرس",
+  "summary": "Automate one metric that drives decisions — manual first, then automate",
+  "estimatedMinutes": 12,
+  "nextLessonId": "analyst-m5-l2-weekly-review-ritual",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation — بداية الدرس",
+      "subtitle": "بداية الدرس",
+      "contentMarkdown": "- **ماذا ستفهم؟** **Dashboard (لوحة)** أوتوماتيك يوفر وقت الجمع — إذا عرفت أي رقم مهم.\n- **لماذا الآن؟** بعد ٤ أرقام قرار — واحد منها يُجمَّع أوتوماتيكيًا.",
+      "bullets": [
+        "**ماذا ستفهم؟** **Dashboard (لوحة)** أوتوماتيك يوفر وقت الجمع — إذا عرفت أي رقم مهم.",
+        "**لماذا الآن؟** بعد ٤ أرقام قرار — واحد منها يُجمَّع أوتوماتيكيًا."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension — أتمتة كل شيء — بلا قرار",
+      "subtitle": "أتمتة كل شيء — بلا قرار",
+      "contentMarkdown": "- ٢٠ رسمًا — لا تعرف أي رقم يهم. **Manual First (يدوي أولًا)** قبل الأتمتة.",
+      "bullets": [
+        "٢٠ رسمًا — لا تعرف أي رقم يهم. **Manual First (يدوي أولًا)** قبل الأتمتة."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core idea — رقم واحد = فوز",
+      "subtitle": "رقم واحد = فوز",
+      "contentMarkdown": "- اجمع يدويًا أسبوعين — إن قرأته واتخذت قرارًا، أتمته.\n- **Update Frequency (تكرار التحديث):** يومي، أسبوعي، لحظي — حسب القرار.",
+      "bullets": [
+        "اجمع يدويًا أسبوعين — إن قرأته واتخذت قرارًا، أتمته.",
+        "**Update Frequency (تكرار التحديث):** يومي، أسبوعي، لحظي — حسب القرار."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz — correctIndex: 0",
+      "subtitle": "correctIndex: 0",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n- ****الإجابة الصحيحة** (correctIndex: 0):** تؤتمت الرقم اللي بتقرأه كل أسبوع وتاخد عليه قرار — بعد ما جمعته يدوي أسبوعين.\n- خيار 2: تؤتمت الـ ٤ أرقام مرة واحدة قبل ما تجرب يدوي.\n- خيار 3: تبني ١٠ رسوم إضافية في Looker Studio.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+      "bullets": [
+        "****الإجابة الصحيحة** (correctIndex: 0):** تؤتمت الرقم اللي بتقرأه كل أسبوع وتاخد عليه قرار — بعد ما جمعته يدوي أسبوعين.",
+        "خيار 2: تؤتمت الـ ٤ أرقام مرة واحدة قبل ما تجرب يدوي.",
+        "خيار 3: تبني ١٠ رسوم إضافية في Looker Studio."
+      ],
+      "tables": [],
+      "quiz": {
+        "correctIndex": 0,
+        "options": [
+          "خيار 2: تؤتمت الـ ٤ أرقام مرة واحدة قبل ما تجرب يدوي.",
+          "خيار 3: تبني ١٠ رسوم إضافية في Looker Studio."
+        ],
+        "explanation": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission",
+      "contentMarkdown": "| رقم + مصدر | 50% |\n| تخزين + AI | 50% |",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence close",
+      "contentMarkdown": "- **التالي:** **Weekly Review Ritual**.\n\n---",
+      "bullets": [
+        "**التالي:** **Weekly Review Ritual**."
+      ],
+      "tables": []
+    }
+  ],
+  "sourceFile": "docs/playbooks/adaptive-canonical/analyst-m4-automated-dashboard.canonical.md",
+  "generatedAt": "2026-06-20T22:27:43.614Z"
+}

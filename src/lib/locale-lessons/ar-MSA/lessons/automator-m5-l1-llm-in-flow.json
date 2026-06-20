@@ -1,0 +1,156 @@
+{
+  "locale": "ar-MSA",
+  "lessonId": "automator-m5-l1-llm-in-flow",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "automator",
+  "moduleId": "automator-m5",
+  "productionRoute": "/learn/automator/automator-m5-l1-llm-in-flow",
+  "titleEn": "LLM in Flow",
+  "title": "بداية الدرس",
+  "summary": "AI step reads, classifies, summarizes — not just moves data",
+  "estimatedMinutes": 12,
+  "nextLessonId": "automator-m5-l2-rag-in-n8n",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation — بداية الدرس",
+      "subtitle": "بداية الدرس",
+      "contentMarkdown": "- **ماذا ستفهم؟** في **الأتمتة (Automation)** الذكاء الاصطناعي يقرأ ويصنّف ويلخّص — لا ينقل بيانات فقط.\n- **لماذا الآن؟** بعد الاختبار، **Flow (تدفق عمل)** جاهز قبل إضافة خطوة ذكاء.\n- **ماذا بعد الدرس؟** خطوة **AI** واحدة في **Workflow** — وظيفتها بالضبط.",
+      "bullets": [
+        "**ماذا ستفهم؟** في **الأتمتة (Automation)** الذكاء الاصطناعي يقرأ ويصنّف ويلخّص — لا ينقل بيانات فقط.",
+        "**لماذا الآن؟** بعد الاختبار، **Flow (تدفق عمل)** جاهز قبل إضافة خطوة ذكاء.",
+        "**ماذا بعد الدرس؟** خطوة **AI** واحدة في **Workflow** — وظيفتها بالضبط."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension — موقف مألوف",
+      "subtitle": "موقف مألوف",
+      "contentMarkdown": "- رسالة واتساب طويلة → تُسجَّل في جدول — الفريق يقرأ ويصنّف يدويًا كل يوم.\n- **الأتمتة (Automation)** نقلت البيانات — لم تفعل الشغل الذي يستهلك الوقت.",
+      "bullets": [
+        "رسالة واتساب طويلة → تُسجَّل في جدول — الفريق يقرأ ويصنّف يدويًا كل يوم.",
+        "**الأتمتة (Automation)** نقلت البيانات — لم تفعل الشغل الذي يستهلك الوقت."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core idea — خطوة AI = فهم وكتابة",
+      "subtitle": "خطوة AI = فهم وكتابة",
+      "contentMarkdown": "- قبل: **Trigger (مُشغّل)** → **Action (فعل)** → حفظ. بيانات تتحرك بلا «فهم».\n- مع **LLM Step (خطوة ذكاء):** تصنيف، ملخص، مسودة رد — **Structured Output (رد منظم)** للخطوة التالية.\n- **AI** لا يستبدل النظام — يضيف خطوة تفكير واحدة.",
+      "bullets": [
+        "قبل: **Trigger (مُشغّل)** → **Action (فعل)** → حفظ. بيانات تتحرك بلا «فهم».",
+        "مع **LLM Step (خطوة ذكاء):** تصنيف، ملخص، مسودة رد — **Structured Output (رد منظم)** للخطوة التالية.",
+        "**AI** لا يستبدل النظام — يضيف خطوة تفكير واحدة."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison — نقل vs فهم",
+      "subtitle": "نقل vs فهم",
+      "contentMarkdown": "| نقل فقط | خطوة AI |\n|---------|---------|\n| رسالة → شيت كما هي — قراءة يدوية | AI يصنّف ويستخرج الاسم → **Flow** يوجّه تلقائيًا |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "نقل فقط",
+            "خطوة AI"
+          ],
+          "rows": [
+            [
+              "رسالة → شيت كما هي — قراءة يدوية",
+              "AI يصنّف ويستخرج الاسم → **Flow** يوجّه تلقائيًا"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary",
+      "contentMarkdown": "| **LLM Step (خطوة ذكاء)** | خطوة ترسل نصًا للـ AI وترجع تصنيفًا أو ملخصًا |\n| **Structured Output (رد منظم)** | حقول ثابتة — ليس فقرة طويلة |",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Video block (production reference only)",
+      "heading": "Video block (production reference only)",
+      "contentMarkdown": "> فيديو Bunny — **AI في السير**. **لا يُعاد توليده**.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz — تأكيد سريع",
+      "subtitle": "تأكيد سريع",
+      "contentMarkdown": "- **الإجابة الصحيحة (correctIndex: 1):** تصنيف الرسالة واستخراج الاسم والمطلوب بشكل منظم\n- **التفسير:** خطوة AI تضيف فهمًا — لا سرعة نقل فقط.",
+      "bullets": [
+        "**الإجابة الصحيحة (correctIndex: 1):** تصنيف الرسالة واستخراج الاسم والمطلوب بشكل منظم",
+        "**التفسير:** خطوة AI تضيف فهمًا — لا سرعة نقل فقط."
+      ],
+      "tables": [],
+      "quiz": {
+        "correctIndex": 1,
+        "options": [
+          "**الإجابة الصحيحة (correctIndex: 1):** تصنيف الرسالة واستخراج الاسم والمطلوب بشكل منظم"
+        ],
+        "explanation": "خطوة AI تضيف فهمًا — لا سرعة نقل فقط."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission — خطوة AI واحدة",
+      "subtitle": "خطوة AI واحدة",
+      "contentMarkdown": "| البعد | الوزن |\n|-------|-------|\n| وضوح الخطوة | 60% |\n| ربط بالسير | 40% |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "البعد",
+            "الوزن"
+          ],
+          "rows": [
+            [
+              "وضوح الخطوة",
+              "60%"
+            ],
+            [
+              "ربط بالسير",
+              "40%"
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "delivery": [],
+        "rubric": [
+          {
+            "dimension": "وضوح الخطوة",
+            "weight": 60,
+            "criteria": ""
+          },
+          {
+            "dimension": "ربط بالسير",
+            "weight": 40,
+            "criteria": ""
+          }
+        ],
+        "yamlIntent": "Add one AI step; define input, structured output, next step",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence close",
+      "contentMarkdown": "- **التالي:** **RAG** — الرد من ملفاتك لا من تخمين.\n\n---",
+      "bullets": [
+        "**التالي:** **RAG** — الرد من ملفاتك لا من تخمين."
+      ],
+      "tables": []
+    }
+  ],
+  "sourceFile": "docs/playbooks/adaptive-canonical/automator-m5-l1-llm-in-flow.canonical.md",
+  "generatedAt": "2026-06-20T22:27:43.614Z"
+}

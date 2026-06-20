@@ -1,0 +1,77 @@
+{
+  "locale": "ar-MSA",
+  "lessonId": "analyst-m6-l2-interpretation-mistakes",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "analyst",
+  "moduleId": "analyst-m6",
+  "productionRoute": "/learn/analyst/analyst-m6-l2-interpretation-mistakes",
+  "titleEn": "Interpretation Mistakes",
+  "title": "بداية الدرس",
+  "summary": "Correct data + wrong interpretation = wrong decision",
+  "estimatedMinutes": 12,
+  "nextLessonId": "analyst-m7-l1-from-decisions-to-business",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation — بداية الدرس",
+      "subtitle": "بداية الدرس",
+      "contentMarkdown": "- **ماذا ستفهم؟** البيانات صحيحة — والقرار خطأ إذا قرأتها خطأ.",
+      "bullets": [
+        "**ماذا ستفهم؟** البيانات صحيحة — والقرار خطأ إذا قرأتها خطأ."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core idea — ٤ فخاخ",
+      "subtitle": "٤ فخاخ",
+      "contentMarkdown": "- **Correlation (ارتباط)** ≠ سببية\n- عيّنة صغيرة — ٣ عملاء ليس «السوق»\n- **Vanity Metric (رقم شكلي)** — لايكات ≠ مبيعات\n- Recency bias — آخر أسبوع ليس كل القصة",
+      "bullets": [
+        "**Correlation (ارتباط)** ≠ سببية",
+        "عيّنة صغيرة — ٣ عملاء ليس «السوق»",
+        "**Vanity Metric (رقم شكلي)** — لايكات ≠ مبيعات",
+        "Recency bias — آخر أسبوع ليس كل القصة"
+      ],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz — correctIndex: 0",
+      "subtitle": "correctIndex: 0",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n- ****الإجابة الصحيحة** (correctIndex: 0):** Correlation ≠ Causation — ممكن في سبب تالت (وقت اليوم، نوع زبائن).\n- خيار 2: Analysis Paralysis — بيتأخر في القرار.\n- خيار 3: Vanity metric — اللايكات مش مهمة.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+      "bullets": [
+        "****الإجابة الصحيحة** (correctIndex: 0):** Correlation ≠ Causation — ممكن في سبب تالت (وقت اليوم، نوع زبائن).",
+        "خيار 2: Analysis Paralysis — بيتأخر في القرار.",
+        "خيار 3: Vanity metric — اللايكات مش مهمة."
+      ],
+      "tables": [],
+      "quiz": {
+        "correctIndex": 0,
+        "options": [
+          "خيار 2: Analysis Paralysis — بيتأخر في القرار.",
+          "خيار 3: Vanity metric — اللايكات مش مهمة."
+        ],
+        "explanation": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission — ٣ scenarios",
+      "subtitle": "٣ scenarios",
+      "contentMarkdown": "| تشخيص الفخ | 50% |\n| قرار أصح | 50% |",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence close",
+      "contentMarkdown": "- **التالي:** **From Decisions to Business**.\n\n---",
+      "bullets": [
+        "**التالي:** **From Decisions to Business**."
+      ],
+      "tables": []
+    }
+  ],
+  "sourceFile": "docs/playbooks/adaptive-canonical/analyst-m6-l2-interpretation-mistakes.canonical.md",
+  "generatedAt": "2026-06-20T22:27:43.614Z"
+}

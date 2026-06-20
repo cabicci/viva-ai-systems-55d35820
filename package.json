@@ -16,6 +16,7 @@
     "roadmap:guard": "bun run scripts/roadmap-guard.ts",
     "roadmap:log": "bun run scripts/roadmap-log.ts",
     "roadmap:auto": "bun run scripts/roadmap-log.ts -- --auto",
+    "locale-lessons:generate-ar-msa": "bun run scripts/locale-lessons/generate-ar-msa-package.ts",
     "test": "vitest",
     "test:run": "vitest run",
     "test:ui": "vitest --ui"
