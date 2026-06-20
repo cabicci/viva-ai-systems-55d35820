@@ -10,6 +10,7 @@ import {
   ArrowRight,
   type LucideIcon,
 } from "lucide-react";
+import { AdminGate } from "@/components/AdminGate";
 import { Button } from "@/components/ui/button";
 import { Sidebar } from "@/components/dashboard/Sidebar";
 import {
@@ -32,7 +33,11 @@ export const Route = createFileRoute("/build-logs")({
       },
     ],
   }),
-  component: BuildLogsPage,
+  component: () => (
+    <AdminGate>
+      <BuildLogsPage />
+    </AdminGate>
+  ),
 });
 
 const TYPE_META: Record<
