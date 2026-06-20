@@ -2,7 +2,15 @@ import type {
   AdaptationTargetLocale,
   AdaptedLessonPackage,
   LocalizedLessonPackage,
+  LocalizedLessonMission,
 } from "../../../src/lib/locale-lessons/types.ts";
+import {
+  sanitizeAdaptedLessonMarkdown,
+  validateAdaptedLessonWarnings,
+} from "./quality-warnings.ts";
+
+export { validateAdaptedLessonWarnings } from "./quality-warnings.ts";
+export type { AdaptedLessonValidationResult } from "./quality-warnings.ts";
 
 function extractJsonObject(raw: string): string {
   const trimmed = raw.trim();
@@ -88,6 +96,30 @@ export function validateAdaptedLessonPackage(
   return errors;
 }
 
+function preserveMissionMetadataFromSource(
+  source: LocalizedLessonPackage,
+  adapted: AdaptedLessonPackage,
+): AdaptedLessonPackage {
+  const sections = adapted.sections.map((section, index) => {
+    const sourceSection = source.sections[index];
+    if (!sourceSection?.mission || !section.mission) {
+      return section;
+    }
+
+    const sourceMission = sourceSection.mission;
+    const adaptedMission = section.mission;
+    const mission: LocalizedLessonMission = {
+      ...adaptedMission,
+      yamlIntent: adaptedMission.yamlIntent ?? sourceMission.yamlIntent,
+      yamlType: adaptedMission.yamlType ?? sourceMission.yamlType,
+    };
+
+    return { ...section, mission };
+  });
+
+  return { ...adapted, sections };
+}
+
 export function finalizeAdaptedPackage(
   source: LocalizedLessonPackage,
   adapted: AdaptedLessonPackage,
@@ -95,7 +127,7 @@ export function finalizeAdaptedPackage(
   sourcePackagePath: string,
   generatedAt: string,
 ): AdaptedLessonPackage {
-  return {
+  const locked = {
     ...adapted,
     locale: targetLocale,
     lessonId: source.lessonId,
@@ -105,12 +137,17 @@ export function finalizeAdaptedPackage(
     canonicalVersion: source.canonicalVersion,
     nextLessonId: source.nextLessonId,
     estimatedMinutes: source.estimatedMinutes,
+    titleEn: adapted.titleEn ?? source.titleEn,
     adaptedFrom: {
-      locale: "ar-MSA",
+      locale: "ar-MSA" as const,
       lessonId: source.lessonId,
       canonicalVersion: source.canonicalVersion,
       sourcePackagePath,
     },
     generatedAt,
   };
+
+  return sanitizeAdaptedLessonMarkdown(
+    preserveMissionMetadataFromSource(source, locked),
+  );
 }

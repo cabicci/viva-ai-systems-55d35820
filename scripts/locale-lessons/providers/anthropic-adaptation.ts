@@ -7,6 +7,7 @@ import {
   finalizeAdaptedPackage,
   parseAdaptedLessonJson,
   validateAdaptedLessonPackage,
+  validateAdaptedLessonWarnings,
 } from "../lib/validate-adapted-lesson.ts";
 import {
   adaptationModel,
@@ -23,8 +24,8 @@ const OUTPUT_SCHEMA = `Return ONE JSON object only (no markdown fences) matching
   "pathId": "<unchanged>",
   "moduleId": "<unchanged>",
   "productionRoute": "<unchanged>",
-  "titleEn": "<optional English title label>",
-  "title": "<adapted learner-facing title>",
+  "titleEn": "<unchanged from source when present>",
+  "title": "<catalog topic title from titleEn/lesson topic — NOT Orientation heading>",
   "summary": "<adapted one-line summary>",
   "estimatedMinutes": <number>,
   "nextLessonId": "<unchanged>",
@@ -103,6 +104,17 @@ export function createAnthropicAdaptationProvider(): ContextualAdaptationProvide
       if (validationErrors.length > 0) {
         throw new Error(
           `Adapted lesson validation failed for ${source.lessonId}:\n${validationErrors.join("\n")}`,
+        );
+      }
+
+      const qualityWarnings = validateAdaptedLessonWarnings(
+        source,
+        finalized,
+        targetLocale,
+      );
+      if (qualityWarnings.length > 0) {
+        console.warn(
+          `Quality warnings for ${source.lessonId} (${targetLocale}):\n${qualityWarnings.map((warning) => `  - ${warning}`).join("\n")}`,
         );
       }
 

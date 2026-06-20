@@ -19,7 +19,12 @@ ADAPTATION (NOT translation):
 - Rewrite as if the lesson were authored in English for the same learner level.
 - Preserve section roles and lesson flow exactly.
 - Mission prompts and rubric criteria must remain evaluatively equivalent — same weights, same pass logic.
-- Do not add new tools, scenarios, or business rules beyond what the Arabic Fusha source implies.`;
+- Do not add new tools, scenarios, or business rules beyond what the Arabic Fusha source implies.
+
+TITLE (English catalog):
+- Set "title" to a natural English catalog title derived from titleEn and the lesson topic.
+- Normally align title with titleEn (e.g. titleEn "What Is AI" → title "What Is AI").
+- Do NOT copy the Orientation section subtitle (e.g. "What Will You Understand?") as the lesson title.`;
 
 export function buildEnUserPrompt(source: LocalizedLessonPackage): string {
   return `# Contextual adaptation task

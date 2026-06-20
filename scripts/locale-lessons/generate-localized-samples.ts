@@ -11,8 +11,11 @@ import {
   listLessonJsonIds,
   loadMsaLessonPackage,
   manifestPathForLocale,
+  readJsonFile,
   validateMsaSourcePackage,
 } from "./lib/source-package.ts";
+import { validateAdaptedLessonWarnings } from "./lib/quality-warnings.ts";
+import type { AdaptedLessonPackage } from "../../src/lib/locale-lessons/types.ts";
 import {
   SAMPLE_LESSON_COUNT,
   SAMPLE_LESSON_IDS,
@@ -131,6 +134,24 @@ export async function validateSampleTargetPackage(
   }
 
   return { ok: errors.length === 0, errors, count: foundIds.length };
+}
+
+export async function collectSamplePackageWarnings(
+  locale: AdaptationTargetLocale,
+): Promise<string[]> {
+  const warnings: string[] = [];
+
+  for (const lessonId of SAMPLE_LESSON_IDS) {
+    const source = await loadMsaLessonPackage(lessonId);
+    const adapted = await readJsonFile<AdaptedLessonPackage>(
+      path.join(lessonsDirForLocale(locale), `${lessonId}.json`),
+    );
+    for (const warning of validateAdaptedLessonWarnings(source, adapted, locale)) {
+      warnings.push(`${locale}/${lessonId}: ${warning}`);
+    }
+  }
+
+  return warnings;
 }
 
 async function main() {

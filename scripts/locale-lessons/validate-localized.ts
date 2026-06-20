@@ -3,7 +3,7 @@ import type {
   LocalizedSampleManifest,
 } from "../../src/lib/locale-lessons/types.ts";
 import { ADAPTATION_TARGET_LOCALES } from "../../src/lib/locale-lessons/types.ts";
-import { validateSampleTargetPackage } from "./generate-localized-samples.ts";
+import { validateSampleTargetPackage, collectSamplePackageWarnings } from "./generate-localized-samples.ts";
 import {
   manifestPathForLocale,
   pathExists,
@@ -61,6 +61,12 @@ async function main() {
         if (!sample.ok) {
           exitCode = 1;
           for (const error of sample.errors) console.error(`  - ${error}`);
+        } else {
+          const warnings = await collectSamplePackageWarnings(locale);
+          if (warnings.length > 0) {
+            console.log(`${locale}: ${warnings.length} quality warning(s)`);
+            for (const warning of warnings) console.warn(`  WARN: ${warning}`);
+          }
         }
         continue;
       }

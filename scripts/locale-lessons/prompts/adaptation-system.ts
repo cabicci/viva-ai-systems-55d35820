@@ -1,7 +1,7 @@
 import type { AdaptationConstraints } from "../../../src/lib/locale-lessons/types.ts";
 import { ADAPTATION_CONSTRAINTS } from "../../../src/lib/locale-lessons/types.ts";
 
-export const ADAPTATION_PROMPT_VERSION = "2026-06-20.1";
+export const ADAPTATION_PROMPT_VERSION = "2026-06-20.2";
 
 export function formatAdaptationConstraints(
   constraints: AdaptationConstraints = ADAPTATION_CONSTRAINTS,
@@ -31,6 +31,19 @@ STRUCTURE RULES:
 - Keep quiz correctIndex unchanged; adapt question/options/explanation wording only.
 - Keep mission rubric weights and dimension meanings unchanged; adapt learner-facing wording only.
 - Keep locked product terms (AI, Model, ChatGPT, Gemini, Claude, User Flow, RAG, etc.) consistent — gloss on first use in English; keep established English product terms in Gulf Arabic where learners expect them.
+
+TITLE RULES (catalog title — not Orientation heading):
+- The top-level "title" field is the lesson topic / catalog title shown in navigation.
+- Derive title from titleEn and the lesson topic — NOT from Orientation section headings or subtitles.
+- Never use Orientation copy as title (e.g. "ماذا ستفهم؟", "What Will You Understand?", "What This Lesson Is About").
+- Orientation headings belong only in the Orientation section fields.
+
+QUIZ MARKDOWN RULES:
+- Never include internal answer keys in contentMarkdown or bullets (no "correctIndex: N", "Quiz key", or "unchanged" key notes).
+- Keep correctIndex only in the structured quiz JSON object.
+
+MISSION METADATA:
+- Preserve yamlIntent and yamlType on mission sections when present in the source package.
 
 FORBIDDEN:
 - Literal translation that reads unnaturally in the target locale.

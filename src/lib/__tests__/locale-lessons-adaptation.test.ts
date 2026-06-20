@@ -101,6 +101,7 @@ describe("locale-lessons adaptation pipeline", () => {
       const prompt = buildAdaptationPrompt(target, source);
       expect(prompt.systemPrompt).toContain("Do NOT perform literal");
       expect(prompt.systemPrompt).toContain("preserveLessonId");
+      expect(prompt.systemPrompt).toContain("TITLE RULES");
       expect(prompt.userPrompt).toContain(`lessonId: ${sampleId}`);
       expect(prompt.userPrompt).toContain(`targetLocale: ${target}`);
       expect(prompt.userPrompt).toContain(source.pathId ?? "unknown");

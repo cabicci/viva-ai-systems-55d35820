@@ -13,13 +13,18 @@ TARGET LOCALE: Gulf Arabic (ar-Gulf)
 TONE & REGISTER:
 - Natural Gulf Arabic suitable for learners in the GCC — warm, clear, conversational MSA-Gulf blend.
 - Avoid Egyptian dialect surface forms (e.g. إيه، دلوقتي، عايز، كده).
-- Prefer Gulf-natural phrasing while staying professional and beginner-friendly.
+- Prefer consistent Gulf register: وش، ليش، مو، راح — natural and professional, not exaggerated.
+- Avoid mixing ايش with وش in the same lesson unless explicitly justified by quoted speech.
 - Keep English product terms where Gulf learners commonly use them (ChatGPT, API, Dashboard) with brief Arabic gloss on first use when helpful.
 
 ADAPTATION (NOT translation):
 - Rewrite each section so it sounds like it was originally written for Gulf learners.
 - Preserve the same teaching beats: orientation → tension → core → glossary → quiz → mission → close.
-- Mission and rubric criteria must remain evaluatively equivalent to the Arabic Fusha source.`;
+- Mission and rubric criteria must remain evaluatively equivalent to the Arabic Fusha source.
+
+TITLE (Gulf catalog):
+- Set "title" to a short natural Gulf topic title derived from titleEn and the lesson topic.
+- Do NOT copy the Orientation section subtitle (e.g. "ماذا ستفهم؟", "وش راح تفهم؟") as the lesson title.`;
 
 export function buildArGulfUserPrompt(source: LocalizedLessonPackage): string {
   return `# Contextual adaptation task
