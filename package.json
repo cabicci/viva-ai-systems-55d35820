@@ -17,6 +17,9 @@
     "roadmap:log": "bun run scripts/roadmap-log.ts",
     "roadmap:auto": "bun run scripts/roadmap-log.ts -- --auto",
     "locale-lessons:generate-ar-msa": "bun run scripts/locale-lessons/generate-ar-msa-package.ts",
+    "locale-lessons:plan-adaptation": "bun run scripts/locale-lessons/plan-adaptation.ts",
+    "locale-lessons:validate-localized": "bun run scripts/locale-lessons/validate-localized.ts",
+    "locale-lessons:generate-localized": "bun run scripts/locale-lessons/generate-localized-package.ts",
     "test": "vitest",
     "test:run": "vitest run",
     "test:ui": "vitest --ui"
