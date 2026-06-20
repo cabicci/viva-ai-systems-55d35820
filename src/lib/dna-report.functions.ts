@@ -176,7 +176,6 @@ export const generateDnaReport = createServerFn({ method: "POST" })
       ["/learn/$pathId/$lessonId", "صفحة الدرس الواحد (الـ engine الأساسي)"],
       ["/ai-assistant", "محادثة AI"],
       ["/assistant-runtime", "Assistant runtime view"],
-      ["/creator/workbook", "Creator workbook"],
       ["/image-gallery, /image-gallery/$path", "معرض الصور"],
       ["/build-logs", "سجلّات الـ builds للمستخدم"],
       ["/system-state, /assistant-runtime, /build-logs", "Internal dashboards (admin/diagnostics)"],

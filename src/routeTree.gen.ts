@@ -33,7 +33,6 @@ import { Route as ImageGalleryIndexRouteImport } from './routes/image-gallery.in
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as RoadmapIdRouteImport } from './routes/roadmap.$id'
 import { Route as ImageGalleryPathRouteImport } from './routes/image-gallery.$path'
-import { Route as CreatorWorkbookRouteImport } from './routes/creator.workbook'
 import { Route as LearnPathIdLessonIdRouteImport } from './routes/learn.$pathId.$lessonId'
 
 const Char91indexChar93Route = Char91indexChar93RouteImport.update({
@@ -156,11 +155,6 @@ const ImageGalleryPathRoute = ImageGalleryPathRouteImport.update({
   path: '/$path',
   getParentRoute: () => ImageGalleryRoute,
 } as any)
-const CreatorWorkbookRoute = CreatorWorkbookRouteImport.update({
-  id: '/creator/workbook',
-  path: '/creator/workbook',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const LearnPathIdLessonIdRoute = LearnPathIdLessonIdRouteImport.update({
   id: '/learn/$pathId/$lessonId',
   path: '/learn/$pathId/$lessonId',
@@ -187,7 +181,6 @@ export interface FileRoutesByFullPath {
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
   '/terms': typeof TermsRoute
-  '/creator/workbook': typeof CreatorWorkbookRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/roadmap/$id': typeof RoadmapIdRoute
   '/admin/': typeof AdminIndexRoute
@@ -214,7 +207,6 @@ export interface FileRoutesByTo {
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
   '/terms': typeof TermsRoute
-  '/creator/workbook': typeof CreatorWorkbookRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/roadmap/$id': typeof RoadmapIdRoute
   '/admin': typeof AdminIndexRoute
@@ -243,7 +235,6 @@ export interface FileRoutesById {
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
   '/terms': typeof TermsRoute
-  '/creator/workbook': typeof CreatorWorkbookRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/roadmap/$id': typeof RoadmapIdRoute
   '/admin/': typeof AdminIndexRoute
@@ -273,7 +264,6 @@ export interface FileRouteTypes {
     | '/start'
     | '/system-state'
     | '/terms'
-    | '/creator/workbook'
     | '/image-gallery/$path'
     | '/roadmap/$id'
     | '/admin/'
@@ -300,7 +290,6 @@ export interface FileRouteTypes {
     | '/start'
     | '/system-state'
     | '/terms'
-    | '/creator/workbook'
     | '/image-gallery/$path'
     | '/roadmap/$id'
     | '/admin'
@@ -328,7 +317,6 @@ export interface FileRouteTypes {
     | '/start'
     | '/system-state'
     | '/terms'
-    | '/creator/workbook'
     | '/image-gallery/$path'
     | '/roadmap/$id'
     | '/admin/'
@@ -357,7 +345,6 @@ export interface RootRouteChildren {
   StartRoute: typeof StartRoute
   SystemStateRoute: typeof SystemStateRoute
   TermsRoute: typeof TermsRoute
-  CreatorWorkbookRoute: typeof CreatorWorkbookRoute
   RoadmapIdRoute: typeof RoadmapIdRoute
   AdminIndexRoute: typeof AdminIndexRoute
   RoadmapIndexRoute: typeof RoadmapIndexRoute
@@ -534,13 +521,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImageGalleryPathRouteImport
       parentRoute: typeof ImageGalleryRoute
     }
-    '/creator/workbook': {
-      id: '/creator/workbook'
-      path: '/creator/workbook'
-      fullPath: '/creator/workbook'
-      preLoaderRoute: typeof CreatorWorkbookRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/learn/$pathId/$lessonId': {
       id: '/learn/$pathId/$lessonId'
       path: '/learn/$pathId/$lessonId'
@@ -585,7 +565,6 @@ const rootRouteChildren: RootRouteChildren = {
   StartRoute: StartRoute,
   SystemStateRoute: SystemStateRoute,
   TermsRoute: TermsRoute,
-  CreatorWorkbookRoute: CreatorWorkbookRoute,
   RoadmapIdRoute: RoadmapIdRoute,
   AdminIndexRoute: AdminIndexRoute,
   RoadmapIndexRoute: RoadmapIndexRoute,
