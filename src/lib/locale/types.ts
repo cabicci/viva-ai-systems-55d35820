@@ -14,11 +14,12 @@ export type LocaleDirection = "rtl" | "ltr";
 export interface LocaleMeta {
   lang: string;
   dir: LocaleDirection;
+  displayName: string;
 }
 
 export const LOCALE_META: Record<SupportedLocale, LocaleMeta> = {
-  "ar-EG": { lang: "ar", dir: "rtl" },
-  "ar-MSA": { lang: "ar", dir: "rtl" },
-  "ar-Gulf": { lang: "ar", dir: "rtl" },
-  en: { lang: "en", dir: "ltr" },
+  "ar-EG": { lang: "ar", dir: "rtl", displayName: "العامية المصرية" },
+  "ar-MSA": { lang: "ar", dir: "rtl", displayName: "العربية الفصحى" },
+  "ar-Gulf": { lang: "ar", dir: "rtl", displayName: "خليجي" },
+  en: { lang: "en", dir: "ltr", displayName: "English" },
 };
