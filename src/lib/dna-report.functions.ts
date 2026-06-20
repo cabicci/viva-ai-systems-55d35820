@@ -179,7 +179,7 @@ export const generateDnaReport = createServerFn({ method: "POST" })
       ["/creator/workbook", "Creator workbook"],
       ["/image-gallery, /image-gallery/$path", "معرض الصور"],
       ["/build-logs", "سجلّات الـ builds للمستخدم"],
-      ["/system-state, /operational-layers, /behavior-architecture", "Internal dashboards (admin/diagnostics)"],
+      ["/system-state, /assistant-runtime, /build-logs", "Internal dashboards (admin/diagnostics)"],
       ["/account", "إعدادات الحساب + delete-my-account"],
       ["/admin", "لوحة الأدمن — users, stats, content"],
       ["/roadmap, /roadmap/$id", "خريطة الشغل المشتركة (admin only)"],

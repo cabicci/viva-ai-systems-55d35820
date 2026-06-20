@@ -276,7 +276,7 @@ function SystemStatePage() {
             <AIRow title="Lesson Videos (Bunny)" status="live" body="Bunny embed عبر IntroLessonRenderer — documented as 100/100 learner videos; fresh Bunny probe not performed in this cleanup." />
             <AIRow title="Remotion Pipeline" status="live" body="طبقة إنتاج Remotion موجودة — خارج نطاق هذا الـ snapshot." />
             <AIRow title="Lesson ↔ Video Relationship" status="live" body="video block داخل rhythm الدرس — مربوط بـ getBunnyEmbedUrl()." />
-            <AIRow title="Cinematic / Build / Failure Videos" status="partial" body="أنواع فيديو إضافية في Behavior Architecture — ليست كلها مدمجة في كل درس." />
+            <AIRow title="Cinematic / Build / Failure Videos" status="partial" body="أنواع فيديو إضافية (cinematic / build / failure) — ليست كلها مدمجة في كل درس." />
           </div>
         </Section>
 

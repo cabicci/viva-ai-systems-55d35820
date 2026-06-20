@@ -16,7 +16,6 @@ import { Route as StartRouteImport } from './routes/start'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as OperationalLayersRouteImport } from './routes/operational-layers'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as ImageGalleryRouteImport } from './routes/image-gallery'
@@ -24,7 +23,6 @@ import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as CurriculumRouteImport } from './routes/curriculum'
 import { Route as BuildLogsRouteImport } from './routes/build-logs'
-import { Route as BehaviorArchitectureRouteImport } from './routes/behavior-architecture'
 import { Route as AssistantRuntimeRouteImport } from './routes/assistant-runtime'
 import { Route as AnalyticsRouteImport } from './routes/analytics'
 import { Route as AiAssistantRouteImport } from './routes/ai-assistant'
@@ -76,11 +74,6 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const OperationalLayersRoute = OperationalLayersRouteImport.update({
-  id: '/operational-layers',
-  path: '/operational-layers',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
@@ -114,11 +107,6 @@ const CurriculumRoute = CurriculumRouteImport.update({
 const BuildLogsRoute = BuildLogsRouteImport.update({
   id: '/build-logs',
   path: '/build-logs',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BehaviorArchitectureRoute = BehaviorArchitectureRouteImport.update({
-  id: '/behavior-architecture',
-  path: '/behavior-architecture',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AssistantRuntimeRoute = AssistantRuntimeRouteImport.update({
@@ -203,7 +191,6 @@ export interface FileRoutesByFullPath {
   '/ai-assistant': typeof AiAssistantRoute
   '/analytics': typeof AnalyticsRoute
   '/assistant-runtime': typeof AssistantRuntimeRoute
-  '/behavior-architecture': typeof BehaviorArchitectureRoute
   '/build-logs': typeof BuildLogsRoute
   '/curriculum': typeof CurriculumRoute
   '/dashboard': typeof DashboardRoute
@@ -212,7 +199,6 @@ export interface FileRoutesByFullPath {
   '/index': typeof Char91indexChar93Route
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
-  '/operational-layers': typeof OperationalLayersRoute
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/signup': typeof SignupRoute
@@ -236,7 +222,6 @@ export interface FileRoutesByTo {
   '/ai-assistant': typeof AiAssistantRoute
   '/analytics': typeof AnalyticsRoute
   '/assistant-runtime': typeof AssistantRuntimeRoute
-  '/behavior-architecture': typeof BehaviorArchitectureRoute
   '/build-logs': typeof BuildLogsRoute
   '/curriculum': typeof CurriculumRoute
   '/dashboard': typeof DashboardRoute
@@ -244,7 +229,6 @@ export interface FileRoutesByTo {
   '/index': typeof Char91indexChar93Route
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
-  '/operational-layers': typeof OperationalLayersRoute
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/signup': typeof SignupRoute
@@ -269,7 +253,6 @@ export interface FileRoutesById {
   '/ai-assistant': typeof AiAssistantRoute
   '/analytics': typeof AnalyticsRoute
   '/assistant-runtime': typeof AssistantRuntimeRoute
-  '/behavior-architecture': typeof BehaviorArchitectureRoute
   '/build-logs': typeof BuildLogsRoute
   '/curriculum': typeof CurriculumRoute
   '/dashboard': typeof DashboardRoute
@@ -278,7 +261,6 @@ export interface FileRoutesById {
   '/index': typeof Char91indexChar93Route
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
-  '/operational-layers': typeof OperationalLayersRoute
   '/privacy': typeof PrivacyRoute
   '/reset-password': typeof ResetPasswordRoute
   '/signup': typeof SignupRoute
@@ -304,7 +286,6 @@ export interface FileRouteTypes {
     | '/ai-assistant'
     | '/analytics'
     | '/assistant-runtime'
-    | '/behavior-architecture'
     | '/build-logs'
     | '/curriculum'
     | '/dashboard'
@@ -313,7 +294,6 @@ export interface FileRouteTypes {
     | '/index'
     | '/login'
     | '/onboarding'
-    | '/operational-layers'
     | '/privacy'
     | '/reset-password'
     | '/signup'
@@ -337,7 +317,6 @@ export interface FileRouteTypes {
     | '/ai-assistant'
     | '/analytics'
     | '/assistant-runtime'
-    | '/behavior-architecture'
     | '/build-logs'
     | '/curriculum'
     | '/dashboard'
@@ -345,7 +324,6 @@ export interface FileRouteTypes {
     | '/index'
     | '/login'
     | '/onboarding'
-    | '/operational-layers'
     | '/privacy'
     | '/reset-password'
     | '/signup'
@@ -369,7 +347,6 @@ export interface FileRouteTypes {
     | '/ai-assistant'
     | '/analytics'
     | '/assistant-runtime'
-    | '/behavior-architecture'
     | '/build-logs'
     | '/curriculum'
     | '/dashboard'
@@ -378,7 +355,6 @@ export interface FileRouteTypes {
     | '/index'
     | '/login'
     | '/onboarding'
-    | '/operational-layers'
     | '/privacy'
     | '/reset-password'
     | '/signup'
@@ -403,7 +379,6 @@ export interface RootRouteChildren {
   AiAssistantRoute: typeof AiAssistantRoute
   AnalyticsRoute: typeof AnalyticsRoute
   AssistantRuntimeRoute: typeof AssistantRuntimeRoute
-  BehaviorArchitectureRoute: typeof BehaviorArchitectureRoute
   BuildLogsRoute: typeof BuildLogsRoute
   CurriculumRoute: typeof CurriculumRoute
   DashboardRoute: typeof DashboardRoute
@@ -412,7 +387,6 @@ export interface RootRouteChildren {
   Char91indexChar93Route: typeof Char91indexChar93Route
   LoginRoute: typeof LoginRoute
   OnboardingRoute: typeof OnboardingRoute
-  OperationalLayersRoute: typeof OperationalLayersRoute
   PrivacyRoute: typeof PrivacyRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
   SignupRoute: typeof SignupRoute
@@ -480,13 +454,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/operational-layers': {
-      id: '/operational-layers'
-      path: '/operational-layers'
-      fullPath: '/operational-layers'
-      preLoaderRoute: typeof OperationalLayersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/onboarding': {
       id: '/onboarding'
       path: '/onboarding'
@@ -534,13 +501,6 @@ declare module '@tanstack/react-router' {
       path: '/build-logs'
       fullPath: '/build-logs'
       preLoaderRoute: typeof BuildLogsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/behavior-architecture': {
-      id: '/behavior-architecture'
-      path: '/behavior-architecture'
-      fullPath: '/behavior-architecture'
-      preLoaderRoute: typeof BehaviorArchitectureRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/assistant-runtime': {
@@ -671,7 +631,6 @@ const rootRouteChildren: RootRouteChildren = {
   AiAssistantRoute: AiAssistantRoute,
   AnalyticsRoute: AnalyticsRoute,
   AssistantRuntimeRoute: AssistantRuntimeRoute,
-  BehaviorArchitectureRoute: BehaviorArchitectureRoute,
   BuildLogsRoute: BuildLogsRoute,
   CurriculumRoute: CurriculumRoute,
   DashboardRoute: DashboardRoute,
@@ -680,7 +639,6 @@ const rootRouteChildren: RootRouteChildren = {
   Char91indexChar93Route: Char91indexChar93Route,
   LoginRoute: LoginRoute,
   OnboardingRoute: OnboardingRoute,
-  OperationalLayersRoute: OperationalLayersRoute,
   PrivacyRoute: PrivacyRoute,
   ResetPasswordRoute: ResetPasswordRoute,
   SignupRoute: SignupRoute,

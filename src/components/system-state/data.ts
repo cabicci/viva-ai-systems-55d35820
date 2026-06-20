@@ -14,8 +14,6 @@ export const ROUTES: {
   { path: "/curriculum", title: "خريطة المنهج", purpose: "كل المسارات الخمسة (Builder · Creator · Automator · Analyst · Business) والوحدات والدروس وحالة التقدّم.", status: "live" },
   { path: "/learn/$pathId/$lessonId", title: "Lesson Viewer", purpose: "عرض الدرس عبر IntroLessonRenderer — المحتوى من unified-lessons + INTRO_LESSON_CONTENT.", status: "live" },
   { path: "/ai-assistant", title: "مساعد المنصة", purpose: "Assistant runtime للمتعلم — Context + Retrieval + Edge Function.", status: "live" },
-  { path: "/operational-layers", title: "Operational Layers", purpose: "خريطة الطبقات التشغيلية للمنصة (Internal).", status: "live" },
-  { path: "/behavior-architecture", title: "Behavior Architecture", purpose: "خريطة سلوك منصة مسارات (Internal).", status: "live" },
   { path: "/system-state", title: "System State", purpose: "هذه الصفحة — Snapshot داخلي للمنصة (Internal).", status: "live" },
   { path: "/assistant-runtime", title: "Assistant Runtime", purpose: "Admin diagnostics — حالة Assistant Runtime والتحقق من Context + Retrieval + Edge Function.", status: "live" },
 ];

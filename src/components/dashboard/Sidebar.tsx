@@ -9,8 +9,6 @@ import {
   Wrench,
   Activity,
   Brain,
-  Layers,
-  Cpu,
   Terminal,
   Map as MapIcon,
   ChevronDown,
@@ -35,8 +33,6 @@ const devItems = [
   { to: "/roadmap", label: "Roadmap", icon: MapIcon },
   { to: "/assistant-runtime", label: "Assistant Runtime", icon: Brain },
   { to: "/system-state", label: "System State", icon: Activity },
-  { to: "/behavior-architecture", label: "Behavior Architecture", icon: Cpu },
-  { to: "/operational-layers", label: "Operational Layers", icon: Layers },
   { to: "/build-logs", label: "Build Logs", icon: Terminal },
 ];
 
