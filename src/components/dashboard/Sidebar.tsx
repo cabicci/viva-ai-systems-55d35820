@@ -2,7 +2,6 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import {
   LayoutDashboard,
   LogOut,
-  
   MessageCircle,
   Menu,
   Images,
@@ -16,37 +15,41 @@ import {
   BarChart3,
   ShieldCheck,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
 import { useEntitlement } from "@/lib/entitlements";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { BrandMark } from "@/components/brand/BrandMark";
 import { LanguageSelector } from "@/components/locale/LanguageSelector";
+import { useLocale } from "@/lib/locale/locale-context";
+import { getUiString, type UiStringKey } from "@/lib/locale/ui-strings";
 import { useEffect, useState } from "react";
 
-const items = [
-  { to: "/dashboard", label: "اللوحة", icon: LayoutDashboard },
-  { to: "/ai-assistant", label: "مساعد المنصة", icon: MessageCircle },
-  { to: "/analytics", label: "تحليلاتي", icon: BarChart3 },
-  { to: "/account", label: "حسابي", icon: User },
+const items: { to: string; labelKey: UiStringKey; icon: LucideIcon }[] = [
+  { to: "/dashboard", labelKey: "sidebar.dashboard", icon: LayoutDashboard },
+  { to: "/ai-assistant", labelKey: "sidebar.assistant", icon: MessageCircle },
+  { to: "/analytics", labelKey: "sidebar.analytics", icon: BarChart3 },
+  { to: "/account", labelKey: "sidebar.account", icon: User },
 ];
 
-const devItems = [
-  { to: "/admin", label: "لوحة الإدارة", icon: ShieldCheck },
-  { to: "/image-gallery", label: "معرض الصور", icon: Images },
-  { to: "/roadmap", label: "Roadmap", icon: MapIcon },
-  { to: "/assistant-runtime", label: "Assistant Runtime", icon: Brain },
-  { to: "/system-state", label: "System State", icon: Activity },
-  { to: "/build-logs", label: "Build Logs", icon: Terminal },
+const devItems: { to: string; labelKey: UiStringKey; icon: LucideIcon }[] = [
+  { to: "/admin", labelKey: "sidebar.admin", icon: ShieldCheck },
+  { to: "/image-gallery", labelKey: "sidebar.imageGallery", icon: Images },
+  { to: "/roadmap", labelKey: "sidebar.roadmap", icon: MapIcon },
+  { to: "/assistant-runtime", labelKey: "sidebar.assistantRuntime", icon: Brain },
+  { to: "/system-state", labelKey: "sidebar.systemState", icon: Activity },
+  { to: "/build-logs", labelKey: "sidebar.buildLogs", icon: Terminal },
 ];
 
 export function Sidebar() {
   const path = useRouterState({ select: (s) => s.location.pathname });
   const { user, signOut } = useAuth();
   const { isAdmin } = useEntitlement();
+  const { locale } = useLocale();
+  const t = (key: UiStringKey) => getUiString(locale, key);
   const [open, setOpen] = useState(false);
   const [devOpen, setDevOpen] = useState(true);
 
-  // Close drawer on route change
   useEffect(() => {
     setOpen(false);
   }, [path]);
@@ -62,7 +65,7 @@ export function Sidebar() {
             onClick={onNavigate}
             className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition ${active ? "bg-primary/10 text-primary border border-primary/30" : "text-muted-foreground hover:bg-foreground/5 hover:text-foreground"}`}
           >
-            <it.icon className="h-4 w-4" /> {it.label}
+            <it.icon className="h-4 w-4" /> {t(it.labelKey)}
           </Link>
         );
       })}
@@ -74,7 +77,7 @@ export function Sidebar() {
           className="w-full flex items-center justify-between gap-3 rounded-xl px-3 py-2 text-xs uppercase tracking-wider text-muted-foreground hover:text-foreground transition"
         >
           <span className="flex items-center gap-2">
-            <Wrench className="h-3.5 w-3.5" /> أدوات النظام
+            <Wrench className="h-3.5 w-3.5" /> {t("sidebar.systemTools")}
           </span>
           <ChevronDown
             className={`h-3.5 w-3.5 transition-transform ${devOpen ? "rotate-180" : ""}`}
@@ -91,7 +94,7 @@ export function Sidebar() {
                   onClick={onNavigate}
                   className={`flex items-center gap-3 rounded-lg px-3 py-2 text-xs transition ${active ? "bg-primary/10 text-primary" : "text-muted-foreground hover:bg-foreground/5 hover:text-foreground"}`}
                 >
-                  <it.icon className="h-3.5 w-3.5" /> {it.label}
+                  <it.icon className="h-3.5 w-3.5" /> {t(it.labelKey)}
                 </Link>
               );
             })}
@@ -104,7 +107,6 @@ export function Sidebar() {
 
   return (
     <>
-    {/* Push main content down on mobile to clear the fixed top bar */}
     <style>{`
       @media (max-width: 1023px) {
         main { padding-top: 4rem; }
@@ -114,27 +116,26 @@ export function Sidebar() {
       }
     `}</style>
 
-    {/* Mobile top bar */}
     <header
       className="lg:hidden fixed top-0 inset-x-0 z-40 flex items-center justify-between gap-2 px-4 py-3 glass border-b border-border/50"
       data-print-hide
       dir="rtl"
     >
-      <Link to="/" className="flex items-center" aria-label="مسارات">
+      <Link to="/" className="flex items-center" aria-label={t("nav.brand")}>
         <BrandMark className="h-8" />
       </Link>
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
           <button
-            aria-label="فتح القائمة"
+            aria-label={t("sidebar.openMenu")}
             className="grid h-9 w-9 place-items-center rounded-lg border border-border/50 hover:bg-foreground/5 transition"
           >
             <Menu className="h-5 w-5" />
           </button>
         </SheetTrigger>
         <SheetContent side="right" className="w-72 p-5 flex flex-col" dir="rtl">
-          <SheetTitle className="sr-only">القائمة</SheetTitle>
-          <Link to="/" onClick={() => setOpen(false)} className="flex items-center mb-6" aria-label="مسارات">
+          <SheetTitle className="sr-only">{t("sidebar.menuTitle")}</SheetTitle>
+          <Link to="/" onClick={() => setOpen(false)} className="flex items-center mb-6" aria-label={t("nav.brand")}>
             <BrandMark className="h-9" />
           </Link>
           <nav className="space-y-1 flex-1 overflow-y-auto min-h-0 -mx-1 px-1">
@@ -144,22 +145,21 @@ export function Sidebar() {
             <LanguageSelector />
           </div>
           <div className="glass rounded-xl p-3 mb-3">
-            <p className="text-xs text-muted-foreground">مرحبًا</p>
-            <p className="text-sm font-semibold truncate">{user?.email ?? "ضيف"}</p>
+            <p className="text-xs text-muted-foreground">{t("sidebar.welcome")}</p>
+            <p className="text-sm font-semibold truncate">{user?.email ?? t("sidebar.guest")}</p>
           </div>
           <button
             onClick={() => { setOpen(false); signOut(); }}
             className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-muted-foreground hover:bg-foreground/5 hover:text-foreground transition"
           >
-            <LogOut className="h-4 w-4" /> تسجيل خروج
+            <LogOut className="h-4 w-4" /> {t("sidebar.signOut")}
           </button>
         </SheetContent>
       </Sheet>
     </header>
 
-    {/* Desktop sidebar */}
     <aside className="hidden lg:flex w-64 flex-col glass border-l border-border/50 p-5 sticky top-0 h-screen">
-      <Link to="/" className="flex items-center mb-8" aria-label="مسارات">
+      <Link to="/" className="flex items-center mb-8" aria-label={t("nav.brand")}>
         <BrandMark className="h-9" />
       </Link>
 
@@ -172,11 +172,11 @@ export function Sidebar() {
       </div>
 
       <div className="glass rounded-xl p-3 mb-3">
-        <p className="text-xs text-muted-foreground">مرحبًا</p>
-        <p className="text-sm font-semibold truncate">{user?.email ?? "ضيف"}</p>
+        <p className="text-xs text-muted-foreground">{t("sidebar.welcome")}</p>
+        <p className="text-sm font-semibold truncate">{user?.email ?? t("sidebar.guest")}</p>
       </div>
       <button onClick={() => signOut()} className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-muted-foreground hover:bg-foreground/5 hover:text-foreground transition">
-        <LogOut className="h-4 w-4" /> تسجيل خروج
+        <LogOut className="h-4 w-4" /> {t("sidebar.signOut")}
       </button>
     </aside>
     </>
