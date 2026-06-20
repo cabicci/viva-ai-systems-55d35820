@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/lib/auth-context";
+import { LanguageSelector } from "@/components/locale/LanguageSelector";
 
 export function Navbar() {
   const { user } = useAuth();
@@ -22,6 +23,7 @@ export function Navbar() {
           <Link to="/curriculum" className="hover:text-foreground transition">المنهج</Link>
         </nav>
         <div className="flex items-center gap-2">
+          <LanguageSelector />
           {user ? (
             <Button asChild size="sm" className="rounded-full px-5"><Link to="/dashboard">لوحتي</Link></Button>
           ) : (

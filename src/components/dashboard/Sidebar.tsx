@@ -20,6 +20,7 @@ import { useAuth } from "@/lib/auth-context";
 import { useEntitlement } from "@/lib/entitlements";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { BrandMark } from "@/components/brand/BrandMark";
+import { LanguageSelector } from "@/components/locale/LanguageSelector";
 import { useEffect, useState } from "react";
 
 const items = [
@@ -139,6 +140,9 @@ export function Sidebar() {
           <nav className="space-y-1 flex-1 overflow-y-auto min-h-0 -mx-1 px-1">
             <NavItems onNavigate={() => setOpen(false)} />
           </nav>
+          <div className="px-3 pb-2">
+            <LanguageSelector />
+          </div>
           <div className="glass rounded-xl p-3 mb-3">
             <p className="text-xs text-muted-foreground">مرحبًا</p>
             <p className="text-sm font-semibold truncate">{user?.email ?? "ضيف"}</p>
@@ -162,6 +166,10 @@ export function Sidebar() {
       <nav className="space-y-1 flex-1 overflow-y-auto min-h-0 -mx-1 px-1">
         <NavItems />
       </nav>
+
+      <div className="px-3 pb-2">
+        <LanguageSelector />
+      </div>
 
       <div className="glass rounded-xl p-3 mb-3">
         <p className="text-xs text-muted-foreground">مرحبًا</p>

@@ -12,6 +12,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { BackToDashboard } from "@/components/site/BackToDashboard";
 import { RouteError, RouteNotFound } from "@/components/site/route-boundaries";
 import { CloudHydration } from "@/components/site/CloudHydration";
+import { LocaleProvider } from "@/lib/locale/locale-context";
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -171,12 +172,14 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        <CloudHydration />
-        <Outlet />
-        <BackToDashboard />
-        <Toaster richColors position="top-center" dir="rtl" />
-      </AuthProvider>
+      <LocaleProvider>
+        <AuthProvider>
+          <CloudHydration />
+          <Outlet />
+          <BackToDashboard />
+          <Toaster richColors position="top-center" dir="rtl" />
+        </AuthProvider>
+      </LocaleProvider>
     </QueryClientProvider>
   );
 }
