@@ -41,6 +41,14 @@ TITLE RULES (catalog title — not Orientation heading):
 QUIZ MARKDOWN RULES:
 - Never include internal answer keys in contentMarkdown or bullets (no "correctIndex: N", "Quiz key", or "unchanged" key notes).
 - Keep correctIndex only in the structured quiz JSON object.
+- Every Quiz section must include a clear learner-facing question in quiz.question (not only in markdown labels like "Correct Answer").
+- Include every quiz option in quiz.options; never omit the correct option from the options array.
+
+FORBIDDEN LEARNER PHRASES (never appear in adapted copy):
+- "preserved from Egyptian production" / "preserved from the Egyptian production"
+- "refer to the text above" / "refer to the source"
+- "correctIndex" in any learner-facing markdown or prose
+- Arabic: "الإجابة الصحيحة محفوظة من الإنتاج المصري" / "راجع النص أعلاه" / "راجع المصدر"
 
 MISSION METADATA:
 - Preserve yamlIntent and yamlType on mission sections when present in the source package.

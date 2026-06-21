@@ -10,6 +10,36 @@ import { loadMsaLessonPackage } from "../../../scripts/locale-lessons/lib/source
 
 const TEST_API_KEY = "sk-test-openai-key-not-real";
 
+function mockAdaptedSections(
+  source: Awaited<ReturnType<typeof loadMsaLessonPackage>>,
+  targetLocale: AdaptationTargetLocale,
+) {
+  return source.sections.map((section) => {
+    if (section.role !== "Quiz" || !section.quiz) return section;
+
+    const question =
+      targetLocale === "en"
+        ? "What is the best way to start understanding AI today?"
+        : section.quiz.question ?? "وش أفضل طريقة تبدأ تفهم الـ AI اليوم؟";
+
+    return {
+      ...section,
+      quiz: {
+        question,
+        correctIndex: section.quiz.correctIndex ?? 0,
+        options: [
+          "Read a long textbook chapter before trying anything.",
+          "Open ChatGPT or Gemini and ask for something simple from your day.",
+          "Memorize every AI model name first.",
+        ],
+        explanation:
+          section.quiz.explanation ??
+          "One small experiment teaches more than a long read.",
+      },
+    };
+  });
+}
+
 function minimalAdaptedJson(
   source: Awaited<ReturnType<typeof loadMsaLessonPackage>>,
   targetLocale: AdaptationTargetLocale,
@@ -26,7 +56,7 @@ function minimalAdaptedJson(
     summary: "Sample summary",
     estimatedMinutes: source.estimatedMinutes,
     nextLessonId: source.nextLessonId,
-    sections: source.sections,
+    sections: mockAdaptedSections(source, targetLocale),
     generatedAt: "2026-06-20T00:00:00.000Z",
   });
 }

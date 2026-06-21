@@ -150,8 +150,8 @@ export async function adaptLessonFromAnthropicResponse(input: {
     targetLocale,
   );
   if (qualityWarnings.length > 0) {
-    console.warn(
-      `Quality warnings for ${source.lessonId} (${targetLocale}):\n${qualityWarnings.map((warning) => `  - ${warning}`).join("\n")}`,
+    throw new Error(
+      `Adapted lesson quality checks failed for ${source.lessonId} (${targetLocale}):\n${qualityWarnings.map((warning) => `  - ${warning}`).join("\n")}`,
     );
   }
 

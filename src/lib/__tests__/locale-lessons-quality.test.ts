@@ -6,10 +6,15 @@ import { EN_SYSTEM_PROMPT } from "../../../scripts/locale-lessons/prompts/en.ts"
 import { AR_GULF_SYSTEM_PROMPT } from "../../../scripts/locale-lessons/prompts/ar-gulf.ts";
 import { ADAPTATION_SYSTEM_RULES } from "../../../scripts/locale-lessons/prompts/adaptation-system.ts";
 import {
+  detectBannedPhraseWarnings,
   detectEnglishTitleMismatchWarning,
+  detectGenericBadEnglishTitleWarning,
   detectGulfRegisterInconsistencyWarning,
+  detectQuizIntegrityWarnings,
   detectQuizMarkdownLeakageWarnings,
+  isGenericBadEnglishTitle,
   sanitizeAdaptedLessonMarkdown,
+  stripBannedPhrasesFromText,
   stripQuizKeyLeaksFromMarkdown,
   validateAdaptedLessonWarnings,
 } from "../../../scripts/locale-lessons/lib/quality-warnings.ts";
@@ -41,7 +46,7 @@ describe("locale-lessons adaptation quality checks", () => {
     expect(ADAPTATION_SYSTEM_RULES).toContain("TITLE RULES");
     expect(ADAPTATION_SYSTEM_RULES).toContain("What Will You Understand?");
     expect(ADAPTATION_SYSTEM_RULES).toContain("correctIndex");
-    expect(EN_SYSTEM_PROMPT).toContain("align title with titleEn");
+    expect(EN_SYSTEM_PROMPT).toContain("exactly equal to titleEn");
     expect(AR_GULF_SYSTEM_PROMPT).toContain("وش، ليش، مو، راح");
     expect(AR_GULF_SYSTEM_PROMPT).toContain("Avoid mixing ايش with وش");
   });
@@ -64,7 +69,257 @@ describe("locale-lessons adaptation quality checks", () => {
       generatedAt: "2026-06-20T00:00:00.000Z",
     });
 
-    expect(warning).toMatch(/orientation copy/);
+    expect(warning).toMatch(/generic orientation title/);
+  });
+
+  it("flags generic English titles such as Getting Started and Introduction to the Lesson", () => {
+    expect(isGenericBadEnglishTitle("Getting Started")).toBe(true);
+    expect(isGenericBadEnglishTitle("Introduction to the Lesson")).toBe(true);
+    expect(isGenericBadEnglishTitle("Understanding Dashboards")).toBe(true);
+
+    const warning = detectGenericBadEnglishTitleWarning({
+      locale: "en",
+      lessonId: "test",
+      title: "Getting Started",
+      titleEn: "Idea to Page",
+      sections: [],
+      canonicalVersion: "1",
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: "test",
+        canonicalVersion: "1",
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    });
+
+    expect(warning).toMatch(/generic orientation title/);
+  });
+
+  it("flags English title mismatch for non-intro lessons from pilot artifact review", async () => {
+    const analystSource = await loadMsaLessonPackage(
+      "analyst-m1-l1-from-automation-to-insight",
+    );
+    const analystWarning = detectEnglishTitleMismatchWarning(analystSource, {
+      locale: "en",
+      lessonId: analystSource.lessonId,
+      titleEn: "From Automation to Insight",
+      title: "Introduction to the Lesson",
+      sections: [],
+      canonicalVersion: analystSource.canonicalVersion,
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: analystSource.lessonId,
+        canonicalVersion: analystSource.canonicalVersion,
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    });
+    expect(analystWarning).toMatch(/Introduction to the Lesson/);
+
+    const builderSource = await loadMsaLessonPackage("builder-m6-l1-idea-to-page");
+    const builderWarning = detectEnglishTitleMismatchWarning(builderSource, {
+      locale: "en",
+      lessonId: builderSource.lessonId,
+      titleEn: "Idea to Page",
+      title: "Getting Started",
+      sections: [],
+      canonicalVersion: builderSource.canonicalVersion,
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: builderSource.lessonId,
+        canonicalVersion: builderSource.canonicalVersion,
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    });
+    expect(builderWarning).toMatch(/Getting Started/);
+  });
+
+  it("aligns EN catalog titles to titleEn for analyst and builder pilot lessons", async () => {
+    for (const [lessonId, badTitle] of [
+      ["analyst-m1-l1-from-automation-to-insight", "Introduction to the Lesson"],
+      ["builder-m6-l1-idea-to-page", "Getting Started"],
+    ] as const) {
+      const source = await loadMsaLessonPackage(lessonId);
+      const finalized = finalizeAdaptedPackage(
+        source,
+        {
+          ...source,
+          locale: "en",
+          title: badTitle,
+          titleEn: source.titleEn,
+          adaptedFrom: {
+            locale: "ar-MSA",
+            lessonId: source.lessonId,
+            canonicalVersion: source.canonicalVersion,
+            sourcePackagePath: "x",
+          },
+          generatedAt: "2026-06-20T00:00:00.000Z",
+        } as AdaptedLessonPackage,
+        "en",
+        "x",
+        "2026-06-20T00:00:00.000Z",
+      );
+
+      expect(finalized.title).toBe(source.titleEn);
+      expect(detectEnglishTitleMismatchWarning(source, finalized)).toBeNull();
+    }
+  });
+
+  it("detects banned production-leak phrases in learner content", () => {
+    const warnings = detectBannedPhraseWarnings({
+      locale: "en",
+      lessonId: "test",
+      title: "Test",
+      sections: [
+        {
+          role: "Quiz",
+          heading: "Quiz",
+          contentMarkdown:
+            "The correct answer is preserved from the Egyptian production.",
+          bullets: [],
+          tables: [],
+          quiz: {
+            question: "Pick one",
+            correctIndex: 0,
+            options: ["A", "B"],
+            explanation: "refer to the text above",
+          },
+        },
+      ],
+      canonicalVersion: "1",
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: "test",
+        canonicalVersion: "1",
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    });
+
+    expect(warnings.some((warning) => warning.includes("egyptian production"))).toBe(
+      true,
+    );
+    expect(warnings.some((warning) => warning.includes("refer to the text above"))).toBe(
+      true,
+    );
+  });
+
+  it("strips banned production-leak phrases from markdown", () => {
+    const cleaned = stripBannedPhrasesFromText(
+      "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+    );
+    expect(cleaned).not.toMatch(/الإنتاج المصري/);
+    expect(cleaned).not.toMatch(/راجع النص أعلاه/);
+  });
+
+  it("flags broken analyst-m4 quiz artifact issues before repair", async () => {
+    const source = await loadMsaLessonPackage("analyst-m4-automated-dashboard");
+    const brokenArtifactQuiz = {
+      role: "Quiz" as const,
+      heading: "Quiz",
+      contentMarkdown:
+        "**Correct Answer:** Automate the number you read weekly.\n- Option B\n- Option C",
+      bullets: [],
+      tables: [],
+      quiz: {
+        correctIndex: 0,
+        options: ["Option B", "Option C"],
+        explanation:
+          "The correct answer is preserved from the Egyptian production.",
+      },
+    };
+
+    const warnings = validateAdaptedLessonWarnings(
+      source,
+      {
+        locale: "en",
+        lessonId: source.lessonId,
+        titleEn: source.titleEn,
+        title: source.titleEn,
+        sections: source.sections.map((section) =>
+          section.role === "Quiz" ? brokenArtifactQuiz : section,
+        ),
+        canonicalVersion: source.canonicalVersion,
+        adaptedFrom: {
+          locale: "ar-MSA",
+          lessonId: source.lessonId,
+          canonicalVersion: source.canonicalVersion,
+          sourcePackagePath: "x",
+        },
+        generatedAt: "2026-06-20T00:00:00.000Z",
+      },
+      "en",
+    );
+
+    expect(warnings.some((warning) => warning.includes("missing clear quiz question"))).toBe(
+      true,
+    );
+    expect(warnings.some((warning) => warning.includes("egyptian production"))).toBe(
+      true,
+    );
+    expect(
+      warnings.some((warning) => warning.includes("analyst-m4-automated-dashboard")),
+    ).toBe(true);
+  });
+
+  it("repairs analyst-m4 quiz question, options, and banned phrases during finalization", async () => {
+    const source = await loadMsaLessonPackage("analyst-m4-automated-dashboard");
+    const quizIndex = source.sections.findIndex((section) => section.role === "Quiz");
+
+    const broken = {
+      ...source,
+      locale: "en",
+      title: "Automated Dashboard",
+      titleEn: "Automated Dashboard",
+      sections: source.sections.map((section, index) => {
+        if (index !== quizIndex) return section;
+        return {
+          ...section,
+          contentMarkdown:
+            "**Correct Answer:** Automate the metric you read weekly after two manual weeks.",
+          bullets: [
+            "Automate the metric you read weekly after two manual weeks.",
+            "Automate all four numbers at once before trying manually.",
+            "Build ten extra charts in Looker Studio.",
+          ],
+          quiz: {
+            correctIndex: 0,
+            options: [
+              "Automate all four numbers at once before trying manually.",
+              "Build ten extra charts in Looker Studio.",
+            ],
+            explanation:
+              "The correct answer is preserved from the Egyptian production — refer to the text above.",
+          },
+        };
+      }),
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: source.lessonId,
+        canonicalVersion: source.canonicalVersion,
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    } as AdaptedLessonPackage;
+
+    const finalized = finalizeAdaptedPackage(
+      source,
+      broken,
+      "en",
+      "x",
+      "2026-06-20T00:00:00.000Z",
+    );
+
+    const quiz = finalized.sections.find((section) => section.role === "Quiz")?.quiz;
+    expect(quiz?.question).toMatch(/four numbers/i);
+    expect(quiz?.options).toHaveLength(3);
+    expect(quiz?.options?.[0]).toMatch(/weekly/i);
+    expect(quiz?.correctIndex).toBe(0);
+    expect(finalized.title).toBe("Automated Dashboard");
+    expect(detectBannedPhraseWarnings(finalized)).toEqual([]);
+    expect(detectQuizIntegrityWarnings(source, finalized)).toEqual([]);
   });
 
   it("detects quiz markdown leakage patterns", () => {
@@ -151,7 +406,7 @@ describe("locale-lessons adaptation quality checks", () => {
 
     const preFinalizeWarnings = validateAdaptedLessonWarnings(source, adaptedBroken, "en");
     expect(
-      preFinalizeWarnings.some((warning) => warning.includes("orientation copy")),
+      preFinalizeWarnings.some((warning) => warning.includes("generic orientation title")),
     ).toBe(true);
 
     const finalized = finalizeAdaptedPackage(
@@ -168,7 +423,7 @@ describe("locale-lessons adaptation quality checks", () => {
     expect(errors.length).toBeGreaterThan(0);
     expect(finalized.title).toBe("What Is AI");
     expect(
-      postFinalizeWarnings.some((warning) => warning.includes("orientation copy")),
+      postFinalizeWarnings.some((warning) => warning.includes("generic orientation title")),
     ).toBe(false);
   });
 

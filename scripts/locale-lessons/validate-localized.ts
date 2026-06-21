@@ -90,6 +90,7 @@ async function main() {
           if (warnings.length > 0) {
             console.log(`${locale}: ${warnings.length} quality warning(s)`);
             for (const warning of warnings) console.warn(`  WARN: ${warning}`);
+            exitCode = 1;
           }
         }
         continue;

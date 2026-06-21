@@ -7,6 +7,7 @@ import type {
 import {
   sanitizeAdaptedLessonMarkdown,
   alignEnglishCatalogTitle,
+  repairQuizSection,
   validateAdaptedLessonWarnings,
 } from "./quality-warnings.ts";
 
@@ -109,6 +110,22 @@ function preserveMissionMetadataFromSource(
   return { ...adapted, sections };
 }
 
+function repairAdaptedQuizSections(
+  source: LocalizedLessonPackage,
+  adapted: AdaptedLessonPackage,
+): AdaptedLessonPackage {
+  const sections = adapted.sections.map((section, index) =>
+    repairQuizSection(
+      source.sections[index],
+      section,
+      adapted.lessonId,
+      adapted.locale as AdaptationTargetLocale,
+    ),
+  );
+
+  return { ...adapted, sections };
+}
+
 export function finalizeAdaptedPackage(
   source: LocalizedLessonPackage,
   adapted: AdaptedLessonPackage,
@@ -136,10 +153,10 @@ export function finalizeAdaptedPackage(
     generatedAt,
   };
 
+  const withMissionMetadata = preserveMissionMetadataFromSource(source, locked);
+  const withQuizRepair = repairAdaptedQuizSections(source, withMissionMetadata);
+
   return sanitizeAdaptedLessonMarkdown(
-    alignEnglishCatalogTitle(
-      source,
-      preserveMissionMetadataFromSource(source, locked),
-    ),
+    alignEnglishCatalogTitle(source, withQuizRepair),
   );
 }

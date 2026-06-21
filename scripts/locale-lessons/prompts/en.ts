@@ -22,9 +22,9 @@ ADAPTATION (NOT translation):
 - Do not add new tools, scenarios, or business rules beyond what the Arabic Fusha source implies.
 
 TITLE (English catalog):
-- Set "title" to a natural English catalog title derived from titleEn and the lesson topic.
-- Normally align title with titleEn (e.g. titleEn "What Is AI" → title "What Is AI").
-- Do NOT copy the Orientation section subtitle (e.g. "What Will You Understand?") as the lesson title.`;
+- Set "title" exactly equal to titleEn for every lesson (e.g. titleEn "What Is AI" → title "What Is AI").
+- Never use generic orientation titles: "Introduction to the Lesson", "Getting Started", "What Will You Understand?", "What Will You Learn?", or "Understanding...".
+- Do NOT copy the Orientation section subtitle as the lesson title.`;
 
 export function buildEnUserPrompt(source: LocalizedLessonPackage): string {
   return `# Contextual adaptation task
