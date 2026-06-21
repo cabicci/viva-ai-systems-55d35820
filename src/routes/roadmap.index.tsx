@@ -278,7 +278,7 @@ function DnaReportsArchive() {
 }
 
 export const Route = createFileRoute("/roadmap/")({
-  head: () => ({ meta: [{ title: "Roadmap — خريطة الشغل" }] }),
+  head: () => ({ meta: [{ title: "خريطة الشغل — مسارات" }] }),
   beforeLoad: requireAdminBeforeLoad,
   component: RoadmapPage,
 });
