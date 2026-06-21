@@ -7,7 +7,7 @@ import {
   Clock,
   BookCheck,
   Target,
-  Activity,
+  CalendarDays,
   ArrowLeft,
   TrendingUp,
 } from "lucide-react";
