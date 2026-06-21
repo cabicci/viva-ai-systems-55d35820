@@ -42,5 +42,11 @@ scope: lessons
 source: user
 summary: Prototype Extract → Adapt Text Only → Inject fragment localization pipeline beside legacy pilot.
 
+[roadmap: locale fragment pilot generator]
+date: 2026-06-22
+scope: lessons
+source: user
+summary: Add fragment-based locale pilot generator (extract → OpenAI text-only → inject → validate).
+
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

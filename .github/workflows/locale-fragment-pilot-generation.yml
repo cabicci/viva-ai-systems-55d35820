@@ -1,0 +1,138 @@
+name: Locale Fragment Pilot Generation
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Adaptation target locale"
+        required: true
+        type: choice
+        options:
+          - ar-Gulf
+          - en
+          - all
+        default: all
+      count:
+        description: "Pilot lesson count (capped at 25; default 10)"
+        required: false
+        type: string
+        default: "10"
+      mode:
+        description: "Generation mode"
+        required: true
+        type: choice
+        options:
+          - pilot
+        default: pilot
+
+permissions:
+  contents: read
+
+concurrency:
+  group: locale-fragment-pilot-generation-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  generate-fragment-pilot:
+    runs-on: ubuntu-latest
+    env:
+      TARGET: ${{ inputs.target || 'all' }}
+      COUNT: ${{ inputs.count || '10' }}
+      MODE: ${{ inputs.mode || 'pilot' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Validate workflow inputs
+        run: |
+          set -euo pipefail
+          if [ "$MODE" != "pilot" ]; then
+            echo "Only pilot mode is supported."
+            exit 1
+          fi
+          case "$TARGET" in
+            ar-Gulf|en|all) ;;
+            *)
+              echo "Invalid target: $TARGET"
+              exit 1
+              ;;
+          esac
+          if ! [[ "$COUNT" =~ ^[0-9]+$ ]]; then
+            echo "Invalid count: $COUNT"
+            exit 1
+          fi
+          if [ "$COUNT" -lt 3 ] || [ "$COUNT" -gt 25 ]; then
+            echo "Count must be between 3 and 25 (got $COUNT)."
+            exit 1
+          fi
+
+      - name: Generate fragment localized pilot batch
+        env:
+          OPENAI_API_KEY: ${{ secrets.new_openai }}
+        run: |
+          set -euo pipefail
+          if [ "$TARGET" = "all" ]; then
+            bun run locale-lessons:generate-fragment-pilot -- --target ar-Gulf --count "$COUNT" --mode pilot
+            bun run locale-lessons:generate-fragment-pilot -- --target en --count "$COUNT" --mode pilot
+          else
+            bun run locale-lessons:generate-fragment-pilot -- --target "$TARGET" --count "$COUNT" --mode pilot
+          fi
+
+      - name: Validate fragment pilot packages
+        run: |
+          set -euo pipefail
+          bun -e "
+          import { validateFragmentPilotTargetPackage } from './scripts/locale-lessons/generate-fragment-localized-pilot.ts';
+
+          const targets = process.env.TARGET === 'all' ? ['ar-Gulf', 'en'] : [process.env.TARGET];
+          let exitCode = 0;
+
+          for (const locale of targets) {
+            const result = await validateFragmentPilotTargetPackage(locale);
+            if (result.ok) {
+              console.log(\`\${locale}: FRAGMENT PILOT OK (\${result.count}/\${result.expectedCount})\`);
+            } else {
+              exitCode = 1;
+              console.error(\`\${locale}: FRAGMENT PILOT INVALID (\${result.count}/\${result.expectedCount})\`);
+              for (const error of result.errors) console.error('  -', error);
+            }
+          }
+
+          process.exit(exitCode);
+          "
+
+      - name: Run locale-lessons tests
+        run: |
+          bun test \
+            src/lib/__tests__/locale-lessons-openai-fragment-parse.test.ts \
+            src/lib/__tests__/locale-lessons-fragment-pipeline.test.ts \
+            src/lib/__tests__/locale-lessons-quality.test.ts \
+            src/lib/__tests__/locale-lessons-anthropic-parse.test.ts \
+            src/lib/__tests__/locale-lessons-openai-parse.test.ts \
+            src/lib/__tests__/locale-lessons-quality-retry.test.ts \
+            src/lib/__tests__/locale-lessons-adaptation.test.ts \
+            src/lib/__tests__/locale-lessons-sample.test.ts \
+            src/lib/__tests__/locale-lessons-pilot.test.ts \
+            src/lib/__tests__/ar-msa-lesson-package.test.ts
+
+      - name: Upload fragment pilot output artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: locale-fragment-pilot-${{ env.TARGET }}-${{ github.run_number }}
+          if-no-files-found: error
+          retention-days: 14
+          path: |
+            src/lib/locale-lessons/ar-Gulf/manifest.json
+            src/lib/locale-lessons/ar-Gulf/lessons/*.json
+            src/lib/locale-lessons/ar-Gulf/reports/fragment-pilot-report.json
+            src/lib/locale-lessons/en/manifest.json
+            src/lib/locale-lessons/en/lessons/*.json
+            src/lib/locale-lessons/en/reports/fragment-pilot-report.json

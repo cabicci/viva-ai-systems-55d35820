@@ -11,6 +11,10 @@ import {
 } from "./mock-localize-text-map.ts";
 import type { LocalizedTextMap } from "./localized-text-map.ts";
 import {
+  localizeTextMapWithOpenAi,
+  type OpenAiFragmentAdapterOptions,
+} from "./openai-fragment-adapter.ts";
+import {
   validateFragmentPipelineArtifact,
   type FragmentPipelineValidationResult,
 } from "./validate-structural-parity.ts";
@@ -35,6 +39,40 @@ export function runFragmentLocalizationPipeline(
     ...mockOptions,
     targetLocale,
   });
+  const artifact = injectLocalizedFields(
+    source,
+    localizedTextMap,
+    targetLocale,
+    generatedAt,
+  );
+  const validation = validateFragmentPipelineArtifact(
+    source,
+    artifact,
+    targetLocale,
+  );
+
+  return {
+    source,
+    textMap,
+    localizedTextMap,
+    artifact,
+    validation,
+  };
+}
+
+/** Extract → OpenAI text-only localize → inject → validate final artifact. */
+export async function runFragmentLocalizationPipelineWithOpenAi(
+  source: LocalizedLessonPackage,
+  targetLocale: AdaptationTargetLocale,
+  openAiOptions: OpenAiFragmentAdapterOptions = {},
+  generatedAt = new Date().toISOString(),
+): Promise<FragmentLocalizationResult> {
+  const textMap = extractLocalizableFields(source);
+  const localizedTextMap = await localizeTextMapWithOpenAi(
+    textMap,
+    targetLocale,
+    openAiOptions,
+  );
   const artifact = injectLocalizedFields(
     source,
     localizedTextMap,

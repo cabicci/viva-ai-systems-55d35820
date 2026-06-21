@@ -90,6 +90,8 @@ export interface LocalizedPilotManifest extends LocalizedLessonManifest {
   packageStatus: "pilot";
   mode: "pilot";
   incomplete: true;
+  /** Distinguishes fragment text-map pipeline from full-package OpenAI adaptation. */
+  pipeline?: "fragment" | "full-package";
   requiredLessonCount: typeof REQUIRED_LESSON_COUNT;
   sampleLessonIds: string[];
   pilotLessonIds: string[];
