@@ -27,6 +27,8 @@ import {
   stripQuizKeyLeaksFromMarkdown,
   stripQuizOptionPrefix,
   validateAdaptedLessonWarnings,
+  validateSanitizedAdaptedLessonWarnings,
+  detectUnbalancedLearnerMarkdownWarnings,
 } from "../../../scripts/locale-lessons/lib/quality-warnings.ts";
 import {
   finalizeAdaptedPackage,
@@ -1163,5 +1165,176 @@ describe("locale-lessons adaptation quality checks", () => {
     });
 
     expect(sanitized.sections[0]?.contentMarkdown).not.toMatch(/الإنتاج المصري/);
+  });
+
+  it("automated quality gate: flags raw production leaks then passes after sanitation", async () => {
+    const source = await loadMsaLessonPackage("intro-m1-l1-what-is-ai");
+    const polluted: AdaptedLessonPackage = {
+      locale: "en",
+      lessonId: "intro-m1-l1-what-is-ai",
+      title: "What Is AI?",
+      sections: [
+        {
+          role: "Concept",
+          heading: "Concept",
+          contentMarkdown:
+            "The visual original in production remains unchanged — not regenerated from Bunny.",
+          bullets: [],
+          tables: [],
+        },
+      ],
+      canonicalVersion: "1",
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: "intro-m1-l1-what-is-ai",
+        canonicalVersion: "1",
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    };
+
+    expect(
+      validateAdaptedLessonWarnings(source, polluted, "en").some((warning) =>
+        warning.includes("production"),
+      ),
+    ).toBe(true);
+    expect(validateSanitizedAdaptedLessonWarnings(source, polluted, "en")).toEqual(
+      [],
+    );
+  });
+
+  it("automated quality gate: repairs unbalanced ** then passes post-sanitation validation", async () => {
+    const source = await loadMsaLessonPackage("intro-m1-l1-what-is-ai");
+    const broken: AdaptedLessonPackage = {
+      locale: "en",
+      lessonId: "intro-m1-l1-what-is-ai",
+      title: "What Is **AI?",
+      sections: [
+        {
+          role: "Concept",
+          heading: "Concept",
+          contentMarkdown: "Start with a **small prompt and learn by doing.",
+          bullets: ["Try ChatGPT** with one question today"],
+          tables: [],
+        },
+      ],
+      canonicalVersion: "1",
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: "intro-m1-l1-what-is-ai",
+        canonicalVersion: "1",
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    };
+
+    expect(detectUnbalancedLearnerMarkdownWarnings(broken).length).toBeGreaterThan(0);
+    const sanitized = sanitizeAdaptedLessonMarkdown(broken);
+    expect(detectUnbalancedLearnerMarkdownWarnings(sanitized)).toEqual([]);
+    expect(validateSanitizedAdaptedLessonWarnings(source, broken, "en")).toEqual([]);
+  });
+
+  it("automated quality gate: strips Option/خيار prefixes from quiz bullets and contentMarkdown", () => {
+    const packageWithPrefixes: AdaptedLessonPackage = {
+      locale: "ar-Gulf",
+      lessonId: "analyst-m4-automated-dashboard",
+      title: "Dashboard",
+      sections: [
+        {
+          role: "Quiz",
+          heading: "Quiz",
+          contentMarkdown: "السؤال:\nخيار ١: تفتح ChatGPT وتطلب شيء بسيط.\nChoice 2: تقرأ مقال طويل.",
+          bullets: ["Option 1: Automate the weekly metric.", "A) Ignore the dashboard."],
+          tables: [],
+          quiz: {
+            question: "وش أفضل خطوة؟",
+            correctIndex: 0,
+            options: ["تفتح ChatGPT", "تقرأ مقال"],
+            explanation: "ابدأ بخطوة صغيرة.",
+          },
+        },
+      ],
+      canonicalVersion: "1",
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: "analyst-m4-automated-dashboard",
+        canonicalVersion: "1",
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    };
+
+    expect(detectQuizOptionPrefixWarnings(packageWithPrefixes).length).toBeGreaterThan(
+      0,
+    );
+
+    const sanitized = sanitizeAdaptedLessonMarkdown(packageWithPrefixes);
+    const quizSection = sanitized.sections.find((section) => section.role === "Quiz");
+
+    expect(quizSection?.contentMarkdown).not.toMatch(/^خيار/u);
+    expect(quizSection?.contentMarkdown).not.toMatch(/^Choice\s*2/i);
+    expect(quizSection?.bullets.every((bullet) => !hasQuizOptionPrefixLeak(bullet))).toBe(
+      true,
+    );
+    expect(detectQuizOptionPrefixWarnings(sanitized)).toEqual([]);
+  });
+
+  it("automated quality gate: Arabic rubric production note is stripped without false positives", async () => {
+    const source = await loadMsaLessonPackage("intro-m1-l1-what-is-ai");
+    const polluted: AdaptedLessonPackage = {
+      locale: "ar-Gulf",
+      lessonId: "intro-m1-l1-what-is-ai",
+      title: "وش هو الذكاء الاصطناعي؟",
+      sections: [
+        {
+          role: "Mission",
+          heading: "Mission",
+          contentMarkdown: "طبّق الفكرة على مشروعك.",
+          bullets: [],
+          tables: [],
+          mission: {
+            intro: "سلّم مهمة قصيرة.",
+            delivery: ["اكتب ملخصًا من ٣ أسطر."],
+            rubric: [
+              {
+                dimension: "الوضوح",
+                criteria: "معايير التقييم (من الإنتاج — الأوزان غير متغيرة)",
+              },
+            ],
+          },
+        },
+      ],
+      canonicalVersion: "1",
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: "intro-m1-l1-what-is-ai",
+        canonicalVersion: "1",
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    };
+
+    const clean: AdaptedLessonPackage = {
+      ...polluted,
+      sections: [
+        {
+          role: "Concept",
+          heading: "Concept",
+          contentMarkdown: "الذكاء الاصطناعي يساعدك تختار الخيار الأنسب لسياقك.",
+          bullets: ["جرّب prompt بسيط اليوم.", "اسأل زميلك عن رأيه."],
+          tables: [],
+        },
+      ],
+    };
+
+    expect(validateSanitizedAdaptedLessonWarnings(source, polluted, "ar-Gulf")).toEqual(
+      [],
+    );
+    expect(validateSanitizedAdaptedLessonWarnings(source, clean, "ar-Gulf")).toEqual(
+      [],
+    );
+    expect(
+      clean.sections[0]?.contentMarkdown,
+    ).toContain("الخيار الأنسب");
   });
 });

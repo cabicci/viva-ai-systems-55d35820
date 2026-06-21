@@ -88,8 +88,10 @@ async function main() {
         } else {
           const warnings = await collectPilotPackageWarnings(locale);
           if (warnings.length > 0) {
-            console.log(`${locale}: ${warnings.length} quality warning(s)`);
-            for (const warning of warnings) console.warn(`  WARN: ${warning}`);
+            console.error(
+              `${locale}: LEARNER TEXT QUALITY GATE FAILED (${warnings.length} violation(s))`,
+            );
+            for (const warning of warnings) console.error(`  FAIL: ${warning}`);
             exitCode = 1;
           }
         }

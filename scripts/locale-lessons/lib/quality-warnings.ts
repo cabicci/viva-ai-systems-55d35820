@@ -47,6 +47,13 @@ const BANNED_LEARNER_PHRASE_PATTERNS: RegExp[] = [
   /in production:/i,
   /في الإنتاج:/,
   /\bbunny\b/i,
+  /production remains unchanged/i,
+  /from (the )?production/i,
+  /from production/i,
+  /visual original/i,
+  /معايير التقييم.*من الإنتاج/,
+  /من الإنتاج — الأوزان/,
+  /الأوزان غير متغيرة/,
 ];
 
 const INTERNAL_PRODUCTION_LINE_PATTERNS: RegExp[] = [
@@ -57,6 +64,8 @@ const INTERNAL_PRODUCTION_LINE_PATTERNS: RegExp[] = [
   /\(the original visual in[^)]*production[^)]*\)/i,
   /\(original visual asset from egyptian production[^)]*\)/i,
   /\(الأصل البصري في الإنتاج المصري[^)]*\)/,
+  /\(معايير التقييم \(من الإنتاج[^)]*\)/,
+  /\(.*production remains unchanged[^)]*\)/i,
 ];
 
 export function isInternalProductionReferenceSection(
@@ -634,6 +643,100 @@ export function stripMarkdownEmphasisFromText(text: string): string {
   return text.replace(/\*\*/g, "").trim();
 }
 
+function sanitizeLearnerFacingField(
+  text: string,
+  options: { stripQuizOptionPrefixes?: boolean } = {},
+): string {
+  let value = stripQuizKeyLeaksFromMarkdown(text);
+  if (options.stripQuizOptionPrefixes) {
+    value = value
+      .split("\n")
+      .map((line) => stripQuizOptionPrefix(line))
+      .join("\n");
+  }
+  value = stripMarkdownEmphasisFromText(value);
+  return stripBannedPhrasesFromText(value);
+}
+
+function learnerFacingFieldsForSection(
+  section: LocalizedLessonSection,
+): Array<{ label: string; text: string }> {
+  const fields: Array<{ label: string; text: string }> = [
+    { label: "heading", text: section.heading },
+    { label: "subtitle", text: section.subtitle ?? "" },
+    { label: "contentMarkdown", text: section.contentMarkdown },
+  ];
+
+  section.bullets.forEach((bullet, index) => {
+    fields.push({ label: `bullets[${index}]`, text: bullet });
+  });
+
+  if (section.quiz) {
+    fields.push({ label: "quiz.question", text: section.quiz.question ?? "" });
+    (section.quiz.options ?? []).forEach((option, index) => {
+      fields.push({ label: `quiz.options[${index}]`, text: option });
+    });
+    fields.push({
+      label: "quiz.explanation",
+      text: section.quiz.explanation ?? "",
+    });
+  }
+
+  if (section.mission) {
+    fields.push({ label: "mission.intro", text: section.mission.intro ?? "" });
+    (section.mission.delivery ?? []).forEach((line, index) => {
+      fields.push({ label: `mission.delivery[${index}]`, text: line });
+    });
+    (section.mission.rubric ?? []).forEach((row, index) => {
+      fields.push({
+        label: `mission.rubric[${index}].dimension`,
+        text: row.dimension,
+      });
+      fields.push({
+        label: `mission.rubric[${index}].criteria`,
+        text: row.criteria,
+      });
+    });
+  }
+
+  return fields;
+}
+
+export function detectUnbalancedLearnerMarkdownWarnings(
+  adapted: AdaptedLessonPackage,
+): string[] {
+  const warnings: string[] = [];
+  const label = adapted.lessonId;
+
+  for (const field of [
+    { name: "title", text: adapted.title },
+    { name: "titleEn", text: adapted.titleEn ?? "" },
+    { name: "summary", text: adapted.summary ?? "" },
+  ]) {
+    if (field.text && hasUnbalancedMarkdownEmphasis(field.text)) {
+      warnings.push(
+        `${label}: ${field.name} contains unbalanced markdown emphasis markers`,
+      );
+    }
+  }
+
+  for (const section of adapted.sections) {
+    if (isInternalProductionReferenceSection(section)) continue;
+    const sectionLabel = `${label} section "${section.role}"`;
+
+    for (const field of learnerFacingFieldsForSection(section)) {
+      if (!field.text.trim()) continue;
+      if (hasUnbalancedMarkdownEmphasis(field.text)) {
+        warnings.push(
+          `${sectionLabel}: ${field.label} contains unbalanced markdown emphasis markers`,
+        );
+      }
+    }
+  }
+
+  return warnings;
+}
+
 export function detectUnbalancedQuizOptionMarkdownWarnings(
   adapted: AdaptedLessonPackage,
 ): string[] {
@@ -661,13 +764,31 @@ export function detectQuizOptionPrefixWarnings(
   const warnings: string[] = [];
 
   for (const section of adapted.sections) {
-    if (section.role !== "Quiz" || !section.quiz?.options) continue;
+    if (section.role !== "Quiz") continue;
     const label = `${adapted.lessonId} quiz section`;
 
-    section.quiz.options.forEach((option, index) => {
+    section.quiz?.options?.forEach((option, index) => {
       if (hasQuizOptionPrefixLeak(option)) {
         warnings.push(
           `${label}: quiz.options[${index}] contains numbering prefix leakage`,
+        );
+      }
+    });
+
+    section.bullets.forEach((bullet, index) => {
+      if (hasQuizOptionPrefixLeak(bullet)) {
+        warnings.push(
+          `${label}: bullets[${index}] contains numbering prefix leakage`,
+        );
+      }
+    });
+
+    section.contentMarkdown.split("\n").forEach((line, index) => {
+      const trimmed = line.trim();
+      if (!trimmed) return;
+      if (hasQuizOptionPrefixLeak(trimmed)) {
+        warnings.push(
+          `${label}: contentMarkdown line ${index + 1} contains numbering prefix leakage`,
         );
       }
     });
@@ -709,6 +830,7 @@ export function validateAdaptedLessonWarnings(
   warnings.push(...detectBannedPhraseWarnings(adapted));
   warnings.push(...detectQuizIntegrityWarnings(source, adapted));
   warnings.push(...detectQuizOptionIdentityWarnings(adapted));
+  warnings.push(...detectUnbalancedLearnerMarkdownWarnings(adapted));
   warnings.push(...detectUnbalancedQuizOptionMarkdownWarnings(adapted));
   warnings.push(...detectQuizOptionPrefixWarnings(adapted));
 
@@ -716,6 +838,30 @@ export function validateAdaptedLessonWarnings(
   if (registerWarning) warnings.push(registerWarning);
 
   return warnings;
+}
+
+/** Validate learner-facing text after sanitation — use for pilot/sample CI gates. */
+export function validateSanitizedAdaptedLessonWarnings(
+  source: LocalizedLessonPackage,
+  adapted: AdaptedLessonPackage,
+  targetLocale: AdaptationTargetLocale,
+): string[] {
+  const sanitized = sanitizeAdaptedLessonMarkdown(adapted);
+  return validateAdaptedLessonWarnings(source, sanitized, targetLocale);
+}
+
+export function collectLearnerTextQualityViolations(
+  source: LocalizedLessonPackage,
+  adapted: AdaptedLessonPackage,
+  targetLocale: AdaptationTargetLocale,
+  lessonPrefix: string,
+): string[] {
+  const violations = validateSanitizedAdaptedLessonWarnings(
+    source,
+    adapted,
+    targetLocale,
+  );
+  return violations.map((violation) => `${lessonPrefix}: ${violation}`);
 }
 
 export function stripQuizKeyLeaksFromMarkdown(text: string): string {
@@ -822,11 +968,9 @@ export function repairQuizSection(
       ...section,
       heading: sanitizeQuizHeading(section.heading) ?? section.heading,
       subtitle: sanitizeQuizHeading(section.subtitle) ?? section.subtitle,
-      contentMarkdown: stripBannedPhrasesFromText(
-        stripQuizKeyLeaksFromMarkdown(section.contentMarkdown),
-      ),
+      contentMarkdown: sanitizeLearnerFacingField(section.contentMarkdown),
       bullets: section.bullets
-        .map((bullet) => stripBannedPhrasesFromText(stripQuizKeyLeaksFromMarkdown(bullet)))
+        .map((bullet) => sanitizeLearnerFacingField(bullet))
         .filter((bullet) => bullet.length > 0),
     };
   }
@@ -890,9 +1034,9 @@ export function repairQuizSection(
   if (!question.trim()) {
     throw new Error(`${lessonId} quiz section: cannot finalize with empty quiz question`);
   }
-  const contentMarkdown = stripBannedPhrasesFromText(
-    stripQuizKeyLeaksFromMarkdown(section.contentMarkdown),
-  );
+  const contentMarkdown = sanitizeLearnerFacingField(section.contentMarkdown, {
+    stripQuizOptionPrefixes: true,
+  });
 
   return {
     ...section,
@@ -900,7 +1044,9 @@ export function repairQuizSection(
     subtitle: sanitizeQuizHeading(section.subtitle) ?? section.subtitle,
     contentMarkdown,
     bullets: section.bullets
-      .map((bullet) => stripBannedPhrasesFromText(stripQuizKeyLeaksFromMarkdown(bullet)))
+      .map((bullet) =>
+        sanitizeLearnerFacingField(bullet, { stripQuizOptionPrefixes: true }),
+      )
       .filter((bullet) => bullet.length > 0),
     quiz: {
       ...quiz,
@@ -917,34 +1063,57 @@ export function sanitizeAdaptedLessonMarkdown(
 ): AdaptedLessonPackage {
   return {
     ...adapted,
-    title: stripBannedPhrasesFromText(adapted.title),
+    title: sanitizeLearnerFacingField(adapted.title),
     summary: adapted.summary
-      ? stripBannedPhrasesFromText(adapted.summary)
+      ? sanitizeLearnerFacingField(adapted.summary)
       : adapted.summary,
     sections: adapted.sections.map((section) => {
       const cleaned = sanitizeInternalProductionReferenceSection(section);
+      const isQuiz = cleaned.role === "Quiz";
       return {
         ...cleaned,
-        contentMarkdown: stripBannedPhrasesFromText(
-          stripQuizKeyLeaksFromMarkdown(cleaned.contentMarkdown),
-        ),
+        heading: sanitizeLearnerFacingField(cleaned.heading),
+        subtitle: cleaned.subtitle
+          ? sanitizeLearnerFacingField(cleaned.subtitle)
+          : cleaned.subtitle,
+        contentMarkdown: sanitizeLearnerFacingField(cleaned.contentMarkdown, {
+          stripQuizOptionPrefixes: isQuiz,
+        }),
         bullets: cleaned.bullets
           .map((bullet) =>
-            stripBannedPhrasesFromText(stripQuizKeyLeaksFromMarkdown(bullet)),
+            sanitizeLearnerFacingField(bullet, {
+              stripQuizOptionPrefixes: isQuiz,
+            }),
           )
           .filter((bullet) => bullet.length > 0),
         quiz: cleaned.quiz
           ? {
               ...cleaned.quiz,
-              question: stripBannedPhrasesFromText(cleaned.quiz.question ?? ""),
+              question: sanitizeLearnerFacingField(cleaned.quiz.question ?? ""),
               options: (cleaned.quiz.options ?? []).map((option) =>
-                stripBannedPhrasesFromText(normalizeQuizOptionText(option)),
+                sanitizeLearnerFacingField(normalizeQuizOptionText(option), {
+                  stripQuizOptionPrefixes: true,
+                }),
               ),
-              explanation: stripBannedPhrasesFromText(
+              explanation: sanitizeLearnerFacingField(
                 cleaned.quiz.explanation ?? "",
               ),
             }
           : cleaned.quiz,
+        mission: cleaned.mission
+          ? {
+              ...cleaned.mission,
+              intro: sanitizeLearnerFacingField(cleaned.mission.intro ?? ""),
+              delivery: (cleaned.mission.delivery ?? []).map((line) =>
+                sanitizeLearnerFacingField(line),
+              ),
+              rubric: (cleaned.mission.rubric ?? []).map((row) => ({
+                ...row,
+                dimension: sanitizeLearnerFacingField(row.dimension),
+                criteria: sanitizeLearnerFacingField(row.criteria),
+              })),
+            }
+          : cleaned.mission,
       };
     }),
   };

@@ -12,5 +12,11 @@ scope: ui
 source: user
 summary: Add frontend-only Arabic pricing placeholder page at /pricing (no payments).
 
+[roadmap:e4b91c2a-6f8d-4e1b-9c3a-2d7f8e1a4b6c]
+date: 2026-06-04
+scope: lessons
+source: user
+summary: Automate pilot learner-text quality gate in CI (production leaks, unbalanced markdown, quiz prefix cleanup).
+
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

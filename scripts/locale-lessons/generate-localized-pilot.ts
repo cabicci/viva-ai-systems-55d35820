@@ -14,7 +14,7 @@ import {
   readJsonFile,
   validateMsaSourcePackage,
 } from "./lib/source-package.ts";
-import { validateAdaptedLessonWarnings } from "./lib/quality-warnings.ts";
+import { collectLearnerTextQualityViolations } from "./lib/quality-warnings.ts";
 import {
   clampPilotLessonCount,
   DEFAULT_PILOT_LESSON_COUNT,
@@ -204,9 +204,14 @@ export async function collectPilotPackageWarnings(
     const adapted = await readJsonFile<AdaptedLessonPackage>(
       path.join(lessonsDirForLocale(locale), `${lessonId}.json`),
     );
-    for (const warning of validateAdaptedLessonWarnings(source, adapted, locale)) {
-      warnings.push(`${locale}/${lessonId}: ${warning}`);
-    }
+    warnings.push(
+      ...collectLearnerTextQualityViolations(
+        source,
+        adapted,
+        locale,
+        `${locale}/${lessonId}`,
+      ),
+    );
   }
 
   return warnings;
