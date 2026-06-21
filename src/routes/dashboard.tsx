@@ -231,7 +231,7 @@ function Dashboard() {
               {intros.length > 0 && (
                 <section>
                   <TierHeader
-                    eyebrow="STAGE 00 · START"
+                    eyebrow="مرحلة ٠٠ · البداية"
                     title="ابدأ من هنا"
                     subtitle="الأساس اللي بيخلّيك تفهم باقي المنظومة قبل أي مسار."
                   />
