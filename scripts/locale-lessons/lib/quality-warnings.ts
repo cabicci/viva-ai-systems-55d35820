@@ -59,6 +59,20 @@ const WEAK_QUIZ_QUESTION_PATTERNS: RegExp[] = [
   /^correctIndex/i,
 ];
 
+const QUIZ_OPTION_PREFIX_PATTERNS: RegExp[] = [
+  /^Option\s*\d+\s*[:\.]?\s*/i,
+  /^Choice\s*\d+\s*[:\.]?\s*/i,
+  /^Answer\s*[A-D]\s*[:\.]?\s*/i,
+  /^خيار\s*[:\.]?\s*[\u0660-\u0669\d]+\s*[:\.]?\s*/u,
+  /^الخيار\s*[:\.]?\s*[\u0660-\u0669\d]+\s*[:\.]?\s*/u,
+  /^[\u0660-\u0669\d]+\s*[:\.]\s*/u,
+  /^\d+\s*[:\.]\s*/,
+  /^[A-D]\)\s*/i,
+  /^[أ-د]\)\s*/u,
+];
+
+type QuizOptionSignal = "hands_on" | "reading_theory" | "unknown";
+
 /** MSA source omits structured quiz.question for this lesson; repair during finalization only. */
 export const ANALYST_M4_QUIZ_QUESTION_FALLBACK: Record<
   AdaptationTargetLocale,
@@ -71,6 +85,89 @@ export const ANALYST_M4_QUIZ_QUESTION_FALLBACK: Record<
 
 function normalizeTitle(value: string): string {
   return value.trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+export function stripQuizOptionPrefix(text: string): string {
+  let value = text.trim();
+  let changed = true;
+
+  while (changed) {
+    changed = false;
+    for (const pattern of QUIZ_OPTION_PREFIX_PATTERNS) {
+      const next = value.replace(pattern, "").trim();
+      if (next !== value) {
+        value = next;
+        changed = true;
+      }
+    }
+  }
+
+  return value;
+}
+
+export function hasQuizOptionPrefixLeak(text: string): boolean {
+  const trimmed = text.trim();
+  if (!trimmed) return false;
+  return QUIZ_OPTION_PREFIX_PATTERNS.some((pattern) => pattern.test(trimmed));
+}
+
+function classifyQuizOption(text: string): QuizOptionSignal {
+  const normalized = normalizeTitle(text);
+
+  if (
+    /chatgpt|gemini|claude|open .{0,20} ask|try something|try .{0,20} small|ask it something|ask .{0,20} simple|تفتح|جرّ?ب|اطلب|جرب/.test(
+      normalized,
+    )
+  ) {
+    return "hands_on";
+  }
+
+  if (
+    /read .{0,20} article|long article|textbook|full course|many article|as many|wait until you have taken|قراءة|مقال|دورة|مقالات/.test(
+      normalized,
+    )
+  ) {
+    return "reading_theory";
+  }
+
+  return "unknown";
+}
+
+function classifyExplanationPreference(explanation: string): QuizOptionSignal {
+  const normalized = normalizeTitle(explanation);
+
+  if (
+    /small (real )?attempt|more than a long read|try .{0,20} yourself|hands-on|hands on|تجربة .{0,20} قراءة|قراءة طويلة|جرّ?ب/.test(
+      normalized,
+    )
+  ) {
+    return "hands_on";
+  }
+
+  if (/prefer reading|read first|long read|اقرأ/.test(normalized)) {
+    return "reading_theory";
+  }
+
+  return "unknown";
+}
+
+function reorderQuizOptionsForExplanationSemantics(
+  options: string[],
+  correctIndex: number,
+  explanation: string,
+): string[] {
+  const preference = classifyExplanationPreference(explanation);
+  if (preference === "unknown" || options.length < 2) return options;
+
+  const preferredIndex = options.findIndex(
+    (option) => classifyQuizOption(option) === preference,
+  );
+  if (preferredIndex === -1 || preferredIndex === correctIndex) return options;
+
+  const reordered = [...options];
+  const [preferredOption] = reordered.splice(preferredIndex, 1);
+  reordered.splice(correctIndex, 0, preferredOption);
+  return reordered;
 }
 
 function learnerFacingText(section: LocalizedLessonSection): string {
@@ -380,6 +477,95 @@ export function detectQuizIntegrityWarnings(
         );
       }
     }
+
+    warnings.push(
+      ...detectQuizExplanationSemanticWarnings(
+        adapted.lessonId,
+        quiz.question ?? "",
+        options,
+        quiz.correctIndex ?? -1,
+        quiz.explanation ?? "",
+      ),
+    );
+  }
+
+  return warnings;
+}
+
+export function detectQuizExplanationSemanticWarnings(
+  lessonId: string,
+  question: string,
+  options: string[],
+  correctIndex: number,
+  explanation: string,
+): string[] {
+  const warnings: string[] = [];
+  const label = `${lessonId} quiz section`;
+
+  if (
+    correctIndex < 0 ||
+    correctIndex >= options.length ||
+    !explanation.trim() ||
+    options.length < 2
+  ) {
+    return warnings;
+  }
+
+  const preference = classifyExplanationPreference(explanation);
+  const correctClass = classifyQuizOption(options[correctIndex] ?? "");
+
+  if (
+    preference === "hands_on" &&
+    correctClass === "reading_theory"
+  ) {
+    warnings.push(
+      `${label}: explanation supports hands-on trying but correctIndex ${correctIndex} points to a reading/theory option`,
+    );
+  }
+
+  if (
+    preference === "reading_theory" &&
+    correctClass === "hands_on"
+  ) {
+    warnings.push(
+      `${label}: explanation supports reading/theory but correctIndex ${correctIndex} points to a hands-on option`,
+    );
+  }
+
+  for (let index = 0; index < options.length; index++) {
+    if (index === correctIndex) continue;
+    const optionClass = classifyQuizOption(options[index] ?? "");
+    if (
+      preference !== "unknown" &&
+      optionClass === preference &&
+      correctClass !== preference
+    ) {
+      warnings.push(
+        `${label}: explanation supports option at index ${index} but correctIndex is ${correctIndex}`,
+      );
+      break;
+    }
+  }
+
+  return warnings;
+}
+
+export function detectQuizOptionPrefixWarnings(
+  adapted: AdaptedLessonPackage,
+): string[] {
+  const warnings: string[] = [];
+
+  for (const section of adapted.sections) {
+    if (section.role !== "Quiz" || !section.quiz?.options) continue;
+    const label = `${adapted.lessonId} quiz section`;
+
+    section.quiz.options.forEach((option, index) => {
+      if (hasQuizOptionPrefixLeak(option)) {
+        warnings.push(
+          `${label}: quiz.options[${index}] contains numbering prefix leakage`,
+        );
+      }
+    });
   }
 
   return warnings;
@@ -417,6 +603,7 @@ export function validateAdaptedLessonWarnings(
   warnings.push(...detectQuizMarkdownLeakageWarnings(adapted));
   warnings.push(...detectBannedPhraseWarnings(adapted));
   warnings.push(...detectQuizIntegrityWarnings(source, adapted));
+  warnings.push(...detectQuizOptionPrefixWarnings(adapted));
 
   const registerWarning = detectGulfRegisterInconsistencyWarning(adapted);
   if (registerWarning) warnings.push(registerWarning);
@@ -452,16 +639,17 @@ export function stripBannedPhrasesFromText(text: string): string {
   return cleaned.join("\n").trimEnd();
 }
 
-function normalizeQuizOptionText(text: string): string {
-  return text
-    .replace(
-      /^(\*{1,2})?(الإجابة الصحيحة|Correct answer|Correct Answer)[^:*]*(\([^)]*\))?\*{0,2}\s*:?\s*/i,
-      "",
-    )
-    .replace(/^خيار\s*\d+\s*:\s*/i, "")
-    .replace(/\(correctIndex\s*:\s*\d+\)/gi, "")
-    .replace(/^\*\*|\*\*$/g, "")
-    .trim();
+export function normalizeQuizOptionText(text: string): string {
+  return stripQuizOptionPrefix(
+    text
+      .replace(
+        /^(\*{1,2})?(الإجابة الصحيحة|Correct answer|Correct Answer)[^:*]*(\([^)]*\))?\*{0,2}\s*:?\s*/i,
+        "",
+      )
+      .replace(/\(correctIndex\s*:\s*\d+\)/gi, "")
+      .replace(/^\*\*|\*\*$/g, "")
+      .trim(),
+  );
 }
 
 export function extractQuizQuestionFromMarkdown(contentMarkdown: string): string | null {
@@ -583,6 +771,11 @@ export function repairQuizSection(
   }
 
   const explanation = stripBannedPhrasesFromText(quiz.explanation ?? "");
+  options = reorderQuizOptionsForExplanationSemantics(
+    options,
+    correctIndex,
+    explanation,
+  );
   const contentMarkdown = stripBannedPhrasesFromText(
     stripQuizKeyLeaksFromMarkdown(section.contentMarkdown),
   );

@@ -10,18 +10,24 @@ import {
   detectEnglishTitleMismatchWarning,
   detectGenericBadEnglishTitleWarning,
   detectGulfRegisterInconsistencyWarning,
+  detectQuizExplanationSemanticWarnings,
   detectQuizIntegrityWarnings,
   detectQuizMarkdownLeakageWarnings,
+  detectQuizOptionPrefixWarnings,
+  hasQuizOptionPrefixLeak,
   isGenericBadEnglishTitle,
+  normalizeQuizOptionText,
   sanitizeAdaptedLessonMarkdown,
   stripBannedPhrasesFromText,
   stripQuizKeyLeaksFromMarkdown,
+  stripQuizOptionPrefix,
   validateAdaptedLessonWarnings,
 } from "../../../scripts/locale-lessons/lib/quality-warnings.ts";
 import {
   finalizeAdaptedPackage,
   validateAdaptedLessonPackage,
 } from "../../../scripts/locale-lessons/lib/validate-adapted-lesson.ts";
+import { QUALITY_RETRY_QUIZ_RULES } from "../../../scripts/locale-lessons/lib/adaptation-retry-prompt.ts";
 import { collectSamplePackageWarnings } from "../../../scripts/locale-lessons/generate-localized-samples.ts";
 import {
   loadMsaLessonPackage,
@@ -47,6 +53,8 @@ describe("locale-lessons adaptation quality checks", () => {
     expect(ADAPTATION_SYSTEM_RULES).toContain("What Will You Understand?");
     expect(ADAPTATION_SYSTEM_RULES).toContain("correctIndex");
     expect(EN_SYSTEM_PROMPT).toContain("exactly equal to titleEn");
+    expect(EN_SYSTEM_PROMPT).toContain("numbering prefixes");
+    expect(QUALITY_RETRY_QUIZ_RULES).toContain("explanation must justify");
     expect(AR_GULF_SYSTEM_PROMPT).toContain("وش، ليش، مو، راح");
     expect(AR_GULF_SYSTEM_PROMPT).toContain("Avoid mixing ايش with وش");
   });
@@ -527,6 +535,141 @@ describe("locale-lessons adaptation quality checks", () => {
 
     expect(enWarnings).toEqual([]);
     expect(gulfWarnings).toEqual([]);
+  });
+
+  it("strips English and Arabic/Gulf option numbering prefixes from quiz options only", () => {
+    expect(stripQuizOptionPrefix("Option 1: Open ChatGPT and try something small.")).toBe(
+      "Open ChatGPT and try something small.",
+    );
+    expect(stripQuizOptionPrefix("Option 2: Read a long article.")).toBe(
+      "Read a long article.",
+    );
+    expect(stripQuizOptionPrefix("خيار ١: تفتح ChatGPT وتطلب شيء بسيط.")).toBe(
+      "تفتح ChatGPT وتطلب شيء بسيط.",
+    );
+    expect(stripQuizOptionPrefix("الخيار ٢: تقرأ مقال طويل.")).toBe("تقرأ مقال طويل.");
+    expect(stripQuizOptionPrefix("1. Try a small prompt.")).toBe("Try a small prompt.");
+    expect(stripQuizOptionPrefix("A) Ask ChatGPT first.")).toBe("Ask ChatGPT first.");
+    expect(hasQuizOptionPrefixLeak("Option 3: Still prefixed")).toBe(true);
+    expect(normalizeQuizOptionText("Option 1: Open ChatGPT and try something small.")).toBe(
+      "Open ChatGPT and try something small.",
+    );
+  });
+
+  it("flags intro quiz when explanation supports option 0 but correctIndex is 1", () => {
+    const warnings = detectQuizExplanationSemanticWarnings(
+      "intro-m1-l1-what-is-ai",
+      "What is the best way to start understanding AI today?",
+      [
+        "Open ChatGPT and try something simple from your day.",
+        "Read a long article about AI before trying anything.",
+        "Wait until you finish a full course.",
+      ],
+      1,
+      "One small real attempt teaches you more than a long read.",
+    );
+
+    expect(
+      warnings.some((warning) => warning.includes("supports option at index 0")),
+    ).toBe(true);
+  });
+
+  it("repairs intro quiz order so correctIndex 1 points to the hands-on option", async () => {
+    const source = await loadMsaLessonPackage("intro-m1-l1-what-is-ai");
+    const quizIndex = source.sections.findIndex((section) => section.role === "Quiz");
+
+    const misordered = {
+      ...source,
+      locale: "en",
+      title: "What Is AI",
+      titleEn: "What Is AI",
+      sections: source.sections.map((section, index) => {
+        if (index !== quizIndex || !section.quiz) return section;
+        return {
+          ...section,
+          quiz: {
+            question: "What is the best way to start understanding AI today?",
+            correctIndex: 1,
+            options: [
+              "Open ChatGPT and try something simple from your day.",
+              "Read a long article about AI before trying anything.",
+              "Wait until you finish a full course.",
+            ],
+            explanation:
+              "One small real attempt teaches you more than a long read.",
+          },
+        };
+      }),
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: source.lessonId,
+        canonicalVersion: source.canonicalVersion,
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    } as AdaptedLessonPackage;
+
+    const preWarnings = detectQuizExplanationSemanticWarnings(
+      source.lessonId,
+      misordered.sections[quizIndex]?.quiz?.question ?? "",
+      misordered.sections[quizIndex]?.quiz?.options ?? [],
+      misordered.sections[quizIndex]?.quiz?.correctIndex ?? -1,
+      misordered.sections[quizIndex]?.quiz?.explanation ?? "",
+    );
+    expect(preWarnings.length).toBeGreaterThan(0);
+
+    const finalized = finalizeAdaptedPackage(
+      source,
+      misordered,
+      "en",
+      "x",
+      "2026-06-20T00:00:00.000Z",
+    );
+    const quiz = finalized.sections.find((section) => section.role === "Quiz")?.quiz;
+
+    expect(quiz?.correctIndex).toBe(1);
+    expect(quiz?.options?.[1]).toMatch(/ChatGPT/i);
+    expect(detectQuizExplanationSemanticWarnings(
+      source.lessonId,
+      quiz?.question ?? "",
+      quiz?.options ?? [],
+      quiz?.correctIndex ?? -1,
+      quiz?.explanation ?? "",
+    )).toEqual([]);
+    expect(detectQuizIntegrityWarnings(source, finalized)).toEqual([]);
+  });
+
+  it("detects prefixed quiz options in adapted packages", () => {
+    const warnings = detectQuizOptionPrefixWarnings({
+      locale: "en",
+      lessonId: "analyst-m3-l2-ai-summarization",
+      title: "Test",
+      sections: [
+        {
+          role: "Quiz",
+          heading: "Quiz",
+          contentMarkdown: "Question?",
+          bullets: [],
+          tables: [],
+          quiz: {
+            question: "Pick one",
+            correctIndex: 0,
+            options: ["Option 1: Summarize the report.", "Option 2: Ignore it."],
+            explanation: "Summaries help.",
+          },
+        },
+      ],
+      canonicalVersion: "1",
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: "test",
+        canonicalVersion: "1",
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    });
+
+    expect(warnings.some((warning) => warning.includes("prefix leakage"))).toBe(true);
   });
 
   it("committed Gulf and EN samples have no quiz key leakage in markdown", () => {

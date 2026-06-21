@@ -180,13 +180,17 @@ describe("locale-lessons quality retry", () => {
     const invalidJson = minimalAdaptedJson(
       source,
       "ar-Gulf",
-      ["خيار 1", "خيار 2"],
+      ["خيار ١: خيار خاطئ أول", "خيار ٢: خيار خاطئ ثاني"],
       2,
     );
     const validJson = minimalAdaptedJson(
       source,
       "ar-Gulf",
-      ["خيار 1", "خيار 2", "أين بالضبط يترك الزبائن عملية الشراء؟"],
+      [
+        "خيار ١: خيار خاطئ أول",
+        "خيار ٢: خيار خاطئ ثاني",
+        "أين بالضبط يترك الزبائن عملية الشراء؟",
+      ],
       2,
     );
     const fetchFn = mockFetchWithResponses([invalidJson, validJson]);

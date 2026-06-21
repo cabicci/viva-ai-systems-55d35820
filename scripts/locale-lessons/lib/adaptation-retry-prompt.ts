@@ -10,7 +10,10 @@ export const QUALITY_RETRY_QUIZ_RULES = `Fix quiz structure in every Quiz sectio
 - correctIndex must be an integer >= 0 and strictly less than options.length.
 - The correct answer text must appear as one of the options at quiz.options[correctIndex].
 - Do not omit the correct option from the options array.
-- Use at least 3 options when the source quiz expects a multiple-choice question (correctIndex >= 2 requires at least 3 options).`;
+- Use at least 3 options when the source quiz expects a multiple-choice question (correctIndex >= 2 requires at least 3 options).
+- Preserve source option order when translating; do not reorder options unless correctIndex still points at the correct answer.
+- quiz.explanation must justify the exact option at quiz.options[correctIndex], not a different option.
+- quiz.options[] must contain clean option text only — no "Option 1", "Choice 1", "خيار ١", numbering prefixes, or letter labels.`;
 
 export const QUALITY_RETRY_FORBIDDEN_PHRASES = `No learner-facing metadata leaks:
 - No correctIndex, Quiz key, or answer-key notes in contentMarkdown or bullets.

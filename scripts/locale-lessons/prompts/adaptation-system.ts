@@ -46,6 +46,9 @@ QUIZ MARKDOWN RULES:
 - correctIndex is zero-based: it must be an integer >= 0 and strictly less than options.length.
 - The text at quiz.options[correctIndex] must be the correct answer — never point correctIndex at a missing or out-of-range option.
 - Use at least 3 quiz.options when correctIndex is 2 or higher (indices 0, 1, 2 require three options).
+- Keep quiz.options in the same order as the source when translating; preserve source correctIndex — do not reorder options unless you also update correctIndex consistently.
+- quiz.explanation must justify the exact option at quiz.options[correctIndex], not a different option.
+- quiz.options[] must contain clean option text only — no "Option 1", "Choice 1", "خيار ١", numbering prefixes, or letter labels.
 
 FORBIDDEN LEARNER PHRASES (never appear in adapted copy):
 - "preserved from Egyptian production" / "preserved from the Egyptian production"

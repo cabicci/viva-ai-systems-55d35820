@@ -29,7 +29,9 @@ TITLE (English catalog):
 QUIZ (English):
 - Every Quiz section needs a clear quiz.question and a complete quiz.options array.
 - Preserve correctIndex from the source; ensure options.length > correctIndex (zero-based).
-- When correctIndex is 2, provide at least 3 options with the correct answer at index 2.`;
+- When correctIndex is 2, provide at least 3 options with the correct answer at index 2.
+- Keep option order aligned with the source; explanation must justify quiz.options[correctIndex] only.
+- options[] must be clean text — no "Option 1", "Choice 1", or numbering prefixes.`;
 
 export function buildEnUserPrompt(source: LocalizedLessonPackage): string {
   return `# Contextual adaptation task
