@@ -235,7 +235,7 @@ function AnalyticsContent() {
             {/* Activity last 14 days */}
             <section className="glass rounded-2xl p-4 sm:p-5 border border-border/50 mb-6">
               <div className="flex items-center gap-2 mb-4">
-                <Activity className="h-4 w-4 text-primary" />
+                <CalendarDays className="h-4 w-4 text-primary" />
                 <h2 className="text-sm font-semibold">نشاطك آخر ١٤ يوم</h2>
               </div>
               <div className="flex items-end gap-1.5 h-32">
