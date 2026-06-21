@@ -128,7 +128,7 @@ function Dashboard() {
         <div className="p-6 md:p-10">
         <WelcomeHint show={noProgress} />
         <StartWowBanner />
-        <WelcomeChecklist />
+        {noProgress && <WelcomeChecklist />}
         <ReviewsDueCard />
         <div className="flex items-end justify-between flex-wrap gap-4 mb-10 animate-fade-up">
           <div>
@@ -146,14 +146,18 @@ function Dashboard() {
           )}
         </div>
 
-        <div className="grid md:grid-cols-3 gap-4 mb-8">
-          <NextLessonCard
-            lesson={nextLesson}
-            lessonTitle={nextLessonData?.title ?? nextLesson?.title}
-            duration={nextLessonData?.duration}
-            pathTitle={nextLessonPath?.title}
-            delay={0}
-          />
+        {/* Stat row: hide NextLessonCard when hero CTA already points to the same lesson;
+            still show the "all done" celebration card when nextLesson is null. */}
+        <div className={`grid gap-4 mb-8 ${nextLesson ? "md:grid-cols-2" : "md:grid-cols-3"}`}>
+          {!nextLesson && (
+            <NextLessonCard
+              lesson={nextLesson}
+              lessonTitle={nextLessonData?.title ?? nextLesson?.title}
+              duration={nextLessonData?.duration}
+              pathTitle={nextLessonPath?.title}
+              delay={0}
+            />
+          )}
           <OverallProgressCard
             pct={overallPct}
             done={allAvailableDone}
