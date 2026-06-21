@@ -1,13 +1,19 @@
-import type { LucideIcon } from "lucide-react";
+import type { ComponentType, SVGProps } from "react";
 import {
-  Hammer,
-  Palette,
-  Workflow,
-  BarChart3,
-  Briefcase,
-  Map as MapIcon,
-} from "lucide-react";
+  IntroPathIcon,
+  BusinessPathIcon,
+  CreatorPathIcon,
+  AnalystPathIcon,
+  AutomatorPathIcon,
+  BuilderPathIcon,
+} from "@/components/icons/PathIcons";
 import { INTRO_LESSON_CONTENT } from "@/components/intro/lessons";
+
+// Path icons accept the lucide-compatible prop surface (className, strokeWidth,
+// size, …). Custom Masaarat path icons and lucide icons both satisfy this.
+type PathIcon = ComponentType<
+  SVGProps<SVGSVGElement> & { size?: number | string; strokeWidth?: number | string }
+>;
 
 /* -------------------------------------------------------------- */
 /*  Curriculum architecture — paths → modules → lessons           */
