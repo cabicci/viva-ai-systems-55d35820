@@ -359,7 +359,7 @@ function RoadmapView() {
     <div>
       <header className="mb-6 flex items-start justify-between gap-4 flex-wrap">
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold">Roadmap</h1>
+          <h1 className="text-2xl md:text-3xl font-bold">خريطة الشغل</h1>
           <p className="text-sm text-muted-foreground mt-1">
             خريطة الشغل المشتركة — كل اللي اتعمل + كل اللي هنعمله. اضغط على الـ checkbox عشان تبدّل الحالة.
           </p>
