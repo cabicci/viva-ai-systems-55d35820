@@ -18,5 +18,11 @@ scope: lessons
 source: user
 summary: Automate pilot learner-text quality gate in CI (production leaks, unbalanced markdown, quiz prefix cleanup).
 
+[roadmap:f7a2d8e1-3c4b-4f9a-8e2d-1b6c9a4e7f3d]
+date: 2026-06-04
+scope: ui
+source: user
+summary: Align pricing page icons with Masaarat brand direction (calm checks, no generic AI glyphs).
+
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

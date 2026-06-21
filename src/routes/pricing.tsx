@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { BadgeCheck, Check, Sparkles } from "lucide-react";
+import { Check } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { Button } from "@/components/ui/button";
@@ -75,7 +75,7 @@ function PricingPage() {
           {/* Hero */}
           <header className="text-center space-y-4 max-w-2xl mx-auto">
             <p className="text-xs font-mono uppercase tracking-widest text-accent">
-              الباقات · launch readiness
+              الباقات · جاهزية الإطلاق
             </p>
             <h1 className="text-3xl md:text-4xl font-black">
               ابدأ مجانًا — وكمّل لما Pro يجهز
@@ -109,7 +109,7 @@ function PricingPage() {
             </article>
 
             <article className="glass rounded-2xl border border-primary/30 bg-primary/[0.03] p-6 md:p-8 flex flex-col relative overflow-hidden">
-              <div className="absolute top-4 left-4">
+              <div className="absolute top-4 start-4">
                 <Badge
                   variant="outline"
                   className="border-primary/40 bg-primary/10 text-primary text-[11px] font-semibold"
@@ -118,10 +118,7 @@ function PricingPage() {
                 </Badge>
               </div>
               <div className="mb-6">
-                <div className="flex items-center gap-2">
-                  <h2 className="text-2xl font-black">Pro</h2>
-                  <BadgeCheck className="h-5 w-5 text-primary" />
-                </div>
+                <h2 className="text-2xl font-black">Pro</h2>
                 <p className="text-sm text-muted-foreground mt-1">
                   للجادّين في إكمال المسارات
                 </p>
@@ -129,7 +126,7 @@ function PricingPage() {
               <ul className="space-y-3 text-sm flex-1 mb-8">
                 {PRO_FEATURES.map((feature) => (
                   <li key={feature} className="flex items-start gap-2.5">
-                    <Sparkles className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -140,6 +137,8 @@ function PricingPage() {
                 className="w-full"
                 disabled
                 aria-disabled
+                title="Pro هيتفعّل قريبًا"
+                aria-label="Pro هيتفعّل قريبًا"
               >
                 Pro قريبًا
               </Button>
