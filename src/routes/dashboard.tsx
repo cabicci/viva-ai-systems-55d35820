@@ -251,7 +251,7 @@ function Dashboard() {
               {operatorPaths.length > 0 && (
                 <section>
                   <TierHeader
-                    eyebrow="LEVEL 2 · AI OPERATOR"
+                    eyebrow="المستوى ٢ · مشغّل AI"
                     title="شغّل أنظمة وأتمتة"
                     subtitle="ابني workflows ذكية تشتغل لوحدها — برضو من غير كود."
                   />
