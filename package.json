@@ -21,6 +21,7 @@
     "locale-lessons:validate-localized": "bun run scripts/locale-lessons/validate-localized.ts",
     "locale-lessons:generate-localized": "bun run scripts/locale-lessons/generate-localized-package.ts",
     "locale-lessons:generate-samples": "bun run scripts/locale-lessons/generate-localized-samples.ts",
+    "locale-lessons:generate-pilot": "bun run scripts/locale-lessons/generate-localized-pilot.ts",
     "test": "vitest",
     "test:run": "vitest run",
     "test:ui": "vitest --ui"

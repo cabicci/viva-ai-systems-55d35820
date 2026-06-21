@@ -5,6 +5,10 @@ import type {
 import { ADAPTATION_TARGET_LOCALES } from "../../src/lib/locale-lessons/types.ts";
 import { validateSampleTargetPackage, collectSamplePackageWarnings } from "./generate-localized-samples.ts";
 import {
+  validatePilotTargetPackage,
+  collectPilotPackageWarnings,
+} from "./generate-localized-pilot.ts";
+import {
   manifestPathForLocale,
   pathExists,
   readJsonFile,
@@ -63,6 +67,26 @@ async function main() {
           for (const error of sample.errors) console.error(`  - ${error}`);
         } else {
           const warnings = await collectSamplePackageWarnings(locale);
+          if (warnings.length > 0) {
+            console.log(`${locale}: ${warnings.length} quality warning(s)`);
+            for (const warning of warnings) console.warn(`  WARN: ${warning}`);
+          }
+        }
+        continue;
+      }
+
+      if (manifest.packageStatus === "pilot") {
+        const pilot = await validatePilotTargetPackage(locale);
+        console.log(
+          pilot.ok
+            ? `${locale}: PILOT OK (${pilot.count}/${pilot.expectedCount} pilot lessons, package incomplete)`
+            : `${locale}: PILOT INVALID (${pilot.count}/${pilot.expectedCount})`,
+        );
+        if (!pilot.ok) {
+          exitCode = 1;
+          for (const error of pilot.errors) console.error(`  - ${error}`);
+        } else {
+          const warnings = await collectPilotPackageWarnings(locale);
           if (warnings.length > 0) {
             console.log(`${locale}: ${warnings.length} quality warning(s)`);
             for (const warning of warnings) console.warn(`  WARN: ${warning}`);

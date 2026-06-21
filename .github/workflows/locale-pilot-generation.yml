@@ -1,0 +1,116 @@
+name: Locale Pilot Generation
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Adaptation target locale"
+        required: true
+        type: choice
+        options:
+          - ar-Gulf
+          - en
+          - all
+        default: all
+      count:
+        description: "Pilot lesson count (capped at 25; default 10)"
+        required: false
+        type: string
+        default: "10"
+      mode:
+        description: "Generation mode"
+        required: true
+        type: choice
+        options:
+          - pilot
+        default: pilot
+  repository_dispatch:
+    types:
+      - locale-pilot-generation
+
+permissions:
+  contents: read
+
+concurrency:
+  group: locale-pilot-generation-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  generate-pilot:
+    runs-on: ubuntu-latest
+    env:
+      TARGET: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.target || inputs.target || 'all' }}
+      COUNT: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.count || inputs.count || '10' }}
+      MODE: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.mode || inputs.mode || 'pilot' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Validate workflow inputs
+        run: |
+          set -euo pipefail
+          if [ "$MODE" != "pilot" ]; then
+            echo "Only pilot mode is supported."
+            exit 1
+          fi
+          case "$TARGET" in
+            ar-Gulf|en|all) ;;
+            *)
+              echo "Invalid target: $TARGET"
+              exit 1
+              ;;
+          esac
+          if ! [[ "$COUNT" =~ ^[0-9]+$ ]]; then
+            echo "Invalid count: $COUNT"
+            exit 1
+          fi
+          if [ "$COUNT" -lt 3 ] || [ "$COUNT" -gt 25 ]; then
+            echo "Count must be between 3 and 25 (got $COUNT)."
+            exit 1
+          fi
+
+      - name: Generate localized pilot batch
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          LOCALE_ADAPTATION_MODEL: ${{ secrets.LOCALE_ADAPTATION_MODEL }}
+        run: |
+          set -euo pipefail
+          if [ "$TARGET" = "all" ]; then
+            bun run locale-lessons:generate-pilot -- --target ar-Gulf --count "$COUNT" --mode pilot
+            bun run locale-lessons:generate-pilot -- --target en --count "$COUNT" --mode pilot
+          else
+            bun run locale-lessons:generate-pilot -- --target "$TARGET" --count "$COUNT" --mode pilot
+          fi
+
+      - name: Validate localized packages
+        run: bun run locale-lessons:validate-localized -- --target all
+
+      - name: Run locale-lessons tests
+        run: |
+          bun test \
+            src/lib/__tests__/locale-lessons-anthropic-parse.test.ts \
+            src/lib/__tests__/locale-lessons-quality.test.ts \
+            src/lib/__tests__/locale-lessons-adaptation.test.ts \
+            src/lib/__tests__/locale-lessons-sample.test.ts \
+            src/lib/__tests__/locale-lessons-pilot.test.ts \
+            src/lib/__tests__/ar-msa-lesson-package.test.ts
+
+      - name: Upload pilot output artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: locale-pilot-${{ env.TARGET }}-${{ github.run_number }}
+          if-no-files-found: error
+          retention-days: 14
+          path: |
+            src/lib/locale-lessons/ar-Gulf/manifest.json
+            src/lib/locale-lessons/ar-Gulf/lessons/*.json
+            src/lib/locale-lessons/en/manifest.json
+            src/lib/locale-lessons/en/lessons/*.json

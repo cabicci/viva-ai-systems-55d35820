@@ -85,6 +85,18 @@ export interface LocalizedSampleManifest extends LocalizedLessonManifest {
   providerModel: string;
 }
 
+/** Phase 2G — incomplete pilot batch manifest (capped partial package). */
+export interface LocalizedPilotManifest extends LocalizedLessonManifest {
+  packageStatus: "pilot";
+  mode: "pilot";
+  incomplete: true;
+  requiredLessonCount: typeof REQUIRED_LESSON_COUNT;
+  sampleLessonIds: string[];
+  pilotLessonIds: string[];
+  provider: string;
+  providerModel: string;
+}
+
 /** Constraints enforced by adaptation prompts and validation. */
 export interface AdaptationConstraints {
   preserveLessonId: true;
