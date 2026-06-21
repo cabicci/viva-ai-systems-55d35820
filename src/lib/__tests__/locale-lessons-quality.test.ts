@@ -253,8 +253,8 @@ describe("locale-lessons adaptation quality checks", () => {
       {
         locale: "en",
         lessonId: source.lessonId ?? "analyst-m4-automated-dashboard",
-        titleEn: source.titleEn,
-        title: source.titleEn,
+        titleEn: source.titleEn ?? "",
+        title: source.titleEn ?? "",
         sections: source.sections.map((section) =>
           section.role === "Quiz" ? brokenArtifactQuiz : section,
         ),
