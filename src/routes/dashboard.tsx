@@ -261,7 +261,7 @@ function Dashboard() {
               {builderPaths.length > 0 && (
                 <section>
                   <TierHeader
-                    eyebrow="LEVEL 3 · AI BUILDER"
+                    eyebrow="المستوى ٣ · باني AI"
                     title="ابني منتجات AI بنفسك"
                     subtitle="مسار تقني للي قرر يبني SaaS وتطبيقات AI — اختياري."
                   />
