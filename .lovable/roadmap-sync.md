@@ -24,5 +24,11 @@ scope: ui
 source: user
 summary: Align pricing page icons with Masaarat brand direction (calm checks, no generic AI glyphs).
 
+[roadmap:b3e8f1a2-7d4c-4a9b-8f2e-5c6d1a9b4e7f]
+date: 2026-06-04
+scope: lessons
+source: user
+summary: Fix locale-lessons quality test rubric fixture with required weight field.
+
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

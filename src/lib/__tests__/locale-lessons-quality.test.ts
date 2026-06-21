@@ -1298,6 +1298,7 @@ describe("locale-lessons adaptation quality checks", () => {
             rubric: [
               {
                 dimension: "الوضوح",
+                weight: 100,
                 criteria: "معايير التقييم (من الإنتاج — الأوزان غير متغيرة)",
               },
             ],
