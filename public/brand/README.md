@@ -56,16 +56,29 @@ Use calm concepts aligned with the brand brief:
 
 Supporting path pastels stay **path accents only**, not global brand fields. Existing pastel OKLCH tokens and **Tajawal** typography remain in place — no full re-theme.
 
-## Legacy / forbidden assets under `icons/`
+## Removed legacy SVG icons (Design P1)
 
-These files are **legacy** and **must not** be used in learner-facing brand surfaces:
+These **SVG files were removed** from the repo and must not be reintroduced:
 
-- `icons/ai-brain.svg`, `icons/concepts/ai-brain.png`
-- `icons/ai-spark.svg`, `icons/concepts/ai-spark.png`
+- `icons/ai-brain.svg` — **removed**
+- `icons/ai-spark.svg` — **removed**
+- `icons/assistant-guide.svg` — **removed**
 
-They conflict with the forbidden identity list above. Batch 5 will replace or quarantine usage; do not add new references.
+They conflict with the forbidden identity list above (brain, sparkles, generic AI marks). Do not add new runtime or brand references to them.
 
-Other files under `icons/` (path-*, assistant-guide, etc.) are path/concept artwork — use only when aligned with the preferred direction and Phase 4 batches.
+### Concept PNGs only (reference artwork, not live product icons)
+
+These PNGs may still exist under `icons/concepts/` for archival or internal reference — **not** wired in learner UI or brand surfaces:
+
+- `icons/concepts/ai-brain.png`
+- `icons/concepts/ai-spark.png`
+- `icons/concepts/assistant-guide.png`
+
+Treat them as concept assets only; prefer path/route artwork and approved lockup PNGs for any live placement.
+
+## Active path icons under `icons/`
+
+Path SVG artwork (`path-builder.svg`, `path-creator.svg`, `path-automator.svg`, `path-analyst.svg`, `path-business.svg`) remains for path/concept use when aligned with the preferred direction and Phase 4 batches.
 
 ## TODO — pending icon system migration
 

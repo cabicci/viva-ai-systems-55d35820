@@ -29,7 +29,7 @@ BRAND_ICON_DIR = ROOT / "public/brand/icons"
 FONT_PATH = ROOT / "src/assets/fonts/Cairo.ttf"
 
 PATH_META = {
-    "intro":     {"label": "المقدمة",  "color": "#6366f1", "icon": "ai-brain.svg"},
+    "intro":     {"label": "المقدمة",  "color": "#6366f1", "icon": None},  # ai-brain.svg removed (Design P1); concepts/ai-brain.png exists but this script embeds SVG only
     "builder":   {"label": "Builder",   "color": "#0ea5e9", "icon": "path-builder.svg"},
     "creator":   {"label": "Creator",   "color": "#ec4899", "icon": "path-creator.svg"},
     "automator": {"label": "Automator", "color": "#14b8a6", "icon": "path-automator.svg"},
