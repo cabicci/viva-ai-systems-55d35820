@@ -43,6 +43,9 @@ QUIZ MARKDOWN RULES:
 - Keep correctIndex only in the structured quiz JSON object.
 - Every Quiz section must include a clear learner-facing question in quiz.question (not only in markdown labels like "Correct Answer").
 - Include every quiz option in quiz.options; never omit the correct option from the options array.
+- correctIndex is zero-based: it must be an integer >= 0 and strictly less than options.length.
+- The text at quiz.options[correctIndex] must be the correct answer — never point correctIndex at a missing or out-of-range option.
+- Use at least 3 quiz.options when correctIndex is 2 or higher (indices 0, 1, 2 require three options).
 
 FORBIDDEN LEARNER PHRASES (never appear in adapted copy):
 - "preserved from Egyptian production" / "preserved from the Egyptian production"

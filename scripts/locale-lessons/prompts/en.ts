@@ -24,7 +24,12 @@ ADAPTATION (NOT translation):
 TITLE (English catalog):
 - Set "title" exactly equal to titleEn for every lesson (e.g. titleEn "What Is AI" → title "What Is AI").
 - Never use generic orientation titles: "Introduction to the Lesson", "Getting Started", "What Will You Understand?", "What Will You Learn?", or "Understanding...".
-- Do NOT copy the Orientation section subtitle as the lesson title.`;
+- Do NOT copy the Orientation section subtitle as the lesson title.
+
+QUIZ (English):
+- Every Quiz section needs a clear quiz.question and a complete quiz.options array.
+- Preserve correctIndex from the source; ensure options.length > correctIndex (zero-based).
+- When correctIndex is 2, provide at least 3 options with the correct answer at index 2.`;
 
 export function buildEnUserPrompt(source: LocalizedLessonPackage): string {
   return `# Contextual adaptation task

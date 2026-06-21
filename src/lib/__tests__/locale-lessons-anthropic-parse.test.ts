@@ -9,9 +9,9 @@ import {
 import {
   ADAPTATION_JSON_MAX_ATTEMPTS,
   adaptLessonWithAnthropicRetries,
-  buildStrictJsonRetryUserPrompt,
   fetchAnthropicAdaptationText,
 } from "../../../scripts/locale-lessons/providers/anthropic-adaptation.ts";
+import { buildStrictJsonRetryUserPrompt } from "../../../scripts/locale-lessons/lib/adaptation-retry-prompt.ts";
 import { loadMsaLessonPackage } from "../../../scripts/locale-lessons/lib/source-package.ts";
 
 const TEST_API_KEY = "sk-ant-test-key-not-real";

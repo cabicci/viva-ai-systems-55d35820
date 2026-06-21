@@ -12,8 +12,12 @@ import {
   ADAPTATION_JSON_MAX_ATTEMPTS,
   adaptLessonFromAnthropicResponse,
   buildAdaptationSystemPrompt,
-  buildStrictJsonRetryUserPrompt,
 } from "./anthropic-adaptation.ts";
+import { AdaptedLessonQualityError } from "../lib/adaptation-quality-error.ts";
+import {
+  buildQualityRetryUserPrompt,
+  buildStrictJsonRetryUserPrompt,
+} from "../lib/adaptation-retry-prompt.ts";
 import {
   openAiAdaptationModel,
   requireOpenAiApiKey,
@@ -76,13 +80,22 @@ export async function adaptLessonWithOpenAiRetries(
   const fetchFn = options.fetchFn;
   const prompt = buildAdaptationPrompt(targetLocale, source);
 
-  let lastParseError = "unknown parse error";
+  let lastParseError: string | null = null;
+  let lastQualityErrors: string[] = [];
 
   for (let attempt = 1; attempt <= ADAPTATION_JSON_MAX_ATTEMPTS; attempt++) {
     const userPrompt =
       attempt === 1
         ? prompt.userPrompt
-        : buildStrictJsonRetryUserPrompt(prompt.userPrompt);
+        : lastQualityErrors.length > 0
+          ? buildQualityRetryUserPrompt({
+              baseUserPrompt: prompt.userPrompt,
+              qualityErrors: lastQualityErrors,
+              attempt,
+              maxAttempts: ADAPTATION_JSON_MAX_ATTEMPTS,
+              parseError: lastParseError,
+            })
+          : buildStrictJsonRetryUserPrompt(prompt.userPrompt);
     const system = buildAdaptationSystemPrompt(prompt.systemPrompt, attempt);
 
     const content = await fetchOpenAiAdaptationText({
@@ -100,12 +113,26 @@ export async function adaptLessonWithOpenAiRetries(
         content,
       });
     } catch (error) {
-      if (!(error instanceof AdaptedLessonJsonParseError)) {
+      if (error instanceof AdaptedLessonJsonParseError) {
+        lastParseError = error.parseMessage;
+        lastQualityErrors = [];
+      } else if (error instanceof AdaptedLessonQualityError) {
+        lastQualityErrors = error.issues;
+        lastParseError = null;
+      } else {
         throw error;
       }
 
-      lastParseError = error.parseMessage;
       if (attempt === ADAPTATION_JSON_MAX_ATTEMPTS) {
+        if (lastQualityErrors.length > 0) {
+          throw new AdaptedLessonQualityError({
+            lessonId: source.lessonId,
+            targetLocale,
+            issues: lastQualityErrors,
+            kind: "quality",
+          });
+        }
+
         throw new Error(
           formatAdaptationJsonParseFailure({
             provider: "OpenAI",
@@ -113,10 +140,14 @@ export async function adaptLessonWithOpenAiRetries(
             lessonId: source.lessonId,
             attempt,
             maxAttempts: ADAPTATION_JSON_MAX_ATTEMPTS,
-            parseError: lastParseError,
+            parseError: lastParseError ?? "unknown parse error",
           }),
         );
       }
+
+      console.warn(
+        `Adaptation retry ${attempt}/${ADAPTATION_JSON_MAX_ATTEMPTS} for ${source.lessonId} (${targetLocale})`,
+      );
     }
   }
 
@@ -127,7 +158,7 @@ export async function adaptLessonWithOpenAiRetries(
       lessonId: source.lessonId,
       attempt: ADAPTATION_JSON_MAX_ATTEMPTS,
       maxAttempts: ADAPTATION_JSON_MAX_ATTEMPTS,
-      parseError: lastParseError,
+      parseError: lastParseError ?? "unknown parse error",
     }),
   );
 }

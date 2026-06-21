@@ -3,6 +3,7 @@ import type {
   AdaptedLessonPackage,
   LocalizedLessonPackage,
 } from "../../../src/lib/locale-lessons/types.ts";
+import { AdaptedLessonQualityError } from "../lib/adaptation-quality-error.ts";
 import { buildAdaptationPrompt } from "../prompts/build-prompt.ts";
 import {
   AdaptedLessonJsonParseError,
@@ -23,11 +24,7 @@ import {
 
 export const ADAPTATION_JSON_MAX_ATTEMPTS = 3;
 
-export const STRICT_JSON_RETRY_INSTRUCTION = `STRICT OUTPUT REMINDER:
-- Return ONE valid JSON object only.
-- No markdown fences, no commentary, no trailing text before or after the JSON.
-- Ensure every object, array, and string is properly closed.
-- Do not truncate the response.`;
+export { STRICT_JSON_RETRY_INSTRUCTION } from "../lib/adaptation-retry-prompt.ts";
 
 const OUTPUT_SCHEMA = `Return ONE JSON object only (no markdown fences) matching AdaptedLessonPackage:
 {
@@ -67,9 +64,11 @@ export type AnthropicAdaptationProviderOptions = {
   fetchFn?: typeof fetch;
 };
 
-export function buildStrictJsonRetryUserPrompt(userPrompt: string): string {
-  return `${userPrompt}\n\n${STRICT_JSON_RETRY_INSTRUCTION}`;
-}
+import {
+  buildQualityRetryUserPrompt,
+  buildStrictJsonRetryUserPrompt,
+  STRICT_JSON_RETRY_INSTRUCTION,
+} from "../lib/adaptation-retry-prompt.ts";
 
 export function buildAdaptationSystemPrompt(
   systemPrompt: string,
@@ -139,9 +138,12 @@ export async function adaptLessonFromAnthropicResponse(input: {
     targetLocale,
   );
   if (validationErrors.length > 0) {
-    throw new Error(
-      `Adapted lesson validation failed for ${source.lessonId}:\n${validationErrors.join("\n")}`,
-    );
+    throw new AdaptedLessonQualityError({
+      lessonId: source.lessonId,
+      targetLocale,
+      issues: validationErrors,
+      kind: "validation",
+    });
   }
 
   const qualityWarnings = validateAdaptedLessonWarnings(
@@ -150,9 +152,12 @@ export async function adaptLessonFromAnthropicResponse(input: {
     targetLocale,
   );
   if (qualityWarnings.length > 0) {
-    throw new Error(
-      `Adapted lesson quality checks failed for ${source.lessonId} (${targetLocale}):\n${qualityWarnings.map((warning) => `  - ${warning}`).join("\n")}`,
-    );
+    throw new AdaptedLessonQualityError({
+      lessonId: source.lessonId,
+      targetLocale,
+      issues: qualityWarnings,
+      kind: "quality",
+    });
   }
 
   return finalized;
@@ -168,13 +173,22 @@ export async function adaptLessonWithAnthropicRetries(
   const fetchFn = options.fetchFn;
   const prompt = buildAdaptationPrompt(targetLocale, source);
 
-  let lastParseError = "unknown parse error";
+  let lastParseError: string | null = null;
+  let lastQualityErrors: string[] = [];
 
   for (let attempt = 1; attempt <= ADAPTATION_JSON_MAX_ATTEMPTS; attempt++) {
     const userPrompt =
       attempt === 1
         ? prompt.userPrompt
-        : buildStrictJsonRetryUserPrompt(prompt.userPrompt);
+        : lastQualityErrors.length > 0
+          ? buildQualityRetryUserPrompt({
+              baseUserPrompt: prompt.userPrompt,
+              qualityErrors: lastQualityErrors,
+              attempt,
+              maxAttempts: ADAPTATION_JSON_MAX_ATTEMPTS,
+              parseError: lastParseError,
+            })
+          : buildStrictJsonRetryUserPrompt(prompt.userPrompt);
     const system = buildAdaptationSystemPrompt(prompt.systemPrompt, attempt);
 
     const content = await fetchAnthropicAdaptationText({
@@ -192,22 +206,40 @@ export async function adaptLessonWithAnthropicRetries(
         content,
       });
     } catch (error) {
-      if (!(error instanceof AdaptedLessonJsonParseError)) {
+      if (error instanceof AdaptedLessonJsonParseError) {
+        lastParseError = error.parseMessage;
+        lastQualityErrors = [];
+      } else if (error instanceof AdaptedLessonQualityError) {
+        lastQualityErrors = error.issues;
+        lastParseError = null;
+      } else {
         throw error;
       }
 
-      lastParseError = error.parseMessage;
       if (attempt === ADAPTATION_JSON_MAX_ATTEMPTS) {
+        if (lastQualityErrors.length > 0) {
+          throw new AdaptedLessonQualityError({
+            lessonId: source.lessonId,
+            targetLocale,
+            issues: lastQualityErrors,
+            kind: "quality",
+          });
+        }
+
         throw new Error(
           formatAdaptationJsonParseFailure({
             targetLocale,
             lessonId: source.lessonId,
             attempt,
             maxAttempts: ADAPTATION_JSON_MAX_ATTEMPTS,
-            parseError: lastParseError,
+            parseError: lastParseError ?? "unknown parse error",
           }),
         );
       }
+
+      console.warn(
+        `Adaptation retry ${attempt}/${ADAPTATION_JSON_MAX_ATTEMPTS} for ${source.lessonId} (${targetLocale})`,
+      );
     }
   }
 
@@ -217,7 +249,7 @@ export async function adaptLessonWithAnthropicRetries(
       lessonId: source.lessonId,
       attempt: ADAPTATION_JSON_MAX_ATTEMPTS,
       maxAttempts: ADAPTATION_JSON_MAX_ATTEMPTS,
-      parseError: lastParseError,
+      parseError: lastParseError ?? "unknown parse error",
     }),
   );
 }

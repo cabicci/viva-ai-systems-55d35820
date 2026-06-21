@@ -4,7 +4,7 @@
 date: 2026-06-04
 scope: lessons
 source: user
-summary: Strengthen locale pilot quality guards — EN title alignment, banned phrase detection, quiz integrity validation, and analyst-m4 quiz repair during finalization.
+summary: Add per-lesson quality-error retry (max 3 attempts) for locale pilot generation when quiz validation fails.
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

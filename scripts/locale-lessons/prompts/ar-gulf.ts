@@ -24,7 +24,12 @@ ADAPTATION (NOT translation):
 
 TITLE (Gulf catalog):
 - Set "title" to a short natural Gulf topic title derived from titleEn and the lesson topic.
-- Do NOT copy the Orientation section subtitle (e.g. "ماذا ستفهم؟", "وش راح تفهم؟") as the lesson title.`;
+- Do NOT copy the Orientation section subtitle (e.g. "ماذا ستفهم؟", "وش راح تفهم؟") as the lesson title.
+
+QUIZ (Gulf):
+- Every Quiz section needs a clear quiz.question and a complete quiz.options array.
+- Preserve correctIndex from the source; ensure options.length > correctIndex (zero-based).
+- When correctIndex is 2, provide at least 3 options with the correct answer at index 2.`;
 
 export function buildArGulfUserPrompt(source: LocalizedLessonPackage): string {
   return `# Contextual adaptation task

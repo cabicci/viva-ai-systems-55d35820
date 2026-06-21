@@ -278,20 +278,28 @@ function sourceQuizExpectedOptions(
   const quiz = sourceSection?.quiz;
   const options = quiz?.options ?? [];
   const correctIndex = quiz?.correctIndex;
+  const optionBullets = countQuizOptionBullets(sourceSection?.bullets ?? []);
+
+  let minimum = 2;
+  if (correctIndex !== undefined && correctIndex >= 0) {
+    minimum = Math.max(minimum, correctIndex + 1);
+  }
+  if (correctIndex !== undefined && correctIndex >= 2) {
+    minimum = Math.max(minimum, 3);
+  }
 
   if (
-    options.length >= 2 &&
+    options.length >= minimum &&
     correctIndex !== undefined &&
     correctIndex >= 0 &&
     correctIndex < options.length
   ) {
-    return options.length;
+    return Math.max(options.length, minimum);
   }
 
-  const optionBullets = countQuizOptionBullets(sourceSection?.bullets ?? []);
-  if (optionBullets >= 2) return optionBullets;
+  if (optionBullets >= minimum) return optionBullets;
 
-  return 2;
+  return minimum;
 }
 
 function expectedQuizOptionCount(
@@ -495,6 +503,18 @@ function sanitizeQuizHeading(text: string | undefined): string | undefined {
   return cleaned.replace(/\s*—\s*correctIndex\s*:\s*\d+\s*$/i, "").trim() || "Quiz";
 }
 
+function canSafelyRebuildQuizOptions(
+  candidateOptions: string[],
+  correctIndex: number,
+): boolean {
+  return (
+    candidateOptions.length > 0 &&
+    correctIndex >= 0 &&
+    correctIndex < candidateOptions.length &&
+    Boolean(candidateOptions[correctIndex]?.trim())
+  );
+}
+
 export function repairQuizSection(
   sourceSection: LocalizedLessonSection | undefined,
   section: LocalizedLessonSection,
@@ -528,7 +548,9 @@ export function repairQuizSection(
   const correctIndex = quiz.correctIndex ?? sourceSection?.quiz?.correctIndex ?? 0;
 
   const candidateSets = [rebuiltFromBullets, rebuiltFromSourceBullets, options].filter(
-    (set) => set.length >= expectedCount,
+    (set) =>
+      set.length >= expectedCount &&
+      canSafelyRebuildQuizOptions(set, correctIndex),
   );
 
   if (
