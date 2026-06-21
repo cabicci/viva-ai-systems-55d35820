@@ -30,5 +30,11 @@ scope: lessons
 source: user
 summary: Fix locale-lessons quality test rubric fixture with required weight field.
 
+[roadmap:c9e4a1b7-2f8d-4e6a-9b3c-7d1f5a8e2b4c]
+date: 2026-06-04
+scope: lessons
+source: user
+summary: Validate and sanitize final learner-facing locale pilot output (quiz prefixes, production residue, internal sections, table markdown).
+
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

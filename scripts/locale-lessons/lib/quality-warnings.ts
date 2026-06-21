@@ -54,6 +54,26 @@ const BANNED_LEARNER_PHRASE_PATTERNS: RegExp[] = [
   /معايير التقييم.*من الإنتاج/,
   /من الإنتاج — الأوزان/,
   /الأوزان غير متغيرة/,
+  /unchanged weights/i,
+  /— unchanged weights/i,
+  /\( Only\)/i,
+  /مرجع إنتاجي فقط/,
+  /production reference only/i,
+  /video block.*production/i,
+  /كتلة الفيديو.*مرجع إنتاج/i,
+];
+
+const PRODUCTION_RESIDUE_PATTERNS: RegExp[] = [
+  /Evaluation Criteria\s*\(\s*—[^)]*\)\s*:?\s*/gi,
+  /معايير التقييم\s*\(\s*—[^)]*\)\s*:?\s*/g,
+  /\( — unchanged weights\)/gi,
+  /— unchanged weights\)?/gi,
+  /unchanged weights/gi,
+  /\( Only\)/gi,
+  /\(مرجع إنتاجي فقط\)/g,
+  /مرجع إنتاجي فقط/g,
+  /\(\s*—\s*\)/g,
+  /:\s*\(\s*—[^)]*\)\s*:?/g,
 ];
 
 const INTERNAL_PRODUCTION_LINE_PATTERNS: RegExp[] = [
@@ -73,10 +93,33 @@ export function isInternalProductionReferenceSection(
 ): boolean {
   const role = section.role?.toLowerCase() ?? "";
   const heading = section.heading?.toLowerCase() ?? "";
-  return (
-    role.includes("production reference only") ||
-    heading.includes("production reference only")
-  );
+  const headingRaw = section.heading ?? "";
+
+  if (role.includes("production reference only")) return true;
+  if (heading.includes("production reference only")) return true;
+  if (/video block/.test(role) && /production|reference/.test(role)) return true;
+  if (/video block/.test(heading) && /production|reference|\( only\)/.test(heading)) {
+    return true;
+  }
+  if (/كتلة الفيديو/.test(headingRaw) && /مرجع إنتاج/.test(headingRaw)) return true;
+  if (/مرجع إنتاجي/.test(headingRaw) || /مرجع إنتاجي/.test(role)) return true;
+
+  return false;
+}
+
+function stripLeadingListMarker(text: string): string {
+  return text.replace(/^[\s\-–—*•>]+\s*/, "").trim();
+}
+
+export function stripProductionNoteResidue(text: string): string {
+  let value = text;
+  for (const pattern of PRODUCTION_RESIDUE_PATTERNS) {
+    value = value.replace(pattern, "").trim();
+  }
+  for (const pattern of BANNED_LEARNER_PHRASE_PATTERNS) {
+    value = value.replace(pattern, "").trim();
+  }
+  return value.replace(/\s{2,}/g, " ").replace(/\(\s*\)/g, "").replace(/^:\s*/, "").trim();
 }
 
 const EN_ORIENTATION_TITLE_PATTERNS: RegExp[] = [
@@ -110,6 +153,11 @@ const WEAK_QUIZ_QUESTION_PATTERNS: RegExp[] = [
   /^correctIndex/i,
 ];
 
+const QUIZ_CORRECT_ANSWER_PREFIX_PATTERNS: RegExp[] = [
+  /^(\*{1,2})?(الإجابة الصحيحة|Correct answer|Correct Answer)[^:*]*(\([^)]*\))?\*{0,2}\s*:?\s*/i,
+  /^(الإجابة الصحيحة|Correct answer|Correct Answer)\s*\(\s*(Option|Choice|خيار|الخيار)\s*[^)]*\)\s*:?\s*/iu,
+];
+
 const QUIZ_OPTION_PREFIX_PATTERNS: RegExp[] = [
   /^Option\s*\d+\s*[:\.]?\s*/i,
   /^Choice\s*\d+\s*[:\.]?\s*/i,
@@ -139,11 +187,18 @@ function normalizeTitle(value: string): string {
 }
 
 export function stripQuizOptionPrefix(text: string): string {
-  let value = text.trim();
+  let value = stripLeadingListMarker(text.trim());
   let changed = true;
 
   while (changed) {
     changed = false;
+    for (const pattern of QUIZ_CORRECT_ANSWER_PREFIX_PATTERNS) {
+      const next = value.replace(pattern, "").trim();
+      if (next !== value) {
+        value = next;
+        changed = true;
+      }
+    }
     for (const pattern of QUIZ_OPTION_PREFIX_PATTERNS) {
       const next = value.replace(pattern, "").trim();
       if (next !== value) {
@@ -156,10 +211,19 @@ export function stripQuizOptionPrefix(text: string): string {
   return value;
 }
 
-export function hasQuizOptionPrefixLeak(text: string): boolean {
-  const trimmed = text.trim();
+export function hasQuizCorrectAnswerPrefixLeak(text: string): boolean {
+  const trimmed = stripLeadingListMarker(text.trim());
   if (!trimmed) return false;
-  return QUIZ_OPTION_PREFIX_PATTERNS.some((pattern) => pattern.test(trimmed));
+  return QUIZ_CORRECT_ANSWER_PREFIX_PATTERNS.some((pattern) => pattern.test(trimmed));
+}
+
+export function hasQuizOptionPrefixLeak(text: string): boolean {
+  const trimmed = stripLeadingListMarker(text.trim());
+  if (!trimmed) return false;
+  return (
+    QUIZ_OPTION_PREFIX_PATTERNS.some((pattern) => pattern.test(trimmed)) ||
+    hasQuizCorrectAnswerPrefixLeak(trimmed)
+  );
 }
 
 function classifyQuizOption(text: string): QuizOptionSignal {
@@ -217,11 +281,16 @@ function classifyExplanationPreference(explanation: string): ExplanationPreferen
 }
 
 function learnerFacingText(section: LocalizedLessonSection): string {
+  const tableText = section.tables.flatMap((table) => [
+    ...table.headers,
+    ...table.rows.flat(),
+  ]);
   return [
     section.heading,
     section.subtitle ?? "",
     section.contentMarkdown,
     ...section.bullets,
+    ...tableText,
     section.quiz?.question ?? "",
     ...(section.quiz?.options ?? []),
     section.quiz?.explanation ?? "",
@@ -428,12 +497,22 @@ export function detectQuizIntegrityWarnings(
   adapted: AdaptedLessonPackage,
 ): string[] {
   const warnings: string[] = [];
+  const sourceQuizSections = source.sections.filter((section) => section.role === "Quiz");
 
-  for (let index = 0; index < adapted.sections.length; index++) {
-    const section = adapted.sections[index];
+  for (const section of adapted.sections) {
     if (section.role !== "Quiz") continue;
 
-    const sourceSection = source.sections[index];
+    const sourceSection =
+      sourceQuizSections.length === 1
+        ? sourceQuizSections[0]
+        : source.sections.find(
+            (candidate) =>
+              candidate.role === "Quiz" &&
+              (candidate.heading === section.heading ||
+                sourceQuizSections.indexOf(candidate) ===
+                  adapted.sections.filter((s) => s.role === "Quiz").indexOf(section)),
+          ) ?? sourceQuizSections[0];
+
     const quiz = section.quiz;
     const label = `${adapted.lessonId} quiz section`;
 
@@ -643,18 +722,27 @@ export function stripMarkdownEmphasisFromText(text: string): string {
   return text.replace(/\*\*/g, "").trim();
 }
 
+function sanitizeQuizContentLine(line: string): string {
+  const withoutKeys = stripQuizKeyLeaksFromMarkdown(line);
+  const normalized = normalizeQuizOptionText(withoutKeys);
+  return stripProductionNoteResidue(stripBannedPhrasesFromText(normalized));
+}
+
 function sanitizeLearnerFacingField(
   text: string,
   options: { stripQuizOptionPrefixes?: boolean } = {},
 ): string {
-  let value = stripQuizKeyLeaksFromMarkdown(text);
   if (options.stripQuizOptionPrefixes) {
-    value = value
+    return text
       .split("\n")
-      .map((line) => stripQuizOptionPrefix(line))
+      .map((line) => sanitizeQuizContentLine(line))
+      .filter((line) => line.length > 0)
       .join("\n");
   }
+
+  let value = stripQuizKeyLeaksFromMarkdown(text);
   value = stripMarkdownEmphasisFromText(value);
+  value = stripProductionNoteResidue(value);
   return stripBannedPhrasesFromText(value);
 }
 
@@ -669,6 +757,23 @@ function learnerFacingFieldsForSection(
 
   section.bullets.forEach((bullet, index) => {
     fields.push({ label: `bullets[${index}]`, text: bullet });
+  });
+
+  section.tables.forEach((table, tableIndex) => {
+    table.headers.forEach((header, index) => {
+      fields.push({
+        label: `tables[${tableIndex}].headers[${index}]`,
+        text: header,
+      });
+    });
+    table.rows.forEach((row, rowIndex) => {
+      row.forEach((cell, cellIndex) => {
+        fields.push({
+          label: `tables[${tableIndex}].rows[${rowIndex}][${cellIndex}]`,
+          text: cell,
+        });
+      });
+    });
   });
 
   if (section.quiz) {
@@ -791,10 +896,64 @@ export function detectQuizOptionPrefixWarnings(
           `${label}: contentMarkdown line ${index + 1} contains numbering prefix leakage`,
         );
       }
+      if (hasQuizCorrectAnswerPrefixLeak(trimmed)) {
+        warnings.push(
+          `${label}: contentMarkdown line ${index + 1} contains correct-answer prefix leakage`,
+        );
+      }
     });
   }
 
   return warnings;
+}
+
+export function detectInternalSectionLabelWarnings(
+  adapted: AdaptedLessonPackage,
+): string[] {
+  const warnings: string[] = [];
+
+  for (const section of adapted.sections) {
+    if (isInternalProductionReferenceSection(section)) {
+      warnings.push(
+        `${adapted.lessonId}: internal production section "${section.role}" must not appear in learner output`,
+      );
+      continue;
+    }
+
+    const heading = section.heading ?? "";
+    if (/\( Only\)/i.test(heading) || /مرجع إنتاجي/.test(heading)) {
+      warnings.push(
+        `${adapted.lessonId} section "${section.role}": heading contains internal production label residue`,
+      );
+    }
+  }
+
+  return warnings;
+}
+
+export function detectProductionResidueWarnings(
+  adapted: AdaptedLessonPackage,
+): string[] {
+  const warnings: string[] = [];
+  const text = allLearnerFacingText(adapted);
+
+  for (const pattern of PRODUCTION_RESIDUE_PATTERNS) {
+    if (pattern.test(text)) {
+      warnings.push(
+        `production-note residue detected: "${pattern.source}"`,
+      );
+    }
+  }
+
+  for (const pattern of BANNED_LEARNER_PHRASE_PATTERNS) {
+    if (pattern.test(text)) {
+      warnings.push(
+        `banned production-leak phrase detected: "${pattern.source}"`,
+      );
+    }
+  }
+
+  return [...new Set(warnings)];
 }
 
 export function detectGulfRegisterInconsistencyWarning(
@@ -827,7 +986,8 @@ export function validateAdaptedLessonWarnings(
   if (titleWarning) warnings.push(titleWarning);
 
   warnings.push(...detectQuizMarkdownLeakageWarnings(adapted));
-  warnings.push(...detectBannedPhraseWarnings(adapted));
+  warnings.push(...detectProductionResidueWarnings(adapted));
+  warnings.push(...detectInternalSectionLabelWarnings(adapted));
   warnings.push(...detectQuizIntegrityWarnings(source, adapted));
   warnings.push(...detectQuizOptionIdentityWarnings(adapted));
   warnings.push(...detectUnbalancedLearnerMarkdownWarnings(adapted));
@@ -878,11 +1038,8 @@ export function stripInternalProductionNotesFromText(text: string): string {
   const lines = text.split("\n");
   const cleaned = lines
     .map((line) => {
-      let value = line;
+      let value = stripProductionNoteResidue(line);
       for (const pattern of INTERNAL_PRODUCTION_LINE_PATTERNS) {
-        value = value.replace(pattern, "").trim();
-      }
-      for (const pattern of BANNED_LEARNER_PHRASE_PATTERNS) {
         value = value.replace(pattern, "").trim();
       }
       for (const pattern of QUIZ_LEAK_PATTERNS) {
@@ -905,12 +1062,9 @@ export function stripBannedPhrasesFromText(text: string): string {
 }
 
 export function normalizeQuizOptionText(text: string): string {
+  const withoutKeys = stripQuizKeyLeaksFromMarkdown(text);
   const withoutPrefixes = stripQuizOptionPrefix(
-    text
-      .replace(
-        /^(\*{1,2})?(الإجابة الصحيحة|Correct answer|Correct Answer)[^:*]*(\([^)]*\))?\*{0,2}\s*:?\s*/i,
-        "",
-      )
+    withoutKeys
       .replace(/\(correctIndex\s*:\s*\d+\)/gi, "")
       .replace(/^\*\*|\*\*$/g, "")
       .trim(),
@@ -1067,53 +1221,61 @@ export function sanitizeAdaptedLessonMarkdown(
     summary: adapted.summary
       ? sanitizeLearnerFacingField(adapted.summary)
       : adapted.summary,
-    sections: adapted.sections.map((section) => {
-      const cleaned = sanitizeInternalProductionReferenceSection(section);
-      const isQuiz = cleaned.role === "Quiz";
+    sections: adapted.sections
+      .filter((section) => !isInternalProductionReferenceSection(section))
+      .map((section) => {
+      const isQuiz = section.role === "Quiz";
       return {
-        ...cleaned,
-        heading: sanitizeLearnerFacingField(cleaned.heading),
-        subtitle: cleaned.subtitle
-          ? sanitizeLearnerFacingField(cleaned.subtitle)
-          : cleaned.subtitle,
-        contentMarkdown: sanitizeLearnerFacingField(cleaned.contentMarkdown, {
+        ...section,
+        heading: sanitizeLearnerFacingField(section.heading),
+        subtitle: section.subtitle
+          ? sanitizeLearnerFacingField(section.subtitle)
+          : section.subtitle,
+        contentMarkdown: sanitizeLearnerFacingField(section.contentMarkdown, {
           stripQuizOptionPrefixes: isQuiz,
         }),
-        bullets: cleaned.bullets
+        bullets: section.bullets
           .map((bullet) =>
             sanitizeLearnerFacingField(bullet, {
               stripQuizOptionPrefixes: isQuiz,
             }),
           )
           .filter((bullet) => bullet.length > 0),
-        quiz: cleaned.quiz
+        tables: section.tables.map((table) => ({
+          ...table,
+          headers: table.headers.map((header) => sanitizeLearnerFacingField(header)),
+          rows: table.rows.map((row) =>
+            row.map((cell) => sanitizeLearnerFacingField(cell)),
+          ),
+        })),
+        quiz: section.quiz
           ? {
-              ...cleaned.quiz,
-              question: sanitizeLearnerFacingField(cleaned.quiz.question ?? ""),
-              options: (cleaned.quiz.options ?? []).map((option) =>
+              ...section.quiz,
+              question: sanitizeLearnerFacingField(section.quiz.question ?? ""),
+              options: (section.quiz.options ?? []).map((option) =>
                 sanitizeLearnerFacingField(normalizeQuizOptionText(option), {
                   stripQuizOptionPrefixes: true,
                 }),
               ),
               explanation: sanitizeLearnerFacingField(
-                cleaned.quiz.explanation ?? "",
+                section.quiz.explanation ?? "",
               ),
             }
-          : cleaned.quiz,
-        mission: cleaned.mission
+          : section.quiz,
+        mission: section.mission
           ? {
-              ...cleaned.mission,
-              intro: sanitizeLearnerFacingField(cleaned.mission.intro ?? ""),
-              delivery: (cleaned.mission.delivery ?? []).map((line) =>
+              ...section.mission,
+              intro: sanitizeLearnerFacingField(section.mission.intro ?? ""),
+              delivery: (section.mission.delivery ?? []).map((line) =>
                 sanitizeLearnerFacingField(line),
               ),
-              rubric: (cleaned.mission.rubric ?? []).map((row) => ({
+              rubric: (section.mission.rubric ?? []).map((row) => ({
                 ...row,
                 dimension: sanitizeLearnerFacingField(row.dimension),
                 criteria: sanitizeLearnerFacingField(row.criteria),
               })),
             }
-          : cleaned.mission,
+          : section.mission,
       };
     }),
   };

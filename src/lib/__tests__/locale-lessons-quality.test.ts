@@ -18,6 +18,9 @@ import {
   detectUnbalancedQuizOptionMarkdownWarnings,
   hasQuizOptionPrefixLeak,
   hasUnbalancedMarkdownEmphasis,
+  hasQuizCorrectAnswerPrefixLeak,
+  isInternalProductionReferenceSection,
+  stripProductionNoteResidue,
   isGenericBadEnglishTitle,
   normalizeQuizOptionText,
   sanitizeAdaptedLessonMarkdown,
@@ -29,6 +32,7 @@ import {
   validateAdaptedLessonWarnings,
   validateSanitizedAdaptedLessonWarnings,
   detectUnbalancedLearnerMarkdownWarnings,
+  detectInternalSectionLabelWarnings,
 } from "../../../scripts/locale-lessons/lib/quality-warnings.ts";
 import {
   finalizeAdaptedPackage,
@@ -1337,5 +1341,214 @@ describe("locale-lessons adaptation quality checks", () => {
     expect(
       clean.sections[0]?.contentMarkdown,
     ).toContain("الخيار الأنسب");
+  });
+
+  it("all-9: strips quiz contentMarkdown/bullets Option and Correct answer prefixes", () => {
+    const raw: AdaptedLessonPackage = {
+      locale: "en",
+      lessonId: "analyst-m1-l1-from-automation-to-insight",
+      title: "Test",
+      sections: [
+        {
+          role: "Quiz",
+          heading: "Quiz",
+          contentMarkdown:
+            "Question?\nOption 1: Automate weekly.\nOption 2: Read articles.\nCorrect answer (Option 2): Read articles.",
+          bullets: ["- Option 1: First", "Correct answer (Option 2): Second"],
+          tables: [],
+          quiz: {
+            question: "Pick one",
+            correctIndex: 1,
+            options: ["First", "Second"],
+            explanation: "Because.",
+          },
+        },
+      ],
+      canonicalVersion: "1",
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: "analyst-m1-l1-from-automation-to-insight",
+        canonicalVersion: "1",
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    };
+
+    expect(detectQuizOptionPrefixWarnings(raw).length).toBeGreaterThan(0);
+
+    const sanitized = sanitizeAdaptedLessonMarkdown(raw);
+    const quiz = sanitized.sections.find((section) => section.role === "Quiz");
+
+    expect(quiz?.contentMarkdown).not.toMatch(/Option\s*\d+/i);
+    expect(quiz?.contentMarkdown).not.toMatch(/Correct answer/i);
+    expect(quiz?.bullets.every((bullet) => !hasQuizOptionPrefixLeak(bullet))).toBe(
+      true,
+    );
+    expect(detectQuizOptionPrefixWarnings(sanitized)).toEqual([]);
+  });
+
+  it("all-9: strips Arabic quiz prefixes from contentMarkdown and bullets", () => {
+    const raw: AdaptedLessonPackage = {
+      locale: "ar-Gulf",
+      lessonId: "analyst-m4-automated-dashboard",
+      title: "Dashboard",
+      sections: [
+        {
+          role: "Quiz",
+          heading: "Quiz",
+          contentMarkdown:
+            "السؤال:\nخيار ١: تفتح ChatGPT.\nخيار ٢: تقرأ مقال.\nالإجابة الصحيحة (خيار ٢): تقرأ مقال.",
+          bullets: ["خيار ١: خطوة أولى", "الإجابة الصحيحة (خيار ٢): خطوة ثانية"],
+          tables: [],
+          quiz: {
+            question: "وش أفضل خطوة؟",
+            correctIndex: 1,
+            options: ["خطوة أولى", "خطوة ثانية"],
+            explanation: "ابدأ صغير.",
+          },
+        },
+      ],
+      canonicalVersion: "1",
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: "analyst-m4-automated-dashboard",
+        canonicalVersion: "1",
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    };
+
+    const sanitized = sanitizeAdaptedLessonMarkdown(raw);
+    const quiz = sanitized.sections.find((section) => section.role === "Quiz");
+
+    expect(quiz?.contentMarkdown).not.toMatch(/^خيار/u);
+    expect(quiz?.contentMarkdown).not.toMatch(/الإجابة الصحيحة/u);
+    expect(quiz?.bullets.every((bullet) => !hasQuizCorrectAnswerPrefixLeak(bullet))).toBe(
+      true,
+    );
+    expect(detectQuizOptionPrefixWarnings(sanitized)).toEqual([]);
+  });
+
+  it("all-9: repairs unbalanced markdown in table cells after sanitation", async () => {
+    const source = await loadMsaLessonPackage("analyst-m2-l2-right-question-rule");
+    const broken: AdaptedLessonPackage = {
+      locale: "en",
+      lessonId: "analyst-m2-l2-right-question-rule",
+      title: "Right Question Rule",
+      sections: [
+        {
+          role: "Concept",
+          heading: "Concept",
+          contentMarkdown: "Ask sharper questions.",
+          bullets: [],
+          tables: [
+            {
+              headers: ["Example"],
+              rows: [["'How many customers** bought **twice** **this month**?'"]],
+            },
+          ],
+        },
+      ],
+      canonicalVersion: "1",
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: "analyst-m2-l2-right-question-rule",
+        canonicalVersion: "1",
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    };
+
+    expect(detectUnbalancedLearnerMarkdownWarnings(broken).length).toBeGreaterThan(0);
+
+    const sanitized = sanitizeAdaptedLessonMarkdown(broken);
+    expect(detectUnbalancedLearnerMarkdownWarnings(sanitized)).toEqual([]);
+    expect(
+      sanitized.sections[0]?.tables[0]?.rows[0]?.[0],
+    ).toBe("'How many customers bought twice this month?'");
+    expect(validateSanitizedAdaptedLessonWarnings(source, broken, "en")).toEqual([]);
+  });
+
+  it("all-9: removes internal video production sections from final learner output", () => {
+    const raw: AdaptedLessonPackage = {
+      locale: "en",
+      lessonId: "intro-m1-l1-what-is-ai",
+      title: "What Is AI?",
+      sections: [
+        {
+          role: "Video block (production reference only)",
+          heading: "Video Block ( Only)",
+          contentMarkdown: "> in production: Bunny asset",
+          bullets: [],
+          tables: [],
+        },
+        {
+          role: "Concept",
+          heading: "Concept",
+          contentMarkdown: "Learner-safe body.",
+          bullets: [],
+          tables: [],
+        },
+      ],
+      canonicalVersion: "1",
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: "intro-m1-l1-what-is-ai",
+        canonicalVersion: "1",
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    };
+
+    expect(isInternalProductionReferenceSection(raw.sections[0]!)).toBe(true);
+    expect(detectInternalSectionLabelWarnings(raw).length).toBeGreaterThan(0);
+
+    const sanitized = sanitizeAdaptedLessonMarkdown(raw);
+    expect(sanitized.sections.some((section) => section.role.includes("Video block"))).toBe(
+      false,
+    );
+    expect(sanitized.sections).toHaveLength(1);
+  });
+
+  it("all-9: strips production-note residue from mission rubric criteria", async () => {
+    const source = await loadMsaLessonPackage("intro-m1-l1-what-is-ai");
+    const polluted: AdaptedLessonPackage = {
+      locale: "en",
+      lessonId: "intro-m1-l1-what-is-ai",
+      title: "What Is AI?",
+      sections: [
+        {
+          role: "Mission",
+          heading: "Mission",
+          contentMarkdown: "Apply the idea.",
+          bullets: [],
+          tables: [],
+          mission: {
+            intro: "Submit a short task.",
+            delivery: ["Write three lines."],
+            rubric: [
+              {
+                dimension: "Clarity",
+                weight: 100,
+                criteria: "Evaluation Criteria ( — unchanged weights): be specific.",
+              },
+            ],
+          },
+        },
+      ],
+      canonicalVersion: "1",
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: "intro-m1-l1-what-is-ai",
+        canonicalVersion: "1",
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    };
+
+    expect(stripProductionNoteResidue(polluted.sections[0]!.mission!.rubric[0]!.criteria)).toBe(
+      "be specific.",
+    );
+    expect(validateSanitizedAdaptedLessonWarnings(source, polluted, "en")).toEqual([]);
   });
 });
