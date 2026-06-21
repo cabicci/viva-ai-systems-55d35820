@@ -21,8 +21,8 @@ import {
   selectPilotLessonIds,
 } from "./lib/pilot-lesson-ids.ts";
 import { SAMPLE_LESSON_IDS } from "./lib/sample-lesson-ids.ts";
-import { createAnthropicAdaptationProvider } from "./providers/anthropic-adaptation.ts";
-import { requireAnthropicApiKey } from "./providers/types.ts";
+import { createOpenAiAdaptationProvider } from "./providers/openai-adaptation.ts";
+import { requireOpenAiApiKey } from "./providers/types.ts";
 
 export interface PilotGenerationReport {
   targetLocale: AdaptationTargetLocale;
@@ -68,7 +68,7 @@ export async function generatePilotPackage(
   targetLocale: AdaptationTargetLocale,
   count = DEFAULT_PILOT_LESSON_COUNT,
 ): Promise<PilotGenerationReport> {
-  requireAnthropicApiKey();
+  requireOpenAiApiKey();
 
   const sourceValidation = await validateMsaSourcePackage();
   if (!sourceValidation.ok) {
@@ -78,7 +78,7 @@ export async function generatePilotPackage(
   }
 
   const pilotLessonIds = await selectPilotLessonIds(count);
-  const provider = createAnthropicAdaptationProvider();
+  const provider = createOpenAiAdaptationProvider();
   const lessonsDir = lessonsDirForLocale(targetLocale);
   await fs.mkdir(lessonsDir, { recursive: true });
 

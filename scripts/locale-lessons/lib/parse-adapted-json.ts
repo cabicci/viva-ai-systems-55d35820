@@ -48,9 +48,11 @@ export function formatAdaptationJsonParseFailure(input: {
   attempt: number;
   maxAttempts: number;
   parseError: string;
+  provider?: string;
 }): string {
+  const provider = input.provider ?? "Anthropic";
   return (
-    `Anthropic adaptation JSON parse failed for ` +
+    `${provider} adaptation JSON parse failed for ` +
     `locale=${input.targetLocale} ` +
     `lessonId=${input.lessonId} ` +
     `attempt=${input.attempt}/${input.maxAttempts}: ` +

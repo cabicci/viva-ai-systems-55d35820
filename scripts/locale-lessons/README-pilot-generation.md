@@ -27,7 +27,7 @@ Example `repository_dispatch` payload (Lovable backend):
 ## Workflow behavior
 
 1. Checks out the repo and installs dependencies with Bun.
-2. Generates a **capped pilot batch only** (default 10 lessons, max 25) — never the full 100-lesson package.
+2. Generates a **capped pilot batch only** (default 10 lessons, max 25) via **OpenAI** — never the full 100-lesson package.
 3. Validates localized packages and runs locale-lessons tests.
 4. Uploads generated `ar-Gulf` / `en` pilot output as a workflow artifact.
 5. Does **not** commit generated JSON or push to `main`.
@@ -38,13 +38,16 @@ Example `repository_dispatch` payload (Lovable backend):
 bun run locale-lessons:generate-pilot -- --target all --count 10 --mode pilot
 ```
 
-Requires `ANTHROPIC_API_KEY` in the environment. Optional: `LOCALE_ADAPTATION_MODEL`.
+Requires `OPENAI_API_KEY` in the environment. Optional: `LOCALE_ADAPTATION_MODEL` (defaults to `gpt-4o-mini`).
+
+Sample generation (`locale-lessons:generate-samples`) still uses Anthropic when `ANTHROPIC_API_KEY` is set.
 
 ## Secrets expected in GitHub
 
-| Secret | Required | Purpose |
-|--------|----------|---------|
-| `ANTHROPIC_API_KEY` | yes | Contextual adaptation provider |
-| `LOCALE_ADAPTATION_MODEL` | no | Override default Anthropic model |
+| Secret / env | Required | Purpose |
+|--------------|----------|---------|
+| `new_openai` → `OPENAI_API_KEY` | yes (pilot workflow) | OpenAI contextual adaptation |
+| `LOCALE_ADAPTATION_MODEL` | no | Override default OpenAI model (`gpt-4o-mini`) |
+| `ANTHROPIC_API_KEY` | no (pilot path) | Only for local sample generation via Anthropic |
 
-Do not print secrets in workflow logs.
+Do not print secrets in workflow logs. Do not map the OpenAI key to `ANTHROPIC_API_KEY`.
