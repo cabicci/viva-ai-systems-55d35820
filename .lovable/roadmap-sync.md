@@ -36,5 +36,11 @@ scope: lessons
 source: user
 summary: Validate and sanitize final learner-facing locale pilot output (quiz prefixes, production residue, internal sections, table markdown).
 
+[roadmap:d1f6b3a8-4e2c-4b7f-a9d5-3e8c1b6f4a2d]
+date: 2026-06-04
+scope: lessons
+source: user
+summary: Prototype Extract → Adapt Text Only → Inject fragment localization pipeline beside legacy pilot.
+
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
