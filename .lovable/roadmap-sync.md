@@ -10,7 +10,7 @@ summary: Complete deterministic quiz overrides for corrupted ar-MSA source lesso
 date: 2026-06-04
 scope: lessons
 source: user
-summary: Preserve quiz structure deterministically during locale adaptation (option count, order, correctIndex locked; AI localizes text only).
+summary: Preserve quiz option semantic identity at each index; strip broken markdown and internal production references from learner text.
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

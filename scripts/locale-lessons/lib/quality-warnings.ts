@@ -9,6 +9,9 @@ import {
   lockQuizOptionsToSourceStructure,
   resolveSourceQuizStructure,
   applyDeterministicQuizFallback,
+  classifyQuizOptionIdentity,
+  getCanonicalOptionIdentities,
+  optionsPreserveCanonicalIdentity,
 } from "./quiz-structure.ts";
 
 export interface AdaptedLessonValidationResult {
@@ -32,7 +35,40 @@ const BANNED_LEARNER_PHRASE_PATTERNS: RegExp[] = [
   /الإجابة الصحيحة محفوظة من الإنتاج المصري/,
   /راجع النص أعلاه/,
   /راجع المصدر/,
+  /egyptian production/i,
+  /الإنتاج المصري/,
+  /original visual in (egyptian )?production/i,
+  /الأصل البصري في الإنتاج/,
+  /the original visual in/i,
+  /not regenerated/i,
+  /not render/i,
+  /لا يُعاد توليد/,
+  /production reference/i,
+  /in production:/i,
+  /في الإنتاج:/,
+  /\bbunny\b/i,
 ];
+
+const INTERNAL_PRODUCTION_LINE_PATTERNS: RegExp[] = [
+  /^>\s*.*في الإنتاج:/,
+  /^>\s*.*in production:/i,
+  /^>\s*.*production note:/i,
+  /\(الأصل البصري في الإنتاج[^)]*\)/,
+  /\(the original visual in[^)]*production[^)]*\)/i,
+  /\(original visual asset from egyptian production[^)]*\)/i,
+  /\(الأصل البصري في الإنتاج المصري[^)]*\)/,
+];
+
+export function isInternalProductionReferenceSection(
+  section: LocalizedLessonSection,
+): boolean {
+  const role = section.role?.toLowerCase() ?? "";
+  const heading = section.heading?.toLowerCase() ?? "";
+  return (
+    role.includes("production reference only") ||
+    heading.includes("production reference only")
+  );
+}
 
 const EN_ORIENTATION_TITLE_PATTERNS: RegExp[] = [
   /^what will you understand\??$/i,
@@ -139,8 +175,22 @@ function classifyQuizOption(text: string): QuizOptionSignal {
   return "unknown";
 }
 
-function classifyExplanationPreference(explanation: string): QuizOptionSignal {
+type ExplanationPreference = QuizOptionSignal | "specific_location" | "general_totals";
+
+function classifyExplanationPreference(explanation: string): ExplanationPreference {
   const normalized = normalizeTitle(explanation);
+
+  if (
+    /specific question|locates the problem|purchase path|مسار الشر|وين المشكلة|أين المشكلة|where the problem|general totals alone|أرقام عام.*ما تكفي|not enough/.test(
+      normalized,
+    )
+  ) {
+    return "specific_location";
+  }
+
+  if (/general total|visitor total|totals alone|أرقام عام/.test(normalized)) {
+    return "general_totals";
+  }
 
   if (
     /small (real )?attempt|more than a long read|try .{0,20} yourself|hands-on|hands on|تجربة .{0,20} قراءة|قراءة طويلة|جرّ?ب/.test(
@@ -178,8 +228,24 @@ function allLearnerFacingText(pkg: AdaptedLessonPackage): string {
     pkg.title,
     pkg.titleEn ?? "",
     pkg.summary ?? "",
-    ...pkg.sections.flatMap((section) => [learnerFacingText(section)]),
+    ...pkg.sections
+      .filter((section) => !isInternalProductionReferenceSection(section))
+      .flatMap((section) => [learnerFacingText(section)]),
   ].join("\n");
+}
+
+function sanitizeInternalProductionReferenceSection(
+  section: LocalizedLessonSection,
+): LocalizedLessonSection {
+  if (!isInternalProductionReferenceSection(section)) {
+    return section;
+  }
+
+  return {
+    ...section,
+    contentMarkdown: "",
+    bullets: [],
+  };
 }
 
 function titlesAlign(a: string, b: string): boolean {
@@ -466,11 +532,33 @@ export function detectQuizExplanationSemanticWarnings(
   }
 
   const preference = classifyExplanationPreference(explanation);
-  const correctClass = classifyQuizOption(options[correctIndex] ?? "");
+  const correctClass = classifyQuizOptionIdentity(options[correctIndex] ?? "");
+  const correctLegacyClass = classifyQuizOption(options[correctIndex] ?? "");
+
+  if (
+    preference === "specific_location" &&
+    correctClass !== "funnel_dropoff" &&
+    correctClass !== "automate_weekly_metric" &&
+    correctClass !== "unknown"
+  ) {
+    for (let index = 0; index < options.length; index++) {
+      if (index === correctIndex) continue;
+      const optionClass = classifyQuizOptionIdentity(options[index] ?? "");
+      if (
+        optionClass === "funnel_dropoff" ||
+        optionClass === "automate_weekly_metric"
+      ) {
+        warnings.push(
+          `${label}: explanation supports specific-location option at index ${index} but correctIndex is ${correctIndex}`,
+        );
+        break;
+      }
+    }
+  }
 
   if (
     preference === "hands_on" &&
-    correctClass === "reading_theory"
+    correctLegacyClass === "reading_theory"
   ) {
     warnings.push(
       `${label}: explanation supports hands-on trying but correctIndex ${correctIndex} points to a reading/theory option`,
@@ -479,7 +567,7 @@ export function detectQuizExplanationSemanticWarnings(
 
   if (
     preference === "reading_theory" &&
-    correctClass === "hands_on"
+    correctLegacyClass === "hands_on"
   ) {
     warnings.push(
       `${label}: explanation supports reading/theory but correctIndex ${correctIndex} points to a hands-on option`,
@@ -491,14 +579,77 @@ export function detectQuizExplanationSemanticWarnings(
     const optionClass = classifyQuizOption(options[index] ?? "");
     if (
       preference !== "unknown" &&
+      preference !== "specific_location" &&
+      preference !== "general_totals" &&
       optionClass === preference &&
-      correctClass !== preference
+      correctLegacyClass !== preference
     ) {
       warnings.push(
         `${label}: explanation supports option at index ${index} but correctIndex is ${correctIndex}`,
       );
       break;
     }
+  }
+
+  return warnings;
+}
+
+export function detectQuizOptionIdentityWarnings(
+  adapted: AdaptedLessonPackage,
+): string[] {
+  const warnings: string[] = [];
+  const expectedByLesson = getCanonicalOptionIdentities(adapted.lessonId);
+  if (!expectedByLesson) return warnings;
+
+  for (const section of adapted.sections) {
+    if (section.role !== "Quiz" || !section.quiz?.options) continue;
+    const label = `${adapted.lessonId} quiz section`;
+    const options = section.quiz.options;
+
+    if (!optionsPreserveCanonicalIdentity(adapted.lessonId, options)) {
+      options.forEach((option, index) => {
+        const actual = classifyQuizOptionIdentity(option);
+        const expected = expectedByLesson[index];
+        if (expected !== "unknown" && actual !== "unknown" && actual !== expected) {
+          warnings.push(
+            `${label}: quiz.options[${index}] semantic identity mismatch (expected ${expected}, found ${actual})`,
+          );
+        }
+      });
+    }
+  }
+
+  return warnings;
+}
+
+export function countMarkdownEmphasisMarkers(text: string): number {
+  return (text.match(/\*\*/g) ?? []).length;
+}
+
+export function hasUnbalancedMarkdownEmphasis(text: string): boolean {
+  return countMarkdownEmphasisMarkers(text) % 2 !== 0;
+}
+
+export function stripMarkdownEmphasisFromText(text: string): string {
+  return text.replace(/\*\*/g, "").trim();
+}
+
+export function detectUnbalancedQuizOptionMarkdownWarnings(
+  adapted: AdaptedLessonPackage,
+): string[] {
+  const warnings: string[] = [];
+
+  for (const section of adapted.sections) {
+    if (section.role !== "Quiz" || !section.quiz?.options) continue;
+    const label = `${adapted.lessonId} quiz section`;
+
+    section.quiz.options.forEach((option, index) => {
+      if (hasUnbalancedMarkdownEmphasis(option)) {
+        warnings.push(
+          `${label}: quiz.options[${index}] contains unbalanced markdown emphasis markers`,
+        );
+      }
+    });
   }
 
   return warnings;
@@ -557,6 +708,8 @@ export function validateAdaptedLessonWarnings(
   warnings.push(...detectQuizMarkdownLeakageWarnings(adapted));
   warnings.push(...detectBannedPhraseWarnings(adapted));
   warnings.push(...detectQuizIntegrityWarnings(source, adapted));
+  warnings.push(...detectQuizOptionIdentityWarnings(adapted));
+  warnings.push(...detectUnbalancedQuizOptionMarkdownWarnings(adapted));
   warnings.push(...detectQuizOptionPrefixWarnings(adapted));
 
   const registerWarning = detectGulfRegisterInconsistencyWarning(adapted);
@@ -575,11 +728,14 @@ export function stripQuizKeyLeaksFromMarkdown(text: string): string {
   return cleaned.join("\n").trimEnd();
 }
 
-export function stripBannedPhrasesFromText(text: string): string {
+export function stripInternalProductionNotesFromText(text: string): string {
   const lines = text.split("\n");
   const cleaned = lines
     .map((line) => {
       let value = line;
+      for (const pattern of INTERNAL_PRODUCTION_LINE_PATTERNS) {
+        value = value.replace(pattern, "").trim();
+      }
       for (const pattern of BANNED_LEARNER_PHRASE_PATTERNS) {
         value = value.replace(pattern, "").trim();
       }
@@ -588,13 +744,22 @@ export function stripBannedPhrasesFromText(text: string): string {
       }
       return value;
     })
-    .filter((line) => line.length > 0);
+    .filter((line) => {
+      if (!line.trim()) return false;
+      return !INTERNAL_PRODUCTION_LINE_PATTERNS.some((pattern) =>
+        pattern.test(line),
+      );
+    });
 
   return cleaned.join("\n").trimEnd();
 }
 
+export function stripBannedPhrasesFromText(text: string): string {
+  return stripInternalProductionNotesFromText(text);
+}
+
 export function normalizeQuizOptionText(text: string): string {
-  return stripQuizOptionPrefix(
+  const withoutPrefixes = stripQuizOptionPrefix(
     text
       .replace(
         /^(\*{1,2})?(الإجابة الصحيحة|Correct answer|Correct Answer)[^:*]*(\([^)]*\))?\*{0,2}\s*:?\s*/i,
@@ -604,6 +769,7 @@ export function normalizeQuizOptionText(text: string): string {
       .replace(/^\*\*|\*\*$/g, "")
       .trim(),
   );
+  return stripMarkdownEmphasisFromText(withoutPrefixes);
 }
 
 export function extractQuizQuestionFromMarkdown(contentMarkdown: string): string | null {
@@ -755,26 +921,31 @@ export function sanitizeAdaptedLessonMarkdown(
     summary: adapted.summary
       ? stripBannedPhrasesFromText(adapted.summary)
       : adapted.summary,
-    sections: adapted.sections.map((section) => ({
-      ...section,
-      contentMarkdown: stripBannedPhrasesFromText(
-        stripQuizKeyLeaksFromMarkdown(section.contentMarkdown),
-      ),
-      bullets: section.bullets
-        .map((bullet) =>
-          stripBannedPhrasesFromText(stripQuizKeyLeaksFromMarkdown(bullet)),
-        )
-        .filter((bullet) => bullet.length > 0),
-      quiz: section.quiz
-        ? {
-            ...section.quiz,
-            question: stripBannedPhrasesFromText(section.quiz.question ?? ""),
-            options: (section.quiz.options ?? []).map((option) =>
-              stripBannedPhrasesFromText(normalizeQuizOptionText(option)),
-            ),
-            explanation: stripBannedPhrasesFromText(section.quiz.explanation ?? ""),
-          }
-        : section.quiz,
-    })),
+    sections: adapted.sections.map((section) => {
+      const cleaned = sanitizeInternalProductionReferenceSection(section);
+      return {
+        ...cleaned,
+        contentMarkdown: stripBannedPhrasesFromText(
+          stripQuizKeyLeaksFromMarkdown(cleaned.contentMarkdown),
+        ),
+        bullets: cleaned.bullets
+          .map((bullet) =>
+            stripBannedPhrasesFromText(stripQuizKeyLeaksFromMarkdown(bullet)),
+          )
+          .filter((bullet) => bullet.length > 0),
+        quiz: cleaned.quiz
+          ? {
+              ...cleaned.quiz,
+              question: stripBannedPhrasesFromText(cleaned.quiz.question ?? ""),
+              options: (cleaned.quiz.options ?? []).map((option) =>
+                stripBannedPhrasesFromText(normalizeQuizOptionText(option)),
+              ),
+              explanation: stripBannedPhrasesFromText(
+                cleaned.quiz.explanation ?? "",
+              ),
+            }
+          : cleaned.quiz,
+      };
+    }),
   };
 }

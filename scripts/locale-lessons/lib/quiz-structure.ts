@@ -169,6 +169,111 @@ export function getCorruptedQuizFallback(
   return CORRUPTED_SOURCE_QUIZ_FALLBACKS[lessonId]?.[targetLocale] ?? null;
 }
 
+/** Semantic slot identity per quiz option index (derived from EN canonical fallback). */
+export type QuizOptionIdentity = string;
+
+function normalizeIdentityText(text: string): string {
+  return text.trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+export function classifyQuizOptionIdentity(text: string): QuizOptionIdentity {
+  const normalized = normalizeIdentityText(text);
+
+  if (
+    /funnel|drop-?off|where exactly|leave the purchase|purchase process|عملية الشراء|وين بالضبط|يترك.*شراء|بالضبط.*يترك/.test(
+      normalized,
+    )
+  ) {
+    return "funnel_dropoff";
+  }
+  if (
+    /visitor|visitors|site visitors|total site|عدد.*زوار|زوار الموقع|يزورون الموقع|customers who visit/.test(
+      normalized,
+    )
+  ) {
+    return "visitor_totals";
+  }
+  if (
+    /marketing budget|advertis|ميزانية.*إعلان|increase.*budget|إعلانات/.test(
+      normalized,
+    )
+  ) {
+    return "marketing_budget";
+  }
+  if (
+    /automate the metric you read weekly|read weekly|تقراه كل أسبوع|جمعته يدوي/.test(
+      normalized,
+    )
+  ) {
+    return "automate_weekly_metric";
+  }
+  if (/automate all four|٤ أرقام مرة واحدة|all four numbers/.test(normalized)) {
+    return "automate_all_metrics";
+  }
+  if (/looker studio|extra chart|رسوم إضافية|ten extra/.test(normalized)) {
+    return "extra_charts";
+  }
+  if (
+    /read .{0,20}article|long article|many article|as many article|قراءة|مقال|مقالات/.test(
+      normalized,
+    )
+  ) {
+    return "reading_theory";
+  }
+  if (
+    /wait until|full course|before you try|before trying|تنتظر|قبل ما تجرب|الدورة/.test(
+      normalized,
+    )
+  ) {
+    return "wait_course";
+  }
+  if (
+    /chatgpt|gemini|open .{0,20}ask|try something|ask it something|تفتح.*chatgpt|تفتح.*gemini|اطلب.*بسيط|جرب.*بسيط/.test(
+      normalized,
+    )
+  ) {
+    return "hands_on_try";
+  }
+  if (/ask a friend|ask .{0,20} expert|person.*explain|تسأل شخص|خبير/.test(normalized)) {
+    return "ask_expert";
+  }
+  if (/reactive|الموقف حدّد|situation decided|before he could choose/.test(normalized)) {
+    return "reactive_situation";
+  }
+  if (/proactive.*chose|proactive.*priorit|اتخذ قرار|خصّص وقت/.test(normalized)) {
+    return "proactive_choice";
+  }
+  if (/neither|لا هذا ولا ذاك|depends on how serious/.test(normalized)) {
+    return "neither_depends";
+  }
+  if (/proactive.*solved|proactive.*supplier|التعامل مع المورد/.test(normalized)) {
+    return "proactive_solved";
+  }
+
+  return "unknown";
+}
+
+export function getCanonicalOptionIdentities(lessonId: string): QuizOptionIdentity[] | null {
+  const fallback = CORRUPTED_SOURCE_QUIZ_FALLBACKS[lessonId]?.en;
+  if (!fallback) return null;
+  return fallback.options.map((option) => classifyQuizOptionIdentity(option));
+}
+
+export function optionsPreserveCanonicalIdentity(
+  lessonId: string,
+  options: string[],
+): boolean {
+  const expected = getCanonicalOptionIdentities(lessonId);
+  if (!expected || options.length !== expected.length) return false;
+
+  return options.every((option, index) => {
+    const actual = classifyQuizOptionIdentity(option);
+    const wanted = expected[index];
+    if (wanted === "unknown" || actual === "unknown") return true;
+    return actual === wanted;
+  });
+}
+
 export function applyDeterministicQuizFallback(input: {
   lessonId: string;
   targetLocale: AdaptationTargetLocale;
@@ -197,12 +302,33 @@ export function applyDeterministicQuizFallback(input: {
     if (!question.trim()) question = fallback.question;
     if (!explanation.trim()) explanation = fallback.explanation;
   } else if (fallback) {
-    options = input.lockedOptions.map(
-      (option, index) =>
-        option.trim() || fallback.options[index]?.trim() || "",
+    const identityPreserved = optionsPreserveCanonicalIdentity(
+      input.lessonId,
+      input.lockedOptions,
     );
-    if (!question.trim()) question = fallback.question;
-    if (!explanation.trim()) explanation = fallback.explanation;
+    const correctSlotIdentity = classifyQuizOptionIdentity(
+      input.lockedOptions[fallback.correctIndex] ?? "",
+    );
+    const expectedCorrectIdentity =
+      getCanonicalOptionIdentities(input.lessonId)?.[fallback.correctIndex] ??
+      "unknown";
+    const correctSlotMatches =
+      expectedCorrectIdentity === "unknown" ||
+      correctSlotIdentity === expectedCorrectIdentity ||
+      correctSlotIdentity === "unknown";
+
+    if (!identityPreserved || !correctSlotMatches) {
+      options = [...fallback.options];
+      if (!question.trim()) question = fallback.question;
+      if (!explanation.trim()) explanation = fallback.explanation;
+    } else {
+      options = input.lockedOptions.map(
+        (option, index) =>
+          option.trim() || fallback.options[index]?.trim() || "",
+      );
+      if (!question.trim()) question = fallback.question;
+      if (!explanation.trim()) explanation = fallback.explanation;
+    }
   }
 
   if (options.some((option) => !option.trim())) {

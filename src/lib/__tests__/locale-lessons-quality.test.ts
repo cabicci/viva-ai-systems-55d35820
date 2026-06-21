@@ -13,12 +13,17 @@ import {
   detectQuizExplanationSemanticWarnings,
   detectQuizIntegrityWarnings,
   detectQuizMarkdownLeakageWarnings,
+  detectQuizOptionIdentityWarnings,
   detectQuizOptionPrefixWarnings,
+  detectUnbalancedQuizOptionMarkdownWarnings,
   hasQuizOptionPrefixLeak,
+  hasUnbalancedMarkdownEmphasis,
   isGenericBadEnglishTitle,
   normalizeQuizOptionText,
   sanitizeAdaptedLessonMarkdown,
   stripBannedPhrasesFromText,
+  stripInternalProductionNotesFromText,
+  stripMarkdownEmphasisFromText,
   stripQuizKeyLeaksFromMarkdown,
   stripQuizOptionPrefix,
   validateAdaptedLessonWarnings,
@@ -33,6 +38,7 @@ import {
   getCorruptedQuizFallback,
   identifyCorruptedSourceQuizIssues,
   lockQuizOptionsToSourceStructure,
+  optionsPreserveCanonicalIdentity,
   resolveSourceQuizStructure,
 } from "../../../scripts/locale-lessons/lib/quiz-structure.ts";
 import { QUALITY_RETRY_QUIZ_RULES } from "../../../scripts/locale-lessons/lib/adaptation-retry-prompt.ts";
@@ -688,8 +694,8 @@ describe("locale-lessons adaptation quality checks", () => {
     const quiz = finalized.sections.find((section) => section.role === "Quiz")?.quiz;
 
     expect(quiz?.correctIndex).toBe(1);
-    expect(quiz?.options?.[0]).toMatch(/ChatGPT/i);
-    expect(quiz?.options?.[1]).toMatch(/Read a long article/i);
+    expect(quiz?.options?.[0]).toMatch(/Read|article|many/i);
+    expect(quiz?.options?.[1]).toMatch(/ChatGPT/i);
     expect(
       detectQuizExplanationSemanticWarnings(
         source.lessonId,
@@ -697,8 +703,9 @@ describe("locale-lessons adaptation quality checks", () => {
         quiz?.options ?? [],
         quiz?.correctIndex ?? -1,
         quiz?.explanation ?? "",
-      ).length,
-    ).toBeGreaterThan(0);
+      ),
+    ).toEqual([]);
+    expect(detectQuizOptionIdentityWarnings(finalized)).toEqual([]);
   });
 
   it("rejects model attempts to change quiz option count or correctIndex", async () => {
@@ -985,5 +992,176 @@ describe("locale-lessons adaptation quality checks", () => {
         expect(leakageWarnings).toEqual([]);
       }
     }
+  });
+
+  it("finalizes analyst-m1-l1 ar-Gulf with swapped model options using canonical identity fallback", async () => {
+    const source = await loadMsaLessonPackage(
+      "analyst-m1-l1-from-automation-to-insight",
+    );
+    const quizIndex = source.sections.findIndex((section) => section.role === "Quiz");
+    const fallback = getCorruptedQuizFallback(
+      "analyst-m1-l1-from-automation-to-insight",
+      "ar-Gulf",
+    );
+
+    const swappedModelOutput = {
+      ...source,
+      locale: "ar-Gulf",
+      title: "من الأتمتة إلى البصيرة",
+      titleEn: source.titleEn,
+      sections: source.sections.map((section, index) => {
+        if (index !== quizIndex || !section.quiz) return section;
+        return {
+          ...section,
+          quiz: {
+            question:
+              "لاحظت إن كثير من الزبائن يضيفون منتجات للسلة وما يشترون. وش أفضل سؤال بيانات تبدأ فيه؟",
+            correctIndex: 2,
+            options: [
+              "وين بالضبط يترك الزبائن عملية الشراء؟",
+              "هل نزيد ميزانية الإعلانات؟",
+              "كم عدد الزبائن اللي يزورون الموقع؟",
+            ],
+            explanation:
+              "سؤال محدد يفهم «وين المشكلة» — يوصلك لقرار بخصوص مسار الشراء. الأرقام العامة ما تكفي.",
+          },
+        };
+      }),
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: source.lessonId,
+        canonicalVersion: source.canonicalVersion,
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    } as AdaptedLessonPackage;
+
+    expect(
+      optionsPreserveCanonicalIdentity(
+        source.lessonId,
+        swappedModelOutput.sections[quizIndex]?.quiz?.options ?? [],
+      ),
+    ).toBe(false);
+
+    const finalized = finalizeAdaptedPackage(
+      source,
+      swappedModelOutput,
+      "ar-Gulf",
+      "x",
+      "2026-06-20T00:00:00.000Z",
+    );
+    const quiz = finalized.sections.find((section) => section.role === "Quiz")?.quiz;
+
+    expect(quiz?.correctIndex).toBe(2);
+    expect(quiz?.options?.[2]).toMatch(/وين بالضبط|عملية الشراء/u);
+    expect(quiz?.options?.[0]).toMatch(/زوار|عدد/u);
+    expect(quiz?.options).toEqual(fallback?.options);
+    expect(detectQuizOptionIdentityWarnings(finalized)).toEqual([]);
+    expect(validateAdaptedLessonWarnings(source, finalized, "ar-Gulf")).toEqual([]);
+  });
+
+  it("strips broken markdown emphasis from quiz options and flags unbalanced markers", () => {
+    expect(
+      normalizeQuizOptionText("Gather the data** in **one place**"),
+    ).toBe("Gather the data in one place");
+    expect(
+      stripMarkdownEmphasisFromText("متوسط وقت الرد** صار **كم دقيقة**"),
+    ).toBe("متوسط وقت الرد صار كم دقيقة");
+    expect(hasUnbalancedMarkdownEmphasis("broken **marker only")).toBe(true);
+
+    const warnings = detectUnbalancedQuizOptionMarkdownWarnings({
+      locale: "en",
+      lessonId: "test",
+      title: "Test",
+      sections: [
+        {
+          role: "Quiz",
+          heading: "Quiz",
+          contentMarkdown: "Question?",
+          bullets: [],
+          tables: [],
+          quiz: {
+            question: "Pick one",
+            correctIndex: 0,
+            options: ["Good option", "broken **marker only"],
+            explanation: "Because.",
+          },
+        },
+      ],
+      canonicalVersion: "1",
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: "test",
+        canonicalVersion: "1",
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    });
+
+    expect(
+      warnings.some((warning) => warning.includes("unbalanced markdown emphasis")),
+    ).toBe(true);
+  });
+
+  it("strips internal production references from learner-facing markdown", () => {
+    const cleaned = stripInternalProductionNotesFromText(
+      "> في الإنتاج: فيديو Bunny — لا يُعاد توليده.\n\n(الأصل البصري في الإنتاج يبقى كما هو.)\n\nLearner-safe body text.",
+    );
+    expect(cleaned).not.toMatch(/Bunny/i);
+    expect(cleaned).not.toMatch(/الأصل البصري/);
+    expect(cleaned).toContain("Learner-safe body text");
+
+    const warnings = detectBannedPhraseWarnings({
+      locale: "en",
+      lessonId: "test",
+      title: "Test",
+      sections: [
+        {
+          role: "Orientation",
+          heading: "Orientation",
+          contentMarkdown:
+            "The original visual in Egyptian production remains unchanged.",
+          bullets: [],
+          tables: [],
+        },
+      ],
+      canonicalVersion: "1",
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: "test",
+        canonicalVersion: "1",
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    });
+
+    expect(warnings.some((warning) => warning.includes("egyptian production"))).toBe(
+      true,
+    );
+
+    const sanitized = sanitizeAdaptedLessonMarkdown({
+      locale: "ar-Gulf",
+      lessonId: "test",
+      title: "اختبار",
+      sections: [
+        {
+          role: "Concept",
+          heading: "Concept",
+          contentMarkdown: "الأصل البصري في الإنتاج المصري يبقى كما هو.",
+          bullets: [],
+          tables: [],
+        },
+      ],
+      canonicalVersion: "1",
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: "test",
+        canonicalVersion: "1",
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    });
+
+    expect(sanitized.sections[0]?.contentMarkdown).not.toMatch(/الإنتاج المصري/);
   });
 });

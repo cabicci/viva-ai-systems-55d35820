@@ -14,7 +14,10 @@ import {
   readJsonFile,
   validateMsaSourcePackage,
 } from "./lib/source-package.ts";
-import { validateAdaptedLessonWarnings } from "./lib/quality-warnings.ts";
+import {
+  sanitizeAdaptedLessonMarkdown,
+  validateAdaptedLessonWarnings,
+} from "./lib/quality-warnings.ts";
 
 import {
   SAMPLE_LESSON_COUNT,
@@ -143,8 +146,10 @@ export async function collectSamplePackageWarnings(
 
   for (const lessonId of SAMPLE_LESSON_IDS) {
     const source = await loadMsaLessonPackage(lessonId);
-    const adapted = await readJsonFile<AdaptedLessonPackage>(
-      path.join(lessonsDirForLocale(locale), `${lessonId}.json`),
+    const adapted = sanitizeAdaptedLessonMarkdown(
+      await readJsonFile<AdaptedLessonPackage>(
+        path.join(lessonsDirForLocale(locale), `${lessonId}.json`),
+      ),
     );
     for (const warning of validateAdaptedLessonWarnings(source, adapted, locale)) {
       warnings.push(`${locale}/${lessonId}: ${warning}`);
