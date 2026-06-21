@@ -180,9 +180,9 @@ function AnalyticsContent() {
   const totalSeconds = Number(data?.time?.total_seconds ?? 0);
 
   return (
-    <div className="min-h-dvh bg-background flex" dir="rtl">
+    <div className="min-h-dvh bg-background flex overflow-x-hidden" dir="rtl">
       <Sidebar />
-      <main className="flex-1 px-4 sm:px-6 py-6 sm:py-8 max-w-5xl mx-auto w-full">
+      <main className="flex-1 px-4 sm:px-6 py-6 sm:py-8 max-w-5xl mx-auto w-full min-w-0">
         <div className="mb-6">
           <Link
             to="/dashboard"
@@ -208,7 +208,7 @@ function AnalyticsContent() {
             <section className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
               <StatCard
                 icon={Flame}
-                label="الـ Streak الحالي"
+                label="السلسلة الحالية"
                 value={currentStreak}
                 hint={`الأطول: ${longestStreak} يوم`}
               />
@@ -226,7 +226,7 @@ function AnalyticsContent() {
               />
               <StatCard
                 icon={Target}
-                label="مهام Passed"
+                label="المهام المنجزة"
                 value={stats.missionCounts["passed"] ?? 0}
                 hint={`في التقييم: ${stats.missionCounts["submitted"] ?? 0}`}
               />

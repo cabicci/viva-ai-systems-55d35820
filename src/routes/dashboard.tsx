@@ -121,9 +121,9 @@ function Dashboard() {
     : null;
 
   return (
-    <div className="min-h-dvh flex">
+    <div className="min-h-dvh flex overflow-x-hidden">
       <Sidebar />
-      <main className="flex-1 max-w-6xl mx-auto w-full">
+      <main className="flex-1 max-w-6xl mx-auto w-full min-w-0">
         <PhaseRibbon />
         <div className="p-6 md:p-10">
         <WelcomeHint show={noProgress} />

@@ -80,28 +80,21 @@ function CurriculumPage() {
   const pct = available ? Math.round((completedCount / available) * 100) : 0;
 
   return (
-    <div className="min-h-dvh flex" dir="rtl">
+    <div className="min-h-dvh flex overflow-x-hidden" dir="rtl">
       <Sidebar />
-      <main className="flex-1 p-6 md:p-10 max-w-6xl mx-auto w-full">
-        <Link
-          to="/dashboard"
-          className="text-sm text-muted-foreground hover:text-foreground inline-flex items-center gap-1 mb-6"
-        >
-          <ArrowLeft className="h-3.5 w-3.5 rotate-180" /> العودة للوحة
-        </Link>
-
+      <main className="flex-1 p-4 sm:p-6 md:p-10 max-w-6xl mx-auto w-full min-w-0">
         {/* Hero */}
-        <header className="glass rounded-3xl p-8 md:p-10 mb-10 relative overflow-hidden">
+        <header className="glass rounded-3xl p-5 sm:p-8 md:p-10 mb-10 relative overflow-hidden">
           <div className="absolute -top-20 -left-20 h-60 w-60 rounded-full bg-primary/30 blur-3xl" />
           <div className="absolute -bottom-20 -right-20 h-60 w-60 rounded-full bg-accent/30 blur-3xl" />
           <div className="relative">
             <div className="flex items-center gap-3 mb-3">
-              <span className="grid h-12 w-12 place-items-center rounded-xl bg-[image:var(--gradient-primary)] glow-primary">
+              <span className="grid h-12 w-12 place-items-center rounded-xl bg-[image:var(--gradient-primary)] glow-primary shrink-0">
                 <MapIcon className="h-6 w-6 text-primary-foreground" />
               </span>
               <p className="text-primary font-mono text-sm">CURRICULUM · MAP</p>
             </div>
-            <h1 className="text-4xl md:text-5xl font-black leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight break-words">
               خريطة <span className="text-gradient">المنظومة</span> الكاملة
             </h1>
             <p className="text-muted-foreground mt-3 max-w-2xl">
@@ -148,7 +141,7 @@ function CurriculumPage() {
               {intros.length > 0 && (
                 <section>
                   <SectionHeader
-                    eyebrow="STAGE 01 · START"
+                    eyebrow="مرحلة ٠١ · البداية"
                     title="البداية"
                     subtitle="ابدأ من هنا قبل ما تدخل أي مسار — الأساس اللي بيخلّيك تفهم باقي المنظومة."
                   />

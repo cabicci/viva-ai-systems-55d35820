@@ -83,7 +83,7 @@ export function AssistantPanel({ compact = false }: Props) {
               variant={ctx.isReady ? "secondary" : "outline"}
               className="text-[10px]"
             >
-              {ctx.isReady ? "READY" : "LOADING"}
+              {ctx.isReady ? "جاهز" : "جارٍ التحميل"}
             </Badge>
           </div>
           <dl className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">

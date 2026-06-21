@@ -112,7 +112,7 @@ export function IntroLessonRenderer({
           </span>
           <div className="space-y-1">
             <p className="text-[10px] font-mono tracking-widest text-accent">
-              ليه تكمّل · VALUE
+              ليه تكمّل · القيمة
             </p>
             <p className="text-[15px] leading-[1.7] font-semibold text-foreground">
               {hook}
