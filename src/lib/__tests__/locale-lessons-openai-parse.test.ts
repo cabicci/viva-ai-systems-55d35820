@@ -98,7 +98,7 @@ describe("openai adaptation provider", () => {
     expect(fetchFn).toHaveBeenCalledTimes(2);
 
     const secondCallBody = JSON.parse(
-      String((fetchFn.mock.calls[1]?.[1] as RequestInit | undefined)?.body),
+      String(((fetchFn as unknown as { mock: { calls: unknown[][] } }).mock.calls[1]?.[1] as RequestInit | undefined)?.body),
     ) as {
       messages: Array<{ content: string }>;
     };
