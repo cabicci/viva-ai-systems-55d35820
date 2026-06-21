@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ArrowLeft, CheckCircle2, AlertTriangle, PlayCircle, Wrench, Rocket, Image as ImageIcon, BookOpen, Monitor, FlaskConical, ArrowUpLeft, Target } from "lucide-react";
+import { ArrowLeft, CheckCircle2, AlertTriangle, PlayCircle, Wrench, Image as ImageIcon, BookOpen, Monitor, ArrowUpLeft, Target } from "lucide-react";
 import { IntroSection } from "./IntroSection";
 import { IntroMissionPrompt } from "./IntroMission";
 import type { IntroBlock, IntroLessonContent } from "./intro-lesson-types";
@@ -308,7 +308,7 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
         <div className="rounded-xl border border-accent/25 bg-accent/[0.05] p-4 sm:p-5 space-y-3 sm:space-y-4">
           {block.title && (
             <p className="text-[11px] font-mono text-accent flex items-center gap-1.5">
-              <Rocket className="h-3.5 w-3.5" /> {block.title}
+              <Target className="h-3.5 w-3.5" /> {block.title}
             </p>
           )}
           {block.steps && block.steps.length > 0 && (
@@ -473,7 +473,7 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
         <div className="rounded-2xl border border-accent/30 border-r-4 bg-accent/[0.05] p-4 sm:p-5 space-y-3 shadow-[0_8px_30px_-14px_hsl(var(--accent)/0.25)]">
           <div className="flex items-center justify-between gap-2 flex-wrap">
             <p className="text-[11px] font-mono text-accent flex items-center gap-1.5">
-              <FlaskConical className="h-3.5 w-3.5" /> جزء من المنصة · Case Study
+              <BookOpen className="h-3.5 w-3.5" /> جزء من المنصة · Case Study
             </p>
             {block.pathAngle && (
               <span className="text-[10px] font-mono rounded-md border border-accent/30 bg-accent/10 px-1.5 py-0.5 text-accent">

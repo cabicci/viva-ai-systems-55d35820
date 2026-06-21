@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Hammer, Palette, Cog, BarChart3, Briefcase, Compass, BookOpen, Check, ArrowLeft, Loader2, Trophy, Zap } from "lucide-react";
+import { Hammer, Palette, Cog, BarChart3, Briefcase, Compass, BookOpen, Check, ArrowLeft, Loader2, Trophy, Route as RouteIcon } from "lucide-react";
 import { runWowPath } from "@/lib/wow-experience.functions";
 import {
   logLearnerEvent,
@@ -372,7 +372,7 @@ function VictoryStep({ successCount, onFinish }: { successCount: number; onFinis
       </p>
 
       <div className="grid sm:grid-cols-3 gap-3 max-w-xl mx-auto mt-10">
-        <Stat icon={Zap} label="مسارات" value="5" />
+        <Stat icon={RouteIcon} label="مسارات" value="5" />
         <Stat icon={BookOpen} label="دروس نشطة" value="100" />
         <Stat icon={Trophy} label="الخطوة التالية" value="→" />
       </div>

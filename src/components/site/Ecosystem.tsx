@@ -1,4 +1,4 @@
-import { Route, Workflow, Rocket, Database, MessageCircle, Layers } from "lucide-react";
+import { Route, Workflow, Flag, Database, MessageCircle, Layers } from "lucide-react";
 
 const pillars = [
   { icon: Route, title: "تعلم عملي", desc: "كل درس وراه مهمة بسيطة تطبقها بنفسك.", color: "var(--pastel-mint)", anim: "animate-float" },
@@ -6,7 +6,7 @@ const pillars = [
   { icon: MessageCircle, title: "AI معاك في كل درس", desc: "مساعد ذكي يشرحلك ويساعدك لما تتوه.", color: "var(--pastel-pink)", anim: "animate-float" },
   { icon: Layers, title: "5 مسارات متصلة", desc: "اختار المسار اللي يناسب هدفك وابدأ منه.", color: "var(--pastel-yellow)", anim: "animate-float" },
   { icon: Database, title: "ابني حاجة حقيقية", desc: "هتبني تطبيقات، أتمتة، تحليلات، وأفكار قابلة للتنفيذ.", color: "var(--pastel-mint)", anim: "animate-chart-bounce" },
-  { icon: Rocket, title: "إطلاق فعلي", desc: "من مجرد فكرة لمنتج أو نظام تقدر استخدمه.", color: "var(--pastel-blue)", anim: "animate-flame" },
+  { icon: Flag, title: "إطلاق فعلي", desc: "من مجرد فكرة لمنتج أو نظام تقدر استخدمه.", color: "var(--pastel-blue)", anim: "animate-flame" },
 ];
 
 const tiers = [

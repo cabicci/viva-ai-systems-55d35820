@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Sparkles, X, ArrowLeft } from "lucide-react";
+import { Compass, X, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/lib/auth-context";
 import {
@@ -35,7 +35,7 @@ export function StartWowBanner() {
     <div className="glass rounded-2xl border border-primary/30 p-4 md:p-5 mb-4 flex flex-col sm:flex-row sm:items-center gap-4 animate-fade-up">
       <div className="flex items-start gap-3 flex-1 min-w-0">
         <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-primary/15 text-primary">
-          <Sparkles className="h-5 w-5" />
+          <Compass className="h-5 w-5" />
         </span>
         <div>
           <p className="font-bold text-foreground text-sm mb-1">
