@@ -26,6 +26,7 @@ export function Navbar() {
           <a href="#journey" className="hover:text-foreground transition">{t("nav.journey")}</a>
           <a href="#philosophy" className="hover:text-foreground transition">{t("nav.philosophy")}</a>
           <Link to="/curriculum" className="hover:text-foreground transition">{t("nav.curriculum")}</Link>
+          <Link to="/pricing" className="hover:text-foreground transition">الباقات</Link>
         </nav>
         <div className="flex items-center gap-2">
           <LanguageSelector />

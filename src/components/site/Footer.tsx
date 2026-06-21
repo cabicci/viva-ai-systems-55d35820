@@ -6,6 +6,9 @@ export function Footer() {
       <div className="container mx-auto px-4 py-10 text-sm text-muted-foreground flex flex-wrap items-center justify-between gap-4">
         <p>© {new Date().getFullYear()} مسارات (masaarat.ai) — منظومة تعليمية حيّة.</p>
         <nav className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs">
+          <Link to="/pricing" className="hover:text-foreground transition">
+            الباقات
+          </Link>
           <Link to="/privacy" className="hover:text-foreground transition">
             سياسة الخصوصية
           </Link>

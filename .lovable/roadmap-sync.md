@@ -8,9 +8,9 @@ summary: Complete deterministic quiz overrides for corrupted ar-MSA source lesso
 
 [roadmap:d637ab8f-5437-49c3-af65-d34f205200ba]
 date: 2026-06-04
-scope: lessons
+scope: ui
 source: user
-summary: Preserve quiz option semantic identity at each index; strip broken markdown and internal production references from learner text.
+summary: Add frontend-only Arabic pricing placeholder page at /pricing (no payments).
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

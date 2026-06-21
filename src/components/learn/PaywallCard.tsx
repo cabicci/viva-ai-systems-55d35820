@@ -28,7 +28,7 @@ export function PaywallCard({
       </div>
       <div className="flex flex-col sm:flex-row gap-2 justify-center items-center">
         <Button asChild variant="violet" size="lg">
-          <Link to="/account">
+          <Link to="/pricing">
             <BadgeCheck className="h-4 w-4" /> فعّل Pro
           </Link>
         </Button>

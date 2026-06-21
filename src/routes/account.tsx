@@ -302,14 +302,10 @@ function AccountContent() {
             </div>
 
             {!isPro && !admin && (
-              <Button
-                variant="violet"
-                size="lg"
-                className="mt-5"
-                disabled
-                title="هيتفعل قريبًا"
-              >
-                <CreditCard className="h-4 w-4" /> فعّل Pro (قريبًا)
+              <Button asChild variant="violet" size="lg" className="mt-5">
+                <Link to="/pricing">
+                  <CreditCard className="h-4 w-4" /> فعّل Pro (قريبًا)
+                </Link>
               </Button>
             )}
           </section>
