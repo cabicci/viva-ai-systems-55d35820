@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { promises as fs } from "node:fs";
 import path from "node:path";
 import { REQUIRED_LESSON_COUNT } from "@/lib/locale-lessons/types";
 import {
@@ -51,7 +52,7 @@ describe("locale-lessons pilot batch selection", () => {
   it("reports invalid pilot packages when manifest is sample not pilot", async () => {
     const result = await validatePilotTargetPackage("en");
     const manifestPath = path.join(REPO_ROOT, "src/lib/locale-lessons/en/manifest.json");
-    const manifest = await Bun.file(manifestPath).json();
+    const manifest = JSON.parse(await fs.readFile(manifestPath, "utf-8"));
     if (manifest.packageStatus !== "sample") return;
 
     expect(result.ok).toBe(false);

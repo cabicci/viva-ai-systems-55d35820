@@ -15,7 +15,7 @@ import {
   validateMsaSourcePackage,
 } from "./lib/source-package.ts";
 import { validateAdaptedLessonWarnings } from "./lib/quality-warnings.ts";
-import type { AdaptedLessonPackage } from "../../src/lib/locale-lessons/types.ts";
+
 import {
   SAMPLE_LESSON_COUNT,
   SAMPLE_LESSON_IDS,

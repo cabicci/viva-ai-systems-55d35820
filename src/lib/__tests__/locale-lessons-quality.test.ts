@@ -252,7 +252,7 @@ describe("locale-lessons adaptation quality checks", () => {
       source,
       {
         locale: "en",
-        lessonId: source.lessonId,
+        lessonId: source.lessonId ?? "analyst-m4-automated-dashboard",
         titleEn: source.titleEn,
         title: source.titleEn,
         sections: source.sections.map((section) =>
