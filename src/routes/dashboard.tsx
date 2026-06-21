@@ -241,7 +241,7 @@ function Dashboard() {
               {userPaths.length > 0 && (
                 <section>
                   <TierHeader
-                    eyebrow="LEVEL 1 · AI USER"
+                    eyebrow="المستوى ١ · مستخدم AI"
                     title="استخدم AI في شغلك"
                     subtitle="٨٠٪ من اللي محتاجه أي حد — محتوى، بيانات، وقرارات بدون كود."
                   />
