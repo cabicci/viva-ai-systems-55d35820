@@ -213,7 +213,7 @@ function Dashboard() {
           }) => (
             <div className="mb-4 flex items-end justify-between gap-4 border-b border-border/40 pb-3">
               <div>
-                <p className="text-[11px] font-mono text-primary tracking-widest mb-1">
+                <p className="text-[11px] font-semibold text-primary tracking-wider mb-1">
                   {eyebrow}
                 </p>
                 <h2 className="text-xl md:text-2xl font-black">
