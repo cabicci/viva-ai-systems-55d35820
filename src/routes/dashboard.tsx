@@ -151,8 +151,8 @@ function Dashboard() {
         <div className={`grid gap-4 mb-8 ${nextLesson ? "md:grid-cols-2" : "md:grid-cols-3"}`}>
           {!nextLesson && (
             <NextLessonCard
-              lesson={nextLesson}
-              lessonTitle={nextLessonData?.title ?? nextLesson?.title}
+              lesson={null}
+              lessonTitle={nextLessonData?.title}
               duration={nextLessonData?.duration}
               pathTitle={nextLessonPath?.title}
               delay={0}
