@@ -15,7 +15,7 @@
       "role": "Orientation",
       "heading": "Orientation — What This Lesson Is About",
       "subtitle": "What This Lesson Is About",
-      "contentMarkdown": "- **What you will understand:** Any AI (artificial intelligence) idea can be broken into screens and steps — before writing any code.\n- **Why now?** Phase 3 (Building) starts with a map — not with colors or random features.\n- **After this lesson:** You will draw a User Flow (the path a user takes through your app) with 3 screens — a start, a middle, and an end.",
+      "contentMarkdown": "- **What you will understand:** Any AI (artificial intelligence) idea can be broken into screens and steps — before writing any code.\n- **Why now?** Phase 3 (Building) starts with a map — not with colors or random features.\n- **After this lesson:** You will draw a User Flow (the path a user takes) with 3 screens — a start, a middle, and an end.",
       "bullets": [
         "**What you will understand:** Any AI idea can be broken into screens and steps — before writing any code.",
         "**Why now?** Phase 3 (Building) starts with a map — not with colors or random features.",
@@ -27,9 +27,9 @@
       "role": "Tension",
       "heading": "Tension — A Great Idea, a Blank Page",
       "subtitle": "A Great Idea, a Blank Page",
-      "contentMarkdown": "- **You have a great AI idea** — but when you open a builder tool, you do not know where to start.\n- **Do you begin with colors? The AI model? The Prompt?** — Hours pass and nothing is built.\n- **The problem is not the tool.** The problem is that your idea has not yet been turned into a user journey.",
+      "contentMarkdown": "- **You have a great AI idea** — but when you open your builder tool, you do not know where to start.\n- **Do you begin with colors? The AI model? The Prompt?** — Hours pass and nothing is built.\n- **The problem is not the tool.** The problem is that your idea has not yet been turned into a user journey.",
       "bullets": [
-        "**You have a great AI idea** — but when you open a builder tool, you do not know where to start.",
+        "**You have a great AI idea** — but when you open your builder tool, you do not know where to start.",
         "**Do you begin with colors? The AI model? The Prompt?** — Hours pass and nothing is built.",
         "**The problem is not the tool.** The problem is that your idea has not yet been turned into a user journey."
       ],
@@ -39,12 +39,12 @@
       "role": "Core idea",
       "heading": "Core Idea — Your Idea = Screens + Steps",
       "subtitle": "Your Idea = Screens + Steps",
-      "contentMarkdown": "- **Any AI app is a journey:** the user opens it → does something → reaches a goal.\n- **Each step = one screen.** Three screens are enough to start: a beginning, a middle, and an end.\n- **Before colors and code:** draw how the user moves through your app.\n- **User Flow = the map.** Screens = the stops on that map.",
+      "contentMarkdown": "- **Any AI app is a journey:** the user opens it → does something → reaches a goal.\n- **Each step = one screen.** Three screens are enough to start: a beginning, a middle, and an end.\n- **Before colors and code:** draw how the user moves through your app.\n- **User Flow** = the map. Screens = the stops on that map.",
       "bullets": [
         "**Any AI app is a journey:** the user opens it → does something → reaches a goal.",
         "**Each step = one screen.** Three screens are enough to start: a beginning, a middle, and an end.",
         "**Before colors and code:** draw how the user moves through your app.",
-        "**User Flow = the map.** Screens = the stops on that map."
+        "**User Flow** = the map. Screens = the stops on that map."
       ],
       "tables": []
     },
@@ -52,7 +52,7 @@
       "role": "Comparison",
       "heading": "Comparison — Starting with Looks vs. Starting with the Journey",
       "subtitle": "Starting with Looks vs. Starting with the Journey",
-      "contentMarkdown": "| Start with looks | Start with the journey |\n|------------------|------------------------|\n| \"AI that plans trips\" → you design a beautiful chat screen. Two hours later: you still do not know where the user begins. | \"Opens app → types 'Italy 5 days' → AI asks for budget → shows a plan\" — 3 steps = 3 screens. Clear from the start. |",
+      "contentMarkdown": "| Start with looks | Start with the journey |\n|------------------|------------------------|\n| \"AI plans trips\" → you design a beautiful chat screen. Two hours later: you still do not know where the user begins. | \"Opens app → types 'Italy 5 days' → AI asks for budget → shows a plan\" — 3 steps = 3 screens. Clear from the start. |",
       "bullets": [],
       "tables": [
         {
@@ -62,7 +62,7 @@
           ],
           "rows": [
             [
-              "\"AI that plans trips\" → you design a beautiful chat screen. Two hours later: you still do not know where the user begins.",
+              "\"AI plans trips\" → you design a beautiful chat screen. Two hours later: you still do not know where the user begins.",
               "\"Opens app → types 'Italy 5 days' → AI asks for budget → shows a plan\" — 3 steps = 3 screens. Clear from the start."
             ]
           ]
@@ -100,14 +100,14 @@
     {
       "role": "Video block (production reference only)",
       "heading": "Video block (production reference only)",
-      "contentMarkdown": "> Production note: Bunny video — \"From idea to User Flow and screens\". Do not regenerate.",
+      "contentMarkdown": "> Production note: Bunny video — \"From Idea to User Flow and Screens\". Do not regenerate.",
       "bullets": [],
       "tables": []
     },
     {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot block (intent)",
-      "contentMarkdown": "**Every page has one goal and clear steps.** The user enters → sees the map → makes a choice. The same logic applies to your app.",
+      "contentMarkdown": "**Every page has one goal and clear steps.** The user arrives → sees the map → makes a choice. The same logic applies to your app.",
       "bullets": [],
       "tables": []
     },
@@ -115,29 +115,25 @@
       "role": "Quiz",
       "heading": "Quiz — Quick Check",
       "subtitle": "Quick Check",
-      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** You are building an AI app that creates workout plans. What is the most important first step?\n\n- **Correct answer (option 1):** Draw the User Flow — from \"user sets their goal\" to \"user receives the plan\".\n- Option 2: Choose the best AI model.\n- Option 3: Design the look of the results screen.\n\n**Explanation:** Journey first — when you know the steps, you know the screens and the questions the AI needs to ask.",
-      "bullets": [
-        "**Correct answer (option 1):** Draw the User Flow — from \"user sets their goal\" to \"user receives the plan\".",
-        "Option 2: Choose the best AI model.",
-        "Option 3: Design the look of the results screen."
-      ],
+      "contentMarkdown": "**Question:** You are building an AI app that plans workout routines. What is the most important first step?\n\n- Draw the User Flow: from \"user sets their goal\" to \"user receives their plan\".\n- Choose the best AI model.\n- Design the look of the results screen.\n\n**Why:** The journey comes first — once you know the steps, you know the screens and the questions the AI needs to ask.",
+      "bullets": [],
       "tables": [],
       "quiz": {
-        "question": "You are building an AI app that creates workout plans. What is the most important first step?",
+        "question": "You are building an AI app that plans workout routines. What is the most important first step?",
         "correctIndex": 0,
         "options": [
-          "Draw the User Flow — from \"user sets their goal\" to \"user receives the plan\".",
+          "Draw the User Flow: from \"user sets their goal\" to \"user receives their plan\".",
           "Choose the best AI model.",
           "Design the look of the results screen."
         ],
-        "explanation": "Journey first — when you know the steps, you know the screens and the questions the AI needs to ask."
+        "explanation": "The journey comes first — once you know the steps, you know the screens and the questions the AI needs to ask."
       }
     },
     {
       "role": "Mission",
       "heading": "Mission — Draw a 3-Screen User Flow",
       "subtitle": "Draw a 3-Screen User Flow",
-      "contentMarkdown": "**This is a planning task — no code needed.** Use paper and pen, or a notes app. Allow 5–10 minutes.\n\n**What to submit:**\n\n1. Your idea (one sentence)\n2. 3 screens — for each one: what does the user see? what do they do?\n3. An arrow between each screen: \"After the user does X → they go to Y\"\n\n**Rubric:**\n\n| Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| 3 logical screens | 60% | Start → middle → end — not random. Each screen has a \"sees\" and a \"does\". |\n| Clear goal | 40% | Screen 3 shows a result — not an open ending. Arrows connect all the steps. |",
+      "contentMarkdown": "**This is a planning task — no code needed.** Use paper and pen, or a notes app. Allow 5–10 minutes.\n\n**Deliver:**\n\n1. Your idea (one sentence)\n2. 3 screens — for each one: what does the user see? what do they do?\n3. An arrow between each screen: \"After the user does X → they go to Y\"\n\n**Rubric:**\n\n| Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| 3 logical screens | 60% | Beginning → middle → end — not random. Each screen includes what the user sees and what they do. |\n| Clear goal | 40% | Screen 3 shows a result — not an open ending. Arrows connect every step. |",
       "bullets": [],
       "tables": [
         {
@@ -150,12 +146,12 @@
             [
               "3 logical screens",
               "60%",
-              "Start → middle → end — not random. Each screen has a \"sees\" and a \"does\"."
+              "Beginning → middle → end — not random. Each screen includes what the user sees and what they do."
             ],
             [
               "Clear goal",
               "40%",
-              "Screen 3 shows a result — not an open ending. Arrows connect all the steps."
+              "Screen 3 shows a result — not an open ending. Arrows connect every step."
             ]
           ]
         }
@@ -171,14 +167,16 @@
           {
             "dimension": "3 logical screens",
             "weight": 60,
-            "criteria": "Start → middle → end — not random. Each screen has a \"sees\" and a \"does\"."
+            "criteria": "Beginning → middle → end — not random. Each screen includes what the user sees and what they do."
           },
           {
             "dimension": "Clear goal",
             "weight": 40,
-            "criteria": "Screen 3 shows a result — not an open ending. Arrows connect all the steps."
+            "criteria": "Screen 3 shows a result — not an open ending. Arrows connect every step."
           }
-        ]
+        ],
+        "yamlIntent": "Write idea + 3 screens (see/do) + arrows — ~5–10 min",
+        "yamlType": "practice"
       }
     },
     {
@@ -193,7 +191,7 @@
       "tables": []
     }
   ],
-  "generatedAt": "2026-06-20T23:06:05.789Z",
+  "generatedAt": "2026-06-20T23:48:40.289Z",
   "adaptedFrom": {
     "locale": "ar-MSA",
     "lessonId": "builder-m6-l1-idea-to-page",

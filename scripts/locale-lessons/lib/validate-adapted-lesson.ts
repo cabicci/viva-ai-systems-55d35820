@@ -11,24 +11,12 @@ import {
 
 export { validateAdaptedLessonWarnings } from "./quality-warnings.ts";
 export type { AdaptedLessonValidationResult } from "./quality-warnings.ts";
-
-function extractJsonObject(raw: string): string {
-  const trimmed = raw.trim();
-  if (trimmed.startsWith("{")) return trimmed;
-  const fenced = trimmed.match(/```(?:json)?\n([\s\S]*?)```/);
-  if (fenced?.[1]) return fenced[1].trim();
-  const match = trimmed.match(/\{[\s\S]*\}/);
-  if (!match) {
-    throw new Error("Provider response did not contain a JSON object");
-  }
-  return match[0];
-}
-
-export function parseAdaptedLessonJson(raw: string): AdaptedLessonPackage {
-  const jsonText = extractJsonObject(raw);
-  const parsed = JSON.parse(jsonText) as AdaptedLessonPackage;
-  return parsed;
-}
+export {
+  AdaptedLessonJsonParseError,
+  extractAdaptedJsonText,
+  formatAdaptationJsonParseFailure,
+  parseAdaptedLessonJson,
+} from "./parse-adapted-json.ts";
 
 export function validateAdaptedLessonPackage(
   source: LocalizedLessonPackage,

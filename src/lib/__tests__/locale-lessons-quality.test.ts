@@ -221,35 +221,37 @@ describe("locale-lessons adaptation quality checks", () => {
     expect(result.foundLessonCount).toBe(100);
   });
 
-  it("does not mutate committed sample JSON files on disk", () => {
+  it("committed EN intro sample has corrected title aligned with titleEn", async () => {
+    const source = await loadMsaLessonPackage("intro-m1-l1-what-is-ai");
     const introEn = readSample("en", "intro-m1-l1-what-is-ai");
-    expect(introEn.title).toBe("What Will You Understand?");
+
+    expect(introEn.title).toBe("What Is AI");
     expect(introEn.titleEn).toBe("What Is AI");
+    expect(detectEnglishTitleMismatchWarning(source, introEn)).toBeNull();
   });
 
-  it("detects known quality warnings in committed sample packages", async () => {
-    const warnings = await collectSamplePackageWarnings("en");
-    expect(
-      warnings.some((warning) =>
-        warning.includes("intro-m1-l1-what-is-ai") &&
-        warning.includes("orientation copy"),
-      ),
-    ).toBe(true);
-    expect(
-      warnings.some((warning) =>
-        warning.includes("builder-m6-l1-idea-to-page") &&
-        warning.includes("quiz markdown leakage"),
-      ),
-    ).toBe(true);
-
+  it("committed sample packages have no quality warnings after regeneration", async () => {
+    const enWarnings = await collectSamplePackageWarnings("en");
     const gulfWarnings = await collectSamplePackageWarnings("ar-Gulf");
-    expect(
-      gulfWarnings.some((warning) =>
-        warning.includes("business-m1-l2-reactive-vs-proactive") &&
-        warning.includes("quiz markdown leakage"),
-      ),
-    ).toBe(true);
-    expect(warnings.length).toBeGreaterThan(0);
-    expect(gulfWarnings.length).toBeGreaterThan(0);
+
+    expect(enWarnings).toEqual([]);
+    expect(gulfWarnings).toEqual([]);
+  });
+
+  it("committed Gulf and EN samples have no quiz key leakage in markdown", () => {
+    const sampleLessonIds = [
+      "intro-m1-l1-what-is-ai",
+      "builder-m6-l1-idea-to-page",
+      "business-m1-l2-reactive-vs-proactive",
+    ] as const;
+
+    for (const locale of ["en", "ar-Gulf"] as const) {
+      for (const lessonId of sampleLessonIds) {
+        const sample = readSample(locale, lessonId);
+        const leakageWarnings = detectQuizMarkdownLeakageWarnings(sample);
+
+        expect(leakageWarnings).toEqual([]);
+      }
+    }
   });
 });
