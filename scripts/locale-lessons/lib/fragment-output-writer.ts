@@ -22,16 +22,23 @@ export function fragmentPilotReportPathForLocale(locale: string): string {
   return path.join(reportsDirForLocale(locale), "fragment-pilot-report.json");
 }
 
+export async function writeFragmentPilotLessonPackage(
+  targetLocale: AdaptationTargetLocale,
+  pkg: AdaptedLessonPackage,
+): Promise<string> {
+  const lessonsDir = lessonsDirForLocale(targetLocale);
+  await fs.mkdir(lessonsDir, { recursive: true });
+  const outPath = path.join(lessonsDir, `${pkg.lessonId}.json`);
+  await fs.writeFile(outPath, `${JSON.stringify(pkg, null, 2)}\n`, "utf8");
+  return outPath;
+}
+
 export async function writeFragmentPilotLessonPackages(input: {
   targetLocale: AdaptationTargetLocale;
   packages: AdaptedLessonPackage[];
 }): Promise<void> {
-  const lessonsDir = lessonsDirForLocale(input.targetLocale);
-  await fs.mkdir(lessonsDir, { recursive: true });
-
   for (const pkg of input.packages) {
-    const outPath = path.join(lessonsDir, `${pkg.lessonId}.json`);
-    await fs.writeFile(outPath, `${JSON.stringify(pkg, null, 2)}\n`, "utf8");
+    await writeFragmentPilotLessonPackage(input.targetLocale, pkg);
   }
 }
 

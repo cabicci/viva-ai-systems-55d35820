@@ -23,6 +23,8 @@
     "locale-lessons:generate-samples": "bun run scripts/locale-lessons/generate-localized-samples.ts",
     "locale-lessons:generate-pilot": "bun run scripts/locale-lessons/generate-localized-pilot.ts",
     "locale-lessons:generate-fragment-pilot": "bun run scripts/locale-lessons/generate-fragment-localized-pilot.ts",
+    "locale-lessons:collect-fragment-pilot": "bun run scripts/locale-lessons/collect-fragment-pilot-artifacts.ts",
+    "locale-lessons:print-fragment-pilot-matrix": "bun run scripts/locale-lessons/print-fragment-pilot-matrix.ts",
     "test": "vitest",
     "test:run": "vitest run",
     "test:ui": "vitest --ui"

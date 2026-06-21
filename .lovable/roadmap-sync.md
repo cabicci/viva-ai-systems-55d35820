@@ -66,5 +66,11 @@ scope: ui
 source: user
 summary: Remove remaining Sparkles/Rocket learner lesson icons via render-layer mapping.
 
+[roadmap:f4a2c8e1-7b3d-4e9f-a1c6-2d8e5b9f3a7c]
+date: 2026-06-22
+scope: lessons
+source: user
+summary: Run fragment locale pilot as per-lesson matrix jobs with empty-field extraction guards.
+
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

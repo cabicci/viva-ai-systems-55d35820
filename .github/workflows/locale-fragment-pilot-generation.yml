@@ -24,6 +24,11 @@ on:
         options:
           - pilot
         default: pilot
+      lesson_ids:
+        description: "Optional comma-separated pilot lesson IDs (overrides count selection)"
+        required: false
+        type: string
+        default: ""
 
 permissions:
   contents: read
@@ -33,12 +38,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  generate-fragment-pilot:
+  prepare-matrix:
     runs-on: ubuntu-latest
-    env:
-      TARGET: ${{ inputs.target || 'all' }}
-      COUNT: ${{ inputs.count || '10' }}
-      MODE: ${{ inputs.mode || 'pilot' }}
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -52,6 +55,10 @@ jobs:
         run: bun install --frozen-lockfile
 
       - name: Validate workflow inputs
+        env:
+          TARGET: ${{ inputs.target || 'all' }}
+          COUNT: ${{ inputs.count || '10' }}
+          MODE: ${{ inputs.mode || 'pilot' }}
         run: |
           set -euo pipefail
           if [ "$MODE" != "pilot" ]; then
@@ -74,19 +81,107 @@ jobs:
             exit 1
           fi
 
-      - name: Generate fragment localized pilot batch
+      - name: Build fragment pilot matrix
+        id: set-matrix
+        env:
+          TARGET: ${{ inputs.target || 'all' }}
+          COUNT: ${{ inputs.count || '10' }}
+          LESSON_IDS: ${{ inputs.lesson_ids || '' }}
+        run: |
+          set -euo pipefail
+          ARGS=(--target "$TARGET" --count "$COUNT" --mode pilot)
+          if [ -n "$LESSON_IDS" ]; then
+            ARGS+=(--lesson_ids "$LESSON_IDS")
+          fi
+          MATRIX=$(bun run scripts/locale-lessons/print-fragment-pilot-matrix.ts "${ARGS[@]}")
+          echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+
+  generate-lesson:
+    needs: prepare-matrix
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.prepare-matrix.outputs.matrix) }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Generate one fragment pilot lesson
         env:
           OPENAI_API_KEY: ${{ secrets.new_openai }}
         run: |
           set -euo pipefail
-          if [ "$TARGET" = "all" ]; then
-            bun run locale-lessons:generate-fragment-pilot -- --target ar-Gulf --count "$COUNT" --mode pilot
-            bun run locale-lessons:generate-fragment-pilot -- --target en --count "$COUNT" --mode pilot
-          else
-            bun run locale-lessons:generate-fragment-pilot -- --target "$TARGET" --count "$COUNT" --mode pilot
-          fi
+          bun run locale-lessons:generate-fragment-pilot -- \
+            --target "${{ matrix.locale }}" \
+            --lesson-id "${{ matrix.lesson_id }}" \
+            --mode pilot
 
-      - name: Validate fragment pilot packages
+      - name: Upload lesson artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: locale-fragment-pilot-${{ matrix.locale }}-${{ matrix.lesson_id }}
+          if-no-files-found: error
+          retention-days: 14
+          path: |
+            src/lib/locale-lessons/${{ matrix.locale }}/lessons/${{ matrix.lesson_id }}.json
+            src/lib/locale-lessons/${{ matrix.locale }}/reports/fragment-pilot-jobs/${{ matrix.lesson_id }}.result.json
+
+      - name: Upload failed job result
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: locale-fragment-pilot-${{ matrix.locale }}-${{ matrix.lesson_id }}-failed
+          if-no-files-found: ignore
+          retention-days: 14
+          path: |
+            src/lib/locale-lessons/${{ matrix.locale }}/reports/fragment-pilot-jobs/${{ matrix.lesson_id }}.result.json
+
+  collect-report:
+    needs: [prepare-matrix, generate-lesson]
+    if: always()
+    runs-on: ubuntu-latest
+    env:
+      TARGET: ${{ inputs.target || 'all' }}
+      COUNT: ${{ inputs.count || '10' }}
+      LESSON_IDS: ${{ inputs.lesson_ids || '' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Download lesson artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: locale-fragment-pilot-*
+          merge-multiple: true
+          path: fragment-artifacts
+
+      - name: Collect fragment pilot artifacts and report
+        run: |
+          set -euo pipefail
+          ARGS=(--target "$TARGET" --count "$COUNT" --artifacts-dir fragment-artifacts)
+          if [ -n "$LESSON_IDS" ]; then
+            ARGS+=(--lesson_ids "$LESSON_IDS")
+          fi
+          bun run locale-lessons:collect-fragment-pilot -- "${ARGS[@]}"
+
+      - name: Validate collected fragment pilot packages
         run: |
           set -euo pipefail
           bun -e "
@@ -114,6 +209,7 @@ jobs:
           bun test \
             src/lib/__tests__/locale-lessons-openai-fragment-parse.test.ts \
             src/lib/__tests__/locale-lessons-fragment-pipeline.test.ts \
+            src/lib/__tests__/locale-lessons-fragment-pilot-per-lesson.test.ts \
             src/lib/__tests__/locale-lessons-quality.test.ts \
             src/lib/__tests__/locale-lessons-anthropic-parse.test.ts \
             src/lib/__tests__/locale-lessons-openai-parse.test.ts \
@@ -123,10 +219,11 @@ jobs:
             src/lib/__tests__/locale-lessons-pilot.test.ts \
             src/lib/__tests__/ar-msa-lesson-package.test.ts
 
-      - name: Upload fragment pilot output artifact
+      - name: Upload collected fragment pilot bundle
+        if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: locale-fragment-pilot-${{ env.TARGET }}-${{ github.run_number }}
+          name: locale-fragment-pilot-collected-${{ github.run_number }}
           if-no-files-found: error
           retention-days: 14
           path: |
