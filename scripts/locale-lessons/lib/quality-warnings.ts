@@ -13,6 +13,7 @@ import {
   getCanonicalOptionIdentities,
   optionsPreserveCanonicalIdentity,
 } from "./quiz-structure.ts";
+import { isGenericBadGulfTitle } from "./repair-gulf-fragment-title.ts";
 
 export interface AdaptedLessonValidationResult {
   errors: string[];
@@ -422,19 +423,26 @@ export function detectGulfTitleMismatchWarning(
   if (adapted.locale !== "ar-Gulf") return null;
   const titleEn = adapted.titleEn?.trim();
   const title = adapted.title?.trim();
-  if (!title) return null;
+  if (!title) {
+    return titleEn
+      ? `title is empty; derive a short Gulf topic title from titleEn "${titleEn}"`
+      : "title is empty and must be replaced";
+  }
+
+  if (!isGenericBadGulfTitle(title, source)) return null;
 
   const orientationSubtitle = orientationSectionSubtitle(source);
   if (
     orientationSubtitle &&
     normalizeTitle(title) === normalizeTitle(orientationSubtitle) &&
-    titleEn &&
-    !titlesAlign(title, titleEn)
+    titleEn
   ) {
     return `title "${title}" matches orientation subtitle; derive a short Gulf topic title from titleEn "${titleEn}"`;
   }
 
-  return null;
+  return titleEn
+    ? `title "${title}" is a generic orientation title; derive a short Gulf topic title from titleEn "${titleEn}"`
+    : `title "${title}" is a generic orientation title and must be replaced`;
 }
 
 export function detectQuizMarkdownLeakageWarnings(

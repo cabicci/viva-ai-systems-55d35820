@@ -54,5 +54,11 @@ scope: ui
 source: user
 summary: D5 final launch visual polish — floating lesson assistant button, Arabic analytics/account/pricing copy, concept section icon override.
 
+[roadmap:c2e8f4a1-9b3d-4f7a-8e2d-1c6b5a9e4f7d]
+date: 2026-06-22
+scope: lessons
+source: user
+summary: Repair generic ar-Gulf fragment pilot titles from titleEn before final validation gate.
+
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

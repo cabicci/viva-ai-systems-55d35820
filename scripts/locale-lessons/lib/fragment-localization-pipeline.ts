@@ -18,6 +18,22 @@ import {
   validateFragmentPipelineArtifact,
   type FragmentPipelineValidationResult,
 } from "./validate-structural-parity.ts";
+import { repairGulfCatalogTitle } from "./repair-gulf-fragment-title.ts";
+
+function finalizeFragmentArtifact(
+  source: LocalizedLessonPackage,
+  localizedTextMap: LocalizedTextMap,
+  targetLocale: AdaptationTargetLocale,
+  generatedAt: string,
+): AdaptedLessonPackage {
+  const injected = injectLocalizedFields(
+    source,
+    localizedTextMap,
+    targetLocale,
+    generatedAt,
+  );
+  return repairGulfCatalogTitle(source, injected);
+}
 
 export interface FragmentLocalizationResult {
   source: LocalizedLessonPackage;
@@ -39,7 +55,7 @@ export function runFragmentLocalizationPipeline(
     ...mockOptions,
     targetLocale,
   });
-  const artifact = injectLocalizedFields(
+  const artifact = finalizeFragmentArtifact(
     source,
     localizedTextMap,
     targetLocale,
@@ -73,7 +89,7 @@ export async function runFragmentLocalizationPipelineWithOpenAi(
     targetLocale,
     openAiOptions,
   );
-  const artifact = injectLocalizedFields(
+  const artifact = finalizeFragmentArtifact(
     source,
     localizedTextMap,
     targetLocale,
