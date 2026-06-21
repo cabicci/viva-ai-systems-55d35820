@@ -48,6 +48,31 @@ function fmtMinutes(totalSeconds: number) {
   return `${h} س ${m ? `${m} د` : ""}`.trim();
 }
 
+const PATH_DISPLAY_LABELS: Record<string, string> = {
+  intro: "المقدمة",
+  business: "الأعمال",
+  creator: "صناعة المحتوى",
+  analyst: "تحليل البيانات",
+  automator: "الأتمتة",
+  builder: "البناء بالـ AI",
+};
+
+const EVENT_DISPLAY_LABELS: Record<string, string> = {
+  lesson_opened: "فتح درس",
+  lesson_completed: "إكمال درس",
+  mission_submitted: "تسليم مهمة",
+  mission_skipped: "تخطي مهمة",
+  quiz_predicted: "توقع كويز",
+};
+
+function pathDisplayLabel(pathId: string) {
+  return PATH_DISPLAY_LABELS[pathId] ?? pathId;
+}
+
+function eventDisplayLabel(eventType: string) {
+  return EVENT_DISPLAY_LABELS[eventType] ?? eventType;
+}
+
 function StatCard({
   icon: Icon,
   label,
@@ -308,7 +333,7 @@ function AnalyticsContent() {
                         return (
                           <li key={pathId}>
                             <div className="flex justify-between text-xs mb-1">
-                              <span className="font-medium capitalize">{pathId}</span>
+                              <span className="font-medium">{pathDisplayLabel(pathId)}</span>
                               <span className="text-muted-foreground">{count} حدث · {pct}%</span>
                             </div>
                             <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
@@ -339,7 +364,7 @@ function AnalyticsContent() {
                         key={type}
                         className="flex justify-between rounded-lg bg-white/5 px-3 py-2"
                       >
-                        <span className="text-muted-foreground">{type}</span>
+                        <span className="text-muted-foreground">{eventDisplayLabel(type)}</span>
                         <span className="font-semibold">{count}</span>
                       </div>
                     ))}

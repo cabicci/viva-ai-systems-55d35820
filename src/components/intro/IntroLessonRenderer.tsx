@@ -137,11 +137,13 @@ export function IntroLessonRenderer({
         ) {
           return <VideoSkipNotice key={i} />;
         }
+        const SectionIcon =
+          section.block.kind === "concepts" ? BookOpen : section.icon;
         return (
           <IntroSection
             key={i}
             index={i + 1}
-            icon={section.icon}
+            icon={SectionIcon}
             eyebrow={section.eyebrow}
             title={section.title}
             tone={section.tone}

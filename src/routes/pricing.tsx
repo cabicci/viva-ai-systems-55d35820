@@ -203,7 +203,7 @@ function PricingPage() {
           {/* Trust / legal */}
           <section className="text-center text-xs text-muted-foreground leading-relaxed border-t border-border/40 pt-8">
             <p>
-              مسارات في مرحلة وصول مبكر — مفيش دفع أو checkout على هذه الصفحة.
+              مسارات في مرحلة وصول مبكر — مفيش دفع أو صفحة إتمام دفع على هذه الصفحة.
               بياناتك واستخدامك يخضعان لـ{" "}
               <Link
                 to="/privacy"

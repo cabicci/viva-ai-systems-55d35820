@@ -319,12 +319,12 @@ function AccountContent() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <StatTile
               icon={<Flame className="h-4 w-4 text-orange-400" />}
-              label="الـ Streak الحالي"
+              label="السلسلة الحالية"
               value={`${streak.current_streak} يوم`}
             />
             <StatTile
               icon={<Flame className="h-4 w-4 text-amber-400" />}
-              label="أطول Streak"
+              label="أطول سلسلة"
               value={`${streak.longest_streak} يوم`}
             />
             <StatTile
@@ -372,7 +372,7 @@ function AccountContent() {
             </Button>
           </div>
           <p className="text-xs text-muted-foreground mt-4">
-            ملاحظة: حذف الحساب بيمسح كل بياناتك (تقدّم، notes، missions،
+            ملاحظة: حذف الحساب بيمسح كل بياناتك (تقدّم، ملاحظات، مهام،
             اشتراك). للحذف النهائي لبيانات الدخول، ابعتلنا على الإيميل.
           </p>
         </section>
@@ -383,8 +383,8 @@ function AccountContent() {
             <DialogHeader>
               <DialogTitle>متأكد إنك عايز تحذف حسابك؟</DialogTitle>
               <DialogDescription>
-                ده هيمسح كل بياناتك بشكل نهائي (التقدّم، الـ notes، الـ
-                missions، والاشتراك). الإجراء ده مينفعش يترجع.
+                ده هيمسح كل بياناتك بشكل نهائي (التقدّم، الملاحظات، المهام،
+                والاشتراك). الإجراء ده مينفعش يترجع.
               </DialogDescription>
             </DialogHeader>
             <DialogFooter className="gap-2">

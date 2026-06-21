@@ -13,6 +13,7 @@ import {
   Check,
   Milestone,
   ChevronDown,
+  MessageCircle,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { useMemo, useState } from "react";
@@ -176,6 +177,19 @@ function UnifiedLessonPage() {
   const isCompleted = getStatus(lesson.id) === "completed";
 
   const [copied, setCopied] = useState(false);
+  const [assistantOpen, setAssistantOpen] = useState(false);
+  const assistantDetailsRef = useRef<HTMLDetailsElement>(null);
+
+  const openLessonAssistant = () => {
+    const el = assistantDetailsRef.current;
+    if (!el) return;
+    el.open = true;
+    setAssistantOpen(true);
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    const summary = el.querySelector("summary");
+    if (summary instanceof HTMLElement) summary.focus();
+  };
+
   const copyLessonId = async () => {
     try {
       await navigator.clipboard.writeText(lesson.slug);
@@ -351,7 +365,12 @@ function UnifiedLessonPage() {
           isCompleted={isCompleted}
           nextLessonHref={next ? `/learn/${pathId}/${next.slug}` : undefined}
         />
-        <details className="mt-8 rounded-2xl border border-border/60 p-5 group">
+        <details
+          ref={assistantDetailsRef}
+          id="lesson-assistant"
+          className="mt-8 rounded-2xl border border-border/60 p-5 group scroll-mt-24"
+          onToggle={(e) => setAssistantOpen(e.currentTarget.open)}
+        >
           <summary className="cursor-pointer list-none flex items-center justify-between gap-3 text-sm font-semibold text-muted-foreground hover:text-foreground transition">
             <span>اسأل المساعد عن الدرس ده</span>
             <ChevronDown className="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" />
@@ -466,6 +485,17 @@ function UnifiedLessonPage() {
             )}
           </div>
         </nav>
+        <button
+          type="button"
+          onClick={openLessonAssistant}
+          aria-label="اسأل المساعد عن الدرس"
+          aria-controls="lesson-assistant"
+          aria-expanded={assistantOpen}
+          className="fixed bottom-6 end-4 sm:end-6 z-40 inline-flex items-center gap-2 rounded-full glass border border-border/60 bg-background/80 backdrop-blur-md px-4 py-3 text-sm font-medium text-foreground/90 shadow-[0_8px_30px_-12px_hsl(var(--foreground)/0.15)] hover:text-foreground hover:border-primary/30 hover:bg-background/95 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 min-h-[44px] max-w-[calc(100vw-2rem)] sm:max-w-none"
+        >
+          <MessageCircle className="h-4 w-4 text-primary shrink-0" />
+          <span>اسأل المساعد</span>
+        </button>
         </>
         )}
       </main>
