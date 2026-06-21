@@ -4,7 +4,6 @@ import { Sidebar } from "@/components/dashboard/Sidebar";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import {
-  ArrowLeft,
   CheckCircle2,
   Clock,
   Lock,
