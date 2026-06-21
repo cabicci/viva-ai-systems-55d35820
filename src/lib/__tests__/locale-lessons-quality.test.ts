@@ -27,6 +27,12 @@ import {
   finalizeAdaptedPackage,
   validateAdaptedLessonPackage,
 } from "../../../scripts/locale-lessons/lib/validate-adapted-lesson.ts";
+import {
+  CORRUPTED_SOURCE_QUIZ_OVERRIDES,
+  identifyCorruptedSourceQuizIssues,
+  lockQuizOptionsToSourceStructure,
+  resolveSourceQuizStructure,
+} from "../../../scripts/locale-lessons/lib/quiz-structure.ts";
 import { QUALITY_RETRY_QUIZ_RULES } from "../../../scripts/locale-lessons/lib/adaptation-retry-prompt.ts";
 import { collectSamplePackageWarnings } from "../../../scripts/locale-lessons/generate-localized-samples.ts";
 import {
@@ -51,10 +57,11 @@ describe("locale-lessons adaptation quality checks", () => {
   it("includes title and quiz cleanup rules in adaptation prompts", () => {
     expect(ADAPTATION_SYSTEM_RULES).toContain("TITLE RULES");
     expect(ADAPTATION_SYSTEM_RULES).toContain("What Will You Understand?");
-    expect(ADAPTATION_SYSTEM_RULES).toContain("correctIndex");
+    expect(ADAPTATION_SYSTEM_RULES).toContain("QUIZ STRUCTURE");
+    expect(ADAPTATION_SYSTEM_RULES).toContain("localizes text only");
     expect(EN_SYSTEM_PROMPT).toContain("exactly equal to titleEn");
     expect(EN_SYSTEM_PROMPT).toContain("numbering prefixes");
-    expect(QUALITY_RETRY_QUIZ_RULES).toContain("explanation must justify");
+    expect(QUALITY_RETRY_QUIZ_RULES).toContain("localize quiz.options[i] text only");
     expect(AR_GULF_SYSTEM_PROMPT).toContain("وش، ليش، مو، راح");
     expect(AR_GULF_SYSTEM_PROMPT).toContain("Avoid mixing ايش with وش");
   });
@@ -574,7 +581,66 @@ describe("locale-lessons adaptation quality checks", () => {
     ).toBe(true);
   });
 
-  it("repairs intro quiz order so correctIndex 1 points to the hands-on option", async () => {
+  it("locks intro quiz structure by index and preserves correctIndex 1", async () => {
+    const source = await loadMsaLessonPackage("intro-m1-l1-what-is-ai");
+    const quizIndex = source.sections.findIndex((section) => section.role === "Quiz");
+    const resolved = resolveSourceQuizStructure(
+      source.sections[quizIndex],
+      source.lessonId,
+    );
+    expect(resolved.ok).toBe(true);
+    if (!resolved.ok) return;
+    expect(resolved.structure.optionCount).toBe(4);
+    expect(resolved.structure.correctIndex).toBe(1);
+
+    const localized = {
+      ...source,
+      locale: "en",
+      title: "What Is AI",
+      titleEn: "What Is AI",
+      sections: source.sections.map((section, index) => {
+        if (index !== quizIndex || !section.quiz) return section;
+        return {
+          ...section,
+          quiz: {
+            question: "What is the best way to start understanding AI today?",
+            correctIndex: 1,
+            options: [
+              "Read as many articles about AI as you can before trying anything.",
+              "Open ChatGPT or Gemini and ask it something simple from your day.",
+              "Wait until you have taken a full course on how AI works technically.",
+              "Ask a friend who already uses AI to explain everything to you first.",
+            ],
+            explanation:
+              "One small real attempt teaches you more than a long read.",
+          },
+        };
+      }),
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: source.lessonId,
+        canonicalVersion: source.canonicalVersion,
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    } as AdaptedLessonPackage;
+
+    const finalized = finalizeAdaptedPackage(
+      source,
+      localized,
+      "en",
+      "x",
+      "2026-06-20T00:00:00.000Z",
+    );
+    const quiz = finalized.sections.find((section) => section.role === "Quiz")?.quiz;
+
+    expect(quiz?.options).toHaveLength(4);
+    expect(quiz?.correctIndex).toBe(1);
+    expect(quiz?.options?.[1]).toMatch(/ChatGPT/i);
+    expect(detectQuizIntegrityWarnings(source, finalized)).toEqual([]);
+  });
+
+  it("does not reorder intro quiz options when model swaps order at the same indices", async () => {
     const source = await loadMsaLessonPackage("intro-m1-l1-what-is-ai");
     const quizIndex = source.sections.findIndex((section) => section.role === "Quiz");
 
@@ -594,6 +660,7 @@ describe("locale-lessons adaptation quality checks", () => {
               "Open ChatGPT and try something simple from your day.",
               "Read a long article about AI before trying anything.",
               "Wait until you finish a full course.",
+              "Ask a friend to explain everything first.",
             ],
             explanation:
               "One small real attempt teaches you more than a long read.",
@@ -609,15 +676,6 @@ describe("locale-lessons adaptation quality checks", () => {
       generatedAt: "2026-06-20T00:00:00.000Z",
     } as AdaptedLessonPackage;
 
-    const preWarnings = detectQuizExplanationSemanticWarnings(
-      source.lessonId,
-      misordered.sections[quizIndex]?.quiz?.question ?? "",
-      misordered.sections[quizIndex]?.quiz?.options ?? [],
-      misordered.sections[quizIndex]?.quiz?.correctIndex ?? -1,
-      misordered.sections[quizIndex]?.quiz?.explanation ?? "",
-    );
-    expect(preWarnings.length).toBeGreaterThan(0);
-
     const finalized = finalizeAdaptedPackage(
       source,
       misordered,
@@ -628,7 +686,118 @@ describe("locale-lessons adaptation quality checks", () => {
     const quiz = finalized.sections.find((section) => section.role === "Quiz")?.quiz;
 
     expect(quiz?.correctIndex).toBe(1);
-    expect(quiz?.options?.[1]).toMatch(/ChatGPT/i);
+    expect(quiz?.options?.[0]).toMatch(/ChatGPT/i);
+    expect(quiz?.options?.[1]).toMatch(/Read a long article/i);
+    expect(
+      detectQuizExplanationSemanticWarnings(
+        source.lessonId,
+        quiz?.question ?? "",
+        quiz?.options ?? [],
+        quiz?.correctIndex ?? -1,
+        quiz?.explanation ?? "",
+      ).length,
+    ).toBeGreaterThan(0);
+  });
+
+  it("rejects model attempts to change quiz option count or correctIndex", async () => {
+    const source = await loadMsaLessonPackage("builder-m6-l1-idea-to-page");
+    const quizIndex = source.sections.findIndex((section) => section.role === "Quiz");
+    const resolved = resolveSourceQuizStructure(
+      source.sections[quizIndex],
+      source.lessonId,
+    );
+    expect(resolved.ok).toBe(true);
+    if (!resolved.ok) return;
+
+    const drifted = {
+      ...source,
+      locale: "en",
+      title: source.titleEn,
+      titleEn: source.titleEn,
+      sections: source.sections.map((section, index) => {
+        if (index !== quizIndex || !section.quiz) return section;
+        return {
+          ...section,
+          quiz: {
+            ...section.quiz,
+            correctIndex: 2,
+            options: ["Only one option"],
+          },
+        };
+      }),
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: source.lessonId,
+        canonicalVersion: source.canonicalVersion,
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    } as AdaptedLessonPackage;
+
+    const warnings = detectQuizIntegrityWarnings(source, drifted);
+    expect(
+      warnings.some((warning) =>
+        warning.includes(`expected exactly ${resolved.structure.optionCount}`),
+      ),
+    ).toBe(true);
+    expect(
+      warnings.some((warning) => warning.includes("correctIndex must remain")),
+    ).toBe(true);
+
+    const finalized = finalizeAdaptedPackage(
+      source,
+      drifted,
+      "en",
+      "x",
+      "2026-06-20T00:00:00.000Z",
+    );
+    const quiz = finalized.sections.find((section) => section.role === "Quiz")?.quiz;
+    expect(quiz?.options).toHaveLength(resolved.structure.optionCount);
+    expect(quiz?.correctIndex).toBe(resolved.structure.correctIndex);
+  });
+
+  it("locks quiz options by source index while allowing localized option text", () => {
+    const locked = lockQuizOptionsToSourceStructure(
+      {
+        optionCount: 3,
+        correctIndex: 1,
+        sourceSchemaValid: true,
+        usesOverride: false,
+        sourceOptionTextsByIndex: ["A", "B", "C"],
+      },
+      [
+        "Localized A",
+        "Localized B",
+        "Localized C",
+      ],
+      [],
+    );
+
+    expect(locked.options).toEqual([
+      "Localized A",
+      "Localized B",
+      "Localized C",
+    ]);
+    expect(locked.correctIndex).toBe(1);
+  });
+
+  it("identifies corrupted ar-MSA pilot quizzes and explicit overrides", async () => {
+    for (const lessonId of Object.keys(CORRUPTED_SOURCE_QUIZ_OVERRIDES)) {
+      const source = await loadMsaLessonPackage(lessonId);
+      const issues = identifyCorruptedSourceQuizIssues(source);
+      expect(
+        issues.some((issue) => issue.includes("explicit override")),
+      ).toBe(true);
+    }
+  });
+
+  it("intro-m1-l1-what-is-ai keeps hands-on answer at correctIndex 1 after finalization", async () => {
+    const source = await loadMsaLessonPackage("intro-m1-l1-what-is-ai");
+    const introEn = readSample("en", "intro-m1-l1-what-is-ai");
+    const quiz = introEn.sections.find((section) => section.role === "Quiz")?.quiz;
+
+    expect(quiz?.correctIndex).toBe(1);
+    expect(quiz?.options?.[1]).toMatch(/ChatGPT|Gemini/i);
     expect(detectQuizExplanationSemanticWarnings(
       source.lessonId,
       quiz?.question ?? "",
@@ -636,7 +805,57 @@ describe("locale-lessons adaptation quality checks", () => {
       quiz?.correctIndex ?? -1,
       quiz?.explanation ?? "",
     )).toEqual([]);
-    expect(detectQuizIntegrityWarnings(source, finalized)).toEqual([]);
+  });
+
+  it("analyst quiz cases do not leak Option or خيار prefixes after finalization", async () => {
+    const source = await loadMsaLessonPackage("analyst-m4-automated-dashboard");
+    const quizIndex = source.sections.findIndex((section) => section.role === "Quiz");
+
+    const prefixed = {
+      ...source,
+      locale: "en",
+      title: "Automated Dashboard",
+      titleEn: source.titleEn,
+      sections: source.sections.map((section, index) => {
+        if (index !== quizIndex) return section;
+        return {
+          ...section,
+          quiz: {
+            correctIndex: 0,
+            options: [
+              "Option 1: Automate the metric you read weekly after two manual weeks.",
+              "Choice 2: Automate all four numbers at once before trying manually.",
+              "خيار ٣: Build ten extra charts in Looker Studio.",
+            ],
+            explanation: "Start with one metric you already track weekly.",
+          },
+        };
+      }),
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: source.lessonId,
+        canonicalVersion: source.canonicalVersion,
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    } as AdaptedLessonPackage;
+
+    const finalized = finalizeAdaptedPackage(
+      source,
+      prefixed,
+      "en",
+      "x",
+      "2026-06-20T00:00:00.000Z",
+    );
+
+    expect(detectQuizOptionPrefixWarnings(finalized)).toEqual([]);
+    finalized.sections
+      .find((section) => section.role === "Quiz")
+      ?.quiz?.options?.forEach((option) => {
+        expect(option).not.toMatch(/^Option\s*\d+/i);
+        expect(option).not.toMatch(/^Choice\s*\d+/i);
+        expect(option).not.toMatch(/^خيار/u);
+      });
   });
 
   it("detects prefixed quiz options in adapted packages", () => {

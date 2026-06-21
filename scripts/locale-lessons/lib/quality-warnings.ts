@@ -4,6 +4,11 @@ import type {
   LocalizedLessonPackage,
   LocalizedLessonSection,
 } from "../../../src/lib/locale-lessons/types.ts";
+import {
+  detectQuizStructureDriftWarnings,
+  lockQuizOptionsToSourceStructure,
+  resolveSourceQuizStructure,
+} from "./quiz-structure.ts";
 
 export interface AdaptedLessonValidationResult {
   errors: string[];
@@ -149,25 +154,6 @@ function classifyExplanationPreference(explanation: string): QuizOptionSignal {
   }
 
   return "unknown";
-}
-
-function reorderQuizOptionsForExplanationSemantics(
-  options: string[],
-  correctIndex: number,
-  explanation: string,
-): string[] {
-  const preference = classifyExplanationPreference(explanation);
-  if (preference === "unknown" || options.length < 2) return options;
-
-  const preferredIndex = options.findIndex(
-    (option) => classifyQuizOption(option) === preference,
-  );
-  if (preferredIndex === -1 || preferredIndex === correctIndex) return options;
-
-  const reordered = [...options];
-  const [preferredOption] = reordered.splice(preferredIndex, 1);
-  reordered.splice(correctIndex, 0, preferredOption);
-  return reordered;
 }
 
 function learnerFacingText(section: LocalizedLessonSection): string {
@@ -361,59 +347,6 @@ function isWeakQuizQuestion(question: string | undefined): boolean {
   return WEAK_QUIZ_QUESTION_PATTERNS.some((pattern) => pattern.test(trimmed));
 }
 
-function countQuizOptionBullets(bullets: string[]): number {
-  return bullets.filter((bullet) => {
-    const trimmed = bullet.trim();
-    if (!trimmed) return false;
-    return !/^(\*\*)?(التفسير|Explanation)\b/i.test(trimmed);
-  }).length;
-}
-
-function sourceQuizExpectedOptions(
-  sourceSection: LocalizedLessonSection | undefined,
-): number {
-  const quiz = sourceSection?.quiz;
-  const options = quiz?.options ?? [];
-  const correctIndex = quiz?.correctIndex;
-  const optionBullets = countQuizOptionBullets(sourceSection?.bullets ?? []);
-
-  let minimum = 2;
-  if (correctIndex !== undefined && correctIndex >= 0) {
-    minimum = Math.max(minimum, correctIndex + 1);
-  }
-  if (correctIndex !== undefined && correctIndex >= 2) {
-    minimum = Math.max(minimum, 3);
-  }
-
-  if (
-    options.length >= minimum &&
-    correctIndex !== undefined &&
-    correctIndex >= 0 &&
-    correctIndex < options.length
-  ) {
-    return Math.max(options.length, minimum);
-  }
-
-  if (optionBullets >= minimum) return optionBullets;
-
-  return minimum;
-}
-
-function expectedQuizOptionCount(
-  sourceSection: LocalizedLessonSection | undefined,
-  adaptedSection: LocalizedLessonSection,
-): number {
-  const adaptedOptions = adaptedSection.quiz?.options?.length ?? 0;
-  const adaptedBullets = countQuizOptionBullets(adaptedSection.bullets);
-
-  return Math.max(
-    sourceQuizExpectedOptions(sourceSection),
-    adaptedBullets,
-    adaptedOptions,
-    2,
-  );
-}
-
 export function detectQuizIntegrityWarnings(
   source: LocalizedLessonPackage,
   adapted: AdaptedLessonPackage,
@@ -433,16 +366,31 @@ export function detectQuizIntegrityWarnings(
       continue;
     }
 
+    const resolved = resolveSourceQuizStructure(sourceSection, adapted.lessonId);
+    if (!resolved.ok) {
+      warnings.push(`${label}: ${resolved.issues.join("; ")}`);
+      continue;
+    }
+
+    warnings.push(
+      ...detectQuizStructureDriftWarnings(
+        adapted.lessonId,
+        resolved.structure,
+        quiz.options ?? [],
+        quiz.correctIndex,
+      ),
+    );
+
     if (isWeakQuizQuestion(quiz.question)) {
       warnings.push(`${label}: missing clear quiz question`);
     }
 
-    const expectedOptions = expectedQuizOptionCount(sourceSection, section);
+    const expectedOptions = resolved.structure.optionCount;
     const options = quiz.options ?? [];
 
-    if (options.length < expectedOptions) {
+    if (options.length !== expectedOptions) {
       warnings.push(
-        `${label}: expected at least ${expectedOptions} quiz options, found ${options.length}`,
+        `${label}: expected exactly ${expectedOptions} quiz options, found ${options.length}`,
       );
     }
 
@@ -450,23 +398,28 @@ export function detectQuizIntegrityWarnings(
       warnings.push(`${label}: quiz options must not be empty`);
     }
 
+    const correctIndex = resolved.structure.correctIndex;
     if (
       quiz.correctIndex === undefined ||
       quiz.correctIndex < 0 ||
-      quiz.correctIndex >= options.length
+      quiz.correctIndex >= expectedOptions
     ) {
       warnings.push(
-        `${label}: correctIndex ${String(quiz.correctIndex)} is out of range for ${options.length} options`,
+        `${label}: correctIndex ${String(quiz.correctIndex)} is out of range for ${expectedOptions} options`,
+      );
+    } else if (quiz.correctIndex !== correctIndex) {
+      warnings.push(
+        `${label}: correctIndex must remain ${correctIndex}, found ${quiz.correctIndex}`,
       );
     } else if (!options[quiz.correctIndex]?.trim()) {
       warnings.push(`${label}: correct option at index ${quiz.correctIndex} is missing`);
     }
 
     if (adapted.lessonId === "analyst-m4-automated-dashboard") {
-      if (options.length < 3) {
+      if (expectedOptions !== 3) {
         warnings.push(`${label}: analyst-m4-automated-dashboard requires 3 quiz options`);
       }
-      if (quiz.correctIndex !== 0) {
+      if (correctIndex !== 0) {
         warnings.push(
           `${label}: analyst-m4-automated-dashboard must keep correctIndex 0`,
         );
@@ -483,7 +436,7 @@ export function detectQuizIntegrityWarnings(
         adapted.lessonId,
         quiz.question ?? "",
         options,
-        quiz.correctIndex ?? -1,
+        correctIndex,
         quiz.explanation ?? "",
       ),
     );
@@ -691,18 +644,6 @@ function sanitizeQuizHeading(text: string | undefined): string | undefined {
   return cleaned.replace(/\s*—\s*correctIndex\s*:\s*\d+\s*$/i, "").trim() || "Quiz";
 }
 
-function canSafelyRebuildQuizOptions(
-  candidateOptions: string[],
-  correctIndex: number,
-): boolean {
-  return (
-    candidateOptions.length > 0 &&
-    correctIndex >= 0 &&
-    correctIndex < candidateOptions.length &&
-    Boolean(candidateOptions[correctIndex]?.trim())
-  );
-}
-
 export function repairQuizSection(
   sourceSection: LocalizedLessonSection | undefined,
   section: LocalizedLessonSection,
@@ -723,31 +664,31 @@ export function repairQuizSection(
     };
   }
 
+  const resolved = resolveSourceQuizStructure(sourceSection, lessonId);
+  if (!resolved.ok) {
+    throw new Error(
+      `${lessonId} quiz section: ${resolved.issues.join("; ")} — cannot finalize without source structure`,
+    );
+  }
+
   const quiz = { ...section.quiz };
-  let options = [...(quiz.options ?? [])].map((option) =>
+  const adaptedOptions = [...(quiz.options ?? [])].map((option) =>
     normalizeQuizOptionText(stripBannedPhrasesFromText(option)),
   );
+  const adaptedOptionBullets = rebuildQuizOptionsFromBullets(section.bullets);
 
-  const rebuiltFromBullets = rebuildQuizOptionsFromBullets(section.bullets);
-  const sourceBullets = sourceSection?.bullets ?? [];
-  const rebuiltFromSourceBullets = rebuildQuizOptionsFromBullets(sourceBullets);
-
-  const expectedCount = expectedQuizOptionCount(sourceSection, section);
-  const correctIndex = quiz.correctIndex ?? sourceSection?.quiz?.correctIndex ?? 0;
-
-  const candidateSets = [rebuiltFromBullets, rebuiltFromSourceBullets, options].filter(
-    (set) =>
-      set.length >= expectedCount &&
-      canSafelyRebuildQuizOptions(set, correctIndex),
+  const locked = lockQuizOptionsToSourceStructure(
+    resolved.structure,
+    adaptedOptions,
+    adaptedOptionBullets,
   );
 
-  if (
-    candidateSets.length > 0 &&
-    (options.length < expectedCount ||
-      correctIndex >= options.length ||
-      !options[correctIndex]?.trim())
-  ) {
-    options = candidateSets[0] ?? options;
+  let options = locked.options;
+  if (locked.missingLocalizedSlots.length > 0) {
+    options = locked.options.map((option, index) => {
+      if (option.trim()) return option;
+      return resolved.structure.sourceOptionTextsByIndex[index]?.trim() ?? "";
+    });
   }
 
   let question =
@@ -771,11 +712,6 @@ export function repairQuizSection(
   }
 
   const explanation = stripBannedPhrasesFromText(quiz.explanation ?? "");
-  options = reorderQuizOptionsForExplanationSemantics(
-    options,
-    correctIndex,
-    explanation,
-  );
   const contentMarkdown = stripBannedPhrasesFromText(
     stripQuizKeyLeaksFromMarkdown(section.contentMarkdown),
   );
@@ -793,7 +729,7 @@ export function repairQuizSection(
       question,
       options,
       explanation,
-      correctIndex,
+      correctIndex: locked.correctIndex,
     },
   };
 }

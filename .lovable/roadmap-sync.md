@@ -4,7 +4,7 @@
 date: 2026-06-04
 scope: lessons
 source: user
-summary: Guard localized quiz semantics (explanation vs correctIndex) and strip option numbering prefixes during finalization.
+summary: Preserve quiz structure deterministically during locale adaptation (option count, order, correctIndex locked; AI localizes text only).
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

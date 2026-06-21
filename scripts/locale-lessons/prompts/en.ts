@@ -27,10 +27,11 @@ TITLE (English catalog):
 - Do NOT copy the Orientation section subtitle as the lesson title.
 
 QUIZ (English):
-- Every Quiz section needs a clear quiz.question and a complete quiz.options array.
-- Preserve correctIndex from the source; ensure options.length > correctIndex (zero-based).
+- Every Quiz section needs a clear quiz.question and a complete quiz.options array matching the source option count.
+- Preserve correctIndex and option order from the source; localize quiz.options[i] text only at each index.
+- Never reorder options, change correctIndex, or change option count.
 - When correctIndex is 2, provide at least 3 options with the correct answer at index 2.
-- Keep option order aligned with the source; explanation must justify quiz.options[correctIndex] only.
+- Explanation must justify quiz.options[correctIndex] only.
 - options[] must be clean text — no "Option 1", "Choice 1", or numbering prefixes.`;
 
 export function buildEnUserPrompt(source: LocalizedLessonPackage): string {

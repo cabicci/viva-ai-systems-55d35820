@@ -10,6 +10,7 @@ import {
   repairQuizSection,
   validateAdaptedLessonWarnings,
 } from "./quality-warnings.ts";
+import { resolveSourceQuizStructure } from "./quiz-structure.ts";
 
 export { validateAdaptedLessonWarnings } from "./quality-warnings.ts";
 export type { AdaptedLessonValidationResult } from "./quality-warnings.ts";
@@ -54,13 +55,19 @@ export function validateAdaptedLessonPackage(
       );
     }
     if (
+      srcSection.role === "Quiz" &&
       srcSection.quiz?.correctIndex !== undefined &&
-      adaptedSection.quiz?.correctIndex !== undefined &&
-      adaptedSection.quiz.correctIndex !== srcSection.quiz.correctIndex
+      adaptedSection.quiz?.correctIndex !== undefined
     ) {
-      errors.push(
-        `quiz correctIndex must remain ${srcSection.quiz.correctIndex} for ${source.lessonId}`,
-      );
+      const resolved = resolveSourceQuizStructure(srcSection, source.lessonId);
+      const expectedCorrectIndex = resolved.ok
+        ? resolved.structure.correctIndex
+        : srcSection.quiz.correctIndex;
+      if (adaptedSection.quiz.correctIndex !== expectedCorrectIndex) {
+        errors.push(
+          `quiz correctIndex must remain ${expectedCorrectIndex} for ${source.lessonId}`,
+        );
+      }
     }
     const srcRubric = srcSection.mission?.rubric ?? [];
     const adaptedRubric = adaptedSection.mission?.rubric ?? [];

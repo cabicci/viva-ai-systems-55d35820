@@ -127,10 +127,13 @@ describe("locale-lessons quality retry", () => {
 
     const warnings = detectQuizIntegrityWarnings(source, invalid);
     expect(
-      warnings.some((warning) => warning.includes("correctIndex 2 is out of range")),
+      warnings.some((warning) => warning.includes("expected exactly 3 quiz options")),
     ).toBe(true);
     expect(
-      warnings.some((warning) => warning.includes("expected at least 3 quiz options")),
+      warnings.some((warning) =>
+        warning.includes("correctIndex 2 is out of range") ||
+          warning.includes("correct option at index 2 is missing"),
+      ),
     ).toBe(true);
   });
 
@@ -149,7 +152,7 @@ describe("locale-lessons quality retry", () => {
     expect(prompt).toContain("correctIndex 2 is out of range for 2 options");
     expect(prompt).toContain(QUALITY_RETRY_QUIZ_RULES);
     expect(prompt).toContain(QUALITY_RETRY_FORBIDDEN_PHRASES);
-    expect(prompt).toContain("zero-based");
+    expect(prompt).toContain("localize quiz.options[i] text only");
     expect(prompt).toContain("Egyptian production");
   });
 
@@ -209,7 +212,9 @@ describe("locale-lessons quality retry", () => {
       messages: Array<{ content: string }>;
     };
     expect(secondCallBody.messages[1]?.content).toContain("QUALITY CORRECTION REQUIRED");
-    expect(secondCallBody.messages[1]?.content).toContain("correctIndex 2 is out of range");
+    expect(secondCallBody.messages[1]?.content).toMatch(
+      /expected exactly 3 quiz options|correct option at index 2 is missing|quiz options must not be empty/,
+    );
 
     const warnings = validateAdaptedLessonWarnings(source, result, "ar-Gulf");
     expect(warnings).toEqual([]);

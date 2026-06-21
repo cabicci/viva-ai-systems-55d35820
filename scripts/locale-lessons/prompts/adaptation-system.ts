@@ -1,7 +1,7 @@
 import type { AdaptationConstraints } from "../../../src/lib/locale-lessons/types.ts";
 import { ADAPTATION_CONSTRAINTS } from "../../../src/lib/locale-lessons/types.ts";
 
-export const ADAPTATION_PROMPT_VERSION = "2026-06-20.2";
+export const ADAPTATION_PROMPT_VERSION = "2026-06-04.1";
 
 export function formatAdaptationConstraints(
   constraints: AdaptationConstraints = ADAPTATION_CONSTRAINTS,
@@ -38,6 +38,13 @@ TITLE RULES (catalog title — not Orientation heading):
 - Never use Orientation copy as title (e.g. "ماذا ستفهم؟", "What Will You Understand?", "What This Lesson Is About").
 - Orientation headings belong only in the Orientation section fields.
 
+QUIZ STRUCTURE (deterministic — AI localizes text only):
+- The source quiz defines option count, option order, and correctIndex. You MUST NOT change any of these.
+- Localize quiz.options[i] in place for each index i from 0 to options.length - 1. Never reorder, add, remove, or merge options.
+- Never change correctIndex. Never swap option positions to match explanation semantics.
+- Preserve the full quiz schema: question, options[], correctIndex, explanation.
+- If source quiz.options is incomplete in the JSON, still preserve the source correctIndex and expected option count implied by the source package — do not invent new structure.
+
 QUIZ MARKDOWN RULES:
 - Never include internal answer keys in contentMarkdown or bullets (no "correctIndex: N", "Quiz key", or "unchanged" key notes).
 - Keep correctIndex only in the structured quiz JSON object.
@@ -46,7 +53,7 @@ QUIZ MARKDOWN RULES:
 - correctIndex is zero-based: it must be an integer >= 0 and strictly less than options.length.
 - The text at quiz.options[correctIndex] must be the correct answer — never point correctIndex at a missing or out-of-range option.
 - Use at least 3 quiz.options when correctIndex is 2 or higher (indices 0, 1, 2 require three options).
-- Keep quiz.options in the same order as the source when translating; preserve source correctIndex — do not reorder options unless you also update correctIndex consistently.
+- Keep quiz.options in the same order as the source when translating; preserve source correctIndex — do not reorder options.
 - quiz.explanation must justify the exact option at quiz.options[correctIndex], not a different option.
 - quiz.options[] must contain clean option text only — no "Option 1", "Choice 1", "خيار ١", numbering prefixes, or letter labels.
 

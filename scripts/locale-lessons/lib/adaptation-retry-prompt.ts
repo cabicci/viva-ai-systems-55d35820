@@ -6,12 +6,12 @@ export const STRICT_JSON_RETRY_INSTRUCTION = `STRICT OUTPUT REMINDER:
 
 export const QUALITY_RETRY_QUIZ_RULES = `Fix quiz structure in every Quiz section:
 - Include a clear learner-facing quiz.question (not a label like "Correct Answer" or "Quick Check").
-- Provide enough quiz.options for the preserved correctIndex (zero-based indexing).
+- Preserve the source quiz option count, option order, and correctIndex exactly — localize quiz.options[i] text only.
+- Never reorder options, add options, remove options, or change correctIndex to match explanation semantics.
+- Provide exactly the expected number of quiz.options for the source lesson (one localized string per index).
 - correctIndex must be an integer >= 0 and strictly less than options.length.
 - The correct answer text must appear as one of the options at quiz.options[correctIndex].
 - Do not omit the correct option from the options array.
-- Use at least 3 options when the source quiz expects a multiple-choice question (correctIndex >= 2 requires at least 3 options).
-- Preserve source option order when translating; do not reorder options unless correctIndex still points at the correct answer.
 - quiz.explanation must justify the exact option at quiz.options[correctIndex], not a different option.
 - quiz.options[] must contain clean option text only — no "Option 1", "Choice 1", "خيار ١", numbering prefixes, or letter labels.`;
 
