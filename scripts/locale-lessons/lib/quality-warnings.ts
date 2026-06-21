@@ -104,6 +104,20 @@ export function detectEnglishTitleMismatchWarning(
   return `title "${title}" appears to be orientation copy while titleEn is "${titleEn}"`;
 }
 
+/** Replace orientation-copy EN titles with titleEn during finalization. */
+export function alignEnglishCatalogTitle(
+  source: LocalizedLessonPackage,
+  adapted: AdaptedLessonPackage,
+): AdaptedLessonPackage {
+  if (adapted.locale !== "en") return adapted;
+  if (!detectEnglishTitleMismatchWarning(source, adapted)) return adapted;
+
+  const titleEn = adapted.titleEn?.trim() ?? source.titleEn?.trim();
+  if (!titleEn) return adapted;
+
+  return { ...adapted, title: titleEn };
+}
+
 export function detectGulfTitleMismatchWarning(
   source: LocalizedLessonPackage,
   adapted: AdaptedLessonPackage,

@@ -134,32 +134,42 @@ describe("locale-lessons adaptation quality checks", () => {
 
   it("keeps hard validation errors separate from quality warnings", async () => {
     const source = await loadMsaLessonPackage("intro-m1-l1-what-is-ai");
-    const broken = finalizeAdaptedPackage(
+    const adaptedBroken = {
+      ...source,
+      locale: "en",
+      title: "What Will You Understand?",
+      titleEn: "What Is AI",
+      sections: source.sections.slice(0, 1),
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: source.lessonId,
+        canonicalVersion: source.canonicalVersion,
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    } as AdaptedLessonPackage;
+
+    const preFinalizeWarnings = validateAdaptedLessonWarnings(source, adaptedBroken, "en");
+    expect(
+      preFinalizeWarnings.some((warning) => warning.includes("orientation copy")),
+    ).toBe(true);
+
+    const finalized = finalizeAdaptedPackage(
       source,
-      {
-        ...source,
-        locale: "en",
-        title: "What Will You Understand?",
-        titleEn: "What Is AI",
-        sections: source.sections.slice(0, 1),
-        adaptedFrom: {
-          locale: "ar-MSA",
-          lessonId: source.lessonId,
-          canonicalVersion: source.canonicalVersion,
-          sourcePackagePath: "x",
-        },
-        generatedAt: "2026-06-20T00:00:00.000Z",
-      } as AdaptedLessonPackage,
+      adaptedBroken,
       "en",
       "x",
       "2026-06-20T00:00:00.000Z",
     );
 
-    const errors = validateAdaptedLessonPackage(source, broken, "en");
-    const warnings = validateAdaptedLessonWarnings(source, broken, "en");
+    const errors = validateAdaptedLessonPackage(source, finalized, "en");
+    const postFinalizeWarnings = validateAdaptedLessonWarnings(source, finalized, "en");
 
     expect(errors.length).toBeGreaterThan(0);
-    expect(warnings.some((warning) => warning.includes("orientation copy"))).toBe(true);
+    expect(finalized.title).toBe("What Is AI");
+    expect(
+      postFinalizeWarnings.some((warning) => warning.includes("orientation copy")),
+    ).toBe(false);
   });
 
   it("preserves mission yamlIntent/yamlType from source when provider omits them", async () => {
@@ -199,6 +209,32 @@ describe("locale-lessons adaptation quality checks", () => {
     const mission = finalized.sections.find((section) => section.role === "Mission")?.mission;
     expect(mission?.yamlIntent).toBe(missionSection?.mission?.yamlIntent);
     expect(mission?.yamlType).toBe(missionSection?.mission?.yamlType);
+  });
+
+  it("aligns EN orientation-copy titles to titleEn during finalization", async () => {
+    const source = await loadMsaLessonPackage("intro-m1-l1-what-is-ai");
+    const finalized = finalizeAdaptedPackage(
+      source,
+      {
+        ...source,
+        locale: "en",
+        title: "What Will You Understand?",
+        titleEn: "What Is AI",
+        adaptedFrom: {
+          locale: "ar-MSA",
+          lessonId: source.lessonId,
+          canonicalVersion: source.canonicalVersion,
+          sourcePackagePath: "x",
+        },
+        generatedAt: "2026-06-20T00:00:00.000Z",
+      } as AdaptedLessonPackage,
+      "en",
+      "x",
+      "2026-06-20T00:00:00.000Z",
+    );
+
+    expect(finalized.title).toBe("What Is AI");
+    expect(detectEnglishTitleMismatchWarning(source, finalized)).toBeNull();
   });
 
   it("sanitizes adapted markdown without changing structured quiz keys", async () => {

@@ -128,8 +128,13 @@ export async function generatePilotPackage(
 
 export async function validatePilotTargetPackage(
   locale: AdaptationTargetLocale,
+  options?: {
+    manifestPath?: string;
+    lessonsDir?: string;
+  },
 ): Promise<{ ok: boolean; errors: string[]; count: number; expectedCount: number }> {
-  const lessonsDir = lessonsDirForLocale(locale);
+  const lessonsDir = options?.lessonsDir ?? lessonsDirForLocale(locale);
+  const manifestFile = options?.manifestPath ?? manifestPathForLocale(locale);
   const foundIds = await listLessonJsonIds(lessonsDir);
   const errors: string[] = [];
   let expectedCount = 0;
@@ -137,7 +142,7 @@ export async function validatePilotTargetPackage(
 
   try {
     const manifest = await readJsonFile<LocalizedPilotManifest>(
-      manifestPathForLocale(locale),
+      manifestFile,
     );
     if (manifest.packageStatus !== "pilot") {
       errors.push(`manifest packageStatus must be pilot`);

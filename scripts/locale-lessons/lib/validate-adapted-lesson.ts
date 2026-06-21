@@ -6,6 +6,7 @@ import type {
 } from "../../../src/lib/locale-lessons/types.ts";
 import {
   sanitizeAdaptedLessonMarkdown,
+  alignEnglishCatalogTitle,
   validateAdaptedLessonWarnings,
 } from "./quality-warnings.ts";
 
@@ -136,6 +137,9 @@ export function finalizeAdaptedPackage(
   };
 
   return sanitizeAdaptedLessonMarkdown(
-    preserveMissionMetadataFromSource(source, locked),
+    alignEnglishCatalogTitle(
+      source,
+      preserveMissionMetadataFromSource(source, locked),
+    ),
   );
 }
