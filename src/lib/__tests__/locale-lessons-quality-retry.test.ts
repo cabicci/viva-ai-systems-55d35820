@@ -31,6 +31,7 @@ function mockAdaptedSections(
 
     return {
       ...section,
+      bullets: quizOptions.length === 0 ? [] : section.bullets,
       quiz: {
         question:
           targetLocale === "en"
@@ -157,49 +158,45 @@ describe("locale-lessons quality retry", () => {
   });
 
   it("rejects invalid quiz during finalization without silent repair", async () => {
-    const source = await loadMsaLessonPackage(
-      "analyst-m1-l1-from-automation-to-insight",
-    );
+    const source = await loadMsaLessonPackage("builder-m6-l1-idea-to-page");
     const invalidJson = minimalAdaptedJson(
       source,
-      "ar-Gulf",
-      ["خيار 1", "خيار 2"],
-      2,
+      "en",
+      [],
+      0,
     );
 
     await expect(
       adaptLessonFromAnthropicResponse({
         source,
-        targetLocale: "ar-Gulf",
+        targetLocale: "en",
         content: invalidJson,
       }),
     ).rejects.toBeInstanceOf(AdaptedLessonQualityError);
   });
 
   it("retries OpenAI adaptation with quality feedback and accepts a repaired quiz", async () => {
-    const source = await loadMsaLessonPackage(
-      "analyst-m1-l1-from-automation-to-insight",
-    );
+    const source = await loadMsaLessonPackage("builder-m6-l1-idea-to-page");
     const invalidJson = minimalAdaptedJson(
       source,
-      "ar-Gulf",
-      ["خيار ١: خيار خاطئ أول", "خيار ٢: خيار خاطئ ثاني"],
-      2,
+      "en",
+      [],
+      0,
     );
     const validJson = minimalAdaptedJson(
       source,
-      "ar-Gulf",
+      "en",
       [
-        "خيار ١: خيار خاطئ أول",
-        "خيار ٢: خيار خاطئ ثاني",
-        "أين بالضبط يترك الزبائن عملية الشراء؟",
+        "Draw the user flow from goal to plan.",
+        "Pick the best AI model first.",
+        "Design the final results screen.",
       ],
-      2,
+      0,
     );
     const fetchFn = mockFetchWithResponses([invalidJson, validJson]);
 
     const result = await adaptLessonWithOpenAiRetries(
-      { source, targetLocale: "ar-Gulf" },
+      { source, targetLocale: "en" },
       { apiKey: TEST_API_KEY, fetchFn },
     );
 
@@ -213,10 +210,10 @@ describe("locale-lessons quality retry", () => {
     };
     expect(secondCallBody.messages[1]?.content).toContain("QUALITY CORRECTION REQUIRED");
     expect(secondCallBody.messages[1]?.content).toMatch(
-      /expected exactly 3 quiz options|correct option at index 2 is missing|quiz options must not be empty/,
+      /cannot finalize with empty quiz options|expected exactly 3 quiz options/,
     );
 
-    const warnings = validateAdaptedLessonWarnings(source, result, "ar-Gulf");
+    const warnings = validateAdaptedLessonWarnings(source, result, "en");
     expect(warnings).toEqual([]);
   });
 

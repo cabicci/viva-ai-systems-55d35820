@@ -124,13 +124,31 @@ export async function adaptLessonFromAnthropicResponse(input: {
   const sourcePackagePath = `src/lib/locale-lessons/ar-MSA/lessons/${source.lessonId}.json`;
   const parsed = parseAdaptedLessonJson(content);
   const generatedAt = input.generatedAt ?? new Date().toISOString();
-  const finalized = finalizeAdaptedPackage(
-    source,
-    parsed,
-    targetLocale,
-    sourcePackagePath,
-    generatedAt,
-  );
+  let finalized: AdaptedLessonPackage;
+  try {
+    finalized = finalizeAdaptedPackage(
+      source,
+      parsed,
+      targetLocale,
+      sourcePackagePath,
+      generatedAt,
+    );
+  } catch (error) {
+    if (
+      error instanceof Error &&
+      /cannot finalize with empty quiz options|cannot finalize with empty quiz question/.test(
+        error.message,
+      )
+    ) {
+      throw new AdaptedLessonQualityError({
+        lessonId: source.lessonId,
+        targetLocale,
+        issues: [`${source.lessonId} quiz section: ${error.message}`],
+        kind: "quality",
+      });
+    }
+    throw error;
+  }
 
   const validationErrors = validateAdaptedLessonPackage(
     source,

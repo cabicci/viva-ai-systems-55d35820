@@ -8,6 +8,7 @@ import {
   detectQuizStructureDriftWarnings,
   lockQuizOptionsToSourceStructure,
   resolveSourceQuizStructure,
+  applyDeterministicQuizFallback,
 } from "./quiz-structure.ts";
 
 export interface AdaptedLessonValidationResult {
@@ -683,18 +684,27 @@ export function repairQuizSection(
     adaptedOptionBullets,
   );
 
-  let options = locked.options;
-  if (locked.missingLocalizedSlots.length > 0) {
-    options = locked.options.map((option, index) => {
-      if (option.trim()) return option;
-      return resolved.structure.sourceOptionTextsByIndex[index]?.trim() ?? "";
-    });
-  }
-
   let question =
     quiz.question?.trim() && !isWeakQuizQuestion(quiz.question)
       ? stripBannedPhrasesFromText(quiz.question)
       : "";
+
+  let explanation = stripBannedPhrasesFromText(quiz.explanation ?? "");
+
+  const merged = applyDeterministicQuizFallback({
+    lessonId,
+    targetLocale,
+    usesOverride: resolved.structure.usesOverride,
+    lockedOptions: locked.options,
+    question,
+    explanation,
+    sourceOptionTextsByIndex: resolved.structure.sourceOptionTextsByIndex,
+    indexAlignedAdaptedOptions: adaptedOptions.length === resolved.structure.optionCount,
+  });
+
+  const options = merged.options;
+  question = merged.question;
+  explanation = merged.explanation;
 
   if (!question) {
     question =
@@ -711,7 +721,9 @@ export function repairQuizSection(
     question = ANALYST_M4_QUIZ_QUESTION_FALLBACK[targetLocale];
   }
 
-  const explanation = stripBannedPhrasesFromText(quiz.explanation ?? "");
+  if (!question.trim()) {
+    throw new Error(`${lessonId} quiz section: cannot finalize with empty quiz question`);
+  }
   const contentMarkdown = stripBannedPhrasesFromText(
     stripQuizKeyLeaksFromMarkdown(section.contentMarkdown),
   );

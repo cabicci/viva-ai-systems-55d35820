@@ -29,6 +29,8 @@ import {
 } from "../../../scripts/locale-lessons/lib/validate-adapted-lesson.ts";
 import {
   CORRUPTED_SOURCE_QUIZ_OVERRIDES,
+  applyDeterministicQuizFallback,
+  getCorruptedQuizFallback,
   identifyCorruptedSourceQuizIssues,
   lockQuizOptionsToSourceStructure,
   resolveSourceQuizStructure,
@@ -805,6 +807,83 @@ describe("locale-lessons adaptation quality checks", () => {
       quiz?.correctIndex ?? -1,
       quiz?.explanation ?? "",
     )).toEqual([]);
+  });
+
+  it("intro ar-Gulf override provides four non-empty fallback options", () => {
+    const fallback = getCorruptedQuizFallback(
+      "intro-m1-l1-what-is-ai",
+      "ar-Gulf",
+    );
+    expect(fallback).not.toBeNull();
+    expect(fallback?.options).toHaveLength(4);
+    expect(fallback?.correctIndex).toBe(1);
+    expect(fallback?.options.every((option) => option.trim().length > 0)).toBe(true);
+  });
+
+  it("finalizes intro ar-Gulf with empty model options using deterministic fallback", async () => {
+    const source = await loadMsaLessonPackage("intro-m1-l1-what-is-ai");
+    const quizIndex = source.sections.findIndex((section) => section.role === "Quiz");
+
+    const emptyModelOutput = {
+      ...source,
+      locale: "ar-Gulf",
+      title: "وش هو الذكاء الاصطناعي؟",
+      titleEn: source.titleEn,
+      sections: source.sections.map((section, index) => {
+        if (index !== quizIndex || !section.quiz) return section;
+        return {
+          ...section,
+          quiz: {
+            correctIndex: 1,
+            options: [],
+            explanation: "",
+          },
+        };
+      }),
+      adaptedFrom: {
+        locale: "ar-MSA",
+        lessonId: source.lessonId,
+        canonicalVersion: source.canonicalVersion,
+        sourcePackagePath: "x",
+      },
+      generatedAt: "2026-06-20T00:00:00.000Z",
+    } as AdaptedLessonPackage;
+
+    const preFinalizeWarnings = detectQuizIntegrityWarnings(source, emptyModelOutput);
+    expect(
+      preFinalizeWarnings.some((warning) => warning.includes("expected exactly 4 quiz options")),
+    ).toBe(true);
+
+    const finalized = finalizeAdaptedPackage(
+      source,
+      emptyModelOutput,
+      "ar-Gulf",
+      "x",
+      "2026-06-20T00:00:00.000Z",
+    );
+    const quiz = finalized.sections.find((section) => section.role === "Quiz")?.quiz;
+
+    expect(quiz?.options).toHaveLength(4);
+    expect(quiz?.options?.every((option) => option.trim().length > 0)).toBe(true);
+    expect(quiz?.correctIndex).toBe(1);
+    expect(quiz?.options?.[1]).toMatch(/ChatGPT|Gemini/u);
+    expect(detectQuizOptionPrefixWarnings(finalized)).toEqual([]);
+    expect(validateAdaptedLessonWarnings(source, finalized, "ar-Gulf")).toEqual([]);
+  });
+
+  it("throws when empty options have no deterministic fallback", () => {
+    expect(() =>
+      applyDeterministicQuizFallback({
+        lessonId: "builder-m6-l1-idea-to-page",
+        targetLocale: "en",
+        usesOverride: false,
+        lockedOptions: ["", "", ""],
+        question: "Pick one",
+        explanation: "Because.",
+        sourceOptionTextsByIndex: ["", "", ""],
+        indexAlignedAdaptedOptions: false,
+      }),
+    ).toThrow(/empty quiz options/);
   });
 
   it("analyst quiz cases do not leak Option or خيار prefixes after finalization", async () => {

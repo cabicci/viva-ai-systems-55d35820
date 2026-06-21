@@ -1,4 +1,5 @@
 import type {
+  AdaptationTargetLocale,
   LocalizedLessonPackage,
   LocalizedLessonSection,
 } from "../../../src/lib/locale-lessons/types.ts";
@@ -14,24 +15,210 @@ function normalizeSourceQuizOptionText(text: string): string {
     .trim();
 }
 
+export interface QuizStructureFallback {
+  question: string;
+  options: string[];
+  correctIndex: number;
+  explanation: string;
+}
+
+export type LocaleQuizFallbacks = Record<
+  AdaptationTargetLocale,
+  QuizStructureFallback
+>;
+
+/**
+ * Complete canonical quiz structures for corrupted ar-MSA lessons.
+ * Used during localization finalization only — never edit ar-MSA source packages.
+ */
+export const CORRUPTED_SOURCE_QUIZ_FALLBACKS: Record<string, LocaleQuizFallbacks> =
+  {
+    "intro-m1-l1-what-is-ai": {
+      en: {
+        question: "What is the best way to start understanding AI today?",
+        correctIndex: 1,
+        options: [
+          "Read as many articles about AI as you can before trying anything.",
+          "Open ChatGPT or Gemini and ask it something simple from your day.",
+          "Wait until you have taken a full course on how AI works technically.",
+          "Ask a friend who already uses AI to explain everything to you first.",
+        ],
+        explanation:
+          "One small real attempt teaches you more than a long read. This is exactly what you will do in the mission.",
+      },
+      "ar-Gulf": {
+        question: "وش أفضل طريقة تبدأ فيها تفهم الـ AI اليوم؟",
+        correctIndex: 1,
+        options: [
+          "تقرأ مقالات طويلة عن تاريخ الذكاء الاصطناعي وكيف يشتغل من الداخل.",
+          "تفتح ChatGPT أو Gemini وتطلب منه شيء بسيط من يومك.",
+          "تنتظر لين تخلص الدورة كلها قبل ما تجرب أي أداة.",
+          "تسأل شخص خبير يشرح لك كل التفاصيل التقنية أولًا.",
+        ],
+        explanation:
+          "تجربة وحدة صغيرة تعلّمك أكثر من قراءة طويلة. هذا بالضبط اللي راح تسويه في المهمة.",
+      },
+    },
+    "business-m1-l2-reactive-vs-proactive": {
+      en: {
+        question:
+          "Karim opened WhatsApp first thing in the morning because of a major supplier problem and spent 3 hours on it. How would you classify this?",
+        correctIndex: 1,
+        options: [
+          "Proactive — he chose to prioritize the supplier issue himself.",
+          "Reactive — the situation decided his day before he could choose his own priorities.",
+          "Neither — it depends on how serious the problem was.",
+          "Proactive — because he solved the problem successfully.",
+        ],
+        explanation:
+          "The size of the problem is not the measure. The measure is: who decided what you worked on first? If the outside world pulled you in before you set your own priorities, that is Reactive. Reducing repetitive Reactive work starts with recognizing when the world is taking your day.",
+      },
+      "ar-Gulf": {
+        question:
+          "خالد فتح واتساب أول الصبح بسبب مشكلة مورّد كبيرة وقضى ٣ ساعات يتابعها. وش هذا؟",
+        correctIndex: 1,
+        options: [
+          "Proactive — لأنه اتخذ قرارًا بنفسه وخصّص وقتًا للمشكلة",
+          "Reactive — الموقف حدّد يومه قبل ما يختار أولوياته",
+          "لا هذا ولا ذاك — لأن المشكلة كانت كبيرة وتستحق الوقت",
+          "Proactive — لأن التعامل مع الموردين جزء من التخطيط",
+        ],
+        explanation:
+          "حجم المشكلة مو هو المعيار. المعيار: مين اللي قرّر وش تسوّيه أول؟ لو الموقف هو اللي حدّد يومك قبل ما تختار أولوياتك، هذا Reactive. تقليل المتكرر يبدأ بمعرفة متى «العالم» يأخذ يومك.",
+      },
+    },
+    "analyst-m1-l1-from-automation-to-insight": {
+      en: {
+        question:
+          "You noticed many customers add products to the cart but do not buy. What is the best first data question?",
+        correctIndex: 2,
+        options: [
+          "How many total site visitors did we have this month?",
+          "Should we increase our marketing budget next quarter?",
+          "Where exactly do customers leave the purchase process (funnel drop-off)?",
+        ],
+        explanation:
+          "A specific question that locates the problem leads to a decision about the purchase path. General totals alone are not enough.",
+      },
+      "ar-Gulf": {
+        question:
+          "لاحظت إن كثير من الزبائن يضيفون منتجات للسلة وما يشترون. وش أفضل سؤال بيانات تبدأ فيه؟",
+        correctIndex: 2,
+        options: [
+          "كم عدد زوار الموقع هذا الشهر؟",
+          "هل نزيد ميزانية الإعلانات الربع الجاي؟",
+          "وين بالضبط يترك الزبائن عملية الشراء (funnel drop-off)؟",
+        ],
+        explanation:
+          "سؤال محدد يفهم «وين المشكلة» — يوصلك لقرار بخصوص مسار الشراء. الأرقام العامة ما تكفي.",
+      },
+    },
+    "analyst-m4-automated-dashboard": {
+      en: {
+        question:
+          "You have four numbers on the dashboard — what is the best first step for automation?",
+        correctIndex: 0,
+        options: [
+          "Automate the metric you read weekly after collecting it manually for two weeks.",
+          "Automate all four numbers at once before trying manually.",
+          "Build ten extra charts in Looker Studio.",
+        ],
+        explanation:
+          "Start with the one metric you already read weekly and act on — after two manual weeks that prove it matters.",
+      },
+      "ar-Gulf": {
+        question: "عندك ٤ أرقام في الـ Dashboard — وش أفضل خطوة أولى للأتمتة؟",
+        correctIndex: 0,
+        options: [
+          "تؤتمت الرقم اللي تقراه كل أسبوع وتاخذ عليه قرار — بعد ما جمعته يدوي أسبوعين.",
+          "تؤتمت الـ ٤ أرقام مرة واحدة قبل ما تجرب يدوي.",
+          "تبني ١٠ رسوم إضافية في Looker Studio.",
+        ],
+        explanation:
+          "ابدأ برقم واحد تقراه كل أسبوع وتتخذ قرارًا عنه — بعد ما جمعته يدويًا أسبوعين وتثبت أنه مهم.",
+      },
+    },
+  };
+
 export interface CorruptedSourceQuizOverride {
   optionCount: number;
   correctIndex: number;
 }
 
-/**
- * Canonical quiz structure for ar-MSA lessons whose source quiz JSON is incomplete.
- * Do not edit ar-MSA source packages — overrides apply at localization finalization only.
- */
+/** Metadata derived from canonical fallback quizzes (EN shape). */
 export const CORRUPTED_SOURCE_QUIZ_OVERRIDES: Record<
   string,
   CorruptedSourceQuizOverride
-> = {
-  "intro-m1-l1-what-is-ai": { optionCount: 4, correctIndex: 1 },
-  "business-m1-l2-reactive-vs-proactive": { optionCount: 4, correctIndex: 1 },
-  "analyst-m1-l1-from-automation-to-insight": { optionCount: 3, correctIndex: 2 },
-  "analyst-m4-automated-dashboard": { optionCount: 3, correctIndex: 0 },
-};
+> = Object.fromEntries(
+  Object.entries(CORRUPTED_SOURCE_QUIZ_FALLBACKS).map(([lessonId, locales]) => {
+    const fallback = locales.en;
+    return [
+      lessonId,
+      {
+        optionCount: fallback.options.length,
+        correctIndex: fallback.correctIndex,
+      },
+    ];
+  }),
+);
+
+export function getCorruptedQuizFallback(
+  lessonId: string,
+  targetLocale: AdaptationTargetLocale,
+): QuizStructureFallback | null {
+  return CORRUPTED_SOURCE_QUIZ_FALLBACKS[lessonId]?.[targetLocale] ?? null;
+}
+
+export function applyDeterministicQuizFallback(input: {
+  lessonId: string;
+  targetLocale: AdaptationTargetLocale;
+  usesOverride: boolean;
+  lockedOptions: string[];
+  question: string;
+  explanation: string;
+  sourceOptionTextsByIndex: string[];
+  indexAlignedAdaptedOptions: boolean;
+}): { options: string[]; question: string; explanation: string } {
+  const fallback = input.usesOverride
+    ? getCorruptedQuizFallback(input.lessonId, input.targetLocale)
+    : null;
+
+  const lockedHasAllOptions =
+    input.indexAlignedAdaptedOptions &&
+    input.lockedOptions.length > 0 &&
+    input.lockedOptions.every((option) => option.trim().length > 0);
+
+  let options = input.lockedOptions;
+  let question = input.question;
+  let explanation = input.explanation;
+
+  if (fallback && !lockedHasAllOptions) {
+    options = [...fallback.options];
+    if (!question.trim()) question = fallback.question;
+    if (!explanation.trim()) explanation = fallback.explanation;
+  } else if (fallback) {
+    options = input.lockedOptions.map(
+      (option, index) =>
+        option.trim() || fallback.options[index]?.trim() || "",
+    );
+    if (!question.trim()) question = fallback.question;
+    if (!explanation.trim()) explanation = fallback.explanation;
+  }
+
+  if (options.some((option) => !option.trim())) {
+    throw new Error(
+      `${input.lessonId} quiz section: cannot finalize with empty quiz options`,
+    );
+  }
+
+  if (fallback && options.length !== fallback.options.length) {
+    throw new Error(
+      `${input.lessonId} quiz section: override fallback option count mismatch`,
+    );
+  }
+
+  return { options, question, explanation };
+}
 
 export interface ResolvedQuizStructure {
   optionCount: number;
