@@ -55,7 +55,7 @@ export interface CurriculumPath {
   id: PathId;
   title: string;
   tagline: string;
-  icon: LucideIcon;
+  icon: PathIcon;
   accent: "primary" | "accent" | "secondary" | "business";
   status: "open" | "soon";
   /** marks the soft onboarding block before the real paths start. */
