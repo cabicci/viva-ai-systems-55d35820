@@ -60,5 +60,11 @@ scope: lessons
 source: user
 summary: Repair generic ar-Gulf fragment pilot titles from titleEn before final validation gate.
 
+[roadmap:e8a1c4f2-6d3b-4e9a-8f1c-2b7d5a9e3c6f]
+date: 2026-06-22
+scope: ui
+source: user
+summary: Remove remaining Sparkles/Rocket learner lesson icons via render-layer mapping.
+
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

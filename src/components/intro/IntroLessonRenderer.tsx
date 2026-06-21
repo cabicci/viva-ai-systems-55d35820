@@ -7,6 +7,7 @@ import { LESSON_DIAGRAMS } from "./diagrams/LessonDiagrams";
 import { QuizBlock } from "./QuizBlock";
 import { getBunnyEmbedUrl } from "@/lib/bunny-videos";
 import { getValueHook } from "./value-hooks";
+import { resolveLearnerLessonIcon } from "./resolve-learner-lesson-icon";
 
 function lessonVideoHasSource(
   block: Extract<IntroBlock, { kind: "lessonVideo" }>,
@@ -137,8 +138,7 @@ export function IntroLessonRenderer({
         ) {
           return <VideoSkipNotice key={i} />;
         }
-        const SectionIcon =
-          section.block.kind === "concepts" ? BookOpen : section.icon;
+        const SectionIcon = resolveLearnerLessonIcon(section.icon, section.block.kind);
         return (
           <IntroSection
             key={i}
