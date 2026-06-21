@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Badge } from "@/components/ui/badge";
 import { AssistantPanel } from "@/components/assistant/AssistantPanel";
 import { AuthSessionGate, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
+import { setAssistantSession } from "@/lib/assistant-session-store";
 
 export const Route = createFileRoute("/ai-assistant")({
   beforeLoad: requireAuthBeforeLoad,
@@ -17,6 +18,13 @@ export const Route = createFileRoute("/ai-assistant")({
   }),
   component: AIAssistantPage,
 });
+
+const STARTER_PROMPTS = [
+  "اقترح لي أبدأ منين",
+  "اشرح لي مهمة الدرس",
+  "لخّص لي اللي اتعلمته",
+  "ما الخطوة التالية؟",
+];
 
 function AIAssistantPage() {
   return (
@@ -39,6 +47,22 @@ function AIAssistantContent() {
             اسأل عن الدروس، المهام، أو الخطوة التالية في أي مسار على مسارات.
           </p>
         </header>
+
+        <section aria-label="اقتراحات للبدء" className="space-y-2">
+          <p className="text-xs text-muted-foreground">جرّب تسأل:</p>
+          <div className="flex flex-wrap gap-2">
+            {STARTER_PROMPTS.map((p) => (
+              <button
+                key={p}
+                type="button"
+                onClick={() => setAssistantSession({ query: p })}
+                className="text-xs md:text-sm rounded-full border border-border/60 bg-background/40 hover:bg-primary/10 hover:border-primary/40 px-3 py-1.5 transition"
+              >
+                {p}
+              </button>
+            ))}
+          </div>
+        </section>
 
         <AssistantPanel />
       </div>

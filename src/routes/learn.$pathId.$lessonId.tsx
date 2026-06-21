@@ -12,6 +12,7 @@ import {
   Copy,
   Check,
   Milestone,
+  ChevronDown,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { useMemo, useState } from "react";
@@ -350,12 +351,15 @@ function UnifiedLessonPage() {
           isCompleted={isCompleted}
           nextLessonHref={next ? `/learn/${pathId}/${next.slug}` : undefined}
         />
-        <section className="mt-8 rounded-2xl border border-border/60 p-5">
-          <h2 className="text-sm font-semibold text-muted-foreground mb-4">
-            مساعد المنصة
-          </h2>
-          <AssistantPanel compact />
-        </section>
+        <details className="mt-8 rounded-2xl border border-border/60 p-5 group">
+          <summary className="cursor-pointer list-none flex items-center justify-between gap-3 text-sm font-semibold text-muted-foreground hover:text-foreground transition">
+            <span>اسأل المساعد عن الدرس ده</span>
+            <ChevronDown className="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" />
+          </summary>
+          <div className="mt-4">
+            <AssistantPanel compact />
+          </div>
+        </details>
         {nextLocked && missionShape?.hasRubric && (
           <div className="mt-8 rounded-2xl border border-primary/25 bg-primary/[0.04] p-4 flex items-start gap-3">
             <Lock className="h-4 w-4 text-primary mt-0.5 shrink-0" />

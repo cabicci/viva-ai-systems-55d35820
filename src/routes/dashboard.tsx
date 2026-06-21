@@ -128,7 +128,7 @@ function Dashboard() {
         <div className="p-6 md:p-10">
         <WelcomeHint show={noProgress} />
         <StartWowBanner />
-        <WelcomeChecklist />
+        {noProgress && <WelcomeChecklist />}
         <ReviewsDueCard />
         <div className="flex items-end justify-between flex-wrap gap-4 mb-10 animate-fade-up">
           <div>
@@ -146,14 +146,18 @@ function Dashboard() {
           )}
         </div>
 
-        <div className="grid md:grid-cols-3 gap-4 mb-8">
-          <NextLessonCard
-            lesson={nextLesson}
-            lessonTitle={nextLessonData?.title ?? nextLesson?.title}
-            duration={nextLessonData?.duration}
-            pathTitle={nextLessonPath?.title}
-            delay={0}
-          />
+        {/* Stat row: hide NextLessonCard when hero CTA already points to the same lesson;
+            still show the "all done" celebration card when nextLesson is null. */}
+        <div className={`grid gap-4 mb-8 ${nextLesson ? "md:grid-cols-2" : "md:grid-cols-3"}`}>
+          {!nextLesson && (
+            <NextLessonCard
+              lesson={null}
+              lessonTitle={nextLessonData?.title}
+              duration={nextLessonData?.duration}
+              pathTitle={nextLessonPath?.title}
+              delay={0}
+            />
+          )}
           <OverallProgressCard
             pct={overallPct}
             done={allAvailableDone}
@@ -209,7 +213,7 @@ function Dashboard() {
           }) => (
             <div className="mb-4 flex items-end justify-between gap-4 border-b border-border/40 pb-3">
               <div>
-                <p className="text-[11px] font-mono text-primary tracking-widest mb-1">
+                <p className="text-[11px] font-semibold text-primary tracking-wider mb-1">
                   {eyebrow}
                 </p>
                 <h2 className="text-xl md:text-2xl font-black">
@@ -227,7 +231,7 @@ function Dashboard() {
               {intros.length > 0 && (
                 <section>
                   <TierHeader
-                    eyebrow="STAGE 00 · START"
+                    eyebrow="مرحلة ٠٠ · البداية"
                     title="ابدأ من هنا"
                     subtitle="الأساس اللي بيخلّيك تفهم باقي المنظومة قبل أي مسار."
                   />
@@ -237,7 +241,7 @@ function Dashboard() {
               {userPaths.length > 0 && (
                 <section>
                   <TierHeader
-                    eyebrow="LEVEL 1 · AI USER"
+                    eyebrow="المستوى ١ · مستخدم AI"
                     title="استخدم AI في شغلك"
                     subtitle="٨٠٪ من اللي محتاجه أي حد — محتوى، بيانات، وقرارات بدون كود."
                   />
@@ -247,7 +251,7 @@ function Dashboard() {
               {operatorPaths.length > 0 && (
                 <section>
                   <TierHeader
-                    eyebrow="LEVEL 2 · AI OPERATOR"
+                    eyebrow="المستوى ٢ · مشغّل AI"
                     title="شغّل أنظمة وأتمتة"
                     subtitle="ابني workflows ذكية تشتغل لوحدها — برضو من غير كود."
                   />
@@ -257,7 +261,7 @@ function Dashboard() {
               {builderPaths.length > 0 && (
                 <section>
                   <TierHeader
-                    eyebrow="LEVEL 3 · AI BUILDER"
+                    eyebrow="المستوى ٣ · باني AI"
                     title="ابني منتجات AI بنفسك"
                     subtitle="مسار تقني للي قرر يبني SaaS وتطبيقات AI — اختياري."
                   />
