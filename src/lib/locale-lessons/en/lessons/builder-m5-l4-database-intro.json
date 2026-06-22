@@ -1,0 +1,201 @@
+{
+  "locale": "en",
+  "lessonId": "builder-m5-l4-database-intro",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "builder",
+  "moduleId": "builder-m5",
+  "productionRoute": "/learn/builder/builder-m5-l4-database-intro",
+  "titleEn": "Database Intro (Smart Storage)",
+  "title": "Database Intro (Smart Storage)",
+  "summary": "The app needs memory (Database) — it's not just about the screen and backend.",
+  "estimatedMinutes": 12,
+  "nextLessonId": "builder-m5-l5-mini-win",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation — Lesson Start",
+      "subtitle": "Lesson Start",
+      "contentMarkdown": "- **What will you understand?** **Any app needs memory** — **a place to store clients and conversations**.\n- **Why now?** **Without storage**, **the client returns tomorrow and finds everything empty**.\n- **What after the lesson?** **You will design a table with 4 columns** — **like an Excel sheet for your app**.",
+      "bullets": [
+        "**What will you understand?** **Any app needs memory** — **a place to store clients and conversations**.",
+        "**Why now?** **Without storage**, **the client returns tomorrow and finds everything empty**.",
+        "**What after the lesson?** **You will design a table with 4 columns** — **like an Excel sheet for your app**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension — The client returned after a week — and the app forgot",
+      "subtitle": "The client returned after a week — and the app forgot",
+      "contentMarkdown": "- **The client talked to AI, got an excellent answer, and closed the app**.\n- **After a week, they opened it again** — **no conversation, no name, as if it was the first time**.\n- **An app without memory = a person without memory**. **Every day is a new beginning**.",
+      "bullets": [
+        "**The client talked to AI, got an excellent answer, and closed the app**.",
+        "**After a week, they opened it again** — **no conversation, no name, as if it was the first time**.",
+        "**An app without memory = a person without memory**. **Every day is a new beginning**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core idea — The app needs memory",
+      "subtitle": "The app needs memory",
+      "contentMarkdown": "- **Frontend = what you see**. **Backend = what works**. **Database (the storage) = what remembers**.\n- **Any information that needs to stay tomorrow** — **conversations, names, requests** — **belongs in the storage**.\n- **Think of it like an Excel sheet on a server**: **a row for each client, columns for information**.\n- **No SQL needed right now** — **the question is: what needs to be stored?**",
+      "bullets": [
+        "**Frontend = what you see**. **Backend = what works**. **Database (the storage) = what remembers**.",
+        "**Any information that needs to stay tomorrow** — **conversations, names, requests** — **belongs in the storage**.",
+        "**Think of it like an Excel sheet on a server**: **a row for each client, columns for information**.",
+        "**No SQL needed right now** — **the question is: what needs to be stored?**"
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison — Client browser vs. Server storage",
+      "subtitle": "Client browser vs. Server storage",
+      "contentMarkdown": "| Storage in the browser only | Storage on the server |\n|----------------------|-------------------|\n| **Conversations are on the client's device**. **Opening from another phone = empty**. **Clearing cache = everything is gone** | **Data is stored outside the client's device**. **Returns from any phone — finds their conversations**. **This is Database** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Storage in the browser only",
+            "Storage on the server"
+          ],
+          "rows": [
+            [
+              "**Conversations are on the client's device**. **Opening from another phone = empty**. **Clearing cache = everything is gone**",
+              "**Data is stored outside the client's device**. **Returns from any phone — finds their conversations**. **This is Database**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary — Two terms to start",
+      "subtitle": "Two terms to start",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Database (the storage)** | **The permanent archive** — **stores clients, conversations, and anything that needs to stay** | «**The last question the client asked**» — **stored in a row in the table** |\n| **Table** | **Rows and columns — like Excel**. **Each row = client or conversation** | **Columns: name \\| email \\| last visit \\| last question** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**Database (the storage)**",
+              "**The permanent archive** — **stores clients, conversations, and anything that needs to stay**",
+              "«**The last question the client asked**» — **stored in a row in the table**"
+            ],
+            [
+              "**Table**",
+              "**Rows and columns — like Excel**. **Each row = client or conversation**",
+              "**Columns: name \\**",
+              "email \\",
+              "last visit \\",
+              "last question"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Screenshot block (intent)",
+      "heading": "Screenshot block (intent)",
+      "contentMarkdown": "**Progress is not on your device** — **if you open from another phone, you will find it**. **Because it is stored in storage**. **Your app works on the same idea**.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz — Quick Confirmation",
+      "subtitle": "Quick Confirmation",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 2\n\n**Question:** **The client opened the app after 6 months and finds all their old requests. Where is the data from?**\n\nFrom the interface on their phone**.**\nFrom the backend that is currently working**.**\n**From the storage — Database**.\n\n**Explanation:** **Any old information is stored and retrieved = Database**. **The interface displays — the storage remembers**.",
+      "bullets": [
+        "From the interface on their phone**.**",
+        "From the backend that is currently working**.**",
+        "**From the storage — Database**."
+      ],
+      "tables": [],
+      "quiz": {
+        "question": "**The client opened the app after 6 months and finds all their old requests. Where is the data from?**",
+        "correctIndex": 2,
+        "options": [
+          "From the interface on their phone.",
+          "From the backend that is currently working.",
+          "From the storage — Database."
+        ],
+        "explanation": "**Any old information is stored and retrieved = Database**. **The interface displays — the storage remembers**."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission — Design a table with 4 columns",
+      "subtitle": "Design a table with 4 columns",
+      "contentMarkdown": "**Introduction:** **Planning task — not SQL**. **5–10 minutes is enough**.\n\n**Delivery:**\n\n1. **Table name** (like ",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Clear 4 columns",
+              "60%",
+              "**Each column has a name + type + example**. **The columns are linked to the AI application — not random**."
+            ],
+            [
+              "Logical reason",
+              "40%",
+              "Each column has a "
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "**Planning task — not SQL**. **5–10 minutes is enough**.",
+        "delivery": [
+          "**Table name** (like ",
+          "**4 columns** — **for each column: name, type of information (text/number/date), example, why it's important**.",
+          "A sentence "
+        ],
+        "rubric": [
+          {
+            "dimension": "Clear 4 columns",
+            "weight": 60,
+            "criteria": "**Each column has a name + type + example**. **The columns are linked to the AI application — not random**."
+          },
+          {
+            "dimension": "Logical reason",
+            "weight": 40,
+            "criteria": "Each column has a "
+          }
+        ],
+        "yamlIntent": "Design table name + 4 columns with type, example, why — ~5–10 min",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence close",
+      "contentMarkdown": "- **I understood:** **the app = interface + backend + memory**. **Without storage, the client is forgotten**.\n- **You can:** **a table with 4 columns** — **the basis of any AI application**.\n- **Next:** **Mini Win** — ",
+      "bullets": [
+        "**I understood:** **the app = interface + backend + memory**. **Without storage, the client is forgotten**.",
+        "**You can:** **a table with 4 columns** — **the basis of any AI application**.",
+        "**Next:** **Mini Win** — "
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-06-22T01:41:56.424Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "builder-m5-l4-database-intro",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/builder-m5-l4-database-intro.canonical.md"
+  }
+}

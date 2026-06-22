@@ -9,7 +9,7 @@ export type LessonContentSource = "egyptian-ts" | "locale-package-json";
 
 export type LessonRegistryStatus = "published" | "sample" | "unavailable";
 
-/** ar-Gulf and en remain sample-only in runtime until a later import phase. */
+/** Historical pilot sample size — full runtime packages now use REQUIRED_LESSON_COUNT. */
 export const SAMPLE_PACKAGE_LESSON_LIMIT = 3;
 
 const PACKAGE_MANIFESTS: Record<

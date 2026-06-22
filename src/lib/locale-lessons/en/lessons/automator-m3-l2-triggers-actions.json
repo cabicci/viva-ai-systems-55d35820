@@ -1,0 +1,191 @@
+{
+  "locale": "en",
+  "lessonId": "automator-m3-l2-triggers-actions",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "automator",
+  "moduleId": "automator-m3",
+  "productionRoute": "/learn/automator/automator-m3-l2-triggers-actions",
+  "titleEn": "Triggers and Actions",
+  "title": "Triggers and Actions",
+  "summary": "Every automation = Trigger + Actions — when X happens, do Y",
+  "estimatedMinutes": 12,
+  "nextLessonId": "automator-m3-l3-filters-routers",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation",
+      "subtitle": "Orientation",
+      "contentMarkdown": "- **What will you understand?** Every automation = \"When this happens, do that\" — **Trigger** + one or more **Actions**.\n- **Why now?** After choosing the tool, you need to design your first **workflow** for the automation — before opening any screen.\n- **What after the lesson?** You will design one **workflow**: Trigger → 2-3 **Actions**.",
+      "bullets": [
+        "**What will you understand?** Every automation = \"When this happens, do that\" — **Trigger** + one or more **Actions**.",
+        "**Why now?** After choosing the tool, you need to design your first **workflow** for the automation — before opening any screen.",
+        "**What after the lesson?** You will design one **workflow**: Trigger → 2-3 **Actions**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension",
+      "subtitle": "Familiar Situation",
+      "contentMarkdown": "You build a **Flow** — without knowing \"for what?\"\n\nYou open the tool and add **Actions** — but the **Trigger** is unclear. The **Flow** works… but not at the right time.\n\nThe automation needs to know: what event wakes it up? And what does it do after waking up?\n\n\"When X → do Y\" — a single sentence to design any automation.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core Idea",
+      "subtitle": "Core Idea",
+      "contentMarkdown": "**When this happens → do that**\n\n- **Trigger:** The event that starts the action — a form is completed, a message is received, 9 AM.\n- **Action:** What the automation performs — sends an email, adds a row, sends a WhatsApp message.\n- Common types of **Triggers**: **Schedule**, **Webhook**, **Event**.\n- **Actions** in sequence: the output of the first **Action** = the input of the second. Like a chain.\n- **Example:** \"When someone fills out the form → log in the table → send a welcome WhatsApp message.\"",
+      "bullets": [
+        "**Trigger:** The event that starts the action — a form is completed, a message is received, 9 AM.",
+        "**Action:** What the automation performs — sends an email, adds a row, sends a WhatsApp message.",
+        "Common types of **Triggers**: **Schedule**, **Webhook**, **Event**.",
+        "**Actions** in sequence: the output of the first **Action** = the input of the second. Like a chain.",
+        "**Example:** \"When someone fills out the form → log in the table → send a welcome WhatsApp message.\""
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison",
+      "subtitle": "Real-Life Example",
+      "contentMarkdown": "| Actions only | Trigger + Actions |\n|---------------------|-------------------------------------|\n| A **Flow** sends an email — but doesn’t know \"when\". You manually trigger it every time. This is not automation | \"When a new form → welcome email\". The tool doesn’t open — the automation works on its own |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Actions only",
+            "Trigger + Actions"
+          ],
+          "rows": [
+            [
+              "A **Flow** sends an email — but doesn’t know \"when\". You manually trigger it every time. This is not automation.",
+              "\"When a new form → welcome email\". The tool doesn’t open — the automation works on its own."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary",
+      "subtitle": "Terms for Workflow",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Trigger** | \"When...\" — the event that wakes up the automation | A customer purchased a course (**Webhook** from the payment gateway) |\n| **Action** | \"Do...\" — the step performed after the trigger | Send a WhatsApp message with the access link |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**Trigger**",
+              "\"When...\" — the event that wakes up the automation",
+              "A customer purchased a course (**Webhook** from the payment gateway)"
+            ],
+            [
+              "**Action**",
+              "\"Do...\" — the step performed after the trigger",
+              "Send a WhatsApp message with the access link"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Screenshot block (intent)",
+      "heading": "Screenshot Block",
+      "contentMarkdown": "Illustration: Each step = **Trigger** → **Action**. Example: \"Task completed\" → \"Log\" + \"Open next\" + \"Remind\". (The visual reference from the Egyptian production remains unchanged.)",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz",
+      "subtitle": "Quick Confirmation",
+      "contentMarkdown": "> **Quiz key:** correctIndex: 0\n\n**Question:** I want a WhatsApp message with the access link to be sent immediately when a customer purchases a course. What is the correct design?\n\n- **Correct answer:** **Trigger:** **Webhook** from the payment gateway (new purchase). **Action:** Send WhatsApp.\n- **Explanation:** The purchase = an immediate event → **Webhook**. \"When they purchase → send WhatsApp\" — this is the design of the automation.\n\n*(Incorrect options preserved from production: Schedule every hour to check for purchases; Manual for each customer.)*",
+      "bullets": [
+        "**Correct answer:** **Trigger:** **Webhook** from the payment gateway (new purchase). **Action:** Send WhatsApp.",
+        "**Explanation:** The purchase = an immediate event → **Webhook**. \"When they purchase → send WhatsApp\" — this is the design of the automation."
+      ],
+      "tables": [],
+      "quiz": {
+        "question": "I want a WhatsApp message with the access link to be sent immediately when a customer purchases a course. What is the correct design?",
+        "correctIndex": 0,
+        "options": [
+          "**Trigger:** **Webhook** from the payment gateway (new purchase). **Action:** Send WhatsApp.",
+          "An inappropriate option; it ignores the basic data in the section above.",
+          "A partial answer that misses the context and ignores the next step of the decision."
+        ],
+        "explanation": "The purchase = an immediate event → **Webhook**. \"When they purchase → send WhatsApp\" — this is the design of the automation."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission",
+      "subtitle": "Your Mission",
+      "contentMarkdown": "**Introduction:** Design a **workflow** for your automation candidate — one **Trigger** + 2-3 **Actions**. Design on paper — no building in the tool. 10-15 minutes is enough.\n\n**Submission:** The goal in one line · **Trigger** (type + \"when...\" + data) · **Action 1** and **Action 2** (with input linking) · (optional) Action 3 · **Success** — how do you know it worked?\n\n**Evaluation Criteria (from production — unchanged weights):**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Trigger + Actions | 60% | Clear Trigger with type and \"when...\"; Action 1 + 2 linked to previous data |\n| Success | 40% | Measurable success criterion; the goal linked to Success |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Trigger + Actions",
+              "60%",
+              "Clear Trigger with type and \"when...\"; Action 1 + 2 linked to previous data"
+            ],
+            [
+              "Success",
+              "40%",
+              "Measurable success criterion; the goal linked to Success"
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "Design a **workflow** for your automation candidate — one **Trigger** + 2-3 **Actions**. Design on paper — no building in the tool. 10-15 minutes is enough.",
+        "delivery": [],
+        "rubric": [
+          {
+            "dimension": "Trigger + Actions",
+            "weight": 60,
+            "criteria": "Clear Trigger with type and \"when...\"; Action 1 + 2 linked to previous data"
+          },
+          {
+            "dimension": "Success",
+            "weight": 40,
+            "criteria": "Measurable success criterion; the goal linked to Success"
+          }
+        ],
+        "yamlIntent": "Design workflow for automation candidate — paper only, 10–15 min; Trigger type + «when» + data + chained Actions + Success",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence Close",
+      "subtitle": "What do you have now?",
+      "contentMarkdown": "- **I understood:** Every automation = \"When this happens → do that\" — **Trigger** + **Actions**.\n- **You can:** You have a designed **workflow** ready — you can build it in the tool you chose.\n- **Next:** **Filters & Routers** — when \"when...\" needs a decision: where to go?",
+      "bullets": [
+        "**I understood:** Every automation = \"When this happens → do that\" — **Trigger** + **Actions**.",
+        "**You can:** You have a designed **workflow** ready — you can build it in the tool you chose.",
+        "**Next:** **Filters & Routers** — when \"when...\" needs a decision: where to go?"
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-06-22T01:19:21.701Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "automator-m3-l2-triggers-actions",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/automator-m3-l2-triggers-actions.canonical.md"
+  }
+}

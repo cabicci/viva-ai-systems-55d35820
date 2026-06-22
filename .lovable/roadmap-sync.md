@@ -93,4 +93,10 @@ scope: infra
 source: user
 summary: Phase 1 locale runtime foundation — registry, resolver, internal lesson access layer; no production behavior change.
 
+[roadmap:c4d7e2a9-1f6b-4d8e-b3a5-9e0f1a2b3c4d]
+date: 2026-06-22
+scope: lessons
+source: user
+summary: Import gated full ar-Gulf/en locale packages from sanitized final-v3 staging; production remains ar-EG.
+
 This file is updated after the matching roadmap_items row is updated.

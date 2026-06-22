@@ -1,0 +1,193 @@
+{
+  "locale": "en",
+  "lessonId": "builder-m10-l1-deploy-domain",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "builder",
+  "moduleId": "builder-m10",
+  "productionRoute": "/learn/builder/builder-m10-l1-deploy-domain",
+  "titleEn": "Deploy & Domain",
+  "title": "Deploy & Domain",
+  "summary": "Deploy means a public link — keep secrets in Environment Variables, not in code.",
+  "estimatedMinutes": 12,
+  "nextLessonId": "builder-m10-l2-first-users",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation — Lesson Start",
+      "subtitle": "Lesson Start",
+      "contentMarkdown": "- **What will you understand?** **How to deploy your app with a public link** — **and keep secrets in a safe place**.\n- **Why now?** **You have built an interface, a database, and AI** — **but it’s still on localhost**. **Only you can use it**.\n- **What after the lesson?** **You will distinguish between what is 'public' (link, name)** **and what is 'secret' (API keys)**.",
+      "bullets": [
+        "**What will you understand?** **How to deploy your app with a public link** — **and keep secrets in a safe place**.",
+        "**Why now?** **You have built an interface, a database, and AI** — **but it’s still on localhost**. **Only you can use it**.",
+        "**What after the lesson?** **You will distinguish between what is 'public' (link, name)** **and what is 'secret' (API keys)**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension — A good app — but trapped on your device",
+      "subtitle": "A good app — but trapped on your device",
+      "contentMarkdown": "- **Everything works on `localhost`** — **but no one in the world can access it**.\n- **You send `localhost:5173` to your friend** — **it won’t open for them**. **The app is still just an idea on your device**.\n- **Deploy** = **make it available on the internet**. **But the OpenAI key must remain secret** — **not in the code**.",
+      "bullets": [
+        "**Everything works on `localhost`** — **but no one in the world can access it**.",
+        "**You send `localhost:5173` to your friend** — **it won’t open for them**. **The app is still just an idea on your device**.",
+        "**Deploy** = **make it available on the internet**. **But the OpenAI key must remain secret** — **not in the code**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core idea — Public link + Protected secrets",
+      "subtitle": "Public link + Protected secrets",
+      "contentMarkdown": "- **Deploy** = **the code goes to a server** — **people access it from a public URL** (like `my-app.com`).\n- **Secrets (API keys, database keys)** **go to a 'vault' on the server** — **Environment Variables** — **not in GitHub**.\n- **The difference:** **what people see (link, interface)** **versus what must remain hidden (keys)**.",
+      "bullets": [
+        "**Deploy** = **the code goes to a server** — **people access it from a public URL** (like `my-app.com`).",
+        "**Secrets (API keys, database keys)** **go to a 'vault' on the server** — **Environment Variables** — **not in GitHub**.",
+        "**The difference:** **what people see (link, interface)** **versus what must remain hidden (keys)**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison — Key in code vs Key in vault",
+      "subtitle": "Key in code vs Key in vault",
+      "contentMarkdown": "| Secret in code | Secret in Env Vars |\n|----------------|------------------|\n| **OpenAI key in a file on GitHub** — **anyone can see it and use it on your account**. **Financial and security disaster** | **Code is public — keys are only in the server vault**. **The link is public, secrets are protected** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Secret in code",
+            "Secret in Env Vars"
+          ],
+          "rows": [
+            [
+              "**OpenAI key in a file on GitHub** — **anyone can see it and use it on your account**. **Financial and security disaster**",
+              "**Code is public — keys are only in the server vault**. **The link is public, secrets are protected**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary — Two terms to start",
+      "subtitle": "Two terms to start",
+      "contentMarkdown": "| Term | Meaning | Example |\n|------|---------|---------|\n| **Deploy** | **Move the app from your device to a server** — **a public URL that anyone can access** | **From localhost → `https://my-ai-app.com`** |\n| **Environment Variables** | **A vault for secrets on the server** — **API keys and database passwords** | **OPENAI_API_KEY in Production settings** — **not in the code** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**Deploy**",
+              "**Move the app from your device to a server** — **a public URL that anyone can access**",
+              "**From localhost → `https://my-ai-app.com`**"
+            ],
+            [
+              "**Environment Variables**",
+              "**A vault for secrets on the server** — **API keys and database passwords**",
+              "**OPENAI_API_KEY in Production settings** — **not in the code**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Screenshot block (intent)",
+      "heading": "Screenshot block (intent)",
+      "contentMarkdown": "**Build log — successful deployment:**\n\nEvery deploy = **a new version on the internet**. **The build log shows what succeeded and what failed** — **not a black box**.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz — Quick Check",
+      "subtitle": "Quick Check",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** **The app runs on your device. What is the most critical thing you might forget before deployment?**\n\n**API keys in the Production vault** — **not in the code or GitHub**.\nThe color of the 'Submit' button in the interface**.**\nThe number of 404 pages**.**\n\n**Explanation:** **Wrong secrets = the app crashes or gets stolen**. **The link is public — and secrets must stay in the vault**.",
+      "bullets": [
+        "**API keys in the Production vault** — **not in the code or GitHub**.",
+        "The color of the 'Submit' button in the interface**.**",
+        "The number of 404 pages**.**"
+      ],
+      "tables": [],
+      "quiz": {
+        "question": "**The app runs on your device. What is the most critical thing you might forget before deployment?**",
+        "correctIndex": 0,
+        "options": [
+          "**API keys in the Production vault** — **not in the code or GitHub**.",
+          "The color of the 'Submit' button in the interface.",
+          "The number of 404 pages."
+        ],
+        "explanation": "**Wrong secrets = the app crashes or gets stolen**. **The link is public — and secrets must stay in the vault**."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission — List: Public vs Secret",
+      "subtitle": "List: Public vs Secret",
+      "contentMarkdown": "**Introduction:** **Before Deploy — distinguish what people see from what must remain hidden**. **10 minutes**.\n\n**Submission:** **3 public items**, **3 secrets**, **which secret would be the most dangerous if leaked** and why.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| Correct Classification | 60% | **3 public (URL, interface, public content)**; **3 secrets (API keys, DB password, JWT secret)** |\n| Risk Priority | 40% | **Most dangerous secret due to logic (money, user data, ...)** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Correct Classification",
+              "60%",
+              "**3 public (URL, interface, public content)**; **3 secrets (API keys, DB password, JWT secret)**"
+            ],
+            [
+              "Risk Priority",
+              "40%",
+              "**Most dangerous secret due to logic (money, user data, ...)**"
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "**Before Deploy — distinguish what people see from what must remain hidden**. **10 minutes**.",
+        "delivery": [],
+        "rubric": [
+          {
+            "dimension": "Correct Classification",
+            "weight": 60,
+            "criteria": "**3 public (URL, interface, public content)**; **3 secrets (API keys, DB password, JWT secret)**"
+          },
+          {
+            "dimension": "Risk Priority",
+            "weight": 40,
+            "criteria": "**Most dangerous secret due to logic (money, user data, ...)**"
+          }
+        ],
+        "yamlIntent": "Classify 3 public vs 3 secret items + most dangerous secret + why — ~10 min",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence close",
+      "contentMarkdown": "- **I understand:** **Deploy = public link**. **Secrets = in the vault** — **not in the code**.\n- **You can:** **have a public vs secret list ready before deployment**.\n- **Next:** **The first 10 users** — **reality teaches you more than any plan**.",
+      "bullets": [
+        "**I understand:** **Deploy = public link**. **Secrets = in the vault** — **not in the code**.",
+        "**You can:** **have a public vs secret list ready before deployment**.",
+        "**Next:** **The first 10 users** — **reality teaches you more than any plan**."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-06-22T01:20:35.015Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "builder-m10-l1-deploy-domain",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/builder-m10-l1-deploy-domain.canonical.md"
+  }
+}

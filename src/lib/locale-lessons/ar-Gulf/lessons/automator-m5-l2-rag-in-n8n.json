@@ -1,0 +1,116 @@
+{
+  "locale": "ar-Gulf",
+  "lessonId": "automator-m5-l2-rag-in-n8n",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "automator",
+  "moduleId": "automator-m5",
+  "productionRoute": "/learn/automator/automator-m5-l2-rag-in-n8n",
+  "titleEn": "RAG in Automation",
+  "title": "بدء الدرس",
+  "summary": "RAG = ابحث في معرفتك أولاً، ثم اكتب الرد",
+  "estimatedMinutes": 12,
+  "nextLessonId": "automator-m5-l3-agents",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "التوجيه — بدء الدرس",
+      "subtitle": "بدء الدرس",
+      "contentMarkdown": "- **وش راح تفهم؟** **RAG** = الرد الآلي من مستنداتك (أسئلة شائعة، أسعار) — مو من تخمين.\n- **ليش الحين؟** سؤال عن سعر أو ضمان يحتاج سحب من ملفك.\n- **وش بعد الدرس؟** رسم بياني: سؤال → مصدر → رد — مو بناءً تقني.",
+      "bullets": [
+        "**وش راح تفهم؟** **RAG** = الرد الآلي من مستنداتك (أسئلة شائعة، أسعار) — مو من تخمين.",
+        "**ليش الحين؟** سؤال عن سعر أو ضمان يحتاج سحب من ملفك.",
+        "**وش بعد الدرس؟** رسم بياني: سؤال → مصدر → رد — مو بناءً تقني."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "التوتر — البوت قال سعر خطأ",
+      "subtitle": "البوت قال سعر خطأ",
+      "contentMarkdown": "- عميل سأل عن الباقة — البوت رد برقم من عنده. الرقم خطأ.\n- **AI** يجيب من معرفة عامة — **RAG** يبحث في مصادرك أولاً.",
+      "bullets": [
+        "عميل سأل عن الباقة — البوت رد برقم من عنده. الرقم خطأ.",
+        "**AI** يجيب من معرفة عامة — **RAG** يبحث في مصادرك أولاً."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "الفكرة الأساسية — RAG = ابحث ثم اكتب",
+      "subtitle": "RAG = ابحث ثم اكتب",
+      "contentMarkdown": "- بدون **RAG:** سؤال → AI → تخمين.\n- مع **RAG:** سؤال → **Retrieval (استرجاع)** من أسئلة شائعة → AI يصوغ من المقتطف.\n- جهّز مصدر واحد — **Knowledge Source (مصدر المعرفة)**.",
+      "bullets": [
+        "بدون **RAG:** سؤال → AI → تخمين.",
+        "مع **RAG:** سؤال → **Retrieval (استرجاع)** من أسئلة شائعة → AI يصوغ من المقتطف.",
+        "جهّز مصدر واحد — **Knowledge Source (مصدر المعرفة)**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "المقارنة",
+      "contentMarkdown": "| AI بدون RAG | AI + RAG |\n|-------------|----------|\n| يخمّن مدة التوصيل | يسحب من جدولك: «القاهرة ١–٢ يوم» |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "AI بدون RAG",
+            "AI + RAG"
+          ],
+          "rows": [
+            [
+              "يخمّن مدة التوصيل",
+              "يسحب من جدولك: «القاهرة ١–٢ يوم»"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Quiz",
+      "heading": "اختبار — correctIndex: 1",
+      "subtitle": "correctIndex: 1",
+      "contentMarkdown": "> **مفتاح الاختبار (غير متغير):** correctIndex: 1\n\nتكتب system prompt أطول يقوله «متخمّنش».\n- **الإجابة الصحيحة**: تختار مصدر أسئلة شائعة أو قائمة أسعار وتربطه بالأوتوميشن قبل كل رد.\nتوقف البوت وترد يدوي على كل الأسئلة.\n\n**التفسير:** الإجابة الصحيحة مو محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+      "bullets": [
+        "تكتب system prompt أطول يقوله «متخمّنش».",
+        "**الإجابة الصحيحة**: تختار مصدر أسئلة شائعة أو قائمة أسعار وتربطه بالأوتوميشن قبل كل رد.",
+        "توقف البوت وترد يدوي على كل الأسئلة."
+      ],
+      "tables": [],
+      "quiz": {
+        "correctIndex": 1,
+        "options": [
+          "تكتب system prompt أطول يقوله «متخمّنش».",
+          "توقف البوت وترد يدوي على كل الأسئلة.",
+          "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+        ],
+        "explanation": "الإجابة الصحيحة مو محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+        "question": "وش الخيار الأنسب وفقًا لما ورد في القسم أعلاه؟"
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "المهمة — مصدر أسئلة شائعة واحد",
+      "subtitle": "مصدر أسئلة شائعة واحد",
+      "contentMarkdown": "| مصدر حقيقي | 60% |\n| ربط سؤال بمصدر | 40% |",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Confidence close",
+      "heading": "إغلاق الثقة",
+      "contentMarkdown": "- **التالي:** **Agents** — مسار غير ثابت.\n\n---",
+      "bullets": [
+        "**التالي:** **Agents** — مسار غير ثابت."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-06-22T02:09:20.367Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "automator-m5-l2-rag-in-n8n",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/automator-m5-l2-rag-in-n8n.canonical.md"
+  }
+}

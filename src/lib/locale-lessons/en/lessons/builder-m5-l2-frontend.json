@@ -1,0 +1,200 @@
+{
+  "locale": "en",
+  "lessonId": "builder-m5-l2-frontend",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "builder",
+  "moduleId": "builder-m5",
+  "productionRoute": "/learn/builder/builder-m5-l2-frontend",
+  "titleEn": "Frontend (Application Interface)",
+  "title": "Frontend (Application Interface)",
+  "summary": "Frontend = what you see — Backend = what works behind the scenes",
+  "estimatedMinutes": 12,
+  "nextLessonId": "builder-m5-l3-backend-api",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation — Lesson Start",
+      "subtitle": "Lesson Start",
+      "contentMarkdown": "- **What will you understand?** **Frontend** = **what the user sees and clicks on**. **Backend** = **the work happening behind the screen**.\n- **Why now?** **When something goes wrong**, **the first question**: **Is the issue in the appearance or the functionality?**\n- **What after the lesson?** **You will identify 5 parts in any application** — **Frontend or Backend**.",
+      "bullets": [
+        "**What will you understand?** **Frontend** = **what the user sees and clicks on**. **Backend** = **the work happening behind the screen**.",
+        "**Why now?** **When something goes wrong**, **the first question**: **Is the issue in the appearance or the functionality?**",
+        "**What after the lesson?** **You will identify 5 parts in any application** — **Frontend or Backend**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension — 'The AI is not responding' — Where is the problem?",
+      "subtitle": "'The AI is not responding' — Where is the problem?",
+      "contentMarkdown": "- **The client says 'the application is not working'** — **but what exactly?** **Is the button not clickable?** **Or does it click but there's no response?**\n- **'Not working' is a vague statement**. **Without knowing: appearance or functionality** — **you will waste time fixing the wrong issue**.\n- **The first step always**: **Identify the layer** — **Frontend or Backend**.",
+      "bullets": [
+        "**The client says 'the application is not working'** — **but what exactly?** **Is the button not clickable?** **Or does it click but there's no response?**",
+        "**'Not working' is a vague statement**. **Without knowing: appearance or functionality** — **you will waste time fixing the wrong issue**.",
+        "**The first step always**: **Identify the layer** — **Frontend or Backend**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core idea — Frontend = what you see — Backend = what works",
+      "subtitle": "Frontend = what you see — Backend = what works",
+      "contentMarkdown": "- **Frontend** = **everything on the screen**: **buttons, text, colors, input boxes**.\n- **Backend** = **the work you don't see**: **AI communication, data verification, saving, decisions**.\n- **In a restaurant**: **the menu and table = Frontend**. **The kitchen = Backend**.\n- **When troubleshooting, ask**: **What does the client see?** **Or is the work behind it not functioning?**",
+      "bullets": [
+        "**Frontend** = **everything on the screen**: **buttons, text, colors, input boxes**.",
+        "**Backend** = **the work you don't see**: **AI communication, data verification, saving, decisions**.",
+        "**In a restaurant**: **the menu and table = Frontend**. **The kitchen = Backend**.",
+        "**When troubleshooting, ask**: **What does the client see?** **Or is the work behind it not functioning?**"
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison — Button not clickable vs No response",
+      "subtitle": "Button not clickable vs No response",
+      "contentMarkdown": "| Frontend Issue | Backend Issue |\n|----------------|---------------|\n| **The button is gray and unclickable**. **Or the screen is blank**. **The client cannot start** — **the issue is in the appearance** | **The button works and the screen loads** — **but there is no response**. **Or an error message**. **The appearance is fine** — **the work behind it is halted** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Frontend Issue",
+            "Backend Issue"
+          ],
+          "rows": [
+            [
+              "**The button is gray and unclickable**. **Or the screen is blank**. **The client cannot start** — **the issue is in the appearance**",
+              "**The button works and the screen loads** — **but there is no response**. **Or an error message**. **The appearance is fine** — **the work behind it is halted**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary — Two Terms to Start",
+      "subtitle": "Two Terms to Start",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Frontend** | **the face** — **everything the client sees and interacts with on the screen** | **Input box + 'Send' button + chat list** |\n| **Backend** | **the brain** — **receives requests, communicates with AI, and returns responses** | **When you click 'Send'**, **the backend sends the question to the AI** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**Frontend**",
+              "**the face** — **everything the client sees and interacts with on the screen**",
+              "**Input box + 'Send' button + chat list**"
+            ],
+            [
+              "**Backend**",
+              "**the brain** — **receives requests, communicates with AI, and returns responses**",
+              "**When you click 'Send'**, **the backend sends the question to the AI**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Screenshot block (intent)",
+      "heading": "Screenshot block (intent)",
+      "contentMarkdown": "**Open any AI application → right-click → Inspect**. **What you see in Frontend** — **the code that built the screen**. **Try it yourself (F12 or Inspect)**.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz — Quick Confirmation",
+      "subtitle": "Quick Confirmation",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** **In an AI chat application, the input box where you type your question — is it Frontend or Backend?**\n\n**Frontend** — **because the client sees and uses it**.\nBackend** — **because it sends the question**.**\nDatabase** — **because it saves the conversation**.**\n\n**Explanation:** **The input box on the screen = Frontend**. **Sending the question to the AI = Backend**.",
+      "bullets": [
+        "**Frontend** — **because the client sees and uses it**.",
+        "Backend** — **because it sends the question**.**",
+        "Database** — **because it saves the conversation**.**"
+      ],
+      "tables": [],
+      "quiz": {
+        "question": "**In an AI chat application, the input box where you type your question — is it Frontend or Backend?**",
+        "correctIndex": 0,
+        "options": [
+          "**Frontend** — **because the client sees and uses it**.",
+          "**Backend** — **because it sends the question**.",
+          "**Database** — **because it saves the conversation**."
+        ],
+        "explanation": "**The input box on the screen = Frontend**. **Sending the question to the AI = Backend**."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission — Differentiate 5 Parts",
+      "subtitle": "Differentiate 5 Parts",
+      "contentMarkdown": "**Introduction:** **Analysis task — not coding**. **Open any AI application you use**. **5–10 minutes is enough**.\n\n**Delivery:** **For each part, write Frontend or Backend with a reason:**\n\n1. Input box\n2. 'Send' button\n3. Response displayed on the screen\n4. AI communication with the question (the work you don't see)\n5. Saving the conversation to return tomorrow\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Correct Classification | 60% | **1–3 are usually Frontend**. **4–5 are usually Backend/Database**. **Each choice has a logical reason** |\n| Clear Reasoning | 40% | **The reason distinguishes 'what is seen' from 'what works behind'**. **Not a guess without justification** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Correct Classification",
+              "60%",
+              "**1–3 are usually Frontend**. **4–5 are usually Backend/Database**. **Each choice has a logical reason**"
+            ],
+            [
+              "Clear Reasoning",
+              "40%",
+              "**The reason distinguishes 'what is seen' from 'what works behind'**. **Not a guess without justification**"
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "**Analysis task — not coding**. **Open any AI application you use**. **5–10 minutes is enough**.",
+        "delivery": [
+          "Input box",
+          "'Send' button",
+          "Response displayed on the screen",
+          "AI communication with the question (the work you don't see)",
+          "Saving the conversation to return tomorrow"
+        ],
+        "rubric": [
+          {
+            "dimension": "Correct Classification",
+            "weight": 60,
+            "criteria": "**1–3 are usually Frontend**. **4–5 are usually Backend/Database**. **Each choice has a logical reason**"
+          },
+          {
+            "dimension": "Clear Reasoning",
+            "weight": 40,
+            "criteria": "**The reason distinguishes 'what is seen' from 'what works behind'**. **Not a guess without justification**"
+          }
+        ],
+        "yamlIntent": "Open any AI app and classify 5 parts — Frontend or Backend with why — ~5–10 min",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence Close",
+      "contentMarkdown": "- **I understand:** **Frontend = what you see**. **Backend = what works**. **The first step in any problem: identify the layer**.\n- **You can:** **differentiate 5 parts in any application** — **and know where the problem usually lies**.\n- **Next:** **API (the messenger)** — **how the frontend and backend communicate**.\n\n---",
+      "bullets": [
+        "**I understand:** **Frontend = what you see**. **Backend = what works**. **The first step in any problem: identify the layer**.",
+        "**You can:** **differentiate 5 parts in any application** — **and know where the problem usually lies**.",
+        "**Next:** **API (the messenger)** — **how the frontend and backend communicate**."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-06-22T01:21:26.613Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "builder-m5-l2-frontend",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/builder-m5-l2-frontend.canonical.md"
+  }
+}

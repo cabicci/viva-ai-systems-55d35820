@@ -14,10 +14,10 @@ import {
 } from "@/lib/locale/types";
 import {
   EGYPTIAN_LESSON_IDS,
-  SAMPLE_PACKAGE_LESSON_LIMIT,
   getPackageLessonCount,
   isLessonInLocalePackage,
 } from "@/lib/locale-lessons/registry";
+import { REQUIRED_LESSON_COUNT } from "@/lib/locale-lessons/types";
 import { resolveLessonAccess } from "@/lib/locale-lessons/resolve-lesson-access";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
@@ -76,7 +76,7 @@ describe("locale runtime foundation", () => {
     expect(access.contentRef).toContain(`${lessonId}.ts`);
   });
 
-  it("falls back to ar-EG when localized lesson data is unavailable", () => {
+  it("falls back to ar-EG when localized lessons are gated off", () => {
     const lessonId = "analyst-m1-l1-from-automation-to-insight";
     const access = resolveLessonAccess(lessonId, "ar-Gulf");
 
@@ -87,24 +87,27 @@ describe("locale runtime foundation", () => {
     expect(access.available).toBe(true);
   });
 
-  it("falls back to ar-EG for Gulf lessons outside the sample package", () => {
+  it("still falls back to ar-EG for full Gulf packages while gated off", () => {
     const lessonId = "analyst-m1-l1-from-automation-to-insight";
-    expect(isLessonInLocalePackage(lessonId, "ar-Gulf")).toBe(false);
+    expect(isLessonInLocalePackage(lessonId, "ar-Gulf")).toBe(true);
 
     const access = resolveLessonAccess(lessonId, "ar-Gulf");
+    expect(localizedLessonsEnabled).toBe(false);
     expect(access.effectiveLocale).toBe("ar-EG");
+    expect(access.contentSource).toBe("egyptian-ts");
     expect(access.fallbackUsed).toBe(true);
+    expect(access.available).toBe(true);
   });
 
-  it("keeps ar-Gulf and en runtime folders sample-only (no mass import)", () => {
-    expect(getPackageLessonCount("ar-Gulf")).toBe(SAMPLE_PACKAGE_LESSON_LIMIT);
-    expect(getPackageLessonCount("en")).toBe(SAMPLE_PACKAGE_LESSON_LIMIT);
+  it("imports full ar-Gulf and en runtime packages while staying gated off", () => {
+    expect(getPackageLessonCount("ar-Gulf")).toBe(REQUIRED_LESSON_COUNT);
+    expect(getPackageLessonCount("en")).toBe(REQUIRED_LESSON_COUNT);
     expect(countJsonLessons("src/lib/locale-lessons/ar-Gulf/lessons")).toBe(
-      SAMPLE_PACKAGE_LESSON_LIMIT,
+      REQUIRED_LESSON_COUNT,
     );
     expect(countJsonLessons("src/lib/locale-lessons/en/lessons")).toBe(
-      SAMPLE_PACKAGE_LESSON_LIMIT,
+      REQUIRED_LESSON_COUNT,
     );
-    expect(getPackageLessonCount("ar-MSA")).toBe(100);
+    expect(getPackageLessonCount("ar-MSA")).toBe(REQUIRED_LESSON_COUNT);
   });
 });

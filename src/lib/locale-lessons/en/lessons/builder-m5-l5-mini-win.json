@@ -1,0 +1,205 @@
+{
+  "locale": "en",
+  "lessonId": "builder-m5-l5-mini-win",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "builder",
+  "moduleId": "builder-m5",
+  "productionRoute": "/learn/builder/builder-m5-l5-mini-win",
+  "titleEn": "Mini Win — Check What You Learned",
+  "title": "Mini Win — Check What You Learned",
+  "summary": "Small and shipped is better than complete and untested — Mini Win before perfection.",
+  "estimatedMinutes": 12,
+  "nextLessonId": "builder-m6-l1-idea-to-page",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation — Lesson Start",
+      "subtitle": "Lesson Start",
+      "contentMarkdown": "- **What will you understand?** **\"Small and shipped\" is better than \"complete and untested\"** — **Mini Win before perfection**.\n- **Why now?** **You have completed 3 layers**: **Frontend, Backend, Database**. **It's time to pause and solidify**.\n- **What after the lesson?** **You will define Mini Win for your app** — **the smallest version you can publish and test**.",
+      "bullets": [
+        "**What will you understand?** **\"Small and shipped\" is better than \"complete and untested\"** — **Mini Win before perfection**.",
+        "**Why now?** **You have completed 3 layers**: **Frontend, Backend, Database**. **It's time to pause and solidify**.",
+        "**What after the lesson?** **You will define Mini Win for your app** — **the smallest version you can publish and test**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension — Planning for a big app — and not starting",
+      "subtitle": "Planning for a big app — and not starting",
+      "contentMarkdown": "- **You have 20 features in mind**: **login, payment, 5 languages, dashboard, notifications...**\n- **After a month, you are still planning** — **and nothing works in front of a real user**.\n- **The problem is not the idea**. **The problem is that you are waiting for \"perfection\" before trying**.",
+      "bullets": [
+        "**You have 20 features in mind**: **login, payment, 5 languages, dashboard, notifications...**",
+        "**After a month, you are still planning** — **and nothing works in front of a real user**.",
+        "**The problem is not the idea**. **The problem is that you are waiting for \"perfection\" before trying**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core idea — Small and shipped > Complete and untested",
+      "subtitle": "Small and shipped > Complete and untested",
+      "contentMarkdown": "- **Mini Win = the smallest version of your app that you can publish and test with a real user**.\n- **One page + one action + one result = enough to start**.\n- **Feedback from 3 users is more important than 30 features that no one has tried**.\n- **Phase 2 finishes the concepts — Phase 3 will build**. **Mini Win is your bridge**.",
+      "bullets": [
+        "**Mini Win = the smallest version of your app that you can publish and test with a real user**.",
+        "**One page + one action + one result = enough to start**.",
+        "**Feedback from 3 users is more important than 30 features that no one has tried**.",
+        "**Phase 2 finishes the concepts — Phase 3 will build**. **Mini Win is your bridge**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison — Full app in mind vs Mini Win",
+      "subtitle": "Full app in mind vs Mini Win",
+      "contentMarkdown": "| \"I will do everything first\" | Mini Win in a week |\n|----------------------|-------------------|\n| **3 months of planning**. **login + payment + 10 pages**. **No one has tried it — no feedback** | **One page: write a question → AI responds**. **5 friends tried it**. **I learned what works and what doesn't** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "\"I will do everything first\"",
+            "Mini Win in a week"
+          ],
+          "rows": [
+            [
+              "**3 months of planning**. **login + payment + 10 pages**. **No one has tried it — no feedback**",
+              "**One page: write a question → AI responds**. **5 friends tried it**. **I learned what works and what doesn't**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary — Two terms to start",
+      "subtitle": "Two terms to start",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Mini Win** | **The smallest published version that proves the idea works** — **not a prototype in mind** | \"**AI summarizes an article**\" — **one page, paste + button + summary. That's it** |\n| **MVP (Minimum Viable Product)** | **The same idea in English** — **the smallest product that delivers real value** | **Uber started with \"request a car\"** — **without Uber Eats** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**Mini Win**",
+              "**The smallest published version that proves the idea works** — **not a prototype in mind**",
+              "\"**AI summarizes an article**\" — **one page, paste + button + summary. That's it**"
+            ],
+            [
+              "**MVP (Minimum Viable Product)**",
+              "**The same idea in English** — **the smallest product that delivers real value**",
+              "**Uber started with \"request a car\"** — **without Uber Eats**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Core block",
+      "heading": "Core block — 3 layers ready for building",
+      "subtitle": "3 layers ready for building",
+      "contentMarkdown": "- **Frontend**: **the client sees and clicks**.\n- **Backend**: **AI works behind the screen**.\n- **Database**: **the app remembers**.\n- **Mini Win = the least in each layer** — **but works end-to-end**.",
+      "bullets": [
+        "**Frontend**: **the client sees and clicks**.",
+        "**Backend**: **AI works behind the screen**.",
+        "**Database**: **the app remembers**.",
+        "**Mini Win = the least in each layer** — **but works end-to-end**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz — Quick Confirmation",
+      "subtitle": "Quick Confirmation",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** **Sarah has an idea for an AI app with 15 features. What is the best step before Phase 3?**\n\n**Define Mini Win — the smallest version you can publish and test**.\nComplete planning for all 15 features**.**\nLearn React and SQL first**.**\n\n**Explanation:** **Mini Win first** — **real feedback is more important than a complete plan without testing**.",
+      "bullets": [
+        "**Define Mini Win — the smallest version you can publish and test**.",
+        "Complete planning for all 15 features**.**",
+        "Learn React and SQL first**.**"
+      ],
+      "tables": [],
+      "quiz": {
+        "question": "**Sarah has an idea for an AI app with 15 features. What is the best step before Phase 3?**",
+        "correctIndex": 0,
+        "options": [
+          "**Define Mini Win — the smallest version you can publish and test**.",
+          "Complete planning for all 15 features.",
+          "Learn React and SQL first."
+        ],
+        "explanation": "**Mini Win first** — **real feedback is more important than a complete plan without testing**."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission — Define Mini Win for your app",
+      "subtitle": "Define Mini Win for your app",
+      "contentMarkdown": "**Introduction:** **Definition mission — not building**. **Use the Product Request from the transition lesson**. **5–10 minutes**.\n\n**Delivery:**\n\n1. **The idea (sentence)**\n2. **Mini Win**: **one page, one action, one result**\n3. **What is not in Mini Win (later)**: **feature 1, feature 2**\n4. **First 3 testers**\n\n**Evaluation criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Defined Mini Win | 60% | **Page + action + result** — **not a \"full app\"**. **You can imagine it published in a week** |\n| Clear boundaries | 40% | **Includes \"not now\"**. **3 defined testers** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Defined Mini Win",
+              "60%",
+              "**Page + action + result** — **not a \"full app\"**. **You can imagine it published in a week**"
+            ],
+            [
+              "Clear boundaries",
+              "40%",
+              "**Includes \"not now\"**. **3 defined testers**"
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "**Definition mission — not building**. **Use the Product Request from the transition lesson**. **5–10 minutes**.",
+        "delivery": [
+          "**The idea (sentence)**",
+          "**Mini Win**: **one page, one action, one result**",
+          "**What is not in Mini Win (later)**: **feature 1, feature 2**",
+          "**First 3 testers**"
+        ],
+        "rubric": [
+          {
+            "dimension": "Defined Mini Win",
+            "weight": 60,
+            "criteria": "**Page + action + result** — **not a \"full app\"**. **You can imagine it published in a week**"
+          },
+          {
+            "dimension": "Clear boundaries",
+            "weight": 40,
+            "criteria": "**Includes \"not now\"**. **3 defined testers**"
+          }
+        ],
+        "yamlIntent": "Define Mini Win — page, action, outcome, not-now list, 3 testers — ~5–10 min",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence close",
+      "contentMarkdown": "- **You understood:** **Small and shipped > Complete and untested**. **Mini Win = your bridge to Phase 3**.\n- **You can:** **Define Mini Win + boundaries + 3 testers**.\n- **Next:** **From idea to page** — **how any idea becomes screens and steps**.\n\n---",
+      "bullets": [
+        "**You understood:** **Small and shipped > Complete and untested**. **Mini Win = your bridge to Phase 3**.",
+        "**You can:** **Define Mini Win + boundaries + 3 testers**.",
+        "**Next:** **From idea to page** — **how any idea becomes screens and steps**."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-06-22T01:22:00.037Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "builder-m5-l5-mini-win",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/builder-m5-l5-mini-win.canonical.md"
+  }
+}

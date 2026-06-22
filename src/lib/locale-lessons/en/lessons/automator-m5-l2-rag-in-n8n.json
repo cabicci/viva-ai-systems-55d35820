@@ -1,0 +1,116 @@
+{
+  "locale": "en",
+  "lessonId": "automator-m5-l2-rag-in-n8n",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "automator",
+  "moduleId": "automator-m5",
+  "productionRoute": "/learn/automator/automator-m5-l2-rag-in-n8n",
+  "titleEn": "RAG in Automation",
+  "title": "RAG in Automation",
+  "summary": "RAG = search your knowledge first, then write the reply",
+  "estimatedMinutes": 12,
+  "nextLessonId": "automator-m5-l3-agents",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation — Lesson Start",
+      "subtitle": "Lesson Start",
+      "contentMarkdown": "- **What will you understand?** **RAG** = automated response from your documents (FAQs, prices) — not from guessing.\n- **Why now?** A question about price or warranty needs to pull from your file.\n- **What after the lesson?** Diagram: Question → Source → Response — not a technical build.",
+      "bullets": [
+        "**What will you understand?** **RAG** = automated response from your documents (FAQs, prices) — not from guessing.",
+        "**Why now?** A question about price or warranty needs to pull from your file.",
+        "**What after the lesson?** Diagram: Question → Source → Response — not a technical build."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension — The bot gave the wrong price",
+      "subtitle": "The bot gave the wrong price",
+      "contentMarkdown": "- A client asked about the package — the bot responded with a number it generated. The number was incorrect.\n- **AI** answers from general knowledge — **RAG** searches your sources first.",
+      "bullets": [
+        "A client asked about the package — the bot responded with a number it generated. The number was incorrect.",
+        "**AI** answers from general knowledge — **RAG** searches your sources first."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core idea — RAG = Search then Write",
+      "subtitle": "RAG = Search then Write",
+      "contentMarkdown": "- Without **RAG:** Question → AI → Guessing.\n- With **RAG:** Question → **Retrieval** from FAQs → AI formulates from the excerpt.\n- Prepare one source — **Knowledge Source**.",
+      "bullets": [
+        "Without **RAG:** Question → AI → Guessing.",
+        "With **RAG:** Question → **Retrieval** from FAQs → AI formulates from the excerpt.",
+        "Prepare one source — **Knowledge Source**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison",
+      "contentMarkdown": "| AI without RAG | AI + RAG |\n|-------------|----------|\n| guesses delivery time | pulls from your schedule: \"Cairo 1–2 days\" |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "AI without RAG",
+            "AI + RAG"
+          ],
+          "rows": [
+            [
+              "guesses delivery time",
+              "pulls from your schedule: \"Cairo 1–2 days\""
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz",
+      "subtitle": "Select the best option based on the section above.",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 1\n\nWrite a longer system prompt that says \"Don't guess\".\n- **Correct answer:** Choose a FAQ source or price list and link it to the automation before each response.\nStop the bot and respond manually to all questions.\n\n**Explanation:** The correct answer is to choose a FAQ source or price list and link it to the automation before each response.",
+      "bullets": [
+        "Write a longer system prompt that says \"Don't guess\".",
+        "**Correct answer:** Choose a FAQ source or price list and link it to the automation before each response.",
+        "Stop the bot and respond manually to all questions."
+      ],
+      "tables": [],
+      "quiz": {
+        "correctIndex": 1,
+        "options": [
+          "Write a longer system prompt that says \"Don't guess\".",
+          "Stop the bot and respond manually to all questions.",
+          "A partial answer that misses the context and ignores the next step in the decision."
+        ],
+        "explanation": "to choose a FAQ source or price list and link it to the automation before each response.",
+        "question": "What is the best option according to the section above?"
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission — One FAQ Source",
+      "subtitle": "One FAQ Source",
+      "contentMarkdown": "| Real Source | 60% |\n| Linking a question to a source | 40% |",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence close",
+      "contentMarkdown": "- **Next:** **Agents** — a non-fixed path.\n\n---",
+      "bullets": [
+        "**Next:** **Agents** — a non-fixed path."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-06-22T01:20:31.699Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "automator-m5-l2-rag-in-n8n",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/automator-m5-l2-rag-in-n8n.canonical.md"
+  }
+}

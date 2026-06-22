@@ -1,0 +1,84 @@
+{
+  "locale": "ar-Gulf",
+  "lessonId": "analyst-m6-l2-interpretation-mistakes",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "analyst",
+  "moduleId": "analyst-m6",
+  "productionRoute": "/learn/analyst/analyst-m6-l2-interpretation-mistakes",
+  "titleEn": "Interpretation Mistakes",
+  "title": "أخطاء التفسير",
+  "summary": "بيانات صحيحة + تفسير خاطئ = قرار خاطئ",
+  "estimatedMinutes": 12,
+  "nextLessonId": "analyst-m7-l1-from-decisions-to-business",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "التوجيه — بداية الدرس",
+      "subtitle": "بداية الدرس",
+      "contentMarkdown": "- **وش راح تفهم؟** البيانات صحيحة — والقرار خطأ إذا قرأتها بشكل خاطئ.",
+      "bullets": [
+        "**وش راح تفهم؟** البيانات صحيحة — والقرار خطأ إذا قرأتها بشكل خاطئ."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "الفكرة الرئيسية — ٤ فخاخ",
+      "subtitle": "٤ فخاخ",
+      "contentMarkdown": "- **الارتباط (Correlation)** ≠ السببية\n- عيّنة صغيرة — ٣ عملاء مو «السوق»\n- **رقم شكلي (Vanity Metric)** — لايكات ≠ مبيعات\n- تحيز الوقت — آخر أسبوع مو كل القصة",
+      "bullets": [
+        "**الارتباط (Correlation)** ≠ السببية",
+        "عيّنة صغيرة — ٣ عملاء مو «السوق»",
+        "**رقم شكلي (Vanity Metric)** — لايكات ≠ مبيعات",
+        "تحيز الوقت — آخر أسبوع مو كل القصة"
+      ],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "اختبار — الخيار الصحيح: 0",
+      "subtitle": "الخيار الصحيح: 0",
+      "contentMarkdown": "> **مفتاح الاختبار (غير متغير):** الخيار الصحيح: 0\n\n- **الإجابة الصحيحة:** الارتباط ≠ السببية — ممكن يكون في سبب ثالث (وقت اليوم، نوع الزبائن).\nتحليل الشلل — يتأخر في القرار.\nرقم شكلي — اللايكات مو مهمة.\n\n**التفسير:** الخيار الصحيح هو الارتباط ≠ السببية، لأنه يوضح أن هناك عوامل أخرى تؤثر.",
+      "bullets": [
+        "**الإجابة الصحيحة:** الارتباط ≠ السببية — ممكن يكون في سبب ثالث (وقت اليوم، نوع الزبائن).",
+        "تحليل الشلل — يتأخر في القرار.",
+        "رقم شكلي — اللايكات مو مهمة."
+      ],
+      "tables": [],
+      "quiz": {
+        "correctIndex": 0,
+        "options": [
+          "الارتباط ≠ السببية — ممكن في سبب ثالث (وقت اليوم، نوع الزبائن).",
+          "تحليل الشلل — يتأخر في القرار.",
+          "رقم شكلي — اللايكات مو مهمة."
+        ],
+        "explanation": "الارتباط ≠ السببية، لأنه يوضح أن هناك عوامل أخرى تؤثر.",
+        "question": "ما الخيار الأنسب وفقًا لما ورد في القسم السابق؟"
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "المهمة — ٣ سيناريوهات",
+      "subtitle": "٣ سيناريوهات",
+      "contentMarkdown": "| تشخيص الفخ | 50% |\n| قرار أصح | 50% |",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Confidence close",
+      "heading": "ختام الثقة",
+      "contentMarkdown": "- **التالي:** **من القرارات إلى الأعمال**.\n\n---",
+      "bullets": [
+        "**التالي:** **من القرارات إلى الأعمال**."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-06-22T01:09:06.667Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "analyst-m6-l2-interpretation-mistakes",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/analyst-m6-l2-interpretation-mistakes.canonical.md"
+  }
+}

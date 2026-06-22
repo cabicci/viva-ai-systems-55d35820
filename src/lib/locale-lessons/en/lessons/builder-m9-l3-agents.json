@@ -1,0 +1,194 @@
+{
+  "locale": "en",
+  "lessonId": "builder-m9-l3-agents",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "builder",
+  "moduleId": "builder-m9",
+  "productionRoute": "/learn/builder/builder-m9-l3-agents",
+  "titleEn": "Agents — AI Takes Decisions",
+  "title": "Agents — AI Takes Decisions",
+  "summary": "Agent = goal + tools + boundaries — not just a chatbot that talks",
+  "estimatedMinutes": 12,
+  "nextLessonId": "builder-m10-l1-deploy-domain",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation — Lesson Start",
+      "subtitle": "Lesson Start",
+      "contentMarkdown": "- **What will you understand?** **An AI Agent** **needs a goal + tools + boundaries** — **not just responses**.\n- **Why now?** **RAG allows AI to respond from your files** — **but 'book me an appointment' is a request for action, not information**.\n- **What comes after the lesson?** **You will define a goal + two tools + one boundary (out of scope)**.\n- **Optional depth:** **For those who want to build agents**. **You can skip it if your goal is just to use AI in your work**.",
+      "bullets": [
+        "**What will you understand?** **An AI Agent** **needs a goal + tools + boundaries** — **not just responses**.",
+        "**Why now?** **RAG allows AI to respond from your files** — **but 'book me an appointment' is a request for action, not information**.",
+        "**What comes after the lesson?** **You will define a goal + two tools + one boundary (out of scope)**.",
+        "**Optional depth:** **For those who want to build agents**. **You can skip it if your goal is just to use AI in your work**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension — AI describes the solution — but it hasn't executed",
+      "subtitle": "AI describes the solution — but it hasn't executed",
+      "contentMarkdown": "- **Customer: 'I want to cancel my subscription'**. **AI: 'Go to Settings → Billing → Cancel'**.\n- **The customer closed the chat angrily** — **I gave instructions instead of resolving the issue**.\n- **Chatbot responds**. **Agent executes** — **but with specific tools and clear boundaries**.",
+      "bullets": [
+        "**Customer: 'I want to cancel my subscription'**. **AI: 'Go to Settings → Billing → Cancel'**.",
+        "**The customer closed the chat angrily** — **I gave instructions instead of resolving the issue**.",
+        "**Chatbot responds**. **Agent executes** — **but with specific tools and clear boundaries**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core idea — Agent = goal + tools + boundaries",
+      "subtitle": "Agent = goal + tools + boundaries",
+      "contentMarkdown": "- **Agent** = **AI that makes decisions and uses Tools (functions)** **to execute in the real world**.\n- **Tools like `cancelSubscription` or `searchOrders`** — **the Agent chooses when to use them**.\n- **Boundaries:** **what is out of scope** — **like 'do not delete data without confirmation' or 'do not make payments without approval'**.",
+      "bullets": [
+        "**Agent** = **AI that makes decisions and uses Tools (functions)** **to execute in the real world**.",
+        "**Tools like `cancelSubscription` or `searchOrders`** — **the Agent chooses when to use them**.",
+        "**Boundaries:** **what is out of scope** — **like 'do not delete data without confirmation' or 'do not make payments without approval'**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison — Chatbot says vs Agent acts",
+      "subtitle": "Chatbot says vs Agent acts",
+      "contentMarkdown": "| Chatbot — Just words | Agent — Executes |\n|--------------------|---------------|\n| 'To cancel your subscription, do this.' **The customer still has to act themselves** | **Uses `getSubscription` → asks 'Confirm cancellation?' → `cancelSubscription`**. **The task completed in 20 seconds** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Chatbot — Just words",
+            "Agent — Executes"
+          ],
+          "rows": [
+            [
+              "'To cancel your subscription, do this.' **The customer still has to act themselves**",
+              "**Uses `getSubscription` → asks 'Confirm cancellation?' → `cancelSubscription`**. **The task completed in 20 seconds**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary — Two terms to start",
+      "subtitle": "Two terms to start",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Agent** | **AI that makes decisions and executes** — **not just responses** | **Cancels a subscription, reschedules an appointment — on its own using tools** |\n| **Tool** | **function in code that the Agent calls** — **like `sendEmail` or `findOrder`** | **Like a chef using a knife** — **the Agent uses a tool to execute** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**Agent**",
+              "**AI that makes decisions and executes** — **not just responses**",
+              "**Cancels a subscription, reschedules an appointment — on its own using tools**"
+            ],
+            [
+              "**Tool**",
+              "**function in code that the Agent calls** — **like `sendEmail` or `findOrder`**",
+              "**Like a chef using a knife** — **the Agent uses a tool to execute**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Screenshot block (intent)",
+      "heading": "Screenshot block (intent)",
+      "contentMarkdown": "**Agent's thought circle:**\n\n**Think → Act (tool) → Observe (result) → Repeat** until the task is complete. **This is what allows it to solve multi-step problems**.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz — Quick Confirmation",
+      "subtitle": "Quick Confirmation",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** **A customer can't find their invoice. You have `search_orders` and `create_ticket`. What does the Agent start with?**\n\n**`search_orders` first** — **gathers information before taking any action**.\n`create_ticket` directly** — **opens a complaint immediately**.**\nasks the customer for the invoice number** — **without searching**.**\n\n**Explanation:** **A smart Agent gathers information first** — **like a customer service representative** — **before executing**.",
+      "bullets": [
+        "**`search_orders` first** — **gathers information before taking any action**.",
+        "`create_ticket` directly** — **opens a complaint immediately**.**",
+        "asks the customer for the invoice number** — **without searching**.**"
+      ],
+      "tables": [],
+      "quiz": {
+        "question": "**A customer can't find their invoice. You have `search_orders` and `create_ticket`. What does the Agent start with?**",
+        "correctIndex": 0,
+        "options": [
+          "**`search_orders` first** — **gathers information before taking any action**.",
+          "`create_ticket` directly — **opens a complaint immediately**.",
+          "asks the customer for the invoice number — **without searching**."
+        ],
+        "explanation": "**A smart Agent gathers information first** — **like a customer service representative** — **before executing**."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission — Goal + 2 Tools + 1 Boundary",
+      "subtitle": "Goal + 2 Tools + 1 Boundary",
+      "contentMarkdown": "**Introduction:** **Design a simple Agent** — **not code, just a plan**. **10–15 minutes**.\n\n**Submission:** **The goal (one line)**, **Tool 1** (name, what it does), **Tool 2**, **one boundary out of scope** and why.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Goal and Tools | 60% | **Clear goal in one line**; **two different tools — name and description for each** |\n| Safety Boundary | 40% | **One realistic boundary (out of scope)**; **logical reason for the boundary** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Goal and Tools",
+              "60%",
+              "**Clear goal in one line**; **two different tools — name and description for each**"
+            ],
+            [
+              "Safety Boundary",
+              "40%",
+              "**One realistic boundary (out of scope)**; **logical reason for the boundary**"
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "**Design a simple Agent** — **not code, just a plan**. **10–15 minutes**.",
+        "delivery": [],
+        "rubric": [
+          {
+            "dimension": "Goal and Tools",
+            "weight": 60,
+            "criteria": "**Clear goal in one line**; **two different tools — name and description for each**"
+          },
+          {
+            "dimension": "Safety Boundary",
+            "weight": 40,
+            "criteria": "**One realistic boundary (out of scope)**; **logical reason for the boundary**"
+          }
+        ],
+        "yamlIntent": "Design simple Agent — goal, 2 tools with names, 1 boundary with why — ~10–15 min",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence close",
+      "contentMarkdown": "- **You understood:** **Agent = goal + tools + boundaries** — **not just a chatbot**.\n- **You can:** **You have designed an Agent with two tools and one boundary**.\n- **Next:** **Deploy** — **launch your app to the world with a public link and protected secrets**.",
+      "bullets": [
+        "**You understood:** **Agent = goal + tools + boundaries** — **not just a chatbot**.",
+        "**You can:** **You have designed an Agent with two tools and one boundary**.",
+        "**Next:** **Deploy** — **launch your app to the world with a public link and protected secrets**."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-06-22T01:23:31.568Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "builder-m9-l3-agents",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/builder-m9-l3-agents.canonical.md"
+  }
+}

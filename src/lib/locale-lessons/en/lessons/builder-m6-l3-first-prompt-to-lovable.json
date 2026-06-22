@@ -1,0 +1,202 @@
+{
+  "locale": "en",
+  "lessonId": "builder-m6-l3-first-prompt-to-lovable",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "builder",
+  "moduleId": "builder-m6",
+  "productionRoute": "/learn/builder/builder-m6-l3-first-prompt-to-lovable",
+  "titleEn": "First Prompt to Lovable",
+  "title": "First Prompt to Lovable",
+  "summary": "First prompt = goal + users + pages + style + constraints",
+  "estimatedMinutes": 12,
+  "nextLessonId": "builder-m6-l4-components-routes",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation — Lesson Start",
+      "subtitle": "Lesson Start",
+      "contentMarkdown": "- **What will you understand?** **The first prompt needs 5 parts**: **goal + users + pages + style + constraints**.\n- **Why now?** **You have a wireframe** — **now turn it into a lovable prompt that understands you right away**.\n- **What after the lesson?** **A prompt draft ready to copy** — **not code or programming**.\n- **Lovable = a building assistant that reads your description and generates an interface**. **You describe — you don’t program**.",
+      "bullets": [
+        "**What will you understand?** **The first prompt needs 5 parts**: **goal + users + pages + style + constraints**.",
+        "**Why now?** **You have a wireframe** — **now turn it into a lovable prompt that understands you right away**.",
+        "**What after the lesson?** **A prompt draft ready to copy** — **not code or programming**.",
+        "**Lovable = a building assistant that reads your description and generates an interface**. **You describe — you don’t program**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension — 'Build an Interface' — it doesn’t turn out as you imagined",
+      "subtitle": "'Build an Interface' — it doesn’t turn out as you imagined",
+      "contentMarkdown": "- **You wrote 'Build an AI Interface'** — **it produced bright colors and sections you didn’t want**.\n- **Lovable builds exactly what you write** — **not what you wish for**. **3 words = complete guess**.\n- **The solution**: **Write a 5-part recipe** — **copy it into Lovable and see the result**.",
+      "bullets": [
+        "**You wrote 'Build an AI Interface'** — **it produced bright colors and sections you didn’t want**.",
+        "**Lovable builds exactly what you write** — **not what you wish for**. **3 words = complete guess**.",
+        "**The solution**: **Write a 5-part recipe** — **copy it into Lovable and see the result**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core idea — The first prompt = 5 parts",
+      "subtitle": "The first prompt = 5 parts",
+      "contentMarkdown": "- **Goal**: **What type of interface and for what purpose?**\n- **Users**: **Who will use it?**\n- **Pages**: **Name the wireframe sections**.\n- **Style**: **Colors, tone, mood**.\n- **Constraints**: **What is not in the first version?**",
+      "bullets": [
+        "**Goal**: **What type of interface and for what purpose?**",
+        "**Users**: **Who will use it?**",
+        "**Pages**: **Name the wireframe sections**.",
+        "**Style**: **Colors, tone, mood**.",
+        "**Constraints**: **What is not in the first version?**"
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison — 'Build an Interface' vs Prompt Spec",
+      "subtitle": "'Build an Interface' vs Prompt Spec",
+      "contentMarkdown": "| 3 Words | Prompt Spec |\n|---------|-------------|\n| '**Build a Cafe Interface**' — **AI guesses everything. 6 adjustments. Still not right** | **Goal: landing page for a cafe + AI barista. Users: customers aged 20-35. Pages: hero + menu with 6 drinks + contact. Style: warm, brown, and beige. Constraints: no login** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "3 Words",
+            "Prompt Spec"
+          ],
+          "rows": [
+            [
+              "'**Build a Cafe Interface**' — **AI guesses everything. 6 adjustments. Still not right**",
+              "**Goal: landing page for a cafe + AI barista. Users: customers aged 20-35. Pages: hero + menu with 6 drinks + contact. Style: warm, brown, and beige. Constraints: no login**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary — Two Terms to Start",
+      "subtitle": "Two Terms to Start",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Prompt Spec** | **The complete recipe** — **goal, users, pages, style, constraints** | **Like specifications for a tailor: size, color, number of buttons** |\n| **Scope** | **What is in this version — and what is later** | '**Only one page — Home**' — **not a complete site** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**Prompt Spec**",
+              "**The complete recipe** — **goal, users, pages, style, constraints**",
+              "**Like specifications for a tailor: size, color, number of buttons**"
+            ],
+            [
+              "**Scope**",
+              "**What is in this version — and what is later**",
+              "'**Only one page — Home**' — **not a complete site**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Screenshot block (intent)",
+      "heading": "Screenshot block (intent)",
+      "contentMarkdown": "**Prompt on the left — preview on the right**. **The prompt is not 'Build an Interface'** — **it includes goal, activity, sections by name, and style**. **The result is closer from the start**.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz — Quick Confirmation",
+      "subtitle": "Quick Confirmation",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** **You want Lovable to build only the Home Page — without login. What is the best part of the Prompt Spec?**\n\n**Constraints: one page (Home) — without login in the first version**.\n'**Build a complete site**'.\nStyle: beautiful colors**.**\n\n**Explanation:** **Constraints + Scope define the limits** — **AI does not guess extra features**.",
+      "bullets": [
+        "**Constraints: one page (Home) — without login in the first version**.",
+        "'**Build a complete site**'.",
+        "Style: beautiful colors**.**"
+      ],
+      "tables": [],
+      "quiz": {
+        "question": "**You want Lovable to build only the Home Page — without login. What is the best part of the Prompt Spec?**",
+        "correctIndex": 0,
+        "options": [
+          "**Constraints: one page (Home) — without login in the first version**.",
+          "'**Build a complete site**'.",
+          "Style: beautiful colors."
+        ],
+        "explanation": "**Constraints + Scope define the limits** — **AI does not guess extra features**."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission — Write the First Prompt for Lovable",
+      "subtitle": "Write the First Prompt for Lovable",
+      "contentMarkdown": "**Introduction:** **A draft for copying — not implementation**. **Use the wireframe from the previous lesson**. **10-15 minutes**.\n\n**Submission:**\n\n- **Goal:** [Type of interface + what it does]\n- **Users:** [Who uses it]\n- **Pages:** [Wireframe sections by name]\n- **Style:** [Two colors + mood]\n- **Constraints:** [What is not in the first version]\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| All five present | 60% | **Goal, Users, Pages, Style, Constraints — all written**. **Pages linked to the wireframe** |\n| Ready to copy | 40% | **Style has at least two colors**. **Constraints specify 'not now'** |",
+      "bullets": [
+        "**Goal:** [Type of interface + what it does]",
+        "**Users:** [Who uses it]",
+        "**Pages:** [Wireframe sections by name]",
+        "**Style:** [Two colors + mood]",
+        "**Constraints:** [What is not in the first version]"
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "All five present",
+              "60%",
+              "**Goal, Users, Pages, Style, Constraints — all written**. **Pages linked to the wireframe**"
+            ],
+            [
+              "Ready to copy",
+              "40%",
+              "**Style has at least two colors**. **Constraints specify 'not now'**"
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "**A draft for copying — not implementation**. **Use the wireframe from the previous lesson**. **10-15 minutes**.",
+        "delivery": [],
+        "rubric": [
+          {
+            "dimension": "All five present",
+            "weight": 60,
+            "criteria": "**Goal, Users, Pages, Style, Constraints — all written**. **Pages linked to the wireframe**"
+          },
+          {
+            "dimension": "Ready to copy",
+            "weight": 40,
+            "criteria": "**Style has at least two colors**. **Constraints specify 'not now'**"
+          }
+        ],
+        "yamlIntent": "Draft Goal, Users, Pages, Style, Constraints from Wireframe — ~10–15 min",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence Close",
+      "contentMarkdown": "- **You understood:** **The first prompt = 5 parts**. **Lovable is a building assistant — you describe, you don’t program**.\n- **You can:** **A draft ready to copy in Lovable whenever you want**.\n- **Next:** **Components & Routes** — **how the pages connect**.\n\n---",
+      "bullets": [
+        "**You understood:** **The first prompt = 5 parts**. **Lovable is a building assistant — you describe, you don’t program**.",
+        "**You can:** **A draft ready to copy in Lovable whenever you want**.",
+        "**Next:** **Components & Routes** — **how the pages connect**."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-06-22T01:22:25.273Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "builder-m6-l3-first-prompt-to-lovable",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/builder-m6-l3-first-prompt-to-lovable.canonical.md"
+  }
+}

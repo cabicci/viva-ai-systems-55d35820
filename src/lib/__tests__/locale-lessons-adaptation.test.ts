@@ -33,17 +33,23 @@ describe("locale-lessons adaptation pipeline", () => {
     expect(result.archivedIncluded).toEqual([]);
   });
 
-  it("treats target packages as sample (3) or empty — never valid at full 100 until complete", async () => {
+  it("validates target packages as sample (3), full (100), or empty", async () => {
     for (const target of ADAPTATION_TARGET_LOCALES) {
       const manifestPath = manifestPathForLocale(target);
       if (existsSync(manifestPath)) {
         const manifest = JSON.parse(
           readFileSync(manifestPath, "utf8"),
-        ) as LocalizedSampleManifest;
+        ) as LocalizedSampleManifest & { packageStatus?: string };
         if (manifest.packageStatus === "sample") {
           const sample = await validateSampleTargetPackage(target);
           expect(sample.ok).toBe(true);
           expect(sample.count).toBe(SAMPLE_LESSON_COUNT);
+          continue;
+        }
+        if (manifest.packageStatus === "full") {
+          const full = await validateTargetPackage(target);
+          expect(full.ok).toBe(true);
+          expect(full.foundLessonCount).toBe(REQUIRED_LESSON_COUNT);
           continue;
         }
       }

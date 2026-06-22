@@ -1,0 +1,93 @@
+{
+  "locale": "ar-Gulf",
+  "lessonId": "automator-m6-l1-lead-capture",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "automator",
+  "moduleId": "automator-m6",
+  "productionRoute": "/learn/automator/automator-m6-l1-lead-capture",
+  "titleEn": "Lead Capture",
+  "title": "انطلاق الدرس",
+  "summary": "كل عميل محتمل = تسجيل فوري + رد + تنبيه — ما في شيء يضيع",
+  "estimatedMinutes": 12,
+  "nextLessonId": "automator-m6-l2-whatsapp-flow",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "التوجيه — انطلاق الدرس",
+      "subtitle": "انطلاق الدرس",
+      "contentMarkdown": "- **وش راح تفهم؟** **أتمتة تسجيل العملاء المحتملين** تمنع ضياع المهتمين — تسجيل فوري ورد وتنبيه.\n- **ليش الحين؟** جسر بين الاهتمام الخارجي ونظام عملك.",
+      "bullets": [
+        "**وش راح تفهم؟** **أتمتة تسجيل العملاء المحتملين** تمنع ضياع المهتمين — تسجيل فوري ورد وتنبيه.",
+        "**ليش الحين؟** جسر بين الاهتمام الخارجي ونظام عملك."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "التوتر — «كان مهتمًا — ثم ضاع»",
+      "subtitle": "«كان مهتمًا — ثم ضاع»",
+      "contentMarkdown": "- نموذج أو رسالة «أريد السعر» — تم رؤيتها متأخرًا أو نُسيت.\n- لا يوجد نظام يمسك كل **عميل محتمل** فورًا.",
+      "bullets": [
+        "نموذج أو رسالة «أريد السعر» — تم رؤيتها متأخرًا أو نُسيت.",
+        "لا يوجد نظام يمسك كل **عميل محتمل** فورًا."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "الفكرة الأساسية — كل عميل محتمل = تسجيل + رد + تنبيه",
+      "subtitle": "كل عميل محتمل = تسجيل + رد + تنبيه",
+      "contentMarkdown": "- لحظة التسجيل → حفظ → رد ترحيبي → تنبيه للمتابعة.\n- **Webhook (إشعار فوري)** عند إرسال النموذج.",
+      "bullets": [
+        "لحظة التسجيل → حفظ → رد ترحيبي → تنبيه للمتابعة.",
+        "**Webhook (إشعار فوري)** عند إرسال النموذج."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "اختبار — correctIndex: 1",
+      "subtitle": "correctIndex: 1",
+      "contentMarkdown": "> **مفتاح الاختبار (غير متغير):** correctIndex: 1\n\nتنتظر لما تفضى وترد على الكل مرة وحدة.\n- **الإجابة الصحيحة** (correctIndex: 1):** كل تسجيل يتحفظ فورًا + رد ترحيبي أوتوماتيكي + تنبيه للمتابعة.**\nتقفل النموذج لحد ما تلحق ترد.\n\n**التفسير: الإجابة الصحيحة توضح أن كل تسجيل يتحفظ فورًا مع رد ترحيبي وتنبيه للمتابعة.**",
+      "bullets": [
+        "تنتظر لما تفضى وترد على الكل مرة وحدة.",
+        "**الإجابة الصحيحة** (correctIndex: 1): كل تسجيل يتحفظ فورًا + رد ترحيبي أوتوماتيكي + تنبيه للمتابعة.",
+        "تقفل النموذج لحد ما تلحق ترد."
+      ],
+      "tables": [],
+      "quiz": {
+        "correctIndex": 1,
+        "options": [
+          "تنتظر لما تفضى وترد على الكل مرة وحدة.",
+          "تقفل النموذج لحد ما تلحق ترد.",
+          "إجابة جزئية تفوت السياق وتتجاهل الخطوة التالية للقرار."
+        ],
+        "explanation": "الإجابة الصحيحة توضح أن كل تسجيل يتحفظ فورًا مع رد ترحيبي وتنبيه للمتابعة.",
+        "question": "وش الخيار الأنسب حسب ما ورد في القسم السابق؟"
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "المهمة",
+      "contentMarkdown": "| سير كامل | 60% |\n| واقعية | 40% |",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Confidence close",
+      "heading": "إغلاق الثقة",
+      "contentMarkdown": "- **التالي:** **WhatsApp Flow**.\n\n---",
+      "bullets": [
+        "**التالي:** **WhatsApp Flow**."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-06-22T01:10:45.478Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "automator-m6-l1-lead-capture",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/automator-m6-l1-lead-capture.canonical.md"
+  }
+}

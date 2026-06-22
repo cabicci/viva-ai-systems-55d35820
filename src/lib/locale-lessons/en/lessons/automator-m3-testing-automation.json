@@ -1,0 +1,192 @@
+{
+  "locale": "en",
+  "lessonId": "automator-m3-testing-automation",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "automator",
+  "moduleId": "automator-m4",
+  "productionRoute": "/learn/automator/automator-m3-testing-automation",
+  "titleEn": "Testing Automation",
+  "title": "Testing Automation",
+  "summary": "Testing protects customer trust — unit, flow, edge cases, manual review",
+  "estimatedMinutes": 12,
+  "nextLessonId": "automator-m5-l1-llm-in-flow",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation",
+      "subtitle": "Beginning of the Lesson",
+      "contentMarkdown": "- **What Will You Understand?** Testing prevents embarrassing mistakes in **automation** — it’s not just a technical luxury.\n- **Why Now?** After fixing errors, the **workflow** is running — you need to ensure it won't send 'undefined' to 500 customers.\n- **What After the Lesson?** Testing checklist: step → full flow → edge cases → manual review.",
+      "bullets": [
+        "**What Will You Understand?** Testing prevents embarrassing mistakes in **automation** — it’s not just a technical luxury.",
+        "**Why Now?** After fixing errors, the **workflow** is running — you need to ensure it won't send 'undefined' to 500 customers.",
+        "**What After the Lesson?** Testing checklist: step → full flow → edge cases → manual review."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension",
+      "subtitle": "A Familiar Situation",
+      "contentMarkdown": "- 'The automation sent 'Hello undefined' to all customers'\n- I ran the **workflow** in production without testing — 300 customers, trust lost in an hour.\n- A minute of testing before going live would have revealed the empty name field.",
+      "bullets": [
+        "'The automation sent 'Hello undefined' to all customers'",
+        "I ran the **workflow** in production without testing — 300 customers, trust lost in an hour.",
+        "A minute of testing before going live would have revealed the empty name field."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core Idea",
+      "subtitle": "4 Levels of Testing",
+      "contentMarkdown": "- **Unit Test:** If the name is empty, what happens?\n- **Integration Test:** Run the entire **Flow** with test data.\n- **Edge Cases:** Empty, error, duplicate — at least 3 cases.\n- **Manual Review:** A human eye before going live — the last gate.",
+      "bullets": [
+        "**Unit Test:** If the name is empty, what happens?",
+        "**Integration Test:** Run the entire **Flow** with test data.",
+        "**Edge Cases:** Empty, error, duplicate — at least 3 cases.",
+        "**Manual Review:** A human eye before going live — the last gate."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison",
+      "subtitle": "Live Without Testing vs Checklist",
+      "contentMarkdown": "| 'We try on customers' | Checklist before going live |\n|---------------------|---------------------|\n| First error reaches 300 customers | Test data → edge cases → review → production |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "'We try on customers'",
+            "Checklist before going live"
+          ],
+          "rows": [
+            [
+              "First error reaches 300 customers",
+              "Test data → edge cases → review → production"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary",
+      "subtitle": "Two Terms for Testing",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Unit Test** | A single part — **node** or condition | Empty email → does **Filter** stop it? |\n| **Integration Test** | Entire **Workflow** with dummy data | lead 'test' → did email arrive + row in table? |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**Unit Test**",
+              "A single part — **node** or condition",
+              "Empty email → does **Filter** stop it?"
+            ],
+            [
+              "**Integration Test**",
+              "Entire **Workflow** with dummy data",
+              "lead 'test' → did email arrive + row in table?"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Diagram block (intent)",
+      "heading": "Diagram Block (Intent)",
+      "contentMarkdown": "Unit → Full flow → Edge cases → Manual review → Live",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz",
+      "subtitle": "Quick Confirmation",
+      "contentMarkdown": "**Question:** A new **workflow** sends a welcome message. What is the best step before going live?\n\n- **Correct Answer:** Test data + 3 edge cases + manual review\n- **Explanation:** The error stays with you — not with the customer.",
+      "bullets": [
+        "**Correct Answer:** Test data + 3 edge cases + manual review",
+        "**Explanation:** The error stays with you — not with the customer."
+      ],
+      "tables": [],
+      "quiz": {
+        "question": "A new **workflow** sends a welcome message. What is the best step before going live?",
+        "correctIndex": 0,
+        "options": [
+          "**Correct Answer:** Test data + 3 edge cases + manual review",
+          "An unsuitable option; it ignores the key details in the section above.",
+          "A partial answer misses the context and ignores the next step in the decision."
+        ],
+        "explanation": "The error stays with you — not with the customer."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission",
+      "subtitle": "Test Checklist",
+      "contentMarkdown": "| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Unit + Full-flow | 50% | unit with input and output; full-flow with test data |\n| Edge + Review | 50% | 3 edge cases; manual review (who + what) |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Unit + Full-flow",
+              "50%",
+              "unit with input and output; full-flow with test data"
+            ],
+            [
+              "Edge + Review",
+              "50%",
+              "3 edge cases; manual review (who + what)"
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "delivery": [],
+        "rubric": [
+          {
+            "dimension": "Unit + Full-flow",
+            "weight": 50,
+            "criteria": "unit with input and output; full-flow with test data"
+          },
+          {
+            "dimension": "Edge + Review",
+            "weight": 50,
+            "criteria": "3 edge cases; manual review (who + what)"
+          }
+        ],
+        "yamlIntent": "Build test checklist: unit, full flow, 3 edge cases, manual review",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence Close",
+      "contentMarkdown": "- **I Understand:** Testing protects customer trust.\n- **You Can:** Have a checklist ready before going live.\n- **Next:** **LLM in Flow** — AI as a **node**.\n\n---",
+      "bullets": [
+        "**I Understand:** Testing protects customer trust.",
+        "**You Can:** Have a checklist ready before going live.",
+        "**Next:** **LLM in Flow** — AI as a **node**."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-06-22T01:19:30.267Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "automator-m3-testing-automation",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/automator-m3-testing-automation.canonical.md"
+  }
+}
