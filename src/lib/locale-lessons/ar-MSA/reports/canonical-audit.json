@@ -1,60 +1,17 @@
 {
   "summary": {
-    "auditedAt": "2026-06-22T00:57:22.992Z",
+    "auditedAt": "2026-06-22T00:59:33.438Z",
     "locale": "ar-MSA",
     "expected": 100,
     "manifestCount": 100,
     "onDiskCount": 100,
-    "totalFindings": 6,
+    "totalFindings": 0,
     "suppressed": {
       "quizScaffoldingPrefixes": 430,
       "yabqaMsaVerb": 31,
       "total": 461
     },
-    "ok": false
+    "ok": true
   },
-  "findings": [
-    {
-      "lessonId": "automator-m5-l3-agents",
-      "fieldPath": "sections[3].contentMarkdown",
-      "issue": "Egyptian dialect residue: \"عشان\"",
-      "snippet": "> **Quiz key (unchanged):** correctIndex: 1\n\n- خيار 1: Workflow ثابت بشروط كتير لكل احتمال.\n- ****الإجابة الصحيحة** (cor…",
-      "recommendedFix": "rewrite in Modern Standard Arabic (Fusha); remove dialect marker \"عشان\""
-    },
-    {
-      "lessonId": "automator-m5-l3-agents",
-      "fieldPath": "sections[3].bullets[2]",
-      "issue": "Egyptian dialect residue: \"عشان\"",
-      "snippet": "خيار 3: Agent مفتوح بكل الأدوات عشان يكون «ذكي».",
-      "recommendedFix": "rewrite in Modern Standard Arabic (Fusha); remove dialect marker \"عشان\""
-    },
-    {
-      "lessonId": "automator-m5-l3-agents",
-      "fieldPath": "sections[3].quiz.options[1]",
-      "issue": "Egyptian dialect residue: \"عشان\"",
-      "snippet": "Agent مفتوح بكل الأدوات عشان يكون «ذكي».",
-      "recommendedFix": "rewrite in Modern Standard Arabic (Fusha); remove dialect marker \"عشان\""
-    },
-    {
-      "lessonId": "business-m4-l3-weekly-rhythm",
-      "fieldPath": "sections[2].contentMarkdown",
-      "issue": "Egyptian dialect residue: \"عشان\"",
-      "snippet": "> **Quiz key (unchanged):** correctIndex: 1\n\n- خيار 1: تفتح كل الرسائل وترد — عشان «تخلص».\n- ****الإجابة الصحيحة** (corr…",
-      "recommendedFix": "rewrite in Modern Standard Arabic (Fusha); remove dialect marker \"عشان\""
-    },
-    {
-      "lessonId": "business-m4-l3-weekly-rhythm",
-      "fieldPath": "sections[2].bullets[0]",
-      "issue": "Egyptian dialect residue: \"عشان\"",
-      "snippet": "خيار 1: تفتح كل الرسائل وترد — عشان «تخلص».",
-      "recommendedFix": "rewrite in Modern Standard Arabic (Fusha); remove dialect marker \"عشان\""
-    },
-    {
-      "lessonId": "business-m4-l3-weekly-rhythm",
-      "fieldPath": "sections[2].quiz.options[0]",
-      "issue": "Egyptian dialect residue: \"عشان\"",
-      "snippet": "تفتح كل الرسائل وترد — عشان «تخلص».",
-      "recommendedFix": "rewrite in Modern Standard Arabic (Fusha); remove dialect marker \"عشان\""
-    }
-  ]
+  "findings": []
 }
