@@ -51,7 +51,7 @@ export function deriveGulfTopicTitle(
   source: LocalizedLessonPackage,
   adapted: AdaptedLessonPackage,
 ): string | null {
-  const titleEn = adapted.titleEn?.trim() ?? source.titleEn?.trim();
+  const titleEn = source.titleEn?.trim() ?? adapted.titleEn?.trim();
   if (!titleEn) return null;
   return lookupGulfTopicTitle(titleEn);
 }
