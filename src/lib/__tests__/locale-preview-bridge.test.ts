@@ -7,15 +7,22 @@ import {
   previewBodyDirection,
 } from "@/lib/locale-lessons/adapt-package-to-preview-content";
 import {
+  learnerFacingTitle,
+  parseInternalHeading,
+  PREVIEW_INTERNAL_LABEL_LEAKS,
+} from "@/lib/locale-lessons/package-section-labels";
+import {
   parseLessonPreviewSearch,
   resolveRouteLessonAccess,
 } from "@/lib/locale-lessons/lesson-preview-search";
-import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
+import { getPackageLessonIds } from "@/lib/locale-lessons/registry";
+import type { LessonPackageLocale, LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
+const PACKAGE_LOCALES: LessonPackageLocale[] = ["en", "ar-Gulf", "ar-MSA"];
 
 function readPackage(
-  locale: "en" | "ar-Gulf" | "ar-MSA",
+  locale: LessonPackageLocale,
   lessonId: string,
 ): LocalizedLessonPackage {
   const filePath = path.join(
@@ -33,6 +40,60 @@ function serializedPreviewText(
 ): string {
   return JSON.stringify(sections);
 }
+
+function findPreviewInternalLabelLeaks(blob: string): string[] {
+  return PREVIEW_INTERNAL_LABEL_LEAKS.filter((label) => blob.includes(label));
+}
+
+describe("package-section-labels compound prefix stripping", () => {
+  it("strips internal labels joined with em dash, hyphen, colon, or pipe", () => {
+    expect(parseInternalHeading("Orientation — بداية الدرس")).toEqual({
+      isInternal: true,
+      learnerPart: "بداية الدرس",
+    });
+    expect(parseInternalHeading("Orientation: Start here")).toEqual({
+      isInternal: true,
+      learnerPart: "Start here",
+    });
+    expect(parseInternalHeading("Quiz - Quick Confirmation")).toEqual({
+      isInternal: true,
+      learnerPart: "Quick Confirmation",
+    });
+    expect(parseInternalHeading("Mission | Your task")).toEqual({
+      isInternal: true,
+      learnerPart: "Your task",
+    });
+  });
+
+  it("keeps exact internal headings for subtitle/fallback resolution", () => {
+    expect(parseInternalHeading("Orientation")).toEqual({
+      isInternal: true,
+      learnerPart: "",
+    });
+    expect(
+      learnerFacingTitle("Orientation", "What Will You Understand?", "Section"),
+    ).toBe("What Will You Understand?");
+    expect(learnerFacingTitle("Orientation", undefined, "Getting started")).toBe(
+      "Getting started",
+    );
+  });
+
+  it("treats production-reference screenshot headings as internal-only", () => {
+    expect(
+      parseInternalHeading("Screenshot block (optional — production reference)"),
+    ).toEqual({
+      isInternal: true,
+      learnerPart: "",
+    });
+    expect(
+      learnerFacingTitle(
+        "Screenshot block (optional — production reference)",
+        "production reference)",
+        "Inside the platform",
+      ),
+    ).toBe("Inside the platform");
+  });
+});
 
 describe("locale preview bridge (Phase 6.5)", () => {
   it("keeps localizedLessonsEnabled and localeUiEnabled off", () => {
@@ -116,6 +177,74 @@ describe("locale preview bridge (Phase 6.5)", () => {
           section.block.kind === "comparison" ||
           section.block.kind === "dataTable" ||
           section.block.kind === "paragraphs",
+      ),
+    ).toBe(true);
+  });
+
+  it("strict hygiene: 100 lessons x 3 locales have no internal label leaks", () => {
+    const failures: string[] = [];
+    let passCount = 0;
+
+    for (const locale of PACKAGE_LOCALES) {
+      const lessonIds = [...getPackageLessonIds(locale)].sort();
+      expect(lessonIds.length).toBe(100);
+
+      for (const lessonId of lessonIds) {
+        const access = resolveRouteLessonAccess(
+          lessonId,
+          parseLessonPreviewSearch({ locale, previewLocale: "1" }),
+        );
+        if (access.contentSource !== "locale-package-json") {
+          failures.push(`${locale}/${lessonId}: route access ${access.contentSource}`);
+          continue;
+        }
+
+        const pkg = readPackage(locale, lessonId);
+        const sections = adaptLocalizedPackageToPreviewContent(pkg);
+        if (sections.length === 0) {
+          failures.push(`${locale}/${lessonId}: adapter produced no sections`);
+          continue;
+        }
+
+        const blob = serializedPreviewText(sections);
+        const leaks = findPreviewInternalLabelLeaks(blob);
+        if (leaks.length > 0) {
+          failures.push(`${locale}/${lessonId}: ${leaks.join(", ")}`);
+          continue;
+        }
+
+        if (blob.match(/correctIndex/i)) {
+          failures.push(`${locale}/${lessonId}: correctIndex leak`);
+          continue;
+        }
+
+        const direction = previewBodyDirection(locale);
+        if (locale === "en" && direction !== "ltr") {
+          failures.push(`${locale}/${lessonId}: expected ltr direction`);
+          continue;
+        }
+        if (locale !== "en" && direction !== "rtl") {
+          failures.push(`${locale}/${lessonId}: expected rtl direction`);
+          continue;
+        }
+
+        passCount += 1;
+      }
+    }
+
+    expect(failures).toEqual([]);
+    expect(passCount).toBe(300);
+  });
+
+  it("strict hygiene: compound orientation headings are stripped in adapted output", () => {
+    const pkg = readPackage("en", "builder-m7-l1-tables-columns");
+    const blob = serializedPreviewText(adaptLocalizedPackageToPreviewContent(pkg));
+
+    expect(blob).not.toContain("Orientation —");
+    expect(blob).not.toContain("Screenshot block (intent)");
+    expect(
+      adaptLocalizedPackageToPreviewContent(pkg).some(
+        (section) => section.title === "Lesson Start",
       ),
     ).toBe(true);
   });

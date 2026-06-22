@@ -15,6 +15,7 @@ import {
   isProductionReferenceSection,
   learnerFacingTitle,
   localizedSectionEyebrow,
+  parseInternalHeading,
 } from "./package-section-labels";
 import type {
   LessonPackageLocale,
@@ -189,7 +190,12 @@ function buildMissionBlock(section: LocalizedLessonSection): PreviewLessonBlock 
 function buildBlock(section: LocalizedLessonSection): PreviewLessonBlock | null {
   const role = section.role;
 
-  if (isProductionReferenceSection(role)) return null;
+  if (
+    isProductionReferenceSection(role) ||
+    /production reference/i.test(section.heading ?? "")
+  ) {
+    return null;
+  }
 
   if (normalizeRole(role).includes("video")) {
     return { kind: "videoPreviewNote" };
@@ -256,7 +262,17 @@ function sectionEyebrow(
   ) {
     return localizedSectionEyebrow(section.role, locale);
   }
-  return section.subtitle?.trim() || localizedSectionEyebrow(section.role, locale);
+  const subtitle = section.subtitle?.trim();
+  if (subtitle) {
+    const parsed = parseInternalHeading(subtitle);
+    if (parsed.isInternal) {
+      return localizedSectionEyebrow(section.role, locale);
+    }
+    if (!isInternalLearnerHeading(subtitle)) {
+      return subtitle;
+    }
+  }
+  return localizedSectionEyebrow(section.role, locale);
 }
 
 export function adaptLocalizedPackageToPreviewContent(
