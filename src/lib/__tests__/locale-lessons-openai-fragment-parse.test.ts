@@ -136,6 +136,30 @@ describe("openai fragment adapter", () => {
     expect(fetchFn).toHaveBeenCalledTimes(2);
   });
 
+  it("repairs an empty English localizedText by retrying only that field", async () => {
+    const source = await loadMsaLessonPackage("analyst-m5-l2-weekly-review-ritual");
+    const textMap = extractLocalizableFields(source);
+    const emptyPath = "sections[2].subtitle";
+    const fetchFn = mockFetchWithResponses([
+      mockFragmentResponse(textMap, { [emptyPath]: "   " }),
+      JSON.stringify({
+        lessonId: textMap.lessonId,
+        fields: [{ fieldPath: emptyPath, localizedText: "Review the week before acting." }],
+      }),
+    ]);
+
+    const localized = await localizeTextMapWithOpenAi(textMap, "en", {
+      apiKey: TEST_API_KEY,
+      fetchFn,
+    });
+
+    expect(localized.fields.find((field) => field.fieldPath === emptyPath)?.localizedText).toBe(
+      "Review the week before acting.",
+    );
+    expect(localized.fields.every((field) => field.localizedText?.trim())).toBe(true);
+    expect(fetchFn).toHaveBeenCalledTimes(2);
+  });
+
   it("localizeTextMapWithOpenAi throws after max parse retries", async () => {
     const source = await loadMsaLessonPackage("intro-m1-l1-what-is-ai");
     const textMap = extractLocalizableFields(source);
