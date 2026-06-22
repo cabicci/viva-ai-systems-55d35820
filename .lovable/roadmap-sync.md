@@ -80,3 +80,9 @@ summary: Repair generic English fragment pilot titles to canonical titleEn after
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
+
+[roadmap:fix-fragment-pilot-final-validator]
+date: 2026-06-22
+scope: infra
+source: ai
+summary: Collector sanitizes Video/Bunny sections + Option/خيار prefixes + unbalances; re-reads final JSON to validate banned patterns; adds --artifacts-dirs multi-run merge and --output-dir to avoid runtime writes; rebuilt clean 10+10 bundle from existing runs 27921287280 + 27922072659 without regeneration.
