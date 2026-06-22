@@ -1,0 +1,34 @@
+{
+  "summary": {
+    "generatedAt": "2026-06-22T02:40:50.309685+00:00",
+    "sourceRuns": [
+      "27923489720",
+      "27925209666",
+      "27925212668",
+      "27925425741"
+    ],
+    "successful_per_lesson_artifacts_found": 200,
+    "selected_artifacts": 200,
+    "ignored_failed_artifacts": 180,
+    "fallback_or_source_packages_used": 0,
+    "ar_gulf_count": 100,
+    "en_count": 100,
+    "total": 200,
+    "missing": [],
+    "locale_mismatch_count": 0,
+    "banned_hits": 0,
+    "markdown_imbalance_count": 0,
+    "empty_learner_facing_fields": 0,
+    "generic_titles": 0,
+    "quiz_integrity_issues": 0,
+    "leaks": 0,
+    "lessons_with_issues": 0,
+    "issue_type_counts": {},
+    "duplicate_resolution": "newest successful per-lesson artifact wins",
+    "sanitizers_applied": [
+      "quiz.explanation templated-prefix strip",
+      "markdown balance fix (** / ``` / [])"
+    ]
+  },
+  "lessons_with_issues": []
+}
