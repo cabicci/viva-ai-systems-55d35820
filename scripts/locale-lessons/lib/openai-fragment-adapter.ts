@@ -25,6 +25,16 @@ export type FragmentLocalizationResponse = {
   fields: Array<{ fieldPath: string; localizedText: string }>;
 };
 
+export class OpenAiFragmentEmptyLocalizedTextError extends OpenAiFragmentParseError {
+  readonly fieldPath: string;
+
+  constructor(fieldPath: string) {
+    super(`localizedText must be a non-empty string for ${fieldPath}`);
+    this.name = "OpenAiFragmentEmptyLocalizedTextError";
+    this.fieldPath = fieldPath;
+  }
+}
+
 export class OpenAiFragmentParseError extends Error {
   readonly parseMessage: string;
 
@@ -194,9 +204,7 @@ export function parseOpenAiFragmentResponse(
       throw new OpenAiFragmentParseError("fieldPath must be a string");
     }
     if (typeof field.localizedText !== "string" || field.localizedText.trim() === "") {
-      throw new OpenAiFragmentParseError(
-        `localizedText must be a non-empty string for ${field.fieldPath}`,
-      );
+      throw new OpenAiFragmentEmptyLocalizedTextError(field.fieldPath);
     }
     localizedByPath.set(field.fieldPath, field.localizedText);
   }
@@ -233,6 +241,86 @@ ${parseError}
 
 ${STRICT_JSON_RETRY_INSTRUCTION}
 - Return the exact same fieldPath keys as the input — one localizedText per fieldPath.`;
+}
+
+function buildSingleFieldRepairPrompt(input: {
+  lessonId: string;
+  targetLocale: AdaptationTargetLocale;
+  fieldPath: string;
+  fieldType: string;
+  sourceText: string;
+}): { system: string; userPrompt: string } {
+  return {
+    system: systemPromptForLocale(input.targetLocale),
+    userPrompt: `# Isolated empty-field repair
+
+The previous fragment response left exactly one learner-facing field empty.
+Adapt ONLY this one sourceText for target locale **${input.targetLocale}**.
+Do not return Arabic source text as English output.
+Do not return a full lesson JSON object.
+
+${JSON.stringify(input, null, 2)}
+
+Return ONE JSON object only:
+{
+  "lessonId": "${input.lessonId}",
+  "fields": [
+    { "fieldPath": "${input.fieldPath}", "localizedText": "<non-empty adapted text>" }
+  ]
+}`,
+  };
+}
+
+async function repairEmptyLocalizedTextField(input: {
+  textMap: LocalizedTextMap;
+  targetLocale: AdaptationTargetLocale;
+  currentMap: LocalizedTextMap;
+  emptyFieldPath: string;
+  apiKey: string;
+  model: string;
+  fetchFn?: typeof fetch;
+}): Promise<LocalizedTextMap> {
+  const sourceField = input.textMap.fields.find(
+    (field) => field.fieldPath === input.emptyFieldPath,
+  );
+  if (!sourceField) {
+    throw new OpenAiFragmentParseError(
+      `cannot repair unknown fieldPath: ${input.emptyFieldPath}`,
+    );
+  }
+
+  const prompt = buildSingleFieldRepairPrompt({
+    lessonId: input.textMap.lessonId,
+    targetLocale: input.targetLocale,
+    fieldPath: sourceField.fieldPath,
+    fieldType: sourceField.fieldType,
+    sourceText: sourceField.sourceText,
+  });
+  const content = await fetchOpenAiFragmentText({
+    apiKey: input.apiKey,
+    model: input.model,
+    system: prompt.system,
+    userPrompt: prompt.userPrompt,
+    fetchFn: input.fetchFn,
+  });
+  const repairedSingleField = parseOpenAiFragmentResponse(content, {
+    ...input.textMap,
+    targetLocale: input.targetLocale,
+    fields: [sourceField],
+  });
+  const repairedValue = repairedSingleField.fields[0]?.localizedText?.trim();
+  if (!repairedValue) {
+    throw new OpenAiFragmentEmptyLocalizedTextError(input.emptyFieldPath);
+  }
+
+  return {
+    ...input.currentMap,
+    fields: input.currentMap.fields.map((field) =>
+      field.fieldPath === input.emptyFieldPath
+        ? { ...field, localizedText: repairedValue }
+        : field,
+    ),
+  };
 }
 
 export async function localizeTextMapWithOpenAi(
