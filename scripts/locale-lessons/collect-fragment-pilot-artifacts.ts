@@ -249,11 +249,13 @@ export async function collectFragmentPilotArtifacts(
         continue;
       }
 
-      // SANITIZE before any write or structural validation.
-      const sanitized = sanitizeFinalLessonPackage(loaded.pkg);
-
+      // Structural parity is validated against the RAW adapter output,
+      // not the sanitized version (sanitizer intentionally drops the
+      // internal "Video block (production reference only)" section).
       const source = await loadMsaLessonPackage(lessonId);
-      const validation = validateFragmentPipelineArtifact(source, sanitized, locale);
+      const validation = validateFragmentPipelineArtifact(source, loaded.pkg, locale);
+      // Sanitize AFTER parity check, BEFORE write.
+      const sanitized = sanitizeFinalLessonPackage(loaded.pkg);
       lessonResults.push({
         lessonId,
         fieldCount: jobResult?.fieldCount ?? 0,
