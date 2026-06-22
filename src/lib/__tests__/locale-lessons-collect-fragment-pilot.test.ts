@@ -36,17 +36,20 @@ describe("collectFragmentPilotArtifacts — multi-run merge + sanitize + final v
       // Give the package a stable adapter-style title so structural parity passes.
       adapted.title = locale === "en" ? "What Is AI" : "ما هو الذكاء الاصطناعي";
       adapted.titleEn = "What Is AI";
-      // Inject leaks: keep video section verbatim from MSA (Bunny etc.),
-      // and add prefixed options to the Quiz section.
+      // Inject leaks while preserving MSA structural shape (option/bullet counts).
       const quiz = adapted.sections.find((s) => s.role === "Quiz");
       if (quiz?.quiz) {
-        quiz.quiz.options = ["Option 1: A", "**Correct answer (Option 2):** B", "Option 3: C"];
-        quiz.bullets = [...quiz.quiz.options];
-        quiz.contentMarkdown = "- Option 1: A\n- **Correct answer (Option 2):** B";
+        quiz.quiz.options = quiz.quiz.options.map(
+          (_, i) => `Option ${i + 1}: opt-${i}`,
+        );
+        quiz.bullets = quiz.bullets.map(
+          (_, i) => `**Correct answer (Option ${i + 1}):** bullet-${i}`,
+        );
+        quiz.contentMarkdown = "- Option 1: leak";
       }
       // Inject unbalanced markdown in a table cell of any section that has one.
       const sectionWithTable = adapted.sections.find((s) => s.tables.length > 0);
-      if (sectionWithTable) {
+      if (sectionWithTable && sectionWithTable.tables[0].rows.length > 0) {
         sectionWithTable.tables[0].rows[0][0] = "**unbalanced";
       }
       return adapted;
