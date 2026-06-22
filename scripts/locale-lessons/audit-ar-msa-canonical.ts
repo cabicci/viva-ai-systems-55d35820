@@ -203,6 +203,7 @@ async function main() {
     } else {
       sections.forEach((sec, i) => {
         const s = sec as Record<string, unknown>;
+        if (isProductionReferenceSection(s as never)) return; // skip internal sections
         if (!s.heading || typeof s.heading !== "string" || (s.heading as string).trim() === "")
           add({ lessonId: id, fieldPath: `sections[${i}].heading`, issue: "empty heading",
             snippet: "", recommendedFix: "supply a section heading" });
@@ -225,9 +226,13 @@ async function main() {
               issue: `correctIndex ${ci} out of range`,
               snippet: String(ci ?? ""), recommendedFix: "set correctIndex to a valid options index" });
         }
+        // Walk only learner-facing sections (skip internal production-reference).
+        walk(id, s, `sections[${i}]`);
       });
     }
-    walk(id, pkg, "");
+    // Walk top-level fields excluding sections (already walked per learner-facing section).
+    const { sections: _s, ...top } = pkg as Record<string, unknown>;
+    walk(id, top, "");
   }
 
   // Report
