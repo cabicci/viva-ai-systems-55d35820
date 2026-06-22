@@ -330,7 +330,10 @@ async function repairEmptyLocalizedTextField(input: {
   });
   const repairedValue = repairedSingleField.fields[0]?.localizedText?.trim();
   if (!repairedValue) {
-    throw new OpenAiFragmentEmptyLocalizedTextError(input.emptyFieldPath);
+    throw new OpenAiFragmentEmptyLocalizedTextError(
+      input.emptyFieldPath,
+      input.currentMap,
+    );
   }
 
   return {
@@ -372,6 +375,32 @@ export async function localizeTextMapWithOpenAi(
     try {
       return parseOpenAiFragmentResponse(content, { ...textMap, targetLocale });
     } catch (error) {
+      if (error instanceof OpenAiFragmentEmptyLocalizedTextError && targetLocale === "en") {
+        try {
+          return await repairEmptyLocalizedTextField({
+            textMap,
+            targetLocale,
+            currentMap: error.partialMap,
+            emptyFieldPath: error.fieldPath,
+            apiKey,
+            model,
+            fetchFn,
+          });
+        } catch (repairError) {
+          const repairMessage =
+            repairError instanceof Error ? repairError.message : String(repairError);
+          throw new Error(
+            formatFragmentParseFailure({
+              targetLocale,
+              lessonId: textMap.lessonId,
+              attempt,
+              maxAttempts: ADAPTATION_JSON_MAX_ATTEMPTS,
+              parseError: repairMessage,
+            }),
+          );
+        }
+      }
+
       if (error instanceof OpenAiFragmentParseError) {
         lastParseError = error.parseMessage;
       } else {
