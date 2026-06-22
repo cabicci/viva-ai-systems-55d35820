@@ -33,6 +33,9 @@ describe("collectFragmentPilotArtifacts — multi-run merge + sanitize + final v
       const lang = locale === "en" ? "en" : "ar-Gulf";
       const adapted = JSON.parse(JSON.stringify(msa)) as typeof msa;
       adapted.locale = lang as typeof adapted.locale;
+      // Give the package a stable adapter-style title so structural parity passes.
+      adapted.title = locale === "en" ? "What Is AI" : "ما هو الذكاء الاصطناعي";
+      adapted.titleEn = "What Is AI";
       // Inject leaks: keep video section verbatim from MSA (Bunny etc.),
       // and add prefixed options to the Quiz section.
       const quiz = adapted.sections.find((s) => s.role === "Quiz");
