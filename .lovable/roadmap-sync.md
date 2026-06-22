@@ -99,4 +99,10 @@ scope: lessons
 source: user
 summary: Import gated full ar-Gulf/en locale packages from sanitized final-v3 staging; production remains ar-EG.
 
+[roadmap:d8e1f3b2-7a4c-4e9f-b5d6-1a2b3c4d5e6f]
+date: 2026-06-22
+scope: lessons
+source: user
+summary: Phase 3 internal lesson wiring for ar-MSA/ar-Gulf/en via test-only resolveLessonAccess override.
+
 This file is updated after the matching roadmap_items row is updated.

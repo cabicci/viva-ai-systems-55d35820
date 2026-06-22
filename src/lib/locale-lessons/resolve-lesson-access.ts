@@ -1,5 +1,7 @@
-import { localizedLessonsEnabled } from "@/lib/locale/feature-flags";
-import { getLocaleFallback } from "@/lib/locale/fallback";
+import {
+  isLocalizedLessonAccessActive,
+  type LocalizedLessonAccessOptions,
+} from "@/lib/locale/feature-flags";
 import { resolveLocale } from "@/lib/locale/resolve-locale";
 import { DEFAULT_LOCALE, type SupportedLocale } from "@/lib/locale/types";
 import {
@@ -12,6 +14,9 @@ import {
   lessonPackageContentRef,
   getLessonRegistryStatus,
 } from "./registry";
+import type { LessonPackageLocale } from "./types";
+
+export type ResolveLessonAccessOptions = LocalizedLessonAccessOptions;
 
 export interface ResolvedLessonAccess {
   lessonId: string;
@@ -42,18 +47,40 @@ function resolveEgyptianAccess(
   };
 }
 
+function resolvePackageAccess(
+  lessonId: string,
+  requestedLocale: LessonPackageLocale,
+): ResolvedLessonAccess {
+  return {
+    lessonId,
+    requestedLocale,
+    effectiveLocale: requestedLocale,
+    contentSource: "locale-package-json",
+    contentRef: lessonPackageContentRef(lessonId, requestedLocale),
+    status: getLessonRegistryStatus(lessonId, requestedLocale),
+    fallbackUsed: false,
+    available: true,
+  };
+}
+
 /**
- * Internal lesson access resolver — foundation only.
+ * Internal lesson access resolver.
  * Live routes still read INTRO_LESSON_CONTENT directly until a later phase.
+ * Pass `{ internalTestOverride: true }` for test-only ar-MSA/ar-Gulf/en JSON access.
  */
 export function resolveLessonAccess(
   lessonId: string,
   localeInput?: string | null,
+  options: ResolveLessonAccessOptions = {},
 ): ResolvedLessonAccess {
   const requestedLocale = resolveLocale(localeInput);
 
-  if (!localizedLessonsEnabled || requestedLocale === DEFAULT_LOCALE) {
+  if (requestedLocale === DEFAULT_LOCALE) {
     return resolveEgyptianAccess(lessonId, requestedLocale);
+  }
+
+  if (!isLocalizedLessonAccessActive(options)) {
+    return resolveEgyptianAccess(lessonId, requestedLocale, true);
   }
 
   if (!isPackageLocale(requestedLocale)) {
@@ -61,21 +88,7 @@ export function resolveLessonAccess(
   }
 
   if (isLessonInLocalePackage(lessonId, requestedLocale)) {
-    return {
-      lessonId,
-      requestedLocale,
-      effectiveLocale: requestedLocale,
-      contentSource: "locale-package-json",
-      contentRef: lessonPackageContentRef(lessonId, requestedLocale),
-      status: getLessonRegistryStatus(lessonId, requestedLocale),
-      fallbackUsed: false,
-      available: true,
-    };
-  }
-
-  const fallbackLocale = getLocaleFallback(requestedLocale);
-  if (fallbackLocale !== DEFAULT_LOCALE) {
-    return resolveEgyptianAccess(lessonId, requestedLocale, true);
+    return resolvePackageAccess(lessonId, requestedLocale);
   }
 
   return resolveEgyptianAccess(lessonId, requestedLocale, true);
