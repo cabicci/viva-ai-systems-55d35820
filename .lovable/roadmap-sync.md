@@ -86,3 +86,11 @@ date: 2026-06-22
 scope: infra
 source: ai
 summary: Collector sanitizes Video/Bunny sections + Option/خيار prefixes + unbalances; re-reads final JSON to validate banned patterns; adds --artifacts-dirs multi-run merge and --output-dir to avoid runtime writes; rebuilt clean 10+10 bundle from existing runs 27921287280 + 27922072659 without regeneration.
+
+[roadmap:b2e8f4a1-6c3d-4e9f-a1b2-7d8e9f0a1b2c]
+date: 2026-06-22
+scope: infra
+source: user
+summary: Phase 1 locale runtime foundation — registry, resolver, internal lesson access layer; no production behavior change.
+
+This file is updated after the matching roadmap_items row is updated.
