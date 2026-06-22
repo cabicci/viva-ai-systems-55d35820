@@ -72,5 +72,11 @@ scope: lessons
 source: user
 summary: Run fragment locale pilot as per-lesson matrix jobs with empty-field extraction guards.
 
+[roadmap:a7c3e9f2-4b1d-4f8a-9e2c-6d5b8a1e4f7c]
+date: 2026-06-22
+scope: lessons
+source: user
+summary: Repair generic English fragment pilot titles to canonical titleEn after injection.
+
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

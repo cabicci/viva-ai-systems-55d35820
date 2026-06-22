@@ -19,6 +19,7 @@ import {
   type FragmentPipelineValidationResult,
 } from "./validate-structural-parity.ts";
 import { repairGulfCatalogTitle } from "./repair-gulf-fragment-title.ts";
+import { repairEnglishCatalogTitle } from "./repair-english-fragment-title.ts";
 
 function finalizeFragmentArtifact(
   source: LocalizedLessonPackage,
@@ -32,7 +33,10 @@ function finalizeFragmentArtifact(
     targetLocale,
     generatedAt,
   );
-  return repairGulfCatalogTitle(source, injected);
+  return repairEnglishCatalogTitle(
+    source,
+    repairGulfCatalogTitle(source, injected),
+  );
 }
 
 export interface FragmentLocalizationResult {

@@ -133,6 +133,12 @@ const EN_ORIENTATION_TITLE_PATTERNS: RegExp[] = [
 const GENERIC_BAD_ENGLISH_TITLE_PATTERNS: RegExp[] = [
   /^introduction to the lesson$/i,
   /^getting started$/i,
+  /^lesson start$/i,
+  /^start of (the )?lesson$/i,
+  /^lesson introduction$/i,
+  /^introduction$/i,
+  /^the lesson$/i,
+  /^this lesson$/i,
   /^what will you understand\??$/i,
   /^what will you learn\??$/i,
   /^understanding\b/i,
