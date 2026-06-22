@@ -1,6 +1,6 @@
 # Locale Runtime Foundation
 
-**Status:** Phases 1–3 internal wiring — **no production behavior change**  
+**Status:** Phases 1–4 + 6.5 internal preview parity — **no production behavior change**  
 **Effective:** 2026-06-22
 
 ## What shipped
@@ -11,13 +11,16 @@
 - **Phase 2:** Full ar-Gulf/en JSON packages imported to `src/lib/locale-lessons/` from sanitized final-v3 staging (100+100)
 - **Phase 3:** Internal/test-only wiring for ar-MSA canonical JSON + imported ar-Gulf/en via `resolveLessonAccess(lessonId, locale, { internalTestOverride: true })`
 - **Phase 4:** Explicit query-only locale preview on lesson routes: `?locale={ar-MSA|ar-Gulf|en}&previewLocale=1` — default routes unchanged (ar-EG)
+- **Phase 6.5:** Deterministic package → preview bridge (`adaptLocalizedPackageToPreviewContent`) with live-like section cards, tables, glossary/comparison blocks, read-only quiz/mission, and markdown parsing — **preview only**
 - Feature flags remain **off** for localized lessons, videos, and RAG
 
 ## What did **not** ship
 
-- No locale selector UI, cookie/IP/user-setting resolver, or global flag-on behavior
+- No public locale selector UI (`localeUiEnabled` stays off)
+- No cookie/IP/user-setting resolver, or global flag-on behavior
 - No changes to Bunny/Remotion video mapping, Supabase, or Egyptian lesson content
-- No mission, assistant, RAG, or progress behavior changes in preview mode
+- No mission submit, assistant/RAG locale switching, or progress mutation in preview mode
+- Public selector remains **blocked** until assistant/RAG/progress/video policy is resolved
 
 ## Live production
 

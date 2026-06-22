@@ -1,10 +1,10 @@
 # Roadmap sync marker
 
-[roadmap:a7f2c9e1-3b8d-4f6a-9e2c-1d4b5a6c7e8f]
+[roadmap:b3e8a1f2-6c4d-4a9b-8f1e-2d3c4b5a6e7f]
 date: 2026-06-22
 scope: lessons
 source: user
-summary: Phase 4 internal locale preview on lesson routes via explicit previewLocale query param
+summary: Phase 6.5 localized package to live-renderer preview bridge (internal only)
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
