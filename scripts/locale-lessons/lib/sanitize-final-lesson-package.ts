@@ -83,8 +83,10 @@ function sanitizeMultilineMarkdown(md: string): string {
 
 function sanitizeTable(table: LocalizedLessonTable): LocalizedLessonTable {
   return {
-    headers: table.headers.map((cell) => sanitizeString(cell)),
-    rows: table.rows.map((row) => row.map((cell) => sanitizeString(cell))),
+    headers: table.headers.map((cell) => sanitizeString(stripQuizPrefix(cell))),
+    rows: table.rows.map((row) =>
+      row.map((cell) => sanitizeString(stripQuizPrefix(cell))),
+    ),
   };
 }
 
