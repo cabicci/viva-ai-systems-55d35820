@@ -65,8 +65,8 @@ function resolvePackageAccess(
 
 /**
  * Internal lesson access resolver.
- * Live routes still read INTRO_LESSON_CONTENT directly until a later phase.
- * Pass `{ internalTestOverride: true }` for test-only ar-MSA/ar-Gulf/en JSON access.
+ * Live routes use ar-EG unless `?locale=…&previewLocale=1` activates package preview.
+ * Pass `{ internalTestOverride: true }` for direct test access without query params.
  */
 export function resolveLessonAccess(
   lessonId: string,

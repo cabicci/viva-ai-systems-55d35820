@@ -40,6 +40,17 @@ import { DifficultyPrompt } from "@/components/learn/DifficultyPrompt";
 import { ReadingProgressBar } from "@/components/learn/ReadingProgressBar";
 import { CompletionReward } from "@/components/learn/CompletionReward";
 import { AssistantPanel } from "@/components/assistant/AssistantPanel";
+import { LocalePackagePreviewRenderer } from "@/components/locale/LocalePackagePreviewRenderer";
+import { loadLocalePackageLesson } from "@/lib/locale-lessons/load-locale-package-lesson";
+import {
+  isLessonLocalePreviewActive,
+  parseLessonPreviewSearch,
+  resolveRouteLessonAccess,
+  type LessonPreviewSearch,
+} from "@/lib/locale-lessons/lesson-preview-search";
+import type { ResolvedLessonAccess } from "@/lib/locale-lessons/resolve-lesson-access";
+import { isPackageLocale } from "@/lib/locale-lessons/registry";
+import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 
 /* --------------------------------------------------------------
  *  Unified lesson runtime — one page for every path's lessons.
@@ -91,10 +102,20 @@ function getPathLessons(pathId: PathId): RuntimeLesson[] {
   return out;
 }
 
+type LessonLoaderData = {
+  pathId: PathId;
+  lesson: RuntimeLesson;
+};
+
+function preservePreviewSearch(
+  search: LessonPreviewSearch,
+): { locale?: string; previewLocale: true } | undefined {
+  if (!isLessonLocalePreviewActive(search)) return undefined;
+  return { locale: search.locale, previewLocale: true };
+}
+
 export const Route = createFileRoute("/learn/$pathId/$lessonId")({
-  validateSearch: (raw: Record<string, unknown>): { from?: "dashboard" | "curriculum" } => ({
-    from: raw.from === "curriculum" || raw.from === "dashboard" ? raw.from : undefined,
-  }),
+  validateSearch: (raw: Record<string, unknown>) => parseLessonPreviewSearch(raw),
   head: ({ params }) => {
     const pathId = params.pathId as PathId;
     const meta = (PATH_META as Record<string, typeof PATH_META[PathId]>)[pathId];
@@ -125,7 +146,7 @@ export const Route = createFileRoute("/learn/$pathId/$lessonId")({
       (l) => l.slug === params.lessonId,
     );
     if (!lesson) throw notFound();
-    return { pathId, lesson } as { pathId: PathId; lesson: RuntimeLesson };
+    return { pathId, lesson } satisfies LessonLoaderData;
   },
   component: UnifiedLessonPage,
   notFoundComponent: () => (
@@ -146,9 +167,63 @@ export const Route = createFileRoute("/learn/$pathId/$lessonId")({
 });
 
 function UnifiedLessonPage() {
-  const data = Route.useLoaderData() as { pathId: PathId; lesson: RuntimeLesson };
-  const { pathId, lesson } = data;
-  const { from } = Route.useSearch();
+  const { pathId, lesson } = Route.useLoaderData() as LessonLoaderData;
+  const previewSearch = Route.useSearch();
+  const { from } = previewSearch;
+  const previewNavSearch = preservePreviewSearch(previewSearch);
+
+  const lessonAccess = useMemo(
+    () => resolveRouteLessonAccess(lesson.id, previewSearch),
+    [lesson.id, previewSearch],
+  );
+
+  const [previewPackage, setPreviewPackage] = useState<LocalizedLessonPackage | null>(
+    null,
+  );
+  const [previewStatus, setPreviewStatus] = useState<
+    "idle" | "loading" | "ready" | "missing"
+  >("idle");
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadPreviewPackage() {
+      if (
+        lessonAccess.contentSource !== "locale-package-json" ||
+        !isPackageLocale(lessonAccess.effectiveLocale)
+      ) {
+        if (!cancelled) {
+          setPreviewPackage(null);
+          setPreviewStatus("idle");
+        }
+        return;
+      }
+
+      if (!cancelled) setPreviewStatus("loading");
+      const loaded = await loadLocalePackageLesson(
+        lessonAccess.effectiveLocale,
+        lesson.id,
+      );
+      if (cancelled) return;
+      if (loaded) {
+        setPreviewPackage(loaded);
+        setPreviewStatus("ready");
+      } else {
+        setPreviewPackage(null);
+        setPreviewStatus("missing");
+      }
+    }
+
+    void loadPreviewPackage();
+    return () => {
+      cancelled = true;
+    };
+  }, [lesson.id, lessonAccess]);
+
+  const effectiveAccess: ResolvedLessonAccess =
+    lessonAccess.contentSource === "locale-package-json" && previewStatus === "missing"
+      ? resolveRouteLessonAccess(lesson.id, { ...previewSearch, previewLocale: false })
+      : lessonAccess;
   const { getStatus, setStatus, isLoaded: isProgressLoaded } = useLessonProgress();
   const { recordActivity } = useStreak();
   const { isAdmin } = useEntitlement();
@@ -200,7 +275,9 @@ function UnifiedLessonPage() {
     }
   };
 
-  const content = INTRO_LESSON_CONTENT[lesson.slug];
+  const showLocalePreview = previewStatus === "ready" && previewPackage !== null;
+  const showPreviewLoading = previewStatus === "loading";
+  const content = showLocalePreview ? null : INTRO_LESSON_CONTENT[lesson.slug];
   const missionShape = getLessonMission(lesson.slug);
   const missionGate = useMissionGate(lesson.slug);
   const nextLocked =
@@ -297,6 +374,14 @@ function UnifiedLessonPage() {
               {String(lesson.globalOrder).padStart(2, "0")}/
               {String(total).padStart(2, "0")}
             </span>
+            {showLocalePreview ? (
+              <span
+                className="sr-only"
+                data-locale-preview-active={effectiveAccess.effectiveLocale}
+              >
+                Internal locale preview: {effectiveAccess.effectiveLocale}
+              </span>
+            ) : null}
           </div>
           <h1 className="text-2xl md:text-4xl font-black leading-tight">
             {lesson.title}
@@ -337,6 +422,12 @@ function UnifiedLessonPage() {
           <PaywallCard pathTitle={meta.label} pathId={pathId} />
         ) : gate.kind === "complete-intro-first" ? (
           <IntroGateCard done={gate.introDone} total={gate.introTotal} />
+        ) : showPreviewLoading ? (
+          <div className="rounded-2xl border border-border/40 bg-muted/20 p-8 text-center text-sm text-muted-foreground">
+            جاري تحميل معاينة اللغة الداخلية...
+          </div>
+        ) : showLocalePreview && previewPackage ? (
+          <LocalePackagePreviewRenderer pkg={previewPackage} />
         ) : content ? (
           <IntroLessonRenderer
             content={content}
@@ -418,6 +509,7 @@ function UnifiedLessonPage() {
                 <Link
                   to="/learn/$pathId/$lessonId"
                   params={{ pathId, lessonId: prev.slug }}
+                  search={previewNavSearch}
                 >
                   <ArrowRight className="h-4 w-4" />
                   السابق
@@ -463,6 +555,7 @@ function UnifiedLessonPage() {
                   <Link
                     to="/learn/$pathId/$lessonId"
                     params={{ pathId, lessonId: next.slug }}
+                    search={previewNavSearch}
                   >
                     الدرس التالي
                     <ArrowLeft className="h-4 w-4" />
