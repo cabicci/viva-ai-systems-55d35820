@@ -25,6 +25,9 @@
     "locale-lessons:generate-fragment-pilot": "bun run scripts/locale-lessons/generate-fragment-localized-pilot.ts",
     "locale-lessons:collect-fragment-pilot": "bun run scripts/locale-lessons/collect-fragment-pilot-artifacts.ts",
     "locale-lessons:print-fragment-pilot-matrix": "bun run scripts/locale-lessons/print-fragment-pilot-matrix.ts",
+    "locale-lessons:print-fragment-full-matrix": "bun run scripts/locale-lessons/print-fragment-full-matrix.ts",
+    "locale-lessons:collect-fragment-full": "bun run scripts/locale-lessons/collect-fragment-full-artifacts.ts",
+    "locale-lessons:audit-ar-msa-canonical": "bun run scripts/locale-lessons/audit-ar-msa-canonical.ts",
     "test": "vitest",
     "test:run": "vitest run",
     "test:ui": "vitest --ui"
