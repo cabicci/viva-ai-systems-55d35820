@@ -20,6 +20,23 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { REQUIRED_LESSON_COUNT } from "../../src/lib/locale-lessons/types.ts";
+import { PRODUCTION_LEAK_SUBSTRINGS } from "./lib/sanitize-final-lesson-package.ts";
+
+/**
+ * Canonical ar-MSA intentionally contains internal "Video block (production
+ * reference only)" sections. The fragment sanitizer drops these BEFORE
+ * adapted lessons are written. The audit therefore skips them — they are
+ * never learner-facing and are not part of the structural source of truth
+ * for the adapted output.
+ */
+function isProductionReferenceSection(s: {
+  role?: unknown; heading?: unknown; subtitle?: unknown; contentMarkdown?: unknown;
+}): boolean {
+  const parts = [s.role, s.heading, s.subtitle, s.contentMarkdown]
+    .filter((x): x is string => typeof x === "string");
+  const hay = parts.join("\n");
+  return PRODUCTION_LEAK_SUBSTRINGS.some((needle) => hay.includes(needle));
+}
 
 interface Finding {
   lessonId: string;
