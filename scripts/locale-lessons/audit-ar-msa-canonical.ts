@@ -70,7 +70,9 @@ const BANNED_OPTION_PREFIXES = [
 const GENERIC_TITLES = new Set([
   "Lesson", "Untitled", "TBD", "TODO", "درس", "بدون عنوان",
 ]);
-// Egyptian-only markers (avoid heavy overlap with Gulf):
+// Egyptian-only markers. "يبقى/يبقي" intentionally EXCLUDED — it is also a
+// valid MSA verb ("remains/becomes") and produced too many false positives
+// in ar-MSA canonical lessons. (Step-1 suppression: canonical audit only.)
 const EGYPTIAN_MARKERS = [
   "إزاي", "ازاي", "ازاى",
   "علشان", "عشان",
@@ -79,17 +81,27 @@ const EGYPTIAN_MARKERS = [
   "بتاع", "بتاعت", "بتوع",
   "دلوقتي", "دلوقت",
   "أهو", "اهو",
-  "يبقى", "يبقي",
 ];
 
 const findings: Finding[] = [];
+let suppressedQuizPrefixCount = 0;
+let suppressedYabqaCount = 0;
 
 function add(f: Finding) { findings.push(f); }
 function snip(s: string, max = 120) {
   return s.length <= max ? s : s.slice(0, max) + "…";
 }
 
-function scanString(lessonId: string, fp: string, value: string) {
+interface ScanCtx {
+  /** True when scanning a string inside a section whose role === "Quiz".
+   * Canonical ar-MSA quiz sections intentionally use "خيار ١:" / "Option N:"
+   * / "الإجابة الصحيحة (خيار …)" scaffolding prefixes that the fragment
+   * sanitizer strips during adaptation. These are NOT learner-facing leaks
+   * in canonical source — suppress (count only). */
+  inQuizSection?: boolean;
+}
+
+function scanString(lessonId: string, fp: string, value: string, ctx: ScanCtx = {}) {
   for (const needle of BANNED_LEARNER_SUBSTRINGS) {
     if (value.includes(needle)) {
       add({ lessonId, fieldPath: fp, issue: `banned learner-facing leak: "${needle}"`,
@@ -98,6 +110,7 @@ function scanString(lessonId: string, fp: string, value: string) {
   }
   for (const pref of BANNED_OPTION_PREFIXES) {
     if (value.includes(pref)) {
+      if (ctx.inQuizSection) { suppressedQuizPrefixCount++; continue; }
       add({ lessonId, fieldPath: fp, issue: `banned option/answer prefix: "${pref}"`,
         snippet: snip(value), recommendedFix: `remove explicit "${pref}" prefix; options must not include numbering or answer-key prefixes` });
     }
@@ -107,6 +120,9 @@ function scanString(lessonId: string, fp: string, value: string) {
     add({ lessonId, fieldPath: fp, issue: "unbalanced ** markdown markers",
       snippet: snip(value), recommendedFix: "balance ** pairs or remove the stray marker" });
   }
+  // "يبقى/يبقي" suppression: counted but not flagged (valid MSA usage).
+  const yabqaRe = /(^|[\s\.,،؛:!\?\(\)«»"'])يبق[ىي]($|[\s\.,،؛:!\?\(\)«»"'])/;
+  if (yabqaRe.test(value)) suppressedYabqaCount++;
   for (const marker of EGYPTIAN_MARKERS) {
     const re = new RegExp(`(^|[\\s\\.,،؛:!\\?\\(\\)«»"'])${marker}($|[\\s\\.,،؛:!\\?\\(\\)«»"'])`);
     if (re.test(value)) {
@@ -116,12 +132,12 @@ function scanString(lessonId: string, fp: string, value: string) {
   }
 }
 
-function walk(lessonId: string, node: unknown, fp: string) {
-  if (typeof node === "string") { scanString(lessonId, fp, node); return; }
-  if (Array.isArray(node)) { node.forEach((v, i) => walk(lessonId, v, `${fp}[${i}]`)); return; }
+function walk(lessonId: string, node: unknown, fp: string, ctx: ScanCtx = {}) {
+  if (typeof node === "string") { scanString(lessonId, fp, node, ctx); return; }
+  if (Array.isArray(node)) { node.forEach((v, i) => walk(lessonId, v, `${fp}[${i}]`, ctx)); return; }
   if (node && typeof node === "object") {
     for (const [k, v] of Object.entries(node as Record<string, unknown>)) {
-      walk(lessonId, v, fp ? `${fp}.${k}` : k);
+      walk(lessonId, v, fp ? `${fp}.${k}` : k, ctx);
     }
   }
 }
