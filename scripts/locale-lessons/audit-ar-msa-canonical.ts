@@ -242,8 +242,10 @@ async function main() {
               issue: `correctIndex ${ci} out of range`,
               snippet: String(ci ?? ""), recommendedFix: "set correctIndex to a valid options index" });
         }
-        // Walk only learner-facing sections (skip internal production-reference).
-        walk(id, s, `sections[${i}]`);
+        // Walk only learner-facing sections. Pass quiz-section context so the
+        // scanner can suppress canonical scaffolding prefixes inside Quiz roles.
+        const inQuizSection = typeof s.role === "string" && (s.role as string).trim().toLowerCase() === "quiz";
+        walk(id, s, `sections[${i}]`, { inQuizSection });
       });
     }
     // Walk top-level fields excluding sections (already walked per learner-facing section).
@@ -259,6 +261,11 @@ async function main() {
     manifestCount: manifestIds.length,
     onDiskCount: onDisk.length,
     totalFindings: findings.length,
+    suppressed: {
+      quizScaffoldingPrefixes: suppressedQuizPrefixCount,
+      yabqaMsaVerb: suppressedYabqaCount,
+      total: suppressedQuizPrefixCount + suppressedYabqaCount,
+    },
     ok: findings.length === 0,
   };
   await fs.mkdir(path.dirname(REPORT_PATH), { recursive: true });
