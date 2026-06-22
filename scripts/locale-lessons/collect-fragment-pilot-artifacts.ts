@@ -126,26 +126,6 @@ async function findLessonInRunDir(
       continue;
     }
   }
-  // Fuzzy fallback: scan subdirs for `<locale>/lessons/<lessonId>.json`.
-  try {
-    const subs = await fs.readdir(runDir);
-    for (const sub of subs) {
-      const p = path.join(runDir, sub, "lessons", `${lessonId}.json`);
-      try {
-        return await readJsonFile<AdaptedLessonPackage>(p);
-      } catch {
-        // try shape: <locale>/lessons/<lessonId>.json under root sub
-        const p2 = path.join(runDir, sub, locale, "lessons", `${lessonId}.json`);
-        try {
-          return await readJsonFile<AdaptedLessonPackage>(p2);
-        } catch {
-          continue;
-        }
-      }
-    }
-  } catch {
-    // ignore
-  }
   return null;
 }
 
