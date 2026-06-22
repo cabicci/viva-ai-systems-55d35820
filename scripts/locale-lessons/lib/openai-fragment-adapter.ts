@@ -37,11 +37,13 @@ export class OpenAiFragmentParseError extends Error {
 
 export class OpenAiFragmentEmptyLocalizedTextError extends OpenAiFragmentParseError {
   readonly fieldPath: string;
+  readonly partialMap: LocalizedTextMap;
 
-  constructor(fieldPath: string) {
+  constructor(fieldPath: string, partialMap: LocalizedTextMap) {
     super(`localizedText must be a non-empty string for ${fieldPath}`);
     this.name = "OpenAiFragmentEmptyLocalizedTextError";
     this.fieldPath = fieldPath;
+    this.partialMap = partialMap;
   }
 }
 
@@ -203,10 +205,28 @@ export function parseOpenAiFragmentResponse(
     if (typeof field.fieldPath !== "string") {
       throw new OpenAiFragmentParseError("fieldPath must be a string");
     }
-    if (typeof field.localizedText !== "string" || field.localizedText.trim() === "") {
-      throw new OpenAiFragmentEmptyLocalizedTextError(field.fieldPath);
+    if (typeof field.localizedText !== "string") {
+      throw new OpenAiFragmentParseError(
+        `localizedText must be a non-empty string for ${field.fieldPath}`,
+      );
     }
     localizedByPath.set(field.fieldPath, field.localizedText);
+  }
+
+  const partialMap = {
+    ...input,
+    targetLocale: input.targetLocale,
+    fields: input.fields.map((field) => ({
+      ...field,
+      localizedText: localizedByPath.get(field.fieldPath) ?? "",
+    })),
+  };
+
+  const emptyField = partialMap.fields.find(
+    (field) => field.localizedText?.trim() === "",
+  );
+  if (emptyField) {
+    throw new OpenAiFragmentEmptyLocalizedTextError(emptyField.fieldPath, partialMap);
   }
 
   return {
