@@ -15,11 +15,11 @@
       "role": "Orientation",
       "heading": "Orientation",
       "subtitle": "Orientation",
-      "contentMarkdown": "- **What will you understand?** **Why does AI 'forget'?** — **And how to design your product** **to remember what needs to be remembered**.\n- **Why now?** **A long conversation** = **context fills up**. **Without design** — **the assistant seems to be 'talking to a wall'**.\n- **What after the lesson?** **You will identify 3 things** **the app should always remember**.",
+      "contentMarkdown": "- What will you understand? Why does AI 'forget'? — And how to design your product to remember what needs to be remembered.\n- Why now? A long conversation = context fills up. Without design — the assistant seems to be 'talking to a wall'.\n- What after the lesson? You will identify 3 things the app should always remember.",
       "bullets": [
-        "**What will you understand?** **Why does AI 'forget'?** — **And how to design your product** **to remember what needs to be remembered**.",
-        "**Why now?** **A long conversation** = **context fills up**. **Without design** — **the assistant seems to be 'talking to a wall'**.",
-        "**What after the lesson?** **You will identify 3 things** **the app should always remember**."
+        "What will you understand? Why does AI 'forget'? — And how to design your product to remember what needs to be remembered.",
+        "Why now? A long conversation = context fills up. Without design — the assistant seems to be 'talking to a wall'.",
+        "What after the lesson? You will identify 3 things the app should always remember."
       ],
       "tables": []
     },
@@ -27,11 +27,11 @@
       "role": "Tension",
       "heading": "Tension",
       "subtitle": "You agreed — and after 10 messages, it forgot",
-      "contentMarkdown": "- **You explained an idea**, **you agreed on a plan** — **and soon** **the AI** **started suggesting the opposite of what you said**.\n- **It's not you** — **the AI really forgets**. **This is not a personal flaw** — **it's a design limitation**.\n- When **building an AI feature** — **don't expect** that the 'conversation' **will remember everything** — **the app needs to remember what is important**.",
+      "contentMarkdown": "- You explained an idea, you agreed on a plan — and soon the AI started suggesting the opposite of what you said.\n- It's not you — the AI really forgets. This is not a personal flaw — it's a design limitation.\n- When building an AI feature — don't expect that the 'conversation' will remember everything — the app needs to remember what is important.",
       "bullets": [
-        "**You explained an idea**, **you agreed on a plan** — **and soon** **the AI** **started suggesting the opposite of what you said**.",
-        "**It's not you** — **the AI really forgets**. **This is not a personal flaw** — **it's a design limitation**.",
-        "When **building an AI feature** — **don't expect** that the 'conversation' **will remember everything** — **the app needs to remember what is important**."
+        "You explained an idea, you agreed on a plan — and soon the AI started suggesting the opposite of what you said.",
+        "It's not you — the AI really forgets. This is not a personal flaw — it's a design limitation.",
+        "When building an AI feature — don't expect that the 'conversation' will remember everything — the app needs to remember what is important."
       ],
       "tables": []
     },
@@ -39,12 +39,12 @@
       "role": "Core idea",
       "heading": "Core idea",
       "subtitle": "AI does not remember forever",
-      "contentMarkdown": "- **Context Window** = **the amount of text the AI can see in the conversation** — **not a permanent archive**.\n- **Signs you've gone beyond the window**: **it repeats itself**, **forgets your name**, **contradicts decisions**, **makes up details**.\n- **The solution in the product**: **the app remembers 3-5 fixed facts** (name, preferences, decisions) **and passes them with every request**.\n- **In conversation**: **a short summary every 15-20 messages** — **'Status summary: 1)... 2)...'**.",
+      "contentMarkdown": "- Context Window = the amount of text the AI can see in the conversation — not a permanent archive.\n- Signs you've gone beyond the window: it repeats itself, forgets your name, contradicts decisions, makes up details.\n- The solution in the product: the app remembers 3-5 fixed facts (name, preferences, decisions) and passes them with every request.\n- In conversation: a short summary every 15-20 messages — 'Status summary: 1)... 2)...'.",
       "bullets": [
-        "**Context Window** = **the amount of text the AI can see in the conversation** — **not a permanent archive**.",
-        "**Signs you've gone beyond the window**: **it repeats itself**, **forgets your name**, **contradicts decisions**, **makes up details**.",
-        "**The solution in the product**: **the app remembers 3-5 fixed facts** (name, preferences, decisions) **and passes them with every request**.",
-        "**In conversation**: **a short summary every 15-20 messages** — **'Status summary: 1)... 2)...'**."
+        "Context Window = the amount of text the AI can see in the conversation — not a permanent archive.",
+        "Signs you've gone beyond the window: it repeats itself, forgets your name, contradicts decisions, makes up details.",
+        "The solution in the product: the app remembers 3-5 fixed facts (name, preferences, decisions) and passes them with every request.",
+        "In conversation: a short summary every 15-20 messages — 'Status summary: 1)... 2)...'."
       ],
       "tables": []
     },
@@ -52,7 +52,7 @@
       "role": "Comparison",
       "heading": "Comparison",
       "subtitle": "Talking and waiting vs summarizing and passing",
-      "contentMarkdown": "| 'Continue from the beginning' | Summary + passing from the app |\n|----------------|---------------------------|\n| **30-message conversation** — **'Continue from what I told you.'** **It forgot**. **It will start guessing** — **and you will build on incorrect information** | **'Summary: 1) project... 2) decisions... 3) open...**' + **the app passes the username and preferences every time** |",
+      "contentMarkdown": "| 'Continue from the beginning' | Summary + passing from the app |\n|----------------|---------------------------|\n| 30-message conversation — 'Continue from what I told you.' It forgot. It will start guessing — and you will build on incorrect information | 'Summary: 1) project... 2) decisions... 3) open...' + the app passes the username and preferences every time |",
       "bullets": [],
       "tables": [
         {
@@ -62,8 +62,8 @@
           ],
           "rows": [
             [
-              "**30-message conversation** — **'Continue from what I told you.'** **It forgot**. **It will start guessing** — **and you will build on incorrect information**.",
-              "**'Summary: 1) project... 2) decisions... 3) open...**' + **the app passes the username and preferences every time**."
+              "30-message conversation — 'Continue from what I told you.' It forgot. It will start guessing — and you will build on incorrect information.",
+              "'Summary: 1) project... 2) decisions... 3) open...' + the app passes the username and preferences every time."
             ]
           ]
         }
@@ -73,7 +73,7 @@
       "role": "Glossary",
       "heading": "Glossary",
       "subtitle": "Two terms to start",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Context Window** | **The maximum amount of text the AI sees in the conversation** — **not a permanent archive** | **After 50 messages** — **the first message** **was deleted from its temporary memory** |\n| **State Snapshot** | **A short summary of the current state** — **to give back to the AI** when **the conversation gets long** | **'We decided: blue color, young audience, open: pricing page.'** |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| Context Window | The maximum amount of text the AI sees in the conversation — not a permanent archive | After 50 messages — the first message was deleted from its temporary memory |\n| State Snapshot | A short summary of the current state — to give back to the AI when the conversation gets long | 'We decided: blue color, young audience, open: pricing page.' |",
       "bullets": [],
       "tables": [
         {
@@ -84,14 +84,14 @@
           ],
           "rows": [
             [
-              "**Context Window**",
-              "**The maximum amount of text the AI sees in the conversation** — **not a permanent archive**.",
-              "**After 50 messages** — **the first message** **was deleted from its temporary memory**."
+              "Context Window",
+              "The maximum amount of text the AI sees in the conversation — not a permanent archive.",
+              "After 50 messages — the first message was deleted from its temporary memory."
             ],
             [
-              "**State Snapshot**",
-              "**A short summary of the current state** — **to give back to the AI** when **the conversation gets long**.",
-              "**'We decided: blue color, young audience, open: pricing page.'**"
+              "State Snapshot",
+              "A short summary of the current state — to give back to the AI when the conversation gets long.",
+              "'We decided: blue color, young audience, open: pricing page.'"
             ]
           ]
         }
@@ -100,7 +100,7 @@
     {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot block (intent)",
-      "contentMarkdown": "**Limited memory — explicit design:**\n\n**The alert** **is not legal** — **it is an acknowledgment** that **memory has limits**. **The assistant sees your context** + **part of the content** — **not 'everything'**. **In your product**: **define what the app saves outside the conversation** **and passes it every time**.",
+      "contentMarkdown": "Limited memory — explicit design: The alert is not legal — it is an acknowledgment that memory has limits. The assistant sees your context + part of the content — not 'everything'. In your product: define what the app saves outside the conversation and passes it every time.",
       "bullets": [],
       "tables": []
     },
@@ -108,33 +108,33 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick confirmation",
-      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** **After a week of conversation** — **the AI forgot your name** **and contradicted a decision you agreed on**. **What is the closest reason?**\n\n**You went outside the Context Window** — **the information fell out of the window**.\nThe AI had a sudden hallucination** **unrelated to memory**.**\nThe problem is in your tone**.**\n\n**Explanation:** When **it forgets basics** — **often the information is not in the window**. **The solution:** **the app saves and passes**.",
+      "contentMarkdown": "Question: After a week of conversation — the AI forgot your name and contradicted a decision you agreed on. What is the closest reason?\nYou went outside the Context Window — the information fell out of the window.\nThe AI had a sudden hallucination unrelated to memory.\nThe problem is in your tone.\nExplanation: When it forgets basics — often the information is not in the window. The solution: the app saves and passes.",
       "bullets": [
-        "**You went outside the Context Window** — **the information fell out of the window**.",
-        "The AI had a sudden hallucination** **unrelated to memory**.**",
-        "The problem is in your tone**.**"
+        "You went outside the Context Window — the information fell out of the window.",
+        "The AI had a sudden hallucination unrelated to memory.",
+        "The problem is in your tone."
       ],
       "tables": [],
       "quiz": {
-        "question": "**After a week of conversation** — **the AI forgot your name** **and contradicted a decision you agreed on**. **What is the closest reason?**",
+        "question": "After a week of conversation — the AI forgot your name and contradicted a decision you agreed on. What is the closest reason?",
         "correctIndex": 0,
         "options": [
-          "**You went outside the Context Window** — **the information fell out of the window**.",
-          "The AI had a sudden hallucination** **unrelated to memory.",
+          "You went outside the Context Window — the information fell out of the window.",
+          "The AI had a sudden hallucination unrelated to memory.",
           "The problem is in your tone."
         ],
-        "explanation": "When **it forgets basics** — **often the information is not in the window**. **The solution:** **the app saves and passes**."
+        "explanation": "When it forgets basics — often the information is not in the window. The solution: the app saves and passes."
       }
     },
     {
       "role": "Mission",
       "heading": "Mission",
       "subtitle": "3 things the app should remember",
-      "contentMarkdown": "**Introduction:** **Imagine an app with an AI assistant** — **identify 3 facts** **the app should remember** (**not** that **the AI remembers on its own**). **10-15 minutes**.\n\n**Delivery:**\n\n1. **Type of app** (e.g., store, education, booking)\n2. **3 things it should always remember** — **for each one**:\n   - **What is the fact?**\n   - **Why is it important if forgotten?**\n   - **How does the app pass it?** (database field, session, at the start of each prompt)\n3. **State Snapshot sentence** if **the conversation gets long**.\n\n**Evaluation criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| 3 practical facts | 60% | **Each fact has a reason 'if forgotten'**; **the passing method is realistic** |\n| Snapshot | 40% | **The summary is short and focused**; **covers current decisions or state** |",
+      "contentMarkdown": "Introduction: Imagine an app with an AI assistant — identify 3 facts the app should remember (not that the AI remembers on its own). 10-15 minutes. Delivery: 1. Type of app (e.g., store, education, booking)\n2. 3 things it should always remember — for each one: - What is the fact? - Why is it important if forgotten? - How does the app pass it? (database field, session, at the start of each prompt)\n3. State Snapshot sentence if the conversation gets long. Evaluation criteria: | Dimension | Weight | Criteria |\n|-------|-------|---------|\n| 3 practical facts | 60% | Each fact has a reason 'if forgotten'; the passing method is realistic |\n| Snapshot | 40% | The summary is short and focused; covers current decisions or state |",
       "bullets": [
-        "**What is the fact?**",
-        "**Why is it important if forgotten?**",
-        "**How does the app pass it?** (database field, session, at the start of each prompt)"
+        "What is the fact?",
+        "Why is it important if forgotten?",
+        "How does the app pass it? (database field, session, at the start of each prompt)"
       ],
       "tables": [
         {
@@ -147,33 +147,33 @@
             [
               "3 practical facts",
               "60%",
-              "**Each fact has a reason 'if forgotten'**; **the passing method is realistic**."
+              "Each fact has a reason 'if forgotten'; the passing method is realistic."
             ],
             [
               "Snapshot",
               "40%",
-              "**The summary is short and focused**; **covers current decisions or state**."
+              "The summary is short and focused; covers current decisions or state."
             ]
           ]
         }
       ],
       "mission": {
-        "intro": "**Imagine an app with an AI assistant** — **identify 3 facts** **the app should remember** (**not** that **the AI remembers on its own**). **10-15 minutes**.",
+        "intro": "Imagine an app with an AI assistant — identify 3 facts the app should remember (not that the AI remembers on its own). 10-15 minutes.",
         "delivery": [
-          "**Type of app** (e.g., store, education, booking)",
-          "**3 things it should always remember** — **for each one**:",
-          "**State Snapshot sentence** if **the conversation gets long**."
+          "Type of app (e.g., store, education, booking)",
+          "3 things it should always remember — for each one:",
+          "State Snapshot sentence if the conversation gets long."
         ],
         "rubric": [
           {
             "dimension": "3 practical facts",
             "weight": 60,
-            "criteria": "**Each fact has a reason 'if forgotten'**; **the passing method is realistic**."
+            "criteria": "Each fact has a reason 'if forgotten'; the passing method is realistic."
           },
           {
             "dimension": "Snapshot",
             "weight": 40,
-            "criteria": "**The summary is short and focused**; **covers current decisions or state**."
+            "criteria": "The summary is short and focused; covers current decisions or state."
           }
         ],
         "yamlIntent": "Imagine app with AI assistant — define 3 facts app must persist with why and how — plus Snapshot sentence — ~10–15 min",
@@ -183,11 +183,11 @@
     {
       "role": "Confidence close",
       "heading": "Confidence close",
-      "contentMarkdown": "- **I understand:** **AI forgets** — **the app is the one that remembers**. **Context Window** **is a limit** **not a feature**.\n- **You can:** **identify 3 facts + Snapshot** **for any conversation feature**.\n- **Next:** **Temperature** — **Stability vs Creativity**.",
+      "contentMarkdown": "- I understand: AI forgets — the app is the one that remembers. Context Window is a limit not a feature.\n- You can: identify 3 facts + Snapshot for any conversation feature.\n- Next: Temperature — Stability vs Creativity.",
       "bullets": [
-        "**I understand:** **AI forgets** — **the app is the one that remembers**. **Context Window** **is a limit** **not a feature**.",
-        "**You can:** **identify 3 facts + Snapshot** **for any conversation feature**.",
-        "**Next:** **Temperature** — **Stability vs Creativity**."
+        "I understand: AI forgets — the app is the one that remembers. Context Window is a limit not a feature.",
+        "You can: identify 3 facts + Snapshot for any conversation feature.",
+        "Next: Temperature — Stability vs Creativity."
       ],
       "tables": []
     }

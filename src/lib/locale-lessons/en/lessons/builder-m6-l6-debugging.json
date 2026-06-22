@@ -15,11 +15,11 @@
       "role": "Orientation",
       "heading": "Orientation",
       "subtitle": "Orientation",
-      "contentMarkdown": "- **What will you understand?** **When the app fails**: **Identify the symptom → isolate the cause (last change) → then request a fix**.\n- **Why now?** **Any app can fail — this is normal**. **The difference is that you have a simple playbook without coding**.\n- **What after the lesson?** **You will write a bug report**: **the page, expected behavior, actual behavior, last change**.",
+      "contentMarkdown": "- What will you understand? When the app fails: Identify the symptom → isolate the cause (last change) → then request a fix.\n- Why now? Any app can fail — this is normal. The difference is that you have a simple playbook without coding.\n- What after the lesson? You will write a bug report: the page, expected behavior, actual behavior, last change.",
       "bullets": [
-        "**What will you understand?** **When the app fails**: **Identify the symptom → isolate the cause (last change) → then request a fix**.",
-        "**Why now?** **Any app can fail — this is normal**. **The difference is that you have a simple playbook without coding**.",
-        "**What after the lesson?** **You will write a bug report**: **the page, expected behavior, actual behavior, last change**."
+        "What will you understand? When the app fails: Identify the symptom → isolate the cause (last change) → then request a fix.",
+        "Why now? Any app can fail — this is normal. The difference is that you have a simple playbook without coding.",
+        "What after the lesson? You will write a bug report: the page, expected behavior, actual behavior, last change."
       ],
       "tables": []
     },
@@ -27,11 +27,11 @@
       "role": "Tension",
       "heading": "Tension — 'The app is down' — and you don't know where to start",
       "subtitle": "'The app is down' — and you don't know where to start",
-      "contentMarkdown": "- **You click Send and the screen spins with no response**. **First response: 'The app is down'** — **but this doesn't help anyone fix it**.\n- **Even the biggest companies have apps that fail every day**. **The difference: they have a clear method**.\n- **You are not asked for a stack trace** — **you are asked to describe what is happening in one clear sentence**.",
+      "contentMarkdown": "- You click Send and the screen spins with no response. First response: 'The app is down' — but this doesn't help anyone fix it.\n- Even the biggest companies have apps that fail every day. The difference: they have a clear method.\n- You are not asked for a stack trace — you are asked to describe what is happening in one clear sentence.",
       "bullets": [
-        "**You click Send and the screen spins with no response**. **First response: 'The app is down'** — **but this doesn't help anyone fix it**.",
-        "**Even the biggest companies have apps that fail every day**. **The difference: they have a clear method**.",
-        "**You are not asked for a stack trace** — **you are asked to describe what is happening in one clear sentence**."
+        "You click Send and the screen spins with no response. First response: 'The app is down' — but this doesn't help anyone fix it.",
+        "Even the biggest companies have apps that fail every day. The difference: they have a clear method.",
+        "You are not asked for a stack trace — you are asked to describe what is happening in one clear sentence."
       ],
       "tables": []
     },
@@ -39,11 +39,11 @@
       "role": "Core idea",
       "heading": "Core idea — Show the symptom → Isolate the cause → Request a fix",
       "subtitle": "Show the symptom → Isolate the cause → Request a fix",
-      "contentMarkdown": "- **Step 1 — Symptom**: '**When the client clicks Send on the chat page, the screen spins with no response.**'\n- **Step 2 — Isolate**: '**What was the last thing you changed before things went wrong?**' **In 90% of cases, it's from the last change**.\n- **Step 3 — Fix**: **Send 3 pieces of information to help Lovable** — **what is happening, what was expected, last change**.",
+      "contentMarkdown": "- Step 1 — Symptom: 'When the client clicks Send on the chat page, the screen spins with no response.'\n- Step 2 — Isolate: 'What was the last thing you changed before things went wrong?' In 90% of cases, it's from the last change.\n- Step 3 — Fix: Send 3 pieces of information to help Lovable — what is happening, what was expected, last change.",
       "bullets": [
-        "**Step 1 — Symptom**: '**When the client clicks Send on the chat page, the screen spins with no response.**'",
-        "**Step 2 — Isolate**: '**What was the last thing you changed before things went wrong?**' **In 90% of cases, it's from the last change**.",
-        "**Step 3 — Fix**: **Send 3 pieces of information to help Lovable** — **what is happening, what was expected, last change**."
+        "Step 1 — Symptom: 'When the client clicks Send on the chat page, the screen spins with no response.'",
+        "Step 2 — Isolate: 'What was the last thing you changed before things went wrong?' In 90% of cases, it's from the last change.",
+        "Step 3 — Fix: Send 3 pieces of information to help Lovable — what is happening, what was expected, last change."
       ],
       "tables": []
     },
@@ -51,7 +51,7 @@
       "role": "Comparison",
       "heading": "Comparison — General description vs Description that fixes in seconds",
       "subtitle": "General description vs Description that fixes in seconds",
-      "contentMarkdown": "| Error — 'The app is down' | Correct — 3 specific pieces of information |\n|----------------------|------------------------|\n| **Responds with 10 general suggestions and goes in circles** | '**When I click Send, the screen spins (actual). Expected: AI should respond (expected). Last change: I added a new button (possible cause).**' **In seconds, it knows where the problem is** |",
+      "contentMarkdown": "| Error — 'The app is down' | Correct — 3 specific pieces of information |\n|----------------------|------------------------|\n| Responds with 10 general suggestions and goes in circles | 'When I click Send, the screen spins (actual). Expected: AI should respond (expected). Last change: I added a new button (possible cause).' In seconds, it knows where the problem is |",
       "bullets": [],
       "tables": [
         {
@@ -61,8 +61,8 @@
           ],
           "rows": [
             [
-              "**Responds with 10 general suggestions and goes in circles**",
-              "'**When I click Send, the screen spins (actual). Expected: AI should respond (expected). Last change: I added a new button (possible cause).**' **In seconds, it knows where the problem is**"
+              "Responds with 10 general suggestions and goes in circles",
+              "'When I click Send, the screen spins (actual). Expected: AI should respond (expected). Last change: I added a new button (possible cause).' In seconds, it knows where the problem is"
             ]
           ]
         }
@@ -72,7 +72,7 @@
       "role": "Glossary",
       "heading": "Glossary — Two terms for diagnosis",
       "subtitle": "Two terms for diagnosis",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Symptom** | **What is happening exactly** — **not 'down', but a specific scenario** | '**When I click Send, the screen spins with no response.**' |\n| **Expected vs Actual** | **What was supposed to happen — and what actually happened** | **Expected: AI should respond. Actual: the screen spins.** |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| Symptom | What is happening exactly — not 'down', but a specific scenario | 'When I click Send, the screen spins with no response.' |\n| Expected vs Actual | What was supposed to happen — and what actually happened | Expected: AI should respond. Actual: the screen spins. |",
       "bullets": [],
       "tables": [
         {
@@ -83,14 +83,14 @@
           ],
           "rows": [
             [
-              "**Symptom**",
-              "**What is happening exactly** — **not 'down', but a specific scenario**",
-              "'**When I click Send, the screen spins with no response.**'"
+              "Symptom",
+              "What is happening exactly — not 'down', but a specific scenario",
+              "'When I click Send, the screen spins with no response.'"
             ],
             [
-              "**Expected vs Actual**",
-              "**What was supposed to happen — and what actually happened**",
-              "**Expected: AI should respond. Actual: the screen spins.**"
+              "Expected vs Actual",
+              "What was supposed to happen — and what actually happened",
+              "Expected: AI should respond. Actual: the screen spins."
             ]
           ]
         }
@@ -99,7 +99,7 @@
     {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot block (intent)",
-      "contentMarkdown": "**3 steps**: **Show the symptom → go back to the last change → send 3 pieces of information**. **You don't need to understand code — you need a description**.",
+      "contentMarkdown": "3 steps: Show the symptom → go back to the last change → send 3 pieces of information. You don't need to understand code — you need a description.",
       "bullets": [],
       "tables": []
     },
@@ -107,29 +107,29 @@
       "role": "Quiz",
       "heading": "Quiz — Quick Confirmation",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** **The client clicks Send and the screen spins. What is the first step before asking Lovable for a fix?**\n\n**Describe the scenario exactly: 'When I click Send on the chat page, the screen spins with no response.'**\nRefresh the page multiple times**.**\nSay 'the app is down, fix it with your knowledge.'****\n\n**Explanation:** **Symptom first** — **when you describe the scenario exactly, you can search for the cause and ask clearly**.",
+      "contentMarkdown": "Question: The client clicks Send and the screen spins. What is the first step before asking Lovable for a fix?\nDescribe the scenario exactly: 'When I click Send on the chat page, the screen spins with no response.'\nRefresh the page multiple times.\nSay 'the app is down, fix it with your knowledge.'\nExplanation: Symptom first — when you describe the scenario exactly, you can search for the cause and ask clearly.",
       "bullets": [
-        "**Describe the scenario exactly: 'When I click Send on the chat page, the screen spins with no response.'**",
-        "Refresh the page multiple times**.**",
-        "Say 'the app is down, fix it with your knowledge.'****"
+        "Describe the scenario exactly: 'When I click Send on the chat page, the screen spins with no response.'",
+        "Refresh the page multiple times.",
+        "Say 'the app is down, fix it with your knowledge.'"
       ],
       "tables": [],
       "quiz": {
-        "question": "**The client clicks Send and the screen spins. What is the first step before asking Lovable for a fix?**",
+        "question": "The client clicks Send and the screen spins. What is the first step before asking Lovable for a fix?",
         "correctIndex": 0,
         "options": [
-          "**Describe the scenario exactly: 'When I click Send on the chat page, the screen spins with no response.'**",
+          "Describe the scenario exactly: 'When I click Send on the chat page, the screen spins with no response.'",
           "Refresh the page multiple times.",
           "Say 'the app is down, fix it with your knowledge.'"
         ],
-        "explanation": "**Symptom first** — **when you describe the scenario exactly, you can search for the cause and ask clearly**."
+        "explanation": "Symptom first — when you describe the scenario exactly, you can search for the cause and ask clearly."
       }
     },
     {
       "role": "Mission",
       "heading": "Mission — Write a bug report for your app",
       "subtitle": "Write a bug report for your app",
-      "contentMarkdown": "**Introduction:** **Imagine your app has crashed**. **10 minutes**.\n\n**Delivery:**\n\n1. **Page (Route)**: Which page has the issue?\n2. **Expected**: What was supposed to happen?\n3. **Actual**: What is actually happening? (specific scenario)\n4. **Last change**: What was the last thing you changed?\n\n**Evaluation criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Complete bug report | 70% | **Page + Expected + Actual + Last change. The actual description must be a specific scenario — not 'down'** |\n| Simplicity of language | 30% | **Each line in simple words — no complex technical terms** |",
+      "contentMarkdown": "Introduction: Imagine your app has crashed. 10 minutes. Delivery: 1. Page (Route): Which page has the issue?\n2. Expected: What was supposed to happen?\n3. Actual: What is actually happening? (specific scenario)\n4. Last change: What was the last thing you changed? Evaluation criteria: | Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Complete bug report | 70% | Page + Expected + Actual + Last change. The actual description must be a specific scenario — not 'down' |\n| Simplicity of language | 30% | Each line in simple words — no complex technical terms |",
       "bullets": [],
       "tables": [
         {
@@ -142,34 +142,34 @@
             [
               "Complete bug report",
               "70%",
-              "**Page + Expected + Actual + Last change. The actual description must be a specific scenario — not 'down'**"
+              "Page + Expected + Actual + Last change. The actual description must be a specific scenario — not 'down'"
             ],
             [
               "Simplicity of language",
               "30%",
-              "**Each line in simple words — no complex technical terms**"
+              "Each line in simple words — no complex technical terms"
             ]
           ]
         }
       ],
       "mission": {
-        "intro": "**Imagine your app has crashed**. **10 minutes**.",
+        "intro": "Imagine your app has crashed. 10 minutes.",
         "delivery": [
-          "**Page (Route)**: Which page has the issue?",
-          "**Expected**: What was supposed to happen?",
-          "**Actual**: What is actually happening? (specific scenario)",
-          "**Last change**: What was the last thing you changed?"
+          "Page (Route): Which page has the issue?",
+          "Expected: What was supposed to happen?",
+          "Actual: What is actually happening? (specific scenario)",
+          "Last change: What was the last thing you changed?"
         ],
         "rubric": [
           {
             "dimension": "Complete bug report",
             "weight": 70,
-            "criteria": "**Page + Expected + Actual + Last change. The actual description must be a specific scenario — not 'down'**"
+            "criteria": "Page + Expected + Actual + Last change. The actual description must be a specific scenario — not 'down'"
           },
           {
             "dimension": "Simplicity of language",
             "weight": 30,
-            "criteria": "**Each line in simple words — no complex technical terms**"
+            "criteria": "Each line in simple words — no complex technical terms"
           }
         ],
         "yamlIntent": "Bug report — page, expected, actual, last change — ~10 min",
@@ -179,11 +179,11 @@
     {
       "role": "Confidence close",
       "heading": "Confidence close",
-      "contentMarkdown": "- **You understood:** **Any app can fail** — **the solution starts with a clear symptom and isolating the cause, not panic**.\n- **You can:** **A bug report ready — 3 pieces of information that make any helper understand you in seconds**.\n- **Next:** **Tables & Columns** — **how to organize app data in tables and columns**.\n\n---",
+      "contentMarkdown": "- You understood: Any app can fail — the solution starts with a clear symptom and isolating the cause, not panic.\n- You can: A bug report ready — 3 pieces of information that make any helper understand you in seconds.\n- Next: Tables & Columns — how to organize app data in tables and columns. ---",
       "bullets": [
-        "**You understood:** **Any app can fail** — **the solution starts with a clear symptom and isolating the cause, not panic**.",
-        "**You can:** **A bug report ready — 3 pieces of information that make any helper understand you in seconds**.",
-        "**Next:** **Tables & Columns** — **how to organize app data in tables and columns**."
+        "You understood: Any app can fail — the solution starts with a clear symptom and isolating the cause, not panic.",
+        "You can: A bug report ready — 3 pieces of information that make any helper understand you in seconds.",
+        "Next: Tables & Columns — how to organize app data in tables and columns."
       ],
       "tables": []
     }

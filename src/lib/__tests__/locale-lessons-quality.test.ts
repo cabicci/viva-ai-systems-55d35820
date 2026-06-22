@@ -532,7 +532,10 @@ describe("locale-lessons adaptation quality checks", () => {
 
     expect(sanitizedQuiz?.quiz?.correctIndex).toBe(originalIndex);
     expect(sanitizedQuiz?.contentMarkdown).not.toMatch(/Quiz key/i);
-    expect(source.sections.length).toBe(adapted.sections.length);
+    const sourceLearnerSectionCount = source.sections.filter(
+      (section) => !isInternalProductionReferenceSection(section),
+    ).length;
+    expect(sourceLearnerSectionCount).toBe(sanitized.sections.length);
   });
 
   it("validates ar-MSA source package remains 100/100", async () => {

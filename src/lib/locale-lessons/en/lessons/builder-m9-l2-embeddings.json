@@ -15,12 +15,12 @@
       "role": "Orientation",
       "heading": "Orientation — Introduction to the Lesson",
       "subtitle": "Introduction to the Lesson",
-      "contentMarkdown": "- **What will you understand?** **Embedding (converting words to numbers that represent meaning)** **finds meaning** — **not just the literal word**.\n- **Why now?** **RAG needs to search your files** — **and regular search doesn’t understand ‘what you mean’**.\n- **What after the lesson?** **You will write two different questions in words** — **same meaning**.\n- **Optional depth:** **For those who want to build a real RAG**. **You can skip it and come back later**.",
+      "contentMarkdown": "- What will you understand? Embedding (converting words to numbers that represent meaning) finds meaning — not just the literal word.\n- Why now? RAG needs to search your files — and regular search doesn’t understand ‘what you mean’.\n- What after the lesson? You will write two different questions in words — same meaning.\n- Optional depth: For those who want to build a real RAG. You can skip it and come back later.",
       "bullets": [
-        "**What will you understand?** **Embedding (converting words to numbers that represent meaning)** **finds meaning** — **not just the literal word**.",
-        "**Why now?** **RAG needs to search your files** — **and regular search doesn’t understand ‘what you mean’**.",
-        "**What after the lesson?** **You will write two different questions in words** — **same meaning**.",
-        "**Optional depth:** **For those who want to build a real RAG**. **You can skip it and come back later**."
+        "What will you understand? Embedding (converting words to numbers that represent meaning) finds meaning — not just the literal word.",
+        "Why now? RAG needs to search your files — and regular search doesn’t understand ‘what you mean’.",
+        "What after the lesson? You will write two different questions in words — same meaning.",
+        "Optional depth: For those who want to build a real RAG. You can skip it and come back later."
       ],
       "tables": []
     },
@@ -28,11 +28,11 @@
       "role": "Tension",
       "heading": "Tension — The client wrote ‘How does AI respond?’ — and got no results",
       "subtitle": "The client wrote ‘How does AI respond?’ — and got no results",
-      "contentMarkdown": "- **Traditional search looks for words literally**. **‘Respond’ is not written in the article** — **even though the article explains the topic!**\n- **The storage is good at comparing texts** — **but it doesn’t understand that ‘respond’, ‘answer’, and ‘generate a response’ mean the same thing**.\n- **For RAG to work correctly**, **we need meaning-based search** — **not letter-based**.",
+      "contentMarkdown": "- Traditional search looks for words literally. ‘Respond’ is not written in the article — even though the article explains the topic!\n- The storage is good at comparing texts — but it doesn’t understand that ‘respond’, ‘answer’, and ‘generate a response’ mean the same thing.\n- For RAG to work correctly, we need meaning-based search — not letter-based.",
       "bullets": [
-        "**Traditional search looks for words literally**. **‘Respond’ is not written in the article** — **even though the article explains the topic!**",
-        "**The storage is good at comparing texts** — **but it doesn’t understand that ‘respond’, ‘answer’, and ‘generate a response’ mean the same thing**.",
-        "**For RAG to work correctly**, **we need meaning-based search** — **not letter-based**."
+        "Traditional search looks for words literally. ‘Respond’ is not written in the article — even though the article explains the topic!",
+        "The storage is good at comparing texts — but it doesn’t understand that ‘respond’, ‘answer’, and ‘generate a response’ mean the same thing.",
+        "For RAG to work correctly, we need meaning-based search — not letter-based."
       ],
       "tables": []
     },
@@ -40,11 +40,11 @@
       "role": "Core idea",
       "heading": "Core idea — Embeddings find meaning — not words",
       "subtitle": "Embeddings find meaning — not words",
-      "contentMarkdown": "- **Embedding** = **converting any text into a list of numbers that represent ‘its place on the map of meanings’**.\n- **Sentences close in meaning — their numbers are close**. **‘A cat playing’ and ‘A dog running’ are closer than ‘the stock market’**.\n- **When the client asks**, **we convert their question into a Vector (a way to store meaning digitally)** **and search for the closest Chunks (small pieces of content)** — **even if the words are different**.",
+      "contentMarkdown": "- Embedding = converting any text into a list of numbers that represent ‘its place on the map of meanings’.\n- Sentences close in meaning — their numbers are close. ‘A cat playing’ and ‘A dog running’ are closer than ‘the stock market’.\n- When the client asks, we convert their question into a Vector (a way to store meaning digitally) and search for the closest Chunks (small pieces of content) — even if the words are different.",
       "bullets": [
-        "**Embedding** = **converting any text into a list of numbers that represent ‘its place on the map of meanings’**.",
-        "**Sentences close in meaning — their numbers are close**. **‘A cat playing’ and ‘A dog running’ are closer than ‘the stock market’**.",
-        "**When the client asks**, **we convert their question into a Vector (a way to store meaning digitally)** **and search for the closest Chunks (small pieces of content)** — **even if the words are different**."
+        "Embedding = converting any text into a list of numbers that represent ‘its place on the map of meanings’.",
+        "Sentences close in meaning — their numbers are close. ‘A cat playing’ and ‘A dog running’ are closer than ‘the stock market’.",
+        "When the client asks, we convert their question into a Vector (a way to store meaning digitally) and search for the closest Chunks (small pieces of content) — even if the words are different."
       ],
       "tables": []
     },
@@ -52,7 +52,7 @@
       "role": "Comparison",
       "heading": "Comparison — Literal search vs Meaning-based search",
       "subtitle": "Literal search vs Meaning-based search",
-      "contentMarkdown": "| Word-based search | Embedding |\n|------------------|-----------|\n| ‘How does AI respond?’ — **no literal match**. **The client thinks there’s no content** | **The question is converted to a Vector** — **finds Chunks about ‘generating a response’**. **Same meaning, different words** |",
+      "contentMarkdown": "| Word-based search | Embedding |\n|------------------|-----------|\n| ‘How does AI respond?’ — no literal match. The client thinks there’s no content | The question is converted to a Vector — finds Chunks about ‘generating a response’. Same meaning, different words |",
       "bullets": [],
       "tables": [
         {
@@ -62,8 +62,8 @@
           ],
           "rows": [
             [
-              "‘How does AI respond?’ — **no literal match**. **The client thinks there’s no content**",
-              "**The question is converted to a Vector** — **finds Chunks about ‘generating a response’**. **Same meaning, different words**"
+              "‘How does AI respond?’ — no literal match. The client thinks there’s no content",
+              "The question is converted to a Vector — finds Chunks about ‘generating a response’. Same meaning, different words"
             ]
           ]
         }
@@ -73,7 +73,7 @@
       "role": "Glossary",
       "heading": "Glossary — Two terms to start",
       "subtitle": "Two terms to start",
-      "contentMarkdown": "| Term | Meaning | Example |\n|------|---------|---------|\n| **Embedding (converting words to numbers that represent meaning)** | **Converting text to a Vector** — **numbers describing meaning on a ‘map’** | **‘Arabic’ → 1536 numbers describing meaning from different angles** |\n| **Vector Search (meaning-based search)** | **Searching for the closest Vectors to the question** — **not a literal match** | **‘Quick recipes’ finds ‘meals in 15 minutes’** — **without the word ‘quick’** |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|------|---------|---------|\n| Embedding (converting words to numbers that represent meaning) | Converting text to a Vector — numbers describing meaning on a ‘map’ | ‘Arabic’ → 1536 numbers describing meaning from different angles |\n| Vector Search (meaning-based search) | Searching for the closest Vectors to the question — not a literal match | ‘Quick recipes’ finds ‘meals in 15 minutes’ — without the word ‘quick’ |",
       "bullets": [],
       "tables": [
         {
@@ -84,14 +84,14 @@
           ],
           "rows": [
             [
-              "**Embedding (converting words to numbers that represent meaning)**",
-              "**Converting text to a Vector** — **numbers describing meaning on a ‘map’**",
-              "**‘Arabic’ → 1536 numbers describing meaning from different angles**"
+              "Embedding (converting words to numbers that represent meaning)",
+              "Converting text to a Vector — numbers describing meaning on a ‘map’",
+              "‘Arabic’ → 1536 numbers describing meaning from different angles"
             ],
             [
-              "**Vector Search (meaning-based search)**",
-              "**Searching for the closest Vectors to the question** — **not a literal match**",
-              "**‘Quick recipes’ finds ‘meals in 15 minutes’** — **without the word ‘quick’**"
+              "Vector Search (meaning-based search)",
+              "Searching for the closest Vectors to the question — not a literal match",
+              "‘Quick recipes’ finds ‘meals in 15 minutes’ — without the word ‘quick’"
             ]
           ]
         }
@@ -100,7 +100,7 @@
     {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot block (intent)",
-      "contentMarkdown": "**From text to vector to map:**\n\nEach sentence **has a ‘place’ on the map**. **Close meanings = close points**. **Distant meanings = completely different places**.",
+      "contentMarkdown": "From text to vector to map: Each sentence has a ‘place’ on the map. Close meanings = close points. Distant meanings = completely different places.",
       "bullets": [],
       "tables": []
     },
@@ -108,29 +108,29 @@
       "role": "Quiz",
       "heading": "Quiz — Quick confirmation",
       "subtitle": "Quick confirmation",
-      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** **Recipe blog — the client searches for ‘light and quick food’. What is the best thing to embed?**\n\n**Recipe name + ingredients + preparation method — together**.\nRecipe name only**.**\nCalories only**.**\n\n**Explanation:** **The richer the context**, **the better the embedding understands ‘light and quick’** — **not just the name**.",
+      "contentMarkdown": "Question: Recipe blog — the client searches for ‘light and quick food’. What is the best thing to embed?\nRecipe name + ingredients + preparation method — together.\nRecipe name only.\nCalories only.\nExplanation: The richer the context, the better the embedding understands ‘light and quick’ — not just the name.",
       "bullets": [
-        "**Recipe name + ingredients + preparation method — together**.",
-        "Recipe name only**.**",
-        "Calories only**.**"
+        "Recipe name + ingredients + preparation method — together.",
+        "Recipe name only.",
+        "Calories only."
       ],
       "tables": [],
       "quiz": {
-        "question": "**Recipe blog — the client searches for ‘light and quick food’. What is the best thing to embed?**",
+        "question": "Recipe blog — the client searches for ‘light and quick food’. What is the best thing to embed?",
         "correctIndex": 0,
         "options": [
-          "**Recipe name + ingredients + preparation method — together**.",
+          "Recipe name + ingredients + preparation method — together.",
           "Recipe name only.",
           "Calories only."
         ],
-        "explanation": "**The richer the context**, **the better the embedding understands ‘light and quick’** — **not just the name**."
+        "explanation": "The richer the context, the better the embedding understands ‘light and quick’ — not just the name."
       }
     },
     {
       "role": "Mission",
       "heading": "Mission — Two questions — same meaning, different words",
       "subtitle": "Two questions — same meaning, different words",
-      "contentMarkdown": "**Introduction:** **Testing embeddings: Two different questions in words — same intent**. **10 minutes**.\n\n**Submission:** **Content type**, **Question 1**, **Question 2 (same meaning, different words)**, **expected chunk**, **why both are found**.\n\n**Evaluation criteria:**\n\n| Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| Two different questions | 50% | **Same meaning — truly different words**; **not the same sentence in a different order** |\n| Logical chunk | 50% | **One chunk found by both**; **a short explanation of why embedding connects them** |",
+      "contentMarkdown": "Introduction: Testing embeddings: Two different questions in words — same intent. 10 minutes. Submission: Content type, Question 1, Question 2 (same meaning, different words), expected chunk, why both are found. Evaluation criteria: | Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| Two different questions | 50% | Same meaning — truly different words; not the same sentence in a different order |\n| Logical chunk | 50% | One chunk found by both; a short explanation of why embedding connects them |",
       "bullets": [],
       "tables": [
         {
@@ -143,29 +143,29 @@
             [
               "Two different questions",
               "50%",
-              "**Same meaning — truly different words**; **not the same sentence in a different order**"
+              "Same meaning — truly different words; not the same sentence in a different order"
             ],
             [
               "Logical chunk",
               "50%",
-              "**One chunk found by both**; **a short explanation of why embedding connects them**"
+              "One chunk found by both; a short explanation of why embedding connects them"
             ]
           ]
         }
       ],
       "mission": {
-        "intro": "**Testing embeddings: Two different questions in words — same intent**. **10 minutes**.",
+        "intro": "Testing embeddings: Two different questions in words — same intent. 10 minutes.",
         "delivery": [],
         "rubric": [
           {
             "dimension": "Two different questions",
             "weight": 50,
-            "criteria": "**Same meaning — truly different words**; **not the same sentence in a different order**"
+            "criteria": "Same meaning — truly different words; not the same sentence in a different order"
           },
           {
             "dimension": "Logical chunk",
             "weight": 50,
-            "criteria": "**One chunk found by both**; **a short explanation of why embedding connects them**"
+            "criteria": "One chunk found by both; a short explanation of why embedding connects them"
           }
         ],
         "yamlIntent": "2 different-word questions same intent + expected chunk + why — ~10 min",
@@ -175,11 +175,11 @@
     {
       "role": "Confidence close",
       "heading": "Confidence close",
-      "contentMarkdown": "- **I understood:** **Embeddings = meaning-based search** — **not literal word search**.\n- **You can:** **You have two questions for the test** — **same intent, different words**.\n- **Next:** **Agents** — **the AI that executes doesn’t just respond**.\n\n---",
+      "contentMarkdown": "- I understood: Embeddings = meaning-based search — not literal word search.\n- You can: You have two questions for the test — same intent, different words.\n- Next: Agents — the AI that executes doesn’t just respond. ---",
       "bullets": [
-        "**I understood:** **Embeddings = meaning-based search** — **not literal word search**.",
-        "**You can:** **You have two questions for the test** — **same intent, different words**.",
-        "**Next:** **Agents** — **the AI that executes doesn’t just respond**."
+        "I understood: Embeddings = meaning-based search — not literal word search.",
+        "You can: You have two questions for the test — same intent, different words.",
+        "Next: Agents — the AI that executes doesn’t just respond."
       ],
       "tables": []
     }

@@ -15,11 +15,11 @@
       "role": "Orientation",
       "heading": "Orientation — Lesson Start",
       "subtitle": "Lesson Start",
-      "contentMarkdown": "- **What will you understand?** **Temperature** = **a balance between response stability and creativity** — **and when to adjust it** in **each AI feature**.\n- **Why now?** **The same question twice** → **two different responses** — **not always a 'mistake'**; **it might be your settings**.\n- **What after the lesson?** **You will choose Temperature** **for 3 cases**: **Facts**, **Content**, **Conversation**.",
+      "contentMarkdown": "- What will you understand? Temperature = a balance between response stability and creativity — and when to adjust it in each AI feature.\n- Why now? The same question twice → two different responses — not always a 'mistake'; it might be your settings.\n- What after the lesson? You will choose Temperature for 3 cases: Facts, Content, Conversation.",
       "bullets": [
-        "**What will you understand?** **Temperature** = **a balance between response stability and creativity** — **and when to adjust it** in **each AI feature**.",
-        "**Why now?** **The same question twice** → **two different responses** — **not always a 'mistake'**; **it might be your settings**.",
-        "**What after the lesson?** **You will choose Temperature** **for 3 cases**: **Facts**, **Content**, **Conversation**."
+        "What will you understand? Temperature = a balance between response stability and creativity — and when to adjust it in each AI feature.",
+        "Why now? The same question twice → two different responses — not always a 'mistake'; it might be your settings.",
+        "What after the lesson? You will choose Temperature for 3 cases: Facts, Content, Conversation."
       ],
       "tables": []
     },
@@ -27,11 +27,11 @@
       "role": "Tension",
       "heading": "Tension — The Same Question — Two Different Responses",
       "subtitle": "The Same Question — Two Different Responses",
-      "contentMarkdown": "- **I asked the AI the same question twice** — **and got two different responses**. **It feels 'unreliable'**.\n- **Sometimes you want variety** (ad ideas). **And sometimes you want the same answer** (code, numbers).\n- **In your product**: **Data extraction feature** = **stability**. **Brainstorming feature** = **creativity**. **You need to separate them**.",
+      "contentMarkdown": "- I asked the AI the same question twice — and got two different responses. It feels 'unreliable'.\n- Sometimes you want variety (ad ideas). And sometimes you want the same answer (code, numbers).\n- In your product: Data extraction feature = stability. Brainstorming feature = creativity. You need to separate them.",
       "bullets": [
-        "**I asked the AI the same question twice** — **and got two different responses**. **It feels 'unreliable'**.",
-        "**Sometimes you want variety** (ad ideas). **And sometimes you want the same answer** (code, numbers).",
-        "**In your product**: **Data extraction feature** = **stability**. **Brainstorming feature** = **creativity**. **You need to separate them**."
+        "I asked the AI the same question twice — and got two different responses. It feels 'unreliable'.",
+        "Sometimes you want variety (ad ideas). And sometimes you want the same answer (code, numbers).",
+        "In your product: Data extraction feature = stability. Brainstorming feature = creativity. You need to separate them."
       ],
       "tables": []
     },
@@ -39,12 +39,12 @@
       "role": "Core idea",
       "heading": "Core Idea — Temperature = Stability vs Creativity",
       "subtitle": "Temperature = Stability vs Creativity",
-      "contentMarkdown": "- **Every word** **chosen by the AI** **is from possibilities**. **Temperature** **asks**: **Take the most predictable (stability)** **or boldness (creativity)**?\n- **Low (~0.2)**: **Same question ≈ same response**. **For facts**, **code**, **JSON extraction**.\n- **Medium (~0.5)**: **Balance** — **Emails**, **explanations**, **general conversation**.\n- **High (~1)**: **Variety and new ideas** — **headlines**, **campaigns**, **creative content**.",
+      "contentMarkdown": "- Every word chosen by the AI is from possibilities. Temperature asks: Take the most predictable (stability) or boldness (creativity)?\n- Low (~0.2): Same question ≈ same response. For facts, code, JSON extraction.\n- Medium (~0.5): Balance — Emails, explanations, general conversation.\n- High (~1): Variety and new ideas — headlines, campaigns, creative content.",
       "bullets": [
-        "**Every word** **chosen by the AI** **is from possibilities**. **Temperature** **asks**: **Take the most predictable (stability)** **or boldness (creativity)**?",
-        "**Low (~0.2)**: **Same question ≈ same response**. **For facts**, **code**, **JSON extraction**.",
-        "**Medium (~0.5)**: **Balance** — **Emails**, **explanations**, **general conversation**.",
-        "**High (~1)**: **Variety and new ideas** — **headlines**, **campaigns**, **creative content**."
+        "Every word chosen by the AI is from possibilities. Temperature asks: Take the most predictable (stability) or boldness (creativity)?",
+        "Low (~0.2): Same question ≈ same response. For facts, code, JSON extraction.",
+        "Medium (~0.5): Balance — Emails, explanations, general conversation.",
+        "High (~1): Variety and new ideas — headlines, campaigns, creative content."
       ],
       "tables": []
     },
@@ -52,7 +52,7 @@
       "role": "Comparison",
       "heading": "Comparison — Accuracy vs Brainstorming",
       "subtitle": "Accuracy vs Brainstorming",
-      "contentMarkdown": "| Low Temperature | High Temperature |\n|------------------|------------------|\n| «**Extract the price from the text.**» — **You want the same result every time**. **Low = reliable for the product** | «**Suggest 5 slogans for a coffee brand.**» — **You want surprises**. **High = different ideas every time** |",
+      "contentMarkdown": "| Low Temperature | High Temperature |\n|------------------|------------------|\n| «Extract the price from the text.» — You want the same result every time. Low = reliable for the product | «Suggest 5 slogans for a coffee brand.» — You want surprises. High = different ideas every time |",
       "bullets": [],
       "tables": [
         {
@@ -62,8 +62,8 @@
           ],
           "rows": [
             [
-              "«**Extract the price from the text.**» — **You want the same result every time**. **Low = reliable for the product**",
-              "«**Suggest 5 slogans for a coffee brand.**» — **You want surprises**. **High = different ideas every time**"
+              "«Extract the price from the text.» — You want the same result every time. Low = reliable for the product",
+              "«Suggest 5 slogans for a coffee brand.» — You want surprises. High = different ideas every time"
             ]
           ]
         }
@@ -73,7 +73,7 @@
       "role": "Glossary",
       "heading": "Glossary — Two Terms to Start",
       "subtitle": "Two Terms to Start",
-      "contentMarkdown": "| Term | Meaning | Example |\n|------|--------|--------|\n| **Temperature** | **A numerical setting**: **Close to 0 = stability**. **High = creativity and variety** | **OpenAI**: ~**0.2** for facts, ~**0.5** for balance, ~**1** for creativity |\n| **Parameters** | **API settings** **like Temperature** — **adjusts model behavior from outside the Prompt** | **The 'Summarize'** feature with low **temp** — **The 'Ideas'** feature with high **temp** |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|------|--------|--------|\n| Temperature | A numerical setting: Close to 0 = stability. High = creativity and variety | OpenAI: ~0.2 for facts, ~0.5 for balance, ~1 for creativity |\n| Parameters | API settings like Temperature — adjusts model behavior from outside the Prompt | The 'Summarize' feature with low temp — The 'Ideas' feature with high temp |",
       "bullets": [],
       "tables": [
         {
@@ -84,14 +84,14 @@
           ],
           "rows": [
             [
-              "**Temperature**",
-              "**A numerical setting**: **Close to 0 = stability**. **High = creativity and variety**",
-              "**OpenAI**: ~**0.2** for facts, ~**0.5** for balance, ~**1** for creativity"
+              "Temperature",
+              "A numerical setting: Close to 0 = stability. High = creativity and variety",
+              "OpenAI: ~0.2 for facts, ~0.5 for balance, ~1 for creativity"
             ],
             [
-              "**Parameters**",
-              "**API settings** **like Temperature** — **adjusts model behavior from outside the Prompt**",
-              "**The 'Summarize'** feature with low **temp** — **The 'Ideas'** feature with high **temp**"
+              "Parameters",
+              "API settings like Temperature — adjusts model behavior from outside the Prompt",
+              "The 'Summarize' feature with low temp — The 'Ideas' feature with high temp"
             ]
           ]
         }
@@ -100,7 +100,7 @@
     {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot Block (Intent)",
-      "contentMarkdown": "**The same format — because stability is needed:**\n\n**Lesson cards** **have the same format** — **zero surprises**. **This is suitable** **for organized content** (low **temp**). **If the temp is high** — **each card** **would come out in a different order and style** — **hard to follow the curriculum**.",
+      "contentMarkdown": "The same format — because stability is needed: Lesson cards have the same format — zero surprises. This is suitable for organized content (low temp). If the temp is high — each card would come out in a different order and style — hard to follow the curriculum.",
       "bullets": [],
       "tables": []
     },
@@ -108,36 +108,36 @@
       "role": "Quiz",
       "heading": "Quiz — Quick Confirmation",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** **You write code** **that should work correctly the first time**. **What is the best option?**\n\n**Low Temperature** — **Stability and accuracy**.\nHigh Temperature** — **New ideas**.**\nMedium Temperature** — **for chatting only**.**\n\n**Explanation:** **Code and facts** = low **temp**. **Creativity** **is for brainstorming only**.",
+      "contentMarkdown": "Question: You write code that should work correctly the first time. What is the best option?\nLow Temperature — Stability and accuracy.\nHigh Temperature — New ideas.\nMedium Temperature — for chatting only.\nExplanation: Code and facts = low temp. Creativity is for brainstorming only.",
       "bullets": [
-        "**Low Temperature** — **Stability and accuracy**.",
-        "High Temperature** — **New ideas**.**",
-        "Medium Temperature** — **for chatting only**.**"
+        "Low Temperature — Stability and accuracy.",
+        "High Temperature — New ideas.",
+        "Medium Temperature — for chatting only."
       ],
       "tables": [],
       "quiz": {
-        "question": "**You write code** **that should work correctly the first time**. **What is the best option?**",
+        "question": "You write code that should work correctly the first time. What is the best option?",
         "correctIndex": 0,
         "options": [
-          "**Low Temperature** — **Stability and accuracy**.",
-          "**High Temperature** — **New ideas**.",
-          "**Medium Temperature** — **for chatting only**."
+          "Low Temperature — Stability and accuracy.",
+          "High Temperature — New ideas.",
+          "Medium Temperature — for chatting only."
         ],
-        "explanation": "**Code and facts** = low **temp**. **Creativity** **is for brainstorming only**."
+        "explanation": "Code and facts = low temp. Creativity is for brainstorming only."
       }
     },
     {
       "role": "Mission",
       "heading": "Mission — Temperature for 3 Features",
       "subtitle": "Temperature for 3 Features",
-      "contentMarkdown": "**Introduction:** **Set Temperature** **for three cases** in a product you imagine. **10–15 minutes**.\n\n**Delivery:**\n\n1. **Facts feature** (data extraction, FAQ questions, literal translation):\n   - **Temperature:** [Low / Medium / High]\n   - **Why:**\n2. **Content feature** (posts, headlines, ideas):\n   - **Temperature:** [...]\n   - **Why:**\n3. **Conversation feature** (a helper talking to the user):\n   - **Temperature:** [...]\n   - **Why:**\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| 3 logical choices | 60% | **Facts → Low**; **Content → higher than facts** |\n| Reason for each | 40% | **Each 'why' linked to stability or variety**; **conversation within reasonable bounds** (not extreme errors) |",
+      "contentMarkdown": "Introduction: Set Temperature for three cases in a product you imagine. 10–15 minutes. Delivery: 1. Facts feature (data extraction, FAQ questions, literal translation): - Temperature: [Low / Medium / High] - Why:\n2. Content feature (posts, headlines, ideas): - Temperature: [...] - Why:\n3. Conversation feature (a helper talking to the user): - Temperature: [...] - Why: Evaluation Criteria: | Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| 3 logical choices | 60% | Facts → Low; Content → higher than facts |\n| Reason for each | 40% | Each 'why' linked to stability or variety; conversation within reasonable bounds (not extreme errors) |",
       "bullets": [
-        "**Temperature:** [Low / Medium / High]",
-        "**Why:**",
-        "**Temperature:** [...]",
-        "**Why:**",
-        "**Temperature:** [...]",
-        "**Why:**"
+        "Temperature: [Low / Medium / High]",
+        "Why:",
+        "Temperature: [...]",
+        "Why:",
+        "Temperature: [...]",
+        "Why:"
       ],
       "tables": [
         {
@@ -150,33 +150,33 @@
             [
               "3 logical choices",
               "60%",
-              "**Facts → Low**; **Content → higher than facts**"
+              "Facts → Low; Content → higher than facts"
             ],
             [
               "Reason for each",
               "40%",
-              "**Each 'why' linked to stability or variety**; **conversation within reasonable bounds** (not extreme errors)"
+              "Each 'why' linked to stability or variety; conversation within reasonable bounds (not extreme errors)"
             ]
           ]
         }
       ],
       "mission": {
-        "intro": "**Set Temperature** **for three cases** in a product you imagine. **10–15 minutes**.",
+        "intro": "Set Temperature for three cases in a product you imagine. 10–15 minutes.",
         "delivery": [
-          "**Facts feature** (data extraction, FAQ questions, literal translation):",
-          "**Content feature** (posts, headlines, ideas):",
-          "**Conversation feature** (a helper talking to the user):"
+          "Facts feature (data extraction, FAQ questions, literal translation):",
+          "Content feature (posts, headlines, ideas):",
+          "Conversation feature (a helper talking to the user):"
         ],
         "rubric": [
           {
             "dimension": "3 logical choices",
             "weight": 60,
-            "criteria": "**Facts → Low**; **Content → higher than facts**"
+            "criteria": "Facts → Low; Content → higher than facts"
           },
           {
             "dimension": "Reason for each",
             "weight": 40,
-            "criteria": "**Each 'why' linked to stability or variety**; **conversation within reasonable bounds** (not extreme errors)"
+            "criteria": "Each 'why' linked to stability or variety; conversation within reasonable bounds (not extreme errors)"
           }
         ],
         "yamlIntent": "Set Temperature for three imagined product features — facts, content, chat — with why each — ~10–15 min",
@@ -186,11 +186,11 @@
     {
       "role": "Confidence close",
       "heading": "Confidence Close",
-      "contentMarkdown": "- **I understood:** **Temperature** = **Stability vs Creativity** — **a feature** **not a single number for all**.\n- **You can:** **choose a setting** **for each type**: **Facts**, **Content**, **Conversation**.\n- **Next:** **Transition** — **from Prompting to Product Building**.\n\n---",
+      "contentMarkdown": "- I understood: Temperature = Stability vs Creativity — a feature not a single number for all.\n- You can: choose a setting for each type: Facts, Content, Conversation.\n- Next: Transition — from Prompting to Product Building. ---",
       "bullets": [
-        "**I understood:** **Temperature** = **Stability vs Creativity** — **a feature** **not a single number for all**.",
-        "**You can:** **choose a setting** **for each type**: **Facts**, **Content**, **Conversation**.",
-        "**Next:** **Transition** — **from Prompting to Product Building**."
+        "I understood: Temperature = Stability vs Creativity — a feature not a single number for all.",
+        "You can: choose a setting for each type: Facts, Content, Conversation.",
+        "Next: Transition — from Prompting to Product Building."
       ],
       "tables": []
     }

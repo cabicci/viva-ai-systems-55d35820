@@ -15,11 +15,11 @@
       "role": "Orientation",
       "heading": "Orientation — Lesson Start",
       "subtitle": "Lesson Start",
-      "contentMarkdown": "- **What will you understand?** **Table** = **data type** (Users, Conversations). **Column** = **attribute for each row** (Name, Date, Rating).\n- **Why now?** **Builder depth is optional** — but if your app stores data, **getting the design right from the start** prevents issues later.\n- **What after the lesson?** **You will design 3 tables** for your app — **each table with its columns and types**.",
+      "contentMarkdown": "- What will you understand? Table = data type (Users, Conversations). Column = attribute for each row (Name, Date, Rating).\n- Why now? Builder depth is optional — but if your app stores data, getting the design right from the start prevents issues later.\n- What after the lesson? You will design 3 tables for your app — each table with its columns and types.",
       "bullets": [
-        "**What will you understand?** **Table** = **data type** (Users, Conversations). **Column** = **attribute for each row** (Name, Date, Rating).",
-        "**Why now?** **Builder depth is optional** — but if your app stores data, **getting the design right from the start** prevents issues later.",
-        "**What after the lesson?** **You will design 3 tables** for your app — **each table with its columns and types**."
+        "What will you understand? Table = data type (Users, Conversations). Column = attribute for each row (Name, Date, Rating).",
+        "Why now? Builder depth is optional — but if your app stores data, getting the design right from the start prevents issues later.",
+        "What after the lesson? You will design 3 tables for your app — each table with its columns and types."
       ],
       "tables": []
     },
@@ -27,11 +27,11 @@
       "role": "Tension",
       "heading": "Tension — Everything is text — slow and inaccurate",
       "subtitle": "Everything is text — slow and inaccurate",
-      "contentMarkdown": "- **You design the first table in the database** — **and every column is of type `text`**. **Easy at first**, but **after months the app is slow**.\n- **User rating in `text`?** **The system won't calculate average ratings**. **Date in `text`?** **It won't sort by the latest**.\n- **Table = data type**. **Column = attribute**. **Wrong type = problems from day one**.",
+      "contentMarkdown": "- You design the first table in the database — and every column is of type `text`. Easy at first, but after months the app is slow.\n- User rating in `text`? The system won't calculate average ratings. Date in `text`? It won't sort by the latest.\n- Table = data type. Column = attribute. Wrong type = problems from day one.",
       "bullets": [
-        "**You design the first table in the database** — **and every column is of type `text`**. **Easy at first**, but **after months the app is slow**.",
-        "**User rating in `text`?** **The system won't calculate average ratings**. **Date in `text`?** **It won't sort by the latest**.",
-        "**Table = data type**. **Column = attribute**. **Wrong type = problems from day one**."
+        "You design the first table in the database — and every column is of type `text`. Easy at first, but after months the app is slow.",
+        "User rating in `text`? The system won't calculate average ratings. Date in `text`? It won't sort by the latest.",
+        "Table = data type. Column = attribute. Wrong type = problems from day one."
       ],
       "tables": []
     },
@@ -39,11 +39,11 @@
       "role": "Core idea",
       "heading": "Core idea — Table = type — Column = attribute with its type",
       "subtitle": "Table = type — Column = attribute with its type",
-      "contentMarkdown": "- **Each table represents one type**: `users`, `conversations`, `documents` — **not «everything in one table»**.\n- **Each column = attribute + data type**: `id` = uuid, `rating` = integer, `created_at` = timestamptz.\n- **Important rules**: `not null` **for essential fields**. **uuid for IDs**. **numeric for money**. **timestamptz for dates**.",
+      "contentMarkdown": "- Each table represents one type: `users`, `conversations`, `documents` — not «everything in one table».\n- Each column = attribute + data type: `id` = uuid, `rating` = integer, `created_at` = timestamptz.\n- Important rules: `not null` for essential fields. uuid for IDs. numeric for money. timestamptz for dates.",
       "bullets": [
-        "**Each table represents one type**: `users`, `conversations`, `documents` — **not «everything in one table»**.",
-        "**Each column = attribute + data type**: `id` = uuid, `rating` = integer, `created_at` = timestamptz.",
-        "**Important rules**: `not null` **for essential fields**. **uuid for IDs**. **numeric for money**. **timestamptz for dates**."
+        "Each table represents one type: `users`, `conversations`, `documents` — not «everything in one table».",
+        "Each column = attribute + data type: `id` = uuid, `rating` = integer, `created_at` = timestamptz.",
+        "Important rules: `not null` for essential fields. uuid for IDs. numeric for money. timestamptz for dates."
       ],
       "tables": []
     },
@@ -51,7 +51,7 @@
       "role": "Comparison",
       "heading": "Comparison — Everything is text vs correct types",
       "subtitle": "Everything is text vs correct types",
-      "contentMarkdown": "| All columns text | Each column with its type |\n|-----------------|---------------|\n| `user_rating text` — **no average**. `created_at text` — **no chronological order**. **Slow and inaccurate** | `user_rating integer`, `created_at timestamptz default now()`, `id uuid primary key`. **Easier analysis and development** |",
+      "contentMarkdown": "| All columns text | Each column with its type |\n|-----------------|---------------|\n| `user_rating text` — no average. `created_at text` — no chronological order. Slow and inaccurate | `user_rating integer`, `created_at timestamptz default now`, `id uuid primary key`. Easier analysis and development |",
       "bullets": [],
       "tables": [
         {
@@ -61,8 +61,8 @@
           ],
           "rows": [
             [
-              "`user_rating text` — **no average**. `created_at text` — **no chronological order**. **Slow and inaccurate**",
-              "`user_rating integer`, `created_at timestamptz default now()`, `id uuid primary key`. **Easier analysis and development**"
+              "`user_rating text` — no average. `created_at text` — no chronological order. Slow and inaccurate",
+              "`user_rating integer`, `created_at timestamptz default now`, `id uuid primary key`. Easier analysis and development"
             ]
           ]
         }
@@ -72,7 +72,7 @@
       "role": "Glossary",
       "heading": "Glossary — Two terms for the database",
       "subtitle": "Two terms for the database",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Table** | **A place to store one type of data** — **like an Excel table for one subject** | Table `conversations` — **each row = one conversation** |\n| **Column** | **Attribute for each row — has a specific data type** | `title text not null` — **mandatory text title** |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| Table | A place to store one type of data — like an Excel table for one subject | Table `conversations` — each row = one conversation |\n| Column | Attribute for each row — has a specific data type | `title text not null` — mandatory text title |",
       "bullets": [],
       "tables": [
         {
@@ -83,14 +83,14 @@
           ],
           "rows": [
             [
-              "**Table**",
-              "**A place to store one type of data** — **like an Excel table for one subject**",
-              "Table `conversations` — **each row = one conversation**"
+              "Table",
+              "A place to store one type of data — like an Excel table for one subject",
+              "Table `conversations` — each row = one conversation"
             ],
             [
-              "**Column**",
-              "**Attribute for each row — has a specific data type**",
-              "`title text not null` — **mandatory text title**"
+              "Column",
+              "Attribute for each row — has a specific data type",
+              "`title text not null` — mandatory text title"
             ]
           ]
         }
@@ -99,7 +99,7 @@
     {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot block (intent)",
-      "contentMarkdown": "**AI reads tables to understand context:**\n\nBefore answering, **AI** looks at tables like `currentUser` and `currentPath`. **The right design = fast and accurate memory**.",
+      "contentMarkdown": "AI reads tables to understand context: Before answering, AI looks at tables like `currentUser` and `currentPath`. The right design = fast and accurate memory.",
       "bullets": [],
       "tables": []
     },
@@ -107,29 +107,29 @@
       "role": "Quiz",
       "heading": "Quiz — Quick Confirmation",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** **You have a table `services` with a column `price` (service price). What is the best type?**\n\n**`numeric not null`** — **money is precise and each service has a price**.\n`integer nullable` — **integer and the price may be unspecified**.\n`text not null` — **writing the price as text «100 pounds»**.\n\n**Explanation:** **`numeric` for money** (decimal fractions). **`not null`** because **every listed service has a price**.",
+      "contentMarkdown": "Question: You have a table `services` with a column `price` (service price). What is the best type?\n`numeric not null` — money is precise and each service has a price.\n`integer nullable` — integer and the price may be unspecified.\n`text not null` — writing the price as text «100 pounds».\nExplanation: `numeric` for money (decimal fractions). `not null` because every listed service has a price.",
       "bullets": [
-        "**`numeric not null`** — **money is precise and each service has a price**.",
-        "`integer nullable` — **integer and the price may be unspecified**.",
-        "`text not null` — **writing the price as text «100 pounds»**."
+        "`numeric not null` — money is precise and each service has a price.",
+        "`integer nullable` — integer and the price may be unspecified.",
+        "`text not null` — writing the price as text «100 pounds»."
       ],
       "tables": [],
       "quiz": {
-        "question": "**You have a table `services` with a column `price` (service price). What is the best type?**",
+        "question": "You have a table `services` with a column `price` (service price). What is the best type?",
         "correctIndex": 0,
         "options": [
-          "**`numeric not null`** — **money is precise and each service has a price**.",
-          "`integer nullable` — **integer and the price may be unspecified**.",
-          "`text not null` — **writing the price as text «100 pounds»**."
+          "`numeric not null` — money is precise and each service has a price.",
+          "`integer nullable` — integer and the price may be unspecified.",
+          "`text not null` — writing the price as text «100 pounds»."
         ],
-        "explanation": "**`numeric` for money** (decimal fractions). **`not null`** because **every listed service has a price**."
+        "explanation": "`numeric` for money (decimal fractions). `not null` because every listed service has a price."
       }
     },
     {
       "role": "Mission",
       "heading": "Mission — Design 3 tables for your app",
       "subtitle": "Design 3 tables for your app",
-      "contentMarkdown": "**Introduction:** **Think about your app's data** — **what needs to be stored?** **Design 3 tables**. **10–15 minutes**.\n\n**Submission:** For each table — **name**, **data type**, **columns** (name, type, not null/nullable), **does it have `id uuid primary key`?**\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| 3 logical tables | 50% | **Each table has one data type**; **`id uuid primary key` in each table** |\n| Correct column types | 50% | **Dates `timestamptz`**; **numbers integer/numeric**; **essential fields `not null`** |",
+      "contentMarkdown": "Introduction: Think about your app's data — what needs to be stored? Design 3 tables. 10–15 minutes. Submission: For each table — name, data type, columns (name, type, not null/nullable), does it have `id uuid primary key`? Evaluation Criteria: | Dimension | Weight | Criteria |\n|-------|-------|---------|\n| 3 logical tables | 50% | Each table has one data type; `id uuid primary key` in each table |\n| Correct column types | 50% | Dates `timestamptz`; numbers integer/numeric; essential fields `not null` |",
       "bullets": [],
       "tables": [
         {
@@ -142,29 +142,29 @@
             [
               "3 logical tables",
               "50%",
-              "**Each table has one data type**; **`id uuid primary key` in each table**"
+              "Each table has one data type; `id uuid primary key` in each table"
             ],
             [
               "Correct column types",
               "50%",
-              "**Dates `timestamptz`**; **numbers integer/numeric**; **essential fields `not null`**"
+              "Dates `timestamptz`; numbers integer/numeric; essential fields `not null`"
             ]
           ]
         }
       ],
       "mission": {
-        "intro": "**Think about your app's data** — **what needs to be stored?** **Design 3 tables**. **10–15 minutes**.",
+        "intro": "Think about your app's data — what needs to be stored? Design 3 tables. 10–15 minutes.",
         "delivery": [],
         "rubric": [
           {
             "dimension": "3 logical tables",
             "weight": 50,
-            "criteria": "**Each table has one data type**; **`id uuid primary key` in each table**"
+            "criteria": "Each table has one data type; `id uuid primary key` in each table"
           },
           {
             "dimension": "Correct column types",
             "weight": 50,
-            "criteria": "**Dates `timestamptz`**; **numbers integer/numeric**; **essential fields `not null`**"
+            "criteria": "Dates `timestamptz`; numbers integer/numeric; essential fields `not null`"
           }
         ],
         "yamlIntent": "Design 3 tables for app data — name, columns, types, not null — ~10–15 min",
@@ -174,11 +174,11 @@
     {
       "role": "Confidence close",
       "heading": "Confidence close",
-      "contentMarkdown": "- **You understood:** **Table = data type**. **Column = attribute with its type**. **Getting the right type from the start = fast and accurate application**.\n- **You can:** **You have 3 designed tables** — **ready to connect**.\n- **Next:** **Relations** — **how to link tables to answer real questions**.\n\n---",
+      "contentMarkdown": "- You understood: Table = data type. Column = attribute with its type. Getting the right type from the start = fast and accurate application.\n- You can: You have 3 designed tables — ready to connect.\n- Next: Relations — how to link tables to answer real questions. ---",
       "bullets": [
-        "**You understood:** **Table = data type**. **Column = attribute with its type**. **Getting the right type from the start = fast and accurate application**.",
-        "**You can:** **You have 3 designed tables** — **ready to connect**.",
-        "**Next:** **Relations** — **how to link tables to answer real questions**."
+        "You understood: Table = data type. Column = attribute with its type. Getting the right type from the start = fast and accurate application.",
+        "You can: You have 3 designed tables — ready to connect.",
+        "Next: Relations — how to link tables to answer real questions."
       ],
       "tables": []
     }

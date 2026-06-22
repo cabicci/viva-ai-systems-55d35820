@@ -15,11 +15,11 @@
       "role": "Orientation",
       "heading": "Orientation — Lesson Start",
       "subtitle": "Lesson Start",
-      "contentMarkdown": "- **What will you understand?** Automation becomes more powerful when it stores organized data — not just sends a message and forgets.\n- **Why now?** The **workflow** reads and writes — without a clear place for data, repetitive tasks revert to manual work.\n- **What after the lesson?** You will choose where the **workflow** stores the data and what fields it needs.",
+      "contentMarkdown": "- What will you understand? Automation becomes more powerful when it stores organized data — not just sends a message and forgets.\n- Why now? The workflow reads and writes — without a clear place for data, repetitive tasks revert to manual work.\n- What after the lesson? You will choose where the workflow stores the data and what fields it needs.",
       "bullets": [
-        "**What will you understand?** Automation becomes more powerful when it stores organized data — not just sends a message and forgets.",
-        "**Why now?** The **workflow** reads and writes — without a clear place for data, repetitive tasks revert to manual work.",
-        "**What after the lesson?** You will choose where the **workflow** stores the data and what fields it needs."
+        "What will you understand? Automation becomes more powerful when it stores organized data — not just sends a message and forgets.",
+        "Why now? The workflow reads and writes — without a clear place for data, repetitive tasks revert to manual work.",
+        "What after the lesson? You will choose where the workflow stores the data and what fields it needs."
       ],
       "tables": []
     },
@@ -40,12 +40,12 @@
       "role": "Core idea",
       "heading": "Core Idea — DB = Automation Memory",
       "subtitle": "DB = Automation Memory",
-      "contentMarkdown": "- Every lead or request needs to be recorded in one place — a table or organized sheet with fixed fields.\n- Write: When is the data written? (after registration) — When is it read? (daily report, follow-up).\n- Three fields are enough to start: Name, Contact, Date/Status — you don't need 20 columns.\n- The **workflow** reads from the same place it writes — that’s what makes repetitive tasks work automatically.",
+      "contentMarkdown": "- Every lead or request needs to be recorded in one place — a table or organized sheet with fixed fields.\n- Write: When is the data written? (after registration) — When is it read? (daily report, follow-up).\n- Three fields are enough to start: Name, Contact, Date/Status — you don't need 20 columns.\n- The workflow reads from the same place it writes — that’s what makes repetitive tasks work automatically.",
       "bullets": [
         "Every lead or request needs to be recorded in one place — a table or organized sheet with fixed fields.",
         "Write: When is the data written? (after registration) — When is it read? (daily report, follow-up).",
         "Three fields are enough to start: Name, Contact, Date/Status — you don't need 20 columns.",
-        "The **workflow** reads from the same place it writes — that’s what makes repetitive tasks work automatically."
+        "The workflow reads from the same place it writes — that’s what makes repetitive tasks work automatically."
       ],
       "tables": []
     },
@@ -74,7 +74,7 @@
       "role": "Glossary",
       "heading": "Glossary — Two Terms for Storage",
       "subtitle": "Two Terms for Storage",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Schema** | The fields you store — the name and type of each column | leads: name, phone, status, created_at |\n| **CRUD** | Create = Write. Read = Read. Update = Update. Delete = Delete | New registration → Create. Daily report → Read |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| Schema | The fields you store — the name and type of each column | leads: name, phone, status, created_at |\n| CRUD | Create = Write. Read = Read. Update = Update. Delete = Delete | New registration → Create. Daily report → Read |",
       "bullets": [],
       "tables": [
         {
@@ -85,12 +85,12 @@
           ],
           "rows": [
             [
-              "**Schema**",
+              "Schema",
               "The fields you store — the name and type of each column",
               "leads: name, phone, status, created_at"
             ],
             [
-              "**CRUD**",
+              "CRUD",
               "Create = Write. Read = Read. Update = Update. Delete = Delete",
               "New registration → Create. Daily report → Read"
             ]
@@ -101,7 +101,7 @@
     {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot Block (Intent)",
-      "contentMarkdown": "Every event (registration, progress, request) is recorded in one place. The **workflow** reads and writes from the same source — not scattered files.",
+      "contentMarkdown": "Every event (registration, progress, request) is recorded in one place. The workflow reads and writes from the same source — not scattered files.",
       "bullets": [],
       "tables": []
     },
@@ -109,17 +109,17 @@
       "role": "Quiz",
       "heading": "Quiz — Quick Confirmation",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "**Question:** Automation registers new customers every day. Sales needs a report with their names. What is most important?\n\n- **Correct Answer:** **The workflow writes each customer in an organized table with fixed fields — and reads from it for the report.**\n- **Explanation:** The organized record = automation memory. Email without a table = repetitive tasks revert to manual work.",
+      "contentMarkdown": "Question: Automation registers new customers every day. Sales needs a report with their names. What is most important?\nThe workflow writes each customer in an organized table with fixed fields — and reads from it for the report.\nExplanation: The organized record = automation memory. Email without a table = repetitive tasks revert to manual work.",
       "bullets": [
-        "**Correct Answer:** **The workflow writes each customer in an organized table with fixed fields — and reads from it for the report.**",
-        "**Explanation:** The organized record = automation memory. Email without a table = repetitive tasks revert to manual work."
+        "The workflow writes each customer in an organized table with fixed fields — and reads from it for the report.",
+        "Explanation: The organized record = automation memory. Email without a table = repetitive tasks revert to manual work."
       ],
       "tables": [],
       "quiz": {
         "question": "Automation registers new customers every day. Sales needs a report with their names. What is most important?",
         "correctIndex": 0,
         "options": [
-          "**Correct Answer:** **The workflow writes each customer in an organized table with fixed fields — and reads from it for the report.**",
+          "The workflow writes each customer in an organized table with fixed fields — and reads from it for the report.",
           "An unsuitable option; it ignores the key data in the section above.",
           "A partial answer that misses the context and ignores the next step in the decision."
         ],
@@ -130,7 +130,7 @@
       "role": "Mission",
       "heading": "Mission — Define Where to Store Data",
       "subtitle": "Define Where to Store Data",
-      "contentMarkdown": "**Introduction:** The mission is design — not a mandatory technical connection. Choose a **workflow** and define: Where will the data be stored? What fields? AI can suggest columns — you choose the final ones.\n\n**Delivery:** **Workflow** · Storage location · At least 3 fields · When to write (after which **trigger**) · When to read (who uses it and why)\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Location + Fields | 60% | A defined storage location — not \"we'll see\"; at least 3 fields with clear names |\n| Writing and Reading | 40% | When to write linked to the **trigger**; when to read with a clear user |",
+      "contentMarkdown": "Introduction: The mission is design — not a mandatory technical connection. Choose a workflow and define: Where will the data be stored? What fields? AI can suggest columns — you choose the final ones. Delivery: Workflow · Storage location · At least 3 fields · When to write (after which trigger) · When to read (who uses it and why) Evaluation Criteria: | Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Location + Fields | 60% | A defined storage location — not \"we'll see\"; at least 3 fields with clear names |\n| Writing and Reading | 40% | When to write linked to the trigger; when to read with a clear user |",
       "bullets": [],
       "tables": [
         {
@@ -148,13 +148,13 @@
             [
               "Writing and Reading",
               "40%",
-              "When to write linked to the **trigger**; when to read with a clear user."
+              "When to write linked to the trigger; when to read with a clear user."
             ]
           ]
         }
       ],
       "mission": {
-        "intro": "The mission is design — not a mandatory technical connection. Choose a **workflow** and define: Where will the data be stored? What fields? AI can suggest columns — you choose the final ones.",
+        "intro": "The mission is design — not a mandatory technical connection. Choose a workflow and define: Where will the data be stored? What fields? AI can suggest columns — you choose the final ones.",
         "delivery": [],
         "rubric": [
           {
@@ -165,7 +165,7 @@
           {
             "dimension": "Writing and Reading",
             "weight": 40,
-            "criteria": "When to write linked to the **trigger**; when to read with a clear user."
+            "criteria": "When to write linked to the trigger; when to read with a clear user."
           }
         ],
         "yamlIntent": "Pick workflow; define where data stores, 3+ fields, when written (after trigger), when read (who/why) — design only; AI may suggest columns, learner chooses — 10–15 min",
@@ -175,11 +175,11 @@
     {
       "role": "Confidence close",
       "heading": "Confidence Close",
-      "contentMarkdown": "- **Understood:** Automation is stronger when it has organized memory — location + fields + when to write and read.\n- **You can:** You have a storage plan ready for a real **workflow**.\n- **Next:** **Webhooks & APIs** — when one application tells another, \"Something happened.\".",
+      "contentMarkdown": "- Understood: Automation is stronger when it has organized memory — location + fields + when to write and read.\n- You can: You have a storage plan ready for a real workflow.\n- Next: Webhooks & APIs — when one application tells another, \"Something happened.\".",
       "bullets": [
-        "**Understood:** Automation is stronger when it has organized memory — location + fields + when to write and read.",
-        "**You can:** You have a storage plan ready for a real **workflow**.",
-        "**Next:** **Webhooks & APIs** — when one application tells another, \"Something happened.\"."
+        "Understood: Automation is stronger when it has organized memory — location + fields + when to write and read.",
+        "You can: You have a storage plan ready for a real workflow.",
+        "Next: Webhooks & APIs — when one application tells another, \"Something happened.\"."
       ],
       "tables": []
     }

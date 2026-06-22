@@ -15,11 +15,11 @@
       "role": "Orientation",
       "heading": "Orientation — Lesson Start",
       "subtitle": "Lesson Start",
-      "contentMarkdown": "- **What will you understand?** **Prompt** is not just a single question — it is the layer that defines the behavior of any AI feature in your product.\n- **Why now?** In Lovable and Cursor, the first **Prompt** for the assistant = the first user experience. Ambiguity here means a weak product.\n- **What after the lesson?** You will write **System Instruction** for a simple assistant.",
+      "contentMarkdown": "- What will you understand? Prompt is not just a single question — it is the layer that defines the behavior of any AI feature in your product.\n- Why now? In Lovable and Cursor, the first Prompt for the assistant = the first user experience. Ambiguity here means a weak product.\n- What after the lesson? You will write System Instruction for a simple assistant.",
       "bullets": [
-        "**What will you understand?** **Prompt** is not just a single question — it is the layer that defines the behavior of any AI feature in your product.",
-        "**Why now?** In Lovable and Cursor, the first **Prompt** for the assistant = the first user experience. Ambiguity here means a weak product.",
-        "**What after the lesson?** You will write **System Instruction** for a simple assistant."
+        "What will you understand? Prompt is not just a single question — it is the layer that defines the behavior of any AI feature in your product.",
+        "Why now? In Lovable and Cursor, the first Prompt for the assistant = the first user experience. Ambiguity here means a weak product.",
+        "What after the lesson? You will write System Instruction for a simple assistant."
       ],
       "tables": []
     },
@@ -27,11 +27,11 @@
       "role": "Tension",
       "heading": "Tension — A Familiar Situation",
       "subtitle": "A Familiar Situation",
-      "contentMarkdown": "- You asked the AI for something general — and received a vague, unhelpful response.\n- It's like asking a friend, \"What should we eat?\" and they reply, \"Anything.\" The issue isn't intelligence — it's the lack of details.\n- When building an assistant in your product, the **System Prompt** is the \"personality and rules of the assistant\" — if it's lacking, every user will see the same empty responses.",
+      "contentMarkdown": "- You asked the AI for something general — and received a vague, unhelpful response.\n- It's like asking a friend, \"What should we eat?\" and they reply, \"Anything.\" The issue isn't intelligence — it's the lack of details.\n- When building an assistant in your product, the System Prompt is the \"personality and rules of the assistant\" — if it's lacking, every user will see the same empty responses.",
       "bullets": [
         "You asked the AI for something general — and received a vague, unhelpful response.",
         "It's like asking a friend, \"What should we eat?\" and they reply, \"Anything.\" The issue isn't intelligence — it's the lack of details.",
-        "When building an assistant in your product, the **System Prompt** is the \"personality and rules of the assistant\" — if it's lacking, every user will see the same empty responses."
+        "When building an assistant in your product, the System Prompt is the \"personality and rules of the assistant\" — if it's lacking, every user will see the same empty responses."
       ],
       "tables": []
     },
@@ -39,10 +39,10 @@
       "role": "Core idea",
       "heading": "Core Idea — Prompt = Product Behavior",
       "subtitle": "Prompt = Product Behavior",
-      "contentMarkdown": "- **Prompt** = everything you write to the AI: **System Instruction** (who it is and how it responds) + user request.\n- In **Builder**: the **System Prompt** is fixed behind the scenes — the user only sees the question box. You define the behavior.\n- The clearer the request (product, audience, duration, response format), the more usable the outputs will be in a real product.\n- You don't need code — you need product thinking: who is this assistant serving? What does it respond to? And what does it refuse?",
+      "contentMarkdown": "- Prompt = everything you write to the AI: System Instruction (who it is and how it responds) + user request.\n- In Builder: the System Prompt is fixed behind the scenes — the user only sees the question box. You define the behavior.\n- The clearer the request (product, audience, duration, response format), the more usable the outputs will be in a real product.\n- You don't need code — you need product thinking: who is this assistant serving? What does it respond to? And what does it refuse?",
       "bullets": [
-        "**Prompt** = everything you write to the AI: **System Instruction** (who it is and how it responds) + user request.",
-        "In **Builder**: the **System Prompt** is fixed behind the scenes — the user only sees the question box. You define the behavior.",
+        "Prompt = everything you write to the AI: System Instruction (who it is and how it responds) + user request.",
+        "In Builder: the System Prompt is fixed behind the scenes — the user only sees the question box. You define the behavior.",
         "The clearer the request (product, audience, duration, response format), the more usable the outputs will be in a real product.",
         "You don't need code — you need product thinking: who is this assistant serving? What does it respond to? And what does it refuse?"
       ],
@@ -73,7 +73,7 @@
       "role": "Glossary",
       "heading": "Glossary — Two Terms to Start",
       "subtitle": "Two Terms to Start",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Prompt** | The request you write to the AI — the clearer it is, the more accurate the response | \"Summarize in 3 points\" is better than \"Summarize.\" |\n| **System Instruction** | The fixed text that defines the assistant's role before any user question | \"You are a support assistant for a juice shop — respond in simple Modern Standard Arabic, with short sentences.\" |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| Prompt | The request you write to the AI — the clearer it is, the more accurate the response | \"Summarize in 3 points\" is better than \"Summarize.\" |\n| System Instruction | The fixed text that defines the assistant's role before any user question | \"You are a support assistant for a juice shop — respond in simple Modern Standard Arabic, with short sentences.\" |",
       "bullets": [],
       "tables": [
         {
@@ -84,12 +84,12 @@
           ],
           "rows": [
             [
-              "**Prompt**",
+              "Prompt",
               "The request you write to the AI — the clearer it is, the more accurate the response",
               "\"Summarize in 3 points\" is better than \"Summarize.\""
             ],
             [
-              "**System Instruction**",
+              "System Instruction",
               "The fixed text that defines the assistant's role before any user question",
               "\"You are a support assistant for a juice shop — respond in simple Modern Standard Arabic, with short sentences.\""
             ]
@@ -100,7 +100,7 @@
     {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot Block (Intent)",
-      "contentMarkdown": "An organized curriculum page — header, progress bar, and numbered stages. Built with **Prompt** that includes the structure, order, and format of each stage. If the request was just \"create a curriculum page,\" it would be a regular list. The difference = details in the **Prompt**.",
+      "contentMarkdown": "An organized curriculum page — header, progress bar, and numbered stages. Built with Prompt that includes the structure, order, and format of each stage. If the request was just \"create a curriculum page,\" it would be a regular list. The difference = details in the Prompt.",
       "bullets": [],
       "tables": []
     },
@@ -108,17 +108,17 @@
       "role": "Quiz",
       "heading": "Quiz — Quick Confirmation",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 1\n\n**Question:** You want the AI to create posts for the candy shop \"Sugar Increase\" in Cairo — mango kunafa — for one week. What is the best **Prompt**?\n\n- **Correct answer:** **Suggest post ideas for one week for the \"Sugar Increase\" shop in Cairo — mango kunafa**\n- **Explanation:** Details (name, product, location, duration) = a usable response in a real product.",
+      "contentMarkdown": "Question: You want the AI to create posts for the candy shop \"Sugar Increase\" in Cairo — mango kunafa — for one week. What is the best Prompt?\nSuggest post ideas for one week for the \"Sugar Increase\" shop in Cairo — mango kunafa\nExplanation: Details (name, product, location, duration) = a usable response in a real product.",
       "bullets": [
-        "**Correct answer:** **Suggest post ideas for one week for the \"Sugar Increase\" shop in Cairo — mango kunafa**",
-        "**Explanation:** Details (name, product, location, duration) = a usable response in a real product."
+        "Suggest post ideas for one week for the \"Sugar Increase\" shop in Cairo — mango kunafa",
+        "Explanation: Details (name, product, location, duration) = a usable response in a real product."
       ],
       "tables": [],
       "quiz": {
-        "question": "You want the AI to create posts for the candy shop \"Sugar Increase\" in Cairo — mango kunafa — for one week. What is the best **Prompt**?",
+        "question": "You want the AI to create posts for the candy shop \"Sugar Increase\" in Cairo — mango kunafa — for one week. What is the best Prompt?",
         "correctIndex": 0,
         "options": [
-          "**Suggest post ideas for one week for the \"Sugar Increase\" shop in Cairo — mango kunafa**",
+          "Suggest post ideas for one week for the \"Sugar Increase\" shop in Cairo — mango kunafa",
           "An unsuitable option; it ignores the basic details from the section above.",
           "A partial answer that misses the context and ignores the next step in the decision."
         ],
@@ -129,7 +129,7 @@
       "role": "Mission",
       "heading": "Mission — Write System Instruction for an Assistant",
       "subtitle": "Write System Instruction for an Assistant",
-      "contentMarkdown": "**Introduction:** You will write system instructions for a simple AI assistant — not a conversation, but \"rules of operation.\" 10–15 minutes.\n\n**Delivery:** Choose one (support assistant for an online store · assistant explaining lessons to beginners · assistant suggesting content ideas). Include: (1) role (2) speaking style (3) what it responds to and what it refuses (4) example question + response in two lines.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Clear Instructions | 60% | The role is defined — not a \"general assistant\"; it includes rules for response and refusal |\n| Practical Example | 40% | The example matches the rules; the response is conceivable in a product |",
+      "contentMarkdown": "Introduction: You will write system instructions for a simple AI assistant — not a conversation, but \"rules of operation.\" 10–15 minutes. Delivery: Choose one (support assistant for an online store · assistant explaining lessons to beginners · assistant suggesting content ideas). Include: (1) role (2) speaking style (3) what it responds to and what it refuses (4) example question + response in two lines. Evaluation Criteria: | Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Clear Instructions | 60% | The role is defined — not a \"general assistant\"; it includes rules for response and refusal |\n| Practical Example | 40% | The example matches the rules; the response is conceivable in a product |",
       "bullets": [],
       "tables": [
         {
@@ -174,11 +174,11 @@
     {
       "role": "Confidence close",
       "heading": "Confidence Close",
-      "contentMarkdown": "- **You understood:** **Prompt** = product behavior. **System Instruction** defines the assistant before the first question.\n- **You can:** Write clear system instructions for any AI feature — without code.\n- **Next:** **Instructions vs Examples** — why the example is stronger than the description.",
+      "contentMarkdown": "- You understood: Prompt = product behavior. System Instruction defines the assistant before the first question.\n- You can: Write clear system instructions for any AI feature — without code.\n- Next: Instructions vs Examples — why the example is stronger than the description.",
       "bullets": [
-        "**You understood:** **Prompt** = product behavior. **System Instruction** defines the assistant before the first question.",
-        "**You can:** Write clear system instructions for any AI feature — without code.",
-        "**Next:** **Instructions vs Examples** — why the example is stronger than the description."
+        "You understood: Prompt = product behavior. System Instruction defines the assistant before the first question.",
+        "You can: Write clear system instructions for any AI feature — without code.",
+        "Next: Instructions vs Examples — why the example is stronger than the description."
       ],
       "tables": []
     }
