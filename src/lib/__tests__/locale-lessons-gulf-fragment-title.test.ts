@@ -63,6 +63,16 @@ describe("Gulf fragment title repair", () => {
     expect(detectGulfTitleMismatchWarning(source, repaired)).toBeNull();
   });
 
+  it("repairs full-mode generic Gulf titles from titleEn fallback map", async () => {
+    const source = await loadMsaLessonPackage("creator-m5-l2-thumbnails-captions");
+    const artifact = artifactWithGulfTitle(source, "بداية الدرس");
+    const repaired = repairGulfCatalogTitle(source, artifact);
+
+    expect(repaired.title).toBe("الثمبنيلز والكابشنز");
+    expect(detectGulfTitleMismatchWarning(source, repaired)).toBeNull();
+    expect(validateFragmentPipelineArtifact(source, repaired, "ar-Gulf").ok).toBe(true);
+  });
+
   it("still fails validation when generic title has no fallback map entry", async () => {
     const source = await loadMsaLessonPackage("builder-m6-l1-idea-to-page");
     const artifact = artifactWithGulfTitle(source, "بداية الدرس");
