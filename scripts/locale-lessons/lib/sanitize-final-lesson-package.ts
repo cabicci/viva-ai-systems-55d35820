@@ -120,7 +120,7 @@ function sanitizeSection(section: LocalizedLessonSection): LocalizedLessonSectio
 }
 
 export function sanitizeFinalLessonPackage<
-  T extends Pick<LocalizedLessonPackage, "sections"> & Record<string, unknown>,
+  T extends { sections: LocalizedLessonSection[] },
 >(pkg: T): T {
   const kept = pkg.sections.filter((s) => !isProductionReferenceSection(s));
   const sanitized = kept.map(sanitizeSection);
