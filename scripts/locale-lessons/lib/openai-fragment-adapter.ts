@@ -25,16 +25,6 @@ export type FragmentLocalizationResponse = {
   fields: Array<{ fieldPath: string; localizedText: string }>;
 };
 
-export class OpenAiFragmentEmptyLocalizedTextError extends OpenAiFragmentParseError {
-  readonly fieldPath: string;
-
-  constructor(fieldPath: string) {
-    super(`localizedText must be a non-empty string for ${fieldPath}`);
-    this.name = "OpenAiFragmentEmptyLocalizedTextError";
-    this.fieldPath = fieldPath;
-  }
-}
-
 export class OpenAiFragmentParseError extends Error {
   readonly parseMessage: string;
 
@@ -42,6 +32,16 @@ export class OpenAiFragmentParseError extends Error {
     super(message);
     this.name = "OpenAiFragmentParseError";
     this.parseMessage = message;
+  }
+}
+
+export class OpenAiFragmentEmptyLocalizedTextError extends OpenAiFragmentParseError {
+  readonly fieldPath: string;
+
+  constructor(fieldPath: string) {
+    super(`localizedText must be a non-empty string for ${fieldPath}`);
+    this.name = "OpenAiFragmentEmptyLocalizedTextError";
+    this.fieldPath = fieldPath;
   }
 }
 
