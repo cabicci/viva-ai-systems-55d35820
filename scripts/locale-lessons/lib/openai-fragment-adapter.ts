@@ -35,6 +35,18 @@ export class OpenAiFragmentParseError extends Error {
   }
 }
 
+export class OpenAiFragmentEmptyLocalizedTextError extends OpenAiFragmentParseError {
+  readonly fieldPath: string;
+  readonly partialMap: LocalizedTextMap;
+
+  constructor(fieldPath: string, partialMap: LocalizedTextMap) {
+    super(`localizedText must be a non-empty string for ${fieldPath}`);
+    this.name = "OpenAiFragmentEmptyLocalizedTextError";
+    this.fieldPath = fieldPath;
+    this.partialMap = partialMap;
+  }
+}
+
 function systemPromptForLocale(targetLocale: AdaptationTargetLocale): string {
   const localeRules =
     targetLocale === "en" ? EN_SYSTEM_PROMPT : AR_GULF_SYSTEM_PROMPT;
@@ -193,12 +205,28 @@ export function parseOpenAiFragmentResponse(
     if (typeof field.fieldPath !== "string") {
       throw new OpenAiFragmentParseError("fieldPath must be a string");
     }
-    if (typeof field.localizedText !== "string" || field.localizedText.trim() === "") {
+    if (typeof field.localizedText !== "string") {
       throw new OpenAiFragmentParseError(
         `localizedText must be a non-empty string for ${field.fieldPath}`,
       );
     }
     localizedByPath.set(field.fieldPath, field.localizedText);
+  }
+
+  const partialMap = {
+    ...input,
+    targetLocale: input.targetLocale,
+    fields: input.fields.map((field) => ({
+      ...field,
+      localizedText: localizedByPath.get(field.fieldPath) ?? "",
+    })),
+  };
+
+  const emptyField = partialMap.fields.find(
+    (field) => field.localizedText?.trim() === "",
+  );
+  if (emptyField) {
+    throw new OpenAiFragmentEmptyLocalizedTextError(emptyField.fieldPath, partialMap);
   }
 
   return {
@@ -235,6 +263,89 @@ ${STRICT_JSON_RETRY_INSTRUCTION}
 - Return the exact same fieldPath keys as the input — one localizedText per fieldPath.`;
 }
 
+function buildSingleFieldRepairPrompt(input: {
+  lessonId: string;
+  targetLocale: AdaptationTargetLocale;
+  fieldPath: string;
+  fieldType: string;
+  sourceText: string;
+}): { system: string; userPrompt: string } {
+  return {
+    system: systemPromptForLocale(input.targetLocale),
+    userPrompt: `# Isolated empty-field repair
+
+The previous fragment response left exactly one learner-facing field empty.
+Adapt ONLY this one sourceText for target locale **${input.targetLocale}**.
+Do not return Arabic source text as English output.
+Do not return a full lesson JSON object.
+
+${JSON.stringify(input, null, 2)}
+
+Return ONE JSON object only:
+{
+  "lessonId": "${input.lessonId}",
+  "fields": [
+    { "fieldPath": "${input.fieldPath}", "localizedText": "<non-empty adapted text>" }
+  ]
+}`,
+  };
+}
+
+async function repairEmptyLocalizedTextField(input: {
+  textMap: LocalizedTextMap;
+  targetLocale: AdaptationTargetLocale;
+  currentMap: LocalizedTextMap;
+  emptyFieldPath: string;
+  apiKey: string;
+  model: string;
+  fetchFn?: typeof fetch;
+}): Promise<LocalizedTextMap> {
+  const sourceField = input.textMap.fields.find(
+    (field) => field.fieldPath === input.emptyFieldPath,
+  );
+  if (!sourceField) {
+    throw new OpenAiFragmentParseError(
+      `cannot repair unknown fieldPath: ${input.emptyFieldPath}`,
+    );
+  }
+
+  const prompt = buildSingleFieldRepairPrompt({
+    lessonId: input.textMap.lessonId,
+    targetLocale: input.targetLocale,
+    fieldPath: sourceField.fieldPath,
+    fieldType: sourceField.fieldType,
+    sourceText: sourceField.sourceText,
+  });
+  const content = await fetchOpenAiFragmentText({
+    apiKey: input.apiKey,
+    model: input.model,
+    system: prompt.system,
+    userPrompt: prompt.userPrompt,
+    fetchFn: input.fetchFn,
+  });
+  const repairedSingleField = parseOpenAiFragmentResponse(content, {
+    ...input.textMap,
+    targetLocale: input.targetLocale,
+    fields: [sourceField],
+  });
+  const repairedValue = repairedSingleField.fields[0]?.localizedText?.trim();
+  if (!repairedValue) {
+    throw new OpenAiFragmentEmptyLocalizedTextError(
+      input.emptyFieldPath,
+      input.currentMap,
+    );
+  }
+
+  return {
+    ...input.currentMap,
+    fields: input.currentMap.fields.map((field) =>
+      field.fieldPath === input.emptyFieldPath
+        ? { ...field, localizedText: repairedValue }
+        : field,
+    ),
+  };
+}
+
 export async function localizeTextMapWithOpenAi(
   textMap: LocalizedTextMap,
   targetLocale: AdaptationTargetLocale,
@@ -264,6 +375,32 @@ export async function localizeTextMapWithOpenAi(
     try {
       return parseOpenAiFragmentResponse(content, { ...textMap, targetLocale });
     } catch (error) {
+      if (error instanceof OpenAiFragmentEmptyLocalizedTextError && targetLocale === "en") {
+        try {
+          return await repairEmptyLocalizedTextField({
+            textMap,
+            targetLocale,
+            currentMap: error.partialMap,
+            emptyFieldPath: error.fieldPath,
+            apiKey,
+            model,
+            fetchFn,
+          });
+        } catch (repairError) {
+          const repairMessage =
+            repairError instanceof Error ? repairError.message : String(repairError);
+          throw new Error(
+            formatFragmentParseFailure({
+              targetLocale,
+              lessonId: textMap.lessonId,
+              attempt,
+              maxAttempts: ADAPTATION_JSON_MAX_ATTEMPTS,
+              parseError: repairMessage,
+            }),
+          );
+        }
+      }
+
       if (error instanceof OpenAiFragmentParseError) {
         lastParseError = error.parseMessage;
       } else {
