@@ -14,6 +14,7 @@ import { RouteError, RouteNotFound } from "@/components/site/route-boundaries";
 import { CloudHydration } from "@/components/site/CloudHydration";
 import { LocaleRouterProvider } from "@/lib/locale/locale-router-provider";
 import { useLocale } from "@/lib/locale/locale-context";
+import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { readLocaleRuntimeInputs } from "@/lib/locale/read-locale-runtime-inputs";
 import { resolvePublicLocale } from "@/lib/locale/resolve-public-locale";
 import { LOCALE_META, type SupportedLocale } from "@/lib/locale/types";
@@ -23,6 +24,7 @@ type RootLoaderData = {
 };
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  validateSearch: (raw: Record<string, unknown>) => parseLocaleSearchParam(raw),
   head: () => ({
     meta: [
       { charSet: "utf-8" },

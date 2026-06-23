@@ -1,24 +1,21 @@
 import { useNavigate, useRouter, useRouterState } from "@tanstack/react-router";
-import type { LessonPreviewSearch } from "@/lib/locale-lessons/lesson-preview-search";
-import { writeLocaleCookie } from "./locale-cookie";
-import { buildLocaleNavigationSearch } from "./locale-search";
+import {
+  buildLocaleNavigationSearch,
+  persistValidLocaleCookie,
+} from "./locale-search";
 import { useLocale } from "./locale-context";
-import { DEFAULT_LOCALE, type SupportedLocale } from "./types";
+import type { SupportedLocale } from "./types";
 
 const LEARN_PATH_RE = /^\/learn\/([^/]+)\/([^/]+)/;
 const DASHBOARD_PATH = "/dashboard";
 const CURRICULUM_PATH = "/curriculum";
 
-function syncLocaleInBrowserUrl(nextLocale: SupportedLocale): void {
-  const url = new URL(window.location.href);
-  if (nextLocale === DEFAULT_LOCALE) {
-    url.searchParams.delete("locale");
-  } else {
-    url.searchParams.set("locale", nextLocale);
-  }
-  url.searchParams.delete("previewLocale");
-  window.history.replaceState(window.history.state, "", url);
-}
+type LocaleNavigateOptions = {
+  to?: string;
+  params?: Record<string, string>;
+  search: (previous: Record<string, unknown>) => Record<string, unknown>;
+  replace: boolean;
+};
 
 /** Persist locale and sync `?locale=` on the current route. */
 export function useLocaleNavigation() {
@@ -27,52 +24,54 @@ export function useLocaleNavigation() {
   const pathname = useRouterState({ select: (state) => state.location.pathname });
   const { setLocale } = useLocale();
 
+  const navigateWithLocale = (options: LocaleNavigateOptions) => {
+    void (
+      navigate as (opts: LocaleNavigateOptions) => Promise<void>
+    )(options).then(() => router.invalidate());
+  };
+
   return (nextLocale: SupportedLocale) => {
-    writeLocaleCookie(nextLocale);
+    persistValidLocaleCookie(nextLocale);
     setLocale(nextLocale);
+
+    const nextSearch = (previous: Record<string, unknown>) =>
+      buildLocaleNavigationSearch(previous, nextLocale);
 
     const learnMatch = pathname.match(LEARN_PATH_RE);
     if (learnMatch) {
       const [, pathId, lessonId] = learnMatch;
-      void navigate({
+      navigateWithLocale({
         to: "/learn/$pathId/$lessonId",
         params: { pathId, lessonId },
         search: (previous) =>
-          buildLocaleNavigationSearch(
-            previous as Record<string, unknown>,
-            nextLocale,
-          ) as LessonPreviewSearch,
+          nextSearch(previous) as Record<string, unknown>,
         replace: true,
-      }).then(() => router.invalidate());
+      });
       return;
     }
 
     if (pathname === DASHBOARD_PATH || pathname.startsWith(`${DASHBOARD_PATH}/`)) {
-      void navigate({
+      navigateWithLocale({
         to: DASHBOARD_PATH,
-        search: (previous) =>
-          buildLocaleNavigationSearch(
-            previous as Record<string, unknown>,
-            nextLocale,
-          ),
+        search: nextSearch,
         replace: true,
       });
       return;
     }
 
     if (pathname === CURRICULUM_PATH || pathname.startsWith(`${CURRICULUM_PATH}/`)) {
-      void navigate({
+      navigateWithLocale({
         to: CURRICULUM_PATH,
-        search: (previous) =>
-          buildLocaleNavigationSearch(
-            previous as Record<string, unknown>,
-            nextLocale,
-          ),
+        search: nextSearch,
         replace: true,
       });
       return;
     }
 
-    syncLocaleInBrowserUrl(nextLocale);
+    navigateWithLocale({
+      to: ".",
+      search: nextSearch,
+      replace: true,
+    });
   };
 }

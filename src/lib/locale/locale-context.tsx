@@ -7,7 +7,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { writeLocaleCookie } from "./locale-cookie";
+import { persistValidLocaleCookie } from "./locale-search";
 import { resolvePublicLocale } from "./resolve-public-locale";
 import {
   DEFAULT_LOCALE,
@@ -61,7 +61,7 @@ export function LocaleProvider({
 
   const setLocale = useCallback(
     (nextLocale: SupportedLocale) => {
-      writeLocaleCookie(nextLocale);
+      persistValidLocaleCookie(nextLocale);
       onLocalePersisted?.(nextLocale);
       setManualLocale(nextLocale);
     },
