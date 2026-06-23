@@ -18,7 +18,7 @@ function LocaleProbe() {
 describe("LocaleProvider", () => {
   it("defaults to ar-EG", () => {
     render(
-      <LocaleProvider>
+      <LocaleProvider initialLocale={DEFAULT_LOCALE} effectiveLocale={DEFAULT_LOCALE}>
         <LocaleProbe />
       </LocaleProvider>,
     );

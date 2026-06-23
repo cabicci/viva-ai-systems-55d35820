@@ -12,7 +12,15 @@ import { Toaster } from "@/components/ui/sonner";
 import { BackToDashboard } from "@/components/site/BackToDashboard";
 import { RouteError, RouteNotFound } from "@/components/site/route-boundaries";
 import { CloudHydration } from "@/components/site/CloudHydration";
-import { LocaleProvider } from "@/lib/locale/locale-context";
+import { LocaleRouterProvider } from "@/lib/locale/locale-router-provider";
+import { useLocale } from "@/lib/locale/locale-context";
+import { readLocaleRuntimeInputs } from "@/lib/locale/read-locale-runtime-inputs";
+import { resolvePublicLocale } from "@/lib/locale/resolve-public-locale";
+import { LOCALE_META, type SupportedLocale } from "@/lib/locale/types";
+
+type RootLoaderData = {
+  effectiveLocale: SupportedLocale;
+};
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -144,6 +152,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
     ],
   }),
+  loader: async () => {
+    const { urlLocale, cookieLocale } = await readLocaleRuntimeInputs();
+    const localeRuntime = resolvePublicLocale({ urlLocale, cookieLocale });
+    return { effectiveLocale: localeRuntime.locale as SupportedLocale };
+  },
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: RouteNotFound,
@@ -151,8 +164,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: React.ReactNode }) {
+  const { effectiveLocale } = Route.useLoaderData() as RootLoaderData;
+  const meta = LOCALE_META[effectiveLocale];
+
   return (
-    <html lang="ar" dir="rtl">
+    <html lang={meta.lang} dir={meta.dir} suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
@@ -169,17 +185,23 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const { effectiveLocale } = Route.useLoaderData() as RootLoaderData;
 
   return (
     <QueryClientProvider client={queryClient}>
-      <LocaleProvider>
+      <LocaleRouterProvider initialLocale={effectiveLocale}>
         <AuthProvider>
           <CloudHydration />
           <Outlet />
           <BackToDashboard />
-          <Toaster richColors position="top-center" dir="rtl" />
+          <LocaleToaster />
         </AuthProvider>
-      </LocaleProvider>
+      </LocaleRouterProvider>
     </QueryClientProvider>
   );
+}
+
+function LocaleToaster() {
+  const { dir } = useLocale();
+  return <Toaster richColors position="top-center" dir={dir} />;
 }

@@ -2,11 +2,12 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
   type ReactNode,
 } from "react";
-import { readLocaleCookie, writeLocaleCookie } from "./locale-cookie";
+import { writeLocaleCookie } from "./locale-cookie";
 import { resolvePublicLocale } from "./resolve-public-locale";
 import {
   DEFAULT_LOCALE,
@@ -25,25 +26,40 @@ export interface LocaleContextValue {
 
 const LocaleContext = createContext<LocaleContextValue | null>(null);
 
-function resolveInitialLocale(initialLocale?: SupportedLocale): SupportedLocale {
-  if (initialLocale) return initialLocale;
-  return resolvePublicLocale({ cookieLocale: readLocaleCookie() }).locale;
-}
+type LocaleProviderProps = {
+  children: ReactNode;
+  urlLocale?: string;
+  cookieLocale?: string;
+  initialLocale?: SupportedLocale;
+  effectiveLocale?: SupportedLocale;
+};
 
 export function LocaleProvider({
   children,
+  urlLocale,
+  cookieLocale,
   initialLocale,
-}: {
-  children: ReactNode;
-  initialLocale?: SupportedLocale;
-}) {
-  const [locale, setLocaleState] = useState<SupportedLocale>(() =>
-    resolveInitialLocale(initialLocale),
+  effectiveLocale,
+}: LocaleProviderProps) {
+  const derivedLocale = useMemo(
+    () =>
+      effectiveLocale ??
+      initialLocale ??
+      resolvePublicLocale({ urlLocale, cookieLocale }).locale,
+    [effectiveLocale, initialLocale, urlLocale, cookieLocale],
   );
+
+  const [manualLocale, setManualLocale] = useState<SupportedLocale | null>(null);
+
+  useEffect(() => {
+    setManualLocale(null);
+  }, [derivedLocale]);
+
+  const locale = manualLocale ?? derivedLocale;
 
   const setLocale = useCallback((nextLocale: SupportedLocale) => {
     writeLocaleCookie(nextLocale);
-    setLocaleState(nextLocale);
+    setManualLocale(nextLocale);
   }, []);
 
   const value = useMemo<LocaleContextValue>(() => {

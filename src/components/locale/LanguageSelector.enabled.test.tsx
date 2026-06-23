@@ -11,12 +11,16 @@ vi.mock("@/lib/locale/feature-flags", () => ({
   localizedRagEnabled: false,
 }));
 
+vi.mock("@/lib/locale/use-locale-navigation", () => ({
+  useLocaleNavigation: () => () => {},
+}));
+
 import { LanguageSelector } from "@/components/locale/LanguageSelector";
 
 describe("LanguageSelector (localeUiEnabled)", () => {
   it("shows display names only, not internal locale codes", () => {
     render(
-      <LocaleProvider>
+      <LocaleProvider initialLocale={DEFAULT_LOCALE} effectiveLocale={DEFAULT_LOCALE}>
         <LanguageSelector />
       </LocaleProvider>,
     );
@@ -33,7 +37,7 @@ describe("LanguageSelector (localeUiEnabled)", () => {
 
   it("defaults to ar-EG inside LocaleProvider", () => {
     render(
-      <LocaleProvider>
+      <LocaleProvider initialLocale={DEFAULT_LOCALE} effectiveLocale={DEFAULT_LOCALE}>
         <LanguageSelector />
       </LocaleProvider>,
     );

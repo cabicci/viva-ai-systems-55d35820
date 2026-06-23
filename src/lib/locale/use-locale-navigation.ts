@@ -23,8 +23,10 @@ export function useLocaleNavigation() {
         const nextSearch = { ...base };
         if (nextLocale === DEFAULT_LOCALE) {
           delete nextSearch.locale;
+          delete nextSearch.previewLocale;
         } else {
           nextSearch.locale = nextLocale;
+          delete nextSearch.previewLocale;
         }
         return nextSearch;
       },
