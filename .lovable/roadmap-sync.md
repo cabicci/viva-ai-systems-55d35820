@@ -4,7 +4,7 @@
 date: 2026-06-23
 scope: ui
 source: user
-summary: Phase 9.4 LanguageSelector router navigation and cookie write
+summary: Phase 9.6 ar-EG selector clears stale locale cookie
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

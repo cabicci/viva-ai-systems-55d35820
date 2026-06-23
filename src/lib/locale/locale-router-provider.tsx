@@ -10,7 +10,7 @@ import {
 } from "./locale-search";
 import { isSupportedLocale } from "./resolve-locale";
 import { resolvePublicLocale } from "./resolve-public-locale";
-import type { SupportedLocale } from "./types";
+import { DEFAULT_LOCALE, type SupportedLocale } from "./types";
 
 function readUrlLocaleFromSearch(search: unknown): string | undefined {
   if (!search || typeof search !== "object") return undefined;
@@ -57,7 +57,7 @@ export function LocaleRouterProvider({
   }, [urlLocale, locationHref]);
 
   const handleLocalePersisted = (locale: SupportedLocale) => {
-    setCookieLocale(locale);
+    setCookieLocale(locale === DEFAULT_LOCALE ? undefined : locale);
   };
 
   return (

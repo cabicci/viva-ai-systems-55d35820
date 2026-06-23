@@ -73,17 +73,18 @@ describe("LanguageSelector integration (Phase 9.4)", () => {
     expect(select).toHaveValue("en");
   });
 
-  it("selecting مصري (ar-EG) removes locale from URL and writes cookie", async () => {
+  it("selecting مصري (ar-EG) removes locale from URL and clears stale cookie", async () => {
     const router = await renderSelectorAt("/?locale=en");
 
     const select = screen.getByRole("combobox");
     expect(select).toHaveValue("en");
+    expect(readLocaleCookie()).toBe("en");
 
     fireEvent.change(select, { target: { value: "ar-EG" } });
 
     await waitFor(() => {
       expect(router.state.location.search).toEqual({});
-      expect(readLocaleCookie()).toBe("ar-EG");
+      expect(readLocaleCookie()).toBeUndefined();
     });
 
     expect(router.state.location.search).not.toHaveProperty("previewLocale");

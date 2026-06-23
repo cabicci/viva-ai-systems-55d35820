@@ -42,12 +42,18 @@ describe("Phase 9.2 locale cookie persistence", () => {
     document.cookie = `${LOCALE_COOKIE_NAME}=; path=/; max-age=0`;
   });
 
-  it("writes masaarat_locale for supported URL locales", () => {
-    for (const locale of ["en", "ar-MSA", "ar-Gulf", "ar-EG"] as const) {
+  it("writes masaarat_locale for supported non-default URL locales", () => {
+    for (const locale of ["en", "ar-MSA", "ar-Gulf"] as const) {
       persistValidLocaleCookie(locale);
       expect(readLocaleCookie()).toBe(locale);
       document.cookie = `${LOCALE_COOKIE_NAME}=; path=/; max-age=0`;
     }
+  });
+
+  it("clears masaarat_locale when default ar-EG is persisted", () => {
+    writeLocaleCookie("en");
+    persistValidLocaleCookie("ar-EG");
+    expect(readLocaleCookie()).toBeUndefined();
   });
 
   it("does not write cookie for unsupported URL locale", () => {

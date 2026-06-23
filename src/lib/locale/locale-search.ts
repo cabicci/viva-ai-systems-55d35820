@@ -1,6 +1,6 @@
 import { isSupportedLocale, resolveLocale } from "./resolve-locale";
 import { DEFAULT_LOCALE, type SupportedLocale } from "./types";
-import { writeLocaleCookie } from "./locale-cookie";
+import { clearLocaleCookie, writeLocaleCookie } from "./locale-cookie";
 
 export type LocaleSearchParams = {
   locale?: string;
@@ -30,11 +30,15 @@ export function parseLocaleSearchParam(
   return { locale };
 }
 
-/** Write cookie only for supported locale values (never unsupported or fallback). */
+/** Persist supported locale to cookie; clear cookie for default ar-EG so stale values cannot remain. */
 export function persistValidLocaleCookie(urlLocale: string | undefined): void {
   if (!urlLocale) return;
   const trimmed = urlLocale.trim();
   if (!isSupportedLocale(trimmed)) return;
+  if (trimmed === DEFAULT_LOCALE) {
+    clearLocaleCookie();
+    return;
+  }
   writeLocaleCookie(trimmed);
 }
 
