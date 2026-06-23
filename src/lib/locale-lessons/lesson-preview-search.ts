@@ -5,6 +5,7 @@ import { resolveLessonAccess } from "@/lib/locale-lessons/resolve-lesson-access"
 import type { ResolvedLessonAccess } from "@/lib/locale-lessons/resolve-lesson-access";
 import { isPackageLocale } from "@/lib/locale-lessons/registry";
 import { resolveLocale } from "@/lib/locale/resolve-locale";
+import { stripFalseBooleanSearchParams } from "@/lib/locale/locale-search";
 
 export type LessonNavFrom = "dashboard" | "curriculum";
 
@@ -23,15 +24,18 @@ function readPreviewLocaleFlag(raw: unknown): boolean {
 export function parseLessonPreviewSearch(
   raw: Record<string, unknown>,
 ): LessonPreviewSearch {
+  const sanitized = stripFalseBooleanSearchParams(raw);
   const from =
-    raw.from === "curriculum" || raw.from === "dashboard" ? raw.from : undefined;
+    sanitized.from === "curriculum" || sanitized.from === "dashboard"
+      ? sanitized.from
+      : undefined;
   const locale =
-    typeof raw.locale === "string" && raw.locale.trim() !== ""
-      ? raw.locale.trim()
+    typeof sanitized.locale === "string" && sanitized.locale.trim() !== ""
+      ? sanitized.locale.trim()
       : undefined;
 
   const parsed: LessonPreviewSearch = { from, locale };
-  if (readPreviewLocaleFlag(raw.previewLocale)) {
+  if (readPreviewLocaleFlag(sanitized.previewLocale)) {
     parsed.previewLocale = true;
   }
   return parsed;

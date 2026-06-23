@@ -32,6 +32,7 @@ type LocaleProviderProps = {
   cookieLocale?: string;
   initialLocale?: SupportedLocale;
   effectiveLocale?: SupportedLocale;
+  onLocalePersisted?: (locale: SupportedLocale) => void;
 };
 
 export function LocaleProvider({
@@ -40,6 +41,7 @@ export function LocaleProvider({
   cookieLocale,
   initialLocale,
   effectiveLocale,
+  onLocalePersisted,
 }: LocaleProviderProps) {
   const derivedLocale = useMemo(
     () =>
@@ -57,10 +59,14 @@ export function LocaleProvider({
 
   const locale = manualLocale ?? derivedLocale;
 
-  const setLocale = useCallback((nextLocale: SupportedLocale) => {
-    writeLocaleCookie(nextLocale);
-    setManualLocale(nextLocale);
-  }, []);
+  const setLocale = useCallback(
+    (nextLocale: SupportedLocale) => {
+      writeLocaleCookie(nextLocale);
+      onLocalePersisted?.(nextLocale);
+      setManualLocale(nextLocale);
+    },
+    [onLocalePersisted],
+  );
 
   const value = useMemo<LocaleContextValue>(() => {
     const meta = LOCALE_META[locale];

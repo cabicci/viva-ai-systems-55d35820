@@ -42,6 +42,7 @@ import { CompletionReward } from "@/components/learn/CompletionReward";
 import { AssistantPanel } from "@/components/assistant/AssistantPanel";
 import { LocalePackagePreviewRenderer } from "@/components/locale/LocalePackagePreviewRenderer";
 import { LocaleAssistantUnavailable } from "@/components/locale/LocaleAssistantUnavailable";
+import { LocaleLiveSafetyMarkers } from "@/components/locale/LocaleLiveSafetyMarkers";
 import { loadLocalePackageLesson } from "@/lib/locale-lessons/load-locale-package-lesson";
 import { readRequestCookieLocale } from "@/lib/locale/locale-cookie";
 import { useLocale } from "@/lib/locale/locale-context";
@@ -335,6 +336,9 @@ function UnifiedLessonPage() {
         completedCount={completedCount}
       />
       <main className="flex-1 max-w-[48rem] mx-auto w-full px-4 sm:px-6 py-8 md:py-12">
+        {isLocalizedPackagePage ? (
+          <LocaleLiveSafetyMarkers locale={effectiveAccess.effectiveLocale} />
+        ) : null}
         {from === "curriculum" ? (
           <Link
             to="/curriculum"

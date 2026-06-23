@@ -32,12 +32,19 @@ export async function readRequestCookieLocale(): Promise<string | undefined> {
   return readLocaleCookie();
 }
 
+function cookieSecureSuffix(): string {
+  if (typeof window === "undefined") return "";
+  return window.location.protocol === "https:" ? "; Secure" : "";
+}
+
 export function writeLocaleCookie(locale: SupportedLocale): void {
   if (typeof document === "undefined") return;
-  document.cookie = `${LOCALE_COOKIE_NAME}=${encodeURIComponent(locale)}; path=/; max-age=${COOKIE_MAX_AGE_SECONDS}; SameSite=Lax`;
+  const secure = cookieSecureSuffix();
+  document.cookie = `${LOCALE_COOKIE_NAME}=${encodeURIComponent(locale)}; Path=/; Max-Age=${COOKIE_MAX_AGE_SECONDS}; SameSite=Lax${secure}`;
 }
 
 export function clearLocaleCookie(): void {
   if (typeof document === "undefined") return;
-  document.cookie = `${LOCALE_COOKIE_NAME}=; path=/; max-age=0; SameSite=Lax`;
+  const secure = cookieSecureSuffix();
+  document.cookie = `${LOCALE_COOKIE_NAME}=; Path=/; Max-Age=0; SameSite=Lax${secure}`;
 }

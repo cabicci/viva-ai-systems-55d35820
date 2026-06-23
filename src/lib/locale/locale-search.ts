@@ -6,13 +6,26 @@ export type LocaleSearchParams = {
   locale?: string;
 };
 
+/** Drop `previewLocale=false` and other false booleans before router serialization. */
+export function stripFalseBooleanSearchParams(
+  raw: Record<string, unknown>,
+): Record<string, unknown> {
+  const next: Record<string, unknown> = {};
+  for (const [key, value] of Object.entries(raw)) {
+    if (value === false) continue;
+    next[key] = value;
+  }
+  return next;
+}
+
 /** Parse optional `locale` query param from raw router search. */
 export function parseLocaleSearchParam(
   raw: Record<string, unknown>,
 ): LocaleSearchParams {
+  const sanitized = stripFalseBooleanSearchParams(raw);
   const locale =
-    typeof raw.locale === "string" && raw.locale.trim() !== ""
-      ? raw.locale.trim()
+    typeof sanitized.locale === "string" && sanitized.locale.trim() !== ""
+      ? sanitized.locale.trim()
       : undefined;
   return { locale };
 }
@@ -30,7 +43,10 @@ export function buildLocaleNavigationSearch(
   previous: Record<string, unknown> | undefined,
   nextLocale: SupportedLocale,
 ): Record<string, unknown> {
-  const base = previous && typeof previous === "object" ? previous : {};
+  const base =
+    previous && typeof previous === "object"
+      ? stripFalseBooleanSearchParams(previous)
+      : {};
   const nextSearch: Record<string, unknown> = { ...base };
 
   if (nextLocale === DEFAULT_LOCALE) {
@@ -40,13 +56,21 @@ export function buildLocaleNavigationSearch(
   }
 
   delete nextSearch.previewLocale;
-  return nextSearch;
+  return stripFalseBooleanSearchParams(nextSearch);
+}
+
+export function readUrlLocaleFromHref(href: string): string | undefined {
+  try {
+    const value = new URL(href, "https://masaarat.ai").searchParams.get("locale");
+    return value?.trim() || undefined;
+  } catch {
+    return undefined;
+  }
 }
 
 export function readClientUrlLocale(): string | undefined {
   if (typeof window === "undefined") return undefined;
-  const value = new URL(window.location.href).searchParams.get("locale");
-  return value?.trim() || undefined;
+  return readUrlLocaleFromHref(window.location.href);
 }
 
 export function resolveUrlLocaleForRuntime(

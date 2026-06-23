@@ -6,6 +6,7 @@ import { LocaleProvider } from "./locale-context";
 import {
   persistValidLocaleCookie,
   readClientUrlLocale,
+  readUrlLocaleFromHref,
 } from "./locale-search";
 import { isSupportedLocale } from "./resolve-locale";
 import { resolvePublicLocale } from "./resolve-public-locale";
@@ -26,10 +27,17 @@ export function LocaleRouterProvider({
   children,
   initialLocale,
 }: LocaleRouterProviderProps) {
+  const locationHref = useRouterState({ select: (state) => state.location.href });
   const routerSearchLocale = useRouterState({
     select: (state) => readUrlLocaleFromSearch(state.location.search),
   });
-  const urlLocale = routerSearchLocale ?? readClientUrlLocale();
+  const urlLocale = useMemo(() => {
+    const fromHref = readUrlLocaleFromHref(locationHref);
+    if (fromHref) return fromHref;
+    const fromClient = readClientUrlLocale();
+    if (fromClient) return fromClient;
+    return routerSearchLocale;
+  }, [locationHref, routerSearchLocale]);
   const [cookieLocale, setCookieLocale] = useState(() => readLocaleCookie());
 
   const effectiveLocale = useMemo(
@@ -44,11 +52,13 @@ export function LocaleRouterProvider({
   useEffect(() => {
     if (urlLocale && isSupportedLocale(urlLocale.trim())) {
       persistValidLocaleCookie(urlLocale);
-      setCookieLocale(urlLocale.trim() as SupportedLocale);
-      return;
     }
     setCookieLocale(readLocaleCookie());
-  }, [urlLocale]);
+  }, [urlLocale, locationHref]);
+
+  const handleLocalePersisted = (locale: SupportedLocale) => {
+    setCookieLocale(locale);
+  };
 
   return (
     <LocaleProvider
@@ -56,6 +66,7 @@ export function LocaleRouterProvider({
       cookieLocale={cookieLocale}
       initialLocale={initialLocale}
       effectiveLocale={effectiveLocale}
+      onLocalePersisted={handleLocalePersisted}
     >
       <LocaleDocumentSync />
       {children}

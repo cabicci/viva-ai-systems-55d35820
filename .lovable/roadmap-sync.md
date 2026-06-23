@@ -4,7 +4,7 @@
 date: 2026-06-23
 scope: infra
 source: user
-summary: Phase 9.2 locale cookie persistence, selector URL navigation, QA markers, no previewLocale=false emission
+summary: Phase 9.3 client selector cookie write, router URL sync, safety markers, strip previewLocale=false
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
