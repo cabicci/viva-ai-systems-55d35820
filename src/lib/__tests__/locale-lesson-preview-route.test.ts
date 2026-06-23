@@ -8,9 +8,9 @@ import {
 
 const LESSON_ID = "intro-m1-l1-what-is-ai";
 
-describe("lesson route locale preview (Phase 4)", () => {
-  it("keeps localizedLessonsEnabled off", () => {
-    expect(localizedLessonsEnabled).toBe(false);
+describe("lesson route locale preview + live (Phase 4/9)", () => {
+  it("keeps localizedLessonsEnabled on for Phase 9 live mode", () => {
+    expect(localizedLessonsEnabled).toBe(true);
   });
 
   it("defaults route access to ar-EG with no search params", () => {
@@ -23,13 +23,13 @@ describe("lesson route locale preview (Phase 4)", () => {
     expect(access.fallbackUsed).toBe(false);
   });
 
-  it("keeps ar-EG when locale is set without preview flag", () => {
+  it("loads en package when locale is set without preview flag (Phase 9)", () => {
     const search = parseLessonPreviewSearch({ locale: "en" });
     expect(isLessonLocalePreviewActive(search)).toBe(false);
 
     const access = resolveRouteLessonAccess(LESSON_ID, search);
-    expect(access.effectiveLocale).toBe("ar-EG");
-    expect(access.contentSource).toBe("egyptian-ts");
+    expect(access.effectiveLocale).toBe("en");
+    expect(access.contentSource).toBe("locale-package-json");
   });
 
   it("resolves en package with previewLocale=1", () => {

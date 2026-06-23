@@ -1,10 +1,13 @@
 import {
   createContext,
+  useCallback,
   useContext,
   useMemo,
   useState,
   type ReactNode,
 } from "react";
+import { readLocaleCookie, writeLocaleCookie } from "./locale-cookie";
+import { resolvePublicLocale } from "./resolve-public-locale";
 import {
   DEFAULT_LOCALE,
   LOCALE_META,
@@ -22,14 +25,26 @@ export interface LocaleContextValue {
 
 const LocaleContext = createContext<LocaleContextValue | null>(null);
 
+function resolveInitialLocale(initialLocale?: SupportedLocale): SupportedLocale {
+  if (initialLocale) return initialLocale;
+  return resolvePublicLocale({ cookieLocale: readLocaleCookie() }).locale;
+}
+
 export function LocaleProvider({
   children,
-  initialLocale = DEFAULT_LOCALE,
+  initialLocale,
 }: {
   children: ReactNode;
   initialLocale?: SupportedLocale;
 }) {
-  const [locale, setLocale] = useState<SupportedLocale>(initialLocale);
+  const [locale, setLocaleState] = useState<SupportedLocale>(() =>
+    resolveInitialLocale(initialLocale),
+  );
+
+  const setLocale = useCallback((nextLocale: SupportedLocale) => {
+    writeLocaleCookie(nextLocale);
+    setLocaleState(nextLocale);
+  }, []);
 
   const value = useMemo<LocaleContextValue>(() => {
     const meta = LOCALE_META[locale];
@@ -40,7 +55,7 @@ export function LocaleProvider({
       dir: meta.dir,
       displayName: meta.displayName,
     };
-  }, [locale]);
+  }, [locale, setLocale]);
 
   return (
     <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>
@@ -54,3 +69,5 @@ export function useLocale(): LocaleContextValue {
   }
   return context;
 }
+
+export { DEFAULT_LOCALE };

@@ -1,3 +1,6 @@
+import { localizedLessonsEnabled } from "@/lib/locale/feature-flags";
+import { resolvePublicLocale } from "@/lib/locale/resolve-public-locale";
+import { DEFAULT_LOCALE } from "@/lib/locale/types";
 import { resolveLessonAccess } from "@/lib/locale-lessons/resolve-lesson-access";
 import type { ResolvedLessonAccess } from "@/lib/locale-lessons/resolve-lesson-access";
 import { isPackageLocale } from "@/lib/locale-lessons/registry";
@@ -15,7 +18,7 @@ function readPreviewLocaleFlag(raw: unknown): boolean {
   return raw === true || raw === 1 || raw === "1" || raw === "true";
 }
 
-/** Parse `/learn/...` search params for optional internal locale preview. */
+/** Parse `/learn/...` search params for locale preview and live routing. */
 export function parseLessonPreviewSearch(
   raw: Record<string, unknown>,
 ): LessonPreviewSearch {
@@ -33,25 +36,66 @@ export function parseLessonPreviewSearch(
   };
 }
 
-/** True only when both preview flag and a package locale are explicitly set. */
+/** Legacy internal preview gate: preview flag + package locale. */
 export function isLessonLocalePreviewActive(search: LessonPreviewSearch): boolean {
   if (!search.previewLocale || !search.locale) return false;
   return isPackageLocale(resolveLocale(search.locale));
 }
 
+/** True when a package locale should load (live or legacy preview). */
+export function isLessonPackageLocaleActive(
+  search: LessonPreviewSearch,
+  cookieLocale?: string | null,
+): boolean {
+  const resolved = resolvePublicLocale({
+    urlLocale: search.locale,
+    cookieLocale,
+  });
+
+  if (!isPackageLocale(resolved.locale)) {
+    return false;
+  }
+
+  if (localizedLessonsEnabled) return true;
+  return isLessonLocalePreviewActive(search);
+}
+
+export function buildLessonLocaleSearch(
+  search: LessonPreviewSearch,
+  cookieLocale?: string | null,
+): { locale?: string; previewLocale?: true } | undefined {
+  const urlLocale = search.locale;
+  const resolved = resolvePublicLocale({ urlLocale, cookieLocale });
+  if (resolved.locale === DEFAULT_LOCALE) return undefined;
+
+  const next: { locale: string; previewLocale?: true } = {
+    locale: resolved.locale,
+  };
+  if (search.previewLocale) next.previewLocale = true;
+  return next;
+}
+
 /**
  * Resolve lesson content access for live routes.
- * Default and `?locale=` without preview stay on ar-EG.
+ * Phase 9: valid package locale via URL or cookie loads JSON without previewLocale.
  */
 export function resolveRouteLessonAccess(
   lessonId: string,
   search: LessonPreviewSearch,
+  cookieLocale?: string | null,
 ): ResolvedLessonAccess {
-  if (!isLessonLocalePreviewActive(search)) {
+  const { locale: requestedLocale } = resolvePublicLocale({
+    urlLocale: search.locale,
+    cookieLocale,
+  });
+
+  if (!isLessonPackageLocaleActive(search, cookieLocale)) {
     return resolveLessonAccess(lessonId);
   }
 
-  return resolveLessonAccess(lessonId, search.locale, {
-    internalTestOverride: true,
+  return resolveLessonAccess(lessonId, requestedLocale, {
+    internalTestOverride: isLessonLocalePreviewActive(search),
   });
 }
+
+export type { ResolvedLessonAccess };

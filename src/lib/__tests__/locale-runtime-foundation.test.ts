@@ -76,26 +76,26 @@ describe("locale runtime foundation", () => {
     expect(access.contentRef).toContain(`${lessonId}.ts`);
   });
 
-  it("falls back to ar-EG when localized lessons are gated off", () => {
+  it("loads ar-Gulf packages when localized lessons are enabled (Phase 9)", () => {
     const lessonId = "analyst-m1-l1-from-automation-to-insight";
     const access = resolveLessonAccess(lessonId, "ar-Gulf");
 
-    expect(localizedLessonsEnabled).toBe(false);
-    expect(access.effectiveLocale).toBe("ar-EG");
-    expect(access.contentSource).toBe("egyptian-ts");
-    expect(access.fallbackUsed).toBe(true);
+    expect(localizedLessonsEnabled).toBe(true);
+    expect(access.effectiveLocale).toBe("ar-Gulf");
+    expect(access.contentSource).toBe("locale-package-json");
+    expect(access.fallbackUsed).toBe(false);
     expect(access.available).toBe(true);
   });
 
-  it("still falls back to ar-EG for full Gulf packages while gated off", () => {
+  it("loads full Gulf packages when live mode is on", () => {
     const lessonId = "analyst-m1-l1-from-automation-to-insight";
     expect(isLessonInLocalePackage(lessonId, "ar-Gulf")).toBe(true);
 
     const access = resolveLessonAccess(lessonId, "ar-Gulf");
-    expect(localizedLessonsEnabled).toBe(false);
-    expect(access.effectiveLocale).toBe("ar-EG");
-    expect(access.contentSource).toBe("egyptian-ts");
-    expect(access.fallbackUsed).toBe(true);
+    expect(localizedLessonsEnabled).toBe(true);
+    expect(access.effectiveLocale).toBe("ar-Gulf");
+    expect(access.contentSource).toBe("locale-package-json");
+    expect(access.fallbackUsed).toBe(false);
     expect(access.available).toBe(true);
   });
 

@@ -7,8 +7,8 @@ import {
 
 describe("LOCALE_META", () => {
   it("includes user-facing display names for all supported locales", () => {
-    expect(LOCALE_META["ar-EG"].displayName).toBe("العامية المصرية");
-    expect(LOCALE_META["ar-MSA"].displayName).toBe("العربية الفصحى");
+    expect(LOCALE_META["ar-EG"].displayName).toBe("مصري");
+    expect(LOCALE_META["ar-MSA"].displayName).toBe("فصحى");
     expect(LOCALE_META["ar-Gulf"].displayName).toBe("خليجي");
     expect(LOCALE_META.en.displayName).toBe("English");
   });

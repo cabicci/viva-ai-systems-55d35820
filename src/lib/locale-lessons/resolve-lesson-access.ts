@@ -64,9 +64,9 @@ function resolvePackageAccess(
 }
 
 /**
- * Internal lesson access resolver.
- * Live routes use ar-EG unless `?locale=…&previewLocale=1` activates package preview.
- * Pass `{ internalTestOverride: true }` for direct test access without query params.
+ * Lesson access resolver.
+ * Live routes use ar-EG by default; package locales load when `localizedLessonsEnabled`
+ * or legacy `?previewLocale=1` internal override is active.
  */
 export function resolveLessonAccess(
   lessonId: string,

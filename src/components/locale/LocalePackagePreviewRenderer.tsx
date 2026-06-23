@@ -40,7 +40,13 @@ function previewBlockKind(
   }
 }
 
-function PreviewBlockBody({ block }: { block: PreviewLessonBlock }) {
+function PreviewBlockBody({
+  block,
+  locale,
+}: {
+  block: PreviewLessonBlock;
+  locale: PreviewPackage["locale"];
+}) {
   switch (block.kind) {
     case "paragraphs":
       return (
@@ -155,12 +161,21 @@ function PreviewBlockBody({ block }: { block: PreviewLessonBlock }) {
 
     case "videoPreviewNote":
       return (
-        <p
-          className="text-xs text-muted-foreground font-mono"
-          data-preview-video="omitted"
+        <div
+          className="rounded-2xl border border-border/50 bg-muted/20 p-5 text-center space-y-2"
+          data-locale-video="placeholder"
         >
-          [Internal preview: lesson video omitted for localized packages]
-        </p>
+          <p className="text-sm font-semibold text-foreground">
+            {locale === "en"
+              ? "Video for this language is coming soon"
+              : "فيديو هذا الدرس باللغة المختارة قريبًا"}
+          </p>
+          <p className="text-xs text-muted-foreground">
+            {locale === "en"
+              ? "You can read the full lesson now. Video generation will follow."
+              : "يمكنك قراءة الدرس كاملًا الآن. توليد الفيديو سيأتي لاحقًا."}
+          </p>
+        </div>
       );
   }
 }
@@ -168,9 +183,11 @@ function PreviewBlockBody({ block }: { block: PreviewLessonBlock }) {
 function PreviewSectionCard({
   section,
   index,
+  locale,
 }: {
   section: PreviewLessonSection;
   index: number;
+  locale: PreviewPackage["locale"];
 }) {
   const blockKind = previewBlockKind(section.block);
   const Icon = resolveLearnerLessonIcon(section.icon, blockKind);
@@ -183,7 +200,7 @@ function PreviewSectionCard({
       title={section.title}
       tone={section.tone}
     >
-      <PreviewBlockBody block={section.block} />
+      <PreviewBlockBody block={section.block} locale={locale} />
     </IntroSection>
   );
 }
@@ -212,7 +229,12 @@ export function LocalePackagePreviewRenderer({
       data-preview-body-direction={bodyDir}
     >
       {sections.map((section, index) => (
-        <PreviewSectionCard key={`${section.title}-${index}`} section={section} index={index} />
+        <PreviewSectionCard
+          key={`${section.title}-${index}`}
+          section={section}
+          index={index}
+          locale={pkg.locale}
+        />
       ))}
     </article>
   );

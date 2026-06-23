@@ -26,6 +26,6 @@ describe("LocaleProvider", () => {
     expect(screen.getByTestId("locale").textContent).toBe(DEFAULT_LOCALE);
     expect(screen.getByTestId("lang").textContent).toBe("ar");
     expect(screen.getByTestId("dir").textContent).toBe("rtl");
-    expect(screen.getByTestId("displayName").textContent).toBe("العامية المصرية");
+    expect(screen.getByTestId("displayName").textContent).toBe("مصري");
   });
 });

@@ -1,6 +1,6 @@
 import { readdirSync } from "node:fs";
 import path from "node:path";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { localizedLessonsEnabled } from "@/lib/locale/feature-flags";
 import { resolveLocale } from "@/lib/locale/resolve-locale";
 import { DEFAULT_LOCALE } from "@/lib/locale/types";
@@ -19,9 +19,9 @@ function countJsonLessons(relativeDir: string): number {
   return readdirSync(dir).filter((file) => file.endsWith(".json")).length;
 }
 
-describe("locale runtime wiring (internal override)", () => {
-  it("keeps production flag off and defaults to ar-EG", () => {
-    expect(localizedLessonsEnabled).toBe(false);
+describe("locale runtime wiring (Phase 9 live + internal override)", () => {
+  it("defaults to ar-EG without locale input when live flag is on", () => {
+    expect(localizedLessonsEnabled).toBe(true);
     expect(resolveLocale()).toBe(DEFAULT_LOCALE);
 
     const access = resolveLessonAccess("intro-m1-l1-what-is-ai");
@@ -37,21 +37,9 @@ describe("locale runtime wiring (internal override)", () => {
     expect(access.contentSource).toBe("egyptian-ts");
   });
 
-  it("falls back ar-MSA/ar-Gulf/en to ar-EG without internal override", () => {
-    const lessonId = "analyst-m1-l1-from-automation-to-insight";
-
-    for (const locale of ["ar-MSA", "ar-Gulf", "en"] as const) {
-      expect(isLessonInLocalePackage(lessonId, locale)).toBe(true);
-      const access = resolveLessonAccess(lessonId, locale);
-      expect(access.effectiveLocale).toBe("ar-EG");
-      expect(access.contentSource).toBe("egyptian-ts");
-      expect(access.fallbackUsed).toBe(true);
-    }
-  });
-
-  it("resolves ar-MSA canonical JSON with internal test override", () => {
+  it("resolves ar-MSA canonical JSON when localizedLessonsEnabled is on", () => {
     const lessonId = "intro-m1-l1-what-is-ai";
-    const access = resolveLessonAccess(lessonId, "ar-MSA", INTERNAL);
+    const access = resolveLessonAccess(lessonId, "ar-MSA");
 
     expect(access.effectiveLocale).toBe("ar-MSA");
     expect(access.contentSource).toBe("locale-package-json");
@@ -62,9 +50,9 @@ describe("locale runtime wiring (internal override)", () => {
     expect(access.available).toBe(true);
   });
 
-  it("resolves ar-Gulf JSON with internal test override", () => {
+  it("resolves ar-Gulf JSON when localizedLessonsEnabled is on", () => {
     const lessonId = "analyst-m1-l1-from-automation-to-insight";
-    const access = resolveLessonAccess(lessonId, "ar-Gulf", INTERNAL);
+    const access = resolveLessonAccess(lessonId, "ar-Gulf");
 
     expect(access.effectiveLocale).toBe("ar-Gulf");
     expect(access.contentSource).toBe("locale-package-json");
@@ -74,9 +62,9 @@ describe("locale runtime wiring (internal override)", () => {
     expect(access.fallbackUsed).toBe(false);
   });
 
-  it("resolves en JSON with internal test override", () => {
+  it("resolves en JSON when localizedLessonsEnabled is on", () => {
     const lessonId = "builder-m6-l1-idea-to-page";
-    const access = resolveLessonAccess(lessonId, "en", INTERNAL);
+    const access = resolveLessonAccess(lessonId, "en");
 
     expect(access.effectiveLocale).toBe("en");
     expect(access.contentSource).toBe("locale-package-json");
@@ -93,5 +81,44 @@ describe("locale runtime wiring (internal override)", () => {
         REQUIRED_LESSON_COUNT,
       );
     }
+  });
+});
+
+describe("locale runtime wiring rollback flag", () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+    vi.resetModules();
+  });
+
+  it("falls back ar-MSA/ar-Gulf/en to ar-EG when localizedLessonsEnabled=false", async () => {
+    vi.stubEnv("VITE_LOCALIZED_LESSONS_ENABLED", "false");
+    vi.resetModules();
+
+    const { resolveLessonAccess: resolveWithFlagOff } = await import(
+      "@/lib/locale-lessons/resolve-lesson-access"
+    );
+    const lessonId = "analyst-m1-l1-from-automation-to-insight";
+
+    for (const locale of ["ar-MSA", "ar-Gulf", "en"] as const) {
+      expect(isLessonInLocalePackage(lessonId, locale)).toBe(true);
+      const access = resolveWithFlagOff(lessonId, locale);
+      expect(access.effectiveLocale).toBe("ar-EG");
+      expect(access.contentSource).toBe("egyptian-ts");
+      expect(access.fallbackUsed).toBe(true);
+    }
+  });
+
+  it("resolves package JSON with internal test override when flag is off", async () => {
+    vi.stubEnv("VITE_LOCALIZED_LESSONS_ENABLED", "false");
+    vi.resetModules();
+
+    const { resolveLessonAccess: resolveWithFlagOff } = await import(
+      "@/lib/locale-lessons/resolve-lesson-access"
+    );
+    const lessonId = "intro-m1-l1-what-is-ai";
+    const access = resolveWithFlagOff(lessonId, "ar-MSA", INTERNAL);
+
+    expect(access.effectiveLocale).toBe("ar-MSA");
+    expect(access.contentSource).toBe("locale-package-json");
   });
 });

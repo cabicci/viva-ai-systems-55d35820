@@ -41,9 +41,13 @@ import { ReadingProgressBar } from "@/components/learn/ReadingProgressBar";
 import { CompletionReward } from "@/components/learn/CompletionReward";
 import { AssistantPanel } from "@/components/assistant/AssistantPanel";
 import { LocalePackagePreviewRenderer } from "@/components/locale/LocalePackagePreviewRenderer";
+import { LocaleAssistantUnavailable } from "@/components/locale/LocaleAssistantUnavailable";
 import { loadLocalePackageLesson } from "@/lib/locale-lessons/load-locale-package-lesson";
+import { readLocaleCookie } from "@/lib/locale/locale-cookie";
+import { useLocale } from "@/lib/locale/locale-context";
+import { resolvePublicLocale } from "@/lib/locale/resolve-public-locale";
 import {
-  isLessonLocalePreviewActive,
+  buildLessonLocaleSearch,
   parseLessonPreviewSearch,
   resolveRouteLessonAccess,
   type LessonPreviewSearch,
@@ -107,11 +111,11 @@ type LessonLoaderData = {
   lesson: RuntimeLesson;
 };
 
-function preservePreviewSearch(
+function preserveLocaleSearch(
   search: LessonPreviewSearch,
-): { locale?: string; previewLocale: true } | undefined {
-  if (!isLessonLocalePreviewActive(search)) return undefined;
-  return { locale: search.locale, previewLocale: true };
+  cookieLocale?: string | null,
+): ReturnType<typeof buildLessonLocaleSearch> {
+  return buildLessonLocaleSearch(search, cookieLocale ?? readLocaleCookie());
 }
 
 export const Route = createFileRoute("/learn/$pathId/$lessonId")({
@@ -170,11 +174,21 @@ function UnifiedLessonPage() {
   const { pathId, lesson } = Route.useLoaderData() as LessonLoaderData;
   const previewSearch = Route.useSearch();
   const { from } = previewSearch;
-  const previewNavSearch = preservePreviewSearch(previewSearch);
+  const cookieLocale = readLocaleCookie();
+  const localeNavSearch = preserveLocaleSearch(previewSearch, cookieLocale);
+  const { setLocale } = useLocale();
+
+  useEffect(() => {
+    const resolved = resolvePublicLocale({
+      urlLocale: previewSearch.locale,
+      cookieLocale: cookieLocale,
+    });
+    setLocale(resolved.locale);
+  }, [previewSearch.locale, cookieLocale, setLocale]);
 
   const lessonAccess = useMemo(
-    () => resolveRouteLessonAccess(lesson.id, previewSearch),
-    [lesson.id, previewSearch],
+    () => resolveRouteLessonAccess(lesson.id, previewSearch, cookieLocale),
+    [lesson.id, previewSearch, cookieLocale],
   );
 
   const [previewPackage, setPreviewPackage] = useState<LocalizedLessonPackage | null>(
@@ -222,8 +236,12 @@ function UnifiedLessonPage() {
 
   const effectiveAccess: ResolvedLessonAccess =
     lessonAccess.contentSource === "locale-package-json" && previewStatus === "missing"
-      ? resolveRouteLessonAccess(lesson.id, { ...previewSearch, previewLocale: false })
+      ? resolveRouteLessonAccess(lesson.id, { ...previewSearch, locale: undefined, previewLocale: false })
       : lessonAccess;
+  const isLocalizedPackagePage =
+    effectiveAccess.contentSource === "locale-package-json" &&
+    previewStatus === "ready" &&
+    previewPackage !== null;
   const { getStatus, setStatus, isLoaded: isProgressLoaded } = useLessonProgress();
   const { recordActivity } = useStreak();
   const { isAdmin } = useEntitlement();
@@ -297,6 +315,7 @@ function UnifiedLessonPage() {
   const isGateReady = isProgressLoaded && isGateLoaded;
 
   const markCompleted = () => {
+    if (isLocalizedPackagePage) return;
     if (isCompleted) return;
     // Mastery gate: if the lesson ships a gated mission, the user can't
     // self-mark complete until the mission is actually passed.
@@ -377,9 +396,9 @@ function UnifiedLessonPage() {
             {showLocalePreview ? (
               <span
                 className="sr-only"
-                data-locale-preview-active={effectiveAccess.effectiveLocale}
+                data-locale-live-active={effectiveAccess.effectiveLocale}
               >
-                Internal locale preview: {effectiveAccess.effectiveLocale}
+                Localized lesson: {effectiveAccess.effectiveLocale}
               </span>
             ) : null}
           </div>
@@ -424,7 +443,7 @@ function UnifiedLessonPage() {
           <IntroGateCard done={gate.introDone} total={gate.introTotal} />
         ) : showPreviewLoading ? (
           <div className="rounded-2xl border border-border/40 bg-muted/20 p-8 text-center text-sm text-muted-foreground">
-            جاري تحميل معاينة اللغة الداخلية...
+            جاري تحميل الدرس...
           </div>
         ) : showLocalePreview && previewPackage ? (
           <LocalePackagePreviewRenderer pkg={previewPackage} />
@@ -447,7 +466,10 @@ function UnifiedLessonPage() {
 
         {isGateReady && gate.kind === "open" && (
         <>
-        <LessonNotes lessonId={lesson.id} />
+        {!isLocalizedPackagePage ? (
+          <LessonNotes lessonId={lesson.id} />
+        ) : null}
+        {!isLocalizedPackagePage ? (
         <DifficultyPrompt
           lessonId={lesson.id}
           pathId={pathId}
@@ -456,6 +478,7 @@ function UnifiedLessonPage() {
           isCompleted={isCompleted}
           nextLessonHref={next ? `/learn/${pathId}/${next.slug}` : undefined}
         />
+        ) : null}
         <details
           ref={assistantDetailsRef}
           id="lesson-assistant"
@@ -467,10 +490,14 @@ function UnifiedLessonPage() {
             <ChevronDown className="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" />
           </summary>
           <div className="mt-4">
-            <AssistantPanel compact />
+            {isLocalizedPackagePage ? (
+              <LocaleAssistantUnavailable locale={effectiveAccess.effectiveLocale} />
+            ) : (
+              <AssistantPanel compact />
+            )}
           </div>
         </details>
-        {nextLocked && missionShape?.hasRubric && (
+        {!isLocalizedPackagePage && nextLocked && missionShape?.hasRubric && (
           <div className="mt-8 rounded-2xl border border-primary/25 bg-primary/[0.04] p-4 flex items-start gap-3">
             <Lock className="h-4 w-4 text-primary mt-0.5 shrink-0" />
             <div className="text-sm leading-relaxed">
@@ -509,7 +536,7 @@ function UnifiedLessonPage() {
                 <Link
                   to="/learn/$pathId/$lessonId"
                   params={{ pathId, lessonId: prev.slug }}
-                  search={previewNavSearch}
+                  search={localeNavSearch}
                 >
                   <ArrowRight className="h-4 w-4" />
                   السابق
@@ -521,7 +548,7 @@ function UnifiedLessonPage() {
           </div>
 
           <div className="flex gap-2">
-            {!isCompleted && (
+            {!isCompleted && !isLocalizedPackagePage && (
               <Button
                 variant="glass"
                 size="sm"
@@ -555,7 +582,7 @@ function UnifiedLessonPage() {
                   <Link
                     to="/learn/$pathId/$lessonId"
                     params={{ pathId, lessonId: next.slug }}
-                    search={previewNavSearch}
+                    search={localeNavSearch}
                   >
                     الدرس التالي
                     <ArrowLeft className="h-4 w-4" />

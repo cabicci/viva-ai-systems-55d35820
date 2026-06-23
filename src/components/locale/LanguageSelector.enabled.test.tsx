@@ -22,8 +22,8 @@ describe("LanguageSelector (localeUiEnabled)", () => {
     );
 
     expect(screen.getByRole("combobox")).toBeTruthy();
-    expect(screen.getByText("العامية المصرية")).toBeTruthy();
-    expect(screen.getByText("العربية الفصحى")).toBeTruthy();
+    expect(screen.getByText("مصري")).toBeTruthy();
+    expect(screen.getByText("فصحى")).toBeTruthy();
     expect(screen.getByText("خليجي")).toBeTruthy();
     expect(screen.getByText("English")).toBeTruthy();
     expect(screen.queryByText("ar-EG")).toBeNull();

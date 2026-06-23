@@ -41,12 +41,12 @@ describe("locale runtime import (gated)", () => {
     }
   });
 
-  it("keeps default runtime on ar-EG even when full packages exist", () => {
-    expect(localizedLessonsEnabled).toBe(false);
+  it("loads en packages when live mode is on (Phase 9)", () => {
+    expect(localizedLessonsEnabled).toBe(true);
     const access = resolveLessonAccess("intro-m1-l1-what-is-ai", "en");
     expect(access.requestedLocale).toBe("en");
-    expect(access.effectiveLocale).toBe(DEFAULT_LOCALE);
-    expect(access.contentSource).toBe("egyptian-ts");
-    expect(access.fallbackUsed).toBe(true);
+    expect(access.effectiveLocale).toBe("en");
+    expect(access.contentSource).toBe("locale-package-json");
+    expect(access.fallbackUsed).toBe(false);
   });
 });

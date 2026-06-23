@@ -96,9 +96,9 @@ describe("package-section-labels compound prefix stripping", () => {
 });
 
 describe("locale preview bridge (Phase 6.5)", () => {
-  it("keeps localizedLessonsEnabled and localeUiEnabled off", () => {
-    expect(localizedLessonsEnabled).toBe(false);
-    expect(localeUiEnabled).toBe(false);
+  it("keeps localizedLessonsEnabled on for Phase 9 live mode", () => {
+    expect(localizedLessonsEnabled).toBe(true);
+    expect(localeUiEnabled).toBe(true);
   });
 
   it("defaults non-preview routes to ar-EG", () => {
