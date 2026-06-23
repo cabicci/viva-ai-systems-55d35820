@@ -22,6 +22,8 @@
 - No mission submit, assistant/RAG locale switching, or progress mutation in preview mode
 - Public selector remains **blocked** until assistant/RAG/progress/video policy is resolved
 
+**Next:** See [Phase 8 — Public Localization Activation Architecture](./localization/PUBLIC_LOCALIZATION_ACTIVATION_ARCHITECTURE.md) for the approved activation plan (manual selector, URL/cookie, geo, live rendering, interim assistant/video/progress policies, and Phases 9–13).
+
 ## Live production
 
 Learners still receive **ar-EG** Egyptian TypeScript lessons via `INTRO_LESSON_CONTENT` unless an internal tester opens an explicit preview URL (`previewLocale=1` + supported `locale`). ar-MSA remains the canonical text source.
