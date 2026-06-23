@@ -1,9 +1,24 @@
 import { useNavigate, useRouterState } from "@tanstack/react-router";
+import type { LessonPreviewSearch } from "@/lib/locale-lessons/lesson-preview-search";
 import { writeLocaleCookie } from "./locale-cookie";
+import { buildLocaleNavigationSearch } from "./locale-search";
 import { useLocale } from "./locale-context";
 import { DEFAULT_LOCALE, type SupportedLocale } from "./types";
 
-/** Persist locale and sync `?locale=` on lesson routes when practical. */
+const LEARN_PATH_RE = /^\/learn\/([^/]+)\/([^/]+)/;
+
+function syncLocaleInBrowserUrl(nextLocale: SupportedLocale): void {
+  const url = new URL(window.location.href);
+  if (nextLocale === DEFAULT_LOCALE) {
+    url.searchParams.delete("locale");
+  } else {
+    url.searchParams.set("locale", nextLocale);
+  }
+  url.searchParams.delete("previewLocale");
+  window.history.replaceState(window.history.state, "", url);
+}
+
+/** Persist locale and sync `?locale=` on the current route. */
 export function useLocaleNavigation() {
   const navigate = useNavigate();
   const pathname = useRouterState({ select: (state) => state.location.pathname });
@@ -13,24 +28,22 @@ export function useLocaleNavigation() {
     writeLocaleCookie(nextLocale);
     setLocale(nextLocale);
 
-    if (!pathname.startsWith("/learn/")) return;
+    const learnMatch = pathname.match(LEARN_PATH_RE);
+    if (learnMatch) {
+      const [, pathId, lessonId] = learnMatch;
+      void navigate({
+        to: "/learn/$pathId/$lessonId",
+        params: { pathId, lessonId },
+        search: (previous) =>
+          buildLocaleNavigationSearch(
+            previous as Record<string, unknown>,
+            nextLocale,
+          ) as LessonPreviewSearch,
+        replace: true,
+      });
+      return;
+    }
 
-    void navigate({
-      to: pathname,
-      search: (previous: Record<string, unknown>) => {
-        const base =
-          previous && typeof previous === "object" ? previous : {};
-        const nextSearch = { ...base };
-        if (nextLocale === DEFAULT_LOCALE) {
-          delete nextSearch.locale;
-          delete nextSearch.previewLocale;
-        } else {
-          nextSearch.locale = nextLocale;
-          delete nextSearch.previewLocale;
-        }
-        return nextSearch;
-      },
-      replace: true,
-    });
+    syncLocaleInBrowserUrl(nextLocale);
   };
 }

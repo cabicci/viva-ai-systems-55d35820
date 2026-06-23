@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { ChevronDown, Play, Lock, CheckCircle2, Clock, Trophy } from "lucide-react";
 import { getPath, pathLessonIds, PATHS, type CurriculumPath } from "@/lib/curriculum-data";
+import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { useLessonProgress, type LessonStatus } from "@/lib/lesson-progress";
 import type { CurriculumModule } from "@/lib/curriculum-data";
 import { getLessonAccess, getModuleStatus } from "@/lib/builder-runtime";
@@ -23,12 +24,13 @@ import { StreakCard } from "@/components/dashboard/StreakCard";
 import { useEntitlement, decideLessonGate } from "@/lib/entitlements";
 import { PhaseRibbon } from "@/components/admin/PhaseRibbon";
 
-type DashboardSearch = { path?: string; module?: string; lesson?: string };
+type DashboardSearch = { path?: string; module?: string; lesson?: string; locale?: string };
 
 export const Route = createFileRoute("/dashboard")({
   beforeLoad: requireAuthBeforeLoad,
   head: () => ({ meta: [{ title: "اللوحة — مسارات" }] }),
   validateSearch: (raw: Record<string, unknown>): DashboardSearch => ({
+    ...parseLocaleSearchParam(raw),
     path: typeof raw.path === "string" ? raw.path : undefined,
     module: typeof raw.module === "string" ? raw.module : undefined,
     lesson: typeof raw.lesson === "string" ? raw.lesson : undefined,

@@ -1,9 +1,13 @@
-import { useEffect, useMemo, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { useRouterState } from "@tanstack/react-router";
 import { LocaleDocumentSync } from "@/components/locale/LocaleDocumentSync";
-import { readLocaleCookie, writeLocaleCookie } from "./locale-cookie";
+import { readLocaleCookie } from "./locale-cookie";
 import { LocaleProvider } from "./locale-context";
-import { isSupportedLocale, resolveLocale } from "./resolve-locale";
+import {
+  persistValidLocaleCookie,
+  readClientUrlLocale,
+} from "./locale-search";
+import { isSupportedLocale } from "./resolve-locale";
 import { resolvePublicLocale } from "./resolve-public-locale";
 import type { SupportedLocale } from "./types";
 
@@ -22,10 +26,11 @@ export function LocaleRouterProvider({
   children,
   initialLocale,
 }: LocaleRouterProviderProps) {
-  const urlLocale = useRouterState({
+  const routerSearchLocale = useRouterState({
     select: (state) => readUrlLocaleFromSearch(state.location.search),
   });
-  const cookieLocale = readLocaleCookie();
+  const urlLocale = routerSearchLocale ?? readClientUrlLocale();
+  const [cookieLocale, setCookieLocale] = useState(() => readLocaleCookie());
 
   const effectiveLocale = useMemo(
     () =>
@@ -38,8 +43,11 @@ export function LocaleRouterProvider({
 
   useEffect(() => {
     if (urlLocale && isSupportedLocale(urlLocale.trim())) {
-      writeLocaleCookie(resolveLocale(urlLocale));
+      persistValidLocaleCookie(urlLocale);
+      setCookieLocale(urlLocale.trim() as SupportedLocale);
+      return;
     }
+    setCookieLocale(readLocaleCookie());
   }, [urlLocale]);
 
   return (

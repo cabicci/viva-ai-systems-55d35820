@@ -181,7 +181,6 @@ export const Route = createFileRoute("/learn/$pathId/$lessonId")({
         lessonAccess = resolveRouteLessonAccess(lesson.id, {
           ...previewSearch,
           locale: undefined,
-          previewLocale: false,
         });
       }
     }

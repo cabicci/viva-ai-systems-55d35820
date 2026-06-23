@@ -11,7 +11,8 @@ export type LessonNavFrom = "dashboard" | "curriculum";
 export interface LessonPreviewSearch {
   from?: LessonNavFrom;
   locale?: string;
-  previewLocale: boolean;
+  /** Legacy internal preview flag — only present when explicitly enabled. */
+  previewLocale?: true;
 }
 
 function readPreviewLocaleFlag(raw: unknown): boolean {
@@ -29,11 +30,11 @@ export function parseLessonPreviewSearch(
       ? raw.locale.trim()
       : undefined;
 
-  return {
-    from,
-    locale,
-    previewLocale: readPreviewLocaleFlag(raw.previewLocale),
-  };
+  const parsed: LessonPreviewSearch = { from, locale };
+  if (readPreviewLocaleFlag(raw.previewLocale)) {
+    parsed.previewLocale = true;
+  }
+  return parsed;
 }
 
 /** Legacy internal preview gate: preview flag + package locale. */

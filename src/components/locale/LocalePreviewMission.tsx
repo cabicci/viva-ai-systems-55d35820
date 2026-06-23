@@ -18,7 +18,7 @@ export function LocalePreviewMission({
     <div
       id="mission"
       className="space-y-4 scroll-mt-24"
-      data-preview-mission="read-only"
+      data-locale-mission="readonly"
     >
       <div className="rounded-xl border border-amber-400/30 bg-amber-400/[0.08] px-4 py-3 text-sm text-amber-100/90 flex items-start gap-2">
         <Lock className="h-4 w-4 shrink-0 mt-0.5" />

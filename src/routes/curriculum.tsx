@@ -25,8 +25,9 @@ import { LessonLink } from "@/components/lesson/LessonLink";
 import { useModulesMastery } from "@/lib/mastery-gate";
 import type { ModuleMastery } from "@/lib/mastery-gate";
 import { useEntitlement } from "@/lib/entitlements";
+import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 
-type CurriculumSearch = { module?: string; lesson?: string };
+type CurriculumSearch = { module?: string; lesson?: string; locale?: string };
 
 export const Route = createFileRoute("/curriculum")({
   head: () => ({
@@ -44,6 +45,7 @@ export const Route = createFileRoute("/curriculum")({
     ],
   }),
   validateSearch: (raw: Record<string, unknown>): CurriculumSearch => ({
+    ...parseLocaleSearchParam(raw),
     module: typeof raw.module === "string" ? raw.module : undefined,
     lesson: typeof raw.lesson === "string" ? raw.lesson : undefined,
   }),

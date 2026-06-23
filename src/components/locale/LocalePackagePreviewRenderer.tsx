@@ -40,6 +40,26 @@ function previewBlockKind(
   }
 }
 
+function LocaleVideoPlaceholder({ locale }: { locale: PreviewPackage["locale"] }) {
+  return (
+    <div
+      className="rounded-2xl border border-border/50 bg-muted/20 p-5 text-center space-y-2"
+      data-locale-video="placeholder"
+    >
+      <p className="text-sm font-semibold text-foreground">
+        {locale === "en"
+          ? "Video for this language is coming soon"
+          : "فيديو هذا الدرس باللغة المختارة قريبًا"}
+      </p>
+      <p className="text-xs text-muted-foreground">
+        {locale === "en"
+          ? "You can read the full lesson now. Video generation will follow."
+          : "يمكنك قراءة الدرس كاملًا الآن. توليد الفيديو سيأتي لاحقًا."}
+      </p>
+    </div>
+  );
+}
+
 function PreviewBlockBody({
   block,
   locale,
@@ -160,23 +180,7 @@ function PreviewBlockBody({
       );
 
     case "videoPreviewNote":
-      return (
-        <div
-          className="rounded-2xl border border-border/50 bg-muted/20 p-5 text-center space-y-2"
-          data-locale-video="placeholder"
-        >
-          <p className="text-sm font-semibold text-foreground">
-            {locale === "en"
-              ? "Video for this language is coming soon"
-              : "فيديو هذا الدرس باللغة المختارة قريبًا"}
-          </p>
-          <p className="text-xs text-muted-foreground">
-            {locale === "en"
-              ? "You can read the full lesson now. Video generation will follow."
-              : "يمكنك قراءة الدرس كاملًا الآن. توليد الفيديو سيأتي لاحقًا."}
-          </p>
-        </div>
-      );
+      return <LocaleVideoPlaceholder locale={locale} />;
   }
 }
 
@@ -219,6 +223,10 @@ export function LocalePackagePreviewRenderer({
     [pkg],
   );
   const bodyDir = previewBodyDirection(pkg.locale);
+  const hasVideoPlaceholder = sections.some(
+    (section) => section.block.kind === "videoPreviewNote",
+  );
+  const showPageVideoPlaceholder = !hasVideoPlaceholder;
 
   return (
     <article
@@ -228,6 +236,9 @@ export function LocalePackagePreviewRenderer({
       data-lesson-id={pkg.lessonId}
       data-preview-body-direction={bodyDir}
     >
+      {showPageVideoPlaceholder ? (
+        <LocaleVideoPlaceholder locale={pkg.locale} />
+      ) : null}
       {sections.map((section, index) => (
         <PreviewSectionCard
           key={`${section.title}-${index}`}
