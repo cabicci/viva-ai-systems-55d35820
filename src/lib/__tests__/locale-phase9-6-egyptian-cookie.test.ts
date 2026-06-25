@@ -37,7 +37,7 @@ describe("Phase 9.6 ar-EG selector cookie reset", () => {
   it("select ar-EG clears cookie so refresh stays ar-EG default", () => {
     writeLocaleCookie("ar-Gulf");
     persistValidLocaleCookie(DEFAULT_LOCALE);
-    expect(readLocaleCookie()).toBeUndefined();
+    expect(readLocaleCookie()).toBe("ar-EG");
     expect(
       resolvePublicLocale({ urlLocale: undefined, cookieLocale: readLocaleCookie() })
         .locale,
@@ -47,13 +47,12 @@ describe("Phase 9.6 ar-EG selector cookie reset", () => {
   it("after ar-EG select, bare URL does not resolve stale en", () => {
     writeLocaleCookie("en");
     persistValidLocaleCookie(DEFAULT_LOCALE);
-    expect(readLocaleCookie()).toBeUndefined();
+    expect(readLocaleCookie()).toBe("ar-EG");
     const resolved = resolvePublicLocale({
       urlLocale: undefined,
       cookieLocale: readLocaleCookie(),
     });
     expect(resolved.locale).toBe("ar-EG");
-    expect(resolved.source).toBe("default");
   });
 
   it("after ar-EG select, bare URL does not resolve stale ar-MSA", () => {

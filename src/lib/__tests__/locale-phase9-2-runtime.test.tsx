@@ -53,7 +53,7 @@ describe("Phase 9.2 locale cookie persistence", () => {
   it("clears masaarat_locale when default ar-EG is persisted", () => {
     writeLocaleCookie("en");
     persistValidLocaleCookie("ar-EG");
-    expect(readLocaleCookie()).toBeUndefined();
+    expect(readLocaleCookie()).toBe("ar-EG");
   });
 
   it("does not write cookie for unsupported URL locale", () => {

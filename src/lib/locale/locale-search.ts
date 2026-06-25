@@ -30,13 +30,14 @@ export function parseLocaleSearchParam(
   return { locale };
 }
 
-/** Persist supported locale to cookie; clear cookie for default ar-EG so stale values cannot remain. */
+/** Persist supported locale to cookie; overwrite default ar-EG so stale non-EG values cannot remain. */
 export function persistValidLocaleCookie(urlLocale: string | undefined): void {
   if (!urlLocale) return;
   const trimmed = urlLocale.trim();
   if (!isSupportedLocale(trimmed)) return;
   if (trimmed === DEFAULT_LOCALE) {
     clearLocaleCookie();
+    writeLocaleCookie(DEFAULT_LOCALE);
     return;
   }
   writeLocaleCookie(trimmed);

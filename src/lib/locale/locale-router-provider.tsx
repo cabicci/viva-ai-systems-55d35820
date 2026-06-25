@@ -5,7 +5,6 @@ import { readLocaleCookie } from "./locale-cookie";
 import { LocaleProvider } from "./locale-context";
 import {
   persistValidLocaleCookie,
-  readClientUrlLocale,
   readUrlLocaleFromHref,
 } from "./locale-search";
 import { isSupportedLocale } from "./resolve-locale";
@@ -34,8 +33,6 @@ export function LocaleRouterProvider({
   const urlLocale = useMemo(() => {
     const fromHref = readUrlLocaleFromHref(locationHref);
     if (fromHref) return fromHref;
-    const fromClient = readClientUrlLocale();
-    if (fromClient) return fromClient;
     return routerSearchLocale;
   }, [locationHref, routerSearchLocale]);
   const [cookieLocale, setCookieLocale] = useState(() => readLocaleCookie());
@@ -52,12 +49,14 @@ export function LocaleRouterProvider({
   useEffect(() => {
     if (urlLocale && isSupportedLocale(urlLocale.trim())) {
       persistValidLocaleCookie(urlLocale);
+      setCookieLocale(readLocaleCookie());
+      return;
     }
     setCookieLocale(readLocaleCookie());
-  }, [urlLocale, locationHref]);
+  }, [urlLocale]);
 
-  const handleLocalePersisted = (locale: SupportedLocale) => {
-    setCookieLocale(locale === DEFAULT_LOCALE ? undefined : locale);
+  const handleLocalePersisted = () => {
+    setCookieLocale(readLocaleCookie());
   };
 
   return (
