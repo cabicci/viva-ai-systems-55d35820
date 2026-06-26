@@ -6,8 +6,7 @@ import { DEFAULT_LOCALE } from "@/lib/locale/types";
 vi.mock("@/lib/locale/feature-flags", () => ({
   localeRuntimeEnabled: false,
   localeUiEnabled: true,
-  localizedLessonsEnabled: false,
-  localizedVideosEnabled: false,
+  geoLocaleEnabled: true,
   localizedRagEnabled: false,
 }));
 

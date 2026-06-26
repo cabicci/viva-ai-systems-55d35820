@@ -20,11 +20,14 @@ function readUrlLocaleFromSearch(search: unknown): string | undefined {
 type LocaleRouterProviderProps = {
   children: ReactNode;
   initialLocale: SupportedLocale;
+  /** SSR geo country — used only when URL/cookie absent (Phase 10). */
+  serverCountryCode?: string;
 };
 
 export function LocaleRouterProvider({
   children,
   initialLocale,
+  serverCountryCode,
 }: LocaleRouterProviderProps) {
   const locationHref = useRouterState({ select: (state) => state.location.href });
   const routerSearchLocale = useRouterState({
@@ -42,8 +45,9 @@ export function LocaleRouterProvider({
       resolvePublicLocale({
         urlLocale,
         cookieLocale,
+        countryCode: serverCountryCode,
       }).locale,
-    [urlLocale, cookieLocale],
+    [urlLocale, cookieLocale, serverCountryCode],
   );
 
   useEffect(() => {

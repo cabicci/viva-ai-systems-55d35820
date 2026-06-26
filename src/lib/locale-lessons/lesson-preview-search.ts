@@ -51,10 +51,12 @@ export function isLessonLocalePreviewActive(search: LessonPreviewSearch): boolea
 export function isLessonPackageLocaleActive(
   search: LessonPreviewSearch,
   cookieLocale?: string | null,
+  countryCode?: string | null,
 ): boolean {
   const resolved = resolvePublicLocale({
     urlLocale: search.locale,
     cookieLocale,
+    countryCode,
   });
 
   if (!isPackageLocale(resolved.locale)) {
@@ -68,9 +70,10 @@ export function isLessonPackageLocaleActive(
 export function buildLessonLocaleSearch(
   search: LessonPreviewSearch,
   cookieLocale?: string | null,
+  countryCode?: string | null,
 ): { locale?: string; previewLocale?: true } | undefined {
   const urlLocale = search.locale;
-  const resolved = resolvePublicLocale({ urlLocale, cookieLocale });
+  const resolved = resolvePublicLocale({ urlLocale, cookieLocale, countryCode });
   if (resolved.locale === DEFAULT_LOCALE) return undefined;
 
   const next: { locale: string; previewLocale?: true } = {
@@ -88,13 +91,15 @@ export function resolveRouteLessonAccess(
   lessonId: string,
   search: LessonPreviewSearch,
   cookieLocale?: string | null,
+  countryCode?: string | null,
 ): ResolvedLessonAccess {
   const { locale: requestedLocale } = resolvePublicLocale({
     urlLocale: search.locale,
     cookieLocale,
+    countryCode,
   });
 
-  if (!isLessonPackageLocaleActive(search, cookieLocale)) {
+  if (!isLessonPackageLocaleActive(search, cookieLocale, countryCode)) {
     return resolveLessonAccess(lessonId);
   }
 

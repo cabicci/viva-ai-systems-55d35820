@@ -4,8 +4,7 @@ import { render, screen } from "@testing-library/react";
 vi.mock("@/lib/locale/feature-flags", () => ({
   localeRuntimeEnabled: false,
   localeUiEnabled: false,
-  localizedLessonsEnabled: false,
-  localizedVideosEnabled: false,
+  geoLocaleEnabled: true,
   localizedRagEnabled: false,
 }));
 

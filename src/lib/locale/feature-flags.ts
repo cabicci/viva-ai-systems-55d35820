@@ -26,6 +26,12 @@ export const localizedLessonsEnabled = readFeatureFlag(
   true,
 );
 
+/** Phase 10 — geo/IP locale for first-time visitors; disable with VITE_GEO_LOCALE_ENABLED=false. */
+export const geoLocaleEnabled = readFeatureFlag(
+  import.meta.env.VITE_GEO_LOCALE_ENABLED,
+  true,
+);
+
 export const localizedVideosEnabled = false;
 export const localizedRagEnabled = false;
 

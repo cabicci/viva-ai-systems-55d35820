@@ -20,6 +20,7 @@ vi.mock("@/lib/locale/feature-flags", () => ({
   localeRuntimeEnabled: true,
   localeUiEnabled: true,
   localizedLessonsEnabled: true,
+  geoLocaleEnabled: true,
   localizedVideosEnabled: false,
   localizedRagEnabled: false,
 }));

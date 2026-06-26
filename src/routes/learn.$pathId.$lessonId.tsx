@@ -45,6 +45,7 @@ import { LocaleAssistantUnavailable } from "@/components/locale/LocaleAssistantU
 import { LocaleLiveSafetyMarkers } from "@/components/locale/LocaleLiveSafetyMarkers";
 import { loadLocalePackageLesson } from "@/lib/locale-lessons/load-locale-package-lesson";
 import { readRequestCookieLocale } from "@/lib/locale/locale-cookie";
+import { readRequestCountryCode } from "@/lib/locale/read-request-country";
 import { useLocale } from "@/lib/locale/locale-context";
 import {
   buildLessonLocaleSearch,
@@ -163,10 +164,12 @@ export const Route = createFileRoute("/learn/$pathId/$lessonId")({
       deps as Record<string, unknown>,
     );
     const cookieLocale = await readRequestCookieLocale();
+    const countryCode = await readRequestCountryCode();
     let lessonAccess = resolveRouteLessonAccess(
       lesson.id,
       previewSearch,
       cookieLocale,
+      countryCode,
     );
 
     let localizedPackage: LocalizedLessonPackage | null = null;

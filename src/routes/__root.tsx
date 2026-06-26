@@ -21,6 +21,7 @@ import { LOCALE_META, type SupportedLocale } from "@/lib/locale/types";
 
 type RootLoaderData = {
   effectiveLocale: SupportedLocale;
+  serverCountryCode?: string;
 };
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
@@ -155,9 +156,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
   }),
   loader: async () => {
-    const { urlLocale, cookieLocale } = await readLocaleRuntimeInputs();
-    const localeRuntime = resolvePublicLocale({ urlLocale, cookieLocale });
-    return { effectiveLocale: localeRuntime.locale as SupportedLocale };
+    const { urlLocale, cookieLocale, countryCode } = await readLocaleRuntimeInputs();
+    const localeRuntime = resolvePublicLocale({ urlLocale, cookieLocale, countryCode });
+    return {
+      effectiveLocale: localeRuntime.locale as SupportedLocale,
+      serverCountryCode: countryCode,
+    };
   },
   shellComponent: RootShell,
   component: RootComponent,
@@ -187,11 +191,14 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const { effectiveLocale } = Route.useLoaderData() as RootLoaderData;
+  const { effectiveLocale, serverCountryCode } = Route.useLoaderData() as RootLoaderData;
 
   return (
     <QueryClientProvider client={queryClient}>
-      <LocaleRouterProvider initialLocale={effectiveLocale}>
+      <LocaleRouterProvider
+        initialLocale={effectiveLocale}
+        serverCountryCode={serverCountryCode}
+      >
         <AuthProvider>
           <CloudHydration />
           <Outlet />

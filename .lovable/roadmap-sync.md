@@ -4,7 +4,7 @@
 date: 2026-06-23
 scope: ui
 source: user
-summary: Phase 9.7 Worker cookie deletion and ar-EG overwrite
+summary: Phase 10 geo/IP locale auto-detect for first-time visitors
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
