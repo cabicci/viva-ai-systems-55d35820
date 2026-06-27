@@ -8,7 +8,7 @@ import {
   readUrlLocaleFromHref,
 } from "./locale-search";
 import { isSupportedLocale } from "./resolve-locale";
-import { resolvePublicLocale } from "./resolve-public-locale";
+import { resolveRouterEffectiveLocale } from "./resolve-router-locale";
 import { DEFAULT_LOCALE, type SupportedLocale } from "./types";
 
 function readUrlLocaleFromSearch(search: unknown): string | undefined {
@@ -22,12 +22,18 @@ type LocaleRouterProviderProps = {
   initialLocale: SupportedLocale;
   /** SSR geo country — used only when URL/cookie absent (Phase 10). */
   serverCountryCode?: string;
+  /** SSR request cookie from root loader (document.cookie is empty on SSR). */
+  serverCookieLocale?: string;
+  /** SSR request ?locale= from root loader (router search may lag on SSR). */
+  serverUrlLocale?: string;
 };
 
 export function LocaleRouterProvider({
   children,
   initialLocale,
   serverCountryCode,
+  serverCookieLocale,
+  serverUrlLocale,
 }: LocaleRouterProviderProps) {
   const locationHref = useRouterState({ select: (state) => state.location.href });
   const routerSearchLocale = useRouterState({
@@ -36,18 +42,23 @@ export function LocaleRouterProvider({
   const urlLocale = useMemo(() => {
     const fromHref = readUrlLocaleFromHref(locationHref);
     if (fromHref) return fromHref;
-    return routerSearchLocale;
-  }, [locationHref, routerSearchLocale]);
-  const [cookieLocale, setCookieLocale] = useState(() => readLocaleCookie());
+    if (routerSearchLocale) return routerSearchLocale;
+    return serverUrlLocale;
+  }, [locationHref, routerSearchLocale, serverUrlLocale]);
+  const [cookieLocale, setCookieLocale] = useState(
+    () => serverCookieLocale ?? readLocaleCookie(),
+  );
 
   const effectiveLocale = useMemo(
     () =>
-      resolvePublicLocale({
+      resolveRouterEffectiveLocale({
         urlLocale,
         cookieLocale,
-        countryCode: serverCountryCode,
-      }).locale,
-    [urlLocale, cookieLocale, serverCountryCode],
+        serverUrlLocale,
+        serverCookieLocale,
+        serverCountryCode,
+      }),
+    [urlLocale, cookieLocale, serverUrlLocale, serverCookieLocale, serverCountryCode],
   );
 
   useEffect(() => {

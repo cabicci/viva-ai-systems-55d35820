@@ -17,11 +17,14 @@ import { useLocale } from "@/lib/locale/locale-context";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { readLocaleRuntimeInputs } from "@/lib/locale/read-locale-runtime-inputs";
 import { resolvePublicLocale } from "@/lib/locale/resolve-public-locale";
+import { getUiString } from "@/lib/locale/ui-strings";
 import { LOCALE_META, type SupportedLocale } from "@/lib/locale/types";
 
 type RootLoaderData = {
   effectiveLocale: SupportedLocale;
   serverCountryCode?: string;
+  serverCookieLocale?: string;
+  serverUrlLocale?: string;
 };
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
@@ -161,6 +164,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     return {
       effectiveLocale: localeRuntime.locale as SupportedLocale,
       serverCountryCode: countryCode,
+      serverCookieLocale: cookieLocale,
+      serverUrlLocale: urlLocale,
     };
   },
   shellComponent: RootShell,
@@ -180,7 +185,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <a href="#main-content" className="skip-to-content">
-          تخطّى للمحتوى الأساسي
+          {getUiString(effectiveLocale, "a11y.skipToContent")}
         </a>
         {children}
         <Scripts />
@@ -191,13 +196,16 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const { effectiveLocale, serverCountryCode } = Route.useLoaderData() as RootLoaderData;
+  const { effectiveLocale, serverCountryCode, serverCookieLocale, serverUrlLocale } =
+    Route.useLoaderData() as RootLoaderData;
 
   return (
     <QueryClientProvider client={queryClient}>
       <LocaleRouterProvider
         initialLocale={effectiveLocale}
         serverCountryCode={serverCountryCode}
+        serverCookieLocale={serverCookieLocale}
+        serverUrlLocale={serverUrlLocale}
       >
         <AuthProvider>
           <CloudHydration />

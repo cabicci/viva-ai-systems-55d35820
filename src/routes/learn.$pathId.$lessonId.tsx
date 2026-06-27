@@ -382,11 +382,10 @@ function UnifiedLessonPage() {
             </span>
             {showLocalePreview ? (
               <span
-                className="sr-only"
+                aria-hidden
+                hidden
                 data-locale-live-active={effectiveAccess.effectiveLocale}
-              >
-                Localized lesson: {effectiveAccess.effectiveLocale}
-              </span>
+              />
             ) : null}
           </div>
           <h1 className="text-2xl md:text-4xl font-black leading-tight">
