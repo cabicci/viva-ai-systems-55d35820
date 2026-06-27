@@ -2,13 +2,11 @@ import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/lib/auth-context";
 import { LanguageSelector } from "@/components/locale/LanguageSelector";
-import { useLocale } from "@/lib/locale/locale-context";
-import { getUiString } from "@/lib/locale/ui-strings";
+import { useUiString } from "@/lib/locale/use-ui-strings";
 
 export function Navbar() {
   const { user } = useAuth();
-  const { locale } = useLocale();
-  const t = (key: Parameters<typeof getUiString>[1]) => getUiString(locale, key);
+  const t = useUiString();
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-surface-overlay backdrop-blur-xl">
@@ -26,7 +24,7 @@ export function Navbar() {
           <a href="#journey" className="hover:text-foreground transition">{t("nav.journey")}</a>
           <a href="#philosophy" className="hover:text-foreground transition">{t("nav.philosophy")}</a>
           <Link to="/curriculum" className="hover:text-foreground transition">{t("nav.curriculum")}</Link>
-          <Link to="/pricing" className="hover:text-foreground transition">الباقات</Link>
+          <Link to="/pricing" className="hover:text-foreground transition">{t("nav.pricing")}</Link>
         </nav>
         <div className="flex items-center gap-2">
           <LanguageSelector />

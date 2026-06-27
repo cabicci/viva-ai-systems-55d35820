@@ -2,9 +2,12 @@ import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
+import { useUiString } from "@/lib/locale/use-ui-strings";
 
 export function CTA() {
   const { user, loading } = useAuth();
+  const t = useUiString();
+
   return (
     <section className="container mx-auto px-4 py-24">
       <div className="relative glass rounded-3xl overflow-hidden p-12 md:p-16 text-center">
@@ -13,24 +16,30 @@ export function CTA() {
         <div className="absolute -bottom-20 left-1/4 h-60 w-60 rounded-full bg-accent/30 blur-3xl" />
         <div className="relative">
           <h2 className="text-4xl md:text-6xl font-black tracking-tight">
-            ابدأ <span className="text-gradient">رحلتك</span>
+            {t("cta.section.title")}{" "}
+            <span className="text-gradient">{t("cta.section.titleHighlight")}</span>
           </h2>
           <p className="mt-5 text-muted-foreground text-lg max-w-xl mx-auto whitespace-pre-line">
-            5 مسارات جاهزة.
-ابدأ من أول مهمة وخلي كل خطوة تبني اللي بعدها.
+            {t("cta.section.body")}
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             {loading ? null : user ? (
               <Button asChild variant="hero" size="xl">
-                <Link to="/dashboard">افتح لوحتي <ArrowLeft className="h-4 w-4 animate-arrow-nudge-always" /></Link>
+                <Link to="/dashboard">
+                  {t("cta.myDashboard")}{" "}
+                  <ArrowLeft className="h-4 w-4 animate-arrow-nudge-always" />
+                </Link>
               </Button>
             ) : (
               <>
                 <Button asChild variant="hero" size="xl">
-                  <Link to="/signup">إنشاء حساب <ArrowLeft className="h-4 w-4 animate-arrow-nudge-always" /></Link>
+                  <Link to="/signup">
+                    {t("cta.createAccount")}{" "}
+                    <ArrowLeft className="h-4 w-4 animate-arrow-nudge-always" />
+                  </Link>
                 </Button>
                 <Button asChild variant="glass" size="xl">
-                  <Link to="/login">تسجيل الدخول</Link>
+                  <Link to="/login">{t("cta.signIn")}</Link>
                 </Button>
               </>
             )}

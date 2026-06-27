@@ -2,9 +2,12 @@ import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Compass } from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
+import { useUiString } from "@/lib/locale/use-ui-strings";
 
 export function Hero() {
   const { user, loading } = useAuth();
+  const t = useUiString();
+
   return (
     <section className="relative overflow-hidden bg-background">
       {/* Soft pastel blobs — accents only, very airy */}
@@ -29,11 +32,11 @@ export function Hero() {
           className="mx-auto inline-flex items-center gap-2 rounded-full border border-border/60 bg-white/70 px-4 py-1.5 text-xs text-muted-foreground shadow-sm backdrop-blur"
         >
           <Compass className="h-3.5 w-3.5" style={{ color: "oklch(0.55 0.10 235)" }} />
-          <span>مسارات · masaarat.ai — تعلّم الذكاء الاصطناعي بالتطبيق</span>
+          <span>{t("hero.badge")}</span>
         </div>
 
         <h1 className="mt-8 font-black text-4xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-foreground">
-          اتعلم الذكاء الاصطناعي
+          {t("hero.headline1")}
           <br />
           <span className="relative inline-block">
             <span
@@ -41,13 +44,13 @@ export function Hero() {
               className="absolute inset-x-0 bottom-1 h-3 md:h-4 rounded-full -z-0"
               style={{ background: "var(--pastel-yellow)" }}
             />
-            <span className="relative">بالتطبيق</span>
+            <span className="relative">{t("hero.headline2")}</span>
           </span>{" "}
-          <span className="text-foreground/80">مش بالكلام</span>
+          <span className="text-foreground/80">{t("hero.headlineSuffix")}</span>
         </h1>
 
         <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
-          على مسارات، رحلة واحدة من الصفر: افهم الـ AI، استخدمه في شغلك، شغّل بيه أنظمة، ولو حبيت — ابني بيه منتجاتك.
+          {t("hero.subtitle")}
         </p>
 
 
@@ -55,13 +58,13 @@ export function Hero() {
           {loading ? null : user ? (
             <Button asChild size="xl" className="rounded-full px-7 shadow-md">
               <Link to="/dashboard">
-                افتح لوحتي <ArrowLeft className="h-4 w-4 animate-arrow-nudge-always" />
+                {t("cta.myDashboard")} <ArrowLeft className="h-4 w-4 animate-arrow-nudge-always" />
               </Link>
             </Button>
           ) : (
             <Button asChild size="xl" className="rounded-full px-7 shadow-md">
               <Link to="/signup">
-                ابدأ مجاناً <ArrowLeft className="h-4 w-4 animate-arrow-nudge-always" />
+                {t("nav.signup")} <ArrowLeft className="h-4 w-4 animate-arrow-nudge-always" />
               </Link>
             </Button>
           )}
@@ -71,26 +74,26 @@ export function Hero() {
             size="xl"
             className="rounded-full border-border bg-white px-7 hover:bg-muted"
           >
-            <a href="#ecosystem">شوف المسارات</a>
+            <a href="#ecosystem">{t("hero.cta.explore")}</a>
           </Button>
         </div>
 
         <div className="mt-16 flex flex-wrap justify-center gap-2.5 text-xs">
           {[
-            { label: "طبّق من أول خطوة", c: "var(--pastel-blue)" },
-            { label: "افهم الصورة كاملة", c: "var(--pastel-mint)" },
-            { label: " تعلم بعقلية الـ AI", c: "var(--pastel-pink)" },
-            { label: "ابني حاجة حقيقية", c: "var(--pastel-yellow)" },
-          ].map((t) => (
+            { label: t("hero.chip1"), c: "var(--pastel-blue)" },
+            { label: t("hero.chip2"), c: "var(--pastel-mint)" },
+            { label: t("hero.chip3"), c: "var(--pastel-pink)" },
+            { label: t("hero.chip4"), c: "var(--pastel-yellow)" },
+          ].map((chip) => (
             <span
-              key={t.label}
+              key={chip.label}
               className="rounded-full border border-border/60 bg-white px-3.5 py-1.5 text-foreground/80 shadow-sm"
             >
               <span
                 className="ml-1.5 inline-block h-1.5 w-1.5 rounded-full align-middle"
-                style={{ background: t.c }}
+                style={{ background: chip.c }}
               />
-              {t.label}
+              {chip.label}
             </span>
           ))}
         </div>

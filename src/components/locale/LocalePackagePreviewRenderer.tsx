@@ -12,6 +12,8 @@ import {
   type PreviewLessonSection,
 } from "@/lib/locale-lessons/adapt-package-to-preview-content";
 import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
+import { getUiString } from "@/lib/locale/ui-strings";
+import type { SupportedLocale } from "@/lib/locale/types";
 import { LocalePreviewMission } from "./LocalePreviewMission";
 import { LocalePreviewQuiz } from "./LocalePreviewQuiz";
 import { PackageLearnerMarkdown } from "./PackageLearnerMarkdown";
@@ -40,21 +42,17 @@ function previewBlockKind(
   }
 }
 
-function LocaleVideoPlaceholder({ locale }: { locale: PreviewPackage["locale"] }) {
+function LocaleVideoPlaceholder({ locale }: { locale: SupportedLocale }) {
   return (
     <div
       className="rounded-2xl border border-border/50 bg-muted/20 p-5 text-center space-y-2"
       data-locale-video="placeholder"
     >
       <p className="text-sm font-semibold text-foreground">
-        {locale === "en"
-          ? "Video for this language is coming soon"
-          : "فيديو هذا الدرس باللغة المختارة قريبًا"}
+        {getUiString(locale, "safety.video.title")}
       </p>
       <p className="text-xs text-muted-foreground">
-        {locale === "en"
-          ? "You can read the full lesson now. Video generation will follow."
-          : "يمكنك قراءة الدرس كاملًا الآن. توليد الفيديو سيأتي لاحقًا."}
+        {getUiString(locale, "safety.video.body")}
       </p>
     </div>
   );
@@ -156,6 +154,7 @@ function PreviewBlockBody({
           intro={block.intro}
           delivery={block.delivery}
           rubric={block.rubric}
+          locale={locale}
         />
       );
 

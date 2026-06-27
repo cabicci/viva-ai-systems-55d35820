@@ -26,6 +26,8 @@ import { useModulesMastery } from "@/lib/mastery-gate";
 import type { ModuleMastery } from "@/lib/mastery-gate";
 import { useEntitlement } from "@/lib/entitlements";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
+import { useLocale } from "@/lib/locale/locale-context";
+import { useUiString } from "@/lib/locale/use-ui-strings";
 
 type CurriculumSearch = { module?: string; lesson?: string; locale?: string };
 
@@ -55,6 +57,8 @@ export const Route = createFileRoute("/curriculum")({
 function CurriculumPage() {
   const { store, getStatus } = useLessonProgress();
   const { isPro } = useEntitlement();
+  const { dir } = useLocale();
+  const t = useUiString();
   const search = Route.useSearch();
   const allModules = useMemo(
     () => PATHS.flatMap((p) => p.modules),
@@ -80,8 +84,16 @@ function CurriculumPage() {
     .filter((l) => l.state === "available" && getStatus(l.id) === "completed").length;
   const pct = available ? Math.round((completedCount / available) * 100) : 0;
 
+  const progressLessons = t("curriculum.progress.lessons")
+    .replace("{completed}", String(completedCount))
+    .replace("{available}", String(available))
+    .replace("{pct}", String(pct));
+  const progressFooter = t("curriculum.progress.footer")
+    .replace("{available}", String(available))
+    .replace("{upcoming}", String(total - available));
+
   return (
-    <div className="min-h-dvh flex overflow-x-hidden" dir="rtl">
+    <div className="min-h-dvh flex overflow-x-hidden" dir={dir}>
       <Sidebar />
       <main className="flex-1 p-4 sm:p-6 md:p-10 max-w-6xl mx-auto w-full min-w-0">
         {/* Hero */}
@@ -93,26 +105,25 @@ function CurriculumPage() {
               <span className="grid h-12 w-12 place-items-center rounded-xl bg-[image:var(--gradient-primary)] glow-primary shrink-0">
                 <MapIcon className="h-6 w-6 text-primary-foreground" />
               </span>
-              <p className="text-primary font-mono text-sm">CURRICULUM · MAP</p>
+              <p className="text-primary font-mono text-sm">{t("curriculum.badge")}</p>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight break-words">
-              خريطة <span className="text-gradient">المنظومة</span> الكاملة
+              {t("curriculum.title1")}{" "}
+              <span className="text-gradient">{t("curriculum.titleHighlight")}</span>{" "}
+              {t("curriculum.title2")}
             </h1>
             <p className="text-muted-foreground mt-3 max-w-2xl">
-              ٥ مسارات تنفيذية، كل مسار مقسّم لوحدات ودروس متسلسلة. كل درس بيفتح اللي بعده،
-              وكل وحدة بتبني على اللي قبلها.
+              {t("curriculum.subtitle")}
             </p>
 
             <div className="mt-6 max-w-md">
               <div className="flex items-center justify-between text-xs text-muted-foreground mb-1.5 font-mono">
-                <span>التقدّم العام</span>
-                <span>
-                  {completedCount}/{available} درس متاح · {pct}%
-                </span>
+                <span>{t("curriculum.progress.label")}</span>
+                <span>{progressLessons}</span>
               </div>
               <Progress value={pct} />
               <p className="text-[11px] text-muted-foreground mt-2 font-mono">
-                {available} درس متاح حالياً · {total - available} درس قادم
+                {progressFooter}
               </p>
             </div>
           </div>
@@ -142,9 +153,9 @@ function CurriculumPage() {
               {intros.length > 0 && (
                 <section>
                   <SectionHeader
-                    eyebrow="مرحلة ٠١ · البداية"
-                    title="البداية"
-                    subtitle="ابدأ من هنا قبل ما تدخل أي مسار — الأساس اللي بيخلّيك تفهم باقي المنظومة."
+                    eyebrow={t("curriculum.section.intro.eyebrow")}
+                    title={t("curriculum.section.intro.title")}
+                    subtitle={t("curriculum.section.intro.subtitle")}
                   />
                   <div className="space-y-10">{renderPaths(intros)}</div>
                 </section>
@@ -153,9 +164,9 @@ function CurriculumPage() {
               {userPaths.length > 0 && (
                 <section>
                   <SectionHeader
-                    eyebrow="LEVEL 1 · AI USER"
-                    title="استخدم AI في شغلك"
-                    subtitle="80% من اللي محتاجه أي حد — تستخدم AI في شغلك من غير ما تتعلم برمجة. ابدأ هنا."
+                    eyebrow={t("curriculum.section.user.eyebrow")}
+                    title={t("curriculum.section.user.title")}
+                    subtitle={t("curriculum.section.user.subtitle")}
                   />
                   <div className="space-y-10">{renderPaths(userPaths)}</div>
                 </section>
@@ -164,9 +175,9 @@ function CurriculumPage() {
               {operatorPaths.length > 0 && (
                 <section>
                   <SectionHeader
-                    eyebrow="LEVEL 2 · AI OPERATOR"
-                    title="ابني أنظمة وأتمتة متقدمة"
-                    subtitle="للي عايز يبني systems وworkflows ذكية بـ AI من غير ما يكتب كود. الـ Automator m1+m2 لوحدهم مناسبين لـ Level 1، الـ m3+m4 متقدمين."
+                    eyebrow={t("curriculum.section.operator.eyebrow")}
+                    title={t("curriculum.section.operator.title")}
+                    subtitle={t("curriculum.section.operator.subtitle")}
                   />
                   <div className="space-y-10">{renderPaths(operatorPaths)}</div>
                 </section>
@@ -175,9 +186,9 @@ function CurriculumPage() {
               {builderPaths.length > 0 && (
                 <section>
                   <SectionHeader
-                    eyebrow="LEVEL 3 · AI BUILDER · اختياري"
-                    title="ابني منتجات AI بنفسك"
-                    subtitle="مسار تقني للي عايز يبني SaaS وتطبيقات AI بنفسه. ⚠ مش المرحلة التالية الطبيعية — اختاره بس لو ده هدفك فعلًا."
+                    eyebrow={t("curriculum.section.builder.eyebrow")}
+                    title={t("curriculum.section.builder.title")}
+                    subtitle={t("curriculum.section.builder.subtitle")}
                   />
                   <div className="space-y-10">{renderPaths(builderPaths)}</div>
                 </section>
