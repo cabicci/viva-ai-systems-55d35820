@@ -45,7 +45,8 @@ export function readLocaleCookie(): string | undefined {
 
 export async function readRequestCookieLocale(): Promise<string | undefined> {
   if (import.meta.env.SSR) {
-    const { getRequest } = await import("@tanstack/react-start/server");
+    const modId = "@tanstack/react-start/server";
+    const { getRequest } = await import(/* @vite-ignore */ modId);
     const request = getRequest();
     return parseLocaleCookieHeader(request.headers.get("cookie"));
   }
