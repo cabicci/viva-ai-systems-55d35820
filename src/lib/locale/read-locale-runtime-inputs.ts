@@ -11,7 +11,8 @@ export type LocaleRuntimeInputs = {
 /** Read URL `locale` query + cookie + geo country consistently on SSR and client. */
 export async function readLocaleRuntimeInputs(): Promise<LocaleRuntimeInputs> {
   if (import.meta.env.SSR) {
-    const { getRequest } = await import("@tanstack/react-start/server");
+    const modId = "@tanstack/react-start/server";
+    const { getRequest } = await import(/* @vite-ignore */ modId);
     const request = getRequest();
     const url = new URL(request.url);
     return {
