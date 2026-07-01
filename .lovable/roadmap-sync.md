@@ -4,7 +4,7 @@
 date: 2026-06-27
 scope: ui
 source: user
-summary: Phase 12.1 shell localization hotfix — landing locale SSR, debug label removal, cookie/geo precedence
+summary: Phase 12.1 shell hotfix + 4-option locale runtime navigation and dashboard shell
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

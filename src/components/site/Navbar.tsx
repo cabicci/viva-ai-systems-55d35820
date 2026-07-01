@@ -2,11 +2,13 @@ import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/lib/auth-context";
 import { LanguageSelector } from "@/components/locale/LanguageSelector";
+import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 
 export function Navbar() {
   const { user } = useAuth();
   const t = useUiString();
+  const localeSearch = useLocaleLinkSearch();
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-surface-overlay backdrop-blur-xl">
@@ -23,13 +25,13 @@ export function Navbar() {
           <a href="#ecosystem" className="hover:text-foreground transition">{t("nav.paths")}</a>
           <a href="#journey" className="hover:text-foreground transition">{t("nav.journey")}</a>
           <a href="#philosophy" className="hover:text-foreground transition">{t("nav.philosophy")}</a>
-          <Link to="/curriculum" className="hover:text-foreground transition">{t("nav.curriculum")}</Link>
-          <Link to="/pricing" className="hover:text-foreground transition">{t("nav.pricing")}</Link>
+          <Link to="/curriculum" search={localeSearch()} className="hover:text-foreground transition">{t("nav.curriculum")}</Link>
+          <Link to="/pricing" search={localeSearch()} className="hover:text-foreground transition">{t("nav.pricing")}</Link>
         </nav>
         <div className="flex items-center gap-2">
           <LanguageSelector />
           {user ? (
-            <Button asChild size="sm" className="rounded-full px-5"><Link to="/dashboard">{t("nav.myDashboard")}</Link></Button>
+            <Button asChild size="sm" className="rounded-full px-5"><Link to="/dashboard" search={localeSearch()}>{t("nav.myDashboard")}</Link></Button>
           ) : (
             <>
               <Button asChild variant="ghost" size="sm" className="rounded-full"><Link to="/login">{t("nav.login")}</Link></Button>

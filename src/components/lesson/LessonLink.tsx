@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link } from "@tanstack/react-router";
 import { getLessonHref } from "@/lib/builder-runtime";
+import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 
 /**
  * Renders a TanStack Link to the unified lesson page
@@ -17,13 +18,14 @@ export function LessonLink({
   children: React.ReactNode;
   from?: "dashboard" | "curriculum";
 }) {
+  const localeSearch = useLocaleLinkSearch();
   const href = getLessonHref(lesson);
   if (href.kind === "learn") {
     return (
       <Link
         to="/learn/$pathId/$lessonId"
         params={{ pathId: href.pathId, lessonId: href.lessonId }}
-        search={from ? { from } : undefined}
+        search={localeSearch(from ? { from } : undefined)}
         className={className}
       >
         {children}
@@ -32,7 +34,7 @@ export function LessonLink({
   }
   // Fallback: lesson not shipped yet → send to the curriculum map.
   return (
-    <Link to="/curriculum" className={className}>
+    <Link to="/curriculum" search={localeSearch()} className={className}>
       {children}
     </Link>
   );

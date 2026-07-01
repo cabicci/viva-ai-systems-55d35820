@@ -8,6 +8,8 @@ import { Progress } from "@/components/ui/progress";
 import { ChevronDown, Play, Lock, CheckCircle2, Clock, Trophy } from "lucide-react";
 import { getPath, pathLessonIds, PATHS, type CurriculumPath } from "@/lib/curriculum-data";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
+import { useLocale } from "@/lib/locale/locale-context";
+import { useUiString } from "@/lib/locale/use-ui-strings";
 import { useLessonProgress, type LessonStatus } from "@/lib/lesson-progress";
 import type { CurriculumModule } from "@/lib/curriculum-data";
 import { getLessonAccess, getModuleStatus } from "@/lib/builder-runtime";
@@ -48,6 +50,8 @@ function DashboardPage() {
 
 function Dashboard() {
   const { user } = useAuth();
+  const { dir } = useLocale();
+  const t = useUiString();
   const search = Route.useSearch();
   const { store, getStatus } = useLessonProgress();
   const { isPro, isAdmin } = useEntitlement();
@@ -73,7 +77,7 @@ function Dashboard() {
   }, [search.path, search.module, search.lesson]);
 
   const metadata = user!.user_metadata as { full_name?: string } | null | undefined;
-  const name = metadata?.full_name || user!.email?.split("@")[0] || "حبيبنا";
+  const name = metadata?.full_name || user!.email?.split("@")[0] || t("dashboard.guestName");
 
   // Introduction (onboarding) progress
   const intro = getPath("intro")!;
@@ -123,7 +127,7 @@ function Dashboard() {
     : null;
 
   return (
-    <div className="min-h-dvh flex overflow-x-hidden">
+    <div className="min-h-dvh flex overflow-x-hidden" dir={dir}>
       <Sidebar />
       <main className="flex-1 max-w-6xl mx-auto w-full min-w-0">
         <PhaseRibbon />
@@ -134,15 +138,15 @@ function Dashboard() {
         <ReviewsDueCard />
         <div className="flex items-end justify-between flex-wrap gap-4 mb-10 animate-fade-up">
           <div>
-            <p className="text-primary text-sm font-semibold">أهلاً</p>
-            <h1 className="text-3xl md:text-4xl font-black mt-1">مرحبًا، <span className="text-gradient">{name}</span></h1>
-            <p className="text-muted-foreground mt-2">المنظومة جاهزة. اختر مهمة وابدأ التنفيذ.</p>
+            <p className="text-primary text-sm font-semibold">{t("dashboard.greeting.eyebrow")}</p>
+            <h1 className="text-3xl md:text-4xl font-black mt-1">{t("dashboard.greeting.title")} <span className="text-gradient">{name}</span></h1>
+            <p className="text-muted-foreground mt-2">{t("dashboard.greeting.subtitle")}</p>
           </div>
           {nextLesson && (
             <Button asChild variant="hero" size="lg" className="group animate-glow-pulse">
               <LessonLink lesson={nextLesson} from="dashboard">
                 <Play className="h-4 w-4 group-hover:scale-125 transition-transform" />
-                كمّل آخر درس
+                {t("dashboard.continueLesson")}
               </LessonLink>
             </Button>
           )}
@@ -233,9 +237,9 @@ function Dashboard() {
               {intros.length > 0 && (
                 <section>
                   <TierHeader
-                    eyebrow="مرحلة ٠٠ · البداية"
-                    title="ابدأ من هنا"
-                    subtitle="الأساس اللي بيخلّيك تفهم باقي المنظومة قبل أي مسار."
+                    eyebrow={t("dashboard.tier.intro.eyebrow")}
+                    title={t("dashboard.tier.intro.title")}
+                    subtitle={t("dashboard.tier.intro.subtitle")}
                   />
                   {renderGroup(intros)}
                 </section>
@@ -243,9 +247,9 @@ function Dashboard() {
               {userPaths.length > 0 && (
                 <section>
                   <TierHeader
-                    eyebrow="المستوى ١ · مستخدم AI"
-                    title="استخدم AI في شغلك"
-                    subtitle="٨٠٪ من اللي محتاجه أي حد — محتوى، بيانات، وقرارات بدون كود."
+                    eyebrow={t("dashboard.tier.user.eyebrow")}
+                    title={t("dashboard.tier.user.title")}
+                    subtitle={t("dashboard.tier.user.subtitle")}
                   />
                   {renderGroup(userPaths)}
                 </section>
@@ -253,9 +257,9 @@ function Dashboard() {
               {operatorPaths.length > 0 && (
                 <section>
                   <TierHeader
-                    eyebrow="المستوى ٢ · مشغّل AI"
-                    title="شغّل أنظمة وأتمتة"
-                    subtitle="ابني workflows ذكية تشتغل لوحدها — برضو من غير كود."
+                    eyebrow={t("dashboard.tier.operator.eyebrow")}
+                    title={t("dashboard.tier.operator.title")}
+                    subtitle={t("dashboard.tier.operator.subtitle")}
                   />
                   {renderGroup(operatorPaths)}
                 </section>
@@ -263,9 +267,9 @@ function Dashboard() {
               {builderPaths.length > 0 && (
                 <section>
                   <TierHeader
-                    eyebrow="المستوى ٣ · باني AI"
-                    title="ابني منتجات AI بنفسك"
-                    subtitle="مسار تقني للي قرر يبني SaaS وتطبيقات AI — اختياري."
+                    eyebrow={t("dashboard.tier.builder.eyebrow")}
+                    title={t("dashboard.tier.builder.title")}
+                    subtitle={t("dashboard.tier.builder.subtitle")}
                   />
                   {renderGroup(builderPaths)}
                 </section>
@@ -317,6 +321,7 @@ function ModuleRow({
   introIds: string[];
   introCompletedCount: number;
 }) {
+  const t = useUiString();
   const status = getModuleStatus(
     m,
     prevModule,
@@ -362,14 +367,16 @@ function ModuleRow({
           <p className="font-semibold">{m.title}</p>
           <p className="text-xs text-muted-foreground mt-0.5">
             {moduleDone
-              ? "مكتمل"
+              ? t("dashboard.module.complete")
               : moduleLocked
                 ? prevNotMastered
-                  ? `مقفل · ${prevMissingMissionCount} مهمة لسه`
-                  : "مقفل"
+                  ? t("dashboard.module.lockedMissions").replace("{count}", String(prevMissingMissionCount))
+                  : t("dashboard.module.locked")
                 : soon
-                  ? "قريبًا"
-                  : `${doneCount}/${availableCount} دروس`}
+                  ? t("dashboard.soon")
+                  : t("dashboard.module.lessons")
+                      .replace("{done}", String(doneCount))
+                      .replace("{available}", String(availableCount))}
           </p>
         </div>
         {moduleDone && (
@@ -393,7 +400,7 @@ function ModuleRow({
         <div className="px-4 pb-4 pt-2 border-t border-border/40">
           {m.lessons.length === 0 ? (
             <p className="text-xs text-muted-foreground text-center py-4">
-              لا توجد دروس بعد.
+              {t("dashboard.module.noLessons")}
             </p>
           ) : (
             <div className="grid sm:grid-cols-2 gap-2.5 mt-3">
@@ -466,19 +473,19 @@ function ModuleRow({
                       >
                         <LessonLink lesson={l} from="dashboard">
                           <Play className="h-3 w-3" />
-                          {lDone ? "مراجعة" : lInProgress ? "متابعة" : "ابدأ"}
+                          {lDone ? t("dashboard.lesson.review") : lInProgress ? t("dashboard.lesson.continue") : t("dashboard.lesson.start")}
                         </LessonLink>
                       </Button>
                     ) : (
                       <Button size="sm" variant="glass" disabled className="w-full h-8 text-xs">
                         <Lock className="h-3 w-3" />{" "}
                         {l.state !== "available"
-                          ? "قريبًا"
+                          ? t("dashboard.lesson.soon")
                           : paid === "paywall"
-                            ? "Pro"
+                            ? t("dashboard.lesson.pro")
                             : paid === "locked-intro"
-                              ? "اكمل المقدمة"
-                              : "مقفل"}
+                              ? t("dashboard.lesson.completeIntro")
+                              : t("dashboard.lesson.locked")}
                       </Button>
                     )}
                   </div>
@@ -525,6 +532,7 @@ function PathCard({
   introIds: string[];
   introCompletedCount: number;
 }) {
+  const t = useUiString();
   const Icon = path.icon;
   const orderedIds = pathLessonIds(path);
   const allLessons = path.modules.flatMap((m) => m.lessons);
@@ -587,11 +595,11 @@ function PathCard({
                 strokeWidth={1.75}
               />
             </span>
-            {path.kind === 'intro' ? 'مقدمة' : 'مسار'} {path.title}
+            {path.kind === 'intro' ? t("dashboard.path.intro") : t("dashboard.path.track")} {path.title}
           </h2>
           <div className="flex items-center gap-2">
             <span className={`text-xs text-muted-foreground glass px-3 py-1 rounded-full ${!isOpen ? "animate-pulse" : ""}`}>
-              {isOpen ? path.tagline : "قريبًا"}
+              {isOpen ? path.tagline : t("dashboard.soon")}
             </span>
             {isOpen && (
               <ChevronDown
@@ -607,7 +615,10 @@ function PathCard({
           <div className="mt-4">
             <Progress value={animatedPct} className="h-2" />
             <p className="text-sm text-muted-foreground mt-2">
-              {animatedPct}٪ — {done}/{total} درس متاح
+              {t("dashboard.progress.path")
+                .replace("{pct}", String(animatedPct))
+                .replace("{done}", String(done))
+                .replace("{total}", String(total))}
             </p>
           </div>
         )}
@@ -618,13 +629,13 @@ function PathCard({
           {path.id !== "intro" && !introAllDone && !isPro && (
             <div className="rounded-xl border border-accent/30 bg-accent/10 px-4 py-3 text-sm text-foreground/85 flex items-center gap-2">
               <Lock className="h-4 w-4 text-accent shrink-0" />
-              <span>المسارات المهنية هتفتح بعد إنهاء المقدمة — ٧ دروس قصيرة.</span>
+              <span>{t("dashboard.path.lockIntro")}</span>
             </div>
           )}
           {path.id !== "intro" && introAllDone && !isPro && (
             <div className="rounded-xl border border-primary/30 bg-primary/10 px-4 py-3 text-sm text-foreground/85 flex items-center gap-2">
               <Lock className="h-4 w-4 text-primary shrink-0" />
-              <span>أول درس مجاني. باقي المسار يحتاج اشتراك Pro.</span>
+              <span>{t("dashboard.path.lockPro")}</span>
             </div>
           )}
           {path.modules.map((m, i) => (
@@ -674,6 +685,7 @@ function NextLessonCard({
   pathTitle?: string;
   delay?: number;
 }) {
+  const t = useUiString();
   const empty = !lesson;
   const content = (
     <div
@@ -688,9 +700,9 @@ function NextLessonCard({
         )}
       </div>
       <div className="min-w-0 flex-1">
-        <p className="text-xs text-muted-foreground">الدرس التالي</p>
+        <p className="text-xs text-muted-foreground">{t("dashboard.nextLesson.label")}</p>
         {empty ? (
-          <p className="text-base font-black leading-tight mt-0.5">اكتملت كل الدروس 🎉</p>
+          <p className="text-base font-black leading-tight mt-0.5">{t("dashboard.nextLesson.allDone")}</p>
         ) : (
           <>
             <p className="text-base font-black leading-tight mt-0.5 truncate">{lessonTitle}</p>
@@ -723,6 +735,7 @@ function OverallProgressCard({
   total: number;
   delay?: number;
 }) {
+  const t = useUiString();
   const counted = useCountUp(pct, 1100);
   return (
     <div
@@ -734,7 +747,7 @@ function OverallProgressCard({
           <Trophy className="h-6 w-6 text-accent-foreground animate-tilt" />
         </div>
         <div className="min-w-0">
-          <p className="text-xs text-muted-foreground">تقدّمك الكلي</p>
+          <p className="text-xs text-muted-foreground">{t("dashboard.overall.label")}</p>
           <p className="text-2xl font-black">
             <span dir="ltr" className="tabular-nums">{counted}</span>٪
           </p>
@@ -742,8 +755,9 @@ function OverallProgressCard({
       </div>
       <Progress value={counted} className="h-2" />
       <p className="text-xs text-muted-foreground">
-        <span dir="ltr" className="tabular-nums">{done}</span> من{" "}
-        <span dir="ltr" className="tabular-nums">{total}</span> درس
+        {t("dashboard.overall.lessons")
+          .replace("{done}", String(done))
+          .replace("{total}", String(total))}
       </p>
     </div>
   );

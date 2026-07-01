@@ -117,6 +117,15 @@ describe("Phase 12.1 shell localization hotfix", () => {
     it("keeps data-locale-live-active marker for QA automation", () => {
       expect(LEARN_ROUTE_SOURCE).toContain("data-locale-live-active");
     });
+
+    it("falls back to Egyptian lesson access when package load fails", async () => {
+      const { resolveLessonAccess } = await import(
+        "@/lib/locale-lessons/resolve-lesson-access"
+      );
+      const access = resolveLessonAccess("intro-m1-l1-what-is-ai");
+      expect(access.contentSource).toBe("egyptian-ts");
+      expect(access.effectiveLocale).toBe("ar-EG");
+    });
   });
 
   describe("/learn/* cookie and geo precedence (lesson access)", () => {

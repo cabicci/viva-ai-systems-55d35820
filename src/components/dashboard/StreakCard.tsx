@@ -1,5 +1,6 @@
 import { Flame } from "lucide-react";
 import { useStreak } from "@/lib/entitlements";
+import { useUiString } from "@/lib/locale/use-ui-strings";
 
 const STAT_CARD_BASE =
   "group rounded-2xl p-5 card-lift animate-fade-up border border-border/60";
@@ -7,6 +8,7 @@ const STAT_CARD_STYLE = { background: "var(--gradient-hero)" as const };
 
 export function StreakCard({ delay = 0 }: { delay?: number }) {
   const { streak } = useStreak();
+  const t = useUiString();
   const current = streak.current_streak;
   const longest = streak.longest_streak;
 
@@ -23,19 +25,21 @@ export function StreakCard({ delay = 0 }: { delay?: number }) {
         <Flame className="h-6 w-6 text-primary-foreground" />
       </div>
       <div className="min-w-0">
-        <p className="text-xs text-muted-foreground">سلسلة النشاط</p>
+        <p className="text-xs text-muted-foreground">{t("dashboard.streak.label")}</p>
         <p className="text-2xl font-black leading-tight mt-0.5">
           <span dir="ltr" className="tabular-nums">
             {current}
           </span>
-          <span className="text-sm font-bold text-muted-foreground"> يوم</span>
+          <span className="text-sm font-bold text-muted-foreground"> {t("dashboard.streak.days")}</span>
         </p>
         <p className="text-xs text-muted-foreground mt-1">
           {current === 0
-            ? "ابدأ النهاردة 🚀"
+            ? t("dashboard.streak.startToday")
             : nextMilestone
-              ? `${remaining} يوم لـ ${nextMilestone}`
-              : `أعلى رقم: ${longest}`}
+              ? t("dashboard.streak.daysToMilestone")
+                  .replace("{remaining}", String(remaining))
+                  .replace("{milestone}", String(nextMilestone))
+              : t("dashboard.streak.longest").replace("{longest}", String(longest))}
         </p>
       </div>
     </div>

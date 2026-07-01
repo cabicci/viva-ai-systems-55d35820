@@ -2,11 +2,13 @@ import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
+import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 
 export function CTA() {
   const { user, loading } = useAuth();
   const t = useUiString();
+  const localeSearch = useLocaleLinkSearch();
 
   return (
     <section className="container mx-auto px-4 py-24">
@@ -25,7 +27,7 @@ export function CTA() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             {loading ? null : user ? (
               <Button asChild variant="hero" size="xl">
-                <Link to="/dashboard">
+                <Link to="/dashboard" search={localeSearch()}>
                   {t("cta.myDashboard")}{" "}
                   <ArrowLeft className="h-4 w-4 animate-arrow-nudge-always" />
                 </Link>

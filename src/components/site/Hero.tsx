@@ -2,11 +2,13 @@ import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Compass } from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
+import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 
 export function Hero() {
   const { user, loading } = useAuth();
   const t = useUiString();
+  const localeSearch = useLocaleLinkSearch();
 
   return (
     <section className="relative overflow-hidden bg-background">
@@ -57,7 +59,7 @@ export function Hero() {
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           {loading ? null : user ? (
             <Button asChild size="xl" className="rounded-full px-7 shadow-md">
-              <Link to="/dashboard">
+              <Link to="/dashboard" search={localeSearch()}>
                 {t("cta.myDashboard")} <ArrowLeft className="h-4 w-4 animate-arrow-nudge-always" />
               </Link>
             </Button>

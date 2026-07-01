@@ -47,6 +47,8 @@ import { loadLocalePackageLesson } from "@/lib/locale-lessons/load-locale-packag
 import { readRequestCookieLocale } from "@/lib/locale/locale-cookie";
 import { readRequestCountryCode } from "@/lib/locale/read-request-country";
 import { useLocale } from "@/lib/locale/locale-context";
+import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
+import { resolveLessonAccess } from "@/lib/locale-lessons/resolve-lesson-access";
 import {
   buildLessonLocaleSearch,
   parseLessonPreviewSearch,
@@ -182,10 +184,7 @@ export const Route = createFileRoute("/learn/$pathId/$lessonId")({
         lesson.id,
       );
       if (!localizedPackage) {
-        lessonAccess = resolveRouteLessonAccess(lesson.id, {
-          ...previewSearch,
-          locale: undefined,
-        });
+        lessonAccess = resolveLessonAccess(lesson.id);
       }
     }
 
@@ -221,6 +220,7 @@ function UnifiedLessonPage() {
   const previewSearch = Route.useSearch();
   const { from } = previewSearch;
   const localeNavSearch = preserveLocaleSearch(previewSearch, cookieLocale);
+  const localeSearch = useLocaleLinkSearch();
   const { dir } = useLocale();
 
   const effectiveAccess = lessonAccess;
@@ -355,11 +355,11 @@ function UnifiedLessonPage() {
         ) : (
           <Link
             to="/dashboard"
-            search={{
+            search={localeSearch({
               path: pathId,
               module: lesson.moduleId,
               lesson: lesson.id,
-            }}
+            })}
             aria-label="رجوع للوحة"
             className="fixed top-4 start-4 z-50 inline-flex items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md"
           >
@@ -578,7 +578,7 @@ function UnifiedLessonPage() {
                 size="sm"
                 onClick={markCompleted}
               >
-                <Link to="/dashboard">
+                <Link to="/dashboard" search={localeSearch()}>
                   ارجع للوحة
                   <ArrowLeft className="h-4 w-4" />
                 </Link>

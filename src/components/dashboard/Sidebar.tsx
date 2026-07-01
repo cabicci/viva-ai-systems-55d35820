@@ -22,6 +22,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/s
 import { BrandMark } from "@/components/brand/BrandMark";
 import { LanguageSelector } from "@/components/locale/LanguageSelector";
 import { useLocale } from "@/lib/locale/locale-context";
+import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { getUiString, type UiStringKey } from "@/lib/locale/ui-strings";
 import { useEffect, useState } from "react";
 
@@ -45,8 +46,9 @@ export function Sidebar() {
   const path = useRouterState({ select: (s) => s.location.pathname });
   const { user, signOut } = useAuth();
   const { isAdmin } = useEntitlement();
-  const { locale } = useLocale();
+  const { locale, dir } = useLocale();
   const t = (key: UiStringKey) => getUiString(locale, key);
+  const localeSearch = useLocaleLinkSearch();
   const [open, setOpen] = useState(false);
   const [devOpen, setDevOpen] = useState(true);
 
@@ -62,6 +64,7 @@ export function Sidebar() {
           <Link
             key={i}
             to={it.to}
+            search={localeSearch()}
             onClick={onNavigate}
             className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition ${active ? "bg-primary/10 text-primary border border-primary/30" : "text-muted-foreground hover:bg-foreground/5 hover:text-foreground"}`}
           >
@@ -91,6 +94,7 @@ export function Sidebar() {
                 <Link
                   key={i}
                   to={it.to}
+                  search={localeSearch()}
                   onClick={onNavigate}
                   className={`flex items-center gap-3 rounded-lg px-3 py-2 text-xs transition ${active ? "bg-primary/10 text-primary" : "text-muted-foreground hover:bg-foreground/5 hover:text-foreground"}`}
                 >
@@ -119,9 +123,9 @@ export function Sidebar() {
     <header
       className="lg:hidden fixed top-0 inset-x-0 z-40 flex items-center justify-between gap-2 px-4 py-3 glass border-b border-border/50"
       data-print-hide
-      dir="rtl"
+      dir={dir}
     >
-      <Link to="/" className="flex items-center" aria-label={t("nav.brand")}>
+      <Link to="/" search={localeSearch()} className="flex items-center" aria-label={t("nav.brand")}>
         <BrandMark className="h-8" />
       </Link>
       <Sheet open={open} onOpenChange={setOpen}>
@@ -133,9 +137,9 @@ export function Sidebar() {
             <Menu className="h-5 w-5" />
           </button>
         </SheetTrigger>
-        <SheetContent side="right" className="w-72 p-5 flex flex-col" dir="rtl">
+        <SheetContent side="right" className="w-72 p-5 flex flex-col" dir={dir}>
           <SheetTitle className="sr-only">{t("sidebar.menuTitle")}</SheetTitle>
-          <Link to="/" onClick={() => setOpen(false)} className="flex items-center mb-6" aria-label={t("nav.brand")}>
+          <Link to="/" search={localeSearch()} onClick={() => setOpen(false)} className="flex items-center mb-6" aria-label={t("nav.brand")}>
             <BrandMark className="h-9" />
           </Link>
           <nav className="space-y-1 flex-1 overflow-y-auto min-h-0 -mx-1 px-1">
@@ -158,8 +162,8 @@ export function Sidebar() {
       </Sheet>
     </header>
 
-    <aside className="hidden lg:flex w-64 flex-col glass border-l border-border/50 p-5 sticky top-0 h-screen">
-      <Link to="/" className="flex items-center mb-8" aria-label={t("nav.brand")}>
+    <aside className="hidden lg:flex w-64 flex-col glass border-l border-border/50 p-5 sticky top-0 h-screen" dir={dir}>
+      <Link to="/" search={localeSearch()} className="flex items-center mb-8" aria-label={t("nav.brand")}>
         <BrandMark className="h-9" />
       </Link>
 
