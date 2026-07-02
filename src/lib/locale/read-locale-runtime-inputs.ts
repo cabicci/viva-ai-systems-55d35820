@@ -1,5 +1,4 @@
-import { parseLocaleCookieHeader, readLocaleCookie } from "./locale-cookie";
-import { readCountryCodeFromHeaders } from "./read-request-country";
+import { readLocaleCookie } from "./locale-cookie";
 
 export type LocaleRuntimeInputs = {
   urlLocale?: string;
@@ -12,14 +11,10 @@ export type LocaleRuntimeInputs = {
 export async function readLocaleRuntimeInputs(): Promise<LocaleRuntimeInputs> {
   if (import.meta.env.SSR) {
     try {
-      const { getRequest } = await import("@tanstack/react-start/server");
-      const request = getRequest();
-      const url = new URL(request.url);
-      return {
-        urlLocale: url.searchParams.get("locale") ?? undefined,
-        cookieLocale: parseLocaleCookieHeader(request.headers.get("cookie")),
-        countryCode: readCountryCodeFromHeaders(request.headers),
-      };
+      const { readSsrLocaleRuntimeInputs } = await import(
+        "./locale-ssr-request.server"
+      );
+      return readSsrLocaleRuntimeInputs();
     } catch {
       return {};
     }

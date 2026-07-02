@@ -45,9 +45,8 @@ export function readLocaleCookie(): string | undefined {
 
 export async function readRequestCookieLocale(): Promise<string | undefined> {
   if (import.meta.env.SSR) {
-    const { getRequest } = await import("@tanstack/react-start/server");
-    const request = getRequest();
-    return parseLocaleCookieHeader(request.headers.get("cookie"));
+    const { readSsrCookieLocale } = await import("./locale-ssr-request.server");
+    return readSsrCookieLocale();
   }
   return readLocaleCookie();
 }
