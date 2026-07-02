@@ -47,6 +47,7 @@ import { loadLocalePackageLesson } from "@/lib/locale-lessons/load-locale-packag
 import { readRequestCookieLocale } from "@/lib/locale/locale-cookie";
 import { readRequestCountryCode } from "@/lib/locale/read-request-country";
 import { useLocale } from "@/lib/locale/locale-context";
+import { getCurriculumModuleLabel } from "@/lib/locale-curriculum/resolve-curriculum-label";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { resolveLearnDisplayTitle } from "@/lib/locale/learn-display-title";
 import { useUiString } from "@/lib/locale/use-ui-strings";
@@ -233,7 +234,7 @@ export const Route = createFileRoute("/learn/$pathId/$lessonId")({
 
 function LearnLessonNotFound() {
   const t = useUiString();
-  const { dir } = useLocale();
+  const { dir, locale } = useLocale();
 
   return (
     <div className="min-h-dvh grid place-items-center" dir={dir}>
@@ -254,8 +255,9 @@ function UnifiedLessonPage() {
   const { from } = previewSearch;
   const localeNavSearch = preserveLocaleSearch(previewSearch, cookieLocale);
   const localeSearch = useLocaleLinkSearch();
-  const { dir } = useLocale();
+  const { dir, locale } = useLocale();
   const t = useUiString();
+  const moduleTitle = getCurriculumModuleLabel(locale, lesson.moduleId, "title");
 
   const effectiveAccess = lessonAccess;
   const isLocalizedPackagePage =
@@ -416,7 +418,7 @@ function UnifiedLessonPage() {
               <Icon className="h-3 w-3" /> {pathLabel}
             </span>
             <span className="text-[11px] font-mono text-muted-foreground">
-              {`M${lesson.moduleOrder} · ${lesson.moduleTitle}`} ·{" "}
+              {`M${lesson.moduleOrder} · ${moduleTitle}`} ·{" "}
               {String(lesson.globalOrder).padStart(2, "0")}/
               {String(total).padStart(2, "0")}
             </span>

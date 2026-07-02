@@ -27,7 +27,7 @@ import type { ModuleMastery } from "@/lib/mastery-gate";
 import { useEntitlement } from "@/lib/entitlements";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { useLocale } from "@/lib/locale/locale-context";
-import { getCurriculumPathLabel } from "@/lib/locale-curriculum/resolve-curriculum-label";
+import { getCurriculumModuleLabel, getCurriculumPathLabel } from "@/lib/locale-curriculum/resolve-curriculum-label";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 
 type CurriculumSearch = { module?: string; lesson?: string; locale?: string };
@@ -343,6 +343,8 @@ function PathBlock({
             );
             const moduleUnlocked = !status.moduleLocked;
             const moduleCompleted = status.moduleCompleted;
+            const moduleTitle = getCurriculumModuleLabel(locale, m.id, "title");
+            const moduleSubtitle = getCurriculumModuleLabel(locale, m.id, "subtitle");
 
             return (
               <article
@@ -368,15 +370,15 @@ function PathBlock({
                       MODULE M{mi + 1}
                     </p>
                     <div className="flex items-center gap-2 flex-wrap">
-                      <h3 className="font-bold text-lg leading-tight">{m.title}</h3>
+                      <h3 className="font-bold text-lg leading-tight">{moduleTitle}</h3>
                       {m.level === "technical" && (
                         <span className="text-[10px] font-bold tracking-wide px-1.5 py-0.5 rounded bg-accent-warning/40 text-accent-warning-foreground border border-accent-warning/40">
                           تقني — للمتقدمين
                         </span>
                       )}
                     </div>
-                    {m.subtitle && (
-                      <p className="text-xs text-muted-foreground mt-0.5">{m.subtitle}</p>
+                    {moduleSubtitle && (
+                      <p className="text-xs text-muted-foreground mt-0.5">{moduleSubtitle}</p>
                     )}
                   </div>
                   {!moduleUnlocked && (

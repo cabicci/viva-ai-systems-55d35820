@@ -9,7 +9,7 @@ import { ChevronDown, Play, Lock, CheckCircle2, Clock, Trophy } from "lucide-rea
 import { getPath, pathLessonIds, PATHS, type CurriculumPath } from "@/lib/curriculum-data";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { useLocale } from "@/lib/locale/locale-context";
-import { getCurriculumPathLabel } from "@/lib/locale-curriculum/resolve-curriculum-label";
+import { getCurriculumModuleLabel, getCurriculumPathLabel } from "@/lib/locale-curriculum/resolve-curriculum-label";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 import { useLessonProgress, type LessonStatus } from "@/lib/lesson-progress";
 import type { CurriculumModule } from "@/lib/curriculum-data";
@@ -326,6 +326,8 @@ function ModuleRow({
   introCompletedCount: number;
 }) {
   const t = useUiString();
+  const { locale } = useLocale();
+  const moduleTitle = getCurriculumModuleLabel(locale, m.id, "title");
   const status = getModuleStatus(
     m,
     prevModule,
@@ -368,7 +370,7 @@ function ModuleRow({
           M{m.order}
         </span>
         <div className="flex-1 min-w-0">
-          <p className="font-semibold">{m.title}</p>
+          <p className="font-semibold">{moduleTitle}</p>
           <p className="text-xs text-muted-foreground mt-0.5">
             {moduleDone
               ? t("dashboard.module.complete")
