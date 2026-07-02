@@ -4,7 +4,7 @@
 date: 2026-07-03
 scope: ui
 source: user
-summary: Localize account page (profile, subscription, stats, management) across four locales
+summary: Localize curriculum path titles and taglines across four locales
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

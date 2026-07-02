@@ -9,6 +9,7 @@ import { ChevronDown, Play, Lock, CheckCircle2, Clock, Trophy } from "lucide-rea
 import { getPath, pathLessonIds, PATHS, type CurriculumPath } from "@/lib/curriculum-data";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { useLocale } from "@/lib/locale/locale-context";
+import { getCurriculumPathLabel } from "@/lib/locale-curriculum/resolve-curriculum-label";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 import { useLessonProgress, type LessonStatus } from "@/lib/lesson-progress";
 import type { CurriculumModule } from "@/lib/curriculum-data";
@@ -50,7 +51,7 @@ function DashboardPage() {
 
 function Dashboard() {
   const { user } = useAuth();
-  const { dir } = useLocale();
+  const { dir, locale } = useLocale();
   const t = useUiString();
   const search = Route.useSearch();
   const { store, getStatus } = useLessonProgress();
@@ -125,6 +126,9 @@ function Dashboard() {
         p.modules.some((m) => m.lessons.some((l) => l.id === nextLesson.id)),
       )
     : null;
+  const nextLessonPathTitle = nextLessonPath
+    ? getCurriculumPathLabel(locale, nextLessonPath.id, "title")
+    : undefined;
 
   return (
     <div className="min-h-dvh flex overflow-x-hidden" dir={dir}>
@@ -160,7 +164,7 @@ function Dashboard() {
               lesson={null}
               lessonTitle={nextLessonData?.title}
               duration={nextLessonData?.duration}
-              pathTitle={nextLessonPath?.title}
+              pathTitle={nextLessonPathTitle}
               delay={0}
             />
           )}
@@ -533,6 +537,9 @@ function PathCard({
   introCompletedCount: number;
 }) {
   const t = useUiString();
+  const { locale } = useLocale();
+  const pathTitle = getCurriculumPathLabel(locale, path.id, "title");
+  const pathTagline = getCurriculumPathLabel(locale, path.id, "tagline");
   const Icon = path.icon;
   const orderedIds = pathLessonIds(path);
   const allLessons = path.modules.flatMap((m) => m.lessons);
@@ -595,11 +602,11 @@ function PathCard({
                 strokeWidth={1.75}
               />
             </span>
-            {path.kind === 'intro' ? t("dashboard.path.intro") : t("dashboard.path.track")} {path.title}
+            {path.kind === 'intro' ? t("dashboard.path.intro") : t("dashboard.path.track")} {pathTitle}
           </h2>
           <div className="flex items-center gap-2">
             <span className={`text-xs text-muted-foreground glass px-3 py-1 rounded-full ${!isOpen ? "animate-pulse" : ""}`}>
-              {isOpen ? path.tagline : t("dashboard.soon")}
+              {isOpen ? pathTagline : t("dashboard.soon")}
             </span>
             {isOpen && (
               <ChevronDown
@@ -661,7 +668,7 @@ function PathCard({
         </div>
       ) : !isOpen ? (
         <p className="mt-4 text-sm text-muted-foreground">
-          {path.tagline}
+          {pathTagline}
         </p>
       ) : null}
     </div>

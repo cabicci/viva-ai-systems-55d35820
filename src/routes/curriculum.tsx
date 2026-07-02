@@ -27,6 +27,7 @@ import type { ModuleMastery } from "@/lib/mastery-gate";
 import { useEntitlement } from "@/lib/entitlements";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { useLocale } from "@/lib/locale/locale-context";
+import { getCurriculumPathLabel } from "@/lib/locale-curriculum/resolve-curriculum-label";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 
 type CurriculumSearch = { module?: string; lesson?: string; locale?: string };
@@ -241,6 +242,9 @@ function PathBlock({
   mastery: Record<string, ModuleMastery>;
   isPro: boolean;
 }) {
+  const { locale } = useLocale();
+  const pathTitle = getCurriculumPathLabel(locale, path.id, "title");
+  const pathTagline = getCurriculumPathLabel(locale, path.id, "tagline");
   const Icon = path.icon;
   const isOpen = path.status === "open";
   const isIntro = path.kind === "intro";
@@ -297,10 +301,10 @@ function PathBlock({
         </div>
         <div className="flex-1 min-w-0">
           <p className="text-xs font-mono text-muted-foreground">
-            {isIntro ? "INTRODUCTION" : `PATH · ${path.title.toUpperCase()}`}
+            {isIntro ? "INTRODUCTION" : `PATH · ${pathTitle.toUpperCase()}`}
           </p>
-          <h2 className="text-2xl md:text-3xl font-black">{path.title}</h2>
-          <p className="text-sm text-muted-foreground mt-1">{path.tagline}</p>
+          <h2 className="text-2xl md:text-3xl font-black">{pathTitle}</h2>
+          <p className="text-sm text-muted-foreground mt-1">{pathTagline}</p>
         </div>
         {!isOpen && (
           <span className="text-xs glass rounded-full px-3 py-1 text-muted-foreground shrink-0">
