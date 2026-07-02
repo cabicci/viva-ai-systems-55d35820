@@ -188,9 +188,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: RouteError,
 });
 
+const FALLBACK_LOADER_DATA: RootLoaderData = {
+  effectiveLocale: "ar-EG" as SupportedLocale,
+};
+
+function useRootLoaderDataSafe(): RootLoaderData {
+  const data = Route.useLoaderData() as RootLoaderData | undefined;
+  return data ?? FALLBACK_LOADER_DATA;
+}
+
 function RootShell({ children }: { children: React.ReactNode }) {
-  const { effectiveLocale } = Route.useLoaderData() as RootLoaderData;
-  const meta = LOCALE_META[effectiveLocale];
+  const { effectiveLocale } = useRootLoaderDataSafe();
+  const meta = LOCALE_META[effectiveLocale] ?? LOCALE_META["ar-EG"];
 
   return (
     <html lang={meta.lang} dir={meta.dir} suppressHydrationWarning>
@@ -211,7 +220,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const { effectiveLocale, serverCountryCode, serverCookieLocale, serverUrlLocale } =
-    Route.useLoaderData() as RootLoaderData;
+    useRootLoaderDataSafe();
 
   return (
     <QueryClientProvider client={queryClient}>
