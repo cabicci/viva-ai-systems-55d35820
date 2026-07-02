@@ -7,6 +7,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { ArrowLeft } from "lucide-react";
 import { AuthShell } from "@/components/auth/AuthShell";
+import { useUiString } from "@/lib/locale/use-ui-strings";
 
 export const Route = createFileRoute("/signup")({
   head: () => ({ meta: [{ title: "إنشاء حساب — مسارات" }] }),
@@ -14,6 +15,7 @@ export const Route = createFileRoute("/signup")({
 });
 
 function SignupPage() {
+  const t = useUiString();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,21 +31,42 @@ function SignupPage() {
     });
     setLoading(false);
     if (error) return toast.error(error.message);
-    toast.success("تم إنشاء الحساب! افحص بريدك لتأكيد الحساب.");
+    toast.success(t("auth.signup.toast.success"));
     navigate({ to: "/login" });
   }
 
   return (
-    <AuthShell title="أنشئ حسابك" subtitle="ابدأ رحلتك في منظومة الـ AI.">
+    <AuthShell title={t("auth.signup.title")} subtitle={t("auth.signup.subtitle")}>
       <form onSubmit={onSubmit} className="space-y-4">
-        <div className="space-y-2"><Label>البريد</Label><Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required /></div>
-        <div className="space-y-2"><Label>كلمة المرور</Label><Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required minLength={6} /></div>
+        <div className="space-y-2">
+          <Label>{t("auth.field.email")}</Label>
+          <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        </div>
+        <div className="space-y-2">
+          <Label>{t("auth.field.password")}</Label>
+          <Input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            minLength={6}
+          />
+        </div>
         <Button type="submit" variant="hero" size="lg" className="w-full" disabled={loading}>
-          {loading ? "جارٍ الإنشاء..." : <>إنشاء حساب <ArrowLeft className="h-4 w-4" /></>}
+          {loading ? (
+            t("auth.signup.submitting")
+          ) : (
+            <>
+              {t("auth.signup.submit")} <ArrowLeft className="h-4 w-4" />
+            </>
+          )}
         </Button>
       </form>
       <p className="text-center text-sm text-muted-foreground mt-6">
-        عندك حساب؟ <Link to="/login" className="text-primary hover:underline">سجّل دخول</Link>
+        {t("auth.signup.footerHasAccount")}{" "}
+        <Link to="/login" className="text-primary hover:underline">
+          {t("auth.link.login")}
+        </Link>
       </p>
     </AuthShell>
   );
