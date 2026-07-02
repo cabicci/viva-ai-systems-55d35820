@@ -159,14 +159,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
   }),
   loader: async () => {
-    const { urlLocale, cookieLocale, countryCode } = await readLocaleRuntimeInputs();
-    const localeRuntime = resolvePublicLocale({ urlLocale, cookieLocale, countryCode });
-    return {
-      effectiveLocale: localeRuntime.locale as SupportedLocale,
-      serverCountryCode: countryCode,
-      serverCookieLocale: cookieLocale,
-      serverUrlLocale: urlLocale,
-    };
+    try {
+      const { urlLocale, cookieLocale, countryCode } =
+        await readLocaleRuntimeInputs();
+      const localeRuntime = resolvePublicLocale({
+        urlLocale,
+        cookieLocale,
+        countryCode,
+      });
+      return {
+        effectiveLocale: localeRuntime.locale as SupportedLocale,
+        serverCountryCode: countryCode,
+        serverCookieLocale: cookieLocale,
+        serverUrlLocale: urlLocale,
+      };
+    } catch {
+      return {
+        effectiveLocale: "ar-EG",
+        serverCountryCode: undefined,
+        serverCookieLocale: undefined,
+        serverUrlLocale: undefined,
+      };
+    }
   },
   shellComponent: RootShell,
   component: RootComponent,

@@ -34,8 +34,7 @@ export function readCountryCodeFromHeaders(
 /** Read geo country from the active SSR request (no-op on client). */
 export async function readRequestCountryCode(): Promise<string | undefined> {
   if (!import.meta.env.SSR) return undefined;
-  const modId = "@tanstack/react-start/server";
-  const { getRequest } = await import(/* @vite-ignore */ modId);
+  const { getRequest } = await import("@tanstack/react-start/server");
   const request = getRequest();
   return readCountryCodeFromHeaders(request.headers);
 }
