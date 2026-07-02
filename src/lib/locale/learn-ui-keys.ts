@@ -1,0 +1,32 @@
+import type { UiStringKey } from "./ui-strings";
+
+/** Learn route shell chrome keys (not lesson body or curriculum titles). */
+export const LEARN_UI_KEYS = [
+  "learn.backToMap",
+  "learn.backToDashboard",
+  "learn.path.intro",
+  "learn.path.builder",
+  "learn.path.creator",
+  "learn.path.automator",
+  "learn.path.analyst",
+  "learn.path.business",
+  "learn.progress.path",
+  "learn.progress.stats",
+  "learn.assistant.summary",
+  "learn.assistant.fab",
+  "learn.assistant.fabAria",
+  "learn.missionGate.title",
+  "learn.missionGate.body",
+  "learn.missionGate.finishFirst",
+  "learn.continuity.next",
+  "learn.continuity.lastInPath",
+  "learn.nav.previous",
+  "learn.nav.markComplete",
+  "learn.nav.next",
+  "learn.loading.access",
+  "learn.content.unavailable.title",
+  "learn.content.unavailable.body",
+  "learn.notFound.body",
+  "learn.notFound.backToMap",
+  "learn.admin.copyLessonId",
+] as const satisfies readonly UiStringKey[];

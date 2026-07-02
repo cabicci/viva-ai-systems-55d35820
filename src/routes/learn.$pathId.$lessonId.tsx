@@ -48,6 +48,9 @@ import { readRequestCookieLocale } from "@/lib/locale/locale-cookie";
 import { readRequestCountryCode } from "@/lib/locale/read-request-country";
 import { useLocale } from "@/lib/locale/locale-context";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
+import { resolveLearnDisplayTitle } from "@/lib/locale/learn-display-title";
+import { useUiString } from "@/lib/locale/use-ui-strings";
+import type { UiStringKey } from "@/lib/locale/ui-strings";
 import { resolveLessonAccess } from "@/lib/locale-lessons/resolve-lesson-access";
 import {
   buildLessonLocaleSearch,
@@ -66,15 +69,38 @@ import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 
 const PATH_META: Record<
   PathId,
-  { label: string; icon: LucideIcon; tone: "accent" | "primary" }
+  { icon: LucideIcon; tone: "accent" | "primary" }
 > = {
-  intro: { label: "المقدمة", icon: MapIcon, tone: "accent" },
-  builder: { label: "البناء", icon: Hammer, tone: "primary" },
-  creator: { label: "المحتوى", icon: Palette, tone: "accent" },
-  automator: { label: "الأتمتة", icon: Workflow, tone: "primary" },
-  analyst: { label: "التحليل", icon: BarChart3, tone: "accent" },
-  business: { label: "الأعمال", icon: Briefcase, tone: "primary" },
+  intro: { icon: MapIcon, tone: "accent" },
+  builder: { icon: Hammer, tone: "primary" },
+  creator: { icon: Palette, tone: "accent" },
+  automator: { icon: Workflow, tone: "primary" },
+  analyst: { icon: BarChart3, tone: "accent" },
+  business: { icon: Briefcase, tone: "primary" },
 };
+
+/** Static path labels for route head() only — visible chrome uses learn.path.* keys. */
+const PATH_HEAD_LABEL: Record<PathId, string> = {
+  intro: "المقدمة",
+  builder: "البناء",
+  creator: "المحتوى",
+  automator: "الأتمتة",
+  analyst: "التحليل",
+  business: "الأعمال",
+};
+
+const LEARN_PATH_KEYS: Record<PathId, UiStringKey> = {
+  intro: "learn.path.intro",
+  builder: "learn.path.builder",
+  creator: "learn.path.creator",
+  automator: "learn.path.automator",
+  analyst: "learn.path.analyst",
+  business: "learn.path.business",
+};
+
+function learnPathLabel(t: (key: UiStringKey) => string, pathId: PathId): string {
+  return t(LEARN_PATH_KEYS[pathId]);
+}
 
 const VALID_PATHS = Object.keys(PATH_META) as PathId[];
 
@@ -128,15 +154,15 @@ export const Route = createFileRoute("/learn/$pathId/$lessonId")({
   validateSearch: (raw: Record<string, unknown>) => parseLessonPreviewSearch(raw),
   head: ({ params }) => {
     const pathId = params.pathId as PathId;
-    const meta = (PATH_META as Record<string, typeof PATH_META[PathId]>)[pathId];
-    if (!meta) return { meta: [{ title: "Lesson" }] };
+    const pathLabel = PATH_HEAD_LABEL[pathId as PathId];
+    if (!pathLabel) return { meta: [{ title: "Lesson" }] };
     const lesson = getPathLessons(pathId).find(
       (l) => l.slug === params.lessonId,
     );
-    const title = lesson ? `${lesson.title} — ${meta.label}` : meta.label;
+    const title = lesson ? `${lesson.title} — ${pathLabel}` : pathLabel;
     const description = lesson
-      ? `${lesson.title} — درس من مسار ${meta.label} على مسارات (masaarat.ai).`
-      : `درس من مسار ${meta.label} على مسارات (masaarat.ai).`;
+      ? `${lesson.title} — درس من مسار ${pathLabel} على مسارات (masaarat.ai).`
+      : `درس من مسار ${pathLabel} على مسارات (masaarat.ai).`;
     return {
       meta: [
         { title },
@@ -197,22 +223,29 @@ export const Route = createFileRoute("/learn/$pathId/$lessonId")({
     } satisfies LessonLoaderData;
   },
   component: UnifiedLessonPage,
-  notFoundComponent: () => (
-    <div className="min-h-dvh grid place-items-center" dir="rtl">
-      <div className="text-center space-y-3">
-        <p className="text-muted-foreground">الدرس مش موجود.</p>
-        <Button asChild variant="glass">
-          <Link to="/curriculum">ارجع للخريطة</Link>
-        </Button>
-      </div>
-    </div>
-  ),
+  notFoundComponent: LearnLessonNotFound,
   errorComponent: ({ error }) => (
     <div className="min-h-dvh grid place-items-center p-6" dir="rtl">
       <p className="text-sm text-destructive">{error.message}</p>
     </div>
   ),
 });
+
+function LearnLessonNotFound() {
+  const t = useUiString();
+  const { dir } = useLocale();
+
+  return (
+    <div className="min-h-dvh grid place-items-center" dir={dir}>
+      <div className="text-center space-y-3">
+        <p className="text-muted-foreground">{t("learn.notFound.body")}</p>
+        <Button asChild variant="glass">
+          <Link to="/curriculum">{t("learn.notFound.backToMap")}</Link>
+        </Button>
+      </div>
+    </div>
+  );
+}
 
 function UnifiedLessonPage() {
   const { pathId, lesson, lessonAccess, localizedPackage, cookieLocale } =
@@ -222,6 +255,7 @@ function UnifiedLessonPage() {
   const localeNavSearch = preserveLocaleSearch(previewSearch, cookieLocale);
   const localeSearch = useLocaleLinkSearch();
   const { dir } = useLocale();
+  const t = useUiString();
 
   const effectiveAccess = lessonAccess;
   const isLocalizedPackagePage =
@@ -254,6 +288,12 @@ function UnifiedLessonPage() {
     (l) => getStatus(l.id) === "completed",
   ).length;
   const pct = total ? Math.round((completedCount / total) * 100) : 0;
+  const pathLabel = learnPathLabel(t, pathId);
+  const displayTitle = resolveLearnDisplayTitle(lesson.title, localizedPackage);
+  const progressStats = t("learn.progress.stats")
+    .replace("{completed}", String(completedCount))
+    .replace("{total}", String(total))
+    .replace("{pct}", String(pct));
   const isCompleted = getStatus(lesson.id) === "completed";
 
   const [copied, setCopied] = useState(false);
@@ -346,11 +386,11 @@ function UnifiedLessonPage() {
           <Link
             to="/curriculum"
             search={{ module: lesson.moduleId, lesson: lesson.id }}
-            aria-label="رجوع للخريطة"
+            aria-label={t("learn.backToMap")}
             className="fixed top-4 start-4 z-50 inline-flex items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md"
           >
             <ArrowLeft className="h-4 w-4" />
-            <span>رجوع للخريطة</span>
+            <span>{t("learn.backToMap")}</span>
           </Link>
         ) : (
           <Link
@@ -360,11 +400,11 @@ function UnifiedLessonPage() {
               module: lesson.moduleId,
               lesson: lesson.id,
             })}
-            aria-label="رجوع للوحة"
+            aria-label={t("learn.backToDashboard")}
             className="fixed top-4 start-4 z-50 inline-flex items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md"
           >
             <ArrowLeft className="h-4 w-4" />
-            <span>رجوع للوحة</span>
+            <span>{t("learn.backToDashboard")}</span>
           </Link>
         )}
 
@@ -373,7 +413,7 @@ function UnifiedLessonPage() {
             <span
               className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[11px] font-mono uppercase tracking-widest ${toneClasses}`}
             >
-              <Icon className="h-3 w-3" /> {meta.label}
+              <Icon className="h-3 w-3" /> {pathLabel}
             </span>
             <span className="text-[11px] font-mono text-muted-foreground">
               {`M${lesson.moduleOrder} · ${lesson.moduleTitle}`} ·{" "}
@@ -389,14 +429,14 @@ function UnifiedLessonPage() {
             ) : null}
           </div>
           <h1 className="text-2xl md:text-4xl font-black leading-tight">
-            {lesson.title}
+            {displayTitle}
           </h1>
 
           {isAdmin && (
             <button
               type="button"
               onClick={copyLessonId}
-              aria-label="نسخ معرّف الدرس"
+              aria-label={t("learn.admin.copyLessonId")}
               className="mt-3 inline-flex items-center gap-2 rounded-lg border border-border/60 bg-muted/30 px-3 py-1.5 text-[12px] font-mono text-foreground/80 hover:bg-muted/50 hover:text-foreground transition"
             >
               <span className="select-all">{lesson.slug}</span>
@@ -410,10 +450,10 @@ function UnifiedLessonPage() {
 
           <div className="mt-5">
             <div className="flex items-center justify-between text-[11px] text-muted-foreground mb-1.5 font-mono">
-              <span>تقدّم {meta.label}</span>
               <span>
-                {completedCount}/{total} · {pct}%
+                {t("learn.progress.path").replace("{path}", pathLabel)}
               </span>
+              <span>{progressStats}</span>
             </div>
             <Progress value={pct} />
           </div>
@@ -421,10 +461,10 @@ function UnifiedLessonPage() {
 
         {!isGateReady ? (
           <div className="rounded-2xl border border-border/40 bg-muted/20 p-8 text-center text-sm text-muted-foreground">
-            جاري تحميل حالة الوصول للدرس...
+            {t("learn.loading.access")}
           </div>
         ) : gate.kind === "paywall" ? (
-          <PaywallCard pathTitle={meta.label} pathId={pathId} />
+          <PaywallCard pathTitle={pathLabel} pathId={pathId} />
         ) : gate.kind === "complete-intro-first" ? (
           <IntroGateCard done={gate.introDone} total={gate.introTotal} />
         ) : showLocalePreview && localizedPackage ? (
@@ -438,10 +478,10 @@ function UnifiedLessonPage() {
         ) : (
           <div className="rounded-2xl border border-accent-warning/40 bg-accent-warning/20 p-8 text-center space-y-2">
             <p className="text-sm font-semibold text-accent-warning-foreground">
-              محتوى الدرس مش متوفر دلوقتي
+              {t("learn.content.unavailable.title")}
             </p>
             <p className="text-xs text-muted-foreground">
-              لو شفت الرسالة دي، تواصل مع الفريق علشان نضيف المحتوى.
+              {t("learn.content.unavailable.body")}
             </p>
           </div>
         )}
@@ -468,7 +508,7 @@ function UnifiedLessonPage() {
           onToggle={(e) => setAssistantOpen(e.currentTarget.open)}
         >
           <summary className="cursor-pointer list-none flex items-center justify-between gap-3 text-sm font-semibold text-muted-foreground hover:text-foreground transition">
-            <span>اسأل المساعد عن الدرس ده</span>
+            <span>{t("learn.assistant.summary")}</span>
             <ChevronDown className="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" />
           </summary>
           <div className="mt-4">
@@ -484,10 +524,10 @@ function UnifiedLessonPage() {
             <Lock className="h-4 w-4 text-primary mt-0.5 shrink-0" />
             <div className="text-sm leading-relaxed">
               <p className="font-semibold text-foreground mb-1">
-                محتاجة محاولة بسيطة قبل الخطوة الجاية
+                {t("learn.missionGate.title")}
               </p>
               <p className="text-foreground/80 text-[13px]">
-                علشان تفتح الخطوة الجاية، ابعت محاولة حقيقية وخد Feedback بسيط.
+                {t("learn.missionGate.body")}
               </p>
             </div>
           </div>
@@ -499,10 +539,10 @@ function UnifiedLessonPage() {
             className={`text-[11px] font-mono flex items-center gap-1.5 mb-2 ${continuityLabelClass}`}
           >
             <Milestone className="h-3.5 w-3.5" />
-            {next ? "الدرس الجاي" : "آخر درس في المسار"}
+            {next ? t("learn.continuity.next") : t("learn.continuity.lastInPath")}
           </p>
           <p className="text-[15px] leading-[1.9] text-foreground/90">
-            {getContinuity(lesson.id, next?.title, meta.label)}
+            {getContinuity(lesson.id, next?.title, pathLabel)}
           </p>
           {next && (
             <p className="text-xs text-muted-foreground mt-2 font-mono">
@@ -521,7 +561,7 @@ function UnifiedLessonPage() {
                   search={localeNavSearch}
                 >
                   <ArrowRight className="h-4 w-4" />
-                  السابق
+                  {t("learn.nav.previous")}
                 </Link>
               </Button>
             ) : (
@@ -538,12 +578,12 @@ function UnifiedLessonPage() {
                 disabled={nextLocked && !!missionShape?.hasRubric}
                 title={
                   nextLocked && missionShape?.hasRubric
-                    ? "خلّص المهمة الأول"
+                    ? t("learn.missionGate.finishFirst")
                     : undefined
                 }
               >
                 <CheckCircle2 className="h-4 w-4" />
-                خلّصت
+                {t("learn.nav.markComplete")}
               </Button>
             )}
             {next ? (
@@ -553,12 +593,12 @@ function UnifiedLessonPage() {
                 size="sm"
                 onClick={markCompleted}
                 disabled={nextLocked}
-                title={nextLocked ? "خلّص المهمة الأول" : undefined}
+                title={nextLocked ? t("learn.missionGate.finishFirst") : undefined}
               >
                 {nextLocked ? (
                   <span className="inline-flex items-center gap-1.5 opacity-60 cursor-not-allowed">
                     <Lock className="h-3.5 w-3.5" />
-                    الدرس التالي
+                    {t("learn.nav.next")}
                   </span>
                 ) : (
                   <Link
@@ -566,7 +606,7 @@ function UnifiedLessonPage() {
                     params={{ pathId, lessonId: next.slug }}
                     search={localeNavSearch}
                   >
-                    الدرس التالي
+                    {t("learn.nav.next")}
                     <ArrowLeft className="h-4 w-4" />
                   </Link>
                 )}
@@ -579,7 +619,7 @@ function UnifiedLessonPage() {
                 onClick={markCompleted}
               >
                 <Link to="/dashboard" search={localeSearch()}>
-                  ارجع للوحة
+                  {t("learn.backToDashboard")}
                   <ArrowLeft className="h-4 w-4" />
                 </Link>
               </Button>
@@ -590,13 +630,13 @@ function UnifiedLessonPage() {
         <button
           type="button"
           onClick={openLessonAssistant}
-          aria-label="اسأل المساعد عن الدرس"
+          aria-label={t("learn.assistant.fabAria")}
           aria-controls="lesson-assistant"
           aria-expanded={assistantOpen}
           className="fixed bottom-6 end-4 sm:end-6 z-40 inline-flex items-center gap-2 rounded-full glass border border-border/60 bg-background/80 backdrop-blur-md px-4 py-3 text-sm font-medium text-foreground/90 shadow-[0_8px_30px_-12px_hsl(var(--foreground)/0.15)] hover:text-foreground hover:border-primary/30 hover:bg-background/95 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 min-h-[44px] max-w-[calc(100vw-2rem)] sm:max-w-none"
         >
           <MessageCircle className="h-4 w-4 text-primary shrink-0" />
-          <span>اسأل المساعد</span>
+          <span>{t("learn.assistant.fab")}</span>
         </button>
         </>
         )}
