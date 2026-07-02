@@ -6,6 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
 import { useStreak } from "@/lib/entitlements";
 import { useLessonProgress } from "@/lib/lesson-progress";
+import { useUiString } from "@/lib/locale/use-ui-strings";
 
 const DISMISS_KEY = "welcome-checklist-dismissed";
 const FIRST_WEEK_DAYS = 7;
@@ -21,6 +22,7 @@ export function WelcomeChecklist() {
   const { user } = useAuth();
   const { store } = useLessonProgress();
   const { streak } = useStreak();
+  const t = useUiString();
   const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
@@ -70,23 +72,23 @@ export function WelcomeChecklist() {
   const steps: Step[] = [
     {
       id: "open",
-      label: "افتح أول درس وتعرّف على المنصة",
+      label: t("dashboard.checklist.step.open"),
       done: hasOpenedAnyLesson,
-      cta: { to: "/dashboard", label: "اختار درس" },
+      cta: { to: "/dashboard", label: t("dashboard.checklist.cta.pickLesson") },
     },
     {
       id: "complete",
-      label: "خلّص أول درس بالكامل",
+      label: t("dashboard.checklist.step.complete"),
       done: hasCompletedLesson,
     },
     {
       id: "mission",
-      label: "سلّم أول مهمة",
+      label: t("dashboard.checklist.step.mission"),
       done: hasSubmittedMission,
     },
     {
       id: "streak",
-      label: "اعمل ٣ أيام متواصلة نشاط",
+      label: t("dashboard.checklist.step.streak").replace("{count}", "3"),
       done: hasStreak3,
     },
   ];
@@ -99,6 +101,10 @@ export function WelcomeChecklist() {
 
   const pct = Math.round((doneCount / steps.length) * 100);
   const daysLeft = Math.max(1, Math.ceil(FIRST_WEEK_DAYS - ageDays));
+  const progressLabel = t("dashboard.checklist.progress")
+    .replace("{done}", String(doneCount))
+    .replace("{total}", String(steps.length))
+    .replace("{daysLeft}", String(daysLeft));
 
   const dismiss = () => {
     setDismissed(true);
@@ -111,7 +117,7 @@ export function WelcomeChecklist() {
     <section
       className="glass rounded-2xl p-5 border border-primary/30 mb-8 animate-fade-up"
       style={{ background: "var(--gradient-hero)" }}
-      aria-label="رحلة أول أسبوع"
+      aria-label={t("dashboard.checklist.ariaLabel")}
     >
       <div className="flex items-start justify-between gap-3 mb-3">
         <div className="flex items-center gap-2">
@@ -119,18 +125,16 @@ export function WelcomeChecklist() {
             <ListChecks className="h-5 w-5 text-primary-foreground" />
           </span>
           <div>
-            <h2 className="text-base font-bold">رحلة أول أسبوع</h2>
-            <p className="text-xs text-muted-foreground">
-              {doneCount}/{steps.length} خطوات · فاضل {daysLeft} يوم
-            </p>
+            <h2 className="text-base font-bold">{t("dashboard.checklist.title")}</h2>
+            <p className="text-xs text-muted-foreground">{progressLabel}</p>
           </div>
         </div>
         <button
           onClick={dismiss}
           className="text-[11px] text-muted-foreground hover:text-foreground transition"
-          aria-label="إخفاء"
+          aria-label={t("dashboard.hint.close")}
         >
-          إخفاء
+          {t("dashboard.hint.close")}
         </button>
       </div>
 

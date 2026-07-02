@@ -4,7 +4,7 @@
 date: 2026-06-21
 scope: ui
 source: user
-summary: Phase 12.4A learn route chrome localization across four locales
+summary: Phase 12.4B dashboard widget localization across four locales
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

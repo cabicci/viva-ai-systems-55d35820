@@ -7,11 +7,13 @@ import {
   isWowExperienceSeen,
   markWowExperienceSeen,
 } from "@/lib/learner-events";
+import { useUiString } from "@/lib/locale/use-ui-strings";
 
 const FIRST_WEEK_DAYS = 7;
 
 export function StartWowBanner() {
   const { user } = useAuth();
+  const t = useUiString();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -39,18 +41,17 @@ export function StartWowBanner() {
         </span>
         <div>
           <p className="font-bold text-foreground text-sm mb-1">
-            تجربة سريعة اختيارية (دقيقتان)
+            {t("dashboard.wow.title")}
           </p>
           <p className="text-xs text-muted-foreground leading-loose">
-            شاهد كيف تربط مساراتك الخمسة بفكرة مشروعك داخل منصة تضم 100 درس
-            نشط — بدون التزام.
+            {t("dashboard.wow.body")}
           </p>
         </div>
       </div>
       <div className="flex items-center gap-2 shrink-0">
         <Button asChild variant="hero" size="sm">
           <Link to="/start">
-            ابدأ التجربة
+            {t("dashboard.wow.cta")}
             <ArrowLeft className="h-4 w-4" />
           </Link>
         </Button>
@@ -58,7 +59,7 @@ export function StartWowBanner() {
           type="button"
           variant="ghost"
           size="icon"
-          aria-label="إخفاء"
+          aria-label={t("dashboard.hint.close")}
           onClick={dismiss}
         >
           <X className="h-4 w-4" />

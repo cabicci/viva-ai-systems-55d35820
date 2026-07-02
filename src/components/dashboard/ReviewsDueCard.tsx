@@ -6,6 +6,7 @@ import { getDueReviews } from "@/lib/spaced-repetition.functions";
 import { getLesson } from "@/lib/unified-lessons";
 import { LessonLink } from "@/components/lesson/LessonLink";
 import { PATHS } from "@/lib/curriculum-data";
+import { useUiString } from "@/lib/locale/use-ui-strings";
 
 /**
  * Dashboard widget: shows lessons whose spaced-repetition next_review_at
@@ -14,6 +15,7 @@ import { PATHS } from "@/lib/curriculum-data";
  */
 export function ReviewsDueCard() {
   const { user } = useAuth();
+  const t = useUiString();
   const fetchDue = useServerFn(getDueReviews);
   const { data, isLoading } = useQuery({
     queryKey: ["reviews-due", user?.id],
@@ -40,6 +42,12 @@ export function ReviewsDueCard() {
     return Math.max(0, Math.floor(diff / (1000 * 60 * 60 * 24)));
   };
 
+  const subtitleKey =
+    due.length === 1
+      ? "dashboard.reviews.subtitle.one"
+      : "dashboard.reviews.subtitle.other";
+  const subtitle = t(subtitleKey).replace("{count}", String(due.length));
+
   // Locate the lesson object (for LessonLink routing).
   const findLessonRef = (lessonId: string) => {
     for (const p of PATHS) {
@@ -59,10 +67,8 @@ export function ReviewsDueCard() {
             <RefreshCw className="h-5 w-5" />
           </span>
           <div>
-            <h3 className="font-bold leading-tight">مراجعات النهارده</h3>
-            <p className="text-xs text-muted-foreground mt-0.5">
-              {due.length} {due.length === 1 ? "درس" : "دروس"} وقتها المراجعة — يخلّيك فاكر ٢٠٠٪ أكتر
-            </p>
+            <h3 className="font-bold leading-tight">{t("dashboard.reviews.title")}</h3>
+            <p className="text-xs text-muted-foreground mt-0.5">{subtitle}</p>
           </div>
         </div>
       </div>
@@ -73,6 +79,12 @@ export function ReviewsDueCard() {
           const lessonRef = findLessonRef(r.lessonId);
           if (!lessonData || !lessonRef) return null;
           const overdue = overdueDays(r.nextReviewAt);
+          const reviewMeta =
+            overdue === 0
+              ? t("dashboard.reviews.itemToday").replace("{n}", String(r.reviews + 1))
+              : t("dashboard.reviews.itemOverdue")
+                  .replace("{days}", String(overdue))
+                  .replace("{n}", String(r.reviews + 1));
           return (
             <LessonLink
               key={r.lessonId}
@@ -84,11 +96,7 @@ export function ReviewsDueCard() {
                 <p className="font-semibold text-sm leading-tight truncate">
                   {lessonData.title}
                 </p>
-                <p className="text-[10px] text-muted-foreground mt-1">
-                  {overdue === 0
-                    ? `النهارده · مراجعة #${r.reviews + 1}`
-                    : `متأخرة ${overdue} يوم · مراجعة #${r.reviews + 1}`}
-                </p>
+                <p className="text-[10px] text-muted-foreground mt-1">{reviewMeta}</p>
               </div>
               <ArrowLeft className="h-4 w-4 text-accent shrink-0 group-hover:-translate-x-1 transition-transform" />
             </LessonLink>
