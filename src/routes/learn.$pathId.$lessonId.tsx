@@ -47,7 +47,10 @@ import { loadLocalePackageLesson } from "@/lib/locale-lessons/load-locale-packag
 import { readRequestCookieLocale } from "@/lib/locale/locale-cookie";
 import { readRequestCountryCode } from "@/lib/locale/read-request-country";
 import { useLocale } from "@/lib/locale/locale-context";
-import { getCurriculumModuleLabel } from "@/lib/locale-curriculum/resolve-curriculum-label";
+import {
+  getCurriculumLessonLabel,
+  getCurriculumModuleLabel,
+} from "@/lib/locale-curriculum/resolve-curriculum-label";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { resolveLearnDisplayTitle } from "@/lib/locale/learn-display-title";
 import { useUiString } from "@/lib/locale/use-ui-strings";
@@ -291,7 +294,14 @@ function UnifiedLessonPage() {
   ).length;
   const pct = total ? Math.round((completedCount / total) * 100) : 0;
   const pathLabel = learnPathLabel(t, pathId);
-  const displayTitle = resolveLearnDisplayTitle(lesson.title, localizedPackage);
+  const curriculumLessonTitle = getCurriculumLessonLabel(locale, lesson.id);
+  const displayTitle = resolveLearnDisplayTitle(
+    curriculumLessonTitle,
+    localizedPackage,
+  );
+  const nextLessonTitle = next
+    ? getCurriculumLessonLabel(locale, next.id)
+    : undefined;
   const progressStats = t("learn.progress.stats")
     .replace("{completed}", String(completedCount))
     .replace("{total}", String(total))
@@ -475,7 +485,7 @@ function UnifiedLessonPage() {
           <IntroLessonRenderer
             content={content}
             lessonId={lesson.slug}
-            lessonTitle={lesson.title}
+            lessonTitle={curriculumLessonTitle}
           />
         ) : (
           <div className="rounded-2xl border border-accent-warning/40 bg-accent-warning/20 p-8 text-center space-y-2">
@@ -544,11 +554,11 @@ function UnifiedLessonPage() {
             {next ? t("learn.continuity.next") : t("learn.continuity.lastInPath")}
           </p>
           <p className="text-[15px] leading-[1.9] text-foreground/90">
-            {getContinuity(lesson.id, next?.title, pathLabel)}
+            {getContinuity(lesson.id, nextLessonTitle, pathLabel)}
           </p>
-          {next && (
+          {next && nextLessonTitle && (
             <p className="text-xs text-muted-foreground mt-2 font-mono">
-              → {next.title}
+              → {nextLessonTitle}
             </p>
           )}
         </section>

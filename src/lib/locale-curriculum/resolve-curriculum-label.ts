@@ -4,6 +4,9 @@ import arEGLabels from "./ar-EG/labels.json";
 import arMSALabels from "./ar-MSA/labels.json";
 import arGulfLabels from "./ar-Gulf/labels.json";
 import enLabels from "./en/labels.json";
+import enLessonTitles from "@/lib/locale-lessons/en/lesson-titles.json";
+import arMSALessonTitles from "@/lib/locale-lessons/ar-MSA/lesson-titles.json";
+import arGulfLessonTitles from "@/lib/locale-lessons/ar-Gulf/lesson-titles.json";
 import type {
   CurriculumModuleLabelField,
   CurriculumPathLabelField,
@@ -15,6 +18,15 @@ const LABELS_BY_LOCALE: Record<SupportedLocale, LocaleCurriculumLabelsFile> = {
   "ar-MSA": arMSALabels as LocaleCurriculumLabelsFile,
   "ar-Gulf": arGulfLabels as LocaleCurriculumLabelsFile,
   en: enLabels as LocaleCurriculumLabelsFile,
+};
+
+/** Lightweight title indexes only — not full lesson packages. */
+const LESSON_TITLES_BY_LOCALE: Partial<
+  Record<SupportedLocale, Record<string, string>>
+> = {
+  en: enLessonTitles as Record<string, string>,
+  "ar-MSA": arMSALessonTitles as Record<string, string>,
+  "ar-Gulf": arGulfLessonTitles as Record<string, string>,
 };
 
 function canonicalPathLabel(pathId: PathId, field: CurriculumPathLabelField): string {
@@ -54,4 +66,30 @@ export function getCurriculumModuleLabel(
   const overlay = LABELS_BY_LOCALE[locale]?.modules?.[moduleId]?.[field]?.trim();
   if (overlay) return overlay;
   return canonicalModuleLabel(moduleId, field);
+}
+
+function canonicalLessonTitle(lessonId: string): string {
+  for (const path of PATHS) {
+    for (const module of path.modules) {
+      const lesson = module.lessons.find((l) => l.id === lessonId);
+      if (lesson) return lesson.title;
+    }
+  }
+  return lessonId;
+}
+
+/**
+ * Locale overlay for curriculum lesson titles.
+ * ar-EG uses curriculum-data; package locales use lightweight lesson-titles.json.
+ * Missing titles fall back to curriculum-data, then lessonId.
+ */
+export function getCurriculumLessonLabel(
+  locale: SupportedLocale,
+  lessonId: string,
+): string {
+  if (locale !== "ar-EG") {
+    const overlay = LESSON_TITLES_BY_LOCALE[locale]?.[lessonId]?.trim();
+    if (overlay) return overlay;
+  }
+  return canonicalLessonTitle(lessonId);
 }

@@ -9,7 +9,11 @@ import { ChevronDown, Play, Lock, CheckCircle2, Clock, Trophy } from "lucide-rea
 import { getPath, pathLessonIds, PATHS, type CurriculumPath } from "@/lib/curriculum-data";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { useLocale } from "@/lib/locale/locale-context";
-import { getCurriculumModuleLabel, getCurriculumPathLabel } from "@/lib/locale-curriculum/resolve-curriculum-label";
+import {
+  getCurriculumLessonLabel,
+  getCurriculumModuleLabel,
+  getCurriculumPathLabel,
+} from "@/lib/locale-curriculum/resolve-curriculum-label";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 import { useLessonProgress, type LessonStatus } from "@/lib/lesson-progress";
 import type { CurriculumModule } from "@/lib/curriculum-data";
@@ -121,6 +125,9 @@ function Dashboard() {
     : 0;
 
   const nextLessonData = nextLesson ? getLesson(nextLesson.id) : null;
+  const nextLessonTitle = nextLesson
+    ? getCurriculumLessonLabel(locale, nextLesson.id)
+    : undefined;
   const nextLessonPath = nextLesson
     ? openPaths.find((p) =>
         p.modules.some((m) => m.lessons.some((l) => l.id === nextLesson.id)),
@@ -162,7 +169,7 @@ function Dashboard() {
           {!nextLesson && (
             <NextLessonCard
               lesson={null}
-              lessonTitle={nextLessonData?.title}
+              lessonTitle={nextLessonTitle}
               duration={nextLessonData?.duration}
               pathTitle={nextLessonPathTitle}
               delay={0}
@@ -431,7 +438,7 @@ function ModuleRow({
                 const lUnlocked = sequentialUnlocked && paid === null;
                 const lDone = access.isCompleted;
                 const lInProgress = access.isInProgress;
-                const title = lessonData?.title ?? l.title;
+                const title = getCurriculumLessonLabel(locale, l.id);
                 const badge = String(orderedIds.indexOf(l.id) + 1);
 
                 return (

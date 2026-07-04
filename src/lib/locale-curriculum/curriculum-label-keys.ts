@@ -37,3 +37,10 @@ export const CURRICULUM_MODULE_LABEL_KEYS = CURRICULUM_MODULE_IDS.flatMap((modul
     (field) => `${moduleId}.${field}` as CurriculumModuleLabelKey,
   ),
 );
+
+/** Stable active lesson ids with localized title overlays (Phase 12.5C). */
+export const CURRICULUM_LESSON_IDS = PATHS.flatMap((p) =>
+  p.modules.flatMap((m) =>
+    m.lessons.filter((l) => l.state === "available").map((l) => l.id),
+  ),
+) as readonly string[];

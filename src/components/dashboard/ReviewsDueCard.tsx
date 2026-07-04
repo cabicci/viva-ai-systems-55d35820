@@ -6,6 +6,8 @@ import { getDueReviews } from "@/lib/spaced-repetition.functions";
 import { getLesson } from "@/lib/unified-lessons";
 import { LessonLink } from "@/components/lesson/LessonLink";
 import { PATHS } from "@/lib/curriculum-data";
+import { useLocale } from "@/lib/locale/locale-context";
+import { getCurriculumLessonLabel } from "@/lib/locale-curriculum/resolve-curriculum-label";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 
 /**
@@ -15,6 +17,7 @@ import { useUiString } from "@/lib/locale/use-ui-strings";
  */
 export function ReviewsDueCard() {
   const { user } = useAuth();
+  const { locale } = useLocale();
   const t = useUiString();
   const fetchDue = useServerFn(getDueReviews);
   const { data, isLoading } = useQuery({
@@ -78,6 +81,7 @@ export function ReviewsDueCard() {
           const lessonData = getLesson(r.lessonId);
           const lessonRef = findLessonRef(r.lessonId);
           if (!lessonData || !lessonRef) return null;
+          const lessonTitle = getCurriculumLessonLabel(locale, r.lessonId);
           const overdue = overdueDays(r.nextReviewAt);
           const reviewMeta =
             overdue === 0
@@ -94,7 +98,7 @@ export function ReviewsDueCard() {
             >
               <div className="flex-1 min-w-0">
                 <p className="font-semibold text-sm leading-tight truncate">
-                  {lessonData.title}
+                  {lessonTitle}
                 </p>
                 <p className="text-[10px] text-muted-foreground mt-1">{reviewMeta}</p>
               </div>

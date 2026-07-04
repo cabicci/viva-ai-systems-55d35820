@@ -27,7 +27,11 @@ import type { ModuleMastery } from "@/lib/mastery-gate";
 import { useEntitlement } from "@/lib/entitlements";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { useLocale } from "@/lib/locale/locale-context";
-import { getCurriculumModuleLabel, getCurriculumPathLabel } from "@/lib/locale-curriculum/resolve-curriculum-label";
+import {
+  getCurriculumLessonLabel,
+  getCurriculumModuleLabel,
+  getCurriculumPathLabel,
+} from "@/lib/locale-curriculum/resolve-curriculum-label";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 
 type CurriculumSearch = { module?: string; lesson?: string; locale?: string };
@@ -445,6 +449,8 @@ function LessonRow({
   progress: Record<string, LessonStatus>;
   getStatus: (id: string) => LessonStatus;
 }) {
+  const { locale } = useLocale();
+  const lessonTitle = getCurriculumLessonLabel(locale, lesson.id);
   const access = getLessonAccess(
     lesson,
     progress,
@@ -490,7 +496,7 @@ function LessonRow({
           accessible ? "text-foreground" : "text-muted-foreground"
         }`}
       >
-        {lesson.title}
+        {lessonTitle}
       </span>
       <StateIcon
         className={`h-3.5 w-3.5 shrink-0 ${
