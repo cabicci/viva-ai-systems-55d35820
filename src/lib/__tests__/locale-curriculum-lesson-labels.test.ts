@@ -104,4 +104,78 @@ describe("locale curriculum lesson labels (Phase 12.5C)", () => {
       expect(source, path).toContain("getCurriculumLessonLabel");
     }
   });
+
+  it("has exactly 100 unique titles per locale (en, ar-MSA, ar-Gulf)", () => {
+    for (const [locale, titles] of Object.entries(TITLE_INDEXES)) {
+      const values = Object.values(titles);
+      expect(values.length, `${locale} count`).toBe(100);
+      expect(new Set(values).size, `${locale} unique`).toBe(100);
+    }
+  });
+
+  it("has no forbidden generic titles in ar-MSA / ar-Gulf", () => {
+    const FORBIDDEN = new Set([
+      "بداية الدرس",
+      "ماذا ستفهم؟",
+      "بداية المسار",
+      "بداية واضحة",
+      "بدء الدرس",
+      "الدرس الأول",
+    ]);
+    for (const locale of ["ar-MSA", "ar-Gulf"] as const) {
+      for (const [lid, title] of Object.entries(TITLE_INDEXES[locale])) {
+        expect(FORBIDDEN.has(title), `${locale} ${lid} = "${title}"`).toBe(
+          false,
+        );
+      }
+    }
+  });
+
+  it("intro-m1 has 7 distinct titles across en / ar-MSA / ar-Gulf", () => {
+    const introIds = CURRICULUM_LESSON_IDS.filter((id) =>
+      id.startsWith("intro-m1-"),
+    );
+    expect(introIds).toHaveLength(7);
+    for (const [locale, titles] of Object.entries(TITLE_INDEXES)) {
+      const introTitles = introIds.map((id) => titles[id]);
+      expect(new Set(introTitles).size, `${locale} intro-m1 unique`).toBe(7);
+    }
+  });
+
+  it("lesson-titles.json matches each package `title` field for en / ar-MSA / ar-Gulf", () => {
+    for (const locale of ["en", "ar-MSA", "ar-Gulf"] as const) {
+      for (const [lid, indexTitle] of Object.entries(TITLE_INDEXES[locale])) {
+        const pkgPath = resolve(
+          process.cwd(),
+          `src/lib/locale-lessons/${locale}/lessons/${lid}.json`,
+        );
+        const pkg = JSON.parse(readFileSync(pkgPath, "utf8")) as {
+          title: string;
+        };
+        expect(pkg.title, `${locale} ${lid}`).toBe(indexTitle);
+      }
+    }
+  });
+
+  it("title index IDs exactly match active curriculum lesson IDs", () => {
+    const active = new Set(CURRICULUM_LESSON_IDS);
+    for (const [locale, titles] of Object.entries(TITLE_INDEXES)) {
+      const ids = new Set(Object.keys(titles));
+      expect(ids.size, `${locale} size`).toBe(active.size);
+      for (const id of active) {
+        expect(ids.has(id), `${locale} missing ${id}`).toBe(true);
+      }
+    }
+  });
+
+  it("does not eager-import full lesson JSON in curriculum/dashboard", () => {
+    for (const { path, source } of WIRED_SOURCES) {
+      expect(
+        /from ["']@\/lib\/locale-lessons\/(en|ar-MSA|ar-Gulf)\/lessons\//.test(
+          source,
+        ),
+        `${path} eager lesson import`,
+      ).toBe(false);
+    }
+  });
 });
