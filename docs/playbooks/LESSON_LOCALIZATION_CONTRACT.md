@@ -32,17 +32,20 @@ ar-Gulf + en JSON packages
   resolveLessonAccess()        → package JSON vs egyptian-ts
   getCurriculum*Label()       → overlays + indexes + curriculum-data fallback
   getContinuityForLocale()    → ar-EG map + ui.json templates (+ sparse overrides)
+  buildLocalizedLearnerMeta() → route head meta for curriculum / dashboard / learn
+  resolveRouteHeadLocale()    → SSR-safe locale for route head()
   getUiString()                → ui.json (ar-EG fallback for missing keys)
 ```
 
-**Locale-aware (Batch 2):**
+**Locale-aware (Batch 2–3):**
 
 - `getContinuityForLocale()` in `resolve-continuity.ts` — ar-EG uses `LESSON_CONTINUITY`; en/ar-MSA/ar-Gulf use `ui.json` templates (+ optional sparse `CONTINUITY_BY_LOCALE` overrides)
+- `buildLocalizedLearnerMeta()` + `resolveRouteHeadLocale()` — learner route `<title>` / description / og / twitter for `/curriculum`, `/dashboard`, `/learn`
 
-**Not yet locale-aware (known debt — Batch 3+):**
+**Not yet locale-aware (known debt — Batch 4+):**
 
 - `IntroLessonRenderer` / `QuizBlock` / mission toasts — ar-EG TS path only
-- Route `head()` meta — static Arabic
+- `__root.tsx` global head + JSON-LD — static Arabic (auth, admin, landing excluded from Batch 3)
 - `mission-gate.ts`, `assistant-seed.functions.ts` — read Egyptian TS only
 
 ---
@@ -108,6 +111,8 @@ Enforced today by `scripts/locale-lessons/lib/validate-structural-parity.ts` (ge
 | No missing/extra `ui.json` keys across locales | `validate-ui-key-parity` |
 | No hardcoded Arabic in wired curriculum/paywall chrome | `validate-locale-leak-scan` |
 | No Egyptian continuity on non–ar-EG learn routes | `validate-locale-leak-scan` |
+| No static Arabic learner route head meta | `validate-locale-leak-scan` (Batch 3) |
+| No PATH_HEAD_LABEL / hardcoded learn description in routes | `validate-locale-leak-scan` |
 | No silent `ui.json` fallback hiding missing keys | warnings when value === key |
 
 ---
@@ -177,6 +182,17 @@ bun scripts/locale-lessons/validate-localization-contract.ts
 Resolver: `getContinuityForLocale(locale, lessonId, { nextTitle, pathTitle, hasNext })` in `src/lib/locale-curriculum/resolve-continuity.ts`.
 
 Next-lesson titles stay localized via `getCurriculumLessonLabel()` — unchanged.
+
+### Route meta / head (Batch 3 — shipped)
+
+Learner routes `/curriculum`, `/dashboard`, `/learn/$pathId/$lessonId` use:
+
+- `resolveRouteHeadLocale({ searchLocale })` — same precedence as app shell (?locale= → cookie → geo → ar-EG)
+- `buildLocalizedLearnerMeta(locale, kind, data)` — ui.json templates + `getCurriculumPathLabel` / `getCurriculumLessonLabel`
+
+**Excluded from Batch 3:** `__root.tsx` global JSON-LD/head, auth routes, admin routes, landing `/`.
+
+**Meta ui keys:** `meta.brandSuffix`, `meta.curriculum.*`, `meta.dashboard.*`, `meta.learn.*` in all four `ui.json` files.
 
 ---
 

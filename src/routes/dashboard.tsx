@@ -8,6 +8,8 @@ import { Progress } from "@/components/ui/progress";
 import { ChevronDown, Play, Lock, CheckCircle2, Clock, Trophy } from "lucide-react";
 import { getPath, pathLessonIds, PATHS, type CurriculumPath } from "@/lib/curriculum-data";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
+import { buildLocalizedLearnerMeta } from "@/lib/locale/build-learner-route-meta";
+import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 import { useLocale } from "@/lib/locale/locale-context";
 import {
   getCurriculumLessonLabel,
@@ -35,7 +37,12 @@ type DashboardSearch = { path?: string; module?: string; lesson?: string; locale
 
 export const Route = createFileRoute("/dashboard")({
   beforeLoad: requireAuthBeforeLoad,
-  head: () => ({ meta: [{ title: "اللوحة — مسارات" }] }),
+  head: async ({ match }) => {
+    const locale = await resolveRouteHeadLocale({
+      searchLocale: match.search.locale,
+    });
+    return buildLocalizedLearnerMeta(locale, "dashboard");
+  },
   validateSearch: (raw: Record<string, unknown>): DashboardSearch => ({
     ...parseLocaleSearchParam(raw),
     path: typeof raw.path === "string" ? raw.path : undefined,

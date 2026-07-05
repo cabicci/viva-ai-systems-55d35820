@@ -26,6 +26,8 @@ import { useModulesMastery } from "@/lib/mastery-gate";
 import type { ModuleMastery } from "@/lib/mastery-gate";
 import { useEntitlement } from "@/lib/entitlements";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
+import { buildLocalizedLearnerMeta } from "@/lib/locale/build-learner-route-meta";
+import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 import { useLocale } from "@/lib/locale/locale-context";
 import {
   getCurriculumLessonLabel,
@@ -37,20 +39,12 @@ import { useUiString } from "@/lib/locale/use-ui-strings";
 type CurriculumSearch = { module?: string; lesson?: string; locale?: string };
 
 export const Route = createFileRoute("/curriculum")({
-  head: () => ({
-    meta: [
-      { title: "خريطة المنهج — مسارات" },
-      {
-        name: "description",
-        content:
-          "خريطة تعليمية شاملة للمنظومة — كل المسارات والوحدات والدروس وحالة التقدّم في مكان واحد.",
-      },
-      { property: "og:title", content: "خريطة المنهج — مسارات" },
-      { property: "og:description", content: "خريطة تعليمية شاملة لكل المسارات والوحدات والدروس في منظومة التعلم التنفيذي." },
-      { name: "twitter:title", content: "خريطة المنهج — مسارات" },
-      { name: "twitter:description", content: "خريطة تعليمية شاملة لكل المسارات والوحدات والدروس في منظومة التعلم التنفيذي." },
-    ],
-  }),
+  head: async ({ match }) => {
+    const locale = await resolveRouteHeadLocale({
+      searchLocale: match.search.locale,
+    });
+    return buildLocalizedLearnerMeta(locale, "curriculum");
+  },
   validateSearch: (raw: Record<string, unknown>): CurriculumSearch => ({
     ...parseLocaleSearchParam(raw),
     module: typeof raw.module === "string" ? raw.module : undefined,

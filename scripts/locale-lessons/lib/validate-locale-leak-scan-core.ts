@@ -55,6 +55,20 @@ export function validateLocaleLeakScan(): ValidatorResult {
   for (const hit of containsAny(curriculumSource, CURRICULUM_BANNED_AR)) {
     errors.push(`curriculum.tsx contains banned hardcoded Arabic: "${hit}"`);
   }
+  if (!curriculumSource.includes("buildLocalizedLearnerMeta")) {
+    errors.push("curriculum route head must use buildLocalizedLearnerMeta");
+  }
+  if (curriculumSource.includes('title: "خريطة المنهج — مسارات"')) {
+    errors.push("curriculum route head still uses static Arabic meta title");
+  }
+
+  const dashboardSource = readRepoFile("src/routes/dashboard.tsx");
+  if (!dashboardSource.includes("buildLocalizedLearnerMeta")) {
+    errors.push("dashboard route head must use buildLocalizedLearnerMeta");
+  }
+  if (dashboardSource.includes('title: "اللوحة — مسارات"')) {
+    errors.push("dashboard route head still uses static Arabic meta title");
+  }
 
   const paywallSource = readRepoFile("src/components/learn/PaywallCard.tsx");
   for (const hit of containsAny(paywallSource, PAYWALL_BANNED_AR)) {
@@ -78,6 +92,15 @@ export function validateLocaleLeakScan(): ValidatorResult {
     errors.push(
       "learn route must not call locale-blind getContinuity() (Egyptian leak under en/ar-MSA/ar-Gulf)",
     );
+  }
+  if (learnSource.includes("PATH_HEAD_LABEL")) {
+    errors.push("learn route must not define or use PATH_HEAD_LABEL for head meta");
+  }
+  if (learnSource.includes("درس من مسار")) {
+    errors.push("learn route head must not hardcode Arabic description template");
+  }
+  if (!learnSource.includes("buildLocalizedLearnerMeta")) {
+    errors.push("learn route head must use buildLocalizedLearnerMeta");
   }
   if (
     !continuityResolverSource.includes("getContinuityForLocale") ||

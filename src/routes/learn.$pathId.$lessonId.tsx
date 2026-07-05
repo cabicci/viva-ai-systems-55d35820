@@ -23,6 +23,8 @@ import { useLessonProgress } from "@/lib/lesson-progress";
 import { IntroLessonRenderer } from "@/components/intro/IntroLessonRenderer";
 import { INTRO_LESSON_CONTENT } from "@/components/intro/lessons";
 import { getContinuityForLocale } from "@/lib/locale-curriculum/resolve-continuity";
+import { buildLocalizedLearnerMeta } from "@/lib/locale/build-learner-route-meta";
+import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 import {
   getPath,
   type CurriculumLesson,
@@ -80,16 +82,6 @@ const PATH_META: Record<
   automator: { icon: Workflow, tone: "primary" },
   analyst: { icon: BarChart3, tone: "accent" },
   business: { icon: Briefcase, tone: "primary" },
-};
-
-/** Static path labels for route head() only — visible chrome uses learn.path.* keys. */
-const PATH_HEAD_LABEL: Record<PathId, string> = {
-  intro: "المقدمة",
-  builder: "البناء",
-  creator: "المحتوى",
-  automator: "الأتمتة",
-  analyst: "التحليل",
-  business: "الأعمال",
 };
 
 const LEARN_PATH_KEYS: Record<PathId, UiStringKey> = {
@@ -155,28 +147,23 @@ function preserveLocaleSearch(
 
 export const Route = createFileRoute("/learn/$pathId/$lessonId")({
   validateSearch: (raw: Record<string, unknown>) => parseLessonPreviewSearch(raw),
-  head: ({ params }) => {
+  head: async ({ params, match, loaderData }) => {
+    const locale = await resolveRouteHeadLocale({
+      searchLocale: match.search.locale,
+    });
     const pathId = params.pathId as PathId;
-    const pathLabel = PATH_HEAD_LABEL[pathId as PathId];
-    if (!pathLabel) return { meta: [{ title: "Lesson" }] };
+    if (!VALID_PATHS.includes(pathId)) {
+      return buildLocalizedLearnerMeta(locale, "learn", { unknownPath: true });
+    }
     const lesson = getPathLessons(pathId).find(
       (l) => l.slug === params.lessonId,
     );
-    const title = lesson ? `${lesson.title} — ${pathLabel}` : pathLabel;
-    const description = lesson
-      ? `${lesson.title} — درس من مسار ${pathLabel} على مسارات (masaarat.ai).`
-      : `درس من مسار ${pathLabel} على مسارات (masaarat.ai).`;
-    return {
-      meta: [
-        { title },
-        { name: "description", content: description },
-        { property: "og:title", content: title },
-        { property: "og:description", content: description },
-        { property: "og:type", content: "article" },
-        { name: "twitter:title", content: title },
-        { name: "twitter:description", content: description },
-      ],
-    };
+    const data = loaderData as LessonLoaderData | undefined;
+    return buildLocalizedLearnerMeta(locale, "learn", {
+      pathId,
+      lessonId: lesson?.id,
+      packageTitle: data?.localizedPackage?.title,
+    });
   },
   loaderDeps: ({ search }) => ({
     locale: search.locale,
