@@ -765,7 +765,9 @@ function OverallProgressCard({
         <div className="min-w-0">
           <p className="text-xs text-muted-foreground">{t("dashboard.overall.label")}</p>
           <p className="text-2xl font-black">
-            <span dir="ltr" className="tabular-nums">{counted}</span>٪
+            <span dir="ltr" className="tabular-nums">
+              {t("dashboard.progress.percentValue").replace("{value}", String(counted))}
+            </span>
           </p>
         </div>
       </div>

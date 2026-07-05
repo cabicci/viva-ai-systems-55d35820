@@ -41,6 +41,7 @@ export const DASHBOARD_UI_KEYS = [
   "dashboard.nextLesson.allDone",
   "dashboard.overall.label",
   "dashboard.overall.lessons",
+  "dashboard.progress.percentValue",
   "dashboard.streak.label",
   "dashboard.streak.days",
   "dashboard.streak.startToday",

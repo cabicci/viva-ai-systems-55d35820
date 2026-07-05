@@ -29,4 +29,13 @@ export const LEARN_UI_KEYS = [
   "learn.notFound.body",
   "learn.notFound.backToMap",
   "learn.admin.copyLessonId",
+  "learn.paywall.title",
+  "learn.paywall.body",
+  "learn.paywall.activatePro",
+  "learn.paywall.backToDashboard",
+  "learn.paywall.pathFooter",
+  "learn.introGate.title",
+  "learn.introGate.body",
+  "learn.introGate.remaining",
+  "learn.introGate.startIntro",
 ] as const satisfies readonly UiStringKey[];

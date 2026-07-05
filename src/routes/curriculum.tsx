@@ -247,8 +247,11 @@ function PathBlock({
   isPro: boolean;
 }) {
   const { locale } = useLocale();
+  const t = useUiString();
   const pathTitle = getCurriculumPathLabel(locale, path.id, "title");
   const pathTagline = getCurriculumPathLabel(locale, path.id, "tagline");
+  const builderPathTitle = getCurriculumPathLabel(locale, "builder", "title");
+  const builderPromptParts = t("curriculum.footer.builderPrompt").split("{path}");
   const Icon = path.icon;
   const isOpen = path.status === "open";
   const isIntro = path.kind === "intro";
@@ -288,10 +291,10 @@ function PathBlock({
       {isIntro && (
         <div className="mb-5 flex items-center gap-2">
           <span className="inline-flex items-center gap-1.5 rounded-full glass border border-foreground/10 px-3 py-1 text-[11px] font-mono text-foreground/70 uppercase tracking-widest">
-            <MapIcon className="h-3 w-3" /> Start Here
+            <MapIcon className="h-3 w-3" /> {t("curriculum.path.startHereBadge")}
           </span>
           <span className="text-[11px] text-muted-foreground">
-            ابدأ من هنا قبل ما تدخل المسارات.
+            {t("curriculum.path.introHelper")}
           </span>
         </div>
       )}
@@ -305,14 +308,19 @@ function PathBlock({
         </div>
         <div className="flex-1 min-w-0">
           <p className="text-xs font-mono text-muted-foreground">
-            {isIntro ? "INTRODUCTION" : `PATH · ${pathTitle.toUpperCase()}`}
+            {isIntro
+              ? t("curriculum.path.introductionEyebrow")
+              : t("curriculum.path.pathEyebrow").replace(
+                  "{path}",
+                  pathTitle.toUpperCase(),
+                )}
           </p>
           <h2 className="text-2xl md:text-3xl font-black">{pathTitle}</h2>
           <p className="text-sm text-muted-foreground mt-1">{pathTagline}</p>
         </div>
         {!isOpen && (
           <span className="text-xs glass rounded-full px-3 py-1 text-muted-foreground shrink-0">
-            قريبًا
+            {t("curriculum.path.comingSoon")}
           </span>
         )}
       </div>
@@ -320,7 +328,7 @@ function PathBlock({
       {isOpen && totalIn > 0 && (
         <div className="mb-6 max-w-md">
           <div className="flex items-center justify-between text-xs text-muted-foreground mb-1.5 font-mono">
-            <span>تقدّم المسار</span>
+            <span>{t("curriculum.path.progressLabel")}</span>
             <span>
               {completed}/{totalIn} · {pct}%
             </span>
@@ -332,7 +340,7 @@ function PathBlock({
       {/* Modules */}
       {path.modules.length === 0 ? (
         <div className="glass rounded-2xl p-6 text-center text-muted-foreground text-sm">
-          محتوى هذا المسار قيد البناء داخل المنظومة.
+          {t("curriculum.path.emptyModule")}
         </div>
       ) : (
         <div className={`grid gap-4 ${isIntro ? "md:grid-cols-1" : "md:grid-cols-2"}`}>
@@ -371,13 +379,16 @@ function PathBlock({
                   </span>
                   <div className="flex-1 min-w-0">
                     <p className="text-[11px] font-mono text-muted-foreground">
-                      MODULE M{mi + 1}
+                      {t("curriculum.module.eyebrow").replace(
+                        "{order}",
+                        String(mi + 1),
+                      )}
                     </p>
                     <div className="flex items-center gap-2 flex-wrap">
                       <h3 className="font-bold text-lg leading-tight">{moduleTitle}</h3>
                       {m.level === "technical" && (
                         <span className="text-[10px] font-bold tracking-wide px-1.5 py-0.5 rounded bg-accent-warning/40 text-accent-warning-foreground border border-accent-warning/40">
-                          تقني — للمتقدمين
+                          {t("curriculum.module.technicalBadge")}
                         </span>
                       )}
                     </div>
@@ -392,7 +403,10 @@ function PathBlock({
 
                 {!isPro && status.moduleLocked && status.prevNotMastered && (
                   <p className="text-[11px] font-mono text-accent-warning-foreground bg-accent-warning/20 border border-accent-warning/30 rounded-md px-2.5 py-1.5">
-                    لازم تعدّي {status.prevMissingMissionCount} مهمة في الـ module اللي قبل عشان ده يفتح
+                    {t("curriculum.lesson.masteryLocked").replace(
+                      "{count}",
+                      String(status.prevMissingMissionCount),
+                    )}
                   </p>
                 )}
 
@@ -417,14 +431,16 @@ function PathBlock({
       {isIntro && (
         <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-primary/20 bg-primary/[0.05] p-4">
           <p className="text-sm text-muted-foreground">
-            خلّصت Introduction؟ اللي بعده مسار <span className="text-foreground font-semibold">Builder</span>.
+            {builderPromptParts[0]}
+            <span className="text-foreground font-semibold">{builderPathTitle}</span>
+            {builderPromptParts[1] ?? ""}
           </p>
           <Button asChild variant="violet" size="sm" className="shrink-0">
             <Link
               to="/learn/$pathId/$lessonId"
               params={{ pathId: "builder", lessonId: "builder-m1-l1-what-is-llm" }}
             >
-              ابدأ Builder
+              {t("curriculum.footer.builderCta").replace("{path}", builderPathTitle)}
               <ArrowRight className="h-4 w-4 rotate-180" />
             </Link>
           </Button>
@@ -450,6 +466,7 @@ function LessonRow({
   getStatus: (id: string) => LessonStatus;
 }) {
   const { locale } = useLocale();
+  const t = useUiString();
   const lessonTitle = getCurriculumLessonLabel(locale, lesson.id);
   const access = getLessonAccess(
     lesson,
@@ -538,7 +555,7 @@ function LessonRow({
       {content}
       {!isAvailable && (
         <span className="text-[10px] font-mono text-muted-foreground glass rounded-full px-1.5 py-0.5">
-          قريبًا
+          {t("curriculum.path.comingSoon")}
         </span>
       )}
     </li>
