@@ -24,7 +24,7 @@ import { Progress } from "@/components/ui/progress";
 import { useLessonProgress } from "@/lib/lesson-progress";
 import { IntroLessonRenderer } from "@/components/intro/IntroLessonRenderer";
 import { INTRO_LESSON_CONTENT } from "@/components/intro/lessons";
-import { getContinuity } from "@/components/intro/lesson-continuity";
+import { getContinuityForLocale } from "@/lib/locale-curriculum/resolve-continuity";
 import {
   getPath,
   type CurriculumLesson,
@@ -554,7 +554,11 @@ function UnifiedLessonPage() {
             {next ? t("learn.continuity.next") : t("learn.continuity.lastInPath")}
           </p>
           <p className="text-[15px] leading-[1.9] text-foreground/90">
-            {getContinuity(lesson.id, nextLessonTitle, pathLabel)}
+            {getContinuityForLocale(locale, lesson.id, {
+              nextTitle: nextLessonTitle,
+              pathTitle: pathLabel,
+              hasNext: Boolean(next),
+            })}
           </p>
           {next && nextLessonTitle && (
             <p className="text-xs text-muted-foreground mt-2 font-mono">

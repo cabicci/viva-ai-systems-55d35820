@@ -65,17 +65,27 @@ export function validateLocaleLeakScan(): ValidatorResult {
   }
 
   const learnSource = readRepoFile("src/routes/learn.$pathId.$lessonId.tsx");
-  const continuitySource = readRepoFile("src/components/intro/lesson-continuity.ts");
+  const continuityResolverSource = readRepoFile(
+    "src/lib/locale-curriculum/resolve-continuity.ts",
+  );
 
-  if (learnSource.includes("getContinuity(")) {
-    const localeAware =
-      continuitySource.includes("getContinuityForLocale") ||
-      continuitySource.includes("CONTINUITY_BY_LOCALE");
-    if (!localeAware) {
-      errors.push(
-        "learn route calls getContinuity() but lesson-continuity.ts is not locale-aware (Egyptian leak under en/ar-MSA/ar-Gulf)",
-      );
-    }
+  if (!learnSource.includes("getContinuityForLocale(")) {
+    errors.push(
+      "learn route must call getContinuityForLocale(...) for locale-aware continuity",
+    );
+  }
+  if (/\bgetContinuity\s*\(/.test(learnSource)) {
+    errors.push(
+      "learn route must not call locale-blind getContinuity() (Egyptian leak under en/ar-MSA/ar-Gulf)",
+    );
+  }
+  if (
+    !continuityResolverSource.includes("getContinuityForLocale") ||
+    !continuityResolverSource.includes("CONTINUITY_BY_LOCALE")
+  ) {
+    errors.push(
+      "resolve-continuity.ts must export getContinuityForLocale and CONTINUITY_BY_LOCALE",
+    );
   }
 
   if (learnSource.includes('dir="rtl"') && learnSource.includes("errorComponent")) {
@@ -89,7 +99,7 @@ export function validateLocaleLeakScan(): ValidatorResult {
     try {
       const source = readRepoFile(rel);
       if (/[\u0600-\u06FF]/.test(source)) {
-        warnings.push(`${rel}: contains Arabic (allowed ar-EG-only surface until Batch 2)`);
+        warnings.push(`${rel}: contains Arabic (ar-EG-only surface; continuity map is ar-EG canonical)`);
       }
     } catch {
       /* optional file */

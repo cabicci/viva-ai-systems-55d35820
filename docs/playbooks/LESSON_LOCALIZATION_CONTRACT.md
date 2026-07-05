@@ -31,12 +31,16 @@ ar-Gulf + en JSON packages
         ▼ Runtime resolvers
   resolveLessonAccess()        → package JSON vs egyptian-ts
   getCurriculum*Label()       → overlays + indexes + curriculum-data fallback
+  getContinuityForLocale()    → ar-EG map + ui.json templates (+ sparse overrides)
   getUiString()                → ui.json (ar-EG fallback for missing keys)
 ```
 
-**Not yet locale-aware (known debt — Batch 2+):**
+**Locale-aware (Batch 2):**
 
-- `src/components/intro/lesson-continuity.ts` — single Egyptian map
+- `getContinuityForLocale()` in `resolve-continuity.ts` — ar-EG uses `LESSON_CONTINUITY`; en/ar-MSA/ar-Gulf use `ui.json` templates (+ optional sparse `CONTINUITY_BY_LOCALE` overrides)
+
+**Not yet locale-aware (known debt — Batch 3+):**
+
 - `IntroLessonRenderer` / `QuizBlock` / mission toasts — ar-EG TS path only
 - Route `head()` meta — static Arabic
 - `mission-gate.ts`, `assistant-seed.functions.ts` — read Egyptian TS only
@@ -85,7 +89,7 @@ Enforced today by `scripts/locale-lessons/lib/validate-structural-parity.ts` (ge
 | Package manifest | `{locale}/manifest.json` | Must list exactly active curriculum lesson IDs |
 | Title index | `{locale}/lesson-titles.json` | Must equal each package `title` field |
 | Path/module labels | `locale-curriculum/{locale}/labels.json` | Overlays on `curriculum-data` |
-| Continuity index | *future* `{locale}/continuity.json` | Per-locale bridge text (Batch 2) |
+| Continuity index | *optional sparse* `{locale}/continuity.json` or `CONTINUITY_BY_LOCALE` | Per-locale bridge overrides; templates in `ui.json` cover defaults (Batch 2) |
 | UI strings | `src/locales/{locale}/ui.json` | Global chrome; identical key sets |
 
 **Rule:** Regenerate title index and manifest in the **same change** as package JSON updates.
@@ -103,7 +107,7 @@ Enforced today by `scripts/locale-lessons/lib/validate-structural-parity.ts` (ge
 | No manifest vs curriculum ID drift | `validate-manifest-curriculum-sync` |
 | No missing/extra `ui.json` keys across locales | `validate-ui-key-parity` |
 | No hardcoded Arabic in wired curriculum/paywall chrome | `validate-locale-leak-scan` |
-| No Egyptian continuity on non–ar-EG learn routes | `validate-locale-leak-scan` (until Batch 2) |
+| No Egyptian continuity on non–ar-EG learn routes | `validate-locale-leak-scan` |
 | No silent `ui.json` fallback hiding missing keys | warnings when value === key |
 
 ---
@@ -123,7 +127,7 @@ Enforced today by `scripts/locale-lessons/lib/validate-structural-parity.ts` (ge
 6. Run fragment adaptation → ar-Gulf + en JSON
 7. Update `{ar-MSA,ar-Gulf,en}/manifest.json`
 8. Regenerate `{ar-MSA,ar-Gulf,en}/lesson-titles.json` from package `title`
-9. Add continuity strings × 4 locales (after Batch 2 index exists)
+9. Add continuity strings × 4 locales — **optional** per-lesson overrides; non–ar-EG defaults come from `learn.continuity.*` ui keys (Batch 2)
 
 ### C. Validation (must pass before merge)
 
@@ -161,7 +165,18 @@ Run all:
 bun scripts/locale-lessons/validate-localization-contract.ts
 ```
 
-**Note:** `locale-leak-scan` fails on continuity until **Batch 2** localizes `lesson-continuity.ts`. Title/manifest/UI validators should pass on current `main`.
+**Note:** `locale-leak-scan` passes when the learn route uses `getContinuityForLocale`. Title/manifest/UI validators should pass on current `main`.
+
+### Continuity hybrid (Batch 2 — shipped)
+
+| Locale | Source | Fallback |
+|--------|--------|----------|
+| ar-EG | `LESSON_CONTINUITY` map in `lesson-continuity.ts` | Egyptian generic strings (same as pre-Batch 2) |
+| en / ar-MSA / ar-Gulf | `learn.continuity.bridgeWithNext` / `pathComplete` / `lessonComplete` in `ui.json` | Optional sparse entry in `CONTINUITY_BY_LOCALE` or future `{locale}/continuity.json` |
+
+Resolver: `getContinuityForLocale(locale, lessonId, { nextTitle, pathTitle, hasNext })` in `src/lib/locale-curriculum/resolve-continuity.ts`.
+
+Next-lesson titles stay localized via `getCurriculumLessonLabel()` — unchanged.
 
 ---
 

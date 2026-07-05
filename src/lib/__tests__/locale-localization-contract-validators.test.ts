@@ -4,7 +4,7 @@ import { validateManifestCurriculumSync } from "../../../scripts/locale-lessons/
 import { validateUiKeyParity } from "../../../scripts/locale-lessons/lib/validate-ui-key-parity-core.ts";
 import { validateLocaleLeakScan } from "../../../scripts/locale-lessons/lib/validate-locale-leak-scan-core.ts";
 
-describe("localization contract validators (Phase 12.6 Batch 1)", () => {
+describe("localization contract validators (Phase 12.6)", () => {
   it("passes title index parity for en / ar-MSA / ar-Gulf", async () => {
     const result = await validateTitleIndexParity();
     expect(result.errors, result.errors.join("\n")).toEqual([]);
@@ -23,10 +23,9 @@ describe("localization contract validators (Phase 12.6 Batch 1)", () => {
     expect(result.ok).toBe(true);
   });
 
-  it("detects known continuity locale leak until Batch 2", () => {
+  it("passes locale leak scan (continuity localized in Batch 2)", () => {
     const result = validateLocaleLeakScan();
-    expect(result.errors.some((e) => e.includes("getContinuity"))).toBe(true);
-    expect(result.errors.some((e) => e.includes("curriculum.tsx"))).toBe(false);
-    expect(result.errors.some((e) => e.includes("PaywallCard"))).toBe(false);
+    expect(result.errors, result.errors.join("\n")).toEqual([]);
+    expect(result.ok).toBe(true);
   });
 });

@@ -192,8 +192,8 @@ export const LESSON_CONTINUITY: Record<string, string> = {
 };
 
 /**
- * Returns the continuity bridge text for a given lesson id, or a sensible
- * default if not in the map.
+ * ar-EG continuity bridge — used by getContinuityForLocale for locale "ar-EG" only.
+ * Learn routes must call getContinuityForLocale from resolve-continuity.ts instead.
  */
 export function getContinuity(
   lessonId: string,
