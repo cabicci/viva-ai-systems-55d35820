@@ -12,8 +12,6 @@ import {
   Copy,
   Check,
   Milestone,
-  ChevronDown,
-  MessageCircle,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { useMemo, useState } from "react";
@@ -39,6 +37,7 @@ import { LessonNotes } from "@/components/learn/LessonNotes";
 import { DifficultyPrompt } from "@/components/learn/DifficultyPrompt";
 import { ReadingProgressBar } from "@/components/learn/ReadingProgressBar";
 import { CompletionReward } from "@/components/learn/CompletionReward";
+import { FloatingAssistantLauncher } from "@/components/learn/FloatingAssistantLauncher";
 import { AssistantPanel } from "@/components/assistant/AssistantPanel";
 import { LocalePackagePreviewRenderer } from "@/components/locale/LocalePackagePreviewRenderer";
 import { LocaleAssistantUnavailable } from "@/components/locale/LocaleAssistantUnavailable";
@@ -309,19 +308,6 @@ function UnifiedLessonPage() {
   const isCompleted = getStatus(lesson.id) === "completed";
 
   const [copied, setCopied] = useState(false);
-  const [assistantOpen, setAssistantOpen] = useState(false);
-  const assistantDetailsRef = useRef<HTMLDetailsElement>(null);
-
-  const openLessonAssistant = () => {
-    const el = assistantDetailsRef.current;
-    if (!el) return;
-    el.open = true;
-    setAssistantOpen(true);
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
-    const summary = el.querySelector("summary");
-    if (summary instanceof HTMLElement) summary.focus();
-  };
-
   const copyLessonId = async () => {
     try {
       await navigator.clipboard.writeText(lesson.slug);
@@ -513,24 +499,6 @@ function UnifiedLessonPage() {
           nextLessonHref={next ? `/learn/${pathId}/${next.slug}` : undefined}
         />
         ) : null}
-        <details
-          ref={assistantDetailsRef}
-          id="lesson-assistant"
-          className="mt-8 rounded-2xl border border-border/60 p-5 group scroll-mt-24"
-          onToggle={(e) => setAssistantOpen(e.currentTarget.open)}
-        >
-          <summary className="cursor-pointer list-none flex items-center justify-between gap-3 text-sm font-semibold text-muted-foreground hover:text-foreground transition">
-            <span>{t("learn.assistant.summary")}</span>
-            <ChevronDown className="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" />
-          </summary>
-          <div className="mt-4">
-            {isLocalizedPackagePage ? (
-              <LocaleAssistantUnavailable locale={effectiveAccess.effectiveLocale} />
-            ) : (
-              <AssistantPanel compact />
-            )}
-          </div>
-        </details>
         {!isLocalizedPackagePage && nextLocked && missionShape?.hasRubric && (
           <div className="mt-8 rounded-2xl border border-primary/25 bg-primary/[0.04] p-4 flex items-start gap-3">
             <Lock className="h-4 w-4 text-primary mt-0.5 shrink-0" />
@@ -643,17 +611,17 @@ function UnifiedLessonPage() {
             )}
           </div>
         </nav>
-        <button
-          type="button"
-          onClick={openLessonAssistant}
-          aria-label={t("learn.assistant.fabAria")}
-          aria-controls="lesson-assistant"
-          aria-expanded={assistantOpen}
-          className="fixed bottom-6 end-4 sm:end-6 z-40 inline-flex items-center gap-2 rounded-full glass border border-border/60 bg-background/80 backdrop-blur-md px-4 py-3 text-sm font-medium text-foreground/90 shadow-[0_8px_30px_-12px_hsl(var(--foreground)/0.15)] hover:text-foreground hover:border-primary/30 hover:bg-background/95 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 min-h-[44px] max-w-[calc(100vw-2rem)] sm:max-w-none"
+        <FloatingAssistantLauncher
+          fabLabel={t("learn.assistant.fab")}
+          fabAriaLabel={t("learn.assistant.fabAria")}
+          panelTitle={t("learn.assistant.summary")}
         >
-          <MessageCircle className="h-4 w-4 text-primary shrink-0" />
-          <span>{t("learn.assistant.fab")}</span>
-        </button>
+          {isLocalizedPackagePage ? (
+            <LocaleAssistantUnavailable locale={effectiveAccess.effectiveLocale} />
+          ) : (
+            <AssistantPanel compact />
+          )}
+        </FloatingAssistantLauncher>
         </>
         )}
       </main>
