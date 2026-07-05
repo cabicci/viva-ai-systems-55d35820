@@ -1,33 +1,74 @@
-## Phase 9.6 Production-Preview Re-QA Plan
+# خطة: تقرير شامل عن منصة Masaarat
 
-Verify ar-EG cookie reset edge case at commit `557b0eb` without modifying code or publishing.
+## الهدف
+إنتاج تقرير Markdown مفصّل يغطي كل المنصة من الكود مباشرة، مع قائمة أخطاء/مخاطر مرصودة.
 
-### Steps
+## المخرج
+ملف واحد: `docs/PLATFORM_FULL_REPORT.md` (قراءة فقط — لا تعديلات على كود التطبيق).
 
-1. **Read locale code** (no edits) to confirm expected cookie/URL behavior:
-   - `src/lib/locale/locale-cookie.ts`
-   - `src/lib/locale/resolve-locale.ts`
-   - `src/lib/locale/resolve-public-locale.ts`
-   - `src/components/locale/*` (selector)
-   - `wrangler.jsonc` for preview command
+## أقسام التقرير
 
-2. **Build production bundle**: `bun run build`
+1. **نظرة عامة**
+   - الاسم، النطاق (masaarat.ai)، آخر SHA منشور (`bed4994`).
+   - Stack: TanStack Start v1 + React 19 + Vite 7 + Tailwind v4 + Lovable Cloud (Supabase) + Cloudflare Workers.
 
-3. **Start production preview** (Wrangler/Workers preview, not Vite dev) in background, wait for readiness on its port.
+2. **معمارية الكود**
+   - `src/routes/` — كل المسارات (public / `_authenticated` / `api/public/*`).
+   - `src/components/` — تجميع حسب الدومين (assistant, intro, learn, lesson, locale, site, ui, dashboard…).
+   - `src/lib/locale-lessons/` — نظام اللغات (ar-MSA, ar-Gulf, ar-EG, en).
+   - `src/integrations/supabase/` — client / server / auth-middleware.
+   - `remotion/` — رندر الفيديوهات.
+   - `scripts/locale-lessons/` — pipeline التوليد والتحقق.
+   - `.github/workflows/` — lesson-video, locale-fragment-*, assistant-seed.
 
-4. **Drive Playwright** against the preview at `http://localhost:<port>/learn/intro/intro-m1-l1-what-is-ai`:
-   - Clear cookies → load bare URL → assert ar-EG default render, no cookie or default cookie
-   - Click خليجي → assert URL `?locale=ar-Gulf`, cookie `masaarat_locale=ar-Gulf`, Gulf content
-   - Click مصري → assert URL bare (or valid ar-EG), cookie cleared or `ar-EG`, NOT `ar-Gulf`
-   - Refresh → assert ar-EG persists, no stale cookie
-   - Reopen bare URL → assert ar-EG still loads
-   - Verify English and MSA selector paths still work
-   - Confirm no `?previewLocale=false` query anywhere
-   - Check console for hydration/client-entry errors
+3. **المسارات التعليمية (5 paths)**
+   - Builder / Creator / Automator / Analyst / Business — عدد الموديولات والدروس لكل مسار من ملفات JSON.
+   - Intro path (M0/M1).
 
-5. **Stop the preview server** explicitly.
+4. **نظام اللغات**
+   - 4 locales، قواعد الـ contract، UI keys parity، leak scan.
+   - آخر حالة QA لـ ar-EG (Egyptian bridge).
 
-6. **Return report**: PASS/FAIL, runtime command used, per-step cookie + URL + selector behavior, refresh result, server-stopped confirmation, and confirmation no code/publish changes were made.
+5. **الـ Backend (Lovable Cloud)**
+   - جداول عامة، RLS، user_roles pattern، has_role function.
+   - Edge functions المستخدمة (assistant / RAG / mission — من غير تعديل).
 
-### Constraints honored
-- No code edits, no publish, no generate, no OpenAI, no Supabase/Bunny/Remotion/RAG/assistant/mission/video touch, no workflow runs.
+6. **الفيديو / Bunny / Remotion**
+   - lesson-video workflow، حد 400 chars.
+   - GitHub repo: `cabicci/viva-ai-systems-55d35820`.
+
+7. **الأخطاء والمخاطر المرصودة**
+   - Console warnings حالية: `Missing Description or aria-describedby for DialogContent` (Radix Dialog).
+   - Security scan pre-existing: 2 warnings من `supabase_lov` (MISSING_RLS_PROTECTION, EXPOSED_SENSITIVE_DATA).
+   - ar-EG: `HLS manifestIncompatibleCodecsError` على playlist معيّن (نطاق Bunny — خارج).
+   - أي imports أو routes فيها mismatch (فحص سريع بـ rg).
+   - أي lesson JSON فيه leaks أو bold غير متوازن (تشغيل validators read-only).
+   - أي orphan videos من `docs/orphan-videos.md`.
+
+8. **Deferred / معلّقات معروفة**
+   - Route meta/head deferred.
+   - Intro renderer toasts/chrome deferred.
+   - errorComponent dir warning deferred.
+   - Path integration / visual journey map deferred.
+
+9. **Roadmap snapshot**
+   - أحدث صفوف `roadmap_items` (من `.lovable/roadmap-sync.md`).
+
+## طريقة التنفيذ (Read-only بالكامل)
+- `rg` + `code--view` على الملفات المذكورة.
+- تشغيل validators read-only:
+  - `bun scripts/locale-lessons/validate-locale-leak-scan.ts`
+  - `bun scripts/locale-lessons/validate-ui-key-parity.ts`
+  - `bun scripts/locale-lessons/validate-title-index-parity.ts`
+  - `bun scripts/locale-lessons/validate-manifest-curriculum-sync.ts`
+- `security--run_security_scan` لتحديث نتائج الـ backend.
+- استعلام `supabase--read_query` بسيط على `roadmap_items` (SELECT فقط) لآخر 20 صف.
+
+## القيود
+- لا تعديل كود.
+- لا نشر.
+- لا تعديل package.json / bun.lock / lesson JSON / Supabase schema / Bunny / Remotion / RAG / assistant / mission / video.
+- المخرج الوحيد: ملف `docs/PLATFORM_FULL_REPORT.md`.
+
+## الخلاصة
+تقرير واحد شامل يجمع: البنية + الحالة + الأخطاء + المعلّقات، بدون أي تغيير في الكود.
