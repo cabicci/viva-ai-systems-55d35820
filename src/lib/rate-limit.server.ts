@@ -1,5 +1,3 @@
-import { supabaseAdmin } from "@/integrations/supabase/client.server";
-
 /**
  * Server-side rate limiter — protects expensive endpoints (AI Gateway calls)
  * from runaway cost. Backed by `public.consume_rate_limit` (atomic SQL).
@@ -26,6 +24,7 @@ export interface RateLimitResult {
 export async function enforceRateLimit(
   opts: RateLimitOptions,
 ): Promise<RateLimitResult> {
+  const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
   const { data, error } = await supabaseAdmin.rpc("consume_rate_limit", {
     p_user_id: opts.userId,
     p_bucket_key: opts.bucketKey,

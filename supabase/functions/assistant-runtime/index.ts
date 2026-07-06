@@ -81,8 +81,8 @@ async function consumeRateLimit(
   const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
   const SERVICE_ROLE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
   if (!SUPABASE_URL || !SERVICE_ROLE) {
-    console.warn("[assistant-runtime] rate-limit disabled: missing supabase env");
-    return { allowed: true, resetAt: new Date().toISOString() };
+    console.error("[assistant-runtime] rate-limit unavailable: missing supabase env");
+    return { allowed: false, resetAt: new Date().toISOString() };
   }
   try {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/consume_rate_limit`, {
@@ -100,8 +100,8 @@ async function consumeRateLimit(
       }),
     });
     if (!res.ok) {
-      console.warn("[assistant-runtime] rate-limit rpc failed", res.status);
-      return { allowed: true, resetAt: new Date().toISOString() };
+      console.error("[assistant-runtime] rate-limit rpc failed", res.status);
+      return { allowed: false, resetAt: new Date().toISOString() };
     }
     const rows = await res.json();
     const row = Array.isArray(rows) ? rows[0] : rows;
@@ -110,8 +110,8 @@ async function consumeRateLimit(
       resetAt: String(row?.reset_at ?? new Date().toISOString()),
     };
   } catch (e) {
-    console.warn("[assistant-runtime] rate-limit exception", (e as Error).message);
-    return { allowed: true, resetAt: new Date().toISOString() };
+    console.error("[assistant-runtime] rate-limit exception", (e as Error).message);
+    return { allowed: false, resetAt: new Date().toISOString() };
   }
 }
 
