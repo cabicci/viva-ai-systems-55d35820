@@ -1,7 +1,8 @@
 import { readdirSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { INTRO_LESSON_CONTENT } from "@/components/intro/lessons";
+import { getExpectedLearnerLessonCount } from "@/lib/shipped-lessons";
+import { INTRO_LESSON_CONTENT_KEYS } from "@/components/intro/lessons/lesson-registry";
 import { ARCHIVED_LESSON_ID_SET } from "@/lib/archived-lessons";
 import { PATHS } from "@/lib/curriculum-data";
 import { getLocaleFallback, isProductionEgyptianLocale } from "@/lib/locale/fallback";
@@ -23,9 +24,7 @@ import { resolveLessonAccess } from "@/lib/locale-lessons/resolve-lesson-access"
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
 
 function activeLessonIds(): string[] {
-  return Object.keys(INTRO_LESSON_CONTENT)
-    .filter((id) => !ARCHIVED_LESSON_ID_SET.has(id))
-    .sort();
+  return INTRO_LESSON_CONTENT_KEYS.filter((id) => !ARCHIVED_LESSON_ID_SET.has(id)).sort();
 }
 
 function countJsonLessons(relativeDir: string): number {
@@ -54,14 +53,16 @@ describe("locale runtime foundation", () => {
 
   it("keeps shipped lesson id count unchanged", () => {
     const activeIds = activeLessonIds();
-    expect(activeIds).toHaveLength(100);
-    expect(EGYPTIAN_LESSON_IDS).toHaveLength(Object.keys(INTRO_LESSON_CONTENT).length);
+    expect(activeIds).toHaveLength(getExpectedLearnerLessonCount());
+    expect(EGYPTIAN_LESSON_IDS).toHaveLength(INTRO_LESSON_CONTENT_KEYS.length);
 
     const pathLessonIds = PATHS.flatMap((pathEntry) =>
       pathEntry.modules.flatMap((module) => module.lessons.map((lesson) => lesson.id)),
     );
-    const shippedPathIds = pathLessonIds.filter((id) => INTRO_LESSON_CONTENT[id]);
-    expect(shippedPathIds).toHaveLength(100);
+    const shippedPathIds = pathLessonIds.filter((id) =>
+      INTRO_LESSON_CONTENT_KEYS.includes(id as (typeof INTRO_LESSON_CONTENT_KEYS)[number]),
+    );
+    expect(shippedPathIds).toHaveLength(getExpectedLearnerLessonCount());
   });
 
   it("resolves ar-EG lesson access through the frozen TypeScript registry", () => {

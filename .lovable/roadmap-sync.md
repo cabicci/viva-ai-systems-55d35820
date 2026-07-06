@@ -4,7 +4,7 @@
 date: 2026-07-06
 scope: infra
 source: user
-summary: Security Batch B — rate-limit/auth edge hardening and RPC grant lockdown
+summary: Scale Blockers Batch B — dynamic lesson loading and count registry
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

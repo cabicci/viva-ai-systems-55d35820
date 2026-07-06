@@ -43,6 +43,7 @@ jobs:
           src/lib/__tests__/locale-localization-contract-validators.test.ts
           src/lib/__tests__/launch-account-deletion-coverage.test.ts
           src/lib/__tests__/security-batch-b.test.ts
+          src/lib/__tests__/scale-batch-b.test.ts
 
       - name: Build
         run: bun run build

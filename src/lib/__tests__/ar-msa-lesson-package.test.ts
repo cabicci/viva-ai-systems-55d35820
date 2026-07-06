@@ -2,7 +2,8 @@ import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { ARCHIVED_LESSON_ID_SET } from "@/lib/archived-lessons";
-import { INTRO_LESSON_CONTENT } from "@/components/intro/lessons/index";
+import { hasIntroLessonContent, INTRO_LESSON_CONTENT_KEYS } from "@/components/intro/lessons/lesson-registry";
+import { getExpectedLearnerLessonCount } from "@/lib/shipped-lessons";
 import type {
   LocalizedLessonManifest,
   LocalizedLessonPackage,
@@ -15,9 +16,7 @@ const LESSONS_DIR = path.join(PACKAGE_DIR, "lessons");
 const MANIFEST_PATH = path.join(PACKAGE_DIR, "manifest.json");
 
 function activeLessonIds(): string[] {
-  return Object.keys(INTRO_LESSON_CONTENT)
-    .filter((id) => !ARCHIVED_LESSON_ID_SET.has(id))
-    .sort();
+  return INTRO_LESSON_CONTENT_KEYS.filter((id) => !ARCHIVED_LESSON_ID_SET.has(id)).sort();
 }
 
 describe("ar-MSA lesson package", () => {
@@ -29,10 +28,11 @@ describe("ar-MSA lesson package", () => {
   );
 
   it("manifest lists exactly 100 active lessons", () => {
+    const expectedCount = getExpectedLearnerLessonCount();
     expect(manifest.locale).toBe("ar-MSA");
-    expect(manifest.lessonCount).toBe(100);
-    expect(manifest.lessonIds).toHaveLength(100);
-    expect(lessonFiles).toHaveLength(100);
+    expect(manifest.lessonCount).toBe(expectedCount);
+    expect(manifest.lessonIds).toHaveLength(expectedCount);
+    expect(lessonFiles).toHaveLength(expectedCount);
   });
 
   it("excludes archived Business lessons", () => {
@@ -53,7 +53,7 @@ describe("ar-MSA lesson package", () => {
 
   it("maps every generated lesson to an existing active lessonId", () => {
     for (const id of manifest.lessonIds) {
-      expect(INTRO_LESSON_CONTENT[id], `missing production registry for ${id}`).toBeTruthy();
+      expect(hasIntroLessonContent(id), `missing production registry for ${id}`).toBe(true);
       expect(ARCHIVED_LESSON_ID_SET.has(id)).toBe(false);
     }
   });

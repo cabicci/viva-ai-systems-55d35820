@@ -1,7 +1,6 @@
 import { useMemo } from "react";
 import { LESSONS, type LessonContent } from "@/lib/unified-lessons";
 import { PATHS } from "@/lib/curriculum-data";
-import { INTRO_LESSON_CONTENT } from "@/components/intro/lessons";
 import type { IntroLessonContent } from "@/components/intro/intro-lesson-types";
 
 /**
@@ -305,7 +304,7 @@ function introContentToChunks(
 const CORPUS: RetrievalChunk[] = [
   ...LESSONS.flatMap(lessonToChunks),
   ...LESSONS.flatMap((l) => {
-    const blocks = INTRO_LESSON_CONTENT[l.id];
+    const blocks = l.blocks;
     if (!blocks) return [];
     const moduleTitle = MODULE_INDEX[l.id] ?? l.stage;
     return introContentToChunks(l.id, l.title, moduleTitle, blocks);

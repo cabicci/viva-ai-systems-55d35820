@@ -2,7 +2,7 @@ import * as React from "react";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
-import { getLessonMission } from "@/lib/mission-gate";
+import { loadLessonMission } from "@/lib/mission-gate";
 import type { CurriculumModule } from "@/lib/curriculum-data";
 
 /**
@@ -26,12 +26,15 @@ export interface ModuleMastery {
   passedCount: number;
 }
 
-/** Pure — gated mission ids for shipped lessons inside a module. */
-export function getModuleGatedMissionIds(module: CurriculumModule): string[] {
+/** Gated mission ids for shipped lessons inside a module (requires loaded shapes). */
+function moduleGatedMissionIds(
+  module: CurriculumModule,
+  missionShapes: Map<string, Awaited<ReturnType<typeof loadLessonMission>>>,
+): string[] {
   const out: string[] = [];
   for (const lesson of module.lessons) {
     if (lesson.state !== "available") continue;
-    const m = getLessonMission(lesson.id);
+    const m = missionShapes.get(lesson.id);
     if (m?.hasRubric) out.push(`${lesson.id}::mission`);
   }
   return out;
@@ -49,13 +52,37 @@ export function useModulesMastery(modules: CurriculumModule[]): {
   const { user, loading } = useAuth();
   const userId = user?.id ?? null;
 
+  const lessonIds = React.useMemo(() => {
+    const ids = new Set<string>();
+    for (const m of modules) {
+      for (const lesson of m.lessons) {
+        if (lesson.state === "available") ids.add(lesson.id);
+      }
+    }
+    return Array.from(ids);
+  }, [modules]);
+
+  const { data: missionShapes = new Map(), isSuccess: shapesLoaded } = useQuery({
+    queryKey: ["module-mission-shapes", lessonIds],
+    enabled: lessonIds.length > 0,
+    staleTime: Infinity,
+    queryFn: async () => {
+      const entries = await Promise.all(
+        lessonIds.map(
+          async (id) => [id, await loadLessonMission(id)] as const,
+        ),
+      );
+      return new Map(entries);
+    },
+  });
+
   const allGatedMissionIds = React.useMemo(() => {
     const set = new Set<string>();
     for (const m of modules) {
-      for (const id of getModuleGatedMissionIds(m)) set.add(id);
+      for (const id of moduleGatedMissionIds(m, missionShapes)) set.add(id);
     }
     return Array.from(set);
-  }, [modules]);
+  }, [modules, missionShapes]);
 
   const { data: passedSet = new Set<string>(), isSuccess } = useQuery({
     // Array key — avoids the ambiguity of joining IDs into a string.
@@ -85,7 +112,7 @@ export function useModulesMastery(modules: CurriculumModule[]): {
   const mastery = React.useMemo(() => {
     const out: Record<string, ModuleMastery> = {};
     for (const m of modules) {
-      const gated = getModuleGatedMissionIds(m);
+      const gated = moduleGatedMissionIds(m, missionShapes);
       const missing = gated.filter((id) => !passedSet.has(id));
       out[m.id] = {
         isMastered: missing.length === 0,
@@ -95,10 +122,12 @@ export function useModulesMastery(modules: CurriculumModule[]): {
       };
     }
     return out;
-  }, [modules, passedSet]);
+  }, [modules, missionShapes, passedSet]);
 
   const isLoaded =
-    !loading && (!userId || allGatedMissionIds.length === 0 || isSuccess);
+    !loading &&
+    shapesLoaded &&
+    (!userId || allGatedMissionIds.length === 0 || isSuccess);
 
   return { mastery, isLoaded };
 }

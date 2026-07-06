@@ -7,7 +7,7 @@ import {
   AutomatorPathIcon,
   BuilderPathIcon,
 } from "@/components/icons/PathIcons";
-import { INTRO_LESSON_CONTENT } from "@/components/intro/lessons";
+import { INTRO_LESSON_CONTENT_KEYS, hasIntroLessonContent } from "@/components/intro/lessons/lesson-registry";
 
 // Path icons accept the lucide-compatible prop surface (className, strokeWidth,
 // size, …). Custom Masaarat path icons and lucide icons both satisfy this.
@@ -84,16 +84,16 @@ const lesson = (
 ): CurriculumLesson => ({ order, id, title, state, route });
 
 /** All shipped lesson ids (not just intro) — sourced from the block-based system. */
-const SHIPPED_LESSON_IDS = new Set(Object.keys(INTRO_LESSON_CONTENT));
+const SHIPPED_LESSON_IDS = new Set<string>(INTRO_LESSON_CONTENT_KEYS);
 
 /**
  * Unified shipped-lesson builder. Every shipped lesson routes to the
  * single dynamic lesson page `/learn/{pathId}/{slug}`.
- * The slug equals the lesson id (which matches the INTRO_LESSON_CONTENT key).
+ * The slug equals the lesson id (which matches the intro lesson registry key).
  */
 const shipped = (pathId: PathId) =>
   (order: number, id: string, title: string): CurriculumLesson =>
-    SHIPPED_LESSON_IDS.has(id)
+    hasIntroLessonContent(id)
       ? lesson(order, id, title, "available", `/learn/${pathId}/${id}`)
       : lesson(order, id, title, "coming-soon");
 

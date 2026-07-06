@@ -5,24 +5,15 @@
  * `@/lib/lessons-data` module (`LESSONS`, `getLesson`, `getNextLesson`,
  * `getPrevLesson`, types) — but builds the data from the NEW system:
  *
- *   PATHS (curriculum-data)  +  INTRO_LESSON_CONTENT (blocks)
- *
- * Goal: the 13 consumers (dashboard, mission-runtime, assistant
- * context, RAG chunking, …) all read from one place that reflects
- * the current five-path curriculum, without anyone touching the
- * old `lessons-data.ts` file. That file becomes fully isolated and
- * safe to delete in a later cleanup.
+ *   PATHS (curriculum-data)  +  intro lesson blocks (loaded on demand)
  */
 
 import { PATHS } from "@/lib/curriculum-data";
-import { INTRO_LESSON_CONTENT } from "@/components/intro/lessons";
+import { loadAllIntroLessonContent } from "@/components/intro/lessons";
+import type { IntroLessonContentKey } from "@/components/intro/lessons/lesson-registry";
 import type { IntroLessonContent } from "@/components/intro/intro-lesson-types";
 
-/* Inline types — formerly re-exported from lessons-data.ts.
- * Most legacy section fields stay as optional because retrieval/chunking
- * code reads them defensively (and ignores when undefined). The adapter
- * itself only populates id/order/title/stage/difficulty/duration/
- * description/mission/blocks. */
+/* Inline types — formerly re-exported from lessons-data.ts. */
 export type Difficulty = "مبتدئ" | "متوسط" | "متقدّم";
 
 export interface MissionBlock {
@@ -72,10 +63,6 @@ export interface LessonContent {
   blocks?: IntroLessonContent;
 }
 
-/* -------------------------------------------------------------- */
-/*  Build LESSONS by walking the curriculum once.                  */
-/* -------------------------------------------------------------- */
-
 function deriveMission(
   blocks: IntroLessonContent | undefined,
 ): MissionBlock | undefined {
@@ -105,7 +92,9 @@ function deriveDescription(
   return "";
 }
 
-function buildLessons(): LessonContent[] {
+function buildLessons(
+  introContent: Awaited<ReturnType<typeof loadAllIntroLessonContent>>,
+): LessonContent[] {
   const out: LessonContent[] = [];
   const seen = new Set<string>();
   let globalOrder = 0;
@@ -114,8 +103,7 @@ function buildLessons(): LessonContent[] {
     for (const module of path.modules) {
       for (const lesson of module.lessons) {
         if (seen.has(lesson.id)) continue;
-        const blocks = INTRO_LESSON_CONTENT[lesson.id];
-        // Only emit lessons that have actual content in the new system.
+        const blocks = introContent[lesson.id as IntroLessonContentKey];
         if (!blocks) continue;
         seen.add(lesson.id);
         globalOrder += 1;
@@ -137,11 +125,9 @@ function buildLessons(): LessonContent[] {
   return out;
 }
 
-export const LESSONS: LessonContent[] = buildLessons();
+const ALL_INTRO_CONTENT = await loadAllIntroLessonContent();
 
-/* -------------------------------------------------------------- */
-/*  Helpers — identical signatures to the legacy module.           */
-/* -------------------------------------------------------------- */
+export const LESSONS: LessonContent[] = buildLessons(ALL_INTRO_CONTENT);
 
 export const getLesson = (id: string): LessonContent | undefined =>
   LESSONS.find((l) => l.id === id);

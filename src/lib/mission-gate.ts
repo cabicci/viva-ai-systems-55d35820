@@ -3,7 +3,8 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
 import { useEntitlement } from "@/lib/entitlements";
-import { INTRO_LESSON_CONTENT } from "@/components/intro/lessons";
+import type { IntroLessonContent } from "@/components/intro/intro-lesson-types";
+import { loadIntroLessonContent, hasIntroLessonContent } from "@/components/intro/lessons";
 
 /**
  * Mission Gate — controls whether the "Next Lesson" button is unlocked.
@@ -32,11 +33,9 @@ export interface LessonMissionShape {
   hasRubric: boolean;
 }
 
-/** Pure introspection — does this lesson ship with a gated mission? */
-export function getLessonMission(
-  lessonId: string,
+function extractLessonMission(
+  content: IntroLessonContent | null,
 ): LessonMissionShape | null {
-  const content = INTRO_LESSON_CONTENT[lessonId];
   if (!content) return null;
   for (const section of content) {
     if (section.block.kind === "mission") {
@@ -51,6 +50,34 @@ export function getLessonMission(
   return null;
 }
 
+export async function loadLessonMission(
+  lessonId: string,
+): Promise<LessonMissionShape | null> {
+  if (!hasIntroLessonContent(lessonId)) return null;
+  const content = await loadIntroLessonContent(lessonId);
+  return extractLessonMission(content);
+}
+
+/** @deprecated Prefer loadLessonMission or useLessonMissionShape. */
+export function getLessonMission(
+  lessonId: string,
+): LessonMissionShape | null {
+  if (!hasIntroLessonContent(lessonId)) return null;
+  return null;
+}
+
+export function useLessonMissionShape(
+  lessonId: string,
+): LessonMissionShape | null | undefined {
+  const { data, isLoading } = useQuery({
+    queryKey: ["lesson-mission-shape", lessonId],
+    queryFn: () => loadLessonMission(lessonId),
+    staleTime: Infinity,
+  });
+  if (isLoading) return undefined;
+  return data ?? null;
+}
+
 export type MissionGateState =
   | { kind: "no-mission" }
   | { kind: "loading" }
@@ -63,10 +90,7 @@ export function useMissionGate(lessonId: string): MissionGateState {
   const { user } = useAuth();
   const { isAdmin } = useEntitlement();
   const qc = useQueryClient();
-  const missionShape = React.useMemo(
-    () => getLessonMission(lessonId),
-    [lessonId],
-  );
+  const missionShape = useLessonMissionShape(lessonId);
   const requiresMission = !!missionShape?.hasRubric && !isAdmin;
   const missionId = `${lessonId}::mission`;
 
@@ -102,6 +126,7 @@ export function useMissionGate(lessonId: string): MissionGateState {
     return () => window.removeEventListener(MISSION_PASSED_EVENT, handler);
   }, [requiresMission, missionId, qc, userId]);
 
+  if (missionShape === undefined) return { kind: "loading" };
   if (!requiresMission) return { kind: "no-mission" };
   if (!user) return { kind: "needs-mission", missionId };
   if (isLoading) return { kind: "loading" };

@@ -1,4 +1,7 @@
-import { INTRO_LESSON_CONTENT } from "@/components/intro/lessons";
+import {
+  INTRO_LESSON_CONTENT_KEYS,
+  hasIntroLessonContent,
+} from "@/components/intro/lessons/lesson-registry";
 import type { SupportedLocale } from "@/lib/locale/types";
 import type { LessonPackageLocale } from "./types";
 import arGulfManifest from "./ar-Gulf/manifest.json";
@@ -28,7 +31,7 @@ const PACKAGE_LESSON_ID_SETS: Record<LessonPackageLocale, ReadonlySet<string>> =
 };
 
 export const EGYPTIAN_LESSON_IDS: readonly string[] = Object.freeze(
-  Object.keys(INTRO_LESSON_CONTENT).sort(),
+  [...INTRO_LESSON_CONTENT_KEYS].sort(),
 );
 
 export function isPackageLocale(
@@ -46,7 +49,7 @@ export function getPackageLessonCount(locale: LessonPackageLocale): number {
 }
 
 export function isEgyptianLessonId(lessonId: string): boolean {
-  return Object.hasOwn(INTRO_LESSON_CONTENT, lessonId);
+  return hasIntroLessonContent(lessonId);
 }
 
 export function isLessonInLocalePackage(

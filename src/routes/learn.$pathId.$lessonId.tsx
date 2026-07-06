@@ -21,7 +21,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { useLessonProgress } from "@/lib/lesson-progress";
 import { IntroLessonRenderer } from "@/components/intro/IntroLessonRenderer";
-import { INTRO_LESSON_CONTENT } from "@/components/intro/lessons";
+import { loadIntroLessonContent } from "@/components/intro/lessons";
 import { getContinuityForLocale } from "@/lib/locale-curriculum/resolve-continuity";
 import { buildLocalizedLearnerMeta } from "@/lib/locale/build-learner-route-meta";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
@@ -32,7 +32,7 @@ import {
 } from "@/lib/curriculum-data";
 import { useEntitlement, useLessonGate, useStreak } from "@/lib/entitlements";
 import { PaywallCard, IntroGateCard } from "@/components/learn/PaywallCard";
-import { useMissionGate, getLessonMission } from "@/lib/mission-gate";
+import { useMissionGate, useLessonMissionShape } from "@/lib/mission-gate";
 import { Lock } from "lucide-react";
 import { logLearnerEvent } from "@/lib/learner-events";
 import { LessonNotes } from "@/components/learn/LessonNotes";
@@ -259,7 +259,25 @@ function UnifiedLessonPage() {
     effectiveAccess.contentSource === "locale-package-json" &&
     localizedPackage !== null;
   const showLocalePreview = isLocalizedPackagePage;
-  const content = showLocalePreview ? null : INTRO_LESSON_CONTENT[lesson.slug];
+  const [egyptianContent, setEgyptianContent] = useState<
+    Awaited<ReturnType<typeof loadIntroLessonContent>> | undefined
+  >(undefined);
+
+  useEffect(() => {
+    if (showLocalePreview) {
+      setEgyptianContent(null);
+      return;
+    }
+    let cancelled = false;
+    void loadIntroLessonContent(lesson.slug).then((loaded) => {
+      if (!cancelled) setEgyptianContent(loaded);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [lesson.slug, showLocalePreview]);
+
+  const content = showLocalePreview ? null : egyptianContent;
   const { getStatus, setStatus, isLoaded: isProgressLoaded } = useLessonProgress();
   const { recordActivity } = useStreak();
   const { isAdmin } = useEntitlement();
@@ -311,7 +329,7 @@ function UnifiedLessonPage() {
     }
   };
 
-  const missionShape = getLessonMission(lesson.slug);
+  const missionShape = useLessonMissionShape(lesson.slug);
   const missionGate = useMissionGate(lesson.slug);
   const nextLocked =
     missionGate.kind === "needs-mission" || missionGate.kind === "loading";
@@ -460,6 +478,10 @@ function UnifiedLessonPage() {
           <IntroGateCard done={gate.introDone} total={gate.introTotal} />
         ) : showLocalePreview && localizedPackage ? (
           <LocalePackagePreviewRenderer pkg={localizedPackage} />
+        ) : content === undefined ? (
+          <div className="rounded-2xl border border-border/40 bg-muted/20 p-8 text-center text-sm text-muted-foreground">
+            {t("learn.loading.access")}
+          </div>
         ) : content ? (
           <IntroLessonRenderer
             content={content}

@@ -3,7 +3,7 @@
  *
  * Goals:
  *  - Single deterministic source of truth: PATHS ∩ INTRO_LESSON_CONTENT.
- *  - Hard guarantee of exactly 100 learner lessons.
+ *  - Dynamic learner lesson count from PATHS ∩ intro lesson registry.
  *  - Excludes 4 archived Business slugs.
  *  - Dry-run by default — no OpenAI calls, no DB writes.
  *  - Real seed only when caller is admin AND confirmationText equals
@@ -16,20 +16,23 @@ import { createServerFn } from "@tanstack/react-start";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { z } from "zod";
 import { PATHS } from "@/lib/curriculum-data";
-import { INTRO_LESSON_CONTENT } from "@/components/intro/lessons";
+import { loadIntroLessonContentCached } from "@/components/intro/lessons";
+import type { IntroLessonContentKey } from "@/components/intro/lessons/lesson-registry";
 import type { IntroLessonContent } from "@/components/intro/intro-lesson-types";
 import {
   ARCHIVED_LESSON_ID_SET,
   ARCHIVED_LESSON_IDS,
   isArchivedLessonId,
 } from "@/lib/archived-lessons";
+import { getExpectedLearnerLessonCount } from "@/lib/shipped-lessons";
 
 /* -------------------------------------------------------------- */
 /* Constants                                                       */
 /* -------------------------------------------------------------- */
 
 export const SEED_CONFIRMATION_TEXT = "SEED_100_LEARNER_LESSONS";
-export const EXPECTED_LESSON_COUNT = 100;
+/** @deprecated Use getExpectedLearnerLessonCount() — kept for seed confirmation text parity. */
+export const EXPECTED_LESSON_COUNT = getExpectedLearnerLessonCount();
 export const MAX_EMBEDDING_REQUESTS = 150;
 export const EMBEDDING_BATCH_SIZE = 64;
 export const CHUNK_MAX_CHARS = 1500;
@@ -233,12 +236,13 @@ interface PlannedChunk {
   content: string;
 }
 
-function buildPlan(): {
+async function buildPlan(): Promise<{
   lessons: PlannedLesson[];
   chunks: PlannedChunk[];
   missing: string[];
   archivedFound: string[];
-} {
+}> {
+  const expectedCount = getExpectedLearnerLessonCount();
   const lessons: PlannedLesson[] = [];
   const chunks: PlannedChunk[] = [];
   const missing: string[] = [];
@@ -254,11 +258,8 @@ function buildPlan(): {
           archivedFound.push(id);
           continue;
         }
-        const blocks = INTRO_LESSON_CONTENT[id];
+        const blocks = await loadIntroLessonContentCached(id);
         if (!blocks) {
-          // Only count as "missing" if the curriculum considers it shipped.
-          // Since the unified-lessons adapter skips lessons without blocks,
-          // we mirror that behaviour: skip silently here too.
           continue;
         }
         seen.add(id);
@@ -290,13 +291,18 @@ function buildPlan(): {
     }
   }
 
+  if (lessons.length !== expectedCount) {
+    // surfaced in summarize warnings
+  }
+
   return { lessons, chunks, missing, archivedFound };
 }
 
 function summarize(
-  plan: ReturnType<typeof buildPlan>,
+  plan: Awaited<ReturnType<typeof buildPlan>>,
   opts: { dryRun: boolean; executed: boolean },
 ): SeedReport {
+  const expectedCount = getExpectedLearnerLessonCount();
   const totalChunks = plan.chunks.length;
   const totalChars = plan.lessons.reduce((s, l) => s + l.totalChars, 0);
   const estimatedBatches = Math.ceil(totalChunks / EMBEDDING_BATCH_SIZE);
@@ -306,9 +312,9 @@ function summarize(
     .map((l) => l.lessonId)
     .filter((id) => isArchivedLessonId(id));
 
-  if (plan.lessons.length !== EXPECTED_LESSON_COUNT) {
+  if (plan.lessons.length !== expectedCount) {
     warnings.push(
-      `Planned lesson count = ${plan.lessons.length}, expected ${EXPECTED_LESSON_COUNT}`,
+      `Planned lesson count = ${plan.lessons.length}, expected ${expectedCount}`,
     );
   }
   if (archivedIncluded.length > 0) {
@@ -324,7 +330,7 @@ function summarize(
   }
 
   const ok =
-    plan.lessons.length === EXPECTED_LESSON_COUNT &&
+    plan.lessons.length === expectedCount &&
     archivedIncluded.length === 0 &&
     plan.missing.length === 0 &&
     estimatedBatches <= MAX_EMBEDDING_REQUESTS;
@@ -333,7 +339,7 @@ function summarize(
     dryRun: opts.dryRun,
     executed: opts.executed,
     plannedLessonCount: plan.lessons.length,
-    expectedLessonCount: EXPECTED_LESSON_COUNT,
+    expectedLessonCount: expectedCount,
     archivedExcluded: [...ARCHIVED_LESSON_IDS],
     missingContent: plan.missing,
     archivedFoundInPlan: archivedIncluded,
@@ -355,7 +361,7 @@ export const previewAssistantSeed = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .handler(async ({ context }): Promise<SeedReport> => {
     await assertAdmin(context);
-    const plan = buildPlan();
+    const plan = await buildPlan();
     return summarize(plan, { dryRun: true, executed: false });
   });
 
@@ -374,7 +380,7 @@ export const runAssistantSeed = createServerFn({ method: "POST" })
   .handler(async ({ context, data }): Promise<SeedReport> => {
     await assertAdmin(context);
 
-    const plan = buildPlan();
+    const plan = await buildPlan();
     const summary = summarize(plan, { dryRun: data.dryRun, executed: false });
 
     // Default path = dry-run. No OpenAI, no writes.
