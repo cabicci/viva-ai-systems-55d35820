@@ -2,11 +2,20 @@ import { useEffect, useRef, useState } from "react";
 import { Loader2, NotebookPen, Check, AlertCircle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
+import { useLocale } from "@/lib/locale/locale-context";
+import { getUiString } from "@/lib/locale/ui-strings";
 
 type SaveState = "idle" | "saving" | "saved" | "error";
 
 const MAX_LEN = 5000;
 const AUTOSAVE_MS = 1200;
+
+function interpolate(template: string, values: Record<string, string>): string {
+  return Object.entries(values).reduce(
+    (text, [key, value]) => text.replaceAll(`{${key}}`, value),
+    template,
+  );
+}
 
 interface LessonNotesProps {
   lessonId: string;
@@ -17,6 +26,7 @@ interface LessonNotesProps {
  * Uses RLS-protected `lesson_notes` table via the browser Supabase client.
  */
 export function LessonNotes({ lessonId }: LessonNotesProps) {
+  const { locale, dir } = useLocale();
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(true);
   const [auth, setAuth] = useState<string | null>(null);
@@ -25,7 +35,6 @@ export function LessonNotes({ lessonId }: LessonNotesProps) {
   const initial = useRef("");
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Load existing note + auth user.
   useEffect(() => {
     let cancelled = false;
     (async () => {
@@ -55,7 +64,6 @@ export function LessonNotes({ lessonId }: LessonNotesProps) {
     };
   }, [lessonId]);
 
-  // Debounced autosave.
   useEffect(() => {
     if (loading || !auth) return;
     if (content === initial.current) return;
@@ -89,7 +97,8 @@ export function LessonNotes({ lessonId }: LessonNotesProps) {
   return (
     <section
       className="mt-8 rounded-2xl border border-border/60 bg-muted/10 p-4 sm:p-5"
-      aria-label="ملاحظاتي على الدرس"
+      aria-label={getUiString(locale, "learn.notes.ariaLabel")}
+      dir={dir}
     >
       <header className="flex items-center justify-between gap-3 mb-3">
         <button
@@ -99,10 +108,12 @@ export function LessonNotes({ lessonId }: LessonNotesProps) {
           aria-expanded={open}
         >
           <NotebookPen className="h-4 w-4 text-primary" />
-          ملاحظاتي
+          {getUiString(locale, "learn.notes.title")}
           {content.trim().length > 0 && !open && (
             <span className="text-[11px] font-mono text-muted-foreground">
-              ({content.trim().length} حرف)
+              {interpolate(getUiString(locale, "learn.notes.charCount"), {
+                count: String(content.trim().length),
+              })}
             </span>
           )}
         </button>
@@ -115,13 +126,13 @@ export function LessonNotes({ lessonId }: LessonNotesProps) {
             value={content}
             onChange={(e) => setContent(e.target.value.slice(0, MAX_LEN))}
             disabled={loading}
-            placeholder="اكتب أي حاجة عايز تفتكرها من الدرس ده — ملاحظاتك بتتحفظ تلقائياً وبتفضل خاصة بيك."
+            placeholder={getUiString(locale, "learn.notes.placeholder")}
             className="w-full min-h-[140px] rounded-xl bg-background/60 border border-border/60 px-3 py-2.5 text-[14px] leading-[1.9] text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-primary/40 resize-y font-sans"
-            dir="rtl"
+            dir={dir}
           />
           <div className="mt-2 flex items-center justify-between text-[11px] font-mono text-muted-foreground">
             <span>{content.length}/{MAX_LEN}</span>
-            <span>بتتحفظ تلقائي · خاصة بيك بس</span>
+            <span>{getUiString(locale, "learn.notes.footerPrivate")}</span>
           </div>
         </>
       )}
@@ -133,7 +144,7 @@ export function LessonNotes({ lessonId }: LessonNotesProps) {
           onClick={() => setOpen(true)}
           className="text-xs text-muted-foreground hover:text-foreground"
         >
-          أضف ملاحظة
+          {getUiString(locale, "learn.notes.addButton")}
         </Button>
       )}
     </section>
@@ -141,32 +152,34 @@ export function LessonNotes({ lessonId }: LessonNotesProps) {
 }
 
 function SaveBadge({ state, loading }: { state: SaveState; loading: boolean }) {
+  const { locale } = useLocale();
+
   if (loading)
     return (
       <span className="inline-flex items-center gap-1 text-[11px] font-mono text-muted-foreground">
         <Loader2 className="h-3 w-3 animate-spin" />
-        تحميل
+        {getUiString(locale, "learn.notes.loading")}
       </span>
     );
   if (state === "saving")
     return (
       <span className="inline-flex items-center gap-1 text-[11px] font-mono text-muted-foreground">
         <Loader2 className="h-3 w-3 animate-spin" />
-        بيتحفظ…
+        {getUiString(locale, "learn.notes.saving")}
       </span>
     );
   if (state === "saved")
     return (
       <span className="inline-flex items-center gap-1 text-[11px] font-mono text-primary">
         <Check className="h-3 w-3" />
-        اتحفظ
+        {getUiString(locale, "learn.notes.saved")}
       </span>
     );
   if (state === "error")
     return (
       <span className="inline-flex items-center gap-1 text-[11px] font-mono text-destructive">
         <AlertCircle className="h-3 w-3" />
-        فشل الحفظ
+        {getUiString(locale, "learn.notes.error")}
       </span>
     );
   return null;

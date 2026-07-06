@@ -6,8 +6,10 @@ import type { IntroBlock, IntroLessonContent } from "./intro-lesson-types";
 import { LESSON_DIAGRAMS } from "./diagrams/LessonDiagrams";
 import { QuizBlock } from "./QuizBlock";
 import { getBunnyEmbedUrl } from "@/lib/bunny-videos";
-import { getValueHook } from "./value-hooks";
+import { getValueHookForLocale } from "./value-hooks";
 import { resolveLearnerLessonIcon } from "./resolve-learner-lesson-icon";
+import { useLocale } from "@/lib/locale/locale-context";
+import { getUiString } from "@/lib/locale/ui-strings";
 
 function lessonVideoHasSource(
   block: Extract<IntroBlock, { kind: "lessonVideo" }>,
@@ -17,13 +19,14 @@ function lessonVideoHasSource(
 }
 
 function VideoSkipNotice() {
+  const { locale, dir } = useLocale();
   return (
-    <div className="text-center py-1 space-y-1.5" dir="rtl">
+    <div className="text-center py-1 space-y-1.5" dir={dir}>
       <span className="inline-flex items-center gap-1 rounded-full border border-accent/20 bg-accent/[0.06] px-2.5 py-1 text-[11px] text-muted-foreground">
-        🎬 فيديو اختياري
+        {getUiString(locale, "intro.video.optionalBadge")}
       </span>
       <p className="text-xs text-muted-foreground/90 leading-relaxed px-2">
-        لو معندكش وقت، كمّل قراية — الدرس مكتفي لوحده
+        {getUiString(locale, "intro.video.skipBody")}
       </p>
     </div>
   );
@@ -98,22 +101,23 @@ export function IntroLessonRenderer({
   lessonId?: string;
   lessonTitle?: string;
 }) {
-  const hook = getValueHook(lessonId);
+  const { locale, dir } = useLocale();
+  const hook = getValueHookForLocale(lessonId, locale);
   const hasMission = content.some((s) => s.block.kind === "mission");
   return (
     <article className="space-y-4 md:space-y-7">
       {hook && (
         <aside
-          dir="rtl"
+          dir={dir}
           className="rounded-2xl border border-accent/30 bg-gradient-to-l from-accent/[0.08] to-primary/[0.05] px-4 sm:px-5 py-4 flex items-start gap-3 shadow-[0_8px_30px_-14px_hsl(var(--accent)/0.25)]"
-          aria-label="القيمة من الدرس ده"
+          aria-label={getUiString(locale, "intro.valueHook.ariaLabel")}
         >
           <span className="grid h-8 w-8 place-items-center rounded-full bg-accent/15 border border-accent/30 text-accent shrink-0 mt-0.5">
             <Target className="h-4 w-4" />
           </span>
           <div className="space-y-1">
             <p className="text-[10px] font-mono tracking-widest text-accent">
-              ليه تكمّل · القيمة
+              {getUiString(locale, "intro.valueHook.label")}
             </p>
             <p className="text-[15px] leading-[1.7] font-semibold text-foreground">
               {hook}
@@ -127,7 +131,7 @@ export function IntroLessonRenderer({
             href="#mission"
             className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/[0.08] px-4 py-2.5 text-xs font-medium text-primary/90 hover:bg-primary/[0.12] hover:text-primary transition min-h-[44px]"
           >
-            روح للمهمة ↓
+            {getUiString(locale, "intro.mission.jumpCta")}
           </a>
         </div>
       )}
@@ -157,6 +161,8 @@ export function IntroLessonRenderer({
 }
 
 function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lessonId?: string; lessonTitle?: string }) {
+  const { locale } = useLocale();
+
   switch (block.kind) {
     case "paragraphs":
       return (
@@ -327,7 +333,9 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
           )}
           {block.expectedResult && (
             <p className="text-sm text-muted-foreground border-t border-accent/15 pt-3">
-              <span className="text-foreground font-semibold">النتيجة المتوقعة: </span>
+              <span className="text-foreground font-semibold">
+                {getUiString(locale, "intro.block.expectedResultLabel")}
+              </span>
               {block.expectedResult}
             </p>
           )}
@@ -340,7 +348,7 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
       return (
         <div className="rounded-xl border border-border bg-foreground/5 p-4 space-y-1">
           <p className="text-[11px] font-mono text-muted-foreground flex items-center gap-1.5">
-            <Wrench className="h-3.5 w-3.5" /> TOOL
+            <Wrench className="h-3.5 w-3.5" /> {getUiString(locale, "intro.block.toolLabel")}
           </p>
           {block.name && <p className="font-semibold">{block.name}</p>}
           {block.description && <p>{block.description}</p>}
@@ -363,7 +371,8 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
       return (
         <div className="rounded-xl border border-accent-warning/40 bg-accent-warning/20 p-4 space-y-1">
           <p className="text-[11px] font-mono text-accent-warning-foreground flex items-center gap-1.5">
-            <AlertTriangle className="h-3.5 w-3.5" /> {block.title ?? "تنبيه"}
+            <AlertTriangle className="h-3.5 w-3.5" />{" "}
+            {block.title ?? getUiString(locale, "intro.block.warningDefault")}
           </p>
           {block.body && <p>{block.body}</p>}
         </div>
@@ -371,7 +380,7 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
     }
 
     case "screenshot": {
-      const label = block.label ?? "جوّه المنصة";
+      const label = block.label ?? getUiString(locale, "intro.block.screenshotLabel");
       if (!block.src) {
         return (
           <div className="rounded-2xl border border-primary/25 ring-1 ring-primary/5 bg-card overflow-hidden shadow-[0_8px_30px_-12px_hsl(var(--primary)/0.2)]">
@@ -384,9 +393,11 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
                 <ImageIcon className="h-5 w-5 text-primary" />
               </div>
               <p className="text-sm text-foreground">
-                {block.caption ?? "سكرين شوت من المنصة هيتضاف قريب."}
+                {block.caption ?? getUiString(locale, "intro.block.screenshotPlaceholder")}
               </p>
-              <p className="text-[10px] font-mono text-primary/80">COMING SOON</p>
+              <p className="text-[10px] font-mono text-primary/80">
+                {getUiString(locale, "intro.block.comingSoon")}
+              </p>
             </div>
           </div>
         );
@@ -400,7 +411,7 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
             </div>
             <img
               src={block.src}
-              alt={block.alt ?? block.caption ?? "Platform screenshot"}
+              alt={block.alt ?? block.caption ?? getUiString(locale, "intro.block.screenshotAlt")}
               className="w-full h-auto block"
               loading="lazy"
             />
@@ -419,7 +430,7 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
       return (
         <div className="rounded-2xl border border-primary/20 bg-primary/[0.04] p-4 sm:p-5 space-y-3">
           <p className="text-[11px] font-mono text-primary flex items-center gap-1.5">
-            <BookOpen className="h-3.5 w-3.5" /> مصطلحات الدرس
+            <BookOpen className="h-3.5 w-3.5" /> {getUiString(locale, "intro.block.conceptsHeader")}
           </p>
           <ul className="space-y-3">
             {block.items.map((it, i) => (
@@ -444,7 +455,7 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
     case "diagram": {
       const Diagram = LESSON_DIAGRAMS[block.id];
       if (!Diagram) return null;
-      const label = block.label ?? "DIAGRAM";
+      const label = block.label ?? getUiString(locale, "intro.block.diagramLabel");
       return (
         <figure className="space-y-2">
           <div className="overflow-hidden rounded-2xl border border-primary/20 bg-card">
@@ -475,7 +486,7 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
         <div className="rounded-2xl border border-accent/30 border-r-4 bg-accent/[0.05] p-4 sm:p-5 space-y-3 shadow-[0_8px_30px_-14px_hsl(var(--accent)/0.25)]">
           <div className="flex items-center justify-between gap-2 flex-wrap">
             <p className="text-[11px] font-mono text-accent flex items-center gap-1.5">
-              <BookOpen className="h-3.5 w-3.5" /> جزء من المنصة · Case Study
+              <BookOpen className="h-3.5 w-3.5" /> {getUiString(locale, "intro.block.caseStudyHeader")}
             </p>
             {block.pathAngle && (
               <span className="text-[10px] font-mono rounded-md border border-accent/30 bg-accent/10 px-1.5 py-0.5 text-accent">

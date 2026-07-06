@@ -2,8 +2,17 @@ import { useEffect, useState } from "react";
 import { Frown, Meh, Smile, X } from "lucide-react";
 import { logLearnerEvent } from "@/lib/learner-events";
 import { Button } from "@/components/ui/button";
+import { useLocale } from "@/lib/locale/locale-context";
+import { getUiString } from "@/lib/locale/ui-strings";
 
 type Rating = "hard" | "ok" | "easy";
+
+function interpolate(template: string, values: Record<string, string>): string {
+  return Object.entries(values).reduce(
+    (text, [key, value]) => text.replaceAll(`{${key}}`, value),
+    template,
+  );
+}
 
 interface Props {
   lessonId: string;
@@ -18,8 +27,7 @@ interface Props {
 }
 
 /**
- * Dynamic Difficulty Sensor — يظهر بعد كل ٣ دروس مكتملة.
- * هدفه يقيس وضوح الشرح ويفتح للمستخدم خيار يبسّط أو يقفز.
+ * Dynamic Difficulty Sensor — appears after every 3 completed lessons.
  */
 export function DifficultyPrompt({
   lessonId,
@@ -29,8 +37,10 @@ export function DifficultyPrompt({
   isCompleted,
   nextLessonHref,
 }: Props) {
+  const { locale, dir } = useLocale();
   const storageKey = `lovable.difficulty.${lessonId}`;
   const [answered, setAnswered] = useState<Rating | "dismissed" | null>(null);
+  const countLabel = String(completedCount);
 
   useEffect(() => {
     try {
@@ -73,22 +83,26 @@ export function DifficultyPrompt({
 
   return (
     <section
-      dir="rtl"
+      dir={dir}
       className="mt-8 rounded-2xl border border-primary/30 bg-primary/[0.06] p-5 relative"
     >
       <button
         type="button"
         onClick={dismiss}
-        aria-label="إغلاق"
+        aria-label={getUiString(locale, "learn.difficulty.close")}
         className="absolute top-3 left-3 text-muted-foreground hover:text-foreground transition"
       >
         <X className="h-4 w-4" />
       </button>
       <p className="text-[11px] font-mono text-primary mb-1">
-        Checkpoint · بعد ٣ دروس
+        {interpolate(getUiString(locale, "learn.difficulty.checkpointLabel"), {
+          count: countLabel,
+        })}
       </p>
       <p className="text-sm font-semibold mb-3">
-        ٣ دروس خلصوا — الشرح كان عامل إزاي معاك؟
+        {interpolate(getUiString(locale, "learn.difficulty.question"), {
+          count: countLabel,
+        })}
       </p>
       <div className="flex flex-wrap gap-2">
         <Button
@@ -97,7 +111,7 @@ export function DifficultyPrompt({
           onClick={() => pick("hard")}
           className="border-rose-400/40 hover:bg-rose-400/10"
         >
-          <Frown className="h-4 w-4" /> صعب
+          <Frown className="h-4 w-4" /> {getUiString(locale, "learn.difficulty.hard")}
         </Button>
         <Button
           variant="glass"
@@ -105,7 +119,7 @@ export function DifficultyPrompt({
           onClick={() => pick("ok")}
           className="border-amber-400/40 hover:bg-amber-400/10"
         >
-          <Meh className="h-4 w-4" /> مناسب
+          <Meh className="h-4 w-4" /> {getUiString(locale, "learn.difficulty.ok")}
         </Button>
         <Button
           variant="glass"
@@ -113,31 +127,30 @@ export function DifficultyPrompt({
           onClick={() => pick("easy")}
           className="border-emerald-400/40 hover:bg-emerald-400/10"
         >
-          <Smile className="h-4 w-4" /> سهل
+          <Smile className="h-4 w-4" /> {getUiString(locale, "learn.difficulty.easy")}
         </Button>
       </div>
 
       {answered === "hard" && (
         <div className="mt-4 rounded-xl border border-rose-400/30 bg-rose-400/[0.06] p-3 text-[13px] leading-relaxed">
           <p className="font-semibold text-rose-300 mb-1">
-            تمام، هنبسّطها معاك
+            {getUiString(locale, "learn.difficulty.hardTitle")}
           </p>
           <p className="text-foreground/80">
-            ارجع لأي مفهوم مش واضح واسأل عنه في الـ chat، أو راجع الملخّص فوق
-            تاني. لو لسه صعب — قول لينا في الـ feedback.
+            {getUiString(locale, "learn.difficulty.hardBody")}
           </p>
         </div>
       )}
       {answered === "easy" && nextLessonHref && (
         <div className="mt-4 rounded-xl border border-emerald-400/30 bg-emerald-400/[0.06] p-3 text-[13px]">
           <p className="font-semibold text-emerald-300 mb-1">
-            ممتاز — تقدر تقفز للتحدّي
+            {getUiString(locale, "learn.difficulty.easyTitle")}
           </p>
           <a
             href={nextLessonHref}
             className="underline underline-offset-4 text-emerald-200 hover:text-emerald-100"
           >
-            افتح الدرس الجاي مباشرة ←
+            {getUiString(locale, "learn.difficulty.easyCta")}
           </a>
         </div>
       )}

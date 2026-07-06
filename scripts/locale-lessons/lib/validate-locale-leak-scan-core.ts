@@ -40,14 +40,38 @@ const SCREENSHOT_BANNED_EN = [
   "Screenshot placeholder in localized preview.",
 ] as const;
 
+const INTRO_RENDERER_BANNED_AR = [
+  "فيديو اختياري",
+  "ليه تكمّل · القيمة",
+  "روح للمهمة",
+  "النتيجة المتوقعة: ",
+  "مصطلحات الدرس",
+] as const;
+
+const QUIZ_BLOCK_BANNED_AR = [
+  "سؤال سريع — مش امتحان",
+  "فكّرت — ورّيني الخيارات",
+  "إجابة صحيحة ✓",
+  "جرّب تاني",
+] as const;
+
+const LESSON_NOTES_BANNED_AR = [
+  "ملاحظاتي على الدرس",
+  "ملاحظاتي",
+  "أضف ملاحظة",
+] as const;
+
+const DIFFICULTY_BANNED_AR = [
+  "Checkpoint · بعد ٣ دروس",
+  "٣ دروس خلصوا",
+  "تمام، هنبسّطها معاك",
+] as const;
+
 /** ar-EG-only sources — Arabic allowed; scanned for reporting only. */
 const AR_EG_ONLY_ALLOWLIST = [
   "src/components/intro/lesson-continuity.ts",
-  "src/components/intro/IntroLessonRenderer.tsx",
-  "src/components/intro/QuizBlock.tsx",
   "src/components/intro/IntroMission.tsx",
-  "src/components/learn/LessonNotes.tsx",
-  "src/components/learn/DifficultyPrompt.tsx",
+  "src/components/intro/value-hooks.ts",
   "src/components/intro/lessons",
 ] as const;
 
@@ -161,6 +185,53 @@ export function validateLocaleLeakScan(): ValidatorResult {
 
   if (!learnSource.includes("LearnLessonError")) {
     errors.push("learn route must use LearnLessonError for locale-aware errorComponent");
+  }
+
+  const introRendererSource = readRepoFile("src/components/intro/IntroLessonRenderer.tsx");
+  if (!introRendererSource.includes("getUiString")) {
+    errors.push("IntroLessonRenderer.tsx must wire chrome through getUiString()");
+  }
+  if (introRendererSource.includes("getValueHook(")) {
+    errors.push("IntroLessonRenderer.tsx must use getValueHookForLocale (ar-EG-only hooks)");
+  }
+  if (!introRendererSource.includes("getValueHookForLocale")) {
+    errors.push("IntroLessonRenderer.tsx must use getValueHookForLocale for value hooks");
+  }
+  if (introRendererSource.includes('dir="rtl"')) {
+    errors.push("IntroLessonRenderer.tsx must not use fixed dir=\"rtl\"");
+  }
+  for (const hit of containsAny(introRendererSource, INTRO_RENDERER_BANNED_AR)) {
+    errors.push(`IntroLessonRenderer.tsx contains banned hardcoded Arabic: "${hit}"`);
+  }
+
+  const quizBlockSource = readRepoFile("src/components/intro/QuizBlock.tsx");
+  if (!quizBlockSource.includes("getUiString")) {
+    errors.push("QuizBlock.tsx must wire chrome through getUiString()");
+  }
+  for (const hit of containsAny(quizBlockSource, QUIZ_BLOCK_BANNED_AR)) {
+    errors.push(`QuizBlock.tsx contains banned hardcoded Arabic: "${hit}"`);
+  }
+
+  const lessonNotesSource = readRepoFile("src/components/learn/LessonNotes.tsx");
+  if (!lessonNotesSource.includes("getUiString")) {
+    errors.push("LessonNotes.tsx must wire chrome through getUiString()");
+  }
+  if (lessonNotesSource.includes('dir="rtl"')) {
+    errors.push("LessonNotes.tsx must not use fixed dir=\"rtl\"");
+  }
+  for (const hit of containsAny(lessonNotesSource, LESSON_NOTES_BANNED_AR)) {
+    errors.push(`LessonNotes.tsx contains banned hardcoded Arabic: "${hit}"`);
+  }
+
+  const difficultySource = readRepoFile("src/components/learn/DifficultyPrompt.tsx");
+  if (!difficultySource.includes("getUiString")) {
+    errors.push("DifficultyPrompt.tsx must wire chrome through getUiString()");
+  }
+  if (difficultySource.includes('dir="rtl"')) {
+    errors.push("DifficultyPrompt.tsx must not use fixed dir=\"rtl\"");
+  }
+  for (const hit of containsAny(difficultySource, DIFFICULTY_BANNED_AR)) {
+    errors.push(`DifficultyPrompt.tsx contains banned hardcoded Arabic: "${hit}"`);
   }
 
   for (const rel of AR_EG_ONLY_ALLOWLIST) {

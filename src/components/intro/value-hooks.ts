@@ -78,3 +78,12 @@ export function getValueHook(lessonId: string | undefined): string | undefined {
   if (m) return VALUE_HOOKS[`${m[1]}-m${m[2]}`];
   return undefined;
 }
+
+/** Value-hook body copy is ar-EG canonical lesson content — suppress for other locales. */
+export function getValueHookForLocale(
+  lessonId: string | undefined,
+  locale: string,
+): string | undefined {
+  if (locale !== "ar-EG") return undefined;
+  return getValueHook(lessonId);
+}
