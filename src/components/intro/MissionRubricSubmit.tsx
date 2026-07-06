@@ -30,6 +30,8 @@ import {
 import { useAuth } from "@/lib/auth-context";
 import { emitMissionPassed } from "@/lib/mission-gate";
 import { logLearnerEvent } from "@/lib/learner-events";
+import { useLocale } from "@/lib/locale/locale-context";
+import { getUiString, type UiStringKey } from "@/lib/locale/ui-strings";
 
 export type MissionRubric = readonly {
   label: string;
@@ -37,17 +39,24 @@ export type MissionRubric = readonly {
   criteria: readonly string[];
 }[];
 
-type FeedbackState = {
-  label: string;
-  hint: string;
+type FeedbackStateKeys = {
+  labelKey: UiStringKey;
+  hintKey: UiStringKey;
 };
 
+function interpolate(template: string, values: Record<string, string>): string {
+  return Object.entries(values).reduce(
+    (text, [key, value]) => text.replaceAll(`{${key}}`, value),
+    template,
+  );
+}
+
 /** Learner-facing friendly state — internal score/pass logic unchanged. */
-function getFeedbackState(result: AIEvaluationResult): FeedbackState {
+function getFeedbackState(result: AIEvaluationResult): FeedbackStateKeys {
   if (result.passed) {
     return {
-      label: "واضح",
-      hint: "واضح إنك فهمت الفكرة الأساسية. تقدر تكمل، ولو حبيت تطوّر إجابتك بعدين ارجع لها.",
+      labelKey: "mission.feedback.passed.label",
+      hintKey: "mission.feedback.passed.hint",
     };
   }
   const scores =
@@ -57,13 +66,13 @@ function getFeedbackState(result: AIEvaluationResult): FeedbackState {
   const weakest = Math.min(...scores);
   if (weakest < 40) {
     return {
-      label: "محتاج توضيح بسيط",
-      hint: "إجابتك ماشية في الاتجاه الصح، بس محتاجة توضيح بسيط.",
+      labelKey: "mission.feedback.weak.label",
+      hintKey: "mission.feedback.weak.hint",
     };
   }
   return {
-    label: "جرّب تضيف النقطة دي",
-    hint: "جرّب تضيف مثال أو خطوة عملية واحدة عشان إجابتك تبقى أقوى.",
+    labelKey: "mission.feedback.improve.label",
+    hintKey: "mission.feedback.improve.hint",
   };
 }
 
@@ -71,11 +80,11 @@ function getFeedbackState(result: AIEvaluationResult): FeedbackState {
  * Build a fill-in-the-blank scaffold from a mission prompt that contains
  * numbered sections (Arabic ٠-٩ or ASCII 0-9 followed by `)`, `.`, or `-`
  * and ending with `:`). Each section becomes a labelled block with a
- * "[اكتب هنا]" placeholder so the learner can edit instead of writing
+ * localized placeholder so the learner can edit instead of writing
  * from scratch. Returns empty string when no numbered sections are detected.
  */
-export function buildMissionTemplate(prompt: string): string {
-  if (!prompt) return "";
+export function buildMissionTemplate(prompt: string, writeHere: string): string {
+  if (!prompt || !writeHere) return "";
   const lines = prompt.split(/\r?\n/);
   const sectionRegex = /^\s*([٠-٩\d]+)\s*[\)\.\-]\s*(.+?)\s*:\s*$/;
   const sections: string[] = [];
@@ -84,7 +93,7 @@ export function buildMissionTemplate(prompt: string): string {
     if (m) {
       const num = m[1];
       const label = m[2].trim();
-      sections.push(`${num}) ${label}:\n   [اكتب هنا]`);
+      sections.push(`${num}) ${label}:\n   ${writeHere}`);
     }
   }
   if (sections.length < 2) return "";
@@ -106,11 +115,11 @@ export function MissionRubricSection({
   missionPrompt: string;
   template?: string;
 }) {
+  const { locale, dir } = useLocale();
   const [open, setOpen] = React.useState(false);
   const [text, setText] = React.useState("");
   const [submitting, setSubmitting] = React.useState(false);
   const [result, setResult] = React.useState<AIEvaluationResult | null>(null);
-  // Server-backed attempt_count on the reused submission row.
   const [attemptCount, setAttemptCount] = React.useState(0);
   const [lastSubmissionId, setLastSubmissionId] = React.useState<string | null>(null);
   const [reveal, setReveal] = React.useState<RevealAnswerResult | null>(null);
@@ -122,7 +131,8 @@ export function MissionRubricSection({
   const [skipped, setSkipped] = React.useState(false);
   const [skipping, setSkipping] = React.useState(false);
 
-  // Hydrate attempt_count, reveal state, and draft text from the server.
+  const writeHereLabel = getUiString(locale, "mission.template.writeHere");
+
   React.useEffect(() => {
     let cancelled = false;
     if (!user) return;
@@ -130,7 +140,6 @@ export function MissionRubricSection({
       .then((sub) => {
         if (cancelled || !sub) return;
         if (sub.status === "passed") {
-          // Already passed (incl. skipped / legacy revealed) — gate handles unlock.
           return;
         }
         setAttemptCount(Number(sub.attempt_count ?? 0));
@@ -142,7 +151,7 @@ export function MissionRubricSection({
           setReveal({
             modelAnswer: String(meta.modelAnswer),
             note: String(
-              meta.note ?? "ده نموذج للتعلّم — قارنه بمحاولتك.",
+              meta.note ?? getUiString(locale, "mission.reveal.defaultNote"),
             ),
           });
         }
@@ -153,14 +162,12 @@ export function MissionRubricSection({
     return () => {
       cancelled = true;
     };
-  }, [user, missionId, lessonId]);
+  }, [user, missionId, lessonId, locale]);
 
   async function skipMission() {
     if (skipping) return;
     setSkipping(true);
     try {
-      // Persist the skip server-side BEFORE invalidating the cache —
-      // otherwise the refetch races and re-locks the gate.
       await skipServer({ data: { missionId, lessonId } });
       emitMissionPassed(missionId);
       setSkipped(true);
@@ -172,34 +179,38 @@ export function MissionRubricSection({
         missionId,
         metadata: { failed_attempts: attemptCount },
       });
-      toast.success("كمّل براحتك — ترجع للمهمة وقت ما تحب.");
+      toast.success(getUiString(locale, "mission.skip.successToast"));
     } catch (e) {
-      toast.error(e instanceof Error ? e.message : "تعذّر المتابعة دلوقتي. حاول تاني.");
+      toast.error(
+        e instanceof Error ? e.message : getUiString(locale, "mission.skip.errorToast"),
+      );
     } finally {
       setSkipping(false);
     }
   }
 
   const templateText = React.useMemo(
-    () => (template?.trim() ? template : buildMissionTemplate(missionPrompt)),
-    [template, missionPrompt],
+    () =>
+      template?.trim()
+        ? template
+        : buildMissionTemplate(missionPrompt, writeHereLabel),
+    [template, missionPrompt, writeHereLabel],
   );
 
   function loadTemplate() {
     if (!templateText) return;
     setText(templateText);
-    toast.success("اتعبّى التيمبليت — عدّل النقاط بكلامك");
+    toast.success(getUiString(locale, "mission.template.loadedToast"));
   }
 
   async function submit() {
     if (!user) return;
     if (text.trim().length < 20) {
-      toast.error("التسليم قصير أوي. اكتب على الأقل ٢٠ حرف.");
+      toast.error(getUiString(locale, "mission.submit.tooShort"));
       return;
     }
     setSubmitting(true);
     try {
-      // 1) Reuse open row or create draft; 2) mark submitted + increment attempt_count.
       const submission = await prepareSubmissionForAttempt({
         missionId,
         lessonId,
@@ -222,7 +233,6 @@ export function MissionRubricSection({
           attempt_count: submitted.attempt_count,
         },
       });
-      // 3) AI evaluator persists score/feedback/status server-side.
       const r = await evaluate({
         data: {
           submissionId: submission.id,
@@ -241,15 +251,17 @@ export function MissionRubricSection({
       const state = getFeedbackState(r);
       toast.success(
         r.passed
-          ? "تمام — واضح إنك فهمت الفكرة الأساسية."
-          : `${state.label} — شوف الـ Feedback تحت.`,
+          ? getUiString(locale, "mission.submit.passedToast")
+          : interpolate(getUiString(locale, "mission.submit.feedbackToast"), {
+              label: getUiString(locale, state.labelKey),
+            }),
       );
       if (r.passed) {
         emitMissionPassed(missionId);
       }
     } catch (err) {
       toast.error(
-        err instanceof Error ? err.message : "تعذّر الحصول على Feedback. حاول تاني.",
+        err instanceof Error ? err.message : getUiString(locale, "mission.submit.errorToast"),
       );
     } finally {
       setSubmitting(false);
@@ -270,10 +282,10 @@ export function MissionRubricSection({
       });
       setReveal(r);
       setResult(null);
-      toast.success("اقرأ المثال، ثم حسّن إجابتك بكلامك وابعتها تاني.");
+      toast.success(getUiString(locale, "mission.reveal.toastSuccess"));
     } catch (err) {
       toast.error(
-        err instanceof Error ? err.message : "تعذّر توليد المثال. حاول تاني.",
+        err instanceof Error ? err.message : getUiString(locale, "mission.reveal.toastError"),
       );
     } finally {
       setRevealing(false);
@@ -292,7 +304,6 @@ export function MissionRubricSection({
 
   return (
     <div className="space-y-3 pt-3 border-t border-primary/15">
-      {/* Simple checklist hints — no weights */}
       {checklistHints.length > 0 && (
         <>
           <button
@@ -301,7 +312,8 @@ export function MissionRubricSection({
             className="flex items-center justify-between w-full text-xs text-primary hover:opacity-80 transition"
           >
             <span className="inline-flex items-center gap-1.5">
-              <ListChecks className="h-3.5 w-3.5" /> نقاط تساعدك ترتب إجابتك
+              <ListChecks className="h-3.5 w-3.5" />{" "}
+              {getUiString(locale, "mission.checklist.toggle")}
             </span>
             {open ? (
               <ChevronUp className="h-3.5 w-3.5" />
@@ -335,11 +347,13 @@ export function MissionRubricSection({
           >
             {revealing ? (
               <>
-                <Loader2 className="h-3 w-3 animate-spin" /> جاري التوليد...
+                <Loader2 className="h-3 w-3 animate-spin" />{" "}
+                {getUiString(locale, "mission.reveal.generating")}
               </>
             ) : (
               <>
-                <Lightbulb className="h-3 w-3" /> شوف مثال يساعدك
+                <Lightbulb className="h-3 w-3" />{" "}
+                {getUiString(locale, "mission.reveal.cta")}
               </>
             )}
           </button>
@@ -349,7 +363,7 @@ export function MissionRubricSection({
       {reveal && !skipped && (
         <div className="rounded-lg border border-primary/25 bg-primary/[0.06] p-3 space-y-2">
           <p className="text-xs text-primary inline-flex items-center gap-1.5">
-            <Lightbulb className="h-3.5 w-3.5" /> مثال يساعدك
+            <Lightbulb className="h-3.5 w-3.5" /> {getUiString(locale, "mission.reveal.title")}
           </p>
           <pre className="whitespace-pre-wrap text-sm leading-relaxed font-sans text-foreground/90">
             {reveal.modelAnswer}
@@ -358,16 +372,15 @@ export function MissionRubricSection({
             {reveal.note}
           </p>
           <p className="text-sm leading-relaxed text-foreground/90 border-t border-primary/15 pt-2">
-            اقرأ المثال، ثم حسّن إجابتك بكلامك وابعتها تاني.
+            {getUiString(locale, "mission.reveal.instruction")}
           </p>
         </div>
       )}
 
-      {/* Submit form — stays open after reveal for post-reveal resubmit */}
       {!skipped && (!result || reveal) && (
         <div className="space-y-2">
           <label className="text-xs text-muted-foreground">
-            إجابتك (اكتب ببساطة — مش لازم تكون مثالية)
+            {getUiString(locale, "mission.answer.label")}
           </label>
           {templateText && text.trim().length === 0 && (
             <button
@@ -376,7 +389,7 @@ export function MissionRubricSection({
               className="inline-flex items-center gap-2 rounded-lg border border-primary/30 bg-primary/10 px-3 py-2 text-xs font-semibold text-primary hover:bg-primary/20 transition"
             >
               <FileText className="h-3.5 w-3.5" />
-              ابدأ من تيمبليت جاهز
+              {getUiString(locale, "mission.template.loadCta")}
             </button>
           )}
           <textarea
@@ -384,23 +397,23 @@ export function MissionRubricSection({
             onChange={(e) => setText(e.target.value)}
             placeholder={
               templateText
-                ? "اكتب من الصفر، أو اضغط «ابدأ من تيمبليت جاهز» فوق."
-                : "اكتب إجابتك هنا ببساطة… مش لازم تكون مثالية."
+                ? getUiString(locale, "mission.placeholder.withTemplate")
+                : getUiString(locale, "mission.placeholder.blank")
             }
             rows={5}
             className="w-full rounded-lg border border-white/10 bg-white/[0.02] p-3 text-sm leading-relaxed resize-y focus:outline-none focus:border-accent/40"
-            dir="rtl"
+            dir={dir}
           />
           {!user && (
             <div className="rounded-lg border border-primary/20 bg-primary/[0.04] p-3 space-y-2">
               <p className="text-sm leading-relaxed text-foreground/85">
-                علشان نحفظ تقدمك وتاخد Feedback، سجّل دخولك الأول.
+                {getUiString(locale, "mission.login.body")}
               </p>
               <Link
                 to="/login"
                 className="inline-flex items-center gap-2 rounded-lg border border-accent/30 bg-accent/15 px-3 py-2 text-xs font-semibold text-accent hover:bg-accent/25 transition"
               >
-                سجّل دخولك واحفظ تقدمي
+                {getUiString(locale, "mission.login.cta")}
               </Link>
             </div>
           )}
@@ -414,11 +427,12 @@ export function MissionRubricSection({
               >
                 {submitting ? (
                   <>
-                    <Loader2 className="h-3.5 w-3.5 animate-spin" /> جاري تجهيز الـ Feedback...
+                    <Loader2 className="h-3.5 w-3.5 animate-spin" />{" "}
+                    {getUiString(locale, "mission.submit.generating")}
                   </>
                 ) : (
                   <>
-                    <Send className="h-3.5 w-3.5" /> ابعت وخد Feedback
+                    <Send className="h-3.5 w-3.5" /> {getUiString(locale, "mission.submit.cta")}
                   </>
                 )}
               </button>
@@ -427,12 +441,18 @@ export function MissionRubricSection({
                 onClick={skipMission}
                 disabled={skipping}
                 className="inline-flex items-center gap-1.5 text-[11px] text-muted-foreground hover:text-foreground transition disabled:opacity-50"
-                title="كمّل الدرس وارجع للمهمة وقت ما تحب"
+                title={getUiString(locale, "mission.skip.title")}
               >
                 {skipping ? (
-                  <><Loader2 className="h-3 w-3 animate-spin" /> ثانية…</>
+                  <>
+                    <Loader2 className="h-3 w-3 animate-spin" />{" "}
+                    {getUiString(locale, "mission.skip.loading")}
+                  </>
                 ) : (
-                  <><SkipForward className="h-3 w-3" /> مش جاهز دلوقتي — كمّل وارجع لها بعدين</>
+                  <>
+                    <SkipForward className="h-3 w-3" />{" "}
+                    {getUiString(locale, "mission.skip.cta")}
+                  </>
                 )}
               </button>
             </div>
@@ -454,9 +474,7 @@ export function MissionRubricSection({
       {skipped && (
         <div className="rounded-xl border border-primary/25 bg-primary/[0.05] p-3 text-sm leading-relaxed text-foreground/90 inline-flex items-start gap-2">
           <SkipForward className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-          <span>
-            مش جاهز دلوقتي — كمّل براحتك وارجع للمهمة وقت ما تحب.
-          </span>
+          <span>{getUiString(locale, "mission.skipped.message")}</span>
         </div>
       )}
     </div>
@@ -478,19 +496,21 @@ function EvaluationResultCard({
   revealing: boolean;
   onSkip: () => void;
 }) {
+  const { locale } = useLocale();
   const feedbackState = getFeedbackState(result);
   const canReveal = !result.passed && attemptCount >= 2;
   const canSkip = !result.passed;
+
   return (
     <div className="rounded-xl border border-accent/25 bg-accent/[0.05] p-4 space-y-3">
       <div className="flex items-start gap-2">
         <ClipboardCheck className="h-4 w-4 text-accent mt-0.5 shrink-0" />
         <div className="space-y-1 min-w-0">
           <p className="text-sm font-semibold text-foreground">
-            {feedbackState.label}
+            {getUiString(locale, feedbackState.labelKey)}
           </p>
           <p className="text-xs text-muted-foreground leading-relaxed">
-            {feedbackState.hint}
+            {getUiString(locale, feedbackState.hintKey)}
           </p>
         </div>
       </div>
@@ -518,7 +538,9 @@ function EvaluationResultCard({
         <p className="text-xs text-primary leading-relaxed inline-flex items-start gap-1.5">
           <ClipboardCheck className="h-3.5 w-3.5 shrink-0 mt-0.5" />
           <span>
-            <span className="font-semibold">الخطوة الجاية: </span>
+            <span className="font-semibold">
+              {getUiString(locale, "mission.result.nextStepPrefix")}
+            </span>
             {result.nextStep}
           </span>
         </p>
@@ -527,14 +549,15 @@ function EvaluationResultCard({
       {result.socraticQuestion && result.socraticQuestion.trim().length > 0 && (
         <div className="rounded-lg border border-primary/20 bg-primary/[0.04] p-3 space-y-1.5">
           <p className="text-[11px] text-primary inline-flex items-center gap-1.5">
-            <HelpCircle className="h-3.5 w-3.5" /> فكّر في السؤال ده
+            <HelpCircle className="h-3.5 w-3.5" />{" "}
+            {getUiString(locale, "mission.result.socraticTitle")}
           </p>
           <p className="text-sm leading-relaxed text-foreground/90">
             {result.socraticQuestion}
           </p>
           {!result.passed && (
             <p className="text-[10px] text-muted-foreground leading-relaxed">
-              مش لازم تردّ هنا — استخدمه عشان تحسّن إجابتك في المحاولة الجاية.
+              {getUiString(locale, "mission.result.socraticHint")}
             </p>
           )}
         </div>
@@ -547,7 +570,7 @@ function EvaluationResultCard({
             onClick={onRetry}
             className="text-[11px] text-muted-foreground hover:text-accent transition"
           >
-            حسّن إجابتي
+            {getUiString(locale, "mission.result.improveCta")}
           </button>
         )}
         {canSkip && (
@@ -555,9 +578,9 @@ function EvaluationResultCard({
             type="button"
             onClick={onSkip}
             className="inline-flex items-center gap-1.5 text-[11px] text-muted-foreground hover:text-foreground transition"
-            title="كمّل الدرس وارجع للمهمة وقت ما تحب"
+            title={getUiString(locale, "mission.skip.title")}
           >
-            <SkipForward className="h-3 w-3" /> مش جاهز دلوقتي — كمّل وارجع لها بعدين
+            <SkipForward className="h-3 w-3" /> {getUiString(locale, "mission.skip.cta")}
           </button>
         )}
         {canReveal && (
@@ -569,11 +592,12 @@ function EvaluationResultCard({
           >
             {revealing ? (
               <>
-                <Loader2 className="h-3 w-3 animate-spin" /> جاري التوليد...
+                <Loader2 className="h-3 w-3 animate-spin" />{" "}
+                {getUiString(locale, "mission.reveal.generating")}
               </>
             ) : (
               <>
-                <Lightbulb className="h-3 w-3" /> شوف مثال يساعدك
+                <Lightbulb className="h-3 w-3" /> {getUiString(locale, "mission.reveal.cta")}
               </>
             )}
           </button>

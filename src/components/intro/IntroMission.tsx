@@ -1,6 +1,8 @@
 import * as React from "react";
 import { CheckCircle2, ChevronDown, ChevronUp, Copy, Flag } from "lucide-react";
 import { toast } from "sonner";
+import { useLocale } from "@/lib/locale/locale-context";
+import { getUiString } from "@/lib/locale/ui-strings";
 import {
   MissionRubricSection,
   type MissionRubric,
@@ -32,10 +34,8 @@ export function IntroMissionPrompt({
   lessonTitle?: string;
   template?: string;
 }) {
+  const { locale } = useLocale();
   const [copied, setCopied] = React.useState(false);
-  // Prefer the stable lessonId as the key (unique per mission). Fall back to
-  // a hash of the prompt only when no lessonId is available — the prompt
-  // hash can collide across different missions with similar shapes.
   const storageKey = React.useMemo(
     () => `mission-started:${lessonId ?? `prompt:${hashKey(prompt)}`}`,
     [lessonId, prompt],
@@ -68,7 +68,7 @@ export function IntroMissionPrompt({
         document.body.removeChild(ta);
       }
       setCopied(true);
-      toast.success("تم النسخ");
+      toast.success(getUiString(locale, "mission.copy.success"));
       setStarted(true);
       try {
         localStorage.setItem(storageKey, "1");
@@ -77,7 +77,7 @@ export function IntroMissionPrompt({
       }
       setTimeout(() => setCopied(false), 1800);
     } catch {
-      toast.error("النسخ فشل، انسخ النص يدويًا");
+      toast.error(getUiString(locale, "mission.copy.error"));
     }
   }
 
@@ -87,7 +87,7 @@ export function IntroMissionPrompt({
         <p className="flex-1 min-w-0 text-sm leading-relaxed">{intro}</p>
         {started && (
           <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 text-[10px] text-accent shrink-0">
-            <Flag className="h-3 w-3" /> بدأت المهمة
+            <Flag className="h-3 w-3" /> {getUiString(locale, "mission.started.badge")}
           </span>
         )}
       </div>
@@ -103,7 +103,7 @@ export function IntroMissionPrompt({
           ) : (
             <ChevronDown className="h-3.5 w-3.5" />
           )}
-          ورّيني خطوات المهمة
+          {getUiString(locale, "mission.showSteps")}
         </button>
         {promptOpen && (
           <>

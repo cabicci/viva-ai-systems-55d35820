@@ -67,10 +67,22 @@ const DIFFICULTY_BANNED_AR = [
   "تمام، هنبسّطها معاك",
 ] as const;
 
+const INTRO_MISSION_BANNED_AR = [
+  "تم النسخ",
+  "بدأت المهمة",
+  "ورّيني خطوات المهمة",
+] as const;
+
+const MISSION_RUBRIC_BANNED_AR = [
+  "نقاط تساعدك ترتب إجابتك",
+  "ابعت وخد Feedback",
+  "اكتب إجابتك هنا ببساطة",
+  "[اكتب هنا]",
+] as const;
+
 /** ar-EG-only sources — Arabic allowed; scanned for reporting only. */
 const AR_EG_ONLY_ALLOWLIST = [
   "src/components/intro/lesson-continuity.ts",
-  "src/components/intro/IntroMission.tsx",
   "src/components/intro/value-hooks.ts",
   "src/components/intro/lessons",
 ] as const;
@@ -232,6 +244,25 @@ export function validateLocaleLeakScan(): ValidatorResult {
   }
   for (const hit of containsAny(difficultySource, DIFFICULTY_BANNED_AR)) {
     errors.push(`DifficultyPrompt.tsx contains banned hardcoded Arabic: "${hit}"`);
+  }
+
+  const introMissionSource = readRepoFile("src/components/intro/IntroMission.tsx");
+  if (!introMissionSource.includes("getUiString")) {
+    errors.push("IntroMission.tsx must wire chrome through getUiString()");
+  }
+  for (const hit of containsAny(introMissionSource, INTRO_MISSION_BANNED_AR)) {
+    errors.push(`IntroMission.tsx contains banned hardcoded Arabic: "${hit}"`);
+  }
+
+  const missionRubricSource = readRepoFile("src/components/intro/MissionRubricSubmit.tsx");
+  if (!missionRubricSource.includes("getUiString")) {
+    errors.push("MissionRubricSubmit.tsx must wire chrome through getUiString()");
+  }
+  if (missionRubricSource.includes('dir="rtl"')) {
+    errors.push("MissionRubricSubmit.tsx must not use fixed dir=\"rtl\"");
+  }
+  for (const hit of containsAny(missionRubricSource, MISSION_RUBRIC_BANNED_AR)) {
+    errors.push(`MissionRubricSubmit.tsx contains banned hardcoded Arabic: "${hit}"`);
   }
 
   for (const rel of AR_EG_ONLY_ALLOWLIST) {
