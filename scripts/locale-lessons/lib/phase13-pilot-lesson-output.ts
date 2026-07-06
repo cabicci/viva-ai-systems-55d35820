@@ -1,25 +1,34 @@
 import type {
   AdaptationTargetLocale,
   AdaptedLessonPackage,
+  LessonPackageLocale,
   LocalizedLessonPackage,
 } from "../../../src/lib/locale-lessons/types.ts";
+import { lockPackageTitleToLocaleIndex } from "./lesson-title-index.ts";
 import { isInternalProductionReferenceSection } from "./quality-warnings.ts";
 import {
   PRODUCTION_LEAK_SUBSTRINGS,
   sanitizeFinalLessonPackage,
 } from "./sanitize-final-lesson-package.ts";
 
-const TARGET_LEARNER_LOCALES = new Set<AdaptationTargetLocale>(["en", "ar-Gulf"]);
+const ADAPTATION_TARGET_LEARNER_LOCALES = new Set<AdaptationTargetLocale>([
+  "en",
+  "ar-Gulf",
+]);
 
-/**
- * Hard gate for en / ar-Gulf learner packages. ar-MSA canonical source may
- * retain internal production-reference sections by design.
- */
-export function validateTargetLearnerPackageNoProductionLeak(
+/** Learner-final outputs including ar-MSA packages written for learners. */
+export const LEARNER_FINAL_PACKAGE_LOCALES = new Set<LessonPackageLocale>([
+  "en",
+  "ar-Gulf",
+  "ar-MSA",
+]);
+
+function validatePackageNoProductionLeak(
   pkg: AdaptedLessonPackage | LocalizedLessonPackage,
-  locale: AdaptationTargetLocale | "ar-MSA" | string,
+  locale: string,
+  applicableLocales: ReadonlySet<string>,
 ): { ok: boolean; errors: string[] } {
-  if (locale === "ar-MSA" || !TARGET_LEARNER_LOCALES.has(locale as AdaptationTargetLocale)) {
+  if (!applicableLocales.has(locale)) {
     return { ok: true, errors: [] };
   }
 
@@ -50,15 +59,66 @@ export function validateTargetLearnerPackageNoProductionLeak(
   return { ok: errors.length === 0, errors: [...new Set(errors)] };
 }
 
-/** Sanitize injected artifact and validate the final learner-facing output. */
+/**
+ * Hard gate for en / ar-Gulf learner packages. ar-MSA canonical source may
+ * retain internal production-reference sections by design.
+ */
+export function validateTargetLearnerPackageNoProductionLeak(
+  pkg: AdaptedLessonPackage | LocalizedLessonPackage,
+  locale: AdaptationTargetLocale | "ar-MSA" | string,
+): { ok: boolean; errors: string[] } {
+  return validatePackageNoProductionLeak(
+    pkg,
+    locale,
+    ADAPTATION_TARGET_LEARNER_LOCALES,
+  );
+}
+
+/** Production-leak gate for packages finalized for learners (includes ar-MSA). */
+export function validateLearnerFinalPackageNoProductionLeak(
+  pkg: AdaptedLessonPackage | LocalizedLessonPackage,
+  locale: LessonPackageLocale | string,
+): { ok: boolean; errors: string[] } {
+  return validatePackageNoProductionLeak(
+    pkg,
+    locale,
+    LEARNER_FINAL_PACKAGE_LOCALES,
+  );
+}
+
+/**
+ * Sanitize, validate production leaks, and lock title to lesson-titles.json
+ * before writing learner-facing locale packages. Does not mutate canonical
+ * ar-MSA source files unless explicitly passed in as the package to finalize.
+ */
+export function finalizeLearnerFacingLocalePackageForWrite(
+  artifact: AdaptedLessonPackage | LocalizedLessonPackage,
+): {
+  sanitized: AdaptedLessonPackage | LocalizedLessonPackage;
+  errors: string[];
+} {
+  const sanitized = sanitizeFinalLessonPackage(artifact);
+
+  const leak = validateLearnerFinalPackageNoProductionLeak(
+    sanitized,
+    artifact.locale,
+  );
+  const titleLock = lockPackageTitleToLocaleIndex(sanitized, artifact.locale);
+
+  return {
+    sanitized: titleLock.pkg,
+    errors: [...leak.errors, ...titleLock.errors],
+  };
+}
+
+/** @deprecated Prefer finalizeLearnerFacingLocalePackageForWrite. */
 export function finalizePhase13PilotLessonForWrite(artifact: AdaptedLessonPackage): {
   sanitized: AdaptedLessonPackage;
   errors: string[];
 } {
-  const sanitized = sanitizeFinalLessonPackage(artifact) as AdaptedLessonPackage;
-  const leak = validateTargetLearnerPackageNoProductionLeak(
-    sanitized,
-    artifact.locale,
-  );
-  return { sanitized, errors: leak.errors };
+  const result = finalizeLearnerFacingLocalePackageForWrite(artifact);
+  return {
+    sanitized: result.sanitized as AdaptedLessonPackage,
+    errors: result.errors,
+  };
 }

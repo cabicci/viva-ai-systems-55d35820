@@ -39,6 +39,7 @@ import {
   openAiAdaptationModel,
   requireOpenAiApiKey,
 } from "./providers/types.ts";
+import { finalizeLearnerFacingLocalePackageForWrite } from "./lib/phase13-pilot-lesson-output.ts";
 import type { OpenAiFragmentAdapterOptions } from "./lib/openai-fragment-adapter.ts";
 
 export interface FragmentPilotGenerationSummary {
@@ -123,23 +124,28 @@ export async function generateFragmentPilotLesson(
       generatedAt,
     );
 
+    const { sanitized, errors: finalOutputErrors } =
+      finalizeLearnerFacingLocalePackageForWrite(result.artifact);
+    const validationErrors = [...result.validation.errors, ...finalOutputErrors];
+    const ok = result.validation.ok && finalOutputErrors.length === 0;
+
     const artifactPath = await writeFragmentPilotLessonPackage(
       targetLocale,
-      result.artifact,
+      sanitized as AdaptedLessonPackage,
     );
 
     await writeFragmentPilotJobResult({
       locale: targetLocale,
       lessonId,
-      ok: result.validation.ok,
+      ok,
       fieldCount: result.textMap.fields.length,
-      errors: result.validation.errors,
+      errors: validationErrors,
       generatedAt,
     });
 
-    if (!result.validation.ok) {
+    if (!ok) {
       throw new Error(
-        `Fragment pilot validation failed for ${targetLocale}/${lessonId}:\n${result.validation.errors.join("\n")}`,
+        `Fragment pilot validation failed for ${targetLocale}/${lessonId}:\n${validationErrors.join("\n")}`,
       );
     }
 

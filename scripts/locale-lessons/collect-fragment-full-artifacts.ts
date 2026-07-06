@@ -18,7 +18,7 @@ import {
 } from "./lib/source-package.ts";
 import { localesForTarget, parseLessonIdsArg } from "./lib/resolve-fragment-pilot-lesson-ids.ts";
 import { validateFragmentPipelineArtifact } from "./lib/validate-structural-parity.ts";
-import { sanitizeFinalLessonPackage } from "./lib/sanitize-final-lesson-package.ts";
+import { finalizeLearnerFacingLocalePackageForWrite } from "./lib/phase13-pilot-lesson-output.ts";
 import { validateFinalLessonFile } from "./lib/validate-final-lesson-package.ts";
 import { selectFullLessonIds } from "./lib/full-lesson-ids.ts";
 import { openAiAdaptationModel } from "./providers/types.ts";
@@ -126,7 +126,21 @@ export async function collectFragmentFullArtifacts(input: {
 
       const source = await loadMsaLessonPackage(lessonId);
       const parity = validateFragmentPipelineArtifact(source, loaded.pkg, locale);
-      const sanitized = sanitizeFinalLessonPackage(loaded.pkg);
+      const { sanitized, errors: finalOutputErrors } =
+        finalizeLearnerFacingLocalePackageForWrite(loaded.pkg);
+
+      if (finalOutputErrors.length > 0) {
+        failed.push(key);
+        rows.push({
+          locale,
+          lesson_id: lessonId,
+          source_run_id: loaded.sourceRunId,
+          status: "failed",
+          banned_hits: finalOutputErrors.join(";"),
+          unbalanced_fields: "FINALIZATION",
+        });
+        continue;
+      }
 
       let writtenPath: string;
       if (outputDir) {

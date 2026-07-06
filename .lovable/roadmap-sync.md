@@ -4,7 +4,7 @@
 date: 2026-07-06
 scope: infra
 source: user
-summary: Merge Phase 13A sanitized pilot packages with title-index normalization
+summary: Lock learner package titles to locale index in Phase 13 finalization
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

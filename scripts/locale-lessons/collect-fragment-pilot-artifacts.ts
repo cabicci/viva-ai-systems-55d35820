@@ -32,7 +32,7 @@ import {
   DEFAULT_PILOT_LESSON_COUNT,
 } from "./lib/pilot-lesson-ids.ts";
 import { openAiAdaptationModel } from "./providers/types.ts";
-import { sanitizeFinalLessonPackage } from "./lib/sanitize-final-lesson-package.ts";
+import { finalizeLearnerFacingLocalePackageForWrite } from "./lib/phase13-pilot-lesson-output.ts";
 import { validateFinalLessonFile } from "./lib/validate-final-lesson-package.ts";
 
 export interface FragmentPilotCollectSummary {
@@ -234,21 +234,37 @@ export async function collectFragmentPilotArtifacts(
       // internal "Video block (production reference only)" section).
       const source = await loadMsaLessonPackage(lessonId);
       const validation = validateFragmentPipelineArtifact(source, loaded.pkg, locale);
-      // Sanitize AFTER parity check, BEFORE write.
-      const sanitized = sanitizeFinalLessonPackage(loaded.pkg);
+      // Sanitize and title-lock AFTER parity check, BEFORE write.
+      const { sanitized, errors: finalOutputErrors } =
+        finalizeLearnerFacingLocalePackageForWrite(loaded.pkg);
       lessonResults.push({
         lessonId,
         fieldCount: jobResult?.fieldCount ?? 0,
         validation,
       });
 
+      if (finalOutputErrors.length > 0) {
+        failed.push(key);
+        combinedRows.push({
+          locale,
+          lesson_id: lessonId,
+          source_run_id: loaded.sourceRunId,
+          status: "failed",
+          banned_hits: finalOutputErrors.join(";"),
+          unbalanced_fields: "FINALIZATION",
+        });
+        continue;
+      }
+
+      const finalized = sanitized as AdaptedLessonPackage;
+
       // Write to outputDir if given; else writer goes to runtime path.
       let writtenPath: string;
       if (outputDir) {
         writtenPath = path.join(outputDir, locale, "lessons", `${lessonId}.json`);
-        await writeJsonFile(writtenPath, sanitized);
+        await writeJsonFile(writtenPath, finalized);
       } else {
-        writtenPath = await writeFragmentPilotLessonPackage(locale, sanitized);
+        writtenPath = await writeFragmentPilotLessonPackage(locale, finalized);
       }
 
       // Re-read from disk and validate the final on-disk artifact.
@@ -267,7 +283,7 @@ export async function collectFragmentPilotArtifacts(
         continue;
       }
 
-      packages.push(sanitized);
+      packages.push(finalized);
       passed.push(key);
       combinedRows.push({
         locale,

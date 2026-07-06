@@ -6,7 +6,7 @@ import {
 } from "./lib/fragment-localization-pipeline.ts";
 import { writeFragmentPilotJobResult } from "./lib/fragment-pilot-job-result.ts";
 import { writeFragmentPilotLessonPackage } from "./lib/fragment-output-writer.ts";
-import { finalizePhase13PilotLessonForWrite } from "./lib/phase13-pilot-lesson-output.ts";
+import { finalizeLearnerFacingLocalePackageForWrite } from "./lib/phase13-pilot-lesson-output.ts";
 import { parsePhase13SourceScope } from "./lib/resolve-phase13-pilot-lesson-ids.ts";
 import {
   openAiAdaptationModel,
@@ -69,9 +69,8 @@ async function main() {
             );
           })();
 
-    const { sanitized, errors: finalOutputErrors } = finalizePhase13PilotLessonForWrite(
-      result.artifact,
-    );
+    const { sanitized, errors: finalOutputErrors } =
+      finalizeLearnerFacingLocalePackageForWrite(result.artifact);
     const validationErrors = [
       ...result.validation.errors,
       ...finalOutputErrors,

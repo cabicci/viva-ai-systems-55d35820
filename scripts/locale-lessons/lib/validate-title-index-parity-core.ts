@@ -9,6 +9,7 @@ import {
   activeCurriculumLessonIds,
   type ValidatorResult,
 } from "./localization-contract-rules.ts";
+import { lessonTitlesIndexPath } from "./lesson-title-index.ts";
 import { packageDirForLocale } from "./source-package.ts";
 
 const REPO_ROOT = path.resolve(
@@ -31,7 +32,7 @@ export async function validateTitleIndexParity(
 
   for (const locale of locales) {
     const baseDir = packageDirForLocale(locale);
-    const indexPath = path.join(baseDir, "lesson-titles.json");
+    const indexPath = lessonTitlesIndexPath(locale);
     const index = await readJson<Record<string, string>>(indexPath);
     const indexIds = Object.keys(index).sort();
 
