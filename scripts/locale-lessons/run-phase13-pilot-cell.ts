@@ -6,6 +6,7 @@ import {
 } from "./lib/fragment-localization-pipeline.ts";
 import { writeFragmentPilotJobResult } from "./lib/fragment-pilot-job-result.ts";
 import { writeFragmentPilotLessonPackage } from "./lib/fragment-output-writer.ts";
+import { finalizePhase13PilotLessonForWrite } from "./lib/phase13-pilot-lesson-output.ts";
 import { parsePhase13SourceScope } from "./lib/resolve-phase13-pilot-lesson-ids.ts";
 import {
   openAiAdaptationModel,
@@ -68,17 +69,26 @@ async function main() {
             );
           })();
 
+    const { sanitized, errors: finalOutputErrors } = finalizePhase13PilotLessonForWrite(
+      result.artifact,
+    );
+    const validationErrors = [
+      ...result.validation.errors,
+      ...finalOutputErrors,
+    ];
+    const ok = result.validation.ok && finalOutputErrors.length === 0;
+
     let artifactPath: string | undefined;
     if (!dryRun && confirmPaidApi) {
-      artifactPath = await writeFragmentPilotLessonPackage(locale, result.artifact);
+      artifactPath = await writeFragmentPilotLessonPackage(locale, sanitized);
     }
 
     const jobPath = await writeFragmentPilotJobResult({
       locale,
       lessonId,
-      ok: result.validation.ok,
+      ok,
       fieldCount: result.textMap.fields.length,
-      errors: result.validation.errors,
+      errors: validationErrors,
       generatedAt,
     });
 
@@ -88,16 +98,17 @@ async function main() {
         locale,
         lessonId,
         mode,
-        ok: result.validation.ok,
+        ok,
         fieldCount: result.textMap.fields.length,
-        errors: result.validation.errors,
+        errors: validationErrors,
         artifactPath: artifactPath ?? null,
         jobResultPath: jobPath,
         skippedPaidApi: dryRun || !confirmPaidApi,
+        sanitizedBeforeWrite: !dryRun && confirmPaidApi,
       }),
     );
 
-    if (!result.validation.ok) {
+    if (!ok) {
       process.exit(1);
     }
   } catch (error) {

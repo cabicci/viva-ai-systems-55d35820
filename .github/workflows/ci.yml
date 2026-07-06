@@ -46,6 +46,7 @@ jobs:
           src/lib/__tests__/scale-batch-b.test.ts
           src/lib/__tests__/locale-phase13a-pilot-manifest.test.ts
           src/lib/__tests__/locale-phase13a-pilot-collector.test.ts
+          src/lib/__tests__/locale-phase13a-pilot-sanitize-output.test.ts
 
       - name: Build
         run: bun run build
