@@ -1,6 +1,7 @@
 name: Locale Phase 13B Full Generation
 
-# Phase 13B — 300-cell learner package generation scaffold (100 × ar-MSA learner-final, ar-Gulf, en).
+# Phase 13B — 300-cell learner package generation (100 × ar-MSA learner-final, ar-Gulf, en).
+# GitHub Actions matrix limit is 256 jobs, so generation runs as 3 locale batch jobs (100 cells each).
 # Default: dry-run only — no paid OpenAI calls, no package writes.
 
 on:
@@ -56,7 +57,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
-      cell_count: ${{ steps.plan.outputs.cell_count }}
+      planned_cells: ${{ steps.plan.outputs.planned_cells }}
       dry_run: ${{ steps.plan.outputs.dry_run }}
     steps:
       - name: Checkout repository
@@ -94,7 +95,7 @@ jobs:
             echo "Note: ar-Gulf/en cells require confirm_paid_api=true when dry_run=false"
           fi
 
-      - name: Build Phase 13B full matrix
+      - name: Build Phase 13B workflow shard matrix
         id: set-matrix
         env:
           SOURCE_SCOPE: ${{ inputs.source_scope }}
@@ -103,29 +104,49 @@ jobs:
           RETRY_CELLS: ${{ inputs.retry_cells }}
         run: |
           set -euo pipefail
-          ARGS=(--source_scope "$SOURCE_SCOPE" --target_locales "$TARGET_LOCALES")
+          ARGS=(--source_scope "$SOURCE_SCOPE" --target_locales "$TARGET_LOCALES" --matrix_format workflow-shard)
           if [ -n "$LESSON_IDS" ]; then
             ARGS+=(--lesson_ids "$LESSON_IDS")
           fi
           if [ -n "$RETRY_CELLS" ]; then
             ARGS+=(--retry_cells "$RETRY_CELLS")
           fi
-          MATRIX=$(bun run scripts/locale-lessons/print-phase13b-full-matrix.ts "${ARGS[@]}")
-          echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+          MATRIX=$(bun scripts/locale-lessons/print-phase13b-full-matrix.ts "${ARGS[@]}")
+          {
+            echo "matrix<<EOF"
+            printf '%s\n' "$MATRIX"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Emit full plan summary
         id: plan
         env:
           DRY_RUN: ${{ inputs.dry_run }}
-          MATRIX_JSON: ${{ steps.set-matrix.outputs.matrix }}
+          SOURCE_SCOPE: ${{ inputs.source_scope }}
+          TARGET_LOCALES: ${{ inputs.target_locales }}
+          LESSON_IDS: ${{ inputs.lesson_ids }}
+          RETRY_CELLS: ${{ inputs.retry_cells }}
         run: |
           set -euo pipefail
-          CELL_COUNT=$(echo "$MATRIX_JSON" | jq '.include | length')
-          echo "cell_count=$CELL_COUNT" >> "$GITHUB_OUTPUT"
-          echo "dry_run=$DRY_RUN" >> "$GITHUB_OUTPUT"
-          echo "Phase 13B matrix cells: $CELL_COUNT"
+          PLAN=$(bun -e "
+          import { buildPhase13BFullMatrix, localesFromPhase13BTarget, parsePhase13BRetryCellsArg, parsePhase13BTargetLocales, parseLessonIdsArg } from './scripts/locale-lessons/lib/phase13b-full-matrix.ts';
 
-  generate-cell:
+          const target = parsePhase13BTargetLocales(process.env.TARGET_LOCALES ?? 'all');
+          const retryCells = process.env.RETRY_CELLS ? parsePhase13BRetryCellsArg(process.env.RETRY_CELLS) : undefined;
+          const lessonIdsOverride = process.env.LESSON_IDS ? parseLessonIdsArg(process.env.LESSON_IDS) : undefined;
+          const matrix = await buildPhase13BFullMatrix({
+            sourceScope: 'ar-MSA',
+            targetLocales: localesFromPhase13BTarget(target),
+            lessonIdsOverride,
+            retryCells,
+          });
+          console.log(JSON.stringify({ planned: matrix.length }));
+          ")
+          echo "planned_cells=$(echo "$PLAN" | jq -r '.planned')" >> "$GITHUB_OUTPUT"
+          echo "dry_run=$DRY_RUN" >> "$GITHUB_OUTPUT"
+          echo "Phase 13B planned cells: $(echo "$PLAN" | jq -r '.planned')"
+
+  generate-locale-batch:
     needs: prepare-matrix
     runs-on: ubuntu-latest
     strategy:
@@ -143,51 +164,41 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Run Phase 13B full cell
+      - name: Run Phase 13B locale batch
         env:
           OPENAI_API_KEY: ${{ secrets.new_openai }}
           DRY_RUN: ${{ inputs.dry_run }}
           CONFIRM_WRITE: ${{ inputs.confirm_write }}
           CONFIRM_PAID_API: ${{ inputs.confirm_paid_api }}
+          LESSON_IDS: ${{ inputs.lesson_ids }}
         run: |
           set -euo pipefail
           ARGS=(
             --source_scope "${{ matrix.source_scope }}"
             --locale "${{ matrix.locale }}"
-            --lesson-id "${{ matrix.lesson_id }}"
           )
+          if [ -n "$LESSON_IDS" ]; then
+            ARGS+=(--lesson_ids "$LESSON_IDS")
+          fi
           if [ "$DRY_RUN" = "true" ]; then
             ARGS+=(--dry_run true)
           else
             ARGS+=(--dry_run false --confirm_write "$CONFIRM_WRITE" --confirm_paid_api "$CONFIRM_PAID_API")
           fi
-          bun run scripts/locale-lessons/run-phase13b-full-cell.ts "${ARGS[@]}"
+          bun run scripts/locale-lessons/run-phase13b-locale-batch.ts "${ARGS[@]}"
 
-      - name: Upload cell artifact
-        if: success()
+      - name: Upload locale batch artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: locale-phase13b-full-${{ matrix.locale }}-${{ matrix.lesson_id }}
+          name: locale-phase13b-batch-${{ matrix.locale }}
           if-no-files-found: warn
           retention-days: 14
           path: |
-            src/lib/locale-lessons/ar-MSA/generated/learner-final/lessons/${{ matrix.lesson_id }}.json
-            src/lib/locale-lessons/ar-Gulf/lessons/${{ matrix.lesson_id }}.json
-            src/lib/locale-lessons/en/lessons/${{ matrix.lesson_id }}.json
-            src/lib/locale-lessons/ar-MSA/reports/phase13b-full-jobs/**/${{ matrix.lesson_id }}.result.json
-
-      - name: Upload failed cell job result
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: locale-phase13b-full-${{ matrix.locale }}-${{ matrix.lesson_id }}-failed
-          if-no-files-found: ignore
-          retention-days: 14
-          path: |
-            src/lib/locale-lessons/ar-MSA/reports/phase13b-full-jobs/**/${{ matrix.lesson_id }}.result.json
+            src/lib/locale-lessons/ar-MSA/reports/phase13b-full-jobs/${{ matrix.locale }}/*.result.json
 
   collect-report:
-    needs: [prepare-matrix, generate-cell]
+    needs: [prepare-matrix, generate-locale-batch]
     if: always()
     runs-on: ubuntu-latest
     steps:
@@ -202,10 +213,11 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Download cell artifacts
+      - name: Download locale batch artifacts
+        continue-on-error: true
         uses: actions/download-artifact@v4
         with:
-          pattern: locale-phase13b-full-*
+          pattern: locale-phase13b-batch-*
           merge-multiple: false
           path: phase13b-artifacts
 
@@ -216,6 +228,7 @@ jobs:
           LESSON_IDS: ${{ inputs.lesson_ids }}
           RETRY_CELLS: ${{ inputs.retry_cells }}
           DRY_RUN: ${{ inputs.dry_run }}
+          PLANNED_CELLS: ${{ needs.prepare-matrix.outputs.planned_cells }}
         run: |
           set -euo pipefail
           ARGS=(
@@ -235,11 +248,21 @@ jobs:
             ARGS+=(--dry_run false)
           fi
           bun run scripts/locale-lessons/collect-phase13b-full-report.ts "${ARGS[@]}"
-          if [ -f src/lib/locale-lessons/ar-MSA/reports/phase13b-full-report.json ]; then
-            echo "Collect report written — partial cell failures are listed under retryCells"
-          else
-            echo "Collect report missing"
-            exit 1
+          REPORT=$(cat src/lib/locale-lessons/ar-MSA/reports/phase13b-full-report.json)
+          echo "$REPORT" | jq '{planned, dryRunOk, failed: (.failed|length), skipped: (.skipped|length), retryCells}'
+          if [ "$DRY_RUN" = "true" ]; then
+            PLANNED=$(echo "$REPORT" | jq -r '.planned')
+            DRY_OK=$(echo "$REPORT" | jq -r '.dryRunOk')
+            FAILED=$(echo "$REPORT" | jq -r '.failed | length')
+            SKIPPED=$(echo "$REPORT" | jq -r '.skipped | length')
+            if [ "$PLANNED" = "0" ]; then
+              echo "Refusing empty Phase 13B dry-run plan"
+              exit 1
+            fi
+            if [ "$DRY_OK" != "$PLANNED" ] || [ "$FAILED" != "0" ] || [ "$SKIPPED" != "0" ]; then
+              echo "Dry-run incomplete: planned=$PLANNED dryRunOk=$DRY_OK failed=$FAILED skipped=$SKIPPED"
+              exit 1
+            fi
           fi
 
       - name: Validate localization contract (repo unchanged packages)

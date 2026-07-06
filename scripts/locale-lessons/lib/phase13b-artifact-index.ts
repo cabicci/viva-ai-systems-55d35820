@@ -2,7 +2,7 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import type { LessonPackageLocale } from "../../../src/lib/locale-lessons/types.ts";
 import type { Phase13BJobResult } from "./phase13b-job-result.ts";
-import { PHASE13B_ARTIFACT_PREFIX } from "./phase13b-full-matrix.ts";
+import { PHASE13B_CELL_ARTIFACT_PREFIX } from "./phase13b-full-matrix.ts";
 
 export interface IndexedPhase13BJobResult {
   result: Phase13BJobResult;
@@ -42,8 +42,8 @@ export function parsePhase13BArtifactDirName(
   dirName: string,
 ): { locale: LessonPackageLocale; lessonId: string } | null {
   const base = dirName.replace(/-failed$/, "");
-  if (!base.startsWith(PHASE13B_ARTIFACT_PREFIX)) return null;
-  const rest = base.slice(PHASE13B_ARTIFACT_PREFIX.length);
+  if (!base.startsWith(PHASE13B_CELL_ARTIFACT_PREFIX)) return null;
+  const rest = base.slice(PHASE13B_CELL_ARTIFACT_PREFIX.length);
   if (rest.startsWith("ar-Gulf-")) {
     return { locale: "ar-Gulf", lessonId: rest.slice("ar-Gulf-".length) };
   }

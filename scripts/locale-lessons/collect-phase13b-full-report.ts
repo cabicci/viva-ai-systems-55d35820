@@ -16,7 +16,6 @@ import {
   parsePhase13BRetryCellsArg,
   parsePhase13BSourceScope,
   parsePhase13BTargetLocales,
-  phase13BFullArtifactName,
   type Phase13BFullMatrixCell,
 } from "./lib/phase13b-full-matrix.ts";
 import {
@@ -60,8 +59,10 @@ export interface Phase13BFullCollectReport {
   sourceScope: "ar-MSA";
   targetLocales: LessonPackageLocale[] | "all";
   fullLessonIds: string[];
+  planned: number;
   cellCount: number;
   dryRun: boolean;
+  dryRunOk: number;
   generated: string[];
   failed: string[];
   skipped: string[];
@@ -174,7 +175,24 @@ function buildRetryFields(cells: Phase13BFullCellReport[]): {
   return { retryLessonIds, retryCells, failedCellDetails };
 }
 
-export function phase13BCollectReportExitCode(_report: Phase13BFullCollectReport): number {
+export function countPhase13BDryRunOkCells(cells: Phase13BFullCellReport[]): number {
+  return cells.filter((cell) => cell.status === "dry-run-ok").length;
+}
+
+export function phase13BCollectReportExitCode(report: Phase13BFullCollectReport): number {
+  if (report.planned === 0) {
+    return 1;
+  }
+
+  if (report.dryRun) {
+    const dryRunOk = countPhase13BDryRunOkCells(report.cells);
+    if (dryRunOk !== report.planned) return 1;
+    if (report.failed.length > 0) return 1;
+    if (report.skipped.length > 0) return 1;
+    return 0;
+  }
+
+  if (report.failed.length > 0) return 1;
   return 0;
 }
 
@@ -264,21 +282,24 @@ export async function buildPhase13BFullCollectReport(input: {
   }
 
   const retry = buildRetryFields(cells);
+  const dryRunOk = countPhase13BDryRunOkCells(cells);
 
   return {
     phase: "13B",
     sourceScope: "ar-MSA",
     targetLocales: input.target,
     fullLessonIds,
+    planned: matrix.length,
     cellCount: matrix.length,
     dryRun: input.dryRun,
+    dryRunOk,
     generated,
     failed,
     skipped,
     cells,
     validationErrors,
     ...retry,
-    artifactNaming: phase13BFullArtifactName("{locale}", "{lessonId}"),
+    artifactNaming: "locale-phase13b-full-{locale}-{lessonId}",
     artifactsDir: input.artifactsDir ?? undefined,
     collectedAt: new Date().toISOString(),
   };
@@ -316,9 +337,11 @@ async function main() {
 
   console.log(
     JSON.stringify({
-      ok: report.failed.length === 0,
+      ok: phase13BCollectReportExitCode(report) === 0,
       outPath,
+      planned: report.planned,
       cellCount: report.cellCount,
+      dryRunOk: report.dryRunOk,
       generated: report.generated.length,
       failed: report.failed.length,
       skipped: report.skipped.length,

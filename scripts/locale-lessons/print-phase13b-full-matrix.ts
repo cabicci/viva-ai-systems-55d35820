@@ -1,10 +1,12 @@
 import {
   buildPhase13BFullMatrix,
+  buildPhase13BWorkflowShardMatrix,
   localesFromPhase13BTarget,
   parseLessonIdsArg,
   parsePhase13BRetryCellsArg,
   parsePhase13BSourceScope,
   parsePhase13BTargetLocales,
+  serializeGitHubActionsMatrix,
 } from "./lib/phase13b-full-matrix.ts";
 
 function readArg(name: string): string | null {
@@ -13,11 +15,19 @@ function readArg(name: string): string | null {
   return process.argv[index + 1] ?? null;
 }
 
+function parseMatrixFormat(): "cells" | "workflow-shard" {
+  const raw = readArg("matrix_format") ?? readArg("matrix-format") ?? "workflow-shard";
+  if (raw === "cells" || raw === "workflow-shard") return raw;
+  throw new Error('matrix_format must be "cells" or "workflow-shard"');
+}
+
 async function main() {
   const sourceScope = parsePhase13BSourceScope(readArg("source_scope"));
   const target = parsePhase13BTargetLocales(
     readArg("target_locales") ?? readArg("target"),
   );
+  const targetLocales = localesFromPhase13BTarget(target);
+  const matrixFormat = parseMatrixFormat();
   const retryCells = parsePhase13BRetryCellsArg(
     readArg("retry_cells") ?? readArg("retry-cells"),
   );
@@ -25,14 +35,33 @@ async function main() {
     readArg("lesson_ids") ?? readArg("lesson-ids"),
   );
 
-  const matrix = await buildPhase13BFullMatrix({
-    sourceScope,
-    targetLocales: localesFromPhase13BTarget(target),
-    lessonIdsOverride,
-    retryCells,
-  });
+  if (retryCells?.length) {
+    process.stdout.write(
+      serializeGitHubActionsMatrix(
+        retryCells.map((cell) => ({
+          locale: cell.locale,
+          source_scope: cell.source_scope,
+        })),
+      ),
+    );
+    return;
+  }
 
-  process.stdout.write(JSON.stringify({ include: matrix }));
+  if (matrixFormat === "cells") {
+    const matrix = await buildPhase13BFullMatrix({
+      sourceScope,
+      targetLocales,
+      lessonIdsOverride,
+    });
+    process.stdout.write(serializeGitHubActionsMatrix(matrix));
+    return;
+  }
+
+  const shards = await buildPhase13BWorkflowShardMatrix({
+    sourceScope,
+    targetLocales,
+  });
+  process.stdout.write(serializeGitHubActionsMatrix(shards));
 }
 
 if (import.meta.main) {
