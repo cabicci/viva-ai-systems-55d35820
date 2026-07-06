@@ -1,18 +1,22 @@
 import { CircleHelp } from "lucide-react";
+import { getUiString } from "@/lib/locale/ui-strings";
+import type { SupportedLocale } from "@/lib/locale/types";
 import { PackageLearnerMarkdown } from "./PackageLearnerMarkdown";
 
 export function LocalePreviewQuiz({
   question,
   options,
+  locale,
 }: {
   question: string;
   options: readonly string[];
+  locale: SupportedLocale;
 }) {
   return (
     <div className="space-y-3" data-preview-quiz="read-only">
       <div className="flex items-center gap-2 text-[11px] font-mono text-accent">
         <CircleHelp className="h-3.5 w-3.5" />
-        <span>Preview quiz — answers hidden</span>
+        <span>{getUiString(locale, "safety.quiz.previewLabel")}</span>
       </div>
       <p className="font-semibold text-[15px] leading-relaxed">{question}</p>
       <ul className="space-y-2">

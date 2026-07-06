@@ -145,7 +145,11 @@ function PreviewBlockBody({
 
     case "quizPreview":
       return (
-        <LocalePreviewQuiz question={block.question} options={block.options} />
+        <LocalePreviewQuiz
+          question={block.question}
+          options={block.options}
+          locale={locale}
+        />
       );
 
     case "missionPreview":
@@ -164,7 +168,7 @@ function PreviewBlockBody({
           <div className="flex items-center gap-1.5 bg-primary/10 border-b border-primary/20 px-3 py-2">
             <Monitor className="h-3.5 w-3.5 text-primary" />
             <span className="text-[11px] font-mono text-primary">
-              Platform preview
+              {getUiString(locale, "safety.screenshot.title")}
             </span>
           </div>
           <div className="p-6 text-center space-y-2 border border-dashed border-primary/20 m-3 rounded-xl bg-primary/[0.03]">
@@ -172,7 +176,8 @@ function PreviewBlockBody({
               <ImageIcon className="h-5 w-5 text-primary" />
             </div>
             <p className="text-sm text-foreground">
-              {block.caption ?? "Screenshot placeholder in localized preview."}
+              {block.caption ??
+                getUiString(locale, "safety.screenshot.placeholder")}
             </p>
           </div>
         </div>

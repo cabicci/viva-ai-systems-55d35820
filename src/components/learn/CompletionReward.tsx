@@ -1,18 +1,33 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Flame, CheckCircle2, Trophy, X } from "lucide-react";
 import { useStreak } from "@/lib/entitlements";
+import { useLocale } from "@/lib/locale/locale-context";
+import { getUiString, type UiStringKey } from "@/lib/locale/ui-strings";
+import type { SupportedLocale } from "@/lib/locale/types";
 
 const XP_PER_LESSON = 10;
 
-function getMilestoneMessage(streak: number, completedCount: number): string | null {
-  if (streak === 3) return "٣ أيام متتالية 🔥 العادة بتتثبّت!";
-  if (streak === 7) return "أسبوع كامل! إنت من ٥٪ بس اللي وصلوا هنا.";
-  if (streak === 30) return "شهر كامل 🏆 إنت دلوقتي محترف.";
-  if (completedCount === 1) return "أول درس خلّصته 🎉 الطريق بدأ.";
-  if (completedCount === 5) return "٥ دروس! إنت بقيت في المسار جد.";
-  if (completedCount === 10) return "١٠ دروس 🚀 ده مش هواية، ده commitment.";
-  if (completedCount === 25) return "٢٥ درس! إنت في الـ top tier.";
-  return null;
+function interpolate(template: string, values: Record<string, string>): string {
+  return Object.entries(values).reduce(
+    (text, [key, value]) => text.replaceAll(`{${key}}`, value),
+    template,
+  );
+}
+
+function getMilestoneMessage(
+  locale: SupportedLocale,
+  streak: number,
+  completedCount: number,
+): string | null {
+  let key: UiStringKey | null = null;
+  if (streak === 3) key = "learn.completion.milestone.streak3";
+  else if (streak === 7) key = "learn.completion.milestone.streak7";
+  else if (streak === 30) key = "learn.completion.milestone.streak30";
+  else if (completedCount === 1) key = "learn.completion.milestone.lessons1";
+  else if (completedCount === 5) key = "learn.completion.milestone.lessons5";
+  else if (completedCount === 10) key = "learn.completion.milestone.lessons10";
+  else if (completedCount === 25) key = "learn.completion.milestone.lessons25";
+  return key ? getUiString(locale, key) : null;
 }
 
 /**
@@ -29,6 +44,7 @@ export function CompletionReward({
   isCompleted: boolean;
   completedCount: number;
 }) {
+  const { locale } = useLocale();
   const { streak } = useStreak();
   const [show, setShow] = useState(false);
   const [snapshot, setSnapshot] = useState<{
@@ -36,20 +52,43 @@ export function CompletionReward({
     milestone: string | null;
   } | null>(null);
 
+  const defaultMessage = useMemo(
+    () => getUiString(locale, "learn.completion.default"),
+    [locale],
+  );
+  const xpLabel = useMemo(
+    () =>
+      interpolate(getUiString(locale, "learn.completion.xp"), {
+        xp: String(XP_PER_LESSON),
+      }),
+    [locale],
+  );
+  const closeLabel = useMemo(
+    () => getUiString(locale, "learn.completion.close"),
+    [locale],
+  );
+
   useEffect(() => {
     if (!isCompleted) return;
     const key = `lovable.reward.${lessonId}`;
     if (typeof window === "undefined") return;
     if (window.localStorage.getItem(key)) return;
     window.localStorage.setItem(key, "1");
-    const milestone = getMilestoneMessage(streak.current_streak, completedCount);
+    const milestone = getMilestoneMessage(locale, streak.current_streak, completedCount);
     setSnapshot({ streak: streak.current_streak, milestone });
     setShow(true);
     const t = window.setTimeout(() => setShow(false), 6000);
     return () => window.clearTimeout(t);
-  }, [isCompleted, lessonId, streak.current_streak, completedCount]);
+  }, [isCompleted, lessonId, locale, streak.current_streak, completedCount]);
 
   if (!show || !snapshot) return null;
+
+  const streakLabel =
+    snapshot.streak > 0
+      ? interpolate(getUiString(locale, "learn.completion.streakDays"), {
+          count: String(snapshot.streak),
+        })
+      : null;
 
   return (
     <div
@@ -64,21 +103,21 @@ export function CompletionReward({
         <div className="flex-1 min-w-0">
           <p className="text-sm font-bold flex items-center gap-1.5">
             <CheckCircle2 className="h-3.5 w-3.5 text-primary" />
-            +{XP_PER_LESSON} XP
-            {snapshot.streak > 0 && (
+            {xpLabel}
+            {streakLabel ? (
               <span className="inline-flex items-center gap-1 text-xs font-mono text-amber-300 mr-2">
-                <Flame className="h-3 w-3" /> {snapshot.streak} يوم
+                <Flame className="h-3 w-3" /> {streakLabel}
               </span>
-            )}
+            ) : null}
           </p>
           <p className="text-[13px] text-foreground/85 mt-1 leading-relaxed">
-            {snapshot.milestone ?? "خلّصت الدرس! استمر — كل درس بيقربك خطوة من الـ outcome."}
+            {snapshot.milestone ?? defaultMessage}
           </p>
         </div>
         <button
           type="button"
           onClick={() => setShow(false)}
-          aria-label="إغلاق"
+          aria-label={closeLabel}
           className="text-muted-foreground hover:text-foreground transition shrink-0"
         >
           <X className="h-4 w-4" />

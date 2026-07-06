@@ -27,6 +27,19 @@ const PAYWALL_BANNED_AR = [
   "ابدأ المقدمة",
 ] as const;
 
+const COMPLETION_BANNED_AR = [
+  "خلّصت الدرس! استمر",
+  "٣ أيام متتالية 🔥 العادة بتتثبّت!",
+  "إغلاق",
+  " يوم",
+] as const;
+
+const PREVIEW_QUIZ_BANNED_EN = "Preview quiz — answers hidden" as const;
+const SCREENSHOT_BANNED_EN = [
+  "Platform preview",
+  "Screenshot placeholder in localized preview.",
+] as const;
+
 /** ar-EG-only sources — Arabic allowed; scanned for reporting only. */
 const AR_EG_ONLY_ALLOWLIST = [
   "src/components/intro/lesson-continuity.ts",
@@ -35,7 +48,6 @@ const AR_EG_ONLY_ALLOWLIST = [
   "src/components/intro/IntroMission.tsx",
   "src/components/learn/LessonNotes.tsx",
   "src/components/learn/DifficultyPrompt.tsx",
-  "src/components/learn/CompletionReward.tsx",
   "src/components/intro/lessons",
 ] as const;
 
@@ -112,9 +124,43 @@ export function validateLocaleLeakScan(): ValidatorResult {
   }
 
   if (learnSource.includes('dir="rtl"') && learnSource.includes("errorComponent")) {
-    warnings.push(
-      "learn route errorComponent uses fixed dir=\"rtl\" (ignores locale direction)",
+    errors.push(
+      "learn route errorComponent must not use fixed dir=\"rtl\" (use locale-aware direction)",
     );
+  }
+
+  const completionSource = readRepoFile("src/components/learn/CompletionReward.tsx");
+  if (!completionSource.includes("getUiString")) {
+    errors.push("CompletionReward.tsx must wire copy through getUiString()");
+  }
+  for (const hit of containsAny(completionSource, COMPLETION_BANNED_AR)) {
+    errors.push(`CompletionReward.tsx contains banned hardcoded Arabic: "${hit}"`);
+  }
+
+  const previewQuizSource = readRepoFile("src/components/locale/LocalePreviewQuiz.tsx");
+  if (previewQuizSource.includes(PREVIEW_QUIZ_BANNED_EN)) {
+    errors.push("LocalePreviewQuiz.tsx must not hardcode English preview quiz label");
+  }
+  if (!previewQuizSource.includes("safety.quiz.previewLabel")) {
+    errors.push("LocalePreviewQuiz.tsx must use safety.quiz.previewLabel ui key");
+  }
+
+  const previewRendererSource = readRepoFile(
+    "src/components/locale/LocalePackagePreviewRenderer.tsx",
+  );
+  for (const hit of containsAny(previewRendererSource, SCREENSHOT_BANNED_EN)) {
+    errors.push(
+      `LocalePackagePreviewRenderer.tsx contains banned hardcoded screenshot chrome: "${hit}"`,
+    );
+  }
+  if (!previewRendererSource.includes("safety.screenshot.title")) {
+    errors.push(
+      "LocalePackagePreviewRenderer.tsx must use safety.screenshot.* ui keys",
+    );
+  }
+
+  if (!learnSource.includes("LearnLessonError")) {
+    errors.push("learn route must use LearnLessonError for locale-aware errorComponent");
   }
 
   for (const rel of AR_EG_ONLY_ALLOWLIST) {

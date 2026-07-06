@@ -214,12 +214,18 @@ export const Route = createFileRoute("/learn/$pathId/$lessonId")({
   },
   component: UnifiedLessonPage,
   notFoundComponent: LearnLessonNotFound,
-  errorComponent: ({ error }) => (
-    <div className="min-h-dvh grid place-items-center p-6" dir="rtl">
+  errorComponent: LearnLessonError,
+});
+
+function LearnLessonError({ error }: { error: Error }) {
+  const { dir } = useLocale();
+
+  return (
+    <div className="min-h-dvh grid place-items-center p-6" dir={dir}>
       <p className="text-sm text-destructive">{error.message}</p>
     </div>
-  ),
-});
+  );
+}
 
 function LearnLessonNotFound() {
   const t = useUiString();
