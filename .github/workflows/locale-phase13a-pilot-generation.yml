@@ -1,0 +1,319 @@
+name: Locale Phase 13A Pilot Generation
+
+# Phase 13A — matrix-ready localized lesson pilot scaffold.
+# Extract → Adapt (text only) → Inject via fragment pipeline (ar-MSA source).
+# Default: dry-run mock only — no paid OpenAI calls, no commits.
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_scope:
+        description: "Source package scope"
+        required: true
+        type: choice
+        options:
+          - ar-MSA
+        default: ar-MSA
+      target_locales:
+        description: "Target adaptation locales"
+        required: true
+        type: choice
+        options:
+          - all
+          - ar-Gulf
+          - en
+        default: all
+      pilot_count:
+        description: "Pilot lesson count (3–20, default 10)"
+        required: false
+        type: string
+        default: "10"
+      lesson_ids:
+        description: "Optional comma-separated lesson IDs (overrides pilot_count selection; use for retry-only-failed)"
+        required: false
+        type: string
+        default: ""
+      dry_run:
+        description: "When true, mock adapt only — no OpenAI calls, no lesson JSON written"
+        required: true
+        type: boolean
+        default: true
+      confirm_paid_api:
+        description: "Must be true with dry_run=false to call OpenAI (manual cost confirmation)"
+        required: true
+        type: boolean
+        default: false
+      commit_results:
+        description: "Commit generated packages to the branch (never pushes by default)"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: locale-phase13a-pilot-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  prepare-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+      pilot_lesson_ids: ${{ steps.plan.outputs.pilot_lesson_ids }}
+      dry_run: ${{ steps.plan.outputs.dry_run }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Validate workflow inputs
+        env:
+          SOURCE_SCOPE: ${{ inputs.source_scope }}
+          TARGET_LOCALES: ${{ inputs.target_locales }}
+          PILOT_COUNT: ${{ inputs.pilot_count }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          CONFIRM_PAID_API: ${{ inputs.confirm_paid_api }}
+          COMMIT_RESULTS: ${{ inputs.commit_results }}
+        run: |
+          set -euo pipefail
+          case "$SOURCE_SCOPE" in
+            ar-MSA) ;;
+            *)
+              echo "Unsupported source_scope: $SOURCE_SCOPE"
+              exit 1
+              ;;
+          esac
+          case "$TARGET_LOCALES" in
+            all|ar-Gulf|en) ;;
+            *)
+              echo "Invalid target_locales: $TARGET_LOCALES"
+              exit 1
+              ;;
+          esac
+          if ! [[ "$PILOT_COUNT" =~ ^[0-9]+$ ]]; then
+            echo "Invalid pilot_count: $PILOT_COUNT"
+            exit 1
+          fi
+          if [ "$PILOT_COUNT" -lt 3 ] || [ "$PILOT_COUNT" -gt 20 ]; then
+            echo "pilot_count must be between 3 and 20 (got $PILOT_COUNT)"
+            exit 1
+          fi
+          if [ "$DRY_RUN" = "false" ] && [ "$CONFIRM_PAID_API" != "true" ]; then
+            echo "Refusing paid API run: set confirm_paid_api=true when dry_run=false"
+            exit 1
+          fi
+          if [ "$COMMIT_RESULTS" = "true" ] && [ "$DRY_RUN" = "true" ]; then
+            echo "commit_results requires dry_run=false"
+            exit 1
+          fi
+
+      - name: Build Phase 13A pilot matrix
+        id: set-matrix
+        env:
+          SOURCE_SCOPE: ${{ inputs.source_scope }}
+          TARGET_LOCALES: ${{ inputs.target_locales }}
+          PILOT_COUNT: ${{ inputs.pilot_count }}
+          LESSON_IDS: ${{ inputs.lesson_ids }}
+        run: |
+          set -euo pipefail
+          ARGS=(--source_scope "$SOURCE_SCOPE" --target_locales "$TARGET_LOCALES" --pilot_count "$PILOT_COUNT")
+          if [ -n "$LESSON_IDS" ]; then
+            ARGS+=(--lesson_ids "$LESSON_IDS")
+          fi
+          MATRIX=$(bun run scripts/locale-lessons/print-phase13-pilot-matrix.ts "${ARGS[@]}")
+          echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+
+      - name: Emit pilot plan summary
+        id: plan
+        env:
+          DRY_RUN: ${{ inputs.dry_run }}
+          SOURCE_SCOPE: ${{ inputs.source_scope }}
+          TARGET_LOCALES: ${{ inputs.target_locales }}
+          PILOT_COUNT: ${{ inputs.pilot_count }}
+          LESSON_IDS: ${{ inputs.lesson_ids }}
+        run: |
+          set -euo pipefail
+          ARGS=(--source_scope "$SOURCE_SCOPE" --target_locales "$TARGET_LOCALES" --pilot_count "$PILOT_COUNT")
+          if [ -n "$LESSON_IDS" ]; then
+            ARGS+=(--lesson_ids "$LESSON_IDS")
+          fi
+          PLAN=$(bun -e "
+          import { selectPhase13PilotLessonIds, pathsRepresented } from './scripts/locale-lessons/lib/phase13-pilot-manifest.ts';
+          import { parseLessonIdsArg } from './scripts/locale-lessons/lib/resolve-fragment-pilot-lesson-ids.ts';
+          import { clampPhase13PilotCount } from './scripts/locale-lessons/lib/phase13-pilot-manifest.ts';
+
+          const count = clampPhase13PilotCount(Number(process.env.PILOT_COUNT));
+          const override = process.env.LESSON_IDS ? parseLessonIdsArg(process.env.LESSON_IDS) : undefined;
+          const ids = await selectPhase13PilotLessonIds({ count, lessonIdsOverride: override });
+          console.log(JSON.stringify({ lessonIds: ids, paths: pathsRepresented(ids) }));
+          ")
+          echo "pilot_lesson_ids=$(echo "$PLAN" | jq -c '.lessonIds')" >> "$GITHUB_OUTPUT"
+          echo "dry_run=$DRY_RUN" >> "$GITHUB_OUTPUT"
+          echo "Phase 13A pilot lessons: $(echo "$PLAN" | jq -r '.lessonIds | join(\", \")')"
+          echo "Paths represented: $(echo "$PLAN" | jq -r '.paths | join(\", \")')"
+
+  generate-cell:
+    needs: prepare-matrix
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.prepare-matrix.outputs.matrix) }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Run Phase 13A pilot cell
+        env:
+          OPENAI_API_KEY: ${{ secrets.new_openai }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          CONFIRM_PAID_API: ${{ inputs.confirm_paid_api }}
+        run: |
+          set -euo pipefail
+          ARGS=(
+            --source_scope "${{ matrix.source_scope }}"
+            --locale "${{ matrix.locale }}"
+            --lesson-id "${{ matrix.lesson_id }}"
+          )
+          if [ "$DRY_RUN" = "true" ]; then
+            ARGS+=(--dry_run true)
+          else
+            ARGS+=(--dry_run false --confirm_paid_api "$CONFIRM_PAID_API")
+          fi
+          bun run scripts/locale-lessons/run-phase13-pilot-cell.ts "${ARGS[@]}"
+
+      - name: Upload cell artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: locale-phase13a-pilot-${{ matrix.locale }}-${{ matrix.lesson_id }}
+          if-no-files-found: warn
+          retention-days: 14
+          path: |
+            src/lib/locale-lessons/${{ matrix.locale }}/lessons/${{ matrix.lesson_id }}.json
+            src/lib/locale-lessons/${{ matrix.locale }}/reports/fragment-pilot-jobs/${{ matrix.lesson_id }}.result.json
+
+      - name: Upload failed cell job result
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: locale-phase13a-pilot-${{ matrix.locale }}-${{ matrix.lesson_id }}-failed
+          if-no-files-found: ignore
+          retention-days: 14
+          path: |
+            src/lib/locale-lessons/${{ matrix.locale }}/reports/fragment-pilot-jobs/${{ matrix.lesson_id }}.result.json
+
+  collect-report:
+    needs: [prepare-matrix, generate-cell]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Download cell artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: locale-phase13a-pilot-*
+          merge-multiple: true
+          path: phase13-artifacts
+
+      - name: Collect Phase 13A pilot report
+        env:
+          SOURCE_SCOPE: ${{ inputs.source_scope }}
+          TARGET_LOCALES: ${{ inputs.target_locales }}
+          PILOT_COUNT: ${{ inputs.pilot_count }}
+          LESSON_IDS: ${{ inputs.lesson_ids }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          set -euo pipefail
+          ARGS=(
+            --source_scope "$SOURCE_SCOPE"
+            --target_locales "$TARGET_LOCALES"
+            --pilot_count "$PILOT_COUNT"
+            --artifacts-dir phase13-artifacts
+          )
+          if [ -n "$LESSON_IDS" ]; then
+            ARGS+=(--lesson_ids "$LESSON_IDS")
+          fi
+          if [ "$DRY_RUN" = "true" ]; then
+            ARGS+=(--dry_run true)
+          else
+            ARGS+=(--dry_run false)
+          fi
+          bun run scripts/locale-lessons/collect-phase13-pilot-report.ts "${ARGS[@]}" || REPORT_FAILED=1
+          if [ "${REPORT_FAILED:-0}" = "1" ]; then
+            echo "Collect report recorded failures — see phase13a-pilot-report.json"
+            exit 1
+          fi
+
+      - name: Validate localization contract (repo unchanged packages)
+        run: bun run scripts/locale-lessons/validate-localization-contract.ts
+
+      - name: Upload Phase 13A report bundle
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: locale-phase13a-pilot-report-${{ github.run_number }}
+          if-no-files-found: warn
+          retention-days: 30
+          path: |
+            src/lib/locale-lessons/reports/phase13a-pilot-report.json
+            src/lib/locale-lessons/ar-Gulf/reports/fragment-pilot-jobs/*.result.json
+            src/lib/locale-lessons/en/reports/fragment-pilot-jobs/*.result.json
+            src/lib/locale-lessons/ar-Gulf/lessons/*.json
+            src/lib/locale-lessons/en/lessons/*.json
+
+  commit-results:
+    needs: [prepare-matrix, generate-cell, collect-report]
+    if: ${{ inputs.commit_results == true && inputs.dry_run == false && needs.collect-report.result == 'success' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download generated packages
+        uses: actions/download-artifact@v4
+        with:
+          pattern: locale-phase13a-pilot-*
+          merge-multiple: true
+          path: .
+
+      - name: Commit pilot packages (no push)
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/lib/locale-lessons/ar-Gulf src/lib/locale-lessons/en
+          if git diff --staged --quiet; then
+            echo "No package changes to commit"
+            exit 0
+          fi
+          git commit -m "chore(locale): Phase 13A pilot packages (workflow run ${{ github.run_number }})"
+          echo "Committed locally on Actions runner — push is intentionally not performed."

@@ -4,7 +4,7 @@
 date: 2026-07-06
 scope: infra
 source: user
-summary: Scale Blockers Batch B — dynamic lesson loading and count registry
+summary: Phase 13A — localized lesson generation pipeline scaffold
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
