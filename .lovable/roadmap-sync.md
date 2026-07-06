@@ -4,7 +4,7 @@
 date: 2026-07-06
 scope: infra
 source: user
-summary: Phase 13A — sanitize pilot lesson outputs before artifact write
+summary: Merge Phase 13A sanitized pilot packages with title-index normalization
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
