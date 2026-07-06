@@ -24,7 +24,7 @@ const ErrorLogInput = z.object({
 const ANON_RATE_LIMIT_USER_ID = "00000000-0000-0000-0000-000000000001";
 const ERROR_LOG_BUCKET_KEY = "error-log";
 
-/** Fail open on RPC errors; returns false only when the limit is exceeded. */
+/** Fail closed on RPC errors; returns false when the limit is exceeded or RPC fails. */
 async function consumeErrorLogRateLimit(
   userId: string,
   maxCalls: number,
@@ -37,11 +37,11 @@ async function consumeErrorLogRateLimit(
       p_max_calls: maxCalls,
       p_window_seconds: 60,
     });
-    if (error) return true;
+    if (error) return false;
     const row = Array.isArray(data) ? data[0] : data;
     return Boolean(row?.allowed);
   } catch {
-    return true;
+    return false;
   }
 }
 

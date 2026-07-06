@@ -42,6 +42,7 @@ jobs:
           src/lib/__tests__/locale-chrome-parity-6.test.ts
           src/lib/__tests__/locale-localization-contract-validators.test.ts
           src/lib/__tests__/launch-account-deletion-coverage.test.ts
+          src/lib/__tests__/security-batch-b.test.ts
 
       - name: Build
         run: bun run build

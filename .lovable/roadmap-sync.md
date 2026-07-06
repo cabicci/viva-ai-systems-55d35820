@@ -4,7 +4,7 @@
 date: 2026-07-06
 scope: infra
 source: user
-summary: Launch Blockers Batch A — CI gate and launch hardening
+summary: Security Batch B — rate-limit/auth edge hardening and RPC grant lockdown
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
