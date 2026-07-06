@@ -4,7 +4,7 @@
 date: 2026-07-06
 scope: infra
 source: user
-summary: Repair Phase 13B dry-run matrix workflow orchestration
+summary: Collect Phase 13B locale-batch dry-run artifacts from flat batch folders
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

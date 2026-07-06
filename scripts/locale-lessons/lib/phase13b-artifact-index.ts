@@ -2,7 +2,10 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import type { LessonPackageLocale } from "../../../src/lib/locale-lessons/types.ts";
 import type { Phase13BJobResult } from "./phase13b-job-result.ts";
-import { PHASE13B_CELL_ARTIFACT_PREFIX } from "./phase13b-full-matrix.ts";
+import {
+  PHASE13B_BATCH_ARTIFACT_PREFIX,
+  PHASE13B_CELL_ARTIFACT_PREFIX,
+} from "./phase13b-full-matrix.ts";
 
 export interface IndexedPhase13BJobResult {
   result: Phase13BJobResult;
@@ -56,7 +59,43 @@ export function parsePhase13BArtifactDirName(
   return null;
 }
 
-function inferFromArtifactAncestors(
+/** Parse `locale-phase13b-batch-{locale}` artifact directory names. */
+export function parsePhase13BBatchArtifactDirName(
+  dirName: string,
+): { locale: LessonPackageLocale } | null {
+  if (!dirName.startsWith(PHASE13B_BATCH_ARTIFACT_PREFIX)) return null;
+  const locale = dirName.slice(PHASE13B_BATCH_ARTIFACT_PREFIX.length);
+  if (locale === "ar-MSA" || locale === "ar-Gulf" || locale === "en") {
+    return { locale };
+  }
+  return null;
+}
+
+function parseLessonIdFromResultFileName(fileName: string): string | null {
+  if (!fileName.endsWith(".result.json")) return null;
+  const lessonId = fileName.slice(0, -".result.json".length);
+  return lessonId.length > 0 ? lessonId : null;
+}
+
+function inferBatchLocaleFromPath(filePath: string): {
+  locale: LessonPackageLocale;
+  artifactSource?: string;
+} | null {
+  for (const part of filePath.split(path.sep)) {
+    const parsed = parsePhase13BBatchArtifactDirName(part);
+    if (parsed) {
+      return { locale: parsed.locale, artifactSource: part };
+    }
+  }
+  return null;
+}
+
+function inferNestedJobLocaleFromPath(normalized: string): LessonPackageLocale | null {
+  const match = normalized.match(/phase13b-full-jobs\/(ar-MSA|ar-Gulf|en)\//);
+  return match ? (match[1] as LessonPackageLocale) : null;
+}
+
+function inferFromPerCellArtifactAncestors(
   filePath: string,
 ): { locale: LessonPackageLocale; lessonId: string; artifactSource?: string } | null {
   for (const part of filePath.split(path.sep)) {
@@ -66,6 +105,56 @@ function inferFromArtifactAncestors(
     }
   }
   return null;
+}
+
+export function resolvePhase13BJobResultIdentity(
+  filePath: string,
+  result: Phase13BJobResult,
+): { locale: LessonPackageLocale; lessonId: string; artifactSource?: string } {
+  const normalized = normalizePath(filePath);
+  const nestedMatch = normalized.match(
+    /phase13b-full-jobs\/(ar-MSA|ar-Gulf|en)\/([^/]+)\.result\.json$/,
+  );
+  if (nestedMatch) {
+    const perCell = inferFromPerCellArtifactAncestors(filePath);
+    return {
+      locale: nestedMatch[1] as LessonPackageLocale,
+      lessonId: nestedMatch[2],
+      artifactSource: perCell?.artifactSource,
+    };
+  }
+
+  const batch = inferBatchLocaleFromPath(filePath);
+  const fileName = path.basename(filePath);
+  const lessonIdFromName = parseLessonIdFromResultFileName(fileName);
+  if (batch && lessonIdFromName) {
+    return {
+      locale: batch.locale,
+      lessonId: lessonIdFromName,
+      artifactSource: batch.artifactSource,
+    };
+  }
+
+  const nestedLocale = inferNestedJobLocaleFromPath(normalized);
+  if (nestedLocale && lessonIdFromName) {
+    return {
+      locale: nestedLocale,
+      lessonId: lessonIdFromName,
+      artifactSource: inferFromPerCellArtifactAncestors(filePath)?.artifactSource,
+    };
+  }
+
+  if (result.locale && result.lessonId) {
+    const perCell = inferFromPerCellArtifactAncestors(filePath);
+    const batchSource = inferBatchLocaleFromPath(filePath);
+    return {
+      locale: result.locale,
+      lessonId: result.lessonId,
+      artifactSource: perCell?.artifactSource ?? batchSource?.artifactSource,
+    };
+  }
+
+  throw new Error(`Could not resolve locale/lessonId for ${filePath}`);
 }
 
 async function walkFiles(root: string, dir = root): Promise<string[]> {
@@ -80,6 +169,22 @@ async function walkFiles(root: string, dir = root): Promise<string[]> {
     }
   }
   return files;
+}
+
+function indexJobResult(
+  jobResults: Map<string, IndexedPhase13BJobResult>,
+  root: string,
+  filePath: string,
+  result: Phase13BJobResult,
+  identity: { locale: LessonPackageLocale; lessonId: string; artifactSource?: string },
+): void {
+  const key = phase13BCellKey(identity.locale, identity.lessonId);
+  jobResults.set(key, {
+    result,
+    filePath,
+    relativePath: relativeFromRoot(root, filePath),
+    artifactSource: identity.artifactSource,
+  });
 }
 
 export async function buildPhase13BArtifactIndex(
@@ -97,23 +202,14 @@ export async function buildPhase13BArtifactIndex(
 
   for (const filePath of files) {
     const normalized = normalizePath(filePath);
-    const inferred = inferFromArtifactAncestors(filePath);
+    const inferredPerCell = inferFromPerCellArtifactAncestors(filePath);
 
-    if (normalized.endsWith(".result.json") && normalized.includes("phase13b-full-jobs/")) {
-      const localeMatch = normalized.match(/phase13b-full-jobs\/(ar-MSA|ar-Gulf|en)\/([^/]+)\.result\.json$/);
-      if (!localeMatch) continue;
-      const locale = localeMatch[1] as LessonPackageLocale;
-      const lessonId = localeMatch[2];
+    if (normalized.endsWith(".result.json")) {
       try {
         const raw = await fs.readFile(filePath, "utf8");
         const result = JSON.parse(raw) as Phase13BJobResult;
-        const key = phase13BCellKey(locale, lessonId);
-        jobResults.set(key, {
-          result,
-          filePath,
-          relativePath: relativeFromRoot(root, filePath),
-          artifactSource: inferred?.artifactSource,
-        });
+        const identity = resolvePhase13BJobResultIdentity(filePath, result);
+        indexJobResult(jobResults, root, filePath, result, identity);
       } catch {
         // skip invalid result files
       }
@@ -131,7 +227,7 @@ export async function buildPhase13BArtifactIndex(
       lessonArtifacts.set(key, {
         filePath,
         relativePath: relativeFromRoot(root, filePath),
-        artifactSource: inferred?.artifactSource,
+        artifactSource: inferredPerCell?.artifactSource,
       });
     }
   }

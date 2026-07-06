@@ -2,6 +2,7 @@ import type { LessonPackageLocale } from "../../../src/lib/locale-lessons/types.
 import type { Phase13BJobResult } from "./phase13b-job-result.ts";
 import {
   parsePhase13BArtifactDirName,
+  parsePhase13BBatchArtifactDirName,
   type Phase13BArtifactIndex,
 } from "./phase13b-artifact-index.ts";
 
@@ -9,7 +10,7 @@ export function phase13BCellKey(locale: LessonPackageLocale, lessonId: string): 
   return `${locale}/${lessonId}`;
 }
 
-export { parsePhase13BArtifactDirName, type Phase13BArtifactIndex };
+export { parsePhase13BArtifactDirName, parsePhase13BBatchArtifactDirName, type Phase13BArtifactIndex };
 
 export function lookupPhase13BJobResult(
   index: Phase13BArtifactIndex | null,

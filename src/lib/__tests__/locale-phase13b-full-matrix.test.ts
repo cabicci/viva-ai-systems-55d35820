@@ -30,6 +30,7 @@ import { runPhase13BFullCell } from "../../../scripts/locale-lessons/run-phase13
 import { runPhase13BLocaleBatch } from "../../../scripts/locale-lessons/run-phase13b-locale-batch.ts";
 import { loadMsaLessonPackage } from "../../../scripts/locale-lessons/lib/source-package.ts";
 import { readPhase13BJobResult } from "../../../scripts/locale-lessons/lib/phase13b-job-result.ts";
+import { parsePhase13BBatchArtifactDirName } from "../../../scripts/locale-lessons/lib/phase13b-artifact-index.ts";
 
 const SAMPLE_LESSON_ID = "intro-m1-l1-what-is-ai";
 const tempDirs: string[] = [];
@@ -225,7 +226,7 @@ describe("Phase 13B cell runner (dry-run, no paid API)", () => {
 });
 
 describe("Phase 13B collector dry-run", () => {
-  async function writeDryRunJobArtifact(
+  async function writeNestedDryRunJobArtifact(
     root: string,
     locale: "ar-MSA" | "en" | "ar-Gulf",
     lessonId: string,
@@ -260,12 +261,46 @@ describe("Phase 13B collector dry-run", () => {
     );
   }
 
-  it("succeeds when all planned dry-run artifacts are present", async () => {
+  async function writeFlatBatchDryRunJobArtifact(
+    root: string,
+    locale: "ar-MSA" | "en" | "ar-Gulf",
+    lessonId: string,
+  ): Promise<void> {
+    const batchDir = path.join(root, `locale-phase13b-batch-${locale}`);
+    await mkdir(batchDir, { recursive: true });
+    await writeFile(
+      path.join(batchDir, `${lessonId}.result.json`),
+      `${JSON.stringify({
+        locale,
+        lessonId,
+        ok: true,
+        pipeline: locale === "ar-MSA" ? "learner-final-derived" : "fragment-adapt",
+        requiresPaidApi: locale !== "ar-MSA",
+        fieldCount: locale === "ar-MSA" ? 0 : 12,
+        errors: [],
+        generatedAt: "2026-07-07T00:00:00.000Z",
+        mode: "dry-run-derived",
+        skippedPaidApi: true,
+      })}\n`,
+      "utf8",
+    );
+  }
+
+  it("parses locale from locale-phase13b-batch artifact folder names", () => {
+    expect(parsePhase13BBatchArtifactDirName("locale-phase13b-batch-ar-MSA")).toEqual({
+      locale: "ar-MSA",
+    });
+    expect(parsePhase13BBatchArtifactDirName("locale-phase13b-batch-ar-Gulf")).toEqual({
+      locale: "ar-Gulf",
+    });
+  });
+
+  it("collects flat root-level batch artifact result files", async () => {
     const root = await makeTempArtifactsRoot();
     const lessonIds = [SAMPLE_LESSON_ID, "intro-m1-l2-first-prompt"];
     for (const locale of ["ar-MSA", "ar-Gulf", "en"] as const) {
       for (const lessonId of lessonIds) {
-        await writeDryRunJobArtifact(root, locale, lessonId);
+        await writeFlatBatchDryRunJobArtifact(root, locale, lessonId);
       }
     }
 
@@ -283,6 +318,74 @@ describe("Phase 13B collector dry-run", () => {
 
     expect(report.planned).toBe(6);
     expect(report.dryRunOk).toBe(6);
+    expect(report.skipped).toEqual([]);
+    expect(phase13BCollectReportExitCode(report)).toBe(0);
+  });
+
+  it("succeeds when all planned dry-run artifacts use nested job paths", async () => {
+    const root = await makeTempArtifactsRoot();
+    const lessonIds = [SAMPLE_LESSON_ID, "intro-m1-l2-first-prompt"];
+    for (const locale of ["ar-MSA", "ar-Gulf", "en"] as const) {
+      for (const lessonId of lessonIds) {
+        await writeNestedDryRunJobArtifact(root, locale, lessonId);
+      }
+    }
+
+    const matrix = await buildPhase13BFullMatrix({
+      targetLocales: ["ar-MSA", "ar-Gulf", "en"],
+      lessonIdsOverride: lessonIds,
+    });
+
+    const report = await buildPhase13BFullCollectReport({
+      target: "all",
+      dryRun: true,
+      artifactsDir: root,
+      matrix,
+    });
+
+    expect(report.planned).toBe(6);
+    expect(report.dryRunOk).toBe(6);
+    expect(report.failed).toEqual([]);
+    expect(report.skipped).toEqual([]);
+    expect(report.retryCells).toEqual([]);
+    expect(phase13BCollectReportExitCode(report)).toBe(0);
+  });
+
+  it("aggregates flat batch artifacts for full 300-cell dry-run plan", async () => {
+    const root = await makeTempArtifactsRoot();
+    const lessonIds = await selectFullLessonIds();
+
+    for (const locale of ["ar-MSA", "ar-Gulf", "en"] as const) {
+      const batchDir = path.join(root, `locale-phase13b-batch-${locale}`);
+      await mkdir(batchDir, { recursive: true });
+      for (const lessonId of lessonIds) {
+        await writeFile(
+          path.join(batchDir, `${lessonId}.result.json`),
+          `${JSON.stringify({
+            locale,
+            lessonId,
+            ok: true,
+            pipeline: locale === "ar-MSA" ? "learner-final-derived" : "fragment-adapt",
+            requiresPaidApi: locale !== "ar-MSA",
+            fieldCount: locale === "ar-MSA" ? 0 : 12,
+            errors: [],
+            generatedAt: "2026-07-07T00:00:00.000Z",
+            mode: "dry-run-derived",
+            skippedPaidApi: true,
+          })}\n`,
+          "utf8",
+        );
+      }
+    }
+
+    const report = await buildPhase13BFullCollectReport({
+      target: "all",
+      dryRun: true,
+      artifactsDir: root,
+    });
+
+    expect(report.planned).toBe(PHASE13B_FULL_CELL_COUNT);
+    expect(report.dryRunOk).toBe(PHASE13B_FULL_CELL_COUNT);
     expect(report.failed).toEqual([]);
     expect(report.skipped).toEqual([]);
     expect(report.retryCells).toEqual([]);
