@@ -1,0 +1,257 @@
+name: Locale Phase 13B Full Generation
+
+# Phase 13B — 300-cell learner package generation scaffold (100 × ar-MSA learner-final, ar-Gulf, en).
+# Default: dry-run only — no paid OpenAI calls, no package writes.
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_scope:
+        description: "Canonical source scope"
+        required: true
+        type: choice
+        options:
+          - ar-MSA
+        default: ar-MSA
+      target_locales:
+        description: "Target locales (all | ar-MSA | ar-Gulf | en | comma-separated subset)"
+        required: true
+        type: string
+        default: all
+      lesson_ids:
+        description: "Optional comma-separated lesson IDs (limits all selected locales)"
+        required: false
+        type: string
+        default: ""
+      retry_cells:
+        description: "Retry-only-failed locale/lessonId pairs or JSON retryCells array"
+        required: false
+        type: string
+        default: ""
+      dry_run:
+        description: "When true, deterministic/mock validation only — no writes"
+        required: true
+        type: boolean
+        default: true
+      confirm_write:
+        description: "Must be true with dry_run=false to write lesson JSON"
+        required: true
+        type: boolean
+        default: false
+      confirm_paid_api:
+        description: "Must be true with dry_run=false for ar-Gulf/en OpenAI calls"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: locale-phase13b-full-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  prepare-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+      cell_count: ${{ steps.plan.outputs.cell_count }}
+      dry_run: ${{ steps.plan.outputs.dry_run }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Validate workflow inputs
+        env:
+          SOURCE_SCOPE: ${{ inputs.source_scope }}
+          TARGET_LOCALES: ${{ inputs.target_locales }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          CONFIRM_WRITE: ${{ inputs.confirm_write }}
+          CONFIRM_PAID_API: ${{ inputs.confirm_paid_api }}
+        run: |
+          set -euo pipefail
+          case "$SOURCE_SCOPE" in
+            ar-MSA) ;;
+            *)
+              echo "Unsupported source_scope: $SOURCE_SCOPE"
+              exit 1
+              ;;
+          esac
+          if [ "$DRY_RUN" = "false" ] && [ "$CONFIRM_WRITE" != "true" ]; then
+            echo "Refusing write run: set confirm_write=true when dry_run=false"
+            exit 1
+          fi
+          if [ "$DRY_RUN" = "false" ] && [ "$CONFIRM_PAID_API" != "true" ]; then
+            echo "Note: ar-Gulf/en cells require confirm_paid_api=true when dry_run=false"
+          fi
+
+      - name: Build Phase 13B full matrix
+        id: set-matrix
+        env:
+          SOURCE_SCOPE: ${{ inputs.source_scope }}
+          TARGET_LOCALES: ${{ inputs.target_locales }}
+          LESSON_IDS: ${{ inputs.lesson_ids }}
+          RETRY_CELLS: ${{ inputs.retry_cells }}
+        run: |
+          set -euo pipefail
+          ARGS=(--source_scope "$SOURCE_SCOPE" --target_locales "$TARGET_LOCALES")
+          if [ -n "$LESSON_IDS" ]; then
+            ARGS+=(--lesson_ids "$LESSON_IDS")
+          fi
+          if [ -n "$RETRY_CELLS" ]; then
+            ARGS+=(--retry_cells "$RETRY_CELLS")
+          fi
+          MATRIX=$(bun run scripts/locale-lessons/print-phase13b-full-matrix.ts "${ARGS[@]}")
+          echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+
+      - name: Emit full plan summary
+        id: plan
+        env:
+          DRY_RUN: ${{ inputs.dry_run }}
+          MATRIX_JSON: ${{ steps.set-matrix.outputs.matrix }}
+        run: |
+          set -euo pipefail
+          CELL_COUNT=$(echo "$MATRIX_JSON" | jq '.include | length')
+          echo "cell_count=$CELL_COUNT" >> "$GITHUB_OUTPUT"
+          echo "dry_run=$DRY_RUN" >> "$GITHUB_OUTPUT"
+          echo "Phase 13B matrix cells: $CELL_COUNT"
+
+  generate-cell:
+    needs: prepare-matrix
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.prepare-matrix.outputs.matrix) }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Run Phase 13B full cell
+        env:
+          OPENAI_API_KEY: ${{ secrets.new_openai }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          CONFIRM_WRITE: ${{ inputs.confirm_write }}
+          CONFIRM_PAID_API: ${{ inputs.confirm_paid_api }}
+        run: |
+          set -euo pipefail
+          ARGS=(
+            --source_scope "${{ matrix.source_scope }}"
+            --locale "${{ matrix.locale }}"
+            --lesson-id "${{ matrix.lesson_id }}"
+          )
+          if [ "$DRY_RUN" = "true" ]; then
+            ARGS+=(--dry_run true)
+          else
+            ARGS+=(--dry_run false --confirm_write "$CONFIRM_WRITE" --confirm_paid_api "$CONFIRM_PAID_API")
+          fi
+          bun run scripts/locale-lessons/run-phase13b-full-cell.ts "${ARGS[@]}"
+
+      - name: Upload cell artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: locale-phase13b-full-${{ matrix.locale }}-${{ matrix.lesson_id }}
+          if-no-files-found: warn
+          retention-days: 14
+          path: |
+            src/lib/locale-lessons/ar-MSA/generated/learner-final/lessons/${{ matrix.lesson_id }}.json
+            src/lib/locale-lessons/ar-Gulf/lessons/${{ matrix.lesson_id }}.json
+            src/lib/locale-lessons/en/lessons/${{ matrix.lesson_id }}.json
+            src/lib/locale-lessons/ar-MSA/reports/phase13b-full-jobs/**/${{ matrix.lesson_id }}.result.json
+
+      - name: Upload failed cell job result
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: locale-phase13b-full-${{ matrix.locale }}-${{ matrix.lesson_id }}-failed
+          if-no-files-found: ignore
+          retention-days: 14
+          path: |
+            src/lib/locale-lessons/ar-MSA/reports/phase13b-full-jobs/**/${{ matrix.lesson_id }}.result.json
+
+  collect-report:
+    needs: [prepare-matrix, generate-cell]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Download cell artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: locale-phase13b-full-*
+          merge-multiple: false
+          path: phase13b-artifacts
+
+      - name: Collect Phase 13B full report
+        env:
+          SOURCE_SCOPE: ${{ inputs.source_scope }}
+          TARGET_LOCALES: ${{ inputs.target_locales }}
+          LESSON_IDS: ${{ inputs.lesson_ids }}
+          RETRY_CELLS: ${{ inputs.retry_cells }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          set -euo pipefail
+          ARGS=(
+            --source_scope "$SOURCE_SCOPE"
+            --target_locales "$TARGET_LOCALES"
+            --artifacts-dir phase13b-artifacts
+          )
+          if [ -n "$LESSON_IDS" ]; then
+            ARGS+=(--lesson_ids "$LESSON_IDS")
+          fi
+          if [ -n "$RETRY_CELLS" ]; then
+            ARGS+=(--retry_cells "$RETRY_CELLS")
+          fi
+          if [ "$DRY_RUN" = "true" ]; then
+            ARGS+=(--dry_run true)
+          else
+            ARGS+=(--dry_run false)
+          fi
+          bun run scripts/locale-lessons/collect-phase13b-full-report.ts "${ARGS[@]}"
+          if [ -f src/lib/locale-lessons/ar-MSA/reports/phase13b-full-report.json ]; then
+            echo "Collect report written — partial cell failures are listed under retryCells"
+          else
+            echo "Collect report missing"
+            exit 1
+          fi
+
+      - name: Validate localization contract (repo unchanged packages)
+        run: bun run scripts/locale-lessons/validate-localization-contract.ts
+
+      - name: Upload Phase 13B report bundle
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: locale-phase13b-full-report-${{ github.run_number }}
+          if-no-files-found: warn
+          retention-days: 30
+          path: |
+            src/lib/locale-lessons/ar-MSA/reports/phase13b-full-report.json
+            src/lib/locale-lessons/ar-MSA/reports/phase13b-full-jobs/**/*.result.json
