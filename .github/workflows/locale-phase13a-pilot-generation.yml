@@ -207,7 +207,7 @@ jobs:
           retention-days: 14
           path: |
             src/lib/locale-lessons/${{ matrix.locale }}/lessons/${{ matrix.lesson_id }}.json
-            src/lib/locale-lessons/${{ matrix.locale }}/reports/fragment-pilot-jobs/${{ matrix.lesson_id }}.result.json
+            src/lib/locale-lessons/${{ matrix.locale }}/reports/fragment-pilot-jobs/**/*.result.json
 
       - name: Upload failed cell job result
         if: failure()
@@ -217,7 +217,7 @@ jobs:
           if-no-files-found: ignore
           retention-days: 14
           path: |
-            src/lib/locale-lessons/${{ matrix.locale }}/reports/fragment-pilot-jobs/${{ matrix.lesson_id }}.result.json
+            src/lib/locale-lessons/${{ matrix.locale }}/reports/fragment-pilot-jobs/**/*.result.json
 
   collect-report:
     needs: [prepare-matrix, generate-cell]
@@ -239,7 +239,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           pattern: locale-phase13a-pilot-*
-          merge-multiple: true
+          merge-multiple: false
           path: phase13-artifacts
 
       - name: Collect Phase 13A pilot report
@@ -265,9 +265,11 @@ jobs:
           else
             ARGS+=(--dry_run false)
           fi
-          bun run scripts/locale-lessons/collect-phase13-pilot-report.ts "${ARGS[@]}" || REPORT_FAILED=1
-          if [ "${REPORT_FAILED:-0}" = "1" ]; then
-            echo "Collect report recorded failures — see phase13a-pilot-report.json"
+          bun run scripts/locale-lessons/collect-phase13-pilot-report.ts "${ARGS[@]}"
+          if [ -f src/lib/locale-lessons/reports/phase13a-pilot-report.json ]; then
+            echo "Collect report written — partial cell failures are listed under retryCells"
+          else
+            echo "Collect report missing"
             exit 1
           fi
 
@@ -283,8 +285,8 @@ jobs:
           retention-days: 30
           path: |
             src/lib/locale-lessons/reports/phase13a-pilot-report.json
-            src/lib/locale-lessons/ar-Gulf/reports/fragment-pilot-jobs/*.result.json
-            src/lib/locale-lessons/en/reports/fragment-pilot-jobs/*.result.json
+            src/lib/locale-lessons/ar-Gulf/reports/fragment-pilot-jobs/**/*.result.json
+            src/lib/locale-lessons/en/reports/fragment-pilot-jobs/**/*.result.json
             src/lib/locale-lessons/ar-Gulf/lessons/*.json
             src/lib/locale-lessons/en/lessons/*.json
 
