@@ -7,7 +7,7 @@ import { resolveLearnDisplayTitle } from "@/lib/locale/learn-display-title";
 import { getUiString } from "@/lib/locale/ui-strings";
 import type { SupportedLocale } from "./types";
 
-export type LearnerRouteMetaKind = "curriculum" | "dashboard" | "learn";
+export type LearnerRouteMetaKind = "curriculum" | "dashboard" | "learn" | "account";
 
 export type RouteMetaTag =
   | { title: string }
@@ -65,6 +65,12 @@ export function buildLocalizedLearnerMeta(
   if (kind === "dashboard") {
     const title = getUiString(locale, "meta.dashboard.title");
     const description = getUiString(locale, "meta.dashboard.description");
+    return { meta: withSocialTags(title, description) };
+  }
+
+  if (kind === "account") {
+    const title = getUiString(locale, "meta.account.title");
+    const description = getUiString(locale, "meta.account.description");
     return { meta: withSocialTags(title, description) };
   }
 

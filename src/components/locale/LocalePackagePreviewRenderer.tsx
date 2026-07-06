@@ -78,6 +78,9 @@ function PreviewBlockBody({
     case "concepts":
       return (
         <div className="rounded-2xl border border-primary/20 bg-primary/[0.04] p-4 sm:p-5 space-y-3">
+          <p className="text-[11px] font-mono text-primary flex items-center gap-1.5">
+            {getUiString(locale, "intro.block.conceptsHeader")}
+          </p>
           <ul className="space-y-3">
             {block.items.map((item, index) => (
               <li key={index} className="border-s-2 border-primary/30 ps-3">

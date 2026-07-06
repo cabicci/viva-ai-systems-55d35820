@@ -4,7 +4,7 @@
 date: 2026-07-06
 scope: ui
 source: user
-summary: Phase 12.6 Batch 5C — localize mission chrome
+summary: Phase 12.6 Batch 6 — learner chrome parity sweep
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

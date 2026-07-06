@@ -4,6 +4,8 @@ import type { UiStringKey } from "./ui-strings";
 export const MISSION_CHROME_KEYS = [
   "mission.copy.success",
   "mission.copy.error",
+  "mission.copy.cta",
+  "mission.copy.done",
   "mission.started.badge",
   "mission.showSteps",
   "mission.checklist.toggle",

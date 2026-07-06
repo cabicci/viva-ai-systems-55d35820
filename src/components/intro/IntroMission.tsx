@@ -36,6 +36,10 @@ export function IntroMissionPrompt({
 }) {
   const { locale } = useLocale();
   const [copied, setCopied] = React.useState(false);
+  const copyButtonLabel =
+    locale === "ar-EG" ? buttonLabel : getUiString(locale, "mission.copy.cta");
+  const copyDoneLabel =
+    locale === "ar-EG" ? copiedLabel : getUiString(locale, "mission.copy.done");
   const storageKey = React.useMemo(
     () => `mission-started:${lessonId ?? `prompt:${hashKey(prompt)}`}`,
     [lessonId, prompt],
@@ -117,11 +121,11 @@ export function IntroMissionPrompt({
             >
               {copied ? (
                 <>
-                  <CheckCircle2 className="h-3.5 w-3.5" /> {copiedLabel}
+                  <CheckCircle2 className="h-3.5 w-3.5" /> {copyDoneLabel}
                 </>
               ) : (
                 <>
-                  <Copy className="h-3.5 w-3.5" /> {buttonLabel}
+                  <Copy className="h-3.5 w-3.5" /> {copyButtonLabel}
                 </>
               )}
             </button>

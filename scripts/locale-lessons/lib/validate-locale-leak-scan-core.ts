@@ -254,6 +254,10 @@ export function validateLocaleLeakScan(): ValidatorResult {
     errors.push(`IntroMission.tsx contains banned hardcoded Arabic: "${hit}"`);
   }
 
+  if (!introMissionSource.includes("mission.copy.cta")) {
+    errors.push("IntroMission.tsx must use mission.copy.cta for non-ar-EG copy labels");
+  }
+
   const missionRubricSource = readRepoFile("src/components/intro/MissionRubricSubmit.tsx");
   if (!missionRubricSource.includes("getUiString")) {
     errors.push("MissionRubricSubmit.tsx must wire chrome through getUiString()");
@@ -263,6 +267,23 @@ export function validateLocaleLeakScan(): ValidatorResult {
   }
   for (const hit of containsAny(missionRubricSource, MISSION_RUBRIC_BANNED_AR)) {
     errors.push(`MissionRubricSubmit.tsx contains banned hardcoded Arabic: "${hit}"`);
+  }
+
+  const accountSource = readRepoFile("src/routes/account.tsx");
+  if (!accountSource.includes("buildLocalizedLearnerMeta")) {
+    errors.push("account route head must use buildLocalizedLearnerMeta");
+  }
+  if (accountSource.includes('title: "حسابي — مسارات"')) {
+    errors.push("account route head still uses static Arabic meta title");
+  }
+
+  const packagePreviewSource = readRepoFile(
+    "src/components/locale/LocalePackagePreviewRenderer.tsx",
+  );
+  if (!packagePreviewSource.includes("intro.block.conceptsHeader")) {
+    errors.push(
+      "LocalePackagePreviewRenderer.tsx must use intro.block.conceptsHeader for concepts chrome",
+    );
   }
 
   for (const rel of AR_EG_ONLY_ALLOWLIST) {

@@ -35,6 +35,9 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useLocale } from "@/lib/locale/locale-context";
+import { getUiString } from "@/lib/locale/ui-strings";
+import { buildLocalizedLearnerMeta } from "@/lib/locale/build-learner-route-meta";
+import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 import type { UiStringKey } from "@/lib/locale/ui-strings";
 import type { SupportedLocale } from "@/lib/locale/types";
@@ -48,15 +51,12 @@ const DATE_LOCALE: Record<SupportedLocale, string> = {
 
 export const Route = createFileRoute("/account")({
   beforeLoad: requireAuthBeforeLoad,
-  head: () => ({
-    meta: [
-      { title: "حسابي — مسارات" },
-      {
-        name: "description",
-        content: "إدارة حسابك واشتراكك على منصة مسارات.",
-      },
-    ],
-  }),
+  head: async ({ match }) => {
+    const locale = await resolveRouteHeadLocale({
+      searchLocale: match.search.locale,
+    });
+    return buildLocalizedLearnerMeta(locale, "account");
+  },
   component: AccountPage,
 });
 

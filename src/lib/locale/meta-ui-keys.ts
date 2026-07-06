@@ -12,4 +12,6 @@ export const META_UI_KEYS = [
   "meta.learn.titlePathOnly",
   "meta.learn.descriptionPathOnly",
   "meta.learn.titleUnknown",
+  "meta.account.title",
+  "meta.account.description",
 ] as const satisfies readonly UiStringKey[];
