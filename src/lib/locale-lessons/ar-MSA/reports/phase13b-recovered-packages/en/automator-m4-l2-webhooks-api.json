@@ -15,11 +15,11 @@
       "role": "Orientation",
       "heading": "Orientation",
       "subtitle": "Introduction",
-      "contentMarkdown": "- **What will you learn?** **Webhook** = An application tells another application, \"Something happened\" — without you having to ask repeatedly.\n- **Why now?** Now that you know where data is stored, you need to understand how applications communicate.\n- **What after the lesson?** You will explain one use case for **Webhook** + what data (**Payload**) is sent.",
+      "contentMarkdown": "- What will you learn? Webhook = An application tells another application, \"Something happened\" — without you having to ask repeatedly.\n- Why now? Now that you know where data is stored, you need to understand how applications communicate.\n- What after the lesson? You will explain one use case for Webhook + what data (Payload) is sent.",
       "bullets": [
-        "**What will you learn?** **Webhook** = An application tells another application, \"Something happened\" — without you having to ask repeatedly.",
-        "**Why now?** Now that you know where data is stored, you need to understand how applications communicate.",
-        "**What after the lesson?** You will explain one use case for **Webhook** + what data (**Payload**) is sent."
+        "What will you learn? Webhook = An application tells another application, \"Something happened\" — without you having to ask repeatedly.",
+        "Why now? Now that you know where data is stored, you need to understand how applications communicate.",
+        "What after the lesson? You will explain one use case for Webhook + what data (Payload) is sent."
       ],
       "tables": []
     },
@@ -27,12 +27,12 @@
       "role": "Tension",
       "heading": "Tension",
       "subtitle": "A Familiar Situation",
-      "contentMarkdown": "- \"**Workflow** asks every minute: Is there anything new?\"\n- **Workflow** asks the site 1,440 times a day — most responses are \"no\". It wastes time.\n- The customer paid — but automation learned after 60 seconds. The welcome message was delayed.\n- The virtual worker needs to know: when to wait for a notification? (**Webhook**) — and when to ask for it themselves? (**API**).",
+      "contentMarkdown": "- \"Workflow asks every minute: Is there anything new?\"\n- Workflow asks the site 1,440 times a day — most responses are \"no\". It wastes time.\n- The customer paid — but automation learned after 60 seconds. The welcome message was delayed.\n- The virtual worker needs to know: when to wait for a notification? (Webhook) — and when to ask for it themselves? (API).",
       "bullets": [
-        "\"**Workflow** asks every minute: Is there anything new?\"",
-        "**Workflow** asks the site 1,440 times a day — most responses are \"no\". It wastes time.",
+        "\"Workflow asks every minute: Is there anything new?\"",
+        "Workflow asks the site 1,440 times a day — most responses are \"no\". It wastes time.",
         "The customer paid — but automation learned after 60 seconds. The welcome message was delayed.",
-        "The virtual worker needs to know: when to wait for a notification? (**Webhook**) — and when to ask for it themselves? (**API**)."
+        "The virtual worker needs to know: when to wait for a notification? (Webhook) — and when to ask for it themselves? (API)."
       ],
       "tables": []
     },
@@ -40,12 +40,12 @@
       "role": "Core idea",
       "heading": "Core Idea",
       "subtitle": "API = You Ask. Webhook = They Notify You",
-      "contentMarkdown": "- **API:** You send a request — \"Give me today's requests.\" You initiate it.\n- **Webhook:** The other application sends — \"New request now!\" — as soon as the event occurs.\n- **Payload** = the data inside the message: name, amount, date.\n- In Make and n8n, there are ready-made **nodes** — no coding required.",
+      "contentMarkdown": "- API: You send a request — \"Give me today's requests.\" You initiate it.\n- Webhook: The other application sends — \"New request now!\" — as soon as the event occurs.\n- Payload = the data inside the message: name, amount, date.\n- In Make and n8n, there are ready-made nodes — no coding required.",
       "bullets": [
-        "**API:** You send a request — \"Give me today's requests.\" You initiate it.",
-        "**Webhook:** The other application sends — \"New request now!\" — as soon as the event occurs.",
-        "**Payload** = the data inside the message: name, amount, date.",
-        "In Make and n8n, there are ready-made **nodes** — no coding required."
+        "API: You send a request — \"Give me today's requests.\" You initiate it.",
+        "Webhook: The other application sends — \"New request now!\" — as soon as the event occurs.",
+        "Payload = the data inside the message: name, amount, date.",
+        "In Make and n8n, there are ready-made nodes — no coding required."
       ],
       "tables": []
     },
@@ -53,7 +53,7 @@
       "role": "Comparison",
       "heading": "Comparison",
       "subtitle": "Polling Every Minute vs. Instant Notification",
-      "contentMarkdown": "| Polling — Asks Every Minute | Webhook — Notifies You |\n|-------------------------|-------------------|\n| Automation asks \"Is there a request?\" thousands of times. Slow, costly, delayed. | The site sends immediately upon payment: name + amount + email. **Workflow** operates in the same second. |",
+      "contentMarkdown": "| Polling — Asks Every Minute | Webhook — Notifies You |\n|-------------------------|-------------------|\n| Automation asks \"Is there a request?\" thousands of times. Slow, costly, delayed. | The site sends immediately upon payment: name + amount + email. Workflow operates in the same second. |",
       "bullets": [],
       "tables": [
         {
@@ -64,7 +64,7 @@
           "rows": [
             [
               "Automation asks \"Is there a request?\" thousands of times. Slow, costly, delayed.",
-              "The site sends immediately upon payment: name + amount + email. **Workflow** operates in the same second."
+              "The site sends immediately upon payment: name + amount + email. Workflow operates in the same second."
             ]
           ]
         }
@@ -74,7 +74,7 @@
       "role": "Glossary",
       "heading": "Glossary",
       "subtitle": "Two Terms for Communication",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Webhook** | Instant notification when an event occurs | Customer paid → the site sends a webhook to automation |\n| **Payload** | The data inside the message | `{ name, amount, email }` |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| Webhook | Instant notification when an event occurs | Customer paid → the site sends a webhook to automation |\n| Payload | The data inside the message | `{ name, amount, email }` |",
       "bullets": [],
       "tables": [
         {
@@ -85,12 +85,12 @@
           ],
           "rows": [
             [
-              "**Webhook**",
+              "Webhook",
               "Instant notification when an event occurs",
               "Customer paid → the site sends a webhook to automation"
             ],
             [
-              "**Payload**",
+              "Payload",
               "The data inside the message",
               "`{ name, amount, email }`"
             ]
@@ -101,7 +101,7 @@
     {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot Block",
-      "contentMarkdown": "**Endpoint** — Applications communicate through endpoints: **Webhook** receives, **API** sends. Data = **Payload**.",
+      "contentMarkdown": "Endpoint — Applications communicate through endpoints: Webhook receives, API sends. Data = Payload.",
       "bullets": [],
       "tables": []
     },
@@ -109,17 +109,17 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "**Question:** You want a welcome message immediately when the customer pays. What is the best option?\n\n- **Correct answer:** **Webhook** from the payment gateway — notifies you at the moment of payment.\n- **Explanation:** An instant event requires a webhook. Polling is slow and costly.",
+      "contentMarkdown": "Question: You want a welcome message immediately when the customer pays. What is the best option?\nWebhook from the payment gateway — notifies you at the moment of payment.\nExplanation: An instant event requires a webhook. Polling is slow and costly.",
       "bullets": [
-        "**Correct answer:** **Webhook** from the payment gateway — notifies you at the moment of payment.",
-        "**Explanation:** An instant event requires a webhook. Polling is slow and costly."
+        "Webhook from the payment gateway — notifies you at the moment of payment.",
+        "Explanation: An instant event requires a webhook. Polling is slow and costly."
       ],
       "tables": [],
       "quiz": {
         "question": "You want a welcome message immediately when the customer pays. What is the best option?",
         "correctIndex": 0,
         "options": [
-          "**Correct answer:** **Webhook** from the payment gateway — notifies you at the moment of payment.",
+          "Webhook from the payment gateway — notifies you at the moment of payment.",
           "An unsuitable option; ignores the key details from the section above.",
           "A partial answer that misses the context and ignores the next step in the decision."
         ],
@@ -130,7 +130,7 @@
       "role": "Mission",
       "heading": "Mission",
       "subtitle": "Explain One Webhook Use Case",
-      "contentMarkdown": "**Introduction:** Explain — not build. AI may suggest wording — you choose the final version.\n\n**Delivery:** Event · Who sends · Who receives · **Payload** (3 fields) · Why webhook is better than polling.\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Event and Direction | 50% | Specific event; clear who sends and who receives |\n| Payload | 50% | 3 fields with examples; reason for webhook is clear |",
+      "contentMarkdown": "Introduction: Explain — not build. AI may suggest wording — you choose the final version. Delivery: Event · Who sends · Who receives · Payload (3 fields) · Why webhook is better than polling. | Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Event and Direction | 50% | Specific event; clear who sends and who receives |\n| Payload | 50% | 3 fields with examples; reason for webhook is clear |",
       "bullets": [],
       "tables": [
         {
@@ -175,11 +175,11 @@
     {
       "role": "Confidence close",
       "heading": "Confidence Close",
-      "contentMarkdown": "- **Understood:** **Webhook** + **Payload** — An application notifies another application when an event occurs.\n- **You can:** You have one use case ready.\n- **Next:** **Error Handling** — Alert before the customer is harmed.",
+      "contentMarkdown": "- Understood: Webhook + Payload — An application notifies another application when an event occurs.\n- You can: You have one use case ready.\n- Next: Error Handling — Alert before the customer is harmed.",
       "bullets": [
-        "**Understood:** **Webhook** + **Payload** — An application notifies another application when an event occurs.",
-        "**You can:** You have one use case ready.",
-        "**Next:** **Error Handling** — Alert before the customer is harmed."
+        "Understood: Webhook + Payload — An application notifies another application when an event occurs.",
+        "You can: You have one use case ready.",
+        "Next: Error Handling — Alert before the customer is harmed."
       ],
       "tables": []
     }

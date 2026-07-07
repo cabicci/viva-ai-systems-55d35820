@@ -15,11 +15,11 @@
       "role": "Orientation",
       "heading": "Orientation",
       "subtitle": "Beginning of the Lesson",
-      "contentMarkdown": "- **What Will You Understand?** Testing prevents embarrassing mistakes in **Automation** — it's not just a technical luxury.\n- **Why Now?** After fixing errors, the **workflow** is running — you need to ensure it won't send 'undefined' to 500 customers.\n- **What After the Lesson?** Testing checklist: step → full flow → edge cases → manual review.",
+      "contentMarkdown": "- What Will You Understand? Testing prevents embarrassing mistakes in Automation — it's not just a technical luxury.\n- Why Now? After fixing errors, the workflow is running — you need to ensure it won't send 'undefined' to 500 customers.\n- What After the Lesson? Testing checklist: step → full flow → edge cases → manual review.",
       "bullets": [
-        "**What Will You Understand?** Testing prevents embarrassing mistakes in **Automation** — it's not just a technical luxury.",
-        "**Why Now?** After fixing errors, the **workflow** is running — you need to ensure it won't send 'undefined' to 500 customers.",
-        "**What After the Lesson?** Testing checklist: step → full flow → edge cases → manual review."
+        "What Will You Understand? Testing prevents embarrassing mistakes in Automation — it's not just a technical luxury.",
+        "Why Now? After fixing errors, the workflow is running — you need to ensure it won't send 'undefined' to 500 customers.",
+        "What After the Lesson? Testing checklist: step → full flow → edge cases → manual review."
       ],
       "tables": []
     },
@@ -27,10 +27,10 @@
       "role": "Tension",
       "heading": "Tension",
       "subtitle": "A Familiar Situation",
-      "contentMarkdown": "- 'The automation sent 'Hello undefined' to all customers'\n- I ran the **workflow** in production without testing — 300 customers, trust lost in an hour.\n- A minute of testing before going live would have revealed the empty name field.",
+      "contentMarkdown": "- 'The automation sent 'Hello undefined' to all customers'\n- I ran the workflow in production without testing — 300 customers, trust lost in an hour.\n- A minute of testing before going live would have revealed the empty name field.",
       "bullets": [
         "'The automation sent 'Hello undefined' to all customers'",
-        "I ran the **workflow** in production without testing — 300 customers, trust lost in an hour.",
+        "I ran the workflow in production without testing — 300 customers, trust lost in an hour.",
         "A minute of testing before going live would have revealed the empty name field."
       ],
       "tables": []
@@ -39,12 +39,12 @@
       "role": "Core idea",
       "heading": "Core Idea",
       "subtitle": "4 Levels of Testing",
-      "contentMarkdown": "- **Unit Test:** If the name is empty, what happens?\n- **Integration Test:** Run the entire **Flow** with test data.\n- **Edge Cases:** Empty, error, duplicate — at least 3 cases.\n- **Manual Review:** Human eyes before going live — the last gate.",
+      "contentMarkdown": "- Unit Test: If the name is empty, what happens?\n- Integration Test: Run the entire Flow with test data.\n- Edge Cases: Empty, error, duplicate — at least 3 cases.\n- Manual Review: Human eyes before going live — the last gate.",
       "bullets": [
-        "**Unit Test:** If the name is empty, what happens?",
-        "**Integration Test:** Run the entire **Flow** with test data.",
-        "**Edge Cases:** Empty, error, duplicate — at least 3 cases.",
-        "**Manual Review:** Human eyes before going live — the last gate."
+        "Unit Test: If the name is empty, what happens?",
+        "Integration Test: Run the entire Flow with test data.",
+        "Edge Cases: Empty, error, duplicate — at least 3 cases.",
+        "Manual Review: Human eyes before going live — the last gate."
       ],
       "tables": []
     },
@@ -73,7 +73,7 @@
       "role": "Glossary",
       "heading": "Glossary",
       "subtitle": "Two Testing Terms",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Unit Test** | A single part — **node** or condition | Empty email → does **Filter** stop it? |\n| **Integration Test** | Entire **Workflow** with dummy data | lead 'test' → did it send an email + add a row in the table? |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| Unit Test | A single part — node or condition | Empty email → does Filter stop it? |\n| Integration Test | Entire Workflow with dummy data | lead 'test' → did it send an email + add a row in the table? |",
       "bullets": [],
       "tables": [
         {
@@ -84,13 +84,13 @@
           ],
           "rows": [
             [
-              "**Unit Test**",
-              "A single part — **node** or condition",
-              "Empty email → does **Filter** stop it?"
+              "Unit Test",
+              "A single part — node or condition",
+              "Empty email → does Filter stop it?"
             ],
             [
-              "**Integration Test**",
-              "Entire **Workflow** with dummy data",
+              "Integration Test",
+              "Entire Workflow with dummy data",
               "lead 'test' → did it send an email + add a row in the table?"
             ]
           ]
@@ -108,17 +108,17 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "**Question:** A new **workflow** sends a welcome message. What is the best step before going live?\n\n- **Correct Answer:** Test data + 3 edge cases + manual review\n- **Explanation:** The error stays with you — not with the customer.",
+      "contentMarkdown": "Question: A new workflow sends a welcome message. What is the best step before going live?\nTest data + 3 edge cases + manual review\nExplanation: The error stays with you — not with the customer.",
       "bullets": [
-        "**Correct Answer:** Test data + 3 edge cases + manual review",
-        "**Explanation:** The error stays with you — not with the customer."
+        "Test data + 3 edge cases + manual review",
+        "Explanation: The error stays with you — not with the customer."
       ],
       "tables": [],
       "quiz": {
-        "question": "A new **workflow** sends a welcome message. What is the best step before going live?",
+        "question": "A new workflow sends a welcome message. What is the best step before going live?",
         "correctIndex": 0,
         "options": [
-          "**Correct Answer:** Test data + 3 edge cases + manual review",
+          "Test data + 3 edge cases + manual review",
           "An inappropriate choice; it ignores the basic data in the section above.",
           "A partial answer misses the context and ignores the next step in the decision."
         ],
@@ -167,17 +167,18 @@
           }
         ],
         "yamlIntent": "Build test checklist: unit, full flow, 3 edge cases, manual review",
-        "yamlType": "practice"
+        "yamlType": "practice",
+        "intro": ""
       }
     },
     {
       "role": "Confidence close",
       "heading": "Confidence Close",
-      "contentMarkdown": "- **I Understand:** Testing protects customer trust.\n- **You Can:** Have a checklist ready before going live.\n- **Next:** **LLM in Flow** — AI as a **node**.\n\n---",
+      "contentMarkdown": "- I Understand: Testing protects customer trust.\n- You Can: Have a checklist ready before going live.\n- Next: LLM in Flow — AI as a node. ---",
       "bullets": [
-        "**I Understand:** Testing protects customer trust.",
-        "**You Can:** Have a checklist ready before going live.",
-        "**Next:** **LLM in Flow** — AI as a **node**."
+        "I Understand: Testing protects customer trust.",
+        "You Can: Have a checklist ready before going live.",
+        "Next: LLM in Flow — AI as a node."
       ],
       "tables": []
     }

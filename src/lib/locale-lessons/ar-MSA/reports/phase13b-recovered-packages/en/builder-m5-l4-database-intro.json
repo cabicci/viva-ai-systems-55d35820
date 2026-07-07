@@ -15,11 +15,11 @@
       "role": "Orientation",
       "heading": "Orientation — Beginning the Lesson",
       "subtitle": "Beginning the Lesson",
-      "contentMarkdown": "- **What will you understand?** **Any app needs memory** — **a place to save customers and conversations**.\n- **Why now?** **Without storage**, **the customer returns tomorrow to find everything empty**.\n- **What after the lesson?** **You will design a table with 4 columns** — **like an Excel sheet for your app**.",
+      "contentMarkdown": "- What will you understand? Any app needs memory — a place to save customers and conversations.\n- Why now? Without storage, the customer returns tomorrow to find everything empty.\n- What after the lesson? You will design a table with 4 columns — like an Excel sheet for your app.",
       "bullets": [
-        "**What will you understand?** **Any app needs memory** — **a place to save customers and conversations**.",
-        "**Why now?** **Without storage**, **the customer returns tomorrow to find everything empty**.",
-        "**What after the lesson?** **You will design a table with 4 columns** — **like an Excel sheet for your app**."
+        "What will you understand? Any app needs memory — a place to save customers and conversations.",
+        "Why now? Without storage, the customer returns tomorrow to find everything empty.",
+        "What after the lesson? You will design a table with 4 columns — like an Excel sheet for your app."
       ],
       "tables": []
     },
@@ -27,11 +27,11 @@
       "role": "Tension",
       "heading": "Tension — The customer returned after a week — and the app forgot",
       "subtitle": "The customer returned after a week — and the app forgot",
-      "contentMarkdown": "- **The customer talked to AI, got an excellent answer, and closed the app**.\n- **After a week, they opened it again** — **no conversation, no name, as if it was the first time**.\n- **An app without memory = a person without memory**. **Every day is a new beginning**.",
+      "contentMarkdown": "- The customer talked to AI, got an excellent answer, and closed the app.\n- After a week, they opened it again — no conversation, no name, as if it was the first time.\n- An app without memory = a person without memory. Every day is a new beginning.",
       "bullets": [
-        "**The customer talked to AI, got an excellent answer, and closed the app**.",
-        "**After a week, they opened it again** — **no conversation, no name, as if it was the first time**.",
-        "**An app without memory = a person without memory**. **Every day is a new beginning**."
+        "The customer talked to AI, got an excellent answer, and closed the app.",
+        "After a week, they opened it again — no conversation, no name, as if it was the first time.",
+        "An app without memory = a person without memory. Every day is a new beginning."
       ],
       "tables": []
     },
@@ -39,12 +39,12 @@
       "role": "Core idea",
       "heading": "Core Idea — The app needs memory",
       "subtitle": "The app needs memory",
-      "contentMarkdown": "- **Frontend = what you see**. **Backend = what works**. **Database (the storage) = what remembers**.\n- **Any information that needs to stay tomorrow** — **conversations, names, requests** — **belongs in storage**.\n- **Think of it like an Excel sheet on a server**: **a row for each customer, columns for information**.\n- **No SQL needed right now** — **the question is: what should be stored?**",
+      "contentMarkdown": "- Frontend = what you see. Backend = what works. Database (the storage) = what remembers.\n- Any information that needs to stay tomorrow — conversations, names, requests — belongs in storage.\n- Think of it like an Excel sheet on a server: a row for each customer, columns for information.\n- No SQL needed right now — the question is: what should be stored?",
       "bullets": [
-        "**Frontend = what you see**. **Backend = what works**. **Database (the storage) = what remembers**.",
-        "**Any information that needs to stay tomorrow** — **conversations, names, requests** — **belongs in storage**.",
-        "**Think of it like an Excel sheet on a server**: **a row for each customer, columns for information**.",
-        "**No SQL needed right now** — **the question is: what should be stored?**"
+        "Frontend = what you see. Backend = what works. Database (the storage) = what remembers.",
+        "Any information that needs to stay tomorrow — conversations, names, requests — belongs in storage.",
+        "Think of it like an Excel sheet on a server: a row for each customer, columns for information.",
+        "No SQL needed right now — the question is: what should be stored?"
       ],
       "tables": []
     },
@@ -52,7 +52,7 @@
       "role": "Comparison",
       "heading": "Comparison — Client Browser vs. Server Storage",
       "subtitle": "Client Browser vs. Server Storage",
-      "contentMarkdown": "| Storage in the browser only | Storage on the server |\n|----------------------|-------------------|\n| **Conversations on the client device**. **Opening from another phone = empty**. **Clearing cache = everything is gone** | **Data is stored outside the client device**. **Returns from any phone — finds their conversations**. **This is the Database** |",
+      "contentMarkdown": "| Storage in the browser only | Storage on the server |\n|----------------------|-------------------|\n| Conversations on the client device. Opening from another phone = empty. Clearing cache = everything is gone | Data is stored outside the client device. Returns from any phone — finds their conversations. This is the Database |",
       "bullets": [],
       "tables": [
         {
@@ -62,8 +62,8 @@
           ],
           "rows": [
             [
-              "**Conversations on the Client Device**. **Open from another phone = empty**. **Clear cache = everything is gone**.",
-              "**Data is stored outside the client device**. **Returns from any phone — finds its conversations**. **This is a Database**."
+              "Conversations on the Client Device. Open from another phone = empty. Clear cache = everything is gone.",
+              "Data is stored outside the client device. Returns from any phone — finds its conversations. This is a Database."
             ]
           ]
         }
@@ -73,7 +73,7 @@
       "role": "Glossary",
       "heading": "Glossary — Two Terms to Start",
       "subtitle": "Two Terms to Start",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Database** | **The permanent archive** — **stores clients, conversations, and anything that needs to remain** | «**The last question asked by the client**» — **stored in a row in the table** |\n| **Table** | **Rows and columns — like Excel**. **Each row = a client or a conversation** | **Columns: name \\| email \\| last visit \\| last question** |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| Database | The permanent archive — stores clients, conversations, and anything that needs to remain | «The last question asked by the client» — stored in a row in the table |\n| Table | Rows and columns — like Excel. Each row = a client or a conversation | Columns: name \\| email \\| last visit \\| last question |",
       "bullets": [],
       "tables": [
         {
@@ -84,17 +84,14 @@
           ],
           "rows": [
             [
-              "**Database**",
-              "**The permanent archive** — **stores clients, conversations, and anything that needs to remain**",
-              "«**The last question asked by the client**» — **stored in a row in the table**"
+              "Database",
+              "The permanent archive — stores clients, conversations, and anything that needs to remain",
+              "«The last question asked by the client» — stored in a row in the table"
             ],
             [
-              "**Table**",
-              "**Rows and columns — like Excel**. **Each row = a client or a conversation**",
-              "**Columns: name \\**",
-              "email \\",
-              "last visit \\",
-              "last question****"
+              "Table",
+              "Rows and columns — like Excel. Each row = a client or a conversation",
+              "Columns: name \\ | email \\ | last visit \\ | last question"
             ]
           ]
         }
@@ -103,7 +100,7 @@
     {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot Block (Intent)",
-      "contentMarkdown": "**Progress is not on your device** — **if you open from another phone, you will find it**. **Because it is stored in the archive**. **Your app works on the same idea**.",
+      "contentMarkdown": "Progress is not on your device — if you open from another phone, you will find it. Because it is stored in the archive. Your app works on the same idea.",
       "bullets": [],
       "tables": []
     },
@@ -111,29 +108,29 @@
       "role": "Quiz",
       "heading": "Quiz — Quick Confirmation",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 2\n\n**Question:** **The client opened the app after 6 months and finds all their old requests. Where is the data from?**\n\nFrom the interface on their phone**.**\nFrom the backend that is currently running**.**\n**From the archive — Database**.\n\n**Explanation:** **Any old information is stored and retrieved = Database**. **The interface displays — the archive saves**.",
+      "contentMarkdown": "Question: The client opened the app after 6 months and finds all their old requests. Where is the data from?\nFrom the interface on their phone.\nFrom the backend that is currently running.\nFrom the archive — Database.\nExplanation: Any old information is stored and retrieved = Database. The interface displays — the archive saves.",
       "bullets": [
-        "From the interface on their phone**.**",
-        "From the backend that is currently running**.**",
-        "**The correct answer (Option 3):** **From the database — Database**."
+        "From the interface on their phone.",
+        "From the backend that is currently running.",
+        "From the database — Database."
       ],
       "tables": [],
       "quiz": {
-        "question": "**The client opened the app after 6 months and sees all their old requests. Where is the data from?**",
+        "question": "The client opened the app after 6 months and sees all their old requests. Where is the data from?",
         "correctIndex": 2,
         "options": [
           "From the interface on their phone.",
           "From the backend that is currently running.",
-          "**The correct answer (Option 3):** **From the database — Database**."
+          "From the database — Database."
         ],
-        "explanation": "**Any old information is stored and retrieved = Database**. **The interface displays — the database stores**."
+        "explanation": "Any old information is stored and retrieved = Database. The interface displays — the database stores."
       }
     },
     {
       "role": "Mission",
       "heading": "Mission — Design a Table with 4 Columns",
       "subtitle": "Design a Table with 4 Columns",
-      "contentMarkdown": "**Introduction:** **Planning Task — Not SQL**. **5–10 minutes is enough**.\n\n**Delivery:**\n\n1. **Table Name** (like “Clients” or “Conversations”)\n2. **4 Columns** — **For each column: name, type of information (text/number/date), example, why it’s important**\n3. **A sentence “why it’s important” for each column**\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| 4 Clear Columns | 60% | **Each column has a name + type + example**. **The columns are linked to the AI application — not random** |\n| Logical Reason | 40% | **Each column has a “why it’s important”**. **The information helps the application “remember” the client** |",
+      "contentMarkdown": "Introduction: Planning Task — Not SQL. 5–10 minutes is enough. Delivery: 1. Table Name (like “Clients” or “Conversations”)\n2. 4 Columns — For each column: name, type of information (text/number/date), example, why it’s important\n3. A sentence “why it’s important” for each column Evaluation Criteria: | Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| 4 Clear Columns | 60% | Each column has a name + type + example. The columns are linked to the AI application — not random |\n| Logical Reason | 40% | Each column has a “why it’s important”. The information helps the application “remember” the client |",
       "bullets": [],
       "tables": [
         {
@@ -146,33 +143,33 @@
             [
               "4 Clear Columns",
               "60%",
-              "**Each column has a name + type + example**. **The columns are linked to the AI application — not random**"
+              "Each column has a name + type + example. The columns are linked to the AI application — not random"
             ],
             [
               "Logical Reason",
               "40%",
-              "**Each column has a “why it’s important”**. **The information helps the application “remember” the client**"
+              "Each column has a “why it’s important”. The information helps the application “remember” the client"
             ]
           ]
         }
       ],
       "mission": {
-        "intro": "**Planning Task — Not SQL**. **5–10 minutes is enough**.",
+        "intro": "Planning Task — Not SQL. 5–10 minutes is enough.",
         "delivery": [
-          "**Table Name** (like “Clients” or “Conversations”)",
-          "**4 Columns** — **For each column: name, type of information (text/number/date), example, why it’s important**",
-          "**A sentence “why it’s important” for each column**"
+          "Table Name (like “Clients” or “Conversations”)",
+          "4 Columns — For each column: name, type of information (text/number/date), example, why it’s important",
+          "A sentence “why it’s important” for each column"
         ],
         "rubric": [
           {
             "dimension": "4 Clear Columns",
             "weight": 60,
-            "criteria": "**Each column has a name + type + example**. **The columns are linked to the AI application — not random**"
+            "criteria": "Each column has a name + type + example. The columns are linked to the AI application — not random"
           },
           {
             "dimension": "The reason is logical",
             "weight": 40,
-            "criteria": "**Each column has a 'why it matters'**. **The information helps the app 'remember' the client**"
+            "criteria": "Each column has a 'why it matters'. The information helps the app 'remember' the client"
           }
         ],
         "yamlIntent": "Design table name + 4 columns with type, example, why — ~5–10 min",
@@ -182,11 +179,11 @@
     {
       "role": "Confidence close",
       "heading": "Confidence close",
-      "contentMarkdown": "- **I understand:** **The app = interface + backend + memory**. **Without storage, the client is forgotten**.\n- **You can:** **A table with 4 columns** — **the foundation of any AI application**.\n- **Next:** **Mini Win** — **'small and published' is better than 'complete and untested'**.\n\n---",
+      "contentMarkdown": "- I understand: The app = interface + backend + memory. Without storage, the client is forgotten.\n- You can: A table with 4 columns — the foundation of any AI application.\n- Next: Mini Win — 'small and published' is better than 'complete and untested'. ---",
       "bullets": [
-        "**I understand:** **The app = interface + backend + memory**. **Without storage, the client is forgotten**.",
-        "**You can:** **A table with 4 columns** — **the foundation of any AI application**.",
-        "**Next:** **Mini Win** — **'small and published' is better than 'complete and untested'**."
+        "I understand: The app = interface + backend + memory. Without storage, the client is forgotten.",
+        "You can: A table with 4 columns — the foundation of any AI application.",
+        "Next: Mini Win — 'small and published' is better than 'complete and untested'."
       ],
       "tables": []
     }

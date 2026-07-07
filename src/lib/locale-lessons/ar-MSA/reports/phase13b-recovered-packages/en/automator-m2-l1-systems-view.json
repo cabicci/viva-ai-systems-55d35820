@@ -15,11 +15,11 @@
       "role": "Orientation",
       "heading": "Orientation",
       "subtitle": "Beginning of the Lesson",
-      "contentMarkdown": "- **What will you understand?** Any repeated task = system: **Trigger** → Process → **Output**. When you see it this way, you can hand it over to the virtual worker.\n- **Why now?** After identifying which tasks consume your time, the next step is to break one of them down into clear parts.\n- **What after the lesson?** You will convert one repeated task into a Trigger + Process + Output.",
+      "contentMarkdown": "- What will you understand? Any repeated task = system: Trigger → Process → Output. When you see it this way, you can hand it over to the virtual worker.\n- Why now? After identifying which tasks consume your time, the next step is to break one of them down into clear parts.\n- What after the lesson? You will convert one repeated task into a Trigger + Process + Output.",
       "bullets": [
-        "**What will you understand?** Any repeated task = system: **Trigger** → Process → **Output**. When you see it this way, you can hand it over to the virtual worker.",
-        "**Why now?** After identifying which tasks consume your time, the next step is to break one of them down into clear parts.",
-        "**What after the lesson?** You will convert one repeated task into a Trigger + Process + Output."
+        "What will you understand? Any repeated task = system: Trigger → Process → Output. When you see it this way, you can hand it over to the virtual worker.",
+        "Why now? After identifying which tasks consume your time, the next step is to break one of them down into clear parts.",
+        "What after the lesson? You will convert one repeated task into a Trigger + Process + Output."
       ],
       "tables": []
     },
@@ -39,12 +39,12 @@
       "role": "Core idea",
       "heading": "Core Idea",
       "subtitle": "Trigger → Process → Output",
-      "contentMarkdown": "- **Trigger:** What starts the work? — WhatsApp message, new form, scheduled appointment.\n- **Process:** What steps do you take each time? — Understand the request, search for the price, make a decision.\n- **Output:** What comes out in the end? — Response to the client, entry in a table, reminder.\n- **Example:** \"Respond to a WhatsApp inquiry\" = Trigger: Message → Process: Understanding + Price Search → Output: Response + Log.\n- When you break down the task this way, the virtual worker knows exactly where to work.",
+      "contentMarkdown": "- Trigger: What starts the work? — WhatsApp message, new form, scheduled appointment.\n- Process: What steps do you take each time? — Understand the request, search for the price, make a decision.\n- Output: What comes out in the end? — Response to the client, entry in a table, reminder.\n- Example: \"Respond to a WhatsApp inquiry\" = Trigger: Message → Process: Understanding + Price Search → Output: Response + Log.\n- When you break down the task this way, the virtual worker knows exactly where to work.",
       "bullets": [
-        "**Trigger:** What starts the work? — WhatsApp message, new form, scheduled appointment.",
-        "**Process:** What steps do you take each time? — Understand the request, search for the price, make a decision.",
-        "**Output:** What comes out in the end? — Response to the client, entry in a table, reminder.",
-        "**Example:** \"Respond to a WhatsApp inquiry\" = Trigger: Message → Process: Understanding + Price Search → Output: Response + Log.",
+        "Trigger: What starts the work? — WhatsApp message, new form, scheduled appointment.",
+        "Process: What steps do you take each time? — Understand the request, search for the price, make a decision.",
+        "Output: What comes out in the end? — Response to the client, entry in a table, reminder.",
+        "Example: \"Respond to a WhatsApp inquiry\" = Trigger: Message → Process: Understanding + Price Search → Output: Response + Log.",
         "When you break down the task this way, the virtual worker knows exactly where to work."
       ],
       "tables": []
@@ -74,7 +74,7 @@
       "role": "Glossary",
       "heading": "Glossary",
       "subtitle": "Terms for the System",
-      "contentMarkdown": "| Term | Meaning | Example |\n|------|---------|--------|\n| **Trigger** | The event that starts the system — without it, nothing moves | A client sends \"How much?\" on WhatsApp |\n| **Output** | What comes out of the system when finished — what the virtual worker \"delivers\" | Response with the price + new entry in the client table |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|------|---------|--------|\n| Trigger | The event that starts the system — without it, nothing moves | A client sends \"How much?\" on WhatsApp |\n| Output | What comes out of the system when finished — what the virtual worker \"delivers\" | Response with the price + new entry in the client table |",
       "bullets": [],
       "tables": [
         {
@@ -85,12 +85,12 @@
           ],
           "rows": [
             [
-              "**Trigger**",
+              "Trigger",
               "The event that starts the system — without it, nothing moves.",
               "A client sends \"How much?\" on WhatsApp."
             ],
             [
-              "**Output**",
+              "Output",
               "What comes out of the system when finished — what the virtual worker \"delivers\".",
               "Response with the price + new entry in the client table."
             ]
@@ -109,28 +109,28 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "> **Quiz key:** correctIndex: 0\n\n**Question:** A client sends a message on Facebook asking about the price of a product. In the \"Response System,\" what is the **Trigger**?\n\n- **Correct answer:** **The new client message**\n- **Explanation:** **Trigger** = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output).",
+      "contentMarkdown": "Question: A client sends a message on Facebook asking about the price of a product. In the \"Response System,\" what is the Trigger?\nThe new client message\nExplanation: Trigger = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output).",
       "bullets": [
-        "**Correct answer:** **The new client message**",
-        "**Explanation:** **Trigger** = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output)."
+        "The new client message",
+        "Explanation: Trigger = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output)."
       ],
       "tables": [],
       "quiz": {
-        "question": "A client sends a message on Facebook asking about the price of a product. In the \"Response System,\" what is the **Trigger**?",
+        "question": "A client sends a message on Facebook asking about the price of a product. In the \"Response System,\" what is the Trigger?",
         "correctIndex": 0,
         "options": [
-          "**The new client message**",
+          "The new client message",
           "An irrelevant option; it ignores the basic data in the section above.",
           "A partial answer that misses the context and ignores the next step for the decision."
         ],
-        "explanation": "**Trigger** = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output)."
+        "explanation": "Trigger = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output)."
       }
     },
     {
       "role": "Mission",
       "heading": "Mission",
       "subtitle": "Break Down a Repeated Task into a System",
-      "contentMarkdown": "**Introduction:** Choose one task you do every week (from **Time Inventory**). Break it down into Trigger + Process + Output — this is design, not tool building. 10–15 minutes is enough.\n\n**Submission:** Task name · Trigger (what starts it, when/from whom) · Process (at least 4 steps in order) · Output (what comes out and for whom) · If you will automate only one step — which one and why?\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| System Breakdown | 70% | A specific and repeated task from your work; Trigger + 4 process steps + clear output |\n| Automation Step | 30% | You chose one step because of (repetition / time / errors) |",
+      "contentMarkdown": "Introduction: Choose one task you do every week (from Time Inventory). Break it down into Trigger + Process + Output — this is design, not tool building. 10–15 minutes is enough. Submission: Task name · Trigger (what starts it, when/from whom) · Process (at least 4 steps in order) · Output (what comes out and for whom) · If you will automate only one step — which one and why? Evaluation Criteria: | Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| System Breakdown | 70% | A specific and repeated task from your work; Trigger + 4 process steps + clear output |\n| Automation Step | 30% | You chose one step because of (repetition / time / errors) |",
       "bullets": [],
       "tables": [
         {
@@ -154,7 +154,7 @@
         }
       ],
       "mission": {
-        "intro": "Choose one task you do every week (from **Time Inventory**). Break it down into Trigger + Process + Output — this is design, not tool building. 10–15 minutes is enough.",
+        "intro": "Choose one task you do every week (from Time Inventory). Break it down into Trigger + Process + Output — this is design, not tool building. 10–15 minutes is enough.",
         "delivery": [],
         "rubric": [
           {
@@ -175,11 +175,11 @@
     {
       "role": "Confidence close",
       "heading": "Confidence Close",
-      "contentMarkdown": "- **You understood:** Any repeated task = Trigger → Process → Output. This is the foundation of all automation.\n- **You can:** You have one task broken down as a system — ready to discover patterns.\n- **Next:** **Spot Patterns** — \"Whenever X happens, I do Y\" = an automation opportunity.",
+      "contentMarkdown": "- You understood: Any repeated task = Trigger → Process → Output. This is the foundation of all automation.\n- You can: You have one task broken down as a system — ready to discover patterns.\n- Next: Spot Patterns — \"Whenever X happens, I do Y\" = an automation opportunity.",
       "bullets": [
-        "**You understood:** Any repeated task = Trigger → Process → Output. This is the foundation of all automation.",
-        "**You can:** You have one task broken down as a system — ready to discover patterns.",
-        "**Next:** **Spot Patterns** — \"Whenever X happens, I do Y\" = an automation opportunity."
+        "You understood: Any repeated task = Trigger → Process → Output. This is the foundation of all automation.",
+        "You can: You have one task broken down as a system — ready to discover patterns.",
+        "Next: Spot Patterns — \"Whenever X happens, I do Y\" = an automation opportunity."
       ],
       "tables": []
     }

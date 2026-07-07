@@ -15,11 +15,11 @@
       "role": "Orientation",
       "heading": "Orientation",
       "subtitle": "Introduction",
-      "contentMarkdown": "- **What will you understand?** How an \"intelligent assistant\" completes text — like smart **autocomplete** — **and does not guarantee truth**.\n- **Why now?** This is the first lesson in **Builder** — a Level 3 **optional** path. If your goal is to use **AI** in your work, completing the path is not required.\n- **What after the lesson?** A real-world question + a simple **verification** method — no programming.",
+      "contentMarkdown": "- What will you understand? How an \"intelligent assistant\" completes text — like smart autocomplete — and does not guarantee truth.\n- Why now? This is the first lesson in Builder — a Level 3 optional path. If your goal is to use AI in your work, completing the path is not required.\n- What after the lesson? A real-world question + a simple verification method — no programming.",
       "bullets": [
-        "**What will you understand?** How an \"intelligent assistant\" completes text — like smart **autocomplete** — **and does not guarantee truth**.",
-        "**Why now?** This is the first lesson in **Builder** — a Level 3 **optional** path. If your goal is to use **AI** in your work, completing the path is not required.",
-        "**What after the lesson?** A real-world question + a simple **verification** method — no programming."
+        "What will you understand? How an \"intelligent assistant\" completes text — like smart autocomplete — and does not guarantee truth.",
+        "Why now? This is the first lesson in Builder — a Level 3 optional path. If your goal is to use AI in your work, completing the path is not required.",
+        "What after the lesson? A real-world question + a simple verification method — no programming."
       ],
       "tables": []
     },
@@ -27,11 +27,11 @@
       "role": "Tension",
       "heading": "Tension",
       "subtitle": "A Familiar Situation",
-      "contentMarkdown": "- I asked ChatGPT or Gemini a question — it confidently replied with information — and an hour later I found it **incorrect**.\n- It seems like it \"knows\" — but the truth is it **completes the most suitable text** like an advanced **autocomplete**.\n- When you build a product with **AI**, users will rely on the responses. If you do not understand the difference, you will unintentionally build a feature that **misleads**.",
+      "contentMarkdown": "- I asked ChatGPT or Gemini a question — it confidently replied with information — and an hour later I found it incorrect.\n- It seems like it \"knows\" — but the truth is it completes the most suitable text like an advanced autocomplete.\n- When you build a product with AI, users will rely on the responses. If you do not understand the difference, you will unintentionally build a feature that misleads.",
       "bullets": [
-        "I asked ChatGPT or Gemini a question — it confidently replied with information — and an hour later I found it **incorrect**.",
-        "It seems like it \"knows\" — but the truth is it **completes the most suitable text** like an advanced **autocomplete**.",
-        "When you build a product with **AI**, users will rely on the responses. If you do not understand the difference, you will unintentionally build a feature that **misleads**."
+        "I asked ChatGPT or Gemini a question — it confidently replied with information — and an hour later I found it incorrect.",
+        "It seems like it \"knows\" — but the truth is it completes the most suitable text like an advanced autocomplete.",
+        "When you build a product with AI, users will rely on the responses. If you do not understand the difference, you will unintentionally build a feature that misleads."
       ],
       "tables": []
     },
@@ -39,12 +39,12 @@
       "role": "Core idea",
       "heading": "Core Idea",
       "subtitle": "The Core Idea",
-      "contentMarkdown": "**It predicts the most suitable text — it does not verify truth**\n\n- **LLM (Large Language Model)** = smart **autocomplete** at the level of complete sentences. It predicts the most suitable text — **it does not search Google**.\n- When it responds confidently, this **does not** mean it \"understands\" — it means the sentence **sounds logical**.\n- In **Builder**: any assistant in your product works on the same logic. **Fact-checking is your responsibility** — not the model's.\n- Use it for writing, summarizing, and brainstorming. **Verify** any numbers or dates before presenting them to users.",
+      "contentMarkdown": "It predicts the most suitable text — it does not verify truth - LLM (Large Language Model) = smart autocomplete at the level of complete sentences. It predicts the most suitable text — it does not search Google.\n- When it responds confidently, this does not mean it \"understands\" — it means the sentence sounds logical.\n- In Builder: any assistant in your product works on the same logic. Fact-checking is your responsibility — not the model's.\n- Use it for writing, summarizing, and brainstorming. Verify any numbers or dates before presenting them to users.",
       "bullets": [
-        "**LLM (Large Language Model)** = smart **autocomplete** at the level of complete sentences. It predicts the most suitable text — **it does not search Google**.",
-        "When it responds confidently, this **does not** mean it \"understands\" — it means the sentence **sounds logical**.",
-        "In **Builder**: any assistant in your product works on the same logic. **Fact-checking is your responsibility** — not the model's.",
-        "Use it for writing, summarizing, and brainstorming. **Verify** any numbers or dates before presenting them to users."
+        "LLM (Large Language Model) = smart autocomplete at the level of complete sentences. It predicts the most suitable text — it does not search Google.",
+        "When it responds confidently, this does not mean it \"understands\" — it means the sentence sounds logical.",
+        "In Builder: any assistant in your product works on the same logic. Fact-checking is your responsibility — not the model's.",
+        "Use it for writing, summarizing, and brainstorming. Verify any numbers or dates before presenting them to users."
       ],
       "tables": []
     },
@@ -52,7 +52,7 @@
       "role": "Comparison",
       "heading": "Comparison",
       "subtitle": "Google vs Language Assistant",
-      "contentMarkdown": "| Incorrect: Like Google | Correct: As a Language Assistant |\n|------------------|-----------------|\n| Assumes every answer is a fact. The \"ask anything\" feature without warning or verification — users are shocked by **hallucinated** information | Utilizes what it excels at, provides context and sources, and adds a **fact-checking step** |",
+      "contentMarkdown": "| Incorrect: Like Google | Correct: As a Language Assistant |\n|------------------|-----------------|\n| Assumes every answer is a fact. The \"ask anything\" feature without warning or verification — users are shocked by hallucinated information | Utilizes what it excels at, provides context and sources, and adds a fact-checking step |",
       "bullets": [],
       "tables": [
         {
@@ -62,8 +62,8 @@
           ],
           "rows": [
             [
-              "Assumes every answer is a fact. The \"ask anything\" feature without warning or verification — users are shocked by **hallucinated** information.",
-              "Utilizes what it excels at, provides context and sources, and adds a **fact-checking step**."
+              "Assumes every answer is a fact. The \"ask anything\" feature without warning or verification — users are shocked by hallucinated information.",
+              "Utilizes what it excels at, provides context and sources, and adds a fact-checking step."
             ]
           ]
         }
@@ -73,7 +73,7 @@
       "role": "Glossary",
       "heading": "Glossary",
       "subtitle": "Two Terms to Start",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **LLM (Large Language Model)** | Smart **autocomplete** for sentences — predicts the most suitable text, does not search a database | ChatGPT, Claude, and Gemini — all are **LLMs** under the hood |\n| **Hallucination** | When **AI** confidently fabricates information — a sentence that sounds correct but the content is wrong | Mentions a wrong person or date in a \"confirmed\" answer |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| LLM (Large Language Model) | Smart autocomplete for sentences — predicts the most suitable text, does not search a database | ChatGPT, Claude, and Gemini — all are LLMs under the hood |\n| Hallucination | When AI confidently fabricates information — a sentence that sounds correct but the content is wrong | Mentions a wrong person or date in a \"confirmed\" answer |",
       "bullets": [],
       "tables": [
         {
@@ -84,13 +84,13 @@
           ],
           "rows": [
             [
-              "**LLM (Large Language Model)**",
-              "Smart **autocomplete** for sentences — predicts the most suitable text, does not search a database.",
-              "ChatGPT, Claude, and Gemini — all are **LLMs** under the hood."
+              "LLM (Large Language Model)",
+              "Smart autocomplete for sentences — predicts the most suitable text, does not search a database.",
+              "ChatGPT, Claude, and Gemini — all are LLMs under the hood."
             ],
             [
-              "**Hallucination**",
-              "When **AI** confidently fabricates information — a sentence that sounds correct but the content is wrong.",
+              "Hallucination",
+              "When AI confidently fabricates information — a sentence that sounds correct but the content is wrong.",
               "Mentions a wrong person or date in a \"confirmed\" answer."
             ]
           ]
@@ -100,7 +100,7 @@
     {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot Block",
-      "contentMarkdown": "AI assistant interface — Question + context + predicted response. The assistant is not programmed with ready-made answers. (The visual original in production remains unchanged.)",
+      "contentMarkdown": "AI assistant interface — Question + context + predicted response. The assistant is not programmed with ready-made answers. (The in .)",
       "bullets": [],
       "tables": []
     },
@@ -108,28 +108,28 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Check",
-      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** I asked **AI** about news that happened yesterday — it confidently replied with all incorrect details. What is the closest reason?\n\n- **Correct answer:** It predicts from **old data** it was trained on — **not connected** to real-time news.\n- **Explanation:** **AI** predicts the closest logical text — it does not verify the news. When building an **AI** feature, plan for fact-checking.",
+      "contentMarkdown": "Question: I asked AI about news that happened yesterday — it confidently replied with all incorrect details. What is the closest reason?\nIt predicts from old data it was trained on — not connected to real-time news.\nExplanation: AI predicts the closest logical text — it does not verify the news. When building an AI feature, plan for fact-checking.",
       "bullets": [
-        "**Correct answer:** It predicts from **old data** it was trained on — **not connected** to real-time news.",
-        "**Explanation:** **AI** predicts the closest logical text — it does not verify the news. When building an **AI** feature, plan for fact-checking."
+        "It predicts from old data it was trained on — not connected to real-time news.",
+        "Explanation: AI predicts the closest logical text — it does not verify the news. When building an AI feature, plan for fact-checking."
       ],
       "tables": [],
       "quiz": {
-        "question": "I asked **AI** about news that happened yesterday — it confidently replied with all incorrect details. What is the closest reason?",
+        "question": "I asked AI about news that happened yesterday — it confidently replied with all incorrect details. What is the closest reason?",
         "correctIndex": 0,
         "options": [
-          "It predicts from **old data** it was trained on — **not connected** to real-time news.",
+          "It predicts from old data it was trained on — not connected to real-time news.",
           "An inappropriate choice; it ignores the basic data in the section above.",
           "A partial answer that misses the context and ignores the next step in the decision."
         ],
-        "explanation": "**AI** predicts the closest logical text — it does not verify the news. When building an **AI** feature, plan for fact-checking."
+        "explanation": "AI predicts the closest logical text — it does not verify the news. When building an AI feature, plan for fact-checking."
       }
     },
     {
       "role": "Mission",
       "heading": "Mission",
       "subtitle": "Real-World Question + Verification Method",
-      "contentMarkdown": "**Introduction:** Try it yourself — ask any **AI** a question with a verifiable fact (date, number, name). 10 minutes is enough.\n\n**Submission:** Question · AI response · Verification method · True/False · Why it matters if you will present **AI** responses to users.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Real question and response | 50% | The question and response are clear; the question contains a verifiable fact. |\n| Verification and connection to building | 50% | An actual verification method; linking the result to the product's responsibility for facts. |",
+      "contentMarkdown": "Introduction: Try it yourself — ask any AI a question with a verifiable fact (date, number, name). 10 minutes is enough. Submission: Question · AI response · Verification method · True/False · Why it matters if you will present AI responses to users. Evaluation Criteria: | Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Real question and response | 50% | The question and response are clear; the question contains a verifiable fact. |\n| Verification and connection to building | 50% | An actual verification method; linking the result to the product's responsibility for facts. |",
       "bullets": [],
       "tables": [
         {
@@ -153,7 +153,7 @@
         }
       ],
       "mission": {
-        "intro": "Try it yourself — ask any **AI** a question with a verifiable fact (date, number, name). 10 minutes is enough.",
+        "intro": "Try it yourself — ask any AI a question with a verifiable fact (date, number, name). 10 minutes is enough.",
         "delivery": [],
         "rubric": [
           {
@@ -174,11 +174,11 @@
     {
       "role": "Confidence close",
       "heading": "Confidence Close",
-      "contentMarkdown": "- **Understood:** **LLM** = smart **autocomplete** — no guarantee of truth. **Builder** Level 3 is optional.\n- **You can:** use it for writing and ideas — and verify facts before presenting.\n- **Next:** **Tokens** and training — why longer requests are slower and more expensive.",
+      "contentMarkdown": "- Understood: LLM = smart autocomplete — no guarantee of truth. Builder Level 3 is optional.\n- You can: use it for writing and ideas — and verify facts before presenting.\n- Next: Tokens and training — why longer requests are slower and more expensive.",
       "bullets": [
-        "**Understood:** **LLM** = smart **autocomplete** — no guarantee of truth. **Builder** Level 3 is optional.",
-        "**You can:** use it for writing and ideas — and verify facts before presenting.",
-        "**Next:** **Tokens** and training — why longer requests are slower and more expensive."
+        "Understood: LLM = smart autocomplete — no guarantee of truth. Builder Level 3 is optional.",
+        "You can: use it for writing and ideas — and verify facts before presenting.",
+        "Next: Tokens and training — why longer requests are slower and more expensive."
       ],
       "tables": []
     }

@@ -15,11 +15,11 @@
       "role": "Orientation",
       "heading": "Orientation",
       "subtitle": "Lesson Start",
-      "contentMarkdown": "- **What will you understand?** **RAG** = automated response from your documents (FAQs, prices) — not from guessing.\n- **Why now?** A question about price or warranty needs to pull from your file.\n- **What after the lesson?** Flowchart: Question → Source → Response — not a technical build.",
+      "contentMarkdown": "- What will you understand? RAG = automated response from your documents (FAQs, prices) — not from guessing.\n- Why now? A question about price or warranty needs to pull from your file.\n- What after the lesson? Flowchart: Question → Source → Response — not a technical build.",
       "bullets": [
-        "**What will you understand?** **RAG** = automated response from your documents (FAQs, prices) — not from guessing.",
-        "**Why now?** A question about price or warranty needs to pull from your file.",
-        "**What after the lesson?** Flowchart: Question → Source → Response — not a technical build."
+        "What will you understand? RAG = automated response from your documents (FAQs, prices) — not from guessing.",
+        "Why now? A question about price or warranty needs to pull from your file.",
+        "What after the lesson? Flowchart: Question → Source → Response — not a technical build."
       ],
       "tables": []
     },
@@ -27,10 +27,10 @@
       "role": "Tension",
       "heading": "Tension",
       "subtitle": "The bot gave the wrong price",
-      "contentMarkdown": "- A client asked about the package — the bot responded with a number it had. The number was wrong.\n- **AI** answers from general knowledge — **RAG** searches your sources first.",
+      "contentMarkdown": "- A client asked about the package — the bot responded with a number it had. The number was wrong.\n- AI answers from general knowledge — RAG searches your sources first.",
       "bullets": [
         "A client asked about the package — the bot responded with a number it had. The number was wrong.",
-        "**AI** answers from general knowledge — **RAG** searches your sources first."
+        "AI answers from general knowledge — RAG searches your sources first."
       ],
       "tables": []
     },
@@ -38,11 +38,11 @@
       "role": "Core idea",
       "heading": "Core idea",
       "subtitle": "RAG = Search then Write",
-      "contentMarkdown": "- Without **RAG:** Question → AI → Guess.\n- With **RAG:** Question → **Retrieval** from FAQs → AI formulates from the excerpt.\n- Prepare one source — **Knowledge Source**.",
+      "contentMarkdown": "- Without RAG: Question → AI → Guess.\n- With RAG: Question → Retrieval from FAQs → AI formulates from the excerpt.\n- Prepare one source — Knowledge Source.",
       "bullets": [
-        "Without **RAG:** Question → AI → Guess.",
-        "With **RAG:** Question → **Retrieval** from FAQs → AI formulates from the excerpt.",
-        "Prepare one source — **Knowledge Source**."
+        "Without RAG: Question → AI → Guess.",
+        "With RAG: Question → Retrieval from FAQs → AI formulates from the excerpt.",
+        "Prepare one source — Knowledge Source."
       ],
       "tables": []
     },
@@ -70,10 +70,10 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quiz",
-      "contentMarkdown": "> **Quiz key:**\n\nWrite a longer system prompt saying \"Don't guess\".\n- **Correct answer:** Choose a FAQ source or price list and link it to the automation before each response.\nStop the bot and respond manually to all questions.\n\n**Explanation:** The correct answer is to choose a source that provides context for the decision.",
+      "contentMarkdown": "Write a longer system prompt saying \"Don't guess\".\nChoose a FAQ source or price list and link it to the automation before each response.\nStop the bot and respond manually to all questions.\nExplanation: The correct answer is to choose a source that provides context for the decision.",
       "bullets": [
         "Write a longer system prompt saying \"Don't guess\".",
-        "**Correct answer:** Choose a FAQ source or price list and link it to the automation before each response.",
+        "Choose a FAQ source or price list and link it to the automation before each response.",
         "Stop the bot and respond manually to all questions."
       ],
       "tables": [],
@@ -99,9 +99,9 @@
     {
       "role": "Confidence close",
       "heading": "Confidence Close",
-      "contentMarkdown": "- **Next:** **Agents** — a non-fixed path.\n\n---",
+      "contentMarkdown": "- Next: Agents — a non-fixed path. ---",
       "bullets": [
-        "**Next:** **Agents** — a non-fixed path."
+        "Next: Agents — a non-fixed path."
       ],
       "tables": []
     }
