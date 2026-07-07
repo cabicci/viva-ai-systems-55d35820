@@ -1,8 +1,11 @@
 import type { LessonPackageLocale } from "../../src/lib/locale-lessons/types.ts";
 import {
+  cellRequiresPaidApi,
   parsePhase13BSourceScope,
   parseShardLessonIdsArg,
+  pipelineModeForLocale,
 } from "./lib/phase13b-full-matrix.ts";
+import { writePhase13BJobResult } from "./lib/phase13b-job-result.ts";
 import { runPhase13BFullCell } from "./run-phase13b-full-cell.ts";
 
 function readArg(name: string): string | null {
@@ -59,6 +62,19 @@ export async function runPhase13BLocaleBatch(input: {
       });
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
+      const pipeline = pipelineModeForLocale(input.locale);
+      await writePhase13BJobResult({
+        locale: input.locale,
+        lessonId,
+        ok: false,
+        pipeline,
+        requiresPaidApi: cellRequiresPaidApi({ locale: input.locale, pipeline }),
+        fieldCount: 0,
+        errors: [message],
+        generatedAt,
+        mode: "error",
+        skippedPaidApi: false,
+      }).catch(() => undefined);
       results.push({ lessonId, ok: false, errors: [message] });
     }
   }

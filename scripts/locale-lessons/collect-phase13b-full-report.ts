@@ -255,13 +255,14 @@ export async function buildPhase13BFullCollectReport(input: {
     const resolved = await resolveJobResult(cell.locale, cell.lesson_id, artifactIndex);
 
     if (!resolved) {
-      skipped.push(key);
+      failed.push(key);
+      validationErrors.push(`${key}: missing job result`);
       cells.push({
         locale: cell.locale,
         lessonId: cell.lesson_id,
         pipeline: cell.pipeline,
         requiresPaidApi: cell.requires_paid_api,
-        status: "skipped",
+        status: "failed",
         errors: ["missing job result"],
       });
       continue;

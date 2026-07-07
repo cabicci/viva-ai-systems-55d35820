@@ -10,6 +10,9 @@ import {
 } from "../providers/types.ts";
 import { ADAPTATION_JSON_MAX_ATTEMPTS } from "../providers/anthropic-adaptation.ts";
 
+/** Max field paths per OpenAI fragment request (input + output JSON stay bounded). */
+export const OPENAI_FRAGMENT_MAX_FIELDS_PER_CHUNK = 25;
+
 type OpenAiChatResponse = {
   choices?: Array<{ message?: { content?: string } }>;
 };
@@ -291,69 +294,86 @@ Return ONE JSON object only:
   };
 }
 
-async function repairEmptyLocalizedTextField(input: {
-  textMap: LocalizedTextMap;
-  targetLocale: AdaptationTargetLocale;
-  currentMap: LocalizedTextMap;
-  emptyFieldPath: string;
-  apiKey: string;
-  model: string;
-  fetchFn?: typeof fetch;
-}): Promise<LocalizedTextMap> {
-  const sourceField = input.textMap.fields.find(
-    (field) => field.fieldPath === input.emptyFieldPath,
-  );
-  if (!sourceField) {
-    throw new OpenAiFragmentParseError(
-      `cannot repair unknown fieldPath: ${input.emptyFieldPath}`,
-    );
+export function chunkTextMapByFieldCount(
+  textMap: LocalizedTextMap,
+  targetLocale: AdaptationTargetLocale,
+  maxFieldsPerChunk = OPENAI_FRAGMENT_MAX_FIELDS_PER_CHUNK,
+): LocalizedTextMap[] {
+  if (maxFieldsPerChunk < 1) {
+    throw new Error("maxFieldsPerChunk must be at least 1");
   }
 
-  const prompt = buildSingleFieldRepairPrompt({
-    lessonId: input.textMap.lessonId,
-    targetLocale: input.targetLocale,
-    fieldPath: sourceField.fieldPath,
-    fieldType: sourceField.fieldType,
-    sourceText: sourceField.sourceText,
-  });
-  const content = await fetchOpenAiFragmentText({
-    apiKey: input.apiKey,
-    model: input.model,
-    system: prompt.system,
-    userPrompt: prompt.userPrompt,
-    fetchFn: input.fetchFn,
-  });
-  const repairedSingleField = parseOpenAiFragmentResponse(content, {
-    ...input.textMap,
-    targetLocale: input.targetLocale,
-    fields: [sourceField],
-  });
-  const repairedValue = repairedSingleField.fields[0]?.localizedText?.trim();
-  if (!repairedValue) {
-    throw new OpenAiFragmentEmptyLocalizedTextError(
-      input.emptyFieldPath,
-      input.currentMap,
+  const chunks: LocalizedTextMap[] = [];
+  for (let index = 0; index < textMap.fields.length; index += maxFieldsPerChunk) {
+    chunks.push({
+      ...textMap,
+      targetLocale,
+      fields: textMap.fields.slice(index, index + maxFieldsPerChunk),
+    });
+  }
+  return chunks;
+}
+
+export function mergeLocalizedChunkResults(
+  originalMap: LocalizedTextMap,
+  targetLocale: AdaptationTargetLocale,
+  chunkResults: readonly LocalizedTextMap[],
+): LocalizedTextMap {
+  const localizedByPath = new Map<string, string>();
+  for (const chunk of chunkResults) {
+    for (const field of chunk.fields) {
+      if (localizedByPath.has(field.fieldPath)) {
+        throw new OpenAiFragmentParseError(
+          `duplicate fieldPath after chunk merge: ${field.fieldPath}`,
+        );
+      }
+      localizedByPath.set(field.fieldPath, field.localizedText ?? "");
+    }
+  }
+
+  const expectedPaths = originalMap.fields.map((field) => field.fieldPath);
+  const expectedPathSet = new Set(expectedPaths);
+
+  for (const fieldPath of expectedPaths) {
+    if (!localizedByPath.has(fieldPath)) {
+      throw new OpenAiFragmentParseError(`missing fieldPath after chunk merge: ${fieldPath}`);
+    }
+  }
+
+  for (const fieldPath of localizedByPath.keys()) {
+    if (!expectedPathSet.has(fieldPath)) {
+      throw new OpenAiFragmentParseError(
+        `unexpected extra fieldPath after chunk merge: ${fieldPath}`,
+      );
+    }
+  }
+
+  if (localizedByPath.size !== expectedPaths.length) {
+    throw new OpenAiFragmentParseError(
+      `field count mismatch after chunk merge: expected ${expectedPaths.length}, got ${localizedByPath.size}`,
     );
   }
 
   return {
-    ...input.currentMap,
-    fields: input.currentMap.fields.map((field) =>
-      field.fieldPath === input.emptyFieldPath
-        ? { ...field, localizedText: repairedValue }
-        : field,
-    ),
+    ...originalMap,
+    targetLocale,
+    fields: originalMap.fields.map((field) => ({
+      ...field,
+      localizedText: localizedByPath.get(field.fieldPath)!,
+    })),
   };
 }
 
-export async function localizeTextMapWithOpenAi(
+async function localizeSingleChunkWithOpenAi(
   textMap: LocalizedTextMap,
   targetLocale: AdaptationTargetLocale,
-  options: OpenAiFragmentAdapterOptions = {},
+  options: {
+    apiKey: string;
+    model: string;
+    fetchFn?: typeof fetch;
+  },
 ): Promise<LocalizedTextMap> {
-  const apiKey = options.apiKey ?? requireOpenAiApiKey();
-  const model = options.model ?? openAiAdaptationModel();
-  const fetchFn = options.fetchFn;
+  const { apiKey, model, fetchFn } = options;
   const prompt = buildFragmentLocalizationPrompt(textMap, targetLocale);
 
   let lastParseError: string | null = null;
@@ -434,4 +454,82 @@ export async function localizeTextMapWithOpenAi(
       parseError: lastParseError ?? "unknown parse error",
     }),
   );
+}
+
+async function repairEmptyLocalizedTextField(input: {
+  textMap: LocalizedTextMap;
+  targetLocale: AdaptationTargetLocale;
+  currentMap: LocalizedTextMap;
+  emptyFieldPath: string;
+  apiKey: string;
+  model: string;
+  fetchFn?: typeof fetch;
+}): Promise<LocalizedTextMap> {
+  const sourceField = input.textMap.fields.find(
+    (field) => field.fieldPath === input.emptyFieldPath,
+  );
+  if (!sourceField) {
+    throw new OpenAiFragmentParseError(
+      `cannot repair unknown fieldPath: ${input.emptyFieldPath}`,
+    );
+  }
+
+  const prompt = buildSingleFieldRepairPrompt({
+    lessonId: input.textMap.lessonId,
+    targetLocale: input.targetLocale,
+    fieldPath: sourceField.fieldPath,
+    fieldType: sourceField.fieldType,
+    sourceText: sourceField.sourceText,
+  });
+  const content = await fetchOpenAiFragmentText({
+    apiKey: input.apiKey,
+    model: input.model,
+    system: prompt.system,
+    userPrompt: prompt.userPrompt,
+    fetchFn: input.fetchFn,
+  });
+  const repairedSingleField = parseOpenAiFragmentResponse(content, {
+    ...input.textMap,
+    targetLocale: input.targetLocale,
+    fields: [sourceField],
+  });
+  const repairedValue = repairedSingleField.fields[0]?.localizedText?.trim();
+  if (!repairedValue) {
+    throw new OpenAiFragmentEmptyLocalizedTextError(
+      input.emptyFieldPath,
+      input.currentMap,
+    );
+  }
+
+  return {
+    ...input.currentMap,
+    fields: input.currentMap.fields.map((field) =>
+      field.fieldPath === input.emptyFieldPath
+        ? { ...field, localizedText: repairedValue }
+        : field,
+    ),
+  };
+}
+
+export async function localizeTextMapWithOpenAi(
+  textMap: LocalizedTextMap,
+  targetLocale: AdaptationTargetLocale,
+  options: OpenAiFragmentAdapterOptions = {},
+): Promise<LocalizedTextMap> {
+  const apiKey = options.apiKey ?? requireOpenAiApiKey();
+  const model = options.model ?? openAiAdaptationModel();
+  const fetchFn = options.fetchFn;
+  const chunks = chunkTextMapByFieldCount(textMap, targetLocale);
+
+  const chunkResults: LocalizedTextMap[] = [];
+  for (const chunkMap of chunks) {
+    const localizedChunk = await localizeSingleChunkWithOpenAi(chunkMap, targetLocale, {
+      apiKey,
+      model,
+      fetchFn,
+    });
+    chunkResults.push(localizedChunk);
+  }
+
+  return mergeLocalizedChunkResults(textMap, targetLocale, chunkResults);
 }

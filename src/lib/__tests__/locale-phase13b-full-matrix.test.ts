@@ -1,7 +1,7 @@
 import { mkdtemp, mkdir, rm, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   buildPhase13BFullCollectReport,
   phase13BCollectReportExitCode,
@@ -472,7 +472,11 @@ describe("Phase 13B collector dry-run", () => {
 
     expect(report.planned).toBe(1);
     expect(report.dryRunOk).toBe(0);
-    expect(report.skipped).toEqual(["ar-MSA/intro-m1-l1-what-is-ai"]);
+    expect(report.failed).toEqual(["ar-MSA/intro-m1-l1-what-is-ai"]);
+    expect(report.skipped).toEqual([]);
+    expect(report.retryCells).toEqual([
+      { locale: "ar-MSA", lessonId: SAMPLE_LESSON_ID },
+    ]);
     expect(phase13BCollectReportExitCode(report)).toBe(1);
   });
 });
@@ -616,5 +620,84 @@ describe("Phase 13B collector paid run", () => {
     expect(report.skipped).toEqual([]);
     expect(report.retryCells).toEqual([]);
     expect(phase13BCollectReportExitCode(report)).toBe(0);
+  });
+});
+
+describe("Phase 13B thrown-cell failure persistence", () => {
+  it("writes failed job results when runPhase13BFullCell throws", async () => {
+    const lessonId = SAMPLE_LESSON_ID;
+    const spy = vi
+      .spyOn(await import("../../../scripts/locale-lessons/run-phase13b-full-cell.ts"), "runPhase13BFullCell")
+      .mockRejectedValueOnce(new Error("OpenAI fragment JSON parse failed for test"));
+
+    const summary = await runPhase13BLocaleBatch({
+      locale: "en",
+      lessonIds: [lessonId],
+      dryRun: false,
+      confirmPaidApi: true,
+      confirmWrite: true,
+      generatedAt: "2026-07-07T00:00:00.000Z",
+    });
+
+    spy.mockRestore();
+
+    expect(summary.failedCount).toBe(1);
+    const job = await readPhase13BJobResult("en", lessonId);
+    expect(job?.ok).toBe(false);
+    expect(job?.mode).toBe("error");
+    expect(job?.skippedPaidApi).toBe(false);
+    expect(job?.errors[0]).toContain("OpenAI fragment JSON parse failed");
+
+    writtenJobResults.push(
+      path.join(
+        process.cwd(),
+        "src/lib/locale-lessons/ar-MSA/reports/phase13b-full-jobs/en",
+        `${lessonId}.result.json`,
+      ),
+    );
+  });
+
+  it("collects persisted thrown-cell failures as failed retry cells", async () => {
+    const root = await makeTempArtifactsRoot();
+    const lessonId = "builder-m5-l4-database-intro";
+    const jobsDir = path.join(
+      root,
+      "locale-phase13b-shard-en-00",
+      "src/lib/locale-lessons/ar-MSA/reports/phase13b-full-jobs/en",
+    );
+    await mkdir(jobsDir, { recursive: true });
+    await writeFile(
+      path.join(jobsDir, `${lessonId}.result.json`),
+      `${JSON.stringify({
+        locale: "en",
+        lessonId,
+        ok: false,
+        pipeline: "fragment-adapt",
+        requiresPaidApi: true,
+        fieldCount: 0,
+        errors: ["OpenAI fragment JSON parse failed for locale=en lessonId=builder-m5-l4-database-intro attempt=3/3: missing fieldPath in response: sections[0].heading"],
+        generatedAt: "2026-07-07T00:00:00.000Z",
+        mode: "error",
+        skippedPaidApi: false,
+      })}\n`,
+      "utf8",
+    );
+
+    const matrix = await buildPhase13BFullMatrix({
+      targetLocales: ["en"],
+      lessonIdsOverride: [lessonId],
+    });
+
+    const report = await buildPhase13BFullCollectReport({
+      target: ["en"],
+      dryRun: false,
+      artifactsDir: root,
+      matrix,
+    });
+
+    expect(report.failed).toEqual([`en/${lessonId}`]);
+    expect(report.skipped).toEqual([]);
+    expect(report.retryCells).toEqual([{ locale: "en", lessonId }]);
+    expect(phase13BCollectReportExitCode(report)).toBe(1);
   });
 });

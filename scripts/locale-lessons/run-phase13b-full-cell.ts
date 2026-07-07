@@ -228,6 +228,7 @@ async function main() {
       errors: [message],
       generatedAt: new Date().toISOString(),
       mode: "error",
+      skippedPaidApi: false,
     }).catch(() => undefined);
     throw error;
   }
