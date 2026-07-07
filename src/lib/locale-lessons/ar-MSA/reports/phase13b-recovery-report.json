@@ -2,7 +2,14 @@
   "runId": "28833055749",
   "commit": "65175315aed9d2debcb4e95d2e9bf72bee0fa5c6",
   "expectedLessonCount": 100,
-  "totalRecovered": 296,
+  "totalRecovered": 298,
+  "supplementalRuns": [
+    {
+      "runId": "28838022902",
+      "artifact": "locale-phase13b-shard-en-00",
+      "recoveredIds": ["builder-m6-l1-idea-to-page", "creator-m6-l4-leads"]
+    }
+  ],
   "perLocale": {
     "ar-MSA": {
       "recovered": 100,
@@ -227,7 +234,7 @@
       "withoutMatchingResult": []
     },
     "en": {
-      "recovered": 96,
+      "recovered": 98,
       "recoveredIds": [
         "analyst-m1-l1-from-automation-to-insight",
         "analyst-m2-l1-feeling-to-question",
@@ -275,6 +282,7 @@
         "builder-m5-l2-frontend",
         "builder-m5-l3-backend-api",
         "builder-m5-l5-mini-win",
+        "builder-m6-l1-idea-to-page",
         "builder-m6-l3-first-prompt-to-lovable",
         "builder-m6-l4-components-routes",
         "builder-m6-l5-iteration",
@@ -316,6 +324,7 @@
         "creator-m6-l1-platforms",
         "creator-m6-l2-scheduling",
         "creator-m6-l3-analytics",
+        "creator-m6-l4-leads",
         "creator-m7-l1-brand-basics",
         "creator-m7-l2-grid-consistency",
         "intro-m1-l1-what-is-ai",
@@ -326,21 +335,17 @@
         "intro-m1-l6-learn-without-fear",
         "intro-m1-l7-choose-your-path"
       ],
-      "missingCount": 4,
+      "missingCount": 2,
       "missingIds": [
         "builder-m5-l4-database-intro",
-        "builder-m6-l1-idea-to-page",
-        "builder-m6-l2-wireframe",
-        "creator-m6-l4-leads"
+        "builder-m6-l2-wireframe"
       ],
-      "skippedCount": 4,
+      "skippedCount": 2,
       "skippedIds": [
         "builder-m5-l4-database-intro",
-        "builder-m6-l1-idea-to-page",
-        "builder-m6-l2-wireframe",
-        "creator-m6-l4-leads"
+        "builder-m6-l2-wireframe"
       ],
-      "withMatchingResult": 96,
+      "withMatchingResult": 98,
       "withoutMatchingResult": []
     }
   },
@@ -384,15 +389,7 @@
     },
     {
       "locale": "en",
-      "lessonId": "builder-m6-l1-idea-to-page"
-    },
-    {
-      "locale": "en",
       "lessonId": "builder-m6-l2-wireframe"
-    },
-    {
-      "locale": "en",
-      "lessonId": "creator-m6-l4-leads"
     }
   ],
   "retryCellsNote": "Prepared only; not triggered. Feed into locale-phase13b-full-generation.yml retry_cells input if paid re-run is authorized."
