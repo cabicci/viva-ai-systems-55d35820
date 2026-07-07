@@ -1,13 +1,30 @@
 {
   "runId": "28833055749",
-  "commit": "65175315aed9d2debcb4e95d2e9bf72bee0fa5c6",
+  "commit": "d36efab393d04697a0d98f3b85b7563711830dfe",
   "expectedLessonCount": 100,
-  "totalRecovered": 298,
+  "totalRecovered": 300,
   "supplementalRuns": [
     {
       "runId": "28838022902",
       "artifact": "locale-phase13b-shard-en-00",
-      "recoveredIds": ["builder-m6-l1-idea-to-page", "creator-m6-l4-leads"]
+      "recoveredIds": [
+        "builder-m6-l1-idea-to-page",
+        "creator-m6-l4-leads"
+      ]
+    },
+    {
+      "runId": "28876999211",
+      "artifact": "8142320376",
+      "recoveredIds": [
+        "builder-m5-l4-database-intro"
+      ]
+    },
+    {
+      "runId": "28876999288",
+      "artifact": "8142366988",
+      "recoveredIds": [
+        "builder-m6-l2-wireframe"
+      ]
     }
   ],
   "perLocale": {
@@ -234,7 +251,7 @@
       "withoutMatchingResult": []
     },
     "en": {
-      "recovered": 98,
+      "recovered": 100,
       "recoveredIds": [
         "analyst-m1-l1-from-automation-to-insight",
         "analyst-m2-l1-feeling-to-question",
@@ -281,8 +298,10 @@
         "builder-m5-l1-transition",
         "builder-m5-l2-frontend",
         "builder-m5-l3-backend-api",
+        "builder-m5-l4-database-intro",
         "builder-m5-l5-mini-win",
         "builder-m6-l1-idea-to-page",
+        "builder-m6-l2-wireframe",
         "builder-m6-l3-first-prompt-to-lovable",
         "builder-m6-l4-components-routes",
         "builder-m6-l5-iteration",
@@ -335,17 +354,11 @@
         "intro-m1-l6-learn-without-fear",
         "intro-m1-l7-choose-your-path"
       ],
-      "missingCount": 2,
-      "missingIds": [
-        "builder-m5-l4-database-intro",
-        "builder-m6-l2-wireframe"
-      ],
-      "skippedCount": 2,
-      "skippedIds": [
-        "builder-m5-l4-database-intro",
-        "builder-m6-l2-wireframe"
-      ],
-      "withMatchingResult": 98,
+      "missingCount": 0,
+      "missingIds": [],
+      "skippedCount": 0,
+      "skippedIds": [],
+      "withMatchingResult": 100,
       "withoutMatchingResult": []
     }
   },
@@ -382,15 +395,13 @@
     "locale-phase13b-shard-en-08",
     "locale-phase13b-shard-en-09"
   ],
-  "retryCells": [
-    {
-      "locale": "en",
-      "lessonId": "builder-m5-l4-database-intro"
-    },
-    {
-      "locale": "en",
-      "lessonId": "builder-m6-l2-wireframe"
-    }
-  ],
-  "retryCellsNote": "Prepared only; not triggered. Feed into locale-phase13b-full-generation.yml retry_cells input if paid re-run is authorized."
+  "retryCells": [],
+  "retryCellsNote": "Phase 13B recovery complete at 300/300.",
+  "failedGeneratedPackages": [],
+  "validationErrors": [],
+  "failed": 0,
+  "complete": true,
+  "ok": true,
+  "recoveredAt": "2026-07-07T15:19:05.002Z",
+  "root": "C:\\Users\\HI-TECH\\Projects\\viva-ai-phase13b-final-two\\src\\lib\\locale-lessons\\ar-MSA\\reports\\phase13b-recovered-packages"
 }

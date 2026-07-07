@@ -1,0 +1,197 @@
+{
+  "locale": "en",
+  "lessonId": "builder-m6-l2-wireframe",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "builder",
+  "moduleId": "builder-m6",
+  "productionRoute": "/learn/builder/builder-m6-l2-wireframe",
+  "titleEn": "Wireframe — Sketch Before You Build",
+  "title": "Wireframe — Sketch Before You Build",
+  "summary": "Wireframe means a sketch before building — just boxes and names, no colors.",
+  "estimatedMinutes": 12,
+  "nextLessonId": "builder-m6-l3-first-prompt-to-lovable",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation",
+      "subtitle": "Introduction to the Lesson",
+      "contentMarkdown": "- **What will you understand?** **Wireframe = sketch before building** — **it prevents confusion**.\n- **Why now?** **You have a User Flow** — **now turn it into boxes on paper**.\n- **What after the lesson?** **You will describe or sketch 3 screens** — **boxes and names, without colors**.",
+      "bullets": [
+        "**What will you understand?** **Wireframe = sketch before building** — **it prevents confusion**.",
+        "**Why now?** **You have a User Flow** — **now turn it into boxes on paper**.",
+        "**What after the lesson?** **You will describe or sketch 3 screens** — **boxes and names, without colors**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension — 'Build an Interface' — and it results in confusion",
+      "subtitle": "'Build an Interface' — and it results in confusion",
+      "contentMarkdown": "- **You ask AI to build an interface** — **it produces something generic, not what you had in mind**.\n- **You revise 5 times**. **Each time is a new guess**. **3 hours wasted**.\n- **The problem: you didn't sketch the map first**. **AI guesses — you need to clarify**.",
+      "bullets": [
+        "**You ask AI to build an interface** — **it produces something generic, not what you had in mind**.",
+        "**You revise 5 times**. **Each time is a new guess**. **3 hours wasted**.",
+        "**The problem: you didn't sketch the map first**. **AI guesses — you need to clarify**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core idea — the sketch prevents confusion",
+      "subtitle": "The sketch prevents confusion",
+      "contentMarkdown": "- **Wireframe = boxes + names** — **no colors or images**.\n- **Its goal is to answer**: **What is on the top of the screen?** **Where is the main button?** **What is the order of the sections?**\n- **Paper and pen in 10 minutes > 3 hours fixing a wrong interface**.\n- **When you describe the Wireframe to AI** — **the result is closer to your mind from the first time**.",
+      "bullets": [
+        "**Wireframe = boxes + names** — **no colors or images**.",
+        "**Its goal is to answer**: **What is on the top of the screen?** **Where is the main button?** **What is the order of the sections?**",
+        "**Paper and pen in 10 minutes > 3 hours fixing a wrong interface**.",
+        "**When you describe the Wireframe to AI** — **the result is closer to your mind from the first time**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison — 'Build an Interface' vs 'I have 7 boxes'",
+      "subtitle": "'Build an Interface' vs 'I have 7 boxes'",
+      "contentMarkdown": "| Without Wireframe | With Wireframe |\n|----------------|--------------|\n| '**Build an AI Interface and Features**' — **AI guesses. 5 attempts. Still not accurate** | '**Header + text box + button “Suggest” + 3 cards of features**' — **AI builds what you described. Closer from the first time** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Without Wireframe",
+            "With Wireframe"
+          ],
+          "rows": [
+            [
+              "«**Build an AI Interface and Attributes**» — **AI guesses. 5 attempts. Still not accurate**",
+              "«**Header + Text Box + 'Suggest' Button + 3 Attribute Cards**» — **AI builds what you described. Closer than the first time**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary — Two Terms to Start",
+      "subtitle": "Two Terms to Start",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Wireframe** | **A sketch — boxes with labels, no design** | **A box labeled 'Text Box' + a rectangle 'Submit Button'** |\n| **CTA (Call to Action)** | **The most important button — the one the user should click** | «**Start Conversation**» or «**Suggest Recipe**» — **Clear and large** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**Wireframe**",
+              "**A sketch — boxes with labels, no design**",
+              "**A box labeled 'Text Box' + a rectangle 'Submit Button'**"
+            ],
+            [
+              "**CTA (Call to Action)**",
+              "**The most important button — the one the user should click**",
+              "«**Start Conversation**» or «**Suggest Recipe**» — **Clear and large**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Screenshot block (intent)",
+      "heading": "Screenshot Block (Intent)",
+      "contentMarkdown": "**Boxes + Labels**. **'Header', 'Text Box', 'Button', '3 Cards'**. **This is the language that AI understands**.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz — Quick Confirmation",
+      "subtitle": "Quick Confirmation",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** **You are working with a Wireframe and find yourself drawing colors and images of dishes. Is this correct?**\n\n**No — A Wireframe consists of boxes and labels only, without design**.\nYes — This is how AI understands better**.**\nNo — There should be real images**.**\n\n**Explanation:** **Wireframe = structure and layout**. **Colors and images come later**.",
+      "bullets": [
+        "**No — A Wireframe consists of boxes and labels only, without design**.",
+        "Yes — This is how AI understands better**.**",
+        "No — There should be real images**.**"
+      ],
+      "tables": [],
+      "quiz": {
+        "question": "**You are working with a Wireframe and find yourself drawing colors and images of dishes. Is this correct?**",
+        "correctIndex": 0,
+        "options": [
+          "No — A wireframe consists of boxes and labels only, without design.",
+          "Yes — This helps the AI understand better.",
+          "No — There should have been real images."
+        ],
+        "explanation": "A wireframe is a structure and layout. Colors and images come later."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission — Draw or Describe 3 Screens",
+      "subtitle": "Draw or Describe 3 Screens",
+      "contentMarkdown": "**Introduction:** Drawing or describing — not coding. Use 3 screens from the previous lesson. **10–15 minutes**.\n\n**Submission:** For each screen, provide a wireframe list:\n\n- **[Section]: [What’s inside]**\n- **CTA: [Main Button]**\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| 3 Described Screens | 60% | **Each screen is a bullet list — not a paragraph. CTA is clear in each screen.** |\n| Boxes, No Design | 40% | **No colors or fonts — just section names. The order is logical — most important first.** |",
+      "bullets": [
+        "**[Section]: [What’s inside]**",
+        "**CTA: [Main Button]**"
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "3 Described Screens",
+              "60%",
+              "**Each screen is a bullet list — not a paragraph. CTA is clear in each screen.**"
+            ],
+            [
+              "Boxes, No Design",
+              "40%",
+              "**No colors or fonts — just section names. The order is logical — most important first.**"
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "**Drawing or describing — not coding. Use 3 screens from the previous lesson. **10–15 minutes**.",
+        "delivery": [],
+        "rubric": [
+          {
+            "dimension": "3 Described Screens",
+            "weight": 60,
+            "criteria": "**Each screen is a bullet list — not a paragraph. CTA is clear in each screen.**"
+          },
+          {
+            "dimension": "Boxes, No Design",
+            "weight": 40,
+            "criteria": "**No colors or fonts — just section names. The order is logical — most important first.**"
+          }
+        ],
+        "yamlIntent": "Wireframe list for 3 screens from prior lesson — sections + CTA — ~10–15 min",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence Close",
+      "contentMarkdown": "- **I understood:** **A wireframe is a sketch that prevents chaos — before any prompt.**\n- **You can:** **3 described screens — ready for the first prompt.**\n- **Next:** **The first prompt for Lovable** — **goal + users + pages + style + constraints.**\n\n---",
+      "bullets": [
+        "**Understanding:** **Wireframe = a sketch that prevents chaos — before any prompt.**",
+        "**You can:** **3 described screens — ready for the first prompt.**",
+        "**Next:** **The first prompt for Lovable — **goal + users + pages + style + constraints.****"
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-07-07T15:13:14.714Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "builder-m6-l2-wireframe",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/builder-m6-l2-wireframe.canonical.md"
+  }
+}
