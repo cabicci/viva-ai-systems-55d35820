@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { execSync } from "node:child_process";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import type {
@@ -10,12 +11,15 @@ import {
   auditRecoveredPackage,
   deriveMissionDelivery,
   hasMalformedMarkdownPeriodArtifact,
+  reconstructMissingQuizSection,
   repairRecoveredPackage,
   repairTableFromMarkdown,
   stripMalformedMarkdownPeriodArtifacts,
 } from "../../../scripts/locale-lessons/lib/phase13b-merge-readiness";
+import { deepEqual as semanticDeepEqual } from "../../../scripts/locale-lessons/lib/phase13b-semantic-diff";
 import {
   auditAllRecoveredPackages,
+  repairAllRecoveredPackages,
   validateAllRecoveredPackages,
 } from "../../../scripts/locale-lessons/repair-phase13b-recovered-packages";
 
@@ -148,6 +152,79 @@ describe("phase13b known defect packages", () => {
         (e) => e.severity === "error" && e.kind === "mission_delivery",
       ),
     ).toEqual([]);
+  });
+});
+
+describe("phase13b repair idempotence and scope", () => {
+  it("second repair run writes zero files", async () => {
+    const first = await repairAllRecoveredPackages();
+    const second = await repairAllRecoveredPackages();
+    expect(second.filesWritten).toBe(0);
+    expect(second.auditAfter).toBe(0);
+    expect(first.auditAfter).toBe(0);
+  }, 120_000);
+
+  it("repair is idempotent for known defect packages", async () => {
+    const lessonId = "builder-m5-l4-database-intro";
+    const source = await loadJson<LocalizedLessonPackage>(
+      path.join(MSA_LESSONS, `${lessonId}.json`),
+    );
+    const pkg = await loadJson<AdaptedLessonPackage>(
+      path.join(RECOVERED_EN, `${lessonId}.json`),
+    );
+    const once = repairRecoveredPackage(source, pkg);
+    const twice = repairRecoveredPackage(source, once);
+    expect(semanticDeepEqual(once, twice)).toBe(true);
+  });
+
+  it("preserves correctIndex for en analyst-m1-l1 after repair", async () => {
+    const lessonId = "analyst-m1-l1-from-automation-to-insight";
+    const mainPkg = JSON.parse(
+      await fs.readFile(
+        path.join(RECOVERED_EN.replace("/en", "/en"), `${lessonId}.json`),
+        "utf8",
+      ),
+    ) as AdaptedLessonPackage;
+    const source = await loadJson<LocalizedLessonPackage>(
+      path.join(MSA_LESSONS, `${lessonId}.json`),
+    );
+    const beforeIndex = mainPkg.sections.find((s) => s.role === "Quiz")?.quiz
+      ?.correctIndex;
+    const repaired = repairRecoveredPackage(source, mainPkg);
+    const afterIndex = repaired.sections.find((s) => s.role === "Quiz")?.quiz
+      ?.correctIndex;
+    expect(afterIndex).toBe(beforeIndex);
+  });
+
+  it("reconstructs collapsed ar-Gulf quiz from ar-MSA recovered, not runtime", async () => {
+    const lessonId = "analyst-m6-l2-interpretation-mistakes";
+    const source = await loadJson<LocalizedLessonPackage>(
+      path.join(MSA_LESSONS, `${lessonId}.json`),
+    );
+    const mainGulf = JSON.parse(
+      execSync(
+        `git show origin/main:src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-Gulf/${lessonId}.json`,
+        { cwd: REPO_ROOT, encoding: "utf8" },
+      ),
+    ) as AdaptedLessonPackage;
+    const msaRecovered = await loadJson<AdaptedLessonPackage>(
+      path.join(
+        REPO_ROOT,
+        "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-MSA",
+        `${lessonId}.json`,
+      ),
+    );
+    const msaQuiz = msaRecovered.sections.find((s) => s.role === "Quiz");
+    expect(mainGulf.sections.some((s) => s.role === "Quiz")).toBe(false);
+
+    const inserted = reconstructMissingQuizSection(source, mainGulf, {
+      msaRecoveredQuizSection: msaQuiz,
+    });
+    const quiz = inserted.sections.find((s) => s.role === "Quiz");
+    expect(quiz?.quiz?.options).toEqual(msaQuiz?.quiz?.options);
+    expect(inserted.sections.find((s) => s.role === "Mission")?.heading).toContain(
+      "المهمة",
+    );
   });
 });
 

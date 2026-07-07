@@ -15,11 +15,11 @@
       "role": "Orientation",
       "heading": "Orientation",
       "subtitle": "Introduction to the Lesson",
-      "contentMarkdown": "- What will you understand? The app = reusable small pieces (Components) + pages with titles (Routes).\n- Why now? The depth of Builder is optional — but if you are building a product, this lesson prevents repeating the same code on every page.\n- What after the lesson? You will define 3 components and 3 pages for your app — before any code.",
+      "contentMarkdown": "- **What will you understand?** **The app = reusable small pieces (Components) + pages with titles (Routes)**.\n- **Why now?** **The depth of Builder is optional** — **but if you are building a product, this lesson prevents repeating the same code on every page**.\n- **What after the lesson?** **You will define 3 components and 3 pages for your app** — **before any code**.",
       "bullets": [
-        "What will you understand? The app = reusable small pieces (Components) + pages with titles (Routes).",
-        "Why now? The depth of Builder is optional — but if you are building a product, this lesson prevents repeating the same code on every page.",
-        "What after the lesson? You will define 3 components and 3 pages for your app — before any code."
+        "**What will you understand?** **The app = reusable small pieces (Components) + pages with titles (Routes)**.",
+        "**Why now?** **The depth of Builder is optional** — **but if you are building a product, this lesson prevents repeating the same code on every page**.",
+        "**What after the lesson?** **You will define 3 components and 3 pages for your app** — **before any code**."
       ],
       "tables": []
     },
@@ -27,11 +27,11 @@
       "role": "Tension",
       "heading": "Tension",
       "subtitle": "A blue button here and a green one there — the app looks messy",
-      "contentMarkdown": "- Each page looks a bit different. The submit button is blue in chat and green in settings.\n- The problem: You repeated the same code by copying and pasting. Any small change = a change in the entire app.\n- The solution: Build the component once and use it everywhere.",
+      "contentMarkdown": "- **Each page looks a bit different**. **The submit button is blue in chat and green in settings**.\n- **The problem: You repeated the same code by copying and pasting**. **Any small change = a change in the entire app**.\n- **The solution: Build the component once and use it everywhere**.",
       "bullets": [
-        "Each page looks a bit different. The submit button is blue in chat and green in settings.",
-        "The problem: You repeated the same code by copying and pasting. Any small change = a change in the entire app.",
-        "The solution: Build the component once and use it everywhere."
+        "**Each page looks a bit different**. **The submit button is blue in chat and green in settings**.",
+        "**The problem: You repeated the same code by copying and pasting**. **Any small change = a change in the entire app**.",
+        "**The solution: Build the component once and use it everywhere**."
       ],
       "tables": []
     },
@@ -39,11 +39,11 @@
       "role": "Core idea",
       "heading": "Core idea",
       "subtitle": "A reusable piece + a route for each page",
-      "contentMarkdown": "- Component = a small lego piece: a button, a message bubble, a chat card. You design it once and use it with different data (Props).\n- Route = the complete page that has a title in the browser — like `/chat` or `/settings`.\n- The page itself is a large component that combines smaller components. Rule: Each component does one thing only.",
+      "contentMarkdown": "- **Component = a small lego piece**: **a button, a message bubble, a chat card**. **You design it once and use it with different data (Props)**.\n- **Route = the complete page that has a title in the browser** — **like `/chat` or `/settings`**.\n- **The page itself is a large component that combines smaller components**. **Rule: Each component does one thing only**.",
       "bullets": [
-        "Component = a small lego piece: a button, a message bubble, a chat card. You design it once and use it with different data (Props).",
-        "Route = the complete page that has a title in the browser — like `/chat` or `/settings`.",
-        "The page itself is a large component that combines smaller components. Rule: Each component does one thing only."
+        "**Component = a small lego piece**: **a button, a message bubble, a chat card**. **You design it once and use it with different data (Props)**.",
+        "**Route = the complete page that has a title in the browser** — **like `/chat` or `/settings`**.",
+        "**The page itself is a large component that combines smaller components**. **Rule: Each component does one thing only**."
       ],
       "tables": []
     },
@@ -51,7 +51,7 @@
       "role": "Comparison",
       "heading": "Comparison",
       "subtitle": "Code repetition vs. the 3 times rule",
-      "contentMarkdown": "| Error — same design in 3 places | Correct — Component once |\n|----------------------------|---------------------------|\n| Repeated the user message design in 3 places. Change the font size — forget one place — the interface breaks | The third time: stop — create a separate Component. Change once — it reflects everywhere |",
+      "contentMarkdown": "| Error — same design in 3 places | Correct — Component once |\n|----------------------------|---------------------------|\n| **Repeated the user message design in 3 places**. **Change the font size — forget one place — the interface breaks** | **The third time: stop — create a separate Component**. **Change once — it reflects everywhere** |",
       "bullets": [],
       "tables": [
         {
@@ -61,8 +61,8 @@
           ],
           "rows": [
             [
-              "Repeated the user message design in 3 places. Change the font size — forget one place — the interface breaks.",
-              "The third time: stop — create a separate Component. Change once — it reflects everywhere."
+              "**Repeated the user message design in 3 places**. **Change the font size — forget one place — the interface breaks**.",
+              "**The third time: stop — create a separate Component**. **Change once — it reflects everywhere**."
             ]
           ]
         }
@@ -72,7 +72,7 @@
       "role": "Glossary",
       "heading": "Glossary",
       "subtitle": "Terms for the interface",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| Component | A piece of the interface written once and used multiple times with different data | `ChatBubble` — once sender=User and once sender=AI, same template |\n| Route | The complete page that has a title in the browser | `/chat` = chat page, `/history` = old conversations |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Component** | **A piece of the interface written once and used multiple times with different data** | **`ChatBubble` — once sender=User and once sender=AI, same template** |\n| **Route** | **The complete page that has a title in the browser** | **`/chat` = chat page, `/history` = old conversations** |",
       "bullets": [],
       "tables": [
         {
@@ -83,14 +83,14 @@
           ],
           "rows": [
             [
-              "Component",
-              "A piece of the interface written once and used multiple times with different data",
-              "`ChatBubble` — once sender=User and once sender=AI, same template"
+              "**Component**",
+              "**A piece of the interface written once and used multiple times with different data**",
+              "**`ChatBubble` — once sender=User and once sender=AI, same template**"
             ],
             [
-              "Route",
-              "The complete page that has a title in the browser",
-              "`/chat` = chat page, `/history` = old conversations"
+              "**Route**",
+              "**The complete page that has a title in the browser**",
+              "**`/chat` = chat page, `/history` = old conversations**"
             ]
           ]
         }
@@ -99,7 +99,7 @@
     {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot block (intent)",
-      "contentMarkdown": "Any professional interface looks complex — but it is a repetition of 3-4 templates. ModuleCard and LessonRow = Components that repeat with different data.",
+      "contentMarkdown": "**Any professional interface looks complex** — **but it is a repetition of 3-4 templates**. **ModuleCard and LessonRow = Components that repeat with different data**.",
       "bullets": [],
       "tables": []
     },
@@ -107,7 +107,7 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick confirmation",
-      "contentMarkdown": "Question: You need a card for each previous conversation — a title, summary, and date. What is the best way?\nOne Component `ConversationCard` — pass the data for each conversation as Props.\nA new Component for each conversation: `ConversationCard1`, `ConversationCard2`...\nCombine all cards into one large component `HistoryPage`.\nExplanation: A Component is written once and used with different data — it reduces repetition and makes changes in one place.",
+      "contentMarkdown": "> **Quiz key:** correctIndex: 0\n\n**Question:** **You need a card for each previous conversation — a title, summary, and date. What is the best way?**\n\n**One Component `ConversationCard` — pass the data for each conversation as Props**.\nA new Component for each conversation: `ConversationCard1`, `ConversationCard2`...****\nCombine all cards into one large component `HistoryPage`.\n\n**Explanation:** **A Component is written once and used with different data** — **it reduces repetition and makes changes in one place**.",
       "bullets": [
         "One Component `ConversationCard` — pass the data for each conversation as Props.",
         "A new Component for each conversation: `ConversationCard1`, `ConversationCard2`...",
@@ -115,21 +115,21 @@
       ],
       "tables": [],
       "quiz": {
-        "question": "You need a card for each previous conversation — a title, summary, and date. What is the best way?",
+        "question": "**You need a card for each previous conversation — a title, summary, and date. What is the best way?**",
         "correctIndex": 0,
         "options": [
           "One Component `ConversationCard` — pass the data for each conversation as Props.",
           "A new Component for each conversation: `ConversationCard1`, `ConversationCard2`...",
           "Combine all cards into one large component `HistoryPage`."
         ],
-        "explanation": "A Component is written once and used with different data — it reduces repetition and makes changes in one place."
+        "explanation": "**A Component is written once and used with different data** — **it reduces repetition and makes changes in one place**."
       }
     },
     {
       "role": "Mission",
       "heading": "Mission",
       "subtitle": "Define 3 components and 3 pages",
-      "contentMarkdown": "Introduction: Before any code — plan on paper. 10-15 minutes. Delivery: 1. 3 pages (Routes) — a route + a goal for each one\n2. 3 Components — name + Props + in which page/pages it appears\n3. Does the component need internal memory (state)? Which one and why? Evaluation criteria: | Dimension | Weight | Criteria |\n|-------|-------|---------|\n| 3 clear pages | 50% | Each Route has a path and a goal. The pages cover the main customer journey |\n| 3 Components with Props | 50% | Each Component has a name and defined Props. Clearly stated where it appears |",
+      "contentMarkdown": "**Introduction:** **Before any code — plan on paper**. **10-15 minutes**.\n\n**Delivery:**\n\n1. **3 pages (Routes)** — **a route + a goal for each one**\n2. **3 Components** — **name + Props + in which page/pages it appears**\n3. **Does the component need internal memory (state)?** **Which one and why?**\n\n**Evaluation criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| 3 clear pages | 50% | **Each Route has a path and a goal**. **The pages cover the main customer journey** |\n| 3 Components with Props | 50% | **Each Component has a name and defined Props**. **Clearly stated where it appears** |",
       "bullets": [],
       "tables": [
         {
@@ -142,33 +142,33 @@
             [
               "3 clear pages",
               "50%",
-              "Each Route has a path and a goal. The pages cover the main customer journey."
+              "**Each Route has a path and a goal**. **The pages cover the main customer journey**."
             ],
             [
               "3 Components with Props",
               "50%",
-              "Each Component has a name and defined Props. Clearly stated where it appears."
+              "**Each Component has a name and defined Props**. **Clearly stated where it appears**."
             ]
           ]
         }
       ],
       "mission": {
-        "intro": "Before any code — plan on paper. 10-15 minutes.",
+        "intro": "**Before any code — plan on paper**. **10-15 minutes**.",
         "delivery": [
-          "3 pages (Routes) — a route + a goal for each one.",
-          "3 Components — name + Props + in which page/pages it appears.",
-          "Does the component need internal memory (state)? Which one and why?"
+          "**3 pages (Routes)** — **a route + a goal for each one**.",
+          "**3 Components** — **name + Props + in which page/pages it appears**.",
+          "**Does the component need internal memory (state)?** **Which one and why?**"
         ],
         "rubric": [
           {
             "dimension": "3 clear pages",
             "weight": 50,
-            "criteria": "Each Route has a path and a goal. The pages cover the main customer journey."
+            "criteria": "**Each Route has a path and a goal**. **The pages cover the main customer journey**."
           },
           {
             "dimension": "3 Components with Props",
             "weight": 50,
-            "criteria": "Each Component has a name and defined Props. Clearly stated where it appears."
+            "criteria": "**Each Component has a name and defined Props**. **Clearly stated where it appears**."
           }
         ],
         "yamlIntent": "Plan 3 routes + 3 components with Props and where they appear — ~10–15 min",
@@ -178,11 +178,11 @@
     {
       "role": "Confidence close",
       "heading": "Confidence close",
-      "contentMarkdown": "- I understand: The app = reusable Components + Routes for each page. Change the piece once — it reflects everywhere.\n- You can: Map out 3 pages and 3 components — ready for the first prompt in Lovable.\n- Next: Iteration Loop — improve one change at a time.",
+      "contentMarkdown": "- **I understand:** **The app = reusable Components + Routes for each page**. **Change the piece once — it reflects everywhere**.\n- **You can:** **Map out 3 pages and 3 components — ready for the first prompt in Lovable**.\n- **Next:** **Iteration Loop** — **improve one change at a time**.",
       "bullets": [
-        "I understand: The app = reusable Components + Routes for each page. Change the piece once — it reflects everywhere.",
-        "You can: Map out 3 pages and 3 components — ready for the first prompt in Lovable.",
-        "Next: Iteration Loop — improve one change at a time."
+        "**I understand:** **The app = reusable Components + Routes for each page**. **Change the piece once — it reflects everywhere**.",
+        "**You can:** **Map out 3 pages and 3 components — ready for the first prompt in Lovable**.",
+        "**Next:** **Iteration Loop** — **improve one change at a time**."
       ],
       "tables": []
     }

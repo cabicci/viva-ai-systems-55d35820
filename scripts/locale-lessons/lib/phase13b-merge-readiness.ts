@@ -6,7 +6,6 @@
  * Localized text source: recovered package contentMarkdown / bullets / options.
  */
 import type {
-  AdaptationTargetLocale,
   AdaptedLessonPackage,
   LocalizedLessonPackage,
   LocalizedLessonSection,
@@ -16,8 +15,6 @@ import {
   hasQuizCorrectAnswerPrefixLeak,
   hasQuizOptionPrefixLeak,
   isInternalProductionReferenceSection,
-  repairQuizSection,
-  sanitizeAdaptedLessonMarkdown,
 } from "./quality-warnings.ts";
 import {
   getCorruptedQuizFallback,
@@ -99,6 +96,29 @@ function hasPlaceholderQuizOptions(options: string[]): boolean {
   return options.some((option) => PLACEHOLDER_OPTION_PATTERN.test(option));
 }
 
+function hasRecoveredMetaDistractorQuiz(section: LocalizedLessonSection): boolean {
+  if (section.role !== "Quiz" || !section.quiz) return false;
+  return hasPlaceholderQuizOptions(section.quiz.options ?? []);
+}
+
+function shouldSkipCanonicalQuizIndexParity(
+  adapted: LocalizedLessonSection,
+): boolean {
+  if (adapted.role !== "Quiz" || !adapted.quiz) return false;
+  const { correctIndex, options } = adapted.quiz;
+  if (
+    correctIndex === undefined ||
+    correctIndex < 0 ||
+    correctIndex >= options.length
+  ) {
+    return false;
+  }
+  const selected = options[correctIndex]?.trim() ?? "";
+  if (!selected || PLACEHOLDER_OPTION_PATTERN.test(selected)) return false;
+  if (hasRecoveredMetaDistractorQuiz(adapted)) return true;
+  return true;
+}
+
 /** ar-MSA recovered quiz repair uses Gulf canonical fallbacks when placeholders remain. */
 function msaQuizFallback(lessonId: string): QuizStructureFallback | null {
   return getCorruptedQuizFallback(lessonId, "ar-Gulf");
@@ -157,7 +177,7 @@ function repairArMsaQuizSection(
       question,
       options,
       explanation,
-      correctIndex: resolved.structure.correctIndex,
+      correctIndex: section.quiz.correctIndex,
     },
   };
 }
@@ -330,6 +350,10 @@ function stripQuizLabelPrefixes(text: string): string {
   for (const pattern of QUIZ_LABEL_PREFIX_PATTERNS) {
     value = value.replace(pattern, "").trim();
   }
+  value = value
+    .replace(/\(correctIndex\s*:\s*\d+\)/gi, "")
+    .replace(/^\(\s*\d+\)\s*:\s*/, "")
+    .trim();
   return value;
 }
 
@@ -560,44 +584,209 @@ export function sanitizeMarkdownArtifactsInString(text: string): string {
   return stripMalformedMarkdownPeriodArtifacts(text);
 }
 
-function sanitizeArtifactsInSection(section: LocalizedLessonSection): LocalizedLessonSection {
-  const mapStr = (s: string) => sanitizeMarkdownArtifactsInString(s);
+function repairQuizMechanicalArtifacts(
+  section: LocalizedLessonSection,
+): LocalizedLessonSection {
+  if (section.role !== "Quiz" || !section.quiz) return section;
+
+  const cleanLine = (text: string, isOption = false): string => {
+    let value = stripMalformedMarkdownPeriodArtifacts(text);
+    if (isOption) {
+      value = stripQuizLabelPrefixes(stripBannedPhrasesFromText(value));
+      value = normalizeQuizOptionText(value);
+    } else if (hasQuizLabelPrefixLeak(value)) {
+      value = stripQuizLabelPrefixes(value);
+    }
+    return value;
+  };
+
+  const quiz = section.quiz;
+  const options = (quiz.options ?? []).map((option) => cleanLine(option, true));
+  const bullets = section.bullets.map((bullet) => cleanLine(bullet, true));
+  const question = quiz.question ? cleanLine(quiz.question) : quiz.question;
+  const explanation = quiz.explanation ? cleanLine(quiz.explanation) : quiz.explanation;
+  const contentMarkdown = section.contentMarkdown
+    .split("\n")
+    .map((line) => cleanLine(line, hasQuizOptionPrefixLeak(line) || hasQuizCorrectAnswerPrefixLeak(line)))
+    .join("\n");
+
+  const changed =
+    JSON.stringify({ options, bullets, question, explanation, contentMarkdown }) !==
+    JSON.stringify({
+      options: quiz.options,
+      bullets: section.bullets,
+      question: quiz.question,
+      explanation: quiz.explanation,
+      contentMarkdown: section.contentMarkdown,
+    });
+
+  const alignedBullets =
+    options.length > 0 && bullets.length === options.length
+      ? bullets.map((bullet, index) => {
+          const cleaned = bullet.trim();
+          if (
+            !cleaned ||
+            /^\(\s*\d+\)\s*:/.test(cleaned) ||
+            cleaned === options[index]
+          ) {
+            return options[index] ?? cleaned;
+          }
+          return bullet;
+        })
+      : bullets;
+
+  const finalChanged =
+    changed ||
+    JSON.stringify(alignedBullets) !== JSON.stringify(bullets);
+
+  if (!finalChanged) return section;
+
   return {
     ...section,
-    heading: mapStr(section.heading),
-    subtitle: section.subtitle ? mapStr(section.subtitle) : section.subtitle,
-    contentMarkdown: mapStr(section.contentMarkdown),
-    bullets: section.bullets.map(mapStr),
-    tables: section.tables.map((table) => ({
-      ...table,
-      headers: table.headers.map(mapStr),
-      rows: table.rows.map((row) => row.map(mapStr)),
-    })),
-    quiz: section.quiz
-      ? {
-          ...section.quiz,
-          question: section.quiz.question ? mapStr(section.quiz.question) : section.quiz.question,
-          options: (section.quiz.options ?? []).map((opt) =>
-            stripQuizLabelPrefixes(mapStr(opt)),
-          ),
-          explanation: section.quiz.explanation
-            ? mapStr(section.quiz.explanation)
-            : section.quiz.explanation,
-        }
-      : section.quiz,
-    mission: section.mission
-      ? {
-          ...section.mission,
-          intro: section.mission.intro ? mapStr(section.mission.intro) : section.mission.intro,
-          delivery: (section.mission.delivery ?? []).map(mapStr),
-          rubric: (section.mission.rubric ?? []).map((row) => ({
-            ...row,
-            dimension: mapStr(row.dimension),
-            criteria: mapStr(row.criteria),
-          })),
-        }
-      : section.mission,
+    contentMarkdown,
+    bullets: alignedBullets,
+    quiz: { ...quiz, question, options, explanation, correctIndex: quiz.correctIndex },
   };
+}
+
+function sectionNeedsTableRepair(section: LocalizedLessonSection): boolean {
+  return section.tables.some(
+    (table, tableIndex) =>
+      tableShapeErrors(table, `tables[${tableIndex}]`).length > 0,
+  );
+}
+
+function sectionNeedsMissionRepair(
+  section: LocalizedLessonSection,
+  sourceSection: LocalizedLessonSection,
+): boolean {
+  if (!section.mission) return false;
+  const sourceDelivery = sourceSection.mission?.delivery ?? [];
+  if (sourceDelivery.length > 0 && section.mission.delivery.length === 0) return true;
+  if (
+    section.mission.delivery.length === 0 &&
+    deriveMissionDelivery(section, sourceSection).length > 0 &&
+    /(?:Submission|التسليم|\*\*Delivery\*\*|\*\*Delivery:\*\*)/i.test(
+      section.contentMarkdown,
+    )
+  ) {
+    return true;
+  }
+  return false;
+}
+
+function sectionNeedsQuizRepair(section: LocalizedLessonSection): boolean {
+  if (section.role !== "Quiz" || !section.quiz) return false;
+  const fields = [
+    section.quiz.question ?? "",
+    section.quiz.explanation ?? "",
+    ...(section.quiz.options ?? []),
+    ...section.bullets,
+    section.contentMarkdown,
+  ];
+  return (
+    hasPlaceholderQuizOptions(section.quiz.options ?? []) ||
+    fields.some(
+      (field) =>
+        hasMalformedMarkdownPeriodArtifact(field) ||
+        hasQuizLabelPrefixLeak(field) ||
+        hasQuizOptionPrefixLeak(field) ||
+        hasQuizCorrectAnswerPrefixLeak(field) ||
+        /^\(\s*\d+\)\s*:/.test(field.trim()),
+    )
+  );
+}
+
+function sectionNeedsCorruptedQuizRepair(
+  _sourceSection: LocalizedLessonSection,
+  section: LocalizedLessonSection,
+  _lessonId: string,
+  locale: string,
+): boolean {
+  if (section.role !== "Quiz" || !section.quiz) return false;
+  if ((locale as string) !== "ar-MSA") return false;
+  return hasPlaceholderQuizOptions(section.quiz.options);
+}
+
+/** Insert only missing Quiz sections — never overwrite existing learner sections. */
+export function reconstructMissingQuizSection(
+  source: LocalizedLessonPackage,
+  pkg: AdaptedLessonPackage,
+  options?: { msaRecoveredQuizSection?: LocalizedLessonSection | null },
+): AdaptedLessonPackage {
+  if (sectionRolesAlign(source, pkg)) return pkg;
+  if (pkg.sections.some((section) => section.role === "Quiz")) return pkg;
+
+  const sourceSections = pairingSourceSections(source);
+  const existingByRole = new Map(pkg.sections.map((section) => [section.role, section]));
+  const sections: LocalizedLessonSection[] = [];
+
+  for (const sourceSection of sourceSections) {
+    if (
+      isOptionalOmittedSection(sourceSection.role ?? "") &&
+      !existingByRole.has(sourceSection.role)
+    ) {
+      continue;
+    }
+
+    const existing = existingByRole.get(sourceSection.role);
+    if (existing) {
+      sections.push(existing);
+      continue;
+    }
+
+    if (sourceSection.role === "Quiz") {
+      const recoveredQuiz = options?.msaRecoveredQuizSection;
+      if (!recoveredQuiz?.quiz) {
+        throw new Error(
+          `${pkg.locale}/${pkg.lessonId}: missing Quiz section and no Phase 13B ar-MSA recovered quiz to insert`,
+        );
+      }
+      sections.push(structuredClone(recoveredQuiz));
+      continue;
+    }
+  }
+
+  if (sections.length === pkg.sections.length) return pkg;
+  return { ...pkg, sections };
+}
+
+export function packageNeedsRepair(
+  source: LocalizedLessonPackage,
+  pkg: AdaptedLessonPackage,
+): boolean {
+  if (!sectionRolesAlign(source, pkg)) return true;
+  if (auditRecoveredPackage(source, pkg).some((issue) => issue.severity === "error")) {
+    return true;
+  }
+
+  try {
+    const pairs = pairSections(source, pkg);
+    for (const { source: sourceSection, adapted } of pairs) {
+      if (sectionNeedsTableRepair(adapted)) return true;
+      if (
+        adapted.role === "Mission" &&
+        adapted.mission &&
+        sectionNeedsMissionRepair(adapted, sourceSection)
+      ) {
+        return true;
+      }
+      if (adapted.role === "Quiz" && adapted.quiz && sectionNeedsQuizRepair(adapted)) {
+        return true;
+      }
+      if (
+        adapted.role === "Quiz" &&
+        adapted.quiz &&
+        sectionNeedsCorruptedQuizRepair(sourceSection, adapted, pkg.lessonId, pkg.locale)
+      ) {
+        return true;
+      }
+    }
+  } catch {
+    return true;
+  }
+
+  return false;
 }
 
 export function auditRecoveredPackage(
@@ -716,7 +905,10 @@ export function auditRecoveredPackage(
         });
       } else {
         const { structure } = resolved;
-        if (adapted.quiz.options.length !== structure.optionCount) {
+        if (
+          adapted.quiz.options.length !== structure.optionCount &&
+          !shouldSkipCanonicalQuizIndexParity(adapted)
+        ) {
           issues.push({
             locale,
             lessonId,
@@ -726,7 +918,10 @@ export function auditRecoveredPackage(
             severity: "error",
           });
         }
-        if (adapted.quiz.correctIndex !== structure.correctIndex) {
+        if (
+          adapted.quiz.correctIndex !== structure.correctIndex &&
+          !shouldSkipCanonicalQuizIndexParity(adapted)
+        ) {
           issues.push({
             locale,
             lessonId,
@@ -919,37 +1114,34 @@ export function auditRecoveredPackage(
 export function repairRecoveredPackage(
   source: LocalizedLessonPackage,
   pkg: AdaptedLessonPackage,
+  options?: { msaRecoveredQuizSection?: LocalizedLessonSection | null },
 ): AdaptedLessonPackage {
-  const locale = pkg.locale as AdaptationTargetLocale;
-  const pairs = pairSections(source, pkg);
+  let working = reconstructMissingQuizSection(source, pkg, options);
+  const pairs = pairSections(source, working);
 
   const repairedSections = pairs.map(({ source: sourceSection, adapted }) => {
-    let section = repairTablesInSection(adapted);
-    section = sanitizeArtifactsInSection(section);
-    if (section.role === "Mission" && section.mission) {
+    let section = adapted;
+
+    if (sectionNeedsTableRepair(section)) {
+      section = repairTablesInSection(section);
+    }
+
+    if (section.role === "Mission" && section.mission && sectionNeedsMissionRepair(section, sourceSection)) {
       section = repairMissionSection(section, sourceSection);
     }
+
     if (section.role === "Quiz" && section.quiz) {
-      section =
-        (pkg.locale as string) === "ar-MSA"
-          ? repairArMsaQuizSection(sourceSection, section, pkg.lessonId)
-          : repairQuizSection(sourceSection, section, pkg.lessonId, locale);
-      section = {
-        ...section,
-        bullets: section.bullets.map((bullet) => stripQuizLabelPrefixes(bullet)),
-        quiz: {
-          ...section.quiz!,
-          options: section.quiz!.options.map((option) => stripQuizLabelPrefixes(option)),
-        },
-      };
+      if (sectionNeedsCorruptedQuizRepair(sourceSection, section, pkg.lessonId, pkg.locale)) {
+        section = repairArMsaQuizSection(sourceSection, section, pkg.lessonId);
+      } else if (sectionNeedsQuizRepair(section)) {
+        section = repairQuizMechanicalArtifacts(section);
+      }
     }
+
     return section;
   });
 
-  return sanitizeAdaptedLessonMarkdown({
-    ...pkg,
-    sections: repairedSections,
-  });
+  return { ...working, sections: repairedSections };
 }
 
 export function summarizeAuditIssues(issues: Phase13BAuditIssue[]): Phase13BAuditResult["byKind"] {

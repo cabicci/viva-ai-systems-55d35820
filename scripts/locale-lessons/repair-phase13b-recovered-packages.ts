@@ -15,15 +15,14 @@ import { collectPhase13BRecoveredReport } from "./collect-phase13b-recovered-rep
 import {
   auditRecoveredPackage,
   buildValidationSummary,
-  mergeWithShippedLesson,
   PHASE13B_RECOVERED_LOCALES,
+  packageNeedsRepair,
   repairRecoveredPackage,
-  sectionRolesAlign,
   summarizeAuditIssues,
   type Phase13BAuditIssue,
 } from "./lib/phase13b-merge-readiness.ts";
+import { deepEqual } from "./lib/phase13b-semantic-diff.ts";
 import {
-  lessonsDirForLocale,
   loadMsaLessonPackage,
   readJsonFile,
 } from "./lib/source-package.ts";
@@ -50,16 +49,66 @@ async function loadPackage(filePath: string): Promise<AdaptedLessonPackage> {
   return readJsonFile<AdaptedLessonPackage>(filePath);
 }
 
-async function loadShippedLesson(
-  locale: string,
+async function loadMsaRecoveredQuizSection(
   lessonId: string,
-): Promise<AdaptedLessonPackage | null> {
-  const filePath = path.join(lessonsDirForLocale(locale), `${lessonId}.json`);
+): Promise<import("../../src/lib/locale-lessons/types.ts").LocalizedLessonSection | null> {
+  const filePath = path.join(PHASE13B_RECOVERED_PACKAGES_ROOT, "ar-MSA", `${lessonId}.json`);
   try {
-    return await readJsonFile<AdaptedLessonPackage>(filePath);
+    const pkg = await loadPackage(filePath);
+    return pkg.sections.find((section) => section.role === "Quiz") ?? null;
   } catch {
     return null;
   }
+}
+
+export async function repairAllRecoveredPackages(): Promise<{
+  packagesScanned: number;
+  filesWritten: number;
+  skippedIdentical: number;
+  touched: string[];
+  auditBefore: number;
+  auditAfter: number;
+}> {
+  const before = await auditAllRecoveredPackages();
+  const cells = await listPackagePaths();
+  const touched: string[] = [];
+  let filesWritten = 0;
+  let skippedIdentical = 0;
+
+  for (const cell of cells) {
+    const source = await loadMsaLessonPackage(cell.lessonId);
+    const pkg = await loadPackage(cell.filePath);
+    if (!packageNeedsRepair(source, pkg)) {
+      skippedIdentical++;
+      continue;
+    }
+
+    const repaired = repairRecoveredPackage(source, pkg, {
+      msaRecoveredQuizSection:
+        cell.locale === "ar-Gulf"
+          ? await loadMsaRecoveredQuizSection(cell.lessonId)
+          : null,
+    });
+    if (deepEqual(pkg, repaired)) {
+      skippedIdentical++;
+      continue;
+    }
+
+    await fs.writeFile(cell.filePath, JSON.stringify(repaired, null, 2) + "\n", "utf8");
+    filesWritten++;
+    touched.push(`${cell.locale}/${cell.lessonId}`);
+  }
+
+  const after = await auditAllRecoveredPackages();
+
+  return {
+    packagesScanned: cells.length,
+    filesWritten,
+    skippedIdentical,
+    touched,
+    auditBefore: before.issues.filter((i) => i.severity === "error").length,
+    auditAfter: after.issues.filter((i) => i.severity === "error").length,
+  };
 }
 
 export async function auditAllRecoveredPackages(): Promise<{
@@ -91,48 +140,6 @@ export async function auditAllRecoveredPackages(): Promise<{
     packagesScanned: cells.length,
     issues,
     byKind: summarizeAuditIssues(issues),
-  };
-}
-
-export async function repairAllRecoveredPackages(): Promise<{
-  packagesScanned: number;
-  filesWritten: number;
-  touched: string[];
-  auditBefore: number;
-  auditAfter: number;
-}> {
-  const before = await auditAllRecoveredPackages();
-  const cells = await listPackagePaths();
-  const touched: string[] = [];
-  let filesWritten = 0;
-
-  for (const cell of cells) {
-    const source = await loadMsaLessonPackage(cell.lessonId);
-    let pkg = await loadPackage(cell.filePath);
-    if (!sectionRolesAlign(source, pkg)) {
-      const shipped = await loadShippedLesson(cell.locale, cell.lessonId);
-      if (shipped) {
-        pkg = mergeWithShippedLesson(pkg, shipped);
-      }
-    }
-    const repaired = repairRecoveredPackage(source, pkg);
-    const beforeJson = JSON.stringify(pkg);
-    const afterJson = JSON.stringify(repaired);
-    if (beforeJson !== afterJson) {
-      await fs.writeFile(cell.filePath, JSON.stringify(repaired, null, 2) + "\n", "utf8");
-      filesWritten++;
-      touched.push(`${cell.locale}/${cell.lessonId}`);
-    }
-  }
-
-  const after = await auditAllRecoveredPackages();
-
-  return {
-    packagesScanned: cells.length,
-    filesWritten,
-    touched,
-    auditBefore: before.issues.filter((i) => i.severity === "error").length,
-    auditAfter: after.issues.filter((i) => i.severity === "error").length,
   };
 }
 

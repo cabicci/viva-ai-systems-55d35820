@@ -15,11 +15,11 @@
       "role": "Orientation",
       "heading": "Orientation",
       "subtitle": "Introduction to the Lesson",
-      "contentMarkdown": "- What will you learn? How to make your app accessible via a public link — and keep secrets safe.\n- Why now? You have built an interface, a database, and AI — but it's still on localhost. No one else can use it.\n- What after the lesson? You will distinguish between what is 'public' (link, name) and what is 'secret' (API keys).",
+      "contentMarkdown": "- **What will you learn?** **How to make your app accessible via a public link** — **and keep secrets safe**.\n- **Why now?** **You have built an interface, a database, and AI** — **but it's still on localhost**. **No one else can use it**.\n- **What after the lesson?** **You will distinguish between what is 'public' (link, name)** **and what is 'secret' (API keys)**.",
       "bullets": [
-        "What will you learn? How to make your app accessible via a public link — and keep secrets safe.",
-        "Why now? You have built an interface, a database, and AI — but it's still on localhost. No one else can use it.",
-        "What after the lesson? You will distinguish between what is 'public' (link, name) and what is 'secret' (API keys)."
+        "**What will you learn?** **How to make your app accessible via a public link** — **and keep secrets safe**.",
+        "**Why now?** **You have built an interface, a database, and AI** — **but it's still on localhost**. **No one else can use it**.",
+        "**What after the lesson?** **You will distinguish between what is 'public' (link, name)** **and what is 'secret' (API keys)**."
       ],
       "tables": []
     },
@@ -27,11 +27,11 @@
       "role": "Tension",
       "heading": "Tension",
       "subtitle": "A good app, but stuck on your device",
-      "contentMarkdown": "- Everything works on `localhost` — but no one in the world can access it.\n- You send `localhost:5173` to your friend — it won't open for them. The app is still just an idea on your device.\n- Deploy means making it available on the internet. But the OpenAI key must remain secret — not in the code.",
+      "contentMarkdown": "- **Everything works on `localhost`** — **but no one in the world can access it**.\n- **You send `localhost:5173` to your friend** — **it won't open for them**. **The app is still just an idea on your device**.\n- **Deploy** means **making it available on the internet**. **But the OpenAI key must remain secret** — **not in the code**.",
       "bullets": [
-        "Everything works on `localhost` — but no one in the world can access it.",
-        "You send `localhost:5173` to your friend — it won't open for them. The app is still just an idea on your device.",
-        "Deploy means making it available on the internet. But the OpenAI key must remain secret — not in the code."
+        "**Everything works on `localhost`** — **but no one in the world can access it**.",
+        "**You send `localhost:5173` to your friend** — **it won't open for them**. **The app is still just an idea on your device**.",
+        "**Deploy** means **making it available on the internet**. **But the OpenAI key must remain secret** — **not in the code**."
       ],
       "tables": []
     },
@@ -39,11 +39,11 @@
       "role": "Core idea",
       "heading": "Core idea",
       "subtitle": "Public link + Protected secrets",
-      "contentMarkdown": "- Deploy means the code goes to a server — people access it from a public URL (like `my-app.com`).\n- Secrets (API keys, database passwords) go to a 'vault' on the server — Environment Variables — not in GitHub.\n- The difference: what people see (link, interface) versus what must remain hidden (keys).",
+      "contentMarkdown": "- **Deploy** means **the code goes to a server** — **people access it from a public URL** (like `my-app.com`).\n- **Secrets (API keys, database passwords)** **go to a 'vault' on the server** — **Environment Variables** — **not in GitHub**.\n- **The difference:** **what people see (link, interface)** **versus what must remain hidden (keys)**.",
       "bullets": [
-        "Deploy means the code goes to a server — people access it from a public URL (like `my-app.com`).",
-        "Secrets (API keys, database passwords) go to a 'vault' on the server — Environment Variables — not in GitHub.",
-        "The difference: what people see (link, interface) versus what must remain hidden (keys)."
+        "**Deploy** means **the code goes to a server** — **people access it from a public URL** (like `my-app.com`).",
+        "**Secrets (API keys, database passwords)** **go to a 'vault' on the server** — **Environment Variables** — **not in GitHub**.",
+        "**The difference:** **what people see (link, interface)** **versus what must remain hidden (keys)**."
       ],
       "tables": []
     },
@@ -51,7 +51,7 @@
       "role": "Comparison",
       "heading": "Comparison",
       "subtitle": "Key in code vs Key in vault",
-      "contentMarkdown": "| Secret in code | Secret in Env Vars |\n|-------------|----------------|\n| OpenAI key in a file on GitHub — anyone can see it and use it on your account. A financial and security disaster | The code is public — the keys are only in the server vault. The link is public, secrets are protected |",
+      "contentMarkdown": "| Secret in code | Secret in Env Vars |\n|-------------|----------------|\n| **OpenAI key in a file on GitHub** — **anyone can see it and use it on your account**. **A financial and security disaster** | **The code is public — the keys are only in the server vault**. **The link is public, secrets are protected** |",
       "bullets": [],
       "tables": [
         {
@@ -61,8 +61,8 @@
           ],
           "rows": [
             [
-              "OpenAI key in a file on GitHub — anyone can see it and use it on your account. A financial and security disaster",
-              "The code is public — the keys are only in the server vault. The link is public, secrets are protected"
+              "**OpenAI key in a file on GitHub** — **anyone can see it and use it on your account**. **A financial and security disaster**",
+              "**The code is public — the keys are only in the server vault**. **The link is public, secrets are protected**"
             ]
           ]
         }
@@ -72,7 +72,7 @@
       "role": "Glossary",
       "heading": "Glossary",
       "subtitle": "Two terms to start",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| Deploy | Moving the app from your device to a server — a public URL that anyone can access | From localhost → `https://my-ai-app.com` |\n| Environment Variables | A vault for secrets on the server — API keys and database passwords | OPENAI_API_KEY in Production settings — not in the code |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Deploy** | **Moving the app from your device to a server** — **a public URL that anyone can access** | **From localhost → `https://my-ai-app.com`** |\n| **Environment Variables** | **A vault for secrets on the server** — **API keys and database passwords** | **OPENAI_API_KEY in Production settings** — **not in the code** |",
       "bullets": [],
       "tables": [
         {
@@ -83,14 +83,14 @@
           ],
           "rows": [
             [
-              "Deploy",
-              "Moving the app from your device to a server — a public URL that anyone can access",
-              "From localhost → `https://my-ai-app.com`"
+              "**Deploy**",
+              "**Moving the app from your device to a server** — **a public URL that anyone can access**",
+              "**From localhost → `https://my-ai-app.com`**"
             ],
             [
-              "Environment Variables",
-              "A vault for secrets on the server — API keys and database passwords",
-              "OPENAI_API_KEY in Production settings — not in the code"
+              "**Environment Variables**",
+              "**A vault for secrets on the server** — **API keys and database passwords**",
+              "**OPENAI_API_KEY in Production settings** — **not in the code**"
             ]
           ]
         }
@@ -99,7 +99,7 @@
     {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot block (intent)",
-      "contentMarkdown": "Build log — Successful deployment: Every deploy = a new version on the internet. The build log shows what succeeded and what failed — it's not a black box.",
+      "contentMarkdown": "**Build log — Successful deployment:**\n\nEvery deploy = **a new version on the internet**. **The build log shows what succeeded and what failed** — **it's not a black box**.",
       "bullets": [],
       "tables": []
     },
@@ -107,7 +107,7 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick confirmation",
-      "contentMarkdown": "Question: The app is running on your device. What is the most critical thing you might forget before deployment?\nAPI keys in the Production vault — not in the code or GitHub.\nThe color of the 'Submit' button in the interface.\nThe number of 404 pages.\nExplanation: Wrong secrets = the app crashes or gets stolen. The link is public — and secrets must stay in the vault.",
+      "contentMarkdown": "> **Quiz key:** correctIndex: 0\n\n**Question:** **The app is running on your device. What is the most critical thing you might forget before deployment?**\n\n**API keys in the Production vault** — **not in the code or GitHub**.\nThe color of the 'Submit' button in the interface.\nThe number of 404 pages.\n\n**Explanation:** **Wrong secrets = the app crashes or gets stolen**. **The link is public — and secrets must stay in the vault**.",
       "bullets": [
         "API keys in the Production vault — not in the code or GitHub.",
         "The color of the 'Submit' button in the interface.",
@@ -115,21 +115,21 @@
       ],
       "tables": [],
       "quiz": {
-        "question": "The app is running on your device. What is the most critical thing you might forget before deployment?",
+        "question": "**The app is running on your device. What is the most critical thing you might forget before deployment?**",
         "correctIndex": 0,
         "options": [
           "API keys in the Production vault — not in the code or GitHub.",
           "The color of the 'Submit' button in the interface.",
           "The number of 404 pages."
         ],
-        "explanation": "Wrong secrets = the app crashes or gets stolen. The link is public — and secrets must stay in the vault."
+        "explanation": "**Wrong secrets = the app crashes or gets stolen**. **The link is public — and secrets must stay in the vault**."
       }
     },
     {
       "role": "Mission",
       "heading": "Mission",
       "subtitle": "List: Public vs Secret",
-      "contentMarkdown": "Introduction: Before Deploy — distinguish what people see from what must remain hidden. 10 minutes. Submission: 3 public items, 3 secrets, which secret would be the most dangerous if leaked and why. Evaluation criteria: | Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Correct classification | 60% | 3 public (URL, interface, public content); 3 secrets (API keys, DB password, JWT secret) |\n| Risk priority | 40% | Most dangerous secret due to logical reasons (money, user data, ...) |",
+      "contentMarkdown": "**Introduction:** **Before Deploy — distinguish what people see from what must remain hidden**. **10 minutes**.\n\n**Submission:** **3 public items**, **3 secrets**, **which secret would be the most dangerous if leaked** and why.\n\n**Evaluation criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Correct classification | 60% | **3 public (URL, interface, public content)**; **3 secrets (API keys, DB password, JWT secret)** |\n| Risk priority | 40% | **Most dangerous secret due to logical reasons (money, user data, ...)** |",
       "bullets": [],
       "tables": [
         {
@@ -142,29 +142,29 @@
             [
               "Correct classification",
               "60%",
-              "3 public (URL, interface, public content); 3 secrets (API keys, DB password, JWT secret)"
+              "**3 public (URL, interface, public content)**; **3 secrets (API keys, DB password, JWT secret)**"
             ],
             [
               "Risk priority",
               "40%",
-              "Most dangerous secret due to logical reasons (money, user data, ...)"
+              "**Most dangerous secret due to logical reasons (money, user data, ...)**"
             ]
           ]
         }
       ],
       "mission": {
-        "intro": "Before Deploy — distinguish what people see from what must remain hidden. 10 minutes.",
+        "intro": "**Before Deploy — distinguish what people see from what must remain hidden**. **10 minutes**.",
         "delivery": [],
         "rubric": [
           {
             "dimension": "Correct classification",
             "weight": 60,
-            "criteria": "3 public (URL, interface, public content); 3 secrets (API keys, DB password, JWT secret)"
+            "criteria": "**3 public (URL, interface, public content)**; **3 secrets (API keys, DB password, JWT secret)**"
           },
           {
             "dimension": "Risk priority",
             "weight": 40,
-            "criteria": "Most dangerous secret due to logical reasons (money, user data, ...)"
+            "criteria": "**Most dangerous secret due to logical reasons (money, user data, ...)**"
           }
         ],
         "yamlIntent": "Classify 3 public vs 3 secret items + most dangerous secret + why — ~10 min",
@@ -174,11 +174,11 @@
     {
       "role": "Confidence close",
       "heading": "Confidence close",
-      "contentMarkdown": "- I understand: Deploy means a public link. Secrets are kept in the vault — not in the code.\n- You can: have a list of public vs secret ready before deployment.\n- Next: The first 10 users — reality teaches you more than any plan.",
+      "contentMarkdown": "- **I understand:** **Deploy means a public link**. **Secrets are kept in the vault** — **not in the code**.\n- **You can:** **have a list of public vs secret ready before deployment**.\n- **Next:** **The first 10 users** — **reality teaches you more than any plan**.",
       "bullets": [
-        "I understand: Deploy means a public link. Secrets are kept in the vault — not in the code.",
-        "You can: have a list of public vs secret ready before deployment.",
-        "Next: The first 10 users — reality teaches you more than any plan."
+        "**I understand:** **Deploy means a public link**. **Secrets are kept in the vault** — **not in the code**.",
+        "**You can:** **have a list of public vs secret ready before deployment**.",
+        "**Next:** **The first 10 users** — **reality teaches you more than any plan**."
       ],
       "tables": []
     }

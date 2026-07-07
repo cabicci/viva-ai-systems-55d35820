@@ -15,11 +15,11 @@
       "role": "Orientation",
       "heading": "Orientation",
       "subtitle": "Lesson Start",
-      "contentMarkdown": "- What will you understand? In Automation, AI reads, classifies, and summarizes — it doesn't just transfer data.\n- Why now? After testing, Flow is ready before adding an AI step.\n- What after the lesson? One AI step in Workflow — its exact function.",
+      "contentMarkdown": "- **What will you understand?** In **Automation**, AI reads, classifies, and summarizes — it doesn't just transfer data.\n- **Why now?** After testing, **Flow** is ready before adding an AI step.\n- **What after the lesson?** One **AI** step in **Workflow** — its exact function.",
       "bullets": [
-        "What will you understand? In Automation, AI reads, classifies, and summarizes — it doesn't just transfer data.",
-        "Why now? After testing, Flow is ready before adding an AI step.",
-        "What after the lesson? One AI step in Workflow — its exact function."
+        "**What will you understand?** In **Automation**, AI reads, classifies, and summarizes — it doesn't just transfer data.",
+        "**Why now?** After testing, **Flow** is ready before adding an AI step.",
+        "**What after the lesson?** One **AI** step in **Workflow** — its exact function."
       ],
       "tables": []
     },
@@ -27,10 +27,10 @@
       "role": "Tension",
       "heading": "Tension",
       "subtitle": "A Familiar Situation",
-      "contentMarkdown": "- A long WhatsApp message → recorded in a spreadsheet — the team reads and classifies it manually every day.\n- Automation moved the data — it didn't do the time-consuming work.",
+      "contentMarkdown": "- A long WhatsApp message → recorded in a spreadsheet — the team reads and classifies it manually every day.\n- **Automation** moved the data — it didn't do the time-consuming work.",
       "bullets": [
         "A long WhatsApp message → recorded in a spreadsheet — the team reads and classifies it manually every day.",
-        "Automation moved the data — it didn't do the time-consuming work."
+        "**Automation** moved the data — it didn't do the time-consuming work."
       ],
       "tables": []
     },
@@ -38,11 +38,11 @@
       "role": "Core idea",
       "heading": "Core Idea",
       "subtitle": "AI Step = Understanding and Writing",
-      "contentMarkdown": "- Before: Trigger → Action → Save. Data moves without 'understanding'.\n- With LLM Step: Classification, summary, draft response — Structured Output for the next step.\n- AI does not replace the system — it adds one thinking step.",
+      "contentMarkdown": "- Before: **Trigger** → **Action** → Save. Data moves without 'understanding'.\n- With **LLM Step:** Classification, summary, draft response — **Structured Output** for the next step.\n- **AI** does not replace the system — it adds one thinking step.",
       "bullets": [
-        "Before: Trigger → Action → Save. Data moves without 'understanding'.",
-        "With LLM Step: Classification, summary, draft response — Structured Output for the next step.",
-        "AI does not replace the system — it adds one thinking step."
+        "Before: **Trigger** → **Action** → Save. Data moves without 'understanding'.",
+        "With **LLM Step:** Classification, summary, draft response — **Structured Output** for the next step.",
+        "**AI** does not replace the system — it adds one thinking step."
       ],
       "tables": []
     },
@@ -50,7 +50,7 @@
       "role": "Comparison",
       "heading": "Comparison",
       "subtitle": "Transfer vs Understanding",
-      "contentMarkdown": "| Transfer Only | AI Step |\n|---------|---------|\n| Message → Sheet as is — manual reading | AI classifies and extracts the name → Flow directs automatically |",
+      "contentMarkdown": "| Transfer Only | AI Step |\n|---------|---------|\n| Message → Sheet as is — manual reading | AI classifies and extracts the name → **Flow** directs automatically |",
       "bullets": [],
       "tables": [
         {
@@ -61,7 +61,7 @@
           "rows": [
             [
               "Message → Sheet as is — manual reading",
-              "AI classifies and extracts the name → Flow directs automatically"
+              "AI classifies and extracts the name → **Flow** directs automatically"
             ]
           ]
         }
@@ -70,7 +70,7 @@
     {
       "role": "Glossary",
       "heading": "Glossary",
-      "contentMarkdown": "| LLM Step | A step that sends text to AI and returns a classification or summary |\n| Structured Output | Fixed fields — not a long paragraph |",
+      "contentMarkdown": "| **LLM Step** | A step that sends text to AI and returns a classification or summary |\n| **Structured Output** | Fixed fields — not a long paragraph |",
       "bullets": [],
       "tables": []
     },
@@ -78,7 +78,7 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "Classifying the message and extracting the name and request in an organized way.\nExplanation: The AI step adds understanding — not just speed of transfer.",
+      "contentMarkdown": "Classifying the message and extracting the name and request in an organized way.\n- **Explanation:** The AI step adds understanding — not just speed of transfer.",
       "bullets": [
         "Classifying the message and extracting the name and request in an organized way.",
         "Explanation: The AI step adds understanding — not just speed of transfer."
@@ -134,16 +134,15 @@
           }
         ],
         "yamlIntent": "Add one AI step; define input, structured output, next step",
-        "yamlType": "practice",
-        "intro": ""
+        "yamlType": "practice"
       }
     },
     {
       "role": "Confidence close",
       "heading": "Confidence Close",
-      "contentMarkdown": "- Next: RAG — responses from your files, not from guessing.",
+      "contentMarkdown": "- **Next:** **RAG** — responses from your files, not from guessing.",
       "bullets": [
-        "Next: RAG — responses from your files, not from guessing."
+        "**Next:** **RAG** — responses from your files, not from guessing."
       ],
       "tables": []
     }

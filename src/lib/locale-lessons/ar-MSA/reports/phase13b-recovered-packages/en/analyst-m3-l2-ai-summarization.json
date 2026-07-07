@@ -15,11 +15,11 @@
       "role": "Orientation",
       "heading": "Orientation — Beginning of the Lesson",
       "subtitle": "Beginning of the Lesson",
-      "contentMarkdown": "- What will you understand? AI can summarize your data in seconds — but you need to provide it with a clear question and a specific context.\n- Why now? In the previous lesson, you gathered your sources in one place. Now it's time to extract notes instead of reading every line.\n- What after the lesson? You will give AI a small table or sample data and ask for 3 notes + one possible decision.",
+      "contentMarkdown": "- **What will you understand?** **AI** can **summarize** your data in **seconds** — but you need to provide it with a **clear question** and a **specific context**.\n- **Why now?** In the previous lesson, you **gathered your sources** in one place. Now it's time to **extract notes** instead of reading **every line**.\n- **What after the lesson?** You will give **AI** a small table or **sample data** and ask for **3 notes + one possible decision**.",
       "bullets": [
-        "What will you understand? AI can summarize your data in seconds — but you need to provide it with a clear question and a specific context.",
-        "Why now? In the previous lesson, you gathered your sources in one place. Now it's time to extract notes instead of reading every line.",
-        "What after the lesson? You will give AI a small table or sample data and ask for 3 notes + one possible decision."
+        "**What will you understand?** **AI** can **summarize** your data in **seconds** — but you need to provide it with a **clear question** and a **specific context**.",
+        "**Why now?** In the previous lesson, you **gathered your sources** in one place. Now it's time to **extract notes** instead of reading **every line**.",
+        "**What after the lesson?** You will give **AI** a small table or **sample data** and ask for **3 notes + one possible decision**."
       ],
       "tables": []
     },
@@ -27,11 +27,11 @@
       "role": "Tension",
       "heading": "Tension — 'Summarize this' — and the result is vague",
       "subtitle": "'Summarize this' — and the result is vague",
-      "contentMarkdown": "- Many people send 50 messages to AI and say 'summarize'. The result: vague sentences that do not help in making a decision.\n- The problem is not AI — the problem is that the question is empty. Without context and without a specific question, any summary seems 'nice' but is not useful.\n- AI is your fastest analyst — you determine: What do you want to know? and what will change if you know it?",
+      "contentMarkdown": "- Many people send **50 messages** to AI and say '**summarize**'. The result: **vague sentences** that do not help in making a **decision**.\n- The problem is **not** AI — the problem is that the **question is empty**. **Without context** and **without a specific question**, any summary seems '**nice**' but is **not useful**.\n- **AI** is your fastest **analyst** — **you** determine: **What do you want to know?** and **what will change** if you know it?",
       "bullets": [
-        "Many people send 50 messages to AI and say 'summarize'. The result: vague sentences that do not help in making a decision.",
-        "The problem is not AI — the problem is that the question is empty. Without context and without a specific question, any summary seems 'nice' but is not useful.",
-        "AI is your fastest analyst — you determine: What do you want to know? and what will change if you know it?"
+        "Many people send **50 messages** to AI and say '**summarize**'. The result: **vague sentences** that do not help in making a **decision**.",
+        "The problem is **not** AI — the problem is that the **question is empty**. **Without context** and **without a specific question**, any summary seems '**nice**' but is **not useful**.",
+        "**AI** is your fastest **analyst** — **you** determine: **What do you want to know?** and **what will change** if you know it?"
       ],
       "tables": []
     },
@@ -39,12 +39,12 @@
       "role": "Core idea",
       "heading": "Core idea — A useful summary = Question + Context + Possible Decision",
       "subtitle": "A useful summary = Question + Context + Possible Decision",
-      "contentMarkdown": "- The question: is not 'summarize' — but 'What are the top 3 recurring issues?' or 'What has changed since last week?'\n- The context: type of data, time frame, and source — 'These are customer messages from the last 7 days' or 'These are 15 rows from the sales sheet'.\n- The required output: 3 specific notes + one decision you might take — not a general description of the data.\n- AI reads for you — you verify and decide. If the note is not linked to a decision, ask again with a clearer question.",
+      "contentMarkdown": "- **The question:** is not '**summarize**' — but '**What are the top 3 recurring issues?**' or '**What has changed since last week?**'\n- **The context:** type of data, **time frame**, and **source** — 'These are customer messages from the **last 7 days**' or 'These are **15 rows** from the sales sheet'.\n- **The required output:** **3 specific notes + one decision** you might take — **not** a general description of the data.\n- **AI** reads **for you** — **you** verify and decide. If the note is **not linked to a decision**, ask **again** with a **clearer question**.",
       "bullets": [
-        "The question: is not 'summarize' — but 'What are the top 3 recurring issues?' or 'What has changed since last week?'",
-        "The context: type of data, time frame, and source — 'These are customer messages from the last 7 days' or 'These are 15 rows from the sales sheet'.",
-        "The required output: 3 specific notes + one decision you might take — not a general description of the data.",
-        "AI reads for you — you verify and decide. If the note is not linked to a decision, ask again with a clearer question."
+        "**The question:** is not '**summarize**' — but '**What are the top 3 recurring issues?**' or '**What has changed since last week?**'",
+        "**The context:** type of data, **time frame**, and **source** — 'These are customer messages from the **last 7 days**' or 'These are **15 rows** from the sales sheet'.",
+        "**The required output:** **3 specific notes + one decision** you might take — **not** a general description of the data.",
+        "**AI** reads **for you** — **you** verify and decide. If the note is **not linked to a decision**, ask **again** with a **clearer question**."
       ],
       "tables": []
     },
@@ -52,7 +52,7 @@
       "role": "Comparison",
       "heading": "Comparison — Empty Prompt vs Decision-Ready Prompt",
       "subtitle": "Empty Prompt vs Decision-Ready Prompt",
-      "contentMarkdown": "| Empty Question | Question + Context |\n|-----------|-------------|\n| 'Summarize this messages'. The result: 'Customers have various questions' — and you don't know what to do | 'These are 40 WhatsApp messages from the last week. Extract: 1) Top 3 complaints 2) Any new requests 3) One decision I might take this week'. The result is ready for action |",
+      "contentMarkdown": "| Empty Question | Question + Context |\n|-----------|-------------|\n| '**Summarize this** messages'. The result: 'Customers have various questions' — **and you don't know** what to do | 'These are **40 WhatsApp messages** from the last week. Extract: 1) **Top 3 complaints** 2) **Any new requests** 3) **One decision** I might take this week'. The result is **ready for action** |",
       "bullets": [],
       "tables": [
         {
@@ -62,8 +62,8 @@
           ],
           "rows": [
             [
-              "'Summarize this messages'. The result: 'Customers have various questions' — and you don't know what to do",
-              "'These are 40 WhatsApp messages from the last week. Extract: 1) Top 3 complaints 2) Any new requests 3) One decision I might take this week'. The result is ready for action"
+              "'**Summarize this** messages'. The result: 'Customers have various questions' — **and you don't know** what to do",
+              "'These are **40 WhatsApp messages** from the last week. Extract: 1) **Top 3 complaints** 2) **Any new requests** 3) **One decision** I might take this week'. The result is **ready for action**"
             ]
           ]
         }
@@ -73,7 +73,7 @@
       "role": "Glossary",
       "heading": "Glossary — Two Terms for Summarization",
       "subtitle": "Two Terms for Summarization",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| Summarization | Transforming large data into few notes — provided there is a clear question | Instead of reading 100 messages, you find '70% are asking about delivery' |\n| Context | Information that helps AI understand what this data is and for whom | 'Customer messages from a candy shop — last 7 days — before the holiday season' |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Summarization** | Transforming **large data** into **few notes** — **provided** there is a clear question | Instead of reading **100 messages**, you find '**70%** are asking about delivery' |\n| **Context** | Information that helps **AI** understand **what this data is** and **for whom** | 'Customer messages from a **candy shop** — **last 7 days** — **before the holiday season**' |",
       "bullets": [],
       "tables": [
         {
@@ -84,14 +84,14 @@
           ],
           "rows": [
             [
-              "Summarization",
-              "Transforming large data into few notes — provided there is a clear question",
-              "Instead of reading 100 messages, you find '70% are asking about delivery'"
+              "**Summarization**",
+              "Transforming **large data** into **few notes** — **provided** there is a clear question",
+              "Instead of reading **100 messages**, you find '**70%** are asking about delivery'"
             ],
             [
-              "Context",
-              "Information that helps AI understand what this data is and for whom",
-              "'Customer messages from a candy shop — last 7 days — before the holiday season'"
+              "**Context**",
+              "Information that helps **AI** understand **what this data is** and **for whom**",
+              "'Customer messages from a **candy shop** — **last 7 days** — **before the holiday season**'"
             ]
           ]
         }
@@ -100,7 +100,7 @@
     {
       "role": "Diagram block (intent)",
       "heading": "Diagram block (intent)",
-      "contentMarkdown": "From data to decision (ID: `ai-summarization-flow`): Data + Question + Context → 3 Notes → One Decision. The same process works on messages, invoices, or any small table.",
+      "contentMarkdown": "**From data to decision** (ID: `ai-summarization-flow`): **Data + Question + Context → 3 Notes → One Decision**. The same process works on messages, invoices, or any small table.",
       "bullets": [],
       "tables": []
     },
@@ -108,29 +108,29 @@
       "role": "Quiz",
       "heading": "Quiz — Quick Confirmation",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "Question: You have 30 customer messages from last week. You want to know if there is a recurring issue that requires a decision. What is the best step?\nYou send to AI 'summarize the messages' without details.\nCopy the sample and write: Data type + time frame + 'Extract 3 recurring notes + one possible decision'.\nYou read each message yourself and ignore AI.\nExplanation: A useful summary starts with a question and context. AI speeds up reading — you determine what you need to know.",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 1\n\n**Question:** You have **30 customer messages** from last week. You want to know if there is a **recurring issue** that requires a **decision**. What is the **best step**?\n\nYou send to AI '**summarize the messages**' **without** details.\n**Copy the sample** and write: **Data type + time frame + 'Extract 3 recurring notes + one possible decision'**.\nYou read **each message** yourself and ignore AI.\n\n**Explanation:** A **useful summary** starts **with a question and context**. **AI** speeds up reading — **you** determine **what you need to know**.",
       "bullets": [
-        "You send to AI 'summarize the messages' without details.",
-        "Copy the sample and write: Data type + time frame + 'Extract 3 recurring notes + one possible decision'.",
-        "You read each message yourself and ignore AI."
+        "You send to AI '**summarize the messages**' **without** details.",
+        "**Copy the sample** and write: **Data type + time frame + 'Extract 3 recurring notes + one possible decision'**.",
+        "You read **each message** yourself and ignore AI."
       ],
       "tables": [],
       "quiz": {
-        "question": "You have 30 customer messages from last week. You want to know if there is a recurring issue that requires a decision. What is the best step?",
+        "question": "You have **30 customer messages** from last week. You want to know if there is a **recurring issue** that requires a **decision**. What is the **best step**?",
         "correctIndex": 1,
         "options": [
-          "You send to AI 'summarize the messages' without details.",
-          "Copy the sample and write: Data type + time frame + 'Extract 3 recurring notes + one possible decision'.",
-          "You read each message yourself and ignore AI."
+          "You send to AI '**summarize the messages**' **without** details.",
+          "**Copy the sample** and write: **Data type + time frame + 'Extract 3 recurring notes + one possible decision'**.",
+          "You read **each message** yourself and ignore AI."
         ],
-        "explanation": "A useful summary starts with a question and context. AI speeds up reading — you determine what you need to know."
+        "explanation": "A **useful summary** starts **with a question and context**. **AI** speeds up reading — **you** determine **what you need to know**."
       }
     },
     {
       "role": "Mission",
       "heading": "Mission — Summarize a Small Sample and Extract a Decision",
       "subtitle": "Summarize a Small Sample and Extract a Decision",
-      "contentMarkdown": "Introduction: This is a practical task — not theoretical. Take a small table or sample data (10–20 rows is enough) and use AI to extract notes that you can act on. No large data required — a clear question and a decision-linked output are needed. Delivery: 1. Data source + number of rows\n2. Prompt you sent — copy it fully (it should include question + context)\n3. 3 notes — each one on a line\n4. One possible decision based on the most important note\n5. What do you need to confirm before making the decision? Evaluation Criteria: | Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Question and Context | 50% | Prompt includes data type + time frame + specific question |\n| Notes and Decision | 50% | 3 specific notes — not a general description; one decision linked to a note |",
+      "contentMarkdown": "**Introduction:** This is a **practical task** — **not** theoretical. Take a **small table** or **sample data** (**10–20 rows** is enough) and use **AI** to extract notes that you can **act on**. **No large data required** — a **clear question** and a **decision-linked output** are needed.\n\n**Delivery:**\n\n1. Data source + number of rows\n2. **Prompt** you sent — **copy it fully** (it should include **question + context**)\n3. **3 notes** — each one **on a line**\n4. **One possible decision** based on the **most important note**\n5. **What do you need** to confirm **before** making the decision?\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Question and Context | 50% | **Prompt** includes **data type + time frame + specific question** |\n| Notes and Decision | 50% | **3 specific notes** — **not** a general description; **one decision** linked to a note |",
       "bullets": [],
       "tables": [
         {
@@ -143,35 +143,35 @@
             [
               "Question and Context",
               "50%",
-              "Prompt includes data type + time frame + specific question"
+              "**Prompt** includes **data type + time frame + specific question**"
             ],
             [
               "Notes and Decision",
               "50%",
-              "3 specific notes — not a general description; one decision linked to a note"
+              "**3 specific notes** — **not** a general description; **one decision** linked to a note"
             ]
           ]
         }
       ],
       "mission": {
-        "intro": "This is a practical task — not theoretical. Take a small table or sample data (10–20 rows is enough) and use AI to extract notes that you can act on. No large data required — a clear question and a decision-linked output are needed.",
+        "intro": "This is a **practical task** — **not** theoretical. Take a **small table** or **sample data** (**10–20 rows** is enough) and use **AI** to extract notes that you can **act on**. **No large data required** — a **clear question** and a **decision-linked output** are needed.",
         "delivery": [
           "Data source + number of rows",
-          "Prompt you sent — copy it fully (it should include question + context)",
-          "3 notes — each one on a line",
-          "One possible decision based on the most important note",
-          "What do you need to confirm before making the decision?"
+          "**Prompt** you sent — **copy it fully** (it should include **question + context**)",
+          "**3 notes** — each one **on a line**",
+          "**One possible decision** based on the **most important note**",
+          "**What do you need** to confirm **before** making the decision?"
         ],
         "rubric": [
           {
             "dimension": "Question and Context",
             "weight": 50,
-            "criteria": "Prompt includes data type + time frame + specific question"
+            "criteria": "**Prompt** includes **data type + time frame + specific question**"
           },
           {
             "dimension": "Notes and Decision",
             "weight": 50,
-            "criteria": "3 specific notes — not a general description; one decision linked to a note"
+            "criteria": "**3 specific notes** — **not** a general description; **one decision** linked to a note"
           }
         ],
         "yamlIntent": "Practical — small table or sample (10–20 rows); AI observations you can act on; clear question required",
@@ -181,11 +181,11 @@
     {
       "role": "Confidence close",
       "heading": "Confidence close",
-      "contentMarkdown": "- I understand: AI summarizes quickly — but the question and context are up to you. A summary without a decision = wasted time.\n- You can: pass any sample data and extract ready notes for review and decision.\n- Next: Pattern vs Outlier — how to not change your strategy because of one odd number. ---",
+      "contentMarkdown": "- **I understand:** **AI** summarizes **quickly** — but the **question and context** are up to you. **A summary without a decision = wasted time**.\n- **You can:** **pass** any **sample data** and extract **ready notes** for review and decision.\n- **Next:** **Pattern vs Outlier** — how to **not change** your strategy because of **one odd number**.\n\n---",
       "bullets": [
-        "I understand: AI summarizes quickly — but the question and context are up to you. A summary without a decision = wasted time.",
-        "You can: pass any sample data and extract ready notes for review and decision.",
-        "Next: Pattern vs Outlier — how to not change your strategy because of one odd number."
+        "**I understand:** **AI** summarizes **quickly** — but the **question and context** are up to you. **A summary without a decision = wasted time**.",
+        "**You can:** **pass** any **sample data** and extract **ready notes** for review and decision.",
+        "**Next:** **Pattern vs Outlier** — how to **not change** your strategy because of **one odd number**."
       ],
       "tables": []
     }
