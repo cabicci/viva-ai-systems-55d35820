@@ -199,8 +199,11 @@ function inferGeneratedPackageIdentity(
   normalized: string,
   filePath: string,
 ): { locale: LessonPackageLocale; lessonId: string; artifactSource?: string } | null {
+  // Match both the CI-generated staging folder and the committed
+  // recovery folder, with or without the leading `reports/` prefix
+  // (GitHub artifact uploads strip prefixes above the artifact `path:`).
   const match = normalized.match(
-    /phase13b-generated-packages\/(ar-MSA|ar-Gulf|en)\/([^/]+)\.json$/,
+    /phase13b-(?:generated|recovered)-packages\/(ar-MSA|ar-Gulf|en)\/([^/]+)\.json$/,
   );
   if (!match) return null;
   const batch = inferBatchLocaleFromPath(filePath);

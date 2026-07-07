@@ -37,7 +37,23 @@ export function finalMergeTargetPathForLocale(
   return path.join(packageDirForLocale(locale), "lessons", `${lessonId}.json`);
 }
 
+/**
+ * Accept generated-package JSON in any of the shapes we encounter:
+ *   - src/lib/locale-lessons/ar-MSA/reports/phase13b-generated-packages/{locale}/{lessonId}.json
+ *     (canonical staging + also the layout of a committed workspace file)
+ *   - reports/phase13b-generated-packages/{locale}/{lessonId}.json
+ *     (GitHub artifact upload keeps the tail after the artifact `path:` prefix)
+ *   - phase13b-generated-packages/{locale}/{lessonId}.json
+ *     (GitHub artifact upload with the `reports/` prefix stripped —
+ *      this is what actually ships inside `locale-phase13b-shard-*.zip`)
+ *   - the same three shapes for the read-only committed recovery folder
+ *     `phase13b-recovered-packages/…` produced by the artifact-recovery utility.
+ */
 export function isPhase13BGeneratedPackagePath(filePath: string): boolean {
   const normalized = filePath.split(path.sep).join("/");
-  return normalized.includes("/reports/phase13b-generated-packages/");
+  const hay = `/${normalized}`;
+  return (
+    hay.includes("/phase13b-generated-packages/") ||
+    hay.includes("/phase13b-recovered-packages/")
+  );
 }
