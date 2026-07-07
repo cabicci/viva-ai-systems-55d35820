@@ -2,7 +2,14 @@
   "runId": "28833055749",
   "commit": "65175315aed9d2debcb4e95d2e9bf72bee0fa5c6",
   "expectedLessonCount": 100,
-  "totalRecovered": 296,
+  "totalRecovered": 298,
+  "supplementalRuns": [
+    {
+      "runId": "28838022902",
+      "artifact": "locale-phase13b-shard-en-00",
+      "recoveredIds": ["builder-m6-l1-idea-to-page", "creator-m6-l4-leads"]
+    }
+  ],
   "perLocale": {
     "ar-MSA": {
       "recovered": 100,
