@@ -1,0 +1,194 @@
+{
+  "locale": "en",
+  "lessonId": "automator-m2-l1-systems-view",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "automator",
+  "moduleId": "automator-m2",
+  "productionRoute": "/learn/automator/automator-m2-l1-systems-view",
+  "titleEn": "Systems View",
+  "title": "Systems View",
+  "summary": "Repeating task = Trigger → Process → Output — the virtual worker needs the map.",
+  "estimatedMinutes": 12,
+  "nextLessonId": "automator-m2-l2-spot-patterns",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation",
+      "subtitle": "Beginning of the Lesson",
+      "contentMarkdown": "- **What will you understand?** Any repeated task = system: **Trigger** → Process → **Output**. When you see it this way, you can hand it over to the virtual worker.\n- **Why now?** After identifying which tasks consume your time, the next step is to break one of them down into clear parts.\n- **What after the lesson?** You will convert one repeated task into a Trigger + Process + Output.",
+      "bullets": [
+        "**What will you understand?** Any repeated task = system: **Trigger** → Process → **Output**. When you see it this way, you can hand it over to the virtual worker.",
+        "**Why now?** After identifying which tasks consume your time, the next step is to break one of them down into clear parts.",
+        "**What after the lesson?** You will convert one repeated task into a Trigger + Process + Output."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension",
+      "subtitle": "Familiar Situation",
+      "contentMarkdown": "- \"Reply to this message\" — every day from the start: new message → think → search → respond → forget to log it.\n- Think of separate tasks — not as a system. The result: the same work repeats, and nothing accumulates.\n- The virtual worker needs a map — not a random task list.",
+      "bullets": [
+        "\"Reply to this message\" — every day from the start: new message → think → search → respond → forget to log it.",
+        "Think of separate tasks — not as a system. The result: the same work repeats, and nothing accumulates.",
+        "The virtual worker needs a map — not a random task list."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core Idea",
+      "subtitle": "Trigger → Process → Output",
+      "contentMarkdown": "- **Trigger:** What starts the work? — WhatsApp message, new form, scheduled appointment.\n- **Process:** What steps do you take each time? — Understand the request, search for the price, make a decision.\n- **Output:** What comes out in the end? — Response to the client, entry in a table, reminder.\n- **Example:** \"Respond to a WhatsApp inquiry\" = Trigger: Message → Process: Understanding + Price Search → Output: Response + Log.\n- When you break down the task this way, the virtual worker knows exactly where to work.",
+      "bullets": [
+        "**Trigger:** What starts the work? — WhatsApp message, new form, scheduled appointment.",
+        "**Process:** What steps do you take each time? — Understand the request, search for the price, make a decision.",
+        "**Output:** What comes out in the end? — Response to the client, entry in a table, reminder.",
+        "**Example:** \"Respond to a WhatsApp inquiry\" = Trigger: Message → Process: Understanding + Price Search → Output: Response + Log.",
+        "When you break down the task this way, the virtual worker knows exactly where to work."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison",
+      "subtitle": "Separate Task vs Clear System",
+      "contentMarkdown": "| Task Thinking | System Thinking |\n|----------------|----------------|\n| \"I need to reply to the message\" — every time from the start, with no fixed steps. Hard to hand over to someone or a tool. | \"Inquiry Response System\": Trigger = Message → Process = 4 fixed steps → Output = Response + CRM. Can be improved or automated. |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Task Thinking",
+            "System Thinking"
+          ],
+          "rows": [
+            [
+              "\"I need to reply to the message\" — every time from the start, with no fixed steps. Hard to hand over to someone or a tool.",
+              "\"Inquiry Response System\": Trigger = Message → Process = 4 fixed steps → Output = Response + CRM. Can be improved or automated."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary",
+      "subtitle": "Terms for the System",
+      "contentMarkdown": "| Term | Meaning | Example |\n|------|---------|--------|\n| **Trigger** | The event that starts the system — without it, nothing moves | A client sends \"How much?\" on WhatsApp |\n| **Output** | What comes out of the system when finished — what the virtual worker \"delivers\" | Response with the price + new entry in the client table |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**Trigger**",
+              "The event that starts the system — without it, nothing moves.",
+              "A client sends \"How much?\" on WhatsApp."
+            ],
+            [
+              "**Output**",
+              "What comes out of the system when finished — what the virtual worker \"delivers\".",
+              "Response with the price + new entry in the client table."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Screenshot block (intent)",
+      "heading": "Screenshot Block",
+      "contentMarkdown": "Connected layers — each layer has an input, processing, and output. Any repeated work = layers stacked: something enters → steps transform → something exits. The same idea applies to a task from your work — it doesn't need to be complicated.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz",
+      "subtitle": "Quick Confirmation",
+      "contentMarkdown": "> **Quiz key:** correctIndex: 0\n\n**Question:** A client sends a message on Facebook asking about the price of a product. In the \"Response System,\" what is the **Trigger**?\n\n- **Correct answer:** **The new client message**\n- **Explanation:** **Trigger** = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output).",
+      "bullets": [
+        "**Correct answer:** **The new client message**",
+        "**Explanation:** **Trigger** = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output)."
+      ],
+      "tables": [],
+      "quiz": {
+        "question": "A client sends a message on Facebook asking about the price of a product. In the \"Response System,\" what is the **Trigger**?",
+        "correctIndex": 0,
+        "options": [
+          "**The new client message**",
+          "An irrelevant option; it ignores the basic data in the section above.",
+          "A partial answer that misses the context and ignores the next step for the decision."
+        ],
+        "explanation": "**Trigger** = the event that starts the system. Here, it is the client message — not the price list or CRM entry (those are the process and output)."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission",
+      "subtitle": "Break Down a Repeated Task into a System",
+      "contentMarkdown": "**Introduction:** Choose one task you do every week (from **Time Inventory**). Break it down into Trigger + Process + Output — this is design, not tool building. 10–15 minutes is enough.\n\n**Submission:** Task name · Trigger (what starts it, when/from whom) · Process (at least 4 steps in order) · Output (what comes out and for whom) · If you will automate only one step — which one and why?\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| System Breakdown | 70% | A specific and repeated task from your work; Trigger + 4 process steps + clear output |\n| Automation Step | 30% | You chose one step because of (repetition / time / errors) |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "System Breakdown",
+              "70%",
+              "A specific and repeated task from your work; Trigger + 4 process steps + clear output."
+            ],
+            [
+              "Automation Step",
+              "30%",
+              "You chose one step because of (repetition / time / errors)."
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "Choose one task you do every week (from **Time Inventory**). Break it down into Trigger + Process + Output — this is design, not tool building. 10–15 minutes is enough.",
+        "delivery": [],
+        "rubric": [
+          {
+            "dimension": "System Breakdown",
+            "weight": 70,
+            "criteria": "A specific and repeated task from your work; Trigger + 4 process steps + clear output."
+          },
+          {
+            "dimension": "Automation Step",
+            "weight": 30,
+            "criteria": "You chose one step because of (repetition / time / errors)."
+          }
+        ],
+        "yamlIntent": "Pick one weekly repeating task from audit; break into trigger, 4+ process steps, output, and one step to automate with reason — 10–15 min design exercise",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence Close",
+      "contentMarkdown": "- **You understood:** Any repeated task = Trigger → Process → Output. This is the foundation of all automation.\n- **You can:** You have one task broken down as a system — ready to discover patterns.\n- **Next:** **Spot Patterns** — \"Whenever X happens, I do Y\" = an automation opportunity.",
+      "bullets": [
+        "**You understood:** Any repeated task = Trigger → Process → Output. This is the foundation of all automation.",
+        "**You can:** You have one task broken down as a system — ready to discover patterns.",
+        "**Next:** **Spot Patterns** — \"Whenever X happens, I do Y\" = an automation opportunity."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-07-07T00:36:19.602Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "automator-m2-l1-systems-view",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/automator-m2-l1-systems-view.canonical.md"
+  }
+}

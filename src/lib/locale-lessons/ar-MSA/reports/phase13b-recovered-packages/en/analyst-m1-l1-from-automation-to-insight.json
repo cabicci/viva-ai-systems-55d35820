@@ -1,0 +1,194 @@
+{
+  "locale": "en",
+  "lessonId": "analyst-m1-l1-from-automation-to-insight",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "analyst",
+  "moduleId": "analyst-m1",
+  "productionRoute": "/learn/analyst/analyst-m1-l1-from-automation-to-insight",
+  "titleEn": "From Automation to Insight",
+  "title": "From Automation to Insight",
+  "summary": "Automator collects data — Analyst asks questions; numbers alone do not provide insight.",
+  "estimatedMinutes": 12,
+  "nextLessonId": "analyst-m2-l1-feeling-to-question",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation",
+      "subtitle": "Introduction to the Lesson",
+      "contentMarkdown": "- **What will you understand?** Having numbers is not the same as knowing what to do with them — **Data** is just the beginning, not the end.\n- **Why now?** **Automator** collects data automatically. The **Analyst** turns it into decisions. Even a simple table or **Dashboard** is enough to get started.\n- **What after the lesson?** You will choose one table, **dashboard**, or report — and write down **what decision** you want to make from it.",
+      "bullets": [
+        "**What will you understand?** Having numbers is not the same as knowing what to do with them — **Data** is just the beginning, not the end.",
+        "**Why now?** **Automator** collects data automatically. The **Analyst** turns it into decisions. Even a simple table or **Dashboard** is enough to get started.",
+        "**What after the lesson?** You will choose one table, **dashboard**, or report — and write down **what decision** you want to make from it."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension",
+      "subtitle": "A Familiar Situation",
+      "contentMarkdown": "- A **Dashboard** has 20 charts. You open it daily and say, \"Looks good\" — but nothing has changed in your work because of it.\n- The data has become decoration — not a decision-making tool. **Automator** has increased the pile, but **without a specific question**, you won’t know how to act.\n- **AI (artificial intelligence)** helps you formulate questions and summarize numbers — **you** decide which question is worth your time and what decision you will make.",
+      "bullets": [
+        "A **Dashboard** has 20 charts. You open it daily and say, \"Looks good\" — but nothing has changed in your work because of it.",
+        "The data has become decoration — not a decision-making tool. **Automator** has increased the pile, but **without a specific question**, you won’t know how to act.",
+        "**AI** helps you formulate questions and summarize numbers — **you** decide which question is worth your time and what decision you will make."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core Idea",
+      "subtitle": "The Core Idea",
+      "contentMarkdown": "**Automator collects — Analyst asks**\n\n- The **Builder** created the product — every click and every request is recorded. The **Creator** brought **Reach** — every view and every lead is saved.\n- **Automator** brought all of this together in one place: CRM, Sheet, or database.\n- The **Analyst** stands in front of the data and asks: What is working? What is not working? **What decision** should I make this week?\n- Numbers alone are not **Insight** — **Insight** appears when your question leads you to an actionable decision.",
+      "bullets": [
+        "The **Builder** created the product — every click and every request is recorded. The **Creator** brought **Reach** — every view and every lead is saved.",
+        "**Automator** brought all of this together in one place: CRM, Sheet, or database.",
+        "The **Analyst** stands in front of the data and asks: What is working? What is not working? **What decision** should I make this week?",
+        "Numbers alone are not **Insight** — **Insight** appears when your question leads you to an actionable decision."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison",
+      "subtitle": "A Real-Life Example",
+      "contentMarkdown": "| Just looking | Asking a question |\n|-----------|------------|\n| You open the sales report every morning — see the numbers and move on — no question, no decision | \"Why did **Conversion** drop by 5% this week?\" — you open the report with one question, come out with a specific decision, and implement it today |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Just looking",
+            "Asking a question"
+          ],
+          "rows": [
+            [
+              "You open the sales report every morning — see the numbers and move on — no question, no decision",
+              "\"Why did **Conversion** drop by 5% this week?\" — you open the report with one question, come out with a specific decision, and implement it today"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary",
+      "subtitle": "Two Terms to Start",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Data** | Collected numbers and facts — sales, visits, requests | \"I sold 45 items this week\" — a number, no decision |\n| **Insight** | Understanding that tells you **what to do** — not just a number on the screen | \"Sales increase on Fridays — I will increase advertising on Thursdays\" — **Insight** that changes a decision |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**Data**",
+              "Collected numbers and facts — sales, visits, requests",
+              "\"I sold 45 items this week\" — a number, no decision"
+            ],
+            [
+              "**Insight**",
+              "Understanding that tells you **what to do** — not just a number on the screen",
+              "\"Sales increase on Fridays — I will increase advertising on Thursdays\" — **Insight** that changes a decision"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Diagram block (intent)",
+      "heading": "Diagram Block",
+      "contentMarkdown": "Decision loop — 5 stages: **Dashboard** without a question = decoration. Specific question → Answer → Decision → Implementation → Review. (The visual original remains unchanged.)",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz",
+      "subtitle": "Quick Confirmation",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 2\n\n**Question:** You noticed that many customers add products to their cart but do not purchase. What is the best first question for the data?\n\n- **Correct answer:** **Where exactly** do customers drop off in the purchase process (**funnel drop-off**)?\n- **Explanation:** A specific question identifies \"where the problem is\" — leading you to a decision about the purchase path. General numbers are not enough.",
+      "bullets": [
+        "**Correct answer:** **Where exactly** do customers drop off in the purchase process (**funnel drop-off**)?",
+        "**Explanation:** A specific question identifies \"where the problem is\" — leading you to a decision about the purchase path. General numbers are not enough."
+      ],
+      "tables": [],
+      "quiz": {
+        "question": "You noticed that many customers add products to their cart but do not purchase. What is the best first question for the data?",
+        "correctIndex": 0,
+        "options": [
+          "**Where exactly** do customers drop off in the purchase process (**funnel drop-off**)?",
+          "An irrelevant option; it ignores the key data from the section above.",
+          "A partial answer that misses the context and ignores the next step for the decision."
+        ],
+        "explanation": "A specific question identifies \"where the problem is\" — leading you to a decision about the purchase path. General numbers are not enough."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission",
+      "subtitle": "Choose One Source — and Define Your Decision",
+      "contentMarkdown": "**Introduction:** Practical guidance — not complex analysis. Choose one table, **dashboard**, or report (even a simple Sheet). Write down **what decision** you want to make from it.\n\n**Submission:** (1) Source · (2) Decision in one sentence · (3) One specific question that the data should answer · (4) If you answered now — what would you do?\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Clear Decision | 60% | A specific decision — not just \"I see the numbers\" |\n| Relevant Question | 40% | The question is related to the decision — if answered, you know how to act |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Clear Decision",
+              "60%",
+              "A specific decision — not just \"I see the numbers\""
+            ],
+            [
+              "Relevant Question",
+              "40%",
+              "The question is related to the decision — if answered, you know how to act"
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "Practical guidance — not complex analysis. Choose one table, **dashboard**, or report (even a simple Sheet). Write down **what decision** you want to make from it.",
+        "delivery": [],
+        "rubric": [
+          {
+            "dimension": "Clear Decision",
+            "weight": 60,
+            "criteria": "A specific decision — not just \"I see the numbers\""
+          },
+          {
+            "dimension": "Relevant Question",
+            "weight": 40,
+            "criteria": "The question is related to the decision — if answered, you know how to act"
+          }
+        ],
+        "yamlIntent": "Pick one real table/dashboard/report; write decision + specific question + action if answered — not complex analysis",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence Close",
+      "subtitle": "What Do You Have Now?",
+      "contentMarkdown": "- **I understand:** Having numbers ≠ knowing what to do — the **Analyst** asks before opening any report.\n- **You can:** One source + one decision + one question guides you.\n- **Next:** Turn feelings into questions — \"I feel that...\" → a question that the data answers.",
+      "bullets": [
+        "**I understand:** Having numbers ≠ knowing what to do — the **Analyst** asks before opening any report.",
+        "**You can:** One source + one decision + one question guides you.",
+        "**Next:** Turn feelings into questions — \"I feel that...\" → a question that the data answers."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-07-07T00:36:19.615Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "analyst-m1-l1-from-automation-to-insight",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/analyst-m1-l1-from-automation-to-insight.canonical.md"
+  }
+}

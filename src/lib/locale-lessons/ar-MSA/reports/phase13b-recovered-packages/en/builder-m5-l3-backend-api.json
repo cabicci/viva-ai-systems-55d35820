@@ -1,0 +1,198 @@
+{
+  "locale": "en",
+  "lessonId": "builder-m5-l3-backend-api",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "builder",
+  "moduleId": "builder-m5",
+  "productionRoute": "/learn/builder/builder-m5-l3-backend-api",
+  "titleEn": "Backend & API (Mail Carrier)",
+  "title": "Backend & API (Mail Carrier)",
+  "summary": "The API connects what the client sees to the hidden work happening in the backend.",
+  "estimatedMinutes": 12,
+  "nextLessonId": "builder-m5-l4-database-intro",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation — Lesson Start",
+      "subtitle": "Lesson Start",
+      "contentMarkdown": "- **What will you understand?** **API (Application Programming Interface / Mail Carrier)** connects what the client sees to the work happening behind the scenes.\n- **Why now?** **Without a 'Mail Carrier' between the interface and the backend** — **no application works**.\n- **What after the lesson?** **You will map out**: **Button → What happens in the backend**.",
+      "bullets": [
+        "**What will you understand?** **API (Application Programming Interface / Mail Carrier)** connects what the client sees to the work happening behind the scenes.",
+        "**Why now?** **Without a 'Mail Carrier' between the interface and the backend** — **no application works**.",
+        "**What after the lesson?** **You will map out**: **Button → What happens in the backend**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension — You click 'Send' — and nothing happens",
+      "subtitle": "You click 'Send' — and nothing happens",
+      "contentMarkdown": "- **The button works**. **The screen loads**. **But the response doesn't arrive** — **or an error appears**.\n- **The interface did its job**: **It took your input and clicked 'Send'**. **But no one connects it to the backend**.\n- **API = the waiter** — **who takes the order from the table to the kitchen and brings back the food**.",
+      "bullets": [
+        "**The button works**. **The screen loads**. **But the response doesn't arrive** — **or an error appears**.",
+        "**The interface did its job**: **It took your input and clicked 'Send'**. **But no one connects it to the backend**.",
+        "**API = the waiter** — **who takes the order from the table to the kitchen and brings back the food**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core idea — API connects the visible to the hidden",
+      "subtitle": "API connects the visible to the hidden",
+      "contentMarkdown": "- **The client types in the interface and clicks a button** — **this is what they see**.\n- **The backend receives the request, talks to AI, and returns the response** — **this is what they don't see**.\n- **API = the language that transfers requests and responses between the two**.\n- **Every button in your app = at least one API request**.",
+      "bullets": [
+        "**The client types in the interface and clicks a button** — **this is what they see**.",
+        "**The backend receives the request, talks to AI, and returns the response** — **this is what they don't see**.",
+        "**API = the language that transfers requests and responses between the two**.",
+        "**Every button in your app = at least one API request**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison — Menu without a waiter vs. a functioning restaurant",
+      "subtitle": "Menu without a waiter vs. a functioning restaurant",
+      "contentMarkdown": "| Without API | With API |\n|----------|--------|\n| **The client writes on the menu** — **but no one delivers the order to the kitchen**. **The menu is nice — but there's no food** | **The client orders → the waiter takes the order → the kitchen cooks → the waiter brings back the food**. **Every step is connected** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Without API",
+            "With API"
+          ],
+          "rows": [
+            [
+              "**The client writes on the menu** — **but no one delivers the order to the kitchen**. **The menu is nice — but there's no food**.",
+              "**The client orders → the waiter takes the order → the kitchen cooks → the waiter brings back the food**. **Every step is connected**."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary — Two terms to start",
+      "subtitle": "Two terms to start",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Backend** | **The place where the application thinks** — **receives, talks to AI, and returns** | **When 'Send' is clicked**, **the backend sends the question to AI** |\n| **API (Mail Carrier)** | **The language that transfers requests and responses between the interface and the backend** | **Button 'Send' → API → backend talks to AI → API → response appears** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**Backend**",
+              "**The place where the application thinks** — **receives, talks to AI, and returns**.",
+              "**When 'Send' is clicked**, **the backend sends the question to AI**."
+            ],
+            [
+              "**API (Mail Carrier)**",
+              "**The language that transfers requests and responses between the interface and the backend**.",
+              "**Button 'Send' → API → backend talks to AI → API → response appears**."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Screenshot block (intent)",
+      "heading": "Screenshot block (intent)",
+      "contentMarkdown": "**Type a message and click Send**: **the interface sends a request → the backend talks to AI → the response returns to the screen**. **This is the API path**.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz — Quick Confirmation",
+      "subtitle": "Quick Confirmation",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 1\n\n**Question:** **The client wrote a question and clicked Send. Which component is responsible for talking to AI?**\n\nThe interface** — **because the client types in it**.**\n**The backend** — **it talks to AI on behalf of the client**.\nThe browser talks to AI directly**.**\n\n**Explanation:** **The interface takes the request**. **API transfers it**. **The backend talks to AI**.",
+      "bullets": [
+        "The interface** — **because the client types in it**.**",
+        "**The backend** — **it talks to AI on behalf of the client**.",
+        "The browser talks to AI directly**.**"
+      ],
+      "tables": [],
+      "quiz": {
+        "question": "**The client wrote a question and clicked Send. Which component is responsible for talking to AI?**",
+        "correctIndex": 1,
+        "options": [
+          "The interface — because the client types in it.",
+          "The backend — it talks to AI on behalf of the client.",
+          "The browser talks to AI directly."
+        ],
+        "explanation": "**The interface takes the request**. **API transfers it**. **The backend talks to AI**."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission — Map it out: Button → What happens?",
+      "subtitle": "Map it out: Button → What happens?",
+      "contentMarkdown": "**Introduction:** **Planning mission — not coding**. **5–10 minutes is enough**.\n\n**Delivery:** **For each action, write the API path (Interface → Backend → Returns):**\n\n1. 'Send Question'\n2. 'Open Old Conversation'\n3. 'New Conversation'\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Clear Path | 60% | **Each action has 3 steps: Interface → Backend → Response**. **The backend includes 'talk to AI' or 'fetch data'** |\n| Logical | 40% | **The response on the screen is linked to the request**. **No 'magic' step without explanation** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Clear Path",
+              "60%",
+              "**Each action has 3 steps: Interface → Backend → Response**. **The backend includes 'talk to AI' or 'fetch data'**."
+            ],
+            [
+              "Logical",
+              "40%",
+              "**The response on the screen is linked to the request**. **No 'magic' step without explanation**."
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "**Planning mission — not coding**. **5–10 minutes is enough**.",
+        "delivery": [
+          "'Send Question'",
+          "'Open Old Conversation'",
+          "'New Conversation'"
+        ],
+        "rubric": [
+          {
+            "dimension": "Clear Path",
+            "weight": 60,
+            "criteria": "**Each action has 3 steps: Interface → Backend → Response**. **The backend includes 'talk to AI' or 'fetch data'**."
+          },
+          {
+            "dimension": "Logical",
+            "weight": 40,
+            "criteria": "**The response on the screen is linked to the request**. **No 'magic' step without explanation**."
+          }
+        ],
+        "yamlIntent": "Map API path for 3 actions in an AI app — UI → backend → return — ~5–10 min",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence close",
+      "contentMarkdown": "- **I understood:** **API connects the visible to the hidden** — **every button = a request**.\n- **You can:** **Map button → API action for 3 actions**.\n- **Next:** **Database (the storage)** — **why the application needs 'memory'**.\n\n---",
+      "bullets": [
+        "**I understood:** **API connects the visible to the hidden** — **every button = a request**.",
+        "**You can:** **Map button → API action for 3 actions**.",
+        "**Next:** **Database (the storage)** — **why the application needs 'memory'**."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-07-07T02:03:36.209Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "builder-m5-l3-backend-api",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/builder-m5-l3-backend-api.canonical.md"
+  }
+}

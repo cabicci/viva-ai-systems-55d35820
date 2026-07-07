@@ -1,0 +1,87 @@
+{
+  "locale": "ar-MSA",
+  "lessonId": "automator-m6-l2-whatsapp-flow",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "automator",
+  "moduleId": "automator-m6",
+  "productionRoute": "/learn/automator/automator-m6-l2-whatsapp-flow",
+  "titleEn": "WhatsApp Flow",
+  "title": "تدفّق واتساب",
+  "summary": "WhatsApp automation serves with consent — not spam broadcast",
+  "estimatedMinutes": 12,
+  "nextLessonId": "automator-m6-l3-follow-up",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation — بداية الدرس",
+      "subtitle": "بداية الدرس",
+      "contentMarkdown": "- **ماذا ستفهم؟** أتمتة واتساب للتأكيدات وFAQ — بثقة و**Consent (موافقة)**.\n- **لماذا الآن؟** بعد **Lead capture** — القناة الأقرب للعميل.",
+      "bullets": [
+        "**ماذا ستفهم؟** أتمتة واتساب للتأكيدات وFAQ — بثقة و**Consent (موافقة)**.",
+        "**لماذا الآن؟** بعد **Lead capture** — القناة الأقرب للعميل."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension — البوت رد — والعميل شعر بالإزعاج",
+      "subtitle": "البوت رد — والعميل شعر بالإزعاج",
+      "contentMarkdown": "- بث جماعي → block وبلاغات. واتساب قناة شخصية.",
+      "bullets": [
+        "بث جماعي → block وبلاغات. واتساب قناة شخصية."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core idea — رد مفيد + **Handoff (تحويل)**",
+      "subtitle": "رد مفيد + **Handoff (تحويل)**",
+      "contentMarkdown": "- العميل يبدأ أو يوافق — لا بث عشوائي.\n- رسالة → فهم → رد → إن تعقّد: تحويل لموظف.",
+      "bullets": [
+        "العميل يبدأ أو يوافق — لا بث عشوائي.",
+        "رسالة → فهم → رد → إن تعقّد: تحويل لموظف."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz — correctIndex: 1",
+      "subtitle": "correctIndex: 1",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 1\n\nالبوت يكمل يحاول يجاوب من FAQ.\n- ****الإجابة الصحيحة** (correctIndex: 1):** تحويل فوري لموظف — ده شرط handoff واضح.\nتبعتله رسالة «انتظر ٢٤ ساعة».\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+      "bullets": [
+        "البوت يكمل يحاول يجاوب من FAQ.",
+        "****الإجابة الصحيحة** (correctIndex: 1):** تحويل فوري لموظف — ده شرط handoff واضح.",
+        "تبعتله رسالة «انتظر ٢٤ ساعة»."
+      ],
+      "tables": [],
+      "quiz": {
+        "correctIndex": 1,
+        "options": [
+          "البوت يكمل يحاول يجاوب من FAQ.",
+          "تبعتله رسالة «انتظر ٢٤ ساعة».",
+          "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+        ],
+        "explanation": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+        "question": "ما الخيار الأنسب وفقًا لما ورد في القسم أعلاه؟"
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission",
+      "contentMarkdown": "| Flow واضح | 60% |\n| ثقة وموافقة | 40% |",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence close",
+      "contentMarkdown": "- **التالي:** **Follow-up**.\n\n---",
+      "bullets": [
+        "**التالي:** **Follow-up**."
+      ],
+      "tables": []
+    }
+  ],
+  "sourceFile": "docs/playbooks/adaptive-canonical/automator-m6-l2-whatsapp-flow.canonical.md",
+  "generatedAt": "2026-06-20T22:27:43.614Z"
+}

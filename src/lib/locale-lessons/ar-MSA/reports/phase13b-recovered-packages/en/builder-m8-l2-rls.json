@@ -1,0 +1,194 @@
+{
+  "locale": "en",
+  "lessonId": "builder-m8-l2-rls",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "builder",
+  "moduleId": "builder-m8",
+  "productionRoute": "/learn/builder/builder-m8-l2-rls",
+  "titleEn": "RLS — Row Level Security",
+  "title": "RLS — Row Level Security",
+  "summary": "JWT = who you are — RLS = which rows you can see — rules on the database itself",
+  "estimatedMinutes": 12,
+  "nextLessonId": "builder-m9-l1-rag",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation",
+      "subtitle": "Lesson Start",
+      "contentMarkdown": "- **What will you understand?** **How to set rules at the database level for which rows each user can see** — **even if there is a mistake in the code**.\n- **Why now?** **JWT (JSON Web Token) tells you «who you are»** — **RLS (Row Level Security) tells you «what you are allowed to see» from the data**.\n- **What after the lesson?** **You will write one rule:** **the user sees only their own data**.\n- **Optional depth:** **for those who want to build real applications**. **You can skip it and come back later**.",
+      "bullets": [
+        "**What will you understand?** **How to set rules at the database level for which rows each user can see** — **even if there is a mistake in the code**.",
+        "**Why now?** **JWT (JSON Web Token) tells you «who you are»** — **RLS (Row Level Security) tells you «what you are allowed to see» from the data**.",
+        "**What after the lesson?** **You will write one rule:** **the user sees only their own data**.",
+        "**Optional depth:** **for those who want to build real applications**. **You can skip it and come back later**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension — Client A saw Client B's secrets",
+      "subtitle": "Client A saw Client B's secrets",
+      "contentMarkdown": "- **Imagine a personal AI learning from each client's notes**. **Another client opened the app and found the first client's secrets in front of them**.\n- **Knowing the ID does not mean you can see it**. **And the correct code in 9 places is not enough if you forget the tenth**.\n- **The problem:** **security in the code alone is not a last line of defense**.",
+      "bullets": [
+        "**Imagine a personal AI learning from each client's notes**. **Another client opened the app and found the first client's secrets in front of them**.",
+        "**Knowing the ID does not mean you can see it**. **And the correct code in 9 places is not enough if you forget the tenth**.",
+        "**The problem:** **security in the code alone is not a last line of defense**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core idea — rules determine which rows the user sees",
+      "subtitle": "Rules determine which rows the user sees",
+      "contentMarkdown": "- **JWT verifies your identity**. **RLS Policy applies a filter to every query to the database:** «Return only the rows where `user_id` = me».\n- **The filter is within the database itself** — **not just in the application code**.\n- **Even if the code in the background forgets the WHERE clause**, **the row guard refuses to show data that does not belong to you**.",
+      "bullets": [
+        "**JWT verifies your identity**. **RLS Policy applies a filter to every query to the database:** «Return only the rows where `user_id` = me».",
+        "**The filter is within the database itself** — **not just in the application code**.",
+        "**Even if the code in the background forgets the WHERE clause**, **the row guard refuses to show data that does not belong to you**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison — Security in code vs. Row guard on each row",
+      "subtitle": "Security in code vs. Row guard on each row",
+      "contentMarkdown": "| WHERE in code only | RLS on the database |\n|--------------------|----------------|\n| **`WHERE user_id = currentUser` in every API**. **Forgot once — a client's secrets were exposed** | **Policy on the table:** `user_id = auth.uid()`. **Any query — even by mistake — returns only the current user's rows** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "WHERE in code only",
+            "RLS on the database"
+          ],
+          "rows": [
+            [
+              "**`WHERE user_id = currentUser` in every API**. **Forgot once — a client's secrets were exposed**",
+              "**Policy on the table:** `user_id = auth.uid()`. **Any query — even by mistake — returns only the current user's rows**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary — Two terms to start",
+      "subtitle": "Two terms to start",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **RLS (Row Level Security)** | **Rules on the database itself filter any query before returning results** — **even if the code forgets the filter** | **Chat table:** **Each user sees only their own chats** |\n| **Policy** | **The condition applied by the guard on each row** | `USING (user_id = auth.uid())` — **returns rows only for those who opened the app** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**RLS (Row Level Security)**",
+              "**Rules on the database itself filter any query before returning results** — **even if the code forgets the filter**",
+              "**Chat table:** **Each user sees only their own chats**"
+            ],
+            [
+              "**Policy**",
+              "**The condition applied by the guard on each row**",
+              "`USING (user_id = auth.uid())` — **returns rows only for those who opened the app**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Screenshot block (intent)",
+      "heading": "Screenshot block (intent)",
+      "contentMarkdown": "**A magic lens for each user:**\n\nThe database **is one and contains everyone's data**. **When «Ahmad» requests his chats**, **the Policy filters and returns only his rows** — **as if everyone sees only what belongs to them**.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz — Quick Confirmation",
+      "subtitle": "Quick Confirmation",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** **Table `tasks` — each task has `user_id`. What is the logical condition for each person to see only their tasks?**\n\n**`user_id` of the task = `user_id` of the currently logged-in user**.\nAnyone can see any task as long as they have the task ID**.**\nMust be an admin to see any task**.**\n\n**Explanation:** **The idea of RLS simply is:** **we link each row to its owner** — **`user_id` in the row = `user_id` from JWT**.",
+      "bullets": [
+        "**`user_id` of the task = `user_id` of the currently logged-in user**.",
+        "Anyone can see any task as long as they have the task ID**.**",
+        "Must be an admin to see any task**.**"
+      ],
+      "tables": [],
+      "quiz": {
+        "question": "**Table `tasks` — each task has `user_id`. What is the logical condition for each person to see only their tasks?**",
+        "correctIndex": 0,
+        "options": [
+          "**`user_id` of the task = `user_id` of the currently logged-in user**.",
+          "Anyone can see any task as long as they have the task ID.",
+          "Must be an admin to see any task."
+        ],
+        "explanation": "**The idea of RLS simply is:** **we link each row to its owner** — **`user_id` in the row = `user_id` from JWT**."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission — Rule: the user sees only their own data",
+      "subtitle": "Rule: the user sees only their own data",
+      "contentMarkdown": "**Introduction:** **You will write a simple Policy for your application** — **not a complete SQL code, just the condition**. **10 minutes**.\n\n**Submission:** **Table name**, **Join field** (`user_id`), **condition in a plain sentence**, **why the rule is important**.\n\n**Evaluation criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Condition correct | 60% | **The condition links the table row to the current user's identity**; **clear table and join field** |\n| Reason | 40% | **A sentence explaining why the rule prevents data leakage between users** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Condition correct",
+              "60%",
+              "**The condition links the table row to the current user's identity**; **clear table and join field**"
+            ],
+            [
+              "Reason",
+              "40%",
+              "**A sentence explaining why the rule prevents data leakage between users**"
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "**You will write a simple Policy for your application** — **not a complete SQL code, just the condition**. **10 minutes**.",
+        "delivery": [],
+        "rubric": [
+          {
+            "dimension": "Condition correct",
+            "weight": 60,
+            "criteria": "**The condition links the table row to the current user's identity**; **clear table and join field**"
+          },
+          {
+            "dimension": "Reason",
+            "weight": 40,
+            "criteria": "**A sentence explaining why the rule prevents data leakage between users**"
+          }
+        ],
+        "yamlIntent": "Write simple Policy — table, link field, plain-language condition, why — ~10 min",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence close",
+      "contentMarkdown": "- **You understood:** **JWT = who you are**. **RLS = which rows you see** — **rules on the database itself**.\n- **You can:** **You have one Policy ready for your application**.\n- **Next:** **RAG** — **how AI responds from your files and not from guessing**.",
+      "bullets": [
+        "**You understood:** **JWT = who you are**. **RLS = which rows you see** — **rules on the database itself**.",
+        "**You can:** **You have one Policy ready for your application**.",
+        "**Next:** **RAG** — **how AI responds from your files and not from guessing**."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-07-07T00:42:43.416Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "builder-m8-l2-rls",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/builder-m8-l2-rls.canonical.md"
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "locale": "en",
+  "lessonId": "automator-m4-l1-connect-database",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "automator",
+  "moduleId": "automator-m4",
+  "productionRoute": "/learn/automator/automator-m4-l1-connect-database",
+  "titleEn": "Connect Database",
+  "title": "Connect Database",
+  "summary": "DB = automation memory — a single location with fixed fields for writing and reading.",
+  "estimatedMinutes": 12,
+  "nextLessonId": "automator-m4-l2-webhooks-api",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation",
+      "subtitle": "Introduction",
+      "contentMarkdown": "- **What will you understand?** Automation becomes more powerful when it stores organized data — not just sends a message and forgets.\n- **Why now?** The **workflow** reads and writes — without a clear place for data, repetitive tasks revert to manual work.\n- **What after the lesson?** You will choose where the **workflow** stores the data and what fields it needs.",
+      "bullets": [
+        "**What will you understand?** Automation becomes more powerful when it stores organized data — not just sends a message and forgets.",
+        "**Why now?** The **workflow** reads and writes — without a clear place for data, repetitive tasks revert to manual work.",
+        "**What after the lesson?** You will choose where the **workflow** stores the data and what fields it needs."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension",
+      "subtitle": "A Familiar Situation",
+      "contentMarkdown": "- \"The client registered — but we can't find their data.\"\n- Automation sends a welcome email — good. But when sales asks, \"Who is this client?\" — there’s no record.\n- The data only went to email — not in an organized place that can be referenced daily.\n- The default worker needs memory: Where to save? What fields? When to read? — without that, repetitive tasks revert to manual work.",
+      "bullets": [
+        "\"The client registered — but we can't find their data.\".",
+        "Automation sends a welcome email — good. But when sales asks, \"Who is this client?\" — there’s no record.",
+        "The data only went to email — not in an organized place that can be referenced daily.",
+        "The default worker needs memory: Where to save? What fields? When to read? — without that, repetitive tasks revert to manual work."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core Idea",
+      "subtitle": "DB = Automation Memory",
+      "contentMarkdown": "- Every lead or request needs to be recorded in one place — a table or organized sheet with fixed fields.\n- Write: When is the data written? (After registration) — When is it read? (Daily report, follow-up).\n- Three fields are enough to start: Name, Contact, Date/Status — you don’t need 20 columns.\n- The **workflow** reads from the same place it writes — this is what makes repetitive tasks work automatically.",
+      "bullets": [
+        "Every lead or request needs to be recorded in one place — a table or organized sheet with fixed fields.",
+        "Write: When is the data written? (After registration) — When is it read? (Daily report, follow-up).",
+        "Three fields are enough to start: Name, Contact, Date/Status — you don’t need 20 columns.",
+        "The **workflow** reads from the same place it writes — this is what makes repetitive tasks work automatically."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison",
+      "subtitle": "Email Only vs Organized Record",
+      "contentMarkdown": "| Email Only | Record + Email |\n|----------|------------|\n| Automation sends an email — the data is in the inbox. After a week: Who registered? No one knows. | The same automation writes a row in a table (Name, Phone, Date) + sends an email. Follow-up is automatic.",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Email Only",
+            "Record + Email"
+          ],
+          "rows": [
+            [
+              "Automation sends an email — the data is in the inbox. After a week: Who registered? No one knows.",
+              "The same automation writes a row in a table (Name, Phone, Date) + sends an email. Follow-up is automatic."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary",
+      "subtitle": "Two Terms for Storage",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Schema** | The fields you store — the name and type of each column | leads: name, phone, status, created_at |\n| **CRUD** | Create = Write. Read = Read. Update = Update. Delete = Delete | New registration → Create. Daily report → Read |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**Schema**",
+              "The fields you store — the name and type of each column.",
+              "leads: name, phone, status, created_at."
+            ],
+            [
+              "**CRUD**",
+              "Create = Write. Read = Read. Update = Update. Delete = Delete.",
+              "New registration → Create. Daily report → Read."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Screenshot block (intent)",
+      "heading": "Screenshot Block",
+      "contentMarkdown": "Every event (registration, progress, request) is recorded in one place. The **workflow** reads and writes from the same source — not scattered files.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz",
+      "subtitle": "Quick Confirmation",
+      "contentMarkdown": "**Question:** Automation records new clients every day. Sales needs a report with their names. What is most important?\n\n- **Correct answer:** **The workflow writes each client in an organized table with fixed fields — and reads from it for the report.**\n- **Explanation:** An organized record = the memory of automation. An email without a table = repetitive work returns to manual.",
+      "bullets": [
+        "**Correct answer:** **The workflow writes each client in an organized table with fixed fields — and reads from it for the report.**",
+        "**Explanation:** An organized record = the memory of automation. An email without a table = repetitive work returns to manual."
+      ],
+      "tables": [],
+      "quiz": {
+        "question": "Automation records new clients every day. Sales needs a report with their names. What is most important?",
+        "correctIndex": 0,
+        "options": [
+          "**The workflow writes each client in an organized table with fixed fields — and reads from it for the report.**",
+          "An unsuitable option; it ignores the key data in the section above.",
+          "A partial answer that misses the context and ignores the next step in the decision."
+        ],
+        "explanation": "An organized record = the memory of automation. An email without a table = repetitive work returns to manual."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission",
+      "subtitle": "Define Where Data Is Stored",
+      "contentMarkdown": "**Introduction:** The mission is design — not a mandatory technical connection. Choose a **workflow** and define: Where is the data stored? What fields? AI can suggest columns — you choose the final ones.\n\n**Submission:** **Workflow** · Storage location · At least 3 fields · When to write (after which **trigger**) · When to read (who uses it and why)\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Location + Fields | 60% | A defined storage location — not \"we'll see\"; at least 3 fields with clear names |\n| Writing and Reading | 40% | When to write linked to the **trigger**; when to read with a clear user.",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Location + Fields",
+              "60%",
+              "A defined storage location — not \"we'll see\"; at least 3 fields with clear names."
+            ],
+            [
+              "Writing and Reading",
+              "40%",
+              "When to write linked to the **trigger**; when to read with a clear user."
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "The mission is design — not a mandatory technical connection. Choose a **workflow** and define: Where is the data stored? What fields? AI can suggest columns — you choose the final ones.",
+        "delivery": [],
+        "rubric": [
+          {
+            "dimension": "Location + Fields",
+            "weight": 60,
+            "criteria": "A defined storage location — not \"we'll see\"; at least 3 fields with clear names."
+          },
+          {
+            "dimension": "Writing and Reading",
+            "weight": 40,
+            "criteria": "When to write linked to the **trigger**; when to read with a clear user."
+          }
+        ],
+        "yamlIntent": "Pick workflow; define where data stores, 3+ fields, when written (after trigger), when read (who/why) — design only; AI may suggest columns, learner chooses — 10–15 min",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence Close",
+      "contentMarkdown": "- **Understood:** Automation is stronger when it has organized memory — location + fields + when to write and read.\n- **You can:** You have a storage plan ready for a real **workflow**.\n- **Next:** **Webhooks & APIs** — when one application tells another, \"Something happened.\".",
+      "bullets": [
+        "**Understood:** Automation is stronger when it has organized memory — location + fields + when to write and read.",
+        "**You can:** You have a storage plan ready for a real **workflow**.",
+        "**Next:** **Webhooks & APIs** — when one application tells another, \"Something happened.\"."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-07-07T00:36:19.315Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "automator-m4-l1-connect-database",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/automator-m4-l1-connect-database.canonical.md"
+  }
+}

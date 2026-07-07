@@ -1,0 +1,194 @@
+{
+  "locale": "en",
+  "lessonId": "automator-m3-l1-tools-landscape",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "automator",
+  "moduleId": "automator-m3",
+  "productionRoute": "/learn/automator/automator-m3-l1-tools-landscape",
+  "titleEn": "Tools Landscape",
+  "title": "Tools Landscape",
+  "summary": "Tools vary, but the thought process remains: Trigger → steps → output across all platforms.",
+  "estimatedMinutes": 12,
+  "nextLessonId": "automator-m3-l2-triggers-actions",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation",
+      "subtitle": "Lesson Start",
+      "contentMarkdown": "- **What will you understand?** The tools differ — Zapier, Make, n8n — but the thought process is the same: **Trigger** → steps → **Output**.\n- **Why now?** After selecting your first automation task, you need a tool that fits your size — not just the most popular name.\n- **What after the lesson?** You will choose one tool for your automation filter — and explain why.",
+      "bullets": [
+        "**What will you understand?** The tools differ — Zapier, Make, n8n — but the thought process is the same: **Trigger** → steps → **Output**.",
+        "**Why now?** After selecting your first automation task, you need a tool that fits your size — not just the most popular name.",
+        "**What after the lesson?** You will choose one tool for your automation filter — and explain why."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension",
+      "subtitle": "A Familiar Situation",
+      "contentMarkdown": "- \"Zapier is popular\" — and after a month, the subscription is expensive.\n- You choose a tool because it’s famous — or because it’s free — without asking: How many tasks per month? Do you need logic or simple steps?\n- The tool is not the goal. The goal is the default action that executes the pattern you chose.\n- A wrong choice means wasted time learning — not saving time.",
+      "bullets": [
+        "\"Zapier is popular\" — and after a month, the subscription is expensive.",
+        "You choose a tool because it’s famous — or because it’s free — without asking: How many tasks per month? Do you need logic or simple steps?",
+        "The tool is not the goal. The goal is the default action that executes the pattern you chose.",
+        "A wrong choice means wasted time learning — not saving time."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core Idea",
+      "subtitle": "Tools Differ — Thought Process is the Same",
+      "contentMarkdown": "- **Zapier** — the easiest, with many ready **Integrations**, suitable for simple and few **Workflows**. Relatively expensive.\n- **Make** — a balance: clear visual interface, medium scenarios, cheaper than Zapier. Suitable for most beginners.\n- **n8n** — more powerful, open-source, can be self-hosted. Requires more effort — suitable for many or complex **Workflows**.\n- **Rule:** Choose based on your size and complexity — not based on YouTube. The thought process (**Trigger → steps → Output**) is consistent across all tools.",
+      "bullets": [
+        "**Zapier** — the easiest, with many ready **Integrations**, suitable for simple and few **Workflows**. Relatively expensive.",
+        "**Make** — a balance: clear visual interface, medium scenarios, cheaper than Zapier. Suitable for most beginners.",
+        "**n8n** — more powerful, open-source, can be self-hosted. Requires more effort — suitable for many or complex **Workflows**.",
+        "**Rule:** Choose based on your size and complexity — not based on YouTube. The thought process (**Trigger → steps → Output**) is consistent across all tools."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison",
+      "subtitle": "Choosing by Popularity vs. Choosing by Size",
+      "contentMarkdown": "| \"Zapier because it’s popular\" | \"Make because the size is medium\" |\n|---------------------|------------------------|\n| Noor used Zapier for \"Form → Email\" — 5 times/month. Subscription $20/month for a simple task. The tool is larger than needed. | Noor used Make's free tier — same \"Form → Email\" — 30 minutes setup. Saved money and learned the thought process. |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "\"Zapier because it’s popular\"",
+            "\"Make because the size is medium\""
+          ],
+          "rows": [
+            [
+              "Noor used Zapier for \"Form → Email\" — 5 times/month. Subscription $20/month for a simple task. The tool is larger than needed.",
+              "Noor used Make's free tier — same \"Form → Email\" — 30 minutes setup. Saved money and learned the thought process."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary",
+      "subtitle": "Terms for Tools",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **No-Code** | Tools where you build the default action by dragging and dropping — not through programming | Make: Form → Table → WhatsApp |\n| **Integration** | Connecting two programs to exchange data — this is what the tool does | Google Forms ↔ Google Sheets |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**No-Code**",
+              "Tools where you build the default action by dragging and dropping — not through programming.",
+              "Make: Form → Table → WhatsApp"
+            ],
+            [
+              "**Integration**",
+              "Connecting two programs to exchange data — this is what the tool does.",
+              "Google Forms ↔ Google Sheets"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Screenshot block (intent)",
+      "heading": "Screenshot Block",
+      "contentMarkdown": "Any automation tool = layers: something enters (**Trigger**) → steps → something exits. Zapier, Make, and n8n share the same idea — differing in ease, price, and power.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz",
+      "subtitle": "Quick Confirmation",
+      "contentMarkdown": "**Question:** At the start, you have one simple **Workflow**: \"Form → Welcome Email\" — 20 times/month. Your budget is limited. What is the best tool?\n\n- **Correct answer:** **Make — free tier is sufficient, clear visual interface, suitable for beginners**\n- **Explanation:** Starting + simple **Workflow** + budget = Make. The thought process is the same — the tool serves the size.",
+      "bullets": [
+        "**Correct answer:** **Make — free tier is sufficient, clear visual interface, suitable for beginners**",
+        "**Explanation:** Starting + simple **Workflow** + budget = Make. The thought process is the same — the tool serves the size."
+      ],
+      "tables": [],
+      "quiz": {
+        "question": "At the start, you have one simple **Workflow**: \"Form → Welcome Email\" — 20 times/month. Your budget is limited. What is the best tool?",
+        "correctIndex": 0,
+        "options": [
+          "**Correct answer:** **Make — free tier is sufficient, clear visual interface, suitable for beginners**",
+          "An unsuitable choice; ignores the key data from the section above.",
+          "A partial answer that misses the context and ignores the next step in the decision."
+        ],
+        "explanation": "Starting + simple **Workflow** + budget = Make. The thought process is the same — the tool serves the size."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission",
+      "subtitle": "Choose One Tool — and Why",
+      "contentMarkdown": "**Introduction:** Take the first automation filter from the previous lesson — and choose one tool (Zapier / Make / n8n / other). 10 minutes is enough — no need to build a **Flow**.\n\n**Submission:** Automation filter · chosen tool · two reasons for the choice · alternative and why · building plan (**Trigger → steps → Output** in words)\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Justified Choice | 60% | Tool linked to a specific filter; two practical reasons — not just \"easiest\" |\n| Understanding the Thought Process | 40% | Alternative with reason; building plan describes **Trigger → Output** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Justified Choice",
+              "60%",
+              "Tool linked to a specific filter; two practical reasons — not just \"easiest\"."
+            ],
+            [
+              "Understanding the Thought Process",
+              "40%",
+              "Alternative with reason; building plan describes **Trigger → Output**."
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "Take the first automation filter from the previous lesson — and choose one tool (Zapier / Make / n8n / other). 10 minutes is enough — no need to build a **Flow**.",
+        "delivery": [],
+        "rubric": [
+          {
+            "dimension": "Justified Choice",
+            "weight": 60,
+            "criteria": "Tool linked to a specific filter; two practical reasons — not just \"easiest\"."
+          },
+          {
+            "dimension": "Understanding the Thought Process",
+            "weight": 40,
+            "criteria": "Alternative with reason; building plan describes **Trigger → Output**."
+          }
+        ],
+        "yamlIntent": "Take first automation candidate from prior lesson; choose one tool (",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence Close",
+      "contentMarkdown": "- **You understood:** The tools differ — but the thought process (**Trigger → steps → Output**) is the same for all.\n- **You can:** You have a chosen tool for your first automation filter — ready for design.\n- **Next:** **Triggers + Actions** — the building blocks of any **Flow**.\n\n---",
+      "bullets": [
+        "**You understood:** The tools differ — but the thought process (**Trigger → steps → Output**) is the same for all.",
+        "**You can:** You have a chosen tool for your first automation filter — ready for design.",
+        "**Next:** **Triggers + Actions** — the building blocks of any **Flow**."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-07-07T00:36:19.602Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "automator-m3-l1-tools-landscape",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/automator-m3-l1-tools-landscape.canonical.md"
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "locale": "en",
+  "lessonId": "automator-m7-l1-closing-loop",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "automator",
+  "moduleId": "automator-m7",
+  "productionRoute": "/learn/automator/automator-m7-l1-closing-loop",
+  "titleEn": "Closing the Loop",
+  "title": "Closing the Loop",
+  "summary": "Linked automations create a complete customer journey and provide data that informs Analyst decisions.",
+  "estimatedMinutes": 12,
+  "nextLessonId": "pending-path-validation",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation",
+      "subtitle": "Introduction",
+      "contentMarkdown": "- **What will you understand?** Powerful standalone automations — but when linked in a single **Customer Journey**, they become a system.\n- **Why now?** After gathering leads, WhatsApp, and follow-ups, you need the complete picture, not just individual parts.\n- **What comes after the lesson?** You will map a journey from start to finish, from lead to follow-up.",
+      "bullets": [
+        "**What will you understand?** Powerful standalone automations — but when linked in a single **Customer Journey**, they become a system.",
+        "**Why now?** After gathering leads, WhatsApp, and follow-ups, you need the complete picture, not just individual parts.",
+        "**What comes after the lesson?** You will map a journey from start to finish, from lead to follow-up."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension",
+      "subtitle": "A Familiar Situation",
+      "contentMarkdown": "- Everything works — but there is no complete picture.\n- You have a form capturing leads. WhatsApp responds. Follow-ups send messages. Each one works.\n- But you don’t know: Which channel brings in the best leads? Which follow-up message gets the most responses? Where does the customer drop off?\n- Standalone automations without linking = a lot of work without learning. Linking generates data — and that data leads you to the **Analyst** path.",
+      "bullets": [
+        "Everything works — but there is no complete picture.",
+        "You have a form capturing leads. WhatsApp responds. Follow-ups send messages. Each one works.",
+        "But you don’t know: Which channel brings in the best leads? Which follow-up message gets the most responses? Where does the customer drop off?",
+        "Standalone automations without linking = a lot of work without learning. Linking generates data — and that data leads you to the **Analyst** path."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core Idea",
+      "subtitle": "One Journey = Lead → Response → Follow-up → Data",
+      "contentMarkdown": "- **Lead capture:** Grabs attention and records it.\n- **WhatsApp / Instant Response:** Serves the customer confidently.\n- **Follow-up:** Continues the conversation if it goes silent.\n- Each step records: Source, Time, Channel, Response, Conversion. This is what the **Analyst** reads.",
+      "bullets": [
+        "**Lead capture:** Grabs attention and records it.",
+        "**WhatsApp / Instant Response:** Serves the customer confidently.",
+        "**Follow-up:** Continues the conversation if it goes silent.",
+        "Each step records: Source, Time, Channel, Response, Conversion. This is what the **Analyst** reads."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison",
+      "subtitle": "Standalone Islands vs. Connected Journey",
+      "contentMarkdown": "| Standalone Automations | One Customer Journey |\n|-----------------------|---------------------|\n| The form works, WhatsApp works, follow-ups work — but there is no map. \"What was useful?\" — No answer. | Lead from ad → Registration → WhatsApp response → Follow-up on days 2 and 5 → Conversion or closure. Each step is recorded — you can ask and improve.",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Standalone Automations",
+            "One Customer Journey"
+          ],
+          "rows": [
+            [
+              "The form works, WhatsApp works, follow-ups work — but there is no map. \"What was useful?\" — No answer.",
+              "Lead from ad → Registration → WhatsApp response → Follow-up on days 2 and 5 → Conversion or closure. Each step is recorded — you can ask and improve."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary",
+      "subtitle": "Two Terms for Linking",
+      "contentMarkdown": "| Term | Meaning | Example |\n|------|---------|---------|\n| **Customer Journey** | The complete path from initial interest to follow-up or purchase — not just one step | Ad → Form → Welcome → Follow-up → Sales Call |\n| **Feedback Loop** | The data recorded by the automation returns to inform you on what to improve | \"Follow-up on day 2 via WhatsApp opened 40% response — day 5 email opened 10%\" |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**Customer Journey**",
+              "The complete path from initial interest to follow-up or purchase — not just one step",
+              "Ad → Form → Welcome → Follow-up → Sales Call"
+            ],
+            [
+              "**Feedback Loop**",
+              "The data recorded by the automation returns to inform you on what to improve",
+              "\"Follow-up on day 2 via WhatsApp opened 40% response — day 5 email opened 10%\""
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Screenshot block (intent)",
+      "heading": "Screenshot Block",
+      "contentMarkdown": "Each stage feeds into the next and records data. **The connected journey** = questions that the **Analyst** will answer.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz",
+      "subtitle": "Quick Confirmation",
+      "contentMarkdown": "**Question:** You have leads from 3 channels and follow-ups are working — but you don’t know which channel brings in customers who buy. What is the best question to ask the data?\n\n- **Correct answer:** **Which channel brought in leads that converted at the highest rate?**\n- **Explanation:** **The connected journey** allows you decision-making questions — not just counting. Channel + conversion = **Analyst**.",
+      "bullets": [
+        "**Correct answer:** **Which channel brought in leads that converted at the highest rate?**",
+        "**Explanation:** **The connected journey** allows you decision-making questions — not just counting. Channel + conversion = **Analyst**."
+      ],
+      "tables": [],
+      "quiz": {
+        "question": "You have leads from 3 channels and follow-ups are working — but you don’t know which channel brings in customers who buy. What is the best question to ask the data?",
+        "correctIndex": 0,
+        "options": [
+          "**Correct answer:** **Which channel brought in leads that converted at the highest rate?**",
+          "An irrelevant option; it ignores the key data from the section above.",
+          "A partial answer that misses the context and ignores the next step for decision-making."
+        ],
+        "explanation": "**The connected journey** allows you decision-making questions — not just counting. Channel + conversion = **Analyst**."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission",
+      "subtitle": "Map the Lead to Follow-up Journey",
+      "contentMarkdown": "**Introduction:** The mission is a journey map — not a technical audit. Connect what you’ve learned: Capture, Response, Follow-up — in one customer path. No real numbers are needed — just 5-6 stages + one **Analyst** question.\n\n**Submission:** Lead source · Stages 1-4 (Capture, Response, Follow-up, End) · One **Analyst** question · Sentence: What was missing before linking?\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| Connected Journey | 60% | 5 linked stages — not standalone automations |\n| Analyst Bridge | 40% | One decision question based on journey data |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "Connected Journey",
+              "60%",
+              "5 linked stages — not standalone automations"
+            ],
+            [
+              "Analyst Bridge",
+              "40%",
+              "One decision question based on journey data"
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "The mission is a journey map — not a technical audit. Connect what you’ve learned: Capture, Response, Follow-up — in one customer path. No real numbers are needed — just 5-6 stages + one **Analyst** question.",
+        "delivery": [],
+        "rubric": [
+          {
+            "dimension": "Connected Journey",
+            "weight": 60,
+            "criteria": "5 linked stages — not standalone automations"
+          },
+          {
+            "dimension": "Analyst Bridge",
+            "weight": 40,
+            "criteria": "One decision question based on journey data"
+          }
+        ],
+        "yamlIntent": "Map customer journey — reception, reply, follow-up, close — 5–6 stages + one Analyst decision question + one sentence on what was missing before linking; no real numbers required — 10–15 min",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence Close",
+      "contentMarkdown": "- **You understood:** Linked automations = **Customer Journey** + data for improvement.\n- **You can:** You have a map from start to finish, from lead to follow-up.\n- **Next:** The **Analyst** path — you read the data generated by your system and make better decisions. (End of the Automator path — go back to the map and choose **Analyst**.)",
+      "bullets": [
+        "**You understood:** Linked automations = **Customer Journey** + data for improvement.",
+        "**You can:** You have a map from start to finish, from lead to follow-up.",
+        "**Next:** The **Analyst** path — you read the data generated by your system and make better decisions. (End of the Automator path — go back to the map and choose **Analyst**.)"
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-07-07T00:36:19.436Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "automator-m7-l1-closing-loop",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/automator-m7-l1-closing-loop.canonical.md"
+  }
+}

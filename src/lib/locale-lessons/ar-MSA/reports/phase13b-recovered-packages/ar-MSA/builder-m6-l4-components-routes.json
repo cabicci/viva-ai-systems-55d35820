@@ -1,0 +1,192 @@
+{
+  "locale": "ar-MSA",
+  "lessonId": "builder-m6-l4-components-routes",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "builder",
+  "moduleId": "builder-m6",
+  "productionRoute": "/learn/builder/builder-m6-l4-components-routes",
+  "titleEn": "Components & Routes",
+  "title": "المكوّنات والمسارات",
+  "summary": "App = reusable Components + Routes — edit once, update everywhere",
+  "estimatedMinutes": 12,
+  "nextLessonId": "builder-m6-l5-iteration",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation — بداية الدرس",
+      "subtitle": "بداية الدرس",
+      "contentMarkdown": "- **ماذا ستفهم؟** **التطبيق = قطع صغيرة قابلة لإعادة الاستخدام (Components) + صفحات لها عنوان (Routes)**.\n- **لماذا الآن؟** **عمق Builder اختياري** — **لكن إن كنت تبني منتجًا، هذا الدرس يمنع تكرار نفس الكود في كل صفحة**.\n- **ماذا بعد الدرس؟** **ستحدّد ٣ components و٣ صفحات لتطبيقك** — **قبل أي كود**.",
+      "bullets": [
+        "**ماذا ستفهم؟** **التطبيق = قطع صغيرة قابلة لإعادة الاستخدام (Components) + صفحات لها عنوان (Routes)**.",
+        "**لماذا الآن؟** **عمق Builder اختياري** — **لكن إن كنت تبني منتجًا، هذا الدرس يمنع تكرار نفس الكود في كل صفحة**.",
+        "**ماذا بعد الدرس؟** **ستحدّد ٣ components و٣ صفحات لتطبيقك** — **قبل أي كود**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension — زر أزرق هنا وأخضر هناك — والتطبيق يبدو ملخبطًا",
+      "subtitle": "زر أزرق هنا وأخضر هناك — والتطبيق يبدو ملخبطًا",
+      "contentMarkdown": "- **كل صفحة شكلها مختلف قليلًا**. **زر الإرسال أزرق في الشات وأخضر في الإعدادات**.\n- **المشكلة: كرّرت نفس الكود بنسخ ولصق**. **أي تعديل بسيط = تعديل في التطبيق كله**.\n- **الحل: ابنِ القطعة مرة واحدة واستخدمها في كل مكان**.",
+      "bullets": [
+        "**كل صفحة شكلها مختلف قليلًا**. **زر الإرسال أزرق في الشات وأخضر في الإعدادات**.",
+        "**المشكلة: كرّرت نفس الكود بنسخ ولصق**. **أي تعديل بسيط = تعديل في التطبيق كله**.",
+        "**الحل: ابنِ القطعة مرة واحدة واستخدمها في كل مكان**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core idea — قطعة قابلة لإعادة الاستخدام + مسار لكل صفحة",
+      "subtitle": "قطعة قابلة لإعادة الاستخدام + مسار لكل صفحة",
+      "contentMarkdown": "- **Component (مكوّن) = قطعة lego صغيرة**: **زر، فقاعة رسالة، كارت محادثة**. **تصمّمها مرة وتستخدمها ببيانات مختلفة (Props — خصائص)**.\n- **Route (مسار) = الصفحة الكاملة التي لها عنوان في المتصفح** — **مثل `/chat` أو `/settings`**.\n- **الصفحة نفسها component كبير يجمع components أصغر**. **قاعدة: كل component يعمل شيئًا واحدًا فقط**.",
+      "bullets": [
+        "**Component (مكوّن) = قطعة lego صغيرة**: **زر، فقاعة رسالة، كارت محادثة**. **تصمّمها مرة وتستخدمها ببيانات مختلفة (Props — خصائص)**.",
+        "**Route (مسار) = الصفحة الكاملة التي لها عنوان في المتصفح** — **مثل `/chat` أو `/settings`**.",
+        "**الصفحة نفسها component كبير يجمع components أصغر**. **قاعدة: كل component يعمل شيئًا واحدًا فقط**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison — تكرار الكود vs قاعدة الـ ٣ مرات",
+      "subtitle": "تكرار الكود vs قاعدة الـ ٣ مرات",
+      "contentMarkdown": "| خطأ — نفس الشكل في ٣ أماكن | صح — Component مرة واحدة |\n|----------------------------|---------------------------|\n| **تكرر شكل رسالة المستخدم في ٣ أماكن**. **تغيّر حجم الخط — تنسى مكانًا — الواجهة تفسد** | **المرة الثالثة: اقف — اخرج Component منفصل**. **تعدّل مرة — يسمع في كل مكان** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "خطأ — نفس الشكل في ٣ أماكن",
+            "صح — Component مرة واحدة"
+          ],
+          "rows": [
+            [
+              "**تكرر شكل رسالة المستخدم في ٣ أماكن**. **تغيّر حجم الخط — تنسى مكانًا — الواجهة تفسد**",
+              "**المرة الثالثة: اقف — اخرج Component منفصل**. **تعدّل مرة — يسمع في كل مكان**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary — مصطلحان للواجهة",
+      "subtitle": "مصطلحان للواجهة",
+      "contentMarkdown": "| المصطلح | المعنى | مثال |\n|---------|--------|------|\n| **Component (مكوّن)** | **قطعة واجهة تُكتب مرة وتُستخدم مرات ببيانات مختلفة** | **`ChatBubble` — مرة sender=User ومرة sender=AI، نفس القالب** |\n| **Route (مسار)** | **الصفحة الكاملة التي لها عنوان في المتصفح** | **`/chat` = صفحة الشات، `/history` = المحادثات القديمة** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "المصطلح",
+            "المعنى",
+            "مثال"
+          ],
+          "rows": [
+            [
+              "**Component (مكوّن)**",
+              "**قطعة واجهة تُكتب مرة وتُستخدم مرات ببيانات مختلفة**",
+              "**`ChatBubble` — مرة sender=User ومرة sender=AI، نفس القالب**"
+            ],
+            [
+              "**Route (مسار)**",
+              "**الصفحة الكاملة التي لها عنوان في المتصفح**",
+              "**`/chat` = صفحة الشات، `/history` = المحادثات القديمة**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Screenshot block (intent)",
+      "heading": "Screenshot block (intent)",
+      "contentMarkdown": "**أي واجهة احترافية تبدو معقدة** — **لكنها تكرار لـ ٣–٤ قوالب**. **ModuleCard و LessonRow = Components تتكرر ببيانات مختلفة**.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz — تأكيد سريع",
+      "subtitle": "تأكيد سريع",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** **تحتاج كارتًا لكل محادثة سابقة — عنوان وملخص وتاريخ. ما أنسب طريقة؟**\n\n**Component واحد `ConversationCard` — تمرّر له بيانات كل محادثة كـ Props**.\nComponent جديد لكل محادثة: `ConversationCard1`، `ConversationCard2`...****\nادمج كل الكروت في component واحد كبير `HistoryPage`**.**\n\n**التفسير:** **Component تُكتب مرة وتُستخدم ببيانات مختلفة** — **يقلّل التكرار ويجعل التعديل في مكان واحد**.",
+      "bullets": [
+        "**Component واحد `ConversationCard` — تمرّر له بيانات كل محادثة كـ Props**.",
+        "Component جديد لكل محادثة: `ConversationCard1`، `ConversationCard2`...****",
+        "ادمج كل الكروت في component واحد كبير `HistoryPage`**.**"
+      ],
+      "tables": [],
+      "quiz": {
+        "question": "**تحتاج كارتًا لكل محادثة سابقة — عنوان وملخص وتاريخ. ما أنسب طريقة؟**",
+        "correctIndex": 0,
+        "options": [
+          "**Component واحد `ConversationCard` — تمرّر له بيانات كل محادثة كـ Props**.",
+          "Component جديد لكل محادثة: `ConversationCard1`، `ConversationCard2`...****",
+          "ادمج كل الكروت في component واحد كبير `HistoryPage`**.**"
+        ],
+        "explanation": "**Component تُكتب مرة وتُستخدم ببيانات مختلفة** — **يقلّل التكرار ويجعل التعديل في مكان واحد**."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission — حدّد ٣ components و٣ صفحات",
+      "subtitle": "حدّد ٣ components و٣ صفحات",
+      "contentMarkdown": "**المقدمة:** **قبل أي كود — خطّط على الورق**. **١٠–١٥ دقيقة**.\n\n**التسليم:**\n\n1. **٣ صفحات (Routes)** — **مسار + هدف لكل واحدة**\n2. **٣ Components** — **اسم + Props + في أي صفحة/صفحات يظهر**\n3. **هل component يحتاج «ذاكرة» داخلية (state)؟** **أي واحد ولِم؟**\n\n**معايير التقييم:**\n\n| البعد | الوزن | المعيار |\n|-------|-------|---------|\n| ٣ صفحات واضحة | 50% | **كل Route لها مسار وهدف**. **الصفحات تغطي رحلة العميل الأساسية** |\n| ٣ Components بـ Props | 50% | **كل Component له اسم و Props محدّدة**. **محدّد أين يظهر** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "البعد",
+            "الوزن",
+            "المعيار"
+          ],
+          "rows": [
+            [
+              "٣ صفحات واضحة",
+              "50%",
+              "**كل Route لها مسار وهدف**. **الصفحات تغطي رحلة العميل الأساسية**"
+            ],
+            [
+              "٣ Components بـ Props",
+              "50%",
+              "**كل Component له اسم و Props محدّدة**. **محدّد أين يظهر**"
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "**قبل أي كود — خطّط على الورق**. **١٠–١٥ دقيقة**.",
+        "delivery": [
+          "**٣ صفحات (Routes)** — **مسار + هدف لكل واحدة**",
+          "**٣ Components** — **اسم + Props + في أي صفحة/صفحات يظهر**",
+          "**هل component يحتاج «ذاكرة» داخلية (state)؟** **أي واحد ولِم؟**"
+        ],
+        "rubric": [
+          {
+            "dimension": "٣ صفحات واضحة",
+            "weight": 50,
+            "criteria": "**كل Route لها مسار وهدف**. **الصفحات تغطي رحلة العميل الأساسية**"
+          },
+          {
+            "dimension": "٣ Components بـ Props",
+            "weight": 50,
+            "criteria": "**كل Component له اسم و Props محدّدة**. **محدّد أين يظهر**"
+          }
+        ],
+        "yamlIntent": "Plan 3 routes + 3 components with Props and where they appear — ~10–15 min",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence close",
+      "contentMarkdown": "- **فهمت:** **التطبيق = Components قابلة لإعادة الاستخدام + Routes لكل صفحة**. **تعدّل القطعة مرة — تسمع في كل مكان**.\n- **تستطيع:** **خريطة ٣ صفحات و٣ components — جاهزة لأول prompt في Lovable**.\n- **التالي:** **Iteration Loop** — **تحسين تعديل واحد كل مرة**.\n\n---",
+      "bullets": [
+        "**فهمت:** **التطبيق = Components قابلة لإعادة الاستخدام + Routes لكل صفحة**. **تعدّل القطعة مرة — تسمع في كل مكان**.",
+        "**تستطيع:** **خريطة ٣ صفحات و٣ components — جاهزة لأول prompt في Lovable**.",
+        "**التالي:** **Iteration Loop** — **تحسين تعديل واحد كل مرة**."
+      ],
+      "tables": []
+    }
+  ],
+  "sourceFile": "docs/playbooks/adaptive-canonical/builder-m6-l4-components-routes.canonical.md",
+  "generatedAt": "2026-06-20T22:27:43.614Z"
+}

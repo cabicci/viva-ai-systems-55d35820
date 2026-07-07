@@ -1,0 +1,82 @@
+{
+  "locale": "en",
+  "lessonId": "analyst-m6-l1-question-mistakes",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "analyst",
+  "moduleId": "analyst-m6",
+  "productionRoute": "/learn/analyst/analyst-m6-l1-question-mistakes",
+  "titleEn": "Question Mistakes",
+  "title": "Question Mistakes",
+  "summary": "A wrong question wastes time — it can be vague, leading, or provide no measurable signal.",
+  "estimatedMinutes": 12,
+  "nextLessonId": "analyst-m5-ab-testing",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation",
+      "subtitle": "Lesson Start",
+      "contentMarkdown": "- **What Will You Understand?** A wrong question wastes time — it leads to a lot of data without a decision.",
+      "bullets": [
+        "**What Will You Understand?** A wrong question wastes time — it leads to a lot of data without a decision."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core Idea — 3 Mistakes",
+      "subtitle": "3 Mistakes",
+      "contentMarkdown": "- General (\"How is the business?\") → Specify: Who? What? When?\n- **Leading Question** (\"Why did the ad fail?\") → \"How many leads?\"\n- Without **Signal** (\"How many happy customers?\") → NPS, repeat purchases.",
+      "bullets": [
+        "General (\"How is the business?\") → Specify: Who? What? When?",
+        "**Leading Question** (\"Why did the ad fail?\") → \"How many leads?\"",
+        "Without **Signal** (\"How many happy customers?\") → NPS, repeat purchases."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz",
+      "subtitle": "Common Mistakes in Questions",
+      "contentMarkdown": "> **Quiz:**\n\n- **Correct Answer:** Leading — assumed the reason for drop before seeing the data.\nVague — the question is just general.\nNo Data — there is no data at all.\n\n**Explanation:** The correct answer is Leading — it assumes the reason for drop before seeing the data.",
+      "bullets": [
+        "**Correct Answer:** Leading — assumed the reason for drop before seeing the data.",
+        "Vague — the question is just general.",
+        "No Data — there is no data at all."
+      ],
+      "tables": [],
+      "quiz": {
+        "correctIndex": 0,
+        "options": [
+          "Leading — assumed the reason for drop before seeing the data.",
+          "Vague — the question is just general.",
+          "No Data — there is no data at all."
+        ],
+        "explanation": "The correct answer is Leading — it assumes the reason for drop before seeing the data.",
+        "question": "What is the most appropriate option based on the section above?"
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission",
+      "contentMarkdown": "| Diagnosis | 50% |\n| Formulating for Decision | 50% |",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence Close",
+      "contentMarkdown": "- **Next:** **A/B Testing**.\n\n---",
+      "bullets": [
+        "**Next:** **A/B Testing**."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-07-07T00:36:19.602Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "analyst-m6-l1-question-mistakes",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/analyst-m6-l1-question-mistakes.canonical.md"
+  }
+}

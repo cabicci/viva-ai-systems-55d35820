@@ -1,0 +1,199 @@
+{
+  "locale": "en",
+  "lessonId": "builder-m8-l1-sessions-jwt",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "builder",
+  "moduleId": "builder-m8",
+  "productionRoute": "/learn/builder/builder-m8-l1-sessions-jwt",
+  "titleEn": "Sessions & JWT",
+  "title": "Sessions & JWT",
+  "summary": "Session = the platform remembers you are logged in — JWT = a temporary pass that proves it.",
+  "estimatedMinutes": 10,
+  "nextLessonId": "builder-m8-l2-rls",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation",
+      "subtitle": "Introduction",
+      "contentMarkdown": "- **This lesson is for the Builder path only.** **If your goal is to use AI in work or content**, **you do not need to memorize JWT** — **you can skip it and come back later**.\n- **What will you understand?** **A simple idea:** **how the platform remembers you are logged in without asking for your password every time**.\n- **The idea in two lines:** **Session** = **the platform remembers you are logged in**. **JWT** = **a temporary pass that proves this between the server and the browser**.\n- **What comes after the lesson?** **3 short answers** — **not code or implementation**.",
+      "bullets": [
+        "**This lesson is for the Builder path only.** **If your goal is to use AI in work or content**, **you do not need to memorize JWT** — **you can skip it and come back later**.",
+        "**What will you understand?** **A simple idea:** **how the platform remembers you are logged in without asking for your password every time**.",
+        "**The idea in two lines:** **Session** = **the platform remembers you are logged in**. **JWT** = **a temporary pass that proves this between the server and the browser**.",
+        "**What comes after the lesson?** **3 short answers** — **not code or implementation**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension — Why should the platform 'remember' you?",
+      "subtitle": "Why should the platform 'remember' you?",
+      "contentMarkdown": "- **You open the app and see the 'My Requests' page** — **if the platform forgets you are logged in**, **it may show incorrect data or ask for login every time you click**.\n- **The problem is not complicated:** **we need a simple way to tell the server 'this is the same person who logged in a moment ago'**.\n- **It's only important if you are building an app with personal accounts**. **If you are not building one now — the general idea is enough**.",
+      "bullets": [
+        "**You open the app and see the 'My Requests' page** — **if the platform forgets you are logged in**, **it may show incorrect data or ask for login every time you click**.",
+        "**The problem is not complicated:** **we need a simple way to tell the server 'this is the same person who logged in a moment ago'**.",
+        "**It's only important if you are building an app with personal accounts**. **If you are not building one now — the general idea is enough**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core idea — Hotel card — Session and JWT simply",
+      "subtitle": "Hotel card — Session and JWT simply",
+      "contentMarkdown": "- **Analogy:** **When you check into a hotel**, **the reception gives you a temporary room card**. **The card is not your full identity** — **but it tells the elevator and the door: 'this guest is still here'**.\n- **Session** = **the platform remembers you are logged in**. **After login, the system operates as if you are the same user**.\n- **JWT** = **a temporary pass that proves this between the server and the browser**. **The browser keeps the pass and sends it with every request** — **without asking for the password again**.",
+      "bullets": [
+        "**Analogy:** **When you check into a hotel**, **the reception gives you a temporary room card**. **The card is not your full identity** — **but it tells the elevator and the door: 'this guest is still here'**.",
+        "**Session** = **the platform remembers you are logged in**. **After login, the system operates as if you are the same user**.",
+        "**JWT** = **a temporary pass that proves this between the server and the browser**. **The browser keeps the pass and sends it with every request** — **without asking for the password again**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary — Two terms to start",
+      "subtitle": "Two terms to start",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Session** | **the platform remembers you are logged in** — **without asking for your password every time** | **You opened the app at 9 AM** — **until the 'pass' expires, the platform treats you as if you are still logged in** |\n| **JWT — Temporary pass** | **proves you are still logged in** — **between the server and the browser** | **Like a hotel card:** **lets you in without going back to the reception every time** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**Session**",
+              "**the platform remembers you are logged in** — **without asking for your password every time**",
+              "**You opened the app at 9 AM** — **until the 'pass' expires, the platform treats you as if you are still logged in**"
+            ],
+            [
+              "**JWT — Temporary pass**",
+              "**proves you are still logged in** — **between the server and the browser**",
+              "**Like a hotel card:** **lets you in without going back to the reception every time**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Optional depth",
+      "heading": "Optional depth — Technical details (optional)",
+      "subtitle": "Technical details (optional)",
+      "contentMarkdown": "> **For those who want to build products themselves.** **If your goal is to use AI in your work only — skip this section.**\n\n- **Sending just a user ID is easy to forge**. **The temporary pass (JWT) is issued by the server and can be verified**.\n- **Steps:** **login → server gives a pass → browser sends it with every request → server verifies and continues**.",
+      "bullets": [
+        "**Sending just a user ID is easy to forge**. **The temporary pass (JWT) is issued by the server and can be verified**.",
+        "**Steps:** **login → server gives a pass → browser sends it with every request → server verifies and continues**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Screenshot block (optional",
+      "heading": "Screenshot block (optional — production reference)",
+      "subtitle": "production reference)",
+      "contentMarkdown": "> **Optional:** Diagram of the JWT lifecycle — **login → pass → every request → confirmation**. **Production reference only — not to be regenerated.**",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz — Quick confirmation",
+      "subtitle": "Quick confirmation",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** **Sarah is building an app with a personal 'My Chats' page and a public 'Pricing' page. What is the correct idea?**\n\n**'My Chats' needs the platform to remember you are logged in** — **like Session and a temporary pass**.\nIt is enough for the interface to hide the 'My Chats' link without login**.**\nSending a user ID in the link — is always enough**.**\n\n**Explanation:** **The personal page needs proof that you are still logged in** — **not just hiding the link**. **The idea: Session + temporary pass**.",
+      "bullets": [
+        "**'My Chats' needs the platform to remember you are logged in** — **like Session and a temporary pass**.",
+        "It is enough for the interface to hide the 'My Chats' link without login**.**",
+        "Sending a user ID in the link — is always enough**.**"
+      ],
+      "tables": [],
+      "quiz": {
+        "question": "**Sarah is building an app with a personal 'My Chats' page and a public 'Pricing' page. What is the correct idea?**",
+        "correctIndex": 0,
+        "options": [
+          "**'My Chats' needs the platform to remember you are logged in** — **like Session and a temporary pass**.",
+          "It is enough for the interface to hide the 'My Chats' link without login.",
+          "Sending a user ID in the link — is always enough."
+        ],
+        "explanation": "**The personal page needs proof that you are still logged in** — **not just hiding the link**. **The idea: Session + temporary pass**."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission — 3 short answers — not implementation",
+      "subtitle": "3 short answers — not implementation",
+      "contentMarkdown": "**Introduction:** **A light task — 5 minutes**. **3 answers with a sentence for each**. **No JWT or code required**.\n\n**Delivery:**\n\n1. **Who is the user?** (one sentence)\n2. **How does the platform know they are still logged in?** (one sentence — in your words, not technical terms)\n3. **When does it expire?** (one sentence — when does the 'pass' expire or need login again)\n\n**Evaluation criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| User is clear | 35% | **Specific user in a sentence** — **not just 'people'** |\n| Understanding 'still logged in' | 35% | **Explain how the platform remembers login** — **in your style** |\n| Expiration | 30% | **When do they need to login again** — **logical and realistic** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "User is clear",
+              "35%",
+              "**Specific user in a sentence** — **not just 'people'**"
+            ],
+            [
+              "Understanding 'still logged in'",
+              "35%",
+              "**Explain how the platform remembers login** — **in your style**"
+            ],
+            [
+              "Expiration",
+              "30%",
+              "**When do they need to login again** — **logical and realistic**"
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "**A light task — 5 minutes**. **3 answers with a sentence for each**. **No JWT or code required**.",
+        "delivery": [
+          "**Who is the user?** (one sentence)",
+          "**How does the platform know they are still logged in?** (one sentence — in your words, not technical terms)",
+          "**When does it expire?** (one sentence — when does the 'pass' expire or need login again)"
+        ],
+        "rubric": [
+          {
+            "dimension": "User is clear",
+            "weight": 35,
+            "criteria": "**Specific user in a sentence** — **not just 'people'**"
+          },
+          {
+            "dimension": "Understanding 'still logged in'",
+            "weight": 35,
+            "criteria": "**Explain how the platform remembers login** — **in your style**"
+          },
+          {
+            "dimension": "Expiration",
+            "weight": 30,
+            "criteria": "**When do they need to login again** — **logical and realistic**"
+          }
+        ],
+        "yamlIntent": "3 short answers — who user, how platform knows still in, when expires — ~5 min",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence close",
+      "contentMarkdown": "- **I understood:** **Session = the platform remembers you are logged in**. **JWT = a temporary pass that proves this**. **The general idea is enough for this stage**.\n- **You can:** **you have 3 short answers about the user, login, and expiration** — **without code**.\n- **Next:** **RLS** — **simple rules for who sees what in the store**.",
+      "bullets": [
+        "**I understood:** **Session = the platform remembers you are logged in**. **JWT = a temporary pass that proves this**. **The general idea is enough for this stage**.",
+        "**You can:** **you have 3 short answers about the user, login, and expiration** — **without code**.",
+        "**Next:** **RLS** — **simple rules for who sees what in the store**."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-07-07T00:42:43.416Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "builder-m8-l1-sessions-jwt",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/builder-m8-l1-sessions-jwt.canonical.md"
+  }
+}
