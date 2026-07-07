@@ -36,14 +36,11 @@ async function main() {
   );
 
   if (retryCells?.length) {
-    process.stdout.write(
-      serializeGitHubActionsMatrix(
-        retryCells.map((cell) => ({
-          locale: cell.locale,
-          source_scope: cell.source_scope,
-        })),
-      ),
-    );
+    const shards = await buildPhase13BWorkflowShardMatrix({
+      sourceScope,
+      retryCells,
+    });
+    process.stdout.write(serializeGitHubActionsMatrix(shards));
     return;
   }
 
@@ -60,6 +57,7 @@ async function main() {
   const shards = await buildPhase13BWorkflowShardMatrix({
     sourceScope,
     targetLocales,
+    lessonIdsOverride,
   });
   process.stdout.write(serializeGitHubActionsMatrix(shards));
 }

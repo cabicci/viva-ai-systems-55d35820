@@ -24,6 +24,9 @@ import {
   type Phase13BJobResult,
 } from "./lib/phase13b-job-result.ts";
 import { learnerFinalLessonsDirForLocale } from "./lib/phase13b-output-paths.ts";
+import {
+  phase13BGeneratedPackagePath,
+} from "./lib/phase13b-generated-packages.ts";
 import { selectFullLessonIds } from "./lib/full-lesson-ids.ts";
 
 export interface Phase13BFullCellReport {
@@ -63,6 +66,7 @@ export interface Phase13BFullCollectReport {
   cellCount: number;
   dryRun: boolean;
   dryRunOk: number;
+  lessonJsonPresent: number;
   generated: string[];
   failed: string[];
   skipped: string[];
@@ -136,6 +140,18 @@ async function resolveLessonArtifactPath(
     };
   }
 
+  if (artifactIndex) {
+    return null;
+  }
+
+  const stagingPath = phase13BGeneratedPackagePath(locale, lessonId);
+  try {
+    await fs.access(stagingPath);
+    return { filePath: stagingPath };
+  } catch {
+    // fall through
+  }
+
   const workspacePath = path.join(
     learnerFinalLessonsDirForLocale(locale),
     `${lessonId}.json`,
@@ -179,6 +195,12 @@ export function countPhase13BDryRunOkCells(cells: Phase13BFullCellReport[]): num
   return cells.filter((cell) => cell.status === "dry-run-ok").length;
 }
 
+export function countPhase13BLessonJsonPresentCells(
+  cells: Phase13BFullCellReport[],
+): number {
+  return cells.filter((cell) => cell.status === "generated").length;
+}
+
 export function phase13BCollectReportExitCode(report: Phase13BFullCollectReport): number {
   if (report.planned === 0) {
     return 1;
@@ -193,6 +215,9 @@ export function phase13BCollectReportExitCode(report: Phase13BFullCollectReport)
   }
 
   if (report.failed.length > 0) return 1;
+  if (report.skipped.length > 0) return 1;
+  if (report.generated.length !== report.planned) return 1;
+  if (report.lessonJsonPresent !== report.planned) return 1;
   return 0;
 }
 
@@ -249,21 +274,21 @@ export async function buildPhase13BFullCollectReport(input: {
     );
 
     let status: Phase13BFullCellReport["status"];
-    if (input.dryRun) {
-      status = resolved.job.ok ? "dry-run-ok" : "failed";
-    } else if (resolved.job.ok && artifact) {
+    const cellErrors = [...resolved.job.errors];
+
+    if (!resolved.job.ok) {
+      status = "failed";
+      failed.push(key);
+      validationErrors.push(...resolved.job.errors.map((error) => `${key}: ${error}`));
+    } else if (input.dryRun) {
+      status = "dry-run-ok";
+    } else if (artifact) {
       status = "generated";
       generated.push(key);
-    } else if (resolved.job.ok && !artifact) {
-      status = "skipped";
-      skipped.push(key);
     } else {
       status = "failed";
       failed.push(key);
-    }
-
-    if (!resolved.job.ok) {
-      validationErrors.push(...resolved.job.errors.map((error) => `${key}: ${error}`));
+      cellErrors.push("missing generated lesson package JSON");
     }
 
     cells.push({
@@ -272,7 +297,7 @@ export async function buildPhase13BFullCollectReport(input: {
       pipeline: cell.pipeline,
       requiresPaidApi: cell.requires_paid_api,
       status,
-      errors: resolved.job.errors,
+      errors: cellErrors,
       artifactPath: artifact?.filePath,
       jobResultPath: resolved.jobResultPath,
       jobResultSourcePath: resolved.jobResultSourcePath,
@@ -283,6 +308,7 @@ export async function buildPhase13BFullCollectReport(input: {
 
   const retry = buildRetryFields(cells);
   const dryRunOk = countPhase13BDryRunOkCells(cells);
+  const lessonJsonPresent = countPhase13BLessonJsonPresentCells(cells);
 
   return {
     phase: "13B",
@@ -293,13 +319,14 @@ export async function buildPhase13BFullCollectReport(input: {
     cellCount: matrix.length,
     dryRun: input.dryRun,
     dryRunOk,
+    lessonJsonPresent,
     generated,
     failed,
     skipped,
     cells,
     validationErrors,
     ...retry,
-    artifactNaming: "locale-phase13b-full-{locale}-{lessonId}",
+    artifactNaming: "locale-phase13b-shard-{locale}-{shard_index}",
     artifactsDir: input.artifactsDir ?? undefined,
     collectedAt: new Date().toISOString(),
   };
@@ -342,6 +369,7 @@ async function main() {
       planned: report.planned,
       cellCount: report.cellCount,
       dryRunOk: report.dryRunOk,
+      lessonJsonPresent: report.lessonJsonPresent,
       generated: report.generated.length,
       failed: report.failed.length,
       skipped: report.skipped.length,

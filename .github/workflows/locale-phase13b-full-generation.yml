@@ -1,7 +1,7 @@
 name: Locale Phase 13B Full Generation
 
 # Phase 13B — 300-cell learner package generation (100 × ar-MSA learner-final, ar-Gulf, en).
-# GitHub Actions matrix limit is 256 jobs, so generation runs as 3 locale batch jobs (100 cells each).
+# GitHub Actions matrix limit is 256 jobs; generation runs as 30 shard jobs (10 lessons × 3 locales).
 # Default: dry-run only — no paid OpenAI calls, no package writes.
 
 on:
@@ -146,11 +146,12 @@ jobs:
           echo "dry_run=$DRY_RUN" >> "$GITHUB_OUTPUT"
           echo "Phase 13B planned cells: $(echo "$PLAN" | jq -r '.planned')"
 
-  generate-locale-batch:
+  generate-shard:
     needs: prepare-matrix
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
+      max-parallel: 4
       matrix: ${{ fromJson(needs.prepare-matrix.outputs.matrix) }}
     steps:
       - name: Checkout repository
@@ -164,22 +165,19 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Run Phase 13B locale batch
+      - name: Run Phase 13B shard batch
         env:
           OPENAI_API_KEY: ${{ secrets.new_openai }}
           DRY_RUN: ${{ inputs.dry_run }}
           CONFIRM_WRITE: ${{ inputs.confirm_write }}
           CONFIRM_PAID_API: ${{ inputs.confirm_paid_api }}
-          LESSON_IDS: ${{ inputs.lesson_ids }}
         run: |
           set -euo pipefail
           ARGS=(
             --source_scope "${{ matrix.source_scope }}"
             --locale "${{ matrix.locale }}"
+            --lesson_ids "${{ matrix.lesson_ids }}"
           )
-          if [ -n "$LESSON_IDS" ]; then
-            ARGS+=(--lesson_ids "$LESSON_IDS")
-          fi
           if [ "$DRY_RUN" = "true" ]; then
             ARGS+=(--dry_run true)
           else
@@ -187,18 +185,19 @@ jobs:
           fi
           bun run scripts/locale-lessons/run-phase13b-locale-batch.ts "${ARGS[@]}"
 
-      - name: Upload locale batch artifact
+      - name: Upload shard artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: locale-phase13b-batch-${{ matrix.locale }}
+          name: locale-phase13b-shard-${{ matrix.locale }}-${{ matrix.shard_index }}
           if-no-files-found: warn
           retention-days: 14
           path: |
             src/lib/locale-lessons/ar-MSA/reports/phase13b-full-jobs/${{ matrix.locale }}/*.result.json
+            src/lib/locale-lessons/ar-MSA/reports/phase13b-generated-packages/${{ matrix.locale }}/*.json
 
   collect-report:
-    needs: [prepare-matrix, generate-locale-batch]
+    needs: [prepare-matrix, generate-shard]
     if: always()
     runs-on: ubuntu-latest
     steps:
@@ -213,11 +212,11 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Download locale batch artifacts
+      - name: Download shard artifacts
         continue-on-error: true
         uses: actions/download-artifact@v4
         with:
-          pattern: locale-phase13b-batch-*
+          pattern: locale-phase13b-shard-*
           merge-multiple: false
           path: phase13b-artifacts
 
@@ -249,7 +248,7 @@ jobs:
           fi
           bun run scripts/locale-lessons/collect-phase13b-full-report.ts "${ARGS[@]}"
           REPORT=$(cat src/lib/locale-lessons/ar-MSA/reports/phase13b-full-report.json)
-          echo "$REPORT" | jq '{planned, dryRunOk, failed: (.failed|length), skipped: (.skipped|length), retryCells}'
+          echo "$REPORT" | jq '{planned, dryRunOk, lessonJsonPresent, generated: (.generated|length), failed: (.failed|length), skipped: (.skipped|length), retryCells}'
           if [ "$DRY_RUN" = "true" ]; then
             PLANNED=$(echo "$REPORT" | jq -r '.planned')
             DRY_OK=$(echo "$REPORT" | jq -r '.dryRunOk')
@@ -261,6 +260,21 @@ jobs:
             fi
             if [ "$DRY_OK" != "$PLANNED" ] || [ "$FAILED" != "0" ] || [ "$SKIPPED" != "0" ]; then
               echo "Dry-run incomplete: planned=$PLANNED dryRunOk=$DRY_OK failed=$FAILED skipped=$SKIPPED"
+              exit 1
+            fi
+          else
+            PLANNED=$(echo "$REPORT" | jq -r '.planned')
+            GENERATED=$(echo "$REPORT" | jq -r '.generated | length')
+            LESSON_JSON=$(echo "$REPORT" | jq -r '.lessonJsonPresent')
+            FAILED=$(echo "$REPORT" | jq -r '.failed | length')
+            SKIPPED=$(echo "$REPORT" | jq -r '.skipped | length')
+            RETRY_COUNT=$(echo "$REPORT" | jq -r '.retryCells | length')
+            if [ "$PLANNED" = "0" ]; then
+              echo "Refusing empty Phase 13B paid plan"
+              exit 1
+            fi
+            if [ "$GENERATED" != "$PLANNED" ] || [ "$LESSON_JSON" != "$PLANNED" ] || [ "$FAILED" != "0" ] || [ "$SKIPPED" != "0" ] || [ "$RETRY_COUNT" != "0" ]; then
+              echo "Paid run incomplete: planned=$PLANNED generated=$GENERATED lessonJsonPresent=$LESSON_JSON failed=$FAILED skipped=$SKIPPED retryCells=$RETRY_COUNT"
               exit 1
             fi
           fi
@@ -278,3 +292,4 @@ jobs:
           path: |
             src/lib/locale-lessons/ar-MSA/reports/phase13b-full-report.json
             src/lib/locale-lessons/ar-MSA/reports/phase13b-full-jobs/**/*.result.json
+            src/lib/locale-lessons/ar-MSA/reports/phase13b-generated-packages/**/*.json

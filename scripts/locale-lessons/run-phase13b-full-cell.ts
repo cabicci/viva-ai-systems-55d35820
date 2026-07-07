@@ -10,7 +10,7 @@ import {
   pipelineModeForLocale,
 } from "./lib/phase13b-full-matrix.ts";
 import { writePhase13BJobResult, phase13BJobResultPath } from "./lib/phase13b-job-result.ts";
-import { writePhase13BLearnerFinalLessonPackage } from "./lib/phase13b-output-writer.ts";
+import { writePhase13BGeneratedLessonPackage } from "./lib/phase13b-output-writer.ts";
 import { finalizeLearnerFacingLocalePackageForWrite } from "./lib/phase13-pilot-lesson-output.ts";
 import { loadMsaLessonPackage, validateMsaSourcePackage } from "./lib/source-package.ts";
 import {
@@ -86,7 +86,7 @@ export async function runPhase13BFullCell(input: {
     let artifactPath: string | null = null;
 
     if (shouldWrite) {
-      artifactPath = await writePhase13BLearnerFinalLessonPackage("ar-MSA", pkg);
+      artifactPath = await writePhase13BGeneratedLessonPackage("ar-MSA", pkg);
     }
 
     const jobResultPath = input.writeJobResult === false
@@ -151,7 +151,7 @@ export async function runPhase13BFullCell(input: {
 
   let artifactPath: string | null = null;
   if (shouldWrite) {
-    artifactPath = await writePhase13BLearnerFinalLessonPackage(locale, sanitized);
+    artifactPath = await writePhase13BGeneratedLessonPackage(locale, sanitized);
   }
 
   const jobResultPath = input.writeJobResult === false

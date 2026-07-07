@@ -1,8 +1,7 @@
 import type { LessonPackageLocale } from "../../src/lib/locale-lessons/types.ts";
 import {
-  parseLessonIdsArg,
   parsePhase13BSourceScope,
-  selectPhase13BFullLessonIds,
+  parseShardLessonIdsArg,
 } from "./lib/phase13b-full-matrix.ts";
 import { runPhase13BFullCell } from "./run-phase13b-full-cell.ts";
 
@@ -83,7 +82,7 @@ async function main() {
   const dryRun = parseBool("dry_run") || readArg("dry_run") === "";
   const confirmPaidApi = parseBool("confirm_paid_api");
   const confirmWrite = parseBool("confirm_write");
-  const lessonIdsOverride = parseLessonIdsArg(
+  const lessonIds = parseShardLessonIdsArg(
     readArg("lesson_ids") ?? readArg("lesson-ids"),
   );
 
@@ -92,10 +91,6 @@ async function main() {
       "Refusing write: set confirm_write=true when dry_run=false",
     );
   }
-
-  const lessonIds = await selectPhase13BFullLessonIds({
-    lessonIdsOverride,
-  });
 
   const summary = await runPhase13BLocaleBatch({
     locale,

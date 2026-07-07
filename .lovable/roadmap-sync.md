@@ -1,10 +1,10 @@
 # Roadmap sync marker
 
-[roadmap:c7f2d9e4-1a8b-4c6d-9e0f-3b5a7c8d9e1f]
-date: 2026-07-06
+[roadmap:a3b8c1d2-4e5f-6789-abcd-ef0123456789]
+date: 2026-07-07
 scope: infra
 source: user
-summary: Collect Phase 13B locale-batch dry-run artifacts from flat batch folders
+summary: Shard Phase 13B paid generation into 10-lesson jobs with mergeable package artifact staging
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

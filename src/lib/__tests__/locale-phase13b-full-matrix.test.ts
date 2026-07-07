@@ -14,12 +14,22 @@ import {
 import {
   PHASE13B_FULL_CELL_COUNT,
   PHASE13B_GITHUB_MATRIX_JOB_LIMIT,
+  PHASE13B_SHARD_SIZE,
   buildPhase13BFullMatrix,
   buildPhase13BWorkflowShardMatrix,
+  chunkLessonIds,
+  formatPhase13BShardIndex,
   parsePhase13BRetryCellsArg,
+  parseShardLessonIdsArg,
+  phase13BShardArtifactName,
   requiresPaidApiForLocale,
   serializeGitHubActionsMatrix,
 } from "../../../scripts/locale-lessons/lib/phase13b-full-matrix.ts";
+import {
+  finalMergeTargetPathForLocale,
+  isPhase13BGeneratedPackagePath,
+  phase13BGeneratedPackagePath,
+} from "../../../scripts/locale-lessons/lib/phase13b-generated-packages.ts";
 import {
   AR_MSA_CANONICAL_LESSONS_DIR,
   arMsaLearnerFinalLessonsDir,
@@ -30,7 +40,11 @@ import { runPhase13BFullCell } from "../../../scripts/locale-lessons/run-phase13
 import { runPhase13BLocaleBatch } from "../../../scripts/locale-lessons/run-phase13b-locale-batch.ts";
 import { loadMsaLessonPackage } from "../../../scripts/locale-lessons/lib/source-package.ts";
 import { readPhase13BJobResult } from "../../../scripts/locale-lessons/lib/phase13b-job-result.ts";
-import { parsePhase13BBatchArtifactDirName } from "../../../scripts/locale-lessons/lib/phase13b-artifact-index.ts";
+import {
+  buildPhase13BArtifactIndex,
+  parsePhase13BBatchArtifactDirName,
+  parsePhase13BShardArtifactDirName,
+} from "../../../scripts/locale-lessons/lib/phase13b-artifact-index.ts";
 
 const SAMPLE_LESSON_ID = "intro-m1-l1-what-is-ai";
 const tempDirs: string[] = [];
@@ -127,14 +141,57 @@ describe("Phase 13B full-scale matrix", () => {
 
   it("builds a GitHub-consumable workflow shard matrix under the 256 job limit", async () => {
     const shards = await buildPhase13BWorkflowShardMatrix({});
-    expect(shards).toHaveLength(3);
+    expect(shards).toHaveLength(30);
     expect(shards.length).toBeLessThan(PHASE13B_GITHUB_MATRIX_JOB_LIMIT);
 
+    for (const shard of shards) {
+      const lessonIds = parseShardLessonIdsArg(shard.lesson_ids);
+      expect(lessonIds.length).toBeGreaterThan(0);
+      expect(lessonIds.length).toBeLessThanOrEqual(PHASE13B_SHARD_SIZE);
+      expect(shard.shard_index).toMatch(/^\d{2}$/);
+      expect(shard.source_scope).toBe("ar-MSA");
+      expect(phase13BShardArtifactName(shard.locale, shard.shard_index)).toBe(
+        `locale-phase13b-shard-${shard.locale}-${shard.shard_index}`,
+      );
+    }
+
+    for (const locale of ["ar-MSA", "ar-Gulf", "en"] as const) {
+      const localeShards = shards.filter((shard) => shard.locale === locale);
+      expect(localeShards).toHaveLength(FULL_LESSON_COUNT / PHASE13B_SHARD_SIZE);
+    }
+
     const parsed = JSON.parse(serializeGitHubActionsMatrix(shards)) as {
-      include: Array<{ locale: string; source_scope: string }>;
+      include: Array<{
+        locale: string;
+        source_scope: string;
+        shard_index: string;
+        lesson_ids: string;
+      }>;
     };
-    expect(parsed.include).toHaveLength(3);
+    expect(parsed.include).toHaveLength(30);
     expect(() => structuredClone(parsed)).not.toThrow();
+  });
+
+  it("chunks lesson IDs into shards of at most 10", () => {
+    const ids = Array.from({ length: 25 }, (_, index) => `lesson-${index}`);
+    const chunks = chunkLessonIds(ids, PHASE13B_SHARD_SIZE);
+    expect(chunks).toHaveLength(3);
+    expect(chunks[0]).toHaveLength(10);
+    expect(chunks[1]).toHaveLength(10);
+    expect(chunks[2]).toHaveLength(5);
+    expect(formatPhase13BShardIndex(9)).toBe("09");
+  });
+
+  it("builds retry-only shards without unaffected locale shards", async () => {
+    const retryCells = parsePhase13BRetryCellsArg(
+      "ar-MSA/intro-m1-l1-what-is-ai,en/builder-m6-l1-idea-to-page",
+    );
+    const shards = await buildPhase13BWorkflowShardMatrix({ retryCells });
+    expect(shards).toHaveLength(2);
+    expect(shards.map((shard) => shard.locale).sort()).toEqual(["ar-MSA", "en"]);
+    for (const shard of shards) {
+      expect(parseShardLessonIdsArg(shard.lesson_ids)).toHaveLength(1);
+    }
   });
 });
 
@@ -286,12 +343,20 @@ describe("Phase 13B collector dry-run", () => {
     );
   }
 
-  it("parses locale from locale-phase13b-batch artifact folder names", () => {
+  it("parses locale from locale-phase13b-batch and shard artifact folder names", () => {
     expect(parsePhase13BBatchArtifactDirName("locale-phase13b-batch-ar-MSA")).toEqual({
       locale: "ar-MSA",
     });
     expect(parsePhase13BBatchArtifactDirName("locale-phase13b-batch-ar-Gulf")).toEqual({
       locale: "ar-Gulf",
+    });
+    expect(parsePhase13BShardArtifactDirName("locale-phase13b-shard-ar-MSA-00")).toEqual({
+      locale: "ar-MSA",
+      shardIndex: "00",
+    });
+    expect(parsePhase13BShardArtifactDirName("locale-phase13b-shard-en-09")).toEqual({
+      locale: "en",
+      shardIndex: "09",
     });
   });
 
@@ -409,5 +474,147 @@ describe("Phase 13B collector dry-run", () => {
     expect(report.dryRunOk).toBe(0);
     expect(report.skipped).toEqual(["ar-MSA/intro-m1-l1-what-is-ai"]);
     expect(phase13BCollectReportExitCode(report)).toBe(1);
+  });
+});
+
+describe("Phase 13B generated package staging", () => {
+  it("maps ar-MSA generated packages to staging, not canonical source", () => {
+    const staging = phase13BGeneratedPackagePath("ar-MSA", SAMPLE_LESSON_ID);
+    const mergeTarget = finalMergeTargetPathForLocale("ar-MSA", SAMPLE_LESSON_ID);
+    const normalizedStaging = staging.split(path.sep).join("/");
+    const normalizedMerge = mergeTarget.split(path.sep).join("/");
+    expect(isPhase13BGeneratedPackagePath(staging)).toBe(true);
+    expect(isCanonicalArMsaLessonsPath(staging)).toBe(false);
+    expect(normalizedStaging).toContain("/reports/phase13b-generated-packages/ar-MSA/");
+    expect(normalizedMerge).toContain("/generated/learner-final/lessons/");
+    expect(mergeTarget).not.toBe(staging);
+  });
+
+  it("maps en/ar-Gulf generated packages to staging, not shipped lesson dirs", () => {
+    for (const locale of ["ar-Gulf", "en"] as const) {
+      const staging = phase13BGeneratedPackagePath(locale, SAMPLE_LESSON_ID);
+      const mergeTarget = finalMergeTargetPathForLocale(locale, SAMPLE_LESSON_ID);
+      const normalizedStaging = staging.split(path.sep).join("/");
+      const normalizedMerge = mergeTarget.split(path.sep).join("/");
+      expect(isPhase13BGeneratedPackagePath(staging)).toBe(true);
+      expect(normalizedStaging).toContain(
+        `/reports/phase13b-generated-packages/${locale}/`,
+      );
+      expect(normalizedMerge).toContain(`/locale-lessons/${locale}/lessons/`);
+      expect(mergeTarget).not.toBe(staging);
+    }
+  });
+
+  it("does not index pre-existing repo lesson JSON from checkout", async () => {
+    const root = await makeTempArtifactsRoot();
+    const repoLessonPath = path.join(
+      root,
+      "src/lib/locale-lessons/en/lessons",
+      `${SAMPLE_LESSON_ID}.json`,
+    );
+    await mkdir(path.dirname(repoLessonPath), { recursive: true });
+    await writeFile(repoLessonPath, '{"lessonId":"intro-m1-l1-what-is-ai"}\n', "utf8");
+
+    const index = await buildPhase13BArtifactIndex(root);
+    expect(index.lessonArtifacts.size).toBe(0);
+  });
+});
+
+describe("Phase 13B collector paid run", () => {
+  async function writePaidJobAndPackage(
+    root: string,
+    locale: "ar-MSA" | "en" | "ar-Gulf",
+    lessonId: string,
+    options?: { includePackage?: boolean },
+  ): Promise<void> {
+    const shardDir = path.join(root, `locale-phase13b-shard-${locale}-00`);
+    const jobsDir = path.join(
+      shardDir,
+      "src/lib/locale-lessons/ar-MSA/reports/phase13b-full-jobs",
+      locale,
+    );
+    const packagesDir = path.join(
+      shardDir,
+      "src/lib/locale-lessons/ar-MSA/reports/phase13b-generated-packages",
+      locale,
+    );
+    await mkdir(jobsDir, { recursive: true });
+    await writeFile(
+      path.join(jobsDir, `${lessonId}.result.json`),
+      `${JSON.stringify({
+        locale,
+        lessonId,
+        ok: true,
+        pipeline: locale === "ar-MSA" ? "learner-final-derived" : "fragment-adapt",
+        requiresPaidApi: locale !== "ar-MSA",
+        fieldCount: locale === "ar-MSA" ? 0 : 12,
+        errors: [],
+        generatedAt: "2026-07-07T00:00:00.000Z",
+        mode: locale === "ar-MSA" ? "learner-final-write" : "openai-fragment",
+        skippedPaidApi: false,
+      })}\n`,
+      "utf8",
+    );
+    if (options?.includePackage !== false) {
+      await mkdir(packagesDir, { recursive: true });
+      await writeFile(
+        path.join(packagesDir, `${lessonId}.json`),
+        `${JSON.stringify({ lessonId, locale, title: "test" })}\n`,
+        "utf8",
+      );
+    }
+  }
+
+  it("fails paid collect when job result is ok but package JSON is missing", async () => {
+    const root = await makeTempArtifactsRoot();
+    await writePaidJobAndPackage(root, "ar-MSA", SAMPLE_LESSON_ID, {
+      includePackage: false,
+    });
+
+    const matrix = await buildPhase13BFullMatrix({
+      targetLocales: ["ar-MSA"],
+      lessonIdsOverride: [SAMPLE_LESSON_ID],
+    });
+
+    const report = await buildPhase13BFullCollectReport({
+      target: ["ar-MSA"],
+      dryRun: false,
+      artifactsDir: root,
+      matrix,
+    });
+
+    expect(report.planned).toBe(1);
+    expect(report.lessonJsonPresent).toBe(0);
+    expect(report.generated).toEqual([]);
+    expect(report.failed).toEqual(["ar-MSA/intro-m1-l1-what-is-ai"]);
+    expect(report.retryCells).toEqual([
+      { locale: "ar-MSA", lessonId: SAMPLE_LESSON_ID },
+    ]);
+    expect(phase13BCollectReportExitCode(report)).toBe(1);
+  });
+
+  it("succeeds paid collect when job result and package JSON both exist", async () => {
+    const root = await makeTempArtifactsRoot();
+    await writePaidJobAndPackage(root, "en", SAMPLE_LESSON_ID);
+
+    const matrix = await buildPhase13BFullMatrix({
+      targetLocales: ["en"],
+      lessonIdsOverride: [SAMPLE_LESSON_ID],
+    });
+
+    const report = await buildPhase13BFullCollectReport({
+      target: ["en"],
+      dryRun: false,
+      artifactsDir: root,
+      matrix,
+    });
+
+    expect(report.planned).toBe(1);
+    expect(report.lessonJsonPresent).toBe(1);
+    expect(report.generated).toEqual(["en/intro-m1-l1-what-is-ai"]);
+    expect(report.failed).toEqual([]);
+    expect(report.skipped).toEqual([]);
+    expect(report.retryCells).toEqual([]);
+    expect(phase13BCollectReportExitCode(report)).toBe(0);
   });
 });

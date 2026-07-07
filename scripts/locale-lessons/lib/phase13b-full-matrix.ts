@@ -6,8 +6,11 @@ export const PHASE13B_FULL_CELL_COUNT = FULL_LESSON_COUNT * PACKAGE_LOCALES.leng
 
 export const PHASE13B_GITHUB_MATRIX_JOB_LIMIT = 256;
 
+export const PHASE13B_SHARD_SIZE = 10;
+
 export const PHASE13B_CELL_ARTIFACT_PREFIX = "locale-phase13b-full-";
 export const PHASE13B_BATCH_ARTIFACT_PREFIX = "locale-phase13b-batch-";
+export const PHASE13B_SHARD_ARTIFACT_PREFIX = "locale-phase13b-shard-";
 
 export type Phase13BPipelineMode = "learner-final-derived" | "fragment-adapt";
 
@@ -95,25 +98,124 @@ export function phase13BBatchArtifactName(locale: LessonPackageLocale): string {
   return `${PHASE13B_BATCH_ARTIFACT_PREFIX}${locale}`;
 }
 
-export interface Phase13BWorkflowShardCell {
+export interface Phase13BWorkflowShardRow {
   locale: LessonPackageLocale;
   source_scope: Phase13BSourceScope;
+  shard_index: string;
+  /** Comma-separated lesson IDs for this shard (GitHub matrix friendly). */
+  lesson_ids: string;
 }
 
-/** GitHub Actions matrix shards (one job per locale, ≤256 job limit). */
+export function formatPhase13BShardIndex(index: number): string {
+  return String(index).padStart(2, "0");
+}
+
+export function chunkLessonIds(ids: readonly string[], shardSize: number): string[][] {
+  const chunks: string[][] = [];
+  for (let index = 0; index < ids.length; index += shardSize) {
+    chunks.push(ids.slice(index, index + shardSize));
+  }
+  return chunks;
+}
+
+export function parseShardLessonIdsArg(raw: string | null | undefined): string[] {
+  if (!raw?.trim()) {
+    throw new Error("shard lesson_ids are required");
+  }
+  const ids = raw
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean);
+  if (ids.length === 0) {
+    throw new Error("shard lesson_ids must include at least one lesson ID");
+  }
+  if (ids.length > PHASE13B_SHARD_SIZE) {
+    throw new Error(
+      `shard lesson_ids exceeds max shard size ${PHASE13B_SHARD_SIZE} (got ${ids.length})`,
+    );
+  }
+  return ids;
+}
+
+export function phase13BShardArtifactName(
+  locale: LessonPackageLocale,
+  shardIndex: string,
+): string {
+  return `${PHASE13B_SHARD_ARTIFACT_PREFIX}${locale}-${shardIndex}`;
+}
+
+function buildShardRowsForLocale(input: {
+  locale: LessonPackageLocale;
+  sourceScope: Phase13BSourceScope;
+  lessonIds: readonly string[];
+}): Phase13BWorkflowShardRow[] {
+  const chunks = chunkLessonIds(input.lessonIds, PHASE13B_SHARD_SIZE);
+  return chunks.map((chunk, index) => ({
+    locale: input.locale,
+    source_scope: input.sourceScope,
+    shard_index: formatPhase13BShardIndex(index),
+    lesson_ids: chunk.join(","),
+  }));
+}
+
+function buildShardRowsFromCells(
+  cells: readonly Phase13BFullMatrixCell[],
+  sourceScope: Phase13BSourceScope,
+): Phase13BWorkflowShardRow[] {
+  const byLocale = new Map<LessonPackageLocale, string[]>();
+  for (const cell of cells) {
+    const list = byLocale.get(cell.locale) ?? [];
+    if (!list.includes(cell.lesson_id)) {
+      list.push(cell.lesson_id);
+    }
+    byLocale.set(cell.locale, list);
+  }
+
+  const rows: Phase13BWorkflowShardRow[] = [];
+  for (const [locale, lessonIds] of byLocale) {
+    rows.push(
+      ...buildShardRowsForLocale({
+        locale,
+        sourceScope,
+        lessonIds,
+      }),
+    );
+  }
+  return rows.sort((left, right) => {
+    if (left.locale !== right.locale) return left.locale.localeCompare(right.locale);
+    return left.shard_index.localeCompare(right.shard_index);
+  });
+}
+
+/** GitHub Actions matrix shards (≤10 lessons each, ≤256 jobs). */
 export async function buildPhase13BWorkflowShardMatrix(input: {
   sourceScope?: Phase13BSourceScope;
   targetLocales?: readonly LessonPackageLocale[];
-}): Promise<Phase13BWorkflowShardCell[]> {
+  lessonIdsOverride?: string[];
+  retryCells?: Phase13BFullMatrixCell[];
+}): Promise<Phase13BWorkflowShardRow[]> {
   const sourceScope = input.sourceScope ?? "ar-MSA";
+
+  if (input.retryCells?.length) {
+    return buildShardRowsFromCells(input.retryCells, sourceScope);
+  }
+
+  const lessonIds = await selectPhase13BFullLessonIds({
+    lessonIdsOverride: input.lessonIdsOverride,
+  });
   const locales = input.targetLocales?.length
     ? [...input.targetLocales]
     : [...PHASE13B_TARGET_LOCALES];
 
-  return locales.map((locale) => ({
-    locale,
-    source_scope: sourceScope,
-  }));
+  return locales.flatMap((locale) =>
+    buildShardRowsForLocale({ locale, sourceScope, lessonIds }),
+  );
+}
+
+/** @deprecated Use buildPhase13BWorkflowShardMatrix. */
+export interface Phase13BWorkflowShardCell {
+  locale: LessonPackageLocale;
+  source_scope: Phase13BSourceScope;
 }
 
 export function serializeGitHubActionsMatrix<T>(include: T[]): string {

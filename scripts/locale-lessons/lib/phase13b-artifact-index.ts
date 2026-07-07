@@ -5,7 +5,9 @@ import type { Phase13BJobResult } from "./phase13b-job-result.ts";
 import {
   PHASE13B_BATCH_ARTIFACT_PREFIX,
   PHASE13B_CELL_ARTIFACT_PREFIX,
+  PHASE13B_SHARD_ARTIFACT_PREFIX,
 } from "./phase13b-full-matrix.ts";
+import { isPhase13BGeneratedPackagePath } from "./phase13b-generated-packages.ts";
 
 export interface IndexedPhase13BJobResult {
   result: Phase13BJobResult;
@@ -71,6 +73,24 @@ export function parsePhase13BBatchArtifactDirName(
   return null;
 }
 
+/** Parse `locale-phase13b-shard-{locale}-{shardIndex}` artifact directory names. */
+export function parsePhase13BShardArtifactDirName(
+  dirName: string,
+): { locale: LessonPackageLocale; shardIndex: string } | null {
+  if (!dirName.startsWith(PHASE13B_SHARD_ARTIFACT_PREFIX)) return null;
+  const rest = dirName.slice(PHASE13B_SHARD_ARTIFACT_PREFIX.length);
+  if (rest.startsWith("ar-Gulf-")) {
+    return { locale: "ar-Gulf", shardIndex: rest.slice("ar-Gulf-".length) };
+  }
+  if (rest.startsWith("ar-MSA-")) {
+    return { locale: "ar-MSA", shardIndex: rest.slice("ar-MSA-".length) };
+  }
+  if (rest.startsWith("en-")) {
+    return { locale: "en", shardIndex: rest.slice("en-".length) };
+  }
+  return null;
+}
+
 function parseLessonIdFromResultFileName(fileName: string): string | null {
   if (!fileName.endsWith(".result.json")) return null;
   const lessonId = fileName.slice(0, -".result.json".length);
@@ -82,6 +102,10 @@ function inferBatchLocaleFromPath(filePath: string): {
   artifactSource?: string;
 } | null {
   for (const part of filePath.split(path.sep)) {
+    const shard = parsePhase13BShardArtifactDirName(part);
+    if (shard) {
+      return { locale: shard.locale, artifactSource: part };
+    }
     const parsed = parsePhase13BBatchArtifactDirName(part);
     if (parsed) {
       return { locale: parsed.locale, artifactSource: part };
@@ -171,6 +195,36 @@ async function walkFiles(root: string, dir = root): Promise<string[]> {
   return files;
 }
 
+function inferGeneratedPackageIdentity(
+  normalized: string,
+  filePath: string,
+): { locale: LessonPackageLocale; lessonId: string; artifactSource?: string } | null {
+  const match = normalized.match(
+    /phase13b-generated-packages\/(ar-MSA|ar-Gulf|en)\/([^/]+)\.json$/,
+  );
+  if (!match) return null;
+  const batch = inferBatchLocaleFromPath(filePath);
+  return {
+    locale: match[1] as LessonPackageLocale,
+    lessonId: match[2],
+    artifactSource: batch?.artifactSource,
+  };
+}
+
+function indexLessonArtifact(
+  lessonArtifacts: Map<string, IndexedPhase13BLessonArtifact>,
+  root: string,
+  filePath: string,
+  identity: { locale: LessonPackageLocale; lessonId: string; artifactSource?: string },
+): void {
+  const key = phase13BCellKey(identity.locale, identity.lessonId);
+  lessonArtifacts.set(key, {
+    filePath,
+    relativePath: relativeFromRoot(root, filePath),
+    artifactSource: identity.artifactSource,
+  });
+}
+
 function indexJobResult(
   jobResults: Map<string, IndexedPhase13BJobResult>,
   root: string,
@@ -202,7 +256,6 @@ export async function buildPhase13BArtifactIndex(
 
   for (const filePath of files) {
     const normalized = normalizePath(filePath);
-    const inferredPerCell = inferFromPerCellArtifactAncestors(filePath);
 
     if (normalized.endsWith(".result.json")) {
       try {
@@ -216,19 +269,12 @@ export async function buildPhase13BArtifactIndex(
       continue;
     }
 
-    if (normalized.endsWith(".json") && normalized.includes("/lessons/")) {
-      const localeMatch = normalized.match(
-        /locale-lessons\/(ar-MSA|ar-Gulf|en)\/(?:generated\/learner-final\/)?lessons\/([^/]+)\.json$/,
-      );
-      if (!localeMatch) continue;
-      const locale = localeMatch[1] as LessonPackageLocale;
-      const lessonId = localeMatch[2];
-      const key = phase13BCellKey(locale, lessonId);
-      lessonArtifacts.set(key, {
-        filePath,
-        relativePath: relativeFromRoot(root, filePath),
-        artifactSource: inferredPerCell?.artifactSource,
-      });
+    if (normalized.endsWith(".json") && isPhase13BGeneratedPackagePath(normalized)) {
+      const identity = inferGeneratedPackageIdentity(normalized, filePath);
+      if (identity) {
+        indexLessonArtifact(lessonArtifacts, root, filePath, identity);
+      }
+      continue;
     }
   }
 
