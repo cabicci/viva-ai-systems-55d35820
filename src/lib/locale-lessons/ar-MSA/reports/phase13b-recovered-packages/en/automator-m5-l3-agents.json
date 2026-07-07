@@ -1,0 +1,94 @@
+{
+  "locale": "en",
+  "lessonId": "automator-m5-l3-agents",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "automator",
+  "moduleId": "automator-m5",
+  "productionRoute": "/learn/automator/automator-m5-l3-agents",
+  "titleEn": "Agents",
+  "title": "Agents",
+  "summary": "An agent selects steps towards a goal — it requires boundaries and limited tools.",
+  "estimatedMinutes": 12,
+  "nextLessonId": "automator-m6-l1-lead-capture",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation",
+      "subtitle": "Introduction",
+      "contentMarkdown": "- **What will you understand?** An **Agent** chooses steps towards a goal — with boundaries and specific tools.\n- **Why now?** After **LLM** and **RAG** — a decision within the flow when the path is uncertain.",
+      "bullets": [
+        "**What will you understand?** An **Agent** chooses steps towards a goal — with boundaries and specific tools.",
+        "**Why now?** After **LLM** and **RAG** — a decision within the flow when the path is uncertain."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension",
+      "subtitle": "Automated responses to unrequested actions",
+      "contentMarkdown": "- Confirmation messages for all clients — even those who did not complain. Or a never-ending loop.\n- An **Agent** without a **Boundary** = risk.",
+      "bullets": [
+        "Confirmation messages for all clients — even those who did not complain. Or a never-ending loop.",
+        "An **Agent** without a **Boundary** = risk."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core idea",
+      "subtitle": "Fixed Workflow vs Agent",
+      "contentMarkdown": "- **Workflow:** A → B → C — great for known repetitive tasks.\n- **Agent:** Goal + tools — decides the order until the goal is reached or stopped.\n- A smart **Agent** + boundaries + few tools = safe.",
+      "bullets": [
+        "**Workflow:** A → B → C — great for known repetitive tasks.",
+        "**Agent:** Goal + tools — decides the order until the goal is reached or stopped.",
+        "A smart **Agent** + boundaries + few tools = safe."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz",
+      "subtitle": "Understanding Agents",
+      "contentMarkdown": "> **Quiz key:**\n\nFixed Workflow with many conditions for every possibility.\n- **Correct answer:** An **Agent** with a clear goal and specific tools, with a limit that prevents sending without approval.\nAn **Agent** open with all tools to be 'smart'.\n\n**Explanation:** The correct answer is based on the context provided.",
+      "bullets": [
+        "Fixed Workflow with many conditions for every possibility.",
+        "**Correct answer:** An **Agent** with a clear goal and specific tools, with a limit that prevents sending without approval.",
+        "An **Agent** open with all tools to be 'smart'."
+      ],
+      "tables": [],
+      "quiz": {
+        "correctIndex": 1,
+        "options": [
+          "Fixed Workflow with many conditions for every possibility.",
+          "An **Agent** open with all tools to be 'smart'.",
+          "A partial answer that misses the context and ignores the next step in the decision."
+        ],
+        "explanation": "The correct answer is based on the context provided.",
+        "question": "What is the most suitable option according to the section above?"
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission",
+      "contentMarkdown": "| Goal and Tools | 60% |\n| Limit and Transformation | 40% |",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence close",
+      "contentMarkdown": "- **Next:** **Lead Capture**.\n\n---",
+      "bullets": [
+        "**Next:** **Lead Capture**."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-07-07T00:36:19.315Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "automator-m5-l3-agents",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/automator-m5-l3-agents.canonical.md"
+  }
+}

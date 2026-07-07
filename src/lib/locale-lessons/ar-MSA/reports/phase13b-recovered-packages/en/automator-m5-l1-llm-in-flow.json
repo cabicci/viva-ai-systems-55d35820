@@ -1,0 +1,157 @@
+{
+  "locale": "en",
+  "lessonId": "automator-m5-l1-llm-in-flow",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "automator",
+  "moduleId": "automator-m5",
+  "productionRoute": "/learn/automator/automator-m5-l1-llm-in-flow",
+  "titleEn": "LLM in Flow",
+  "title": "LLM in Flow",
+  "summary": "AI reads, classifies, and summarizes — it doesn't just move data.",
+  "estimatedMinutes": 12,
+  "nextLessonId": "automator-m5-l2-rag-in-n8n",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation",
+      "subtitle": "Lesson Start",
+      "contentMarkdown": "- **What will you understand?** In **Automation**, AI reads, classifies, and summarizes — it doesn't just transfer data.\n- **Why now?** After testing, **Flow** is ready before adding an AI step.\n- **What after the lesson?** One **AI** step in **Workflow** — its exact function.",
+      "bullets": [
+        "**What will you understand?** In **Automation**, AI reads, classifies, and summarizes — it doesn't just transfer data.",
+        "**Why now?** After testing, **Flow** is ready before adding an AI step.",
+        "**What after the lesson?** One **AI** step in **Workflow** — its exact function."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension",
+      "subtitle": "A Familiar Situation",
+      "contentMarkdown": "- A long WhatsApp message → recorded in a spreadsheet — the team reads and classifies it manually every day.\n- **Automation** moved the data — it didn't do the time-consuming work.",
+      "bullets": [
+        "A long WhatsApp message → recorded in a spreadsheet — the team reads and classifies it manually every day.",
+        "**Automation** moved the data — it didn't do the time-consuming work."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core Idea",
+      "subtitle": "AI Step = Understanding and Writing",
+      "contentMarkdown": "- Before: **Trigger** → **Action** → Save. Data moves without 'understanding'.\n- With **LLM Step:** Classification, summary, draft response — **Structured Output** for the next step.\n- **AI** does not replace the system — it adds one thinking step.",
+      "bullets": [
+        "Before: **Trigger** → **Action** → Save. Data moves without 'understanding'.",
+        "With **LLM Step:** Classification, summary, draft response — **Structured Output** for the next step.",
+        "**AI** does not replace the system — it adds one thinking step."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison",
+      "subtitle": "Transfer vs Understanding",
+      "contentMarkdown": "| Transfer Only | AI Step |\n|---------|---------|\n| Message → Sheet as is — manual reading | AI classifies and extracts the name → **Flow** directs automatically |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Transfer Only",
+            "AI Step"
+          ],
+          "rows": [
+            [
+              "Message → Sheet as is — manual reading",
+              "AI classifies and extracts the name → **Flow** directs automatically"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary",
+      "contentMarkdown": "| **LLM Step** | A step that sends text to AI and returns a classification or summary |\n| **Structured Output** | Fixed fields — not a long paragraph |",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz",
+      "subtitle": "Quick Confirmation",
+      "contentMarkdown": "- **Correct answer:** Classifying the message and extracting the name and request in an organized way.\n- **Explanation:** The AI step adds understanding — not just speed of transfer.",
+      "bullets": [
+        "**Correct answer:** Classifying the message and extracting the name and request in an organized way.",
+        "**Explanation:** The AI step adds understanding — not just speed of transfer."
+      ],
+      "tables": [],
+      "quiz": {
+        "correctIndex": 0,
+        "options": [
+          "**Correct answer:** Classifying the message and extracting the name and request in an organized way.",
+          "An unsuitable option; it ignores the key details in the section above.",
+          "A partial answer that misses the context and ignores the next step for decision-making."
+        ],
+        "explanation": "The AI step adds understanding — not just speed of transfer.",
+        "question": "Quick Confirmation: What is the most suitable option?"
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission",
+      "subtitle": "One AI Step",
+      "contentMarkdown": "| Dimension | Weight |\n|-------|-------|\n| Clarity of Step | 60% |\n| Connection to Workflow | 40% |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight"
+          ],
+          "rows": [
+            [
+              "Clarity of Step",
+              "60%"
+            ],
+            [
+              "Connection to Workflow",
+              "40%"
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "delivery": [],
+        "rubric": [
+          {
+            "dimension": "Clarity of Step",
+            "weight": 60,
+            "criteria": ""
+          },
+          {
+            "dimension": "Connection to Workflow",
+            "weight": 40,
+            "criteria": ""
+          }
+        ],
+        "yamlIntent": "Add one AI step; define input, structured output, next step",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence Close",
+      "contentMarkdown": "- **Next:** **RAG** — responses from your files, not from guessing.",
+      "bullets": [
+        "**Next:** **RAG** — responses from your files, not from guessing."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-07-07T00:36:19.315Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "automator-m5-l1-llm-in-flow",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/automator-m5-l1-llm-in-flow.canonical.md"
+  }
+}

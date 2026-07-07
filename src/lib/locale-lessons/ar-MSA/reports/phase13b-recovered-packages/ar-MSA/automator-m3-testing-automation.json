@@ -1,0 +1,187 @@
+{
+  "locale": "ar-MSA",
+  "lessonId": "automator-m3-testing-automation",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "automator",
+  "moduleId": "automator-m4",
+  "productionRoute": "/learn/automator/automator-m3-testing-automation",
+  "titleEn": "Testing Automation",
+  "title": "اختبار الأتمتة",
+  "summary": "Testing protects customer trust — unit, flow, edge cases, manual review",
+  "estimatedMinutes": 12,
+  "nextLessonId": "automator-m5-l1-llm-in-flow",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation — بداية الدرس",
+      "subtitle": "بداية الدرس",
+      "contentMarkdown": "- **ماذا ستفهم؟** الاختبار يمنع أخطاء محرجة في **الأتمتة (Automation)** — ليس رفاهية تقنية.\n- **لماذا الآن؟** بعد معالجة الأخطاء، **مسار العمل (workflow)** شغّال — تحتاج التأكد أنه لن يرسل «undefined» لـ ٥٠٠ عميل.\n- **ماذا بعد الدرس؟** قائمة اختبار: خطوة → مسار كامل → حالات غريبة → مراجعة يدوية.",
+      "bullets": [
+        "**ماذا ستفهم؟** الاختبار يمنع أخطاء محرجة في **الأتمتة (Automation)** — ليس رفاهية تقنية.",
+        "**لماذا الآن؟** بعد معالجة الأخطاء، **مسار العمل (workflow)** شغّال — تحتاج التأكد أنه لن يرسل «undefined» لـ ٥٠٠ عميل.",
+        "**ماذا بعد الدرس؟** قائمة اختبار: خطوة → مسار كامل → حالات غريبة → مراجعة يدوية."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension — موقف مألوف",
+      "subtitle": "موقف مألوف",
+      "contentMarkdown": "- «الأتمتة أرسلت «مرحبًا undefined» لكل العملاء»\n- شغّلت **workflow** على production من دون اختبار — ٣٠٠ عميل، ثقة ضاعت في ساعة.\n- دقيقة اختبار قبل live كانت ستكشف حقل الاسم الفارغ.",
+      "bullets": [
+        "«الأتمتة أرسلت «مرحبًا undefined» لكل العملاء»",
+        "شغّلت **workflow** على production من دون اختبار — ٣٠٠ عميل، ثقة ضاعت في ساعة.",
+        "دقيقة اختبار قبل live كانت ستكشف حقل الاسم الفارغ."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core idea — ٤ مستويات اختبار",
+      "subtitle": "٤ مستويات اختبار",
+      "contentMarkdown": "- **Unit Test (اختبار خطوة):** لو الاسم فارغ، ماذا يحدث؟\n- **Integration Test (اختبار التدفق):** شغّل **Flow (تدفق عمل)** كاملًا ببيانات تجريبية.\n- **Edge cases (حالات غريبة):** فارغ، خطأ، مكرر — ٣ حالات على الأقل.\n- **Manual review (مراجعة يدوية):** عين بشرية قبل فتح production — آخر بوابة.",
+      "bullets": [
+        "**Unit Test (اختبار خطوة):** لو الاسم فارغ، ماذا يحدث؟",
+        "**Integration Test (اختبار التدفق):** شغّل **Flow (تدفق عمل)** كاملًا ببيانات تجريبية.",
+        "**Edge cases (حالات غريبة):** فارغ، خطأ، مكرر — ٣ حالات على الأقل.",
+        "**Manual review (مراجعة يدوية):** عين بشرية قبل فتح production — آخر بوابة."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison — live بدون اختبار vs checklist",
+      "subtitle": "live بدون اختبار vs checklist",
+      "contentMarkdown": "| «نجرب على العملاء» | Checklist قبل live |\n|---------------------|---------------------|\n| أول خطأ يصل لـ ٣٠٠ عميل | بيانات تجريبية → edge cases → مراجعة → production |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "«نجرب على العملاء»",
+            "Checklist قبل live"
+          ],
+          "rows": [
+            [
+              "أول خطأ يصل لـ ٣٠٠ عميل",
+              "بيانات تجريبية → edge cases → مراجعة → production"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary — مصطلحان للاختبار",
+      "subtitle": "مصطلحان للاختبار",
+      "contentMarkdown": "| المصطلح | المعنى | مثال |\n|---------|--------|------|\n| **Unit Test (اختبار خطوة)** | جزء واحد — **node** أو شرط | إيميل فارغ → **Filter** يوقف؟ |\n| **Integration Test (اختبار التدفق)** | **Workflow** كامل ببيانات وهمية | lead «اختبار» → وصل بريد + صف في الجدول؟ |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "المصطلح",
+            "المعنى",
+            "مثال"
+          ],
+          "rows": [
+            [
+              "**Unit Test (اختبار خطوة)**",
+              "جزء واحد — **node** أو شرط",
+              "إيميل فارغ → **Filter** يوقف؟"
+            ],
+            [
+              "**Integration Test (اختبار التدفق)**",
+              "**Workflow** كامل ببيانات وهمية",
+              "lead «اختبار» → وصل بريد + صف في الجدول؟"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Diagram block (intent)",
+      "heading": "Diagram block (intent)",
+      "contentMarkdown": "Unit → Full flow → Edge cases → Manual review → Live",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz — تأكيد سريع",
+      "subtitle": "تأكيد سريع",
+      "contentMarkdown": "**السؤال:** **workflow** جديد يرسل ترحيبًا. أفضل خطوة قبل production؟\n\n- **الإجابة الصحيحة (correctIndex: 0):** بيانات تجريبية + ٣ edge cases + مراجعة يدوية\n- **التفسير:** الخطأ يبقى عندك — لا عند العميل.",
+      "bullets": [
+        "**الإجابة الصحيحة (correctIndex: 0):** بيانات تجريبية + ٣ edge cases + مراجعة يدوية",
+        "**التفسير:** الخطأ يبقى عندك — لا عند العميل."
+      ],
+      "tables": [],
+      "quiz": {
+        "question": "**workflow** جديد يرسل ترحيبًا. أفضل خطوة قبل production؟",
+        "correctIndex": 0,
+        "options": [
+          "**الإجابة الصحيحة (correctIndex: 0):** بيانات تجريبية + ٣ edge cases + مراجعة يدوية",
+          "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+        ],
+        "explanation": "الخطأ يبقى عندك — لا عند العميل."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission — test checklist",
+      "subtitle": "test checklist",
+      "contentMarkdown": "| البعد | الوزن | المعيار |\n|-------|-------|---------|\n| Unit + Full-flow | 50% | unit بمدخل ونتيجة؛ full-flow ببيانات تجريبية |\n| Edge + Review | 50% | ٣ edge cases؛ مراجعة يدوية (مين + ماذا) |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "البعد",
+            "الوزن",
+            "المعيار"
+          ],
+          "rows": [
+            [
+              "Unit + Full-flow",
+              "50%",
+              "unit بمدخل ونتيجة؛ full-flow ببيانات تجريبية"
+            ],
+            [
+              "Edge + Review",
+              "50%",
+              "٣ edge cases؛ مراجعة يدوية (مين + ماذا)"
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "delivery": [],
+        "rubric": [
+          {
+            "dimension": "Unit + Full-flow",
+            "weight": 50,
+            "criteria": "unit بمدخل ونتيجة؛ full-flow ببيانات تجريبية"
+          },
+          {
+            "dimension": "Edge + Review",
+            "weight": 50,
+            "criteria": "٣ edge cases؛ مراجعة يدوية (مين + ماذا)"
+          }
+        ],
+        "yamlIntent": "Build test checklist: unit, full flow, 3 edge cases, manual review",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence close",
+      "contentMarkdown": "- **فهمت:** الاختبار يحمي ثقة العملاء.\n- **تستطيع:** checklist جاهز قبل live.\n- **التالي:** **LLM في Flow** — الذكاء الاصطناعي كـ **node**.\n\n---",
+      "bullets": [
+        "**فهمت:** الاختبار يحمي ثقة العملاء.",
+        "**تستطيع:** checklist جاهز قبل live.",
+        "**التالي:** **LLM في Flow** — الذكاء الاصطناعي كـ **node**."
+      ],
+      "tables": []
+    }
+  ],
+  "sourceFile": "docs/playbooks/adaptive-canonical/automator-m3-testing-automation.canonical.md",
+  "generatedAt": "2026-06-20T22:27:43.614Z"
+}

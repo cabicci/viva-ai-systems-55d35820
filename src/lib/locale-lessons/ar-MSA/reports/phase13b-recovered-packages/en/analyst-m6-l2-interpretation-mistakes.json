@@ -1,0 +1,84 @@
+{
+  "locale": "en",
+  "lessonId": "analyst-m6-l2-interpretation-mistakes",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "analyst",
+  "moduleId": "analyst-m6",
+  "productionRoute": "/learn/analyst/analyst-m6-l2-interpretation-mistakes",
+  "titleEn": "Interpretation Mistakes",
+  "title": "Interpretation Mistakes",
+  "summary": "Correct data + wrong interpretation = wrong decision",
+  "estimatedMinutes": 12,
+  "nextLessonId": "analyst-m7-l1-from-decisions-to-business",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation",
+      "subtitle": "Lesson Start",
+      "contentMarkdown": "- **What Will You Understand?** The data is correct — the decision is wrong if interpreted incorrectly.",
+      "bullets": [
+        "**What Will You Understand?** The data is correct — the decision is wrong if interpreted incorrectly."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core Idea — 4 Traps",
+      "subtitle": "4 Traps",
+      "contentMarkdown": "- **Correlation** ≠ Causation\n- Small Sample — 3 customers is not the 'market'\n- **Vanity Metric** — Likes ≠ Sales\n- Recency Bias — The last week is not the whole story",
+      "bullets": [
+        "**Correlation** ≠ Causation",
+        "Small Sample — 3 customers is not the 'market'",
+        "**Vanity Metric** — Likes ≠ Sales",
+        "Recency Bias — The last week is not the whole story"
+      ],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz",
+      "subtitle": "Common Errors in Interpretation",
+      "contentMarkdown": "> **Quiz:**\n\n- **Correct Answer:** Correlation ≠ Causation — there could be a third reason (time of day, type of customers).\nAnalysis Paralysis — delays in decision-making.\nVanity Metric — likes are not important.\n\n**Explanation:** The correct answer is Correlation ≠ Causation because it highlights the possibility of other influencing factors.",
+      "bullets": [
+        "**Correct Answer:** Correlation ≠ Causation — there could be a third reason (time of day, type of customers).",
+        "Analysis Paralysis — delays in decision-making.",
+        "Vanity Metric — likes are not important."
+      ],
+      "tables": [],
+      "quiz": {
+        "correctIndex": 0,
+        "options": [
+          "Correlation ≠ Causation — there could be a third reason (time of day, type of customers).",
+          "Analysis Paralysis — delays in decision-making.",
+          "Vanity Metric — likes are not important."
+        ],
+        "explanation": "The correct answer is Correlation ≠ Causation because it highlights the possibility of other influencing factors.",
+        "question": "What is the most appropriate option based on the section above?"
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission — 3 Scenarios",
+      "subtitle": "3 Scenarios",
+      "contentMarkdown": "| Trap Diagnosis | 50% |\n| Better Decision | 50% |",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence Close",
+      "contentMarkdown": "- **Next:** **From Decisions to Business**.\n\n---",
+      "bullets": [
+        "**Next:** **From Decisions to Business**."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-07-07T00:36:19.602Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "analyst-m6-l2-interpretation-mistakes",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/analyst-m6-l2-interpretation-mistakes.canonical.md"
+  }
+}

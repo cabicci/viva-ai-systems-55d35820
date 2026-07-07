@@ -1,0 +1,92 @@
+{
+  "locale": "en",
+  "lessonId": "analyst-m4-automated-dashboard",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "analyst",
+  "moduleId": "analyst-m5",
+  "productionRoute": "/learn/analyst/analyst-m4-automated-dashboard",
+  "titleEn": "Automated Dashboard",
+  "title": "Automated Dashboard",
+  "summary": "Automate one metric that drives decisions — start manually, then automate.",
+  "estimatedMinutes": 12,
+  "nextLessonId": "analyst-m5-l2-weekly-review-ritual",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation",
+      "subtitle": "Lesson Start",
+      "contentMarkdown": "- **What will you understand?** An automated dashboard saves time on data collection — if you know which number is important.\n- **Why now?** After four decision-making numbers — one of them is collected automatically.",
+      "bullets": [
+        "**What will you understand?** An automated dashboard saves time on data collection — if you know which number is important.",
+        "**Why now?** After four decision-making numbers — one of them is collected automatically."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension",
+      "subtitle": "Automate Everything — Without Decision",
+      "contentMarkdown": "- 20 charts — you don't know which number matters. **Manual First** before automation.",
+      "bullets": [
+        "20 charts — you don't know which number matters. **Manual First** before automation."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core Idea",
+      "subtitle": "One Number = Success",
+      "contentMarkdown": "- Collect manually for two weeks — if you read it and make a decision, automate it.\n- **Update Frequency:** Daily, weekly, real-time — based on the decision.",
+      "bullets": [
+        "Collect manually for two weeks — if you read it and make a decision, automate it.",
+        "**Update Frequency:** Daily, weekly, real-time — based on the decision."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz",
+      "subtitle": "Understanding Automated Dashboards",
+      "contentMarkdown": "> **Quiz:**\n\n- **Correct Answer:** Automate the number you read every week and make a decision — after collecting it manually for two weeks.\nAutomate the four numbers at once before trying manually.\nBuild 10 additional charts in Looker Studio.\n\n**Explanation:** The correct answer automates the number you read every week after collecting it manually for two weeks.",
+      "bullets": [
+        "**Correct Answer:** Automate the number you read every week and make a decision — after collecting it manually for two weeks.",
+        "Automate the four numbers at once before trying manually.",
+        "Build 10 additional charts in Looker Studio."
+      ],
+      "tables": [],
+      "quiz": {
+        "correctIndex": 0,
+        "options": [
+          "Automate the number you read every week and make a decision — after collecting it manually for two weeks.",
+          "Automate the four numbers at once before trying manually.",
+          "Build 10 additional charts in Looker Studio."
+        ],
+        "explanation": "The correct answer automates the number you read every week after collecting it manually for two weeks.",
+        "question": "What is the most appropriate option according to the section above?"
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission",
+      "contentMarkdown": "| Number + Source | 50% |\n| Storage + AI | 50% |",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence Close",
+      "contentMarkdown": "- **Next:** **Weekly Review Ritual**.\n\n---",
+      "bullets": [
+        "**Next:** **Weekly Review Ritual**."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-07-07T00:36:19.615Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "analyst-m4-automated-dashboard",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/analyst-m4-automated-dashboard.canonical.md"
+  }
+}

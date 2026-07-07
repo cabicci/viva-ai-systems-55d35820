@@ -1,0 +1,193 @@
+{
+  "locale": "en",
+  "lessonId": "builder-m7-l3-queries",
+  "canonicalVersion": "2026-06-18.1-polished",
+  "pathId": "builder",
+  "moduleId": "builder-m7",
+  "productionRoute": "/learn/builder/builder-m7-l3-queries",
+  "titleEn": "Queries — How to Fetch Data",
+  "title": "Queries — How to Fetch Data",
+  "summary": "A query is a specific question to the database — a clear question leads to a fast and safe page.",
+  "estimatedMinutes": 12,
+  "nextLessonId": "builder-m8-l1-sessions-jwt",
+  "sections": [
+    {
+      "role": "Orientation",
+      "heading": "Orientation",
+      "subtitle": "Lesson Start",
+      "contentMarkdown": "- **What will you understand?** A **query** is a **specific question** — for example, \"Get this client's conversations from the last week\" **instead of** \"Get everything\".\n- **Why now?** After designing and linking the tables, you need to ask the database correctly — **otherwise, the page will load in seconds**.\n- **What after the lesson?** You will write 3 questions in simple language — **the database will answer them**.",
+      "bullets": [
+        "**What will you understand?** A **query** is a **specific question** — for example, \"Get this client's conversations from the last week\" **instead of** \"Get everything\".",
+        "**Why now?** After designing and linking the tables, you need to ask the database correctly — **otherwise, the page will load in seconds**.",
+        "**What after the lesson?** You will write 3 questions in simple language — **the database will answer them**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Tension",
+      "heading": "Tension — The page loads in 6 seconds — and AI is 'slow'",
+      "subtitle": "The page loads in 6 seconds — and AI is 'slow'",
+      "contentMarkdown": "- **The client opens their conversation history** — **and waits for 6 seconds**. They think AI is slow, but the problem is with the question to the database.\n- **The wrong question:** \"Get all conversations\" — **the server returns 100,000 rows when you only need 20**.\n- **The right question:** \"Get 20 conversations for this client — the newest first\" — **200 milliseconds**.",
+      "bullets": [
+        "**The client opens their conversation history** — **and waits for 6 seconds**. They think AI is slow, but the problem is with the question to the database.",
+        "**The wrong question:** \"Get all conversations\" — **the server returns 100,000 rows when you only need 20**.",
+        "**The right question:** \"Get 20 conversations for this client — the newest first\" — **200 milliseconds**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Core idea",
+      "heading": "Core idea — A query is a specific question to the database",
+      "subtitle": "A query is a specific question to the database",
+      "contentMarkdown": "- **Any question has 4 parts:** **What do you want (SELECT)** — **From where (FROM)** — **With what conditions (WHERE)** — **Order and limit (ORDER + LIMIT)**.\n- **SELECT only the columns you need** — **not `SELECT *`**. **WHERE `user_id = current_client`** — **to avoid seeing others' data**.\n- **ORDER BY `created_at` desc + LIMIT 20** = **only the latest 20**. **A clear question = a fast page**.",
+      "bullets": [
+        "**Any question has 4 parts:** **What do you want (SELECT)** — **From where (FROM)** — **With what conditions (WHERE)** — **Order and limit (ORDER + LIMIT)**.",
+        "**SELECT only the columns you need** — **not `SELECT *`**. **WHERE `user_id = current_client`** — **to avoid seeing others' data**.",
+        "**ORDER BY `created_at` desc + LIMIT 20** = **only the latest 20**. **A clear question = a fast page**."
+      ],
+      "tables": []
+    },
+    {
+      "role": "Comparison",
+      "heading": "Comparison — Get everything vs. ask for what you need",
+      "subtitle": "Get everything vs. ask for what you need",
+      "contentMarkdown": "| Get everything and then filter | Specific question |\n|---------------------|-----------|\n| `select('*')` **from a table with 100,000 conversations** — **slow, heavy, and unsafe** | \"Get `id, title, status` from `tasks` — **only for this client** — **newest first** — **10 only**. **Fast, light, and safe** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Get everything and then filter",
+            "Specific question"
+          ],
+          "rows": [
+            [
+              "`select('*')` **from a table with 100,000 conversations** — **slow, heavy, and unsafe**",
+              "\"Get `id, title, status` from `tasks` — **only for this client** — **newest first** — **10 only**. **Fast, light, and safe**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Glossary",
+      "heading": "Glossary — Two terms for querying",
+      "subtitle": "Two terms for querying",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Query** | **A specific command you send to the database to fetch a certain piece of information** | \"Get the last 10 conversations for this client\" — **this is a query** |\n| **WHERE** | **The filter that specifies who or what is fetched** | `WHERE user_id = current_client` — **only their conversations** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**Query**",
+              "**A specific command you send to the database to fetch a certain piece of information**",
+              "\"Get the last 10 conversations for this client\" — **this is a query**"
+            ],
+            [
+              "**WHERE**",
+              "**The filter that specifies who or what is fetched**",
+              "`WHERE user_id = current_client` — **only their conversations**"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Screenshot block (intent)",
+      "heading": "Screenshot block (intent)",
+      "contentMarkdown": "**Every number has a question for the database:**\n\nThe page **is not a raw table** — **it has separate questions for the database**. **Each card = a specific query**. **A clear question = a number that responds quickly**.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "Quiz",
+      "heading": "Quiz — Quick Confirmation",
+      "subtitle": "Quick Confirmation",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** **The conversation history page is slow — the question takes 6 seconds. What do you suspect first?**\n\n**I used `SELECT *` instead of specifying the columns I need**.\nThe server needs more resources**.**\nThere are too many JOINs and it needs splitting**.**\n\n**Explanation:** **The first and easiest step:** **ask for only the columns you need**. **`SELECT *` slows everything down**.",
+      "bullets": [
+        "**I used `SELECT *` instead of specifying the columns I need**.",
+        "The server needs more resources**.**",
+        "There are too many JOINs and it needs splitting**.**"
+      ],
+      "tables": [],
+      "quiz": {
+        "question": "**The conversation history page is slow — the question takes 6 seconds. What do you suspect first?**",
+        "correctIndex": 0,
+        "options": [
+          "**I used `SELECT *` instead of specifying the columns I need**.",
+          "The server needs more resources.",
+          "There are too many JOINs and it needs splitting."
+        ],
+        "explanation": "**The first and easiest step:** **ask for only the columns you need**. **`SELECT *` slows everything down**."
+      }
+    },
+    {
+      "role": "Mission",
+      "heading": "Mission — Write 3 questions in simple language",
+      "subtitle": "Write 3 questions in simple language",
+      "contentMarkdown": "**Introduction:** **Think about your application** — **what questions do the pages need?** **Write them in simple language**. **10–15 minutes**.\n\n**Submission:** For each question — **the question in plain language**, **from which table**, **conditions**, **order and count**.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| 3 clear questions | 60% | **Simple language — not complex SQL**; **serves real pages** |\n| Conditions and limits | 40% | **Filter (from / condition)** — **not \"Get everything\"**; **order or limit on count** |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Dimension",
+            "Weight",
+            "Criteria"
+          ],
+          "rows": [
+            [
+              "3 clear questions",
+              "60%",
+              "**Simple language — not complex SQL**; **serves real pages**"
+            ],
+            [
+              "Conditions and limits",
+              "40%",
+              "**Filter (from / condition)** — **not \"Get everything\"**; **order or limit on count**"
+            ]
+          ]
+        }
+      ],
+      "mission": {
+        "intro": "**Think about your application** — **what questions do the pages need?** **Write them in simple language**. **10–15 minutes**.",
+        "delivery": [],
+        "rubric": [
+          {
+            "dimension": "3 clear questions",
+            "weight": 60,
+            "criteria": "**Simple language — not complex SQL**; **serves real pages**"
+          },
+          {
+            "dimension": "Conditions and limits",
+            "weight": 40,
+            "criteria": "**Filter (from / condition)** — **not \"Get everything\"**; **order or limit on count**"
+          }
+        ],
+        "yamlIntent": "Write 3 plain-language questions — table, conditions, order/limit — ~10–15 min",
+        "yamlType": "practice"
+      }
+    },
+    {
+      "role": "Confidence close",
+      "heading": "Confidence close",
+      "contentMarkdown": "- **You understood:** **A query is a specific question to the database**. **A clear question = a fast and safe page**.\n- **You can:** **You have 3 questions in simple language** — **ready to be converted into code or a prompt in Lovable**.\n- **Next:** **Sessions & JWT** — **how to identify the incoming client and protect their data**.\n\n---",
+      "bullets": [
+        "**You understood:** **A query is a specific question to the database**. **A clear question = a fast and safe page**.",
+        "**You can:** **You have 3 questions in simple language** — **ready to be converted into code or a prompt in Lovable**.",
+        "**Next:** **Sessions & JWT** — **how to identify the incoming client and protect their data**."
+      ],
+      "tables": []
+    }
+  ],
+  "generatedAt": "2026-07-07T00:42:43.416Z",
+  "adaptedFrom": {
+    "locale": "ar-MSA",
+    "lessonId": "builder-m7-l3-queries",
+    "canonicalVersion": "2026-06-18.1-polished",
+    "sourcePackagePath": "docs/playbooks/adaptive-canonical/builder-m7-l3-queries.canonical.md"
+  }
+}
