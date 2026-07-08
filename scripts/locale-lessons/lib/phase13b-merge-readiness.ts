@@ -156,21 +156,6 @@ function repairArMsaQuizSection(
   let working = repairQuizMechanicalArtifacts(section);
   const quiz = working.quiz!;
 
-  if (
-    shouldRealignQuizOptionsFromBullets(
-      quiz.options ?? [],
-      working.bullets,
-      quiz.correctIndex ?? 0,
-    )
-  ) {
-    const options = working.bullets.map((bullet) => cleanQuizOptionText(bullet));
-    working = {
-      ...working,
-      bullets: [...options],
-      quiz: { ...quiz, options, correctIndex: quiz.correctIndex },
-    };
-  }
-
   if (!hasPlaceholderQuizOptions(working.quiz?.options ?? [])) {
     return working;
   }
@@ -751,25 +736,6 @@ function repairQuizMechanicalArtifacts(
       return cleanQuizLearnerText(line);
     })
     .join("\n");
-
-  if (
-    shouldRealignQuizOptionsFromBullets(
-      options,
-      section.bullets,
-      quiz.correctIndex ?? 0,
-    )
-  ) {
-    options = section.bullets.map((bullet) => cleanQuizOptionText(bullet));
-    bullets = [...options];
-  } else if (
-    options.length > 0 &&
-    options.length === section.bullets.length &&
-    quiz.correctIndex !== undefined &&
-    cleanQuizOptionText(section.bullets[quiz.correctIndex] ?? "") !==
-      options[quiz.correctIndex]
-  ) {
-    bullets = [...options];
-  }
 
   const alignedBullets =
     options.length > 0 && bullets.length === options.length
