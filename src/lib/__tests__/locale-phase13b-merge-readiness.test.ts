@@ -1,5 +1,4 @@
 import { describe, expect, it } from "vitest";
-import { execSync } from "node:child_process";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import type {
@@ -31,7 +30,14 @@ const RECOVERED_EN = path.join(
   REPO_ROOT,
   "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en",
 );
-const MSA_LESSONS = path.join(REPO_ROOT, "src/lib/locale-lessons/ar-MSA/lessons");
+const MSA_RECOVERED_BASELINE = path.join(
+  REPO_ROOT,
+  "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-MSA",
+);
+const RECOVERED_GULF = path.join(
+  REPO_ROOT,
+  "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-Gulf",
+);
 
 async function loadJson<T>(filePath: string): Promise<T> {
   return JSON.parse(await fs.readFile(filePath, "utf8")) as T;
@@ -147,7 +153,7 @@ describe("phase13b known defect packages", () => {
   it("passes audit for en/builder-m5-l4-database-intro after repair", async () => {
     const lessonId = "builder-m5-l4-database-intro";
     const source = await loadJson<LocalizedLessonPackage>(
-      path.join(MSA_LESSONS, `${lessonId}.json`),
+      path.join(MSA_RECOVERED_BASELINE, `${lessonId}.json`),
     );
     const pkg = await loadJson<AdaptedLessonPackage>(
       path.join(RECOVERED_EN, `${lessonId}.json`),
@@ -170,7 +176,7 @@ describe("phase13b known defect packages", () => {
   it("repairs en/builder-m6-l2-wireframe mission delivery from bullets", async () => {
     const lessonId = "builder-m6-l2-wireframe";
     const source = await loadJson<LocalizedLessonPackage>(
-      path.join(MSA_LESSONS, `${lessonId}.json`),
+      path.join(MSA_RECOVERED_BASELINE, `${lessonId}.json`),
     );
     const pkg = await loadJson<AdaptedLessonPackage>(
       path.join(RECOVERED_EN, `${lessonId}.json`),
@@ -202,7 +208,7 @@ describe("phase13b repair idempotence and scope", () => {
   it("repair is idempotent for known defect packages", async () => {
     const lessonId = "builder-m5-l4-database-intro";
     const source = await loadJson<LocalizedLessonPackage>(
-      path.join(MSA_LESSONS, `${lessonId}.json`),
+      path.join(MSA_RECOVERED_BASELINE, `${lessonId}.json`),
     );
     const pkg = await loadJson<AdaptedLessonPackage>(
       path.join(RECOVERED_EN, `${lessonId}.json`),
@@ -221,7 +227,7 @@ describe("phase13b repair idempotence and scope", () => {
       ),
     ) as AdaptedLessonPackage;
     const source = await loadJson<LocalizedLessonPackage>(
-      path.join(MSA_LESSONS, `${lessonId}.json`),
+      path.join(MSA_RECOVERED_BASELINE, `${lessonId}.json`),
     );
     const beforeIndex = mainPkg.sections.find((s) => s.role === "Quiz")?.quiz
       ?.correctIndex;
@@ -231,50 +237,40 @@ describe("phase13b repair idempotence and scope", () => {
     expect(afterIndex).toBe(beforeIndex);
   });
 
-  it("does not reconstruct collapsed ar-Gulf quiz from ar-MSA recovered", async () => {
+  it("does not reconstruct Gulf quiz from recovered ar-MSA when Quiz already present", async () => {
     const lessonId = "analyst-m6-l2-interpretation-mistakes";
     const source = await loadJson<LocalizedLessonPackage>(
-      path.join(MSA_LESSONS, `${lessonId}.json`),
+      path.join(MSA_RECOVERED_BASELINE, `${lessonId}.json`),
     );
-    const mainGulf = JSON.parse(
-      execSync(
-        `git show origin/main:src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-Gulf/${lessonId}.json`,
-        { cwd: REPO_ROOT, encoding: "utf8" },
-      ),
-    ) as AdaptedLessonPackage;
+    const mainGulf = await loadJson<AdaptedLessonPackage>(
+      path.join(RECOVERED_GULF, `${lessonId}.json`),
+    );
     const msaRecovered = await loadJson<AdaptedLessonPackage>(
-      path.join(
-        REPO_ROOT,
-        "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-MSA",
-        `${lessonId}.json`,
-      ),
+      path.join(MSA_RECOVERED_BASELINE, `${lessonId}.json`),
     );
     const msaQuiz = msaRecovered.sections.find((s) => s.role === "Quiz");
-    expect(mainGulf.sections.some((s) => s.role === "Quiz")).toBe(false);
+    expect(mainGulf.sections.some((s) => s.role === "Quiz")).toBe(true);
 
     const inserted = reconstructMissingQuizSection(source, mainGulf, {
       msaRecoveredQuizSection: msaQuiz,
     });
-    expect(inserted.sections.some((s) => s.role === "Quiz")).toBe(false);
+    expect(inserted.sections.some((s) => s.role === "Quiz")).toBe(true);
     expect(inserted).toEqual(mainGulf);
   });
 
-  it("reports blocked_missing_gulf_quiz for known collapsed Gulf lessons", async () => {
+  it("does not report blocked_missing_gulf_quiz when approved Gulf Quiz sections exist", async () => {
     for (const lessonId of BLOCKED_MISSING_GULF_QUIZ_LESSONS) {
       const source = await loadJson<LocalizedLessonPackage>(
-        path.join(MSA_LESSONS, `${lessonId}.json`),
+        path.join(MSA_RECOVERED_BASELINE, `${lessonId}.json`),
       );
-      const pkg = JSON.parse(
-        execSync(
-          `git show origin/main:src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-Gulf/${lessonId}.json`,
-          { cwd: REPO_ROOT, encoding: "utf8" },
-        ),
-      ) as AdaptedLessonPackage;
+      const pkg = await loadJson<AdaptedLessonPackage>(
+        path.join(RECOVERED_GULF, `${lessonId}.json`),
+      );
       const issues = auditRecoveredPackage(source, pkg);
       expect(
         issues.some((issue) => issue.kind === "blocked_missing_gulf_quiz"),
-      ).toBe(true);
-      expect(pkg.sections.some((section) => section.role === "Quiz")).toBe(false);
+      ).toBe(false);
+      expect(pkg.sections.some((section) => section.role === "Quiz")).toBe(true);
     }
   });
 

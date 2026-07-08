@@ -15,6 +15,7 @@ import { collectPhase13BRecoveredReport } from "./collect-phase13b-recovered-rep
 import {
   auditRecoveredPackage,
   buildValidationSummary,
+  loadPhase13BRecoveredMsaAuditBaseline,
   PHASE13B_RECOVERED_LOCALES,
   packageNeedsRepair,
   repairRecoveredPackage,
@@ -22,10 +23,7 @@ import {
   type Phase13BAuditIssue,
 } from "./lib/phase13b-merge-readiness.ts";
 import { deepEqual } from "./lib/phase13b-semantic-diff.ts";
-import {
-  loadMsaLessonPackage,
-  readJsonFile,
-} from "./lib/source-package.ts";
+import { readJsonFile } from "./lib/source-package.ts";
 import { PHASE13B_RECOVERED_PACKAGES_ROOT } from "./collect-phase13b-recovered-report.ts";
 
 async function listPackagePaths(): Promise<Array<{ locale: string; lessonId: string; filePath: string }>> {
@@ -64,7 +62,7 @@ export async function repairAllRecoveredPackages(): Promise<{
   let skippedIdentical = 0;
 
   for (const cell of cells) {
-    const source = await loadMsaLessonPackage(cell.lessonId);
+    const source = await loadPhase13BRecoveredMsaAuditBaseline(cell.lessonId);
     const pkg = await loadPackage(cell.filePath);
     if (!packageNeedsRepair(source, pkg)) {
       skippedIdentical++;
@@ -104,7 +102,7 @@ export async function auditAllRecoveredPackages(): Promise<{
 
   for (const cell of cells) {
     try {
-      const source = await loadMsaLessonPackage(cell.lessonId);
+      const source = await loadPhase13BRecoveredMsaAuditBaseline(cell.lessonId);
       const pkg = await loadPackage(cell.filePath);
       issues.push(...auditRecoveredPackage(source, pkg));
     } catch (error) {
@@ -134,7 +132,7 @@ export async function validateAllRecoveredPackages() {
 
   for (const cell of cells) {
     try {
-      const source = await loadMsaLessonPackage(cell.lessonId);
+      const source = await loadPhase13BRecoveredMsaAuditBaseline(cell.lessonId);
       const pkg = await loadPackage(cell.filePath);
       issues.push(...auditRecoveredPackage(source, pkg));
     } catch (error) {

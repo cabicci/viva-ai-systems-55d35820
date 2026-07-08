@@ -2,9 +2,10 @@
  * Phase 13B merge-readiness audit + deterministic repair for recovered packages.
  *
  * Pure functions — no AI, no OpenAI, no publish, no runtime locale merge.
- * Structural source of truth: ar-MSA canonical lessons (read-only).
+ * Structural audit baseline: immutable recovered ar-MSA corpus (not runtime lessons/).
  * Localized text source: recovered package contentMarkdown / bullets / options.
  */
+import path from "node:path";
 import type {
   AdaptedLessonPackage,
   LocalizedLessonPackage,
@@ -26,8 +27,28 @@ import {
   normalizeQuizOptionText,
   stripBannedPhrasesFromText,
 } from "./quality-warnings.ts";
+import { PHASE13B_RECOVERED_PACKAGES_ROOT } from "../collect-phase13b-recovered-report.ts";
+import { readJsonFile } from "./source-package.ts";
 
 export const PHASE13B_RECOVERED_LOCALES = ["ar-MSA", "ar-Gulf", "en"] as const;
+
+/** Immutable recovered ar-MSA packages — canonical structural baseline for Phase 13B audit. */
+export const PHASE13B_RECOVERED_MSA_AUDIT_BASELINE_ROOT = path.join(
+  PHASE13B_RECOVERED_PACKAGES_ROOT,
+  "ar-MSA",
+);
+
+export function phase13BRecoveredMsaAuditBaselinePath(lessonId: string): string {
+  return path.join(PHASE13B_RECOVERED_MSA_AUDIT_BASELINE_ROOT, `${lessonId}.json`);
+}
+
+export async function loadPhase13BRecoveredMsaAuditBaseline(
+  lessonId: string,
+): Promise<LocalizedLessonPackage> {
+  return readJsonFile<LocalizedLessonPackage>(
+    phase13BRecoveredMsaAuditBaselinePath(lessonId),
+  );
+}
 export type Phase13BRecoveredLocale = (typeof PHASE13B_RECOVERED_LOCALES)[number];
 
 /** Gulf lessons with collapsed Quiz in verified Phase 13B shards — no MSA insert allowed. */
@@ -296,6 +317,16 @@ export function isKnownBlockedMissingGulfQuizPackage(
   );
 }
 
+function adaptedOptionalIntentOnly(
+  adaptedRole: string,
+  sourceSections: LocalizedLessonSection[],
+): boolean {
+  return (
+    isOptionalOmittedSection(adaptedRole) &&
+    !sourceSections.some((section) => section.role === adaptedRole)
+  );
+}
+
 export function sectionRolesAlign(
   source: LocalizedLessonPackage,
   pkg: AdaptedLessonPackage,
@@ -304,6 +335,10 @@ export function sectionRolesAlign(
   let sourceIndex = 0;
 
   for (const adapted of pkg.sections) {
+    if (adaptedOptionalIntentOnly(adapted.role ?? "", sourceSections)) {
+      continue;
+    }
+
     while (
       sourceIndex < sourceSections.length &&
       sourceSections[sourceIndex].role !== adapted.role
@@ -343,6 +378,10 @@ function pairSections(
   let sourceIndex = 0;
 
   for (const adaptedSection of pkg.sections) {
+    if (adaptedOptionalIntentOnly(adaptedSection.role ?? "", sourceSections)) {
+      continue;
+    }
+
     while (
       sourceIndex < sourceSections.length &&
       sourceSections[sourceIndex].role !== adaptedSection.role
@@ -1392,8 +1431,9 @@ export function repairRecoveredPackage(
 ): AdaptedLessonPackage {
   let working = reconstructMissingQuizSection(source, pkg, options);
   const pairs = pairSections(source, working);
+  const sourceSections = pairingSourceSections(source);
 
-  const repairedSections = pairs.map(({ source: sourceSection, adapted }) => {
+  const repairedFromPairs = pairs.map(({ source: sourceSection, adapted }) => {
     let section = adapted;
 
     if (sectionNeedsTableRepair(section)) {
@@ -1418,7 +1458,18 @@ export function repairRecoveredPackage(
     return section;
   });
 
-  return { ...working, sections: repairedSections };
+  const mergedSections: LocalizedLessonSection[] = [];
+  let pairIndex = 0;
+  for (const section of working.sections) {
+    if (adaptedOptionalIntentOnly(section.role ?? "", sourceSections)) {
+      mergedSections.push(section);
+      continue;
+    }
+    mergedSections.push(repairedFromPairs[pairIndex]!);
+    pairIndex++;
+  }
+
+  return { ...working, sections: mergedSections };
 }
 
 export function summarizeAuditIssues(issues: Phase13BAuditIssue[]): Phase13BAuditResult["byKind"] {
