@@ -4,6 +4,7 @@ import {
   Monitor,
 } from "lucide-react";
 import { IntroSection } from "@/components/intro/IntroSection";
+import { QuizBlock, type QuizItem } from "@/components/intro/QuizBlock";
 import { resolveLearnerLessonIcon } from "@/components/intro/resolve-learner-lesson-icon";
 import {
   adaptLocalizedPackageToPreviewContent,
@@ -11,11 +12,12 @@ import {
   type PreviewLessonBlock,
   type PreviewLessonSection,
 } from "@/lib/locale-lessons/adapt-package-to-preview-content";
+import { adaptPackageQuizToQuizItem } from "@/lib/locale-lessons/adapt-package-to-live-quiz";
 import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 import { getUiString } from "@/lib/locale/ui-strings";
+import { LocaleProvider } from "@/lib/locale/locale-context";
 import type { SupportedLocale } from "@/lib/locale/types";
 import { LocalePreviewMission } from "./LocalePreviewMission";
-import { LocalePreviewQuiz } from "./LocalePreviewQuiz";
 import { PackageLearnerMarkdown } from "./PackageLearnerMarkdown";
 
 type PreviewPackage = Pick<
@@ -61,9 +63,13 @@ function LocaleVideoPlaceholder({ locale }: { locale: SupportedLocale }) {
 function PreviewBlockBody({
   block,
   locale,
+  lessonId,
+  liveQuizItem,
 }: {
   block: PreviewLessonBlock;
   locale: PreviewPackage["locale"];
+  lessonId: string;
+  liveQuizItem: QuizItem | null;
 }) {
   switch (block.kind) {
     case "paragraphs":
@@ -147,12 +153,13 @@ function PreviewBlockBody({
       );
 
     case "quizPreview":
+      if (!liveQuizItem) return null;
       return (
-        <LocalePreviewQuiz
-          question={block.question}
-          options={block.options}
-          locale={locale}
-        />
+        <div data-locale-quiz="live">
+          <LocaleProvider effectiveLocale={locale}>
+            <QuizBlock lessonId={lessonId} items={[liveQuizItem]} />
+          </LocaleProvider>
+        </div>
       );
 
     case "missionPreview":
@@ -195,10 +202,14 @@ function PreviewSectionCard({
   section,
   index,
   locale,
+  lessonId,
+  liveQuizItem,
 }: {
   section: PreviewLessonSection;
   index: number;
   locale: PreviewPackage["locale"];
+  lessonId: string;
+  liveQuizItem: QuizItem | null;
 }) {
   const blockKind = previewBlockKind(section.block);
   const Icon = resolveLearnerLessonIcon(section.icon, blockKind);
@@ -211,27 +222,51 @@ function PreviewSectionCard({
       title={section.title}
       tone={section.tone}
     >
-      <PreviewBlockBody block={section.block} locale={locale} />
+      <PreviewBlockBody
+        block={section.block}
+        locale={locale}
+        lessonId={lessonId}
+        liveQuizItem={liveQuizItem}
+      />
     </IntroSection>
   );
 }
 
+function buildSectionsWithLiveQuiz(pkg: PreviewPackage) {
+  const previewSections = adaptLocalizedPackageToPreviewContent(pkg);
+  const quizSections = pkg.sections.filter((section) => section.quiz?.options?.length);
+  let quizIndex = 0;
+
+  return previewSections.map((section) => {
+    if (section.block.kind !== "quizPreview") {
+      return { section, liveQuizItem: null as QuizItem | null };
+    }
+    const rawQuiz = quizSections[quizIndex]?.quiz;
+    const currentIndex = quizIndex;
+    quizIndex += 1;
+    if (!rawQuiz) {
+      return { section, liveQuizItem: null };
+    }
+    return {
+      section,
+      liveQuizItem: adaptPackageQuizToQuizItem(pkg.lessonId, rawQuiz, currentIndex),
+    };
+  });
+}
+
 /**
- * Internal locale package preview with live-like section cards.
- * Missions, quizzes, and videos stay read-only / omitted — no Supabase side effects.
+ * Localized package lesson renderer.
+ * Quizzes use the shared QuizBlock; missions and videos stay preview-only.
  */
 export function LocalePackagePreviewRenderer({
   pkg,
 }: {
   pkg: PreviewPackage;
 }) {
-  const sections = useMemo(
-    () => adaptLocalizedPackageToPreviewContent(pkg),
-    [pkg],
-  );
+  const sections = useMemo(() => buildSectionsWithLiveQuiz(pkg), [pkg]);
   const bodyDir = previewBodyDirection(pkg.locale);
   const hasVideoPlaceholder = sections.some(
-    (section) => section.block.kind === "videoPreviewNote",
+    (entry) => entry.section.block.kind === "videoPreviewNote",
   );
   const showPageVideoPlaceholder = !hasVideoPlaceholder;
 
@@ -246,12 +281,14 @@ export function LocalePackagePreviewRenderer({
       {showPageVideoPlaceholder ? (
         <LocaleVideoPlaceholder locale={pkg.locale} />
       ) : null}
-      {sections.map((section, index) => (
+      {sections.map(({ section, liveQuizItem }, index) => (
         <PreviewSectionCard
           key={`${section.title}-${index}`}
           section={section}
           index={index}
           locale={pkg.locale}
+          lessonId={pkg.lessonId}
+          liveQuizItem={liveQuizItem}
         />
       ))}
     </article>

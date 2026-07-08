@@ -353,7 +353,6 @@ function UnifiedLessonPage() {
   const isGateReady = isProgressLoaded && isGateLoaded;
 
   const markCompleted = () => {
-    if (isLocalizedPackagePage) return;
     if (isCompleted) return;
     // Mastery gate: if the lesson ships a gated mission, the user can't
     // self-mark complete until the mission is actually passed.
@@ -574,7 +573,7 @@ function UnifiedLessonPage() {
           </div>
 
           <div className="flex gap-2">
-            {!isCompleted && !isLocalizedPackagePage && (
+            {!isCompleted && (
               <Button
                 variant="glass"
                 size="sm"
