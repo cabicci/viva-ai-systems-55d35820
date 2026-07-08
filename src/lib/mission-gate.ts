@@ -84,6 +84,19 @@ export type MissionGateState =
   | { kind: "needs-mission"; missionId: string }
   | { kind: "passed"; missionId: string; score: number };
 
+/**
+ * Whether lesson navigation should be blocked by the mission gate.
+ * Localized package preview pages show read-only missions and must not inherit
+ * the hidden ar-EG mission submission requirement for Next / mark-complete.
+ */
+export function isLessonNavigationMissionLocked(
+  missionGate: MissionGateState,
+  options: { localizedPackagePreview?: boolean } = {},
+): boolean {
+  if (options.localizedPackagePreview) return false;
+  return missionGate.kind === "needs-mission" || missionGate.kind === "loading";
+}
+
 const QK = ["mission-gate"] as const;
 
 export function useMissionGate(lessonId: string): MissionGateState {

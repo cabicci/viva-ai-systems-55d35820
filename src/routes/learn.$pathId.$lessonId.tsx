@@ -32,7 +32,11 @@ import {
 } from "@/lib/curriculum-data";
 import { useEntitlement, useLessonGate, useStreak } from "@/lib/entitlements";
 import { PaywallCard, IntroGateCard } from "@/components/learn/PaywallCard";
-import { useMissionGate, useLessonMissionShape } from "@/lib/mission-gate";
+import {
+  isLessonNavigationMissionLocked,
+  useMissionGate,
+  useLessonMissionShape,
+} from "@/lib/mission-gate";
 import { Lock } from "lucide-react";
 import { logLearnerEvent } from "@/lib/learner-events";
 import { LessonNotes } from "@/components/learn/LessonNotes";
@@ -331,8 +335,9 @@ function UnifiedLessonPage() {
 
   const missionShape = useLessonMissionShape(lesson.slug);
   const missionGate = useMissionGate(lesson.slug);
-  const nextLocked =
-    missionGate.kind === "needs-mission" || missionGate.kind === "loading";
+  const nextLocked = isLessonNavigationMissionLocked(missionGate, {
+    localizedPackagePreview: isLocalizedPackagePage,
+  });
 
   // Access gate: count Intro completions to decide whether to lock.
   const introIds = useMemo(
