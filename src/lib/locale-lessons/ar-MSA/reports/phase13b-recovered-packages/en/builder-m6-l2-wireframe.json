@@ -119,9 +119,9 @@
         "question": "**You are working with a Wireframe and find yourself drawing colors and images of dishes. Is this correct?**",
         "correctIndex": 0,
         "options": [
-          "No — A wireframe consists of boxes and labels only, without design.",
-          "Yes — This helps the AI understand better.",
-          "No — There should have been real images."
+          "No — A Wireframe consists of boxes and labels only, without design.",
+          "Yes — This is how AI understands better.",
+          "No — There should be real images."
         ],
         "explanation": "A wireframe is a structure and layout. Colors and images come later."
       }
@@ -130,8 +130,11 @@
       "role": "Mission",
       "heading": "Mission — Draw or Describe 3 Screens",
       "subtitle": "Draw or Describe 3 Screens",
-      "contentMarkdown": "**Introduction:** Drawing or describing — not coding. Use 3 screens from the previous lesson. **10–15 minutes**.",
-      "bullets": [],
+      "contentMarkdown": "**Introduction:** Drawing or describing — not coding. Use 3 screens from the previous lesson. **10–15 minutes**.\n\n**Submission:** For each screen, provide a wireframe list:\n\n- **[Section]: [What’s inside]**\n- **CTA: [Main Button]**\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| 3 Described Screens | 60% | **Each screen is a bullet list — not a paragraph. CTA is clear in each screen.** |\n| Boxes, No Design | 40% | **No colors or fonts — just section names. The order is logical — most important first.** |",
+      "bullets": [
+        "**[Section]: [What’s inside]**",
+        "**CTA: [Main Button]**"
+      ],
       "tables": [
         {
           "headers": [

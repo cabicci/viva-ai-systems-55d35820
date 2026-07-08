@@ -81,8 +81,8 @@
         "correctIndex": 1,
         "options": [
           "Write a longer system prompt saying \"Don't guess\".",
-          "Stop the bot and respond manually to all questions.",
-          "A partial answer that misses context and ignores the next step in the decision."
+          "Choose a FAQ source or price list and link it to the automation before each response.",
+          "Stop the bot and respond manually to all questions."
         ],
         "explanation": "The correct answer is to choose a source that provides context for the decision.",
         "question": "What is the best option according to the section above?"

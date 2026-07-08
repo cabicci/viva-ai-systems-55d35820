@@ -1,33 +1,25 @@
 {
-  "generatedAt": "2026-07-07T16:10:38.137Z",
+  "generatedAt": "2026-07-08T11:17:02.999Z",
   "baseRef": "origin/main",
   "headRef": "HEAD",
   "packagesScanned": 300,
-  "gitModifiedCount": 256,
-  "semanticallyIdenticalCount": 44,
-  "semanticChangePackageCount": 256,
+  "gitModifiedCount": 254,
+  "semanticallyIdenticalCount": 46,
+  "semanticChangePackageCount": 254,
   "formattingOnlyCount": 0,
   "changesByCategory": {
-    "quiz_option_prefix_removal": 405,
-    "quiz_markdown_artifact_cleanup": 720,
-    "learner_text_change": 81,
+    "quiz_option_prefix_removal": 446,
+    "learner_text_change": 127,
+    "quiz_markdown_artifact_cleanup": 686,
     "mission_delivery_restoration": 33,
-    "table_row_reconstruction": 12,
-    "sections_array_change": 4,
-    "section_role_alignment": 4
+    "table_row_reconstruction": 12
   },
   "changesByPointerPattern": {
-    "/sections/*/bullets/*": 614,
-    "/sections/*/quiz/options/*": 353,
-    "/sections/*/contentMarkdown": 223,
+    "/sections/*/bullets/*": 608,
+    "/sections/*/contentMarkdown": 248,
+    "/sections/*/quiz/options/*": 403,
     "/sections/*/mission/delivery/*": 33,
-    "/sections/*/quiz/explanation": 8,
-    "/sections/*/tables/*/rows/*/*": 12,
-    "/sections/*/heading": 4,
-    "/sections/*/quiz": 2,
-    "/sections/*/role": 4,
-    "/sections/*/subtitle": 4,
-    "/sections/*": 2
+    "/sections/*/tables/*/rows/*/*": 12
   },
   "packages": [
     {
@@ -71,22 +63,6 @@
       "gitModified": true,
       "changes": [
         {
-          "pointer": "/sections/7/bullets/0",
-          "before": "«أشعر أن…» (الشعور الأصلي)",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/bullets/1",
-          "before": "→ السؤال المحدد (**Metric + فترة + مقارنة**)",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/contentMarkdown",
-          "before": "**المقدمة:** مهمة **تحويل عملي** — **مو** تحليل إحصائي. اكتب **٣ جمل** «أشعر أن…» من **عملك الحقيقي** (أو من حولك). حوّل كل واحدة إلى **سؤال** تجيب عليه **البيانات**. **١٠–١٥ دقيقة** كافية.\n\n**التسليم:** لكل شعور (١–٣):\n\n- «أشعر أن…» (الشعور الأصلي)\n- → السؤال المحدد (**Metric + فترة + مقارنة**)\n\n+ **مصدر واحد** يجاوب على **سؤالين على الأقل** من الثلاثة (Sheet / CRM / Analytics…)\n\n**معايير التقييم:**\n\n| البعد | الوزن | المعيار |\n|-------|-------|---------|\n| ٣ أسئلة محددة | 60% | كل سؤال فيه **رقم أو مقياس** + **فترة** + **مقارنة** — مو سؤال عام |\n| مصدر للإجابة | 40% | مصدر **واحد** على الأقل يقدر يجاوب منه **سؤالين** |",
-          "after": "**المقدمة:** مهمة **تحويل عملي** — **مو** تحليل إحصائي. اكتب **٣ جمل** «أشعر أن…» من **عملك الحقيقي** (أو من حولك). حوّل كل واحدة إلى **سؤال** تجيب عليه **البيانات**. **١٠–١٥ دقيقة** كافية.",
-          "category": "learner_text_change"
-        },
-        {
           "pointer": "/sections/7/mission/delivery/0",
           "after": "«أشعر أن…» (الشعور الأصلي)",
           "category": "mission_delivery_restoration"
@@ -105,22 +81,6 @@
       "semanticallyIdentical": false,
       "gitModified": true,
       "changes": [
-        {
-          "pointer": "/sections/7/bullets/0",
-          "before": "السؤال",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/bullets/1",
-          "before": "إذا **X**: [وش القرار؟] · إذا **Y**: [وش القرار؟] · **هل** يتغير القرار؟ (نعم / لا)",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/contentMarkdown",
-          "before": "**المقدمة:** مهمة **فلتر عملي** — **مو امتحان**. اكتب **٣ أسئلة** (من الدرس السابق أو من عملك). لكل سؤال طبق: «**إذا** كانت الإجابة **X** أو **Y** — **هل** راح أغيّر قراري؟» إذا **لا** — **أعد صياغة** السؤال.\n\n**التسليم:** لكل سؤال (١–٣):\n\n- السؤال\n- إذا **X**: [وش القرار؟] · إذا **Y**: [وش القرار؟] · **هل** يتغير القرار؟ (نعم / لا)\n\n+ إذا **فشل** سؤال — **النسخة المحسّنة**\n\n**معايير التقييم:**\n\n| البعد | الوزن | المعيار |\n|-------|-------|---------|\n| اختبار القرار | 60% | كل سؤال فيه **X** و**Y** و**قرار مختلف** — أو توضيح **ليش** ما راح يتغير |\n| تحسين | 40% | إذا **فشل** سؤال — **نسخة محسّنة** **مرتبطة بقرار** |",
-          "after": "**المقدمة:** مهمة **فلتر عملي** — **مو امتحان**. اكتب **٣ أسئلة** (من الدرس السابق أو من عملك). لكل سؤال طبق: «**إذا** كانت الإجابة **X** أو **Y** — **هل** راح أغيّر قراري؟» إذا **لا** — **أعد صياغة** السؤال.",
-          "category": "learner_text_change"
-        },
         {
           "pointer": "/sections/7/mission/delivery/0",
           "after": "السؤال",
@@ -235,6 +195,12 @@
           "before": "> **مفتاح الاختبار (غير متغير):** correctIndex: 1\n\n**السؤال:** **الطلبات زادت ٢٠٪** هالأسبوع — لكن **التحويل نزل** من **١٢٪** إلى **٨٪**. وش **أفضل خطوة قرار**؟\n\nنزيد الإعلانات** — **الطلبات زادت**.**\n**نسأل:** **التحويل نزل مقارنة بماذا؟** و**نراجع خطوة التسعير/العرض** — **إجراء محدّد**.\nنتجاهل الأرقام** — **الطلبات** أهم.**\n\n**التفسير:** **رقم واحد** **يخدع**. **الطلبات** و**التحويل** **معًا** **يوضّحون** الصورة — والقرار يكون على **وش راح يتغيّر فعلًا**.",
           "after": "> **مفتاح الاختبار (غير متغير):** correctIndex: 1\n\n**السؤال:** **الطلبات زادت ٢٠٪** هالأسبوع — لكن **التحويل نزل** من **١٢٪** إلى **٨٪**. وش **أفضل خطوة قرار**؟\n\nنزيد الإعلانات** — **الطلبات زادت.\n**نسأل:** **التحويل نزل مقارنة بماذا؟** و**نراجع خطوة التسعير/العرض** — **إجراء محدّد**.\nنتجاهل الأرقام** — **الطلبات** أهم.**\n\n**التفسير:** **رقم واحد** **يخدع**. **الطلبات** و**التحويل** **معًا** **يوضّحون** الصورة — والقرار يكون على **وش راح يتغيّر فعلًا**.",
           "category": "quiz_markdown_artifact_cleanup"
+        },
+        {
+          "pointer": "/sections/6/quiz/options/1",
+          "before": "نسأل: التحويل نزل مقارنة بماذا؟ وراجع خطوة التسعير/العرض — إجراء محدّد.",
+          "after": "نسأل: التحويل نزل مقارنة بماذا؟ ونراجع خطوة التسعير/العرض — إجراء محدّد.",
+          "category": "learner_text_change"
         }
       ]
     },
@@ -361,109 +327,12 @@
           "before": "> **مفتاح الاختبار (غير متغير):** الخيار الصحيح: 0\n\n- ****الإجابة الصحيحة** (الخيار الصحيح: 0):** متحيز — افترض سبب الترك قبل ما يشوف البيانات.\nغير واضح — السؤال عام فقط.\nبلا بيانات — مافي بيانات أصلًا.\n\n**التفسير:** الخيار الصحيح هو متحيز لأنه يفترض سبب الترك قبل النظر في البيانات.",
           "after": "> **مفتاح الاختبار (غير متغير):** الخيار الصحيح: 0\n\n(الخيار الصحيح: 0): متحيز — افترض سبب الترك قبل ما يشوف البيانات.\nغير واضح — السؤال عام فقط.\nبلا بيانات — مافي بيانات أصلًا.\n\n**التفسير:** الخيار الصحيح هو متحيز لأنه يفترض سبب الترك قبل النظر في البيانات.",
           "category": "quiz_option_prefix_removal"
-        }
-      ]
-    },
-    {
-      "locale": "ar-Gulf",
-      "lessonId": "analyst-m6-l2-interpretation-mistakes",
-      "relPath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-Gulf/analyst-m6-l2-interpretation-mistakes.json",
-      "semanticallyIdentical": false,
-      "gitModified": true,
-      "changes": [
+        },
         {
-          "pointer": "/sections/2/bullets/0",
-          "after": "Correlation ≠ Causation — ممكن في سبب تالت (وقت اليوم، نوع زبائن).",
+          "pointer": "/sections/2/quiz/options/0",
+          "before": "متحيز — افترض سبب الترك قبل ما يشوف البيانات.",
+          "after": "(الخيار الصحيح: 0): متحيز — افترض سبب الترك قبل ما يشوف البيانات.",
           "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/2/bullets/1",
-          "after": "Analysis Paralysis — بيتأخر في القرار.",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/2/bullets/2",
-          "after": "Vanity metric — اللايكات مش مهمة.",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/2/contentMarkdown",
-          "before": "| تشخيص الفخ | 50% |\n| قرار أصح | 50% |",
-          "after": "> **Quiz key (unchanged):** correctIndex: 0\n\n( 0): Correlation ≠ Causation — ممكن في سبب تالت (وقت اليوم، نوع زبائن).\nAnalysis Paralysis — بيتأخر في القرار.\nVanity metric — اللايكات مش مهمة.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/2/heading",
-          "before": "المهمة — ٣ سيناريوهات",
-          "after": "Quiz — correctIndex: 0",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/2/quiz",
-          "after": {
-            "correctIndex": 0,
-            "options": [
-              "Correlation ≠ Causation — ممكن في سبب تالت (وقت اليوم، نوع زبائن).",
-              "Analysis Paralysis — بيتأخر في القرار.",
-              "Vanity metric — اللايكات مش مهمة."
-            ],
-            "explanation": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-            "question": "ما الخيار الأنسب وفقًا لما ورد في القسم أعلاه؟"
-          },
-          "category": "sections_array_change"
-        },
-        {
-          "pointer": "/sections/2/role",
-          "before": "Mission",
-          "after": "Quiz",
-          "category": "section_role_alignment"
-        },
-        {
-          "pointer": "/sections/2/subtitle",
-          "before": "٣ سيناريوهات",
-          "after": "correctIndex: 0",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/3/bullets/0",
-          "before": "**التالي:** **من القرارات إلى الأعمال**.",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/3/contentMarkdown",
-          "before": "- **التالي:** **من القرارات إلى الأعمال**.\n\n---",
-          "after": "| تشخيص الفخ | 50% |\n| قرار أصح | 50% |",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/3/heading",
-          "before": "إغلاق الثقة",
-          "after": "المهمة — ٣ سيناريوهات",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/3/role",
-          "before": "Confidence close",
-          "after": "Mission",
-          "category": "section_role_alignment"
-        },
-        {
-          "pointer": "/sections/3/subtitle",
-          "after": "٣ سيناريوهات",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/4",
-          "after": {
-            "role": "Confidence close",
-            "heading": "إغلاق الثقة",
-            "contentMarkdown": "- **التالي:** **من القرارات إلى الأعمال**.\n\n---",
-            "bullets": [
-              "**التالي:** **من القرارات إلى الأعمال**."
-            ],
-            "tables": []
-          },
-          "category": "sections_array_change"
         }
       ]
     },
@@ -886,109 +755,6 @@
     },
     {
       "locale": "ar-Gulf",
-      "lessonId": "automator-m5-l2-rag-in-n8n",
-      "relPath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-Gulf/automator-m5-l2-rag-in-n8n.json",
-      "semanticallyIdentical": false,
-      "gitModified": true,
-      "changes": [
-        {
-          "pointer": "/sections/4/bullets/0",
-          "after": "تكتب system prompt أطول يقوله «متخمّنش».",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/4/bullets/1",
-          "after": "تختار مصدر FAQ أو قائمة أسعار وتربطه بالأوتوميشن قبل كل رد.",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/4/bullets/2",
-          "after": "توقف البوت وترد يدوي على كل الأسئلة.",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/4/contentMarkdown",
-          "before": "| مصدر حقيقي | 60% |\n| ربط سؤال بمصدر | 40% |",
-          "after": "> **Quiz key (unchanged):** correctIndex: 1\n\nتكتب system prompt أطول يقوله «متخمّنش».\n( 1): تختار مصدر FAQ أو قائمة أسعار وتربطه بالأوتوميشن قبل كل رد.\nتوقف البوت وترد يدوي على كل الأسئلة.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/4/heading",
-          "before": "المهمة — مصدر أسئلة شائعة واحد",
-          "after": "Quiz — correctIndex: 1",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/4/quiz",
-          "after": {
-            "correctIndex": 1,
-            "options": [
-              "تكتب system prompt أطول يقوله «متخمّنش».",
-              "توقف البوت وترد يدوي على كل الأسئلة.",
-              "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
-            ],
-            "explanation": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-            "question": "ما الخيار الأنسب وفقًا لما ورد في القسم أعلاه؟"
-          },
-          "category": "sections_array_change"
-        },
-        {
-          "pointer": "/sections/4/role",
-          "before": "Mission",
-          "after": "Quiz",
-          "category": "section_role_alignment"
-        },
-        {
-          "pointer": "/sections/4/subtitle",
-          "before": "مصدر أسئلة شائعة واحد",
-          "after": "correctIndex: 1",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/5/bullets/0",
-          "before": "**التالي:** **Agents** — مسار غير ثابت.",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/5/contentMarkdown",
-          "before": "- **التالي:** **Agents** — مسار غير ثابت.\n\n---",
-          "after": "| مصدر حقيقي | 60% |\n| ربط سؤال بمصدر | 40% |",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/5/heading",
-          "before": "إغلاق الثقة",
-          "after": "المهمة — مصدر أسئلة شائعة واحد",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/5/role",
-          "before": "Confidence close",
-          "after": "Mission",
-          "category": "section_role_alignment"
-        },
-        {
-          "pointer": "/sections/5/subtitle",
-          "after": "مصدر أسئلة شائعة واحد",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/6",
-          "after": {
-            "role": "Confidence close",
-            "heading": "إغلاق الثقة",
-            "contentMarkdown": "- **التالي:** **Agents** — مسار غير ثابت.\n\n---",
-            "bullets": [
-              "**التالي:** **Agents** — مسار غير ثابت."
-            ],
-            "tables": []
-          },
-          "category": "sections_array_change"
-        }
-      ]
-    },
-    {
-      "locale": "ar-Gulf",
       "lessonId": "automator-m5-l3-agents",
       "relPath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-Gulf/automator-m5-l3-agents.json",
       "semanticallyIdentical": false,
@@ -1005,6 +771,18 @@
           "before": "> **مفتاح الاختبار (غير متغير):** correctIndex: 1\n\nسير عمل ثابت بشروط كثيرة لكل احتمال.\n- **الإجابة الصحيحة:** الوكيل بهدف واضح وأدوات محددة وحد يمنع الإرسال بدون موافقة.\nالوكيل مفتوح بكل الأدوات لكي يكون «ذكي».\n\n**التفسير:** الإجابة الصحيحة هي الوكيل بهدف واضح وأدوات محددة وحد يمنع الإرسال بدون موافقة.",
           "after": "> **مفتاح الاختبار (غير متغير):** correctIndex: 1\n\nسير عمل ثابت بشروط كثيرة لكل احتمال.\nالوكيل بهدف واضح وأدوات محددة وحد يمنع الإرسال بدون موافقة.\nالوكيل مفتوح بكل الأدوات لكي يكون «ذكي».\n\n**التفسير:** الإجابة الصحيحة هي الوكيل بهدف واضح وأدوات محددة وحد يمنع الإرسال بدون موافقة.",
           "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/1",
+          "before": "الوكيل مفتوح بكل الأدوات لكي يكون «ذكي».",
+          "after": "الوكيل بهدف واضح وأدوات محددة وحد يمنع الإرسال بدون موافقة.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/2",
+          "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "after": "الوكيل مفتوح بكل الأدوات لكي يكون «ذكي».",
+          "category": "learner_text_change"
         }
       ]
     },
@@ -1026,6 +804,18 @@
           "before": "> **مفتاح الاختبار (غير متغير):** correctIndex: 1\n\nتستنى لما تفضى وترد على الكل مرة واحدة.\n- **الإجابة الصحيحة:** كل تسجيل يتحفظ فورًا + رد ترحيب أوتوماتيك + تنبيه لمن يتابع.\nتقفل النموذج لحد ما تلحق ترد.\n\n**التفسير:** الإجابة الصحيحة توضح أن كل تسجيل يتحفظ فورًا مع رد ترحيب وتنبيه.",
           "after": "> **مفتاح الاختبار (غير متغير):** correctIndex: 1\n\nتستنى لما تفضى وترد على الكل مرة واحدة.\nكل تسجيل يتحفظ فورًا + رد ترحيب أوتوماتيك + تنبيه لمن يتابع.\nتقفل النموذج لحد ما تلحق ترد.\n\n**التفسير:** الإجابة الصحيحة توضح أن كل تسجيل يتحفظ فورًا مع رد ترحيب وتنبيه.",
           "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/1",
+          "before": "تقفل النموذج لحد ما تلحق ترد.",
+          "after": "كل تسجيل يتحفظ فورًا + رد ترحيب أوتوماتيك + تنبيه لمن يتابع.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/2",
+          "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "after": "تقفل النموذج لحد ما تلحق ترد.",
+          "category": "learner_text_change"
         }
       ]
     },
@@ -1047,6 +837,18 @@
           "before": "> **مفتاح الاختبار:**\n\nالبوت يكمل يحاول يجاوب من الأسئلة الشائعة.\n- **الإجابة الصحيحة:** تحويل فوري لموظف — هذا شرط واضح للتحويل.\nتبعت له رسالة «انتظر ٢٤ ساعة».\n\n**التفسير:** الإجابة الصحيحة هي تحويل فوري لموظف، لأنها تضمن استجابة مناسبة.",
           "after": "> **مفتاح الاختبار:**\n\nالبوت يكمل يحاول يجاوب من الأسئلة الشائعة.\nتحويل فوري لموظف — هذا شرط واضح للتحويل.\nتبعت له رسالة «انتظر ٢٤ ساعة».\n\n**التفسير:** الإجابة الصحيحة هي تحويل فوري لموظف، لأنها تضمن استجابة مناسبة.",
           "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/1",
+          "before": "تبعت له رسالة «انتظر ٢٤ ساعة».",
+          "after": "تحويل فوري لموظف — هذا شرط واضح للتحويل.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/2",
+          "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "after": "تبعت له رسالة «انتظر ٢٤ ساعة».",
+          "category": "learner_text_change"
         }
       ]
     },
@@ -1068,6 +870,18 @@
           "before": "> **مفتاح الاختبار:**\n\nنفس رسالة الترحيب مرة ثانية.\n- **الإجابة الصحيحة:** تذكير لطيف بقناة مختلفة أو بسؤال واحد — مو ضغط بيع.\nمكالمة فورية من غير تذكير.\n\n**التفسير:** الإجابة الصحيحة هي تذكير لطيف بقناة مختلفة أو بسؤال واحد.",
           "after": "> **مفتاح الاختبار:**\n\nنفس رسالة الترحيب مرة ثانية.\nتذكير لطيف بقناة مختلفة أو بسؤال واحد — مو ضغط بيع.\nمكالمة فورية من غير تذكير.\n\n**التفسير:** الإجابة الصحيحة هي تذكير لطيف بقناة مختلفة أو بسؤال واحد.",
           "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/1",
+          "before": "مكالمة فورية من غير تذكير.",
+          "after": "تذكير لطيف بقناة مختلفة أو بسؤال واحد — مو ضغط بيع.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/2",
+          "before": "إجابة جزئية تفوت السياق وتتجاهل الخطوة التالية للقرار.",
+          "after": "مكالمة فورية من غير تذكير.",
+          "category": "learner_text_change"
         }
       ]
     },
@@ -1763,22 +1577,6 @@
           "category": "quiz_markdown_artifact_cleanup"
         },
         {
-          "pointer": "/sections/7/bullets/0",
-          "before": "**[قسم]: [ماذا بداخله]**",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/bullets/1",
-          "before": "**CTA: [أهم زر]**",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/contentMarkdown",
-          "before": "**المقدمة:** **رسم أو وصف — مو كود**. **استخدم ٣ شاشات من الدرس السابق**. **١٠–١٥ دقيقة**.\n\n**التسليم:** **لكل شاشة قائمة Wireframe:**\n\n- **[قسم]: [ماذا بداخله]**\n- **CTA: [أهم زر]**\n\n**معايير التقييم:**\n\n| البعد | الوزن | المعيار |\n|-------|-------|---------|\n| ٣ شاشات موصوفة | 60% | **كل شاشة قائمة نقط — مو فقرة**. **CTA واضح في كل شاشة** |\n| مربعات لا تصميم | 40% | **لا ألوان ولا fonts — أسماء أقسام فقط**. **الترتيب منطقي — الأهم أولًا**.",
-          "after": "**المقدمة:** **رسم أو وصف — مو كود**. **استخدم ٣ شاشات من الدرس السابق**. **١٠–١٥ دقيقة**.",
-          "category": "learner_text_change"
-        },
-        {
           "pointer": "/sections/7/mission/delivery/0",
           "after": "**[قسم]: [ماذا بداخله]**",
           "category": "mission_delivery_restoration"
@@ -1832,37 +1630,6 @@
           "before": "«**ابنِ موقع كامل**».",
           "after": "«ابنِ موقع كامل».",
           "category": "quiz_markdown_artifact_cleanup"
-        },
-        {
-          "pointer": "/sections/7/bullets/0",
-          "before": "**الهدف:** [نوع الواجهة + وش تسوي]",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/bullets/1",
-          "before": "**المستخدمون:** [من يستخدمها]",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/bullets/2",
-          "before": "**الصفحات:** [أقسام Wireframe بالاسم]",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/bullets/3",
-          "before": "**الأسلوب:** [لونان + mood]",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/bullets/4",
-          "before": "**القيود:** [وش مو موجود في النسخة الأولى]",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/contentMarkdown",
-          "before": "**المقدمة:** **مسودة للنسخ — مو تنفيذ**. **استخدم Wireframe من الدرس السابق**. **١٠–١٥ دقيقة**.\n\n**التسليم:**\n\n- **الهدف:** [نوع الواجهة + وش تسوي]\n- **المستخدمون:** [من يستخدمها]\n- **الصفحات:** [أقسام Wireframe بالاسم]\n- **الأسلوب:** [لونان + mood]\n- **القيود:** [وش مو موجود في النسخة الأولى]\n\n**معايير التقييم:**\n\n| البعد | الوزن | المعيار |\n|-------|-------|---------|\n| الخمسة موجودون | 60% | **الهدف، المستخدمون، الصفحات، الأسلوب، القيود — كلهم مكتوبين**. **الصفحات مربوطة بـ Wireframe** |\n| جاهز للنسخ | 40% | **الأسلوب فيه لونان على الأقل**. **القيود تحدّد «مو الحين»** |",
-          "after": "**المقدمة:** **مسودة للنسخ — مو تنفيذ**. **استخدم Wireframe من الدرس السابق**. **١٠–١٥ دقيقة**.",
-          "category": "learner_text_change"
         },
         {
           "pointer": "/sections/7/mission/delivery/0",
@@ -2587,6 +2354,18 @@
           "before": "> **مفتاح الاختبار:**\n\nضاعف الإعلانات فورًا — الزخم مهم.\n- **الإجابة الصحيحة:** وقف التوسّع، اصلّح الجودة والتشغيل، بعدين كبّر تدريجي.\nوظّف أكتر من غير SOP.\n\n**التفسير:** الإجابة الصحيحة هي وقف التوسّع، لأنك تحتاج لضمان الجودة والتشغيل قبل التوسّع.",
           "after": "> **مفتاح الاختبار:**\n\nضاعف الإعلانات فورًا — الزخم مهم.\nوقف التوسّع، اصلّح الجودة والتشغيل، بعدين كبّر تدريجي.\nوظّف أكتر من غير SOP.\n\n**التفسير:** الإجابة الصحيحة هي وقف التوسّع، لأنك تحتاج لضمان الجودة والتشغيل قبل التوسّع.",
           "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/2/quiz/options/1",
+          "before": "وظّف أكتر من غير SOP.",
+          "after": "وقف التوسّع، اصلّح الجودة والتشغيل، بعدين كبّر تدريجي.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/2/quiz/options/2",
+          "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "after": "وظّف أكتر من غير SOP.",
+          "category": "learner_text_change"
         }
       ]
     },
@@ -2608,6 +2387,18 @@
           "before": "> **مفتاح الاختبار (غير متغير):** correctIndex: 1\n\nتفتح كل الرسائل وترد — عشان «تخلص».\n- **الإجابة الصحيحة:** 3 أرقام → تسأل AI عن التغيّر والمعلّق → تسجّل قرار واحد.\nتقرأ 50 مقال تسويق.\n\n**التفسير:** الإجابة الصحيحة هي 3 أرقام، لأنها تتضمن الخطوات اللازمة للتسجيل.",
           "after": "> **مفتاح الاختبار (غير متغير):** correctIndex: 1\n\nتفتح كل الرسائل وترد — عشان «تخلص».\n3 أرقام → تسأل AI عن التغيّر والمعلّق → تسجّل قرار واحد.\nتقرأ 50 مقال تسويق.\n\n**التفسير:** الإجابة الصحيحة هي 3 أرقام، لأنها تتضمن الخطوات اللازمة للتسجيل.",
           "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/2/quiz/options/1",
+          "before": "تقرأ 50 مقال تسويق.",
+          "after": "3 أرقام → تسأل AI عن التغيّر والمعلّق → تسجّل قرار واحد.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/2/quiz/options/2",
+          "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "after": "تقرأ 50 مقال تسويق.",
+          "category": "learner_text_change"
         }
       ]
     },
@@ -2629,6 +2420,18 @@
           "before": "> **مفتاح الاختبار:**\n\nBuilder — تبني تطبيق فورًا.\n- **الإجابة الصحيحة:** Automator — أتمتة المتابعة المتكررة.\nCreator — محتوى بس.\n\n**التفسير:** الإجابة الصحيحة هي Automator، لأنها تتعلق بأتمتة المتابعة المتكررة.",
           "after": "> **مفتاح الاختبار:**\n\nBuilder — تبني تطبيق فورًا.\nAutomator — أتمتة المتابعة المتكررة.\nCreator — محتوى بس.\n\n**التفسير:** الإجابة الصحيحة هي Automator، لأنها تتعلق بأتمتة المتابعة المتكررة.",
           "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/2/quiz/options/1",
+          "before": "Creator — محتوى بس.",
+          "after": "Automator — أتمتة المتابعة المتكررة.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/2/quiz/options/2",
+          "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "after": "Creator — محتوى بس.",
+          "category": "learner_text_change"
         }
       ]
     },
@@ -3506,8 +3309,19 @@
         {
           "pointer": "/sections/5/bullets/1",
           "before": "**التفسير:** سؤال محدد يفهم «أين المشكلة» — يوصلك لقرار بخصوص مسار الشراء. الأرقام العامة لا تكفي.",
-          "after": "التفسير: سؤال محدد يفهم «أين المشكلة» — يوصلك لقرار بخصوص مسار الشراء. الأرقام العامة لا تكفي.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "هل نزيد ميزانية الإعلانات الربع الجاي؟",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/5/bullets/2",
+          "after": "وين بالضبط يترك الزبائن عملية الشراء (funnel drop-off)؟",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/5/contentMarkdown",
+          "before": "> **Quiz key (unchanged):** correctIndex: 2\n\n**السؤال:** لاحظت أن كثيرًا من الزبائن يضيفون منتجات للسلة ولا يشترون. ما أفضل أول سؤال للبيانات؟\n\n- **الإجابة الصحيحة:** **أين بالضبط** يترك الزبائن عملية الشراء (**funnel drop-off**)؟\n- **التفسير:** سؤال محدد يفهم «أين المشكلة» — يوصلك لقرار بخصوص مسار الشراء. الأرقام العامة لا تكفي.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 2\n\n**السؤال:** لاحظت أن كثيرًا من الزبائن يضيفون منتجات للسلة ولا يشترون. ما أفضل أول سؤال للبيانات؟\n\nأين بالضبط يترك الزبائن عملية الشراء (funnel drop-off)؟\n- **التفسير:** سؤال محدد يفهم «أين المشكلة» — يوصلك لقرار بخصوص مسار الشراء. الأرقام العامة لا تكفي.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/5/quiz/options/0",
@@ -3537,22 +3351,6 @@
       "gitModified": true,
       "changes": [
         {
-          "pointer": "/sections/7/bullets/0",
-          "before": "«أشعر أن…» (الشعور الأصلي)",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/bullets/1",
-          "before": "→ السؤال المحدّد (**Metric + فترة + مقارنة**)",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/contentMarkdown",
-          "before": "**المقدمة:** مهمة **تحويل عملي** — **ليس** تحليلًا إحصائيًا. اكتب **٣ جمل** «أشعر أن…» من **عملك الحقيقي** (أو من حولك). حوّل كل واحدة إلى **سؤال** تجيب عليه **البيانات**. **١٠–١٥ دقيقة** كافية.\n\n**التسليم:** لكل شعور (١–٣):\n\n- «أشعر أن…» (الشعور الأصلي)\n- → السؤال المحدّد (**Metric + فترة + مقارنة**)\n\n+ **مصدر واحد** يجيب على **سؤالين على الأقل** من الثلاثة (Sheet / CRM / Analytics…)\n\n**معايير التقييم:**\n\n| البعد | الوزن | المعيار |\n|-------|-------|---------|\n| ٣ أسئلة محدّدة | 60% | كل سؤال فيه **رقم أو مقياس** + **فترة** + **مقارنة** — ليس سؤالًا عامًا |\n| مصدر للإجابة | 40% | مصدر **واحد** على الأقل يمكن الإجابة منه **سؤالين** |",
-          "after": "**المقدمة:** مهمة **تحويل عملي** — **ليس** تحليلًا إحصائيًا. اكتب **٣ جمل** «أشعر أن…» من **عملك الحقيقي** (أو من حولك). حوّل كل واحدة إلى **سؤال** تجيب عليه **البيانات**. **١٠–١٥ دقيقة** كافية.",
-          "category": "learner_text_change"
-        },
-        {
           "pointer": "/sections/7/mission/delivery/0",
           "after": "«أشعر أن…» (الشعور الأصلي)",
           "category": "mission_delivery_restoration"
@@ -3571,22 +3369,6 @@
       "semanticallyIdentical": false,
       "gitModified": true,
       "changes": [
-        {
-          "pointer": "/sections/7/bullets/0",
-          "before": "السؤال",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/bullets/1",
-          "before": "إذا **X**: [ما القرار؟] · إذا **Y**: [ما القرار؟] · **هل** يتغيّر القرار؟ (نعم / لا)",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/contentMarkdown",
-          "before": "**المقدمة:** مهمة **فلتر عملي** — **ليس امتحانًا**. اكتب **٣ أسئلة** (من الدرس السابق أو من عملك). لكل سؤال طبّق: «**إذا** كانت الإجابة **X** أو **Y** — **هل** سأغيّر قراري؟» إذا **لا** — **أعد صياغة** السؤال.\n\n**التسليم:** لكل سؤال (١–٣):\n\n- السؤال\n- إذا **X**: [ما القرار؟] · إذا **Y**: [ما القرار؟] · **هل** يتغيّر القرار؟ (نعم / لا)\n\n+ إذا **فشل** سؤال — **النسخة المحسّنة**\n\n**معايير التقييم:**\n\n| البعد | الوزن | المعيار |\n|-------|-------|---------|\n| اختبار القرار | 60% | كل سؤال فيه **X** و**Y** و**قرار مختلف** — أو توضيح **لماذا** لن يتغيّر |\n| تحسين | 40% | إذا **فشل** سؤال — **نسخة محسّنة** **مرتبطة بقرار** |",
-          "after": "**المقدمة:** مهمة **فلتر عملي** — **ليس امتحانًا**. اكتب **٣ أسئلة** (من الدرس السابق أو من عملك). لكل سؤال طبّق: «**إذا** كانت الإجابة **X** أو **Y** — **هل** سأغيّر قراري؟» إذا **لا** — **أعد صياغة** السؤال.",
-          "category": "learner_text_change"
-        },
         {
           "pointer": "/sections/7/mission/delivery/0",
           "after": "السؤال",
@@ -3615,7 +3397,7 @@
         {
           "pointer": "/sections/3/contentMarkdown",
           "before": "> **Quiz key (unchanged):** correctIndex: 0\n\n- ****الإجابة الصحيحة** (correctIndex: 0):** تؤتمت الرقم اللي بتقرأه كل أسبوع وتاخد عليه قرار — بعد ما جمعته يدوي أسبوعين.\nتؤتمت الـ ٤ أرقام مرة واحدة قبل ما تجرب يدوي.\nتبني ١٠ رسوم إضافية في Looker Studio.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-          "after": "> **Quiz key (unchanged):** correctIndex: 0\n\n( 0): تؤتمت الرقم اللي بتقرأه كل أسبوع وتاخد عليه قرار — بعد ما جمعته يدوي أسبوعين.\nتؤتمت الـ ٤ أرقام مرة واحدة قبل ما تجرب يدوي.\nتبني ١٠ رسوم إضافية في Looker Studio.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 0\n\nتؤتمت الرقم اللي بتقرأه كل أسبوع وتاخد عليه قرار — بعد ما جمعته يدوي أسبوعين.\nتؤتمت الـ ٤ أرقام مرة واحدة قبل ما تجرب يدوي.\nتبني ١٠ رسوم إضافية في Looker Studio.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
           "category": "quiz_option_prefix_removal"
         }
       ]
@@ -3789,7 +3571,7 @@
         {
           "pointer": "/sections/2/contentMarkdown",
           "before": "> **Quiz key (unchanged):** correctIndex: 0\n\n- ****الإجابة الصحيحة** (correctIndex: 0):** تسأل «إيه اللي اتغيّر من الأسبوع اللي فات؟» وتستخدم الـ AI تساعدك تفسّر — بعدين قرار واحد.\nتلوم المسؤول عن المبيعات فورًا.\nتضيف ١٠ مهام للأسبوع الجاي من غير أولوية.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-          "after": "> **Quiz key (unchanged):** correctIndex: 0\n\n( 0): تسأل «إيه اللي اتغيّر من الأسبوع اللي فات؟» وتستخدم الـ AI تساعدك تفسّر — بعدين قرار واحد.\nتلوم المسؤول عن المبيعات فورًا.\nتضيف ١٠ مهام للأسبوع الجاي من غير أولوية.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 0\n\nتسأل «إيه اللي اتغيّر من الأسبوع اللي فات؟» وتستخدم الـ AI تساعدك تفسّر — بعدين قرار واحد.\nتلوم المسؤول عن المبيعات فورًا.\nتضيف ١٠ مهام للأسبوع الجاي من غير أولوية.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
           "category": "quiz_option_prefix_removal"
         }
       ]
@@ -3810,7 +3592,7 @@
         {
           "pointer": "/sections/2/contentMarkdown",
           "before": "> **Quiz key (unchanged):** correctIndex: 0\n\n- ****الإجابة الصحيحة** (correctIndex: 0):** Leading — افترض سبب الترك قبل ما يشوف البيانات.\nVague — السؤال عام بس.\nNo-Data — مفيش بيانات أصلًا.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-          "after": "> **Quiz key (unchanged):** correctIndex: 0\n\n( 0): Leading — افترض سبب الترك قبل ما يشوف البيانات.\nVague — السؤال عام بس.\nNo-Data — مفيش بيانات أصلًا.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 0\n\nLeading — افترض سبب الترك قبل ما يشوف البيانات.\nVague — السؤال عام بس.\nNo-Data — مفيش بيانات أصلًا.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
           "category": "quiz_option_prefix_removal"
         }
       ]
@@ -3831,7 +3613,7 @@
         {
           "pointer": "/sections/2/contentMarkdown",
           "before": "> **Quiz key (unchanged):** correctIndex: 0\n\n- ****الإجابة الصحيحة** (correctIndex: 0):** Correlation ≠ Causation — ممكن في سبب تالت (وقت اليوم، نوع زبائن).\nAnalysis Paralysis — بيتأخر في القرار.\nVanity metric — اللايكات مش مهمة.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-          "after": "> **Quiz key (unchanged):** correctIndex: 0\n\n( 0): Correlation ≠ Causation — ممكن في سبب تالت (وقت اليوم، نوع زبائن).\nAnalysis Paralysis — بيتأخر في القرار.\nVanity metric — اللايكات مش مهمة.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 0\n\nCorrelation ≠ Causation — ممكن في سبب تالت (وقت اليوم، نوع زبائن).\nAnalysis Paralysis — بيتأخر في القرار.\nVanity metric — اللايكات مش مهمة.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
           "category": "quiz_option_prefix_removal"
         }
       ]
@@ -3852,7 +3634,7 @@
         {
           "pointer": "/sections/2/contentMarkdown",
           "before": "> **Quiz key (unchanged):** correctIndex: 0\n\n- ****الإجابة الصحيحة** (correctIndex: 0):** برمجة الخصم في نظام الطلبات — يتطبق تلقائي من غير تدخل يدوي كل مرة.\nاتصال يدوي بكل عميل جديد.\nإعلان بس — واستنى الناس تتفاعل.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-          "after": "> **Quiz key (unchanged):** correctIndex: 0\n\n( 0): برمجة الخصم في نظام الطلبات — يتطبق تلقائي من غير تدخل يدوي كل مرة.\nاتصال يدوي بكل عميل جديد.\nإعلان بس — واستنى الناس تتفاعل.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 0\n\nبرمجة الخصم في نظام الطلبات — يتطبق تلقائي من غير تدخل يدوي كل مرة.\nاتصال يدوي بكل عميل جديد.\nإعلان بس — واستنى الناس تتفاعل.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
           "category": "quiz_option_prefix_removal"
         }
       ]
@@ -3873,8 +3655,19 @@
         {
           "pointer": "/sections/5/bullets/1",
           "before": "**التفسير:** **Audit** أولًا — عندما تعرف «إيميل ترحيب» = ٣٠ دقيقة يوميًا، ستعرف أن هذه **أول مهمة** للعامل الافتراضي.",
-          "after": "التفسير: Audit أولًا — عندما تعرف «إيميل ترحيب» = ٣٠ دقيقة يوميًا، ستعرف أن هذه أول مهمة للعامل الافتراضي.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/5/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/5/contentMarkdown",
+          "before": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** سارة ترسل إيميل ترحيب لكل عميل جديد يدويًا — ٣٠ دقيقة يوميًا. ما أفضل خطوة **قبل** فتح أي أداة أتمتة؟\n\n- **الإجابة الصحيحة:** **تعدّ المهمة ووقتها وتكرارها** في الأسبوع — لتعرف أن هذه أولوية.\n- **التفسير:** **Audit** أولًا — عندما تعرف «إيميل ترحيب» = ٣٠ دقيقة يوميًا، ستعرف أن هذه **أول مهمة** للعامل الافتراضي.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** سارة ترسل إيميل ترحيب لكل عميل جديد يدويًا — ٣٠ دقيقة يوميًا. ما أفضل خطوة **قبل** فتح أي أداة أتمتة؟\n\nتعدّ المهمة ووقتها وتكرارها في الأسبوع — لتعرف أن هذه أولوية.\n- **التفسير:** **Audit** أولًا — عندما تعرف «إيميل ترحيب» = ٣٠ دقيقة يوميًا، ستعرف أن هذه **أول مهمة** للعامل الافتراضي.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/5/quiz/options/0",
@@ -3900,8 +3693,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** **المُشغّل** = الحدث الذي يبدأ النظام. هنا رسالة العميل — لا قائمة الأسعار ولا تسجيل CRM (هذان عملية ونتيجة).",
-          "after": "التفسير: المُشغّل = الحدث الذي يبدأ النظام. هنا رسالة العميل — لا قائمة الأسعار ولا تسجيل CRM (هذان عملية ونتيجة).",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** عميل يرسل رسالة على فيسبوك يسأل عن سعر منتج. في «نظام الرد»، ما **المُشغّل (Trigger)**؟\n\n- **الإجابة الصحيحة:** **رسالة العميل الجديدة**\n- **التفسير:** **المُشغّل** = الحدث الذي يبدأ النظام. هنا رسالة العميل — لا قائمة الأسعار ولا تسجيل CRM (هذان عملية ونتيجة).",
+          "after": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** عميل يرسل رسالة على فيسبوك يسأل عن سعر منتج. في «نظام الرد»، ما **المُشغّل (Trigger)**؟\n\nرسالة العميل الجديدة\n- **التفسير:** **المُشغّل** = الحدث الذي يبدأ النظام. هنا رسالة العميل — لا قائمة الأسعار ولا تسجيل CRM (هذان عملية ونتيجة).",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -3927,8 +3731,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** نسخ بيانات من Excel إلى CRM = نقل متكرر. **نمط** واضح للعامل الافتراضي.",
-          "after": "التفسير: نسخ بيانات من Excel إلى CRM = نقل متكرر. نمط واضح للعامل الافتراضي.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** أحمد كلما وافق عميل على عرض → ينسخ بياناته من Excel إلى CRM يدويًا. أي نوع **نمط** هذا؟\n\n- **الإجابة الصحيحة:** **نقل — بيانات من مكان إلى مكان بنفس الخطوات**\n- **التفسير:** نسخ بيانات من Excel إلى CRM = نقل متكرر. **نمط** واضح للعامل الافتراضي.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** أحمد كلما وافق عميل على عرض → ينسخ بياناته من Excel إلى CRM يدويًا. أي نوع **نمط** هذا؟\n\nنقل — بيانات من مكان إلى مكان بنفس الخطوات\n- **التفسير:** نسخ بيانات من Excel إلى CRM = نقل متكرر. **نمط** واضح للعامل الافتراضي.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -3954,8 +3769,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** أول أتمتة = فوز سريع. (أ) يحقّق التكرار والبساطة. (ب) معقّد. (ج) نادر وشخصي.",
-          "after": "التفسير: أول أتمتة = فوز سريع. (أ) يحقّق التكرار والبساطة. (ب) معقّد. (ج) نادر وشخصي.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "**السؤال:** عندك ٣ مرشّحين: (أ) نسخ نموذج لجدول — ٤٠ مرة/شهر، ٣ خطوات. (ب) تقرير إبداعي أسبوعي — مرة/أسبوع، ١٠ خطوات. (ج) بريد شريك — مرة/شهرين. أفضل أول أتمتة؟\n\n- **الإجابة الصحيحة (correctIndex: 0):** **(أ) — متكرّر + بسيط + مخاطرة قليلة**\n- **التفسير:** أول أتمتة = فوز سريع. (أ) يحقّق التكرار والبساطة. (ب) معقّد. (ج) نادر وشخصي.",
+          "after": "**السؤال:** عندك ٣ مرشّحين: (أ) نسخ نموذج لجدول — ٤٠ مرة/شهر، ٣ خطوات. (ب) تقرير إبداعي أسبوعي — مرة/أسبوع، ١٠ خطوات. (ج) بريد شريك — مرة/شهرين. أفضل أول أتمتة؟\n\n(أ) — متكرّر + بسيط + مخاطرة قليلة\n- **التفسير:** أول أتمتة = فوز سريع. (أ) يحقّق التكرار والبساطة. (ب) معقّد. (ج) نادر وشخصي.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -3981,8 +3807,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** بداية + **مسار عمل** بسيط + ميزانية = Make. التفكير واحد — الأداة تخدم الحجم.",
-          "after": "التفسير: بداية + مسار عمل بسيط + ميزانية = Make. التفكير واحد — الأداة تخدم الحجم.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "**السؤال:** في البداية، عندك **مسار عمل (workflow)** واحد بسيط: «نموذج → بريد ترحيب» — ٢٠ مرة/شهر. ميزانيتك محدودة. أنسب أداة؟\n\n- **الإجابة الصحيحة (correctIndex: 0):** **Make — free tier كافٍ، مرئي واضح، مناسب للبداية**\n- **التفسير:** بداية + **مسار عمل** بسيط + ميزانية = Make. التفكير واحد — الأداة تخدم الحجم.",
+          "after": "**السؤال:** في البداية، عندك **مسار عمل (workflow)** واحد بسيط: «نموذج → بريد ترحيب» — ٢٠ مرة/شهر. ميزانيتك محدودة. أنسب أداة؟\n\nMake — free tier كافٍ، مرئي واضح، مناسب للبداية\n- **التفسير:** بداية + **مسار عمل** بسيط + ميزانية = Make. التفكير واحد — الأداة تخدم الحجم.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -4008,8 +3845,19 @@
         {
           "pointer": "/sections/5/bullets/1",
           "before": "**التفسير:** الشراء = حدث فوري → **Webhook (إشعار فوري)**. «لما يشتري → أرسل واتساب» — هذا تصميم العامل الافتراضي.",
-          "after": "التفسير: الشراء = حدث فوري → Webhook (إشعار فوري). «لما يشتري → أرسل واتساب» — هذا تصميم العامل الافتراضي.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/5/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/5/contentMarkdown",
+          "before": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** أريد أول ما يشتري عميل دورة، أن يصله واتساب فورًا فيه رابط الدخول. ما التصميم الصحيح؟\n\n- **الإجابة الصحيحة:** **Trigger (مُشغّل):** **Webhook (إشعار فوري)** من بوابة الدفع (شراء جديد). **Action (فعل):** إرسال واتساب.\n- **التفسير:** الشراء = حدث فوري → **Webhook (إشعار فوري)**. «لما يشتري → أرسل واتساب» — هذا تصميم العامل الافتراضي.\n\n*(الخيارات الخاطئة المحفوظة من الإنتاج: Schedule كل ساعة للبحث عن مشتريات؛ Manual لكل عميل.)*",
+          "after": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** أريد أول ما يشتري عميل دورة، أن يصله واتساب فورًا فيه رابط الدخول. ما التصميم الصحيح؟\n\nTrigger (مُشغّل): Webhook (إشعار فوري) من بوابة الدفع (شراء جديد). Action (فعل): إرسال واتساب.\n- **التفسير:** الشراء = حدث فوري → **Webhook (إشعار فوري)**. «لما يشتري → أرسل واتساب» — هذا تصميم العامل الافتراضي.\n\n*(الخيارات الخاطئة المحفوظة من الإنتاج: Schedule كل ساعة للبحث عن مشتريات؛ Manual لكل عميل.)*",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/5/quiz/options/0",
@@ -4035,8 +3883,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** تحتاج مسارين مختلفين حسب الشرط — هذا **Router**. **Filter** يوقف أو يمرّر، ولا يوزّع.",
-          "after": "التفسير: تحتاج مسارين مختلفين حسب الشرط — هذا Router. Filter يوقف أو يمرّر، ولا يوزّع.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "**السؤال:** عميل اشترى فوق ٥٠٠٠ جنيه → بريد شكر خاص. تحت ٥٠٠٠ → بريد عادي. ما الأنسب؟\n\n- **الإجابة الصحيحة (correctIndex: 0):** **Router يفرّق حسب قيمة الشراء — مساران مختلفان**\n- **التفسير:** تحتاج مسارين مختلفين حسب الشرط — هذا **Router**. **Filter** يوقف أو يمرّر، ولا يوزّع.",
+          "after": "**السؤال:** عميل اشترى فوق ٥٠٠٠ جنيه → بريد شكر خاص. تحت ٥٠٠٠ → بريد عادي. ما الأنسب؟\n\nRouter يفرّق حسب قيمة الشراء — مساران مختلفان\n- **التفسير:** تحتاج مسارين مختلفين حسب الشرط — هذا **Router**. **Filter** يوقف أو يمرّر، ولا يوزّع.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -4062,8 +3921,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** الخطأ يبقى عندك — لا عند العميل.",
-          "after": "التفسير: الخطأ يبقى عندك — لا عند العميل.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "**السؤال:** **workflow** جديد يرسل ترحيبًا. أفضل خطوة قبل production؟\n\n- **الإجابة الصحيحة (correctIndex: 0):** بيانات تجريبية + ٣ edge cases + مراجعة يدوية\n- **التفسير:** الخطأ يبقى عندك — لا عند العميل.",
+          "after": "**السؤال:** **workflow** جديد يرسل ترحيبًا. أفضل خطوة قبل production؟\n\nبيانات تجريبية + ٣ edge cases + مراجعة يدوية\n- **التفسير:** الخطأ يبقى عندك — لا عند العميل.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -4089,8 +3959,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** السجل المنظم = ذاكرة الأتمتة. بريد من دون جدول = الشغل المتكرر يعود يدويًا.",
-          "after": "التفسير: السجل المنظم = ذاكرة الأتمتة. بريد من دون جدول = الشغل المتكرر يعود يدويًا.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "**السؤال:** أتمتة تسجّل عملاء جدد كل يوم. المبيعات تحتاج تقريرًا بأسمائهم. ما الأهم؟\n\n- **الإجابة الصحيحة (correctIndex: 0):** **مسار العمل (workflow) يكتب كل عميل في جدول منظم بحقول ثابتة — ويقرأ منه للتقرير**\n- **التفسير:** السجل المنظم = ذاكرة الأتمتة. بريد من دون جدول = الشغل المتكرر يعود يدويًا.",
+          "after": "**السؤال:** أتمتة تسجّل عملاء جدد كل يوم. المبيعات تحتاج تقريرًا بأسمائهم. ما الأهم؟\n\nمسار العمل (workflow) يكتب كل عميل في جدول منظم بحقول ثابتة — ويقرأ منه للتقرير\n- **التفسير:** السجل المنظم = ذاكرة الأتمتة. بريد من دون جدول = الشغل المتكرر يعود يدويًا.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -4116,8 +3997,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** حدث لحظي يحتاج webhook. Polling بطيء ومكلف.",
-          "after": "التفسير: حدث لحظي يحتاج webhook. Polling بطيء ومكلف.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "**السؤال:** تريد رسالة ترحيب فورًا عند دفع العميل. ما الأنسب؟\n\n- **الإجابة الصحيحة (correctIndex: 0):** **Webhook (إشعار فوري)** من بوابة الدفع — يُبلّغك لحظة الدفع\n- **التفسير:** حدث لحظي يحتاج webhook. Polling بطيء ومكلف.",
+          "after": "**السؤال:** تريد رسالة ترحيب فورًا عند دفع العميل. ما الأنسب؟\n\nWebhook (إشعار فوري) من بوابة الدفع — يُبلّغك لحظة الدفع\n- **التفسير:** حدث لحظي يحتاج webhook. Polling بطيء ومكلف.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -4143,8 +4035,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** أخطاء مؤقتة = **Retry**. بعد الفشل = **Alert** قبل أن يتأذى العميل.",
-          "after": "التفسير: أخطاء مؤقتة = Retry. بعد الفشل = Alert قبل أن يتأذى العميل.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "**السؤال:** **API** الرسائل يعيد خطأ ٥٠٠ لثوانٍ — ثم يعمل. ما أفضل تعامل؟\n\n- **الإجابة الصحيحة (correctIndex: 0):** **Retry** ٣ مرات — ولو فشل، تنبيه + تسجيل في جدول failed\n- **التفسير:** أخطاء مؤقتة = **Retry**. بعد الفشل = **Alert** قبل أن يتأذى العميل.",
+          "after": "**السؤال:** **API** الرسائل يعيد خطأ ٥٠٠ لثوانٍ — ثم يعمل. ما أفضل تعامل؟\n\nRetry ٣ مرات — ولو فشل، تنبيه + تسجيل في جدول failed\n- **التفسير:** أخطاء مؤقتة = **Retry**. بعد الفشل = **Alert** قبل أن يتأذى العميل.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -4170,8 +4073,19 @@
         {
           "pointer": "/sections/5/bullets/1",
           "before": "**التفسير:** خطوة AI تضيف فهمًا — لا سرعة نقل فقط.",
-          "after": "التفسير: خطوة AI تضيف فهمًا — لا سرعة نقل فقط.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/5/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/5/contentMarkdown",
+          "before": "- **الإجابة الصحيحة (correctIndex: 1):** تصنيف الرسالة واستخراج الاسم والمطلوب بشكل منظم\n- **التفسير:** خطوة AI تضيف فهمًا — لا سرعة نقل فقط.",
+          "after": "تصنيف الرسالة واستخراج الاسم والمطلوب بشكل منظم\n- **التفسير:** خطوة AI تضيف فهمًا — لا سرعة نقل فقط.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/5/quiz/options/0",
@@ -4191,13 +4105,25 @@
         {
           "pointer": "/sections/4/bullets/1",
           "before": "****الإجابة الصحيحة** (correctIndex: 1):** تختار مصدر FAQ أو قائمة أسعار وتربطه بالأوتوميشن قبل كل رد.",
-          "after": "( 1): تختار مصدر FAQ أو قائمة أسعار وتربطه بالأوتوميشن قبل كل رد.",
+          "after": "تختار مصدر FAQ أو قائمة أسعار وتربطه بالأوتوميشن قبل كل رد.",
           "category": "quiz_option_prefix_removal"
         },
         {
-          "pointer": "/sections/4/quiz/explanation",
-          "before": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-          "after": "— للسياق الكامل.",
+          "pointer": "/sections/4/contentMarkdown",
+          "before": "> **Quiz key (unchanged):** correctIndex: 1\n\nتكتب system prompt أطول يقوله «متخمّنش».\n- ****الإجابة الصحيحة** (correctIndex: 1):** تختار مصدر FAQ أو قائمة أسعار وتربطه بالأوتوميشن قبل كل رد.\nتوقف البوت وترد يدوي على كل الأسئلة.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 1\n\nتكتب system prompt أطول يقوله «متخمّنش».\nتختار مصدر FAQ أو قائمة أسعار وتربطه بالأوتوميشن قبل كل رد.\nتوقف البوت وترد يدوي على كل الأسئلة.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+          "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/4/quiz/options/1",
+          "before": "توقف البوت وترد يدوي على كل الأسئلة.",
+          "after": "تختار مصدر FAQ أو قائمة أسعار وتربطه بالأوتوميشن قبل كل رد.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/4/quiz/options/2",
+          "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "after": "توقف البوت وترد يدوي على كل الأسئلة.",
           "category": "learner_text_change"
         }
       ]
@@ -4212,13 +4138,25 @@
         {
           "pointer": "/sections/3/bullets/1",
           "before": "****الإجابة الصحيحة** (correctIndex: 1):** Agent بهدف واضح وأدوات محددة وحد يمنع الإرسال بدون موافقة.",
-          "after": "( 1): Agent بهدف واضح وأدوات محددة وحد يمنع الإرسال بدون موافقة.",
+          "after": "Agent بهدف واضح وأدوات محددة وحد يمنع الإرسال بدون موافقة.",
           "category": "quiz_option_prefix_removal"
         },
         {
-          "pointer": "/sections/3/quiz/explanation",
-          "before": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-          "after": "— للسياق الكامل.",
+          "pointer": "/sections/3/contentMarkdown",
+          "before": "> **Quiz key (unchanged):** correctIndex: 1\n\nWorkflow ثابت بشروط كتير لكل احتمال.\n- ****الإجابة الصحيحة** (correctIndex: 1):** Agent بهدف واضح وأدوات محددة وحد يمنع الإرسال بدون موافقة.\nAgent مفتوح بكل الأدوات لكي يكون «ذكي».\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 1\n\nWorkflow ثابت بشروط كتير لكل احتمال.\nAgent بهدف واضح وأدوات محددة وحد يمنع الإرسال بدون موافقة.\nAgent مفتوح بكل الأدوات لكي يكون «ذكي».\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+          "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/1",
+          "before": "Agent مفتوح بكل الأدوات لكي يكون «ذكي».",
+          "after": "Agent بهدف واضح وأدوات محددة وحد يمنع الإرسال بدون موافقة.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/2",
+          "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "after": "Agent مفتوح بكل الأدوات لكي يكون «ذكي».",
           "category": "learner_text_change"
         }
       ]
@@ -4233,13 +4171,25 @@
         {
           "pointer": "/sections/3/bullets/1",
           "before": "****الإجابة الصحيحة** (correctIndex: 1):** كل تسجيل يتحفظ فورًا + رد ترحيب أوتوماتيك + تنبيه لمن يتابع.",
-          "after": "( 1): كل تسجيل يتحفظ فورًا + رد ترحيب أوتوماتيك + تنبيه لمن يتابع.",
+          "after": "كل تسجيل يتحفظ فورًا + رد ترحيب أوتوماتيك + تنبيه لمن يتابع.",
           "category": "quiz_option_prefix_removal"
         },
         {
-          "pointer": "/sections/3/quiz/explanation",
-          "before": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-          "after": "— للسياق الكامل.",
+          "pointer": "/sections/3/contentMarkdown",
+          "before": "> **Quiz key (unchanged):** correctIndex: 1\n\nتستنى لما تفضى وترد على الكل مرة واحدة.\n- ****الإجابة الصحيحة** (correctIndex: 1):** كل تسجيل يتحفظ فورًا + رد ترحيب أوتوماتيك + تنبيه لمن يتابع.\nتقفل الفورم لحد ما تلحق ترد.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 1\n\nتستنى لما تفضى وترد على الكل مرة واحدة.\nكل تسجيل يتحفظ فورًا + رد ترحيب أوتوماتيك + تنبيه لمن يتابع.\nتقفل الفورم لحد ما تلحق ترد.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+          "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/1",
+          "before": "تقفل الفورم لحد ما تلحق ترد.",
+          "after": "كل تسجيل يتحفظ فورًا + رد ترحيب أوتوماتيك + تنبيه لمن يتابع.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/2",
+          "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "after": "تقفل الفورم لحد ما تلحق ترد.",
           "category": "learner_text_change"
         }
       ]
@@ -4254,13 +4204,25 @@
         {
           "pointer": "/sections/3/bullets/1",
           "before": "****الإجابة الصحيحة** (correctIndex: 1):** تحويل فوري لموظف — ده شرط handoff واضح.",
-          "after": "( 1): تحويل فوري لموظف — ده شرط handoff واضح.",
+          "after": "تحويل فوري لموظف — ده شرط handoff واضح.",
           "category": "quiz_option_prefix_removal"
         },
         {
-          "pointer": "/sections/3/quiz/explanation",
-          "before": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-          "after": "— للسياق الكامل.",
+          "pointer": "/sections/3/contentMarkdown",
+          "before": "> **Quiz key (unchanged):** correctIndex: 1\n\nالبوت يكمل يحاول يجاوب من FAQ.\n- ****الإجابة الصحيحة** (correctIndex: 1):** تحويل فوري لموظف — ده شرط handoff واضح.\nتبعتله رسالة «انتظر ٢٤ ساعة».\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 1\n\nالبوت يكمل يحاول يجاوب من FAQ.\nتحويل فوري لموظف — ده شرط handoff واضح.\nتبعتله رسالة «انتظر ٢٤ ساعة».\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+          "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/1",
+          "before": "تبعتله رسالة «انتظر ٢٤ ساعة».",
+          "after": "تحويل فوري لموظف — ده شرط handoff واضح.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/2",
+          "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "after": "تبعتله رسالة «انتظر ٢٤ ساعة».",
           "category": "learner_text_change"
         }
       ]
@@ -4275,13 +4237,25 @@
         {
           "pointer": "/sections/3/bullets/1",
           "before": "****الإجابة الصحيحة** (correctIndex: 1):** تذكير لطيف بقناة مختلفة أو بسؤال واحد — مش ضغط بيع.",
-          "after": "( 1): تذكير لطيف بقناة مختلفة أو بسؤال واحد — مش ضغط بيع.",
+          "after": "تذكير لطيف بقناة مختلفة أو بسؤال واحد — مش ضغط بيع.",
           "category": "quiz_option_prefix_removal"
         },
         {
-          "pointer": "/sections/3/quiz/explanation",
-          "before": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-          "after": "— للسياق الكامل.",
+          "pointer": "/sections/3/contentMarkdown",
+          "before": "> **Quiz key (unchanged):** correctIndex: 1\n\nنفس رسالة الترحيب تاني.\n- ****الإجابة الصحيحة** (correctIndex: 1):** تذكير لطيف بقناة مختلفة أو بسؤال واحد — مش ضغط بيع.\nمكالمة فورية من غير تذكير.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 1\n\nنفس رسالة الترحيب تاني.\nتذكير لطيف بقناة مختلفة أو بسؤال واحد — مش ضغط بيع.\nمكالمة فورية من غير تذكير.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+          "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/1",
+          "before": "مكالمة فورية من غير تذكير.",
+          "after": "تذكير لطيف بقناة مختلفة أو بسؤال واحد — مش ضغط بيع.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/2",
+          "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "after": "مكالمة فورية من غير تذكير.",
           "category": "learner_text_change"
         }
       ]
@@ -4302,8 +4276,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** **الرحلة المتصلة** تتيح لك أسئلة قرار — وليس عدًّا فقط. القناة + التحويل = **Analyst**.",
-          "after": "التفسير: الرحلة المتصلة تتيح لك أسئلة قرار — وليس عدًّا فقط. القناة + التحويل = Analyst.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "**السؤال:** عندك leads من ٣ قنوات ومتابعة تعمل — لكنك لا تعرف أي قناة تجلب عملاء يشترون. أفضل سؤال تسأله للبيانات؟\n\n- **الإجابة الصحيحة (correctIndex: 1):** **أي قناة جلبت leads اشتروا بأعلى نسبة؟**\n- **التفسير:** **الرحلة المتصلة** تتيح لك أسئلة قرار — وليس عدًّا فقط. القناة + التحويل = **Analyst**.",
+          "after": "**السؤال:** عندك leads من ٣ قنوات ومتابعة تعمل — لكنك لا تعرف أي قناة تجلب عملاء يشترون. أفضل سؤال تسأله للبيانات؟\n\nأي قناة جلبت leads اشتروا بأعلى نسبة؟\n- **التفسير:** **الرحلة المتصلة** تتيح لك أسئلة قرار — وليس عدًّا فقط. القناة + التحويل = **Analyst**.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -4329,8 +4314,19 @@
         {
           "pointer": "/sections/5/bullets/1",
           "before": "**التفسير:** **AI** يتوقّع أقرب كلام منطقي — لا يتحقق من الخبر. عند بناء ميزة **AI**، خطّط للتحقق من الحقائق.",
-          "after": "التفسير: AI يتوقّع أقرب كلام منطقي — لا يتحقق من الخبر. عند بناء ميزة AI، خطّط للتحقق من الحقائق.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/5/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/5/contentMarkdown",
+          "before": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** سألت **AI** عن خبر حصل أمس — ردّ بتفاصيل كلها خطأ بثقة. ما أقرب سبب؟\n\n- **الإجابة الصحيحة:** يخمّن من **البيانات القديمة** التي تدرب عليها — **غير متصل** بأخبار لحظية.\n- **التفسير:** **AI** يتوقّع أقرب كلام منطقي — لا يتحقق من الخبر. عند بناء ميزة **AI**، خطّط للتحقق من الحقائق.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** سألت **AI** عن خبر حصل أمس — ردّ بتفاصيل كلها خطأ بثقة. ما أقرب سبب؟\n\nيخمّن من البيانات القديمة التي تدرب عليها — غير متصل بأخبار لحظية.\n- **التفسير:** **AI** يتوقّع أقرب كلام منطقي — لا يتحقق من الخبر. عند بناء ميزة **AI**، خطّط للتحقق من الحقائق.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/5/quiz/options/0",
@@ -4509,8 +4505,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** التفاصيل (الاسم، المنتج، المكان، المدة) = رد قابل للاستخدام في منتج حقيقي.",
-          "after": "التفسير: التفاصيل (الاسم، المنتج، المكان، المدة) = رد قابل للاستخدام في منتج حقيقي.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "> **Quiz key (unchanged):** correctIndex: 1\n\n**السؤال:** تريد أن يعمل الذكاء الاصطناعي على بوستات لمحل حلويات «سكر زيادة» في القاهرة — كنافة بالمانجو — لمدة أسبوع. ما أفضل **Prompt**؟\n\n- **الإجابة الصحيحة:** **اقترح أفكار بوستات لمدة أسبوع لمحل «سكر زيادة» في القاهرة — كنافة بالمانجو**\n- **التفسير:** التفاصيل (الاسم، المنتج، المكان، المدة) = رد قابل للاستخدام في منتج حقيقي.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 1\n\n**السؤال:** تريد أن يعمل الذكاء الاصطناعي على بوستات لمحل حلويات «سكر زيادة» في القاهرة — كنافة بالمانجو — لمدة أسبوع. ما أفضل **Prompt**؟\n\nاقترح أفكار بوستات لمدة أسبوع لمحل «سكر زيادة» في القاهرة — كنافة بالمانجو\n- **التفسير:** التفاصيل (الاسم، المنتج، المكان، المدة) = رد قابل للاستخدام في منتج حقيقي.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -4999,22 +5006,6 @@
           "category": "quiz_option_prefix_removal"
         },
         {
-          "pointer": "/sections/7/bullets/0",
-          "before": "**[قسم]: [ماذا بداخله]**",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/bullets/1",
-          "before": "**CTA: [أهم زر]**",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/contentMarkdown",
-          "before": "**المقدمة:** **رسم أو وصف — ليس كودًا**. **استخدم ٣ شاشات من الدرس السابق**. **١٠–١٥ دقيقة**.\n\n**التسليم:** **لكل شاشة قائمة Wireframe:**\n\n- **[قسم]: [ماذا بداخله]**\n- **CTA: [أهم زر]**\n\n**معايير التقييم:**\n\n| البعد | الوزن | المعيار |\n|-------|-------|---------|\n| ٣ شاشات موصوفة | 60% | **كل شاشة قائمة نقط — ليست فقرة**. **CTA واضح في كل شاشة** |\n| مربعات لا تصميم | 40% | **لا ألوان ولا fonts — أسماء أقسام فقط**. **الترتيب منطقي — الأهم أولًا** |",
-          "after": "**المقدمة:** **رسم أو وصف — ليس كودًا**. **استخدم ٣ شاشات من الدرس السابق**. **١٠–١٥ دقيقة**.",
-          "category": "learner_text_change"
-        },
-        {
           "pointer": "/sections/7/mission/delivery/0",
           "after": "**[قسم]: [ماذا بداخله]**",
           "category": "mission_delivery_restoration"
@@ -5074,37 +5065,6 @@
           "before": "Style: ألوان جميلة**.**",
           "after": "Style: ألوان جميلة.",
           "category": "quiz_option_prefix_removal"
-        },
-        {
-          "pointer": "/sections/7/bullets/0",
-          "before": "**Goal:** [نوع الواجهة + ماذا تفعل]",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/bullets/1",
-          "before": "**Users:** [من يستخدمها]",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/bullets/2",
-          "before": "**Pages:** [أقسام Wireframe بالاسم]",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/bullets/3",
-          "before": "**Style:** [لونان + mood]",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/bullets/4",
-          "before": "**Constraints:** [ما ليس في النسخة الأولى]",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/contentMarkdown",
-          "before": "**المقدمة:** **مسودة للنسخ — ليس تنفيذًا**. **استخدم Wireframe من الدرس السابق**. **١٠–١٥ دقيقة**.\n\n**التسليم:**\n\n- **Goal:** [نوع الواجهة + ماذا تفعل]\n- **Users:** [من يستخدمها]\n- **Pages:** [أقسام Wireframe بالاسم]\n- **Style:** [لونان + mood]\n- **Constraints:** [ما ليس في النسخة الأولى]\n\n**معايير التقييم:**\n\n| البعد | الوزن | المعيار |\n|-------|-------|---------|\n| الخمسة موجودون | 60% | **Goal, Users, Pages, Style, Constraints — كلهم مكتوبون**. **Pages مربوطة بـ Wireframe** |\n| جاهز للنسخ | 40% | **Style فيه لونان على الأقل**. **Constraints تحدّد «ليس الآن»** |",
-          "after": "**المقدمة:** **مسودة للنسخ — ليس تنفيذًا**. **استخدم Wireframe من الدرس السابق**. **١٠–١٥ دقيقة**.",
-          "category": "learner_text_change"
         },
         {
           "pointer": "/sections/7/mission/delivery/0",
@@ -5608,8 +5568,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** إذا كانت الجودة تعتمد على حضورها الشخصي، فالعمل لا يزال نظامًا شخصيًا لا **Business OS**. الذكاء الاصطناعي يستطيع المساعدة في قوالب ومتابعة — لكن أولًا تعرف التكرار.",
-          "after": "التفسير: إذا كانت الجودة تعتمد على حضورها الشخصي، فالعمل لا يزال نظامًا شخصيًا لا Business OS. الذكاء الاصطناعي يستطيع المساعدة في قوالب ومتابعة — لكن أولًا تعرف التكرار.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "> **Quiz key (unchanged):** correctIndex: 1\n\n**السؤال:** سارة تفتخر بأنها آخر من يرد على عملاء العمل كل يوم. ما التشخيص الأقرب؟\n\n- **الإجابة الصحيحة:** **وضع Operator — حضورها ضروري لأنه لا نظام رد أو متابعة**\n- **التفسير:** إذا كانت الجودة تعتمد على حضورها الشخصي، فالعمل لا يزال نظامًا شخصيًا لا **Business OS**. الذكاء الاصطناعي يستطيع المساعدة في قوالب ومتابعة — لكن أولًا تعرف التكرار.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 1\n\n**السؤال:** سارة تفتخر بأنها آخر من يرد على عملاء العمل كل يوم. ما التشخيص الأقرب؟\n\nوضع Operator — حضورها ضروري لأنه لا نظام رد أو متابعة\n- **التفسير:** إذا كانت الجودة تعتمد على حضورها الشخصي، فالعمل لا يزال نظامًا شخصيًا لا **Business OS**. الذكاء الاصطناعي يستطيع المساعدة في قوالب ومتابعة — لكن أولًا تعرف التكرار.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -5635,8 +5606,24 @@
         {
           "pointer": "/sections/5/bullets/1",
           "before": "**التفسير:** حجم المشكلة ليس المعيار. المعيار: من قرّر ماذا تعمل أولًا؟ تقليل المتكرر يبدأ بمعرفة متى «العالم» يأخذ يومك.",
-          "after": "التفسير: حجم المشكلة ليس المعيار. المعيار: من قرّر ماذا تعمل أولًا؟ تقليل المتكرر يبدأ بمعرفة متى «العالم» يأخذ يومك.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "Reactive — الموقف حدّد يومه قبل ما يختار أولوياته",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/5/bullets/2",
+          "after": "لا هذا ولا ذاك — لأن المشكلة كانت كبيرة وتستحق الوقت",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/5/bullets/3",
+          "after": "Proactive — لأن التعامل مع الموردين جزء من التخطيط",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/5/contentMarkdown",
+          "before": "> **Quiz key (unchanged):** correctIndex: 1\n\n**السؤال:** كريم فتح واتساب أول الصبح بسبب مشكلة مورد كبيرة وقضى ٣ ساعات. ما هذا؟\n\n- **الإجابة الصحيحة:** Reactive — الموقف حدّد يومه قبل أن يختار أولوياته.\n- **التفسير:** حجم المشكلة ليس المعيار. المعيار: من قرّر ماذا تعمل أولًا؟ تقليل المتكرر يبدأ بمعرفة متى «العالم» يأخذ يومك.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 1\n\n**السؤال:** كريم فتح واتساب أول الصبح بسبب مشكلة مورد كبيرة وقضى ٣ ساعات. ما هذا؟\n\nReactive — الموقف حدّد يومه قبل أن يختار أولوياته.\n- **التفسير:** حجم المشكلة ليس المعيار. المعيار: من قرّر ماذا تعمل أولًا؟ تقليل المتكرر يبدأ بمعرفة متى «العالم» يأخذ يومك.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/5/quiz/options/1",
@@ -5673,8 +5660,19 @@
         {
           "pointer": "/sections/5/bullets/1",
           "before": "**التفسير:** جلب عميل جديد غالبًا **أغلى** من إرجاع عميل موجود. إذا الضعف في الرجوع — ابدأ بالاحتفاظ قبل زيادة الإعلانات.",
-          "after": "التفسير: جلب عميل جديد غالبًا أغلى من إرجاع عميل موجود. إذا الضعف في الرجوع — ابدأ بالاحتفاظ قبل زيادة الإعلانات.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/5/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/5/contentMarkdown",
+          "before": "> **Quiz key (unchanged):** correctIndex: 1\n\n**السؤال:** عمل يجلب ١٠٠ عميل جديد شهريًا — ١٥ فقط يرجعون. ما أنسب تركيز أول؟\n\n- **الإجابة الصحيحة:** تحسين محطة **Retention (احتفاظ)** — لماذا من اشترى لا يرجع؟\n- **التفسير:** جلب عميل جديد غالبًا **أغلى** من إرجاع عميل موجود. إذا الضعف في الرجوع — ابدأ بالاحتفاظ قبل زيادة الإعلانات.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 1\n\n**السؤال:** عمل يجلب ١٠٠ عميل جديد شهريًا — ١٥ فقط يرجعون. ما أنسب تركيز أول؟\n\nتحسين محطة Retention (احتفاظ) — لماذا من اشترى لا يرجع؟\n- **التفسير:** جلب عميل جديد غالبًا **أغلى** من إرجاع عميل موجود. إذا الضعف في الرجوع — ابدأ بالاحتفاظ قبل زيادة الإعلانات.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/5/quiz/options/0",
@@ -5700,8 +5698,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** «غالي» غالبًا وضوح لا رقم. الذكاء الاصطناعي يساعد في الصياغة والاعتراضات — القرار والاختبار عليك.",
-          "after": "التفسير: «غالي» غالبًا وضوح لا رقم. الذكاء الاصطناعي يساعد في الصياغة والاعتراضات — القرار والاختبار عليك.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "> **Quiz key (unchanged):** correctIndex: 1\n\n**السؤال:** عميل قال «غالي» على خدمة — لكنه لم يسأل عن النتيجة. ما أفضل خطوة مع الذكاء الاصطناعي؟\n\n- **الإجابة الصحيحة:** **اطلب من الذكاء الاصطناعي إعادة صياغة العرض بتركيز على النتيجة ومقلّل المخاطرة — واختبره على عميل واحد**\n- **التفسير:** «غالي» غالبًا وضوح لا رقم. الذكاء الاصطناعي يساعد في الصياغة والاعتراضات — القرار والاختبار عليك.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 1\n\n**السؤال:** عميل قال «غالي» على خدمة — لكنه لم يسأل عن النتيجة. ما أفضل خطوة مع الذكاء الاصطناعي؟\n\nاطلب من الذكاء الاصطناعي إعادة صياغة العرض بتركيز على النتيجة ومقلّل المخاطرة — واختبره على عميل واحد\n- **التفسير:** «غالي» غالبًا وضوح لا رقم. الذكاء الاصطناعي يساعد في الصياغة والاعتراضات — القرار والاختبار عليك.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -5727,8 +5736,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** الاحتفاظ غالبًا أرخص من الجلب. الذكاء الاصطناعي يساعد في صياغة المتابعة — لا يستبدل قرار التوقيت والمحتوى.",
-          "after": "التفسير: الاحتفاظ غالبًا أرخص من الجلب. الذكاء الاصطناعي يساعد في صياغة المتابعة — لا يستبدل قرار التوقيت والمحتوى.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "**السؤال:** عميل اشترى منك مرة ولم يعد. ما أفضل خطوة أولى مع الذكاء الاصطناعي؟\n\n- **الإجابة الصحيحة (correctIndex: 1):** **تصميم لمسة متابعة بعد الشراء + مسودة رسالة تأكيد**\n- **التفسير:** الاحتفاظ غالبًا أرخص من الجلب. الذكاء الاصطناعي يساعد في صياغة المتابعة — لا يستبدل قرار التوقيت والمحتوى.",
+          "after": "**السؤال:** عميل اشترى منك مرة ولم يعد. ما أفضل خطوة أولى مع الذكاء الاصطناعي؟\n\nتصميم لمسة متابعة بعد الشراء + مسودة رسالة تأكيد\n- **التفسير:** الاحتفاظ غالبًا أرخص من الجلب. الذكاء الاصطناعي يساعد في صياغة المتابعة — لا يستبدل قرار التوقيت والمحتوى.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -5754,8 +5774,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** من دون أسعار وقوالب موحّدة، الذكاء الاصطناعي يُنتج ردودًا غير متسقة. الجاهزية = وضوح العملية.",
-          "after": "التفسير: من دون أسعار وقوالب موحّدة، الذكاء الاصطناعي يُنتج ردودًا غير متسقة. الجاهزية = وضوح العملية.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "**السؤال:** عملية «رد على استفسارات السعر» — كل مرة بأسلوب مختلف ولا قائمة أسعار. هل هي جاهزة للذكاء الاصطناعي؟\n\n- **الإجابة الصحيحة (correctIndex: 1):** **لا — الخطوات والبيانات غير واضحة؛ يجب توحيد القالب والأسعار أولًا**\n- **التفسير:** من دون أسعار وقوالب موحّدة، الذكاء الاصطناعي يُنتج ردودًا غير متسقة. الجاهزية = وضوح العملية.",
+          "after": "**السؤال:** عملية «رد على استفسارات السعر» — كل مرة بأسلوب مختلف ولا قائمة أسعار. هل هي جاهزة للذكاء الاصطناعي؟\n\nلا — الخطوات والبيانات غير واضحة؛ يجب توحيد القالب والأسعار أولًا\n- **التفسير:** من دون أسعار وقوالب موحّدة، الذكاء الاصطناعي يُنتج ردودًا غير متسقة. الجاهزية = وضوح العملية.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -5781,8 +5812,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** تكرار + مخاطرة منخفضة = مرشّح قوي للذكاء الاصطناعي. القرارات الحساسة تبقى مع مراجعة.",
-          "after": "التفسير: تكرار + مخاطرة منخفضة = مرشّح قوي للذكاء الاصطناعي. القرارات الحساسة تبقى مع مراجعة.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "**السؤال:** تلخيص ١٥ رسالة عميل كل صباح — نفس الشكل، لا قرار سعر. ما أنسب تصنيف؟\n\n- **الإجابة الصحيحة (correctIndex: 1):** **أتمت بالذكاء الاصطناعي — تلخيص وترتيب، وأنت تراجع القائمة**\n- **التفسير:** تكرار + مخاطرة منخفضة = مرشّح قوي للذكاء الاصطناعي. القرارات الحساسة تبقى مع مراجعة.",
+          "after": "**السؤال:** تلخيص ١٥ رسالة عميل كل صباح — نفس الشكل، لا قرار سعر. ما أنسب تصنيف؟\n\nأتمت بالذكاء الاصطناعي — تلخيص وترتيب، وأنت تراجع القائمة\n- **التفسير:** تكرار + مخاطرة منخفضة = مرشّح قوي للذكاء الاصطناعي. القرارات الحساسة تبقى مع مراجعة.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -5808,8 +5850,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** مراجعة الأرقام قد تبدأ إدارية — لكن قرار الهامش استراتيجي. يستحق وقتًا محميًا وشريك تفكير.",
-          "after": "التفسير: مراجعة الأرقام قد تبدأ إدارية — لكن قرار الهامش استراتيجي. يستحق وقتًا محميًا وشريك تفكير.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "**السؤال:** مراجعة أرقام الشهر وقرار تعديل هامش الربح. ما نوع هذا الشغل؟\n\n- **الإجابة الصحيحة (correctIndex: 1):** **استراتيجي — قرار اتجاه وتسعير**\n- **التفسير:** مراجعة الأرقام قد تبدأ إدارية — لكن قرار الهامش استراتيجي. يستحق وقتًا محميًا وشريك تفكير.",
+          "after": "**السؤال:** مراجعة أرقام الشهر وقرار تعديل هامش الربح. ما نوع هذا الشغل؟\n\nاستراتيجي — قرار اتجاه وتسعير\n- **التفسير:** مراجعة الأرقام قد تبدأ إدارية — لكن قرار الهامش استراتيجي. يستحق وقتًا محميًا وشريك تفكير.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -5835,8 +5888,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** النظام أولًا يقلّل الأخطاء والشرح المتكرر. الذكاء الاصطناعي يصوغ **SOP** — أنت تراجع وتختبر.",
-          "after": "التفسير: النظام أولًا يقلّل الأخطاء والشرح المتكرر. الذكاء الاصطناعي يصوغ SOP — أنت تراجع وتختبر.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "**السؤال:** تريد الاستعانة بشخص يرد على العملاء. ما أفضل ترتيب؟\n\n- **الإجابة الصحيحة (correctIndex: 1):** **تكتب SOP للردود مع الذكاء الاصطناعي، تجربه أسبوعًا، ثم تفوّض**\n- **التفسير:** النظام أولًا يقلّل الأخطاء والشرح المتكرر. الذكاء الاصطناعي يصوغ **SOP** — أنت تراجع وتختبر.",
+          "after": "**السؤال:** تريد الاستعانة بشخص يرد على العملاء. ما أفضل ترتيب؟\n\nتكتب SOP للردود مع الذكاء الاصطناعي، تجربه أسبوعًا، ثم تفوّض\n- **التفسير:** النظام أولًا يقلّل الأخطاء والشرح المتكرر. الذكاء الاصطناعي يصوغ **SOP** — أنت تراجع وتختبر.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -5856,13 +5920,25 @@
         {
           "pointer": "/sections/2/bullets/1",
           "before": "****الإجابة الصحيحة** (correctIndex: 1):** وقف التوسّع، اصلّح الجودة والتشغيل، بعدين كبّر تدريجي.",
-          "after": "( 1): وقف التوسّع، اصلّح الجودة والتشغيل، بعدين كبّر تدريجي.",
+          "after": "وقف التوسّع، اصلّح الجودة والتشغيل، بعدين كبّر تدريجي.",
           "category": "quiz_option_prefix_removal"
         },
         {
-          "pointer": "/sections/2/quiz/explanation",
-          "before": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-          "after": "— للسياق الكامل.",
+          "pointer": "/sections/2/contentMarkdown",
+          "before": "> **Quiz key (unchanged):** correctIndex: 1\n\nضاعف الإعلانات فورًا — الزخم مهم.\n- ****الإجابة الصحيحة** (correctIndex: 1):** وقف التوسّع، اصلّح الجودة والتشغيل، بعدين كبّر تدريجي.\nوظّف أكتر من غير SOP.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 1\n\nضاعف الإعلانات فورًا — الزخم مهم.\nوقف التوسّع، اصلّح الجودة والتشغيل، بعدين كبّر تدريجي.\nوظّف أكتر من غير SOP.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+          "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/2/quiz/options/1",
+          "before": "وظّف أكتر من غير SOP.",
+          "after": "وقف التوسّع، اصلّح الجودة والتشغيل، بعدين كبّر تدريجي.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/2/quiz/options/2",
+          "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "after": "وظّف أكتر من غير SOP.",
           "category": "learner_text_change"
         }
       ]
@@ -5877,13 +5953,25 @@
         {
           "pointer": "/sections/2/bullets/1",
           "before": "****الإجابة الصحيحة** (correctIndex: 1):** ٣ أرقام → تسأل AI عن التغيّر والمعلّق → تسجّل قرار واحد.",
-          "after": "( 1): ٣ أرقام → تسأل AI عن التغيّر والمعلّق → تسجّل قرار واحد.",
+          "after": "٣ أرقام → تسأل AI عن التغيّر والمعلّق → تسجّل قرار واحد.",
           "category": "quiz_option_prefix_removal"
         },
         {
-          "pointer": "/sections/2/quiz/explanation",
-          "before": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-          "after": "— للسياق الكامل.",
+          "pointer": "/sections/2/contentMarkdown",
+          "before": "> **Quiz key (unchanged):** correctIndex: 1\n\nتفتح كل الرسائل وترد — لكي «تخلص».\n- ****الإجابة الصحيحة** (correctIndex: 1):** ٣ أرقام → تسأل AI عن التغيّر والمعلّق → تسجّل قرار واحد.\nتقرأ ٥٠ مقال تسويق.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 1\n\nتفتح كل الرسائل وترد — لكي «تخلص».\n٣ أرقام → تسأل AI عن التغيّر والمعلّق → تسجّل قرار واحد.\nتقرأ ٥٠ مقال تسويق.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+          "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/2/quiz/options/1",
+          "before": "تقرأ ٥٠ مقال تسويق.",
+          "after": "٣ أرقام → تسأل AI عن التغيّر والمعلّق → تسجّل قرار واحد.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/2/quiz/options/2",
+          "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "after": "تقرأ ٥٠ مقال تسويق.",
           "category": "learner_text_change"
         }
       ]
@@ -5898,13 +5986,25 @@
         {
           "pointer": "/sections/2/bullets/1",
           "before": "****الإجابة الصحيحة** (correctIndex: 1):** Automator — أتمتة المتابعة المتكررة.",
-          "after": "( 1): Automator — أتمتة المتابعة المتكررة.",
+          "after": "Automator — أتمتة المتابعة المتكررة.",
           "category": "quiz_option_prefix_removal"
         },
         {
-          "pointer": "/sections/2/quiz/explanation",
-          "before": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-          "after": "— للسياق الكامل.",
+          "pointer": "/sections/2/contentMarkdown",
+          "before": "> **Quiz key (unchanged):** correctIndex: 1\n\nBuilder — تبني تطبيق فورًا.\n- ****الإجابة الصحيحة** (correctIndex: 1):** Automator — أتمتة المتابعة المتكررة.\nCreator — محتوى بس.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 1\n\nBuilder — تبني تطبيق فورًا.\nAutomator — أتمتة المتابعة المتكررة.\nCreator — محتوى بس.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
+          "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/2/quiz/options/1",
+          "before": "Creator — محتوى بس.",
+          "after": "Automator — أتمتة المتابعة المتكررة.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/2/quiz/options/2",
+          "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "after": "Creator — محتوى بس.",
           "category": "learner_text_change"
         }
       ]
@@ -5925,8 +6025,19 @@
         {
           "pointer": "/sections/5/bullets/1",
           "before": "**التفسير:** التحسن الحقيقي يبدأ من وضوح الوعد والنمط المتكرر — لا من زيادة الكمية.",
-          "after": "التفسير: التحسن الحقيقي يبدأ من وضوح الوعد والنمط المتكرر — لا من زيادة الكمية.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/5/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/5/contentMarkdown",
+          "before": "> **Quiz key (unchanged):** correctIndex: 1\n\n**السؤال:** شخص ينشر يوميًا لكن كل منشور بشكل مختلف ومن دون اتجاه — ما أقرب خطوة لتصحيح المسار؟\n\n- **الإجابة الصحيحة:** يحدد **وعد محتوى (Content Promise)** واضحًا ويختار **نوع محتوى متكرر (Repeatable Format)**.\n- **التفسير:** التحسن الحقيقي يبدأ من وضوح الوعد والنمط المتكرر — لا من زيادة الكمية.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 1\n\n**السؤال:** شخص ينشر يوميًا لكن كل منشور بشكل مختلف ومن دون اتجاه — ما أقرب خطوة لتصحيح المسار؟\n\nيحدد وعد محتوى (Content Promise) واضحًا ويختار نوع محتوى متكرر (Repeatable Format).\n- **التفسير:** التحسن الحقيقي يبدأ من وضوح الوعد والنمط المتكرر — لا من زيادة الكمية.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/5/quiz/options/0",
@@ -6564,8 +6675,24 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** تجربة واحدة صغيرة تعلّمك أكثر من قراءة طويلة. هذا بالضبط ما ستفعله في المهمة.",
-          "after": "التفسير: تجربة واحدة صغيرة تعلّمك أكثر من قراءة طويلة. هذا بالضبط ما ستفعله في المهمة.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "تفتح ChatGPT أو Gemini وتطلب منه شيء بسيط من يومك.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "تنتظر لين تخلص الدورة كلها قبل ما تجرب أي أداة.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/3",
+          "after": "تسأل شخص خبير يشرح لك كل التفاصيل التقنية أولًا.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "**السؤال:** ما أفضل طريقة لتبدأ فهم الـ AI اليوم؟\n\n- **الإجابة الصحيحة (correctIndex: 1):** تفتح ChatGPT أو Gemini وتطلب منه شيئًا بسيطًا من يومك.\n- **التفسير:** تجربة واحدة صغيرة تعلّمك أكثر من قراءة طويلة. هذا بالضبط ما ستفعله في المهمة.",
+          "after": "**السؤال:** ما أفضل طريقة لتبدأ فهم الـ AI اليوم؟\n\nتفتح ChatGPT أو Gemini وتطلب منه شيئًا بسيطًا من يومك.\n- **التفسير:** تجربة واحدة صغيرة تعلّمك أكثر من قراءة طويلة. هذا بالضبط ما ستفعله في المهمة.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -6608,8 +6735,19 @@
         {
           "pointer": "/sections/5/bullets/1",
           "before": "**التفسير:** الذكاء الاصطناعي لا يعرف حياتك. السياق + مهمة واضحة يحوّلان الطلب من عام إلى عملي.",
-          "after": "التفسير: الذكاء الاصطناعي لا يعرف حياتك. السياق + مهمة واضحة يحوّلان الطلب من عام إلى عملي.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/5/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/5/contentMarkdown",
+          "before": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** أحمد كتب: «اكتب إيميلًا لوظيفة جديدة». ما أهم إضافة أولًا؟\n\n- **الإجابة الصحيحة:** سياق — من أحمد، ما الوظيفة، ولماذا هذا الإيميل.\n- **التفسير:** الذكاء الاصطناعي لا يعرف حياتك. السياق + مهمة واضحة يحوّلان الطلب من عام إلى عملي.",
+          "after": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** أحمد كتب: «اكتب إيميلًا لوظيفة جديدة». ما أهم إضافة أولًا؟\n\nسياق — من أحمد، ما الوظيفة، ولماذا هذا الإيميل.\n- **التفسير:** الذكاء الاصطناعي لا يعرف حياتك. السياق + مهمة واضحة يحوّلان الطلب من عام إلى عملي.",
+          "category": "quiz_option_prefix_removal"
         }
       ]
     },
@@ -6629,8 +6767,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** الهدف ليس اختيارًا مثاليًا. الهدف أول تفاعل حقيقي — وبعدها تتحسّن.",
-          "after": "التفسير: الهدف ليس اختيارًا مثاليًا. الهدف أول تفاعل حقيقي — وبعدها تتحسّن.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "**السؤال:** سارة مبتدئة ومتوترة من اختيار الأداة. ما أفضل خطوة الآن؟\n\n- **الإجابة الصحيحة (correctIndex: 0):** تفتح Chatbot واحدًا وترسل أول رسالة بسيطة.\n- **التفسير:** الهدف ليس اختيارًا مثاليًا. الهدف أول تفاعل حقيقي — وبعدها تتحسّن.",
+          "after": "**السؤال:** سارة مبتدئة ومتوترة من اختيار الأداة. ما أفضل خطوة الآن؟\n\nتفتح Chatbot واحدًا وترسل أول رسالة بسيطة.\n- **التفسير:** الهدف ليس اختيارًا مثاليًا. الهدف أول تفاعل حقيقي — وبعدها تتحسّن.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -6656,8 +6805,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** التلخيص من أقوى استخدامات الـ AI. المراجعة للتفاصيل الحساسة — لا للخوف من التجربة.",
-          "after": "التفسير: التلخيص من أقوى استخدامات الـ AI. المراجعة للتفاصيل الحساسة — لا للخوف من التجربة.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "**السؤال:** نورا تريد تلخيص اجتماع ساعة في ٥ نقاط. ما أفضل تصنيف؟\n\n- **الإجابة الصحيحة (correctIndex: 0):** يناسب AI — وتراجع النقاط المهمة إذا فيها أرقام.\n- **التفسير:** التلخيص من أقوى استخدامات الـ AI. المراجعة للتفاصيل الحساسة — لا للخوف من التجربة.",
+          "after": "**السؤال:** نورا تريد تلخيص اجتماع ساعة في ٥ نقاط. ما أفضل تصنيف؟\n\nيناسب AI — وتراجع النقاط المهمة إذا فيها أرقام.\n- **التفسير:** التلخيص من أقوى استخدامات الـ AI. المراجعة للتفاصيل الحساسة — لا للخوف من التجربة.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -6683,8 +6843,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** الحساب الدقيق يحتاج برنامجًا ثابتًا. AI يأتي بعدها للملخص إذا احتجت.",
-          "after": "التفسير: الحساب الدقيق يحتاج برنامجًا ثابتًا. AI يأتي بعدها للملخص إذا احتجت.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "**السؤال:** لديك ٢٠٠ رقم مبيعات وتريد الإجمالي بالضبط. ما أفضل أداة؟\n\n- **الإجابة الصحيحة (correctIndex: 0):** Excel أو آلة حاسبة.\n- **التفسير:** الحساب الدقيق يحتاج برنامجًا ثابتًا. AI يأتي بعدها للملخص إذا احتجت.",
+          "after": "**السؤال:** لديك ٢٠٠ رقم مبيعات وتريد الإجمالي بالضبط. ما أفضل أداة؟\n\nExcel أو آلة حاسبة.\n- **التفسير:** الحساب الدقيق يحتاج برنامجًا ثابتًا. AI يأتي بعدها للملخص إذا احتجت.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -6710,8 +6881,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** البداية باللغة الطبيعية وتجربة صغيرة — لا بالبرمجة ولا بالانتظار.",
-          "after": "التفسير: البداية باللغة الطبيعية وتجربة صغيرة — لا بالبرمجة ولا بالانتظار.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "**السؤال:** سارة ليست مبرمجة وخائفة من البداية. ما أفضل خطوة الآن؟\n\n- **الإجابة الصحيحة (correctIndex: 1):** تكتب Prompt بسيطًا في مهمة آمنة مثل رسالة أو تلخيص.\n- **التفسير:** البداية باللغة الطبيعية وتجربة صغيرة — لا بالبرمجة ولا بالانتظار.",
+          "after": "**السؤال:** سارة ليست مبرمجة وخائفة من البداية. ما أفضل خطوة الآن؟\n\nتكتب Prompt بسيطًا في مهمة آمنة مثل رسالة أو تلخيص.\n- **التفسير:** البداية باللغة الطبيعية وتجربة صغيرة — لا بالبرمجة ولا بالانتظار.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -6737,8 +6919,19 @@
         {
           "pointer": "/sections/6/bullets/1",
           "before": "**التفسير:** المهام المتكررة = Automator. Builder للتطبيقات — لا للمتابعة اليومية.",
-          "after": "التفسير: المهام المتكررة = Automator. Builder للتطبيقات — لا للمتابعة اليومية.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/bullets/2",
+          "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/6/contentMarkdown",
+          "before": "**السؤال:** منى وقتها يضيع في رسائل متابعة متكررة كل يوم. ما أنسب مسار للبداية؟\n\n- **الإجابة الصحيحة (correctIndex: 0):** Automator.\n- **التفسير:** المهام المتكررة = Automator. Builder للتطبيقات — لا للمتابعة اليومية.",
+          "after": "**السؤال:** منى وقتها يضيع في رسائل متابعة متكررة كل يوم. ما أنسب مسار للبداية؟\n\nAutomator.\n- **التفسير:** المهام المتكررة = Automator. Builder للتطبيقات — لا للمتابعة اليومية.",
+          "category": "quiz_option_prefix_removal"
         },
         {
           "pointer": "/sections/6/quiz/options/0",
@@ -6789,22 +6982,6 @@
       "gitModified": true,
       "changes": [
         {
-          "pointer": "/sections/7/bullets/0",
-          "before": "'I feel that...' (the original feeling)",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/bullets/1",
-          "before": "→ the specific question (**Metric + Period + Comparison**)",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/contentMarkdown",
-          "before": "**Introduction:** This is a **practical conversion** task — **not** a statistical analysis. Write **3 sentences** 'I feel that...' from your **real work** (or from around you). Turn each one into a **question** answered by **data**. **10–15 minutes** is enough.\n\n**Submission:** For each feeling (1–3):\n\n- 'I feel that...' (the original feeling)\n- → the specific question (**Metric + Period + Comparison**)\n\n+ **One source** that answers **at least two** of the three questions (Sheet / CRM / Analytics…)\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| 3 specific questions | 60% | Each question contains **a number or metric** + **a period** + **a comparison** — not a general question |\n| Source for the answer | 40% | At least **one source** that can answer **two questions** |",
-          "after": "**Introduction:** This is a **practical conversion** task — **not** a statistical analysis. Write **3 sentences** 'I feel that...' from your **real work** (or from around you). Turn each one into a **question** answered by **data**. **10–15 minutes** is enough.",
-          "category": "learner_text_change"
-        },
-        {
           "pointer": "/sections/7/mission/delivery/0",
           "after": "'I feel that...' (the original feeling)",
           "category": "mission_delivery_restoration"
@@ -6823,22 +7000,6 @@
       "semanticallyIdentical": false,
       "gitModified": true,
       "changes": [
-        {
-          "pointer": "/sections/7/bullets/0",
-          "before": "The question",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/bullets/1",
-          "before": "If **X**: [What is the decision?] · If **Y**: [What is the decision?] · **Does** the decision change? (Yes / No)",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/contentMarkdown",
-          "before": "**Introduction:** A practical **filter task** — **not an exam**. Write **3 questions** (from the previous lesson or from your work). For each question apply: «**If** the answer is **X** or **Y** — **will** I change my decision?** If **not** — **rephrase** the question.**»\n\n**Submission:** For each question (1–3):\n\n- The question\n- If **X**: [What is the decision?] · If **Y**: [What is the decision?] · **Does** the decision change? (Yes / No)\n\n+ If a question **fails** — **the improved version**\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| Decision Test | 60% | Each question includes **X** and **Y** and a **different decision** — or explains **why** it will not change |\n| Improvement | 40% | If a question **fails** — an **improved version** **related to a decision** |",
-          "after": "**Introduction:** A practical **filter task** — **not an exam**. Write **3 questions** (from the previous lesson or from your work). For each question apply: «**If** the answer is **X** or **Y** — **will** I change my decision?** If **not** — **rephrase** the question.**»",
-          "category": "learner_text_change"
-        },
         {
           "pointer": "/sections/7/mission/delivery/0",
           "after": "The question",
@@ -7472,6 +7633,18 @@
           "before": "> **Quiz key:**\n\nWrite a longer system prompt saying \"Don't guess\".\n- **Correct answer:** Choose a FAQ source or price list and link it to the automation before each response.\nStop the bot and respond manually to all questions.\n\n**Explanation:** The correct answer is to choose a source that provides context for the decision.",
           "after": "> **Quiz key:**\n\nWrite a longer system prompt saying \"Don't guess\".\nChoose a FAQ source or price list and link it to the automation before each response.\nStop the bot and respond manually to all questions.\n\n**Explanation:** The correct answer is to choose a source that provides context for the decision.",
           "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/4/quiz/options/1",
+          "before": "Stop the bot and respond manually to all questions.",
+          "after": "Choose a FAQ source or price list and link it to the automation before each response.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/4/quiz/options/2",
+          "before": "A partial answer that misses context and ignores the next step in the decision.",
+          "after": "Stop the bot and respond manually to all questions.",
+          "category": "learner_text_change"
         }
       ]
     },
@@ -7503,8 +7676,14 @@
         {
           "pointer": "/sections/3/quiz/options/1",
           "before": "An **Agent** open with all tools to be 'smart'.",
+          "after": "An Agent with a clear goal and specific tools, with a limit that prevents sending without approval.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/2",
+          "before": "A partial answer that misses the context and ignores the next step in the decision.",
           "after": "An Agent open with all tools to be 'smart'.",
-          "category": "quiz_markdown_artifact_cleanup"
+          "category": "learner_text_change"
         }
       ]
     },
@@ -7526,6 +7705,18 @@
           "before": "> **Quiz:**\n\nWait until you have time to reply to everyone at once.\n- **Correct answer:** Every record is saved immediately + automatic welcome reply + alert for follow-up.\nClose the form until you can reply.\n\n**Explanation:** The correct answer captures the essence of immediate response and follow-up.",
           "after": "> **Quiz:**\n\nWait until you have time to reply to everyone at once.\nEvery record is saved immediately + automatic welcome reply + alert for follow-up.\nClose the form until you can reply.\n\n**Explanation:** The correct answer captures the essence of immediate response and follow-up.",
           "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/1",
+          "before": "Close the form until you can reply.",
+          "after": "Every record is saved immediately + automatic welcome reply + alert for follow-up.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/2",
+          "before": "A partial answer misses the context and ignores the next step in the decision.",
+          "after": "Close the form until you can reply.",
+          "category": "learner_text_change"
         }
       ]
     },
@@ -7547,6 +7738,18 @@
           "before": "> **Quiz:**\n\nThe bot continues trying to answer from the FAQ.\n- **Correct answer:** Immediate handoff to a staff member — this is a clear handoff condition.\nSend a message saying 'wait 24 hours'.\n\n**Explanation:** The correct answer is an immediate handoff to a staff member, which is a clear condition for handoff.",
           "after": "> **Quiz:**\n\nThe bot continues trying to answer from the FAQ.\nImmediate handoff to a staff member — this is a clear handoff condition.\nSend a message saying 'wait 24 hours'.\n\n**Explanation:** The correct answer is an immediate handoff to a staff member, which is a clear condition for handoff.",
           "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/1",
+          "before": "Send a message saying 'wait 24 hours'.",
+          "after": "Immediate handoff to a staff member — this is a clear handoff condition.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/2",
+          "before": "A partial answer misses the context and ignores the next decision step.",
+          "after": "Send a message saying 'wait 24 hours'.",
+          "category": "learner_text_change"
         }
       ]
     },
@@ -7568,6 +7771,18 @@
           "before": "> **Quiz key:** correct answer is option 1.\n\nThe same welcome message again.\n- **Correct Answer:** A gentle reminder through a different channel or a single question — not a sales pressure.\nAn instant call without a reminder.\n\n**Explanation:** The correct answer is a gentle reminder through a different channel or a single question — not a sales pressure.",
           "after": "> **Quiz key:** correct answer is option 1.\n\nThe same welcome message again.\nA gentle reminder through a different channel or a single question — not a sales pressure.\nAn instant call without a reminder.\n\n**Explanation:** The correct answer is a gentle reminder through a different channel or a single question — not a sales pressure.",
           "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/1",
+          "before": "An instant call without a reminder.",
+          "after": "A gentle reminder through a different channel or a single question — not a sales pressure.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/3/quiz/options/2",
+          "before": "A partial answer that misses the context and ignores the next step in the decision.",
+          "after": "An instant call without a reminder.",
+          "category": "learner_text_change"
         }
       ]
     },
@@ -8182,19 +8397,21 @@
           "category": "quiz_markdown_artifact_cleanup"
         },
         {
-          "pointer": "/sections/7/bullets/0",
-          "before": "**[Section]: [What’s inside]**",
+          "pointer": "/sections/6/quiz/options/0",
+          "before": "No — A wireframe consists of boxes and labels only, without design.",
+          "after": "No — A Wireframe consists of boxes and labels only, without design.",
           "category": "learner_text_change"
         },
         {
-          "pointer": "/sections/7/bullets/1",
-          "before": "**CTA: [Main Button]**",
+          "pointer": "/sections/6/quiz/options/1",
+          "before": "Yes — This helps the AI understand better.",
+          "after": "Yes — This is how AI understands better.",
           "category": "learner_text_change"
         },
         {
-          "pointer": "/sections/7/contentMarkdown",
-          "before": "**Introduction:** Drawing or describing — not coding. Use 3 screens from the previous lesson. **10–15 minutes**.\n\n**Submission:** For each screen, provide a wireframe list:\n\n- **[Section]: [What’s inside]**\n- **CTA: [Main Button]**\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| 3 Described Screens | 60% | **Each screen is a bullet list — not a paragraph. CTA is clear in each screen.** |\n| Boxes, No Design | 40% | **No colors or fonts — just section names. The order is logical — most important first.** |",
-          "after": "**Introduction:** Drawing or describing — not coding. Use 3 screens from the previous lesson. **10–15 minutes**.",
+          "pointer": "/sections/6/quiz/options/2",
+          "before": "No — There should have been real images.",
+          "after": "No — There should be real images.",
           "category": "learner_text_change"
         },
         {
@@ -8245,37 +8462,6 @@
           "before": "**Style: beautiful colors**.",
           "after": "Style: beautiful colors.",
           "category": "quiz_markdown_artifact_cleanup"
-        },
-        {
-          "pointer": "/sections/7/bullets/0",
-          "before": "**Goal:** [Type of interface + what it does]",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/bullets/1",
-          "before": "**Users:** [Who uses it]",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/bullets/2",
-          "before": "**Pages:** [Wireframe sections by name]",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/bullets/3",
-          "before": "**Style:** [Two colors + mood]",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/bullets/4",
-          "before": "**Constraints:** [What is not in the first version]",
-          "category": "learner_text_change"
-        },
-        {
-          "pointer": "/sections/7/contentMarkdown",
-          "before": "**Introduction:** **A draft for copying — not implementation**. **Use the wireframe from the previous lesson**. **10-15 minutes**.\n\n**Submission:**\n\n- **Goal:** [Type of interface + what it does]\n- **Users:** [Who uses it]\n- **Pages:** [Wireframe sections by name]\n- **Style:** [Two colors + mood]\n- **Constraints:** [What is not in the first version]\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| All five present | 60% | **Goal, Users, Pages, Style, Constraints — all written**. **Pages linked to the wireframe** |\n| Ready to copy | 40% | **Style has at least two colors**. **Constraints specify 'not now'** |",
-          "after": "**Introduction:** **A draft for copying — not implementation**. **Use the wireframe from the previous lesson**. **10-15 minutes**.",
-          "category": "learner_text_change"
         },
         {
           "pointer": "/sections/7/mission/delivery/0",
@@ -8976,6 +9162,18 @@
           "before": "> **Quiz key:**\n\nDouble the ads immediately — momentum is important.\n- **Correct answer:** Stop scaling, fix quality and operations, then grow gradually.\nHire more without SOP.\n\n**Explanation:** The correct answer addresses the need to stabilize before expanding.",
           "after": "> **Quiz key:**\n\nDouble the ads immediately — momentum is important.\nStop scaling, fix quality and operations, then grow gradually.\nHire more without SOP.\n\n**Explanation:** The correct answer addresses the need to stabilize before expanding.",
           "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/2/quiz/options/1",
+          "before": "Hire more without SOP.",
+          "after": "Stop scaling, fix quality and operations, then grow gradually.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/2/quiz/options/2",
+          "before": "A partial answer misses the context and ignores the next step in the decision.",
+          "after": "Hire more without SOP.",
+          "category": "learner_text_change"
         }
       ]
     },
@@ -8997,6 +9195,18 @@
           "before": "> **Quiz key:**\n\nOpen all messages and respond — to 'clear' things up.\n- **Correct answer:** 3 numbers → ask AI about the change and the pending item → record one decision.\nRead 50 marketing articles.\n\n**Explanation:** The correct answer is based on the context provided.",
           "after": "> **Quiz key:**\n\nOpen all messages and respond — to 'clear' things up.\n3 numbers → ask AI about the change and the pending item → record one decision.\nRead 50 marketing articles.\n\n**Explanation:** The correct answer is based on the context provided.",
           "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/2/quiz/options/1",
+          "before": "Read 50 marketing articles.",
+          "after": "3 numbers → ask AI about the change and the pending item → record one decision.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/2/quiz/options/2",
+          "before": "A partial answer that misses the context and ignores the next step for the decision.",
+          "after": "Read 50 marketing articles.",
+          "category": "learner_text_change"
         }
       ]
     },
@@ -9018,6 +9228,18 @@
           "before": "> **Quiz key:** \n\nBuilder — Builds an application immediately.\n- **Correct Answer:** Automator — Automates repetitive follow-ups.\nCreator — Just content.\n\n**Explanation:** The correct answer is Automator because it focuses on automating repetitive tasks.",
           "after": "> **Quiz key:** \n\nBuilder — Builds an application immediately.\nAutomator — Automates repetitive follow-ups.\nCreator — Just content.\n\n**Explanation:** The correct answer is Automator because it focuses on automating repetitive tasks.",
           "category": "quiz_option_prefix_removal"
+        },
+        {
+          "pointer": "/sections/2/quiz/options/1",
+          "before": "Creator — Just content.",
+          "after": "Automator — Automates repetitive follow-ups.",
+          "category": "learner_text_change"
+        },
+        {
+          "pointer": "/sections/2/quiz/options/2",
+          "before": "Partial answer that misses the context and ignores the next step in decision-making.",
+          "after": "Creator — Just content.",
+          "category": "learner_text_change"
         }
       ]
     },
@@ -9834,228 +10056,129 @@
   ],
   "disallowedChanges": [
     {
-      "package": "ar-Gulf/analyst-m2-l1-feeling-to-question",
-      "pointer": "/sections/7/bullets/0",
+      "package": "ar-Gulf/analyst-m4-l2-decision-rule",
+      "pointer": "/sections/6/quiz/options/1",
       "category": "learner_text_change",
-      "before": "«أشعر أن…» (الشعور الأصلي)"
+      "before": "نسأل: التحويل نزل مقارنة بماذا؟ وراجع خطوة التسعير/العرض — إجراء محدّد.",
+      "after": "نسأل: التحويل نزل مقارنة بماذا؟ ونراجع خطوة التسعير/العرض — إجراء محدّد."
     },
     {
-      "package": "ar-Gulf/analyst-m2-l1-feeling-to-question",
-      "pointer": "/sections/7/bullets/1",
+      "package": "ar-Gulf/analyst-m6-l1-question-mistakes",
+      "pointer": "/sections/2/quiz/options/0",
       "category": "learner_text_change",
-      "before": "→ السؤال المحدد (**Metric + فترة + مقارنة**)"
+      "before": "متحيز — افترض سبب الترك قبل ما يشوف البيانات.",
+      "after": "(الخيار الصحيح: 0): متحيز — افترض سبب الترك قبل ما يشوف البيانات."
     },
     {
-      "package": "ar-Gulf/analyst-m2-l1-feeling-to-question",
-      "pointer": "/sections/7/contentMarkdown",
+      "package": "ar-Gulf/automator-m5-l3-agents",
+      "pointer": "/sections/3/quiz/options/1",
       "category": "learner_text_change",
-      "before": "**المقدمة:** مهمة **تحويل عملي** — **مو** تحليل إحصائي. اكتب **٣ جمل** «أشعر أن…» من **عملك الحقيقي** (أو من حولك). حوّل كل واحدة إلى **سؤال** تجيب عليه **البيانات**. **١٠–١٥ دقيقة** كافية.\n\n**التسليم:** لكل شعور (١–٣):\n\n- «أشعر أن…» (الشعور الأصلي)\n- → السؤال المحدد (**Metric + فترة + مقارنة**)\n\n+ **مصدر واحد** يجاوب على **سؤالين على الأقل** من الثلاثة (Sheet / CRM / Analytics…)\n\n**معايير التقييم:**\n\n| البعد | الوزن | المعيار |\n|-------|-------|---------|\n| ٣ أسئلة محددة | 60% | كل سؤال فيه **رقم أو مقياس** + **فترة** + **مقارنة** — مو سؤال عام |\n| مصدر للإجابة | 40% | مصدر **واحد** على الأقل يقدر يجاوب منه **سؤالين** |",
-      "after": "**المقدمة:** مهمة **تحويل عملي** — **مو** تحليل إحصائي. اكتب **٣ جمل** «أشعر أن…» من **عملك الحقيقي** (أو من حولك). حوّل كل واحدة إلى **سؤال** تجيب عليه **البيانات**. **١٠–١٥ دقيقة** كافية."
+      "before": "الوكيل مفتوح بكل الأدوات لكي يكون «ذكي».",
+      "after": "الوكيل بهدف واضح وأدوات محددة وحد يمنع الإرسال بدون موافقة."
     },
     {
-      "package": "ar-Gulf/analyst-m2-l2-right-question-rule",
-      "pointer": "/sections/7/bullets/0",
+      "package": "ar-Gulf/automator-m5-l3-agents",
+      "pointer": "/sections/3/quiz/options/2",
       "category": "learner_text_change",
-      "before": "السؤال"
+      "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+      "after": "الوكيل مفتوح بكل الأدوات لكي يكون «ذكي»."
     },
     {
-      "package": "ar-Gulf/analyst-m2-l2-right-question-rule",
-      "pointer": "/sections/7/bullets/1",
+      "package": "ar-Gulf/automator-m6-l1-lead-capture",
+      "pointer": "/sections/3/quiz/options/1",
       "category": "learner_text_change",
-      "before": "إذا **X**: [وش القرار؟] · إذا **Y**: [وش القرار؟] · **هل** يتغير القرار؟ (نعم / لا)"
+      "before": "تقفل النموذج لحد ما تلحق ترد.",
+      "after": "كل تسجيل يتحفظ فورًا + رد ترحيب أوتوماتيك + تنبيه لمن يتابع."
     },
     {
-      "package": "ar-Gulf/analyst-m2-l2-right-question-rule",
-      "pointer": "/sections/7/contentMarkdown",
+      "package": "ar-Gulf/automator-m6-l1-lead-capture",
+      "pointer": "/sections/3/quiz/options/2",
       "category": "learner_text_change",
-      "before": "**المقدمة:** مهمة **فلتر عملي** — **مو امتحان**. اكتب **٣ أسئلة** (من الدرس السابق أو من عملك). لكل سؤال طبق: «**إذا** كانت الإجابة **X** أو **Y** — **هل** راح أغيّر قراري؟» إذا **لا** — **أعد صياغة** السؤال.\n\n**التسليم:** لكل سؤال (١–٣):\n\n- السؤال\n- إذا **X**: [وش القرار؟] · إذا **Y**: [وش القرار؟] · **هل** يتغير القرار؟ (نعم / لا)\n\n+ إذا **فشل** سؤال — **النسخة المحسّنة**\n\n**معايير التقييم:**\n\n| البعد | الوزن | المعيار |\n|-------|-------|---------|\n| اختبار القرار | 60% | كل سؤال فيه **X** و**Y** و**قرار مختلف** — أو توضيح **ليش** ما راح يتغير |\n| تحسين | 40% | إذا **فشل** سؤال — **نسخة محسّنة** **مرتبطة بقرار** |",
-      "after": "**المقدمة:** مهمة **فلتر عملي** — **مو امتحان**. اكتب **٣ أسئلة** (من الدرس السابق أو من عملك). لكل سؤال طبق: «**إذا** كانت الإجابة **X** أو **Y** — **هل** راح أغيّر قراري؟» إذا **لا** — **أعد صياغة** السؤال."
+      "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+      "after": "تقفل النموذج لحد ما تلحق ترد."
     },
     {
-      "package": "ar-Gulf/analyst-m6-l2-interpretation-mistakes",
-      "pointer": "/sections/2/bullets/0",
+      "package": "ar-Gulf/automator-m6-l2-whatsapp-flow",
+      "pointer": "/sections/3/quiz/options/1",
       "category": "learner_text_change",
-      "after": "Correlation ≠ Causation — ممكن في سبب تالت (وقت اليوم، نوع زبائن)."
+      "before": "تبعت له رسالة «انتظر ٢٤ ساعة».",
+      "after": "تحويل فوري لموظف — هذا شرط واضح للتحويل."
     },
     {
-      "package": "ar-Gulf/analyst-m6-l2-interpretation-mistakes",
-      "pointer": "/sections/2/bullets/1",
+      "package": "ar-Gulf/automator-m6-l2-whatsapp-flow",
+      "pointer": "/sections/3/quiz/options/2",
       "category": "learner_text_change",
-      "after": "Analysis Paralysis — بيتأخر في القرار."
+      "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+      "after": "تبعت له رسالة «انتظر ٢٤ ساعة»."
     },
     {
-      "package": "ar-Gulf/analyst-m6-l2-interpretation-mistakes",
-      "pointer": "/sections/2/bullets/2",
+      "package": "ar-Gulf/automator-m6-l3-follow-up",
+      "pointer": "/sections/3/quiz/options/1",
       "category": "learner_text_change",
-      "after": "Vanity metric — اللايكات مش مهمة."
+      "before": "مكالمة فورية من غير تذكير.",
+      "after": "تذكير لطيف بقناة مختلفة أو بسؤال واحد — مو ضغط بيع."
     },
     {
-      "package": "ar-Gulf/analyst-m6-l2-interpretation-mistakes",
-      "pointer": "/sections/2/contentMarkdown",
+      "package": "ar-Gulf/automator-m6-l3-follow-up",
+      "pointer": "/sections/3/quiz/options/2",
       "category": "learner_text_change",
-      "before": "| تشخيص الفخ | 50% |\n| قرار أصح | 50% |",
-      "after": "> **Quiz key (unchanged):** correctIndex: 0\n\n( 0): Correlation ≠ Causation — ممكن في سبب تالت (وقت اليوم، نوع زبائن).\nAnalysis Paralysis — بيتأخر في القرار.\nVanity metric — اللايكات مش مهمة.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل."
+      "before": "إجابة جزئية تفوت السياق وتتجاهل الخطوة التالية للقرار.",
+      "after": "مكالمة فورية من غير تذكير."
     },
     {
-      "package": "ar-Gulf/analyst-m6-l2-interpretation-mistakes",
-      "pointer": "/sections/2/heading",
+      "package": "ar-Gulf/business-m4-l1-premature-scaling",
+      "pointer": "/sections/2/quiz/options/1",
       "category": "learner_text_change",
-      "before": "المهمة — ٣ سيناريوهات",
-      "after": "Quiz — correctIndex: 0"
+      "before": "وظّف أكتر من غير SOP.",
+      "after": "وقف التوسّع، اصلّح الجودة والتشغيل، بعدين كبّر تدريجي."
     },
     {
-      "package": "ar-Gulf/analyst-m6-l2-interpretation-mistakes",
-      "pointer": "/sections/2/subtitle",
+      "package": "ar-Gulf/business-m4-l1-premature-scaling",
+      "pointer": "/sections/2/quiz/options/2",
       "category": "learner_text_change",
-      "before": "٣ سيناريوهات",
-      "after": "correctIndex: 0"
+      "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+      "after": "وظّف أكتر من غير SOP."
     },
     {
-      "package": "ar-Gulf/analyst-m6-l2-interpretation-mistakes",
-      "pointer": "/sections/3/bullets/0",
+      "package": "ar-Gulf/business-m4-l3-weekly-rhythm",
+      "pointer": "/sections/2/quiz/options/1",
       "category": "learner_text_change",
-      "before": "**التالي:** **من القرارات إلى الأعمال**."
+      "before": "تقرأ 50 مقال تسويق.",
+      "after": "3 أرقام → تسأل AI عن التغيّر والمعلّق → تسجّل قرار واحد."
     },
     {
-      "package": "ar-Gulf/analyst-m6-l2-interpretation-mistakes",
-      "pointer": "/sections/3/contentMarkdown",
+      "package": "ar-Gulf/business-m4-l3-weekly-rhythm",
+      "pointer": "/sections/2/quiz/options/2",
       "category": "learner_text_change",
-      "before": "- **التالي:** **من القرارات إلى الأعمال**.\n\n---",
-      "after": "| تشخيص الفخ | 50% |\n| قرار أصح | 50% |"
+      "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+      "after": "تقرأ 50 مقال تسويق."
     },
     {
-      "package": "ar-Gulf/analyst-m6-l2-interpretation-mistakes",
-      "pointer": "/sections/3/heading",
+      "package": "ar-Gulf/business-m4-l4-full-ecosystem",
+      "pointer": "/sections/2/quiz/options/1",
       "category": "learner_text_change",
-      "before": "إغلاق الثقة",
-      "after": "المهمة — ٣ سيناريوهات"
+      "before": "Creator — محتوى بس.",
+      "after": "Automator — أتمتة المتابعة المتكررة."
     },
     {
-      "package": "ar-Gulf/analyst-m6-l2-interpretation-mistakes",
-      "pointer": "/sections/3/subtitle",
+      "package": "ar-Gulf/business-m4-l4-full-ecosystem",
+      "pointer": "/sections/2/quiz/options/2",
       "category": "learner_text_change",
-      "after": "٣ سيناريوهات"
+      "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+      "after": "Creator — محتوى بس."
     },
     {
-      "package": "ar-Gulf/automator-m5-l2-rag-in-n8n",
-      "pointer": "/sections/4/bullets/0",
+      "package": "ar-MSA/analyst-m1-l1-from-automation-to-insight",
+      "pointer": "/sections/5/bullets/1",
       "category": "learner_text_change",
-      "after": "تكتب system prompt أطول يقوله «متخمّنش»."
+      "before": "**التفسير:** سؤال محدد يفهم «أين المشكلة» — يوصلك لقرار بخصوص مسار الشراء. الأرقام العامة لا تكفي.",
+      "after": "هل نزيد ميزانية الإعلانات الربع الجاي؟"
     },
     {
-      "package": "ar-Gulf/automator-m5-l2-rag-in-n8n",
-      "pointer": "/sections/4/bullets/1",
+      "package": "ar-MSA/analyst-m1-l1-from-automation-to-insight",
+      "pointer": "/sections/5/bullets/2",
       "category": "learner_text_change",
-      "after": "تختار مصدر FAQ أو قائمة أسعار وتربطه بالأوتوميشن قبل كل رد."
-    },
-    {
-      "package": "ar-Gulf/automator-m5-l2-rag-in-n8n",
-      "pointer": "/sections/4/bullets/2",
-      "category": "learner_text_change",
-      "after": "توقف البوت وترد يدوي على كل الأسئلة."
-    },
-    {
-      "package": "ar-Gulf/automator-m5-l2-rag-in-n8n",
-      "pointer": "/sections/4/contentMarkdown",
-      "category": "learner_text_change",
-      "before": "| مصدر حقيقي | 60% |\n| ربط سؤال بمصدر | 40% |",
-      "after": "> **Quiz key (unchanged):** correctIndex: 1\n\nتكتب system prompt أطول يقوله «متخمّنش».\n( 1): تختار مصدر FAQ أو قائمة أسعار وتربطه بالأوتوميشن قبل كل رد.\nتوقف البوت وترد يدوي على كل الأسئلة.\n\n**التفسير:** الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل."
-    },
-    {
-      "package": "ar-Gulf/automator-m5-l2-rag-in-n8n",
-      "pointer": "/sections/4/heading",
-      "category": "learner_text_change",
-      "before": "المهمة — مصدر أسئلة شائعة واحد",
-      "after": "Quiz — correctIndex: 1"
-    },
-    {
-      "package": "ar-Gulf/automator-m5-l2-rag-in-n8n",
-      "pointer": "/sections/4/subtitle",
-      "category": "learner_text_change",
-      "before": "مصدر أسئلة شائعة واحد",
-      "after": "correctIndex: 1"
-    },
-    {
-      "package": "ar-Gulf/automator-m5-l2-rag-in-n8n",
-      "pointer": "/sections/5/bullets/0",
-      "category": "learner_text_change",
-      "before": "**التالي:** **Agents** — مسار غير ثابت."
-    },
-    {
-      "package": "ar-Gulf/automator-m5-l2-rag-in-n8n",
-      "pointer": "/sections/5/contentMarkdown",
-      "category": "learner_text_change",
-      "before": "- **التالي:** **Agents** — مسار غير ثابت.\n\n---",
-      "after": "| مصدر حقيقي | 60% |\n| ربط سؤال بمصدر | 40% |"
-    },
-    {
-      "package": "ar-Gulf/automator-m5-l2-rag-in-n8n",
-      "pointer": "/sections/5/heading",
-      "category": "learner_text_change",
-      "before": "إغلاق الثقة",
-      "after": "المهمة — مصدر أسئلة شائعة واحد"
-    },
-    {
-      "package": "ar-Gulf/automator-m5-l2-rag-in-n8n",
-      "pointer": "/sections/5/subtitle",
-      "category": "learner_text_change",
-      "after": "مصدر أسئلة شائعة واحد"
-    },
-    {
-      "package": "ar-Gulf/builder-m6-l2-wireframe",
-      "pointer": "/sections/7/bullets/0",
-      "category": "learner_text_change",
-      "before": "**[قسم]: [ماذا بداخله]**"
-    },
-    {
-      "package": "ar-Gulf/builder-m6-l2-wireframe",
-      "pointer": "/sections/7/bullets/1",
-      "category": "learner_text_change",
-      "before": "**CTA: [أهم زر]**"
-    },
-    {
-      "package": "ar-Gulf/builder-m6-l2-wireframe",
-      "pointer": "/sections/7/contentMarkdown",
-      "category": "learner_text_change",
-      "before": "**المقدمة:** **رسم أو وصف — مو كود**. **استخدم ٣ شاشات من الدرس السابق**. **١٠–١٥ دقيقة**.\n\n**التسليم:** **لكل شاشة قائمة Wireframe:**\n\n- **[قسم]: [ماذا بداخله]**\n- **CTA: [أهم زر]**\n\n**معايير التقييم:**\n\n| البعد | الوزن | المعيار |\n|-------|-------|---------|\n| ٣ شاشات موصوفة | 60% | **كل شاشة قائمة نقط — مو فقرة**. **CTA واضح في كل شاشة** |\n| مربعات لا تصميم | 40% | **لا ألوان ولا fonts — أسماء أقسام فقط**. **الترتيب منطقي — الأهم أولًا**.",
-      "after": "**المقدمة:** **رسم أو وصف — مو كود**. **استخدم ٣ شاشات من الدرس السابق**. **١٠–١٥ دقيقة**."
-    },
-    {
-      "package": "ar-Gulf/builder-m6-l3-first-prompt-to-lovable",
-      "pointer": "/sections/7/bullets/0",
-      "category": "learner_text_change",
-      "before": "**الهدف:** [نوع الواجهة + وش تسوي]"
-    },
-    {
-      "package": "ar-Gulf/builder-m6-l3-first-prompt-to-lovable",
-      "pointer": "/sections/7/bullets/1",
-      "category": "learner_text_change",
-      "before": "**المستخدمون:** [من يستخدمها]"
-    },
-    {
-      "package": "ar-Gulf/builder-m6-l3-first-prompt-to-lovable",
-      "pointer": "/sections/7/bullets/2",
-      "category": "learner_text_change",
-      "before": "**الصفحات:** [أقسام Wireframe بالاسم]"
-    },
-    {
-      "package": "ar-Gulf/builder-m6-l3-first-prompt-to-lovable",
-      "pointer": "/sections/7/bullets/3",
-      "category": "learner_text_change",
-      "before": "**الأسلوب:** [لونان + mood]"
-    },
-    {
-      "package": "ar-Gulf/builder-m6-l3-first-prompt-to-lovable",
-      "pointer": "/sections/7/bullets/4",
-      "category": "learner_text_change",
-      "before": "**القيود:** [وش مو موجود في النسخة الأولى]"
-    },
-    {
-      "package": "ar-Gulf/builder-m6-l3-first-prompt-to-lovable",
-      "pointer": "/sections/7/contentMarkdown",
-      "category": "learner_text_change",
-      "before": "**المقدمة:** **مسودة للنسخ — مو تنفيذ**. **استخدم Wireframe من الدرس السابق**. **١٠–١٥ دقيقة**.\n\n**التسليم:**\n\n- **الهدف:** [نوع الواجهة + وش تسوي]\n- **المستخدمون:** [من يستخدمها]\n- **الصفحات:** [أقسام Wireframe بالاسم]\n- **الأسلوب:** [لونان + mood]\n- **القيود:** [وش مو موجود في النسخة الأولى]\n\n**معايير التقييم:**\n\n| البعد | الوزن | المعيار |\n|-------|-------|---------|\n| الخمسة موجودون | 60% | **الهدف، المستخدمون، الصفحات، الأسلوب، القيود — كلهم مكتوبين**. **الصفحات مربوطة بـ Wireframe** |\n| جاهز للنسخ | 40% | **الأسلوب فيه لونان على الأقل**. **القيود تحدّد «مو الحين»** |",
-      "after": "**المقدمة:** **مسودة للنسخ — مو تنفيذ**. **استخدم Wireframe من الدرس السابق**. **١٠–١٥ دقيقة**."
+      "after": "وين بالضبط يترك الزبائن عملية الشراء (funnel drop-off)؟"
     },
     {
       "package": "ar-MSA/analyst-m1-l1-from-automation-to-insight",
@@ -10072,133 +10195,301 @@
       "after": "وين بالضبط يترك الزبائن عملية الشراء (funnel drop-off)؟"
     },
     {
-      "package": "ar-MSA/analyst-m2-l1-feeling-to-question",
-      "pointer": "/sections/7/bullets/0",
+      "package": "ar-MSA/automator-m1-l1-where-you-are",
+      "pointer": "/sections/5/bullets/1",
       "category": "learner_text_change",
-      "before": "«أشعر أن…» (الشعور الأصلي)"
+      "before": "**التفسير:** **Audit** أولًا — عندما تعرف «إيميل ترحيب» = ٣٠ دقيقة يوميًا، ستعرف أن هذه **أول مهمة** للعامل الافتراضي.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
     },
     {
-      "package": "ar-MSA/analyst-m2-l1-feeling-to-question",
-      "pointer": "/sections/7/bullets/1",
+      "package": "ar-MSA/automator-m1-l1-where-you-are",
+      "pointer": "/sections/5/bullets/2",
       "category": "learner_text_change",
-      "before": "→ السؤال المحدّد (**Metric + فترة + مقارنة**)"
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
     },
     {
-      "package": "ar-MSA/analyst-m2-l1-feeling-to-question",
-      "pointer": "/sections/7/contentMarkdown",
+      "package": "ar-MSA/automator-m2-l1-systems-view",
+      "pointer": "/sections/6/bullets/1",
       "category": "learner_text_change",
-      "before": "**المقدمة:** مهمة **تحويل عملي** — **ليس** تحليلًا إحصائيًا. اكتب **٣ جمل** «أشعر أن…» من **عملك الحقيقي** (أو من حولك). حوّل كل واحدة إلى **سؤال** تجيب عليه **البيانات**. **١٠–١٥ دقيقة** كافية.\n\n**التسليم:** لكل شعور (١–٣):\n\n- «أشعر أن…» (الشعور الأصلي)\n- → السؤال المحدّد (**Metric + فترة + مقارنة**)\n\n+ **مصدر واحد** يجيب على **سؤالين على الأقل** من الثلاثة (Sheet / CRM / Analytics…)\n\n**معايير التقييم:**\n\n| البعد | الوزن | المعيار |\n|-------|-------|---------|\n| ٣ أسئلة محدّدة | 60% | كل سؤال فيه **رقم أو مقياس** + **فترة** + **مقارنة** — ليس سؤالًا عامًا |\n| مصدر للإجابة | 40% | مصدر **واحد** على الأقل يمكن الإجابة منه **سؤالين** |",
-      "after": "**المقدمة:** مهمة **تحويل عملي** — **ليس** تحليلًا إحصائيًا. اكتب **٣ جمل** «أشعر أن…» من **عملك الحقيقي** (أو من حولك). حوّل كل واحدة إلى **سؤال** تجيب عليه **البيانات**. **١٠–١٥ دقيقة** كافية."
+      "before": "**التفسير:** **المُشغّل** = الحدث الذي يبدأ النظام. هنا رسالة العميل — لا قائمة الأسعار ولا تسجيل CRM (هذان عملية ونتيجة).",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
     },
     {
-      "package": "ar-MSA/analyst-m2-l2-right-question-rule",
-      "pointer": "/sections/7/bullets/0",
+      "package": "ar-MSA/automator-m2-l1-systems-view",
+      "pointer": "/sections/6/bullets/2",
       "category": "learner_text_change",
-      "before": "السؤال"
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
     },
     {
-      "package": "ar-MSA/analyst-m2-l2-right-question-rule",
-      "pointer": "/sections/7/bullets/1",
+      "package": "ar-MSA/automator-m2-l2-spot-patterns",
+      "pointer": "/sections/6/bullets/1",
       "category": "learner_text_change",
-      "before": "إذا **X**: [ما القرار؟] · إذا **Y**: [ما القرار؟] · **هل** يتغيّر القرار؟ (نعم / لا)"
+      "before": "**التفسير:** نسخ بيانات من Excel إلى CRM = نقل متكرر. **نمط** واضح للعامل الافتراضي.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
     },
     {
-      "package": "ar-MSA/analyst-m2-l2-right-question-rule",
-      "pointer": "/sections/7/contentMarkdown",
+      "package": "ar-MSA/automator-m2-l2-spot-patterns",
+      "pointer": "/sections/6/bullets/2",
       "category": "learner_text_change",
-      "before": "**المقدمة:** مهمة **فلتر عملي** — **ليس امتحانًا**. اكتب **٣ أسئلة** (من الدرس السابق أو من عملك). لكل سؤال طبّق: «**إذا** كانت الإجابة **X** أو **Y** — **هل** سأغيّر قراري؟» إذا **لا** — **أعد صياغة** السؤال.\n\n**التسليم:** لكل سؤال (١–٣):\n\n- السؤال\n- إذا **X**: [ما القرار؟] · إذا **Y**: [ما القرار؟] · **هل** يتغيّر القرار؟ (نعم / لا)\n\n+ إذا **فشل** سؤال — **النسخة المحسّنة**\n\n**معايير التقييم:**\n\n| البعد | الوزن | المعيار |\n|-------|-------|---------|\n| اختبار القرار | 60% | كل سؤال فيه **X** و**Y** و**قرار مختلف** — أو توضيح **لماذا** لن يتغيّر |\n| تحسين | 40% | إذا **فشل** سؤال — **نسخة محسّنة** **مرتبطة بقرار** |",
-      "after": "**المقدمة:** مهمة **فلتر عملي** — **ليس امتحانًا**. اكتب **٣ أسئلة** (من الدرس السابق أو من عملك). لكل سؤال طبّق: «**إذا** كانت الإجابة **X** أو **Y** — **هل** سأغيّر قراري؟» إذا **لا** — **أعد صياغة** السؤال."
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "ar-MSA/automator-m2-l3-decide-what-to-automate",
+      "pointer": "/sections/6/bullets/1",
+      "category": "learner_text_change",
+      "before": "**التفسير:** أول أتمتة = فوز سريع. (أ) يحقّق التكرار والبساطة. (ب) معقّد. (ج) نادر وشخصي.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
+    },
+    {
+      "package": "ar-MSA/automator-m2-l3-decide-what-to-automate",
+      "pointer": "/sections/6/bullets/2",
+      "category": "learner_text_change",
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "ar-MSA/automator-m3-l1-tools-landscape",
+      "pointer": "/sections/6/bullets/1",
+      "category": "learner_text_change",
+      "before": "**التفسير:** بداية + **مسار عمل** بسيط + ميزانية = Make. التفكير واحد — الأداة تخدم الحجم.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
+    },
+    {
+      "package": "ar-MSA/automator-m3-l1-tools-landscape",
+      "pointer": "/sections/6/bullets/2",
+      "category": "learner_text_change",
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "ar-MSA/automator-m3-l2-triggers-actions",
+      "pointer": "/sections/5/bullets/1",
+      "category": "learner_text_change",
+      "before": "**التفسير:** الشراء = حدث فوري → **Webhook (إشعار فوري)**. «لما يشتري → أرسل واتساب» — هذا تصميم العامل الافتراضي.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
+    },
+    {
+      "package": "ar-MSA/automator-m3-l2-triggers-actions",
+      "pointer": "/sections/5/bullets/2",
+      "category": "learner_text_change",
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "ar-MSA/automator-m3-l3-filters-routers",
+      "pointer": "/sections/6/bullets/1",
+      "category": "learner_text_change",
+      "before": "**التفسير:** تحتاج مسارين مختلفين حسب الشرط — هذا **Router**. **Filter** يوقف أو يمرّر، ولا يوزّع.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
+    },
+    {
+      "package": "ar-MSA/automator-m3-l3-filters-routers",
+      "pointer": "/sections/6/bullets/2",
+      "category": "learner_text_change",
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "ar-MSA/automator-m3-testing-automation",
+      "pointer": "/sections/6/bullets/1",
+      "category": "learner_text_change",
+      "before": "**التفسير:** الخطأ يبقى عندك — لا عند العميل.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
+    },
+    {
+      "package": "ar-MSA/automator-m3-testing-automation",
+      "pointer": "/sections/6/bullets/2",
+      "category": "learner_text_change",
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "ar-MSA/automator-m4-l1-connect-database",
+      "pointer": "/sections/6/bullets/1",
+      "category": "learner_text_change",
+      "before": "**التفسير:** السجل المنظم = ذاكرة الأتمتة. بريد من دون جدول = الشغل المتكرر يعود يدويًا.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
+    },
+    {
+      "package": "ar-MSA/automator-m4-l1-connect-database",
+      "pointer": "/sections/6/bullets/2",
+      "category": "learner_text_change",
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "ar-MSA/automator-m4-l2-webhooks-api",
+      "pointer": "/sections/6/bullets/1",
+      "category": "learner_text_change",
+      "before": "**التفسير:** حدث لحظي يحتاج webhook. Polling بطيء ومكلف.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
+    },
+    {
+      "package": "ar-MSA/automator-m4-l2-webhooks-api",
+      "pointer": "/sections/6/bullets/2",
+      "category": "learner_text_change",
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "ar-MSA/automator-m4-l3-error-handling",
+      "pointer": "/sections/6/bullets/1",
+      "category": "learner_text_change",
+      "before": "**التفسير:** أخطاء مؤقتة = **Retry**. بعد الفشل = **Alert** قبل أن يتأذى العميل.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
+    },
+    {
+      "package": "ar-MSA/automator-m4-l3-error-handling",
+      "pointer": "/sections/6/bullets/2",
+      "category": "learner_text_change",
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "ar-MSA/automator-m5-l1-llm-in-flow",
+      "pointer": "/sections/5/bullets/1",
+      "category": "learner_text_change",
+      "before": "**التفسير:** خطوة AI تضيف فهمًا — لا سرعة نقل فقط.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
+    },
+    {
+      "package": "ar-MSA/automator-m5-l1-llm-in-flow",
+      "pointer": "/sections/5/bullets/2",
+      "category": "learner_text_change",
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
     },
     {
       "package": "ar-MSA/automator-m5-l2-rag-in-n8n",
-      "pointer": "/sections/4/quiz/explanation",
+      "pointer": "/sections/4/quiz/options/1",
       "category": "learner_text_change",
-      "before": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-      "after": "— للسياق الكامل."
+      "before": "توقف البوت وترد يدوي على كل الأسئلة.",
+      "after": "تختار مصدر FAQ أو قائمة أسعار وتربطه بالأوتوميشن قبل كل رد."
+    },
+    {
+      "package": "ar-MSA/automator-m5-l2-rag-in-n8n",
+      "pointer": "/sections/4/quiz/options/2",
+      "category": "learner_text_change",
+      "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+      "after": "توقف البوت وترد يدوي على كل الأسئلة."
     },
     {
       "package": "ar-MSA/automator-m5-l3-agents",
-      "pointer": "/sections/3/quiz/explanation",
+      "pointer": "/sections/3/quiz/options/1",
       "category": "learner_text_change",
-      "before": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-      "after": "— للسياق الكامل."
+      "before": "Agent مفتوح بكل الأدوات لكي يكون «ذكي».",
+      "after": "Agent بهدف واضح وأدوات محددة وحد يمنع الإرسال بدون موافقة."
+    },
+    {
+      "package": "ar-MSA/automator-m5-l3-agents",
+      "pointer": "/sections/3/quiz/options/2",
+      "category": "learner_text_change",
+      "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+      "after": "Agent مفتوح بكل الأدوات لكي يكون «ذكي»."
     },
     {
       "package": "ar-MSA/automator-m6-l1-lead-capture",
-      "pointer": "/sections/3/quiz/explanation",
+      "pointer": "/sections/3/quiz/options/1",
       "category": "learner_text_change",
-      "before": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-      "after": "— للسياق الكامل."
+      "before": "تقفل الفورم لحد ما تلحق ترد.",
+      "after": "كل تسجيل يتحفظ فورًا + رد ترحيب أوتوماتيك + تنبيه لمن يتابع."
+    },
+    {
+      "package": "ar-MSA/automator-m6-l1-lead-capture",
+      "pointer": "/sections/3/quiz/options/2",
+      "category": "learner_text_change",
+      "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+      "after": "تقفل الفورم لحد ما تلحق ترد."
     },
     {
       "package": "ar-MSA/automator-m6-l2-whatsapp-flow",
-      "pointer": "/sections/3/quiz/explanation",
+      "pointer": "/sections/3/quiz/options/1",
       "category": "learner_text_change",
-      "before": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-      "after": "— للسياق الكامل."
+      "before": "تبعتله رسالة «انتظر ٢٤ ساعة».",
+      "after": "تحويل فوري لموظف — ده شرط handoff واضح."
+    },
+    {
+      "package": "ar-MSA/automator-m6-l2-whatsapp-flow",
+      "pointer": "/sections/3/quiz/options/2",
+      "category": "learner_text_change",
+      "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+      "after": "تبعتله رسالة «انتظر ٢٤ ساعة»."
     },
     {
       "package": "ar-MSA/automator-m6-l3-follow-up",
-      "pointer": "/sections/3/quiz/explanation",
+      "pointer": "/sections/3/quiz/options/1",
       "category": "learner_text_change",
-      "before": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-      "after": "— للسياق الكامل."
+      "before": "مكالمة فورية من غير تذكير.",
+      "after": "تذكير لطيف بقناة مختلفة أو بسؤال واحد — مش ضغط بيع."
     },
     {
-      "package": "ar-MSA/builder-m6-l2-wireframe",
-      "pointer": "/sections/7/bullets/0",
+      "package": "ar-MSA/automator-m6-l3-follow-up",
+      "pointer": "/sections/3/quiz/options/2",
       "category": "learner_text_change",
-      "before": "**[قسم]: [ماذا بداخله]**"
+      "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+      "after": "مكالمة فورية من غير تذكير."
     },
     {
-      "package": "ar-MSA/builder-m6-l2-wireframe",
-      "pointer": "/sections/7/bullets/1",
+      "package": "ar-MSA/automator-m7-l1-closing-loop",
+      "pointer": "/sections/6/bullets/1",
       "category": "learner_text_change",
-      "before": "**CTA: [أهم زر]**"
+      "before": "**التفسير:** **الرحلة المتصلة** تتيح لك أسئلة قرار — وليس عدًّا فقط. القناة + التحويل = **Analyst**.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
     },
     {
-      "package": "ar-MSA/builder-m6-l2-wireframe",
-      "pointer": "/sections/7/contentMarkdown",
+      "package": "ar-MSA/automator-m7-l1-closing-loop",
+      "pointer": "/sections/6/bullets/2",
       "category": "learner_text_change",
-      "before": "**المقدمة:** **رسم أو وصف — ليس كودًا**. **استخدم ٣ شاشات من الدرس السابق**. **١٠–١٥ دقيقة**.\n\n**التسليم:** **لكل شاشة قائمة Wireframe:**\n\n- **[قسم]: [ماذا بداخله]**\n- **CTA: [أهم زر]**\n\n**معايير التقييم:**\n\n| البعد | الوزن | المعيار |\n|-------|-------|---------|\n| ٣ شاشات موصوفة | 60% | **كل شاشة قائمة نقط — ليست فقرة**. **CTA واضح في كل شاشة** |\n| مربعات لا تصميم | 40% | **لا ألوان ولا fonts — أسماء أقسام فقط**. **الترتيب منطقي — الأهم أولًا** |",
-      "after": "**المقدمة:** **رسم أو وصف — ليس كودًا**. **استخدم ٣ شاشات من الدرس السابق**. **١٠–١٥ دقيقة**."
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
     },
     {
-      "package": "ar-MSA/builder-m6-l3-first-prompt-to-lovable",
-      "pointer": "/sections/7/bullets/0",
+      "package": "ar-MSA/builder-m1-l1-what-is-llm",
+      "pointer": "/sections/5/bullets/1",
       "category": "learner_text_change",
-      "before": "**Goal:** [نوع الواجهة + ماذا تفعل]"
+      "before": "**التفسير:** **AI** يتوقّع أقرب كلام منطقي — لا يتحقق من الخبر. عند بناء ميزة **AI**، خطّط للتحقق من الحقائق.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
     },
     {
-      "package": "ar-MSA/builder-m6-l3-first-prompt-to-lovable",
-      "pointer": "/sections/7/bullets/1",
+      "package": "ar-MSA/builder-m1-l1-what-is-llm",
+      "pointer": "/sections/5/bullets/2",
       "category": "learner_text_change",
-      "before": "**Users:** [من يستخدمها]"
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
     },
     {
-      "package": "ar-MSA/builder-m6-l3-first-prompt-to-lovable",
-      "pointer": "/sections/7/bullets/2",
+      "package": "ar-MSA/builder-m2-l1-prompt-layer",
+      "pointer": "/sections/6/bullets/1",
       "category": "learner_text_change",
-      "before": "**Pages:** [أقسام Wireframe بالاسم]"
+      "before": "**التفسير:** التفاصيل (الاسم، المنتج، المكان، المدة) = رد قابل للاستخدام في منتج حقيقي.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
     },
     {
-      "package": "ar-MSA/builder-m6-l3-first-prompt-to-lovable",
-      "pointer": "/sections/7/bullets/3",
+      "package": "ar-MSA/builder-m2-l1-prompt-layer",
+      "pointer": "/sections/6/bullets/2",
       "category": "learner_text_change",
-      "before": "**Style:** [لونان + mood]"
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
     },
     {
-      "package": "ar-MSA/builder-m6-l3-first-prompt-to-lovable",
-      "pointer": "/sections/7/bullets/4",
+      "package": "ar-MSA/business-m1-l1-from-decisions-to-leadership",
+      "pointer": "/sections/6/bullets/1",
       "category": "learner_text_change",
-      "before": "**Constraints:** [ما ليس في النسخة الأولى]"
+      "before": "**التفسير:** إذا كانت الجودة تعتمد على حضورها الشخصي، فالعمل لا يزال نظامًا شخصيًا لا **Business OS**. الذكاء الاصطناعي يستطيع المساعدة في قوالب ومتابعة — لكن أولًا تعرف التكرار.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
     },
     {
-      "package": "ar-MSA/builder-m6-l3-first-prompt-to-lovable",
-      "pointer": "/sections/7/contentMarkdown",
+      "package": "ar-MSA/business-m1-l1-from-decisions-to-leadership",
+      "pointer": "/sections/6/bullets/2",
       "category": "learner_text_change",
-      "before": "**المقدمة:** **مسودة للنسخ — ليس تنفيذًا**. **استخدم Wireframe من الدرس السابق**. **١٠–١٥ دقيقة**.\n\n**التسليم:**\n\n- **Goal:** [نوع الواجهة + ماذا تفعل]\n- **Users:** [من يستخدمها]\n- **Pages:** [أقسام Wireframe بالاسم]\n- **Style:** [لونان + mood]\n- **Constraints:** [ما ليس في النسخة الأولى]\n\n**معايير التقييم:**\n\n| البعد | الوزن | المعيار |\n|-------|-------|---------|\n| الخمسة موجودون | 60% | **Goal, Users, Pages, Style, Constraints — كلهم مكتوبون**. **Pages مربوطة بـ Wireframe** |\n| جاهز للنسخ | 40% | **Style فيه لونان على الأقل**. **Constraints تحدّد «ليس الآن»** |",
-      "after": "**المقدمة:** **مسودة للنسخ — ليس تنفيذًا**. **استخدم Wireframe من الدرس السابق**. **١٠–١٥ دقيقة**."
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "ar-MSA/business-m1-l2-reactive-vs-proactive",
+      "pointer": "/sections/5/bullets/1",
+      "category": "learner_text_change",
+      "before": "**التفسير:** حجم المشكلة ليس المعيار. المعيار: من قرّر ماذا تعمل أولًا؟ تقليل المتكرر يبدأ بمعرفة متى «العالم» يأخذ يومك.",
+      "after": "Reactive — الموقف حدّد يومه قبل ما يختار أولوياته"
+    },
+    {
+      "package": "ar-MSA/business-m1-l2-reactive-vs-proactive",
+      "pointer": "/sections/5/bullets/2",
+      "category": "learner_text_change",
+      "after": "لا هذا ولا ذاك — لأن المشكلة كانت كبيرة وتستحق الوقت"
+    },
+    {
+      "package": "ar-MSA/business-m1-l2-reactive-vs-proactive",
+      "pointer": "/sections/5/bullets/3",
+      "category": "learner_text_change",
+      "after": "Proactive — لأن التعامل مع الموردين جزء من التخطيط"
     },
     {
       "package": "ar-MSA/business-m1-l2-reactive-vs-proactive",
@@ -10221,25 +10512,169 @@
       "after": "Proactive — لأن التعامل مع الموردين جزء من التخطيط"
     },
     {
-      "package": "ar-MSA/business-m4-l1-premature-scaling",
-      "pointer": "/sections/2/quiz/explanation",
+      "package": "ar-MSA/business-m2-l1-customer-lifecycle",
+      "pointer": "/sections/5/bullets/1",
       "category": "learner_text_change",
-      "before": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-      "after": "— للسياق الكامل."
+      "before": "**التفسير:** جلب عميل جديد غالبًا **أغلى** من إرجاع عميل موجود. إذا الضعف في الرجوع — ابدأ بالاحتفاظ قبل زيادة الإعلانات.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
+    },
+    {
+      "package": "ar-MSA/business-m2-l1-customer-lifecycle",
+      "pointer": "/sections/5/bullets/2",
+      "category": "learner_text_change",
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "ar-MSA/business-m2-l2-build-your-offer",
+      "pointer": "/sections/6/bullets/1",
+      "category": "learner_text_change",
+      "before": "**التفسير:** «غالي» غالبًا وضوح لا رقم. الذكاء الاصطناعي يساعد في الصياغة والاعتراضات — القرار والاختبار عليك.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
+    },
+    {
+      "package": "ar-MSA/business-m2-l2-build-your-offer",
+      "pointer": "/sections/6/bullets/2",
+      "category": "learner_text_change",
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "ar-MSA/business-m2-l2-retention-flow",
+      "pointer": "/sections/6/bullets/1",
+      "category": "learner_text_change",
+      "before": "**التفسير:** الاحتفاظ غالبًا أرخص من الجلب. الذكاء الاصطناعي يساعد في صياغة المتابعة — لا يستبدل قرار التوقيت والمحتوى.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
+    },
+    {
+      "package": "ar-MSA/business-m2-l2-retention-flow",
+      "pointer": "/sections/6/bullets/2",
+      "category": "learner_text_change",
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "ar-MSA/business-m2-l3-readiness-signals",
+      "pointer": "/sections/6/bullets/1",
+      "category": "learner_text_change",
+      "before": "**التفسير:** من دون أسعار وقوالب موحّدة، الذكاء الاصطناعي يُنتج ردودًا غير متسقة. الجاهزية = وضوح العملية.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
+    },
+    {
+      "package": "ar-MSA/business-m2-l3-readiness-signals",
+      "pointer": "/sections/6/bullets/2",
+      "category": "learner_text_change",
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "ar-MSA/business-m3-l1-delegate-or-automate",
+      "pointer": "/sections/6/bullets/1",
+      "category": "learner_text_change",
+      "before": "**التفسير:** تكرار + مخاطرة منخفضة = مرشّح قوي للذكاء الاصطناعي. القرارات الحساسة تبقى مع مراجعة.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
+    },
+    {
+      "package": "ar-MSA/business-m3-l1-delegate-or-automate",
+      "pointer": "/sections/6/bullets/2",
+      "category": "learner_text_change",
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "ar-MSA/business-m3-l2-strategic-operational-admin",
+      "pointer": "/sections/6/bullets/1",
+      "category": "learner_text_change",
+      "before": "**التفسير:** مراجعة الأرقام قد تبدأ إدارية — لكن قرار الهامش استراتيجي. يستحق وقتًا محميًا وشريك تفكير.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
+    },
+    {
+      "package": "ar-MSA/business-m3-l2-strategic-operational-admin",
+      "pointer": "/sections/6/bullets/2",
+      "category": "learner_text_change",
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "ar-MSA/business-m3-l3-system-then-people",
+      "pointer": "/sections/6/bullets/1",
+      "category": "learner_text_change",
+      "before": "**التفسير:** النظام أولًا يقلّل الأخطاء والشرح المتكرر. الذكاء الاصطناعي يصوغ **SOP** — أنت تراجع وتختبر.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
+    },
+    {
+      "package": "ar-MSA/business-m3-l3-system-then-people",
+      "pointer": "/sections/6/bullets/2",
+      "category": "learner_text_change",
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "ar-MSA/business-m4-l1-premature-scaling",
+      "pointer": "/sections/2/quiz/options/1",
+      "category": "learner_text_change",
+      "before": "وظّف أكتر من غير SOP.",
+      "after": "وقف التوسّع، اصلّح الجودة والتشغيل، بعدين كبّر تدريجي."
+    },
+    {
+      "package": "ar-MSA/business-m4-l1-premature-scaling",
+      "pointer": "/sections/2/quiz/options/2",
+      "category": "learner_text_change",
+      "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+      "after": "وظّف أكتر من غير SOP."
     },
     {
       "package": "ar-MSA/business-m4-l3-weekly-rhythm",
-      "pointer": "/sections/2/quiz/explanation",
+      "pointer": "/sections/2/quiz/options/1",
       "category": "learner_text_change",
-      "before": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-      "after": "— للسياق الكامل."
+      "before": "تقرأ ٥٠ مقال تسويق.",
+      "after": "٣ أرقام → تسأل AI عن التغيّر والمعلّق → تسجّل قرار واحد."
+    },
+    {
+      "package": "ar-MSA/business-m4-l3-weekly-rhythm",
+      "pointer": "/sections/2/quiz/options/2",
+      "category": "learner_text_change",
+      "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+      "after": "تقرأ ٥٠ مقال تسويق."
     },
     {
       "package": "ar-MSA/business-m4-l4-full-ecosystem",
-      "pointer": "/sections/2/quiz/explanation",
+      "pointer": "/sections/2/quiz/options/1",
       "category": "learner_text_change",
-      "before": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل.",
-      "after": "— للسياق الكامل."
+      "before": "Creator — محتوى بس.",
+      "after": "Automator — أتمتة المتابعة المتكررة."
+    },
+    {
+      "package": "ar-MSA/business-m4-l4-full-ecosystem",
+      "pointer": "/sections/2/quiz/options/2",
+      "category": "learner_text_change",
+      "before": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار.",
+      "after": "Creator — محتوى بس."
+    },
+    {
+      "package": "ar-MSA/creator-m1-l1-why-content",
+      "pointer": "/sections/5/bullets/1",
+      "category": "learner_text_change",
+      "before": "**التفسير:** التحسن الحقيقي يبدأ من وضوح الوعد والنمط المتكرر — لا من زيادة الكمية.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
+    },
+    {
+      "package": "ar-MSA/creator-m1-l1-why-content",
+      "pointer": "/sections/5/bullets/2",
+      "category": "learner_text_change",
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "ar-MSA/intro-m1-l1-what-is-ai",
+      "pointer": "/sections/6/bullets/1",
+      "category": "learner_text_change",
+      "before": "**التفسير:** تجربة واحدة صغيرة تعلّمك أكثر من قراءة طويلة. هذا بالضبط ما ستفعله في المهمة.",
+      "after": "تفتح ChatGPT أو Gemini وتطلب منه شيء بسيط من يومك."
+    },
+    {
+      "package": "ar-MSA/intro-m1-l1-what-is-ai",
+      "pointer": "/sections/6/bullets/2",
+      "category": "learner_text_change",
+      "after": "تنتظر لين تخلص الدورة كلها قبل ما تجرب أي أداة."
+    },
+    {
+      "package": "ar-MSA/intro-m1-l1-what-is-ai",
+      "pointer": "/sections/6/bullets/3",
+      "category": "learner_text_change",
+      "after": "تسأل شخص خبير يشرح لك كل التفاصيل التقنية أولًا."
     },
     {
       "package": "ar-MSA/intro-m1-l1-what-is-ai",
@@ -10262,99 +10697,216 @@
       "after": "تسأل شخص خبير يشرح لك كل التفاصيل التقنية أولًا."
     },
     {
-      "package": "en/analyst-m2-l1-feeling-to-question",
-      "pointer": "/sections/7/bullets/0",
+      "package": "ar-MSA/intro-m1-l2-first-prompt",
+      "pointer": "/sections/5/bullets/1",
       "category": "learner_text_change",
-      "before": "'I feel that...' (the original feeling)"
+      "before": "**التفسير:** الذكاء الاصطناعي لا يعرف حياتك. السياق + مهمة واضحة يحوّلان الطلب من عام إلى عملي.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
     },
     {
-      "package": "en/analyst-m2-l1-feeling-to-question",
-      "pointer": "/sections/7/bullets/1",
+      "package": "ar-MSA/intro-m1-l2-first-prompt",
+      "pointer": "/sections/5/bullets/2",
       "category": "learner_text_change",
-      "before": "→ the specific question (**Metric + Period + Comparison**)"
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
     },
     {
-      "package": "en/analyst-m2-l1-feeling-to-question",
-      "pointer": "/sections/7/contentMarkdown",
+      "package": "ar-MSA/intro-m1-l3-setup-your-ai",
+      "pointer": "/sections/6/bullets/1",
       "category": "learner_text_change",
-      "before": "**Introduction:** This is a **practical conversion** task — **not** a statistical analysis. Write **3 sentences** 'I feel that...' from your **real work** (or from around you). Turn each one into a **question** answered by **data**. **10–15 minutes** is enough.\n\n**Submission:** For each feeling (1–3):\n\n- 'I feel that...' (the original feeling)\n- → the specific question (**Metric + Period + Comparison**)\n\n+ **One source** that answers **at least two** of the three questions (Sheet / CRM / Analytics…)\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| 3 specific questions | 60% | Each question contains **a number or metric** + **a period** + **a comparison** — not a general question |\n| Source for the answer | 40% | At least **one source** that can answer **two questions** |",
-      "after": "**Introduction:** This is a **practical conversion** task — **not** a statistical analysis. Write **3 sentences** 'I feel that...' from your **real work** (or from around you). Turn each one into a **question** answered by **data**. **10–15 minutes** is enough."
+      "before": "**التفسير:** الهدف ليس اختيارًا مثاليًا. الهدف أول تفاعل حقيقي — وبعدها تتحسّن.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
     },
     {
-      "package": "en/analyst-m2-l2-right-question-rule",
-      "pointer": "/sections/7/bullets/0",
+      "package": "ar-MSA/intro-m1-l3-setup-your-ai",
+      "pointer": "/sections/6/bullets/2",
       "category": "learner_text_change",
-      "before": "The question"
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
     },
     {
-      "package": "en/analyst-m2-l2-right-question-rule",
-      "pointer": "/sections/7/bullets/1",
+      "package": "ar-MSA/intro-m1-l4-ai-can-cannot",
+      "pointer": "/sections/6/bullets/1",
       "category": "learner_text_change",
-      "before": "If **X**: [What is the decision?] · If **Y**: [What is the decision?] · **Does** the decision change? (Yes / No)"
+      "before": "**التفسير:** التلخيص من أقوى استخدامات الـ AI. المراجعة للتفاصيل الحساسة — لا للخوف من التجربة.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
     },
     {
-      "package": "en/analyst-m2-l2-right-question-rule",
-      "pointer": "/sections/7/contentMarkdown",
+      "package": "ar-MSA/intro-m1-l4-ai-can-cannot",
+      "pointer": "/sections/6/bullets/2",
       "category": "learner_text_change",
-      "before": "**Introduction:** A practical **filter task** — **not an exam**. Write **3 questions** (from the previous lesson or from your work). For each question apply: «**If** the answer is **X** or **Y** — **will** I change my decision?** If **not** — **rephrase** the question.**»\n\n**Submission:** For each question (1–3):\n\n- The question\n- If **X**: [What is the decision?] · If **Y**: [What is the decision?] · **Does** the decision change? (Yes / No)\n\n+ If a question **fails** — **the improved version**\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| Decision Test | 60% | Each question includes **X** and **Y** and a **different decision** — or explains **why** it will not change |\n| Improvement | 40% | If a question **fails** — an **improved version** **related to a decision** |",
-      "after": "**Introduction:** A practical **filter task** — **not an exam**. Write **3 questions** (from the previous lesson or from your work). For each question apply: «**If** the answer is **X** or **Y** — **will** I change my decision?** If **not** — **rephrase** the question.**»"
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "ar-MSA/intro-m1-l5-ai-vs-software",
+      "pointer": "/sections/6/bullets/1",
+      "category": "learner_text_change",
+      "before": "**التفسير:** الحساب الدقيق يحتاج برنامجًا ثابتًا. AI يأتي بعدها للملخص إذا احتجت.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
+    },
+    {
+      "package": "ar-MSA/intro-m1-l5-ai-vs-software",
+      "pointer": "/sections/6/bullets/2",
+      "category": "learner_text_change",
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "ar-MSA/intro-m1-l6-learn-without-fear",
+      "pointer": "/sections/6/bullets/1",
+      "category": "learner_text_change",
+      "before": "**التفسير:** البداية باللغة الطبيعية وتجربة صغيرة — لا بالبرمجة ولا بالانتظار.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
+    },
+    {
+      "package": "ar-MSA/intro-m1-l6-learn-without-fear",
+      "pointer": "/sections/6/bullets/2",
+      "category": "learner_text_change",
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "ar-MSA/intro-m1-l7-choose-your-path",
+      "pointer": "/sections/6/bullets/1",
+      "category": "learner_text_change",
+      "before": "**التفسير:** المهام المتكررة = Automator. Builder للتطبيقات — لا للمتابعة اليومية.",
+      "after": "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه."
+    },
+    {
+      "package": "ar-MSA/intro-m1-l7-choose-your-path",
+      "pointer": "/sections/6/bullets/2",
+      "category": "learner_text_change",
+      "after": "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
+    },
+    {
+      "package": "en/automator-m5-l2-rag-in-n8n",
+      "pointer": "/sections/4/quiz/options/1",
+      "category": "learner_text_change",
+      "before": "Stop the bot and respond manually to all questions.",
+      "after": "Choose a FAQ source or price list and link it to the automation before each response."
+    },
+    {
+      "package": "en/automator-m5-l2-rag-in-n8n",
+      "pointer": "/sections/4/quiz/options/2",
+      "category": "learner_text_change",
+      "before": "A partial answer that misses context and ignores the next step in the decision.",
+      "after": "Stop the bot and respond manually to all questions."
+    },
+    {
+      "package": "en/automator-m5-l3-agents",
+      "pointer": "/sections/3/quiz/options/1",
+      "category": "learner_text_change",
+      "before": "An **Agent** open with all tools to be 'smart'.",
+      "after": "An Agent with a clear goal and specific tools, with a limit that prevents sending without approval."
+    },
+    {
+      "package": "en/automator-m5-l3-agents",
+      "pointer": "/sections/3/quiz/options/2",
+      "category": "learner_text_change",
+      "before": "A partial answer that misses the context and ignores the next step in the decision.",
+      "after": "An Agent open with all tools to be 'smart'."
+    },
+    {
+      "package": "en/automator-m6-l1-lead-capture",
+      "pointer": "/sections/3/quiz/options/1",
+      "category": "learner_text_change",
+      "before": "Close the form until you can reply.",
+      "after": "Every record is saved immediately + automatic welcome reply + alert for follow-up."
+    },
+    {
+      "package": "en/automator-m6-l1-lead-capture",
+      "pointer": "/sections/3/quiz/options/2",
+      "category": "learner_text_change",
+      "before": "A partial answer misses the context and ignores the next step in the decision.",
+      "after": "Close the form until you can reply."
+    },
+    {
+      "package": "en/automator-m6-l2-whatsapp-flow",
+      "pointer": "/sections/3/quiz/options/1",
+      "category": "learner_text_change",
+      "before": "Send a message saying 'wait 24 hours'.",
+      "after": "Immediate handoff to a staff member — this is a clear handoff condition."
+    },
+    {
+      "package": "en/automator-m6-l2-whatsapp-flow",
+      "pointer": "/sections/3/quiz/options/2",
+      "category": "learner_text_change",
+      "before": "A partial answer misses the context and ignores the next decision step.",
+      "after": "Send a message saying 'wait 24 hours'."
+    },
+    {
+      "package": "en/automator-m6-l3-follow-up",
+      "pointer": "/sections/3/quiz/options/1",
+      "category": "learner_text_change",
+      "before": "An instant call without a reminder.",
+      "after": "A gentle reminder through a different channel or a single question — not a sales pressure."
+    },
+    {
+      "package": "en/automator-m6-l3-follow-up",
+      "pointer": "/sections/3/quiz/options/2",
+      "category": "learner_text_change",
+      "before": "A partial answer that misses the context and ignores the next step in the decision.",
+      "after": "An instant call without a reminder."
     },
     {
       "package": "en/builder-m6-l2-wireframe",
-      "pointer": "/sections/7/bullets/0",
+      "pointer": "/sections/6/quiz/options/0",
       "category": "learner_text_change",
-      "before": "**[Section]: [What’s inside]**"
+      "before": "No — A wireframe consists of boxes and labels only, without design.",
+      "after": "No — A Wireframe consists of boxes and labels only, without design."
     },
     {
       "package": "en/builder-m6-l2-wireframe",
-      "pointer": "/sections/7/bullets/1",
+      "pointer": "/sections/6/quiz/options/1",
       "category": "learner_text_change",
-      "before": "**CTA: [Main Button]**"
+      "before": "Yes — This helps the AI understand better.",
+      "after": "Yes — This is how AI understands better."
     },
     {
       "package": "en/builder-m6-l2-wireframe",
-      "pointer": "/sections/7/contentMarkdown",
+      "pointer": "/sections/6/quiz/options/2",
       "category": "learner_text_change",
-      "before": "**Introduction:** Drawing or describing — not coding. Use 3 screens from the previous lesson. **10–15 minutes**.\n\n**Submission:** For each screen, provide a wireframe list:\n\n- **[Section]: [What’s inside]**\n- **CTA: [Main Button]**\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| 3 Described Screens | 60% | **Each screen is a bullet list — not a paragraph. CTA is clear in each screen.** |\n| Boxes, No Design | 40% | **No colors or fonts — just section names. The order is logical — most important first.** |",
-      "after": "**Introduction:** Drawing or describing — not coding. Use 3 screens from the previous lesson. **10–15 minutes**."
+      "before": "No — There should have been real images.",
+      "after": "No — There should be real images."
     },
     {
-      "package": "en/builder-m6-l3-first-prompt-to-lovable",
-      "pointer": "/sections/7/bullets/0",
+      "package": "en/business-m4-l1-premature-scaling",
+      "pointer": "/sections/2/quiz/options/1",
       "category": "learner_text_change",
-      "before": "**Goal:** [Type of interface + what it does]"
+      "before": "Hire more without SOP.",
+      "after": "Stop scaling, fix quality and operations, then grow gradually."
     },
     {
-      "package": "en/builder-m6-l3-first-prompt-to-lovable",
-      "pointer": "/sections/7/bullets/1",
+      "package": "en/business-m4-l1-premature-scaling",
+      "pointer": "/sections/2/quiz/options/2",
       "category": "learner_text_change",
-      "before": "**Users:** [Who uses it]"
+      "before": "A partial answer misses the context and ignores the next step in the decision.",
+      "after": "Hire more without SOP."
     },
     {
-      "package": "en/builder-m6-l3-first-prompt-to-lovable",
-      "pointer": "/sections/7/bullets/2",
+      "package": "en/business-m4-l3-weekly-rhythm",
+      "pointer": "/sections/2/quiz/options/1",
       "category": "learner_text_change",
-      "before": "**Pages:** [Wireframe sections by name]"
+      "before": "Read 50 marketing articles.",
+      "after": "3 numbers → ask AI about the change and the pending item → record one decision."
     },
     {
-      "package": "en/builder-m6-l3-first-prompt-to-lovable",
-      "pointer": "/sections/7/bullets/3",
+      "package": "en/business-m4-l3-weekly-rhythm",
+      "pointer": "/sections/2/quiz/options/2",
       "category": "learner_text_change",
-      "before": "**Style:** [Two colors + mood]"
+      "before": "A partial answer that misses the context and ignores the next step for the decision.",
+      "after": "Read 50 marketing articles."
     },
     {
-      "package": "en/builder-m6-l3-first-prompt-to-lovable",
-      "pointer": "/sections/7/bullets/4",
+      "package": "en/business-m4-l4-full-ecosystem",
+      "pointer": "/sections/2/quiz/options/1",
       "category": "learner_text_change",
-      "before": "**Constraints:** [What is not in the first version]"
+      "before": "Creator — Just content.",
+      "after": "Automator — Automates repetitive follow-ups."
     },
     {
-      "package": "en/builder-m6-l3-first-prompt-to-lovable",
-      "pointer": "/sections/7/contentMarkdown",
+      "package": "en/business-m4-l4-full-ecosystem",
+      "pointer": "/sections/2/quiz/options/2",
       "category": "learner_text_change",
-      "before": "**Introduction:** **A draft for copying — not implementation**. **Use the wireframe from the previous lesson**. **10-15 minutes**.\n\n**Submission:**\n\n- **Goal:** [Type of interface + what it does]\n- **Users:** [Who uses it]\n- **Pages:** [Wireframe sections by name]\n- **Style:** [Two colors + mood]\n- **Constraints:** [What is not in the first version]\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| All five present | 60% | **Goal, Users, Pages, Style, Constraints — all written**. **Pages linked to the wireframe** |\n| Ready to copy | 40% | **Style has at least two colors**. **Constraints specify 'not now'** |",
-      "after": "**Introduction:** **A draft for copying — not implementation**. **Use the wireframe from the previous lesson**. **10-15 minutes**."
+      "before": "Partial answer that misses the context and ignores the next step in decision-making.",
+      "after": "Creator — Just content."
     }
   ],
-  "disallowedChangeCount": 81
+  "disallowedChangeCount": 127
 }

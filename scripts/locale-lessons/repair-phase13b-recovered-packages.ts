@@ -49,18 +49,6 @@ async function loadPackage(filePath: string): Promise<AdaptedLessonPackage> {
   return readJsonFile<AdaptedLessonPackage>(filePath);
 }
 
-async function loadMsaRecoveredQuizSection(
-  lessonId: string,
-): Promise<import("../../src/lib/locale-lessons/types.ts").LocalizedLessonSection | null> {
-  const filePath = path.join(PHASE13B_RECOVERED_PACKAGES_ROOT, "ar-MSA", `${lessonId}.json`);
-  try {
-    const pkg = await loadPackage(filePath);
-    return pkg.sections.find((section) => section.role === "Quiz") ?? null;
-  } catch {
-    return null;
-  }
-}
-
 export async function repairAllRecoveredPackages(): Promise<{
   packagesScanned: number;
   filesWritten: number;
@@ -83,12 +71,7 @@ export async function repairAllRecoveredPackages(): Promise<{
       continue;
     }
 
-    const repaired = repairRecoveredPackage(source, pkg, {
-      msaRecoveredQuizSection:
-        cell.locale === "ar-Gulf"
-          ? await loadMsaRecoveredQuizSection(cell.lessonId)
-          : null,
-    });
+    const repaired = repairRecoveredPackage(source, pkg);
     if (deepEqual(pkg, repaired)) {
       skippedIdentical++;
       continue;

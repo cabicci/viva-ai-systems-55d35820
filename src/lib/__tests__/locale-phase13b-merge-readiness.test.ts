@@ -9,9 +9,12 @@ import type {
 } from "../locale-lessons/types";
 import {
   auditRecoveredPackage,
+  BLOCKED_MISSING_GULF_QUIZ_LESSONS,
+  cleanQuizOptionText,
   deriveMissionDelivery,
   hasMalformedMarkdownPeriodArtifact,
   reconstructMissingQuizSection,
+  repairMissionSection,
   repairRecoveredPackage,
   repairTableFromMarkdown,
   stripMalformedMarkdownPeriodArtifacts,
@@ -106,6 +109,38 @@ describe("phase13b merge-readiness mission delivery", () => {
       "Screen two template",
     ]);
   });
+
+  it("repairMissionSection preserves contentMarkdown and bullets while adding delivery", () => {
+    const section: LocalizedLessonSection = {
+      role: "Mission",
+      heading: "Mission",
+      contentMarkdown:
+        "**Introduction:** Draw 3 screens.\n\n**Submission:**\n\n1. Screen one template\n2. Screen two template\n\n**Evaluation Criteria:**\n\n| Dim | Weight | Criteria |",
+      bullets: ["Screen one template", "Screen two template"],
+      tables: [],
+      mission: {
+        intro: "Draw 3 screens.",
+        delivery: [],
+        rubric: [],
+        yamlIntent: "wireframe",
+        yamlType: "practice",
+      },
+    };
+    const sourceSection: LocalizedLessonSection = {
+      ...section,
+      mission: {
+        ...section.mission!,
+        delivery: ["Screen one template", "Screen two template"],
+      },
+    };
+    const repaired = repairMissionSection(section, sourceSection);
+    expect(repaired.contentMarkdown).toBe(section.contentMarkdown);
+    expect(repaired.bullets).toEqual(section.bullets);
+    expect(repaired.mission?.delivery).toEqual([
+      "Screen one template",
+      "Screen two template",
+    ]);
+  });
 });
 
 describe("phase13b known defect packages", () => {
@@ -160,8 +195,8 @@ describe("phase13b repair idempotence and scope", () => {
     const first = await repairAllRecoveredPackages();
     const second = await repairAllRecoveredPackages();
     expect(second.filesWritten).toBe(0);
-    expect(second.auditAfter).toBe(0);
-    expect(first.auditAfter).toBe(0);
+    expect(second.auditAfter).toBe(2);
+    expect(first.auditAfter).toBe(2);
   }, 120_000);
 
   it("repair is idempotent for known defect packages", async () => {
@@ -196,7 +231,7 @@ describe("phase13b repair idempotence and scope", () => {
     expect(afterIndex).toBe(beforeIndex);
   });
 
-  it("reconstructs collapsed ar-Gulf quiz from ar-MSA recovered, not runtime", async () => {
+  it("does not reconstruct collapsed ar-Gulf quiz from ar-MSA recovered", async () => {
     const lessonId = "analyst-m6-l2-interpretation-mistakes";
     const source = await loadJson<LocalizedLessonPackage>(
       path.join(MSA_LESSONS, `${lessonId}.json`),
@@ -220,16 +255,38 @@ describe("phase13b repair idempotence and scope", () => {
     const inserted = reconstructMissingQuizSection(source, mainGulf, {
       msaRecoveredQuizSection: msaQuiz,
     });
-    const quiz = inserted.sections.find((s) => s.role === "Quiz");
-    expect(quiz?.quiz?.options).toEqual(msaQuiz?.quiz?.options);
-    expect(inserted.sections.find((s) => s.role === "Mission")?.heading).toContain(
-      "المهمة",
-    );
+    expect(inserted.sections.some((s) => s.role === "Quiz")).toBe(false);
+    expect(inserted).toEqual(mainGulf);
   });
+
+  it("reports blocked_missing_gulf_quiz for known collapsed Gulf lessons", async () => {
+    for (const lessonId of BLOCKED_MISSING_GULF_QUIZ_LESSONS) {
+      const source = await loadJson<LocalizedLessonPackage>(
+        path.join(MSA_LESSONS, `${lessonId}.json`),
+      );
+      const pkg = JSON.parse(
+        execSync(
+          `git show origin/main:src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-Gulf/${lessonId}.json`,
+          { cwd: REPO_ROOT, encoding: "utf8" },
+        ),
+      ) as AdaptedLessonPackage;
+      const issues = auditRecoveredPackage(source, pkg);
+      expect(
+        issues.some((issue) => issue.kind === "blocked_missing_gulf_quiz"),
+      ).toBe(true);
+      expect(pkg.sections.some((section) => section.role === "Quiz")).toBe(false);
+    }
+  });
+
+  it("strips internal ( N): labels from quiz options via cleanQuizOptionText", () => {
+    expect(cleanQuizOptionText("( 1): تختار مصدر FAQ")).toBe("تختار مصدر FAQ");
+    expect(cleanQuizOptionText("( 0): Correlation ≠ Causation")).toContain("Correlation");
+  });
+
 });
 
 describe("phase13b full recovered corpus QA", () => {
-  it("validates all 300 recovered packages after repair", async () => {
+  it("validates 298 packages and reports blocked Gulf quiz merge blockers", async () => {
     const validation = await validateAllRecoveredPackages();
     expect(validation.arMsa).toBe(100);
     expect(validation.arGulf).toBe(100);
@@ -238,20 +295,36 @@ describe("phase13b full recovered corpus QA", () => {
     expect(validation.jsonParseErrors).toBe(0);
     expect(validation.tableShapeErrors).toBe(0);
     expect(validation.missionParityErrors).toBe(0);
-    expect(validation.quizStructuralErrors).toBe(0);
     expect(validation.quizPrefixFormatErrors).toBe(0);
     expect(validation.sectionParityErrors).toBe(0);
-    expect(validation.validationErrors).toEqual([]);
     expect(validation.missingIds).toEqual([]);
     expect(validation.retryCells).toEqual([]);
     expect(validation.complete).toBe(true);
-    expect(validation.ok).toBe(true);
+    expect(validation.blockedMissingGulfQuiz).toEqual([
+      "ar-Gulf/analyst-m6-l2-interpretation-mistakes",
+      "ar-Gulf/automator-m5-l2-rag-in-n8n",
+    ]);
+    expect(validation.mergeBlocked).toBe(true);
+    expect(validation.ok).toBe(false);
+    const nonBlockedErrors = validation.validationErrors.filter(
+      (error) =>
+        !BLOCKED_MISSING_GULF_QUIZ_LESSONS.some(
+          (lessonId) => error.startsWith(`ar-Gulf/${lessonId}:`),
+        ),
+    );
+    expect(nonBlockedErrors).toEqual([]);
   }, 120_000);
 
-  it("audit finds zero errors across 300 packages", async () => {
+  it("audit finds zero errors across packages except blocked Gulf quiz", async () => {
     const audit = await auditAllRecoveredPackages();
     expect(audit.packagesScanned).toBe(300);
     const errors = audit.issues.filter((i) => i.severity === "error");
-    expect(errors).toEqual([]);
+    const nonBlocked = errors.filter(
+      (issue) => issue.kind !== "blocked_missing_gulf_quiz",
+    );
+    expect(nonBlocked).toEqual([]);
+    expect(errors.filter((issue) => issue.kind === "blocked_missing_gulf_quiz")).toHaveLength(
+      2,
+    );
   }, 120_000);
 });

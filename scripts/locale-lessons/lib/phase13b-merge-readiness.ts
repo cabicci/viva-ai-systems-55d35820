@@ -30,6 +30,23 @@ import {
 export const PHASE13B_RECOVERED_LOCALES = ["ar-MSA", "ar-Gulf", "en"] as const;
 export type Phase13BRecoveredLocale = (typeof PHASE13B_RECOVERED_LOCALES)[number];
 
+/** Gulf lessons with collapsed Quiz in verified Phase 13B shards — no MSA insert allowed. */
+export const BLOCKED_MISSING_GULF_QUIZ_LESSONS = [
+  "analyst-m6-l2-interpretation-mistakes",
+  "automator-m5-l2-rag-in-n8n",
+] as const;
+
+export type BlockedMissingGulfQuizLessonId =
+  (typeof BLOCKED_MISSING_GULF_QUIZ_LESSONS)[number];
+
+export const GENERIC_QUIZ_QUESTION_FALLBACK =
+  "ما الخيار الأنسب وفقًا لما ورد في القسم أعلاه؟";
+
+export const EGYPTIAN_QUIZ_EXPLANATION_FALLBACK =
+  /الإجابة الصحيحة محفوظة من الإنتاج المصري/;
+
+export const TRUNCATED_QUIZ_EXPLANATION_ARTIFACT = /^—\s*للسياق الكامل\.?$/;
+
 /** Malformed markdown where a period was wrapped in bold markers. */
 export const MALFORMED_MARKDOWN_PERIOD = /\*\*\.\*\*/g;
 
@@ -42,11 +59,14 @@ export interface Phase13BAuditIssue {
     | "table_markdown_mismatch"
     | "mission_delivery"
     | "mission_parity"
+    | "mission_text_trim"
     | "quiz_prefix"
     | "quiz_markdown_artifact"
     | "quiz_structure"
+    | "quiz_forbidden_fallback"
     | "section_parity"
-    | "structural_parity";
+    | "structural_parity"
+    | "blocked_missing_gulf_quiz";
   message: string;
   severity: "error" | "warning";
 }
@@ -68,11 +88,13 @@ export interface Phase13BValidationSummary {
   quizStructuralErrors: number;
   quizPrefixFormatErrors: number;
   sectionParityErrors: number;
+  blockedMissingGulfQuiz: string[];
   validationErrors: string[];
   missingIds: string[];
   retryCells: { locale: string; lessonId: string }[];
   complete: boolean;
   ok: boolean;
+  mergeBlocked: boolean;
 }
 
 /** Sections omitted from learner-final recovered packages (video/diagram/screenshot intent). */
@@ -131,11 +153,33 @@ function repairArMsaQuizSection(
 ): LocalizedLessonSection {
   if (section.role !== "Quiz" || !section.quiz) return section;
 
-  const resolved = resolveSourceQuizStructure(sourceSection, lessonId);
-  if (!resolved.ok) return section;
+  let working = repairQuizMechanicalArtifacts(section);
+  const quiz = working.quiz!;
 
-  const adaptedOptions = (section.quiz.options ?? []).map((option) =>
-    normalizeQuizOptionText(stripBannedPhrasesFromText(option)),
+  if (
+    shouldRealignQuizOptionsFromBullets(
+      quiz.options ?? [],
+      working.bullets,
+      quiz.correctIndex ?? 0,
+    )
+  ) {
+    const options = working.bullets.map((bullet) => cleanQuizOptionText(bullet));
+    working = {
+      ...working,
+      bullets: [...options],
+      quiz: { ...quiz, options, correctIndex: quiz.correctIndex },
+    };
+  }
+
+  if (!hasPlaceholderQuizOptions(working.quiz?.options ?? [])) {
+    return working;
+  }
+
+  const resolved = resolveSourceQuizStructure(sourceSection, lessonId);
+  if (!resolved.ok) return working;
+
+  const adaptedOptions = (working.quiz!.options ?? []).map((option) =>
+    cleanQuizOptionText(option),
   );
 
   const locked = lockQuizOptionsToSourceStructure(
@@ -145,8 +189,12 @@ function repairArMsaQuizSection(
   );
 
   let options = locked.options;
-  let question = stripBannedPhrasesFromText(section.quiz.question ?? "");
-  let explanation = stripBannedPhrasesFromText(section.quiz.explanation ?? "");
+  const question = working.quiz!.question ?? "";
+  let explanation = working.quiz!.explanation ?? "";
+  if (TRUNCATED_QUIZ_EXPLANATION_ARTIFACT.test(explanation.trim())) {
+    const restored = extractQuizExplanationFromMarkdown(working.contentMarkdown);
+    if (restored) explanation = restored;
+  }
   const fallback = msaQuizFallback(lessonId);
 
   if (
@@ -164,22 +212,36 @@ function repairArMsaQuizSection(
     if (options.some((option) => !option.trim() || PLACEHOLDER_OPTION_PATTERN.test(option))) {
       options = [...fallback.options];
     }
-    if (!question.trim()) question = fallback.question;
-    if (!explanation.trim()) explanation = fallback.explanation;
   }
 
   return {
-    ...section,
-    contentMarkdown: sanitizeMarkdownArtifactsInString(section.contentMarkdown),
-    bullets: section.bullets.map((b) => normalizeQuizOptionText(stripBannedPhrasesFromText(b))),
+    ...working,
+    contentMarkdown: sanitizeMarkdownArtifactsInString(working.contentMarkdown),
+    bullets: options,
     quiz: {
-      ...section.quiz,
+      ...working.quiz!,
       question,
       options,
       explanation,
-      correctIndex: section.quiz.correctIndex,
+      correctIndex: working.quiz!.correctIndex,
     },
   };
+}
+
+function extractQuizExplanationFromMarkdown(contentMarkdown: string): string | null {
+  const patterns = [
+    /\*\*التفسير:\*\*\s*(.+)$/m,
+    /\*\*Explanation:\*\*\s*(.+)$/im,
+    /^Explanation:\s*(.+)$/im,
+  ];
+  for (const pattern of patterns) {
+    const match = contentMarkdown.match(pattern);
+    const explanation = match?.[1]?.trim();
+    if (explanation && !TRUNCATED_QUIZ_EXPLANATION_ARTIFACT.test(explanation)) {
+      return explanation;
+    }
+  }
+  return null;
 }
 
 function pairingSourceSections(source: LocalizedLessonPackage): LocalizedLessonSection[] {
@@ -226,6 +288,29 @@ function isOptionalOmittedSection(role: string): boolean {
   return lower.includes("screenshot block") || lower.includes("diagram block");
 }
 
+export function isBlockedCollapsedGulfQuiz(
+  pkg: Pick<AdaptedLessonPackage, "locale" | "lessonId">,
+  role: string,
+): boolean {
+  return (
+    pkg.locale === "ar-Gulf" &&
+    (BLOCKED_MISSING_GULF_QUIZ_LESSONS as readonly string[]).includes(pkg.lessonId) &&
+    role === "Quiz"
+  );
+}
+
+export function isKnownBlockedMissingGulfQuizPackage(
+  pkg: Pick<AdaptedLessonPackage, "locale" | "lessonId" | "sections">,
+  source: LocalizedLessonPackage,
+): boolean {
+  return (
+    pkg.locale === "ar-Gulf" &&
+    (BLOCKED_MISSING_GULF_QUIZ_LESSONS as readonly string[]).includes(pkg.lessonId) &&
+    !pkg.sections.some((section) => section.role === "Quiz") &&
+    pairingSourceSections(source).some((section) => section.role === "Quiz")
+  );
+}
+
 export function sectionRolesAlign(
   source: LocalizedLessonPackage,
   pkg: AdaptedLessonPackage,
@@ -238,7 +323,10 @@ export function sectionRolesAlign(
       sourceIndex < sourceSections.length &&
       sourceSections[sourceIndex].role !== adapted.role
     ) {
-      if (!isOptionalOmittedSection(sourceSections[sourceIndex].role ?? "")) {
+      if (
+        !isOptionalOmittedSection(sourceSections[sourceIndex].role ?? "") &&
+        !isBlockedCollapsedGulfQuiz(pkg, sourceSections[sourceIndex].role ?? "")
+      ) {
         return false;
       }
       sourceIndex++;
@@ -248,7 +336,10 @@ export function sectionRolesAlign(
   }
 
   while (sourceIndex < sourceSections.length) {
-    if (!isOptionalOmittedSection(sourceSections[sourceIndex].role ?? "")) {
+    if (
+      !isOptionalOmittedSection(sourceSections[sourceIndex].role ?? "") &&
+      !isBlockedCollapsedGulfQuiz(pkg, sourceSections[sourceIndex].role ?? "")
+    ) {
       return false;
     }
     sourceIndex++;
@@ -271,6 +362,11 @@ function pairSections(
       sourceIndex < sourceSections.length &&
       sourceSections[sourceIndex].role !== adaptedSection.role
     ) {
+      const skippedRole = sourceSections[sourceIndex].role ?? "";
+      if (isBlockedCollapsedGulfQuiz(pkg, skippedRole)) {
+        sourceIndex++;
+        continue;
+      }
       sourceIndex++;
     }
     const sourceSection = sourceSections[sourceIndex];
@@ -347,12 +443,16 @@ export function hasQuizLabelPrefixLeak(text: string): boolean {
 
 function stripQuizLabelPrefixes(text: string): string {
   let value = text.trim();
+  value = value.replace(/^[-*]\s+/, "").trim();
   for (const pattern of QUIZ_LABEL_PREFIX_PATTERNS) {
     value = value.replace(pattern, "").trim();
   }
   value = value
     .replace(/\(correctIndex\s*:\s*\d+\)/gi, "")
     .replace(/^\(\s*\d+\)\s*:\s*/, "")
+    .replace(/^\*{0,2}\s*الإجابة الصحيحة\s*\*{0,2}\s*\([^)]*\)\s*:\s*\*{0,2}\s*/i, "")
+    .replace(/^\*{0,2}\s*The\s+correct\s+answer\s*:\s*\*{0,2}\s*/i, "")
+    .replace(/^\*{0,2}\s*الإجابة الصحيحة\s*:\s*\*{0,2}\s*/i, "")
     .trim();
   return value;
 }
@@ -553,29 +653,12 @@ export function repairMissionSection(
     return section;
   }
 
-  const delivery = localizedDelivery;
-
-  let contentMarkdown = section.contentMarkdown;
-  let bullets = section.bullets;
-
-  if (delivery.length > 0) {
-    contentMarkdown = stripDeliveryBlockFromMarkdown(contentMarkdown);
-    if (
-      bullets.length > 0 &&
-      bullets.length === delivery.length &&
-      bullets.every((b, i) => b.trim() === delivery[i]?.trim())
-    ) {
-      bullets = [];
-    }
-  }
-
+  // Additive only: populate mission.delivery without trimming visible learner text.
   return {
     ...section,
-    contentMarkdown,
-    bullets,
     mission: {
       ...section.mission,
-      delivery,
+      delivery: localizedDelivery,
     },
   };
 }
@@ -584,34 +667,129 @@ export function sanitizeMarkdownArtifactsInString(text: string): string {
   return stripMalformedMarkdownPeriodArtifacts(text);
 }
 
+export function cleanQuizOptionText(text: string): string {
+  let value = stripMalformedMarkdownPeriodArtifacts(text);
+  value = stripQuizLabelPrefixes(stripBannedPhrasesFromText(value));
+  return normalizeQuizOptionText(value);
+}
+
+export function cleanQuizLearnerText(text: string): string {
+  let value = stripMalformedMarkdownPeriodArtifacts(text);
+  if (hasQuizLabelPrefixLeak(value) || /^\(\s*\d+\)\s*:/.test(value.trim())) {
+    value = stripQuizLabelPrefixes(value);
+  }
+  return value;
+}
+
+function shouldRealignQuizOptionsFromBullets(
+  options: string[],
+  bullets: string[],
+  correctIndex: number,
+): boolean {
+  const cleanedBullets = bullets.map((bullet) => cleanQuizOptionText(bullet));
+  const cleanedOptions = options.map((option) => cleanQuizOptionText(option));
+  if (
+    cleanedBullets.length !== cleanedOptions.length ||
+    cleanedBullets.length < 2 ||
+    correctIndex < 0 ||
+    correctIndex >= cleanedOptions.length
+  ) {
+    return false;
+  }
+
+  if (
+    hasPlaceholderQuizOptions(cleanedOptions) &&
+    !hasPlaceholderQuizOptions(cleanedBullets)
+  ) {
+    return true;
+  }
+
+  const bulletAtCorrect = cleanedBullets[correctIndex]?.trim() ?? "";
+  const optionAtCorrect = cleanedOptions[correctIndex]?.trim() ?? "";
+  if (!bulletAtCorrect || !optionAtCorrect || bulletAtCorrect === optionAtCorrect) {
+    return false;
+  }
+
+  if (
+    PLACEHOLDER_OPTION_PATTERN.test(optionAtCorrect) &&
+    !PLACEHOLDER_OPTION_PATTERN.test(bulletAtCorrect)
+  ) {
+    return true;
+  }
+
+  return cleanedBullets.every(
+    (bullet, index) => bullet.trim().length > 0 && bullet === cleanedOptions[index],
+  )
+    ? false
+    : !hasPlaceholderQuizOptions(cleanedBullets);
+}
+
 function repairQuizMechanicalArtifacts(
   section: LocalizedLessonSection,
 ): LocalizedLessonSection {
   if (section.role !== "Quiz" || !section.quiz) return section;
 
-  const cleanLine = (text: string, isOption = false): string => {
-    let value = stripMalformedMarkdownPeriodArtifacts(text);
-    if (isOption) {
-      value = stripQuizLabelPrefixes(stripBannedPhrasesFromText(value));
-      value = normalizeQuizOptionText(value);
-    } else if (hasQuizLabelPrefixLeak(value)) {
-      value = stripQuizLabelPrefixes(value);
-    }
-    return value;
-  };
-
   const quiz = section.quiz;
-  const options = (quiz.options ?? []).map((option) => cleanLine(option, true));
-  const bullets = section.bullets.map((bullet) => cleanLine(bullet, true));
-  const question = quiz.question ? cleanLine(quiz.question) : quiz.question;
-  const explanation = quiz.explanation ? cleanLine(quiz.explanation) : quiz.explanation;
+  let options = (quiz.options ?? []).map((option) => cleanQuizOptionText(option));
+  let bullets = section.bullets.map((bullet) => cleanQuizOptionText(bullet));
+  const question = quiz.question ? cleanQuizLearnerText(quiz.question) : quiz.question;
+  const explanation = quiz.explanation
+    ? cleanQuizLearnerText(quiz.explanation)
+    : quiz.explanation;
   const contentMarkdown = section.contentMarkdown
     .split("\n")
-    .map((line) => cleanLine(line, hasQuizOptionPrefixLeak(line) || hasQuizCorrectAnswerPrefixLeak(line)))
+    .map((line) => {
+      const trimmed = line.trim();
+      if (
+        hasQuizOptionPrefixLeak(line) ||
+        hasQuizCorrectAnswerPrefixLeak(line) ||
+        /^\(\s*\d+\)\s*:/.test(trimmed) ||
+        /^[-*]\s*\*{0,2}\s*الإجابة الصحيحة/i.test(trimmed)
+      ) {
+        return cleanQuizOptionText(line);
+      }
+      return cleanQuizLearnerText(line);
+    })
     .join("\n");
 
+  if (
+    shouldRealignQuizOptionsFromBullets(
+      options,
+      section.bullets,
+      quiz.correctIndex ?? 0,
+    )
+  ) {
+    options = section.bullets.map((bullet) => cleanQuizOptionText(bullet));
+    bullets = [...options];
+  } else if (
+    options.length > 0 &&
+    options.length === section.bullets.length &&
+    quiz.correctIndex !== undefined &&
+    cleanQuizOptionText(section.bullets[quiz.correctIndex] ?? "") !==
+      options[quiz.correctIndex]
+  ) {
+    bullets = [...options];
+  }
+
+  const alignedBullets =
+    options.length > 0 && bullets.length === options.length
+      ? options.map((option, index) => {
+          const rawBullet = section.bullets[index] ?? "";
+          const cleanedBullet = bullets[index]?.trim() ?? "";
+          if (!cleanedBullet || cleanedBullet === option) return option;
+          if (
+            hasQuizLabelPrefixLeak(rawBullet) ||
+            hasQuizCorrectAnswerPrefixLeak(rawBullet) ||
+            /^\(\s*\d+\)\s*:/.test(rawBullet.trim())
+          ) {
+            return option;
+          }
+          return bullets[index] ?? option;
+        })
+      : bullets;
+
   const changed =
-    JSON.stringify({ options, bullets, question, explanation, contentMarkdown }) !==
+    JSON.stringify({ options, bullets: alignedBullets, question, explanation, contentMarkdown }) !==
     JSON.stringify({
       options: quiz.options,
       bullets: section.bullets,
@@ -620,26 +798,7 @@ function repairQuizMechanicalArtifacts(
       contentMarkdown: section.contentMarkdown,
     });
 
-  const alignedBullets =
-    options.length > 0 && bullets.length === options.length
-      ? bullets.map((bullet, index) => {
-          const cleaned = bullet.trim();
-          if (
-            !cleaned ||
-            /^\(\s*\d+\)\s*:/.test(cleaned) ||
-            cleaned === options[index]
-          ) {
-            return options[index] ?? cleaned;
-          }
-          return bullet;
-        })
-      : bullets;
-
-  const finalChanged =
-    changed ||
-    JSON.stringify(alignedBullets) !== JSON.stringify(bullets);
-
-  if (!finalChanged) return section;
+  if (!changed) return section;
 
   return {
     ...section,
@@ -717,6 +876,11 @@ export function reconstructMissingQuizSection(
   if (sectionRolesAlign(source, pkg)) return pkg;
   if (pkg.sections.some((section) => section.role === "Quiz")) return pkg;
 
+  // ar-Gulf: never auto-insert ar-MSA or unverified quiz content without Gulf provenance.
+  if (pkg.locale === "ar-Gulf") {
+    return pkg;
+  }
+
   const sourceSections = pairingSourceSections(source);
   const existingByRole = new Map(pkg.sections.map((section) => [section.role, section]));
   const sections: LocalizedLessonSection[] = [];
@@ -755,8 +919,17 @@ export function packageNeedsRepair(
   source: LocalizedLessonPackage,
   pkg: AdaptedLessonPackage,
 ): boolean {
-  if (!sectionRolesAlign(source, pkg)) return true;
-  if (auditRecoveredPackage(source, pkg).some((issue) => issue.severity === "error")) {
+  if (!sectionRolesAlign(source, pkg)) {
+    if (!isKnownBlockedMissingGulfQuizPackage(pkg, source)) {
+      return true;
+    }
+  }
+  if (
+    auditRecoveredPackage(source, pkg).some(
+      (issue) =>
+        issue.severity === "error" && issue.kind !== "blocked_missing_gulf_quiz",
+    )
+  ) {
     return true;
   }
 
@@ -774,6 +947,9 @@ export function packageNeedsRepair(
       if (adapted.role === "Quiz" && adapted.quiz && sectionNeedsQuizRepair(adapted)) {
         return true;
       }
+      if (adapted.role === "Quiz" && adapted.quiz && detectQuizBulletsOptionsMismatch(adapted)) {
+        return true;
+      }
       if (
         adapted.role === "Quiz" &&
         adapted.quiz &&
@@ -789,6 +965,78 @@ export function packageNeedsRepair(
   return false;
 }
 
+function detectMissionTextTrimming(adapted: LocalizedLessonSection): string | null {
+  if (adapted.role !== "Mission" || !adapted.mission?.delivery.length) return null;
+  const markdown = adapted.contentMarkdown;
+  const hasSubmission = /(?:Submission|التسليم)/i.test(markdown);
+  const hasEvaluation = /(?:Evaluation Criteria|معايير التقييم)/i.test(markdown);
+  if (!hasSubmission && !hasEvaluation) {
+    return "mission delivery populated but submission/evaluation learner text missing from contentMarkdown";
+  }
+  return null;
+}
+
+function detectQuizBulletsOptionsMismatch(section: LocalizedLessonSection): string | null {
+  if (section.role !== "Quiz" || !section.quiz) return null;
+  const options = (section.quiz.options ?? []).map((option) => cleanQuizOptionText(option));
+  const bullets = section.bullets
+    .slice(0, options.length)
+    .map((bullet) => cleanQuizOptionText(bullet));
+  const correctIndex = section.quiz.correctIndex ?? 0;
+  if (
+    options.length === 0 ||
+    bullets.length !== options.length ||
+    correctIndex < 0 ||
+    correctIndex >= options.length
+  ) {
+    return null;
+  }
+  const bulletAtCorrect = bullets[correctIndex]?.trim() ?? "";
+  const optionAtCorrect = options[correctIndex]?.trim() ?? "";
+  if (bulletAtCorrect && optionAtCorrect && bulletAtCorrect !== optionAtCorrect) {
+    return `quiz correctIndex ${correctIndex} bullet vs option mismatch after normalize`;
+  }
+  return null;
+}
+
+function detectForbiddenQuizFallbacks(
+  locale: string,
+  section: LocalizedLessonSection,
+): string[] {
+  if (section.role !== "Quiz" || !section.quiz) return [];
+  const messages: string[] = [];
+  const explanation = section.quiz.explanation?.trim() ?? "";
+
+  if (locale === "ar-Gulf" && EGYPTIAN_QUIZ_EXPLANATION_FALLBACK.test(explanation)) {
+    messages.push("explanation contains Egyptian production fallback prose");
+  }
+  if (locale === "ar-Gulf" && EGYPTIAN_QUIZ_EXPLANATION_FALLBACK.test(section.contentMarkdown)) {
+    messages.push("Gulf package contains Egyptian production fallback prose in quiz markdown");
+  }
+  if (TRUNCATED_QUIZ_EXPLANATION_ARTIFACT.test(explanation)) {
+    messages.push("truncated quiz explanation artifact from banned-phrase stripping");
+  }
+  return messages;
+}
+
+function detectInternalQuizLabelLeaks(section: LocalizedLessonSection): string[] {
+  if (section.role !== "Quiz" || !section.quiz) return [];
+  const messages: string[] = [];
+  const fields = [
+    ...(section.quiz.options ?? []),
+    ...section.bullets,
+    section.quiz.question ?? "",
+    section.contentMarkdown,
+  ];
+  for (const field of fields) {
+    if (/^\(\s*\d+\)\s*:/.test(field.trim())) {
+      messages.push("internal ( N): quiz label leak");
+      break;
+    }
+  }
+  return messages;
+}
+
 export function auditRecoveredPackage(
   source: LocalizedLessonPackage,
   pkg: AdaptedLessonPackage,
@@ -796,6 +1044,18 @@ export function auditRecoveredPackage(
   const issues: Phase13BAuditIssue[] = [];
   const { locale, lessonId } = pkg;
   const prefix = `${locale}/${lessonId}`;
+
+  if (isKnownBlockedMissingGulfQuizPackage(pkg, source)) {
+    issues.push({
+      locale,
+      lessonId,
+      path: "sections/Quiz",
+      kind: "blocked_missing_gulf_quiz",
+      message:
+        "Gulf Quiz collapsed — no verified Phase 13B Gulf quiz provenance (merge blocked)",
+      severity: "error",
+    });
+  }
 
   const structuralKeys = [
     "lessonId",
@@ -836,14 +1096,16 @@ export function auditRecoveredPackage(
   }
 
   if (!sectionRolesAlign(source, pkg)) {
-    issues.push({
-      locale,
-      lessonId,
-      path: "sections",
-      kind: "section_parity",
-      message: "section role sequence does not align with canonical source",
-      severity: "error",
-    });
+    if (!isKnownBlockedMissingGulfQuizPackage(pkg, source)) {
+      issues.push({
+        locale,
+        lessonId,
+        path: "sections",
+        kind: "section_parity",
+        message: "section role sequence does not align with canonical source",
+        severity: "error",
+      });
+    }
   }
 
   for (const { source: sourceSection, adapted } of pairs) {
@@ -994,6 +1256,40 @@ export function auditRecoveredPackage(
           break;
         }
       }
+
+      for (const message of detectForbiddenQuizFallbacks(locale, adapted)) {
+        issues.push({
+          locale,
+          lessonId,
+          path: quizPath,
+          kind: "quiz_forbidden_fallback",
+          message,
+          severity: "error",
+        });
+      }
+
+      const bulletsMismatch = detectQuizBulletsOptionsMismatch(adapted);
+      if (bulletsMismatch) {
+        issues.push({
+          locale,
+          lessonId,
+          path: `${quizPath}.options`,
+          kind: "quiz_structure",
+          message: bulletsMismatch,
+          severity: "error",
+        });
+      }
+
+      for (const message of detectInternalQuizLabelLeaks(adapted)) {
+        issues.push({
+          locale,
+          lessonId,
+          path: quizPath,
+          kind: "quiz_prefix",
+          message,
+          severity: "error",
+        });
+      }
     }
 
     if (adapted.mission) {
@@ -1105,6 +1401,18 @@ export function auditRecoveredPackage(
         });
       }
 
+      const missionTrim = detectMissionTextTrimming(adapted);
+      if (missionTrim) {
+        issues.push({
+          locale,
+          lessonId,
+          path: `${sectionPath}.contentMarkdown`,
+          kind: "mission_text_trim",
+          message: missionTrim,
+          severity: "error",
+        });
+      }
+
     }
   }
 
@@ -1131,10 +1439,13 @@ export function repairRecoveredPackage(
     }
 
     if (section.role === "Quiz" && section.quiz) {
-      if (sectionNeedsCorruptedQuizRepair(sourceSection, section, pkg.lessonId, pkg.locale)) {
-        section = repairArMsaQuizSection(sourceSection, section, pkg.lessonId);
-      } else if (sectionNeedsQuizRepair(section)) {
+      if (sectionNeedsQuizRepair(section)) {
         section = repairQuizMechanicalArtifacts(section);
+      }
+      if (
+        sectionNeedsCorruptedQuizRepair(sourceSection, section, pkg.lessonId, pkg.locale)
+      ) {
+        section = repairArMsaQuizSection(sourceSection, section, pkg.lessonId);
       }
     }
 
@@ -1150,11 +1461,14 @@ export function summarizeAuditIssues(issues: Phase13BAuditIssue[]): Phase13BAudi
     table_markdown_mismatch: 0,
     mission_delivery: 0,
     mission_parity: 0,
+    mission_text_trim: 0,
     quiz_prefix: 0,
     quiz_markdown_artifact: 0,
     quiz_structure: 0,
+    quiz_forbidden_fallback: 0,
     section_parity: 0,
     structural_parity: 0,
+    blocked_missing_gulf_quiz: 0,
   } satisfies Record<Phase13BAuditIssue["kind"], number>;
 
   for (const issue of issues) {
@@ -1177,20 +1491,33 @@ export function buildValidationSummary(input: {
     e.kind === "table_shape" || e.kind === "table_markdown_mismatch",
   ).length;
   const missionParityErrors = errors.filter((e) =>
-    e.kind === "mission_delivery" || e.kind === "mission_parity",
+    e.kind === "mission_delivery" ||
+    e.kind === "mission_parity" ||
+    e.kind === "mission_text_trim",
   ).length;
-  const quizStructuralErrors = errors.filter((e) => e.kind === "quiz_structure").length;
+  const quizStructuralErrors = errors.filter((e) =>
+    e.kind === "quiz_structure" || e.kind === "quiz_forbidden_fallback",
+  ).length;
   const quizPrefixFormatErrors = errors.filter((e) =>
     e.kind === "quiz_prefix" || e.kind === "quiz_markdown_artifact",
   ).length;
   const sectionParityErrors = errors.filter((e) =>
     e.kind === "section_parity" || e.kind === "structural_parity",
   ).length;
+  const blockedMissingGulfQuiz = [
+    ...new Set(
+      errors
+        .filter((e) => e.kind === "blocked_missing_gulf_quiz")
+        .map((e) => `${e.locale}/${e.lessonId}`),
+    ),
+  ];
 
   const total =
     (input.perLocaleCounts["ar-MSA"] ?? 0) +
     (input.perLocaleCounts["ar-Gulf"] ?? 0) +
     (input.perLocaleCounts.en ?? 0);
+
+  const mergeBlocked = blockedMissingGulfQuiz.length > 0;
 
   const ok =
     input.jsonParseErrors === 0 &&
@@ -1201,7 +1528,8 @@ export function buildValidationSummary(input: {
     sectionParityErrors === 0 &&
     validationErrors.length === 0 &&
     input.missingIds.length === 0 &&
-    input.retryCells.length === 0;
+    input.retryCells.length === 0 &&
+    !mergeBlocked;
 
   return {
     arMsa: input.perLocaleCounts["ar-MSA"] ?? 0,
@@ -1214,10 +1542,12 @@ export function buildValidationSummary(input: {
     quizStructuralErrors,
     quizPrefixFormatErrors,
     sectionParityErrors,
+    blockedMissingGulfQuiz,
     validationErrors,
     missingIds: input.missingIds,
     retryCells: input.retryCells,
     complete: total === 300,
     ok,
+    mergeBlocked,
   };
 }
