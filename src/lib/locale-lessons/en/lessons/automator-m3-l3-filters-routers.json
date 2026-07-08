@@ -13,47 +13,47 @@
   "sections": [
     {
       "role": "Orientation",
-      "heading": "Orientation — Lesson Start",
-      "subtitle": "Lesson Start",
-      "contentMarkdown": "- What will you understand? Automation becomes useful when you choose the path based on conditions — not when everything goes in a single line.\n- Why now? After Triggers and Actions, you need to differentiate: Price inquiry ≠ Complaint ≠ Follow-up — each has a different response.\n- What after the lesson? You will add one if/then to your workflow: If [condition] → [path or action].",
+      "heading": "Orientation",
+      "subtitle": "Introduction",
+      "contentMarkdown": "- **What will you understand?** Automation becomes useful when you choose the **correct path** based on conditions — not when everything flows in a single line.\n- **Why now?** After **Triggers** and **Actions**, you need to differentiate: Price inquiry ≠ Complaint ≠ Follow-up — each has a different response.\n- **What’s next after this lesson?** You will add one if/then condition to your **workflow**: If [condition] → [path or action].",
       "bullets": [
-        "What will you understand? Automation becomes useful when you choose the path based on conditions — not when everything goes in a single line.",
-        "Why now? After Triggers and Actions, you need to differentiate: Price inquiry ≠ Complaint ≠ Follow-up — each has a different response.",
-        "What after the lesson? You will add one if/then to your workflow: If [condition] → [path or action]."
+        "**What will you understand?** Automation becomes useful when you choose the **correct path** based on conditions — not when everything flows in a single line.",
+        "**Why now?** After **Triggers** and **Actions**, you need to differentiate: Price inquiry ≠ Complaint ≠ Follow-up — each has a different response.",
+        "**What’s next after this lesson?** You will add one if/then condition to your **workflow**: If [condition] → [path or action]."
       ],
       "tables": []
     },
     {
       "role": "Tension",
-      "heading": "Tension — A Familiar Situation",
+      "heading": "Tension",
       "subtitle": "A Familiar Situation",
-      "contentMarkdown": "- \"Same response for all messages\" — and the customer is angry.\n- You have automation responding to WhatsApp messages. Someone asks about the price — they receive \"Thank you for reaching out.\" Someone complains — the same response.\n- The repetitive work is not the problem — the issue is that the workflow has no decision: everything is in the same path.\n- The default worker needs to know: When to continue? When to stop? When to go to another path? — This is the job of the Filter and Router.",
+      "contentMarkdown": "- \"The same response for all messages\" — and the customer is angry.\n- You have automation responding to WhatsApp messages. Someone asks about the price — they receive \"Thank you for reaching out.\" Someone complains — they get the same response.\n- The repetitive work isn’t the problem — the issue is that the **workflow** lacks decision-making: everything is in the same path.\n- The default worker needs to know: When to continue? When to stop? When to go to another path? — this is the job of the **Filter** and **Router**.",
       "bullets": [
-        "\"Same response for all messages\" — and the customer is angry.",
-        "You have automation responding to WhatsApp messages. Someone asks about the price — they receive \"Thank you for reaching out.\" Someone complains — the same response.",
-        "The repetitive work is not the problem — the issue is that the workflow has no decision: everything is in the same path.",
-        "The default worker needs to know: When to continue? When to stop? When to go to another path? — This is the job of the Filter and Router."
+        "\"The same response for all messages\" — and the customer is angry.",
+        "You have automation responding to WhatsApp messages. Someone asks about the price — they receive \"Thank you for reaching out.\" Someone complains — they get the same response.",
+        "The repetitive work isn’t the problem — the issue is that the **workflow** lacks decision-making: everything is in the same path.",
+        "The default worker needs to know: When to continue? When to stop? When to go to another path? — this is the job of the **Filter** and **Router**."
       ],
       "tables": []
     },
     {
       "role": "Core idea",
-      "heading": "Core Idea — Filter = Gate. Router = Fork in the Road",
-      "subtitle": "Filter = Gate. Router = Fork in the Road",
-      "contentMarkdown": "- Filter: If the condition is met → data passes. If not → workflow stops here. Example: \"If a phone number is found → continue.\"\n- Router: Same as Trigger, but it branches into paths based on conditions. Example: Price → Sales path. Complaint → Support path.\n- One if/then changes the customer experience — from a general response to a case-appropriate response.\n- Start with one clear condition — not 10 branches from day one.",
+      "heading": "Core Idea",
+      "subtitle": "Filter = Gate. Router = Fork",
+      "contentMarkdown": "- **Filter:** If the condition is met → data passes through. If not → **workflow** stops here. Example: \"If a phone number is present → continue.\"\n- **Router:** Same as **Trigger**, but it branches into paths based on conditions. Example: Price → Sales path. Complaint → Support path.\n- One if/then condition changes the customer experience — from a general response to a situation-appropriate response.\n- Start with one clear condition — not 10 branches from day one.",
       "bullets": [
-        "Filter: If the condition is met → data passes. If not → workflow stops here. Example: \"If a phone number is found → continue.\"",
-        "Router: Same as Trigger, but it branches into paths based on conditions. Example: Price → Sales path. Complaint → Support path.",
-        "One if/then changes the customer experience — from a general response to a case-appropriate response.",
+        "**Filter:** If the condition is met → data passes through. If not → **workflow** stops here. Example: \"If a phone number is present → continue.\"",
+        "**Router:** Same as **Trigger**, but it branches into paths based on conditions. Example: Price → Sales path. Complaint → Support path.",
+        "One if/then condition changes the customer experience — from a general response to a situation-appropriate response.",
         "Start with one clear condition — not 10 branches from day one."
       ],
       "tables": []
     },
     {
       "role": "Comparison",
-      "heading": "Comparison — One Path vs. Conditional Paths",
+      "heading": "Comparison",
       "subtitle": "One Path vs. Conditional Paths",
-      "contentMarkdown": "| One Path for Everything | One if/then |\n|-------------------|--------------|\n| Every lead receives the same email and response — the complaining customer feels unheard. | If the message contains \"Price\" → send a price list. Otherwise → forward to support. Each case has an appropriate response. |",
+      "contentMarkdown": "| One Path for Everything | One if/then |\n|-------------------|--------------|\n| Every lead receives the same email and the same response — the complaining customer feels unheard. | If the message contains \"Price\" → send a price list. Otherwise → forward to support. Each case gets an appropriate response. |",
       "bullets": [],
       "tables": [
         {
@@ -63,8 +63,8 @@
           ],
           "rows": [
             [
-              "Every lead receives the same email and response — the complaining customer feels unheard.",
-              "If the message contains \"Price\" → send a price list. Otherwise → forward to support. Each case has an appropriate response."
+              "Every lead receives the same email and the same response — the complaining customer feels unheard.",
+              "If the message contains \"Price\" → send a price list. Otherwise → forward to support. Each case gets an appropriate response."
             ]
           ]
         }
@@ -72,9 +72,9 @@
     },
     {
       "role": "Glossary",
-      "heading": "Glossary — Two Terms for Paths",
-      "subtitle": "Two Terms for Paths",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| Filter | Gate: condition met → passes. Not → stops | If there is no email in the form → do not complete registration |\n| Router | Fork in the road: same Trigger, different paths based on condition | VIP → special message. New customer → welcome message |",
+      "heading": "Glossary",
+      "subtitle": "Terms for Paths",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Filter** | Gate: Condition met → passes. If not → stops | If there is no email in the form → do not complete registration |\n| **Router** | Fork: Same as **Trigger**, different paths based on conditions | VIP → special message. New customer → welcome message |",
       "bullets": [],
       "tables": [
         {
@@ -85,14 +85,14 @@
           ],
           "rows": [
             [
-              "Filter",
-              "Gate: condition met → passes. Not → stops",
-              "If there is no email in the form → do not complete registration"
+              "**Filter**",
+              "Gate: Condition met → passes. If not → stops.",
+              "If there is no email in the form → do not complete registration."
             ],
             [
-              "Router",
-              "Fork in the road: same Trigger, different paths based on condition",
-              "VIP → special message. New customer → welcome message"
+              "**Router**",
+              "Fork: Same as **Trigger**, different paths based on conditions.",
+              "VIP → special message. New customer → welcome message."
             ]
           ]
         }
@@ -100,37 +100,37 @@
     },
     {
       "role": "Screenshot block (intent)",
-      "heading": "Screenshot Block (Intent)",
+      "heading": "Screenshot Block",
       "contentMarkdown": "The same event (user entered) — but the path changes based on the choice. The same idea applies in your work: new lead → path. Complaint → another path.",
       "bullets": [],
       "tables": []
     },
     {
       "role": "Quiz",
-      "heading": "Quiz — Quick Confirmation",
+      "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "Question: A customer spent over 5000 EGP → special thank you email. Under 5000 → regular email. What is more appropriate?\nRouter differentiates based on purchase value — two different paths\nExplanation: You need two different paths based on the condition — this is a Router. Filter stops or passes, but does not distribute.",
+      "contentMarkdown": "**Question:** A customer bought over 5000 EGP → special thank you email. Under 5000 → regular email. What is the best approach?\n\nRouter differentiates based on purchase value — two different paths\n- **Explanation:** You need two different paths based on the condition — this is a **Router**. **Filter** stops or passes, but does not distribute.",
       "bullets": [
         "Router differentiates based on purchase value — two different paths",
         "Explanation: You need two different paths based on the condition — this is a Router. Filter stops or passes, but does not distribute."
       ],
       "tables": [],
       "quiz": {
-        "question": "A customer spent over 5000 EGP → special thank you email. Under 5000 → regular email. What is more appropriate?",
+        "question": "A customer bought over 5000 EGP → special thank you email. Under 5000 → regular email. What is the best approach?",
         "correctIndex": 0,
         "options": [
           "Router differentiates based on purchase value — two different paths",
-          "An inappropriate choice; it ignores the key details in the section above.",
+          "An unsuitable choice; it ignores the basic data in the section above.",
           "A partial answer that misses the context and ignores the next decision step."
         ],
-        "explanation": "You need two different paths based on the condition — this is a Router. Filter stops or passes, but does not distribute."
+        "explanation": "You need two different paths based on the condition — this is a **Router**. **Filter** stops or passes, but does not distribute."
       }
     },
     {
       "role": "Mission",
-      "heading": "Mission — Add one if/then to the workflow",
-      "subtitle": "Add one if/then to the workflow",
-      "contentMarkdown": "Introduction: The mission is design — not mandatory building. Choose a recurring workflow and add one condition that changes the path or stops execution. AI can suggest wording — you choose the final version. Submission: Workflow · Trigger · if/then (condition, then, else) · example input for each path Evaluation Criteria: | Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Clear condition | 50% | One specific if/then — not vague language; the condition is testable (yes/no) |\n| Different paths | 50% | Then and else actually do something different; example input for each path |",
+      "heading": "Mission",
+      "subtitle": "Add one if/then to your workflow",
+      "contentMarkdown": "**Introduction:** The mission is design — not mandatory building. Choose a recurring **workflow** and add one condition that changes the path or stops execution. AI can suggest wording — you choose the final version.\n\n**Submission:** **Workflow** · **Trigger** · if/then (condition, then, else) · example input for each path\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Clear Condition | 50% | One specific if/then — not general wording; the condition is testable (yes/no) |\n| Different Paths | 50% | then and else actually do something different; example input for each path |",
       "bullets": [],
       "tables": [
         {
@@ -141,31 +141,31 @@
           ],
           "rows": [
             [
-              "Clear condition",
+              "Clear Condition",
               "50%",
-              "One specific if/then — not vague language; the condition is testable (yes/no)"
+              "One specific if/then — not general wording; the condition is testable (yes/no)"
             ],
             [
-              "Different paths",
+              "Different Paths",
               "50%",
-              "Then and else actually do something different; example input for each path"
+              "then and else actually do something different; example input for each path"
             ]
           ]
         }
       ],
       "mission": {
-        "intro": "The mission is design — not mandatory building. Choose a recurring workflow and add one condition that changes the path or stops execution. AI can suggest wording — you choose the final version.",
+        "intro": "The mission is design — not mandatory building. Choose a recurring **workflow** and add one condition that changes the path or stops execution. AI can suggest wording — you choose the final version.",
         "delivery": [],
         "rubric": [
           {
-            "dimension": "Clear condition",
+            "dimension": "Clear Condition",
             "weight": 50,
-            "criteria": "One specific if/then — not vague language; the condition is testable (yes/no)"
+            "criteria": "One specific if/then — not general wording; the condition is testable (yes/no)"
           },
           {
-            "dimension": "Different paths",
+            "dimension": "Different Paths",
             "weight": 50,
-            "criteria": "Then and else actually do something different; example input for each path"
+            "criteria": "then and else actually do something different; example input for each path"
           }
         ],
         "yamlIntent": "Pick repeating workflow; add one if/then that changes path or stops execution — design only; AI may suggest wording, learner chooses final — 10–15 min",
@@ -175,16 +175,16 @@
     {
       "role": "Confidence close",
       "heading": "Confidence Close",
-      "contentMarkdown": "- Understood: Automation becomes smarter when you choose the path based on conditions — Filter stops or passes, Router distributes.\n- You can: You have one if/then ready to add to a real workflow.\n- Next: Connect Database — when automation saves organized data, not just responds.",
+      "contentMarkdown": "- **Understood:** Automation becomes smarter when you choose the path based on conditions — **Filter** stops or passes, **Router** distributes.\n- **You can:** You have one if/then ready to add to a real **workflow**.\n- **Next:** **Connect Database** — when automation saves organized data, not just responds.",
       "bullets": [
-        "Understood: Automation becomes smarter when you choose the path based on conditions — Filter stops or passes, Router distributes.",
-        "You can: You have one if/then ready to add to a real workflow.",
-        "Next: Connect Database — when automation saves organized data, not just responds."
+        "**Understood:** Automation becomes smarter when you choose the path based on conditions — **Filter** stops or passes, **Router** distributes.",
+        "**You can:** You have one if/then ready to add to a real **workflow**.",
+        "**Next:** **Connect Database** — when automation saves organized data, not just responds."
       ],
       "tables": []
     }
   ],
-  "generatedAt": "2026-06-22T01:19:20.770Z",
+  "generatedAt": "2026-07-07T00:36:19.315Z",
   "adaptedFrom": {
     "locale": "ar-MSA",
     "lessonId": "automator-m3-l3-filters-routers",

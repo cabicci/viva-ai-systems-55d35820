@@ -1,0 +1,78 @@
+{
+  "generatedAt": "2026-07-08T18:36:00.000Z",
+  "stage": "Runtime Package Integration — Stage 1",
+  "worktree": "c:\\Users\\HI-TECH\\Projects\\viva-ai-phase13b-final-two",
+  "branch": "feat/runtime-package-stage1",
+  "originMainSha": "49f89d11d068e17ebfac494508150dc71722b53f",
+  "runtimeTargets": [
+    "src/lib/locale-lessons/ar-MSA/lessons/",
+    "src/lib/locale-lessons/ar-Gulf/lessons/",
+    "src/lib/locale-lessons/en/lessons/"
+  ],
+  "recoveredSources": [
+    "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-MSA/",
+    "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-Gulf/",
+    "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/"
+  ],
+  "prePromotion": {
+    "recoveredValidationOk": true,
+    "recoveredMergeBlocked": false,
+    "runtimeCounts": {
+      "ar-MSA": 100,
+      "ar-Gulf": 100,
+      "en": 100,
+      "total": 300
+    }
+  },
+  "promotion": {
+    "firstRun": {
+      "packagesPromoted": 300,
+      "filesWritten": 300,
+      "staleFilesRemoved": []
+    },
+    "secondRun": {
+      "filesWritten": 0,
+      "filesSkippedIdentical": 300,
+      "staleFilesRemoved": []
+    }
+  },
+  "equivalence": {
+    "ok": true,
+    "packagesChecked": 300,
+    "mismatches": 0,
+    "perLocaleCounts": {
+      "ar-MSA": 100,
+      "ar-Gulf": 100,
+      "en": 100
+    },
+    "semanticEquality": "deepEqual after JSON parse for all 300 cells",
+    "structuralFieldsVerified": [
+      "lessonId",
+      "locale",
+      "pathId",
+      "moduleId",
+      "productionRoute",
+      "nextLessonId",
+      "section role order",
+      "quiz.correctIndex",
+      "mission presence",
+      "tables"
+    ]
+  },
+  "indexSync": {
+    "manifestChanged": false,
+    "lessonTitlesChanged": false,
+    "labelsChanged": false,
+    "reason": "Existing manifests and lesson-titles.json already matched promoted package metadata"
+  },
+  "postPromotionRecoveredValidation": {
+    "note": "Phase 13B validate against loadMsaLessonPackage() reports 27 section_parity errors for ar-Gulf/en recovered packages after ar-MSA runtime promotion changes the audit baseline. Recovered-to-runtime equivalence remains PASS.",
+    "sectionParityErrors": 27
+  },
+  "validators": {
+    "localizationContract": "PASS",
+    "typescript": "PASS",
+    "vitestStage1Suites": "PASS (21/21)"
+  },
+  "forbiddenPathsTouched": false
+}

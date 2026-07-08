@@ -98,13 +98,6 @@
       ]
     },
     {
-      "role": "Video block (production reference only)",
-      "heading": "Video block (production reference only)",
-      "contentMarkdown": "> في الإنتاج: فيديو Bunny — **اختبر قبل live**. **لا يُعاد توليده**.",
-      "bullets": [],
-      "tables": []
-    },
-    {
       "role": "Diagram block (intent)",
       "heading": "Diagram block (intent)",
       "contentMarkdown": "Unit → Full flow → Edge cases → Manual review → Live",
@@ -115,17 +108,18 @@
       "role": "Quiz",
       "heading": "Quiz — تأكيد سريع",
       "subtitle": "تأكيد سريع",
-      "contentMarkdown": "**السؤال:** **workflow** جديد يرسل ترحيبًا. أفضل خطوة قبل production؟\n\n- **الإجابة الصحيحة (correctIndex: 0):** بيانات تجريبية + ٣ edge cases + مراجعة يدوية\n- **التفسير:** الخطأ يبقى عندك — لا عند العميل.",
+      "contentMarkdown": "**السؤال:** **workflow** جديد يرسل ترحيبًا. أفضل خطوة قبل production؟\n\nبيانات تجريبية + ٣ edge cases + مراجعة يدوية\n- **التفسير:** الخطأ يبقى عندك — لا عند العميل.",
       "bullets": [
-        "**الإجابة الصحيحة (correctIndex: 0):** بيانات تجريبية + ٣ edge cases + مراجعة يدوية",
-        "**التفسير:** الخطأ يبقى عندك — لا عند العميل."
+        "بيانات تجريبية + ٣ edge cases + مراجعة يدوية",
+        "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
+        "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
       ],
       "tables": [],
       "quiz": {
         "question": "**workflow** جديد يرسل ترحيبًا. أفضل خطوة قبل production؟",
         "correctIndex": 0,
         "options": [
-          "**الإجابة الصحيحة (correctIndex: 0):** بيانات تجريبية + ٣ edge cases + مراجعة يدوية",
+          "بيانات تجريبية + ٣ edge cases + مراجعة يدوية",
           "خيار غير ملائم؛ يتجاهل المعطيات الأساسية في القسم أعلاه.",
           "إجابة جزئية تفوّت السياق وتتجاهل الخطوة التالية للقرار."
         ],

@@ -7,7 +7,7 @@
   "productionRoute": "/learn/builder/builder-m9-l1-rag",
   "titleEn": "RAG — AI Answers from Your Files",
   "title": "RAG — AI Answers from Your Files",
-  "summary": "RAG = AI answers from your files — not fine-tuning, not guessing",
+  "summary": "RAG = AI answers from your files — not Fine-tuning, not guessing",
   "estimatedMinutes": 12,
   "nextLessonId": "builder-m9-l2-embeddings",
   "sections": [
@@ -15,24 +15,24 @@
       "role": "Orientation",
       "heading": "Orientation — Lesson Start",
       "subtitle": "Lesson Start",
-      "contentMarkdown": "- What will you understand? RAG (AI answers from your files) = answers from your data instead of guessing.\n- Why now? When your assistant in the app responds to prices or policies, it must read from your data — not from its general memory.\n- What after the lesson? A simple design map: One source + 3 questions answered from it — not code.\n- Optional depth: Builder level 3. If your goal is to use AI only in your work — it’s not required.",
+      "contentMarkdown": "- **What will you understand?** **RAG (AI answers from your files)** = **answers from your data instead of guessing**.\n- **Why now?** **When your assistant in the app responds to prices or policies**, **it must read from your data** — **not from its general memory**.\n- **What after the lesson?** **A simple design map:** **one source + 3 questions answered from it** — **not code**.\n- **Optional depth:** **Builder level 3**. **If your goal is to use AI in your work only — not required**.",
       "bullets": [
-        "What will you understand? RAG (AI answers from your files) = answers from your data instead of guessing.",
-        "Why now? When your assistant in the app responds to prices or policies, it must read from your data — not from its general memory.",
-        "What after the lesson? A simple design map: One source + 3 questions answered from it — not code.",
-        "Optional depth: Builder level 3. If your goal is to use AI only in your work — it’s not required."
+        "**What will you understand?** **RAG (AI answers from your files)** = **answers from your data instead of guessing**.",
+        "**Why now?** **When your assistant in the app responds to prices or policies**, **it must read from your data** — **not from its general memory**.",
+        "**What after the lesson?** **A simple design map:** **one source + 3 questions answered from it** — **not code**.",
+        "**Optional depth:** **Builder level 3**. **If your goal is to use AI in your work only — not required**."
       ],
       "tables": []
     },
     {
       "role": "Tension",
-      "heading": "Tension — AI Gave an Incorrect Price",
-      "subtitle": "AI Gave an Incorrect Price",
-      "contentMarkdown": "- You ask GPT about your product's price — it responds with «29 dollars». You never sent this price!\n- AI guesses an answer that seems logical — this is hallucination. The customer loses trust.\n- The problem is not with AI — the problem is that it did not read your data before answering.",
+      "heading": "Tension — The AI Gave a Wrong Price",
+      "subtitle": "The AI Gave a Wrong Price",
+      "contentMarkdown": "- **You ask GPT for the price of your product** — **it replies «29 dollars»**. **You never sent this price!**\n- **The AI guesses an answer that seems logical** — **this is hallucination (fabrication)**. **The customer loses trust**.\n- **The problem is not with the AI** — **the problem is that it did not read your data before answering**.",
       "bullets": [
-        "You ask GPT about your product's price — it responds with «29 dollars». You never sent this price!",
-        "AI guesses an answer that seems logical — this is hallucination. The customer loses trust.",
-        "The problem is not with AI — the problem is that it did not read your data before answering."
+        "**You ask GPT for the price of your product** — **it replies «29 dollars»**. **You never sent this price!**",
+        "**The AI guesses an answer that seems logical** — **this is hallucination (fabrication)**. **The customer loses trust**.",
+        "**The problem is not with the AI** — **the problem is that it did not read your data before answering**."
       ],
       "tables": []
     },
@@ -40,12 +40,12 @@
       "role": "Core idea",
       "heading": "Core Idea — RAG = Answers from Your Files — Not Guessing",
       "subtitle": "RAG = Answers from Your Files — Not Guessing",
-      "contentMarkdown": "- Before AI answers, the system searches your files, finds the correct snippet, and tells AI: «answer only from this document».\n- RAG = search your files + add the snippet to the question + write the answer.\n- RAG is not fine-tuning: fine-tuning changes the model itself. RAG injects your files at the time of the question — without touching the model.\n- If the information is not in your files — «I don’t know» is better than making things up.",
+      "contentMarkdown": "- **Before the AI answers**, **the system searches your files**, **finds the correct snippet**, **and tells the AI: «answer from this document only»**.\n- **RAG** = **search your files + add the snippet to the question + write the answer**.\n- **RAG is not Fine-tuning:** **Fine-tuning changes the model itself**. **RAG injects your files at the time of the question** — **without touching the model**.\n- **If the information is not in your files** — **«I don’t know» is better than fabricating an answer**.",
       "bullets": [
-        "Before AI answers, the system searches your files, finds the correct snippet, and tells AI: «answer only from this document».",
-        "RAG = search your files + add the snippet to the question + write the answer.",
-        "RAG is not fine-tuning: fine-tuning changes the model itself. RAG injects your files at the time of the question — without touching the model.",
-        "If the information is not in your files — «I don’t know» is better than making things up."
+        "**Before the AI answers**, **the system searches your files**, **finds the correct snippet**, **and tells the AI: «answer from this document only»**.",
+        "**RAG** = **search your files + add the snippet to the question + write the answer**.",
+        "**RAG is not Fine-tuning:** **Fine-tuning changes the model itself**. **RAG injects your files at the time of the question** — **without touching the model**.",
+        "**If the information is not in your files** — **«I don’t know» is better than fabricating an answer**."
       ],
       "tables": []
     },
@@ -53,7 +53,7 @@
       "role": "Comparison",
       "heading": "Comparison — Direct Question vs. Reading Your Files First",
       "subtitle": "Direct Question vs. Reading Your Files First",
-      "contentMarkdown": "| AI Question from Memory | RAG from Your Files |\n|--------------------------------|---------------|\n| «What is the return policy?» — guesses from general information. Incorrect answer = angry customer | the system finds the paragraph «return policy» in your PDF, adds it to the prompt, and AI responds from it. Accuracy from your data |",
+      "contentMarkdown": "| AI Question from Memory | RAG from Your Files |\n|--------------------------------|---------------|\n| «What is the return policy?» — **guesses from general information**. **Wrong answer = angry customer** | **the system finds the paragraph «return policy» in your PDF**, **puts it in the prompt**, **and the AI responds from it**. **Accuracy from your data** |",
       "bullets": [],
       "tables": [
         {
@@ -63,8 +63,8 @@
           ],
           "rows": [
             [
-              "«What is the return policy?» — guesses from general information. Incorrect answer = angry customer",
-              "the system finds the paragraph «return policy» in your PDF, adds it to the prompt, and AI responds from it. Accuracy from your data"
+              "«What is the return policy?» — **guesses from general information**. **Wrong answer = angry customer**",
+              "**the system finds the paragraph «return policy» in your PDF**, **puts it in the prompt**, **and the AI responds from it**. **Accuracy from your data**"
             ]
           ]
         }
@@ -74,7 +74,7 @@
       "role": "Glossary",
       "heading": "Glossary — Two Terms to Start",
       "subtitle": "Two Terms to Start",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| RAG | AI answers from your files — searches your sources first and then writes | like an employee opening the price file before responding to the customer — not from memory |\n| RAG is not fine-tuning | Fine-tuning = training the model on your data. RAG = reading from your files at the time of the question — easier to start | An assistant who knows your prices? RAG is enough — you don’t need to train a full model |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **RAG** | **AI answers from your files** — **searches your sources first then writes** | **Like an employee opening the pricing file before responding to the customer** — **not from memory** |\n| **RAG is not Fine-tuning** | **Fine-tuning = training the model on your data**. **RAG = reading from your files at the time of the question** — **easier to start** | **An assistant that knows your prices? RAG is enough** — **you don’t need to train a full model** |",
       "bullets": [],
       "tables": [
         {
@@ -85,14 +85,14 @@
           ],
           "rows": [
             [
-              "RAG",
-              "AI answers from your files — searches your sources first and then writes",
-              "like an employee opening the price file before responding to the customer — not from memory"
+              "**RAG**",
+              "**AI answers from your files** — **searches your sources first then writes**",
+              "**Like an employee opening the pricing file before responding to the customer** — **not from memory**"
             ],
             [
-              "RAG is not fine-tuning",
-              "Fine-tuning = training the model on your data. RAG = reading from your files at the time of the question — easier to start",
-              "An assistant who knows your prices? RAG is enough — you don’t need to train a full model"
+              "**RAG is not Fine-tuning**",
+              "**Fine-tuning = training the model on your data**. **RAG = reading from your files at the time of the question** — **easier to start**",
+              "**An assistant that knows your prices? RAG is enough** — **you don’t need to train a full model**"
             ]
           ]
         }
@@ -101,7 +101,7 @@
     {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot Block (Intent)",
-      "contentMarkdown": "3 Steps in the Background: (1) the question turns into a search in your files. (2) the closest paragraphs (chunks) return. (3) the question + paragraphs are sent to AI — it answers from your document, not guessing.",
+      "contentMarkdown": "**3 Steps in the Background:**\n\n(1) **The question turns into a search in your files**. (2) **The closest paragraphs (chunks) return**. (3) **The question + paragraphs are sent to the AI** — **it responds from your document, not guessing**.",
       "bullets": [],
       "tables": []
     },
@@ -109,29 +109,29 @@
       "role": "Quiz",
       "heading": "Quiz — Quick Confirmation",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "Question: You want a support assistant for your store to respond to shipping and pricing. What is the first correct step?\nPrepare your files (prices, policies) — break them into chunks and store them for search.\nFine-tune the GPT model on all your products.\nWrite all possible answers in a manual table.\nExplanation: RAG starts by preparing the sources — chunking and indexing — before any answer.",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** **You want a support assistant for your store to respond to shipping and pricing. What is the first correct step?**\n\n- **The correct answer (Option 1):** **Prepare your files (prices, policies)** — **break them into chunks and store them for searching**.\nFine-tune the GPT model on all your products.\nWrite all possible answers in a manual table.\n\n**Explanation:** **RAG starts by preparing the sources** — **chunking and indexing** — **before any answer**.",
       "bullets": [
-        "Prepare your files (prices, policies) — break them into chunks and store them for search.",
+        "Prepare your files (prices, policies) — break them into chunks and store them for searching.",
         "Fine-tune the GPT model on all your products.",
         "Write all possible answers in a manual table."
       ],
       "tables": [],
       "quiz": {
-        "question": "You want a support assistant for your store to respond to shipping and pricing. What is the first correct step?",
+        "question": "**You want a support assistant for your store to respond to shipping and pricing. What is the first correct step?**",
         "correctIndex": 0,
         "options": [
-          "Prepare your files (prices, policies) — break them into chunks and store them for search.",
+          "Prepare your files (prices, policies) — break them into chunks and store them for searching.",
           "Fine-tune the GPT model on all your products.",
           "Write all possible answers in a manual table."
         ],
-        "explanation": "RAG starts by preparing the sources — chunking and indexing — before any answer."
+        "explanation": "**RAG starts by preparing the sources** — **chunking and indexing** — **before any answer**."
       }
     },
     {
       "role": "Mission",
       "heading": "Mission — Choose One Source for AI",
       "subtitle": "Choose One Source for AI",
-      "contentMarkdown": "Introduction: Design map — not code. 10 minutes. Submission: Your app in one line, one source (name, type, why it’s important), 3 customer questions, alternative response if the answer is not in the source. Evaluation Criteria: | Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Clear Source | 60% | One specific source — not «all files» in general; a logical reason for its importance |\n| Realistic Questions | 40% | 3 real customer questions — the answer from the source, not guessing |",
+      "contentMarkdown": "**Introduction:** **Design map — not code**. **10 minutes**.\n\n**Submission:** **Your app in one line**, **one source** (name, type, why it’s important), **3 customer questions**, **alternative response if the answer is not in the source**.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Clear Source | 60% | **One specific source** — **not «all files» in general**; **a logical reason for its importance** |\n| Realistic Questions | 40% | **3 real customer questions** — **the answer from the source, not guessing** |",
       "bullets": [],
       "tables": [
         {
@@ -144,29 +144,29 @@
             [
               "Clear Source",
               "60%",
-              "One specific source — not «all files» in general; a logical reason for its importance"
+              "**One specific source** — **not «all files» in general**; **a logical reason for its importance**"
             ],
             [
               "Realistic Questions",
               "40%",
-              "3 real customer questions — the answer from the source, not guessing"
+              "**3 real customer questions** — **the answer from the source, not guessing**"
             ]
           ]
         }
       ],
       "mission": {
-        "intro": "Design map — not code. 10 minutes.",
+        "intro": "**Design map — not code**. **10 minutes**.",
         "delivery": [],
         "rubric": [
           {
             "dimension": "Clear Source",
             "weight": 60,
-            "criteria": "One specific source — not «all files» in general; a logical reason for its importance"
+            "criteria": "**One specific source** — **not «all files» in general**; **a logical reason for its importance**"
           },
           {
             "dimension": "Realistic Questions",
             "weight": 40,
-            "criteria": "3 real customer questions — the answer from the source, not guessing"
+            "criteria": "**3 real customer questions** — **the answer from the source, not guessing**"
           }
         ],
         "yamlIntent": "RAG design map — app, one source, 3 questions, fallback — ~10 min; no code",
@@ -176,16 +176,16 @@
     {
       "role": "Confidence close",
       "heading": "Confidence Close",
-      "contentMarkdown": "- Understood: RAG = AI answers from your files. Not fine-tuning — injecting files at the time of the question.\n- You can: You have a design map: source + 3 questions + alternative response.\n- Next: Embeddings — how search finds meaning, not the literal word. ---",
+      "contentMarkdown": "- **Understood:** **RAG = AI answers from your files**. **Not Fine-tuning** — **injecting files at the time of the question**.\n- **You can:** **You have a design map: source + 3 questions + alternative response**.\n- **Next:** **Embeddings** — **how search finds meaning, not the literal word**.\n\n---",
       "bullets": [
-        "Understood: RAG = AI answers from your files. Not fine-tuning — injecting files at the time of the question.",
-        "You can: You have a design map: source + 3 questions + alternative response.",
-        "Next: Embeddings — how search finds meaning, not the literal word."
+        "**Understood:** **RAG = AI answers from your files**. **Not Fine-tuning** — **injecting files at the time of the question**.",
+        "**You can:** **You have a design map: source + 3 questions + alternative response**.",
+        "**Next:** **Embeddings** — **how search finds meaning, not the literal word**."
       ],
       "tables": []
     }
   ],
-  "generatedAt": "2026-06-22T01:23:25.290Z",
+  "generatedAt": "2026-07-07T00:42:43.416Z",
   "adaptedFrom": {
     "locale": "ar-MSA",
     "lessonId": "builder-m9-l1-rag",

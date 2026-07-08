@@ -98,13 +98,6 @@
       ]
     },
     {
-      "role": "Video block (production reference only)",
-      "heading": "Video block (production reference only)",
-      "contentMarkdown": "> في الإنتاج: فيديو Bunny — «Temperature — ثبات vs إبداع في تصميم المنتج». **لا يُعاد توليده.**",
-      "bullets": [],
-      "tables": []
-    },
-    {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot block (intent)",
       "contentMarkdown": "**نفس الشكل — لأن الثبات مطلوب:**\n\n**كروت الدروس** **نفس الشكل** — **صفر مفاجآت**. **هذا مناسب** **لمحتوى منظم** (temp **منخفضة**). **لو كانت temp عالية** — **كل كارت** **كان يخرج بترتيب وأسلوب مختلف** — **صعب تمشي في المنهج**.",
@@ -115,20 +108,20 @@
       "role": "Quiz",
       "heading": "Quiz — تأكيد سريع",
       "subtitle": "تأكيد سريع",
-      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** **تكتب كودًا** **يجب أن يخرج صحيحًا من أول مرة**. **ما الأنسب؟**\n\n- **الإجابة الصحيحة (خيار ١):** **Temperature منخفضة** — **ثبات ودقة**.\n- خيار ٢: **Temperature عالية** — **أفكار جديدة**.\n- خيار ٣: **Temperature متوسطة** — **للدردشة فقط**.\n\n**التفسير:** **الكود والحقائق** = temp **منخفضة**. **الإبداع** **للـ brainstorming فقط**.",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** **تكتب كودًا** **يجب أن يخرج صحيحًا من أول مرة**. **ما الأنسب؟**\n\n**Temperature منخفضة** — **ثبات ودقة**.\nTemperature عالية** — **أفكار جديدة.\nTemperature متوسطة** — **للدردشة فقط.\n\n**التفسير:** **الكود والحقائق** = temp **منخفضة**. **الإبداع** **للـ brainstorming فقط**.",
       "bullets": [
-        "**الإجابة الصحيحة (خيار ١):** **Temperature منخفضة** — **ثبات ودقة**.",
-        "خيار ٢: **Temperature عالية** — **أفكار جديدة**.",
-        "خيار ٣: **Temperature متوسطة** — **للدردشة فقط**."
+        "Temperature منخفضة — ثبات ودقة.",
+        "Temperature عالية — أفكار جديدة.",
+        "Temperature متوسطة — للدردشة فقط."
       ],
       "tables": [],
       "quiz": {
         "question": "**تكتب كودًا** **يجب أن يخرج صحيحًا من أول مرة**. **ما الأنسب؟**",
         "correctIndex": 0,
         "options": [
-          "**الإجابة الصحيحة (خيار ١):** **Temperature منخفضة** — **ثبات ودقة**.",
-          "Temperature عالية** — **أفكار جديدة**.**",
-          "Temperature متوسطة** — **للدردشة فقط**.**"
+          "Temperature منخفضة — ثبات ودقة.",
+          "Temperature عالية — أفكار جديدة.",
+          "Temperature متوسطة — للدردشة فقط."
         ],
         "explanation": "**الكود والحقائق** = temp **منخفضة**. **الإبداع** **للـ brainstorming فقط**."
       }

@@ -7,7 +7,7 @@
   "productionRoute": "/learn/builder/builder-m2-l2-instructions-examples",
   "titleEn": "Instructions vs Examples",
   "title": "Instructions vs Examples",
-  "summary": "Examples teach AI the shape — adjectives alone are not enough.",
+  "summary": "Examples teach AI the structure — adjectives alone are not enough.",
   "estimatedMinutes": 12,
   "nextLessonId": "builder-m2-l3-style-control",
   "sections": [
@@ -15,36 +15,36 @@
       "role": "Orientation",
       "heading": "Orientation — Beginning of the Lesson",
       "subtitle": "Beginning of the Lesson",
-      "contentMarkdown": "- What will you understand? When to describe with words and when to show an example — and how this affects the quality of AI outputs in your product.\n- Why now? Many Prompts fail not because AI is 'weak' — but because you described it with adjectives ('professional', 'creative') instead of showing the shape.\n- What after the lesson? You will write a Prompt that includes two examples + a clear pattern line.",
+      "contentMarkdown": "- **What will you understand?** **When** to describe with words and **when** to show an **example** — and how this affects the **quality of AI outputs** in your product.\n- **Why now?** Many **prompts** fail **not** because **AI** is 'weak' — but because you **described it with adjectives** ('professional', 'creative') **instead** of showing the **structure**.\n- **What after the lesson?** You will write a **prompt** that includes **two examples** + a clear **pattern line**.",
       "bullets": [
-        "What will you understand? When to describe with words and when to show an example — and how this affects the quality of AI outputs in your product.",
-        "Why now? Many Prompts fail not because AI is 'weak' — but because you described it with adjectives ('professional', 'creative') instead of showing the shape.",
-        "What after the lesson? You will write a Prompt that includes two examples + a clear pattern line."
+        "**What will you understand?** **When** to describe with words and **when** to show an **example** — and how this affects the **quality of AI outputs** in your product.",
+        "**Why now?** Many **prompts** fail **not** because **AI** is 'weak' — but because you **described it with adjectives** ('professional', 'creative') **instead** of showing the **structure**.",
+        "**What after the lesson?** You will write a **prompt** that includes **two examples** + a clear **pattern line**."
       ],
       "tables": []
     },
     {
       "role": "Tension",
-      "heading": "Tension — Detailed Explanation — and Any Response",
-      "subtitle": "Detailed Explanation — and Any Response",
-      "contentMarkdown": "- I wrote 'Write in an engaging and unique style' — and the response was clichés: 'Discover the magic' and 'A unique experience'.\n- AI is better at mimicking than understanding general adjectives.\n- When you build a feature (titles, support responses, interface cards): two correct examples = a consistent style for all users.",
+      "heading": "Tension — Explained in Detail — and the Response is Generic",
+      "subtitle": "Explained in Detail — and the Response is Generic",
+      "contentMarkdown": "- I wrote '**Write in an engaging and unique style**' — and the response was **clichés**: 'Discover the magic' and 'A unique experience'.\n- **AI** is **better at mimicking** than **understanding general qualities**.\n- When you **build a feature** (titles, support responses, interface cards): **two correct examples** = **a consistent style** for all users.",
       "bullets": [
-        "I wrote 'Write in an engaging and unique style' — and the response was clichés: 'Discover the magic' and 'A unique experience'.",
-        "AI is better at mimicking than understanding general adjectives.",
-        "When you build a feature (titles, support responses, interface cards): two correct examples = a consistent style for all users."
+        "I wrote '**Write in an engaging and unique style**' — and the response was **clichés**: 'Discover the magic' and 'A unique experience'.",
+        "**AI** is **better at mimicking** than **understanding general qualities**.",
+        "When you **build a feature** (titles, support responses, interface cards): **two correct examples** = **a consistent style** for all users."
       ],
       "tables": []
     },
     {
       "role": "Core idea",
-      "heading": "Core Idea — Example Teaches Better than Adjective",
-      "subtitle": "Example Teaches Better than Adjective",
-      "contentMarkdown": "- Instructions = Steps or rules in words: 'Do 1, 2, 3'.\n- Examples = Show the shape of the response you want: 'Do like this and this'.\n- AI mimics patterns. One or two examples are stronger than 100 adjectives ('short', 'friendly', 'creative').\n- In Builder: when you ask Lovable 'Create 4 cards like this card' — this is Few-shot Prompting. The same idea applies to any Prompt.",
+      "heading": "Core Idea — Examples Teach Better Than Adjectives",
+      "subtitle": "Examples Teach Better Than Adjectives",
+      "contentMarkdown": "- **Instructions** = **Steps or rules in words**: 'Do 1, 2, 3'.\n- **Examples** = **Show the form of the response** you want: '**Do like this and that**'.\n- **AI** **mimics patterns**. **One or two examples** are stronger than **100 adjectives** ('short', 'friendly', 'creative').\n- In **Builder**: when you ask **Lovable** '**Create 4 cards like this card**' — this is **few-shot prompting**. The **same idea** applies to any **prompt**.",
       "bullets": [
-        "Instructions = Steps or rules in words: 'Do 1, 2, 3'.",
-        "Examples = Show the shape of the response you want: 'Do like this and this'.",
-        "AI mimics patterns. One or two examples are stronger than 100 adjectives ('short', 'friendly', 'creative').",
-        "In Builder: when you ask Lovable 'Create 4 cards like this card' — this is Few-shot Prompting. The same idea applies to any Prompt."
+        "**Instructions** = **Steps or rules in words**: 'Do 1, 2, 3'.",
+        "**Examples** = **Show the form of the response** you want: '**Do like this and that**'.",
+        "**AI** **mimics patterns**. **One or two examples** are stronger than **100 adjectives** ('short', 'friendly', 'creative').",
+        "In **Builder**: when you ask **Lovable** '**Create 4 cards like this card**' — this is **few-shot prompting**. The **same idea** applies to any **prompt**."
       ],
       "tables": []
     },
@@ -52,18 +52,18 @@
       "role": "Comparison",
       "heading": "Comparison — Description vs Example — Same Request",
       "subtitle": "Description vs Example — Same Request",
-      "contentMarkdown": "| Description in words | Example to mimic |\n|---------------------|------------------|\n| 'Write me 3 catchy titles for honey product.' — Often 'Golden Bee Honey' and 'Healing from Nature' — General words | 'Write me 3 titles for honey, in the style of: 'Liquid gold from nature'.' — All responses are poetic like the example |",
+      "contentMarkdown": "| Description in Words | Example to Mimic |\n|---------------------|------------------|\n| '**Write me 3 catchy titles** for honey product.' — Often 'Golden Bee Honey' and 'Healing from Nature' — **Generic Words** | '**Write me 3 titles** for honey, **in the style of**: 'Liquid Gold from Nature'.' — **All responses are poetic** like the example |",
       "bullets": [],
       "tables": [
         {
           "headers": [
-            "Description in words",
-            "Example to mimic"
+            "Description in Words",
+            "Example to Mimic"
           ],
           "rows": [
             [
-              "'Write me 3 catchy titles for honey product.' — Often 'Golden Bee Honey' and 'Healing from Nature' — General words",
-              "'Write me 3 titles for honey, in the style of: 'Liquid gold from nature.' — All responses are poetic like the example"
+              "'**Write me 3 catchy titles** for honey product.' — Often 'Golden Bee Honey' and 'Healing from Nature' — **Generic Words**",
+              "'**Write me 3 titles** for honey, **in the style of**: 'Liquid Gold from Nature.' — **All responses are poetic** like the example"
             ]
           ]
         }
@@ -73,7 +73,7 @@
       "role": "Glossary",
       "heading": "Glossary — Two Terms to Start",
       "subtitle": "Two Terms to Start",
-      "contentMarkdown": "| Term | Meaning | Example |\n|------|---------|---------|\n| Instructions | Rules and steps in words — suitable for organized tasks | 'Read the article → Identify 3 ideas → Summarize each in one line.' |\n| Few-shot Prompting | Gives AI 2–3 examples of the desired shape before the actual request | Two emails to respond to customers + 'Write a response to the new email in the same style.' |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|------|---------|---------|\n| **Instructions** | **Rules and steps in words** — suitable for organized tasks | '**Read the article** → **Identify 3 ideas** → **Summarize each in one line**.' |\n| **Few-shot Prompting** | **Gives AI 2–3 examples** of the desired form **before** the actual request | **Two emails** for responding to customers + '**Write a response** to the new email **in the same style**.' |",
       "bullets": [],
       "tables": [
         {
@@ -84,14 +84,14 @@
           ],
           "rows": [
             [
-              "Instructions",
-              "Rules and steps in words — suitable for organized tasks",
-              "'Read the article → Identify 3 ideas → Summarize each in one line.'"
+              "**Instructions**",
+              "**Rules and steps in words** — suitable for organized tasks",
+              "'**Read the article** → **Identify 3 ideas** → **Summarize each in one line**.'"
             ],
             [
-              "Few-shot Prompting",
-              "Gives AI 2–3 examples of the desired shape before the actual request",
-              "Two emails to respond to customers + 'Write a response to the new email in the same style.'"
+              "**Few-shot Prompting**",
+              "**Gives AI 2–3 examples** of the desired form **before** the actual request",
+              "**Two emails** for responding to customers + '**Write a response** to the new email **in the same style**.'"
             ]
           ]
         }
@@ -100,7 +100,7 @@
     {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot Block (Intent)",
-      "contentMarkdown": "Matching Cards — From One Example: The cards all have the same format. Not from long instructions — from one example: 'Create a card like this for other paths.' AI understood the pattern and mimicked it.",
+      "contentMarkdown": "**Matching Cards — From One Example:**\n\nThe cards **all have the same format**. **Not** from long instructions — from **one example**: '**Create a card like this** for other paths.' **AI** understood the **pattern** and **mimicked** it.",
       "bullets": [],
       "tables": []
     },
@@ -108,33 +108,33 @@
       "role": "Quiz",
       "heading": "Quiz — Quick Confirmation",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "Question: You want posts in the same style: 'A balanced breakfast makes your day better'. What is the best way?\nGive 2–3 examples in the same style (Few-shot).\nWrite long instructions about 'the sentence structure'.\nJust tell them to write posts about habits and that's it.\nExplanation: When the shape is hard to describe — examples establish the pattern. This is the basis of any content feature in your product.",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** You want **posts in the same style**: '**A balanced breakfast makes your day better**'. **What is the best way?**\n\n**Give 2–3 examples in the same style (Few-shot)**.\nWrite long instructions** about 'the sentence structure'.**\nJust tell them to write posts about habits** and that's it.**\n\n**Explanation:** When **the form is hard to describe** — **examples establish the pattern**. This is **the basis of any content feature** in your product.",
       "bullets": [
-        "Give 2–3 examples in the same style (Few-shot).",
-        "Write long instructions about 'the sentence structure'.",
-        "Just tell them to write posts about habits and that's it."
+        "**Give 2–3 examples in the same style (Few-shot)**.",
+        "Write long instructions** about 'the sentence structure'.**",
+        "Just tell them to write posts about habits** and that's it.**"
       ],
       "tables": [],
       "quiz": {
-        "question": "You want posts in the same style: 'A balanced breakfast makes your day better'. What is the best way?",
+        "question": "You want **posts in the same style**: '**A balanced breakfast makes your day better**'. **What is the best way?**",
         "correctIndex": 0,
         "options": [
-          "Give 2–3 examples in the same style (Few-shot).",
-          "Write long instructions about 'the sentence structure'.",
-          "Just tell them to write posts about habits and that's it."
+          "**Give 2–3 examples in the same style (Few-shot)**.",
+          "**Write long instructions** about 'the sentence structure'.",
+          "**Just tell them to write posts about habits** and that's it."
         ],
-        "explanation": "When the shape is hard to describe — examples establish the pattern. This is the basis of any content feature in your product."
+        "explanation": "When **the form is hard to describe** — **examples establish the pattern**. This is **the basis of any content feature** in your product."
       }
     },
     {
       "role": "Mission",
       "heading": "Mission — Two Examples + Pattern — For the Same Request",
       "subtitle": "Two Examples + Pattern — For the Same Request",
-      "contentMarkdown": "Introduction: Weak request → Add two examples + pattern sentence. 10–15 minutes is enough. Delivery: 1. Weak request: 'Write me 3 ideas for a podcast about entrepreneurship'\n2. Improved request — Add: - Example 1 (Idea + Title) - Example 2 (Idea + Title) - Pattern line: 'Write me 3 ideas in the same style'\n3. What pattern did the examples teach? (One sentence) Evaluation Criteria: | Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| Consistent examples | 60% | The examples are in the same style; there is a clear pattern line |\n| Pattern analysis | 40% | Described the pattern — not just 'it got better'; usable in Product Prompt |",
+      "contentMarkdown": "**Introduction:** **Weak request** → **Add two examples** + **pattern sentence**. **10–15 minutes** is enough.\n\n**Delivery:**\n\n1. **Weak request:** '**Write me 3 ideas for a podcast** about entrepreneurship'\n2. **Improved request** — add:\n   - **Example 1** (Idea + Title)\n   - **Example 2** (Idea + Title)\n   - **Pattern line:** '**Write me 3 ideas in the same style**'\n3. **What pattern did the examples teach?** (One sentence)\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-----------|--------|----------|\n| Consistent Examples | 60% | **The examples are in the same style**; **there is a clear pattern line** |\n| Pattern Analysis | 40% | **Described the pattern** — **not** just 'it got better'; **usable** in **product prompt** |",
       "bullets": [
-        "Example 1 (Idea + Title)",
-        "Example 2 (Idea + Title)",
-        "Pattern line: 'Write me 3 ideas in the same style'"
+        "**Example 1** (Idea + Title)",
+        "**Example 2** (Idea + Title)",
+        "**Pattern line:** '**Write me 3 ideas in the same style**'"
       ],
       "tables": [
         {
@@ -145,35 +145,35 @@
           ],
           "rows": [
             [
-              "Consistent examples",
+              "Consistent Examples",
               "60%",
-              "The examples are in the same style; there is a clear pattern line"
+              "**The examples are in the same style**; **there is a clear pattern line**"
             ],
             [
-              "Pattern analysis",
+              "Pattern Analysis",
               "40%",
-              "Described the pattern — not just 'it got better'; usable in Product Prompt"
+              "**Described the pattern** — **not** just 'it got better'; **usable** in **product prompt**"
             ]
           ]
         }
       ],
       "mission": {
-        "intro": "Weak request → Add two examples + pattern sentence. 10–15 minutes is enough.",
+        "intro": "**Weak request** → **Add two examples** + **pattern sentence**. **10–15 minutes** is enough.",
         "delivery": [
-          "Weak request: 'Write me 3 ideas for a podcast about entrepreneurship'",
-          "Improved request — Add:",
-          "What pattern did the examples teach? (One sentence)"
+          "**Weak request:** '**Write me 3 ideas for a podcast** about entrepreneurship'",
+          "**Improved request** — add:",
+          "**What pattern did the examples teach?** (One sentence)"
         ],
         "rubric": [
           {
-            "dimension": "Consistent examples",
+            "dimension": "Consistent Examples",
             "weight": 60,
-            "criteria": "The examples are in the same style; there is a clear pattern line"
+            "criteria": "**The examples are in the same style**; **there is a clear pattern line**"
           },
           {
-            "dimension": "Pattern analysis",
+            "dimension": "Pattern Analysis",
             "weight": 40,
-            "criteria": "Described the pattern — not just 'it got better'; usable in Product Prompt"
+            "criteria": "**Described the pattern** — **not** just 'it got better'; **usable** in **product prompt**"
           }
         ],
         "yamlIntent": "Take weak podcast-ideas request; add two examples + pattern line; state pattern learned — ~10–15 min",
@@ -183,16 +183,16 @@
     {
       "role": "Confidence close",
       "heading": "Confidence Close",
-      "contentMarkdown": "- Understood: Examples teach AI the shape — general adjectives are not enough.\n- You can: build Prompts that include 2–3 examples + pattern for any repeated output.\n- Next: Style Control — how the assistant speaks in your voice. ---",
+      "contentMarkdown": "- **You understood:** **Examples teach AI the structure** — **general adjectives are not enough**.\n- **You can:** build **prompts** that include **2–3 examples** + **pattern** for any **repeated output**.\n- **Next:** **Style Control** — **how the assistant speaks in your voice**.\n\n---",
       "bullets": [
-        "Understood: Examples teach AI the shape — general adjectives are not enough.",
-        "You can: build Prompts that include 2–3 examples + pattern for any repeated output.",
-        "Next: Style Control — how the assistant speaks in your voice."
+        "**You understood:** **Examples teach AI the structure** — **general adjectives are not enough**.",
+        "**You can:** build **prompts** that include **2–3 examples** + **pattern** for any **repeated output**.",
+        "**Next:** **Style Control** — **how the assistant speaks in your voice**."
       ],
       "tables": []
     }
   ],
-  "generatedAt": "2026-06-22T01:21:04.081Z",
+  "generatedAt": "2026-07-07T00:36:19.436Z",
   "adaptedFrom": {
     "locale": "ar-MSA",
     "lessonId": "builder-m2-l2-instructions-examples",

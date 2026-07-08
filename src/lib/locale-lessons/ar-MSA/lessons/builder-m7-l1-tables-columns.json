@@ -97,13 +97,6 @@
       ]
     },
     {
-      "role": "Video block (production reference only)",
-      "heading": "Video block (production reference only)",
-      "contentMarkdown": "> في الإنتاج: فيديو Bunny — «تصميم جدول صح». **لا يُعاد توليده.**",
-      "bullets": [],
-      "tables": []
-    },
-    {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot block (intent)",
       "contentMarkdown": "**الذكاء الاصطناعي يقرأ الجداول لفهم السياق:**\n\nقبل أن يجيب **الذكاء الاصطناعي**، **ينظر إلى جداول** مثل `currentUser` و `currentPath`. **التصميم الصح = ذاكرة سريعة ودقيقة**.",
@@ -114,18 +107,18 @@
       "role": "Quiz",
       "heading": "Quiz — تأكيد سريع",
       "subtitle": "تأكيد سريع",
-      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** **تعمل جدول `services` وفيه عمود `price` (سعر الخدمة). ما الأنسب؟**\n\n- **الإجابة الصحيحة (خيار ١):** **`numeric not null`** — **الأموال دقيقة وكل خدمة لها سعر**.\n- خيار ٢: `integer nullable` — **رقم صحيح وقد يكون السعر غير محدد**.\n- خيار ٣: `text not null` — **كتابة السعر كنص «١٠٠ جنيه»**.\n\n**التفسير:** **`numeric` للأموال** (كسور عشرية). **`not null`** لأن **كل خدمة معروضة لها سعر**.",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** **تعمل جدول `services` وفيه عمود `price` (سعر الخدمة). ما الأنسب؟**\n\n**`numeric not null`** — **الأموال دقيقة وكل خدمة لها سعر**.\n`integer nullable` — **رقم صحيح وقد يكون السعر غير محدد**.\n`text not null` — **كتابة السعر كنص «١٠٠ جنيه»**.\n\n**التفسير:** **`numeric` للأموال** (كسور عشرية). **`not null`** لأن **كل خدمة معروضة لها سعر**.",
       "bullets": [
-        "**الإجابة الصحيحة (خيار ١):** **`numeric not null`** — **الأموال دقيقة وكل خدمة لها سعر**.",
-        "خيار ٢: `integer nullable` — **رقم صحيح وقد يكون السعر غير محدد**.",
-        "خيار ٣: `text not null` — **كتابة السعر كنص «١٠٠ جنيه»**."
+        "**`numeric not null`** — **الأموال دقيقة وكل خدمة لها سعر**.",
+        "`integer nullable` — **رقم صحيح وقد يكون السعر غير محدد**.",
+        "`text not null` — **كتابة السعر كنص «١٠٠ جنيه»**."
       ],
       "tables": [],
       "quiz": {
         "question": "**تعمل جدول `services` وفيه عمود `price` (سعر الخدمة). ما الأنسب؟**",
         "correctIndex": 0,
         "options": [
-          "**الإجابة الصحيحة (خيار ١):** **`numeric not null`** — **الأموال دقيقة وكل خدمة لها سعر**.",
+          "**`numeric not null`** — **الأموال دقيقة وكل خدمة لها سعر**.",
           "`integer nullable` — **رقم صحيح وقد يكون السعر غير محدد**.",
           "`text not null` — **كتابة السعر كنص «١٠٠ جنيه»**."
         ],

@@ -13,13 +13,13 @@
   "sections": [
     {
       "role": "Orientation",
-      "heading": "Orientation — Lesson Start",
+      "heading": "Orientation",
       "subtitle": "Lesson Start",
-      "contentMarkdown": "- What will you understand? Why do long prompts take more time and cost more — and how does this affect every prompt you write?\n- Why now? When you build an AI feature in your product — every character counts. Shortening is not a luxury — it’s design.\n- What after the lesson? You will compare a short prompt and a long prompt and identify what to remove.",
+      "contentMarkdown": "- **What will you understand?** **Why** do **long prompts** take **more time** and **cost more** — and how does this affect **every prompt** you write?\n- **Why now?** When you build an **AI feature** in your product — **every character** counts. **Shortening** is not a luxury — it’s **design**.\n- **What after the lesson?** You will compare a **short prompt** and a **long prompt** and explain **what you will remove**.",
       "bullets": [
-        "What will you understand? Why do long prompts take more time and cost more — and how does this affect every prompt you write?",
-        "Why now? When you build an AI feature in your product — every character counts. Shortening is not a luxury — it’s design.",
-        "What after the lesson? You will compare a short prompt and a long prompt and identify what to remove."
+        "**What will you understand?** **Why** do **long prompts** take **more time** and **cost more** — and how does this affect **every prompt** you write?",
+        "**Why now?** When you build an **AI feature** in your product — **every character** counts. **Shortening** is not a luxury — it’s **design**.",
+        "**What after the lesson?** You will compare a **short prompt** and a **long prompt** and explain **what you will remove**."
       ],
       "tables": []
     },
@@ -27,11 +27,11 @@
       "role": "Tension",
       "heading": "Tension — Long Prompt — Slow or Expensive Response",
       "subtitle": "Long Prompt — Slow or Expensive Response",
-      "contentMarkdown": "- You wrote a long introduction and said, \"please\" and \"my friend\" — and the response came after a while, or the API bill increased.\n- It doesn’t necessarily mean the model is \"slow\" — often you sent too much text.\n- In Lovable or Cursor: the larger the context — the slower the processing and response. Rule: Shorten — you gain.",
+      "contentMarkdown": "- You wrote a **long introduction** and said \"please\" and \"my friend\" — and the response came **after a while**, or your **API bill** increased.\n- It’s not necessarily that the **model** is \"slow\" — often **you** sent **too much** text.\n- In **Lovable** or **Cursor**: the larger the **context** — the slower the **building and response**. **Rule:** **Shorten** — **you gain**.",
       "bullets": [
-        "You wrote a long introduction and said, \"please\" and \"my friend\" — and the response came after a while, or the API bill increased.",
-        "It doesn’t necessarily mean the model is \"slow\" — often you sent too much text.",
-        "In Lovable or Cursor: the larger the context — the slower the processing and response. Rule: Shorten — you gain."
+        "You wrote a **long introduction** and said \"please\" and \"my friend\" — and the response came **after a while**, or your **API bill** increased.",
+        "It’s not necessarily that the **model** is \"slow\" — often **you** sent **too much** text.",
+        "In **Lovable** or **Cursor**: the larger the **context** — the slower the **building and response**. **Rule:** **Shorten** — **you gain**."
       ],
       "tables": []
     },
@@ -39,20 +39,20 @@
       "role": "Core idea",
       "heading": "Core Idea — Long Inputs and Outputs = More Time and Cost",
       "subtitle": "Long Inputs and Outputs = More Time and Cost",
-      "contentMarkdown": "- AI breaks your text into small pieces (tokens) — a token = a word or a part of it.\n- Every token in input and every token in response counts: speed, cost, memory limit.\n- When you build: a long system prompt + user context + conversation history = bill and time. Shorten what is not necessary.\n- Shorten the prompt, define what is needed, remove introductions — often the same result at a lower cost.",
+      "contentMarkdown": "- **AI** breaks your text into **small pieces (tokens)** — a **token** = a word or **part** of it.\n- **Every token** in **input** and **every token** in **response** counts: **speed**, **cost**, **memory limit**.\n- When you **build**: **long system prompt** + **user context** + **conversation history** = **bill and time**. **Shorten** what is **not necessary**.\n- **Shorten the prompt**, **define what’s needed**, **remove introductions** — often **the same result** at a **lower cost**.",
       "bullets": [
-        "AI breaks your text into small pieces (tokens) — a token = a word or a part of it.",
-        "Every token in input and every token in response counts: speed, cost, memory limit.",
-        "When you build: a long system prompt + user context + conversation history = bill and time. Shorten what is not necessary.",
-        "Shorten the prompt, define what is needed, remove introductions — often the same result at a lower cost."
+        "**AI** breaks your text into **small pieces (tokens)** — a **token** = a word or **part** of it.",
+        "**Every token** in **input** and **every token** in **response** counts: **speed**, **cost**, **memory limit**.",
+        "When you **build**: **long system prompt** + **user context** + **conversation history** = **bill and time**. **Shorten** what is **not necessary**.",
+        "**Shorten the prompt**, **define what’s needed**, **remove introductions** — often **the same result** at a **lower cost**."
       ],
       "tables": []
     },
     {
       "role": "Comparison",
-      "heading": "Comparison — Same Prompt · Two Phrasings",
-      "subtitle": "Same Prompt · Two Phrasings",
-      "contentMarkdown": "| Fluff and Introductions | Direct |\n|-------------|--------|\n| \"My AI friend, please can you help me with a simple task, which is to summarize this article...\" — the entire introduction is a waste of tokens | \"Summarize the article in 3 points.\" — a short sentence, faster response, lower cost, and the same result |",
+      "heading": "Comparison — Same Prompt · Two Formulations",
+      "subtitle": "Same Prompt · Two Formulations",
+      "contentMarkdown": "| Fluff and Introductions | Direct |\n|-------------|--------|\n| \"My AI friend, please can you help me with a simple task, which is to summarize this article...\" — **the entire introduction** is a **waste of tokens** | \"**Summarize the article** in **3 points**.\" — **a short sentence**, **faster response**, **lower cost**, **and the same result** |",
       "bullets": [],
       "tables": [
         {
@@ -62,8 +62,8 @@
           ],
           "rows": [
             [
-              "\"My AI friend, please can you help me with a simple task, which is to summarize this article...\" — the entire introduction is a waste of tokens",
-              "\"Summarize the article in 3 points.\" — a short sentence, faster response, lower cost, and the same result"
+              "\"My AI friend, please can you help me with a simple task, which is to summarize this article...\" — **the entire introduction** is a **waste of tokens**",
+              "\"**Summarize the article** in **3 points**.\" — **a short sentence**, **faster response**, **lower cost**, **and the same result**"
             ]
           ]
         }
@@ -73,7 +73,7 @@
       "role": "Glossary",
       "heading": "Glossary — Two Terms to Start",
       "subtitle": "Two Terms to Start",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| Token | A small piece of text — a word or a part of it. AI counts it in and out | \"Hello\" can be one token or two depending on language and model |\n| Training | The stage before you use the model — it learns from a huge amount of texts. You do not train it; you just use it | ChatGPT is trained on internet texts — you just write a prompt |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Token** | **A small piece** of text — a **word** or **part** of it. **AI** counts it **in and out** | \"Hello\" can be **one token** or **two** depending on **language** and **model** |\n| **Training** | **A stage** before you **use** the model — it learns from a **huge amount** of texts. **You** **do not** train it; you just **use** it | **ChatGPT** \"**trains**\" on internet texts — **you** just **write a prompt** |",
       "bullets": [],
       "tables": [
         {
@@ -84,14 +84,14 @@
           ],
           "rows": [
             [
-              "Token",
-              "A small piece of text — a word or a part of it. AI counts it in and out",
-              "\"Hello\" can be one token or two depending on language and model"
+              "**Token**",
+              "**A small piece** of text — a **word** or **part** of it. **AI** counts it **in and out**",
+              "\"Hello\" can be **one token** or **two** depending on **language** and **model**"
             ],
             [
-              "Training",
-              "The stage before you use the model — it learns from a huge amount of texts. You do not train it; you just use it",
-              "ChatGPT is trained on internet texts — you just write a prompt"
+              "**Training**",
+              "**A stage** before you **use** the model — it learns from a **huge amount** of texts. **You** **do not** train it; you just **use** it",
+              "**ChatGPT** \"**trains**\" on internet texts — **you** just **write a prompt**"
             ]
           ]
         }
@@ -100,7 +100,7 @@
     {
       "role": "Diagram block (intent)",
       "heading": "Diagram Block (Intent)",
-      "contentMarkdown": "From prompt to response — every step counts (ID: `ai-summarization-flow`): Prompt → Tokenization → Model → Response Every step in the process consumes tokens. When you shorten the prompt — you shorten the entire process.",
+      "contentMarkdown": "**From prompt to response — every step counts** (ID: `ai-summarization-flow`):\n\n**Prompt → Tokenization → Model → Response**\n\nEvery step in the flow **consumes tokens**. When you **shorten the prompt** — you **shorten the entire flow**.",
       "bullets": [],
       "tables": []
     },
@@ -108,7 +108,7 @@
       "role": "Quiz",
       "heading": "Quiz — Quick Check",
       "subtitle": "Quick Check",
-      "contentMarkdown": "Question: If AI is slow to respond — what is the first thing you try?\nChange the model immediately.\nShorten your prompt and remove excess introductions.\nWait and try again without changes.\nExplanation: Shortening the prompt is the fastest improvement — before changing tools or models.",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 1\n\n**Question:** If the **AI** is **slow** to respond — what is the **first thing** you try?\n\nChange the model** immediately.**\n**Shorten your prompt** and remove **excess introductions**.\nWait** and try again **without changes.\n\n**Explanation:** **Shortening the prompt** is the fastest **improvement** — **before** changing **tools** or **models**.",
       "bullets": [
         "Change the model immediately.",
         "Shorten your prompt and remove excess introductions.",
@@ -116,21 +116,21 @@
       ],
       "tables": [],
       "quiz": {
-        "question": "If AI is slow to respond — what is the first thing you try?",
+        "question": "If the **AI** is **slow** to respond — what is the **first thing** you try?",
         "correctIndex": 1,
         "options": [
           "Change the model immediately.",
           "Shorten your prompt and remove excess introductions.",
           "Wait and try again without changes."
         ],
-        "explanation": "Shortening the prompt is the fastest improvement — before changing tools or models."
+        "explanation": "**Shortening the prompt** is the fastest **improvement** — **before** changing **tools** or **models**."
       }
     },
     {
       "role": "Mission",
       "heading": "Mission — Short vs Long Prompt — What Will You Remove?",
       "subtitle": "Short vs Long Prompt — What Will You Remove?",
-      "contentMarkdown": "The task: Same prompt in two phrasings: one long and one short. 10 minutes is enough. Delivery: 1. The long prompt (write or copy it)\n2. The short prompt (same request, fewer words)\n3. What did you remove from the long one? (Introductions, repetition, extra details)\n4. If the feature in your product will run 100 times/day — what will shortening save you? Evaluation Criteria: | Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Real Comparison | 60% | Both prompts for the same request; the short one is actually shorter |\n| Shortening Analysis | 40% | Identified what was removed and why; linked to cost or speed in the product |",
+      "contentMarkdown": "**The task:** **Same prompt** in two formulations: **one long** and **one short**. **10 minutes** is enough.\n\n**Delivery:**\n\n1. **The long prompt** (write or copy it)\n2. **The short prompt** (same request, **fewer words**)\n3. **What did you remove** from the long version? (introductions, repetition, unnecessary details)\n4. If the **feature** in your product will work **100 times/day** — what will **shortening** save you?\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Real Comparison | 60% | Both prompts **for the same request**; the **shorter** one is **actually** shorter |\n| Shortening Analysis | 40% | You identified **what** was removed **and why**; **linked** it to **cost** or **speed** in the product |",
       "bullets": [],
       "tables": [
         {
@@ -143,34 +143,34 @@
             [
               "Real Comparison",
               "60%",
-              "Both prompts for the same request; the short one is actually shorter"
+              "Both prompts **for the same request**; the **shorter** one is **actually** shorter"
             ],
             [
               "Shortening Analysis",
               "40%",
-              "Identified what was removed and why; linked to cost or speed in the product"
+              "You identified **what** was removed **and why**; **linked** it to **cost** or **speed** in the product"
             ]
           ]
         }
       ],
       "mission": {
-        "intro": "Same prompt in two phrasings: one long and one short. 10 minutes is enough.",
+        "intro": "**Same prompt** in two formulations: **one long** and **one short**. **10 minutes** is enough.",
         "delivery": [
-          "The long prompt (write or copy it)",
-          "The short prompt (same request, fewer words)",
-          "What did you remove from the long one? (Introductions, repetition, extra details)",
-          "If the feature in your product will run 100 times/day — what will shortening save you?"
+          "**The long prompt** (write or copy it)",
+          "**The short prompt** (same request, **fewer words**)",
+          "**What did you remove** from the long version? (introductions, repetition, unnecessary details)",
+          "If the **feature** in your product will work **100 times/day** — what will **shortening** save you?"
         ],
         "rubric": [
           {
             "dimension": "Real Comparison",
             "weight": 60,
-            "criteria": "Both prompts for the same request; the short one is actually shorter"
+            "criteria": "Both prompts **for the same request**; the **shorter** one is **actually** shorter"
           },
           {
             "dimension": "Shortening Analysis",
             "weight": 40,
-            "criteria": "Identified what was removed and why; linked to cost or speed in the product"
+            "criteria": "You identified **what** was removed **and why**; **linked** it to **cost** or **speed** in the product"
           }
         ],
         "yamlIntent": "Same request in long and short form — list removed filler; estimate savings at 100 runs/day — ~10 min",
@@ -180,16 +180,16 @@
     {
       "role": "Confidence close",
       "heading": "Confidence Close",
-      "contentMarkdown": "- You understood: long prompts = more time and cost. Shortening is part of the design of any AI feature.\n- You can: write prompts directly and remove fluff before sending.\n- Next: Prompt Layer — why the prompt = product behavior. ---",
+      "contentMarkdown": "- **You understood:** **long prompts** = **more time and cost**. **Shortening** is part of the **design** of any **AI feature**.\n- **You can:** write **prompts** **directly** and **remove fluff** **before** sending.\n- **Next:** **Prompt Layer** — **why** the prompt = **product behavior**.\n\n---",
       "bullets": [
-        "You understood: long prompts = more time and cost. Shortening is part of the design of any AI feature.",
-        "You can: write prompts directly and remove fluff before sending.",
-        "Next: Prompt Layer — why the prompt = product behavior."
+        "**You understood:** **long prompts** = **more time and cost**. **Shortening** is part of the **design** of any **AI feature**.",
+        "**You can:** write **prompts** **directly** and **remove fluff** **before** sending.",
+        "**Next:** **Prompt Layer** — **why** the prompt = **product behavior**."
       ],
       "tables": []
     }
   ],
-  "generatedAt": "2026-06-22T01:20:25.266Z",
+  "generatedAt": "2026-07-07T00:36:19.436Z",
   "adaptedFrom": {
     "locale": "ar-MSA",
     "lessonId": "builder-m1-l2-tokens-training",

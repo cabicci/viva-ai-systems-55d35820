@@ -14,12 +14,12 @@
     {
       "role": "Orientation",
       "heading": "Orientation",
-      "subtitle": "Beginning of the Lesson",
-      "contentMarkdown": "- What will you understand? Automation fails — the question is, \"How will you know before the customer is hurt?\"\n- Why now? After Webhooks and the database, the workflow runs 24/7 — without alerts, failures are silent.\n- What after the lesson? You will write an alert rule: if [failure] → [who is notified + how].",
+      "subtitle": "Lesson Start",
+      "contentMarkdown": "- **What will you understand?** Automation fails — the question is, \"How will you know before the customer is hurt?\"\n- **Why now?** After **Webhooks** and the database, the **workflow** runs 24/7 — without alerts, failure is silent.\n- **What after the lesson?** You will write an alert rule: if [failure] → [who is notified + how].",
       "bullets": [
-        "What will you understand? Automation fails — the question is, \"How will you know before the customer is hurt?\"",
-        "Why now? After Webhooks and the database, the workflow runs 24/7 — without alerts, failures are silent.",
-        "What after the lesson? You will write an alert rule: if [failure] → [who is notified + how]."
+        "**What will you understand?** Automation fails — the question is, \"How will you know before the customer is hurt?\"",
+        "**Why now?** After **Webhooks** and the database, the **workflow** runs 24/7 — without alerts, failure is silent.",
+        "**What after the lesson?** You will write an alert rule: if [failure] → [who is notified + how]."
       ],
       "tables": []
     },
@@ -27,12 +27,12 @@
       "role": "Tension",
       "heading": "Tension",
       "subtitle": "A Familiar Situation",
-      "contentMarkdown": "- \"200 customers received no response\" — and no one knew.\n- API messages failed for a week — no email, no WhatsApp, no alert.\n- Customers thought you ignored them. The issue was discovered when a major client called.\n- The rule: if a step fails → someone is notified immediately — before the customer feels it.",
+      "contentMarkdown": "- \"200 customers received no response\" — and no one knew.\n- **API** messages failed for a week — no email, no WhatsApp, no alert.\n- Customers thought you ignored them. It was discovered when a major client called.\n- The rule: if a step fails → notify someone immediately — before the customer feels it.",
       "bullets": [
         "\"200 customers received no response\" — and no one knew.",
-        "API messages failed for a week — no email, no WhatsApp, no alert.",
-        "Customers thought you ignored them. The issue was discovered when a major client called.",
-        "The rule: if a step fails → someone is notified immediately — before the customer feels it."
+        "**API** messages failed for a week — no email, no WhatsApp, no alert.",
+        "Customers thought you ignored them. It was discovered when a major client called.",
+        "The rule: if a step fails → notify someone immediately — before the customer feels it."
       ],
       "tables": []
     },
@@ -40,10 +40,10 @@
       "role": "Core idea",
       "heading": "Core Idea",
       "subtitle": "Expected Failure + Alert Before Pain",
-      "contentMarkdown": "- Retry: Try 2–3 times — many errors are temporary (network, timeout).\n- If it fails after Retry: log the error + notify someone — do not stay silent.\n- One rule: if [step X fails] → [WhatsApp/email to Y].\n- The goal: know within minutes — not after a week.",
+      "contentMarkdown": "- **Retry:** Try 2–3 times — many errors are temporary (network, timeout).\n- If it fails after **Retry:** log the error + notify someone — do not stay silent.\n- One rule: if [step X fails] → [WhatsApp/email to Y].\n- The goal: know within minutes — not after a week.",
       "bullets": [
-        "Retry: Try 2–3 times — many errors are temporary (network, timeout).",
-        "If it fails after Retry: log the error + notify someone — do not stay silent.",
+        "**Retry:** Try 2–3 times — many errors are temporary (network, timeout).",
+        "If it fails after **Retry:** log the error + notify someone — do not stay silent.",
         "One rule: if [step X fails] → [WhatsApp/email to Y].",
         "The goal: know within minutes — not after a week."
       ],
@@ -53,7 +53,7 @@
       "role": "Comparison",
       "heading": "Comparison",
       "subtitle": "Silent Failure vs Immediate Alert",
-      "contentMarkdown": "| Silent Failure | Immediate Alert |\n|----------|------------|\n| API stopped — workflow went silent. 200 customers without response. | Retry 3 times → failed → WhatsApp + log in the failed table. Know within 5 minutes. |",
+      "contentMarkdown": "| Silent Failure | Immediate Alert |\n|----------|------------|\n| **API** stopped — **workflow** went silent. 200 customers without response. | **Retry** 3 times → failed → WhatsApp + log in the failed table. Know in 5 minutes. |",
       "bullets": [],
       "tables": [
         {
@@ -63,8 +63,8 @@
           ],
           "rows": [
             [
-              "API stopped — workflow went silent. 200 customers without response.",
-              "Retry 3 times → failed → WhatsApp + log in the failed table. Know within 5 minutes."
+              "**API** stopped — **workflow** went silent. 200 customers without response.",
+              "**Retry** 3 times → failed → WhatsApp + log in the failed table. Know in 5 minutes."
             ]
           ]
         }
@@ -73,8 +73,8 @@
     {
       "role": "Glossary",
       "heading": "Glossary",
-      "subtitle": "Terms for Failure",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| Retry | Automation tries automatically when a step fails | Email sending failed → 3 attempts |\n| Alert | Notification for someone who can act after Retry ends | \"Failed to send 15 messages — check failed\" |",
+      "subtitle": "Two Terms for Failure",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Retry** | Automation tries automatically when a step fails | Email sending failed → 3 attempts |\n| **Alert** | Notification for someone who can act after **Retry** ends | \"Failed to send 15 messages — check failed\" |",
       "bullets": [],
       "tables": [
         {
@@ -85,13 +85,13 @@
           ],
           "rows": [
             [
-              "Retry",
+              "**Retry**",
               "Automation tries automatically when a step fails",
               "Email sending failed → 3 attempts"
             ],
             [
-              "Alert",
-              "Notification for someone who can act after Retry ends",
+              "**Alert**",
+              "Notification for someone who can act after **Retry** ends",
               "\"Failed to send 15 messages — check failed\""
             ]
           ]
@@ -101,7 +101,7 @@
     {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot Block (Intent)",
-      "contentMarkdown": "Each layer in the workflow needs a backup plan: if it fails → what is the alternative?",
+      "contentMarkdown": "Every layer in the **workflow** needs a backup plan: if it fails → what is the alternative?",
       "bullets": [],
       "tables": []
     },
@@ -109,28 +109,28 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "Question: API messages return a 500 error for seconds — then work. What is the best approach?\nRetry 3 times — if it fails, alert + log in the failed table\nExplanation: Temporary errors = Retry. After failure = Alert before the customer is hurt.",
+      "contentMarkdown": "**Question:** **API** messages return a 500 error for seconds — then work. What is the best approach?\n\nRetry 3 times — if it fails, alert + log in the failed table.\n- **Explanation:** Temporary errors = **Retry**. After failure = **Alert** before the customer is hurt.",
       "bullets": [
-        "Retry 3 times — if it fails, alert + log in the failed table",
+        "Retry 3 times — if it fails, alert + log in the failed table.",
         "Explanation: Temporary errors = Retry. After failure = Alert before the customer is hurt."
       ],
       "tables": [],
       "quiz": {
-        "question": "API messages return a 500 error for seconds — then work. What is the best approach?",
+        "question": "**API** messages return a 500 error for seconds — then work. What is the best approach?",
         "correctIndex": 0,
         "options": [
-          "Retry 3 times — if it fails, alert + log in the failed table",
-          "An inappropriate choice; ignores the key points in the section above.",
+          "Retry 3 times — if it fails, alert + log in the failed table.",
+          "An unsuitable option; ignores the key points in the section above.",
           "A partial answer that misses the context and ignores the next step in the decision."
         ],
-        "explanation": "Temporary errors = Retry. After failure = Alert before the customer is hurt."
+        "explanation": "Temporary errors = **Retry**. After failure = **Alert** before the customer is hurt."
       }
     },
     {
       "role": "Mission",
       "heading": "Mission",
       "subtitle": "Write One Alert Rule",
-      "contentMarkdown": "Introduction: Design — not mandatory building. AI may suggest — you choose. | Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Step and Reason | 40% | Specific failed step; realistic reason |\n| Alert Rule | 60% | Who + how + what is logged; clear Retry |",
+      "contentMarkdown": "**Introduction:** Design — not mandatory building. AI may suggest — you choose.\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Step and Reason | 40% | Specific failed step; realistic reason |\n| Alert Rule | 60% | Who + how + what is logged; clear **Retry** |",
       "bullets": [],
       "tables": [
         {
@@ -148,13 +148,13 @@
             [
               "Alert Rule",
               "60%",
-              "Who + how + what is logged; clear Retry"
+              "Who + how + what is logged; clear **Retry**"
             ]
           ]
         }
       ],
       "mission": {
-        "intro": "Design — not mandatory building. AI may suggest — you choose.",
+        "intro": "Design — not mandatory building. AI may suggest — you choose. | Dimension | Weight | Criteria | |-------|-------|---------| | Step and Reason | 40% | Specific failed step; realistic reason | | Alert Rule | 60% | Who + how + what is logged; clear **Retry**",
         "delivery": [],
         "rubric": [
           {
@@ -165,7 +165,7 @@
           {
             "dimension": "Alert Rule",
             "weight": 60,
-            "criteria": "Who + how + what is logged; clear Retry"
+            "criteria": "Who + how + what is logged; clear **Retry**"
           }
         ],
         "yamlIntent": "Write one alert rule: if step fails → who gets notified how",
@@ -175,16 +175,16 @@
     {
       "role": "Confidence close",
       "heading": "Confidence Close",
-      "contentMarkdown": "- I understand: Automation fails — a good system alerts you before the customer.\n- You can: An alert rule is ready for the workflow.\n- Next: Test the automation — before going live.",
+      "contentMarkdown": "- **You understood:** Automation fails — a good system alerts you before the customer.\n- **You can:** An alert rule ready for the **workflow**.\n- **Next:** **Test the automation** — before going live.",
       "bullets": [
-        "I understand: Automation fails — a good system alerts you before the customer.",
-        "You can: An alert rule is ready for the workflow.",
-        "Next: Test the automation — before going live."
+        "**You understood:** Automation fails — a good system alerts you before the customer.",
+        "**You can:** An alert rule ready for the **workflow**.",
+        "**Next:** **Test the automation** — before going live."
       ],
       "tables": []
     }
   ],
-  "generatedAt": "2026-06-22T01:20:01.240Z",
+  "generatedAt": "2026-07-07T00:36:19.315Z",
   "adaptedFrom": {
     "locale": "ar-MSA",
     "lessonId": "automator-m4-l3-error-handling",

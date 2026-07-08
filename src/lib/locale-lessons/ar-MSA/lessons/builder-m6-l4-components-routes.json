@@ -97,13 +97,6 @@
       ]
     },
     {
-      "role": "Video block (production reference only)",
-      "heading": "Video block (production reference only)",
-      "contentMarkdown": "> في الإنتاج: فيديو Bunny — «Components و Routes في التطبيق». **لا يُعاد توليده.**",
-      "bullets": [],
-      "tables": []
-    },
-    {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot block (intent)",
       "contentMarkdown": "**أي واجهة احترافية تبدو معقدة** — **لكنها تكرار لـ ٣–٤ قوالب**. **ModuleCard و LessonRow = Components تتكرر ببيانات مختلفة**.",
@@ -114,20 +107,20 @@
       "role": "Quiz",
       "heading": "Quiz — تأكيد سريع",
       "subtitle": "تأكيد سريع",
-      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** **تحتاج كارتًا لكل محادثة سابقة — عنوان وملخص وتاريخ. ما أنسب طريقة؟**\n\n- **الإجابة الصحيحة (خيار ١):** **Component واحد `ConversationCard` — تمرّر له بيانات كل محادثة كـ Props**.\n- خيار ٢: **Component جديد لكل محادثة: `ConversationCard1`، `ConversationCard2`...**\n- خيار ٣: **ادمج كل الكروت في component واحد كبير `HistoryPage`**.\n\n**التفسير:** **Component تُكتب مرة وتُستخدم ببيانات مختلفة** — **يقلّل التكرار ويجعل التعديل في مكان واحد**.",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** **تحتاج كارتًا لكل محادثة سابقة — عنوان وملخص وتاريخ. ما أنسب طريقة؟**\n\n**Component واحد `ConversationCard` — تمرّر له بيانات كل محادثة كـ Props**.\nComponent جديد لكل محادثة: `ConversationCard1`، `ConversationCard2`...****\nادمج كل الكروت في component واحد كبير `HistoryPage`.\n\n**التفسير:** **Component تُكتب مرة وتُستخدم ببيانات مختلفة** — **يقلّل التكرار ويجعل التعديل في مكان واحد**.",
       "bullets": [
-        "**الإجابة الصحيحة (خيار ١):** **Component واحد `ConversationCard` — تمرّر له بيانات كل محادثة كـ Props**.",
-        "خيار ٢: **Component جديد لكل محادثة: `ConversationCard1`، `ConversationCard2`...**",
-        "خيار ٣: **ادمج كل الكروت في component واحد كبير `HistoryPage`**."
+        "Component واحد `ConversationCard` — تمرّر له بيانات كل محادثة كـ Props.",
+        "Component جديد لكل محادثة: `ConversationCard1`، `ConversationCard2`...",
+        "ادمج كل الكروت في component واحد كبير `HistoryPage`."
       ],
       "tables": [],
       "quiz": {
         "question": "**تحتاج كارتًا لكل محادثة سابقة — عنوان وملخص وتاريخ. ما أنسب طريقة؟**",
         "correctIndex": 0,
         "options": [
-          "**الإجابة الصحيحة (خيار ١):** **Component واحد `ConversationCard` — تمرّر له بيانات كل محادثة كـ Props**.",
-          "Component جديد لكل محادثة: `ConversationCard1`، `ConversationCard2`...****",
-          "ادمج كل الكروت في component واحد كبير `HistoryPage`**.**"
+          "Component واحد `ConversationCard` — تمرّر له بيانات كل محادثة كـ Props.",
+          "Component جديد لكل محادثة: `ConversationCard1`، `ConversationCard2`...",
+          "ادمج كل الكروت في component واحد كبير `HistoryPage`."
         ],
         "explanation": "**Component تُكتب مرة وتُستخدم ببيانات مختلفة** — **يقلّل التكرار ويجعل التعديل في مكان واحد**."
       }

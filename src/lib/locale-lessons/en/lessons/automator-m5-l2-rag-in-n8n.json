@@ -13,43 +13,43 @@
   "sections": [
     {
       "role": "Orientation",
-      "heading": "Orientation — Lesson Start",
+      "heading": "Orientation",
       "subtitle": "Lesson Start",
-      "contentMarkdown": "- What will you understand? RAG = automated response from your documents (FAQs, prices) — not from guessing.\n- Why now? A question about price or warranty needs to pull from your file.\n- What after the lesson? Diagram: Question → Source → Response — not a technical build.",
+      "contentMarkdown": "- **What will you understand?** **RAG** = automated response from your documents (FAQs, prices) — not from guessing.\n- **Why now?** A question about price or warranty needs to pull from your file.\n- **What after the lesson?** Flowchart: Question → Source → Response — not a technical build.",
       "bullets": [
-        "What will you understand? RAG = automated response from your documents (FAQs, prices) — not from guessing.",
-        "Why now? A question about price or warranty needs to pull from your file.",
-        "What after the lesson? Diagram: Question → Source → Response — not a technical build."
+        "**What will you understand?** **RAG** = automated response from your documents (FAQs, prices) — not from guessing.",
+        "**Why now?** A question about price or warranty needs to pull from your file.",
+        "**What after the lesson?** Flowchart: Question → Source → Response — not a technical build."
       ],
       "tables": []
     },
     {
       "role": "Tension",
-      "heading": "Tension — The bot gave the wrong price",
+      "heading": "Tension",
       "subtitle": "The bot gave the wrong price",
-      "contentMarkdown": "- A client asked about the package — the bot responded with a number it generated. The number was incorrect.\n- AI answers from general knowledge — RAG searches your sources first.",
+      "contentMarkdown": "- A client asked about the package — the bot responded with a number it had. The number was wrong.\n- **AI** answers from general knowledge — **RAG** searches your sources first.",
       "bullets": [
-        "A client asked about the package — the bot responded with a number it generated. The number was incorrect.",
-        "AI answers from general knowledge — RAG searches your sources first."
+        "A client asked about the package — the bot responded with a number it had. The number was wrong.",
+        "**AI** answers from general knowledge — **RAG** searches your sources first."
       ],
       "tables": []
     },
     {
       "role": "Core idea",
-      "heading": "Core idea — RAG = Search then Write",
+      "heading": "Core idea",
       "subtitle": "RAG = Search then Write",
-      "contentMarkdown": "- Without RAG: Question → AI → Guessing.\n- With RAG: Question → Retrieval from FAQs → AI formulates from the excerpt.\n- Prepare one source — Knowledge Source.",
+      "contentMarkdown": "- Without **RAG:** Question → AI → Guess.\n- With **RAG:** Question → **Retrieval** from FAQs → AI formulates from the excerpt.\n- Prepare one source — **Knowledge Source**.",
       "bullets": [
-        "Without RAG: Question → AI → Guessing.",
-        "With RAG: Question → Retrieval from FAQs → AI formulates from the excerpt.",
-        "Prepare one source — Knowledge Source."
+        "Without **RAG:** Question → AI → Guess.",
+        "With **RAG:** Question → **Retrieval** from FAQs → AI formulates from the excerpt.",
+        "Prepare one source — **Knowledge Source**."
       ],
       "tables": []
     },
     {
       "role": "Comparison",
       "heading": "Comparison",
-      "contentMarkdown": "| AI without RAG | AI + RAG |\n|-------------|----------|\n| guesses delivery time | pulls from your schedule: \"Cairo 1–2 days\" |",
+      "contentMarkdown": "| AI without RAG | AI + RAG |\n|-------------|----------|\n| Guesses delivery time | Pulls from your schedule: \"Cairo 1-2 days\" |",
       "bullets": [],
       "tables": [
         {
@@ -59,8 +59,8 @@
           ],
           "rows": [
             [
-              "guesses delivery time",
-              "pulls from your schedule: \"Cairo 1–2 days\""
+              "Guesses delivery time",
+              "Pulls from your schedule: \"Cairo 1-2 days\""
             ]
           ]
         }
@@ -69,10 +69,10 @@
     {
       "role": "Quiz",
       "heading": "Quiz",
-      "subtitle": "Select the best option based on the section above.",
-      "contentMarkdown": "Write a longer system prompt that says \"Don't guess\".\nChoose a FAQ source or price list and link it to the automation before each response.\nStop the bot and respond manually to all questions.\nExplanation: The correct answer is to choose a FAQ source or price list and link it to the automation before each response.",
+      "subtitle": "Quiz",
+      "contentMarkdown": "> **Quiz key:**\n\nWrite a longer system prompt saying \"Don't guess\".\nChoose a FAQ source or price list and link it to the automation before each response.\nStop the bot and respond manually to all questions.\n\n**Explanation:** The correct answer is to choose a source that provides context for the decision.",
       "bullets": [
-        "Write a longer system prompt that says \"Don't guess\".",
+        "Write a longer system prompt saying \"Don't guess\".",
         "Choose a FAQ source or price list and link it to the automation before each response.",
         "Stop the bot and respond manually to all questions."
       ],
@@ -80,33 +80,33 @@
       "quiz": {
         "correctIndex": 1,
         "options": [
-          "Write a longer system prompt that says \"Don't guess\".",
-          "Stop the bot and respond manually to all questions.",
-          "A partial answer that misses the context and ignores the next step in the decision."
+          "Write a longer system prompt saying \"Don't guess\".",
+          "Choose a FAQ source or price list and link it to the automation before each response.",
+          "Stop the bot and respond manually to all questions."
         ],
-        "explanation": "to choose a FAQ source or price list and link it to the automation before each response.",
+        "explanation": "The correct answer is to choose a source that provides context for the decision.",
         "question": "What is the best option according to the section above?"
       }
     },
     {
       "role": "Mission",
-      "heading": "Mission — One FAQ Source",
+      "heading": "Mission",
       "subtitle": "One FAQ Source",
-      "contentMarkdown": "| Real Source | 60% |\n| Linking a question to a source | 40% |",
+      "contentMarkdown": "| Real Source | 60% |\n| Linking Question to Source | 40% |",
       "bullets": [],
       "tables": []
     },
     {
       "role": "Confidence close",
-      "heading": "Confidence close",
-      "contentMarkdown": "- Next: Agents — a non-fixed path. ---",
+      "heading": "Confidence Close",
+      "contentMarkdown": "- **Next:** **Agents** — a non-fixed path.\n\n---",
       "bullets": [
-        "Next: Agents — a non-fixed path."
+        "**Next:** **Agents** — a non-fixed path."
       ],
       "tables": []
     }
   ],
-  "generatedAt": "2026-06-22T01:20:31.699Z",
+  "generatedAt": "2026-07-07T00:36:19.315Z",
   "adaptedFrom": {
     "locale": "ar-MSA",
     "lessonId": "automator-m5-l2-rag-in-n8n",

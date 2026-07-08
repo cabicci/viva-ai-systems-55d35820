@@ -13,56 +13,56 @@
   "sections": [
     {
       "role": "Orientation",
-      "heading": "Orientation — Lesson Start",
+      "heading": "Orientation",
       "subtitle": "Lesson Start",
-      "contentMarkdown": "- What will you understand? Relations between tables answer real questions — like \"this client's conversations\" or \"this user's files\".\n- Why now? After designing the tables, they need to be linked — otherwise, the data becomes chaotic and the application gets confused.\n- What comes after the lesson? You will design a one-to-many relationship — User → Many Conversations.",
+      "contentMarkdown": "- **What will you understand?** **Relations between tables** answer **real questions** — like \"this client's conversations\" or \"this user's files\".\n- **Why now?** **After designing the tables**, **they need to be linked** — **otherwise, the data becomes chaotic and the application gets confused**.\n- **What after the lesson?** **You will design a one-to-many relationship** — **User → Many Conversations**.",
       "bullets": [
-        "What will you understand? Relations between tables answer real questions — like \"this client's conversations\" or \"this user's files\".",
-        "Why now? After designing the tables, they need to be linked — otherwise, the data becomes chaotic and the application gets confused.",
-        "What comes after the lesson? You will design a one-to-many relationship — User → Many Conversations."
+        "**What will you understand?** **Relations between tables** answer **real questions** — like \"this client's conversations\" or \"this user's files\".",
+        "**Why now?** **After designing the tables**, **they need to be linked** — **otherwise, the data becomes chaotic and the application gets confused**.",
+        "**What after the lesson?** **You will design a one-to-many relationship** — **User → Many Conversations**."
       ],
       "tables": []
     },
     {
       "role": "Tension",
-      "heading": "Tension — AI Forgets Who It Talks To",
-      "subtitle": "AI Forgets Who It Talks To",
-      "contentMarkdown": "- AI talks to Ahmed then to Sarah — and suddenly sends Sarah a summary of Ahmed's conversation. A privacy disaster.\n- The problem: All conversations are in one pile and there is no official link between each conversation and its owner.\n- The solution: Separate the tables and link them with a Foreign Key — everything is linked to its owner.",
+      "heading": "Tension",
+      "subtitle": "AI forgets who it talks to",
+      "contentMarkdown": "- **AI talks to Ahmed and then to Sarah** — **and suddenly sends Sarah a summary of Ahmed's conversation**. **Privacy disaster**.\n- **The problem:** **All conversations are in one pile** **with no official link** between each conversation and its owner.\n- **The solution:** **Separate the tables and link them with a Foreign Key** — **everything is connected to its owner**.",
       "bullets": [
-        "AI talks to Ahmed then to Sarah — and suddenly sends Sarah a summary of Ahmed's conversation. A privacy disaster.",
-        "The problem: All conversations are in one pile and there is no official link between each conversation and its owner.",
-        "The solution: Separate the tables and link them with a Foreign Key — everything is linked to its owner."
+        "**AI talks to Ahmed and then to Sarah** — **and suddenly sends Sarah a summary of Ahmed's conversation**. **Privacy disaster**.",
+        "**The problem:** **All conversations are in one pile** **with no official link** between each conversation and its owner.",
+        "**The solution:** **Separate the tables and link them with a Foreign Key** — **everything is connected to its owner**."
       ],
       "tables": []
     },
     {
       "role": "Core idea",
-      "heading": "Core Idea — Relations Answer Real Questions",
-      "subtitle": "Relations Answer Real Questions",
-      "contentMarkdown": "- Instead of one table with everything — two tables: `users` and `conversations`. Each conversation has a `user_id` that points to its owner.\n- One-to-Many: One client → Many conversations. Each conversation belongs to only one owner.\n- The question \"Get conversations for client 5\" = a relation. Without it, the database does not respond.",
+      "heading": "Core idea",
+      "subtitle": "Relations answer real questions",
+      "contentMarkdown": "- **Instead of one table with everything** — **two tables**: `users` and `conversations`. **Each conversation has a `user_id` that points to its owner**.\n- **One-to-Many:** **One client → Many conversations**. **Each conversation belongs to only one owner**.\n- **The question \"Get conversations for client 5\" = relationship**. **Without it, the database does not respond**.",
       "bullets": [
-        "Instead of one table with everything — two tables: `users` and `conversations`. Each conversation has a `user_id` that points to its owner.",
-        "One-to-Many: One client → Many conversations. Each conversation belongs to only one owner.",
-        "The question \"Get conversations for client 5\" = a relation. Without it, the database does not respond."
+        "**Instead of one table with everything** — **two tables**: `users` and `conversations`. **Each conversation has a `user_id` that points to its owner**.",
+        "**One-to-Many:** **One client → Many conversations**. **Each conversation belongs to only one owner**.",
+        "**The question \"Get conversations for client 5\" = relationship**. **Without it, the database does not respond**."
       ],
       "tables": []
     },
     {
       "role": "Comparison",
-      "heading": "Comparison — One Pile vs. Separate and Link",
-      "subtitle": "One Pile vs. Separate and Link",
-      "contentMarkdown": "| Everything in One Table | Two Linked Tables |\n|---------------------|----------------|\n| `Conversations(client_name, email, message)`. Change the name? Update all messages. Mistake in a letter? New client | `users(id, name)` and `conversations(id, user_id, message)`. Change the name in one place. Each conversation is linked to `user_id` |",
+      "heading": "Comparison",
+      "subtitle": "One pile vs. Separate and link",
+      "contentMarkdown": "| Everything in one table | Two linked tables |\n|---------------------|----------------|\n| `conversations(client_name, email, message)`. **Change the name? Update all messages**. **Error in a letter? New client** | `users(id, name)` and `conversations(id, user_id, message)`. **Change the name in one place**. **Each conversation is linked to `user_id`** |",
       "bullets": [],
       "tables": [
         {
           "headers": [
-            "Everything in One Table",
-            "Two Linked Tables"
+            "Everything in one table",
+            "Two linked tables"
           ],
           "rows": [
             [
-              "`Conversations(client_name, email, message)`. Change the name? Update all messages. Mistake in a letter? New client.",
-              "`users(id, name)` and `conversations(id, user_id, message)`. Change the name in one place. Each conversation is linked to `user_id`."
+              "`conversations(client_name, email, message)`. **Change the name? Update all messages**. **Error in a letter? New client**.",
+              "`users(id, name)` and `conversations(id, user_id, message)`. **Change the name in one place**. **Each conversation is linked to `user_id`**."
             ]
           ]
         }
@@ -70,9 +70,9 @@
     },
     {
       "role": "Glossary",
-      "heading": "Glossary — Two Terms for Linking",
-      "subtitle": "Two Terms for Linking",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| Foreign Key | A column in one table that points to `id` in another table — the link between them | `conversations.user_id` → `users.id` |\n| One-to-Many | One row in Table A → Many rows in Table B | One client → Many conversations. Each conversation belongs to one owner |",
+      "heading": "Glossary",
+      "subtitle": "Terms for linking",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Foreign Key** | **A column in one table that points to `id` in another table** — **the link between them** | `conversations.user_id` → `users.id` |\n| **One-to-Many** | **One row in Table A → many rows in Table B** | **One client → many conversations**. **Each conversation belongs to one owner** |",
       "bullets": [],
       "tables": [
         {
@@ -83,14 +83,14 @@
           ],
           "rows": [
             [
-              "Foreign Key",
-              "A column in one table that points to `id` in another table — the link between them.",
+              "**Foreign Key**",
+              "**A column in one table that points to `id` in another table** — **the link between them**",
               "`conversations.user_id` → `users.id`"
             ],
             [
-              "One-to-Many",
-              "One row in Table A → Many rows in Table B.",
-              "One client → Many conversations. Each conversation belongs to one owner."
+              "**One-to-Many**",
+              "**One row in Table A → many rows in Table B**",
+              "**One client → many conversations**. **Each conversation belongs to one owner**."
             ]
           ]
         }
@@ -98,38 +98,38 @@
     },
     {
       "role": "Screenshot block (intent)",
-      "heading": "Screenshot Block (Intent)",
-      "contentMarkdown": "The link between the tables: Imagine `users` = clients and `posts` = conversations. `posts.user_id` = the link that indicates who owns the conversation. Without it, the application is blind.",
+      "heading": "Screenshot block (intent)",
+      "contentMarkdown": "**The link between the tables:**\n\nImagine `users` = clients and `posts` = conversations. **`posts.user_id` = the link** that indicates **who owns the conversation**. **Without it, the application is blind**.",
       "bullets": [],
       "tables": []
     },
     {
       "role": "Quiz",
-      "heading": "Quiz — Quick Confirmation",
+      "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "Question: Each client (`user`) has many conversations (`conversations`). If the client deletes their account, what is safest for their conversations?\nThe conversations are deleted with it (Cascade Delete) — to protect their privacy.\nThe conversations remain and `user_id` becomes empty.\nThe system refuses to delete the client as long as they have conversations.\nExplanation: Cascade Delete protects the client's privacy — no sensitive data after they leave.",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**Question:** **Each client (`user`) has many conversations (`conversations`). If the client deletes their account, what is the safest option for their conversations?**\n\n**The conversations are deleted with them (Cascade Delete)** — **to protect their privacy**.\nThe conversations remain and `user_id` becomes empty.\nThe system refuses to delete the client as long as they have conversations.\n\n**Explanation:** **Cascade Delete protects the client's privacy** — **no sensitive data after they leave**.",
       "bullets": [
-        "The conversations are deleted with it (Cascade Delete) — to protect their privacy.",
+        "The conversations are deleted with them (Cascade Delete) — to protect their privacy.",
         "The conversations remain and `user_id` becomes empty.",
         "The system refuses to delete the client as long as they have conversations."
       ],
       "tables": [],
       "quiz": {
-        "question": "Each client (`user`) has many conversations (`conversations`). If the client deletes their account, what is safest for their conversations?",
+        "question": "**Each client (`user`) has many conversations (`conversations`). If the client deletes their account, what is the safest option for their conversations?**",
         "correctIndex": 0,
         "options": [
-          "The conversations are deleted with it (Cascade Delete) — to protect their privacy.",
+          "The conversations are deleted with them (Cascade Delete) — to protect their privacy.",
           "The conversations remain and `user_id` becomes empty.",
           "The system refuses to delete the client as long as they have conversations."
         ],
-        "explanation": "Cascade Delete protects the client's privacy — no sensitive data after they leave."
+        "explanation": "**Cascade Delete protects the client's privacy** — **no sensitive data after they leave**."
       }
     },
     {
       "role": "Mission",
-      "heading": "Mission — Design a User-to-Many Relationship",
-      "subtitle": "Design a User-to-Many Relationship",
-      "contentMarkdown": "Introduction: Your application has users and each user has many items (conversations, files, tasks). Design the relationship. 10 minutes. Submission: One table, many table, link column (`user_id` → `id`), deletion behavior and why. Evaluation Criteria: | Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Relationship Design | 70% | `user_id` in the many table; points to `id` in the one table; One-to-Many is clear |\n| Deletion Decision | 30% | Behavior when deleting the user; the reason is logical — privacy or protection |",
+      "heading": "Mission",
+      "subtitle": "Design a user-to-many relationship",
+      "contentMarkdown": "**Introduction:** **Your application has users, and each user has many items** (conversations, files, tasks). **Design the relationship**. **10 minutes**.\n\n**Submission:** **One table**, **many table**, **link column** (`user_id` → `id`), **deletion behavior** and why.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Relationship Design | 70% | **`user_id` in the many table**; **points to `id` in the one table**; **One-to-Many is clear** |\n| Deletion Decision | 30% | **Behavior when deleting the user**; **the reason is logical — privacy or protection** |",
       "bullets": [],
       "tables": [
         {
@@ -142,29 +142,29 @@
             [
               "Relationship Design",
               "70%",
-              "`user_id` in the many table; points to `id` in the one table; One-to-Many is clear."
+              "**`user_id` in the many table**; **points to `id` in the one table**; **One-to-Many is clear**."
             ],
             [
               "Deletion Decision",
               "30%",
-              "Behavior when deleting the user; the reason is logical — privacy or protection."
+              "**Behavior when deleting the user**; **the reason is logical — privacy or protection**."
             ]
           ]
         }
       ],
       "mission": {
-        "intro": "Your application has users and each user has many items (conversations, files, tasks). Design the relationship. 10 minutes.",
+        "intro": "**Introduction:** **Your application has users, and each user has many items** (conversations, files, tasks). **Design the relationship**. **10 minutes**.",
         "delivery": [],
         "rubric": [
           {
             "dimension": "Relationship Design",
             "weight": 70,
-            "criteria": "`user_id` in the many table; points to `id` in the one table; One-to-Many is clear."
+            "criteria": "**`user_id` in the many table**; **points to `id` in the one table**; **One-to-Many is clear**."
           },
           {
             "dimension": "Deletion Decision",
             "weight": 30,
-            "criteria": "Behavior when deleting the user; the reason is logical — privacy or protection."
+            "criteria": "**Behavior when deleting the user**; **the reason is logical — privacy or protection**."
           }
         ],
         "yamlIntent": "Design One-to-Many — one table, many table, link column, delete behavior — ~10 min",
@@ -173,17 +173,17 @@
     },
     {
       "role": "Confidence close",
-      "heading": "Confidence Close",
-      "contentMarkdown": "- You understood: Relations answer real questions. `user_id` = the link that prevents chaos.\n- You can: You have a designed user-to-many relationship — ready for specific questions to the database.\n- Next: Queries — how to ask the database a clear question and retrieve your data quickly.",
+      "heading": "Confidence close",
+      "contentMarkdown": "- **You understood:** **Relations answer real questions**. **`user_id` = the link that prevents chaos**.\n- **You can:** **You have a designed user-to-many relationship** — **ready for specific questions to the database**.\n- **Next:** **Queries** — **how to ask the database a clear question and retrieve your data quickly**.",
       "bullets": [
-        "You understood: Relations answer real questions. `user_id` = the link that prevents chaos.",
-        "You can: You have a designed user-to-many relationship — ready for specific questions to the database.",
-        "Next: Queries — how to ask the database a clear question and retrieve your data quickly."
+        "**You understood:** **Relations answer real questions**. **`user_id` = the link that prevents chaos**.",
+        "**You can:** **You have a designed user-to-many relationship** — **ready for specific questions to the database**.",
+        "**Next:** **Queries** — **how to ask the database a clear question and retrieve your data quickly**."
       ],
       "tables": []
     }
   ],
-  "generatedAt": "2026-06-22T01:22:48.574Z",
+  "generatedAt": "2026-07-07T00:42:43.416Z",
   "adaptedFrom": {
     "locale": "ar-MSA",
     "lessonId": "builder-m7-l2-relations",

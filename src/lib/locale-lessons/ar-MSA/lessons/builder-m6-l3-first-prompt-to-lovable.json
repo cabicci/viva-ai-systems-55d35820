@@ -100,13 +100,6 @@
       ]
     },
     {
-      "role": "Video block (production reference only)",
-      "heading": "Video block (production reference only)",
-      "contentMarkdown": "> في الإنتاج: فيديو Bunny — «prompt غامض vs واضح». **لا يُعاد توليده.**",
-      "bullets": [],
-      "tables": []
-    },
-    {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot block (intent)",
       "contentMarkdown": "**Prompt على اليسار — preview على اليمين**. **الـ prompt ليس «اعمل واجهة»** — **فيه goal، نشاط، أقسام بالاسم، وstyle**. **النتيجة أقرب من أول مرة**.",
@@ -117,20 +110,20 @@
       "role": "Quiz",
       "heading": "Quiz — تأكيد سريع",
       "subtitle": "تأكيد سريع",
-      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** **تريد Lovable يبني Home Page فقط — بدون login. ما أفضل جزء في Prompt Spec؟**\n\n- **الإجابة الصحيحة (خيار ١):** **Constraints: صفحة واحدة (Home) — بدون login في النسخة الأولى**.\n- خيار ٢: «**اعمل موقعًا كاملًا**».\n- خيار ٣: **Style: ألوان جميلة**.\n\n**التفسير:** **Constraints + Scope يحدّدان الحدود** — **AI لا يخمّن ميزات زائدة**.",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** **تريد Lovable يبني Home Page فقط — بدون login. ما أفضل جزء في Prompt Spec؟**\n\n**Constraints: صفحة واحدة (Home) — بدون login في النسخة الأولى**.\n«**اعمل موقعًا كاملًا**».\nStyle: ألوان جميلة.\n\n**التفسير:** **Constraints + Scope يحدّدان الحدود** — **AI لا يخمّن ميزات زائدة**.",
       "bullets": [
-        "**الإجابة الصحيحة (خيار ١):** **Constraints: صفحة واحدة (Home) — بدون login في النسخة الأولى**.",
-        "خيار ٢: «**اعمل موقعًا كاملًا**».",
-        "خيار ٣: **Style: ألوان جميلة**."
+        "Constraints: صفحة واحدة (Home) — بدون login في النسخة الأولى.",
+        "«اعمل موقعًا كاملًا».",
+        "Style: ألوان جميلة."
       ],
       "tables": [],
       "quiz": {
         "question": "**تريد Lovable يبني Home Page فقط — بدون login. ما أفضل جزء في Prompt Spec؟**",
         "correctIndex": 0,
         "options": [
-          "**الإجابة الصحيحة (خيار ١):** **Constraints: صفحة واحدة (Home) — بدون login في النسخة الأولى**.",
-          "«**اعمل موقعًا كاملًا**».",
-          "Style: ألوان جميلة**.**"
+          "Constraints: صفحة واحدة (Home) — بدون login في النسخة الأولى.",
+          "«اعمل موقعًا كاملًا».",
+          "Style: ألوان جميلة."
         ],
         "explanation": "**Constraints + Scope يحدّدان الحدود** — **AI لا يخمّن ميزات زائدة**."
       }
@@ -170,7 +163,13 @@
       ],
       "mission": {
         "intro": "**مسودة للنسخ — ليس تنفيذًا**. **استخدم Wireframe من الدرس السابق**. **١٠–١٥ دقيقة**.",
-        "delivery": [],
+        "delivery": [
+          "**Goal:** [نوع الواجهة + ماذا تفعل]",
+          "**Users:** [من يستخدمها]",
+          "**Pages:** [أقسام Wireframe بالاسم]",
+          "**Style:** [لونان + mood]",
+          "**Constraints:** [ما ليس في النسخة الأولى]"
+        ],
         "rubric": [
           {
             "dimension": "الخمسة موجودون",

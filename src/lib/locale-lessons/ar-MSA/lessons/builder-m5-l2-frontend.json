@@ -98,13 +98,6 @@
       ]
     },
     {
-      "role": "Video block (production reference only)",
-      "heading": "Video block (production reference only)",
-      "contentMarkdown": "> في الإنتاج: فيديو Bunny — «شكل vs عمل — Frontend و Backend». **لا يُعاد توليده.**",
-      "bullets": [],
-      "tables": []
-    },
-    {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot block (intent)",
       "contentMarkdown": "**افتح أي تطبيق AI → انقر يمين → Inspect**. **ما تراه Frontend** — **الكود الذي بنى الشاشة**. **جرّب بنفسك (F12 أو Inspect)**.",
@@ -115,20 +108,20 @@
       "role": "Quiz",
       "heading": "Quiz — تأكيد سريع",
       "subtitle": "تأكيد سريع",
-      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** **في تطبيق شات AI، مربع الكتابة الذي تكتب فيه السؤال — Frontend أم Backend؟**\n\n- **الإجابة الصحيحة (خيار ١):** **Frontend** — **لأن العميل يراه ويستخدمه**.\n- خيار ٢: **Backend** — **لأنه يرسل السؤال**.\n- خيار ٣: **Database** — **لأنه يحفظ الكلام**.\n\n**التفسير:** **مربع الكتابة على الشاشة = Frontend**. **إرسال السؤال للـ AI = Backend**.",
+      "contentMarkdown": "> **Quiz key (unchanged):** correctIndex: 0\n\n**السؤال:** **في تطبيق شات AI، مربع الكتابة الذي تكتب فيه السؤال — Frontend أم Backend؟**\n\n**Frontend** — **لأن العميل يراه ويستخدمه**.\nBackend** — **لأنه يرسل السؤال.\nDatabase** — **لأنه يحفظ الكلام.\n\n**التفسير:** **مربع الكتابة على الشاشة = Frontend**. **إرسال السؤال للـ AI = Backend**.",
       "bullets": [
-        "**الإجابة الصحيحة (خيار ١):** **Frontend** — **لأن العميل يراه ويستخدمه**.",
-        "خيار ٢: **Backend** — **لأنه يرسل السؤال**.",
-        "خيار ٣: **Database** — **لأنه يحفظ الكلام**."
+        "Frontend — لأن العميل يراه ويستخدمه.",
+        "Backend — لأنه يرسل السؤال.",
+        "Database — لأنه يحفظ الكلام."
       ],
       "tables": [],
       "quiz": {
         "question": "**في تطبيق شات AI، مربع الكتابة الذي تكتب فيه السؤال — Frontend أم Backend؟**",
         "correctIndex": 0,
         "options": [
-          "**الإجابة الصحيحة (خيار ١):** **Frontend** — **لأن العميل يراه ويستخدمه**.",
-          "Backend** — **لأنه يرسل السؤال**.**",
-          "Database** — **لأنه يحفظ الكلام**.**"
+          "Frontend — لأن العميل يراه ويستخدمه.",
+          "Backend — لأنه يرسل السؤال.",
+          "Database — لأنه يحفظ الكلام."
         ],
         "explanation": "**مربع الكتابة على الشاشة = Frontend**. **إرسال السؤال للـ AI = Backend**."
       }

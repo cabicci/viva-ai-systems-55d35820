@@ -15,11 +15,11 @@
       "role": "Orientation",
       "heading": "Orientation",
       "subtitle": "What Will You Understand?",
-      "contentMarkdown": "- **What Will You Understand?** The **Prompt** (the request or instruction you send to the AI) is not a magic sentence, but a clear request that specifies what you want from the model.\n- **Why Now?** In the previous lesson, you tried the AI once. Today, you will understand why it sometimes gives an excellent response and sometimes a general one.\n- **What After the Lesson?** You will write one improved **Prompt** for a real need from your work or daily life — ready to use or experiment.",
+      "contentMarkdown": "- **What Will You Understand?** The **Prompt** (the request or instruction you send to the AI) is not a magic sentence, but a clear request that specifies what is needed from the model.\n- **Why Now?** In the previous lesson, you tried the AI once. Today, you will understand why it sometimes gives an excellent response and other times a general one.\n- **What After the Lesson?** You will write one improved **Prompt** for a real need from your work or daily life — ready to use or experiment with.",
       "bullets": [
-        "**What Will You Understand?** The **Prompt** (the request or instruction you send to the AI) is not a magic sentence, but a clear request that specifies what you want from the model.",
-        "**Why Now?** In the previous lesson, you tried the AI once. Today, you will understand why it sometimes gives an excellent response and sometimes a general one.",
-        "**What After the Lesson?** You will write one improved **Prompt** for a real need from your work or daily life — ready to use or experiment."
+        "**What Will You Understand?** The **Prompt** (the request or instruction you send to the AI) is not a magic sentence, but a clear request that specifies what is needed from the model.",
+        "**Why Now?** In the previous lesson, you tried the AI once. Today, you will understand why it sometimes gives an excellent response and other times a general one.",
+        "**What After the Lesson?** You will write one improved **Prompt** for a real need from your work or daily life — ready to use or experiment with."
       ],
       "tables": []
     },
@@ -48,7 +48,7 @@
       "role": "Glossary",
       "heading": "Glossary",
       "subtitle": "Key Terms",
-      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Prompt** | The message you write to the AI to perform a specific task | \"Summarize this email in 3 points\" — this is a Prompt |\n| **Context** | The details that help the model understand the situation before responding | \"I am a sales employee responding to a late customer\" is better than just \"Write a response\" |",
+      "contentMarkdown": "| Term | Meaning | Example |\n|---------|--------|------|\n| **Prompt** | The message you write to the AI to perform a specific task | \"Summarize this email in 3 points\" — this is a Prompt |\n| **Context** | The details that help the model understand the situation before responding | \"I am a sales employee responding to a late client\" is better than just \"Write a response\" |",
       "bullets": [],
       "tables": [
         {
@@ -66,7 +66,7 @@
             [
               "**Context**",
               "The details that help the model understand the situation before responding",
-              "\"I am a sales employee responding to a late customer\" is better than just \"Write a response\""
+              "\"I am a sales employee responding to a late client\" is better than just \"Write a response\""
             ]
           ]
         }
@@ -76,7 +76,7 @@
       "role": "Comparison",
       "heading": "Comparison",
       "subtitle": "Real-Life Example",
-      "contentMarkdown": "| Vague Request | Clear Request |\n|----------|----------|\n| \"Write something about marketing\" → General paragraphs with no audience or goal, hard to use | \"You are a content editor. I am opening a candy shop in Alexandria. Write 3 post ideas, each two lines\" → A response close to what you will publish |",
+      "contentMarkdown": "| Vague Request | Clear Request |\n|----------|----------|\n| \"Write me something about marketing\" → General paragraphs with no audience or goal, hard to use | \"You are a content editor. I am opening a candy shop in Alexandria. Write 3 post ideas, each two lines\" → A response close to what you will publish |",
       "bullets": [],
       "tables": [
         {
@@ -86,7 +86,7 @@
           ],
           "rows": [
             [
-              "\"Write something about marketing\" → General paragraphs with no audience or goal, hard to use",
+              "\"Write me something about marketing\" → General paragraphs with no audience or goal, hard to use",
               "\"You are a content editor. I am opening a candy shop in Alexandria. Write 3 post ideas, each two lines\" → A response close to what you will publish"
             ]
           ]
@@ -104,10 +104,10 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "> **Quiz key:** correctIndex: 0\n\n**Question:** Ahmed wrote: \"Write an email for a new job.\" What is the most important addition first?\n\n- **Correct answer:** Context — who Ahmed is, what the job is, and why this email.\n- **Explanation:** The AI does not know your life. Context + a clear task turn the request from general to practical.",
+      "contentMarkdown": "> **Quiz key:** correctIndex: 0\n\n**Question:** Ahmed wrote: \"Write an email for a new job.\" What is the most important addition first?\n\nContext — who Ahmed is, what the job is, and why this email.\n- **Explanation:** The AI does not know your life. Context + a clear task turn the request from general to practical.",
       "bullets": [
-        "**Correct answer:** Context — who Ahmed is, what the job is, and why this email.",
-        "**Explanation:** The AI does not know your life. Context + a clear task turn the request from general to practical."
+        "Context — who Ahmed is, what the job is, and why this email.",
+        "Explanation: The AI does not know your life. Context + a clear task turn the request from general to practical."
       ],
       "tables": [],
       "quiz": {
@@ -125,7 +125,7 @@
       "role": "Mission",
       "heading": "Mission",
       "subtitle": "Your Mission",
-      "contentMarkdown": "**Introduction:** Choose a need you really have — an email, a post, a summary, a response to a message — and write one Prompt that includes the role, context, task, and format. A perfect answer is not required; a clear attempt that can be tried in any AI tool is what is needed.\n\n**Delivery:**\n1. The topic you chose (one sentence)\n2. The complete Prompt — with highlights: [Role] [Context] [Task] [Format]\n3. If you tried it: the response in one or two lines. If you haven’t tried it yet: write that you will try it in the next lesson.\n\n**Evaluation Criteria (from production — unchanged weights):**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Clear Request | 70% | The Prompt includes role, context, task, and format — even if simple |\n| Real Topic | 30% | You chose a topic from your work or daily life — not a general empty example |",
+      "contentMarkdown": "**Introduction:** Choose a need you really have — an email, a post, a summary, a response to a message — and write one Prompt that includes the role, context, task, and format. A perfect answer is not required; a clear attempt that can be tried in any AI tool is what is needed.\n\n**Delivery:**\n1. The topic you chose (one sentence)\n2. The complete Prompt — with highlights: [Role] [Context] [Task] [Format]\n3. If you tried it: the response in one or two lines. If you haven’t tried it yet: write that you will try it in the next lesson.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Clear Request | 70% | The Prompt includes a role, context, task, and format — even if simple |\n| Real Topic | 30% | You chose a topic from your work or daily life — not a general empty example |",
       "bullets": [],
       "tables": [
         {
@@ -138,7 +138,7 @@
             [
               "Clear Request",
               "70%",
-              "The Prompt includes role, context, task, and format — even if simple"
+              "The Prompt includes a role, context, task, and format — even if simple"
             ],
             [
               "Real Topic",
@@ -159,7 +159,7 @@
           {
             "dimension": "Clear Request",
             "weight": 70,
-            "criteria": "The Prompt includes role, context, task, and format — even if simple"
+            "criteria": "The Prompt includes a role, context, task, and format — even if simple"
           },
           {
             "dimension": "Real Topic",
@@ -175,16 +175,16 @@
       "role": "Confidence close",
       "heading": "Confidence Close",
       "subtitle": "What Do You Have Now?",
-      "contentMarkdown": "- **You Understood:** A clear Prompt is not magic — it’s instructions + context. The clearer you are, the better the response.\n- **You Can:** Write a specific request for any need and adjust it until it suits you.\n- **Next:** In the next lesson, you will open your first AI tool and send a simple message — a practical application of what you wrote here.",
+      "contentMarkdown": "- **You Understood:** A clear Prompt is not magic — it is instructions + context. The clearer you are, the better the response.\n- **You Can:** Write a specific request for any need and adjust it until it suits you.\n- **Next:** In the next lesson, you will open your first AI tool and send a simple message — a practical application of what you wrote here.\n\n---",
       "bullets": [
-        "**You Understood:** A clear Prompt is not magic — it’s instructions + context. The clearer you are, the better the response.",
+        "**You Understood:** A clear Prompt is not magic — it is instructions + context. The clearer you are, the better the response.",
         "**You Can:** Write a specific request for any need and adjust it until it suits you.",
         "**Next:** In the next lesson, you will open your first AI tool and send a simple message — a practical application of what you wrote here."
       ],
       "tables": []
     }
   ],
-  "generatedAt": "2026-07-06T22:20:36.233Z",
+  "generatedAt": "2026-07-07T01:23:06.919Z",
   "adaptedFrom": {
     "locale": "ar-MSA",
     "lessonId": "intro-m1-l2-first-prompt",
