@@ -195,8 +195,8 @@ describe("phase13b repair idempotence and scope", () => {
     const first = await repairAllRecoveredPackages();
     const second = await repairAllRecoveredPackages();
     expect(second.filesWritten).toBe(0);
-    expect(second.auditAfter).toBe(2);
-    expect(first.auditAfter).toBe(2);
+    expect(second.auditAfter).toBe(0);
+    expect(first.auditAfter).toBe(0);
   }, 120_000);
 
   it("repair is idempotent for known defect packages", async () => {
@@ -300,12 +300,35 @@ describe("phase13b full recovered corpus QA", () => {
     expect(validation.missingIds).toEqual([]);
     expect(validation.retryCells).toEqual([]);
     expect(validation.complete).toBe(true);
-    expect(validation.blockedMissingGulfQuiz).toEqual([
-      "ar-Gulf/analyst-m6-l2-interpretation-mistakes",
-      "ar-Gulf/automator-m5-l2-rag-in-n8n",
-    ]);
-    expect(validation.mergeBlocked).toBe(true);
-    expect(validation.ok).toBe(false);
+    expect(validation.blockedMissingGulfQuiz).toEqual([]);
+    expect(validation.mergeBlocked).toBe(false);
+    expect(validation.ok).toBe(true);
+
+    const analystPath = path.join(
+      REPO_ROOT,
+      "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-Gulf",
+      "analyst-m6-l2-interpretation-mistakes.json",
+    );
+    const automatorPath = path.join(
+      REPO_ROOT,
+      "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-Gulf",
+      "automator-m5-l2-rag-in-n8n.json",
+    );
+
+    const analystPkg = await loadJson<AdaptedLessonPackage>(analystPath);
+    const analystQuiz = analystPkg.sections.find((s) => s.role === "Quiz")?.quiz;
+    expect(analystQuiz).toBeTruthy();
+    expect(analystQuiz?.correctIndex).toBe(0);
+    expect(analystQuiz?.question?.trim()).toBeTruthy();
+    expect(analystQuiz?.explanation?.trim()).toBeTruthy();
+
+    const automatorPkg = await loadJson<AdaptedLessonPackage>(automatorPath);
+    const automatorQuiz = automatorPkg.sections.find((s) => s.role === "Quiz")?.quiz;
+    expect(automatorQuiz).toBeTruthy();
+    expect(automatorQuiz?.correctIndex).toBe(1);
+    expect(automatorQuiz?.question?.trim()).toBeTruthy();
+    expect(automatorQuiz?.explanation?.trim()).toBeTruthy();
+
     const nonBlockedErrors = validation.validationErrors.filter(
       (error) =>
         !BLOCKED_MISSING_GULF_QUIZ_LESSONS.some(
@@ -324,7 +347,7 @@ describe("phase13b full recovered corpus QA", () => {
     );
     expect(nonBlocked).toEqual([]);
     expect(errors.filter((issue) => issue.kind === "blocked_missing_gulf_quiz")).toHaveLength(
-      2,
+      0,
     );
   }, 120_000);
 });
