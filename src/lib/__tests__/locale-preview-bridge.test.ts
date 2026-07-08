@@ -15,6 +15,7 @@ import {
   parseLessonPreviewSearch,
   resolveRouteLessonAccess,
 } from "@/lib/locale-lessons/lesson-preview-search";
+import { adaptPackageQuizToQuizItem } from "@/lib/locale-lessons/adapt-package-to-live-quiz";
 import { getPackageLessonIds } from "@/lib/locale-lessons/registry";
 import type { LessonPackageLocale, LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 
@@ -43,6 +44,15 @@ function serializedPreviewText(
 
 function findPreviewInternalLabelLeaks(blob: string): string[] {
   return PREVIEW_INTERNAL_LABEL_LEAKS.filter((label) => blob.includes(label));
+}
+
+function cleanPreviewQuizOption(text: string): string {
+  return text
+    .replace(/\*\*/g, "")
+    .trim()
+    .replace(/^(correct answer|الإجابة الصحيحة)\s*:?\s*/i, "")
+    .replace(/\(correctIndex\s*:\s*\d+\)/gi, "")
+    .trim();
 }
 
 describe("package-section-labels compound prefix stripping", () => {
@@ -148,14 +158,32 @@ describe("locale preview bridge (Phase 6.5)", () => {
   });
 
   it("does not expose quiz correctIndex in preview blocks", () => {
-    const pkg = readPackage("en", "intro-m1-l1-what-is-ai");
+    const lessonId = "intro-m1-l1-what-is-ai";
+    const pkg = readPackage("en", lessonId);
+    const quizSection = pkg.sections.find((section) => section.quiz?.options?.length);
+    expect(quizSection?.quiz).toBeTruthy();
+    const runtimeQuiz = quizSection!.quiz!;
+    const expectedOptionCount = runtimeQuiz.options.length;
+
+    expect(typeof runtimeQuiz.correctIndex).toBe("number");
+    expect(Number.isInteger(runtimeQuiz.correctIndex)).toBe(true);
+    expect(runtimeQuiz.correctIndex!).toBeGreaterThanOrEqual(0);
+    expect(runtimeQuiz.correctIndex!).toBeLessThan(expectedOptionCount);
+
+    const liveItem = adaptPackageQuizToQuizItem(lessonId, runtimeQuiz, 0);
+    expect([...liveItem.options]).toEqual([...runtimeQuiz.options]);
+    expect(liveItem.correctIndex).toBe(runtimeQuiz.correctIndex);
+
     const quiz = adaptLocalizedPackageToPreviewContent(pkg).find(
       (section) => section.block.kind === "quizPreview",
     );
 
     expect(quiz).toBeTruthy();
     if (!quiz || quiz.block.kind !== "quizPreview") return;
-    expect(quiz.block.options.length).toBe(4);
+    expect(quiz.block.options.length).toBe(expectedOptionCount);
+    expect(quiz.block.options).toEqual(
+      runtimeQuiz.options.map(cleanPreviewQuizOption).filter(Boolean),
+    );
     expect(serializedPreviewText([quiz])).not.toMatch(/correctIndex/i);
     expect(quiz.block.options.join(" ")).not.toMatch(/^\*\*Correct Answer/i);
   });
