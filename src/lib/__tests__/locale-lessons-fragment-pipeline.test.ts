@@ -21,6 +21,26 @@ import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
 
+const INTERNAL_PRODUCTION_VIDEO_SECTION = {
+  role: "Video block (production reference only)",
+  heading: "Video block (production reference only)",
+  contentMarkdown: "> في الإنتاج: فيديو Bunny. **لا يُعاد توليده.**",
+  bullets: [] as string[],
+  tables: [] as [],
+};
+
+function withInternalProductionVideoSection(
+  source: LocalizedLessonPackage,
+): LocalizedLessonPackage {
+  const sections = [...source.sections];
+  const closeIdx = sections.findIndex((section) =>
+    /confidence close/i.test(section.role),
+  );
+  const insertAt = closeIdx >= 0 ? closeIdx : sections.length;
+  sections.splice(insertAt, 0, { ...INTERNAL_PRODUCTION_VIDEO_SECTION });
+  return { ...source, sections };
+}
+
 async function loadTargetReference(
   lessonId: string,
   locale: "en" | "ar-Gulf",
@@ -62,7 +82,9 @@ describe("locale-lessons fragment localization pipeline", () => {
   });
 
   it("excludes internal production/video sections from extraction", async () => {
-    const source = await loadMsaLessonPackage("intro-m1-l1-what-is-ai");
+    const source = withInternalProductionVideoSection(
+      await loadMsaLessonPackage("intro-m1-l1-what-is-ai"),
+    );
     const videoIndex = source.sections.findIndex((section) =>
       isInternalProductionReferenceSection(section),
     );

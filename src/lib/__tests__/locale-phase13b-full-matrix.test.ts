@@ -45,10 +45,31 @@ import {
   parsePhase13BBatchArtifactDirName,
   parsePhase13BShardArtifactDirName,
 } from "../../../scripts/locale-lessons/lib/phase13b-artifact-index.ts";
+import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 
 const SAMPLE_LESSON_ID = "intro-m1-l1-what-is-ai";
 const tempDirs: string[] = [];
 const writtenJobResults: string[] = [];
+
+const INTERNAL_PRODUCTION_VIDEO_SECTION = {
+  role: "Video block (production reference only)",
+  heading: "Video block (production reference only)",
+  contentMarkdown: "> في الإنتاج: فيديو Bunny. **لا يُعاد توليده.**",
+  bullets: [] as string[],
+  tables: [] as [],
+};
+
+function withInternalProductionVideoSection(
+  source: LocalizedLessonPackage,
+): LocalizedLessonPackage {
+  const sections = [...source.sections];
+  const closeIdx = sections.findIndex((section) =>
+    /confidence close/i.test(section.role),
+  );
+  const insertAt = closeIdx >= 0 ? closeIdx : sections.length;
+  sections.splice(insertAt, 0, { ...INTERNAL_PRODUCTION_VIDEO_SECTION });
+  return { ...source, sections };
+}
 
 afterEach(async () => {
   await Promise.all(
@@ -197,7 +218,9 @@ describe("Phase 13B full-scale matrix", () => {
 
 describe("Phase 13B cell runner (dry-run, no paid API)", () => {
   it("derives ar-MSA learner-final deterministically without paid API", async () => {
-    const sourceBefore = await loadMsaLessonPackage(SAMPLE_LESSON_ID);
+    const sourceBefore = withInternalProductionVideoSection(
+      await loadMsaLessonPackage(SAMPLE_LESSON_ID),
+    );
     const summary = await runPhase13BFullCell({
       locale: "ar-MSA",
       lessonId: SAMPLE_LESSON_ID,
@@ -213,7 +236,9 @@ describe("Phase 13B cell runner (dry-run, no paid API)", () => {
     expect(summary.ok).toBe(true);
     expect(summary.wrotePackage).toBe(false);
 
-    const sourceAfter = await loadMsaLessonPackage(SAMPLE_LESSON_ID);
+    const sourceAfter = withInternalProductionVideoSection(
+      await loadMsaLessonPackage(SAMPLE_LESSON_ID),
+    );
     expect(sourceAfter).toEqual(sourceBefore);
     expect(
       sourceAfter.sections.some((section) => section.role.includes("Video block")),
@@ -239,7 +264,9 @@ describe("Phase 13B cell runner (dry-run, no paid API)", () => {
   });
 
   it("derives sanitized learner-final ar-MSA from canonical source in memory", async () => {
-    const source = await loadMsaLessonPackage(SAMPLE_LESSON_ID);
+    const source = withInternalProductionVideoSection(
+      await loadMsaLessonPackage(SAMPLE_LESSON_ID),
+    );
     const { pkg, errors } = deriveArMsaLearnerFinalPackage(structuredClone(source));
 
     expect(errors).toEqual([]);

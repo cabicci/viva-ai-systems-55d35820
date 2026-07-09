@@ -49,8 +49,12 @@ describe("locale curriculum module labels (Phase 12.5B)", () => {
   });
 
   it("keeps ar-EG module labels in Egyptian Arabic", () => {
-    expect(getCurriculumModuleLabel("ar-EG", "intro-m1", "title")).toBe("ÇÈÏÃ ãä åäÇ");
-    expect(getCurriculumModuleLabel("ar-EG", "automator-m1", "title")).toContain("ÇáÎÑíØÉ");
+    expect(getCurriculumModuleLabel("ar-EG", "intro-m1", "title")).toBe(
+      "\u0627\u0628\u062F\u0623 \u0645\u0646 \u0647\u0646\u0627",
+    );
+    expect(getCurriculumModuleLabel("ar-EG", "automator-m1", "title")).toContain(
+      "\u0627\u0644\u062E\u0631\u064A\u0637\u0629",
+    );
   });
 
   it("falls back to curriculum-data when overlay field is missing", () => {

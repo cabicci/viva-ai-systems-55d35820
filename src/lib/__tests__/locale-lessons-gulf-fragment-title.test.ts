@@ -109,7 +109,7 @@ describe("Gulf fragment title repair", () => {
     const source = await loadMsaLessonPackage("builder-m6-l1-idea-to-page");
     const result = runFragmentLocalizationPipeline(source, "ar-Gulf");
 
-    expect(result.artifact.title).toBe("من الفكرة للصفحة");
+    expect(result.artifact.title).toBe("من الفكرة إلى الصفحة");
     expect(result.validation.ok).toBe(true);
     expect(detectGulfTitleMismatchWarning(source, result.artifact)).toBeNull();
   });

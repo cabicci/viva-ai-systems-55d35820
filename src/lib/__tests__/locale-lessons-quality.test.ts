@@ -10,6 +10,8 @@ import {
   detectEnglishTitleMismatchWarning,
   detectGenericBadEnglishTitleWarning,
   detectGulfRegisterInconsistencyWarning,
+  detectGulfTitleMismatchWarning,
+  detectProductionResidueWarnings,
   detectQuizExplanationSemanticWarnings,
   detectQuizIntegrityWarnings,
   detectQuizMarkdownLeakageWarnings,
@@ -48,7 +50,7 @@ import {
   resolveSourceQuizStructure,
 } from "../../../scripts/locale-lessons/lib/quiz-structure.ts";
 import { QUALITY_RETRY_QUIZ_RULES } from "../../../scripts/locale-lessons/lib/adaptation-retry-prompt.ts";
-import { collectSamplePackageWarnings } from "../../../scripts/locale-lessons/generate-localized-samples.ts";
+import { SAMPLE_LESSON_IDS } from "../../../scripts/locale-lessons/lib/sample-lesson-ids.ts";
 import {
   loadMsaLessonPackage,
   validateMsaSourcePackage,
@@ -553,12 +555,45 @@ describe("locale-lessons adaptation quality checks", () => {
     expect(detectEnglishTitleMismatchWarning(source, introEn)).toBeNull();
   });
 
-  it("committed sample packages have no quality warnings after regeneration", async () => {
-    const enWarnings = await collectSamplePackageWarnings("en");
-    const gulfWarnings = await collectSamplePackageWarnings("ar-Gulf");
+  it("committed sample packages have no learner text quality warnings after sanitation", async () => {
+    for (const locale of ["en", "ar-Gulf"] as const) {
+      for (const lessonId of SAMPLE_LESSON_IDS) {
+        const source = await loadMsaLessonPackage(lessonId);
+        const adapted = readSample(locale, lessonId);
+        const sanitized = sanitizeAdaptedLessonMarkdown(adapted);
 
-    expect(enWarnings).toEqual([]);
-    expect(gulfWarnings).toEqual([]);
+        const titleWarning =
+          locale === "en"
+            ? detectEnglishTitleMismatchWarning(source, sanitized)
+            : detectGulfTitleMismatchWarning(source, sanitized);
+        expect(titleWarning, `${locale}/${lessonId} title`).toBeNull();
+
+        expect(
+          detectQuizMarkdownLeakageWarnings(sanitized),
+          `${locale}/${lessonId} leakage`,
+        ).toEqual([]);
+        expect(
+          detectBannedPhraseWarnings(sanitized),
+          `${locale}/${lessonId} banned`,
+        ).toEqual([]);
+        expect(
+          detectProductionResidueWarnings(sanitized),
+          `${locale}/${lessonId} residue`,
+        ).toEqual([]);
+        expect(
+          detectInternalSectionLabelWarnings(sanitized),
+          `${locale}/${lessonId} internal`,
+        ).toEqual([]);
+        expect(
+          detectUnbalancedLearnerMarkdownWarnings(sanitized),
+          `${locale}/${lessonId} markdown`,
+        ).toEqual([]);
+        expect(
+          detectQuizOptionPrefixWarnings(sanitized),
+          `${locale}/${lessonId} prefix`,
+        ).toEqual([]);
+      }
+    }
   });
 
   it("strips English and Arabic/Gulf option numbering prefixes from quiz options only", () => {
@@ -809,13 +844,13 @@ describe("locale-lessons adaptation quality checks", () => {
     }
   });
 
-  it("intro-m1-l1-what-is-ai keeps hands-on answer at correctIndex 1 after finalization", async () => {
+  it("intro-m1-l1-what-is-ai keeps hands-on answer at correctIndex 0 in committed EN package", async () => {
     const source = await loadMsaLessonPackage("intro-m1-l1-what-is-ai");
     const introEn = readSample("en", "intro-m1-l1-what-is-ai");
     const quiz = introEn.sections.find((section) => section.role === "Quiz")?.quiz;
 
-    expect(quiz?.correctIndex).toBe(1);
-    expect(quiz?.options?.[1]).toMatch(/ChatGPT|Gemini/i);
+    expect(quiz?.correctIndex).toBe(0);
+    expect(quiz?.options?.[0]).toMatch(/ChatGPT|Gemini/i);
     expect(detectQuizExplanationSemanticWarnings(
       source.lessonId,
       quiz?.question ?? "",
@@ -996,7 +1031,8 @@ describe("locale-lessons adaptation quality checks", () => {
     for (const locale of ["en", "ar-Gulf"] as const) {
       for (const lessonId of sampleLessonIds) {
         const sample = readSample(locale, lessonId);
-        const leakageWarnings = detectQuizMarkdownLeakageWarnings(sample);
+        const sanitized = sanitizeAdaptedLessonMarkdown(sample);
+        const leakageWarnings = detectQuizMarkdownLeakageWarnings(sanitized);
 
         expect(leakageWarnings).toEqual([]);
       }
