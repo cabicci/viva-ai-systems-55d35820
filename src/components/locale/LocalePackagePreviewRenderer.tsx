@@ -1,11 +1,8 @@
 import { useMemo } from "react";
 import {
-  Flag,
   Image as ImageIcon,
-  Lock,
   Monitor,
 } from "lucide-react";
-import { IntroMissionPrompt } from "@/components/intro/IntroMission";
 import { IntroSection } from "@/components/intro/IntroSection";
 import { QuizBlock, type QuizItem } from "@/components/intro/QuizBlock";
 import { resolveLearnerLessonIcon } from "@/components/intro/resolve-learner-lesson-icon";
@@ -24,6 +21,7 @@ import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 import { getUiString } from "@/lib/locale/ui-strings";
 import { LocaleProvider } from "@/lib/locale/locale-context";
 import type { SupportedLocale } from "@/lib/locale/types";
+import { LocaleMockMissionSubmit } from "./LocaleMockMissionSubmit";
 import { LocalePreviewMission } from "./LocalePreviewMission";
 import { PackageLearnerMarkdown } from "./PackageLearnerMarkdown";
 
@@ -49,69 +47,6 @@ function previewBlockKind(
     default:
       return "paragraphs";
   }
-}
-
-function LocaleLiveMission({
-  liveMission,
-  locale,
-}: {
-  liveMission: LiveMissionShape;
-  locale: PreviewPackage["locale"];
-}) {
-  const t = (key: Parameters<typeof getUiString>[1]) => getUiString(locale, key);
-
-  return (
-    <div
-      id="mission"
-      className="space-y-4 scroll-mt-24"
-      data-locale-mission="live"
-    >
-      <div className="rounded-xl border border-amber-400/30 bg-amber-400/[0.08] px-4 py-3 text-sm text-amber-100/90 flex items-start gap-2">
-        <Lock className="h-4 w-4 shrink-0 mt-0.5" />
-        <span>{t("safety.mission.banner")}</span>
-      </div>
-
-      <LocaleProvider effectiveLocale={locale}>
-        <IntroMissionPrompt
-          intro={liveMission.intro}
-          prompt={liveMission.prompt}
-          buttonLabel=""
-          copiedLabel=""
-        />
-      </LocaleProvider>
-
-      {liveMission.rubric.length > 0 ? (
-        <div className="rounded-xl border border-border/50 overflow-hidden">
-          <div className="flex items-center gap-2 border-b border-border/50 bg-muted/20 px-4 py-2 text-[11px] font-mono text-muted-foreground">
-            <Flag className="h-3.5 w-3.5" />
-            <span>{t("safety.mission.rubric")}</span>
-          </div>
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[20rem] text-sm">
-              <thead>
-                <tr className="border-b border-border/40 text-left">
-                  <th className="px-4 py-2 font-medium">{t("safety.mission.dimension")}</th>
-                  <th className="px-4 py-2 font-medium">{t("safety.mission.weight")}</th>
-                  <th className="px-4 py-2 font-medium">{t("safety.mission.criteria")}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {liveMission.rubric.map((row) => (
-                  <tr key={row.label} className="border-b border-border/30 align-top">
-                    <td className="px-4 py-3 font-medium">{row.label}</td>
-                    <td className="px-4 py-3 whitespace-nowrap">{row.weight}%</td>
-                    <td className="px-4 py-3 text-foreground/90">
-                      {row.criteria.join(" ")}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      ) : null}
-    </div>
-  );
 }
 
 function LocaleVideoPlaceholder({ locale }: { locale: SupportedLocale }) {
@@ -236,7 +171,7 @@ function PreviewBlockBody({
 
     case "missionPreview":
       if (liveMission) {
-        return <LocaleLiveMission liveMission={liveMission} locale={locale} />;
+        return <LocaleMockMissionSubmit liveMission={liveMission} locale={locale} />;
       }
       return (
         <LocalePreviewMission
@@ -360,7 +295,7 @@ function buildSectionsWithLiveBlocks(pkg: PreviewPackage) {
 
 /**
  * Localized package lesson renderer.
- * Quizzes use the shared QuizBlock; missions use live structure without AI evaluation.
+ * Quizzes use the shared QuizBlock; missions use mock local submission without AI evaluation.
  */
 export function LocalePackagePreviewRenderer({
   pkg,

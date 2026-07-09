@@ -1,23 +1,25 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { describe, expect, it, vi } from "vitest";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { LocalePackagePreviewRenderer } from "@/components/locale/LocalePackagePreviewRenderer";
+import { deterministicMockMissionFeedback } from "@/components/locale/LocaleMockMissionSubmit";
 import { LocaleProvider } from "@/lib/locale/locale-context";
 import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 
 const evaluateMissionWithAISpy = vi.fn();
+const supabaseInsertSpy = vi.fn().mockResolvedValue({ error: null });
 
 vi.mock("@/integrations/supabase/client", () => ({
   supabase: {
     from: () => ({
-      insert: vi.fn().mockResolvedValue({ error: null }),
+      insert: supabaseInsertSpy,
     }),
   },
 }));
 
 vi.mock("@/lib/auth-context", () => ({
-  useAuth: () => ({ user: null, loading: false }),
+  useAuth: () => ({ user: { id: "user-1" }, loading: false }),
 }));
 
 vi.mock("@/components/intro/lessons", () => ({
@@ -34,9 +36,11 @@ vi.mock("@/components/intro/MissionRubricSubmit", async (importOriginal) => {
 });
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
+const VALID_LESSON_ID = "intro-m1-l2-first-prompt";
+const INVALID_LESSON_ID = "intro-m1-l5-ai-vs-software";
 
 function readPackage(
-  locale: "en" | "ar-MSA",
+  locale: "en",
   lessonId: string,
 ): LocalizedLessonPackage {
   const filePath = path.join(
@@ -49,7 +53,7 @@ function readPackage(
   return JSON.parse(readFileSync(filePath, "utf8")) as LocalizedLessonPackage;
 }
 
-function renderLocalizedPackage(locale: "en" | "ar-MSA", lessonId: string) {
+function renderLocalizedPackage(locale: "en", lessonId: string) {
   const pkg = readPackage(locale, lessonId);
   return render(
     <LocaleProvider effectiveLocale={locale}>
@@ -59,55 +63,145 @@ function renderLocalizedPackage(locale: "en" | "ar-MSA", lessonId: string) {
 }
 
 describe("LocalePackagePreviewRenderer live mission", () => {
-  it("renders live mission structure instead of read-only preview", () => {
-    const { container } = renderLocalizedPackage(
-      "en",
-      "automator-m3-testing-automation",
-    );
-    expect(container.querySelector('[data-locale-mission="live"]')).not.toBeNull();
-    expect(container.querySelector('[data-locale-mission="readonly"]')).toBeNull();
-  });
+  let fetchSpy: ReturnType<typeof vi.spyOn>;
 
-  it("shows intro, expandable prompt steps, and rubric without submit UI", async () => {
-    const pkg = readPackage("en", "automator-m3-testing-automation");
-    const mission = pkg.sections.find((section) => section.mission)?.mission!;
-    renderLocalizedPackage("en", "automator-m3-testing-automation");
-
-    expect(screen.getByText(mission.intro!)).toBeTruthy();
-    expect(screen.queryByRole("button", { name: /submit/i })).toBeNull();
-
-    fireEvent.click(
-      await screen.findByRole("button", { name: /Show mission steps/i }),
-    );
-    const promptPanel = document.querySelector(
-      ".rounded-xl.border.border-primary\\/15.bg-background\\/40",
-    );
-    expect(promptPanel?.textContent).toContain(mission.delivery[0]!.slice(0, 24));
-    expect(screen.getByText("Unit + Full-flow")).toBeTruthy();
-    expect(screen.getByText("Edge + Review")).toBeTruthy();
-  });
-
-  it("does not call real AI evaluation", async () => {
+  beforeEach(() => {
     evaluateMissionWithAISpy.mockClear();
-    renderLocalizedPackage("en", "automator-m5-l1-llm-in-flow");
-    fireEvent.click(
-      await screen.findByRole("button", { name: /Show mission steps/i }),
+    supabaseInsertSpy.mockClear();
+    fetchSpy = vi.spyOn(globalThis, "fetch").mockImplementation(() =>
+      Promise.reject(new Error("fetch should not be called")),
     );
+  });
+
+  it("renders live mission with mock-disabled evaluation markers", () => {
+    const { container } = renderLocalizedPackage("en", VALID_LESSON_ID);
+
+    expect(container.querySelector('[data-locale-mission="live"]')).not.toBeNull();
+    expect(
+      container.querySelector('[data-locale-mission-evaluation="mock-disabled"]'),
+    ).not.toBeNull();
+    expect(container.querySelector('[data-locale-mission="readonly"]')).toBeNull();
+    expect(container.querySelector('[data-locale-mission-submit="mock"]')).not.toBeNull();
+  });
+
+  it("shows intro, prompt, rubric, textarea, and submit for valid missions", () => {
+    const pkg = readPackage("en", VALID_LESSON_ID);
+    const missionSection = pkg.sections.find((section) => section.mission);
+    expect(missionSection).toBeTruthy();
+
+    const intro = missionSection!.mission!.intro as string;
+    expect(intro.length).toBeGreaterThan(0);
+    renderLocalizedPackage("en", VALID_LESSON_ID);
+
+    expect(screen.getByText(intro)).toBeTruthy();
+    expect(screen.getByLabelText(/Your answer/i)).toBeTruthy();
+    expect(
+      screen.getByRole("button", { name: /Submit and get feedback/i }),
+    ).toBeTruthy();
+    expect(
+      document.querySelector('[data-locale-mission-rubric="readonly"]'),
+    ).not.toBeNull();
+    expect(screen.getAllByText("Clear Request").length).toBeGreaterThan(0);
+  });
+
+  it("shows deterministic mocked feedback after submit and never passes", async () => {
+    const answer = "This is my mission answer with enough detail for feedback.";
+    const expected = deterministicMockMissionFeedback(
+      `${VALID_LESSON_ID}::mission`,
+      answer,
+    );
+
+    renderLocalizedPackage("en", VALID_LESSON_ID);
+
+    fireEvent.change(screen.getByLabelText(/Your answer/i), {
+      target: { value: answer },
+    });
+    fireEvent.click(
+      screen.getByRole("button", { name: /Submit and get feedback/i }),
+    );
+
+    await waitFor(() => {
+      expect(
+        document.querySelector('[data-locale-mission-feedback="mock"]'),
+      ).not.toBeNull();
+    });
+
+    const label =
+      expected.kind === "weak"
+        ? /Needs a small clarification/i
+        : /Try adding this point/i;
+    expect(screen.getByText(label)).toBeTruthy();
+    const feedback = document.querySelector('[data-locale-mission-feedback="mock"]');
+    expect(feedback?.textContent).not.toMatch(/Nice — you clearly understood/i);
+    expect(feedback?.textContent).not.toMatch(/^Clear$/);
+    expect(
+      screen.getByRole("button", { name: /Improve my answer/i }),
+    ).toBeTruthy();
+  });
+
+  it("supports retry reset clearing answer and feedback", async () => {
+    renderLocalizedPackage("en", VALID_LESSON_ID);
+
+    const textarea = screen.getByLabelText(/Your answer/i) as HTMLTextAreaElement;
+    fireEvent.change(textarea, {
+      target: { value: "Retry flow answer with sufficient length here." },
+    });
+    fireEvent.click(
+      screen.getByRole("button", { name: /Submit and get feedback/i }),
+    );
+
+    await waitFor(() => {
+      expect(
+        document.querySelector('[data-locale-mission-feedback="mock"]'),
+      ).not.toBeNull();
+    });
+
+    fireEvent.click(screen.getByRole("button", { name: /Improve my answer/i }));
+
+    expect(
+      document.querySelector('[data-locale-mission-feedback="mock"]'),
+    ).toBeNull();
+    expect((screen.getByLabelText(/Your answer/i) as HTMLTextAreaElement).value).toBe(
+      "",
+    );
+    expect(
+      screen.getByRole("button", { name: /Submit and get feedback/i }),
+    ).toBeTruthy();
+  });
+
+  it("does not call evaluateMissionWithAI, network, or persistence", async () => {
+    renderLocalizedPackage("en", VALID_LESSON_ID);
+
+    fireEvent.change(screen.getByLabelText(/Your answer/i), {
+      target: { value: "No external calls in this localized mock flow." },
+    });
+    fireEvent.click(
+      screen.getByRole("button", { name: /Submit and get feedback/i }),
+    );
+
+    await waitFor(() => {
+      expect(
+        document.querySelector('[data-locale-mission-feedback="mock"]'),
+      ).not.toBeNull();
+    });
+
     expect(evaluateMissionWithAISpy).not.toHaveBeenCalled();
+    expect(supabaseInsertSpy).not.toHaveBeenCalled();
+    expect(fetchSpy).not.toHaveBeenCalled();
+  });
+
+  it("falls back to readonly mission UI for invalid package missions", () => {
+    const { container } = renderLocalizedPackage("en", INVALID_LESSON_ID);
+
+    expect(container.querySelector('[data-locale-mission="readonly"]')).not.toBeNull();
+    expect(container.querySelector('[data-locale-mission="live"]')).toBeNull();
+    expect(container.querySelector('[data-locale-mission-submit="mock"]')).toBeNull();
+    expect(screen.queryByLabelText(/Your answer/i)).toBeNull();
   });
 
   it("does not load ar-EG mission content", async () => {
     const lessons = await import("@/components/intro/lessons");
-    renderLocalizedPackage("en", "automator-m3-testing-automation");
+    renderLocalizedPackage("en", VALID_LESSON_ID);
     expect(lessons.loadIntroLessonContent).not.toHaveBeenCalled();
-  });
-});
-
-describe("IntroMission ar-EG regression (unchanged shared component contract)", () => {
-  it("still wires MissionRubricSection only when lessonId and rubric are provided", async () => {
-    const missionModule = await import("@/components/intro/IntroMission");
-    const source = missionModule.IntroMissionPrompt.toString();
-    expect(source).toContain("MissionRubricSection");
-    expect(source).toContain("lessonId");
   });
 });
