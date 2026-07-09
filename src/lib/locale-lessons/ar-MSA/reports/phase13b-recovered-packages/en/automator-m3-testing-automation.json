@@ -129,7 +129,7 @@
       "role": "Mission",
       "heading": "Mission",
       "subtitle": "Test Checklist",
-      "contentMarkdown": "| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Unit + Full-flow | 50% | unit with input and output; full-flow with test data |\n| Edge + Review | 50% | 3 edge cases; manual review (who + what) |",
+      "contentMarkdown": "**Introduction:** Create a pre-launch test checklist for one automation. Cover a unit test, a full-flow test with test data, three edge cases, and a final manual review.\n\n**Delivery:**\n1. Name the automation and its expected result.\n2. Define one unit test with its input and expected output.\n3. Define one full-flow test using test data and state the expected final result.\n4. Define three edge cases: empty data, invalid data, and a duplicate input, including the expected behavior for each.\n5. Identify who performs the manual review and what they must check before launch.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Unit + Full-flow | 50% | unit with input and output; full-flow with test data |\n| Edge + Review | 50% | 3 edge cases; manual review (who + what) |",
       "bullets": [],
       "tables": [
         {
@@ -153,7 +153,14 @@
         }
       ],
       "mission": {
-        "delivery": [],
+        "intro": "Create a pre-launch test checklist for one automation. Cover a unit test, a full-flow test with test data, three edge cases, and a final manual review.",
+        "delivery": [
+          "Name the automation and its expected result.",
+          "Define one unit test with its input and expected output.",
+          "Define one full-flow test using test data and state the expected final result.",
+          "Define three edge cases: empty data, invalid data, and a duplicate input, including the expected behavior for each.",
+          "Identify who performs the manual review and what they must check before launch."
+        ],
         "rubric": [
           {
             "dimension": "Unit + Full-flow",

@@ -1,8 +1,11 @@
 import { useMemo } from "react";
 import {
+  Flag,
   Image as ImageIcon,
+  Lock,
   Monitor,
 } from "lucide-react";
+import { IntroMissionPrompt } from "@/components/intro/IntroMission";
 import { IntroSection } from "@/components/intro/IntroSection";
 import { QuizBlock, type QuizItem } from "@/components/intro/QuizBlock";
 import { resolveLearnerLessonIcon } from "@/components/intro/resolve-learner-lesson-icon";
@@ -12,6 +15,10 @@ import {
   type PreviewLessonBlock,
   type PreviewLessonSection,
 } from "@/lib/locale-lessons/adapt-package-to-preview-content";
+import {
+  adaptPackageMissionToLiveShape,
+  type LiveMissionShape,
+} from "@/lib/locale-lessons/adapt-package-to-live-mission";
 import { adaptPackageQuizToQuizItem } from "@/lib/locale-lessons/adapt-package-to-live-quiz";
 import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 import { getUiString } from "@/lib/locale/ui-strings";
@@ -44,6 +51,69 @@ function previewBlockKind(
   }
 }
 
+function LocaleLiveMission({
+  liveMission,
+  locale,
+}: {
+  liveMission: LiveMissionShape;
+  locale: PreviewPackage["locale"];
+}) {
+  const t = (key: Parameters<typeof getUiString>[1]) => getUiString(locale, key);
+
+  return (
+    <div
+      id="mission"
+      className="space-y-4 scroll-mt-24"
+      data-locale-mission="live"
+    >
+      <div className="rounded-xl border border-amber-400/30 bg-amber-400/[0.08] px-4 py-3 text-sm text-amber-100/90 flex items-start gap-2">
+        <Lock className="h-4 w-4 shrink-0 mt-0.5" />
+        <span>{t("safety.mission.banner")}</span>
+      </div>
+
+      <LocaleProvider effectiveLocale={locale}>
+        <IntroMissionPrompt
+          intro={liveMission.intro}
+          prompt={liveMission.prompt}
+          buttonLabel=""
+          copiedLabel=""
+        />
+      </LocaleProvider>
+
+      {liveMission.rubric.length > 0 ? (
+        <div className="rounded-xl border border-border/50 overflow-hidden">
+          <div className="flex items-center gap-2 border-b border-border/50 bg-muted/20 px-4 py-2 text-[11px] font-mono text-muted-foreground">
+            <Flag className="h-3.5 w-3.5" />
+            <span>{t("safety.mission.rubric")}</span>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[20rem] text-sm">
+              <thead>
+                <tr className="border-b border-border/40 text-left">
+                  <th className="px-4 py-2 font-medium">{t("safety.mission.dimension")}</th>
+                  <th className="px-4 py-2 font-medium">{t("safety.mission.weight")}</th>
+                  <th className="px-4 py-2 font-medium">{t("safety.mission.criteria")}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {liveMission.rubric.map((row) => (
+                  <tr key={row.label} className="border-b border-border/30 align-top">
+                    <td className="px-4 py-3 font-medium">{row.label}</td>
+                    <td className="px-4 py-3 whitespace-nowrap">{row.weight}%</td>
+                    <td className="px-4 py-3 text-foreground/90">
+                      {row.criteria.join(" ")}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
 function LocaleVideoPlaceholder({ locale }: { locale: SupportedLocale }) {
   return (
     <div
@@ -65,11 +135,13 @@ function PreviewBlockBody({
   locale,
   lessonId,
   liveQuizItem,
+  liveMission,
 }: {
   block: PreviewLessonBlock;
   locale: PreviewPackage["locale"];
   lessonId: string;
   liveQuizItem: QuizItem | null;
+  liveMission: LiveMissionShape | null;
 }) {
   switch (block.kind) {
     case "paragraphs":
@@ -163,6 +235,9 @@ function PreviewBlockBody({
       );
 
     case "missionPreview":
+      if (liveMission) {
+        return <LocaleLiveMission liveMission={liveMission} locale={locale} />;
+      }
       return (
         <LocalePreviewMission
           intro={block.intro}
@@ -204,12 +279,14 @@ function PreviewSectionCard({
   locale,
   lessonId,
   liveQuizItem,
+  liveMission,
 }: {
   section: PreviewLessonSection;
   index: number;
   locale: PreviewPackage["locale"];
   lessonId: string;
   liveQuizItem: QuizItem | null;
+  liveMission: LiveMissionShape | null;
 }) {
   const blockKind = previewBlockKind(section.block);
   const Icon = resolveLearnerLessonIcon(section.icon, blockKind);
@@ -227,43 +304,70 @@ function PreviewSectionCard({
         locale={locale}
         lessonId={lessonId}
         liveQuizItem={liveQuizItem}
+        liveMission={liveMission}
       />
     </IntroSection>
   );
 }
 
-function buildSectionsWithLiveQuiz(pkg: PreviewPackage) {
+function buildSectionsWithLiveBlocks(pkg: PreviewPackage) {
   const previewSections = adaptLocalizedPackageToPreviewContent(pkg);
   const quizSections = pkg.sections.filter((section) => section.quiz?.options?.length);
+  const missionSections = pkg.sections.filter((section) => section.mission);
   let quizIndex = 0;
+  let missionIndex = 0;
 
   return previewSections.map((section) => {
-    if (section.block.kind !== "quizPreview") {
-      return { section, liveQuizItem: null as QuizItem | null };
+    if (section.block.kind === "quizPreview") {
+      const rawQuiz = quizSections[quizIndex]?.quiz;
+      const currentIndex = quizIndex;
+      quizIndex += 1;
+      if (!rawQuiz) {
+        return { section, liveQuizItem: null, liveMission: null };
+      }
+      return {
+        section,
+        liveQuizItem: adaptPackageQuizToQuizItem(pkg.lessonId, rawQuiz, currentIndex),
+        liveMission: null,
+      };
     }
-    const rawQuiz = quizSections[quizIndex]?.quiz;
-    const currentIndex = quizIndex;
-    quizIndex += 1;
-    if (!rawQuiz) {
-      return { section, liveQuizItem: null };
+
+    if (section.block.kind === "missionPreview") {
+      const rawMissionSection = missionSections[missionIndex];
+      const currentMissionIndex = missionIndex;
+      missionIndex += 1;
+      if (!rawMissionSection?.mission) {
+        return { section, liveQuizItem: null, liveMission: null };
+      }
+      try {
+        return {
+          section,
+          liveQuizItem: null,
+          liveMission: adaptPackageMissionToLiveShape(
+            pkg.lessonId,
+            rawMissionSection,
+            currentMissionIndex,
+          ),
+        };
+      } catch {
+        return { section, liveQuizItem: null, liveMission: null };
+      }
     }
-    return {
-      section,
-      liveQuizItem: adaptPackageQuizToQuizItem(pkg.lessonId, rawQuiz, currentIndex),
-    };
+
+    return { section, liveQuizItem: null, liveMission: null };
   });
 }
 
 /**
  * Localized package lesson renderer.
- * Quizzes use the shared QuizBlock; missions and videos stay preview-only.
+ * Quizzes use the shared QuizBlock; missions use live structure without AI evaluation.
  */
 export function LocalePackagePreviewRenderer({
   pkg,
 }: {
   pkg: PreviewPackage;
 }) {
-  const sections = useMemo(() => buildSectionsWithLiveQuiz(pkg), [pkg]);
+  const sections = useMemo(() => buildSectionsWithLiveBlocks(pkg), [pkg]);
   const bodyDir = previewBodyDirection(pkg.locale);
   const hasVideoPlaceholder = sections.some(
     (entry) => entry.section.block.kind === "videoPreviewNote",
@@ -281,7 +385,7 @@ export function LocalePackagePreviewRenderer({
       {showPageVideoPlaceholder ? (
         <LocaleVideoPlaceholder locale={pkg.locale} />
       ) : null}
-      {sections.map(({ section, liveQuizItem }, index) => (
+      {sections.map(({ section, liveQuizItem, liveMission }, index) => (
         <PreviewSectionCard
           key={`${section.title}-${index}`}
           section={section}
@@ -289,6 +393,7 @@ export function LocalePackagePreviewRenderer({
           locale={pkg.locale}
           lessonId={pkg.lessonId}
           liveQuizItem={liveQuizItem}
+          liveMission={liveMission}
         />
       ))}
     </article>

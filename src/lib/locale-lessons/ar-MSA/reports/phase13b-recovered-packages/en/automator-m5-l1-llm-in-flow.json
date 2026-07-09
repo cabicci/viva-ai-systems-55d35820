@@ -99,38 +99,48 @@
       "role": "Mission",
       "heading": "Mission",
       "subtitle": "One AI Step",
-      "contentMarkdown": "| Dimension | Weight |\n|-------|-------|\n| Clarity of Step | 60% |\n| Connection to Workflow | 40% |",
+      "contentMarkdown": "**Introduction:** Design one LLM step inside a real workflow. Define exactly what the step receives, the task it performs, the structured output it returns, and how the next step uses that output.\n\n**Delivery:**\n1. Draw or write the workflow: trigger → input → LLM step → structured output → next step.\n2. Define the exact input sent to the LLM step.\n3. Define one clear task: classification, summarization, or extraction.\n4. List the structured output fields and provide one example value for each field.\n5. Explain how the next step uses those fields.\n\n**Evaluation Criteria:**\n\n| Dimension | Weight | Criteria |\n|-------|-------|---------|\n| Clarity of Step | 60% | Clearly defines the input, one LLM task, and the structured output fields; it does not rely on a vague statement such as \"the AI understands.\" |\n| Connection to Workflow | 40% | Clearly shows where the LLM step belongs in the workflow and how the next step uses its structured output to perform a specific action. |",
       "bullets": [],
       "tables": [
         {
           "headers": [
             "Dimension",
-            "Weight"
+            "Weight",
+            "Criteria"
           ],
           "rows": [
             [
               "Clarity of Step",
-              "60%"
+              "60%",
+              "Clearly defines the input, one LLM task, and the structured output fields; it does not rely on a vague statement such as \"the AI understands.\""
             ],
             [
               "Connection to Workflow",
-              "40%"
+              "40%",
+              "Clearly shows where the LLM step belongs in the workflow and how the next step uses its structured output to perform a specific action."
             ]
           ]
         }
       ],
       "mission": {
-        "delivery": [],
+        "intro": "Design one LLM step inside a real workflow. Define exactly what the step receives, the task it performs, the structured output it returns, and how the next step uses that output.",
+        "delivery": [
+          "Draw or write the workflow: trigger → input → LLM step → structured output → next step.",
+          "Define the exact input sent to the LLM step.",
+          "Define one clear task: classification, summarization, or extraction.",
+          "List the structured output fields and provide one example value for each field.",
+          "Explain how the next step uses those fields."
+        ],
         "rubric": [
           {
             "dimension": "Clarity of Step",
             "weight": 60,
-            "criteria": ""
+            "criteria": "Clearly defines the input, one LLM task, and the structured output fields; it does not rely on a vague statement such as \"the AI understands.\""
           },
           {
             "dimension": "Connection to Workflow",
             "weight": 40,
-            "criteria": ""
+            "criteria": "Clearly shows where the LLM step belongs in the workflow and how the next step uses its structured output to perform a specific action."
           }
         ],
         "yamlIntent": "Add one AI step; define input, structured output, next step",
