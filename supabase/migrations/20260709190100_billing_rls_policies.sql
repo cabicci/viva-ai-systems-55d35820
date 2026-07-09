@@ -39,6 +39,21 @@ GRANT USAGE ON SCHEMA billing TO authenticated, service_role;
 -- Published catalog reads (sanitized tables only).
 GRANT SELECT ON billing.plan_catalog, billing.market_prices, billing.ai_topup_package_versions TO authenticated;
 
+-- Own-row and admin-visible reads require table SELECT in addition to RLS policies.
+GRANT SELECT ON
+  billing.subscriptions,
+  billing.user_entitlement_snapshots,
+  billing.entitlement_usage,
+  billing.ai_usage_ledger,
+  billing.monetary_credit_ledger,
+  billing.monetary_credit_allocations,
+  billing.ai_credit_ledger,
+  billing.ai_topup_purchases,
+  billing.payment_transactions,
+  billing.refunds,
+  billing.billing_audit_log
+TO authenticated;
+
 CREATE POLICY billing_plan_catalog_published_read ON billing.plan_catalog
   FOR SELECT TO authenticated
   USING (is_active = true);
