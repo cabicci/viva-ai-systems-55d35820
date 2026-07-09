@@ -14,11 +14,14 @@ WHERE id IN (
 );
 
 -- Log the audit itself as an AI item.
-INSERT INTO public.roadmap_items (title, status, notes, source, created_at, updated_at)
-VALUES (
+-- Source attribution lives in notes ([source:ai]); roadmap_items has no source column in migration history.
+INSERT INTO public.roadmap_items (title, status, notes)
+SELECT
   'Audit: مطابقة دروس المنهج مع فيديوهات Bunny',
   'done',
-  E'[source:ai]\n\nمقارنة كاملة:\n- 88 lesson_id في curriculum-data.ts\n- 88 منهم لهم GUID في bunny-videos.ts\n- 0 دروس ناقصة فيديو\n\nالـ batches اللي كانت مفتوحة (Creator B1/B2, Automator B1, Builder B2, intro B2, Analyst B1, Business B1) كلها كانت متعملة بالفعل قبل ما أزقّها. تم قفلهم بـ done.\n\nخطأ سابق: Creator B2 الـ dispatch run 26690364561 اتعمل cancel تلقائيًا — مفيش damage.',
-  'ai',
-  now(), now()
+  E'[source:ai]\n\nمقارنة كاملة:\n- 88 lesson_id في curriculum-data.ts\n- 88 منهم لهم GUID في bunny-videos.ts\n- 0 دروس ناقصة فيديو\n\nالـ batches اللي كانت مفتوحة (Creator B1/B2, Automator B1, Builder B2, intro B2, Analyst B1, Business B1) كلها كانت متعملة بالفعل قبل ما أزقّها. تم قفلهم بـ done.\n\nخطأ سابق: Creator B2 الـ dispatch run 26690364561 اتعمل cancel تلقائيًا — مفيش damage.'
+WHERE NOT EXISTS (
+  SELECT 1
+  FROM public.roadmap_items
+  WHERE title = 'Audit: مطابقة دروس المنهج مع فيديوهات Bunny'
 );
