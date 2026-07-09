@@ -4,7 +4,6 @@ import { describe, expect, it } from "vitest";
 import { validateManifestCurriculumSync } from "../../../scripts/locale-lessons/lib/validate-manifest-curriculum-sync-core.ts";
 import { validateTitleIndexParity } from "../../../scripts/locale-lessons/lib/validate-title-index-parity-core.ts";
 import {
-  assertRecoveredCorpusValidationClean,
   buildEquivalenceChecksumReport,
   findStaleRuntimePackages,
   formatDeterministicJson,
@@ -27,19 +26,26 @@ function countRuntimeJson(locale: string): number {
 }
 
 describe("phase13b runtime package promotion (Stage 1)", () => {
-  it("recovered corpus validation gate before first promotion", async () => {
-    const alreadyPromoted = await runtimeMatchesRecovered();
-    if (alreadyPromoted) {
-      const equivalence = await validateRecoveredRuntimeEquivalence();
-      expect(equivalence.ok).toBe(true);
-      return;
-    }
-    await assertRecoveredCorpusValidationClean();
-    const validation = await validateAllRecoveredPackages();
-    expect(validation.ok).toBe(true);
-    expect(validation.mergeBlocked).toBe(false);
-    expect(validation.blockedMissingGulfQuiz).toEqual([]);
-  });
+  it(
+    "recovered corpus validation gate before first promotion",
+    async () => {
+      const alreadyPromoted = await runtimeMatchesRecovered();
+      if (alreadyPromoted) {
+        const equivalence = await validateRecoveredRuntimeEquivalence();
+        expect(equivalence.ok).toBe(true);
+        return;
+      }
+      // Single full-corpus scan — assertRecoveredCorpusValidationClean() would
+      // duplicate this work. Same gate coverage via explicit expects below.
+      const validation = await validateAllRecoveredPackages();
+      expect(validation.ok).toBe(true);
+      expect(validation.mergeBlocked).toBe(false);
+      expect(validation.blockedMissingGulfQuiz).toEqual([]);
+    },
+    // 300-package recovered/runtime equivalence checks routinely exceed the
+    // default 5s Vitest budget, especially under parallel suite load.
+    30_000,
+  );
 
   it("lists exactly 300 deterministic promotion cells (100 per locale)", async () => {
     const cells = await listPromotionCells();
