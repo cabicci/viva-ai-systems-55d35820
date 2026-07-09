@@ -25,11 +25,17 @@ BEGIN
     RETURN jsonb_build_object('idempotent_replay', true, 'ledger_id', v_existing.id);
   END IF;
 
-  SELECT COALESCE(balance_after_minor, 0) INTO v_balance
-  FROM billing.monetary_credit_ledger
-  WHERE user_id = p_user_id AND currency_code = p_currency_code
-  ORDER BY occurred_at DESC
-  LIMIT 1;
+  SELECT COALESCE(
+    (
+      SELECT balance_after_minor
+      FROM billing.monetary_credit_ledger
+      WHERE user_id = p_user_id AND currency_code = p_currency_code
+      ORDER BY occurred_at DESC
+      LIMIT 1
+    ),
+    0
+  )
+  INTO v_balance;
 
   INSERT INTO billing.monetary_credit_ledger (
     user_id, entry_type, amount_minor, currency_code, balance_after_minor,
@@ -38,7 +44,7 @@ BEGIN
     p_user_id, 'grant', p_amount_minor, p_currency_code, v_balance + p_amount_minor,
     p_source_type, p_source_id, p_idempotency_key, now()
   )
-  RETURNING id INTO v_existing.id;
+  RETURNING * INTO v_existing;
 
   RETURN jsonb_build_object('ledger_id', v_existing.id, 'balance_after_minor', v_balance + p_amount_minor);
 END;
@@ -69,11 +75,17 @@ BEGIN
     RETURN jsonb_build_object('idempotent_replay', true, 'ledger_id', v_existing.id);
   END IF;
 
-  SELECT COALESCE(balance_after, 0) INTO v_balance
-  FROM billing.ai_credit_ledger
-  WHERE user_id = p_user_id
-  ORDER BY occurred_at DESC
-  LIMIT 1;
+  SELECT COALESCE(
+    (
+      SELECT balance_after
+      FROM billing.ai_credit_ledger
+      WHERE user_id = p_user_id
+      ORDER BY occurred_at DESC
+      LIMIT 1
+    ),
+    0
+  )
+  INTO v_balance;
 
   INSERT INTO billing.ai_credit_ledger (
     user_id, entry_type, credit_units, balance_after, source_type, source_id, idempotency_key, occurred_at
@@ -81,7 +93,7 @@ BEGIN
     p_user_id, 'grant', p_credit_units, v_balance + p_credit_units,
     p_source_type, p_source_id, p_idempotency_key, now()
   )
-  RETURNING id INTO v_existing.id;
+  RETURNING * INTO v_existing;
 
   RETURN jsonb_build_object('ledger_id', v_existing.id, 'balance_after', v_balance + p_credit_units);
 END;

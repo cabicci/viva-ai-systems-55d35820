@@ -58,6 +58,8 @@ async function fetchSnapshot(userId: string): Promise<Record<string, unknown>> {
       Authorization: `Bearer ${SERVICE_KEY}`,
       apikey: SERVICE_KEY,
       "Content-Type": "application/json",
+      "Accept-Profile": "billing",
+      "Content-Profile": "billing",
     },
     body: JSON.stringify({ p_user_id: userId }),
   });
