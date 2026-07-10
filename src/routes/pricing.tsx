@@ -4,67 +4,85 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
+import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
+import { useLocale } from "@/lib/locale/locale-context";
+import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
+import { useUiString } from "@/lib/locale/use-ui-strings";
+import type { UiStringKey } from "@/lib/locale/ui-strings";
+
+const FREE_FEATURE_KEYS = [
+  "pricing.free.feature.1",
+  "pricing.free.feature.2",
+  "pricing.free.feature.3",
+  "pricing.free.feature.4",
+  "pricing.free.feature.5",
+] as const satisfies readonly UiStringKey[];
+
+const PRO_FEATURE_KEYS = [
+  "pricing.pro.feature.1",
+  "pricing.pro.feature.2",
+  "pricing.pro.feature.3",
+  "pricing.pro.feature.4",
+] as const satisfies readonly UiStringKey[];
+
+const COMPARISON_ROWS = [
+  {
+    labelKey: "pricing.compare.row.intro.label",
+    free: true,
+    pro: true,
+  },
+  {
+    labelKey: "pricing.compare.row.firstLesson.label",
+    free: true,
+    pro: true,
+  },
+  {
+    labelKey: "pricing.compare.row.restLessons.label",
+    free: false,
+    pro: true,
+  },
+  {
+    labelKey: "pricing.compare.row.progress.label",
+    freeKey: "pricing.compare.row.progress.free",
+    proKey: "pricing.compare.row.progress.pro",
+  },
+  {
+    labelKey: "pricing.compare.row.assistant.label",
+    freeKey: "pricing.compare.row.assistant.free",
+    proKey: "pricing.compare.row.assistant.pro",
+  },
+  {
+    labelKey: "pricing.compare.row.aiEval.label",
+    free: false,
+    proKey: "pricing.compare.row.aiEval.pro",
+  },
+] as const;
+
+const FAQ_KEYS = [
+  { q: "pricing.faq.1.q", a: "pricing.faq.1.a" },
+  { q: "pricing.faq.2.q", a: "pricing.faq.2.a" },
+  { q: "pricing.faq.3.q", a: "pricing.faq.3.a" },
+  { q: "pricing.faq.4.q", a: "pricing.faq.4.a" },
+] as const satisfies readonly { q: UiStringKey; a: UiStringKey }[];
 
 export const Route = createFileRoute("/pricing")({
-  head: () => ({
-    meta: [
-      { title: "الباقات — مسارات" },
-      {
-        name: "description",
-        content:
-          "باقات مسارات — ابدأ مجانًا بالمقدمة وأول درس من كل مسار، أو تابع Pro قريبًا لإكمال كل المسارات.",
-      },
-    ],
-  }),
+  validateSearch: (raw: Record<string, unknown>) => parseLocaleSearchParam(raw),
+  head: async ({ match }) => {
+    const locale = await resolveRouteHeadLocale({
+      searchLocale: match.search.locale,
+    });
+    return buildLocalizedPublicMeta(locale, "pricing");
+  },
   component: PricingPage,
 });
 
-const FREE_FEATURES = [
-  "المقدمة كاملة",
-  "أول درس من كل مسار مهني",
-  "تتبع التقدم الأساسي",
-  "مهام وتجربة تعلم عملية",
-  "المساعد متاح للاستكشاف الأساسي",
-] as const;
-
-const PRO_FEATURES = [
-  "كل دروس المسارات كاملة",
-  "تجربة مساعد أوسع",
-  "تقييم AI للمهام حسب الإتاحة",
-  "أولوية للمسارات والتحديثات الجديدة",
-] as const;
-
-const COMPARISON_ROWS = [
-  { label: "المقدمة (٧ دروس)", free: true, pro: true },
-  { label: "أول درس من كل مسار", free: true, pro: true },
-  { label: "باقي دروس المسارات", free: false, pro: true },
-  { label: "تتبع التقدم", free: "أساسي", pro: "كامل" },
-  { label: "المساعد", free: "استكشاف أساسي", pro: "أوسع" },
-  { label: "تقييم AI للمهام", free: false, pro: "حسب الإتاحة" },
-] as const;
-
-const FAQ_ITEMS = [
-  {
-    q: "هل أقدر أبدأ من غير دفع؟",
-    a: "أيوه. الباقة المجانية تشمل المقدمة كاملة وأول درس من كل مسار مهني — كفاية تستكشف المنظومة وتقرر مسارك.",
-  },
-  {
-    q: "متى هيتفعّل Pro؟",
-    a: "Pro لسه «قريبًا». بنجهّز تجربة الدفع والاشتراك — لما يجهز هنعلن في المنصة. مفيش دفع على الصفحة دي دلوقتي.",
-  },
-  {
-    q: "هل Pro هيغيّر طريقة تعلّمي؟",
-    a: "نفس فلسفة مسارات: دروس، مهام، وتطبيق عملي. Pro بيفتح المحتوى الكامل والمساعد الأوسع — مش منصة مختلفة.",
-  },
-  {
-    q: "هل في التزام طويل؟",
-    a: "تفاصيل الاشتراك والدفع هتظهر هنا قبل ما أي خطة مدفوعة تتفعّل. دلوقتي كل اللي محتاجه إنشاء حساب مجاني.",
-  },
-] as const;
-
 function PricingPage() {
+  const t = useUiString();
+  const { dir } = useLocale();
+
   return (
-    <div className="min-h-dvh flex flex-col" dir="rtl">
+    <div className="min-h-dvh flex flex-col" dir={dir}>
       <Navbar />
       <main
         id="main-content"
@@ -72,39 +90,34 @@ function PricingPage() {
         style={{ background: "var(--gradient-hero)" }}
       >
         <div className="container mx-auto px-4 py-12 md:py-16 max-w-5xl space-y-14">
-          {/* Hero */}
           <header className="text-center space-y-4 max-w-2xl mx-auto">
             <p className="text-xs font-mono uppercase tracking-widest text-accent">
-              الباقات · جاهزية الإطلاق
+              {t("pricing.eyebrow")}
             </p>
-            <h1 className="text-3xl md:text-4xl font-black">
-              ابدأ مجانًا — وكمّل لما Pro يجهز
-            </h1>
+            <h1 className="text-3xl md:text-4xl font-black">{t("pricing.hero.title")}</h1>
             <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
-              مسارات بتعلّمك AI بالتطبيق. ابدأ بالمجاني، واستكشف المسارات — Pro
-              هيفتح المحتوى الكامل قريبًا من غير ما نربط دفع دلوقتي.
+              {t("pricing.hero.subtitle")}
             </p>
           </header>
 
-          {/* Plan cards */}
           <section className="grid md:grid-cols-2 gap-5 items-stretch">
             <article className="glass rounded-2xl border border-border/60 p-6 md:p-8 flex flex-col">
               <div className="mb-6">
-                <h2 className="text-2xl font-black">مجاني</h2>
+                <h2 className="text-2xl font-black">{t("pricing.plan.free.name")}</h2>
                 <p className="text-sm text-muted-foreground mt-1">
-                  للبداية والاستكشاف
+                  {t("pricing.plan.free.subtitle")}
                 </p>
               </div>
               <ul className="space-y-3 text-sm flex-1 mb-8">
-                {FREE_FEATURES.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2.5">
+                {FREE_FEATURE_KEYS.map((key) => (
+                  <li key={key} className="flex items-start gap-2.5">
                     <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                    <span>{feature}</span>
+                    <span>{t(key)}</span>
                   </li>
                 ))}
               </ul>
               <Button asChild variant="hero" size="lg" className="w-full">
-                <Link to="/signup">ابدأ مجانًا</Link>
+                <Link to="/signup">{t("pricing.cta.startFree")}</Link>
               </Button>
             </article>
 
@@ -114,20 +127,20 @@ function PricingPage() {
                   variant="outline"
                   className="border-primary/40 bg-primary/10 text-primary text-[11px] font-semibold"
                 >
-                  قريبًا
+                  {t("pricing.badge.comingSoon")}
                 </Badge>
               </div>
               <div className="mb-6">
-                <h2 className="text-2xl font-black">Pro</h2>
+                <h2 className="text-2xl font-black">{t("pricing.plan.pro.name")}</h2>
                 <p className="text-sm text-muted-foreground mt-1">
-                  للجادّين في إكمال المسارات
+                  {t("pricing.plan.pro.subtitle")}
                 </p>
               </div>
               <ul className="space-y-3 text-sm flex-1 mb-8">
-                {PRO_FEATURES.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2.5">
+                {PRO_FEATURE_KEYS.map((key) => (
+                  <li key={key} className="flex items-start gap-2.5">
                     <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                    <span>{feature}</span>
+                    <span>{t(key)}</span>
                   </li>
                 ))}
               </ul>
@@ -137,38 +150,59 @@ function PricingPage() {
                 className="w-full"
                 disabled
                 aria-disabled
-                title="Pro هيتفعّل قريبًا"
-                aria-label="Pro هيتفعّل قريبًا"
+                title={t("pricing.cta.proSoonTitle")}
+                aria-label={t("pricing.cta.proSoonAria")}
               >
-                Pro قريبًا
+                {t("pricing.cta.proSoon")}
               </Button>
             </article>
           </section>
 
-          {/* Comparison */}
           <section className="glass rounded-2xl border border-border/60 p-6 md:p-8">
-            <h2 className="text-lg font-bold mb-5">مقارنة سريعة</h2>
+            <h2 className="text-lg font-bold mb-5">{t("pricing.compare.title")}</h2>
             <div className="overflow-x-auto">
               <table className="w-full text-sm min-w-[320px]">
                 <thead>
                   <tr className="border-b border-border/50 text-muted-foreground">
-                    <th className="text-right py-2 font-medium">الميزة</th>
-                    <th className="text-center py-2 font-medium w-24">مجاني</th>
-                    <th className="text-center py-2 font-medium w-24">Pro</th>
+                    <th className="text-start py-2 font-medium">{t("pricing.compare.colFeature")}</th>
+                    <th className="text-center py-2 font-medium w-24">
+                      {t("pricing.compare.colFree")}
+                    </th>
+                    <th className="text-center py-2 font-medium w-24">
+                      {t("pricing.compare.colPro")}
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   {COMPARISON_ROWS.map((row) => (
                     <tr
-                      key={row.label}
+                      key={row.labelKey}
                       className="border-b border-border/30 last:border-0"
                     >
-                      <td className="py-3 text-foreground/90">{row.label}</td>
+                      <td className="py-3 text-foreground/90">{t(row.labelKey)}</td>
                       <td className="py-3 text-center">
-                        <ComparisonCell value={row.free} />
+                        <ComparisonCell
+                          value={
+                            "freeKey" in row
+                              ? t(row.freeKey)
+                              : "free" in row
+                                ? row.free
+                                : false
+                          }
+                          availableLabel={t("pricing.compare.availableAria")}
+                        />
                       </td>
                       <td className="py-3 text-center">
-                        <ComparisonCell value={row.pro} />
+                        <ComparisonCell
+                          value={
+                            "proKey" in row
+                              ? t(row.proKey)
+                              : "pro" in row
+                                ? row.pro
+                                : true
+                          }
+                          availableLabel={t("pricing.compare.availableAria")}
+                        />
                       </td>
                     </tr>
                   ))}
@@ -177,46 +211,43 @@ function PricingPage() {
             </div>
           </section>
 
-          {/* FAQ */}
           <section className="space-y-4">
-            <h2 className="text-lg font-bold">أسئلة شائعة</h2>
+            <h2 className="text-lg font-bold">{t("pricing.faq.title")}</h2>
             <div className="grid gap-3">
-              {FAQ_ITEMS.map((item) => (
+              {FAQ_KEYS.map((item) => (
                 <details
                   key={item.q}
                   className="glass rounded-xl border border-border/50 p-4 group"
                 >
                   <summary className="cursor-pointer list-none font-semibold text-sm flex items-center justify-between gap-3">
-                    {item.q}
+                    {t(item.q)}
                     <span className="text-muted-foreground text-xs group-open:rotate-180 transition-transform">
                       ▾
                     </span>
                   </summary>
                   <p className="text-sm text-muted-foreground leading-relaxed mt-3">
-                    {item.a}
+                    {t(item.a)}
                   </p>
                 </details>
               ))}
             </div>
           </section>
 
-          {/* Trust / legal */}
           <section className="text-center text-xs text-muted-foreground leading-relaxed border-t border-border/40 pt-8">
             <p>
-              مسارات في مرحلة وصول مبكر — مفيش دفع أو صفحة إتمام دفع على هذه الصفحة.
-              بياناتك واستخدامك يخضعان لـ{" "}
+              {t("pricing.legal.note")}{" "}
               <Link
                 to="/privacy"
                 className="text-primary underline underline-offset-2 hover:text-foreground transition"
               >
-                سياسة الخصوصية
+                {t("pricing.legal.privacy")}
               </Link>{" "}
-              و{" "}
+              {t("pricing.legal.and")}{" "}
               <Link
                 to="/terms"
                 className="text-primary underline underline-offset-2 hover:text-foreground transition"
               >
-                الشروط والأحكام
+                {t("pricing.legal.terms")}
               </Link>
               .
             </p>
@@ -228,9 +259,15 @@ function PricingPage() {
   );
 }
 
-function ComparisonCell({ value }: { value: boolean | string }) {
+function ComparisonCell({
+  value,
+  availableLabel,
+}: {
+  value: boolean | string;
+  availableLabel: string;
+}) {
   if (value === true) {
-    return <Check className="h-4 w-4 text-primary inline-block" aria-label="متاح" />;
+    return <Check className="h-4 w-4 text-primary inline-block" aria-label={availableLabel} />;
   }
   if (value === false) {
     return <span className="text-muted-foreground/50">—</span>;

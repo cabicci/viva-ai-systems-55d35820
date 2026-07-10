@@ -17,6 +17,8 @@ import { useLocale } from "@/lib/locale/locale-context";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { readLocaleRuntimeInputs } from "@/lib/locale/read-locale-runtime-inputs";
 import { resolvePublicLocale } from "@/lib/locale/resolve-public-locale";
+import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
+import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 import { getUiString } from "@/lib/locale/ui-strings";
 import { LOCALE_META, type SupportedLocale } from "@/lib/locale/types";
 
@@ -29,19 +31,19 @@ type RootLoaderData = {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   validateSearch: (raw: Record<string, unknown>) => parseLocaleSearchParam(raw),
-  head: () => ({
+  head: async ({ match }) => {
+    const locale = await resolveRouteHeadLocale({
+      searchLocale: match.search.locale,
+    });
+    const { meta: localizedMeta } = buildLocalizedPublicMeta(locale, "root");
+    return {
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "مسارات — masaarat.ai | تعلّم الذكاء الاصطناعي بالتطبيق" },
-      { name: "description", content: "مسارات — منظومة تعليمية عربية حية مبنية على الذكاء الاصطناعي. تعلّم بالتنفيذ، ابنِ أنظمة حقيقية، وأطلق أعمالك." },
-      { property: "og:title", content: "مسارات — masaarat.ai | تعلّم الذكاء الاصطناعي بالتطبيق" },
-      { property: "og:description", content: "مسارات — منظومة تعليمية عربية حية مبنية على الذكاء الاصطناعي. تعلّم بالتنفيذ، ابنِ أنظمة حقيقية، وأطلق أعمالك." },
+      ...localizedMeta,
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://masaarat.ai" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "مسارات — masaarat.ai | تعلّم الذكاء الاصطناعي بالتطبيق" },
-      { name: "twitter:description", content: "منظومة تعليمية حية مبنية على الذكاء الاصطناعي. تعلّم بالتنفيذ، ابنِ أنظمة حقيقية، وأطلق أعمالك." },
       { property: "og:image", content: "https://masaarat.ai/brand/masaarat-og.png" },
       { name: "twitter:image", content: "https://masaarat.ai/brand/masaarat-og.png" },
     ],
@@ -157,7 +159,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         }),
       },
     ],
-  }),
+  };
+  },
   loader: async () => {
     try {
       const { urlLocale, cookieLocale, countryCode } =

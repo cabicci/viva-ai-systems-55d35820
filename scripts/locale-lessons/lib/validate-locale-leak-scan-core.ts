@@ -277,6 +277,62 @@ export function validateLocaleLeakScan(): ValidatorResult {
     errors.push("account route head still uses static Arabic meta title");
   }
 
+  const pricingSource = readRepoFile("src/routes/pricing.tsx");
+  if (!pricingSource.includes("buildLocalizedPublicMeta")) {
+    errors.push("pricing route head must use buildLocalizedPublicMeta");
+  }
+  if (!pricingSource.includes("useUiString")) {
+    errors.push("pricing route must wire copy through useUiString()");
+  }
+  if (pricingSource.includes('title: "الباقات — مسارات"')) {
+    errors.push("pricing route head still uses static Arabic meta title");
+  }
+  if (pricingSource.includes('dir="rtl"')) {
+    errors.push("pricing route must not use fixed dir=\"rtl\"");
+  }
+
+  const termsSource = readRepoFile("src/routes/terms.tsx");
+  if (!termsSource.includes("buildLocalizedPublicMeta")) {
+    errors.push("terms route head must use buildLocalizedPublicMeta");
+  }
+  if (!termsSource.includes("useUiString")) {
+    errors.push("terms route must wire copy through useUiString()");
+  }
+  if (termsSource.includes('title: "الشروط والأحكام — مسارات"')) {
+    errors.push("terms route head still uses static Arabic meta title");
+  }
+  if (termsSource.includes('dir="rtl"')) {
+    errors.push("terms route must not use fixed dir=\"rtl\"");
+  }
+
+  const indexSource = readRepoFile("src/routes/index.tsx");
+  if (!indexSource.includes("buildLocalizedPublicMeta")) {
+    errors.push("index route head must use buildLocalizedPublicMeta");
+  }
+  if (indexSource.includes("مسارات — masaarat.ai | تعلّم الذكاء الاصطناعي بالتطبيق")) {
+    errors.push("index route head still uses static Arabic meta title");
+  }
+
+  const loginSource = readRepoFile("src/routes/login.tsx");
+  if (!loginSource.includes("buildLocalizedPublicMeta")) {
+    errors.push("login route head must use buildLocalizedPublicMeta");
+  }
+  if (loginSource.includes('title: "تسجيل الدخول — مسارات"')) {
+    errors.push("login route head still uses static Arabic meta title");
+  }
+
+  const rootSource = readRepoFile("src/routes/__root.tsx");
+  if (!rootSource.includes("buildLocalizedPublicMeta")) {
+    errors.push("root route head must use buildLocalizedPublicMeta for locale-aware meta");
+  }
+  if (
+    rootSource.includes(
+      'title: "مسارات — masaarat.ai | تعلّم الذكاء الاصطناعي بالتطبيق"',
+    )
+  ) {
+    errors.push("root route head still uses static Arabic meta title");
+  }
+
   const packagePreviewSource = readRepoFile(
     "src/components/locale/LocalePackagePreviewRenderer.tsx",
   );

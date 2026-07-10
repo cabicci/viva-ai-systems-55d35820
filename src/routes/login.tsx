@@ -7,10 +7,19 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { ArrowLeft } from "lucide-react";
 import { AuthShell } from "@/components/auth/AuthShell";
+import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
+import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
+import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 
 export const Route = createFileRoute("/login")({
-  head: () => ({ meta: [{ title: "تسجيل الدخول — مسارات" }] }),
+  validateSearch: (raw: Record<string, unknown>) => parseLocaleSearchParam(raw),
+  head: async ({ match }) => {
+    const locale = await resolveRouteHeadLocale({
+      searchLocale: match.search.locale,
+    });
+    return buildLocalizedPublicMeta(locale, "login");
+  },
   component: LoginPage,
 });
 

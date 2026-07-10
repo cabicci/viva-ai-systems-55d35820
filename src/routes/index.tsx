@@ -6,19 +6,24 @@ import { Journey } from "@/components/site/Journey";
 import { Philosophy } from "@/components/site/Philosophy";
 import { CTA } from "@/components/site/CTA";
 import { Footer } from "@/components/site/Footer";
+import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
+import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
+import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "مسارات — masaarat.ai | تعلّم الذكاء الاصطناعي بالتطبيق" },
-      { name: "description", content: "مسارات بتاخدك خطوة بخطوة من فهم أساسيات الـ AI لحد ما تبني أدوات، أنظمة، ومشاريع حقيقية بنفسك." },
-      { property: "og:title", content: "مسارات — masaarat.ai | تعلّم الذكاء الاصطناعي بالتطبيق" },
-      { property: "og:description", content: "مسارات بتاخدك خطوة بخطوة من فهم أساسيات الـ AI لحد ما تبني أدوات، أنظمة، ومشاريع حقيقية بنفسك." },
-      { property: "og:url", content: "https://masaarat.ai" },
-      { name: "twitter:title", content: "مسارات — masaarat.ai | تعلّم الذكاء الاصطناعي بالتطبيق" },
-      { name: "twitter:description", content: "مسارات بتاخدك خطوة بخطوة من فهم أساسيات الـ AI لحد ما تبني أدوات، أنظمة، ومشاريع حقيقية بنفسك." },
-    ],
-  }),
+  validateSearch: (raw: Record<string, unknown>) => parseLocaleSearchParam(raw),
+  head: async ({ match }) => {
+    const locale = await resolveRouteHeadLocale({
+      searchLocale: match.search.locale,
+    });
+    const { meta } = buildLocalizedPublicMeta(locale, "home");
+    return {
+      meta: [
+        ...meta,
+        { property: "og:url", content: "https://masaarat.ai" },
+      ],
+    };
+  },
   component: Index,
 });
 
