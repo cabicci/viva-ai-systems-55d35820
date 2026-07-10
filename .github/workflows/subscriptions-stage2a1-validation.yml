@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  IMMUTABLE_SHA: 3351c88ad6fd1265aa480ce8ab727221cad42d25
+  IMMUTABLE_SHA: 56a49f74a17bdd0c077a590d802d987e3190bd07
   SUPABASE_CLI: "npx -y supabase@2.109.1"
   ARTIFACT_DIR: ci-artifacts/subscriptions-stage2a1
 
@@ -24,7 +24,7 @@ jobs:
       - name: Checkout immutable validation target
         uses: actions/checkout@v4
         with:
-          ref: 3351c88ad6fd1265aa480ce8ab727221cad42d25
+          ref: 56a49f74a17bdd0c077a590d802d987e3190bd07
           persist-credentials: false
 
       - name: Setup Node.js
@@ -654,12 +654,28 @@ jobs:
         run: |
           set -euo pipefail
           ARTIFACT_DIR="${{ env.ARTIFACT_DIR }}"
+          RESULTS_FILE="$ARTIFACT_DIR/stage2a1-assertions.json"
           mkdir -p "$ARTIFACT_DIR"
+
+          write_sanitization_confirmation() {
+            {
+              echo "sanitized=true"
+              echo "local_disposable_only=true"
+              echo "no_secrets_printed=true"
+              echo "no_production=true"
+            } > "$ARTIFACT_DIR/sanitization-confirmation.txt"
+          }
+          write_sanitization_confirmation
 
           # Restore config.toml
           if [[ -f supabase/config.toml.ci-backup ]]; then
             cp supabase/config.toml.ci-backup supabase/config.toml
             rm -f supabase/config.toml.ci-backup
+          fi
+
+          if [[ -f src/routeTree.gen.ts.ci-backup ]]; then
+            cp src/routeTree.gen.ts.ci-backup src/routeTree.gen.ts
+            rm -f src/routeTree.gen.ts.ci-backup
           fi
 
           # Stop local Supabase project only
@@ -670,18 +686,28 @@ jobs:
           docker volume ls --filter "label=com.supabase.cli.project=${PROJECT_ID}" > "$ARTIFACT_DIR/cleanup-volumes.txt" 2>&1 || true
 
           REMAINING="$(docker ps -a --filter "name=${PROJECT_ID}" --format '{{.Names}}' 2>/dev/null | wc -l | tr -d ' ')"
-          echo "remaining_project_containers=${REMAINING}" > "$ARTIFACT_DIR/cleanup-evidence.txt"
+          REMAINING_VOLUMES="$(docker volume ls --filter "label=com.supabase.cli.project=${PROJECT_ID}" --format '{{.Name}}' 2>/dev/null | wc -l | tr -d ' ')"
+          {
+            echo "remaining_project_containers=${REMAINING}"
+            echo "remaining_project_volumes=${REMAINING_VOLUMES}"
+            echo "project_id=${PROJECT_ID}"
+          } > "$ARTIFACT_DIR/cleanup-evidence.txt"
 
-          # Update assertions 24-26 in results file if present
-          RESULTS_FILE="$ARTIFACT_DIR/stage2a1-assertions.json"
           TRACKED_CLEAN="yes"
-          if ! git diff --quiet || ! git diff --cached --quiet || [[ -n "$(git status --porcelain)" ]]; then
+          if ! git diff --quiet || ! git diff --cached --quiet; then
             TRACKED_CLEAN="no"
-            git status --porcelain > "$ARTIFACT_DIR/post-cleanup-status.txt" || true
+            {
+              echo "tracked_diff_files:"
+              git diff --name-only || true
+              echo "tracked_cached_diff_files:"
+              git diff --cached --name-only || true
+            } > "$ARTIFACT_DIR/post-cleanup-tracked-diff.txt"
+          else
+            echo "tracked_clean=true" > "$ARTIFACT_DIR/post-cleanup-tracked-diff.txt"
           fi
 
           CLEANUP_OK="yes"
-          [[ "$REMAINING" == "0" ]] || CLEANUP_OK="no"
+          [[ "$REMAINING" == "0" && "$REMAINING_VOLUMES" == "0" ]] || CLEANUP_OK="no"
 
           update_assertion() {
             local num="$1" name="$2" expected="$3" actual="$4" status="$5" evidence="$6"
@@ -703,26 +729,28 @@ jobs:
           }
 
           if [[ "$TRACKED_CLEAN" == "yes" ]]; then
-            update_assertion 24 "No tracked repository file remains modified after cleanup" "clean" "clean" "PASS" "git status --porcelain"
+            update_assertion 24 "No tracked repository file remains modified after cleanup" "clean" "clean" "PASS" "git diff --quiet; git diff --cached --quiet"
           else
-            update_assertion 24 "No tracked repository file remains modified after cleanup" "clean" "dirty" "FAIL" "post-cleanup-status.txt"
+            update_assertion 24 "No tracked repository file remains modified after cleanup" "clean" "dirty" "FAIL" "post-cleanup-tracked-diff.txt"
           fi
 
           update_assertion 25 "No remote, provider, deployment, merge, push-to-main, or Production operation occurred" "local only" "local only" "PASS" "workflow scope"
           if [[ "$CLEANUP_OK" == "yes" ]]; then
-            update_assertion 26 "Disposable Supabase cleanup succeeded" "0 project containers" "$REMAINING remaining" "PASS" "cleanup-evidence.txt"
+            update_assertion 26 "Disposable Supabase cleanup succeeded" "0 project containers/volumes" "0 remaining" "PASS" "cleanup-evidence.txt"
+            echo "cleanup_step_result=PASS" >> "$ARTIFACT_DIR/cleanup-evidence.txt"
           else
-            update_assertion 26 "Disposable Supabase cleanup succeeded" "0 project containers" "$REMAINING remaining" "FAIL" "cleanup-evidence.txt"
+            update_assertion 26 "Disposable Supabase cleanup succeeded" "0 project containers/volumes" "${REMAINING} containers, ${REMAINING_VOLUMES} volumes" "FAIL" "cleanup-evidence.txt"
+            echo "cleanup_step_result=FAIL" >> "$ARTIFACT_DIR/cleanup-evidence.txt"
           fi
 
+          write_sanitization_confirmation
+
+          OVERALL_FAILED="no"
           if [[ -f "$RESULTS_FILE" ]] && [[ "$(jq -r '.summary.failed' "$RESULTS_FILE")" != "0" ]]; then
-            exit 1
+            OVERALL_FAILED="yes"
           fi
-
-          echo "sanitized=true" > "$ARTIFACT_DIR/sanitization-confirmation.txt"
-          echo "local_disposable_only=true" >> "$ARTIFACT_DIR/sanitization-confirmation.txt"
-          echo "no_secrets_printed=true" >> "$ARTIFACT_DIR/sanitization-confirmation.txt"
-          echo "no_production=true" >> "$ARTIFACT_DIR/sanitization-confirmation.txt"
+          echo "overall_validation_failed=${OVERALL_FAILED}" > "$ARTIFACT_DIR/overall-validation-result.txt"
+          echo "cleanup_independent_result=${CLEANUP_OK}" >> "$ARTIFACT_DIR/overall-validation-result.txt"
 
       - name: Upload validation artifacts
         if: always()
@@ -731,3 +759,20 @@ jobs:
           name: subscriptions-stage2a1-validation
           path: ci-artifacts/subscriptions-stage2a1/
           if-no-files-found: warn
+
+      - name: Enforce overall validation result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          RESULTS_FILE="${{ env.ARTIFACT_DIR }}/stage2a1-assertions.json"
+          if [[ ! -f "$RESULTS_FILE" ]]; then
+            echo "Missing assertion results file: $RESULTS_FILE"
+            exit 1
+          fi
+          FAILED_COUNT="$(jq -r '.summary.failed' "$RESULTS_FILE")"
+          OVERALL="$(jq -r '.summary.overall' "$RESULTS_FILE")"
+          echo "overall=${OVERALL} failed=${FAILED_COUNT}"
+          if [[ "$FAILED_COUNT" != "0" ]]; then
+            exit 1
+          fi
