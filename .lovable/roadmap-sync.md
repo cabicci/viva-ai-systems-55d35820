@@ -1,10 +1,10 @@
 # Roadmap sync marker
 
 [roadmap:a3b8c1d2-4e5f-6789-abcd-ef0123456789]
-date: 2026-07-07
-scope: infra
+date: 2026-07-11
+scope: content
 source: user
-summary: Shard Phase 13B paid generation into 10-lesson jobs with mergeable package artifact staging
+summary: Apply Scientific Review-approved Mission intro/delivery copy to six localized packages (automator-m4-l3, intro-m1-l5)
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

@@ -37,7 +37,6 @@ vi.mock("@/components/intro/MissionRubricSubmit", async (importOriginal) => {
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
 const VALID_LESSON_ID = "intro-m1-l2-first-prompt";
-const INVALID_LESSON_ID = "intro-m1-l5-ai-vs-software";
 
 function readPackage(
   locale: "en",
@@ -191,7 +190,17 @@ describe("LocalePackagePreviewRenderer live mission", () => {
   });
 
   it("falls back to readonly mission UI for invalid package missions", () => {
-    const { container } = renderLocalizedPackage("en", INVALID_LESSON_ID);
+    const pkg = readPackage("en", VALID_LESSON_ID);
+    const invalidPkg = structuredClone(pkg);
+    const missionSection = invalidPkg.sections.find((section) => section.mission);
+    expect(missionSection?.mission).toBeTruthy();
+    missionSection!.mission!.intro = "";
+
+    const { container } = render(
+      <LocaleProvider effectiveLocale="en">
+        <LocalePackagePreviewRenderer pkg={invalidPkg} />
+      </LocaleProvider>,
+    );
 
     expect(container.querySelector('[data-locale-mission="readonly"]')).not.toBeNull();
     expect(container.querySelector('[data-locale-mission="live"]')).toBeNull();
