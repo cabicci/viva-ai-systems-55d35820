@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  IMMUTABLE_SHA: 56a49f74a17bdd0c077a590d802d987e3190bd07
+  IMMUTABLE_SHA: 8e792189c06aa329473586781948df8c5833b242
   SUPABASE_CLI: "npx -y supabase@2.109.1"
   ARTIFACT_DIR: ci-artifacts/subscriptions-stage2a1
 
@@ -24,7 +24,7 @@ jobs:
       - name: Checkout immutable validation target
         uses: actions/checkout@v4
         with:
-          ref: 56a49f74a17bdd0c077a590d802d987e3190bd07
+          ref: 8e792189c06aa329473586781948df8c5833b242
           persist-credentials: false
 
       - name: Setup Node.js
