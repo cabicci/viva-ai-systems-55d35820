@@ -202,6 +202,7 @@ jobs:
           map_supabase_api_env() {
             local resolved_url="" rest_base=""
             local norm_api norm_rest norm_supabase
+            local norm_anon norm_publish norm_service norm_secret
             norm_api="$(normalize_env_value "${API_URL:-}")"
             norm_rest="$(normalize_env_value "${REST_URL:-}")"
             norm_supabase="$(normalize_env_value "${SUPABASE_URL:-}")"
@@ -217,13 +218,23 @@ jobs:
               resolved_url="$norm_supabase"
             fi
             SUPABASE_URL="$resolved_url"
-            SUPABASE_ANON_KEY="${SUPABASE_ANON_KEY:-${ANON_KEY:-}}"
-            SUPABASE_SERVICE_ROLE_KEY="${SUPABASE_SERVICE_ROLE_KEY:-${SERVICE_ROLE_KEY:-}}"
-            if [[ -z "${SUPABASE_ANON_KEY:-}" ]]; then
-              SUPABASE_ANON_KEY="${SUPABASE_PUBLISHABLE_KEY:-${PUBLISHABLE_KEY:-}}"
+            norm_anon="$(normalize_env_value "${ANON_KEY:-}")"
+            norm_publish="$(normalize_env_value "${PUBLISHABLE_KEY:-}")"
+            norm_service="$(normalize_env_value "${SERVICE_ROLE_KEY:-}")"
+            norm_secret="$(normalize_env_value "${SECRET_KEY:-}")"
+            SUPABASE_ANON_KEY="$(normalize_env_value "${SUPABASE_ANON_KEY:-}")"
+            [[ -z "$SUPABASE_ANON_KEY" ]] && SUPABASE_ANON_KEY="${norm_anon:-$norm_publish}"
+            if [[ -n "$norm_service" ]]; then
+              SUPABASE_SERVICE_ROLE_KEY="$norm_service"
+            else
+              SUPABASE_SERVICE_ROLE_KEY="$norm_secret"
             fi
-            if [[ -z "${SUPABASE_SERVICE_ROLE_KEY:-}" ]]; then
-              SUPABASE_SERVICE_ROLE_KEY="${SECRET_KEY:-}"
+            if [[ -n "$norm_secret" ]]; then
+              SUPABASE_SERVICE_API_KEY="$norm_secret"
+            elif [[ -n "$norm_service" ]]; then
+              SUPABASE_SERVICE_API_KEY="$norm_service"
+            else
+              SUPABASE_SERVICE_API_KEY="$SUPABASE_ANON_KEY"
             fi
           }
 
@@ -513,7 +524,7 @@ jobs:
             PROFILE_CODE="$(curl -s -o /dev/null -w '%{http_code}' \
               -X POST "${SUPABASE_URL}/rest/v1/rpc/get_entitlement_snapshot" \
               -H "Authorization: Bearer ${SUPABASE_SERVICE_ROLE_KEY}" \
-              -H "apikey: ${SUPABASE_SERVICE_ROLE_KEY}" \
+              -H "apikey: ${SUPABASE_SERVICE_API_KEY}" \
               -H "Accept-Profile: billing" \
               -H "Content-Profile: billing" \
               -H "Content-Type: application/json" \
@@ -582,7 +593,7 @@ jobs:
               local email="$1" phone="$2" password="$3" email_confirm="$4" phone_confirm="$5"
               curl -s -X POST "${SUPABASE_URL}/auth/v1/admin/users" \
                 -H "Authorization: Bearer ${SUPABASE_SERVICE_ROLE_KEY}" \
-                -H "apikey: ${SUPABASE_SERVICE_ROLE_KEY}" \
+                -H "apikey: ${SUPABASE_SERVICE_API_KEY}" \
                 -H "Content-Type: application/json" \
                 -d "{\"email\":\"${email}\",\"phone\":\"${phone}\",\"password\":\"${password}\",\"email_confirm\":${email_confirm},\"phone_confirm\":${phone_confirm}}"
             }
@@ -770,7 +781,7 @@ jobs:
             SRPC_OK="yes"
             EVAL_BODY="$(curl -s -X POST "${SUPABASE_URL}/rest/v1/rpc/evaluate_access" \
               -H "Authorization: Bearer ${SUPABASE_SERVICE_ROLE_KEY}" \
-              -H "apikey: ${SUPABASE_SERVICE_ROLE_KEY}" \
+              -H "apikey: ${SUPABASE_SERVICE_API_KEY}" \
               -H "Accept-Profile: billing" \
               -H "Content-Profile: billing" \
               -H "Content-Type: application/json" \
@@ -780,7 +791,7 @@ jobs:
 
             GRANT_BODY="$(curl -s -X POST "${SUPABASE_URL}/rest/v1/rpc/grant_ai_credit" \
               -H "Authorization: Bearer ${SUPABASE_SERVICE_ROLE_KEY}" \
-              -H "apikey: ${SUPABASE_SERVICE_ROLE_KEY}" \
+              -H "apikey: ${SUPABASE_SERVICE_API_KEY}" \
               -H "Accept-Profile: billing" \
               -H "Content-Profile: billing" \
               -H "Content-Type: application/json" \
