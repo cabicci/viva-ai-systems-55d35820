@@ -71,7 +71,7 @@ jobs:
             "pgvector available and installed"
             "Seven billing migrations present exactly once in correct order"
             "Exactly 32 billing tables"
-            "Exactly 9 billing functions"
+            "Exactly 11 billing functions"
             "Exactly 15 billing policies"
             "Exactly 81 billing indexes"
             "Billing PostgREST profile works"
@@ -483,8 +483,35 @@ jobs:
 
             [[ "$TABLE_COUNT" == "32" ]] && record_assertion 7 "Exactly 32 billing tables" "32" "$TABLE_COUNT" "PASS" "db-object-counts.txt" \
               || record_assertion 7 "Exactly 32 billing tables" "32" "$TABLE_COUNT" "FAIL" "billing-tables.txt"
-            [[ "$FUNC_COUNT" == "9" ]] && record_assertion 8 "Exactly 9 billing functions" "9" "$FUNC_COUNT" "PASS" "billing-functions.txt" \
-              || record_assertion 8 "Exactly 9 billing functions" "9" "$FUNC_COUNT" "FAIL" "billing-functions.txt"
+            PRIVILEGED_RPC_OK="yes"
+            PRIVILEGED_RPCS=(
+              get_entitlement_snapshot
+              evaluate_access
+              reserve_ai_quota
+              commit_ai_quota
+              release_ai_quota
+              cancel_at_period_end
+              apply_subscription_event
+              grant_monetary_credit
+              grant_ai_credit
+            )
+            HELPER_RPCS=(jwt_role is_service_role_caller)
+            {
+              for rpc in "${PRIVILEGED_RPCS[@]}"; do echo "privileged_rpc=${rpc}"; done
+              for rpc in "${HELPER_RPCS[@]}"; do echo "helper_rpc=${rpc}"; done
+            } > "$ARTIFACT_DIR/billing-privileged-rpc-inventory.txt"
+            for rpc in "${PRIVILEGED_RPCS[@]}" "${HELPER_RPCS[@]}"; do
+              if ! grep -q "^${rpc}(" "$ARTIFACT_DIR/billing-functions.txt"; then
+                PRIVILEGED_RPC_OK="no"
+              fi
+            done
+            if [[ "$FUNC_COUNT" == "11" && "$PRIVILEGED_RPC_OK" == "yes" ]]; then
+              record_assertion 8 "Exactly 11 billing functions" "11" "$FUNC_COUNT" "PASS" "billing-privileged-rpc-inventory.txt"
+            elif [[ "$FUNC_COUNT" == "11" ]]; then
+              record_assertion 8 "Exactly 11 billing functions" "11 privileged inventory" "inventory mismatch" "FAIL" "billing-privileged-rpc-inventory.txt"
+            else
+              record_assertion 8 "Exactly 11 billing functions" "11" "$FUNC_COUNT" "FAIL" "billing-functions.txt"
+            fi
             [[ "$POLICY_COUNT" == "15" ]] && record_assertion 9 "Exactly 15 billing policies" "15" "$POLICY_COUNT" "PASS" "db-object-counts.txt" \
               || record_assertion 9 "Exactly 15 billing policies" "15" "$POLICY_COUNT" "FAIL" "db-object-counts.txt"
             [[ "$INDEX_COUNT" == "81" ]] && record_assertion 10 "Exactly 81 billing indexes" "81" "$INDEX_COUNT" "PASS" "db-object-counts.txt" \
@@ -493,7 +520,7 @@ jobs:
             for n in 7 8 9 10; do
               case $n in
                 7) record_assertion 7 "Exactly 32 billing tables" "32" "skipped" "FAIL" "migrations not applied" ;;
-                8) record_assertion 8 "Exactly 9 billing functions" "9" "skipped" "FAIL" "migrations not applied" ;;
+                8) record_assertion 8 "Exactly 11 billing functions" "11" "skipped" "FAIL" "migrations not applied" ;;
                 9) record_assertion 9 "Exactly 15 billing policies" "15" "skipped" "FAIL" "migrations not applied" ;;
                 10) record_assertion 10 "Exactly 81 billing indexes" "81" "skipped" "FAIL" "migrations not applied" ;;
               esac
@@ -803,25 +830,38 @@ jobs:
 
             # Assertion 16: sensitive tables inaccessible
             SENSITIVE_BLOCKED="yes"
+            : > "$ARTIFACT_DIR/sensitive-tables.txt"
             for table in gateway_customers webhook_events outbox_events reconciliation_runs ai_model_config_versions; do
-              code="$(curl -s -o /dev/null -w '%{http_code}' \
+              sens_resp="$(curl -s -w $'\n__HTTP_CODE__%{http_code}' \
                 -X GET "${SUPABASE_URL}/rest/v1/${table}?select=id&limit=1" \
                 -H "Authorization: Bearer ${JWT_A}" \
                 -H "apikey: ${SUPABASE_ANON_KEY}" \
                 -H "Accept-Profile: billing" \
                 -H "Content-Profile: billing")"
-              echo "${table}_http=${code}" >> "$ARTIFACT_DIR/sensitive-tables.txt"
-              rows="$(curl -s \
-                -X GET "${SUPABASE_URL}/rest/v1/${table}?select=id&limit=1" \
-                -H "Authorization: Bearer ${JWT_A}" \
-                -H "apikey: ${SUPABASE_ANON_KEY}" \
-                -H "Accept-Profile: billing" \
-                -H "Content-Profile: billing" | jq 'length' 2>/dev/null || echo 0)"
-              if [[ "$rows" != "0" ]]; then SENSITIVE_BLOCKED="no"; fi
+              code="${sens_resp##*__HTTP_CODE__}"
+              body="${sens_resp%%__HTTP_CODE__*}"
+              denial_result="unexpected"
+              if [[ "$code" =~ ^(401|403)$ ]]; then
+                denial_result="denied"
+              elif [[ "$code" =~ ^2 ]]; then
+                rows="$(echo "$body" | jq 'if type == "array" then length else 0 end' 2>/dev/null || echo 0)"
+                rows="$(printf '%s' "$rows" | tr -d '\r\n\t ')"
+                [[ -z "$rows" || ! "$rows" =~ ^[0-9]+$ ]] && rows=0
+                if [[ "$rows" != "0" ]]; then
+                  SENSITIVE_BLOCKED="no"
+                  denial_result="leaked"
+                else
+                  denial_result="ok_no_rows"
+                fi
+              else
+                SENSITIVE_BLOCKED="no"
+                denial_result="unexpected_status"
+              fi
+              echo "table=${table} status=${code} result=${denial_result}" >> "$ARTIFACT_DIR/sensitive-tables.txt"
             done
             [[ "$SENSITIVE_BLOCKED" == "yes" ]] \
-              && record_assertion 16 "Sensitive tables inaccessible" "0 rows" "0 rows" "PASS" "sensitive-tables.txt" \
-              || record_assertion 16 "Sensitive tables inaccessible" "0 rows" "leaked" "FAIL" "sensitive-tables.txt"
+              && record_assertion 16 "Sensitive tables inaccessible" "denied or 0 rows" "denied" "PASS" "sensitive-tables.txt" \
+              || record_assertion 16 "Sensitive tables inaccessible" "denied or 0 rows" "leaked or unexpected" "FAIL" "sensitive-tables.txt"
 
             # Assertion 17: service-role RPCs succeed
             SRPC_OK="yes"
@@ -851,20 +891,56 @@ jobs:
 
             # Assertion 18: SECURITY DEFINER ownership and search_path
             SECDEF_OK="yes"
+            HELPER_OK="yes"
             if ! grep -q "force_rls_enabled=0" "$ARTIFACT_DIR/rls-grants-evidence.txt"; then SECDEF_OK="no"; fi
             if ! grep -q "rls_enabled_missing=0" "$ARTIFACT_DIR/rls-grants-evidence.txt"; then SECDEF_OK="no"; fi
-            FUNC_LINES="$(wc -l < "$ARTIFACT_DIR/billing-functions-security.txt" | tr -d ' ')"
-            DEFINER_LINES="$(awk -F'|' 'NF>=2 && $2=="t" {c++} END{print c+0}' "$ARTIFACT_DIR/billing-functions-security.txt")"
-            OWNER_LINES="$(awk -F'|' 'NF>=3 && $3=="postgres" {c++} END{print c+0}' "$ARTIFACT_DIR/billing-functions-security.txt")"
-            SEARCH_LINES="$(grep -c 'search_path=billing' "$ARTIFACT_DIR/billing-functions-security.txt" || echo 0)"
+            PRIVILEGED_RPCS=(
+              get_entitlement_snapshot
+              evaluate_access
+              reserve_ai_quota
+              commit_ai_quota
+              release_ai_quota
+              cancel_at_period_end
+              apply_subscription_event
+              grant_monetary_credit
+              grant_ai_credit
+            )
+            HELPER_RPCS=(jwt_role is_service_role_caller)
+            check_billing_func_security() {
+              local name="$1" expect_definer="$2"
+              local line prosecdef owner config func_pub
+              line="$(grep -E "^${name}\\|" "$ARTIFACT_DIR/billing-functions-security.txt" | head -n1 || true)"
+              if [[ -z "$line" ]]; then
+                if [[ "$expect_definer" == "t" ]]; then SECDEF_OK="no"; else HELPER_OK="no"; fi
+                return
+              fi
+              prosecdef="$(echo "$line" | cut -d'|' -f2)"
+              owner="$(echo "$line" | cut -d'|' -f3)"
+              config="$(echo "$line" | cut -d'|' -f4-)"
+              func_pub="$(grep -E "^${name}\\|" "$ARTIFACT_DIR/billing-routine-privileges.txt" | grep -cF '|PUBLIC|EXECUTE' 2>/dev/null || true)"
+              func_pub="$(printf '%s' "${func_pub:-0}" | tr -d '\r\n\t ')"
+              [[ -z "$func_pub" || ! "$func_pub" =~ ^[0-9]+$ ]] && func_pub=0
+              if [[ "$prosecdef" != "$expect_definer" || "$owner" != "postgres" || "$config" != *search_path=billing* || "$func_pub" != "0" ]]; then
+                if [[ "$expect_definer" == "t" ]]; then SECDEF_OK="no"; else HELPER_OK="no"; fi
+              fi
+              echo "function=${name} prosecdef=${prosecdef} owner=${owner} public_execute=${func_pub} expect_definer=${expect_definer}" >> "$ARTIFACT_DIR/billing-functions-security-evidence.txt"
+            }
+            : > "$ARTIFACT_DIR/billing-functions-security-evidence.txt"
+            for rpc in "${PRIVILEGED_RPCS[@]}"; do
+              check_billing_func_security "$rpc" "t"
+            done
+            for rpc in "${HELPER_RPCS[@]}"; do
+              check_billing_func_security "$rpc" "f"
+            done
             echo "force_rls_at_checkpoint=false" >> "$ARTIFACT_DIR/billing-functions-security.txt"
-            [[ "$FUNC_LINES" == "$DEFINER_LINES" && "$FUNC_LINES" == "$OWNER_LINES" && "$FUNC_LINES" == "$SEARCH_LINES" ]] || SECDEF_OK="no"
-            [[ "$SECDEF_OK" == "yes" ]] \
-              && record_assertion 18 "SECURITY DEFINER ownership and search_path pass" "all definer/postgres/hardened" "pass" "PASS" "billing-functions-security.txt" \
-              || record_assertion 18 "SECURITY DEFINER ownership and search_path pass" "all definer/postgres/hardened" "failed" "FAIL" "billing-functions-security.txt"
+            echo "privileged_rpc_secdef_ok=${SECDEF_OK}" >> "$ARTIFACT_DIR/billing-functions-security-evidence.txt"
+            echo "helper_rpc_invoker_ok=${HELPER_OK}" >> "$ARTIFACT_DIR/billing-functions-security-evidence.txt"
+            [[ "$SECDEF_OK" == "yes" && "$HELPER_OK" == "yes" ]] \
+              && record_assertion 18 "SECURITY DEFINER ownership and search_path pass" "all definer/postgres/hardened" "pass" "PASS" "billing-functions-security-evidence.txt" \
+              || record_assertion 18 "SECURITY DEFINER ownership and search_path pass" "all definer/postgres/hardened" "failed" "FAIL" "billing-functions-security-evidence.txt"
 
             # Assertion 19: no unintended PUBLIC/client EXECUTE
-            PUB_EXEC="$(grep -c '|PUBLIC|EXECUTE' "$ARTIFACT_DIR/billing-routine-privileges.txt" || echo 0)"
+            PUB_EXEC="$(count_migration_occurrences '|PUBLIC|EXECUTE' "$ARTIFACT_DIR/billing-routine-privileges.txt")"
             echo "public_execute_count=${PUB_EXEC}" > "$ARTIFACT_DIR/public-execute.txt"
             [[ "$PUB_EXEC" == "0" ]] \
               && record_assertion 19 "No unintended PUBLIC/client EXECUTE privileges" "0 PUBLIC EXECUTE" "$PUB_EXEC" "PASS" "billing-routine-privileges.txt" \
