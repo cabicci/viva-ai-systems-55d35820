@@ -1,86 +1,69 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
+import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
+import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
+import { useLocale } from "@/lib/locale/locale-context";
+import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
+import { useUiString } from "@/lib/locale/use-ui-strings";
 
 export const Route = createFileRoute("/privacy")({
-  head: () => ({
-    meta: [
-      { title: "سياسة الخصوصية — مسارات" },
-      {
-        name: "description",
-        content: "سياسة خصوصية منصة مسارات (masaarat.ai) — نسخة مسودة للوصول المبكر.",
-      },
-    ],
-  }),
+  validateSearch: (raw: Record<string, unknown>) => parseLocaleSearchParam(raw),
+  head: async ({ match }) => {
+    const locale = await resolveRouteHeadLocale({
+      searchLocale: match.search.locale,
+    });
+    return buildLocalizedPublicMeta(locale, "privacy");
+  },
   component: PrivacyPage,
 });
 
 function PrivacyPage() {
+  const t = useUiString();
+  const { dir } = useLocale();
+
   return (
-    <div className="min-h-dvh flex flex-col" dir="rtl">
+    <div className="min-h-dvh flex flex-col" dir={dir}>
       <Navbar />
       <main id="main-content" className="flex-1 container mx-auto px-4 py-12 max-w-3xl">
         <header className="mb-10">
           <p className="text-xs font-mono uppercase tracking-widest text-accent mb-3">
-            مسودة · early access v0.1
+            {t("privacy.eyebrow")}
           </p>
-          <h1 className="text-3xl md:text-4xl font-black mb-3">سياسة الخصوصية</h1>
-          <p className="text-muted-foreground leading-relaxed">
-            آخر تحديث: يونيو ٢٠٢٦. المنصة في مرحلة وصول مبكر — قد تتغيّر هذه السياسة
-            مع تطوّر المنتج. ننصح بمراجعتها دوريًا.
-          </p>
+          <h1 className="text-3xl md:text-4xl font-black mb-3">{t("privacy.title")}</h1>
+          <p className="text-muted-foreground leading-relaxed">{t("privacy.intro")}</p>
         </header>
 
         <article className="space-y-8 text-sm md:text-base leading-[1.9] text-foreground/90">
           <section>
-            <h2 className="text-lg font-bold mb-2">من نحن</h2>
-            <p className="text-muted-foreground">
-              مسارات (masaarat.ai) منصة تعليمية عربية لتعلّم الذكاء الاصطناعي بالتطبيق.
-              نحترم خصوصيتك ونشرح هنا كيف نتعامل مع بياناتك في هذه المرحلة المبكرة.
-            </p>
+            <h2 className="text-lg font-bold mb-2">{t("privacy.section.whoWeAre.title")}</h2>
+            <p className="text-muted-foreground">{t("privacy.section.whoWeAre.body")}</p>
           </section>
 
           <section>
-            <h2 className="text-lg font-bold mb-2">بيانات الحساب</h2>
-            <p className="text-muted-foreground">
-              عند التسجيل نجمع معلومات أساسية مثل البريد الإلكتروني وكلمة المرور (مشفّرة)
-              وبيانات الملف الشخصي التي تختار إدخالها. نستخدمها لتشغيل حسابك، تتبّع تقدّمك
-              في الدروس، وإدارة اشتراكك عند تفعيله.
-            </p>
+            <h2 className="text-lg font-bold mb-2">{t("privacy.section.accountData.title")}</h2>
+            <p className="text-muted-foreground">{t("privacy.section.accountData.body")}</p>
           </section>
 
           <section>
-            <h2 className="text-lg font-bold mb-2">التحليلات واستخدام المنصة</h2>
-            <p className="text-muted-foreground">
-              نسجّل نشاطًا تقنيًا واستخدامًا للمنصة — مثل الدروس التي تفتحها، مدة الجلسات،
-              وأخطاء تقنية — لتحسين التجربة وإصلاح المشاكل. لا نبيع بياناتك الشخصية لأطراف
-              ثالثة.
-            </p>
+            <h2 className="text-lg font-bold mb-2">{t("privacy.section.analytics.title")}</h2>
+            <p className="text-muted-foreground">{t("privacy.section.analytics.body")}</p>
           </section>
 
           <section>
-            <h2 className="text-lg font-bold mb-2">استخدام الذكاء الاصطناعي</h2>
-            <p className="text-muted-foreground">
-              مساعد المنصة والميزات المرتبطة بالـ AI تعالج نصوصك وأسئلتك لتقديم إرشاد
-              تعليمي. لا تُستخدم محادثاتك للإعلان. قد نُخزّن سياقًا محدودًا لتحسين جودة
-              الردود داخل حسابك. لا تُدخل معلومات حساسة (كلمات مرور، بيانات مالية، أسرار
-              تجارية) في المحادثات.
-            </p>
+            <h2 className="text-lg font-bold mb-2">{t("privacy.section.aiUse.title")}</h2>
+            <p className="text-muted-foreground">{t("privacy.section.aiUse.body")}</p>
           </section>
 
           <section>
-            <h2 className="text-lg font-bold mb-2">ملفات تعريف الارتباط والتتبّع الأساسي</h2>
-            <p className="text-muted-foreground">
-              نستخدم ملفات تعريف ارتباط (cookies) وتخزينًا محليًا ضروريًا لتسجيل الدخول،
-              حفظ تفضيلاتك، وقياس أداء المنصة بشكل مجمّع. يمكنك ضبط متصفّحك لرفض بعض
-              ملفات الارتباط، لكن قد لا تعمل بعض الميزات بشكل كامل.
-            </p>
+            <h2 className="text-lg font-bold mb-2">{t("privacy.section.cookies.title")}</h2>
+            <p className="text-muted-foreground">{t("privacy.section.cookies.body")}</p>
           </section>
 
           <section>
-            <h2 className="text-lg font-bold mb-2">التواصل والدعم</h2>
+            <h2 className="text-lg font-bold mb-2">{t("privacy.section.contact.title")}</h2>
             <p className="text-muted-foreground">
-              لأي استفسار عن الخصوصية أو بياناتك، راسلنا على{" "}
+              {t("privacy.section.contact.body")}{" "}
               <a
                 href="mailto:support@masaarat.ai"
                 className="text-primary underline underline-offset-2"
@@ -92,15 +75,13 @@ function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-bold mb-2">حذف الحساب وطلب البيانات</h2>
+            <h2 className="text-lg font-bold mb-2">{t("privacy.section.accountDeletion.title")}</h2>
             <p className="text-muted-foreground">
-              يمكنك طلب حذف حسابك أو تصدير/حذف بياناتك الشخصية عبر البريد أعلاه أو من
-              صفحة{" "}
+              {t("privacy.section.accountDeletion.bodyBefore")}{" "}
               <Link to="/account" className="text-primary underline underline-offset-2">
-                حسابي
+                {t("account.title")}
               </Link>{" "}
-              عندما تتوفر أداة الحذف. نعالج الطلبات في أقرب وقت ممكن خلال مرحلة الوصول
-              المبكر.
+              {t("privacy.section.accountDeletion.bodyAfter")}
             </p>
           </section>
         </article>

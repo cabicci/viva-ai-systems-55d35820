@@ -8,6 +8,8 @@ export const PUBLIC_META_UI_KEYS = [
   "meta.public.pricing.description",
   "meta.public.terms.title",
   "meta.public.terms.description",
+  "meta.public.privacy.title",
+  "meta.public.privacy.description",
   "meta.public.login.title",
   "meta.public.login.description",
   "meta.root.title",
@@ -90,4 +92,26 @@ export const TERMS_UI_KEYS = [
   "terms.section.platformRights.body",
   "terms.section.contact.title",
   "terms.section.contact.body",
+] as const satisfies readonly UiStringKey[];
+
+/** Privacy page body copy keys. */
+export const PRIVACY_UI_KEYS = [
+  "privacy.eyebrow",
+  "privacy.title",
+  "privacy.intro",
+  "privacy.section.whoWeAre.title",
+  "privacy.section.whoWeAre.body",
+  "privacy.section.accountData.title",
+  "privacy.section.accountData.body",
+  "privacy.section.analytics.title",
+  "privacy.section.analytics.body",
+  "privacy.section.aiUse.title",
+  "privacy.section.aiUse.body",
+  "privacy.section.cookies.title",
+  "privacy.section.cookies.body",
+  "privacy.section.contact.title",
+  "privacy.section.contact.body",
+  "privacy.section.accountDeletion.title",
+  "privacy.section.accountDeletion.bodyBefore",
+  "privacy.section.accountDeletion.bodyAfter",
 ] as const satisfies readonly UiStringKey[];

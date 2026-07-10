@@ -321,6 +321,20 @@ export function validateLocaleLeakScan(): ValidatorResult {
     errors.push("login route head still uses static Arabic meta title");
   }
 
+  const privacySource = readRepoFile("src/routes/privacy.tsx");
+  if (!privacySource.includes("buildLocalizedPublicMeta")) {
+    errors.push("privacy route head must use buildLocalizedPublicMeta");
+  }
+  if (!privacySource.includes("useUiString")) {
+    errors.push("privacy route must wire copy through useUiString()");
+  }
+  if (privacySource.includes('title: "سياسة الخصوصية — مسارات"')) {
+    errors.push("privacy route head still uses static Arabic meta title");
+  }
+  if (privacySource.includes('dir="rtl"')) {
+    errors.push("privacy route must not use fixed dir=\"rtl\"");
+  }
+
   const rootSource = readRepoFile("src/routes/__root.tsx");
   if (!rootSource.includes("buildLocalizedPublicMeta")) {
     errors.push("root route head must use buildLocalizedPublicMeta for locale-aware meta");
