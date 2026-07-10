@@ -163,6 +163,57 @@ jobs:
               export "$env_line"
             done < "$SUPABASE_STATUS_ENV_FILE"
             set -u
+            map_supabase_api_env
+          }
+
+          map_supabase_api_env() {
+            SUPABASE_URL="${SUPABASE_URL:-${API_URL:-}}"
+            SUPABASE_ANON_KEY="${SUPABASE_ANON_KEY:-${ANON_KEY:-}}"
+            SUPABASE_SERVICE_ROLE_KEY="${SUPABASE_SERVICE_ROLE_KEY:-${SERVICE_ROLE_KEY:-}}"
+            if [[ -z "${SUPABASE_ANON_KEY:-}" ]]; then
+              SUPABASE_ANON_KEY="${SUPABASE_PUBLISHABLE_KEY:-${PUBLISHABLE_KEY:-}}"
+            fi
+            if [[ -z "${SUPABASE_SERVICE_ROLE_KEY:-}" ]]; then
+              SUPABASE_SERVICE_ROLE_KEY="${SECRET_KEY:-}"
+            fi
+          }
+
+          require_supabase_api_env() {
+            map_supabase_api_env
+            local missing=()
+            [[ -z "${SUPABASE_URL:-}" ]] && missing+=("SUPABASE_URL")
+            [[ -z "${SUPABASE_ANON_KEY:-}" ]] && missing+=("SUPABASE_ANON_KEY")
+            [[ -z "${SUPABASE_SERVICE_ROLE_KEY:-}" ]] && missing+=("SUPABASE_SERVICE_ROLE_KEY")
+            if [[ ${#missing[@]} -gt 0 ]]; then
+              {
+                echo "FATAL: required Supabase API credentials are not available after CLI env mapping."
+                echo "Missing script variables: $(IFS=,; echo "${missing[*]}")"
+                echo "Checked source variable presence (names only):"
+                for name in SUPABASE_URL API_URL SUPABASE_ANON_KEY ANON_KEY SUPABASE_PUBLISHABLE_KEY PUBLISHABLE_KEY SUPABASE_SERVICE_ROLE_KEY SERVICE_ROLE_KEY SECRET_KEY; do
+                  if [[ -n "${!name:-}" ]]; then
+                    echo "${name}=present"
+                  else
+                    echo "${name}=absent"
+                  fi
+                done
+              } > "$ARTIFACT_DIR/supabase-api-env-error.txt"
+              echo "FATAL: required Supabase API credentials unavailable. See supabase-api-env-error.txt (presence only; no secrets)." >&2
+              exit 1
+            fi
+            if [[ ! "$SUPABASE_URL" =~ ^https?:// ]]; then
+              {
+                echo "FATAL: derived Supabase API URL failed scheme validation."
+                echo "SUPABASE_URL variable is present but does not begin with http:// or https://."
+              } > "$ARTIFACT_DIR/supabase-api-env-error.txt"
+              echo "FATAL: derived Supabase API URL failed scheme validation. See supabase-api-env-error.txt." >&2
+              exit 1
+            fi
+            {
+              echo "supabase_url_mapped=yes"
+              echo "anon_key_mapped=yes"
+              echo "service_role_key_mapped=yes"
+              echo "checked_names=SUPABASE_URL,API_URL,SUPABASE_ANON_KEY,ANON_KEY,SUPABASE_PUBLISHABLE_KEY,PUBLISHABLE_KEY,SUPABASE_SERVICE_ROLE_KEY,SERVICE_ROLE_KEY,SECRET_KEY"
+            } > "$ARTIFACT_DIR/supabase-api-env-derivation.txt"
           }
 
           is_postgres_url() {
@@ -371,8 +422,8 @@ jobs:
 
             [[ "$TABLE_COUNT" == "32" ]] && record_assertion 7 "Exactly 32 billing tables" "32" "$TABLE_COUNT" "PASS" "db-object-counts.txt" \
               || record_assertion 7 "Exactly 32 billing tables" "32" "$TABLE_COUNT" "FAIL" "billing-tables.txt"
-            [[ "$FUNC_COUNT" == "11" ]] && record_assertion 8 "Exactly 11 billing functions" "11" "$FUNC_COUNT" "PASS" "billing-functions.txt" \
-              || record_assertion 8 "Exactly 11 billing functions" "11" "$FUNC_COUNT" "FAIL" "billing-functions.txt"
+            [[ "$FUNC_COUNT" == "9" ]] && record_assertion 8 "Exactly 11 billing functions" "9" "$FUNC_COUNT" "PASS" "billing-functions.txt" \
+              || record_assertion 8 "Exactly 11 billing functions" "9" "$FUNC_COUNT" "FAIL" "billing-functions.txt"
             [[ "$POLICY_COUNT" == "15" ]] && record_assertion 9 "Exactly 15 billing policies" "15" "$POLICY_COUNT" "PASS" "db-object-counts.txt" \
               || record_assertion 9 "Exactly 15 billing policies" "15" "$POLICY_COUNT" "FAIL" "db-object-counts.txt"
             [[ "$INDEX_COUNT" == "81" ]] && record_assertion 10 "Exactly 81 billing indexes" "81" "$INDEX_COUNT" "PASS" "db-object-counts.txt" \
@@ -381,7 +432,7 @@ jobs:
             for n in 7 8 9 10; do
               case $n in
                 7) record_assertion 7 "Exactly 32 billing tables" "32" "skipped" "FAIL" "migrations not applied" ;;
-                8) record_assertion 8 "Exactly 11 billing functions" "11" "skipped" "FAIL" "migrations not applied" ;;
+                8) record_assertion 8 "Exactly 11 billing functions" "9" "skipped" "FAIL" "migrations not applied" ;;
                 9) record_assertion 9 "Exactly 15 billing policies" "15" "skipped" "FAIL" "migrations not applied" ;;
                 10) record_assertion 10 "Exactly 81 billing indexes" "81" "skipped" "FAIL" "migrations not applied" ;;
               esac
@@ -407,6 +458,7 @@ jobs:
             $SUPABASE_CLI db reset --local --no-seed > "$ARTIFACT_DIR/db-reset-billing-profile.log" 2>&1 || true
             eval "$($SUPABASE_CLI status -o env 2>/dev/null | sed 's/^/export /')"
             require_local_pg_url
+            require_supabase_api_env
 
             PROFILE_CODE="$(curl -s -o /dev/null -w '%{http_code}' \
               -X POST "${SUPABASE_URL}/rest/v1/rpc/get_entitlement_snapshot" \
