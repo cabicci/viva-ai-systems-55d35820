@@ -154,8 +154,14 @@
         }
       ],
       "mission": {
-        "intro": "Design — not mandatory building. AI may suggest — you choose. | Dimension | Weight | Criteria | |-------|-------|---------| | Step and Reason | 40% | Specific failed step; realistic reason | | Alert Rule | 60% | Who + how + what is logged; clear **Retry**",
-        "delivery": [],
+        "intro": "Design one alert rule for a real workflow. You do not need to build the automation. Define the failure point, retry plan, alert recipient and channel, and the information that must be logged. AI may suggest options, but you make the final decision.",
+        "delivery": [
+          "Identify one workflow step that could fail and give one realistic cause of failure.",
+          "Define the retry count, when a retry should happen, and when retries should stop.",
+          "Identify the person or team that receives the alert and the notification channel.",
+          "Define the information logged after failure, such as the step name, failure time, error message, and process or record ID.",
+          "Write the final rule in this format: If [step] fails after [number] retries, send [alert] to [recipient] and log [data]."
+        ],
         "rubric": [
           {
             "dimension": "Step and Reason",

@@ -973,9 +973,19 @@ export function packageNeedsRepair(
 function detectMissionTextTrimming(adapted: LocalizedLessonSection): string | null {
   if (adapted.role !== "Mission" || !adapted.mission?.delivery.length) return null;
   const markdown = adapted.contentMarkdown;
-  const hasSubmission = /(?:Submission|التسليم)/i.test(markdown);
+  const hasSubmission = /(?:Submission|التسليم|\*\*Delivery\*\*|^Delivery:)/im.test(
+    markdown,
+  );
   const hasEvaluation = /(?:Evaluation Criteria|معايير التقييم)/i.test(markdown);
-  if (!hasSubmission && !hasEvaluation) {
+  const hasRubricTable =
+    /\|\s*(?:البعد|Dimension)\s*\|/i.test(markdown) ||
+    (adapted.tables?.some((table) =>
+      table.headers.some((header) =>
+        /^(?:البعد|Dimension|الوزن|Weight|المعيار|Criteria)$/i.test(header.trim()),
+      ),
+    ) ??
+      false);
+  if (!hasSubmission && !hasEvaluation && !hasRubricTable) {
     return "mission delivery populated but submission/evaluation learner text missing from contentMarkdown";
   }
   return null;

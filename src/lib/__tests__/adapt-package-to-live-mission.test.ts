@@ -204,10 +204,6 @@ describe("adaptPackageMissionToLiveShape", () => {
   });
 
   it("adapts all valid runtime mission packages successfully", () => {
-    const knownInvalidLessonIds = new Set([
-      "automator-m4-l3-error-handling",
-      "intro-m1-l5-ai-vs-software",
-    ]);
     let adapted = 0;
 
     for (const locale of PACKAGE_LOCALES) {
@@ -219,18 +215,11 @@ describe("adaptPackageMissionToLiveShape", () => {
         const section = pkg.sections.find((entry) => entry.mission);
         if (!section) continue;
 
-        if (knownInvalidLessonIds.has(pkg.lessonId)) {
-          expect(() =>
-            adaptPackageMissionToLiveShape(pkg.lessonId, section, 0),
-          ).toThrow(InvalidPackageMissionError);
-          continue;
-        }
-
         adaptPackageMissionToLiveShape(pkg.lessonId, section, 0);
         adapted += 1;
       }
     }
 
-    expect(adapted).toBe(255);
+    expect(adapted).toBe(261);
   });
 });

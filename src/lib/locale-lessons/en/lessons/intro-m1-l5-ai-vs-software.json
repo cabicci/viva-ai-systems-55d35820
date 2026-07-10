@@ -150,7 +150,11 @@
       ],
       "mission": {
         "intro": "Choose 3 small, real tasks from your life or work. Identify for each one: AI / Software / both — with a clear reason.",
-        "delivery": [],
+        "delivery": [
+          "List three small, real tasks from your life or work.",
+          "Choose the most suitable tool for each task: AI, software, or both.",
+          "Give one clear reason for each choice based on the task: accuracy and repetition, language and flexibility, or a combination of both."
+        ],
         "rubric": [
           {
             "dimension": "Logical Choice",
