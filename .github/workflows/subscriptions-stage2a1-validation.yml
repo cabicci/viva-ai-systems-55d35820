@@ -521,14 +521,57 @@ jobs:
             require_local_pg_url
             require_supabase_api_env
 
-            PROFILE_CODE="$(curl -s -o /dev/null -w '%{http_code}' \
-              -X POST "${SUPABASE_URL}/rest/v1/rpc/get_entitlement_snapshot" \
-              -H "Authorization: Bearer ${SUPABASE_SERVICE_ROLE_KEY}" \
-              -H "apikey: ${SUPABASE_SERVICE_API_KEY}" \
-              -H "Accept-Profile: billing" \
-              -H "Content-Profile: billing" \
-              -H "Content-Type: application/json" \
-              -d '{"p_user_id":"00000000-0000-0000-0000-000000000001"}')"
+            {
+              echo "max_wait_seconds=120"
+              echo "poll_interval_seconds=5"
+            } > "$ARTIFACT_DIR/postgrest-readiness.txt"
+            PROFILE_CODE=""
+            READINESS_ATTEMPTS=0
+            READINESS_ELAPSED=0
+            READINESS_STATUS_SEQ=""
+            READINESS_RESULT="timeout"
+            while [[ "$READINESS_ELAPSED" -lt 120 ]]; do
+              READINESS_ATTEMPTS=$((READINESS_ATTEMPTS + 1))
+              set +e
+              PROFILE_CODE="$(curl -s -o /dev/null -w '%{http_code}' \
+                -X POST "${SUPABASE_URL}/rest/v1/rpc/get_entitlement_snapshot" \
+                -H "Authorization: Bearer ${SUPABASE_SERVICE_ROLE_KEY}" \
+                -H "apikey: ${SUPABASE_SERVICE_API_KEY}" \
+                -H "Accept-Profile: billing" \
+                -H "Content-Profile: billing" \
+                -H "Content-Type: application/json" \
+                -d '{"p_user_id":"00000000-0000-0000-0000-000000000001"}' 2>/dev/null)"
+              CURL_STATUS=$?
+              set -e
+              READINESS_HTTP_STATUS="$PROFILE_CODE"
+              if [[ $CURL_STATUS -ne 0 || -z "$READINESS_HTTP_STATUS" || "$READINESS_HTTP_STATUS" == "000" ]]; then
+                READINESS_HTTP_STATUS="connection_failure"
+              fi
+              echo "attempt=${READINESS_ATTEMPTS} elapsed_seconds=${READINESS_ELAPSED} http_status=${READINESS_HTTP_STATUS}" >> "$ARTIFACT_DIR/postgrest-readiness.txt"
+              if [[ -n "$READINESS_STATUS_SEQ" ]]; then
+                READINESS_STATUS_SEQ="${READINESS_STATUS_SEQ},${READINESS_HTTP_STATUS}"
+              else
+                READINESS_STATUS_SEQ="${READINESS_HTTP_STATUS}"
+              fi
+              if [[ "$READINESS_HTTP_STATUS" != "503" && "$READINESS_HTTP_STATUS" != "connection_failure" ]]; then
+                PROFILE_CODE="$READINESS_HTTP_STATUS"
+                READINESS_RESULT="ready"
+                break
+              fi
+              PROFILE_CODE="$READINESS_HTTP_STATUS"
+              if [[ $((READINESS_ELAPSED + 5)) -ge 120 ]]; then
+                break
+              fi
+              sleep 5
+              READINESS_ELAPSED=$((READINESS_ELAPSED + 5))
+            done
+            {
+              echo "attempts=${READINESS_ATTEMPTS}"
+              echo "elapsed_seconds=${READINESS_ELAPSED}"
+              echo "status_sequence=${READINESS_STATUS_SEQ}"
+              echo "final_http_status=${PROFILE_CODE}"
+              echo "readiness_result=${READINESS_RESULT}"
+            } >> "$ARTIFACT_DIR/postgrest-readiness.txt"
             echo "billing_profile_http=${PROFILE_CODE}" > "$ARTIFACT_DIR/postgrest-billing-profile.txt"
             if [[ "$PROFILE_CODE" =~ ^2 ]]; then
               BILLING_PROFILE_OK="yes"
