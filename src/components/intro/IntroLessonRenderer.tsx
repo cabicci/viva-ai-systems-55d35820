@@ -161,7 +161,7 @@ export function IntroLessonRenderer({
 }
 
 function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lessonId?: string; lessonTitle?: string }) {
-  const { locale } = useLocale();
+  const { locale, dir } = useLocale();
 
   switch (block.kind) {
     case "paragraphs":
@@ -434,7 +434,7 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
           </p>
           <ul className="space-y-3">
             {block.items.map((it, i) => (
-              <li key={i} className="border-r-2 border-primary/30 pr-3">
+              <li key={i} className="border-s-2 border-primary/30 ps-3">
                 <p className="font-semibold leading-snug">
                   <span className="font-mono text-primary">{it.term}</span>
                   <span className="text-muted-foreground mx-1.5">·</span>
@@ -483,7 +483,7 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
         business: "Business",
       };
       return (
-        <div className="rounded-2xl border border-accent/30 border-r-4 bg-accent/[0.05] p-4 sm:p-5 space-y-3 shadow-[0_8px_30px_-14px_hsl(var(--accent)/0.25)]">
+        <div className="rounded-2xl border border-accent/30 border-e-4 bg-accent/[0.05] p-4 sm:p-5 space-y-3 shadow-[0_8px_30px_-14px_hsl(var(--accent)/0.25)]">
           <div className="flex items-center justify-between gap-2 flex-wrap">
             <p className="text-[11px] font-mono text-accent flex items-center gap-1.5">
               <BookOpen className="h-3.5 w-3.5" /> {getUiString(locale, "intro.block.caseStudyHeader")}

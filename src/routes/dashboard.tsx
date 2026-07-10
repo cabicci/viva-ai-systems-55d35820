@@ -375,7 +375,7 @@ function ModuleRow({
       <button
         type="button"
         onClick={onToggle}
-        className="w-full flex items-center justify-between gap-3 p-4 text-right hover:bg-foreground/5 transition"
+        className="w-full flex items-center justify-between gap-3 p-4 text-start hover:bg-foreground/5 transition"
       >
         <span
           dir="ltr"
@@ -604,7 +604,7 @@ function PathCard({
       <button
         type="button"
         onClick={isOpen ? onToggleExpand : undefined}
-        className={`group w-full text-right ${isOpen ? "cursor-pointer" : "cursor-default"}`}
+        className={`group w-full text-start ${isOpen ? "cursor-pointer" : "cursor-default"}`}
         aria-expanded={isExpanded}
       >
         <div className="flex items-center justify-between gap-3 flex-wrap">

@@ -140,7 +140,8 @@
 @layer base {
   * { border-color: var(--color-border); }
 
-  html { direction: rtl; }
+  html[dir="rtl"] { direction: rtl; }
+  html[dir="ltr"] { direction: ltr; }
 
   body {
     background: var(--gradient-hero);

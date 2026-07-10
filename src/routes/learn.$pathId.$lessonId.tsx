@@ -297,6 +297,8 @@ function UnifiedLessonPage() {
       : "border-accent/25 bg-accent/[0.05]";
   const continuityLabelClass =
     meta.tone === "primary" ? "text-primary" : "text-accent";
+  const PreviousNavIcon = dir === "rtl" ? ArrowRight : ArrowLeft;
+  const NextNavIcon = dir === "rtl" ? ArrowLeft : ArrowRight;
 
   const lessons = useMemo(() => getPathLessons(pathId), [pathId]);
   const idx = lessons.findIndex((l) => l.slug === lesson.slug);
@@ -563,7 +565,7 @@ function UnifiedLessonPage() {
                   params={{ pathId, lessonId: prev.slug }}
                   search={localeNavSearch}
                 >
-                  <ArrowRight className="h-4 w-4" />
+                  <PreviousNavIcon className="h-4 w-4" />
                   {t("learn.nav.previous")}
                 </Link>
               </Button>
@@ -610,7 +612,7 @@ function UnifiedLessonPage() {
                     search={localeNavSearch}
                   >
                     {t("learn.nav.next")}
-                    <ArrowLeft className="h-4 w-4" />
+                    <NextNavIcon className="h-4 w-4" />
                   </Link>
                 )}
               </Button>
@@ -623,7 +625,7 @@ function UnifiedLessonPage() {
               >
                 <Link to="/dashboard" search={localeSearch()}>
                   {t("learn.backToDashboard")}
-                  <ArrowLeft className="h-4 w-4" />
+                  <NextNavIcon className="h-4 w-4" />
                 </Link>
               </Button>
 

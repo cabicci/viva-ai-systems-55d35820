@@ -240,7 +240,7 @@ function PathBlock({
   mastery: Record<string, ModuleMastery>;
   isPro: boolean;
 }) {
-  const { locale } = useLocale();
+  const { locale, dir } = useLocale();
   const t = useUiString();
   const pathTitle = getCurriculumPathLabel(locale, path.id, "title");
   const pathTagline = getCurriculumPathLabel(locale, path.id, "tagline");
@@ -435,7 +435,7 @@ function PathBlock({
               params={{ pathId: "builder", lessonId: "builder-m1-l1-what-is-llm" }}
             >
               {t("curriculum.footer.builderCta").replace("{path}", builderPathTitle)}
-              <ArrowRight className="h-4 w-4 rotate-180" />
+              <ArrowRight className={`h-4 w-4 ${dir === "rtl" ? "rotate-180" : ""}`} />
             </Link>
           </Button>
         </div>
@@ -459,7 +459,7 @@ function LessonRow({
   progress: Record<string, LessonStatus>;
   getStatus: (id: string) => LessonStatus;
 }) {
-  const { locale } = useLocale();
+  const { locale, dir } = useLocale();
   const t = useUiString();
   const lessonTitle = getCurriculumLessonLabel(locale, lesson.id);
   const access = getLessonAccess(

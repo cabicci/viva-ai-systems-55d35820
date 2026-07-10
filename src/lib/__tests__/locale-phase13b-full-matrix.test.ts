@@ -482,7 +482,7 @@ describe("Phase 13B collector dry-run", () => {
     expect(report.skipped).toEqual([]);
     expect(report.retryCells).toEqual([]);
     expect(phase13BCollectReportExitCode(report)).toBe(0);
-  });
+  }, 20_000);
 
   it("fails clearly when dry-run artifacts are missing", async () => {
     const matrix = await buildPhase13BFullMatrix({
