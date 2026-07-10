@@ -170,18 +170,51 @@ jobs:
             [[ -n "${1:-}" ]] && [[ "$1" == http://* || "$1" == https://* ]]
           }
 
+          normalize_env_value() {
+            local value="${1:-}"
+            value="${value//$'\r'/}"
+            value="${value#"${value%%[![:space:]]*}"}"
+            value="${value%"${value##*[![:space:]]}"}"
+            if [[ ${#value} -ge 2 && "$value" == \"*\" ]]; then
+              value="${value:1:${#value}-2}"
+            elif [[ ${#value} -ge 2 && "$value" == \'*\' ]]; then
+              value="${value:1:${#value}-2}"
+            fi
+            value="${value#"${value%%[![:space:]]*}"}"
+            value="${value%"${value##*[![:space:]]}"}"
+            printf '%s' "$value"
+          }
+
+          count_migration_occurrences() {
+            local needle="$1" file="$2" count="" status=0
+            set +e
+            count="$(grep -c -F "$needle" "$file" 2>/dev/null)"
+            status=$?
+            set -e
+            if [[ $status -ne 0 && -z "$count" ]]; then
+              count=0
+            fi
+            count="$(printf '%s' "$count" | tr -d '\r\n\t ')"
+            [[ -z "$count" || ! "$count" =~ ^[0-9]+$ ]] && count=0
+            printf '%s' "$count"
+          }
+
           map_supabase_api_env() {
             local resolved_url="" rest_base=""
-            if is_http_url "${API_URL:-}"; then
-              resolved_url="${API_URL}"
-            elif is_http_url "${REST_URL:-}"; then
-              rest_base="${REST_URL}"
+            local norm_api norm_rest norm_supabase
+            norm_api="$(normalize_env_value "${API_URL:-}")"
+            norm_rest="$(normalize_env_value "${REST_URL:-}")"
+            norm_supabase="$(normalize_env_value "${SUPABASE_URL:-}")"
+            if is_http_url "$norm_api"; then
+              resolved_url="$norm_api"
+            elif is_http_url "$norm_rest"; then
+              rest_base="$norm_rest"
               if [[ "$rest_base" == */rest/v1 ]]; then
                 rest_base="${rest_base%/rest/v1}"
               fi
               resolved_url="$rest_base"
-            elif is_http_url "${SUPABASE_URL:-}"; then
-              resolved_url="${SUPABASE_URL}"
+            elif is_http_url "$norm_supabase"; then
+              resolved_url="$norm_supabase"
             fi
             SUPABASE_URL="$resolved_url"
             SUPABASE_ANON_KEY="${SUPABASE_ANON_KEY:-${ANON_KEY:-}}"
@@ -397,9 +430,8 @@ jobs:
             MIG_ORDER_OK="yes"
             MIG_COUNTS=""
             for mig in "${BILLING_MIGS[@]}"; do
-              count="$(grep -c "$mig" "$ARTIFACT_DIR/migration-list-primary.txt" 2>/dev/null || echo 0)"
-              count="$(printf '%s' "$count" | tr -d '\r\n\t ')"
-              [[ -z "$count" ]] && count=0
+              mig_ts="${mig%%_*}"
+              count="$(count_migration_occurrences "$mig_ts" "$ARTIFACT_DIR/migration-list-primary.txt")"
               MIG_COUNTS="${MIG_COUNTS}${mig}:${count};"
               if [[ "$count" -ne 1 ]]; then MIG_ORDER_OK="no"; fi
             done
