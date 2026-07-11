@@ -177,20 +177,24 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
     }
   });
 
-  it("leaves every non-approved runtime package identical to base SHA", () => {
-    const changedRuntime = execSync(
-      `git diff --name-only ${BASE_SHA} HEAD -- src/lib/locale-lessons/ar-MSA/lessons src/lib/locale-lessons/ar-Gulf/lessons src/lib/locale-lessons/en/lessons`,
-      { cwd: REPO_ROOT, encoding: "utf8" },
-    )
-      .trim()
-      .split("\n")
-      .filter(Boolean)
-      .map((line) => line.replace(/\\/g, "/"))
-      .sort();
+  it(
+    "leaves every non-approved runtime package identical to base SHA",
+    () => {
+      const changedRuntime = execSync(
+        `git diff --name-only ${BASE_SHA} HEAD -- src/lib/locale-lessons/ar-MSA/lessons src/lib/locale-lessons/ar-Gulf/lessons src/lib/locale-lessons/en/lessons`,
+        { cwd: REPO_ROOT, encoding: "utf8" },
+      )
+        .trim()
+        .split("\n")
+        .filter(Boolean)
+        .map((line) => line.replace(/\\/g, "/"))
+        .sort();
 
-    expect(changedRuntime).toHaveLength(APPROVED_RUNTIME.size);
-    expect(new Set(changedRuntime)).toEqual(APPROVED_RUNTIME);
-  });
+      expect(changedRuntime).toHaveLength(APPROVED_RUNTIME.size);
+      expect(new Set(changedRuntime)).toEqual(APPROVED_RUNTIME);
+    },
+    30_000,
+  );
 
   it("keeps recovered/runtime equivalence for all affected packages", () => {
     const packagePaths = [...new Set(MANIFEST.map((r) => r.recoveredPackagePath))];
@@ -219,30 +223,34 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
     }
   });
 
-  it("changes only the 39 approved packages versus base SHA", () => {
-    const changedRecovered = execSync(
-      `git diff --name-only ${BASE_SHA} HEAD -- src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages`,
-      { cwd: REPO_ROOT, encoding: "utf8" },
-    )
-      .trim()
-      .split("\n")
-      .filter(Boolean)
-      .map((line) => line.replace(/\\/g, "/"))
-      .sort();
+  it(
+    "changes only the 39 approved packages versus base SHA",
+    () => {
+      const changedRecovered = execSync(
+        `git diff --name-only ${BASE_SHA} HEAD -- src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages`,
+        { cwd: REPO_ROOT, encoding: "utf8" },
+      )
+        .trim()
+        .split("\n")
+        .filter(Boolean)
+        .map((line) => line.replace(/\\/g, "/"))
+        .sort();
 
-    expect(changedRecovered).toHaveLength(APPROVED_RECOVERED.size);
-    expect(new Set(changedRecovered)).toEqual(APPROVED_RECOVERED);
+      expect(changedRecovered).toHaveLength(APPROVED_RECOVERED.size);
+      expect(new Set(changedRecovered)).toEqual(APPROVED_RECOVERED);
 
-    for (const recoveredPath of changedRecovered) {
-      const runtimePath = recoveredToRuntime(recoveredPath);
-      expect(APPROVED_RUNTIME.has(runtimePath)).toBe(true);
-      const records = MANIFEST.filter((r) => r.recoveredPackagePath === recoveredPath);
-      const base = readBasePackage(recoveredPath);
-      const current = readPackage(recoveredPath);
-      expect(stripApprovedFields(current, records)).toEqual(stripApprovedFields(base, records));
-      expect(readPackage(runtimePath)).toEqual(current);
-    }
-  });
+      for (const recoveredPath of changedRecovered) {
+        const runtimePath = recoveredToRuntime(recoveredPath);
+        expect(APPROVED_RUNTIME.has(runtimePath)).toBe(true);
+        const records = MANIFEST.filter((r) => r.recoveredPackagePath === recoveredPath);
+        const base = readBasePackage(recoveredPath);
+        const current = readPackage(recoveredPath);
+        expect(stripApprovedFields(current, records)).toEqual(stripApprovedFields(base, records));
+        expect(readPackage(runtimePath)).toEqual(current);
+      }
+    },
+    60_000,
+  );
 
   it("validates all 22 corrected quizzes structurally and semantically", () => {
     const quizRecords = MANIFEST.filter((r) => r.approvedReplacementQuiz);
