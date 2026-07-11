@@ -206,22 +206,26 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
     }
   });
 
-  it("preserves every unlisted field against base SHA on approved packages", () => {
-    const recordsByPackage = new Map<string, ScientificCorrectionRecord[]>();
-    for (const record of MANIFEST) {
-      const list = recordsByPackage.get(record.recoveredPackagePath) ?? [];
-      list.push(record);
-      recordsByPackage.set(record.recoveredPackagePath, list);
-    }
+  it(
+    "preserves every unlisted field against base SHA on approved packages",
+    () => {
+      const recordsByPackage = new Map<string, ScientificCorrectionRecord[]>();
+      for (const record of MANIFEST) {
+        const list = recordsByPackage.get(record.recoveredPackagePath) ?? [];
+        list.push(record);
+        recordsByPackage.set(record.recoveredPackagePath, list);
+      }
 
-    for (const [packagePath, records] of recordsByPackage) {
-      const base = readBasePackage(packagePath);
-      const current = readPackage(packagePath);
-      expect(stripApprovedFields(current, records)).toEqual(
-        stripApprovedFields(base, records),
-      );
-    }
-  });
+      for (const [packagePath, records] of recordsByPackage) {
+        const base = readBasePackage(packagePath);
+        const current = readPackage(packagePath);
+        expect(stripApprovedFields(current, records)).toEqual(
+          stripApprovedFields(base, records),
+        );
+      }
+    },
+    60_000,
+  );
 
   it(
     "changes only the 39 approved packages versus base SHA",

@@ -25,4 +25,4 @@ The build's roadmap guard fails on ANY meaningful project change without a fresh
 date: 2026-07-11
 scope: content
 source: user
-summary: Restore unapproved quiz bullets while preserving Agent 4 scientific curriculum corrections
+summary: Stabilize scientific correction base-SHA parity test timeout for merge gate
