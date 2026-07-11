@@ -26,3 +26,9 @@ date: 2026-07-11
 scope: content
 source: user
 summary: Stabilize scientific correction base-SHA parity test timeout for merge gate
+
+[roadmap:a3b8c1d2-4e5f-6789-abcd-ef0123456789]
+date: 2026-07-11
+scope: other
+source: user
+summary: Isolate scientific correction parity and promotion idempotence tests deterministically

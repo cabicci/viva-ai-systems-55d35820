@@ -13,7 +13,6 @@ import {
 } from "@/lib/locale-lessons/scientific-curriculum-corrections-manifest";
 import { deepEqual } from "../../../scripts/locale-lessons/lib/phase13b-semantic-diff.ts";
 import {
-  promoteRecoveredToRuntime,
   validateRecoveredRuntimeEquivalence,
 } from "../../../scripts/locale-lessons/lib/promote-phase13b-recovered-packages-core.ts";
 import {
@@ -21,6 +20,7 @@ import {
   validateAllRecoveredPackages,
 } from "../../../scripts/locale-lessons/repair-phase13b-recovered-packages.ts";
 import { REQUIRED_LESSON_COUNT } from "@/lib/locale-lessons/types";
+import { runIsolatedPromotionIdempotence } from "./helpers/isolated-promotion-idempotence.ts";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
 const FIXTURES = path.join(REPO_ROOT, "src/lib/__tests__/fixtures");
@@ -42,6 +42,23 @@ const BEFORE_STATE = JSON.parse(
 
 const APPROVED_RECOVERED = new Set(MANIFEST.map((r) => r.recoveredPackagePath));
 const APPROVED_RUNTIME = new Set(MANIFEST.map((r) => r.runtimePackagePath));
+
+function buildBasePackageCache(): Map<string, LocalizedLessonPackage> {
+  const cache = new Map<string, LocalizedLessonPackage>();
+  for (const relativePath of [...APPROVED_RECOVERED].sort()) {
+    const raw = execSync(`git show ${BASE_SHA}:${relativePath}`, {
+      cwd: REPO_ROOT,
+      encoding: "utf8",
+    });
+    cache.set(
+      relativePath,
+      structuredClone(JSON.parse(raw) as LocalizedLessonPackage),
+    );
+  }
+  return cache;
+}
+
+const BASE_PACKAGE_CACHE = buildBasePackageCache();
 
 const PRODUCTION_RESIDUE_PATTERNS = [
   /remains unchanged/i,
@@ -79,11 +96,11 @@ function readPackage(relativePath: string): LocalizedLessonPackage {
 }
 
 function readBasePackage(relativePath: string): LocalizedLessonPackage {
-  const raw = execSync(`git show ${BASE_SHA}:${relativePath}`, {
-    cwd: REPO_ROOT,
-    encoding: "utf8",
-  });
-  return JSON.parse(raw) as LocalizedLessonPackage;
+  const cached = BASE_PACKAGE_CACHE.get(relativePath);
+  if (!cached) {
+    throw new Error(`Base package not cached for parity check: ${relativePath}`);
+  }
+  return structuredClone(cached);
 }
 
 function stripApprovedFields(
@@ -206,55 +223,47 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
     }
   });
 
-  it(
-    "preserves every unlisted field against base SHA on approved packages",
-    () => {
-      const recordsByPackage = new Map<string, ScientificCorrectionRecord[]>();
-      for (const record of MANIFEST) {
-        const list = recordsByPackage.get(record.recoveredPackagePath) ?? [];
-        list.push(record);
-        recordsByPackage.set(record.recoveredPackagePath, list);
-      }
+  it("preserves every unlisted field against base SHA on approved packages", () => {
+    const recordsByPackage = new Map<string, ScientificCorrectionRecord[]>();
+    for (const record of MANIFEST) {
+      const list = recordsByPackage.get(record.recoveredPackagePath) ?? [];
+      list.push(record);
+      recordsByPackage.set(record.recoveredPackagePath, list);
+    }
 
-      for (const [packagePath, records] of recordsByPackage) {
-        const base = readBasePackage(packagePath);
-        const current = readPackage(packagePath);
-        expect(stripApprovedFields(current, records)).toEqual(
-          stripApprovedFields(base, records),
-        );
-      }
-    },
-    60_000,
-  );
+    for (const [packagePath, records] of recordsByPackage) {
+      const base = readBasePackage(packagePath);
+      const current = readPackage(packagePath);
+      expect(stripApprovedFields(current, records)).toEqual(
+        stripApprovedFields(base, records),
+      );
+    }
+  });
 
-  it(
-    "changes only the 39 approved packages versus base SHA",
-    () => {
-      const changedRecovered = execSync(
-        `git diff --name-only ${BASE_SHA} HEAD -- src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages`,
-        { cwd: REPO_ROOT, encoding: "utf8" },
-      )
-        .trim()
-        .split("\n")
-        .filter(Boolean)
-        .map((line) => line.replace(/\\/g, "/"))
-        .sort();
+  it("changes only the 39 approved packages versus base SHA", () => {
+    const changedRecovered = execSync(
+      `git diff --name-only ${BASE_SHA} HEAD -- src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages`,
+      { cwd: REPO_ROOT, encoding: "utf8" },
+    )
+      .trim()
+      .split("\n")
+      .filter(Boolean)
+      .map((line) => line.replace(/\\/g, "/"))
+      .sort();
 
-      expect(changedRecovered).toHaveLength(APPROVED_RECOVERED.size);
-      expect(new Set(changedRecovered)).toEqual(APPROVED_RECOVERED);
+    expect(changedRecovered).toHaveLength(APPROVED_RECOVERED.size);
+    expect(new Set(changedRecovered)).toEqual(APPROVED_RECOVERED);
 
-      for (const recoveredPath of changedRecovered) {
-        const runtimePath = recoveredToRuntime(recoveredPath);
-        expect(APPROVED_RUNTIME.has(runtimePath)).toBe(true);
-        const records = MANIFEST.filter((r) => r.recoveredPackagePath === recoveredPath);
-        const base = readBasePackage(recoveredPath);
-        const current = readPackage(recoveredPath);
-        expect(stripApprovedFields(current, records)).toEqual(stripApprovedFields(base, records));
-        expect(readPackage(runtimePath)).toEqual(current);
-      }
-    },
-    60_000,
-  );
+    for (const recoveredPath of changedRecovered) {
+      const runtimePath = recoveredToRuntime(recoveredPath);
+      expect(APPROVED_RUNTIME.has(runtimePath)).toBe(true);
+      const records = MANIFEST.filter((r) => r.recoveredPackagePath === recoveredPath);
+      const base = readBasePackage(recoveredPath);
+      const current = readPackage(recoveredPath);
+      expect(stripApprovedFields(current, records)).toEqual(stripApprovedFields(base, records));
+      expect(readPackage(runtimePath)).toEqual(current);
+    }
+  });
 
   it("validates all 22 corrected quizzes structurally and semantically", () => {
     const quizRecords = MANIFEST.filter((r) => r.approvedReplacementQuiz);
@@ -311,8 +320,16 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
   }, 120_000);
 
   it("requires promotion idempotence (second run writes 0 files)", async () => {
-    const second = await promoteRecoveredToRuntime();
-    expect(second.filesWritten).toBe(0);
+    const isolated = await runIsolatedPromotionIdempotence();
+
+    expect(isolated.firstPromotion.packagesPromoted).toBe(
+      REQUIRED_LESSON_COUNT * 3,
+    );
+    expect(isolated.firstPromotion.filesWritten).toBe(REQUIRED_LESSON_COUNT * 3);
+    expect(isolated.equivalence.ok).toBe(true);
+    expect(isolated.equivalence.packagesChecked).toBe(REQUIRED_LESSON_COUNT * 3);
+    expect(isolated.equivalence.mismatches).toEqual([]);
+    expect(isolated.secondPromotion.filesWritten).toBe(0);
   }, 120_000);
 
   it("passes Phase 13B audit and validation gates", async () => {
