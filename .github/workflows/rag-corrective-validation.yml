@@ -58,10 +58,18 @@ jobs:
           docker ps
 
       - name: Start local Supabase (disposable)
+        env:
+          SUPABASE_CMD: supabase
         run: bash .github/rag-validation/start-supabase.sh
 
       - name: Run disposable Docker+Supabase validation
+        env:
+          SUPABASE_CMD: supabase
         run: bash .github/rag-validation/run-validation.sh
+
+      - name: Stop disposable Supabase
+        if: always()
+        run: supabase stop --no-backup || true
 
       - name: Upload validation artifact
         if: always()

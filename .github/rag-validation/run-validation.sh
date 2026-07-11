@@ -18,6 +18,18 @@ STEPS_FILE="$LOG/steps.jsonl"
 
 cd "$ROOT"
 
+apply_validation_shims() {
+  echo "Applying validation migration shims (validation branch only)..."
+  for shim in .github/rag-validation/shims/*.sql; do
+    if [[ -f "$shim" ]]; then
+      cp "$shim" "supabase/migrations/$(basename "$shim")"
+      echo "  shim -> supabase/migrations/$(basename "$shim")"
+    fi
+  done
+}
+
+apply_validation_shims
+
 FAILED=0
 
 run_step() {

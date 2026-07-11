@@ -4,6 +4,8 @@ Temporary CI-only validation infrastructure for disposable Docker+Supabase repla
 
 ## Files
 
+- `start-supabase.sh` — applies validation migration shims, starts disposable Supabase on Ubuntu
+- `shims/` — temporary SQL patches injected before migration replay (validation branch only)
 - `run-validation.sh` — orchestrates migration replay, DB lifecycle tests, RAG suite, tsc, roadmap guard, and build; writes `artifacts/rag/corrective-validation/{summary.md,results.json,logs/}`
 
 ## Usage (local Linux with Docker)
