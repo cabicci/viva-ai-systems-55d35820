@@ -1,3 +1,4 @@
+import { execSync } from "node:child_process";
 import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
@@ -19,9 +20,11 @@ import {
   auditAllRecoveredPackages,
   validateAllRecoveredPackages,
 } from "../../../scripts/locale-lessons/repair-phase13b-recovered-packages.ts";
+import { REQUIRED_LESSON_COUNT } from "@/lib/locale-lessons/types";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
 const FIXTURES = path.join(REPO_ROOT, "src/lib/__tests__/fixtures");
+const BASE_SHA = "1a02f55c19d555c5f1e23642753828e6491fd4c3";
 
 const MANIFEST = JSON.parse(
   readFileSync(
@@ -36,6 +39,9 @@ const BEFORE_STATE = JSON.parse(
     "utf8",
   ),
 ) as Record<string, LocalizedLessonPackage>;
+
+const APPROVED_RECOVERED = new Set(MANIFEST.map((r) => r.recoveredPackagePath));
+const APPROVED_RUNTIME = new Set(MANIFEST.map((r) => r.runtimePackagePath));
 
 const PRODUCTION_RESIDUE_PATTERNS = [
   /remains unchanged/i,
@@ -72,7 +78,15 @@ function readPackage(relativePath: string): LocalizedLessonPackage {
   ) as LocalizedLessonPackage;
 }
 
-function stripCorrectedFields(
+function readBasePackage(relativePath: string): LocalizedLessonPackage {
+  const raw = execSync(`git show ${BASE_SHA}:${relativePath}`, {
+    cwd: REPO_ROOT,
+    encoding: "utf8",
+  });
+  return JSON.parse(raw) as LocalizedLessonPackage;
+}
+
+function stripApprovedFields(
   pkg: LocalizedLessonPackage,
   records: ScientificCorrectionRecord[],
 ): LocalizedLessonPackage {
@@ -84,7 +98,6 @@ function stripCorrectedFields(
     >;
     if (record.approvedReplacementQuiz) {
       delete section.quiz;
-      delete section.bullets;
     }
     delete section.contentMarkdown;
   }
@@ -100,6 +113,17 @@ function quizMarkdownMatchesQuizObject(
     quiz.options.every((option) => contentMarkdown.includes(option)) &&
     contentMarkdown.includes(quiz.explanation)
   );
+}
+
+function listRuntimePackagePaths(): string[] {
+  const paths: string[] = [];
+  for (const locale of ["ar-MSA", "ar-Gulf", "en"] as const) {
+    const dir = path.join(REPO_ROOT, "src/lib/locale-lessons", locale, "lessons");
+    for (const file of readdirSync(dir).filter((name) => name.endsWith(".json"))) {
+      paths.push(`src/lib/locale-lessons/${locale}/lessons/${file}`);
+    }
+  }
+  return paths.sort();
 }
 
 describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
@@ -127,14 +151,31 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
       if (record.approvedReplacementQuiz) {
         expect(recoveredSection.quiz).toEqual(record.approvedReplacementQuiz);
         expect(runtimeSection.quiz).toEqual(record.approvedReplacementQuiz);
-        expect(recoveredSection.bullets).toEqual([...record.approvedReplacementQuiz.options]);
-        expect(runtimeSection.bullets).toEqual([...record.approvedReplacementQuiz.options]);
         expect(
           quizMarkdownMatchesQuizObject(
             recoveredSection.contentMarkdown ?? "",
             record.approvedReplacementQuiz,
           ),
         ).toBe(true);
+      }
+    }
+  });
+
+  it("keeps every bullets field at exact base SHA values", () => {
+    for (const [packagePath, beforePkg] of Object.entries(BEFORE_STATE)) {
+      const current = readPackage(packagePath);
+      for (let index = 0; index < beforePkg.sections.length; index++) {
+        expect(current.sections[index]?.bullets ?? []).toEqual(
+          beforePkg.sections[index]?.bullets ?? [],
+        );
+      }
+    }
+
+    const runtimePaths = listRuntimePackagePaths();
+    expect(runtimePaths).toHaveLength(REQUIRED_LESSON_COUNT * 3);
+    for (const runtimePath of runtimePaths) {
+      if (!APPROVED_RUNTIME.has(runtimePath)) {
+        expect(readPackage(runtimePath)).toEqual(readBasePackage(runtimePath));
       }
     }
   });
@@ -149,7 +190,7 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
     }
   });
 
-  it("preserves every unlisted field against captured before-state", () => {
+  it("preserves every unlisted field against base SHA on approved packages", () => {
     const recordsByPackage = new Map<string, ScientificCorrectionRecord[]>();
     for (const record of MANIFEST) {
       const list = recordsByPackage.get(record.recoveredPackagePath) ?? [];
@@ -158,12 +199,39 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
     }
 
     for (const [packagePath, records] of recordsByPackage) {
-      const before = BEFORE_STATE[packagePath];
-      expect(before, `missing before-state for ${packagePath}`).toBeTruthy();
+      const base = readBasePackage(packagePath);
       const current = readPackage(packagePath);
-      expect(stripCorrectedFields(current, records)).toEqual(
-        stripCorrectedFields(before, records),
+      expect(stripApprovedFields(current, records)).toEqual(
+        stripApprovedFields(base, records),
       );
+    }
+  });
+
+  it("changes only the 39 approved packages versus base SHA", () => {
+    const recoveredPaths = listRuntimePackagePaths().map((runtimePath) =>
+      runtimePath.replace(
+        /^src\/lib\/locale-lessons\/(ar-MSA|ar-Gulf|en)\/lessons\//,
+        "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/$1/",
+      ),
+    );
+
+    for (const recoveredPath of recoveredPaths) {
+      const runtimePath = recoveredPath
+        .replace("/reports/phase13b-recovered-packages/", "/")
+        .replace(
+          "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/",
+          "src/lib/locale-lessons/",
+        )
+        .replace(/\/(ar-MSA|ar-Gulf|en)\//, "/$1/lessons/");
+
+      const current = readPackage(recoveredPath);
+      const base = readBasePackage(recoveredPath);
+      const isApproved = APPROVED_RECOVERED.has(recoveredPath);
+
+      if (!isApproved) {
+        expect(current).toEqual(base);
+        expect(readPackage(runtimePath)).toEqual(readBasePackage(runtimePath));
+      }
     }
   });
 

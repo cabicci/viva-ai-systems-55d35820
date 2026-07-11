@@ -952,9 +952,6 @@ export function packageNeedsRepair(
       if (adapted.role === "Quiz" && adapted.quiz && sectionNeedsQuizRepair(adapted)) {
         return true;
       }
-      if (adapted.role === "Quiz" && adapted.quiz && detectQuizBulletsOptionsMismatch(adapted)) {
-        return true;
-      }
       if (
         adapted.role === "Quiz" &&
         adapted.quiz &&
@@ -1279,18 +1276,6 @@ export function auditRecoveredPackage(
           path: quizPath,
           kind: "quiz_forbidden_fallback",
           message,
-          severity: "error",
-        });
-      }
-
-      const bulletsMismatch = detectQuizBulletsOptionsMismatch(adapted);
-      if (bulletsMismatch) {
-        issues.push({
-          locale,
-          lessonId,
-          path: `${quizPath}.options`,
-          kind: "quiz_structure",
-          message: bulletsMismatch,
           severity: "error",
         });
       }
