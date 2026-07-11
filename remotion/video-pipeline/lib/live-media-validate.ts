@@ -5,6 +5,7 @@ import { sha256Hex } from "./checksum.ts";
 import { captionsLocaleGuard } from "./captions.ts";
 import type { VideoLocale } from "./types.ts";
 import { preventOverwrittenVideo } from "./media-validate.ts";
+import { ensureRenderBrandAsset } from "./brand-guard.ts";
 
 export interface LiveMediaValidationResult {
   ok: boolean;
@@ -18,6 +19,8 @@ export interface LiveMediaValidationResult {
   videoChecksum?: string;
   audioChecksum?: string;
   captionsChecksum?: string;
+  logoChecksum?: string;
+  logoDimensions?: string;
   ffprobe?: Record<string, unknown>;
 }
 
@@ -79,6 +82,16 @@ export function validateLiveMedia(input: {
   }
   if (input.expectedVoiceProfileId !== input.actualVoiceProfileId) {
     errors.push("Voice profile mismatch for locale");
+  }
+
+  const brand = ensureRenderBrandAsset();
+  let logoChecksum: string | undefined;
+  let logoDimensions: string | undefined;
+  if (!brand.ok) {
+    errors.push(...brand.errors.map((e) => `Brand: ${e}`));
+  } else {
+    logoChecksum = brand.sha256;
+    logoDimensions = `${brand.width}x${brand.height}`;
   }
 
   const overwrite = preventOverwrittenVideo(
@@ -146,6 +159,8 @@ export function validateLiveMedia(input: {
     videoChecksum,
     audioChecksum,
     captionsChecksum,
+    logoChecksum,
+    logoDimensions,
     ffprobe,
   };
 }
