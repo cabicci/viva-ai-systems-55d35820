@@ -4,17 +4,24 @@ import {
   EMBEDDING_DIMENSIONS,
   EMBEDDING_MODEL_PLACEHOLDER,
 } from "./constants";
-
-/** Conservative token estimate: ceil(char_count / 3.5) per chunk. */
-export function estimateChunkTokens(charCount: number): number {
-  return Math.ceil(charCount / 3.5);
-}
+import {
+  computeExactTokenStats,
+  EMBEDDING_TOKENIZER_ENCODING,
+  EMBEDDING_TOKENIZER_LIBRARY,
+} from "./exact-token-count";
 
 export interface EmbeddingDryRunReport {
   embeddingModel: string;
   vectorDimensions: number;
   chunkCount: number;
   totalInputTokens: number;
+  tokenStats: {
+    min: number;
+    max: number;
+    avg: number;
+  };
+  tokenizerLibrary: string;
+  tokenizerEncoding: string;
   tokenEstimationMethod: string;
   batchSize: number;
   estimatedRequestCount: number;
@@ -24,6 +31,7 @@ export interface EmbeddingDryRunReport {
   retryOnlyFailedBehavior: string;
   estimatedBaseCostUsd: number;
   estimatedMaxRetryAdjustedCostUsd: number;
+  costFormula: string;
   stagingIndexVersionNaming: string;
   activationCriteria: string[];
   rollbackPlan: string[];
@@ -40,10 +48,8 @@ export function buildEmbeddingDryRunReport(
 ): EmbeddingDryRunReport {
   const batchSize = options?.batchSize ?? 64;
   const concurrency = options?.concurrency ?? 2;
-  const totalInputTokens = chunks.reduce(
-    (sum, c) => sum + estimateChunkTokens(c.charCount),
-    0,
-  );
+  const tokenStats = computeExactTokenStats(chunks);
+  const totalInputTokens = tokenStats.total;
   const estimatedRequestCount = Math.ceil(chunks.length / batchSize);
   const estimatedBaseCostUsd =
     (totalInputTokens / 1_000_000) * COST_PER_MILLION_TOKENS_USD;
@@ -53,7 +59,14 @@ export function buildEmbeddingDryRunReport(
     vectorDimensions: EMBEDDING_DIMENSIONS,
     chunkCount: chunks.length,
     totalInputTokens,
-    tokenEstimationMethod: "ceil(char_count / 3.5) per chunk — conservative overestimate",
+    tokenStats: {
+      min: tokenStats.min,
+      max: tokenStats.max,
+      avg: tokenStats.avg,
+    },
+    tokenizerLibrary: EMBEDDING_TOKENIZER_LIBRARY,
+    tokenizerEncoding: EMBEDDING_TOKENIZER_ENCODING,
+    tokenEstimationMethod: `${EMBEDDING_TOKENIZER_LIBRARY} ${EMBEDDING_TOKENIZER_ENCODING} exact encode(displayText) per chunk`,
     batchSize,
     estimatedRequestCount,
     concurrency,
@@ -65,6 +78,7 @@ export function buildEmbeddingDryRunReport(
     estimatedMaxRetryAdjustedCostUsd: Number(
       (estimatedBaseCostUsd * 1.15).toFixed(4),
     ),
+    costFormula: `(totalInputTokens / 1_000_000) * ${COST_PER_MILLION_TOKENS_USD} USD; maxRetry = base * 1.15`,
     stagingIndexVersionNaming: `rag-index-v1-${CONTENT_FREEZE_SHA.slice(0, 8)}-{timestamp}`,
     activationCriteria: [
       "Staging chunk_count matches rag_index_versions.chunk_count",

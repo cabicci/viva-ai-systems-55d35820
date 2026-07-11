@@ -16,8 +16,13 @@ describe("RAG embedding dry-run report", () => {
     expect(report.chunkCount).toBe(2692);
   });
 
-  it("produces positive token and request estimates without API calls", () => {
+  it("produces exact cl100k_base token counts without API calls", () => {
     expect(report.totalInputTokens).toBeGreaterThan(0);
+    expect(report.tokenStats.min).toBeGreaterThan(0);
+    expect(report.tokenStats.max).toBeGreaterThanOrEqual(report.tokenStats.min);
+    expect(report.tokenStats.avg).toBeGreaterThan(0);
+    expect(report.tokenizerLibrary).toBe("js-tiktoken");
+    expect(report.tokenizerEncoding).toBe("cl100k_base");
     expect(report.estimatedRequestCount).toBe(Math.ceil(2692 / 64));
     expect(report.embeddingModel).toBe("text-embedding-3-small");
     expect(report.vectorDimensions).toBe(1536);

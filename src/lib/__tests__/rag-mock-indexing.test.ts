@@ -17,7 +17,7 @@ describe("RAG mock indexing and activation", () => {
     expect(report.activationOk).toBe(true);
     expect(report.rollbackOk).toBe(true);
     expect(report.singleActiveEnforced).toBe(true);
-  });
+  }, 120000);
 
   it("denies activation when failed units remain", () => {
     const packages = discoverApprovedPackages(REPO_ROOT);

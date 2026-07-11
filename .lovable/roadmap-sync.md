@@ -32,3 +32,9 @@ date: 2026-07-11
 scope: other
 source: user
 summary: Isolate scientific correction parity and promotion idempotence tests deterministically
+
+[roadmap:a3b8c1d2-4e5f-6789-abcd-ef0123456789]
+date: 2026-07-11
+scope: other
+source: user
+summary: Add RAG operational scripts to package.json for corpus verification, manifest generation, mock indexing, reindex planning, and embedding dry-run

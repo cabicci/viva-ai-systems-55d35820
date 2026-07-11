@@ -35,6 +35,8 @@
     "rag:reindex-plan": "bun run scripts/rag/reindex-plan.ts",
     "rag:embedding-dry-run": "bun run scripts/rag/embedding-dry-run.ts",
     "rag:validate-local": "bun run test:run -- src/lib/__tests__/rag-",
+    "rag:db-replay": "bun run scripts/rag/disposable-db-replay.ts",
+    "rag:db-lifecycle": "bun run test:run -- src/lib/__tests__/rag-db-lifecycle.integration.test.ts",
     "test": "vitest",
     "test:run": "vitest run",
     "test:ui": "vitest --ui"
@@ -85,6 +87,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^15.15.0",
+    "js-tiktoken": "^1.0.21",
     "jsdom": "^29.1.1",
     "prettier": "^3.7.3",
     "typescript": "^5.8.3",

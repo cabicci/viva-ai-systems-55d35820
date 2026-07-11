@@ -108,3 +108,5 @@ export * from "./retrieval";
 export * from "./mock-index-store";
 export * from "./indexing";
 export * from "./embedding-dry-run";
+export * from "./exact-token-count";
+export * from "./resolve-assistant-locale";
