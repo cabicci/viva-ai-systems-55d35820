@@ -28,6 +28,13 @@
     "locale-lessons:print-fragment-full-matrix": "bun run scripts/locale-lessons/print-fragment-full-matrix.ts",
     "locale-lessons:collect-fragment-full": "bun run scripts/locale-lessons/collect-fragment-full-artifacts.ts",
     "locale-lessons:audit-ar-msa-canonical": "bun run scripts/locale-lessons/audit-ar-msa-canonical.ts",
+    "rag:verify-corpus": "bun run scripts/rag/verify-corpus.ts",
+    "rag:generate-manifests": "bun run scripts/rag/generate-manifests.ts",
+    "rag:generate-chunks": "bun run scripts/rag/generate-manifests.ts",
+    "rag:mock-index": "bun run scripts/rag/mock-index.ts",
+    "rag:reindex-plan": "bun run scripts/rag/reindex-plan.ts",
+    "rag:embedding-dry-run": "bun run scripts/rag/embedding-dry-run.ts",
+    "rag:validate-local": "bun run test:run -- src/lib/__tests__/rag-",
     "test": "vitest",
     "test:run": "vitest run",
     "test:ui": "vitest --ui"

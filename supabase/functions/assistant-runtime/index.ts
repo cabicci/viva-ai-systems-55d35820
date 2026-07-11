@@ -123,6 +123,7 @@ const EMBEDDING_MODEL = "text-embedding-3-small";
 const EMBEDDING_DIM = 1536;
 
 interface LearnerContextInput {
+  locale?: string | null;
   currentPath?: string | null;
   currentModule?: string | null;
   currentLesson?: string | null;
@@ -132,6 +133,8 @@ interface LearnerContextInput {
   completedLessonsCount?: number | null;
   totalLessonsCount?: number | null;
   nextLessonTitle?: string | null;
+  contentVersion?: string | null;
+  allowModuleFallback?: boolean | null;
   currentMission?: {
     intro?: string | null;
     prompt?: string | null;
@@ -156,12 +159,171 @@ interface AssistantRuntimeRequest {
 interface SemanticChunk {
   id: string;
   sourceId: string;
+  locale: string | null;
   lessonId: string | null;
   moduleId: string | null;
   pathId: string | null;
   title: string;
   content: string;
   similarity: number;
+  packagePath?: string | null;
+  sourceSha?: string | null;
+  packageChecksum?: string | null;
+  chunkChecksum?: string | null;
+  contentVersion?: string | null;
+  indexVersion?: string | null;
+  sectionIndex?: number | null;
+  sectionRole?: string | null;
+  chunkPosition?: number | null;
+  contentType?: string | null;
+  productionRoute?: string | null;
+  indexState?: string | null;
+  sameLessonRank?: number;
+}
+
+interface RagCitation {
+  citationId: string;
+  chunkId: string;
+  locale: string;
+  lessonId: string;
+  moduleId: string | null;
+  trackId: string | null;
+  packagePath: string | null;
+  sourceSha: string | null;
+  packageChecksum: string | null;
+  chunkChecksum: string | null;
+  contentVersion: string | null;
+  indexVersion: string | null;
+  sectionIndex: number | null;
+  sectionRole: string | null;
+  chunkIndex: number | null;
+  contentType: string | null;
+  productionRoute: string | null;
+  title: string;
+  excerpt: string;
+  similarity: number;
+  sameLesson: boolean;
+  retrievalChannel: "semantic" | "keyword";
+}
+
+const APPROVED_LOCALES = new Set(["en", "ar-MSA", "ar-Gulf"]);
+const CITATION_EXCERPT_MAX = 500;
+
+function isValidLocale(locale: string | null | undefined): locale is string {
+  return typeof locale === "string" && APPROVED_LOCALES.has(locale);
+}
+
+function citationDedupeKey(c: Pick<RagCitation, "chunkId" | "lessonId" | "excerpt">): string {
+  return `${c.lessonId ?? ""}::${c.chunkId}::${c.excerpt.slice(0, 80)}`;
+}
+
+function buildCitations(
+  locale: string,
+  lessonId: string | null,
+  semanticChunks: SemanticChunk[],
+  keywordResults: RetrievalResultInput[],
+): {
+  citations: RagCitation[];
+  duplicateSourcesSuppressed: number;
+  crossLocaleLeakage: number;
+  crossLessonLeakage: number;
+} {
+  let crossLocaleLeakage = 0;
+  let crossLessonLeakage = 0;
+
+  const semanticCitations: RagCitation[] = semanticChunks
+    .filter((chunk) => {
+      if (chunk.locale !== locale) {
+        crossLocaleLeakage += 1;
+        return false;
+      }
+      if (lessonId && chunk.lessonId !== lessonId) {
+        crossLessonLeakage += 1;
+        return false;
+      }
+      return true;
+    })
+    .map((chunk) => ({
+      citationId: `${chunk.indexVersion ?? "unknown"}::${chunk.sourceId}`,
+      chunkId: chunk.sourceId,
+      locale,
+      lessonId: chunk.lessonId ?? "",
+      moduleId: chunk.moduleId,
+      trackId: chunk.pathId,
+      packagePath: chunk.packagePath ?? null,
+      sourceSha: chunk.sourceSha ?? null,
+      packageChecksum: chunk.packageChecksum ?? null,
+      chunkChecksum: chunk.chunkChecksum ?? null,
+      contentVersion: chunk.contentVersion ?? null,
+      indexVersion: chunk.indexVersion ?? null,
+      sectionIndex: chunk.sectionIndex ?? null,
+      sectionRole: chunk.sectionRole ?? null,
+      chunkIndex: chunk.chunkPosition ?? null,
+      contentType: chunk.contentType ?? null,
+      productionRoute: chunk.productionRoute ?? null,
+      title: chunk.title,
+      excerpt: chunk.content.slice(0, CITATION_EXCERPT_MAX),
+      similarity: chunk.similarity,
+      sameLesson: chunk.lessonId === lessonId,
+      retrievalChannel: "semantic" as const,
+    }));
+
+  const semanticKeys = new Set(semanticCitations.map(citationDedupeKey));
+
+  const keywordCitations: RagCitation[] = keywordResults
+    .filter((k) => {
+      if (lessonId && k.lessonId && k.lessonId !== lessonId) {
+        crossLessonLeakage += 1;
+        return false;
+      }
+      return true;
+    })
+    .map((k, idx) => ({
+      citationId: `keyword::${k.lessonId ?? "unknown"}::${idx}`,
+      chunkId: `keyword/${k.lessonId ?? "unknown"}/${idx}`,
+      locale,
+      lessonId: k.lessonId ?? "",
+      moduleId: null,
+      trackId: null,
+      packagePath: null,
+      sourceSha: null,
+      packageChecksum: null,
+      chunkChecksum: null,
+      contentVersion: null,
+      indexVersion: null,
+      sectionIndex: null,
+      sectionRole: null,
+      chunkIndex: null,
+      contentType: "keyword",
+      productionRoute: null,
+      title: k.lessonTitle ?? "—",
+      excerpt: (k.matchedText ?? "").slice(0, CITATION_EXCERPT_MAX),
+      similarity: k.relevanceScore ?? 0,
+      sameLesson: k.lessonId === lessonId,
+      retrievalChannel: "keyword" as const,
+    }))
+    .filter((c) => !semanticKeys.has(citationDedupeKey(c)));
+
+  const all = [...semanticCitations, ...keywordCitations];
+  const seen = new Set<string>();
+  const deduped: RagCitation[] = [];
+  let duplicateSourcesSuppressed = 0;
+  for (const c of all) {
+    const key = citationDedupeKey(c);
+    if (seen.has(key)) {
+      duplicateSourcesSuppressed += 1;
+      continue;
+    }
+    seen.add(key);
+    deduped.push(c);
+  }
+
+  return {
+    citations: deduped,
+    duplicateSourcesSuppressed,
+    crossLocaleLeakage,
+    crossLessonLeakage,
+  };
 }
 
 async function embedQuery(
@@ -192,6 +354,92 @@ async function embedQuery(
   } catch (e) {
     console.warn("[assistant-runtime] embed exception", (e as Error).message);
     return null;
+  }
+}
+
+async function localeSemanticRetrieve(
+  query: string,
+  locale: string,
+  pathId: string | null,
+  moduleId: string | null,
+  lessonId: string | null,
+  contentVersion: string | null,
+  allowModuleFallback: boolean,
+  apiKey: string,
+): Promise<SemanticChunk[]> {
+  const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
+  const SERVICE_ROLE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+  if (!SUPABASE_URL || !SERVICE_ROLE) {
+    console.warn("[assistant-runtime] locale semantic disabled: missing supabase env");
+    return [];
+  }
+
+  const embedding = await embedQuery(query, apiKey);
+  if (!embedding) return [];
+
+  try {
+    const res = await fetch(
+      `${SUPABASE_URL}/rest/v1/rpc/match_locale_knowledge_chunks`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          apikey: SERVICE_ROLE,
+          Authorization: `Bearer ${SERVICE_ROLE}`,
+        },
+        body: JSON.stringify({
+          query_embedding: embedding,
+          p_locale: locale,
+          match_count: SEMANTIC_MAX,
+          p_lesson_id: lessonId,
+          p_module_id: moduleId,
+          p_path_id: pathId,
+          p_content_version: contentVersion,
+          min_similarity: SEMANTIC_MIN_SIMILARITY,
+          p_allow_module_fallback: allowModuleFallback,
+        }),
+      },
+    );
+    if (!res.ok) {
+      console.warn(
+        "[assistant-runtime] locale semantic rpc failed",
+        res.status,
+        (await res.text()).slice(0, 200),
+      );
+      return [];
+    }
+    const rows = await res.json();
+    if (!Array.isArray(rows)) return [];
+    return rows.slice(0, SEMANTIC_MAX).map((r: Record<string, unknown>) => ({
+      id: String(r.id ?? ""),
+      sourceId: String(r.source_id ?? ""),
+      locale: (r.locale as string) ?? null,
+      lessonId: (r.lesson_id as string) ?? null,
+      moduleId: (r.module_id as string) ?? null,
+      pathId: (r.path_id as string) ?? null,
+      title: String(r.title ?? ""),
+      content: String(r.content ?? ""),
+      similarity: Number(r.similarity ?? 0),
+      packagePath: (r.package_path as string) ?? null,
+      sourceSha: (r.source_sha as string) ?? null,
+      packageChecksum: (r.package_checksum as string) ?? null,
+      chunkChecksum: (r.chunk_checksum as string) ?? null,
+      contentVersion: (r.content_version as string) ?? null,
+      indexVersion: (r.index_version as string) ?? null,
+      sectionIndex: (r.section_index as number) ?? null,
+      sectionRole: (r.section_role as string) ?? null,
+      chunkPosition: (r.chunk_position as number) ?? null,
+      contentType: (r.content_type as string) ?? null,
+      productionRoute: (r.production_route as string) ?? null,
+      indexState: "active",
+      sameLessonRank: Number(r.same_lesson_rank ?? 1),
+    }));
+  } catch (e) {
+    console.warn(
+      "[assistant-runtime] locale semantic exception",
+      (e as Error).message,
+    );
+    return [];
   }
 }
 
@@ -394,29 +642,38 @@ Deno.serve(async (req) => {
   const resolvedModuleId = learnerContext.currentModule ?? null;
   const resolvedLessonId = learnerContext.currentLesson ?? null;
 
-  // Embeddings still use OpenAI (keeps existing 1536-dim chunks intact).
-  // If OPENAI_API_KEY is missing, semantic retrieval silently degrades.
-  let semanticChunks = openaiKey
-    ? await semanticRetrieve(
-        query,
-        resolvedPathId,
-        resolvedModuleId,
-        resolvedLessonId,
-        openaiKey,
-      )
-    : [];
+  const resolvedLocale = typeof learnerContext.locale === "string"
+    ? learnerContext.locale.trim()
+    : null;
+  const resolvedContentVersion = learnerContext.contentVersion ?? null;
+  const lessonScoped = Boolean(resolvedLessonId);
+  const allowModuleFallback =
+    learnerContext.allowModuleFallback === true && !lessonScoped;
 
-  // Lesson filter can be too narrow for cross-topic questions — widen once if empty.
-  if (
-    openaiKey &&
-    semanticChunks.length === 0 &&
-    resolvedLessonId
-  ) {
+  // Locale-aware semantic retrieval (active index only). No cross-locale fallback.
+  let semanticChunks: SemanticChunk[] = [];
+  let retrievalMode: "locale" | "legacy" | "none" = "none";
+
+  if (isValidLocale(resolvedLocale) && openaiKey) {
+    retrievalMode = "locale";
+    semanticChunks = await localeSemanticRetrieve(
+      query,
+      resolvedLocale,
+      resolvedPathId,
+      resolvedModuleId,
+      resolvedLessonId,
+      resolvedContentVersion,
+      allowModuleFallback,
+      openaiKey,
+    );
+  } else if (!resolvedLocale && openaiKey) {
+    // Legacy Egyptian corpus path when locale not provided.
+    retrievalMode = "legacy";
     semanticChunks = await semanticRetrieve(
       query,
       resolvedPathId,
       resolvedModuleId,
-      null,
+      resolvedLessonId,
       openaiKey,
     );
   }
@@ -438,14 +695,31 @@ Deno.serve(async (req) => {
     (r) => !semanticKeys.has(keyOf(r.lessonId, r.matchedText ?? "")),
   );
 
+  const citationBundle = isValidLocale(resolvedLocale)
+    ? buildCitations(
+        resolvedLocale,
+        resolvedLessonId,
+        semanticChunks,
+        keywordFiltered,
+      )
+    : {
+        citations: [] as RagCitation[],
+        duplicateSourcesSuppressed: 0,
+        crossLocaleLeakage: 0,
+        crossLessonLeakage: 0,
+      };
+
   const semanticBlock = semanticChunks.length
     ? semanticChunks
         .map((c, i) => {
           const strong = c.similarity >= SEMANTIC_STRONG_SIMILARITY ? "★" : "";
-          return `[S#${i + 1}${strong}] الدرس: ${c.title} | تشابه: ${c.similarity.toFixed(2)}\nالنص: ${c.content.slice(0, 500)}`;
+          const cite = citationBundle.citations.find((x) => x.chunkId === c.sourceId);
+          return `[S#${i + 1}${strong}] الدرس: ${c.title} | تشابه: ${c.similarity.toFixed(2)}${cite?.packagePath ? ` | مصدر: ${cite.packagePath}` : ""}\nالنص: ${c.content.slice(0, 500)}`;
         })
         .join("\n\n")
-    : "— لا توجد نتائج دلالية —";
+    : isValidLocale(resolvedLocale)
+      ? "— لا توجد نتائج دلالية لهذا الـ locale —"
+      : "— لا توجد نتائج دلالية —";
 
   const keywordBlock = keywordFiltered.length
     ? keywordFiltered
@@ -535,10 +809,15 @@ ${query}
 ${ctxBlock}
 
 سياق الاسترجاع (Retrieval meta):
+- locale: ${resolvedLocale ?? "—"}
 - resolvedPathId: ${resolvedPathId ?? "—"}
 - pathResolutionReason: ${pathResolutionReason}
+- retrievalMode: ${retrievalMode}
+- lessonScoped: ${lessonScoped}
+- allowModuleFallback: ${allowModuleFallback}
 - semanticCount: ${semanticCountForPrompt}
 - keywordCount: ${keywordCountForPrompt}
+- citationCount: ${citationBundle.citations.length}
 
 محتوى مرتبط من المنصة (Retrieval):
 ${retrievalBlock}
@@ -634,11 +913,28 @@ ${retrievalBlock}
       retrieval: {
         semanticCount: semanticChunks.length,
         keywordCount: keywordFiltered.length,
+        citationCount: citationBundle.citations.length,
+        locale: resolvedLocale,
+        retrievalMode,
+        lessonScoped,
+        allowModuleFallback,
+        activeIndexOnly: retrievalMode === "locale",
         resolvedPathId,
         pathResolutionReason,
         semanticBeforeFilter,
         semanticAfterFilter,
         minSimilarityThreshold: SEMANTIC_MIN_SIMILARITY,
+        duplicateSourcesSuppressed: citationBundle.duplicateSourcesSuppressed,
+        crossLocaleLeakage: citationBundle.crossLocaleLeakage,
+        crossLessonLeakage: citationBundle.crossLessonLeakage,
+        noResultReason:
+          citationBundle.citations.length === 0 && isValidLocale(resolvedLocale)
+            ? lessonScoped
+              ? "no_lesson_scoped_results"
+              : "no_locale_results"
+            : !isValidLocale(resolvedLocale)
+              ? "invalid_or_missing_locale"
+              : null,
         topLessonIds: [
           ...new Set([
             ...semanticChunks.map((c) => c.lessonId).filter((x): x is string => typeof x === "string"),
@@ -648,6 +944,7 @@ ${retrievalBlock}
           ]),
         ].slice(0, 8),
       },
+      citations: citationBundle.citations,
     };
 
     return new Response(JSON.stringify(payload), {
