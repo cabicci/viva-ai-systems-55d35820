@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { useLearnerContext } from "@/lib/learner-context";
+import { useLocale } from "@/lib/locale/locale-context";
+import { resolveAssistantPackageLocale } from "@/lib/rag/resolve-assistant-locale";
 import {
   searchPlatformContent,
 } from "@/lib/platform-retrieval";
@@ -22,6 +24,8 @@ interface Props {
 
 export function AssistantPanel({ compact = false }: Props) {
   const ctx = useLearnerContext();
+  const { locale } = useLocale();
+  const assistantLocale = resolveAssistantPackageLocale(locale);
   const { query, loading, error, response, matches } = useAssistantSession();
 
   useEffect(() => {
@@ -42,6 +46,7 @@ export function AssistantPanel({ compact = false }: Props) {
       const res = await callAssistantRuntime({
         query: q,
         learnerContext: {
+          locale: assistantLocale,
           currentPath: ctx.currentPath?.id ?? null,
           currentModule: ctx.currentModule?.id ?? null,
           currentLesson: ctx.currentLesson?.id ?? null,

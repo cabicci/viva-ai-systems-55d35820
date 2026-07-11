@@ -10,6 +10,7 @@ import { supabase } from "@/integrations/supabase/client";
 export interface AssistantRuntimeRequestPayload {
   query: string;
   learnerContext: {
+    locale?: string | null;
     currentPath?: string | null;
     currentModule?: string | null;
     currentLesson?: string | null;

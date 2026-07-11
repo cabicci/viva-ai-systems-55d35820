@@ -38,3 +38,9 @@ date: 2026-07-11
 scope: other
 source: user
 summary: Export shared learner path metadata for TanStack tsr-shared contract
+
+[roadmap:a3b8c1d2-4e5f-6789-abcd-ef0123456789]
+date: 2026-07-11
+scope: other
+source: user
+summary: Add RAG operational scripts to package.json for corpus verification, manifest generation, mock indexing, reindex planning, and embedding dry-run
