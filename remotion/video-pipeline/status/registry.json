@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-11T17:54:04.358Z",
+  "updatedAt": "2026-07-11T18:28:01.265Z",
   "records": {
     "ar-Gulf::analyst-m1-l1-from-automation-to-insight": {
       "cellId": "ar-Gulf::analyst-m1-l1-from-automation-to-insight",
@@ -13,7 +13,7 @@
       "packageChecksum": "1945b282bceabdb74a0bbb91e729c2d93beb376dbba3b165638cb2458acfe0ea",
       "voiceProfileId": "gemini-ar-gulf",
       "outputStatus": "validated",
-      "updatedAt": "2026-07-11T17:54:04.358Z",
+      "updatedAt": "2026-07-11T18:17:08.673Z",
       "scriptChecksum": "4d764cb9a60da3f0282f8e9a42dc24f28f87133f74377d5352e3f3ad0927f48f",
       "videoChecksum": "49823ea58105a84846917be70520c4025c349548553d01b54bc5a80047312cbd",
       "captionsChecksum": "dd9cf8b506b580486792815daeb19e72a85acc03ff609a784d4b82dfdcd07f22"
@@ -29,7 +29,7 @@
       "packageChecksum": "be20b8f71093913b6a50745e1759f07af9452c48f14eb6e2d6d4cfcb38ac0f8e",
       "voiceProfileId": "gemini-ar-gulf",
       "outputStatus": "validated",
-      "updatedAt": "2026-07-11T17:54:04.203Z",
+      "updatedAt": "2026-07-11T18:17:08.677Z",
       "scriptChecksum": "8d3f157c3d0360978e490b5acda95031813e442a2c783667260453086771e0aa",
       "videoChecksum": "49823ea58105a84846917be70520c4025c349548553d01b54bc5a80047312cbd",
       "captionsChecksum": "51dc7baf5b38f4e05ff9c8c451643dc0bbaa229ac1033b4da3ca9e753ef18f05"
@@ -45,7 +45,7 @@
       "packageChecksum": "8151b64af236810eb85d5c0f1c88f2f3252c227e3a49f7066154976f9cbde587",
       "voiceProfileId": "gemini-ar-gulf",
       "outputStatus": "validated",
-      "updatedAt": "2026-07-11T17:54:04.209Z",
+      "updatedAt": "2026-07-11T18:17:08.682Z",
       "scriptChecksum": "0f562c5ff9f6fd30536a5689e3ff11395ff7ae16906644d58e7a8475f74e6bb1",
       "videoChecksum": "49823ea58105a84846917be70520c4025c349548553d01b54bc5a80047312cbd",
       "captionsChecksum": "315e4934d4256f77dca5732c83fcb247c046d7d53e3a3625031a8c79d5fc3b7c"
@@ -1278,8 +1278,11 @@
       "sourceSha": "3e1ef5aaf0ca4f3dbcf28650751e0dd1de70bfc2",
       "packageChecksum": "993b35aed86fcb590f24c937fd1ffb342e220d8a3dc4164ee1892cc9d4e82af7",
       "voiceProfileId": "gemini-ar-gulf",
-      "outputStatus": "pending",
-      "updatedAt": "2026-07-11T17:52:13.662Z"
+      "outputStatus": "validated",
+      "updatedAt": "2026-07-11T18:27:24.650Z",
+      "scriptChecksum": "51c23d76734dbeb33a30399e8e95e7bf966e0aaf8c226a80027013d81d622ba4",
+      "videoChecksum": "2ad79d3679e9289dd4c0b2453610f80deb68a954d4680ff0b5a85b0d0177ab01",
+      "captionsChecksum": "2727a689528f41f0d721bbc7d760239a81890d5f8435700a842683ccdf2e5ee1"
     },
     "ar-Gulf::intro-m1-l5-ai-vs-software": {
       "cellId": "ar-Gulf::intro-m1-l5-ai-vs-software",
@@ -1382,8 +1385,10 @@
       "sourceSha": "3e1ef5aaf0ca4f3dbcf28650751e0dd1de70bfc2",
       "packageChecksum": "60610fda00d78d8eebe5a2d57be1103c50a3e76f6cb772c5bc0b4db5e5679459",
       "voiceProfileId": "gemini-ar-msa-formal",
-      "outputStatus": "pending",
-      "updatedAt": "2026-07-11T17:52:13.662Z"
+      "outputStatus": "failed",
+      "updatedAt": "2026-07-11T18:21:05.108Z",
+      "scriptChecksum": "18310e50c5646f75beaa18b2f639d8367a6bb21bb765c96e176677a223104bb6",
+      "error": "Simulated failure"
     },
     "ar-MSA::analyst-m4-automated-dashboard": {
       "cellId": "ar-MSA::analyst-m4-automated-dashboard",
@@ -2578,8 +2583,11 @@
       "sourceSha": "3e1ef5aaf0ca4f3dbcf28650751e0dd1de70bfc2",
       "packageChecksum": "81c5c9a214f3b47c72533e3e739d9a0015c9e136ad3645cd7e77f9d0e6a06d25",
       "voiceProfileId": "gemini-ar-msa-formal",
-      "outputStatus": "pending",
-      "updatedAt": "2026-07-11T17:52:13.663Z"
+      "outputStatus": "validated",
+      "updatedAt": "2026-07-11T18:25:17.410Z",
+      "scriptChecksum": "e158c1dda5aed094ae65de5d1040425104e8b02a30b25f2345faaa00c6268dc3",
+      "videoChecksum": "ced28668ac8b008b4a201959c46ba19678ac7df45e8e94dcfa427537d31f0920",
+      "captionsChecksum": "eeb5bc13b5aa85bad030a2963d9af2b7dcc2372cbd8a62fab581c4664243a478"
     },
     "ar-MSA::intro-m1-l5-ai-vs-software": {
       "cellId": "ar-MSA::intro-m1-l5-ai-vs-software",
@@ -2682,8 +2690,11 @@
       "sourceSha": "3e1ef5aaf0ca4f3dbcf28650751e0dd1de70bfc2",
       "packageChecksum": "b82f302424dc89575d6bc5f93a259a65f8e7173d8bc9109244bc3ca525e0b4aa",
       "voiceProfileId": "gemini-en-narrator",
-      "outputStatus": "pending",
-      "updatedAt": "2026-07-11T17:52:13.663Z"
+      "outputStatus": "validated",
+      "updatedAt": "2026-07-11T18:22:41.886Z",
+      "scriptChecksum": "5f493910f3124ab021b16730dba1a2f884f61d88cb697cd0069c72fe70f47834",
+      "videoChecksum": "6baa201edc6e4818d874df19872a205ae00e6f4317422c180bf5c898f174f63c",
+      "captionsChecksum": "a5b6dcff131b171dbd91113cf77d43eb5c6e79ec786b28d371e115892b1d031a"
     },
     "en::analyst-m4-automated-dashboard": {
       "cellId": "en::analyst-m4-automated-dashboard",
@@ -3878,8 +3889,11 @@
       "sourceSha": "3e1ef5aaf0ca4f3dbcf28650751e0dd1de70bfc2",
       "packageChecksum": "c3b3db47467f621f59bb22b09acc856dce9924c297feaaf714937574897de2e2",
       "voiceProfileId": "gemini-en-narrator",
-      "outputStatus": "pending",
-      "updatedAt": "2026-07-11T17:52:13.663Z"
+      "outputStatus": "validated",
+      "updatedAt": "2026-07-11T18:20:35.548Z",
+      "scriptChecksum": "86835dfd2eb282aacfb6ef71da8f9cb73cb98cf7960078429916677ad5c23248",
+      "videoChecksum": "36313da672b6821e10388e60607e3f3fae4ffa1890291bc1b3dd80cb24bbc782",
+      "captionsChecksum": "fbdac9d4962e7a5b4d9a75151df2499660d0f0d9614616e7e853e4b9221c7eb4"
     },
     "en::intro-m1-l5-ai-vs-software": {
       "cellId": "en::intro-m1-l5-ai-vs-software",
