@@ -1,0 +1,81 @@
+name: RAG Final Integration Validation
+
+on:
+  workflow_dispatch:
+    inputs:
+      integration_sha:
+        description: Integration candidate commit SHA
+        required: false
+        default: "9b30c1f0cf286e133f037fd623b7e71df63058f3"
+  push:
+    branches:
+      - "validation/rag-final-integration-*"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rag-final-integration-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      INTEGRATION_SHA: "9b30c1f0cf286e133f037fd623b7e71df63058f3"
+      DOCKER_BIN: docker
+      ARTIFACT_NAME: rag-final-integration-validation-9b30c1f
+    steps:
+      - name: Checkout validation branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify integration SHA
+        run: |
+          echo "Pinned integration SHA: $INTEGRATION_SHA"
+          git cat-file -e "${INTEGRATION_SHA}^{commit}"
+          git log -1 --oneline "$INTEGRATION_SHA"
+          test "$(git rev-parse HEAD)" = "$INTEGRATION_SHA"
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Setup Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: 2.109.1
+
+      - name: Verify Docker daemon
+        run: |
+          docker info
+          docker ps
+
+      - name: Start local Supabase (disposable)
+        env:
+          SUPABASE_CMD: supabase
+        run: bash .github/rag-validation/start-supabase.sh
+
+      - name: Run combined disposable validation
+        env:
+          SUPABASE_CMD: supabase
+          INTEGRATION_SHA: "9b30c1f0cf286e133f037fd623b7e71df63058f3"
+        run: bash .github/rag-validation/run-final-integration-validation.sh
+
+      - name: Stop disposable Supabase
+        if: always()
+        run: supabase stop --no-backup || true
+
+      - name: Upload validation artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rag-final-integration-validation-9b30c1f
+          path: artifacts/rag/final-integration-validation/
+          retention-days: 14
