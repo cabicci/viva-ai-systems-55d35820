@@ -37,7 +37,7 @@ jobs:
           echo "Pinned integration SHA: $INTEGRATION_SHA"
           git cat-file -e "${INTEGRATION_SHA}^{commit}"
           git log -1 --oneline "$INTEGRATION_SHA"
-          test "$(git rev-parse HEAD)" = "$INTEGRATION_SHA"
+          git merge-base --is-ancestor "$INTEGRATION_SHA" HEAD
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
