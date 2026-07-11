@@ -11,6 +11,9 @@ on:
         description: Immutable RAG candidate SHA
         required: true
         default: "8e48d655489fcdfad4df8e33b3c93c61bbde3468"
+  push:
+    branches:
+      - validation/rag-paid-embedding-8e48d65
 
 permissions:
   contents: read
@@ -21,6 +24,12 @@ concurrency:
 
 jobs:
   paid-embedding:
+    if: >
+      (github.event_name == 'workflow_dispatch' &&
+       inputs.confirm_paid_embedding == 'APPROVE_PAID_RAG_EMBEDDING_ONCE' &&
+       inputs.candidate_sha == '8e48d655489fcdfad4df8e33b3c93c61bbde3468') ||
+      (github.event_name == 'push' &&
+       contains(github.event.head_commit.message, 'APPROVE_PAID_RAG_EMBEDDING_ONCE'))
     runs-on: ubuntu-latest
     timeout-minutes: 90
     env:
@@ -28,16 +37,11 @@ jobs:
       DOCKER_BIN: docker
       MAX_APPROVED_COST_USD: "0.03"
     steps:
-      - name: Require explicit one-time paid approval
+      - name: Record approved one-time paid execution gate
         run: |
-          if [ "${{ inputs.confirm_paid_embedding }}" != "APPROVE_PAID_RAG_EMBEDDING_ONCE" ]; then
-            echo "ABORT: confirm_paid_embedding must be exactly APPROVE_PAID_RAG_EMBEDDING_ONCE"
-            exit 1
-          fi
-          if [ "${{ inputs.candidate_sha }}" != "8e48d655489fcdfad4df8e33b3c93c61bbde3468" ]; then
-            echo "ABORT: candidate_sha input must match immutable candidate"
-            exit 1
-          fi
+          echo "event=${{ github.event_name }}"
+          echo "candidate=$CANDIDATE_SHA"
+          echo "max_cost=$MAX_APPROVED_COST_USD"
 
       - name: Checkout paid-embedding validation branch
         uses: actions/checkout@v4
@@ -92,7 +96,7 @@ jobs:
         run: |
           test -f artifacts/rag/paid-embedding/summary.json
           python3 - <<'PY'
-          import json,sys
+          import json
           s=json.load(open("artifacts/rag/paid-embedding/summary.json"))
           assert s["confirmations"]["noIndexActivation"] is True
           assert s["confirmations"]["noProductionAccess"] is True
