@@ -76,7 +76,7 @@ import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
  *  Route: /learn/{pathId}/{lessonId}
  * -------------------------------------------------------------- */
 
-const PATH_META: Record<
+export const PATH_META: Record<
   PathId,
   { icon: LucideIcon; tone: "accent" | "primary" }
 > = {
@@ -101,7 +101,7 @@ function learnPathLabel(t: (key: UiStringKey) => string, pathId: PathId): string
   return t(LEARN_PATH_KEYS[pathId]);
 }
 
-const VALID_PATHS = Object.keys(PATH_META) as PathId[];
+export const VALID_PATHS = Object.keys(PATH_META) as PathId[];
 
 type RuntimeLesson = CurriculumLesson & {
   slug: string;
