@@ -6,6 +6,10 @@ import { extractScript } from "../lib/script-extract.ts";
 import { voiceProfileForLocale, preventWrongLocaleVoice } from "../lib/voice-map.ts";
 import { shouldSkipLiveRegeneration } from "../lib/live-media-validate.ts";
 import { PILOT_LESSON_IDS } from "../lib/pilot-lessons.ts";
+import { ensureRenderBrandAsset, validateBrandAsset } from "../lib/brand-guard.ts";
+import path from "node:path";
+import { writeFileSync, unlinkSync } from "node:fs";
+import { REPO_ROOT } from "../lib/paths.ts";
 
 describe("live video pipeline", () => {
   it("builds locale-isolated cache keys", () => {
@@ -69,6 +73,24 @@ describe("live video pipeline", () => {
       false,
     );
     expect(skip.skip).toBe(true);
+  });
+
+  it("accepts verified official logo and rejects placeholder dimensions", () => {
+    const official = ensureRenderBrandAsset();
+    expect(official.ok).toBe(true);
+    expect(official.sha256).toBe("60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706");
+    expect(official.width).toBe(574);
+    expect(official.height).toBe(172);
+
+    const placeholderPath = path.join(REPO_ROOT, "remotion/video-pipeline/assets/brand/_test-placeholder.png");
+    const buf = Buffer.alloc(44);
+    buf.writeUInt32BE(0x89504e47, 0);
+    buf.writeUInt32BE(13, 16);
+    buf.writeUInt32BE(1, 20);
+    writeFileSync(placeholderPath, Buffer.concat([buf, Buffer.alloc(1)]));
+    const bad = validateBrandAsset(placeholderPath);
+    expect(bad.ok).toBe(false);
+    unlinkSync(placeholderPath);
   });
 
   it("does not skip failed cells on retry", () => {

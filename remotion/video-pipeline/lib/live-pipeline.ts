@@ -24,6 +24,7 @@ import {
 import type { VideoManifestEntry, VideoStatusRecord } from "./types.ts";
 import { BASELINE_SHA } from "./types.ts";
 import { resolveFfmpegBin } from "./ffmpeg-bin.ts";
+import { ensureRenderBrandAsset } from "./brand-guard.ts";
 
 export interface LivePipelineResult {
   ok: boolean;
@@ -212,6 +213,21 @@ export async function runLiveVideoPipeline(
 
   const silentVideo = path.join(outDir, "silent.mp4");
   const finalVideo = path.join(outDir, "video.mp4");
+
+  const brand = ensureRenderBrandAsset();
+  if (!brand.ok) {
+    errors.push(...brand.errors);
+    appendLog(`brand guard failed: ${brand.errors.join("; ")}`);
+    const failed = {
+      ...entryToStatusRecord(entry, "failed"),
+      scriptChecksum: script.checksum,
+      error: errors.join("; "),
+    };
+    updateStatusRecord(entry.cellId, failed);
+    writeFileSync(path.join(outDir, "status.json"), `${JSON.stringify(failed, null, 2)}\n`);
+    return { ok: false, cellId: entry.cellId, errors };
+  }
+  appendLog(`brand ok sha256=${brand.sha256} ${brand.width}x${brand.height}`);
 
   if (!options.skipRender) {
     const renderStarted = Date.now();
