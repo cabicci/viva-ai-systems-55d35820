@@ -115,15 +115,20 @@ function quizMarkdownMatchesQuizObject(
   );
 }
 
-function listRuntimePackagePaths(): string[] {
-  const paths: string[] = [];
-  for (const locale of ["ar-MSA", "ar-Gulf", "en"] as const) {
-    const dir = path.join(REPO_ROOT, "src/lib/locale-lessons", locale, "lessons");
-    for (const file of readdirSync(dir).filter((name) => name.endsWith(".json"))) {
-      paths.push(`src/lib/locale-lessons/${locale}/lessons/${file}`);
-    }
-  }
-  return paths.sort();
+function runtimeToRecovered(runtimePath: string): string {
+  const match = runtimePath.match(
+    /^src\/lib\/locale-lessons\/(ar-MSA|ar-Gulf|en)\/lessons\/(.+)$/,
+  );
+  if (!match) throw new Error(`Bad runtime path: ${runtimePath}`);
+  return `src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/${match[1]}/${match[2]}`;
+}
+
+function recoveredToRuntime(recoveredPath: string): string {
+  const match = recoveredPath.match(
+    /^src\/lib\/locale-lessons\/ar-MSA\/reports\/phase13b-recovered-packages\/(ar-MSA|ar-Gulf|en)\/(.+)$/,
+  );
+  if (!match) throw new Error(`Bad recovered path: ${recoveredPath}`);
+  return `src/lib/locale-lessons/${match[1]}/lessons/${match[2]}`;
 }
 
 describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
@@ -161,7 +166,7 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
     }
   });
 
-  it("keeps every bullets field at exact base SHA values", () => {
+  it("keeps every bullets field at exact base SHA values on approved packages", () => {
     for (const [packagePath, beforePkg] of Object.entries(BEFORE_STATE)) {
       const current = readPackage(packagePath);
       for (let index = 0; index < beforePkg.sections.length; index++) {
@@ -170,14 +175,21 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
         );
       }
     }
+  });
 
-    const runtimePaths = listRuntimePackagePaths();
-    expect(runtimePaths).toHaveLength(REQUIRED_LESSON_COUNT * 3);
-    for (const runtimePath of runtimePaths) {
-      if (!APPROVED_RUNTIME.has(runtimePath)) {
-        expect(readPackage(runtimePath)).toEqual(readBasePackage(runtimePath));
-      }
-    }
+  it("leaves every non-approved runtime package identical to base SHA", () => {
+    const changedRuntime = execSync(
+      `git diff --name-only ${BASE_SHA} HEAD -- src/lib/locale-lessons/ar-MSA/lessons src/lib/locale-lessons/ar-Gulf/lessons src/lib/locale-lessons/en/lessons`,
+      { cwd: REPO_ROOT, encoding: "utf8" },
+    )
+      .trim()
+      .split("\n")
+      .filter(Boolean)
+      .map((line) => line.replace(/\\/g, "/"))
+      .sort();
+
+    expect(changedRuntime).toHaveLength(APPROVED_RUNTIME.size);
+    expect(new Set(changedRuntime)).toEqual(APPROVED_RUNTIME);
   });
 
   it("keeps recovered/runtime equivalence for all affected packages", () => {
@@ -208,30 +220,27 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
   });
 
   it("changes only the 39 approved packages versus base SHA", () => {
-    const recoveredPaths = listRuntimePackagePaths().map((runtimePath) =>
-      runtimePath.replace(
-        /^src\/lib\/locale-lessons\/(ar-MSA|ar-Gulf|en)\/lessons\//,
-        "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/$1/",
-      ),
-    );
+    const changedRecovered = execSync(
+      `git diff --name-only ${BASE_SHA} HEAD -- src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages`,
+      { cwd: REPO_ROOT, encoding: "utf8" },
+    )
+      .trim()
+      .split("\n")
+      .filter(Boolean)
+      .map((line) => line.replace(/\\/g, "/"))
+      .sort();
 
-    for (const recoveredPath of recoveredPaths) {
-      const runtimePath = recoveredPath
-        .replace("/reports/phase13b-recovered-packages/", "/")
-        .replace(
-          "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/",
-          "src/lib/locale-lessons/",
-        )
-        .replace(/\/(ar-MSA|ar-Gulf|en)\//, "/$1/lessons/");
+    expect(changedRecovered).toHaveLength(APPROVED_RECOVERED.size);
+    expect(new Set(changedRecovered)).toEqual(APPROVED_RECOVERED);
 
-      const current = readPackage(recoveredPath);
+    for (const recoveredPath of changedRecovered) {
+      const runtimePath = recoveredToRuntime(recoveredPath);
+      expect(APPROVED_RUNTIME.has(runtimePath)).toBe(true);
+      const records = MANIFEST.filter((r) => r.recoveredPackagePath === recoveredPath);
       const base = readBasePackage(recoveredPath);
-      const isApproved = APPROVED_RECOVERED.has(recoveredPath);
-
-      if (!isApproved) {
-        expect(current).toEqual(base);
-        expect(readPackage(runtimePath)).toEqual(readBasePackage(runtimePath));
-      }
+      const current = readPackage(recoveredPath);
+      expect(stripApprovedFields(current, records)).toEqual(stripApprovedFields(base, records));
+      expect(readPackage(runtimePath)).toEqual(current);
     }
   });
 

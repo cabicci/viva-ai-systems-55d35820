@@ -25,4 +25,4 @@ The build's roadmap guard fails on ANY meaningful project change without a fresh
 date: 2026-07-11
 scope: content
 source: user
-summary: Apply Agent 4 scientific curriculum corrections to 39 localized lesson packages (40 quiz/visual records)
+summary: Restore unapproved quiz bullets while preserving Agent 4 scientific curriculum corrections
