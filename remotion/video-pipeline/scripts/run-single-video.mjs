@@ -3,6 +3,7 @@
 import { readFileSync } from "node:fs";
 import { MANIFEST_PATH } from "../lib/paths.ts";
 import { runMockVideoPipeline } from "../lib/mock-pipeline.ts";
+import { runLiveVideoPipeline } from "../lib/live-pipeline.ts";
 
 function argValue(flag) {
   const args = process.argv.slice(2);
@@ -20,9 +21,12 @@ function argsIncludes(flag) {
 const locale = argValue("--locale");
 const lessonId = argValue("--lesson-id");
 const mock = argsIncludes("--mock") || process.env.MOCK_MODE === "true";
+const force = argsIncludes("--force");
+const simulateFailure = argsIncludes("--simulate-failure");
+const fixtureTts = argsIncludes("--fixture-tts");
 
 if (!locale || !lessonId) {
-  console.error("Usage: run-single-video.mjs --locale=... --lesson-id=... [--mock]");
+  console.error("Usage: run-single-video.mjs --locale=... --lesson-id=... [--mock|--force]");
   process.exit(1);
 }
 
@@ -33,14 +37,9 @@ if (!entry) {
   process.exit(1);
 }
 
-if (mock) {
-  const result = runMockVideoPipeline(entry);
-  console.log(JSON.stringify(result, null, 2));
-  process.exit(result.ok ? 0 : 1);
-}
+const result = mock
+  ? runMockVideoPipeline(entry, { simulateFailure })
+  : await runLiveVideoPipeline(entry, { force, simulateFailure, fixtureTts });
 
-console.error(
-  "Live production requires locale-aware TTS/render integration (Phase: paid bulk execution). " +
-    "Use --mock for local validation.",
-);
-process.exit(2);
+console.log(JSON.stringify(result, null, 2));
+process.exit(result.ok ? 0 : 1);
