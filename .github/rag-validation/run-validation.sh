@@ -28,6 +28,16 @@ apply_validation_shims() {
   done
 }
 
+cleanup_validation_shims() {
+  echo "Removing temporary validation migration shims from working tree..."
+  for shim in .github/rag-validation/shims/*.sql; do
+    if [[ -f "$shim" ]]; then
+      rm -f "supabase/migrations/$(basename "$shim")"
+      echo "  removed supabase/migrations/$(basename "$shim")"
+    fi
+  done
+}
+
 apply_validation_shims
 
 FAILED=0
@@ -48,11 +58,12 @@ run_step() {
 
 # Supabase should already be running from start-supabase.sh
 run_step "db_replay" bun run scripts/rag/disposable-db-replay.ts
-run_step "db_lifecycle_tests" bun run test:run -- src/lib/__tests__/rag-db-lifecycle.integration.test.ts
+run_step "db_lifecycle_tests" bun run .github/rag-validation/db-lifecycle-validation.ts
 run_step "rag_validate_local" bun run test:run -- src/lib/__tests__/rag-assistant-locale-wiring.test.ts src/lib/__tests__/rag-corpus-verification.test.ts src/lib/__tests__/rag-deterministic-chunking.test.ts src/lib/__tests__/rag-manifest-reindex.test.ts src/lib/__tests__/rag-migration-security.test.ts src/lib/__tests__/rag-mock-indexing.test.ts src/lib/__tests__/rag-no-paid-api.test.ts src/lib/__tests__/rag-retrieval-contract.test.ts src/lib/__tests__/rag-shared-runtime-integration.test.ts
 run_step "rag_verify_corpus" bun run rag:verify-corpus
 run_step "rag_embedding_dry_run" bun run rag:embedding-dry-run
 run_step "tsc" bunx tsc --noEmit
+cleanup_validation_shims
 run_step "roadmap_guard" bun run roadmap:guard
 run_step "build" bun run build
 
