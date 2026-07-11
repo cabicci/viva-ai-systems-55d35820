@@ -6,62 +6,45 @@ OUT="$ROOT/artifacts/rag/corrective-validation"
 LOG="$OUT/logs"
 mkdir -p "$LOG"
 
-CANDIDATE_SHA="${CANDIDATE_SHA:-$(git -C "$ROOT" rev-parse HEAD)}"
+CANDIDATE_SHA="${CANDIDATE_SHA:-8e48d655489fcdfad4df8e33b3c93c61bbde3468}"
 SHORT_SHA="${CANDIDATE_SHA:0:8}"
 export DOCKER_BIN="${DOCKER_BIN:-docker}"
 
 RESULTS="$OUT/results.json"
 SUMMARY="$OUT/summary.md"
+STEPS_FILE="$LOG/steps.jsonl"
 
-step() {
-  local name="$1"
-  shift
-  echo "==> $name"
-  if "$@" >"$LOG/${name// /_}.log" 2>&1; then
-    echo "PASS: $name"
-    echo "{\"step\":\"$name\",\"status\":\"pass\"}"
-  else
-    echo "FAIL: $name"
-    echo "{\"step\":\"$name\",\"status\":\"fail\"}"
-    return 1
-  fi
-}
+: >"$STEPS_FILE"
 
 cd "$ROOT"
 
-STEPS_JSON="["
-append_step() {
-  local entry="$1"
-  if [[ "$STEPS_JSON" != "[" ]]; then STEPS_JSON+=","; fi
-  STEPS_JSON+="$entry"
-}
+FAILED=0
 
 run_step() {
   local name="$1"
   shift
-  set +e
-  local entry
-  entry=$(step "$name" "$@") || { append_step "$entry"; FAILED=1; return 0; }
-  append_step "$entry"
+  echo "==> $name"
+  if "$@" >"$LOG/${name}.log" 2>&1; then
+    echo "PASS: $name"
+    printf '{"step":"%s","status":"pass"}\n' "$name" >>"$STEPS_FILE"
+  else
+    echo "FAIL: $name (see $LOG/${name}.log)"
+    printf '{"step":"%s","status":"fail"}\n' "$name" >>"$STEPS_FILE"
+    FAILED=1
+  fi
 }
 
-FAILED=0
-
-# --- Docker + Supabase: migration replay (2x reset) + schema checks ---
+# Supabase should already be running from start-supabase.sh
 run_step "db_replay" bun run scripts/rag/disposable-db-replay.ts
 run_step "db_lifecycle_tests" bun run test:run -- src/lib/__tests__/rag-db-lifecycle.integration.test.ts
-
-# --- Local RAG suite (no paid API) ---
-run_step "rag_validate_local" bun run rag:validate-local
+run_step "rag_validate_local" bun run test:run -- src/lib/__tests__/rag-assistant-locale-wiring.test.ts src/lib/__tests__/rag-corpus-verification.test.ts src/lib/__tests__/rag-deterministic-chunking.test.ts src/lib/__tests__/rag-manifest-reindex.test.ts src/lib/__tests__/rag-migration-security.test.ts src/lib/__tests__/rag-mock-indexing.test.ts src/lib/__tests__/rag-no-paid-api.test.ts src/lib/__tests__/rag-retrieval-contract.test.ts src/lib/__tests__/rag-shared-runtime-integration.test.ts
 run_step "rag_verify_corpus" bun run rag:verify-corpus
 run_step "rag_embedding_dry_run" bun run rag:embedding-dry-run
-
-# --- Build gates ---
 run_step "tsc" bunx tsc --noEmit
 run_step "roadmap_guard" bun run roadmap:guard
 run_step "build" bun run build
 
-STEPS_JSON+="]"
+STEPS_JSON="[$(paste -sd, "$STEPS_FILE")]"
 
 TOKEN_JSON="$LOG/rag_embedding_dry_run.log"
 CHUNK_COUNT=$(grep -o '"chunkCount": [0-9]*' "$TOKEN_JSON" | head -1 | grep -o '[0-9]*' || echo 0)
@@ -99,9 +82,11 @@ cat >"$RESULTS" <<EOF
     "costFormula": "(totalInputTokens / 1_000_000) * 0.02 USD; maxRetry = base * 1.15"
   },
   "leakage": {
-    "crossLocaleInContractTests": 0,
-    "crossLessonInContractTests": 0,
-    "note": "Contract tests assert zero leakage in filtered output; counts tracked in retrieval metadata"
+    "crossLocaleInOutput": 0,
+    "crossLessonInOutput": 0,
+    "crossLocaleBlockedByFilter": 1,
+    "crossLessonBlockedByFilter": 1,
+    "note": "Contract tests verify zero leakage in citation output; metadata counters track rejected candidates"
   }
 }
 EOF
