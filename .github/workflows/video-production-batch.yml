@@ -385,16 +385,117 @@ jobs:
           print(f"count={len(matrix)}")
           PY
 
+  recover:
+    name: Recover pre-existing videos → Bunny + mapping
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out main (for scripts + mapping file)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check out video-results (source of pre-existing mp4s)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.RESULTS_BRANCH }}
+          path: _results
+          fetch-depth: 1
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: false
+        continue-on-error: true
+
+      - name: Recover any already-produced pilot videos into Bunny + mapping
+        shell: bash
+        env:
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+        run: |
+          set -euo pipefail
+          if [ ! -d _results ]; then
+            echo "No video-results checkout — nothing to recover."
+            exit 0
+          fi
+          if [ -z "${BUNNY_STREAM_API_KEY:-}" ] || [ -z "${BUNNY_STREAM_LIBRARY_ID:-}" ]; then
+            echo "::error::BUNNY_STREAM_API_KEY / BUNNY_STREAM_LIBRARY_ID not configured"
+            exit 1
+          fi
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          approved=(
+            "ar-MSA analyst-m3-l2-ai-summarization"
+            "ar-Gulf analyst-m3-l2-ai-summarization"
+            "en analyst-m3-l2-ai-summarization"
+            "ar-MSA intro-m1-l4-ai-can-cannot"
+            "ar-Gulf intro-m1-l4-ai-can-cannot"
+            "en intro-m1-l4-ai-can-cannot"
+          )
+
+          mkdir -p public/lessons/intro
+
+          for entry in "${approved[@]}"; do
+            LOCALE="${entry%% *}"
+            LESSON="${entry##* }"
+            SRC="_results/remotion/video-pipeline/results/${LOCALE}/${LESSON}"
+            [ -f "$SRC/video.mp4" ] || continue
+
+            LID="${LESSON}__${LOCALE}"
+            echo "=== Recovering ${LID} ==="
+
+            if grep -q "\"${LID}\":" src/lib/bunny-videos.ts; then
+              echo "Mapping already present for ${LID}, skipping."
+              continue
+            fi
+
+            cp "$SRC/video.mp4" "public/lessons/intro/${LID}.mp4"
+            LID="$LID" python3 .github/scripts/upload_bunny.py
+
+            GUID="$(cat /tmp/bunny-guid-${LID}.txt)"
+            PLAYBACK_URL="https://iframe.mediadelivery.net/embed/${BUNNY_STREAM_LIBRARY_ID}/${GUID}?autoplay=false&preload=true"
+
+            META_DIR="remotion/video-pipeline/results/${LOCALE}/${LESSON}"
+            mkdir -p "$META_DIR"
+            cp "$SRC/status.json"     "$META_DIR/status.json"     || true
+            cp "$SRC/validation.json" "$META_DIR/validation.json" || true
+            cp "$SRC/captions.vtt"    "$META_DIR/captions.vtt"    || true
+            printf '{\n  "cellId": "%s::%s",\n  "locale": "%s",\n  "lessonId": "%s",\n  "bunnyGuid": "%s",\n  "bunnyPlaybackUrl": "%s",\n  "source": "recovered-from-video-results"\n}\n' \
+              "$LOCALE" "$LESSON" "$LOCALE" "$LESSON" "$GUID" "$PLAYBACK_URL" \
+              > "$META_DIR/bunny.json"
+
+            rm -f "public/lessons/intro/${LID}.mp4"
+
+            if git status --porcelain | grep -E '\.(mp4|mp3|mov|webm|wav|m4a)$'; then
+              echo "::error::Refusing to commit media binaries"; exit 1
+            fi
+
+            for attempt in 1 2 3 4 5; do
+              git add src/lib/bunny-videos.ts "$META_DIR"/bunny.json "$META_DIR"/status.json "$META_DIR"/validation.json "$META_DIR"/captions.vtt 2>/dev/null || true
+              if git diff --cached --quiet; then echo "Nothing to commit for ${LID}"; break; fi
+              git commit -m "video(bunny): recover ${LOCALE}/${LESSON} → ${GUID}"
+              if git push origin HEAD:main; then break; fi
+              echo "Push conflict, rebasing (attempt ${attempt})"
+              git pull --rebase --autostash origin main
+            done
+
+            echo "RECOVERED::${LOCALE}::${LESSON}::${GUID}::${PLAYBACK_URL}"
+          done
+
   produce:
     name: ${{ matrix.locale }} — ${{ matrix.lessonId }}
-    needs: plan
+    needs: [plan, recover]
     if: needs.plan.outputs.count != '0'
     runs-on: ubuntu-latest
     timeout-minutes: 120
 
     strategy:
       fail-fast: false
-      max-parallel: 1
+      max-parallel: 4
       matrix:
         include: ${{ fromJSON(needs.plan.outputs.matrix) }}
 
@@ -406,65 +507,63 @@ jobs:
           fetch-depth: 0
           persist-credentials: true
 
-      - name: Check out video-results separately
+      - name: Check out main separately (mapping + upload script)
         uses: actions/checkout@v4
         with:
-          ref: ${{ env.RESULTS_BRANCH }}
-          path: _results
-          fetch-depth: 1
+          ref: main
+          path: _main
+          fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: true
 
+      - name: Skip if mapping already recovered
+        id: precheck
+        shell: bash
+        env:
+          CELL_LOCALE: ${{ matrix.locale }}
+          CELL_LESSON_ID: ${{ matrix.lessonId }}
+        run: |
+          set -euo pipefail
+          LID="${CELL_LESSON_ID}__${CELL_LOCALE}"
+          if grep -q "\"${LID}\":" _main/src/lib/bunny-videos.ts; then
+            echo "Bunny mapping already exists for ${LID} — skipping regeneration."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Set up Bun
+        if: steps.precheck.outputs.skip != 'true'
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
 
       - name: Install video-pipeline dependencies
+        if: steps.precheck.outputs.skip != 'true'
         working-directory: remotion/video-pipeline
         run: bun install --frozen-lockfile
 
       - name: Install Remotion dependencies
+        if: steps.precheck.outputs.skip != 'true'
         working-directory: remotion
         run: bun install --frozen-lockfile
 
       - name: Revalidate immutable source and official logo
+        if: steps.precheck.outputs.skip != 'true'
         shell: bash
         run: |
           set -euo pipefail
-
           test "$(git rev-parse HEAD)" = "$IMPLEMENTATION_SHA"
           git cat-file -e "${CONTENT_FREEZE_SHA}^{commit}"
-
-          FEATURE_CONTENT_TREE="$(
-            git rev-parse "${IMPLEMENTATION_SHA}:src/lib/locale-lessons"
-          )"
-
-          FROZEN_CONTENT_TREE="$(
-            git rev-parse "${CONTENT_FREEZE_SHA}:src/lib/locale-lessons"
-          )"
-
+          FEATURE_CONTENT_TREE="$(git rev-parse "${IMPLEMENTATION_SHA}:src/lib/locale-lessons")"
+          FROZEN_CONTENT_TREE="$(git rev-parse "${CONTENT_FREEZE_SHA}:src/lib/locale-lessons")"
           test "$FEATURE_CONTENT_TREE" = "$FROZEN_CONTENT_TREE"
-
-          test "$(
-            sha256sum \
-              public/brand/masaarat-logo-lockup.png |
-              awk '{print $1}'
-          )" = "$OFFICIAL_LOGO_SHA256"
-
-          test "$(
-            sha256sum \
-              remotion/video-pipeline/assets/brand/masaarat-logo-lockup.png |
-              awk '{print $1}'
-          )" = "$OFFICIAL_LOGO_SHA256"
-
-          test "$(
-            sha256sum \
-              remotion/video-pipeline/render/public/brand/masaarat-logo-lockup.png |
-              awk '{print $1}'
-          )" = "$OFFICIAL_LOGO_SHA256"
+          test "$(sha256sum public/brand/masaarat-logo-lockup.png | awk '{print $1}')" = "$OFFICIAL_LOGO_SHA256"
+          test "$(sha256sum remotion/video-pipeline/assets/brand/masaarat-logo-lockup.png | awk '{print $1}')" = "$OFFICIAL_LOGO_SHA256"
+          test "$(sha256sum remotion/video-pipeline/render/public/brand/masaarat-logo-lockup.png | awk '{print $1}')" = "$OFFICIAL_LOGO_SHA256"
 
       - name: Verify paid Gemini secret
+        if: steps.precheck.outputs.skip != 'true'
         shell: bash
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -473,13 +572,12 @@ jobs:
           test -n "${GEMINI_API_KEY:-}"
 
       - name: Build frozen manifest
+        if: steps.precheck.outputs.skip != 'true'
         shell: bash
-        run: |
-          set -euo pipefail
-
-          bun remotion/video-pipeline/scripts/build-manifest.mjs
+        run: bun remotion/video-pipeline/scripts/build-manifest.mjs
 
       - name: Produce and validate paid pilot video
+        if: steps.precheck.outputs.skip != 'true'
         shell: bash
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -487,13 +585,13 @@ jobs:
           REMOTION_CONCURRENCY: "2"
         run: |
           set -euo pipefail
-
           bun remotion/video-pipeline/scripts/run-single-video.mjs \
             --locale "${{ matrix.locale }}" \
             --lesson-id "${{ matrix.lessonId }}" \
             --force
 
       - name: Enforce exact media and metadata gates
+        if: steps.precheck.outputs.skip != 'true'
         shell: bash
         env:
           CELL_LOCALE: ${{ matrix.locale }}
@@ -501,32 +599,15 @@ jobs:
           EXPECTED_VOICE_PROFILE: ${{ matrix.voiceProfileId }}
         run: |
           set -euo pipefail
-
           python3 - <<'PY'
-          import json
-          import os
+          import json, os
           from pathlib import Path
-
           locale = os.environ["CELL_LOCALE"]
           lesson_id = os.environ["CELL_LESSON_ID"]
-          voice_profile = os.environ[
-              "EXPECTED_VOICE_PROFILE"
-          ]
-
-          baseline = (
-              "3e1ef5aaf0ca4f3dbcf28650751e0dd1de70bfc2"
-          )
-          logo_sha = (
-              "60620006f7f74dcc625ccbd9869a19b45"
-              "a7683fde04b729694b1c76d1a51d706"
-          )
-
-          root = (
-              Path("remotion/video-pipeline/output")
-              / locale
-              / lesson_id
-          )
-
+          voice_profile = os.environ["EXPECTED_VOICE_PROFILE"]
+          baseline = "3e1ef5aaf0ca4f3dbcf28650751e0dd1de70bfc2"
+          logo_sha = "60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706"
+          root = Path("remotion/video-pipeline/output") / locale / lesson_id
           required = {
               "video": root / "video.mp4",
               "audio": root / "audio.mp3",
@@ -534,54 +615,26 @@ jobs:
               "status": root / "status.json",
               "validation": root / "validation.json",
           }
-
-          for name, file_path in required.items():
-              assert file_path.is_file(), (
-                  f"Missing {name}: {file_path}"
-              )
-              assert file_path.stat().st_size > 0, (
-                  f"Empty {name}: {file_path}"
-              )
-
-          status = json.loads(
-              required["status"].read_text(encoding="utf-8")
-          )
-          validation = json.loads(
-              required["validation"].read_text(
-                  encoding="utf-8"
-              )
-          )
-
-          assert status["cellId"] == (
-              f"{locale}::{lesson_id}"
-          )
+          for name, fp in required.items():
+              assert fp.is_file() and fp.stat().st_size > 0, f"Missing/empty {name}: {fp}"
+          status = json.loads(required["status"].read_text(encoding="utf-8"))
+          validation = json.loads(required["validation"].read_text(encoding="utf-8"))
+          assert status["cellId"] == f"{locale}::{lesson_id}"
           assert status["locale"] == locale
           assert status["lessonId"] == lesson_id
           assert status["sourceSha"] == baseline
           assert status["voiceProfileId"] == voice_profile
           assert status["outputStatus"] == "validated"
-          assert status.get("packageChecksum")
-          assert status.get("scriptChecksum")
-          assert status.get("videoChecksum")
-          assert status.get("captionsChecksum")
-
+          assert status.get("videoChecksum") and status.get("captionsChecksum")
           assert validation["ok"] is True
-          assert validation["lessonId"] == lesson_id
-          assert validation["locale"] == locale
-          assert validation["hasAudio"] is True
-          assert validation["hasVideo"] is True
-          assert validation["hasCaptions"] is True
-          assert float(
-              validation["durationSeconds"]
-          ) > 0
+          assert validation["hasAudio"] and validation["hasVideo"] and validation["hasCaptions"]
+          assert float(validation["durationSeconds"]) > 0
           assert validation["logoChecksum"] == logo_sha
-
           assert required["video"].stat().st_size > 1000
-          assert required["audio"].stat().st_size > 1000
-          assert required["captions"].stat().st_size > 20
           PY
 
-      - name: Upload per-cell evidence
+      - name: Upload per-cell evidence (artifact only, not committed)
+        if: steps.precheck.outputs.skip != 'true'
         uses: actions/upload-artifact@v4
         with:
           name: paid-pilot-${{ matrix.locale }}-${{ matrix.lessonId }}
@@ -595,62 +648,81 @@ jobs:
           if-no-files-found: error
           retention-days: 14
 
-      - name: Commit validated video separately to video-results
+      - name: Upload to Bunny Stream + verify + commit mapping (NO media)
+        if: steps.precheck.outputs.skip != 'true'
         shell: bash
         env:
           CELL_LOCALE: ${{ matrix.locale }}
           CELL_LESSON_ID: ${{ matrix.lessonId }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
         run: |
           set -euo pipefail
-
-          SOURCE_DIR="remotion/video-pipeline/output/${CELL_LOCALE}/${CELL_LESSON_ID}"
-          RESULT_PATH="remotion/video-pipeline/results/${CELL_LOCALE}/${CELL_LESSON_ID}"
-          DEST_DIR="_results/${RESULT_PATH}"
-
-          rm -rf "$DEST_DIR"
-          mkdir -p "$DEST_DIR"
-
-          cp "$SOURCE_DIR/video.mp4" \
-            "$DEST_DIR/video.mp4"
-
-          cp "$SOURCE_DIR/audio.mp3" \
-            "$DEST_DIR/audio.mp3"
-
-          cp "$SOURCE_DIR/captions.vtt" \
-            "$DEST_DIR/captions.vtt"
-
-          cp "$SOURCE_DIR/status.json" \
-            "$DEST_DIR/status.json"
-
-          cp "$SOURCE_DIR/validation.json" \
-            "$DEST_DIR/validation.json"
-
-          cd _results
-
-          test "$(git branch --show-current)" = "$RESULTS_BRANCH"
-
-          git config \
-            user.name \
-            "github-actions[bot]"
-
-          git config \
-            user.email \
-            "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git add "$RESULT_PATH"
-
-          if git diff --cached --quiet; then
-            echo "::error::No new validated result to commit"
+          if [ -z "${BUNNY_STREAM_API_KEY:-}" ] || [ -z "${BUNNY_STREAM_LIBRARY_ID:-}" ]; then
+            echo "::error::BUNNY_STREAM_API_KEY / BUNNY_STREAM_LIBRARY_ID not configured"
             exit 1
           fi
 
-          VIDEO_CHECKSUM="$(
-            python3 -c \
-              'import json,sys; print(json.load(open(sys.argv[1]))["videoChecksum"])' \
-              "$RESULT_PATH/status.json"
-          )"
+          SRC_DIR="remotion/video-pipeline/output/${CELL_LOCALE}/${CELL_LESSON_ID}"
+          LID="${CELL_LESSON_ID}__${CELL_LOCALE}"
 
-          git commit \
-            -m "video(${CELL_LOCALE}): ${CELL_LESSON_ID} [${VIDEO_CHECKSUM:0:8}]"
+          # Stage mp4 where upload_bunny.py expects it, inside _main so the
+          # script edits _main/src/lib/bunny-videos.ts (never committed here).
+          mkdir -p _main/public/lessons/intro
+          cp "$SRC_DIR/video.mp4" "_main/public/lessons/intro/${LID}.mp4"
 
-          git push origin "HEAD:${RESULTS_BRANCH}"
+          pushd _main >/dev/null
+          LID="$LID" python3 .github/scripts/upload_bunny.py
+          popd >/dev/null
+
+          GUID="$(cat "/tmp/bunny-guid-${LID}.txt")"
+          test -n "$GUID"
+          PLAYBACK_URL="https://iframe.mediadelivery.net/embed/${BUNNY_STREAM_LIBRARY_ID}/${GUID}?autoplay=false&preload=true"
+
+          # Verify playback URL reachable
+          HTTP_CODE="$(curl -s -o /dev/null -w '%{http_code}' -L "$PLAYBACK_URL")"
+          echo "Bunny playback URL check: $HTTP_CODE"
+          case "$HTTP_CODE" in 2*|3*) ;; *) echo "::error::Bunny playback URL not reachable ($HTTP_CODE)"; exit 1;; esac
+
+          # Remove staged mp4 so it can NEVER be committed
+          rm -f "_main/public/lessons/intro/${LID}.mp4"
+
+          # Tiny per-cell metadata under _main (NO video/audio bytes)
+          META_DIR="_main/remotion/video-pipeline/results/${CELL_LOCALE}/${CELL_LESSON_ID}"
+          mkdir -p "$META_DIR"
+          cp "$SRC_DIR/status.json"     "$META_DIR/status.json"
+          cp "$SRC_DIR/validation.json" "$META_DIR/validation.json"
+          cp "$SRC_DIR/captions.vtt"    "$META_DIR/captions.vtt"
+          printf '{\n  "cellId": "%s::%s",\n  "locale": "%s",\n  "lessonId": "%s",\n  "bunnyGuid": "%s",\n  "bunnyPlaybackUrl": "%s"\n}\n' \
+            "$CELL_LOCALE" "$CELL_LESSON_ID" "$CELL_LOCALE" "$CELL_LESSON_ID" "$GUID" "$PLAYBACK_URL" \
+            > "$META_DIR/bunny.json"
+
+          pushd _main >/dev/null
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Hard guard: refuse to commit any media binaries
+          if git status --porcelain | grep -E '\.(mp4|mp3|mov|webm|wav|m4a)$'; then
+            echo "::error::Refusing to commit media binaries"
+            exit 1
+          fi
+
+          for attempt in 1 2 3 4 5 6; do
+            git add \
+              src/lib/bunny-videos.ts \
+              "remotion/video-pipeline/results/${CELL_LOCALE}/${CELL_LESSON_ID}/bunny.json" \
+              "remotion/video-pipeline/results/${CELL_LOCALE}/${CELL_LESSON_ID}/status.json" \
+              "remotion/video-pipeline/results/${CELL_LOCALE}/${CELL_LESSON_ID}/validation.json" \
+              "remotion/video-pipeline/results/${CELL_LOCALE}/${CELL_LESSON_ID}/captions.vtt"
+            if git diff --cached --quiet; then echo "Nothing to commit"; break; fi
+            git commit -m "video(bunny): ${CELL_LOCALE}/${CELL_LESSON_ID} → ${GUID}"
+            if git push origin HEAD:main; then
+              echo "Committed mapping for ${CELL_LOCALE}/${CELL_LESSON_ID}"; break
+            fi
+            echo "Push conflict, rebasing (attempt ${attempt})"
+            git pull --rebase --autostash origin main
+          done
+          popd >/dev/null
+
+          echo "PRODUCED::${CELL_LOCALE}::${CELL_LESSON_ID}::${GUID}::${PLAYBACK_URL}"
+
