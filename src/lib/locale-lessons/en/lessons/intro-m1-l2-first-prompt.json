@@ -96,7 +96,7 @@
     {
       "role": "Screenshot block (intent)",
       "heading": "Screenshot Block",
-      "contentMarkdown": "Illustration: Four fields in one message — Who is the AI? What is the situation? What do you want? In what format should the response be? (The visual original from the Egyptian production remains unchanged.)",
+      "contentMarkdown": "Illustration: Four fields in one message — Who is the AI? What is the situation? What do you want? In what format should the response be?",
       "bullets": [],
       "tables": []
     },
@@ -104,21 +104,22 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "> **Quiz key:** correctIndex: 0\n\n**Question:** Ahmed wrote: \"Write an email for a new job.\" What is the most important addition first?\n\nContext — who Ahmed is, what the job is, and why this email.\n- **Explanation:** The AI does not know your life. Context + a clear task turn the request from general to practical.",
+      "contentMarkdown": "**Question:** Ahmed wrote: \"Write an email for a new job.\" What is the most important addition first?\n\nContext — who Ahmed is, what the job is, and why this email.\nAdd more adjectives to make the request sound professional.\nAsk the AI to guess Ahmed's background from general knowledge.\n\n**Explanation:** The AI does not know your life. Context plus a clear task turn the request from general to practical.",
       "bullets": [
         "Context — who Ahmed is, what the job is, and why this email.",
-        "Explanation: The AI does not know your life. Context + a clear task turn the request from general to practical."
+        "Add more adjectives to make the request sound professional.",
+        "Ask the AI to guess Ahmed's background from general knowledge."
       ],
       "tables": [],
       "quiz": {
         "question": "Ahmed wrote: \"Write an email for a new job.\" What is the most important addition first?",
-        "correctIndex": 0,
         "options": [
           "Context — who Ahmed is, what the job is, and why this email.",
-          "An inappropriate option; it ignores the basic details in the section above.",
-          "A partial answer that misses the context and ignores the next step in the decision."
+          "Add more adjectives to make the request sound professional.",
+          "Ask the AI to guess Ahmed's background from general knowledge."
         ],
-        "explanation": "The AI does not know your life. Context + a clear task turn the request from general to practical."
+        "correctIndex": 0,
+        "explanation": "The AI does not know your life. Context plus a clear task turn the request from general to practical."
       }
     },
     {

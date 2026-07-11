@@ -1,0 +1,894 @@
+[
+  {
+    "issueId": "AG4-ARGULF-001",
+    "lessonId": "analyst-m4-automated-dashboard",
+    "locale": "ar-Gulf",
+    "category": "ar-Gulf-generic-quiz",
+    "runtimePackagePath": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-automated-dashboard.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-Gulf/analyst-m4-automated-dashboard.json",
+    "sectionIndex": 3,
+    "fieldPaths": [
+      "sections[3].quiz",
+      "sections[3].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "عندك ٤ أرقام في الـ Dashboard — وش أفضل خطوة أولى للأتمتة؟",
+      "options": [
+        "تؤتمت الرقم اللي تقراه كل أسبوع وتاخذ عليه قرار — بعد ما جمعته يدوي أسبوعين.",
+        "تؤتمت الـ ٤ أرقام مرة واحدة قبل ما تجرب يدوي.",
+        "تبني ١٠ رسوم إضافية في Looker Studio."
+      ],
+      "correctIndex": 0,
+      "explanation": "ابدأ برقم واحد تقراه كل أسبوع وتاخذ قرار عنه — بعد ما جمعته يدوي أسبوعين وتثبت إنه مهم."
+    },
+    "approvedReplacementContentMarkdown": "**السؤال:** عندك ٤ أرقام في الـ Dashboard — وش أفضل خطوة أولى للأتمتة؟\n\nتؤتمت الرقم اللي تقراه كل أسبوع وتاخذ عليه قرار — بعد ما جمعته يدوي أسبوعين.\nتؤتمت الـ ٤ أرقام مرة واحدة قبل ما تجرب يدوي.\nتبني ١٠ رسوم إضافية في Looker Studio.\n\n**التفسير:** ابدأ برقم واحد تقراه كل أسبوع وتاخذ قرار عنه — بعد ما جمعته يدوي أسبوعين وتثبت إنه مهم.",
+    "severity": "Medium",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-ARGULF-002",
+    "lessonId": "analyst-m7-l1-from-decisions-to-business",
+    "locale": "ar-Gulf",
+    "category": "ar-Gulf-generic-quiz",
+    "runtimePackagePath": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m7-l1-from-decisions-to-business.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-Gulf/analyst-m7-l1-from-decisions-to-business.json",
+    "sectionIndex": 2,
+    "fieldPaths": [
+      "sections[2].quiz",
+      "sections[2].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "قررت تعطي خصم ١٠٪ لكل عميل جديد. وش التنفيذ الأنسب؟",
+      "options": [
+        "برمجة الخصم في نظام الطلبات — يتطبق تلقائي من غير تدخل يدوي كل مرة.",
+        "اتصال يدوي بكل عميل جديد.",
+        "إعلان بس — وانتظر الناس تتفاعل."
+      ],
+      "correctIndex": 0,
+      "explanation": "القرار المتكرر يتحول لنظام: الخصم يتطبق تلقائي عند تسجيل عميل جديد من غير تدخل يدوي كل مرة."
+    },
+    "approvedReplacementContentMarkdown": "**السؤال:** قررت تعطي خصم ١٠٪ لكل عميل جديد. وش التنفيذ الأنسب؟\n\nبرمجة الخصم في نظام الطلبات — يتطبق تلقائي من غير تدخل يدوي كل مرة.\nاتصال يدوي بكل عميل جديد.\nإعلان بس — وانتظر الناس تتفاعل.\n\n**التفسير:** القرار المتكرر يتحول لنظام: الخصم يتطبق تلقائي عند تسجيل عميل جديد من غير تدخل يدوي كل مرة.",
+    "severity": "Medium",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-ARGULF-003",
+    "lessonId": "automator-m6-l2-whatsapp-flow",
+    "locale": "ar-Gulf",
+    "category": "ar-Gulf-generic-quiz",
+    "runtimePackagePath": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l2-whatsapp-flow.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-Gulf/automator-m6-l2-whatsapp-flow.json",
+    "sectionIndex": 3,
+    "fieldPaths": [
+      "sections[3].quiz",
+      "sections[3].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "العميل يقول: «أبي أكلم موظف بخصوص شكوى». وش رد الأتمتة الأنسب؟",
+      "options": [
+        "البوت يكمل يحاول يجاوب من الأسئلة الشائعة.",
+        "تحويل فوري لموظف — هذا شرط واضح للتحويل.",
+        "تبعت له رسالة «انتظر ٢٤ ساعة»."
+      ],
+      "correctIndex": 1,
+      "explanation": "طلب التحدث مع موظف بخصوص شكوى يحتاج تحويل فوري — مو إجبار العميل ينتظر البوت."
+    },
+    "approvedReplacementContentMarkdown": "**السؤال:** العميل يقول: «أبي أكلم موظف بخصوص شكوى». وش رد الأتمتة الأنسب؟\n\nالبوت يكمل يحاول يجاوب من الأسئلة الشائعة.\nتحويل فوري لموظف — هذا شرط واضح للتحويل.\nتبعت له رسالة «انتظر ٢٤ ساعة».\n\n**التفسير:** طلب التحدث مع موظف بخصوص شكوى يحتاج تحويل فوري — مو إجبار العميل ينتظر البوت.",
+    "severity": "Medium",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-ARGULF-004",
+    "lessonId": "business-m4-l1-premature-scaling",
+    "locale": "ar-Gulf",
+    "category": "ar-Gulf-generic-quiz",
+    "runtimePackagePath": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l1-premature-scaling.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-Gulf/business-m4-l1-premature-scaling.json",
+    "sectionIndex": 2,
+    "fieldPaths": [
+      "sections[2].quiz",
+      "sections[2].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "تبي تكبر نشاطك التجاري بسرعة. وش القرار الأنسب؟",
+      "options": [
+        "ضاعف الإعلانات فورًا — الزخم مهم.",
+        "وقف التوسّع، اصلّح الجودة والتشغيل، بعدين كبّر تدريجي.",
+        "وظّف أكتر من غير SOP."
+      ],
+      "correctIndex": 1,
+      "explanation": "التوسّع قبل ما تثبت الجودة والتشغيل يكسر النظام أسرع — ثبّت الأساس أول."
+    },
+    "approvedReplacementContentMarkdown": "**السؤال:** تبي تكبر نشاطك التجاري بسرعة. وش القرار الأنسب؟\n\nضاعف الإعلانات فورًا — الزخم مهم.\nوقف التوسّع، اصلّح الجودة والتشغيل، بعدين كبّر تدريجي.\nوظّف أكتر من غير SOP.\n\n**التفسير:** التوسّع قبل ما تثبت الجودة والتشغيل يكسر النظام أسرع — ثبّت الأساس أول.",
+    "severity": "Medium",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-ARGULF-005",
+    "lessonId": "business-m4-l4-full-ecosystem",
+    "locale": "ar-Gulf",
+    "category": "ar-Gulf-generic-quiz",
+    "runtimePackagePath": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l4-full-ecosystem.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-Gulf/business-m4-l4-full-ecosystem.json",
+    "sectionIndex": 2,
+    "fieldPaths": [
+      "sections[2].quiz",
+      "sections[2].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "تبي أتمتة متابعة العملاء بعد أول بيع. أي مسار يناسب المهمة؟",
+      "options": [
+        "Builder — تبني تطبيق فورًا.",
+        "Automator — أتمتة المتابعة المتكررة.",
+        "Creator — محتوى بس."
+      ],
+      "correctIndex": 1,
+      "explanation": "المتابعة المتكررة بعد البيع مهمة أتمتة — Automator يخدمها؛ Builder للبناء وCreator للمحتوى."
+    },
+    "approvedReplacementContentMarkdown": "**السؤال:** تبي أتمتة متابعة العملاء بعد أول بيع. أي مسار يناسب المهمة؟\n\nBuilder — تبني تطبيق فورًا.\nAutomator — أتمتة المتابعة المتكررة.\nCreator — محتوى بس.\n\n**التفسير:** المتابعة المتكررة بعد البيع مهمة أتمتة — Automator يخدمها؛ Builder للبناء وCreator للمحتوى.",
+    "severity": "Medium",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-ARMSA-001",
+    "lessonId": "analyst-m4-automated-dashboard",
+    "locale": "ar-MSA",
+    "category": "ar-MSA-quiz-corruption",
+    "runtimePackagePath": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-automated-dashboard.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-MSA/analyst-m4-automated-dashboard.json",
+    "sectionIndex": 3,
+    "fieldPaths": [
+      "sections[3].quiz",
+      "sections[3].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "عندك أربعة أرقام في لوحة المتابعة — ما أفضل خطوة أولى للأتمتة؟",
+      "options": [
+        "أؤتمت الرقم الذي أقرأه أسبوعيًا وأتخذ قرارًا بشأنه — بعد جمعه يدويًا لأسبوعين.",
+        "أؤتمت الأرقام الأربعة دفعة واحدة قبل التجربة اليدوية.",
+        "أبني عشر رسومًا إضافية في Looker Studio."
+      ],
+      "correctIndex": 0,
+      "explanation": "ابدأ برقم واحد تقرأه أسبوعيًا وتتخذ قرارًا عنه — بعد جمعه يدويًا لأسبوعين يثبت أنه مهم."
+    },
+    "approvedReplacementContentMarkdown": "**السؤال:** عندك أربعة أرقام في لوحة المتابعة — ما أفضل خطوة أولى للأتمتة؟\n\nأؤتمت الرقم الذي أقرأه أسبوعيًا وأتخذ قرارًا بشأنه — بعد جمعه يدويًا لأسبوعين.\nأؤتمت الأرقام الأربعة دفعة واحدة قبل التجربة اليدوية.\nأبني عشر رسومًا إضافية في Looker Studio.\n\n**التفسير:** ابدأ برقم واحد تقرأه أسبوعيًا وتتخذ قرارًا عنه — بعد جمعه يدويًا لأسبوعين يثبت أنه مهم.",
+    "currentEvidenceQuiz": {
+      "question": "ما الخيار الأنسب وفقًا لما ورد في القسم أعلاه؟",
+      "options": [
+        "تؤتمت الرقم اللي بتقرأه كل أسبوع وتاخد عليه قرار — بعد ما جمعته يدوي أسبوعين.",
+        "تؤتمت الـ ٤ أرقام مرة واحدة قبل ما تجرب يدوي.",
+        "تبني ١٠ رسوم إضافية في Looker Studio."
+      ],
+      "correctIndex": 0,
+      "explanation": "الإجابة الصحيحة محفوظة من الإنتاج المصري — راجع النص أعلاه للسياق الكامل."
+    },
+    "severity": "Critical",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-ARMSA-002",
+    "lessonId": "analyst-m5-l2-weekly-review-ritual",
+    "locale": "ar-MSA",
+    "category": "ar-MSA-quiz-corruption",
+    "runtimePackagePath": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-l2-weekly-review-ritual.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-MSA/analyst-m5-l2-weekly-review-ritual.json",
+    "sectionIndex": 2,
+    "fieldPaths": [
+      "sections[2].quiz",
+      "sections[2].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "كل يوم اثنين تقرأ الأرقام الأربعة — ما السؤال الأنسب لبدء المراجعة؟",
+      "options": [
+        "«ما الذي تغيّر منذ الأسبوع الماضي؟» ثم تستخدم الذكاء الاصطناعي للتفسير — ثم قرار واحد.",
+        "تلوم مسؤول المبيعات فورًا.",
+        "تضيف عشر مهام للأسبوع القادم من دون أولوية."
+      ],
+      "correctIndex": 0,
+      "explanation": "المراجعة الأسبوعية تبدأ بسؤال عن التغيّر، لا بإلقاء اللوم أو إضافة مهام عشوائية."
+    },
+    "approvedReplacementContentMarkdown": "**السؤال:** كل يوم اثنين تقرأ الأرقام الأربعة — ما السؤال الأنسب لبدء المراجعة؟\n\n«ما الذي تغيّر منذ الأسبوع الماضي؟» ثم تستخدم الذكاء الاصطناعي للتفسير — ثم قرار واحد.\nتلوم مسؤول المبيعات فورًا.\nتضيف عشر مهام للأسبوع القادم من دون أولوية.\n\n**التفسير:** المراجعة الأسبوعية تبدأ بسؤال عن التغيّر، لا بإلقاء اللوم أو إضافة مهام عشوائية.",
+    "severity": "Critical",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-ARMSA-003",
+    "lessonId": "analyst-m6-l1-question-mistakes",
+    "locale": "ar-MSA",
+    "category": "ar-MSA-quiz-corruption",
+    "runtimePackagePath": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m6-l1-question-mistakes.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-MSA/analyst-m6-l1-question-mistakes.json",
+    "sectionIndex": 2,
+    "fieldPaths": [
+      "sections[2].quiz",
+      "sections[2].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "كتبت: «لماذا انخفض التحويل هذا الأسبوع؟» قبل أن تراجع البيانات. ما نوع الخطأ؟",
+      "options": [
+        "سؤال مُوجّه (Leading) — افترض السبب قبل رؤية البيانات.",
+        "سؤال عام (Vague) — السؤال واسع فقط.",
+        "بلا بيانات (No Data) — لا توجد بيانات أصلًا."
+      ],
+      "correctIndex": 0,
+      "explanation": "السؤال الذي يفترض السبب قبل فحص البيانات هو خطأ Leading — ابدأ من البيانات لا من الافتراض."
+    },
+    "approvedReplacementContentMarkdown": "**السؤال:** كتبت: «لماذا انخفض التحويل هذا الأسبوع؟» قبل أن تراجع البيانات. ما نوع الخطأ؟\n\nسؤال مُوجّه (Leading) — افترض السبب قبل رؤية البيانات.\nسؤال عام (Vague) — السؤال واسع فقط.\nبلا بيانات (No Data) — لا توجد بيانات أصلًا.\n\n**التفسير:** السؤال الذي يفترض السبب قبل فحص البيانات هو خطأ Leading — ابدأ من البيانات لا من الافتراض.",
+    "severity": "Critical",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-ARMSA-004",
+    "lessonId": "analyst-m6-l2-interpretation-mistakes",
+    "locale": "ar-MSA",
+    "category": "ar-MSA-quiz-corruption",
+    "runtimePackagePath": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m6-l2-interpretation-mistakes.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-MSA/analyst-m6-l2-interpretation-mistakes.json",
+    "sectionIndex": 2,
+    "fieldPaths": [
+      "sections[2].quiz",
+      "sections[2].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "لاحظ صاحب متجر أن المبيعات ترتفع صباحًا عند تشغيل موسيقى هادئة. ما الاستنتاج الأدق؟",
+      "options": [
+        "يوجد ارتباط، لكن لا يمكن الجزم بأن الموسيقى سببت الزيادة؛ قد يكون وقت الصباح أو نوع العملاء هو السبب.",
+        "الموسيقى الهادئة هي السبب المباشر، والأفضل تشغيلها طوال اليوم.",
+        "عدد المبيعات رقم شكلي ولا يفيد في اتخاذ القرار."
+      ],
+      "correctIndex": 0,
+      "explanation": "ارتفاع المبيعات مع الموسيقى يثبت وجود ارتباط فقط، لا علاقة سببية. قد تكون عوامل أخرى هي المؤثرة، لذلك يلزم اختبار أدق قبل القرار."
+    },
+    "approvedReplacementContentMarkdown": "**السؤال:** لاحظ صاحب متجر أن المبيعات ترتفع صباحًا عند تشغيل موسيقى هادئة. ما الاستنتاج الأدق؟\n\nيوجد ارتباط، لكن لا يمكن الجزم بأن الموسيقى سببت الزيادة؛ قد يكون وقت الصباح أو نوع العملاء هو السبب.\nالموسيقى الهادئة هي السبب المباشر، والأفضل تشغيلها طوال اليوم.\nعدد المبيعات رقم شكلي ولا يفيد في اتخاذ القرار.\n\n**التفسير:** ارتفاع المبيعات مع الموسيقى يثبت وجود ارتباط فقط، لا علاقة سببية. قد تكون عوامل أخرى هي المؤثرة، لذلك يلزم اختبار أدق قبل القرار.",
+    "severity": "Critical",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-ARMSA-005",
+    "lessonId": "analyst-m7-l1-from-decisions-to-business",
+    "locale": "ar-MSA",
+    "category": "ar-MSA-quiz-corruption",
+    "runtimePackagePath": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m7-l1-from-decisions-to-business.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-MSA/analyst-m7-l1-from-decisions-to-business.json",
+    "sectionIndex": 2,
+    "fieldPaths": [
+      "sections[2].quiz",
+      "sections[2].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "قررت تقديم خصم ١٠٪ لكل عميل جديد. ما التنفيذ الأنسب؟",
+      "options": [
+        "برمجة الخصم في نظام الطلبات — يُطبَّق تلقائيًا دون تدخل يدوي في كل مرة.",
+        "اتصال يدوي بكل عميل جديد.",
+        "إعلان فقط — والانتظار حتى يتفاعل الناس."
+      ],
+      "correctIndex": 0,
+      "explanation": "القرار المتكرر يتحول إلى نظام: الخصم يُطبَّق تلقائيًا عند تسجيل عميل جديد دون تدخل يدوي كل مرة."
+    },
+    "approvedReplacementContentMarkdown": "**السؤال:** قررت تقديم خصم ١٠٪ لكل عميل جديد. ما التنفيذ الأنسب؟\n\nبرمجة الخصم في نظام الطلبات — يُطبَّق تلقائيًا دون تدخل يدوي في كل مرة.\nاتصال يدوي بكل عميل جديد.\nإعلان فقط — والانتظار حتى يتفاعل الناس.\n\n**التفسير:** القرار المتكرر يتحول إلى نظام: الخصم يُطبَّق تلقائيًا عند تسجيل عميل جديد دون تدخل يدوي كل مرة.",
+    "severity": "Critical",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-ARMSA-006",
+    "lessonId": "automator-m5-l2-rag-in-n8n",
+    "locale": "ar-MSA",
+    "category": "ar-MSA-quiz-corruption",
+    "runtimePackagePath": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l2-rag-in-n8n.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-MSA/automator-m5-l2-rag-in-n8n.json",
+    "sectionIndex": 4,
+    "fieldPaths": [
+      "sections[4].quiz",
+      "sections[4].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "تريد أن ترد الأتمتة في n8n على أسئلة الأسعار والضمان من معلومات شركتك. ما الخطوة الأنسب؟",
+      "options": [
+        "إطالة System Prompt وتطلب من النموذج ألا يخمّن.",
+        "ربط مصدر معرفة موثوق — مثل الأسئلة الشائعة أو قائمة الأسعار — واسترجاع المعلومة منه قبل صياغة الرد.",
+        "إيقاف البوت والرد اليدوي على كل الأسئلة."
+      ],
+      "correctIndex": 1,
+      "explanation": "RAG يسترجع المعلومة من مصدر محدد قبل أن يصيغ النموذج الرد، بينما الـ Prompt وحده لا يوفّر بيانات شركتك."
+    },
+    "approvedReplacementContentMarkdown": "**السؤال:** تريد أن ترد الأتمتة في n8n على أسئلة الأسعار والضمان من معلومات شركتك. ما الخطوة الأنسب؟\n\nإطالة System Prompt وتطلب من النموذج ألا يخمّن.\nربط مصدر معرفة موثوق — مثل الأسئلة الشائعة أو قائمة الأسعار — واسترجاع المعلومة منه قبل صياغة الرد.\nإيقاف البوت والرد اليدوي على كل الأسئلة.\n\n**التفسير:** RAG يسترجع المعلومة من مصدر محدد قبل أن يصيغ النموذج الرد، بينما الـ Prompt وحده لا يوفّر بيانات شركتك.",
+    "severity": "Critical",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-ARMSA-007",
+    "lessonId": "automator-m5-l3-agents",
+    "locale": "ar-MSA",
+    "category": "ar-MSA-quiz-corruption",
+    "runtimePackagePath": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l3-agents.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-MSA/automator-m5-l3-agents.json",
+    "sectionIndex": 3,
+    "fieldPaths": [
+      "sections[3].quiz",
+      "sections[3].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "تريد أتمتة تتعامل مع حالات غير متوقعة دون مخاطرة. ما التصميم الأنسب؟",
+      "options": [
+        "سير عمل ثابت بشروط كثيرة لكل احتمال.",
+        "وكيل ذكي بهدف واضح وأدوات محددة، مع حد يمنع الإرسال دون موافقة.",
+        "وكيل مفتوح بكل الأدوات ليكون «ذكيًا» قدر الإمكان."
+      ],
+      "correctIndex": 1,
+      "explanation": "الوكيل الآمن يحتاج هدفًا واضحًا وأدوات محدودة وحدودًا تمنع إجراءات غير مقصودة — لا كل الأدوات دفعة واحدة."
+    },
+    "approvedReplacementContentMarkdown": "**السؤال:** تريد أتمتة تتعامل مع حالات غير متوقعة دون مخاطرة. ما التصميم الأنسب؟\n\nسير عمل ثابت بشروط كثيرة لكل احتمال.\nوكيل ذكي بهدف واضح وأدوات محددة، مع حد يمنع الإرسال دون موافقة.\nوكيل مفتوح بكل الأدوات ليكون «ذكيًا» قدر الإمكان.\n\n**التفسير:** الوكيل الآمن يحتاج هدفًا واضحًا وأدوات محدودة وحدودًا تمنع إجراءات غير مقصودة — لا كل الأدوات دفعة واحدة.",
+    "severity": "Critical",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-ARMSA-008",
+    "lessonId": "automator-m6-l1-lead-capture",
+    "locale": "ar-MSA",
+    "category": "ar-MSA-quiz-corruption",
+    "runtimePackagePath": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l1-lead-capture.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-MSA/automator-m6-l1-lead-capture.json",
+    "sectionIndex": 3,
+    "fieldPaths": [
+      "sections[3].quiz",
+      "sections[3].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "يصلك عميل محتمل عبر نموذج التواصل. ما الإعداد الأنسب؟",
+      "options": [
+        "الانتظار حتى تفرغ ثم الرد على الجميع دفعة واحدة.",
+        "حفظ كل تسجيل فورًا + رد ترحيب آلي + تنبيه لمسؤول المتابعة.",
+        "إغلاق النموذج حتى تتمكن من الرد."
+      ],
+      "correctIndex": 1,
+      "explanation": "كل Lead يُحفظ فورًا مع رد ترحيب وتنبيه للمتابعة — لا يضيع اهتمام العميل وأنت مشغول."
+    },
+    "approvedReplacementContentMarkdown": "**السؤال:** يصلك عميل محتمل عبر نموذج التواصل. ما الإعداد الأنسب؟\n\nالانتظار حتى تفرغ ثم الرد على الجميع دفعة واحدة.\nحفظ كل تسجيل فورًا + رد ترحيب آلي + تنبيه لمسؤول المتابعة.\nإغلاق النموذج حتى تتمكن من الرد.\n\n**التفسير:** كل Lead يُحفظ فورًا مع رد ترحيب وتنبيه للمتابعة — لا يضيع اهتمام العميل وأنت مشغول.",
+    "severity": "Critical",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-ARMSA-009",
+    "lessonId": "automator-m6-l2-whatsapp-flow",
+    "locale": "ar-MSA",
+    "category": "ar-MSA-quiz-corruption",
+    "runtimePackagePath": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l2-whatsapp-flow.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-MSA/automator-m6-l2-whatsapp-flow.json",
+    "sectionIndex": 3,
+    "fieldPaths": [
+      "sections[3].quiz",
+      "sections[3].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "العميل يرسل: «أريد التحدث مع موظف بخصوص شكوى». ما رد الأتمتة الأنسب؟",
+      "options": [
+        "يستمر البوت في محاولة الإجابة من الأسئلة الشائعة.",
+        "تحويل فوري لموظف — هذا شرط تحويل (Handoff) واضح.",
+        "إرسال رسالة: «انتظر ٢٤ ساعة»."
+      ],
+      "correctIndex": 1,
+      "explanation": "طلب التحدث مع موظف بخصوص شكوى يتطلب تحويلًا فوريًا — لا إجبار العميل على انتظار البوت."
+    },
+    "approvedReplacementContentMarkdown": "**السؤال:** العميل يرسل: «أريد التحدث مع موظف بخصوص شكوى». ما رد الأتمتة الأنسب؟\n\nيستمر البوت في محاولة الإجابة من الأسئلة الشائعة.\nتحويل فوري لموظف — هذا شرط تحويل (Handoff) واضح.\nإرسال رسالة: «انتظر ٢٤ ساعة».\n\n**التفسير:** طلب التحدث مع موظف بخصوص شكوى يتطلب تحويلًا فوريًا — لا إجبار العميل على انتظار البوت.",
+    "severity": "Critical",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-ARMSA-010",
+    "lessonId": "automator-m6-l3-follow-up",
+    "locale": "ar-MSA",
+    "category": "ar-MSA-quiz-corruption",
+    "runtimePackagePath": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l3-follow-up.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-MSA/automator-m6-l3-follow-up.json",
+    "sectionIndex": 3,
+    "fieldPaths": [
+      "sections[3].quiz",
+      "sections[3].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "العميل لم يرد بعد رسالة الترحيب. ما خطوة المتابعة الأنسب؟",
+      "options": [
+        "إعادة نفس رسالة الترحيب.",
+        "تذكير لطيف عبر قناة مختلفة أو سؤال واحد — لا ضغط بيع.",
+        "مكالمة فورية دون تذكير مسبق."
+      ],
+      "correctIndex": 1,
+      "explanation": "المتابعة الفعّالة تختلف في المحتوى والقناة — تذكير لطيف بسؤال واحد، لا تكرار الترحيب ولا مكالمة مفاجئة."
+    },
+    "approvedReplacementContentMarkdown": "**السؤال:** العميل لم يرد بعد رسالة الترحيب. ما خطوة المتابعة الأنسب؟\n\nإعادة نفس رسالة الترحيب.\nتذكير لطيف عبر قناة مختلفة أو سؤال واحد — لا ضغط بيع.\nمكالمة فورية دون تذكير مسبق.\n\n**التفسير:** المتابعة الفعّالة تختلف في المحتوى والقناة — تذكير لطيف بسؤال واحد، لا تكرار الترحيب ولا مكالمة مفاجئة.",
+    "severity": "Critical",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-ARMSA-011",
+    "lessonId": "business-m4-l1-premature-scaling",
+    "locale": "ar-MSA",
+    "category": "ar-MSA-quiz-corruption",
+    "runtimePackagePath": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l1-premature-scaling.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-MSA/business-m4-l1-premature-scaling.json",
+    "sectionIndex": 2,
+    "fieldPaths": [
+      "sections[2].quiz",
+      "sections[2].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "تريد توسيع نشاطك التجاري بسرعة. ما القرار الأنسب؟",
+      "options": [
+        "مضاعفة الإعلانات فورًا — الزخم مهم.",
+        "إيقاف التوسّع، إصلاح الجودة والتشغيل، ثم النمو تدريجيًا.",
+        "توظيف المزيد دون إجراءات تشغيل قياسية (SOP)."
+      ],
+      "correctIndex": 1,
+      "explanation": "التوسّع المبكر يضخّم الضعف — ثبّت الجودة والتشغيل قبل تكبير الحجم."
+    },
+    "approvedReplacementContentMarkdown": "**السؤال:** تريد توسيع نشاطك التجاري بسرعة. ما القرار الأنسب؟\n\nمضاعفة الإعلانات فورًا — الزخم مهم.\nإيقاف التوسّع، إصلاح الجودة والتشغيل، ثم النمو تدريجيًا.\nتوظيف المزيد دون إجراءات تشغيل قياسية (SOP).\n\n**التفسير:** التوسّع المبكر يضخّم الضعف — ثبّت الجودة والتشغيل قبل تكبير الحجم.",
+    "severity": "Critical",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-ARMSA-012",
+    "lessonId": "business-m4-l3-weekly-rhythm",
+    "locale": "ar-MSA",
+    "category": "ar-MSA-quiz-corruption",
+    "runtimePackagePath": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l3-weekly-rhythm.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-MSA/business-m4-l3-weekly-rhythm.json",
+    "sectionIndex": 2,
+    "fieldPaths": [
+      "sections[2].quiz",
+      "sections[2].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "بدأت أسبوع عمل مزدحم. ما الإجراء الأنسب وفق إيقاع المراجعة الأسبوعي؟",
+      "options": [
+        "فتح كل الرسائل والرد عليها — «لتصفية» البريد.",
+        "ثلاثة أرقام → سؤال للذكاء الاصطناعي عن التغيّر والمعلّق → تسجيل قرار واحد.",
+        "قراءة خمسين مقالًا تسويقيًا."
+      ],
+      "correctIndex": 1,
+      "explanation": "الإيقاع الأسبوعي يبدأ بثلاثة أرقام وسؤال عن التغيّر — ثم قرار واحد مسجّل، لا استجابة عشوائية لكل الرسائل."
+    },
+    "approvedReplacementContentMarkdown": "**السؤال:** بدأت أسبوع عمل مزدحم. ما الإجراء الأنسب وفق إيقاع المراجعة الأسبوعي؟\n\nفتح كل الرسائل والرد عليها — «لتصفية» البريد.\nثلاثة أرقام → سؤال للذكاء الاصطناعي عن التغيّر والمعلّق → تسجيل قرار واحد.\nقراءة خمسين مقالًا تسويقيًا.\n\n**التفسير:** الإيقاع الأسبوعي يبدأ بثلاثة أرقام وسؤال عن التغيّر — ثم قرار واحد مسجّل، لا استجابة عشوائية لكل الرسائل.",
+    "severity": "Critical",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-ARMSA-013",
+    "lessonId": "business-m4-l4-full-ecosystem",
+    "locale": "ar-MSA",
+    "category": "ar-MSA-quiz-corruption",
+    "runtimePackagePath": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l4-full-ecosystem.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-MSA/business-m4-l4-full-ecosystem.json",
+    "sectionIndex": 2,
+    "fieldPaths": [
+      "sections[2].quiz",
+      "sections[2].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "تريد أتمتة متابعة العملاء المتكررة بعد أول بيع. أي مسار يناسب المهمة؟",
+      "options": [
+        "Builder — بناء تطبيق فورًا.",
+        "Automator — أتمتة المتابعة المتكررة.",
+        "Creator — محتوى فقط."
+      ],
+      "correctIndex": 1,
+      "explanation": "المتابعة المتكررة بعد البيع مهمة أتمتة — Automator يخدمها؛ Builder للبناء وCreator للمحتوى."
+    },
+    "approvedReplacementContentMarkdown": "**السؤال:** تريد أتمتة متابعة العملاء المتكررة بعد أول بيع. أي مسار يناسب المهمة؟\n\nBuilder — بناء تطبيق فورًا.\nAutomator — أتمتة المتابعة المتكررة.\nCreator — محتوى فقط.\n\n**التفسير:** المتابعة المتكررة بعد البيع مهمة أتمتة — Automator يخدمها؛ Builder للبناء وCreator للمحتوى.",
+    "severity": "Critical",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-PLACE-001",
+    "lessonId": "intro-m1-l2-first-prompt",
+    "locale": "en",
+    "category": "en-placeholder-distractor",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/intro-m1-l2-first-prompt.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/intro-m1-l2-first-prompt.json",
+    "sectionIndex": 6,
+    "fieldPaths": [
+      "sections[6].quiz",
+      "sections[6].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "Ahmed wrote: \"Write an email for a new job.\" What is the most important addition first?",
+      "options": [
+        "Context — who Ahmed is, what the job is, and why this email.",
+        "Add more adjectives to make the request sound professional.",
+        "Ask the AI to guess Ahmed's background from general knowledge."
+      ],
+      "correctIndex": 0,
+      "explanation": "The AI does not know your life. Context plus a clear task turn the request from general to practical."
+    },
+    "approvedReplacementContentMarkdown": "**Question:** Ahmed wrote: \"Write an email for a new job.\" What is the most important addition first?\n\nContext — who Ahmed is, what the job is, and why this email.\nAdd more adjectives to make the request sound professional.\nAsk the AI to guess Ahmed's background from general knowledge.\n\n**Explanation:** The AI does not know your life. Context plus a clear task turn the request from general to practical.",
+    "severity": "Medium",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-PLACE-002",
+    "lessonId": "automator-m2-l2-spot-patterns",
+    "locale": "en",
+    "category": "en-placeholder-distractor",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/automator-m2-l2-spot-patterns.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/automator-m2-l2-spot-patterns.json",
+    "sectionIndex": 6,
+    "fieldPaths": [
+      "sections[6].quiz",
+      "sections[6].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "Ahmad, whenever a client agrees to an offer → he manually copies their data from Excel to CRM. What type of pattern is this?",
+      "options": [
+        "Transfer — data from one place to another in the same steps.",
+        "Notification — sending an alert when something happens.",
+        "Classification — sorting items into categories."
+      ],
+      "correctIndex": 0,
+      "explanation": "Copying data from Excel to CRM is a repeated transfer — a clear pattern for the virtual worker."
+    },
+    "approvedReplacementContentMarkdown": "**Question:** Ahmad, whenever a client agrees to an offer → he manually copies their data from Excel to CRM. What type of pattern is this?\n\nTransfer — data from one place to another in the same steps.\nNotification — sending an alert when something happens.\nClassification — sorting items into categories.\n\n**Explanation:** Copying data from Excel to CRM is a repeated transfer — a clear pattern for the virtual worker.",
+    "severity": "Medium",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-QUIZ-001",
+    "lessonId": "analyst-m4-automated-dashboard",
+    "locale": "en",
+    "category": "en-generic-quiz",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/analyst-m4-automated-dashboard.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/analyst-m4-automated-dashboard.json",
+    "sectionIndex": 3,
+    "fieldPaths": [
+      "sections[3].quiz",
+      "sections[3].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "You have four numbers on the dashboard — what is the best first step for automation?",
+      "options": [
+        "Automate the metric you read every week and make a decision — after collecting it manually for two weeks.",
+        "Automate all four numbers at once before trying manually.",
+        "Build 10 additional charts in Looker Studio."
+      ],
+      "correctIndex": 0,
+      "explanation": "Start with the one metric you already read weekly and act on — after two manual weeks that prove it matters."
+    },
+    "approvedReplacementContentMarkdown": "**Question:** You have four numbers on the dashboard — what is the best first step for automation?\n\nAutomate the metric you read every week and make a decision — after collecting it manually for two weeks.\nAutomate all four numbers at once before trying manually.\nBuild 10 additional charts in Looker Studio.\n\n**Explanation:** Start with the one metric you already read weekly and act on — after two manual weeks that prove it matters.",
+    "severity": "Medium",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-QUIZ-002",
+    "lessonId": "automator-m6-l3-follow-up",
+    "locale": "en",
+    "category": "en-generic-quiz",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/automator-m6-l3-follow-up.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/automator-m6-l3-follow-up.json",
+    "sectionIndex": 3,
+    "fieldPaths": [
+      "sections[3].quiz",
+      "sections[3].contentMarkdown"
+    ],
+    "approvedReplacementQuiz": {
+      "question": "A lead has not replied after your welcome message. What is the best follow-up step?",
+      "options": [
+        "Send the same welcome message again.",
+        "A gentle reminder through a different channel or one question — not sales pressure.",
+        "Call immediately without any prior reminder."
+      ],
+      "correctIndex": 1,
+      "explanation": "Effective follow-up changes the channel and content — a gentle reminder with one question, not a repeated welcome or a surprise call."
+    },
+    "approvedReplacementContentMarkdown": "**Question:** A lead has not replied after your welcome message. What is the best follow-up step?\n\nSend the same welcome message again.\nA gentle reminder through a different channel or one question — not sales pressure.\nCall immediately without any prior reminder.\n\n**Explanation:** Effective follow-up changes the channel and content — a gentle reminder with one question, not a repeated welcome or a surprise call.",
+    "severity": "Medium",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-VIS-001",
+    "lessonId": "automator-m1-l1-where-you-are",
+    "locale": "en",
+    "category": "en-production-residue-visual",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/automator-m1-l1-where-you-are.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/automator-m1-l1-where-you-are.json",
+    "sectionIndex": 5,
+    "fieldPaths": [
+      "sections[5].contentMarkdown"
+    ],
+    "approvedReplacementContentMarkdown": "Journey map — 5 connected paths. **Builder** → **Creator** → **Automator**.",
+    "severity": "High",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-VIS-002",
+    "lessonId": "automator-m3-l2-triggers-actions",
+    "locale": "en",
+    "category": "en-production-residue-visual",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/automator-m3-l2-triggers-actions.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/automator-m3-l2-triggers-actions.json",
+    "sectionIndex": 5,
+    "fieldPaths": [
+      "sections[5].contentMarkdown"
+    ],
+    "approvedReplacementContentMarkdown": "Illustration: Each step = **Trigger** → **Action**. Example: \"Task completed\" → \"Log it\" + \"Open the next one\" + \"Remind\".",
+    "severity": "High",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-VIS-003",
+    "lessonId": "builder-m1-l1-what-is-llm",
+    "locale": "en",
+    "category": "en-production-residue-visual",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/builder-m1-l1-what-is-llm.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/builder-m1-l1-what-is-llm.json",
+    "sectionIndex": 5,
+    "fieldPaths": [
+      "sections[5].contentMarkdown"
+    ],
+    "approvedReplacementContentMarkdown": "AI assistant interface — Question + context + predicted response. The assistant is not programmed with ready-made answers.",
+    "severity": "High",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-VIS-004",
+    "lessonId": "business-m1-l2-reactive-vs-proactive",
+    "locale": "en",
+    "category": "en-production-residue-visual",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/business-m1-l2-reactive-vs-proactive.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/business-m1-l2-reactive-vs-proactive.json",
+    "sectionIndex": 5,
+    "fieldPaths": [
+      "sections[5].contentMarkdown"
+    ],
+    "approvedReplacementContentMarkdown": "Illustration: A Reactive Day vs. A Proactive Day — distribution of the day. The goal is not to eliminate reactive tasks — but to reduce the repetitive to free up time for building.",
+    "severity": "High",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-VIS-005",
+    "lessonId": "creator-m1-l1-why-content",
+    "locale": "en",
+    "category": "en-production-residue-visual",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/creator-m1-l1-why-content.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/creator-m1-l1-why-content.json",
+    "sectionIndex": 5,
+    "fieldPaths": [
+      "sections[5].contentMarkdown"
+    ],
+    "approvedReplacementContentMarkdown": "A screenshot showing the content arrangement as a clear path instead of random posting — every part has a role.",
+    "severity": "High",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-VIS-006",
+    "lessonId": "creator-m1-l2-attention-economy",
+    "locale": "en",
+    "category": "en-production-residue-visual",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/creator-m1-l2-attention-economy.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/creator-m1-l2-attention-economy.json",
+    "sectionIndex": 5,
+    "fieldPaths": [
+      "sections[5].contentMarkdown"
+    ],
+    "approvedReplacementContentMarkdown": "A visual snapshot — an example of content that is **clear and easy to grasp** visually. Visual clarity and a focused message help the viewer understand quickly and decide to continue.",
+    "severity": "High",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-VIS-007",
+    "lessonId": "creator-m2-l2-content-pillars",
+    "locale": "en",
+    "category": "en-production-residue-visual",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/creator-m2-l2-content-pillars.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/creator-m2-l2-content-pillars.json",
+    "sectionIndex": 5,
+    "fieldPaths": [
+      "sections[5].contentMarkdown"
+    ],
+    "approvedReplacementContentMarkdown": "Illustration — **Distribution of the pillars**. It shows how **one pillar** branches into **multiple ideas** without losing the **identity of the content**.",
+    "severity": "High",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-VIS-008",
+    "lessonId": "creator-m3-l1-hook",
+    "locale": "en",
+    "category": "en-production-residue-visual",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/creator-m3-l1-hook.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/creator-m3-l1-hook.json",
+    "sectionIndex": 5,
+    "fieldPaths": [
+      "sections[5].contentMarkdown"
+    ],
+    "approvedReplacementContentMarkdown": "Visual snapshot — **Example of an eye-catching hook**. The idea: The **first second** should be **different** and **clear** enough to give you a **chance**.",
+    "severity": "High",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-VIS-009",
+    "lessonId": "creator-m3-l2-script-structure",
+    "locale": "en",
+    "category": "en-production-residue-visual",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/creator-m3-l2-script-structure.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/creator-m3-l2-script-structure.json",
+    "sectionIndex": 5,
+    "fieldPaths": [
+      "sections[5].contentMarkdown"
+    ],
+    "approvedReplacementContentMarkdown": "Visual snapshot — **the balanced script structure**. A **clear distribution** into **short parts** makes the script **focused** and **easy to execute**.",
+    "severity": "High",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-VIS-010",
+    "lessonId": "creator-m3-l3-cta",
+    "locale": "en",
+    "category": "en-production-residue-visual",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/creator-m3-l3-cta.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/creator-m3-l3-cta.json",
+    "sectionIndex": 5,
+    "fieldPaths": [
+      "sections[5].contentMarkdown"
+    ],
+    "approvedReplacementContentMarkdown": "Visual snapshot — **Example of a clear CTA**. The **request is clear and specific:** **only one step** — **in simple language** that any viewer can **quickly** understand.",
+    "severity": "High",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-VIS-011",
+    "lessonId": "creator-m4-l1-reality-check",
+    "locale": "en",
+    "category": "en-production-residue-visual",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/creator-m4-l1-reality-check.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/creator-m4-l1-reality-check.json",
+    "sectionIndex": 5,
+    "fieldPaths": [
+      "sections[5].contentMarkdown"
+    ],
+    "approvedReplacementContentMarkdown": "Visual snapshot — **a simple review of ideas**. **Instead of randomness:** look at **each idea** on a **clear scale:** does it **solve a real problem** for a **clear audience**?",
+    "severity": "High",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-VIS-012",
+    "lessonId": "creator-m4-l2-mobile-shooting",
+    "locale": "en",
+    "category": "en-production-residue-visual",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/creator-m4-l2-mobile-shooting.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/creator-m4-l2-mobile-shooting.json",
+    "sectionIndex": 5,
+    "fieldPaths": [
+      "sections[5].contentMarkdown"
+    ],
+    "approvedReplacementContentMarkdown": "Visual snapshot — **Practical shooting setup**. **Simple preparation makes a difference:** **Light in front of you**, **stable phone**, **and a strong start from the first second**.",
+    "severity": "High",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-VIS-013",
+    "lessonId": "creator-m5-l1-editing",
+    "locale": "en",
+    "category": "en-production-residue-visual",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/creator-m5-l1-editing.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/creator-m5-l1-editing.json",
+    "sectionIndex": 5,
+    "fieldPaths": [
+      "sections[5].contentMarkdown"
+    ],
+    "approvedReplacementContentMarkdown": "Visual snapshot — **the difference before and after editing**. **The edited version is shorter and clearer** — **each part has a purpose** **and there is no fluff that distracts**.",
+    "severity": "High",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-VIS-014",
+    "lessonId": "creator-m5-l2-thumbnails-captions",
+    "locale": "en",
+    "category": "en-production-residue-visual",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/creator-m5-l2-thumbnails-captions.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/creator-m5-l2-thumbnails-captions.json",
+    "sectionIndex": 5,
+    "fieldPaths": [
+      "sections[5].contentMarkdown"
+    ],
+    "approvedReplacementContentMarkdown": "Visual snapshot — **Examples of thumbnails and captions**. **The message is clear from the first second:** **minimal text**, **easy to read**, **and a clear promise**.",
+    "severity": "High",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-VIS-015",
+    "lessonId": "creator-m6-l2-scheduling",
+    "locale": "en",
+    "category": "en-production-residue-visual",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/creator-m6-l2-scheduling.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/creator-m6-l2-scheduling.json",
+    "sectionIndex": 5,
+    "fieldPaths": [
+      "sections[5].contentMarkdown"
+    ],
+    "approvedReplacementContentMarkdown": "Visual diagram — **A weekly calendar for posting and preparation**. **A fixed preparation day reduces chaos** — **and fixed posting days build expectation and trust**.",
+    "severity": "High",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-VIS-016",
+    "lessonId": "creator-m7-l1-brand-basics",
+    "locale": "en",
+    "category": "en-production-residue-visual",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/creator-m7-l1-brand-basics.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/creator-m7-l1-brand-basics.json",
+    "sectionIndex": 5,
+    "fieldPaths": [
+      "sections[5].contentMarkdown"
+    ],
+    "approvedReplacementContentMarkdown": "A visual snapshot — **a practical example of a clear identity**. **The form serves the core idea** — **it does not overshadow it**.",
+    "severity": "High",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-VIS-017",
+    "lessonId": "creator-m7-l2-grid-consistency",
+    "locale": "en",
+    "category": "en-production-residue-visual",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/creator-m7-l2-grid-consistency.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/creator-m7-l2-grid-consistency.json",
+    "sectionIndex": 5,
+    "fieldPaths": [
+      "sections[5].contentMarkdown"
+    ],
+    "approvedReplacementContentMarkdown": "Visual example — **a consistent grid**. **Consistency makes the message clear** **even before reading the details**.",
+    "severity": "High",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  },
+  {
+    "issueId": "AG4-EN-VIS-018",
+    "lessonId": "intro-m1-l2-first-prompt",
+    "locale": "en",
+    "category": "en-production-residue-visual",
+    "runtimePackagePath": "src/lib/locale-lessons/en/lessons/intro-m1-l2-first-prompt.json",
+    "recoveredPackagePath": "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/en/intro-m1-l2-first-prompt.json",
+    "sectionIndex": 5,
+    "fieldPaths": [
+      "sections[5].contentMarkdown"
+    ],
+    "approvedReplacementContentMarkdown": "Illustration: Four fields in one message — Who is the AI? What is the situation? What do you want? In what format should the response be?",
+    "severity": "High",
+    "RAGReindexRequired": true,
+    "VideoRegenerationRequired": false
+  }
+]
