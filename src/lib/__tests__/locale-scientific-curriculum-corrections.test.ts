@@ -78,9 +78,13 @@ function stripCorrectedFields(
 ): LocalizedLessonPackage {
   const clone = structuredClone(pkg);
   for (const record of records) {
-    const section = clone.sections[record.sectionIndex] as Record<string, unknown>;
+    const section = clone.sections[record.sectionIndex] as unknown as Record<
+      string,
+      unknown
+    >;
     if (record.approvedReplacementQuiz) {
       delete section.quiz;
+      delete section.bullets;
     }
     delete section.contentMarkdown;
   }
