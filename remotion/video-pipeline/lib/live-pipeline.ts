@@ -255,7 +255,7 @@ export async function runLiveVideoPipeline(
     actualScriptChecksum: script.checksum,
     expectedVoiceProfileId: entry.voiceProfileId,
     actualVoiceProfileId: profile.profileId,
-    priorVideoChecksum: prior?.videoChecksum,
+    priorVideoChecksum: options.force ? undefined : prior?.videoChecksum,
     cellId: entry.cellId,
   });
 

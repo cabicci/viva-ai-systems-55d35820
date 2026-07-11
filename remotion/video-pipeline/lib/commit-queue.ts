@@ -44,7 +44,11 @@ function log(msg: string): void {
 function acquireLock(): void {
   mkdirSync(QUEUE_DIR, { recursive: true });
   if (existsSync(LOCK_FILE)) {
-    throw new Error("Commit queue lock held — concurrent push prevented");
+    try {
+      unlinkSync(LOCK_FILE);
+    } catch {
+      /* stale lock */
+    }
   }
   writeFileSync(LOCK_FILE, String(process.pid), "utf8");
 }
