@@ -1,0 +1,116 @@
+name: RAG Paid Embedding (Approved Once)
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_paid_embedding:
+        description: "Type APPROVE_PAID_RAG_EMBEDDING_ONCE to authorize exactly one paid run"
+        required: true
+        type: string
+      candidate_sha:
+        description: Immutable RAG candidate SHA
+        required: true
+        default: "8e48d655489fcdfad4df8e33b3c93c61bbde3468"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rag-paid-embedding-once
+  cancel-in-progress: false
+
+jobs:
+  paid-embedding:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      CANDIDATE_SHA: "8e48d655489fcdfad4df8e33b3c93c61bbde3468"
+      DOCKER_BIN: docker
+      MAX_APPROVED_COST_USD: "0.03"
+    steps:
+      - name: Require explicit one-time paid approval
+        run: |
+          if [ "${{ inputs.confirm_paid_embedding }}" != "APPROVE_PAID_RAG_EMBEDDING_ONCE" ]; then
+            echo "ABORT: confirm_paid_embedding must be exactly APPROVE_PAID_RAG_EMBEDDING_ONCE"
+            exit 1
+          fi
+          if [ "${{ inputs.candidate_sha }}" != "8e48d655489fcdfad4df8e33b3c93c61bbde3468" ]; then
+            echo "ABORT: candidate_sha input must match immutable candidate"
+            exit 1
+          fi
+
+      - name: Checkout paid-embedding validation branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify immutable candidate present and unchanged for RAG paths
+        run: |
+          echo "Pinned candidate: $CANDIDATE_SHA"
+          git fetch origin work/rag-ai-assistant-complete --depth=50 || true
+          git cat-file -e "${CANDIDATE_SHA}^{commit}"
+          git merge-base --is-ancestor "$CANDIDATE_SHA" HEAD
+          DRIFT="$(git diff --name-only "$CANDIDATE_SHA" -- src/lib/rag src/lib/locale-lessons artifacts/rag supabase/migrations/20260711200000_rag_locale_index_versioning.sql package.json bun.lock || true)"
+          if [ -n "$DRIFT" ]; then
+            echo "ABORT: immutable RAG paths drifted from candidate:"
+            echo "$DRIFT"
+            exit 1
+          fi
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Setup Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: 2.109.1
+
+      - name: Verify Docker daemon
+        run: |
+          docker info
+          docker ps
+
+      - name: Start disposable Supabase/Postgres
+        env:
+          SUPABASE_CMD: supabase
+        run: bash .github/rag-paid-embedding/start-supabase.sh
+
+      - name: Run preflight + paid embedding (staging only)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          NEW_OPENAI: ${{ secrets.new_openai }}
+          SUPABASE_CMD: supabase
+        run: bash .github/rag-paid-embedding/run-paid-embedding.sh
+
+      - name: Confirm no activation / no remote / staging-only
+        if: always()
+        run: |
+          test -f artifacts/rag/paid-embedding/summary.json
+          python3 - <<'PY'
+          import json,sys
+          s=json.load(open("artifacts/rag/paid-embedding/summary.json"))
+          assert s["confirmations"]["noIndexActivation"] is True
+          assert s["confirmations"]["noProductionAccess"] is True
+          assert s["confirmations"]["noRemoteMigration"] is True
+          assert s["confirmations"]["noMergeOrPushToMain"] is True
+          assert s["activeIndexRecordCount"] == 0
+          assert s["versionStatus"] == "staging"
+          print("confirmations ok")
+          PY
+
+      - name: Stop disposable Supabase
+        if: always()
+        run: supabase stop --no-backup || true
+
+      - name: Upload authoritative paid-embedding artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rag-paid-embedding-8e48d65
+          path: artifacts/rag/paid-embedding/
+          retention-days: 30
