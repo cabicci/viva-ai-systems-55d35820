@@ -1,0 +1,211 @@
+name: Video Production Batch
+
+# Agent 3 — 300-video locale-aware production pipeline.
+# One matrix job per (locale, lessonId). fail-fast: false.
+# Results commit to video-results branch only — never main.
+
+on:
+  workflow_dispatch:
+    inputs:
+      locale:
+        description: "Target locale: ar-MSA | ar-Gulf | en | all"
+        required: true
+        default: "all"
+        type: choice
+        options:
+          - all
+          - ar-MSA
+          - ar-Gulf
+          - en
+      lesson_ids:
+        description: "Comma-separated lesson IDs, or 'manifest' for full/filtered manifest"
+        required: true
+        default: "manifest"
+        type: string
+      retry_failed_only:
+        description: "Retry only videos with failed status in registry"
+        required: false
+        default: false
+        type: boolean
+      mock_mode:
+        description: "Mock mode — no paid TTS/render APIs (validation only)"
+        required: false
+        default: false
+        type: boolean
+      baseline_sha:
+        description: "Frozen package baseline SHA"
+        required: false
+        default: "3e1ef5aaf0ca4f3dbcf28650751e0dd1de70bfc2"
+        type: string
+
+permissions:
+  contents: write
+
+env:
+  VIDEO_RESULTS_BRANCH: video-results
+  BASELINE_SHA: ${{ inputs.baseline_sha }}
+  MOCK_MODE: ${{ inputs.mock_mode }}
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set.outputs.matrix }}
+      count: ${{ steps.set.outputs.count }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.baseline_sha }}
+          fetch-depth: 1
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Build execution matrix
+        id: set
+        env:
+          LOCALE: ${{ inputs.locale }}
+          LESSON_IDS: ${{ inputs.lesson_ids }}
+          RETRY_FAILED: ${{ inputs.retry_failed_only }}
+        run: |
+          set -euo pipefail
+          bun remotion/video-pipeline/scripts/plan-matrix.mjs \
+            --locale "$LOCALE" \
+            --lesson-ids "$LESSON_IDS" \
+            $([ "$RETRY_FAILED" = "true" ] && echo --retry-failed-only || true) \
+            > /tmp/matrix.json
+          MATRIX=$(python3 -c 'import json; d=json.load(open("/tmp/matrix.json")); print(json.dumps(d["matrix"]))')
+          COUNT=$(python3 -c 'import json; d=json.load(open("/tmp/matrix.json")); print(d["count"])')
+          echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          echo "Planned $COUNT video jobs"
+
+  produce:
+    needs: plan
+    if: needs.plan.outputs.count != '0'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        include: ${{ fromJson(needs.plan.outputs.matrix) }}
+    concurrency:
+      group: video-prod-${{ matrix.locale }}-${{ matrix.lessonId }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.baseline_sha }}
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install ffmpeg
+        if: inputs.mock_mode != true
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Python deps
+        if: inputs.mock_mode != true
+        run: pip install requests google-genai
+
+      - name: Install root deps
+        run: bun install --frozen-lockfile
+
+      - name: Install remotion deps
+        run: cd remotion && bun install
+
+      - name: Build manifest (if missing)
+        run: bun remotion/video-pipeline/scripts/build-manifest.mjs
+
+      - name: Produce single video
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          CELL_LOCALE: ${{ matrix.locale }}
+          CELL_LESSON_ID: ${{ matrix.lessonId }}
+          MOCK_MODE: ${{ inputs.mock_mode }}
+        run: |
+          set -euo pipefail
+          echo "::group::Produce ${CELL_LOCALE}::${CELL_LESSON_ID}"
+          if [ "$MOCK_MODE" = "true" ]; then
+            bun remotion/video-pipeline/scripts/run-single-video.mjs \
+              --locale "$CELL_LOCALE" --lesson-id "$CELL_LESSON_ID" --mock
+          else
+            bun remotion/video-pipeline/scripts/run-single-video.mjs \
+              --locale "$CELL_LOCALE" --lesson-id "$CELL_LESSON_ID"
+          fi
+          echo "::endgroup::"
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs-${{ matrix.locale }}-${{ matrix.lessonId }}
+          path: remotion/video-pipeline/output/${{ matrix.locale }}/${{ matrix.lessonId }}/
+          if-no-files-found: warn
+
+      - name: Upload validation result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-${{ matrix.locale }}-${{ matrix.lessonId }}
+          path: |
+            remotion/video-pipeline/output/${{ matrix.locale }}/${{ matrix.lessonId }}/validation.json
+            remotion/video-pipeline/output/${{ matrix.locale }}/${{ matrix.lessonId }}/status.json
+          if-no-files-found: warn
+
+      - name: Upload video artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-${{ matrix.locale }}-${{ matrix.lessonId }}
+          path: |
+            remotion/video-pipeline/output/${{ matrix.locale }}/${{ matrix.lessonId }}/video.mp4
+            remotion/video-pipeline/output/${{ matrix.locale }}/${{ matrix.lessonId }}/captions.vtt
+            remotion/video-pipeline/output/${{ matrix.locale }}/${{ matrix.lessonId }}/audio.mp3
+          if-no-files-found: error
+
+      - name: Enqueue completed video for commit
+        if: success()
+        run: |
+          bun remotion/video-pipeline/scripts/enqueue-video.mjs \
+            --locale "${{ matrix.locale }}" --lesson-id "${{ matrix.lessonId }}"
+
+      - name: Process commit queue (serialized, one video per commit)
+        if: success()
+        env:
+          RESULTS_BRANCH: ${{ env.VIDEO_RESULTS_BRANCH }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          PUSHED=0
+          for i in 1 2 3 4 5 6 7 8 9 10; do
+            git fetch origin "$RESULTS_BRANCH" 2>/dev/null || true
+            git checkout -B "$RESULTS_BRANCH" "origin/$RESULTS_BRANCH" 2>/dev/null || git checkout -B "$RESULTS_BRANCH"
+            bun remotion/video-pipeline/scripts/process-commit-queue.mjs --max=1 || true
+            if git diff --cached --quiet; then
+              echo "Nothing to commit (may already be committed)."
+            else
+              git commit -m "video(${{ matrix.locale }}): ${{ matrix.lessonId }}"
+              if git push origin "HEAD:$RESULTS_BRANCH"; then
+                PUSHED=1
+                break
+              fi
+            fi
+            sleep $((RANDOM % 10 + 3))
+          done
+          if [ "$PUSHED" -ne 1 ] && ! git diff --cached --quiet; then
+            echo "::error::Failed to push ${{ matrix.locale }}::${{ matrix.lessonId }} after retries"
+            exit 1
+          fi

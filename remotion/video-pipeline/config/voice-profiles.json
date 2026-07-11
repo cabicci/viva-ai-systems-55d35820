@@ -1,0 +1,29 @@
+{
+  "ar-MSA": {
+    "profileId": "gemini-ar-msa-formal",
+    "locale": "ar-MSA",
+    "dialect": "Modern Standard Arabic (formal)",
+    "primaryVoice": "Kore",
+    "secondaryVoice": "Aoede",
+    "ttsRulesKey": "MSA_FORMAL",
+    "forbiddenLocales": ["ar-Gulf", "en"]
+  },
+  "ar-Gulf": {
+    "profileId": "gemini-ar-gulf",
+    "locale": "ar-Gulf",
+    "dialect": "Gulf Arabic",
+    "primaryVoice": "Puck",
+    "secondaryVoice": "Aoede",
+    "ttsRulesKey": "GULF",
+    "forbiddenLocales": ["ar-MSA", "en"]
+  },
+  "en": {
+    "profileId": "gemini-en-narrator",
+    "locale": "en",
+    "dialect": "English (learner narrator)",
+    "primaryVoice": "Charon",
+    "secondaryVoice": "Aoede",
+    "ttsRulesKey": "EN_NARRATOR",
+    "forbiddenLocales": ["ar-MSA", "ar-Gulf"]
+  }
+}
