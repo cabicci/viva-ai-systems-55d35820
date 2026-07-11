@@ -30,11 +30,12 @@ jobs:
       - name: Checkout validation branch
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 0
 
       - name: Verify candidate base is present
         run: |
           echo "Pinned candidate SHA: $CANDIDATE_SHA"
+          git fetch origin work/rag-ai-assistant-complete --depth=50
           git cat-file -e "${CANDIDATE_SHA}^{commit}"
           git log -1 --oneline "$CANDIDATE_SHA"
 
