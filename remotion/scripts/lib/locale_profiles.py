@@ -164,6 +164,18 @@ class LocaleProfile:
     tts_model: str
     actual_voice_policy: str
     egyptian_phonetic_rewrite: bool     # True only for legacy Egyptian mode
+    focus_note_label: str               # label prepended to TTS focus notes
+    fallback_bullets_labels: dict       # locale-safe strings for ScreenshotCard→BulletsCard fallback
+
+
+# ---------------------------------------------------------------------------
+# Fallback strings for write_scenes_module's ScreenshotCard→BulletsCard guard.
+# Legacy Egyptian preserves the EXACT strings that were hardcoded before.
+# ---------------------------------------------------------------------------
+_LEGACY_FALLBACK = {"default_title": "الفكرة", "default_bullet": "خد الفكرة دي معاك"}
+_AR_MSA_FALLBACK = {"default_title": "الفكرة الرئيسية", "default_bullet": "احتفظ بهذه الفكرة"}
+_AR_GULF_FALLBACK = {"default_title": "الفكرة", "default_bullet": "خذ هالفكرة معاك"}
+_EN_FALLBACK = {"default_title": "Key idea", "default_bullet": "Take this idea with you"}
 
 
 LEGACY_EGYPTIAN = LocaleProfile(
@@ -175,6 +187,8 @@ LEGACY_EGYPTIAN = LocaleProfile(
     tts_model=TTS_MODEL,
     actual_voice_policy=ACTUAL_VOICE_POLICY,
     egyptian_phonetic_rewrite=True,
+    focus_note_label="ملاحظات نطق",                     # PRESERVED exactly
+    fallback_bullets_labels=_LEGACY_FALLBACK,
 )
 
 
@@ -188,6 +202,8 @@ _PROFILES: dict[str, LocaleProfile] = {
         tts_model=TTS_MODEL,
         actual_voice_policy=ACTUAL_VOICE_POLICY,
         egyptian_phonetic_rewrite=False,
+        focus_note_label="ملاحظات نطق",
+        fallback_bullets_labels=_AR_MSA_FALLBACK,
     ),
     "ar-Gulf": LocaleProfile(
         locale="ar-Gulf",
@@ -198,6 +214,8 @@ _PROFILES: dict[str, LocaleProfile] = {
         tts_model=TTS_MODEL,
         actual_voice_policy=ACTUAL_VOICE_POLICY,
         egyptian_phonetic_rewrite=False,
+        focus_note_label="ملاحظات نطق",
+        fallback_bullets_labels=_AR_GULF_FALLBACK,
     ),
     "en": LocaleProfile(
         locale="en",
@@ -208,6 +226,8 @@ _PROFILES: dict[str, LocaleProfile] = {
         tts_model=TTS_MODEL,
         actual_voice_policy=ACTUAL_VOICE_POLICY,
         egyptian_phonetic_rewrite=False,
+        focus_note_label="Pronunciation notes",
+        fallback_bullets_labels=_EN_FALLBACK,
     ),
 }
 

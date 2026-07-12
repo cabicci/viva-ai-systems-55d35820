@@ -130,6 +130,7 @@ def _tts(text: str, voice: str, focus: str, out_path: str, api_keys: list[str],
         # New locales: keep source text intact; use locale-specific prompt.
         rewritten = text
         prompt_prefix = profile.tts_prompt
+    focus_label = profile.focus_note_label
     last_err = None
     n_keys = len(api_keys)
     max_attempts = max(18, n_keys * 6)
@@ -140,7 +141,7 @@ def _tts(text: str, voice: str, focus: str, out_path: str, api_keys: list[str],
     for attempt in range(max_attempts):
         prompt = prompt_prefix + current_text
         if focus:
-            prompt += f"\n\nملاحظات نطق: {focus}"
+            prompt += f"\n\n{focus_label}: {focus}"
         body = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
