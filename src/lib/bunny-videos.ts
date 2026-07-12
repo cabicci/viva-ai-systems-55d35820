@@ -12,6 +12,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "analyst-m3-l1-three-sources": "d407d6c9-628e-4f80-9b93-a360f125924f",
   "analyst-m3-l2-ai-summarization": "6ba711c7-f54f-4062-8900-a3a9decff925",
   "analyst-m3-l2-ai-summarization__ar-Gulf": "5c44ca7d-814a-4eea-a03a-81692942458f",
+  "analyst-m3-l2-ai-summarization__ar-MSA": "ec795bb3-018d-4642-908a-ec86a842175f",
   "analyst-m3-l2-ai-summarization__en": "7a08de3d-6997-412e-834e-54906b65896f",
   "analyst-m4-automated-dashboard": "a628f7b1-9e0b-47bd-a679-d22cd274a972",
   "analyst-m4-l1-pattern-vs-outlier": "9f7ef023-c1fc-44c0-abc3-18ac8faa76b2",
