@@ -231,6 +231,7 @@ def synthesize_segments(
     out_dir: str,
     master_path: str,
     api_key: str | None = None,
+    locale: str | None = None,
 ) -> list[float]:
     """Generate all segments + concatenate with silence gaps.
 
@@ -240,13 +241,18 @@ def synthesize_segments(
         out_dir:  directory for per-segment WAVs.
         master_path: final mp3 path.
         api_key:  defaults to env GEMINI_API_KEY.
+        locale:   None → legacy Egyptian (phonetic rewrite + Egyptian prompt).
+                  'ar-MSA' / 'ar-Gulf' / 'en' → per-locale prompt, no Egyptian rewrite.
 
     Returns:
         list of per-segment durations in seconds (in order). Use these to time
         Remotion scene_frames = ceil(duration * fps) + gap_frames.
     """
     api_keys = _collect_api_keys(api_key)
-    print(f"  TTS: using {len(api_keys)} API key(s) in round-robin")
+    profile = _get_locale_profile(locale)
+    print(f"  TTS: using {len(api_keys)} API key(s) in round-robin | "
+          f"locale={locale or 'legacy-egyptian'} profile={profile.tts_prompt_profile} "
+          f"model={profile.tts_model} voices={profile.actual_voice_policy}")
     os.makedirs(out_dir, exist_ok=True)
 
     # Pre-compute paths and figure out which segments need generation.
@@ -273,7 +279,7 @@ def synthesize_segments(
         t_gen0 = time.time()
         with ThreadPoolExecutor(max_workers=max_workers) as ex:
             futures = {
-                ex.submit(_tts, text, voice, focus, p, api_keys):
+                ex.submit(_tts, text, voice, focus, p, api_keys, locale):
                     (idx, voice, text)
                 for (idx, voice, text, focus, p) in to_generate
             }
