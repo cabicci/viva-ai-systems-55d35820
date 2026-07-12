@@ -256,6 +256,7 @@ LEGACY_EGYPTIAN = LocaleProfile(
     egyptian_phonetic_rewrite=True,
     focus_note_label="ملاحظات نطق",                     # PRESERVED exactly
     fallback_bullets_labels=_LEGACY_FALLBACK,
+    presentation_defaults=_LEGACY_PRESENTATION,
 )
 
 
@@ -271,6 +272,7 @@ _PROFILES: dict[str, LocaleProfile] = {
         egyptian_phonetic_rewrite=False,
         focus_note_label="ملاحظات نطق",
         fallback_bullets_labels=_AR_MSA_FALLBACK,
+        presentation_defaults=_AR_MSA_PRESENTATION,
     ),
     "ar-Gulf": LocaleProfile(
         locale="ar-Gulf",
@@ -283,6 +285,7 @@ _PROFILES: dict[str, LocaleProfile] = {
         egyptian_phonetic_rewrite=False,
         focus_note_label="ملاحظات نطق",
         fallback_bullets_labels=_AR_GULF_FALLBACK,
+        presentation_defaults=_AR_GULF_PRESENTATION,
     ),
     "en": LocaleProfile(
         locale="en",
@@ -295,6 +298,7 @@ _PROFILES: dict[str, LocaleProfile] = {
         egyptian_phonetic_rewrite=False,
         focus_note_label="Pronunciation notes",
         fallback_bullets_labels=_EN_FALLBACK,
+        presentation_defaults=_EN_PRESENTATION,
     ),
 }
 
