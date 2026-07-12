@@ -199,6 +199,89 @@ def preview_script(scenes, lesson_id):
     return path
 
 
+def _emit_source_evidence(lid, locale, package_path, package_sha, content_fp,
+                          title, section_count, next_lesson_id, next_lesson_title,
+                          has_quiz, profile):
+    """Write /tmp/<composite>/build-evidence.json for the workflow gate to
+    compare against preflight. No paid API calls involved."""
+    composite = f"{lid}__{locale}"
+    ev = {
+        "lesson_id": lid,
+        "locale": locale,
+        "composite_key": composite,
+        "package_path": str(package_path),
+        "package_sha256": package_sha,
+        "content_fingerprint_sha256": content_fp,
+        "section_count": section_count,
+        "title": title,
+        "next_lesson_id": next_lesson_id,
+        "next_lesson_title": next_lesson_title,
+        "has_quiz": has_quiz,
+        "script_prompt_profile": profile.script_prompt_profile,
+        "tts_prompt_profile": profile.tts_prompt_profile,
+        "tts_model": profile.tts_model,
+        "actual_voice_policy": profile.actual_voice_policy,
+        "egyptian_phonetic_rewrite": profile.egyptian_phonetic_rewrite,
+    }
+    out_dir = f"/tmp/{composite}"
+    os.makedirs(out_dir, exist_ok=True)
+    with open(os.path.join(out_dir, "build-evidence.json"), "w") as f:
+        json.dump(ev, f, ensure_ascii=False, indent=2)
+    print("::notice::" + json.dumps(
+        {"lesson_id": lid, "locale": locale,
+         "package_sha256": package_sha,
+         "content_fingerprint_sha256": content_fp,
+         "script_prompt_profile": profile.script_prompt_profile,
+         "tts_prompt_profile": profile.tts_prompt_profile,
+         "tts_model": profile.tts_model,
+         "actual_voice_policy": profile.actual_voice_policy},
+        ensure_ascii=False))
+    print(json.dumps(ev, ensure_ascii=False, indent=2))
+    return ev
+
+
+def _load_locale_context(lid, locale, package_path):
+    """Locale-mode source-of-truth loader. Never falls back to another locale
+    and never touches the legacy TypeScript loader."""
+    if not package_path:
+        package_path = os.path.join(
+            REPO_ROOT, "src/lib/locale-lessons", locale, "lessons", f"{lid}.json"
+        )
+    from pathlib import Path
+    pkg_path = Path(package_path)
+    if not pkg_path.is_file():
+        raise SystemExit(
+            f"::error::Localized package not found for ({lid}, {locale}) at {pkg_path}. "
+            "Locale mode refuses to fall back."
+        )
+    pkg, package_sha, content_fp = _load_locale_package(pkg_path)
+    if pkg.get("lessonId") != lid:
+        raise SystemExit(
+            f"::error::Package lessonId mismatch: got {pkg.get('lessonId')!r}, expected {lid!r}"
+        )
+    if pkg.get("locale") != locale:
+        raise SystemExit(
+            f"::error::Package locale mismatch: got {pkg.get('locale')!r}, expected {locale!r}"
+        )
+    blocks = _package_to_blocks(pkg)
+    title = pkg.get("title") or pkg.get("titleEn") or lid
+    section_count = len(pkg.get("sections") or [])
+    next_id, next_title = _resolve_next_lesson_title(pkg, locale, Path(REPO_ROOT))
+    has_quiz = any((b.get("kind") == "quiz") for b in blocks)
+    return {
+        "package_path": str(pkg_path),
+        "package_sha256": package_sha,
+        "content_fingerprint_sha256": content_fp,
+        "blocks": blocks,
+        "assetMap": {},
+        "title": title,
+        "section_count": section_count,
+        "hasQuiz": has_quiz,
+        "nextLessonId": next_id,
+        "nextLessonTitle": next_title,
+    }
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("lesson_id")
@@ -210,9 +293,97 @@ def main():
                     help="Render + mux using already generated scenes/audio.")
     ap.add_argument("--force-script", action="store_true",
                     help="Re-call the AI even if a cached script exists.")
+    ap.add_argument("--locale", default=os.environ.get("LESSON_LOCALE") or None,
+                    help=f"Locale for locale-aware mode: {supported_locales()}. "
+                         "Omit for legacy Egyptian behavior.")
+    ap.add_argument("--package-path", default=os.environ.get("LESSON_PACKAGE_PATH") or None,
+                    help="Explicit localized package JSON path (required with --locale in strict mode).")
+    ap.add_argument("--validate-source-only", action="store_true",
+                    help="Resolve locale + package, emit build-evidence.json, and stop. "
+                         "Makes NO paid API calls. Used by the workflow gate.")
     args = ap.parse_args()
 
+    locale = args.locale or None
+    if locale and locale not in supported_locales():
+        raise SystemExit(f"::error::Unknown --locale {locale!r}; supported: {supported_locales()}")
+
+    profile = _get_locale_profile(locale)
+
+    # -------------------------------------------------------------
+    # LOCALE MODE — strict: use the localized package, no fallback.
+    # -------------------------------------------------------------
+    if locale:
+        raw_lid = args.lesson_id.strip()
+        lid = raw_lid  # locale packages use exact lesson ids; no normalization against .ts files.
+        composite = f"{lid}__{locale}"
+        ctx = _load_locale_context(lid, locale, args.package_path)
+        title = ctx["title"]
+
+        _emit_source_evidence(
+            lid, locale, ctx["package_path"], ctx["package_sha256"],
+            ctx["content_fingerprint_sha256"], title, ctx["section_count"],
+            ctx["nextLessonId"], ctx["nextLessonTitle"], ctx["hasQuiz"], profile,
+        )
+
+        if args.validate_source_only:
+            print("\n[validate-source-only] no paid API calls made; stopping.")
+            return 0
+
+        blocks = ctx["blocks"]
+        has_quiz = ctx["hasQuiz"]
+        next_lesson_title = ctx["nextLessonTitle"]
+
+        # Composite cache/output identity — prevents any cross-locale reuse.
+        cache = f"/tmp/{composite}/script.json"
+        if args.force_script and os.path.exists(cache):
+            os.remove(cache)
+
+        print(f"[locale:{locale}] Generating spoken script via Gemini "
+              f"(profile={profile.script_prompt_profile})")
+        t_script = time.time()
+        scenes = generate_scenes_cached(
+            lid, blocks, title, cache,
+            has_quiz=has_quiz, next_lesson_title=next_lesson_title,
+            locale=locale,
+        )
+        print(f"      [script] total {time.time()-t_script:.1f}s")
+        preview_script(scenes, composite)
+
+        if args.preview_only:
+            print("\nPreview-only mode; stopping.")
+            return 0
+
+        print(f"[locale:{locale}] Synthesising TTS (profile={profile.tts_prompt_profile})")
+        audio_dir = f"/tmp/{composite}/audio"
+        master = f"{audio_dir}/master.mp3"
+        segments = [(i + 1, s["voice"], s["spoken"], s.get("focus", ""))
+                    for i, s in enumerate(scenes)]
+        durations = synthesize_segments(segments, audio_dir, master, locale=locale)
+        frames = [math.ceil(d * FPS) + TAIL_SILENCE_FRAMES for d in durations]
+
+        write_scenes_module(composite, scenes, frames)
+        lock_path = os.path.join(REPO_ROOT, "remotion/src/lessonsRegistry.lock")
+        with open(lock_path, "w") as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX)
+            update_registry(composite)
+
+        if args.prepare_only:
+            return 0
+
+        out = render_and_mux(composite, mp4_stem=composite)
+        print(f"\n[locale:{locale}] DONE -> {out}")
+        return 0
+
+    # -------------------------------------------------------------
+    # LEGACY EGYPTIAN MODE — unchanged.
+    # -------------------------------------------------------------
     lid = normalize_lesson_id(args.lesson_id)
+
+    if args.validate_source_only:
+        raise SystemExit(
+            "::error::--validate-source-only requires --locale (locale-aware mode). "
+            "Legacy Egyptian mode has no localized package to validate."
+        )
 
     if args.render_only:
         out = render_and_mux(lid)
