@@ -324,7 +324,11 @@ def main():
     if locale:
         raw_lid = args.lesson_id.strip()
         lid = raw_lid  # locale packages use exact lesson ids; no normalization against .ts files.
+        # Two identities:
+        #   composite      = runtime/cache/output/mapping key ("__" separator)
+        #   composition_id = Remotion composition id (hyphen-safe, no "_")
         composite = f"{lid}__{locale}"
+        composition_id = f"{lid}--{locale}"
         ctx = _load_locale_context(lid, locale, args.package_path)
         title = ctx["title"]
 
@@ -370,16 +374,20 @@ def main():
         durations = synthesize_segments(segments, audio_dir, master, locale=locale)
         frames = [math.ceil(d * FPS) + TAIL_SILENCE_FRAMES for d in durations]
 
-        write_scenes_module(composite, scenes, frames, locale=locale)
+        # Remotion composition uses the hyphen-safe id (no underscore).
+        write_scenes_module(composition_id, scenes, frames, locale=locale)
         lock_path = os.path.join(REPO_ROOT, "remotion/src/lessonsRegistry.lock")
         with open(lock_path, "w") as lock:
             fcntl.flock(lock, fcntl.LOCK_EX)
-            update_registry(composite)
+            update_registry(composition_id)
 
         if args.prepare_only:
             return 0
 
-        out = render_and_mux(composite, mp4_stem=composite)
+        # workId = composite (runtime), compositionId = hyphen-safe (Remotion),
+        # mp4 stem = composite (mapping key stays "__").
+        out = render_and_mux(composite, composition_id=composition_id,
+                             mp4_stem=composite)
         print(f"\n[locale:{locale}] DONE -> {out}")
         return 0
 
