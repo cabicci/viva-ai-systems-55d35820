@@ -1,11 +1,13 @@
 import { AbsoluteFill, useCurrentFrame, useVideoConfig, spring, interpolate } from "remotion";
-import { palette, safeFrame, type } from "../theme";
+import { palette, safeFrameFor, type } from "../theme";
 import type { SceneAccent } from "./types";
+import { usePresentationLocale } from "./PresentationLocaleContext";
 
 type Side = { label: string; body: string };
 type Props = { title: string; left: Side; right: Side; accent: SceneAccent };
 
 export const CompareCard: React.FC<Props> = ({ title, left, right }) => {
+  const locale = usePresentationLocale();
   const f = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
   const out = interpolate(f, [durationInFrames - 14, durationInFrames], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -31,7 +33,7 @@ export const CompareCard: React.FC<Props> = ({ title, left, right }) => {
   );
 
   return (
-    <AbsoluteFill style={{ ...safeFrame, alignItems: "flex-start", opacity: out }}>
+    <AbsoluteFill style={{ ...safeFrameFor(locale), alignItems: "flex-start", opacity: out }}>
       <div style={{ width: "100%", maxWidth: 1680 }}>
         <h2 style={{ fontSize: type.h1Small, fontWeight: 800, color: palette.ink, margin: "0 0 32px", lineHeight: type.lhHeading, letterSpacing: 0,
           opacity: sTitle, transform: `translateY(${interpolate(sTitle,[0,1],[16,0])}px)` }}>

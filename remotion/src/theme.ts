@@ -62,6 +62,21 @@ export const type = {
 // Brand intro length in frames (30fps → ~2.5s)
 export const BRAND_INTRO_FRAMES = 75;
 
+import {
+  isLtrPresentationLocale,
+  type PresentationLocale,
+} from "./lesson-cards/presentationChrome";
+
+export type { PresentationLocale } from "./lesson-cards/presentationChrome";
+export {
+  isLtrPresentationLocale,
+  presentationChrome,
+  conceptBadgeLabel,
+  brandTaglineLabel,
+  presentationDirection,
+  presentationTextAlign,
+} from "./lesson-cards/presentationChrome";
+
 export const rtl: React.CSSProperties = {
   direction: "rtl",
   fontFamily: cairo,
@@ -69,7 +84,18 @@ export const rtl: React.CSSProperties = {
   letterSpacing: 0,
 };
 
-// Reusable safe-area frame for any scene root.
+export const ltr: React.CSSProperties = {
+  direction: "ltr",
+  fontFamily: cairo,
+  textAlign: "left",
+  letterSpacing: 0,
+};
+
+export const textDirectionStyle = (
+  locale?: PresentationLocale | null,
+): React.CSSProperties => (isLtrPresentationLocale(locale) ? ltr : rtl);
+
+// Reusable safe-area frame for any scene root (legacy default = RTL).
 export const safeFrame: React.CSSProperties = {
   ...rtl,
   paddingLeft: safeArea.padX,
@@ -78,3 +104,14 @@ export const safeFrame: React.CSSProperties = {
   paddingBottom: safeArea.padY,
   justifyContent: "center",
 };
+
+export const safeFrameFor = (
+  locale?: PresentationLocale | null,
+): React.CSSProperties => ({
+  ...textDirectionStyle(locale),
+  paddingLeft: safeArea.padX,
+  paddingRight: safeArea.padX,
+  paddingTop: safeArea.padY,
+  paddingBottom: safeArea.padY,
+  justifyContent: "center",
+});
