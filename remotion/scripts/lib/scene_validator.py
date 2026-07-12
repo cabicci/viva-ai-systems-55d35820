@@ -55,11 +55,16 @@ def _mk_ar_marker(word: str) -> re.Pattern[str]:
     return re.compile(_AR_BOUND_L + word + _AR_BOUND_R)
 
 
-# Unambiguous Egyptian Cairene dialect markers.
+# Unambiguous Egyptian Cairene markers — rejected in BOTH ar-MSA and ar-Gulf.
 # NOTE: `يبقى` was removed — valid MSA verb ("remains").
-_EGYPTIAN_MARKERS = [
+_STRICT_EGYPTIAN_MARKERS = [
     "إيه", "إزاي", "ازاي", "دلوقتي",
     "عايز", "عاوز", "مفيش",
+]
+# Colloquial connectors historically classified as Egyptian but ALSO in
+# common Gulf delivery. Rejected in ar-MSA only (still colloquial there);
+# ALLOWED in ar-Gulf.
+_SHARED_COLLOQUIAL_MARKERS = [
     "علشان", "عشان",
 ]
 # Gulf-only markers (rejected in MSA; allowed in ar-Gulf).
@@ -69,8 +74,11 @@ _GULF_MARKERS = [
     "وش", "ليش", "أبغى", "الحين", "شلون",
 ]
 
-_EGY_PATTERNS = [_mk_ar_marker(w) for w in _EGYPTIAN_MARKERS]
+_STRICT_EGY_PATTERNS = [_mk_ar_marker(w) for w in _STRICT_EGYPTIAN_MARKERS]
+_SHARED_COLLOQUIAL_PATTERNS = [_mk_ar_marker(w) for w in _SHARED_COLLOQUIAL_MARKERS]
 _GULF_PATTERNS = [_mk_ar_marker(w) for w in _GULF_MARKERS]
+# Back-compat aggregate (unused by validator itself; kept for external readers).
+_EGY_PATTERNS = _STRICT_EGY_PATTERNS + _SHARED_COLLOQUIAL_PATTERNS
 
 
 def _walk_strings(value: Any, out: list[str]) -> None:
