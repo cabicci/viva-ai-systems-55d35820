@@ -13,7 +13,7 @@ LIB = os.path.abspath(os.path.join(HERE, "..", "lib"))
 if LIB not in sys.path:
     sys.path.insert(0, LIB)
 
-from scene_validator import validate_scenes  # noqa: E402
+from scene_validator import validate_scenes, ALLOWED_ACCENTS  # noqa: E402
 from locale_profiles import get_profile, LEGACY_EGYPTIAN  # noqa: E402
 
 
