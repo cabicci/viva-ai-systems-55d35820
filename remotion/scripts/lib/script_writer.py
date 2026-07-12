@@ -321,11 +321,27 @@ def generate_scenes(lesson_id, blocks, title=None, has_quiz=False,
             f"Could not parse Gemini response: {e}\n{json.dumps(resp)[:800]}")
 
 
-def _assert_locale_valid(scenes, locale, source, cache_path):
-    """Run deterministic scene validation. On failure, delete the cache and
-    raise so no downstream step (TTS, render, upload, mapping commit) runs."""
+def _normalize_and_validate(scenes, locale, source, cache_path,
+                            lesson_title=None, next_lesson_title=None):
+    """Deterministic pipeline: normalize (idempotent, presentation-only) →
+    validate (strict, unchanged). On validation failure, delete cache and
+    raise so no downstream step runs.
+
+    Returns the normalized scenes."""
     composite = os.path.basename(os.path.dirname(cache_path)) or "unknown"
-    record = _write_validation_evidence(scenes, locale, composite, source)
+    normalized, repairs = _normalize_scenes(
+        scenes, locale=locale,
+        lesson_title=lesson_title,
+        next_lesson_title=next_lesson_title,
+    )
+    _write_normalization_evidence(
+        composite, locale, source, repairs,
+        len(normalized) if isinstance(normalized, list) else 0,
+    )
+    if repairs:
+        print(f"      [normalize:{source}] locale={locale or 'legacy'} "
+              f"repairs={len(repairs)}")
+    record = _write_validation_evidence(normalized, locale, composite, source)
     if not record["ok"]:
         try:
             if source == "cache" and os.path.exists(cache_path):
@@ -333,10 +349,12 @@ def _assert_locale_valid(scenes, locale, source, cache_path):
         except OSError:
             pass
         raise RuntimeError(
-            f"Scene validation FAILED ({source}) for {composite} "
-            f"locale={locale!r}: " + "; ".join(record["violations"])
+            f"Scene validation FAILED ({source}, post-normalization) for "
+            f"{composite} locale={locale!r}: " + "; ".join(record["violations"])
         )
-    print(f"      [validate:{source}] locale={locale or 'legacy'} scenes={len(scenes)} OK")
+    print(f"      [validate:{source}] locale={locale or 'legacy'} "
+          f"scenes={len(normalized)} OK")
+    return normalized, repairs
 
 
 def generate_scenes_cached(lesson_id, blocks, title, cache_path,
@@ -344,9 +362,15 @@ def generate_scenes_cached(lesson_id, blocks, title, cache_path,
     if os.path.exists(cache_path):
         with open(cache_path) as f:
             scenes = json.load(f)
-        # Cached scripts are validated, not trusted automatically.
-        _assert_locale_valid(scenes, locale, "cache", cache_path)
-        return scenes
+        normalized, repairs = _normalize_and_validate(
+            scenes, locale, "cache", cache_path,
+            lesson_title=title, next_lesson_title=next_lesson_title,
+        )
+        # Persist normalized cache so subsequent loads are a no-op (idempotent).
+        if repairs:
+            with open(cache_path, "w") as f:
+                json.dump(normalized, f, ensure_ascii=False, indent=2)
+        return normalized
 
     # Strategy: Flash first (cheap + fast). Escalate to Pro only if Flash
     # fails twice with grounding violations. Accept Flash output with a
@@ -380,8 +404,6 @@ def generate_scenes_cached(lesson_id, blocks, title, cache_path,
               f"{len(scenes)} scenes, {len(violations)} violations")
         if not violations:
             break
-        # Accept Flash output with a single violation — re-running on Pro is
-        # rarely worth the 30-60s + cost for a borderline grounding case.
         if label == "flash" and len(violations) <= 1:
             print(f"      [script:{label}] accepting with 1 minor violation")
             break
@@ -394,10 +416,13 @@ def generate_scenes_cached(lesson_id, blocks, title, cache_path,
             + "\n  - ".join(last_violations or ["(unknown)"])
         )
 
-    # Deterministic validation BEFORE we accept + cache the script.
-    _assert_locale_valid(scenes, locale, "gemini", cache_path)
+    # Normalize BEFORE strict validation and BEFORE caching.
+    normalized, _repairs = _normalize_and_validate(
+        scenes, locale, "gemini", cache_path,
+        lesson_title=title, next_lesson_title=next_lesson_title,
+    )
 
     os.makedirs(os.path.dirname(cache_path), exist_ok=True)
     with open(cache_path, "w") as f:
-        json.dump(scenes, f, ensure_ascii=False, indent=2)
-    return scenes
+        json.dump(normalized, f, ensure_ascii=False, indent=2)
+    return normalized
