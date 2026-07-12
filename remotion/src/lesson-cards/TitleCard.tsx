@@ -1,10 +1,12 @@
 import { AbsoluteFill, useCurrentFrame, useVideoConfig, spring, interpolate } from "remotion";
-import { palette, safeFrame, type } from "../theme";
+import { palette, safeFrameFor, type } from "../theme";
 import type { SceneAccent } from "./types";
+import { usePresentationLocale } from "./PresentationLocaleContext";
 
 type Props = { chip: string; title: string; highlight: string; subtitle: string; accent: SceneAccent };
 
 export const TitleCard: React.FC<Props> = ({ chip, title, highlight, subtitle, accent }) => {
+  const locale = usePresentationLocale();
   const f = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
   const out = interpolate(f, [durationInFrames - 14, durationInFrames], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -15,7 +17,7 @@ export const TitleCard: React.FC<Props> = ({ chip, title, highlight, subtitle, a
   const accentColor = palette[accent];
 
   return (
-    <AbsoluteFill style={{ ...safeFrame, alignItems: "flex-start", opacity: out }}>
+    <AbsoluteFill style={{ ...safeFrameFor(locale), alignItems: "flex-start", opacity: out }}>
       <div style={{ width: "100%", maxWidth: 1680 }}>
         <div style={{ opacity: sChip, transform: `translateY(${interpolate(sChip, [0,1], [16,0])}px)`, marginBottom: 24 }}>
           <span style={{ display: "inline-block", padding: "10px 24px", background: accentColor, color: palette.ink, borderRadius: 999, fontSize: type.caption, fontWeight: 800, letterSpacing: 0 }}>

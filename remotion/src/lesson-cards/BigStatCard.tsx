@@ -1,10 +1,12 @@
 import { AbsoluteFill, useCurrentFrame, useVideoConfig, spring, interpolate } from "remotion";
-import { palette, safeFrame, type } from "../theme";
+import { palette, safeFrameFor, type } from "../theme";
 import type { SceneAccent } from "./types";
+import { usePresentationLocale } from "./PresentationLocaleContext";
 
 type Props = { intro: string; big: string; outro: string; accent: SceneAccent };
 
 export const BigStatCard: React.FC<Props> = ({ intro, big, outro, accent }) => {
+  const locale = usePresentationLocale();
   const f = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
   const out = interpolate(f, [durationInFrames - 14, durationInFrames], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -15,7 +17,7 @@ export const BigStatCard: React.FC<Props> = ({ intro, big, outro, accent }) => {
   const accentColor = palette[accent];
 
   return (
-    <AbsoluteFill style={{ ...safeFrame, alignItems: "center", textAlign: "center", opacity: out }}>
+    <AbsoluteFill style={{ ...safeFrameFor(locale), alignItems: "center", textAlign: "center", opacity: out }}>
       <p style={{ fontSize: type.bodyLg, color: palette.inkSoft, margin: 0, lineHeight: type.lhBody, letterSpacing: 0, maxWidth: 1400, opacity: sIntro, transform: `translateY(${interpolate(sIntro,[0,1],[12,0])}px)` }}>
         {intro}
       </p>

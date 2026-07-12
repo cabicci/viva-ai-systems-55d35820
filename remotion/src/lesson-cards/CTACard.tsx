@@ -1,10 +1,12 @@
 import { AbsoluteFill, useCurrentFrame, useVideoConfig, spring, interpolate } from "remotion";
-import { palette, safeFrame, type } from "../theme";
+import { palette, safeFrameFor, type } from "../theme";
 import type { SceneAccent } from "./types";
+import { usePresentationLocale } from "./PresentationLocaleContext";
 
 type Props = { eyebrow: string; title: string; highlight: string; tagline: string; accent: SceneAccent };
 
 export const CTACard: React.FC<Props> = ({ eyebrow, title, highlight, tagline, accent }) => {
+  const locale = usePresentationLocale();
   const f = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
   const out = interpolate(f, [durationInFrames - 14, durationInFrames], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -15,7 +17,7 @@ export const CTACard: React.FC<Props> = ({ eyebrow, title, highlight, tagline, a
   const accentColor = palette[accent];
 
   return (
-    <AbsoluteFill style={{ ...safeFrame, alignItems: "flex-start", opacity: out }}>
+    <AbsoluteFill style={{ ...safeFrameFor(locale), alignItems: "flex-start", opacity: out }}>
       <div style={{ width: "100%", maxWidth: 1680 }}>
         <span style={{
           display: "inline-block", padding: "10px 24px", background: palette.ink, color: palette.cream,

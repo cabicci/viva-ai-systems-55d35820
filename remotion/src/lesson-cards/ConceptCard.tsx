@@ -1,10 +1,18 @@
 import { AbsoluteFill, useCurrentFrame, useVideoConfig, spring, interpolate } from "remotion";
-import { palette, safeFrame, type } from "../theme";
+import {
+  palette,
+  safeFrameFor,
+  type,
+  conceptBadgeLabel,
+  isLtrPresentationLocale,
+} from "../theme";
 import type { SceneAccent } from "./types";
+import { usePresentationLocale } from "./PresentationLocaleContext";
 
 type Props = { term: string; definition: string; tag: string; accent: SceneAccent };
 
 export const ConceptCard: React.FC<Props> = ({ term, definition, tag, accent }) => {
+  const locale = usePresentationLocale();
   const f = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
   const out = interpolate(f, [durationInFrames - 14, durationInFrames], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -13,9 +21,10 @@ export const ConceptCard: React.FC<Props> = ({ term, definition, tag, accent }) 
   const sDef  = spring({ frame: f - 26, fps, config: { damping: 16 } });
   const sTag  = spring({ frame: f - 42, fps, config: { damping: 18 } });
   const accentColor = palette[accent];
+  const barOrigin = isLtrPresentationLocale(locale) ? "left" : "right";
 
   return (
-    <AbsoluteFill style={{ ...safeFrame, alignItems: "center", opacity: out }}>
+    <AbsoluteFill style={{ ...safeFrameFor(locale), alignItems: "center", opacity: out }}>
       <div style={{
         opacity: sCard, transform: `translateY(${interpolate(sCard,[0,1],[20,0])}px) scale(${interpolate(sCard,[0,1],[0.97,1])})`,
         background: palette.white, borderRadius: 32, padding: "56px 64px", maxWidth: 1500, width: "100%",
@@ -23,14 +32,14 @@ export const ConceptCard: React.FC<Props> = ({ term, definition, tag, accent }) 
       }}>
         <div style={{ opacity: sTerm, transform: `translateY(${interpolate(sTerm,[0,1],[14,0])}px)` }}>
           <span style={{ display: "inline-block", padding: "8px 22px", background: accentColor, color: palette.ink, borderRadius: 12, fontSize: type.captionSm, fontWeight: 800, letterSpacing: 0, marginBottom: 20 }}>
-            مصطلح
+            {conceptBadgeLabel(locale)}
           </span>
           <h1 style={{ fontSize: type.h1, fontWeight: 900, color: palette.ink, margin: 0, lineHeight: type.lhHeading, letterSpacing: 0 }}>
             {term}
           </h1>
         </div>
         <div style={{ height: 4, width: 120, background: accentColor, margin: "28px 0", borderRadius: 2,
-          opacity: sDef, transform: `scaleX(${sDef})`, transformOrigin: "right" }} />
+          opacity: sDef, transform: `scaleX(${sDef})`, transformOrigin: barOrigin }} />
         <p style={{ fontSize: type.bodyLg, color: palette.ink, margin: 0, lineHeight: type.lhBodyRelaxed, fontWeight: 600, letterSpacing: 0,
           opacity: sDef, transform: `translateY(${interpolate(sDef,[0,1],[14,0])}px)` }}>
           {definition}

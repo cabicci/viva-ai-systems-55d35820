@@ -10,12 +10,17 @@ import {
   ScreenshotCard,
   BrandIntroCard,
   type SceneData,
+  type PresentationLocale,
+  resolvePresentationLocale,
 } from "./lesson-cards";
+import { PresentationLocaleContext } from "./lesson-cards/PresentationLocaleContext";
 import { BRAND_INTRO_FRAMES } from "./theme";
 
 export type LessonRendererProps = {
   scenes: SceneData[];
   sceneFrames: number[];
+  /** Optional; localized generation stamps locale onto SceneData when omitted here. */
+  locale?: PresentationLocale;
 };
 
 const renderScene = (scene: SceneData) => {
@@ -40,7 +45,9 @@ const renderScene = (scene: SceneData) => {
 export const LessonRenderer: React.FC<LessonRendererProps> = ({
   scenes,
   sceneFrames,
+  locale: localeProp,
 }) => {
+  const locale = resolvePresentationLocale(scenes, localeProp);
   // Every lesson video starts with the Masaarat brand intro.
   const starts: number[] = [];
   let acc = BRAND_INTRO_FRAMES;
@@ -49,20 +56,22 @@ export const LessonRenderer: React.FC<LessonRendererProps> = ({
     acc += d;
   }
   return (
-    <AbsoluteFill>
-      <Background />
-      <Sequence from={0} durationInFrames={BRAND_INTRO_FRAMES}>
-        <BrandIntroCard />
-      </Sequence>
-      {scenes.map((scene, i) => (
-        <Sequence
-          key={i}
-          from={starts[i]}
-          durationInFrames={sceneFrames[i]}
-        >
-          {renderScene(scene)}
+    <PresentationLocaleContext.Provider value={locale}>
+      <AbsoluteFill>
+        <Background />
+        <Sequence from={0} durationInFrames={BRAND_INTRO_FRAMES}>
+          <BrandIntroCard />
         </Sequence>
-      ))}
-    </AbsoluteFill>
+        {scenes.map((scene, i) => (
+          <Sequence
+            key={i}
+            from={starts[i]}
+            durationInFrames={sceneFrames[i]}
+          >
+            {renderScene(scene)}
+          </Sequence>
+        ))}
+      </AbsoluteFill>
+    </PresentationLocaleContext.Provider>
   );
 };

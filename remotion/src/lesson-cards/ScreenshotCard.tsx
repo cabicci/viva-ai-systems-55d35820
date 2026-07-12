@@ -7,8 +7,9 @@ import {
   spring,
   interpolate,
 } from "remotion";
-import { palette, rtl } from "../theme";
+import { palette, textDirectionStyle } from "../theme";
 import type { SceneAccent } from "./types";
+import { usePresentationLocale } from "./PresentationLocaleContext";
 
 type Props = {
   eyebrow: string;
@@ -25,6 +26,7 @@ export const ScreenshotCard: React.FC<Props> = ({
   src,
   accent,
 }) => {
+  const locale = usePresentationLocale();
   const f = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
   const out = interpolate(
@@ -42,7 +44,7 @@ export const ScreenshotCard: React.FC<Props> = ({
   return (
     <AbsoluteFill
       style={{
-        ...rtl,
+        ...textDirectionStyle(locale),
         padding: "0 120px",
         justifyContent: "center",
         alignItems: "flex-start",

@@ -1,9 +1,17 @@
 import { AbsoluteFill, Img, staticFile, useCurrentFrame, interpolate } from "remotion";
-import { palette, rtl, bgGradient } from "../theme";
+import {
+  palette,
+  bgGradient,
+  textDirectionStyle,
+  brandTaglineLabel,
+} from "../theme";
+import { usePresentationLocale } from "./PresentationLocaleContext";
 
 type Props = { tagline?: string };
 
-export const BrandIntroCard: React.FC<Props> = ({ tagline = "رحلتك تبدأ من هنا" }) => {
+export const BrandIntroCard: React.FC<Props> = ({ tagline }) => {
+  const locale = usePresentationLocale();
+  const resolvedTagline = tagline ?? brandTaglineLabel(locale);
   const f = useCurrentFrame();
   // Total: 75 frames. Fade-in 0-12, hold 12-60, fade-out 60-75.
   const fadeIn = interpolate(f, [0, 14], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
@@ -15,7 +23,7 @@ export const BrandIntroCard: React.FC<Props> = ({ tagline = "رحلتك تبدأ
 
   return (
     <AbsoluteFill style={{ background: bgGradient }}>
-      <AbsoluteFill style={{ ...rtl, justifyContent: "center", alignItems: "center", textAlign: "center", opacity }}>
+      <AbsoluteFill style={{ ...textDirectionStyle(locale), justifyContent: "center", alignItems: "center", textAlign: "center", opacity }}>
         <div style={{ transform: `scale(${scale})`, display: "flex", flexDirection: "column", alignItems: "center", gap: 36 }}>
           <Img
             src={staticFile("brand/masaarat-logo-lockup.png")}
@@ -31,7 +39,7 @@ export const BrandIntroCard: React.FC<Props> = ({ tagline = "رحلتك تبدأ
             opacity: taglineOp,
             transform: `translateY(${taglineY}px)`,
           }}>
-            {tagline}
+            {resolvedTagline}
           </p>
         </div>
       </AbsoluteFill>
