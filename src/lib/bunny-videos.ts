@@ -120,3 +120,36 @@ export function getBunnyEmbedUrl(lessonId: string | undefined): string | undefin
   return `https://iframe.mediadelivery.net/embed/${BUNNY_LIBRARY_ID}/${guid}?autoplay=false&preload=true`;
 }
 
+/**
+ * Locale-aware lookup. Localized videos are stored under the composite key
+ * `${lessonId}__${locale}` (e.g. "intro-m1-l4-ai-can-cannot__ar-Gulf").
+ * Falls back to the plain lessonId entry (legacy single-locale videos).
+ */
+export function getBunnyEmbedUrlForLocale(
+  lessonId: string | undefined,
+  locale: string | undefined,
+): string | undefined {
+  if (!lessonId) return undefined;
+  if (locale) {
+    const composite = `${lessonId}__${locale}`;
+    const guid = BUNNY_VIDEO_GUIDS[composite];
+    if (guid) {
+      return `https://iframe.mediadelivery.net/embed/${BUNNY_LIBRARY_ID}/${guid}?autoplay=false&preload=true`;
+    }
+  }
+  return getBunnyEmbedUrl(lessonId);
+}
+
+export function getBunnyGuidForLocale(
+  lessonId: string | undefined,
+  locale: string | undefined,
+): string | undefined {
+  if (!lessonId) return undefined;
+  if (locale) {
+    const composite = `${lessonId}__${locale}`;
+    if (BUNNY_VIDEO_GUIDS[composite]) return BUNNY_VIDEO_GUIDS[composite];
+  }
+  return BUNNY_VIDEO_GUIDS[lessonId];
+}
+
+
