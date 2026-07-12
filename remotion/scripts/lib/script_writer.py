@@ -18,6 +18,11 @@ try:
 except ImportError:  # sys.path import (sibling)
     from locale_profiles import get_profile as _get_locale_profile
 
+try:
+    from .scene_validator import validate_scenes as _validate_scenes, write_locale_validation_evidence as _write_validation_evidence  # package import
+except ImportError:  # sys.path import (sibling)
+    from scene_validator import validate_scenes as _validate_scenes, write_locale_validation_evidence as _write_validation_evidence
+
 
 # Default to Flash for speed; fall back to Pro on failure or grounding violations.
 MODEL_FAST = "gemini-2.5-flash"
@@ -311,11 +316,32 @@ def generate_scenes(lesson_id, blocks, title=None, has_quiz=False,
             f"Could not parse Gemini response: {e}\n{json.dumps(resp)[:800]}")
 
 
+def _assert_locale_valid(scenes, locale, source, cache_path):
+    """Run deterministic scene validation. On failure, delete the cache and
+    raise so no downstream step (TTS, render, upload, mapping commit) runs."""
+    composite = os.path.basename(os.path.dirname(cache_path)) or "unknown"
+    record = _write_validation_evidence(scenes, locale, composite, source)
+    if not record["ok"]:
+        try:
+            if source == "cache" and os.path.exists(cache_path):
+                os.remove(cache_path)
+        except OSError:
+            pass
+        raise RuntimeError(
+            f"Scene validation FAILED ({source}) for {composite} "
+            f"locale={locale!r}: " + "; ".join(record["violations"])
+        )
+    print(f"      [validate:{source}] locale={locale or 'legacy'} scenes={len(scenes)} OK")
+
+
 def generate_scenes_cached(lesson_id, blocks, title, cache_path,
                            has_quiz=False, next_lesson_title=None, locale=None):
     if os.path.exists(cache_path):
         with open(cache_path) as f:
-            return json.load(f)
+            scenes = json.load(f)
+        # Cached scripts are validated, not trusted automatically.
+        _assert_locale_valid(scenes, locale, "cache", cache_path)
+        return scenes
 
     # Strategy: Flash first (cheap + fast). Escalate to Pro only if Flash
     # fails twice with grounding violations. Accept Flash output with a
@@ -362,6 +388,9 @@ def generate_scenes_cached(lesson_id, blocks, title, cache_path,
             "All script attempts failed (Flash x2 + Pro). Last violations:\n  - "
             + "\n  - ".join(last_violations or ["(unknown)"])
         )
+
+    # Deterministic validation BEFORE we accept + cache the script.
+    _assert_locale_valid(scenes, locale, "gemini", cache_path)
 
     os.makedirs(os.path.dirname(cache_path), exist_ok=True)
     with open(cache_path, "w") as f:

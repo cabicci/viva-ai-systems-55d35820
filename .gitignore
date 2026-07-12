@@ -56,3 +56,7 @@ scripts/persona-sim/**/*.heatmap.csv
 docs/playbooks/adaptive-canonical/reports/*.md
 docs/playbooks/adaptive-canonical/reports/*.json
 docs/playbooks/adaptive-canonical/reports/.audit.lock
+
+# Python cache
+__pycache__/
+*.py[cod]
