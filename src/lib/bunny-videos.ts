@@ -158,4 +158,35 @@ export function getBunnyGuidForLocale(
   return BUNNY_VIDEO_GUIDS[lessonId];
 }
 
+/** Locales that use composite `${lessonId}__${locale}` keys without legacy fallback. */
+const LOCALIZED_VIDEO_LOCALES = new Set(["en", "ar-MSA", "ar-Gulf"]);
+
+/**
+ * Strict localized lookup for package pages (en / ar-MSA / ar-Gulf).
+ * Returns a Bunny embed URL only when the composite registry key exists.
+ * Never falls back to the plain legacy Egyptian lessonId entry.
+ */
+export function getLocalizedBunnyEmbedUrl(
+  lessonId: string | undefined,
+  locale: string | undefined,
+): string | undefined {
+  if (!lessonId || !locale || !LOCALIZED_VIDEO_LOCALES.has(locale)) {
+    return undefined;
+  }
+  const guid = BUNNY_VIDEO_GUIDS[`${lessonId}__${locale}`];
+  if (!guid) return undefined;
+  return `https://iframe.mediadelivery.net/embed/${BUNNY_LIBRARY_ID}/${guid}?autoplay=false&preload=true`;
+}
+
+/** Composite GUID only — no legacy lessonId fallback. */
+export function getLocalizedBunnyGuid(
+  lessonId: string | undefined,
+  locale: string | undefined,
+): string | undefined {
+  if (!lessonId || !locale || !LOCALIZED_VIDEO_LOCALES.has(locale)) {
+    return undefined;
+  }
+  return BUNNY_VIDEO_GUIDS[`${lessonId}__${locale}`];
+}
+
 

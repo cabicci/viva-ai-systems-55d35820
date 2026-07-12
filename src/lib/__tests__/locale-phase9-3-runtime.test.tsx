@@ -211,7 +211,7 @@ describe("Phase 9.3 non-ar-EG QA markers", () => {
     expect(container.querySelector('[data-locale-mission="readonly"]')).not.toBeNull();
   });
 
-  it("exposes video placeholder marker on localized package pages", () => {
+  it("exposes video placeholder marker when localized composite GUID is absent", () => {
     const pkg = readPackage("en");
     const { container } = render(<LocalePackagePreviewRenderer pkg={pkg} />);
     expect(container.querySelector('[data-locale-video="placeholder"]')).not.toBeNull();

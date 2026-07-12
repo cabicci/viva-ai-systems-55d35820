@@ -21,6 +21,7 @@ import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 import { getUiString } from "@/lib/locale/ui-strings";
 import { LocaleProvider } from "@/lib/locale/locale-context";
 import type { SupportedLocale } from "@/lib/locale/types";
+import { LocaleLessonVideo } from "./LocaleLessonVideo";
 import { LocaleMockMissionSubmit } from "./LocaleMockMissionSubmit";
 import { LocalePreviewMission } from "./LocalePreviewMission";
 import { PackageLearnerMarkdown } from "./PackageLearnerMarkdown";
@@ -47,22 +48,6 @@ function previewBlockKind(
     default:
       return "paragraphs";
   }
-}
-
-function LocaleVideoPlaceholder({ locale }: { locale: SupportedLocale }) {
-  return (
-    <div
-      className="rounded-2xl border border-border/50 bg-muted/20 p-5 text-center space-y-2"
-      data-locale-video="placeholder"
-    >
-      <p className="text-sm font-semibold text-foreground">
-        {getUiString(locale, "safety.video.title")}
-      </p>
-      <p className="text-xs text-muted-foreground">
-        {getUiString(locale, "safety.video.body")}
-      </p>
-    </div>
-  );
 }
 
 function PreviewBlockBody({
@@ -204,7 +189,7 @@ function PreviewBlockBody({
       );
 
     case "videoPreviewNote":
-      return <LocaleVideoPlaceholder locale={locale} />;
+      return <LocaleLessonVideo lessonId={lessonId} locale={locale} />;
   }
 }
 
@@ -318,7 +303,7 @@ export function LocalePackagePreviewRenderer({
       data-preview-body-direction={bodyDir}
     >
       {showPageVideoPlaceholder ? (
-        <LocaleVideoPlaceholder locale={pkg.locale} />
+        <LocaleLessonVideo lessonId={pkg.lessonId} locale={pkg.locale} />
       ) : null}
       {sections.map(({ section, liveQuizItem, liveMission }, index) => (
         <PreviewSectionCard

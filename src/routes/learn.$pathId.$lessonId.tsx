@@ -395,7 +395,10 @@ function UnifiedLessonPage() {
       />
       <main className="flex-1 max-w-[48rem] mx-auto w-full px-4 sm:px-6 py-8 md:py-12">
         {isLocalizedPackagePage ? (
-          <LocaleLiveSafetyMarkers locale={effectiveAccess.effectiveLocale} />
+          <LocaleLiveSafetyMarkers
+            locale={effectiveAccess.effectiveLocale}
+            lessonId={lesson.slug}
+          />
         ) : null}
         {from === "curriculum" ? (
           <Link
