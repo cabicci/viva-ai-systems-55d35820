@@ -193,7 +193,10 @@ def validate_scenes(scenes: Any, locale: str | None = None) -> list[str]:
         elif locale == "ar-MSA":
             if text and not _ARABIC_RE.search(text):
                 errors.append(f"Scene {i} [ar-MSA]: no Arabic text detected")
-            hits = _find_marker_hits(text, _EGY_PATTERNS + _GULF_PATTERNS)
+            hits = _find_marker_hits(
+                text,
+                _STRICT_EGY_PATTERNS + _SHARED_COLLOQUIAL_PATTERNS + _GULF_PATTERNS,
+            )
             if hits:
                 errors.append(
                     f"Scene {i} [ar-MSA]: dialect markers not allowed in MSA: {hits}"
@@ -201,7 +204,9 @@ def validate_scenes(scenes: Any, locale: str | None = None) -> list[str]:
         elif locale == "ar-Gulf":
             if text and not _ARABIC_RE.search(text):
                 errors.append(f"Scene {i} [ar-Gulf]: no Arabic text detected")
-            hits = _find_marker_hits(text, _EGY_PATTERNS)
+            # Gulf rejects ONLY the unambiguous Egyptian markers.
+            # `عشان` / `علشان` are shared colloquial and ALLOWED in Gulf delivery.
+            hits = _find_marker_hits(text, _STRICT_EGY_PATTERNS)
             if hits:
                 errors.append(
                     f"Scene {i} [ar-Gulf]: Egyptian dialect markers not allowed: {hits}"
