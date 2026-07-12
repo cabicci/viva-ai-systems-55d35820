@@ -17,6 +17,12 @@ sys.path.insert(0, os.path.join(HERE, "lib"))
 
 from gemini_tts import synthesize_segments  # noqa: E402
 from script_writer import generate_scenes_cached  # noqa: E402
+from locale_profiles import get_profile as _get_locale_profile, supported_locales  # noqa: E402
+from localized_package_adapter import (  # noqa: E402
+    load_package as _load_locale_package,
+    package_to_blocks as _package_to_blocks,
+    resolve_next_lesson_title as _resolve_next_lesson_title,
+)
 
 FPS = 30
 TAIL_SILENCE_FRAMES = 15
