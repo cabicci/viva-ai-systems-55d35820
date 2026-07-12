@@ -312,7 +312,7 @@ def generate_scenes(lesson_id, blocks, title=None, has_quiz=False,
 
 
 def generate_scenes_cached(lesson_id, blocks, title, cache_path,
-                           has_quiz=False, next_lesson_title=None):
+                           has_quiz=False, next_lesson_title=None, locale=None):
     if os.path.exists(cache_path):
         with open(cache_path) as f:
             return json.load(f)
@@ -327,8 +327,9 @@ def generate_scenes_cached(lesson_id, blocks, title, cache_path,
         note = ""
         if last_violations:
             note = (
-                "السكريبت السابق كسر قاعدة الـ Grounding. صلّح المخالفات دي "
-                "وأعد التوليد بالكامل:\n- " + "\n- ".join(last_violations)
+                "Previous script violated the Grounding rules. Fix the violations "
+                "below and regenerate the whole script:\n- "
+                + "\n- ".join(last_violations)
             )
         t0 = time.time()
         try:
@@ -338,6 +339,7 @@ def generate_scenes_cached(lesson_id, blocks, title, cache_path,
                 next_lesson_title=next_lesson_title,
                 extra_user_note=note,
                 model=model,
+                locale=locale,
             )
         except Exception as e:
             print(f"      [script:{label}] error after {time.time()-t0:.1f}s: {e}")
