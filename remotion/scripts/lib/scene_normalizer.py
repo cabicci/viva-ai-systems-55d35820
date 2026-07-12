@@ -9,6 +9,10 @@ Guarantees:
   * Never invents lesson facts — fills presentation-only fields from
     existing scene text, lesson title, next-lesson title, and locale-safe
     generic labels defined centrally in locale_profiles.presentation_defaults.
+  * Locale-aware only (en / ar-MSA / ar-Gulf): ScreenshotCard with
+    missing/empty visual.src is deterministically rewritten to a
+    BulletsCard before strict validation (no invented image URL, no LLM).
+  * Legacy Egyptian (locale=None): no ScreenshotCard→BulletsCard conversion.
   * Assigns a deterministic accent (by scene index) ONLY when the accent
     is missing or not in the allowed set.
   * Never touches `voice` — unsupported voices are left for strict validator.
@@ -36,9 +40,75 @@ except ImportError:  # sibling sys.path import
 # Deterministic accent rotation (matches the six ALLOWED_ACCENTS).
 _ACCENT_CYCLE = ["mint", "lavender", "peach", "yellow", "pink", "mintDeep"]
 
+# Locale-aware modes that may convert ScreenshotCard→BulletsCard.
+# Legacy Egyptian (locale=None) must never convert or invent URLs.
+_LOCALE_AWARE = frozenset({"en", "ar-MSA", "ar-Gulf"})
+
 
 def _split_sentences(text: str) -> list[str]:
     return [p.strip() for p in re.split(r"[.!?…،؛\n]+", text or "") if p.strip()]
+
+
+def _str_field(visual: dict, key: str) -> str:
+    val = visual.get(key)
+    return val.strip() if isinstance(val, str) else ""
+
+
+def _screenshot_to_bullets(
+    visual: dict,
+    spoken: str,
+    lesson_title: str | None,
+    next_lesson_title: str | None,
+    defaults: dict,
+    fallback_labels: dict,
+) -> dict:
+    """Build a BulletsCard visual from ScreenshotCard fields + locale defaults.
+
+    Never invents an image URL. Text comes only from existing visual fields,
+    spoken text, lesson/next titles, and locale presentation defaults.
+    """
+    fb_title = fallback_labels.get("default_title") or defaults.get("bullets_title") or ""
+    fb_bullet = fallback_labels.get("default_bullet") or defaults.get("default_bullet") or ""
+    spoken_parts = _split_sentences(spoken)
+
+    title = (
+        _str_field(visual, "title")
+        or _str_field(visual, "eyebrow")
+        or (lesson_title or "").strip()
+        or (spoken_parts[0] if spoken_parts else "")
+        or (next_lesson_title or "").strip()
+        or defaults.get("bullets_title", "")
+        or fb_title
+    )
+    title = _truncate(title, 40) if title else fb_title
+
+    caption = _str_field(visual, "caption")
+    parts = _split_sentences(caption)[:4]
+    if not parts:
+        parts = spoken_parts[:4]
+    if not parts:
+        for key in ("title", "eyebrow"):
+            t = _str_field(visual, key)
+            if t:
+                parts = [t]
+                break
+    if not parts:
+        for candidate in (
+            (lesson_title or "").strip(),
+            (next_lesson_title or "").strip(),
+            defaults.get("default_bullet", ""),
+            fb_bullet,
+        ):
+            if candidate:
+                parts = [candidate]
+                break
+    if not parts:
+        parts = [fb_bullet or title or "…"]
+
+    if not title:
+        title = defaults.get("bullets_title") or fb_title or parts[0]
+
+    return {"title": title, "bullets": parts[:4]}
 
 
 def _truncate(text: str, n: int) -> str:
@@ -142,8 +212,27 @@ def normalize_scenes(
                 })
 
         elif card == "ScreenshotCard":
-            _fill(v, "eyebrow", defaults["screenshot_eyebrow"],
-                  repairs, i, card)
+            # Locale-aware only: missing/empty src → deterministic BulletsCard.
+            # Legacy Egyptian (locale=None) must remain byte-equivalent — no
+            # conversion, no invented URL, no card rewrite.
+            if locale in _LOCALE_AWARE and _visual_field_missing(v.get("src")):
+                s["card"] = "BulletsCard"
+                s["visual"] = _screenshot_to_bullets(
+                    v, spoken, lesson_title, next_lesson_title,
+                    defaults, profile.fallback_bullets_labels,
+                )
+                repairs.append({
+                    "scene_index": i + 1,
+                    "card": "ScreenshotCard→BulletsCard",
+                    "field": "visual.src",
+                    "reason": (
+                        "missing/empty ScreenshotCard src — "
+                        "converted to BulletsCard"
+                    ),
+                })
+            else:
+                _fill(v, "eyebrow", defaults["screenshot_eyebrow"],
+                      repairs, i, card)
 
         elif card == "CTACard":
             _fill(v, "eyebrow", defaults["cta_eyebrow"], repairs, i, card)

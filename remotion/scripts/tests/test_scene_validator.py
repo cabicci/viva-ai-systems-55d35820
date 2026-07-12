@@ -400,6 +400,154 @@ def _incomplete_cta_scene():
     }
 
 
+class ScreenshotCardMissingSrcFallbackTests(unittest.TestCase):
+    """Locale-aware: missing/empty ScreenshotCard.src → BulletsCard.
+    Legacy (locale=None): no conversion / no repair of that card's src."""
+
+    def _missing_src_scene(self, spoken, **visual_extra):
+        v = {
+            "eyebrow": visual_extra.pop("eyebrow", "LOOK"),
+            "title": visual_extra.pop("title", "Dashboard"),
+            "caption": visual_extra.pop("caption", "First point. Second point."),
+            "src": visual_extra.pop("src", ""),
+        }
+        v.update(visual_extra)
+        return {
+            "card": "ScreenshotCard", "accent": "yellow", "voice": "Aoede",
+            "spoken": spoken, "focus": "dashboard",
+            "visual": v,
+        }
+
+    def _assert_converted(self, locale, spoken, lesson_title, next_title,
+                          **visual_extra):
+        scene = self._missing_src_scene(spoken, **visual_extra)
+        spoken_before = scene["spoken"]
+        focus_before = scene["focus"]
+        voice_before = scene["voice"]
+        out, repairs = normalize_scenes(
+            [scene], locale=locale,
+            lesson_title=lesson_title,
+            next_lesson_title=next_title,
+        )
+        self.assertEqual(out[0]["card"], "BulletsCard")
+        v = out[0]["visual"]
+        self.assertTrue(isinstance(v.get("title"), str) and v["title"].strip())
+        self.assertTrue(
+            isinstance(v.get("bullets"), list)
+            and any(isinstance(b, str) and b.strip() for b in v["bullets"])
+        )
+        self.assertNotIn("src", v)
+        self.assertEqual(out[0]["spoken"], spoken_before)
+        self.assertEqual(out[0]["focus"], focus_before)
+        self.assertEqual(out[0]["voice"], voice_before)
+        self.assertTrue(
+            any(
+                r.get("field") == "visual.src"
+                and "converted to BulletsCard" in r.get("reason", "")
+                for r in repairs
+            ),
+            repairs,
+        )
+        self.assertEqual(validate_scenes(out, locale=locale), [])
+        # Idempotent second pass.
+        second, r2 = normalize_scenes(
+            out, locale=locale,
+            lesson_title=lesson_title,
+            next_lesson_title=next_title,
+        )
+        import json as _json
+        self.assertEqual(
+            _json.dumps(out, ensure_ascii=False, sort_keys=True),
+            _json.dumps(second, ensure_ascii=False, sort_keys=True),
+        )
+        self.assertEqual(r2, [])
+
+    def test_en_missing_src_converts_to_bullets(self):
+        self._assert_converted(
+            "en",
+            "Look at this dashboard screen carefully.",
+            "What AI Can and Cannot Do",
+            "AI vs Software",
+        )
+
+    def test_msa_missing_src_converts_to_bullets(self):
+        self._assert_converted(
+            "ar-MSA",
+            "انظر إلى هذه الشاشة بعناية.",
+            "ما يقدر عليه الذكاء الاصطناعي وما لا يقدر",
+            "الذكاء الاصطناعي مقابل البرمجيات",
+            eyebrow="لقطة",
+            title="لوحة التحكم",
+            caption="النقطة الأولى. النقطة الثانية.",
+        )
+
+    def test_gulf_missing_src_converts_to_bullets(self):
+        self._assert_converted(
+            "ar-Gulf",
+            "شوف هالشاشة زين.",
+            "وش يقدر عليه الذكاء الاصطناعي",
+            "الذكاء الاصطناعي مقابل البرامج",
+            eyebrow="شوف",
+            title="لوحة التحكم",
+            caption="النقطة الأولى. النقطة الثانية.",
+        )
+
+    def test_en_absent_src_key_also_converts(self):
+        scene = self._missing_src_scene("Look at this screen.")
+        del scene["visual"]["src"]
+        out, repairs = normalize_scenes(
+            [scene], locale="en", lesson_title="Lesson",
+        )
+        self.assertEqual(out[0]["card"], "BulletsCard")
+        self.assertTrue(any(r.get("field") == "visual.src" for r in repairs))
+        self.assertEqual(validate_scenes(out, locale="en"), [])
+
+    def test_valid_screenshot_with_src_not_converted(self):
+        scene = _screenshot_scene()  # has src=/x.png
+        out, repairs = normalize_scenes(
+            [scene], locale="en", lesson_title="Lesson",
+        )
+        self.assertEqual(out[0]["card"], "ScreenshotCard")
+        self.assertEqual(out[0]["visual"]["src"], "/x.png")
+        self.assertFalse(any(r.get("field") == "visual.src" for r in repairs))
+
+    def test_legacy_none_does_not_convert_or_repair_missing_src(self):
+        scene = {
+            "card": "ScreenshotCard", "accent": "peach", "voice": "Aoede",
+            "spoken": "شوف الشاشة دي.", "focus": "screen",
+            "visual": {
+                "eyebrow": "شوف", "title": "الواجهة",
+                "caption": "تفاصيل", "src": "",
+            },
+        }
+        import json as _json
+        before = _json.dumps(scene, ensure_ascii=False, sort_keys=True)
+        out, repairs = normalize_scenes(
+            [scene], locale=None, lesson_title="درس",
+        )
+        self.assertEqual(out[0]["card"], "ScreenshotCard")
+        self.assertEqual(out[0]["visual"].get("src"), "")
+        self.assertFalse(
+            any(
+                "BulletsCard" in str(r.get("card", ""))
+                or (
+                    r.get("field") == "visual.src"
+                    and "converted" in r.get("reason", "")
+                )
+                for r in repairs
+            ),
+            repairs,
+        )
+        # Card identity + empty src preserved (no invented URL / no rewrite).
+        self.assertEqual(
+            _json.dumps(out[0], ensure_ascii=False, sort_keys=True),
+            before,
+        )
+        # Strict validator still rejects missing src (legacy does not repair).
+        errs = validate_scenes(out, locale=None)
+        self.assertTrue(any("visual.src" in e for e in errs), errs)
+
+
 class SceneNormalizerRepairTests(unittest.TestCase):
     def test_repairs_title_card_missing_fields(self):
         scenes = [_incomplete_title_scene()]
