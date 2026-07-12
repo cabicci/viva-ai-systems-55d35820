@@ -5,6 +5,8 @@ import { useAuth } from "@/lib/auth-context";
 import { useEntitlement } from "@/lib/entitlements";
 import type { IntroLessonContent } from "@/components/intro/intro-lesson-types";
 import { loadIntroLessonContent, hasIntroLessonContent } from "@/components/intro/lessons";
+import { adaptPackageMissionsFromSections, packageMissionId } from "@/lib/locale-lessons/adapt-package-to-live-mission";
+import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 
 /**
  * Mission Gate — controls whether the "Next Lesson" button is unlocked.
@@ -28,6 +30,7 @@ export function emitMissionPassed(missionId: string) {
 }
 
 export interface LessonMissionShape {
+  missionId: string;
   prompt: string;
   intro: string;
   hasRubric: boolean;
@@ -35,12 +38,14 @@ export interface LessonMissionShape {
 
 function extractLessonMission(
   content: IntroLessonContent | null,
+  lessonId: string,
 ): LessonMissionShape | null {
   if (!content) return null;
   for (const section of content) {
     if (section.block.kind === "mission") {
       const m = section.block;
       return {
+        missionId: m.missionId ?? `${m.lessonId ?? lessonId}::mission`,
         intro: m.intro,
         prompt: m.prompt,
         hasRubric: Array.isArray(m.rubric) && m.rubric.length > 0,
@@ -55,7 +60,45 @@ export async function loadLessonMission(
 ): Promise<LessonMissionShape | null> {
   if (!hasIntroLessonContent(lessonId)) return null;
   const content = await loadIntroLessonContent(lessonId);
-  return extractLessonMission(content);
+  return extractLessonMission(content, lessonId);
+}
+
+export function extractMissionFromLocalizedPackage(
+  pkg: Pick<LocalizedLessonPackage, "lessonId" | "sections">,
+): LessonMissionShape | null {
+  try {
+    const missions = adaptPackageMissionsFromSections(pkg.lessonId, pkg.sections);
+    if (missions.length === 0) return null;
+    const mission = missions[0]!;
+    return {
+      missionId: mission.missionId,
+      intro: mission.intro,
+      prompt: mission.prompt,
+      hasRubric: mission.rubric.length > 0,
+    };
+  } catch {
+    return null;
+  }
+}
+
+export function useLocalizedPackageMissionShape(
+  pkg: LocalizedLessonPackage | null,
+): LessonMissionShape | null {
+  return React.useMemo(
+    () => (pkg ? extractMissionFromLocalizedPackage(pkg) : null),
+    [pkg],
+  );
+}
+
+export function useLessonMissionShapeForPage(
+  lessonId: string,
+  localizedPackage: LocalizedLessonPackage | null,
+  isLocalizedPackagePage: boolean,
+): LessonMissionShape | null | undefined {
+  const egyptianShape = useLessonMissionShape(lessonId);
+  const packageShape = useLocalizedPackageMissionShape(localizedPackage);
+  if (!isLocalizedPackagePage) return egyptianShape;
+  return packageShape;
 }
 
 /** @deprecated Prefer loadLessonMission or useLessonMissionShape. */
@@ -86,26 +129,24 @@ export type MissionGateState =
 
 /**
  * Whether lesson navigation should be blocked by the mission gate.
- * Localized package preview pages show read-only missions and must not inherit
- * the hidden ar-EG mission submission requirement for Next / mark-complete.
  */
 export function isLessonNavigationMissionLocked(
   missionGate: MissionGateState,
-  options: { localizedPackagePreview?: boolean } = {},
 ): boolean {
-  if (options.localizedPackagePreview) return false;
   return missionGate.kind === "needs-mission" || missionGate.kind === "loading";
 }
 
 const QK = ["mission-gate"] as const;
 
-export function useMissionGate(lessonId: string): MissionGateState {
+function useMissionGateWithShape(
+  lessonId: string,
+  missionShape: LessonMissionShape | null | undefined,
+): MissionGateState {
   const { user } = useAuth();
   const { isAdmin } = useEntitlement();
   const qc = useQueryClient();
-  const missionShape = useLessonMissionShape(lessonId);
   const requiresMission = !!missionShape?.hasRubric && !isAdmin;
-  const missionId = `${lessonId}::mission`;
+  const missionId = missionShape?.missionId ?? packageMissionId(lessonId);
 
   const { data, isLoading } = useQuery({
     queryKey: [...QK, missionId, user?.id ?? null],
@@ -147,4 +188,22 @@ export function useMissionGate(lessonId: string): MissionGateState {
     return { kind: "passed", missionId, score: Number(data.score ?? 0) };
   }
   return { kind: "needs-mission", missionId };
+}
+
+export function useMissionGate(lessonId: string): MissionGateState {
+  const missionShape = useLessonMissionShape(lessonId);
+  return useMissionGateWithShape(lessonId, missionShape);
+}
+
+export function useMissionGateForPage(
+  lessonId: string,
+  localizedPackage: LocalizedLessonPackage | null,
+  isLocalizedPackagePage: boolean,
+): MissionGateState {
+  const missionShape = useLessonMissionShapeForPage(
+    lessonId,
+    localizedPackage,
+    isLocalizedPackagePage,
+  );
+  return useMissionGateWithShape(lessonId, missionShape);
 }

@@ -5,16 +5,26 @@ import { IntroMissionPrompt } from "./IntroMission";
 import type { IntroBlock, IntroLessonContent } from "./intro-lesson-types";
 import { LESSON_DIAGRAMS } from "./diagrams/LessonDiagrams";
 import { QuizBlock } from "./QuizBlock";
-import { getBunnyEmbedUrl } from "@/lib/bunny-videos";
+import {
+  getBunnyEmbedUrl,
+  getLocalizedBunnyEmbedUrl,
+} from "@/lib/bunny-videos";
+import { LocaleLessonVideo } from "@/components/locale/LocaleLessonVideo";
 import { getValueHookForLocale } from "./value-hooks";
 import { resolveLearnerLessonIcon } from "./resolve-learner-lesson-icon";
 import { useLocale } from "@/lib/locale/locale-context";
 import { getUiString } from "@/lib/locale/ui-strings";
+import { isPackageLocale } from "@/lib/locale-lessons/registry";
+import type { SupportedLocale } from "@/lib/locale/types";
 
 function lessonVideoHasSource(
   block: Extract<IntroBlock, { kind: "lessonVideo" }>,
   lessonId?: string,
+  videoLocale?: SupportedLocale,
 ): boolean {
+  if (videoLocale && isPackageLocale(videoLocale)) {
+    return Boolean(getLocalizedBunnyEmbedUrl(lessonId, videoLocale));
+  }
   return Boolean(getBunnyEmbedUrl(lessonId) || block.url);
 }
 
@@ -96,10 +106,13 @@ export function IntroLessonRenderer({
   content,
   lessonId,
   lessonTitle,
+  videoLocale,
 }: {
   content: IntroLessonContent;
   lessonId?: string;
   lessonTitle?: string;
+  /** When set (en/ar-MSA/ar-Gulf), lessonVideo uses strict composite Bunny lookup. */
+  videoLocale?: SupportedLocale;
 }) {
   const { locale, dir } = useLocale();
   const hook = getValueHookForLocale(lessonId, locale);
@@ -138,7 +151,7 @@ export function IntroLessonRenderer({
       {content.map((section, i) => {
         if (
           section.block.kind === "lessonVideo" &&
-          !lessonVideoHasSource(section.block, lessonId)
+          !lessonVideoHasSource(section.block, lessonId, videoLocale)
         ) {
           return <VideoSkipNotice key={i} />;
         }
@@ -152,7 +165,12 @@ export function IntroLessonRenderer({
             title={section.title}
             tone={section.tone}
           >
-            <BlockBody block={section.block} lessonId={lessonId} lessonTitle={lessonTitle} />
+            <BlockBody
+              block={section.block}
+              lessonId={lessonId}
+              lessonTitle={lessonTitle}
+              videoLocale={videoLocale}
+            />
           </IntroSection>
         );
       })}
@@ -160,7 +178,17 @@ export function IntroLessonRenderer({
   );
 }
 
-function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lessonId?: string; lessonTitle?: string }) {
+function BlockBody({
+  block,
+  lessonId,
+  lessonTitle,
+  videoLocale,
+}: {
+  block: IntroBlock;
+  lessonId?: string;
+  lessonTitle?: string;
+  videoLocale?: SupportedLocale;
+}) {
   const { locale, dir } = useLocale();
 
   switch (block.kind) {
@@ -292,6 +320,18 @@ function BlockBody({ block, lessonId, lessonTitle }: { block: IntroBlock; lesson
     }
 
     case "lessonVideo": {
+      if (videoLocale && isPackageLocale(videoLocale) && lessonId) {
+        return (
+          <figure className="space-y-2">
+            <LocaleLessonVideo lessonId={lessonId} locale={videoLocale} />
+            {block.caption ? (
+              <figcaption className="text-xs text-muted-foreground flex items-center gap-1.5">
+                <PlayCircle className="h-3.5 w-3.5" /> {block.caption}
+              </figcaption>
+            ) : null}
+          </figure>
+        );
+      }
       // Canonical lesson video — slot #2 in the unified lesson rhythm.
       // Resolution order:
       //   1. Bunny Stream GUID by lessonId (preferred, CDN-delivered)

@@ -1,10 +1,25 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it, vi } from "vitest";
-import { fireEvent, render, screen } from "@testing-library/react";
-import { LocalePackagePreviewRenderer } from "@/components/locale/LocalePackagePreviewRenderer";
-import { LocaleProvider } from "@/lib/locale/locale-context";
+import { fireEvent, screen, waitFor } from "@testing-library/react";
+import { renderLocalizedLesson } from "@/lib/__tests__/locale-test-utils";
 import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
+
+vi.mock("@tanstack/react-router", () => ({
+  Link: ({
+    children,
+    to,
+    ...props
+  }: {
+    children: React.ReactNode;
+    to?: string;
+  }) => (
+    <a href={typeof to === "string" ? to : "#"} {...props}>
+      {children}
+    </a>
+  ),
+  createLink: (component: unknown) => component,
+}));
 
 vi.mock("@/integrations/supabase/client", () => ({
   supabase: {
@@ -16,11 +31,6 @@ vi.mock("@/integrations/supabase/client", () => ({
 
 vi.mock("@/lib/auth-context", () => ({
   useAuth: () => ({ user: null, loading: false }),
-}));
-
-vi.mock("@/components/intro/lessons", () => ({
-  loadIntroLessonContent: vi.fn(),
-  hasIntroLessonContent: vi.fn(() => false),
 }));
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
@@ -37,26 +47,21 @@ function readPackage(locale: "en"): LocalizedLessonPackage {
   return JSON.parse(readFileSync(filePath, "utf8")) as LocalizedLessonPackage;
 }
 
-function renderLocalizedPackage(locale: "en") {
-  const pkg = readPackage(locale);
-  return render(
-    <LocaleProvider effectiveLocale={locale}>
-      <LocalePackagePreviewRenderer pkg={pkg} />
-    </LocaleProvider>,
-  );
-}
-
-describe("LocalePackagePreviewRenderer live quiz", () => {
-  it("renders interactive quiz options instead of read-only preview", () => {
-    const { container } = renderLocalizedPackage("en");
-    expect(container.querySelector('[data-locale-quiz="live"]')).not.toBeNull();
+describe("LocalePackageLessonRenderer live quiz", () => {
+  it("renders interactive quiz options instead of read-only preview", async () => {
+    const { container } = await renderLocalizedLesson(readPackage("en"));
+    await waitFor(() => {
+      expect(
+        screen.getByRole("button", { name: /I've thought — show options/i }),
+      ).toBeTruthy();
+    });
     expect(container.querySelector('[data-preview-quiz="read-only"]')).toBeNull();
   });
 
   it("supports selection, scoring, explanation, and retry", async () => {
     const pkg = readPackage("en");
     const quiz = pkg.sections.find((section) => section.quiz)?.quiz!;
-    renderLocalizedPackage("en");
+    await renderLocalizedLesson(pkg);
 
     const reveal = await screen.findByRole("button", {
       name: /I've thought — show options/i,
@@ -88,17 +93,13 @@ describe("LocalePackagePreviewRenderer live quiz", () => {
     fireEvent.click(retryOptions[quiz.correctIndex ?? 0]!);
     expect(screen.getByText(/Correct/i)).toBeTruthy();
   });
-
-  it("does not load ar-EG quiz content", async () => {
-    const lessons = await import("@/components/intro/lessons");
-    renderLocalizedPackage("en");
-    expect(lessons.loadIntroLessonContent).not.toHaveBeenCalled();
-  });
 });
 
 describe("QuizBlock ar-EG regression (unchanged component contract)", () => {
   it("still requires bloom, explanation, and correctIndex on quiz items", async () => {
     const { QuizBlock } = await import("@/components/intro/QuizBlock");
+    const { LocaleProvider } = await import("@/lib/locale/locale-context");
+    const { render } = await import("@testing-library/react");
     render(
       <LocaleProvider effectiveLocale="en">
         <QuizBlock

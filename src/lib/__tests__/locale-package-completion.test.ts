@@ -24,21 +24,18 @@ describe("localized package completion policy", () => {
     );
   });
 
-  it("keeps Stage 2.1 mission-gate exemption for package pages", () => {
+  it("applies mission-gate locking on localized package pages", () => {
     const source = readFileSync(LEARN_ROUTE, "utf8");
-    expect(source).toContain("isLessonNavigationMissionLocked(missionGate, {");
-    expect(source).toContain("localizedPackagePreview: isLocalizedPackagePage");
+    expect(source).toContain("isLessonNavigationMissionLocked(missionGate)");
+    expect(source).not.toContain("localizedPackagePreview");
+    expect(source).toContain("useMissionGateForPage");
 
     const lockedStates: MissionGateState[] = [
       { kind: "loading" },
       { kind: "needs-mission", missionId: "intro-m1-l2-first-prompt::mission" },
     ];
     for (const missionGate of lockedStates) {
-      expect(
-        isLessonNavigationMissionLocked(missionGate, {
-          localizedPackagePreview: true,
-        }),
-      ).toBe(false);
+      expect(isLessonNavigationMissionLocked(missionGate)).toBe(true);
     }
   });
 

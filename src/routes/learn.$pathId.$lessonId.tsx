@@ -34,8 +34,8 @@ import { useEntitlement, useLessonGate, useStreak } from "@/lib/entitlements";
 import { PaywallCard, IntroGateCard } from "@/components/learn/PaywallCard";
 import {
   isLessonNavigationMissionLocked,
-  useMissionGate,
-  useLessonMissionShape,
+  useMissionGateForPage,
+  useLessonMissionShapeForPage,
 } from "@/lib/mission-gate";
 import { Lock } from "lucide-react";
 import { logLearnerEvent } from "@/lib/learner-events";
@@ -45,9 +45,8 @@ import { ReadingProgressBar } from "@/components/learn/ReadingProgressBar";
 import { CompletionReward } from "@/components/learn/CompletionReward";
 import { FloatingAssistantLauncher } from "@/components/learn/FloatingAssistantLauncher";
 import { AssistantPanel } from "@/components/assistant/AssistantPanel";
-import { LocalePackagePreviewRenderer } from "@/components/locale/LocalePackagePreviewRenderer";
-import { LocaleAssistantUnavailable } from "@/components/locale/LocaleAssistantUnavailable";
-import { LocaleLiveSafetyMarkers } from "@/components/locale/LocaleLiveSafetyMarkers";
+import { buildLocalizedAssistantContextOverride } from "@/lib/assistant/resolve-assistant-learner-context";
+import { LocalePackageLessonRenderer } from "@/components/locale/LocalePackageLessonRenderer";
 import { loadLocalePackageLesson } from "@/lib/locale-lessons/load-locale-package-lesson";
 import { readRequestCookieLocale } from "@/lib/locale/locale-cookie";
 import { readRequestCountryCode } from "@/lib/locale/read-request-country";
@@ -262,13 +261,12 @@ function UnifiedLessonPage() {
   const isLocalizedPackagePage =
     effectiveAccess.contentSource === "locale-package-json" &&
     localizedPackage !== null;
-  const showLocalePreview = isLocalizedPackagePage;
   const [egyptianContent, setEgyptianContent] = useState<
     Awaited<ReturnType<typeof loadIntroLessonContent>> | undefined
   >(undefined);
 
   useEffect(() => {
-    if (showLocalePreview) {
+    if (isLocalizedPackagePage) {
       setEgyptianContent(null);
       return;
     }
@@ -279,9 +277,9 @@ function UnifiedLessonPage() {
     return () => {
       cancelled = true;
     };
-  }, [lesson.slug, showLocalePreview]);
+  }, [lesson.slug, isLocalizedPackagePage]);
 
-  const content = showLocalePreview ? null : egyptianContent;
+  const content = isLocalizedPackagePage ? null : egyptianContent;
   const { getStatus, setStatus, isLoaded: isProgressLoaded } = useLessonProgress();
   const { recordActivity } = useStreak();
   const { isAdmin } = useEntitlement();
@@ -335,11 +333,47 @@ function UnifiedLessonPage() {
     }
   };
 
-  const missionShape = useLessonMissionShape(lesson.slug);
-  const missionGate = useMissionGate(lesson.slug);
-  const nextLocked = isLessonNavigationMissionLocked(missionGate, {
-    localizedPackagePreview: isLocalizedPackagePage,
-  });
+  const missionShape = useLessonMissionShapeForPage(
+    lesson.slug,
+    localizedPackage,
+    isLocalizedPackagePage,
+  );
+  const missionGate = useMissionGateForPage(
+    lesson.slug,
+    localizedPackage,
+    isLocalizedPackagePage,
+  );
+  const nextLocked = isLessonNavigationMissionLocked(missionGate);
+
+  const assistantContextOverride = useMemo(() => {
+    if (!isLocalizedPackagePage || !localizedPackage || missionShape === undefined) {
+      return null;
+    }
+    return buildLocalizedAssistantContextOverride({
+      pathId,
+      pathTitle: pathLabel,
+      moduleId: lesson.moduleId,
+      moduleTitle,
+      lessonId: lesson.slug,
+      lessonTitle: displayTitle,
+      nextLessonTitle: nextLessonTitle ?? null,
+      mission:
+        missionShape?.intro && missionShape.prompt
+          ? { intro: missionShape.intro, prompt: missionShape.prompt }
+          : null,
+    });
+  }, [
+    isLocalizedPackagePage,
+    localizedPackage,
+    missionShape,
+    pathId,
+    pathLabel,
+    lesson.moduleId,
+    moduleTitle,
+    lesson.slug,
+    displayTitle,
+    nextLessonTitle,
+  ]);
 
   // Access gate: count Intro completions to decide whether to lock.
   const introIds = useMemo(
@@ -394,12 +428,6 @@ function UnifiedLessonPage() {
         completedCount={completedCount}
       />
       <main className="flex-1 max-w-[48rem] mx-auto w-full px-4 sm:px-6 py-8 md:py-12">
-        {isLocalizedPackagePage ? (
-          <LocaleLiveSafetyMarkers
-            locale={effectiveAccess.effectiveLocale}
-            lessonId={lesson.slug}
-          />
-        ) : null}
         {from === "curriculum" ? (
           <Link
             to="/curriculum"
@@ -438,13 +466,6 @@ function UnifiedLessonPage() {
               {String(lesson.globalOrder).padStart(2, "0")}/
               {String(total).padStart(2, "0")}
             </span>
-            {showLocalePreview ? (
-              <span
-                aria-hidden
-                hidden
-                data-locale-live-active={effectiveAccess.effectiveLocale}
-              />
-            ) : null}
           </div>
           <h1 className="text-2xl md:text-4xl font-black leading-tight">
             {displayTitle}
@@ -485,8 +506,8 @@ function UnifiedLessonPage() {
           <PaywallCard pathTitle={pathLabel} pathId={pathId} />
         ) : gate.kind === "complete-intro-first" ? (
           <IntroGateCard done={gate.introDone} total={gate.introTotal} />
-        ) : showLocalePreview && localizedPackage ? (
-          <LocalePackagePreviewRenderer pkg={localizedPackage} />
+        ) : isLocalizedPackagePage && localizedPackage ? (
+          <LocalePackageLessonRenderer pkg={localizedPackage} />
         ) : content === undefined ? (
           <div className="rounded-2xl border border-border/40 bg-muted/20 p-8 text-center text-sm text-muted-foreground">
             {t("learn.loading.access")}
@@ -510,10 +531,7 @@ function UnifiedLessonPage() {
 
         {isGateReady && gate.kind === "open" && (
         <>
-        {!isLocalizedPackagePage ? (
-          <LessonNotes lessonId={lesson.id} />
-        ) : null}
-        {!isLocalizedPackagePage ? (
+        <LessonNotes lessonId={lesson.id} />
         <DifficultyPrompt
           lessonId={lesson.id}
           pathId={pathId}
@@ -522,8 +540,7 @@ function UnifiedLessonPage() {
           isCompleted={isCompleted}
           nextLessonHref={next ? `/learn/${pathId}/${next.slug}` : undefined}
         />
-        ) : null}
-        {!isLocalizedPackagePage && nextLocked && missionShape?.hasRubric && (
+        {nextLocked && missionShape?.hasRubric && (
           <div className="mt-8 rounded-2xl border border-primary/25 bg-primary/[0.04] p-4 flex items-start gap-3">
             <Lock className="h-4 w-4 text-primary mt-0.5 shrink-0" />
             <div className="text-sm leading-relaxed">
@@ -640,11 +657,7 @@ function UnifiedLessonPage() {
           fabAriaLabel={t("learn.assistant.fabAria")}
           panelTitle={t("learn.assistant.summary")}
         >
-          {isLocalizedPackagePage ? (
-            <LocaleAssistantUnavailable locale={effectiveAccess.effectiveLocale} />
-          ) : (
-            <AssistantPanel compact />
-          )}
+          <AssistantPanel compact contextOverride={assistantContextOverride} />
         </FloatingAssistantLauncher>
         </>
         )}

@@ -13,14 +13,14 @@ describe("AssistantPanel locale wiring", () => {
     expect(resolveAssistantPackageLocale("ar-EG")).toBeNull();
   });
 
-  it("passes learnerContext.locale from AssistantPanel", () => {
+  it("resolves localized runtime context via resolveAssistantLearnerContext", () => {
     const source = readFileSync(
       path.join(REPO_ROOT, "src/components/assistant/AssistantPanel.tsx"),
       "utf8",
     );
-    expect(source).toContain("useLocale()");
-    expect(source).toContain("resolveAssistantPackageLocale");
-    expect(source).toContain("locale: assistantLocale");
+    expect(source).toContain("resolveAssistantLearnerContext");
+    expect(source).toContain("buildAssistantRuntimePayload");
+    expect(source).toContain("contextOverride");
   });
 
   it("declares locale on assistant runtime client payload", () => {

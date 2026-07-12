@@ -1,11 +1,11 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { LocaleAssistantUnavailable } from "@/components/locale/LocaleAssistantUnavailable";
 import { LocaleLiveSafetyMarkers } from "@/components/locale/LocaleLiveSafetyMarkers";
-import { LocalePackagePreviewRenderer } from "@/components/locale/LocalePackagePreviewRenderer";
 import { LocalePreviewMission } from "@/components/locale/LocalePreviewMission";
+import { renderLocalizedLessonWithoutVideo } from "@/lib/__tests__/locale-test-utils";
 import {
   LOCALE_COOKIE_NAME,
   readLocaleCookie,
@@ -28,6 +28,22 @@ import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 
 const LESSON_ID = "intro-m1-l1-what-is-ai";
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
+
+vi.mock("@tanstack/react-router", () => ({
+  Link: ({
+    children,
+    to,
+    ...props
+  }: {
+    children: React.ReactNode;
+    to?: string;
+  }) => (
+    <a href={typeof to === "string" ? to : "#"} {...props}>
+      {children}
+    </a>
+  ),
+  createLink: (component: unknown) => component,
+}));
 
 function readPackage(locale: "en"): LocalizedLessonPackage {
   const filePath = path.join(
@@ -211,10 +227,11 @@ describe("Phase 9.3 non-ar-EG QA markers", () => {
     expect(container.querySelector('[data-locale-mission="readonly"]')).not.toBeNull();
   });
 
-  it("exposes video placeholder marker when localized composite GUID is absent", () => {
+  it("shows canonical video skip notice when localized composite GUID is absent", async () => {
     const pkg = readPackage("en");
-    const { container } = render(<LocalePackagePreviewRenderer pkg={pkg} />);
-    expect(container.querySelector('[data-locale-video="placeholder"]')).not.toBeNull();
-    expect(screen.getByText(/Video for this language is coming soon/i)).toBeTruthy();
+    const { container } = await renderLocalizedLessonWithoutVideo(pkg);
+    expect(container.querySelector('[data-locale-video="placeholder"]')).toBeNull();
+    expect(container.querySelector("iframe")).toBeNull();
+    expect(container.textContent).toMatch(/Optional video|Short on time\?/);
   });
 });

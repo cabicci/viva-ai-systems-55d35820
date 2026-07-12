@@ -1,17 +1,18 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { useLearnerContext } from "@/lib/learner-context";
 import { useLocale } from "@/lib/locale/locale-context";
-import { resolveAssistantPackageLocale } from "@/lib/rag/resolve-assistant-locale";
+import { getUiString } from "@/lib/locale/ui-strings";
 import {
-  searchPlatformContent,
-} from "@/lib/platform-retrieval";
-import {
-  callAssistantRuntime,
-} from "@/lib/assistant-runtime";
+  buildAssistantRuntimePayload,
+  resolveAssistantLearnerContext,
+  type AssistantContextOverride,
+} from "@/lib/assistant/resolve-assistant-learner-context";
+import { searchPlatformContent } from "@/lib/platform-retrieval";
+import { callAssistantRuntime } from "@/lib/assistant-runtime";
 import {
   setAssistantSession,
   useAssistantSession,
@@ -20,13 +21,19 @@ import {
 interface Props {
   /** When true, hides the Context Status Card (e.g. when used inside a lesson sheet). */
   compact?: boolean;
+  /** Localized package page override — titles and mission from active JSON package. */
+  contextOverride?: AssistantContextOverride | null;
 }
 
-export function AssistantPanel({ compact = false }: Props) {
+export function AssistantPanel({ compact = false, contextOverride = null }: Props) {
   const ctx = useLearnerContext();
-  const { locale } = useLocale();
-  const assistantLocale = resolveAssistantPackageLocale(locale);
+  const { locale, dir } = useLocale();
   const { query, loading, error, response, matches } = useAssistantSession();
+
+  const resolvedContext = useMemo(
+    () => resolveAssistantLearnerContext(locale, ctx, contextOverride),
+    [locale, ctx, contextOverride],
+  );
 
   useEffect(() => {
     setAssistantSession({ query: "" });
@@ -40,35 +47,19 @@ export function AssistantPanel({ compact = false }: Props) {
     try {
       const retrievalResults = searchPlatformContent(q, {
         limit: 5,
-        preferLessonId: ctx.currentLesson?.id ?? null,
-        preferPathId: ctx.currentPath?.id ?? null,
+        preferLessonId: resolvedContext.preferLessonId,
+        preferPathId: resolvedContext.preferPathId,
       });
-      const res = await callAssistantRuntime({
-        query: q,
-        learnerContext: {
-          locale: assistantLocale,
-          currentPath: ctx.currentPath?.id ?? null,
-          currentModule: ctx.currentModule?.id ?? null,
-          currentLesson: ctx.currentLesson?.id ?? null,
-          currentPathTitle: ctx.currentPath?.title ?? null,
-          currentModuleTitle: ctx.currentModule?.title ?? null,
-          currentLessonTitle: ctx.currentLesson?.title ?? null,
-          completedLessonsCount: ctx.completedLessonsCount,
-          totalLessonsCount: ctx.totalLessonsCount,
-          nextLessonTitle: ctx.nextLesson?.title ?? null,
-          currentMission: ctx.currentMission
-            ? {
-                intro: ctx.currentMission.intro ?? null,
-                prompt: ctx.currentMission.prompt ?? null,
-              }
-            : null,
-        },
-        retrievalResults,
-      });
+      const res = await callAssistantRuntime(
+        buildAssistantRuntimePayload(q, resolvedContext, retrievalResults),
+      );
       setAssistantSession({ matches: retrievalResults, response: res });
     } catch (err) {
       setAssistantSession({
-        error: err instanceof Error ? err.message : "فشل الاتصال بمساعد المنصة",
+        error:
+          err instanceof Error
+            ? err.message
+            : getUiString(locale, "assistant.panel.error.connection"),
         response: null,
       });
     } finally {
@@ -76,38 +67,47 @@ export function AssistantPanel({ compact = false }: Props) {
     }
   }
 
+  const completedLabel = getUiString(locale, "assistant.panel.context.completedValue")
+    .replace("{completed}", String(resolvedContext.completedLessonsCount))
+    .replace("{total}", String(resolvedContext.totalLessonsCount));
+
   return (
-    <div dir="rtl" className="space-y-6">
+    <div dir={dir} className="space-y-6">
       {!compact && (
         <Card className="p-5 space-y-3">
           <div className="flex items-center justify-between">
             <h2 className="text-sm font-semibold text-muted-foreground">
-              سياق المتعلم الحالي
+              {getUiString(locale, "assistant.panel.context.title")}
             </h2>
             <Badge
               variant={ctx.isReady ? "secondary" : "outline"}
               className="text-[10px]"
             >
-              {ctx.isReady ? "جاهز" : "جارٍ التحميل"}
+              {ctx.isReady
+                ? getUiString(locale, "assistant.panel.context.ready")
+                : getUiString(locale, "assistant.panel.context.loading")}
             </Badge>
           </div>
           <dl className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-            <ContextRow label="المسار" value={ctx.currentPath?.title ?? "—"} />
             <ContextRow
-              label="الموديول"
-              value={ctx.currentModule?.title ?? "—"}
+              label={getUiString(locale, "assistant.panel.context.path")}
+              value={resolvedContext.currentPathTitle ?? "—"}
             />
             <ContextRow
-              label="الدرس الحالي"
-              value={ctx.currentLesson?.title ?? "—"}
+              label={getUiString(locale, "assistant.panel.context.module")}
+              value={resolvedContext.currentModuleTitle ?? "—"}
             />
             <ContextRow
-              label="الدروس المكتملة"
-              value={`${ctx.completedLessonsCount} / ${ctx.totalLessonsCount}`}
+              label={getUiString(locale, "assistant.panel.context.lesson")}
+              value={resolvedContext.currentLessonTitle ?? "—"}
             />
             <ContextRow
-              label="الدرس التالي"
-              value={ctx.nextLesson?.title ?? "—"}
+              label={getUiString(locale, "assistant.panel.context.completed")}
+              value={completedLabel}
+            />
+            <ContextRow
+              label={getUiString(locale, "assistant.panel.context.next")}
+              value={resolvedContext.nextLessonTitle ?? "—"}
               full
             />
           </dl>
@@ -116,15 +116,16 @@ export function AssistantPanel({ compact = false }: Props) {
 
       {compact && (
         <div className="text-xs text-muted-foreground border border-border/60 rounded-md px-3 py-2 bg-muted/20">
-          {ctx.currentLesson ? (
+          {resolvedContext.currentLessonTitle ? (
             <>
-              السياق الحالي:{" "}
+              {getUiString(locale, "assistant.panel.context.compactPrefix")}{" "}
               <span className="text-foreground">
-                {ctx.currentModule?.title ?? "—"} / {ctx.currentLesson.title}
+                {resolvedContext.currentModuleTitle ?? "—"} /{" "}
+                {resolvedContext.currentLessonTitle}
               </span>
             </>
           ) : (
-            <>السياق الحالي غير محدد</>
+            <>{getUiString(locale, "assistant.panel.context.compactEmpty")}</>
           )}
         </div>
       )}
@@ -133,10 +134,10 @@ export function AssistantPanel({ compact = false }: Props) {
         <Textarea
           value={query}
           onChange={(e) => setAssistantSession({ query: e.target.value })}
-          placeholder="اسأل مساعد المنصة..."
+          placeholder={getUiString(locale, "assistant.panel.query.placeholder")}
           rows={compact ? 3 : 4}
           className="resize-none text-base"
-          dir="rtl"
+          dir={dir}
         />
         <div className="flex justify-end">
           <Button
@@ -144,7 +145,9 @@ export function AssistantPanel({ compact = false }: Props) {
             variant="hero"
             disabled={loading || !query.trim()}
           >
-            {loading ? "جارٍ الإرسال..." : "إرسال"}
+            {loading
+              ? getUiString(locale, "assistant.panel.submit.loading")
+              : getUiString(locale, "assistant.panel.submit.cta")}
           </Button>
         </div>
       </form>
@@ -159,7 +162,7 @@ export function AssistantPanel({ compact = false }: Props) {
         <Card className="p-5 space-y-4">
           <div className="flex items-center justify-between flex-wrap gap-2">
             <h2 className="text-sm font-semibold text-muted-foreground">
-              إجابة المساعد
+              {getUiString(locale, "assistant.panel.response.title")}
             </h2>
             {!compact && (
               <div className="flex items-center gap-1.5 flex-wrap">
@@ -193,10 +196,13 @@ export function AssistantPanel({ compact = false }: Props) {
           {!compact && matches.length > 0 && (
             <div className="pt-3 border-t border-border space-y-2">
               <h3 className="text-xs font-semibold text-muted-foreground">
-                محتوى مرتبط من المنصة
+                {getUiString(locale, "assistant.panel.response.related")}
               </h3>
               <p className="text-[11px] text-muted-foreground">
-                عدد النتائج: {matches.length}
+                {getUiString(locale, "assistant.panel.response.matchCount").replace(
+                  "{count}",
+                  String(matches.length),
+                )}
               </p>
               <ul className="space-y-3">
                 {matches.map((m, i) => (
@@ -243,7 +249,7 @@ export function AssistantPanel({ compact = false }: Props) {
                 className="mt-2 text-[11px] text-muted-foreground bg-muted/20 p-3 rounded-md overflow-x-auto leading-relaxed"
                 dir="ltr"
               >
-{JSON.stringify(response, null, 2)}
+                {JSON.stringify(response, null, 2)}
               </pre>
             </details>
           )}
@@ -251,7 +257,7 @@ export function AssistantPanel({ compact = false }: Props) {
       )}
 
       <p className="text-xs text-muted-foreground leading-relaxed border-t border-border pt-6">
-        الإجابات تعتمد على محتوى المنصة الحالي وقد تكون محدودة في المراحل الأولى.
+        {getUiString(locale, "assistant.panel.footer.note")}
       </p>
     </div>
   );
