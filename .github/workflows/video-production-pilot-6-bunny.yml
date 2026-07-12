@@ -1,0 +1,271 @@
+name: Video Production Bunny Pilot — 6 Cells
+
+# Six-cell locale pilot (2 lessons × 3 locales) that mirrors the proven
+# lesson-video.yml pipeline: Gemini generation → validation → Bunny Stream
+# upload → immediate per-cell commit of ONLY the runtime mapping. Media
+# binaries (MP4/WAV/etc.) never enter git — they live on Bunny and, for
+# recovery only, as GitHub Actions artifacts.
+#
+# Manual dispatch only. Existing 100-video mappings are never touched.
+
+on:
+  workflow_dispatch:
+    inputs:
+      retry_failed_only:
+        description: "Skip cells whose composite key already exists in src/lib/bunny-videos.ts"
+        required: false
+        type: boolean
+        default: true
+      force_script:
+        description: "Re-generate Gemini script even if cached"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: video-production-pilot-6-bunny
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set.outputs.matrix }}
+    steps:
+      - id: set
+        run: |
+          cat > /tmp/matrix.json <<'JSON'
+          {
+            "include": [
+              { "lesson_id": "analyst-m3-l2-ai-summarization", "locale": "ar-MSA"  },
+              { "lesson_id": "analyst-m3-l2-ai-summarization", "locale": "ar-Gulf" },
+              { "lesson_id": "analyst-m3-l2-ai-summarization", "locale": "en"      },
+              { "lesson_id": "intro-m1-l4-ai-can-cannot",      "locale": "ar-MSA"  },
+              { "lesson_id": "intro-m1-l4-ai-can-cannot",      "locale": "ar-Gulf" },
+              { "lesson_id": "intro-m1-l4-ai-can-cannot",      "locale": "en"      }
+            ]
+          }
+          JSON
+          MATRIX=$(python3 -c 'import json,sys; print(json.dumps(json.load(open("/tmp/matrix.json"))))')
+          echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+          echo "Pilot matrix: $MATRIX"
+
+  build:
+    needs: plan
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix: ${{ fromJson(needs.plan.outputs.matrix) }}
+    concurrency:
+      group: video-production-pilot-6-bunny-${{ matrix.lesson_id }}-${{ matrix.locale }}
+      cancel-in-progress: false
+    env:
+      LID: ${{ matrix.lesson_id }}
+      LOCALE: ${{ matrix.locale }}
+      COMPOSITE_KEY: ${{ matrix.lesson_id }}__${{ matrix.locale }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Skip if already uploaded (retry_failed_only)
+        id: precheck
+        run: |
+          set -euo pipefail
+          if [ "${{ inputs.retry_failed_only }}" != "true" ]; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if grep -qE "^\s*\"${COMPOSITE_KEY}\"\s*:\s*\"[0-9a-f-]{20,}\"" src/lib/bunny-videos.ts; then
+            echo "::notice::${COMPOSITE_KEY} already mapped — skipping."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.precheck.outputs.skip != 'true'
+        with:
+          node-version: "20"
+
+      - uses: oven-sh/setup-bun@v2
+        if: steps.precheck.outputs.skip != 'true'
+        with:
+          bun-version: latest
+
+      - uses: actions/setup-python@v5
+        if: steps.precheck.outputs.skip != 'true'
+        with:
+          python-version: "3.11"
+
+      - name: Install ffmpeg
+        if: steps.precheck.outputs.skip != 'true'
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Python deps
+        if: steps.precheck.outputs.skip != 'true'
+        run: pip install requests google-genai
+
+      - name: Install root deps
+        if: steps.precheck.outputs.skip != 'true'
+        run: bun install --frozen-lockfile
+
+      - name: Install remotion deps
+        if: steps.precheck.outputs.skip != 'true'
+        run: cd remotion && bun install
+
+      - name: Verify official Masaarat logo present
+        if: steps.precheck.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          for p in public/brand/masaarat-logo.svg public/brand/masaarat-logo.png public/masaarat-logo.svg public/masaarat-logo.png; do
+            if [ -f "$p" ]; then echo "[logo] found $p"; exit 0; fi
+          done
+          echo "::warning::Official Masaarat logo not located at expected paths — renderer will use registered brand asset."
+
+      - name: Generate localized video (Gemini → Remotion)
+        if: steps.precheck.outputs.skip != 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          LESSON_LOCALE: ${{ matrix.locale }}
+        run: |
+          set -euo pipefail
+          FORCE=""
+          if [ "${{ inputs.force_script }}" = "true" ]; then FORCE="--force-script"; fi
+          mkdir -p "public/lessons/intro"
+          echo "::group::Build ${LID} [${LOCALE}]"
+          # Proven builder from lesson-video.yml; LESSON_LOCALE selects the
+          # localized script/voice/captions when the builder supports it.
+          python remotion/scripts/build-lesson.py "$LID" $FORCE
+          echo "::endgroup::"
+
+          # Locale-tagged canonical MP4 path used by the uploader.
+          SRC="public/lessons/intro/${LID}.mp4"
+          DST="public/lessons/intro/${LID}__${LOCALE}.mp4"
+          if [ -f "$SRC" ] && [ ! -f "$DST" ]; then
+            mv "$SRC" "$DST"
+          fi
+          test -f "$DST"
+
+      - name: Validate media (size + duration + audio track)
+        if: steps.precheck.outputs.skip != 'true'
+        run: |
+          set -euo pipefail
+          MP4="public/lessons/intro/${LID}__${LOCALE}.mp4"
+          test -f "$MP4"
+          BYTES=$(stat -c%s "$MP4")
+          if [ "$BYTES" -lt 200000 ]; then
+            echo "::error::Media too small ($BYTES bytes) — likely a broken render"
+            exit 1
+          fi
+          DUR=$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 "$MP4")
+          echo "duration=$DUR seconds, size=$BYTES bytes"
+          python3 -c "import sys; d=float('${DUR}' or 0); sys.exit(0 if d > 5 else 1)" \
+            || { echo "::error::Duration ${DUR}s too short"; exit 1; }
+          AUDIO=$(ffprobe -v error -select_streams a -show_entries stream=codec_type -of csv=p=0 "$MP4" || true)
+          if [ -z "$AUDIO" ]; then
+            echo "::error::No audio stream in ${MP4}"
+            exit 1
+          fi
+          mkdir -p "/tmp/${COMPOSITE_KEY}"
+          cat > "/tmp/${COMPOSITE_KEY}/validation.json" <<EOF
+          { "lesson_id": "${LID}", "locale": "${LOCALE}", "bytes": ${BYTES}, "duration_sec": ${DUR}, "audio": "${AUDIO}" }
+          EOF
+
+      - name: Upload to Bunny Stream (locale-aware)
+        if: steps.precheck.outputs.skip != 'true'
+        env:
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          MP4_PATH: public/lessons/intro/${{ matrix.lesson_id }}__${{ matrix.locale }}.mp4
+        run: |
+          set -euo pipefail
+          if [ -z "$BUNNY_STREAM_API_KEY" ] || [ -z "$BUNNY_STREAM_LIBRARY_ID" ]; then
+            echo "::error::Missing BUNNY_STREAM_API_KEY or BUNNY_STREAM_LIBRARY_ID"
+            exit 1
+          fi
+          python .github/scripts/upload_bunny_locale.py
+
+      - name: Upload evidence artifacts (non-binary + logs)
+        if: always() && steps.precheck.outputs.skip != 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidence-${{ matrix.lesson_id }}__${{ matrix.locale }}
+          path: |
+            /tmp/${{ matrix.lesson_id }}__${{ matrix.locale }}/
+            /tmp/bunny-guid-${{ matrix.lesson_id }}__${{ matrix.locale }}.txt
+          if-no-files-found: ignore
+
+      - name: Upload MP4 recovery artifact (Bunny is source of truth)
+        if: success() && steps.precheck.outputs.skip != 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: mp4-${{ matrix.lesson_id }}__${{ matrix.locale }}
+          path: public/lessons/intro/${{ matrix.lesson_id }}__${{ matrix.locale }}.mp4
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Commit runtime mapping (rebase-safe, per cell, no binaries)
+        if: success() && steps.precheck.outputs.skip != 'true'
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Preserve the freshly-written registry so we can re-apply on top of origin.
+          SAVE=$(mktemp -d)
+          cp src/lib/bunny-videos.ts "$SAVE/bunny-videos.ts"
+
+          PUSHED=0
+          for i in 1 2 3 4 5 6 7 8 9 10; do
+            git fetch origin "$BRANCH"
+            git reset --hard "origin/$BRANCH"
+
+            # Re-apply ONLY the composite-key entry for this (lesson, locale).
+            LID="${COMPOSITE_KEY}" python .github/scripts/merge_bunny_entry.py "$SAVE/bunny-videos.ts"
+
+            # HARD GUARD: never commit media/binary artifacts.
+            git rm -f --ignore-unmatch \
+              "public/lessons/intro/${LID}__${LOCALE}.mp4" \
+              "public/lessons/intro/${LID}.mp4" 2>/dev/null || true
+
+            git add src/lib/bunny-videos.ts
+
+            # Verify staged set contains ONLY the mapping file.
+            STAGED=$(git diff --cached --name-only | tr '\n' ' ')
+            echo "[commit] staged: $STAGED"
+            for f in $STAGED; do
+              case "$f" in
+                src/lib/bunny-videos.ts) ;;
+                *) echo "::error::Refusing to commit non-mapping file: $f"; exit 1 ;;
+              esac
+            done
+
+            if git diff --cached --quiet; then
+              echo "Nothing to commit for ${COMPOSITE_KEY} (already on $BRANCH)."
+              PUSHED=1
+              break
+            fi
+
+            git commit -m "build(video): ${LID} [${LOCALE}] → Bunny mapping"
+            if git push origin "HEAD:$BRANCH"; then
+              PUSHED=1
+              break
+            fi
+            echo "push attempt $i failed for ${COMPOSITE_KEY}, retrying..."
+            sleep $((RANDOM % 15 + 5))
+          done
+          if [ "$PUSHED" -ne 1 ]; then
+            echo "::error::Failed to push mapping for ${COMPOSITE_KEY} after 10 attempts"
+            exit 1
+          fi
