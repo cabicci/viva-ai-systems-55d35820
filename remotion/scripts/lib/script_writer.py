@@ -386,6 +386,10 @@ def generate_scenes_cached(lesson_id, blocks, title, cache_path,
     if os.path.exists(cache_path):
         with open(cache_path) as f:
             scenes = json.load(f)
+        if locale is None:
+            # Legacy Egyptian: strict validate WITHOUT normalization.
+            _validate_only_legacy(scenes, "cache", cache_path)
+            return scenes
         normalized, repairs = _normalize_and_validate(
             scenes, locale, "cache", cache_path,
             lesson_title=title, next_lesson_title=next_lesson_title,
