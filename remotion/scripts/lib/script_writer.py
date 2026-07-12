@@ -444,7 +444,16 @@ def generate_scenes_cached(lesson_id, blocks, title, cache_path,
             + "\n  - ".join(last_violations or ["(unknown)"])
         )
 
-    # Normalize BEFORE strict validation and BEFORE caching.
+    if locale is None:
+        # Legacy Egyptian: strict validate WITHOUT normalization, then cache
+        # the raw generated scenes byte-equivalent to pre-normalizer behavior.
+        _validate_only_legacy(scenes, "gemini", cache_path)
+        os.makedirs(os.path.dirname(cache_path), exist_ok=True)
+        with open(cache_path, "w") as f:
+            json.dump(scenes, f, ensure_ascii=False, indent=2)
+        return scenes
+
+    # Locale-aware: normalize BEFORE strict validation and BEFORE caching.
     normalized, _repairs = _normalize_and_validate(
         scenes, locale, "gemini", cache_path,
         lesson_title=title, next_lesson_title=next_lesson_title,
