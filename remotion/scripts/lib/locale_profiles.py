@@ -166,6 +166,7 @@ class LocaleProfile:
     egyptian_phonetic_rewrite: bool     # True only for legacy Egyptian mode
     focus_note_label: str               # label prepended to TTS focus notes
     fallback_bullets_labels: dict       # locale-safe strings for ScreenshotCard→BulletsCard fallback
+    presentation_defaults: dict         # locale-safe strings used by scene_normalizer
 
 
 # ---------------------------------------------------------------------------
@@ -176,6 +177,72 @@ _LEGACY_FALLBACK = {"default_title": "الفكرة", "default_bullet": "خد ا�
 _AR_MSA_FALLBACK = {"default_title": "الفكرة الرئيسية", "default_bullet": "احتفظ بهذه الفكرة"}
 _AR_GULF_FALLBACK = {"default_title": "الفكرة", "default_bullet": "خذ هالفكرة معاك"}
 _EN_FALLBACK = {"default_title": "Key idea", "default_bullet": "Take this idea with you"}
+
+
+# ---------------------------------------------------------------------------
+# Presentation-only defaults used by scene_normalizer to fill missing
+# card fields. MUST be locale-safe: no cross-locale leakage.
+#   - Legacy Egyptian: original hardcoded strings.
+#   - ar-MSA: pure MSA, no dialect markers.
+#   - ar-Gulf: Gulf-flavored, no strict Egyptian markers.
+#   - en: pure Latin/English.
+# ---------------------------------------------------------------------------
+_LEGACY_PRESENTATION = {
+    "title_chip": "مقدمة",
+    "title": "الدرس",
+    "highlight": "الفكرة",
+    "subtitle": "ابدأ معانا",
+    "concept_tag": "مفهوم",
+    "bullets_title": "الفكرة",
+    "default_bullet": "خد الفكرة دي معاك",
+    "screenshot_eyebrow": "شوف",
+    "cta_eyebrow": "دورك دلوقتي",
+    "cta_title": "خلينا نكمل",
+    "cta_highlight": "الدرس الجاي",
+    "cta_tagline": "نتقابل في الدرس الجاي",
+}
+_AR_MSA_PRESENTATION = {
+    "title_chip": "مقدمة",
+    "title": "الدرس",
+    "highlight": "الفكرة",
+    "subtitle": "لنبدأ",
+    "concept_tag": "مفهوم",
+    "bullets_title": "الفكرة الرئيسية",
+    "default_bullet": "احتفظ بهذه الفكرة",
+    "screenshot_eyebrow": "لقطة",
+    "cta_eyebrow": "الخطوة التالية",
+    "cta_title": "لنكمل",
+    "cta_highlight": "الدرس التالي",
+    "cta_tagline": "نلتقي في الدرس التالي",
+}
+_AR_GULF_PRESENTATION = {
+    "title_chip": "مقدمة",
+    "title": "الدرس",
+    "highlight": "الفكرة",
+    "subtitle": "خل نبدأ",
+    "concept_tag": "مفهوم",
+    "bullets_title": "الفكرة",
+    "default_bullet": "خذ هالفكرة معاك",
+    "screenshot_eyebrow": "شوف",
+    "cta_eyebrow": "الحين دورك",
+    "cta_title": "نكمل",
+    "cta_highlight": "الدرس الجاي",
+    "cta_tagline": "نشوفك بالدرس الجاي",
+}
+_EN_PRESENTATION = {
+    "title_chip": "INTRO",
+    "title": "This lesson",
+    "highlight": "Key idea",
+    "subtitle": "Let's begin.",
+    "concept_tag": "concept",
+    "bullets_title": "Key ideas",
+    "default_bullet": "Take this idea with you",
+    "screenshot_eyebrow": "LOOK",
+    "cta_eyebrow": "NEXT",
+    "cta_title": "Keep going",
+    "cta_highlight": "Next lesson",
+    "cta_tagline": "See you in the next lesson.",
+}
 
 
 LEGACY_EGYPTIAN = LocaleProfile(
