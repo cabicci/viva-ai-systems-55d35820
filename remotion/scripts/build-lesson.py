@@ -115,13 +115,17 @@ def copy_assets_to_remotion_public(asset_map):
             print(f"  copied asset -> remotion/public/lessons/{rel}")
 
 
-def write_scenes_module(lesson_id, scenes, frames):
+def write_scenes_module(lesson_id, scenes, frames, locale=None):
     out_dir = os.path.join(REPO_ROOT, "remotion/src/lessons-generated")
     os.makedirs(out_dir, exist_ok=True)
     # Guard: if a ScreenshotCard references an image that doesn't exist in
     # remotion/public/, rewrite it to a safe BulletsCard so the render
     # doesn't 404. This catches Gemini hallucinations (e.g. diagram blocks
-    # turned into ScreenshotCard with a made-up `src`).
+    # turned into ScreenshotCard with a made-up `src`). Fallback strings
+    # MUST match the locale — legacy Egyptian keeps its exact original text,
+    # ar-MSA / ar-Gulf / en use their own labels (no Egyptian leakage).
+    profile = _get_locale_profile(locale)
+    fb = profile.fallback_bullets_labels
     public_root = os.path.join(REPO_ROOT, "remotion/public")
     for s in scenes:
         v = s.get("visual") or {}
@@ -130,15 +134,15 @@ def write_scenes_module(lesson_id, scenes, frames):
             full = os.path.join(public_root, src) if src else ""
             valid_ext = src.lower().endswith((".jpg", ".jpeg", ".png", ".webp"))
             if not src or not valid_ext or not os.path.exists(full):
-                print(f"  [guard] ScreenshotCard src missing/invalid ({src!r}) — rewriting to BulletsCard")
+                print(f"  [guard] ScreenshotCard src missing/invalid ({src!r}) — rewriting to BulletsCard (locale={locale or 'legacy'})")
                 caption = (v.get("caption") or v.get("title") or "").strip()
                 # split caption into short bullets on sentence delimiters
                 parts = [p.strip() for p in re.split(r"[.،؛\n]+", caption) if p.strip()]
                 if not parts:
-                    parts = [caption or v.get("eyebrow") or "خد الفكرة دي معاك"]
+                    parts = [caption or v.get("eyebrow") or fb["default_bullet"]]
                 s["card"] = "BulletsCard"
                 s["visual"] = {
-                    "title": v.get("title") or v.get("eyebrow") or "الفكرة",
+                    "title": v.get("title") or v.get("eyebrow") or fb["default_title"],
                     "bullets": parts[:4],
                 }
     visuals = []
