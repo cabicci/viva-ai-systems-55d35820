@@ -44,15 +44,18 @@ def normalize_lesson_id(raw):
     return raw
 
 
-def render_and_mux(lid):
+def render_and_mux(build_id, mp4_stem=None):
+    """Render + mux. `build_id` = composite identity used for /tmp paths and
+    the Remotion registry entry. `mp4_stem` = filename stem under
+    public/lessons/intro/ (defaults to build_id, keeping legacy behavior)."""
     t0 = time.time()
     print("[render] Rendering Remotion silent MP4")
     renderer = os.path.join(HERE, "render-lesson.mjs")
-    render_log = f"/tmp/{lid}/render-lesson.log"
+    render_log = f"/tmp/{build_id}/render-lesson.log"
     os.makedirs(os.path.dirname(render_log), exist_ok=True)
     with open(render_log, "w") as f:
         proc = subprocess.Popen(
-            ["bun", renderer, lid],
+            ["bun", renderer, build_id],
             cwd=os.path.join(REPO_ROOT, "remotion"),
             text=True,
             stdout=subprocess.PIPE,
@@ -71,13 +74,14 @@ def render_and_mux(lid):
 
     t1 = time.time()
     print("[mux] Muxing audio + video")
-    silent = f"/tmp/{lid}/remotion-silent.mp4"
-    master = f"/tmp/{lid}/audio/master.mp3"
+    silent = f"/tmp/{build_id}/remotion-silent.mp4"
+    master = f"/tmp/{build_id}/audio/master.mp3"
     if not os.path.exists(master):
         raise FileNotFoundError(f"missing audio master: {master}")
     out_dir = os.path.join(REPO_ROOT, "public/lessons/intro")
     os.makedirs(out_dir, exist_ok=True)
-    out = os.path.join(out_dir, f"{lid}.mp4")
+    stem = mp4_stem or build_id
+    out = os.path.join(out_dir, f"{stem}.mp4")
     subprocess.check_call(
         ["ffmpeg", "-y", "-i", silent, "-i", master,
          "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", out])
