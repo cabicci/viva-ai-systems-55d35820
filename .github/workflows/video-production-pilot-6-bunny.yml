@@ -119,7 +119,7 @@ jobs:
           test -f "/tmp/${COMPOSITE_KEY}/evidence.json"
           echo "package_sha256=$(python3 -c 'import json; print(json.load(open("/tmp/'${COMPOSITE_KEY}'/evidence.json"))["package_sha256"])')" >> "$GITHUB_OUTPUT"
           echo "content_fp=$(python3 -c 'import json; print(json.load(open("/tmp/'${COMPOSITE_KEY}'/evidence.json"))["content_fingerprint_sha256"])')" >> "$GITHUB_OUTPUT"
-          echo "voice=$(python3 -c 'import json; print(json.load(open("/tmp/'${COMPOSITE_KEY}'/evidence.json"))["selected_voice"])')" >> "$GITHUB_OUTPUT"
+          echo "script_profile=$(python3 -c 'import json; print(json.load(open("/tmp/'${COMPOSITE_KEY}'/evidence.json"))["script_prompt_profile"])')" >> "$GITHUB_OUTPUT"
 
       # ---------------------------------------------------------------
       # 3. Retry precheck — mapping present AND Bunny GUID ready.
