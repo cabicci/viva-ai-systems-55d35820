@@ -587,8 +587,8 @@ class RendererCliTests(unittest.TestCase):
 
     def test_renderer_accepts_two_args_and_uses_workid_for_tmp(self):
         import os as _os
-        HERE_ = _os.path.dirname(_os.path.abspath(__file__))
-        renderer = _os.path.join(HERE_, "..", "render-lesson.mjs")
+        HERE_ = os.path.dirname(os.path.abspath(__file__))
+        renderer = os.path.join(HERE_, "..", "render-lesson.mjs")
         src = open(renderer).read()
         self.assertIn("process.argv[2]", src)
         self.assertIn("process.argv[3]", src)
@@ -607,9 +607,9 @@ class LegacyBypassTests(unittest.TestCase):
         import tempfile, json as _json
         self._tmp = tempfile.mkdtemp(prefix="legacy_bypass_")
         # Simulate the composite subdir layout used in production (/tmp/<composite>/).
-        self._composite_dir = _os.path.join(self._tmp, "legacy-lid")
-        _os.makedirs(self._composite_dir, exist_ok=True)
-        self._cache = _os.path.join(self._composite_dir, "scenes.json")
+        self._composite_dir = os.path.join(self._tmp, "legacy-lid")
+        os.makedirs(self._composite_dir, exist_ok=True)
+        self._cache = os.path.join(self._composite_dir, "scenes.json")
         import script_writer  # noqa: F401
         self.script_writer = script_writer
         self._json = _json
@@ -638,7 +638,7 @@ class LegacyBypassTests(unittest.TestCase):
         self._json.dump(scenes, open(self._cache, "w"), ensure_ascii=False)
         with self.assertRaises(RuntimeError):
             self.script_writer._validate_only_legacy(scenes, "cache", self._cache)
-        self.assertFalse(_os.path.exists(self._cache))
+        self.assertFalse(os.path.exists(self._cache))
 
     def test_invalid_legacy_accent_not_repaired(self):
         scenes = self._legacy_valid()
@@ -648,7 +648,7 @@ class LegacyBypassTests(unittest.TestCase):
             self.script_writer._validate_only_legacy(scenes, "cache", self._cache)
         self.assertIn("accent", str(ctx.exception))
         self.assertEqual(scenes[0]["accent"], "not-a-real-accent")
-        self.assertFalse(_os.path.exists(self._cache))
+        self.assertFalse(os.path.exists(self._cache))
 
     def test_valid_legacy_scenes_byte_equivalent(self):
         scenes = self._legacy_valid()
@@ -657,7 +657,7 @@ class LegacyBypassTests(unittest.TestCase):
         returned = self.script_writer._validate_only_legacy(scenes, "cache", self._cache)
         self.assertIs(returned, scenes)
         self.assertEqual(scenes, original)
-        self.assertTrue(_os.path.exists(self._cache))
+        self.assertTrue(os.path.exists(self._cache))
 
     def test_invalid_legacy_cached_deletes_cache_via_generate_scenes_cached(self):
         scenes = self._legacy_valid()
@@ -669,7 +669,7 @@ class LegacyBypassTests(unittest.TestCase):
                 cache_path=self._cache, has_quiz=False,
                 next_lesson_title=None, locale=None,
             )
-        self.assertFalse(_os.path.exists(self._cache))
+        self.assertFalse(os.path.exists(self._cache))
 
     def test_valid_legacy_cached_via_generate_scenes_cached_byte_equivalent(self):
         scenes = self._legacy_valid()
