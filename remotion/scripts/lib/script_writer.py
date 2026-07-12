@@ -13,6 +13,11 @@ import time
 import urllib.request
 import urllib.error
 
+try:
+    from .locale_profiles import get_profile as _get_locale_profile  # package import
+except ImportError:  # sys.path import (sibling)
+    from locale_profiles import get_profile as _get_locale_profile
+
 
 # Default to Flash for speed; fall back to Pro on failure or grounding violations.
 MODEL_FAST = "gemini-2.5-flash"
@@ -203,13 +208,25 @@ def lint_scenes(scenes, has_quiz, next_lesson_title):
     return violations
 
 
+def _resolve_system_prompt(locale):
+    """Legacy Egyptian prompt when locale is falsy; otherwise the locale profile's."""
+    profile = _get_locale_profile(locale)
+    if profile.locale == "__legacy_egyptian__":
+        return SYSTEM_PROMPT, profile.script_prompt_profile
+    return profile.script_system_prompt, profile.script_prompt_profile
+
+
 def generate_scenes(lesson_id, blocks, title=None, has_quiz=False,
-                    next_lesson_title=None, extra_user_note="", model=None):
+                    next_lesson_title=None, extra_user_note="", model=None,
+                    locale=None):
     keys = _collect_gemini_keys()
     model = model or MODEL_FAST
+    system_prompt, prompt_profile = _resolve_system_prompt(locale)
 
     user_msg = (
         f"lesson_id: {lesson_id}\n"
+        f"locale: {locale or 'legacy-egyptian'}\n"
+        f"script_prompt_profile: {prompt_profile}\n"
         f"title: {title or ''}\n"
         f"context_flags:\n"
         f"  has_quiz: {'true' if has_quiz else 'false'}\n"
@@ -218,10 +235,10 @@ def generate_scenes(lesson_id, blocks, title=None, has_quiz=False,
         + json.dumps(blocks, ensure_ascii=False, indent=2)
     )
     if extra_user_note:
-        user_msg += f"\n\n=== مراجعة إجبارية ===\n{extra_user_note}"
+        user_msg += f"\n\n=== Revision required ===\n{extra_user_note}"
 
     body = {
-        "systemInstruction": {"parts": [{"text": SYSTEM_PROMPT}]},
+        "systemInstruction": {"parts": [{"text": system_prompt}]},
         "contents": [{"role": "user", "parts": [{"text": user_msg}]}],
         "tools": [{"functionDeclarations": [FUNCTION_DECLARATION]}],
         "toolConfig": {
@@ -295,7 +312,7 @@ def generate_scenes(lesson_id, blocks, title=None, has_quiz=False,
 
 
 def generate_scenes_cached(lesson_id, blocks, title, cache_path,
-                           has_quiz=False, next_lesson_title=None):
+                           has_quiz=False, next_lesson_title=None, locale=None):
     if os.path.exists(cache_path):
         with open(cache_path) as f:
             return json.load(f)
@@ -310,8 +327,9 @@ def generate_scenes_cached(lesson_id, blocks, title, cache_path,
         note = ""
         if last_violations:
             note = (
-                "السكريبت السابق كسر قاعدة الـ Grounding. صلّح المخالفات دي "
-                "وأعد التوليد بالكامل:\n- " + "\n- ".join(last_violations)
+                "Previous script violated the Grounding rules. Fix the violations "
+                "below and regenerate the whole script:\n- "
+                + "\n- ".join(last_violations)
             )
         t0 = time.time()
         try:
@@ -321,6 +339,7 @@ def generate_scenes_cached(lesson_id, blocks, title, cache_path,
                 next_lesson_title=next_lesson_title,
                 extra_user_note=note,
                 model=model,
+                locale=locale,
             )
         except Exception as e:
             print(f"      [script:{label}] error after {time.time()-t0:.1f}s: {e}")
