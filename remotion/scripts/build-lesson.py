@@ -23,6 +23,9 @@ from localized_package_adapter import (  # noqa: E402
     package_to_blocks as _package_to_blocks,
     resolve_next_lesson_title as _resolve_next_lesson_title,
 )
+from integrity_validator import (  # noqa: E402
+    assert_localized_scene_integrity as _assert_localized_scene_integrity,
+)
 
 FPS = 30
 TAIL_SILENCE_FRAMES = 15
@@ -370,8 +373,20 @@ def main():
             has_quiz=has_quiz, next_lesson_title=next_lesson_title,
             locale=locale,
         )
+        # Locale propagation: stamp every scene before integrity / TTS / render.
+        for scene in scenes:
+            scene["locale"] = locale
         print(f"      [script] total {time.time()-t_script:.1f}s")
         preview_script(scenes, composite)
+
+        # Fail-closed integrity gate — before any TTS or Remotion render.
+        _assert_localized_scene_integrity(
+            lesson_id=lid,
+            source_package_locale=locale,
+            scenes=scenes,
+            renderer_locale=locale,
+        )
+        print(f"[locale:{locale}] Integrity gate passed ({len(scenes)} scenes)")
 
         if args.preview_only:
             print("\nPreview-only mode; stopping.")

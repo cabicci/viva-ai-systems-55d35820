@@ -75,6 +75,7 @@ export {
   brandTaglineLabel,
   presentationDirection,
   presentationTextAlign,
+  resolvePresentationChrome,
 } from "./lesson-cards/presentationChrome";
 
 export const rtl: React.CSSProperties = {
