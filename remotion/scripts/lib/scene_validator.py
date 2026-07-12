@@ -3,22 +3,21 @@
 Runs immediately after Gemini script generation OR cache load, and BEFORE
 TTS synthesis, Remotion rendering, Bunny upload, or any mapping commit.
 
-Checks all learner-visible strings (spoken, focus, and every string inside
-visual — title, subtitle, chip, highlight, term, definition, tag, intro,
-big, outro, bullets[], left.label/body, right.label/body, eyebrow, tagline,
-caption) for:
-
+Checks:
     * non-empty scenes list
-    * supported card + non-empty spoken text + complete visual data
-    * voice restricted to Charon or Aoede
-    * locale-specific script leakage:
+    * card in ALLOWED_CARDS
+    * accent in ALLOWED_ACCENTS (mint, lavender, peach, yellow, pink, mintDeep)
+    * voice in ALLOWED_VOICES (Charon, Aoede)
+    * non-empty spoken text
+    * complete visual contract per card type (every required field non-empty)
+    * locale-specific script leakage with Arabic token boundaries:
         en      → must contain Latin text and NO Arabic-script leakage
-        ar-MSA  → must be Arabic; rejects clear Egyptian AND Gulf dialect markers
-        ar-Gulf → must be Arabic; rejects clear Egyptian dialect markers
-        legacy Egyptian (locale=None) → no locale content check (preserves existing behavior)
+        ar-MSA  → must be Arabic; rejects unambiguous Egyptian AND Gulf dialect markers
+        ar-Gulf → must be Arabic; rejects unambiguous Egyptian dialect markers
+        legacy Egyptian (locale=None) → no locale content check
 
-Failure returns a non-empty list of violation strings; callers MUST refuse to
-proceed. No network, no paid API, no filesystem writes.
+No network, no paid API, no filesystem writes (except optional evidence file
+under /tmp/<composite>/).
 """
 from __future__ import annotations
 import re
@@ -28,38 +27,50 @@ ALLOWED_CARDS = {
     "TitleCard", "ConceptCard", "BigStatCard", "BulletsCard",
     "CompareCard", "CTACard", "ScreenshotCard",
 }
+ALLOWED_ACCENTS = {"mint", "lavender", "peach", "yellow", "pink", "mintDeep"}
 ALLOWED_VOICES = {"Charon", "Aoede"}
 
 # Card → tuple of visual keys that MUST be present and non-empty.
 _REQUIRED_VISUAL: dict[str, tuple[str, ...]] = {
     "TitleCard":      ("chip", "title", "highlight", "subtitle"),
-    "ConceptCard":    ("term", "definition"),
+    "ConceptCard":    ("term", "definition", "tag"),
     "BigStatCard":    ("intro", "big", "outro"),
     "BulletsCard":    ("title", "bullets"),
     "CompareCard":    ("title", "left", "right"),
-    "ScreenshotCard": ("title", "caption", "src"),
-    "CTACard":        ("title",),
+    "ScreenshotCard": ("eyebrow", "title", "caption", "src"),
+    "CTACard":        ("eyebrow", "title", "highlight", "tagline"),
 }
 
 _ARABIC_RE = re.compile(r"[\u0600-\u06FF]")
 _LATIN_RE = re.compile(r"[A-Za-z]")
 
-# Unambiguous Egyptian Cairene dialect markers (surface tokens).
-# Deliberately conservative — every entry is characteristic of Egyptian
-# and would NEVER appear in MSA. Not exhaustive; false-negatives are
-# acceptable, false-positives (rejecting valid MSA/Gulf) are not.
+# Arabic token-boundary helpers: match a marker only when it is NOT
+# glued to another Arabic letter on either side, so substrings inside
+# legitimate MSA words never trigger a false positive.
+_AR_BOUND_L = r"(?<![\u0600-\u06FF])"
+_AR_BOUND_R = r"(?![\u0600-\u06FF])"
+
+
+def _mk_ar_marker(word: str) -> re.Pattern[str]:
+    return re.compile(_AR_BOUND_L + word + _AR_BOUND_R)
+
+
+# Unambiguous Egyptian Cairene dialect markers.
+# NOTE: `يبقى` was removed — valid MSA verb ("remains").
 _EGYPTIAN_MARKERS = [
-    r"إيه", r"إزاي", r"ازاي", r"دلوقتي",
-    r"عايز", r"عاوز", r"مفيش",
-    r"علشان", r"عشان", r"يبقى",
+    "إيه", "إزاي", "ازاي", "دلوقتي",
+    "عايز", "عاوز", "مفيش",
+    "علشان", "عشان",
 ]
 # Gulf-only markers (rejected in MSA; allowed in ar-Gulf).
+# NOTE: `أبي` was removed — collides with valid MSA "my father".
+# `أبغى` is retained as the unambiguous Gulf variant.
 _GULF_MARKERS = [
-    r"وش", r"ليش", r"أبغى", r"أبي", r"الحين", r"شلون",
+    "وش", "ليش", "أبغى", "الحين", "شلون",
 ]
 
-_EGY_PATTERNS = [re.compile(p) for p in _EGYPTIAN_MARKERS]
-_GULF_PATTERNS = [re.compile(p) for p in _GULF_MARKERS]
+_EGY_PATTERNS = [_mk_ar_marker(w) for w in _EGYPTIAN_MARKERS]
+_GULF_PATTERNS = [_mk_ar_marker(w) for w in _GULF_MARKERS]
 
 
 def _walk_strings(value: Any, out: list[str]) -> None:
@@ -116,6 +127,14 @@ def validate_scenes(scenes: Any, locale: str | None = None) -> list[str]:
         card = s.get("card")
         if card not in ALLOWED_CARDS:
             errors.append(f"Scene {i}: unsupported card {card!r}")
+
+        accent = s.get("accent")
+        if accent is None or (isinstance(accent, str) and not accent.strip()):
+            errors.append(f"Scene {i}: accent is missing/empty")
+        elif accent not in ALLOWED_ACCENTS:
+            errors.append(
+                f"Scene {i}: accent {accent!r} not in {sorted(ALLOWED_ACCENTS)}"
+            )
 
         voice = s.get("voice")
         if voice not in ALLOWED_VOICES:
@@ -208,6 +227,5 @@ def write_locale_validation_evidence(
         with open(os.path.join(out_dir, "locale-validation.json"), "w") as f:
             json.dump(record, f, ensure_ascii=False, indent=2)
     except OSError:
-        # Evidence writing must never mask a validation result.
         pass
     return record

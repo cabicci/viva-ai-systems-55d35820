@@ -13,7 +13,7 @@ LIB = os.path.abspath(os.path.join(HERE, "..", "lib"))
 if LIB not in sys.path:
     sys.path.insert(0, LIB)
 
-from scene_validator import validate_scenes  # noqa: E402
+from scene_validator import validate_scenes, ALLOWED_ACCENTS  # noqa: E402
 from locale_profiles import get_profile, LEGACY_EGYPTIAN  # noqa: E402
 
 
@@ -206,5 +206,124 @@ class LocaleProfileFallbackLabelsTests(unittest.TestCase):
         self.assertRegex(en["default_bullet"], r"[A-Za-z]")
 
 
+def _concept_scene(**visual_overrides):
+    v = {"term": "AI", "definition": "Artificial intelligence.", "tag": "concept"}
+    v.update(visual_overrides)
+    return {
+        "card": "ConceptCard", "accent": "lavender", "voice": "Charon",
+        "spoken": "AI stands for artificial intelligence.", "focus": "AI",
+        "visual": v,
+    }
+
+
+def _screenshot_scene(**visual_overrides):
+    v = {"eyebrow": "DEMO", "title": "The UI", "caption": "See the button.", "src": "/x.png"}
+    v.update(visual_overrides)
+    return {
+        "card": "ScreenshotCard", "accent": "peach", "voice": "Aoede",
+        "spoken": "Look at this screen.", "focus": "screen",
+        "visual": v,
+    }
+
+
+def _cta_scene(**visual_overrides):
+    v = {"eyebrow": "NEXT", "title": "Keep going", "highlight": "Lesson 2", "tagline": "See you next time."}
+    v.update(visual_overrides)
+    return {
+        "card": "CTACard", "accent": "mintDeep", "voice": "Charon",
+        "spoken": "See you in the next lesson.", "focus": "next",
+        "visual": v,
+    }
+
+
+class AccentAndFullVisualContractTests(unittest.TestCase):
+    def test_missing_accent_fails(self):
+        s = _valid_en_scenes()
+        del s[0]["accent"]
+        errs = validate_scenes(s, locale="en")
+        self.assertTrue(any("accent is missing" in e for e in errs), errs)
+
+    def test_unsupported_accent_fails(self):
+        s = _valid_en_scenes()
+        s[0]["accent"] = "crimson"
+        errs = validate_scenes(s, locale="en")
+        self.assertTrue(any("accent 'crimson' not in" in e for e in errs), errs)
+
+    def test_every_allowed_accent_passes(self):
+        for a in ALLOWED_ACCENTS:
+            s = _valid_en_scenes()
+            s[0]["accent"] = a
+            s[1]["accent"] = a
+            self.assertEqual(validate_scenes(s, locale="en"), [], f"accent={a}")
+
+    def test_concept_card_missing_tag_fails(self):
+        s = [_concept_scene(tag="")]
+        errs = validate_scenes(s, locale="en")
+        self.assertTrue(any("visual.tag" in e for e in errs), errs)
+
+    def test_screenshot_card_missing_eyebrow_fails(self):
+        s = [_screenshot_scene(eyebrow="")]
+        errs = validate_scenes(s, locale="en")
+        self.assertTrue(any("visual.eyebrow" in e for e in errs), errs)
+
+    def test_cta_card_missing_eyebrow_highlight_tagline_fail(self):
+        for key in ("eyebrow", "highlight", "tagline"):
+            s = [_cta_scene(**{key: ""})]
+            errs = validate_scenes(s, locale="en")
+            self.assertTrue(
+                any(f"visual.{key}" in e for e in errs),
+                f"expected visual.{key} missing, got {errs}",
+            )
+
+
+class MSAFalsePositiveFixTests(unittest.TestCase):
+    def test_msa_yabqa_is_valid(self):
+        # "يبقى" is valid MSA ("remains"); must NOT be flagged.
+        s = _valid_msa_scenes()
+        s[0]["spoken"] = "الذكاء الاصطناعي يبقى مجالًا سريع التطور."
+        self.assertEqual(validate_scenes(s, locale="ar-MSA"), [])
+
+    def test_msa_abi_my_father_is_valid(self):
+        # "أبي" as MSA "my father" must not be flagged.
+        s = _valid_msa_scenes()
+        s[0]["spoken"] = "علّمني أبي حبّ العلم منذ الصغر."
+        self.assertEqual(validate_scenes(s, locale="ar-MSA"), [])
+
+    def test_msa_still_rejects_unambiguous_gulf_marker(self):
+        s = _valid_msa_scenes()
+        s[0]["spoken"] = "شلون نبدأ الدرس اليوم؟"
+        errs = validate_scenes(s, locale="ar-MSA")
+        self.assertTrue(any("dialect markers not allowed in MSA" in e for e in errs), errs)
+
+    def test_msa_still_rejects_unambiguous_egyptian_marker(self):
+        s = _valid_msa_scenes()
+        s[0]["spoken"] = "دلوقتي نبدأ الدرس."
+        errs = validate_scenes(s, locale="ar-MSA")
+        self.assertTrue(any("dialect markers not allowed in MSA" in e for e in errs), errs)
+
+    def test_gulf_still_rejects_unambiguous_egyptian_marker(self):
+        s = _valid_gulf_scenes()
+        s[0]["spoken"] = "عايز أشرح لك الدرس."
+        errs = validate_scenes(s, locale="ar-Gulf")
+        self.assertTrue(any("Egyptian dialect markers not allowed" in e for e in errs), errs)
+
+    def test_marker_substring_inside_valid_word_not_flagged(self):
+        # "وشاح" contains the substring "وش" — must NOT be flagged in MSA.
+        # "إيهاب" contains "إيه" — must NOT be flagged.
+        s = _valid_msa_scenes()
+        s[0]["spoken"] = "ارتدى الوشاح وذهب إيهاب إلى المدرسة."
+        self.assertEqual(validate_scenes(s, locale="ar-MSA"), [])
+
+    def test_legacy_egyptian_behavior_unchanged(self):
+        scenes = [{
+            "card": "TitleCard", "accent": "mint", "voice": "Charon",
+            "spoken": "أهلًا بيك، النهاردة هنشوف إزاي الذكاء الاصطناعي بيشتغل.",
+            "focus": "إزاي",
+            "visual": {"chip": "مقدمة", "title": "أهلًا", "highlight": "AI", "subtitle": "ابدأ معانا."},
+        }]
+        self.assertEqual(validate_scenes(scenes, locale=None), [])
+
+
 if __name__ == "__main__":
     unittest.main()
+
