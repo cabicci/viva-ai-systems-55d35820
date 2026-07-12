@@ -112,6 +112,7 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "intro-m1-l4-ai-can-cannot": "b139cfa2-e80e-4dd6-ab6d-e79ed8d34522",
   "intro-m1-l4-ai-can-cannot__ar-Gulf": "4eec6df1-cc3f-4d68-ab65-13361880bcfd",
   "intro-m1-l4-ai-can-cannot__ar-MSA": "1b6a5491-8e93-4ed6-b3a8-08744cd26546",
+  "intro-m1-l4-ai-can-cannot__en": "0605d5f9-623f-4b90-9a43-307e1fcdd8e7",
   "intro-m1-l5-ai-vs-software": "49f45275-18f2-42f8-b9eb-53bcab98098a",
   "intro-m1-l6-learn-without-fear": "8a8fac75-7728-4b81-b407-4b3304670098",
   "intro-m1-l7-choose-your-path": "bc5773b0-0ec3-4611-a2f5-89b19bc8407f",
