@@ -365,7 +365,7 @@ def main():
         durations = synthesize_segments(segments, audio_dir, master, locale=locale)
         frames = [math.ceil(d * FPS) + TAIL_SILENCE_FRAMES for d in durations]
 
-        write_scenes_module(composite, scenes, frames)
+        write_scenes_module(composite, scenes, frames, locale=locale)
         lock_path = os.path.join(REPO_ROOT, "remotion/src/lessonsRegistry.lock")
         with open(lock_path, "w") as lock:
             fcntl.flock(lock, fcntl.LOCK_EX)
