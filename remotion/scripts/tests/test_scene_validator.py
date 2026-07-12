@@ -598,6 +598,113 @@ class RendererCliTests(unittest.TestCase):
         self.assertIn("id: compositionId", src)
 
 
+class LegacyBypassTests(unittest.TestCase):
+    """Legacy Egyptian (locale=None): script_writer must NOT normalize.
+    Invalid legacy scenes must fail strict validation; cached invalid legacy
+    scenes must delete their cache; valid legacy scenes remain byte-equivalent."""
+
+    def setUp(self):
+        import tempfile, json as _json
+        self._tmp = tempfile.mkdtemp(prefix="legacy_bypass_")
+        # Simulate the composite subdir layout used in production (/tmp/<composite>/).
+        self._composite_dir = _os.path.join(self._tmp, "legacy-lid")
+        _os.makedirs(self._composite_dir, exist_ok=True)
+        self._cache = _os.path.join(self._composite_dir, "scenes.json")
+        import script_writer  # noqa: F401
+        self.script_writer = script_writer
+        self._json = _json
+
+    def tearDown(self):
+        import shutil
+        shutil.rmtree(self._tmp, ignore_errors=True)
+
+    def _legacy_valid(self):
+        return [{
+            "card": "TitleCard", "accent": "mint", "voice": "Charon",
+            "spoken": "أهلًا بيك في الدرس ده عن الذكاء الاصطناعي.",
+            "focus": "AI",
+            "visual": {
+                "chip": "مقدمة", "title": "أهلًا",
+                "highlight": "الذكاء", "subtitle": "الدرس الأول.",
+            },
+        }]
+
+    def test_invalid_legacy_visual_fields_not_repaired(self):
+        scenes = [{
+            "card": "TitleCard", "accent": "mint", "voice": "Charon",
+            "spoken": "أهلًا.", "focus": "x",
+            "visual": {"title": "Only title"},
+        }]
+        self._json.dump(scenes, open(self._cache, "w"), ensure_ascii=False)
+        with self.assertRaises(RuntimeError):
+            self.script_writer._validate_only_legacy(scenes, "cache", self._cache)
+        self.assertFalse(_os.path.exists(self._cache))
+
+    def test_invalid_legacy_accent_not_repaired(self):
+        scenes = self._legacy_valid()
+        scenes[0]["accent"] = "not-a-real-accent"
+        self._json.dump(scenes, open(self._cache, "w"), ensure_ascii=False)
+        with self.assertRaises(RuntimeError) as ctx:
+            self.script_writer._validate_only_legacy(scenes, "cache", self._cache)
+        self.assertIn("accent", str(ctx.exception))
+        self.assertEqual(scenes[0]["accent"], "not-a-real-accent")
+        self.assertFalse(_os.path.exists(self._cache))
+
+    def test_valid_legacy_scenes_byte_equivalent(self):
+        scenes = self._legacy_valid()
+        original = self._json.loads(self._json.dumps(scenes, ensure_ascii=False))
+        self._json.dump(scenes, open(self._cache, "w"), ensure_ascii=False)
+        returned = self.script_writer._validate_only_legacy(scenes, "cache", self._cache)
+        self.assertIs(returned, scenes)
+        self.assertEqual(scenes, original)
+        self.assertTrue(_os.path.exists(self._cache))
+
+    def test_invalid_legacy_cached_deletes_cache_via_generate_scenes_cached(self):
+        scenes = self._legacy_valid()
+        scenes[0]["accent"] = "bogus"
+        self._json.dump(scenes, open(self._cache, "w"), ensure_ascii=False)
+        with self.assertRaises(RuntimeError):
+            self.script_writer.generate_scenes_cached(
+                lesson_id="legacy-lid", blocks=[], title="t",
+                cache_path=self._cache, has_quiz=False,
+                next_lesson_title=None, locale=None,
+            )
+        self.assertFalse(_os.path.exists(self._cache))
+
+    def test_valid_legacy_cached_via_generate_scenes_cached_byte_equivalent(self):
+        scenes = self._legacy_valid()
+        raw = self._json.dumps(scenes, ensure_ascii=False, indent=2)
+        with open(self._cache, "w") as f:
+            f.write(raw)
+        returned = self.script_writer.generate_scenes_cached(
+            lesson_id="legacy-lid", blocks=[], title="t",
+            cache_path=self._cache, has_quiz=False,
+            next_lesson_title=None, locale=None,
+        )
+        self.assertEqual(returned, scenes)
+        # Cache untouched on disk (byte-equivalent).
+        self.assertEqual(open(self._cache).read(), raw)
+
+    def test_normalize_and_validate_refuses_legacy_locale(self):
+        with self.assertRaises(AssertionError):
+            self.script_writer._normalize_and_validate(
+                self._legacy_valid(), None, "cache", self._cache,
+            )
+
+    def test_locale_aware_still_normalizes(self):
+        scenes = [{
+            "card": "TitleCard", "accent": "mint", "voice": "Charon",
+            "spoken": "مرحبًا بك في هذا الدرس.", "focus": "x",
+            "visual": {"title": "أهلًا", "highlight": "الدرس", "subtitle": "الأول"},
+        }]
+        normalized, repairs = self.script_writer._normalize_and_validate(
+            scenes, "ar-MSA", "gemini", self._cache,
+        )
+        self.assertTrue(any(r["field"] == "visual.chip" for r in repairs))
+        self.assertTrue(normalized[0]["visual"].get("chip"))
+
+
 if __name__ == "__main__":
     unittest.main()
+
 
