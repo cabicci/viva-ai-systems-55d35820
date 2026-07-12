@@ -321,13 +321,37 @@ def generate_scenes(lesson_id, blocks, title=None, has_quiz=False,
             f"Could not parse Gemini response: {e}\n{json.dumps(resp)[:800]}")
 
 
+def _validate_only_legacy(scenes, source, cache_path):
+    """Legacy Egyptian (locale=None) path: strict validate WITHOUT any
+    normalization or presentation repair. Preserves byte-equivalent behavior
+    of the pre-normalizer pipeline. On cache validation failure, delete the
+    cache and raise so no downstream step runs."""
+    composite = os.path.basename(os.path.dirname(cache_path)) or "unknown"
+    record = _write_validation_evidence(scenes, None, composite, source)
+    if not record["ok"]:
+        try:
+            if source == "cache" and os.path.exists(cache_path):
+                os.remove(cache_path)
+        except OSError:
+            pass
+        raise RuntimeError(
+            f"Scene validation FAILED ({source}, legacy) for "
+            f"{composite}: " + "; ".join(record["violations"])
+        )
+    print(f"      [validate:{source}] locale=legacy "
+          f"scenes={len(scenes) if isinstance(scenes, list) else 0} OK")
+    return scenes
+
+
 def _normalize_and_validate(scenes, locale, source, cache_path,
                             lesson_title=None, next_lesson_title=None):
-    """Deterministic pipeline: normalize (idempotent, presentation-only) →
-    validate (strict, unchanged). On validation failure, delete cache and
-    raise so no downstream step runs.
+    """Locale-aware pipeline (ar-MSA / ar-Gulf / en): normalize (idempotent,
+    presentation-only) → validate (strict). On validation failure, delete
+    cache and raise. Returns (normalized_scenes, repairs).
 
-    Returns the normalized scenes."""
+    MUST NOT be called with locale=None — legacy Egyptian uses
+    _validate_only_legacy to preserve byte-equivalent behavior."""
+    assert locale is not None, "_normalize_and_validate is locale-aware only"
     composite = os.path.basename(os.path.dirname(cache_path)) or "unknown"
     normalized, repairs = _normalize_scenes(
         scenes, locale=locale,
@@ -339,7 +363,7 @@ def _normalize_and_validate(scenes, locale, source, cache_path,
         len(normalized) if isinstance(normalized, list) else 0,
     )
     if repairs:
-        print(f"      [normalize:{source}] locale={locale or 'legacy'} "
+        print(f"      [normalize:{source}] locale={locale} "
               f"repairs={len(repairs)}")
     record = _write_validation_evidence(normalized, locale, composite, source)
     if not record["ok"]:
@@ -352,7 +376,7 @@ def _normalize_and_validate(scenes, locale, source, cache_path,
             f"Scene validation FAILED ({source}, post-normalization) for "
             f"{composite} locale={locale!r}: " + "; ".join(record["violations"])
         )
-    print(f"      [validate:{source}] locale={locale or 'legacy'} "
+    print(f"      [validate:{source}] locale={locale} "
           f"scenes={len(normalized)} OK")
     return normalized, repairs
 
