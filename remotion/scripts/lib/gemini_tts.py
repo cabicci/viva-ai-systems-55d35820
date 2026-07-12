@@ -22,6 +22,11 @@ try:
 except ImportError:
     from egyptian_phonetic import egyptianize_with_diff   # sys.path import (sibling)
 
+try:
+    from .locale_profiles import get_profile as _get_locale_profile  # package import
+except ImportError:
+    from locale_profiles import get_profile as _get_locale_profile   # sys.path import
+
 MODEL = "gemini-2.5-flash-preview-tts"
 SAMPLE_RATE = 24000
 GAP_MS = 500
@@ -105,12 +110,26 @@ def _soften_text(text: str) -> str:
     return out
 
 
-def _tts(text: str, voice: str, focus: str, out_path: str, api_keys: list[str]) -> None:
-    """Generate one segment. Voice = 'Charon' (male, main) or 'Aoede' (female, aside)."""
-    # Phonetic pre-processing — deterministic Egyptian pronunciation.
-    rewritten, diffs = egyptianize_with_diff(text)
-    if diffs:
-        print(f"     phonetic rewrites: {diffs}")
+def _tts(text: str, voice: str, focus: str, out_path: str, api_keys: list[str],
+         locale: str | None = None) -> None:
+    """Generate one segment. Voice = 'Charon' (male, main) or 'Aoede' (female, aside).
+
+    locale=None       -> legacy Egyptian: phonetic rewrite + Egyptian prompt.
+    locale='ar-MSA'   -> MSA prompt, NO Egyptian rewrite.
+    locale='ar-Gulf'  -> Gulf prompt, NO Egyptian rewrite.
+    locale='en'       -> English prompt, NO Egyptian rewrite.
+    """
+    profile = _get_locale_profile(locale)
+    if profile.egyptian_phonetic_rewrite:
+        # Legacy Egyptian mode — deterministic Egyptian pronunciation.
+        rewritten, diffs = egyptianize_with_diff(text)
+        if diffs:
+            print(f"     phonetic rewrites: {diffs}")
+        prompt_prefix = EGYPTIAN_RULES_COMPACT
+    else:
+        # New locales: keep source text intact; use locale-specific prompt.
+        rewritten = text
+        prompt_prefix = profile.tts_prompt
     last_err = None
     n_keys = len(api_keys)
     max_attempts = max(18, n_keys * 6)
@@ -119,7 +138,7 @@ def _tts(text: str, voice: str, focus: str, out_path: str, api_keys: list[str]) 
     softened = False
     other_count = 0
     for attempt in range(max_attempts):
-        prompt = EGYPTIAN_RULES_COMPACT + current_text
+        prompt = prompt_prefix + current_text
         if focus:
             prompt += f"\n\nملاحظات نطق: {focus}"
         body = {
