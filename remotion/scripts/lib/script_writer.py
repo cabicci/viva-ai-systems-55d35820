@@ -23,6 +23,11 @@ try:
 except ImportError:  # sys.path import (sibling)
     from scene_validator import validate_scenes as _validate_scenes, write_locale_validation_evidence as _write_validation_evidence
 
+try:
+    from .scene_normalizer import normalize_scenes as _normalize_scenes, write_normalization_evidence as _write_normalization_evidence  # package import
+except ImportError:
+    from scene_normalizer import normalize_scenes as _normalize_scenes, write_normalization_evidence as _write_normalization_evidence
+
 
 # Default to Flash for speed; fall back to Pro on failure or grounding violations.
 MODEL_FAST = "gemini-2.5-flash"
