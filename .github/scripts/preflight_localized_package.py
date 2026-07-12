@@ -97,7 +97,7 @@ content_fp = hashlib.sha256(
     json.dumps(sections, ensure_ascii=False, sort_keys=True).encode("utf-8")
 ).hexdigest()
 
-voice_row = VOICE_TABLE[LOCALE]
+profile = PROFILE_TABLE[LOCALE]
 evidence = {
     "lesson_id": LID,
     "locale": LOCALE,
@@ -108,9 +108,12 @@ evidence = {
     "section_count": len(sections),
     "title": data.get("title"),
     "title_en": data.get("titleEn"),
-    "script_language": voice_row["language"],
-    "selected_voice": voice_row["voice"],
-    "voice_note": voice_row["voice_note"],
+    "script_language": profile["language"],
+    "script_prompt_profile": profile["script_prompt_profile"],
+    "tts_prompt_profile": profile["tts_prompt_profile"],
+    "tts_model": profile["tts_model"],
+    "actual_voice_policy": profile["actual_voice_policy"],
+    "egyptian_phonetic_rewrite": profile["egyptian_phonetic_rewrite"],
     "canonical_source": data.get("sourceFile"),
     "canonical_version": data.get("canonicalVersion"),
     "production_route": data.get("productionRoute"),
@@ -119,6 +122,11 @@ evidence = {
 out_dir = Path(f"/tmp/{COMPOSITE}")
 out_dir.mkdir(parents=True, exist_ok=True)
 (out_dir / "evidence.json").write_text(json.dumps(evidence, ensure_ascii=False, indent=2))
-# Machine-readable summary line for the Actions log:
-print(f"::notice::preflight ok lesson={LID} locale={LOCALE} package_sha256={sha256} content_fp={content_fp} voice={voice_row['voice']}")
+print(
+    f"::notice::preflight ok lesson={LID} locale={LOCALE} "
+    f"package_sha256={sha256} content_fp={content_fp} "
+    f"script_profile={profile['script_prompt_profile']} "
+    f"tts_profile={profile['tts_prompt_profile']} "
+    f"tts_model={profile['tts_model']} voices={profile['actual_voice_policy']}"
+)
 print(json.dumps(evidence, ensure_ascii=False, indent=2))
