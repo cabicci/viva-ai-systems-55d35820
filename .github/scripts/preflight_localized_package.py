@@ -22,17 +22,39 @@ LID = os.environ["LID"]
 LOCALE = os.environ["LOCALE"]
 COMPOSITE = os.environ.get("COMPOSITE_KEY", f"{LID}__{LOCALE}")
 
-# Locale → (script language tag, canonical TTS voice).
-# Voices are Gemini/Google-cloud tags used by the existing pipeline; the
-# purpose here is to prove per-locale distinctness, not to hard-code SDK IDs.
-VOICE_TABLE = {
-    "ar-MSA":  {"language": "ar", "voice": "ar-XA-Wavenet-B",  "voice_note": "Modern Standard Arabic (male, neutral)"},
-    "ar-Gulf": {"language": "ar", "voice": "ar-XA-Wavenet-D",  "voice_note": "Gulf Arabic delivery (male, warmer)"},
-    "en":      {"language": "en", "voice": "en-US-Neural2-D",  "voice_note": "US English (male, instructional)"},
+# Locale → prompt profile identifiers + actual TTS model/voices consumed by
+# gemini_tts.py. We do NOT list Google Cloud Wavenet voices — nothing in the
+# pipeline calls them. Actual voices per segment (Charon / Aoede) are picked
+# by the script writer per scene.
+PROFILE_TABLE = {
+    "ar-MSA":  {
+        "language": "ar",
+        "script_prompt_profile": "ar-MSA-v1",
+        "tts_prompt_profile":    "ar-MSA-tts-v1",
+        "tts_model":             "gemini-2.5-flash-preview-tts",
+        "actual_voice_policy":   "gemini-tts:Charon(primary),Aoede(secondary)",
+        "egyptian_phonetic_rewrite": False,
+    },
+    "ar-Gulf": {
+        "language": "ar",
+        "script_prompt_profile": "ar-Gulf-v1",
+        "tts_prompt_profile":    "ar-Gulf-tts-v1",
+        "tts_model":             "gemini-2.5-flash-preview-tts",
+        "actual_voice_policy":   "gemini-tts:Charon(primary),Aoede(secondary)",
+        "egyptian_phonetic_rewrite": False,
+    },
+    "en": {
+        "language": "en",
+        "script_prompt_profile": "en-v1",
+        "tts_prompt_profile":    "en-tts-v1",
+        "tts_model":             "gemini-2.5-flash-preview-tts",
+        "actual_voice_policy":   "gemini-tts:Charon(primary),Aoede(secondary)",
+        "egyptian_phonetic_rewrite": False,
+    },
 }
 
-if LOCALE not in VOICE_TABLE:
-    sys.stderr.write(f"::error::Unknown locale {LOCALE!r}; expected one of {sorted(VOICE_TABLE)}\n")
+if LOCALE not in PROFILE_TABLE:
+    sys.stderr.write(f"::error::Unknown locale {LOCALE!r}; expected one of {sorted(PROFILE_TABLE)}\n")
     sys.exit(2)
 
 package_path = Path("src/lib/locale-lessons") / LOCALE / "lessons" / f"{LID}.json"
