@@ -26,6 +26,7 @@ import {
 } from "./package-section-labels";
 import { adaptPackageMissionToLiveShape } from "./adapt-package-to-live-mission";
 import { adaptPackageQuizToQuizItem } from "./adapt-package-to-live-quiz";
+import { usesStrictLocalizedVisualPolicy } from "./strict-localized-visual-policy";
 import type {
   LessonPackageLocale,
   LocalizedLessonPackage,
@@ -369,15 +370,50 @@ function findVideoSectionMeta(
   return null;
 }
 
+function findDiagramSectionMeta(
+  pkg: LocalizedPackageInput,
+): (Pick<IntroLessonSection, "title" | "eyebrow"> & { caption?: string }) | null {
+  for (const section of pkg.sections) {
+    if (!normalizeRole(section.role).includes("diagram")) continue;
+    return {
+      eyebrow: sectionEyebrow(section, pkg.locale),
+      title: learnerFacingTitle(
+        section.heading,
+        section.subtitle,
+        localizedSectionEyebrow(section.role, pkg.locale),
+      ),
+      caption: collectParagraphs(section)[0],
+    };
+  }
+  return null;
+}
+
 function mergeCanonicalSection(
   canonSection: IntroLessonSection,
   localized: IntroLessonSection | null,
   pkg: LocalizedPackageInput,
 ): IntroLessonSection | null {
   const kind = canonSection.block.kind;
+  const strictVisual = usesStrictLocalizedVisualPolicy(pkg.locale);
 
   if (kind === "lessonVideo") {
     const videoMeta = findVideoSectionMeta(pkg);
+    if (strictVisual) {
+      // Block 2: never inherit ar-EG title/eyebrow/caption/url/poster/duration.
+      return {
+        ...canonSection,
+        eyebrow:
+          videoMeta?.eyebrow ??
+          localizedSectionEyebrow("Video block", pkg.locale),
+        title:
+          videoMeta?.title ??
+          localizedSectionEyebrow("Video block", pkg.locale),
+        block: {
+          kind: "lessonVideo",
+          caption: findVideoCaption(pkg),
+        },
+      };
+    }
     const canonVideo =
       canonSection.block.kind === "lessonVideo" ? canonSection.block : null;
     return {
@@ -395,7 +431,30 @@ function mergeCanonicalSection(
   }
 
   if (kind === "diagram") {
-    return canonSection;
+    if (!strictVisual) {
+      return canonSection;
+    }
+    // Block 7: keep slot parity id for structure, but never carry ar-EG
+    // chrome/caption. Renderer must not mount LESSON_DIAGRAMS for package locales.
+    const diagramMeta = findDiagramSectionMeta(pkg);
+    const canonDiagram =
+      canonSection.block.kind === "diagram" ? canonSection.block : null;
+    if (!canonDiagram) return null;
+    return {
+      icon: canonSection.icon,
+      tone: canonSection.tone,
+      eyebrow:
+        diagramMeta?.eyebrow ??
+        localizedSectionEyebrow("Diagram block (intent)", pkg.locale),
+      title:
+        diagramMeta?.title ??
+        localizedSectionEyebrow("Diagram block (intent)", pkg.locale),
+      block: {
+        kind: "diagram",
+        id: canonDiagram.id,
+        caption: diagramMeta?.caption,
+      },
+    };
   }
 
   if (kind === "caseStudy") {
@@ -403,12 +462,28 @@ function mergeCanonicalSection(
   }
 
   if (kind === "screenshot") {
-    const canonShot =
-      canonSection.block.kind === "screenshot" ? canonSection.block : null;
     const localizedCaption =
       localized?.block.kind === "screenshot"
         ? localized.block.caption
         : undefined;
+    if (strictVisual) {
+      // Block 7: never inherit ar-EG src/alt/label/caption/chrome.
+      return {
+        ...canonSection,
+        title:
+          localized?.title ??
+          localizedSectionEyebrow("Screenshot block (intent)", pkg.locale),
+        eyebrow:
+          localized?.eyebrow ??
+          localizedSectionEyebrow("Screenshot block (intent)", pkg.locale),
+        block: {
+          kind: "screenshot",
+          caption: localizedCaption,
+        },
+      };
+    }
+    const canonShot =
+      canonSection.block.kind === "screenshot" ? canonSection.block : null;
     return {
       ...canonSection,
       title: localized?.title ?? canonSection.title,
@@ -427,7 +502,6 @@ function mergeCanonicalSection(
     if (kind === "paragraphs" && /خلّصت|wrap-up|confidence/i.test(canonSection.eyebrow)) {
       return null;
     }
-    if (kind === "caseStudy") return null;
     return null;
   }
 

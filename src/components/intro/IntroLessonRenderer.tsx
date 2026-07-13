@@ -13,19 +13,63 @@ import { LocaleLessonVideo } from "@/components/locale/LocaleLessonVideo";
 import { getValueHookForLocale } from "./value-hooks";
 import { resolveLearnerLessonIcon } from "./resolve-learner-lesson-icon";
 import { useLocale } from "@/lib/locale/locale-context";
-import { getUiString } from "@/lib/locale/ui-strings";
-import { isPackageLocale } from "@/lib/locale-lessons/registry";
+import { getUiString, type UiStringKey } from "@/lib/locale/ui-strings";
+import {
+  STRICT_VISUAL_UI_KEYS,
+  usesStrictLocalizedVisualPolicy,
+} from "@/lib/locale-lessons/strict-localized-visual-policy";
 import type { SupportedLocale } from "@/lib/locale/types";
+
+function packageUiString(locale: SupportedLocale, key: string): string {
+  return getUiString(locale, key as UiStringKey);
+}
 
 function lessonVideoHasSource(
   block: Extract<IntroBlock, { kind: "lessonVideo" }>,
   lessonId?: string,
   videoLocale?: SupportedLocale,
 ): boolean {
-  if (videoLocale && isPackageLocale(videoLocale)) {
+  if (usesStrictLocalizedVisualPolicy(videoLocale)) {
     return Boolean(getLocalizedBunnyEmbedUrl(lessonId, videoLocale));
   }
   return Boolean(getBunnyEmbedUrl(lessonId) || block.url);
+}
+
+function LocaleDiagramMissingState({
+  locale,
+  caption,
+}: {
+  locale: SupportedLocale;
+  caption?: string;
+}) {
+  return (
+    <div
+      className="rounded-2xl border border-primary/25 ring-1 ring-primary/5 bg-card overflow-hidden shadow-[0_8px_30px_-12px_hsl(var(--primary)/0.2)]"
+      data-locale-diagram="placeholder"
+    >
+      <div className="flex items-center gap-1.5 bg-primary/10 border-b border-primary/20 px-3 py-2">
+        <ImageIcon className="h-3.5 w-3.5 text-primary" />
+        <span className="text-[11px] font-mono text-primary">
+          {packageUiString(locale, STRICT_VISUAL_UI_KEYS.diagramLabel)}
+        </span>
+      </div>
+      <div className="p-6 text-center space-y-2 border border-dashed border-primary/20 m-3 rounded-xl bg-primary/[0.03]">
+        <div className="mx-auto grid h-10 w-10 place-items-center rounded-full bg-primary/10">
+          <ImageIcon className="h-5 w-5 text-primary" />
+        </div>
+        <p className="text-sm font-semibold text-foreground">
+          {packageUiString(locale, STRICT_VISUAL_UI_KEYS.diagramTitle)}
+        </p>
+        <p className="text-sm text-muted-foreground">
+          {caption ??
+            packageUiString(locale, STRICT_VISUAL_UI_KEYS.diagramPlaceholder)}
+        </p>
+        <p className="text-[10px] font-mono text-primary/80">
+          {packageUiString(locale, STRICT_VISUAL_UI_KEYS.comingSoon)}
+        </p>
+      </div>
+    </div>
+  );
 }
 
 function VideoSkipNotice() {
@@ -320,7 +364,7 @@ function BlockBody({
     }
 
     case "lessonVideo": {
-      if (videoLocale && isPackageLocale(videoLocale) && lessonId) {
+      if (usesStrictLocalizedVisualPolicy(videoLocale) && lessonId) {
         return (
           <figure className="space-y-2">
             <LocaleLessonVideo lessonId={lessonId} locale={videoLocale} />
@@ -420,10 +464,18 @@ function BlockBody({
     }
 
     case "screenshot": {
-      const label = block.label ?? getUiString(locale, "intro.block.screenshotLabel");
-      if (!block.src) {
+      const strictVisual = usesStrictLocalizedVisualPolicy(videoLocale);
+      // Package locales never render ar-EG screenshot media even if src leaks in.
+      const src = strictVisual ? undefined : block.src;
+      const label =
+        (!strictVisual ? block.label : undefined) ??
+        getUiString(locale, STRICT_VISUAL_UI_KEYS.screenshotLabel);
+      if (!src) {
         return (
-          <div className="rounded-2xl border border-primary/25 ring-1 ring-primary/5 bg-card overflow-hidden shadow-[0_8px_30px_-12px_hsl(var(--primary)/0.2)]">
+          <div
+            className="rounded-2xl border border-primary/25 ring-1 ring-primary/5 bg-card overflow-hidden shadow-[0_8px_30px_-12px_hsl(var(--primary)/0.2)]"
+            data-locale-screenshot="placeholder"
+          >
             <div className="flex items-center gap-1.5 bg-primary/10 border-b border-primary/20 px-3 py-2">
               <Monitor className="h-3.5 w-3.5 text-primary" />
               <span className="text-[11px] font-mono text-primary">{label}</span>
@@ -433,10 +485,11 @@ function BlockBody({
                 <ImageIcon className="h-5 w-5 text-primary" />
               </div>
               <p className="text-sm text-foreground">
-                {block.caption ?? getUiString(locale, "intro.block.screenshotPlaceholder")}
+                {block.caption ??
+                  getUiString(locale, STRICT_VISUAL_UI_KEYS.screenshotPlaceholder)}
               </p>
               <p className="text-[10px] font-mono text-primary/80">
-                {getUiString(locale, "intro.block.comingSoon")}
+                {getUiString(locale, STRICT_VISUAL_UI_KEYS.comingSoon)}
               </p>
             </div>
           </div>
@@ -450,8 +503,12 @@ function BlockBody({
               <span className="text-[11px] font-mono text-primary">{label}</span>
             </div>
             <img
-              src={block.src}
-              alt={block.alt ?? block.caption ?? getUiString(locale, "intro.block.screenshotAlt")}
+              src={src}
+              alt={
+                block.alt ??
+                block.caption ??
+                getUiString(locale, STRICT_VISUAL_UI_KEYS.screenshotAlt)
+              }
               className="w-full h-auto block"
               loading="lazy"
             />
@@ -493,6 +550,12 @@ function BlockBody({
     }
 
     case "diagram": {
+      // Localized packages must never mount canonical LESSON_DIAGRAMS.
+      if (usesStrictLocalizedVisualPolicy(videoLocale)) {
+        return (
+          <LocaleDiagramMissingState locale={locale} caption={block.caption} />
+        );
+      }
       const Diagram = LESSON_DIAGRAMS[block.id];
       if (!Diagram) return null;
       const label = block.label ?? getUiString(locale, "intro.block.diagramLabel");
