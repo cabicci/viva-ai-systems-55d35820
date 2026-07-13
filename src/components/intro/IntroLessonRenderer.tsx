@@ -9,20 +9,20 @@ import {
   getBunnyEmbedUrl,
   getLocalizedBunnyEmbedUrl,
 } from "@/lib/bunny-videos";
-import { LocaleLessonVideo } from "@/components/locale/LocaleLessonVideo";
 import { getValueHookForLocale } from "./value-hooks";
 import { resolveLearnerLessonIcon } from "./resolve-learner-lesson-icon";
 import { useLocale } from "@/lib/locale/locale-context";
-import { getUiString, type UiStringKey } from "@/lib/locale/ui-strings";
+import { getUiString } from "@/lib/locale/ui-strings";
 import {
+  getStrictVisualUiString,
+  resolveStrictLocalizedDiagramSrc,
+  resolveStrictLocalizedScreenshotSrc,
   STRICT_VISUAL_UI_KEYS,
+  strictVisualUiOrEmpty,
   usesStrictLocalizedVisualPolicy,
 } from "@/lib/locale-lessons/strict-localized-visual-policy";
+import type { LessonPackageLocale } from "@/lib/locale-lessons/types";
 import type { SupportedLocale } from "@/lib/locale/types";
-
-function packageUiString(locale: SupportedLocale, key: string): string {
-  return getUiString(locale, key as UiStringKey);
-}
 
 function lessonVideoHasSource(
   block: Extract<IntroBlock, { kind: "lessonVideo" }>,
@@ -35,11 +35,63 @@ function lessonVideoHasSource(
   return Boolean(getBunnyEmbedUrl(lessonId) || block.url);
 }
 
+function StrictLocaleVideoSlot({
+  locale,
+  lessonId,
+  caption,
+}: {
+  locale: LessonPackageLocale;
+  lessonId: string;
+  caption?: string;
+}) {
+  const embed = getLocalizedBunnyEmbedUrl(lessonId, locale);
+  if (!embed) {
+    return (
+      <div
+        className="rounded-2xl border border-border/50 bg-muted/20 p-5 text-center space-y-2"
+        data-locale-video="placeholder"
+      >
+        <p className="text-sm font-semibold text-foreground">
+          {strictVisualUiOrEmpty(locale, STRICT_VISUAL_UI_KEYS.videoMissingTitle)}
+        </p>
+        <p className="text-xs text-muted-foreground">
+          {strictVisualUiOrEmpty(locale, STRICT_VISUAL_UI_KEYS.videoMissingBody)}
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <figure className="space-y-2" data-locale-video="player">
+      <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-accent/20 bg-surface-scrim shadow-lg shadow-accent/5">
+        <iframe
+          src={embed}
+          loading="lazy"
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+          allowFullScreen
+          className="h-full w-full"
+          title={
+            getStrictVisualUiString(
+              locale,
+              STRICT_VISUAL_UI_KEYS.videoMissingTitle,
+            ) ?? ""
+          }
+        />
+      </div>
+      {caption ? (
+        <figcaption className="text-xs text-muted-foreground flex items-center gap-1.5">
+          <PlayCircle className="h-3.5 w-3.5" /> {caption}
+        </figcaption>
+      ) : null}
+    </figure>
+  );
+}
+
 function LocaleDiagramMissingState({
   locale,
   caption,
 }: {
-  locale: SupportedLocale;
+  locale: LessonPackageLocale;
   caption?: string;
 }) {
   return (
@@ -50,7 +102,7 @@ function LocaleDiagramMissingState({
       <div className="flex items-center gap-1.5 bg-primary/10 border-b border-primary/20 px-3 py-2">
         <ImageIcon className="h-3.5 w-3.5 text-primary" />
         <span className="text-[11px] font-mono text-primary">
-          {packageUiString(locale, STRICT_VISUAL_UI_KEYS.diagramLabel)}
+          {strictVisualUiOrEmpty(locale, STRICT_VISUAL_UI_KEYS.diagramLabel)}
         </span>
       </div>
       <div className="p-6 text-center space-y-2 border border-dashed border-primary/20 m-3 rounded-xl bg-primary/[0.03]">
@@ -58,29 +110,45 @@ function LocaleDiagramMissingState({
           <ImageIcon className="h-5 w-5 text-primary" />
         </div>
         <p className="text-sm font-semibold text-foreground">
-          {packageUiString(locale, STRICT_VISUAL_UI_KEYS.diagramTitle)}
+          {strictVisualUiOrEmpty(locale, STRICT_VISUAL_UI_KEYS.diagramTitle)}
         </p>
         <p className="text-sm text-muted-foreground">
           {caption ??
-            packageUiString(locale, STRICT_VISUAL_UI_KEYS.diagramPlaceholder)}
+            strictVisualUiOrEmpty(
+              locale,
+              STRICT_VISUAL_UI_KEYS.diagramPlaceholder,
+            )}
         </p>
         <p className="text-[10px] font-mono text-primary/80">
-          {packageUiString(locale, STRICT_VISUAL_UI_KEYS.comingSoon)}
+          {strictVisualUiOrEmpty(locale, STRICT_VISUAL_UI_KEYS.comingSoon)}
         </p>
       </div>
     </div>
   );
 }
 
-function VideoSkipNotice() {
+function VideoSkipNotice({
+  strictLocale,
+}: {
+  strictLocale?: LessonPackageLocale;
+}) {
   const { locale, dir } = useLocale();
+  const badge = strictLocale
+    ? strictVisualUiOrEmpty(
+        strictLocale,
+        STRICT_VISUAL_UI_KEYS.videoOptionalBadge,
+      )
+    : getUiString(locale, "intro.video.optionalBadge");
+  const body = strictLocale
+    ? strictVisualUiOrEmpty(strictLocale, STRICT_VISUAL_UI_KEYS.videoSkipBody)
+    : getUiString(locale, "intro.video.skipBody");
   return (
     <div className="text-center py-1 space-y-1.5" dir={dir}>
       <span className="inline-flex items-center gap-1 rounded-full border border-accent/20 bg-accent/[0.06] px-2.5 py-1 text-[11px] text-muted-foreground">
-        {getUiString(locale, "intro.video.optionalBadge")}
+        {badge}
       </span>
       <p className="text-xs text-muted-foreground/90 leading-relaxed px-2">
-        {getUiString(locale, "intro.video.skipBody")}
+        {body}
       </p>
     </div>
   );
@@ -197,7 +265,16 @@ export function IntroLessonRenderer({
           section.block.kind === "lessonVideo" &&
           !lessonVideoHasSource(section.block, lessonId, videoLocale)
         ) {
-          return <VideoSkipNotice key={i} />;
+          return (
+            <VideoSkipNotice
+              key={i}
+              strictLocale={
+                usesStrictLocalizedVisualPolicy(videoLocale)
+                  ? videoLocale
+                  : undefined
+              }
+            />
+          );
         }
         const SectionIcon = resolveLearnerLessonIcon(section.icon, section.block.kind);
         return (
@@ -331,7 +408,15 @@ function BlockBody({
 
     case "video": {
       if (!block.url) {
-        return <VideoSkipNotice />;
+        return (
+          <VideoSkipNotice
+            strictLocale={
+              usesStrictLocalizedVisualPolicy(videoLocale)
+                ? videoLocale
+                : undefined
+            }
+          />
+        );
       }
       const src = resolveVideoSource(block.url, lessonId);
       return (
@@ -366,14 +451,11 @@ function BlockBody({
     case "lessonVideo": {
       if (usesStrictLocalizedVisualPolicy(videoLocale) && lessonId) {
         return (
-          <figure className="space-y-2">
-            <LocaleLessonVideo lessonId={lessonId} locale={videoLocale} />
-            {block.caption ? (
-              <figcaption className="text-xs text-muted-foreground flex items-center gap-1.5">
-                <PlayCircle className="h-3.5 w-3.5" /> {block.caption}
-              </figcaption>
-            ) : null}
-          </figure>
+          <StrictLocaleVideoSlot
+            locale={videoLocale}
+            lessonId={lessonId}
+            caption={block.caption}
+          />
         );
       }
       // Canonical lesson video — slot #2 in the unified lesson rhythm.
@@ -465,11 +547,17 @@ function BlockBody({
 
     case "screenshot": {
       const strictVisual = usesStrictLocalizedVisualPolicy(videoLocale);
-      // Package locales never render ar-EG screenshot media even if src leaks in.
-      const src = strictVisual ? undefined : block.src;
-      const label =
-        (!strictVisual ? block.label : undefined) ??
-        getUiString(locale, STRICT_VISUAL_UI_KEYS.screenshotLabel);
+      const src = strictVisual
+        ? lessonId
+          ? resolveStrictLocalizedScreenshotSrc(videoLocale, lessonId)
+          : undefined
+        : block.src;
+      const label = strictVisual
+        ? strictVisualUiOrEmpty(
+            videoLocale,
+            STRICT_VISUAL_UI_KEYS.screenshotLabel,
+          )
+        : (block.label ?? getUiString(locale, "intro.block.screenshotLabel"));
       if (!src) {
         return (
           <div
@@ -486,17 +574,30 @@ function BlockBody({
               </div>
               <p className="text-sm text-foreground">
                 {block.caption ??
-                  getUiString(locale, STRICT_VISUAL_UI_KEYS.screenshotPlaceholder)}
+                  (strictVisual
+                    ? strictVisualUiOrEmpty(
+                        videoLocale,
+                        STRICT_VISUAL_UI_KEYS.screenshotPlaceholder,
+                      )
+                    : getUiString(
+                        locale,
+                        "intro.block.screenshotPlaceholder",
+                      ))}
               </p>
               <p className="text-[10px] font-mono text-primary/80">
-                {getUiString(locale, STRICT_VISUAL_UI_KEYS.comingSoon)}
+                {strictVisual
+                  ? strictVisualUiOrEmpty(
+                      videoLocale,
+                      STRICT_VISUAL_UI_KEYS.comingSoon,
+                    )
+                  : getUiString(locale, "intro.block.comingSoon")}
               </p>
             </div>
           </div>
         );
       }
       return (
-        <figure className="space-y-2">
+        <figure className="space-y-2" data-locale-screenshot="asset">
           <div className="overflow-hidden rounded-2xl border border-primary/25 ring-1 ring-primary/5 bg-card shadow-[0_8px_30px_-12px_hsl(var(--primary)/0.2)]">
             <div className="flex items-center gap-1.5 bg-primary/10 border-b border-primary/20 px-3 py-2">
               <Monitor className="h-3.5 w-3.5 text-primary" />
@@ -507,7 +608,12 @@ function BlockBody({
               alt={
                 block.alt ??
                 block.caption ??
-                getUiString(locale, STRICT_VISUAL_UI_KEYS.screenshotAlt)
+                (strictVisual
+                  ? strictVisualUiOrEmpty(
+                      videoLocale,
+                      STRICT_VISUAL_UI_KEYS.screenshotAlt,
+                    )
+                  : getUiString(locale, "intro.block.screenshotAlt"))
               }
               className="w-full h-auto block"
               loading="lazy"
@@ -552,8 +658,46 @@ function BlockBody({
     case "diagram": {
       // Localized packages must never mount canonical LESSON_DIAGRAMS.
       if (usesStrictLocalizedVisualPolicy(videoLocale)) {
+        const svgSrc = lessonId
+          ? resolveStrictLocalizedDiagramSrc(videoLocale, lessonId)
+          : undefined;
+        if (svgSrc) {
+          return (
+            <figure className="space-y-2" data-locale-diagram="asset">
+              <div className="overflow-hidden rounded-2xl border border-primary/20 bg-card">
+                <img
+                  src={svgSrc}
+                  alt={
+                    block.caption ??
+                    strictVisualUiOrEmpty(
+                      videoLocale,
+                      STRICT_VISUAL_UI_KEYS.diagramTitle,
+                    )
+                  }
+                  className="w-full h-auto block"
+                  loading="lazy"
+                />
+              </div>
+              {block.caption && (
+                <figcaption className="text-xs text-muted-foreground flex items-center gap-1.5">
+                  <ImageIcon className="h-3.5 w-3.5 text-primary" />{" "}
+                  {block.caption}
+                </figcaption>
+              )}
+              <p className="text-[10px] font-mono text-primary/70">
+                {strictVisualUiOrEmpty(
+                  videoLocale,
+                  STRICT_VISUAL_UI_KEYS.diagramLabel,
+                )}
+              </p>
+            </figure>
+          );
+        }
         return (
-          <LocaleDiagramMissingState locale={locale} caption={block.caption} />
+          <LocaleDiagramMissingState
+            locale={videoLocale}
+            caption={block.caption}
+          />
         );
       }
       const Diagram = LESSON_DIAGRAMS[block.id];

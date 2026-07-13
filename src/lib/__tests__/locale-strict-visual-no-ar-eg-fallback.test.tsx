@@ -14,11 +14,14 @@ import {
 } from "@/lib/locale-lessons/registry";
 import { localizedSectionEyebrow } from "@/lib/locale-lessons/package-section-labels";
 import {
+  getStrictVisualUiString,
+  isStrictVisualPackageTextAllowed,
   localizedLessonDiagramAssetPath,
   localizedLessonScreenshotAssetPath,
   resolveStrictLocalizedDiagramSrc,
   resolveStrictLocalizedScreenshotSrc,
   STRICT_LOCALIZED_VISUAL_LOCALES,
+  STRICT_VISUAL_UI_KEYS,
   usesStrictLocalizedVisualPolicy,
 } from "@/lib/locale-lessons/strict-localized-visual-policy";
 import type {
@@ -293,7 +296,10 @@ describe("strict localized visual policy", () => {
             container.querySelector('[data-locale-diagram="placeholder"]'),
           ).not.toBeNull();
           expect(container.textContent).toContain(
-            getUiString(locale, "safety.diagram.title" as never),
+            getStrictVisualUiString(
+              locale,
+              STRICT_VISUAL_UI_KEYS.diagramTitle,
+            ) ?? "",
           );
         } else {
           expect(
@@ -315,7 +321,79 @@ describe("strict localized visual 300-cell matrix", () => {
   it("validates 100 lessons × 3 locales with no ar-EG / LESSON_DIAGRAMS fallback", async () => {
     let pass = 0;
     let fail = 0;
+    let unsafeVisibleTextCells = 0;
     const failures: string[] = [];
+
+    function assertAdaptedVisibleTextPolicy(
+      locale: LessonPackageLocale,
+      adapted: IntroLessonContent,
+    ) {
+      for (const section of adapted) {
+        if (section.block.kind === "lessonVideo") {
+          for (const value of [
+            section.title,
+            section.eyebrow,
+            section.block.caption,
+            section.block.durationLabel,
+          ]) {
+            if (value?.trim()) {
+              expect(isStrictVisualPackageTextAllowed(locale, value)).toBe(true);
+            }
+          }
+        }
+        if (section.block.kind === "screenshot") {
+          for (const value of [
+            section.title,
+            section.eyebrow,
+            section.block.caption,
+            section.block.label,
+            section.block.alt,
+          ]) {
+            if (value?.trim()) {
+              expect(isStrictVisualPackageTextAllowed(locale, value)).toBe(true);
+            }
+          }
+        }
+        if (section.block.kind === "diagram") {
+          for (const value of [
+            section.title,
+            section.eyebrow,
+            section.block.caption,
+            section.block.label,
+          ]) {
+            if (value?.trim()) {
+              expect(isStrictVisualPackageTextAllowed(locale, value)).toBe(true);
+            }
+          }
+        }
+      }
+    }
+
+    function packageHasUnsafeBlock2Or7Text(
+      locale: LessonPackageLocale,
+      pkg: LocalizedLessonPackage,
+    ): boolean {
+      for (const section of pkg.sections) {
+        const role = section.role.toLowerCase();
+        if (!role.includes("video") && !role.includes("screenshot") && !role.includes("diagram")) {
+          continue;
+        }
+        const candidates = [
+          section.heading,
+          section.subtitle,
+          ...section.bullets,
+          section.contentMarkdown,
+        ];
+        for (const raw of candidates) {
+          const cleaned = raw?.replace(/\*\*/g, "").trim();
+          if (!cleaned) continue;
+          if (!isStrictVisualPackageTextAllowed(locale, cleaned)) {
+            return true;
+          }
+        }
+      }
+      return false;
+    }
 
     for (const locale of PACKAGE_LOCALES) {
       expect(isPackageLocale(locale)).toBe(true);
@@ -333,8 +411,13 @@ describe("strict localized visual 300-cell matrix", () => {
           expect(canonical).toBeTruthy();
           const adapted = adaptLocalizedPackageToIntroContent(pkg, canonical);
 
+          if (packageHasUnsafeBlock2Or7Text(locale, pkg)) {
+            unsafeVisibleTextCells += 1;
+          }
+
           assertNoArEgBlock2Fallback(adapted, canonical!, locale, pkg);
           assertNoArEgBlock7Fallback(adapted, canonical!, locale, pkg);
+          assertAdaptedVisibleTextPolicy(locale, adapted);
 
           const video = adapted.find((s) => s.block.kind === "lessonVideo");
           expect(video).toBeDefined();
@@ -351,12 +434,18 @@ describe("strict localized visual 300-cell matrix", () => {
             expect(shot.block.src).toBeUndefined();
             expect(shot.block.alt).toBeUndefined();
             expect(shot.block.label).toBeUndefined();
+            expect(
+              resolveStrictLocalizedScreenshotSrc(locale, lessonId),
+            ).toBeUndefined();
           }
 
           const diagram = adapted.find((s) => s.block.kind === "diagram");
           if (diagram?.block.kind === "diagram") {
             expect(diagram.block.label).toBeUndefined();
             expect(diagram.title.trim().length).toBeGreaterThan(0);
+            expect(
+              resolveStrictLocalizedDiagramSrc(locale, lessonId),
+            ).toBeUndefined();
           }
 
           const serialized = JSON.stringify(adapted);
@@ -373,11 +462,13 @@ describe("strict localized visual 300-cell matrix", () => {
       }
     }
 
-    expect({ pass, fail, total: pass + fail, failures: failures.slice(0, 20) }).toEqual(
+    expect(unsafeVisibleTextCells).toBeGreaterThanOrEqual(0);
+    expect({ pass, fail, total: pass + fail, unsafeVisibleTextCells, failures: failures.slice(0, 20) }).toEqual(
       {
         pass: 300,
         fail: 0,
         total: 300,
+        unsafeVisibleTextCells,
         failures: [],
       },
     );

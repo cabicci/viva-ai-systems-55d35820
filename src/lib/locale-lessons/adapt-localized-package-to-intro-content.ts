@@ -26,7 +26,10 @@ import {
 } from "./package-section-labels";
 import { adaptPackageMissionToLiveShape } from "./adapt-package-to-live-mission";
 import { adaptPackageQuizToQuizItem } from "./adapt-package-to-live-quiz";
-import { usesStrictLocalizedVisualPolicy } from "./strict-localized-visual-policy";
+import {
+  acceptStrictVisualPackageText,
+  usesStrictLocalizedVisualPolicy,
+} from "./strict-localized-visual-policy";
 import type {
   LessonPackageLocale,
   LocalizedLessonPackage,
@@ -274,7 +277,7 @@ function buildIntroBlockFromSection(
     const caption = collectParagraphs(section)[0];
     return {
       kind: "screenshot",
-      caption,
+      caption: acceptStrictVisualPackageText(pkg.locale, caption),
     };
   }
 
@@ -353,6 +356,24 @@ function findVideoCaption(pkg: LocalizedPackageInput): string | undefined {
   return undefined;
 }
 
+function strictPackageText(
+  locale: LessonPackageLocale,
+  value: string | undefined | null,
+): string | undefined {
+  return acceptStrictVisualPackageText(locale, value);
+}
+
+function strictChromeOrPackage(
+  locale: LessonPackageLocale,
+  packageValue: string | undefined,
+  chromeRole: string,
+): string {
+  return (
+    strictPackageText(locale, packageValue) ??
+    localizedSectionEyebrow(chromeRole, locale)
+  );
+}
+
 function findVideoSectionMeta(
   pkg: LocalizedPackageInput,
 ): Pick<IntroLessonSection, "title" | "eyebrow"> | null {
@@ -400,17 +421,22 @@ function mergeCanonicalSection(
     const videoMeta = findVideoSectionMeta(pkg);
     if (strictVisual) {
       // Block 2: never inherit ar-EG title/eyebrow/caption/url/poster/duration.
+      // Package-sourced text must pass exact-locale lexical policy.
       return {
         ...canonSection,
-        eyebrow:
-          videoMeta?.eyebrow ??
-          localizedSectionEyebrow("Video block", pkg.locale),
-        title:
-          videoMeta?.title ??
-          localizedSectionEyebrow("Video block", pkg.locale),
+        eyebrow: strictChromeOrPackage(
+          pkg.locale,
+          videoMeta?.eyebrow,
+          "Video block",
+        ),
+        title: strictChromeOrPackage(
+          pkg.locale,
+          videoMeta?.title,
+          "Video block",
+        ),
         block: {
           kind: "lessonVideo",
-          caption: findVideoCaption(pkg),
+          caption: strictPackageText(pkg.locale, findVideoCaption(pkg)),
         },
       };
     }
@@ -443,16 +469,21 @@ function mergeCanonicalSection(
     return {
       icon: canonSection.icon,
       tone: canonSection.tone,
-      eyebrow:
-        diagramMeta?.eyebrow ??
-        localizedSectionEyebrow("Diagram block (intent)", pkg.locale),
-      title:
-        diagramMeta?.title ??
-        localizedSectionEyebrow("Diagram block (intent)", pkg.locale),
+      eyebrow: strictChromeOrPackage(
+        pkg.locale,
+        diagramMeta?.eyebrow,
+        "Diagram block (intent)",
+      ),
+      title: strictChromeOrPackage(
+        pkg.locale,
+        diagramMeta?.title,
+        "Diagram block (intent)",
+      ),
       block: {
         kind: "diagram",
         id: canonDiagram.id,
-        caption: diagramMeta?.caption,
+        caption: strictPackageText(pkg.locale, diagramMeta?.caption),
+        label: undefined,
       },
     };
   }
@@ -470,15 +501,20 @@ function mergeCanonicalSection(
       // Block 7: never inherit ar-EG src/alt/label/caption/chrome.
       return {
         ...canonSection,
-        title:
-          localized?.title ??
-          localizedSectionEyebrow("Screenshot block (intent)", pkg.locale),
-        eyebrow:
-          localized?.eyebrow ??
-          localizedSectionEyebrow("Screenshot block (intent)", pkg.locale),
+        title: strictChromeOrPackage(
+          pkg.locale,
+          localized?.title,
+          "Screenshot block (intent)",
+        ),
+        eyebrow: strictChromeOrPackage(
+          pkg.locale,
+          localized?.eyebrow,
+          "Screenshot block (intent)",
+        ),
         block: {
           kind: "screenshot",
-          caption: localizedCaption,
+          caption: strictPackageText(pkg.locale, localizedCaption),
+          // src/alt/label resolved at render from exact-locale assets / UI only.
         },
       };
     }
