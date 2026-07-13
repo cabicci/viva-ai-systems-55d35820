@@ -8,12 +8,13 @@ on:
   workflow_dispatch:
     inputs:
       run_mode:
-        description: "preflight-one runs one safe no-paid validation cell; full-300 runs the validated 300-cell batch."
+        description: "preflight-one = one safe no-paid validation; generate-one = one real paid production cell; full-300 = validated 300-cell batch."
         required: true
         default: preflight-one
         type: choice
         options:
           - preflight-one
+          - generate-one
           - full-300
       retry_failed_only:
         description: "Retained for compatibility. Cross-run retry is unsupported; use Re-run failed jobs on the original run."
@@ -85,7 +86,7 @@ jobs:
           from pathlib import Path
 
           run_mode = os.environ.get("RUN_MODE", "preflight-one")
-          if run_mode not in ("preflight-one", "full-300"):
+          if run_mode not in ("preflight-one", "generate-one", "full-300"):
               print(f"::error::Unsupported run_mode {run_mode!r}", file=sys.stderr)
               sys.exit(1)
 
@@ -101,14 +102,14 @@ jobs:
 
           print(f"run_mode={run_mode}")
 
-          if run_mode == "preflight-one":
+          if run_mode in ("preflight-one", "generate-one"):
               locale = "en"
               lesson_id = "analyst-m3-l2-ai-summarization"
               package_path = (
                   f"src/lib/locale-lessons/{locale}/lessons/{lesson_id}.json"
               )
               if not Path(package_path).is_file():
-                  raise SystemExit(f"Missing preflight package: {package_path}")
+                  raise SystemExit(f"Missing one-cell package: {package_path}")
               print("matrix_a=" + json.dumps([], separators=(",", ":")))
               print("matrix_b=" + json.dumps([], separators=(",", ":")))
               print("count_a=0")
@@ -365,6 +366,244 @@ jobs:
             /tmp/preflight-one-report.json
             /tmp/${{ env.COMPOSITE_KEY }}/evidence.json
             /tmp/${{ env.COMPOSITE_KEY }}/build-evidence.json
+          if-no-files-found: error
+          retention-days: 14
+
+  generate_one:
+    name: Generate one — en — analyst-m3-l2-ai-summarization
+    needs: plan
+    if: needs.plan.outputs.run_mode == 'generate-one'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    env:
+      LID: analyst-m3-l2-ai-summarization
+      LOCALE: en
+      COMPOSITE_KEY: analyst-m3-l2-ai-summarization__en
+      CELL_ID: en::analyst-m3-l2-ai-summarization
+      LESSON_PACKAGE_PATH: src/lib/locale-lessons/en/lessons/analyst-m3-l2-ai-summarization.json
+      EXPECTED_VOICE_PROFILE: gemini-en-narrator
+
+    steps:
+      - name: Check out immutable production source baseline
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SOURCE_SHA }}
+          fetch-depth: 0
+
+      - name: Verify pinned source SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$SOURCE_SHA"
+
+      - name: Verify official Masaarat logo (path + SHA256)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f "$OFFICIAL_LOGO_PATH"
+          ACTUAL=$(sha256sum "$OFFICIAL_LOGO_PATH" | awk '{print $1}')
+          test "$ACTUAL" = "$OFFICIAL_LOGO_SHA256"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Preflight — resolve localized package (fails before any paid call)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/preflight_localized_package.py
+          test -f "/tmp/${COMPOSITE_KEY}/evidence.json"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Python deps
+        run: pip install requests google-genai
+
+      - name: Install root deps
+        run: bun install --frozen-lockfile
+
+      - name: Install remotion deps
+        run: cd remotion && bun install --frozen-lockfile
+
+      - name: Functional locale-aware gate — validate-source-only (no paid calls)
+        env:
+          LESSON_LOCALE: en
+        run: |
+          set -euo pipefail
+          python3 remotion/scripts/build-lesson.py "$LID" \
+            --locale "$LOCALE" \
+            --package-path "$LESSON_PACKAGE_PATH" \
+            --validate-source-only
+          python3 - <<'PY'
+          import json, os, pathlib, sys
+          composite = os.environ["COMPOSITE_KEY"]
+          pre = json.loads(pathlib.Path(f"/tmp/{composite}/evidence.json").read_text())
+          bld = json.loads(pathlib.Path(f"/tmp/{composite}/build-evidence.json").read_text())
+          expected = {
+              "lesson_id": pre["lesson_id"],
+              "locale": pre["locale"],
+              "package_sha256": pre["package_sha256"],
+              "content_fingerprint_sha256": pre["content_fingerprint_sha256"],
+              "script_prompt_profile": pre["script_prompt_profile"],
+              "tts_prompt_profile": pre["tts_prompt_profile"],
+              "tts_model": pre["tts_model"],
+              "actual_voice_policy": pre["actual_voice_policy"],
+              "egyptian_phonetic_rewrite": pre["egyptian_phonetic_rewrite"],
+          }
+          got = {k: bld[k] for k in expected}
+          mismatches = {k: (expected[k], got[k]) for k in expected if expected[k] != got[k]}
+          if mismatches:
+              print("::error::Locale-aware gate mismatch (preflight vs builder):")
+              for k, (e, g) in mismatches.items():
+                  print(f"::error::  {k}: preflight={e!r} builder={g!r}")
+              sys.exit(30)
+          if bld["locale"] in ("ar-MSA", "ar-Gulf", "en") and bld["egyptian_phonetic_rewrite"]:
+              print("::error::egyptian_phonetic_rewrite must be False for locale-aware runs")
+              sys.exit(31)
+          print(f"::notice::locale-aware gate PASSED for {composite}")
+          PY
+
+      - name: Fail-closed locale integrity gate — package projection (no paid calls)
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import os
+          import sys
+          from pathlib import Path
+
+          sys.path.insert(0, "remotion/scripts")
+          from lib.integrity_scenes_from_package import integrity_scenes_from_package  # noqa: E402
+          from lib.integrity_validator import validate_localized_scene_integrity  # noqa: E402
+
+          lid = os.environ["LID"]
+          locale = os.environ["LOCALE"]
+          package_path = Path(os.environ["LESSON_PACKAGE_PATH"])
+          pkg = json.loads(package_path.read_text(encoding="utf-8"))
+          scenes = integrity_scenes_from_package(pkg, expected_locale=locale)
+          result = validate_localized_scene_integrity(
+              lesson_id=lid,
+              source_package_locale=locale,
+              scenes=scenes,
+              renderer_locale=locale,
+          )
+          if not result.ok:
+              for issue in result.issues:
+                  print(f"::error::{issue.ruleId} {issue.fieldPath}: {issue.message}")
+              sys.exit(40)
+          print(f"::notice::package integrity gate PASSED for {locale}::{lid} ({len(scenes)} scenes)")
+          PY
+
+      - name: Verify paid Gemini secret
+        shell: bash
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          set -euo pipefail
+          test -n "${GEMINI_API_KEY:-}"
+
+      - name: Generate localized video (Gemini script → integrity → TTS → Remotion)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          TTS_REQUEST_GAP_SECONDS: "8"
+          REMOTION_CONCURRENCY: "2"
+          LESSON_LOCALE: en
+        run: |
+          set -euo pipefail
+          mkdir -p "public/lessons/intro"
+          python3 remotion/scripts/build-lesson.py "$LID" \
+            --locale "$LOCALE" \
+            --package-path "$LESSON_PACKAGE_PATH"
+          test -f "public/lessons/intro/${COMPOSITE_KEY}.mp4"
+
+      - name: Validate media and write production result evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          MP4="public/lessons/intro/${COMPOSITE_KEY}.mp4"
+          CAPTIONS="/tmp/${COMPOSITE_KEY}/captions.vtt"
+          AUDIO="/tmp/${COMPOSITE_KEY}/audio/master.mp3"
+          OUT_DIR="/tmp/${COMPOSITE_KEY}/production-result"
+          mkdir -p "$OUT_DIR"
+
+          test -f "$MP4"
+          BYTES=$(stat -c%s "$MP4")
+          [ "$BYTES" -ge 200000 ] || { echo "::error::Media too small ($BYTES bytes)"; exit 1; }
+          DUR=$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 "$MP4")
+          python3 -c "import sys; sys.exit(0 if float('${DUR}' or 0) > 5 else 1)" \
+            || { echo "::error::Duration ${DUR}s too short"; exit 1; }
+          AUDIO_STREAM=$(ffprobe -v error -select_streams a -show_entries stream=codec_type -of csv=p=0 "$MP4" || true)
+          [ -n "$AUDIO_STREAM" ] || { echo "::error::No audio stream in $MP4"; exit 1; }
+
+          export MEDIA_DUR="$DUR"
+
+          python3 - <<'PY'
+          import json, os, pathlib, hashlib
+
+          out_dir = pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/production-result")
+          mp4 = pathlib.Path(f"public/lessons/intro/{os.environ['COMPOSITE_KEY']}.mp4")
+          captions = pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/captions.vtt")
+          audio = pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/audio/master.mp3")
+
+          video_sha = hashlib.sha256(mp4.read_bytes()).hexdigest()
+          captions_sha = hashlib.sha256(captions.read_bytes()).hexdigest() if captions.is_file() else ""
+          logo_sha = os.environ["OFFICIAL_LOGO_SHA256"]
+
+          status = {
+              "runMode": "generate-one",
+              "cellId": os.environ["CELL_ID"],
+              "locale": os.environ["LOCALE"],
+              "lessonId": os.environ["LID"],
+              "compositeKey": os.environ["COMPOSITE_KEY"],
+              "logicalKey": os.environ["COMPOSITE_KEY"],
+              "sourceSha": os.environ["SOURCE_SHA"],
+              "voiceProfileId": os.environ["EXPECTED_VOICE_PROFILE"],
+              "outputStatus": "validated",
+              "videoChecksum": video_sha,
+              "captionsChecksum": captions_sha,
+              "batchId": os.environ["BATCH_ID"],
+          }
+          validation = {
+              "ok": True,
+              "hasAudio": audio.is_file(),
+              "hasVideo": True,
+              "hasCaptions": captions.is_file(),
+              "durationSeconds": float(os.environ.get("MEDIA_DUR", "0") or 0),
+              "logoChecksum": logo_sha,
+          }
+          (out_dir / "status.json").write_text(json.dumps(status, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          (out_dir / "validation.json").write_text(json.dumps(validation, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          if captions.is_file():
+              (out_dir / "captions.vtt").write_bytes(captions.read_bytes())
+          if audio.is_file():
+              (out_dir / "audio.mp3").write_bytes(audio.read_bytes())
+          (out_dir / "video.mp4").write_bytes(mp4.read_bytes())
+          print(json.dumps({"status": status, "validation": validation}, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Upload generate-one validated production artifact (artifact-only output)
+        uses: actions/upload-artifact@v4
+        with:
+          name: generate-one-${{ env.SOURCE_SHA }}-en-analyst-m3-l2-ai-summarization
+          path: |
+            /tmp/${{ env.COMPOSITE_KEY }}/production-result/
+            /tmp/${{ env.COMPOSITE_KEY }}/evidence.json
+            /tmp/${{ env.COMPOSITE_KEY }}/build-evidence.json
+            /tmp/${{ env.COMPOSITE_KEY }}/script-preview.md
           if-no-files-found: error
           retention-days: 14
 
@@ -858,7 +1097,7 @@ jobs:
 
   report:
     name: Collect full-300 production report
-    needs: [plan, preflight_one, produce_a, produce_b]
+    needs: [plan, preflight_one, generate_one, produce_a, produce_b]
     if: always() && needs.plan.outputs.run_mode == 'full-300'
     runs-on: ubuntu-latest
 
