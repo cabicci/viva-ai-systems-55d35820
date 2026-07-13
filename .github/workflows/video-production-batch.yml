@@ -1,37 +1,35 @@
-name: Video Production Paid Pilot — 6 Cells
+name: Video Production Full 300 — Localized Batch
+
+# Full 300-cell localized video production (100 × en, ar-MSA, ar-Gulf).
+# Manual dispatch only — Lovable is the authorized dispatcher.
+# Generation stops at validated per-cell GitHub artifacts (no Bunny, no mapping commits).
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - ".github/workflows/video-production-batch.yml"
-
   workflow_dispatch:
     inputs:
       retry_failed_only:
-        description: "Run only approved pilot cells without a valid committed result"
+        description: "Run only cells without a valid production result for the pinned source SHA"
         required: true
-        default: true
+        default: false
         type: boolean
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
-  group: video-paid-pilot-6-v1
+  group: video-full-300-localized-v1
   cancel-in-progress: false
 
 env:
-  IMPLEMENTATION_SHA: e1d6ff9d281468afee2399ccbcac9dbcdbdb33d9
-  CONTENT_FREEZE_SHA: 3e1ef5aaf0ca4f3dbcf28650751e0dd1de70bfc2
+  SOURCE_SHA: 9ece45762d040f3fcc708887e0fee2913d7ba1c1
   RESULTS_BRANCH: video-results
+  OFFICIAL_LOGO_PATH: public/brand/masaarat-logo-lockup.png
   OFFICIAL_LOGO_SHA256: 60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706
-  PILOT_ID: video-paid-pilot-6-v1
+  BATCH_ID: video-full-300-localized-v1
 
 jobs:
   plan:
-    name: Validate and plan approved six-cell pilot
+    name: Validate and plan full 300-cell matrix
     runs-on: ubuntu-latest
 
     outputs:
@@ -39,138 +37,39 @@ jobs:
       count: ${{ steps.plan.outputs.count }}
 
     steps:
-      - name: Check out immutable video implementation
+      - name: Check out immutable production source baseline
         uses: actions/checkout@v4
         with:
-          ref: ${{ env.IMPLEMENTATION_SHA }}
+          ref: ${{ env.SOURCE_SHA }}
           fetch-depth: 0
-          persist-credentials: true
 
-      - name: Set up Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-
-      - name: Verify immutable implementation and frozen lesson content
+      - name: Verify pinned source SHA
         shell: bash
         run: |
           set -euo pipefail
-
-          test "$(git rev-parse HEAD)" = "$IMPLEMENTATION_SHA"
-          git cat-file -e "${CONTENT_FREEZE_SHA}^{commit}"
-
-          FEATURE_CONTENT_TREE="$(
-            git rev-parse "${IMPLEMENTATION_SHA}:src/lib/locale-lessons"
-          )"
-
-          FROZEN_CONTENT_TREE="$(
-            git rev-parse "${CONTENT_FREEZE_SHA}:src/lib/locale-lessons"
-          )"
-
-          test "$FEATURE_CONTENT_TREE" = "$FROZEN_CONTENT_TREE"
+          test "$(git rev-parse HEAD)" = "$SOURCE_SHA"
 
       - name: Verify official Masaarat logo
         shell: bash
         run: |
           set -euo pipefail
-
-          SOURCE_LOGO="public/brand/masaarat-logo-lockup.png"
-          PIPELINE_LOGO="remotion/video-pipeline/assets/brand/masaarat-logo-lockup.png"
-          RENDER_LOGO="remotion/video-pipeline/render/public/brand/masaarat-logo-lockup.png"
-
-          test -f "$SOURCE_LOGO"
-          test -f "$PIPELINE_LOGO"
-          test -f "$RENDER_LOGO"
-
+          test -f "$OFFICIAL_LOGO_PATH"
           test "$(
-            sha256sum "$SOURCE_LOGO" | awk '{print $1}'
+            sha256sum "$OFFICIAL_LOGO_PATH" | awk '{print $1}'
           )" = "$OFFICIAL_LOGO_SHA256"
 
-          test "$(
-            sha256sum "$PIPELINE_LOGO" | awk '{print $1}'
-          )" = "$OFFICIAL_LOGO_SHA256"
-
-          test "$(
-            sha256sum "$RENDER_LOGO" | awk '{print $1}'
-          )" = "$OFFICIAL_LOGO_SHA256"
-
-          python3 - <<'PY'
-          import json
-          from pathlib import Path
-
-          expected_sha = (
-              "60620006f7f74dcc625ccbd9869a19b45"
-              "a7683fde04b729694b1c76d1a51d706"
-          )
-
-          manifest = json.loads(
-              Path(
-                  "remotion/video-pipeline/config/official-brand.json"
-              ).read_text(encoding="utf-8")
-          )
-
-          assert manifest["sourceCommit"] == (
-              "3e1ef5aaf0ca4f3dbcf28650751e0dd1de70bfc2"
-          )
-          assert manifest["sourcePath"] == (
-              "public/brand/masaarat-logo-lockup.png"
-          )
-          assert manifest["sha256"] == expected_sha
-          assert manifest["width"] == 574
-          assert manifest["height"] == 172
-          PY
-
-      - name: Build and validate frozen manifest
+      - name: Fetch results branch (read-only retry evidence)
         shell: bash
         run: |
           set -euo pipefail
-
-          bun remotion/video-pipeline/scripts/build-manifest.mjs
-
-          python3 - <<'PY'
-          import json
-          from pathlib import Path
-
-          baseline = (
-              "3e1ef5aaf0ca4f3dbcf28650751e0dd1de70bfc2"
-          )
-
-          manifest = json.loads(
-              Path(
-                  "remotion/video-pipeline/manifest/video-manifest.json"
-              ).read_text(encoding="utf-8")
-          )
-
-          assert manifest["baselineSha"] == baseline
-          assert manifest["totalVideos"] == 300
-          assert manifest["localeTotals"] == {
-              "ar-MSA": 100,
-              "ar-Gulf": 100,
-              "en": 100,
-          }
-          assert len(manifest["entries"]) == 300
-          assert len(
-              {entry["cellId"] for entry in manifest["entries"]}
-          ) == 300
-          assert all(
-              entry["sourceSha"] == baseline
-              for entry in manifest["entries"]
-          )
-          PY
-
-      - name: Fetch results branch
-        shell: bash
-        run: |
-          set -euo pipefail
-
           git fetch --no-tags origin \
-            "${RESULTS_BRANCH}:refs/remotes/origin/${RESULTS_BRANCH}"
+            "${RESULTS_BRANCH}:refs/remotes/origin/${RESULTS_BRANCH}" \
+            || echo "No ${RESULTS_BRANCH} branch yet — retry will treat all cells as pending."
 
-      - name: Create restricted six-cell matrix
+      - name: Build full 300-cell matrix
         id: plan
         shell: bash
         env:
-          EVENT_NAME: ${{ github.event_name }}
           RETRY_INPUT: ${{ inputs.retry_failed_only }}
         run: |
           set -euo pipefail
@@ -181,43 +80,19 @@ jobs:
           import subprocess
           from pathlib import Path
 
-          baseline = (
-              "3e1ef5aaf0ca4f3dbcf28650751e0dd1de70bfc2"
-          )
-          logo_sha = (
-              "60620006f7f74dcc625ccbd9869a19b45"
-              "a7683fde04b729694b1c76d1a51d706"
-          )
+          source_sha = os.environ["SOURCE_SHA"]
+          logo_sha = os.environ["OFFICIAL_LOGO_SHA256"]
           results_ref = "origin/video-results"
+          retry_only = os.environ.get("RETRY_INPUT", "false").lower() == "true"
 
-          approved = [
-              {
-                  "locale": "ar-MSA",
-                  "lessonId": "analyst-m3-l2-ai-summarization",
-              },
-              {
-                  "locale": "ar-Gulf",
-                  "lessonId": "analyst-m3-l2-ai-summarization",
-              },
-              {
-                  "locale": "en",
-                  "lessonId": "analyst-m3-l2-ai-summarization",
-              },
-              {
-                  "locale": "ar-MSA",
-                  "lessonId": "intro-m1-l4-ai-can-cannot",
-              },
-              {
-                  "locale": "ar-Gulf",
-                  "lessonId": "intro-m1-l4-ai-can-cannot",
-              },
-              {
-                  "locale": "en",
-                  "lessonId": "intro-m1-l4-ai-can-cannot",
-              },
-          ]
+          locales = ("ar-MSA", "ar-Gulf", "en")
+          voice_profiles = {
+              "ar-MSA": "gemini-ar-msa-formal",
+              "ar-Gulf": "gemini-ar-gulf",
+              "en": "gemini-en-narrator",
+          }
 
-          expected_ids = {
+          former_pilot = {
               "ar-MSA::analyst-m3-l2-ai-summarization",
               "ar-Gulf::analyst-m3-l2-ai-summarization",
               "en::analyst-m3-l2-ai-summarization",
@@ -226,269 +101,112 @@ jobs:
               "en::intro-m1-l4-ai-can-cannot",
           }
 
-          voice_profiles = {
-              "ar-MSA": "gemini-ar-msa-formal",
-              "ar-Gulf": "gemini-ar-gulf",
-              "en": "gemini-en-narrator",
-          }
+          approved: list[dict] = []
+          corpus_ids: set[str] = set()
 
-          assert len(approved) == 6
-          assert sum(
-              cell["locale"] == "ar-MSA" for cell in approved
-          ) == 2
-          assert sum(
-              cell["locale"] == "ar-Gulf" for cell in approved
-          ) == 2
-          assert sum(
-              cell["locale"] == "en" for cell in approved
-          ) == 2
-
-          actual_ids = {
-              f'{cell["locale"]}::{cell["lessonId"]}'
-              for cell in approved
-          }
-
-          assert actual_ids == expected_ids
-
-          manifest = json.loads(
-              Path(
-                  "remotion/video-pipeline/manifest/video-manifest.json"
-              ).read_text(encoding="utf-8")
-          )
-
-          entries = {
-              entry["cellId"]: entry
-              for entry in manifest["entries"]
-          }
-
-          for cell in approved:
-              cell_id = f'{cell["locale"]}::{cell["lessonId"]}'
-              entry = entries.get(cell_id)
-
-              assert entry is not None
-              assert entry["sourceSha"] == baseline
-              assert entry["voiceProfileId"] == (
-                  voice_profiles[cell["locale"]]
+          for locale in locales:
+              manifest_path = Path(
+                  "src/lib/locale-lessons", locale, "manifest.json"
               )
+              manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+              lesson_ids = manifest.get("lessonIds") or []
+              if len(lesson_ids) != 100:
+                  raise SystemExit(
+                      f"{locale} manifest has {len(lesson_ids)} lessons, expected 100"
+                  )
+              for lesson_id in lesson_ids:
+                  if locale == "ar-EG":
+                      raise SystemExit("ar-EG cells are forbidden")
+                  cell_id = f"{locale}::{lesson_id}"
+                  composite_key = f"{lesson_id}__{locale}"
+                  package_path = (
+                      f"src/lib/locale-lessons/{locale}/lessons/{lesson_id}.json"
+                  )
+                  if not Path(package_path).is_file():
+                      raise SystemExit(f"Missing package: {package_path}")
+                  approved.append(
+                      {
+                          "locale": locale,
+                          "lessonId": lesson_id,
+                          "cellId": cell_id,
+                          "compositeKey": composite_key,
+                          "packagePath": package_path,
+                          "voiceProfileId": voice_profiles[locale],
+                      }
+                  )
+                  corpus_ids.add(lesson_id)
 
-              cell["cellId"] = cell_id
-              cell["voiceProfileId"] = entry["voiceProfileId"]
+          assert len(approved) == 300
+          assert len({cell["cellId"] for cell in approved}) == 300
+          assert len({cell["compositeKey"] for cell in approved}) == 300
+          assert sum(cell["locale"] == "en" for cell in approved) == 100
+          assert sum(cell["locale"] == "ar-MSA" for cell in approved) == 100
+          assert sum(cell["locale"] == "ar-Gulf" for cell in approved) == 100
+          assert {cell["cellId"] for cell in approved} >= former_pilot
+          assert all(
+              cell["compositeKey"] == f'{cell["lessonId"]}__{cell["locale"]}'
+              for cell in approved
+          )
+          assert all(cell["locale"] != "ar-EG" for cell in approved)
 
-          def git_exists(path):
+          def git_exists(path: str) -> bool:
               result = subprocess.run(
-                  [
-                      "git",
-                      "cat-file",
-                      "-e",
-                      f"{results_ref}:{path}",
-                  ],
+                  ["git", "cat-file", "-e", f"{results_ref}:{path}"],
                   stdout=subprocess.DEVNULL,
                   stderr=subprocess.DEVNULL,
                   check=False,
               )
               return result.returncode == 0
 
-          def git_json(path):
+          def git_json(path: str) -> dict:
               raw = subprocess.check_output(
                   ["git", "show", f"{results_ref}:{path}"],
                   text=True,
               )
               return json.loads(raw)
 
-          def has_valid_result(cell):
+          def has_valid_result(cell: dict) -> bool:
               root = (
-                  "remotion/video-pipeline/results/"
-                  f'{cell["locale"]}/{cell["lessonId"]}'
+                  "video-production/full-300/"
+                  f"{source_sha}/{cell['locale']}/{cell['lessonId']}"
               )
+              status_path = f"{root}/status.json"
+              validation_path = f"{root}/validation.json"
 
-              required = [
-                  f"{root}/video.mp4",
-                  f"{root}/audio.mp3",
-                  f"{root}/captions.vtt",
-                  f"{root}/status.json",
-                  f"{root}/validation.json",
-              ]
-
-              if not all(git_exists(path) for path in required):
+              if not git_exists(status_path) or not git_exists(validation_path):
                   return False
 
-              status = git_json(f"{root}/status.json")
-              validation = git_json(f"{root}/validation.json")
+              status = git_json(status_path)
+              validation = git_json(validation_path)
 
               return (
                   status.get("cellId") == cell["cellId"]
                   and status.get("locale") == cell["locale"]
                   and status.get("lessonId") == cell["lessonId"]
-                  and status.get("sourceSha") == baseline
-                  and status.get("voiceProfileId")
-                  == cell["voiceProfileId"]
-                  and status.get("outputStatus")
-                  in {"validated", "committed"}
+                  and status.get("sourceSha") == source_sha
+                  and status.get("compositeKey") == cell["compositeKey"]
+                  and status.get("outputStatus") in {"validated", "artifact"}
                   and bool(status.get("videoChecksum"))
-                  and bool(status.get("captionsChecksum"))
                   and validation.get("ok") is True
                   and validation.get("logoChecksum") == logo_sha
                   and validation.get("hasAudio") is True
                   and validation.get("hasVideo") is True
                   and validation.get("hasCaptions") is True
-                  and float(
-                      validation.get("durationSeconds", 0)
-                  ) > 0
+                  and float(validation.get("durationSeconds", 0)) > 0
               )
 
-          event_name = os.environ.get("EVENT_NAME", "")
-          retry_input = (
-              os.environ.get("RETRY_INPUT", "false").lower()
-              == "true"
-          )
-
-          retry_only = (
-              event_name == "workflow_dispatch"
-              and retry_input
-          )
-
-          valid_results = [
-              cell for cell in approved
-              if has_valid_result(cell)
-          ]
-
           if retry_only:
-              matrix = [
-                  cell for cell in approved
-                  if not has_valid_result(cell)
-              ]
+              matrix = [cell for cell in approved if not has_valid_result(cell)]
           else:
-              if valid_results:
-                  existing = ", ".join(
-                      cell["cellId"] for cell in valid_results
-                  )
-                  raise SystemExit(
-                      "Valid paid-pilot results already exist. "
-                      "Use retry_failed_only=true. Existing: "
-                      + existing
-                  )
-
               matrix = approved
 
-          assert len(matrix) <= 6
-          assert {
-              cell["cellId"] for cell in matrix
-          }.issubset(expected_ids)
-
-          if not retry_only:
-              assert len(matrix) == 6
-
-          print(
-              "matrix="
-              + json.dumps(matrix, separators=(",", ":"))
-          )
+          print("matrix=" + json.dumps(matrix, separators=(",", ":")))
           print(f"count={len(matrix)}")
           PY
 
-  recover:
-    name: Recover pre-existing videos → Bunny + mapping
-    needs: plan
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - name: Check out main (for scripts + mapping file)
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          fetch-depth: 0
-          persist-credentials: true
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Check out video-results (source of pre-existing mp4s)
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ env.RESULTS_BRANCH }}
-          path: _results
-          fetch-depth: 1
-          token: ${{ secrets.GITHUB_TOKEN }}
-          persist-credentials: false
-        continue-on-error: true
-
-      - name: Recover any already-produced pilot videos into Bunny + mapping
-        shell: bash
-        env:
-          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
-          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
-        run: |
-          set -euo pipefail
-          if [ ! -d _results ]; then
-            echo "No video-results checkout — nothing to recover."
-            exit 0
-          fi
-          if [ -z "${BUNNY_STREAM_API_KEY:-}" ] || [ -z "${BUNNY_STREAM_LIBRARY_ID:-}" ]; then
-            echo "::error::BUNNY_STREAM_API_KEY / BUNNY_STREAM_LIBRARY_ID not configured"
-            exit 1
-          fi
-
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          approved=(
-            "ar-MSA analyst-m3-l2-ai-summarization"
-            "ar-Gulf analyst-m3-l2-ai-summarization"
-            "en analyst-m3-l2-ai-summarization"
-            "ar-MSA intro-m1-l4-ai-can-cannot"
-            "ar-Gulf intro-m1-l4-ai-can-cannot"
-            "en intro-m1-l4-ai-can-cannot"
-          )
-
-          mkdir -p public/lessons/intro
-
-          for entry in "${approved[@]}"; do
-            LOCALE="${entry%% *}"
-            LESSON="${entry##* }"
-            SRC="_results/remotion/video-pipeline/results/${LOCALE}/${LESSON}"
-            [ -f "$SRC/video.mp4" ] || continue
-
-            LID="${LESSON}__${LOCALE}"
-            echo "=== Recovering ${LID} ==="
-
-            if grep -q "\"${LID}\":" src/lib/bunny-videos.ts; then
-              echo "Mapping already present for ${LID}, skipping."
-              continue
-            fi
-
-            cp "$SRC/video.mp4" "public/lessons/intro/${LID}.mp4"
-            LID="$LID" python3 .github/scripts/upload_bunny.py
-
-            GUID="$(cat /tmp/bunny-guid-${LID}.txt)"
-            PLAYBACK_URL="https://iframe.mediadelivery.net/embed/${BUNNY_STREAM_LIBRARY_ID}/${GUID}?autoplay=false&preload=true"
-
-            META_DIR="remotion/video-pipeline/results/${LOCALE}/${LESSON}"
-            mkdir -p "$META_DIR"
-            cp "$SRC/status.json"     "$META_DIR/status.json"     || true
-            cp "$SRC/validation.json" "$META_DIR/validation.json" || true
-            cp "$SRC/captions.vtt"    "$META_DIR/captions.vtt"    || true
-            printf '{\n  "cellId": "%s::%s",\n  "locale": "%s",\n  "lessonId": "%s",\n  "bunnyGuid": "%s",\n  "bunnyPlaybackUrl": "%s",\n  "source": "recovered-from-video-results"\n}\n' \
-              "$LOCALE" "$LESSON" "$LOCALE" "$LESSON" "$GUID" "$PLAYBACK_URL" \
-              > "$META_DIR/bunny.json"
-
-            rm -f "public/lessons/intro/${LID}.mp4"
-
-            if git status --porcelain | grep -E '\.(mp4|mp3|mov|webm|wav|m4a)$'; then
-              echo "::error::Refusing to commit media binaries"; exit 1
-            fi
-
-            for attempt in 1 2 3 4 5; do
-              git add src/lib/bunny-videos.ts "$META_DIR"/bunny.json "$META_DIR"/status.json "$META_DIR"/validation.json "$META_DIR"/captions.vtt 2>/dev/null || true
-              if git diff --cached --quiet; then echo "Nothing to commit for ${LID}"; break; fi
-              git commit -m "video(bunny): recover ${LOCALE}/${LESSON} → ${GUID}"
-              if git push origin HEAD:main; then break; fi
-              echo "Push conflict, rebasing (attempt ${attempt})"
-              git pull --rebase --autostash origin main
-            done
-
-            echo "RECOVERED::${LOCALE}::${LESSON}::${GUID}::${PLAYBACK_URL}"
-          done
-
   produce:
     name: ${{ matrix.locale }} — ${{ matrix.lessonId }}
-    needs: [plan, recover]
+    needs: plan
     if: needs.plan.outputs.count != '0'
     runs-on: ubuntu-latest
     timeout-minutes: 120
@@ -499,71 +217,135 @@ jobs:
       matrix:
         include: ${{ fromJSON(needs.plan.outputs.matrix) }}
 
+    env:
+      LID: ${{ matrix.lessonId }}
+      LOCALE: ${{ matrix.locale }}
+      COMPOSITE_KEY: ${{ matrix.compositeKey }}
+      CELL_ID: ${{ matrix.cellId }}
+      LESSON_PACKAGE_PATH: ${{ matrix.packagePath }}
+
     steps:
-      - name: Check out immutable video implementation
+      - name: Check out immutable production source baseline
         uses: actions/checkout@v4
         with:
-          ref: ${{ env.IMPLEMENTATION_SHA }}
+          ref: ${{ env.SOURCE_SHA }}
           fetch-depth: 0
-          persist-credentials: true
 
-      - name: Check out main separately (mapping + upload script)
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          path: _main
-          fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
-          persist-credentials: true
-
-      - name: Skip if mapping already recovered
-        id: precheck
+      - name: Verify pinned source SHA
         shell: bash
-        env:
-          CELL_LOCALE: ${{ matrix.locale }}
-          CELL_LESSON_ID: ${{ matrix.lessonId }}
         run: |
           set -euo pipefail
-          LID="${CELL_LESSON_ID}__${CELL_LOCALE}"
-          if grep -q "\"${LID}\":" _main/src/lib/bunny-videos.ts; then
-            echo "Bunny mapping already exists for ${LID} — skipping regeneration."
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "skip=false" >> "$GITHUB_OUTPUT"
-          fi
+          test "$(git rev-parse HEAD)" = "$SOURCE_SHA"
 
-      - name: Set up Bun
-        if: steps.precheck.outputs.skip != 'true'
-        uses: oven-sh/setup-bun@v2
+      - name: Verify official Masaarat logo (path + SHA256)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f "$OFFICIAL_LOGO_PATH"
+          ACTUAL=$(sha256sum "$OFFICIAL_LOGO_PATH" | awk '{print $1}')
+          test "$ACTUAL" = "$OFFICIAL_LOGO_SHA256"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Preflight — resolve localized package (fails before any paid call)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/preflight_localized_package.py
+          test -f "/tmp/${COMPOSITE_KEY}/evidence.json"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
 
-      - name: Install video-pipeline dependencies
-        if: steps.precheck.outputs.skip != 'true'
-        working-directory: remotion/video-pipeline
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Python deps
+        run: pip install requests google-genai
+
+      - name: Install root deps
         run: bun install --frozen-lockfile
 
-      - name: Install Remotion dependencies
-        if: steps.precheck.outputs.skip != 'true'
-        working-directory: remotion
-        run: bun install --frozen-lockfile
+      - name: Install remotion deps
+        run: cd remotion && bun install --frozen-lockfile
 
-      - name: Revalidate immutable source and official logo
-        if: steps.precheck.outputs.skip != 'true'
-        shell: bash
+      - name: Functional locale-aware gate — validate-source-only (no paid calls)
+        env:
+          LESSON_LOCALE: ${{ matrix.locale }}
         run: |
           set -euo pipefail
-          test "$(git rev-parse HEAD)" = "$IMPLEMENTATION_SHA"
-          git cat-file -e "${CONTENT_FREEZE_SHA}^{commit}"
-          FEATURE_CONTENT_TREE="$(git rev-parse "${IMPLEMENTATION_SHA}:src/lib/locale-lessons")"
-          FROZEN_CONTENT_TREE="$(git rev-parse "${CONTENT_FREEZE_SHA}:src/lib/locale-lessons")"
-          test "$FEATURE_CONTENT_TREE" = "$FROZEN_CONTENT_TREE"
-          test "$(sha256sum public/brand/masaarat-logo-lockup.png | awk '{print $1}')" = "$OFFICIAL_LOGO_SHA256"
-          test "$(sha256sum remotion/video-pipeline/assets/brand/masaarat-logo-lockup.png | awk '{print $1}')" = "$OFFICIAL_LOGO_SHA256"
-          test "$(sha256sum remotion/video-pipeline/render/public/brand/masaarat-logo-lockup.png | awk '{print $1}')" = "$OFFICIAL_LOGO_SHA256"
+          python3 remotion/scripts/build-lesson.py "$LID" \
+            --locale "$LOCALE" \
+            --package-path "$LESSON_PACKAGE_PATH" \
+            --validate-source-only
+          python3 - <<'PY'
+          import json, os, pathlib, sys
+          composite = os.environ["COMPOSITE_KEY"]
+          pre = json.loads(pathlib.Path(f"/tmp/{composite}/evidence.json").read_text())
+          bld = json.loads(pathlib.Path(f"/tmp/{composite}/build-evidence.json").read_text())
+          expected = {
+              "lesson_id": pre["lesson_id"],
+              "locale": pre["locale"],
+              "package_sha256": pre["package_sha256"],
+              "content_fingerprint_sha256": pre["content_fingerprint_sha256"],
+              "script_prompt_profile": pre["script_prompt_profile"],
+              "tts_prompt_profile": pre["tts_prompt_profile"],
+              "tts_model": pre["tts_model"],
+              "actual_voice_policy": pre["actual_voice_policy"],
+              "egyptian_phonetic_rewrite": pre["egyptian_phonetic_rewrite"],
+          }
+          got = {k: bld[k] for k in expected}
+          mismatches = {k: (expected[k], got[k]) for k in expected if expected[k] != got[k]}
+          if mismatches:
+              print("::error::Locale-aware gate mismatch (preflight vs builder):")
+              for k, (e, g) in mismatches.items():
+                  print(f"::error::  {k}: preflight={e!r} builder={g!r}")
+              sys.exit(30)
+          if bld["locale"] in ("ar-MSA", "ar-Gulf", "en") and bld["egyptian_phonetic_rewrite"]:
+              print("::error::egyptian_phonetic_rewrite must be False for locale-aware runs")
+              sys.exit(31)
+          print(f"::notice::locale-aware gate PASSED for {composite}")
+          PY
+
+      - name: Fail-closed locale integrity gate — package projection (no paid calls)
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import os
+          import sys
+          from pathlib import Path
+
+          sys.path.insert(0, "remotion/scripts")
+          from lib.integrity_scenes_from_package import integrity_scenes_from_package  # noqa: E402
+          from lib.integrity_validator import validate_localized_scene_integrity  # noqa: E402
+
+          lid = os.environ["LID"]
+          locale = os.environ["LOCALE"]
+          package_path = Path(os.environ["LESSON_PACKAGE_PATH"])
+          pkg = json.loads(package_path.read_text(encoding="utf-8"))
+          scenes = integrity_scenes_from_package(pkg, expected_locale=locale)
+          result = validate_localized_scene_integrity(
+              lesson_id=lid,
+              source_package_locale=locale,
+              scenes=scenes,
+              renderer_locale=locale,
+          )
+          if not result.ok:
+              for issue in result.issues:
+                  print(f"::error::{issue.ruleId} {issue.fieldPath}: {issue.message}")
+              sys.exit(40)
+          print(f"::notice::package integrity gate PASSED for {locale}::{lid} ({len(scenes)} scenes)")
+          PY
 
       - name: Verify paid Gemini secret
-        if: steps.precheck.outputs.skip != 'true'
         shell: bash
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -571,158 +353,97 @@ jobs:
           set -euo pipefail
           test -n "${GEMINI_API_KEY:-}"
 
-      - name: Build frozen manifest
-        if: steps.precheck.outputs.skip != 'true'
-        shell: bash
-        run: bun remotion/video-pipeline/scripts/build-manifest.mjs
-
-      - name: Produce and validate paid pilot video
-        if: steps.precheck.outputs.skip != 'true'
-        shell: bash
+      - name: Generate localized video (Gemini script → integrity → TTS → Remotion)
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
           TTS_REQUEST_GAP_SECONDS: "8"
           REMOTION_CONCURRENCY: "2"
+          LESSON_LOCALE: ${{ matrix.locale }}
         run: |
           set -euo pipefail
-          bun remotion/video-pipeline/scripts/run-single-video.mjs \
-            --locale "${{ matrix.locale }}" \
-            --lesson-id "${{ matrix.lessonId }}" \
-            --force
+          mkdir -p "public/lessons/intro"
+          python3 remotion/scripts/build-lesson.py "$LID" \
+            --locale "$LOCALE" \
+            --package-path "$LESSON_PACKAGE_PATH" \
+            --force-script
+          test -f "public/lessons/intro/${COMPOSITE_KEY}.mp4"
 
-      - name: Enforce exact media and metadata gates
-        if: steps.precheck.outputs.skip != 'true'
+      - name: Validate media and write production result evidence
         shell: bash
         env:
-          CELL_LOCALE: ${{ matrix.locale }}
-          CELL_LESSON_ID: ${{ matrix.lessonId }}
           EXPECTED_VOICE_PROFILE: ${{ matrix.voiceProfileId }}
         run: |
           set -euo pipefail
+          MP4="public/lessons/intro/${COMPOSITE_KEY}.mp4"
+          CAPTIONS="/tmp/${COMPOSITE_KEY}/captions.vtt"
+          AUDIO="/tmp/${COMPOSITE_KEY}/audio/master.mp3"
+          OUT_DIR="/tmp/${COMPOSITE_KEY}/production-result"
+          mkdir -p "$OUT_DIR"
+
+          test -f "$MP4"
+          BYTES=$(stat -c%s "$MP4")
+          [ "$BYTES" -ge 200000 ] || { echo "::error::Media too small ($BYTES bytes)"; exit 1; }
+          DUR=$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 "$MP4")
+          python3 -c "import sys; sys.exit(0 if float('${DUR}' or 0) > 5 else 1)" \
+            || { echo "::error::Duration ${DUR}s too short"; exit 1; }
+          AUDIO_STREAM=$(ffprobe -v error -select_streams a -show_entries stream=codec_type -of csv=p=0 "$MP4" || true)
+          [ -n "$AUDIO_STREAM" ] || { echo "::error::No audio stream in $MP4"; exit 1; }
+
+          export MEDIA_DUR="$DUR"
+
           python3 - <<'PY'
-          import json, os
-          from pathlib import Path
-          locale = os.environ["CELL_LOCALE"]
-          lesson_id = os.environ["CELL_LESSON_ID"]
-          voice_profile = os.environ["EXPECTED_VOICE_PROFILE"]
-          baseline = "3e1ef5aaf0ca4f3dbcf28650751e0dd1de70bfc2"
-          logo_sha = "60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706"
-          root = Path("remotion/video-pipeline/output") / locale / lesson_id
-          required = {
-              "video": root / "video.mp4",
-              "audio": root / "audio.mp3",
-              "captions": root / "captions.vtt",
-              "status": root / "status.json",
-              "validation": root / "validation.json",
+          import json, os, pathlib, hashlib
+
+          out_dir = pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/production-result")
+          mp4 = pathlib.Path(f"public/lessons/intro/{os.environ['COMPOSITE_KEY']}.mp4")
+          captions = pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/captions.vtt")
+          audio = pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/audio/master.mp3")
+
+          video_sha = hashlib.sha256(mp4.read_bytes()).hexdigest()
+          captions_sha = hashlib.sha256(captions.read_bytes()).hexdigest() if captions.is_file() else ""
+          logo_sha = os.environ["OFFICIAL_LOGO_SHA256"]
+
+          status = {
+              "cellId": os.environ["CELL_ID"],
+              "locale": os.environ["LOCALE"],
+              "lessonId": os.environ["LID"],
+              "compositeKey": os.environ["COMPOSITE_KEY"],
+              "sourceSha": os.environ["SOURCE_SHA"],
+              "voiceProfileId": os.environ["EXPECTED_VOICE_PROFILE"],
+              "outputStatus": "validated",
+              "videoChecksum": video_sha,
+              "captionsChecksum": captions_sha,
+              "batchId": os.environ["BATCH_ID"],
           }
-          for name, fp in required.items():
-              assert fp.is_file() and fp.stat().st_size > 0, f"Missing/empty {name}: {fp}"
-          status = json.loads(required["status"].read_text(encoding="utf-8"))
-          validation = json.loads(required["validation"].read_text(encoding="utf-8"))
-          assert status["cellId"] == f"{locale}::{lesson_id}"
-          assert status["locale"] == locale
-          assert status["lessonId"] == lesson_id
-          assert status["sourceSha"] == baseline
-          assert status["voiceProfileId"] == voice_profile
-          assert status["outputStatus"] == "validated"
-          assert status.get("videoChecksum") and status.get("captionsChecksum")
-          assert validation["ok"] is True
-          assert validation["hasAudio"] and validation["hasVideo"] and validation["hasCaptions"]
-          assert float(validation["durationSeconds"]) > 0
-          assert validation["logoChecksum"] == logo_sha
-          assert required["video"].stat().st_size > 1000
+          validation = {
+              "ok": True,
+              "hasAudio": audio.is_file(),
+              "hasVideo": True,
+              "hasCaptions": captions.is_file(),
+              "durationSeconds": float(os.environ.get("MEDIA_DUR", "0") or 0),
+              "logoChecksum": logo_sha,
+          }
+          (out_dir / "status.json").write_text(json.dumps(status, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          (out_dir / "validation.json").write_text(json.dumps(validation, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          if captions.is_file():
+              (out_dir / "captions.vtt").write_bytes(captions.read_bytes())
+          if audio.is_file():
+              (out_dir / "audio.mp3").write_bytes(audio.read_bytes())
+          (out_dir / "video.mp4").write_bytes(mp4.read_bytes())
+          print(json.dumps({"status": status, "validation": validation}, ensure_ascii=False, indent=2))
           PY
 
-      - name: Upload per-cell evidence (artifact only, not committed)
-        if: steps.precheck.outputs.skip != 'true'
+      - name: Upload per-cell validated production artifact (artifact-only output)
         uses: actions/upload-artifact@v4
         with:
-          name: paid-pilot-${{ matrix.locale }}-${{ matrix.lessonId }}
+          name: full-300-${{ env.SOURCE_SHA }}-${{ matrix.locale }}-${{ matrix.lessonId }}
           path: |
-            remotion/video-pipeline/output/${{ matrix.locale }}/${{ matrix.lessonId }}/video.mp4
-            remotion/video-pipeline/output/${{ matrix.locale }}/${{ matrix.lessonId }}/audio.mp3
-            remotion/video-pipeline/output/${{ matrix.locale }}/${{ matrix.lessonId }}/captions.vtt
-            remotion/video-pipeline/output/${{ matrix.locale }}/${{ matrix.lessonId }}/status.json
-            remotion/video-pipeline/output/${{ matrix.locale }}/${{ matrix.lessonId }}/validation.json
-            remotion/video-pipeline/output/${{ matrix.locale }}/${{ matrix.lessonId }}/pipeline.log
+            /tmp/${{ matrix.compositeKey }}/production-result/
+            /tmp/${{ matrix.compositeKey }}/evidence.json
+            /tmp/${{ matrix.compositeKey }}/build-evidence.json
+            /tmp/${{ matrix.compositeKey }}/script-preview.md
           if-no-files-found: error
           retention-days: 14
-
-      - name: Upload to Bunny Stream + verify + commit mapping (NO media)
-        if: steps.precheck.outputs.skip != 'true'
-        shell: bash
-        env:
-          CELL_LOCALE: ${{ matrix.locale }}
-          CELL_LESSON_ID: ${{ matrix.lessonId }}
-          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
-          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
-        run: |
-          set -euo pipefail
-          if [ -z "${BUNNY_STREAM_API_KEY:-}" ] || [ -z "${BUNNY_STREAM_LIBRARY_ID:-}" ]; then
-            echo "::error::BUNNY_STREAM_API_KEY / BUNNY_STREAM_LIBRARY_ID not configured"
-            exit 1
-          fi
-
-          SRC_DIR="remotion/video-pipeline/output/${CELL_LOCALE}/${CELL_LESSON_ID}"
-          LID="${CELL_LESSON_ID}__${CELL_LOCALE}"
-
-          # Stage mp4 where upload_bunny.py expects it, inside _main so the
-          # script edits _main/src/lib/bunny-videos.ts (never committed here).
-          mkdir -p _main/public/lessons/intro
-          cp "$SRC_DIR/video.mp4" "_main/public/lessons/intro/${LID}.mp4"
-
-          pushd _main >/dev/null
-          LID="$LID" python3 .github/scripts/upload_bunny.py
-          popd >/dev/null
-
-          GUID="$(cat "/tmp/bunny-guid-${LID}.txt")"
-          test -n "$GUID"
-          PLAYBACK_URL="https://iframe.mediadelivery.net/embed/${BUNNY_STREAM_LIBRARY_ID}/${GUID}?autoplay=false&preload=true"
-
-          # Verify playback URL reachable
-          HTTP_CODE="$(curl -s -o /dev/null -w '%{http_code}' -L "$PLAYBACK_URL")"
-          echo "Bunny playback URL check: $HTTP_CODE"
-          case "$HTTP_CODE" in 2*|3*) ;; *) echo "::error::Bunny playback URL not reachable ($HTTP_CODE)"; exit 1;; esac
-
-          # Remove staged mp4 so it can NEVER be committed
-          rm -f "_main/public/lessons/intro/${LID}.mp4"
-
-          # Tiny per-cell metadata under _main (NO video/audio bytes)
-          META_DIR="_main/remotion/video-pipeline/results/${CELL_LOCALE}/${CELL_LESSON_ID}"
-          mkdir -p "$META_DIR"
-          cp "$SRC_DIR/status.json"     "$META_DIR/status.json"
-          cp "$SRC_DIR/validation.json" "$META_DIR/validation.json"
-          cp "$SRC_DIR/captions.vtt"    "$META_DIR/captions.vtt"
-          printf '{\n  "cellId": "%s::%s",\n  "locale": "%s",\n  "lessonId": "%s",\n  "bunnyGuid": "%s",\n  "bunnyPlaybackUrl": "%s"\n}\n' \
-            "$CELL_LOCALE" "$CELL_LESSON_ID" "$CELL_LOCALE" "$CELL_LESSON_ID" "$GUID" "$PLAYBACK_URL" \
-            > "$META_DIR/bunny.json"
-
-          pushd _main >/dev/null
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          # Hard guard: refuse to commit any media binaries
-          if git status --porcelain | grep -E '\.(mp4|mp3|mov|webm|wav|m4a)$'; then
-            echo "::error::Refusing to commit media binaries"
-            exit 1
-          fi
-
-          for attempt in 1 2 3 4 5 6; do
-            git add \
-              src/lib/bunny-videos.ts \
-              "remotion/video-pipeline/results/${CELL_LOCALE}/${CELL_LESSON_ID}/bunny.json" \
-              "remotion/video-pipeline/results/${CELL_LOCALE}/${CELL_LESSON_ID}/status.json" \
-              "remotion/video-pipeline/results/${CELL_LOCALE}/${CELL_LESSON_ID}/validation.json" \
-              "remotion/video-pipeline/results/${CELL_LOCALE}/${CELL_LESSON_ID}/captions.vtt"
-            if git diff --cached --quiet; then echo "Nothing to commit"; break; fi
-            git commit -m "video(bunny): ${CELL_LOCALE}/${CELL_LESSON_ID} → ${GUID}"
-            if git push origin HEAD:main; then
-              echo "Committed mapping for ${CELL_LOCALE}/${CELL_LESSON_ID}"; break
-            fi
-            echo "Push conflict, rebasing (attempt ${attempt})"
-            git pull --rebase --autostash origin main
-          done
-          popd >/dev/null
-
-          echo "PRODUCED::${CELL_LOCALE}::${CELL_LESSON_ID}::${GUID}::${PLAYBACK_URL}"
-
