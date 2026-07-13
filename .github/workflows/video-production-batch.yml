@@ -592,6 +592,22 @@ jobs:
           if audio.is_file():
               (out_dir / "audio.mp3").write_bytes(audio.read_bytes())
           (out_dir / "video.mp4").write_bytes(mp4.read_bytes())
+
+          pipeline_log = out_dir / "pipeline.log"
+          log_chunks: list[str] = []
+          for log_path in (
+              pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/render-lesson.log"),
+              pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/script-preview.md"),
+          ):
+              if log_path.is_file():
+                  log_chunks.append(f"===== {log_path.name} =====\n")
+                  log_chunks.append(log_path.read_text(encoding="utf-8", errors="replace"))
+                  log_chunks.append("\n")
+          pipeline_log.write_text(
+              "".join(log_chunks) if log_chunks else "pipeline.log: no auxiliary logs captured\n",
+              encoding="utf-8",
+          )
+
           print(json.dumps({"status": status, "validation": validation}, ensure_ascii=False, indent=2))
           PY
 
