@@ -13,6 +13,7 @@ import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.abspath(os.path.join(HERE, "../.."))
+sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(HERE, "lib"))
 
 from gemini_tts import synthesize_segments  # noqa: E402
@@ -23,7 +24,7 @@ from localized_package_adapter import (  # noqa: E402
     package_to_blocks as _package_to_blocks,
     resolve_next_lesson_title as _resolve_next_lesson_title,
 )
-from integrity_validator import (  # noqa: E402
+from lib.integrity_validator import (  # noqa: E402
     assert_localized_scene_integrity as _assert_localized_scene_integrity,
 )
 
