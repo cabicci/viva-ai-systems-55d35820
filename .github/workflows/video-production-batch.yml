@@ -625,17 +625,37 @@ jobs:
       ARTIFACT_DIGEST: "sha256:3dd0f69515d9fa8a551518c0d42395623d3d00202355817f0d434ec68bb16175"
 
     steps:
-      - name: Check out immutable production source baseline
+      - name: Check out dispatched workflow control scripts
         uses: actions/checkout@v4
         with:
-          ref: ${{ env.SOURCE_SHA }}
+          ref: ${{ github.sha }}
           fetch-depth: 0
 
-      - name: Verify pinned source SHA
+      - name: Verify finalization control scripts at dispatched workflow SHA
         shell: bash
         run: |
           set -euo pipefail
-          test "$(git rev-parse HEAD)" = "$SOURCE_SHA"
+          test "$(git rev-parse HEAD)" = "${{ github.sha }}"
+          test -f .github/scripts/verify_finalize_one_pins.py
+          test -f .github/scripts/finalize_cell_cli.py
+          test -f .github/scripts/check_finalized_receipt.py
+          test -f .github/scripts/collect_finalization_cli.py
+          test -d .github/scripts/video_finalize
+          test -f .github/scripts/video_finalize/finalize_cell.py
+
+      - name: Check out immutable production SOURCE_SHA (read-only baseline)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SOURCE_SHA }}
+          path: source-baseline
+          fetch-depth: 1
+
+      - name: Verify pinned SOURCE_SHA baseline (fail-closed)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$SOURCE_SHA" = "6cfd019d315ec3f5a30ffc83bd551f4deb52385c"
+          test "$(git -C source-baseline rev-parse HEAD)" = "$SOURCE_SHA"
 
       - uses: actions/setup-python@v5
         with:
