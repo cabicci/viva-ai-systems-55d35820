@@ -49,7 +49,19 @@ def test_ar_gulf_accepts_neutral_gulf():
     assert r.ok, r.violations
 
 
-def test_ar_eg_is_out_of_scope():
+def test_ar_gulf_accepts_shared_formal_arabic():
+    # Formal Arabic vocabulary that also appears in MSA must NOT be rejected —
+    # neutral Gulf narration naturally uses such words.
+    r = validate_spoken(
+        "ar-Gulf",
+        "في هذا الدرس نتناول موضوع التلخيص باستخدام الذكاء الاصطناعي، لا سيما التطبيقات العملية.",
+    )
+    assert r.ok, r.violations
+
+
+def test_ar_gulf_rejects_english_only():
+    r = validate_spoken("ar-Gulf", "This is English narration only.")
+    assert not r.ok
     r = validate_spoken("ar-EG", "أي كلام")
     assert not r.ok
 

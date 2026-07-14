@@ -42,10 +42,10 @@ GULF_MARKERS = (
     "shloonak", "wayed", "hal7een", "abgha",
 )
 
-# Very-formal MSA-only markers that would be out-of-place in Gulf narration.
-MSA_ONLY_MARKERS = (
-    "إذاً بناءً على ما تقدم", "وعليه فإنه", "لا سيما", "ومن ثم فإن",
-)
+# NOTE: neutral Gulf narration may (and typically does) contain formal Arabic
+# vocabulary that also appears in MSA. We do NOT treat shared formal vocabulary
+# as cross-locale leakage — the ar-Gulf gate only rejects Egyptian markers,
+# wrong script, and English-only narration.
 
 # Colloquial Latin/leetspeak digits used in Arabic chat orthography — never
 # acceptable in ar-MSA narration.
@@ -62,9 +62,31 @@ class GateResult:
         return {"ok": self.ok, "locale": self.locale, "violations": list(self.violations)}
 
 
+_ARABIC_LETTER = r"[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF]"
+
+
+def _has_arabic_letters(s: str) -> bool:
+    return bool(re.search(_ARABIC_LETTER, s))
+
+
 def _contains_any(text: str, needles: Iterable[str]) -> list[str]:
-    t = text.lower()
-    return [n for n in needles if n.lower() in t]
+    """Match markers with locale-aware boundaries.
+
+    * Arabic markers: bounded by non-Arabic-letter characters (or string
+      edges) so that a 2-char marker like ``طب`` does not spuriously match
+      inside a longer formal word such as ``التطبيقات``.
+    * Latin markers: standard ``\\b`` word boundaries, case-insensitive.
+    """
+    hits: list[str] = []
+    for n in needles:
+        if _has_arabic_letters(n):
+            pat = rf"(?<!{_ARABIC_LETTER}){re.escape(n)}(?!{_ARABIC_LETTER})"
+            if re.search(pat, text):
+                hits.append(n)
+        else:
+            if re.search(rf"\b{re.escape(n)}\b", text, flags=re.IGNORECASE):
+                hits.append(n)
+    return hits
 
 
 def validate_spoken(locale: str, spoken: str) -> GateResult:
@@ -90,13 +112,12 @@ def validate_spoken(locale: str, spoken: str) -> GateResult:
             v.append("ar-MSA cell contains arabizi digits (2/3/7/9)")
     elif locale == "ar-Gulf":
         if not has_arabic:
-            v.append("ar-Gulf cell missing arabic script")
+            v.append("ar-Gulf cell missing arabic script or is english-only")
         hits = _contains_any(spoken, EGYPTIAN_MARKERS)
         if hits:
             v.append(f"ar-Gulf cell contains egyptian markers: {hits[:3]}")
-        hits_msa = _contains_any(spoken, MSA_ONLY_MARKERS)
-        if hits_msa:
-            v.append(f"ar-Gulf cell contains msa-only formal markers: {hits_msa[:2]}")
+        if ARABIZI_DIGITS.search(spoken):
+            v.append("ar-Gulf cell contains arabizi digits (2/3/7/9)")
     elif locale == "ar-EG":
         v.append("ar-EG is not part of the v2 batch (count=0)")
     else:

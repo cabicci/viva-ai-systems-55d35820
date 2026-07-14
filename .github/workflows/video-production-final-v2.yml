@@ -40,10 +40,10 @@ jobs:
           if [ "${{ github.event.inputs.confirm }}" != "PROCEED" ]; then
             echo "::error::confirm input must equal PROCEED"; exit 1
           fi
-      - name: Refuse push to main
+      - name: Enforce main-only dispatch
         run: |
-          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
-            echo "::error::v2 workflow must not run from main"; exit 1
+          if [ "${{ github.ref }}" != "refs/heads/main" ]; then
+            echo "::error::v2 workflow may be dispatched ONLY from refs/heads/main (got: ${{ github.ref }})"; exit 1
           fi
 
   plan:
