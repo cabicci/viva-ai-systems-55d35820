@@ -78,8 +78,6 @@ def test_no_placeholders_or_deferred_markers():
 
 
 def test_no_forbidden_reuse():
-    # standalone must not import video_v2 or the other batch workflows
-def test_no_forbidden_reuse():
     # standalone code must not import video_v2 or reference the other batch workflows
     for py in STANDALONE.glob("*.py"):
         text = py.read_text(encoding="utf-8")
