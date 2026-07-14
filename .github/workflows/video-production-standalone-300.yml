@@ -368,8 +368,9 @@ jobs:
               ROOTS+=( --receipt-root "$d" )
             done
           fi
+          PLAN_BASENAME=$(basename "$PLAN_PATH")
           python3 .github/scripts/video_standalone/collect.py \
-            --plan /tmp/plan-artifact/$(basename "$PLAN_PATH") \
+            --plan "/tmp/plan-artifact/${PLAN_BASENAME}" \
             --repo-root "$GITHUB_WORKSPACE" \
             "${ROOTS[@]}" \
             --out /tmp/standalone-collector-report.json || true
