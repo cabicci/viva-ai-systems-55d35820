@@ -152,14 +152,9 @@ def inspect_state(
 
     # No receipt: attempt durable Bunny recovery via official list+hash.
     title = bunny_title(ctx.lesson_id, ctx.locale)
-    matches = ctx.bunny.find_by_title_and_hash(title, video_checksum)
-    if len(matches) > 1:
-        return "ambiguous", None, {
-            "reason": "multiple-bunny-identities",
-            "guids": [m.get("guid") for m in matches],
-            "title": title,
-            "videoChecksum": video_checksum,
-        }
+    matches, recon = ctx.bunny.find_by_title_and_hash(title, video_checksum)
+    if recon is not None:
+        return "ambiguous", None, recon
     if len(matches) == 1:
         return "upload-pending-commit", None, {
             "recoveredGuid": matches[0]["guid"],
@@ -229,9 +224,20 @@ def finalize_cell(ctx: FinalizeContext) -> FinalizeResult:
 
     if state == "upload-pending-commit":
         guid = str((recon or {}).get("recoveredGuid"))
-        # Prove existence via official GET (no polling).
+        # Prove existence + exact top-level originalHash via official GET (no polling).
         try:
-            ctx.bunny.get_video(guid)
+            video = ctx.bunny.get_video(guid)
+            get_recon = ctx.bunny.verify_top_level_original_hash(video, video_checksum)
+            if get_recon is not None:
+                rel = reconciliation_relpath(ctx.batch_id, ctx.logical_key)
+                write_reconciliation(ctx.git.repo_dir / rel, get_recon)
+                return FinalizeResult(
+                    outcome=FinalizeOutcome.AMBIGUOUS,
+                    reconciliation=get_recon,
+                    message="recovered GUID originalHash proof failed; fail closed",
+                    bunny_create_calls=0,
+                    bunny_upload_calls=0,
+                )
         except Exception as e:
             return FinalizeResult(
                 outcome=FinalizeOutcome.FAILED,
@@ -246,15 +252,16 @@ def finalize_cell(ctx: FinalizeContext) -> FinalizeResult:
             )
         title = bunny_title(ctx.lesson_id, ctx.locale)
         # Re-check for races before create.
-        matches = ctx.bunny.find_by_title_and_hash(title, video_checksum)
-        if len(matches) > 1:
+        matches, recon = ctx.bunny.find_by_title_and_hash(title, video_checksum)
+        if recon is not None:
+            rel = reconciliation_relpath(ctx.batch_id, ctx.logical_key)
+            write_reconciliation(ctx.git.repo_dir / rel, recon)
             return FinalizeResult(
                 outcome=FinalizeOutcome.AMBIGUOUS,
-                reconciliation={
-                    "reason": "multiple-bunny-identities-pre-upload",
-                    "guids": [m.get("guid") for m in matches],
-                },
-                message="multiple Bunny identities before upload",
+                reconciliation=recon,
+                message="ambiguous Bunny identity before upload; fail closed",
+                bunny_create_calls=0,
+                bunny_upload_calls=0,
             )
         if len(matches) == 1:
             guid = str(matches[0]["guid"])

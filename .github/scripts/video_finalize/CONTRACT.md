@@ -44,7 +44,7 @@ Identity tuple: `batchId + logicalKey + sourceSha + videoChecksum`
 ## Recovery
 
 1. Matching receipt → skipped-success (no Gemini/TTS/render/Bunny/commit)
-2. No receipt + List Videos search by title + `originalHash` == videoChecksum (single match) → commit-only recovery of GUID
+2. No receipt + List Videos search by title + top-level `originalHash` == videoChecksum (single match) → commit-only recovery of GUID
 3. Multiple GUID matches → ambiguous, reconciliation report, fail closed
 4. No match → create + upload MP4 once, then receipt commit/push
 5. Never delete/replace Bunny videos for a matching finalized tuple

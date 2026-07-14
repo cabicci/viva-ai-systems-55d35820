@@ -20,6 +20,7 @@ No polling loops.
 from __future__ import annotations
 
 import json
+import re
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -28,6 +29,8 @@ from typing import Any, Callable
 
 
 HttpFn = Callable[[str, str, bytes | None, dict[str, str]], tuple[int, bytes]]
+
+SHA256_HEX_RE = re.compile(r"^[a-f0-9]{64}$")
 
 
 @dataclass
@@ -118,15 +121,100 @@ class BunnyClient:
         items = data.get("items") or []
         return list(items)
 
+    def _read_top_level_original_hash(self, item: dict[str, Any]) -> tuple[str | None, str | None]:
+        """Return (normalized_hash, problem_code). Only top-level originalHash is accepted."""
+        if "originalHash" not in item:
+            if isinstance(item.get("meta"), dict) and "originalHash" in item["meta"]:
+                return None, "meta-originalHash-rejected"
+            return None, "missing-originalHash"
+        raw = item["originalHash"]
+        if raw is None:
+            return None, "null-originalHash"
+        if raw == "":
+            return None, "empty-originalHash"
+        if not isinstance(raw, str):
+            return None, "non-string-originalHash"
+        normalized = raw.lower()
+        if not SHA256_HEX_RE.match(normalized):
+            return None, "malformed-originalHash"
+        return normalized, None
+
     def find_by_title_and_hash(
         self, title: str, video_checksum: str
-    ) -> list[dict[str, Any]]:
-        """Recover candidates by official search + originalHash match."""
-        matches: list[dict[str, Any]] = []
+    ) -> tuple[list[dict[str, Any]], dict[str, Any] | None]:
+        """Recover candidates by official search + exact top-level originalHash match.
+
+        Returns (matches, reconciliation). reconciliation is set when recovery must fail closed.
+        """
+        expected = video_checksum.lower()
+        if not SHA256_HEX_RE.match(expected):
+            return [], {
+                "reason": "invalid-expected-video-checksum",
+                "videoChecksum": video_checksum,
+            }
+
+        title_hits: list[dict[str, Any]] = []
+        hash_matches: list[dict[str, Any]] = []
+        problems: list[dict[str, Any]] = []
+
         for item in self.list_videos_search(title):
             if item.get("title") != title:
                 continue
-            oh = (item.get("originalHash") or "").lower()
-            if oh and oh == video_checksum.lower():
-                matches.append(item)
-        return matches
+            title_hits.append(item)
+            oh, problem = self._read_top_level_original_hash(item)
+            if problem:
+                problems.append(
+                    {
+                        "guid": item.get("guid"),
+                        "issue": problem,
+                    }
+                )
+                continue
+            assert oh is not None
+            if oh != expected:
+                problems.append(
+                    {
+                        "guid": item.get("guid"),
+                        "issue": "mismatched-originalHash",
+                    }
+                )
+                continue
+            hash_matches.append(item)
+
+        if problems:
+            return [], {
+                "reason": "bunny-originalHash-recovery-ambiguous",
+                "title": title,
+                "videoChecksum": expected,
+                "problems": problems,
+            }
+
+        if len(hash_matches) > 1:
+            return [], {
+                "reason": "multiple-bunny-identities",
+                "guids": [m.get("guid") for m in hash_matches],
+                "title": title,
+                "videoChecksum": expected,
+            }
+
+        return hash_matches, None
+
+    def verify_top_level_original_hash(
+        self, video: dict[str, Any], expected_checksum: str
+    ) -> dict[str, Any] | None:
+        """Validate GET response originalHash for recovered GUID proof."""
+        oh, problem = self._read_top_level_original_hash(video)
+        expected = expected_checksum.lower()
+        if problem:
+            return {
+                "reason": "bunny-get-originalHash-invalid",
+                "issue": problem,
+                "guid": video.get("guid"),
+            }
+        if oh != expected:
+            return {
+                "reason": "bunny-get-originalHash-mismatch",
+                "guid": video.get("guid"),
+                "expected": expected,
+            }
+        return None

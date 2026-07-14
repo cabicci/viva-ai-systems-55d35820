@@ -119,6 +119,29 @@ class MockBunnyStore:
         self.videos: dict[str, dict] = {}
         self.next_id = 0
 
+    def seed_video(
+        self,
+        *,
+        title: str,
+        guid: str | None = None,
+        original_hash: str | None | object = ...,
+        meta: dict | None = None,
+    ) -> str:
+        self.next_id += 1
+        guid = guid or f"guid-{self.next_id:04d}-aaaa-bbbb-cccc-ddddeeeeffff"
+        item: dict = {
+            "guid": guid,
+            "title": title,
+            "status": 1,
+            "length": 10,
+        }
+        if meta is not None:
+            item["meta"] = meta
+        if original_hash is not ...:
+            item["originalHash"] = original_hash
+        self.videos[guid] = item
+        return guid
+
     def handler(self, method, url, body, headers):
         assert "AccessKey" in headers
         assert "secret" not in json.dumps(headers)
@@ -528,6 +551,159 @@ class ArtifactReuseTests(unittest.TestCase):
             _make_bundle(bundle)
             meta = validate_six_file_bundle(bundle)
             self.assertTrue(meta["validation"]["hasCaptions"])
+
+
+class OriginalHashRecoveryTests(unittest.TestCase):
+    def _bundle_and_ctx(self, tmp: str):
+        root = Path(tmp)
+        bundle = root / "prod"
+        meta = _make_bundle(bundle)
+        store = MockBunnyStore()
+        ctx = _ctx(root, bundle, store)
+        title = bunny_title(ctx.lesson_id, ctx.locale)
+        return ctx, meta, store, title
+
+    def test_exact_top_level_original_hash_recovers_one_guid(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx, meta, store, title = self._bundle_and_ctx(tmp)
+            store.seed_video(title=title, original_hash=meta["video_sha"])
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.COMMIT_ONLY_RECOVERED)
+            self.assertEqual(result.bunny_create_calls, 0)
+            self.assertEqual(result.bunny_upload_calls, 0)
+
+    def test_meta_original_hash_without_top_level_fails_closed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx, meta, store, title = self._bundle_and_ctx(tmp)
+            store.seed_video(
+                title=title,
+                meta={"originalHash": meta["video_sha"]},
+            )
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
+            self.assertEqual(result.bunny_create_calls, 0)
+            self.assertEqual(result.bunny_upload_calls, 0)
+
+    def test_missing_top_level_original_hash_fails_closed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx, meta, store, title = self._bundle_and_ctx(tmp)
+            store.seed_video(title=title)
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
+            self.assertIn("missing-originalHash", json.dumps(result.reconciliation))
+
+    def test_null_original_hash_fails_closed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx, meta, store, title = self._bundle_and_ctx(tmp)
+            store.seed_video(title=title, original_hash=None)
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
+            self.assertIn("null-originalHash", json.dumps(result.reconciliation))
+
+    def test_empty_original_hash_fails_closed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx, meta, store, title = self._bundle_and_ctx(tmp)
+            store.seed_video(title=title, original_hash="")
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
+            self.assertIn("empty-originalHash", json.dumps(result.reconciliation))
+
+    def test_malformed_original_hash_fails_closed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx, meta, store, title = self._bundle_and_ctx(tmp)
+            store.seed_video(title=title, original_hash="not-a-sha256")
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
+            self.assertIn("malformed-originalHash", json.dumps(result.reconciliation))
+
+    def test_mismatched_original_hash_fails_closed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx, meta, store, title = self._bundle_and_ctx(tmp)
+            store.seed_video(title=title, original_hash="a" * 64)
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
+            self.assertIn("mismatched-originalHash", json.dumps(result.reconciliation))
+
+    def test_duplicate_matching_hashes_fail_closed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx, meta, store, title = self._bundle_and_ctx(tmp)
+            store.seed_video(title=title, original_hash=meta["video_sha"], guid="g1")
+            store.seed_video(title=title, original_hash=meta["video_sha"], guid="g2")
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
+            self.assertEqual(result.bunny_create_calls, 0)
+
+    def test_conflicting_title_hash_identities_fail_closed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx, meta, store, title = self._bundle_and_ctx(tmp)
+            store.seed_video(title=title, original_hash=meta["video_sha"], guid="good")
+            store.seed_video(title=title, original_hash="b" * 64, guid="bad")
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
+            self.assertEqual(result.bunny_create_calls, 0)
+
+    def test_ambiguous_results_emit_reconciliation(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx, meta, store, title = self._bundle_and_ctx(tmp)
+            store.seed_video(title=title, original_hash=None)
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
+            self.assertIsNotNone(result.reconciliation)
+            rel = receipt_relpath(BATCH_ID, ctx.logical_key).replace(
+                "finalization-receipt.json", "reconciliation-report.json"
+            )
+            self.assertTrue((ctx.git.repo_dir / rel).is_file())
+
+    def test_no_create_or_upload_after_ambiguity(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx, meta, store, title = self._bundle_and_ctx(tmp)
+            store.seed_video(title=title, original_hash="bad-hash")
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
+            self.assertEqual(result.bunny_create_calls, 0)
+            self.assertEqual(result.bunny_upload_calls, 0)
+            self.assertEqual(len(store.videos), 1)
+
+    def test_no_delete_overwrite_replace_or_second_video(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx, meta, store, title = self._bundle_and_ctx(tmp)
+            store.seed_video(title=title, original_hash=None, guid="only-one")
+            before = json.dumps(store.videos, sort_keys=True)
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
+            self.assertEqual(json.dumps(store.videos, sort_keys=True), before)
+
+    def test_matching_receipt_still_skipped_success(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            bundle = root / "prod"
+            _make_bundle(bundle)
+            store = MockBunnyStore()
+            ctx = _ctx(root, bundle, store)
+            first = finalize_cell(ctx)
+            self.assertEqual(first.outcome, FinalizeOutcome.FINALIZED)
+            title = bunny_title(ctx.lesson_id, ctx.locale)
+            store.seed_video(title=title, original_hash=None, guid="ambiguous-later")
+            ctx2 = _ctx(root / "round2", bundle, store)
+            rel = receipt_relpath(BATCH_ID, ctx.logical_key)
+            branch = result_branch_name(BATCH_ID, ctx.logical_key)
+            ctx2.git.ensure_orphan_branch(branch)
+            dst = ctx2.git.repo_dir / rel
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            dst.write_bytes((ctx.git.repo_dir / rel).read_bytes())
+            result = finalize_cell(ctx2)
+            self.assertEqual(result.outcome, FinalizeOutcome.SKIPPED_SUCCESS)
+            self.assertEqual(result.bunny_create_calls, 0)
+
+    def test_commit_only_recovery_with_unique_guid_and_exact_hash(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx, meta, store, title = self._bundle_and_ctx(tmp)
+            guid = store.seed_video(title=title, original_hash=meta["video_sha"])
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.COMMIT_ONLY_RECOVERED)
+            self.assertEqual(result.receipt["bunnyGuid"], guid)
+            self.assertEqual(result.bunny_create_calls, 0)
+            self.assertEqual(result.commits, 1)
 
 
 if __name__ == "__main__":
