@@ -27,6 +27,7 @@ from localized_package_adapter import (  # noqa: E402
 from lib.integrity_validator import (  # noqa: E402
     assert_localized_scene_integrity as _assert_localized_scene_integrity,
 )
+from lib.captions_vtt import write_captions_vtt  # noqa: E402
 
 FPS = 30
 TAIL_SILENCE_FRAMES = 15
@@ -399,6 +400,8 @@ def main():
         segments = [(i + 1, s["voice"], s["spoken"], s.get("focus", ""))
                     for i, s in enumerate(scenes)]
         durations = synthesize_segments(segments, audio_dir, master, locale=locale)
+        captions_path = write_captions_vtt(composite, scenes, durations)
+        print(f"[locale:{locale}] Captions -> {captions_path}")
         frames = [math.ceil(d * FPS) + TAIL_SILENCE_FRAMES for d in durations]
 
         # Remotion composition uses the hyphen-safe id (no underscore).

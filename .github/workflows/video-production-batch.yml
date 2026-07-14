@@ -529,6 +529,9 @@ jobs:
             --locale "$LOCALE" \
             --package-path "$LESSON_PACKAGE_PATH"
           test -f "public/lessons/intro/${COMPOSITE_KEY}.mp4"
+          test -f "/tmp/${COMPOSITE_KEY}/captions.vtt" \
+            || { echo "::error::build-lesson did not emit captions.vtt"; exit 1; }
+          python3 -c "import sys; sys.path.insert(0, 'remotion/scripts'); from lib.captions_vtt import validate_webvtt_file; validate_webvtt_file('/tmp/${COMPOSITE_KEY}/captions.vtt')"
 
       - name: Validate media and write production result evidence
         shell: bash
@@ -541,6 +544,8 @@ jobs:
           mkdir -p "$OUT_DIR"
 
           test -f "$MP4"
+          test -f "$CAPTIONS" || { echo "::error::Missing captions.vtt at $CAPTIONS"; exit 1; }
+          test -f "$AUDIO" || { echo "::error::Missing audio master at $AUDIO"; exit 1; }
           BYTES=$(stat -c%s "$MP4")
           [ "$BYTES" -ge 200000 ] || { echo "::error::Media too small ($BYTES bytes)"; exit 1; }
           DUR=$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 "$MP4")
@@ -552,62 +557,35 @@ jobs:
           export MEDIA_DUR="$DUR"
 
           python3 - <<'PY'
-          import json, os, pathlib, hashlib
+          import json, os, pathlib, sys
 
-          out_dir = pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/production-result")
-          mp4 = pathlib.Path(f"public/lessons/intro/{os.environ['COMPOSITE_KEY']}.mp4")
-          captions = pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/captions.vtt")
-          audio = pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/audio/master.mp3")
+          sys.path.insert(0, "remotion/scripts")
+          from lib.production_artifact import stage_production_result
 
-          video_sha = hashlib.sha256(mp4.read_bytes()).hexdigest()
-          captions_sha = hashlib.sha256(captions.read_bytes()).hexdigest() if captions.is_file() else ""
-          logo_sha = os.environ["OFFICIAL_LOGO_SHA256"]
-
-          status = {
-              "runMode": "generate-one",
-              "cellId": os.environ["CELL_ID"],
-              "locale": os.environ["LOCALE"],
-              "lessonId": os.environ["LID"],
-              "compositeKey": os.environ["COMPOSITE_KEY"],
-              "logicalKey": os.environ["COMPOSITE_KEY"],
-              "sourceSha": os.environ["SOURCE_SHA"],
-              "voiceProfileId": os.environ["EXPECTED_VOICE_PROFILE"],
-              "outputStatus": "validated",
-              "videoChecksum": video_sha,
-              "captionsChecksum": captions_sha,
-              "batchId": os.environ["BATCH_ID"],
-          }
-          validation = {
-              "ok": True,
-              "hasAudio": audio.is_file(),
-              "hasVideo": True,
-              "hasCaptions": captions.is_file(),
-              "durationSeconds": float(os.environ.get("MEDIA_DUR", "0") or 0),
-              "logoChecksum": logo_sha,
-          }
-          (out_dir / "status.json").write_text(json.dumps(status, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-          (out_dir / "validation.json").write_text(json.dumps(validation, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-          if captions.is_file():
-              (out_dir / "captions.vtt").write_bytes(captions.read_bytes())
-          if audio.is_file():
-              (out_dir / "audio.mp3").write_bytes(audio.read_bytes())
-          (out_dir / "video.mp4").write_bytes(mp4.read_bytes())
-
-          pipeline_log = out_dir / "pipeline.log"
-          log_chunks: list[str] = []
-          for log_path in (
-              pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/render-lesson.log"),
-              pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/script-preview.md"),
-          ):
-              if log_path.is_file():
-                  log_chunks.append(f"===== {log_path.name} =====\n")
-                  log_chunks.append(log_path.read_text(encoding="utf-8", errors="replace"))
-                  log_chunks.append("\n")
-          pipeline_log.write_text(
-              "".join(log_chunks) if log_chunks else "pipeline.log: no auxiliary logs captured\n",
-              encoding="utf-8",
+          composite = os.environ["COMPOSITE_KEY"]
+          status, validation = stage_production_result(
+              out_dir=pathlib.Path(f"/tmp/{composite}/production-result"),
+              mp4=pathlib.Path(f"public/lessons/intro/{composite}.mp4"),
+              captions=pathlib.Path(f"/tmp/{composite}/captions.vtt"),
+              audio=pathlib.Path(f"/tmp/{composite}/audio/master.mp3"),
+              status_fields={
+                  "runMode": "generate-one",
+                  "cellId": os.environ["CELL_ID"],
+                  "locale": os.environ["LOCALE"],
+                  "lessonId": os.environ["LID"],
+                  "compositeKey": composite,
+                  "logicalKey": composite,
+                  "sourceSha": os.environ["SOURCE_SHA"],
+                  "voiceProfileId": os.environ["EXPECTED_VOICE_PROFILE"],
+                  "batchId": os.environ["BATCH_ID"],
+              },
+              duration_seconds=float(os.environ.get("MEDIA_DUR", "0") or 0),
+              logo_sha=os.environ["OFFICIAL_LOGO_SHA256"],
+              log_paths=[
+                  pathlib.Path(f"/tmp/{composite}/render-lesson.log"),
+                  pathlib.Path(f"/tmp/{composite}/script-preview.md"),
+              ],
           )
-
           print(json.dumps({"status": status, "validation": validation}, ensure_ascii=False, indent=2))
           PY
 
@@ -789,6 +767,9 @@ jobs:
             --package-path "$LESSON_PACKAGE_PATH" \
             --force-script
           test -f "public/lessons/intro/${COMPOSITE_KEY}.mp4"
+          test -f "/tmp/${COMPOSITE_KEY}/captions.vtt" \
+            || { echo "::error::build-lesson did not emit captions.vtt"; exit 1; }
+          python3 -c "import sys; sys.path.insert(0, 'remotion/scripts'); from lib.captions_vtt import validate_webvtt_file; validate_webvtt_file('/tmp/${COMPOSITE_KEY}/captions.vtt')"
 
       - name: Validate media and write production result evidence
         shell: bash
@@ -803,6 +784,8 @@ jobs:
           mkdir -p "$OUT_DIR"
 
           test -f "$MP4"
+          test -f "$CAPTIONS" || { echo "::error::Missing captions.vtt at $CAPTIONS"; exit 1; }
+          test -f "$AUDIO" || { echo "::error::Missing audio master at $AUDIO"; exit 1; }
           BYTES=$(stat -c%s "$MP4")
           [ "$BYTES" -ge 200000 ] || { echo "::error::Media too small ($BYTES bytes)"; exit 1; }
           DUR=$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 "$MP4")
@@ -814,44 +797,33 @@ jobs:
           export MEDIA_DUR="$DUR"
 
           python3 - <<'PY'
-          import json, os, pathlib, hashlib
+          import json, os, pathlib, sys
 
-          out_dir = pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/production-result")
-          mp4 = pathlib.Path(f"public/lessons/intro/{os.environ['COMPOSITE_KEY']}.mp4")
-          captions = pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/captions.vtt")
-          audio = pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/audio/master.mp3")
+          sys.path.insert(0, "remotion/scripts")
+          from lib.production_artifact import stage_production_result
 
-          video_sha = hashlib.sha256(mp4.read_bytes()).hexdigest()
-          captions_sha = hashlib.sha256(captions.read_bytes()).hexdigest() if captions.is_file() else ""
-          logo_sha = os.environ["OFFICIAL_LOGO_SHA256"]
-
-          status = {
-              "cellId": os.environ["CELL_ID"],
-              "locale": os.environ["LOCALE"],
-              "lessonId": os.environ["LID"],
-              "compositeKey": os.environ["COMPOSITE_KEY"],
-              "sourceSha": os.environ["SOURCE_SHA"],
-              "voiceProfileId": os.environ["EXPECTED_VOICE_PROFILE"],
-              "outputStatus": "validated",
-              "videoChecksum": video_sha,
-              "captionsChecksum": captions_sha,
-              "batchId": os.environ["BATCH_ID"],
-          }
-          validation = {
-              "ok": True,
-              "hasAudio": audio.is_file(),
-              "hasVideo": True,
-              "hasCaptions": captions.is_file(),
-              "durationSeconds": float(os.environ.get("MEDIA_DUR", "0") or 0),
-              "logoChecksum": logo_sha,
-          }
-          (out_dir / "status.json").write_text(json.dumps(status, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-          (out_dir / "validation.json").write_text(json.dumps(validation, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-          if captions.is_file():
-              (out_dir / "captions.vtt").write_bytes(captions.read_bytes())
-          if audio.is_file():
-              (out_dir / "audio.mp3").write_bytes(audio.read_bytes())
-          (out_dir / "video.mp4").write_bytes(mp4.read_bytes())
+          composite = os.environ["COMPOSITE_KEY"]
+          status, validation = stage_production_result(
+              out_dir=pathlib.Path(f"/tmp/{composite}/production-result"),
+              mp4=pathlib.Path(f"public/lessons/intro/{composite}.mp4"),
+              captions=pathlib.Path(f"/tmp/{composite}/captions.vtt"),
+              audio=pathlib.Path(f"/tmp/{composite}/audio/master.mp3"),
+              status_fields={
+                  "cellId": os.environ["CELL_ID"],
+                  "locale": os.environ["LOCALE"],
+                  "lessonId": os.environ["LID"],
+                  "compositeKey": composite,
+                  "sourceSha": os.environ["SOURCE_SHA"],
+                  "voiceProfileId": os.environ["EXPECTED_VOICE_PROFILE"],
+                  "batchId": os.environ["BATCH_ID"],
+              },
+              duration_seconds=float(os.environ.get("MEDIA_DUR", "0") or 0),
+              logo_sha=os.environ["OFFICIAL_LOGO_SHA256"],
+              log_paths=[
+                  pathlib.Path(f"/tmp/{composite}/render-lesson.log"),
+                  pathlib.Path(f"/tmp/{composite}/script-preview.md"),
+              ],
+          )
           print(json.dumps({"status": status, "validation": validation}, ensure_ascii=False, indent=2))
           PY
 
@@ -1033,6 +1005,9 @@ jobs:
             --package-path "$LESSON_PACKAGE_PATH" \
             --force-script
           test -f "public/lessons/intro/${COMPOSITE_KEY}.mp4"
+          test -f "/tmp/${COMPOSITE_KEY}/captions.vtt" \
+            || { echo "::error::build-lesson did not emit captions.vtt"; exit 1; }
+          python3 -c "import sys; sys.path.insert(0, 'remotion/scripts'); from lib.captions_vtt import validate_webvtt_file; validate_webvtt_file('/tmp/${COMPOSITE_KEY}/captions.vtt')"
 
       - name: Validate media and write production result evidence
         shell: bash
@@ -1047,6 +1022,8 @@ jobs:
           mkdir -p "$OUT_DIR"
 
           test -f "$MP4"
+          test -f "$CAPTIONS" || { echo "::error::Missing captions.vtt at $CAPTIONS"; exit 1; }
+          test -f "$AUDIO" || { echo "::error::Missing audio master at $AUDIO"; exit 1; }
           BYTES=$(stat -c%s "$MP4")
           [ "$BYTES" -ge 200000 ] || { echo "::error::Media too small ($BYTES bytes)"; exit 1; }
           DUR=$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 "$MP4")
@@ -1058,44 +1035,33 @@ jobs:
           export MEDIA_DUR="$DUR"
 
           python3 - <<'PY'
-          import json, os, pathlib, hashlib
+          import json, os, pathlib, sys
 
-          out_dir = pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/production-result")
-          mp4 = pathlib.Path(f"public/lessons/intro/{os.environ['COMPOSITE_KEY']}.mp4")
-          captions = pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/captions.vtt")
-          audio = pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/audio/master.mp3")
+          sys.path.insert(0, "remotion/scripts")
+          from lib.production_artifact import stage_production_result
 
-          video_sha = hashlib.sha256(mp4.read_bytes()).hexdigest()
-          captions_sha = hashlib.sha256(captions.read_bytes()).hexdigest() if captions.is_file() else ""
-          logo_sha = os.environ["OFFICIAL_LOGO_SHA256"]
-
-          status = {
-              "cellId": os.environ["CELL_ID"],
-              "locale": os.environ["LOCALE"],
-              "lessonId": os.environ["LID"],
-              "compositeKey": os.environ["COMPOSITE_KEY"],
-              "sourceSha": os.environ["SOURCE_SHA"],
-              "voiceProfileId": os.environ["EXPECTED_VOICE_PROFILE"],
-              "outputStatus": "validated",
-              "videoChecksum": video_sha,
-              "captionsChecksum": captions_sha,
-              "batchId": os.environ["BATCH_ID"],
-          }
-          validation = {
-              "ok": True,
-              "hasAudio": audio.is_file(),
-              "hasVideo": True,
-              "hasCaptions": captions.is_file(),
-              "durationSeconds": float(os.environ.get("MEDIA_DUR", "0") or 0),
-              "logoChecksum": logo_sha,
-          }
-          (out_dir / "status.json").write_text(json.dumps(status, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-          (out_dir / "validation.json").write_text(json.dumps(validation, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-          if captions.is_file():
-              (out_dir / "captions.vtt").write_bytes(captions.read_bytes())
-          if audio.is_file():
-              (out_dir / "audio.mp3").write_bytes(audio.read_bytes())
-          (out_dir / "video.mp4").write_bytes(mp4.read_bytes())
+          composite = os.environ["COMPOSITE_KEY"]
+          status, validation = stage_production_result(
+              out_dir=pathlib.Path(f"/tmp/{composite}/production-result"),
+              mp4=pathlib.Path(f"public/lessons/intro/{composite}.mp4"),
+              captions=pathlib.Path(f"/tmp/{composite}/captions.vtt"),
+              audio=pathlib.Path(f"/tmp/{composite}/audio/master.mp3"),
+              status_fields={
+                  "cellId": os.environ["CELL_ID"],
+                  "locale": os.environ["LOCALE"],
+                  "lessonId": os.environ["LID"],
+                  "compositeKey": composite,
+                  "sourceSha": os.environ["SOURCE_SHA"],
+                  "voiceProfileId": os.environ["EXPECTED_VOICE_PROFILE"],
+                  "batchId": os.environ["BATCH_ID"],
+              },
+              duration_seconds=float(os.environ.get("MEDIA_DUR", "0") or 0),
+              logo_sha=os.environ["OFFICIAL_LOGO_SHA256"],
+              log_paths=[
+                  pathlib.Path(f"/tmp/{composite}/render-lesson.log"),
+                  pathlib.Path(f"/tmp/{composite}/script-preview.md"),
+              ],
+          )
           print(json.dumps({"status": status, "validation": validation}, ensure_ascii=False, indent=2))
           PY
 
