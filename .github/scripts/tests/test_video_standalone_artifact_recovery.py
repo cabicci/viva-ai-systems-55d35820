@@ -88,7 +88,7 @@ def test_valid_bundle_skips_generation(tmp_path):
         return R()
 
     out = rc.run_cell(
-        lesson_id=lid, locale=loc, package_path="unused",
+        lesson_id=lid, locale=loc, package_path=pkg,
         source_sha="src-abc", workflow_run_id="rr1", artifact_id="ART",
         artifact_digest="sha256:d",
         bunny_library_id="l", bunny_api_key="k",
@@ -141,7 +141,7 @@ def test_invalid_bundle_forces_regeneration(tmp_path):
                 ).encode()
             raise AssertionError(method)
     out = rc.run_cell(
-        lesson_id=lid, locale=loc, package_path="unused",
+        lesson_id=lid, locale=loc, package_path=pkg,
         source_sha="src", workflow_run_id="w", artifact_id="a",
         artifact_digest="sha256:d", bunny_library_id="l", bunny_api_key="k",
         bundle_in_dir=bundle, repo_root=repo,
@@ -178,7 +178,7 @@ def test_bundle_written_before_bunny(tmp_path):
             return 200, json.dumps({"guid": "G", "originalHash": ck["videoChecksum"]}).encode()
         raise AssertionError(method)
     out = rc.run_cell(
-        lesson_id=lid, locale=loc, package_path="unused",
+        lesson_id=lid, locale=loc, package_path=pkg,
         source_sha="src", workflow_run_id="w", artifact_id="a",
         artifact_digest="sha256:d", bunny_library_id="l", bunny_api_key="k",
         bundle_out_dir=bundle_out, repo_root=repo,
