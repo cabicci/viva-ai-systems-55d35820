@@ -195,7 +195,7 @@ def test_ambiguous_bunny_fails_closed(tmp_path):
     raise AssertionError("expected ambiguity failure")
 
 
-def test_build_command_is_the_authorized_shape(tmp_path, monkeypatch):
+def test_build_command_is_the_authorized_shape(tmp_path):
     repo = tmp_path
     # Stage build.py so path check passes, and a package file.
     (repo / "remotion" / "scripts").mkdir(parents=True)
