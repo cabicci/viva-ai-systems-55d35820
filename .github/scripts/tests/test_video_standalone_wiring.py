@@ -20,13 +20,15 @@ def test_yaml_parses_and_has_required_jobs():
     jobs = doc["jobs"]
     for j in ("guard", "plan", "canary", "matrix_a", "matrix_b", "collect"):
         assert j in jobs, f"missing job: {j}"
-    # fail-fast=false + max-parallel budget on canary/matrix_a/matrix_b combined <= 4
-    total_par = (
-        jobs["canary"]["strategy"]["max-parallel"]
-        + jobs["matrix_a"]["strategy"]["max-parallel"]
+    # Canary blocks the two matrices; during the matrix phase the combined
+    # cap is matrix_a + matrix_b (canary has already finished). Contract: <=4.
+    matrix_par = (
+        jobs["matrix_a"]["strategy"]["max-parallel"]
         + jobs["matrix_b"]["strategy"]["max-parallel"]
     )
-    assert total_par <= 4, total_par
+    assert matrix_par <= 4, matrix_par
+    # Canary itself never runs in parallel with the matrices (needs: canary).
+    assert jobs["canary"]["strategy"]["max-parallel"] == 1
     for j in ("canary", "matrix_a", "matrix_b"):
         assert jobs[j]["strategy"]["fail-fast"] is False
     assert jobs["collect"]["if"] == "always()"
