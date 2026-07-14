@@ -107,6 +107,10 @@ def test_valid_bundle_skips_generation(tmp_path):
 def test_invalid_bundle_forces_regeneration(tmp_path):
     repo = tmp_path / "repo"; repo.mkdir()
     lid, loc = "lid-x", "en"
+    # stage build-lesson.py + package file so _run_full_build's path checks pass
+    (repo / "remotion" / "scripts").mkdir(parents=True)
+    (repo / "remotion" / "scripts" / "build-lesson.py").write_text("#\n")
+    pkg = "pkg.json"; (repo / pkg).write_text("{}")
     bundle = tmp_path / "bundle-in"; bundle.mkdir()
     # Missing 5 required files -> invalid.
     (bundle / "validation.json").write_text('{"composite":"lid-x__en"}', encoding="utf-8")
