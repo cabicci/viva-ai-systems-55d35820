@@ -1,0 +1,393 @@
+name: Video Production Standalone 300
+
+# Standalone, isolated 300-cell localized video production workflow.
+# Does NOT import or reuse:
+#   - .github/workflows/video-production-batch.yml
+#   - .github/workflows/video-production-final-v2.yml
+#   - .github/scripts/video_v2/**
+# Read-only reuse (never edited):
+#   - remotion/scripts/build-lesson.py
+#   - .github/scripts/video_finalize/**
+#
+# Dispatch contract:
+#   - Confirmation gate: input `confirm` must equal PROCEED.
+#   - Main-only guard: refuses to run unless the dispatched ref is main.
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type PROCEED to dispatch'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: video-production-standalone-300
+  cancel-in-progress: false
+
+env:
+  BATCH_ID: video-full-300-localized-v1
+  PLAN_PATH: /tmp/standalone-plan.json
+
+jobs:
+  guard:
+    name: Guard (main-only + confirm)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify confirmation token
+        run: |
+          set -euo pipefail
+          if [ "${{ inputs.confirm }}" != "PROCEED" ]; then
+            echo "::error::confirm input must equal PROCEED"
+            exit 1
+          fi
+      - name: Verify dispatched ref is main
+        run: |
+          set -euo pipefail
+          REF="${{ github.ref }}"
+          if [ "$REF" != "refs/heads/main" ]; then
+            echo "::error::this workflow may only be dispatched from main (got $REF)"
+            exit 1
+          fi
+
+  plan:
+    name: Build 300-cell plan
+    needs: guard
+    runs-on: ubuntu-latest
+    outputs:
+      canary: ${{ steps.plan.outputs.canary }}
+      matrix_a: ${{ steps.plan.outputs.matrix_a }}
+      matrix_b: ${{ steps.plan.outputs.matrix_b }}
+      totals: ${{ steps.plan.outputs.totals }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - id: plan
+        name: Build plan (300 keys; en=100, ar-MSA=100, ar-Gulf=100, ar-EG=0)
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/video_standalone/plan.py \
+            --out "$PLAN_PATH" \
+            --emit-github-output
+      - name: Upload plan artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: standalone-plan
+          path: ${{ env.PLAN_PATH }}
+          if-no-files-found: error
+
+  canary:
+    name: Canary (1 cell, end-to-end live gate)
+    needs: plan
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        cell: ${{ fromJson(needs.plan.outputs.canary) }}
+    concurrency:
+      group: standalone-cell-${{ matrix.cell.logical_key }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Install Python deps
+        run: pip install requests google-genai
+      - name: Install root deps
+        run: bun install --frozen-lockfile
+      - name: Install remotion deps
+        run: cd remotion && bun install
+      - name: Configure git identity
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Restore prior receipt (artifact/Bunny/commit-only recovery)
+        env:
+          LID: ${{ matrix.cell.lesson_id }}
+          LOCALE: ${{ matrix.cell.locale }}
+          KEY: ${{ matrix.cell.logical_key }}
+        run: |
+          set -euo pipefail
+          BRANCH="video-results/${BATCH_ID}/${KEY}"
+          if git fetch origin "$BRANCH" 2>/dev/null; then
+            mkdir -p "remotion/video-pipeline/results/${BATCH_ID}/${KEY}"
+            git checkout "origin/${BRANCH}" -- \
+              "remotion/video-pipeline/results/${BATCH_ID}/${KEY}/finalization-receipt.json" || true
+          fi
+      - name: Run canary cell
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          STANDALONE_ARTIFACT_ID: ${{ github.run_id }}-${{ matrix.cell.logical_key }}
+          STANDALONE_ARTIFACT_DIGEST: sha256:pending
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/video_standalone/run_cell.py \
+            --lesson-id  "${{ matrix.cell.lesson_id }}" \
+            --locale     "${{ matrix.cell.locale }}" \
+            --package-path "${{ matrix.cell.package_path }}" \
+            --source-sha "${{ github.sha }}" \
+            --workflow-run-id "${{ github.run_id }}" \
+            --artifact-id "${{ github.run_id }}-${{ matrix.cell.logical_key }}" \
+            --artifact-digest "sha256:pending" \
+            --out "/tmp/${{ matrix.cell.logical_key }}-result.json"
+      - name: Upload cell logs (always)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: canary-logs-${{ matrix.cell.logical_key }}
+          path: |
+            /tmp/${{ matrix.cell.lesson_id }}__${{ matrix.cell.locale }}/
+            /tmp/${{ matrix.cell.logical_key }}-result.json
+          if-no-files-found: ignore
+
+  matrix_a:
+    name: Matrix A (149 cells)
+    needs: [plan, canary]
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        cell: ${{ fromJson(needs.plan.outputs.matrix_a) }}
+    concurrency:
+      group: standalone-cell-${{ matrix.cell.logical_key }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Install Python deps
+        run: pip install requests google-genai
+      - name: Install root deps
+        run: bun install --frozen-lockfile
+      - name: Install remotion deps
+        run: cd remotion && bun install
+      - name: Configure git identity
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Restore prior receipt (recovery)
+        env:
+          KEY: ${{ matrix.cell.logical_key }}
+        run: |
+          set -euo pipefail
+          BRANCH="video-results/${BATCH_ID}/${KEY}"
+          if git fetch origin "$BRANCH" 2>/dev/null; then
+            mkdir -p "remotion/video-pipeline/results/${BATCH_ID}/${KEY}"
+            git checkout "origin/${BRANCH}" -- \
+              "remotion/video-pipeline/results/${BATCH_ID}/${KEY}/finalization-receipt.json" || true
+          fi
+      - name: Run cell
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/video_standalone/run_cell.py \
+            --lesson-id  "${{ matrix.cell.lesson_id }}" \
+            --locale     "${{ matrix.cell.locale }}" \
+            --package-path "${{ matrix.cell.package_path }}" \
+            --source-sha "${{ github.sha }}" \
+            --workflow-run-id "${{ github.run_id }}" \
+            --artifact-id "${{ github.run_id }}-${{ matrix.cell.logical_key }}" \
+            --artifact-digest "sha256:pending" \
+            --out "/tmp/${{ matrix.cell.logical_key }}-result.json"
+      - name: Upload cell logs (always)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: matrix-a-logs-${{ matrix.cell.logical_key }}
+          path: |
+            /tmp/${{ matrix.cell.lesson_id }}__${{ matrix.cell.locale }}/
+            /tmp/${{ matrix.cell.logical_key }}-result.json
+          if-no-files-found: ignore
+
+  matrix_b:
+    name: Matrix B (150 cells)
+    needs: [plan, canary]
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        cell: ${{ fromJson(needs.plan.outputs.matrix_b) }}
+    concurrency:
+      group: standalone-cell-${{ matrix.cell.logical_key }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Install Python deps
+        run: pip install requests google-genai
+      - name: Install root deps
+        run: bun install --frozen-lockfile
+      - name: Install remotion deps
+        run: cd remotion && bun install
+      - name: Configure git identity
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Restore prior receipt (recovery)
+        env:
+          KEY: ${{ matrix.cell.logical_key }}
+        run: |
+          set -euo pipefail
+          BRANCH="video-results/${BATCH_ID}/${KEY}"
+          if git fetch origin "$BRANCH" 2>/dev/null; then
+            mkdir -p "remotion/video-pipeline/results/${BATCH_ID}/${KEY}"
+            git checkout "origin/${BRANCH}" -- \
+              "remotion/video-pipeline/results/${BATCH_ID}/${KEY}/finalization-receipt.json" || true
+          fi
+      - name: Run cell
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/video_standalone/run_cell.py \
+            --lesson-id  "${{ matrix.cell.lesson_id }}" \
+            --locale     "${{ matrix.cell.locale }}" \
+            --package-path "${{ matrix.cell.package_path }}" \
+            --source-sha "${{ github.sha }}" \
+            --workflow-run-id "${{ github.run_id }}" \
+            --artifact-id "${{ github.run_id }}-${{ matrix.cell.logical_key }}" \
+            --artifact-digest "sha256:pending" \
+            --out "/tmp/${{ matrix.cell.logical_key }}-result.json"
+      - name: Upload cell logs (always)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: matrix-b-logs-${{ matrix.cell.logical_key }}
+          path: |
+            /tmp/${{ matrix.cell.lesson_id }}__${{ matrix.cell.locale }}/
+            /tmp/${{ matrix.cell.logical_key }}-result.json
+          if-no-files-found: ignore
+
+  collect:
+    name: Collector (always-run; partial-success preserving)
+    needs: [plan, canary, matrix_a, matrix_b]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download plan
+        uses: actions/download-artifact@v4
+        with:
+          name: standalone-plan
+          path: /tmp/plan-artifact
+      - name: Fetch all result branches into local worktrees
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/receipt-roots
+          # single working checkout with all result branches available in refs
+          git fetch origin '+refs/heads/video-results/*:refs/remotes/origin/video-results/*' || true
+          # We collect via the current checkout for convenience: each result
+          # branch is inspected by checking out the receipt file into a
+          # temporary root, then handing that root to the collector.
+          BRANCHES=$(git for-each-ref --format='%(refname:short)' refs/remotes/origin/video-results/${BATCH_ID}/ || true)
+          IDX=0
+          for ref in $BRANCHES; do
+            IDX=$((IDX+1))
+            ROOT="/tmp/receipt-roots/$IDX"
+            mkdir -p "$ROOT/remotion/video-pipeline/results/${BATCH_ID}"
+            KEY="${ref##*/}"
+            OUT="$ROOT/remotion/video-pipeline/results/${BATCH_ID}/${KEY}/finalization-receipt.json"
+            mkdir -p "$(dirname "$OUT")"
+            git show "$ref:remotion/video-pipeline/results/${BATCH_ID}/${KEY}/finalization-receipt.json" > "$OUT" 2>/dev/null || rm -f "$OUT"
+          done
+      - name: Run collector
+        run: |
+          set -euo pipefail
+          ROOTS=()
+          if [ -d /tmp/receipt-roots ]; then
+            for d in /tmp/receipt-roots/*; do
+              [ -d "$d" ] || continue
+              ROOTS+=( --receipt-root "$d" )
+            done
+          fi
+          python3 .github/scripts/video_standalone/collect.py \
+            --plan /tmp/plan-artifact/$(basename "$PLAN_PATH") \
+            --repo-root "$GITHUB_WORKSPACE" \
+            "${ROOTS[@]}" \
+            --out /tmp/standalone-collector-report.json || true
+          cat /tmp/standalone-collector-report.json
+      - name: Upload collector report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: standalone-collector-report
+          path: /tmp/standalone-collector-report.json
+          if-no-files-found: error
+      - name: Fail if any unresolved (enables native Re-run failed jobs)
+        run: |
+          set -euo pipefail
+          python3 -c "
+          import json,sys
+          r=json.load(open('/tmp/standalone-collector-report.json'))
+          bad=len(r['failed'])+len(r['missing'])+len(r['ambiguous'])
+          print('finalized:',len(r['finalized']),'unresolved:',bad)
+          sys.exit(0 if bad==0 else 1)
+          "
