@@ -178,7 +178,7 @@ def test_bundle_written_before_bunny(tmp_path):
             return 200, json.dumps({"guid": "G", "originalHash": ck["videoChecksum"]}).encode()
         raise AssertionError(method)
     out = rc.run_cell(
-        lesson_id=lid, locale=loc, package_path=pkg,
+        lesson_id=lid, locale=loc, package_path="unused",
         source_sha="src", workflow_run_id="w", artifact_id="a",
         artifact_digest="sha256:d", bunny_library_id="l", bunny_api_key="k",
         bundle_out_dir=bundle_out, repo_root=repo,
