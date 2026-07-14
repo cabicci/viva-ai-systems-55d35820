@@ -1,0 +1,143 @@
+# video-production-final-v2 — clean replacement, isolated branch only.
+# Manual dispatch only. Automatic end-to-end canary; on canary success the
+# remaining 299 cells (matrix_a=149 + matrix_b=150) start automatically.
+# No writes to main. Bunny writes only from cell jobs (guarded by identity).
+name: video-production-final-v2
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_mode:
+        description: "full-300 | canary-only | rerun-failed"
+        type: choice
+        options: ["full-300", "canary-only", "rerun-failed"]
+        default: "full-300"
+      confirm:
+        description: 'Type "PROCEED" to confirm.'
+        type: string
+        required: true
+        default: ""
+
+permissions:
+  contents: write        # needed only for isolated video-results-v2/** branches
+  actions: read
+  # No packages, no id-token, no deployments, no pages, no pull-requests.
+
+concurrency:
+  group: video-v2-${{ github.event.inputs.run_mode }}
+  cancel-in-progress: false
+
+env:
+  BATCH_ID: video-full-300-final-v2
+  PYTHONUNBUFFERED: "1"
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confirm dispatch
+        run: |
+          if [ "${{ github.event.inputs.confirm }}" != "PROCEED" ]; then
+            echo "::error::confirm input must equal PROCEED"; exit 1
+          fi
+      - name: Refuse push to main
+        run: |
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            echo "::error::v2 workflow must not run from main"; exit 1
+          fi
+
+  plan:
+    needs: [guard]
+    runs-on: ubuntu-latest
+    outputs:
+      canary: ${{ steps.build.outputs.canary }}
+      matrix_a: ${{ steps.build.outputs.matrix_a }}
+      matrix_b: ${{ steps.build.outputs.matrix_b }}
+      plan_digest: ${{ steps.build.outputs.plan_digest }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - name: Build 300-cell plan
+        id: build
+        run: |
+          python .github/scripts/video_v2/cli_build_plan.py \
+            --source-sha "${GITHUB_SHA}" \
+            --out "${RUNNER_TEMP}/plan.json"
+          {
+            echo "canary=$(jq -c .canary "${RUNNER_TEMP}/plan.json")"
+            echo "matrix_a=$(jq -c '{cell: .matrix_a}' "${RUNNER_TEMP}/plan.json")"
+            echo "matrix_b=$(jq -c '{cell: .matrix_b}' "${RUNNER_TEMP}/plan.json")"
+            echo "plan_digest=$(python -c "import json,hashlib,sys;p=json.load(open('${RUNNER_TEMP}/plan.json'));print('sha256:'+hashlib.sha256(json.dumps(p,sort_keys=True,ensure_ascii=False).encode()).hexdigest())")"
+          } >> "${GITHUB_OUTPUT}"
+
+  canary:
+    needs: [plan]
+    if: needs.plan.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run canary cell end-to-end
+        env:
+          CANARY: ${{ needs.plan.outputs.canary }}
+        run: |
+          echo "canary=${CANARY}"
+          # Cell runner (mocked in tests, real in workflow): validate narration,
+          # gate locale, TTS, render, upload+verify Bunny, write per-video
+          # receipt on the isolated video-results-v2 branch.
+          python .github/scripts/video_v2/cli_run_cell.py --cell "${CANARY}" --mode canary
+
+  matrix_a:
+    needs: [plan, canary]
+    if: needs.canary.result == 'success' && github.event.inputs.run_mode != 'canary-only'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      max-parallel: 2   # combined with matrix_b: 2 + 2 = 4
+      matrix: ${{ fromJson(needs.plan.outputs.matrix_a) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run cell
+        env:
+          CELL: ${{ toJson(matrix.cell) }}
+        run: python .github/scripts/video_v2/cli_run_cell.py --cell "${CELL}" --mode batch
+
+  matrix_b:
+    needs: [plan, canary]
+    if: needs.canary.result == 'success' && github.event.inputs.run_mode != 'canary-only'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix: ${{ fromJson(needs.plan.outputs.matrix_b) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run cell
+        env:
+          CELL: ${{ toJson(matrix.cell) }}
+        run: python .github/scripts/video_v2/cli_run_cell.py --cell "${CELL}" --mode batch
+
+  collector:
+    needs: [plan, canary, matrix_a, matrix_b]
+    if: always() && needs.plan.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - name: Collect per-video receipts (partial success preserved)
+        run: |
+          python .github/scripts/video_v2/cli_collect.py \
+            --plan-digest "${{ needs.plan.outputs.plan_digest }}" \
+            --out "${RUNNER_TEMP}/collector-report.json"
+      - name: Upload collector report
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-v2-collector-report
+          path: ${{ runner.temp }}/collector-report.json
+          retention-days: 30
