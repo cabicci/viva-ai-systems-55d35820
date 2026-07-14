@@ -5,8 +5,8 @@ Rules (contract):
   - Required locales: en=100, ar-MSA=100, ar-Gulf=100, ar-EG=0
   - Total unique logical keys = 300
   - logical_key = f"{lessonId}__{locale}"
-  - Deterministic sort: (locale, lessonId)
-  - Canary = first cell (sorted). Remaining 299 split into matrix_a=149, matrix_b=150.
+  - Canary is PINNED explicitly (not alphabetical): analyst-m3-l2-ai-summarization__en
+  - Remaining 299 cells are split: matrix_a=149, matrix_b=150 (deterministic order).
 """
 from __future__ import annotations
 
@@ -19,9 +19,12 @@ from pathlib import Path
 REQUIRED_COUNTS = {"en": 100, "ar-MSA": 100, "ar-Gulf": 100}
 FORBIDDEN_LOCALES = {"ar-EG"}
 EXPECTED_TOTAL = 300
-CANARY_COUNT = 1
 MATRIX_A_COUNT = 149
 MATRIX_B_COUNT = 150
+
+CANARY_LOGICAL_KEY = "analyst-m3-l2-ai-summarization__en"
+CANARY_LESSON_ID = "analyst-m3-l2-ai-summarization"
+CANARY_LOCALE = "en"
 
 
 @dataclass(frozen=True)
@@ -97,33 +100,38 @@ def validate_counts(cells: list[Cell]) -> dict[str, int]:
 
 def build_plan(repo_root: Path) -> dict:
     cells = discover_cells(repo_root)
-    # Deterministic ordering: locale first (so canary is the alphabetically first locale + lesson)
-    cells = sorted(cells, key=lambda c: (c.locale, c.lesson_id))
     validate_counts(cells)
+    by_key = {c.logical_key: c for c in cells}
 
-    canary = cells[:CANARY_COUNT]
-    remaining = cells[CANARY_COUNT:]
+    if CANARY_LOGICAL_KEY not in by_key:
+        raise PlanError(f"pinned canary missing from discovered cells: {CANARY_LOGICAL_KEY}")
+    canary_cell = by_key[CANARY_LOGICAL_KEY]
+    if canary_cell.lesson_id != CANARY_LESSON_ID or canary_cell.locale != CANARY_LOCALE:
+        raise PlanError("pinned canary lesson_id/locale mismatch")
+
+    # Remaining 299 cells in deterministic (locale, lesson_id) order.
+    remaining = sorted(
+        (c for c in cells if c.logical_key != CANARY_LOGICAL_KEY),
+        key=lambda c: (c.locale, c.lesson_id),
+    )
+    if len(remaining) != EXPECTED_TOTAL - 1:
+        raise PlanError(f"remaining cells wrong: {len(remaining)}")
     matrix_a = remaining[:MATRIX_A_COUNT]
     matrix_b = remaining[MATRIX_A_COUNT : MATRIX_A_COUNT + MATRIX_B_COUNT]
-
-    if len(canary) != CANARY_COUNT:
-        raise PlanError("canary count wrong")
     if len(matrix_a) != MATRIX_A_COUNT:
         raise PlanError(f"matrix_a count wrong: {len(matrix_a)}")
     if len(matrix_b) != MATRIX_B_COUNT:
         raise PlanError(f"matrix_b count wrong: {len(matrix_b)}")
-    if len(canary) + len(matrix_a) + len(matrix_b) != EXPECTED_TOTAL:
-        raise PlanError("split totals != 300")
 
     return {
         "counts": validate_counts(cells),
         "totals": {
             "total": len(cells),
-            "canary": len(canary),
+            "canary": 1,
             "matrix_a": len(matrix_a),
             "matrix_b": len(matrix_b),
         },
-        "canary": [c.to_dict() for c in canary],
+        "canary": [canary_cell.to_dict()],
         "matrix_a": [c.to_dict() for c in matrix_a],
         "matrix_b": [c.to_dict() for c in matrix_b],
     }
@@ -139,11 +147,7 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="Build standalone 300 plan")
     ap.add_argument("--repo-root", default=str(_repo_root_from_here()))
     ap.add_argument("--out", required=True, help="write plan JSON to this path")
-    ap.add_argument(
-        "--emit-github-output",
-        action="store_true",
-        help="also write matrix_a/matrix_b/canary keys to $GITHUB_OUTPUT",
-    )
+    ap.add_argument("--emit-github-output", action="store_true")
     args = ap.parse_args(argv)
 
     plan = build_plan(Path(args.repo_root))
