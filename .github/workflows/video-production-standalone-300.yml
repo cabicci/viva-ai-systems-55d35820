@@ -347,7 +347,7 @@ jobs:
           # We collect via the current checkout for convenience: each result
           # branch is inspected by checking out the receipt file into a
           # temporary root, then handing that root to the collector.
-          BRANCHES=$(git for-each-ref --format='%(refname:short)' refs/remotes/origin/video-results/${BATCH_ID}/ || true)
+          BRANCHES=$(git for-each-ref --format='%(refname:short)' "refs/remotes/origin/video-results/${BATCH_ID}/" || true)
           IDX=0
           for ref in $BRANCHES; do
             IDX=$((IDX+1))
