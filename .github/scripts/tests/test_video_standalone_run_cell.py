@@ -99,7 +99,7 @@ def test_fresh_upload_creates_receipt_and_commits(tmp_path):
 
 def test_reuse_by_originalhash_no_upload(tmp_path):
     repo = tmp_path
-    _stage_artifacts(repo, "lid-b", "ar-MSA", b"\x00" * 200_000, "WEBVTT\n\nhi\n")
+    _stage_artifacts(repo, "lid-b", "ar-MSA", b"\x00" * 200_000, "WEBVTT\n\n00:00:00.000 --> 00:00:01.000\nhello\n")
     from video_standalone.artifact import resolve_paths, validate_and_checksum
     ck = validate_and_checksum(resolve_paths(repo, "lid-b", "ar-MSA"))
     title = f"lid-b [ar-MSA]"
@@ -134,7 +134,7 @@ def test_reuse_by_originalhash_no_upload(tmp_path):
 
 def test_idempotent_skip_when_receipt_matches(tmp_path):
     repo = tmp_path
-    _stage_artifacts(repo, "lid-c", "ar-Gulf", b"\x00" * 200_000, "WEBVTT\n\nhi\n")
+    _stage_artifacts(repo, "lid-c", "ar-Gulf", b"\x00" * 200_000, "WEBVTT\n\n00:00:00.000 --> 00:00:01.000\nhello\n")
     from video_standalone.artifact import resolve_paths, validate_and_checksum
     from video_finalize.receipt import build_receipt, write_receipt
     ck = validate_and_checksum(resolve_paths(repo, "lid-c", "ar-Gulf"))
@@ -166,7 +166,7 @@ def test_idempotent_skip_when_receipt_matches(tmp_path):
 
 def test_ambiguous_bunny_fails_closed(tmp_path):
     repo = tmp_path
-    _stage_artifacts(repo, "lid-d", "en", b"\x00" * 200_000, "WEBVTT\n\nhi\n")
+    _stage_artifacts(repo, "lid-d", "en", b"\x00" * 200_000, "WEBVTT\n\n00:00:00.000 --> 00:00:01.000\nhello\n")
     from video_standalone.artifact import resolve_paths, validate_and_checksum
     ck = validate_and_checksum(resolve_paths(repo, "lid-d", "en"))
     title = "lid-d [en]"
@@ -208,7 +208,7 @@ def test_build_command_is_the_authorized_shape(tmp_path, monkeypatch):
     def fake_run(cmd, cwd, check):
         seen["cmd"] = cmd; seen["cwd"] = cwd
         # simulate a successful build by staging outputs
-        _stage_artifacts(repo, "xyz", "en", b"\x00" * 200_000, "WEBVTT\n\nhi\n")
+        _stage_artifacts(repo, "xyz", "en", b"\x00" * 200_000, "WEBVTT\n\n00:00:00.000 --> 00:00:01.000\nhello\n")
         class R: returncode = 0
         return R()
 
