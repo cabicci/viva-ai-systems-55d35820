@@ -1,0 +1,132 @@
+"""Bunny Stream HTTP client using repository-proven + official docs operations.
+
+Official evidence:
+  - Create Video POST /library/{libraryId}/videos
+    https://docs.bunny.net/api-reference/stream/manage-videos/create-video
+  - Upload Video PUT /library/{libraryId}/videos/{videoId}
+    https://docs.bunny.net/api-reference/stream/manage-videos/upload-video
+  - Get Video GET /library/{libraryId}/videos/{videoId}
+    https://docs.bunny.net/api-reference/stream/manage-videos/get-video
+  - List Videos GET /library/{libraryId}/videos?search=
+    https://docs.bunny.net/api-reference/stream/manage-videos/list-videos
+
+Repository evidence:
+  - .github/scripts/upload_bunny_locale.py (create + PUT + AccessKey)
+  - .github/scripts/verify_bunny_ready.py (GET by GUID; status codes)
+
+No caption-track upload. No delete/replace on finalized identity.
+No polling loops.
+"""
+from __future__ import annotations
+
+import json
+import urllib.error
+import urllib.parse
+import urllib.request
+from dataclasses import dataclass, field
+from typing import Any, Callable
+
+
+HttpFn = Callable[[str, str, bytes | None, dict[str, str]], tuple[int, bytes]]
+
+
+@dataclass
+class BunnyCallLog:
+    creates: list[str] = field(default_factory=list)
+    uploads: list[str] = field(default_factory=list)
+    gets: list[str] = field(default_factory=list)
+    lists: list[str] = field(default_factory=list)
+
+
+@dataclass
+class BunnyClient:
+    library_id: str
+    api_key: str
+    http: HttpFn | None = None
+    log: BunnyCallLog = field(default_factory=BunnyCallLog)
+
+    @property
+    def base(self) -> str:
+        return f"https://video.bunnycdn.com/library/{self.library_id}/videos"
+
+    def _headers(self, ctype: str | None = None) -> dict[str, str]:
+        h = {"AccessKey": self.api_key, "accept": "application/json"}
+        if ctype:
+            h["content-type"] = ctype
+        return h
+
+    def _request(
+        self, method: str, url: str, body: bytes | None = None, ctype: str | None = None
+    ) -> tuple[int, bytes]:
+        if self.http is not None:
+            return self.http(method, url, body, self._headers(ctype))
+        req = urllib.request.Request(url, method=method, data=body)
+        for k, v in self._headers(ctype).items():
+            req.add_header(k, v)
+        try:
+            with urllib.request.urlopen(req, timeout=600) as resp:
+                return resp.status, resp.read()
+        except urllib.error.HTTPError as e:
+            return e.code, e.read()
+
+    def create_video(self, title: str) -> str:
+        self.log.creates.append(title)
+        status, raw = self._request(
+            "POST",
+            self.base,
+            json.dumps({"title": title}).encode(),
+            "application/json",
+        )
+        if status != 200:
+            raise RuntimeError(f"Bunny create failed HTTP {status}")
+        data = json.loads(raw.decode())
+        guid = data.get("guid")
+        if not guid:
+            raise RuntimeError("Bunny create response missing guid")
+        return str(guid)
+
+    def upload_mp4(self, guid: str, mp4_bytes: bytes) -> None:
+        self.log.uploads.append(guid)
+        status, raw = self._request(
+            "PUT",
+            f"{self.base}/{guid}",
+            mp4_bytes,
+            "application/octet-stream",
+        )
+        if status not in (200, 201):
+            raise RuntimeError(f"Bunny upload failed HTTP {status}: {raw[:200]!r}")
+
+    def get_video(self, guid: str) -> dict[str, Any]:
+        self.log.gets.append(guid)
+        status, raw = self._request("GET", f"{self.base}/{guid}")
+        if status == 404:
+            raise FileNotFoundError(f"Bunny video not found: {guid}")
+        if status != 200:
+            raise RuntimeError(f"Bunny get failed HTTP {status}")
+        return json.loads(raw.decode())
+
+    def list_videos_search(self, search: str, page: int = 1) -> list[dict[str, Any]]:
+        """Official List Videos with search query (single page; no poll loop)."""
+        self.log.lists.append(search)
+        q = urllib.parse.urlencode(
+            {"page": page, "itemsPerPage": 100, "search": search}
+        )
+        status, raw = self._request("GET", f"{self.base}?{q}")
+        if status != 200:
+            raise RuntimeError(f"Bunny list failed HTTP {status}")
+        data = json.loads(raw.decode())
+        items = data.get("items") or []
+        return list(items)
+
+    def find_by_title_and_hash(
+        self, title: str, video_checksum: str
+    ) -> list[dict[str, Any]]:
+        """Recover candidates by official search + originalHash match."""
+        matches: list[dict[str, Any]] = []
+        for item in self.list_videos_search(title):
+            if item.get("title") != title:
+                continue
+            oh = (item.get("originalHash") or "").lower()
+            if oh and oh == video_checksum.lower():
+                matches.append(item)
+        return matches

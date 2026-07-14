@@ -2,19 +2,23 @@ name: Video Production Full 300 — Localized Batch
 
 # Full 300-cell localized video production (100 × en, ar-MSA, ar-Gulf).
 # Manual dispatch only — Lovable is the authorized dispatcher.
-# Generation stops at validated per-cell GitHub artifacts (no Bunny, no mapping commits).
+# Generation produces validated per-cell GitHub artifacts; full-300 cells then
+# finalize Bunny MP4 upload + isolated result-branch receipts (no caption-track
+# upload; captions remain in the artifact). Canonical bunny-videos.ts mappings
+# are not modified by this workflow.
 
 on:
   workflow_dispatch:
     inputs:
       run_mode:
-        description: "preflight-one = one safe no-paid validation; generate-one = one real paid production cell; full-300 = validated 300-cell batch."
+        description: "preflight-one = one safe no-paid validation; generate-one = one real paid production cell; finalize-one = reuse pinned accepted artifact + Bunny receipt; full-300 = validated 300-cell batch with per-cell finalization."
         required: true
         default: preflight-one
         type: choice
         options:
           - preflight-one
           - generate-one
+          - finalize-one
           - full-300
       retry_failed_only:
         description: "Retained for compatibility. Cross-run retry is unsupported; use Re-run failed jobs on the original run."
@@ -86,7 +90,7 @@ jobs:
           from pathlib import Path
 
           run_mode = os.environ.get("RUN_MODE", "preflight-one")
-          if run_mode not in ("preflight-one", "generate-one", "full-300"):
+          if run_mode not in ("preflight-one", "generate-one", "finalize-one", "full-300"):
               print(f"::error::Unsupported run_mode {run_mode!r}", file=sys.stderr)
               sys.exit(1)
 
@@ -94,15 +98,15 @@ jobs:
           if retry_only:
               print(
                   "::error::Cross-run retry_failed_only is unsupported for this "
-                  "artifact-only workflow. Use GitHub Actions \"Re-run failed jobs\" "
-                  "on the original run.",
+                  "workflow. Use GitHub Actions \"Re-run failed jobs\" "
+                  "on the original run; finalized cells skip via durable receipts.",
                   file=sys.stderr,
               )
               sys.exit(1)
 
           print(f"run_mode={run_mode}")
 
-          if run_mode in ("preflight-one", "generate-one"):
+          if run_mode in ("preflight-one", "generate-one", "finalize-one"):
               locale = "en"
               lesson_id = "analyst-m3-l2-ai-summarization"
               package_path = (
@@ -601,12 +605,112 @@ jobs:
           if-no-files-found: error
           retention-days: 14
 
+  finalize_one:
+    name: Finalize one — pinned accepted artifact → Bunny + result branch
+    needs: plan
+    if: needs.plan.outputs.run_mode == 'finalize-one'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+      actions: read
+
+    env:
+      LID: analyst-m3-l2-ai-summarization
+      LOCALE: en
+      COMPOSITE_KEY: analyst-m3-l2-ai-summarization__en
+      CELL_ID: en::analyst-m3-l2-ai-summarization
+      WORKFLOW_RUN_ID: "29296309474"
+      ARTIFACT_ID: "8296996512"
+      ARTIFACT_DIGEST: "sha256:3dd0f69515d9fa8a551518c0d42395623d3d00202355817f0d434ec68bb16175"
+
+    steps:
+      - name: Check out immutable production source baseline
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SOURCE_SHA }}
+          fetch-depth: 0
+
+      - name: Verify pinned source SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$SOURCE_SHA"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify finalize-one pinned identities
+        shell: bash
+        env:
+          BATCH_ID: ${{ env.BATCH_ID }}
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/verify_finalize_one_pins.py
+
+      - name: Download pinned accepted artifact by ID
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/finalize-one-artifact
+          gh api \
+            -H "Accept: application/vnd.github+json" \
+            "/repos/${{ github.repository }}/actions/artifacts/${ARTIFACT_ID}/zip" \
+            > /tmp/finalize-one-artifact.zip
+          python3 - <<'PY'
+          import hashlib, pathlib, os, sys
+          sys.path.insert(0, ".github/scripts")
+          from video_finalize.artifact_contract import resolve_production_root
+          zpath = pathlib.Path("/tmp/finalize-one-artifact.zip")
+          digest = "sha256:" + hashlib.sha256(zpath.read_bytes()).hexdigest()
+          expected = os.environ["ARTIFACT_DIGEST"]
+          if digest != expected:
+              raise SystemExit(f"artifact digest mismatch: {digest} != {expected}")
+          import zipfile
+          with zipfile.ZipFile(zpath) as zf:
+              zf.extractall("/tmp/finalize-one-artifact")
+          root = resolve_production_root(pathlib.Path("/tmp/finalize-one-artifact"))
+          print(f"::notice::artifact digest verified {digest}; bundle at {root}")
+          PY
+
+      - name: Prepare isolated results worktree repo
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/results-repo
+          git init /tmp/results-repo
+          git -C /tmp/results-repo config user.email "video-finalize@github-actions"
+          git -C /tmp/results-repo config user.name "video-finalize"
+          git -C /tmp/results-repo remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+
+      - name: Finalize Bunny upload + isolated receipt commit (no Gemini/TTS/render)
+        shell: bash
+        env:
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          PRODUCTION_ROOT: /tmp/finalize-one-artifact
+          RESULTS_REPO: /tmp/results-repo
+          WORKFLOW_RUN_ID: ${{ env.WORKFLOW_RUN_ID }}
+          ARTIFACT_ID: ${{ env.ARTIFACT_ID }}
+          ARTIFACT_DIGEST: ${{ env.ARTIFACT_DIGEST }}
+        run: |
+          set -euo pipefail
+          test -n "${BUNNY_STREAM_API_KEY:-}"
+          test -n "${BUNNY_STREAM_LIBRARY_ID:-}"
+          python3 .github/scripts/finalize_cell_cli.py
+
   produce_a:
     name: A — ${{ matrix.locale }} — ${{ matrix.lessonId }}
     needs: plan
     if: needs.plan.outputs.run_mode == 'full-300' && needs.plan.outputs.count_a != '0'
     runs-on: ubuntu-latest
     timeout-minutes: 120
+    permissions:
+      contents: write
+      actions: read
 
     strategy:
       fail-fast: false
@@ -646,7 +750,23 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Skip paid generation when durable finalized receipt matches
+        id: receipt_skip
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          BRANCH="video-results/${BATCH_ID}/${COMPOSITE_KEY}"
+          mkdir -p /tmp/results-check
+          git init /tmp/results-check
+          if git -C /tmp/results-check fetch --depth=1 "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" "$BRANCH" 2>/dev/null; then
+            git -C /tmp/results-check checkout FETCH_HEAD
+          fi
+          RESULTS_REPO=/tmp/results-check python3 .github/scripts/check_finalized_receipt.py
+
       - name: Preflight — resolve localized package (fails before any paid call)
+        if: steps.receipt_skip.outputs.skip != 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -654,26 +774,33 @@ jobs:
           test -f "/tmp/${COMPOSITE_KEY}/evidence.json"
 
       - uses: actions/setup-node@v4
+        if: steps.receipt_skip.outputs.skip != 'true'
         with:
           node-version: "20"
 
       - uses: oven-sh/setup-bun@v2
+        if: steps.receipt_skip.outputs.skip != 'true'
         with:
           bun-version: latest
 
       - name: Install ffmpeg
+        if: steps.receipt_skip.outputs.skip != 'true'
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
       - name: Install Python deps
+        if: steps.receipt_skip.outputs.skip != 'true'
         run: pip install requests google-genai
 
       - name: Install root deps
+        if: steps.receipt_skip.outputs.skip != 'true'
         run: bun install --frozen-lockfile
 
       - name: Install remotion deps
+        if: steps.receipt_skip.outputs.skip != 'true'
         run: cd remotion && bun install --frozen-lockfile
 
       - name: Functional locale-aware gate — validate-source-only (no paid calls)
+        if: steps.receipt_skip.outputs.skip != 'true'
         env:
           LESSON_LOCALE: ${{ matrix.locale }}
         run: |
@@ -712,6 +839,7 @@ jobs:
           PY
 
       - name: Fail-closed locale integrity gate — package projection (no paid calls)
+        if: steps.receipt_skip.outputs.skip != 'true'
         run: |
           set -euo pipefail
           python3 - <<'PY'
@@ -743,6 +871,7 @@ jobs:
           PY
 
       - name: Verify paid Gemini secret
+        if: steps.receipt_skip.outputs.skip != 'true'
         shell: bash
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -751,6 +880,7 @@ jobs:
           test -n "${GEMINI_API_KEY:-}"
 
       - name: Generate localized video (Gemini script → integrity → TTS → Remotion)
+        if: steps.receipt_skip.outputs.skip != 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
@@ -772,6 +902,7 @@ jobs:
           python3 -c "import sys; sys.path.insert(0, 'remotion/scripts'); from lib.captions_vtt import validate_webvtt_file; validate_webvtt_file('/tmp/${COMPOSITE_KEY}/captions.vtt')"
 
       - name: Validate media and write production result evidence
+        if: steps.receipt_skip.outputs.skip != 'true'
         shell: bash
         env:
           EXPECTED_VOICE_PROFILE: ${{ matrix.voiceProfileId }}
@@ -813,6 +944,7 @@ jobs:
                   "locale": os.environ["LOCALE"],
                   "lessonId": os.environ["LID"],
                   "compositeKey": composite,
+                  "logicalKey": composite,
                   "sourceSha": os.environ["SOURCE_SHA"],
                   "voiceProfileId": os.environ["EXPECTED_VOICE_PROFILE"],
                   "batchId": os.environ["BATCH_ID"],
@@ -828,6 +960,7 @@ jobs:
           PY
 
       - name: Upload per-cell validated production artifact (artifact-only output)
+        if: steps.receipt_skip.outputs.skip != 'true'
         uses: actions/upload-artifact@v4
         with:
           name: full-300-${{ env.SOURCE_SHA }}-${{ matrix.locale }}-${{ matrix.lessonId }}
@@ -839,12 +972,71 @@ jobs:
           if-no-files-found: error
           retention-days: 14
 
+      - name: Prepare isolated results worktree repo
+        if: steps.receipt_skip.outputs.skip != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/results-repo
+          git init /tmp/results-repo
+          git -C /tmp/results-repo config user.email "video-finalize@github-actions"
+          git -C /tmp/results-repo config user.name "video-finalize"
+          git -C /tmp/results-repo remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+
+      - name: Resolve uploaded artifact identity for receipt
+        if: steps.receipt_skip.outputs.skip != 'true'
+        id: artifact_meta
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          NAME="full-300-${SOURCE_SHA}-${LOCALE}-${LID}"
+          ID=$(gh api \
+            "/repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" \
+            --jq ".artifacts[] | select(.name==\"${NAME}\") | .id" | head -n1)
+          test -n "$ID"
+          echo "artifact_id=$ID" >> "$GITHUB_OUTPUT"
+          python3 - <<'PY'
+          import os, pathlib, sys
+          sys.path.insert(0, ".github/scripts")
+          from video_finalize.artifact_contract import compute_bundle_digest
+          root = pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/production-result")
+          digest = compute_bundle_digest(root)
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
+              f.write(f"artifact_digest={digest}\n")
+          PY
+
+      - name: Finalize Bunny upload + isolated receipt commit (no regeneration)
+        if: steps.receipt_skip.outputs.skip != 'true'
+        shell: bash
+        env:
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          PRODUCTION_ROOT: /tmp/${{ matrix.compositeKey }}/production-result
+          RESULTS_REPO: /tmp/results-repo
+          WORKFLOW_RUN_ID: ${{ github.run_id }}
+          ARTIFACT_ID: ${{ steps.artifact_meta.outputs.artifact_id }}
+          ARTIFACT_DIGEST: ${{ steps.artifact_meta.outputs.artifact_digest }}
+        run: |
+          set -euo pipefail
+          test -n "${BUNNY_STREAM_API_KEY:-}"
+          test -n "${BUNNY_STREAM_LIBRARY_ID:-}"
+          python3 .github/scripts/finalize_cell_cli.py
+
+      - name: Skipped — durable finalized receipt present
+        if: steps.receipt_skip.outputs.skip == 'true'
+        run: echo "::notice::skipped-success ${{ matrix.compositeKey }}"
+
   produce_b:
     name: B — ${{ matrix.locale }} — ${{ matrix.lessonId }}
     needs: plan
     if: needs.plan.outputs.run_mode == 'full-300' && needs.plan.outputs.count_b != '0'
     runs-on: ubuntu-latest
     timeout-minutes: 120
+    permissions:
+      contents: write
+      actions: read
 
     strategy:
       fail-fast: false
@@ -884,7 +1076,23 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Skip paid generation when durable finalized receipt matches
+        id: receipt_skip
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          BRANCH="video-results/${BATCH_ID}/${COMPOSITE_KEY}"
+          mkdir -p /tmp/results-check
+          git init /tmp/results-check
+          if git -C /tmp/results-check fetch --depth=1 "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" "$BRANCH" 2>/dev/null; then
+            git -C /tmp/results-check checkout FETCH_HEAD
+          fi
+          RESULTS_REPO=/tmp/results-check python3 .github/scripts/check_finalized_receipt.py
+
       - name: Preflight — resolve localized package (fails before any paid call)
+        if: steps.receipt_skip.outputs.skip != 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -892,26 +1100,33 @@ jobs:
           test -f "/tmp/${COMPOSITE_KEY}/evidence.json"
 
       - uses: actions/setup-node@v4
+        if: steps.receipt_skip.outputs.skip != 'true'
         with:
           node-version: "20"
 
       - uses: oven-sh/setup-bun@v2
+        if: steps.receipt_skip.outputs.skip != 'true'
         with:
           bun-version: latest
 
       - name: Install ffmpeg
+        if: steps.receipt_skip.outputs.skip != 'true'
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
       - name: Install Python deps
+        if: steps.receipt_skip.outputs.skip != 'true'
         run: pip install requests google-genai
 
       - name: Install root deps
+        if: steps.receipt_skip.outputs.skip != 'true'
         run: bun install --frozen-lockfile
 
       - name: Install remotion deps
+        if: steps.receipt_skip.outputs.skip != 'true'
         run: cd remotion && bun install --frozen-lockfile
 
       - name: Functional locale-aware gate — validate-source-only (no paid calls)
+        if: steps.receipt_skip.outputs.skip != 'true'
         env:
           LESSON_LOCALE: ${{ matrix.locale }}
         run: |
@@ -950,6 +1165,7 @@ jobs:
           PY
 
       - name: Fail-closed locale integrity gate — package projection (no paid calls)
+        if: steps.receipt_skip.outputs.skip != 'true'
         run: |
           set -euo pipefail
           python3 - <<'PY'
@@ -981,6 +1197,7 @@ jobs:
           PY
 
       - name: Verify paid Gemini secret
+        if: steps.receipt_skip.outputs.skip != 'true'
         shell: bash
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -989,6 +1206,7 @@ jobs:
           test -n "${GEMINI_API_KEY:-}"
 
       - name: Generate localized video (Gemini script → integrity → TTS → Remotion)
+        if: steps.receipt_skip.outputs.skip != 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
@@ -1010,6 +1228,7 @@ jobs:
           python3 -c "import sys; sys.path.insert(0, 'remotion/scripts'); from lib.captions_vtt import validate_webvtt_file; validate_webvtt_file('/tmp/${COMPOSITE_KEY}/captions.vtt')"
 
       - name: Validate media and write production result evidence
+        if: steps.receipt_skip.outputs.skip != 'true'
         shell: bash
         env:
           EXPECTED_VOICE_PROFILE: ${{ matrix.voiceProfileId }}
@@ -1051,6 +1270,7 @@ jobs:
                   "locale": os.environ["LOCALE"],
                   "lessonId": os.environ["LID"],
                   "compositeKey": composite,
+                  "logicalKey": composite,
                   "sourceSha": os.environ["SOURCE_SHA"],
                   "voiceProfileId": os.environ["EXPECTED_VOICE_PROFILE"],
                   "batchId": os.environ["BATCH_ID"],
@@ -1066,6 +1286,7 @@ jobs:
           PY
 
       - name: Upload per-cell validated production artifact (artifact-only output)
+        if: steps.receipt_skip.outputs.skip != 'true'
         uses: actions/upload-artifact@v4
         with:
           name: full-300-${{ env.SOURCE_SHA }}-${{ matrix.locale }}-${{ matrix.lessonId }}
@@ -1077,24 +1298,142 @@ jobs:
           if-no-files-found: error
           retention-days: 14
 
+      - name: Prepare isolated results worktree repo
+        if: steps.receipt_skip.outputs.skip != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/results-repo
+          git init /tmp/results-repo
+          git -C /tmp/results-repo config user.email "video-finalize@github-actions"
+          git -C /tmp/results-repo config user.name "video-finalize"
+          git -C /tmp/results-repo remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+
+      - name: Resolve uploaded artifact identity for receipt
+        if: steps.receipt_skip.outputs.skip != 'true'
+        id: artifact_meta
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          NAME="full-300-${SOURCE_SHA}-${LOCALE}-${LID}"
+          ID=$(gh api \
+            "/repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts" \
+            --jq ".artifacts[] | select(.name==\"${NAME}\") | .id" | head -n1)
+          test -n "$ID"
+          echo "artifact_id=$ID" >> "$GITHUB_OUTPUT"
+          python3 - <<'PY'
+          import os, pathlib, sys
+          sys.path.insert(0, ".github/scripts")
+          from video_finalize.artifact_contract import compute_bundle_digest
+          root = pathlib.Path(f"/tmp/{os.environ['COMPOSITE_KEY']}/production-result")
+          digest = compute_bundle_digest(root)
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
+              f.write(f"artifact_digest={digest}\n")
+          PY
+
+      - name: Finalize Bunny upload + isolated receipt commit (no regeneration)
+        if: steps.receipt_skip.outputs.skip != 'true'
+        shell: bash
+        env:
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          PRODUCTION_ROOT: /tmp/${{ matrix.compositeKey }}/production-result
+          RESULTS_REPO: /tmp/results-repo
+          WORKFLOW_RUN_ID: ${{ github.run_id }}
+          ARTIFACT_ID: ${{ steps.artifact_meta.outputs.artifact_id }}
+          ARTIFACT_DIGEST: ${{ steps.artifact_meta.outputs.artifact_digest }}
+        run: |
+          set -euo pipefail
+          test -n "${BUNNY_STREAM_API_KEY:-}"
+          test -n "${BUNNY_STREAM_LIBRARY_ID:-}"
+          python3 .github/scripts/finalize_cell_cli.py
+
+      - name: Skipped — durable finalized receipt present
+        if: steps.receipt_skip.outputs.skip == 'true'
+        run: echo "::notice::skipped-success ${{ matrix.compositeKey }}"
+
   report:
     name: Collect full-300 production report
-    needs: [plan, preflight_one, generate_one, produce_a, produce_b]
+    needs: [plan, preflight_one, generate_one, finalize_one, produce_a, produce_b]
     if: always() && needs.plan.outputs.run_mode == 'full-300'
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check out immutable production source baseline
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SOURCE_SHA }}
+          fetch-depth: 0
+
       - name: Emit combined batch summary
+        if: always()
         shell: bash
         run: |
           set -euo pipefail
-          echo "::notice::Full-300 artifact-only batch report"
+          echo "::notice::Full-300 artifact + finalization batch report"
           echo "source_sha=${{ env.SOURCE_SHA }}"
           echo "total_count=${{ needs.plan.outputs.total_count }}"
           echo "count_a=${{ needs.plan.outputs.count_a }}"
           echo "count_b=${{ needs.plan.outputs.count_b }}"
           echo "produce_a_result=${{ needs.produce_a.result }}"
           echo "produce_b_result=${{ needs.produce_b.result }}"
+
+      - name: Build expected logical key manifest
+        if: always()
+        id: manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          from pathlib import Path
+          locales = ("ar-MSA", "ar-Gulf", "en")
+          keys = []
+          for locale in locales:
+              manifest = json.loads(Path(f"src/lib/locale-lessons/{locale}/manifest.json").read_text())
+              for lesson_id in manifest["lessonIds"]:
+                  keys.append(f"{lesson_id}__{locale}")
+          assert len(keys) == 300
+          print("expected_keys_json=" + json.dumps(keys, separators=(",", ":")))
+          PY
+
+      - name: Fetch result branch receipts (read-only)
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/result-branches
+          PREFIX="video-results/${BATCH_ID}/"
+          mapfile -t REFS < <(
+            git ls-remote "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" \
+              "refs/heads/${PREFIX}*" | awk '{print $2}' | sed "s#refs/heads/##"
+          )
+          for branch in "${REFS[@]}"; do
+            key="${branch#${PREFIX}}"
+            dest="/tmp/result-branches/${key}"
+            mkdir -p "$dest"
+            git init "$dest" >/dev/null 2>&1
+            if git -C "$dest" fetch --depth=1 "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" "$branch" 2>/dev/null; then
+              git -C "$dest" checkout FETCH_HEAD >/dev/null 2>&1 || true
+            fi
+          done
+
+      - name: Collect durable finalization inventory (read-only)
+        if: always()
+        id: collector
+        shell: bash
+        env:
+          BATCH_ID: ${{ env.BATCH_ID }}
+          EXPECTED_LOGICAL_KEYS_JSON: ${{ steps.manifest.outputs.expected_keys_json }}
+          FAILED_LOGICAL_KEYS_JSON: "[]"
+          RESULTS_FETCH_DIR: /tmp/result-branches
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/collect_finalization_cli.py | tee collector-report.json
 
       - name: Collect per-cell artifacts (read-only)
         if: needs.plan.outputs.total_count != '0'
