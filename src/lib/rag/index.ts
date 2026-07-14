@@ -110,3 +110,7 @@ export * from "./indexing";
 export * from "./embedding-dry-run";
 export * from "./exact-token-count";
 export * from "./resolve-assistant-locale";
+export * from "./legacy-ar-eg-store";
+export * from "./portable-artifact";
+export * from "./portable-importer";
+export * from "./entitlement-gate";
