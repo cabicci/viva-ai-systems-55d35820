@@ -88,7 +88,7 @@ def test_valid_bundle_skips_generation(tmp_path):
         return R()
 
     out = rc.run_cell(
-        lesson_id=lid, locale=loc, package_path=pkg,
+        lesson_id=lid, locale=loc, package_path="unused",
         source_sha="src-abc", workflow_run_id="rr1", artifact_id="ART",
         artifact_digest="sha256:d",
         bunny_library_id="l", bunny_api_key="k",
