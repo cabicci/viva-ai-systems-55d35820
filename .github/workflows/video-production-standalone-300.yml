@@ -1,17 +1,13 @@
 name: Video Production Standalone 300
 
 # Standalone, isolated 300-cell localized video production workflow.
-# Does NOT import or reuse:
-#   - .github/workflows/video-production-batch.yml
-#   - .github/workflows/video-production-final-v2.yml
-#   - .github/scripts/video_v2/**
 # Read-only reuse (never edited):
 #   - remotion/scripts/build-lesson.py
 #   - .github/scripts/video_finalize/**
-#
-# Dispatch contract:
-#   - Confirmation gate: input `confirm` must equal PROCEED.
-#   - Main-only guard: refuses to run unless the dispatched ref is main.
+# Does NOT touch:
+#   - .github/workflows/video-production-batch.yml
+#   - .github/workflows/video-production-final-v2.yml
+#   - runtime mappings, ar-EG assets, Supabase, Preview/Publish/Production.
 
 on:
   workflow_dispatch:
@@ -23,6 +19,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: video-production-standalone-300
@@ -70,7 +67,7 @@ jobs:
         with:
           python-version: '3.11'
       - id: plan
-        name: Build plan (300 keys; en=100, ar-MSA=100, ar-Gulf=100, ar-EG=0)
+        name: Build plan (300 keys; en=100, ar-MSA=100, ar-Gulf=100, ar-EG=0; canary pinned)
         run: |
           set -euo pipefail
           python3 .github/scripts/video_standalone/plan.py \
@@ -84,7 +81,7 @@ jobs:
           if-no-files-found: error
 
   canary:
-    name: Canary (1 cell, end-to-end live gate)
+    name: Canary (analyst-m3-l2-ai-summarization__en; end-to-end live gate)
     needs: plan
     runs-on: ubuntu-latest
     strategy:
@@ -95,6 +92,8 @@ jobs:
     concurrency:
       group: standalone-cell-${{ matrix.cell.logical_key }}
       cancel-in-progress: false
+    env:
+      DETERMINISTIC_ARTIFACT_NAME: standalone-cell__${{ github.sha }}__${{ matrix.cell.locale }}__${{ matrix.cell.lesson_id }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -121,10 +120,8 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-      - name: Restore prior receipt (artifact/Bunny/commit-only recovery)
+      - name: Restore prior receipt (git-level recovery)
         env:
-          LID: ${{ matrix.cell.lesson_id }}
-          LOCALE: ${{ matrix.cell.locale }}
           KEY: ${{ matrix.cell.logical_key }}
         run: |
           set -euo pipefail
@@ -134,6 +131,13 @@ jobs:
             git checkout "origin/${BRANCH}" -- \
               "remotion/video-pipeline/results/${BATCH_ID}/${KEY}/finalization-receipt.json" || true
           fi
+      - name: Restore prior durable artifact bundle (Re-run failed jobs recovery)
+        id: bundle_in
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.DETERMINISTIC_ARTIFACT_NAME }}
+          path: /tmp/bundle-in
       - name: Run canary cell
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -142,19 +146,35 @@ jobs:
           GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
           BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
           BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
-          STANDALONE_ARTIFACT_ID: ${{ github.run_id }}-${{ matrix.cell.logical_key }}
+          STANDALONE_ARTIFACT_ID: ${{ env.DETERMINISTIC_ARTIFACT_NAME }}
           STANDALONE_ARTIFACT_DIGEST: sha256:pending
         run: |
           set -euo pipefail
+          BUNDLE_IN=""
+          if [ -d /tmp/bundle-in ] && [ -f /tmp/bundle-in/validation.json ]; then
+            BUNDLE_IN="--bundle-in-dir /tmp/bundle-in"
+          fi
+          mkdir -p /tmp/bundle-out
+          # shellcheck disable=SC2086
           python3 .github/scripts/video_standalone/run_cell.py \
             --lesson-id  "${{ matrix.cell.lesson_id }}" \
             --locale     "${{ matrix.cell.locale }}" \
             --package-path "${{ matrix.cell.package_path }}" \
             --source-sha "${{ github.sha }}" \
             --workflow-run-id "${{ github.run_id }}" \
-            --artifact-id "${{ github.run_id }}-${{ matrix.cell.logical_key }}" \
+            --artifact-id "${{ env.DETERMINISTIC_ARTIFACT_NAME }}" \
             --artifact-digest "sha256:pending" \
+            $BUNDLE_IN \
+            --bundle-out-dir /tmp/bundle-out \
             --out "/tmp/${{ matrix.cell.logical_key }}-result.json"
+      - name: Upload durable six-file bundle (deterministic name)
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.DETERMINISTIC_ARTIFACT_NAME }}
+          path: /tmp/bundle-out/
+          if-no-files-found: error
+          overwrite: true
       - name: Upload cell logs (always)
         if: always()
         uses: actions/upload-artifact@v4
@@ -177,6 +197,8 @@ jobs:
     concurrency:
       group: standalone-cell-${{ matrix.cell.logical_key }}
       cancel-in-progress: false
+    env:
+      DETERMINISTIC_ARTIFACT_NAME: standalone-cell__${{ github.sha }}__${{ matrix.cell.locale }}__${{ matrix.cell.lesson_id }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -203,7 +225,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-      - name: Restore prior receipt (recovery)
+      - name: Restore prior receipt (git-level recovery)
         env:
           KEY: ${{ matrix.cell.logical_key }}
         run: |
@@ -214,6 +236,13 @@ jobs:
             git checkout "origin/${BRANCH}" -- \
               "remotion/video-pipeline/results/${BATCH_ID}/${KEY}/finalization-receipt.json" || true
           fi
+      - name: Restore prior durable artifact bundle
+        id: bundle_in
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.DETERMINISTIC_ARTIFACT_NAME }}
+          path: /tmp/bundle-in
       - name: Run cell
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -224,15 +253,31 @@ jobs:
           BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
         run: |
           set -euo pipefail
+          BUNDLE_IN=""
+          if [ -d /tmp/bundle-in ] && [ -f /tmp/bundle-in/validation.json ]; then
+            BUNDLE_IN="--bundle-in-dir /tmp/bundle-in"
+          fi
+          mkdir -p /tmp/bundle-out
+          # shellcheck disable=SC2086
           python3 .github/scripts/video_standalone/run_cell.py \
             --lesson-id  "${{ matrix.cell.lesson_id }}" \
             --locale     "${{ matrix.cell.locale }}" \
             --package-path "${{ matrix.cell.package_path }}" \
             --source-sha "${{ github.sha }}" \
             --workflow-run-id "${{ github.run_id }}" \
-            --artifact-id "${{ github.run_id }}-${{ matrix.cell.logical_key }}" \
+            --artifact-id "${{ env.DETERMINISTIC_ARTIFACT_NAME }}" \
             --artifact-digest "sha256:pending" \
+            $BUNDLE_IN \
+            --bundle-out-dir /tmp/bundle-out \
             --out "/tmp/${{ matrix.cell.logical_key }}-result.json"
+      - name: Upload durable six-file bundle
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.DETERMINISTIC_ARTIFACT_NAME }}
+          path: /tmp/bundle-out/
+          if-no-files-found: error
+          overwrite: true
       - name: Upload cell logs (always)
         if: always()
         uses: actions/upload-artifact@v4
@@ -255,6 +300,8 @@ jobs:
     concurrency:
       group: standalone-cell-${{ matrix.cell.logical_key }}
       cancel-in-progress: false
+    env:
+      DETERMINISTIC_ARTIFACT_NAME: standalone-cell__${{ github.sha }}__${{ matrix.cell.locale }}__${{ matrix.cell.lesson_id }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -281,7 +328,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-      - name: Restore prior receipt (recovery)
+      - name: Restore prior receipt (git-level recovery)
         env:
           KEY: ${{ matrix.cell.logical_key }}
         run: |
@@ -292,6 +339,13 @@ jobs:
             git checkout "origin/${BRANCH}" -- \
               "remotion/video-pipeline/results/${BATCH_ID}/${KEY}/finalization-receipt.json" || true
           fi
+      - name: Restore prior durable artifact bundle
+        id: bundle_in
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.DETERMINISTIC_ARTIFACT_NAME }}
+          path: /tmp/bundle-in
       - name: Run cell
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -302,15 +356,31 @@ jobs:
           BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
         run: |
           set -euo pipefail
+          BUNDLE_IN=""
+          if [ -d /tmp/bundle-in ] && [ -f /tmp/bundle-in/validation.json ]; then
+            BUNDLE_IN="--bundle-in-dir /tmp/bundle-in"
+          fi
+          mkdir -p /tmp/bundle-out
+          # shellcheck disable=SC2086
           python3 .github/scripts/video_standalone/run_cell.py \
             --lesson-id  "${{ matrix.cell.lesson_id }}" \
             --locale     "${{ matrix.cell.locale }}" \
             --package-path "${{ matrix.cell.package_path }}" \
             --source-sha "${{ github.sha }}" \
             --workflow-run-id "${{ github.run_id }}" \
-            --artifact-id "${{ github.run_id }}-${{ matrix.cell.logical_key }}" \
+            --artifact-id "${{ env.DETERMINISTIC_ARTIFACT_NAME }}" \
             --artifact-digest "sha256:pending" \
+            $BUNDLE_IN \
+            --bundle-out-dir /tmp/bundle-out \
             --out "/tmp/${{ matrix.cell.logical_key }}-result.json"
+      - name: Upload durable six-file bundle
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.DETERMINISTIC_ARTIFACT_NAME }}
+          path: /tmp/bundle-out/
+          if-no-files-found: error
+          overwrite: true
       - name: Upload cell logs (always)
         if: always()
         uses: actions/upload-artifact@v4
@@ -338,21 +408,16 @@ jobs:
         with:
           name: standalone-plan
           path: /tmp/plan-artifact
-      - name: Fetch all result branches into local worktrees
+      - name: Fetch all result branches
         run: |
           set -euo pipefail
           mkdir -p /tmp/receipt-roots
-          # single working checkout with all result branches available in refs
           git fetch origin '+refs/heads/video-results/*:refs/remotes/origin/video-results/*' || true
-          # We collect via the current checkout for convenience: each result
-          # branch is inspected by checking out the receipt file into a
-          # temporary root, then handing that root to the collector.
           BRANCHES=$(git for-each-ref --format='%(refname:short)' "refs/remotes/origin/video-results/${BATCH_ID}/" || true)
           IDX=0
           for ref in $BRANCHES; do
             IDX=$((IDX+1))
             ROOT="/tmp/receipt-roots/$IDX"
-            mkdir -p "$ROOT/remotion/video-pipeline/results/${BATCH_ID}"
             KEY="${ref##*/}"
             OUT="$ROOT/remotion/video-pipeline/results/${BATCH_ID}/${KEY}/finalization-receipt.json"
             mkdir -p "$(dirname "$OUT")"

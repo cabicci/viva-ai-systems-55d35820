@@ -10,29 +10,23 @@ Standalone, isolated 300-cell localized video production package.
 - `.github/scripts/video_finalize/collector.py`
 - `.github/scripts/video_finalize/constants.py`
 
-**Not used, not imported:**
-- `.github/workflows/video-production-batch.yml`
-- `.github/workflows/video-production-final-v2.yml`
-- `.github/scripts/video_v2/**` (does not exist in this branch — irrelevant)
-- Cursor-owned files
-- runtime mappings (`src/lib/bunny-videos.ts`, `remotion/src/lessonsRegistry.ts`)
-- ar-EG assets (locale is forbidden; folder must contain zero JSON packages)
-
 **Modules:**
-- `plan.py`         — discover + validate 300 cells; canary=1, matrix_a=149, matrix_b=150.
-- `artifact.py`     — validate MP4 + captions VTT, compute sha256.
-- `bunny_ops.py`    — finalize one cell on Bunny (create+upload OR reuse-by-originalHash).
-- `run_cell.py`     — end-to-end per-cell runner (build → validate → Bunny → receipt → commit+push).
-- `collect.py`      — always-run collector; delegates to video_finalize.collector.
+- `plan.py`                    — 300-cell plan; canary pinned to `analyst-m3-l2-ai-summarization__en`; matrix_a=149, matrix_b=150.
+- `locale_gate.py`             — per-locale narration acceptance rules (en / ar-MSA / ar-Gulf / ar-EG-always-reject).
+- `narration_orchestrator.py`  — 2-attempt Gemini gate BEFORE TTS/render/Bunny/git.
+- `artifact.py`                — MP4 + captions VTT validation and sha256.
+- `artifact_bundle.py`         — six-file durable bundle (video.mp4, audio.mp3, captions.vtt, status.json, validation.json, pipeline.log) with deterministic name `standalone-cell__<sha[:12]>__<locale>__<lesson_id>`.
+- `bunny_ops.py`               — former-pilot collision-safe reconciliation. Fail-closed on multi-match, malformed, missing, null, empty, or meta-only originalHash. Zero exact-hash matches with valid nonmatching hashes → one new distinct video; older videos preserved (never deleted).
+- `run_cell.py`                — end-to-end per-cell runner.
+- `collect.py`                 — always-run collector; delegates to `video_finalize.collector`.
 
-**Isolated per-cell result branch:**
-`video-results/video-full-300-localized-v1/{logicalKey}` — one branch per cell,
-one receipt per branch. Never pushes to `main`.
+**Isolated per-cell result branch:** `video-results/video-full-300-localized-v1/{logicalKey}`.
 
 **Recovery tiers (per cell, on retry):**
-1. Local receipt file with matching identity tuple → skipped-success (no build, no Bunny call, no commit).
-2. Bunny list-by-title + exact top-level `originalHash` match → GUID reused, receipt written, commit-only recovery.
-3. Otherwise → full generate + upload path.
+1. Matching on-disk receipt (identity tuple match) → skipped-success (no Gemini, no TTS, no render, no Bunny, no git).
+2. Valid durable six-file bundle at `--bundle-in-dir` → restore into pipeline paths and skip Gemini/TTS/render.
+3. Bunny list-by-title + single exact-hash match → GUID reused (no re-upload).
+4. Otherwise → gate narration (≤2 Gemini attempts) → full generate → six-file validate → upload → verify → receipt commit+push.
 
 The always-run collector aggregates per-cell receipts across the fetched result branches;
 GitHub-native "Re-run failed jobs" is honoured because each cell's success is durably
