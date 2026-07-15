@@ -12,6 +12,7 @@ from __future__ import annotations
 
 BATCH_ID = "video-full-300-localized-v1"
 SOURCE_SHA_PIN = "6cfd019d315ec3f5a30ffc83bd551f4deb52385c"
+FULL_300_SOURCE_SHA_PIN = "69ba815e256d6f46382c9f0fa901bb3fea88c85b"
 SCHEMA_VERSION = "video-finalization-receipt-v1"
 
 RESULT_ROOT = "remotion/video-pipeline/results"
@@ -29,6 +30,24 @@ FINALIZE_ONE_PIN = {
     "sourceSha": SOURCE_SHA_PIN,
     "batchId": BATCH_ID,
 }
+
+# Pinned accepted finalize-one receipt (read-only carry-forward under full-300 pin).
+ACCEPTED_CARRY_FORWARD_CELL = {
+    "batchId": BATCH_ID,
+    "logicalKey": "analyst-m3-l2-ai-summarization__en",
+    "lessonId": "analyst-m3-l2-ai-summarization",
+    "locale": "en",
+    "sourceSha": SOURCE_SHA_PIN,
+    "workflowRunId": "29296309474",
+    "artifactId": "8296996512",
+    "artifactDigest": "sha256:3dd0f69515d9fa8a551518c0d42395623d3d00202355817f0d434ec68bb16175",
+    "videoChecksum": "78afdba76a01a1d78297756c01c383c2527105a4854bb4a13af9a7169d70acf4",
+    "captionsChecksum": "744d869b50647baee565f8b7d4d6799ef4e673305ede5d4e5c5fb87dcf6273e5",
+    "bunnyGuid": "4cb048b2-5a26-4427-b4d9-0efd58261088",
+    "validationStatus": "finalized",
+}
+ACCEPTED_CARRY_FORWARD_LOGICAL_KEY = ACCEPTED_CARRY_FORWARD_CELL["logicalKey"]
+ACCEPTED_CARRY_FORWARD_PROTECTED_FIELDS = frozenset(ACCEPTED_CARRY_FORWARD_CELL.keys())
 
 
 def _validate_branch_component(value: str, kind: str) -> None:

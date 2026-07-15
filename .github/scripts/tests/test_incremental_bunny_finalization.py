@@ -22,8 +22,12 @@ from video_finalize.bunny_client import (  # noqa: E402
 )
 from video_finalize.collector import collect_receipts  # noqa: E402
 from video_finalize.constants import (  # noqa: E402
+    ACCEPTED_CARRY_FORWARD_CELL,
+    ACCEPTED_CARRY_FORWARD_LOGICAL_KEY,
+    ACCEPTED_CARRY_FORWARD_PROTECTED_FIELDS,
     BATCH_ID,
     FINALIZE_ONE_PIN,
+    FULL_300_SOURCE_SHA_PIN,
     SOURCE_SHA_PIN,
     bunny_title,
     receipt_relpath,
@@ -39,6 +43,7 @@ from video_finalize.finalize_cell import (  # noqa: E402
 from video_finalize.git_result_branch import GitBranchError, ResultBranchRepo  # noqa: E402
 from video_finalize.constants import FORBIDDEN_RECEIPT_KEYS  # noqa: E402
 from video_finalize.receipt import build_receipt, validate_receipt  # noqa: E402
+from check_finalized_receipt import evaluate_finalized_receipt  # noqa: E402
 
 
 def _sha(data: bytes) -> str:
@@ -1462,6 +1467,229 @@ class PostUploadReadinessTests(unittest.TestCase):
             self.assertEqual(len(ctx.bunny.log.gets), 1)
             self.assertEqual(result.receipt["bunnyGuid"], ACCEPTED_GUID_FIXTURE)
             self.assertNotIn(ACCEPTED_GUID_FIXTURE, ctx.bunny.log.uploads)
+
+
+def _accepted_carry_forward_receipt() -> dict:
+    return dict(ACCEPTED_CARRY_FORWARD_CELL)
+
+
+class Full300ProductionPinReceiptTests(unittest.TestCase):
+    def test_accepted_receipt_skips_under_full_300_pin(self):
+        action, carried, message, code = evaluate_finalized_receipt(
+            batch_id=BATCH_ID,
+            logical_key=ACCEPTED_CARRY_FORWARD_LOGICAL_KEY,
+            production_source_sha=FULL_300_SOURCE_SHA_PIN,
+            receipt=_accepted_carry_forward_receipt(),
+        )
+        self.assertEqual(action, "skip")
+        self.assertTrue(carried)
+        self.assertEqual(message, "accepted-carried-forward-completed-cell")
+        self.assertEqual(code, 0)
+        self.assertEqual(
+            _accepted_carry_forward_receipt()["sourceSha"],
+            SOURCE_SHA_PIN,
+        )
+
+    def test_each_protected_field_mutation_fails_closed(self):
+        for field in sorted(ACCEPTED_CARRY_FORWARD_PROTECTED_FIELDS):
+            with self.subTest(field=field):
+                bad = _accepted_carry_forward_receipt()
+                bad[field] = f"mutated-{field}"
+                action, carried, _, code = evaluate_finalized_receipt(
+                    batch_id=BATCH_ID,
+                    logical_key=ACCEPTED_CARRY_FORWARD_LOGICAL_KEY,
+                    production_source_sha=FULL_300_SOURCE_SHA_PIN,
+                    receipt=bad,
+                )
+                self.assertEqual(action, "fail")
+                self.assertFalse(carried)
+                self.assertEqual(code, 23)
+
+    def test_wrong_production_sha_fails_closed_for_accepted_key(self):
+        action, _, _, code = evaluate_finalized_receipt(
+            batch_id=BATCH_ID,
+            logical_key=ACCEPTED_CARRY_FORWARD_LOGICAL_KEY,
+            production_source_sha=SOURCE_SHA_PIN,
+            receipt=_accepted_carry_forward_receipt(),
+        )
+        self.assertEqual(action, "fail")
+        self.assertEqual(code, 24)
+
+    def test_missing_accepted_receipt_fails_closed(self):
+        action, _, _, code = evaluate_finalized_receipt(
+            batch_id=BATCH_ID,
+            logical_key=ACCEPTED_CARRY_FORWARD_LOGICAL_KEY,
+            production_source_sha=FULL_300_SOURCE_SHA_PIN,
+            receipt=None,
+        )
+        self.assertEqual(action, "fail")
+        self.assertEqual(code, 22)
+
+    def test_invalid_accepted_receipt_fails_closed(self):
+        action, _, _, code = evaluate_finalized_receipt(
+            batch_id=BATCH_ID,
+            logical_key=ACCEPTED_CARRY_FORWARD_LOGICAL_KEY,
+            production_source_sha=FULL_300_SOURCE_SHA_PIN,
+            receipt=None,
+            receipt_error="schema mismatch",
+        )
+        self.assertEqual(action, "fail")
+        self.assertEqual(code, 20)
+
+    def test_accepted_key_cannot_fall_through_on_mismatch(self):
+        bad = _accepted_carry_forward_receipt()
+        bad["bunnyGuid"] = "00000000-0000-0000-0000-000000000000"
+        action, _, _, code = evaluate_finalized_receipt(
+            batch_id=BATCH_ID,
+            logical_key=ACCEPTED_CARRY_FORWARD_LOGICAL_KEY,
+            production_source_sha=FULL_300_SOURCE_SHA_PIN,
+            receipt=bad,
+        )
+        self.assertNotEqual(action, "proceed")
+        self.assertEqual(action, "fail")
+        self.assertEqual(code, 23)
+
+    def test_unrelated_same_sha_receipt_still_skips(self):
+        receipt = build_receipt(
+            batch_id=BATCH_ID,
+            logical_key="other-lesson__en",
+            lesson_id="other-lesson",
+            locale="en",
+            source_sha=FULL_300_SOURCE_SHA_PIN,
+            workflow_run_id="9",
+            artifact_id="10",
+            artifact_digest="sha256:aa",
+            video_checksum="a" * 64,
+            captions_checksum="b" * 64,
+            bunny_guid="guid-other",
+            bunny_upload_status="uploaded",
+        )
+        action, carried, _, code = evaluate_finalized_receipt(
+            batch_id=BATCH_ID,
+            logical_key="other-lesson__en",
+            production_source_sha=FULL_300_SOURCE_SHA_PIN,
+            receipt=receipt,
+        )
+        self.assertEqual(action, "skip")
+        self.assertFalse(carried)
+        self.assertEqual(code, 0)
+
+    def test_unrelated_cross_sha_receipt_rejected(self):
+        receipt = build_receipt(
+            batch_id=BATCH_ID,
+            logical_key="other-lesson__en",
+            lesson_id="other-lesson",
+            locale="en",
+            source_sha=SOURCE_SHA_PIN,
+            workflow_run_id="9",
+            artifact_id="10",
+            artifact_digest="sha256:aa",
+            video_checksum="a" * 64,
+            captions_checksum="b" * 64,
+            bunny_guid="guid-other",
+            bunny_upload_status="uploaded",
+        )
+        action, _, _, code = evaluate_finalized_receipt(
+            batch_id=BATCH_ID,
+            logical_key="other-lesson__en",
+            production_source_sha=FULL_300_SOURCE_SHA_PIN,
+            receipt=receipt,
+        )
+        self.assertEqual(action, "fail")
+        self.assertEqual(code, 21)
+
+    def test_no_generalized_cross_sha_reuse(self):
+        for logical_key in ("intro-m1-l4-ai-can-cannot__ar-MSA", "lesson-002__ar-Gulf"):
+            with self.subTest(logical_key=logical_key):
+                lid, loc = logical_key.split("__")
+                receipt = build_receipt(
+                    batch_id=BATCH_ID,
+                    logical_key=logical_key,
+                    lesson_id=lid,
+                    locale=loc,
+                    source_sha=SOURCE_SHA_PIN,
+                    workflow_run_id="1",
+                    artifact_id="2",
+                    artifact_digest="sha256:bb",
+                    video_checksum="c" * 64,
+                    captions_checksum="d" * 64,
+                    bunny_guid="guid-x",
+                    bunny_upload_status="uploaded",
+                )
+                action, carried, _, code = evaluate_finalized_receipt(
+                    batch_id=BATCH_ID,
+                    logical_key=logical_key,
+                    production_source_sha=FULL_300_SOURCE_SHA_PIN,
+                    receipt=receipt,
+                )
+                self.assertEqual(action, "fail")
+                self.assertFalse(carried)
+                self.assertEqual(code, 21)
+
+    def test_accepted_key_missing_receipt_not_proceed(self):
+        action, _, _, _ = evaluate_finalized_receipt(
+            batch_id=BATCH_ID,
+            logical_key=ACCEPTED_CARRY_FORWARD_LOGICAL_KEY,
+            production_source_sha=FULL_300_SOURCE_SHA_PIN,
+            receipt=None,
+        )
+        self.assertNotEqual(action, "proceed")
+
+    def test_flat_result_branch_namespace_unchanged(self):
+        self.assertEqual(
+            result_branch_name(BATCH_ID, ACCEPTED_CARRY_FORWARD_LOGICAL_KEY),
+            "video-results--video-full-300-localized-v1--analyst-m3-l2-ai-summarization__en",
+        )
+        self.assertEqual(
+            result_branch_prefix(BATCH_ID),
+            "video-results--video-full-300-localized-v1--",
+        )
+
+
+class Full300MatrixInvariantTests(unittest.TestCase):
+    def test_matrix_totals_and_accepted_skip_counts(self):
+        locales = ("ar-MSA", "ar-Gulf", "en")
+        keys: list[str] = []
+        for locale in locales:
+            manifest_path = (
+                Path(__file__).resolve().parents[3]
+                / "src"
+                / "lib"
+                / "locale-lessons"
+                / locale
+                / "manifest.json"
+            )
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            lesson_ids = manifest["lessonIds"]
+            self.assertEqual(len(lesson_ids), 100)
+            for lesson_id in lesson_ids:
+                self.assertNotEqual(locale, "ar-EG")
+                keys.append(f"{lesson_id}__{locale}")
+        self.assertEqual(len(keys), 300)
+        self.assertEqual(len(set(keys)), 300)
+        self.assertEqual(sum(k.endswith("__en") for k in keys), 100)
+        self.assertEqual(sum(k.endswith("__ar-MSA") for k in keys), 100)
+        self.assertEqual(sum(k.endswith("__ar-Gulf") for k in keys), 100)
+        accepted = ACCEPTED_CARRY_FORWARD_LOGICAL_KEY
+        self.assertEqual(keys.count(accepted), 1)
+        skip_count = 0
+        pending = 0
+        for key in keys:
+            if key == accepted:
+                action, _, _, _ = evaluate_finalized_receipt(
+                    batch_id=BATCH_ID,
+                    logical_key=key,
+                    production_source_sha=FULL_300_SOURCE_SHA_PIN,
+                    receipt=_accepted_carry_forward_receipt(),
+                )
+                if action == "skip":
+                    skip_count += 1
+                else:
+                    pending += 1
+            else:
+                pending += 1
+        self.assertEqual(skip_count, 1)
+        self.assertEqual(pending, 299)
 
 
 if __name__ == "__main__":

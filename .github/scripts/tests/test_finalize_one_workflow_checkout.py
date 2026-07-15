@@ -8,18 +8,40 @@ from pathlib import Path
 WORKFLOW = (
     Path(__file__).resolve().parents[2] / "workflows" / "video-production-batch.yml"
 )
+WORKFLOW_TEXT = WORKFLOW.read_text(encoding="utf-8")
+
+
+def _job_block(text: str, job_name: str, *, end_markers: tuple[str, ...]) -> str:
+    start = text.index(f"  {job_name}:")
+    end = len(text)
+    for marker in end_markers:
+        pos = text.find(marker, start + 1)
+        if pos != -1:
+            end = min(end, pos)
+    return text[start:end]
 
 
 def _finalize_one_block(text: str) -> str:
-    start = text.index("  finalize_one:")
-    end = text.index("\n  produce_a:", start)
-    return text[start:end]
+    return _job_block(text, "finalize_one", end_markers=("\n  produce_a:",))
+
+
+def _produce_block(text: str, job_name: str) -> str:
+    if job_name == "produce_a":
+        end_markers = ("\n  produce_b:",)
+    else:
+        end_markers = ("\n  report:",)
+    return _job_block(text, job_name, end_markers=end_markers)
+
+
+def _report_block(text: str) -> str:
+    start = text.index("  report:")
+    return text[start:]
 
 
 class FinalizeOneWorkflowCheckoutTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.block = _finalize_one_block(WORKFLOW.read_text(encoding="utf-8"))
+        cls.block = _finalize_one_block(WORKFLOW_TEXT)
 
     def test_control_checkout_uses_dispatched_github_sha(self):
         self.assertIn("Check out dispatched workflow control scripts", self.block)
@@ -61,6 +83,78 @@ class FinalizeOneWorkflowCheckoutTests(unittest.TestCase):
             self.block,
         )
         self.assertIn("COMPOSITE_KEY: analyst-m3-l2-ai-summarization__en", self.block)
+
+    def test_finalize_one_retains_source_sha_not_full_300_pin(self):
+        self.assertNotIn("FULL_300_SOURCE_SHA", self.block)
+        self.assertRegex(
+            self.block,
+            r"Check out immutable production SOURCE_SHA[\s\S]*?ref: \$\{\{ env\.SOURCE_SHA \}\}",
+        )
+
+
+class Full300ProductionPinWorkflowTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.text = WORKFLOW_TEXT
+        cls.produce_a = _produce_block(WORKFLOW_TEXT, "produce_a")
+        cls.produce_b = _produce_block(WORKFLOW_TEXT, "produce_b")
+        cls.report = _report_block(WORKFLOW_TEXT)
+
+    def test_global_pins_declared(self):
+        self.assertIn("SOURCE_SHA: 6cfd019d315ec3f5a30ffc83bd551f4deb52385c", self.text)
+        self.assertIn(
+            "FULL_300_SOURCE_SHA: 69ba815e256d6f46382c9f0fa901bb3fea88c85b",
+            self.text,
+        )
+
+    def test_produce_jobs_checkout_and_verify_full_300_pin(self):
+        for block in (self.produce_a, self.produce_b):
+            with self.subTest(job=block.split(":")[0].strip()):
+                self.assertRegex(
+                    block,
+                    r"Check out immutable production source baseline[\s\S]*?"
+                    r"ref: \$\{\{ env\.FULL_300_SOURCE_SHA \}\}",
+                )
+                self.assertIn("Verify pinned full-300 production source SHA", block)
+                self.assertIn(
+                    'test "$FULL_300_SOURCE_SHA" = "69ba815e256d6f46382c9f0fa901bb3fea88c85b"',
+                    block,
+                )
+                self.assertIn('test "$(git rev-parse HEAD)" = "$FULL_300_SOURCE_SHA"', block)
+                self.assertIn("PRODUCTION_SOURCE_SHA: 69ba815e256d6f46382c9f0fa901bb3fea88c85b", block)
+
+    def test_collect_report_checkout_and_verify_full_300_pin(self):
+        self.assertRegex(
+            self.report,
+            r"Check out immutable production source baseline[\s\S]*?"
+            r"ref: \$\{\{ env\.FULL_300_SOURCE_SHA \}\}",
+        )
+        self.assertIn("Verify pinned full-300 production source SHA", self.report)
+        self.assertIn('source_sha=${{ env.FULL_300_SOURCE_SHA }}', self.report)
+        self.assertIn("pattern: full-300-${{ env.FULL_300_SOURCE_SHA }}-*", self.report)
+
+    def test_receipt_guard_before_paid_steps(self):
+        for block in (self.produce_a, self.produce_b):
+            with self.subTest(job=block.split(":")[0].strip()):
+                skip_pos = block.index("Skip paid generation when durable finalized receipt matches")
+                gemini_pos = block.index("Generate localized video (Gemini script")
+                self.assertLess(skip_pos, gemini_pos)
+                self.assertIn("if: steps.receipt_skip.outputs.skip != 'true'", block)
+
+    def test_production_generation_command_unchanged(self):
+        expected = (
+            'python3 remotion/scripts/build-lesson.py "$LID" \\\n'
+            "            --locale \"$LOCALE\" \\\n"
+            "            --package-path \"$LESSON_PACKAGE_PATH\" \\\n"
+            "            --force-script"
+        )
+        self.assertEqual(self.produce_a.count(expected), 1)
+        self.assertEqual(self.produce_b.count(expected), 1)
+
+    def test_matrix_invariants_in_plan(self):
+        self.assertIn("assert len(approved) == 300", self.text)
+        self.assertIn('max-parallel: 2', self.produce_a)
+        self.assertIn("fail-fast: false", self.produce_a)
 
 
 if __name__ == "__main__":
