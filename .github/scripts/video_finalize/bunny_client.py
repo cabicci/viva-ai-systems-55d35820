@@ -111,7 +111,9 @@ class BunnyClient:
             raise RuntimeError(f"Bunny get failed HTTP {status}")
         return json.loads(raw.decode())
 
-    def list_videos_search(self, search: str, page: int = 1) -> list[dict[str, Any]]:
+    def list_videos_search(
+        self, search: str, page: int = 1
+    ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
         """Official List Videos with search query (single page; no poll loop)."""
         self.log.lists.append(f"{search}@page={page}")
         q = urllib.parse.urlencode(
@@ -122,21 +124,56 @@ class BunnyClient:
             raise RuntimeError(f"Bunny list failed HTTP {status}")
         data = json.loads(raw.decode())
         items = data.get("items") or []
-        return list(items)
+        return list(items), data
 
-    def list_exact_title_candidates(self, title: str) -> list[dict[str, Any]]:
-        """Bounded pagination discovery for exact title matches only."""
+    def _page_proves_exhaustion(
+        self, page: int, items: list[dict[str, Any]], page_data: dict[str, Any]
+    ) -> bool:
+        """True when this page proves no further Bunny list pages exist."""
+        if not items:
+            return True
+        if len(items) < ITEMS_PER_PAGE:
+            return True
+
+        current = page_data.get("currentPage")
+        total_pages = page_data.get("totalPages")
+        if isinstance(current, int) and isinstance(total_pages, int) and total_pages > 0:
+            if current == page and current >= total_pages:
+                return True
+
+        total_items = page_data.get("totalItems")
+        if isinstance(total_items, int) and total_items >= 0:
+            if page * ITEMS_PER_PAGE >= total_items:
+                return True
+
+        return False
+
+    def list_exact_title_candidates(
+        self, title: str
+    ) -> tuple[list[dict[str, Any]], dict[str, Any] | None]:
+        """Bounded pagination discovery for exact title matches only.
+
+        Returns (candidates, reconciliation). When reconciliation is set the
+        candidate set must not be treated as complete (fail closed).
+        """
         found: list[dict[str, Any]] = []
         for page in range(1, MAX_LIST_PAGES + 1):
-            items = self.list_videos_search(title, page=page)
+            items, page_data = self.list_videos_search(title, page=page)
             if not items:
                 break
             for item in items:
                 if item.get("title") == title:
                     found.append(item)
-            if len(items) < ITEMS_PER_PAGE:
+            if self._page_proves_exhaustion(page, items, page_data):
                 break
-        return found
+            if page == MAX_LIST_PAGES:
+                return [], {
+                    "reason": "bunny-discovery-page-limit-exceeded",
+                    "title": title,
+                    "maxPages": MAX_LIST_PAGES,
+                    "itemsPerPage": ITEMS_PER_PAGE,
+                }
+        return found, None
 
     def _read_top_level_original_hash(self, item: dict[str, Any]) -> tuple[str | None, str | None]:
         """Return (normalized_hash, problem_code). Only top-level originalHash is accepted."""
@@ -173,7 +210,11 @@ class BunnyClient:
         hash_matches: list[dict[str, Any]] = []
         problems: list[dict[str, Any]] = []
 
-        for item in self.list_exact_title_candidates(title):
+        candidates, discovery_recon = self.list_exact_title_candidates(title)
+        if discovery_recon is not None:
+            return [], discovery_recon
+
+        for item in candidates:
             oh, problem = self._read_top_level_original_hash(item)
             if problem:
                 problems.append(

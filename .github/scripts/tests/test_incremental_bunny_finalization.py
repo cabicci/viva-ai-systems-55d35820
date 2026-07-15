@@ -174,13 +174,83 @@ class MockBunnyStore:
             ]
             start = (page - 1) * 100
             items = matching[start : start + 100]
-            return 200, json.dumps({"items": items, "totalItems": len(matching)}).encode()
+            return 200, json.dumps(
+                {
+                    "items": items,
+                    "totalItems": len(matching),
+                    "currentPage": page,
+                }
+            ).encode()
         if method == "GET":
             guid = url.rstrip("/").split("/")[-1]
             if guid not in self.videos:
                 return 404, b"{}"
             return 200, json.dumps(self.videos[guid]).encode()
         return 500, b"unexpected"
+
+
+class PaginatedListMock(MockBunnyStore):
+    """Mock list responses with configurable pagination metadata."""
+
+    def __init__(
+        self,
+        *,
+        total_items: int | None = None,
+        total_pages: int | None = None,
+        omit_metadata: bool = False,
+    ):
+        super().__init__()
+        self.total_items = total_items
+        self.total_pages = total_pages
+        self.omit_metadata = omit_metadata
+
+    def handler(self, method, url, body, headers):
+        if method == "GET" and "?" in url:
+            from urllib.parse import parse_qs, urlparse
+
+            q = parse_qs(urlparse(url).query)
+            search = (q.get("search") or [""])[0]
+            page = int((q.get("page") or ["1"])[0])
+            matching = [
+                v for v in self.videos.values() if search in (v.get("title") or "")
+            ]
+            start = (page - 1) * 100
+            items = matching[start : start + 100]
+            payload: dict = {"items": items}
+            if not self.omit_metadata:
+                payload["currentPage"] = page
+                payload["totalItems"] = (
+                    self.total_items if self.total_items is not None else len(matching)
+                )
+                if self.total_pages is not None:
+                    payload["totalPages"] = self.total_pages
+            return 200, json.dumps(payload).encode()
+        return super().handler(method, url, body, headers)
+
+
+def _seed_search_fill_pages(
+    store: MockBunnyStore,
+    *,
+    search: str,
+    pages: int,
+    exact_title: str | None = None,
+    exact_guid: str | None = None,
+    exact_hash: str | None = None,
+) -> None:
+    """Seed `pages` full list pages of search matches, optional exact title on next page."""
+    for page in range(1, pages + 1):
+        for i in range(100):
+            store.seed_video(
+                title=f"{search}-noise-{page:02d}-{i:03d}",
+                original_hash="c" * 64,
+                guid=f"fill-{page:02d}-{i:03d}",
+            )
+    if exact_title is not None:
+        store.seed_video(
+            title=exact_title,
+            guid=exact_guid or "hidden-exact-match",
+            original_hash=exact_hash or ("d" * 64),
+        )
 
 
 def _ctx(tmp: Path, bundle: Path, store: MockBunnyStore, **kwargs) -> FinalizeContext:
@@ -733,27 +803,8 @@ FORMER_PILOT_ACCEPTED_HASH = (
 
 
 class BunnyReconciliationTests(unittest.TestCase):
-    _SHA_BYTE_CACHE: dict[str, bytes] = {}
-
-    @classmethod
-    def _video_bytes_for_sha(cls, target_sha: str) -> bytes:
-        cached = cls._SHA_BYTE_CACHE.get(target_sha)
-        if cached is not None:
-            return cached
-        for prefix_idx in range(256):
-            prefix = b"MP4TEST" + bytes([prefix_idx])
-            for i in range(2_000_000):
-                data = prefix + str(i).encode()
-                if _sha(data) == target_sha:
-                    cls._SHA_BYTE_CACHE[target_sha] = data
-                    return data
-        raise RuntimeError(f"unable to synthesize bytes for sha {target_sha}")
-
-    def _bundle_with_checksum(self, root: Path, video_sha: str | None = None) -> Path:
-        if video_sha is None:
-            video = b"MP4TEST_" + hashlib.sha256(str(root).encode()).digest()[:8]
-        else:
-            video = self._video_bytes_for_sha(video_sha)
+    def _bundle_with_checksum(self, root: Path) -> Path:
+        video = b"MP4TEST_" + hashlib.sha256(str(root).encode()).digest()[:8]
         bundle = root / "prod"
         _make_bundle(bundle, video=video)
         return bundle
@@ -813,24 +864,103 @@ class BunnyReconciliationTests(unittest.TestCase):
             guid="page2-match",
         )
         bunny = BunnyClient("670679", "k", http=store.handler)
-        found = bunny.list_exact_title_candidates(title)
+        found, recon = bunny.list_exact_title_candidates(title)
+        self.assertIsNone(recon)
         self.assertEqual(len(found), 1)
         self.assertEqual(found[0]["guid"], "page2-match")
 
-    def test_bounded_pagination_stops_at_max_pages(self):
+    def test_final_short_page_proves_exhaustion(self):
         store = MockBunnyStore()
-        title = "paginated-title [en]"
-        for page in range(1, MAX_LIST_PAGES + 2):
-            for i in range(100):
-                store.seed_video(
-                    title=title if page == MAX_LIST_PAGES + 1 and i == 0 else f"fill-{page}-{i}",
-                    original_hash="c" * 64,
-                )
+        title = "short-page-title [en]"
+        for i in range(150):
+            store.seed_video(title=f"{title}-noise-{i}", original_hash="a" * 64)
+        store.seed_video(title=title, original_hash="b" * 64, guid="short-page-match")
         bunny = BunnyClient("670679", "k", http=store.handler)
-        lists_before = len(bunny.log.lists)
-        bunny.list_exact_title_candidates(title)
-        pages_called = {int(entry.rsplit("=", 1)[-1]) for entry in bunny.log.lists[lists_before:]}
-        self.assertLessEqual(max(pages_called), MAX_LIST_PAGES)
+        found, recon = bunny.list_exact_title_candidates(title)
+        self.assertIsNone(recon)
+        self.assertEqual(len(found), 1)
+        self.assertEqual(found[0]["guid"], "short-page-match")
+
+    def test_trustworthy_metadata_proves_exhaustion_at_cap(self):
+        store = PaginatedListMock(total_items=1000, total_pages=MAX_LIST_PAGES)
+        title = "metadata-exhausted [en]"
+        _seed_search_fill_pages(store, search=title, pages=MAX_LIST_PAGES)
+        bunny = BunnyClient("670679", "k", http=store.handler)
+        found, recon = bunny.list_exact_title_candidates(title)
+        self.assertIsNone(recon)
+        self.assertEqual(found, [])
+
+    def test_missing_metadata_fails_closed_at_page_cap(self):
+        store = PaginatedListMock(omit_metadata=True)
+        title = bunny_title("analyst-m3-l2-ai-summarization", "en")
+        _seed_search_fill_pages(
+            store,
+            search=title,
+            pages=MAX_LIST_PAGES,
+            exact_title=title,
+            exact_guid="hidden-page-11",
+            exact_hash=FORMER_PILOT_ACCEPTED_HASH,
+        )
+        bunny = BunnyClient("670679", "k", http=store.handler)
+        found, recon = bunny.list_exact_title_candidates(title)
+        self.assertEqual(found, [])
+        self.assertIsNotNone(recon)
+        self.assertEqual(recon["reason"], "bunny-discovery-page-limit-exceeded")
+
+    def test_page_limit_fails_closed_with_hidden_expected_candidate(self):
+        store = PaginatedListMock(total_items=MAX_LIST_PAGES * 100 + 1)
+        title = bunny_title("analyst-m3-l2-ai-summarization", "en")
+        _seed_search_fill_pages(
+            store,
+            search=title,
+            pages=MAX_LIST_PAGES,
+            exact_title=title,
+            exact_guid="hidden-page-11",
+            exact_hash=FORMER_PILOT_ACCEPTED_HASH,
+        )
+        bunny = BunnyClient("670679", "k", http=store.handler)
+        matches, recon = bunny.find_by_title_and_hash(title, FORMER_PILOT_ACCEPTED_HASH)
+        self.assertEqual(matches, [])
+        self.assertEqual(recon["reason"], "bunny-discovery-page-limit-exceeded")
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            bundle = self._bundle_with_checksum(root)
+            ctx = _ctx(root, bundle, store)
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
+            self.assertEqual(
+                result.reconciliation["reason"], "bunny-discovery-page-limit-exceeded"
+            )
+            self.assertEqual(result.bunny_create_calls, 0)
+            self.assertEqual(result.bunny_upload_calls, 0)
+            self.assertEqual(len(ctx.bunny.log.gets), 0)
+            self.assertIsNone(result.receipt)
+            self.assertEqual(result.commits, 0)
+            self.assertEqual(result.pushes, 0)
+
+    def test_former_pilot_exact_hash_policy_selects_new_upload_path(self):
+        store = MockBunnyStore()
+        store.seed_video(
+            title=FORMER_PILOT_TITLE,
+            guid=FORMER_PILOT_PROTECTED_GUID,
+            original_hash=FORMER_PILOT_OLD_HASH,
+        )
+        bunny = BunnyClient("670679", "k", http=store.handler)
+        protected = store.videos[FORMER_PILOT_PROTECTED_GUID]
+        old_hash, problem = bunny._read_top_level_original_hash(protected)
+        self.assertIsNone(problem)
+        self.assertNotEqual(old_hash, FORMER_PILOT_ACCEPTED_HASH.lower())
+
+        matches, recon = bunny.find_by_title_and_hash(
+            FORMER_PILOT_TITLE, FORMER_PILOT_ACCEPTED_HASH
+        )
+        self.assertEqual(matches, [])
+        self.assertIsNone(recon)
+        self.assertNotIn(FORMER_PILOT_PROTECTED_GUID, [m.get("guid") for m in matches])
+        self.assertNotIn(FORMER_PILOT_PROTECTED_GUID, bunny.log.uploads)
+        self.assertNotIn(FORMER_PILOT_PROTECTED_GUID, bunny.log.gets)
+        self.assertEqual(len(bunny.log.creates), 0)
 
     def test_post_upload_hash_proof_allows_receipt(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -863,13 +993,15 @@ class BunnyReconciliationTests(unittest.TestCase):
             self.assertIsNone(result.receipt)
             self.assertEqual(result.commits, 0)
 
-    def test_former_pilot_fixture(self):
+    def test_former_pilot_end_to_end_arbitrary_bundle(self):
+        """End-to-end behavior with a generated bundle checksum (not the historical hash)."""
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             bundle = self._bundle_with_checksum(root)
             meta = validate_six_file_bundle(bundle)
-            accepted = meta["videoChecksum"]
-            self.assertNotEqual(accepted, FORMER_PILOT_OLD_HASH)
+            generated_checksum = meta["videoChecksum"]
+            self.assertNotEqual(generated_checksum, FORMER_PILOT_OLD_HASH)
+            self.assertNotEqual(generated_checksum, FORMER_PILOT_ACCEPTED_HASH)
             store = MockBunnyStore()
             store.seed_video(
                 title=FORMER_PILOT_TITLE,
@@ -882,14 +1014,12 @@ class BunnyReconciliationTests(unittest.TestCase):
             self.assertEqual(result.bunny_create_calls, 1)
             self.assertEqual(result.bunny_upload_calls, 1)
             self.assertNotEqual(result.receipt["bunnyGuid"], FORMER_PILOT_PROTECTED_GUID)
-            self.assertEqual(result.receipt["videoChecksum"], accepted)
+            self.assertEqual(result.receipt["videoChecksum"], generated_checksum)
             self.assertEqual(
                 store.videos[FORMER_PILOT_PROTECTED_GUID]["originalHash"],
                 FORMER_PILOT_OLD_HASH,
             )
             self.assertNotIn(FORMER_PILOT_PROTECTED_GUID, ctx.bunny.log.uploads)
-            if accepted == FORMER_PILOT_ACCEPTED_HASH:
-                self.assertEqual(result.receipt["videoChecksum"], FORMER_PILOT_ACCEPTED_HASH)
 
 
 if __name__ == "__main__":
