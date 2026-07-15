@@ -1396,6 +1396,8 @@ jobs:
     needs: [plan, preflight_one, generate_one, finalize_one, produce_a, produce_b]
     if: always() && needs.plan.outputs.run_mode == 'full-300'
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Check out immutable production source baseline
@@ -1410,6 +1412,19 @@ jobs:
           set -euo pipefail
           test "$FULL_300_SOURCE_SHA" = "69ba815e256d6f46382c9f0fa901bb3fea88c85b"
           test "$(git rev-parse HEAD)" = "$FULL_300_SOURCE_SHA"
+
+      - name: Check out dispatched workflow control scripts
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: control-code
+          fetch-depth: 0
+
+      - name: Verify dispatched control SHA (fail-closed)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C control-code rev-parse HEAD)" = "${{ github.sha }}"
 
       - name: Emit combined batch summary
         if: always()
@@ -1499,3 +1514,35 @@ jobs:
           else
             echo "No collected artifacts directory (zero pending or all produce jobs skipped/failed before upload)."
           fi
+
+      - name: Promote validated finalized receipts to canonical registry
+        if: always()
+        id: mapping_promotion
+        shell: bash
+        env:
+          BATCH_ID: ${{ env.BATCH_ID }}
+          EXPECTED_LOGICAL_KEYS_JSON: ${{ steps.manifest.outputs.expected_keys_json }}
+          RESULTS_FETCH_DIR: /tmp/result-branches
+          MAPPING_REPO: /tmp/mapping-repo
+          MAPPING_REMOTE_URL: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git
+          DISPATCHED_SHA: ${{ github.sha }}
+          PUSH_TO_MAIN: "true"
+          MAPPING_COMMIT_MESSAGE: "chore(video): promote finalized localized mappings"
+        run: |
+          set -uo pipefail
+          mkdir -p /tmp/mapping-repo
+          PROMOTE_EXIT=0
+          python3 control-code/.github/scripts/promote_finalized_mappings_cli.py \
+            | tee mapping-promotion-report.json || PROMOTE_EXIT=$?
+          if [ "$PROMOTE_EXIT" -eq 40 ] || [ "$PROMOTE_EXIT" -eq 41 ]; then
+            exit "$PROMOTE_EXIT"
+          fi
+
+      - name: Fail when unresolved cells remain after registry promotion
+        if: always() && steps.mapping_promotion.outputs.all_resolved != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "::error::Unresolved localized video cells remain after registry promotion"
+          echo "unresolved_keys=${{ steps.mapping_promotion.outputs.unresolved_keys }}"
+          exit 1

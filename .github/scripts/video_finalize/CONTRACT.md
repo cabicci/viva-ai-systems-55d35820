@@ -53,3 +53,21 @@ Post-upload readiness (new GUID only): GET-only polling of the same GUID with
 deterministic capped backoff; missing/null/empty `originalHash` is pending;
 valid mismatch/malformed/non-string hash fails immediately; receipt only after
 exact top-level hash proof.
+
+## Canonical registry promotion (report job only)
+
+Only the full-300 `report` job may write `src/lib/bunny-videos.ts` on `main`.
+
+- Per-cell jobs continue writing isolated flat result branches only.
+- Report fetches all available result-branch receipts, validates each receipt
+  independently, and promotes every valid finalized receipt even when other
+  cells are missing/failed/ambiguous.
+- Valid normal receipts require `sourceSha == 69ba815e256d6f46382c9f0fa901bb3fea88c85b`.
+- Exactly one carry-forward exception:
+  `analyst-m3-l2-ai-summarization__en` with the pinned finalize-one receipt
+  identity (`sourceSha == 6cfd019d315ec3f5a30ffc83bd551f4deb52385c`).
+- Mapping-control scripts run from dispatched `${{ github.sha }}` checkout in
+  `control-code/`; production checkout remains pinned to `FULL_300_SOURCE_SHA`.
+- Registry push uses a separate mapping repo, one-file commit scope, normal
+  non-force push with bounded optimistic retry.
+- Unresolved cells fail only after promotion commit/push completes.
