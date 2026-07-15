@@ -14,7 +14,12 @@ import sys
 sys.path.insert(0, str(HERE))
 
 from video_finalize.artifact_contract import validate_six_file_bundle  # noqa: E402
-from video_finalize.bunny_client import BunnyClient, MAX_LIST_PAGES  # noqa: E402
+from video_finalize.bunny_client import (  # noqa: E402
+    BunnyClient,
+    MAX_LIST_PAGES,
+    POST_UPLOAD_READINESS_BACKOFF_SECONDS,
+    POST_UPLOAD_READINESS_MAX_SECONDS,
+)
 from video_finalize.collector import collect_receipts  # noqa: E402
 from video_finalize.constants import (  # noqa: E402
     BATCH_ID,
@@ -23,6 +28,7 @@ from video_finalize.constants import (  # noqa: E402
     bunny_title,
     receipt_relpath,
     result_branch_name,
+    result_branch_prefix,
 )
 from video_finalize.finalize_cell import (  # noqa: E402
     FinalizeContext,
@@ -242,6 +248,50 @@ class PaginatedListMock(MockBunnyStore):
         return super().handler(method, url, body, headers)
 
 
+_MISSING_HASH = object()
+
+
+class ReadinessSequenceBunnyStore(MockBunnyStore):
+    """Defer upload hash and serve queued GET originalHash states."""
+
+    def __init__(self):
+        super().__init__()
+        self.defer_upload_hash_guids: set[str] = set()
+        self.get_hash_queues: dict[str, list] = {}
+        self.default_pending_queue: list | None = None
+
+    def queue_get_hashes(self, guid: str, hashes: list) -> None:
+        self.get_hash_queues[guid] = list(hashes)
+        self.defer_upload_hash_guids.add(guid)
+
+    def handler(self, method, url, body, headers):
+        if method == "POST" and url.endswith("/videos"):
+            status, raw = super().handler(method, url, body, headers)
+            guid = json.loads(raw.decode())["guid"]
+            if self.default_pending_queue is not None:
+                self.queue_get_hashes(guid, self.default_pending_queue)
+            return status, raw
+        if method == "PUT":
+            guid = url.rstrip("/").split("/")[-1]
+            status, raw = super().handler(method, url, body, headers)
+            if guid in self.defer_upload_hash_guids:
+                self.videos[guid].pop("originalHash", None)
+            return status, raw
+        if method == "GET" and "?" not in url:
+            guid = url.rstrip("/").split("/")[-1]
+            if guid in self.get_hash_queues and self.get_hash_queues[guid]:
+                token = self.get_hash_queues[guid].pop(0)
+                item = dict(self.videos[guid])
+                if token is _MISSING_HASH:
+                    item.pop("originalHash", None)
+                elif token is None:
+                    item["originalHash"] = None
+                else:
+                    item["originalHash"] = token
+                return 200, json.dumps(item).encode()
+        return super().handler(method, url, body, headers)
+
+
 def _seed_search_fill_pages(
     store: MockBunnyStore,
     *,
@@ -330,7 +380,7 @@ class BranchOwnershipTests(unittest.TestCase):
         a = result_branch_name(BATCH_ID, "a__en")
         b = result_branch_name(BATCH_ID, "b__en")
         self.assertNotEqual(a, b)
-        self.assertTrue(a.startswith("video-results/"))
+        self.assertTrue(a.startswith("video-results--"))
 
     def test_cannot_push_main(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -598,7 +648,7 @@ class FinalizeOnePinTests(unittest.TestCase):
         self.assertEqual(pin["sourceSha"], SOURCE_SHA_PIN)
         self.assertEqual(
             result_branch_name(pin["batchId"], pin["logicalKey"]),
-            "video-results/video-full-300-localized-v1/analyst-m3-l2-ai-summarization__en",
+            "video-results--video-full-300-localized-v1--analyst-m3-l2-ai-summarization__en",
         )
 
     def test_finalize_one_disallows_generation_flags(self):
@@ -1114,6 +1164,304 @@ class BunnyReconciliationTests(unittest.TestCase):
                 FORMER_PILOT_OLD_HASH,
             )
             self.assertNotIn(FORMER_PILOT_PROTECTED_GUID, ctx.bunny.log.uploads)
+
+
+EXPECTED_FLAT_FINALIZE_ONE_BRANCH = (
+    "video-results--video-full-300-localized-v1--analyst-m3-l2-ai-summarization__en"
+)
+ACCEPTED_GUID_FIXTURE = "4cb048b2-5a26-4427-b4d9-0efd58261088"
+ACCEPTED_HASH_FIXTURE = (
+    "78afdba76a01a1d78297756c01c383c2527105a4854bb4a13af9a7169d70acf4"
+)
+
+
+class FlatBranchNamespaceTests(unittest.TestCase):
+    def test_exact_finalize_one_flat_branch_name(self):
+        self.assertEqual(
+            result_branch_name(BATCH_ID, FINALIZE_ONE_PIN["logicalKey"]),
+            EXPECTED_FLAT_FINALIZE_ONE_BRANCH,
+        )
+
+    def test_result_branch_prefix_for_collector(self):
+        self.assertEqual(
+            result_branch_prefix(BATCH_ID),
+            "video-results--video-full-300-localized-v1--",
+        )
+
+    def test_receipt_path_unchanged(self):
+        rel = receipt_relpath(BATCH_ID, "analyst-m3-l2-ai-summarization__en")
+        self.assertEqual(
+            rel,
+            "remotion/video-pipeline/results/video-full-300-localized-v1/"
+            "analyst-m3-l2-ai-summarization__en/finalization-receipt.json",
+        )
+
+    def test_unsafe_branch_components_fail_closed(self):
+        with self.assertRaises(ValueError):
+            result_branch_name("bad/id", "key__en")
+        with self.assertRaises(ValueError):
+            result_branch_name(BATCH_ID, "../evil")
+
+    def test_flat_branch_coexists_with_existing_video_results_ref(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            bare = root / "remote.git"
+            subprocess.run(
+                ["git", "init", "--bare", str(bare)], check=True, capture_output=True
+            )
+            seed = root / "seed"
+            seed.mkdir()
+            subprocess.run(["git", "init"], cwd=seed, check=True, capture_output=True)
+            subprocess.run(
+                ["git", "config", "user.email", "test@example.com"],
+                cwd=seed,
+                check=True,
+                capture_output=True,
+            )
+            subprocess.run(
+                ["git", "config", "user.name", "test"],
+                cwd=seed,
+                check=True,
+                capture_output=True,
+            )
+            (seed / "marker.txt").write_text("video-results\n", encoding="utf-8")
+            subprocess.run(["git", "add", "marker.txt"], cwd=seed, check=True, capture_output=True)
+            subprocess.run(
+                ["git", "commit", "-m", "seed video-results"],
+                cwd=seed,
+                check=True,
+                capture_output=True,
+            )
+            subprocess.run(
+                ["git", "branch", "-M", "video-results"], cwd=seed, check=True, capture_output=True
+            )
+            subprocess.run(
+                ["git", "remote", "add", "origin", str(bare)],
+                cwd=seed,
+                check=True,
+                capture_output=True,
+            )
+            subprocess.run(
+                ["git", "push", "-u", "origin", "video-results"],
+                cwd=seed,
+                check=True,
+                capture_output=True,
+            )
+
+            nested = (
+                "video-results/video-full-300-localized-v1/"
+                "analyst-m3-l2-ai-summarization__en"
+            )
+            conflict = subprocess.run(
+                ["git", "push", "origin", f"HEAD:refs/heads/{nested}"],
+                cwd=seed,
+                capture_output=True,
+                text=True,
+            )
+            self.assertNotEqual(conflict.returncode, 0)
+
+            repo = root / "results-repo"
+            git = _init_git_repo(repo)
+            git._git("remote", "set-url", "origin", str(bare))
+            flat = EXPECTED_FLAT_FINALIZE_ONE_BRANCH
+            git.ensure_orphan_branch(flat)
+            rel = receipt_relpath(BATCH_ID, "analyst-m3-l2-ai-summarization__en")
+            out = repo / rel
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_text('{"marker":true}\n', encoding="utf-8")
+            git.commit_paths([out], f"video(final): flat branch proof")
+            git.push(flat)
+
+            refs = subprocess.run(
+                ["git", "show-ref"], cwd=bare, capture_output=True, text=True, check=True
+            ).stdout
+            self.assertIn("refs/heads/video-results", refs)
+            self.assertIn(f"refs/heads/{flat}", refs)
+            self.assertNotIn("refs/heads/main", refs)
+
+    def test_two_logical_keys_push_distinct_flat_branches(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            bare = root / "remote.git"
+            subprocess.run(
+                ["git", "init", "--bare", str(bare)], check=True, capture_output=True
+            )
+            for key in ("cell-a__en", "cell-b__en"):
+                repo = root / key
+                git = _init_git_repo(repo)
+                git._git("remote", "set-url", "origin", str(bare))
+                branch = result_branch_name(BATCH_ID, key)
+                git.ensure_orphan_branch(branch)
+                rel = receipt_relpath(BATCH_ID, key)
+                out = repo / rel
+                out.parent.mkdir(parents=True, exist_ok=True)
+                out.write_text(f'{{"logicalKey":"{key}"}}\n', encoding="utf-8")
+                git.commit_paths([out], f"video(final): {key}")
+                git.push(branch)
+            refs = subprocess.run(
+                ["git", "show-ref", "--heads"], cwd=bare, capture_output=True, text=True, check=True
+            ).stdout
+            self.assertIn("video-results--video-full-300-localized-v1--cell-a__en", refs)
+            self.assertIn("video-results--video-full-300-localized-v1--cell-b__en", refs)
+
+
+class PostUploadReadinessTests(unittest.TestCase):
+    @staticmethod
+    def _injectable_bunny(store: MockBunnyStore, clock: list[float]):
+        sleeps: list[float] = []
+
+        def sleep_fn(delay: float) -> None:
+            sleeps.append(delay)
+            clock[0] += delay
+
+        bunny = BunnyClient(
+            "670679",
+            "k",
+            http=store.handler,
+            sleep_fn=sleep_fn,
+            monotonic_fn=lambda: clock[0],
+        )
+        return bunny, sleeps
+
+    def _bundle(self, root: Path) -> tuple[Path, dict]:
+        video = b"MP4TEST_" + hashlib.sha256(str(root).encode()).digest()[:8]
+        bundle = root / "prod"
+        meta = _make_bundle(bundle, video=video)
+        return bundle, meta
+
+    def test_pending_missing_then_expected_hash_commits_receipt(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            bundle, meta = self._bundle(root)
+            store = ReadinessSequenceBunnyStore()
+            store.default_pending_queue = [
+                _MISSING_HASH,
+                _MISSING_HASH,
+                meta["video_sha"],
+            ]
+            clock = [0.0]
+            bunny, sleeps = self._injectable_bunny(store, clock)
+            git = _init_git_repo(root / "results-repo")
+            ctx = FinalizeContext(
+                batch_id=BATCH_ID,
+                logical_key="analyst-m3-l2-ai-summarization__en",
+                lesson_id="analyst-m3-l2-ai-summarization",
+                locale="en",
+                source_sha=SOURCE_SHA_PIN,
+                workflow_run_id="1",
+                artifact_id="2",
+                artifact_digest="sha256:abc",
+                production_root=bundle,
+                bunny=bunny,
+                git=git,
+            )
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.FINALIZED)
+            self.assertEqual(result.bunny_create_calls, 1)
+            self.assertEqual(result.bunny_upload_calls, 1)
+            self.assertGreaterEqual(len(bunny.log.gets), 3)
+            self.assertIsNotNone(result.receipt)
+            self.assertEqual(result.commits, 1)
+            self.assertTrue(sleeps)
+
+    def test_pending_null_then_expected_hash_succeeds(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            bundle, meta = self._bundle(root)
+            store = ReadinessSequenceBunnyStore()
+            store.default_pending_queue = [None, "", meta["video_sha"]]
+            clock = [0.0]
+            bunny, _ = self._injectable_bunny(store, clock)
+            ctx = _ctx(root, bundle, store)
+            ctx.bunny = bunny
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.FINALIZED)
+            self.assertIsNotNone(result.receipt)
+
+    def test_pending_until_timeout_no_receipt(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            bundle, _ = self._bundle(root)
+            store = ReadinessSequenceBunnyStore()
+            store.default_pending_queue = [_MISSING_HASH] * 20
+            clock = [0.0]
+            bunny, sleeps = self._injectable_bunny(store, clock)
+            ctx = _ctx(root, bundle, store)
+            ctx.bunny = bunny
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
+            self.assertEqual(
+                result.reconciliation["reason"], "bunny-post-upload-readiness-timeout"
+            )
+            self.assertIsNone(result.receipt)
+            self.assertEqual(result.commits, 0)
+            self.assertEqual(result.pushes, 0)
+            self.assertEqual(result.bunny_create_calls, 1)
+            self.assertEqual(result.bunny_upload_calls, 1)
+            self.assertLessEqual(clock[0], POST_UPLOAD_READINESS_MAX_SECONDS)
+
+    def test_valid_mismatching_hash_fails_immediately(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            bundle, _ = self._bundle(root)
+            store = ReadinessSequenceBunnyStore()
+            store.default_pending_queue = ["d" * 64]
+            bunny, _ = self._injectable_bunny(store, [0.0])
+            ctx = _ctx(root, bundle, store)
+            ctx.bunny = bunny
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
+            self.assertEqual(
+                result.reconciliation["reason"], "bunny-post-upload-readiness-mismatch"
+            )
+            self.assertIsNone(result.receipt)
+            self.assertEqual(len(bunny.log.gets), 1)
+
+    def test_malformed_and_non_string_hash_fail_immediately(self):
+        cases = [12345, "not-a-sha256"]
+        for bad in cases:
+            with self.subTest(bad=bad):
+                with tempfile.TemporaryDirectory() as tmp:
+                    root = Path(tmp)
+                    bundle, _ = self._bundle(root)
+                    store = ReadinessSequenceBunnyStore()
+                    store.default_pending_queue = [bad]
+                    bunny, _ = self._injectable_bunny(store, [0.0])
+                    ctx = _ctx(root, bundle, store)
+                    ctx.bunny = bunny
+                    result = finalize_cell(ctx)
+                    self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
+                    self.assertEqual(
+                        result.reconciliation["reason"],
+                        "bunny-post-upload-readiness-invalid",
+                    )
+                    self.assertIsNone(result.receipt)
+
+    def test_backoff_schedule_never_exceeds_max_elapsed(self):
+        total_sleep = sum(POST_UPLOAD_READINESS_BACKOFF_SECONDS)
+        self.assertLessEqual(total_sleep, POST_UPLOAD_READINESS_MAX_SECONDS)
+
+    def test_accepted_guid_recovery_zero_create_upload(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            bundle = root / "prod"
+            video = b"MP4TEST_" + hashlib.sha256(b"accepted-guid-fixture").digest()[:8]
+            meta = _make_bundle(bundle, video=video)
+            title = bunny_title("analyst-m3-l2-ai-summarization", "en")
+            store = MockBunnyStore()
+            store.seed_video(
+                title=title,
+                guid=ACCEPTED_GUID_FIXTURE,
+                original_hash=meta["video_sha"],
+            )
+            ctx = _ctx(root, bundle, store)
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.COMMIT_ONLY_RECOVERED)
+            self.assertEqual(result.bunny_create_calls, 0)
+            self.assertEqual(result.bunny_upload_calls, 0)
+            self.assertEqual(len(ctx.bunny.log.gets), 1)
+            self.assertEqual(result.receipt["bunnyGuid"], ACCEPTED_GUID_FIXTURE)
+            self.assertNotIn(ACCEPTED_GUID_FIXTURE, ctx.bunny.log.uploads)
 
 
 if __name__ == "__main__":

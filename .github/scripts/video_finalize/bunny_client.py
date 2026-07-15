@@ -22,6 +22,7 @@ from __future__ import annotations
 import json
 import math
 import re
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -30,11 +31,26 @@ from typing import Any, Callable
 
 
 HttpFn = Callable[[str, str, bytes | None, dict[str, str]], tuple[int, bytes]]
+SleepFn = Callable[[float], None]
+MonotonicFn = Callable[[], float]
 
 SHA256_HEX_RE = re.compile(r"^[a-f0-9]{64}$")
 # Deterministic discovery bound — pagination only, no status polling.
 MAX_LIST_PAGES = 10
 ITEMS_PER_PAGE = 100
+POST_UPLOAD_READINESS_MAX_SECONDS = 300
+POST_UPLOAD_READINESS_BACKOFF_SECONDS: tuple[float, ...] = (
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    59,
+    59,
+    59,
+    59,
+)
 
 
 @dataclass
@@ -51,6 +67,8 @@ class BunnyClient:
     api_key: str
     http: HttpFn | None = None
     log: BunnyCallLog = field(default_factory=BunnyCallLog)
+    sleep_fn: SleepFn = field(default=time.sleep)
+    monotonic_fn: MonotonicFn = field(default=time.monotonic)
 
     @property
     def base(self) -> str:
@@ -299,3 +317,69 @@ class BunnyClient:
                 "expected": expected,
             }
         return None
+
+    def wait_for_post_upload_original_hash(
+        self,
+        guid: str,
+        expected_checksum: str,
+        *,
+        max_elapsed: float = POST_UPLOAD_READINESS_MAX_SECONDS,
+    ) -> dict[str, Any] | None:
+        """Bounded GET-only readiness for a newly uploaded GUID.
+
+        Returns reconciliation dict on failure; None when exact hash is proven.
+        """
+        expected = expected_checksum.lower()
+        if not SHA256_HEX_RE.match(expected):
+            return {
+                "reason": "invalid-expected-video-checksum",
+                "videoChecksum": expected_checksum,
+                "guid": guid,
+            }
+
+        deadline = self.monotonic_fn() + max_elapsed
+        attempt = 0
+        pending_issues = ("missing-originalHash", "null-originalHash", "empty-originalHash")
+
+        while True:
+            video = self.get_video(guid)
+            oh, problem = self._read_top_level_original_hash(video)
+            if problem in pending_issues:
+                pass
+            elif problem:
+                return {
+                    "reason": "bunny-post-upload-readiness-invalid",
+                    "issue": problem,
+                    "guid": guid,
+                }
+            elif oh == expected:
+                return None
+            else:
+                return {
+                    "reason": "bunny-post-upload-readiness-mismatch",
+                    "guid": guid,
+                    "expected": expected,
+                }
+
+            now = self.monotonic_fn()
+            if now >= deadline:
+                return {
+                    "reason": "bunny-post-upload-readiness-timeout",
+                    "guid": guid,
+                    "maxElapsed": max_elapsed,
+                    "lastIssue": problem,
+                }
+
+            delay = POST_UPLOAD_READINESS_BACKOFF_SECONDS[
+                min(attempt, len(POST_UPLOAD_READINESS_BACKOFF_SECONDS) - 1)
+            ]
+            remaining = deadline - now
+            if remaining <= 0:
+                return {
+                    "reason": "bunny-post-upload-readiness-timeout",
+                    "guid": guid,
+                    "maxElapsed": max_elapsed,
+                    "lastIssue": problem,
+                }
+            self.sleep_fn(min(delay, remaining))
+            attempt += 1

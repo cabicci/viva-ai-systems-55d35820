@@ -290,25 +290,16 @@ def finalize_cell(ctx: FinalizeContext) -> FinalizeResult:
             guid = ctx.bunny.create_video(title)
             mp4_bytes = (ctx.production_root / "video.mp4").read_bytes()
             ctx.bunny.upload_mp4(guid, mp4_bytes)
-            try:
-                video = ctx.bunny.get_video(guid)
-                get_recon = ctx.bunny.verify_top_level_original_hash(
-                    video, video_checksum
-                )
-                if get_recon is not None:
-                    rel = reconciliation_relpath(ctx.batch_id, ctx.logical_key)
-                    write_reconciliation(ctx.git.repo_dir / rel, get_recon)
-                    return FinalizeResult(
-                        outcome=FinalizeOutcome.AMBIGUOUS,
-                        reconciliation=get_recon,
-                        message="post-upload hash proof failed; no receipt",
-                        bunny_create_calls=len(ctx.bunny.log.creates) - creates0,
-                        bunny_upload_calls=len(ctx.bunny.log.uploads) - uploads0,
-                    )
-            except Exception as e:
+            get_recon = ctx.bunny.wait_for_post_upload_original_hash(
+                guid, video_checksum
+            )
+            if get_recon is not None:
+                rel = reconciliation_relpath(ctx.batch_id, ctx.logical_key)
+                write_reconciliation(ctx.git.repo_dir / rel, get_recon)
                 return FinalizeResult(
-                    outcome=FinalizeOutcome.FAILED,
-                    message=f"post-upload GET failed: {e}",
+                    outcome=FinalizeOutcome.AMBIGUOUS,
+                    reconciliation=get_recon,
+                    message="post-upload readiness proof failed; no receipt",
                     bunny_create_calls=len(ctx.bunny.log.creates) - creates0,
                     bunny_upload_calls=len(ctx.bunny.log.uploads) - uploads0,
                 )
