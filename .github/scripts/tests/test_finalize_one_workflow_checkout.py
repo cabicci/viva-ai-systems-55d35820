@@ -157,5 +157,51 @@ class Full300ProductionPinWorkflowTests(unittest.TestCase):
         self.assertIn("fail-fast: false", self.produce_a)
 
 
+class ReportMappingPromotionWorkflowTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.text = WORKFLOW_TEXT
+        cls.report = _report_block(WORKFLOW_TEXT)
+        cls.produce_a = _produce_block(WORKFLOW_TEXT, "produce_a")
+
+    def test_report_remains_always(self):
+        self.assertIn("if: always() && needs.plan.outputs.run_mode == 'full-300'", self.report)
+
+    def test_only_report_writes_canonical_registry(self):
+        self.assertIn("permissions:\n      contents: write", self.report)
+        self.assertIn("Promote validated finalized receipts to canonical registry", self.report)
+        self.assertIn("PUSH_TO_MAIN: \"true\"", self.report)
+        self.assertIn("promote_finalized_mappings_cli.py", self.report)
+        self.assertNotIn("PUSH_TO_MAIN", self.produce_a)
+
+    def test_dispatched_sha_control_checkout_verified(self):
+        self.assertIn("path: control-code", self.report)
+        self.assertIn("ref: ${{ github.sha }}", self.report)
+        self.assertIn('test "$(git -C control-code rev-parse HEAD)" = "${{ github.sha }}"', self.report)
+
+    def test_mapping_promotion_before_unresolved_failure(self):
+        promote_pos = self.report.index("Promote validated finalized receipts to canonical registry")
+        fail_pos = self.report.index("Fail when unresolved cells remain after registry promotion")
+        self.assertLess(promote_pos, fail_pos)
+
+    def test_full_300_source_sha_unchanged(self):
+        self.assertIn(
+            "FULL_300_SOURCE_SHA: 69ba815e256d6f46382c9f0fa901bb3fea88c85b",
+            self.text,
+        )
+        self.assertIn('test "$FULL_300_SOURCE_SHA" = "69ba815e256d6f46382c9f0fa901bb3fea88c85b"', self.report)
+
+    def test_no_automatic_workflow_trigger_added(self):
+        self.assertIn("workflow_dispatch:", self.text)
+        self.assertNotIn("schedule:", self.text)
+        self.assertNotIn("push:", self.text.split("on:")[1].split("jobs:")[0])
+
+    def test_matrix_and_parallel_invariants(self):
+        self.assertIn("matrix_a = filtered[:150]", self.text)
+        self.assertIn("matrix_b = filtered[150:]", self.text)
+        self.assertIn('max-parallel: 2', self.produce_a)
+        self.assertIn("fail-fast: false", self.produce_a)
+
+
 if __name__ == "__main__":
     unittest.main()
