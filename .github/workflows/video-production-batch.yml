@@ -777,7 +777,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          BRANCH="video-results/${BATCH_ID}/${COMPOSITE_KEY}"
+          BRANCH="video-results--${BATCH_ID}--${COMPOSITE_KEY}"
           mkdir -p /tmp/results-check
           git init /tmp/results-check
           if git -C /tmp/results-check fetch --depth=1 "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" "$BRANCH" 2>/dev/null; then
@@ -1103,7 +1103,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          BRANCH="video-results/${BATCH_ID}/${COMPOSITE_KEY}"
+          BRANCH="video-results--${BATCH_ID}--${COMPOSITE_KEY}"
           mkdir -p /tmp/results-check
           git init /tmp/results-check
           if git -C /tmp/results-check fetch --depth=1 "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" "$BRANCH" 2>/dev/null; then
@@ -1427,7 +1427,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p /tmp/result-branches
-          PREFIX="video-results/${BATCH_ID}/"
+          PREFIX="video-results--${BATCH_ID}--"
           mapfile -t REFS < <(
             git ls-remote "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" \
               "refs/heads/${PREFIX}*" | awk '{print $2}' | sed "s#refs/heads/##"

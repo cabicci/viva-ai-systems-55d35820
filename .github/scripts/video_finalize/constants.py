@@ -1,7 +1,7 @@
 """Deterministic incremental Bunny finalization constants and paths.
 
 Branch ownership:
-  video-results/{batchId}/{logicalKey}
+  video-results--{batchId}--{logicalKey}
 
 Receipt path (inside that branch):
   remotion/video-pipeline/results/{batchId}/{logicalKey}/finalization-receipt.json
@@ -15,6 +15,8 @@ SOURCE_SHA_PIN = "6cfd019d315ec3f5a30ffc83bd551f4deb52385c"
 SCHEMA_VERSION = "video-finalization-receipt-v1"
 
 RESULT_ROOT = "remotion/video-pipeline/results"
+RESULT_BRANCH_PREFIX = "video-results--"
+_REF_INVALID_CHARS = frozenset(("@", ":", "*", "?", "[", "^", "~"))
 
 # Pinned accepted finalize-one artifact (read-only; never regenerated here).
 FINALIZE_ONE_PIN = {
@@ -29,12 +31,27 @@ FINALIZE_ONE_PIN = {
 }
 
 
+def _validate_branch_component(value: str, kind: str) -> None:
+    if not value:
+        raise ValueError(f"{kind} required")
+    if value == "main":
+        raise ValueError(f"invalid {kind}: main")
+    for bad in ("/", "\\", ".."):
+        if bad in value:
+            raise ValueError(f"invalid {kind}: {value!r}")
+    if any(ch in value for ch in _REF_INVALID_CHARS):
+        raise ValueError(f"invalid {kind}: {value!r}")
+
+
 def result_branch_name(batch_id: str, logical_key: str) -> str:
-    if not batch_id or not logical_key:
-        raise ValueError("batch_id and logical_key required")
-    if "/" in logical_key or ".." in logical_key:
-        raise ValueError(f"invalid logical_key: {logical_key!r}")
-    return f"video-results/{batch_id}/{logical_key}"
+    _validate_branch_component(batch_id, "batch_id")
+    _validate_branch_component(logical_key, "logical_key")
+    return f"{RESULT_BRANCH_PREFIX}{batch_id}--{logical_key}"
+
+
+def result_branch_prefix(batch_id: str) -> str:
+    _validate_branch_component(batch_id, "batch_id")
+    return f"{RESULT_BRANCH_PREFIX}{batch_id}--"
 
 
 def receipt_relpath(batch_id: str, logical_key: str) -> str:

@@ -31,7 +31,7 @@ def main() -> int:
             return 40
     expected_branch = result_branch_name(pin["batchId"], pin["logicalKey"])
     if expected_branch != (
-        "video-results/video-full-300-localized-v1/analyst-m3-l2-ai-summarization__en"
+        "video-results--video-full-300-localized-v1--analyst-m3-l2-ai-summarization__en"
     ):
         print("::error::unexpected result branch naming")
         return 41

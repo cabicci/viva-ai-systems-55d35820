@@ -5,6 +5,8 @@ import subprocess
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from .constants import RESULT_BRANCH_PREFIX
+
 
 class GitBranchError(RuntimeError):
     pass
@@ -40,8 +42,10 @@ class ResultBranchRepo:
     def ensure_orphan_branch(self, branch: str) -> None:
         if branch == "main" or branch.endswith("/main"):
             raise GitBranchError("refusing to operate on main")
-        if not branch.startswith("video-results/"):
-            raise GitBranchError(f"branch must be under video-results/: {branch}")
+        if not branch.startswith(RESULT_BRANCH_PREFIX):
+            raise GitBranchError(
+                f"branch must use flat result namespace {RESULT_BRANCH_PREFIX!r}: {branch}"
+            )
         # Create orphan branch for first receipt; if exists check out.
         existing = subprocess.run(
             ["git", "rev-parse", "--verify", branch],
@@ -62,7 +66,7 @@ class ResultBranchRepo:
         )
 
     def commit_paths(self, paths: list[Path], message: str) -> str:
-        if "main" in message.lower() and "video-results" not in message:
+        if "main" in message.lower() and RESULT_BRANCH_PREFIX not in message:
             pass  # message may mention context; branch guard is elsewhere
         for p in paths:
             rel = p.relative_to(self.repo_dir).as_posix()
@@ -75,8 +79,10 @@ class ResultBranchRepo:
     def push(self, branch: str, remote: str = "origin") -> None:
         if branch == "main":
             raise GitBranchError("refusing to push main")
-        if not branch.startswith("video-results/"):
-            raise GitBranchError(f"refusing push outside video-results/: {branch}")
+        if not branch.startswith(RESULT_BRANCH_PREFIX):
+            raise GitBranchError(
+                f"refusing push outside flat result namespace {RESULT_BRANCH_PREFIX!r}: {branch}"
+            )
         # Non-force only.
         self._git("push", remote, f"HEAD:refs/heads/{branch}")
         self.log.pushes.append(branch)
