@@ -69,6 +69,62 @@ HIGH_CONFIDENCE_EGYPTIAN_PATTERNS: Final[tuple[re.Pattern[str], ...]] = tuple(
     _mk_ar_marker(w) for w in HIGH_CONFIDENCE_EGYPTIAN_MARKERS
 )
 
+# Gulf colloquial markers rejected in ar-MSA only (boundary-aware).
+GULF_COLLOQUIAL_MARKERS: Final[tuple[str, ...]] = (
+    "وش",
+    "ليش",
+    "أبغى",
+    "الحين",
+    "شلون",
+)
+
+GULF_COLLOQUIAL_PATTERNS: Final[tuple[re.Pattern[str], ...]] = tuple(
+    _mk_ar_marker(w) for w in GULF_COLLOQUIAL_MARKERS
+)
+
+# English learner-facing Arabizi / dialect transliterations (token-bounded).
+EN_TRANSLITERATION_MARKERS: Final[tuple[str, ...]] = (
+    "ezzay",
+    "ezay",
+    "delwa2ty",
+    "3alashan",
+    "yalla",
+    "shlon",
+    "shloon",
+    "wayed",
+    "waid",
+)
+
+# Shared Arabizi/transliteration markers rejected in ar-MSA and ar-Gulf.
+ARABIZI_MARKERS: Final[tuple[str, ...]] = EN_TRANSLITERATION_MARKERS
+
+_LATIN_TOKEN_RE = re.compile(r"[A-Za-z0-9]+")
+
+# Technical English tokens allowed without breaking Arabic dominance checks.
+_TECHNICAL_ALLOWLIST: Final[tuple[re.Pattern[str], ...]] = (
+    re.compile(r"^GPT-?\d+$", re.IGNORECASE),
+    re.compile(r"^v\d+(?:\.\d+)?$", re.IGNORECASE),
+    re.compile(r"^API$", re.IGNORECASE),
+    re.compile(r"^AI$", re.IGNORECASE),
+    re.compile(r"^ChatGPT$", re.IGNORECASE),
+    re.compile(r"^OpenAI$", re.IGNORECASE),
+)
+
+_EN_TRANSLITERATION_PATTERNS: Final[tuple[tuple[str, re.Pattern[str]], ...]] = tuple(
+    (
+        marker,
+        re.compile(
+            r"(?<![A-Za-z0-9])"
+            + re.escape(marker)
+            + r"(?![A-Za-z0-9])",
+            re.IGNORECASE,
+        ),
+    )
+    for marker in EN_TRANSLITERATION_MARKERS
+)
+
+_ARABIZI_PATTERNS: Final[tuple[tuple[str, re.Pattern[str]], ...]] = _EN_TRANSLITERATION_PATTERNS
+
 # Mirrors remotion/src/lesson-cards/presentationChrome.ts (byte-frozen legacy).
 PRESENTATION_CHROME: Final[dict[str, dict[str, str]]] = {
     "conceptBadge": {
@@ -116,3 +172,53 @@ def find_egyptian_marker_hits(text: str) -> list[str]:
         if pat.search(text or ""):
             hits.append(word)
     return hits
+
+
+def find_gulf_colloquial_hits(text: str) -> list[str]:
+    hits: list[str] = []
+    for word, pat in zip(
+        GULF_COLLOQUIAL_MARKERS,
+        GULF_COLLOQUIAL_PATTERNS,
+        strict=True,
+    ):
+        if pat.search(text or ""):
+            hits.append(word)
+    return hits
+
+
+def find_en_transliteration_hits(text: str) -> list[str]:
+    hits: list[str] = []
+    for marker, pat in _EN_TRANSLITERATION_PATTERNS:
+        if pat.search(text or ""):
+            hits.append(marker)
+    return hits
+
+
+def find_arabizi_hits(text: str) -> list[str]:
+    hits: list[str] = []
+    for marker, pat in _ARABIZI_PATTERNS:
+        if pat.search(text or ""):
+            hits.append(marker)
+    return hits
+
+
+def is_allowed_technical_token(token: str) -> bool:
+    return any(p.match(token) for p in _TECHNICAL_ALLOWLIST)
+
+
+def _latin_letters_excluding_technical(text: str) -> int:
+    count = 0
+    for token in _LATIN_TOKEN_RE.findall(text or ""):
+        if is_allowed_technical_token(token):
+            continue
+        count += sum(1 for ch in token if ch.isalpha())
+    return count
+
+
+def arabic_script_dominant(text: str) -> bool:
+    """True when Arabic script letters dominate Latin letters (technical terms excluded)."""
+    arabic = len(ARABIC_UNICODE_RE.findall(text or ""))
+    latin = _latin_letters_excluding_technical(text or "")
+    if arabic == 0:
+        return False
+    return arabic > latin

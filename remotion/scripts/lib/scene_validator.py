@@ -23,6 +23,21 @@ from __future__ import annotations
 import re
 from typing import Any, Iterable
 
+try:
+    from .integrity_locale_policy import (
+        arabic_script_dominant,
+        find_arabizi_hits,
+        find_en_transliteration_hits,
+        find_gulf_colloquial_hits,
+    )
+except ImportError:  # script/tests import scene_validator as top-level module
+    from integrity_locale_policy import (
+        arabic_script_dominant,
+        find_arabizi_hits,
+        find_en_transliteration_hits,
+        find_gulf_colloquial_hits,
+    )
+
 ALLOWED_CARDS = {
     "TitleCard", "ConceptCard", "BigStatCard", "BulletsCard",
     "CompareCard", "CTACard", "ScreenshotCard",
@@ -190,9 +205,18 @@ def validate_scenes(scenes: Any, locale: str | None = None) -> list[str]:
                 )
             if not _LATIN_RE.search(text):
                 errors.append(f"Scene {i} [en]: no Latin/English text detected")
+            translit = find_en_transliteration_hits(text)
+            if translit:
+                errors.append(
+                    f"Scene {i} [en]: dialect transliteration not allowed: {translit}"
+                )
         elif locale == "ar-MSA":
             if text and not _ARABIC_RE.search(text):
                 errors.append(f"Scene {i} [ar-MSA]: no Arabic text detected")
+            elif text and not arabic_script_dominant(text):
+                errors.append(
+                    f"Scene {i} [ar-MSA]: Arabic script must dominate Latin learner text"
+                )
             hits = _find_marker_hits(
                 text,
                 _STRICT_EGY_PATTERNS + _SHARED_COLLOQUIAL_PATTERNS + _GULF_PATTERNS,
@@ -201,15 +225,34 @@ def validate_scenes(scenes: Any, locale: str | None = None) -> list[str]:
                 errors.append(
                     f"Scene {i} [ar-MSA]: dialect markers not allowed in MSA: {hits}"
                 )
+            gulf_hits = find_gulf_colloquial_hits(text)
+            if gulf_hits:
+                errors.append(
+                    f"Scene {i} [ar-MSA]: Gulf colloquial markers not allowed: {gulf_hits}"
+                )
+            arabizi = find_arabizi_hits(text)
+            if arabizi:
+                errors.append(
+                    f"Scene {i} [ar-MSA]: Arabizi/transliteration not allowed: {arabizi}"
+                )
         elif locale == "ar-Gulf":
             if text and not _ARABIC_RE.search(text):
                 errors.append(f"Scene {i} [ar-Gulf]: no Arabic text detected")
+            elif text and not arabic_script_dominant(text):
+                errors.append(
+                    f"Scene {i} [ar-Gulf]: Arabic script must dominate Latin learner text"
+                )
             # Gulf rejects ONLY the unambiguous Egyptian markers.
             # `عشان` / `علشان` are shared colloquial and ALLOWED in Gulf delivery.
             hits = _find_marker_hits(text, _STRICT_EGY_PATTERNS)
             if hits:
                 errors.append(
                     f"Scene {i} [ar-Gulf]: Egyptian dialect markers not allowed: {hits}"
+                )
+            arabizi = find_arabizi_hits(text)
+            if arabizi:
+                errors.append(
+                    f"Scene {i} [ar-Gulf]: Arabizi/transliteration not allowed: {arabizi}"
                 )
         # locale is None (legacy Egyptian) → no locale content check.
     return errors

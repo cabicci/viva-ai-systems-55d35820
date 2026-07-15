@@ -19,9 +19,15 @@ sys.path.insert(0, str(SCRIPTS))
 
 from lib.integrity_locale_policy import (  # noqa: E402
     AMBIGUOUS_SHARED_ARABIC_ALLOWED,
+    EN_TRANSLITERATION_MARKERS,
     HIGH_CONFIDENCE_EGYPTIAN_MARKERS,
     PRESENTATION_CHROME,
+    arabic_script_dominant,
     find_arabic_unicode,
+    find_arabizi_hits,
+    find_en_transliteration_hits,
+    find_gulf_colloquial_hits,
+    is_allowed_technical_token,
     resolve_presentation_chrome,
 )
 from lib.integrity_scenes_from_package import (  # noqa: E402
@@ -228,6 +234,36 @@ class ContentIntegrityTests(unittest.TestCase):
                     renderer_locale="ar-MSA",
                 )
                 self.assertTrue(result.ok, msg=f"{word} should not fail alone: {result.issues}")
+
+
+class LocalePolicyGateTests(unittest.TestCase):
+    def test_en_transliteration_markers_token_bounded(self):
+        for token in EN_TRANSLITERATION_MARKERS:
+            with self.subTest(token=token):
+                self.assertIn(token, find_en_transliteration_hits(f"word {token} here"))
+                self.assertEqual(find_en_transliteration_hits(f"nezzay{token}x"), [])
+
+    def test_arabic_dominance_with_technical_terms(self):
+        text = "سنتعلم GPT-4 و API v2 في الذكاء الاصطناعي اليوم."
+        self.assertTrue(arabic_script_dominant(text))
+
+    def test_arabic_dominance_fails_when_latin_dominates(self):
+        text = "This lesson is mostly English with one word عربي."
+        self.assertFalse(arabic_script_dominant(text))
+
+    def test_gulf_colloquial_hits_for_msa_policy(self):
+        self.assertIn("شلون", find_gulf_colloquial_hits("كيف نبدأ شلون نبدأ"))
+
+    def test_arabizi_hits_configured_tokens(self):
+        self.assertIn("yalla", find_arabizi_hits("yalla نبدأ"))
+
+    def test_technical_tokens_allowed(self):
+        for token in ("GPT-4", "v2", "API", "AI", "ChatGPT"):
+            with self.subTest(token=token):
+                self.assertTrue(is_allowed_technical_token(token))
+
+    def test_short_arabic_markers_no_substring_false_positive(self):
+        self.assertEqual(find_gulf_colloquial_hits("ارتدى الوشاح"), [])
 
 
 class ChromePolicyTests(unittest.TestCase):

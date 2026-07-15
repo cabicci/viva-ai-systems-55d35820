@@ -325,9 +325,70 @@ class MSAFalsePositiveFixTests(unittest.TestCase):
         self.assertEqual(validate_scenes(scenes, locale=None), [])
 
 
+class LocaleGateHardeningTests(unittest.TestCase):
+    """Pre-TTS locale gate: transliteration, dominance, technical allowlist."""
+
+    def test_en_rejects_all_configured_transliterations(self):
+        for token in (
+            "ezzay", "ezay", "delwa2ty", "3alashan", "yalla",
+            "shlon", "shloon", "wayed", "waid",
+        ):
+            s = _valid_en_scenes()
+            s[0]["spoken"] = f"Today we learn how {token} works in practice."
+            errs = validate_scenes(s, locale="en")
+            self.assertTrue(
+                any("transliteration not allowed" in e for e in errs),
+                f"{token}: {errs}",
+            )
+
+    def test_en_transliteration_token_bounded_no_false_positive(self):
+        s = _valid_en_scenes()
+        s[0]["spoken"] = "Analyze the nezzayfield model using GPT-4 v2 API."
+        self.assertEqual(validate_scenes(s, locale="en"), [])
+
+    def test_msa_arabic_dominance_passes(self):
+        self.assertEqual(validate_scenes(_valid_msa_scenes(), locale="ar-MSA"), [])
+
+    def test_gulf_arabic_dominance_passes(self):
+        self.assertEqual(validate_scenes(_valid_gulf_scenes(), locale="ar-Gulf"), [])
+
+    def test_msa_insufficient_arabic_dominance_fails(self):
+        s = _valid_msa_scenes()
+        s[0]["spoken"] = (
+            "This lesson explains artificial intelligence mostly in English with one word عربي."
+        )
+        errs = validate_scenes(s, locale="ar-MSA")
+        self.assertTrue(any("Arabic script must dominate" in e for e in errs), errs)
+
+    def test_msa_allows_limited_technical_english(self):
+        s = _valid_msa_scenes()
+        s[0]["spoken"] = "سنتعلم اليوم كيف يعمل GPT-4 و API في الذكاء الاصطناعي."
+        self.assertEqual(validate_scenes(s, locale="ar-MSA"), [])
+
+    def test_gulf_allows_formal_arabic_shared_with_msa(self):
+        s = _valid_msa_scenes()
+        self.assertEqual(validate_scenes(s, locale="ar-Gulf"), [])
+
+    def test_msa_rejects_arabizi(self):
+        s = _valid_msa_scenes()
+        s[0]["spoken"] = "مرحبًا، yalla نبدأ الدرس."
+        errs = validate_scenes(s, locale="ar-MSA")
+        self.assertTrue(any("Arabizi/transliteration" in e for e in errs), errs)
+
+    def test_gulf_rejects_arabizi(self):
+        s = _valid_gulf_scenes()
+        s[0]["spoken"] = "هلا فيك، delwa2ty نبدأ."
+        errs = validate_scenes(s, locale="ar-Gulf")
+        self.assertTrue(any("Arabizi/transliteration" in e for e in errs), errs)
+
+    def test_technical_version_numbers_pass_en(self):
+        s = _valid_en_scenes()
+        s[0]["spoken"] = "We compare GPT-4 and v2 API behavior in this lesson."
+        self.assertEqual(validate_scenes(s, locale="en"), [])
+
+
 class SharedColloquialMarkerTests(unittest.TestCase):
     """`عشان` (and `علشان`) — shared colloquial, allowed in Gulf, rejected in MSA."""
-
     def test_gulf_allows_ashan(self):
         s = _valid_gulf_scenes()
         s[0]["spoken"] = "هلا فيك، عشان نبدأ الدرس بسرعة."
@@ -675,6 +736,8 @@ class NormalizerLocaleLeakageTests(unittest.TestCase):
         # Rewrite spoken for screenshot/cta to be Arabic to satisfy the
         # locale-content check without introducing markers.
         scenes[2]["spoken"] = "انظر إلى هذه الشاشة."
+        scenes[2]["visual"]["title"] = "لوحة التحكم"
+        scenes[2]["visual"]["caption"] = "النقطة الأولى. النقطة الثانية."
         scenes[3]["spoken"] = "نلتقي قريبًا."
         out, _ = normalize_scenes(
             scenes, locale="ar-MSA",
