@@ -31,6 +31,9 @@ from typing import Any, Callable
 HttpFn = Callable[[str, str, bytes | None, dict[str, str]], tuple[int, bytes]]
 
 SHA256_HEX_RE = re.compile(r"^[a-f0-9]{64}$")
+# Deterministic discovery bound — pagination only, no status polling.
+MAX_LIST_PAGES = 10
+ITEMS_PER_PAGE = 100
 
 
 @dataclass
@@ -110,9 +113,9 @@ class BunnyClient:
 
     def list_videos_search(self, search: str, page: int = 1) -> list[dict[str, Any]]:
         """Official List Videos with search query (single page; no poll loop)."""
-        self.log.lists.append(search)
+        self.log.lists.append(f"{search}@page={page}")
         q = urllib.parse.urlencode(
-            {"page": page, "itemsPerPage": 100, "search": search}
+            {"page": page, "itemsPerPage": ITEMS_PER_PAGE, "search": search}
         )
         status, raw = self._request("GET", f"{self.base}?{q}")
         if status != 200:
@@ -120,6 +123,20 @@ class BunnyClient:
         data = json.loads(raw.decode())
         items = data.get("items") or []
         return list(items)
+
+    def list_exact_title_candidates(self, title: str) -> list[dict[str, Any]]:
+        """Bounded pagination discovery for exact title matches only."""
+        found: list[dict[str, Any]] = []
+        for page in range(1, MAX_LIST_PAGES + 1):
+            items = self.list_videos_search(title, page=page)
+            if not items:
+                break
+            for item in items:
+                if item.get("title") == title:
+                    found.append(item)
+            if len(items) < ITEMS_PER_PAGE:
+                break
+        return found
 
     def _read_top_level_original_hash(self, item: dict[str, Any]) -> tuple[str | None, str | None]:
         """Return (normalized_hash, problem_code). Only top-level originalHash is accepted."""
@@ -153,14 +170,10 @@ class BunnyClient:
                 "videoChecksum": video_checksum,
             }
 
-        title_hits: list[dict[str, Any]] = []
         hash_matches: list[dict[str, Any]] = []
         problems: list[dict[str, Any]] = []
 
-        for item in self.list_videos_search(title):
-            if item.get("title") != title:
-                continue
-            title_hits.append(item)
+        for item in self.list_exact_title_candidates(title):
             oh, problem = self._read_top_level_original_hash(item)
             if problem:
                 problems.append(
@@ -171,15 +184,9 @@ class BunnyClient:
                 )
                 continue
             assert oh is not None
-            if oh != expected:
-                problems.append(
-                    {
-                        "guid": item.get("guid"),
-                        "issue": "mismatched-originalHash",
-                    }
-                )
-                continue
-            hash_matches.append(item)
+            if oh == expected:
+                hash_matches.append(item)
+            # Valid nonmatching top-level originalHash → older distinct video; allowed.
 
         if problems:
             return [], {

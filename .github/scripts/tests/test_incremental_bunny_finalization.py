@@ -14,7 +14,7 @@ import sys
 sys.path.insert(0, str(HERE))
 
 from video_finalize.artifact_contract import validate_six_file_bundle  # noqa: E402
-from video_finalize.bunny_client import BunnyClient  # noqa: E402
+from video_finalize.bunny_client import BunnyClient, MAX_LIST_PAGES  # noqa: E402
 from video_finalize.collector import collect_receipts  # noqa: E402
 from video_finalize.constants import (  # noqa: E402
     BATCH_ID,
@@ -164,13 +164,17 @@ class MockBunnyStore:
             self.videos[guid]["length"] = 10
             return 200, b'{"success":true}'
         if method == "GET" and "?" in url:
-            # list
             from urllib.parse import parse_qs, urlparse
 
             q = parse_qs(urlparse(url).query)
             search = (q.get("search") or [""])[0]
-            items = [v for v in self.videos.values() if search in (v.get("title") or "")]
-            return 200, json.dumps({"items": items, "totalItems": len(items)}).encode()
+            page = int((q.get("page") or ["1"])[0])
+            matching = [
+                v for v in self.videos.values() if search in (v.get("title") or "")
+            ]
+            start = (page - 1) * 100
+            items = matching[start : start + 100]
+            return 200, json.dumps({"items": items, "totalItems": len(matching)}).encode()
         if method == "GET":
             guid = url.rstrip("/").split("/")[-1]
             if guid not in self.videos:
@@ -616,13 +620,23 @@ class OriginalHashRecoveryTests(unittest.TestCase):
             self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
             self.assertIn("malformed-originalHash", json.dumps(result.reconciliation))
 
-    def test_mismatched_original_hash_fails_closed(self):
+    def test_non_string_original_hash_fails_closed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx, meta, store, title = self._bundle_and_ctx(tmp)
+            guid = store.seed_video(title=title, original_hash="a" * 64)
+            store.videos[guid]["originalHash"] = 12345
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
+            self.assertIn("non-string-originalHash", json.dumps(result.reconciliation))
+
+    def test_mismatched_original_hash_allows_create_when_only_older_videos(self):
         with tempfile.TemporaryDirectory() as tmp:
             ctx, meta, store, title = self._bundle_and_ctx(tmp)
             store.seed_video(title=title, original_hash="a" * 64)
             result = finalize_cell(ctx)
-            self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
-            self.assertIn("mismatched-originalHash", json.dumps(result.reconciliation))
+            self.assertEqual(result.outcome, FinalizeOutcome.FINALIZED)
+            self.assertEqual(result.bunny_create_calls, 1)
+            self.assertEqual(result.bunny_upload_calls, 1)
 
     def test_duplicate_matching_hashes_fail_closed(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -633,14 +647,16 @@ class OriginalHashRecoveryTests(unittest.TestCase):
             self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
             self.assertEqual(result.bunny_create_calls, 0)
 
-    def test_conflicting_title_hash_identities_fail_closed(self):
+    def test_expected_match_plus_older_nonmatch_reuses_match(self):
         with tempfile.TemporaryDirectory() as tmp:
             ctx, meta, store, title = self._bundle_and_ctx(tmp)
             store.seed_video(title=title, original_hash=meta["video_sha"], guid="good")
-            store.seed_video(title=title, original_hash="b" * 64, guid="bad")
+            store.seed_video(title=title, original_hash="b" * 64, guid="older")
             result = finalize_cell(ctx)
-            self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
+            self.assertEqual(result.outcome, FinalizeOutcome.COMMIT_ONLY_RECOVERED)
             self.assertEqual(result.bunny_create_calls, 0)
+            self.assertEqual(result.bunny_upload_calls, 0)
+            self.assertEqual(result.receipt["bunnyGuid"], "good")
 
     def test_ambiguous_results_emit_reconciliation(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -657,7 +673,7 @@ class OriginalHashRecoveryTests(unittest.TestCase):
     def test_no_create_or_upload_after_ambiguity(self):
         with tempfile.TemporaryDirectory() as tmp:
             ctx, meta, store, title = self._bundle_and_ctx(tmp)
-            store.seed_video(title=title, original_hash="bad-hash")
+            store.seed_video(title=title, original_hash="not-a-sha256")
             result = finalize_cell(ctx)
             self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
             self.assertEqual(result.bunny_create_calls, 0)
@@ -704,6 +720,176 @@ class OriginalHashRecoveryTests(unittest.TestCase):
             self.assertEqual(result.receipt["bunnyGuid"], guid)
             self.assertEqual(result.bunny_create_calls, 0)
             self.assertEqual(result.commits, 1)
+
+
+FORMER_PILOT_TITLE = "analyst-m3-l2-ai-summarization [en]"
+FORMER_PILOT_PROTECTED_GUID = "7a08de3d-6997-412e-834e-54906b65896f"
+FORMER_PILOT_OLD_HASH = (
+    "6dfcf6aa0e57fa62ea1c2bc7fbe4119b900b152b70841c7d7b702126d0006c64"
+)
+FORMER_PILOT_ACCEPTED_HASH = (
+    "78afdba76a01a1d78297756c01c383c2527105a4854bb4a13af9a7169d70acf4"
+)
+
+
+class BunnyReconciliationTests(unittest.TestCase):
+    _SHA_BYTE_CACHE: dict[str, bytes] = {}
+
+    @classmethod
+    def _video_bytes_for_sha(cls, target_sha: str) -> bytes:
+        cached = cls._SHA_BYTE_CACHE.get(target_sha)
+        if cached is not None:
+            return cached
+        for prefix_idx in range(256):
+            prefix = b"MP4TEST" + bytes([prefix_idx])
+            for i in range(2_000_000):
+                data = prefix + str(i).encode()
+                if _sha(data) == target_sha:
+                    cls._SHA_BYTE_CACHE[target_sha] = data
+                    return data
+        raise RuntimeError(f"unable to synthesize bytes for sha {target_sha}")
+
+    def _bundle_with_checksum(self, root: Path, video_sha: str | None = None) -> Path:
+        if video_sha is None:
+            video = b"MP4TEST_" + hashlib.sha256(str(root).encode()).digest()[:8]
+        else:
+            video = self._video_bytes_for_sha(video_sha)
+        bundle = root / "prod"
+        _make_bundle(bundle, video=video)
+        return bundle
+
+    def test_no_exact_title_candidates_create_once(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            bundle = self._bundle_with_checksum(root)
+            store = MockBunnyStore()
+            ctx = _ctx(root, bundle, store)
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.FINALIZED)
+            self.assertEqual(result.bunny_create_calls, 1)
+            self.assertEqual(result.bunny_upload_calls, 1)
+
+    def test_one_valid_nonmatch_create_once(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            bundle = self._bundle_with_checksum(root)
+            store = MockBunnyStore()
+            title = bunny_title("analyst-m3-l2-ai-summarization", "en")
+            store.seed_video(title=title, original_hash="a" * 64, guid="old1")
+            ctx = _ctx(root, bundle, store)
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.FINALIZED)
+            self.assertEqual(result.bunny_create_calls, 1)
+            self.assertEqual(result.bunny_upload_calls, 1)
+
+    def test_multiple_valid_nonmatches_create_once(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            bundle = self._bundle_with_checksum(root)
+            store = MockBunnyStore()
+            title = bunny_title("analyst-m3-l2-ai-summarization", "en")
+            store.seed_video(title=title, original_hash="a" * 64, guid="old1")
+            store.seed_video(title=title, original_hash="b" * 64, guid="old2")
+            ctx = _ctx(root, bundle, store)
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.FINALIZED)
+            self.assertEqual(result.bunny_create_calls, 1)
+
+    def test_invalid_expected_checksum_blocked(self):
+        store = MockBunnyStore()
+        bunny = BunnyClient("670679", "k", http=store.handler)
+        _, recon = bunny.find_by_title_and_hash("any [en]", "bad")
+        self.assertIsNotNone(recon)
+        self.assertEqual(recon["reason"], "invalid-expected-video-checksum")
+
+    def test_bounded_pagination_discovers_later_page_candidate(self):
+        store = MockBunnyStore()
+        title = FORMER_PILOT_TITLE
+        for i in range(150):
+            store.seed_video(title=f"noise-{i}", original_hash="f" * 64)
+        store.seed_video(
+            title=title,
+            original_hash=FORMER_PILOT_ACCEPTED_HASH,
+            guid="page2-match",
+        )
+        bunny = BunnyClient("670679", "k", http=store.handler)
+        found = bunny.list_exact_title_candidates(title)
+        self.assertEqual(len(found), 1)
+        self.assertEqual(found[0]["guid"], "page2-match")
+
+    def test_bounded_pagination_stops_at_max_pages(self):
+        store = MockBunnyStore()
+        title = "paginated-title [en]"
+        for page in range(1, MAX_LIST_PAGES + 2):
+            for i in range(100):
+                store.seed_video(
+                    title=title if page == MAX_LIST_PAGES + 1 and i == 0 else f"fill-{page}-{i}",
+                    original_hash="c" * 64,
+                )
+        bunny = BunnyClient("670679", "k", http=store.handler)
+        lists_before = len(bunny.log.lists)
+        bunny.list_exact_title_candidates(title)
+        pages_called = {int(entry.rsplit("=", 1)[-1]) for entry in bunny.log.lists[lists_before:]}
+        self.assertLessEqual(max(pages_called), MAX_LIST_PAGES)
+
+    def test_post_upload_hash_proof_allows_receipt(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            bundle = self._bundle_with_checksum(root)
+            store = MockBunnyStore()
+            ctx = _ctx(root, bundle, store)
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.FINALIZED)
+            self.assertIsNotNone(result.receipt)
+
+    def test_post_upload_hash_mismatch_no_receipt(self):
+        class MismatchAfterUpload(MockBunnyStore):
+            def handler(self, method, url, body, headers):
+                if method == "GET" and "?" not in url:
+                    guid = url.rstrip("/").split("/")[-1]
+                    if guid in self.videos:
+                        bad = dict(self.videos[guid])
+                        bad["originalHash"] = "d" * 64
+                        return 200, json.dumps(bad).encode()
+                return super().handler(method, url, body, headers)
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            bundle = self._bundle_with_checksum(root)
+            store = MismatchAfterUpload()
+            ctx = _ctx(root, bundle, store)
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
+            self.assertIsNone(result.receipt)
+            self.assertEqual(result.commits, 0)
+
+    def test_former_pilot_fixture(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            bundle = self._bundle_with_checksum(root)
+            meta = validate_six_file_bundle(bundle)
+            accepted = meta["videoChecksum"]
+            self.assertNotEqual(accepted, FORMER_PILOT_OLD_HASH)
+            store = MockBunnyStore()
+            store.seed_video(
+                title=FORMER_PILOT_TITLE,
+                guid=FORMER_PILOT_PROTECTED_GUID,
+                original_hash=FORMER_PILOT_OLD_HASH,
+            )
+            ctx = _ctx(root, bundle, store)
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.FINALIZED)
+            self.assertEqual(result.bunny_create_calls, 1)
+            self.assertEqual(result.bunny_upload_calls, 1)
+            self.assertNotEqual(result.receipt["bunnyGuid"], FORMER_PILOT_PROTECTED_GUID)
+            self.assertEqual(result.receipt["videoChecksum"], accepted)
+            self.assertEqual(
+                store.videos[FORMER_PILOT_PROTECTED_GUID]["originalHash"],
+                FORMER_PILOT_OLD_HASH,
+            )
+            self.assertNotIn(FORMER_PILOT_PROTECTED_GUID, ctx.bunny.log.uploads)
+            if accepted == FORMER_PILOT_ACCEPTED_HASH:
+                self.assertEqual(result.receipt["videoChecksum"], FORMER_PILOT_ACCEPTED_HASH)
 
 
 if __name__ == "__main__":

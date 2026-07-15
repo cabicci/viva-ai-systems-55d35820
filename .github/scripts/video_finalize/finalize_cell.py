@@ -265,13 +265,53 @@ def finalize_cell(ctx: FinalizeContext) -> FinalizeResult:
             )
         if len(matches) == 1:
             guid = str(matches[0]["guid"])
+            try:
+                video = ctx.bunny.get_video(guid)
+                get_recon = ctx.bunny.verify_top_level_original_hash(
+                    video, video_checksum
+                )
+                if get_recon is not None:
+                    rel = reconciliation_relpath(ctx.batch_id, ctx.logical_key)
+                    write_reconciliation(ctx.git.repo_dir / rel, get_recon)
+                    return FinalizeResult(
+                        outcome=FinalizeOutcome.AMBIGUOUS,
+                        reconciliation=get_recon,
+                        message="pre-upload match GUID hash proof failed; fail closed",
+                        bunny_create_calls=0,
+                        bunny_upload_calls=0,
+                    )
+            except Exception as e:
+                return FinalizeResult(
+                    outcome=FinalizeOutcome.FAILED,
+                    message=f"pre-upload match GUID not fetchable: {e}",
+                )
             outcome = FinalizeOutcome.COMMIT_ONLY_RECOVERED
         else:
             guid = ctx.bunny.create_video(title)
             mp4_bytes = (ctx.production_root / "video.mp4").read_bytes()
             ctx.bunny.upload_mp4(guid, mp4_bytes)
-            # Single GET to confirm object exists; no wait-for-ready loop.
-            ctx.bunny.get_video(guid)
+            try:
+                video = ctx.bunny.get_video(guid)
+                get_recon = ctx.bunny.verify_top_level_original_hash(
+                    video, video_checksum
+                )
+                if get_recon is not None:
+                    rel = reconciliation_relpath(ctx.batch_id, ctx.logical_key)
+                    write_reconciliation(ctx.git.repo_dir / rel, get_recon)
+                    return FinalizeResult(
+                        outcome=FinalizeOutcome.AMBIGUOUS,
+                        reconciliation=get_recon,
+                        message="post-upload hash proof failed; no receipt",
+                        bunny_create_calls=len(ctx.bunny.log.creates) - creates0,
+                        bunny_upload_calls=len(ctx.bunny.log.uploads) - uploads0,
+                    )
+            except Exception as e:
+                return FinalizeResult(
+                    outcome=FinalizeOutcome.FAILED,
+                    message=f"post-upload GET failed: {e}",
+                    bunny_create_calls=len(ctx.bunny.log.creates) - creates0,
+                    bunny_upload_calls=len(ctx.bunny.log.uploads) - uploads0,
+                )
 
     receipt = build_receipt(
         batch_id=ctx.batch_id,
