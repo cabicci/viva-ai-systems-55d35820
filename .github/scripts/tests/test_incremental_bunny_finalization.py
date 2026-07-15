@@ -195,14 +195,22 @@ class PaginatedListMock(MockBunnyStore):
     def __init__(
         self,
         *,
-        total_items: int | None = None,
-        total_pages: int | None = None,
+        total_items: Any = None,
+        total_pages: Any = None,
+        current_page: Any = None,
         omit_metadata: bool = False,
+        include_total_pages: bool = True,
+        include_total_items: bool = True,
+        include_current_page: bool = True,
     ):
         super().__init__()
         self.total_items = total_items
         self.total_pages = total_pages
+        self.current_page = current_page
         self.omit_metadata = omit_metadata
+        self.include_total_pages = include_total_pages
+        self.include_total_items = include_total_items
+        self.include_current_page = include_current_page
 
     def handler(self, method, url, body, headers):
         if method == "GET" and "?" in url:
@@ -218,11 +226,17 @@ class PaginatedListMock(MockBunnyStore):
             items = matching[start : start + 100]
             payload: dict = {"items": items}
             if not self.omit_metadata:
-                payload["currentPage"] = page
-                payload["totalItems"] = (
-                    self.total_items if self.total_items is not None else len(matching)
-                )
-                if self.total_pages is not None:
+                if self.include_current_page:
+                    payload["currentPage"] = (
+                        self.current_page if self.current_page is not None else page
+                    )
+                if self.include_total_items:
+                    payload["totalItems"] = (
+                        self.total_items
+                        if self.total_items is not None
+                        else len(matching)
+                    )
+                if self.include_total_pages and self.total_pages is not None:
                     payload["totalPages"] = self.total_pages
             return 200, json.dumps(payload).encode()
         return super().handler(method, url, body, headers)
@@ -809,6 +823,45 @@ class BunnyReconciliationTests(unittest.TestCase):
         _make_bundle(bundle, video=video)
         return bundle
 
+    def _cap_store_with_hidden_match(self, **mock_kwargs) -> tuple[PaginatedListMock, str]:
+        store = PaginatedListMock(**mock_kwargs)
+        title = bunny_title("analyst-m3-l2-ai-summarization", "en")
+        _seed_search_fill_pages(
+            store,
+            search=title,
+            pages=MAX_LIST_PAGES,
+            exact_title=title,
+            exact_guid="hidden-page-11",
+            exact_hash=FORMER_PILOT_ACCEPTED_HASH,
+        )
+        return store, title
+
+    def _assert_discovery_fail_closed(self, store: MockBunnyStore, title: str) -> None:
+        bunny = BunnyClient("670679", "k", http=store.handler)
+        found, recon = bunny.list_exact_title_candidates(title)
+        self.assertEqual(found, [])
+        self.assertIsNotNone(recon)
+        self.assertEqual(recon["reason"], "bunny-discovery-page-limit-exceeded")
+
+    def _assert_finalize_fail_closed_side_effects(
+        self, store: MockBunnyStore, title: str
+    ) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            bundle = self._bundle_with_checksum(root)
+            ctx = _ctx(root, bundle, store)
+            result = finalize_cell(ctx)
+            self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
+            self.assertEqual(
+                result.reconciliation["reason"], "bunny-discovery-page-limit-exceeded"
+            )
+            self.assertEqual(result.bunny_create_calls, 0)
+            self.assertEqual(result.bunny_upload_calls, 0)
+            self.assertEqual(len(ctx.bunny.log.gets), 0)
+            self.assertIsNone(result.receipt)
+            self.assertEqual(result.commits, 0)
+            self.assertEqual(result.pushes, 0)
+
     def test_no_exact_title_candidates_create_once(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -882,7 +935,11 @@ class BunnyReconciliationTests(unittest.TestCase):
         self.assertEqual(found[0]["guid"], "short-page-match")
 
     def test_trustworthy_metadata_proves_exhaustion_at_cap(self):
-        store = PaginatedListMock(total_items=1000, total_pages=MAX_LIST_PAGES)
+        store = PaginatedListMock(
+            total_items=1000,
+            total_pages=MAX_LIST_PAGES,
+            current_page=MAX_LIST_PAGES,
+        )
         title = "metadata-exhausted [en]"
         _seed_search_fill_pages(store, search=title, pages=MAX_LIST_PAGES)
         bunny = BunnyClient("670679", "k", http=store.handler)
@@ -890,54 +947,91 @@ class BunnyReconciliationTests(unittest.TestCase):
         self.assertIsNone(recon)
         self.assertEqual(found, [])
 
-    def test_missing_metadata_fails_closed_at_page_cap(self):
-        store = PaginatedListMock(omit_metadata=True)
-        title = bunny_title("analyst-m3-l2-ai-summarization", "en")
-        _seed_search_fill_pages(
-            store,
-            search=title,
-            pages=MAX_LIST_PAGES,
-            exact_title=title,
-            exact_guid="hidden-page-11",
-            exact_hash=FORMER_PILOT_ACCEPTED_HASH,
+    def test_consistent_metadata_current_page_total_pages_total_items(self):
+        store = PaginatedListMock(
+            total_items=1000,
+            total_pages=10,
+            current_page=10,
         )
+        title = bunny_title("analyst-m3-l2-ai-summarization", "en")
+        _seed_search_fill_pages(store, search=title, pages=MAX_LIST_PAGES)
         bunny = BunnyClient("670679", "k", http=store.handler)
         found, recon = bunny.list_exact_title_candidates(title)
+        self.assertIsNone(recon)
         self.assertEqual(found, [])
-        self.assertIsNotNone(recon)
-        self.assertEqual(recon["reason"], "bunny-discovery-page-limit-exceeded")
+
+    def test_contradictory_total_pages_and_total_items_fail_closed(self):
+        store, title = self._cap_store_with_hidden_match(
+            total_items=1001,
+            total_pages=10,
+            current_page=10,
+        )
+        self._assert_discovery_fail_closed(store, title)
+        self._assert_finalize_fail_closed_side_effects(store, title)
+
+    def test_total_pages_below_current_page_fail_closed(self):
+        store, title = self._cap_store_with_hidden_match(
+            total_items=1000,
+            total_pages=9,
+            current_page=10,
+        )
+        self._assert_discovery_fail_closed(store, title)
+        self._assert_finalize_fail_closed_side_effects(store, title)
+
+    def test_total_items_below_observed_minimum_fail_closed(self):
+        store, title = self._cap_store_with_hidden_match(
+            total_items=999,
+            total_pages=10,
+            current_page=10,
+        )
+        self._assert_discovery_fail_closed(store, title)
+        self._assert_finalize_fail_closed_side_effects(store, title)
+
+    def test_incorrect_current_page_fail_closed(self):
+        store, title = self._cap_store_with_hidden_match(
+            total_items=1000,
+            total_pages=10,
+            current_page=9,
+        )
+        self._assert_discovery_fail_closed(store, title)
+        self._assert_finalize_fail_closed_side_effects(store, title)
+
+    def test_malformed_pagination_values_fail_closed(self):
+        malformed_cases = {
+            "string-totalItems": {"total_items": "1000", "total_pages": 10, "current_page": 10},
+            "boolean-totalPages": {"total_items": 1000, "total_pages": True, "current_page": 10},
+            "negative-totalItems": {"total_items": -1, "total_pages": 10, "current_page": 10},
+            "float-totalPages": {"total_items": 1000, "total_pages": 10.0, "current_page": 10},
+            "string-currentPage": {"total_items": 1000, "total_pages": 10, "current_page": "10"},
+        }
+        for label, kwargs in malformed_cases.items():
+            with self.subTest(label=label):
+                store, title = self._cap_store_with_hidden_match(**kwargs)
+                self._assert_discovery_fail_closed(store, title)
+                self._assert_finalize_fail_closed_side_effects(store, title)
+
+    def test_missing_metadata_fails_closed_at_page_cap(self):
+        store, title = self._cap_store_with_hidden_match(omit_metadata=True)
+        self._assert_discovery_fail_closed(store, title)
+        self._assert_finalize_fail_closed_side_effects(store, title)
+
+    def test_partial_metadata_without_exhaustion_proof_fail_closed(self):
+        store, title = self._cap_store_with_hidden_match(
+            include_total_pages=False,
+            include_total_items=False,
+            include_current_page=True,
+            current_page=10,
+        )
+        self._assert_discovery_fail_closed(store, title)
+        self._assert_finalize_fail_closed_side_effects(store, title)
 
     def test_page_limit_fails_closed_with_hidden_expected_candidate(self):
-        store = PaginatedListMock(total_items=MAX_LIST_PAGES * 100 + 1)
-        title = bunny_title("analyst-m3-l2-ai-summarization", "en")
-        _seed_search_fill_pages(
-            store,
-            search=title,
-            pages=MAX_LIST_PAGES,
-            exact_title=title,
-            exact_guid="hidden-page-11",
-            exact_hash=FORMER_PILOT_ACCEPTED_HASH,
-        )
+        store, title = self._cap_store_with_hidden_match(total_items=1001)
         bunny = BunnyClient("670679", "k", http=store.handler)
         matches, recon = bunny.find_by_title_and_hash(title, FORMER_PILOT_ACCEPTED_HASH)
         self.assertEqual(matches, [])
         self.assertEqual(recon["reason"], "bunny-discovery-page-limit-exceeded")
-
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            bundle = self._bundle_with_checksum(root)
-            ctx = _ctx(root, bundle, store)
-            result = finalize_cell(ctx)
-            self.assertEqual(result.outcome, FinalizeOutcome.AMBIGUOUS)
-            self.assertEqual(
-                result.reconciliation["reason"], "bunny-discovery-page-limit-exceeded"
-            )
-            self.assertEqual(result.bunny_create_calls, 0)
-            self.assertEqual(result.bunny_upload_calls, 0)
-            self.assertEqual(len(ctx.bunny.log.gets), 0)
-            self.assertIsNone(result.receipt)
-            self.assertEqual(result.commits, 0)
-            self.assertEqual(result.pushes, 0)
+        self._assert_finalize_fail_closed_side_effects(store, title)
 
     def test_former_pilot_exact_hash_policy_selects_new_upload_path(self):
         store = MockBunnyStore()

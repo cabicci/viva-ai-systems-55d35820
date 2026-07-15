@@ -20,6 +20,7 @@ No polling loops.
 from __future__ import annotations
 
 import json
+import math
 import re
 import urllib.error
 import urllib.parse
@@ -126,6 +127,15 @@ class BunnyClient:
         items = data.get("items") or []
         return list(items), data
 
+    @staticmethod
+    def _pagination_int(value: Any) -> int | None:
+        """Return value only when it is a non-negative int (not bool)."""
+        if type(value) is not int:
+            return None
+        if value < 0:
+            return None
+        return value
+
     def _page_proves_exhaustion(
         self, page: int, items: list[dict[str, Any]], page_data: dict[str, Any]
     ) -> bool:
@@ -135,17 +145,40 @@ class BunnyClient:
         if len(items) < ITEMS_PER_PAGE:
             return True
 
-        current = page_data.get("currentPage")
-        total_pages = page_data.get("totalPages")
-        if isinstance(current, int) and isinstance(total_pages, int) and total_pages > 0:
-            if current == page and current >= total_pages:
-                return True
+        observed_minimum = page * ITEMS_PER_PAGE
 
-        total_items = page_data.get("totalItems")
-        if isinstance(total_items, int) and total_items >= 0:
-            if page * ITEMS_PER_PAGE >= total_items:
-                return True
+        if "currentPage" in page_data:
+            current = self._pagination_int(page_data["currentPage"])
+            if current is None or current != page:
+                return False
 
+        total_items: int | None = None
+        if "totalItems" in page_data:
+            total_items = self._pagination_int(page_data["totalItems"])
+            if total_items is None:
+                return False
+            if total_items < observed_minimum:
+                return False
+
+        total_pages: int | None = None
+        if "totalPages" in page_data:
+            total_pages = self._pagination_int(page_data["totalPages"])
+            if total_pages is None:
+                return False
+            if total_pages < page:
+                return False
+
+        if total_items is not None and total_pages is not None:
+            if math.ceil(total_items / ITEMS_PER_PAGE) != total_pages:
+                return False
+
+        if total_pages is None and total_items is None:
+            return False
+
+        if total_pages is not None and total_pages == page:
+            return True
+        if total_items is not None and total_items == observed_minimum:
+            return True
         return False
 
     def list_exact_title_candidates(
