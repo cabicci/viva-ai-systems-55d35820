@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       run_mode:
-        description: "preflight-one = one safe no-paid validation; generate-one = one real paid production cell; finalize-one = reuse pinned accepted artifact + Bunny receipt; full-300 = validated 300-cell batch with per-cell finalization."
+        description: "preflight-one = one safe no-paid validation; generate-one = one real paid production cell; finalize-one = reuse pinned accepted artifact + Bunny receipt; full-300 = validated 300-cell batch with per-cell finalization; recover-uploaded-receipts = receipt-only recovery for uploaded cells from run 29407852029."
         required: true
         default: preflight-one
         type: choice
@@ -20,6 +20,7 @@ on:
           - generate-one
           - finalize-one
           - full-300
+          - recover-uploaded-receipts
       retry_failed_only:
         description: "Retained for compatibility. Cross-run retry is unsupported; use Re-run failed jobs on the original run."
         required: true
@@ -52,6 +53,8 @@ jobs:
       count_a: ${{ steps.plan.outputs.count_a }}
       count_b: ${{ steps.plan.outputs.count_b }}
       total_count: ${{ steps.plan.outputs.total_count }}
+      recovery_matrix: ${{ steps.plan.outputs.recovery_matrix }}
+      recovery_count: ${{ steps.plan.outputs.recovery_count }}
 
     steps:
       - name: Check out immutable production source baseline
@@ -91,7 +94,13 @@ jobs:
           from pathlib import Path
 
           run_mode = os.environ.get("RUN_MODE", "preflight-one")
-          if run_mode not in ("preflight-one", "generate-one", "finalize-one", "full-300"):
+          if run_mode not in (
+              "preflight-one",
+              "generate-one",
+              "finalize-one",
+              "full-300",
+              "recover-uploaded-receipts",
+          ):
               print(f"::error::Unsupported run_mode {run_mode!r}", file=sys.stderr)
               sys.exit(1)
 
@@ -107,6 +116,16 @@ jobs:
 
           print(f"run_mode={run_mode}")
 
+          if run_mode == "recover-uploaded-receipts":
+              print("matrix_a=" + json.dumps([], separators=(",", ":")))
+              print("matrix_b=" + json.dumps([], separators=(",", ":")))
+              print("count_a=0")
+              print("count_b=0")
+              print("total_count=79")
+              print("recovery_matrix=" + json.dumps([], separators=(",", ":")))
+              print("recovery_count=0")
+              sys.exit(0)
+
           if run_mode in ("preflight-one", "generate-one", "finalize-one"):
               locale = "en"
               lesson_id = "analyst-m3-l2-ai-summarization"
@@ -120,6 +139,8 @@ jobs:
               print("count_a=0")
               print("count_b=0")
               print("total_count=1")
+              print("recovery_matrix=" + json.dumps([], separators=(",", ":")))
+              print("recovery_count=0")
               sys.exit(0)
 
           locales = ("ar-MSA", "ar-Gulf", "en")
@@ -197,7 +218,257 @@ jobs:
           print(f"count_a={len(matrix_a)}")
           print(f"count_b={len(matrix_b)}")
           print(f"total_count={len(filtered)}")
+          print("recovery_matrix=" + json.dumps([], separators=(",", ":")))
+          print("recovery_count=0")
           PY
+
+  recovery_plan:
+    name: Plan uploaded receipt recovery (79 cells)
+    needs: plan
+    if: needs.plan.outputs.run_mode == 'recover-uploaded-receipts'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    outputs:
+      recovery_matrix: ${{ steps.plan_recovery.outputs.recovery_matrix }}
+      recovery_count: ${{ steps.plan_recovery.outputs.recovery_count }}
+
+    steps:
+      - name: Check out immutable full-300 production source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.FULL_300_SOURCE_SHA }}
+          fetch-depth: 0
+
+      - name: Verify pinned full-300 production source SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$FULL_300_SOURCE_SHA" = "69ba815e256d6f46382c9f0fa901bb3fea88c85b"
+          test "$(git rev-parse HEAD)" = "$FULL_300_SOURCE_SHA"
+
+      - name: Check out dispatched workflow control scripts
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: control-code
+          fetch-depth: 0
+
+      - name: Verify dispatched control SHA (fail-closed)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C control-code rev-parse HEAD)" = "${{ github.sha }}"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Fetch result branch receipts (read-only)
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/result-branches
+          PREFIX="video-results--${BATCH_ID}--"
+          mapfile -t REFS < <(
+            git ls-remote "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" \
+              "refs/heads/${PREFIX}*" | awk '{print $2}' | sed "s#refs/heads/##"
+          )
+          for branch in "${REFS[@]}"; do
+            key="${branch#${PREFIX}}"
+            dest="/tmp/result-branches/${key}"
+            mkdir -p "$dest"
+            git init "$dest" >/dev/null 2>&1
+            if git -C "$dest" fetch --depth=1 "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" "$branch" 2>/dev/null; then
+              git -C "$dest" checkout FETCH_HEAD >/dev/null 2>&1 || true
+            fi
+          done
+
+      - name: List immutable artifacts from recovery run
+        id: artifacts
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh api --paginate \
+            "/repos/${{ github.repository }}/actions/runs/29407852029/artifacts" \
+            --jq '[.artifacts[] | {id: (.id|tostring), name: .name}]' \
+            > /tmp/recovery-artifacts.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          chunks = []
+          text = Path("/tmp/recovery-artifacts.json").read_text(encoding="utf-8")
+          # gh --paginate may emit multiple JSON arrays
+          decoder = json.JSONDecoder()
+          idx = 0
+          while idx < len(text):
+              while idx < len(text) and text[idx].isspace():
+                  idx += 1
+              if idx >= len(text):
+                  break
+              obj, end = decoder.raw_decode(text, idx)
+              chunks.extend(obj)
+              idx = end
+          Path("/tmp/recovery-artifacts-flat.json").write_text(
+              json.dumps(chunks, separators=(",", ":")), encoding="utf-8"
+          )
+          print(f"listed_artifacts={len(chunks)}")
+          PY
+
+      - name: Build fail-closed recovery matrix
+        id: plan_recovery
+        shell: bash
+        env:
+          REPO_ROOT: ${{ github.workspace }}
+          RESULTS_FETCH_DIR: /tmp/result-branches
+          RECOVERY_ARTIFACTS_PATH: /tmp/recovery-artifacts-flat.json
+          RECOVERY_WORKFLOW_RUN_ID: "29407852029"
+        run: |
+          set -euo pipefail
+          python3 control-code/.github/scripts/plan_uploaded_receipt_recovery_cli.py \
+            | tee recovery-plan.json
+          COUNT=$(python3 -c "import json; print(json.load(open('recovery-plan.json'))['recoveryCount'])")
+          test "$COUNT" = "79"
+
+  recover_cells:
+    name: Recover — ${{ matrix.locale }} — ${{ matrix.lessonId }}
+    needs: [plan, recovery_plan]
+    if: needs.plan.outputs.run_mode == 'recover-uploaded-receipts' && needs.recovery_plan.outputs.recovery_count == '79'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      actions: read
+
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        include: ${{ fromJSON(needs.recovery_plan.outputs.recovery_matrix) }}
+
+    env:
+      LID: ${{ matrix.lessonId }}
+      LOCALE: ${{ matrix.locale }}
+      COMPOSITE_KEY: ${{ matrix.logicalKey }}
+      BATCH_ID: ${{ matrix.batchId }}
+      SOURCE_SHA: ${{ matrix.sourceSha }}
+      WORKFLOW_RUN_ID: ${{ matrix.workflowRunId }}
+      ARTIFACT_ID: ${{ matrix.artifactId }}
+      ARTIFACT_NAME: ${{ matrix.artifactName }}
+
+    steps:
+      - name: Check out dispatched workflow control scripts
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Verify dispatched control SHA (fail-closed)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "${{ github.sha }}"
+          test -f .github/scripts/recover_uploaded_receipt_cli.py
+          test -f .github/scripts/plan_uploaded_receipt_recovery_cli.py
+          python3 - <<'PY'
+          from pathlib import Path
+          markers = [
+              "create_video",
+              "upload_mp4",
+              "promote" + "_finalized_mappings",
+              "build" + "-lesson.py",
+              "GEMINI" + "_API_KEY",
+          ]
+          paths = [
+              Path(".github/scripts/recover_uploaded_receipt_cli.py"),
+              Path(".github/scripts/video_finalize/receipt_recovery.py"),
+          ]
+          for path in paths:
+              text = path.read_text(encoding="utf-8")
+              for marker in markers:
+                  if marker in text:
+                      raise SystemExit(f"forbidden marker {marker!r} in {path}")
+          print("recovery reachability gate passed")
+          PY
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Prepare isolated results worktree repo
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/results-repo
+          git init /tmp/results-repo
+          git -C /tmp/results-repo config user.email "video-recover@github-actions"
+          git -C /tmp/results-repo config user.name "video-recover"
+          git -C /tmp/results-repo remote add origin \
+            "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          BRANCH="video-results--${BATCH_ID}--${COMPOSITE_KEY}"
+          if git -C /tmp/results-repo fetch --depth=1 origin "$BRANCH" 2>/dev/null; then
+            git -C /tmp/results-repo checkout -B "$BRANCH" FETCH_HEAD
+          fi
+
+      - name: Existing-receipt early skip (before artifact download / Bunny)
+        id: receipt_skip
+        shell: bash
+        env:
+          RESULTS_REPO: /tmp/results-repo
+          BUNNY_STREAM_API_KEY: "unused-before-download"
+          BUNNY_STREAM_LIBRARY_ID: "unused-before-download"
+        run: |
+          set -euo pipefail
+          # No PRODUCTION_ROOT → skip-check / pending-artifact only.
+          python3 .github/scripts/recover_uploaded_receipt_cli.py
+
+      - name: Download exact recovery artifact
+        if: steps.receipt_skip.outputs.skip != 'true'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$WORKFLOW_RUN_ID" = "29407852029"
+          test "$SOURCE_SHA" = "69ba815e256d6f46382c9f0fa901bb3fea88c85b"
+          mkdir -p /tmp/recovery-artifact
+          gh api \
+            -H "Accept: application/vnd.github+json" \
+            "/repos/${{ github.repository }}/actions/artifacts/${ARTIFACT_ID}/zip" \
+            > /tmp/recovery-artifact.zip
+          python3 - <<'PY'
+          import zipfile
+          from pathlib import Path
+          zpath = Path("/tmp/recovery-artifact.zip")
+          out = Path("/tmp/recovery-artifact")
+          with zipfile.ZipFile(zpath) as zf:
+              zf.extractall(out)
+          print("extracted", len(list(out.rglob("*"))))
+          PY
+
+      - name: Recover receipt without Bunny upload
+        if: steps.receipt_skip.outputs.skip != 'true'
+        shell: bash
+        env:
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          PRODUCTION_ROOT: /tmp/recovery-artifact
+          RESULTS_REPO: /tmp/results-repo
+        run: |
+          set -euo pipefail
+          test -n "${BUNNY_STREAM_API_KEY:-}"
+          test -n "${BUNNY_STREAM_LIBRARY_ID:-}"
+          test "$ARTIFACT_NAME" = "full-300-${SOURCE_SHA}-${LOCALE}-${LID}"
+          python3 .github/scripts/recover_uploaded_receipt_cli.py
+
+      - name: Skipped — existing finalized receipt
+        if: steps.receipt_skip.outputs.skip == 'true'
+        run: echo "::notice::recovery-skipped-success ${{ matrix.logicalKey }}"
 
   preflight_one:
     name: Preflight one — en — analyst-m3-l2-ai-summarization

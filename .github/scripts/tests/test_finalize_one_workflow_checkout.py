@@ -22,14 +22,14 @@ def _job_block(text: str, job_name: str, *, end_markers: tuple[str, ...]) -> str
 
 
 def _finalize_one_block(text: str) -> str:
-    return _job_block(text, "finalize_one", end_markers=("\n  produce_a:",))
+    return _job_block(text, "finalize_one", end_markers=("\n  produce_a:", "\n  recovery_plan:"))
 
 
 def _produce_block(text: str, job_name: str) -> str:
     if job_name == "produce_a":
         end_markers = ("\n  produce_b:",)
     else:
-        end_markers = ("\n  report:",)
+        end_markers = ("\n  report:", "\n  recover_cells:")
     return _job_block(text, job_name, end_markers=end_markers)
 
 
