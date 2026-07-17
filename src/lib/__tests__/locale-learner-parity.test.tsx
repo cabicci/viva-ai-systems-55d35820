@@ -18,6 +18,8 @@ import {
 } from "@/lib/bunny-videos";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
+const UUID_RE =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 vi.mock("@tanstack/react-router", () => ({
   Link: ({
@@ -65,6 +67,18 @@ function readLocalizedPackage(
   return JSON.parse(readFileSync(filePath, "utf8")) as LocalizedLessonPackage;
 }
 
+function compositeKey(lessonId: string, locale: SupportedLocale): string {
+  return `${lessonId}__${locale}`;
+}
+
+function expectActiveRegistryMapping(lessonId: string, locale: SupportedLocale) {
+  const activeGuid = getLocalizedBunnyGuid(lessonId, locale);
+  expect(activeGuid, compositeKey(lessonId, locale)).toBeDefined();
+  expect(activeGuid).toMatch(UUID_RE);
+  expect(getBunnyGuidForLocale(lessonId, locale)).toBe(activeGuid);
+  expect(getLocalizedBunnyEmbedUrl(lessonId, locale)).toContain(activeGuid!);
+}
+
 describe("localized learner-experience parity", () => {
   for (const cell of PILOT_VIDEO_CELLS) {
     describe(`${cell.lessonId} | ${cell.locale}`, () => {
@@ -92,9 +106,8 @@ describe("localized learner-experience parity", () => {
         );
 
         expect(videoIndexes).toEqual([canonicalVideoIndex]);
-        expect(getLocalizedBunnyGuid(cell.lessonId, cell.locale)).toBe(
-          cell.guid,
-        );
+        expectActiveRegistryMapping(cell.lessonId, cell.locale);
+        expect(cell.historicalPilotGuid).toMatch(UUID_RE);
       });
 
       it("renders a single Bunny player without preview/mock learner UI", async () => {
@@ -127,6 +140,7 @@ describe("localized learner-experience parity", () => {
       getBunnyEmbedUrl(lessonId),
     );
     expect(getBunnyGuidForLocale(lessonId, "ar-EG")).toBe(legacyGuid);
+    expect(getLocalizedBunnyGuid(lessonId, "ar-EG")).toBeUndefined();
   });
 
   it("learn route uses LocalePackageLessonRenderer and canonical assistant/mission stack", () => {

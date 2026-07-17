@@ -1,10 +1,9 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it, vi } from "vitest";
-import { render } from "@testing-library/react";
-import { LocalePackageLessonRenderer } from "@/components/locale/LocalePackageLessonRenderer";
 import { renderLocalizedLesson, renderLocalizedLessonWithoutVideo } from "@/lib/__tests__/locale-test-utils";
 import {
+  BUNNY_LIBRARY_ID,
   getBunnyEmbedUrl,
   getBunnyEmbedUrlForLocale,
   getBunnyGuidForLocale,
@@ -15,6 +14,8 @@ import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 import type { SupportedLocale } from "@/lib/locale/types";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
+const UUID_RE =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 vi.mock("@tanstack/react-router", () => ({
   Link: ({
@@ -48,16 +49,57 @@ function readLocalizedPackage(
   return JSON.parse(readFileSync(filePath, "utf8")) as LocalizedLessonPackage;
 }
 
+function compositeKey(lessonId: string, locale: SupportedLocale): string {
+  return `${lessonId}__${locale}`;
+}
+
+function expectActiveRegistryMapping(lessonId: string, locale: SupportedLocale) {
+  const activeGuid = getLocalizedBunnyGuid(lessonId, locale);
+  expect(activeGuid, compositeKey(lessonId, locale)).toBeDefined();
+  expect(activeGuid).toMatch(UUID_RE);
+
+  const embed = getLocalizedBunnyEmbedUrl(lessonId, locale);
+  expect(embed).toBe(
+    `https://iframe.mediadelivery.net/embed/${BUNNY_LIBRARY_ID}/${activeGuid}?autoplay=false&preload=true`,
+  );
+  expect(getBunnyGuidForLocale(lessonId, locale)).toBe(activeGuid);
+}
+
+describe("PILOT_VIDEO_CELLS historical inventory", () => {
+  it("preserves exactly six historical pilot GUID entries for audit", () => {
+    expect(PILOT_VIDEO_CELLS).toHaveLength(6);
+    for (const cell of PILOT_VIDEO_CELLS) {
+      expect(cell.historicalPilotGuid).toMatch(UUID_RE);
+    }
+    expect(PILOT_VIDEO_CELLS.map((cell) => cell.historicalPilotGuid)).toEqual([
+      "ec795bb3-018d-4642-908a-ec86a842175f",
+      "5c44ca7d-814a-4eea-a03a-81692942458f",
+      "7a08de3d-6997-412e-834e-54906b65896f",
+      "1b6a5491-8e93-4ed6-b3a8-08744cd26546",
+      "4eec6df1-cc3f-4d68-ab65-13361880bcfd",
+      "0605d5f9-623f-4b90-9a43-307e1fcdd8e7",
+    ]);
+  });
+
+  it("is not imported by production runtime video resolution components", () => {
+    const runtimeFiles = [
+      "src/components/locale/LocaleLessonVideo.tsx",
+      "src/components/locale/LocaleLiveSafetyMarkers.tsx",
+      "src/components/intro/IntroLessonRenderer.tsx",
+    ];
+    for (const rel of runtimeFiles) {
+      const source = readFileSync(path.join(REPO_ROOT, rel), "utf8");
+      expect(source).not.toContain("locale-pilot-video-cells");
+      expect(source).not.toContain("PILOT_VIDEO_CELLS");
+    }
+  });
+});
+
 describe("locale pilot video placement matrix", () => {
   for (const cell of PILOT_VIDEO_CELLS) {
     describe(`${cell.lessonId} | ${cell.locale}`, () => {
-      it("resolves composite Bunny GUID from registry", () => {
-        expect(getLocalizedBunnyGuid(cell.lessonId, cell.locale)).toBe(
-          cell.guid,
-        );
-        expect(getLocalizedBunnyEmbedUrl(cell.lessonId, cell.locale)).toBe(
-          `https://iframe.mediadelivery.net/embed/670679/${cell.guid}?autoplay=false&preload=true`,
-        );
+      it("resolves active composite registry mapping independently of historical pilot GUID", () => {
+        expectActiveRegistryMapping(cell.lessonId, cell.locale);
       });
 
       it("renders Bunny player instead of coming-soon placeholder", async () => {
