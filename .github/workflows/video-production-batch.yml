@@ -375,26 +375,7 @@ jobs:
           test "$(git rev-parse HEAD)" = "${{ github.sha }}"
           test -f .github/scripts/recover_uploaded_receipt_cli.py
           test -f .github/scripts/plan_uploaded_receipt_recovery_cli.py
-          python3 - <<'PY'
-          from pathlib import Path
-          markers = [
-              "create_video",
-              "upload_mp4",
-              "promote" + "_finalized_mappings",
-              "build" + "-lesson.py",
-              "GEMINI" + "_API_KEY",
-          ]
-          paths = [
-              Path(".github/scripts/recover_uploaded_receipt_cli.py"),
-              Path(".github/scripts/video_finalize/receipt_recovery.py"),
-          ]
-          for path in paths:
-              text = path.read_text(encoding="utf-8")
-              for marker in markers:
-                  if marker in text:
-                      raise SystemExit(f"forbidden marker {marker!r} in {path}")
-          print("recovery reachability gate passed")
-          PY
+          python3 .github/scripts/recovery_control_gate.py .
 
       - uses: actions/setup-python@v5
         with:
