@@ -520,6 +520,7 @@ class WorkflowStaticRecoveryTests(unittest.TestCase):
         for mode in ("preflight-one", "generate-one", "finalize-one", "full-300"):
             self.assertIn(f"- {mode}", self.text)
         self.assertIn("- recover-uploaded-receipts", self.text)
+        self.assertIn("- generate-unresolved", self.text)
         self.assertIn(
             "FULL_300_SOURCE_SHA: 69ba815e256d6f46382c9f0fa901bb3fea88c85b", self.text
         )

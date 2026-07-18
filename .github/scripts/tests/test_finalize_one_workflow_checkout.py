@@ -165,7 +165,11 @@ class ReportMappingPromotionWorkflowTests(unittest.TestCase):
         cls.produce_a = _produce_block(WORKFLOW_TEXT, "produce_a")
 
     def test_report_remains_always(self):
-        self.assertIn("if: always() && needs.plan.outputs.run_mode == 'full-300'", self.report)
+        self.assertIn("always()", self.report)
+        self.assertIn("needs.plan.outputs.run_mode == 'full-300'", self.report)
+        self.assertIn(
+            "needs.plan.outputs.run_mode == 'generate-unresolved'", self.report
+        )
 
     def test_only_report_writes_canonical_registry(self):
         self.assertIn("permissions:\n      contents: write", self.report)

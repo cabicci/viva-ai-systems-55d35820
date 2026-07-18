@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       run_mode:
-        description: "preflight-one = one safe no-paid validation; generate-one = one real paid production cell; finalize-one = reuse pinned accepted artifact + Bunny receipt; full-300 = validated 300-cell batch with per-cell finalization; recover-uploaded-receipts = receipt-only recovery for uploaded cells from run 29407852029."
+        description: "preflight-one = one safe no-paid validation; generate-one = one real paid production cell; finalize-one = reuse pinned accepted artifact + Bunny receipt; full-300 = validated 300-cell batch with per-cell finalization; recover-uploaded-receipts = receipt-only recovery for uploaded cells from run 29407852029; generate-unresolved = generate only currently unresolved approved cells (never matrix finalized cells)."
         required: true
         default: preflight-one
         type: choice
@@ -21,6 +21,7 @@ on:
           - finalize-one
           - full-300
           - recover-uploaded-receipts
+          - generate-unresolved
       retry_failed_only:
         description: "Retained for compatibility. Cross-run retry is unsupported; use Re-run failed jobs on the original run."
         required: true
@@ -100,6 +101,7 @@ jobs:
               "finalize-one",
               "full-300",
               "recover-uploaded-receipts",
+              "generate-unresolved",
           ):
               print(f"::error::Unsupported run_mode {run_mode!r}", file=sys.stderr)
               sys.exit(1)
@@ -122,6 +124,17 @@ jobs:
               print("count_a=0")
               print("count_b=0")
               print("total_count=79")
+              print("recovery_matrix=" + json.dumps([], separators=(",", ":")))
+              print("recovery_count=0")
+              sys.exit(0)
+
+          if run_mode == "generate-unresolved":
+              # Matrix is produced by unresolved_plan from live receipt evidence.
+              print("matrix_a=" + json.dumps([], separators=(",", ":")))
+              print("matrix_b=" + json.dumps([], separators=(",", ":")))
+              print("count_a=0")
+              print("count_b=0")
+              print("total_count=0")
               print("recovery_matrix=" + json.dumps([], separators=(",", ":")))
               print("recovery_count=0")
               sys.exit(0)
@@ -334,6 +347,90 @@ jobs:
             | tee recovery-plan.json
           COUNT=$(python3 -c "import json; print(json.load(open('recovery-plan.json'))['recoveryCount'])")
           test "$COUNT" = "79"
+
+  unresolved_plan:
+    name: Plan generate-unresolved matrix
+    needs: plan
+    if: needs.plan.outputs.run_mode == 'generate-unresolved'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    outputs:
+      matrix_a: ${{ steps.plan_unresolved.outputs.matrix_a }}
+      matrix_b: ${{ steps.plan_unresolved.outputs.matrix_b }}
+      count_a: ${{ steps.plan_unresolved.outputs.count_a }}
+      count_b: ${{ steps.plan_unresolved.outputs.count_b }}
+      total_count: ${{ steps.plan_unresolved.outputs.total_count }}
+      empty: ${{ steps.plan_unresolved.outputs.empty }}
+
+    steps:
+      - name: Check out immutable full-300 production source
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.FULL_300_SOURCE_SHA }}
+          fetch-depth: 0
+
+      - name: Verify pinned full-300 production source SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$FULL_300_SOURCE_SHA" = "69ba815e256d6f46382c9f0fa901bb3fea88c85b"
+          test "$(git rev-parse HEAD)" = "$FULL_300_SOURCE_SHA"
+
+      - name: Check out dispatched workflow control scripts
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: control-code
+          fetch-depth: 0
+
+      - name: Verify dispatched control SHA (fail-closed)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C control-code rev-parse HEAD)" = "${{ github.sha }}"
+          test -f control-code/.github/scripts/plan_generate_unresolved_cli.py
+          test -f control-code/.github/scripts/video_finalize/unresolved_generation_plan.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Fetch result branch receipts (read-only)
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/result-branches
+          PREFIX="video-results--${BATCH_ID}--"
+          mapfile -t REFS < <(
+            git ls-remote "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" \
+              "refs/heads/${PREFIX}*" | awk '{print $2}' | sed "s#refs/heads/##"
+          )
+          for branch in "${REFS[@]}"; do
+            key="${branch#${PREFIX}}"
+            dest="/tmp/result-branches/${key}"
+            mkdir -p "$dest"
+            git init "$dest" >/dev/null 2>&1
+            if git -C "$dest" fetch --depth=1 "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" "$branch" 2>/dev/null; then
+              git -C "$dest" checkout FETCH_HEAD >/dev/null 2>&1 || true
+            fi
+          done
+
+      - name: Build fail-closed unresolved generation matrix
+        id: plan_unresolved
+        shell: bash
+        env:
+          REPO_ROOT: ${{ github.workspace }}
+          RESULTS_FETCH_DIR: /tmp/result-branches
+        run: |
+          set -euo pipefail
+          python3 control-code/.github/scripts/plan_generate_unresolved_cli.py \
+            | tee unresolved-plan.json
+          TOTAL=$(python3 -c "import json; print(json.load(open('unresolved-plan.json'))['total_count'])")
+          echo "::notice::generate-unresolved selected ${TOTAL} cell(s)"
 
   recover_cells:
     name: Recover — ${{ matrix.locale }} — ${{ matrix.lessonId }}
@@ -977,8 +1074,18 @@ jobs:
 
   produce_a:
     name: A — ${{ matrix.locale }} — ${{ matrix.lessonId }}
-    needs: plan
-    if: needs.plan.outputs.run_mode == 'full-300' && needs.plan.outputs.count_a != '0'
+    needs: [plan, unresolved_plan]
+    if: >-
+      always() &&
+      needs.plan.result == 'success' &&
+      (
+        (needs.plan.outputs.run_mode == 'full-300' &&
+         needs.unresolved_plan.result == 'skipped' &&
+         needs.plan.outputs.count_a != '0') ||
+        (needs.plan.outputs.run_mode == 'generate-unresolved' &&
+         needs.unresolved_plan.result == 'success' &&
+         needs.unresolved_plan.outputs.count_a != '0')
+      )
     runs-on: ubuntu-latest
     timeout-minutes: 120
     permissions:
@@ -989,7 +1096,7 @@ jobs:
       fail-fast: false
       max-parallel: 2
       matrix:
-        include: ${{ fromJSON(needs.plan.outputs.matrix_a) }}
+        include: ${{ fromJSON(needs.plan.outputs.run_mode == 'generate-unresolved' && needs.unresolved_plan.outputs.matrix_a || needs.plan.outputs.matrix_a) }}
 
     env:
       LID: ${{ matrix.lessonId }}
@@ -1311,8 +1418,18 @@ jobs:
 
   produce_b:
     name: B — ${{ matrix.locale }} — ${{ matrix.lessonId }}
-    needs: plan
-    if: needs.plan.outputs.run_mode == 'full-300' && needs.plan.outputs.count_b != '0'
+    needs: [plan, unresolved_plan]
+    if: >-
+      always() &&
+      needs.plan.result == 'success' &&
+      (
+        (needs.plan.outputs.run_mode == 'full-300' &&
+         needs.unresolved_plan.result == 'skipped' &&
+         needs.plan.outputs.count_b != '0') ||
+        (needs.plan.outputs.run_mode == 'generate-unresolved' &&
+         needs.unresolved_plan.result == 'success' &&
+         needs.unresolved_plan.outputs.count_b != '0')
+      )
     runs-on: ubuntu-latest
     timeout-minutes: 120
     permissions:
@@ -1323,7 +1440,7 @@ jobs:
       fail-fast: false
       max-parallel: 2
       matrix:
-        include: ${{ fromJSON(needs.plan.outputs.matrix_b) }}
+        include: ${{ fromJSON(needs.plan.outputs.run_mode == 'generate-unresolved' && needs.unresolved_plan.outputs.matrix_b || needs.plan.outputs.matrix_b) }}
 
     env:
       LID: ${{ matrix.lessonId }}
@@ -1645,8 +1762,13 @@ jobs:
 
   report:
     name: Collect full-300 production report
-    needs: [plan, preflight_one, generate_one, finalize_one, produce_a, produce_b]
-    if: always() && needs.plan.outputs.run_mode == 'full-300'
+    needs: [plan, unresolved_plan, preflight_one, generate_one, finalize_one, produce_a, produce_b]
+    if: >-
+      always() &&
+      (
+        needs.plan.outputs.run_mode == 'full-300' ||
+        needs.plan.outputs.run_mode == 'generate-unresolved'
+      )
     runs-on: ubuntu-latest
     permissions:
       contents: write
