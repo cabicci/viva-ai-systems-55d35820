@@ -31,7 +31,6 @@ import { useCountUp } from "@/hooks/use-count-up";
 
 import { StreakCard } from "@/components/dashboard/StreakCard";
 import { useEntitlement, decideLessonGate } from "@/lib/entitlements";
-import { PhaseRibbon } from "@/components/admin/PhaseRibbon";
 
 type DashboardSearch = { path?: string; module?: string; lesson?: string; locale?: string };
 
@@ -148,7 +147,6 @@ function Dashboard() {
     <div className="min-h-dvh flex overflow-x-hidden" dir={dir}>
       <Sidebar />
       <main className="flex-1 max-w-6xl mx-auto w-full min-w-0">
-        <PhaseRibbon />
         <div className="p-6 md:p-10">
         <WelcomeHint show={noProgress} />
         <StartWowBanner />

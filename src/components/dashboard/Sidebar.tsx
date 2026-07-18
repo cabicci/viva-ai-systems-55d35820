@@ -4,12 +4,8 @@ import {
   LogOut,
   MessageCircle,
   Menu,
-  Images,
   Wrench,
   Activity,
-  Brain,
-  Terminal,
-  Map as MapIcon,
   ChevronDown,
   User,
   BarChart3,
@@ -33,13 +29,10 @@ const items: { to: string; labelKey: UiStringKey; icon: LucideIcon }[] = [
   { to: "/account", labelKey: "sidebar.account", icon: User },
 ];
 
+/** Primary Admin / System Tools entries only. Maintenance routes stay reachable by URL. */
 const devItems: { to: string; labelKey: UiStringKey; icon: LucideIcon }[] = [
   { to: "/admin", labelKey: "sidebar.admin", icon: ShieldCheck },
-  { to: "/image-gallery", labelKey: "sidebar.imageGallery", icon: Images },
-  { to: "/roadmap", labelKey: "sidebar.roadmap", icon: MapIcon },
-  { to: "/assistant-runtime", labelKey: "sidebar.assistantRuntime", icon: Brain },
   { to: "/system-state", labelKey: "sidebar.systemState", icon: Activity },
-  { to: "/build-logs", labelKey: "sidebar.buildLogs", icon: Terminal },
 ];
 
 export function Sidebar() {

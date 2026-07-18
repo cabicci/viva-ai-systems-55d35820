@@ -25,7 +25,6 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { PhaseRibbon } from "@/components/admin/PhaseRibbon";
 
 export const Route = createFileRoute("/admin/")({
   head: () => ({ meta: [{ title: "لوحة الإدارة — مسارات" }] }),
@@ -101,19 +100,26 @@ function AdminDashboard() {
 
   return (
     <div className="min-h-dvh bg-background">
-      <PhaseRibbon />
       <header className="border-b border-border/60 bg-card/50 backdrop-blur sticky top-0 z-30">
-        <div className="container mx-auto px-4 h-14 flex items-center justify-between">
+        <div className="container mx-auto px-4 h-14 flex items-center justify-between gap-3">
           <div className="flex items-center gap-2 font-bold">
             <Crown className="h-5 w-5 text-primary" />
             لوحة الإدارة
           </div>
-          <Button asChild variant="ghost" size="sm">
-            <Link to="/dashboard">
-              <ArrowLeft className="h-4 w-4 rotate-180 ml-1" />
-              لوحتي
-            </Link>
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button asChild variant="outline" size="sm">
+              <Link to="/system-state">
+                <Activity className="h-4 w-4 ml-1" />
+                استمرارية المشروع
+              </Link>
+            </Button>
+            <Button asChild variant="ghost" size="sm">
+              <Link to="/dashboard">
+                <ArrowLeft className="h-4 w-4 rotate-180 ml-1" />
+                لوحتي
+              </Link>
+            </Button>
+          </div>
         </div>
       </header>
 
