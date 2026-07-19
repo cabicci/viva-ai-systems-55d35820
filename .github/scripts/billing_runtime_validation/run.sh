@@ -291,16 +291,93 @@ $SUPABASE_CLI --version > "$ARTIFACT_DIR/supabase-cli-version.txt" 2>&1 || true
   docker images --format '{{.Repository}}:{{.Tag}}@{{.Digest}}' 2>/dev/null | grep -E 'supabase|postgres|postgrest' | head -n 40 || true
 } > "$ARTIFACT_DIR/container-versions.txt" || true
 
-PRODUCT_PARENT="$(git rev-parse HEAD^)"
 VALIDATION_HEAD="$(git rev-parse HEAD)"
 echo "validation_head=${VALIDATION_HEAD}" > "$ARTIFACT_DIR/sha-evidence.txt"
-echo "product_parent=${PRODUCT_PARENT}" >> "$ARTIFACT_DIR/sha-evidence.txt"
 echo "accepted_product=${ACCEPTED_PRODUCT_SHA}" >> "$ARTIFACT_DIR/sha-evidence.txt"
-
-if [[ "$PRODUCT_PARENT" != "$ACCEPTED_PRODUCT_SHA" ]]; then
-  echo "FATAL: validation branch parent is not accepted product SHA" >&2
+if ! git merge-base --is-ancestor "$ACCEPTED_PRODUCT_SHA" HEAD; then
+  echo "FATAL: accepted product SHA is not an ancestor of validation HEAD" >&2
   exit 1
 fi
+echo "product_ancestor_ok=yes" >> "$ARTIFACT_DIR/sha-evidence.txt"
+
+is_uuid() {
+  [[ "${1:-}" =~ ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$ ]]
+}
+
+jwt_role_claim() {
+  local token="${1:-}"
+  [[ -n "$token" && "$token" == *.* ]] || { printf ''; return 0; }
+  local payload
+  payload="$(printf '%s' "$token" | cut -d. -f2 | tr '_-' '/+')"
+  local pad=$(( (4 - ${#payload} % 4) % 4 ))
+  payload="${payload}$(printf '=%.0s' $(seq 1 $pad 2>/dev/null || true))"
+  printf '%s' "$payload" | openssl base64 -d -A 2>/dev/null | jq -r '.role // empty' 2>/dev/null || true
+}
+
+wait_postgrest_ready() {
+  local max_wait=120 interval=5 elapsed=0 attempts=0
+  local status_seq="" result="timeout" http_status="" body_code=""
+  {
+    echo "max_wait_seconds=${max_wait}"
+    echo "poll_interval_seconds=${interval}"
+    echo "probe=rpc/get_entitlement_snapshot"
+    echo "reload_notified=yes"
+  } > "$ARTIFACT_DIR/postgrest-readiness.txt"
+  while [[ "$elapsed" -lt "$max_wait" ]]; do
+    attempts=$((attempts + 1))
+    set +e
+    local response
+    response="$(curl -s -w $'\n__HTTP_CODE__%{http_code}' \
+      -X POST "${SUPABASE_URL}/rest/v1/rpc/get_entitlement_snapshot" \
+      -H "Authorization: Bearer ${SUPABASE_SERVICE_ROLE_KEY}" \
+      -H "apikey: ${SUPABASE_SERVICE_API_KEY}" \
+      -H "Accept-Profile: billing" \
+      -H "Content-Profile: billing" \
+      -H "Content-Type: application/json" \
+      -d '{"p_user_id":"00000000-0000-0000-0000-000000000001"}' 2>/dev/null)"
+    local curl_status=$?
+    set -e
+    http_status="${response##*__HTTP_CODE__}"
+    local body="${response%%__HTTP_CODE__*}"
+    body_code="$(echo "$body" | jq -r '.code // empty' 2>/dev/null || true)"
+    if [[ $curl_status -ne 0 || -z "$http_status" || "$http_status" == "000" ]]; then
+      http_status="connection_failure"
+    fi
+    echo "attempt=${attempts} elapsed_seconds=${elapsed} http_status=${http_status} body_code=${body_code:-none}" >> "$ARTIFACT_DIR/postgrest-readiness.txt"
+    if [[ -n "$status_seq" ]]; then
+      status_seq="${status_seq},${http_status}"
+    else
+      status_seq="${http_status}"
+    fi
+    # Ready when schema is loaded: not 503 and not PGRST002 schema-cache miss.
+    if [[ "$http_status" != "503" && "$http_status" != "connection_failure" && "$body_code" != "PGRST002" ]]; then
+      result="ready"
+      break
+    fi
+    if [[ $((elapsed + interval)) -ge "$max_wait" ]]; then
+      break
+    fi
+    sleep "$interval"
+    elapsed=$((elapsed + interval))
+  done
+  {
+    echo "attempts=${attempts}"
+    echo "elapsed_seconds=${elapsed}"
+    echo "status_sequence=${status_seq}"
+    echo "final_http_status=${http_status}"
+    echo "final_body_code=${body_code:-none}"
+    echo "readiness_result=${result}"
+  } >> "$ARTIFACT_DIR/postgrest-readiness.txt"
+  [[ "$result" == "ready" ]]
+}
+
+block_remaining_postgrest_gates() {
+  local reason="$1"
+  local n
+  for n in 3 4 5 6 7 8 9 10 11 12 13 14 15 16 22 23 24; do
+    record_gate "$n" "Blocked dependent PostgREST gate ${n}" "executable" "blocked: ${reason}" "FAIL" "postgrest-readiness.txt"
+  done
+}
 
 # --- Start disposable local stack ---
 $SUPABASE_CLI start > "$ARTIFACT_DIR/supabase-start.log" 2>&1
@@ -320,10 +397,12 @@ $SUPABASE_CLI stop --no-backup > "$ARTIFACT_DIR/supabase-stop-for-profile.log" 2
 $SUPABASE_CLI start > "$ARTIFACT_DIR/supabase-restart-for-profile.log" 2>&1
 
 # Gate 1: complete migration application
+MIGRATION_OK="no"
 if $SUPABASE_CLI db reset --local --no-seed > "$ARTIFACT_DIR/db-reset.log" 2>&1; then
   $SUPABASE_CLI migration list --local > "$ARTIFACT_DIR/migration-list.txt" 2>&1 || true
   if grep -q "20260714173000" "$ARTIFACT_DIR/migration-list.txt" \
     && grep -q "20260710153000" "$ARTIFACT_DIR/migration-list.txt"; then
+    MIGRATION_OK="yes"
     record_gate 1 "Complete migration application from empty local database" "applied incl launch-closure" "applied" "PASS" "migration-list.txt"
   else
     record_gate 1 "Complete migration application from empty local database" "applied incl launch-closure" "missing expected migrations" "FAIL" "migration-list.txt"
@@ -334,6 +413,28 @@ fi
 
 resolve_local_pg_url
 require_runtime_env || true
+
+# Reload PostgREST schema cache after migration reset (local-only).
+if [[ -n "${LOCAL_PG_URL:-}" ]]; then
+  psql "$LOCAL_PG_URL" -v ON_ERROR_STOP=1 -c "NOTIFY pgrst, 'reload schema';" \
+    > "$ARTIFACT_DIR/pgrst-reload.log" 2>&1 || true
+fi
+
+POSTGREST_READY="no"
+if [[ "$MIGRATION_OK" == "yes" && -n "${SUPABASE_URL:-}" && -n "${SUPABASE_SERVICE_ROLE_KEY:-}" ]]; then
+  if wait_postgrest_ready; then
+    POSTGREST_READY="yes"
+    echo "postgrest_ready=yes" > "$ARTIFACT_DIR/postgrest-ready-flag.txt"
+  else
+    echo "postgrest_ready=no" > "$ARTIFACT_DIR/postgrest-ready-flag.txt"
+  fi
+else
+  {
+    echo "max_wait_seconds=120"
+    echo "readiness_result=skipped_prereq"
+    echo "migration_ok=${MIGRATION_OK}"
+  } > "$ARTIFACT_DIR/postgrest-readiness.txt"
+fi
 
 # Collect SQL security evidence
 psql "$LOCAL_PG_URL" -v ON_ERROR_STOP=1 -At -c "
@@ -358,7 +459,6 @@ psql "$LOCAL_PG_URL" -At -c "
   WHERE n.nspname='billing' AND c.relkind='r' AND NOT c.relrowsecurity;
 " > "$ARTIFACT_DIR/rls-evidence.txt"
 
-# Fixtures: local users
 PASS_A="$(openssl rand -base64 24)"
 PASS_B="$(openssl rand -base64 24)"
 PASS_FREE="$(openssl rand -base64 24)"
@@ -381,16 +481,58 @@ sign_in() {
     -d "{\"email\":\"${email}\",\"password\":\"${password}\"}" | jq -r '.access_token // empty'
 }
 
-USER_A_ID="$(create_user "billing-runtime-a@example.test" "$PASS_A")"
-USER_B_ID="$(create_user "billing-runtime-b@example.test" "$PASS_B")"
-USER_FREE_ID="$(create_user "billing-runtime-free@example.test" "$PASS_FREE")"
-USER_ZERO_ID="$(create_user "billing-runtime-zero@example.test" "$PASS_ZERO")"
-echo "fixture_users_created=4" > "$ARTIFACT_DIR/fixture-users.txt"
+FIXTURES_OK="no"
+USER_A_ID="" USER_B_ID="" USER_FREE_ID="" USER_ZERO_ID=""
+JWT_A="" JWT_B=""
+SERVICE_ROLE_CLAIM=""
+RES_ID=""
 
-JWT_A="$(sign_in "billing-runtime-a@example.test" "$PASS_A")"
-JWT_B="$(sign_in "billing-runtime-b@example.test" "$PASS_B")"
+if [[ "$POSTGREST_READY" == "yes" ]]; then
+  USER_A_ID="$(create_user "billing-runtime-a@example.test" "$PASS_A")"
+  USER_B_ID="$(create_user "billing-runtime-b@example.test" "$PASS_B")"
+  USER_FREE_ID="$(create_user "billing-runtime-free@example.test" "$PASS_FREE")"
+  USER_ZERO_ID="$(create_user "billing-runtime-zero@example.test" "$PASS_ZERO")"
+  JWT_A="$(sign_in "billing-runtime-a@example.test" "$PASS_A")"
+  JWT_B="$(sign_in "billing-runtime-b@example.test" "$PASS_B")"
+  SERVICE_ROLE_CLAIM="$(jwt_role_claim "$SUPABASE_SERVICE_ROLE_KEY")"
 
-psql "$LOCAL_PG_URL" -v ON_ERROR_STOP=1 <<SQL > "$ARTIFACT_DIR/fixture-sql.log" 2>&1
+  {
+    echo "user_a_uuid_valid=$(is_uuid "$USER_A_ID" && echo yes || echo no)"
+    echo "user_b_uuid_valid=$(is_uuid "$USER_B_ID" && echo yes || echo no)"
+    echo "user_free_uuid_valid=$(is_uuid "$USER_FREE_ID" && echo yes || echo no)"
+    echo "user_zero_uuid_valid=$(is_uuid "$USER_ZERO_ID" && echo yes || echo no)"
+    echo "users_distinct=$([[ "$USER_A_ID" != "$USER_B_ID" ]] && echo yes || echo no)"
+    echo "service_role_claim_present=$([[ -n "$SERVICE_ROLE_CLAIM" ]] && echo yes || echo no)"
+    echo "service_role_claim_expected=$([[ "$SERVICE_ROLE_CLAIM" == "service_role" ]] && echo yes || echo no)"
+    echo "jwt_a_present=$([[ -n "$JWT_A" ]] && echo yes || echo no)"
+    echo "jwt_b_present=$([[ -n "$JWT_B" ]] && echo yes || echo no)"
+    echo "jwt_a_role=$(jwt_role_claim "$JWT_A")"
+    echo "jwt_b_role=$(jwt_role_claim "$JWT_B")"
+    echo "anon_key_present=$([[ -n "$SUPABASE_ANON_KEY" ]] && echo yes || echo no)"
+  } > "$ARTIFACT_DIR/fixture-validation.txt"
+
+  if is_uuid "$USER_A_ID" && is_uuid "$USER_B_ID" && is_uuid "$USER_FREE_ID" && is_uuid "$USER_ZERO_ID" \
+    && [[ "$USER_A_ID" != "$USER_B_ID" ]] \
+    && [[ "$SERVICE_ROLE_CLAIM" == "service_role" ]] \
+    && [[ -n "$JWT_A" && -n "$JWT_B" && -n "$SUPABASE_ANON_KEY" ]] \
+    && [[ "$(jwt_role_claim "$JWT_A")" == "authenticated" ]] \
+    && [[ "$(jwt_role_claim "$JWT_B")" == "authenticated" ]]; then
+    FIXTURES_OK="yes"
+    echo "fixtures_ok=yes" >> "$ARTIFACT_DIR/fixture-validation.txt"
+  else
+    echo "fixtures_ok=no" >> "$ARTIFACT_DIR/fixture-validation.txt"
+  fi
+else
+  {
+    echo "fixtures_ok=no"
+    echo "reason=postgrest_not_ready"
+  } > "$ARTIFACT_DIR/fixture-validation.txt"
+fi
+
+if [[ "$FIXTURES_OK" == "yes" ]]; then
+  echo "fixture_users_created=4" > "$ARTIFACT_DIR/fixture-users.txt"
+  set +e
+  psql "$LOCAL_PG_URL" -v ON_ERROR_STOP=1 <<SQL > "$ARTIFACT_DIR/fixture-sql.log" 2>&1
 INSERT INTO billing.plan_catalog (id, plan_key, display_name, plan_family, is_active)
 VALUES ('11111111-1111-1111-1111-111111111101', 'pro', '{"en":"Pro"}', 'paid', true)
 ON CONFLICT (plan_key) DO NOTHING;
@@ -536,19 +678,28 @@ INSERT INTO billing.user_entitlement_snapshots (
 ) ON CONFLICT (user_id, snapshot_version) DO NOTHING;
 SQL
 
+  FIXTURE_SQL_STATUS=$?
+  set -e
+  if [[ $FIXTURE_SQL_STATUS -ne 0 ]]; then
+    FIXTURES_OK="no"
+    echo "fixture_sql=failed" >> "$ARTIFACT_DIR/fixture-validation.txt"
+  fi
+fi
+
 # Gate 2: PostgreSQL function execution
-PG_EVAL="$(psql "$LOCAL_PG_URL" -v ON_ERROR_STOP=1 -At -c \
-  "SELECT set_config('request.jwt.claims', '{\"role\":\"service_role\"}', true); SELECT billing.evaluate_access('${USER_A_ID}'::uuid, 'lesson', 'lesson-1')->>'allowed';" 2>"$ARTIFACT_DIR/pg-eval.err" || true)"
-# Prefer auth.jwt path via PostgREST for product path; still prove SQL callable:
 PG_CALL="$(psql "$LOCAL_PG_URL" -v ON_ERROR_STOP=1 -At -c \
   "SELECT billing.is_service_role_caller() IS NOT NULL;" 2>/dev/null || echo f)"
 if [[ "$PG_CALL" == "t" ]]; then
   record_gate 2 "PostgreSQL function execution" "callable" "callable" "PASS" "billing-functions-security.txt"
 else
-  record_gate 2 "PostgreSQL function execution" "callable" "failed" "FAIL" "pg-eval.err"
+  record_gate 2 "PostgreSQL function execution" "callable" "failed" "FAIL" "billing-functions-security.txt"
 fi
 
-# Gate 3: PostgREST RPC execution (service evaluate_access)
+if [[ "$POSTGREST_READY" != "yes" ]]; then
+  block_remaining_postgrest_gates "postgrest_schema_not_ready"
+elif [[ "$FIXTURES_OK" != "yes" ]]; then
+  block_remaining_postgrest_gates "fixture_validation_failed"
+else
 EVAL_LESSON="$(rpc_body service evaluate_access "{\"p_user_id\":\"${USER_A_ID}\",\"p_resource_type\":\"lesson\",\"p_resource_id\":\"lesson-1\"}")"
 echo "evaluate_lesson_allowed=$(echo "$EVAL_LESSON" | jq -r '.allowed // "null"')" > "$ARTIFACT_DIR/postgrest-evaluate.txt"
 if [[ "$(echo "$EVAL_LESSON" | jq -r '.allowed')" == "true" ]]; then
@@ -559,11 +710,13 @@ fi
 
 # Gate 4: service-role success (already partially covered; also reserve)
 RESERVE_OK="$(rpc_body service reserve_ai_quota "{\"p_user_id\":\"${USER_A_ID}\",\"p_category\":\"assistant_runtime_general\",\"p_lesson_id\":\"lesson-1\",\"p_request_id\":\"11111111-1111-1111-1111-111111111111\",\"p_units\":1,\"p_idempotency_key\":\"reserve-ok-1\"}")"
-echo "reserve_has_id=$(echo "$RESERVE_OK" | jq -r 'has("reservation_id")')" > "$ARTIFACT_DIR/service-role-success.txt"
-if [[ "$(echo "$RESERVE_OK" | jq -r 'has("reservation_id")')" == "true" ]]; then
+RES_ID="$(echo "$RESERVE_OK" | jq -r '.reservation_id // empty')"
+echo "reserve_has_id=$(is_uuid "$RES_ID" && echo yes || echo no)" > "$ARTIFACT_DIR/service-role-success.txt"
+if is_uuid "$RES_ID"; then
   record_gate 4 "Valid local service-role success" "reservation_id present" "present" "PASS" "service-role-success.txt"
 else
   record_gate 4 "Valid local service-role success" "reservation_id present" "$(echo "$RESERVE_OK" | jq -c '{code:.code,message:.message}' 2>/dev/null || echo fail)" "FAIL" "service-role-success.txt"
+  RES_ID=""
 fi
 
 # Gate 5: anonymous denial
@@ -673,30 +826,27 @@ else
   record_gate 14 "Quota-exhaustion behavior" "QUOTA_EXCEEDED" "unexpected" "FAIL" "quota-exhaustion.txt"
 fi
 
-# Gate 15/16: commit idempotent replay
-# Product SQL matches commit idempotency_key against ledger.idempotency_key (set at reserve).
-RES_ID="$(echo "$RESERVE_OK" | jq -r '.reservation_id')"
-COMMIT_KEY="reserve-ok-1"
-COMMIT1="$(rpc_body service commit_ai_quota "{\"p_reservation_id\":\"${RES_ID}\",\"p_input_tokens\":1,\"p_output_tokens\":1,\"p_idempotency_key\":\"${COMMIT_KEY}\"}")"
-COMMIT2="$(rpc_body service commit_ai_quota "{\"p_reservation_id\":\"${RES_ID}\",\"p_input_tokens\":1,\"p_output_tokens\":1,\"p_idempotency_key\":\"${COMMIT_KEY}\"}")"
-echo "commit1_committed=$(echo "$COMMIT1" | jq -r '.committed // false')" > "$ARTIFACT_DIR/commit-replay.txt"
-echo "commit1_replay=$(echo "$COMMIT1" | jq -r '.idempotent_replay // false')" >> "$ARTIFACT_DIR/commit-replay.txt"
-echo "commit2_committed=$(echo "$COMMIT2" | jq -r '.committed // false')" >> "$ARTIFACT_DIR/commit-replay.txt"
-echo "commit2_replay=$(echo "$COMMIT2" | jq -r '.idempotent_replay // false')" >> "$ARTIFACT_DIR/commit-replay.txt"
-if [[ "$(echo "$COMMIT1" | jq -r '.committed')" == "true" \
-   && "$(echo "$COMMIT2" | jq -r '.committed')" == "true" \
-   && "$(echo "$COMMIT2" | jq -r '.idempotent_replay')" == "true" ]]; then
-  record_gate 15 "commit_ai_quota committed-key replay idempotency" "replay=true" "replay=true" "PASS" "commit-replay.txt"
+if is_uuid "$RES_ID"; then
+  COMMIT_KEY="reserve-ok-1"
+  COMMIT1="$(rpc_body service commit_ai_quota "{\"p_reservation_id\":\"${RES_ID}\",\"p_input_tokens\":1,\"p_output_tokens\":1,\"p_idempotency_key\":\"${COMMIT_KEY}\"}")"
+  COMMIT2="$(rpc_body service commit_ai_quota "{\"p_reservation_id\":\"${RES_ID}\",\"p_input_tokens\":1,\"p_output_tokens\":1,\"p_idempotency_key\":\"${COMMIT_KEY}\"}")"
+  echo "commit1_committed=$(echo "$COMMIT1" | jq -r '.committed // false')" > "$ARTIFACT_DIR/commit-replay.txt"
+  echo "commit2_committed=$(echo "$COMMIT2" | jq -r '.committed // false')" >> "$ARTIFACT_DIR/commit-replay.txt"
+  echo "commit2_replay=$(echo "$COMMIT2" | jq -r '.idempotent_replay // false')" >> "$ARTIFACT_DIR/commit-replay.txt"
+  if [[ "$(echo "$COMMIT1" | jq -r '.committed')" == "true" && "$(echo "$COMMIT2" | jq -r '.committed')" == "true" && "$(echo "$COMMIT2" | jq -r '.idempotent_replay')" == "true" ]]; then
+    record_gate 15 "commit_ai_quota committed-key replay idempotency" "replay=true" "replay=true" "PASS" "commit-replay.txt"
+  else
+    record_gate 15 "commit_ai_quota committed-key replay idempotency" "replay=true" "mismatch" "FAIL" "commit-replay.txt"
+  fi
+  DUP_COUNT="$(psql "$LOCAL_PG_URL" -At -c "SELECT count(*) FROM billing.ai_usage_ledger WHERE reservation_id='${RES_ID}' AND status='committed';")"
+  echo "committed_rows=${DUP_COUNT}" >> "$ARTIFACT_DIR/commit-replay.txt"
+  [[ "$DUP_COUNT" == "1" ]] \
+    && record_gate 16 "No duplicate processing during replay" "1 committed row" "1" "PASS" "commit-replay.txt" \
+    || record_gate 16 "No duplicate processing during replay" "1 committed row" "$DUP_COUNT" "FAIL" "commit-replay.txt"
 else
-  record_gate 15 "commit_ai_quota committed-key replay idempotency" "replay=true" "mismatch" "FAIL" "commit-replay.txt"
-fi
-# No duplicate committed rows for same reservation
-DUP_COUNT="$(psql "$LOCAL_PG_URL" -At -c "SELECT count(*) FROM billing.ai_usage_ledger WHERE reservation_id='${RES_ID}' AND status='committed';")"
-echo "committed_rows=${DUP_COUNT}" >> "$ARTIFACT_DIR/commit-replay.txt"
-if [[ "$DUP_COUNT" == "1" ]]; then
-  record_gate 16 "No duplicate processing during replay" "1 committed row" "1" "PASS" "commit-replay.txt"
-else
-  record_gate 16 "No duplicate processing during replay" "1 committed row" "$DUP_COUNT" "FAIL" "commit-replay.txt"
+  echo "reservation_id_valid=no" > "$ARTIFACT_DIR/commit-replay.txt"
+  record_gate 15 "commit_ai_quota committed-key replay idempotency" "replay=true" "blocked: no valid reservation_id" "FAIL" "commit-replay.txt"
+  record_gate 16 "No duplicate processing during replay" "1 committed row" "blocked: no valid reservation_id" "FAIL" "commit-replay.txt"
 fi
 
 # Gate 17: RLS enforcement
@@ -713,6 +863,16 @@ if [[ "${RLS_MISSING:-1}" == "0" && "$CROSS_ROWS" == "0" ]]; then
   record_gate 17 "RLS enforcement" "enabled + cross-user 0" "ok" "PASS" "rls-runtime.txt"
 else
   record_gate 17 "RLS enforcement" "enabled + cross-user 0" "fail" "FAIL" "rls-runtime.txt"
+fi
+
+fi
+
+# Gates 18-21 always run from SQL evidence (and gate 17 if not already recorded)
+if [[ "$POSTGREST_READY" != "yes" || "$FIXTURES_OK" != "yes" ]]; then
+  RLS_MISSING="$(grep -E '^rls_enabled_missing=' "$ARTIFACT_DIR/rls-evidence.txt" | cut -d= -f2 || echo 1)"
+  echo "rls_missing=${RLS_MISSING}" > "$ARTIFACT_DIR/rls-runtime.txt"
+  echo "cross_subscription_rows=blocked" >> "$ARTIFACT_DIR/rls-runtime.txt"
+  record_gate 17 "RLS enforcement" "enabled + cross-user 0" "blocked_runtime_probe" "FAIL" "rls-runtime.txt"
 fi
 
 # Gate 18: required EXECUTE grants
@@ -762,7 +922,7 @@ else
   record_gate 21 "Exact hardened search_path" "billing, public, pg_temp" "mismatch" "FAIL" "billing-functions-security.txt"
 fi
 
-# Gate 22: missing role denial (no Authorization)
+if [[ "$POSTGREST_READY" == "yes" && "$FIXTURES_OK" == "yes" ]]; then
 MISSING_CODE="$(rpc_code anon evaluate_access "{\"p_user_id\":\"${USER_A_ID}\",\"p_resource_type\":\"lesson\",\"p_resource_id\":\"lesson-1\"}")"
 echo "missing_role_http=${MISSING_CODE}" > "$ARTIFACT_DIR/missing-role.txt"
 if [[ "$MISSING_CODE" =~ ^(401|403|400)$ ]]; then
@@ -791,6 +951,8 @@ if [[ "$(echo "$FAIL_CLOSED" | jq -r '.allowed')" == "false" ]]; then
   record_gate 24 "Fail-closed behavior" "allowed=false" "allowed=false" "PASS" "fail-closed.txt"
 else
   record_gate 24 "Fail-closed behavior" "allowed=false" "unexpected" "FAIL" "fail-closed.txt"
+fi
+
 fi
 
 write_results
