@@ -106,22 +106,37 @@ class Full300ProductionPinWorkflowTests(unittest.TestCase):
             "FULL_300_SOURCE_SHA: 69ba815e256d6f46382c9f0fa901bb3fea88c85b",
             self.text,
         )
+        self.assertIn(
+            "REPAIR_SOURCE_SHA: 71fbe483b931cba91bedb1feadb1941092518890",
+            self.text,
+        )
 
     def test_produce_jobs_checkout_and_verify_full_300_pin(self):
         for block in (self.produce_a, self.produce_b):
             with self.subTest(job=block.split(":")[0].strip()):
-                self.assertRegex(
+                self.assertIn("Check out immutable production source baseline", block)
+                self.assertIn(
+                    "needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b'",
                     block,
-                    r"Check out immutable production source baseline[\s\S]*?"
-                    r"ref: \$\{\{ env\.FULL_300_SOURCE_SHA \}\}",
                 )
-                self.assertIn("Verify pinned full-300 production source SHA", block)
+                self.assertIn("Verify pinned production source SHA", block)
                 self.assertIn(
                     'test "$FULL_300_SOURCE_SHA" = "69ba815e256d6f46382c9f0fa901bb3fea88c85b"',
                     block,
                 )
-                self.assertIn('test "$(git rev-parse HEAD)" = "$FULL_300_SOURCE_SHA"', block)
-                self.assertIn("PRODUCTION_SOURCE_SHA: 69ba815e256d6f46382c9f0fa901bb3fea88c85b", block)
+                self.assertIn(
+                    'test "$REPAIR_SOURCE_SHA" = "71fbe483b931cba91bedb1feadb1941092518890"',
+                    block,
+                )
+                self.assertIn('test "$(git rev-parse HEAD)" = "$EXPECTED"', block)
+                self.assertIn(
+                    "SOURCE_SHA: ${{ needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b' }}",
+                    block,
+                )
+                self.assertIn(
+                    "PRODUCTION_SOURCE_SHA: ${{ needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b' }}",
+                    block,
+                )
 
     def test_collect_report_checkout_and_verify_full_300_pin(self):
         self.assertRegex(
@@ -130,8 +145,12 @@ class Full300ProductionPinWorkflowTests(unittest.TestCase):
             r"ref: \$\{\{ env\.FULL_300_SOURCE_SHA \}\}",
         )
         self.assertIn("Verify pinned full-300 production source SHA", self.report)
-        self.assertIn('source_sha=${{ env.FULL_300_SOURCE_SHA }}', self.report)
-        self.assertIn("pattern: full-300-${{ env.FULL_300_SOURCE_SHA }}-*", self.report)
+        self.assertIn("source_sha=${{ env.FULL_300_SOURCE_SHA }}", self.report)
+        self.assertIn("source_sha=${{ env.REPAIR_SOURCE_SHA }}", self.report)
+        self.assertIn(
+            "pattern: full-300-${{ needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b' }}-*",
+            self.report,
+        )
 
     def test_receipt_guard_before_paid_steps(self):
         for block in (self.produce_a, self.produce_b):

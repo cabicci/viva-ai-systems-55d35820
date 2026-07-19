@@ -13,13 +13,26 @@ from pathlib import Path
 from typing import Any
 
 from .constants import (
+    ACCEPTED_CARRY_FORWARD_CELL,
+    ACCEPTED_CARRY_FORWARD_LOGICAL_KEY,
     BATCH_ID,
     FULL_300_SOURCE_SHA_PIN,
+    SOURCE_SHA_PIN,
     receipt_relpath,
 )
-from .mapping_promotion import validate_receipt_for_promotion
+from .mapping_promotion import is_valid_uuid
 from .receipt import ReceiptError, validate_receipt
 from .recovery_plan import load_authoritative_logical_keys
+
+# Immutable production source for the repaired final-three generation path.
+# Historical receipts remain accepted under FULL_300_SOURCE_SHA_PIN / carry-forward.
+REPAIR_SOURCE_SHA_PIN = "71fbe483b931cba91bedb1feadb1941092518890"
+ACCEPTED_FINALIZED_SOURCE_SHAS = frozenset(
+    {
+        FULL_300_SOURCE_SHA_PIN,
+        REPAIR_SOURCE_SHA_PIN,
+    }
+)
 
 # Immutable approved generation universe (deterministic order).
 # Locale order: en → ar-MSA → ar-Gulf; within locale: manifest lesson order.
@@ -71,6 +84,64 @@ VOICE_PROFILES = {
 
 class UnresolvedPlanError(ValueError):
     pass
+
+
+def _receipt_matches_carry_forward(receipt: dict[str, Any]) -> bool:
+    return all(
+        receipt.get(field) == expected
+        for field, expected in ACCEPTED_CARRY_FORWARD_CELL.items()
+    )
+
+
+def validate_receipt_for_unresolved_exclusion(
+    receipt: dict[str, Any],
+    *,
+    logical_key: str,
+    expected_logical_keys: set[str],
+    branch_logical_key: str | None = None,
+) -> tuple[str | None, str | None]:
+    """Accept finalized receipts under exact historical + repair source pins only.
+
+    Fail closed for unknown sourceSha values (no generic bypass).
+    """
+    try:
+        validate_receipt(receipt)
+    except ReceiptError as e:
+        return None, str(e)
+
+    if logical_key not in expected_logical_keys:
+        return None, "logical key not in expected manifest"
+    if receipt.get("logicalKey") != logical_key:
+        return None, "receipt logicalKey mismatch"
+    if branch_logical_key is not None and branch_logical_key != logical_key:
+        return None, "receipt branch identity mismatch"
+    if receipt.get("batchId") != BATCH_ID:
+        return None, "batchId mismatch"
+    if receipt.get("validationStatus") != "finalized":
+        return None, "validationStatus must be finalized"
+
+    locale = str(receipt.get("locale") or "")
+    lesson_id = str(receipt.get("lessonId") or "")
+    if locale not in LOCALIZED_LOCALES:
+        return None, f"locale {locale!r} not promotable"
+    if locale == "ar-EG":
+        return None, "ar-EG receipt not promotable"
+    if f"{lesson_id}__{locale}" != logical_key:
+        return None, "lessonId/locale disagree with logical key"
+
+    guid = str(receipt.get("bunnyGuid") or "")
+    if not is_valid_uuid(guid):
+        return None, "bunnyGuid is not a valid UUID"
+
+    if logical_key == ACCEPTED_CARRY_FORWARD_LOGICAL_KEY:
+        if not _receipt_matches_carry_forward(receipt):
+            return None, "accepted carry-forward identity mismatch"
+        if receipt.get("sourceSha") != SOURCE_SHA_PIN:
+            return None, "accepted carry-forward sourceSha mismatch"
+    elif receipt.get("sourceSha") not in ACCEPTED_FINALIZED_SOURCE_SHAS:
+        return None, "sourceSha not in accepted historical/repair set"
+
+    return guid, None
 
 
 def _locale_of(logical_key: str) -> str:
@@ -140,7 +211,7 @@ def collect_validated_finalized_keys(
             validate_receipt(receipt)
         except ReceiptError as e:
             raise UnresolvedPlanError(f"malformed receipt for {logical_key}: {e}") from e
-        guid, err = validate_receipt_for_promotion(
+        guid, err = validate_receipt_for_unresolved_exclusion(
             receipt,
             logical_key=logical_key,
             expected_logical_keys=authoritative,
@@ -338,5 +409,6 @@ def load_plan_from_repo(
     )
 
 
-# Re-export pin for tests
+# Re-export pins for tests
 FULL_300_SOURCE_SHA = FULL_300_SOURCE_SHA_PIN
+REPAIR_SOURCE_SHA = REPAIR_SOURCE_SHA_PIN

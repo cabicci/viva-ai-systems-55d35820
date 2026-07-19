@@ -38,6 +38,7 @@ concurrency:
 env:
   SOURCE_SHA: 6cfd019d315ec3f5a30ffc83bd551f4deb52385c
   FULL_300_SOURCE_SHA: 69ba815e256d6f46382c9f0fa901bb3fea88c85b
+  REPAIR_SOURCE_SHA: 71fbe483b931cba91bedb1feadb1941092518890
   OFFICIAL_LOGO_PATH: public/brand/masaarat-logo-lockup.png
   OFFICIAL_LOGO_SHA256: 60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706
   BATCH_ID: video-full-300-localized-v1
@@ -1104,22 +1105,29 @@ jobs:
       COMPOSITE_KEY: ${{ matrix.compositeKey }}
       CELL_ID: ${{ matrix.cellId }}
       LESSON_PACKAGE_PATH: ${{ matrix.packagePath }}
-      SOURCE_SHA: 69ba815e256d6f46382c9f0fa901bb3fea88c85b
-      PRODUCTION_SOURCE_SHA: 69ba815e256d6f46382c9f0fa901bb3fea88c85b
+      SOURCE_SHA: ${{ needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b' }}
+      PRODUCTION_SOURCE_SHA: ${{ needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b' }}
 
     steps:
       - name: Check out immutable production source baseline
         uses: actions/checkout@v4
         with:
-          ref: ${{ env.FULL_300_SOURCE_SHA }}
+          ref: ${{ needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b' }}
           fetch-depth: 0
 
-      - name: Verify pinned full-300 production source SHA
+      - name: Verify pinned production source SHA
         shell: bash
         run: |
           set -euo pipefail
           test "$FULL_300_SOURCE_SHA" = "69ba815e256d6f46382c9f0fa901bb3fea88c85b"
-          test "$(git rev-parse HEAD)" = "$FULL_300_SOURCE_SHA"
+          test "$REPAIR_SOURCE_SHA" = "71fbe483b931cba91bedb1feadb1941092518890"
+          EXPECTED="$FULL_300_SOURCE_SHA"
+          if [ "${{ needs.plan.outputs.run_mode }}" = "generate-unresolved" ]; then
+            EXPECTED="$REPAIR_SOURCE_SHA"
+          fi
+          test "$(git rev-parse HEAD)" = "$EXPECTED"
+          test "$SOURCE_SHA" = "$EXPECTED"
+          test "$PRODUCTION_SOURCE_SHA" = "$EXPECTED"
 
       - name: Verify official Masaarat logo (path + SHA256)
         shell: bash
@@ -1448,22 +1456,29 @@ jobs:
       COMPOSITE_KEY: ${{ matrix.compositeKey }}
       CELL_ID: ${{ matrix.cellId }}
       LESSON_PACKAGE_PATH: ${{ matrix.packagePath }}
-      SOURCE_SHA: 69ba815e256d6f46382c9f0fa901bb3fea88c85b
-      PRODUCTION_SOURCE_SHA: 69ba815e256d6f46382c9f0fa901bb3fea88c85b
+      SOURCE_SHA: ${{ needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b' }}
+      PRODUCTION_SOURCE_SHA: ${{ needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b' }}
 
     steps:
       - name: Check out immutable production source baseline
         uses: actions/checkout@v4
         with:
-          ref: ${{ env.FULL_300_SOURCE_SHA }}
+          ref: ${{ needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b' }}
           fetch-depth: 0
 
-      - name: Verify pinned full-300 production source SHA
+      - name: Verify pinned production source SHA
         shell: bash
         run: |
           set -euo pipefail
           test "$FULL_300_SOURCE_SHA" = "69ba815e256d6f46382c9f0fa901bb3fea88c85b"
-          test "$(git rev-parse HEAD)" = "$FULL_300_SOURCE_SHA"
+          test "$REPAIR_SOURCE_SHA" = "71fbe483b931cba91bedb1feadb1941092518890"
+          EXPECTED="$FULL_300_SOURCE_SHA"
+          if [ "${{ needs.plan.outputs.run_mode }}" = "generate-unresolved" ]; then
+            EXPECTED="$REPAIR_SOURCE_SHA"
+          fi
+          test "$(git rev-parse HEAD)" = "$EXPECTED"
+          test "$SOURCE_SHA" = "$EXPECTED"
+          test "$PRODUCTION_SOURCE_SHA" = "$EXPECTED"
 
       - name: Verify official Masaarat logo (path + SHA256)
         shell: bash
@@ -1806,7 +1821,11 @@ jobs:
         run: |
           set -euo pipefail
           echo "::notice::Full-300 artifact + finalization batch report"
-          echo "source_sha=${{ env.FULL_300_SOURCE_SHA }}"
+          if [ "${{ needs.plan.outputs.run_mode }}" = "generate-unresolved" ]; then
+            echo "source_sha=${{ env.REPAIR_SOURCE_SHA }}"
+          else
+            echo "source_sha=${{ env.FULL_300_SOURCE_SHA }}"
+          fi
           echo "total_count=${{ needs.plan.outputs.total_count }}"
           echo "count_a=${{ needs.plan.outputs.count_a }}"
           echo "count_b=${{ needs.plan.outputs.count_b }}"
@@ -1872,7 +1891,7 @@ jobs:
         if: needs.plan.outputs.total_count != '0'
         uses: actions/download-artifact@v4
         with:
-          pattern: full-300-${{ env.FULL_300_SOURCE_SHA }}-*
+          pattern: full-300-${{ needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b' }}-*
           merge-multiple: true
           path: collected-artifacts
         continue-on-error: true

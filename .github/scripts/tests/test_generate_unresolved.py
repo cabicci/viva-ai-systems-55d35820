@@ -31,6 +31,7 @@ from video_finalize.unresolved_generation_plan import (  # noqa: E402
     EXPECTED_APPROVED_COUNT,
     EXPECTED_APPROVED_LOCALES,
     EXPECTED_BASELINE_FINALIZED,
+    REPAIR_SOURCE_SHA_PIN,
     UnresolvedPlanError,
     assert_approved_universe,
     build_unresolved_generation_plan,
@@ -46,7 +47,14 @@ def _guid(seed: str) -> str:
     return str(uuid.uuid5(uuid.NAMESPACE_DNS, seed))
 
 
-def _write_receipt(root: Path, logical_key: str, *, artifact_id: str, guid: str) -> None:
+def _write_receipt(
+    root: Path,
+    logical_key: str,
+    *,
+    artifact_id: str,
+    guid: str,
+    source_sha: str = FULL_300_SOURCE_SHA_PIN,
+) -> None:
     lesson_id, locale = logical_key.rsplit("__", 1)
     if logical_key == ACCEPTED_CARRY_FORWARD_LOGICAL_KEY:
         receipt = dict(ACCEPTED_CARRY_FORWARD_CELL)
@@ -59,7 +67,7 @@ def _write_receipt(root: Path, logical_key: str, *, artifact_id: str, guid: str)
             logical_key=logical_key,
             lesson_id=lesson_id,
             locale=locale,
-            source_sha=FULL_300_SOURCE_SHA_PIN,
+            source_sha=source_sha,
             workflow_run_id="29407852029",
             artifact_id=artifact_id,
             artifact_digest="sha256:" + hashlib.sha256(logical_key.encode()).hexdigest(),
@@ -327,6 +335,134 @@ class PlannerBehaviorTests(unittest.TestCase):
             )
         self.assertIn("conflicting bunnyGuid", str(ctx.exception))
 
+    def test_final_three_297_excludes_exact_remaining_set(self):
+        """Current production state: 297 finalized → exact 3 unresolved remain."""
+        root, _ = _baseline_finalized_roots(self.auth)
+        remaining = {
+            "automator-m7-l1-closing-loop__ar-Gulf",
+            "intro-m1-l1-what-is-ai__en",
+            "creator-m4-repurposing__en",
+        }
+        self.assertTrue(remaining <= set(APPROVED_UNRESOLVED_KEYS))
+        for i, key in enumerate(APPROVED_UNRESOLVED_KEYS):
+            if key in remaining:
+                continue
+            _write_receipt(
+                root, key, artifact_id=str(5100000000 + i), guid=_guid(f"297-{key}")
+            )
+        finalized = collect_validated_finalized_keys(
+            receipt_roots=[root], authoritative=set(self.auth)
+        )
+        self.assertEqual(len(finalized), 297)
+        plan = build_unresolved_generation_plan(
+            authoritative_keys=self.auth, finalized_keys=finalized, repo_root=REPO_ROOT
+        )
+        self.assertEqual(set(plan.selected_keys), remaining)
+        self.assertEqual(plan.selected_count, 3)
+        # Preserve canonical approved-universe order (not display order).
+        expected_order = [k for k in APPROVED_UNRESOLVED_KEYS if k in remaining]
+        self.assertEqual(plan.selected_keys, expected_order)
+        self.assertFalse(set(plan.selected_keys) & finalized)
+        self.assertNotIn("ar-EG", json.dumps(plan.selected_keys))
+
+    def test_repair_source_receipts_accepted_for_retry(self):
+        root, _ = _baseline_finalized_roots(self.auth)
+        remaining = [
+            k
+            for k in APPROVED_UNRESOLVED_KEYS
+            if k
+            in {
+                "automator-m7-l1-closing-loop__ar-Gulf",
+                "intro-m1-l1-what-is-ai__en",
+                "creator-m4-repurposing__en",
+            }
+        ]
+        for i, key in enumerate(APPROVED_UNRESOLVED_KEYS):
+            if key in remaining:
+                continue
+            _write_receipt(
+                root, key, artifact_id=str(5200000000 + i), guid=_guid(f"hist-{key}")
+            )
+        # Finalize first remaining cell under REPAIR_SOURCE_SHA
+        _write_receipt(
+            root,
+            remaining[0],
+            artifact_id="5300000001",
+            guid=_guid(f"repair-{remaining[0]}"),
+            source_sha=REPAIR_SOURCE_SHA_PIN,
+        )
+        finalized = collect_validated_finalized_keys(
+            receipt_roots=[root], authoritative=set(self.auth)
+        )
+        self.assertEqual(len(finalized), 298)
+        plan = build_unresolved_generation_plan(
+            authoritative_keys=self.auth, finalized_keys=finalized, repo_root=REPO_ROOT
+        )
+        self.assertEqual(plan.selected_keys, remaining[1:])
+        self.assertEqual(plan.selected_count, 2)
+
+        _write_receipt(
+            root,
+            remaining[1],
+            artifact_id="5300000002",
+            guid=_guid(f"repair-{remaining[1]}"),
+            source_sha=REPAIR_SOURCE_SHA_PIN,
+        )
+        finalized = collect_validated_finalized_keys(
+            receipt_roots=[root], authoritative=set(self.auth)
+        )
+        plan = build_unresolved_generation_plan(
+            authoritative_keys=self.auth, finalized_keys=finalized, repo_root=REPO_ROOT
+        )
+        self.assertEqual(plan.selected_keys, remaining[2:])
+        self.assertEqual(plan.selected_count, 1)
+
+        _write_receipt(
+            root,
+            remaining[2],
+            artifact_id="5300000003",
+            guid=_guid(f"repair-{remaining[2]}"),
+            source_sha=REPAIR_SOURCE_SHA_PIN,
+        )
+        finalized = collect_validated_finalized_keys(
+            receipt_roots=[root], authoritative=set(self.auth)
+        )
+        plan = build_unresolved_generation_plan(
+            authoritative_keys=self.auth, finalized_keys=finalized, repo_root=REPO_ROOT
+        )
+        self.assertTrue(plan.empty)
+        self.assertEqual(plan.selected_keys, [])
+
+    def test_unknown_source_sha_fails_closed(self):
+        root, _ = _baseline_finalized_roots(self.auth)
+        key = APPROVED_UNRESOLVED_KEYS[0]
+        _write_receipt(
+            root,
+            key,
+            artifact_id="5400000001",
+            guid=_guid("unknown-src"),
+            source_sha="deadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+        )
+        with self.assertRaises(UnresolvedPlanError) as ctx:
+            collect_validated_finalized_keys(
+                receipt_roots=[root], authoritative=set(self.auth)
+            )
+        self.assertIn("sourceSha not in accepted historical/repair set", str(ctx.exception))
+
+    def test_historical_full_300_source_still_accepted(self):
+        root, permanent = _baseline_finalized_roots(self.auth)
+        finalized = collect_validated_finalized_keys(
+            receipt_roots=[root], authoritative=set(self.auth)
+        )
+        self.assertEqual(finalized, permanent)
+        sample = next(
+            k for k in permanent if k != ACCEPTED_CARRY_FORWARD_LOGICAL_KEY
+        )
+        receipt = json.loads(
+            (root / sample / receipt_relpath(BATCH_ID, sample)).read_text(encoding="utf-8")
+        )
+        self.assertEqual(receipt["sourceSha"], FULL_300_SOURCE_SHA_PIN)
+
     def test_manifest_drift_fails(self):
         with self.assertRaises(UnresolvedPlanError):
             build_unresolved_generation_plan(
@@ -407,6 +543,13 @@ class WorkflowStaticGenerateUnresolvedTests(unittest.TestCase):
         )
         self.assertIn(
             "SOURCE_SHA: 6cfd019d315ec3f5a30ffc83bd551f4deb52385c", self.text
+        )
+        self.assertIn(
+            "REPAIR_SOURCE_SHA: 71fbe483b931cba91bedb1feadb1941092518890", self.text
+        )
+        self.assertIn(
+            "needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b'",
+            self.text,
         )
 
     def test_artifact_and_finalization_path_preserved(self):
