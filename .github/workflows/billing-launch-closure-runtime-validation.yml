@@ -1,0 +1,87 @@
+name: Billing Launch-Closure Runtime Validation
+
+on:
+  push:
+    branches:
+      - validate/billing-launch-closure-runtime
+
+permissions:
+  contents: read
+
+concurrency:
+  group: billing-launch-closure-runtime-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  ACCEPTED_PRODUCT_SHA: 413452b22001ee4d5f6caff2b6656d3de7ce230a
+  SUPABASE_CLI_PIN: "2.109.1"
+  ARTIFACT_DIR: ci-artifacts/billing-launch-closure-runtime
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout validation branch
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          fetch-depth: 2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: "20"
+
+      - name: Install tooling
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y jq postgresql-client openssl
+          npx -y "supabase@${SUPABASE_CLI_PIN}" --version
+
+      - name: Verify accepted product parent and harness scope
+        run: |
+          set -euo pipefail
+          PARENT="$(git rev-parse HEAD^)"
+          HEAD="$(git rev-parse HEAD)"
+          echo "validation_head=${HEAD}"
+          echo "product_parent=${PARENT}"
+          echo "accepted_product=${ACCEPTED_PRODUCT_SHA}"
+          test "$PARENT" = "$ACCEPTED_PRODUCT_SHA"
+          # Product files must match accepted candidate blob hashes.
+          test "$(git rev-parse HEAD:supabase/migrations/20260714173000_billing_launch_closure_rpc_hardening.sql)" \
+            = "$(git rev-parse ${ACCEPTED_PRODUCT_SHA}:supabase/migrations/20260714173000_billing_launch_closure_rpc_hardening.sql)"
+          test "$(git rev-parse HEAD:src/lib/billing/__tests__/billing-launch-closure.test.ts)" \
+            = "$(git rev-parse ${ACCEPTED_PRODUCT_SHA}:src/lib/billing/__tests__/billing-launch-closure.test.ts)"
+          # Harness commit may only add workflow/script paths relative to product parent.
+          CHANGED="$(git diff --name-only "$ACCEPTED_PRODUCT_SHA" HEAD)"
+          echo "$CHANGED"
+          echo "$CHANGED" | grep -vE '^\.github/workflows/billing-launch-closure-runtime-validation\.yml$|^\.github/scripts/billing_runtime_validation/' && exit 1 || true
+          test -n "$CHANGED"
+
+      - name: Run disposable Billing runtime validation
+        run: |
+          set -euo pipefail
+          chmod +x .github/scripts/billing_runtime_validation/run.sh
+          .github/scripts/billing_runtime_validation/run.sh
+
+      - name: Upload sanitized artifacts
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: billing-launch-closure-runtime-validation
+          path: |
+            ci-artifacts/billing-launch-closure-runtime/results.json
+            ci-artifacts/billing-launch-closure-runtime/gate-report.md
+            ci-artifacts/billing-launch-closure-runtime/gates.log
+            ci-artifacts/billing-launch-closure-runtime/sha-evidence.txt
+            ci-artifacts/billing-launch-closure-runtime/supabase-cli-version.txt
+            ci-artifacts/billing-launch-closure-runtime/container-versions.txt
+            ci-artifacts/billing-launch-closure-runtime/docker-info-sanitized.txt
+            ci-artifacts/billing-launch-closure-runtime/migration-list.txt
+            ci-artifacts/billing-launch-closure-runtime/billing-functions-security.txt
+            ci-artifacts/billing-launch-closure-runtime/billing-routine-privileges.txt
+            ci-artifacts/billing-launch-closure-runtime/*.txt
+          if-no-files-found: warn
+          retention-days: 14
