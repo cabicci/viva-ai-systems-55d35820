@@ -32,20 +32,31 @@ async function assertAdmin(context: { supabase: any; userId: string }) {
 
 /**
  * Returns { isAdmin: true } only for authenticated admins.
- * Throws Unauthorized (401) if no session → caller treats as "go to /login".
+ * Throws Unauthorized if no verified identity → caller treats as "go to /login".
  * Returns { isAdmin: false } if authenticated but not admin → caller redirects to /dashboard.
- * Used by the /admin route's beforeLoad so the page never renders without server-verified admin role.
+ *
+ * Identity sources (both verified via getClaims, never client role claims):
+ * - Authorization Bearer (client server-fn RPC via attachSupabaseAuth)
+ * - masaarat_access_token cookie (SSR document requests after client sync)
  */
-export const assertAdminAccess = createServerFn({ method: "GET" })
-  .middleware([requireSupabaseAuth])
-  .handler(async ({ context }): Promise<{ isAdmin: boolean; userId: string }> => {
-    const { data, error } = await context.supabase.rpc("has_role", {
-      _user_id: context.userId,
+export const assertAdminAccess = createServerFn({ method: "GET" }).handler(
+  async (): Promise<{ isAdmin: boolean; userId: string }> => {
+    const { resolveVerifiedRequestUser } = await import(
+      "@/lib/ssr-request-auth.server"
+    );
+    const auth = await resolveVerifiedRequestUser();
+    if (!auth) {
+      throw new Error("Unauthorized: No valid session");
+    }
+
+    const { data, error } = await auth.supabase.rpc("has_role", {
+      _user_id: auth.userId,
       _role: "admin",
     });
     if (error) throw new Error("Authorization check failed");
-    return { isAdmin: Boolean(data), userId: context.userId };
-  });
+    return { isAdmin: Boolean(data), userId: auth.userId };
+  },
+);
 
 /* -------------------------------------------------------------- */
 /* Overview stats                                                  */

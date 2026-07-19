@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import type { Session, User } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
+import { syncAccessTokenCookie } from "@/lib/auth-access-token-cookie";
 import { captureError, captureWarn } from "@/lib/error-capture";
 
 const DEVICE_KEY = "lovable.device_id";
@@ -68,10 +69,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       // dot-separated segments — anything else means a stale storage row.
       if (s?.access_token && s.access_token.split(".").length !== 3) {
         supabase.auth.signOut();
+        syncAccessTokenCookie(null);
         setSession(null);
         setLoading(false);
         return;
       }
+      syncAccessTokenCookie(s?.access_token);
       setSession(s);
       setLoading(false);
       if (e === "SIGNED_IN" && s?.user && !claimedUserIds.current.has(s.user.id)) {
@@ -88,14 +91,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (e === "SIGNED_OUT") {
         claimedUserIds.current.clear();
         claimPromises.current.clear();
+        syncAccessTokenCookie(null);
       }
     });
     supabase.auth.getSession().then(({ data }) => {
       const s = data.session;
       if (s?.access_token && s.access_token.split(".").length !== 3) {
         supabase.auth.signOut();
+        syncAccessTokenCookie(null);
         setSession(null);
       } else {
+        syncAccessTokenCookie(s?.access_token);
         setSession(s);
         // Also claim the device on initial load — otherwise the device
         // watcher reads a stale row (from a previous device/origin) and
@@ -173,7 +179,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         user: session?.user ?? null,
         session,
         loading,
-        signOut: async () => { await supabase.auth.signOut(); },
+        signOut: async () => {
+          await supabase.auth.signOut();
+          syncAccessTokenCookie(null);
+        },
       }}
     >
       {children}
