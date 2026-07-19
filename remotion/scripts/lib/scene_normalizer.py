@@ -134,6 +134,235 @@ def _fill(visual: dict, key: str, value: str, repairs: list, i: int,
         })
 
 
+# ---------------------------------------------------------------------------
+# Schema-aware CompareCard / ScreenshotCard repairs (deterministic, no LLM).
+# Precedence (same-locale only):
+#   1) existing side-local / visual field values
+#   2) structured alternate visual comparison content already present
+#   3) two unambiguous ordered comparison clauses in scene narration
+# Derived text is always a direct excerpt/reuse of existing same-locale text.
+# Fail closed: leave incomplete fields untouched so scene_validator rejects.
+# ---------------------------------------------------------------------------
+
+# Ordered separators for narration comparison clauses (longer / more specific first).
+_COMPARE_SEPARATORS = (
+    " versus ",
+    " compared to ",
+    " compared with ",
+    " as opposed to ",
+    " rather than ",
+    " بدلًا من ",
+    " بدلا من ",
+    " مقابل ",
+    " بينما ",
+    " في حين ",
+    " أما ",
+    " vs. ",
+    " vs ",
+    " VS ",
+    " ضد ",
+)
+
+
+def _nonempty_str(val: Any) -> str:
+    return val.strip() if isinstance(val, str) and val.strip() else ""
+
+
+def _label_from_body(body: str) -> str:
+    """Concise deterministic excerpt from existing side body — not authored prose."""
+    excerpt = _first_words(body, 4)
+    return _truncate(excerpt, 40) if excerpt else ""
+
+
+def _side_dict_from_string(text: str) -> dict[str, str] | None:
+    body = _nonempty_str(text)
+    if not body:
+        return None
+    label = _label_from_body(body)
+    if not label:
+        return None
+    return {"label": label, "body": body}
+
+
+def _coerce_compare_side(raw: Any) -> dict[str, str] | None:
+    """Normalize a side value into {label, body} using only side-local content.
+
+    Accepts:
+      - already-valid {label, body}
+      - partial dict with label and/or body (and optional alternate keys)
+      - non-empty string (preserved as body; label derived from that body)
+    Returns None when a meaningful complete side cannot be derived.
+    """
+    if isinstance(raw, str):
+        return _side_dict_from_string(raw)
+    if not isinstance(raw, dict):
+        return None
+
+    label = _nonempty_str(raw.get("label"))
+    body = _nonempty_str(raw.get("body"))
+    # Alternate side-local fields some generators emit.
+    if not label:
+        for key in ("heading", "title", "name", "header"):
+            label = _nonempty_str(raw.get(key))
+            if label:
+                break
+    if not body:
+        for key in ("text", "content", "description", "detail", "value"):
+            body = _nonempty_str(raw.get(key))
+            if body:
+                break
+
+    if label and body:
+        return {"label": label, "body": body}
+    if body and not label:
+        derived = _label_from_body(body)
+        if derived:
+            return {"label": derived, "body": body}
+        return None
+    if label and not body:
+        # Label alone is not enough to invent a body — fail closed unless
+        # an alternate side-local string already supplied body above.
+        return None
+    return None
+
+
+def _split_comparison_clauses(spoken: str) -> tuple[str, str] | None:
+    """Return two ordered non-empty clauses when narration clearly compares two sides."""
+    text = (spoken or "").strip()
+    if not text:
+        return None
+    lower = text
+    for sep in _COMPARE_SEPARATORS:
+        # Case-insensitive match for Latin separators; Arabic kept exact.
+        idx = -1
+        if sep.strip().isascii():
+            idx = lower.lower().find(sep.lower())
+            if idx >= 0:
+                left = text[:idx].strip(" \t,;:-–—")
+                right = text[idx + len(sep):].strip(" \t,;:-–—")
+                if left and right and left != right:
+                    return left, right
+        else:
+            idx = text.find(sep)
+            if idx >= 0:
+                left = text[:idx].strip(" \t,;:-–—")
+                right = text[idx + len(sep):].strip(" \t,;:-–—")
+                if left and right and left != right:
+                    return left, right
+    return None
+
+
+def _repair_compare_card(
+    visual: dict,
+    spoken: str,
+    repairs: list,
+    i: int,
+) -> None:
+    """Fill missing CompareCard side structure from existing same-locale content only."""
+    if _visual_field_missing(visual.get("title")):
+        # Prefer existing title-like fields, then first narration sentence.
+        title = (
+            _nonempty_str(visual.get("heading"))
+            or _nonempty_str(visual.get("name"))
+            or (_split_sentences(spoken)[0] if _split_sentences(spoken) else "")
+        )
+        if title:
+            visual["title"] = _truncate(title, 60)
+            repairs.append({
+                "scene_index": i + 1, "card": "CompareCard",
+                "field": "visual.title",
+                "reason": "derived from existing visual/narration text",
+            })
+
+    left_raw = visual.get("left")
+    right_raw = visual.get("right")
+    left = _coerce_compare_side(left_raw)
+    right = _coerce_compare_side(right_raw)
+
+    if left is None or right is None:
+        clauses = _split_comparison_clauses(spoken)
+        if clauses:
+            if left is None:
+                left = _side_dict_from_string(clauses[0])
+            if right is None:
+                right = _side_dict_from_string(clauses[1])
+
+    if left is None or right is None:
+        return
+
+    # Do not silently invent identical sides unless the source already matched.
+    if left == right:
+        sources_identical = False
+        if isinstance(left_raw, str) and isinstance(right_raw, str):
+            sources_identical = _nonempty_str(left_raw) == _nonempty_str(right_raw)
+        elif isinstance(left_raw, dict) and isinstance(right_raw, dict):
+            sources_identical = (
+                _nonempty_str(left_raw.get("label")) == _nonempty_str(right_raw.get("label"))
+                and _nonempty_str(left_raw.get("body")) == _nonempty_str(right_raw.get("body"))
+                and (
+                    _nonempty_str(left_raw.get("label"))
+                    or _nonempty_str(left_raw.get("body"))
+                )
+            )
+        if not sources_identical:
+            return
+
+    if left is not None and not _side_is_complete(left_raw):
+        visual["left"] = left
+        repairs.append({
+            "scene_index": i + 1, "card": "CompareCard",
+            "field": "visual.left",
+            "reason": "completed from side-local or narration comparison text",
+        })
+    if right is not None and not _side_is_complete(right_raw):
+        visual["right"] = right
+        repairs.append({
+            "scene_index": i + 1, "card": "CompareCard",
+            "field": "visual.right",
+            "reason": "completed from side-local or narration comparison text",
+        })
+
+
+def _side_is_complete(raw: Any) -> bool:
+    if not isinstance(raw, dict):
+        return False
+    return (
+        not _visual_field_missing(raw.get("label"))
+        and not _visual_field_missing(raw.get("body"))
+    )
+
+
+def _repair_screenshot_title(
+    visual: dict,
+    spoken: str,
+    repairs: list,
+    i: int,
+) -> None:
+    """Fill missing ScreenshotCard title from existing same-locale content only.
+
+    Precedence: title-like visual field → caption → eyebrow → narration excerpt.
+    Never invents a description; never alters visual.src.
+    """
+    if not _visual_field_missing(visual.get("title")):
+        return
+    title = (
+        _nonempty_str(visual.get("heading"))
+        or _nonempty_str(visual.get("name"))
+        or _nonempty_str(visual.get("caption"))
+        or _nonempty_str(visual.get("eyebrow"))
+        or (_split_sentences(spoken)[0] if _split_sentences(spoken) else "")
+    )
+    title = _truncate(title, 60) if title else ""
+    if not title:
+        return
+    visual["title"] = title
+    repairs.append({
+        "scene_index": i + 1, "card": "ScreenshotCard",
+        "field": "visual.title",
+        "reason": "derived from existing caption/eyebrow/narration text",
+    })
+
+
 def normalize_scenes(
     scenes: Any,
     locale: str | None = None,
@@ -211,6 +440,9 @@ def normalize_scenes(
                     "reason": "derived from spoken text (or locale default)",
                 })
 
+        elif card == "CompareCard":
+            _repair_compare_card(v, spoken, repairs, i)
+
         elif card == "ScreenshotCard":
             # Locale-aware only: missing/empty src → deterministic BulletsCard.
             # Legacy Egyptian (locale=None) must remain byte-equivalent — no
@@ -231,6 +463,7 @@ def normalize_scenes(
                     ),
                 })
             else:
+                _repair_screenshot_title(v, spoken, repairs, i)
                 _fill(v, "eyebrow", defaults["screenshot_eyebrow"],
                       repairs, i, card)
 
