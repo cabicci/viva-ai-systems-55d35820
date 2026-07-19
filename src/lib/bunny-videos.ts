@@ -402,6 +402,11 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "intro-m1-l1-what-is-ai__ar-Gulf": "67adb197-03a4-4f9a-84ef-2d296a916391",
   "intro-m1-l3-setup-your-ai__ar-Gulf": "c9ed072b-1a8b-4358-ab1c-65b78380a64f",
   "intro-m1-l7-choose-your-path__en": "02f23458-4768-4947-b24a-ba54c6afb904",
+  "automator-m3-testing-automation__ar-Gulf": "29db0c99-34bc-4a6d-9b96-29bcf94422df",
+  "builder-m7-l3-queries__ar-Gulf": "c5105b98-8fcf-4120-b0ef-0d60be42049b",
+  "builder-m8-l2-rls__ar-Gulf": "ceca9822-720a-44d7-a23c-3cc93dd4dd02",
+  "creator-m3-l2-script-structure__en": "55cf06a0-5c95-4539-990a-ce23a445d5c4",
+  "intro-m1-l6-learn-without-fear__en": "1c48dab5-109b-4c21-a9d2-81f6108b2ed9",
 
 };
 
