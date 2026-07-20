@@ -63,19 +63,19 @@
     "comparison": {
       "en": {
         "leftLabel": "Bot Response — Customer Feels Annoyed",
-        "rightLabel": "Helpful Response + Handoff",
+        "rightLabel": "Helpful Response + **Handoff**",
         "leftBody": "The bot continues trying to answer from the FAQ.",
         "rightBody": "Immediate handoff to a staff member — this is a clear handoff condition."
       },
       "ar-MSA": {
         "leftLabel": "البوت رد — والعميل شعر بالإزعاج",
-        "rightLabel": "رد مفيد + Handoff (تحويل)",
+        "rightLabel": "رد مفيد + **Handoff (تحويل)**",
         "leftBody": "يستمر البوت في محاولة الإجابة من الأسئلة الشائعة.",
         "rightBody": "تحويل فوري لموظف — هذا شرط تحويل (Handoff) واضح."
       },
       "ar-Gulf": {
         "leftLabel": "رد البوت — والعميل شعر بالإزعاج",
-        "rightLabel": "رد مفيد + تحويل",
+        "rightLabel": "رد مفيد + **تحويل**",
         "leftBody": "البوت يكمل يحاول يجاوب من الأسئلة الشائعة.",
         "rightBody": "تحويل فوري لموظف — هذا شرط واضح للتحويل."
       },
@@ -98,18 +98,18 @@
       "packageQuotes": {
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/automator-m6-l2-whatsapp-flow.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "The customer initiates or agrees — no random broadcasting. Message → understanding → response → if c"
+          "field": "sections[role=Core idea].contentMarkdown",
+          "quote": "The customer initiates or agrees — no random broadcasting."
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l2-whatsapp-flow.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "العميل يبدأ أو يوافق — لا بث عشوائي. رسالة → فهم → رد → إن تعقّد: تحويل لموظف."
+          "field": "sections[role=Core idea].contentMarkdown",
+          "quote": "العميل يبدأ أو يوافق — لا بث عشوائي."
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l2-whatsapp-flow.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "العميل يبدأ أو يوافق — لا بث عشوائي. رسالة → فهم → رد → إذا تعقّد: تحويل لموظف."
+          "field": "sections[role=Core idea].contentMarkdown",
+          "quote": "العميل يبدأ أو يوافق — لا بث عشوائي."
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/automator-m6-l2-whatsapp-flow.ts",
@@ -130,15 +130,15 @@
         "text": "Bot Response — Customer Feels Annoyed",
         "source": {
           "path": "src/lib/locale-lessons/en/lessons/automator-m6-l2-whatsapp-flow.json",
-          "field": "sections[role=Comparison].tables[0].headers[0]"
+          "field": "sections[role=Tension].subtitle"
         }
       },
       {
         "id": "comparison-right",
-        "text": "Helpful Response + Handoff",
+        "text": "Helpful Response + **Handoff**",
         "source": {
           "path": "src/lib/locale-lessons/en/lessons/automator-m6-l2-whatsapp-flow.json",
-          "field": "sections[role=Comparison].tables[0].headers[1]"
+          "field": "sections[role=Core idea].subtitle"
         }
       }
     ],
@@ -148,15 +148,15 @@
         "text": "البوت رد — والعميل شعر بالإزعاج",
         "source": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l2-whatsapp-flow.json",
-          "field": "sections[role=Comparison].tables[0].headers[0]"
+          "field": "sections[role=Tension].subtitle"
         }
       },
       {
         "id": "comparison-right",
-        "text": "رد مفيد + Handoff (تحويل)",
+        "text": "رد مفيد + **Handoff (تحويل)**",
         "source": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l2-whatsapp-flow.json",
-          "field": "sections[role=Comparison].tables[0].headers[1]"
+          "field": "sections[role=Core idea].subtitle"
         }
       }
     ],
@@ -166,15 +166,15 @@
         "text": "رد البوت — والعميل شعر بالإزعاج",
         "source": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l2-whatsapp-flow.json",
-          "field": "sections[role=Comparison].tables[0].headers[0]"
+          "field": "sections[role=Tension].subtitle"
         }
       },
       {
         "id": "comparison-right",
-        "text": "رد مفيد + تحويل",
+        "text": "رد مفيد + **تحويل**",
         "source": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l2-whatsapp-flow.json",
-          "field": "sections[role=Comparison].tables[0].headers[1]"
+          "field": "sections[role=Core idea].subtitle"
         }
       }
     ],
@@ -237,5 +237,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "84852e03de6d382b0f961db046af082d896effff2e6b0ea52091ee5322a8a8e4"
+  "checksum": "b5448fd9659a8caf8aaa9ebfceb0211a21935d211199a6abf44d660a9eab1b2e"
 }

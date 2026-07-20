@@ -98,22 +98,22 @@
     },
     "visualIntent": {
       "kind": "screenshot",
-      "summary": "RAG:",
+      "summary": "Question → AI → Guess",
       "packageQuotes": {
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/automator-m5-l2-rag-in-n8n.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "RAG:"
+          "field": "sections[role=Core idea].contentMarkdown",
+          "quote": "Without **RAG:** Question → AI → Guess."
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l2-rag-in-n8n.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "RAG:"
+          "field": "sections[role=Core idea].contentMarkdown",
+          "quote": "بدون **RAG:** سؤال → AI → تخمين."
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m5-l2-rag-in-n8n.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "RAG:"
+          "field": "sections[role=Core idea].contentMarkdown",
+          "quote": "بدون **RAG:** سؤال → AI → تخمين."
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/automator-m5-l2-rag-in-n8n.ts",
@@ -241,5 +241,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "3f8399ddc2fb3c2f6296460934a058c121717678b2e51c1440545e1fe1c53537"
+  "checksum": "2125722b51a50c396f7fea9db87813c27fec6437cf1739645f60e839037d3678"
 }
