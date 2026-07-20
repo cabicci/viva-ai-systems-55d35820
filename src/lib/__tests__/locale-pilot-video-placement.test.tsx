@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it, vi } from "vitest";
-import { renderLocalizedLesson, renderLocalizedLessonWithoutVideo } from "@/lib/__tests__/locale-test-utils";
+import { renderLocalizedLesson } from "@/lib/__tests__/locale-test-utils";
 import {
   BUNNY_LIBRARY_ID,
   getBunnyEmbedUrl,
@@ -126,19 +126,24 @@ describe("locale pilot video placement matrix", () => {
     expect(getBunnyGuidForLocale(lessonId, "ar-EG")).toBe(legacyGuid);
   });
 
-  it("shows canonical video skip notice when localized composite GUID is absent", async () => {
+  it("resolves the finalized intro-m1-l1-what-is-ai English composite mapping", async () => {
     const lessonId = "intro-m1-l1-what-is-ai";
-    expect(getLocalizedBunnyGuid(lessonId, "en")).toBeUndefined();
-    expect(getBunnyGuidForLocale(lessonId, "en")).toBe(
-      getBunnyGuidForLocale(lessonId, undefined),
+    const exactGuid = "de6aa7f5-a863-46e3-86ca-3da9489ae601";
+
+    expect(compositeKey(lessonId, "en")).toBe("intro-m1-l1-what-is-ai__en");
+    expect(getLocalizedBunnyGuid(lessonId, "en")).toBe(exactGuid);
+    expect(getBunnyGuidForLocale(lessonId, "en")).toBe(exactGuid);
+    expect(getLocalizedBunnyEmbedUrl(lessonId, "en")).toBe(
+      `https://iframe.mediadelivery.net/embed/${BUNNY_LIBRARY_ID}/${exactGuid}?autoplay=false&preload=true`,
     );
 
     const pkg = readLocalizedPackage("en", lessonId);
-    const { container } = await renderLocalizedLessonWithoutVideo(pkg);
+    const { container } = await renderLocalizedLesson(pkg);
 
+    expect(container.querySelector('[data-locale-video="player"]')).not.toBeNull();
     expect(container.querySelector('[data-locale-video="placeholder"]')).toBeNull();
-    expect(container.querySelector('[data-locale-video="player"]')).toBeNull();
-    expect(container.querySelector("iframe")).toBeNull();
-    expect(container.textContent).toMatch(/Optional video|Short on time\?/);
+    expect(container.querySelector("iframe")?.getAttribute("src")).toBe(
+      getLocalizedBunnyEmbedUrl(lessonId, "en"),
+    );
   });
 });
