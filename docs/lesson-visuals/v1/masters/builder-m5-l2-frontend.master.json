@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m5-l2-frontend",
+  "pathId": "builder",
+  "moduleId": "builder-m5",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Frontend (Application Interface)",
+    "ar-MSA": "الواجهة الأمامية للتطبيق",
+    "ar-Gulf": "واجهة التطبيق",
+    "ar-EG": "Frontend = تشوف — Backend = يشتغل"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m5-l2-frontend.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l2-frontend.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l2-frontend.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m5-l2-frontend.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Frontend = what the user sees and clicks on. Backend = the work that happens behind the screen.",
+        "Why now? When something goes wrong, the first question: Is the problem with the appearance or the functionality?",
+        "What after the lesson? You will identify 5 parts in any application — Frontend or Backend."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ Frontend (الواجهة) = ما يراه العميل وينقر عليه. Backend (الكواليس) = العمل الذي يحدث خلف الشاشة.",
+        "لماذا الآن؟ عندما يحدث خطأ، أول سؤال: المشكلة في الشكل أم في العمل؟",
+        "ماذا بعد الدرس؟ ستميّز ٥ أجزاء في أي تطبيق — Frontend أم Backend."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ Frontend (الواجهة) = ما يراه العميل وينقر عليه. Backend (الكواليس) = العمل الذي يحدث خلف الشاشة.",
+        "ليش الحين؟ لما يصير خطأ، أول سؤال: المشكلة في الشكل أو في العمل؟",
+        "وش بعد الدرس؟ راح تميّز ٥ أجزاء في أي تطبيق — Frontend أو Backend."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ Frontend = اللي العميل يشوفه ويدوس عليه. Backend = الشغل اللي بيحصل ورا.",
+        "ليه دلوقتي؟ لما حاجة تبوظ، أول سؤال: المشكلة في الشكل ولا في الشغل؟",
+        "هتعمل إيه بعد الدرس؟ هتفرّق ٥ أجزاء في أي تطبيق — frontend ولا backend."
+      ]
+    },
+    "coreIdea": {
+      "en": "Frontend",
+      "ar-MSA": "Frontend",
+      "ar-Gulf": "Frontend",
+      "ar-EG": "Frontend = كل حاجة على الشاشة: زراير، نصوص، ألوان، مربعات الكتابة."
+    },
+    "tension": {
+      "en": "The client says 'the application is not working' — but what exactly? Is the button not clickable? Or does it click but there is no response? 'Not working' is a vague statement. Without knowing: appearance or functionalit",
+      "ar-MSA": "يقول العميل «التطبيق لا يعمل» — لكن ماذا بالضبط؟ الزر لا ينقر؟ أم ينقر ولا يوجد رد؟ «لا يعمل» جملة عامة. بدون معرفة: شكل أم عمل — ستضيع وقتًا في إصلاح خاطئ.",
+      "ar-Gulf": "يقول العميل «التطبيق ما يعمل» — لكن وش بالضبط؟ الزر ما ينقر؟ أو ينقر وما فيه رد؟ «ما يعمل» جملة عامة. بدون معرفة: شكل أو عمل — راح تضيع وقت في إصلاح خاطئ.",
+      "ar-EG": "العميل بيقول «التطبيق مش شغال» — بس إيه بالظبط؟ الزرار مش بيداس؟ ولا بيداس ومفيش رد؟"
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Frontend Issue",
+        "rightLabel": "Backend Issue",
+        "leftBody": "The button is grey and not clickable. Or the screen is blank. The user cannot start — the problem is with the appearance",
+        "rightBody": "The button works and the screen loads — but there is no response. Or an error message. The appearance is fine — the work behind it is stopped"
+      },
+      "ar-MSA": {
+        "leftLabel": "مشكلة Frontend",
+        "rightLabel": "مشكلة Backend",
+        "leftBody": "الزر رمادي ولا ينقر. أو الشاشة فارغة. العميل لا يستطيع البدء — المشكلة في الشكل",
+        "rightBody": "الزر يعمل والشاشة تحمّل — لكن لا رد. أو رسالة خطأ. الشكل سليم — العمل خلفه متوقف"
+      },
+      "ar-Gulf": {
+        "leftLabel": "مشكلة Frontend",
+        "rightLabel": "مشكلة Backend",
+        "leftBody": "الزر رمادي وما ينقر. أو الشاشة فارغة. العميل ما يقدر يبدأ — المشكلة في الشكل",
+        "rightBody": "الزر يعمل والشاشة تحمل — لكن ما فيه رد. أو رسالة خطأ. الشكل سليم — العمل خلفه متوقف"
+      },
+      "ar-EG": {
+        "leftLabel": "مشكلة Frontend",
+        "leftBody": "الزرار شكله رمادي ومش بيداس. أو الشاشة فاضية. العميل مش قادر يبدأ — المشكلة في الشكل.",
+        "rightLabel": "مشكلة Backend",
+        "rightBody": "الزرار شغّال والشاشة بتحمّل — بس مفيش رد. أو رسالة خطأ. الشكل تمام — الشغل ورا اللي واقف."
+      }
+    },
+    "missionIntro": {
+      "en": "Analysis task — not coding. Open any AI application you use. 5–10 minutes is enough.",
+      "ar-MSA": "مهمة تحليل — ليست كودًا. افتح أي تطبيق AI تستخدمه. ٥–١٠ دقائق كافية.",
+      "ar-Gulf": "مهمة تحليل — مو كود. افتح أي تطبيق AI تستخدمه. ٥–١٠ دقائق كافية.",
+      "ar-EG": "المهمة دي تحليل — مش كود. افتح أي تطبيق AI بتستخدمه (ChatGPT، Claude، أي حاجة).\n\n٥–١٠ دقايق كفاية."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "**Open any AI application → right-click → Inspect**. **What you see is Frontend** — **the code that built the screen**. **Try it yourself (F12 or Inspect)**.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l2-frontend.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**Open any AI application → right-click → Inspect**. **What you see is Frontend** — **the code that built the screen**. **Try it yourself (F"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l2-frontend.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**افتح أي تطبيق AI → انقر يمين → Inspect**. **ما تراه Frontend** — **الكود الذي بنى الشاشة**. **جرّب بنفسك (F12 أو Inspect)**."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l2-frontend.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**افتح أي تطبيق AI → انقر يمين → Inspect**. **وش تشوف في Frontend** — **الكود اللي بنى الشاشة**. **جرّب بنفسك (F12 أو Inspect)**."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m5-l2-frontend.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "افتح أي تطبيق AI → كليك يمين → Inspect. اللي بتشوفه ده Frontend — الكود اللي بنى الشاشة. جرّب بنفسك."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "builder-m5-l2-frontend's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Frontend Issue / Backend Issue) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Frontend Issue\" vs \"Backend Issue\" for builder-m5-l2-frontend.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Frontend Issue",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l2-frontend.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Backend Issue",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l2-frontend.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Frontend",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l2-frontend.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Backend",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l2-frontend.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "مشكلة Frontend",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l2-frontend.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مشكلة Backend",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l2-frontend.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Frontend (الواجهة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l2-frontend.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Backend (الكواليس)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l2-frontend.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "مشكلة Frontend",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l2-frontend.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مشكلة Backend",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l2-frontend.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Frontend (الواجهة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l2-frontend.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Backend (الكواليس)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l2-frontend.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "مشكلة Frontend",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m5-l2-frontend.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مشكلة Backend",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m5-l2-frontend.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Frontend (الواجهة)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m5-l2-frontend.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Backend (الكواليس)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m5-l2-frontend.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Frontend (Application Interface): \"Frontend Issue\" versus \"Backend Issue\" — Frontend",
+    "ar-MSA": "الواجهة الأمامية للتطبيق: \"مشكلة Frontend\" في مقابل \"مشكلة Backend\" — Frontend",
+    "ar-Gulf": "واجهة التطبيق: \"مشكلة Frontend\" في مقابل \"مشكلة Backend\" — Frontend",
+    "ar-EG": "Frontend = تشوف — Backend = يشتغل: \"مشكلة Frontend\" في مقابل \"مشكلة Backend\" — Frontend = كل حاجة على الشاشة: زراير، نصوص، ألوان، مربعات الكتابة."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Correct Classification\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m5-l2-frontend.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Clear Reason\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m5-l2-frontend.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"التصنيف صحيح\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l2-frontend.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"السبب واضح\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l2-frontend.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"التصنيف صحيح\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l2-frontend.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"السبب واضح\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l2-frontend.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"التصنيف صح\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m5-l2-frontend.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"السبب واضح\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m5-l2-frontend.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "dba1bc8bf55c75c95e06d48109dc2e7e280c6efc1953f3b0e49e4eac7cd0e9ae"
+}

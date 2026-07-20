@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m7-l3-queries",
+  "pathId": "builder",
+  "moduleId": "builder-m7",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Queries — How to Fetch Data",
+    "ar-MSA": "الاستعلامات — كيف تُجلب البيانات",
+    "ar-Gulf": "استعلامات — كيفية جلب البيانات",
+    "ar-EG": "Query = سؤال محدد للمخزن"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m7-l3-queries.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l3-queries.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l3-queries.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m7-l3-queries.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? A query is a specific question — for example, \"Get this client's conversations from the last week\" instead of \"Get everything\".",
+        "Why now? After designing and linking the tables, you need to ask the database correctly — otherwise, the page will load in seconds.",
+        "What after the lesson? You will write 3 questions in simple language — the database will answer them."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ Query (سؤال للمخزن) = سؤال محدد — «أحضر محادثات هذا العميل من آخر أسبوع» وليس «أحضر كل شيء».",
+        "لماذا الآن؟ بعد تصميم الجداول وربطها، تحتاج أن تسأل المخزن بشكل صحيح — وإلا الصفحة تتحمّل في ثوانٍ.",
+        "ماذا بعد الدرس؟ ستكتب ٣ أسئلة بلغة بسيطة — المخزن يجيب عليها."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ الاستعلام (سؤال للمخزن) = سؤال محدد — «أحضر محادثات هذا العميل من الأسبوع الماضي» مو «أحضر كل شيء».",
+        "ليش الحين؟ بعد تصميم الجداول وربطها، تحتاج تسأل المخزن بشكل صحيح — وإلا الصفحة تتحمل ببطء.",
+        "وش بعد الدرس؟ راح تكتب ٣ أسئلة بلغة بسيطة — المخزن يجاوب عليها."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ Query = سؤال للمخزن — «هاتلي محادثات العميل ده من آخر أسبوع» مش «هات كل حاجة».",
+        "ليه دلوقتي؟ بعد ما صمّمت الجداول وربطتهم، محتاج تسأل المخزن صح — وإلا الصفحة هتتحمّل في ثواني.",
+        "هتعمل إيه بعد الدرس؟ هتكتب ٣ أسئلة بلغة بسيطة — المخزن هيجاوب عليها."
+      ]
+    },
+    "coreIdea": {
+      "en": "Any question has 4 parts:",
+      "ar-MSA": "أي سؤال = ٤ أجزاء:",
+      "ar-Gulf": "أي سؤال = ٤ أجزاء:",
+      "ar-EG": "أي سؤال = ٤ أجزاء: عايز إيه (SELECT) — منين (FROM) — بشروط إيه (WHERE) — مترتب إزاي (ORDER + LIMIT)."
+    },
+    "tension": {
+      "en": "The client opens their conversation history — and waits for 6 seconds. They think AI is slow, but the problem is with the question to the database. The wrong question: \"Get all conversations\" — the server returns 100,000",
+      "ar-MSA": "العميل يفتح سجل محادثاته — وينتظر ٦ ثوانٍ. يظن أن الذكاء الاصطناعي بطيء، لكن المشكلة في السؤال للمخزن. السؤال الخطأ: «أحضر كل المحادثات» — السيرفر يرجع ١٠٠ ألف سطر وأنت تحتاج ٢٠ فقط.",
+      "ar-Gulf": "العميل يفتح سجل محادثاته — وينتظر ٦ ثوانٍ. يظن أن الذكاء الاصطناعي بطيء، لكن المشكلة في السؤال للمخزن. السؤال الخطأ: «أحضر كل المحادثات» — السيرفر يرجع ١٠٠ ألف سطر وأنت تحتاج ٢٠ بس.",
+      "ar-EG": "العميل بيفتح سجل محادثاته — وبيستنى ٦ ثواني. يفتكر الـ AI بطيء، بس المشكلة في السؤال للمخزن."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Get everything and then filter",
+        "rightLabel": "Specific question",
+        "leftBody": "`select('*')` from a table with 100,000 conversations — slow, heavy, and unsafe",
+        "rightBody": "\"Get `id, title, status` from `tasks` — only for this client — newest first — 10 only. Fast, light, and safe"
+      },
+      "ar-MSA": {
+        "leftLabel": "أحضر كل شيء ثم فلتر",
+        "rightLabel": "سؤال محدد",
+        "leftBody": "`select('*')` من جدول فيه ١٠٠ ألف محادثة — بطيء، ثقيل، وغير آمن",
+        "rightBody": "«أحضر `id, title, status` من `tasks` — لهذا العميل فقط — الأحدث أولًا — ١٠ فقط». سريع وخفيف وآمن"
+      },
+      "ar-Gulf": {
+        "leftLabel": "أحضر كل شيء ثم فلتر",
+        "rightLabel": "سؤال محدد",
+        "leftBody": "`select('*')` من جدول فيه ١٠٠ ألف محادثة — بطيء، ثقيل، وغير آمن",
+        "rightBody": "«أحضر `id, title, status` من `tasks` — لهذا العميل بس — الأحدث أولًا — ١٠ بس». سريع وخفيف وآمن"
+      },
+      "ar-EG": {
+        "leftLabel": "غلط — هات كل حاجة وبعدين فلتر",
+        "leftBody": "`select('*')` من جدول فيه ١٠٠ ألف محادثة — السيرفر بيرجعهم كلهم عشان تعرض ٢٠. بطيء، تقيل، وغير آمن.",
+        "rightLabel": "صح — سؤال محدد",
+        "rightBody": "«هات `id, title, status` من `tasks` — للعميل ده بس — الأحدث الأول — ١٠ بس.» سريع، خفيف، آمن."
+      }
+    },
+    "missionIntro": {
+      "en": "Think about your application — what questions do the pages need? Write them in simple language. 10–15 minutes.",
+      "ar-MSA": "فكّر في تطبيقك — ما الأسئلة التي تحتاجها الصفحات؟ اكتبها بلغة بسيطة. ١٠–١٥ دقيقة.",
+      "ar-Gulf": "فكر في تطبيقك — وش الأسئلة اللي تحتاجها الصفحات؟ اكتبها بلغة بسيطة. ١٠–١٥ دقيقة.",
+      "ar-EG": "فكّر في تطبيقك — إيه الأسئلة اللي الصفحات محتاجة تجاوب عليها؟ اكتبها بلغة بسيطة.\n\n١٠–١٥ دقيقة كفاية."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "**Every number has a question for the database:**",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m7-l3-queries.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**Every number has a question for the database:**"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l3-queries.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**كل رقم وراءه سؤال للمخزن:**"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l3-queries.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**كل رقم وراه سؤال للمخزن:**"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m7-l3-queries.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "الصفحة دي مش جدول خام — دي أسئلة منفصلة للمخزن. كل كارت = Query محدد. السؤال الواضح = رقم يتحدّث بسرعة."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "builder-m7-l3-queries's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Get everything and then filter / Specific question) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Get everything and then filter\" vs \"Specific question\" for builder-m7-l3-queries.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Get everything and then filter",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m7-l3-queries.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Specific question",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m7-l3-queries.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Query",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m7-l3-queries.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "WHERE",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m7-l3-queries.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "أحضر كل شيء ثم فلتر",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l3-queries.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "سؤال محدد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l3-queries.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Query (سؤال للمخزن)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l3-queries.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "WHERE (شرط)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l3-queries.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "أحضر كل شيء ثم فلتر",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l3-queries.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "سؤال محدد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l3-queries.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "الاستعلام (سؤال للمخزن)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l3-queries.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "WHERE (شرط)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l3-queries.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "غلط — هات كل حاجة وبعدين فلتر",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m7-l3-queries.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "صح — سؤال محدد",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m7-l3-queries.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Query (سؤال للمخزن)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m7-l3-queries.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "WHERE (شرط)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m7-l3-queries.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Queries — How to Fetch Data: \"Get everything and then filter\" versus \"Specific question\" — Any question has 4 parts:",
+    "ar-MSA": "الاستعلامات — كيف تُجلب البيانات: \"أحضر كل شيء ثم فلتر\" في مقابل \"سؤال محدد\" — أي سؤال = ٤ أجزاء:",
+    "ar-Gulf": "استعلامات — كيفية جلب البيانات: \"أحضر كل شيء ثم فلتر\" في مقابل \"سؤال محدد\" — أي سؤال = ٤ أجزاء:",
+    "ar-EG": "Query = سؤال محدد للمخزن: \"غلط — هات كل حاجة وبعدين فلتر\" في مقابل \"صح — سؤال محدد\" — أي سؤال = ٤ أجزاء: عايز إيه (SELECT) — منين (FROM) — بشروط إيه (WHERE) — مترتب إزاي (ORDER + LIMIT)."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"3 clear questions\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m7-l3-queries.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Conditions and limits\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m7-l3-queries.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ أسئلة واضحة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l3-queries.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"شروط وحدود\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l3-queries.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ أسئلة واضحة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l3-queries.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"شروط وحدود\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l3-queries.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ أسئلة واضحة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m7-l3-queries.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"شروط وحدود\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m7-l3-queries.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "b12939a52c3efc0300f1d3d60084b7c99fd05b9ecf0f63d7874968a6f8e8577c"
+}

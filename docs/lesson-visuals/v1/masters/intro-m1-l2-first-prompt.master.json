@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "intro-m1-l2-first-prompt",
+  "pathId": "intro",
+  "moduleId": "intro-m1",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "First Prompt",
+    "ar-MSA": "أول برومبت",
+    "ar-Gulf": "الطلب الواضح",
+    "ar-EG": "الـ Prompt الواضح = دور + سياق + مهمة + شكل"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/intro-m1-l2-first-prompt.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l2-first-prompt.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l2-first-prompt.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/intro-m1-l2-first-prompt.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What Will You Understand? The Prompt (the request or instruction you send to the AI) is not a magic sentence, but a clear request that specifies what is needed from the model.",
+        "Why Now? In the previous lesson, you tried the AI once. Today, you will understand why it sometimes gives an excellent response and other times a general one.",
+        "What After the Lesson? You will write one improved Prompt for a real need from your work or daily life — ready to use or experiment with."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ الـ Prompt (الطلب أو التعليمة التي ترسلها للذكاء الاصطناعي) ليس جملة سحرية، بل طلبًا واضحًا يحدد ما المطلوب من النموذج.",
+        "لماذا الآن؟ في الدرس السابق جرّبت الذكاء الاصطناعي مرة. اليوم ستفهم لماذا يُعطي أحيانًا ردًا ممتازًا وأحيانًا ردًا عامًا.",
+        "ماذا بعد الدرس؟ ستكتب Prompt واحدًا محسّنًا لحاجة حقيقية من عملك أو يومك — جاهز للاستخدام أو التجربة."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ البرومبت (الطلب أو التعليمة اللي ترسلها للذكاء الاصطناعي) مو جملة سحرية، بل طلب واضح يحدد المطلوب من النموذج.",
+        "ليش الحين؟ في الدرس السابق جربت الذكاء الاصطناعي مرة. اليوم راح تفهم ليش أحيانًا يعطي رد ممتاز وأحيانًا رد عام.",
+        "وش بعد الدرس؟ راح تكتب برومبت واحد محسّن لحاجة حقيقية من شغلك أو يومك — جاهز للاستخدام أو التجربة."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ الـ Prompt مش جملة سحرية — هو طلب واضح بيخلي الـ AI يعرف يعمل إيه.",
+        "ليه دلوقتي؟ في الدرس اللي فات جرّبت AI مرة. النهارده هتتعلم ليه نفس السؤال أحيانًا بيجيب رد ممتاز وأحيانًا رد فاضي.",
+        "هتعمل إيه بعد الدرس؟ هتكتب Prompt واحد محسّن لحاجة حقيقية من شغلك أو يومك — جاهز تستخدمه أو تجرّبه."
+      ]
+    },
+    "coreIdea": {
+      "en": "A clear Prompt = Role + Context + Task + Format",
+      "ar-MSA": "الـ Prompt الواضح = دور + سياق + مهمة + شكل",
+      "ar-Gulf": "البرومبت الواضح = دور + سياق + مهمة + شكل",
+      "ar-EG": "الـ Prompt (الطلب) هو الرسالة اللي بتبعتها للـ AI. كل ما الطلب أوضح، الرد أنفع."
+    },
+    "tension": {
+      "en": "You wrote: \"Write something about marketing\" — and got a general text?",
+      "ar-MSA": "كتبت: «اكتب لي شيئًا عن التسويق» — فحصلت على نص عام؟",
+      "ar-Gulf": "كتبت: «اكتب لي شيء عن التسويق» — فحصلت على نص عام؟",
+      "ar-EG": "الـ AI مش بيقرا دماغك. بيقرا اللي بتكتبه بالظبط."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Vague Request",
+        "rightLabel": "Clear Request",
+        "leftBody": "\"Write me something about marketing\" → General paragraphs with no audience or goal, hard to use",
+        "rightBody": "\"You are a content editor. I am opening a candy shop in Alexandria. Write 3 post ideas, each two lines\" → A response close to what you will publish"
+      },
+      "ar-MSA": {
+        "leftLabel": "طلب غامض",
+        "rightLabel": "طلب واضح",
+        "leftBody": "«اكتب لي شيئًا عن التسويق» → فقرات عامة بلا جمهور ولا هدف، صعب الاستخدام",
+        "rightBody": "«أنت محرر محتوى. أفتح محل حلويات في الإسكندرية. اكتب ٣ أفكار منشور، كل واحدة سطران» → رد قريب مما ستنشره"
+      },
+      "ar-Gulf": {
+        "leftLabel": "طلب غامض",
+        "rightLabel": "طلب واضح",
+        "leftBody": "«اكتب لي شيء عن التسويق» → فقرات عامة بلا جمهور ولا هدف، صعب الاستخدام",
+        "rightBody": "«أنت محرر محتوى. أفتح محل حلويات في الإسكندرية. اكتب ٣ أفكار منشور، كل واحدة سطران» → رد قريب مما راح تنشره"
+      },
+      "ar-EG": {
+        "leftLabel": "طلب مبهم",
+        "leftBody": "«اكتبلي حاجة عن التسويق». الرد: فقرات عامة مفيش جمهور ولا هدف. صعب تستخدمه.",
+        "rightLabel": "طلب واضح",
+        "rightBody": "«إنت محرّر محتوى. بافتح محل حلويات في الإسكندرية. اكتبلي ٣ أفكار بوست، كل واحد سطرين.» الرد قريب من اللي هتنشره."
+      }
+    },
+    "missionIntro": {
+      "en": "Choose a need you really have — an email, a post, a summary, a response to a message — and write one Prompt that includes the role, context, task, and format. A perfect answer is not required; a clear attempt that can be tried in any AI tool is what is needed.",
+      "ar-MSA": "اختر حاجة تحتاجها فعلًا — بريد، منشور، تلخيص، رد على رسالة — واكتب Prompt واحدًا فيه الدور والسياق والمهمة والشكل. لا يُطلب إجابة مثالية؛ يُطلب محاولة واضحة يمكن تجربتها في أي أداة ذكاء اصطناعي.",
+      "ar-Gulf": "اختر حاجة تحتاجها فعلًا — بريد، منشور، تلخيص، رد على رسالة — واكتب برومبت واحد فيه الدور والسياق والمهمة والشكل. ما يُطلب إجابة مثالية؛ يُطلب محاولة واضحة يمكن تجربتها في أي أداة ذكاء اصطناعي.",
+      "ar-EG": "اختار حاجة محتاجها فعلًا — إيميل، بوست، تلخيص، رد على رسالة — واكتب Prompt واحد فيه الدور والسياق والمهمة والشكل.\n\nمش مطلوب إجابة مثالية. المطلوب محاولة واضحة تقدر تجرّبها في أي AI."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Illustration: Four fields in one message — Who is the AI? What is the situation? What do you want? In what format should the response be?",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l2-first-prompt.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Illustration: Four fields in one message — Who is the AI? What is the situation? What do you want? In what format should the response be?"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l2-first-prompt.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "الـ Prompt الواضح = دور + سياق + مهمة + شكل"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l2-first-prompt.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "البرومبت الواضح = دور + سياق + مهمة + شكل"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/intro-m1-l2-first-prompt.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "تخيّل رسالتك فيها أربع خانات: مين الـ AI؟ الموقف إيه؟ عايز إيه؟ الرد يطلع بأي شكل؟ الصورة توضّح الفكرة — مش محتاج أداة م"
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "intro-m1-l2-first-prompt's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Vague Request / Clear Request) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Vague Request\" vs \"Clear Request\" for intro-m1-l2-first-prompt.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Vague Request",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l2-first-prompt.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Clear Request",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l2-first-prompt.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Prompt",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l2-first-prompt.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Context",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l2-first-prompt.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "طلب غامض",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l2-first-prompt.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "طلب واضح",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l2-first-prompt.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Prompt (طلب)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l2-first-prompt.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Context (سياق)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l2-first-prompt.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "طلب غامض",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l2-first-prompt.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "طلب واضح",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l2-first-prompt.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "برومبت (طلب)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l2-first-prompt.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "السياق",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l2-first-prompt.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "طلب مبهم",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l2-first-prompt.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "طلب واضح",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l2-first-prompt.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Prompt (طلب)",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l2-first-prompt.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Context (سياق)",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l2-first-prompt.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "First Prompt: \"Vague Request\" versus \"Clear Request\" — A clear Prompt = Role + Context + Task + Format",
+    "ar-MSA": "أول برومبت: \"طلب غامض\" في مقابل \"طلب واضح\" — الـ Prompt الواضح = دور + سياق + مهمة + شكل",
+    "ar-Gulf": "الطلب الواضح: \"طلب غامض\" في مقابل \"طلب واضح\" — البرومبت الواضح = دور + سياق + مهمة + شكل",
+    "ar-EG": "الـ Prompt الواضح = دور + سياق + مهمة + شكل: \"طلب مبهم\" في مقابل \"طلب واضح\" — الـ Prompt (الطلب) هو الرسالة اللي بتبعتها للـ AI. كل ما الطلب أوضح، الرد أنفع."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"Clear Request\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/intro-m1-l2-first-prompt.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"Real Topic\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/intro-m1-l2-first-prompt.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"طلب واضح\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l2-first-prompt.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"موضوع حقيقي\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l2-first-prompt.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"طلب واضح\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l2-first-prompt.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"موضوع حقيقي\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l2-first-prompt.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"طلب واضح\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/intro-m1-l2-first-prompt.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"موضوع حقيقي\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/intro-m1-l2-first-prompt.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 30"
+    }
+  ],
+  "checksum": "79a8d6b9386f6a1e45ea6dda4c99fb3554af179c5ca4409ef606ef69729465ac"
+}

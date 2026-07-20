@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "creator-m5-l2-thumbnails-captions",
+  "pathId": "creator",
+  "moduleId": "creator-m5-polish",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Thumbnails and Captions",
+    "ar-MSA": "الصور المصغّرة والعناوين",
+    "ar-Gulf": "الثمبنيلز والكابشنز",
+    "ar-EG": "خلي الباب واضح وسريع الفهم"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/creator-m5-l2-thumbnails-captions.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m5-l2-thumbnails-captions.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m5-l2-thumbnails-captions.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/creator-m5-l2-thumbnails-captions.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? After creating multiple content forms from a single idea — the question now is: How do you make each version visible and engaging?",
+        "Thumbnail and caption are the viewer's first decision: click or skip."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ بعد أن تُنتج من فكرة واحدة أكثر من شكل محتوى — السؤال الآن: كيف تجعل كل نسخة تُرى وتُفتح؟",
+        "Thumbnail (صورة الغلاف) والكابشن أول قرار للمشاهد: ينقر أم يتخطّى."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ بعد ما تنتج من فكرة وحدة أكثر من شكل محتوى — السؤال الحين: كيف تخلي كل نسخة تُشوف وتُفتح؟",
+        "Thumbnail (صورة الغلاف) والكابشن أول قرار للمشاهد: ينقر أو يتخطّى."
+      ],
+      "ar-EG": [
+        "بعد ما عرفت تطلع من فكرة واحدة أكتر من شكل محتوى، السؤال دلوقتي: إزاي تخلي كل نسخة منهم تتشاف وتتفتح؟",
+        "الـ Thumbnail والكابشن أول قرار للمشاهد: يدوس أو يعدي."
+      ]
+    },
+    "coreIdea": {
+      "en": "A good thumbnail:",
+      "ar-MSA": "Thumbnail جيد:",
+      "ar-Gulf": "Thumbnail جيد:",
+      "ar-EG": "Thumbnail جيد: نص قليل، تباين قوي، وفكرة واضحة من أول نظرة."
+    },
+    "tension": {
+      "en": "A weak entry loses excellent content. If the image is dull or the text is long and unclear — the viewer won't give the video a chance.",
+      "ar-MSA": "باب ضعيف يخسر محتوى ممتازًا. إن كانت الصورة باهتة أو النص طويلًا وغير واضح — المشاهد لن يمنح الفيديو فرصة.",
+      "ar-Gulf": "باب ضعيف يخسر محتوى ممتاز. إذا كانت الصورة باهتة أو النص طويل وغير واضح — المشاهد ما راح يعطي الفيديو فرصة.",
+      "ar-EG": "لو الصورة باهتة أو النص طويل ومش واضح، المشاهد مش هيدي فرصة للفيديو."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Weak Style",
+        "rightLabel": "Stronger Style",
+        "leftBody": "Thumbnail with too much text and a caption that starts with a long introduction — the viewer gets bored before understanding",
+        "rightBody": "Focused thumbnail with few words and a caption that starts with an engaging sentence related to the benefit"
+      },
+      "ar-MSA": {
+        "leftLabel": "الأسلوب الضعيف",
+        "rightLabel": "الأسلوب الأقوى",
+        "leftBody": "Thumbnail فيه كلام كثير وكابشن يبدأ بمقدمة طويلة — المشاهد يملّ قبل أن يفهم",
+        "rightBody": "Thumbnail مركّز بكلمات قليلة وكابشن يبدأ بجملة مشوقة مرتبطة بالفائدة"
+      },
+      "ar-Gulf": {
+        "leftLabel": "الأسلوب الضعيف",
+        "rightLabel": "الأسلوب الأقوى",
+        "leftBody": "Thumbnail فيه كلام كثير وكابشن يبدأ بمقدمة طويلة — المشاهد يمل قبل ما يفهم",
+        "rightBody": "Thumbnail مركّز بكلمات قليلة وكابشن يبدأ بجملة مشوقة مرتبطة بالفائدة"
+      },
+      "ar-EG": {
+        "leftLabel": "الأسلوب الضعيف",
+        "leftBody": "Thumbnail فيه كلام كتير وكابشن يبدأ بمقدمة طويلة، فالمشاهد يزهق قبل ما يفهم.",
+        "rightLabel": "الأسلوب الأقوى",
+        "rightBody": "Thumbnail مركز بكلمات قليلة وكابشن يبدأ بجملة مشوقة مرتبطة بالفائدة."
+      }
+    },
+    "missionIntro": {
+      "en": "Choose one video — write 3 versions for the entry: either 3 caption openings or 3 thumbnail texts.",
+      "ar-MSA": "اختر فيديوًا واحدًا — اكتب ٣ صياغات للباب: إما ٣ افتتاحيات كابشن أو ٣ نصوص Thumbnail.",
+      "ar-Gulf": "اختر فيديو واحد — اكتب ٣ صياغات للباب: إما ٣ افتتاحيات كابشن أو ٣ نصوص Thumbnail.",
+      "ar-EG": "اختار فيديو واحد عندك، ثم اكتب ٣ صياغات للباب: يا ٣ افتتاحيات كابشن، يا ٣ نصوص Thumbnail."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Visual snapshot — **Examples of thumbnails and captions**. **The message is clear from the first second:** **minimal text**, **easy to read**, **and a clear pro",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m5-l2-thumbnails-captions.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Visual snapshot — **Examples of thumbnails and captions**. **The message is clear from the first second:** **minimal text**, **easy to read*"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m5-l2-thumbnails-captions.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Thumbnail جيد:"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m5-l2-thumbnails-captions.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Thumbnail جيد:"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/creator-m5-l2-thumbnails-captions.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "المهم في المثال إن الرسالة واضحة من أول ثانية: نص قليل، قراءة سهلة، ووعد مفهوم."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "creator-m5-l2-thumbnails-captions's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Weak Style / Stronger Style) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Weak Style\" vs \"Stronger Style\" for creator-m5-l2-thumbnails-captions.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Weak Style",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m5-l2-thumbnails-captions.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Stronger Style",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m5-l2-thumbnails-captions.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Hook Line",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m5-l2-thumbnails-captions.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Thumbnail Text",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m5-l2-thumbnails-captions.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "الأسلوب الضعيف",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m5-l2-thumbnails-captions.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "الأسلوب الأقوى",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m5-l2-thumbnails-captions.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Hook Line (خطاف)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m5-l2-thumbnails-captions.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Thumbnail Text (نص الغلاف)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m5-l2-thumbnails-captions.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "الأسلوب الضعيف",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m5-l2-thumbnails-captions.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "الأسلوب الأقوى",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m5-l2-thumbnails-captions.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Hook Line (خطاف)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m5-l2-thumbnails-captions.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Thumbnail Text (نص الغلاف)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m5-l2-thumbnails-captions.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "الأسلوب الضعيف",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m5-l2-thumbnails-captions.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "الأسلوب الأقوى",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m5-l2-thumbnails-captions.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Hook Line",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m5-l2-thumbnails-captions.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Thumbnail Text",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m5-l2-thumbnails-captions.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Thumbnails and Captions: \"Weak Style\" versus \"Stronger Style\" — A good thumbnail:",
+    "ar-MSA": "الصور المصغّرة والعناوين: \"الأسلوب الضعيف\" في مقابل \"الأسلوب الأقوى\" — Thumbnail جيد:",
+    "ar-Gulf": "الثمبنيلز والكابشنز: \"الأسلوب الضعيف\" في مقابل \"الأسلوب الأقوى\" — Thumbnail جيد:",
+    "ar-EG": "خلي الباب واضح وسريع الفهم: \"الأسلوب الضعيف\" في مقابل \"الأسلوب الأقوى\" — Thumbnail جيد: نص قليل، تباين قوي، وفكرة واضحة من أول نظرة."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Variety of formulations\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m5-l2-thumbnails-captions.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Thoughtful choice\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m5-l2-thumbnails-captions.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"تنوع الصياغات\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m5-l2-thumbnails-captions.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"اختيار واعٍ\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m5-l2-thumbnails-captions.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"تنوع الصياغات\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m5-l2-thumbnails-captions.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"اختيار واعٍ\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m5-l2-thumbnails-captions.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"تنوع الصياغات\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m5-l2-thumbnails-captions.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"اختيار واعي\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m5-l2-thumbnails-captions.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "f8fc595be50262854656ddb55953622d252262344d299d926336c13e6c09992a"
+}

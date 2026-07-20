@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m5-l5-mini-win",
+  "pathId": "builder",
+  "moduleId": "builder-m5",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Mini Win — Check What You Learned",
+    "ar-MSA": "انتصار صغير — تحقّق ممّا تعلّمت",
+    "ar-Gulf": "الانتصار الصغير",
+    "ar-EG": "صغير ومنشور > كامل ومش متجرب"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m5-l5-mini-win.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l5-mini-win.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l5-mini-win.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m5-l5-mini-win.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? ‘Small and shipped’ is better than ‘complete and untested’ — Mini Win before perfection.",
+        "Why now? You have completed 3 layers: Frontend, Backend, Database. It's time to pause and solidify.",
+        "What comes after the lesson? You will define Mini Win for your app — the smallest version you can publish and test."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ «صغير ومنشور» أفضل من «كامل وغير مجرب» — Mini Win (انتصار صغير) قبل الكمال.",
+        "لماذا الآن؟ أنهيت ٣ طبقات: واجهة، كواليس، مخزن. وقت التوقف والتثبيت.",
+        "ماذا بعد الدرس؟ ستعرّف Mini Win لتطبيقك — أصغر نسخة تنشرها وتجربها."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ «صغير ومنشور» أفضل من «كامل وغير مجرب» — Mini Win (انتصار صغير) قبل الكمال.",
+        "ليش الحين؟ أنهيت ٣ طبقات: واجهة، كواليس، مخزن. وقت التوقف والتثبيت.",
+        "وش بعد الدرس؟ راح تعرف Mini Win لتطبيقك — أصغر نسخة تنشرها وتجربها."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ «صغير ومنشور» أحسن من «كامل ومش متجرب» — Mini Win قبل الكمال.",
+        "ليه دلوقتي؟ خلّصت ٣ طبقات: واجهة، كواليس، مخزن. وقت توقّف وتثبّت.",
+        "هتعمل إيه بعد الدرس؟ هتعرّف Mini Win لتطبيقك — أصغر نسخة تقدر تنشرها وتجربها."
+      ]
+    },
+    "coreIdea": {
+      "en": "Mini Win = the smallest version of your app that you publish and test with a real user",
+      "ar-MSA": "Mini Win = أصغر نسخة من تطبيقك تنشرها وتجربها مع مستخدم حقيقي",
+      "ar-Gulf": "Mini Win = أصغر نسخة من تطبيقك تنشرها وتجربها مع مستخدم حقيقي",
+      "ar-EG": "Mini Win = أصغر نسخة من تطبيقك تقدر تنشرها وتجربها مع مستخدم حقيقي."
+    },
+    "tension": {
+      "en": "You have 20 features in mind: login, payment, 5 languages, dashboard, notifications... After a month, you are still planning — and nothing works in front of a real user.",
+      "ar-MSA": "لديك ٢٠ ميزة في ذهنك: login، دفع، ٥ لغات، dashboard، notifications... بعد شهر ما زلت تخطّط — ولا شيء يعمل أمام مستخدم حقيقي.",
+      "ar-Gulf": "عندك ٢٠ ميزة في بالك: تسجيل دخول، دفع، ٥ لغات، لوحة تحكم، إشعارات... بعد شهر ما زلت تخطط — ولا شيء يعمل أمام مستخدم حقيقي.",
+      "ar-EG": "عندك ٢٠ feature في دماغك: login، دفع، ٥ لغات، dashboard، notifications..."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "‘I will do everything first’",
+        "rightLabel": "Mini Win in a Week",
+        "leftBody": "3 months of planning. login + payment + 10 pages. No one tried it — no feedback",
+        "rightBody": "One page: write a question → AI responds. 5 friends tried it. I learned what works and what doesn’t"
+      },
+      "ar-MSA": {
+        "leftLabel": "«سأفعل كل شيء أولًا»",
+        "rightLabel": "Mini Win في أسبوع",
+        "leftBody": "٣ أشهر تخطيط. login + دفع + ١٠ صفحات. لا أحد جرّب — لا feedback",
+        "rightBody": "صفحة واحدة: اكتب سؤال → AI يرد. ٥ أصدقاء جرّبوا. عرفت ما يعمل وما لا"
+      },
+      "ar-Gulf": {
+        "leftLabel": "«راح أسوي كل شيء أولًا»",
+        "rightLabel": "Mini Win في أسبوع",
+        "leftBody": "٣ أشهر تخطيط. تسجيل دخول + دفع + ١٠ صفحات. لا أحد جرب — لا ملاحظات",
+        "rightBody": "صفحة واحدة: اكتب سؤال → AI يرد. ٥ أصدقاء جربوا. عرفت وش يعمل وش لا"
+      },
+      "ar-EG": {
+        "leftLabel": "«هعمل كل حاجة الأول»",
+        "leftBody": "٣ شهور تخطيط. login + دفع + ١٠ صفحات. مفيش حد جرب — ومفيش feedback.",
+        "rightLabel": "Mini Win في أسبوع",
+        "rightBody": "صفحة واحدة: اكتب سؤال → AI يرد. ٥ أصدقاء جربوا. عرفت إيه يشتغل وإيه لأ."
+      }
+    },
+    "missionIntro": {
+      "en": "Definition mission — not building. Use the Product Request from the transition lesson. 5–10 minutes.",
+      "ar-MSA": "مهمة تعريف — ليست بناء. استخدم Product Request من درس الانتقال. ٥–١٠ دقائق.",
+      "ar-Gulf": "مهمة تعريف — مو بناء. استخدم طلب المنتج من درس الانتقال. ٥–١٠ دقائق.",
+      "ar-EG": "المهمة دي تعريف — مش بناء. ٥–١٠ دقايق.\n\nاستخدم Product Request من درس الانتقال."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Mini Win = the smallest version of your app that you publish and test with a real user",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l5-mini-win.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Mini Win = the smallest version of your app that you publish and test with a real user"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l5-mini-win.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Mini Win = أصغر نسخة من تطبيقك تنشرها وتجربها مع مستخدم حقيقي"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l5-mini-win.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Mini Win = أصغر نسخة من تطبيقك تنشرها وتجربها مع مستخدم حقيقي"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m5-l5-mini-win.ts",
+          "field": "block.caption (unknown)",
+          "quote": "صغير ومنشور > كامل ومش متجرب"
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "builder-m5-l5-mini-win's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (‘I will do everything first’ / Mini Win in a Week) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"‘I will do everything first’\" vs \"Mini Win in a Week\" for builder-m5-l5-mini-win.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "‘I will do everything first’",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l5-mini-win.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Mini Win in a Week",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l5-mini-win.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Mini Win",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l5-mini-win.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "MVP (Minimum Viable Product)",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l5-mini-win.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "«سأفعل كل شيء أولًا»",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l5-mini-win.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Mini Win في أسبوع",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l5-mini-win.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Mini Win (انتصار صغير)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l5-mini-win.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "MVP (Minimum Viable Product — أقل منتج قابل للتطبيق)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l5-mini-win.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "«راح أسوي كل شيء أولًا»",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l5-mini-win.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Mini Win في أسبوع",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l5-mini-win.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Mini Win (انتصار صغير)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l5-mini-win.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "MVP (Minimum Viable Product — أقل منتج قابل للتطبيق)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l5-mini-win.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "«هعمل كل حاجة الأول»",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m5-l5-mini-win.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Mini Win في أسبوع",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m5-l5-mini-win.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Mini Win (انتصار صغير)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m5-l5-mini-win.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "MVP (Minimum Viable Product)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m5-l5-mini-win.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Mini Win — Check What You Learned: \"‘I will do everything first’\" versus \"Mini Win in a Week\" — Mini Win = the smallest version of your app that you publish and test with a real user",
+    "ar-MSA": "انتصار صغير — تحقّق ممّا تعلّمت: \"«سأفعل كل شيء أولًا»\" في مقابل \"Mini Win في أسبوع\" — Mini Win = أصغر نسخة من تطبيقك تنشرها وتجربها مع مستخدم حقيقي",
+    "ar-Gulf": "الانتصار الصغير: \"«راح أسوي كل شيء أولًا»\" في مقابل \"Mini Win في أسبوع\" — Mini Win = أصغر نسخة من تطبيقك تنشرها وتجربها مع مستخدم حقيقي",
+    "ar-EG": "صغير ومنشور > كامل ومش متجرب: \"«هعمل كل حاجة الأول»\" في مقابل \"Mini Win في أسبوع\" — Mini Win = أصغر نسخة من تطبيقك تقدر تنشرها وتجربها مع مستخدم حقيقي."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Defined Mini Win\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m5-l5-mini-win.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Clear boundaries\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m5-l5-mini-win.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Mini Win محدّد\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l5-mini-win.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"حدود واضحة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l5-mini-win.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Mini Win محدّد\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l5-mini-win.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"حدود واضحة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l5-mini-win.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Mini Win محدّد\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m5-l5-mini-win.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"حدود واضحة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m5-l5-mini-win.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "81fdcda080d52f76fc3c763ce6deb8ed2d380079ba9c151b7ffdd35d9d15f890"
+}

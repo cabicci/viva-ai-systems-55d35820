@@ -1,0 +1,345 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "automator-m1-l1-where-you-are",
+  "pathId": "automator",
+  "moduleId": "automator-m1",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Where You Are on the Map",
+    "ar-MSA": "موقعك على الخريطة",
+    "ar-Gulf": "مكانك على الخريطة",
+    "ar-EG": "شوف الوقت الضايع — بعدين سلّم للعامل الافتراضي"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/automator-m1-l1-where-you-are.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m1-l1-where-you-are.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m1-l1-where-you-are.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/automator-m1-l1-where-you-are.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Before building any automation, you need to know which repetitive tasks take up your time each week.",
+        "Why now? After Builder (the product) and Creator (the audience), Automator is the «virtual worker» that makes repetitive tasks run on their own.",
+        "What after the lesson? You will identify 5 repetitive tasks and calculate the time you waste on them weekly."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ قبل بناء أي أتمتة، يجب أن تعرف أي مهام متكررة تستهلك وقتك كل أسبوع.",
+        "لماذا الآن؟ بعد Builder (البناء) (المنتج) و Creator (المحتوى) (الجمهور)، Automator (الأتمتة) هو «العامل الافتراضي» الذي يجعل الشغل المتكرر يمشي وحده.",
+        "ماذا بعد الدرس؟ ستعدّ ٥ مهام متكررة وتحسب الوقت الذي تضيعه فيها أسبوعيًا."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ قبل ما تبني أي أتمتة، لازم تعرف أي مهام متكررة تستهلك وقتك كل أسبوع.",
+        "ليش الحين؟ بعد Builder (البناء) (المنتج) و Creator (المحتوى) (الجمهور)، Automator (الأتمتة) هو «العامل الافتراضي» اللي يخلي الشغل المتكرر يمشي بنفسه.",
+        "وش بعد الدرس؟ راح تعدّ ٥ مهام متكررة وتحسب الوقت اللي تضيع فيه أسبوعيًا."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ قبل ما تبني أي أتمتة، لازم تعرف أنهي مهام متكرّرة بتاكل وقتك كل أسبوع.",
+        "ليه دلوقتي؟ بعد Builder (المنتج) و Creator (الجمهور)، Automator هو «العامل الافتراضي» اللي يخلّي الشغل المتكرّر يمشي لوحده.",
+        "هتعمل إيه بعد الدرس؟ هتعدّد ٥ مهام متكرّرة وتحسب الوقت اللي بتضيعه فيهم أسبوعيًا."
+      ]
+    },
+    "coreIdea": {
+      "en": "Automator",
+      "ar-MSA": "Automator",
+      "ar-Gulf": "Automator",
+      "ar-EG": "Automator = بناء «عامل افتراضي» يكرّر شغلك المتكرّر: ردود، نقل بيانات، تذكيرات، متابعة."
+    },
+    "tension": {
+      "en": "You hear about Make, Zapier, and n8n — you open YouTube and build a Flow — and after a week, you are still doing the same work manually. The problem is not the tool. The problem is you did not identify which tasks are re",
+      "ar-MSA": "تسمع عن Make و Zapier و n8n — تفتح يوتيوب وتبني Flow (تدفق عمل) — وبعد أسبوع ما زلت تعمل نفس الشغل بيدك. المشكلة ليست الأداة. المشكلة أنك لم تعرف أي مهمة تتكرر وتضيع وقتك فعلًا.",
+      "ar-Gulf": "تسمع عن Make و Zapier و n8n — تفتح يوتيوب وتبني Flow (تدفق عمل) — وبعد أسبوع ما زلت تسوي نفس الشغل بيدك. المشكلة مو الأداة. المشكلة أنك ما عرفت أي مهمة تتكرر وتضيع وقتك فعلًا.",
+      "ar-EG": "بتسمع عن Make و Zapier و n8n — وتفتح يوتيوب وتبني Flow — وبعد أسبوع لسه بتعمل نفس الشغل بإيدك."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Building Without Audit",
+        "rightLabel": "Audit First",
+        "leftBody": "Opening Make and building 3 Flows — but still sending welcome emails manually for an hour daily — automation is not about the task that wastes time",
+        "rightBody": "Count: Welcome email × 20 clients × 3 minutes = 1 hour daily. First Flow = automatic welcome email. Save 5 hours weekly"
+      },
+      "ar-MSA": {
+        "leftLabel": "بناء من دون Audit",
+        "rightLabel": "Audit أولًا",
+        "leftBody": "فتح Make وبناء ٣ Flows — لكن ما زال يرسل إيميلات ترحيب بيده ساعة يوميًا — الأتمتة ليست على المهمة التي تضيع وقته",
+        "rightBody": "عدّ: إيميل ترحيب × ٢٠ عميل × ٣ دقائق = ساعة يوميًا. أول Flow = إيميل ترحيب تلقائي. وفّر ٥ ساعات أسبوعيًا"
+      },
+      "ar-Gulf": {
+        "leftLabel": "بناء من دون Audit",
+        "rightLabel": "Audit أولًا",
+        "leftBody": "تفتح Make وتبني ٣ Flows — لكن ما زال يرسل إيميلات ترحيب بيده ساعة يوميًا — الأتمتة مو على المهمة اللي تضيع وقته",
+        "rightBody": "عدّ: إيميل ترحيب × ٢٠ عميل × ٣ دقائق = ساعة يوميًا. أول Flow = إيميل ترحيب تلقائي. وفّر ٥ ساعات أسبوعيًا"
+      },
+      "ar-EG": {
+        "leftLabel": "بناء من غير Audit",
+        "leftBody": "أحمد فتح Make وبنى ٣ Flows — بس لسه بيبعت إيميلات ترحيب بإيده ساعة كل يوم. الأتمتة مش على المهمة اللي بتضيع وقته.",
+        "rightLabel": "Audit الأول",
+        "rightBody": "أحمد عدّد: إيميل ترحيب × ٢٠ عميل × ٣ دقايق = ساعة يوميًا. أول Flow = إيميل ترحيب أوتوماتيك. وفّر ٥ ساعات في الأسبوع."
+      }
+    },
+    "missionIntro": {
+      "en": "Monitoring — not building. Before handing over any work to the virtual worker, you need to know the repetitive tasks. 10–15 minutes is enough.",
+      "ar-MSA": "مراقبة — لا بناء. قبل تسليم أي شغل للعامل الافتراضي، يجب معرفة المهام المتكررة. ١٠–١٥ دقيقة كافية.",
+      "ar-Gulf": "مراقبة — لا بناء. قبل ما تسلم أي شغل للعامل الافتراضي، لازم تعرف المهام المتكررة. ١٠–١٥ دقيقة كافية.",
+      "ar-EG": "المهمة دي مراقبة — مش بناء. قبل ما تسلّم أي شغل للعامل الافتراضي، لازم تعرف أنهي مهام بتتكرّر.\n\n١٠–١٥ دقيقة كفاية."
+    },
+    "visualIntent": {
+      "kind": "concept-scene",
+      "summary": "Journey map — 5 connected paths. **Builder** → **Creator** → **Automator**.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m1-l1-where-you-are.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Journey map — 5 connected paths. **Builder** → **Creator** → **Automator**."
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m1-l1-where-you-are.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Automator"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m1-l1-where-you-are.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Automator"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/automator-m1-l1-where-you-are.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "كل مسار = مرحلة في الرحلة. Builder (منتج) → Creator (جمهور) → Automator (عامل افتراضي يوفر وقت). إنت في Automator — بس ا"
+        }
+      }
+    }
+  },
+  "method": 2,
+  "methodRationale": "automator-m1-l1-where-you-are's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"Automator\" without inventing UI chrome or rendering paid text.",
+  "compositionPattern": "concept-scene-metaphor",
+  "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Building Without Audit\" vs \"Audit First\" for automator-m1-l1-where-you-are.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Building Without Audit",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m1-l1-where-you-are.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Audit First",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m1-l1-where-you-are.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Time Audit",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m1-l1-where-you-are.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Workflow",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m1-l1-where-you-are.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "بناء من دون Audit",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m1-l1-where-you-are.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Audit أولًا",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m1-l1-where-you-are.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Time Audit (جرد الوقت)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m1-l1-where-you-are.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Workflow (سير العمل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m1-l1-where-you-are.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "بناء من دون Audit",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m1-l1-where-you-are.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Audit أولًا",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m1-l1-where-you-are.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Time Audit (جرد الوقت)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m1-l1-where-you-are.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Workflow (سير العمل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m1-l1-where-you-are.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "بناء من غير Audit",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m1-l1-where-you-are.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Audit الأول",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m1-l1-where-you-are.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Time Audit (جرد الوقت)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m1-l1-where-you-are.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Workflow (سير العمل)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m1-l1-where-you-are.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Where You Are on the Map: \"Building Without Audit\" versus \"Audit First\" — Automator",
+    "ar-MSA": "موقعك على الخريطة: \"بناء من دون Audit\" في مقابل \"Audit أولًا\" — Automator",
+    "ar-Gulf": "مكانك على الخريطة: \"بناء من دون Audit\" في مقابل \"Audit أولًا\" — Automator",
+    "ar-EG": "شوف الوقت الضايع — بعدين سلّم للعامل الافتراضي: \"بناء من غير Audit\" في مقابل \"Audit الأول\" — Automator = بناء «عامل افتراضي» يكرّر شغلك المتكرّر: ردود، نقل بيانات، تذكيرات، متابعة."
+  },
+  "aiPromptContract": {
+    "providerClass": "text-free-illustration",
+    "paidAllowed": false,
+    "textFree": true,
+    "promptRules": [
+      "No embedded text, letters, numbers, or UI chrome anywhere in the image.",
+      "Depict the idea behind \"Where You Are on the Map\" as a literal scene or metaphor, not as software.",
+      "Use a calm editorial illustration style consistent with a warm, minimal brand palette.",
+      "Keep the composition balanced so it still reads when mirrored for RTL locales."
+    ],
+    "costCeilingUsd": 0
+  },
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"5 Tasks with Numbers\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m1-l1-where-you-are.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Priority Decision\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m1-l1-where-you-are.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٥ مهام بأرقام\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m1-l1-where-you-are.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قرار أولوية\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m1-l1-where-you-are.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٥ مهام بأرقام\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m1-l1-where-you-are.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قرار أولوية\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m1-l1-where-you-are.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٥ مهام بأرقام\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m1-l1-where-you-are.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قرار أولوية\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m1-l1-where-you-are.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "034d69789444fca5d588ceb61ad1552eed20ba676946d9e4e6dbedd0b8cd1a54"
+}

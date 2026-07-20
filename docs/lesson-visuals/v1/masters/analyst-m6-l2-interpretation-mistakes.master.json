@@ -1,0 +1,238 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "analyst-m6-l2-interpretation-mistakes",
+  "pathId": "analyst",
+  "moduleId": "analyst-m6",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Interpretation Mistakes",
+    "ar-MSA": "أخطاء تفسير البيانات",
+    "ar-Gulf": "أخطاء التفسير",
+    "ar-EG": "٤ فخاخ تفسير — وعلاجهم"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m6-l2-interpretation-mistakes.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m6-l2-interpretation-mistakes.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m6-l2-interpretation-mistakes.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/analyst-m6-l2-interpretation-mistakes.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What Will You Understand? The data is correct — the decision is wrong if interpreted incorrectly."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ البيانات صحيحة — والقرار خطأ إذا قرأتها خطأ."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ البيانات صحيحة — والقرار يكون خاطئ إذا قرأتها بشكل خاطئ."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ البيانات ممكن تكون صح — والقرار غلط لو قرأتها غلط.",
+        "ليه دلوقتي؟ بعد ما الريفيو الأسبوعي بقى عادة، محتاج تتجنّب ٤ فخاخ تفسير قبل ما تتسرّع في القرار.",
+        "هتعمل إيه بعد الدرس؟ هتحل ٣ mini scenarios — correlation، عيّنة صغيرة، vanity metric، recency bias."
+      ]
+    },
+    "coreIdea": {
+      "en": "Correlation",
+      "ar-MSA": "Correlation (ارتباط)",
+      "ar-Gulf": "الارتباط (Correlation)",
+      "ar-EG": "Correlation ≠ Causation: حاجتين بيتحركوا مع بعض مش معناه واحد سبب التاني. اسأل: في حاجة تالتة؟"
+    },
+    "tension": {
+      "en": "Correlation ≠ Causation Small Sample — 3 customers is not the 'market'",
+      "ar-MSA": "Correlation (ارتباط) ≠ سببية عيّنة صغيرة — ٣ عملاء ليس «السوق»",
+      "ar-Gulf": "الارتباط (Correlation) ≠ السببية عيّنة صغيرة — ٣ عملاء مو «السوق»",
+      "ar-EG": "«المبيعات زادت لما شغّلنا أغاني هادية» — قررت تعتمدها طول الوقت. بعد شهر نزلت."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Lesson Start",
+        "rightLabel": "4 Traps",
+        "leftBody": "The data is correct — the decision is wrong if interpreted incorrectly.",
+        "rightBody": "Correlation"
+      },
+      "ar-MSA": {
+        "leftLabel": "بداية الدرس",
+        "rightLabel": "٤ فخاخ",
+        "leftBody": "البيانات صحيحة — والقرار خطأ إذا قرأتها خطأ.",
+        "rightBody": "Correlation (ارتباط)"
+      },
+      "ar-Gulf": {
+        "leftLabel": "بداية الدرس",
+        "rightLabel": "٤ فخاخ",
+        "leftBody": "البيانات صحيحة — والقرار يكون خاطئ إذا قرأتها بشكل خاطئ.",
+        "rightBody": "الارتباط (Correlation)"
+      },
+      "ar-EG": {
+        "leftLabel": "«الأغاني سبب الزيادة»",
+        "rightLabel": "«هجرّب أسبوع واحد»",
+        "leftBody": "Correlation اتعاملت كـ Causation. ممكن الصبح = زبائن أكتر — مش الموسيقى.",
+        "rightBody": "تجربة صغيرة: أغاني vs بدون — نفس الوقت — تقيس المبيعات. بيانات جديدة الأسبوع الجاي."
+      }
+    },
+    "missionIntro": {
+      "en": "| Trap Diagnosis | 50% | | Better Decision | 50% |",
+      "ar-MSA": "| تشخيص الفخ | 50% | | قرار أصح | 50% |",
+      "ar-Gulf": "| تشخيص الفخ | 50% | | قرار أصح | 50% |",
+      "ar-EG": "المهمة دي تطبيق على ٣ مواقف — مش نظري. لكل scenario: نوع الغلطة + إزاي تتجنّبه + قرار أصح.\n\nالـ AI يساعدك تصيغ التشخيص — إنت تختار الحكم النهائي."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "- Recency Bias — The last week is not the whole story",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m6-l2-interpretation-mistakes.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "- Recency Bias — The last week is not the whole story"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m6-l2-interpretation-mistakes.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "- **Vanity Metric (رقم شكلي)** — لايكات ≠ مبيعات"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m6-l2-interpretation-mistakes.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "- **رقم شكلي (Vanity Metric)** — لايكات ≠ مبيعات"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/analyst-m6-l2-interpretation-mistakes.ts",
+          "field": "block.caption (diagram)",
+          "quote": "آيس كريم وغرق بيتحرّكوا مع بعض — السبب الحقيقي حاجة تالتة (الحرارة). استخدم الرسم في الـ scenarios."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "analyst-m6-l2-interpretation-mistakes's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Lesson Start / 4 Traps) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 60 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Lesson Start\" vs \"4 Traps\" for analyst-m6-l2-interpretation-mistakes.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Lesson Start",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m6-l2-interpretation-mistakes.json",
+          "field": "sections[role=Tension].subtitle"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "4 Traps",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m6-l2-interpretation-mistakes.json",
+          "field": "sections[role=Core idea].subtitle"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "بداية الدرس",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m6-l2-interpretation-mistakes.json",
+          "field": "sections[role=Tension].subtitle"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "٤ فخاخ",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m6-l2-interpretation-mistakes.json",
+          "field": "sections[role=Core idea].subtitle"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "بداية الدرس",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m6-l2-interpretation-mistakes.json",
+          "field": "sections[role=Tension].subtitle"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "٤ فخاخ",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m6-l2-interpretation-mistakes.json",
+          "field": "sections[role=Core idea].subtitle"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "«الأغاني سبب الزيادة»",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m6-l2-interpretation-mistakes.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "«هجرّب أسبوع واحد»",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m6-l2-interpretation-mistakes.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Correlation (ارتباط)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m6-l2-interpretation-mistakes.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Vanity Metric (رقم شكلي)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m6-l2-interpretation-mistakes.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Interpretation Mistakes: \"Lesson Start\" versus \"4 Traps\" — Correlation",
+    "ar-MSA": "أخطاء تفسير البيانات: \"بداية الدرس\" في مقابل \"٤ فخاخ\" — Correlation (ارتباط)",
+    "ar-Gulf": "أخطاء التفسير: \"بداية الدرس\" في مقابل \"٤ فخاخ\" — الارتباط (Correlation)",
+    "ar-EG": "٤ فخاخ تفسير — وعلاجهم: \"«الأغاني سبب الزيادة»\" في مقابل \"«هجرّب أسبوع واحد»\" — Correlation ≠ Causation: حاجتين بيتحركوا مع بعض مش معناه واحد سبب التاني. اسأل: في حاجة تالتة؟"
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"تشخيص الفخ\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m6-l2-interpretation-mistakes.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"قرار أصح\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m6-l2-interpretation-mistakes.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "2a604f500d1e7485d2a3bf8f41477a3a9c4570e5dc35c31ecd652c0d883942db"
+}

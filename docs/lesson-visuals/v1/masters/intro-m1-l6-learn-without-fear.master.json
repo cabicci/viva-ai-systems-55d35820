@@ -1,0 +1,313 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "intro-m1-l6-learn-without-fear",
+  "pathId": "intro",
+  "moduleId": "intro-m1",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Learn Without Fear",
+    "ar-MSA": "التعلم دون خوف",
+    "ar-Gulf": "تعلم بدون خوف",
+    "ar-EG": "التعلم = محاولات صغيرة — مش معرفة كاملة"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/intro-m1-l6-learn-without-fear.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l6-learn-without-fear.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l6-learn-without-fear.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/intro-m1-l6-learn-without-fear.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What Will You Understand? You don’t need to be technical — you need useful small experiences that repeat.",
+        "Why Now? In the previous lesson, you learned when to use AI and when to use a program. Before choosing a path, let’s remove a common barrier: fear.",
+        "What After the Lesson? You will write a small next step — and one fear that you won’t let stop you."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ لا تحتاج أن تكون تقنيًا — تحتاج تجارب صغيرة مفيدة تتكرر.",
+        "لماذا الآن؟ في الدرس السابق عرفت متى تستخدم AI ومتى تستخدم برنامجًا. قبل اختيار المسار، نزيل الحاجز الذي يوقف كثيرًا: الخوف.",
+        "ماذا بعد الدرس؟ ستكتب خطوة صغيرة قادمة — وخوفًا واحدًا لن تسمح له بإيقافك."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ مو لازم تكون تقني — تحتاج تجارب صغيرة مفيدة تتكرر.",
+        "ليش الحين؟ في الدرس السابق عرفت متى تستخدم AI ومتى تستخدم برنامج. قبل ما تختار المسار، نزيل الحاجز اللي يوقف كثير: الخوف.",
+        "وش بعد الدرس؟ راح تكتب خطوة صغيرة قادمة — وخوف واحد ما راح تسمح له يوقفك."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ مش محتاج تبقى تقني — محتاج تجارب صغيرة مفيدة تتكرر.",
+        "ليه دلوقتي؟ في الدرس اللي فات عرفت إمتى تستخدم AI وإمتى تستخدم برنامج. قبل ما تختار مسار، لازم نشيل الحاجز اللي بيوقف ناس كتير: الخوف.",
+        "هتعمل إيه بعد الدرس؟ هتكتب خطوة صغيرة جاية — وخوف واحد مش هيسمحله يوقفك."
+      ]
+    },
+    "coreIdea": {
+      "en": "Learning = Small Attempts — Not Complete Knowledge",
+      "ar-MSA": "التعلم = محاولات صغيرة — لا معرفة كاملة",
+      "ar-Gulf": "التعلم = محاولات صغيرة — مو معرفة كاملة",
+      "ar-EG": "أكتر ٣ مخاوف بتوقف المبتدئين: «أنا متأخر»، «أنا مش تقني»، «الكل فاهم إلا أنا». التلاتة نفس الحل: تجربة صغيرة النهاردة."
+    },
+    "tension": {
+      "en": "Do you feel like you’re behind — or that everyone understands except you?",
+      "ar-MSA": "هل تشعر أنك متأخر — أو أن الجميع يفهم إلا أنت؟",
+      "ar-Gulf": "هل تحس إنك متأخر — أو إن الكل يفهم إلا أنت؟",
+      "ar-EG": "ناس كتير بتقول: أكيد محتاج برمجة، أكيد ده مش ليا، أكيد فاتني القطر."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Waiting to Understand Everything",
+        "rightLabel": "Small Experience",
+        "leftBody": "You watch many tutorials and remain afraid to try. Knowledge increases, but skill remains zero.",
+        "rightBody": "One safe Prompt. You see the response, ask for a change, and learn from the result. Repeat tomorrow."
+      },
+      "ar-MSA": {
+        "leftLabel": "تنتظر فهم كل شيء",
+        "rightLabel": "تجربة صغيرة",
+        "leftBody": "تشاهد شروحات كثيرة وتبقى خائفًا من التجربة. المعرفة تزيد والمهارة تبقى صفر",
+        "rightBody": "Prompt واحد آمن. ترى الرد، تطلب تعديلًا، وتتعلم من النتيجة. كرر غدًا"
+      },
+      "ar-Gulf": {
+        "leftLabel": "تنتظر فهم كل شيء",
+        "rightLabel": "تجربة صغيرة",
+        "leftBody": "تتفرج على شروحات كثيرة وتبقى خائف من التجربة. المعرفة تزيد والمهارة تبقى صفر",
+        "rightBody": "Prompt واحد آمن. تشوف الرد، تطلب تعديل، وتتعلم من النتيجة. كرر غدًا"
+      },
+      "ar-EG": {
+        "leftLabel": "تستنى تفهم كل حاجة",
+        "leftBody": "تتفرج على شروحات كتير وتفضل خايف تجرب. المعرفة تزيد والمهارة تفضل صفر.",
+        "rightLabel": "تجربة صغيرة",
+        "rightBody": "Prompt واحد آمن. تشوف الرد، تطلب تعديل، وتتعلم من النتيجة. كرر بكرة."
+      }
+    },
+    "missionIntro": {
+      "en": "Reflect practically — write a small step you will take soon with AI, and one fear you decided will not stop you. Two honest lines are enough.",
+      "ar-MSA": "تأمل عملي — اكتب خطوة صغيرة ستفعلها قريبًا مع AI، وخوفًا واحدًا قررت أنه لن يوقفك. سطران صادقان يكفيان.",
+      "ar-Gulf": "تأمل عملي — اكتب خطوة صغيرة راح تسويها قريبًا مع AI، وخوف واحد قررت إنه ما راح يوقفك. سطران صادقان يكفيان.",
+      "ar-EG": "المهمة دي تأمل عملي — مش شعر. اكتب خطوة صغيرة هتعملها في الأيام الجاية مع AI، وخوف واحد قررت إنه مش هيوقفك.\n\nمش مطلوب إنجاز ضخم. سطرين صادقين يكفي."
+    },
+    "visualIntent": {
+      "kind": "concept-scene",
+      "summary": "Step path: Try → Observe → Adjust → Repeat. Each small step builds confidence. If the response is weak — adjust the question and learn.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l6-learn-without-fear.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Step path: Try → Observe → Adjust → Repeat. Each small step builds confidence. If the response is weak — adjust the question and learn."
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l6-learn-without-fear.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "مسار خطوات: جرّب → لاحظ → عدّل → كرر. كل خطوة صغيرة تبني ثقة. إذا كان الرد ضعيفًا — عدّل السؤال وتعلّم."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l6-learn-without-fear.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "مسار الخطوات: جرّب → لاحظ → عدّل → كرر. كل خطوة صغيرة تبني ثقة. إذا كان الرد ضعيف — عدّل السؤال وتعلم."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/intro-m1-l6-learn-without-fear.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "كل خطوة صغيرة تبني ثقة. لو الرد ضعيف — عدّل السؤال واتعلم. الصورة توضّح الحلقة — مش محتاج تكمل كل المسارات مرة واحدة."
+        }
+      }
+    }
+  },
+  "method": 2,
+  "methodRationale": "intro-m1-l6-learn-without-fear's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 4), so a text-free AI illustration communicates \"Learning = Small Attempts — Not Complete Knowledge\" without inventing UI chrome or rendering paid text.",
+  "compositionPattern": "concept-scene-metaphor",
+  "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Waiting to Understand Everything\" vs \"Small Experience\" for intro-m1-l6-learn-without-fear.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Waiting to Understand Everything",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l6-learn-without-fear.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Small Experience",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l6-learn-without-fear.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Iteration",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l6-learn-without-fear.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "تنتظر فهم كل شيء",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l6-learn-without-fear.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تجربة صغيرة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l6-learn-without-fear.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Iteration (تحسين خطوة بخطوة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l6-learn-without-fear.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "تنتظر فهم كل شيء",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l6-learn-without-fear.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تجربة صغيرة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l6-learn-without-fear.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Iteration (تحسين خطوة بخطوة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l6-learn-without-fear.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "تستنى تفهم كل حاجة",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l6-learn-without-fear.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تجربة صغيرة",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l6-learn-without-fear.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Iteration (تحسين خطوة بخطوة)",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l6-learn-without-fear.ts",
+          "field": "block.items[0].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Learn Without Fear: \"Waiting to Understand Everything\" versus \"Small Experience\" — Learning = Small Attempts — Not Complete Knowledge",
+    "ar-MSA": "التعلم دون خوف: \"تنتظر فهم كل شيء\" في مقابل \"تجربة صغيرة\" — التعلم = محاولات صغيرة — لا معرفة كاملة",
+    "ar-Gulf": "تعلم بدون خوف: \"تنتظر فهم كل شيء\" في مقابل \"تجربة صغيرة\" — التعلم = محاولات صغيرة — مو معرفة كاملة",
+    "ar-EG": "التعلم = محاولات صغيرة — مش معرفة كاملة: \"تستنى تفهم كل حاجة\" في مقابل \"تجربة صغيرة\" — أكتر ٣ مخاوف بتوقف المبتدئين: «أنا متأخر»، «أنا مش تقني»، «الكل فاهم إلا أنا». التلاتة نفس الحل: تجربة صغيرة النهاردة."
+  },
+  "aiPromptContract": {
+    "providerClass": "text-free-illustration",
+    "paidAllowed": false,
+    "textFree": true,
+    "promptRules": [
+      "No embedded text, letters, numbers, or UI chrome anywhere in the image.",
+      "Depict the idea behind \"Learn Without Fear\" as a literal scene or metaphor, not as software.",
+      "Use a calm editorial illustration style consistent with a warm, minimal brand palette.",
+      "Keep the composition balanced so it still reads when mirrored for RTL locales."
+    ],
+    "costCeilingUsd": 0
+  },
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"Realistic Step\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/intro-m1-l6-learn-without-fear.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"Awareness of Fear\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/intro-m1-l6-learn-without-fear.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"خطوة واقعية\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l6-learn-without-fear.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"وعي بالخوف\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l6-learn-without-fear.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"خطوة واقعية\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l6-learn-without-fear.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"وعي بالخوف\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l6-learn-without-fear.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"خطوة واقعية\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/intro-m1-l6-learn-without-fear.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"وعي بالخوف\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/intro-m1-l6-learn-without-fear.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 30"
+    }
+  ],
+  "checksum": "0f91c79a438eeeb0de38eec780179355355550b5f75d8cc5afe0a18063258fab"
+}

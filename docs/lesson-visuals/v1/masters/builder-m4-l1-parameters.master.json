@@ -1,0 +1,345 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m4-l1-parameters",
+  "pathId": "builder",
+  "moduleId": "builder-m4",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Parameters (Temperature)",
+    "ar-MSA": "الوسائط — درجة الحرارة",
+    "ar-Gulf": "معايير (درجة الحرارة)",
+    "ar-EG": "Temperature = ثبات vs إبداع"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m4-l1-parameters.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m4-l1-parameters.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m4-l1-parameters.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m4-l1-parameters.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Temperature = a balance between response stability and creativity — and when to adjust it for each AI feature.",
+        "Why now? The same question twice → two different responses — not always a 'mistake'; it might be your settings.",
+        "What after the lesson? You will choose Temperature for 3 cases: Facts, Content, Conversation."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ Temperature (درجة الحرارة) = توازن بين ثبات الردود وإبداعها — ومتى تضبطها في كل ميزة ذكاء اصطناعي.",
+        "لماذا الآن؟ نفس السؤال مرتين → ردّان مختلفان — ليس دائمًا «خطأ»؛ ربما إعداداتك.",
+        "ماذا بعد الدرس؟ ستختار Temperature لـ ٣ حالات: حقائق، محتوى، محادثة."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ درجة الحرارة = توازن بين ثبات الردود وإبداعها — ومتى تضبطها في كل ميزة ذكاء اصطناعي.",
+        "ليش الحين؟ نفس السؤال مرتين → ردّان مختلفان — مو دائمًا «خطأ»؛ يمكن إعداداتك.",
+        "وش بعد الدرس؟ راح تختار درجة الحرارة لـ ٣ حالات: حقائق، محتوى، محادثة."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ Temperature = توازن بين ثبات الردود وإبداعها — وإمتى تظبطها في كل ميزة AI.",
+        "ليه دلوقتي؟ نفس السؤال مرتين بردّين مختلفين — مش دايمًا «غلط»؛ ممكن إعداداتك.",
+        "هتعمل إيه بعد الدرس؟ هتختار Temperature لـ ٣ حالات: حقائق، محتوى، شات."
+      ]
+    },
+    "coreIdea": {
+      "en": "Every word",
+      "ar-MSA": "كل كلمة",
+      "ar-Gulf": "كل كلمة",
+      "ar-EG": "كل كلمة الـ AI بيختارها من احتمالات. Temperature بتقول: خُد الأكثر توقّعًا (ثبات) ولا جرّأة (إبداع)؟"
+    },
+    "tension": {
+      "en": "I asked the AI the same question twice — and got two different responses. It feels 'unreliable'. Sometimes you want variety (ad ideas). And sometimes you want the same answer (code, numbers).",
+      "ar-MSA": "سألت الذكاء الاصطناعي نفس السؤال مرتين — وخرج ردّان مختلفان. تشعر أنه «غير موثوق». أحيانًا تريد تنوّعًا (أفكار إعلانات). وأحيانًا تريد نفس الإجابة (كود، أرقام).",
+      "ar-Gulf": "سألت الذكاء الاصطناعي نفس السؤال مرتين — وطلع ردّان مختلفان. تحس إنه «مو موثوق». أحيانًا تحتاج تنوّع (أفكار إعلانات). وأحيانًا تحتاج نفس الإجابة (كود، أرقام).",
+      "ar-EG": "سألت AI نفس السؤال مرتين — وطلع ردّين مختلفين. تحس إنه «مش موثوق»."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Low Temperature",
+        "rightLabel": "High Temperature",
+        "leftBody": "«Extract the price from the text.» — You want the same result every time. Low = reliable for the product",
+        "rightBody": "«Suggest 5 slogans for a coffee brand.» — You want surprises. High = different ideas every time"
+      },
+      "ar-MSA": {
+        "leftLabel": "Temperature منخفضة",
+        "rightLabel": "Temperature عالية",
+        "leftBody": "«استخرج السعر من النص.» — تريد نفس النتيجة كل مرة. منخفض = موثوق للمنتج",
+        "rightBody": "«اقترح ٥ slogans (شعارات) لبراند قهوة.» — تريد مفاجآت. عالي = أفكار مختلفة كل مرة"
+      },
+      "ar-Gulf": {
+        "leftLabel": "درجة الحرارة منخفضة",
+        "rightLabel": "درجة الحرارة عالية",
+        "leftBody": "«استخرج السعر من النص.» — تريد نفس النتيجة كل مرة. منخفض = موثوق للمنتج",
+        "rightBody": "«اقترح ٥ شعارات لبراند قهوة.» — تريد مفاجآت. عالي = أفكار مختلفة كل مرة"
+      },
+      "ar-EG": {
+        "leftLabel": "Temperature واطية",
+        "leftBody": "«استخرج السعر من النص.» — عايز نفس النتيجة كل مرة. واطي = موثوق للمنتج.",
+        "rightLabel": "Temperature عالية",
+        "rightBody": "«اقترح ٥ slogans لبراند قهوة.» — عايز مفاجآت. عالي = أفكار مختلفة كل مرة."
+      }
+    },
+    "missionIntro": {
+      "en": "Set Temperature for three cases in a product you imagine. 10–15 minutes.",
+      "ar-MSA": "اضبط Temperature لثلاث حالات في منتج تتخيله. ١٠–١٥ دقيقة.",
+      "ar-Gulf": "اضبط درجة الحرارة لثلاث حالات في منتج تتخيله. ١٠–١٥ دقيقة.",
+      "ar-EG": "هتظبط Temperature لثلاث حالات في منتج تتخيله.\n\n١٠–١٥ دقيقة."
+    },
+    "visualIntent": {
+      "kind": "concept-scene",
+      "summary": "**Same format — because stability is needed:**",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m4-l1-parameters.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**Same format — because stability is needed:**"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m4-l1-parameters.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**نفس الشكل — لأن الثبات مطلوب:**"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m4-l1-parameters.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**نفس الشكل — لأن الثبات مطلوب:**"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m4-l1-parameters.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "كروت الدروس نفس الشكل — صفر مفاجآت. ده مناسب لمحتوى منظم (temp واطية). لو كانت temp عالية، كل كارت كان هيطلع بترتيب وأسل"
+        }
+      }
+    }
+  },
+  "method": 2,
+  "methodRationale": "builder-m4-l1-parameters's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"Every word\" without inventing UI chrome or rendering paid text.",
+  "compositionPattern": "concept-scene-metaphor",
+  "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Low Temperature\" vs \"High Temperature\" for builder-m4-l1-parameters.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Low Temperature",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m4-l1-parameters.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "High Temperature",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m4-l1-parameters.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Temperature",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m4-l1-parameters.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Parameters",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m4-l1-parameters.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "Temperature منخفضة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m4-l1-parameters.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Temperature عالية",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m4-l1-parameters.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Temperature (درجة الحرارة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m4-l1-parameters.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Parameters (معاملات)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m4-l1-parameters.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "درجة الحرارة منخفضة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m4-l1-parameters.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "درجة الحرارة عالية",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m4-l1-parameters.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "درجة الحرارة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m4-l1-parameters.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "المعاملات",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m4-l1-parameters.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "Temperature واطية",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m4-l1-parameters.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Temperature عالية",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m4-l1-parameters.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Temperature",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m4-l1-parameters.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Parameters (معاملات)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m4-l1-parameters.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Parameters (Temperature): \"Low Temperature\" versus \"High Temperature\" — Every word",
+    "ar-MSA": "الوسائط — درجة الحرارة: \"Temperature منخفضة\" في مقابل \"Temperature عالية\" — كل كلمة",
+    "ar-Gulf": "معايير (درجة الحرارة): \"درجة الحرارة منخفضة\" في مقابل \"درجة الحرارة عالية\" — كل كلمة",
+    "ar-EG": "Temperature = ثبات vs إبداع: \"Temperature واطية\" في مقابل \"Temperature عالية\" — كل كلمة الـ AI بيختارها من احتمالات. Temperature بتقول: خُد الأكثر توقّعًا (ثبات) ولا جرّأة (إبداع)؟"
+  },
+  "aiPromptContract": {
+    "providerClass": "text-free-illustration",
+    "paidAllowed": false,
+    "textFree": true,
+    "promptRules": [
+      "No embedded text, letters, numbers, or UI chrome anywhere in the image.",
+      "Depict the idea behind \"Parameters (Temperature)\" as a literal scene or metaphor, not as software.",
+      "Use a calm editorial illustration style consistent with a warm, minimal brand palette.",
+      "Keep the composition balanced so it still reads when mirrored for RTL locales."
+    ],
+    "costCeilingUsd": 0
+  },
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"3 logical choices\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m4-l1-parameters.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Reason for each\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m4-l1-parameters.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ اختيارات منطقية\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m4-l1-parameters.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"سبب لكل واحد\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m4-l1-parameters.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ اختيارات منطقية\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m4-l1-parameters.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"سبب لكل واحد\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m4-l1-parameters.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ اختيارات منطقية\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m4-l1-parameters.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"سبب لكل واحد\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m4-l1-parameters.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "b7bd706ddc18da44c64a0fb4a356ccd4d069e443d58a33be63d3fb3350fc684d"
+}

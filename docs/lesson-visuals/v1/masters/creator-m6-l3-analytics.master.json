@@ -1,0 +1,333 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "creator-m6-l3-analytics",
+  "pathId": "creator",
+  "moduleId": "creator-m6-distribute",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Simple Analytics Reading",
+    "ar-MSA": "قراءة تحليلات بسيطة",
+    "ar-Gulf": "تحليل بسيط",
+    "ar-EG": "اقرأ البوست بثلاث إشارات"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/creator-m6-l3-analytics.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l3-analytics.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l3-analytics.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/creator-m6-l3-analytics.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Views alone are not enough.",
+        "The number of views might make you happy — but it doesn't tell the whole truth. Posts with fewer views can have a much greater impact.",
+        "What's important is to understand the right signals: what indicates that the content is building an audience rather than just passing through the feed."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ المشاهدات (views) وحدها ليست كافية.",
+        "رقم views قد يفرحك — لكنه لا يقول الحقيقة كاملة. منشورات مشاهداتها أقل لكن تأثيرها أعلى بكثير.",
+        "المهم أن تفهم الإشارة الصحيحة: ما الذي يدل أن المحتوى يبني جمهورًا لا أن يمرّ في الـ feed فقط."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ المشاهدات (views) وحدها مو كافية.",
+        "رقم المشاهدات قد يفرحك — لكنه ما يعكس الحقيقة كاملة. منشورات مشاهداتها أقل لكن تأثيرها أعلى بكثير.",
+        "المهم تفهم الإشارة الصحيحة: وش يدل أن المحتوى يبني جمهورًا مو بس يمرّ في الـ feed."
+      ],
+      "ar-EG": [
+        "رقم الـ views ممكن يفرحك، بس ما يقولش الحقيقة كاملة. في بوستات مشاهداتها أقل لكن تأثيرها أعلى بكتير.",
+        "المهم إنك تفهم الإشارة الصح: إيه اللي يدل إن المحتوى بيبنّي جمهور مش بس يعدي في الـ feed."
+      ]
+    },
+    "coreIdea": {
+      "en": "Focus on 3 indicators:",
+      "ar-MSA": "ثبّت على ٣ مؤشرات:",
+      "ar-Gulf": "ثبّت على ٣ مؤشرات:",
+      "ar-EG": "خليك ثابت على 3 مؤشرات: Watch Time، Save Rate، Follow/Action Rate. دول اللي يوضحوا جودة المحتوى."
+    },
+    "tension": {
+      "en": "Focusing on a single number can mislead you. When all your decisions are based on views — you might repeat a type of content that brings traffic without trust or conversion.",
+      "ar-MSA": "التركيز على رقم واحد يُضلّلك. عندما كل قرارك مبني على views — قد تكرر نوع محتوى يجلب زحمة من دون ثقة أو تحويل.",
+      "ar-Gulf": "التركيز على رقم واحد يضلّلك. لما كل قرارك مبني على المشاهدات — قد تكرر نوع محتوى يجيب زحمة من دون ثقة أو تحويل.",
+      "ar-EG": "لما كل قرارك مبني على views، ممكن تكرر نوع محتوى بيجيب زحمة من غير ثقة ولا تحويل."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Superficial Reading",
+        "rightLabel": "Smart Reading",
+        "leftBody": "A post that got high views is great — without understanding Watch Time and Save Rate",
+        "rightBody": "I review 3 key indicators before judging — I know what to repeat for long-term growth"
+      },
+      "ar-MSA": {
+        "leftLabel": "قراءة سطحية",
+        "rightLabel": "قراءة ذكية",
+        "leftBody": "منشور جاب views عالية إذن ممتاز — من دون فهم وقت المشاهدة والحفظ",
+        "rightBody": "أراجع ٣ مؤشرات أساسية قبل الحكم — أعرف ما أكرّر للبناء طويل الأمد"
+      },
+      "ar-Gulf": {
+        "leftLabel": "قراءة سطحية",
+        "rightLabel": "قراءة ذكية",
+        "leftBody": "منشور جاب مشاهدات عالية إذن ممتاز — من دون فهم وقت المشاهدة والحفظ",
+        "rightBody": "أراجع ٣ مؤشرات أساسية قبل الحكم — أعرف وش أكرّر للبناء طويل الأمد"
+      },
+      "ar-EG": {
+        "leftLabel": "قراءة سطحية",
+        "leftBody": "بوست جاب مشاهدات عالية إذن ممتاز. بدون فهم للوقت المشاهدة والحفظ، ممكن تعيد نفس الغلط.",
+        "rightLabel": "قراءة ذكية",
+        "rightBody": "أراجع 3 مؤشرات أساسية قبل الحكم. كده أعرف أكرر اللي فعلا بيبني علاقة طويلة مع الجمهور."
+      }
+    },
+    "missionIntro": {
+      "en": "Choose 3 posts — decide on the most important metric that truly reflects its success.",
+      "ar-MSA": "اختر ٣ منشورات — قرّر لكل واحد المقياس الأهم الذي يعكس نجاحه فعلًا.",
+      "ar-Gulf": "اختر ٣ منشورات — قرّر لكل واحد المقياس الأهم الذي يعكس نجاحه فعلًا.",
+      "ar-EG": "اختار 3 بوستات عندك، وقرر لكل واحد المقياس الأهم اللي يعكس نجاحه فعلا."
+    },
+    "visualIntent": {
+      "kind": "data-relationship",
+      "summary": "Visual diagram — **Triangle of Key Indicators**. **Balance the three signals** **instead of relying on views alone** — **to make your judgment more accurate**.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m6-l3-analytics.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "Visual diagram — **Triangle of Key Indicators**. **Balance the three signals** **instead of relying on views alone** — **to make your judgme"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l3-analytics.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "ثبّت على ٣ مؤشرات:"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l3-analytics.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "ثبّت على ٣ مؤشرات:"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/creator-m6-l3-analytics.ts",
+          "field": "block.caption (diagram)",
+          "quote": "وازن بين التلات إشارات بدل ما تعتمد على views بس، عشان الحكم يبقى أدق."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "creator-m6-l3-analytics's package marks a Diagram intent (analytics-triangle); the underlying relationship reads as data-relationship, so a deterministic SVG panel keeps the real Superficial Reading/Smart Reading labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "kpi-grid-panel",
+  "duplicationJustification": "Shares the \"kpi-grid-panel\" layout template with 4 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Superficial Reading\" vs \"Smart Reading\" for creator-m6-l3-analytics.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Superficial Reading",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m6-l3-analytics.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Smart Reading",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m6-l3-analytics.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Watch Time",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m6-l3-analytics.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Save Rate",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m6-l3-analytics.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "قراءة سطحية",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l3-analytics.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "قراءة ذكية",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l3-analytics.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Watch Time (وقت المشاهدة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l3-analytics.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Save Rate (نسبة الحفظ)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l3-analytics.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "قراءة سطحية",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l3-analytics.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "قراءة ذكية",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l3-analytics.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "وقت المشاهدة (Watch Time)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l3-analytics.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "نسبة الحفظ (Save Rate)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l3-analytics.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "قراءة سطحية",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m6-l3-analytics.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "قراءة ذكية",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m6-l3-analytics.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Watch Time",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m6-l3-analytics.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Save Rate",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m6-l3-analytics.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Simple Analytics Reading: \"Superficial Reading\" versus \"Smart Reading\" — Focus on 3 indicators:",
+    "ar-MSA": "قراءة تحليلات بسيطة: \"قراءة سطحية\" في مقابل \"قراءة ذكية\" — ثبّت على ٣ مؤشرات:",
+    "ar-Gulf": "تحليل بسيط: \"قراءة سطحية\" في مقابل \"قراءة ذكية\" — ثبّت على ٣ مؤشرات:",
+    "ar-EG": "اقرأ البوست بثلاث إشارات: \"قراءة سطحية\" في مقابل \"قراءة ذكية\" — خليك ثابت على 3 مؤشرات: Watch Time، Save Rate، Follow/Action Rate. دول اللي يوضحوا جودة المحتوى."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Metric Selection\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m6-l3-analytics.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Executive Decision\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m6-l3-analytics.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"اختيار المقاييس\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l3-analytics.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"قرار تنفيذي\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l3-analytics.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"اختيار المقاييس\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l3-analytics.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"قرار تنفيذي\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l3-analytics.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"اختيار المقاييس\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m6-l3-analytics.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"قرار تنفيذي\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m6-l3-analytics.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "f89ec26fbed2c8e746ea779cce429ba6097783a41ac5e8fd95d740da5b0dc7d1"
+}

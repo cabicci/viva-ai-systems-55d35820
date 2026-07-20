@@ -1,0 +1,333 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "creator-m3-l3-cta",
+  "pathId": "creator",
+  "moduleId": "creator-m3",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "CTA — Move the Viewer",
+    "ar-MSA": "دعوة الفعل — تحريك المشاهد",
+    "ar-Gulf": "CTA يحرك المشاهد",
+    "ar-EG": "اختار CTA واحد على قد هدف الفيديو"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/creator-m3-l3-cta.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l3-cta.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l3-cta.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/creator-m3-l3-cta.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What Will You Understand? CTA (Call to Action) — If it’s not present, the viewer will leave — even if the video is good.",
+        "Goal: To ask for one useful action from the viewer and for you — not just ‘like it, everyone.’",
+        "What’s Next After the Lesson? You will write ready-to-publish CTAs that match the goal of each video."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ CTA (طلب واضح للمشاهد) — إذا لم يكن موجودًا، المشاهد يغلق — حتى لو الفيديو جيد.",
+        "الهدف: أن تطلب خطوة واحدة مفيدة للمشاهد ولك — ليس مجرد «أعجبني يا جماعة».",
+        "ماذا بعد الدرس؟ ستكتب طلبات جاهزة للنشر تطابق هدف كل فيديو."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ CTA (طلب واضح للمشاهد) — إذا ما كان موجود، المشاهد راح يغلق — حتى لو الفيديو كان ممتاز.",
+        "الهدف: تطلب خطوة واحدة مفيدة للمشاهد ولك — مو مجرد «أعجبني يا جماعة».",
+        "وش بعد الدرس؟ راح تكتب طلبات جاهزة للنشر تتناسب مع هدف كل فيديو."
+      ],
+      "ar-EG": [
+        "الـ CTA (طلب واضح للمشاهد يعمل خطوة بعد المحتوى) لو مش موجود، المشاهد هيقفل وخلاص — حتى لو الفيديو حلو.",
+        "الهدف النهاردة إنك تطلب خطوة واحدة مفيدة للمشاهد وليك، مش مجرد «لايك يا جماعة»."
+      ]
+    },
+    "coreIdea": {
+      "en": "Each video",
+      "ar-MSA": "كل فيديو",
+      "ar-Gulf": "كل فيديو",
+      "ar-EG": "كل فيديو ليه هدف واحد: تفاعل، حفظ ومشاركة، أو محادثة بيع."
+    },
+    "tension": {
+      "en": "Too many requests confuse the viewer. ‘Follow me and like and comment and share and save’ — at the same time — so often they do nothing.",
+      "ar-MSA": "الطلبات الكثيرة تلخبط المشاهد. «تابعني وأعجب وعلّق وشارك واحفظ» — في نفس اللحظة — فغالبًا لا يفعل شيئًا.",
+      "ar-Gulf": "الطلبات الكثيرة تلخبط المشاهد. «تابعني وأعجب وعلّق وشارك واحفظ» — في نفس اللحظة — فغالبًا ما ما يسوي شي.",
+      "ar-EG": "لما تقول في نفس اللحظة تابعني واعمل لايك وكومنت وشير وسيف، المتفرج غالبا مش هيعمل ولا حاجة."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Distracting Approach",
+        "rightLabel": "Smart Approach",
+        "leftBody": "‘If you like it, do everything’ — a general request not linked to a goal — weak result",
+        "rightBody": "‘Send me the word Plan in DM (Direct Message) so I can send you the template’ — one request, clear, linked to value"
+      },
+      "ar-MSA": {
+        "leftLabel": "الأسلوب المشتت",
+        "rightLabel": "الأسلوب الذكي",
+        "leftBody": "«إن أعجبك افعل كل شيء» — طلب عام غير مرتبط بهدف — نتيجة ضعيفة",
+        "rightBody": "«أرسل لي كلمة خطة في DM (رسالة خاصة) لأرسل لك القالب» — طلب واحد، واضح، مربوط بقيمة"
+      },
+      "ar-Gulf": {
+        "leftLabel": "الأسلوب المشتت",
+        "rightLabel": "الأسلوب الذكي",
+        "leftBody": "«إذا أعجبك سوي كل شيء» — طلب عام ما له علاقة بالهدف — نتيجة ضعيفة",
+        "rightBody": "«أرسل لي كلمة خطة في DM (رسالة خاصة) لأرسل لك القالب» — طلب واحد، واضح، مرتبط بقيمة"
+      },
+      "ar-EG": {
+        "leftLabel": "الأسلوب المشتت",
+        "leftBody": "«لو عجبك اعمل كل حاجة» طلب عام ومش مرتبط بهدف، فالنتيجة غالبا ضعيفة.",
+        "rightLabel": "الأسلوب الذكي",
+        "rightBody": "«ابعتلي كلمة خطة في DM عشان أبعتلك القالب» طلب واحد، واضح، ومربوط بقيمة."
+      }
+    },
+    "missionIntro": {
+      "en": "Write 3 CTAs for the same content idea: one question, one save or share, one lead in DM. The goal is to distinguish between them and choose the right one based on your goal.",
+      "ar-MSA": "اكتب ٣ CTAs لنفس فكرة محتوى: واحد سؤال، واحد حفظ أو مشاركة، واحد Lead في DM. الهدف أن تميّز بينهم وتختار الصحيح حسب هدفك.",
+      "ar-Gulf": "اكتب ٣ CTAs لنفس فكرة المحتوى: واحد سؤال، واحد حفظ أو مشاركة، واحد Lead في DM. الهدف أن تميّز بينهم وتختار الصحيح حسب هدفك.",
+      "ar-EG": "هتكتب ٣ CTA لنفس فكرة محتوى: واحد سؤال، واحد حفظ أو مشاركة، وواحد Lead في DM. الهدف إنك تفرق بينهم وتختار الصح حسب هدفك."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Visual snapshot — **Example of a clear CTA**. The **request is clear and specific:** **only one step** — **in simple language** that any viewer can **quickly**",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m3-l3-cta.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Visual snapshot — **Example of a clear CTA**. The **request is clear and specific:** **only one step** — **in simple language** that any vie"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l3-cta.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "كل فيديو"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l3-cta.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "كل فيديو"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/creator-m3-l3-cta.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "لاحظ إن الطلب واضح ومحدد: خطوة واحدة فقط، ومكتوبة بلغة بسيطة يفهمها أي مشاهد بسرعة."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "creator-m3-l3-cta's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Distracting Approach / Smart Approach) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Distracting Approach\" vs \"Smart Approach\" for creator-m3-l3-cta.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Distracting Approach",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m3-l3-cta.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Smart Approach",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m3-l3-cta.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "CTA (Call to Action)",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m3-l3-cta.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Save/Share CTA",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m3-l3-cta.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "الأسلوب المشتت",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l3-cta.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "الأسلوب الذكي",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l3-cta.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "CTA (طلب واضح للمشاهد)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l3-cta.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Save/Share CTA (طلب حفظ أو مشاركة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l3-cta.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "الأسلوب المشتت",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l3-cta.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "الأسلوب الذكي",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l3-cta.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "CTA (طلب واضح للمشاهد)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l3-cta.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Save/Share CTA (طلب حفظ أو مشاركة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l3-cta.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "الأسلوب المشتت",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m3-l3-cta.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "الأسلوب الذكي",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m3-l3-cta.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "CTA (طلب واضح للمشاهد)",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m3-l3-cta.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Save/Share CTA",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m3-l3-cta.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "CTA — Move the Viewer: \"Distracting Approach\" versus \"Smart Approach\" — Each video",
+    "ar-MSA": "دعوة الفعل — تحريك المشاهد: \"الأسلوب المشتت\" في مقابل \"الأسلوب الذكي\" — كل فيديو",
+    "ar-Gulf": "CTA يحرك المشاهد: \"الأسلوب المشتت\" في مقابل \"الأسلوب الذكي\" — كل فيديو",
+    "ar-EG": "اختار CTA واحد على قد هدف الفيديو: \"الأسلوب المشتت\" في مقابل \"الأسلوب الذكي\" — كل فيديو ليه هدف واحد: تفاعل، حفظ ومشاركة، أو محادثة بيع."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Clarity of Expression\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m3-l3-cta.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Relevance to Goal\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m3-l3-cta.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح الصياغة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l3-cta.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"ارتباط بالهدف\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l3-cta.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح الصياغة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l3-cta.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"ارتباط بالهدف\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l3-cta.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح الصياغة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m3-l3-cta.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"ارتباط بالهدف\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m3-l3-cta.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "9ea3754146b3a462801a039eb1c6d13e7898cec122b8866a7124ec969df88b08"
+}

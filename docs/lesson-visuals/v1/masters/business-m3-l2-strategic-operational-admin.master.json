@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "business-m3-l2-strategic-operational-admin",
+  "pathId": "business",
+  "moduleId": "business-m3",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Strategic / Operational / Admin",
+    "ar-MSA": "استراتيجي وتشغيلي وإداري",
+    "ar-Gulf": "استراتيجي وتشغيلي وإداري",
+    "ar-EG": "٣ أنواع شغل — ولكل نوع دور AI"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/business-m3-l2-strategic-operational-admin.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l2-strategic-operational-admin.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l2-strategic-operational-admin.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/business-m3-l2-strategic-operational-admin.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What Will You Understand? Business owners struggle when administrative and operational tasks consume strategy — AI can lighten the administrative load.",
+        "Why Now? Once you decide what to delegate and automate, you need to understand the types of work to allocate your time effectively.",
+        "What After the Lesson? You will categorize 8 recent tasks: Strategic / Operational / Administrative — and choose one administrative task for AI assistance."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ أصحاب الأعمال يعلقون عندما يأكل الإداري والتشغيلي الاستراتيجية — والذكاء الاصطناعي يخفّف الحمل الإداري.",
+        "لماذا الآن؟ بعد أن قررت ما تفوّضه وتؤتمته، يجب أن تعرف أنواع الشغل لتُوزّع وقتك صحيحًا.",
+        "ماذا بعد الدرس؟ ستصنّف ٨ مهام حديثة: Strategic (استراتيجي) / Operational (تشغيلي) / Administrative (إداري) — وتختار مهمة إدارية واحدة للذكاء الاصطناعي."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ أصحاب الأعمال يواجهون صعوبة عندما تأخذ الأعمال الإدارية والتشغيلية من الاستراتيجية — والذكاء الاصطناعي يخفف العبء الإداري.",
+        "ليش الحين؟ بعد ما تحدد وش تفوضه وتؤتمته، لازم تعرف أنواع الشغل عشان توزع وقتك بشكل صحيح.",
+        "وش بعد الدرس؟ راح تصنف ٨ مهام حديثة: استراتيجي / تشغيلي / إداري — وتختار مهمة إدارية واحدة للذكاء الاصطناعي."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ أصحاب البيزنس بيتعلّقوا لما الإداري والتشغيل ياكلوا الاستراتيجية — والـ AI يخفّف الحمل الإداري.",
+        "ليه دلوقتي؟ بعد ما قررت إيه تفوّضه وتؤتمته، لازم تعرف أنواع الشغل عشان توزّع وقتك صح.",
+        "هتعمل إيه بعد الدرس؟ هتصنّف ٨ مهام حديثة: استراتيجي / تشغيلي / إداري — وتختار مهمة إدارية واحدة للـ AI."
+      ]
+    },
+    "coreIdea": {
+      "en": "Strategic:",
+      "ar-MSA": "Strategic (استراتيجي):",
+      "ar-Gulf": "استراتيجي:",
+      "ar-EG": "Strategic (استراتيجي): اتجاه، تسعير، شراكات، عرض جديد — قرارات نادرة وعالية التأثير. الـ AI شريك تفكير."
+    },
+    "tension": {
+      "en": "Bills, responses, coordination, files — by the end of the week, you realize you haven't thought about pricing, proposals, or expansion. Administration is essential — but when it takes up 80% of the week, work slows down",
+      "ar-MSA": "فواتير، ردود، تنسيق، ملفات — نهاية الأسبوع تكتشف أنك لم تفكر في التسعير ولا العرض ولا التوسّع. الإداري ضروري — لكن عندما يأخذ ٨٠٪ من الأسبوع، يتحرّك العمل ببطء حتى لو كنت «تعمل كثيرًا».",
+      "ar-Gulf": "فواتير، ردود، تنسيق، ملفات — في نهاية الأسبوع تكتشف أنك ما فكرت في التسعير ولا العرض ولا التوسع. الإداري ضروري — لكن لما يأخذ ٨٠٪ من الأسبوع، يتحرك العمل ببطء حتى لو كنت «تشتغل كثير».",
+      "ar-EG": "فواتير، ردود، تنسيق، ملفات — نهاية الأسبوع تكتشف إنك ما فكرتش في التسعير ولا العرض ولا التوسّع."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "80% Administrative",
+        "rightLabel": "Reduced Administrative with AI",
+        "leftBody": "Responses, bills, scheduling. Strategy is 'tomorrow' — and tomorrow never comes",
+        "rightBody": "AI summarizes and drafts. Two hours of strategy weekly — one actual decision moves forward"
+      },
+      "ar-MSA": {
+        "leftLabel": "٨٠٪ إداري",
+        "rightLabel": "إداري مخفّض بالذكاء الاصطناعي",
+        "leftBody": "ردود وفواتير وجدولة. الاستراتيجية «غدًا» — وغدًا لا يأتي",
+        "rightBody": "الذكاء الاصطناعي يلخّص ويصوغ. ساعتان استراتيجية أسبوعيًا — قرار واحد فعلي يتحرّك"
+      },
+      "ar-Gulf": {
+        "leftLabel": "٨٠٪ إداري",
+        "rightLabel": "إداري مخفّض بالذكاء الاصطناعي",
+        "leftBody": "ردود وفواتير وجدولة. الاستراتيجية «غدًا» — وغدًا ما يجي",
+        "rightBody": "الذكاء الاصطناعي يلخص ويصوغ. ساعتان استراتيجية أسبوعيًا — قرار واحد فعلي يتحرك"
+      },
+      "ar-EG": {
+        "leftLabel": "٨٠٪ إداري",
+        "leftBody": "ردود وفواتير وجدولة. الاستراتيجية «بكرة» — وبكرة ما بيجيش.",
+        "rightLabel": "إداري مخفّض بالـ AI",
+        "rightBody": "AI يلخّص ويصيغ. ساعتين استراتيجية أسبوعيًا — قرار واحد فعلي يتحرك."
+      }
+    },
+    "missionIntro": {
+      "en": "Write down 8 tasks you completed in the last two weeks (or that repeat). Classify each one: Strategic / Operational / Administrative. Choose one administrative task that AI can assist with. This is not a classification test — it's a diagnosis of your time.",
+      "ar-MSA": "اكتب ٨ مهام عملتها آخر أسبوعين (أو تتكرر). صنّف كل واحدة: استراتيجي / تشغيلي / إداري. اختر مهمة إدارية واحدة يخفّفها الذكاء الاصطناعي. ليس امتحان تصنيف — تشخيص وقتك.",
+      "ar-Gulf": "اكتب ٨ مهام عملتها آخر أسبوعين (أو تتكرر). صنف كل واحدة: استراتيجي / تشغيلي / إداري. اختر مهمة إدارية واحدة يخففها الذكاء الاصطناعي. مو امتحان تصنيف — تشخيص وقتك.",
+      "ar-EG": "اكتب ٨ مهام عملتها آخر أسبوعين (أو بتتكرر). صنّف كل واحدة: استراتيجي / تشغيلي / إداري. اختار مهمة إدارية واحدة الـ AI يخفّفها.\n\nمش امتحان تصنيف — تشخيص وقتك."
+    },
+    "visualIntent": {
+      "kind": "data-relationship",
+      "summary": "Distribution of work types — Strategic · Operational · Admin. If the administrative column is longer than the others — start with one administrative task for AI",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m3-l2-strategic-operational-admin.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "Distribution of work types — Strategic · Operational · Admin. If the administrative column is longer than the others — start with one admini"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l2-strategic-operational-admin.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "توزيع أنواع الشغل — Strategic · Operational · Admin. إذا كان العمود الإداري أطول من الباقي — ابدأ بمهمة إدارية واحدة للذكاء الاصطناعي هذا ال"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l2-strategic-operational-admin.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "توزيع أنواع الشغل — استراتيجي · تشغيلي · إداري. إذا كان العمود الإداري أطول من الباقي — ابدأ بمهمة إدارية واحدة للذكاء الاصطناعي هذا الأسبوع"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/business-m3-l2-strategic-operational-admin.ts",
+          "field": "block.caption (diagram)",
+          "quote": "لو العمود الإداري أطول من الباقي — ابدأ بمهمة إدارية واحدة للـ AI الأسبوع ده."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "business-m3-l2-strategic-operational-admin's package marks a Diagram intent (soa-bars); the underlying relationship reads as data-relationship, so a deterministic SVG panel keeps the real 80% Administrative/Reduced Administrative with AI labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "kpi-grid-panel",
+  "duplicationJustification": "Shares the \"kpi-grid-panel\" layout template with 4 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"80% Administrative\" vs \"Reduced Administrative with AI\" for business-m3-l2-strategic-operational-admin.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "80% Administrative",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m3-l2-strategic-operational-admin.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Reduced Administrative with AI",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m3-l2-strategic-operational-admin.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Strategic",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m3-l2-strategic-operational-admin.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Administrative",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m3-l2-strategic-operational-admin.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "٨٠٪ إداري",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l2-strategic-operational-admin.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "إداري مخفّض بالذكاء الاصطناعي",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l2-strategic-operational-admin.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Strategic (استراتيجي)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l2-strategic-operational-admin.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Administrative (إداري)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l2-strategic-operational-admin.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "٨٠٪ إداري",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l2-strategic-operational-admin.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "إداري مخفّض بالذكاء الاصطناعي",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l2-strategic-operational-admin.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "استراتيجي",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l2-strategic-operational-admin.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "إداري",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l2-strategic-operational-admin.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "٨٠٪ إداري",
+        "source": {
+          "path": "src/components/intro/lessons/business-m3-l2-strategic-operational-admin.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "إداري مخفّض بالـ AI",
+        "source": {
+          "path": "src/components/intro/lessons/business-m3-l2-strategic-operational-admin.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Strategic (استراتيجي)",
+        "source": {
+          "path": "src/components/intro/lessons/business-m3-l2-strategic-operational-admin.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Administrative (إداري)",
+        "source": {
+          "path": "src/components/intro/lessons/business-m3-l2-strategic-operational-admin.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Strategic / Operational / Admin: \"80% Administrative\" versus \"Reduced Administrative with AI\" — Strategic:",
+    "ar-MSA": "استراتيجي وتشغيلي وإداري: \"٨٠٪ إداري\" في مقابل \"إداري مخفّض بالذكاء الاصطناعي\" — Strategic (استراتيجي):",
+    "ar-Gulf": "استراتيجي وتشغيلي وإداري: \"٨٠٪ إداري\" في مقابل \"إداري مخفّض بالذكاء الاصطناعي\" — استراتيجي:",
+    "ar-EG": "٣ أنواع شغل — ولكل نوع دور AI: \"٨٠٪ إداري\" في مقابل \"إداري مخفّض بالـ AI\" — Strategic (استراتيجي): اتجاه، تسعير، شراكات، عرض جديد — قرارات نادرة وعالية التأثير. الـ AI شريك تفكير."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Realistic Classification\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/business-m3-l2-strategic-operational-admin.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Administrative Selection\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/business-m3-l2-strategic-operational-admin.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"تصنيف واقعي\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l2-strategic-operational-admin.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"اختيار إداري\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l2-strategic-operational-admin.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"تصنيف واقعي\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l2-strategic-operational-admin.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"اختيار إداري\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l2-strategic-operational-admin.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"تصنيف واقعي\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m3-l2-strategic-operational-admin.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"اختيار إداري\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m3-l2-strategic-operational-admin.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "5260cedcb24f2a2fa40b1add35ea158d6a56807585683c22aa1b3ce3e007e509"
+}

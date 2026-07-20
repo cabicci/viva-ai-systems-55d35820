@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m7-l1-tables-columns",
+  "pathId": "builder",
+  "moduleId": "builder-m7",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Tables & Columns",
+    "ar-MSA": "الجداول والأعمدة",
+    "ar-Gulf": "الجداول والأعمدة",
+    "ar-EG": "الجدول = نوع — العمود = صفة بنوعها"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m7-l1-tables-columns.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l1-tables-columns.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l1-tables-columns.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m7-l1-tables-columns.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Table = data type (users, conversations). Column = attribute for each row (name, date, rating).",
+        "Why now? Builder depth is optional — but if your app stores data, the right design from the start prevents problems later.",
+        "What after the lesson? You will design 3 tables for your app — each table with its columns and types."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ Table (جدول) = نوع بيانات (مستخدمون، محادثات). Column (عمود) = صفة لكل صف (اسم، تاريخ، تقييم).",
+        "لماذا الآن؟ عمق Builder اختياري — لكن إن كان تطبيقك يخزّن بيانات، التصميم الصح من الأول يوفر مشاكل لاحقًا.",
+        "ماذا بعد الدرس؟ ستصمّم ٣ جداول لتطبيقك — كل جدول بأعمدته وأنواعها."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ Table (جدول) = نوع بيانات (مستخدمون، محادثات). Column (عمود) = صفة لكل صف (اسم، تاريخ، تقييم).",
+        "ليش الحين؟ عمق Builder اختياري — لكن إذا كان تطبيقك يخزّن بيانات، التصميم الصح من البداية يقيك مشاكل لاحقًا.",
+        "وش بعد الدرس؟ راح تصمّم ٣ جداول لتطبيقك — كل جدول بأعمدته وأنواعها."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ الجدول = نوع بيانات (مستخدمين، محادثات). العمود = صفة لكل صف (اسم، تاريخ، تقييم).",
+        "ليه دلوقتي؟ Builder عمق اختياري — بس لو تطبيقك بيخزّن بيانات، التصميم الصح من الأول بيوفر مشاكل بعدين.",
+        "هتعمل إيه بعد الدرس؟ هتصمّم ٣ جداول لبيانات تطبيقك — كل جدول بأعمدته وأنواعها."
+      ]
+    },
+    "coreIdea": {
+      "en": "Each table represents one type",
+      "ar-MSA": "كل جدول يمثّل نوعًا واحدًا",
+      "ar-Gulf": "كل جدول يمثّل نوعًا واحدًا",
+      "ar-EG": "كل جدول بيمثّل نوع واحد: `users`، `conversations`، `documents` — مش «كل حاجة في جدول واحد»."
+    },
+    "tension": {
+      "en": "You design the first table in the database — and every column is of type `text`. Easy at first, but after months the app is slow. User rating as `text`? The system won't calculate average ratings. Date as `text`? It won'",
+      "ar-MSA": "تصمم أول جدول في المخزن الذكي (Database) — وكل عمود نوعه `text`. سهل في البداية، لكن بعد شهور التطبيق بطيء. تقييم المستخدم في `text`؟ النظام لن يحسب متوسط التقييمات. التاريخ في `text`؟ لن يرتّب من الأحدث.",
+      "ar-Gulf": "تصمّم أول جدول في قاعدة البيانات (Database) — وكل عمود نوعه `text`. سهل في البداية، لكن بعد شهور التطبيق بطيء. تقييم المستخدم في `text`؟ النظام ما راح يحسب متوسط التقييمات. التاريخ في `text`؟ ما راح يرتّب من الأحدث.",
+      "ar-EG": "بتصمم أول جدول في المخزن الذكي (Database) — وكل عمود نوعه `text`. سهل في البداية، بس بعد شهور التطبيق بطيء."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "All columns as text",
+        "rightLabel": "Each column with its type",
+        "leftBody": "`user_rating text` — no average. `created_at text` — no chronological order. Slow and inaccurate",
+        "rightBody": "`user_rating integer`, `created_at timestamptz default now()`, `id uuid primary key`. Easier analysis and development"
+      },
+      "ar-MSA": {
+        "leftLabel": "كل الأعمدة text",
+        "rightLabel": "كل عمود بنوعه",
+        "leftBody": "`user_rating text` — لا متوسط. `created_at text` — لا ترتيب زمني. بطيء وغير دقيق",
+        "rightBody": "`user_rating integer`، `created_at timestamptz default now()`، `id uuid primary key`. تحليل وتطوير أسهل"
+      },
+      "ar-Gulf": {
+        "leftLabel": "كل الأعمدة نص",
+        "rightLabel": "كل عمود بنوعه",
+        "leftBody": "`user_rating text` — ما فيه متوسط. `created_at text` — ما فيه ترتيب زمني. بطيء وغير دقيق",
+        "rightBody": "`user_rating integer`، `created_at timestamptz default now()`، `id uuid primary key`. تحليل وتطوير أسهل"
+      },
+      "ar-EG": {
+        "leftLabel": "غلط — كل الأعمدة text",
+        "leftBody": "`user_rating text` — السيستم مش هيعرف يحسب متوسط. `created_at text` — مش هيعرف يرتّب زمنيًا. بطيء ومش دقيق.",
+        "rightLabel": "صح — كل عمود بنوعه",
+        "rightBody": "`user_rating integer`، `created_at timestamptz default now()`، `id uuid primary key`. تقدر تحلل وتطوّر بسهولة."
+      }
+    },
+    "missionIntro": {
+      "en": "Think about your app's data — what needs to be stored? Design 3 tables. 10–15 minutes.",
+      "ar-MSA": "فكّر في بيانات تطبيقك — ما الذي يجب تخزينه؟ صمّم ٣ جداول. ١٠–١٥ دقيقة.",
+      "ar-Gulf": "فكّر في بيانات تطبيقك — وش اللي لازم تخزنه؟ صمّم ٣ جداول. ١٠–١٥ دقيقة.",
+      "ar-EG": "فكّر في بيانات تطبيقك — إيه اللي محتاج يتخزّن؟ صمّم ٣ جداول بأعمدتها وأنواعها.\n\n١٠–١٥ دقيقة كفاية."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "**AI reads tables to understand context:**",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m7-l1-tables-columns.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**AI reads tables to understand context:**"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l1-tables-columns.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**الذكاء الاصطناعي يقرأ الجداول لفهم السياق:**"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l1-tables-columns.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**الذكاء الاصطناعي يقرأ الجداول لفهم السياق:**"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m7-l1-tables-columns.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "قبل ما الـ AI يجاوب، بيبص على جداول زي دي: مين اللي بيسأل (`currentUser`) وفاتح أنهي صفحة (`currentPath`). التصميم الصح"
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "builder-m7-l1-tables-columns's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (All columns as text / Each column with its type) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"All columns as text\" vs \"Each column with its type\" for builder-m7-l1-tables-columns.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "All columns as text",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m7-l1-tables-columns.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Each column with its type",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m7-l1-tables-columns.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Table",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m7-l1-tables-columns.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Column",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m7-l1-tables-columns.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "كل الأعمدة text",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l1-tables-columns.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "كل عمود بنوعه",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l1-tables-columns.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Table (جدول)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l1-tables-columns.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Column (عمود)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l1-tables-columns.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "كل الأعمدة نص",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l1-tables-columns.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "كل عمود بنوعه",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l1-tables-columns.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Table (جدول)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l1-tables-columns.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Column (عمود)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l1-tables-columns.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "غلط — كل الأعمدة text",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m7-l1-tables-columns.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "صح — كل عمود بنوعه",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m7-l1-tables-columns.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Table (جدول)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m7-l1-tables-columns.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Column (عمود)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m7-l1-tables-columns.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Tables & Columns: \"All columns as text\" versus \"Each column with its type\" — Each table represents one type",
+    "ar-MSA": "الجداول والأعمدة: \"كل الأعمدة text\" في مقابل \"كل عمود بنوعه\" — كل جدول يمثّل نوعًا واحدًا",
+    "ar-Gulf": "الجداول والأعمدة: \"كل الأعمدة نص\" في مقابل \"كل عمود بنوعه\" — كل جدول يمثّل نوعًا واحدًا",
+    "ar-EG": "الجدول = نوع — العمود = صفة بنوعها: \"غلط — كل الأعمدة text\" في مقابل \"صح — كل عمود بنوعه\" — كل جدول بيمثّل نوع واحد: `users`، `conversations`، `documents` — مش «كل حاجة في جدول واحد»."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"3 logical tables\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m7-l1-tables-columns.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Correct column types\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m7-l1-tables-columns.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"٣ جداول منطقية\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l1-tables-columns.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"أنواع الأعمدة صح\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l1-tables-columns.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"٣ جداول منطقية\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l1-tables-columns.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"أنواع الأعمدة صح\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l1-tables-columns.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"٣ جداول منطقية\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m7-l1-tables-columns.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"أنواع الأعمدة صح\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m7-l1-tables-columns.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "44a6f1dc34f46e2d7052ebd1d936057bcdbb1d9f3372ee5a092ed63fcb0c97fa"
+}

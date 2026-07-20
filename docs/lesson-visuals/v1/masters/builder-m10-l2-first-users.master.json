@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m10-l2-first-users",
+  "pathId": "builder",
+  "moduleId": "builder-m10",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "First Users",
+    "ar-MSA": "المستخدمون الأوائل",
+    "ar-Gulf": "المستخدمون الأوائل",
+    "ar-EG": "أول ١٠ مستخدمين يعلّموك الواقع"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m10-l2-first-users.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m10-l2-first-users.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m10-l2-first-users.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m10-l2-first-users.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Why the first 10 users teach you reality — more than any plan on paper.",
+        "Why now? The app is live — but the silence is concerning. You need real people to try it and tell the truth.",
+        "What after the lesson? You will write an invitation message + two questions to ask after the experience."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ لماذا أول ١٠ مستخدمين يعلّمونك الواقع — أكثر من أي خطة على ورق.",
+        "لماذا الآن؟ التطبيق live — لكن الصمت مريب. تحتاج ناسًا حقيقيين يجربون ويقولون الحقيقة.",
+        "ماذا بعد الدرس؟ ستكتب رسالة دعوة + سؤالين تسألهما بعد التجربة."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ ليش أول ١٠ مستخدمين يعلّمونك الواقع — أكثر من أي خطة على ورق.",
+        "ليش الحين؟ التطبيق شغال — لكن الصمت مريب. تحتاج ناس حقيقيين يجربون ويقولون الحقيقة.",
+        "وش بعد الدرس؟ راح تكتب رسالة دعوة + سؤالين تسألهم بعد التجربة."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ ليه أول ١٠ مستخدمين يعلّموك الواقع — أكتر من أي خطة على ورق.",
+        "ليه دلوقتي؟ التطبيق live — بس الصمت مريب. محتاج ناس حقيقية تجرب وتقولك الحقيقة.",
+        "هتعمل إيه بعد الدرس؟ هتكتب رسالة دعوة + سؤالين هتسألهم بعد التجربة."
+      ]
+    },
+    "coreIdea": {
+      "en": "The first 10 are not for numbers",
+      "ar-MSA": "أول ١٠ ليسوا للأرقام",
+      "ar-Gulf": "أول ١٠ مو للأرقام",
+      "ar-EG": "أول ١٠ مش للأرقام — للتعلّم. هما اللي يقولولك: ده بيحل مشكلة؟ ولا شكل حلو بس؟"
+    },
+    "tension": {
+      "en": "The link works. Technically, everything is fine. But there are no sign-ups — no feedback. You post on Facebook and wait. 500 visitors, 20 sign up, and no one returns.",
+      "ar-MSA": "اللينك يعمل. تقنيًا كل شيء تمام. لكن لا تسجيلات — لا feedback. تكتب منشورًا على فيسبوك وتنتظر. ٥٠٠ زائر، ٢٠ يسجّلون، ولا أحد يعود.",
+      "ar-Gulf": "الرابط شغال. تقنيًا كل شيء تمام. لكن لا تسجيلات — لا تغذية راجعة. تكتب منشور على فيسبوك وتنتظر. ٥٠٠ زائر، ٢٠ يسجلون، ولا أحد يرجع.",
+      "ar-EG": "اللينك شغال. تقنيًا كل حاجة تمام. بس مفيش تسجيلات — مفيش feedback."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Launch and Wait",
+        "rightLabel": "10 Early Users + Listening",
+        "leftBody": "Public post → Visitors → Sign-ups → No return. You add features without knowing what people need",
+        "rightBody": "10 people by name. Three calls each week: “Why did you last open it?” “What could you not do?”. One problem → fix it → return"
+      },
+      "ar-MSA": {
+        "leftLabel": "إطلاق وتنتظر",
+        "rightLabel": "١٠ أوائل + استماع",
+        "leftBody": "منشور عام → زوار → تسجيل → لا عودة. تضيف features من دون معرفة ما يحتاجه الناس",
+        "rightBody": "١٠ ناس بالاسم. كل أسبوع ٣ مكالمات: «آخر مرة فتحت لماذا؟» «ماذا لم تستطع فعله؟». مشكلة واحدة → تصلّح → ترجع"
+      },
+      "ar-Gulf": {
+        "leftLabel": "إطلاق وتنتظر",
+        "rightLabel": "١٠ أوائل + استماع",
+        "leftBody": "منشور عام → زوار → تسجيل → لا عودة. تضيف ميزات من دون معرفة وش يحتاجه الناس",
+        "rightBody": "١٠ ناس بالاسم. كل أسبوع ٣ مكالمات: «آخر مرة فتحت ليش؟» «وش ما قدرت تسويه؟». مشكلة واحدة → تصلح → ترجع"
+      },
+      "ar-EG": {
+        "leftLabel": "غلط — إطلاق وتستنى",
+        "leftBody": "بوست عام → زوار → تسجيل → مفيش رجوع. تضيف features جديدة من غير ما تعرف الناس محتاجة إيه.",
+        "rightLabel": "صح — ١٠ أوائل + استماع",
+        "rightBody": "١٠ ناس بالاسم. كل أسبوع ٣ مكالمات: «آخر مرة فتحت لِيه؟» «إيه اللي معرفتش تعمله؟». مشكلة واحدة → تصلّح → ترجعلهم."
+      }
+    },
+    "missionIntro": {
+      "en": "The first 10 come from your personal effort — not from ads. 10–15 minutes.",
+      "ar-MSA": "أول ١٠ يأتون بمجهودك الشخصي — ليس بإعلان. ١٠–١٥ دقيقة.",
+      "ar-Gulf": "أول ١٠ يأتون بمجهودك الشخصي — مو بإعلان. ١٠–١٥ دقيقة.",
+      "ar-EG": "أول ١٠ بييجوا بمجهودك الشخصي — مش بإعلان.\n\n١٠–١٥ دقيقة."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "**Measuring Progress — Not Just for Looks:**",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m10-l2-first-users.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**Measuring Progress — Not Just for Looks:**"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m10-l2-first-users.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**قياس التقدّم — ليس للمنظر:**"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m10-l2-first-users.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**قياس التقدّم — مو للمنظر:**"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m10-l2-first-users.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "لما تبني واجهة تطبيقك — فكّر: إزاي المستخدم يشوف إنه بيتقدم؟ الأرقام دي بتحرّك سلوك — مش للمنظر."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "builder-m10-l2-first-users's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Launch and Wait / 10 Early Users + Listening) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Launch and Wait\" vs \"10 Early Users + Listening\" for builder-m10-l2-first-users.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Launch and Wait",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m10-l2-first-users.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "10 Early Users + Listening",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m10-l2-first-users.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Early Adopters",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m10-l2-first-users.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Feedback Loop",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m10-l2-first-users.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "إطلاق وتنتظر",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m10-l2-first-users.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "١٠ أوائل + استماع",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m10-l2-first-users.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Early Adopters (المستخدمون الأوائل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m10-l2-first-users.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Feedback Loop (حلقة التغذية الراجعة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m10-l2-first-users.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "إطلاق وتنتظر",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m10-l2-first-users.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "١٠ أوائل + استماع",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m10-l2-first-users.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Early Adopters (المستخدمون الأوائل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m10-l2-first-users.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Feedback Loop (حلقة التغذية الراجعة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m10-l2-first-users.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "غلط — إطلاق وتستنى",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m10-l2-first-users.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "صح — ١٠ أوائل + استماع",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m10-l2-first-users.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Early Adopters",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m10-l2-first-users.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Feedback Loop",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m10-l2-first-users.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "First Users: \"Launch and Wait\" versus \"10 Early Users + Listening\" — The first 10 are not for numbers",
+    "ar-MSA": "المستخدمون الأوائل: \"إطلاق وتنتظر\" في مقابل \"١٠ أوائل + استماع\" — أول ١٠ ليسوا للأرقام",
+    "ar-Gulf": "المستخدمون الأوائل: \"إطلاق وتنتظر\" في مقابل \"١٠ أوائل + استماع\" — أول ١٠ مو للأرقام",
+    "ar-EG": "أول ١٠ مستخدمين يعلّموك الواقع: \"غلط — إطلاق وتستنى\" في مقابل \"صح — ١٠ أوائل + استماع\" — أول ١٠ مش للأرقام — للتعلّم. هما اللي يقولولك: ده بيحل مشكلة؟ ولا شكل حلو بس؟"
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Clear Message\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m10-l2-first-users.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Useful Questions\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m10-l2-first-users.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"رسالة واضحة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m10-l2-first-users.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"أسئلة مفيدة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m10-l2-first-users.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"رسالة واضحة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m10-l2-first-users.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"أسئلة مفيدة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m10-l2-first-users.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"رسالة واضحة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m10-l2-first-users.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"أسئلة مفيدة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m10-l2-first-users.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "39db7e9bee15e02824ca6ef54356aa7a69ad80d9de3a5cc8be91c5ab51fa18f6"
+}

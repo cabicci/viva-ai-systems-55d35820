@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "analyst-m4-l2-decision-rule",
+  "pathId": "analyst",
+  "moduleId": "analyst-m4",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Decision Rule",
+    "ar-MSA": "قاعدة القرار",
+    "ar-Gulf": "قاعدة القرار",
+    "ar-EG": "قاعدة القرار: ٣ أسئلة قبل أي action"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m4-l2-decision-rule.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-l2-decision-rule.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-l2-decision-rule.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/analyst-m4-l2-decision-rule.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? A single number can mislead you — a decision requires comparison and related numbers.",
+        "Why now? In the previous lesson, you distinguished between pattern and exception. Now you need to turn any number into a decision question.",
+        "What after the lesson? You will take one number and ask: Compared to what? What is the related number? And what will change?"
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ رقم واحد قد يُضلّلك — القرار يحتاج مقارنة وأرقامًا مرتبطة.",
+        "لماذا الآن؟ في الدرس السابق فرّقت بين النمط والاستثناء. الآن تحتاج أن تحوّل أي رقم إلى سؤال قرار.",
+        "ماذا بعد الدرس؟ ستأخذ رقمًا واحدًا وتسأل: مقارنة بماذا؟ ما الرقم المرتبط؟ وماذا سيتغيّر؟"
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ رقم واحد ممكن يخدعك — القرار يحتاج مقارنة وأرقام مرتبطة.",
+        "ليش الحين؟ في الدرس السابق فرّقت بين النمط والاستثناء. الحين تحتاج تحوّل أي رقم إلى سؤال قرار.",
+        "وش بعد الدرس؟ راح تأخذ رقم واحد وتسأل: مقارنة بماذا؟ وش الرقم المرتبط؟ وش راح يتغيّر؟"
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ رقم واحد ممكن يضلّلك — القرار محتاج مقارنة وأرقام مرتبطة.",
+        "ليه دلوقتي؟ في الدرس اللي فات فرّقت بين النمط والاستثناء. دلوقتي محتاج تحوّل أي رقم لسؤال قرار.",
+        "هتعمل إيه بعد الدرس؟ هتاخد رقم واحد وتسأل: مقارنة بإيه؟ إيه الرقم المرتبط؟ وإيه اللي هييتغيّر؟"
+      ]
+    },
+    "coreIdea": {
+      "en": "Compared to what?",
+      "ar-MSA": "Compared to what? — مقارنة بماذا؟",
+      "ar-Gulf": "مقارنة بماذا؟",
+      "ar-EG": "١) Compared to what? — مقارنة بإيه؟ (الأسبوع اللي فات، نفس الفترة السنة اللي فاتت، الهدف)"
+    },
+    "tension": {
+      "en": "A manager says: 'Sales dropped by 10%'. The team panics — discounts, advertisements, emergency meetings. Someone asks: 'Dropped compared to what?' — It turns out it was compared to a week with a special offer. Compared t",
+      "ar-MSA": "مدير يقول: «المبيعات نزلت ١٠٪». الفريق يدخل في الذعر — خصومات، إعلانات، اجتماعات طوارئ. أحد يسأل: «نزلت مقارنة بماذا؟» — تبيّن أنها مقارنة بأسبوع فيه عرض خاص. مقارنة بالشهر الماضي: ثابتة.",
+      "ar-Gulf": "مدير يقول: «المبيعات نزلت ١٠٪». الفريق يدخل في ذعر — خصومات، إعلانات، اجتماعات طارئة. أحد يسأل: «نزلت مقارنة بماذا؟» — تبيّن أنها مقارنة بأسبوع فيه عرض خاص. مقارنة بالشهر الماضي: ثابتة.",
+      "ar-EG": "مدير بيقول: «المبيعات نزلت ١٠٪». الفريق بي panics — خصومات، إعلانات، اجتماعات طوارئ."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "A number without comparison",
+        "rightLabel": "A number + comparison + action",
+        "leftBody": "'Conversion 8%'. Decision: 'Increase advertisements' — we don't know if 8% is good or bad",
+        "rightBody": "'Conversion 8% — was 12% last week, and orders increased'. Decision: 'Review pricing message — I — Wednesday'"
+      },
+      "ar-MSA": {
+        "leftLabel": "رقم من دون مقارنة",
+        "rightLabel": "رقم + مقارنة + Action",
+        "leftBody": "«التحويل ٨٪». قرار: «نزيد الإعلانات» — لا نعرف إن كان ٨٪ جيدًا أم سيئًا",
+        "rightBody": "«التحويل ٨٪ — كان ١٢٪ الأسبوع الماضي، والطلبات زادت». قرار: «نراجع رسالة التسعير — أنا — الأربعاء»"
+      },
+      "ar-Gulf": {
+        "leftLabel": "رقم من دون مقارنة",
+        "rightLabel": "رقم + مقارنة + إجراء",
+        "leftBody": "«التحويل ٨٪». قرار: «نزيد الإعلانات» — ما نعرف إن كان ٨٪ جيد أو سيئ",
+        "rightBody": "«التحويل ٨٪ — كان ١٢٪ الأسبوع الماضي، والطلبات زادت». قرار: «نراجع رسالة التسعير — أنا — الأربعاء»"
+      },
+      "ar-EG": {
+        "leftLabel": "رقم من غير مقارنة",
+        "leftBody": "«التحويل ٨٪». قرار: «نزوّد الإعلانات». — مش عارفين لو ٨٪ كويس ولا وحش.",
+        "rightLabel": "رقم + مقارنة + action",
+        "rightBody": "«التحويل ٨٪ — كان ١٢٪ الأسبوع اللي فات، والطلبات زادت». قرار: «نراجع رسالة التسعير — أنا — الأربعاء»."
+      }
+    },
+    "missionIntro": {
+      "en": "This is a practical task using a real number from your work — not theoretical. Choose one number that you notice often and run it through the 3 decision questions. Goal: Do not take action on half the story.",
+      "ar-MSA": "مهمة تطبيق على رقم حقيقي من عملك — ليس نظريًا. اختر رقمًا واحدًا تلاحظه كثيرًا ومرّره على ٣ أسئلة القرار. الهدف: لا تتخذ Action على نصف قصة.",
+      "ar-Gulf": "مهمة تطبيق على رقم حقيقي من عملك — مو نظري. اختر رقم واحد تلاحظه كثير ومرّره على ٣ أسئلة القرار. الهدف: لا تتخذ إجراء على نصف قصة.",
+      "ar-EG": "المهمة دي تطبيق على رقم حقيقي من شغلك — مش نظري. اختار رقم واحد بتلاحظه كتير ومرّره على ٣ أسئلة القرار.\n\nالهدف: ما تاخدش action على نصف قصة."
+    },
+    "visualIntent": {
+      "kind": "decision",
+      "summary": "**Decision chain** (ID: `decision-chain`): **Number → Compared to what → Related number → Action**. **Without** this **chain**, the **decision will not be execu",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m4-l2-decision-rule.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**Decision chain** (ID: `decision-chain`): **Number → Compared to what → Related number → Action**. **Without** this **chain**, the **decisi"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-l2-decision-rule.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**سلسلة القرار** (معرّف: `decision-chain`): **رقم → مقارنة بماذا → رقم مرتبط → Action**. **من دون** هذه **السلسلة** **القرار لن يُنفَّذ**."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-l2-decision-rule.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**سلسلة القرار** (معرّف: `decision-chain`): **رقم → مقارنة بماذا → رقم مرتبط → إجراء**. **من دون** هالسلسلة **القرار ما راح يُنفّذ**."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/analyst-m4-l2-decision-rule.ts",
+          "field": "block.caption (diagram)",
+          "quote": "رقم → مقارنة بإيه → رقم مرتبط → action. من غير السلسلة دي القرار مش هيتنفّذ."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "analyst-m4-l2-decision-rule's package marks a Diagram intent (decision-chain); the underlying relationship reads as decision, so a deterministic SVG panel keeps the real A number without comparison/A number + comparison + action labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "decision-chain-panel",
+  "duplicationJustification": "Shares the \"decision-chain-panel\" layout template with 3 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"A number without comparison\" vs \"A number + comparison + action\" for analyst-m4-l2-decision-rule.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "A number without comparison",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m4-l2-decision-rule.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "A number + comparison + action",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m4-l2-decision-rule.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Baseline",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m4-l2-decision-rule.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Decision Rule",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m4-l2-decision-rule.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "رقم من دون مقارنة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-l2-decision-rule.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "رقم + مقارنة + Action",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-l2-decision-rule.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Baseline (خط أساس)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-l2-decision-rule.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Decision Rule (قاعدة قرار)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-l2-decision-rule.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "رقم من دون مقارنة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-l2-decision-rule.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "رقم + مقارنة + إجراء",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-l2-decision-rule.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Baseline (خط أساس)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-l2-decision-rule.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Decision Rule (قاعدة قرار)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-l2-decision-rule.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "رقم من غير مقارنة",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m4-l2-decision-rule.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "رقم + مقارنة + action",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m4-l2-decision-rule.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Baseline (خط أساس)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m4-l2-decision-rule.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Decision Rule (قاعدة قرار)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m4-l2-decision-rule.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Decision Rule: \"A number without comparison\" versus \"A number + comparison + action\" — Compared to what?",
+    "ar-MSA": "قاعدة القرار: \"رقم من دون مقارنة\" في مقابل \"رقم + مقارنة + Action\" — Compared to what? — مقارنة بماذا؟",
+    "ar-Gulf": "قاعدة القرار: \"رقم من دون مقارنة\" في مقابل \"رقم + مقارنة + إجراء\" — مقارنة بماذا؟",
+    "ar-EG": "قاعدة القرار: ٣ أسئلة قبل أي action: \"رقم من غير مقارنة\" في مقابل \"رقم + مقارنة + action\" — ١) Compared to what? — مقارنة بإيه؟ (الأسبوع اللي فات، نفس الفترة السنة اللي فاتت، الهدف)"
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Comparison and Context\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m4-l2-decision-rule.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Action and Rule\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m4-l2-decision-rule.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"مقارنة وسياق\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-l2-decision-rule.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Action وRule\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-l2-decision-rule.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"مقارنة وسياق\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-l2-decision-rule.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"إجراء وقاعدة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-l2-decision-rule.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"مقارنة وسياق\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m4-l2-decision-rule.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Action وRule\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m4-l2-decision-rule.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "736381c8a7ba5212b4e8314bb18210433797357cb654e8a48ac1996162e60c60"
+}

@@ -1,0 +1,241 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "automator-m6-l1-lead-capture",
+  "pathId": "automator",
+  "moduleId": "automator-m6",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Lead Capture",
+    "ar-MSA": "التقاط العملاء المحتملين",
+    "ar-Gulf": "انطلاق الدرس",
+    "ar-EG": "كل lead = تسجيل فوري + رد + تنبيه"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/automator-m6-l1-lead-capture.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l1-lead-capture.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l1-lead-capture.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/automator-m6-l1-lead-capture.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Lead capture automation prevents losing potential customers — it records, replies, and alerts.",
+        "Why now? It bridges external interest and your business system."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ Lead capture automation يمنع ضياع المهتمين — تسجيل ورد وتنبيه.",
+        "لماذا الآن؟ جسر بين الاهتمام الخارجي ونظام عملك."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ أتمتة التقاط العملاء المحتملين تمنع ضياع المهتمين — تسجيل ورد وتنبيه.",
+        "ليش الحين؟ جسر بين الاهتمام الخارجي ونظام عملك."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ Lead capture automation يمنع الناس المهتمة تضيع — كل استفسار يتسجّل ويترد عليه من غير نسيان.",
+        "ليه دلوقتي؟ بعد AI في السير، محتاج جسر يربط الاهتمام اللي جاي من بره بنظام شغلك.",
+        "هتعمل إيه بعد الدرس؟ هترسم workflow استقبال lead من أول ما حد يسجّل لحد ما يتسجّل ويتبلّغ."
+      ]
+    },
+    "coreIdea": {
+      "en": "Webhook",
+      "ar-MSA": "Webhook (إشعار فوري)",
+      "ar-Gulf": "Webhook (إشعار فوري)",
+      "ar-EG": "Lead = أي حد أبدى اهتمام: فورم، واتساب، طلب حجز، استفسار خدمة."
+    },
+    "tension": {
+      "en": "A form or message saying 'I want the price' — seen too late or forgotten. No system captures every Lead immediately.",
+      "ar-MSA": "فورم أو رسالة «أريد السعر» — رُئيت متأخرًا أو نُسيت. لا نظام يمسك كل Lead (عميل محتمل) فورًا.",
+      "ar-Gulf": "نموذج أو رسالة «أريد السعر» — شُوهدت متأخرًا أو نُسيت. ما في نظام يمسك كل عميل محتمل فورًا.",
+      "ar-EG": "حد ملّا فورم أو بعت رسالة «عايز أعرف السعر». إنت شفتها متأخر — أو نسيت ترد."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "'They were interested — then they disappeared'",
+        "rightLabel": "Every lead equals a record, reply, and alert",
+        "leftBody": "Wait until you have time to reply to everyone at once.",
+        "rightBody": "Every record is saved immediately + automatic welcome reply + alert for follow-up."
+      },
+      "ar-MSA": {
+        "leftLabel": "«كان مهتمًا — ثم ضاع»",
+        "rightLabel": "كل lead = تسجيل + رد + تنبيه",
+        "leftBody": "الانتظار حتى تفرغ ثم الرد على الجميع دفعة واحدة.",
+        "rightBody": "حفظ كل تسجيل فورًا + رد ترحيب آلي + تنبيه لمسؤول المتابعة."
+      },
+      "ar-Gulf": {
+        "leftLabel": "«كان مهتمًا — ثم ضاع»",
+        "rightLabel": "كل عميل محتمل = تسجيل + رد + تنبيه",
+        "leftBody": "تستنى لما تفضى وترد على الكل مرة واحدة.",
+        "rightBody": "كل تسجيل يتحفظ فورًا + رد ترحيب أوتوماتيك + تنبيه لمن يتابع."
+      },
+      "ar-EG": {
+        "leftLabel": "استقبال يدوي",
+        "leftBody": "الفورم يبعت إيميل. إنت بتفتح وتنسخ للشيت. ٣٠ lead في يوم = فوضى ونسيان. «مين ده؟ جالنا منين؟»",
+        "rightLabel": "Lead capture automation",
+        "rightBody": "الفورم → تسجيل فوري + مصدر (منين جالك) + رد ترحيب أوتوماتيك + تنبيه لفريق المتابعة. كل lead موثّق من ثانية واحدة."
+      }
+    },
+    "missionIntro": {
+      "en": "| Full Flow | 60% | | Realism | 40% |",
+      "ar-MSA": "| سير كامل | 60% | | واقعية | 40% |",
+      "ar-Gulf": "| سير كامل | 60% | | واقعية | 40% |",
+      "ar-EG": "المهمة رسم سير عملي — مش بناء تقني. اختار قناة واحدة عندك (فورم، واتساب، حجز) وارسم المسار من التسجيل للتنبيه.\n\nمش مطلوب أدوات محددة — مطلوب ٤ خطوات واضحة."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Webhook",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m6-l1-lead-capture.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Webhook"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l1-lead-capture.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Webhook (إشعار فوري)"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l1-lead-capture.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Webhook (إشعار فوري)"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/automator-m6-l1-lead-capture.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "التسجيل → الحفظ → الرد الفوري → التنبيه. أربع خطوات تمنع الضياع."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "automator-m6-l1-lead-capture's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels ('They were interested — then they disappeared' / Every lead equals a record, reply, and alert) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"'They were interested — then they disappeared'\" vs \"Every lead equals a record, reply, and alert\" for automator-m6-l1-lead-capture.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "'They were interested — then they disappeared'",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m6-l1-lead-capture.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Every lead equals a record, reply, and alert",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m6-l1-lead-capture.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "«كان مهتمًا — ثم ضاع»",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l1-lead-capture.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "كل lead = تسجيل + رد + تنبيه",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l1-lead-capture.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "«كان مهتمًا — ثم ضاع»",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l1-lead-capture.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "كل عميل محتمل = تسجيل + رد + تنبيه",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l1-lead-capture.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "استقبال يدوي",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m6-l1-lead-capture.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Lead capture automation",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m6-l1-lead-capture.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Lead (عميل محتمل)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m6-l1-lead-capture.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Webhook (إشعار فوري)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m6-l1-lead-capture.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Lead Capture: \"'They were interested — then they disappeared'\" versus \"Every lead equals a record, reply, and alert\" — Webhook",
+    "ar-MSA": "التقاط العملاء المحتملين: \"«كان مهتمًا — ثم ضاع»\" في مقابل \"كل lead = تسجيل + رد + تنبيه\" — Webhook (إشعار فوري)",
+    "ar-Gulf": "انطلاق الدرس: \"«كان مهتمًا — ثم ضاع»\" في مقابل \"كل عميل محتمل = تسجيل + رد + تنبيه\" — Webhook (إشعار فوري)",
+    "ar-EG": "كل lead = تسجيل فوري + رد + تنبيه: \"استقبال يدوي\" في مقابل \"Lead capture automation\" — Lead = أي حد أبدى اهتمام: فورم، واتساب، طلب حجز، استفسار خدمة."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"سير كامل\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m6-l1-lead-capture.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"واقعية\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m6-l1-lead-capture.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "5cb77ad3e7ae49710a50be5ee19cf55f170349502af337a8b151bf19f165c5a9"
+}

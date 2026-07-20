@@ -1,0 +1,318 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "automator-m3-l1-tools-landscape",
+  "pathId": "automator",
+  "moduleId": "automator-m3",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Tools Landscape",
+    "ar-MSA": "خارطة أدوات الأتمتة",
+    "ar-Gulf": "أدوات الأتمتة",
+    "ar-EG": "الأدوات مختلفة — التفكير واحد"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/automator-m3-l1-tools-landscape.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m3-l1-tools-landscape.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m3-l1-tools-landscape.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/automator-m3-l1-tools-landscape.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? The tools differ — Zapier, Make, n8n — but the thought process is the same: Trigger → steps → Output.",
+        "Why now? After selecting your first automation task, you need a tool that fits your size — not just the most popular name.",
+        "What after the lesson? You will choose one tool for your automation filter — and explain why."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ الأدوات مختلفة — Zapier، Make، n8n — لكن التفكير واحد: مُشغّل (Trigger) → خطوات → نتيجة (Output).",
+        "لماذا الآن؟ بعد أن اخترت أول مهمة للأتمتة، تحتاج أداة تناسب حجمك — وليس أشهر اسم.",
+        "ماذا بعد الدرس؟ ستختار أداة واحدة لمرشّح الأتمتة — ولماذا."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ الأدوات مختلفة — Zapier، Make، n8n — لكن التفكير واحد: مُشغّل (Trigger) → خطوات → نتيجة (Output).",
+        "ليش الحين؟ بعد ما اخترت أول مهمة للأتمتة، تحتاج أداة تناسب حجمك — مو أشهر اسم.",
+        "وش بعد الدرس؟ راح تختار أداة واحدة لمرشّح الأتمتة — وليش."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ الأدوات مختلفة — Zapier، Make، n8n — بس التفكير واحد: مُشغّل → خطوات → نتيجة.",
+        "ليه دلوقتي؟ بعد ما اخترت أول مهمة للأتمتة، محتاج أداة تناسب حجمك — مش أشهر اسم.",
+        "هتعمل إيه بعد الدرس؟ هتختار أداة واحدة لمرشّح الأتمتة بتاعك — ولِيه."
+      ]
+    },
+    "coreIdea": {
+      "en": "Zapier",
+      "ar-MSA": "Zapier",
+      "ar-Gulf": "Zapier",
+      "ar-EG": "Zapier — الأسهل، integrations جاهزة كتير، مناسب لـ workflows بسيطة وقليلة. أغلى نسبيًا."
+    },
+    "tension": {
+      "en": "\"Zapier is popular\" — and after a month, the subscription is expensive. You choose a tool because it’s famous — or because it’s free — without asking: How many tasks per month? Do you need logic or simple steps?",
+      "ar-MSA": "«Zapier أشهر» — وبعد شهر الاشتراك غالٍ. تختار أداة لأنها مشهورة — أو لأنها مجانية — دون أن تسأل: كم مهمة/شهر؟ هل تحتاج منطقًا أم خطوات بسيطة؟",
+      "ar-Gulf": "«Zapier مشهور» — وبعد شهر الاشتراك غالي. تختار أداة لأنها مشهورة — أو لأنها مجانية — دون ما تسأل: كم مهمة/شهر؟ هل تحتاج منطق أم خطوات بسيطة؟",
+      "ar-EG": "بتختار أداة لأنها مشهورة — أو لأنها مجانية — من غير ما تشوف: كام مهمة/شهر؟ محتاج logic ولا خطوات بسيطة؟"
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "\"Zapier because it’s popular\"",
+        "rightLabel": "\"Make because the size is medium\"",
+        "leftBody": "Noor used Zapier for \"Form → Email\" — 5 times/month. Subscription $20/month for a simple task. The tool is larger than needed.",
+        "rightBody": "Noor used Make's free tier — same \"Form → Email\" — 30 minutes setup. Saved money and learned the thought process."
+      },
+      "ar-MSA": {
+        "leftLabel": "«Zapier لأنه مشهور»",
+        "rightLabel": "«Make لأن الحجم متوسط»",
+        "leftBody": "نور فتحت Zapier لـ «نموذج → بريد» — ٥ مرات/شهر. اشتراك ٢٠$/شهر لمهمة بسيطة. الأداة أكبر من الحاجة.",
+        "rightBody": "نور استخدمت Make free tier — نفس «نموذج → بريد» — ٣٠ دقيقة إعداد. وفّرت مالًا وتعلّمت التفكير."
+      },
+      "ar-Gulf": {
+        "leftLabel": "«Zapier لأنه مشهور»",
+        "rightLabel": "«Make لأن الحجم متوسط»",
+        "leftBody": "نور فتحت Zapier لـ «نموذج → بريد» — ٥ مرات/شهر. اشتراك ٢٠$/شهر لمهمة بسيطة. الأداة أكبر من الحاجة.",
+        "rightBody": "نور استخدمت Make free tier — نفس «نموذج → بريد» — ٣٠ دقيقة إعداد. وفّرت مال وتعلّمت التفكير."
+      },
+      "ar-EG": {
+        "leftLabel": "«Zapier لأنه مشهور»",
+        "leftBody": "نور فتحت Zapier لـ «فورم → إيميل» — ٥ مرات/شهر. اشتراك ٢٠$/شهر لمهمة بسيطة. الأداة أكبر من الحاجة.",
+        "rightLabel": "«Make لأن الحجم متوسط»",
+        "rightBody": "نور استخدمت Make free tier — نفس «فورم → إيميل» — ٣٠ دقيقة setup. وفّرت فلوس وتعلّمت التفكير."
+      }
+    },
+    "missionIntro": {
+      "en": "Take the first automation filter from the previous lesson — and choose one tool (Zapier / Make / n8n / other). 10 minutes is enough — no need to build a Flow.",
+      "ar-MSA": "خذ مرشّح الأتمتة الأول من الدرس السابق — واختر أداة واحدة (Zapier / Make / n8n / غيرها). ١٠ دقائق كافية — لا يلزم بناء تدفق عمل (Flow).",
+      "ar-Gulf": "خذ مرشّح الأتمتة الأول من الدرس السابق — واختر أداة واحدة (Zapier / Make / n8n / غيرها). ١٠ دقائق كافية — مو لازم تبني تدفق عمل (Flow).",
+      "ar-EG": "خد مرشّح الأتمتة الأول من الدرس اللي فات — واختار أداة واحدة (Zapier / Make / n8n / غيره).\n\n١٠ دقيقة كفاية — مش مطلوب تبني Flow."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Any automation tool = layers: something enters (**Trigger**) → steps → something exits. Zapier, Make, and n8n share the same idea — differing in ease, price, an",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m3-l1-tools-landscape.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Any automation tool = layers: something enters (**Trigger**) → steps → something exits. Zapier, Make, and n8n share the same idea — differin"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m3-l1-tools-landscape.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "أي أداة أتمتة = طبقات: شيء يدخل (**مُشغّل**) → خطوات → شيء يخرج. Zapier و Make و n8n نفس الفكرة — اختلاف في السهولة والسعر والقوة."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m3-l1-tools-landscape.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "أي أداة أتمتة = طبقات: شيء يدخل (**مُشغّل**) → خطوات → شيء يخرج. Zapier و Make و n8n نفس الفكرة — اختلاف في السهولة والسعر والقوة."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/automator-m3-l1-tools-landscape.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "أي أداة أتمتة = طبقات: حاجة تدخل (مُشغّل) → خطوات → حاجة تطلع. Zapier و Make و n8n نفس الفكرة — اختلاف في السهولة والسعر"
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "automator-m3-l1-tools-landscape's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (\"Zapier because it’s popular\" / \"Make because the size is medium\") instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"\"Zapier because it’s popular\"\" vs \"\"Make because the size is medium\"\" for automator-m3-l1-tools-landscape.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "term-0",
+        "text": "No-Code",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m3-l1-tools-landscape.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Integration",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m3-l1-tools-landscape.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "«Zapier لأنه مشهور»",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m3-l1-tools-landscape.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "«Make لأن الحجم متوسط»",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m3-l1-tools-landscape.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "No-Code (من غير كود)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m3-l1-tools-landscape.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Integration (ربط)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m3-l1-tools-landscape.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "«Zapier لأنه مشهور»",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m3-l1-tools-landscape.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "«Make لأن الحجم متوسط»",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m3-l1-tools-landscape.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "No-Code (من غير كود)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m3-l1-tools-landscape.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Integration (ربط)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m3-l1-tools-landscape.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "«Zapier لأنه مشهور»",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m3-l1-tools-landscape.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "«Make لأن الحجم متوسط»",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m3-l1-tools-landscape.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "No-Code (من غير كود)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m3-l1-tools-landscape.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Integration (ربط)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m3-l1-tools-landscape.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Tools Landscape: \"\"Zapier because it’s popular\"\" versus \"\"Make because the size is medium\"\" — Zapier",
+    "ar-MSA": "خارطة أدوات الأتمتة: \"«Zapier لأنه مشهور»\" في مقابل \"«Make لأن الحجم متوسط»\" — Zapier",
+    "ar-Gulf": "أدوات الأتمتة: \"«Zapier لأنه مشهور»\" في مقابل \"«Make لأن الحجم متوسط»\" — Zapier",
+    "ar-EG": "الأدوات مختلفة — التفكير واحد: \"«Zapier لأنه مشهور»\" في مقابل \"«Make لأن الحجم متوسط»\" — Zapier — الأسهل، integrations جاهزة كتير، مناسب لـ workflows بسيطة وقليلة. أغلى نسبيًا."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Justified Choice\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m3-l1-tools-landscape.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Understanding the Thought Process\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m3-l1-tools-landscape.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"اختيار مبرّر\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m3-l1-tools-landscape.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"فهم التفكير\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m3-l1-tools-landscape.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"اختيار مبرّر\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m3-l1-tools-landscape.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"فهم التفكير\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m3-l1-tools-landscape.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"اختيار مبرّر\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m3-l1-tools-landscape.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"فهم التفكير\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m3-l1-tools-landscape.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "5dc5baa4448926daa8ff2a23f63f82c24ef87b81c439a69a5b07452504b84415"
+}

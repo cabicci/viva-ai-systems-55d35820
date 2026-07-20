@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "automator-m2-l2-spot-patterns",
+  "pathId": "automator",
+  "moduleId": "automator-m2",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Spot Patterns",
+    "ar-MSA": "اكتشاف الأنماط",
+    "ar-Gulf": "أنماط الكشف",
+    "ar-EG": "«كل ما X، أعمل Y» = فرصة أتمتة"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/automator-m2-l2-spot-patterns.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l2-spot-patterns.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l2-spot-patterns.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/automator-m2-l2-spot-patterns.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? \"Whenever X happens, I do Y\" = Pattern — this is the first signal that the virtual worker can operate.",
+        "Why now? After breaking down a task into a system, the next step is to find the recurring patterns in your day.",
+        "What after the lesson? You will write 3 automation patterns in the format \"Whenever... I do...\"."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ «كلما X يحدث، أفعل Y» = نمط (Pattern) — وهذه أول إشارة أن العامل الافتراضي يستطيع العمل.",
+        "لماذا الآن؟ بعد أن فكّكت مهمة إلى نظام، الخطوة التالية: إيجاد الأنماط المتكررة في يومك.",
+        "ماذا بعد الدرس؟ ستكتب ٣ أنماط أتمتة بصيغة «كلما… أفعل…»."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ «كلما حدث X، أفعل Y» = نمط — وهذه أول إشارة أن العامل الافتراضي يقدر يشتغل.",
+        "ليش الحين؟ بعد ما فكّكت المهمة إلى نظام، الخطوة الجاية: اكتشاف الأنماط المتكررة في يومك.",
+        "وش بعد الدرس؟ راح تكتب ٣ أنماط أتمتة بصيغة «كلما… أفعل…»."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ «كل ما X يحصل، أعمل Y» = نمط — وده أول إشارة إن العامل الافتراضي يقدر يشتغل.",
+        "ليه دلوقتي؟ بعد ما فكّكت مهمة لنظام، الخطوة الجاية: تلاقي الأنماط المتكرّرة في يومك.",
+        "هتعمل إيه بعد الدرس؟ هتكتب ٣ أنماط أتمتة بصيغة «كل ما… أعمل…»."
+      ]
+    },
+    "coreIdea": {
+      "en": "Pattern",
+      "ar-MSA": "النمط",
+      "ar-Gulf": "النمط",
+      "ar-EG": "النمط = مُشغّل ثابت (X) + خطوات ثابتة (Y). ده بالظبط اللي العامل الافتراضي بيعمله."
+    },
+    "tension": {
+      "en": "Whenever a client asks, \"What is my account number?\" — you copy the same number and send it. Whenever there is a new booking — you write a welcome email. You do this without thinking — but the virtual worker needs to see",
+      "ar-MSA": "كلما سأل عميل «رقم الحساب؟» — تنسخ نفس الرقم وترسله. كلما حجز جديد — تكتب إيميل ترحيب. تفعل ذلك دون أن تشعر — لكن العامل الافتراضي يحتاج أن يرى النمط قبل أن ينفّذه.",
+      "ar-Gulf": "كلما سأل عميل «رقم الحساب؟» — تنسخ نفس الرقم وترسله. كلما حجز جديد — تكتب إيميل ترحيب. تسوي هذا بدون ما تحس — لكن العامل الافتراضي يحتاج يشوف النمط قبل ما ينفذه.",
+      "ar-EG": "كل ما عميل يسأل «رقم الحساب؟» — بتنسخ نفس الرقم وتبعته. كل ما حجز جديد — بتكتب إيميل ترحيب."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Without a Pattern",
+        "rightLabel": "Clear Pattern",
+        "leftBody": "Manal responds to each client differently — no \"Whenever... I do...\". It's hard to delegate any part to the virtual worker.",
+        "rightBody": "\"Whenever there is a new booking → Welcome email + login details\". The same steps every time — the virtual worker executes them."
+      },
+      "ar-MSA": {
+        "leftLabel": "بلا نمط",
+        "rightLabel": "نمط واضح",
+        "leftBody": "منال ترد على كل عميل بشكل مختلف — لا «كلما… أفعل…». صعب تسليم أي جزء للعامل الافتراضي.",
+        "rightBody": "«كلما حجز جديد → إيميل ترحيب + بيانات دخول». نفس الخطوات كل مرة — العامل الافتراضي ينفّذها."
+      },
+      "ar-Gulf": {
+        "leftLabel": "بلا نمط",
+        "rightLabel": "نمط واضح",
+        "leftBody": "منال ترد على كل عميل بشكل مختلف — لا «كلما… أفعل…». صعب تسليم أي جزء للعامل الافتراضي.",
+        "rightBody": "«كلما حجز جديد → إيميل ترحيب + بيانات دخول». نفس الخطوات كل مرة — العامل الافتراضي ينفذها."
+      },
+      "ar-EG": {
+        "leftLabel": "بدون نمط",
+        "leftBody": "منال بترد على كل عميل بشكل مختلف — مفيش «كل ما… أعمل…». صعب تسلّم أي جزء للعامل الافتراضي.",
+        "rightLabel": "نمط واضح",
+        "rightBody": "«كل ما حجز جديد → إيميل ترحيب + بيانات دخول». نفس الخطوات كل مرة — العامل الافتراضي ينفّذها."
+      }
+    },
+    "missionIntro": {
+      "en": "Patterns = actions you do without thinking. You will identify 3 from your work and write them in the format \"Whenever X, I do Y\". 10–15 minutes is enough.",
+      "ar-MSA": "الأنماط = حركات تفعلها دون أن تشعر. سترصد ٣ من عملك وتكتبها بصيغة «كلما X، أفعل Y». ١٠–١٥ دقيقة كافية.",
+      "ar-Gulf": "الأنماط = حركات تسويها بدون ما تحس. راح ترصد ٣ من عملك وتكتبها بصيغة «كلما X، أفعل Y». ١٠–١٥ دقيقة كافية.",
+      "ar-EG": "Patterns = حركات بتعملها من غير ما تحس. هترصد ٣ من شغلك وتكتبهم بصيغة «كل ما X، أعمل Y».\n\n١٠–١٥ دقيقة كفاية."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Monitoring patterns — the same idea as **time tracking**: record what repeats (time, task, timing) and extract patterns. The same exercise applies to your work:",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m2-l2-spot-patterns.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Monitoring patterns — the same idea as **time tracking**: record what repeats (time, task, timing) and extract patterns. The same exercise a"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l2-spot-patterns.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "مراقبة الأنماط — نفس فكرة **جرد الوقت**: تسجّل ما يتكرر (وقت، مهمة، توقيت) وتستخرج أنماطًا. نفس التمرين على عملك: يدويًا في البداية، ثم العا"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l2-spot-patterns.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "مراقبة الأنماط — نفس فكرة **جرد الوقت**: تسجل ما يتكرر (وقت، مهمة، توقيت) وتستخرج أنماط. نفس التمرين على عملك: يدويًا في البداية، ثم العامل"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/automator-m2-l2-spot-patterns.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "فكرة المراقبة: تسجّل إيه اللي بيتكرّر (وقت، مهمة، توقيت) — وتطلع منه أنماط. نفس التمرين على شغلك: يدوي في الأول، بعدين ا"
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "automator-m2-l2-spot-patterns's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Without a Pattern / Clear Pattern) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Without a Pattern\" vs \"Clear Pattern\" for automator-m2-l2-spot-patterns.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Without a Pattern",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m2-l2-spot-patterns.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Clear Pattern",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m2-l2-spot-patterns.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Pattern",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m2-l2-spot-patterns.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Automation",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m2-l2-spot-patterns.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "بلا نمط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l2-spot-patterns.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "نمط واضح",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l2-spot-patterns.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Pattern (نمط)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l2-spot-patterns.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Automation (أتمتة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l2-spot-patterns.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "بلا نمط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l2-spot-patterns.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "نمط واضح",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l2-spot-patterns.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Pattern (نمط)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l2-spot-patterns.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Automation (أتمتة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l2-spot-patterns.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "بدون نمط",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m2-l2-spot-patterns.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "نمط واضح",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m2-l2-spot-patterns.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Pattern (نمط)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m2-l2-spot-patterns.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Automation (أتمتة)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m2-l2-spot-patterns.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Spot Patterns: \"Without a Pattern\" versus \"Clear Pattern\" — Pattern",
+    "ar-MSA": "اكتشاف الأنماط: \"بلا نمط\" في مقابل \"نمط واضح\" — النمط",
+    "ar-Gulf": "أنماط الكشف: \"بلا نمط\" في مقابل \"نمط واضح\" — النمط",
+    "ar-EG": "«كل ما X، أعمل Y» = فرصة أتمتة: \"بدون نمط\" في مقابل \"نمط واضح\" — النمط = مُشغّل ثابت (X) + خطوات ثابتة (Y). ده بالظبط اللي العامل الافتراضي بيعمله."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"3 Patterns\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m2-l2-spot-patterns.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Feasibility Assessment\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m2-l2-spot-patterns.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ أنماط\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l2-spot-patterns.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"تقييم القابلية\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l2-spot-patterns.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ أنماط\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l2-spot-patterns.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"تقييم القابلية\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l2-spot-patterns.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ أنماط\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m2-l2-spot-patterns.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"تقييم القابلية\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m2-l2-spot-patterns.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "72753bf884d7ab6e15462db0b6d07c2107c6ff1ab2d8508f66b1280924d87ae8"
+}

@@ -1,0 +1,333 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "creator-m5-l1-editing",
+  "pathId": "creator",
+  "moduleId": "creator-m5-polish",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Editing — Cut, Caption, Pace",
+    "ar-MSA": "المونتاج — قصّ وتعليق وإيقاع",
+    "ar-Gulf": "تحرير — قص، تعليق، إيقاع",
+    "ar-EG": "قص الزايد وخلي المسار واضح"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/creator-m5-l1-editing.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m5-l1-editing.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m5-l1-editing.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/creator-m5-l1-editing.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Editing clarifies your message — it does not just beautify it.",
+        "Even if the idea is excellent — poor presentation can cause the message to get lost.",
+        "Proper editing removes the excess and makes the meaning come across faster and clearer."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ المونتاج يُوضّح رسالتك — ليس فقط يجمّلها.",
+        "حتى لو الفكرة ممتازة — العرض الضعيف يُخلي الرسالة تضيع.",
+        "المونتاج الصحيح يزيل الزوائد ويجعل المعنى يصل أسرع وأوضح."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ المونتاج يوضح رسالتك — مو بس يجمّلها.",
+        "حتى لو الفكرة ممتازة — العرض الضعيف يخلي الرسالة تضيع.",
+        "المونتاج الصحيح يزيل الزوائد ويخلي المعنى يوصل أسرع وأوضح."
+      ],
+      "ar-EG": [
+        "حتى لو الفكرة ممتازة، العرض الضعيف بيخلي الرسالة تضيع.",
+        "المونتاج الصح بيشيل الزوائد ويخلي المعنى يوصل أسرع وأوضح."
+      ]
+    },
+    "coreIdea": {
+      "en": "Start with a simple question:",
+      "ar-MSA": "ابدأ بسؤال بسيط:",
+      "ar-Gulf": "ابدأ بسؤال بسيط:",
+      "ar-EG": "ابدأ بسؤال بسيط: كل جملة في الفيديو بتخدم الفكرة ولا لا؟"
+    },
+    "tension": {
+      "en": "The raw version is often distracting. Repetitive dialogue, long pauses, and slow starts make viewers leave.",
+      "ar-MSA": "النسخة الخام غالبًا مشتتة. كلام مكرّر، سكتات طويلة، وبدايات بطيئة تجعل المشاهد يغادر.",
+      "ar-Gulf": "النسخة الخام غالبًا مشتتة. كلام مكرر، سكتات طويلة، وبدايات بطيئة تخلي المشاهد يغادر.",
+      "ar-EG": "كلام مكرر، سكتات طويلة، وبدايات بطيئة بتخلي المشاهد يسيب الفيديو."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Confusing Style",
+        "rightLabel": "Clear Style",
+        "leftBody": "Adding all clips without filtering — the video becomes cluttered with details",
+        "rightBody": "Choosing clips that serve the idea only — the meaning comes across quickly and confidently"
+      },
+      "ar-MSA": {
+        "leftLabel": "الأسلوب المربك",
+        "rightLabel": "الأسلوب الواضح",
+        "leftBody": "إضافة كل اللقطات من دون فلترة — الفيديو يصبح زحمة تفاصيل",
+        "rightBody": "اختيار اللقطات التي تخدم الفكرة فقط — المعنى يصل بسرعة وبثقة"
+      },
+      "ar-Gulf": {
+        "leftLabel": "الأسلوب المربك",
+        "rightLabel": "الأسلوب الواضح",
+        "leftBody": "إضافة كل اللقطات من دون فلترة — الفيديو يصبح زحمة تفاصيل",
+        "rightBody": "اختيار اللقطات التي تخدم الفكرة فقط — المعنى يوصل بسرعة وبثقة"
+      },
+      "ar-EG": {
+        "leftLabel": "الأسلوب المربك",
+        "leftBody": "تضيف كل اللقطات المتاحة بدون فلترة، فيتحول الفيديو لزحمة تفاصيل.",
+        "rightLabel": "الأسلوب الواضح",
+        "rightBody": "تختار اللقطات اللي بتخدم الفكرة فقط، فيوصل المعنى بسرعة وبثقة."
+      }
+    },
+    "missionIntro": {
+      "en": "Two practical options: Create a simple editing checklist — or apply editing to a short piece you have.",
+      "ar-MSA": "اختياران عمليان: بناء Checklist (قائمة مراجعة) بسيطة للتحرير — أو تطبيق التحرير على قطعة قصيرة عندك.",
+      "ar-Gulf": "اختياران عمليان: بناء قائمة مراجعة بسيطة للتحرير — أو تطبيق التحرير على قطعة قصيرة عندك.",
+      "ar-EG": "قدامك اختيارين عمليين: تبني Checklist بسيطة للتحرير، أو تطبق التحرير على قطعة قصيرة فعلية عندك."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Visual snapshot — **the difference before and after editing**. **The edited version is shorter and clearer** — **each part has a purpose** **and there is no flu",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m5-l1-editing.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Visual snapshot — **the difference before and after editing**. **The edited version is shorter and clearer** — **each part has a purpose** *"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m5-l1-editing.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "ابدأ بسؤال بسيط:"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m5-l1-editing.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "ابدأ بسؤال بسيط:"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/creator-m5-l1-editing.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "النسخة المعدلة بتكون أقصر وأوضح لأن كل جزء فيها له وظيفة، ومفيش حشو يضيع التركيز."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "creator-m5-l1-editing's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Confusing Style / Clear Style) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Confusing Style\" vs \"Clear Style\" for creator-m5-l1-editing.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Confusing Style",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m5-l1-editing.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Clear Style",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m5-l1-editing.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Pacing",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m5-l1-editing.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Cut for Clarity",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m5-l1-editing.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "الأسلوب المربك",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m5-l1-editing.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "الأسلوب الواضح",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m5-l1-editing.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Pacing (إيقاع)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m5-l1-editing.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Cut for Clarity (قص للوضوح)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m5-l1-editing.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "الأسلوب المربك",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m5-l1-editing.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "الأسلوب الواضح",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m5-l1-editing.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "إيقاع",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m5-l1-editing.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "قص للوضوح",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m5-l1-editing.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "الأسلوب المربك",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m5-l1-editing.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "الأسلوب الواضح",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m5-l1-editing.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Pacing",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m5-l1-editing.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Cut for Clarity",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m5-l1-editing.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Editing — Cut, Caption, Pace: \"Confusing Style\" versus \"Clear Style\" — Start with a simple question:",
+    "ar-MSA": "المونتاج — قصّ وتعليق وإيقاع: \"الأسلوب المربك\" في مقابل \"الأسلوب الواضح\" — ابدأ بسؤال بسيط:",
+    "ar-Gulf": "تحرير — قص، تعليق، إيقاع: \"الأسلوب المربك\" في مقابل \"الأسلوب الواضح\" — ابدأ بسؤال بسيط:",
+    "ar-EG": "قص الزايد وخلي المسار واضح: \"الأسلوب المربك\" في مقابل \"الأسلوب الواضح\" — ابدأ بسؤال بسيط: كل جملة في الفيديو بتخدم الفكرة ولا لا؟"
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Clarity of Execution\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m5-l1-editing.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Improvement of Message\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m5-l1-editing.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح التنفيذ\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m5-l1-editing.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"تحسّن الرسالة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m5-l1-editing.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح التنفيذ\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m5-l1-editing.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"تحسن الرسالة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m5-l1-editing.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح التنفيذ\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m5-l1-editing.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"تحسن الرسالة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m5-l1-editing.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "9d29b1c707cf3947e6b020040cabae0e4e2cd4e0df6bca8e8f135440ed088372"
+}

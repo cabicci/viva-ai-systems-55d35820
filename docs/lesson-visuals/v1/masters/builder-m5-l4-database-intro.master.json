@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m5-l4-database-intro",
+  "pathId": "builder",
+  "moduleId": "builder-m5",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Database Intro (Smart Storage)",
+    "ar-MSA": "مقدّمة قاعدة البيانات",
+    "ar-Gulf": "مقدمة عن قاعدة البيانات",
+    "ar-EG": "التطبيق محتاج ذاكرة — مش بس شاشة وشغل"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m5-l4-database-intro.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l4-database-intro.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l4-database-intro.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m5-l4-database-intro.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Any app needs memory — a place to save customers and conversations.",
+        "Why now? Without storage, the customer returns tomorrow to find everything empty.",
+        "What after the lesson? You will design a table with 4 columns — like an Excel sheet for your app."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ أي تطبيق يحتاج «ذاكرة» — مكانًا يحفظ فيه العملاء والمحادثات.",
+        "لماذا الآن؟ بدون مخزن، العميل يعود غدًا فيجد كل شيء فارغًا.",
+        "ماذا بعد الدرس؟ ستصمّم جدولًا بـ ٤ أعمدة — كورقة Excel لتطبيقك."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ أي تطبيق يحتاج «ذاكرة» — مكان يحفظ فيه العملاء والمحادثات.",
+        "ليش الحين؟ بدون مخزن، العميل يرجع بكرة ويلاقي كل شيء فارغ.",
+        "وش بعد الدرس؟ راح تصمم جدول بـ ٤ أعمدة — مثل ورقة Excel لتطبيقك."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ أي تطبيق محتاج «ذاكرة» — مكان يحفظ فيه العملاء والمحادثات.",
+        "ليه دلوقتي؟ من غير مخزن، العميل يرجع بكرة يلاقي كل حاجة فاضية.",
+        "هتعمل إيه بعد الدرس؟ هتصمّم جدول بـ ٤ أعمدة — زي Excel sheet لتطبيقك."
+      ]
+    },
+    "coreIdea": {
+      "en": "Frontend = what you see",
+      "ar-MSA": "Frontend = ترى",
+      "ar-Gulf": "Frontend = تشوف",
+      "ar-EG": "Frontend = تشوف. Backend = يشتغل. Database = يفتكر."
+    },
+    "tension": {
+      "en": "The customer talked to AI, got an excellent answer, and closed the app. After a week, they opened it again — no conversation, no name, as if it was the first time.",
+      "ar-MSA": "العميل تحدّث مع AI، حصل على إجابة ممتازة، وأغلق التطبيق. بعد أسبوع فتح مرة أخرى — لا محادثة، لا اسمه، كأنه أول مرة.",
+      "ar-Gulf": "العميل تكلم مع AI، حصل على إجابة ممتازة، وأغلق التطبيق. بعد أسبوع فتح مرة ثانية — ما في محادثة، ما في اسمه، كأنه أول مرة.",
+      "ar-EG": "العميل كلم AI بتاعك، خد إجابة ممتازة، وقفل التطبيق."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Stored Only in the Browser",
+        "rightLabel": "Stored on the Server",
+        "leftBody": "Conversations on the Client Device. Open from another phone = empty. Clear cache = everything is gone.",
+        "rightBody": "Data is stored outside the client device. Returns from any phone — finds its conversations. This is a Database."
+      },
+      "ar-MSA": {
+        "leftLabel": "تخزين في المتصفح فقط",
+        "rightLabel": "مخزن على السيرفر",
+        "leftBody": "المحادثات على جهاز العميل. فتح من هاتف آخر = فارغ. مسح cache = كل شيء ذهب",
+        "rightBody": "البيانات محفوظة خارج جهاز العميل. يعود من أي هاتف — يجد محادثاته. هذا Database"
+      },
+      "ar-Gulf": {
+        "leftLabel": "تخزين في المتصفح فقط",
+        "rightLabel": "مخزن على السيرفر",
+        "leftBody": "المحادثات على جهاز العميل. فتح من هاتف ثاني = فارغ. مسح cache = كل شيء راح",
+        "rightBody": "البيانات محفوظة خارج جهاز العميل. يرجع من أي هاتف — يلاقي محادثاته. هذا هو Database"
+      },
+      "ar-EG": {
+        "leftLabel": "تخزين في المتصفح بس",
+        "leftBody": "المحادثات على جهاز العميل. فتح من موبايل تاني = فاضي. مسح cache = كل حاجة راحت.",
+        "rightLabel": "مخزن على السيرفر",
+        "rightBody": "البيانات محفوظة برا جهاز العميل. يرجع من أي موبايل — يلاقي محادثاته. ده Database."
+      }
+    },
+    "missionIntro": {
+      "en": "Planning Task — Not SQL. 5–10 minutes is enough.",
+      "ar-MSA": "مهمة تخطيط — ليست SQL. ٥–١٠ دقائق كافية.",
+      "ar-Gulf": "مهمة تخطيط — مو SQL. ٥–١٠ دقائق كافية.",
+      "ar-EG": "المهمة دي تخطيط — مش SQL. فكّر زي Excel sheet.\n\n٥–١٠ دقايق كفاية."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "**Progress is not on your device** — **if you open from another phone, you will find it**. **Because it is stored in the archive**. **Your app works on the same",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l4-database-intro.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**Progress is not on your device** — **if you open from another phone, you will find it**. **Because it is stored in the archive**. **Your a"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l4-database-intro.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**التقدّم ليس على جهازك** — **لو فتحت من هاتف آخر تجده**. **لأنه محفوظ في مخزن**. **تطبيقك يعمل بنفس الفكرة**."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l4-database-intro.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**التقدم مو على جهازك** — **لو فتحت من هاتف ثاني تلاقيه**. **لأنه محفوظ في المخزن**. **تطبيقك يعمل بنفس الفكرة**."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m5-l4-database-intro.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "التقدّم ده مش على جهازك — لو فتحت من موبايل تاني هتلاقيه. ده لأنه محفوظ في مخزن. تطبيقك هيشتغل بنفس الفكرة."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "builder-m5-l4-database-intro's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Stored Only in the Browser / Stored on the Server) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Stored Only in the Browser\" vs \"Stored on the Server\" for builder-m5-l4-database-intro.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Stored Only in the Browser",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l4-database-intro.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Stored on the Server",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l4-database-intro.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Database",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l4-database-intro.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Table",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l4-database-intro.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "تخزين في المتصفح فقط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l4-database-intro.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مخزن على السيرفر",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l4-database-intro.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Database (المخزن)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l4-database-intro.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Table (جدول)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l4-database-intro.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "تخزين في المتصفح فقط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l4-database-intro.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مخزن على السيرفر",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l4-database-intro.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Database (المخزن)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l4-database-intro.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Table (جدول)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l4-database-intro.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "تخزين في المتصفح بس",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m5-l4-database-intro.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مخزن على السيرفر",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m5-l4-database-intro.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Database (المخزن)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m5-l4-database-intro.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Table (جدول)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m5-l4-database-intro.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Database Intro (Smart Storage): \"Stored Only in the Browser\" versus \"Stored on the Server\" — Frontend = what you see",
+    "ar-MSA": "مقدّمة قاعدة البيانات: \"تخزين في المتصفح فقط\" في مقابل \"مخزن على السيرفر\" — Frontend = ترى",
+    "ar-Gulf": "مقدمة عن قاعدة البيانات: \"تخزين في المتصفح فقط\" في مقابل \"مخزن على السيرفر\" — Frontend = تشوف",
+    "ar-EG": "التطبيق محتاج ذاكرة — مش بس شاشة وشغل: \"تخزين في المتصفح بس\" في مقابل \"مخزن على السيرفر\" — Frontend = تشوف. Backend = يشتغل. Database = يفتكر."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"4 Clear Columns\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m5-l4-database-intro.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"The reason is logical\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m5-l4-database-intro.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٤ أعمدة واضحة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l4-database-intro.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"السبب منطقي\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l4-database-intro.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٤ أعمدة واضحة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l4-database-intro.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"السبب منطقي\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l4-database-intro.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٤ أعمدة واضحة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m5-l4-database-intro.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"السبب منطقي\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m5-l4-database-intro.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "0c9e642d95a920c6ce212c9c79ec6ef5c8633566304e54bce673b95eadff85ad"
+}

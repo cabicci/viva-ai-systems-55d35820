@@ -1,0 +1,345 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m2-l3-style-control",
+  "pathId": "builder",
+  "moduleId": "builder-m2",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Style Control",
+    "ar-MSA": "التحكّم في الأسلوب",
+    "ar-Gulf": "أساسيات التحكم في الأسلوب",
+    "ar-EG": "AI بصوتك = تجربة مخصّصة"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m2-l3-style-control.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l3-style-control.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l3-style-control.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m2-l3-style-control.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? How to make AI speak in your voice — not in the voice of general ChatGPT.",
+        "Why now? Users feel the product through the assistant's tone and text. The same information with a different feeling = a different product.",
+        "What after the lesson? You will write a short Voice Profile for an assistant or content."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ كيف تجعل الذكاء الاصطناعي يتكلم بصوتك — ليس بصوت «ChatGPT العام».",
+        "لماذا الآن؟ المستخدم يشعر بالمنتج من نبرة المساعد والنصوص. نفس المعلومة بإحساس مختلف = منتج مختلف.",
+        "ماذا بعد الدرس؟ ستكتب Voice Profile (ملف صوت) قصيرًا لمساعد أو محتوى."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ كيف تخلي الذكاء الاصطناعي يتكلم بصوتك — مو بصوت «ChatGPT العام».",
+        "ليش الحين؟ المستخدم يحس بالمنتج من نبرة المساعد والنصوص. نفس المعلومة بإحساس مختلف = منتج مختلف.",
+        "وش بعد الدرس؟ راح تكتب ملف صوت قصير لمساعد أو محتوى."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ إزاي تخلي AI يتكلم بصوتك — مش بصوت «ChatGPT العام».",
+        "ليه دلوقتي؟ المستخدم بيحس بالمنتج من نبرة المساعد والنصوص. نفس المعلومة بإحساس مختلف = منتج مختلف.",
+        "هتعمل إيه بعد الدرس؟ هتكتب Voice Profile قصير لمساعد أو محتوى."
+      ]
+    },
+    "coreIdea": {
+      "en": "Style",
+      "ar-MSA": "Style (الأسلوب)",
+      "ar-Gulf": "الأسلوب",
+      "ar-EG": "Style = الشكل: رسمي ولا كاجوال؟ نقط ولا فقرات؟"
+    },
+    "tension": {
+      "en": "I requested a perfume description — and got: «Discover the magic of the luxurious scent that captivates hearts...» This is not your voice — this is a canned marketing voice. Every AI product without a Style Guide produce",
+      "ar-MSA": "طلبت وصف برفان — وطلع: «اكتشف سحر الرائحة الفاخرة التي تأسر القلوب...» هذا ليس صوتك — هذا صوت تسويقي محفوظ. كل منتج ذكاء اصطناعي بدون Style Guide (دليل أسلوب) يخرج نفس الكلام.",
+      "ar-Gulf": "طلبت وصف برفان — وطلع: «اكتشف سحر الرائحة الفاخرة التي تأسر القلوب...» هذا مو صوتك — هذا صوت تسويقي محفوظ. كل منتج ذكاء اصطناعي بدون دليل أسلوب يطلع نفس الكلام.",
+      "ar-EG": "طلبت وصف برفان — وطلع: «اكتشف سحر الرائحة الفاخرة التي تأسر القلوب...»"
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "General Request",
+        "rightLabel": "Tone Request",
+        "leftBody": "«Write a perfume description.» — repeated marketing tone: «luxurious», «magic», «captivates hearts»",
+        "rightBody": "«Write a perfume description — calm poet tone, two sentences, without ‘luxurious’ or ‘magic’, for readers.» — «A scent that lingers in the room after you close the book.»"
+      },
+      "ar-MSA": {
+        "leftLabel": "طلب عام",
+        "rightLabel": "طلب بنبرة",
+        "leftBody": "«اكتب وصف برفان.» — نبرة تسويقية مكررة: «فاخر»، «سحر»، «أسر القلوب»",
+        "rightBody": "«اكتب وصف برفان — نبرة شاعر هادئ، جملتان، بدون ‚فاخر‘ أو ‚سحر‘، للقرّاء.» — «ريحة تبقى في الغرفة بعد أن تغلق الكتاب.»"
+      },
+      "ar-Gulf": {
+        "leftLabel": "طلب عام",
+        "rightLabel": "طلب بنبرة",
+        "leftBody": "«اكتب وصف برفان.» — نبرة تسويقية مكررة: «فاخر»، «سحر»، «أسر القلوب»",
+        "rightBody": "«اكتب وصف برفان — نبرة شاعر هادئ، جملتان، بدون ‚فاخر‘ أو ‚سحر‘، للقرّاء.» — «ريحة تبقى في الغرفة بعد ما تغلق الكتاب.»"
+      },
+      "ar-EG": {
+        "leftLabel": "طلب عايم",
+        "leftBody": "«اكتب وصف برفان.» — نبرة تسويقية مكررة: «فاخر»، «سحر»، «أسر القلوب».",
+        "rightLabel": "طلب بنبرة",
+        "rightBody": "«اكتب وصف برفان — نبرة شاعر هادي، جملتين، من غير ‚فاخر‘ أو ‚سحر‘، للقرّاء.» — «ريحة بتفضل في الأوضة بعد ما تقفل الكتاب.»"
+      }
+    },
+    "missionIntro": {
+      "en": "Write a short Voice Profile for an assistant or your product content. 10–15 minutes.",
+      "ar-MSA": "اكتب ملف صوت قصير لمساعد أو محتوى منتجك. ١٠–١٥ دقيقة.",
+      "ar-Gulf": "اكتب ملف صوت قصير لمساعد أو محتوى منتجك. ١٠–١٥ دقيقة.",
+      "ar-EG": "هتكتب ملف صوت قصير لمساعد أو محتوى منتجك.\n\n١٠–١٥ دقيقة."
+    },
+    "visualIntent": {
+      "kind": "concept-scene",
+      "summary": "**Clear tone — not by chance:**",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m2-l3-style-control.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**Clear tone — not by chance:**"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l3-style-control.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**نبرة واضحة — ليست صدفة:**"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l3-style-control.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**نبرة واضحة — مو صدفة:**"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m2-l3-style-control.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "«تنفيذ قبل التنظير»، «نظام مش فوضى» — جمل قصيرة، موقف واضح. ده نتيجة Prompt حدّد النبرة: manifesto، من غير كليشيهات. نفس"
+        }
+      }
+    }
+  },
+  "method": 2,
+  "methodRationale": "builder-m2-l3-style-control's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"Style\" without inventing UI chrome or rendering paid text.",
+  "compositionPattern": "concept-scene-metaphor",
+  "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"General Request\" vs \"Tone Request\" for builder-m2-l3-style-control.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "General Request",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m2-l3-style-control.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Tone Request",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m2-l3-style-control.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Tone",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m2-l3-style-control.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Voice Profile",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m2-l3-style-control.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "طلب عام",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l3-style-control.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "طلب بنبرة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l3-style-control.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Tone (النبرة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l3-style-control.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Voice Profile (ملف الصوت)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l3-style-control.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "طلب عام",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l3-style-control.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "طلب بنبرة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l3-style-control.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "النبرة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l3-style-control.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "ملف الصوت",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l3-style-control.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "طلب عايم",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m2-l3-style-control.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "طلب بنبرة",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m2-l3-style-control.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Tone (النبرة)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m2-l3-style-control.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Voice Profile (ملف الصوت)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m2-l3-style-control.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Style Control: \"General Request\" versus \"Tone Request\" — Style",
+    "ar-MSA": "التحكّم في الأسلوب: \"طلب عام\" في مقابل \"طلب بنبرة\" — Style (الأسلوب)",
+    "ar-Gulf": "أساسيات التحكم في الأسلوب: \"طلب عام\" في مقابل \"طلب بنبرة\" — الأسلوب",
+    "ar-EG": "AI بصوتك = تجربة مخصّصة: \"طلب عايم\" في مقابل \"طلب بنبرة\" — Style = الشكل: رسمي ولا كاجوال؟ نقط ولا فقرات؟"
+  },
+  "aiPromptContract": {
+    "providerClass": "text-free-illustration",
+    "paidAllowed": false,
+    "textFree": true,
+    "promptRules": [
+      "No embedded text, letters, numbers, or UI chrome anywhere in the image.",
+      "Depict the idea behind \"Style Control\" as a literal scene or metaphor, not as software.",
+      "Use a calm editorial illustration style consistent with a warm, minimal brand palette.",
+      "Keep the composition balanced so it still reads when mirrored for RTL locales."
+    ],
+    "costCeilingUsd": 0
+  },
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Clear Voice Profile\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m2-l3-style-control.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Before / After\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m2-l3-style-control.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"ملف صوت واضح\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l3-style-control.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قبل / بعد\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l3-style-control.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"ملف صوت واضح\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l3-style-control.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قبل / بعد\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l3-style-control.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"ملف صوت واضح\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m2-l3-style-control.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قبل / بعد\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m2-l3-style-control.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "308e6a61eb4f6b98cdeffc939d57392dbeabd3c46c8231251c1108e3cfb74918"
+}

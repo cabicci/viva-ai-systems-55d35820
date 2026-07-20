@@ -1,0 +1,333 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "creator-m3-l1-hook",
+  "pathId": "creator",
+  "moduleId": "creator-m3",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Hook — First Seconds",
+    "ar-MSA": "الخطّاف — الثواني الأولى",
+    "ar-Gulf": "الهوك في أول ثواني",
+    "ar-EG": "الخطاف وعد سريع وواضح"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/creator-m3-l1-hook.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l1-hook.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l1-hook.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/creator-m3-l1-hook.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Before value is reached, the viewer must decide to continue.",
+        "Hook: A strong beginning gives the rest of the content a chance to 'live'.",
+        "What comes after the lesson? You will write beginnings that stop the viewer and give your content a chance."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ قبل أن تصل القيمة، يجب أن يقرّر المشاهد أن يكمل.",
+        "Hook (خطاف): البداية القوية هي التي تمنح بقية المحتوى فرصة أن «يعيش».",
+        "ماذا بعد الدرس؟ ستكتب بدايات توقف المشاهد وتمنح محتواك فرصة."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ قبل ما توصل القيمة، لازم يقرر المشاهد إذا بيكمل.",
+        "Hook (خطاف): البداية القوية هي اللي تعطي بقية المحتوى فرصة إنه «يعيش».",
+        "وش بعد الدرس؟ راح تكتب بدايات توقف المشاهد وتمنح محتواك فرصة."
+      ],
+      "ar-EG": [
+        "قبل ما القيمة توصل، لازم المشاهد يقرر يكمل.",
+        "الخطاف القوي في البداية هو اللي بيدي لباقي المحتوى فرصة يعيش."
+      ]
+    },
+    "coreIdea": {
+      "en": "Hook",
+      "ar-MSA": "Hook (خطاف)",
+      "ar-Gulf": "Hook (خطاف)",
+      "ar-EG": "الخطاف مش مجرد جملة حلوة، هو وعد سريع بفايدة أو فضول يخلي المشاهد يكمّل."
+    },
+    "tension": {
+      "en": "Strong content — Weak beginning. Many start with a long introduction — losing the first critical moment.",
+      "ar-MSA": "محتوى قوي — وبداية ضعيفة. كثيرون يبدأون بمقدمة طويلة — فتضيع أول لحظة حاسمة.",
+      "ar-Gulf": "محتوى قوي — وبداية ضعيفة. كثير من الناس يبدأون بمقدمة طويلة — فتضيع أول لحظة حاسمة.",
+      "ar-EG": "كتير بيبدأوا بمقدمة طويلة فتضيع أول لحظة حاسمة."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Traditional Beginning",
+        "rightLabel": "Direct Hook",
+        "leftBody": "Long greetings and definitions — the viewer leaves before the value.",
+        "rightBody": "A question or clear promise from the first sentence — leading to a pause then continuation."
+      },
+      "ar-MSA": {
+        "leftLabel": "بداية تقليدية",
+        "rightLabel": "خطاف مباشر",
+        "leftBody": "تحيات طويلة وتعريفات — فيتسرّب المشاهد قبل القيمة",
+        "rightBody": "سؤال أو وعد واضح من أول جملة — فيحدث توقف ثم تكملة"
+      },
+      "ar-Gulf": {
+        "leftLabel": "بداية تقليدية",
+        "rightLabel": "خطاف مباشر",
+        "leftBody": "تحيات طويلة وتعريفات — فيتسرّب المشاهد قبل القيمة",
+        "rightBody": "سؤال أو وعد واضح من أول جملة — فيحدث توقف ثم تكملة"
+      },
+      "ar-EG": {
+        "leftLabel": "بداية تقليدية",
+        "leftBody": "تحيات طويلة وتعريفات، فيتسرب المشاهد قبل القيمة.",
+        "rightLabel": "خطاف مباشر",
+        "rightBody": "سؤال أو وعد واضح من أول جملة، فيحصل توقف وتكملة."
+      }
+    },
+    "missionIntro": {
+      "en": "The mission is a writing exercise — not a test. Choose one topic and write 3 different hooks for it.",
+      "ar-MSA": "المهمة تدريب كتابة — ليس اختبارًا. اختر موضوعًا واحدًا واكتب له ٣ خطافات مختلفة.",
+      "ar-Gulf": "المهمة تدريب كتابة — مو اختبار. اختر موضوعًا واحدًا واكتب له ٣ خطافات مختلفة.",
+      "ar-EG": "المهمة تدريب كتابة مش اختبار. اختار موضوع واحد واكتب له ٣ خطافات مختلفة."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Visual snapshot — **Example of an eye-catching hook**. The idea: The **first second** should be **different** and **clear** enough to give you a **chance**.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m3-l1-hook.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Visual snapshot — **Example of an eye-catching hook**. The idea: The **first second** should be **different** and **clear** enough to give y"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l1-hook.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Hook (خطاف)"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l1-hook.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Hook (خطاف)"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/creator-m3-l1-hook.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "الفكرة إن أول ثانية تبقى مختلفة وواضحة كفاية تخلي المشاهد يديك فرصة."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "creator-m3-l1-hook's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Traditional Beginning / Direct Hook) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Traditional Beginning\" vs \"Direct Hook\" for creator-m3-l1-hook.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Traditional Beginning",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m3-l1-hook.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Direct Hook",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m3-l1-hook.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Hook",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m3-l1-hook.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Pattern Break",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m3-l1-hook.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "بداية تقليدية",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l1-hook.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "خطاف مباشر",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l1-hook.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Hook (خطاف)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l1-hook.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Pattern Break (كسر النمط)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l1-hook.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "بداية تقليدية",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l1-hook.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "خطاف مباشر",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l1-hook.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Hook (خطاف)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l1-hook.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Pattern Break (كسر النمط)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l1-hook.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "بداية تقليدية",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m3-l1-hook.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "خطاف مباشر",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m3-l1-hook.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Hook",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m3-l1-hook.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Pattern Break",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m3-l1-hook.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Hook — First Seconds: \"Traditional Beginning\" versus \"Direct Hook\" — Hook",
+    "ar-MSA": "الخطّاف — الثواني الأولى: \"بداية تقليدية\" في مقابل \"خطاف مباشر\" — Hook (خطاف)",
+    "ar-Gulf": "الهوك في أول ثواني: \"بداية تقليدية\" في مقابل \"خطاف مباشر\" — Hook (خطاف)",
+    "ar-EG": "الخطاف وعد سريع وواضح: \"بداية تقليدية\" في مقابل \"خطاف مباشر\" — الخطاف مش مجرد جملة حلوة، هو وعد سريع بفايدة أو فضول يخلي المشاهد يكمّل."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Variety of Phrases\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m3-l1-hook.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Thoughtful Choice\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m3-l1-hook.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"تنوع الصيغ\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l1-hook.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"اختيار واعٍ\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l1-hook.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"تنوع الصيغ\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l1-hook.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"اختيار واعٍ\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l1-hook.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"تنوع الصيغ\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m3-l1-hook.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"اختيار واعي\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m3-l1-hook.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "2f3fd4153b997a370bf50783171e9aa1cb5bd4ed7b0ad055cd9cda5660eb913c"
+}

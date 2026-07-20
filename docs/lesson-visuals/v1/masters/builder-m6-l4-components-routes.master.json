@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m6-l4-components-routes",
+  "pathId": "builder",
+  "moduleId": "builder-m6",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Components & Routes",
+    "ar-MSA": "المكوّنات والمسارات",
+    "ar-Gulf": "مكونات ومسارات",
+    "ar-EG": "قطعة قابلة لإعادة الاستخدام + مسار لكل صفحة"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m6-l4-components-routes.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l4-components-routes.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l4-components-routes.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m6-l4-components-routes.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? The app = reusable small pieces (Components) + pages with titles (Routes).",
+        "Why now? The depth of Builder is optional — but if you are building a product, this lesson prevents repeating the same code on every page.",
+        "What after the lesson? You will define 3 components and 3 pages for your app — before any code."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ التطبيق = قطع صغيرة قابلة لإعادة الاستخدام (Components) + صفحات لها عنوان (Routes).",
+        "لماذا الآن؟ عمق Builder اختياري — لكن إن كنت تبني منتجًا، هذا الدرس يمنع تكرار نفس الكود في كل صفحة.",
+        "ماذا بعد الدرس؟ ستحدّد ٣ components و٣ صفحات لتطبيقك — قبل أي كود."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ التطبيق = مكوّنات قابلة لإعادة الاستخدام (Components) + صفحات لها عنوان (Routes).",
+        "ليش الحين؟ عمق Builder اختياري — لكن إذا كنت تبني منتج، هذا الدرس يمنع تكرار نفس الكود في كل صفحة.",
+        "وش بعد الدرس؟ راح تحدّد ٣ مكوّنات و٣ صفحات لتطبيقك — قبل أي كود."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ التطبيق = قطع صغيرة قابلة لإعادة الاستخدام (Components) + صفحات لها عنوان (Routes).",
+        "ليه دلوقتي؟ Builder عمق اختياري — بس لو بتبني منتج، الدرس ده يمنعك تكرر نفس الكود في كل صفحة.",
+        "هتعمل إيه بعد الدرس؟ هتحدّد ٣ components و٣ صفحات لتطبيقك — قبل أي كود."
+      ]
+    },
+    "coreIdea": {
+      "en": "Component = a small lego piece",
+      "ar-MSA": "Component (مكوّن) = قطعة lego صغيرة",
+      "ar-Gulf": "Component (مكوّن) = قطعة lego صغيرة",
+      "ar-EG": "Component = قطعة ليجو: زرار، فقاعة رسالة، كارت محادثة. بتصممها مرة وتستخدمها ببيانات مختلفة (Props)."
+    },
+    "tension": {
+      "en": "Each page looks a bit different. The submit button is blue in chat and green in settings. The problem: You repeated the same code by copying and pasting. Any small change = a change in the entire app.",
+      "ar-MSA": "كل صفحة شكلها مختلف قليلًا. زر الإرسال أزرق في الشات وأخضر في الإعدادات. المشكلة: كرّرت نفس الكود بنسخ ولصق. أي تعديل بسيط = تعديل في التطبيق كله.",
+      "ar-Gulf": "كل صفحة شكلها مختلف شوي. زر الإرسال أزرق في الشات وأخضر في الإعدادات. المشكلة: كرّرت نفس الكود بنسخ ولصق. أي تعديل بسيط = تعديل في التطبيق كله.",
+      "ar-EG": "بتبني واجهة التطبيق، وكل صفحة شكلها مختلف شوية. زرار الإرسال لونه أزرق في الشات وأخضر في الإعدادات."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Error — same design in 3 places",
+        "rightLabel": "Correct — Component once",
+        "leftBody": "Repeated the user message design in 3 places. Change the font size — forget one place — the interface breaks.",
+        "rightBody": "The third time: stop — create a separate Component. Change once — it reflects everywhere."
+      },
+      "ar-MSA": {
+        "leftLabel": "خطأ — نفس الشكل في ٣ أماكن",
+        "rightLabel": "صح — Component مرة واحدة",
+        "leftBody": "تكرر شكل رسالة المستخدم في ٣ أماكن. تغيّر حجم الخط — تنسى مكانًا — الواجهة تفسد",
+        "rightBody": "المرة الثالثة: اقف — اخرج Component منفصل. تعدّل مرة — يسمع في كل مكان"
+      },
+      "ar-Gulf": {
+        "leftLabel": "خطأ — نفس الشكل في ٣ أماكن",
+        "rightLabel": "صح — مكوّن مرة واحدة",
+        "leftBody": "تكرر شكل رسالة المستخدم في ٣ أماكن. تغيّر حجم الخط — تنسى مكان — الواجهة تفسد",
+        "rightBody": "المرة الثالثة: اقف — اخرج مكوّن منفصل. تعدّل مرة — يسمع في كل مكان"
+      },
+      "ar-EG": {
+        "leftLabel": "غلط — نفس الشكل في ٣ أماكن",
+        "leftBody": "تعمل شكل رسالة المستخدم في الشات، وتكرره في السجل، وتكرره في الإعدادات. لما تغيّر حجم الخط، لازم تفتكر تعدّل في الـ ٣ أماكن — ولو نسيت واحد، الواجهة هتبوظ.",
+        "rightLabel": "صح — Component مرة واحدة",
+        "rightBody": "أول مرة: اكتبها عادي. تاني مرة: ممكن copy-paste. تالت مرة: اقف — دي إشارة إنك لازم تطلّعها في Component منفصل. تعدّل مرة واحدة ويسمّع في كل مكان."
+      }
+    },
+    "missionIntro": {
+      "en": "Before any code — plan on paper. 10-15 minutes.",
+      "ar-MSA": "قبل أي كود — خطّط على الورق. ١٠–١٥ دقيقة.",
+      "ar-Gulf": "قبل أي كود — خطّط على الورق. ١٠–١٥ دقيقة.",
+      "ar-EG": "قبل أي كود — خطّط الواجهة على الورق. المهمة دي تصميم، مش برمجة.\n\n١٠–١٥ دقيقة كفاية."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "**Any professional interface looks complex** — **but it is a repetition of 3-4 templates**. **ModuleCard and LessonRow = Components that repeat with different d",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l4-components-routes.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**Any professional interface looks complex** — **but it is a repetition of 3-4 templates**. **ModuleCard and LessonRow = Components that rep"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l4-components-routes.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**أي واجهة احترافية تبدو معقدة** — **لكنها تكرار لـ ٣–٤ قوالب**. **ModuleCard و LessonRow = Components تتكرر ببيانات مختلفة**."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l4-components-routes.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**أي واجهة احترافية تبدو معقدة** — **لكنها تكرار لـ ٣–٤ قوالب**. **ModuleCard و LessonRow = مكوّنات تتكرر ببيانات مختلفة**."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m6-l4-components-routes.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "أي واجهة احترافية — حتى الصفحة دي — تبان معقدة، بس في الحقيقة تكرار لـ ٣–٤ قوالب بسيطة. ModuleCard و LessonRow = Compone"
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "builder-m6-l4-components-routes's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Error — same design in 3 places / Correct — Component once) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Error — same design in 3 places\" vs \"Correct — Component once\" for builder-m6-l4-components-routes.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Error — same design in 3 places",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l4-components-routes.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Correct — Component once",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l4-components-routes.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Component",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l4-components-routes.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Route",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l4-components-routes.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "خطأ — نفس الشكل في ٣ أماكن",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l4-components-routes.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "صح — Component مرة واحدة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l4-components-routes.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Component (مكوّن)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l4-components-routes.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Route (مسار)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l4-components-routes.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "خطأ — نفس الشكل في ٣ أماكن",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l4-components-routes.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "صح — مكوّن مرة واحدة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l4-components-routes.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Component (مكوّن)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l4-components-routes.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Route (مسار)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l4-components-routes.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "غلط — نفس الشكل في ٣ أماكن",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l4-components-routes.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "صح — Component مرة واحدة",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l4-components-routes.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Component (مكوّن)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l4-components-routes.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Route (مسار)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l4-components-routes.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Components & Routes: \"Error — same design in 3 places\" versus \"Correct — Component once\" — Component = a small lego piece",
+    "ar-MSA": "المكوّنات والمسارات: \"خطأ — نفس الشكل في ٣ أماكن\" في مقابل \"صح — Component مرة واحدة\" — Component (مكوّن) = قطعة lego صغيرة",
+    "ar-Gulf": "مكونات ومسارات: \"خطأ — نفس الشكل في ٣ أماكن\" في مقابل \"صح — مكوّن مرة واحدة\" — Component (مكوّن) = قطعة lego صغيرة",
+    "ar-EG": "قطعة قابلة لإعادة الاستخدام + مسار لكل صفحة: \"غلط — نفس الشكل في ٣ أماكن\" في مقابل \"صح — Component مرة واحدة\" — Component = قطعة ليجو: زرار، فقاعة رسالة، كارت محادثة. بتصممها مرة وتستخدمها ببيانات مختلفة (Props)."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"3 clear pages\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m6-l4-components-routes.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"3 Components with Props\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m6-l4-components-routes.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"٣ صفحات واضحة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l4-components-routes.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"٣ Components بـ Props\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l4-components-routes.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"٣ صفحات واضحة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l4-components-routes.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"٣ مكوّنات بـ Props\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l4-components-routes.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"٣ صفحات واضحة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m6-l4-components-routes.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"٣ Components بـ Props\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m6-l4-components-routes.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "8b053b3c949a5997f0f3546a614da251e347b5875027ba95fe2c3e154f96ffb9"
+}

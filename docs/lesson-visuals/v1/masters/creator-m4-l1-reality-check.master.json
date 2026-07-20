@@ -1,0 +1,333 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "creator-m4-l1-reality-check",
+  "pathId": "creator",
+  "moduleId": "creator-m4",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Reality Check",
+    "ar-MSA": "مراجعة الواقع",
+    "ar-Gulf": "مراجعة الواقع",
+    "ar-EG": "اشتغل بتجارب صغيرة وبيانات بسيطة"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/creator-m4-l1-reality-check.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l1-reality-check.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l1-reality-check.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/creator-m4-l1-reality-check.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Consistency wins — not just one hit.",
+        "Many start enthusiastically and stop quickly — because they expect a big result from the first two videos.",
+        "The rule: Useful repeated attempts are more important than a random success snapshot."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ الاستمرارية تكسب — ليس الضربة الواحدة.",
+        "كثيرون يبدأون بحماس ويتوقفون بسرعة — لأنهم ينتظرون نتيجة كبيرة من أول فيديوين.",
+        "القاعدة: المحاولات المفيدة المتكررة أهم من لقطة نجاح عشوائية."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ الاستمرارية تكسب — مو الضربة الواحدة.",
+        "كثيرون يبدأون بحماس ويتوقفون بسرعة — لأنهم ينتظرون نتيجة كبيرة من أول فيديوين.",
+        "القاعدة: المحاولات المفيدة المتكررة أهم من لقطة نجاح عشوائية."
+      ],
+      "ar-EG": [
+        "كتير يبدأ بحماس جامد ويقف بسرعة لأنه مستني نتيجة كبيرة من أول فيديوهين.",
+        "النهاردة هنثبت قاعدة مهمة: المحاولات المفيدة المتكررة أهم من لقطة نجاح عشوائية."
+      ]
+    },
+    "coreIdea": {
+      "en": "failed",
+      "ar-MSA": "فشل",
+      "ar-Gulf": "فشل",
+      "ar-EG": "بدل ما تقول الفيديو فشل، اسأل: إيه اللي اتعلمته من أول ٥ ثواني؟"
+    },
+    "tension": {
+      "en": "Few numbers at the start can be intimidating. In the beginning, the numbers are small — and this is very normal even for good accounts.",
+      "ar-MSA": "أرقام قليلة في البداية تُخيف. أول فترة الأرقام صغيرة — وهذا طبيعي جدًا حتى للحسابات الجيدة.",
+      "ar-Gulf": "أرقام قليلة في البداية تخوف. أول فترة الأرقام صغيرة — وهذا طبيعي جدًا حتى للحسابات الجيدة.",
+      "ar-EG": "أول فترة الأرقام بتكون صغيرة، وده طبيعي جدا حتى للحسابات الجيدة."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Exhausting Approach",
+        "rightLabel": "Practical Approach",
+        "leftBody": "«The video did not bring a big number — so the idea is dead» — you close the door before you learn",
+        "rightBody": "«I repeat the same idea from a different angle and measure the difference» — you build real knowledge about your audience"
+      },
+      "ar-MSA": {
+        "leftLabel": "الأسلوب المرهق",
+        "rightLabel": "الأسلوب العملي",
+        "leftBody": "«الفيديو لم يجلب رقمًا كبيرًا — إذًا الفكرة ماتت» — تغلق الباب قبل أن تتعلّم",
+        "rightBody": "«أعيد نفس الفكرة بزاوية مختلفة وأقيس الفرق» — تبني معرفة حقيقية عن جمهورك"
+      },
+      "ar-Gulf": {
+        "leftLabel": "الأسلوب المرهق",
+        "rightLabel": "الأسلوب العملي",
+        "leftBody": "«الفيديو ما جاب رقم كبير — إذًا الفكرة ماتت» — تغلق الباب قبل ما تتعلم",
+        "rightBody": "«أعيد نفس الفكرة بزاوية مختلفة وأقيس الفرق» — تبني معرفة حقيقية عن جمهورك"
+      },
+      "ar-EG": {
+        "leftLabel": "الأسلوب المرهق",
+        "leftBody": "«الفيديو ما جابش رقم كبير، يبقى الفكرة ماتت». كده بتقفل الباب قبل ما تتعلم.",
+        "rightLabel": "الأسلوب العملي",
+        "rightBody": "«أعيد نفس الفكرة بزاوية مختلفة وأقيس الفرق». كده بتبني معرفة حقيقية عن جمهورك."
+      }
+    },
+    "missionIntro": {
+      "en": "Choose 5 ideas from what you have in mind — evaluate each one quickly: does it solve a real problem for a clear audience?",
+      "ar-MSA": "اختر ٥ أفكار من التي في ذهنك — قيّم كل واحدة بسرعة: هل تحل مشكلة حقيقية لجمهور واضح؟",
+      "ar-Gulf": "اختر ٥ أفكار من اللي في بالك — قيم كل وحدة بسرعة: هل تحل مشكلة حقيقية لجمهور واضح؟",
+      "ar-EG": "اختار ٥ أفكار من اللي في دماغك وقيّم كل واحدة بسرعة: هل فعلا بتحل مشكلة حقيقية لجمهور واضح؟"
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Visual snapshot — **a simple review of ideas**. **Instead of randomness:** look at **each idea** on a **clear scale:** does it **solve a real problem** for a **",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m4-l1-reality-check.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Visual snapshot — **a simple review of ideas**. **Instead of randomness:** look at **each idea** on a **clear scale:** does it **solve a rea"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l1-reality-check.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "فشل"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l1-reality-check.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "فشل"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/creator-m4-l1-reality-check.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "بدل العشوائية، شوف كل فكرة على مقياس واضح: هل بتحل مشكلة حقيقية لجمهور واضح؟"
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "creator-m4-l1-reality-check's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Exhausting Approach / Practical Approach) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Exhausting Approach\" vs \"Practical Approach\" for creator-m4-l1-reality-check.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Exhausting Approach",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m4-l1-reality-check.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Practical Approach",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m4-l1-reality-check.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Iteration",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m4-l1-reality-check.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Signal",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m4-l1-reality-check.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "الأسلوب المرهق",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l1-reality-check.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "الأسلوب العملي",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l1-reality-check.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Iteration (تكرار محسّن)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l1-reality-check.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Signal (إشارة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l1-reality-check.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "الأسلوب المرهق",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l1-reality-check.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "الأسلوب العملي",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l1-reality-check.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Iteration (تكرار محسّن)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l1-reality-check.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Signal (إشارة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l1-reality-check.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "الأسلوب المرهق",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m4-l1-reality-check.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "الأسلوب العملي",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m4-l1-reality-check.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Iteration",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m4-l1-reality-check.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Signal",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m4-l1-reality-check.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Reality Check: \"Exhausting Approach\" versus \"Practical Approach\" — failed",
+    "ar-MSA": "مراجعة الواقع: \"الأسلوب المرهق\" في مقابل \"الأسلوب العملي\" — فشل",
+    "ar-Gulf": "مراجعة الواقع: \"الأسلوب المرهق\" في مقابل \"الأسلوب العملي\" — فشل",
+    "ar-EG": "اشتغل بتجارب صغيرة وبيانات بسيطة: \"الأسلوب المرهق\" في مقابل \"الأسلوب العملي\" — بدل ما تقول الفيديو فشل، اسأل: إيه اللي اتعلمته من أول ٥ ثواني؟"
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Clarity of Problem\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m4-l1-reality-check.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Practical Decision\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m4-l1-reality-check.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"وضوح المشكلة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l1-reality-check.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قرار عملي\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l1-reality-check.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"وضوح المشكلة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l1-reality-check.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قرار عملي\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l1-reality-check.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"وضوح المشكلة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m4-l1-reality-check.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قرار عملي\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m4-l1-reality-check.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "8d6aa79aa38525b00dceb5bd3d0b5c72dbfc9340bec3b88037d8dd059d69002e"
+}

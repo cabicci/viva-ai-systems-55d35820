@@ -1,0 +1,345 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "intro-m1-l4-ai-can-cannot",
+  "pathId": "intro",
+  "moduleId": "intro-m1",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "AI Can and Cannot",
+    "ar-MSA": "ما يستطيعه الذكاء الاصطناعي وما لا يستطيعه",
+    "ar-Gulf": "الذكاء الاصطناعي: ما يمكنه وما لا يمكنه",
+    "ar-EG": "الـ AI قوي في اللغة — محتاج حذر في الحقائق"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/intro-m1-l4-ai-can-cannot.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l4-ai-can-cannot.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l4-ai-can-cannot.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/intro-m1-l4-ai-can-cannot.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What Will You Understand? AI is very useful, but it is not infallible. A smart user knows when to trust it and when to verify.",
+        "Why Now? In the previous lesson, you opened AI and tried your first message. Today, you will learn how to use it safely without fear of experimenting.",
+        "What After the Lesson? You will classify three situations from your life — what is suitable for AI, what needs verification, and what is better to ask a human."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ الـ AI مفيد جدًا — لكنه ليس معصومًا من الخطأ. المستخدم الذكي يعرف متى يثق ومتى يراجع.",
+        "لماذا الآن؟ في الدرس السابق فتحت AI وجربت أول رسالة. اليوم ستعرف كيف تستخدمه بأمان دون خوف من التجربة.",
+        "ماذا بعد الدرس؟ ستصنّف ٣ مواقف من حياتك — ما يناسب AI، وما يحتاج مراجعة، وما يفضّل فيه سؤال إنسان."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ الذكاء الاصطناعي مفيد جدًا — لكنه مو معصوم من الخطأ. المستخدم الذكي يعرف متى يثق ومتى يراجع.",
+        "ليش الحين؟ في الدرس السابق فتحت الذكاء الاصطناعي وجربت أول رسالة. اليوم راح تعرف كيف تستخدمه بأمان بدون خوف من التجربة.",
+        "وش بعد الدرس؟ راح تصنّف ٣ مواقف من حياتك — وش يناسب الذكاء الاصطناعي، وش يحتاج مراجعة، وش يفضل فيه سؤال إنسان."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ الـ AI مفيد جدًا — بس مش معصوم من الغلط. المستخدم الذكي يعرف إمتى يثق وإمتى يراجع.",
+        "ليه دلوقتي؟ في الدرس اللي فات فتحت AI وجربت أول رسالة. النهاردة هتعرف إزاي تستخدمه بأمان من غير ما تخاف تجرّب.",
+        "هتعمل إيه بعد الدرس؟ هتصنّف ٣ مواقف من حياتك — إيه اللي ينفع AI فيه، وإيه اللي يحتاج مراجعة، وإيه اللي الأفضل تسأل فيه إنسان."
+      ]
+    },
+    "coreIdea": {
+      "en": "AI is strong in language — but be cautious with facts",
+      "ar-MSA": "الـ AI قوي في اللغة — يحتاج حذرًا في الحقائق",
+      "ar-Gulf": "الذكاء الاصطناعي قوي في اللغة — يحتاج حذر في الحقائق",
+      "ar-EG": "الـ AI شغّاله كويس في: صياغة، تلخيص، ترتيب أفكار، عصف ذهني، شرح بأسلوب بسيط."
+    },
+    "tension": {
+      "en": "Did AI respond confidently, only to reveal an error?",
+      "ar-MSA": "هل رد الـ AI بثقة — ثم ظهر فيه خطأ؟",
+      "ar-Gulf": "هل رد الذكاء الاصطناعي بثقة — ثم ظهر فيه خطأ؟",
+      "ar-EG": "ده بيحصل. مش معناه إن الأداة «وحشة» — معناه إنك محتاج تعرف حدودها."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Use Quickly",
+        "rightLabel": "Verify Before Relying",
+        "leftBody": "Summarizing a meeting, drafting an email, organizing ideas for a post — take the response and adjust it in your voice",
+        "rightBody": "Today's material price, legal advice, financial number in a report — use AI as a starting point, and verify from a trusted source"
+      },
+      "ar-MSA": {
+        "leftLabel": "استخدم بسرعة",
+        "rightLabel": "راجع قبل الاعتماد",
+        "leftBody": "تلخيص اجتماع، مسودة بريد، ترتيب أفكار لمنشور — خذ الرد وعدّل بصوتك",
+        "rightBody": "سعر مادة اليوم، نصيحة قانونية، رقم مالي في تقرير — استخدم AI كبداية، وتحقق من مصدر موثوق"
+      },
+      "ar-Gulf": {
+        "leftLabel": "استخدم بسرعة",
+        "rightLabel": "راجع قبل الاعتماد",
+        "leftBody": "تلخيص اجتماع، مسودة بريد، ترتيب أفكار لمنشور — خذ الرد وعدّل بصوتك",
+        "rightBody": "سعر مادة اليوم، نصيحة قانونية، رقم مالي في تقرير — استخدم الذكاء الاصطناعي كبداية، وتحقق من مصدر موثوق"
+      },
+      "ar-EG": {
+        "leftLabel": "استخدم بسرعة",
+        "leftBody": "تلخيص اجتماع، كتابة مسودة إيميل، ترتيب أفكار لبوست — خذ الرد وعدّل بصوتك.",
+        "rightLabel": "راجع قبل الاعتماد",
+        "rightBody": "سعر خامة النهارده، نصيحة قانونية، رقم مالي في تقرير — استخدم AI كبداية، وتحقق من مصدر موثوق."
+      }
+    },
+    "missionIntro": {
+      "en": "Choose 3 real situations from your work, study, or daily life. Classify each one: suitable for AI / use it with verification / best to ask a human or do not share sensitive data.",
+      "ar-MSA": "اختر ٣ مواقف حقيقية من عملك أو دراستك أو يومك. صنّف كل واحد: يناسب AI / استخدمه مع مراجعة / الأفضل سؤال إنسان أو لا تشارك بيانات حساسة.",
+      "ar-Gulf": "اختر ٣ مواقف حقيقية من عملك أو دراستك أو يومك. صنّف كل واحد: يناسب الذكاء الاصطناعي / استخدمه مع مراجعة / الأفضل سؤال إنسان أو لا تشارك بيانات حساسة.",
+      "ar-EG": "اختار ٣ مواقف حقيقية — من شغلك، دراستك، أو يومك — وصنّف كل واحد:\n\n• ينفع AI\n• استخدمه مع مراجعة\n• الأفضل تسأل إنسان / متشاركش بيانات حساسة\n\nمش مطلوب إجابة مثالية. المطلوب تفكير عملي يخليك واثق مش خايف."
+    },
+    "visualIntent": {
+      "kind": "concept-scene",
+      "summary": "A simple map: on one side — writing, summarizing, and ideas (use confidently). On the other side — numbers and changing facts (verify before relying). The image",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l4-ai-can-cannot.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "A simple map: on one side — writing, summarizing, and ideas (use confidently). On the other side — numbers and changing facts (verify before"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l4-ai-can-cannot.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "خريطة بسيطة: على جانب — كتابة وتلخيص وأفكار (استخدم بثقة). على الجانب الآخر — أرقام وحقائق متغيرة (راجع قبل الاعتماد). الصورة توضّح الفكرة —"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l4-ai-can-cannot.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "خريطة بسيطة: على جانب — كتابة وتلخيص وأفكار (استخدم بثقة). على الجانب الآخر — أرقام وحقائق متغيرة (راجع قبل الاعتماد). الصورة توضح الفكرة —"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/intro-m1-l4-ai-can-cannot.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "على الشمال: كتابة وتلخيص وأفكار — استخدم بثقة. على اليمين: أرقام وحقائق متغيرة — راجع قبل ما تعتمد. الصورة توضّح الفكرة"
+        }
+      }
+    }
+  },
+  "method": 2,
+  "methodRationale": "intro-m1-l4-ai-can-cannot's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 2), so a text-free AI illustration communicates \"AI is strong in language — but be cautious with facts\" without inventing UI chrome or rendering paid text.",
+  "compositionPattern": "concept-scene-metaphor",
+  "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Use Quickly\" vs \"Verify Before Relying\" for intro-m1-l4-ai-can-cannot.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Use Quickly",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l4-ai-can-cannot.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Verify Before Relying",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l4-ai-can-cannot.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Hallucination",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l4-ai-can-cannot.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Verification",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l4-ai-can-cannot.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "استخدم بسرعة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l4-ai-can-cannot.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "راجع قبل الاعتماد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l4-ai-can-cannot.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Hallucination (هلوسة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l4-ai-can-cannot.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Verification (مراجعة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l4-ai-can-cannot.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "استخدم بسرعة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l4-ai-can-cannot.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "راجع قبل الاعتماد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l4-ai-can-cannot.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "هلوسة (Hallucination)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l4-ai-can-cannot.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "التحقق (Verification)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l4-ai-can-cannot.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "استخدم بسرعة",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l4-ai-can-cannot.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "راجع قبل الاعتماد",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l4-ai-can-cannot.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Hallucination (هلوسة)",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l4-ai-can-cannot.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Verification (مراجعة)",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l4-ai-can-cannot.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "AI Can and Cannot: \"Use Quickly\" versus \"Verify Before Relying\" — AI is strong in language — but be cautious with facts",
+    "ar-MSA": "ما يستطيعه الذكاء الاصطناعي وما لا يستطيعه: \"استخدم بسرعة\" في مقابل \"راجع قبل الاعتماد\" — الـ AI قوي في اللغة — يحتاج حذرًا في الحقائق",
+    "ar-Gulf": "الذكاء الاصطناعي: ما يمكنه وما لا يمكنه: \"استخدم بسرعة\" في مقابل \"راجع قبل الاعتماد\" — الذكاء الاصطناعي قوي في اللغة — يحتاج حذر في الحقائق",
+    "ar-EG": "الـ AI قوي في اللغة — محتاج حذر في الحقائق: \"استخدم بسرعة\" في مقابل \"راجع قبل الاعتماد\" — الـ AI شغّاله كويس في: صياغة، تلخيص، ترتيب أفكار، عصف ذهني، شرح بأسلوب بسيط."
+  },
+  "aiPromptContract": {
+    "providerClass": "text-free-illustration",
+    "paidAllowed": false,
+    "textFree": true,
+    "promptRules": [
+      "No embedded text, letters, numbers, or UI chrome anywhere in the image.",
+      "Depict the idea behind \"AI Can and Cannot\" as a literal scene or metaphor, not as software.",
+      "Use a calm editorial illustration style consistent with a warm, minimal brand palette.",
+      "Keep the composition balanced so it still reads when mirrored for RTL locales."
+    ],
+    "costCeilingUsd": 0
+  },
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"Logical Classification\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/intro-m1-l4-ai-can-cannot.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"Personal Reflection\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/intro-m1-l4-ai-can-cannot.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"تصنيف منطقي\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l4-ai-can-cannot.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"تفكير شخصي\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l4-ai-can-cannot.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"تصنيف منطقي\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l4-ai-can-cannot.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"تفكير شخصي\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l4-ai-can-cannot.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"تصنيف منطقي\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/intro-m1-l4-ai-can-cannot.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"تفكير شخصي\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/intro-m1-l4-ai-can-cannot.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 30"
+    }
+  ],
+  "checksum": "a5bc44b85dead4102df6baae23e0a77d7ce9878ec958641fd71e378c0c861fb9"
+}

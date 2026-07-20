@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "business-m2-l2-build-your-offer",
+  "pathId": "business",
+  "moduleId": "business-m2",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Build Your Offer",
+    "ar-MSA": "بناء عرضك",
+    "ar-Gulf": "بناء عرضك",
+    "ar-EG": "منتج ≠ عرض — العرض هو الوعد المفهوم"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/business-m2-l2-build-your-offer.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l2-build-your-offer.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l2-build-your-offer.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/business-m2-l2-build-your-offer.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? The customer does not buy the product — they buy the transformation they understand. A clear offer is more important than a vague price.",
+        "Why now? In the previous lesson, you mapped the customer journey. Before retaining and following up, the customer must understand what they are buying.",
+        "What after the lesson? You will write a simple offer for your business or idea — in one clear statement."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ العميل لا يشتري المنتج — يشتري التحويل الذي يفهمه. Offer (العرض) الواضح أهم من سعر «شبه المناسب».",
+        "لماذا الآن؟ في الدرس السابق رسمت رحلة العميل. قبل الاحتفاظ والمتابعة، يجب أن يفهم العميل ما الذي يشتريه.",
+        "ماذا بعد الدرس؟ ستكتب عرضًا بسيطًا لعملك أو فكرتك — بصيغة واحدة واضحة."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ العميل ما يشتري المنتج — يشتري التحويل اللي يفهمه. العرض الواضح أهم من سعر «مو واضح».",
+        "ليش الحين؟ في الدرس السابق رسمت رحلة العميل. قبل ما يحتفظ ويتابع، لازم يفهم العميل وش اللي يشتريه.",
+        "وش بعد الدرس؟ راح تكتب عرض بسيط لعملك أو فكرتك — بصيغة واضحة."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ العميل مش بيشتري المنتج — بيشتري التحويل اللي يفهمه. العرض الواضح أهم من سعر «شبه المناسب».",
+        "ليه دلوقتي؟ في الدرس اللي فات رسمت رحلة العميل. قبل الاحتفاظ والمتابعة، لازم العميل يفهم إيه اللي بيشتريه.",
+        "هتعمل إيه بعد الدرس؟ هتكتب عرض بسيط لبيزنسك أو فكرتك — بصيغة واحدة واضحة."
+      ]
+    },
+    "coreIdea": {
+      "en": "Product/Service:",
+      "ar-MSA": "المنتج/الخدمة:",
+      "ar-Gulf": "المنتج/الخدمة:",
+      "ar-EG": "المنتج/الخدمة: إيه اللي بتسلّمه — جلسة، وجبة، كورس، صيانة."
+    },
+    "tension": {
+      "en": "Many say, \"Customers don’t pay.\" You ask the customer — they don’t understand the outcome, the duration, or why they should trust you. The problem is often not the price — the issue is the clarity of the offer. A product",
+      "ar-MSA": "كثيرون يقولون «العملاء لا يدفعون». تسأل العميل — تجده لا يفهم النتيجة، ولا المدة، ولا لماذا يثق بك. المشكلة غالبًا ليست السعر دائمًا — المشكلة وضوح Offer. منتج بلا عرض = قائمة مميزات بلا وعد مفهوم.",
+      "ar-Gulf": "كثير من الناس يقولون «العملاء ما يدفعون». تسأل العميل — تلاقيه ما يفهم النتيجة، ولا المدة، ولا ليش يثق بك. المشكلة مو دايمًا السعر — المشكلة وضوح العرض. منتج بلا عرض = قائمة مميزات بلا وعد مفهوم.",
+      "ar-EG": "كتير بيقولوا «العملاء مش بيدفعوا». تسأل العميل — يلاقيه مش فاهم النتيجة، المدة، ولا ليه يثق فيك."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Product Only",
+        "rightLabel": "Clear Offer",
+        "leftBody": "\"60-minute marketing consultation — 500 EGP.\" Customer: \"What will I get?\" — and does not book.",
+        "rightBody": "\"I help small shop owners identify 3 marketing priorities in 60 minutes — even if there’s no time — with a written plan to implement next week.\" The customer understands the transformation."
+      },
+      "ar-MSA": {
+        "leftLabel": "منتج فقط",
+        "rightLabel": "عرض واضح",
+        "leftBody": "«استشارة تسويق ٦٠ دقيقة — ٥٠٠ جنيه». العميل: «ماذا سيخرج؟» — ولا يحجز.",
+        "rightBody": "«أساعد أصحاب المحلات الصغيرة يحدّدوا ٣ أولويات تسويق في ٦٠ دقيقة — حتى لو لا وقت — مع خطة مكتوبة تطبّقها الأسبوع القادم». العميل يفهم التحويل."
+      },
+      "ar-Gulf": {
+        "leftLabel": "منتج فقط",
+        "rightLabel": "عرض واضح",
+        "leftBody": "«استشارة تسويق ٦٠ دقيقة — ٥٠٠ جنيه». العميل: «وش راح يطلع؟» — ولا يحجز.",
+        "rightBody": "«أساعد أصحاب المحلات الصغيرة يحددوا ٣ أولويات تسويق في ٦٠ دقيقة — حتى لو ما عندهم وقت — مع خطة مكتوبة يطبقونها الأسبوع الجاي». العميل يفهم التحويل."
+      },
+      "ar-EG": {
+        "leftLabel": "منتج بس",
+        "leftBody": "«استشارة تسويق ٦٠ دقيقة — ٥٠٠ جنيه». العميل: «يعني إيه هيطلع إيه؟» — ومش بيحجز.",
+        "rightLabel": "عرض واضح",
+        "rightBody": "«بساعد أصحاب المحلات الصغيرة يحددوا ٣ أولويات تسويق في ٦٠ دقيقة — حتى لو مفيش وقت — مع خطة مكتوبة تطبّقها الأسبوع الجاي». العميل يفهم التحويل."
+      }
+    },
+    "missionIntro": {
+      "en": "This is a practical writing task — not poetry. Write a simple offer for your business or idea using the formula. You can use AI to suggest wording — you choose the final version. It’s not about perfection — it’s about one sentence that a non-expert can understand.",
+      "ar-MSA": "مهمة صياغة عملية — ليست شعرًا. اكتب عرضًا بسيطًا لعملك أو فكرة شغلك باستخدام الصيغة. يمكنك استخدام الذكاء الاصطناعي لاقتراح صياغة — أنت تختار النهائي. لا يُطلب إطلاق — يُطلب جملة واحدة يفهمها غير متخصص.",
+      "ar-Gulf": "مهمة صياغة عملية — مو شعر. اكتب عرض بسيط لعملك أو فكرة شغلك باستخدام الصيغة. تقدر تستخدم الذكاء الاصطناعي لاقتراح صياغة — أنت تختار النهائي. ما يُطلب إطلاقًا — يُطلب جملة واحدة يفهمها غير متخصص.",
+      "ar-EG": "المهمة دي صياغة عملية — مش شعر. اكتب عرضًا بسيطًا لبيزنسك أو فكرة شغلك باستخدام الصيغة. ممكن تستخدم الـ AI يقترح صياغة — إنت تختار النهائي.\n\nمش مطلوب إطلاق — مطلوب جملة واحدة يفهمها غير متخصص."
+    },
+    "visualIntent": {
+      "kind": "decision",
+      "summary": "The **offer** formula in one line: I help [who] achieve [outcome] in [time/context] using [method] — even if [objection] — with [risk reducer]. Fill in the blan",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m2-l2-build-your-offer.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "The **offer** formula in one line: I help [who] achieve [outcome] in [time/context] using [method] — even if [objection] — with [risk reduce"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l2-build-your-offer.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "صيغة **Offer** في سطر واحد: بساعد [مين] يوصلوا إلى [نتيجة] في [وقت/سياق] باستخدام [طريقة] — حتى لو [اعتراض] — مع [مقلّل مخاطرة]. املأ الفراغ"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l2-build-your-offer.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "صيغة **العرض** في سطر واحد: أساعد [مين] يوصلوا إلى [نتيجة] في [وقت/سياق] باستخدام [طريقة] — حتى لو [اعتراض] — مع [مقلّل مخاطرة]. املأ الفراغ"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/business-m2-l2-build-your-offer.ts",
+          "field": "block.caption (diagram)",
+          "quote": "بساعد [مين] يوصلوا لـ [نتيجة] في [وقت/سياق] باستخدام [طريقة] — حتى لو [اعتراض] — مع [مقلّل مخاطرة]. املأ الفراغات في الم"
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "business-m2-l2-build-your-offer's package marks a Diagram intent (decision-chain); the underlying relationship reads as decision, so a deterministic SVG panel keeps the real Product Only/Clear Offer labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "decision-chain-panel",
+  "duplicationJustification": "Shares the \"decision-chain-panel\" layout template with 3 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Product Only\" vs \"Clear Offer\" for business-m2-l2-build-your-offer.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Product Only",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m2-l2-build-your-offer.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Clear Offer",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m2-l2-build-your-offer.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Offer",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m2-l2-build-your-offer.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Risk Reducer",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m2-l2-build-your-offer.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "منتج فقط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l2-build-your-offer.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "عرض واضح",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l2-build-your-offer.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Offer (عرض)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l2-build-your-offer.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Risk Reducer (مقلّل مخاطرة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l2-build-your-offer.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "منتج فقط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l2-build-your-offer.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "عرض واضح",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l2-build-your-offer.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "العرض",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l2-build-your-offer.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "مقلّل مخاطرة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l2-build-your-offer.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "منتج بس",
+        "source": {
+          "path": "src/components/intro/lessons/business-m2-l2-build-your-offer.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "عرض واضح",
+        "source": {
+          "path": "src/components/intro/lessons/business-m2-l2-build-your-offer.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Offer (عرض)",
+        "source": {
+          "path": "src/components/intro/lessons/business-m2-l2-build-your-offer.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Risk Reducer (مقلّل مخاطرة)",
+        "source": {
+          "path": "src/components/intro/lessons/business-m2-l2-build-your-offer.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Build Your Offer: \"Product Only\" versus \"Clear Offer\" — Product/Service:",
+    "ar-MSA": "بناء عرضك: \"منتج فقط\" في مقابل \"عرض واضح\" — المنتج/الخدمة:",
+    "ar-Gulf": "بناء عرضك: \"منتج فقط\" في مقابل \"عرض واضح\" — المنتج/الخدمة:",
+    "ar-EG": "منتج ≠ عرض — العرض هو الوعد المفهوم: \"منتج بس\" في مقابل \"عرض واضح\" — المنتج/الخدمة: إيه اللي بتسلّمه — جلسة، وجبة، كورس، صيانة."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Clarity of Offer\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/business-m2-l2-build-your-offer.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Trust and Risk\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/business-m2-l2-build-your-offer.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"وضوح العرض\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l2-build-your-offer.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"ثقة ومخاطرة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l2-build-your-offer.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"وضوح العرض\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l2-build-your-offer.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"ثقة ومخاطرة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l2-build-your-offer.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"وضوح العرض\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m2-l2-build-your-offer.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"ثقة ومخاطرة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m2-l2-build-your-offer.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "5d716d2718403af7b49432d670da8819c8b5b297f528496e690cbbc4477f32d9"
+}

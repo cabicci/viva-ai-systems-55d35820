@@ -1,0 +1,338 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m8-l2-rls",
+  "pathId": "builder",
+  "moduleId": "builder-m8",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "RLS — Row Level Security",
+    "ar-MSA": "أمان الصفوف — RLS",
+    "ar-Gulf": "RLS — أمان الصفوف",
+    "ar-EG": "القواعد تحدّد أنهي صفوف المستخدم يشوف"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m8-l2-rls.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m8-l2-rls.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m8-l2-rls.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m8-l2-rls.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? How to set rules at the database level for which rows each user can see — even if there is a mistake in the code.",
+        "Why now? JWT (JSON Web Token) tells you «who you are» — RLS (Row Level Security) tells you «what you are allowed to see» from the data.",
+        "What after the lesson? You will write one rule: the user sees only their own data.",
+        "Optional depth: for those who want to build real applications. You can skip it and come back later."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ كيف تحدّد قواعد على مستوى المخزن أي صفوف يرى كل مستخدم — حتى لو كان هناك خطأ في الكود.",
+        "لماذا الآن؟ JWT (كارت دخول مؤقت) يقول «من أنت» — RLS (أمان على مستوى السطر) يقول «ماذا مسموح أن ترى» من البيانات.",
+        "ماذا بعد الدرس؟ ستكتب قاعدة واحدة: المستخدم يرى بياناته هو فقط.",
+        "عمق اختياري: لمن يريد بناء تطبيقات حقيقية. يمكنك تخطيه والعودة لاحقًا."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ كيف تحدد قواعد على مستوى المخزن أي صفوف يشوفها كل مستخدم — حتى لو كان فيه خطأ في الكود.",
+        "ليش الحين؟ JWT (كارت دخول مؤقت) يقول «من أنت» — RLS (أمان على مستوى السطر) يقول «وش مسموح تشوف» من البيانات.",
+        "وش بعد الدرس؟ راح تكتب قاعدة وحدة: المستخدم يشوف بياناته بس.",
+        "عمق اختياري: للي يبغون يبنون تطبيقات حقيقية. تقدر تتخطاه وترجع له لاحقًا."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ إزاي قواعد على مستوى المخزن تحدّد أنهي صفوف كل مستخدم يشوفها — حتى لو في غلطة في الكود.",
+        "ليه دلوقتي؟ JWT (كارت دخول مؤقت) بيقول «مين إنت» — RLS (أمان على مستوى السطر) بيقول «إيه اللي مسموح تشوفه» من البيانات.",
+        "هتعمل إيه بعد الدرس؟ هتكتب قاعدة واحدة: المستخدم يشوف بياناته هو بس.",
+        "عمق اختياري: الدرس ده للي عايز يبني تطبيقات حقيقية. لو لسه في الأساسيات، تقدر تعدّيه وترجعله — باقي المسارات لسه قيمة."
+      ]
+    },
+    "coreIdea": {
+      "en": "JWT verifies your identity",
+      "ar-MSA": "JWT يثبت هويتك",
+      "ar-Gulf": "JWT يثبت هويتك",
+      "ar-EG": "JWT (كارت دخول مؤقت) بيثبت هويتك. RLS Policy (سياسة أمان على السطر) بتركّب فلتر على كل سؤال للمخزن: «ارجّع بس الصفوف اللي user_id بتاعها = أنا»."
+    },
+    "tension": {
+      "en": "Imagine a personal AI learning from each client's notes. Another client opened the app and found the first client's secrets in front of them. Knowing the ID does not mean you can see it. And the correct code in 9 places",
+      "ar-MSA": "تخيّل ذكاءًا اصطناعيًا شخصيًا يتعلم من ملاحظات كل عميل. عميل آخر فتح التطبيق فوجد أسرار الأول أمامه. معرفة ID شيء لا تعني أنك تستطيع رؤيته. والكود الصحيح في ٩ أماكن لا يكفي إن نسيت المكان العاشر.",
+      "ar-Gulf": "تخيل ذكاءً اصطناعيًا شخصيًا يتعلم من ملاحظات كل عميل. عميل ثاني فتح التطبيق ولقى أسرار الأول قدامه. معرفة ID شيء مو يعني أنك تقدر تشوفه. والكود الصحيح في ٩ أماكن مو كافي إذا نسيت المكان العاشر.",
+      "ar-EG": "تخيل AI شخصي بيتعلم من ملاحظات كل عميل. عميل تاني فتح التطبيق ولقى أسرار الأول قدامه."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "WHERE in code only",
+        "rightLabel": "RLS on the database",
+        "leftBody": "`WHERE user_id = currentUser` in every API. Forgot once — a client's secrets were exposed",
+        "rightBody": "Policy on the table: `user_id = auth.uid()`. Any query — even by mistake — returns only the current user's rows"
+      },
+      "ar-MSA": {
+        "leftLabel": "WHERE في الكود فقط",
+        "rightLabel": "RLS على المخزن",
+        "leftBody": "`WHERE user_id = currentUser` في كل API. نسيت مرة واحدة — أسرار عميل انكشفت",
+        "rightBody": "Policy على الجدول: `user_id = auth.uid()`. أي query — حتى من خطأ — يرجع سطور المستخدم الحالي فقط"
+      },
+      "ar-Gulf": {
+        "leftLabel": "WHERE في الكود بس",
+        "rightLabel": "RLS على المخزن",
+        "leftBody": "`WHERE user_id = currentUser` في كل API. نسيت مرة وحدة — أسرار عميل انكشفت",
+        "rightBody": "Policy على الجدول: `user_id = auth.uid()`. أي query — حتى من خطأ — يرجع سطور المستخدم الحالي بس"
+      },
+      "ar-EG": {
+        "leftLabel": "غلط — WHERE في الكود بس",
+        "leftBody": "تكتب `WHERE user_id = currentUser` في كل API (وسيلة تخلي برنامجين يكلموا بعض). نسيت مرة واحدة — أسرار عميل اتكشفت. زي قفل كل البيبان وسايب شباك مفتوح.",
+        "rightLabel": "صح — RLS على المخزن",
+        "rightBody": "Policy على الجدول: `user_id = auth.uid()`. أي query — حتى من غلطة — يرجع سطور المستخدم الحالي بس. خط دفاع أخير على المخزن نفسه."
+      }
+    },
+    "missionIntro": {
+      "en": "You will write a simple Policy for your application — not a complete SQL code, just the condition. 10 minutes.",
+      "ar-MSA": "ستكتب Policy بسيطة لتطبيقك — ليس كود SQL كامل، الشرط فقط. ١٠ دقائق.",
+      "ar-Gulf": "راح تكتب Policy بسيطة لتطبيقك — مو كود SQL كامل، الشرط بس. ١٠ دقائق.",
+      "ar-EG": "هتكتب Policy بسيطة لتطبيقك — مش كود SQL كامل، الشرط بس.\n\n١٠ دقايق كفاية."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "**A magic lens for each user:**",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m8-l2-rls.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**A magic lens for each user:**"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m8-l2-rls.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**نظارة سحرية لكل مستخدم:**"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m8-l2-rls.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**نظارة سحرية لكل مستخدم:**"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m8-l2-rls.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "المخزن واحد وفيه بيانات الكل. لما «أحمد» يطلب محادثاته، الـ Policy بتفلتر وترجّع سطوره هو بس — كأن كل واحد لابس نضارة بت"
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "builder-m8-l2-rls's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (WHERE in code only / RLS on the database) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"WHERE in code only\" vs \"RLS on the database\" for builder-m8-l2-rls.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "WHERE in code only",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m8-l2-rls.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "RLS on the database",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m8-l2-rls.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "RLS (Row Level Security)",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m8-l2-rls.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Policy",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m8-l2-rls.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "WHERE في الكود فقط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m8-l2-rls.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "RLS على المخزن",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m8-l2-rls.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "RLS (أمان على مستوى السطر)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m8-l2-rls.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Policy (سياسة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m8-l2-rls.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "WHERE في الكود بس",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m8-l2-rls.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "RLS على المخزن",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m8-l2-rls.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "RLS (أمان على مستوى السطر)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m8-l2-rls.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Policy (سياسة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m8-l2-rls.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "غلط — WHERE في الكود بس",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m8-l2-rls.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "صح — RLS على المخزن",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m8-l2-rls.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "RLS (أمان على مستوى السطر)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m8-l2-rls.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Policy (سياسة)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m8-l2-rls.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "RLS — Row Level Security: \"WHERE in code only\" versus \"RLS on the database\" — JWT verifies your identity",
+    "ar-MSA": "أمان الصفوف — RLS: \"WHERE في الكود فقط\" في مقابل \"RLS على المخزن\" — JWT يثبت هويتك",
+    "ar-Gulf": "RLS — أمان الصفوف: \"WHERE في الكود بس\" في مقابل \"RLS على المخزن\" — JWT يثبت هويتك",
+    "ar-EG": "القواعد تحدّد أنهي صفوف المستخدم يشوف: \"غلط — WHERE في الكود بس\" في مقابل \"صح — RLS على المخزن\" — JWT (كارت دخول مؤقت) بيثبت هويتك. RLS Policy (سياسة أمان على السطر) بتركّب فلتر على كل سؤال للمخزن: «ارجّع بس الصفوف اللي user_id بتاعها = أنا»."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Condition correct\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m8-l2-rls.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Reason\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m8-l2-rls.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"الشرط صح\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m8-l2-rls.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"السبب\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m8-l2-rls.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"الشرط صح\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m8-l2-rls.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"السبب\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m8-l2-rls.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"الشرط صح\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m8-l2-rls.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"السبب\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m8-l2-rls.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "d7fd1b52f12c7de1ccd96054e4b606d1681c42652097204bfd500cbf42659c39"
+}

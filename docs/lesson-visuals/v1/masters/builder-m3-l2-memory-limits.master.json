@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m3-l2-memory-limits",
+  "pathId": "builder",
+  "moduleId": "builder-m3",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Memory Limits",
+    "ar-MSA": "حدود الذاكرة",
+    "ar-Gulf": "حدود الذاكرة",
+    "ar-EG": "AI مش بيفتكر للأبد"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m3-l2-memory-limits.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m3-l2-memory-limits.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m3-l2-memory-limits.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m3-l2-memory-limits.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Why does AI ‘forget’? — And how to design your product to remember what needs to be remembered.",
+        "Why now? A long conversation = a context that fills up. Without design — the assistant seems to be ‘talking to a wall’.",
+        "What after the lesson? You will identify 3 things that the app should always remember."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ لماذا الذكاء الاصطناعي «ينسى» — وكيف تصمّم منتجك ليحفظ ما يجب أن يُحفظ.",
+        "لماذا الآن؟ محادثة طويلة = سياق يمتلئ. بدون تصميم — المساعد يبدو «يتكلم حائطًا».",
+        "ماذا بعد الدرس؟ ستحدّد ٣ أمور يجب أن يفتكرها التطبيق دائمًا."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ ليش الذكاء الاصطناعي «ينسى» — وكيف تصمّم منتجك عشان يحفظ الأشياء المهمة.",
+        "ليش الحين؟ محادثة طويلة = سياق يمتلئ. بدون تصميم — المساعد يبين وكأنه «يتكلم مع حائط».",
+        "وش بعد الدرس؟ راح تحدد ٣ أشياء يجب أن يفتكرها التطبيق دائمًا."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ ليه AI «بينسى» — وإزاي تصمّم منتجك يحفظ اللي لازم يتحفظ.",
+        "ليه دلوقتي؟ محادثة طويلة = سياق يتملّى. من غير تصميم، المساعد هيبان «بيتكلم حيطة».",
+        "هتعمل إيه بعد الدرس؟ هتحدّد ٣ حاجات التطبيق لازم يفتكرها دايمًا."
+      ]
+    },
+    "coreIdea": {
+      "en": "Context Window",
+      "ar-MSA": "Context Window (شباك الذاكرة)",
+      "ar-Gulf": "Context Window (شباك الذاكرة)",
+      "ar-EG": "Context Window = «شباك ذاكرة» — الـ AI شايف آخر كم كلمة بس. اللي قبل كده وقع من المكتب."
+    },
+    "tension": {
+      "en": "You explained an idea, you agreed on a plan — and soon the AI started suggesting the opposite of what you said. It’s not you — the AI really forgets. This isn’t a personal flaw — it’s a design limitation.",
+      "ar-MSA": "شرحت فكرة، اتفقتم على خطة — وبعد قليل الذكاء الاصطناعي بدأ يقترح عكس ما قلته. ليس أنت — الذكاء الاصطناعي ينسى فعلًا. هذا ليس عيبًا شخصيًا — هذا حد في التصميم.",
+      "ar-Gulf": "شرحت فكرة، اتفقتوا على خطة — وبعد شوي الذكاء الاصطناعي بدأ يقترح عكس ما قلته. مو أنت — الذكاء الاصطناعي ينسى فعلًا. هذا مو عيب شخصي — هذا حد في التصميم.",
+      "ar-EG": "شرحت فكرة، اتفقتوا على خطة — وبعد شوية الـ AI بدأ يقترح عكس اللي قلته."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "‘Continue from the beginning’",
+        "rightLabel": "Summary + passing from the app",
+        "leftBody": "30-message conversation — ‘Continue from what I told you.’ It forgot. It will start guessing — and you will build on incorrect information.",
+        "rightBody": "‘Summary: 1) project... 2) decisions... 3) open...’ + the app passes the username and preferences each time."
+      },
+      "ar-MSA": {
+        "leftLabel": "«كمّل من الأول»",
+        "rightLabel": "ملخّص + تمرير من التطبيق",
+        "leftBody": "محادثة ٣٠ رسالة — «كمّل من الذي قلته لك.» هو نسي. سيبدأ يخمن — وأنت ستبني على معلومات خاطئة",
+        "rightBody": "«ملخص: ١) المشروع... ٢) القرارات... ٣) المفتوح...» + التطبيق يمرّر اسم المستخدم وتفضيلاته كل مرة"
+      },
+      "ar-Gulf": {
+        "leftLabel": "«كمّل من الأول»",
+        "rightLabel": "ملخّص + تمرير من التطبيق",
+        "leftBody": "محادثة ٣٠ رسالة — «كمّل من اللي قلته لك.» هو نسي. راح يبدأ يخمن — وأنت راح تبني على معلومات خاطئة",
+        "rightBody": "«ملخص: ١) المشروع... ٢) القرارات... ٣) المفتوح...» + التطبيق يمرّر اسم المستخدم وتفضيلاته كل مرة"
+      },
+      "ar-EG": {
+        "leftLabel": "«كمّل من الأول»",
+        "leftBody": "شات ٣٠ رسالة — «كمّل من اللي قلتهولك.» هو نسي. هيبدأ يهبد — وإنت هتبني على معلومات غلط.",
+        "rightLabel": "ملخّص + تمرير من التطبيق",
+        "rightBody": "«ملخص: ١) المشروع... ٢) القرارات... ٣) المفتوح...» + التطبيق يمرّر اسم المستخدم وتفضيلاته كل مرة."
+      }
+    },
+    "missionIntro": {
+      "en": "Imagine an app with an AI assistant — identify 3 facts that the app should remember (not that the AI remembers by itself). 10–15 minutes.",
+      "ar-MSA": "تخيّل تطبيقًا فيه مساعد ذكاء اصطناعي — حدّد ٣ حقائق يجب أن يحفظها التطبيق (ليس أن الذكاء الاصطناعي يتذكّر وحده). ١٠–١٥ دقيقة.",
+      "ar-Gulf": "تخيّل تطبيق فيه مساعد ذكاء اصطناعي — حدّد ٣ حقائق يجب أن يحفظها التطبيق (مو أن الذكاء الاصطناعي يتذكّر وحده). ١٠–١٥ دقيقة.",
+      "ar-EG": "تخيّل تطبيق فيه مساعد AI — حدّد ٣ حقائق لازم التطبيق يحفظها (مش الـ AI يتذكرها لوحده).\n\n١٠–١٥ دقيقة."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "**Limited memory — explicit design:**",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m3-l2-memory-limits.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**Limited memory — explicit design:**"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m3-l2-memory-limits.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**ذاكرة محدودة — تصميم صريح:**"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m3-l2-memory-limits.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**ذاكرة محدودة — تصميم صريح:**"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m3-l2-memory-limits.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "التنبيه ده مش قانوني — ده اعتراف إن الذاكرة ليها حد. المساعد شايف سياقك + جزء من المحتوى — مش «كل حاجة». في منتجك: حدّد"
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "builder-m3-l2-memory-limits's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (‘Continue from the beginning’ / Summary + passing from the app) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"‘Continue from the beginning’\" vs \"Summary + passing from the app\" for builder-m3-l2-memory-limits.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "‘Continue from the beginning’",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m3-l2-memory-limits.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Summary + passing from the app",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m3-l2-memory-limits.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Context Window",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m3-l2-memory-limits.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "State Snapshot",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m3-l2-memory-limits.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "«كمّل من الأول»",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m3-l2-memory-limits.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "ملخّص + تمرير من التطبيق",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m3-l2-memory-limits.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Context Window (شباك الذاكرة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m3-l2-memory-limits.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "State Snapshot (لقطة حالة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m3-l2-memory-limits.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "«كمّل من الأول»",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m3-l2-memory-limits.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "ملخّص + تمرير من التطبيق",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m3-l2-memory-limits.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Context Window (شباك الذاكرة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m3-l2-memory-limits.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "State Snapshot (لقطة حالة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m3-l2-memory-limits.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "«كمّل من الأول»",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m3-l2-memory-limits.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "ملخّص + تمرير من التطبيق",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m3-l2-memory-limits.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Context Window (شباك الذاكرة)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m3-l2-memory-limits.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "State Snapshot (لقطة حالة)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m3-l2-memory-limits.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Memory Limits: \"‘Continue from the beginning’\" versus \"Summary + passing from the app\" — Context Window",
+    "ar-MSA": "حدود الذاكرة: \"«كمّل من الأول»\" في مقابل \"ملخّص + تمرير من التطبيق\" — Context Window (شباك الذاكرة)",
+    "ar-Gulf": "حدود الذاكرة: \"«كمّل من الأول»\" في مقابل \"ملخّص + تمرير من التطبيق\" — Context Window (شباك الذاكرة)",
+    "ar-EG": "AI مش بيفتكر للأبد: \"«كمّل من الأول»\" في مقابل \"ملخّص + تمرير من التطبيق\" — Context Window = «شباك ذاكرة» — الـ AI شايف آخر كم كلمة بس. اللي قبل كده وقع من المكتب."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"3 practical facts\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m3-l2-memory-limits.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Snapshot\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m3-l2-memory-limits.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ حقائق عملية\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m3-l2-memory-limits.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Snapshot\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m3-l2-memory-limits.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ حقائق عملية\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m3-l2-memory-limits.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Snapshot\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m3-l2-memory-limits.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ حقائق عملية\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m3-l2-memory-limits.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Snapshot\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m3-l2-memory-limits.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "a4c3c80b76d93eecb7f9b1b230e40f967c57c2534ae241b06cfe6b61d42ef155"
+}

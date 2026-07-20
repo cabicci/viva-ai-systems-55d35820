@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m2-l1-prompt-layer",
+  "pathId": "builder",
+  "moduleId": "builder-m2",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "The Prompt Layer",
+    "ar-MSA": "طبقة البرومبت",
+    "ar-Gulf": "الطبقة التفاعلية",
+    "ar-EG": "الـ Prompt = سلوك المنتج"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m2-l1-prompt-layer.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l1-prompt-layer.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l1-prompt-layer.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m2-l1-prompt-layer.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? A Prompt is not just a single question — it is the layer that defines the behavior of any AI feature in your product.",
+        "Why now? In Lovable and Cursor, the first Prompt for the assistant equals the first user experience. Ambiguity here means a weak product.",
+        "What comes after the lesson? You will write a System Instruction for a simple assistant."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ Prompt (الطلب) ليس «سؤالًا واحدًا» — بل الطبقة التي تحدّد سلوك أي ميزة ذكاء اصطناعي في منتجك.",
+        "لماذا الآن؟ في Lovable و Cursor، أول Prompt للمساعد = أول تجربة للمستخدم. الغموض هنا يعني منتجًا ضعيفًا.",
+        "ماذا بعد الدرس؟ ستكتب System Instruction (تعليمات النظام) لمساعد بسيط."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ Prompt (الطلب) مو «سؤال واحد» — بل الطبقة اللي تحدد سلوك أي ميزة ذكاء اصطناعي في منتجك.",
+        "ليش الحين؟ في Lovable و Cursor، أول Prompt للمساعد = أول تجربة للمستخدم. الغموض هنا يعني منتج ضعيف.",
+        "وش بعد الدرس؟ راح تكتب System Instruction (تعليمات النظام) لمساعد بسيط."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ الـ Prompt مش «سؤال واحد» — ده الطبقة اللي بتحدّد سلوك أي ميزة AI في منتجك.",
+        "ليه دلوقتي؟ في Lovable و Cursor، أول Prompt للمساعد = أول تجربة للمستخدم. الغموض هنا = منتج ضعيف.",
+        "هتعمل إيه بعد الدرس؟ هتكتب System Instruction لمساعد بسيط."
+      ]
+    },
+    "coreIdea": {
+      "en": "Prompt",
+      "ar-MSA": "Prompt",
+      "ar-Gulf": "Prompt",
+      "ar-EG": "Prompt = كل اللي بتكتبه للـ AI: System Instruction (مين هو وإزاي يرد) + طلب المستخدم."
+    },
+    "tension": {
+      "en": "You asked the AI for something general — and received a vague, unhelpful response. It's like asking a friend, \"What should we eat?\" and they reply, \"Anything.\" The problem is not the intelligence — the problem is the lac",
+      "ar-MSA": "طلبت من الذكاء الاصطناعي شيئًا عامًا — فخرج رد عام بلا فائدة. كأنك تسأل صديقك «ماذا نأكل؟» فيجيب «أي شيء». المشكلة ليست الذكاء — المشكلة نقص التفاصيل.",
+      "ar-Gulf": "طلبت من الذكاء الاصطناعي شيء عام — فطلع رد عام بلا فائدة. كأنك تسأل صديقك «وش نأكل؟» فيقول «أي شيء». المشكلة مو في الذكاء — المشكلة نقص التفاصيل.",
+      "ar-EG": "طلبت من AI حاجة عامة — وطلع رد عام مفيهوش فايدة."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Vague Request",
+        "rightLabel": "Clear Request",
+        "leftBody": "\"Create a marketing plan.\" — the AI doesn’t know why or for whom. The result is generic, copied text.",
+        "rightBody": "\"Create a marketing plan for a new pizza restaurant in Cairo — one week, audience of young people aged 18-25.\" — a practical, actionable response."
+      },
+      "ar-MSA": {
+        "leftLabel": "طلب غامض",
+        "rightLabel": "طلب واضح",
+        "leftBody": "«اعمل خطة تسويق.» — الذكاء الاصطناعي لا يعرف لِمَ ولِمَن. النتيجة كلام عام منسوخ.",
+        "rightBody": "«اعمل خطة تسويق لمطعم بيتزا جديد في القاهرة — أسبوع واحد، جمهور شباب ١٨–٢٥.» — رد عملي يمكن تنفيذه."
+      },
+      "ar-Gulf": {
+        "leftLabel": "طلب غامض",
+        "rightLabel": "طلب واضح",
+        "leftBody": "«اعمل خطة تسويق.» — الذكاء الاصطناعي ما يعرف لِمَ ولِمَن. النتيجة كلام عام منسوخ.",
+        "rightBody": "«اعمل خطة تسويق لمطعم بيتزا جديد في القاهرة — أسبوع واحد، جمهور شباب ١٨–٢٥.» — رد عملي يمكن تنفيذه."
+      },
+      "ar-EG": {
+        "leftLabel": "طلب غامض",
+        "leftBody": "«اعمل خطة تسويق.» — الـ AI مش عارف لإيه ولا لمين. النتيجة كلام عام منسوخ.",
+        "rightLabel": "طلب واضح",
+        "rightBody": "«اعمل خطة تسويق لمطعم بيتزا جديد في القاهرة — أسبوع واحد، جمهور شباب ١٨–٢٥.» — رد عملي تقدر تنفّذه."
+      }
+    },
+    "missionIntro": {
+      "en": "You will write a system instruction for a simple AI assistant — not a conversation, but \"rules of operation.\" 10-15 minutes.",
+      "ar-MSA": "ستكتب تعليمات نظام لمساعد ذكاء اصطناعي بسيط — ليست محادثة، بل «قواعد العمل». ١٠–١٥ دقيقة.",
+      "ar-Gulf": "راح تكتب تعليمات نظام لمساعد ذكاء اصطناعي بسيط — مو محادثة، بل «قواعد العمل». ١٠–١٥ دقيقة.",
+      "ar-EG": "هتكتب تعليمات نظام لمساعد AI بسيط — مش محادثة، بل «قواعد الشغل».\n\n١٠–١٥ دقيقة."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "An organized curriculum page — header, progress bar, and numbered stages. Built with a **Prompt** that includes structure, order, and the format of each stage.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m2-l1-prompt-layer.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "An organized curriculum page — header, progress bar, and numbered stages. Built with a **Prompt** that includes structure, order, and the fo"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l1-prompt-layer.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "صفحة منهج منظمة — هيدر، شريط تقدّم، ومراحل مرقّمة. بُنيت بـ **Prompt** فيه الهيكل والترتيب وشكل كل مرحلة. لو كان الطلب «اعمل صفحة منهج» فقط،"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l1-prompt-layer.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "صفحة منهج منظمة — هيدر، شريط تقدم، ومراحل مرقمة. بُنيت بـ **Prompt** فيه الهيكل والترتيب وشكل كل مرحلة. لو كان الطلب «اعمل صفحة منهج» بس، لك"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m2-l1-prompt-layer.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "الصفحة دي اتبنت بـ Prompt فيه: الهيكل، الترتيب، وشكل كل مرحلة. لو الطلب كان «اعمل صفحة منهج» بس، كان هيطلع لستة عادية. ا"
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "builder-m2-l1-prompt-layer's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Vague Request / Clear Request) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Vague Request\" vs \"Clear Request\" for builder-m2-l1-prompt-layer.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Vague Request",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m2-l1-prompt-layer.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Clear Request",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m2-l1-prompt-layer.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Prompt",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m2-l1-prompt-layer.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "System Instruction",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m2-l1-prompt-layer.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "طلب غامض",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l1-prompt-layer.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "طلب واضح",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l1-prompt-layer.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Prompt (الطلب)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l1-prompt-layer.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "System Instruction (تعليمات النظام)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l1-prompt-layer.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "طلب غامض",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l1-prompt-layer.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "طلب واضح",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l1-prompt-layer.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Prompt (الطلب)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l1-prompt-layer.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "System Instruction (تعليمات النظام)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l1-prompt-layer.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "طلب غامض",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m2-l1-prompt-layer.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "طلب واضح",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m2-l1-prompt-layer.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Prompt (الأمر)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m2-l1-prompt-layer.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "System Instruction (تعليمات النظام)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m2-l1-prompt-layer.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "The Prompt Layer: \"Vague Request\" versus \"Clear Request\" — Prompt",
+    "ar-MSA": "طبقة البرومبت: \"طلب غامض\" في مقابل \"طلب واضح\" — Prompt",
+    "ar-Gulf": "الطبقة التفاعلية: \"طلب غامض\" في مقابل \"طلب واضح\" — Prompt",
+    "ar-EG": "الـ Prompt = سلوك المنتج: \"طلب غامض\" في مقابل \"طلب واضح\" — Prompt = كل اللي بتكتبه للـ AI: System Instruction (مين هو وإزاي يرد) + طلب المستخدم."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Clear Instructions\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m2-l1-prompt-layer.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Practical Example\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m2-l1-prompt-layer.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"تعليمات واضحة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l1-prompt-layer.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"مثال عملي\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l1-prompt-layer.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"تعليمات واضحة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l1-prompt-layer.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"مثال عملي\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l1-prompt-layer.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"تعليمات واضحة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m2-l1-prompt-layer.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"مثال عملي\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m2-l1-prompt-layer.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "b916af015e38b7c6dbbd833f4633a7147a58c5d585ecfa1dee8604958beb17b9"
+}

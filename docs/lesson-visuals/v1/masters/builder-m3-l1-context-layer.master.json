@@ -1,0 +1,345 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m3-l1-context-layer",
+  "pathId": "builder",
+  "moduleId": "builder-m3",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Context Layer",
+    "ar-MSA": "طبقة السياق",
+    "ar-Gulf": "السياق الصحيح",
+    "ar-EG": "السياق الصح في الوقت الصح"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m3-l1-context-layer.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m3-l1-context-layer.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m3-l1-context-layer.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m3-l1-context-layer.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? How to provide AI with the right context — at the right time — so that any feature in your product responds to you and not to anyone else.",
+        "Why now? Prompt and Style without Context = generic responses. The user feels that the assistant does not understand them.",
+        "What comes after the lesson? You will write Context for one AI feature in a product you imagine."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ كيف تعطي الذكاء الاصطناعي السياق الصحيح — في الوقت الصحيح — حتى ترد أي ميزة في منتجك «لك» وليس «لأي شخص».",
+        "لماذا الآن؟ Prompt (طلب) وStyle (أسلوب) بدون Context (سياق) = ردود عامة. المستخدم يشعر أن المساعد «لا يفهمه».",
+        "ماذا بعد الدرس؟ ستكتب Context لميزة ذكاء اصطناعي واحدة في منتج تتخيله."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ كيف تعطي الذكاء الاصطناعي السياق الصحيح — في الوقت المناسب — حتى ترد أي ميزة في منتجك «لك» وليس «لأي شخص».",
+        "ليش الحين؟ Prompt (طلب) وStyle (أسلوب) بدون Context (سياق) = ردود عامة. المستخدم يحس أن المساعد «ما يفهمه».",
+        "وش بعد الدرس؟ راح تكتب Context لميزة ذكاء اصطناعي واحدة في منتج تتخيله."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ إزاي تدي AI السياق الصح — في الوقت الصح — عشان أي ميزة في منتجك تردّ «ليك» مش «لأي حد».",
+        "ليه دلوقتي؟ Prompt و Style من غير Context = ردود عامة. المستخدم هيحس إن المساعد «مش فاهمه».",
+        "هتعمل إيه بعد الدرس؟ هتكتب Context لميزة AI واحدة في منتج تتخيله."
+      ]
+    },
+    "coreIdea": {
+      "en": "Context",
+      "ar-MSA": "Context (السياق)",
+      "ar-Gulf": "Context (السياق)",
+      "ar-EG": "Context = كل المعلومات اللي الـ AI يعرفها قبل ما يرد: من أنت، إيه مشروعك، إيه اللي حصل قبل كده."
+    },
+    "tension": {
+      "en": "\"Create a content plan\" — and the response is a generic copied plan not tailored to your project. The problem is not the question — the problem is that the AI does not know: Who are you? For whom? How much? On which plat",
+      "ar-MSA": "«اعملي خطة محتوى» — والرد خطة عامة منسوخة ليست لمشروعك. المشكلة ليست السؤال — المشكلة أن الذكاء الاصطناعي لا يعرف: من أنت؟ لمن؟ بكم؟ على أي منصة؟",
+      "ar-Gulf": "«اعملي خطة محتوى» — والرد خطة عامة منسوخة مو لمشروعك. المشكلة مو في السؤال — المشكلة أن الذكاء الاصطناعي ما يعرف: من أنت؟ لمن؟ بكم؟ على أي منصة؟",
+      "ar-EG": "«اعملي خطة محتوى» — والرد خطة عامة منسوخة مش بتاعت مشروعك."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Without Context",
+        "rightLabel": "Context Before the Request",
+        "leftBody": "\"Create a content plan.\" — the AI guesses. Generic plan — not tailored to your project",
+        "rightBody": "\"I am a bakery owner in Cairo, budget 2000/month, target audience women 30–45 on Instagram. 4-week plan.\" — a plan you can implement"
+      },
+      "ar-MSA": {
+        "leftLabel": "بدون سياق",
+        "rightLabel": "سياق قبل الطلب",
+        "leftBody": "«اعملي خطة محتوى.» — الذكاء الاصطناعي يخمّن. خطة عامة — ليست لمشروعك",
+        "rightBody": "«أنا صاحب مخبز في القاهرة، ميزانية ٢٠٠٠/شهر، جمهور نساء ٣٠–٤٥ على انستغرام. خطة ٤ أسابيع.» — خطة تنفّذها"
+      },
+      "ar-Gulf": {
+        "leftLabel": "بدون سياق",
+        "rightLabel": "سياق قبل الطلب",
+        "leftBody": "«اعملي خطة محتوى.» — الذكاء الاصطناعي يخمّن. خطة عامة — مو لمشروعك",
+        "rightBody": "«أنا صاحب مخبز في القاهرة، ميزانية ٢٠٠٠/شهر، جمهور نساء ٣٠–٤٥ على انستغرام. خطة ٤ أسابيع.» — خطة تنفّذها"
+      },
+      "ar-EG": {
+        "leftLabel": "من غير سياق",
+        "leftBody": "«اعملي خطة محتوى.» — الـ AI يخمّن. خطة عامة — مش لمشروعك.",
+        "rightLabel": "سياق قبل الطلب",
+        "rightBody": "«أنا صاحب مخبز في القاهرة، ميزانية ٢٠٠٠/شهر، جمهور ستات ٣٠–٤٥ على انستجرام. خطة ٤ أسابيع.» — خطة تنفّذها."
+      }
+    },
+    "missionIntro": {
+      "en": "Imagine a product with one AI feature — and write the context that the app should provide. 10–15 minutes.",
+      "ar-MSA": "تخيّل منتجًا فيه ميزة ذكاء اصطناعي واحدة — واكتب السياق الذي يجب أن يمرّره التطبيق. ١٠–١٥ دقيقة.",
+      "ar-Gulf": "تخيّل منتج فيه ميزة ذكاء اصطناعي واحدة — واكتب السياق اللي يجب أن يمرّره التطبيق. ١٠–١٥ دقيقة.",
+      "ar-EG": "تخيّل منتج فيه ميزة AI واحدة — واكتب السياق اللي التطبيق لازم يمرّره.\n\n١٠–١٥ دقيقة."
+    },
+    "visualIntent": {
+      "kind": "concept-scene",
+      "summary": "**Context appears before the question:**",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m3-l1-context-layer.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**Context appears before the question:**"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m3-l1-context-layer.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**سياق يظهر قبل السؤال:**"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m3-l1-context-layer.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**السياق يظهر قبل السؤال:**"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m3-l1-context-layer.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "قبل ما تكتب، المساعد عارف إنت في أنهي مسار وأنهي درس. السياق ده بيخلّي الرد يكمّل رحلتك — مش إجابات عامة. نفس الفكرة في"
+        }
+      }
+    }
+  },
+  "method": 2,
+  "methodRationale": "builder-m3-l1-context-layer's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 3), so a text-free AI illustration communicates \"Context\" without inventing UI chrome or rendering paid text.",
+  "compositionPattern": "concept-scene-metaphor",
+  "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Without Context\" vs \"Context Before the Request\" for builder-m3-l1-context-layer.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Without Context",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m3-l1-context-layer.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Context Before the Request",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m3-l1-context-layer.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Context",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m3-l1-context-layer.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Context Card",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m3-l1-context-layer.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "بدون سياق",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m3-l1-context-layer.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "سياق قبل الطلب",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m3-l1-context-layer.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Context (السياق)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m3-l1-context-layer.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Context Card (بطاقة سياق)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m3-l1-context-layer.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "بدون سياق",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m3-l1-context-layer.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "سياق قبل الطلب",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m3-l1-context-layer.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Context (السياق)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m3-l1-context-layer.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Context Card (بطاقة سياق)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m3-l1-context-layer.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "من غير سياق",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m3-l1-context-layer.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "سياق قبل الطلب",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m3-l1-context-layer.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Context (السياق)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m3-l1-context-layer.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Context Card (بطاقة سياق)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m3-l1-context-layer.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Context Layer: \"Without Context\" versus \"Context Before the Request\" — Context",
+    "ar-MSA": "طبقة السياق: \"بدون سياق\" في مقابل \"سياق قبل الطلب\" — Context (السياق)",
+    "ar-Gulf": "السياق الصحيح: \"بدون سياق\" في مقابل \"سياق قبل الطلب\" — Context (السياق)",
+    "ar-EG": "السياق الصح في الوقت الصح: \"من غير سياق\" في مقابل \"سياق قبل الطلب\" — Context = كل المعلومات اللي الـ AI يعرفها قبل ما يرد: من أنت، إيه مشروعك، إيه اللي حصل قبل كده."
+  },
+  "aiPromptContract": {
+    "providerClass": "text-free-illustration",
+    "paidAllowed": false,
+    "textFree": true,
+    "promptRules": [
+      "No embedded text, letters, numbers, or UI chrome anywhere in the image.",
+      "Depict the idea behind \"Context Layer\" as a literal scene or metaphor, not as software.",
+      "Use a calm editorial illustration style consistent with a warm, minimal brand palette.",
+      "Keep the composition balanced so it still reads when mirrored for RTL locales."
+    ],
+    "costCeilingUsd": 0
+  },
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Context from the app\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m3-l1-context-layer.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Complete Prompt\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m3-l1-context-layer.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"سياق من التطبيق\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m3-l1-context-layer.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Prompt كامل\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m3-l1-context-layer.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"سياق من التطبيق\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m3-l1-context-layer.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Prompt كامل\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m3-l1-context-layer.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"سياق من التطبيق\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m3-l1-context-layer.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Prompt كامل\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m3-l1-context-layer.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "a4ce8065ed8b8bf5dac13f662bdc273f275a686e6a3a8b2608cc85f1568b9d40"
+}

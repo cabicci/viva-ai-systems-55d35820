@@ -1,0 +1,349 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m9-l1-rag",
+  "pathId": "builder",
+  "moduleId": "builder-m9",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "RAG — AI Answers from Your Files",
+    "ar-MSA": "RAG — إجابات من ملفاتك",
+    "ar-Gulf": "RAG — إجابات من ملفاتك",
+    "ar-EG": "RAG = يرد من ملفاتك — مش من تخمين"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m9-l1-rag.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l1-rag.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l1-rag.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m9-l1-rag.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? RAG (AI answers from your files) = answers from your data instead of guessing.",
+        "Why now? When your assistant in the app responds to prices or policies, it must read from your data — not from its general memory.",
+        "What after the lesson? A simple design map: one source + 3 questions answered from it — not code.",
+        "Optional depth: Builder level 3. If your goal is to use AI in your work only — not required."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ RAG (الذكاء الاصطناعي يجيب من ملفاتك) = يجيب من بياناتك بدل التخمين.",
+        "لماذا الآن؟ عندما يرد مساعدك في التطبيق على أسعار أو سياسات، يجب أن يقرأ من بياناتك — ليس من ذاكرته العامة.",
+        "ماذا بعد الدرس؟ خريطة تصميم بسيطة: مصدر واحد + ٣ أسئلة يجيب عليها منه — ليس كودًا.",
+        "عمق اختياري: Builder المستوى ٣. إن كان هدفك استخدام الذكاء الاصطناعي في عملك فقط — ليس مطلوبًا."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ RAG (الذكاء الاصطناعي يجيب من ملفاتك) = يجيب من بياناتك بدل التخمين.",
+        "ليش الحين؟ لما مساعدك في التطبيق يرد على أسعار أو سياسات، لازم يقرأ من بياناتك — مو من ذاكرته العامة.",
+        "وش بعد الدرس؟ خريطة تصميم بسيطة: مصدر واحد + ٣ أسئلة يجاوب عليها منه — مو كود.",
+        "عمق اختياري: Builder المستوى ٣. إذا كان هدفك استخدام الذكاء الاصطناعي في عملك بس — مو مطلوب."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ RAG = الـ AI يجاوب من ملفاتك بدل ما يخمّن.",
+        "ليه دلوقتي؟ لما مساعدك في التطبيق يرد على أسعار أو سياسات، لازم يقرأ من بياناتك — مش من دماغه.",
+        "هتعمل إيه بعد الدرس؟ خريطة تصميم بسيطة: مصدر واحد + ٣ أسئلة يجاوب عليها منه — مش كود.",
+        "عمق اختياري: Builder Level 3. لو هدفك استخدام AI في شغلك بس، مش مطلوب تكمّل."
+      ]
+    },
+    "coreIdea": {
+      "en": "Before the AI answers",
+      "ar-MSA": "قبل أن يجيب الذكاء الاصطناعي",
+      "ar-Gulf": "قبل ما يجاوب الذكاء الاصطناعي",
+      "ar-EG": "قبل ما الـ AI يجاوب، النظام بيدوّر في ملفاتك، يلاقي الحتة الصح، ويقول للـ AI: «جاوب من الورقة دي بس»."
+    },
+    "tension": {
+      "en": "You ask GPT for the price of your product — it replies «29 dollars». You never sent this price! The AI guesses an answer that seems logical — this is hallucination (fabrication). The customer loses trust.",
+      "ar-MSA": "تسأل GPT عن سعر منتجك — يرد «٢٩ دولارًا». لم ترسل هذا السعر أبدًا! الذكاء الاصطناعي يخمّن إجابة تبدو منطقية — هذا hallucination (تأليف). العميل يفقد الثقة.",
+      "ar-Gulf": "تسأل GPT عن سعر منتجك — يرد «٢٩ دولار». ما أرسلت هذا السعر أبدًا! الذكاء الاصطناعي يخمّن إجابة تبدو منطقية — هذا تأليف. العميل يفقد الثقة.",
+      "ar-EG": "بتسأل GPT عن سعر منتجك — يرد «٢٩ دولار». إنت عمرك ما بعتّه بالسعر ده!"
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "AI Question from Memory",
+        "rightLabel": "RAG from Your Files",
+        "leftBody": "«What is the return policy?» — guesses from general information. Wrong answer = angry customer",
+        "rightBody": "the system finds the paragraph «return policy» in your PDF, puts it in the prompt, and the AI responds from it. Accuracy from your data"
+      },
+      "ar-MSA": {
+        "leftLabel": "سؤال للذكاء الاصطناعي من ذاكرته",
+        "rightLabel": "RAG من ملفاتك",
+        "leftBody": "«ما سياسة الاسترجاع؟» — يخمّن من معلومات عامة. إجابة خاطئة = عميل غاضب",
+        "rightBody": "النظام يجد فقرة «سياسة الاسترجاع» في PDF الخاص بك، يضعها في الـ Prompt (طلب)، والذكاء الاصطناعي ينقل منها. دقة من بياناتك"
+      },
+      "ar-Gulf": {
+        "leftLabel": "سؤال للذكاء الاصطناعي من ذاكرته",
+        "rightLabel": "RAG من ملفاتك",
+        "leftBody": "«وش سياسة الاسترجاع؟» — يخمّن من معلومات عامة. إجابة خاطئة = عميل غاضب",
+        "rightBody": "النظام يجد فقرة «سياسة الاسترجاع» في PDF الخاص بك، يضعها في الـ Prompt (طلب)، والذكاء الاصطناعي ينقل منها. دقة من بياناتك"
+      },
+      "ar-EG": {
+        "leftLabel": "غلط — سؤال للـ AI من دماغه",
+        "leftBody": "«إيه سياسة الاسترجاع؟» — الـ AI يخمّن من معلومات عامة. إجابة غلط = عميل زعلان.",
+        "rightLabel": "صح — RAG من ملفاتك",
+        "rightBody": "النظام يلاقي فقرة «سياسة الاسترجاع» في PDF بتاعك، يحطها في الـ prompt، والـ AI ينقل منها. دقة من بياناتك."
+      }
+    },
+    "missionIntro": {
+      "en": "Design map — not code. 10 minutes.",
+      "ar-MSA": "خريطة تصميم — ليس كود. ١٠ دقائق.",
+      "ar-Gulf": "خريطة تصميم — مو كود. ١٠ دقائق.",
+      "ar-EG": "المهمة خريطة تصميم — مش كود. ارسم إزاي RAG هيشتغل في تطبيقك.\n\n١٠ دقايق كفاية."
+    },
+    "visualIntent": {
+      "kind": "concept-scene",
+      "summary": "**3 Steps in the Background:**",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m9-l1-rag.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**3 Steps in the Background:**"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l1-rag.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**٣ خطوات في الخلفية:**"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l1-rag.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**٣ خطوات في الخلفية:**"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m9-l1-rag.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "(١) السؤال يتحوّل لبحث في ملفاتك. (٢) أقرب فقرات ترجع. (٣) السؤال + الفقرات يتبعتوا للـ AI — فيرد من ورقك مش يخمّن."
+        }
+      }
+    }
+  },
+  "method": 2,
+  "methodRationale": "builder-m9-l1-rag's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"Before the AI answers\" without inventing UI chrome or rendering paid text.",
+  "compositionPattern": "concept-scene-metaphor",
+  "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"AI Question from Memory\" vs \"RAG from Your Files\" for builder-m9-l1-rag.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "AI Question from Memory",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m9-l1-rag.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "RAG from Your Files",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m9-l1-rag.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "RAG",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m9-l1-rag.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "RAG is not Fine-tuning",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m9-l1-rag.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "سؤال للذكاء الاصطناعي من ذاكرته",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l1-rag.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "RAG من ملفاتك",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l1-rag.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "RAG",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l1-rag.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "RAG ليس Fine-tuning",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l1-rag.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "سؤال للذكاء الاصطناعي من ذاكرته",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l1-rag.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "RAG من ملفاتك",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l1-rag.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "RAG",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l1-rag.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "RAG مو تدريب دقيق",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l1-rag.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "غلط — سؤال للـ AI من دماغه",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m9-l1-rag.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "صح — RAG من ملفاتك",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m9-l1-rag.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "RAG",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m9-l1-rag.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "RAG مش Fine-tuning",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m9-l1-rag.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "RAG — AI Answers from Your Files: \"AI Question from Memory\" versus \"RAG from Your Files\" — Before the AI answers",
+    "ar-MSA": "RAG — إجابات من ملفاتك: \"سؤال للذكاء الاصطناعي من ذاكرته\" في مقابل \"RAG من ملفاتك\" — قبل أن يجيب الذكاء الاصطناعي",
+    "ar-Gulf": "RAG — إجابات من ملفاتك: \"سؤال للذكاء الاصطناعي من ذاكرته\" في مقابل \"RAG من ملفاتك\" — قبل ما يجاوب الذكاء الاصطناعي",
+    "ar-EG": "RAG = يرد من ملفاتك — مش من تخمين: \"غلط — سؤال للـ AI من دماغه\" في مقابل \"صح — RAG من ملفاتك\" — قبل ما الـ AI يجاوب، النظام بيدوّر في ملفاتك، يلاقي الحتة الصح، ويقول للـ AI: «جاوب من الورقة دي بس»."
+  },
+  "aiPromptContract": {
+    "providerClass": "text-free-illustration",
+    "paidAllowed": false,
+    "textFree": true,
+    "promptRules": [
+      "No embedded text, letters, numbers, or UI chrome anywhere in the image.",
+      "Depict the idea behind \"RAG — AI Answers from Your Files\" as a literal scene or metaphor, not as software.",
+      "Use a calm editorial illustration style consistent with a warm, minimal brand palette.",
+      "Keep the composition balanced so it still reads when mirrored for RTL locales."
+    ],
+    "costCeilingUsd": 0
+  },
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Clear Source\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m9-l1-rag.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Realistic Questions\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m9-l1-rag.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"مصدر واضح\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l1-rag.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"أسئلة واقعية\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l1-rag.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"مصدر واضح\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l1-rag.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"أسئلة واقعية\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l1-rag.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"مصدر واضح\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m9-l1-rag.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"أسئلة واقعية\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m9-l1-rag.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "798651fec3a5f3e9261a9055cc640e459d737d1a0be04a32bc5e09dc0ec5cd7a"
+}

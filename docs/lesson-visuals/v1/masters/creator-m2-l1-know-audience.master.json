@@ -1,0 +1,333 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "creator-m2-l1-know-audience",
+  "pathId": "creator",
+  "moduleId": "creator-m2",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Know Your Audience",
+    "ar-MSA": "اعرف جمهورك",
+    "ar-Gulf": "تعرف على جمهورك",
+    "ar-EG": "جمهور واحد واضح أحسن"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/creator-m2-l1-know-audience.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m2-l1-know-audience.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m2-l1-know-audience.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/creator-m2-l1-know-audience.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? The most significant shift in content happens when you define who you are really addressing.",
+        "Why now? In the Attention Economy — the clearer your audience, the more precise your message and the higher the chance of engagement.",
+        "What after the lesson? You will write one audience statement and three real pain points."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ أقوى نقلة في المحتوى تحدث عندما تحدّد من الشخص الذي تخاطبه فعلًا.",
+        "لماذا الآن؟ بعد Attention Economy (اقتصاد الانتباه) — كلما كان جمهورك أوضح، كانت رسالتك أدق وفرصة التفاعل أعلى.",
+        "ماذا بعد الدرس؟ ستكتب جملة جمهور واحدة و٣ آلام حقيقية."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ أقوى نقلة في المحتوى تصير لما تحدد من الشخص اللي تخاطبه.",
+        "ليش الحين؟ بعد اقتصاد الانتباه — كلما كان جمهورك أوضح، كانت رسالتك أدق وفرصة التفاعل أعلى.",
+        "وش بعد الدرس؟ راح تكتب جملة جمهور وحدة و٣ آلام حقيقية."
+      ],
+      "ar-EG": [
+        "أقوى نقلة في المحتوى بتحصل لما تحدد مين الشخص اللي بتخاطبه فعلًا.",
+        "كل ما جمهورك يبقى أوضح، رسالتك تبقى أدق وفرصة التفاعل أعلى."
+      ]
+    },
+    "coreIdea": {
+      "en": "not a reduction of opportunities",
+      "ar-MSA": "ليس تقليلًا للفرص",
+      "ar-Gulf": "ما يعني تقليل الفرص",
+      "ar-EG": "تحديد الجمهور مش تقليل للفرص، ده تركيز يخليك توصل بوضوح أسرع."
+    },
+    "tension": {
+      "en": "If you speak to everyone — you are not addressing anyone deeply. When the message is general, the recipient does not feel that the content is made for them.",
+      "ar-MSA": "إذا تحدّثت إلى الجميع — فأنت لا تخاطب أحدًا بعمق. عندما يكون الكلام عامًا، لا يشعر المتلقي أن المحتوى صُنع له.",
+      "ar-Gulf": "إذا كنت تخاطب الجميع — فأنت ما تخاطب أحد بعمق. لما يكون الكلام عام، المتلقي ما يحس إن المحتوى مخصص له.",
+      "ar-EG": "لما الكلام يكون عام، المتلقي مش بيحس إن المحتوى معمول له."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "General Content",
+        "rightLabel": "Targeted Content",
+        "leftBody": "Tries to fit everyone — often does not touch anyone deeply",
+        "rightBody": "Built for a clear person with their problems — closer to understanding and engagement"
+      },
+      "ar-MSA": {
+        "leftLabel": "محتوى عام",
+        "rightLabel": "محتوى موجّه",
+        "leftBody": "يحاول أن يناسب الجميع — فغالبًا لا يلمس أحدًا بعمق",
+        "rightBody": "مبني لشخص واضح بمشكلاته — أقرب للفهم والتفاعل"
+      },
+      "ar-Gulf": {
+        "leftLabel": "محتوى عام",
+        "rightLabel": "محتوى موجه",
+        "leftBody": "يحاول يناسب الجميع — وغالبًا ما يلمس أحد بعمق",
+        "rightBody": "مبني لشخص واضح بمشكلاته — أقرب للفهم والتفاعل"
+      },
+      "ar-EG": {
+        "leftLabel": "محتوى عام",
+        "leftBody": "بيحاول يناسب الجميع فغالبًا ما يلمسش حد بشكل عميق.",
+        "rightLabel": "محتوى موجه",
+        "rightBody": "مبني لشخص واضح بمشكلاته، فيبقى أقرب للفهم والتفاعل."
+      }
+    },
+    "missionIntro": {
+      "en": "The mission is a writing exercise — not a test. What is required: a clear audience sentence + three real pain points in people's words.",
+      "ar-MSA": "المهمة تدريب كتابة — ليس اختبارًا. المطلوب: جملة جمهور واضحة + ٣ آلام حقيقية بلسان الناس.",
+      "ar-Gulf": "المهمة تدريب كتابة — مو اختبار. المطلوب: جملة جمهور واضحة + ٣ آلام حقيقية بلسان الناس.",
+      "ar-EG": "المهمة تدريب كتابة مش اختبار. المطلوب جملة جمهور واضحة + ٣ آلام حقيقية بلسان الناس."
+    },
+    "visualIntent": {
+      "kind": "system",
+      "summary": "**Audience Persona Map** — the diagram captures the complete picture: **the person**, **their problems**, and **the goal** they are looking for. (Production ID:",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m2-l1-know-audience.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**Audience Persona Map** — the diagram captures the complete picture: **the person**, **their problems**, and **the goal** they are looking"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m2-l1-know-audience.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**خريطة شخصية الجمهور** — الرسم يجمع الصورة كاملة: **الشخص**، **مشاكله**، **هدفه** الذي يبحث عنه. (معرّف الإنتاج: `audience-persona`.)"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m2-l1-know-audience.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**خريطة شخصية الجمهور** — الرسم يجمع الصورة كاملة: **الشخص**، **مشاكله**، **هدفه** اللي يبحث عنه. (معرّف الإنتاج: `audience-persona`.)"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/creator-m2-l1-know-audience.ts",
+          "field": "block.caption (diagram)",
+          "quote": "الرسم ده بيساعدك تجمع الصورة كاملة: الشخص، مشاكله، وهدفه اللي بيدور عليه."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "creator-m2-l1-know-audience's package marks a Diagram intent (audience-persona); the underlying relationship reads as system, so a deterministic SVG panel keeps the real General Content/Targeted Content labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "system-map-panel",
+  "duplicationJustification": "Shares the \"system-map-panel\" layout template with 3 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"General Content\" vs \"Targeted Content\" for creator-m2-l1-know-audience.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "General Content",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m2-l1-know-audience.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Targeted Content",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m2-l1-know-audience.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Persona",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m2-l1-know-audience.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Pain Point",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m2-l1-know-audience.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "محتوى عام",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m2-l1-know-audience.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "محتوى موجّه",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m2-l1-know-audience.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Persona (شخصية الجمهور)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m2-l1-know-audience.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Pain Point (نقطة ألم)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m2-l1-know-audience.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "محتوى عام",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m2-l1-know-audience.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "محتوى موجه",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m2-l1-know-audience.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "شخصية الجمهور",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m2-l1-know-audience.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "نقطة ألم",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m2-l1-know-audience.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "محتوى عام",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m2-l1-know-audience.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "محتوى موجه",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m2-l1-know-audience.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Persona",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m2-l1-know-audience.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Pain Point",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m2-l1-know-audience.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Know Your Audience: \"General Content\" versus \"Targeted Content\" — not a reduction of opportunities",
+    "ar-MSA": "اعرف جمهورك: \"محتوى عام\" في مقابل \"محتوى موجّه\" — ليس تقليلًا للفرص",
+    "ar-Gulf": "تعرف على جمهورك: \"محتوى عام\" في مقابل \"محتوى موجه\" — ما يعني تقليل الفرص",
+    "ar-EG": "جمهور واحد واضح أحسن: \"محتوى عام\" في مقابل \"محتوى موجه\" — تحديد الجمهور مش تقليل للفرص، ده تركيز يخليك توصل بوضوح أسرع."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Clarity of Audience\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m2-l1-know-audience.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Quality of Pain Points\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m2-l1-know-audience.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح الجمهور\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m2-l1-know-audience.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"جودة الآلام\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m2-l1-know-audience.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح الجمهور\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m2-l1-know-audience.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"جودة الآلام\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m2-l1-know-audience.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح الجمهور\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m2-l1-know-audience.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"جودة الآلام\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m2-l1-know-audience.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "070187b557fc180d56a5bb96b4cefa98b32cb6a735681b9328ce28c5bf5e2a32"
+}

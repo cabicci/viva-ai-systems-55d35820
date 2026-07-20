@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m5-l3-backend-api",
+  "pathId": "builder",
+  "moduleId": "builder-m5",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Backend & API (Mail Carrier)",
+    "ar-MSA": "الخادم وواجهات البرمجة",
+    "ar-Gulf": "الـ Backend والـ API",
+    "ar-EG": "الـ API بتوصّل اللي ظاهر بالشغل المخفي"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m5-l3-backend-api.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l3-backend-api.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l3-backend-api.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m5-l3-backend-api.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? API (Application Programming Interface / Mail Carrier) connects what the client sees to the work happening behind the scenes.",
+        "Why now? Without a 'Mail Carrier' between the interface and the backend — no application works.",
+        "What after the lesson? You will map out: Button → What happens in the backend."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ API (واجهة برمجة التطبيقات / ساعي البريد) تربط ما يراه العميل بالعمل الذي يحدث خلف الشاشة.",
+        "لماذا الآن؟ بدون «ساعي بريد» بين الواجهة والكواليس — لا يعمل أي تطبيق.",
+        "ماذا بعد الدرس؟ سترسم خريطة: زر → ماذا يحدث في الكواليس."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ واجهة البرمجة (API) تربط ما يراه العميل بالعمل الذي يحدث خلف الشاشة.",
+        "ليش الحين؟ بدون «ساعي بريد» بين الواجهة والكواليس — ما راح يشتغل أي تطبيق.",
+        "وش بعد الدرس؟ راح ترسم خريطة: زر → وش يصير في الكواليس."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ الـ API بتوصّل اللي العميل يشوفه بالشغل اللي بيحصل ورا.",
+        "ليه دلوقتي؟ من غير «ساعي بريد» بين الواجهة والكواليس — مفيش تطبيق يشتغل.",
+        "هتعمل إيه بعد الدرس؟ هترسم خريطة: زرار → إيه اللي بيحصل في الكواليس."
+      ]
+    },
+    "coreIdea": {
+      "en": "The client types in the interface and clicks a button",
+      "ar-MSA": "العميل يكتب في الواجهة وينقر زرًا",
+      "ar-Gulf": "العميل يكتب في الواجهة وينقر زر",
+      "ar-EG": "العميل بيكتب في الواجهة ويدوس زرار — ده اللي يشوفه."
+    },
+    "tension": {
+      "en": "The button works. The screen loads. But the response doesn't arrive — or an error appears. The interface did its job: It took your input and clicked 'Send'. But no one connects it to the backend.",
+      "ar-MSA": "الزر يعمل. الشاشة تحمّل. لكن الرد لا يصل — أو يظهر خطأ. الواجهة أدت عملها: أخذت كلامك ونقر «إرسال». لكن لا أحد يربطها بالكواليس.",
+      "ar-Gulf": "الزر يشتغل. الشاشة تحمل. لكن الرد ما يوصل — أو يطلع خطأ. الواجهة سوت شغلها: أخذت كلامك ونقرت «إرسال». لكن ما في أحد يربطها بالكواليس.",
+      "ar-EG": "الزرار شغّال. الشاشة بتحمّل. بس الرد مش بيوصل — أو بيطلع خطأ."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Without API",
+        "rightLabel": "With API",
+        "leftBody": "The client writes on the menu — but no one delivers the order to the kitchen. The menu is nice — but there's no food.",
+        "rightBody": "The client orders → the waiter takes the order → the kitchen cooks → the waiter brings back the food. Every step is connected."
+      },
+      "ar-MSA": {
+        "leftLabel": "بدون API",
+        "rightLabel": "مع API",
+        "leftBody": "العميل يكتب على المنيو — لكن لا أحد يوصّل الطلب للمطبخ. المنيو جميل — لكن لا طعام",
+        "rightBody": "العميل يطلب → الجرسون يأخذ الطلب → المطبخ يطبخ → الجرسون يرجع الطعام. كل خطوة مربوطة"
+      },
+      "ar-Gulf": {
+        "leftLabel": "بدون API",
+        "rightLabel": "مع API",
+        "leftBody": "العميل يكتب على المنيو — لكن ما في أحد يوصل الطلب للمطبخ. المنيو حلو — لكن ما في أكل",
+        "rightBody": "العميل يطلب → الجرسون يأخذ الطلب → المطبخ يطبخ → الجرسون يرجع الأكل. كل خطوة مربوطة"
+      },
+      "ar-EG": {
+        "leftLabel": "من غير API",
+        "leftBody": "العميل يكتب على المنيو — بس مفيش حد يوصّل الطلب للمطبخ. المنيو حلو — بس مفيش أكل.",
+        "rightLabel": "مع API",
+        "rightBody": "العميل يطلب → الجرسون ياخد الطلب → المطبخ يطبخ → الجرسون يرجّع الأكل. كل خطوة مربوطة."
+      }
+    },
+    "missionIntro": {
+      "en": "Planning mission — not coding. 5–10 minutes is enough.",
+      "ar-MSA": "مهمة تخطيط — ليست كودًا. ٥–١٠ دقائق كافية.",
+      "ar-Gulf": "مهمة تخطيط — مو كود. ٥–١٠ دقائق كافية.",
+      "ar-EG": "المهمة دي تخطيط — مش كود. اختار تطبيق AI بتستخدمه.\n\n٥–١٠ دقايق كفاية."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "**Type a message and click Send**: **the interface sends a request → the backend talks to AI → the response returns to the screen**. **This is the API path**.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l3-backend-api.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**Type a message and click Send**: **the interface sends a request → the backend talks to AI → the response returns to the screen**. **This"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l3-backend-api.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**اكتب رسالة وانقر إرسال**: **الواجهة ترسل طلبًا → الكواليس تكلّم AI → الرد يعود للشاشة**. **هذا مسار API**."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l3-backend-api.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**اكتب رسالة وانقر إرسال**: **الواجهة ترسل طلب → الكواليس تتكلم مع AI → الرد يرجع للشاشة**. **هذا مسار API**."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m5-l3-backend-api.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "أول ما تكتب رسالة وتدوس إرسال: الواجهة تبعت طلب → الكواليس تكلّم AI → الرد يرجع على الشاشة. ده مسار API."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "builder-m5-l3-backend-api's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Without API / With API) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Without API\" vs \"With API\" for builder-m5-l3-backend-api.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Without API",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l3-backend-api.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "With API",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l3-backend-api.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Backend",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l3-backend-api.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "API (Mail Carrier)",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l3-backend-api.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "بدون API",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l3-backend-api.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مع API",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l3-backend-api.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Backend (الكواليس)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l3-backend-api.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "API (ساعي البريد)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l3-backend-api.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "بدون API",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l3-backend-api.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مع API",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l3-backend-api.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Backend (الكواليس)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l3-backend-api.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "API (ساعي البريد)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l3-backend-api.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "من غير API",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m5-l3-backend-api.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مع API",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m5-l3-backend-api.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Backend (الكواليس)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m5-l3-backend-api.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "API (ساعي البريد)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m5-l3-backend-api.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Backend & API (Mail Carrier): \"Without API\" versus \"With API\" — The client types in the interface and clicks a button",
+    "ar-MSA": "الخادم وواجهات البرمجة: \"بدون API\" في مقابل \"مع API\" — العميل يكتب في الواجهة وينقر زرًا",
+    "ar-Gulf": "الـ Backend والـ API: \"بدون API\" في مقابل \"مع API\" — العميل يكتب في الواجهة وينقر زر",
+    "ar-EG": "الـ API بتوصّل اللي ظاهر بالشغل المخفي: \"من غير API\" في مقابل \"مع API\" — العميل بيكتب في الواجهة ويدوس زرار — ده اللي يشوفه."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Clear Path\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m5-l3-backend-api.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Logical\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m5-l3-backend-api.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"مسار واضح\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l3-backend-api.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"منطقي\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l3-backend-api.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"مسار واضح\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l3-backend-api.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"منطقي\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l3-backend-api.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"مسار واضح\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m5-l3-backend-api.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"منطقي\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m5-l3-backend-api.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "ba36f1b9854ce4b911b861d8611e0d337f2f9d5a821488dce3e0a4d02bcb9882"
+}

@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "business-m2-l1-customer-lifecycle",
+  "pathId": "business",
+  "moduleId": "business-m2",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Customer Lifecycle",
+    "ar-MSA": "دورة حياة العميل",
+    "ar-Gulf": "رحلة العميل",
+    "ar-EG": "٥ محطات — وكل محطة فرصة"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/business-m2-l1-customer-lifecycle.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l1-customer-lifecycle.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l1-customer-lifecycle.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/business-m2-l1-customer-lifecycle.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? A customer is not a single transaction — it is a Customer Journey from the first time they hear about you until they recommend you. AI can enhance every stage.",
+        "Why now? After distinguishing between Reactive and Proactive business approaches, we move to the most important part of any business: the Customer Journey.",
+        "What comes after the lesson? You will map a real Customer Journey — and identify the Weakest Stage."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ العميل ليس صفقة واحدة — هو رحلة (Customer Journey) من أول ما يسمع عنك حتى يرشّحك. AI يمكن أن يحسّن كل محطة.",
+        "لماذا الآن؟ بعد التفرقة بين العمل Reactive (رد فعل) و Proactive (استباقي)، ننتقل لأهم جزء في أي عمل: رحلة العميل.",
+        "ماذا بعد الدرس؟ سترسم رحلة عميل حقيقية — وتحدّد أضعف محطة (Weakest Stage)."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ العميل مو صفقة وحدة — هو رحلة (Customer Journey) من أول ما يسمع عنك لين يرشّحك. AI يقدر يحسّن كل مرحلة.",
+        "ليش الحين؟ بعد ما فرّقنا بين العمل Reactive (رد فعل) و Proactive (استباقي)، ننتقل لأهم جزء في أي عمل: رحلة العميل.",
+        "وش بعد الدرس؟ راح ترسم رحلة عميل حقيقية — وتحدد أضعف مرحلة."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ العميل مش صفقة واحدة — هو رحلة من أول ما يسمع عنك لحد ما يرشّحك. والـ AI يقدر يحسّن كل محطة.",
+        "ليه دلوقتي؟ بعد ما فرّقت بين الشغل اللي بيطاردك والشغل اللي إنت بتقوده، ننتقل للجزء الأهم في أي بيزنس: رحلة العميل.",
+        "هتعمل إيه بعد الدرس؟ هترسم رحلة عميل حقيقية عندك — وتحدّد أضعف محطة."
+      ]
+    },
+    "coreIdea": {
+      "en": "Awareness:",
+      "ar-MSA": "Awareness (وعي):",
+      "ar-Gulf": "Awareness (وعي):",
+      "ar-EG": "Awareness (وعي): العميل عرف إنك موجود — إعلان، صديق، بحث."
+    },
+    "tension": {
+      "en": "Many see the customer as 'buy and done'. They bring in new customers through ads — but the return rate is low and costs are rising. The problem is often not 'we need more ads' — the issue lies in a Weak Stage in the jour",
+      "ar-MSA": "كثيرون يرون العميل = «اشترى وانتهى». يجلبون جددًا بالإعلانات — لكن نسبة الرجوع ضعيفة والتكلفة تزيد. المشكلة غالبًا ليست «نحتاج إعلانات أكثر» — المشكلة في محطة ضعيفة في الرحلة: Awareness (وعي)، Consideration (تفكير)، Purc",
+      "ar-Gulf": "كثير من الناس يشوفون العميل = «اشترى وانتهى». يجلبون جدد بالإعلانات — لكن نسبة الرجوع ضعيفة والتكلفة تزيد. المشكلة غالبًا مو «نحتاج إعلانات أكثر» — المشكلة في مرحلة ضعيفة في الرحلة: Awareness (وعي)، Consideration (تفكير)",
+      "ar-EG": "كتير بيشوفوا العميل = «حد اشترى وخلاص». يجيبوا جداد بالإعلانات، بس نسبة الرجوع ضعيفة — والتكلفة تزيد كل شهر."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Focus on bringing in new customers only",
+        "rightLabel": "Fix the weakest stage",
+        "leftBody": "Increase ads — new customers come — but the same percentage does not return — costs rise",
+        "rightBody": "Map the journey — discover that post-purchase follow-up is weak — a simple message + AI — the same customers return more"
+      },
+      "ar-MSA": {
+        "leftLabel": "تركّز على جلب جدد فقط",
+        "rightLabel": "تصلّح أضعف محطة",
+        "leftBody": "تزيد الإعلانات — الجدد يأتون — لكن نفس النسبة لا ترجع — التكلفة ترتفع",
+        "rightBody": "ترسم الرحلة — تكتشف أن المتابعة بعد الشراء ضعيفة — رسالة بسيطة + AI — نفس العملاء يرجعون أكثر"
+      },
+      "ar-Gulf": {
+        "leftLabel": "تركّز على جلب جدد فقط",
+        "rightLabel": "تصلّح أضعف مرحلة",
+        "leftBody": "تزيد الإعلانات — الجدد يأتون — لكن نفس النسبة لا ترجع — التكلفة ترتفع",
+        "rightBody": "ترسم الرحلة — تكتشف أن المتابعة بعد الشراء ضعيفة — رسالة بسيطة + AI — نفس العملاء يرجعون أكثر"
+      },
+      "ar-EG": {
+        "leftLabel": "تركّز على جلب جداد بس",
+        "leftBody": "تزود الإعلانات. العملاء الجداد ييجوا — بس نفس النسبة ما بترجعش. التكلفة تطلع والربح يثبت.",
+        "rightLabel": "تصلّح أضعف محطة",
+        "rightBody": "ترسم الرحلة، تكتشف إن المتابعة بعد الشراء ضعيفة. رسالة بسيطة + متابعة بالـ AI — نفس العملاء يرجعوا أكتر."
+      }
+    },
+    "missionIntro": {
+      "en": "An application to your business — not theory. Map a real customer journey through the five stages. Then identify the Weakest Stage and why.",
+      "ar-MSA": "تطبيق على عملك — ليس نظرية. ارسم رحلة عميل حقيقي عبر المحطات الخمس. ثم حدّد أضعف محطة ولماذا.",
+      "ar-Gulf": "تطبيق على عملك — مو نظرية. ارسم رحلة عميل حقيقي عبر المراحل الخمس. بعدين حدّد أضعف مرحلة ولماذا.",
+      "ar-EG": "المهمة دي تطبيق على بيزنسك — مش نظرية. ارسم رحلة عميل حقيقي (أو نوع عميلك النموذجي) عبر المحطات الخمس. بعدين حدّد أضعف محطة وليه.\n\nمش مطلوب حملة كاملة — مطلوب خريطة صادقة."
+    },
+    "visualIntent": {
+      "kind": "process",
+      "summary": "Map of **5 Stages** — funnel: each stage has those who continue and those who stop. The goal is to know **where the leak is**. (The visual original remains unch",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m2-l1-customer-lifecycle.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "Map of **5 Stages** — funnel: each stage has those who continue and those who stop. The goal is to know **where the leak is**. (The visual o"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l1-customer-lifecycle.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Awareness (وعي):"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l1-customer-lifecycle.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Awareness (وعي):"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/business-m2-l1-customer-lifecycle.ts",
+          "field": "block.caption (diagram)",
+          "quote": "فكّرها قمع: كل محطة فيها ناس بتكمل وناس بتوقف. الهدف تعرف فين التسريب — مش تملى القمع من فوق بس."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "business-m2-l1-customer-lifecycle's package marks a Diagram intent (customer-lifecycle-funnel); the underlying relationship reads as process, so a deterministic SVG panel keeps the real Focus on bringing in new customers only/Fix the weakest stage labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "process-stage-strip",
+  "duplicationJustification": "Shares the \"process-stage-strip\" layout template with 8 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Focus on bringing in new customers only\" vs \"Fix the weakest stage\" for business-m2-l1-customer-lifecycle.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Focus on bringing in new customers only",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m2-l1-customer-lifecycle.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Fix the weakest stage",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m2-l1-customer-lifecycle.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Customer Journey",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m2-l1-customer-lifecycle.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Weakest Stage",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m2-l1-customer-lifecycle.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "تركّز على جلب جدد فقط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l1-customer-lifecycle.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تصلّح أضعف محطة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l1-customer-lifecycle.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Customer Journey (رحلة العميل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l1-customer-lifecycle.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Weakest Stage (أضعف محطة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l1-customer-lifecycle.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "تركّز على جلب جدد فقط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l1-customer-lifecycle.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تصلّح أضعف مرحلة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l1-customer-lifecycle.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Customer Journey (رحلة العميل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l1-customer-lifecycle.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Weakest Stage (أضعف مرحلة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l1-customer-lifecycle.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "تركّز على جلب جداد بس",
+        "source": {
+          "path": "src/components/intro/lessons/business-m2-l1-customer-lifecycle.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تصلّح أضعف محطة",
+        "source": {
+          "path": "src/components/intro/lessons/business-m2-l1-customer-lifecycle.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Customer Journey (رحلة العميل)",
+        "source": {
+          "path": "src/components/intro/lessons/business-m2-l1-customer-lifecycle.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Weakest Stage (أضعف محطة)",
+        "source": {
+          "path": "src/components/intro/lessons/business-m2-l1-customer-lifecycle.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Customer Lifecycle: \"Focus on bringing in new customers only\" versus \"Fix the weakest stage\" — Awareness:",
+    "ar-MSA": "دورة حياة العميل: \"تركّز على جلب جدد فقط\" في مقابل \"تصلّح أضعف محطة\" — Awareness (وعي):",
+    "ar-Gulf": "رحلة العميل: \"تركّز على جلب جدد فقط\" في مقابل \"تصلّح أضعف مرحلة\" — Awareness (وعي):",
+    "ar-EG": "٥ محطات — وكل محطة فرصة: \"تركّز على جلب جداد بس\" في مقابل \"تصلّح أضعف محطة\" — Awareness (وعي): العميل عرف إنك موجود — إعلان، صديق، بحث."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Real Journey\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/business-m2-l1-customer-lifecycle.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Weakness Diagnosis\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/business-m2-l1-customer-lifecycle.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"رحلة واقعية\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l1-customer-lifecycle.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"تشخيص الضعف\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l1-customer-lifecycle.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"رحلة واقعية\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l1-customer-lifecycle.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"تشخيص الضعف\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l1-customer-lifecycle.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"رحلة واقعية\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m2-l1-customer-lifecycle.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"تشخيص الضعف\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m2-l1-customer-lifecycle.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "e32d60879501fad9d9c8ae6af4c46300d7feb10a3bb0371d1ec551811fb93ef8"
+}

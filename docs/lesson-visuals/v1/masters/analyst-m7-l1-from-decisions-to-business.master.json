@@ -1,0 +1,238 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "analyst-m7-l1-from-decisions-to-business",
+  "pathId": "analyst",
+  "moduleId": "analyst-m7",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "From Decisions to Business",
+    "ar-MSA": "من القرارات إلى نمو الأعمال",
+    "ar-Gulf": "من القرارات للأعمال",
+    "ar-EG": "قرارات أسبوعية → هدف ٦ شهور"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m7-l1-from-decisions-to-business.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m7-l1-from-decisions-to-business.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m7-l1-from-decisions-to-business.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/analyst-m7-l1-from-decisions-to-business.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What Will You Understand? Weekly decisions build towards a 6-month goal."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ القرارات الأسبوعية تتجمّع لهدف ٦ شهور."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ القرارات الأسبوعية تتراكم لهدف 6 شهور."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ القرارات الأسبوعية الصغيرة بتتجمّع لهدف أكبر — مش قرارات معزولة.",
+        "ليه دلوقتي؟ بعد الريفيو والأسئلة والتفسير، محتاج تربط قراراتك باتجاه البيزنس.",
+        "هتعمل إيه بعد الدرس؟ هتكتب هدف ٦ شهور + ٣ أرقام تتابع التقدّم."
+      ]
+    },
+    "coreIdea": {
+      "en": "Decision Backlog",
+      "ar-MSA": "Decision Backlog (مخزون قرارات)",
+      "ar-Gulf": "مخزون القرارات",
+      "ar-EG": "كل قرار أسبوعي لازم يخدم هدف أكبر — وإلا بيبقى busy work."
+    },
+    "tension": {
+      "en": "Decision Backlog → To Do · Doing · Done Progress Numbers — 3 numbers link the week to the goal.",
+      "ar-MSA": "Decision Backlog (مخزون قرارات) → To Do · Doing · Done Progress Numbers (أرقام التقدّم) — ٣ أرقام تربط الأسبوع بالهدف.",
+      "ar-Gulf": "مخزون القرارات → To Do · Doing · Done أرقام التقدم — 3 أرقام تربط الأسبوع بالهدف.",
+      "ar-EG": "كل أسبوع قرار: «نزود منشورات» — «نخفّض سعر» — «نجرب حملة» — ومفيش صورة للهدف الكبير."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Lesson Start",
+        "rightLabel": "Decision Backlog",
+        "leftBody": "Weekly decisions build towards a 6-month goal.",
+        "rightBody": "Decision Backlog"
+      },
+      "ar-MSA": {
+        "leftLabel": "بداية الدرس",
+        "rightLabel": "Decision Backlog (مخزون قرارات)",
+        "leftBody": "القرارات الأسبوعية تتجمّع لهدف ٦ شهور.",
+        "rightBody": "Decision Backlog (مخزون قرارات)"
+      },
+      "ar-Gulf": {
+        "leftLabel": "التوجيه",
+        "rightLabel": "مخزون القرارات",
+        "leftBody": "القرارات الأسبوعية تتراكم لهدف 6 شهور.",
+        "rightBody": "مخزون القرارات"
+      },
+      "ar-EG": {
+        "leftLabel": "قائمة قرارات بتطول",
+        "rightLabel": "قرار → owner → deadline",
+        "leftBody": "Analyst بيطلّع قرارات أسبوعيًا. مفيش حد بينفّذ. بعد شهرين = document ميّت.",
+        "rightBody": "كل قرار له مكان في النظام. التنفيذ بقى جزء من الشغل اليومي — مش «لما نفضى»."
+      }
+    },
+    "missionIntro": {
+      "en": "| Goal + Numbers | 60% | | Weekly Connection | 40% |",
+      "ar-MSA": "| هدف + أرقام | 60% | | ربط أسبوعي | 40% |",
+      "ar-Gulf": "| هدف + أرقام | 60% | | ربط أسبوعي | 40% |",
+      "ar-EG": "المهمة دي ربط استراتيجي — مش خطة طويلة. اكتب هدف واحد لـ ٦ شهور + ٣ أرقام تتابع التقدّم + قرار أسبوعي واحد يخدم الهدف.\n\nمش لازم شركة — هدف شخصي، فريق، أو بيزنس يكفي. ممكن الـ AI يساعدك تصيغ — إنت تختار النهائي."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "- **Progress Numbers** — 3 numbers link the week to the goal.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m7-l1-from-decisions-to-business.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "- **Progress Numbers** — 3 numbers link the week to the goal."
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m7-l1-from-decisions-to-business.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "- **Progress Numbers (أرقام التقدّم)** — ٣ أرقام تربط الأسبوع بالهدف."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m7-l1-from-decisions-to-business.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "- **أرقام التقدم** — 3 أرقام تربط الأسبوع بالهدف."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/analyst-m7-l1-from-decisions-to-business.ts",
+          "field": "block.caption (diagram)",
+          "quote": "قرارات Analyst → Kanban (To Do · Doing · Done) — كل قرار له owner. استخدم الرسم في المهمة."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "analyst-m7-l1-from-decisions-to-business's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Lesson Start / Decision Backlog) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 60 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Lesson Start\" vs \"Decision Backlog\" for analyst-m7-l1-from-decisions-to-business.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Lesson Start",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m7-l1-from-decisions-to-business.json",
+          "field": "sections[role=Tension].subtitle"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Decision Backlog",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m7-l1-from-decisions-to-business.json",
+          "field": "sections[role=Core idea].subtitle"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "بداية الدرس",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m7-l1-from-decisions-to-business.json",
+          "field": "sections[role=Tension].subtitle"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Decision Backlog (مخزون قرارات)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m7-l1-from-decisions-to-business.json",
+          "field": "sections[role=Core idea].subtitle"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "التوجيه",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m7-l1-from-decisions-to-business.json",
+          "field": "sections[role=Tension].subtitle"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مخزون القرارات",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m7-l1-from-decisions-to-business.json",
+          "field": "sections[role=Core idea].subtitle"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "قائمة قرارات بتطول",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m7-l1-from-decisions-to-business.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "قرار → owner → deadline",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m7-l1-from-decisions-to-business.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Decision Backlog (مخزون قرارات)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m7-l1-from-decisions-to-business.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Progress Numbers (أرقام التقدّم)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m7-l1-from-decisions-to-business.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "From Decisions to Business: \"Lesson Start\" versus \"Decision Backlog\" — Decision Backlog",
+    "ar-MSA": "من القرارات إلى نمو الأعمال: \"بداية الدرس\" في مقابل \"Decision Backlog (مخزون قرارات)\" — Decision Backlog (مخزون قرارات)",
+    "ar-Gulf": "من القرارات للأعمال: \"التوجيه\" في مقابل \"مخزون القرارات\" — مخزون القرارات",
+    "ar-EG": "قرارات أسبوعية → هدف ٦ شهور: \"قائمة قرارات بتطول\" في مقابل \"قرار → owner → deadline\" — كل قرار أسبوعي لازم يخدم هدف أكبر — وإلا بيبقى busy work."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"هدف + أرقام\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m7-l1-from-decisions-to-business.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"ربط أسبوعي\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m7-l1-from-decisions-to-business.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "499854494c44d8aba80eb6622304cf1ed879601c9b0a434d27ac1b59ded12f08"
+}

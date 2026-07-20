@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "analyst-m3-l1-three-sources",
+  "pathId": "analyst",
+  "moduleId": "analyst-m3",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Three Sources",
+    "ar-MSA": "المصادر الثلاثة",
+    "ar-Gulf": "ثلاث مصادر",
+    "ar-EG": "إيه اللي عندك دلوقتي؟"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m3-l1-three-sources.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m3-l1-three-sources.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m3-l1-three-sources.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/analyst-m3-l1-three-sources.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? A good decision often needs three sources: what people do, what actually happened, and what people say.",
+        "Why now? After learning to ask the right question — you need to know where the answer comes from. One source may hide part of the picture.",
+        "What after the lesson? You will connect one decision to three different sources."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ القرار الجيد غالبًا يحتاج ٣ مصادر: ما يفعله الناس، ما حدث فعلًا، وما يقوله الناس.",
+        "لماذا الآن؟ بعد أن تعلّمت طرح السؤال الصحيح — يجب أن تعرف من أين تأتي الإجابة. مصدر واحد قد يُخفِي جزءًا من الصورة.",
+        "ماذا بعد الدرس؟ ستربط قرارًا واحدًا بـ ٣ مصادر مختلفة."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ القرار الجيد يحتاج غالبًا ٣ مصادر: وش يسوي الناس، وش صار فعلًا، ووش يقولون الناس.",
+        "ليش الحين؟ بعد ما تعلمت تطرح السؤال الصحيح — لازم تعرف من وين تجيب الإجابة. مصدر واحد ممكن يخفي جزء من الصورة.",
+        "وش بعد الدرس؟ راح تربط قرار واحد بـ ٣ مصادر مختلفة."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ القرار الكويس غالبًا محتاج ٣ مصادر: إيه اللي الناس بتعمله، إيه النتائج، وإيه اللي الناس بتقوله.",
+        "ليه دلوقتي؟ بعد ما عرفت تسأل صح، لازم تعرف منين تجيب الإجابة — مصدر واحد ممكن يغفّلك.",
+        "هتعمل إيه بعد الدرس؟ هتربط قرار واحد بـ ٣ مصادر مختلفة."
+      ]
+    },
+    "coreIdea": {
+      "en": "Behavior",
+      "ar-MSA": "سلوك (Behavior)",
+      "ar-Gulf": "السلوك",
+      "ar-EG": "فهمت إيه؟ القرار الكويس محتاج سلوك + نتائج + كلام — مصدر واحد بيديك جزء بس."
+    },
+    "tension": {
+      "en": "WhatsApp in one place, invoices in another, your notes in a notebook — each source alone. You miss half the context. You decide based on just one invoice — and don’t hear that customers are talking about something else o",
+      "ar-MSA": "واتساب في مكان، الفواتير في مكان، ملاحظاتك في دفتر — كل مصدر لوحده. تنسى نصف Context (السياق). تقرّر من فاتورة فقط — ولا تسمع أن العملاء يتحدّثون عن شيء آخر على الواتساب.",
+      "ar-Gulf": "واتساب في مكان، الفواتير في مكان، ملاحظاتك في دفتر — كل مصدر لحاله. تنسى نصف السياق. تقرر من فاتورة وحدة — ولا تسمع أن العملاء يتكلمون عن شي ثاني على الواتساب.",
+      "ar-EG": "واتساب في مكان، الفواتير في مكان، ملاحظاتك في دفتر — كل مصدر لوحده. بتنسى نص الـ context."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "One Source",
+        "rightLabel": "Three Sources",
+        "leftBody": "Decide based on sales invoices only — sales dropped, so you reduce advertising. But customers on WhatsApp are asking about another product.",
+        "rightBody": "Invoices + WhatsApp + Team Notes — you discover that the issue is with one product and not the advertising. The decision changes."
+      },
+      "ar-MSA": {
+        "leftLabel": "مصدر واحد",
+        "rightLabel": "ثلاث مصادر",
+        "leftBody": "تقرّر من فواتير المبيعات فقط — المبيعات نزلت، فتقلّل الإعلان. لكن العملاء على الواتساب يسألون عن منتج آخر",
+        "rightBody": "فواتير + واتساب + ملاحظات الفريق — تكتشف أن المشكلة في منتج واحد وليس في الإعلان. القرار يتغيّر"
+      },
+      "ar-Gulf": {
+        "leftLabel": "مصدر واحد",
+        "rightLabel": "ثلاث مصادر",
+        "leftBody": "تقرر من فواتير المبيعات بس — المبيعات نزلت، فتقلل الإعلان. لكن العملاء على الواتساب يسألون عن منتج ثاني",
+        "rightBody": "فواتير + واتساب + ملاحظات الفريق — تكتشف أن المشكلة في منتج واحد مو في الإعلان. القرار يتغير"
+      },
+      "ar-EG": {
+        "leftLabel": "مصدر واحد",
+        "leftBody": "بتقرّر من فواتير المبيعات بس — المبيعات نزلت، فبتقلّل الإعلان. بس العملاء على الواتساب بيسألوا عن منتج تاني.",
+        "rightLabel": "تلات مصادر",
+        "rightBody": "فواتير + واتساب + ملاحظات الفريق — تكتشف إن المشكلة في منتج واحد مش في الإعلان. القرار يتغيّر."
+      }
+    },
+    "missionIntro": {
+      "en": "A process mapping mission — not building a complicated system. Choose one decision you want to make (or a similar decision). Identify three different sources: what people do, what happened, and what people say. No automation required — clarity of sources is needed.",
+      "ar-MSA": "مهمة خريطة عملية — ليس بناء نظام معقّد. اختر قرارًا واحدًا تريد اتخاذه (أو قرارًا قريبًا). حدّد ٣ مصادر مختلفة: ما يفعله الناس، ما حدث، وما يقوله الناس. لا أتمتة مطلوبة — وضوح المصادر مطلوب.",
+      "ar-Gulf": "مهمة خريطة عملية — مو بناء نظام معقد. اختر قرار واحد تبي تتخذه (أو قرار قريب). حدد ٣ مصادر مختلفة: وش يسوي الناس، وش صار، ووش يقولون الناس. ما يحتاج أتمتة — وضوح المصادر مطلوب.",
+      "ar-EG": "المهمة دي خريطة عملية — مش بناء نظام معقّد. اختار قرار واحد عايز تاخده (أو قرار قريب). حدّد ٣ مصادر مختلفة: إيه اللي الناس بتعمله، إيه النتائج، وإيه اللي الناس بتقوله.\n\nمش مطلوب أتمتة — مطلوب وضوح المصادر."
+    },
+    "visualIntent": {
+      "kind": "process",
+      "summary": "**Three Sources → One Decision** (ID: `three-sources-merge`): **Behavior + Results + Words** in one place — **One Question = Stronger Answer**. Use it in the mi",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m3-l1-three-sources.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**Three Sources → One Decision** (ID: `three-sources-merge`): **Behavior + Results + Words** in one place — **One Question = Stronger Answer"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m3-l1-three-sources.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**٣ مصادر → قرار واحد** (معرّف: `three-sources-merge`): **سلوك + نتائج + كلام** في مكان واحد — **سؤال واحد = إجابة أقوى**. استخدمه في المهمة"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m3-l1-three-sources.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**٣ مصادر → قرار واحد** (معرّف: `three-sources-merge`): **سلوك + نتائج + كلام** في مكان واحد — **سؤال واحد = إجابة أقوى**. استخدمه في المهمة"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/analyst-m3-l1-three-sources.ts",
+          "field": "block.caption (diagram)",
+          "quote": "سلوك + نتائج + كلام في مكان واحد — سؤال واحد = إجابة أقوى. استخدمه في المهمة."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "analyst-m3-l1-three-sources's package marks a Diagram intent (three-sources-merge); the underlying relationship reads as process, so a deterministic SVG panel keeps the real One Source/Three Sources labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "process-stage-strip",
+  "duplicationJustification": "Shares the \"process-stage-strip\" layout template with 8 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"One Source\" vs \"Three Sources\" for analyst-m3-l1-three-sources.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "One Source",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m3-l1-three-sources.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Three Sources",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m3-l1-three-sources.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Source",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m3-l1-three-sources.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "SSOT (Single Source of Truth)",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m3-l1-three-sources.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "مصدر واحد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m3-l1-three-sources.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "ثلاث مصادر",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m3-l1-three-sources.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Source (مصدر)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m3-l1-three-sources.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "SSOT (مكان واحد للحقيقة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m3-l1-three-sources.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "مصدر واحد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m3-l1-three-sources.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "ثلاث مصادر",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m3-l1-three-sources.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Source (مصدر)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m3-l1-three-sources.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "SSOT (مكان واحد للحقيقة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m3-l1-three-sources.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "مصدر واحد",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m3-l1-three-sources.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تلات مصادر",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m3-l1-three-sources.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Source (مصدر)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m3-l1-three-sources.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "SSOT (مكان واحد للحقيقة)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m3-l1-three-sources.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Three Sources: \"One Source\" versus \"Three Sources\" — Behavior",
+    "ar-MSA": "المصادر الثلاثة: \"مصدر واحد\" في مقابل \"ثلاث مصادر\" — سلوك (Behavior)",
+    "ar-Gulf": "ثلاث مصادر: \"مصدر واحد\" في مقابل \"ثلاث مصادر\" — السلوك",
+    "ar-EG": "إيه اللي عندك دلوقتي؟: \"مصدر واحد\" في مقابل \"تلات مصادر\" — فهمت إيه؟ القرار الكويس محتاج سلوك + نتائج + كلام — مصدر واحد بيديك جزء بس."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Three different sources\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m3-l1-three-sources.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Connection to the decision\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m3-l1-three-sources.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ مصادر مختلفة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m3-l1-three-sources.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"ربط بالقرار\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m3-l1-three-sources.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ مصادر مختلفة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m3-l1-three-sources.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"ربط بالقرار\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m3-l1-three-sources.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ مصادر مختلفة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m3-l1-three-sources.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"ربط بالقرار\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m3-l1-three-sources.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "7ea395420d0f8b1c72bf5b881cd583dad5d6ea34c4ac6698acc638b21f892429"
+}

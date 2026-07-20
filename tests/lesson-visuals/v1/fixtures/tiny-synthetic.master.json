@@ -1,0 +1,221 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "synthetic-tiny-fixture-lesson",
+  "pathId": "intro",
+  "moduleId": "intro-m1",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "ar-EG": "الـ AI أداة مساعدة — مش سحر ولا بديل عنك",
+    "ar-MSA": "ما هو الذكاء الاصطناعي",
+    "ar-Gulf": "ما هو الذكاء الاصطناعي",
+    "en": "What Is AI"
+  },
+  "sourcePackages": {
+    "ar-EG": {
+      "path": "src/components/intro/lessons/intro-m1-l1-what-is-ai.ts",
+      "kind": "ts-blocks"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l1-what-is-ai.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l1-what-is-ai.json",
+      "kind": "json"
+    },
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/intro-m1-l1-what-is-ai.json",
+      "kind": "json"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "ar-EG": [
+        "هتفهم إيه؟ الـ AI مش سحر — هو أداة بتاخد طلب منك وترجعلك رد. زي مساعد ذكي على الموبايل.",
+        "ليه دلوقتي؟ الكل بيتكلم عن AI، وطبيعي تحس إن الموضوع كبير. الدرس ده يفكّكها لك في خطوات بسيطة من غير تعقيد.",
+        "هتعمل إيه بعد الدرس؟ هتجرّب AI واحد في حاجة صغيرة من يومك — وتبقى واثق إنك تقدر تكمل باقي المسار."
+      ],
+      "ar-MSA": [
+        "**ماذا ستفهم؟** الـ **AI (ذكاء اصطناعي)** ليس سحرًا — هو أداة تأخذ طلبًا منك وترجع ردًا. مثل مساعد ذكي على الهاتف.",
+        "**لماذا الآن؟** الجميع يتحدث عن الذكاء الاصطناعي، وطبيعي أن تشعر أن الموضوع كبير. هذا الدرس يفكّكه لك في خطوات بسيطة دون تعقيد.",
+        "**ماذا بعد الدرس؟** ستجرب أداة ذكاء اصطناعي واحدة في شيء صغير من يومك — وتصبح واثقًا أنك تستطيع إكمال باقي المسار."
+      ],
+      "ar-Gulf": [
+        "**وش راح تفهم؟** الـ **AI (ذكاء اصطناعي)** مو سحر — هو أداة تأخذ طلب منك وترجع رد. مثل مساعد ذكي على الجوال.",
+        "**ليش الحين؟** الكل يتكلم عن الذكاء الاصطناعي، وطبيعي تحس الموضوع كبير. هالدرس راح يوضحه لك بخطوات بسيطة بدون تعقيد.",
+        "**وش بعد الدرس؟** راح تجرب أداة ذكاء اصطناعي وحدة في شيء صغير من يومك — وتكون واثق أنك تقدر تكمل باقي المسار."
+      ],
+      "en": [
+        "**What Will You Understand?** AI (artificial intelligence) is not magic — it’s a tool that takes a request from you and returns a response. Like a smart assistant on your phone.",
+        "**Why Now?** Everyone is talking about AI, and it’s normal to feel overwhelmed. This lesson breaks it down for you in simple steps without complicating things.",
+        "**What After the Lesson?** You will try one AI tool in a small part of your day — and you will feel confident that you can continue with the rest of the course."
+      ]
+    },
+    "coreIdea": {
+      "ar-EG": "الـ AI أداة مساعدة — مش سحر ولا بديل عنك الـ AI برنامج اتعلّم من أمثلة كتير، وبيطلّعلك رد قريب من اللي طلبته. زي الآلة الحاسبة: بتوفر وقت، بس القرار في إيدك. مش بيفكّر زي الإنسان — بيحسب أنسب رد من اللي شافه قبل كده. عشان كده أحيانًا بيغلط، وده طبيعي.",
+      "ar-MSA": "الـ AI برنامج تعلّم من أمثلة كثيرة، ويُعطيك ردًا قريبًا مما طلبته. مثل الآلة الحاسبة: يوفر وقتًا، لكن القرار في يدك.",
+      "ar-Gulf": "الـ AI برنامج يتعلم من أمثلة كثيرة، ويعطيك رد قريب مما طلبته. مثل الآلة الحاسبة: يوفر وقت، لكن القرار في يدك.",
+      "en": "AI is a program that learns from many examples and gives you a response close to what you asked for. Like a calculator: it saves time, but the decision is yours."
+    },
+    "tension": {
+      "ar-EG": "بتسمع عن AI كتير ومش واضح تبدأ منين؟",
+      "ar-MSA": "هل تسمع عن الذكاء الاصطناعي كثيرًا ولا يتضح لك من أين تبدأ؟",
+      "ar-Gulf": "هل تسمع عن الذكاء الاصطناعي كثير ولا مو عارف من وين تبدأ؟",
+      "en": "Do you hear a lot about AI but don’t know where to start?"
+    },
+    "comparison": {
+      "ar-EG": {
+        "leftLabel": "لو فهمته غلط",
+        "rightLabel": "لو فهمته صح",
+        "leftBody": "تتوقع إنه فاهم نيّتك من أول مرة، وتزعل لما الرد يطلع مش مظبوط. فتسيبه وتقول «مش شغال معايا».",
+        "rightBody": "تكتب طلب واضح، تشوف الرد، وتعدّل سؤالك. كل محاولة بتعلّمك إزاي تتعامل معاه كأداة — مش كإنسان."
+      },
+      "ar-MSA": {
+        "leftLabel": "لو فهمته خطأ",
+        "rightLabel": "لو فهمته صح",
+        "leftBody": "تتوقع أنه يفهم نيتك من أول مرة، وتغضب عندما يكون الرد غير مناسب. فتتركه وتقول «لا يعمل معي»",
+        "rightBody": "تكتب طلبًا واضحًا، ترى الرد، وتعدّل سؤالك. كل محاولة تعلّمك كيف تتعامل معه كأداة — لا كإنسان"
+      },
+      "ar-Gulf": {
+        "leftLabel": "لو فهمته خطأ",
+        "rightLabel": "لو فهمته صح",
+        "leftBody": "تتوقع أنه يفهم نيتك من أول مرة، وتغضب لما يكون الرد غير مناسب. فتتركه وتقول «ما ينفع معي»",
+        "rightBody": "تكتب طلب واضح، تشوف الرد، وتعدل سؤالك. كل محاولة تعلمك كيف تتعامل معه كأداة — مو كإنسان"
+      },
+      "en": {
+        "leftLabel": "If You Misunderstand It",
+        "rightLabel": "If You Understand It",
+        "leftBody": "You expect it to understand your intent the first time, and you get frustrated when the response is not suitable. So you leave and say, \"It doesn’t work for me.\"",
+        "rightBody": "You write a clear request, see the response, and adjust your question. Each attempt teaches you how to interact with it as a tool — not as a human."
+      }
+    },
+    "missionIntro": {
+      "ar-EG": "سؤال واحد — مش امتحان",
+      "ar-MSA": "**المقدمة:** جرّب الذكاء الاصطناعي في شيء بسيط من يومك. افتح أي AI مجاني (ChatGPT أو Gemini أو Claude)، اطلب شيئًا صغيرًا، واكتب ما حدث. إذا لا يوجد حساب الآن: اكتب الطلب الذي كنت ستُرسله + الأداة التي ستفتحها — هذا مقبول.",
+      "ar-Gulf": "**المقدمة:** جرّب الذكاء الاصطناعي في شيء بسيط من يومك. افتح أي AI مجاني (ChatGPT أو Gemini أو Claude)، اطلب شيء صغير، واكتب وش صار. إذا ما عندك حساب الحين: اكتب الطلب اللي كنت راح ترسله + الأداة اللي راح تفتحها — هذا مقبول.",
+      "en": "**Introduction:** Try AI in a simple part of your day. Open any free AI (ChatGPT, Gemini, or Claude), ask for something small, and write down what happened. If you don’t have an account now: write the request you would send + the tool you would open — that’s acceptable."
+    },
+    "visualIntent": {
+      "kind": "comparison",
+      "summary": "Two-column contrast: misunderstanding AI as mind-reading vs treating it as an adjustable tool.",
+      "packageQuotes": {
+        "ar-EG": {
+          "path": "src/components/intro/lessons/intro-m1-l1-what-is-ai.ts",
+          "field": "block.comparison.left.label",
+          "quote": "لو فهمته غلط"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l1-what-is-ai.json",
+          "field": "sections.Comparison.tables[0].headers[0]",
+          "quote": "لو فهمته خطأ"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l1-what-is-ai.json",
+          "field": "sections.Comparison.tables[0].headers[0]",
+          "quote": "لو فهمته خطأ"
+        },
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l1-what-is-ai.json",
+          "field": "sections.Comparison.tables[0].headers[0]",
+          "quote": "If You Misunderstand It"
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "Deterministic SVG comparison layout for fixture tests; no production batch render locally.",
+  "compositionPattern": "fixture-comparison-two-column",
+  "duplicationJustification": null,
+  "labelPacks": {
+    "ar-EG": [
+      {
+        "id": "cmp-left",
+        "text": "لو فهمته غلط",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l1-what-is-ai.ts",
+          "field": "block.comparison.left.label"
+        }
+      },
+      {
+        "id": "cmp-right",
+        "text": "لو فهمته صح",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l1-what-is-ai.ts",
+          "field": "block.comparison.right.label"
+        }
+      },
+      {
+        "id": "eyebrow-orient",
+        "text": "بداية الدرس",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l1-what-is-ai.ts",
+          "field": "eyebrow"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "cmp-left",
+        "text": "لو فهمته خطأ",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l1-what-is-ai.json",
+          "field": "sections.Comparison.tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "cmp-right",
+        "text": "لو فهمته صح",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l1-what-is-ai.json",
+          "field": "sections.Comparison.tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "orient-q",
+        "text": "وش راح تفهم؟",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l1-what-is-ai.json",
+          "field": "sections.Orientation.bullets[0]"
+        }
+      },
+      {
+        "id": "cmp-left",
+        "text": "لو فهمته خطأ",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l1-what-is-ai.json",
+          "field": "sections.Comparison.tables[0].headers[0]"
+        }
+      }
+    ],
+    "en": [
+      {
+        "id": "cmp-left",
+        "text": "If You Misunderstand It",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l1-what-is-ai.json",
+          "field": "sections.Comparison.tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "cmp-right",
+        "text": "If You Understand It",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l1-what-is-ai.json",
+          "field": "sections.Comparison.tables[0].headers[1]"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "ar-EG": "لو فهمته غلط مقابل لو فهمته صح — مقارنة لفهم الـ AI كأداة.",
+    "ar-MSA": "لو فهمته خطأ مقابل لو فهمته صح — مقارنة لفهم الذكاء الاصطناعي كأداة.",
+    "ar-Gulf": "لو فهمته خطأ مقابل لو فهمته صح — مقارنة لفهم الذكاء الاصطناعي كأداة.",
+    "en": "Comparison graphic: misunderstanding AI vs understanding it as a tool you can refine with each prompt."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [],
+  "checksum": "0dce15a8a87a28974b48151ad3982f915b3c1af3ad69ef53cb3ac9a641fb661e"
+}

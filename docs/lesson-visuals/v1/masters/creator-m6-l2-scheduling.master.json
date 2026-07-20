@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "creator-m6-l2-scheduling",
+  "pathId": "creator",
+  "moduleId": "creator-m6-distribute",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Scheduling and Consistency",
+    "ar-MSA": "الجدولة والاستمرارية",
+    "ar-Gulf": "جدولة واستمرارية",
+    "ar-EG": "نظام بسيط: Batch + Calendar"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/creator-m6-l2-scheduling.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l2-scheduling.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l2-scheduling.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/creator-m6-l2-scheduling.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Consistency wins over bursts. Success in content comes not from posting once with great impact — but from having a steady rhythm that people can rely on.",
+        "Three regular posts each week are stronger than a week of intense posting followed by two weeks of silence."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ الاستمرارية تكسب أمام الدفعات. من ينجح في المحتوى ليس من ينشر مرة واحدة بقوة — بل من له إيقاع ثابت تعتاد عليه الناس.",
+        "٣ منشورات أسبوعيًا بانتظام أقوى من أسبوع «نار» ثم أسبوعين غياب."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ الاستمرارية تكسب أمام الانفجارات. اللي ينجح في المحتوى مو اللي ينشر مرة وحدة بقوة — لكن اللي له إيقاع ثابت يتعود عليه الناس.",
+        "٣ منشورات أسبوعيًا بانتظام أقوى من أسبوع «نار» وبعدين أسبوعين غياب."
+      ],
+      "ar-EG": [
+        "اللي بيكسب في المحتوى مش اللي بينشر مرة جامدة، اللي بيكسب هو اللي عنده إيقاع ثابت الناس تتعود عليه.",
+        "3 بوستات أسبوعيا بشكل منتظم أقوى من أسبوع نار وبعده أسبوعين غياب."
+      ]
+    },
+    "coreIdea": {
+      "en": "Set a fixed weekly slot",
+      "ar-MSA": "خصص Slot (فترة) أسبوعيًا ثابتًا",
+      "ar-Gulf": "خصص فترة أسبوعيًا ثابتة",
+      "ar-EG": "خصص Slot أسبوعي ثابت للتصوير أو التحضير بالجملة. ده يحل مشكلة الوقت بدل ما تفضل تطفي حرائق يومية."
+    },
+    "tension": {
+      "en": "Temporary excitement breaks your plan. Most disruptions start from a daily exhausting question: “What should I post today?” When it repeats every day — the decision itself becomes a burden.",
+      "ar-MSA": "الحماس المؤقت يكسر خطتك. أغلب التعطيل يبدأ من سؤال يومي مرهق: «ماذا أنشر اليوم؟» عندما يتكرر كل يوم — القرار نفسه يصبح حملًا.",
+      "ar-Gulf": "الحماس المؤقت يكسر خطتك. أغلب التعطيل يبدأ من سؤال يومي مرهق: «وش أنشر اليوم؟» لما يتكرر كل يوم — القرار نفسه يصبح عبء.",
+      "ar-EG": "أغلب التعطيل بيبدأ من سؤال يومي مرهق: \"هنزل إيه النهارده؟\". لما السؤال يتكرر كل يوم، القرار نفسه يبقى حمل."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Without a System",
+        "rightLabel": "With a Clear System",
+        "leftBody": "Post when you feel like it — a week of 5 posts and a week of nothing — stress and decreased engagement",
+        "rightBody": "Fixed preparation day + 3 fixed posting days — less effort and higher audience expectations"
+      },
+      "ar-MSA": {
+        "leftLabel": "بدون نظام",
+        "rightLabel": "بنظام واضح",
+        "leftBody": "انشر عندما تفرغ — أسبوع ٥ منشورات وأسبوع لا شيء — توتر وتراجع تفاعل",
+        "rightBody": "يوم تحضير ثابت + ٣ أيام نشر ثابتة — مجهود أقل وتوقع أعلى من الجمهور"
+      },
+      "ar-Gulf": {
+        "leftLabel": "بدون نظام",
+        "rightLabel": "بنظام واضح",
+        "leftBody": "انشر لما تفضى — أسبوع ٥ منشورات وأسبوع لا شيء — توتر وتراجع تفاعل",
+        "rightBody": "يوم تحضير ثابت + ٣ أيام نشر ثابتة — مجهود أقل وتوقع أعلى من الجمهور"
+      },
+      "ar-EG": {
+        "leftLabel": "بدون نظام",
+        "leftBody": "انشر لما تفضى. أسبوع فيه 5 بوستات وأسبوع مفيش. النتيجة: توتر وتراجع تفاعل.",
+        "rightLabel": "بنظام واضح",
+        "rightBody": "يوم تحضير ثابت + 3 أيام نشر ثابتة. النتيجة: مجهود أقل وتوقع أعلى من الجمهور."
+      }
+    },
+    "missionIntro": {
+      "en": "Introduction: A realistic weekly plan: 3 fixed posts with one batch preparation time.",
+      "ar-MSA": "خطة أسبوعية واقعية: ٣ منشورات ثابتة مع وقت تحضير واحد بالجملة.",
+      "ar-Gulf": "خطة أسبوعية واقعية: ٣ منشورات ثابتة مع وقت تحضير واحد بالجملة.",
+      "ar-EG": "اعمل خطة أسبوعية واقعية: 3 بوستات ثابتة مع وقت تحضير واحد بالجملة."
+    },
+    "visualIntent": {
+      "kind": "process",
+      "summary": "Visual diagram — **A weekly calendar for posting and preparation**. **A fixed preparation day reduces chaos** — **and fixed posting days build expectation and t",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m6-l2-scheduling.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "Visual diagram — **A weekly calendar for posting and preparation**. **A fixed preparation day reduces chaos** — **and fixed posting days bui"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l2-scheduling.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "خصص Slot (فترة) أسبوعيًا ثابتًا"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l2-scheduling.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "خصص فترة أسبوعيًا ثابتة"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/creator-m6-l2-scheduling.ts",
+          "field": "block.caption (diagram)",
+          "quote": "اليوم الثابت للتحضير يقلل الفوضى، وأيام النشر الثابتة تبني توقع وثقة."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "creator-m6-l2-scheduling's package marks a Diagram intent (scheduling-calendar); the underlying relationship reads as process, so a deterministic SVG panel keeps the real Without a System/With a Clear System labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "process-stage-strip",
+  "duplicationJustification": "Shares the \"process-stage-strip\" layout template with 8 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Without a System\" vs \"With a Clear System\" for creator-m6-l2-scheduling.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Without a System",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m6-l2-scheduling.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "With a Clear System",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m6-l2-scheduling.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Batching",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m6-l2-scheduling.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Content Calendar",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m6-l2-scheduling.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "بدون نظام",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l2-scheduling.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "بنظام واضح",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l2-scheduling.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Batching (تجميع)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l2-scheduling.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Content Calendar (جدول المحتوى)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l2-scheduling.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "بدون نظام",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l2-scheduling.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "بنظام واضح",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l2-scheduling.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "التجميع",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l2-scheduling.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "تقويم المحتوى",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l2-scheduling.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "بدون نظام",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m6-l2-scheduling.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "بنظام واضح",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m6-l2-scheduling.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Batching",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m6-l2-scheduling.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Content Calendar",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m6-l2-scheduling.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Scheduling and Consistency: \"Without a System\" versus \"With a Clear System\" — Set a fixed weekly slot",
+    "ar-MSA": "الجدولة والاستمرارية: \"بدون نظام\" في مقابل \"بنظام واضح\" — خصص Slot (فترة) أسبوعيًا ثابتًا",
+    "ar-Gulf": "جدولة واستمرارية: \"بدون نظام\" في مقابل \"بنظام واضح\" — خصص فترة أسبوعيًا ثابتة",
+    "ar-EG": "نظام بسيط: Batch + Calendar: \"بدون نظام\" في مقابل \"بنظام واضح\" — خصص Slot أسبوعي ثابت للتصوير أو التحضير بالجملة. ده يحل مشكلة الوقت بدل ما تفضل تطفي حرائق يومية."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Schedule Clarity\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m6-l2-scheduling.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Feasibility\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m6-l2-scheduling.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح الجدول\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l2-scheduling.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"قابلية التنفيذ\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l2-scheduling.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح الجدول\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l2-scheduling.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"قابلية التنفيذ\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l2-scheduling.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح الجدول\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m6-l2-scheduling.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"قابلية التنفيذ\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m6-l2-scheduling.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "280ac862c65a16ee69e14a3460ae7795e75c5974c88ad48c39c6d07a9426f4e8"
+}

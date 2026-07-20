@@ -1,0 +1,322 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m6-l3-first-prompt-to-lovable",
+  "pathId": "builder",
+  "moduleId": "builder-m6",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "First Prompt to Lovable",
+    "ar-MSA": "أول برومبت في Lovable",
+    "ar-Gulf": "أول برومبت في Lovable",
+    "ar-EG": "أول prompt = goal + users + pages + style + constraints"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m6-l3-first-prompt-to-lovable.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? The first prompt needs 5 parts: goal + users + pages + style + constraints.",
+        "Why now? You have a wireframe — now turn it into a Lovable prompt that understands you right away.",
+        "What after the lesson? A prompt draft ready to copy — not code or programming.",
+        "Lovable = a building assistant that reads your description and generates an interface. You describe — you don’t program."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ أول Prompt (طلب) يحتاج ٥ أجزاء: goal + users + pages + style + constraints.",
+        "لماذا الآن؟ لديك Wireframe — الآن حوّله إلى طلب Lovable يفهمك من أول مرة.",
+        "ماذا بعد الدرس؟ مسودة prompt جاهزة للنسخ — ليس كودًا ولا برمجة.",
+        "Lovable = مساعد بناء يقرأ وصفك ويطلع واجهة. أنت توصف — لا تبرمج."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ أول برومبت يحتاج ٥ أجزاء: الهدف + المستخدمين + الصفحات + الأسلوب + القيود.",
+        "ليش الحين؟ عندك Wireframe — الحين حوّله إلى برومبت Lovable يفهمك من أول مرة.",
+        "وش بعد الدرس؟ مسودة برومبت جاهزة للنسخ — مو كود ولا برمجة.",
+        "Lovable = مساعد بناء يقرأ وصفك ويطلع واجهة. أنت توصف — مو تبرمج."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ أول prompt محتاج ٥ أجزاء بس: goal + users + pages + style + constraints.",
+        "ليه دلوقتي؟ عندك Wireframe — دلوقتي حوّله لطلب Lovable يفهمك من أول مرة.",
+        "هتعمل إيه بعد الدرس؟ مسودة prompt جاهزة للنسخ — مش كود ولا برمجة.",
+        "Lovable = مساعد بناء يقرأ وصفك ويطلعلك واجهة. إنت بتوصف — مش بتبرمج."
+      ]
+    },
+    "coreIdea": {
+      "en": "Goal",
+      "ar-MSA": "Goal (الهدف)",
+      "ar-Gulf": "الهدف",
+      "ar-EG": "Goal: الهدف — إيه نوع الواجهة ولإيه؟"
+    },
+    "tension": {
+      "en": "I wrote 'Build an AI Interface' — it produced bright colors and sections I didn’t want. Lovable builds exactly what you write — not what you wish for. 3 words = complete guess.",
+      "ar-MSA": "كتبت «ابنِ واجهة AI» — خرجت ألوان فاقعة وأقسام لا تريدها. Lovable يبني ما تكتبه حرفيًا — ليس ما تتمنى. ٣ كلمات = تخمين كامل.",
+      "ar-Gulf": "كتبت «ابنِ واجهة AI» — طلعت ألوان فاقعة وأقسام مو تبغاها. Lovable يبني اللي تكتبه حرفيًا — مو اللي تتمنى. ٣ كلمات = تخمين كامل.",
+      "ar-EG": "كتبت «ابنيلي واجهة AI» — طلع ألوان فاقعة وأقسام مش عايزها."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "3 Words",
+        "rightLabel": "Prompt Spec",
+        "leftBody": "'Build an AI Cafe Interface' — AI guesses everything. 6 adjustments. Still not right",
+        "rightBody": "Goal: landing page for a cafe + AI barista. Users: customers aged 20-35. Pages: hero + menu of 6 drinks + contact. Style: warm, brown, and beige. Constraints: no login"
+      },
+      "ar-MSA": {
+        "leftLabel": "٣ كلمات",
+        "rightLabel": "Prompt Spec",
+        "leftBody": "«ابنِ واجهة كافيه» — AI يخمّن كل شيء. ٦ تعديلات. ما زال غير مضبوط",
+        "rightBody": "Goal: landing page لكافيه + AI باريستا. Users: زبائن ٢٠–٣٥. Pages: hero + منيو ٦ مشروبات + تواصل. Style: دافئ، بنّي وبيج. Constraints: بدون login"
+      },
+      "ar-Gulf": {
+        "leftLabel": "٣ كلمات",
+        "rightLabel": "مواصفات البرومبت",
+        "leftBody": "«ابنِ واجهة كافيه» — AI يخمّن كل شيء. ٦ تعديلات. ما زال مو مضبوط",
+        "rightBody": "الهدف: صفحة هبوط لكافيه + AI باريستا. المستخدمون: زبائن ٢٠–٣٥. الصفحات: hero + منيو ٦ مشروبات + تواصل. الأسلوب: دافئ، بني وبيج. القيود: بدون تسجيل دخول"
+      },
+      "ar-EG": {
+        "leftLabel": "٣ كلمات",
+        "leftBody": "«ابنيلي واجهة كافيه» — AI يخمّن كل حاجة. ٦ تعديلات. لسه مش مظبوط.",
+        "rightLabel": "Prompt Spec",
+        "rightBody": "Goal: landing page لكافيه + AI باريستا. Users: زباين ٢٠–٣٥. Pages: hero + منيو ٦ مشروبات + تواصل. Style: دافي، بنّي وبيج. Constraints: من غير login."
+      }
+    },
+    "missionIntro": {
+      "en": "A draft for copying — not implementation. Use the wireframe from the previous lesson. 10-15 minutes.",
+      "ar-MSA": "مسودة للنسخ — ليس تنفيذًا. استخدم Wireframe من الدرس السابق. ١٠–١٥ دقيقة.",
+      "ar-Gulf": "مسودة للنسخ — مو تنفيذ. استخدم Wireframe من الدرس السابق. ١٠–١٥ دقيقة.",
+      "ar-EG": "المهمة مسودة للنسخ — مش تنفيذ ولا كود. استخدم Wireframe من الدرس اللي فات.\n\n١٠–١٥ دقيقة. انسخ الناتج في Lovable لما تحب — مش مطلوب دلوقتي."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "**Prompt on the left — preview on the right**. **The prompt is not 'Build an Interface'** — **it includes goal, activity, sections by name, and style**. **The r",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**Prompt on the left — preview on the right**. **The prompt is not 'Build an Interface'** — **it includes goal, activity, sections by name,"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**Prompt على اليسار — preview على اليمين**. **الـ prompt ليس «اعمل واجهة»** — **فيه goal، نشاط، أقسام بالاسم، وstyle**. **النتيجة أقرب من أو"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**البرومبت على اليسار — المعاينة على اليمين**. **البرومبت مو «ابنِ واجهة»** — **فيه هدف، نشاط، أقسام بالاسم، والأسلوب**. **النتيجة أقرب من أ"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m6-l3-first-prompt-to-lovable.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "الـ prompt مش «اعملي واجهة» — فيه goal، نشاط، أقسام بالاسم، وستايل. النتيجة أقرب من أول مرة."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "builder-m6-l3-first-prompt-to-lovable's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (3 Words / Prompt Spec) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"3 Words\" vs \"Prompt Spec\" for builder-m6-l3-first-prompt-to-lovable.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "3 Words",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Prompt Spec",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Scope",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "٣ كلمات",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Prompt Spec",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Prompt Spec (مواصفات الواجهة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Scope (النطاق)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "٣ كلمات",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مواصفات البرومبت",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "النطاق",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "٣ كلمات",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l3-first-prompt-to-lovable.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Prompt Spec",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l3-first-prompt-to-lovable.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Prompt Spec (مواصفات الواجهة)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l3-first-prompt-to-lovable.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Scope (النطاق)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l3-first-prompt-to-lovable.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "First Prompt to Lovable: \"3 Words\" versus \"Prompt Spec\" — Goal",
+    "ar-MSA": "أول برومبت في Lovable: \"٣ كلمات\" في مقابل \"Prompt Spec\" — Goal (الهدف)",
+    "ar-Gulf": "أول برومبت في Lovable: \"٣ كلمات\" في مقابل \"مواصفات البرومبت\" — الهدف",
+    "ar-EG": "أول prompt = goal + users + pages + style + constraints: \"٣ كلمات\" في مقابل \"Prompt Spec\" — Goal: الهدف — إيه نوع الواجهة ولإيه؟"
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"All five present\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Ready to copy\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"الخمسة موجودون\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"جاهز للنسخ\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"الخمسة موجودون\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"جاهز للنسخ\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l3-first-prompt-to-lovable.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"الخمسة موجودين\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m6-l3-first-prompt-to-lovable.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"جاهز للنسخ\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m6-l3-first-prompt-to-lovable.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "f5bbf8250a92386559d0f1aa6fbed2659fe7c4a4889c44e68d1f26aa36368246"
+}

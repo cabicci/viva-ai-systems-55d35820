@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "business-m4-l3-weekly-rhythm",
+  "pathId": "business",
+  "moduleId": "business-m4",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Weekly Rhythm",
+    "ar-MSA": "الإيقاع الأسبوعي",
+    "ar-Gulf": "إيقاع أسبوعي",
+    "ar-EG": "٣٠ دقيقة — ٣ أرقام — ٣ أسئلة — قرار واحد"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/business-m4-l3-weekly-rhythm.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l3-weekly-rhythm.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l3-weekly-rhythm.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/business-m4-l3-weekly-rhythm.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Weekly Review prevents business drift."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ Weekly Review (مراجعة أسبوعية) تمنع انجراف البيزنس."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ مراجعة أسبوعية تمنع انجراف البيزنس."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ المراجعة الأسبوعية تمنع انجراف البيزنس للفوضى — والـ AI يلخّص الأرقام والمهام وإشارات العملاء.",
+        "ليه دلوقتي؟ في أساس المسار بنيت إيقاع أسبوعي بـ ٣ بلوكات. هنا نعمّق: مراجعة ٣٠ دقيقة — إيه اللي اتغيّر؟ إيه المطلوب؟ قرار واحد للأسبوع الجاي.",
+        "هتعمل إيه بعد الدرس؟ هتصمّم طقس مراجعة: ٣ أرقام، ٣ أسئلة للـ AI، قرار واحد تسجّله."
+      ]
+    },
+    "coreIdea": {
+      "en": "3 numbers + 3 AI questions + one written decision. Deepening on the foundational rhythm — not a new schedule from scratch.",
+      "ar-MSA": "AI",
+      "ar-Gulf": "AI",
+      "ar-EG": "٣ أرقام: اختار اللي يهم بيزنسك (مبيعات، هامش، عملاء راجعين، كاش، طلبات) — مش ٢٠ رقم."
+    },
+    "tension": {
+      "en": "3 numbers + 3 AI questions + one written decision. Deepening on the foundational rhythm — not a new schedule from scratch.",
+      "ar-MSA": "٣ أرقام + ٣ أسئلة AI + قرار واحد مكتوب. تعميق على إيقاع الأساس — ليس جدولًا جديدًا من الصفر.",
+      "ar-Gulf": "3 أرقام + 3 أسئلة AI + قرار واحد مكتوب. تعميق على إيقاع الأساس — مو جدول جديد من الصفر.",
+      "ar-EG": "شغل، ردود، طلبات — نهاية الشهر تكتشف إنك ما راجعتش الأرقام ولا قررت حاجة مهمة."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Introduction",
+        "rightLabel": "30 minutes",
+        "leftBody": "What will you understand?",
+        "rightBody": "Deepening on the foundational rhythm — not a new schedule from scratch."
+      },
+      "ar-MSA": {
+        "leftLabel": "بداية الدرس",
+        "rightLabel": "٣٠ دقيقة",
+        "leftBody": "Weekly Review (مراجعة أسبوعية)",
+        "rightBody": "AI"
+      },
+      "ar-Gulf": {
+        "leftLabel": "بداية الدرس",
+        "rightLabel": "30 دقيقة",
+        "leftBody": "تمنع انجراف البيزنس.",
+        "rightBody": "AI"
+      },
+      "ar-EG": {
+        "leftLabel": "بدون مراجعة",
+        "rightLabel": "مراجعة + AI",
+        "leftBody": "نفس المشاكل تتكرر. القرارات «لما يفضى وقت» — ومش بيفضى.",
+        "rightBody": "٣٠ دقيقة. ملخص واضح. قرار واحد مكتوب — الأسبوع الجاي عنده اتجاه."
+      }
+    },
+    "missionIntro": {
+      "en": "| Full Weather | 60% | | Recordable Decision | 40% |",
+      "ar-MSA": "| طقس كامل | 60% | | قرار قابل للتسجيل | 40% |",
+      "ar-Gulf": "| طقس كامل | 60% | | قرار قابل للتسجيل | 40% |",
+      "ar-EG": "صمّم مراجعة أسبوعية لبيزنسك: ٣ أرقام تتابعها، ٣ أسئلة تسألها للـ AI، وقرار واحد تسجّله كل أسبوع. حدّد اليوم والوقت.\n\nمش مطلوب بيانات دقيقة النهاردة — مطلوب تصميم الطقس."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "- Deepening on the foundational rhythm — not a new schedule from scratch.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m4-l3-weekly-rhythm.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "- Deepening on the foundational rhythm — not a new schedule from scratch."
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l3-weekly-rhythm.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "- تعميق على إيقاع الأساس — ليس جدولًا جديدًا من الصفر."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l3-weekly-rhythm.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "- تعميق على إيقاع الأساس — مو جدول جديد من الصفر."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/business-m4-l3-weekly-rhythm.ts",
+          "field": "block.caption (diagram)",
+          "quote": "أرقام → أسئلة AI → قرار. نفس اليوم كل أسبوع — حتى لو نصف ساعة فقط."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "business-m4-l3-weekly-rhythm's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Introduction / 30 minutes) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 60 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Introduction\" vs \"30 minutes\" for business-m4-l3-weekly-rhythm.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Introduction",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m4-l3-weekly-rhythm.json",
+          "field": "sections[role=Tension].subtitle"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "30 minutes",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m4-l3-weekly-rhythm.json",
+          "field": "sections[role=Core idea].subtitle"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "بداية الدرس",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l3-weekly-rhythm.json",
+          "field": "sections[role=Tension].subtitle"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "٣٠ دقيقة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l3-weekly-rhythm.json",
+          "field": "sections[role=Core idea].subtitle"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "بداية الدرس",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l3-weekly-rhythm.json",
+          "field": "sections[role=Tension].subtitle"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "30 دقيقة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l3-weekly-rhythm.json",
+          "field": "sections[role=Core idea].subtitle"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "بدون مراجعة",
+        "source": {
+          "path": "src/components/intro/lessons/business-m4-l3-weekly-rhythm.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مراجعة + AI",
+        "source": {
+          "path": "src/components/intro/lessons/business-m4-l3-weekly-rhythm.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Weekly Review (مراجعة أسبوعية)",
+        "source": {
+          "path": "src/components/intro/lessons/business-m4-l3-weekly-rhythm.ts",
+          "field": "block.items[0].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Weekly Rhythm: \"Introduction\" versus \"30 minutes\" — 3 numbers + 3 AI questions + one written decision. Deepening on the foundational rhythm — not a new schedule from scratch.",
+    "ar-MSA": "الإيقاع الأسبوعي: \"بداية الدرس\" في مقابل \"٣٠ دقيقة\" — AI",
+    "ar-Gulf": "إيقاع أسبوعي: \"بداية الدرس\" في مقابل \"30 دقيقة\" — AI",
+    "ar-EG": "٣٠ دقيقة — ٣ أرقام — ٣ أسئلة — قرار واحد: \"بدون مراجعة\" في مقابل \"مراجعة + AI\" — ٣ أرقام: اختار اللي يهم بيزنسك (مبيعات، هامش، عملاء راجعين، كاش، طلبات) — مش ٢٠ رقم."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"طقس كامل\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m4-l3-weekly-rhythm.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قرار قابل للتسجيل\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m4-l3-weekly-rhythm.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "ce7d0dea3fde413912184977143bd0fc76c3c26662e88637b005ad4ae42e94ab"
+}

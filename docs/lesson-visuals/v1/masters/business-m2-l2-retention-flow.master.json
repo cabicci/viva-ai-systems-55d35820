@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "business-m2-l2-retention-flow",
+  "pathId": "business",
+  "moduleId": "business-m2",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Retention Flow",
+    "ar-MSA": "مسار الاحتفاظ بالعميل",
+    "ar-Gulf": "مسار الاحتفاظ",
+    "ar-EG": "٣ لمسات بعد الشراء — مش حملة ضخمة"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/business-m2-l2-retention-flow.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l2-retention-flow.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l2-retention-flow.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/business-m2-l2-retention-flow.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Customer retention is not luck — following up after a purchase keeps the relationship alive, and AI helps you write it quickly.",
+        "Why now? In the previous lesson, I explained Offer — the customer knows what they are buying. Now the question is: after the purchase, how do we keep the relationship active? A lot of weakness occurs after the purchase — the customer disappears without follow-up.",
+        "What after the lesson? You will design a simple Retention Flow of 3 steps for one type of customer you have."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ الاحتفاظ بالعميل ليس حظًا — المتابعة بعد الشراء تُبقي العلاقة حية، والذكاء الاصطناعي يساعدك تكتبها بسرعة.",
+        "لماذا الآن؟ في الدرس السابق وضّحت Offer (العرض) — العميل يعرف ما يشتري. الآن السؤال: بعد الشراء، كيف نُبقي العلاقة نشطة؟ كثير من الضعف يحدث بعد الشراء — العميل يختفي من دون متابعة.",
+        "ماذا بعد الدرس؟ ستصمّم Retention Flow (مسار احتفاظ) بسيطًا من ٣ خطوات لنوع عميل واحد عندك."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ الاحتفاظ بالعملاء مو حظ — المتابعة بعد الشراء تحافظ على العلاقة، والذكاء الاصطناعي يساعدك تكتبها بسرعة.",
+        "ليش الحين؟ في الدرس السابق وضّحت Offer (العرض) — العميل يعرف وش يشتري. الحين السؤال: بعد الشراء، كيف نُبقي العلاقة نشطة؟ كثير من الضعف يصير بعد الشراء — العميل يختفي بدون متابعة.",
+        "وش بعد الدرس؟ راح تصمّم Retention Flow (مسار الاحتفاظ) بسيط من ٣ خطوات لنوع عميل واحد عندك."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ الاحتفاظ بالعميل مش حظ — متابعة بعد الشراء تخلي العلاقة حية، والـ AI يساعدك تكتبها بسرعة.",
+        "ليه دلوقتي؟ في الدرس اللي فات وضّحت الـ Offer — العميل يعرف إيه اللي بيشتريه. دلوقتي السؤال: بعد ما يشتري، إزاي نخلي العلاقة تفضل شغالة؟ كتير الضعف بعد الشراء — العميل يختفي من غير متابعة.",
+        "هتعمل إيه بعد الدرس؟ هتصمّم Retention Flow بسيط من ٣ خطوات لنوع عميل واحد عندك."
+      ]
+    },
+    "coreIdea": {
+      "en": "Touchpoint 1 — A few days later:",
+      "ar-MSA": "لمسة ١ — بعد أيام قليلة:",
+      "ar-Gulf": "لمسة ١ — بعد أيام قليلة:",
+      "ar-EG": "لمسة ١ — بعد أيام قليلة: «كله تمام؟ محتاج حاجة؟» — تأكيد + باب للشكوى المبكرة."
+    },
+    "tension": {
+      "en": "You attract new customers, but the same people do not return. It's not always because the product is bad — sometimes it's because there is no follow-up after the purchase. Follow-up does not mean being annoying. It means",
+      "ar-MSA": "تجلب عملاء جددًا، لكن نفس الأشخاص لا يعودون. ليس دائمًا لأن المنتج سيئ — أحيانًا لأنه لا متابعة بعد الشراء. المتابعة لا تعني إزعاجًا. معناها: تأكد أنه راضٍ، قدّم مساعدة، وذكّره في الوقت المناسب.",
+      "ar-Gulf": "تجيب عملاء جدد، لكن نفس الأشخاص ما يرجعون. مو دائمًا لأن المنتج سيئ — أحيانًا لأنه ما فيه متابعة بعد الشراء. المتابعة مو معناها إزعاج. معناها: تأكد إنه راضي، قدّم مساعدة، وذكّره في الوقت المناسب.",
+      "ar-EG": "بتجيب عملاء جداد، بس نفس الناس ما بترجعش. مش لأن المنتج وحش دايمًا — أحيانًا لأن مفيش متابعة بعد الشراء."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Without Flow",
+        "rightLabel": "With Flow + AI",
+        "leftBody": "All effort on attracting new customers. Those who bought once disappear — and you pay again to compensate",
+        "rightBody": "3 thoughtful messages after purchase. The same customers return — and AI shortens the writing of each touchpoint"
+      },
+      "ar-MSA": {
+        "leftLabel": "بدون Flow",
+        "rightLabel": "مع Flow + AI",
+        "leftBody": "كل جهد على جلب جدد. من اشتروا مرة يختفون — وتدفع مرة أخرى للتعويض",
+        "rightBody": "٣ رسائل مدروسة بعد الشراء. نفس العملاء يعودون — والذكاء الاصطناعي يختصر كتابة كل لمسة"
+      },
+      "ar-Gulf": {
+        "leftLabel": "بدون Flow",
+        "rightLabel": "مع Flow + AI",
+        "leftBody": "كل جهد على جلب جدد. من اشتروا مرة يختفون — وتدفع مرة ثانية للتعويض",
+        "rightBody": "٣ رسائل مدروسة بعد الشراء. نفس العملاء يرجعون — والذكاء الاصطناعي يختصر كتابة كل لمسة"
+      },
+      "ar-EG": {
+        "leftLabel": "بدون Flow",
+        "leftBody": "كل جهد على جلب جداد. اللي اشتروا مرة يختفوا — وتدفع تاني عشان تعوّض.",
+        "rightLabel": "مع Flow + AI",
+        "rightBody": "٣ رسائل مدروسة بعد الشراء. نفس العملاء يرجعوا — والـ AI يختصر كتابة كل لمسة."
+      }
+    },
+    "missionIntro": {
+      "en": "A practical design mission — not full automation. Choose one type of customer (or a persona) and write a Retention Flow of 3 steps: when, what the message is, and how AI helps you write it. No actual sending is required today — a clear plan is required.",
+      "ar-MSA": "مهمة تصميم عملي — ليست أتمتة كاملة. اختر نوع عميل واحد (أو عميلًا نموذجيًا) واكتب Retention Flow من ٣ خطوات: متى، ما الرسالة، وكيف يساعدك الذكاء الاصطناعي تكتبها. لا يُطلب إرسال فعلي اليوم — يُطلب خطة واضحة.",
+      "ar-Gulf": "مهمة تصميم عملي — مو أتمتة كاملة. اختر نوع عميل واحد (أو عميل نموذجي) واكتب Retention Flow من ٣ خطوات: متى، وش الرسالة، وكيف يساعدك الذكاء الاصطناعي تكتبها. مو مطلوب إرسال فعلي اليوم — مطلوب خطة واضحة.",
+      "ar-EG": "المهمة دي تصميم عملي — مش أتمتة كاملة. اختار نوع عميل واحد (أو عميل نموذجي) واكتب Retention Flow من ٣ خطوات: متى، إيه الرسالة، وإزاي الـ AI يساعدك تكتبها.\n\nمش مطلوب إرسال فعلي النهاردة — مطلوب خطة واضحة."
+    },
+    "visualIntent": {
+      "kind": "process",
+      "summary": "Follow-up Rhythm — **Cadence**. Timing is more important than quantity. Start with 3 steps — and let AI draft the messages, you review before sending.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m2-l2-retention-flow.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "Follow-up Rhythm — **Cadence**. Timing is more important than quantity. Start with 3 steps — and let AI draft the messages, you review befor"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l2-retention-flow.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "إيقاع المتابعة — **Cadence (إيقاع)**. التوقيت أهم من الكمية. ابدأ بـ ٣ خطوات — ودع الذكاء الاصطناعي يصوغ المسودات، أنت تراجع قبل الإرسال."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l2-retention-flow.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "إيقاع المتابعة — **Cadence (الإيقاع)**. التوقيت أهم من الكمية. ابدأ بـ ٣ خطوات — ودع الذكاء الاصطناعي يصوغ المسودات، أنت تراجع قبل الإرسال."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/business-m2-l2-retention-flow.ts",
+          "field": "block.caption (diagram)",
+          "quote": "التوقيت أهم من الكمية. ابدأ بـ ٣ خطوات — وخلّي الـ AI يصيغ المسودات، إنت تراجع قبل الإرسال."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "business-m2-l2-retention-flow's package marks a Diagram intent (followup-cadence); the underlying relationship reads as process, so a deterministic SVG panel keeps the real Without Flow/With Flow + AI labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "process-stage-strip",
+  "duplicationJustification": "Shares the \"process-stage-strip\" layout template with 8 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Without Flow\" vs \"With Flow + AI\" for business-m2-l2-retention-flow.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Without Flow",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m2-l2-retention-flow.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "With Flow + AI",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m2-l2-retention-flow.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Retention Flow",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m2-l2-retention-flow.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Touchpoint",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m2-l2-retention-flow.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "بدون Flow",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l2-retention-flow.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مع Flow + AI",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l2-retention-flow.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Retention Flow (مسار احتفاظ)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l2-retention-flow.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Touchpoint (نقطة تلامس)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l2-retention-flow.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "بدون Flow",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l2-retention-flow.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مع Flow + AI",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l2-retention-flow.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Retention Flow (مسار الاحتفاظ)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l2-retention-flow.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Touchpoint (نقطة تلامس)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l2-retention-flow.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "بدون Flow",
+        "source": {
+          "path": "src/components/intro/lessons/business-m2-l2-retention-flow.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مع Flow + AI",
+        "source": {
+          "path": "src/components/intro/lessons/business-m2-l2-retention-flow.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Retention Flow (مسار احتفاظ)",
+        "source": {
+          "path": "src/components/intro/lessons/business-m2-l2-retention-flow.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Touchpoint (نقطة تلامس)",
+        "source": {
+          "path": "src/components/intro/lessons/business-m2-l2-retention-flow.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Retention Flow: \"Without Flow\" versus \"With Flow + AI\" — Touchpoint 1 — A few days later:",
+    "ar-MSA": "مسار الاحتفاظ بالعميل: \"بدون Flow\" في مقابل \"مع Flow + AI\" — لمسة ١ — بعد أيام قليلة:",
+    "ar-Gulf": "مسار الاحتفاظ: \"بدون Flow\" في مقابل \"مع Flow + AI\" — لمسة ١ — بعد أيام قليلة:",
+    "ar-EG": "٣ لمسات بعد الشراء — مش حملة ضخمة: \"بدون Flow\" في مقابل \"مع Flow + AI\" — لمسة ١ — بعد أيام قليلة: «كله تمام؟ محتاج حاجة؟» — تأكيد + باب للشكوى المبكرة."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Realistic Flow\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/business-m2-l2-retention-flow.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Role of AI\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/business-m2-l2-retention-flow.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Flow واقعي\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l2-retention-flow.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"دور الذكاء الاصطناعي\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l2-retention-flow.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Flow واقعي\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l2-retention-flow.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"دور الذكاء الاصطناعي\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l2-retention-flow.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Flow واقعي\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m2-l2-retention-flow.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"دور الـ AI\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m2-l2-retention-flow.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "31fd3f2a278c14934da7ac461c5bf07861a22cb0655638b3fe349cb549de77ce"
+}

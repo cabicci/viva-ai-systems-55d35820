@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "analyst-m4-l1-pattern-vs-outlier",
+  "pathId": "analyst",
+  "moduleId": "analyst-m4",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Pattern vs Outlier",
+    "ar-MSA": "النمط مقابل الشاذّ",
+    "ar-Gulf": "النمط مقابل الشذوذ",
+    "ar-EG": "نمط = خطّط — استثناء = افهم"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/analyst-m4-l1-pattern-vs-outlier.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Not every strange number warrants changing your plan — you need to know: Is this a recurring pattern or an exception this one time?",
+        "Why now? In the previous lesson, you extracted summaries from AI. Now you need to distinguish what requires a decision and what only needs an explanation.",
+        "What after the lesson? You will classify 5 numbers or days: Pattern, Exception, or Not enough data."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ ليس كل رقم غريب يستحق تغيير خطتك — يجب أن تعرف: هل هذا نمط يتكرّر أم استثناء لمرّة واحدة؟",
+        "لماذا الآن؟ في الدرس السابق استخرجت ملخّصات من الذكاء الاصطناعي. الآن تحتاج أن تميّز ما يستحق قرارًا وما يستحق تفسيرًا فقط.",
+        "ماذا بعد الدرس؟ ستصنّف ٥ أرقام أو أيام: نمط، استثناء، أو لا بيانات كافية."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ مو كل رقم غريب يستحق تغيير خطتك — لازم تعرف: هل هذا نمط يتكرّر أو استثناء لمرة وحدة؟",
+        "ليش الحين؟ في الدرس السابق استخرجت ملخصات من الذكاء الاصطناعي. الحين تحتاج تميّز وش يستحق قرار ووش يستحق تفسير بس.",
+        "وش بعد الدرس؟ راح تصنّف ٥ أرقام أو أيام: نمط، استثناء، أو ما فيه بيانات كافية."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ مش كل رقم غريب يستاهل تغيّر خطتك — لازم تعرف: ده نمط بيتكرّر ولا استثناء لمرّة واحدة؟",
+        "ليه دلوقتي؟ في الدرس اللي فات طلّعت ملخّصات من الـ AI. دلوقتي محتاج تميّز إيه اللي يستاهل قرار وإيه اللي يستاهل تفسير بس.",
+        "هتعمل إيه بعد الدرس؟ هتصنّف ٥ أرقام أو أيام: نمط، استثناء، أو مفيش بيانات كفاية."
+      ]
+    },
+    "coreIdea": {
+      "en": "Pattern:",
+      "ar-MSA": "Pattern (نمط):",
+      "ar-Gulf": "Pattern (نمط):",
+      "ar-EG": "Pattern (نمط): حاجة بتتكرّر في فترات مختلفة — يستاهل تخطّط عليها (ميزانية، SOP، توقع)."
+    },
+    "tension": {
+      "en": "One day, sales tripled — so I decided to double the ads. The following week, they returned to normal. The problem: A strategic decision was made based on an exception. A one-time campaign, a big client, or a recording er",
+      "ar-MSA": "يوم واحد المبيعات تضاعفت ٣ مرات — فقررت مضاعفة الإعلانات. الأسبوع التالي عادت للطبيعي. المشكلة: قرار استراتيجي اتُخذ على استثناء. حملة لمرّة واحدة، عميل كبير، أو خطأ تسجيل — ليس بالضرورة «نظامًا جديدًا».",
+      "ar-Gulf": "يوم واحد المبيعات تضاعفت ٣ مرات — فقررت مضاعفة الإعلانات. الأسبوع اللي بعده رجعت للطبيعي. المشكلة: قرار استراتيجي اتخذ على استثناء. حملة لمرة وحدة، عميل كبير، أو خطأ تسجيل — مو بالضرورة «نظام جديد».",
+      "ar-EG": "يوم واحد المبيعات طلّعت ٣ أضعاف — فقررت تضاعف الإعلانات. الأسبوع اللي بعده رجعت للطبيعي."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Decision on one number",
+        "rightLabel": "Reading before the decision",
+        "leftBody": "Sales on Friday jumped — increased ads immediately. A week later, I discovered it was a special occasion.",
+        "rightBody": "The same jump — I reviewed 8 weeks: Friday is always 40% higher. This is a pattern — I planned to increase stock on Thursday."
+      },
+      "ar-MSA": {
+        "leftLabel": "قرار على رقم واحد",
+        "rightLabel": "قراءة قبل القرار",
+        "leftBody": "مبيعات يوم الجمعة قفزت — زادت الإعلانات فورًا. بعد أسبوع اكتشفت أنها مناسبة خاصة",
+        "rightBody": "نفس القفزة — راجعت ٨ أسابيع: الجمعة دائمًا أعلى ٤٠٪. هذا نمط — خطّطت زيادة مخزون يوم الخميس"
+      },
+      "ar-Gulf": {
+        "leftLabel": "قرار على رقم واحد",
+        "rightLabel": "قراءة قبل القرار",
+        "leftBody": "مبيعات يوم الجمعة قفزت — زادت الإعلانات فورًا. بعد أسبوع اكتشفت أنها مناسبة خاصة",
+        "rightBody": "نفس القفزة — راجعت ٨ أسابيع: الجمعة دائمًا أعلى ٤٠٪. هذا نمط — خططت زيادة مخزون يوم الخميس"
+      },
+      "ar-EG": {
+        "leftLabel": "قرار على رقم واحد",
+        "leftBody": "مبيعات يوم الجمعة قفزت — فزّعت الإعلانات فورًا. بعد أسبوع اكتشفت إنها كانت مناسبة خاصة.",
+        "rightLabel": "قراءة قبل القرار",
+        "rightBody": "نفس القفزة — راجعت ٨ أسابيع: الجمعة دايمًا أعلى ٤٠٪. ده نمط — خطّطت زيادة مخزون يوم الخميس."
+      }
+    },
+    "missionIntro": {
+      "en": "A practical distinction task — not a graph. Take 5 numbers or 5 days from your work (real or imagined) and classify each one. Goal: You learn to pause before changing a decision based on a strange number.",
+      "ar-MSA": "مهمة تمييز عملي — ليس رسمًا بيانيًا. خذ ٥ أرقام أو ٥ أيام من عملك (حقيقي أو تخيلي) وصنّف كل واحد. الهدف: تتعلّم التوقّف قبل أن تغيّر قرارًا بسبب رقم غريب.",
+      "ar-Gulf": "مهمة تمييز عملي — مو رسم بياني. خذ ٥ أرقام أو ٥ أيام من عملك (حقيقي أو تخيلي) وصنّف كل واحد. الهدف: تتعلّم التوقف قبل ما تغير قرارك بسبب رقم غريب.",
+      "ar-EG": "المهمة دي تمييز عملي — مش رسم بياني. خد ٥ أرقام أو ٥ أيام من شغلك (حقيقي أو تخيلي) وصنّف كل واحد.\n\nالهدف: تتعلّم توقّف قبل ما تغيّر قرار بسبب رقم غريب."
+    },
+    "visualIntent": {
+      "kind": "comparison",
+      "summary": "**Stable pattern and one-time jump** (ID: `pattern-vs-outlier`): **The stable line = pattern** you plan for. **The one-time jump = exception** you understand **",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**Stable pattern and one-time jump** (ID: `pattern-vs-outlier`): **The stable line = pattern** you plan for. **The one-time jump = exception"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**نمط مستقر وقفزة لمرّة واحدة** (معرّف: `pattern-vs-outlier`): **الخط المستقر = نمط** تخطّط عليه. **القفزة الواحدة = استثناء** تفهم **سببه**"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**نمط مستقر وقفزة لمرة وحدة** (معرّف: `pattern-vs-outlier`): **الخط المستقر = نمط** تخطط عليه. **القفزة الواحدة = استثناء** تفهم **سببه** —"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/analyst-m4-l1-pattern-vs-outlier.ts",
+          "field": "block.caption (diagram)",
+          "quote": "الخط المستقر = نمط تخطّط عليه. القفزة الواحدة = استثناء تفهم سببه — مش تغيّر استراتيجيتك بسببه."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "analyst-m4-l1-pattern-vs-outlier's package marks a Diagram intent (pattern-vs-outlier); the underlying relationship reads as comparison, so a deterministic SVG panel keeps the real Decision on one number/Reading before the decision labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "two-panel-comparison",
+  "duplicationJustification": "Shares the \"two-panel-comparison\" layout template with 4 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Decision on one number\" vs \"Reading before the decision\" for analyst-m4-l1-pattern-vs-outlier.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Decision on one number",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Reading before the decision",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Pattern",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Outlier",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "قرار على رقم واحد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "قراءة قبل القرار",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Pattern (نمط)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Outlier (استثناء)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "قرار على رقم واحد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "قراءة قبل القرار",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Pattern (نمط)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Outlier (استثناء)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "قرار على رقم واحد",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m4-l1-pattern-vs-outlier.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "قراءة قبل القرار",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m4-l1-pattern-vs-outlier.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Pattern (نمط)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m4-l1-pattern-vs-outlier.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Outlier (استثناء)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m4-l1-pattern-vs-outlier.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Pattern vs Outlier: \"Decision on one number\" versus \"Reading before the decision\" — Pattern:",
+    "ar-MSA": "النمط مقابل الشاذّ: \"قرار على رقم واحد\" في مقابل \"قراءة قبل القرار\" — Pattern (نمط):",
+    "ar-Gulf": "النمط مقابل الشذوذ: \"قرار على رقم واحد\" في مقابل \"قراءة قبل القرار\" — Pattern (نمط):",
+    "ar-EG": "نمط = خطّط — استثناء = افهم: \"قرار على رقم واحد\" في مقابل \"قراءة قبل القرار\" — Pattern (نمط): حاجة بتتكرّر في فترات مختلفة — يستاهل تخطّط عليها (ميزانية، SOP، توقع)."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Correct classification\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Decision from the pattern\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"تصنيف صحيح\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قرار من النمط\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"تصنيف صحيح\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قرار من النمط\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-l1-pattern-vs-outlier.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"تصنيف صحيح\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m4-l1-pattern-vs-outlier.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قرار من النمط\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m4-l1-pattern-vs-outlier.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "aae13df5d0876a25ac9abdb9a1ec20cbf340b142caae8241cf7d9875e5ce6670"
+}

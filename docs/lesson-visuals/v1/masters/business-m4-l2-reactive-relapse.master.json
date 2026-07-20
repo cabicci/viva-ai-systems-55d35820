@@ -1,0 +1,326 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "business-m4-l2-reactive-relapse",
+  "pathId": "business",
+  "moduleId": "business-m4",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Reactive Relapse",
+    "ar-MSA": "الانتكاسة إلى ردّ الفعل",
+    "ar-Gulf": "الرجوع للإطفاء",
+    "ar-EG": "راقب المحفّز — مش بس «كون منضبط»"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/business-m4-l2-reactive-relapse.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l2-reactive-relapse.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l2-reactive-relapse.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/business-m4-l2-reactive-relapse.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Even after building a system, pressure can push you back into Reactive Mode — and AI helps you monitor signals and summarize warnings.",
+        "Why now? You have built a rhythm and SOP and thought about expansion. Relapsing is most dangerous when you feel like you are «done».",
+        "What after the lesson? You will identify the top triggers for relapse and a protection rule for each one."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ حتى بعد بناء نظام، الضغط قد يعيدك إلى Reactive Mode (وضع الإطفاء) — والذكاء الاصطناعي (AI) يساعدك على مراقبة الإشارات وتلخيص التحذيرات.",
+        "لماذا الآن؟ بنيت إيقاعًا وSOP (إجراءات تشغيل قياسية) وفكّرت في التوسّع. الرجوع للإطفاء أخطر عندما تشعر أنك «انتهيت».",
+        "ماذا بعد الدرس؟ ستحدّد أهم محفّزين للرجوع (relapse) وقاعدة حماية لكل واحد منهما."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ حتى بعد بناء نظام، الضغط ممكن يرجعك إلى وضع الإطفاء — والذكاء الاصطناعي يساعدك على مراقبة الإشارات وتلخيص التحذيرات.",
+        "ليش الحين؟ بنيت إيقاع وإجراءات تشغيل قياسية وفكرت في التوسع. الرجوع للإطفاء أخطر لما تحس أنك «خلصت».",
+        "وش بعد الدرس؟ راح تحدد أهم محفزات الرجوع وقاعدة حماية لكل واحد منها."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ حتى بعد بناء نظام، الضغط يرجّعك Reactive — والـ AI يساعدك تراقب الإشارات وتلخّص التحذيرات.",
+        "ليه دلوقتي؟ بنيت إيقاع وSOP وفكّرت في التوسّع. الرجوع للإطفاء أخطر لما تحس إنك «خلّصت».",
+        "هتعمل إيه بعد الدرس؟ هتحدد أهم ٢ محفّز relapse وقاعدة حماية لكل واحد."
+      ]
+    },
+    "coreIdea": {
+      "en": "Relapse",
+      "ar-MSA": "Relapse",
+      "ar-Gulf": "الانتكاسة",
+      "ar-EG": "Relapse يبدأ صغير: تفتح رسالة «بس دي» قبل بلوك الاستراتيجية — وبعدين اليوم كله Reactive."
+    },
+    "tension": {
+      "en": "Two weeks of a good system — then a successful campaign, a big complaint, or cash pressure — and suddenly you are back in reactions and firefighting. Reactive Relapse is not a moral failure — it is a signal that a pressu",
+      "ar-MSA": "أسبوعان من نظام جيد — ثم حملة ناجحة، شكوى كبيرة، أو ضغط كاش — وفجأة أنت مجددًا في ردود ومطافئ. Reactive Relapse (رجوع للإطفاء) ليس فشلًا أخلاقيًا — إنه إشارة أن محفّز ضغط كسر الحماية.",
+      "ar-Gulf": "أسبوعين من نظام جيد — ثم حملة ناجحة، شكوى كبيرة، أو ضغط كاش — وفجأة أنت مجددًا في ردود ومطافئ. الانتكاسة إلى وضع الإطفاء مو فشل أخلاقي — إنه إشارة أن محفز الضغط كسر الحماية.",
+      "ar-EG": "أسبوعين نظام حلو — بعدين حملة ناجحة، شكوى كبيرة، أو ضغط كاش — وفجأة إنت تاني في ردود ومطافئ."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Without Rules",
+        "rightLabel": "With Rules + AI",
+        "leftBody": "«This week is an exception» — then a whole month Reactive",
+        "rightBody": "Known trigger + rule + weekly summary from AI — return to the system faster"
+      },
+      "ar-MSA": {
+        "leftLabel": "بدون قواعد",
+        "rightLabel": "مع قواعد + AI",
+        "leftBody": "«هذا الأسبوع استثناء» — ثم شهر كامل Reactive",
+        "rightBody": "محفّز معروف + قاعدة + ملخص أسبوعي من AI — تعود للنظام أسرع"
+      },
+      "ar-Gulf": {
+        "leftLabel": "بدون قواعد",
+        "rightLabel": "مع قواعد + الذكاء الاصطناعي",
+        "leftBody": "«هذا الأسبوع استثناء» — ثم شهر كامل ردود",
+        "rightBody": "محفز معروف + قاعدة + ملخص أسبوعي من الذكاء الاصطناعي — تعود للنظام أسرع"
+      },
+      "ar-EG": {
+        "leftLabel": "بدون قواعد",
+        "leftBody": "«الأسبوع ده استثناء» — وبعدين شهر كامل Reactive.",
+        "rightLabel": "مع قواعد + AI",
+        "rightBody": "محفّز معروف + قاعدة + ملخص أسبوعي من الـ AI — ترجع للنظام أسرع."
+      }
+    },
+    "missionIntro": {
+      "en": "Think about the last time you felt you went Reactive (or close to it). Identify your top two triggers — and write a simple protection rule for each one. Not a lifelong promise — rules you can implement next week.",
+      "ar-MSA": "فكّر في آخر مرة شعرت أنك عدت Reactive (أو قريبًا منها). حدّد أهم محفّزين عندك — واكتب قاعدة حماية بسيطة لكل واحد. ليس وعدًا أبديًا — قواعد تستطيع تنفيذها الأسبوع القادم.",
+      "ar-Gulf": "فكّر في آخر مرة شعرت أنك عدت لوضع الإطفاء (أو قريبًا منها). حدد أهم محفزين عندك — واكتب قاعدة حماية بسيطة لكل واحد. مو وعد أبدي — قواعد تقدر تنفذها الأسبوع الجاي.",
+      "ar-EG": "فكّر في آخر مرة حسّيت إنك رجعت Reactive (أو قريب منها). حدّد أهم ٢ محفّز عندك — واكتب قاعدة حماية بسيطة لكل واحد.\n\nمش وعد أبدي — قواعد تقدر تنفّذها الأسبوع الجاي."
+    },
+    "visualIntent": {
+      "kind": "process",
+      "summary": "**Reactive Relapse Cycle** (ID: `reactive-relapse-cycle`): **trigger** → **shutdown** → **fatigue** → **postponing the system**. **Break the cycle** with **one",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m4-l2-reactive-relapse.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**Reactive Relapse Cycle** (ID: `reactive-relapse-cycle`): **trigger** → **shutdown** → **fatigue** → **postponing the system**. **Break the"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l2-reactive-relapse.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**دورة الرجوع للإطفاء** (معرّف: `reactive-relapse-cycle`): **المحفّز** → **إطفاء** → **تعب** → **تأجيل النظام**. **اقطع الدورة** بـ **قاعدة"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l2-reactive-relapse.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**دورة الانتكاسة إلى وضع الإطفاء** (معرّف: `reactive-relapse-cycle`): **المحفز** → **إطفاء** → **تعب** → **تأجيل النظام**. **اقطع الدورة** ب"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/business-m4-l2-reactive-relapse.ts",
+          "field": "block.caption (diagram)",
+          "quote": "المحفّز → إطفاء → تعب → تأجيل النظام. قاطع الدورة بقاعدة واحدة واضحة."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "business-m4-l2-reactive-relapse's package marks a Diagram intent (reactive-relapse-cycle); the underlying relationship reads as process, so a deterministic SVG panel keeps the real Without Rules/With Rules + AI labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "process-stage-strip",
+  "duplicationJustification": "Shares the \"process-stage-strip\" layout template with 8 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Without Rules\" vs \"With Rules + AI\" for business-m4-l2-reactive-relapse.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Without Rules",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m4-l2-reactive-relapse.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "With Rules + AI",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m4-l2-reactive-relapse.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Reactive Relapse",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m4-l2-reactive-relapse.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "SOP (Standard Operating Procedure)",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m4-l2-reactive-relapse.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "بدون قواعد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l2-reactive-relapse.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مع قواعد + AI",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l2-reactive-relapse.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Reactive Relapse (رجوع للإطفاء)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l2-reactive-relapse.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "SOP (إجراءات تشغيل قياسية)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l2-reactive-relapse.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "بدون قواعد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l2-reactive-relapse.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مع قواعد + الذكاء الاصطناعي",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l2-reactive-relapse.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "الانتكاسة إلى وضع الإطفاء",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l2-reactive-relapse.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "إجراءات تشغيل قياسية",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l2-reactive-relapse.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "بدون قواعد",
+        "source": {
+          "path": "src/components/intro/lessons/business-m4-l2-reactive-relapse.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مع قواعد + AI",
+        "source": {
+          "path": "src/components/intro/lessons/business-m4-l2-reactive-relapse.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Reactive Relapse (رجوع للإطفاء)",
+        "source": {
+          "path": "src/components/intro/lessons/business-m4-l2-reactive-relapse.ts",
+          "field": "block.items[0].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Reactive Relapse: \"Without Rules\" versus \"With Rules + AI\" — Relapse",
+    "ar-MSA": "الانتكاسة إلى ردّ الفعل: \"بدون قواعد\" في مقابل \"مع قواعد + AI\" — Relapse",
+    "ar-Gulf": "الرجوع للإطفاء: \"بدون قواعد\" في مقابل \"مع قواعد + الذكاء الاصطناعي\" — الانتكاسة",
+    "ar-EG": "راقب المحفّز — مش بس «كون منضبط»: \"بدون قواعد\" في مقابل \"مع قواعد + AI\" — Relapse يبدأ صغير: تفتح رسالة «بس دي» قبل بلوك الاستراتيجية — وبعدين اليوم كله Reactive."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Real Triggers\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/business-m4-l2-reactive-relapse.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Actionable Rules\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/business-m4-l2-reactive-relapse.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"محفّزات حقيقية\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l2-reactive-relapse.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قواعد قابلة للتنفيذ\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l2-reactive-relapse.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"محفّزات حقيقية\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l2-reactive-relapse.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قواعد قابلة للتنفيذ\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l2-reactive-relapse.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"محفّزات حقيقية\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m4-l2-reactive-relapse.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قواعد قابلة للتنفيذ\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m4-l2-reactive-relapse.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "e8b732b513104e3f3832a24cb4063db81ec7d702fa7654734b676dec1c64b29c"
+}

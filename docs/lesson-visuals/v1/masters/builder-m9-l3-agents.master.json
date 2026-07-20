@@ -1,0 +1,338 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m9-l3-agents",
+  "pathId": "builder",
+  "moduleId": "builder-m9",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Agents — AI Takes Decisions",
+    "ar-MSA": "الوكلاء — قرارات الذكاء الاصطناعي",
+    "ar-Gulf": "الوكلاء وقرارات الـ AI",
+    "ar-EG": "Agent = هدف + أدوات + حدود"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m9-l3-agents.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l3-agents.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l3-agents.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m9-l3-agents.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? An AI Agent needs a goal + tools + boundaries — not just responses.",
+        "Why now? RAG allows AI to respond using your files — but \"book me an appointment\" is a request for action, not information.",
+        "What comes after the lesson? You will define a goal + two tools + one boundary (out of scope).",
+        "Optional depth: For those who want to build agents. You can skip it if your goal is just to use AI in your work."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ الـ Agent (وكيل ذكاء اصطناعي) يحتاج هدفًا + أدوات + حدود — ليس ردود كلام فقط.",
+        "لماذا الآن؟ RAG جعل الذكاء الاصطناعي يرد من ملفاتك — لكن «احجز لي موعدًا» طلب تنفيذ لا معلومة.",
+        "ماذا بعد الدرس؟ ستحدد هدفًا + أداتين + حدًا واحدًا (خارج النطاق).",
+        "عمق اختياري: لمن يريد بناء agents. يمكنك تخطيه إن كان هدفك استخدام الذكاء الاصطناعي في عملك فقط."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ الوكيل (Agent) يحتاج هدف + أدوات + حدود — مو بس ردود كلام.",
+        "ليش الحين؟ RAG خلى الذكاء الاصطناعي يرد من ملفاتك — لكن «احجز لي موعد» طلب تنفيذ مو معلومة.",
+        "وش بعد الدرس؟ راح تحدد هدف + أداتين + حد واحد (خارج النطاق).",
+        "عمق اختياري: للي يبغون يبنون وكلاء. تقدر تتخطاه إذا كان هدفك استخدام الذكاء الاصطناعي في شغلك بس."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ الـ Agent محتاج هدف + أدوات + حدود — مش بس ردود كلام.",
+        "ليه دلوقتي؟ RAG خلّى الـ AI يرد من ملفاتك — بس «احجزلي ميعاد» طلب تنفيذ مش معلومة.",
+        "هتعمل إيه بعد الدرس؟ هتحدّد هدف + أداتين + حد واحد (خارج النطاق).",
+        "عمق اختياري: الدرس ده للي عايز يبني agents. تقدر تعدّيه لو هدفك استخدام AI في شغلك بس — باقي المسارات لسه قيمة."
+      ]
+    },
+    "coreIdea": {
+      "en": "An Agent",
+      "ar-MSA": "Agent",
+      "ar-Gulf": "الوكيل",
+      "ar-EG": "Agent = AI ياخد قرارات ويستخدم tools (functions) عشان ينفّذ في العالم الحقيقي."
+    },
+    "tension": {
+      "en": "Customer: \"I want to cancel my subscription\". AI: \"Go to Settings → Billing → Cancel\". The customer closed the chat angrily — I gave instructions instead of resolving the issue.",
+      "ar-MSA": "العميل: «أريد إلغاء اشتراكي». الذكاء الاصطناعي: «اذهب إلى Settings → Billing → Cancel». العميل أغلق المحادثة غاضبًا — أعطيته تعليمات بدل إنهاء المشكلة.",
+      "ar-Gulf": "العميل: «أبغى ألغي اشتراكي». الذكاء الاصطناعي: «روح إلى الإعدادات → الفواتير → إلغاء». العميل قفل المحادثة وهو زعلان — أعطيته تعليمات بدل ما أنهي المشكلة.",
+      "ar-EG": "العميل: «عايز ألغي اشتراكي». الـ AI: «روح Settings → Billing → Cancel»."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Chatbot — Just words",
+        "rightLabel": "Agent — Executes",
+        "leftBody": "\"To cancel your subscription, do this.\" The customer still has to act themselves",
+        "rightBody": "Uses `getSubscription` → asks \"Confirm cancellation?\" → `cancelSubscription`. The task completed in 20 seconds"
+      },
+      "ar-MSA": {
+        "leftLabel": "Chatbot — كلام فقط",
+        "rightLabel": "Agent — تنفيذ",
+        "leftBody": "«لإلغاء الاشتراك، افعل كذا». العميل ما زال يتحرك بنفسه",
+        "rightBody": "يستخدم `getSubscription` → يسأل «أكّد الإلغاء؟» → `cancelSubscription`. المهمة انتهت في ٢٠ ثانية"
+      },
+      "ar-Gulf": {
+        "leftLabel": "Chatbot — كلام فقط",
+        "rightLabel": "الوكيل — تنفيذ",
+        "leftBody": "«لإلغاء الاشتراك، سو كذا». العميل ما زال يتحرك بنفسه",
+        "rightBody": "يستخدم `getSubscription` → يسأل «أكّد الإلغاء؟» → `cancelSubscription`. المهمة انتهت في ٢٠ ثانية"
+      },
+      "ar-EG": {
+        "leftLabel": "Chatbot — كلام بس",
+        "leftBody": "«عشان تلغي، اعمل كذا وكذا». العميل لسه محتاج يتحرك بنفسه — حس إن الـ AI ديكور.",
+        "rightLabel": "Agent — تنفيذ",
+        "rightBody": "يستخدم `getSubscription` → يسأل «أكّد الإلغاء؟» → `cancelSubscription`. المهمة خلصت في ٢٠ ثانية."
+      }
+    },
+    "missionIntro": {
+      "en": "Design a simple agent — not code, just a plan. 10–15 minutes.",
+      "ar-MSA": "صمّم Agent بسيطًا — ليس كودًا، تخطيط فقط. ١٠–١٥ دقيقة.",
+      "ar-Gulf": "صمّم وكيل بسيط — مو كود، تخطيط بس. ١٠–١٥ دقيقة.",
+      "ar-EG": "صمّم Agent بسيط — مش كود، تخطيط بس.\n\n١٠–١٥ دقيقة."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "**The Agent's thought process:**",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m9-l3-agents.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**The Agent's thought process:**"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l3-agents.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**دائرة تفكير الـ Agent:**"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l3-agents.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**دائرة تفكير الوكيل:**"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m9-l3-agents.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "Think → Act (أداة) → Observe (النتيجة) → كرّر لحد ما المهمة تخلص. ده اللي يخلّيه يحل مشاكل من كذا خطوة."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "builder-m9-l3-agents's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Chatbot — Just words / Agent — Executes) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Chatbot — Just words\" vs \"Agent — Executes\" for builder-m9-l3-agents.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Chatbot — Just words",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m9-l3-agents.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Agent — Executes",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m9-l3-agents.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Agent",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m9-l3-agents.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Tool",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m9-l3-agents.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "Chatbot — كلام فقط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l3-agents.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Agent — تنفيذ",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l3-agents.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Agent (وكيل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l3-agents.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Tool (أداة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l3-agents.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "Chatbot — كلام فقط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l3-agents.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "الوكيل — تنفيذ",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l3-agents.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "الوكيل (Agent)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l3-agents.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "الأداة (Tool)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l3-agents.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "Chatbot — كلام بس",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m9-l3-agents.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Agent — تنفيذ",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m9-l3-agents.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Agent",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m9-l3-agents.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Tool (أداة)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m9-l3-agents.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Agents — AI Takes Decisions: \"Chatbot — Just words\" versus \"Agent — Executes\" — An Agent",
+    "ar-MSA": "الوكلاء — قرارات الذكاء الاصطناعي: \"Chatbot — كلام فقط\" في مقابل \"Agent — تنفيذ\" — Agent",
+    "ar-Gulf": "الوكلاء وقرارات الـ AI: \"Chatbot — كلام فقط\" في مقابل \"الوكيل — تنفيذ\" — الوكيل",
+    "ar-EG": "Agent = هدف + أدوات + حدود: \"Chatbot — كلام بس\" في مقابل \"Agent — تنفيذ\" — Agent = AI ياخد قرارات ويستخدم tools (functions) عشان ينفّذ في العالم الحقيقي."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Goal and Tools\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m9-l3-agents.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Safety Boundary\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m9-l3-agents.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"هدف وأدوات\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l3-agents.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"حد أمان\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l3-agents.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"هدف وأدوات\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l3-agents.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"حد أمان\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l3-agents.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"هدف وأدوات\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m9-l3-agents.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"حد أمان\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m9-l3-agents.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "f77bbe66dbba5516c5a4a3552e04507644c4396bc2c540fe6f84734dd77390c8"
+}

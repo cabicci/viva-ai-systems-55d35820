@@ -1,0 +1,333 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "creator-m2-l2-content-pillars",
+  "pathId": "creator",
+  "moduleId": "creator-m2",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Content Pillars",
+    "ar-MSA": "أعمدة المحتوى",
+    "ar-Gulf": "أعمدة المحتوى",
+    "ar-EG": "٣ أعمدة كفاية جدًا"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/creator-m2-l2-content-pillars.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m2-l2-content-pillars.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m2-l2-content-pillars.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/creator-m2-l2-content-pillars.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? When you define your Content Pillars, it makes publishing decisions easier and faster.",
+        "Goal: To build 3 clear pillars that you can rely on.",
+        "What comes after the lesson? You will have a content map instead of daily confusion about \"What should I post?\"."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ عندما تحدّد أعمدة محتواك (Content Pillars)، يصبح قرار النشر أسهل وأسرع.",
+        "الهدف: أن تبني ٣ أعمدة واضحة تمشي عليها بثبات.",
+        "ماذا بعد الدرس؟ ستملك خريطة محتوى بدل الحيرة اليومية «عن ماذا أنشر؟»."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ لما تحدد أعمدة محتواك (Content Pillars)، يصير قرار النشر أسهل وأسرع.",
+        "الهدف: تبني ٣ أعمدة واضحة تمشي عليها بثقة.",
+        "وش بعد الدرس؟ راح تملك خريطة محتوى بدل الحيرة اليومية «عن وش أنشر؟»."
+      ],
+      "ar-EG": [
+        "لما تحدد أعمدة محتواك، قرار النشر يبقى أسهل وأسرع.",
+        "الهدف هنا إنك تبني ٣ أعمدة واضحة تمشي عليهم بثبات."
+      ]
+    },
+    "coreIdea": {
+      "en": "Content Pillar:",
+      "ar-MSA": "Content Pillar (عمود محتوى):",
+      "ar-Gulf": "عمود المحتوى (Content Pillar):",
+      "ar-EG": "الأعمدة هي مواضيع رئيسية ثابتة، وكل فكرة محتوى لازم تتبع واحد منها."
+    },
+    "tension": {
+      "en": "Daily question: \"What should I post?\" Without pillars: Ideas seem random and overwhelming.",
+      "ar-MSA": "كل يوم سؤال: «عن ماذا أنشر؟» من دون أعمدة: الأفكار تبدو عشوائية ومُجهِدة.",
+      "ar-Gulf": "كل يوم سؤال: «عن وش أنشر؟» من دون أعمدة: الأفكار تبدو عشوائية ومُجهِدة.",
+      "ar-EG": "من غير أعمدة، الأفكار بتبقى عشوائية ومجهدة."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Without Pillars",
+        "rightLabel": "With Pillars",
+        "leftBody": "Ideas are disconnected — and the message is unclear to the audience.",
+        "rightBody": "Each idea serves a coherent image — followers know what you stand for."
+      },
+      "ar-MSA": {
+        "leftLabel": "من دون أعمدة",
+        "rightLabel": "مع أعمدة",
+        "leftBody": "أفكار متقطعة — والرسالة غير واضحة للجمهور",
+        "rightBody": "كل فكرة تخدم صورة واحدة متماسكة — فيعرف المتابع في ماذا تميّز"
+      },
+      "ar-Gulf": {
+        "leftLabel": "من دون أعمدة",
+        "rightLabel": "مع أعمدة",
+        "leftBody": "أفكار متقطعة — والرسالة غير واضحة للجمهور",
+        "rightBody": "كل فكرة تخدم صورة واحدة متماسكة — يعرف المتابع في وش تميّز"
+      },
+      "ar-EG": {
+        "leftLabel": "من غير أعمدة",
+        "leftBody": "أفكار متقطعة، والرسالة النهائية مش واضحة للجمهور.",
+        "rightLabel": "مع أعمدة",
+        "rightBody": "كل فكرة بتخدم صورة واحدة متماسكة، فالمتابع يعرف أنت بتميز في إيه."
+      }
+    },
+    "missionIntro": {
+      "en": "The mission is a training exercise — not a test. Define 3 clear pillars and write 3 practical ideas for each pillar.",
+      "ar-MSA": "المهمة تدريب بناء نظام — ليس اختبارًا. حدّد ٣ أعمدة واضحة واكتب ٣ أفكار عملية لكل عمود.",
+      "ar-Gulf": "المهمة تدريب بناء نظام — مو اختبار. حدد ٣ أعمدة واضحة واكتب ٣ أفكار عملية لكل عمود.",
+      "ar-EG": "المهمة تدريب بناء نظام، مش اختبار. حدّد ٣ أعمدة واضحة واكتب ٣ أفكار عملية لكل عمود."
+    },
+    "visualIntent": {
+      "kind": "system",
+      "summary": "Illustration — **Distribution of the pillars**. It shows how **one pillar** branches into **multiple ideas** without losing the **identity of the content**.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m2-l2-content-pillars.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "Illustration — **Distribution of the pillars**. It shows how **one pillar** branches into **multiple ideas** without losing the **identity o"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m2-l2-content-pillars.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Content Pillar (عمود محتوى):"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m2-l2-content-pillars.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "عمود المحتوى (Content Pillar):"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/creator-m2-l2-content-pillars.ts",
+          "field": "block.caption (diagram)",
+          "quote": "الرسم يوضح إزاي العمود الواحد يتفرع لأفكار متعددة من غير ما تضيع هوية المحتوى."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "creator-m2-l2-content-pillars's package marks a Diagram intent (content-pillars); the underlying relationship reads as system, so a deterministic SVG panel keeps the real Without Pillars/With Pillars labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "system-map-panel",
+  "duplicationJustification": "Shares the \"system-map-panel\" layout template with 3 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Without Pillars\" vs \"With Pillars\" for creator-m2-l2-content-pillars.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Without Pillars",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m2-l2-content-pillars.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "With Pillars",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m2-l2-content-pillars.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Content Pillar",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m2-l2-content-pillars.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Topic Idea",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m2-l2-content-pillars.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "من دون أعمدة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m2-l2-content-pillars.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مع أعمدة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m2-l2-content-pillars.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Content Pillar (عمود محتوى)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m2-l2-content-pillars.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Topic Idea (فكرة موضوع)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m2-l2-content-pillars.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "من دون أعمدة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m2-l2-content-pillars.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مع أعمدة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m2-l2-content-pillars.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "عمود المحتوى (Content Pillar)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m2-l2-content-pillars.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "فكرة الموضوع (Topic Idea)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m2-l2-content-pillars.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "من غير أعمدة",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m2-l2-content-pillars.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مع أعمدة",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m2-l2-content-pillars.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Content Pillar",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m2-l2-content-pillars.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Topic Idea",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m2-l2-content-pillars.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Content Pillars: \"Without Pillars\" versus \"With Pillars\" — Content Pillar:",
+    "ar-MSA": "أعمدة المحتوى: \"من دون أعمدة\" في مقابل \"مع أعمدة\" — Content Pillar (عمود محتوى):",
+    "ar-Gulf": "أعمدة المحتوى: \"من دون أعمدة\" في مقابل \"مع أعمدة\" — عمود المحتوى (Content Pillar):",
+    "ar-EG": "٣ أعمدة كفاية جدًا: \"من غير أعمدة\" في مقابل \"مع أعمدة\" — الأعمدة هي مواضيع رئيسية ثابتة، وكل فكرة محتوى لازم تتبع واحد منها."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Clarity of Pillars\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m2-l2-content-pillars.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Quality of Ideas\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m2-l2-content-pillars.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح الأعمدة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m2-l2-content-pillars.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"جودة الأفكار\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m2-l2-content-pillars.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح الأعمدة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m2-l2-content-pillars.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"جودة الأفكار\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m2-l2-content-pillars.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح الأعمدة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m2-l2-content-pillars.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"جودة الأفكار\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m2-l2-content-pillars.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "79b008fdfb52db14f13626f92e2f7825d8a0b23e426a02c1d1159337879a1a51"
+}

@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "automator-m4-l2-webhooks-api",
+  "pathId": "automator",
+  "moduleId": "automator-m4",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Webhooks & APIs",
+    "ar-MSA": "الويب هوكس وواجهات البرمجة",
+    "ar-Gulf": "الويب هوكس وواجهات البرمجة",
+    "ar-EG": "API = إنت بتسأل. Webhook = هما بيقولولك"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/automator-m4-l2-webhooks-api.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l2-webhooks-api.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l2-webhooks-api.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/automator-m4-l2-webhooks-api.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you learn? Webhook = An application tells another application, \"Something happened\" — without you having to ask repeatedly.",
+        "Why now? Now that you know where data is stored, you need to understand how applications communicate.",
+        "What after the lesson? You will explain one use case for Webhook + what data (Payload) is sent."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ Webhook (إشعار فوري) = تطبيق يقول لتطبيق آخر «حدث شيء» — من دون أن تسأل كل فترة.",
+        "لماذا الآن؟ بعد أن عرفت أين تُخزَّن البيانات، تحتاج أن تفهم كيف تتواصل التطبيقات.",
+        "ماذا بعد الدرس؟ ستشرح حالة استخدام واحدة لـ Webhook + ما البيانات (Payload) التي تُرسل."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ Webhook (إشعار فوري) = تطبيق يقول لتطبيق ثاني «صار شيء» — من دون ما تسأل كل فترة.",
+        "ليش الحين؟ بعد ما عرفت وين تُخزَّن البيانات، تحتاج تفهم كيف تتواصل التطبيقات.",
+        "وش بعد الدرس؟ راح تشرح حالة استخدام واحدة لـ Webhook + وش البيانات (Payload) اللي تُرسل."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ Webhook = تطبيق يقول لتطبيق تاني «حصل حاجة» — من غير ما تسأل كل شوية.",
+        "ليه دلوقتي؟ بعد ما عرفت فين البيانات بتتخزّن، محتاج تعرف إزاي التطبيقات بتكلّم بعض.",
+        "هتعمل إيه بعد الدرس؟ هتشرح use case واحد لـ webhook + إيه البيانات اللي بتتبعت."
+      ]
+    },
+    "coreIdea": {
+      "en": "API:",
+      "ar-MSA": "API:",
+      "ar-Gulf": "API:",
+      "ar-EG": "API: إنت بتبعت request — «هاتلي الطلبات النهارده». إنت اللي بدأت."
+    },
+    "tension": {
+      "en": "\"Workflow asks every minute: Is there anything new?\" Workflow asks the site 1,440 times a day — most responses are \"no\". It wastes time.",
+      "ar-MSA": "«مسار العمل (workflow) يسأل كل دقيقة: هل هناك جديد؟» مسار العمل (workflow) يسأل الموقع ١٤٤٠ مرة في اليوم — معظم الردود «لا». يستهلك وقتًا بلا فائدة.",
+      "ar-Gulf": "«مسار العمل (workflow) يسأل كل دقيقة: هل في جديد؟» مسار العمل (workflow) يسأل الموقع ١٤٤٠ مرة في اليوم — معظم الردود «لا». يستهلك وقت بلا فائدة.",
+      "ar-EG": "الـ workflow بيفضل يسأل الموقع كل دقيقة: «في طلب جديد؟» — ٩٩ مرة الجواب لأ. بياكل وقت ومهام على الفاضي."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Polling — Asks Every Minute",
+        "rightLabel": "Webhook — Notifies You",
+        "leftBody": "Automation asks \"Is there a request?\" thousands of times. Slow, costly, delayed.",
+        "rightBody": "The site sends immediately upon payment: name + amount + email. Workflow operates in the same second."
+      },
+      "ar-MSA": {
+        "leftLabel": "Polling — تسأل كل دقيقة",
+        "rightLabel": "Webhook — يُبلّغك",
+        "leftBody": "الأتمتة تسأل «هل هناك طلب؟» آلاف المرات. بطيء، مكلف، متأخر.",
+        "rightBody": "الموقع يرسل فور الدفع: اسم + مبلغ + بريد. مسار العمل (workflow) يعمل في نفس الثانية."
+      },
+      "ar-Gulf": {
+        "leftLabel": "Polling — تسأل كل دقيقة",
+        "rightLabel": "Webhook — يُبلغك",
+        "leftBody": "الأتمتة تسأل «هل في طلب؟» آلاف المرات. بطيء، مكلف، متأخر.",
+        "rightBody": "الموقع يرسل فور الدفع: اسم + مبلغ + بريد. مسار العمل (workflow) يعمل في نفس الثانية."
+      },
+      "ar-EG": {
+        "leftLabel": "Polling — تسأل كل دقيقة",
+        "leftBody": "الأوتوميشن يسأل «فيه طلب؟» ١٤٤٠ مرة في اليوم. بطيء، مكلف، ومتأخر.",
+        "rightLabel": "Webhook — يتبلّغك",
+        "rightBody": "الموقع يبعتلك فور الدفع: اسم + مبلغ + إيميل. الأوتوميشن يشتغل في نفس الثانية."
+      }
+    },
+    "missionIntro": {
+      "en": "Explain — not build. AI may suggest wording — you choose the final version.",
+      "ar-MSA": "شرح — وليس بناء. الذكاء الاصطناعي قد يقترح صياغة — أنت تختار النهائي.",
+      "ar-Gulf": "شرح — مو بناء. الذكاء الاصطناعي ممكن يقترح صياغة — أنت تختار النهائي.",
+      "ar-EG": "المهمة دي شرح — مش بناء. اختار حدث حقيقي في شغلك واكتب: إيه اللي بيحصل؟ إيه البيانات اللي بتتبعت؟\n\nممكن الـ AI يقترح صياغة — إنت تختار النهائي."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "**Endpoint** — Applications communicate through endpoints: **Webhook** receives, **API** sends. Data = **Payload**.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m4-l2-webhooks-api.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**Endpoint** — Applications communicate through endpoints: **Webhook** receives, **API** sends. Data = **Payload**."
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l2-webhooks-api.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**Endpoint (نقطة استقبال)** — التطبيقات تتكلم عبر نقاط استقبال: **Webhook** يستقبل، **API** يرسل. البيانات = **Payload**."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l2-webhooks-api.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**Endpoint (نقطة استقبال)** — التطبيقات تتواصل عبر نقاط استقبال: **Webhook** يستقبل، **API** يرسل. البيانات = **Payload**."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/automator-m4-l2-webhooks-api.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "التطبيقات بتتكلم عن طريق endpoints — نفس الفكرة في أي أوتوميشن: webhook يستقبل، API يبعت. البيانات = الـ Payload."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "automator-m4-l2-webhooks-api's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Polling — Asks Every Minute / Webhook — Notifies You) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Polling — Asks Every Minute\" vs \"Webhook — Notifies You\" for automator-m4-l2-webhooks-api.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Polling — Asks Every Minute",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m4-l2-webhooks-api.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Webhook — Notifies You",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m4-l2-webhooks-api.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Webhook",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m4-l2-webhooks-api.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Payload",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m4-l2-webhooks-api.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "Polling — تسأل كل دقيقة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l2-webhooks-api.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Webhook — يُبلّغك",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l2-webhooks-api.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Webhook (إشعار فوري)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l2-webhooks-api.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Payload (حمولة البيانات)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l2-webhooks-api.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "Polling — تسأل كل دقيقة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l2-webhooks-api.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Webhook — يُبلغك",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l2-webhooks-api.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Webhook (إشعار فوري)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l2-webhooks-api.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Payload (حمولة البيانات)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l2-webhooks-api.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "Polling — تسأل كل دقيقة",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m4-l2-webhooks-api.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Webhook — يتبلّغك",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m4-l2-webhooks-api.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Webhook",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m4-l2-webhooks-api.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Payload",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m4-l2-webhooks-api.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Webhooks & APIs: \"Polling — Asks Every Minute\" versus \"Webhook — Notifies You\" — API:",
+    "ar-MSA": "الويب هوكس وواجهات البرمجة: \"Polling — تسأل كل دقيقة\" في مقابل \"Webhook — يُبلّغك\" — API:",
+    "ar-Gulf": "الويب هوكس وواجهات البرمجة: \"Polling — تسأل كل دقيقة\" في مقابل \"Webhook — يُبلغك\" — API:",
+    "ar-EG": "API = إنت بتسأل. Webhook = هما بيقولولك: \"Polling — تسأل كل دقيقة\" في مقابل \"Webhook — يتبلّغك\" — API: إنت بتبعت request — «هاتلي الطلبات النهارده». إنت اللي بدأت."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Event and Direction\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m4-l2-webhooks-api.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Payload\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m4-l2-webhooks-api.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"حدث واتجاه\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l2-webhooks-api.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Payload\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l2-webhooks-api.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"حدث واتجاه\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l2-webhooks-api.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Payload\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l2-webhooks-api.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"حدث واتجاه\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m4-l2-webhooks-api.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Payload\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m4-l2-webhooks-api.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "b2e30e3cd8e858fb40105381560b904945e755b7b984557288363a67694cebd1"
+}

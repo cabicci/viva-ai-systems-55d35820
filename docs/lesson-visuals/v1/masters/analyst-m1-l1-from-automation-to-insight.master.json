@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "analyst-m1-l1-from-automation-to-insight",
+  "pathId": "analyst",
+  "moduleId": "analyst-m1",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "From Automation to Insight",
+    "ar-MSA": "من الأتمتة إلى الاستبصار",
+    "ar-Gulf": "من الأتمتة للاستبصار",
+    "ar-EG": "Automator بيجمع — Analyst بيسأل"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m1-l1-from-automation-to-insight.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m1-l1-from-automation-to-insight.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m1-l1-from-automation-to-insight.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/analyst-m1-l1-from-automation-to-insight.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Having numbers is not the same as knowing what to do with them — Data is just the beginning, not the end.",
+        "Why now? Automator collects data automatically. The Analyst turns it into decisions. Even a simple table or Dashboard is enough to get started.",
+        "What after the lesson? You will choose one table, dashboard, or report — and write down what decision you want to make from it."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ وجود أرقام ليس مثل فهم ما الذي ستفعله — البيانات (Data) الجاهزة بداية لا نهاية.",
+        "لماذا الآن؟ Automator (الأتمتة) جمع البيانات تلقائيًا. Analyst (التحليل) يحوّلها إلى قرار. حتى جدول أو Dashboard (لوحة متابعة) بسيط يكفي للبدء.",
+        "ماذا بعد الدرس؟ ستختار جدولًا أو dashboard أو تقريرًا واحدًا — وتكتب ما القرار الذي تريد أخذه منه."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ وجود أرقام مو مثل فهم وش تسوي — البيانات الجاهزة بداية مو نهاية.",
+        "ليش الحين؟ Automator يجمع البيانات بشكل تلقائي. Analyst يحوّلها لقرار. حتى جدول أو Dashboard بسيط يكفي للبدء.",
+        "وش بعد الدرس؟ راح تختار جدول أو dashboard أو تقرير واحد — وتكتب وش القرار اللي تبي تاخذه منه."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ وجود أرقام مش نفس فهمك إيه اللي تعمله — البيانات الجاهزة بداية مش نهاية.",
+        "ليه دلوقتي؟ Automator خلّى البيانات تتجمّع لوحدها. Analyst بيحوّلها لقرار. حتى ورقة أو Google Sheet صغير يكفي تبدأ.",
+        "هتعمل إيه بعد الدرس؟ هتختار جدول أو dashboard أو تقرير واحد — وتكتب إيه القرار اللي عايز تاخده منه."
+      ]
+    },
+    "coreIdea": {
+      "en": "Automator collects — Analyst asks",
+      "ar-MSA": "Automator يجمع — Analyst يسأل",
+      "ar-Gulf": "Automator يجمع — Analyst يسأل",
+      "ar-EG": "Builder بنى المنتج — كل click وكل order بيتسجّل. Creator جاب الـ Reach — كل view وكل lead بيتحفظ."
+    },
+    "tension": {
+      "en": "A Dashboard has 20 charts. You open it daily and say, \"Looks good\" — but nothing has changed in your work because of it. The data has become decoration — not a decision-making tool. Automator has increased the pile, but",
+      "ar-MSA": "Dashboard (لوحة متابعة) فيها ٢٠ رسمًا بيانيًا. تفتحه يوميًا وتقول «جميل» — لكن لا شيء تغيّر في عملك بسببه. البيانات أصبحت ديكورًا — لا أداة قرار. Automator كبّر الكومة، لكن من دون سؤال محدد لن تعرف كيف تتحرك.",
+      "ar-Gulf": "Dashboard فيها ٢٠ رسم بياني. تفتحه كل يوم وتقول «جميل» — لكن ما تغير شي في شغلك بسببه. البيانات صارت ديكور — مو أداة قرار. Automator زاد الكومة، لكن من دون سؤال محدد ما راح تعرف كيف تتحرك.",
+      "ar-EG": "Dashboard فيه ٢٠ رسم بياني. بتفتحه يوميًا وتقول «حلو». بس مفيش حاجة اتغيّرت في شغلك بسببه."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Just looking",
+        "rightLabel": "Asking a question",
+        "leftBody": "You open the sales report every morning — see the numbers and move on — no question, no decision",
+        "rightBody": "\"Why did Conversion drop by 5% this week?\" — you open the report with one question, come out with a specific decision, and implement it today"
+      },
+      "ar-MSA": {
+        "leftLabel": "تتفرج فقط",
+        "rightLabel": "تدخل بسؤال",
+        "leftBody": "تفتح تقرير المبيعات كل صباح — ترى الأرقام وتمضي — لا سؤال ولا قرار",
+        "rightBody": "«لماذا انخفض Conversion (التحويل) ٥٪ هذا الأسبوع؟» — تفتح التقرير بسؤال واحد، تخرج بقرار محدد، تنفّذه اليوم"
+      },
+      "ar-Gulf": {
+        "leftLabel": "تتفرج بس",
+        "rightLabel": "تدخل بسؤال",
+        "leftBody": "تفتح تقرير المبيعات كل صباح — تشوف الأرقام وتمشي — لا سؤال ولا قرار",
+        "rightBody": "«ليش انخفض Conversion ٥٪ هالأسبوع؟» — تفتح التقرير بسؤال واحد، وتخرج بقرار محدد، وتنفذه اليوم"
+      },
+      "ar-EG": {
+        "leftLabel": "بتتفرّج بس",
+        "leftBody": "بتفتح تقرير المبيعات كل صباح. بتشوف الأرقام وتمشي. مفيش سؤال محدّد — ومفيش قرار.",
+        "rightLabel": "بتدخل بسؤال",
+        "rightBody": "«ليه الـ Conversion نزل ٥٪ الأسبوع ده؟» — بتفتح التقرير بسؤال واحد، تطلع بقرار محدّد، تنفّذه نفس اليوم."
+      }
+    },
+    "missionIntro": {
+      "en": "Practical guidance — not complex analysis. Choose one table, dashboard, or report (even a simple Sheet). Write down what decision you want to make from it.",
+      "ar-MSA": "توجيه عملي — ليس تحليلًا معقدًا. اختر جدولًا أو dashboard أو تقريرًا واحدًا (حتى Sheet بسيط). اكتب ما القرار الذي تريد أخذه منه.",
+      "ar-Gulf": "توجيه عملي — مو تحليل معقد. اختر جدول أو dashboard أو تقرير واحد (حتى Sheet بسيط). اكتب وش القرار اللي تبي تاخذه منه.",
+      "ar-EG": "المهمة دي توجيه عملي — مش تحليل معقّد. اختار جدول أو dashboard أو تقرير واحد عندك (حتى Sheet بسيط). اكتب إيه القرار اللي عايز تاخده منه.\n\nمش مطلوب dashboard جديد — مطلوب وضوح: البيانات دي عشان أقرر إيه؟"
+    },
+    "visualIntent": {
+      "kind": "decision",
+      "summary": "Decision loop — 5 stages: **Dashboard** without a question = decoration. Specific question → Answer → Decision → Implementation → Review. (The visual original r",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m1-l1-from-automation-to-insight.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "Decision loop — 5 stages: **Dashboard** without a question = decoration. Specific question → Answer → Decision → Implementation → Review. (T"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m1-l1-from-automation-to-insight.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Automator يجمع — Analyst يسأل"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m1-l1-from-automation-to-insight.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Automator يجمع — Analyst يسأل"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/analyst-m1-l1-from-automation-to-insight.ts",
+          "field": "block.caption (diagram)",
+          "quote": "Dashboard بدون سؤال = ديكور. سؤال محدّد → إجابة → قرار → تنفيذ → مراجعة. ابدأ من السؤال في المهمة."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "analyst-m1-l1-from-automation-to-insight's package marks a Diagram intent (decision-loop); the underlying relationship reads as decision, so a deterministic SVG panel keeps the real Just looking/Asking a question labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "decision-chain-panel",
+  "duplicationJustification": "Shares the \"decision-chain-panel\" layout template with 3 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Just looking\" vs \"Asking a question\" for analyst-m1-l1-from-automation-to-insight.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Just looking",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m1-l1-from-automation-to-insight.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Asking a question",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m1-l1-from-automation-to-insight.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Data",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m1-l1-from-automation-to-insight.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Insight",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m1-l1-from-automation-to-insight.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "تتفرج فقط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m1-l1-from-automation-to-insight.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تدخل بسؤال",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m1-l1-from-automation-to-insight.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Data (بيانات)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m1-l1-from-automation-to-insight.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Insight (رؤية)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m1-l1-from-automation-to-insight.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "تتفرج بس",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m1-l1-from-automation-to-insight.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تدخل بسؤال",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m1-l1-from-automation-to-insight.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Data",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m1-l1-from-automation-to-insight.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Insight",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m1-l1-from-automation-to-insight.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "بتتفرّج بس",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m1-l1-from-automation-to-insight.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "بتدخل بسؤال",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m1-l1-from-automation-to-insight.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Data (بيانات)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m1-l1-from-automation-to-insight.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Insight (رؤية)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m1-l1-from-automation-to-insight.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "From Automation to Insight: \"Just looking\" versus \"Asking a question\" — Automator collects — Analyst asks",
+    "ar-MSA": "من الأتمتة إلى الاستبصار: \"تتفرج فقط\" في مقابل \"تدخل بسؤال\" — Automator يجمع — Analyst يسأل",
+    "ar-Gulf": "من الأتمتة للاستبصار: \"تتفرج بس\" في مقابل \"تدخل بسؤال\" — Automator يجمع — Analyst يسأل",
+    "ar-EG": "Automator بيجمع — Analyst بيسأل: \"بتتفرّج بس\" في مقابل \"بتدخل بسؤال\" — Builder بنى المنتج — كل click وكل order بيتسجّل. Creator جاب الـ Reach — كل view وكل lead بيتحفظ."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Clear Decision\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m1-l1-from-automation-to-insight.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Relevant Question\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m1-l1-from-automation-to-insight.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"قرار واضح\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m1-l1-from-automation-to-insight.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"سؤال مربوط\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m1-l1-from-automation-to-insight.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"قرار واضح\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m1-l1-from-automation-to-insight.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"سؤال مربوط\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m1-l1-from-automation-to-insight.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"قرار واضح\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m1-l1-from-automation-to-insight.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"سؤال مربوط\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m1-l1-from-automation-to-insight.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "5ecb58fe9f5cf6335004b37047cba3b6dc5008609dada4fa91d26b30a2104abe"
+}

@@ -1,0 +1,241 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "analyst-m5-l2-weekly-review-ritual",
+  "pathId": "analyst",
+  "moduleId": "analyst-m5",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Weekly Review Ritual",
+    "ar-MSA": "طقس المراجعة الأسبوعية",
+    "ar-Gulf": "مراجعة أسبوعية",
+    "ar-EG": "الريفيو الأسبوعي = أرقام → قرار واحد"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m5-l2-weekly-review-ritual.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-l2-weekly-review-ritual.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-l2-weekly-review-ritual.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/analyst-m5-l2-weekly-review-ritual.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What Will You Understand? The Weekly Review turns numbers into one decision — not a long report.",
+        "Why Now? After a dashboard speaks — you need a consistent habit."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ Weekly Review (ريفيو أسبوعي) يحوّل الأرقام لقرار واحد — لا تقريرًا طويلًا.",
+        "لماذا الآن؟ بعد لوحة تتحدّث — تحتاج عادة ثابتة."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ المراجعة الأسبوعية تحول الأرقام إلى قرار واحد — مو تقرير طويل.",
+        "ليش الحين؟ بعد لوحة تتكلم — تحتاج عادة ثابتة."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ الريفيو الأسبوعي بيحوّل الأرقام لقرار واحد واضح للأسبوع الجاي — مش تقرير طويل.",
+        "ليه دلوقتي؟ بعد ٤ أرقام ولوحة بتحدّث لوحدها، محتاج عادة ثابتة تقرأهم وتاخد قرار.",
+        "هتعمل إيه بعد الدرس؟ هتخطّط ريفيو ٣٠ دقيقة: ٤ أرقام، ٣ أسئلة للـ AI، قرار واحد."
+      ]
+    },
+    "coreIdea": {
+      "en": "One Decision Rule:",
+      "ar-MSA": "One Decision Rule (قرار واحد):",
+      "ar-Gulf": "قاعدة القرار الواحد:",
+      "ar-EG": "الريفيو مش تقرير — هو ritual ثابت: نفس الوقت، نفس ٤ أرقام، نفس السؤال «إيه اللي اتغيّر؟»."
+    },
+    "tension": {
+      "en": "One Decision Rule: Action + Owner + Deadline. 30 minutes — not two hours.",
+      "ar-MSA": "One Decision Rule (قرار واحد): Action + Owner + Deadline. ٣٠ دقيقة — لا ساعتين.",
+      "ar-Gulf": "قاعدة القرار الواحد: إجراء + مالك + موعد نهائي. ٣٠ دقيقة — مو ساعتين.",
+      "ar-EG": "كل أسبوع بتشوف مبيعات وطلبات ومتابعين — وبعد ساعة مش عارف تعمل إيه."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Lesson Start",
+        "rightLabel": "4 Numbers → 3 AI Questions → One Decision",
+        "leftBody": "eview turns numbers into one decision — not a long report.",
+        "rightBody": "One Decision Rule:"
+      },
+      "ar-MSA": {
+        "leftLabel": "بداية الدرس",
+        "rightLabel": "٤ أرقام → ٣ أسئلة AI → قرار واحد",
+        "leftBody": "يحوّل الأرقام لقرار واحد — لا تقريرًا طويلًا.",
+        "rightBody": "One Decision Rule (قرار واحد):"
+      },
+      "ar-Gulf": {
+        "leftLabel": "بداية الدرس",
+        "rightLabel": "٤ أرقام → ٣ أسئلة AI → قرار واحد",
+        "leftBody": "المراجعة الأسبوعية تحول الأرقام إلى قرار واحد —",
+        "rightBody": "قاعدة القرار الواحد:"
+      },
+      "ar-EG": {
+        "leftLabel": "«هنشوف لمّا تحصل مشكلة»",
+        "rightLabel": "كل أحد ٣٠ دقيقة",
+        "leftBody": "بتفتح الشيت لما الأزمة تشتعل. وقت الإصلاح ٥ أضعاف وقت المنع — ومفيش قرار مسبق.",
+        "rightBody": "بتشوف المشكلة وهي صغيرة. قرار واحد الأسبوع ده = مفيش أزمة الشهر الجاي."
+      }
+    },
+    "missionIntro": {
+      "en": "| 4 Numbers + 3 Questions | 60% | | One Decision | 40% |",
+      "ar-MSA": "| ٤ أرقام + ٣ أسئلة | 60% | | قرار واحد | 40% |",
+      "ar-Gulf": "| ٤ أرقام + ٣ أسئلة | 60% | | قرار واحد | 40% |",
+      "ar-EG": "المهمة دي تخطيط عملي — مش ريفيو كامل لازم. حدّد متى، إيه الأرقام، إيه أسئلة الـ AI، وإيه القرار المتوقع.\n\nممكن تعمل الريفيو على شيت ٤ أرقام لو مفيش Dashboard جاهز."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "- **One Decision Rule:** Action + Owner + Deadline.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m5-l2-weekly-review-ritual.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "- **One Decision Rule:** Action + Owner + Deadline."
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-l2-weekly-review-ritual.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "- **One Decision Rule (قرار واحد):** Action + Owner + Deadline."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-l2-weekly-review-ritual.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "- **قاعدة القرار الواحد:** إجراء + مالك + موعد نهائي."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/analyst-m5-l2-weekly-review-ritual.ts",
+          "field": "block.caption (diagram)",
+          "quote": "دقايق ١–٥: افتح ٤ أرقام. ٦–١٥: قارن + اسأل AI. ١٦–٢٥: اكتب قرار واحد. ٢٦–٣٠: حدّد Owner وDeadline. استخدم الرسم في المهم"
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "analyst-m5-l2-weekly-review-ritual's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Lesson Start / 4 Numbers → 3 AI Questions → One Decision) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 60 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Lesson Start\" vs \"4 Numbers → 3 AI Questions → One Decision\" for analyst-m5-l2-weekly-review-ritual.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Lesson Start",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m5-l2-weekly-review-ritual.json",
+          "field": "sections[role=Tension].subtitle"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "4 Numbers → 3 AI Questions → One Decision",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m5-l2-weekly-review-ritual.json",
+          "field": "sections[role=Core idea].subtitle"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "بداية الدرس",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-l2-weekly-review-ritual.json",
+          "field": "sections[role=Tension].subtitle"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "٤ أرقام → ٣ أسئلة AI → قرار واحد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-l2-weekly-review-ritual.json",
+          "field": "sections[role=Core idea].subtitle"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "بداية الدرس",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-l2-weekly-review-ritual.json",
+          "field": "sections[role=Tension].subtitle"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "٤ أرقام → ٣ أسئلة AI → قرار واحد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-l2-weekly-review-ritual.json",
+          "field": "sections[role=Core idea].subtitle"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "«هنشوف لمّا تحصل مشكلة»",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m5-l2-weekly-review-ritual.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "كل أحد ٣٠ دقيقة",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m5-l2-weekly-review-ritual.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Weekly Review (ريفيو أسبوعي)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m5-l2-weekly-review-ritual.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "One Decision Rule (قرار واحد)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m5-l2-weekly-review-ritual.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Weekly Review Ritual: \"Lesson Start\" versus \"4 Numbers → 3 AI Questions → One Decision\" — One Decision Rule:",
+    "ar-MSA": "طقس المراجعة الأسبوعية: \"بداية الدرس\" في مقابل \"٤ أرقام → ٣ أسئلة AI → قرار واحد\" — One Decision Rule (قرار واحد):",
+    "ar-Gulf": "مراجعة أسبوعية: \"بداية الدرس\" في مقابل \"٤ أرقام → ٣ أسئلة AI → قرار واحد\" — قاعدة القرار الواحد:",
+    "ar-EG": "الريفيو الأسبوعي = أرقام → قرار واحد: \"«هنشوف لمّا تحصل مشكلة»\" في مقابل \"كل أحد ٣٠ دقيقة\" — الريفيو مش تقرير — هو ritual ثابت: نفس الوقت، نفس ٤ أرقام، نفس السؤال «إيه اللي اتغيّر؟»."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٤ أرقام + ٣ أسئلة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m5-l2-weekly-review-ritual.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قرار واحد\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m5-l2-weekly-review-ritual.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "5eb451c50fe70e22b3b56663c5815a31d5cddd4b546f27daf97c31c7638b62fd"
+}

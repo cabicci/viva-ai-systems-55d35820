@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "intro-m1-l5-ai-vs-software",
+  "pathId": "intro",
+  "moduleId": "intro-m1",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "AI vs Software",
+    "ar-MSA": "الذكاء الاصطناعي مقابل البرمجيات",
+    "ar-Gulf": "الذكاء الاصطناعي مقابل البرمجيات",
+    "ar-EG": "برنامج ثابت للحساب — AI مرن للكلام"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/intro-m1-l5-ai-vs-software.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l5-ai-vs-software.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l5-ai-vs-software.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/intro-m1-l5-ai-vs-software.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What Will You Understand? Not every task needs AI — regular software isn't weaker, just different.",
+        "Why Now? In the last lesson, you learned when to trust AI and when to verify. Today, you'll learn when to choose AI in the first place.",
+        "What After the Lesson? You will choose the right tool for 3 tasks in your life — AI, or Software, or both."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ ليست كل مهمة تحتاج AI — والبرنامج العادي ليس أضعف، بل مختلف.",
+        "لماذا الآن؟ في الدرس السابق عرفت متى تثق في الـ AI ومتى تراجع. اليوم ستعرف متى تختار AI أصلًا.",
+        "ماذا بعد الدرس؟ ستختار الأداة المناسبة لـ ٣ مهام من حياتك — AI، أو Software (برنامج)، أو الاثنين معًا."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ مو كل مهمة تحتاج ذكاء اصطناعي — والبرمجيات العادية مو أضعف، بل مختلفة.",
+        "ليش الحين؟ في الدرس السابق عرفت متى تثق في الذكاء الاصطناعي ومتى تراجع. اليوم راح تعرف متى تختار الذكاء الاصطناعي أصلًا.",
+        "وش بعد الدرس؟ راح تختار الأداة المناسبة لـ ٣ مهام من حياتك — ذكاء اصطناعي، أو برنامج، أو الاثنين معًا."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ مش كل مهمة محتاجة AI — والبرنامج العادي مش أضعف، هو بس مختلف.",
+        "ليه دلوقتي؟ في الدرس اللي فات عرفت إمتى تثق في الـ AI وإمتى تراجع. النهاردة هتعرف إمتى تختار AI أصلًا.",
+        "هتعمل إيه بعد الدرس؟ هتختار الأداة المناسبة لـ ٣ مهام من حياتك — AI، برنامج، أو الاتنين مع بعض."
+      ]
+    },
+    "coreIdea": {
+      "en": "Fixed Software for Calculations — Flexible AI for Language",
+      "ar-MSA": "برنامج ثابت للحساب — AI مرن للكلام",
+      "ar-Gulf": "برنامج ثابت للحساب — ذكاء اصطناعي مرن للكلام",
+      "ar-EG": "Software ثابت: آلة حاسبة، Excel، CRM، تقويم، نظام فواتير — نفس المدخل يطلع نفس النتيجة. ممتاز لما العملية واضحة ومتكررة."
+    },
+    "tension": {
+      "en": "Do you use AI for everything — and get surprised when the result is strange?",
+      "ar-MSA": "هل تستخدم AI في كل شيء — وتتفاجأ عندما تكون النتيجة غريبة؟",
+      "ar-Gulf": "هل تستخدم الذكاء الاصطناعي في كل شيء — وتتفاجأ لما تكون النتيجة غريبة؟",
+      "ar-EG": "الآلة الحاسبة تحسب ٢+٢ = ٤ كل مرة. Excel يجمع نفس الأرقام بنفس النتيجة. ده Software (برنامج) بقواعد ثابتة."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "AI for Everything",
+        "rightLabel": "Every Tool in Its Place",
+        "leftBody": "Asking it to calculate a bill or a precise number from memory — you might find a difference or error",
+        "rightBody": "Excel or the calculator for calculations. Google for sources. AI for explanations, phrasing, and organizing."
+      },
+      "ar-MSA": {
+        "leftLabel": "AI لكل شيء",
+        "rightLabel": "كل أداة في مكانها",
+        "leftBody": "تطلب منه حساب فاتورة أو رقمًا دقيقًا من الذاكرة — قد تجد فرقًا أو خطأ",
+        "rightBody": "Excel أو الآلة للحساب. Google للمصادر. AI للشرح والصياغة والترتيب"
+      },
+      "ar-Gulf": {
+        "leftLabel": "الذكاء الاصطناعي لكل شيء",
+        "rightLabel": "كل أداة في مكانها",
+        "leftBody": "تطلب منه حساب فاتورة أو رقم دقيق من الذاكرة — قد تجد فرق أو خطأ",
+        "rightBody": "Excel أو الآلة للحساب. Google للمصادر. الذكاء الاصطناعي للشرح والصياغة والترتيب"
+      },
+      "ar-EG": {
+        "leftLabel": "AI لكل حاجة",
+        "leftBody": "تخليه يحسب فاتورة أو يطلع رقم دقيق من الذاكرة — ممكن تلاقي فرق أو خطأ.",
+        "rightLabel": "كل أداة في مكانها",
+        "rightBody": "Excel أو الآلة للحساب. Google للمصادر. AI للشرح والصياغة والترتيب."
+      }
+    },
+    "missionIntro": {
+      "en": "Choose 3 small, real tasks from your life or work. Identify for each one: AI / Software / both — with a clear reason.",
+      "ar-MSA": "اختر ٣ مهام صغيرة وحقيقية من حياتك أو عملك. حدد لكل واحدة: AI / Software / الاثنين — مع سبب واضح.",
+      "ar-Gulf": "اختر ٣ مهام صغيرة وحقيقية من حياتك أو عملك. حدد لكل واحدة: ذكاء اصطناعي / برنامج / الاثنين — مع سبب واضح.",
+      "ar-EG": "اختار ٣ مهام من حياتك أو شغلك — صغيرة وحقيقية — وحدد لكل واحدة:\n\n• AI\n• Software (برنامج)\n• الاتنين مع بعض\n\nمش مطلوب تجربة معقدة. المطلوب قرار واضح ليه اخترت الأداة دي."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "A column for fixed software (calculating, scheduling, archiving) and a column for AI (writing, summarizing, brainstorming). Much real work uses both — not just",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l5-ai-vs-software.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "A column for fixed software (calculating, scheduling, archiving) and a column for AI (writing, summarizing, brainstorming). Much real work u"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l5-ai-vs-software.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "عمود للبرامج الثابتة (حساب، جدولة، أرشفة) وعمود للـ AI (كتابة، تلخيص، أفكار). كثير من العمل الحقيقي يستخدم الاثنين — لا واحدًا فقط."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l5-ai-vs-software.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "عمود للبرمجيات الثابتة (حساب، جدولة، أرشفة) وعمود للذكاء الاصطناعي (كتابة، تلخيص، أفكار). كثير من العمل الحقيقي يستخدم الاثنين — مو واحد بس."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/intro-m1-l5-ai-vs-software.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "تخيّل عمود للبرامج الثابتة (حساب، جدولة، أرشفة) وعمود للـ AI (كتابة، تلخيص، أفكار). كثير من الشغل الحقيقي بيستخدم الاتني"
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "intro-m1-l5-ai-vs-software's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (AI for Everything / Every Tool in Its Place) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"AI for Everything\" vs \"Every Tool in Its Place\" for intro-m1-l5-ai-vs-software.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "AI for Everything",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l5-ai-vs-software.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Every Tool in Its Place",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l5-ai-vs-software.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Software",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l5-ai-vs-software.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "AI",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l5-ai-vs-software.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "AI لكل شيء",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l5-ai-vs-software.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "كل أداة في مكانها",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l5-ai-vs-software.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Software (برنامج)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l5-ai-vs-software.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "AI (ذكاء اصطناعي)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l5-ai-vs-software.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "الذكاء الاصطناعي لكل شيء",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l5-ai-vs-software.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "كل أداة في مكانها",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l5-ai-vs-software.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "برنامج",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l5-ai-vs-software.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "ذكاء اصطناعي",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l5-ai-vs-software.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "AI لكل حاجة",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l5-ai-vs-software.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "كل أداة في مكانها",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l5-ai-vs-software.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Software (برنامج)",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l5-ai-vs-software.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "AI (ذكاء اصطناعي)",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l5-ai-vs-software.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "AI vs Software: \"AI for Everything\" versus \"Every Tool in Its Place\" — Fixed Software for Calculations — Flexible AI for Language",
+    "ar-MSA": "الذكاء الاصطناعي مقابل البرمجيات: \"AI لكل شيء\" في مقابل \"كل أداة في مكانها\" — برنامج ثابت للحساب — AI مرن للكلام",
+    "ar-Gulf": "الذكاء الاصطناعي مقابل البرمجيات: \"الذكاء الاصطناعي لكل شيء\" في مقابل \"كل أداة في مكانها\" — برنامج ثابت للحساب — ذكاء اصطناعي مرن للكلام",
+    "ar-EG": "برنامج ثابت للحساب — AI مرن للكلام: \"AI لكل حاجة\" في مقابل \"كل أداة في مكانها\" — Software ثابت: آلة حاسبة، Excel، CRM، تقويم، نظام فواتير — نفس المدخل يطلع نفس النتيجة. ممتاز لما العملية واضحة ومتكررة."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"Logical Choice\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/intro-m1-l5-ai-vs-software.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"Real Tasks\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/intro-m1-l5-ai-vs-software.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"اختيار منطقي\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l5-ai-vs-software.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"مهام حقيقية\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l5-ai-vs-software.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"اختيار منطقي\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l5-ai-vs-software.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"مهام حقيقية\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l5-ai-vs-software.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"اختيار منطقي\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/intro-m1-l5-ai-vs-software.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"مهام حقيقية\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/intro-m1-l5-ai-vs-software.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 30"
+    }
+  ],
+  "checksum": "85a35864b18da6707bd46ab3b593e99e0c954de02c1649fedd3a869503696d22"
+}

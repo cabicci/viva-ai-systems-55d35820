@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "creator-m4-repurposing",
+  "pathId": "creator",
+  "moduleId": "creator-m5-polish",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Repurposing — Content Multiplier",
+    "ar-MSA": "إعادة توظيف المحتوى",
+    "ar-Gulf": "إعادة توظيف المحتوى",
+    "ar-EG": "تكييف — مش نسخ"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/creator-m4-repurposing.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-repurposing.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-repurposing.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/creator-m4-repurposing.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? A strong piece of content can become several — but each platform has its own format — no copy-pasting.",
+        "Why now? After editing, you have clearer content. Repurposing allows the same idea to reach more platforms without starting from scratch.",
+        "After the lesson: You take one idea, post, or script — and transform it into three different formats."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ قطعة محتوى قوية واحدة قد تصبح عدة قطع — لكن لكل منصة شكلها المناسب — لا نسخ ولصق.",
+        "لماذا الآن؟ بعد المونتاج لديك محتوى أوضح. Repurposing (إعادة توظيف) يجعل نفس الفكرة تصل لمنصات أكثر من دون البدء من الصفر.",
+        "بعد الدرس: تأخذ فكرة أو منشورًا أو سكريبتًا واحدًا — وتحوّله إلى ٣ صيغ مختلفة."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ قطعة محتوى قوية واحدة ممكن تتحول لعدة قطع — لكن لكل منصة شكلها المناسب — لا نسخ ولصق.",
+        "ليش الحين؟ بعد المونتاج عندك محتوى أوضح. إعادة التوظيف تخلي نفس الفكرة توصل لمنصات أكثر بدون ما تبدأ من الصفر.",
+        "بعد الدرس: تأخذ فكرة أو منشور أو سكريبت واحد — وتحوّله إلى ٣ صيغ مختلفة."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ قطعة محتوى قوية واحدة ممكن تبقى عدة قطع — بس لكل منصة شكلها المناسب، مش نسخ ولصق.",
+        "ليه دلوقتي؟ بعد المونتاج عندك محتوى أوضح. Repurposing يخلّي نفس الفكرة توصل لمنصات أكتر من غير ما تبدأ من صفر.",
+        "هتعمل إيه بعد الدرس؟ هتاخد فكرة أو بوست أو سكريبت واحد — وتحوّله لـ ٣ صيغ مختلفة."
+      ]
+    },
+    "coreIdea": {
+      "en": "Repurposing",
+      "ar-MSA": "Repurposing",
+      "ar-Gulf": "إعادة التوظيف",
+      "ar-EG": "Repurposing = نفس الفكرة الأساسية بأشكال تناسب كل منصة: ريل قصير، بوست LinkedIn، ثريد X، فقرة نشرة، أسئلة ستوري."
+    },
+    "tension": {
+      "en": "You take the same long post and share it on Facebook, LinkedIn, and X — and the result is weak on every platform. This is not Repurposing — it’s copy-pasting. Each platform has a different rhythm, length, and tone.",
+      "ar-MSA": "تأخذ نفس المنشور الطويل وتضعه على فيسبوك وLinkedIn وX — والنتيجة ضعيفة على كل منصة. هذا ليس Repurposing — بل copy-paste (نسخ ولصق). كل منصة لها إيقاع وطول ونبرة مختلفة.",
+      "ar-Gulf": "تأخذ نفس المنشور الطويل وتنشره على فيسبوك وLinkedIn وX — والنتيجة ضعيفة على كل منصة. هذا مو إعادة توظيف — بل نسخ ولصق. كل منصة لها إيقاع وطول ونبرة مختلفة.",
+      "ar-EG": "بتاخد نفس البوست الطويل وتحطه على فيسبوك ولينكدإن وإكس — والنتيجة ضعيفة على كل منصة."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Copying the Same Text",
+        "rightLabel": "Adapting with AI",
+        "leftBody": "A 500-word post on LinkedIn and X — people skip it. One format doesn’t fit everywhere.",
+        "rightBody": "The same idea: a thread of 5 tweets, a 45-second reel, one story question — each serves the platform."
+      },
+      "ar-MSA": {
+        "leftLabel": "نسخ نفس النص",
+        "rightLabel": "تكييف بالـ AI",
+        "leftBody": "منشور ٥٠٠ كلمة على LinkedIn وX — الناس تتخطّى. شكل واحد لا يناسب كل مكان",
+        "rightBody": "نفس الفكرة: ثريد ٥ تغريدات، ريل ٤٥ ثانية، سؤال ستوري واحد — كل واحد يخدم المنصة"
+      },
+      "ar-Gulf": {
+        "leftLabel": "نسخ نفس النص",
+        "rightLabel": "تكييف بالذكاء الاصطناعي",
+        "leftBody": "منشور ٥٠٠ كلمة على LinkedIn وX — الناس تتخطّى. شكل واحد ما يناسب كل مكان",
+        "rightBody": "نفس الفكرة: ثريد ٥ تغريدات، ريل ٤٥ ثانية، سؤال ستوري واحد — كل واحد يخدم المنصة"
+      },
+      "ar-EG": {
+        "leftLabel": "نسخ نفس النص",
+        "leftBody": "بوست ٥٠٠ كلمة على LinkedIn وإكس — الناس تعدّي. شكل واحد مش مناسب لكل مكان.",
+        "rightLabel": "تكييف بالـ AI",
+        "rightBody": "نفس الفكرة: ثريد ٥ تغريدات، ريل ٤٥ ثانية، سؤال ستوري واحد — كل واحد يخدم المنصة."
+      }
+    },
+    "missionIntro": {
+      "en": "A process of multiplying — not mandatory posting. Choose an idea, post, or script — transform it into three different formats — edit what doesn’t sound like you. 10–20 minutes is enough.",
+      "ar-MSA": "مضاعفة عملية — ليس نشرًا إلزاميًا. اختر فكرة أو منشورًا أو سكريبتًا — حوّله إلى ٣ صيغ مختلفة — عدّل ما لا يشبه صوتك. ١٠–٢٠ دقيقة كافية.",
+      "ar-Gulf": "مضاعفة عملية — مو نشر إلزامي. اختر فكرة أو منشور أو سكريبت — حوّله إلى ٣ صيغ مختلفة — عدّل وش ما يشبه صوتك. ١٠–٢٠ دقيقة كافية.",
+      "ar-EG": "المهمة دي مضاعفة عملية — مش نشر إلزامي. اختار فكرة أو بوست أو سكريبت عندك (حتى مسودة). حوّله لـ ٣ صيغ مختلفة — ممكن بالـ AI — وعدّل اللي مش صوتك.\n\n١٠–٢٠ دقيقة كفاية."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Repurposing",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m4-repurposing.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Repurposing"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-repurposing.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Repurposing"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-repurposing.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "إعادة التوظيف"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/creator-m4-repurposing.ts",
+          "field": "block.caption (unknown)",
+          "quote": "تكييف — مش نسخ"
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "creator-m4-repurposing's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Copying the Same Text / Adapting with AI) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Copying the Same Text\" vs \"Adapting with AI\" for creator-m4-repurposing.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Copying the Same Text",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m4-repurposing.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Adapting with AI",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m4-repurposing.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Repurposing",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m4-repurposing.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Format Adaptation",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m4-repurposing.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "نسخ نفس النص",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-repurposing.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تكييف بالـ AI",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-repurposing.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Repurposing (إعادة توظيف)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-repurposing.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Format Adaptation (تكييف الصيغة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-repurposing.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "نسخ نفس النص",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-repurposing.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تكييف بالذكاء الاصطناعي",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-repurposing.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "إعادة التوظيف",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-repurposing.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "تكييف الصيغة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-repurposing.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "نسخ نفس النص",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m4-repurposing.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تكييف بالـ AI",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m4-repurposing.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Repurposing (إعادة توظيف)",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m4-repurposing.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Format Adaptation (تكييف الصيغة)",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m4-repurposing.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Repurposing — Content Multiplier: \"Copying the Same Text\" versus \"Adapting with AI\" — Repurposing",
+    "ar-MSA": "إعادة توظيف المحتوى: \"نسخ نفس النص\" في مقابل \"تكييف بالـ AI\" — Repurposing",
+    "ar-Gulf": "إعادة توظيف المحتوى: \"نسخ نفس النص\" في مقابل \"تكييف بالذكاء الاصطناعي\" — إعادة التوظيف",
+    "ar-EG": "تكييف — مش نسخ: \"نسخ نفس النص\" في مقابل \"تكييف بالـ AI\" — Repurposing = نفس الفكرة الأساسية بأشكال تناسب كل منصة: ريل قصير، بوست LinkedIn، ثريد X، فقرة نشرة، أسئلة ستوري."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Three Different Formats\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m4-repurposing.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Your Judgment\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m4-repurposing.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ صيغ مختلفة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-repurposing.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"حكمك أنت\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-repurposing.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ صيغ مختلفة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-repurposing.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"حكمك أنت\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-repurposing.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ صيغ مختلفة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m4-repurposing.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"حكمك أنت\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m4-repurposing.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "cc40f71179d2b0dc5daa60ec9724dcf142e03bace060cda2d818d5b91f9e0b0e"
+}

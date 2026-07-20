@@ -1,0 +1,345 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m6-l1-idea-to-page",
+  "pathId": "builder",
+  "moduleId": "builder-m6",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Idea to Page",
+    "ar-MSA": "من الفكرة إلى الصفحة",
+    "ar-Gulf": "من الفكرة للصفحة",
+    "ar-EG": "الفكرة = شاشات + خطوات"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m6-l1-idea-to-page.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l1-idea-to-page.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l1-idea-to-page.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m6-l1-idea-to-page.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Any AI idea can be built as screens + steps — before any code.",
+        "Why now? Phase 3 of building starts with a map — not random colors or features.",
+        "What after the lesson? You will sketch a flow of 3 screens — beginning, middle, end."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ أي فكرة AI تستطيع بناؤها كشاشات + خطوات — قبل أي كود.",
+        "لماذا الآن؟ Phase 3 البناء يبدأ بخريطة — ليس بألوان أو ميزات عشوائية.",
+        "ماذا بعد الدرس؟ سترسم flow (تدفق) من ٣ شاشات — بداية، وسط، نهاية."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ أي فكرة AI تقدر تبنيها كشاشات + خطوات — قبل أي كود.",
+        "ليش الآن؟ المرحلة 3 تبدأ بخريطة — مو بألوان أو ميزات عشوائية.",
+        "وش بعد الدرس؟ راح ترسم flow (تدفق) من ٣ شاشات — بداية، وسط، نهاية."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ أي فكرة AI تقدر تتبني كشاشات + خطوات — قبل أي كود.",
+        "ليه دلوقتي؟ Phase 3 البناء يبدأ بخريطة — مش بألوان ولا features عشوائية.",
+        "هتعمل إيه بعد الدرس؟ هترسم flow من ٣ شاشات — بداية، وسط، نهاية."
+      ]
+    },
+    "coreIdea": {
+      "en": "Any AI application = a journey",
+      "ar-MSA": "أي تطبيق AI = رحلة",
+      "ar-Gulf": "أي تطبيق AI = رحلة",
+      "ar-EG": "أي تطبيق AI = رحلة: العميل يفتح → يعمل حاجة → يوصل لهدف."
+    },
+    "tension": {
+      "en": "You have a great AI idea — but when you open the building tool, you don't know the first step. Do you start with colors? Or with the model? Or with the prompt? — and you waste hours.",
+      "ar-MSA": "لديك فكرة AI رائعة — لكن عند فتح أداة البناء لا تعرف أول خطوة. تبدأ بالألوان؟ أم بالـ model؟ أم بالـ Prompt؟ — وتضيع ساعات.",
+      "ar-Gulf": "عندك فكرة AI رائعة — لكن لما تفتح أداة البناء ما تعرف أول خطوة. تبدأ بالألوان؟ أو بالـ model؟ أو بالـ Prompt؟ — وتضيع ساعات.",
+      "ar-EG": "عندك فكرة AI عظيمة — بس لما تفتح أداة البناء، مش عارف أول خطوة إيه."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Start with Design",
+        "rightLabel": "Start with the Journey",
+        "leftBody": "«AI plans trips» → design a beautiful chat. After two hours: you don’t know where the customer starts",
+        "rightBody": "«opens → types «Italy 5 days» → AI asks for budget → shows plan» — 3 steps = 3 screens. Clear"
+      },
+      "ar-MSA": {
+        "leftLabel": "تبدأ بالشكل",
+        "rightLabel": "تبدأ بالرحلة",
+        "leftBody": "«AI يخطط رحلات» → تصمّم شاتًا جميلًا. بعد ساعتين: لا تعرف من أين يبدأ العميل",
+        "rightBody": "«يفتح → يكتب «إيطاليا ٥ أيام» → AI يسأل ميزانية → يعرض خطة» — ٣ خطوات = ٣ شاشات. واضح"
+      },
+      "ar-Gulf": {
+        "leftLabel": "تبدأ بالشكل",
+        "rightLabel": "تبدأ بالرحلة",
+        "leftBody": "«AI يخطط رحلات» → تصمّم شاتًا جميلًا. بعد ساعتين: ما تعرف من وين يبدأ العميل",
+        "rightBody": "«يفتح → يكتب «إيطاليا ٥ أيام» → AI يسأل ميزانية → يعرض خطة» — ٣ خطوات = ٣ شاشات. واضح"
+      },
+      "ar-EG": {
+        "leftLabel": "تبدأ بالشكل",
+        "leftBody": "«عايز AI يخطط رحلات» → تصمّم شات حلو. بعد ساعتين: مش عارف العميل يبدأ منين — بلد؟ ميزانية؟",
+        "rightLabel": "تبدأ بالرحلة",
+        "rightBody": "«يفتح → يكتب «إيطاليا ٥ أيام» → AI يسأل ميزانية → يعرض خطة» — ٣ خطوات = ٣ شاشات. واضح."
+      }
+    },
+    "missionIntro": {
+      "en": "Planning task — not code. Paper and pencil or notes. 5–10 minutes.",
+      "ar-MSA": "مهمة تخطيط — ليست كودًا. ورقة وقلم أو notes. ٥–١٠ دقائق.",
+      "ar-Gulf": "مهمة تخطيط — مو كود. ورقة وقلم أو notes. ٥–١٠ دقائق.",
+      "ar-EG": "المهمة دي تخطيط — مش كود. ورقة وقلم أو notes.\n\n٥–١٠ دقايق كفاية."
+    },
+    "visualIntent": {
+      "kind": "concept-scene",
+      "summary": "**Any page = one goal + clear steps**. **The user enters → sees the map → selects**. **The same logic applies to your application**.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l1-idea-to-page.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**Any page = one goal + clear steps**. **The user enters → sees the map → selects**. **The same logic applies to your application**."
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l1-idea-to-page.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**أي صفحة = هدف واحد + خطوات واضحة**. **المستخدم يدخل → يرى الخريطة → يختار**. **نفس المنطق لتطبيقك**."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l1-idea-to-page.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**أي صفحة = هدف واحد + خطوات واضحة**. **المستخدم يدخل → يشوف الخريطة → يختار**. **نفس المنطق لتطبيقك**."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m6-l1-idea-to-page.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "أي صفحة = هدف واحد + خطوات واضحة. المستخدم يدخل → يشوف الخريطة → يختار. نفس المنطق لتطبيقك."
+        }
+      }
+    }
+  },
+  "method": 2,
+  "methodRationale": "builder-m6-l1-idea-to-page's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"Any AI application = a journey\" without inventing UI chrome or rendering paid text.",
+  "compositionPattern": "concept-scene-metaphor",
+  "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Start with Design\" vs \"Start with the Journey\" for builder-m6-l1-idea-to-page.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Start with Design",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l1-idea-to-page.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Start with the Journey",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l1-idea-to-page.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "User Flow",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l1-idea-to-page.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Screen",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l1-idea-to-page.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "تبدأ بالشكل",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l1-idea-to-page.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تبدأ بالرحلة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l1-idea-to-page.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "User Flow (رحلة المستخدم)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l1-idea-to-page.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Screen (شاشة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l1-idea-to-page.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "تبدأ بالشكل",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l1-idea-to-page.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تبدأ بالرحلة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l1-idea-to-page.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "User Flow (رحلة المستخدم)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l1-idea-to-page.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Screen (شاشة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l1-idea-to-page.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "تبدأ بالشكل",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l1-idea-to-page.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تبدأ بالرحلة",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l1-idea-to-page.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "User Flow (رحلة المستخدم)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l1-idea-to-page.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Screen (شاشة)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l1-idea-to-page.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Idea to Page: \"Start with Design\" versus \"Start with the Journey\" — Any AI application = a journey",
+    "ar-MSA": "من الفكرة إلى الصفحة: \"تبدأ بالشكل\" في مقابل \"تبدأ بالرحلة\" — أي تطبيق AI = رحلة",
+    "ar-Gulf": "من الفكرة للصفحة: \"تبدأ بالشكل\" في مقابل \"تبدأ بالرحلة\" — أي تطبيق AI = رحلة",
+    "ar-EG": "الفكرة = شاشات + خطوات: \"تبدأ بالشكل\" في مقابل \"تبدأ بالرحلة\" — أي تطبيق AI = رحلة: العميل يفتح → يعمل حاجة → يوصل لهدف."
+  },
+  "aiPromptContract": {
+    "providerClass": "text-free-illustration",
+    "paidAllowed": false,
+    "textFree": true,
+    "promptRules": [
+      "No embedded text, letters, numbers, or UI chrome anywhere in the image.",
+      "Depict the idea behind \"Idea to Page\" as a literal scene or metaphor, not as software.",
+      "Use a calm editorial illustration style consistent with a warm, minimal brand palette.",
+      "Keep the composition balanced so it still reads when mirrored for RTL locales."
+    ],
+    "costCeilingUsd": 0
+  },
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"3 Logical Screens\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m6-l1-idea-to-page.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Clear Goal\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m6-l1-idea-to-page.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ شاشات منطقية\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l1-idea-to-page.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"هدف واضح\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l1-idea-to-page.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ شاشات منطقية\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l1-idea-to-page.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"هدف واضح\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l1-idea-to-page.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ شاشات منطقية\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m6-l1-idea-to-page.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"هدف واضح\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m6-l1-idea-to-page.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "54354fbdb945c35499c5dbc333ddfa90dea6e6ca2a653d500e57c4ba6be7c909"
+}

@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "creator-m4-l2-mobile-shooting",
+  "pathId": "creator",
+  "moduleId": "creator-m4",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Mobile Shooting",
+    "ar-MSA": "التصوير بالهاتف",
+    "ar-Gulf": "أساسيات التصوير بالهاتف",
+    "ar-EG": "اضبط الأساسيات قبل أي مؤثرات"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/creator-m4-l2-mobile-shooting.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l2-mobile-shooting.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l2-mobile-shooting.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/creator-m4-l2-mobile-shooting.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Your phone can produce decent video — the issue is not the lack of an expensive camera.",
+        "The problem lies in the basics of shooting — today we will focus on four key elements: light, sound, framing, and the first few seconds."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ هاتفك يستطيع أن يُنتج فيديو محترمًا — المشكلة ليست غياب كاميرا غالية.",
+        "المشكلة في أساسيات التصوير — اليوم نركّز على أربعة أمور فقط: النور، الصوت، الكادر، وأول ثوانٍ."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ هاتفك يقدر يطلع فيديو ممتاز — المشكلة مو عدم وجود كاميرا غالية.",
+        "المشكلة في أساسيات التصوير — اليوم نركز على أربعة أشياء بس: الضوء، الصوت، الإطار، وأول ثواني."
+      ],
+      "ar-EG": [
+        "المشكلة مش في إنك معندكش كاميرا غالية، المشكلة في أساسيات التصوير.",
+        "النهاردة هنركز على ٤ حاجات فقط: النور، الصوت، الكادر، وأول ثواني."
+      ]
+    },
+    "coreIdea": {
+      "en": "Light:",
+      "ar-MSA": "النور:",
+      "ar-Gulf": "الضوء:",
+      "ar-EG": "النور: خلي المصدر قدامك مش وراك، والشباك غالبا أحسن حل مجاني."
+    },
+    "tension": {
+      "en": "Strong content can be lost due to a dark face, distracting noise, or a slow start. The audience gives the video a few seconds to decide whether to continue or skip.",
+      "ar-MSA": "محتوى قوي قد يضيع بسبب وجه مظلم، صوت مزعج، أو بداية بطيئة. الجمهور يمنح الفيديو ثوانٍ قليلة ليقرّر هل يكمل أم يتخطّى.",
+      "ar-Gulf": "محتوى قوي ممكن يضيع بسبب إضاءة ضعيفة، صوت مزعج، أو بداية بطيئة. الجمهور يعطي الفيديو ثواني قليلة عشان يقرر يستمر أو يتخطى.",
+      "ar-EG": "محتوى قوي ممكن يضيع بسبب وش مظلم، صوت مزعج، أو بداية بطيئة."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Disruptive Approach",
+        "rightLabel": "Practical Approach",
+        "leftBody": "Waiting for perfect equipment before starting — you remain postponed and no content is produced",
+        "rightBody": "Shooting with your phone with proper light, sound, and framing — and regular posting"
+      },
+      "ar-MSA": {
+        "leftLabel": "الأسلوب المعطّل",
+        "rightLabel": "الأسلوب العملي",
+        "leftBody": "انتظار معدات مثالية قبل البدء — تبقى مؤجلًا ولا ينزل محتوى",
+        "rightBody": "تصوير بالهاتف بإضاءة وصوت وكادر مضبوطين — ونشر منتظم"
+      },
+      "ar-Gulf": {
+        "leftLabel": "الأسلوب المعطل",
+        "rightLabel": "الأسلوب العملي",
+        "leftBody": "انتظار معدات مثالية قبل البدء — تبقى مؤجل ولا ينزل محتوى",
+        "rightBody": "تصوير بالهاتف بإضاءة وصوت وإطار مضبوطين — ونشر منتظم"
+      },
+      "ar-EG": {
+        "leftLabel": "الأسلوب المعطل",
+        "leftBody": "استنى معدات مثالية قبل ما تبدأ، فتفضل مأجل ومفيش محتوى ينزل.",
+        "rightLabel": "الأسلوب العملي",
+        "rightBody": "صور بالموبايل بإضاءة وصوت وكادر مضبوطين، ونزل بشكل منتظم."
+      }
+    },
+    "missionIntro": {
+      "en": "Choose one path: Record an actual 60-second video, or write a shooting script ready for execution following the same rules.",
+      "ar-MSA": "اختر مسارًا واحدًا: تسجيل فيديو ٦٠ ثانية فعلي، أو كتابة سكريبت تصوير جاهز للتنفيذ بنفس القواعد.",
+      "ar-Gulf": "اختر مسار واحد: تسجيل فيديو ٦٠ ثانية فعلي، أو كتابة سكريبت تصوير جاهز للتنفيذ بنفس القواعد.",
+      "ar-EG": "اختار واحد من مسارين: يا تسجل فيديو ٦٠ ثانية فعلي، يا تكتب سكريبت تصوير جاهز للتنفيذ بنفس القواعد."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Visual snapshot — **Practical shooting setup**. **Simple preparation makes a difference:** **Light in front of you**, **stable phone**, **and a strong start fro",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m4-l2-mobile-shooting.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Visual snapshot — **Practical shooting setup**. **Simple preparation makes a difference:** **Light in front of you**, **stable phone**, **an"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l2-mobile-shooting.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "النور:"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l2-mobile-shooting.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "الضوء:"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/creator-m4-l2-mobile-shooting.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "المثال ده يوضح إن تجهيز بسيط يفرق: نور قدامك، موبايل ثابت، وبداية قوية من أول ثانية."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "creator-m4-l2-mobile-shooting's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Disruptive Approach / Practical Approach) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Disruptive Approach\" vs \"Practical Approach\" for creator-m4-l2-mobile-shooting.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Disruptive Approach",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m4-l2-mobile-shooting.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Practical Approach",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m4-l2-mobile-shooting.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Framing",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m4-l2-mobile-shooting.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Hook",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m4-l2-mobile-shooting.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "الأسلوب المعطّل",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l2-mobile-shooting.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "الأسلوب العملي",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l2-mobile-shooting.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Framing (الكادر)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l2-mobile-shooting.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Hook (خطاف)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l2-mobile-shooting.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "الأسلوب المعطل",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l2-mobile-shooting.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "الأسلوب العملي",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l2-mobile-shooting.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Framing (الإطار)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l2-mobile-shooting.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Hook (خطاف)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l2-mobile-shooting.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "الأسلوب المعطل",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m4-l2-mobile-shooting.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "الأسلوب العملي",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m4-l2-mobile-shooting.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Framing",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m4-l2-mobile-shooting.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Hook",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m4-l2-mobile-shooting.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Mobile Shooting: \"Disruptive Approach\" versus \"Practical Approach\" — Light:",
+    "ar-MSA": "التصوير بالهاتف: \"الأسلوب المعطّل\" في مقابل \"الأسلوب العملي\" — النور:",
+    "ar-Gulf": "أساسيات التصوير بالهاتف: \"الأسلوب المعطل\" في مقابل \"الأسلوب العملي\" — الضوء:",
+    "ar-EG": "اضبط الأساسيات قبل أي مؤثرات: \"الأسلوب المعطل\" في مقابل \"الأسلوب العملي\" — النور: خلي المصدر قدامك مش وراك، والشباك غالبا أحسن حل مجاني."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Basics Commitment\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m4-l2-mobile-shooting.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Strong Start\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m4-l2-mobile-shooting.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"التزام الأساسيات\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l2-mobile-shooting.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"بداية قوية\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l2-mobile-shooting.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"الالتزام بالأساسيات\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l2-mobile-shooting.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"بداية قوية\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l2-mobile-shooting.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"التزام الأساسيات\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m4-l2-mobile-shooting.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"بداية قوية\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m4-l2-mobile-shooting.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "ab7e8ee50b78203d5a2b390fe468b74d2137e991b406babb98c9e929d8dfd208"
+}

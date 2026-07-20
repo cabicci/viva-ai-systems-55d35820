@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m7-l2-relations",
+  "pathId": "builder",
+  "moduleId": "builder-m7",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Relations between Tables",
+    "ar-MSA": "العلاقات بين الجداول",
+    "ar-Gulf": "العلاقات بين الجداول",
+    "ar-EG": "العلاقات بتجاوب على أسئلة حقيقية"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m7-l2-relations.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l2-relations.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l2-relations.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m7-l2-relations.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Relations between tables answer real questions — like \"this client's conversations\" or \"this user's files\".",
+        "Why now? After designing the tables, they need to be linked — otherwise, the data becomes chaotic and the application gets confused.",
+        "What after the lesson? You will design a one-to-many relationship — User → Many Conversations."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ العلاقات بين الجداول تجاوب على أسئلة حقيقية — مثل «محادثات هذا العميل» أو «ملفات هذا المستخدم».",
+        "لماذا الآن؟ بعد تصميم الجداول، يجب ربطها — وإلا البيانات كومة والتطبيق يتلخبط.",
+        "ماذا بعد الدرس؟ ستصمّم علاقة واحد-لكثير (One-to-Many) — مستخدم → محادثات كثيرة."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ العلاقات بين الجداول تجاوب على أسئلة حقيقية — مثل «محادثات هذا العميل» أو «ملفات هذا المستخدم».",
+        "ليش الحين؟ بعد تصميم الجداول، لازم نربطها — وإلا البيانات بتكون فوضى والتطبيق يتلخبط.",
+        "وش بعد الدرس؟ راح تصمّم علاقة واحد-لكثير (One-to-Many) — مستخدم → محادثات كثيرة."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ العلاقات بين الجداول بتجاوب على أسئلة حقيقية — زي «محادثات العميل ده» أو «ملفات المستخدم ده».",
+        "ليه دلوقتي؟ بعد ما صمّمت الجداول، لازم تربطهم — وإلا البيانات هتبقى كومة والتطبيق هيتلخبط.",
+        "هتعمل إيه بعد الدرس؟ هتصمّم علاقة واحد-لكتير (user → محادثات كتير) لتطبيقك."
+      ]
+    },
+    "coreIdea": {
+      "en": "Instead of one table with everything",
+      "ar-MSA": "بدل جدول واحد فيه كل شيء",
+      "ar-Gulf": "بدل جدول واحد فيه كل شيء",
+      "ar-EG": "بدل جدول واحد فيه كل حاجة — جدولين: `users` و `conversations`. كل محادثة فيها `user_id` بيشاور على صاحبها."
+    },
+    "tension": {
+      "en": "AI talks to Ahmed and then to Sarah — and suddenly sends Sarah a summary of Ahmed's conversation. Privacy disaster. The problem: All conversations are in one pile with no official link between each conversation and its o",
+      "ar-MSA": "الذكاء الاصطناعي يكلم أحمد ثم سارة — وفجأة يرسل لسارة ملخص محادثة أحمد. كارثة خصوصية. المشكلة: كل المحادثات في كومة واحدة ولا وصلة رسمية بين كل محادثة وصاحبها.",
+      "ar-Gulf": "الذكاء الاصطناعي يكلم أحمد ثم سارة — وفجأة يرسل لسارة ملخص محادثة أحمد. كارثة خصوصية. المشكلة: كل المحادثات في فوضى واحدة ولا وصلة رسمية بين كل محادثة وصاحبها.",
+      "ar-EG": "الـ AI بيكلم أحمد وبعدين سارة — وفجأة يبعت لسارة ملخص محادثة أحمد. كارثة خصوصية."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Everything in one table",
+        "rightLabel": "Two linked tables",
+        "leftBody": "`conversations(client_name, email, message)`. Change the name? Update all messages. Error in a letter? New client.",
+        "rightBody": "`users(id, name)` and `conversations(id, user_id, message)`. Change the name in one place. Each conversation is linked to `user_id`."
+      },
+      "ar-MSA": {
+        "leftLabel": "كل شيء في جدول واحد",
+        "rightLabel": "جدولان مربوطان",
+        "leftBody": "`محادثات(اسم_العميل, ايميل, رسالة)`. تغيير الاسم؟ تعديل كل الرسائل. خطأ في حرف؟ عميل جديد",
+        "rightBody": "`users(id, name)` و `conversations(id, user_id, message)`. تغيير الاسم في مكان واحد. كل محادثة مربوطة بـ `user_id`"
+      },
+      "ar-Gulf": {
+        "leftLabel": "كل شيء في جدول واحد",
+        "rightLabel": "جدولان مربوطان",
+        "leftBody": "`محادثات(اسم_العميل, ايميل, رسالة)`. تغيير الاسم؟ تعديل كل الرسائل. خطأ في حرف؟ عميل جديد",
+        "rightBody": "`users(id, name)` و `conversations(id, user_id, message)`. تغيير الاسم في مكان واحد. كل محادثة مربوطة بـ `user_id`"
+      },
+      "ar-EG": {
+        "leftLabel": "غلط — كل حاجة في جدول واحد",
+        "leftBody": "`محادثات(اسم_العميل, ايميل, رسالة)`. العميل غيّر اسمه؟ تلف على كل رسايله. غلط في حرف؟ السيستم يفتكره عميل جديد.",
+        "rightLabel": "صح — جدولين مربوطين",
+        "rightBody": "`users(id, name)` و `conversations(id, user_id, message)`. غيّر الاسم في مكان واحد. كل محادثة مربوطة بـ `user_id`."
+      }
+    },
+    "missionIntro": {
+      "en": "Introduction: Your application has users, and each user has many items (conversations, files, tasks). Design the relationship. 10 minutes.",
+      "ar-MSA": "تطبيقك فيه مستخدمون وكل مستخدم له أشياء كثيرة (محادثات، ملفات، مهام). صمّم العلاقة. ١٠ دقائق.",
+      "ar-Gulf": "تطبيقك فيه مستخدمون وكل مستخدم له أشياء كثيرة (محادثات، ملفات، مهام). صمّم العلاقة. ١٠ دقائق.",
+      "ar-EG": "تطبيقك فيه مستخدمين وكل مستخدم عنده حاجات كتير (محادثات، ملفات، مهام...). صمّم العلاقة.\n\n١٠ دقايق كفاية."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "**The link between the tables:**",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m7-l2-relations.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**The link between the tables:**"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l2-relations.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**الوصلة بين الجداول:**"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l2-relations.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**الوصلة بين الجداول:**"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m7-l2-relations.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "تخيّل `users` = العملا و `posts` = المحادثات. `posts.user_id` = الوصلة اللي بتقول مين صاحب المحادثة. من غيرها، التطبيق أ"
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "builder-m7-l2-relations's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Everything in one table / Two linked tables) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Everything in one table\" vs \"Two linked tables\" for builder-m7-l2-relations.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Everything in one table",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m7-l2-relations.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Two linked tables",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m7-l2-relations.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Foreign Key",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m7-l2-relations.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "One-to-Many",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m7-l2-relations.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "كل شيء في جدول واحد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l2-relations.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "جدولان مربوطان",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l2-relations.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Foreign Key (مفتاح أجنبي)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l2-relations.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "One-to-Many (واحد لكثير)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l2-relations.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "كل شيء في جدول واحد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l2-relations.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "جدولان مربوطان",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l2-relations.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Foreign Key (مفتاح أجنبي)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l2-relations.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "One-to-Many (واحد لكثير)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l2-relations.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "غلط — كل حاجة في جدول واحد",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m7-l2-relations.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "صح — جدولين مربوطين",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m7-l2-relations.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Foreign Key (مفتاح أجنبي)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m7-l2-relations.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "One-to-Many (واحد لكتير)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m7-l2-relations.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Relations between Tables: \"Everything in one table\" versus \"Two linked tables\" — Instead of one table with everything",
+    "ar-MSA": "العلاقات بين الجداول: \"كل شيء في جدول واحد\" في مقابل \"جدولان مربوطان\" — بدل جدول واحد فيه كل شيء",
+    "ar-Gulf": "العلاقات بين الجداول: \"كل شيء في جدول واحد\" في مقابل \"جدولان مربوطان\" — بدل جدول واحد فيه كل شيء",
+    "ar-EG": "العلاقات بتجاوب على أسئلة حقيقية: \"غلط — كل حاجة في جدول واحد\" في مقابل \"صح — جدولين مربوطين\" — بدل جدول واحد فيه كل حاجة — جدولين: `users` و `conversations`. كل محادثة فيها `user_id` بيشاور على صاحبها."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"Relationship Design\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m7-l2-relations.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"Deletion Decision\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m7-l2-relations.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"تصميم العلاقة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l2-relations.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"قرار الحذف\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l2-relations.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"تصميم العلاقة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l2-relations.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"قرار الحذف\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l2-relations.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"تصميم العلاقة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m7-l2-relations.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"قرار الحذف\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m7-l2-relations.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 30"
+    }
+  ],
+  "checksum": "128398f7e2ff066381092a91bbad4e463154aa9972a11e047616a92031c8170c"
+}
