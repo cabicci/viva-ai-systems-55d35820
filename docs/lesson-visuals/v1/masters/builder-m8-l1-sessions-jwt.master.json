@@ -87,8 +87,8 @@
         "rightBody": "«محادثاتي» تحتاج أن تتذكر المنصة من داخل — مثل الجلسة وكارت دخول مؤقت."
       },
       "ar-EG": {
-        "leftLabel": "Why should the platform 'remember' you?",
-        "rightLabel": "Hotel card — Session and JWT simply",
+        "leftLabel": "ليه المنصة لازم «تفتكرك»؟",
+        "rightLabel": "كارت الفندق — Session و JWT ببساطة",
         "leftBody": "تخيل فتحت تطبيق وشفت صفحة «طلباتي» — لو المنصة نسيت إنك دخلت، ممكن تعرضلك بيانات غلط أو تطلب منك login تاني كل شوية.",
         "rightBody": "تشبيه من الحياة: لما بتسجل دخول في فندق، الاستقبال بيديك كارت غرفة مؤقت. الكارت مش هويتك الكاملة — بس بيقول للمصعد والباب: «النزيل ده لسه هنا»."
       }
@@ -236,18 +236,18 @@
     "ar-EG": [
       {
         "id": "comparison-left",
-        "text": "Why should the platform 'remember' you?",
+        "text": "ليه المنصة لازم «تفتكرك»؟",
         "source": {
           "path": "src/components/intro/lessons/builder-m8-l1-sessions-jwt.ts",
-          "field": "block.left.label"
+          "field": "title (tension)"
         }
       },
       {
         "id": "comparison-right",
-        "text": "Hotel card — Session and JWT simply",
+        "text": "كارت الفندق — Session و JWT ببساطة",
         "source": {
           "path": "src/components/intro/lessons/builder-m8-l1-sessions-jwt.ts",
-          "field": "block.right.label"
+          "field": "title (core idea)"
         }
       },
       {
@@ -345,5 +345,5 @@
       "quote": "weight: 35"
     }
   ],
-  "checksum": "20d9d511772595f904e3525238b9029bfffe2c4a4c0e77a468823a94686277c0"
+  "checksum": "15afbdbaec160691654cd58234a1746c3c1867db63da18dda9fd6c4ae20a30c1"
 }

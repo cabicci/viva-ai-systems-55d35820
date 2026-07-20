@@ -97,22 +97,22 @@
     },
     "visualIntent": {
       "kind": "screenshot",
-      "summary": "Trigger",
+      "summary": "Classification, summary, draft response",
       "packageQuotes": {
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/automator-m5-l1-llm-in-flow.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "Trigger"
+          "field": "sections[role=Core idea].contentMarkdown",
+          "quote": "Before: **Trigger** → **Action** → Save. Data moves without 'understanding'."
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l1-llm-in-flow.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "Trigger (مُشغّل)"
+          "field": "sections[role=Core idea].contentMarkdown",
+          "quote": "قبل: **Trigger (مُشغّل)** → **Action (فعل)** → حفظ."
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m5-l1-llm-in-flow.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "مُشغّل"
+          "field": "sections[role=Core idea].contentMarkdown",
+          "quote": "قبل: **مُشغّل** → **فعل** → حفظ."
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/automator-m5-l1-llm-in-flow.ts",
@@ -282,5 +282,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "d4979292d2c7299482f5a0ae3f4590bebabab3c8cccf242ab5c2e97c60590e98"
+  "checksum": "644e1d68a39e4fffe50fcf9024f1ce41ccfb1e6d2191da8713adbc951db281e9"
 }

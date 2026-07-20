@@ -94,22 +94,22 @@
     },
     "visualIntent": {
       "kind": "screenshot",
-      "summary": "Webhook",
+      "summary": "send a welcome reply → alert",
       "packageQuotes": {
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/automator-m6-l1-lead-capture.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "Webhook"
+          "field": "sections[role=Core idea].contentMarkdown",
+          "quote": "**Webhook** for instant notification when the form is submitted."
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l1-lead-capture.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "Webhook (إشعار فوري)"
+          "field": "sections[role=Core idea].contentMarkdown",
+          "quote": "**Webhook (إشعار فوري)** عند إرسال الفورم."
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l1-lead-capture.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "Webhook (إشعار فوري)"
+          "field": "sections[role=Core idea].contentMarkdown",
+          "quote": "**Webhook (إشعار فوري)** عند إرسال النموذج."
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/automator-m6-l1-lead-capture.ts",
@@ -237,5 +237,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "5cb77ad3e7ae49710a50be5ee19cf55f170349502af337a8b151bf19f165c5a9"
+  "checksum": "63e2bd5c20d908df052103b309914b2dfca5ca38c3c25ad9a9c7b7f0fbd0072e"
 }
