@@ -1,39 +1,45 @@
-# خطة: عدّ الفيديوهات في 400 خلية درس — Runtime من صفحة الدرس
-
 ## الهدف
-معرفة كام درس (من إجمالي 400 = 100 lessonId × 4 locales) بيعرض iframe فيديو فعلي عند تحميل صفحة الدرس، مش بمجرد وجوده في `bunny-videos.ts`.
 
-## المصدر الوحيد المعتمد
-`GET /learn/{pathId}/{lessonId}?locale={locale}` — نفس المسار اللي المتعلّم بيفتحه.
-مؤشر النجاح: عنصر بـ `[data-locale-video="player"]` (iframe فعلي) بدلاً من `[data-locale-video="placeholder"]`.
+التأكد إن الـ 400 فيديو (100 لكل لغة × 4 لغات) موجودين وشغالين فعلاً — من غير ما نعتمد على الـ runtime gate اللي بيحجب الدروس.
 
-## الخطوات
+## المشكلة الحالية
 
-1. **بناء قائمة الـ 400 خلية**
-   - قراءة `PATHS` من `src/lib/curriculum-data` لجمع كل `(pathId, lessonId)`.
-   - ضرب في `["en", "ar-MSA", "ar-Gulf", "ar-EG"]`.
-   - التأكد إن العدد = 400 قبل أي فحص. لو أقل/أكتر، إيقاف والإبلاغ.
+الـ audit اللي بيفتح كل درس في المتصفح بيتوقف عند رسالة "Complete the Introduction first" لأن حساب الأدمن لسه ما كملش المقدمة. ده بيخلي 211 درس ما نقدرش نتحقق منهم عبر الـ UI مباشرة.
 
-2. **فحص Runtime عبر Playwright**
-   - تشغيل dev server محلي (شغّال بالفعل على `localhost:8080`).
-   - لكل خلية: `page.goto("/learn/{pathId}/{lessonId}?locale={locale}")`.
-   - انتظار `networkidle` ثم فحص:
-     - `player = await page.locator('[data-locale-video="player"] iframe').count()`
-     - `placeholder = await page.locator('[data-locale-video="placeholder"]').count()`
-   - تصنيف الخلية: `HAS_VIDEO` / `NO_VIDEO` / `ERROR`.
-   - تشغيل بـ 6 صفحات متوازية لتقليل الزمن (~5–8 دقائق).
+## الخطة — تحقق على 3 طبقات (كل طبقة أقوى من اللي قبلها)
 
-3. **التقرير النهائي** (بدون أي كتابة على الريبو)
-   - إجمالي: `HAS_VIDEO / 400`.
-   - تقسيم حسب اللغة: en, ar-MSA, ar-Gulf, ar-EG.
-   - قائمة الخلايا اللي بدون فيديو (lessonId + locale) في CSV تحت `/mnt/documents/`.
-   - عيّنة تحقق: 3 لقطات شاشة (لغة عندها فيديو، لغة placeholder، خلية فيها خطأ لو وُجدت).
+### الطبقة 1: Registry Integrity (ثواني)
 
-## قيود
-- Read-only بالكامل: مفيش تعديل ملفات، مفيش commits، مفيش dispatch، مفيش كتابة على Bunny/Supabase.
-- الاعتماد الحصري على runtime لصفحة الدرس — مش على `bunny-videos.ts` مباشرة ولا على الـ manifests.
+- نقرأ `BUNNY_VIDEO_GUIDS` من الـ runtime SHA الحالي.
+- نتأكد: 400 مفتاح فريد + 400 GUID فريد + التوزيع 100/100/100/100.
+- نحدد الـ 4 مفاتيح legacy المؤرشفة ونستبعدهم.
 
-## المخرجات
-- عدد الفيديوهات الفعلية / 400.
-- CSV بأسماء الخلايا الناقصة.
-- تفصيل لكل لغة.
+### الطبقة 2: Bunny API Health Check (دقايق)
+
+- لكل GUID من الـ 400، نستعلم Bunny Stream API مباشرة:
+`GET /library/670679/videos/{guid}`
+- نتحقق لكل فيديو إن:
+  - `status == 4` (Finished — playable)
+  - `length > 0` (مش فاضي)
+  - `availableResolutions` مش فاضية
+- ده بيثبت إن الفيديو موجود على Bunny وجاهز للتشغيل، من غير أي gate.
+- نحفظ النتيجة في `/mnt/documents/video-runtime-audit/bunny-health.json`.
+
+### الطبقة 3: Runtime Placement (اختياري — لو عايز تأكيد المتصفح)
+
+اختر واحد من التلاتة:
+
+- **A.** أكمل الـ 7 دروس المقدمة يدوياً في حساب الأدمن (10 دقايق)، وبعدها نكمل الـ 211 المتبقي.
+- **B.** أفوض كتابة QA-only لـ 7 صفوف في `lesson_progress` للأدمن (يتمسحوا بعد الـ audit).
+- **C.** نكتفي بالطبقة 1 + 2 ونعتبرها إثبات كافي (لأن الـ registry ثابت والفيديو موجود على Bunny — الـ gate مسألة entitlement مش placement).
+
+## المخرجات النهائية
+
+- `registry-integrity.json` — تأكيد الـ 400 + استبعاد 4 legacy.
+- `bunny-health.json` — حالة كل GUID من Bunny مباشرة.
+- (اختياري) `runtime-placement.jsonl` — نتيجة الـ UI لو اخترت A أو B.
+- **Verdict نهائي:** PASS / FAIL مع قائمة أي فيديو ناقص أو تالف.
+
+## سؤال قبل التنفيذ
+
+هل توافق على استخدام Bunny Stream API مباشرة (الطبقة 2) كإثبات كافي إن الفيديو "شغال"؟ ولو عايز الطبقة 3، اختار A / B / C.   انا عايز اتاكد بنبة مليار في الميه
