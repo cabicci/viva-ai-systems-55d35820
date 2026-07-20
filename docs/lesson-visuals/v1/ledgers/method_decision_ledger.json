@@ -1,12 +1,12 @@
 {
   "ledgerVersion": "lesson-visuals-method-decision/v1",
   "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
-  "generatedAt": "2026-07-20T14:12:52.090Z",
+  "generatedAt": "2026-07-20T14:24:35.375Z",
   "methodCounts": {
     "1": 27,
     "2": 12,
     "3": 0,
-    "4": 54
+    "4": 61
   },
   "entries": [
     {
@@ -78,6 +78,34 @@
       "methodRationale": "analyst-m5-l1-four-numbers-dashboard's package marks a Diagram intent (four-kpi-dashboard); the underlying relationship reads as data-relationship, so a deterministic SVG panel keeps the real Full Dashboard/4 Clear Numbers labels crisp in Arabic and English without any paid generation step.",
       "compositionPattern": "kpi-grid-panel",
       "duplicationJustification": "Shares the \"kpi-grid-panel\" layout template with 4 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Full Dashboard\" vs \"4 Clear Numbers\" for analyst-m5-l1-four-numbers-dashboard."
+    },
+    {
+      "lessonId": "analyst-m5-l2-weekly-review-ritual",
+      "method": 4,
+      "methodRationale": "analyst-m5-l2-weekly-review-ritual's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Lesson Start / 4 Numbers → 3 AI Questions → One Decision) instead of fabricating a UI capture.",
+      "compositionPattern": "hybrid-frame-with-labels",
+      "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 60 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Lesson Start\" vs \"4 Numbers → 3 AI Questions → One Decision\" for analyst-m5-l2-weekly-review-ritual."
+    },
+    {
+      "lessonId": "analyst-m6-l1-question-mistakes",
+      "method": 4,
+      "methodRationale": "analyst-m6-l1-question-mistakes's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Lesson Start / 3 Mistakes) instead of fabricating a UI capture.",
+      "compositionPattern": "hybrid-frame-with-labels",
+      "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 60 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Lesson Start\" vs \"3 Mistakes\" for analyst-m6-l1-question-mistakes."
+    },
+    {
+      "lessonId": "analyst-m6-l2-interpretation-mistakes",
+      "method": 4,
+      "methodRationale": "analyst-m6-l2-interpretation-mistakes's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Lesson Start / 4 Traps) instead of fabricating a UI capture.",
+      "compositionPattern": "hybrid-frame-with-labels",
+      "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 60 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Lesson Start\" vs \"4 Traps\" for analyst-m6-l2-interpretation-mistakes."
+    },
+    {
+      "lessonId": "analyst-m7-l1-from-decisions-to-business",
+      "method": 4,
+      "methodRationale": "analyst-m7-l1-from-decisions-to-business's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Lesson Start / Decision Backlog) instead of fabricating a UI capture.",
+      "compositionPattern": "hybrid-frame-with-labels",
+      "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 60 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Lesson Start\" vs \"Decision Backlog\" for analyst-m7-l1-from-decisions-to-business."
     },
     {
       "lessonId": "automator-m1-l1-where-you-are",
@@ -472,11 +500,32 @@
       "duplicationJustification": "Shares the \"system-map-panel\" layout template with 3 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"People Before System\" vs \"SOP Then People\" for business-m3-l3-system-then-people."
     },
     {
+      "lessonId": "business-m4-l1-premature-scaling",
+      "method": 4,
+      "methodRationale": "business-m4-l1-premature-scaling's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Introduction / 4 Checks) instead of fabricating a UI capture.",
+      "compositionPattern": "hybrid-frame-with-labels",
+      "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 60 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Introduction\" vs \"4 Checks\" for business-m4-l1-premature-scaling."
+    },
+    {
       "lessonId": "business-m4-l2-reactive-relapse",
       "method": 1,
       "methodRationale": "business-m4-l2-reactive-relapse's package marks a Diagram intent (reactive-relapse-cycle); the underlying relationship reads as process, so a deterministic SVG panel keeps the real Without Rules/With Rules + AI labels crisp in Arabic and English without any paid generation step.",
       "compositionPattern": "process-stage-strip",
       "duplicationJustification": "Shares the \"process-stage-strip\" layout template with 8 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Without Rules\" vs \"With Rules + AI\" for business-m4-l2-reactive-relapse."
+    },
+    {
+      "lessonId": "business-m4-l3-weekly-rhythm",
+      "method": 4,
+      "methodRationale": "business-m4-l3-weekly-rhythm's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Introduction / 30 minutes) instead of fabricating a UI capture.",
+      "compositionPattern": "hybrid-frame-with-labels",
+      "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 60 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Introduction\" vs \"30 minutes\" for business-m4-l3-weekly-rhythm."
+    },
+    {
+      "lessonId": "business-m4-l4-full-ecosystem",
+      "method": 4,
+      "methodRationale": "business-m4-l4-full-ecosystem's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Lesson Start / 5 Paths) instead of fabricating a UI capture.",
+      "compositionPattern": "hybrid-frame-with-labels",
+      "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 60 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Lesson Start\" vs \"5 Paths\" for business-m4-l4-full-ecosystem."
     },
     {
       "lessonId": "creator-m1-l1-why-content",
