@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "automator-m4-l1-connect-database",
+  "pathId": "automator",
+  "moduleId": "automator-m4",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Connect Database",
+    "ar-MSA": "ربط قاعدة البيانات",
+    "ar-Gulf": "ربط قاعدة البيانات",
+    "ar-EG": "DB = ذاكرة الأتمتة"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/automator-m4-l1-connect-database.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l1-connect-database.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l1-connect-database.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/automator-m4-l1-connect-database.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Automation becomes more powerful when it stores organized data — not just sends a message and forgets.",
+        "Why now? The workflow reads and writes — without a clear place for data, repetitive tasks revert to manual work.",
+        "What after the lesson? You will choose where the workflow stores the data and what fields it needs."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ الأتمتة تصبح أقوى عندما تحفظ بيانات منظمة — وليس فقط ترسل رسالة وتنسى.",
+        "لماذا الآن؟ مسار العمل (workflow) يقرأ ويكتب — ومن دون مكان واضح للبيانات، الشغل المتكرر يعود يدويًا.",
+        "ماذا بعد الدرس؟ ستختار أين يخزّن مسار العمل (workflow) البيانات + ما الحقول التي يحتاجها."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ الأتمتة تصير أقوى لما تخزن بيانات منظمة — مو بس ترسل رسالة وتنسى.",
+        "ليش الحين؟ مسار العمل (workflow) يقرأ ويكتب — ومن دون مكان واضح للبيانات، الشغل المتكرر يرجع يدوي.",
+        "وش بعد الدرس؟ راح تختار وين يخزن مسار العمل (workflow) البيانات + وش الحقول اللي يحتاجها."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ الأتمتة بتبقى أقوى لما تحفظ بيانات منظمة — مش بس تبعت رسالة وتنسى.",
+        "ليه دلوقتي؟ الـ workflow بيقرأ ويكتب — ومن غير مكان واضّح للبيانات، الشغل المتكرر بيتكرر يدوي.",
+        "هتعمل إيه بعد الدرس؟ هتختار فين الـ workflow بيخزّن البيانات + إيه الحقول اللي محتاجها."
+      ]
+    },
+    "coreIdea": {
+      "en": "workflow",
+      "ar-MSA": "مسار العمل (workflow)",
+      "ar-Gulf": "مسار العمل (workflow)",
+      "ar-EG": "كل lead أو طلب محتاج يتسجّل في مكان واحد — جدول أو شيت منظم بحقول ثابتة."
+    },
+    "tension": {
+      "en": "\"The client registered — but we can't find their data.\". Automation sends a welcome email — good. But when sales asks, \"Who is this client?\" — there’s no record.",
+      "ar-MSA": "«العميل سجّل — ولا نجد بياناته». الأتمتة ترسل بريد ترحيب — جيد. لكن عندما تسأل المبيعات «من هذا العميل؟» — لا سجل.",
+      "ar-Gulf": "«العميل سجّل — وما لقينا بياناته». الأتمتة ترسل بريد ترحيبي — زين. لكن لما تسأل المبيعات «من هذا العميل؟» — ما فيه سجل.",
+      "ar-EG": "الأوتوميشن بيبعت إيميل ترحيب — تمام. بس لما المبيعات تسأل «مين العميل ده؟» — مفيش سجل."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Email Only",
+        "rightLabel": "Record + Email",
+        "leftBody": "Automation sends an email — the data is in the inbox. After a week: Who registered? No one knows.",
+        "rightBody": "The same automation writes a row in a table (Name, Phone, Date) + sends an email. Follow-up is automatic."
+      },
+      "ar-MSA": {
+        "leftLabel": "بريد فقط",
+        "rightLabel": "سجل + بريد",
+        "leftBody": "الأتمتة ترسل بريدًا — البيانات في صندوق الوارد. بعد أسبوع: من سجّل؟ لا أحد يعرف.",
+        "rightBody": "نفس الأتمتة تكتب صفًا في جدول (اسم، هاتف، تاريخ) + ترسل بريدًا. المتابعة تلقائية."
+      },
+      "ar-Gulf": {
+        "leftLabel": "بريد فقط",
+        "rightLabel": "سجل + بريد",
+        "leftBody": "الأتمتة ترسل بريد — البيانات في صندوق الوارد. بعد أسبوع: من سجّل؟ ما حد يدري.",
+        "rightBody": "نفس الأتمتة تكتب صف في جدول (اسم، هاتف، تاريخ) + ترسل بريد. المتابعة تلقائية."
+      },
+      "ar-EG": {
+        "leftLabel": "إيميل بس",
+        "leftBody": "الأوتوميشن بيبعت إيميل — البيانات في صندوق الوارد. بعد أسبوع: مين سجّل؟ محدش عارف.",
+        "rightLabel": "سجل + إيميل",
+        "rightBody": "نفس الأوتوميشن يكتب صف في جدول (اسم، تليفون، تاريخ) + يبعت إيميل. المتابعة تلقائية."
+      }
+    },
+    "missionIntro": {
+      "en": "The mission is design — not a mandatory technical connection. Choose a workflow and define: Where is the data stored? What fields? AI can suggest columns — you choose the final ones.",
+      "ar-MSA": "المهمة تصميم — وليس ربطًا تقنيًا إلزاميًا. اختر مسار عمل (workflow) وحدّد: أين تُحفظ البيانات؟ وما الحقول؟ يمكن للذكاء الاصطناعي اقتراح أعمدة — أنت تختار النهائي.",
+      "ar-Gulf": "المهمة تصميم — مو ربط تقني إلزامي. اختر مسار عمل (workflow) وحدّد: وين تخزن البيانات؟ وش الحقول؟ الذكاء الاصطناعي ممكن يقترح أعمدة — لكن أنت تختار النهائي.",
+      "ar-EG": "المهمة دي تصميم — مش ربط تقني إلزامي. اختار workflow عندك وحدّد: فين البيانات بتتحفظ؟ وإيه الحقول؟\n\nممكن الـ AI يقترح أعمدة — إنت تختار النهائي."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Every event (registration, progress, request) is recorded in one place. The **workflow** reads and writes from the same source — not scattered files.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m4-l1-connect-database.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Every event (registration, progress, request) is recorded in one place. The **workflow** reads and writes from the same source — not scatter"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l1-connect-database.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "كل حدث (تسجيل، تقدّم، طلب) يُسجّل في مكان واحد. **مسار العمل (workflow)** يقرأ ويكتب من نفس المصدر — وليس ملفات متفرقة."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l1-connect-database.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "كل حدث (تسجيل، تقدّم، طلب) يُسجّل في مكان واحد. **مسار العمل (workflow)** يقرأ ويكتب من نفس المصدر — مو ملفات متفرقة."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/automator-m4-l1-connect-database.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "كل حدث (تسجيل، تقدّم، طلب) بيتسجّل في مكان واحد. الـ workflow يقرأ ويكتب من نفس المصدر — مش ملفات متفرقة."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "automator-m4-l1-connect-database's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Email Only / Record + Email) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Email Only\" vs \"Record + Email\" for automator-m4-l1-connect-database.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Email Only",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m4-l1-connect-database.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Record + Email",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m4-l1-connect-database.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Schema",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m4-l1-connect-database.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "CRUD",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m4-l1-connect-database.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "بريد فقط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l1-connect-database.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "سجل + بريد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l1-connect-database.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Schema (شكل الجدول)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l1-connect-database.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "CRUD (قراءة وكتابة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l1-connect-database.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "بريد فقط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l1-connect-database.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "سجل + بريد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l1-connect-database.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Schema (شكل الجدول)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l1-connect-database.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "CRUD (قراءة وكتابة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l1-connect-database.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "إيميل بس",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m4-l1-connect-database.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "سجل + إيميل",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m4-l1-connect-database.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Schema (شكل الجدول)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m4-l1-connect-database.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "CRUD (قراءة وكتابة)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m4-l1-connect-database.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Connect Database: \"Email Only\" versus \"Record + Email\" — workflow",
+    "ar-MSA": "ربط قاعدة البيانات: \"بريد فقط\" في مقابل \"سجل + بريد\" — مسار العمل (workflow)",
+    "ar-Gulf": "ربط قاعدة البيانات: \"بريد فقط\" في مقابل \"سجل + بريد\" — مسار العمل (workflow)",
+    "ar-EG": "DB = ذاكرة الأتمتة: \"إيميل بس\" في مقابل \"سجل + إيميل\" — كل lead أو طلب محتاج يتسجّل في مكان واحد — جدول أو شيت منظم بحقول ثابتة."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Location + Fields\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m4-l1-connect-database.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Writing and Reading\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m4-l1-connect-database.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"مكان + حقول\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l1-connect-database.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"كتابة وقراءة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l1-connect-database.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"مكان + حقول\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l1-connect-database.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"كتابة وقراءة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l1-connect-database.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"مكان + حقول\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m4-l1-connect-database.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"كتابة وقراءة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m4-l1-connect-database.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "6804bfd89068a62ec88ce9bfe04b15e2df282e71a182457313667af17ef8f303"
+}

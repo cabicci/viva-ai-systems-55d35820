@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "analyst-m2-l2-right-question-rule",
+  "pathId": "analyst",
+  "moduleId": "analyst-m2",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Right Question Rule",
+    "ar-MSA": "قاعدة السؤال الصحيح",
+    "ar-Gulf": "قواعد السؤال الصحيح",
+    "ar-EG": "إيه اللي عندك دلوقتي؟"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m2-l2-right-question-rule.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m2-l2-right-question-rule.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m2-l2-right-question-rule.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/analyst-m2-l2-right-question-rule.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? A question is worth analyzing only if the answer can change your decision — not every question is worth your time.",
+        "Why now? After learning how to turn feelings into questions — you need to ensure that the question actually leads you to a decision.",
+        "What after the lesson? You will test 3 questions with the rule: «If the answer is X or Y — will I change my decision?»"
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ السؤال يستحق التحليل فقط إذا الإجابة تستطيع أن تغيّر قرارك — ليس أي سؤال يستحق وقتك.",
+        "لماذا الآن؟ بعد أن تعلّمت تحويل الشعور إلى سؤال — يجب التأكد أن السؤال فعلًا يوصّلك إلى قرار.",
+        "ماذا بعد الدرس؟ ستختبر ٣ أسئلة بقاعدة: «إذا كانت الإجابة X أو Y — هل سأغيّر قراري؟»"
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ السؤال يستحق التحليل فقط إذا الإجابة تقدر تغيّر قرارك — مو أي سؤال يستحق وقتك.",
+        "ليش الحين؟ بعد ما تعلمت تحويل الشعور إلى سؤال — لازم تتأكد أن السؤال فعلاً يوصلك إلى قرار.",
+        "وش بعد الدرس؟ راح تختبر ٣ أسئلة بقاعدة: «إذا كانت الإجابة X أو Y — هل راح أغيّر قراري؟»"
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ السؤال يستاهل التحليل بس لو الإجابة تقدر تغيّر قرارك — مش أي سؤال يستاهل وقتك.",
+        "ليه دلوقتي؟ بعد ما تعلّمت تحوّل الشعور لسؤال، لازم تتأكد إن السؤال فعلًا يوصّلك لقرار.",
+        "هتعمل إيه بعد الدرس؟ هتختبر ٣ أسئلة بقاعدة: «لو الإجابة كانت X أو Y، هغير قراري؟»"
+      ]
+    },
+    "coreIdea": {
+      "en": "Specific",
+      "ar-MSA": "محدّد",
+      "ar-Gulf": "محدد",
+      "ar-EG": "فهمت إيه؟ السؤال يستاهل التحليل بس لو الإجابة تقدر تغيّر قرارك — ده الفلتر قبل أي تحليل."
+    },
+    "tension": {
+      "en": "A general question brings a long and vague answer. You open the data, look around, close it — and nothing changes. Ask wrong → gather wrong data → interpret wrong → decide wrong. The question directs everything that foll",
+      "ar-MSA": "السؤال العام يجلب إجابة طويلة ومبهمة. تفتح البيانات، تتفرّج، تغلق — ولا شيء يتغيّر. اسأل خطأ → تجمع بيانات خطأ → تفسّر خطأ → تقرّر خطأ. السؤال يوجّه كل شيء بعده.",
+      "ar-Gulf": "السؤال العام يجيب إجابة طويلة ومبهمة. تفتح البيانات، تتفرج، تغلق — ولا شيء يتغير. اسأل خطأ → تجمع بيانات خطأ → تفسر خطأ → تقرر خطأ. السؤال يوجه كل شيء بعده.",
+      "ar-EG": "السؤال العام بيجيب إجابة طويلة ومبهمة. بتفتح البيانات، بتتفرّج، بتقفل — ومفيش حاجة اتغيّرت."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "General Question",
+        "rightLabel": "Specific Question",
+        "leftBody": "\"What is the sales situation?\" — Answer 10 hours. No decision. You close the data and leave",
+        "rightBody": "\"How many customers bought twice this month?\" — Answer in a minute. If large: repeat the campaign. If small: follow-up"
+      },
+      "ar-MSA": {
+        "leftLabel": "سؤال عام",
+        "rightLabel": "سؤال محدّد",
+        "leftBody": "«ما أحوال البيع؟» — إجابة ١٠ ساعات. لا قرار. تغلق البيانات وتذهب",
+        "rightBody": "«كم عميلًا اشترى مرتين هذا الشهر؟» — إجابة في دقيقة. إذا كبير: كرّر الحملة. إذا صغير: follow-up"
+      },
+      "ar-Gulf": {
+        "leftLabel": "سؤال عام",
+        "rightLabel": "سؤال محدد",
+        "leftBody": "«وش أحوال البيع؟» — إجابة ١٠ ساعات. لا قرار. تغلق البيانات وتروح",
+        "rightBody": "«كم عميل اشترى مرتين هذا الشهر؟» — إجابة في دقيقة. إذا كبير: كرر الحملة. إذا صغير: تابع"
+      },
+      "ar-EG": {
+        "leftLabel": "سؤال عام",
+        "leftBody": "«إيه أحوال البيع؟» — إجابة من ١٠ ساعات. مفيش قرار. بتقفل البيانات وتروح.",
+        "rightLabel": "سؤال محدّد",
+        "rightBody": "«كام عميل اشترى مرتين الشهر ده؟» — إجابة في دقيقة. لو كبير: كرّر الحملة. لو صغير: اعمل follow-up."
+      }
+    },
+    "missionIntro": {
+      "en": "A practical filter task — not an exam. Write 3 questions (from the previous lesson or from your work). For each question apply: «If the answer is X or Y — will I change my decision? If not — rephrase the question.",
+      "ar-MSA": "مهمة فلتر عملي — ليس امتحانًا. اكتب ٣ أسئلة (من الدرس السابق أو من عملك). لكل سؤال طبّق: «إذا كانت الإجابة X أو Y — هل سأغيّر قراري؟» إذا لا — أعد صياغة السؤال.",
+      "ar-Gulf": "مهمة فلتر عملي — مو امتحان. اكتب ٣ أسئلة (من الدرس السابق أو من عملك). لكل سؤال طبق: «إذا كانت الإجابة X أو Y — هل راح أغيّر قراري؟» إذا لا — أعد صياغة السؤال.",
+      "ar-EG": "المهمة دي فلتر عملي — مش امتحان. اكتب ٣ أسئلة عندك (من الدرس اللي فات أو من شغلك). لكل سؤال طبّق: «لو الإجابة كانت X أو Y، هغير قراري؟»\n\nلو الإجابة مش هتغيّر حاجة — أعد صياغة السؤال."
+    },
+    "visualIntent": {
+      "kind": "data-relationship",
+      "summary": "**Same topic · Two formulations · Two results** (Identifier: `question-scorecard`): A **general question** fails the criteria — a **specific question** succeeds",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m2-l2-right-question-rule.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**Same topic · Two formulations · Two results** (Identifier: `question-scorecard`): A **general question** fails the criteria — a **specific"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m2-l2-right-question-rule.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**نفس الموضوع · صياغتان · نتيجتان** (معرّف: `question-scorecard`): سؤال **عام** يفشل في الشروط — سؤال **محدّد** ينجح. استخدم **البطاقة** في"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m2-l2-right-question-rule.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**نفس الموضوع · صياغتان · نتيجتان** (معرّف: `question-scorecard`): سؤال **عام** يفشل في الشروط — سؤال **محدد** ينجح. استخدم **البطاقة** في ا"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/analyst-m2-l2-right-question-rule.ts",
+          "field": "block.caption (diagram)",
+          "quote": "سؤال عام يفشل في الشروط — سؤال محدّد ينجح فيهم. استخدم البطاقة في المهمة."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "analyst-m2-l2-right-question-rule's package marks a Diagram intent (question-scorecard); the underlying relationship reads as data-relationship, so a deterministic SVG panel keeps the real General Question/Specific Question labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "kpi-grid-panel",
+  "duplicationJustification": "Shares the \"kpi-grid-panel\" layout template with 4 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"General Question\" vs \"Specific Question\" for analyst-m2-l2-right-question-rule.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "General Question",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m2-l2-right-question-rule.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Specific Question",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m2-l2-right-question-rule.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Threshold",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m2-l2-right-question-rule.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Actionable",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m2-l2-right-question-rule.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "سؤال عام",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m2-l2-right-question-rule.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "سؤال محدّد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m2-l2-right-question-rule.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Threshold (حد القرار)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m2-l2-right-question-rule.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Actionable (قابل للتنفيذ)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m2-l2-right-question-rule.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "سؤال عام",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m2-l2-right-question-rule.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "سؤال محدد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m2-l2-right-question-rule.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Threshold (حد القرار)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m2-l2-right-question-rule.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Actionable (قابل للتنفيذ)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m2-l2-right-question-rule.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "سؤال عام",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m2-l2-right-question-rule.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "سؤال محدّد",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m2-l2-right-question-rule.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Threshold (حد القرار)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m2-l2-right-question-rule.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Actionable (قابل للتنفيذ)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m2-l2-right-question-rule.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Right Question Rule: \"General Question\" versus \"Specific Question\" — Specific",
+    "ar-MSA": "قاعدة السؤال الصحيح: \"سؤال عام\" في مقابل \"سؤال محدّد\" — محدّد",
+    "ar-Gulf": "قواعد السؤال الصحيح: \"سؤال عام\" في مقابل \"سؤال محدد\" — محدد",
+    "ar-EG": "إيه اللي عندك دلوقتي؟: \"سؤال عام\" في مقابل \"سؤال محدّد\" — فهمت إيه؟ السؤال يستاهل التحليل بس لو الإجابة تقدر تغيّر قرارك — ده الفلتر قبل أي تحليل."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Decision Test\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m2-l2-right-question-rule.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Improvement\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m2-l2-right-question-rule.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"اختبار القرار\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m2-l2-right-question-rule.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"تحسين\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m2-l2-right-question-rule.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"اختبار القرار\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m2-l2-right-question-rule.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"تحسين\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m2-l2-right-question-rule.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"اختبار القرار\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m2-l2-right-question-rule.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"تحسين\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m2-l2-right-question-rule.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "53afdbc5cea98716fdb772a559f87cc1ac2bbb07d7e30e4164537359f4ab072c"
+}

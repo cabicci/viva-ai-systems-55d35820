@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m10-l1-deploy-domain",
+  "pathId": "builder",
+  "moduleId": "builder-m10",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Deploy & Domain",
+    "ar-MSA": "النشر والدومين",
+    "ar-Gulf": "إطلاق وتوزيع",
+    "ar-EG": "لينك عام + أسرار محمية"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m10-l1-deploy-domain.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m10-l1-deploy-domain.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m10-l1-deploy-domain.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m10-l1-deploy-domain.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you learn? How to make your app accessible via a public link — and keep secrets safe.",
+        "Why now? You have built an interface, a database, and AI — but it's still on localhost. No one else can use it.",
+        "What after the lesson? You will distinguish between what is 'public' (link, name) and what is 'secret' (API keys)."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ كيف تطلّع تطبيقك بلينك عام — وتبقي الأسرار في مكان محمي.",
+        "لماذا الآن؟ بنيت واجهة ومخزنًا وذكاءًا اصطناعيًا — لكن ما زال على localhost. لا أحد غيرك يستطيع استخدامه.",
+        "ماذا بعد الدرس؟ ستفرّق بين ما هو «عام» (لينك، اسم) وما هو «سري» (API keys)."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ كيف تطلّع تطبيقك برابط عام — وتخلي الأسرار في مكان آمن.",
+        "ليش الحين؟ بنيت واجهة ومخزن وذكاء اصطناعي — لكن ما زال على localhost. ما في أحد غيرك يقدر يستخدمه.",
+        "وش بعد الدرس؟ راح تفرّق بين وش هو «عام» (رابط، اسم) ووش هو «سري» (مفاتيح API)."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ إزاي تطلّع تطبيقك بلينك عام — وتخلي الأسرار في مكان محمي.",
+        "ليه دلوقتي؟ بنيت واجهة ومخزن وAI — بس لسه على localhost. محدش غيرك يقدر يستخدمه.",
+        "هتعمل إيه بعد الدرس؟ هتفرّق بين حاجة «عامة» (لينك، اسم) وحاجة «سرية» (API keys)."
+      ]
+    },
+    "coreIdea": {
+      "en": "Deploy",
+      "ar-MSA": "Deploy",
+      "ar-Gulf": "النشر (Deploy)",
+      "ar-EG": "Deploy = الكود يروح سيرفر — الناس تفتحه من URL عام (زي `my-app.com`)."
+    },
+    "tension": {
+      "en": "Everything works on `localhost` — but no one in the world can access it. You send `localhost:5173` to your friend — it won't open for them. The app is still just an idea on your device.",
+      "ar-MSA": "كل شيء يعمل على `localhost` — لكن لا أحد في العالم يستطيع فتحه. ترسل `localhost:5173` لصديقك — لن يفتح عنده. التطبيق ما زال فكرة على جهازك.",
+      "ar-Gulf": "كل شيء يعمل على `localhost` — لكن ما في أحد في العالم يقدر يفتحه. ترسل `localhost:5173` لصديقك — ما راح يفتح عنده. التطبيق ما زال فكرة على جهازك.",
+      "ar-EG": "كل حاجة شغالة على `localhost` — بس محدش في العالم يقدر يفتحها."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Secret in code",
+        "rightLabel": "Secret in Env Vars",
+        "leftBody": "OpenAI key in a file on GitHub — anyone can see it and use it on your account. A financial and security disaster",
+        "rightBody": "The code is public — the keys are only in the server vault. The link is public, secrets are protected"
+      },
+      "ar-MSA": {
+        "leftLabel": "سر في الكود",
+        "rightLabel": "سر في Env Vars",
+        "leftBody": "مفتاح OpenAI في ملف على GitHub — أي شخص يراه ويستخدمه على حسابك. كارثة مالية وأمان",
+        "rightBody": "الكود عام — المفاتيح في خزنة السيرفر فقط. اللينك عام، الأسرار محمية"
+      },
+      "ar-Gulf": {
+        "leftLabel": "سر في الكود",
+        "rightLabel": "سر في متغيرات البيئة",
+        "leftBody": "مفتاح OpenAI في ملف على GitHub — أي شخص يقدر يشوفه ويستخدمه على حسابك. كارثة مالية وأمان",
+        "rightBody": "الكود عام — المفاتيح في خزنة السيرفر بس. الرابط عام، الأسرار محمية"
+      },
+      "ar-EG": {
+        "leftLabel": "غلط — سر في الكود",
+        "leftBody": "مفتاح OpenAI في ملف على GitHub — أي حد يشوفه ويستخدمه على حسابك. كارثة مالية وأمان.",
+        "rightLabel": "صح — سر في Env Vars",
+        "rightBody": "الكود Public — المفاتيح في خزنة السيرفر بس. اللينك عام، الأسرار محمية."
+      }
+    },
+    "missionIntro": {
+      "en": "Before Deploy — distinguish what people see from what must remain hidden. 10 minutes.",
+      "ar-MSA": "قبل Deploy — فرّق ما يراه الناس وما يجب أن يبقى مخفيًا. ١٠ دقائق.",
+      "ar-Gulf": "قبل النشر — فرّق بين وش يشوفه الناس ووش لازم يبقى مخفي. ١٠ دقائق.",
+      "ar-EG": "قبل Deploy — فرّق إيه اللي الناس تشوفه وإيه اللي لازم يفضل مخفي.\n\n١٠ دقايق."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "**Build log — Successful deployment:**",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m10-l1-deploy-domain.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**Build log — Successful deployment:**"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m10-l1-deploy-domain.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**سجل البناء — إطلاق ناجح:**"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m10-l1-deploy-domain.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**سجل البناء — إطلاق ناجح:**"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m10-l1-deploy-domain.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "كل deploy = نسخة جديدة على الإنترنت. سجل البناء يورّيك إيه نجح وإيه فشل — مش صندوق أسود."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "builder-m10-l1-deploy-domain's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Secret in code / Secret in Env Vars) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Secret in code\" vs \"Secret in Env Vars\" for builder-m10-l1-deploy-domain.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Secret in code",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m10-l1-deploy-domain.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Secret in Env Vars",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m10-l1-deploy-domain.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Deploy",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m10-l1-deploy-domain.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Environment Variables",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m10-l1-deploy-domain.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "سر في الكود",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m10-l1-deploy-domain.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "سر في Env Vars",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m10-l1-deploy-domain.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Deploy (إطلاق)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m10-l1-deploy-domain.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Environment Variables (متغيرات البيئة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m10-l1-deploy-domain.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "سر في الكود",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m10-l1-deploy-domain.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "سر في متغيرات البيئة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m10-l1-deploy-domain.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "النشر (Deploy)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m10-l1-deploy-domain.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "متغيرات البيئة (Environment Variables)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m10-l1-deploy-domain.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "غلط — سر في الكود",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m10-l1-deploy-domain.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "صح — سر في Env Vars",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m10-l1-deploy-domain.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Deploy (إطلاق)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m10-l1-deploy-domain.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Environment Variables",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m10-l1-deploy-domain.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Deploy & Domain: \"Secret in code\" versus \"Secret in Env Vars\" — Deploy",
+    "ar-MSA": "النشر والدومين: \"سر في الكود\" في مقابل \"سر في Env Vars\" — Deploy",
+    "ar-Gulf": "إطلاق وتوزيع: \"سر في الكود\" في مقابل \"سر في متغيرات البيئة\" — النشر (Deploy)",
+    "ar-EG": "لينك عام + أسرار محمية: \"غلط — سر في الكود\" في مقابل \"صح — سر في Env Vars\" — Deploy = الكود يروح سيرفر — الناس تفتحه من URL عام (زي `my-app.com`)."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Correct classification\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m10-l1-deploy-domain.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Risk priority\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m10-l1-deploy-domain.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"تصنيف صح\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m10-l1-deploy-domain.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"أولوية الخطر\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m10-l1-deploy-domain.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"تصنيف صح\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m10-l1-deploy-domain.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"أولوية الخطر\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m10-l1-deploy-domain.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"تصنيف صح\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m10-l1-deploy-domain.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"أولوية الخطر\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m10-l1-deploy-domain.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "4754afd768673eff356f5a2dabcb6a0f4831960cb9a86cca2a3afb66871a4113"
+}

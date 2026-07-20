@@ -1,0 +1,326 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "analyst-m2-l1-feeling-to-question",
+  "pathId": "analyst",
+  "moduleId": "analyst-m2",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Feeling to Question",
+    "ar-MSA": "من الإحساس إلى السؤال",
+    "ar-Gulf": "من الإحساس للسؤال",
+    "ar-EG": "إيه اللي عندك دلوقتي؟"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m2-l1-feeling-to-question.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m2-l1-feeling-to-question.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m2-l1-feeling-to-question.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/analyst-m2-l1-feeling-to-question.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? General feelings about work are not enough — they must turn into a question answered by data.",
+        "Why now? Now that you know that numbers need a question — the next step is to turn «I feel that...» into a specific question.",
+        "What after the lesson? You will convert 3 sentences «I feel that... into answerable questions.»"
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ الشعور العام عن العمل لا يكفي — يجب أن يتحوّل إلى سؤال تجيب عليه البيانات.",
+        "لماذا الآن؟ بعد أن عرفت أن الأرقام تحتاج سؤالًا — الخطوة التالية: تحويل «أشعر أن…» إلى سؤال محدّد.",
+        "ماذا بعد الدرس؟ ستحوّل ٣ جمل «أشعر أن…» إلى أسئلة قابلة للإجابة."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ الشعور العام عن العمل ما يكفي — لازم يتحوّل إلى سؤال تجيب عليه البيانات.",
+        "ليش الحين؟ بعد ما عرفت أن الأرقام تحتاج سؤال — الخطوة التالية: تحويل «أشعر أن…» إلى سؤال محدد.",
+        "وش بعد الدرس؟ راح تحوّل ٣ جمل «أشعر أن…» إلى أسئلة قابلة للإجابة."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ الشعور العام عن الشغل مش كفاية — لازم يتحوّل لسؤال البيانات تقدر تجاوبه.",
+        "ليه دلوقتي؟ بعد ما عرفت إن الأرقام محتاجة سؤال، الخطوة الجاية: تحوّل «حاسس إن...» لسؤال محدّد.",
+        "هتعمل إيه بعد الدرس؟ هتحوّل ٣ جمل «حاسس إن...» لأسئلة قابلة للإجابة."
+      ]
+    },
+    "coreIdea": {
+      "en": "Feeling",
+      "ar-MSA": "Feeling (الشعور)",
+      "ar-Gulf": "Feeling (الشعور)",
+      "ar-EG": "فهمت إيه؟ الشعور بيبقى مفيد لما يتحوّل لسؤال البيانات تجاوبه — مش لما يفضل «حاسس إن»."
+    },
+    "tension": {
+      "en": "'Sales are bad' is not a question — it’s a feeling. 'The ads are not working' — also a feeling. Everyone talks — but no one can answer with numbers.",
+      "ar-MSA": "«المبيعات سيئة» ليس سؤالًا — إنه شعور. «الإعلان لا يعمل» — أيضًا شعور. الجميع يتكلّم — لكن لا أحد يستطيع الإجابة بأرقام.",
+      "ar-Gulf": "«المبيعات سيئة» مو سؤال — هو شعور. «الإعلان ما ينفع» — بعد شعور. الكل يتكلم — لكن ما أحد يقدر يجاوب بأرقام.",
+      "ar-EG": "«المبيعات وحشة» مش سؤال — ده شعور. «الإعلان مش شغّال» — برضه شعور. الكل بيتكلّم، بس مفيش حد بيعرف يجاوب بأرقام."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Feeling",
+        "rightLabel": "Question",
+        "leftBody": "'I feel that the ad is not working' — no number, no period, no comparison. Decision based on intuition.",
+        "rightBody": "'How many leads came from this ad in the last 30 days and how much?' — the number tells you: stop it or scale it. Decision without regret."
+      },
+      "ar-MSA": {
+        "leftLabel": "شعور",
+        "rightLabel": "سؤال",
+        "leftBody": "«أشعر أن الإعلان لا يعمل» — لا رقم، لا فترة، لا مقارنة. القرار بالحدس",
+        "rightBody": "«كم lead جاء من هذا الإعلان آخر ٣٠ يومًا وبكم؟» — الرقم يقول: أوقفه أم كبّره. قرار بلا ندم"
+      },
+      "ar-Gulf": {
+        "leftLabel": "شعور",
+        "rightLabel": "سؤال",
+        "leftBody": "«أشعر أن الإعلان ما ينفع» — لا رقم، لا فترة، لا مقارنة. القرار بالحدس",
+        "rightBody": "«كم lead جاء من هذا الإعلان آخر ٣٠ يوم وبكم؟» — الرقم يقول: أوقفه أم كبّره. قرار بلا ندم"
+      },
+      "ar-EG": {
+        "leftLabel": "شعور",
+        "leftBody": "«حاسس إن الإعلان مش شغّال» — مفيش رقم، مفيش فترة، مفيش مقارنة. القرار بيتاخد بالحدس.",
+        "rightLabel": "سؤال",
+        "rightBody": "«كام lead جه من الإعلان ده آخر ٣٠ يوم وبكام؟» — الرقم بيقولّك أوقفه ولا كبّره. القرار من غير ندم."
+      }
+    },
+    "missionIntro": {
+      "en": "This is a practical conversion task — not a statistical analysis. Write 3 sentences 'I feel that...' from your real work (or from around you). Turn each one into a question answered by data. 10–15 minutes is enough.",
+      "ar-MSA": "مهمة تحويل عملي — ليس تحليلًا إحصائيًا. اكتب ٣ جمل «أشعر أن…» من عملك الحقيقي (أو من حولك). حوّل كل واحدة إلى سؤال تجيب عليه البيانات. ١٠–١٥ دقيقة كافية.",
+      "ar-Gulf": "مهمة تحويل عملي — مو تحليل إحصائي. اكتب ٣ جمل «أشعر أن…» من عملك الحقيقي (أو من حولك). حوّل كل واحدة إلى سؤال تجيب عليه البيانات. ١٠–١٥ دقيقة كافية.",
+      "ar-EG": "المهمة دي تحويل عملي — مش تحليل إحصائي. اكتب ٣ جمل «حاسس إن...» من شغلك الحقيقي (أو من حواليك). حوّل كل واحدة لسؤال البيانات تقدر تجاوبه.\n\n١٠–١٥ دقيقة كفاية."
+    },
+    "visualIntent": {
+      "kind": "comparison",
+      "summary": "**4 examples — from feeling to decision** (ID: `feeling-to-question-table`): for each feeling — a **specific question**, **Baseline** for comparison, **clear ac",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m2-l1-feeling-to-question.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**4 examples — from feeling to decision** (ID: `feeling-to-question-table`): for each feeling — a **specific question**, **Baseline** for co"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m2-l1-feeling-to-question.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**٤ أمثلة — من شعور إلى قرار** (معرّف: `feeling-to-question-table`): لكل شعور — **سؤال محدّد**، **Baseline** للمقارنة، **إجراء واضح**. استخد"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m2-l1-feeling-to-question.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**٤ أمثلة — من شعور إلى قرار** (معرّف: `feeling-to-question-table`): لكل شعور — **سؤال محدد**، **Baseline** للمقارنة، **إجراء واضح**. استخدم"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/analyst-m2-l1-feeling-to-question.ts",
+          "field": "block.caption (diagram)",
+          "quote": "لكل شعور: سؤال محدّد، baseline تقارن عليه، وإجراء واضح. استخدمه في المهمة."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "analyst-m2-l1-feeling-to-question's package marks a Diagram intent (feeling-to-question-table); the underlying relationship reads as comparison, so a deterministic SVG panel keeps the real Feeling/Question labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "two-panel-comparison",
+  "duplicationJustification": "Shares the \"two-panel-comparison\" layout template with 4 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Feeling\" vs \"Question\" for analyst-m2-l1-feeling-to-question.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Feeling",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m2-l1-feeling-to-question.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Question",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m2-l1-feeling-to-question.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Baseline",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m2-l1-feeling-to-question.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "شعور",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m2-l1-feeling-to-question.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "سؤال",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m2-l1-feeling-to-question.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Feeling (شعور)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m2-l1-feeling-to-question.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Baseline (خط الأساس)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m2-l1-feeling-to-question.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "شعور",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m2-l1-feeling-to-question.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "سؤال",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m2-l1-feeling-to-question.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Feeling (شعور)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m2-l1-feeling-to-question.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Baseline (خط الأساس)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m2-l1-feeling-to-question.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "شعور",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m2-l1-feeling-to-question.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "سؤال",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m2-l1-feeling-to-question.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Feeling (شعور)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m2-l1-feeling-to-question.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Baseline (خط الأساس)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m2-l1-feeling-to-question.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Feeling to Question: \"Feeling\" versus \"Question\" — Feeling",
+    "ar-MSA": "من الإحساس إلى السؤال: \"شعور\" في مقابل \"سؤال\" — Feeling (الشعور)",
+    "ar-Gulf": "من الإحساس للسؤال: \"شعور\" في مقابل \"سؤال\" — Feeling (الشعور)",
+    "ar-EG": "إيه اللي عندك دلوقتي؟: \"شعور\" في مقابل \"سؤال\" — فهمت إيه؟ الشعور بيبقى مفيد لما يتحوّل لسؤال البيانات تجاوبه — مش لما يفضل «حاسس إن»."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"3 specific questions\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m2-l1-feeling-to-question.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Source for the answer\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m2-l1-feeling-to-question.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ أسئلة محدّدة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m2-l1-feeling-to-question.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"مصدر للإجابة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m2-l1-feeling-to-question.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ أسئلة محددة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m2-l1-feeling-to-question.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"مصدر للإجابة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m2-l1-feeling-to-question.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ أسئلة محدّدة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m2-l1-feeling-to-question.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"مصدر للإجابة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m2-l1-feeling-to-question.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "575c9278016bc86f6b71aa6ade6e324365107bca596079f93000a79afcc6b2f0"
+}

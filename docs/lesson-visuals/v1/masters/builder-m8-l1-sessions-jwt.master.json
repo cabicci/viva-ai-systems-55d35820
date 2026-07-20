@@ -1,0 +1,349 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m8-l1-sessions-jwt",
+  "pathId": "builder",
+  "moduleId": "builder-m8",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Sessions & JWT",
+    "ar-MSA": "الجلسات وتوكن JWT",
+    "ar-Gulf": "الجلسات والـ JWT",
+    "ar-EG": "كارت الفندق — Session و JWT ببساطة"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m8-l1-sessions-jwt.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m8-l1-sessions-jwt.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m8-l1-sessions-jwt.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m8-l1-sessions-jwt.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "This lesson is for the Builder path only. If your goal is to use AI in work or content, you do not need to memorize JWT — you can skip it and come back later.",
+        "What will you understand? A simple idea: how the platform remembers you are logged in without asking for your password every time.",
+        "The idea in two lines: Session = the platform remembers you are logged in. JWT = a temporary pass that proves this between the server and the browser.",
+        "What comes after the lesson? 3 short answers — not code or implementation."
+      ],
+      "ar-MSA": [
+        "هذا الدرس لمسار Builder فقط. إن كان هدفك استخدام الذكاء الاصطناعي في العمل أو المحتوى، لست مضطرًا لحفظ JWT — يمكنك تخطيه والعودة لاحقًا.",
+        "ماذا ستفهم؟ فكرة بسيطة: كيف تتذكر المنصة أنك ما زلت داخلًا من دون كتابة كلمة المرور كل مرة.",
+        "الفكرة في سطرين: Session (جلسة) = المنصة تتذكر أنك داخل. JWT (كارت دخول مؤقت) = يثبت ذلك بين السيرفر والمتصفح.",
+        "ماذا بعد الدرس؟ ٣ إجابات قصيرة — ليس كودًا ولا تنفيذًا."
+      ],
+      "ar-Gulf": [
+        "هذا الدرس مخصص لمسار Builder فقط. إذا كان هدفك استخدام الذكاء الاصطناعي في العمل أو المحتوى، لست بحاجة لحفظ JWT — يمكنك تخطيه والعودة له لاحقًا.",
+        "وش راح تفهم؟ فكرة بسيطة: كيف تتذكر المنصة أنك ما زلت مسجل دخول من دون كتابة كلمة المرور كل مرة.",
+        "الفكرة في سطرين: الجلسة (Session) = المنصة تتذكر أنك داخل. JWT (توكن دخول مؤقت) = يثبت ذلك بين السيرفر والمتصفح.",
+        "وش بعد الدرس؟ ٣ إجابات قصيرة — مو كود ولا تنفيذ."
+      ],
+      "ar-EG": [
+        "الدرس ده Builder-only. لو هدفك تستخدم AI في الشغل أو المحتوى أو التحليل، مش لازم تحفظ JWT — تقدر تعدّي الدرس وترجع لاحقًا لو احتجته.",
+        "هتفهم إيه؟ فكرة بسيطة: إزاي المنصة «تفتكر» إنك لسه داخل من غير ما تكتب الباسورد كل مرة.",
+        "الفكرة الأساسية في سطرين: Session = المنصة فاكرة إنك داخل. JWT = كارت دخول مؤقت يثبت ده بين السيرفر والمتصفح.",
+        "هتعمل إيه بعد الدرس؟ ٣ إجابات قصيرة — مش كود ولا تنفيذ."
+      ]
+    },
+    "coreIdea": {
+      "en": "Analogy:",
+      "ar-MSA": "تشبيه:",
+      "ar-Gulf": "تشبيه:",
+      "ar-EG": "تشبيه من الحياة: لما بتسجل دخول في فندق، الاستقبال بيديك كارت غرفة مؤقت. الكارت مش هويتك الكاملة — بس بيقول للمصعد والباب: «النزيل ده لسه هنا»."
+    },
+    "tension": {
+      "en": "You open the app and see the 'My Requests' page — if the platform forgets you are logged in, it may show incorrect data or ask for login every time you click. The problem is not complicated: we need a simple way to tell",
+      "ar-MSA": "تفتح التطبيق وترى صفحة «طلباتي» — إن نسيت المنصة أنك دخلت، قد تعرض بيانات خاطئة أو تطلب login في كل نقرة. المشكلة ليست معقدة: نحتاج طريقة بسيطة تقول للسيرفر «هذا نفس الشخص الذي دخل منذ قليل».",
+      "ar-Gulf": "تفتح التطبيق وتشوف صفحة «طلباتي» — إذا نسيت المنصة أنك مسجل دخول، ممكن تعرض بيانات خاطئة أو تطلب تسجيل دخول في كل نقرة. المشكلة مو معقدة: نحتاج طريقة بسيطة تقول للسيرفر «هذا نفس الشخص اللي دخل قبل شوي».",
+      "ar-EG": "تخيل فتحت تطبيق وشفت صفحة «طلباتي» — لو المنصة نسيت إنك دخلت، ممكن تعرضلك بيانات غلط أو تطلب منك login تاني كل شوية."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Why should the platform 'remember' you?",
+        "rightLabel": "Hotel card — Session and JWT simply",
+        "leftBody": "It is enough for the interface to hide the 'My Chats' link without login.",
+        "rightBody": "'My Chats' needs the platform to remember you are logged in — like Session and a temporary pass."
+      },
+      "ar-MSA": {
+        "leftLabel": "لماذا يجب أن «تتذكرك» المنصة؟",
+        "rightLabel": "كارت الفندق — Session و JWT ببساطة",
+        "leftBody": "يكفي أن الواجهة تخفي رابط «محادثاتي» من دون login.",
+        "rightBody": "«محادثاتي» تحتاج أن تتذكر المنصة من داخل — مثل Session وكارت دخول مؤقت."
+      },
+      "ar-Gulf": {
+        "leftLabel": "ليش لازم المنصة «تتذكرك»؟",
+        "rightLabel": "كارت الفندق — الجلسة و JWT ببساطة",
+        "leftBody": "يكفي أن الواجهة تخفي رابط «محادثاتي» من دون تسجيل دخول.",
+        "rightBody": "«محادثاتي» تحتاج أن تتذكر المنصة من داخل — مثل الجلسة وكارت دخول مؤقت."
+      },
+      "ar-EG": {
+        "leftLabel": "Why should the platform 'remember' you?",
+        "rightLabel": "Hotel card — Session and JWT simply",
+        "leftBody": "تخيل فتحت تطبيق وشفت صفحة «طلباتي» — لو المنصة نسيت إنك دخلت، ممكن تعرضلك بيانات غلط أو تطلب منك login تاني كل شوية.",
+        "rightBody": "تشبيه من الحياة: لما بتسجل دخول في فندق، الاستقبال بيديك كارت غرفة مؤقت. الكارت مش هويتك الكاملة — بس بيقول للمصعد والباب: «النزيل ده لسه هنا»."
+      }
+    },
+    "missionIntro": {
+      "en": "A light task — 5 minutes. 3 answers with a sentence for each. No JWT or code required.",
+      "ar-MSA": "مهمة خفيفة — ٥ دقائق. ٣ إجابات بجملة لكل واحدة. ليس مطلوبًا JWT ولا كود.",
+      "ar-Gulf": "مهمة خفيفة — ٥ دقائق. ٣ إجابات بجملة لكل واحدة. مو مطلوب JWT ولا كود.",
+      "ar-EG": "مهمة خفيفة — ٥ دقايق. اكتب ٣ إجابات بجملة لكل واحدة. مش مطلوب JWT ولا كود ولا تفاصيل تقنية.\n\nلو مش بتبني تطبيق، استخدم مثال من شغلك (منصة، متجر، تطبيق بتستخدمه)."
+    },
+    "visualIntent": {
+      "kind": "concept-scene",
+      "summary": "> **Optional:** Diagram of the JWT lifecycle — **login → pass → every request → confirmation**. **Production reference only — not to be regenerated.**",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m8-l1-sessions-jwt.json",
+          "field": "sections[role=Screenshot block (optional].contentMarkdown",
+          "quote": "> **Optional:** Diagram of the JWT lifecycle — **login → pass → every request → confirmation**. **Production reference only — not to be rege"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m8-l1-sessions-jwt.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "تشبيه:"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m8-l1-sessions-jwt.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "تشبيه:"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m8-l1-sessions-jwt.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "اختياري: (١) Login → كارت مؤقت. (٢) المتصفح يحتفظ بيه. (٣) كل طلب يتبعت معاه. (٤) السيرفر يتأكد إنك لسه داخل."
+        }
+      }
+    }
+  },
+  "method": 2,
+  "methodRationale": "builder-m8-l1-sessions-jwt's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"Analogy:\" without inventing UI chrome or rendering paid text.",
+  "compositionPattern": "concept-scene-metaphor",
+  "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Why should the platform 'remember' you?\" vs \"Hotel card — Session and JWT simply\" for builder-m8-l1-sessions-jwt.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Why should the platform 'remember' you?",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m8-l1-sessions-jwt.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Hotel card — Session and JWT simply",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m8-l1-sessions-jwt.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Session",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m8-l1-sessions-jwt.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "JWT — Temporary pass",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m8-l1-sessions-jwt.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "لماذا يجب أن «تتذكرك» المنصة؟",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m8-l1-sessions-jwt.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "كارت الفندق — Session و JWT ببساطة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m8-l1-sessions-jwt.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Session (جلسة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m8-l1-sessions-jwt.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "JWT — كارت دخول مؤقت",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m8-l1-sessions-jwt.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "ليش لازم المنصة «تتذكرك»؟",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m8-l1-sessions-jwt.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "كارت الفندق — الجلسة و JWT ببساطة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m8-l1-sessions-jwt.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "الجلسة (Session)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m8-l1-sessions-jwt.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "JWT — كارت دخول مؤقت",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m8-l1-sessions-jwt.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "Why should the platform 'remember' you?",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m8-l1-sessions-jwt.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Hotel card — Session and JWT simply",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m8-l1-sessions-jwt.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Session (جلسة)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m8-l1-sessions-jwt.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "JWT — كارت دخول مؤقت",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m8-l1-sessions-jwt.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Sessions & JWT: \"Why should the platform 'remember' you?\" versus \"Hotel card — Session and JWT simply\" — Analogy:",
+    "ar-MSA": "الجلسات وتوكن JWT: \"لماذا يجب أن «تتذكرك» المنصة؟\" في مقابل \"كارت الفندق — Session و JWT ببساطة\" — تشبيه:",
+    "ar-Gulf": "الجلسات والـ JWT: \"ليش لازم المنصة «تتذكرك»؟\" في مقابل \"كارت الفندق — الجلسة و JWT ببساطة\" — تشبيه:",
+    "ar-EG": "كارت الفندق — Session و JWT ببساطة: \"Why should the platform 'remember' you?\" في مقابل \"Hotel card — Session and JWT simply\" — تشبيه من الحياة: لما بتسجل دخول في فندق، الاستقبال بيديك كارت غرفة مؤقت. الكارت مش هويتك الكاملة — بس بيقول للمصعد والباب: «النزيل ده لسه هنا»."
+  },
+  "aiPromptContract": {
+    "providerClass": "text-free-illustration",
+    "paidAllowed": false,
+    "textFree": true,
+    "promptRules": [
+      "No embedded text, letters, numbers, or UI chrome anywhere in the image.",
+      "Depict the idea behind \"Sessions & JWT\" as a literal scene or metaphor, not as software.",
+      "Use a calm editorial illustration style consistent with a warm, minimal brand palette.",
+      "Keep the composition balanced so it still reads when mirrored for RTL locales."
+    ],
+    "costCeilingUsd": 0
+  },
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "35% of the mission rubric weight is assigned to \"User is clear\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m8-l1-sessions-jwt.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 35"
+    },
+    {
+      "claim": "35% of the mission rubric weight is assigned to \"Understanding 'still logged in'\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m8-l1-sessions-jwt.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 35"
+    },
+    {
+      "claim": "35% of the mission rubric weight is assigned to \"المستخدم واضح\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m8-l1-sessions-jwt.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 35"
+    },
+    {
+      "claim": "35% of the mission rubric weight is assigned to \"فهم «ما زال داخلًا»\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m8-l1-sessions-jwt.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 35"
+    },
+    {
+      "claim": "35% of the mission rubric weight is assigned to \"المستخدم واضح\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m8-l1-sessions-jwt.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 35"
+    },
+    {
+      "claim": "35% of the mission rubric weight is assigned to \"فهم «ما زال داخل»\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m8-l1-sessions-jwt.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 35"
+    },
+    {
+      "claim": "35% of the mission rubric weight is assigned to \"المستخدم واضح\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m8-l1-sessions-jwt.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 35"
+    },
+    {
+      "claim": "35% of the mission rubric weight is assigned to \"فهم «لسه داخل»\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m8-l1-sessions-jwt.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 35"
+    }
+  ],
+  "checksum": "20d9d511772595f904e3525238b9029bfffe2c4a4c0e77a468823a94686277c0"
+}

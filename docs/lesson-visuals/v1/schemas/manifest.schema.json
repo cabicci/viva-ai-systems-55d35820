@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://masaarat.local/schemas/lesson-visuals-authorized/v1",
+  "title": "AuthorizedLessonVisualManifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifestVersion",
+    "sourceSha",
+    "lessonIds",
+    "locales",
+    "cells",
+    "counts"
+  ],
+  "properties": {
+    "manifestVersion": {
+      "const": "lesson-visuals-authorized/v1"
+    },
+    "sourceSha": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "lessonIds": {
+      "type": "array",
+      "minItems": 100,
+      "maxItems": 100,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)+$"
+      }
+    },
+    "locales": {
+      "type": "array",
+      "const": ["ar-EG", "ar-MSA", "ar-Gulf", "en"]
+    },
+    "cells": {
+      "type": "array",
+      "minItems": 400,
+      "maxItems": 400,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["cellId", "lessonId", "locale", "method"],
+        "properties": {
+          "cellId": {
+            "type": "string",
+            "pattern": "^.+__(ar-EG|ar-MSA|ar-Gulf|en)$"
+          },
+          "lessonId": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)+$"
+          },
+          "locale": {
+            "type": "string",
+            "enum": ["ar-EG", "ar-MSA", "ar-Gulf", "en"]
+          },
+          "method": {
+            "type": "integer",
+            "enum": [1, 2, 3, 4]
+          }
+        }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["masters", "cells", "perLocale"],
+      "properties": {
+        "masters": { "const": 100 },
+        "cells": { "const": 400 },
+        "perLocale": { "const": 100 }
+      }
+    }
+  }
+}

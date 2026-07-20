@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "business-m1-l2-reactive-vs-proactive",
+  "pathId": "business",
+  "moduleId": "business-m1",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Reactive vs Proactive",
+    "ar-MSA": "رد الفعل مقابل الاستباقية",
+    "ar-Gulf": "رد الفعل مقابل الاستباقية",
+    "ar-EG": "قلّل المتكرر — افتح باب الاستباقي"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/business-m1-l2-reactive-vs-proactive.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m1-l2-reactive-vs-proactive.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m1-l2-reactive-vs-proactive.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/business-m1-l2-reactive-vs-proactive.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What Will You Understand? Repetitive tasks that require your response every day consume your thinking time — AI can help reduce some of this.",
+        "Why Now? In the previous lesson, you identified a recurring decision. Today, you will understand why the same decisions come up every week and keep you in a 'firefighting' mode.",
+        "What After the Lesson? You will list 5 weekly tasks and categorize them as Reactive or Proactive — and choose one reactive task that AI can help reduce."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ العمل المتكرر الذي ينتظر ردك كل يوم يأكل وقت التفكير — والذكاء الاصطناعي (AI) يستطيع تخفيف جزء منه.",
+        "لماذا الآن؟ في الدرس السابق حدّدت قرارًا متكررًا. اليوم ستفهم لماذا تعود نفس القرارات كل أسبوع وتبقيك في وضع «الإطفاء».",
+        "ماذا بعد الدرس؟ ستعدّد ٥ مهام أسبوعية وتصنّفها Reactive (رد فعل) أو Proactive (استباقي) — وتختار مهمة Reactive واحدة يقلّلها الذكاء الاصطناعي."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ العمل المتكرر اللي ينتظر ردك كل يوم ياخذ وقت التفكير — والذكاء الاصطناعي (AI) يقدر يخفف جزء منه.",
+        "ليش الحين؟ في الدرس السابق حددت قرار متكرر. اليوم راح تفهم ليش ترجع نفس القرارات كل أسبوع وتخليك في وضع «الإطفاء».",
+        "وش بعد الدرس؟ راح تعدّد ٥ مهام أسبوعية وتصنّفها Reactive (رد فعل) أو Proactive (استباقي) — وتختار مهمة Reactive وحدة يقللها الذكاء الاصطناعي."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ الشغل المتكرر اللي بيستنى ردك كل يوم بياكل وقت التفكير — والـ AI يقدر يخفّف جزء منه.",
+        "ليه دلوقتي؟ في الدرس اللي فات حددت قرار متكرر. النهاردة هتشوف ليه نفس القرارات بترجع كل أسبوع وتخلّيك في وضع الإطفاء.",
+        "هتعمل إيه بعد الدرس؟ هتعدّد ٥ مهام أسبوعية وتصنّفها Reactive أو Proactive — وتختار واحدة Reactive الـ AI يقلّلها."
+      ]
+    },
+    "coreIdea": {
+      "en": "Reduce the Repetitive — Open the Door to Proactive",
+      "ar-MSA": "قلّل المتكرر — افتح باب الاستباقي",
+      "ar-Gulf": "قلل المتكرر — افتح باب الاستباقي",
+      "ar-EG": "Reactive: شغل بييجي لك — رسالة، مشكلة، طلب عاجل. لازم يتعمل، بس ما بيبنيش البيزنس لوحده."
+    },
+    "tension": {
+      "en": "You end your day feeling like you've been 'busy' — but nothing has been built.",
+      "ar-MSA": "تُغلق يومك وأنت «اشتغلت» — لكن لا شيء بُني.",
+      "ar-Gulf": "تخلص يومك وأنت «اشتغلت» — لكن ما فيه شيء بُني.",
+      "ar-EG": "صاحب بيزنس يفتح الواتساب الصبح — مورد، عميل، موظف، شكوى. الساعة ٣ الضهر يلاقي نفسه لسه بيرد. مفيش وقت للتسعير ولا للتخطيط."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Reactive Week",
+        "rightLabel": "Proactive Week",
+        "leftBody": "Every day starts with messages. By the end of the week: tired, but no pricing decisions or process improvements made.",
+        "rightBody": "Reduced 3 repetitive tasks with AI. Opened up two hours to review numbers and adjust proposals — the work moved forward a step."
+      },
+      "ar-MSA": {
+        "leftLabel": "أسبوع Reactive",
+        "rightLabel": "أسبوع فيه Proactive",
+        "leftBody": "كل يوم يبدأ بالرسائل. نهاية الأسبوع: متعب، لكن لا قرار تسعير ولا تحسين عملية",
+        "rightBody": "قلّلت ٣ مهام متكررة بالذكاء الاصطناعي. فتحت ساعتين لمراجعة أرقام وتعديل عرض — العمل تحرّك خطوة"
+      },
+      "ar-Gulf": {
+        "leftLabel": "أسبوع Reactive",
+        "rightLabel": "أسبوع فيه Proactive",
+        "leftBody": "كل يوم يبدأ بالرسائل. نهاية الأسبوع: متعب، لكن ما فيه قرار تسعير ولا تحسين عملية",
+        "rightBody": "قلّلت ٣ مهام متكررة بالذكاء الاصطناعي. فتحت ساعتين لمراجعة أرقام وتعديل عرض — العمل تحرّك خطوة"
+      },
+      "ar-EG": {
+        "leftLabel": "أسبوع Reactive",
+        "leftBody": "كل يوم بيبدأ بالرسائل. نهاية الأسبوع: متعب، بس مفيش قرار تسعير ولا تحسين عملية اتاخد.",
+        "rightLabel": "أسبوع فيه Proactive",
+        "rightBody": "قلّلت ٣ مهام متكررة بالـ AI. فضّيت ساعتين لمراجعة أرقام وتعديل عرض — البيزنس تحرّك خطوة."
+      }
+    },
+    "missionIntro": {
+      "en": "The task is practical — not motivational. Write down 5 tasks you do every week (or almost), and categorize each one as Reactive or Proactive. Then choose one reactive task that AI can help reduce. Full automation is not required — honest diagnosis is needed.",
+      "ar-MSA": "المهمة عملية — لا تحفيز. اكتب ٥ مهام تفعلها كل أسبوع (أو تقريبًا)، وصنّف كل واحدة Reactive أو Proactive. ثم اختر مهمة Reactive واحدة يستطيع الذكاء الاصطناعي تقليلها. لا يُطلب أتمتة كاملة — يُطلب تشخيص صادق.",
+      "ar-Gulf": "المهمة عملية — مو تحفيز. اكتب ٥ مهام تسويها كل أسبوع (أو تقريبًا)، وصنّف كل وحدة Reactive أو Proactive. بعدين اختر مهمة Reactive وحدة يقدر الذكاء الاصطناعي يقللها. ما يُطلب أتمتة كاملة — يُطلب تشخيص صادق.",
+      "ar-EG": "المهمة دي عملية — مش تحفيز. اكتب ٥ مهام بتعملها كل أسبوع (أو تقريبًا)، وصنّف كل واحدة Reactive أو Proactive. بعدين اختار مهمة Reactive واحدة الـ AI يقدر يقلّلها.\n\nمش مطلوب أتمتة كاملة — مطلوب تشخيص صادق."
+    },
+    "visualIntent": {
+      "kind": "comparison",
+      "summary": "Illustration: A Reactive Day vs. A Proactive Day — distribution of the day. The goal is not to eliminate reactive tasks — but to reduce the repetitive to free u",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m1-l2-reactive-vs-proactive.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "Illustration: A Reactive Day vs. A Proactive Day — distribution of the day. The goal is not to eliminate reactive tasks — but to reduce the"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m1-l2-reactive-vs-proactive.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "قلّل المتكرر — افتح باب الاستباقي"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m1-l2-reactive-vs-proactive.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "قلل المتكرر — افتح باب الاستباقي"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/business-m1-l2-reactive-vs-proactive.ts",
+          "field": "block.caption (diagram)",
+          "quote": "الهدف مش تلغي الـ Reactive — ده جزء من الشغل. الهدف تقلّل المتكرر عشان يفضى وقت للبناء."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "business-m1-l2-reactive-vs-proactive's package marks a Diagram intent (reactive-vs-proactive-day); the underlying relationship reads as comparison, so a deterministic SVG panel keeps the real Reactive Week/Proactive Week labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "two-panel-comparison",
+  "duplicationJustification": "Shares the \"two-panel-comparison\" layout template with 4 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Reactive Week\" vs \"Proactive Week\" for business-m1-l2-reactive-vs-proactive.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Reactive Week",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m1-l2-reactive-vs-proactive.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Proactive Week",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m1-l2-reactive-vs-proactive.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Reactive",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m1-l2-reactive-vs-proactive.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Proactive",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m1-l2-reactive-vs-proactive.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "أسبوع Reactive",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m1-l2-reactive-vs-proactive.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "أسبوع فيه Proactive",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m1-l2-reactive-vs-proactive.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Reactive (رد فعل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m1-l2-reactive-vs-proactive.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Proactive (استباقي)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m1-l2-reactive-vs-proactive.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "أسبوع Reactive",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m1-l2-reactive-vs-proactive.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "أسبوع فيه Proactive",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m1-l2-reactive-vs-proactive.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Reactive (رد فعل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m1-l2-reactive-vs-proactive.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Proactive (استباقي)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m1-l2-reactive-vs-proactive.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "أسبوع Reactive",
+        "source": {
+          "path": "src/components/intro/lessons/business-m1-l2-reactive-vs-proactive.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "أسبوع فيه Proactive",
+        "source": {
+          "path": "src/components/intro/lessons/business-m1-l2-reactive-vs-proactive.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Reactive (رد فعل)",
+        "source": {
+          "path": "src/components/intro/lessons/business-m1-l2-reactive-vs-proactive.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Proactive (استباقي)",
+        "source": {
+          "path": "src/components/intro/lessons/business-m1-l2-reactive-vs-proactive.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Reactive vs Proactive: \"Reactive Week\" versus \"Proactive Week\" — Reduce the Repetitive — Open the Door to Proactive",
+    "ar-MSA": "رد الفعل مقابل الاستباقية: \"أسبوع Reactive\" في مقابل \"أسبوع فيه Proactive\" — قلّل المتكرر — افتح باب الاستباقي",
+    "ar-Gulf": "رد الفعل مقابل الاستباقية: \"أسبوع Reactive\" في مقابل \"أسبوع فيه Proactive\" — قلل المتكرر — افتح باب الاستباقي",
+    "ar-EG": "قلّل المتكرر — افتح باب الاستباقي: \"أسبوع Reactive\" في مقابل \"أسبوع فيه Proactive\" — Reactive: شغل بييجي لك — رسالة، مشكلة، طلب عاجل. لازم يتعمل، بس ما بيبنيش البيزنس لوحده."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Realistic Classification\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/business-m1-l2-reactive-vs-proactive.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"AI Selection\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/business-m1-l2-reactive-vs-proactive.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"تصنيف واقعي\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m1-l2-reactive-vs-proactive.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"اختيار للذكاء الاصطناعي\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m1-l2-reactive-vs-proactive.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"تصنيف واقعي\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m1-l2-reactive-vs-proactive.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"اختيار للذكاء الاصطناعي\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m1-l2-reactive-vs-proactive.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"تصنيف واقعي\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m1-l2-reactive-vs-proactive.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"اختيار للـ AI\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m1-l2-reactive-vs-proactive.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "c0cc30d5d7965b5b7724233c4dde52f286873657fb48cfa5c02293fbedeb8e8f"
+}

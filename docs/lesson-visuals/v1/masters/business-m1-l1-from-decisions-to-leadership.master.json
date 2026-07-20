@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "business-m1-l1-from-decisions-to-leadership",
+  "pathId": "business",
+  "moduleId": "business-m1",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "From Decisions to Leadership",
+    "ar-MSA": "من القرارات إلى القيادة",
+    "ar-Gulf": "من القرارات للقيادة",
+    "ar-EG": "الـ AI أداة — نظام — وشريك تفكير"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/business-m1-l1-from-decisions-to-leadership.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m1-l1-from-decisions-to-leadership.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m1-l1-from-decisions-to-leadership.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/business-m1-l1-from-decisions-to-leadership.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What Will You Understand? AI is not just a tool to speed up tasks — it can be part of a Business OS that transitions you from an executor to a system builder.",
+        "Why Now? The Business path is not just general management — it's about how to run your business with AI as an operating system: decisions, time, customers, and repetition.",
+        "What After the Lesson? You will write down 3 recurring decisions or problems you face — and choose one where AI can assist you as a thinking partner or as a system."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ الذكاء الاصطناعي ليس أداة تسرّع المهام فقط — يمكن أن يكون جزءًا من Business OS (نظام تشغيل الأعمال) الذي ينقلك من منفّذ إلى باني نظام.",
+        "لماذا الآن؟ مسار Business ليس إدارة عامة — بل كيف تشغّل عملك بالذكاء الاصطناعي كنظام تشغيل: قرارات، وقت، عملاء، وتكرار.",
+        "ماذا بعد الدرس؟ ستكتب ٣ قرارات أو مشاكل تتكرر عندك — وتختار واحدة يستطيع الذكاء الاصطناعي مساعدتك فيها كشريك تفكير أو كنظام."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ الذكاء الاصطناعي مو بس أداة تسرّع المهام — يمكن يكون جزء من Business OS (نظام تشغيل الأعمال) اللي ينقلك من منفّذ إلى باني نظام.",
+        "ليش الحين؟ مسار Business مو إدارة عامة — بل كيف تشغّل عملك بالذكاء الاصطناعي كنظام تشغيل: قرارات، وقت، عملاء، وتكرار.",
+        "وش بعد الدرس؟ راح تكتب ٣ قرارات أو مشاكل تتكرر عندك — وتختار وحدة يقدر الذكاء الاصطناعي يساعدك فيها كشريك تفكير أو كنظام."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ الـ AI مش بس أداة تسرّع المهام — ممكن يبقى جزء من نظام تشغيل البيزنس اللي يخلّيك تتحرك من منفّذ لباني نظام.",
+        "ليه دلوقتي؟ مسار Business مش إدارة عامة — هو إزاي تشغّل بيزنسك بالـ AI كنظام تشغيل: قرارات، وقت، عملاء، وتكرار.",
+        "هتعمل إيه بعد الدرس؟ هتكتب ٣ قرارات أو مشاكل بتتكرر عندك — وتختار واحدة الـ AI يقدر يساعدك فيها كشريك تفكير أو نظام."
+      ]
+    },
+    "coreIdea": {
+      "en": "Level 1 — Tool:",
+      "ar-MSA": "المستوى ١ — أداة:",
+      "ar-Gulf": "المستوى ١ — أداة:",
+      "ar-EG": "مستوى ١ — أداة: تكتب Prompt وتاخد رد أسرع (رسالة، تلخيص، فكرة). ده Operator بسرعة أعلى."
+    },
+    "tension": {
+      "en": "If every small decision comes your way — responding to WhatsApp, approving prices, following up with suppliers — then you are not a leader; you are the bottleneck. Many use AI to write emails faster. This is helpful — bu",
+      "ar-MSA": "إذا كان كل قرار صغير يمرّ عليك — رد واتساب، موافقة سعر، متابعة مورد — فأنت لست قائدًا، أنت عنق الزجاجة. كثيرون يستخدمون الذكاء الاصطناعي لكتابة إيميل أسرع. هذا مفيد — لكنه ١٠٪ من القيمة. الـ ٩٠٪ الباقية عندما يساعدك الذك",
+      "ar-Gulf": "إذا كل قرار صغير يمرّ عليك — رد على واتساب، موافقة سعر، متابعة مورد — فأنت مو قائد، أنت عنق الزجاجة. كثيرون يستخدمون الذكاء الاصطناعي لكتابة إيميل أسرع. هذا مفيد — لكنه ١٠٪ من القيمة. الـ ٩٠٪ الباقية لما يساعدك الذكاء ال",
+      "ar-EG": "لو كل قرار صغير لازم يعدّي عليك — رد واتساب، موافقة سعر، متابعة مورد — إنت مش قائد، إنت عنق الزجاجة."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Operator Day",
+        "rightLabel": "System Builder Day",
+        "leftBody": "You open WhatsApp first, respond for two hours, put out fires, and go to sleep feeling like you 'worked' — but no strategic decision was made.",
+        "rightBody": "A protected hour for thinking and numbers, AI helps you prioritize, then you deal with messages — you choose when, not the messages."
+      },
+      "ar-MSA": {
+        "leftLabel": "يوم Operator",
+        "rightLabel": "يوم باني نظام",
+        "leftBody": "تفتح الواتساب أولًا، ترد ساعتين، تطفئ مشاكل، تنام وقد شعرت أنك «اشتغلت» — لكن لا قرار استراتيجي اتُّخذ",
+        "rightBody": "ساعة محمية للتفكير والأرقام، الذكاء الاصطناعي يساعدك ترتّب الأولويات، ثم تتعامل مع الرسائل — أنت اخترت متى، لا الرسائل"
+      },
+      "ar-Gulf": {
+        "leftLabel": "يوم Operator",
+        "rightLabel": "يوم باني نظام",
+        "leftBody": "تفتح الواتساب أولًا، ترد ساعتين، تطفئ مشاكل، تنام وقد شعرت أنك «اشتغلت» — لكن ما اتخذت قرار استراتيجي",
+        "rightBody": "ساعة محمية للتفكير والأرقام، الذكاء الاصطناعي يساعدك ترتّب الأولويات، ثم تتعامل مع الرسائل — أنت اخترت متى، مو الرسائل"
+      },
+      "ar-EG": {
+        "leftLabel": "يوم Operator",
+        "leftBody": "تفتح الواتساب أول حاجة، ترد ساعتين، تطفّي مشاكل، تنام وإنت حسّيت إنك «اشتغلت» — بس مفيش قرار استراتيجي اتاخد.",
+        "rightLabel": "يوم باني نظام",
+        "rightBody": "ساعة محمية للتفكير والأرقام، الـ AI يساعدك ترتّب الأولويات، وبعدين تتعامل مع الرسائل — إنت اخترت إمتى، مش الرسائل."
+      }
+    },
+    "missionIntro": {
+      "en": "A practical mission — not a theoretical analysis. Write down 3 recurring decisions or problems you face in your work each week, and choose one where AI can assist you as a thinking partner or as a system. A complete solution is not required — awareness and a clear choice are needed.",
+      "ar-MSA": "مهمة تطبيقية — ليست تحليلًا نظريًا. اكتب ٣ قرارات أو مشاكل تتكرر في عملك كل أسبوع، واختر واحدة يستطيع الذكاء الاصطناعي مساعدتك فيها كشريك تفكير أو كنظام. لا يُطلب حل كامل — يُطلب وعي واختيار واضح.",
+      "ar-Gulf": "مهمة تطبيقية — مو تحليل نظري. اكتب ٣ قرارات أو مشاكل تتكرر في عملك كل أسبوع، واختر وحدة يقدر الذكاء الاصطناعي يساعدك فيها كشريك تفكير أو كنظام. ما يُطلب حل كامل — يُطلب وعي واختيار واضح.",
+      "ar-EG": "المهمة دي تطبيق عملي — مش تحليل نظري. اكتب ٣ قرارات أو مشاكل بتتكرر في بيزنسك كل أسبوع، واختار واحدة الـ AI يقدر يساعدك فيها كشريك تفكير أو كنظام.\n\nمش مطلوب حل كامل — مطلوب وعي واختيار واضح."
+    },
+    "visualIntent": {
+      "kind": "comparison",
+      "summary": "The spectrum of transformation from **Operator** to leader. You do not need an immediate leap. The first step: know where you are — and choose one recurring dec",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m1-l1-from-decisions-to-leadership.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "The spectrum of transformation from **Operator** to leader. You do not need an immediate leap. The first step: know where you are — and choo"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m1-l1-from-decisions-to-leadership.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "طيف التحوّل من **Operator** إلى قائد. لا تحتاج قفزة فورية. الخطوة الأولى: تعرف أين أنت — وتختار قرارًا متكررًا واحدًا يساعدك فيه الذكاء الاص"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m1-l1-from-decisions-to-leadership.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "طيف التحوّل من **Operator** إلى قائد. ما تحتاج قفزة فورية. الخطوة الأولى: تعرف وين أنت — وتختار قرار متكرر واحد يساعدك فيه الذكاء الاصطناعي"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/business-m1-l1-from-decisions-to-leadership.ts",
+          "field": "block.caption (diagram)",
+          "quote": "مش محتاج تقفز لـ Leader بكرة. الخطوة الأولى: تعرف فين أنت — وتختار قرار متكرر واحد الـ AI يساعدك فيه كنظام."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "business-m1-l1-from-decisions-to-leadership's package marks a Diagram intent (operator-vs-leader); the underlying relationship reads as comparison, so a deterministic SVG panel keeps the real Operator Day/System Builder Day labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "two-panel-comparison",
+  "duplicationJustification": "Shares the \"two-panel-comparison\" layout template with 4 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Operator Day\" vs \"System Builder Day\" for business-m1-l1-from-decisions-to-leadership.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Operator Day",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m1-l1-from-decisions-to-leadership.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "System Builder Day",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m1-l1-from-decisions-to-leadership.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Operator",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m1-l1-from-decisions-to-leadership.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Business OS",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m1-l1-from-decisions-to-leadership.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "يوم Operator",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m1-l1-from-decisions-to-leadership.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "يوم باني نظام",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m1-l1-from-decisions-to-leadership.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Operator (منفّذ)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m1-l1-from-decisions-to-leadership.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Business OS (نظام تشغيل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m1-l1-from-decisions-to-leadership.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "يوم Operator",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m1-l1-from-decisions-to-leadership.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "يوم باني نظام",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m1-l1-from-decisions-to-leadership.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Operator (منفّذ)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m1-l1-from-decisions-to-leadership.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Business OS (نظام تشغيل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m1-l1-from-decisions-to-leadership.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "يوم Operator",
+        "source": {
+          "path": "src/components/intro/lessons/business-m1-l1-from-decisions-to-leadership.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "يوم باني نظام",
+        "source": {
+          "path": "src/components/intro/lessons/business-m1-l1-from-decisions-to-leadership.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Operator (منفّذ)",
+        "source": {
+          "path": "src/components/intro/lessons/business-m1-l1-from-decisions-to-leadership.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Business OS (نظام تشغيل)",
+        "source": {
+          "path": "src/components/intro/lessons/business-m1-l1-from-decisions-to-leadership.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "From Decisions to Leadership: \"Operator Day\" versus \"System Builder Day\" — Level 1 — Tool:",
+    "ar-MSA": "من القرارات إلى القيادة: \"يوم Operator\" في مقابل \"يوم باني نظام\" — المستوى ١ — أداة:",
+    "ar-Gulf": "من القرارات للقيادة: \"يوم Operator\" في مقابل \"يوم باني نظام\" — المستوى ١ — أداة:",
+    "ar-EG": "الـ AI أداة — نظام — وشريك تفكير: \"يوم Operator\" في مقابل \"يوم باني نظام\" — مستوى ١ — أداة: تكتب Prompt وتاخد رد أسرع (رسالة، تلخيص، فكرة). ده Operator بسرعة أعلى."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Real Decisions\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/business-m1-l1-from-decisions-to-leadership.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Clear Choice\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/business-m1-l1-from-decisions-to-leadership.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"قرارات حقيقية\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m1-l1-from-decisions-to-leadership.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"اختيار واضح\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m1-l1-from-decisions-to-leadership.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"قرارات حقيقية\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m1-l1-from-decisions-to-leadership.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"اختيار واضح\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m1-l1-from-decisions-to-leadership.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"قرارات حقيقية\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m1-l1-from-decisions-to-leadership.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"اختيار واضح\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m1-l1-from-decisions-to-leadership.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "8b937611e513e039d5f2dbe259c71b2211f339c9d54b9a11b75c70444e734204"
+}

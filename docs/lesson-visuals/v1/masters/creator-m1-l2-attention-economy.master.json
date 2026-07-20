@@ -1,0 +1,333 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "creator-m1-l2-attention-economy",
+  "pathId": "creator",
+  "moduleId": "creator-m1",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Attention Economy",
+    "ar-MSA": "اقتصاد الانتباه",
+    "ar-Gulf": "اقتصاد الانتباه",
+    "ar-EG": "المفيد الواضح بيفوز"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/creator-m1-l2-attention-economy.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m1-l2-attention-economy.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m1-l2-attention-economy.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/creator-m1-l2-attention-economy.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? On social media, people decide in seconds: Do they continue or skip?",
+        "Key idea: Useful content is what captures attention — not the loudest content.",
+        "What comes after the lesson? You will practice noticing what stops scrolling and what gets skipped."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ على وسائل التواصل يقرّر الناس في ثوانٍ: هل يكملون أم يتخطّون.",
+        "الفكرة الأساسية: المحتوى المفيد هو الذي يكسب الانتباه — وليس المحتوى الأعلى صوتًا.",
+        "ماذا بعد الدرس؟ ستتدرب على ملاحظة ما يوقف التمرير وما يُتخطّى."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ على وسائل التواصل، يقرر الناس في ثوانٍ: هل يكملون أو يتخطون.",
+        "الفكرة الأساسية: المحتوى المفيد هو اللي يكسب الانتباه — مو المحتوى الأعلى صوتًا.",
+        "وش بعد الدرس؟ راح تتدرب على ملاحظة الأشياء اللي توقف التمرير والأشياء اللي تُتخطى."
+      ],
+      "ar-EG": [
+        "في السوشيال ميديا الناس بتقرر في ثواني: تكمل ولا تتخطى.",
+        "الدرس ده يثبت لك إن المحتوى المفيد هو اللي يكسب الانتباه، مش المحتوى الأعلى صوتًا."
+      ]
+    },
+    "coreIdea": {
+      "en": "attention",
+      "ar-MSA": "الانتباه",
+      "ar-Gulf": "الانتباه",
+      "ar-EG": "اللي يربح الانتباه عادة هو المحتوى اللي يوعد بفايدة واضحة من أول لحظة."
+    },
+    "tension": {
+      "en": "No matter how much effort you put into preparation, if the beginning is not engaging — people will skip. Therefore, understanding the Attention Economy comes before any publishing plan or production.",
+      "ar-MSA": "مهما بذلت جهدًا في الإعداد، إذا البداية غير جذّابة — الناس ستتخطّى. لذلك فهم Attention Economy (اقتصاد الانتباه) يسبق أي خطة نشر أو إنتاج.",
+      "ar-Gulf": "مهما بذلت جهد في الإعداد، إذا البداية مو جذابة — الناس راح تتخطى. لذلك فهم اقتصاد الانتباه يسبق أي خطة نشر أو إنتاج.",
+      "ar-EG": "مهما اتعبت في الإعداد، لو البداية مش جذابة الناس هتعدي."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Distracting Content",
+        "rightLabel": "Useful Content",
+        "leftBody": "Long introduction with no direct value — quickly skipped",
+        "rightBody": "Starts with a practical idea that addresses a real need — gains more time and higher engagement"
+      },
+      "ar-MSA": {
+        "leftLabel": "محتوى مشتت",
+        "rightLabel": "محتوى مفيد",
+        "leftBody": "مقدمة طويلة بلا فائدة مباشرة — يُتخطّى بسرعة",
+        "rightBody": "يبدأ بفكرة عملية تمس حاجة حقيقية — يكسب وقتًا أطول وتفاعلًا أعلى"
+      },
+      "ar-Gulf": {
+        "leftLabel": "محتوى مشتت",
+        "rightLabel": "محتوى مفيد",
+        "leftBody": "مقدمة طويلة بلا فائدة مباشرة — تُتخطى بسرعة",
+        "rightBody": "يبدأ بفكرة عملية تمس حاجة حقيقية — يكسب وقت أطول وتفاعل أعلى"
+      },
+      "ar-EG": {
+        "leftLabel": "محتوى مشتت",
+        "leftBody": "مقدمة طويلة بلا فائدة مباشرة، فيتخطى بسرعة.",
+        "rightLabel": "محتوى مفيد",
+        "rightBody": "يبدأ بفكرة عملية تمس حاجة حقيقية عند المتلقي، فيكسب وقت أطول وتفاعل أعلى."
+      }
+    },
+    "missionIntro": {
+      "en": "The mission is a training exercise in observation — not a test and not writing hooks. Observe 5 posts, and note why you stopped at each one or why you skipped it. The test taught you what to look for.",
+      "ar-MSA": "المهمة تدريب ملاحظة — ليس اختبارًا وليس كتابة Hook. راقب ٥ منشورات، وسجّل لماذا توقفت عند كل واحد أو لماذا تخطّيته. الاختبار علّمك ما الذي تبحث عنه.",
+      "ar-Gulf": "المهمة تدريب ملاحظة — مو اختبار ومو كتابة Hook. راقب ٥ منشورات، وسجّل ليش توقفت عند كل واحد أو ليش تخطّيته. الاختبار علّمك وش اللي تبحث عنه.",
+      "ar-EG": "المهمة تدريب ملاحظة مش اختبار. راقب ٥ منشورات، وسجل ليه وقفت عند كل واحد أو ليه تخطيته.\n\nالمهمة ملاحظة فقط — مش كتابة Hook. الـ Quiz علّمك إيه تدور عليه."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "A visual snapshot — an example of content that is **clear and easy to grasp** visually. Visual clarity and a focused message help the viewer understand quickly",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m1-l2-attention-economy.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "A visual snapshot — an example of content that is **clear and easy to grasp** visually. Visual clarity and a focused message help the viewer"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m1-l2-attention-economy.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "الانتباه"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m1-l2-attention-economy.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "الانتباه"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/creator-m1-l2-attention-economy.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "الوضوح البصري والرسالة المركزة بيساعدوا المتلقي يفهم بسرعة ويقرر يكمل."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "creator-m1-l2-attention-economy's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Distracting Content / Useful Content) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Distracting Content\" vs \"Useful Content\" for creator-m1-l2-attention-economy.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Distracting Content",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m1-l2-attention-economy.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Useful Content",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m1-l2-attention-economy.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Attention Economy",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m1-l2-attention-economy.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Scroll Stop",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m1-l2-attention-economy.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "محتوى مشتت",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m1-l2-attention-economy.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "محتوى مفيد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m1-l2-attention-economy.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Attention Economy (اقتصاد الانتباه)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m1-l2-attention-economy.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Scroll Stop (وقف التمرير)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m1-l2-attention-economy.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "محتوى مشتت",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m1-l2-attention-economy.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "محتوى مفيد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m1-l2-attention-economy.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "اقتصاد الانتباه",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m1-l2-attention-economy.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "وقف التمرير",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m1-l2-attention-economy.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "محتوى مشتت",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m1-l2-attention-economy.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "محتوى مفيد",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m1-l2-attention-economy.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Attention Economy",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m1-l2-attention-economy.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Scroll Stop",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m1-l2-attention-economy.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Attention Economy: \"Distracting Content\" versus \"Useful Content\" — attention",
+    "ar-MSA": "اقتصاد الانتباه: \"محتوى مشتت\" في مقابل \"محتوى مفيد\" — الانتباه",
+    "ar-Gulf": "اقتصاد الانتباه: \"محتوى مشتت\" في مقابل \"محتوى مفيد\" — الانتباه",
+    "ar-EG": "المفيد الواضح بيفوز: \"محتوى مشتت\" في مقابل \"محتوى مفيد\" — اللي يربح الانتباه عادة هو المحتوى اللي يوعد بفايدة واضحة من أول لحظة."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Observation Accuracy\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m1-l2-attention-economy.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Pattern Extraction\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m1-l2-attention-economy.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"دقة الملاحظة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m1-l2-attention-economy.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"استخراج النمط\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m1-l2-attention-economy.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"دقة الملاحظة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m1-l2-attention-economy.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"استخراج النمط\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m1-l2-attention-economy.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"دقة الملاحظة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m1-l2-attention-economy.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"استخراج النمط\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m1-l2-attention-economy.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "37226242aa8e2d0dae8c4d061816cdd5a5cc6556b60441f29786b2e57ade2bdd"
+}

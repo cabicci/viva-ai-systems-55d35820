@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "automator-m4-l3-error-handling",
+  "pathId": "automator",
+  "moduleId": "automator-m4",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Error Handling",
+    "ar-MSA": "معالجة الأخطاء",
+    "ar-Gulf": "إدارة الأخطاء",
+    "ar-EG": "فشل متوقّع + تنبيه قبل الألم"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/automator-m4-l3-error-handling.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l3-error-handling.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l3-error-handling.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/automator-m4-l3-error-handling.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Automation fails — the question is, \"How will you know before the customer is hurt?\"",
+        "Why now? After Webhooks and the database, the workflow runs 24/7 — without alerts, failure is silent.",
+        "What after the lesson? You will write an alert rule: if [failure] → [who is notified + how]."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ الأتمتة تفشل — السؤال «كيف ستعرف قبل أن يتأذى العميل؟»",
+        "لماذا الآن؟ بعد Webhooks وقاعدة البيانات، مسار العمل (workflow) يعمل ٢٤/٧ — من دون تنبيه، الفشل صامت.",
+        "ماذا بعد الدرس؟ ستكتب قاعدة تنبيه: لو [فشل] → [مين يُبلَّغ + كيف]."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ الأتمتة تفشل — السؤال «كيف راح تعرف قبل أن يتأذى العميل؟»",
+        "ليش الحين؟ بعد Webhooks وقاعدة البيانات، مسار العمل (workflow) يعمل ٢٤/٧ — من دون تنبيه، الفشل صامت.",
+        "وش بعد الدرس؟ راح تكتب قاعدة تنبيه: لو [فشل] → [مين يُبلَّغ + كيف]."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ الأتمتة بتفشل — السؤال مش «لو»، السؤال «إزاي هتعرف قبل ما العميل يتأذى».",
+        "ليه دلوقتي؟ بعد Webhooks وDB، الـ workflow شغّال ٢٤/٧ — ومن غير تنبيه، الفشل بيحصل صامت.",
+        "هتعمل إيه بعد الدرس؟ هتكتب قاعدة تنبيه واحدة: لو [فشل] → [مين يتبلّغ + إزاي]."
+      ]
+    },
+    "coreIdea": {
+      "en": "Retry:",
+      "ar-MSA": "Retry (إعادة محاولة):",
+      "ar-Gulf": "Retry (إعادة محاولة):",
+      "ar-EG": "Retry: جرّب تاني — كتير من الأخطاء مؤقتة (شبكة، timeout). ٢–٣ محاولات كفاية."
+    },
+    "tension": {
+      "en": "\"200 customers received no response\" — and no one knew. API messages failed for a week — no email, no WhatsApp, no alert.",
+      "ar-MSA": "«٢٠٠ عميل لم يجدوا ردًا» — ولم يعرف أحد. API الرسائل فشل أسبوعًا — لا بريد، لا واتساب، لا تنبيه.",
+      "ar-Gulf": "«٢٠٠ عميل ما حصلوا على رد» — ولم يعرف أحد. API الرسائل فشل أسبوع — لا بريد، لا واتساب، لا تنبيه.",
+      "ar-EG": "الـ API بتاع الرسائل فشل من أسبوع. الأوتوميشن وقف صامت — مفيش إيميل، مفيش واتساب، مفيش تنبيه."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Silent Failure",
+        "rightLabel": "Immediate Alert",
+        "leftBody": "API stopped — workflow went silent. 200 customers without response.",
+        "rightBody": "Retry 3 times → failed → WhatsApp + log in the failed table. Know in 5 minutes."
+      },
+      "ar-MSA": {
+        "leftLabel": "فشل صامت",
+        "rightLabel": "تنبيه فوري",
+        "leftBody": "API توقف — workflow سكت. ٢٠٠ عميل بلا رد.",
+        "rightBody": "Retry ٣ مرات → فشل → واتساب + سجل في جدول failed. تعرف في ٥ دقائق."
+      },
+      "ar-Gulf": {
+        "leftLabel": "فشل صامت",
+        "rightLabel": "تنبيه فوري",
+        "leftBody": "API توقف — workflow سكت. ٢٠٠ عميل بلا رد.",
+        "rightBody": "Retry ٣ مرات → فشل → واتساب + سجل في جدول failed. تعرف في ٥ دقائق."
+      },
+      "ar-EG": {
+        "leftLabel": "فشل صامت",
+        "leftBody": "API وقف — الـ workflow سكت. ٢٠٠ عميل من غير رد. اكتشفت بعد ٧ أيام.",
+        "rightLabel": "تنبيه فوري",
+        "rightBody": "Retry ٣ مرات → فشل → واتساب ليك + السجل في جدول failed. تعرف في ٥ دقايق."
+      }
+    },
+    "missionIntro": {
+      "en": "Design one alert rule for a real workflow. You do not need to build the automation. Define the failure point, retry plan, alert recipient and channel, and the information that must be logged. AI may suggest options, but you make the final decision.",
+      "ar-MSA": "صمّم قاعدة تنبيه واحدة لمسار عمل حقيقي. لا يلزم بناء الأتمتة؛ حدّد نقطة الفشل، وخطة إعادة المحاولة، ومن يتلقى التنبيه، وما الذي يُسجَّل عند الفشل. يمكن للذكاء الاصطناعي أن يقترح، لكن القرار النهائي لك.",
+      "ar-Gulf": "صمّم قاعدة تنبيه وحدة لمسار عمل فعلي. مو مطلوب تبني الأتمتة؛ حدّد وين ممكن تفشل، وخطة إعادة المحاولة، ومين يوصله التنبيه، ووش ينحفظ عند الفشل. الذكاء الاصطناعي ممكن يقترح، لكن القرار الأخير لك.",
+      "ar-EG": "المهمة دي تصميم — مش بناء إلزامي. اختار workflow عندك واكتب قاعدة تنبيه واحدة للفشل الأهم.\n\nممكن الـ AI يقترح صياغة — إنت تختار النهائي."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Every layer in the **workflow** needs a backup plan: if it fails → what is the alternative?",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m4-l3-error-handling.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Every layer in the **workflow** needs a backup plan: if it fails → what is the alternative?"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l3-error-handling.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "كل طبقة في **مسار العمل (workflow)** تحتاج خطة بديلة: لو فشلت → ما البديل؟"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l3-error-handling.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "كل طبقة في **مسار العمل (workflow)** تحتاج خطة بديلة: لو فشلت → ما البديل؟"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/automator-m4-l3-error-handling.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "كل طبقة في الشغل المتكرر محتاجة خطة بديلة: لو فشلت → إيه البديل؟ مش «نوقف وننسى»."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "automator-m4-l3-error-handling's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Silent Failure / Immediate Alert) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Silent Failure\" vs \"Immediate Alert\" for automator-m4-l3-error-handling.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Silent Failure",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m4-l3-error-handling.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Immediate Alert",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m4-l3-error-handling.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Retry",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m4-l3-error-handling.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Alert",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m4-l3-error-handling.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "فشل صامت",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l3-error-handling.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تنبيه فوري",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l3-error-handling.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Retry (إعادة محاولة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l3-error-handling.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Alert (تنبيه)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l3-error-handling.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "فشل صامت",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l3-error-handling.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تنبيه فوري",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l3-error-handling.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Retry (إعادة محاولة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l3-error-handling.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Alert (تنبيه)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l3-error-handling.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "فشل صامت",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m4-l3-error-handling.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تنبيه فوري",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m4-l3-error-handling.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Retry (إعادة محاولة)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m4-l3-error-handling.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Alert (تنبيه)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m4-l3-error-handling.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Error Handling: \"Silent Failure\" versus \"Immediate Alert\" — Retry:",
+    "ar-MSA": "معالجة الأخطاء: \"فشل صامت\" في مقابل \"تنبيه فوري\" — Retry (إعادة محاولة):",
+    "ar-Gulf": "إدارة الأخطاء: \"فشل صامت\" في مقابل \"تنبيه فوري\" — Retry (إعادة محاولة):",
+    "ar-EG": "فشل متوقّع + تنبيه قبل الألم: \"فشل صامت\" في مقابل \"تنبيه فوري\" — Retry: جرّب تاني — كتير من الأخطاء مؤقتة (شبكة، timeout). ٢–٣ محاولات كفاية."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Step and Reason\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m4-l3-error-handling.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Alert Rule\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m4-l3-error-handling.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"خطوة وسبب\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l3-error-handling.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"قاعدة تنبيه\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l3-error-handling.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"خطوة وسبب\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l3-error-handling.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"قاعدة تنبيه\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l3-error-handling.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"خطوة وسبب\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m4-l3-error-handling.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"قاعدة تنبيه\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m4-l3-error-handling.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 60"
+    }
+  ],
+  "checksum": "64ea3fd852644cddd6e76a807eca6de672918a11a4d54db1e7e111734b9d516d"
+}

@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "automator-m2-l3-decide-what-to-automate",
+  "pathId": "automator",
+  "moduleId": "automator-m2",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Decide What to Automate",
+    "ar-MSA": "اختيار ما يُؤتمت",
+    "ar-Gulf": "اختيار ما يجب أتمتته",
+    "ar-EG": "متكرّر + بسيط + مخاطرة قليلة = أولوية"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/automator-m2-l3-decide-what-to-automate.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l3-decide-what-to-automate.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l3-decide-what-to-automate.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/automator-m2-l3-decide-what-to-automate.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? The best first automation is a repetitive, simple task with low risk — not the hardest or most complex Workflow.",
+        "Why now? After identifying patterns, you need to prioritize them — not every pattern deserves to be the first for the virtual worker.",
+        "What after the lesson? You will place 5 tasks on a matrix (Easy/Hard × High/Low Frequency) and choose the first one."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ أفضل أول أتمتة = مهمة متكرّرة + بسيطة + مخاطرة قليلة — وليست أصعب حاجة ولا أروع تدفق عمل (Flow).",
+        "لماذا الآن؟ بعد أن رصدت الأنماط، تحتاج ترتيبها — ليس كل نمط يستحق أن يكون الأول للعامل الافتراضي.",
+        "ماذا بعد الدرس؟ ستضع ٥ مهام على مصفوفة (سهل/صعب × تكرار عالي/منخفض) وتختار الأولى."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ أفضل أول أتمتة = مهمة متكرّرة + بسيطة + مخاطرة قليلة — مو أصعب شيء ولا أروع تدفق عمل (Flow).",
+        "ليش الحين؟ بعد ما رصدت الأنماط، تحتاج ترتبها — مو كل نمط يستحق يكون الأول للعامل الافتراضي.",
+        "وش بعد الدرس؟ راح تحط ٥ مهام على مصفوفة (سهل/صعب × تكرار عالي/منخفض) وتختار الأولى."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ أحسن أول أتمتة = مهمة متكرّرة + بسيطة + مخاطرة قليلة — مش أصعب حاجة ولا أروع Flow.",
+        "ليه دلوقتي؟ بعد ما رصدت أنماط، لازم ترتّبهم — مش كل نمط يستاهل يكون أول واحد للعامل الافتراضي.",
+        "هتعمل إيه بعد الدرس؟ هتحط ٥ مهام على مصفوفة (سهل/صعب × تكرار عالي/منخفض) وتختار الأولى."
+      ]
+    },
+    "coreIdea": {
+      "en": "3 Criteria for Priority:",
+      "ar-MSA": "٣ معايير للأولوية:",
+      "ar-Gulf": "٣ معايير للأولوية:",
+      "ar-EG": "٣ معايير للأولوية: التكرار (كام مرة/أسبوع؟)، البساطة (٢–٣ خطوات ثابتة؟)، المخاطرة (لو غلط — إيه الضرر؟)."
+    },
+    "tension": {
+      "en": "\"I will automate this — it looks great!\" — and after 3 hours, no benefit. You choose the hardest task — or the rarest pattern — and build a complex Workflow. It runs once a month.",
+      "ar-MSA": "«سأؤتمت هذا — يبدو رائعًا!» — وبعد ٣ ساعات لا فائدة. تختار أصعب مهمة — أو أندر نمط — وتبني تدفق عمل (Flow) معقّدًا. يعمل مرة في الشهر.",
+      "ar-Gulf": "«راح أتمت هذا — يبدو رائع!» — وبعد ٣ ساعات ما فيه فائدة. تختار أصعب مهمة — أو أندر نمط — وتبني تدفق عمل (Flow) معقّد. يعمل مرة في الشهر.",
+      "ar-EG": "بتختار أصعب مهمة — أو أندر نمط — وتبني Flow معقّد. بيشتغل مرة في الشهر."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "First Workflow = Hardest",
+        "rightLabel": "First Workflow = Easiest Repetitive",
+        "leftBody": "Kareem automated complex AI responses — 5 hours to build — happens 3 times/month. Low return and high risk if he makes a mistake.",
+        "rightBody": "Kareem automated \"Form → Table\" — 30 minutes to build — 30 times/month. Quick win and the virtual worker gains confidence."
+      },
+      "ar-MSA": {
+        "leftLabel": "أول Flow = الأصعب",
+        "rightLabel": "أول Flow = الأسهل المتكرّر",
+        "leftBody": "كريم أتمت ردود ذكاء اصطناعي معقّدة — ٥ ساعات بناء — يحدث ٣ مرات/شهر. عائد ضعيف ومخاطرة عالية إذا أخطأ.",
+        "rightBody": "كريم أتمت «نموذج → جدول» — ٣٠ دقيقة بناء — ٣٠ مرة/شهر. فوز سريع والعامل الافتراضي يثبت ثقة."
+      },
+      "ar-Gulf": {
+        "leftLabel": "أول Flow = الأصعب",
+        "rightLabel": "أول Flow = الأسهل المتكرّر",
+        "leftBody": "كريم أتمت ردود ذكاء اصطناعي معقّدة — ٥ ساعات بناء — يحدث ٣ مرات/شهر. عائد ضعيف ومخاطرة عالية إذا أخطأ.",
+        "rightBody": "كريم أتمت «نموذج → جدول» — ٣٠ دقيقة بناء — ٣٠ مرة/شهر. فوز سريع والعامل الافتراضي يثبت ثقة."
+      },
+      "ar-EG": {
+        "leftLabel": "أول Flow = الأصعب",
+        "leftBody": "كريم أتمت ردود AI معقّدة — ٥ ساعات بناء — بيحصل ٣ مرات/شهر. ROI ضعيف ومخاطرة عالية لو غلط.",
+        "rightLabel": "أول Flow = الأسهل المتكرّر",
+        "rightBody": "كريم أتمت «فورم → شيت» — ٣٠ دقيقة بناء — ٣٠ مرة/شهر. فوز سريع والعامل الافتراضي يثبت ثقة."
+      }
+    },
+    "missionIntro": {
+      "en": "Take 5 tasks from your Time Inventory or patterns — place each one on the matrix (Easy/Hard × High/Low Frequency). 10-15 minutes is enough.",
+      "ar-MSA": "خذ ٥ مهام من جرد الوقت أو الأنماط — وضع كل واحدة على المصفوفة (سهل/صعب × تكرار عالي/منخفض). ١٠–١٥ دقيقة كافية.",
+      "ar-Gulf": "خذ ٥ مهام من جرد الوقت أو الأنماط — وحط كل واحدة على المصفوفة (سهل/صعب × تكرار عالي/منخفض). ١٠–١٥ دقيقة كافية.",
+      "ar-EG": "خد ٥ مهام من الـ Audit أو الأنماط — وحط كل واحدة على المصفوفة (سهل/صعب × تكرار عالي/منخفض).\n\n١٠–١٥ دقيقة كفاية."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Decision matrix — horizontal axis = easy or hard. Vertical axis = high or low frequency. The corner",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m2-l3-decide-what-to-automate.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Decision matrix — horizontal axis = easy or hard. Vertical axis = high or low frequency. The corner"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l3-decide-what-to-automate.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "مصفوفة القرار — محور = سهل أو صعب. محور = تكرار عالي أو منخفض. الزاوية «سهل + تكرار عالي» = أولوية العامل الافتراضي. استخدمها في المهمة."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l3-decide-what-to-automate.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "مصفوفة القرار — محور = سهل أو صعب. محور = تكرار عالي أو منخفض. الزاوية «سهل + تكرار عالي» = أولوية العامل الافتراضي. استخدمها في المهمة."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/automator-m2-l3-decide-what-to-automate.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "فكرة المصفوفة: محور = سهل أو صعب. محور = تكرار عالي أو منخفض. الزاوية «سهل + تكرار عالي» = أولوية العامل الافتراضي. استخ"
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "automator-m2-l3-decide-what-to-automate's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (First Workflow = Hardest / First Workflow = Easiest Repetitive) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"First Workflow = Hardest\" vs \"First Workflow = Easiest Repetitive\" for automator-m2-l3-decide-what-to-automate.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "First Workflow = Hardest",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m2-l3-decide-what-to-automate.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "First Workflow = Easiest Repetitive",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m2-l3-decide-what-to-automate.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Task Candidate",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m2-l3-decide-what-to-automate.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "ROI (Return on Investment)",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m2-l3-decide-what-to-automate.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "أول Flow = الأصعب",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l3-decide-what-to-automate.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "أول Flow = الأسهل المتكرّر",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l3-decide-what-to-automate.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Task Candidate (مرشّح أتمتة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l3-decide-what-to-automate.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "ROI (العائد على الجهد)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l3-decide-what-to-automate.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "أول Flow = الأصعب",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l3-decide-what-to-automate.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "أول Flow = الأسهل المتكرّر",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l3-decide-what-to-automate.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "مرشّح أتمتة (Task Candidate)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l3-decide-what-to-automate.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "العائد على الجهد (ROI)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l3-decide-what-to-automate.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "أول Flow = الأصعب",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m2-l3-decide-what-to-automate.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "أول Flow = الأسهل المتكرّر",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m2-l3-decide-what-to-automate.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Task Candidate (مرشّح أتمتة)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m2-l3-decide-what-to-automate.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "ROI (العائد على الجهد)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m2-l3-decide-what-to-automate.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Decide What to Automate: \"First Workflow = Hardest\" versus \"First Workflow = Easiest Repetitive\" — 3 Criteria for Priority:",
+    "ar-MSA": "اختيار ما يُؤتمت: \"أول Flow = الأصعب\" في مقابل \"أول Flow = الأسهل المتكرّر\" — ٣ معايير للأولوية:",
+    "ar-Gulf": "اختيار ما يجب أتمتته: \"أول Flow = الأصعب\" في مقابل \"أول Flow = الأسهل المتكرّر\" — ٣ معايير للأولوية:",
+    "ar-EG": "متكرّر + بسيط + مخاطرة قليلة = أولوية: \"أول Flow = الأصعب\" في مقابل \"أول Flow = الأسهل المتكرّر\" — ٣ معايير للأولوية: التكرار (كام مرة/أسبوع؟)، البساطة (٢–٣ خطوات ثابتة؟)، المخاطرة (لو غلط — إيه الضرر؟)."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Matrix + 5 Tasks\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m2-l3-decide-what-to-automate.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Decision + Rule\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m2-l3-decide-what-to-automate.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"مصفوفة + ٥ مهام\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l3-decide-what-to-automate.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قرار + قاعدة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l3-decide-what-to-automate.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"مصفوفة + ٥ مهام\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l3-decide-what-to-automate.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قرار + قاعدة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l3-decide-what-to-automate.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"مصفوفة + ٥ مهام\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m2-l3-decide-what-to-automate.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قرار + قاعدة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m2-l3-decide-what-to-automate.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "148f6f2a7e52b54d0ee44c9ea75f13eded22fbf3dfa7d97ac22d8dd98a1aec7f"
+}

@@ -1,0 +1,326 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "analyst-m5-ab-testing",
+  "pathId": "analyst",
+  "moduleId": "analyst-m5",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "A/B Testing",
+    "ar-MSA": "اختبار A/B",
+    "ar-Gulf": "اختبار A/B",
+    "ar-EG": "A vs B — متغيّر واحد — مقياس قبل البداية"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m5-ab-testing.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-ab-testing.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-ab-testing.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/analyst-m5-ab-testing.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? An A/B Test means changing one thing and measuring one result — not multiple random experiments at the same time.",
+        "Why now? After learning about interpretation errors, you need a way to ensure that the change is the cause of the result — not a coincidence or noise in the data.",
+        "What after the lesson? You will design a simple A/B test: what you are comparing, what the one variable is, what the metric is, and the duration of observation before making a decision."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ A/B Test (اختبار A/B) يعني أن تغيّر شيئًا واحدًا وتقيس نتيجة واحدة — وليس تجارب عشوائية متعددة في نفس الوقت.",
+        "لماذا الآن؟ بعد أن تعرف أخطاء التفسير، تحتاج طريقة تتأكد أن التغيير هو سبب النتيجة — وليس صدفة أو ضجيجًا في البيانات.",
+        "ماذا بعد الدرس؟ ستصمّم اختبار A/B بسيطًا: ماذا تقارن، ما المتغيّر الواحد، ما المقياس (Metric)، ومدة الملاحظة قبل أن تتخذ قرارًا."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ اختبار A/B يعني أنك تغيّر شيء واحد وتقيس نتيجة واحدة — مو تجارب عشوائية كثيرة في نفس الوقت.",
+        "ليش الحين؟ بعد ما تعرف أخطاء التفسير، تحتاج طريقة تتأكد أن التغيير هو سبب النتيجة — مو صدفة أو ضجيج في البيانات.",
+        "وش بعد الدرس؟ راح تصمّم اختبار A/B بسيط: وش تقارن، وش المتغيّر الواحد، وش المقياس، ومدة الملاحظة قبل ما تتخذ قرار."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ A/B Testing = غيّر حاجة واحدة، قيس نتيجة واحدة — مش تجارب عشوائية.",
+        "ليه دلوقتي؟ بعد ما عرفت أخطاء التفسير، محتاج طريقة تتأكد إن التغيير سبب النتيجة مش صدفة.",
+        "هتعمل إيه بعد الدرس؟ هتصمّم A/B test بسيط: إيه تقارن، إيه المتغيّر، المقياس، ومدة الملاحظة."
+      ]
+    },
+    "coreIdea": {
+      "en": "A/B",
+      "ar-MSA": "A/B",
+      "ar-Gulf": "A/B",
+      "ar-EG": "A/B = نسخة A (زي ما هي) vs نسخة B (تغيير واحد بس). الباقي ثابت."
+    },
+    "tension": {
+      "en": "You changed the title, price, and image in the same week — sales increased. You might say, \"So everything worked!\" This is not an A/B test — this is chaos. Too many variables = no lesson can be learned from the experimen",
+      "ar-MSA": "غيّرت العنوان والسعر والصورة في نفس الأسبوع — زادت المبيعات. قد تقول: «إذن كل شيء نفع!» هذا ليس A/B test — هذا فوضى (chaos). متغيّرات كثيرة = لا درس يمكن استخلاصه من التجربة.",
+      "ar-Gulf": "غيرت العنوان والسعر والصورة في نفس الأسبوع — زادت المبيعات. ممكن تقول: «إذن كل شيء نفع!» هذا مو اختبار A/B — هذا فوضى. متغيّرات كثيرة = ما في درس يمكن نستخلصه من التجربة.",
+      "ar-EG": "غيّرت العنوان والسعر والصورة في نفس الأسبوع — المبيعات زادت. «يعني كله نفع!»"
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "\"We tried everything\" (chaos)",
+        "rightLabel": "One A/B (organized)",
+        "leftBody": "3 changes in a week — we don't know what worked. Decision based on guessing",
+        "rightBody": "Title A vs Title B — same page, same price — two weeks — Conversion %"
+      },
+      "ar-MSA": {
+        "leftLabel": "«جرّبنا كل شيء» (فوضى)",
+        "rightLabel": "A/B واحد (منظّم)",
+        "leftBody": "٣ تغييرات في أسبوع — لا نعرف ما الذي نفع. قرار مبني على تخمين",
+        "rightBody": "عنوان A مقابل عنوان B — نفس الصفحة، نفس السعر — أسبوعان — Conversion %"
+      },
+      "ar-Gulf": {
+        "leftLabel": "«جرّبنا كل شيء» (فوضى)",
+        "rightLabel": "A/B واحد (منظّم)",
+        "leftBody": "٣ تغييرات في أسبوع — ما نعرف وش اللي نفع. قرار مبني على تخمين",
+        "rightBody": "عنوان A مقابل عنوان B — نفس الصفحة، نفس السعر — أسبوعان — نسبة التحويل"
+      },
+      "ar-EG": {
+        "leftLabel": "«جرّبنا كل حاجة»",
+        "leftBody": "٣ تغييرات في أسبوع — مفيش عرفنا إيه نفع. قرار على تخمين.",
+        "rightLabel": "A/B واحد",
+        "rightBody": "عنوان A vs عنوان B — نفس الصفحة، نفس السعر — ٢ أسبوع — conversion %."
+      }
+    },
+    "missionIntro": {
+      "en": "This is a design task — not a mandatory run. Write an A/B test: what you are comparing, what the variable is, the metric, and the observation duration. AI may suggest wording — you choose the final version.",
+      "ar-MSA": "هذه مهمة تصميم — وليس تشغيلًا إلزاميًا. اكتب اختبار A/B: ماذا تقارن، ما المتغيّر، المقياس، ومدة الملاحظة. قد يقترح AI صياغة — أنت تختار النهائي.",
+      "ar-Gulf": "هذه مهمة تصميم — مو تشغيل إلزامي. اكتب اختبار A/B: وش تقارن، وش المتغيّر، المقياس، ومدة الملاحظة. ممكن يقترح AI صياغة — أنت تختار النهائي.",
+      "ar-EG": "المهمة دي تصميم — مش تشغيل إلزامي. اكتب A/B test: إيه تقارن، إيه المتغيّر، المقياس، ومدة الملاحظة.\n\nممكن الـ AI يقترح صياغة — إنت تختار النهائي."
+    },
+    "visualIntent": {
+      "kind": "comparison",
+      "summary": "**Pattern vs Outlier** (identifier: `pattern-vs-outlier`): An **A/B** result needs a stable **pattern** — **not** a one-day **outlier**. **Use** this distinctio",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m5-ab-testing.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**Pattern vs Outlier** (identifier: `pattern-vs-outlier`): An **A/B** result needs a stable **pattern** — **not** a one-day **outlier**. **U"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-ab-testing.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**Pattern (نمط) مقابل Outlier (قيمة شاذة)** (معرّف: `pattern-vs-outlier`): نتيجة **A/B** تحتاج **نمطًا** مستقرًا — **وليس** قفزة **يوم واحد*"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-ab-testing.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**النمط** مقابل **قيمة شاذة** (معرّف: `pattern-vs-outlier`): نتيجة **A/B** تحتاج **نمطًا** مستقرًا — **مو** قفزة **يوم واحد** شاذة. **استخدم"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/analyst-m5-ab-testing.ts",
+          "field": "block.caption (diagram)",
+          "quote": "نتيجة A/B محتاجة pattern — مش outlier يوم واحد. استخدم الرسم في المهمة."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "analyst-m5-ab-testing's package marks a Diagram intent (pattern-vs-outlier); the underlying relationship reads as comparison, so a deterministic SVG panel keeps the real \"We tried everything\" (chaos)/One A/B (organized) labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "two-panel-comparison",
+  "duplicationJustification": "Shares the \"two-panel-comparison\" layout template with 4 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"\"We tried everything\" (chaos)\" vs \"One A/B (organized)\" for analyst-m5-ab-testing.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-right",
+        "text": "One A/B (organized)",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m5-ab-testing.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "A/B Test",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m5-ab-testing.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Sample Size",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m5-ab-testing.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "«جرّبنا كل شيء» (فوضى)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-ab-testing.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "A/B واحد (منظّم)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-ab-testing.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "A/B Test (اختبار A/B)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-ab-testing.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Sample Size (حجم العيّنة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-ab-testing.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "«جرّبنا كل شيء» (فوضى)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-ab-testing.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "A/B واحد (منظّم)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-ab-testing.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "اختبار A/B",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-ab-testing.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "حجم العيّنة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-ab-testing.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "«جرّبنا كل حاجة»",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m5-ab-testing.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "A/B واحد",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m5-ab-testing.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "A/B Test (اختبار A/B)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m5-ab-testing.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Sample Size (حجم العيّنة)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m5-ab-testing.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "A/B Testing: \"\"We tried everything\" (chaos)\" versus \"One A/B (organized)\" — A/B",
+    "ar-MSA": "اختبار A/B: \"«جرّبنا كل شيء» (فوضى)\" في مقابل \"A/B واحد (منظّم)\" — A/B",
+    "ar-Gulf": "اختبار A/B: \"«جرّبنا كل شيء» (فوضى)\" في مقابل \"A/B واحد (منظّم)\" — A/B",
+    "ar-EG": "A vs B — متغيّر واحد — مقياس قبل البداية: \"«جرّبنا كل حاجة»\" في مقابل \"A/B واحد\" — A/B = نسخة A (زي ما هي) vs نسخة B (تغيير واحد بس). الباقي ثابت."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Variable + Metric\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m5-ab-testing.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Observation + Decision\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m5-ab-testing.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"متغيّر + مقياس\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-ab-testing.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"ملاحظة + قرار\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-ab-testing.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"متغيّر + مقياس\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-ab-testing.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"ملاحظة + قرار\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-ab-testing.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"متغيّر + مقياس\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m5-ab-testing.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"ملاحظة + قرار\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m5-ab-testing.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "70b0b765ca132ce377ab038b67bc9582589b2bc43c42e140667978ec9317c2ff"
+}

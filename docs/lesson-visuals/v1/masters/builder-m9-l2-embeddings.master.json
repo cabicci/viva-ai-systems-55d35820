@@ -1,0 +1,338 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m9-l2-embeddings",
+  "pathId": "builder",
+  "moduleId": "builder-m9",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Embeddings — How AI Finds Information",
+    "ar-MSA": "التضمينات — كيف يجد الذكاء الاصطناعي المعلومة",
+    "ar-Gulf": "التضمينات — كيف يجد الـ AI المعلومة",
+    "ar-EG": "Embeddings تلاقي المعنى — مش الكلمات"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m9-l2-embeddings.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l2-embeddings.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l2-embeddings.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m9-l2-embeddings.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Embedding (transforming text into numbers that represent meaning) finds meaning — not the literal word.",
+        "Why now? RAG needs to search your files — and traditional search doesn’t understand ‘what you mean’.",
+        "What after the lesson? You will write two different questions in words — same meaning.",
+        "Optional depth: For those who want to build a real RAG. You can skip it and return later."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ Embedding (تحويل الكلام لأرقام تمثّل المعنى) يجد المعنى — ليس الكلمة الحرفية.",
+        "لماذا الآن؟ RAG يحتاج البحث في ملفاتك — والبحث العادي لا يفهم «ماذا تقصد».",
+        "ماذا بعد الدرس؟ ستكتب سؤالين مختلفين في الكلمات — نفس المعنى.",
+        "عمق اختياري: لمن يريد بناء RAG حقيقي. يمكنك تخطيه والعودة لاحقًا."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ التضمين (تحويل الكلام لأرقام تمثّل المعنى) يكتشف المعنى — مو الكلمة الحرفية.",
+        "ليش الحين؟ RAG يحتاج البحث في ملفاتك — والبحث العادي مو يفهم «وش تقصد».",
+        "وش بعد الدرس؟ راح تكتب سؤالين مختلفين في الكلمات — نفس المعنى.",
+        "عمق اختياري: للي يبغى يبني RAG حقيقي. تقدر تتخطاه وترجع له لاحقًا."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ الـ Embedding (تحويل الكلام لأرقام تمثّل المعنى) يلاقي المعنى — مش الكلمة الحرفية.",
+        "ليه دلوقتي؟ RAG (AI يجاوب من ملفاتك بدل ما يخمّن) محتاج يدوّر في ملفاتك — والبحث العادي مش بيفهم «قصدك إيه».",
+        "هتعمل إيه بعد الدرس؟ هتكتب سؤالين مختلفين في الكلمات — نفس المعنى.",
+        "عمق اختياري: الدرس ده للي عايز يبني RAG حقيقي. تقدر تعدّيه لو لسه في الأساسيات — باقي المسارات لسه قيمة."
+      ]
+    },
+    "coreIdea": {
+      "en": "Embedding",
+      "ar-MSA": "Embedding",
+      "ar-Gulf": "التضمين",
+      "ar-EG": "Embedding (تحويل الكلام لأرقام تمثّل المعنى) = تحوّل أي نص لقايمة أرقام بتمثّل «مكانه على خريطة المعاني»."
+    },
+    "tension": {
+      "en": "Traditional search looks for words literally. ‘Respond’ is not written in the article — even though the article explains the topic! The storage is good at comparing texts — but it doesn’t understand that ‘respond’, ‘answ",
+      "ar-MSA": "البحث التقليدي يبحث عن الكلمات حرفيًا. «يرد» غير مكتوبة في المقال — رغم أن المقال يشرح الموضوع! المخزن جيد في مقارنة النصوص — لكنه لا يفهم أن «يرد» و«يجيب» و«يولّد ردًا» نفس الفكرة.",
+      "ar-Gulf": "البحث التقليدي يبحث عن الكلمات حرفيًا. «يرد» مو مكتوبة في المقال — مع أن المقال يشرح الموضوع! المخزن جيد في مقارنة النصوص — لكنه مو يفهم أن «يرد» و«يجيب» و«يولّد ردًا» نفس الفكرة.",
+      "ar-EG": "البحث التقليدي بيدور على الكلمات حرفيًا. «يرد» مش مكتوبة في المقال — رغم إن المقال بيشرح الموضوع!"
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Word Search",
+        "rightLabel": "Embedding",
+        "leftBody": "‘How does AI respond?’ — no literal match. The client thinks there’s no content",
+        "rightBody": "The question is converted to a Vector — finds Chunks about ‘generating a response’. Same meaning, different words"
+      },
+      "ar-MSA": {
+        "leftLabel": "بحث بالكلمة",
+        "rightLabel": "embedding",
+        "leftBody": "«كيف يرد الذكاء الاصطناعي؟» — لا تطابق حرفي. العميل يظن لا محتوى",
+        "rightBody": "السؤال يتحول إلى Vector — يجد Chunks عن «توليد الرد». نفس المعنى، كلمات مختلفة"
+      },
+      "ar-Gulf": {
+        "leftLabel": "بحث بالكلمة",
+        "rightLabel": "التضمين",
+        "leftBody": "«كيف يرد الذكاء الاصطناعي؟» — لا تطابق حرفي. العميل يظن لا محتوى",
+        "rightBody": "السؤال يتحول إلى Vector — يجد Chunks عن «توليد الرد». نفس المعنى، كلمات مختلفة"
+      },
+      "ar-EG": {
+        "leftLabel": "غلط — بحث بالكلمة",
+        "leftBody": "«إزاي الـ AI بيرد؟» — مفيش match حرفي. العميل يحس إن مفيش محتوى — رغم إن عندك دروس عن tokens والـ context.",
+        "rightLabel": "صح — embedding",
+        "rightBody": "السؤال يتحوّل لـ Vector (طريقة تخزين المعنى بشكل رقمي) — يلاقي Chunks (أجزاء صغيرة من المحتوى) عن «توليد الرد». نفس المعنى، كلمات مختلفة."
+      }
+    },
+    "missionIntro": {
+      "en": "Testing embeddings: Two different questions in words — same intent. 10 minutes.",
+      "ar-MSA": "اختبار embeddings: سؤالان مختلفان في الكلمات — نفس القصد. ١٠ دقائق.",
+      "ar-Gulf": "اختبار التضمينات: سؤالان مختلفان في الكلمات — نفس القصد. ١٠ دقائق.",
+      "ar-EG": "اختبار embeddings: سؤالين مختلفين في الكلمات — نفس القصد.\n\n١٠ دقايق كفاية."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "**From text to vector to map:**",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m9-l2-embeddings.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**From text to vector to map:**"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l2-embeddings.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**من نص إلى vector إلى خريطة:**"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l2-embeddings.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**من نص إلى Vector إلى خريطة:**"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m9-l2-embeddings.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "كل جملة ليها «مكان» على الخريطة. المعنى القريب = نقاط قريبة. المعنى البعيد = حتة تانية خالص."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "builder-m9-l2-embeddings's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Word Search / Embedding) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Word Search\" vs \"Embedding\" for builder-m9-l2-embeddings.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Word Search",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m9-l2-embeddings.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Embedding",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m9-l2-embeddings.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Embedding (transforming text into numbers that represent meaning)",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m9-l2-embeddings.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Vector Search (meaning-based search)",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m9-l2-embeddings.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "بحث بالكلمة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l2-embeddings.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "embedding",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l2-embeddings.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Embedding (تحويل الكلام لأرقام تمثّل المعنى)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l2-embeddings.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Vector Search (بحث بالمعنى)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l2-embeddings.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "بحث بالكلمة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l2-embeddings.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "التضمين",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l2-embeddings.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "التضمين (تحويل الكلام لأرقام تمثّل المعنى)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l2-embeddings.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "بحث متجهي (Vector Search)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l2-embeddings.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "غلط — بحث بالكلمة",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m9-l2-embeddings.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "صح — embedding",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m9-l2-embeddings.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Embedding (تحويل الكلام لأرقام تمثّل المعنى)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m9-l2-embeddings.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Vector Search (بحث بالمعنى)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m9-l2-embeddings.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Embeddings — How AI Finds Information: \"Word Search\" versus \"Embedding\" — Embedding",
+    "ar-MSA": "التضمينات — كيف يجد الذكاء الاصطناعي المعلومة: \"بحث بالكلمة\" في مقابل \"embedding\" — Embedding",
+    "ar-Gulf": "التضمينات — كيف يجد الـ AI المعلومة: \"بحث بالكلمة\" في مقابل \"التضمين\" — التضمين",
+    "ar-EG": "Embeddings تلاقي المعنى — مش الكلمات: \"غلط — بحث بالكلمة\" في مقابل \"صح — embedding\" — Embedding (تحويل الكلام لأرقام تمثّل المعنى) = تحوّل أي نص لقايمة أرقام بتمثّل «مكانه على خريطة المعاني»."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Two different questions\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m9-l2-embeddings.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Logical chunk\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m9-l2-embeddings.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"سؤالان مختلفان\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l2-embeddings.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"chunk منطقي\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l2-embeddings.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"سؤالان مختلفان\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l2-embeddings.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"chunk منطقي\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l2-embeddings.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"سؤالين مختلفين\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m9-l2-embeddings.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"chunk منطقي\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m9-l2-embeddings.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "21a8347d69fbffcfb8e02ce642088ff4dca35095e34dfc08d34b9dbaa38e2149"
+}

@@ -1,0 +1,302 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "business-m3-l3-system-then-people",
+  "pathId": "business",
+  "moduleId": "business-m3",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "System Then People",
+    "ar-MSA": "النظام أولًا ثم الأشخاص",
+    "ar-Gulf": "نظام ثم ناس",
+    "ar-EG": "نظام → SOP → اختبار → ناس"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/business-m3-l3-system-then-people.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l3-system-then-people.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l3-system-then-people.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/business-m3-l3-system-then-people.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What Will You Understand? People perform better when the system is clear first — and AI transforms your explanation into a simple SOP (Standard Operating Procedure).",
+        "Why Now? After you’ve organized your work and considered delegation, hiring without a system increases chaos.",
+        "What After the Lesson? You will write a raw process and ask AI to convert it into an SOP outline — and review it."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ الناس تعمل أفضل عندما يكون النظام واضحًا أولًا — والذكاء الاصطناعي يحوّل شرحك إلى SOP (إجراء قياسي) بسيط.",
+        "لماذا الآن؟ بعد أن صنّفت شغلك وفكّرت في التفويض، التوظيف من دون نظام يزيد الفوضى.",
+        "ماذا بعد الدرس؟ ستكتب عملية خام وتطلب من الذكاء الاصطناعي يحوّلها لمخطط SOP — وتراجعه."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ الناس تشتغل أفضل لما يكون النظام واضح أولًا — والذكاء الاصطناعي يحوّل شرحك إلى SOP (إجراء قياسي) بسيط.",
+        "ليش الحين؟ بعد ما صنّفت شغلك وفكّرت في التفويض، التوظيف بدون نظام يزيد الفوضى.",
+        "وش بعد الدرس؟ راح تكتب عملية خام وتطلب من الذكاء الاصطناعي يحوّلها لمخطط SOP — وتراجعه."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ الناس بتشتغل أحسن لما النظام واضح الأول — والـ AI يحوّل شرحك لـ SOP بسيط.",
+        "ليه دلوقتي؟ بعد ما صنّفت شغلك وفكّرت في التفويض، التوظيف بدون نظام يزود الفوضى.",
+        "هتعمل إيه بعد الدرس؟ هتكتب عملية خام واطلب من الـ AI يحوّلها لمخطط SOP — وتراجعه."
+      ]
+    },
+    "coreIdea": {
+      "en": "Step 1:",
+      "ar-MSA": "الخطوة ١:",
+      "ar-Gulf": "الخطوة ١:",
+      "ar-EG": "الخطوة ١: اكتب العملية زي ما بتشرحها لصاحبك — حتى لو فوضوي."
+    },
+    "tension": {
+      "en": "A new employee asks, \"What should I do if the client says this?\" — and you respond from memory. The same explanation every day. This is not the employee's failure — it’s the absence of a system. Without an SOP, every hir",
+      "ar-MSA": "موظف جديد يسأل «ماذا أفعل إذا قال العميل كذا؟» — وأنت ترد من الذاكرة. كل يوم نفس الشرح. هذا ليس فشل الموظف — بل غياب نظام. من دون SOP، كل توظيف يضيف شغل إدارة على رأسك.",
+      "ar-Gulf": "موظف جديد يسأل «وش أسوي إذا قال العميل كذا؟» — وأنت ترد من الذاكرة. كل يوم نفس الشرح. هذا مو فشل الموظف — بل غياب نظام. بدون SOP، كل توظيف يضيف شغل إدارة على راسك.",
+      "ar-EG": "موظف جديد يسأل «أعمل إيه لو العميل قال كذا؟» — وإنت ترد من الذاكرة. كل يوم نفس الشرح."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "People Before System",
+        "rightLabel": "SOP Then People",
+        "leftBody": "Each employee works in their own way. You are in the middle — unifying, reviewing, and being reactive.",
+        "rightBody": "AI helps you document. The employee follows the steps — you only review exceptions."
+      },
+      "ar-MSA": {
+        "leftLabel": "ناس قبل نظام",
+        "rightLabel": "SOP ثم ناس",
+        "leftBody": "كل موظف يعمل بطريقته. أنت في الوسط — توحّد، تراجع، وتعود Reactive",
+        "rightBody": "الذكاء الاصطناعي يساعدك توثّق. الموظف يتبع الخطوات — أنت تراجع الاستثناءات فقط"
+      },
+      "ar-Gulf": {
+        "leftLabel": "ناس قبل نظام",
+        "rightLabel": "SOP ثم ناس",
+        "leftBody": "كل موظف يعمل بطريقته. أنت في الوسط — توحّد، تراجع، وتعود Reactive",
+        "rightBody": "الذكاء الاصطناعي يساعدك توثّق. الموظف يتبع الخطوات — أنت تراجع الاستثناءات فقط"
+      },
+      "ar-EG": {
+        "leftLabel": "ناس قبل نظام",
+        "leftBody": "كل موظف يعمل بطريقته. إنت وسط — بتوحّد، بتراجع، بترجع Reactive.",
+        "rightLabel": "SOP ثم ناس",
+        "rightBody": "AI يساعدك توثّق. الموظف يتبع الخطوات — إنت تراجع الاستثناءات بس."
+      }
+    },
+    "missionIntro": {
+      "en": "Choose one process you explain to yourself often (responding to a client, preparing an order, following up with a supplier). Write it in your own words — then use AI to convert it into an SOP outline (goal, steps, example, exception). Attach the SOP outline in your submission.",
+      "ar-MSA": "اختر عملية واحدة تشرحها لنفسك كثيرًا (رد عميل، تجهيز طلب، متابعة مورد). اكتبها بأسلوبك — ثم استخدم الذكاء الاصطناعي يحوّلها لمخطط SOP (هدف، خطوات، مثال، استثناء). الصق مخطط SOP في التسليم.",
+      "ar-Gulf": "اختر عملية واحدة تشرحها لنفسك كثيرًا (رد عميل، تجهيز طلب، متابعة مورد). اكتبها بأسلوبك — ثم استخدم الذكاء الاصطناعي يحوّلها لمخطط SOP (هدف، خطوات، مثال، استثناء). الصق مخطط SOP في التسليم.",
+      "ar-EG": "اختار عملية واحدة بتشرحها لنفسك كتير (رد عميل، تجهيز طلب، متابعة مورد). اكتبها بأسلوبك — ثم استخدم الـ AI يحوّلها لمخطط SOP (هدف، خطوات، مثال، استثناء).\n\nالصق مخطط الـ SOP في التسليم."
+    },
+    "visualIntent": {
+      "kind": "system",
+      "summary": "Order: **System → People**. A clear **SOP** is stronger than employees without guidance. Test the process before scaling the team.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m3-l3-system-then-people.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "Order: **System → People**. A clear **SOP** is stronger than employees without guidance. Test the process before scaling the team."
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l3-system-then-people.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "الترتيب: **System → People (نظام ثم ناس)**. **SOP** واحد واضح أقوى من موظفين بلا دليل. اختبر العملية قبل أن تكبّر الفريق."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l3-system-then-people.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "الترتيب: **System → People (نظام ثم ناس)**. **SOP** واحد واضح أقوى من موظفين بلا دليل. اختبر العملية قبل ما تكبّر الفريق."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/business-m3-l3-system-then-people.ts",
+          "field": "block.caption (diagram)",
+          "quote": "SOP واحد واضح أقوى من موظفين اتنين بلا دليل. اختبر العملية قبل ما تكبّر الفريق."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "business-m3-l3-system-then-people's package marks a Diagram intent (system-then-people); the underlying relationship reads as system, so a deterministic SVG panel keeps the real People Before System/SOP Then People labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "system-map-panel",
+  "duplicationJustification": "Shares the \"system-map-panel\" layout template with 3 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"People Before System\" vs \"SOP Then People\" for business-m3-l3-system-then-people.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "People Before System",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m3-l3-system-then-people.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "SOP Then People",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m3-l3-system-then-people.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "SOP (Standard Operating Procedure)",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m3-l3-system-then-people.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "ناس قبل نظام",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l3-system-then-people.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "SOP ثم ناس",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l3-system-then-people.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "SOP (إجراء قياسي)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l3-system-then-people.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "ناس قبل نظام",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l3-system-then-people.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "SOP ثم ناس",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l3-system-then-people.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "SOP (إجراء قياسي)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l3-system-then-people.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "ناس قبل نظام",
+        "source": {
+          "path": "src/components/intro/lessons/business-m3-l3-system-then-people.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "SOP ثم ناس",
+        "source": {
+          "path": "src/components/intro/lessons/business-m3-l3-system-then-people.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "SOP (إجراء قياسي)",
+        "source": {
+          "path": "src/components/intro/lessons/business-m3-l3-system-then-people.ts",
+          "field": "block.items[0].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "System Then People: \"People Before System\" versus \"SOP Then People\" — Step 1:",
+    "ar-MSA": "النظام أولًا ثم الأشخاص: \"ناس قبل نظام\" في مقابل \"SOP ثم ناس\" — الخطوة ١:",
+    "ar-Gulf": "نظام ثم ناس: \"ناس قبل نظام\" في مقابل \"SOP ثم ناس\" — الخطوة ١:",
+    "ar-EG": "نظام → SOP → اختبار → ناس: \"ناس قبل نظام\" في مقابل \"SOP ثم ناس\" — الخطوة ١: اكتب العملية زي ما بتشرحها لصاحبك — حتى لو فوضوي."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Real Process\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/business-m3-l3-system-then-people.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Organized SOP\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/business-m3-l3-system-then-people.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"عملية حقيقية\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l3-system-then-people.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"SOP مرتب\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l3-system-then-people.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"عملية حقيقية\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l3-system-then-people.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"SOP مرتب\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l3-system-then-people.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"عملية حقيقية\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m3-l3-system-then-people.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"SOP مرتب\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m3-l3-system-then-people.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "2d4f79250726d6514f23a7d4b19495fa4df59eface28df0ed8e5c3dc43969a0a"
+}

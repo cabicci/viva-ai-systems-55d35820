@@ -1,0 +1,333 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "creator-m7-l2-grid-consistency",
+  "pathId": "creator",
+  "moduleId": "creator-m7-identity",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Grid Consistency on Profile",
+    "ar-MSA": "اتساق شبكة الملف الشخصي",
+    "ar-Gulf": "اتساق الشبكة في البروفايل",
+    "ar-EG": "ثبات بسيط يوصل المعنى أسرع"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/creator-m7-l2-grid-consistency.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m7-l2-grid-consistency.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m7-l2-grid-consistency.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/creator-m7-l2-grid-consistency.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Consistency helps strangers understand you quickly.",
+        "Any new person visiting your profile makes a very quick decision: Should they continue following or move on?",
+        "Grid consistency reduces confusion — and clarifies the type of content before they read a single caption."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ الاتساق يساعد الغريب أن يفهمك بسرعة.",
+        "أي شخص جديد يدخل بروفايلك يتخذ قرارًا سريعًا جدًا: أيكمل المتابعة أم يمضي.",
+        "الاتساق في Grid (الشبكة) يقلل الحيرة — ويوضّح نوع المحتوى قبل أن يقرأ Caption (تعليق) واحدًا."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ الاتساق يساعد الغريب يفهمك بسرعة.",
+        "أي شخص جديد يدخل بروفايلك يتخذ قرار سريع جدًا: يستمر في المتابعة أو يمشي.",
+        "الاتساق في Grid (الشبكة) يقلل الحيرة — ويبيّن نوع المحتوى قبل ما يقرأ تعليق واحد."
+      ],
+      "ar-EG": [
+        "أي شخص جديد بيدخل بروفايلك بياخد قرار سريع جدا: أكمل متابعة ولا أمشي.",
+        "الاتساق في الجريد بيقلل الحيرة وبيوضح نوع المحتوى قبل ما يقرأ Caption واحد."
+      ]
+    },
+    "coreIdea": {
+      "en": "Consistency does not mean",
+      "ar-MSA": "الاتساق لا يعني",
+      "ar-Gulf": "الاتساق مو يعني",
+      "ar-EG": "الاتساق مش معناه كل بوست نسخة من التاني، لكنه يعني نفس الروح: ألوان قريبة، خط ثابت، ونوع أغلفة مفهوم."
+    },
+    "tension": {
+      "en": "A random grid = a confusing message. If each post has a different color and style — the visitor feels the account lacks direction even if the content is strong.",
+      "ar-MSA": "شبكة عشوائية = رسالة مشوشة. إن كان لكل منشور لون وستايل مختلف — يشعر الزائر أن الحساب بلا اتجاه حتى لو المحتوى قوي.",
+      "ar-Gulf": "شبكة عشوائية = رسالة مشوشة. إذا كان لكل منشور لون وستايل مختلف — يحس الزائر أن الحساب بلا اتجاه حتى لو المحتوى قوي.",
+      "ar-EG": "لو كل بوست له لون وستايل مختلف، الزائر يحس إن الحساب ده بلا اتجاه حتى لو المحتوى نفسه قوي."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Inconsistent Grid",
+        "rightLabel": "Consistent Grid",
+        "leftBody": "Changing colors and fonts — the visitor leaves quickly because they don’t understand the overall theme.",
+        "rightBody": "Clear and repeated style — the visitor understands the identity in seconds and is ready to follow confidently."
+      },
+      "ar-MSA": {
+        "leftLabel": "شبكة غير متسقة",
+        "rightLabel": "شبكة متسقة",
+        "leftBody": "ألوان وخطوط متغيرة — الزائر يغادر بسرعة لأنه لا يفهم الخط العام",
+        "rightBody": "ستايل واضح ومتكرر — الزائر يفهم الهوية في ثوانٍ ويكون مستعدًا للمتابعة بثقة"
+      },
+      "ar-Gulf": {
+        "leftLabel": "شبكة غير متسقة",
+        "rightLabel": "شبكة متسقة",
+        "leftBody": "ألوان وخطوط متغيرة — الزائر يغادر بسرعة لأنه ما يفهم الخط العام",
+        "rightBody": "ستايل واضح ومتكرر — الزائر يفهم الهوية في ثوانٍ ويكون مستعد للمتابعة بثقة"
+      },
+      "ar-EG": {
+        "leftLabel": "جريد غير متسق",
+        "leftBody": "ألوان وخطوط متغيرة طول الوقت. الزائر يخرج بسرعة لأنه مش فاهم الخط العام.",
+        "rightLabel": "جريد متسق",
+        "rightBody": "ستايل واضح ومتكرر. الزائر يفهم الهوية في ثواني ويكون مستعد يتابع بثقة."
+      }
+    },
+    "missionIntro": {
+      "en": "Create a quick checklist to review your profile and grid before any new post.",
+      "ar-MSA": "ابنِ checklist سريعة تراجع بها البروفايل والشبكة قبل أي نشر جديد.",
+      "ar-Gulf": "ابنِ checklist سريعة تراجع بها البروفايل والشبكة قبل أي نشر جديد.",
+      "ar-EG": "المطلوب تبني checklist سريعة تراجع بها البروفايل والجريد قبل أي نشر جديد."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Visual example — **a consistent grid**. **Consistency makes the message clear** **even before reading the details**.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m7-l2-grid-consistency.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Visual example — **a consistent grid**. **Consistency makes the message clear** **even before reading the details**."
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m7-l2-grid-consistency.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "الاتساق لا يعني"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m7-l2-grid-consistency.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "الاتساق مو يعني"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/creator-m7-l2-grid-consistency.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "المثال يوضح إزاي التناسق يخلي الرسالة مفهومة حتى قبل قراءة التفاصيل."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "creator-m7-l2-grid-consistency's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Inconsistent Grid / Consistent Grid) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Inconsistent Grid\" vs \"Consistent Grid\" for creator-m7-l2-grid-consistency.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Inconsistent Grid",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m7-l2-grid-consistency.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Consistent Grid",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m7-l2-grid-consistency.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Grid Pattern",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m7-l2-grid-consistency.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Cover Consistency",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m7-l2-grid-consistency.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "شبكة غير متسقة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m7-l2-grid-consistency.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "شبكة متسقة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m7-l2-grid-consistency.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Grid Pattern (نمط الشبكة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m7-l2-grid-consistency.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Cover Consistency (اتساق الغلاف)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m7-l2-grid-consistency.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "شبكة غير متسقة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m7-l2-grid-consistency.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "شبكة متسقة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m7-l2-grid-consistency.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Grid Pattern (نمط الشبكة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m7-l2-grid-consistency.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Cover Consistency (اتساق الغلاف)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m7-l2-grid-consistency.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "جريد غير متسق",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m7-l2-grid-consistency.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "جريد متسق",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m7-l2-grid-consistency.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Grid Pattern",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m7-l2-grid-consistency.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Cover Consistency",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m7-l2-grid-consistency.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Grid Consistency on Profile: \"Inconsistent Grid\" versus \"Consistent Grid\" — Consistency does not mean",
+    "ar-MSA": "اتساق شبكة الملف الشخصي: \"شبكة غير متسقة\" في مقابل \"شبكة متسقة\" — الاتساق لا يعني",
+    "ar-Gulf": "اتساق الشبكة في البروفايل: \"شبكة غير متسقة\" في مقابل \"شبكة متسقة\" — الاتساق مو يعني",
+    "ar-EG": "ثبات بسيط يوصل المعنى أسرع: \"جريد غير متسق\" في مقابل \"جريد متسق\" — الاتساق مش معناه كل بوست نسخة من التاني، لكنه يعني نفس الروح: ألوان قريبة، خط ثابت، ونوع أغلفة مفهوم."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Quality of the checklist\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m7-l2-grid-consistency.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Improvement plan\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m7-l2-grid-consistency.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"جودة الـ checklist\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m7-l2-grid-consistency.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"خطة التحسين\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m7-l2-grid-consistency.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"جودة الـ checklist\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m7-l2-grid-consistency.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"خطة التحسين\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m7-l2-grid-consistency.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"جودة الـ checklist\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m7-l2-grid-consistency.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"خطة التحسين\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m7-l2-grid-consistency.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "4c7dd58d8659f942598c2b8c691af12b98496fe1f40df0d1fba5988783cf79df"
+}

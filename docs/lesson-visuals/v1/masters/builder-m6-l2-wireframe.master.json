@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m6-l2-wireframe",
+  "pathId": "builder",
+  "moduleId": "builder-m6",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Wireframe — Sketch Before You Build",
+    "ar-MSA": "الوايرفريم — الرسم قبل البناء",
+    "ar-Gulf": "الوايرفريم قبل البناء",
+    "ar-EG": "الرسمة الكروكي بتمنع اللخبطة"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m6-l2-wireframe.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l2-wireframe.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l2-wireframe.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m6-l2-wireframe.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Wireframe = sketch before building — it prevents confusion.",
+        "Why now? You have a User Flow — now turn it into boxes on paper.",
+        "What after the lesson? You will describe or sketch 3 screens — boxes and names, without colors."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ Wireframe (إطار سلكي / رسمة كروكية) = رسم قبل البناء — يمنع اللخبطة.",
+        "لماذا الآن؟ لديك User Flow — الآن حوّله إلى مربعات على ورقة.",
+        "ماذا بعد الدرس؟ ستصف أو ترسم ٣ شاشات — مربعات وأسماء، بدون ألوان."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ Wireframe (إطار سلكي / رسمة كروكية) = رسم قبل البناء — يمنع اللخبطة.",
+        "ليش الحين؟ عندك User Flow — الحين حوّله إلى مربعات على ورقة.",
+        "وش بعد الدرس؟ راح تصف أو ترسم ٣ شاشات — مربعات وأسماء، بدون ألوان."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ Wireframe = رسمة كروكي قبل البناء — بتمنع اللخبطة.",
+        "ليه دلوقتي؟ عندك User Flow — دلوقتي حوّله لبوكسات على ورقة.",
+        "هتعمل إيه بعد الدرس؟ هتوصف أو ترسم ٣ شاشات — بوكسات وأسامي، من غير ألوان."
+      ]
+    },
+    "coreIdea": {
+      "en": "Wireframe = boxes + names",
+      "ar-MSA": "Wireframe = مربعات + أسماء",
+      "ar-Gulf": "Wireframe = مربعات + أسماء",
+      "ar-EG": "Wireframe = مربعات + أسماء — من غير ألوان ولا صور."
+    },
+    "tension": {
+      "en": "You ask AI to build an interface — it produces something generic, not what you had in mind. You revise 5 times. Each time is a new guess. 3 hours wasted.",
+      "ar-MSA": "تطلب من AI أن يبني واجهة — فيخرج شيء عام ليس ما في ذهنك. تعدّل ٥ مرات. كل مرة تخمين جديد. ٣ ساعات ضاعت.",
+      "ar-Gulf": "تطلب من AI إنه يبني واجهة — فيطلع شيء عام مو مثل ما في بالك. تعدّل ٥ مرات. كل مرة تخمين جديد. ٣ ساعات راحت.",
+      "ar-EG": "بتطلب من AI يبنيلك واجهة — ويطلعلك حاجة عامة مش اللي في دماغك."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Without Wireframe",
+        "rightLabel": "With Wireframe",
+        "leftBody": "«Build an AI Interface and Attributes» — AI guesses. 5 attempts. Still not accurate",
+        "rightBody": "«Header + Text Box + 'Suggest' Button + 3 Attribute Cards» — AI builds what you described. Closer than the first time"
+      },
+      "ar-MSA": {
+        "leftLabel": "بدون Wireframe",
+        "rightLabel": "مع Wireframe",
+        "leftBody": "«ابنِ واجهة AI وصفات» — AI يخمّن. ٥ محاولات. ما زال غير مضبوط",
+        "rightBody": "«هيدر + مربع نص + زر «اقترح» + ٣ كروت وصفات» — AI يبني ما وصفته. أقرب من أول مرة"
+      },
+      "ar-Gulf": {
+        "leftLabel": "بدون Wireframe",
+        "rightLabel": "مع Wireframe",
+        "leftBody": "«ابنِ واجهة AI وصفات» — AI يخمّن. ٥ محاولات. ما زال مو مضبوط",
+        "rightBody": "«هيدر + مربع نص + زر «اقترح» + ٣ كروت وصفات» — AI يبني ما وصفته. أقرب من أول مرة"
+      },
+      "ar-EG": {
+        "leftLabel": "من غير Wireframe",
+        "leftBody": "«ابنيلي واجهة AI وصفات» — AI يخمّن. ٥ محاولات. لسه مش مظبوط.",
+        "rightLabel": "مع Wireframe",
+        "rightBody": "«هيدر + مربع نص + زرار «اقترح» + ٣ كروت وصفات» — AI يبني اللي وصفته. أقرب من أول مرة."
+      }
+    },
+    "missionIntro": {
+      "en": "Drawing or describing — not coding. Use 3 screens from the previous lesson. 10–15 minutes.",
+      "ar-MSA": "رسم أو وصف — ليس كودًا. استخدم ٣ شاشات من الدرس السابق. ١٠–١٥ دقيقة.",
+      "ar-Gulf": "رسم أو وصف — مو كود. استخدم ٣ شاشات من الدرس السابق. ١٠–١٥ دقيقة.",
+      "ar-EG": "المهمة دي رسم أو وصف — مش كود. استخدم الـ ٣ شاشات من الدرس اللي فات.\n\n١٠–١٥ دقيقة."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "**Boxes + Labels**. **'Header', 'Text Box', 'Button', '3 Cards'**. **This is the language that AI understands**.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l2-wireframe.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**Boxes + Labels**. **'Header', 'Text Box', 'Button', '3 Cards'**. **This is the language that AI understands**."
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l2-wireframe.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**مربعات + أسماء**. **«هيدر»، «مربع نص»، «زر»، «٣ كروت»**. **هذه اللغة التي يفهمها AI**."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l2-wireframe.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**مربعات + أسماء**. **«هيدر»، «مربع نص»، «زر»، «٣ كروت»**. **هذه اللغة اللي يفهمها AI**."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m6-l2-wireframe.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "مربعات + أسماء. «هيدر»، «مربع نص»، «زرار»، «٣ كروت». ده اللغة اللي AI يفهمها."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "builder-m6-l2-wireframe's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Without Wireframe / With Wireframe) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Without Wireframe\" vs \"With Wireframe\" for builder-m6-l2-wireframe.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Without Wireframe",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l2-wireframe.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "With Wireframe",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l2-wireframe.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Wireframe",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l2-wireframe.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "CTA (Call to Action)",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l2-wireframe.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "بدون Wireframe",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l2-wireframe.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مع Wireframe",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l2-wireframe.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Wireframe (إطار سلكي)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l2-wireframe.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "CTA (Call to Action — دعوة للفعل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l2-wireframe.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "بدون Wireframe",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l2-wireframe.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مع Wireframe",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l2-wireframe.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Wireframe (إطار سلكي)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l2-wireframe.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "CTA (Call to Action — دعوة للفعل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l2-wireframe.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "من غير Wireframe",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l2-wireframe.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مع Wireframe",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l2-wireframe.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Wireframe",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l2-wireframe.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "CTA (Call to Action)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l2-wireframe.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Wireframe — Sketch Before You Build: \"Without Wireframe\" versus \"With Wireframe\" — Wireframe = boxes + names",
+    "ar-MSA": "الوايرفريم — الرسم قبل البناء: \"بدون Wireframe\" في مقابل \"مع Wireframe\" — Wireframe = مربعات + أسماء",
+    "ar-Gulf": "الوايرفريم قبل البناء: \"بدون Wireframe\" في مقابل \"مع Wireframe\" — Wireframe = مربعات + أسماء",
+    "ar-EG": "الرسمة الكروكي بتمنع اللخبطة: \"من غير Wireframe\" في مقابل \"مع Wireframe\" — Wireframe = مربعات + أسماء — من غير ألوان ولا صور."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"3 Described Screens\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m6-l2-wireframe.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Boxes, No Design\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m6-l2-wireframe.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ شاشات موصوفة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l2-wireframe.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"مربعات لا تصميم\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l2-wireframe.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ شاشات موصوفة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l2-wireframe.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"مربعات لا تصميم\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l2-wireframe.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ شاشات موصوفة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m6-l2-wireframe.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"بوكسات مش تصميم\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m6-l2-wireframe.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "94e04ebd7d2339cfb932e3f0d71477181e49211feb4b1cf3fd5de8a2cfd9ab09"
+}

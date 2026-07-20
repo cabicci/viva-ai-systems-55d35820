@@ -1,0 +1,238 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "analyst-m6-l1-question-mistakes",
+  "pathId": "analyst",
+  "moduleId": "analyst-m6",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Question Mistakes",
+    "ar-MSA": "أخطاء صياغة السؤال",
+    "ar-Gulf": "أخطاء الأسئلة",
+    "ar-EG": "٣ أخطاء قاتلة في صياغة السؤال"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m6-l1-question-mistakes.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m6-l1-question-mistakes.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m6-l1-question-mistakes.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/analyst-m6-l1-question-mistakes.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What Will You Understand? A wrong question wastes time — it leads to a lot of data without a decision."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ السؤال الخاطئ يضيّع وقتًا — بيانات كثيرة بلا قرار."
+      ],
+      "ar-Gulf": [
+        "ماذا ستفهم؟ السؤال الخاطئ يضيع الوقت — بيانات كثيرة بلا قرار."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ السؤال الغلط يضيّع وقتك حتى لو البيانات صح — بيانات كتير ومفيش قرار.",
+        "ليه دلوقتي؟ بعد A/B testing، محتاج تتأكد إن الأسئلة اللي بتسألها تستاهل التحليل.",
+        "هتعمل إيه بعد الدرس؟ هتعيد صياغة ٣ أسئلة بايظة لأسئلة تقدر تاخد عليها قرار."
+      ]
+    },
+    "coreIdea": {
+      "en": "Leading Question",
+      "ar-MSA": "Leading Question (سؤال متحيّز)",
+      "ar-Gulf": "سؤال متحيز",
+      "ar-EG": "سؤال عام («إيه أحوال الشغل؟») → خصّصه: مين؟ إيه؟ إمتى؟ مقارنة بإيه؟"
+    },
+    "tension": {
+      "en": "General (\"How is the business?\") → Specify: Who? What? When? Leading Question (\"Why did the ad fail?\") → \"How many leads?\"",
+      "ar-MSA": "عام («ما أحوال العمل؟») → خصّص: مين؟ ماذا؟ متى؟ Leading Question (سؤال متحيّز) («لماذا فشل الإعلان؟») → «كم lead؟»",
+      "ar-Gulf": "عام («كيف تسير الأعمال؟») → خصص: من؟ ماذا؟ متى؟ سؤال متحيز («لماذا فشل الإعلان؟») → «كم عدد العملاء المحتملين؟»",
+      "ar-EG": "«إيه أحوال الشغل؟» — «ليه الإعلان فاشل؟» — «كام عميل سعيد؟» — كل أسبوع نفس الأسئلة."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Lesson Start",
+        "rightLabel": "3 Mistakes",
+        "leftBody": "A wrong question wastes time — it leads to a lot of data without a decision.",
+        "rightBody": "Leading Question"
+      },
+      "ar-MSA": {
+        "leftLabel": "بداية الدرس",
+        "rightLabel": "٣ أخطاء",
+        "leftBody": "السؤال الخاطئ يضيّع وقتًا — بيانات كثيرة بلا قرار.",
+        "rightBody": "Leading Question (سؤال متحيّز)"
+      },
+      "ar-Gulf": {
+        "leftLabel": "بداية الدرس",
+        "rightLabel": "٣ أخطاء",
+        "leftBody": "السؤال الخاطئ يضيع الوقت — بيانات كثيرة بلا قرار.",
+        "rightBody": "سؤال متحيز"
+      },
+      "ar-EG": {
+        "leftLabel": "سؤال بايظ",
+        "rightLabel": "سؤال مصحّح",
+        "leftBody": "«ليه العملاء بيسيبوا العربة؟» — افترضت سبب قبل ما تشوف البيانات. هتضيع وقت في تخمين.",
+        "rightBody": "«كام % ترك عربة آخر ٣٠ يوم؟ وفي أي خطوة بالظبط بيخرجوا؟» — رقم + مكان + قرار."
+      }
+    },
+    "missionIntro": {
+      "en": "| Diagnosis | 50% | | Formulating for Decision | 50% |",
+      "ar-MSA": "| تشخيص | 50% | | صياغة تخدم قرار | 50% |",
+      "ar-Gulf": "| التشخيص | 50% | | صياغة تخدم القرار | 50% |",
+      "ar-EG": "المهمة دي تصليح عملي — مش نظري. اختار ٣ أسئلة بايظة (من شغلك أو أمثلة الدرس). أعد صياغتهم — ممكن الـ AI يقترح — إنت تختار النهائي.\n\nكل سؤال: نوع الخطأ + السؤال الأصلي + السؤال المصحّح."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "\") → Specify: Who? What? When?",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m6-l1-question-mistakes.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "\") → Specify: Who? What? When?"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m6-l1-question-mistakes.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "- **Leading Question (سؤال متحيّز)** («لماذا فشل الإعلان؟») → «كم lead؟»"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m6-l1-question-mistakes.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "- **سؤال متحيز** («لماذا فشل الإعلان؟») → «كم عدد العملاء المحتملين؟»"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/analyst-m6-l1-question-mistakes.ts",
+          "field": "block.caption (diagram)",
+          "quote": "نوع الخطأ · السؤال الغلط · السؤال المصحّح — استخدم الجدول في المهمة لإعادة صياغة ٣ أسئلة."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "analyst-m6-l1-question-mistakes's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Lesson Start / 3 Mistakes) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 60 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Lesson Start\" vs \"3 Mistakes\" for analyst-m6-l1-question-mistakes.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Lesson Start",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m6-l1-question-mistakes.json",
+          "field": "sections[role=Tension].subtitle"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "3 Mistakes",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m6-l1-question-mistakes.json",
+          "field": "sections[role=Core idea].subtitle"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "بداية الدرس",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m6-l1-question-mistakes.json",
+          "field": "sections[role=Tension].subtitle"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "٣ أخطاء",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m6-l1-question-mistakes.json",
+          "field": "sections[role=Core idea].subtitle"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "بداية الدرس",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m6-l1-question-mistakes.json",
+          "field": "sections[role=Tension].subtitle"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "٣ أخطاء",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m6-l1-question-mistakes.json",
+          "field": "sections[role=Core idea].subtitle"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "سؤال بايظ",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m6-l1-question-mistakes.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "سؤال مصحّح",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m6-l1-question-mistakes.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Leading Question (سؤال متحيّز)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m6-l1-question-mistakes.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Signal (إشارة)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m6-l1-question-mistakes.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Question Mistakes: \"Lesson Start\" versus \"3 Mistakes\" — Leading Question",
+    "ar-MSA": "أخطاء صياغة السؤال: \"بداية الدرس\" في مقابل \"٣ أخطاء\" — Leading Question (سؤال متحيّز)",
+    "ar-Gulf": "أخطاء الأسئلة: \"بداية الدرس\" في مقابل \"٣ أخطاء\" — سؤال متحيز",
+    "ar-EG": "٣ أخطاء قاتلة في صياغة السؤال: \"سؤال بايظ\" في مقابل \"سؤال مصحّح\" — سؤال عام («إيه أحوال الشغل؟») → خصّصه: مين؟ إيه؟ إمتى؟ مقارنة بإيه؟"
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"تشخيص صحيح\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m6-l1-question-mistakes.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"صياغة تخدم قرار\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m6-l1-question-mistakes.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "12a35aa6bc005fe74843eabae671d90d7fbcb66e892c907ae6282af2ad0b8b8d"
+}

@@ -1,0 +1,241 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "automator-m5-l3-agents",
+  "pathId": "automator",
+  "moduleId": "automator-m5",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Agents",
+    "ar-MSA": "الوكلاء الذكيّون",
+    "ar-Gulf": "الوكلاء الذكيّين",
+    "ar-EG": "Workflow ثابت vs Agent يختار الخطوة"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/automator-m5-l3-agents.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l3-agents.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m5-l3-agents.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/automator-m5-l3-agents.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? An Agent chooses steps towards a goal — with boundaries and specific tools.",
+        "Why now? After LLM and RAG — a decision within the flow when the path is uncertain."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ Agent (وكيل) يختار خطوات نحو هدف — بحدود وأدوات محددة.",
+        "لماذا الآن؟ بعد LLM وRAG — قرار داخل السير عندما المسار غير ثابت."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ الوكيل يختار خطوات نحو هدف — بحدود وأدوات محددة.",
+        "ليش الحين؟ بعد LLM وRAG — قرار داخل السير لما المسار مو ثابت."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ الـ Agent يختار الخطوات نحو هدف — بس محتاج حدود وأدوات محددة عشان يفضل آمن.",
+        "ليه دلوقتي؟ بعد LLM وRAG، الخطوة الجاية لما المسار مش ثابت — والقرار لازم يتخذ جوه السير.",
+        "هتعمل إيه بعد الدرس؟ هتحدّد هدف agent آمن، الأدوات المسموحة، وحد واحد يمنعه يعدّي الخط."
+      ]
+    },
+    "coreIdea": {
+      "en": "Workflow:",
+      "ar-MSA": "Workflow:",
+      "ar-Gulf": "سير العمل:",
+      "ar-EG": "Workflow عادي: أ → ب → ج. كل مرة نفس المسار. ممتاز للشغل المتكرر المعروف."
+    },
+    "tension": {
+      "en": "Confirmation messages for all clients — even those who did not complain. Or a never-ending loop. An Agent without a Boundary = risk.",
+      "ar-MSA": "رسائل تأكيد لكل العملاء — حتى من لم يشتكِ. أو حلقة بلا نهاية. Agent بلا Boundary (حد) = مخاطرة.",
+      "ar-Gulf": "رسائل تأكيد لكل العملاء — حتى من لم يشتكِ. أو حلقة بلا نهاية. الوكيل بلا حدود = مخاطرة.",
+      "ar-EG": "شغّلت «مساعد ذكي» يتعامل مع شكاوى العملاء. يوم واحد بعت رسائل تأكيد لكل العملاء — حتى اللي ماشتكاش."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Automated responses to unrequested actions",
+        "rightLabel": "Fixed Workflow vs Agent",
+        "leftBody": "Fixed Workflow with many conditions for every possibility.",
+        "rightBody": "An Agent with a clear goal and specific tools, with a limit that prevents sending without approval."
+      },
+      "ar-MSA": {
+        "leftLabel": "الرد الآلي فعل ما لم يُطلب",
+        "rightLabel": "Workflow ثابت vs Agent",
+        "leftBody": "سير عمل ثابت بشروط كثيرة لكل احتمال.",
+        "rightBody": "وكيل ذكي بهدف واضح وأدوات محددة، مع حد يمنع الإرسال دون موافقة."
+      },
+      "ar-Gulf": {
+        "leftLabel": "الرد الآلي فعل ما لم يُطلب",
+        "rightLabel": "سير العمل الثابت مقابل الوكيل",
+        "leftBody": "سير عمل ثابت بشروط كثيرة لكل احتمال.",
+        "rightBody": "الوكيل بهدف واضح وأدوات محددة وحد يمنع الإرسال بدون موافقة."
+      },
+      "ar-EG": {
+        "leftLabel": "بدون حدود",
+        "leftBody": "«حل مشكلة العميل» + كل الأدوات متاحة. ممكن يبعت رسائل لكل الناس، يدخل حلقة، أو ينفّذ إجراء غلط.",
+        "rightLabel": "بحدود وأدوات",
+        "rightBody": "«صنّف الشكوى واقترح حل أو حوّل لموظف» + أدوات: قراءة CRM، بحث FAQ، إرسال مسودة رد. أي إرسال فعلي يحتاج موافقة."
+      }
+    },
+    "missionIntro": {
+      "en": "| Goal and Tools | 60% | | Limit and Transformation | 40% |",
+      "ar-MSA": "| هدف وأدوات | 60% | | حد وتحويل | 40% |",
+      "ar-Gulf": "| هدف وأدوات | 60% | | حد وتحويل | 40% |",
+      "ar-EG": "المهمة تصميم حماية — مش بناء agent. اختار شغل عندك فيه خطوات مش ثابتة وحدّد إزاي agent آمن يتعامل معاه.\n\nمش مطلوب كود — مطلوب هدف + أدوات مسموحة + حد واحد واضح."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Workflow:",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m5-l3-agents.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Workflow:"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l3-agents.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Workflow:"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m5-l3-agents.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "سير العمل:"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/automator-m5-l3-agents.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "الثلاثية: هدف واحد واضح، أدوات قليلة مسموحة، حد يوقفه لو عدّى. من غيرها الـ Agent خطر."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "automator-m5-l3-agents's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Automated responses to unrequested actions / Fixed Workflow vs Agent) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Automated responses to unrequested actions\" vs \"Fixed Workflow vs Agent\" for automator-m5-l3-agents.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Automated responses to unrequested actions",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m5-l3-agents.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Fixed Workflow vs Agent",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m5-l3-agents.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "الرد الآلي فعل ما لم يُطلب",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l3-agents.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Workflow ثابت vs Agent",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l3-agents.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "الرد الآلي فعل ما لم يُطلب",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m5-l3-agents.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "سير العمل الثابت مقابل الوكيل",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m5-l3-agents.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "بدون حدود",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m5-l3-agents.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "بحدود وأدوات",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m5-l3-agents.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Agent (وكيل)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m5-l3-agents.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Boundary (حد)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m5-l3-agents.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Agents: \"Automated responses to unrequested actions\" versus \"Fixed Workflow vs Agent\" — Workflow:",
+    "ar-MSA": "الوكلاء الذكيّون: \"الرد الآلي فعل ما لم يُطلب\" في مقابل \"Workflow ثابت vs Agent\" — Workflow:",
+    "ar-Gulf": "الوكلاء الذكيّين: \"الرد الآلي فعل ما لم يُطلب\" في مقابل \"سير العمل الثابت مقابل الوكيل\" — سير العمل:",
+    "ar-EG": "Workflow ثابت vs Agent يختار الخطوة: \"بدون حدود\" في مقابل \"بحدود وأدوات\" — Workflow عادي: أ → ب → ج. كل مرة نفس المسار. ممتاز للشغل المتكرر المعروف."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"هدف وأدوات\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m5-l3-agents.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"حد وتحويل\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m5-l3-agents.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "e22d20b01d4379805d314acfc581a48892e1ef22a21c930620344c6d83060c7e"
+}

@@ -1,0 +1,319 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://masaarat.local/schemas/lesson-visual-master/v1",
+  "title": "LessonVisualMaster",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "lessonId",
+    "pathId",
+    "moduleId",
+    "sourceSha",
+    "titles",
+    "sourcePackages",
+    "contentBrief",
+    "method",
+    "methodRationale",
+    "compositionPattern",
+    "labelPacks",
+    "altTexts",
+    "factualClaims",
+    "checksum"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "lesson-visual-master/v1"
+    },
+    "lessonId": {
+      "type": "string",
+      "minLength": 8,
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)+$"
+    },
+    "pathId": {
+      "type": "string",
+      "enum": ["intro", "builder", "creator", "business", "automator", "analyst"]
+    },
+    "moduleId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceSha": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "titles": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ar-EG", "ar-MSA", "ar-Gulf", "en"],
+      "properties": {
+        "ar-EG": { "type": "string", "minLength": 2 },
+        "ar-MSA": { "type": "string", "minLength": 2 },
+        "ar-Gulf": { "type": "string", "minLength": 2 },
+        "en": { "type": "string", "minLength": 2 }
+      }
+    },
+    "sourcePackages": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ar-EG", "ar-MSA", "ar-Gulf", "en"],
+      "properties": {
+        "ar-EG": { "$ref": "#/$defs/sourcePackage" },
+        "ar-MSA": { "$ref": "#/$defs/sourcePackage" },
+        "ar-Gulf": { "$ref": "#/$defs/sourcePackage" },
+        "en": { "$ref": "#/$defs/sourcePackage" }
+      }
+    },
+    "contentBrief": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "orientation",
+        "coreIdea",
+        "tension",
+        "comparison",
+        "missionIntro",
+        "visualIntent"
+      ],
+      "properties": {
+        "orientation": { "$ref": "#/$defs/localeStringArrayMap" },
+        "coreIdea": { "$ref": "#/$defs/localeStringMap" },
+        "tension": { "$ref": "#/$defs/localeStringMap" },
+        "comparison": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["ar-EG", "ar-MSA", "ar-Gulf", "en"],
+          "properties": {
+            "ar-EG": { "$ref": "#/$defs/comparisonPack" },
+            "ar-MSA": { "$ref": "#/$defs/comparisonPack" },
+            "ar-Gulf": { "$ref": "#/$defs/comparisonPack" },
+            "en": { "$ref": "#/$defs/comparisonPack" }
+          }
+        },
+        "missionIntro": { "$ref": "#/$defs/localeStringMap" },
+        "visualIntent": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "summary", "packageQuotes"],
+          "properties": {
+            "kind": {
+              "type": "string",
+              "enum": [
+                "screenshot",
+                "diagram",
+                "comparison",
+                "process",
+                "system",
+                "decision",
+                "data-relationship",
+                "concept-scene"
+              ]
+            },
+            "summary": { "type": "string", "minLength": 8 },
+            "packageQuotes": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["ar-EG", "ar-MSA", "ar-Gulf", "en"],
+              "properties": {
+                "ar-EG": { "$ref": "#/$defs/evidenceRef" },
+                "ar-MSA": { "$ref": "#/$defs/evidenceRef" },
+                "ar-Gulf": { "$ref": "#/$defs/evidenceRef" },
+                "en": { "$ref": "#/$defs/evidenceRef" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "method": {
+      "type": "integer",
+      "enum": [1, 2, 3, 4]
+    },
+    "methodRationale": {
+      "type": "string",
+      "minLength": 12
+    },
+    "compositionPattern": {
+      "type": "string",
+      "minLength": 4
+    },
+    "duplicationJustification": {
+      "type": ["string", "null"]
+    },
+    "labelPacks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ar-EG", "ar-MSA", "ar-Gulf", "en"],
+      "properties": {
+        "ar-EG": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "#/$defs/labelEntry" }
+        },
+        "ar-MSA": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "#/$defs/labelEntry" }
+        },
+        "ar-Gulf": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "#/$defs/labelEntry" }
+        },
+        "en": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "#/$defs/labelEntry" }
+        }
+      }
+    },
+    "altTexts": { "$ref": "#/$defs/localeStringMap" },
+    "aiPromptContract": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["providerClass", "paidAllowed", "textFree", "promptRules"],
+          "properties": {
+            "providerClass": { "type": "string", "minLength": 3 },
+            "paidAllowed": { "const": false },
+            "textFree": { "const": true },
+            "promptRules": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "string", "minLength": 4 }
+            },
+            "costCeilingUsd": { "type": "number", "minimum": 0 }
+          }
+        }
+      ]
+    },
+    "screenshotSpec": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["url", "rightsNote", "failOnLoginRedirect", "allowlisted"],
+          "properties": {
+            "url": { "type": "string", "format": "uri" },
+            "rightsNote": { "type": "string", "minLength": 8 },
+            "failOnLoginRedirect": { "const": true },
+            "allowlisted": { "const": true }
+          }
+        }
+      ]
+    },
+    "factualClaims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["claim", "locale", "path", "field", "quote"],
+        "properties": {
+          "claim": { "type": "string", "minLength": 1 },
+          "locale": {
+            "type": "string",
+            "enum": ["ar-EG", "ar-MSA", "ar-Gulf", "en"]
+          },
+          "path": { "type": "string", "minLength": 3 },
+          "field": { "type": "string", "minLength": 1 },
+          "quote": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "checksum": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  },
+  "$defs": {
+    "sourcePackage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "kind"],
+      "properties": {
+        "path": { "type": "string", "minLength": 8 },
+        "kind": { "type": "string", "enum": ["ts-blocks", "json"] }
+      }
+    },
+    "localeStringMap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ar-EG", "ar-MSA", "ar-Gulf", "en"],
+      "properties": {
+        "ar-EG": { "type": "string", "minLength": 2 },
+        "ar-MSA": { "type": "string", "minLength": 2 },
+        "ar-Gulf": { "type": "string", "minLength": 2 },
+        "en": { "type": "string", "minLength": 2 }
+      }
+    },
+    "localeStringArrayMap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ar-EG", "ar-MSA", "ar-Gulf", "en"],
+      "properties": {
+        "ar-EG": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 2 }
+        },
+        "ar-MSA": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 2 }
+        },
+        "ar-Gulf": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 2 }
+        },
+        "en": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 2 }
+        }
+      }
+    },
+    "comparisonPack": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["leftLabel", "rightLabel", "leftBody", "rightBody"],
+      "properties": {
+        "leftLabel": { "type": "string", "minLength": 2 },
+        "rightLabel": { "type": "string", "minLength": 2 },
+        "leftBody": { "type": "string", "minLength": 2 },
+        "rightBody": { "type": "string", "minLength": 2 }
+      }
+    },
+    "evidenceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "field", "quote"],
+      "properties": {
+        "path": { "type": "string", "minLength": 3 },
+        "field": { "type": "string", "minLength": 1 },
+        "quote": { "type": "string", "minLength": 2 }
+      }
+    },
+    "labelEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "text", "source"],
+      "properties": {
+        "id": { "type": "string", "minLength": 2 },
+        "text": { "type": "string", "minLength": 2 },
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "field"],
+          "properties": {
+            "path": { "type": "string", "minLength": 3 },
+            "field": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    }
+  }
+}

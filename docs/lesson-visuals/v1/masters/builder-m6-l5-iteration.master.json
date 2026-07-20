@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m6-l5-iteration",
+  "pathId": "builder",
+  "moduleId": "builder-m6",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Iteration Loop",
+    "ar-MSA": "حلقة التحسين",
+    "ar-Gulf": "حلقة التحسين",
+    "ar-EG": "تعديل واحد كل مرة — لفة التحسين"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m6-l5-iteration.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l5-iteration.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l5-iteration.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m6-l5-iteration.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Improvement = one edit at a time — not 'change everything' or 'wipe and start over'.",
+        "Why now? After planning the interface, the first version of AI will not be perfect — this lesson teaches you how to fix it safely.",
+        "What after the lesson? You will write a request for one surgical edit — specific and guaranteed results."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ التحسين = تعديل واحد كل مرة — ليس «غيّر كل شيء» ولا «امسح وابدأ من الأول».",
+        "لماذا الآن؟ بعد تخطيط الواجهة، أول نسخة من AI لن تكون مضبوطة — هذا الدرس يعلّمك الإصلاح بأمان.",
+        "ماذا بعد الدرس؟ ستكتب طلب تعديل جراحي واحد — محدد ومضمون النتيجة."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ التحسين = تعديل واحد في كل مرة — مو «غيّر كل شيء» ولا «امسح وابدأ من جديد».",
+        "ليش الحين؟ بعد تخطيط الواجهة، أول نسخة من AI مو مضبوطة — هذا الدرس يعلمك كيف تصلح بأمان.",
+        "وش بعد الدرس؟ راح تكتب طلب تعديل جراحي واحد — محدد ومضمون النتيجة."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ التحسين = تعديل واحد كل مرة — مش «غيّر كل حاجة» ولا «امسح وابدأ من الأول».",
+        "ليه دلوقتي؟ بعد ما خطّطت الواجهة، أول نسخة من الـ AI مش هتطلع مظبوطة — والدرس ده يعلّمك تصلّحها بأمان.",
+        "هتعمل إيه بعد الدرس؟ هتكتب طلب تعديل جراحي واحد — محدد ومضمون النتيجة."
+      ]
+    },
+    "coreIdea": {
+      "en": "Iteration Loop = 4 steps",
+      "ar-MSA": "Iteration Loop (حلقة التحسين) = ٤ خطوات",
+      "ar-Gulf": "Iteration Loop (حلقة التحسين) = ٤ خطوات",
+      "ar-EG": "Iteration Loop = ٤ خطوات: اطلب → شوف النتيجة → راجع → عدّل. كل لفة بتقربك للشكل المطلوب."
+    },
+    "tension": {
+      "en": "AI built the interface — the colors don't match and the button is misplaced. First reaction: 'wipe everything'. But this is the slowest way. Every professional interface takes 4–7 improvement loops — not just one version",
+      "ar-MSA": "AI بنى واجهة — الألوان لا تناسب والزر ليس في مكانه. أول رد: «أمسح كل شيء». لكن هذا أبطأ طريق. كل واجهة محترفة تأخذ ٤–٧ لفات تحسين — ليس نسخة واحدة.",
+      "ar-Gulf": "AI بنى واجهة — الألوان مو مناسبة والزر مو في مكانه. أول رد: «أمسح كل شيء». لكن هذا أبطأ طريق. كل واجهة محترفة تحتاج ٤–٧ لفات تحسين — مو نسخة واحدة.",
+      "ar-EG": "الـ AI بنالك واجهة، بس الألوان مش ماشية والزرار مش في مكانه. أول رد فعل: «همسح كل ده وأبدأ من الأول»."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Wrong — 'The interface looks bad'",
+        "rightLabel": "Right — One specific edit",
+        "leftBody": "AI does not understand 'bad'. It guesses and changes randomly — it may break what was working",
+        "rightBody": "'On the chat page, make the color of the"
+      },
+      "ar-MSA": {
+        "leftLabel": "خطأ — «الواجهة شكلها سيء»",
+        "rightLabel": "صح — تعديل واحد محدد",
+        "leftBody": "AI لا يفهم «سيء». يخمّن ويغيّر عشوائيًا — قد يفسد ما كان يعمل",
+        "rightBody": "«في صفحة الشات، خلي لون زر «ابعت» برتقالي #FF6B35 والكلام أبيض. لا تغيّر أي شيء آخر.» تعديل محدد = نتيجة مضمونة"
+      },
+      "ar-Gulf": {
+        "leftLabel": "خطأ — «الواجهة شكلها مو زين»",
+        "rightLabel": "صح — تعديل واحد محدد",
+        "leftBody": "AI مو فاهم «مو زين». يخمّن ويغيّر عشوائيًا — قد يفسد شيء كان يعمل",
+        "rightBody": "«في صفحة الشات، خلي لون زر «ابعت» برتقالي #FF6B35 والكلام أبيض. لا تغيّر أي شيء ثاني.» تعديل محدد = نتيجة مضمونة"
+      },
+      "ar-EG": {
+        "leftLabel": "غلط — «الواجهة شكلها وحش»",
+        "leftBody": "الـ AI مش فاهم يعني إيه «وحش». هيخمن ويغيّر حاجات عشوائية — وممكن يبوّظ حاجة شغالة. بعد ساعة الواجهة أسوأ من الأول.",
+        "rightLabel": "صح — تعديل واحد محدد",
+        "rightBody": "«في صفحة الشات، خلي لون زرار «ابعت» برتقالي #FF6B35 والكلام جواه أبيض. متغيّرش أي حاجة تانية.» تعديل محدد = نتيجة مضمونة."
+      }
+    },
+    "missionIntro": {
+      "en": "10 minutes is enough.",
+      "ar-MSA": "١٠ دقائق كافية.",
+      "ar-Gulf": "١٠ دقائق كافية.",
+      "ar-EG": "المهارة الحقيقية: تصلّح الغلطات الصغيرة من غير ما تبوّظ اللي شغال.\n\n١٠ دقايق كفاية."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "**4 circular steps**: **Request → See → Review → Edit**. **Each loop = only one edit**.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l5-iteration.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**4 circular steps**: **Request → See → Review → Edit**. **Each loop = only one edit**."
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l5-iteration.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**٤ خطوات دائرية**: **اطلب → شاهد → راجع → عدّل**. **كل لفة = تعديل واحد فقط**."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l5-iteration.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**٤ خطوات دائرية**: **اطلب → شوف → راجع → عدّل**. **كل لفة = تعديل واحد فقط**."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m6-l5-iteration.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "اطلب → شوف النتيجة → راجع → عدّل. متستعجلش — أي واجهة محترفة بتاخد لفات. كل لفة = تعديل واحد بس."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "builder-m6-l5-iteration's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Wrong — 'The interface looks bad' / Right — One specific edit) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Wrong — 'The interface looks bad'\" vs \"Right — One specific edit\" for builder-m6-l5-iteration.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Wrong — 'The interface looks bad'",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l5-iteration.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Right — One specific edit",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l5-iteration.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Iteration",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l5-iteration.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Regression",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l5-iteration.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "خطأ — «الواجهة شكلها سيء»",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l5-iteration.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "صح — تعديل واحد محدد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l5-iteration.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Iteration (لفة التحسين)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l5-iteration.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Regression (تراجع)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l5-iteration.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "خطأ — «الواجهة شكلها مو زين»",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l5-iteration.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "صح — تعديل واحد محدد",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l5-iteration.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Iteration (لفة التحسين)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l5-iteration.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Regression (تراجع)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l5-iteration.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "غلط — «الواجهة شكلها وحش»",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l5-iteration.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "صح — تعديل واحد محدد",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l5-iteration.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Iteration (لفة التحسين)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l5-iteration.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Regression (تراجع)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l5-iteration.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Iteration Loop: \"Wrong — 'The interface looks bad'\" versus \"Right — One specific edit\" — Iteration Loop = 4 steps",
+    "ar-MSA": "حلقة التحسين: \"خطأ — «الواجهة شكلها سيء»\" في مقابل \"صح — تعديل واحد محدد\" — Iteration Loop (حلقة التحسين) = ٤ خطوات",
+    "ar-Gulf": "حلقة التحسين: \"خطأ — «الواجهة شكلها مو زين»\" في مقابل \"صح — تعديل واحد محدد\" — Iteration Loop (حلقة التحسين) = ٤ خطوات",
+    "ar-EG": "تعديل واحد كل مرة — لفة التحسين: \"غلط — «الواجهة شكلها وحش»\" في مقابل \"صح — تعديل واحد محدد\" — Iteration Loop = ٤ خطوات: اطلب → شوف النتيجة → راجع → عدّل. كل لفة بتقربك للشكل المطلوب."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"Surgical Edit\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m6-l5-iteration.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"Protection from Regression\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m6-l5-iteration.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"تعديل جراحي\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l5-iteration.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"حماية من Regression\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l5-iteration.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"تعديل جراحي\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l5-iteration.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"حماية من Regression\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l5-iteration.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"تعديل جراحي\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m6-l5-iteration.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"حماية من Regression\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m6-l5-iteration.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 30"
+    }
+  ],
+  "checksum": "64cf3edc14314700a08eb3cd4e29c8091b6c4ae93db8a16655244a3ac005047c"
+}

@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "creator-m6-l1-platforms",
+  "pathId": "creator",
+  "moduleId": "creator-m6-distribute",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Choosing Platforms",
+    "ar-MSA": "اختيار المنصات",
+    "ar-Gulf": "اختيار المنصات",
+    "ar-EG": "منصة رئيسية + صدى بسيط"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/creator-m6-l1-platforms.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l1-platforms.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l1-platforms.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/creator-m6-l1-platforms.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? You don’t need to be everywhere. You need to be clear and strong in one place where people listen to you.",
+        "Choosing the right platform from the start saves months of random experimentation — and makes your effort show faster."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ ليس مطلوبًا أن تكون موجودًا في كل مكان. المطلوب أن تكون واضحًا وقويًا في مكان واحد يستمع إليك فيه الناس.",
+        "اختيار المنصة الصحيح من البداية يوفر شهورًا من التجربة العشوائية — ويجعل مجهودك يظهر أسرع."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ مو لازم تكون موجود في كل مكان. المطلوب تكون واضح وقوي في مكان واحد يستمع لك فيه الناس.",
+        "اختيار المنصة الصحيحة من البداية يوفر لك شهور من التجارب العشوائية — ويخلي مجهودك يظهر أسرع."
+      ],
+      "ar-EG": [
+        "مش المطلوب تبقى موجود في كل حتة. المطلوب تكون واضح وقوي في حتة واحدة الناس بتسمعك فيها.",
+        "اختيار المنصة الصح من الأول بيوفر شهور من التجربة العشوائية، وبيخلي مجهودك يبان أسرع."
+      ]
+    },
+    "coreIdea": {
+      "en": "Choose one Primary Platform",
+      "ar-MSA": "اختر Primary Platform (منصة رئيسية) واحدة",
+      "ar-Gulf": "اختر منصة رئيسية واحدة",
+      "ar-EG": "اختار منصة رئيسية واحدة بناء على 3 حاجات: جمهورك موجود فين، فورماتك المفضل إيه، وقدرتك على الالتزام أسبوعيا."
+    },
+    "tension": {
+      "en": "Being scattered across many platforms breaks continuity. When you post on 4 platforms with the same energy — often no platform gets its due. Each platform has a different format and audience behavior.",
+      "ar-MSA": "التشتت بين منصات كثيرة يكسر الاستمرارية. عندما تنشر في ٤ منصات بنفس الطاقة — غالبًا لا منصة تأخذ حقها. كل منصة لها Format (صيغة) وسلوك جمهور مختلف.",
+      "ar-Gulf": "التشتت بين منصات كثيرة يكسر الاستمرارية. لما تنشر في ٤ منصات بنفس الطاقة — غالبًا ما تأخذ أي منصة حقها. كل منصة لها صيغة وسلوك جمهور مختلف.",
+      "ar-EG": "لما تنشر في 4 منصات بنفس الطاقة، غالبا ولا منصة فيهم بتاخد حقها. كل منصة لها فورمات وسلوك جمهور مختلف."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Scattered Choice",
+        "rightLabel": "Focused Choice",
+        "leftBody": "Posting every day on a different platform — high fatigue and slow learning with no clear identity",
+        "rightBody": "Focusing on one main platform — a consistent publishing system with clearer data and steadier growth"
+      },
+      "ar-MSA": {
+        "leftLabel": "اختيار مشتت",
+        "rightLabel": "اختيار مركّز",
+        "leftBody": "أنزل كل يوم في منصة مختلفة — تعب عالٍ وتعلم بطيء ولا هوية واضحة",
+        "rightBody": "أركز على منصة واحدة أساسية — نظام نشر ثابت وبيانات أوضح ونمو أهدأ لكن مستمر"
+      },
+      "ar-Gulf": {
+        "leftLabel": "اختيار مشتت",
+        "rightLabel": "اختيار مركّز",
+        "leftBody": "أنزل كل يوم في منصة مختلفة — تعب عالٍ وتعلم بطيء ولا هوية واضحة",
+        "rightBody": "أركز على منصة واحدة أساسية — نظام نشر ثابت وبيانات أوضح ونمو أهدأ لكن مستمر"
+      },
+      "ar-EG": {
+        "leftLabel": "اختيار مشتت",
+        "leftBody": "أنزل كل يوم في منصة مختلفة وأجرب كله مع بعض. النتيجة: تعب عالي، تعلم بطيء، ومفيش هوية واضحة.",
+        "rightLabel": "اختيار مركز",
+        "rightBody": "أركز على منصة واحدة أساسية لفترة واضحة، وأبني عليها نظام نشر ثابت. النتيجة: بيانات أوضح ونمو أهدى لكن مستمر."
+      }
+    },
+    "missionIntro": {
+      "en": "One clear decision: one main platform now — with a logical reason for your commitment.",
+      "ar-MSA": "قرار واحد واضح: منصة رئيسية واحدة الآن — مع سبب منطقي يجعلك تلتزم.",
+      "ar-Gulf": "قرار واحد واضح: منصة رئيسية واحدة الآن — مع سبب منطقي يجعلك تلتزم.",
+      "ar-EG": "المطلوب قرار واحد واضح: منصة رئيسية واحدة الآن، مع سبب منطقي يخليك تلتزم."
+    },
+    "visualIntent": {
+      "kind": "system",
+      "summary": "Visual diagram — **a map of platforms based on attention type**. **Identify where your audience makes decisions faster:** **quick video**, **longer explanation*",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m6-l1-platforms.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "Visual diagram — **a map of platforms based on attention type**. **Identify where your audience makes decisions faster:** **quick video**, *"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l1-platforms.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "اختر Primary Platform (منصة رئيسية) واحدة"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l1-platforms.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "اختر منصة رئيسية واحدة"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/creator-m6-l1-platforms.ts",
+          "field": "block.caption (diagram)",
+          "quote": "بص على الخريطة وحدد فين جمهورك بياخد قراره أسرع: فيديو سريع، شرح أطول، ولا محتوى نصي."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "creator-m6-l1-platforms's package marks a Diagram intent (platforms-grid); the underlying relationship reads as system, so a deterministic SVG panel keeps the real Scattered Choice/Focused Choice labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "system-map-panel",
+  "duplicationJustification": "Shares the \"system-map-panel\" layout template with 3 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Scattered Choice\" vs \"Focused Choice\" for creator-m6-l1-platforms.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Scattered Choice",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m6-l1-platforms.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Focused Choice",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m6-l1-platforms.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Primary Platform",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m6-l1-platforms.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Echo Platform",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m6-l1-platforms.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "اختيار مشتت",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l1-platforms.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "اختيار مركّز",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l1-platforms.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Primary Platform (منصة رئيسية)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l1-platforms.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Echo Platform (منصة صدى)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l1-platforms.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "اختيار مشتت",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l1-platforms.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "اختيار مركّز",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l1-platforms.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "منصة رئيسية",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l1-platforms.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "منصة صدى",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l1-platforms.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "اختيار مشتت",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m6-l1-platforms.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "اختيار مركز",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m6-l1-platforms.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Primary Platform",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m6-l1-platforms.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Echo Platform",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m6-l1-platforms.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Choosing Platforms: \"Scattered Choice\" versus \"Focused Choice\" — Choose one Primary Platform",
+    "ar-MSA": "اختيار المنصات: \"اختيار مشتت\" في مقابل \"اختيار مركّز\" — اختر Primary Platform (منصة رئيسية) واحدة",
+    "ar-Gulf": "اختيار المنصات: \"اختيار مشتت\" في مقابل \"اختيار مركّز\" — اختر منصة رئيسية واحدة",
+    "ar-EG": "منصة رئيسية + صدى بسيط: \"اختيار مشتت\" في مقابل \"اختيار مركز\" — اختار منصة رئيسية واحدة بناء على 3 حاجات: جمهورك موجود فين، فورماتك المفضل إيه، وقدرتك على الالتزام أسبوعيا."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Clarity of Decision\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m6-l1-platforms.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Logic of Choice\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m6-l1-platforms.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح القرار\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l1-platforms.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"منطق الاختيار\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l1-platforms.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح القرار\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l1-platforms.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"منطق الاختيار\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l1-platforms.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح القرار\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m6-l1-platforms.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"منطق الاختيار\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m6-l1-platforms.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "1f0244aeef08afbeddcf1275bdf4b2de99896fa125b6ac494ec56de73d5fdac5"
+}

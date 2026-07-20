@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m6-l6-debugging",
+  "pathId": "builder",
+  "moduleId": "builder-m6",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Debugging — When Things Break",
+    "ar-MSA": "تصحيح الأعطال",
+    "ar-Gulf": "تصحيح الأخطاء",
+    "ar-EG": "اعرض العرض → اعزل السبب → اطلب الإصلاح"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m6-l6-debugging.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l6-debugging.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l6-debugging.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m6-l6-debugging.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? When the app fails: Identify the symptom → isolate the cause (last change) → then request a fix.",
+        "Why now? Any app can fail — this is normal. The difference is that you have a simple playbook without coding.",
+        "What after the lesson? You will write a bug report: the page, expected behavior, actual behavior, last change."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ عندما يخطئ التطبيق: صفّي العرض (Symptom) → اعزل السبب (آخر تعديل) → بعدها اطلب الإصلاح.",
+        "لماذا الآن؟ أي تطبيق يخطئ — هذا طبيعي. الفرق أن لديك playbook (دليل) بسيطًا بلا برمجة.",
+        "ماذا بعد الدرس؟ ستكتب تقرير bug: الصفحة، المتوقع، الفعلي، آخر تعديل."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ عندما يخطئ التطبيق: صفّي الأعراض (Symptom) → اعزل السبب (آخر تعديل) → بعدها اطلب الإصلاح.",
+        "ليش الحين؟ أي تطبيق يخطئ — هذا طبيعي. الفرق إن عندك playbook (دليل) بسيط بلا برمجة.",
+        "وش بعد الدرس؟ راح تكتب تقرير bug: الصفحة، المتوقع، الفعلي، آخر تعديل."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ لما التطبيق يغلط: صفّي العرض (Symptom) → اعزل السبب (آخر تعديل) → بعدين اطلب الإصلاح.",
+        "ليه دلوقتي؟ أي تطبيق بيغلط — ده طبيعي. الفرق إنك عندك playbook بسيط من غير ما تعرف برمجة.",
+        "هتعمل إيه بعد الدرس؟ هتكتب تقرير bug فيه: الصفحة، المتوقع، الفعلي، وآخر تعديل."
+      ]
+    },
+    "coreIdea": {
+      "en": "Step 1 — Symptom",
+      "ar-MSA": "الخطوة ١ — Symptom (العرض)",
+      "ar-Gulf": "الخطوة ١ — Symptom (الأعراض)",
+      "ar-EG": "الخطوة ١ — Symptom: «لما العميل يدوس Send في صفحة الشات، الشاشة بتلف ومفيش رد.»"
+    },
+    "tension": {
+      "en": "You click Send and the screen spins with no response. First response: 'The app is down' — but this doesn't help anyone fix it. The biggest companies have apps that fail every day. The difference: they have a clear method",
+      "ar-MSA": "تضغط Send والشاشة تدور بلا رد. أول رد: «التطبيق معطّل» — لكن هذا لا يساعد أحدًا على الإصلاح. أكبر الشركات تطبيقاتها تخطئ كل يوم. الفرق: لديهم طريقة واضحة.",
+      "ar-Gulf": "تضغط Send والشاشة تدور بلا رد. أول رد: «التطبيق معطّل» — لكن هذا ما يساعد أحد على الإصلاح. أكبر الشركات تطبيقاتها تخطئ كل يوم. الفرق: عندهم طريقة واضحة.",
+      "ar-EG": "بتضغط Send والشاشة بتلف ومفيش رد. أول رد فعل: «التطبيق بايظ» — بس الكلام ده مش بيساعد حد يصلّح."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Error — 'The app is down'",
+        "rightLabel": "Correct — 3 precise pieces of information",
+        "leftBody": "Responds with 10 general suggestions and goes in circles",
+        "rightBody": "'When I click Send, the screen spins (actual). The AI is expected to respond (expected). Last change: I added a new button (possible cause).' In seconds, it knows where the problem is"
+      },
+      "ar-MSA": {
+        "leftLabel": "خطأ — «التطبيق معطّل»",
+        "rightLabel": "صح — ٣ معلومات بالضبط",
+        "leftBody": "يرد بـ ١٠ اقتراحات عامة وتدور في حلقة",
+        "rightBody": "«عند Send الشاشة تدور (فعلي). المفروض AI يرد (متوقع). آخر تعديل: أضفت زرًا جديدًا (سبب محتمل).» في ثوانٍ يعرف أين المشكلة"
+      },
+      "ar-Gulf": {
+        "leftLabel": "خطأ — «التطبيق معطّل»",
+        "rightLabel": "صح — ٣ معلومات بالضبط",
+        "leftBody": "يرد بـ ١٠ اقتراحات عامة وتدور في حلقة",
+        "rightBody": "«عند Send الشاشة تدور (فعلي). المفروض AI يرد (متوقع). آخر تعديل: أضفت زرًا جديدًا (سبب محتمل).» في ثوانٍ يعرف وين المشكلة"
+      },
+      "ar-EG": {
+        "leftLabel": "غلط — «التطبيق بايظ»",
+        "leftBody": "هيرد بـ ١٠ اقتراحات عامة وانت هتلف حوالين نفسك. مفيش حد يقدر يساعد على وصف ناقص.",
+        "rightLabel": "صح — ٣ معلومات بالظبط",
+        "rightBody": "«لما أدوس Send الشاشة بتلف (فعلي). المفروض الـ AI يرد (متوقع). آخر تعديل: ضفت زرار جديد (سبب محتمل).» في ثواني هيعرف المشكلة فين."
+      }
+    },
+    "missionIntro": {
+      "en": "Imagine your app has crashed. 10 minutes.",
+      "ar-MSA": "تخيّل أن تطبيقك تعطّل. ١٠ دقائق.",
+      "ar-Gulf": "تخيّل إن تطبيقك تعطّل. ١٠ دقائق.",
+      "ar-EG": "تخيّل إن تطبيقك باز — أي حاجة. اكتب تقرير bug جاهز تبعته لمساعد Lovable.\n\n١٠ دقايق كفاية."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "**3 steps**: **Identify the symptom → go back to the last change → send 3 pieces of information**. **You don't need to understand code — you need a description*",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l6-debugging.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**3 steps**: **Identify the symptom → go back to the last change → send 3 pieces of information**. **You don't need to understand code — you"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l6-debugging.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**٣ خطوات**: **صفّي العرض → ارجع لآخر تعديل → أرسل ٣ معلومات**. **لا تحتاج فهم كود — تحتاج وصفًا**."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l6-debugging.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**٣ خطوات**: **صفّي الأعراض → ارجع لآخر تعديل → أرسل ٣ معلومات**. **ما تحتاج تفهم كود — تحتاج وصف**."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m6-l6-debugging.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "مش محتاج تفهم كود — محتاج توصف. صفّي العرض في جملة → ارجع لآخر تعديل → ابعت الـ ٣ معلومات."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "builder-m6-l6-debugging's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Error — 'The app is down' / Correct — 3 precise pieces of information) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Error — 'The app is down'\" vs \"Correct — 3 precise pieces of information\" for builder-m6-l6-debugging.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Error — 'The app is down'",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l6-debugging.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Correct — 3 precise pieces of information",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l6-debugging.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Symptom",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l6-debugging.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Expected vs Actual",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m6-l6-debugging.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "خطأ — «التطبيق معطّل»",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l6-debugging.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "صح — ٣ معلومات بالضبط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l6-debugging.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Symptom (العرض)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l6-debugging.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Expected vs Actual (متوقع vs فعلي)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l6-debugging.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "خطأ — «التطبيق معطّل»",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l6-debugging.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "صح — ٣ معلومات بالضبط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l6-debugging.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Symptom (الأعراض)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l6-debugging.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Expected vs Actual (متوقع vs فعلي)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l6-debugging.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "غلط — «التطبيق بايظ»",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l6-debugging.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "صح — ٣ معلومات بالظبط",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l6-debugging.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Symptom (العرض)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l6-debugging.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Expected vs Actual (متوقع vs فعلي)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m6-l6-debugging.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Debugging — When Things Break: \"Error — 'The app is down'\" versus \"Correct — 3 precise pieces of information\" — Step 1 — Symptom",
+    "ar-MSA": "تصحيح الأعطال: \"خطأ — «التطبيق معطّل»\" في مقابل \"صح — ٣ معلومات بالضبط\" — الخطوة ١ — Symptom (العرض)",
+    "ar-Gulf": "تصحيح الأخطاء: \"خطأ — «التطبيق معطّل»\" في مقابل \"صح — ٣ معلومات بالضبط\" — الخطوة ١ — Symptom (الأعراض)",
+    "ar-EG": "اعرض العرض → اعزل السبب → اطلب الإصلاح: \"غلط — «التطبيق بايظ»\" في مقابل \"صح — ٣ معلومات بالظبط\" — الخطوة ١ — Symptom: «لما العميل يدوس Send في صفحة الشات، الشاشة بتلف ومفيش رد.»"
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"Complete bug report\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m6-l6-debugging.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"Simplicity of language\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m6-l6-debugging.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"تقرير bug كامل\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l6-debugging.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"بساطة اللغة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l6-debugging.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"تقرير bug كامل\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l6-debugging.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"بساطة اللغة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l6-debugging.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"تقرير bug كامل\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m6-l6-debugging.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"بساطة اللغة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m6-l6-debugging.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 30"
+    }
+  ],
+  "checksum": "1462f44a383ce783e7e7ab8a4e3e6c4eb9948d2a06067384df94be485021805e"
+}

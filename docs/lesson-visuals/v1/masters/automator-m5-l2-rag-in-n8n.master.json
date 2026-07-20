@@ -1,0 +1,245 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "automator-m5-l2-rag-in-n8n",
+  "pathId": "automator",
+  "moduleId": "automator-m5",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "RAG in Automation",
+    "ar-MSA": "RAG داخل الأتمتة",
+    "ar-Gulf": "RAG داخل الأتمتة",
+    "ar-EG": "RAG = ابحث في معرفتك — وبعدين اكتب الرد"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/automator-m5-l2-rag-in-n8n.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l2-rag-in-n8n.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m5-l2-rag-in-n8n.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/automator-m5-l2-rag-in-n8n.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? RAG = automated response from your documents (FAQs, prices) — not from guessing.",
+        "Why now? A question about price or warranty needs to pull from your file.",
+        "What after the lesson? Flowchart: Question → Source → Response — not a technical build."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ RAG = الرد الآلي من مستنداتك (FAQ، أسعار) — لا من تخمين.",
+        "لماذا الآن؟ سؤال عن سعر أو ضمان يحتاج سحبًا من ملفك.",
+        "ماذا بعد الدرس؟ رسمة: سؤال → مصدر → رد — ليس بناءً تقنيًا."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ RAG = الرد الآلي من مستنداتك (أسئلة شائعة، أسعار) — مو من تخمين.",
+        "ليش الحين؟ سؤال عن سعر أو ضمان يحتاج سحب من ملفك.",
+        "وش بعد الدرس؟ رسمة: سؤال → مصدر → رد — مو بناءً تقنيًا."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ في Automator، RAG = الرد الآلي يجاوب من مستندات شغلك (FAQ، أسعار، سياسات) — مش من تخمين.",
+        "ليه دلوقتي؟ لما عميل يسأل البوت عن سعر أو ضمان، لازم يسحب من ملفك — مش يخترع رقم.",
+        "هتعمل إيه بعد الدرس؟ رسمة workflow بسيطة: سؤال → مصدر → رد. مش بناء تقني.",
+        "ده مختلف عن Builder: هنا RAG جوه سير عمل (واتساب، إيميل، CRM) — مش جوه تطبيق تبنيه."
+      ]
+    },
+    "coreIdea": {
+      "en": "RAG:",
+      "ar-MSA": "RAG:",
+      "ar-Gulf": "RAG:",
+      "ar-EG": "بدون RAG: السؤال → AI → رد من تخمين. ممكن يكون صح — وممكن يخترع."
+    },
+    "tension": {
+      "en": "A client asked about the package — the bot responded with a number it had. The number was wrong. AI answers from general knowledge — RAG searches your sources first.",
+      "ar-MSA": "عميل سأل عن الباقة — البوت رد برقم من عنده. الرقم خطأ. AI يجيب من معرفة عامة — RAG يبحث في مصادرك أولًا.",
+      "ar-Gulf": "عميل سأل عن الباقة — البوت رد برقم من عنده. الرقم خاطئ. AI يجاوب من معرفة عامة — RAG يبحث في مصادرك أولاً.",
+      "ar-EG": "شغّلت رد آلي ذكي على استفسارات العملاء. عميل سأل «سعر الباقة الذهبية؟» — البوت رد برقم من عنده."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "AI without RAG",
+        "rightLabel": "AI + RAG",
+        "leftBody": "Guesses delivery time",
+        "rightBody": "Pulls from your schedule: \"Cairo 1-2 days\""
+      },
+      "ar-MSA": {
+        "leftLabel": "AI بدون RAG",
+        "rightLabel": "AI + RAG",
+        "leftBody": "يخمّن مدة التوصيل",
+        "rightBody": "يسحب من جدولك: «القاهرة ١–٢ يوم»"
+      },
+      "ar-Gulf": {
+        "leftLabel": "AI بدون RAG",
+        "rightLabel": "AI + RAG",
+        "leftBody": "يخمّن مدة التوصيل",
+        "rightBody": "يسحب من جدولك: «القاهرة ١–٢ يوم»"
+      },
+      "ar-EG": {
+        "leftLabel": "AI بدون RAG",
+        "leftBody": "«إيه مدة التوصيل؟» — البوت يخمّن «٢–٣ أيام» من معرفة عامة. عندك مناطق بتوصل في ٥ أيام — العميل مستني غلط.",
+        "rightLabel": "AI + RAG",
+        "rightBody": "«إيه مدة التوصيل؟» — الأوتوميشن يسحب من جدول التوصيل بتاعك: «القاهرة ١–٢ يوم، الصعيد ٣–٥». الرد دقيق من ملفك."
+      }
+    },
+    "missionIntro": {
+      "en": "| Real Source | 60% | | Linking Question to Source | 40% |",
+      "ar-MSA": "| مصدر حقيقي | 60% | | ربط سؤال بمصدر | 40% |",
+      "ar-Gulf": "| مصدر حقيقي | 60% | | ربط سؤال بمصدر | 40% |",
+      "ar-EG": "المهمة رسمة workflow — مش بناء تقني. ارسم إزاي السؤال يمشي من العميل للمصدر للرد.\n\nمش مطلوب n8n ولا vector database."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "RAG:",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m5-l2-rag-in-n8n.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "RAG:"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l2-rag-in-n8n.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "RAG:"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m5-l2-rag-in-n8n.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "RAG:"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/automator-m5-l2-rag-in-n8n.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "السؤال يمرّ على مصدرك الأول — وبعدين الـ AI يصيغ الرد. المعرفة ثابتة؛ الصياغة مرنة."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "automator-m5-l2-rag-in-n8n's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (AI without RAG / AI + RAG) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"AI without RAG\" vs \"AI + RAG\" for automator-m5-l2-rag-in-n8n.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "AI without RAG",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m5-l2-rag-in-n8n.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "AI + RAG",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m5-l2-rag-in-n8n.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "AI بدون RAG",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l2-rag-in-n8n.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "AI + RAG",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l2-rag-in-n8n.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "AI بدون RAG",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m5-l2-rag-in-n8n.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "AI + RAG",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m5-l2-rag-in-n8n.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "AI بدون RAG",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m5-l2-rag-in-n8n.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "AI + RAG",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m5-l2-rag-in-n8n.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Knowledge Source (مصدر المعرفة)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m5-l2-rag-in-n8n.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Retrieval (الاسترجاع)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m5-l2-rag-in-n8n.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "RAG in Automation: \"AI without RAG\" versus \"AI + RAG\" — RAG:",
+    "ar-MSA": "RAG داخل الأتمتة: \"AI بدون RAG\" في مقابل \"AI + RAG\" — RAG:",
+    "ar-Gulf": "RAG داخل الأتمتة: \"AI بدون RAG\" في مقابل \"AI + RAG\" — RAG:",
+    "ar-EG": "RAG = ابحث في معرفتك — وبعدين اكتب الرد: \"AI بدون RAG\" في مقابل \"AI + RAG\" — بدون RAG: السؤال → AI → رد من تخمين. ممكن يكون صح — وممكن يخترع."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"مصدر حقيقي\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m5-l2-rag-in-n8n.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"ربط سؤال بمصدر\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m5-l2-rag-in-n8n.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "3f8399ddc2fb3c2f6296460934a058c121717678b2e51c1440545e1fe1c53537"
+}

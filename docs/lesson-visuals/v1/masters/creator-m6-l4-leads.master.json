@@ -1,0 +1,333 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "creator-m6-l4-leads",
+  "pathId": "creator",
+  "moduleId": "creator-m6-distribute",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "From Views to Leads",
+    "ar-MSA": "من المشاهدات إلى العملاء",
+    "ar-Gulf": "من المشاهدات للعملاء",
+    "ar-EG": "اعمل كوبري صغير وواضح"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/creator-m6-l4-leads.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l4-leads.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l4-leads.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/creator-m6-l4-leads.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? A follower is not a client without a bridge.",
+        "The number of followers matters — but without a logical transition to your offer, the impact remains nice but without results.",
+        "The goal is not direct selling in every post — but building a clear path from content to leads."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ المتابع ليس عميلًا من دون كوبري (جسر).",
+        "عدد المتابعين مهم — لكن من دون انتقال منطقي لعرضك يبقى التأثير جميلًا من دون نتيجة.",
+        "الهدف ليس البيع المباشر في كل منشور — بل بناء طريق واضح من المحتوى إلى Leads (عملاء محتملون)."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ المتابع مو عميل بدون كوبري (جسر).",
+        "عدد المتابعين مهم — لكن بدون انتقال منطقي لعرضك يبقى التأثير جميل بدون نتيجة.",
+        "الهدف مو البيع المباشر في كل منشور — بل بناء طريق واضح من المحتوى إلى العملاء المحتملين."
+      ],
+      "ar-EG": [
+        "عدد المتابعين مهم، بس لو مفيش انتقال منطقي لعرضك هيفضل التأثير شكله حلو بس من غير نتيجة.",
+        "الهدف مش البيع المباشر في كل بوست، الهدف تبني طريق واضح من المحتوى لليدز."
+      ]
+    },
+    "coreIdea": {
+      "en": "Content builds trust",
+      "ar-MSA": "المحتوى يبني ثقة",
+      "ar-Gulf": "المحتوى يبني ثقة",
+      "ar-EG": "المحتوى يبني ثقة، والـ CTA ينقل الشخص لخطوة محددة: تحميل هدية بسيطة، أو رسالة بكلمة مفتاحية، أو تسجيل قصير."
+    },
+    "tension": {
+      "en": "A gap between attention and purchase. Many follow you and benefit — but the decision moment is lost because the next step is unclear.",
+      "ar-MSA": "فجوة بين الانتباه والشراء. كثيرون يتابعونك ويستفيدون — لكن لحظة القرار تضيع لأن الخطوة التالية غير واضحة.",
+      "ar-Gulf": "فجوة بين الانتباه والشراء. كثير من الناس يتابعونك ويستفيدون — لكن لحظة القرار تضيع لأن الخطوة التالية مو واضحة.",
+      "ar-EG": "ناس كتير بتتابعك وتستفيد، لكن لحظة القرار تضيع لأن الخطوة الجاية مش واضحة لهم."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Without a Bridge",
+        "rightLabel": "With a Clear Bridge",
+        "leftBody": "Great content and good engagement — but no clear transition step — a wide audience and weak conversion",
+        "rightBody": "Simple free value + specific CTA + follow-up — higher quality leads even if views are fewer"
+      },
+      "ar-MSA": {
+        "leftLabel": "من دون كوبري",
+        "rightLabel": "بكوبري واضح",
+        "leftBody": "محتوى جميل وتفاعل جيد — لكن لا خطوة انتقال واضحة — جمهور واسع وتحويل ضعيف",
+        "rightBody": "قيمة مجانية بسيطة + CTA محدد + متابعة — Leads أكثر جودة حتى لو المشاهدات أقل"
+      },
+      "ar-Gulf": {
+        "leftLabel": "بدون كوبري",
+        "rightLabel": "بكوبري واضح",
+        "leftBody": "محتوى جميل وتفاعل جيد — لكن لا خطوة انتقال واضحة — جمهور واسع وتحويل ضعيف",
+        "rightBody": "قيمة مجانية بسيطة + دعوة واضحة + متابعة — عملاء محتملين بجودة أعلى حتى لو المشاهدات أقل"
+      },
+      "ar-EG": {
+        "leftLabel": "من غير كوبري",
+        "leftBody": "محتوى جميل وتفاعل كويس، لكن مفيش خطوة انتقال واضحة. النتيجة: جمهور واسع وتحويل ضعيف.",
+        "rightLabel": "بكوبري واضح",
+        "rightBody": "قيمة مجانية بسيطة + CTA محدد + متابعة. النتيجة: ليدز أكثر جودة حتى لو المشاهدات أقل."
+      }
+    },
+    "missionIntro": {
+      "en": "One clear conversion step to implement this week without complication.",
+      "ar-MSA": "خطوة تحويل واحدة واضحة تطبقها هذا الأسبوع من دون تعقيد.",
+      "ar-Gulf": "خطوة تحويل واحدة واضحة تطبقها هذا الأسبوع بدون تعقيد.",
+      "ar-EG": "المطلوب خطوة تحويل واحدة واضحة تقدر تطبقها هذا الأسبوع من غير تعقيد."
+    },
+    "visualIntent": {
+      "kind": "process",
+      "summary": "Visual Diagram — **The conversion funnel from content to leads**. **Each stage reduces the number** **but increases quality**. **The important thing** **is that",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m6-l4-leads.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "Visual Diagram — **The conversion funnel from content to leads**. **Each stage reduces the number** **but increases quality**. **The importa"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l4-leads.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "المحتوى يبني ثقة"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l4-leads.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "المحتوى يبني ثقة"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/creator-m6-l4-leads.ts",
+          "field": "block.caption (diagram)",
+          "quote": "كل مرحلة تقلل العدد لكن تزود الجودة. المهم يكون الانتقال من مرحلة لمرحلة واضح."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "creator-m6-l4-leads's package marks a Diagram intent (leads-funnel); the underlying relationship reads as process, so a deterministic SVG panel keeps the real Without a Bridge/With a Clear Bridge labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "process-stage-strip",
+  "duplicationJustification": "Shares the \"process-stage-strip\" layout template with 8 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Without a Bridge\" vs \"With a Clear Bridge\" for creator-m6-l4-leads.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Without a Bridge",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m6-l4-leads.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "With a Clear Bridge",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m6-l4-leads.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Lead",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m6-l4-leads.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Lead Magnet",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m6-l4-leads.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "من دون كوبري",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l4-leads.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "بكوبري واضح",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l4-leads.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Lead (عميل محتمل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l4-leads.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Lead Magnet (أداة جذب)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l4-leads.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "بدون كوبري",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l4-leads.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "بكوبري واضح",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l4-leads.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "عميل محتمل (Lead)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l4-leads.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "أداة جذب (Lead Magnet)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l4-leads.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "من غير كوبري",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m6-l4-leads.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "بكوبري واضح",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m6-l4-leads.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Lead",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m6-l4-leads.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Lead Magnet",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m6-l4-leads.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "From Views to Leads: \"Without a Bridge\" versus \"With a Clear Bridge\" — Content builds trust",
+    "ar-MSA": "من المشاهدات إلى العملاء: \"من دون كوبري\" في مقابل \"بكوبري واضح\" — المحتوى يبني ثقة",
+    "ar-Gulf": "من المشاهدات للعملاء: \"بدون كوبري\" في مقابل \"بكوبري واضح\" — المحتوى يبني ثقة",
+    "ar-EG": "اعمل كوبري صغير وواضح: \"من غير كوبري\" في مقابل \"بكوبري واضح\" — المحتوى يبني ثقة، والـ CTA ينقل الشخص لخطوة محددة: تحميل هدية بسيطة، أو رسالة بكلمة مفتاحية، أو تسجيل قصير."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Clarity of Offer\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m6-l4-leads.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Feasibility\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m6-l4-leads.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح العرض\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l4-leads.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"قابلية التنفيذ\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l4-leads.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح العرض\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l4-leads.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"قابلية التنفيذ\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l4-leads.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح العرض\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m6-l4-leads.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"قابلية التنفيذ\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m6-l4-leads.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "e8ca525b33886090b744bab51c4a9e6e5e804d7c04b8300eaadaa45d5e19eeec"
+}

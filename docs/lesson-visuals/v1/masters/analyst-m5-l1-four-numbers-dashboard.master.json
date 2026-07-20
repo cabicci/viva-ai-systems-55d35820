@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "analyst-m5-l1-four-numbers-dashboard",
+  "pathId": "analyst",
+  "moduleId": "analyst-m5",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Four Numbers Dashboard",
+    "ar-MSA": "لوحة الأرقام الأربعة",
+    "ar-Gulf": "لوحة الأرقام الأربعة",
+    "ar-EG": "٤ أرقام قرار — مش ٤٠ metric"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/analyst-m5-l1-four-numbers-dashboard.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? A Dashboard (a screen showing key numbers) starts with a few decision numbers — not 50 charts.",
+        "Why now? In the previous unit, every conclusion had an Action. Now you need 4 numbers to summarize: Is my work on track? Every week.",
+        "What after the lesson? Create a Dashboard with 4 numbers for your project or business."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ Dashboard (شاشة فيها أهم الأرقام) المفيد يبدأ بأرقام قرار قليلة — ليس ٥٠ رسمًا.",
+        "لماذا الآن؟ في الوحدة السابقة كل استنتاج أصبح له Action (إجراء). الآن تحتاج ٤ أرقام تلخّص «هل شغلي يسير؟» كل أسبوع.",
+        "ماذا بعد الدرس؟ ترسم Dashboard من ٤ أرقام لمشروعك أو عملك."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ Dashboard (شاشة فيها أهم الأرقام) المفيد يبدأ بأرقام قرار قليلة — مو ٥٠ رسمًا.",
+        "ليش الحين؟ في الوحدة السابقة كل استنتاج صار له Action (إجراء). الحين تحتاج ٤ أرقام تلخّص «هل شغلي يسير؟» كل أسبوع.",
+        "وش بعد الدرس؟ ترسم Dashboard من ٤ أرقام لمشروعك أو عملك."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ الـ Dashboard (شاشة فيها أهم الأرقام) المفيد يبدأ بأرقام قرار قليلة — مش ٥٠ رسم.",
+        "ليه دلوقتي؟ في الموديول اللي فات كل استنتاج بقى له Action (خطوة أو تصرف حصل فعلًا). دلوقتي محتاج ٤ أرقام تلخّص «هل شغلي ماشي؟» كل أسبوع.",
+        "هتعمل إيه بعد الدرس؟ هترسم Dashboard من ٤ أرقام لمشروعك أو شغلك."
+      ]
+    },
+    "coreIdea": {
+      "en": "Choose only 4 numbers",
+      "ar-MSA": "اختر ٤ أرقام فقط",
+      "ar-Gulf": "اختر ٤ أرقام بس",
+      "ar-EG": "اختار ٤ أرقام بس — لو واحد فيهم اتغيّر، قرارك يتغيّر. مش أي رقم «حلو يتعرض»."
+    },
+    "tension": {
+      "en": "You open a sheet or tool with many charts — spend 10 minutes — and close it without knowing, \"What should I do?\". The problem is not lack of data — the problem is overload. Every extra number delays decision-making.",
+      "ar-MSA": "تفتح Sheet أو أداة فيها charts كثيرة — تقضي ١٠ دقائق — وتغلق من دون أن تعرف «ماذا يجب أن أفعل؟» المشكلة ليس نقص بيانات — المشكلة ازدحام. كل رقم إضافي يؤخّر القرار.",
+      "ar-Gulf": "تفتح Sheet أو أداة فيها charts كثيرة — تقضي ١٠ دقائق — وتغلق من دون ما تعرف «وش لازم أسوي؟» المشكلة مو نقص بيانات — المشكلة ازدحام. كل رقم إضافي يؤخّر القرار.",
+      "ar-EG": "بتفتح Sheet أو أداة فيها charts كتير — بتقعد ١٠ دقايق — وتقفل من غير ما تعرف «إيه اللي محتاج أعمله؟»"
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Full Dashboard",
+        "rightLabel": "4 Clear Numbers",
+        "leftBody": "15 charts — views, clicks, time on page, bounce… You open it and close it. By the end of the week: \"I feel like there’s something wrong\" but I don’t know what.",
+        "rightBody": "Leads 120 (↑) · Conversion 8% (↓) · Revenue 15k (↑) · Retention 30% (↓). In a second: Conversion and Retention need a decision."
+      },
+      "ar-MSA": {
+        "leftLabel": "Dashboard مليء",
+        "rightLabel": "٤ أرقام واضحة",
+        "leftBody": "١٥ chart — views، clicks، time on page، bounce… تفتحه وتغلقه. نهاية الأسبوع: «أشعر أن هناك شيئًا خطأ» لكن لا أعرف ماذا",
+        "rightBody": "Leads ١٢٠ (↑) · Conversion ٨٪ (↓) · Revenue 15k (↑) · Retention ٣٠٪ (↓). في ثانية: Conversion وRetention يحتاجان قرارًا"
+      },
+      "ar-Gulf": {
+        "leftLabel": "Dashboard مليء",
+        "rightLabel": "٤ أرقام واضحة",
+        "leftBody": "١٥ chart — views، clicks، time on page، bounce… تفتحه وتغلقه. نهاية الأسبوع: «أشعر أن هناك شيئًا خطأ» لكن ما أعرف وش",
+        "rightBody": "Leads ١٢٠ (↑) · Conversion ٨٪ (↓) · Revenue 15k (↑) · Retention ٣٠٪ (↓). في ثانية: Conversion وRetention يحتاجان قرارًا"
+      },
+      "ar-EG": {
+        "leftLabel": "Dashboard مليان",
+        "leftBody": "١٥ chart — views، clicks، time on page، bounce… بتفتحه وتقفله. نهاية الأسبوع: «حاسس إن في حاجة غلط» بس مش عارف إيه.",
+        "rightLabel": "٤ أرقام واضحة",
+        "rightBody": "Leads ١٢٠ (↑) · Conversion ٨٪ (↓) · Revenue ١٥k (↑) · Retention (الناس كملت ورجعت تاني) ٣٠٪ (↓). في ثانية: Conversion و Retention محتاجين قرار."
+      }
+    },
+    "missionIntro": {
+      "en": "This is a practical design task — not decoration. Choose 4 numbers that fit your context — business, learning, content, personal, or team — and write them in a simple dashboard (Sheet, Notion, paper). No complex tool needed — 4 numbers you can read every week and decide.",
+      "ar-MSA": "مهمة تصميم عملي — ليس ديكورًا. اختر ٤ أرقام تناسب سياقك — بيزنس، تعلّم، محتوى، شخصي، أو فريق — واكتبها في dashboard بسيط (Sheet، Notion، ورقة). لا أداة معقّدة مطلوبة — ٤ أرقام تقرأها كل أسبوع وتقرّر.",
+      "ar-Gulf": "مهمة تصميم عملي — مو ديكور. اختر ٤ أرقام تناسب سياقك — بيزنس، تعلّم، محتوى، شخصي، أو فريق — واكتبها في dashboard بسيط (Sheet، Notion، ورقة). ما يحتاج أداة معقّدة — ٤ أرقام تقرأها كل أسبوع وتقرّر.",
+      "ar-EG": "المهمة دي تصميم عملي — مش ديكور. اختار ٤ أرقام تناسب سياقك — بيزنس، تعلّم، محتوى، شخصي، أو فريق — واكتبهم في dashboard بسيط (Sheet، Notion، ورقة).\n\nمش مطلوب أداة معقّدة — مطلوب ٤ أرقام تقدر تقراهم كل أسبوع وتقرّر."
+    },
+    "visualIntent": {
+      "kind": "data-relationship",
+      "summary": "**Weekly Dashboard with 4 slots** (identifier: `four-kpi-dashboard`): **4 numbers** — **each one:** **this week**, **last week**, **and the arrow**. **If one is",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**Weekly Dashboard with 4 slots** (identifier: `four-kpi-dashboard`): **4 numbers** — **each one:** **this week**, **last week**, **and the"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**Dashboard أسبوعي من ٤ خانات** (معرّف: `four-kpi-dashboard`): **٤ أرقام** — **كل واحد:** **هذا الأسبوع**، **السابق**، **والسهم**. **إذا واح"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**Dashboard أسبوعي من ٤ خانات** (معرّف: `four-kpi-dashboard`): **٤ أرقام** — **كل واحد:** **هذا الأسبوع**، **السابق**، **والسهم**. **إذا واح"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/analyst-m5-l1-four-numbers-dashboard.ts",
+          "field": "block.caption (diagram)",
+          "quote": "٤ أرقام — كل واحد: الأسبوع ده، اللي فات، والسهم. لو واحد أحمر، تعرف فين القرار."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "analyst-m5-l1-four-numbers-dashboard's package marks a Diagram intent (four-kpi-dashboard); the underlying relationship reads as data-relationship, so a deterministic SVG panel keeps the real Full Dashboard/4 Clear Numbers labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "kpi-grid-panel",
+  "duplicationJustification": "Shares the \"kpi-grid-panel\" layout template with 4 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Full Dashboard\" vs \"4 Clear Numbers\" for analyst-m5-l1-four-numbers-dashboard.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Full Dashboard",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "4 Clear Numbers",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "KPI (Key Performance Indicator)",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Threshold",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "Dashboard مليء",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "٤ أرقام واضحة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "KPI (مؤشر قرار)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Threshold (حد قرار)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "Dashboard مليء",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "٤ أرقام واضحة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "KPI (مؤشر قرار)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Threshold (حد قرار)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "Dashboard مليان",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m5-l1-four-numbers-dashboard.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "٤ أرقام واضحة",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m5-l1-four-numbers-dashboard.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "KPI (مؤشر قرار)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m5-l1-four-numbers-dashboard.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Threshold (حد قرار)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m5-l1-four-numbers-dashboard.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Four Numbers Dashboard: \"Full Dashboard\" versus \"4 Clear Numbers\" — Choose only 4 numbers",
+    "ar-MSA": "لوحة الأرقام الأربعة: \"Dashboard مليء\" في مقابل \"٤ أرقام واضحة\" — اختر ٤ أرقام فقط",
+    "ar-Gulf": "لوحة الأرقام الأربعة: \"Dashboard مليء\" في مقابل \"٤ أرقام واضحة\" — اختر ٤ أرقام بس",
+    "ar-EG": "٤ أرقام قرار — مش ٤٠ metric: \"Dashboard مليان\" في مقابل \"٤ أرقام واضحة\" — اختار ٤ أرقام بس — لو واحد فيهم اتغيّر، قرارك يتغيّر. مش أي رقم «حلو يتعرض»."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Focus and Selection\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Comparison and Threshold\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"تركيز واختيار\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"مقارنة وThreshold\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"تركيز واختيار\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"مقارنة وThreshold\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-l1-four-numbers-dashboard.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"تركيز واختيار\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m5-l1-four-numbers-dashboard.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"مقارنة وThreshold\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m5-l1-four-numbers-dashboard.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "1fba58a3025bc232a1964a3bbfdf28362a2b13cb993c7be09c5775fe6edfba0d"
+}

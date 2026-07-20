@@ -1,0 +1,338 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m5-l1-transition",
+  "pathId": "builder",
+  "moduleId": "builder-m5",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Transition — From Language to App",
+    "ar-MSA": "الانتقال — من اللغة إلى التطبيق",
+    "ar-Gulf": "من اللغة للتطبيق",
+    "ar-EG": "البناء يبدأ بطلب منتج واضح — مش بكود"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m5-l1-transition.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l1-transition.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l1-transition.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m5-l1-transition.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Building starts with a clear description — not code. What is the app? For whom? What is the goal?",
+        "Why now? You have completed the 'Talk to AI' phase. Now you will describe an app idea — Lovable (a building assistant) or other tools that build from your description.",
+        "What comes after the lesson? Just 3 sentences: Idea + User + Goal. Not programming.",
+        "You are not becoming a programmer. You are learning to describe the product — and the tool builds from your description."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ البناء يبدأ بوصف واضح — ليس بالكود. ما التطبيق؟ لمن؟ وما الهدف؟",
+        "لماذا الآن؟ أنهيت مرحلة «تكلّم الذكاء الاصطناعي». الآن ستصف فكرة تطبيق — Lovable (مساعد بناء) أو أدوات أخرى تبني من وصفك.",
+        "ماذا بعد الدرس؟ ٣ جمل فقط: فكرة + مستخدم + هدف. ليس برمجة.",
+        "أنت لا تتحول إلى مبرمج. أنت تتعلّم وصف المنتج — والأداة تبني من وصفك."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ البناء يبدأ بوصف واضح — مو بالكود. وش التطبيق؟ لمن؟ وش الهدف؟",
+        "ليش الحين؟ أنهيت مرحلة «تكلّم الذكاء الاصطناعي». الحين راح تصف فكرة تطبيق — Lovable (مساعد بناء) أو أدوات ثانية تبني من وصفك.",
+        "وش بعد الدرس؟ ٣ جمل بس: فكرة + مستخدم + هدف. مو برمجة.",
+        "أنت مو راح تتحول لمبرمج. أنت تتعلّم وصف المنتج — والأداة تبني من وصفك."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ البناء يبدأ بوصف واضح — مش بكود. إيه التطبيق؟ لمين؟ وإيه الهدف؟",
+        "ليه الانتقال ده؟ خلّصت مرحلة «تكلّم AI». دلوقتي هتوصف فكرة تطبيق — Lovable أو أدوات تانية هتبني من وصفك.",
+        "هتعمل إيه بعد الدرس؟ ٣ جمل بس: فكرة + مستخدم + هدف. مش برمجة.",
+        "إنت مش بتحوّل لمبرمج. إنت بتتعلّم توصف منتج — والأداة تبني من وصفك."
+      ]
+    },
+    "coreIdea": {
+      "en": "Any app = 3 simple layers",
+      "ar-MSA": "أي تطبيق = ٣ طبقات بسيطة",
+      "ar-Gulf": "أي تطبيق = ٣ طبقات بسيطة",
+      "ar-EG": "أي تطبيق = ٣ طبقات بسيطة: واجهة (اللي العميل يشوفه)، كواليس (اللي يشتغل ورا)، مخزن (اللي يفتكر)."
+    },
+    "tension": {
+      "en": "You open Lovable or any tool and type 'Create an AI app' — and it produces something general that is not what you had in mind. The problem is not the tool. The problem is that you haven't specified: Who will use it? What",
+      "ar-MSA": "تفتح Lovable أو أي أداة وتكتب «اعمل تطبيق ذكاء اصطناعي» — فيخرج شيء عام ليس ما في ذهنك. المشكلة ليست الأداة. المشكلة أنك لم تحدّد: من سيستخدمه؟ وماذا يريد أن يصل إليه؟",
+      "ar-Gulf": "تفتح Lovable أو أي أداة وتكتب «اعمل تطبيق ذكاء اصطناعي» — فيطلع شيء عام مو مثل ما في بالك. المشكلة مو بالأداة. المشكلة إنك ما حددت: من راح يستخدمه؟ وش يبغى يوصل له؟",
+      "ar-EG": "بتفتح Lovable أو أي أداة وتكتب «اعملي تطبيق AI» — ويطلعلك حاجة عامة مش اللي في دماغك."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Vague Request",
+        "rightLabel": "Clear Product Request",
+        "leftBody": "'Create an AI app for restaurants' — the tool guesses everything. You will adjust 5 times and still not get it right.",
+        "rightBody": "'An app for a small restaurant owner — the customer writes its ingredients and the AI suggests a recipe. Goal: First recipe in 30 seconds' — this is a real starting point for building."
+      },
+      "ar-MSA": {
+        "leftLabel": "طلب غامض",
+        "rightLabel": "طلب منتج واضح",
+        "leftBody": "«اعمل تطبيق ذكاء اصطناعي للمطاعم» — الأداة تخمّن كل شيء. ستعدّل ٥ مرات ولا تصل",
+        "rightBody": "«تطبيق لصاحب مطعم صغير — العميل يكتب مكوناته والذكاء الاصطناعي يقترح وصفة. الهدف: أول وصفة في ٣٠ ثانية» — هذه بداية بناء حقيقية"
+      },
+      "ar-Gulf": {
+        "leftLabel": "طلب غامض",
+        "rightLabel": "طلب منتج واضح",
+        "leftBody": "«اعمل تطبيق ذكاء اصطناعي للمطاعم» — الأداة تخمّن كل شيء. راح تعدّل ٥ مرات وما توصل",
+        "rightBody": "«تطبيق لصاحب مطعم صغير — العميل يكتب مكوناته والذكاء الاصطناعي يقترح وصفة. الهدف: أول وصفة في ٣٠ ثانية» — هذه بداية بناء حقيقية"
+      },
+      "ar-EG": {
+        "leftLabel": "طلب غامض",
+        "leftBody": "«اعملي تطبيق AI للمطاعم» — الأداة تخمّن كل حاجة. هتعدّل ٥ مرات ومش هتوصل.",
+        "rightLabel": "طلب منتج واضح",
+        "rightBody": "«تطبيق لصاحب مطعم صغير — العميل يكتب مكوناته والـ AI يقترح وصفة. الهدف: أول وصفة في ٣٠ ثانية» — ده بداية بناء حقيقية."
+      }
+    },
+    "missionIntro": {
+      "en": "This is a writing task — not programming. 5–10 minutes is enough.",
+      "ar-MSA": "مهمة كتابة — ليست برمجة. ٥–١٠ دقائق كافية.",
+      "ar-Gulf": "مهمة كتابة — مو برمجة. ٥–١٠ دقائق كافية.",
+      "ar-EG": "المهمة دي كتابة — مش برمجة. ٥–١٠ دقايق كفاية.\n\nاختار فكرة تطبيق AI (حتى لو بسيطة) واكتب التلاتة."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "**The bridge — from Prompts to App Layers:**",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l1-transition.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**The bridge — from Prompts to App Layers:**"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l1-transition.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**الجسر — من Prompts (طلبات) إلى طبقات التطبيق:**"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l1-transition.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**الجسر — من الطلبات إلى طبقات التطبيق:**"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m5-l1-transition.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "خلّصت مرحلة «تكلّم AI». دلوقتي هتبني له بيت: واجهة يشوفها العميل، كواليس تشتغل، ومخزن يفتكر."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "builder-m5-l1-transition's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Vague Request / Clear Product Request) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Vague Request\" vs \"Clear Product Request\" for builder-m5-l1-transition.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Vague Request",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l1-transition.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Clear Product Request",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l1-transition.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Product Request",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l1-transition.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Phase 2",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m5-l1-transition.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "طلب غامض",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l1-transition.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "طلب منتج واضح",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l1-transition.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Product Request (طلب المنتج)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l1-transition.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Phase 2 (مرحلة البناء)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l1-transition.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "طلب غامض",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l1-transition.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "طلب منتج واضح",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l1-transition.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "طلب المنتج",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l1-transition.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "مرحلة البناء",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l1-transition.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "طلب غامض",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m5-l1-transition.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "طلب منتج واضح",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m5-l1-transition.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Product Request (طلب المنتج)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m5-l1-transition.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Phase 2 (مرحلة البناء)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m5-l1-transition.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Transition — From Language to App: \"Vague Request\" versus \"Clear Product Request\" — Any app = 3 simple layers",
+    "ar-MSA": "الانتقال — من اللغة إلى التطبيق: \"طلب غامض\" في مقابل \"طلب منتج واضح\" — أي تطبيق = ٣ طبقات بسيطة",
+    "ar-Gulf": "من اللغة للتطبيق: \"طلب غامض\" في مقابل \"طلب منتج واضح\" — أي تطبيق = ٣ طبقات بسيطة",
+    "ar-EG": "البناء يبدأ بطلب منتج واضح — مش بكود: \"طلب غامض\" في مقابل \"طلب منتج واضح\" — أي تطبيق = ٣ طبقات بسيطة: واجهة (اللي العميل يشوفه)، كواليس (اللي يشتغل ورا)، مخزن (اللي يفتكر)."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"All three are clear\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m5-l1-transition.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"The goal is measurable\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m5-l1-transition.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"الثلاثة واضحون\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l1-transition.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"الهدف قابل للقياس\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l1-transition.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"الثلاثة واضحين\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l1-transition.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"الهدف قابل للقياس\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l1-transition.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"التلاتة واضحين\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m5-l1-transition.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"الهدف قابل للقياس\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m5-l1-transition.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "2630c99a9db81cf4527d3f502137d82c4cfe299f928d2d3118ba8411a05d40f6"
+}

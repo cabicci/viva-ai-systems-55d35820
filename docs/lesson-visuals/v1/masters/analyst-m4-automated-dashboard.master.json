@@ -1,0 +1,241 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "analyst-m4-automated-dashboard",
+  "pathId": "analyst",
+  "moduleId": "analyst-m5",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Automated Dashboard",
+    "ar-MSA": "لوحة تحكم مؤتمتة",
+    "ar-Gulf": "لوحة التحكم الأوتوماتيكية",
+    "ar-EG": "يدوي الأول — أوتوماتيك تاني — رقم واحد = فوز"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m4-automated-dashboard.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-automated-dashboard.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-automated-dashboard.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/analyst-m4-automated-dashboard.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? An automated dashboard saves time on data collection — if you know which number is important.",
+        "Why now? After four decision-making numbers — one of them is collected automatically."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ Dashboard (لوحة) أوتوماتيك يوفر وقت الجمع — إذا عرفت أي رقم مهم.",
+        "لماذا الآن؟ بعد ٤ أرقام قرار — واحد منها يُجمَّع أوتوماتيكيًا."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ Dashboard (لوحة) أوتوماتيك يوفر وقت الجمع — إذا عرفت أي رقم مهم.",
+        "ليش الحين؟ بعد ٤ أرقام قرار — واحد منها يُجمَّع أوتوماتيكيًا."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ الـ Dashboard الأوتوماتيك يوفر وقت جمع البيانات — بس بس لو عارف إيه الأرقام اللي مهمة.",
+        "ليه دلوقتي؟ بعد ما حدّدت ٤ أرقام قرار، الخطوة الجاية إن واحد منهم يتجمّع أوتوماتيك.",
+        "هتعمل إيه بعد الدرس؟ هتختار رقم واحد للأتمتة: مصدر، تكرار تحديث، تخزين، وإيه الـ AI يلخّص."
+      ]
+    },
+    "coreIdea": {
+      "en": "Update Frequency:",
+      "ar-MSA": "Update Frequency (تكرار التحديث):",
+      "ar-Gulf": "تكرار التحديث:",
+      "ar-EG": "القاعدة: اجمع الرقم يدوي أسبوعين — لو قرأته واتخذت قرار، أتمته."
+    },
+    "tension": {
+      "en": "20 charts — you don't know which number matters. Manual First before automation.",
+      "ar-MSA": "٢٠ رسمًا — لا تعرف أي رقم يهم. Manual First (يدوي أولًا) قبل الأتمتة.",
+      "ar-Gulf": "٢٠ رسمًا — ما تعرف أي رقم يهم. يدوي أولًا قبل الأتمتة.",
+      "ar-EG": "بنيت لوحة فيها ٢٠ رسم — بس مش عارف أي رقم يهمك فعلًا."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Automate Everything — Without Decision",
+        "rightLabel": "One Number = Success",
+        "leftBody": "Automate all four numbers at once before trying manually.",
+        "rightBody": "Automate the metric you read every week and make a decision — after collecting it manually for two weeks."
+      },
+      "ar-MSA": {
+        "leftLabel": "أتمتة كل شيء — بلا قرار",
+        "rightLabel": "رقم واحد = فوز",
+        "leftBody": "أؤتمت الأرقام الأربعة دفعة واحدة قبل التجربة اليدوية.",
+        "rightBody": "أؤتمت الرقم الذي أقرأه أسبوعيًا وأتخذ قرارًا بشأنه — بعد جمعه يدويًا لأسبوعين."
+      },
+      "ar-Gulf": {
+        "leftLabel": "أتمتة كل شيء — بلا قرار",
+        "rightLabel": "رقم واحد = فوز",
+        "leftBody": "تؤتمت الـ ٤ أرقام مرة واحدة قبل ما تجرب يدوي.",
+        "rightBody": "تؤتمت الرقم اللي تقراه كل أسبوع وتاخذ عليه قرار — بعد ما جمعته يدوي أسبوعين."
+      },
+      "ar-EG": {
+        "leftLabel": "أتمتة كل حاجة",
+        "leftBody": "لوحة مليانة رسوم — بتفتحها وتقفلها. الكتير = صفر قرار.",
+        "rightLabel": "رقم واحد أوتوماتيك",
+        "rightBody": "Leads الأسبوع ده يتحدّث لوحده — كل أحد تقرأه وتقرّر في ٥ دقايق."
+      }
+    },
+    "missionIntro": {
+      "en": "| Number + Source | 50% | | Storage + AI | 50% |",
+      "ar-MSA": "| رقم + مصدر | 50% | | تخزين + AI | 50% |",
+      "ar-Gulf": "| رقم + مصدر | 50% | | تخزين + AI | 50% |",
+      "ar-EG": "المهمة دي تصميم — مش بناء كامل لازم. اختار رقم واحد، حدّد المصدر والتكرار والتخزين، واكتب إيه الـ AI يلخّص.\n\n١٠–٢٠ دقيقة كفاية."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Update Frequency:",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m4-automated-dashboard.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Update Frequency:"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-automated-dashboard.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Update Frequency (تكرار التحديث):"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-automated-dashboard.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "تكرار التحديث:"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/analyst-m4-automated-dashboard.ts",
+          "field": "block.caption (diagram)",
+          "quote": "Leads · Conversion · Revenue · Retention — ابدأ بأتمتة واحد بس. استخدم الرسم في المهمة."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "analyst-m4-automated-dashboard's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Automate Everything — Without Decision / One Number = Success) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Automate Everything — Without Decision\" vs \"One Number = Success\" for analyst-m4-automated-dashboard.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Automate Everything — Without Decision",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m4-automated-dashboard.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "One Number = Success",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m4-automated-dashboard.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "أتمتة كل شيء — بلا قرار",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-automated-dashboard.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "رقم واحد = فوز",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-automated-dashboard.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "أتمتة كل شيء — بلا قرار",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-automated-dashboard.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "رقم واحد = فوز",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-automated-dashboard.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "أتمتة كل حاجة",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m4-automated-dashboard.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "رقم واحد أوتوماتيك",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m4-automated-dashboard.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Manual First (يدوي الأول)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m4-automated-dashboard.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Update Frequency (تكرار التحديث)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m4-automated-dashboard.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Automated Dashboard: \"Automate Everything — Without Decision\" versus \"One Number = Success\" — Update Frequency:",
+    "ar-MSA": "لوحة تحكم مؤتمتة: \"أتمتة كل شيء — بلا قرار\" في مقابل \"رقم واحد = فوز\" — Update Frequency (تكرار التحديث):",
+    "ar-Gulf": "لوحة التحكم الأوتوماتيكية: \"أتمتة كل شيء — بلا قرار\" في مقابل \"رقم واحد = فوز\" — تكرار التحديث:",
+    "ar-EG": "يدوي الأول — أوتوماتيك تاني — رقم واحد = فوز: \"أتمتة كل حاجة\" في مقابل \"رقم واحد أوتوماتيك\" — القاعدة: اجمع الرقم يدوي أسبوعين — لو قرأته واتخذت قرار، أتمته."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"رقم + مصدر\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m4-automated-dashboard.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"تخزين + AI\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m4-automated-dashboard.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "f7afbff204ae32c5b2f1df7a51df5381ef458aee08973f9e547abf0aae185147"
+}

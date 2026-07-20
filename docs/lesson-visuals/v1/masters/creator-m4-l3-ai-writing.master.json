@@ -1,0 +1,333 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "creator-m4-l3-ai-writing",
+  "pathId": "creator",
+  "moduleId": "creator-m4",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "AI as Writing Assistant",
+    "ar-MSA": "الذكاء الاصطناعي مساعدًا للكتابة",
+    "ar-Gulf": "الذكاء الاصطناعي كمساعد في الكتابة",
+    "ar-EG": "اكتب Context واضح ثم عدّل النص"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/creator-m4-l3-ai-writing.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l3-ai-writing.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l3-ai-writing.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/creator-m4-l3-ai-writing.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? AI (artificial intelligence) as a writing assistant — not a replacement for you.",
+        "AI accelerates work — but if you let it do everything, it produces generic text that sounds like others.",
+        "What you need to do: Use it as a draft — then edit it yourself to keep your voice authentic."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ الذكاء الاصطناعي (AI) مساعد كتابة — ليس بديلًا عنك.",
+        "AI يُسرّع العمل — لكن إن تركته كل شيء يخرج كلامًا عامًا يشبه غيرك.",
+        "المطلوب: استخدمه كمسودة — ثم عدّل بيدك حتى يبقى الصوت صوتك."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ الذكاء الاصطناعي (AI) مساعد كتابة — مو بديل عنك.",
+        "الذكاء الاصطناعي يُسرّع العمل — لكن إذا تركته كل شيء يطلع كلام عام يشبه غيرك.",
+        "المطلوب: استخدمه كمسودة — وبعدها عدّل بيدك عشان يبقى الصوت صوتك."
+      ],
+      "ar-EG": [
+        "AI يقدر يسرع الشغل، لكن لو سبتله كل حاجة هيطلع كلام عام شبه غيرك.",
+        "المطلوب منك النهاردة: تستخدمه كمسودة، وبعدين تعدل بإيدك عشان الصوت يفضل صوتك."
+      ]
+    },
+    "coreIdea": {
+      "en": "Start with a Prompt",
+      "ar-MSA": "ابدأ بـ Prompt (طلب)",
+      "ar-Gulf": "ابدأ بـ Prompt (طلب)",
+      "ar-EG": "ابدأ ببرومبت فيه الجمهور، الهدف، النبرة، وطول المحتوى المطلوب."
+    },
+    "tension": {
+      "en": "Copying AI text as is kills your personality. When you publish without editing — the audience feels the text is artificial and repetitive.",
+      "ar-MSA": "نسخ نص AI كما هو يقتل شخصيتك. عندما تنشر من دون تعديل — المتابع يشعر أن الكلام متصنع ومكرّر.",
+      "ar-Gulf": "نسخ نص AI كما هو يقتل شخصيتك. لما تنشر بدون تعديل — المتابع يحس أن الكلام متصنع ومكرر.",
+      "ar-EG": "لما تنشر النص من غير تعديل، المتابع يحس إن الكلام متصنع ومكرر."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Weak Style",
+        "rightLabel": "Stronger Style",
+        "leftBody": "General Prompt then publish the text as is — cold and similar content",
+        "rightBody": "Prompt with clear Context then manually edit the key sentences — closer to your true voice"
+      },
+      "ar-MSA": {
+        "leftLabel": "الأسلوب الضعيف",
+        "rightLabel": "الأسلوب الأقوى",
+        "leftBody": "Prompt عام ثم نشر النص كما هو — محتوى بارد ومتشابه",
+        "rightBody": "Prompt فيه Context واضح ثم تعديل يدوي للجمل الأساسية — أقرب لصوتك فعلًا"
+      },
+      "ar-Gulf": {
+        "leftLabel": "الأسلوب الضعيف",
+        "rightLabel": "الأسلوب الأقوى",
+        "leftBody": "Prompt عام ثم نشر النص كما هو — محتوى بارد ومتشابه",
+        "rightBody": "Prompt فيه سياق واضح ثم تعديل يدوي للجمل الأساسية — أقرب لصوتك فعلًا"
+      },
+      "ar-EG": {
+        "leftLabel": "الأسلوب الضعيف",
+        "leftBody": "برومبت عام ثم نشر النص كما هو. النتيجة محتوى بارد ومتشابه.",
+        "rightLabel": "الأسلوب الأقوى",
+        "rightBody": "برومبت فيه سياق واضح ثم تعديل يدوي للجمل الأساسية. النتيجة أقرب لصوتك فعلا."
+      }
+    },
+    "missionIntro": {
+      "en": "Two clear steps: a draft from AI — then your human editing on 3 lines to show your personality.",
+      "ar-MSA": "خطوتان واضحتان: مسودة من AI — ثم تعديل بشري منك على ٣ سطور حتى تظهر شخصيتك.",
+      "ar-Gulf": "خطوتان واضحتان: مسودة من الذكاء الاصطناعي — ثم تعديل بشري منك على ٣ سطور عشان تظهر شخصيتك.",
+      "ar-EG": "المهمة فيها خطوتين واضحين: مسودة من AI، وبعدها تعديل بشري منك على ٣ سطور عشان تبان شخصيتك."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Visual snapshot — **the draft before and after editing**. **Use AI to speed up the beginning** — **but the final version** **must go through your personal editi",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m4-l3-ai-writing.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Visual snapshot — **the draft before and after editing**. **Use AI to speed up the beginning** — **but the final version** **must go through"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l3-ai-writing.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "ابدأ بـ Prompt (طلب)"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l3-ai-writing.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "ابدأ بـ Prompt (طلب)"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/creator-m4-l3-ai-writing.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "الخلاصة من المثال: استخدم AI لتسريع البداية، لكن النسخة النهائية لازم تعدي على تعديلك الشخصي."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "creator-m4-l3-ai-writing's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Weak Style / Stronger Style) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Weak Style\" vs \"Stronger Style\" for creator-m4-l3-ai-writing.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Weak Style",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m4-l3-ai-writing.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Stronger Style",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m4-l3-ai-writing.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Context",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m4-l3-ai-writing.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Draft",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m4-l3-ai-writing.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "الأسلوب الضعيف",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l3-ai-writing.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "الأسلوب الأقوى",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l3-ai-writing.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Context (سياق)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l3-ai-writing.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Draft (مسودة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l3-ai-writing.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "الأسلوب الضعيف",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l3-ai-writing.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "الأسلوب الأقوى",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l3-ai-writing.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "سياق (Context)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l3-ai-writing.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "مسودة (Draft)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l3-ai-writing.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "الأسلوب الضعيف",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m4-l3-ai-writing.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "الأسلوب الأقوى",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m4-l3-ai-writing.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Context",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m4-l3-ai-writing.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Draft",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m4-l3-ai-writing.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "AI as Writing Assistant: \"Weak Style\" versus \"Stronger Style\" — Start with a Prompt",
+    "ar-MSA": "الذكاء الاصطناعي مساعدًا للكتابة: \"الأسلوب الضعيف\" في مقابل \"الأسلوب الأقوى\" — ابدأ بـ Prompt (طلب)",
+    "ar-Gulf": "الذكاء الاصطناعي كمساعد في الكتابة: \"الأسلوب الضعيف\" في مقابل \"الأسلوب الأقوى\" — ابدأ بـ Prompt (طلب)",
+    "ar-EG": "اكتب Context واضح ثم عدّل النص: \"الأسلوب الضعيف\" في مقابل \"الأسلوب الأقوى\" — ابدأ ببرومبت فيه الجمهور، الهدف، النبرة، وطول المحتوى المطلوب."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Quality of Context\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m4-l3-ai-writing.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Personal Editing\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m4-l3-ai-writing.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"جودة الـ Context\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l3-ai-writing.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"التعديل الشخصي\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l3-ai-writing.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"جودة السياق\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l3-ai-writing.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"التعديل الشخصي\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l3-ai-writing.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"جودة الـ Context\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m4-l3-ai-writing.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"التعديل الشخصي\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m4-l3-ai-writing.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 60"
+    }
+  ],
+  "checksum": "4d76d88d0e3d60b19d3e079d4d5450b05116f685098ae01e4b81cdba7e24f3f7"
+}

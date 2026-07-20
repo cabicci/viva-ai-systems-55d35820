@@ -1,0 +1,302 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "business-m2-l3-readiness-signals",
+  "pathId": "business",
+  "moduleId": "business-m2",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Readiness Signals",
+    "ar-MSA": "إشارات الجاهزية",
+    "ar-Gulf": "إشارات الجاهزية",
+    "ar-EG": "٤ أسئلة قبل ما تضيف AI"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/business-m2-l3-readiness-signals.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l3-readiness-signals.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l3-readiness-signals.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/business-m2-l3-readiness-signals.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? AI works best when the process is clear — steps, data, repetition, and human review limits.",
+        "Why now? Customer follow-up is designed. Before automation or delegation, you need to ensure the process itself is ready.",
+        "What after the lesson? You will choose one process and examine it: Is it clear? Is it repetitive? Does it have data? Does it need human review?"
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ الذكاء الاصطناعي يعمل أفضل عندما تكون العملية واضحة — خطوات، بيانات، تكرار، وحدود مراجعة.",
+        "لماذا الآن؟ صمّمت متابعة عملاء. قبل الأتمتة أو التفويض، يجب أن تتأكد أن العملية نفسها جاهزة.",
+        "ماذا بعد الدرس؟ ستختار عملية واحدة وتفحصها: واضحة؟ متكررة؟ فيها بيانات؟ تحتاج مراجعة بشرية؟"
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ الذكاء الاصطناعي يشتغل بشكل أفضل لما تكون العملية واضحة — خطوات، بيانات، تكرار، وحدود مراجعة.",
+        "ليش الحين؟ صممت متابعة العملاء. قبل الأتمتة أو التفويض، لازم تتأكد إن العملية نفسها جاهزة.",
+        "وش بعد الدرس؟ راح تختار عملية وحدة وتفحصها: واضحة؟ متكررة؟ فيها بيانات؟ تحتاج مراجعة بشرية؟"
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ الـ AI يشتغل أحسن لما العملية واضحة — خطوات، بيانات، تكرار، وحدود مراجعة.",
+        "ليه دلوقتي؟ صمّمت متابعة عملاء. قبل الأتمتة أو التفويض، لازم تتأكد إن العملية نفسها جاهزة.",
+        "هتعمل إيه بعد الدرس؟ هتختار عملية واحدة وتفحصها: واضحة؟ متكررة؟ فيها بيانات؟ محتاجة مراجعة بشرية؟"
+      ]
+    },
+    "coreIdea": {
+      "en": "Are the steps clear?",
+      "ar-MSA": "الخطوات واضحة؟",
+      "ar-Gulf": "الخطوات واضحة؟",
+      "ar-EG": "الخطوات واضحة؟ — تقدر تكتب العملية في ٥–٧ خطوات من غير «يعني» و«حسب الموقف»."
+    },
+    "tension": {
+      "en": "Many say, \"Let’s make AI do everything\" — then discover that every response is wrong because the steps are not agreed upon. AI does not fix operational chaos. It speeds up an existing process — if the process is unclear,",
+      "ar-MSA": "كثيرون يقولون «لنجعل الذكاء الاصطناعي يعمل كل شيء» — ثم يكتشفون أن كل رد خاطئ لأن الخطوات غير متفق عليها. الذكاء الاصطناعي لا يُصلح فوضى التشغيل. يسرّع عملية موجودة — إذا كانت العملية غير واضحة، يسرّع الخطأ.",
+      "ar-Gulf": "كثير من الناس يقولون «خلونا نخلي الذكاء الاصطناعي يسوي كل شيء» — بعدين يكتشفون إن كل رد خاطئ لأن الخطوات مو متفق عليها. الذكاء الاصطناعي ما يصلح فوضى التشغيل. يسرع عملية موجودة — إذا كانت العملية مو واضحة، يسرع الخطأ.",
+      "ar-EG": "كتير بيقولوا «خلينا الـ AI يعمل كل حاجة» — وبعدين يكتشفوا إن كل رد غلط لأن الخطوات مش متفق عليها."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Not Ready",
+        "rightLabel": "Ready",
+        "leftBody": "\"We respond to customers based on our mood\" — no template, no timing, AI produces inconsistent responses",
+        "rightBody": "3 types of complaints + response template for each type + review before sending — AI fills in the draft and you approve"
+      },
+      "ar-MSA": {
+        "leftLabel": "غير جاهزة",
+        "rightLabel": "جاهزة",
+        "leftBody": "«نرد على العملاء حسب مزاجنا» — لا قالب، لا توقيت، الذكاء الاصطناعي يُنتج ردودًا متناقضة",
+        "rightBody": "٣ أنواع شكاوى + قالب رد لكل نوع + مراجعة قبل الإرسال — الذكاء الاصطناعي يملأ المسودة وأنت توافق"
+      },
+      "ar-Gulf": {
+        "leftLabel": "غير جاهزة",
+        "rightLabel": "جاهزة",
+        "leftBody": "«نرد على العملاء حسب مزاجنا» — لا قالب، لا توقيت، الذكاء الاصطناعي يُنتج ردودًا متناقضة",
+        "rightBody": "٣ أنواع شكاوى + قالب رد لكل نوع + مراجعة قبل الإرسال — الذكاء الاصطناعي يملأ المسودة وأنت توافق"
+      },
+      "ar-EG": {
+        "leftLabel": "غير جاهزة",
+        "leftBody": "«بنرد على العملاء حسب مزاجنا» — مفيش قالب، مفيش توقيت، الـ AI يطلع ردود متناقضة.",
+        "rightLabel": "جاهزة",
+        "rightBody": "٣ أنواع شكاوى + قالب رد لكل نوع + مراجعة قبل الإرسال — الـ AI يملأ المسودة وأنت توافق."
+      }
+    },
+    "missionIntro": {
+      "en": "Choose one process in your work (follow-up, complaint response, pricing, weekly report). Answer the four questions honestly — not what you wish. Automation is not requested — diagnosis is requested.",
+      "ar-MSA": "اختر عملية واحدة في عملك (متابعة، رد شكاوى، تسعير، تقرير أسبوعي). أجب على الأسئلة الأربعة بصدق — ليس بما تتمنى. لا يُطلب أتمتة — يُطلب تشخيص.",
+      "ar-Gulf": "اختر عملية واحدة في عملك (متابعة، رد شكاوى، تسعير، تقرير أسبوعي). أجب على الأسئلة الأربعة بصدق — مو بما تتمنى. ما يُطلب أتمتة — يُطلب تشخيص.",
+      "ar-EG": "اختار عملية واحدة في بيزنسك (متابعة، رد شكاوى، تسعير، تقرير أسبوعي). جاوب على الـ ٤ أسئلة بصدق — مش باللي تتمنى.\n\nمش مطلوب أتمتة — مطلوب تشخيص."
+    },
+    "visualIntent": {
+      "kind": "data-relationship",
+      "summary": "Readiness signals — a simple check. If there is a weak point in the four questions — fix the process first, then add AI.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m2-l3-readiness-signals.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "Readiness signals — a simple check. If there is a weak point in the four questions — fix the process first, then add AI."
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l3-readiness-signals.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "علامات الجاهزية — فحص بسيط. إذا كانت نقطة ضعيفة في الأسئلة الأربعة — أصلح العملية أولًا، ثم أضف الذكاء الاصطناعي."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l3-readiness-signals.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "علامات الجاهزية — فحص بسيط. إذا كانت نقطة ضعيفة في الأسئلة الأربعة — أصلح العملية أولًا، بعدين أضف الذكاء الاصطناعي."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/business-m2-l3-readiness-signals.ts",
+          "field": "block.caption (diagram)",
+          "quote": "لو نقطة ضعيفة في الـ ٤ أسئلة — اصلّح العملية الأول، بعدين ضيف الـ AI."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "business-m2-l3-readiness-signals's package marks a Diagram intent (readiness-signals); the underlying relationship reads as data-relationship, so a deterministic SVG panel keeps the real Not Ready/Ready labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "kpi-grid-panel",
+  "duplicationJustification": "Shares the \"kpi-grid-panel\" layout template with 4 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Not Ready\" vs \"Ready\" for business-m2-l3-readiness-signals.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Not Ready",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m2-l3-readiness-signals.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Ready",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m2-l3-readiness-signals.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Process Readiness",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m2-l3-readiness-signals.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "غير جاهزة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l3-readiness-signals.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "جاهزة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l3-readiness-signals.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Process Readiness (جاهزية العملية)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l3-readiness-signals.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "غير جاهزة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l3-readiness-signals.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "جاهزة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l3-readiness-signals.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "جاهزية العملية",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l3-readiness-signals.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "غير جاهزة",
+        "source": {
+          "path": "src/components/intro/lessons/business-m2-l3-readiness-signals.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "جاهزة",
+        "source": {
+          "path": "src/components/intro/lessons/business-m2-l3-readiness-signals.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Process Readiness (جاهزية العملية)",
+        "source": {
+          "path": "src/components/intro/lessons/business-m2-l3-readiness-signals.ts",
+          "field": "block.items[0].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Readiness Signals: \"Not Ready\" versus \"Ready\" — Are the steps clear?",
+    "ar-MSA": "إشارات الجاهزية: \"غير جاهزة\" في مقابل \"جاهزة\" — الخطوات واضحة؟",
+    "ar-Gulf": "إشارات الجاهزية: \"غير جاهزة\" في مقابل \"جاهزة\" — الخطوات واضحة؟",
+    "ar-EG": "٤ أسئلة قبل ما تضيف AI: \"غير جاهزة\" في مقابل \"جاهزة\" — الخطوات واضحة؟ — تقدر تكتب العملية في ٥–٧ خطوات من غير «يعني» و«حسب الموقف»."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Honest Check\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/business-m2-l3-readiness-signals.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Clear Judgment\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/business-m2-l3-readiness-signals.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"فحص صادق\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l3-readiness-signals.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"حكم واضح\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l3-readiness-signals.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"فحص صادق\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l3-readiness-signals.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"حكم واضح\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l3-readiness-signals.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"فحص صادق\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m2-l3-readiness-signals.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"حكم واضح\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m2-l3-readiness-signals.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "6973f19c23e9cbb5073cd33d77a6c94c8127cbf6951dc58ebb70a9bc061d2bab"
+}

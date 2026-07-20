@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "automator-m3-l2-triggers-actions",
+  "pathId": "automator",
+  "moduleId": "automator-m3",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Triggers and Actions",
+    "ar-MSA": "المحفّزات والإجراءات",
+    "ar-Gulf": "المشغّلات والأفعال",
+    "ar-EG": "لما ده يحصل → اعمل كده"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/automator-m3-l2-triggers-actions.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m3-l2-triggers-actions.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m3-l2-triggers-actions.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/automator-m3-l2-triggers-actions.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What Will You Understand? Every automation = \"When this happens, do that\" — Trigger + one or more Actions.",
+        "Why Now? After choosing the tool, you need to design your first workflow for the automation — before opening any screen.",
+        "What After the Lesson? You will design one workflow: Trigger → 2–3 Actions."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ كل أتمتة = «لما هذا يحصل، افعل ذلك» — Trigger (المُشغّل) + Action (فعل) واحد أو أكثر.",
+        "لماذا الآن؟ بعد اختيار الأداة، تحتاج تصميم أول مسار عمل (workflow) للعامل الافتراضي — قبل فتح أي شاشة.",
+        "ماذا بعد الدرس؟ ستصمّم مسار عمل (workflow) واحدًا: مُشغّل → ٢–٣ أفعال (Actions)."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ كل أتمتة = «لما هذا يحصل، افعل ذلك» — مُشغّل + فعل واحد أو أكثر.",
+        "ليش الحين؟ بعد ما تختار الأداة، تحتاج تصمم أول مسار عمل للعامل الافتراضي — قبل ما تفتح أي شاشة.",
+        "وش بعد الدرس؟ راح تصمم مسار عمل واحد: مُشغّل → ٢–٣ أفعال."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ كل أتمتة = «لما ده يحصل، اعمل كده» — مُشغّل (Trigger) + فعل أو أكتر (Action).",
+        "ليه دلوقتي؟ بعد ما اخترت الأداة، محتاج تصمّم أول workflow للعامل الافتراضي — قبل ما تفتح أي شاشة.",
+        "هتعمل إيه بعد الدرس؟ هتصمّم workflow واحد: مُشغّل → ٢–٣ actions."
+      ]
+    },
+    "coreIdea": {
+      "en": "When this happens → do that",
+      "ar-MSA": "لما هذا يحصل → افعل ذلك",
+      "ar-Gulf": "لما هذا يحصل → افعل ذلك",
+      "ar-EG": "Trigger (المُشغّل): الحدث اللي يبدأ الشغل — فورم اتملّى، رسالة وصلت، الساعة ٩ الصبح."
+    },
+    "tension": {
+      "en": "You build a Flow — without knowing \"For what?\"",
+      "ar-MSA": "تبني تدفق عمل (Flow) — من دون أن تعرف «لما ماذا؟»",
+      "ar-Gulf": "تبني تدفق عمل — من دون ما تعرف «لما ماذا؟»",
+      "ar-EG": "بتفتح الأداة وتضيف actions — بس المُشغّل مش واضح. الـ Flow يشتغل… بس مش في الوقت الصح."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Actions only",
+        "rightLabel": "Trigger + Actions",
+        "leftBody": "Built a Flow that sends an email — but don’t know \"when\". You manually trigger it every time. This is not automation.",
+        "rightBody": "\"When a new form → send a welcome email.\" You don’t open the tool — the automation works by itself."
+      },
+      "ar-MSA": {
+        "leftLabel": "أفعال (Actions) فقط",
+        "rightLabel": "Trigger (مُشغّل) + Actions (أفعال)",
+        "leftBody": "بنت تدفق عمل (Flow) يرسل بريدًا — لكن لا تعرف «متى». تضغط تشغيلًا يدويًا كل مرة. هذا ليس عاملًا افتراضيًا",
+        "rightBody": "«لما نموذج جديد → بريد ترحيب». لا تفتح الأداة — العامل الافتراضي يعمل وحده"
+      },
+      "ar-Gulf": {
+        "leftLabel": "أفعال فقط",
+        "rightLabel": "مُشغّل + أفعال",
+        "leftBody": "بنت تدفق عمل يرسل بريد — لكن ما تعرف «متى». تضغط تشغيل يدوي كل مرة. هذا مو عامل افتراضي",
+        "rightBody": "«لما نموذج جديد → بريد ترحيب». ما تفتح الأداة — العامل الافتراضي يعمل وحده"
+      },
+      "ar-EG": {
+        "leftLabel": "Actions بس",
+        "leftBody": "هبة بنت Flow يبعت إيميل — بس مش عارفة «إمتى». بتضغط تشغيل يدوي كل مرة. ده مش عامل افتراضي.",
+        "rightLabel": "Trigger + Actions",
+        "rightBody": "«لما فورم جديد → إيميل ترحيب». هبة ما بتفتحش الأداة — العامل الافتراضي يشتغل لوحده."
+      }
+    },
+    "missionIntro": {
+      "en": "Design a workflow for your automation candidate — one Trigger + 2–3 Actions. Design on paper — no building in the tool. 10–15 minutes is enough.",
+      "ar-MSA": "صمّم مسار عمل (workflow) لمرشّح الأتمتة لديك — Trigger (مُشغّل) واحد + ٢–٣ Actions (أفعال). تصميم على ورقة — لا بناء في الأداة. ١٠–١٥ دقيقة كافية.",
+      "ar-Gulf": "صمم مسار عمل لمرشح الأتمتة لديك — مُشغّل واحد + ٢–٣ أفعال. تصميم على ورقة — لا بناء في الأداة. ١٠–١٥ دقيقة كافية.",
+      "ar-EG": "صمّم workflow لمرشّح الأتمتة بتاعك — Trigger واحد + ٢–٣ Actions. تصميم على ورقة — مش بناء في الأداة.\n\n١٠–١٥ دقيقة كفاية."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Illustration: Each step = **Trigger** → **Action**. Example:",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m3-l2-triggers-actions.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Illustration: Each step = **Trigger** → **Action**. Example:"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m3-l2-triggers-actions.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "لما هذا يحصل → افعل ذلك"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m3-l2-triggers-actions.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "صورة توضيحية: كل خطوة = **مُشغّل** → **فعل**. مثال: «أنهيت مهمة» → «سجّل» + «افتح التالية» + «ذكّر». (الأصل البصري يبقى كما هو.)"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/automator-m3-l2-triggers-actions.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "أي مسار = حدث (مُشغّل) → action أو أكتر. مثال: «خلّصت مهمة» → «سجّل» + «افتح التالية» + «ذكّر». نفس الفكرة على شغلك."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "automator-m3-l2-triggers-actions's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Actions only / Trigger + Actions) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Actions only\" vs \"Trigger + Actions\" for automator-m3-l2-triggers-actions.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Actions only",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m3-l2-triggers-actions.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Trigger + Actions",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m3-l2-triggers-actions.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Trigger",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m3-l2-triggers-actions.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Action",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m3-l2-triggers-actions.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "أفعال (Actions) فقط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m3-l2-triggers-actions.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Trigger (مُشغّل) + Actions (أفعال)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m3-l2-triggers-actions.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Trigger (المُشغّل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m3-l2-triggers-actions.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Action (الفعل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m3-l2-triggers-actions.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "أفعال فقط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m3-l2-triggers-actions.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مُشغّل + أفعال",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m3-l2-triggers-actions.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "مُشغّل",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m3-l2-triggers-actions.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "فعل",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m3-l2-triggers-actions.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "Actions بس",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m3-l2-triggers-actions.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Trigger + Actions",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m3-l2-triggers-actions.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Trigger (المُشغّل)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m3-l2-triggers-actions.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Action (الفعل)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m3-l2-triggers-actions.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Triggers and Actions: \"Actions only\" versus \"Trigger + Actions\" — When this happens → do that",
+    "ar-MSA": "المحفّزات والإجراءات: \"أفعال (Actions) فقط\" في مقابل \"Trigger (مُشغّل) + Actions (أفعال)\" — لما هذا يحصل → افعل ذلك",
+    "ar-Gulf": "المشغّلات والأفعال: \"أفعال فقط\" في مقابل \"مُشغّل + أفعال\" — لما هذا يحصل → افعل ذلك",
+    "ar-EG": "لما ده يحصل → اعمل كده: \"Actions بس\" في مقابل \"Trigger + Actions\" — Trigger (المُشغّل): الحدث اللي يبدأ الشغل — فورم اتملّى، رسالة وصلت، الساعة ٩ الصبح."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Trigger + Actions\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m3-l2-triggers-actions.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Success\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m3-l2-triggers-actions.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Trigger + Actions\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m3-l2-triggers-actions.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Success\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m3-l2-triggers-actions.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"مُشغّل + أفعال\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m3-l2-triggers-actions.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"نجاح\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m3-l2-triggers-actions.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Trigger + Actions\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m3-l2-triggers-actions.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Success\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m3-l2-triggers-actions.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "69b08aeb4f15f0d372406ab0fa78a9d77713211f7868bd6d06d991481488400e"
+}

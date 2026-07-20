@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m2-l2-instructions-examples",
+  "pathId": "builder",
+  "moduleId": "builder-m2",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Instructions vs Examples",
+    "ar-MSA": "التعليمات مقابل الأمثلة",
+    "ar-Gulf": "التعليمات مقابل الأمثلة",
+    "ar-EG": "المثال يعلّم أحسن من الصفة"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m2-l2-instructions-examples.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l2-instructions-examples.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l2-instructions-examples.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m2-l2-instructions-examples.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? When to describe with words and when to show an example — and how this affects the quality of AI outputs in your product.",
+        "Why now? Many prompts fail not because AI is 'weak' — but because you described it with adjectives ('professional', 'creative') instead of showing the structure.",
+        "What after the lesson? You will write a prompt that includes two examples + a clear pattern line."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ متى تصف بالكلام ومتى تُري مثالًا — وكيف يفرّق ذلك في جودة مخرجات الذكاء الاصطناعي في منتجك.",
+        "لماذا الآن؟ كثير من Prompts (الطلبات) تفشل ليس لأن الذكاء الاصطناعي «ضعيف» — بل لأنك وصفته بصفات («احترافي»، «إبداعي») بدل أن تُري الشكل.",
+        "ماذا بعد الدرس؟ ستكتب Prompt فيه مثالان + سطر نمط (pattern) واضح."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ متى تصف بالكلام ومتى تُري مثالًا — وكيف يفرق ذلك في جودة مخرجات الذكاء الاصطناعي في منتجك.",
+        "ليش الآن؟ كثير من Prompts (الطلبات) تفشل مو لأن الذكاء الاصطناعي «ضعيف» — بل لأنك وصفته بصفات («احترافي»، «إبداعي») بدل ما تُري الشكل.",
+        "وش بعد الدرس؟ راح تكتب Prompt فيه مثالان + سطر نمط (pattern) واضح."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ إمتى توصف بالكلام وإمتى تورّي مثال — وإزاي ده يفرّق في جودة مخرجات AI في منتجك.",
+        "ليه دلوقتي؟ كتير من الـ Prompts بتفشل مش لأن الـ AI «غبي» — لأنك وصفته بصفات («احترافي»، «إبداعي») بدل ما تورّيه الشكل.",
+        "هتعمل إيه بعد الدرس؟ هتكتب Prompt فيه مثالين + pattern واضح."
+      ]
+    },
+    "coreIdea": {
+      "en": "Instructions",
+      "ar-MSA": "Instructions (تعليمات)",
+      "ar-Gulf": "Instructions (تعليمات)",
+      "ar-EG": "Instructions = خطوات أو قواعد بالكلام: «اعمل ١، ٢، ٣»."
+    },
+    "tension": {
+      "en": "I wrote 'Write in an engaging and unique style' — and the response was clichés: 'Discover the magic' and 'A unique experience'. AI is better at mimicking than understanding general qualities.",
+      "ar-MSA": "كتبت «اكتب بأسلوب جذّاب ومميز» — والرد جاء كليشيهات: «اكتشف السحر» و«تجربة فريدة». الذكاء الاصطناعي بارع في التقليد أكثر من فهم الصفات العامة.",
+      "ar-Gulf": "كتبت «اكتب بأسلوب جذّاب ومميز» — والرد جاء كليشيهات: «اكتشف السحر» و«تجربة فريدة». الذكاء الاصطناعي بارع في التقليد أكثر من فهم الصفات العامة.",
+      "ar-EG": "كتبت «اكتب بأسلوب جذّاب ومميز» — والرد طلع كليشيهات: «اكتشف السحر» و«تجربة فريدة»."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Description in Words",
+        "rightLabel": "Example to Mimic",
+        "leftBody": "'Write me 3 catchy titles for honey product.' — Often 'Golden Bee Honey' and 'Healing from Nature' — Generic Words",
+        "rightBody": "'Write me 3 titles for honey, in the style of: 'Liquid Gold from Nature.' — All responses are poetic like the example"
+      },
+      "ar-MSA": {
+        "leftLabel": "وصف بالكلام",
+        "rightLabel": "مثال يقلّده",
+        "leftBody": "«اكتب لي ٣ عناوين جذّابة لمنتج عسل.» — غالبًا «عسل النحل الذهبي» و«شفاء من الطبيعة» — كلام عام",
+        "rightBody": "«اكتب لي ٣ عناوين لعسل، على نمط: ‚ذهب سائل من الطبيعة‘.» — الردود كلها شاعرية مثل المثال"
+      },
+      "ar-Gulf": {
+        "leftLabel": "وصف بالكلام",
+        "rightLabel": "مثال يقلّده",
+        "leftBody": "«اكتب لي ٣ عناوين جذّابة لمنتج عسل.» — غالبًا «عسل النحل الذهبي» و«شفاء من الطبيعة» — كلام عام",
+        "rightBody": "«اكتب لي ٣ عناوين لعسل، على نمط: ‚ذهب سائل من الطبيعة‘.» — الردود كلها شاعرية مثل المثال"
+      },
+      "ar-EG": {
+        "leftLabel": "وصف بالكلام",
+        "leftBody": "«اكتبلي ٣ عناوين جذابة لمنتج عسل.» — غالبًا «عسل النحل الذهبي» و«شفاء من الطبيعة» — كلام عام.",
+        "rightLabel": "مثال يقلّده",
+        "rightBody": "«اكتبلي ٣ عناوين لعسل، على نمط: ‚ذهب سائل من الطبيعة‘.» — الردود كلها شاعرية زي المثال."
+      }
+    },
+    "missionIntro": {
+      "en": "Weak request → Add two examples + pattern sentence. 10–15 minutes is enough.",
+      "ar-MSA": "طلب ضعيف → أضف مثالين + جملة pattern. ١٠–١٥ دقيقة كافية.",
+      "ar-Gulf": "طلب ضعيف → أضف مثالين + جملة نمط. ١٠–١٥ دقيقة كافية.",
+      "ar-EG": "هتاخد طلب ضعيف، وتضيفله مثالين + جملة pattern.\n\n١٠–١٥ دقيقة."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "**Matching Cards — From One Example:**",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m2-l2-instructions-examples.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**Matching Cards — From One Example:**"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l2-instructions-examples.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**كروت متطابقة — من مثال واحد:**"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l2-instructions-examples.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "**كروت متطابقة — من مثال واحد:**"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m2-l2-instructions-examples.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "الكروت دي كلها نفس التنسيق. مش من تعليمات طويلة — من مثال واحد: «اعمل كارت زي ده للمسارات التانية.» الـ AI فهم الـ patte"
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "builder-m2-l2-instructions-examples's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Description in Words / Example to Mimic) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Description in Words\" vs \"Example to Mimic\" for builder-m2-l2-instructions-examples.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Description in Words",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m2-l2-instructions-examples.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Example to Mimic",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m2-l2-instructions-examples.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Instructions",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m2-l2-instructions-examples.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Few-shot Prompting",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m2-l2-instructions-examples.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "وصف بالكلام",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l2-instructions-examples.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مثال يقلّده",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l2-instructions-examples.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Instructions (تعليمات)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l2-instructions-examples.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Few-shot Prompting (طلب بأمثلة قليلة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l2-instructions-examples.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "وصف بالكلام",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l2-instructions-examples.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مثال يقلّده",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l2-instructions-examples.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Instructions (تعليمات)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l2-instructions-examples.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Few-shot Prompting (طلب بأمثلة قليلة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l2-instructions-examples.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "وصف بالكلام",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m2-l2-instructions-examples.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مثال يقلّده",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m2-l2-instructions-examples.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Instructions (تعليمات)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m2-l2-instructions-examples.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Few-shot Prompting",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m2-l2-instructions-examples.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Instructions vs Examples: \"Description in Words\" versus \"Example to Mimic\" — Instructions",
+    "ar-MSA": "التعليمات مقابل الأمثلة: \"وصف بالكلام\" في مقابل \"مثال يقلّده\" — Instructions (تعليمات)",
+    "ar-Gulf": "التعليمات مقابل الأمثلة: \"وصف بالكلام\" في مقابل \"مثال يقلّده\" — Instructions (تعليمات)",
+    "ar-EG": "المثال يعلّم أحسن من الصفة: \"وصف بالكلام\" في مقابل \"مثال يقلّده\" — Instructions = خطوات أو قواعد بالكلام: «اعمل ١، ٢، ٣»."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Consistent Examples\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m2-l2-instructions-examples.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Pattern Analysis\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m2-l2-instructions-examples.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"مثالان متسقان\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l2-instructions-examples.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"تحليل النمط\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l2-instructions-examples.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"مثالان متسقان\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l2-instructions-examples.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"تحليل النمط\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l2-instructions-examples.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"مثالين متسقين\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m2-l2-instructions-examples.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"تحليل النمط\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m2-l2-instructions-examples.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "7b6c7725893f27f8525c0b9c42606f2c2041ae9322ff91b3245f7f8ec5e6aa70"
+}

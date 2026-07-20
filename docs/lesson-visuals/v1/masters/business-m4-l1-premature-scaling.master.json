@@ -1,0 +1,230 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "business-m4-l1-premature-scaling",
+  "pathId": "business",
+  "moduleId": "business-m4",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Premature Scaling",
+    "ar-MSA": "التوسّع المبكر",
+    "ar-Gulf": "توسّع قبل الأوان",
+    "ar-EG": "٤ فحوصات قبل التوسّع"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/business-m4-l1-premature-scaling.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l1-premature-scaling.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l1-premature-scaling.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/business-m4-l1-premature-scaling.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Premature Scaling breaks weak systems faster."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ Premature Scaling (توسّع قبل الأوان) يكسر الأنظمة الضعيفة أسرع."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ Premature Scaling (التوسّع المبكر) يكسر الأنظمة الضعيفة بشكل أسرع."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ التوسّع المبكر يكسر الأنظمة الضعيفة أسرع — والـ AI يساعدك تحاكي المخاطر قبل ما تكبّر.",
+        "ليه دلوقتي؟ عندك نظام وعمليات وربما فريق مخطط. قبل فرع جديد أو إعلان ضخم — افحص الجاهزية.",
+        "هتعمل إيه بعد الدرس؟ هتقيّم فكرة توسّع واحدة على ٤ محاور: عملية، كاش، جودة، طلب حقيقي."
+      ]
+    },
+    "coreIdea": {
+      "en": "SOP",
+      "ar-MSA": "SOP",
+      "ar-Gulf": "SOP",
+      "ar-EG": "العملية جاهزة؟ — SOPs تشتغل من غيرك لمعظم اليوم العادي."
+    },
+    "tension": {
+      "en": "Is the process ready? SOP works without your presence. Cash — can you sustain for 3–6 months?",
+      "ar-MSA": "العملية جاهزة؟ SOP يعمل بلا حضورك. الكاش — ٣–٦ شهور تحمل؟",
+      "ar-Gulf": "هل العملية جاهزة؟ SOP يعمل بدون حضورك. هل لديك كاش يكفي لـ ٣–٦ شهور؟",
+      "ar-EG": "إعلانات أكتر، فرع تاني، منتج جديد — الحماس عالي. بعد شهرين: شكاوى، تأخير، كاش ضاغط."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Introduction",
+        "rightLabel": "4 Checks",
+        "leftBody": "breaks weak systems faster.",
+        "rightBody": "SOP"
+      },
+      "ar-MSA": {
+        "leftLabel": "بداية الدرس",
+        "rightLabel": "٤ فحوصات",
+        "leftBody": "Premature Scaling (توسّع قبل الأوان)",
+        "rightBody": "SOP"
+      },
+      "ar-Gulf": {
+        "leftLabel": "المقدمة",
+        "rightLabel": "٤ فحوصات",
+        "leftBody": "Premature Scaling (التوسّع المبكر)",
+        "rightBody": "SOP"
+      },
+      "ar-EG": {
+        "leftLabel": "توسّع بالحماس",
+        "rightLabel": "توسّع بفحص",
+        "leftBody": "إعلان ضخم بدون SOP. الطلبات تزيد — الجودة تنزل — الكاش يضغط.",
+        "rightBody": "AI يحاكي السيناريو. تصلّح نقطة ضعف واحدة — بعدين تزود الحجم خطوة."
+      }
+    },
+    "missionIntro": {
+      "en": "| Honest Check | 60% | | Clear Decision | 40% |",
+      "ar-MSA": "| فحص صادق | 60% | | قرار واضح | 40% |",
+      "ar-Gulf": "| فحص صادق | 60% | | قرار واضح | 40% |",
+      "ar-EG": "اختار فكرة توسّع عندك (فرع، إعلان أكبر، منتج جديد، توظيف متعدد). قيّمها على الـ ٤ محاور بصدق — والـ AI يساعدك تسأل «إيه اللي ممكن ينكسر؟».\n\nمش مطلوب تنفيذ — مطلوب حكم."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "- Is the process ready? **SOP** works without your presence.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m4-l1-premature-scaling.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "- Is the process ready? **SOP** works without your presence."
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l1-premature-scaling.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "- الطلب حقيقي — تكرار شراء أو قائمة انتظار."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l1-premature-scaling.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "- هل الطلب حقيقي — تكرار شراء أو قائمة انتظار."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/business-m4-l1-premature-scaling.ts",
+          "field": "block.caption (diagram)",
+          "quote": "لو نقطة واحدة من الـ ٤ فحوصات ضعيفة — التوسّع يزود السرعة للمشكلة مش للنمو."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "business-m4-l1-premature-scaling's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Introduction / 4 Checks) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 60 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Introduction\" vs \"4 Checks\" for business-m4-l1-premature-scaling.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Introduction",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m4-l1-premature-scaling.json",
+          "field": "sections[role=Tension].subtitle"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "4 Checks",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m4-l1-premature-scaling.json",
+          "field": "sections[role=Core idea].subtitle"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "بداية الدرس",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l1-premature-scaling.json",
+          "field": "sections[role=Tension].subtitle"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "٤ فحوصات",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l1-premature-scaling.json",
+          "field": "sections[role=Core idea].subtitle"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "المقدمة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l1-premature-scaling.json",
+          "field": "sections[role=Tension].subtitle"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "٤ فحوصات",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l1-premature-scaling.json",
+          "field": "sections[role=Core idea].subtitle"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "توسّع بالحماس",
+        "source": {
+          "path": "src/components/intro/lessons/business-m4-l1-premature-scaling.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "توسّع بفحص",
+        "source": {
+          "path": "src/components/intro/lessons/business-m4-l1-premature-scaling.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Premature Scaling (توسّع قبل الأوان)",
+        "source": {
+          "path": "src/components/intro/lessons/business-m4-l1-premature-scaling.ts",
+          "field": "block.items[0].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Premature Scaling: \"Introduction\" versus \"4 Checks\" — SOP",
+    "ar-MSA": "التوسّع المبكر: \"بداية الدرس\" في مقابل \"٤ فحوصات\" — SOP",
+    "ar-Gulf": "توسّع قبل الأوان: \"المقدمة\" في مقابل \"٤ فحوصات\" — SOP",
+    "ar-EG": "٤ فحوصات قبل التوسّع: \"توسّع بالحماس\" في مقابل \"توسّع بفحص\" — العملية جاهزة؟ — SOPs تشتغل من غيرك لمعظم اليوم العادي."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"فحص صادق\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m4-l1-premature-scaling.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قرار واضح\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m4-l1-premature-scaling.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "01bf8f0e7274bc0ff221dfd7a76031eacc3ffcf6654052f09004b7f8ffe1697a"
+}

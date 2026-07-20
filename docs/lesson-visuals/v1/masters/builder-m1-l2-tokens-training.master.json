@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "builder-m1-l2-tokens-training",
+  "pathId": "builder",
+  "moduleId": "builder-m1",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Tokens and Training",
+    "ar-MSA": "التوكنز والتدريب",
+    "ar-Gulf": "التوكنز والتدريب",
+    "ar-EG": "المدخلات والمخرجات الطويلة = وقت وتكلفة أكتر"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/builder-m1-l2-tokens-training.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m1-l2-tokens-training.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m1-l2-tokens-training.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/builder-m1-l2-tokens-training.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Why do long prompts take more time and cost more — and how does this affect every prompt you write?",
+        "Why now? When you build an AI feature in your product — every character counts. Shortening is not a luxury — it’s design.",
+        "What after the lesson? You will compare a short prompt and a long prompt and explain what you will remove."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ لماذا الطلب الطويل يأخذ وقتًا أطول وتكلفة أكبر — وكيف يؤثر ذلك على كل Prompt (طلب) ستكتبه.",
+        "لماذا الآن؟ عندما تبني ميزة ذكاء اصطناعي في منتجك — كل حرف يُحاسَب عليه. الاختصار ليس ترفًا — بل تصميم.",
+        "ماذا بعد الدرس؟ ستقارن Prompt قصيرًا وطويلًا وتقول ما الذي ستزيله."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ ليش الطلب الطويل يأخذ وقت أكثر وتكلفة أعلى — وكيف يؤثر ذلك على كل Prompt (طلب) تكتبه.",
+        "ليش الحين؟ لما تبني ميزة ذكاء اصطناعي في منتجك — كل حرف يُحاسَب عليه. الاختصار مو ترف — بل تصميم.",
+        "وش بعد الدرس؟ راح تقارن Prompt قصير وطويل وتقول وش اللي راح تشيله."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ ليه الطلب الطويل بياخد وقت أطول وتكلفة أكتر — وإزاي ده يأثر على كل Prompt هتكتبه.",
+        "ليه دلوقتي؟ لما تبني ميزة AI في منتجك، كل حرف بيتحاسب عليه. الاختصار مش ترف — ده تصميم.",
+        "هتعمل إيه بعد الدرس؟ هتقارن Prompt قصير وطويل وتقول إيه اللي هتشيله."
+      ]
+    },
+    "coreIdea": {
+      "en": "AI",
+      "ar-MSA": "الذكاء الاصطناعي",
+      "ar-Gulf": "الذكاء الاصطناعي",
+      "ar-EG": "الـ AI بيقسّم كلامك لقطع صغيرة (Tokens) — مش لازم تحفظ التفاصيل دلوقتي."
+    },
+    "tension": {
+      "en": "You wrote a long introduction and said \"please\" and \"my friend\" — and the response came after a while, or your API bill increased. It’s not necessarily that the model is \"slow\" — often you sent too much text.",
+      "ar-MSA": "كتبت مقدمة طويلة و«من فضلك» و«يا صديقي» — والرد جاء بعد وقت، أو فاتورة API زادت. ليس بالضرورة أن النموذج «بطيء» — غالبًا أنت أرسلت كلامًا أكثر من اللازم.",
+      "ar-Gulf": "كتبت مقدمة طويلة و«من فضلك» و«يا صديقي» — والرد جاء بعد وقت، أو فاتورة API زادت. مو بالضرورة النموذج «بطيء» — غالبًا أنت أرسلت كلام أكثر من اللازم.",
+      "ar-EG": "كتبت مقدمة طويلة و«من فضلك» و«يا صديقي» — والرد جه بعد وقت، أو API فاتورتك زادت."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Fluff and Introductions",
+        "rightLabel": "Direct",
+        "leftBody": "\"My AI friend, please can you help me with a simple task, which is to summarize this article...\" — the entire introduction is a waste of tokens",
+        "rightBody": "\"Summarize the article in 3 points.\" — a short sentence, faster response, lower cost, and the same result"
+      },
+      "ar-MSA": {
+        "leftLabel": "حشو ومقدمات",
+        "rightLabel": "مباشر",
+        "leftBody": "«يا صديقي الذكاء الاصطناعي، من فضلك لو سمحت ممكن تساعدني في حاجة بسيطة وهي إنك تلخّص لي المقال ده…» — كل المقدمة عدّاد يلف على الفاضي",
+        "rightBody": "«لخّص المقال في ٣ نقاط.» — جملة قصيرة، رد أسرع، تكلفة أقل، ونفس النتيجة"
+      },
+      "ar-Gulf": {
+        "leftLabel": "حشو ومقدمات",
+        "rightLabel": "مباشر",
+        "leftBody": "«يا صديقي الذكاء الاصطناعي، من فضلك لو سمحت ممكن تساعدني في حاجة بسيطة وهي إنك تلخّص لي المقال ده…» — كل المقدمة عدّاد يلف على الفاضي",
+        "rightBody": "«لخّص المقال في ٣ نقاط.» — جملة قصيرة، رد أسرع، تكلفة أقل، ونفس النتيجة"
+      },
+      "ar-EG": {
+        "leftLabel": "حشو ومقدمات",
+        "leftBody": "«يا صديقي الذكاء الاصطناعي، من فضلك لو سمحت ممكن تساعدني في حاجة بسيطة وهي إنك تلخّصلي المقال ده...» — كل المقدمة دي عدّاد بيلف على الفاضي.",
+        "rightLabel": "مباشر",
+        "rightBody": "«لخّص المقال ده في ٣ نقط.» — جملة قصيرة، رد أسرع، تكلفة أقل، ونفس النتيجة."
+      }
+    },
+    "missionIntro": {
+      "en": "Same prompt in two formulations: one long and one short. 10 minutes is enough.",
+      "ar-MSA": "نفس الطلب بصياغتين: واحدة طويلة وواحدة مختصرة. ١٠ دقائق كافية.",
+      "ar-Gulf": "نفس الطلب بصياغتين: واحدة طويلة وواحدة مختصرة. ١٠ دقائق كافية.",
+      "ar-EG": "هتاخد نفس الطلب وصياغتين: واحدة طويلة وواحدة مختصرة.\n\n١٠ دقايق كفاية."
+    },
+    "visualIntent": {
+      "kind": "process",
+      "summary": "**From prompt to response — every step counts** (ID: `ai-summarization-flow`):",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m1-l2-tokens-training.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**From prompt to response — every step counts** (ID: `ai-summarization-flow`):"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m1-l2-tokens-training.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**من الطلب إلى الرد — كل خطوة تُحاسَب** (معرّف: `ai-summarization-flow`):"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m1-l2-tokens-training.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**من الطلب إلى الرد — كل خطوة تُحاسَب** (معرّف: `ai-summarization-flow`):"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/builder-m1-l2-tokens-training.ts",
+          "field": "block.caption (diagram)",
+          "quote": "Prompt → تقسيم Tokens → الموديل → رد. كل خطوة في المسار بتستهلك Tokens. لما تختصر الطلب، بتختصر المسار كله."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "builder-m1-l2-tokens-training's package marks a Diagram intent (ai-summarization-flow); the underlying relationship reads as process, so a deterministic SVG panel keeps the real Fluff and Introductions/Direct labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "process-stage-strip",
+  "duplicationJustification": "Shares the \"process-stage-strip\" layout template with 8 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Fluff and Introductions\" vs \"Direct\" for builder-m1-l2-tokens-training.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Fluff and Introductions",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m1-l2-tokens-training.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Direct",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m1-l2-tokens-training.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Token",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m1-l2-tokens-training.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Training",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/builder-m1-l2-tokens-training.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "حشو ومقدمات",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m1-l2-tokens-training.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مباشر",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m1-l2-tokens-training.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Token (توكن)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m1-l2-tokens-training.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Training (التدريب)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m1-l2-tokens-training.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "حشو ومقدمات",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m1-l2-tokens-training.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مباشر",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m1-l2-tokens-training.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Token (توكن)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m1-l2-tokens-training.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Training (التدريب)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m1-l2-tokens-training.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "حشو ومقدمات",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m1-l2-tokens-training.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مباشر",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m1-l2-tokens-training.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Token (توكن)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m1-l2-tokens-training.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Training (التدريب)",
+        "source": {
+          "path": "src/components/intro/lessons/builder-m1-l2-tokens-training.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Tokens and Training: \"Fluff and Introductions\" versus \"Direct\" — AI",
+    "ar-MSA": "التوكنز والتدريب: \"حشو ومقدمات\" في مقابل \"مباشر\" — الذكاء الاصطناعي",
+    "ar-Gulf": "التوكنز والتدريب: \"حشو ومقدمات\" في مقابل \"مباشر\" — الذكاء الاصطناعي",
+    "ar-EG": "المدخلات والمخرجات الطويلة = وقت وتكلفة أكتر: \"حشو ومقدمات\" في مقابل \"مباشر\" — الـ AI بيقسّم كلامك لقطع صغيرة (Tokens) — مش لازم تحفظ التفاصيل دلوقتي."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Real Comparison\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m1-l2-tokens-training.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Shortening Analysis\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/builder-m1-l2-tokens-training.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"مقارنة حقيقية\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m1-l2-tokens-training.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"تحليل الاختصار\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m1-l2-tokens-training.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"مقارنة حقيقية\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m1-l2-tokens-training.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"تحليل الاختصار\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m1-l2-tokens-training.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"مقارنة حقيقية\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m1-l2-tokens-training.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"تحليل الاختصار\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/builder-m1-l2-tokens-training.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "bb9c3291cec3b6d2ec96bd923d6cec5d535498f27b2843309800c508ec2066e7"
+}

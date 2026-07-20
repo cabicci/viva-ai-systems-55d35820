@@ -1,0 +1,241 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "automator-m6-l3-follow-up",
+  "pathId": "automator",
+  "moduleId": "automator-m6",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Follow-up Automation",
+    "ar-MSA": "أتمتة المتابعة",
+    "ar-Gulf": "أتمتة المتابعة",
+    "ar-EG": "تسلسل متابعة = خطوات بوقت وسلوك"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/automator-m6-l3-follow-up.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l3-follow-up.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l3-follow-up.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/automator-m6-l3-follow-up.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What Will You Understand? Follow-up is where sales can be lost — automation makes it systematic.",
+        "Why Now? After the reception and WhatsApp — don’t leave anyone silent."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ Follow-up (متابعة) حيث تضيع المبيعات — الأتمتة تجعلها منتظمة.",
+        "لماذا الآن؟ بعد الاستقبال وواتساب — لا تترك أحدًا صامتًا."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ متابعة وين تضيع المبيعات — الأتمتة تخليها منتظمة.",
+        "ليش الحين؟ بعد الاستقبال وواتساب — لا تترك أحد ساكت."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ المتابعة هي اللي بتضيع فيها المبيعات — الأوتوميشن يخليها منتظمة مش معتمدة على ذاكرتك.",
+        "ليه دلوقتي؟ بعد استقبال leads وردود واتساب، الخطوة الجاية إنك ماتسيبش حد ساكت.",
+        "هتعمل إيه بعد الدرس؟ هتكتب تسلسل متابعة ٣ خطوات لـ lead سجّل وماردش."
+      ]
+    },
+    "coreIdea": {
+      "en": "Stop Condition:",
+      "ar-MSA": "Stop Condition (شرط التوقف):",
+      "ar-Gulf": "شرط التوقف:",
+      "ar-EG": "Follow-up مش رسالة واحدة — تسلسل: يوم ٠ ترحيب، يوم ٢ تذكير، يوم ٥ سؤال واحد."
+    },
+    "tension": {
+      "en": "\"I’ll talk to him tomorrow\" — a week has passed. The deal is gone.",
+      "ar-MSA": "«أكلمه غدًا» — الأسبوع مضى. الصفقة راحت.",
+      "ar-Gulf": "«أكلمه بكرة» — الأسبوع مر. الصفقة راحت.",
+      "ar-EG": "Lead سجّل واستلم رد ترحيب. قلت «هكلمه بكرة». بكرة في شغل تاني. الأسبوع عدى."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "I replied once — and you went silent",
+        "rightLabel": "Follow-up Sequence",
+        "leftBody": "Send the same welcome message again.",
+        "rightBody": "A gentle reminder through a different channel or one question — not sales pressure."
+      },
+      "ar-MSA": {
+        "leftLabel": "ردّيت مرة — وسكتتم",
+        "rightLabel": "Follow-up Sequence (تسلسل متابعة)",
+        "leftBody": "إعادة نفس رسالة الترحيب.",
+        "rightBody": "تذكير لطيف عبر قناة مختلفة أو سؤال واحد — لا ضغط بيع."
+      },
+      "ar-Gulf": {
+        "leftLabel": "رديت مرة — وسكتوا",
+        "rightLabel": "تسلسل المتابعة",
+        "leftBody": "نفس رسالة الترحيب مرة ثانية.",
+        "rightBody": "تذكير لطيف بقناة مختلفة أو بسؤال واحد — مو ضغط بيع."
+      },
+      "ar-EG": {
+        "leftLabel": "حسب المزاج",
+        "leftBody": "«هكلمه لما أفضى». ساعات ترد، ساعات تنسى. العميل مش عارف إنت مهتم ولا لأ.",
+        "rightLabel": "تسلسل أوتوماتيك",
+        "rightBody": "يوم ٠: ترحيب + مورد. يوم ٢: تذكير لطيف. يوم ٥: سؤال واحد. رد؟ يوقف ويحوّل لبشري."
+      }
+    },
+    "missionIntro": {
+      "en": "| 3 diverse steps | 60% | | Smart Stop | 40% |",
+      "ar-MSA": "| ٣ خطوات متنوعة | 60% | | توقف ذكي | 40% |",
+      "ar-Gulf": "| ٣ خطوات متنوعة | 60% | | توقف ذكي | 40% |",
+      "ar-EG": "المهمة كتابة تسلسل عملي — مش إعداد CRM. Lead سجّل وماردش — اكتب ٣ خطوات متابعة بأوقات وأهداف مختلفة.\n\nمش مطلوب إرسال فعلي — مطلوب التسلسل + شرط توقف."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Stop Condition:",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m6-l3-follow-up.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Stop Condition:"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l3-follow-up.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Stop Condition (شرط التوقف):"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l3-follow-up.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "شرط التوقف:"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/automator-m6-l3-follow-up.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "كل touchpoint هدفه مختلف — مش تكرار نفس الرسالة. الوقت + المحتوى + شرط التوقف."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "automator-m6-l3-follow-up's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (I replied once — and you went silent / Follow-up Sequence) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"I replied once — and you went silent\" vs \"Follow-up Sequence\" for automator-m6-l3-follow-up.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "I replied once — and you went silent",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m6-l3-follow-up.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Follow-up Sequence",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m6-l3-follow-up.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "ردّيت مرة — وسكتتم",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l3-follow-up.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Follow-up Sequence (تسلسل متابعة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l3-follow-up.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "رديت مرة — وسكتوا",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l3-follow-up.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تسلسل المتابعة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l3-follow-up.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "حسب المزاج",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m6-l3-follow-up.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تسلسل أوتوماتيك",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m6-l3-follow-up.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Follow-up Sequence (تسلسل متابعة)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m6-l3-follow-up.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Stop Condition (شرط التوقف)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m6-l3-follow-up.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Follow-up Automation: \"I replied once — and you went silent\" versus \"Follow-up Sequence\" — Stop Condition:",
+    "ar-MSA": "أتمتة المتابعة: \"ردّيت مرة — وسكتتم\" في مقابل \"Follow-up Sequence (تسلسل متابعة)\" — Stop Condition (شرط التوقف):",
+    "ar-Gulf": "أتمتة المتابعة: \"رديت مرة — وسكتوا\" في مقابل \"تسلسل المتابعة\" — شرط التوقف:",
+    "ar-EG": "تسلسل متابعة = خطوات بوقت وسلوك: \"حسب المزاج\" في مقابل \"تسلسل أوتوماتيك\" — Follow-up مش رسالة واحدة — تسلسل: يوم ٠ ترحيب، يوم ٢ تذكير، يوم ٥ سؤال واحد."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"٣ خطوات متنوعة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m6-l3-follow-up.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"توقف ذكي\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m6-l3-follow-up.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "cf7367e2b20b73142bc6508eda417c6880c68037db0908d0e628f3d6b5bc7bdd"
+}

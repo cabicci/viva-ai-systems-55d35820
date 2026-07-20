@@ -1,0 +1,345 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "intro-m1-l7-choose-your-path",
+  "pathId": "intro",
+  "moduleId": "intro-m1",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Choose Your Path",
+    "ar-MSA": "اختيار مسارك",
+    "ar-Gulf": "اختر مسارك",
+    "ar-EG": "اختار المسار اللي يحل مشكلتك — مش اللي يبان أجمل"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/intro-m1-l7-choose-your-path.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l7-choose-your-path.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l7-choose-your-path.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/intro-m1-l7-choose-your-path.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What Will You Understand? The five paths are not a popularity contest — each one solves a different type of problem.",
+        "Why Now? You completed the Intro: you understood AI, wrote a prompt, tried a tool, learned about trust limits, and chose the right tool. Now it's time for one clear decision.",
+        "What After the Lesson? You will choose one path and explain why — based on a real goal you have, not on what seems 'strongest'."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ المسارات الخمسة ليست سباق شعبية — كل واحد يحل نوع مشكلة مختلف.",
+        "لماذا الآن؟ أكملت Intro: فهمت AI، كتبت Prompt، جربت أداة، عرفت حدود الثقة، واختارت الأداة المناسبة. الآن وقت قرار واحد واضح.",
+        "ماذا بعد الدرس؟ ستختار مسارًا واحدًا وتشرح لماذا — بناءً على هدف حقيقي عندك، لا على ما يبدو «أقوى»."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ المسارات الخمسة مو سباق — كل واحد يحل نوع مختلف من المشاكل.",
+        "ليش الحين؟ أكملت Intro: فهمت AI، كتبت Prompt، جربت أداة، عرفت حدود الثقة، واختارت الأداة المناسبة. الحين وقت قرار واضح.",
+        "وش بعد الدرس؟ راح تختار مسار واحد وتشرح ليش — بناءً على هدف حقيقي عندك، مو على اللي يبدو «أقوى»."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ المسارات الخمسة مش سباق شعبية — كل واحد يحل نوع مشكلة مختلف.",
+        "ليه دلوقتي؟ خلّصت Intro: فهمت AI، كتبت Prompt، جربت أداة، عرفت حدود الثقة، واختارت الأداة المناسبة. دلوقتي وقت قرار واحد واضح.",
+        "هتعمل إيه بعد الدرس؟ هتختار مسار واحد وتشرح ليه — بناءً على هدف حقيقي عندك، مش على اللي يبان «أقوى»."
+      ]
+    },
+    "coreIdea": {
+      "en": "Choose the path that solves your problem — not what looks prettier",
+      "ar-MSA": "اختر المسار الذي يحل مشكلتك — لا ما يبدو أجمل",
+      "ar-Gulf": "اختر المسار اللي يحل مشكلتك — مو اللي يبدو أجمل",
+      "ar-EG": "المنصة مرتبة على ٣ مستويات. Intro (اللي خلّصته) = البداية لكل الناس."
+    },
+    "tension": {
+      "en": "Do you want to start all five paths at once?",
+      "ar-MSA": "هل تريد البدء في الـ ٥ مسارات معًا؟",
+      "ar-Gulf": "هل تبي تبدأ في الخمسة مسارات مع بعض؟",
+      "ar-EG": "الحماس بيخليك عايز Business و Creator و Builder وكل حاجة مرة واحدة."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "All paths at once",
+        "rightLabel": "One path for one result",
+        "leftBody": "First lesson from each path — and after a month, no project, no content, and no clear automation.",
+        "rightBody": "You choose a path, complete the first unit, and come out with something tangible — then think about the second."
+      },
+      "ar-MSA": {
+        "leftLabel": "كل المسارات مرة واحدة",
+        "rightLabel": "مسار واحد لنتيجة واحدة",
+        "leftBody": "أول درس من كل مسار — وبعد شهر لا مشروع ولا محتوى ولا أتمتة واضحة",
+        "rightBody": "تختار مسارًا، تكمل أول وحدة، وتخرج بشيء ملموس — ثم تفكر في الثاني"
+      },
+      "ar-Gulf": {
+        "leftLabel": "كل المسارات مرة وحدة",
+        "rightLabel": "مسار واحد لنتيجة واحدة",
+        "leftBody": "أول درس من كل مسار — وبعد شهر لا مشروع ولا محتوى ولا أتمتة واضحة",
+        "rightBody": "تختار مسار، تكمل أول وحدة، وتخرج بشي ملموس — بعدين تفكر في الثاني"
+      },
+      "ar-EG": {
+        "leftLabel": "كل المسارات مرة واحدة",
+        "leftBody": "أول درس من كل مسار — وبعد شهر مفيش مشروع ولا محتوى ولا أتمتة واضحة.",
+        "rightLabel": "مسار واحد لنتيجة واحدة",
+        "rightBody": "تختار مسار، تخلص أول موديول، وتطلع بحاجة ملموسة — وبعدين تفكر في التاني."
+      }
+    },
+    "missionIntro": {
+      "en": "Your mission is to choose a path — the conclusion of Intro. Choose one path: Business, Creator, Analyst, Automator, or Builder. Write 2–3 sentences explaining why you chose it based on a real goal.",
+      "ar-MSA": "مهمة اختيار المسار — ختام Intro. اختر مسارًا واحدًا: Business أو Creator أو Analyst أو Automator أو Builder. اكتب ٢–٣ جمل لماذا اخترته بناءً على هدف حقيقي.",
+      "ar-Gulf": "مهمة اختيار المسار — ختام Intro. اختر مسار واحد: Business أو Creator أو Analyst أو Automator أو Builder. اكتب ٢–٣ جمل ليش اخترته بناءً على هدف حقيقي.",
+      "ar-EG": "دي مهمة اختيار المسار — ختام Intro. اختار مسار واحد: Business أو Creator أو Analyst أو Automator أو Builder.\n\nاكتب ٢–٣ جمل ليه اخترته بناءً على هدف حقيقي عندك. مش مطلوب إجابة مثالية — مطلوب قرار واضح."
+    },
+    "visualIntent": {
+      "kind": "concept-scene",
+      "summary": "The map of paths by level: above Intro, below it are Level 1 paths (Business, Creator, Analyst), then Automator, and finally Builder for optional depth. Choosin",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l7-choose-your-path.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "The map of paths by level: above Intro, below it are Level 1 paths (Business, Creator, Analyst), then Automator, and finally Builder for opt"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l7-choose-your-path.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "خريطة المسارات حسب المستوى: فوق Intro، تحتها مسارات المستوى ١ (Business، Creator، Analyst)، ثم Automator، وأخيرًا Builder للعمق الاختياري. ا"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l7-choose-your-path.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "خريطة المسارات حسب المستوى: فوق Intro، تحتها مسارات المستوى ١ (Business، Creator، Analyst)، بعدين Automator، وأخيرًا Builder للعمق الاختياري"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/intro-m1-l7-choose-your-path.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "فكّرها كخريطة: فوق Intro، تحتها مسارات المستوى ١ (Business، Creator، Analyst)، بعدين Automator، وآخر حاجة Builder للعمق"
+        }
+      }
+    }
+  },
+  "method": 2,
+  "methodRationale": "intro-m1-l7-choose-your-path's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 2), so a text-free AI illustration communicates \"Choose the path that solves your problem — not what looks prettier\" without inventing UI chrome or rendering paid text.",
+  "compositionPattern": "concept-scene-metaphor",
+  "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"All paths at once\" vs \"One path for one result\" for intro-m1-l7-choose-your-path.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "All paths at once",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l7-choose-your-path.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "One path for one result",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l7-choose-your-path.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Path",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l7-choose-your-path.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Builder",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/intro-m1-l7-choose-your-path.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "كل المسارات مرة واحدة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l7-choose-your-path.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مسار واحد لنتيجة واحدة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l7-choose-your-path.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Path (مسار)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l7-choose-your-path.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Builder (باني)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l7-choose-your-path.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "كل المسارات مرة وحدة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l7-choose-your-path.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مسار واحد لنتيجة واحدة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l7-choose-your-path.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Path (مسار)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l7-choose-your-path.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Builder (باني)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l7-choose-your-path.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "كل المسارات مرة واحدة",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l7-choose-your-path.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "مسار واحد لنتيجة واحدة",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l7-choose-your-path.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Path (مسار)",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l7-choose-your-path.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Builder (باني)",
+        "source": {
+          "path": "src/components/intro/lessons/intro-m1-l7-choose-your-path.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Choose Your Path: \"All paths at once\" versus \"One path for one result\" — Choose the path that solves your problem — not what looks prettier",
+    "ar-MSA": "اختيار مسارك: \"كل المسارات مرة واحدة\" في مقابل \"مسار واحد لنتيجة واحدة\" — اختر المسار الذي يحل مشكلتك — لا ما يبدو أجمل",
+    "ar-Gulf": "اختر مسارك: \"كل المسارات مرة وحدة\" في مقابل \"مسار واحد لنتيجة واحدة\" — اختر المسار اللي يحل مشكلتك — مو اللي يبدو أجمل",
+    "ar-EG": "اختار المسار اللي يحل مشكلتك — مش اللي يبان أجمل: \"كل المسارات مرة واحدة\" في مقابل \"مسار واحد لنتيجة واحدة\" — المنصة مرتبة على ٣ مستويات. Intro (اللي خلّصته) = البداية لكل الناس."
+  },
+  "aiPromptContract": {
+    "providerClass": "text-free-illustration",
+    "paidAllowed": false,
+    "textFree": true,
+    "promptRules": [
+      "No embedded text, letters, numbers, or UI chrome anywhere in the image.",
+      "Depict the idea behind \"Choose Your Path\" as a literal scene or metaphor, not as software.",
+      "Use a calm editorial illustration style consistent with a warm, minimal brand palette.",
+      "Keep the composition balanced so it still reads when mirrored for RTL locales."
+    ],
+    "costCeilingUsd": 0
+  },
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"Goal-Based Decision\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/intro-m1-l7-choose-your-path.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"Clarity of Choice\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/intro-m1-l7-choose-your-path.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"قرار مبني على هدف\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l7-choose-your-path.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"وضوح الاختيار\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l7-choose-your-path.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"قرار مبني على هدف\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l7-choose-your-path.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"وضوح الاختيار\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l7-choose-your-path.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"قرار مبني على هدف\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/intro-m1-l7-choose-your-path.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"وضوح الاختيار\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/intro-m1-l7-choose-your-path.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 30"
+    }
+  ],
+  "checksum": "2b24344e22e7629c14cddf6fc52e3934167ebe6463a1a37830a3767de306fc41"
+}

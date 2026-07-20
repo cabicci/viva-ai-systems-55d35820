@@ -1,0 +1,345 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "automator-m7-l1-closing-loop",
+  "pathId": "automator",
+  "moduleId": "automator-m7",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Closing the Loop",
+    "ar-MSA": "إغلاق الحلقة",
+    "ar-Gulf": "إغلاق الحلقة",
+    "ar-EG": "رحلة واحدة = Lead → رد → متابعة → بيانات"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/automator-m7-l1-closing-loop.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m7-l1-closing-loop.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m7-l1-closing-loop.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/automator-m7-l1-closing-loop.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Powerful standalone automations — but when linked in a single Customer Journey, they become a system.",
+        "Why now? After gathering leads, WhatsApp, and follow-ups, you need the complete picture, not just individual parts.",
+        "What comes after the lesson? You will map a journey from start to finish, from lead to follow-up."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ أتمتات منفصلة قوية — لكن عندما تتربط في رحلة عميل (Customer Journey) واحدة تصبح نظامًا.",
+        "لماذا الآن؟ بعد جمع leads وواتساب ومتابعة، تحتاج الصورة الكاملة وليس كل جزء وحده.",
+        "ماذا بعد الدرس؟ سترسم رحلة من البداية للنهاية من lead حتى follow-up."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ أتمتات منفصلة قوية — لكن لما تتربط في رحلة عميل واحدة تصير نظام.",
+        "ليش الحين؟ بعد ما تجمع العملاء المحتملين وواتساب والمتابعة، تحتاج الصورة الكاملة مو كل جزء لوحده.",
+        "وش بعد الدرس؟ راح ترسم رحلة من البداية للنهاية من العميل المحتمل إلى المتابعة."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ أوتوميشنات منفصلة قوية — لكن لما تتربط في رحلة عميل واحدة بتبقى نظام.",
+        "ليه دلوقتي؟ بعد lead capture وواتساب ومتابعة، محتاج تشوف الصورة الكاملة مش كل جزء لوحده.",
+        "هتعمل إيه بعد الدرس؟ هترسم رحلة end-to-end من lead لحد follow-up."
+      ]
+    },
+    "coreIdea": {
+      "en": "Lead capture:",
+      "ar-MSA": "Lead capture:",
+      "ar-Gulf": "استقبال العميل المحتمل:",
+      "ar-EG": "Lead capture: يمسك الاهتمام ويسجّله."
+    },
+    "tension": {
+      "en": "Everything works — but there is no complete picture. You have a form capturing leads. WhatsApp responds. Follow-ups send messages. Each one works.",
+      "ar-MSA": "كل شيء يعمل — لكن لا صورة كاملة. لديك نموذج يستقبل leads. واتساب يرد. متابعة ترسل رسائل. كل واحد يعمل.",
+      "ar-Gulf": "كل شيء شغال — لكن ما في صورة كاملة. عندك نموذج يستقبل العملاء المحتملين. واتساب يرد. المتابعة ترسل رسائل. كل واحد شغال.",
+      "ar-EG": "عندك فورم يستقبل leads. واتساب بيرد. متابعة بترسل رسائل. كل واحد شغّال."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Standalone Automations",
+        "rightLabel": "One Customer Journey",
+        "leftBody": "The form works, WhatsApp works, follow-ups work — but there is no map. \"What was useful?\" — No answer.",
+        "rightBody": "Lead from ad → Registration → WhatsApp response → Follow-up on days 2 and 5 → Conversion or closure. Each step is recorded — you can ask and improve."
+      },
+      "ar-MSA": {
+        "leftLabel": "أتمتات منفصلة",
+        "rightLabel": "رحلة عميل واحدة",
+        "leftBody": "نموذج يعمل، واتساب يعمل، متابعة تعمل — لكن لا خريطة. «ما الذي نفع؟» — لا إجابة.",
+        "rightBody": "Lead من إعلان → تسجيل → رد واتساب → متابعة يوم ٢ و٥ → تحويل أو إغلاق. كل خطوة مسجّلة — تستطيع السؤال والتحسين."
+      },
+      "ar-Gulf": {
+        "leftLabel": "أتمتات منفصلة",
+        "rightLabel": "رحلة عميل واحدة",
+        "leftBody": "نموذج شغال، واتساب شغال، متابعة شغالة — لكن ما في خريطة. «وش اللي نفع؟» — ما في إجابة.",
+        "rightBody": "عميل محتمل من إعلان → تسجيل → رد واتساب → متابعة يوم ٢ و٥ → تحويل أو إغلاق. كل خطوة مسجلة — تقدر تسأل وتحسن."
+      },
+      "ar-EG": {
+        "leftLabel": "أوتوميشنات منفصلة",
+        "leftBody": "فورم شغّال، واتساب شغّال، متابعة شغّالة — بس مافيش خريطة. «إيه اللي نفع؟» — مافيش إجابة.",
+        "rightLabel": "رحلة عميل واحدة",
+        "rightBody": "Lead من إعلان → تسجيل → رد واتساب → متابعة يوم ٢ و٥ → تحويل أو إغلاق. كل خطوة مسجّلة — تقدر تسأل وتتحسّن."
+      }
+    },
+    "missionIntro": {
+      "en": "The mission is a journey map — not a technical audit. Connect what you’ve learned: Capture, Response, Follow-up — in one customer path. No real numbers are needed — just 5-6 stages + one Analyst question.",
+      "ar-MSA": "المهمة خريطة رحلة — وليس تدقيقًا تقنيًا. اربط ما تعلّمته: استقبال، رد، متابعة — في مسار عميل واحد. لا يلزم أرقام حقيقية — يلزم ٥–٦ مراحل + سؤال Analyst واحد.",
+      "ar-Gulf": "المهمة خريطة رحلة — مو تدقيق تقني. اربط اللي تعلمته: استقبال، رد، متابعة — في مسار عميل واحد. ما تحتاج أرقام حقيقية — تحتاج ٥–٦ مراحل + سؤال المحلل واحد.",
+      "ar-EG": "المهمة خريطة رحلة — مش audit تقني. اربط اللي اتعلّمته: استقبال، رد، متابعة — في مسار عميل واحد.\n\nمش مطلوب أرقام حقيقية — مطلوب ٥–٦ مراحل + سؤال Analyst واحد."
+    },
+    "visualIntent": {
+      "kind": "concept-scene",
+      "summary": "Each stage feeds into the next and records data. **The connected journey** = questions that the **Analyst** will answer.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m7-l1-closing-loop.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Each stage feeds into the next and records data. **The connected journey** = questions that the **Analyst** will answer."
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m7-l1-closing-loop.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "كل مرحلة تغذّي التي بعدها وتسجّل بيانات. **الرحلة المتصلة** = أسئلة **Analyst** سيجيب عليها."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m7-l1-closing-loop.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "كل مرحلة تغذي اللي بعدها وتسجل بيانات. **الرحلة المتصلة** = أسئلة **المحلل** اللي راح يجاوب عليها."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/automator-m7-l1-closing-loop.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "كل مرحلة تغذّي اللي بعدها وتسجّل بيانات. الرحلة المتصلة = أسئلة Analyst هيجاوب عليها."
+        }
+      }
+    }
+  },
+  "method": 2,
+  "methodRationale": "automator-m7-l1-closing-loop's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"Lead capture:\" without inventing UI chrome or rendering paid text.",
+  "compositionPattern": "concept-scene-metaphor",
+  "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Standalone Automations\" vs \"One Customer Journey\" for automator-m7-l1-closing-loop.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Standalone Automations",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m7-l1-closing-loop.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "One Customer Journey",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m7-l1-closing-loop.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Customer Journey",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m7-l1-closing-loop.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Feedback Loop",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m7-l1-closing-loop.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "أتمتات منفصلة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m7-l1-closing-loop.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "رحلة عميل واحدة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m7-l1-closing-loop.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Customer Journey (رحلة العميل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m7-l1-closing-loop.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Feedback Loop (حلقة تحسين)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m7-l1-closing-loop.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "أتمتات منفصلة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m7-l1-closing-loop.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "رحلة عميل واحدة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m7-l1-closing-loop.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "رحلة العميل",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m7-l1-closing-loop.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "حلقة تحسين",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m7-l1-closing-loop.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "أوتوميشنات منفصلة",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m7-l1-closing-loop.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "رحلة عميل واحدة",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m7-l1-closing-loop.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Customer Journey (رحلة العميل)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m7-l1-closing-loop.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Feedback Loop (حلقة تحسين)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m7-l1-closing-loop.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Closing the Loop: \"Standalone Automations\" versus \"One Customer Journey\" — Lead capture:",
+    "ar-MSA": "إغلاق الحلقة: \"أتمتات منفصلة\" في مقابل \"رحلة عميل واحدة\" — Lead capture:",
+    "ar-Gulf": "إغلاق الحلقة: \"أتمتات منفصلة\" في مقابل \"رحلة عميل واحدة\" — استقبال العميل المحتمل:",
+    "ar-EG": "رحلة واحدة = Lead → رد → متابعة → بيانات: \"أوتوميشنات منفصلة\" في مقابل \"رحلة عميل واحدة\" — Lead capture: يمسك الاهتمام ويسجّله."
+  },
+  "aiPromptContract": {
+    "providerClass": "text-free-illustration",
+    "paidAllowed": false,
+    "textFree": true,
+    "promptRules": [
+      "No embedded text, letters, numbers, or UI chrome anywhere in the image.",
+      "Depict the idea behind \"Closing the Loop\" as a literal scene or metaphor, not as software.",
+      "Use a calm editorial illustration style consistent with a warm, minimal brand palette.",
+      "Keep the composition balanced so it still reads when mirrored for RTL locales."
+    ],
+    "costCeilingUsd": 0
+  },
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Connected Journey\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m7-l1-closing-loop.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Analyst Bridge\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m7-l1-closing-loop.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"رحلة متصلة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m7-l1-closing-loop.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"جسر Analyst\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m7-l1-closing-loop.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"رحلة متصلة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m7-l1-closing-loop.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"جسر المحلل\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m7-l1-closing-loop.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"رحلة متصلة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m7-l1-closing-loop.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"جسر Analyst\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m7-l1-closing-loop.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "bb7531d2d6362637cf9de72c0dfa2a4612681ff0d19b807a0c15177b711c6938"
+}

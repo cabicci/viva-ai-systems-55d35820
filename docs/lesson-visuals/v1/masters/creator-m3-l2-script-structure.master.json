@@ -1,0 +1,333 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "creator-m3-l2-script-structure",
+  "pathId": "creator",
+  "moduleId": "creator-m3",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Script Structure",
+    "ar-MSA": "بنية السكربت",
+    "ar-Gulf": "بنية السكربت",
+    "ar-EG": "خطاف ثم قيمة ثم دليل ثم CTA"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/creator-m3-l2-script-structure.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l2-script-structure.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l2-script-structure.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/creator-m3-l2-script-structure.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? A script is not complicated — it is an order that prevents confusion during filming.",
+        "The simple structure: Hook followed by Value, then Proof, and finally one clear CTA.",
+        "What comes after the lesson? You will have a template to quickly organize your ideas."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ السكربت (Script) ليس تعقيدًا — هو ترتيب يمنع اللبس وقت التصوير.",
+        "الشكل البسيط: Hook (خطاف) ثم قيمة ثم دليل ثم طلب واحد واضح.",
+        "ماذا بعد الدرس؟ ستملك قالب تنفيذ ترتّب به أفكارك بسرعة."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ السكربت (Script) مو معقد — هو ترتيب يمنع اللبس وقت التصوير.",
+        "الشكل البسيط: Hook (خطاف) بعدين قيمة بعدين دليل بعدين طلب واحد واضح.",
+        "وش بعد الدرس؟ راح يكون عندك قالب تنفيذ ترتب فيه أفكارك بسرعة."
+      ],
+      "ar-EG": [
+        "السكربت مش تعقيد، هو ترتيب يمنع اللخبطة وقت التصوير.",
+        "النهاردة هتتعلم شكل بسيط: خطاف ثم قيمة ثم دليل ثم طلب واضح."
+      ]
+    },
+    "coreIdea": {
+      "en": "sentence",
+      "ar-MSA": "بجملة",
+      "ar-Gulf": "بجملة",
+      "ar-EG": "ابدأ بجملة توقف المشاهد، بعدها قدم القيمة الأساسية بوضوح."
+    },
+    "tension": {
+      "en": "Improvisation loses the idea. Without structure: the video becomes long and loses its purpose.",
+      "ar-MSA": "الارتجال يضيع الفكرة. من دون بنية: الفيديو يطول ويضيع منه الهدف.",
+      "ar-Gulf": "الارتجال يضيع الفكرة. من دون هيكل: الفيديو يطول ويضيع منه الهدف.",
+      "ar-EG": "من غير بنية، الفيديو يطول ويضيع منه الهدف."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Without Structure",
+        "rightLabel": "With Clear Structure",
+        "leftBody": "Mixed ideas and multiple requests at the end — weakening the impact",
+        "rightBody": "Each part has a function — the viewer understands quickly and knows what to do after the video"
+      },
+      "ar-MSA": {
+        "leftLabel": "بدون بنية",
+        "rightLabel": "ببنية واضحة",
+        "leftBody": "أفكار متداخلة وطلبات متعددة في الآخر — فيضعف التأثير",
+        "rightBody": "كل جزء له وظيفة — فيفهم المشاهد بسرعة ويعرف ماذا يفعل بعد الفيديو"
+      },
+      "ar-Gulf": {
+        "leftLabel": "بدون هيكل",
+        "rightLabel": "ببنية واضحة",
+        "leftBody": "أفكار متداخلة وطلبات متعددة في الآخر — فيضعف التأثير",
+        "rightBody": "كل جزء له وظيفة — فيفهم المشاهد بسرعة ويعرف ماذا يفعل بعد الفيديو"
+      },
+      "ar-EG": {
+        "leftLabel": "بدون بنية",
+        "leftBody": "أفكار متداخلة وطلبات متعددة في الآخر، فالتأثير يضعف.",
+        "rightLabel": "ببنية واضحة",
+        "rightBody": "كل جزء له وظيفة، فالمشاهد يفهم بسرعة ويعرف يعمل إيه بعد الفيديو."
+      }
+    },
+    "missionIntro": {
+      "en": "This mission is a writing exercise — not a test. Write one content outline using the structure: Hook → Value → Proof → CTA.",
+      "ar-MSA": "المهمة تدريب كتابة — ليس اختبارًا. اكتب مخطط محتوى واحد بالبنية: Hook → Value → Proof → CTA.",
+      "ar-Gulf": "المهمة تدريب كتابة — مو اختبار. اكتب مخطط محتوى واحد بالبنية: Hook → Value → Proof → CTA.",
+      "ar-EG": "المهمة تدريب كتابة مش اختبار. اكتب مخطط محتوى واحد بالبنية: خطاف ثم قيمة ثم دليل ثم CTA."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Visual snapshot — **the balanced script structure**. A **clear distribution** into **short parts** makes the script **focused** and **easy to execute**.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m3-l2-script-structure.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Visual snapshot — **the balanced script structure**. A **clear distribution** into **short parts** makes the script **focused** and **easy t"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l2-script-structure.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "بجملة"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l2-script-structure.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "بجملة"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/creator-m3-l2-script-structure.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "التوزيع الواضح على أجزاء قصيرة بيخلي السكربت مركز وسهل التنفيذ."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "creator-m3-l2-script-structure's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Without Structure / With Clear Structure) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Without Structure\" vs \"With Clear Structure\" for creator-m3-l2-script-structure.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Without Structure",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m3-l2-script-structure.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "With Clear Structure",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m3-l2-script-structure.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Value Block",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m3-l2-script-structure.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Proof",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m3-l2-script-structure.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "بدون بنية",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l2-script-structure.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "ببنية واضحة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l2-script-structure.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Value Block (كتلة القيمة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l2-script-structure.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Proof (دليل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l2-script-structure.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "بدون هيكل",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l2-script-structure.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "ببنية واضحة",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l2-script-structure.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Value Block (كتلة القيمة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l2-script-structure.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Proof (دليل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l2-script-structure.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "بدون بنية",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m3-l2-script-structure.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "ببنية واضحة",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m3-l2-script-structure.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Value Block",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m3-l2-script-structure.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Proof",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m3-l2-script-structure.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Script Structure: \"Without Structure\" versus \"With Clear Structure\" — sentence",
+    "ar-MSA": "بنية السكربت: \"بدون بنية\" في مقابل \"ببنية واضحة\" — بجملة",
+    "ar-Gulf": "بنية السكربت: \"بدون هيكل\" في مقابل \"ببنية واضحة\" — بجملة",
+    "ar-EG": "خطاف ثم قيمة ثم دليل ثم CTA: \"بدون بنية\" في مقابل \"ببنية واضحة\" — ابدأ بجملة توقف المشاهد، بعدها قدم القيمة الأساسية بوضوح."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Structure Completeness\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m3-l2-script-structure.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Executability\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m3-l2-script-structure.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"اكتمال البنية\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l2-script-structure.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"قابلية التنفيذ\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l2-script-structure.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"اكتمال البنية\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l2-script-structure.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"قابلية التنفيذ\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l2-script-structure.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"اكتمال البنية\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m3-l2-script-structure.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"قابلية التنفيذ\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m3-l2-script-structure.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "c2fcea48c4114860ad4e705d8ca46c8c673fd12dcbac6bdf39149503cfed9bff"
+}

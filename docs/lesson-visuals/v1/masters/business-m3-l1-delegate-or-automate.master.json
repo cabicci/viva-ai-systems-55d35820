@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "business-m3-l1-delegate-or-automate",
+  "pathId": "business",
+  "moduleId": "business-m3",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Delegate or Automate",
+    "ar-MSA": "التفويض أم الأتمتة",
+    "ar-Gulf": "التفويض أو الأتمتة",
+    "ar-EG": "مصفوفة: احتفظ — فوّض — أتمت"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/business-m3-l1-delegate-or-automate.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l1-delegate-or-automate.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l1-delegate-or-automate.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/business-m3-l1-delegate-or-automate.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Not every task needs to stay with you — repetitive tasks can be delegated or automated, and AI can classify, summarize, and draft.",
+        "Why now? After assessing operational readiness, the next step is to decide what can be handed off.",
+        "What after the lesson? You will list 5 weekly tasks and categorize them: Keep, Delegate, Automate with AI, or AI + Human Review."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ ليست كل مهمة يجب أن تبقى معك — المتكرر يُفوَّض أو يُؤتمت، والذكاء الاصطناعي يصنّف ويلخّص ويكتب مسودات.",
+        "لماذا الآن؟ بعد أن فحصت جاهزية العمليات، الخطوة التالية: تقرر ما الذي يخرج من يدك.",
+        "ماذا بعد الدرس؟ ستعدّد ٥ مهام أسبوعية وتصنّفها: احتفظ، فوّض، أتمت بالذكاء الاصطناعي، أو ذكاء اصطناعي + مراجعة بشرية."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ مو كل مهمة لازم تبقى عندك — المتكررة تُفوَّض أو تُؤتمت، والذكاء الاصطناعي يصنّف ويلخّص ويكتب مسودات.",
+        "ليش الحين؟ بعد ما فحصت جاهزية العمليات، الخطوة التالية: تقرر وش اللي يطلع من يدك.",
+        "وش بعد الدرس؟ راح تعدّد ٥ مهام أسبوعية وتصنّفها: احتفظ، فوّض، أتمت بالذكاء الاصطناعي، أو ذكاء اصطناعي + مراجعة بشرية."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ مش كل مهمة لازم تفضل معاك — المتكرر يتفوّض أو يتؤتمت، والـ AI يصنّف ويلخّص ويكتب مسودات.",
+        "ليه دلوقتي؟ بعد ما فحصت جاهزية العمليات، الخطوة الجاية: تقرر إيه اللي يخرج من يدك.",
+        "هتعمل إيه بعد الدرس؟ هتعدّد ٥ مهام أسبوعية وتصنّفها: احتفظ، فوّض، أتمت بالـ AI، أو AI + مراجعة بشرية."
+      ]
+    },
+    "coreIdea": {
+      "en": "Keep:",
+      "ar-MSA": "احتفظ:",
+      "ar-Gulf": "احتفظ:",
+      "ar-EG": "احتفظ: قرارات نادرة، ثقة عالية، علاقة حساسة — ما تسلّمهاش لـ AI من غير مراجعة."
+    },
+    "tension": {
+      "en": "A business owner writes every response, checks every invoice, reviews every post — then wonders why there’s no time to expand. Not every task deserves your time. Strategic decisions and sensitive relationships — those ar",
+      "ar-MSA": "صاحب عمل يكتب كل رد، يحاسب كل فاتورة، يراجع كل منشور — ثم يتعجب لماذا لا وقت للتوسّع. ليست كل مهمة تستحق وقتك. القرارات الاستراتيجية والعلاقات الحساسة — معك. التكرار — للنظام أو للفريق أو للذكاء الاصطناعي.",
+      "ar-Gulf": "صاحب عمل يكتب كل رد، يحاسب كل فاتورة، يراجع كل منشور — ثم يتعجب ليش ما عنده وقت للتوسّع. مو كل مهمة تستحق وقتك. القرارات الاستراتيجية والعلاقات الحساسة — معك. التكرار — للنظام أو للفريق أو للذكاء الاصطناعي.",
+      "ar-EG": "صاحب بيزنس يكتب كل رد، يحاسب كل فاتورة، يراجع كل بوست — وبعدين يتعجب ليه مفيش وقت للتوسّع."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Everything with You",
+        "rightLabel": "Smart Distribution",
+        "leftBody": "5 hours of responses and admin work. Zero time for pricing decisions or new offers",
+        "rightBody": "AI summarizes messages, an employee follows up on deliveries, you only spend an hour on decisions"
+      },
+      "ar-MSA": {
+        "leftLabel": "كل شيء معك",
+        "rightLabel": "توزيع ذكي",
+        "leftBody": "٥ ساعات ردود وإداري. صفر وقت لقرار تسعير أو عرض جديد",
+        "rightBody": "الذكاء الاصطناعي يلخّص الرسائل، موظف يتابع التوصيل، أنت ساعة قرارات فقط"
+      },
+      "ar-Gulf": {
+        "leftLabel": "كل شيء معك",
+        "rightLabel": "توزيع ذكي",
+        "leftBody": "٥ ساعات ردود وإداري. صفر وقت لقرار تسعير أو عرض جديد",
+        "rightBody": "الذكاء الاصطناعي يلخّص الرسائل، موظف يتابع التوصيل، وأنت ساعة قرارات فقط"
+      },
+      "ar-EG": {
+        "leftLabel": "كل حاجة معاك",
+        "leftBody": "٥ ساعات ردود وإداري. صفر وقت لقرار تسعير أو عرض جديد.",
+        "rightLabel": "توزيع ذكي",
+        "rightBody": "AI يلخّص الرسائل، موظف يتابع التوصيل، إنت ساعة قرارات فقط."
+      }
+    },
+    "missionIntro": {
+      "en": "Write down 5 tasks you do every week (or almost). For each task, specify: Keep / Delegate / Automate with AI / AI + Human Review. No execution is required — only a distribution decision.",
+      "ar-MSA": "اكتب ٥ مهام تعملها كل أسبوع (أو تقريبًا). لكل مهمة حدّد: احتفظ / فوّض / أتمت بالذكاء الاصطناعي / ذكاء اصطناعي + مراجعة بشرية. لا يُطلب تنفيذ — يُطلب قرار توزيع.",
+      "ar-Gulf": "اكتب ٥ مهام تعملها كل أسبوع (أو تقريبًا). لكل مهمة حدّد: احتفظ / فوّض / أتمت بالذكاء الاصطناعي / ذكاء اصطناعي + مراجعة بشرية. لا يُطلب تنفيذ — يُطلب قرار توزيع.",
+      "ar-EG": "اكتب ٥ مهام بتعملها كل أسبوع (أو تقريبًا). لكل مهمة حدّد: احتفظ / فوّض / أتمت بالـ AI / AI + مراجعة بشرية.\n\nمش مطلوب تنفيذ — مطلوب قرار توزيع."
+    },
+    "visualIntent": {
+      "kind": "decision",
+      "summary": "The delegation and automation matrix — the two axes: task repetition and level of judgment. Start with one task in the 'Automate with AI' quadrant.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m3-l1-delegate-or-automate.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "The delegation and automation matrix — the two axes: task repetition and level of judgment. Start with one task in the 'Automate with AI' qu"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l1-delegate-or-automate.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "مصفوفة التفويض والأتمتة — المحوران: تكرار المهمة ومستوى الحكم. ابدأ بمهمة واحدة في ربع «أتمت بالذكاء الاصطناعي»."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l1-delegate-or-automate.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "مصفوفة التفويض والأتمتة — المحوران: تكرار المهمة ومستوى الحكم. ابدأ بمهمة واحدة في ربع «أتمت بالذكاء الاصطناعي»."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/business-m3-l1-delegate-or-automate.ts",
+          "field": "block.caption (diagram)",
+          "quote": "المحورين: تكرار المهمة ومستوى الحكم. ابدأ بمهمة واحدة في ربع «أتمت بالـ AI»."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "business-m3-l1-delegate-or-automate's package marks a Diagram intent (delegate-automate-matrix); the underlying relationship reads as decision, so a deterministic SVG panel keeps the real Everything with You/Smart Distribution labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "decision-chain-panel",
+  "duplicationJustification": "Shares the \"decision-chain-panel\" layout template with 3 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Everything with You\" vs \"Smart Distribution\" for business-m3-l1-delegate-or-automate.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Everything with You",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m3-l1-delegate-or-automate.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Smart Distribution",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m3-l1-delegate-or-automate.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Delegate",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m3-l1-delegate-or-automate.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Automate with AI",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/business-m3-l1-delegate-or-automate.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "كل شيء معك",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l1-delegate-or-automate.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "توزيع ذكي",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l1-delegate-or-automate.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Delegate (تفويض)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l1-delegate-or-automate.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Automate with AI (أتمتة بالذكاء الاصطناعي)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l1-delegate-or-automate.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "كل شيء معك",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l1-delegate-or-automate.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "توزيع ذكي",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l1-delegate-or-automate.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Delegate (تفويض)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l1-delegate-or-automate.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Automate with AI (أتمتة بالذكاء الاصطناعي)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l1-delegate-or-automate.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "كل حاجة معاك",
+        "source": {
+          "path": "src/components/intro/lessons/business-m3-l1-delegate-or-automate.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "توزيع ذكي",
+        "source": {
+          "path": "src/components/intro/lessons/business-m3-l1-delegate-or-automate.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Delegate (تفويض)",
+        "source": {
+          "path": "src/components/intro/lessons/business-m3-l1-delegate-or-automate.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Automate with AI (أتمتة بالـ AI)",
+        "source": {
+          "path": "src/components/intro/lessons/business-m3-l1-delegate-or-automate.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Delegate or Automate: \"Everything with You\" versus \"Smart Distribution\" — Keep:",
+    "ar-MSA": "التفويض أم الأتمتة: \"كل شيء معك\" في مقابل \"توزيع ذكي\" — احتفظ:",
+    "ar-Gulf": "التفويض أو الأتمتة: \"كل شيء معك\" في مقابل \"توزيع ذكي\" — احتفظ:",
+    "ar-EG": "مصفوفة: احتفظ — فوّض — أتمت: \"كل حاجة معاك\" في مقابل \"توزيع ذكي\" — احتفظ: قرارات نادرة، ثقة عالية، علاقة حساسة — ما تسلّمهاش لـ AI من غير مراجعة."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Logical Classification\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/business-m3-l1-delegate-or-automate.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"First Step\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/business-m3-l1-delegate-or-automate.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"تصنيف منطقي\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l1-delegate-or-automate.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"خطوة أولى\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l1-delegate-or-automate.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"تصنيف منطقي\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l1-delegate-or-automate.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"خطوة أولى\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l1-delegate-or-automate.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"تصنيف منطقي\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m3-l1-delegate-or-automate.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"خطوة أولى\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/business-m3-l1-delegate-or-automate.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "9b14d67fd9f018d05616371f90edb23a5612a4ee8ecb96dae42bd1c77dddef19"
+}

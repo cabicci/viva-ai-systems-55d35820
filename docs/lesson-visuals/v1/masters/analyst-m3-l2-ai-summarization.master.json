@@ -1,0 +1,334 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "analyst-m3-l2-ai-summarization",
+  "pathId": "analyst",
+  "moduleId": "analyst-m3",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "AI Summarization",
+    "ar-MSA": "التلخيص بالذكاء الاصطناعي",
+    "ar-Gulf": "تلخيص بالـ AI",
+    "ar-EG": "ملخّص مفيد = سؤال + سياق + قرار محتمل"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m3-l2-ai-summarization.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m3-l2-ai-summarization.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m3-l2-ai-summarization.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/analyst-m3-l2-ai-summarization.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? AI can summarize your data in seconds — but you need to provide it with a clear question and a specific context.",
+        "Why now? In the previous lesson, you gathered your sources in one place. Now it's time to extract notes instead of reading every line.",
+        "What after the lesson? You will give AI a small table or sample data and ask for 3 notes + one possible decision."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ الذكاء الاصطناعي يستطيع تلخيص بياناتك في ثوانٍ — لكن يجب أن تعطيه سؤالًا واضحًا وContext (سياقًا) محدّدًا.",
+        "لماذا الآن؟ في الدرس السابق جمعت مصادرك في مكان واحد. الآن وقت أن تستخرج ملاحظات بدل قراءة كل سطر.",
+        "ماذا بعد الدرس؟ ستعطي الذكاء الاصطناعي جدولًا صغيرًا أو عينة بيانات وتطلب ٣ ملاحظات + قرارًا محتملًا واحدًا."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ الذكاء الاصطناعي يقدر يلخّص بياناتك في ثوانٍ — لكن لازم تعطيه سؤال واضح وسياق محدد.",
+        "ليش الحين؟ في الدرس السابق جمعت مصادرك في مكان واحد. الحين وقت تستخرج ملاحظات بدل ما تقرأ كل سطر.",
+        "وش بعد الدرس؟ راح تعطي الذكاء الاصطناعي جدول صغير أو عينة بيانات وتطلب ٣ ملاحظات + قرار محتمل واحد."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ الـ AI يقدر يلخّص بياناتك في ثواني — بس لازم تديله سؤال واضح وسياق محدّد.",
+        "ليه دلوقتي؟ في الدرس اللي فات جمعت مصادرك في مكان واحد. دلوقتي وقت تطلع منها ملاحظات بدل ما تقرأ كل سطر.",
+        "هتعمل إيه بعد الدرس؟ هتدي الـ AI جدول صغير أو عينة بيانات وتطلب ٣ ملاحظات + قرار محتمل واحد."
+      ]
+    },
+    "coreIdea": {
+      "en": "The question:",
+      "ar-MSA": "السؤال:",
+      "ar-Gulf": "السؤال:",
+      "ar-EG": "السؤال: مش «لخّصل» — «إيه أكتر ٣ مشاكل تكرّرت؟» أو «إيه اللي اتغيّر عن الأسبوع اللي فات؟»"
+    },
+    "tension": {
+      "en": "Many people send 50 messages to AI and say 'summarize'. The result: vague sentences that do not help in making a decision. The problem is not AI — the problem is that the question is empty. Without context and without a",
+      "ar-MSA": "كثيرون يرسلون ٥٠ رسالة للذكاء الاصطناعي ويقولون «لخّص». النتيجة: جمل عامة لا تساعد في قرار. المشكلة ليس الذكاء الاصطناعي — المشكلة أن السؤال فارغ. من دون سياق ومن دون سؤال محدّد، أي ملخّص يبدو «جميلًا» لكنه غير مفيد.",
+      "ar-Gulf": "كثير من الناس يرسلون ٥٠ رسالة للذكاء الاصطناعي ويقولون «لخّص». النتيجة: جمل عامة ما تساعد في قرار. المشكلة مو الذكاء الاصطناعي — المشكلة إن السؤال فارغ. بدون سياق وبدون سؤال محدد، أي ملخص يطلع «جميل» لكنه مو مفيد.",
+      "ar-EG": "كتير بيبعتوا ٥٠ رسالة للـ AI ويقولوا «لخّصل». النتيجة: جمل عامة مش بتساعد في قرار."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Empty Question",
+        "rightLabel": "Question + Context",
+        "leftBody": "'Summarize this messages'. The result: 'Customers have various questions' — and you don't know what to do",
+        "rightBody": "'These are 40 WhatsApp messages from the last week. Extract: 1) Top 3 complaints 2) Any new requests 3) One decision I might take this week'. The result is ready for action"
+      },
+      "ar-MSA": {
+        "leftLabel": "سؤال فارغ",
+        "rightLabel": "سؤال + سياق",
+        "leftBody": "«لخّص لي هذه الرسائل». النتيجة: «العملاء لديهم أسئلة متنوعة» — ولا تعرف ماذا تفعل",
+        "rightBody": "«هذه ٤٠ رسالة واتساب آخر أسبوع. استخرج: ١) أكثر ٣ شكاوى تكرّرت ٢) أي طلب جديد ظهر ٣) قرار واحد ممكن أن آخذه هذا الأسبوع». النتيجة جاهزة للتنفيذ"
+      },
+      "ar-Gulf": {
+        "leftLabel": "سؤال فارغ",
+        "rightLabel": "سؤال + سياق",
+        "leftBody": "«لخّص لي هذه الرسائل». النتيجة: «العملاء لديهم أسئلة متنوعة» — ولا تعرف وش تسوي",
+        "rightBody": "«هذه ٤٠ رسالة واتساب آخر أسبوع. استخرج: ١) أكثر ٣ شكاوى تكررت ٢) أي طلب جديد ظهر ٣) قرار واحد ممكن آخذه هذا الأسبوع». النتيجة جاهزة للتنفيذ"
+      },
+      "ar-EG": {
+        "leftLabel": "سؤال فاضي",
+        "leftBody": "«لخّصلي الرسائل دي». النتيجة: «العملاء عندهم أسئلة متنوعة» — ومش عارف تعمل إيه.",
+        "rightLabel": "سؤال + سياق",
+        "rightBody": "«دي ٤٠ رسالة واتساب آخر أسبوع. استخرج: ١) أكتر ٣ شكاوى تكرّرت ٢) أي طلب جديد ظهر ٣) قرار واحد ممكن أاخده الأسبوع ده». النتيجة جاهزة للتنفيذ."
+      }
+    },
+    "missionIntro": {
+      "en": "This is a practical task — not theoretical. Take a small table or sample data (10–20 rows is enough) and use AI to extract notes that you can act on. No large data required — a clear question and a decision-linked output are needed.",
+      "ar-MSA": "مهمة تطبيق عملي — ليس نظريًا. خذ جدولًا صغيرًا أو عينة بيانات (١٠–٢٠ صفًا يكفي) واستخدم الذكاء الاصطناعي لاستخراج ملاحظات يمكنك التحرّك عليها. لا بيانات ضخمة مطلوبة — سؤال واضح ومخرج مربوط بقرار مطلوبان.",
+      "ar-Gulf": "مهمة تطبيق عملي — مو نظري. خذ جدول صغير أو عينة بيانات (١٠–٢٠ صفًا تكفي) واستخدم الذكاء الاصطناعي لاستخراج ملاحظات تقدر تتحرك عليها. ما يحتاج بيانات ضخمة — سؤال واضح ومخرج مرتبط بقرار مطلوبان.",
+      "ar-EG": "المهمة دي تطبيق عملي — مش نظرية. خد جدول صغير أو عينة بيانات (١٠–٢٠ صف يكفي) واستخدم الـ AI يطلعلك ملاحظات تقدر تتحرّك عليها.\n\nمش مطلوب بيانات ضخمة — مطلوب سؤال واضح ومخرج مربوط بقرار."
+    },
+    "visualIntent": {
+      "kind": "process",
+      "summary": "**From data to decision** (ID: `ai-summarization-flow`): **Data + Question + Context → 3 Notes → One Decision**. The same process works on messages, invoices, o",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m3-l2-ai-summarization.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**From data to decision** (ID: `ai-summarization-flow`): **Data + Question + Context → 3 Notes → One Decision**. The same process works on m"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m3-l2-ai-summarization.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**من البيانات إلى القرار** (معرّف: `ai-summarization-flow`): **بيانات + سؤال + سياق → ٣ ملاحظات → قرار واحد**. نفس المسار يعمل على رسائل، فو"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m3-l2-ai-summarization.json",
+          "field": "sections[role=Diagram block (intent)].contentMarkdown",
+          "quote": "**من البيانات إلى القرار** (معرّف: `ai-summarization-flow`): **بيانات + سؤال + سياق → ٣ ملاحظات → قرار واحد**. نفس المسار ينطبق على رسائل، ف"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/analyst-m3-l2-ai-summarization.ts",
+          "field": "block.caption (diagram)",
+          "quote": "بيانات + سؤال + سياق → ٣ ملاحظات → قرار واحد. نفس المسار يشتغل على رسائل، فواتير، أو أي جدول صغير."
+        }
+      }
+    }
+  },
+  "method": 1,
+  "methodRationale": "analyst-m3-l2-ai-summarization's package marks a Diagram intent (ai-summarization-flow); the underlying relationship reads as process, so a deterministic SVG panel keeps the real Empty Question/Question + Context labels crisp in Arabic and English without any paid generation step.",
+  "compositionPattern": "process-stage-strip",
+  "duplicationJustification": "Shares the \"process-stage-strip\" layout template with 8 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Empty Question\" vs \"Question + Context\" for analyst-m3-l2-ai-summarization.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Empty Question",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m3-l2-ai-summarization.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Question + Context",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m3-l2-ai-summarization.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Summarization",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m3-l2-ai-summarization.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Context",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/analyst-m3-l2-ai-summarization.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "سؤال فارغ",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m3-l2-ai-summarization.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "سؤال + سياق",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m3-l2-ai-summarization.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Summarization (تلخيص)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m3-l2-ai-summarization.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Context (سياق)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m3-l2-ai-summarization.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "سؤال فارغ",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m3-l2-ai-summarization.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "سؤال + سياق",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m3-l2-ai-summarization.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Summarization (تلخيص)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m3-l2-ai-summarization.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Context (سياق)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m3-l2-ai-summarization.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "سؤال فاضي",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m3-l2-ai-summarization.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "سؤال + سياق",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m3-l2-ai-summarization.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Summarization (تلخيص)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m3-l2-ai-summarization.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Context (سياق)",
+        "source": {
+          "path": "src/components/intro/lessons/analyst-m3-l2-ai-summarization.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "AI Summarization: \"Empty Question\" versus \"Question + Context\" — The question:",
+    "ar-MSA": "التلخيص بالذكاء الاصطناعي: \"سؤال فارغ\" في مقابل \"سؤال + سياق\" — السؤال:",
+    "ar-Gulf": "تلخيص بالـ AI: \"سؤال فارغ\" في مقابل \"سؤال + سياق\" — السؤال:",
+    "ar-EG": "ملخّص مفيد = سؤال + سياق + قرار محتمل: \"سؤال فاضي\" في مقابل \"سؤال + سياق\" — السؤال: مش «لخّصل» — «إيه أكتر ٣ مشاكل تكرّرت؟» أو «إيه اللي اتغيّر عن الأسبوع اللي فات؟»"
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Question and Context\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m3-l2-ai-summarization.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Notes and Decision\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/analyst-m3-l2-ai-summarization.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"سؤال وسياق\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m3-l2-ai-summarization.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"ملاحظات وقرار\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m3-l2-ai-summarization.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"سؤال وسياق\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m3-l2-ai-summarization.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"ملاحظات وقرار\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m3-l2-ai-summarization.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"سؤال وسياق\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m3-l2-ai-summarization.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"ملاحظات وقرار\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/analyst-m3-l2-ai-summarization.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "9630a394e4b9a2c89d4dce2af54dd328c95b10a4b34bac8e3d8489ea58c6c110"
+}

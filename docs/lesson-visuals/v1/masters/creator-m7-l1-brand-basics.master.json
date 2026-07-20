@@ -1,0 +1,333 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "creator-m7-l1-brand-basics",
+  "pathId": "creator",
+  "moduleId": "creator-m7-identity",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Brand Basics — Colors, Fonts, Logo",
+    "ar-MSA": "أساسيات الهوية — الألوان والخطوط والشعار",
+    "ar-Gulf": "أساسيات العلامة التجارية",
+    "ar-EG": "POV ثابت = ذاكرة أقوى"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/creator-m7-l1-brand-basics.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m7-l1-brand-basics.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m7-l1-brand-basics.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/creator-m7-l1-brand-basics.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? People remember you for your stance — not for your colors.",
+        "Visual identity is important — but what truly makes people remember you is your consistent point of view on the topic you discuss.",
+        "This lesson focuses on the essence of a Brand: a clear stance that shows in your words, choices, and presentation style."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ الناس تتذكرك من موقفك — لا من ألوانك.",
+        "الهوية البصرية مهمة — لكن الذي يجعل الناس تتذكرك فعلًا هو وجهة نظرك الثابتة في الموضوع الذي تتحدث فيه.",
+        "هذا الدرس يركز على جوهر Brand (العلامة): موقف واضح يظهر في الكلام والاختيارات وطريقة تقديمك."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ الناس تتذكرك من موقفك — مو من ألوانك.",
+        "الهوية البصرية مهمة — لكن الشي اللي يخلي الناس تتذكرك فعلاً هو وجهة نظرك الثابتة في الموضوع اللي تتكلم عنه.",
+        "هذا الدرس يركز على جوهر العلامة: موقف واضح يظهر في الكلام والاختيارات وطريقة تقديمك."
+      ],
+      "ar-EG": [
+        "الهوية البصرية مهمة، بس اللي بيخلي الناس تفتكرك فعلا هو وجهة نظرك الثابتة في الموضوع اللي بتتكلم فيه.",
+        "الدرس ده بيركز على جوهر البراند: موقف واضح يبان في الكلام، الاختيارات، وطريقة تقديمك."
+      ]
+    },
+    "coreIdea": {
+      "en": "POV (Point of View)",
+      "ar-MSA": "POV (Point of View — وجهة نظر)",
+      "ar-Gulf": "POV (Point of View — وجهة نظر)",
+      "ar-EG": "الـ POV هو الجملة اللي تلخص أنت شايف الدنيا إزاي في مجالك، وبتخلي المحتوى كله يمشي في خط واحد."
+    },
+    "tension": {
+      "en": "Beautiful content in form but lacking a signature. Many content creators change colors and fonts — but no one can say a single distinctive phrase about them.",
+      "ar-MSA": "محتوى جميل شكلًا لكن بلا بصمة. كثير من صنّاع المحتوى يغيّرون ألوانًا وخطوطًا — لكن لا يُقال عنهم جملة واحدة مميزة.",
+      "ar-Gulf": "محتوى جميل شكلًا لكن بلا بصمة. كثير من صناع المحتوى يغيرون ألوان وخطوط — لكن ما يُقال عنهم جملة واحدة مميزة.",
+      "ar-EG": "كتير من الكريتورز يبدلوا ألوان وفونتات كل شوية، لكن ما يقدروش يتقال عنهم جملة واحدة مميزة."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Form-Based Brand",
+        "rightLabel": "Stance-Based Brand",
+        "leftBody": "Organized design but the message changes every day — people love the form but don’t know where you stand.",
+        "rightBody": "A consistent POV drives the content and the design supports it — people remember you for your way of thinking before the form."
+      },
+      "ar-MSA": {
+        "leftLabel": "براند شكلي فقط",
+        "rightLabel": "براند بموقف واضح",
+        "leftBody": "تصميم منظم لكن الرسالة تتغير كل يوم — الناس تحب الشكل لكن لا تعرف أين تقف",
+        "rightBody": "POV ثابت يقود المحتوى والتصميم يدعمه — الناس تتذكرك من طريقة التفكير قبل الشكل"
+      },
+      "ar-Gulf": {
+        "leftLabel": "براند شكلي فقط",
+        "rightLabel": "براند بموقف واضح",
+        "leftBody": "تصميم مرتب لكن الرسالة تتغير كل يوم — الناس تحب الشكل لكن ما يعرفون وين يقفون",
+        "rightBody": "POV ثابت يقود المحتوى والتصميم يدعمه — الناس تتذكرك من طريقة التفكير قبل الشكل"
+      },
+      "ar-EG": {
+        "leftLabel": "براند شكلي فقط",
+        "leftBody": "تصميم منظم لكن الرسالة بتتغير كل يوم. الناس تحب الشكل لكن ما تعرفش أنت واقف فين.",
+        "rightLabel": "براند بموقف واضح",
+        "rightBody": "POV ثابت يقود المحتوى، والتصميم يدعمه. النتيجة إن الناس تفتكرك من طريقة التفكير قبل الشكل."
+      }
+    },
+    "missionIntro": {
+      "en": "The core of the brand: a single stance statement that serves as a reference for all content you publish.",
+      "ar-MSA": "لب البراند: جملة موقف واحدة تكون مرجعًا لكل محتوى تنشره.",
+      "ar-Gulf": "لب البراند: جملة موقف واحدة تكون مرجعًا لكل محتوى تنشره.",
+      "ar-EG": "المهمة هنا لب البراند: جملة موقف واحدة تبقى مرجع لكل محتوى تنشره."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "A visual snapshot — **a practical example of a clear identity**. **The form serves the core idea** — **it does not overshadow it**.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m7-l1-brand-basics.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "A visual snapshot — **a practical example of a clear identity**. **The form serves the core idea** — **it does not overshadow it**."
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m7-l1-brand-basics.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "POV (Point of View — وجهة نظر)"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m7-l1-brand-basics.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "POV (Point of View — وجهة نظر)"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/creator-m7-l1-brand-basics.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "الصورة بتوضح إزاي الشكل يخدم الفكرة الأساسية، مش ياخد مكانها."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "creator-m7-l1-brand-basics's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Form-Based Brand / Stance-Based Brand) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Form-Based Brand\" vs \"Stance-Based Brand\" for creator-m7-l1-brand-basics.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Form-Based Brand",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m7-l1-brand-basics.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Stance-Based Brand",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m7-l1-brand-basics.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "POV (Point of View)",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m7-l1-brand-basics.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Brand Promise",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m7-l1-brand-basics.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "براند شكلي فقط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m7-l1-brand-basics.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "براند بموقف واضح",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m7-l1-brand-basics.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "POV (وجهة نظر)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m7-l1-brand-basics.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Brand Promise (وعد العلامة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m7-l1-brand-basics.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "براند شكلي فقط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m7-l1-brand-basics.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "براند بموقف واضح",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m7-l1-brand-basics.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "POV (وجهة نظر)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m7-l1-brand-basics.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Brand Promise (وعد العلامة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m7-l1-brand-basics.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "براند شكلي فقط",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m7-l1-brand-basics.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "براند بموقف واضح",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m7-l1-brand-basics.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "POV (Point of View)",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m7-l1-brand-basics.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Brand Promise",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m7-l1-brand-basics.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Brand Basics — Colors, Fonts, Logo: \"Form-Based Brand\" versus \"Stance-Based Brand\" — POV (Point of View)",
+    "ar-MSA": "أساسيات الهوية — الألوان والخطوط والشعار: \"براند شكلي فقط\" في مقابل \"براند بموقف واضح\" — POV (Point of View — وجهة نظر)",
+    "ar-Gulf": "أساسيات العلامة التجارية: \"براند شكلي فقط\" في مقابل \"براند بموقف واضح\" — POV (Point of View — وجهة نظر)",
+    "ar-EG": "POV ثابت = ذاكرة أقوى: \"براند شكلي فقط\" في مقابل \"براند بموقف واضح\" — الـ POV هو الجملة اللي تلخص أنت شايف الدنيا إزاي في مجالك، وبتخلي المحتوى كله يمشي في خط واحد."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Clarity of the POV\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m7-l1-brand-basics.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"Translation to Content\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m7-l1-brand-basics.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح الـ POV\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m7-l1-brand-basics.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"ترجمتها للمحتوى\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m7-l1-brand-basics.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح الـ POV\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m7-l1-brand-basics.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"ترجمتها للمحتوى\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m7-l1-brand-basics.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"وضوح الـ POV\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m7-l1-brand-basics.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 50"
+    },
+    {
+      "claim": "50% of the mission rubric weight is assigned to \"ترجمتها للمحتوى\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m7-l1-brand-basics.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 50"
+    }
+  ],
+  "checksum": "dbe5017ff6be1040d89326b5d61a7b5349aecfbb296ea34b6a6b7ec3ad8ebc75"
+}

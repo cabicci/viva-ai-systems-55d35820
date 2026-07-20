@@ -1,0 +1,241 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "automator-m6-l2-whatsapp-flow",
+  "pathId": "automator",
+  "moduleId": "automator-m6",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "WhatsApp Flow",
+    "ar-MSA": "تدفّق واتساب",
+    "ar-Gulf": "درس واتساب",
+    "ar-EG": "رد آلي مفيد + تحويل لبشري لما محتاج"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/automator-m6-l2-whatsapp-flow.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l2-whatsapp-flow.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l2-whatsapp-flow.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/automator-m6-l2-whatsapp-flow.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? WhatsApp automation for confirmations and FAQs — confidently and with consent.",
+        "Why now? After lead capture — the closest channel to the customer."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ أتمتة واتساب للتأكيدات وFAQ — بثقة وConsent (موافقة).",
+        "لماذا الآن؟ بعد Lead capture — القناة الأقرب للعميل."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ أتمتة واتساب للتأكيدات والأسئلة الشائعة — بثقة وموافقة.",
+        "ليش الحين؟ بعد جمع البيانات — القناة الأقرب للعميل."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ أتمتة واتساب (Automation = حاجة شغالة تلقائي) تساعد في التأكيدات والأسئلة الشائعة — بس محتاج ثقة وموافقة العميل.",
+        "ليه دلوقتي؟ بعد ما عرفت تستقبل Leads (ناس أبدت اهتمام وممكن تبقى عميل)، القناة الأقرب للعميل محتاجة ردود ذكية مش مزعجة.",
+        "هتعمل إيه بعد الدرس؟ هتصمّم Flow (خطوات ماشية ورا بعض بشكل تلقائي) لرد آلي واحد بشرط تحويل لبشري."
+      ]
+    },
+    "coreIdea": {
+      "en": "The customer initiates or agrees — no random broadcasting. Message → understanding → response → if complicated: handoff to a staff member.",
+      "ar-MSA": "العميل يبدأ أو يوافق — لا بث عشوائي. رسالة → فهم → رد → إن تعقّد: تحويل لموظف.",
+      "ar-Gulf": "العميل يبدأ أو يوافق — لا بث عشوائي. رسالة → فهم → رد → إذا تعقّد: تحويل لموظف.",
+      "ar-EG": "أتمتة واتساب مناسبة لـ: تأكيد طلب، إجابة أسئلة شائعة، تذكير موعد، متابعة Leads سجّل بنفسه."
+    },
+    "tension": {
+      "en": "Mass messaging → block and reports. WhatsApp is a personal channel.",
+      "ar-MSA": "بث جماعي → block وبلاغات. واتساب قناة شخصية.",
+      "ar-Gulf": "بث جماعي → حظر وإشعارات. واتساب قناة شخصية.",
+      "ar-EG": "شغّلت رسائل واتساب تلقائية لكل اللي سجّلوا. نفس الرسالة لكل الناس — حتى اللي ماطلبوش حاجة."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Bot Response — Customer Feels Annoyed",
+        "rightLabel": "Helpful Response + Handoff",
+        "leftBody": "The bot continues trying to answer from the FAQ.",
+        "rightBody": "Immediate handoff to a staff member — this is a clear handoff condition."
+      },
+      "ar-MSA": {
+        "leftLabel": "البوت رد — والعميل شعر بالإزعاج",
+        "rightLabel": "رد مفيد + Handoff (تحويل)",
+        "leftBody": "يستمر البوت في محاولة الإجابة من الأسئلة الشائعة.",
+        "rightBody": "تحويل فوري لموظف — هذا شرط تحويل (Handoff) واضح."
+      },
+      "ar-Gulf": {
+        "leftLabel": "رد البوت — والعميل شعر بالإزعاج",
+        "rightLabel": "رد مفيد + تحويل",
+        "leftBody": "البوت يكمل يحاول يجاوب من الأسئلة الشائعة.",
+        "rightBody": "تحويل فوري لموظف — هذا شرط واضح للتحويل."
+      },
+      "ar-EG": {
+        "leftLabel": "بث من غير سبب",
+        "leftBody": "نفس العرض لـ ٥٠٠ رقم. محدش طلب. block وبلاغات. الرقم يتحظر.",
+        "rightLabel": "رد بعد اهتمام",
+        "rightBody": "العميل سجّل أو بعت الأول. رد تأكيد + إجابة سؤاله. لو طلب «أكلم حد» → تحويل فوري لموظف."
+      }
+    },
+    "missionIntro": {
+      "en": "| Clear Flow | 60% | | Trust and Consent | 40% |",
+      "ar-MSA": "| Flow واضح | 60% | | ثقة وموافقة | 40% |",
+      "ar-Gulf": "| تدفق واضح | 60% | | ثقة وموافقة | 40% |",
+      "ar-EG": "المهمة تصميم محادثة واحدة — مش بناء API. اختار سيناريو عندك (تأكيد، FAQ، متابعة) وحدّد الرد الآلي وإمتى يتحوّل لبشري.\n\nمش مطلوب ربط تقني — مطلوب flow واضح بشرط handoff."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "The customer initiates or agrees — no random broadcasting. Message → understanding → response → if complicated: handoff to a staff member.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m6-l2-whatsapp-flow.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "The customer initiates or agrees — no random broadcasting. Message → understanding → response → if c"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l2-whatsapp-flow.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "العميل يبدأ أو يوافق — لا بث عشوائي. رسالة → فهم → رد → إن تعقّد: تحويل لموظف."
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l2-whatsapp-flow.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "العميل يبدأ أو يوافق — لا بث عشوائي. رسالة → فهم → رد → إذا تعقّد: تحويل لموظف."
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/automator-m6-l2-whatsapp-flow.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "رسالة واردة → فهم → رد أو تحويل. السياق محفوظ عشان الرد يكون مناسب مش عام."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "automator-m6-l2-whatsapp-flow's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Bot Response — Customer Feels Annoyed / Helpful Response + Handoff) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Bot Response — Customer Feels Annoyed\" vs \"Helpful Response + Handoff\" for automator-m6-l2-whatsapp-flow.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Bot Response — Customer Feels Annoyed",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m6-l2-whatsapp-flow.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Helpful Response + Handoff",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m6-l2-whatsapp-flow.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "البوت رد — والعميل شعر بالإزعاج",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l2-whatsapp-flow.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "رد مفيد + Handoff (تحويل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l2-whatsapp-flow.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "رد البوت — والعميل شعر بالإزعاج",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l2-whatsapp-flow.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "رد مفيد + تحويل",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l2-whatsapp-flow.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "بث من غير سبب",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m6-l2-whatsapp-flow.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "رد بعد اهتمام",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m6-l2-whatsapp-flow.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Consent (موافقة)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m6-l2-whatsapp-flow.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Handoff (تحويل)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m6-l2-whatsapp-flow.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "WhatsApp Flow: \"Bot Response — Customer Feels Annoyed\" versus \"Helpful Response + Handoff\" — The customer initiates or agrees — no random broadcasting. Message → understanding → response → if complicated: handoff to a staff member.",
+    "ar-MSA": "تدفّق واتساب: \"البوت رد — والعميل شعر بالإزعاج\" في مقابل \"رد مفيد + Handoff (تحويل)\" — العميل يبدأ أو يوافق — لا بث عشوائي. رسالة → فهم → رد → إن تعقّد: تحويل لموظف.",
+    "ar-Gulf": "درس واتساب: \"رد البوت — والعميل شعر بالإزعاج\" في مقابل \"رد مفيد + تحويل\" — العميل يبدأ أو يوافق — لا بث عشوائي. رسالة → فهم → رد → إذا تعقّد: تحويل لموظف.",
+    "ar-EG": "رد آلي مفيد + تحويل لبشري لما محتاج: \"بث من غير سبب\" في مقابل \"رد بعد اهتمام\" — أتمتة واتساب مناسبة لـ: تأكيد طلب، إجابة أسئلة شائعة، تذكير موعد، متابعة Leads سجّل بنفسه."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Flow واضح\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m6-l2-whatsapp-flow.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"ثقة وموافقة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m6-l2-whatsapp-flow.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "84852e03de6d382b0f961db046af082d896effff2e6b0ea52091ee5322a8a8e4"
+}

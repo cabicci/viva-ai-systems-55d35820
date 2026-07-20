@@ -1,0 +1,286 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "automator-m5-l1-llm-in-flow",
+  "pathId": "automator",
+  "moduleId": "automator-m5",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "LLM in Flow",
+    "ar-MSA": "نموذج اللغة داخل التدفّق",
+    "ar-Gulf": "نموذج اللغة داخل التدفق",
+    "ar-EG": "خطوة AI = قراءة وفهم وكتابة — مش نقل بس"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/automator-m5-l1-llm-in-flow.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l1-llm-in-flow.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m5-l1-llm-in-flow.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/automator-m5-l1-llm-in-flow.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? In Automation, AI reads, classifies, and summarizes — it doesn't just transfer data.",
+        "Why now? After testing, Flow is ready before adding an AI step.",
+        "What after the lesson? One AI step in Workflow — its exact function."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ في الأتمتة (Automation) الذكاء الاصطناعي يقرأ ويصنّف ويلخّص — لا ينقل بيانات فقط.",
+        "لماذا الآن؟ بعد الاختبار، Flow (تدفق عمل) جاهز قبل إضافة خطوة ذكاء.",
+        "ماذا بعد الدرس؟ خطوة AI واحدة في Workflow — وظيفتها بالضبط."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ في الأتمتة، الذكاء الاصطناعي يقرأ ويصنّف ويلخّص — مو بس ينقل بيانات.",
+        "ليش الحين؟ بعد الاختبار، التدفق جاهز قبل إضافة خطوة ذكاء.",
+        "وش بعد الدرس؟ خطوة AI وحدة في Workflow — وظيفتها بالضبط."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ في الأتمتة (Automation = حاجة شغالة تلقائي) الـ AI يقدر يقرأ ويصنّف ويلخّص — مش بس ينقل بيانات.",
+        "ليه دلوقتي؟ في درس الاختبار اتعلّمت تتأكد إن الـ Flow (خطوات ماشية ورا بعض بشكل تلقائي) شغّال قبل ما تضيف خطوة ذكاء.",
+        "هتعمل إيه بعد الدرس؟ هتضيف خطوة AI واحدة في الـ Workflow (نفس الفكرة: خطوات تلقائية) وتشرح وظيفتها بالظبط."
+      ]
+    },
+    "coreIdea": {
+      "en": "Trigger",
+      "ar-MSA": "Trigger (مُشغّل)",
+      "ar-Gulf": "مُشغّل",
+      "ar-EG": "قبل كده: Trigger (الحاجة اللي بتبدأ التشغيل) → Action (خطوة أو تصرف حصل فعلًا) → حفظ. البيانات بتتحرك بس مافيش «فهم»."
+    },
+    "tension": {
+      "en": "A long WhatsApp message → recorded in a spreadsheet — the team reads and classifies it manually every day. Automation moved the data — it didn't do the time-consuming work.",
+      "ar-MSA": "رسالة واتساب طويلة → تُسجَّل في جدول — الفريق يقرأ ويصنّف يدويًا كل يوم. الأتمتة (Automation) نقلت البيانات — لم تفعل الشغل الذي يستهلك الوقت.",
+      "ar-Gulf": "رسالة واتساب طويلة → تُسجَّل في جدول — الفريق يقرأ ويصنّف يدويًا كل يوم. الأتمتة نقلت البيانات — مو سوت الشغل اللي يستهلك الوقت.",
+      "ar-EG": "عميل بعت رسالة طويلة على واتساب. الأتمتة نقلتها لجدول — والفريق بيقرأها يدوي ويصنّفها ويرد."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Transfer Only",
+        "rightLabel": "AI Step",
+        "leftBody": "Message → Sheet as is — manual reading",
+        "rightBody": "AI classifies and extracts the name → Flow directs automatically"
+      },
+      "ar-MSA": {
+        "leftLabel": "نقل فقط",
+        "rightLabel": "خطوة AI",
+        "leftBody": "رسالة → شيت كما هي — قراءة يدوية",
+        "rightBody": "AI يصنّف ويستخرج الاسم → Flow يوجّه تلقائيًا"
+      },
+      "ar-Gulf": {
+        "leftLabel": "نقل فقط",
+        "rightLabel": "خطوة AI",
+        "leftBody": "رسالة → شيت كما هي — قراءة يدوية",
+        "rightBody": "AI يصنّف ويستخرج الاسم → التدفق يوجّه تلقائيًا"
+      },
+      "ar-EG": {
+        "leftLabel": "نقل بس",
+        "leftBody": "رسالة واتساب → تتسجّل في الشيت زي ما هي. حد من الفريق يقرأها ويصنّفها ويرد. كل Leads (ناس أبدت اهتمام وممكن تبقى عميل) = شغل يدوي.",
+        "rightLabel": "خطوة AI",
+        "rightBody": "رسالة واتساب → AI يصنّفها (شكوى/استفسار/طلب) ويستخرج الاسم والرقم → الـ Flow يوجّهها تلقائي للفرع المناسب ويبعت مسودة رد."
+      }
+    },
+    "missionIntro": {
+      "en": "Design one LLM step inside a real workflow. Define exactly what the step receives, the task it performs, the structured output it returns, and how the next step uses that output.",
+      "ar-MSA": "صمّم خطوة LLM واحدة داخل مسار عمل حقيقي. حدّد بدقة ما تستقبله الخطوة، والمهمة التي تنفذها، والمخرجات المنظمة التي تعيدها، وكيف تستخدم الخطوة التالية هذه المخرجات.",
+      "ar-Gulf": "صمّم خطوة LLM وحدة داخل مسار عمل فعلي. حدّد بالضبط وش يدخل لها، وش تسوي، وش الحقول المنظمة اللي ترجعها، وكيف تستخدم الخطوة اللي بعدها هالحقول.",
+      "ar-EG": "المهمة تصميم عملي — مش برمجة. اختار شغل متكرر عندك (رسائل، إيميلات، طلبات) وأضف خطوة AI واحدة بتوضّح إيه اللي هتعمله.\n\nمش مطلوب بناء — مطلوب وصف واضح لخطوة واحدة ودورها في السير."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Trigger",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m5-l1-llm-in-flow.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Trigger"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l1-llm-in-flow.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Trigger (مُشغّل)"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m5-l1-llm-in-flow.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "مُشغّل"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/automator-m5-l1-llm-in-flow.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "الفكرة: استقبال → فهم بالـ AI → قرار أو رد. الخطوة الوسطى هي اللي بتوفر الشغل اليدوي المتكرر."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "automator-m5-l1-llm-in-flow's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Transfer Only / AI Step) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Transfer Only\" vs \"AI Step\" for automator-m5-l1-llm-in-flow.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Transfer Only",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m5-l1-llm-in-flow.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "AI Step",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m5-l1-llm-in-flow.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "نقل فقط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l1-llm-in-flow.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "خطوة AI",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l1-llm-in-flow.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "نقل فقط",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m5-l1-llm-in-flow.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "خطوة AI",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m5-l1-llm-in-flow.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "نقل بس",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m5-l1-llm-in-flow.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "خطوة AI",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m5-l1-llm-in-flow.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "LLM Step (خطوة ذكاء)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m5-l1-llm-in-flow.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Structured Output (رد منظم)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m5-l1-llm-in-flow.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "LLM in Flow: \"Transfer Only\" versus \"AI Step\" — Trigger",
+    "ar-MSA": "نموذج اللغة داخل التدفّق: \"نقل فقط\" في مقابل \"خطوة AI\" — Trigger (مُشغّل)",
+    "ar-Gulf": "نموذج اللغة داخل التدفق: \"نقل فقط\" في مقابل \"خطوة AI\" — مُشغّل",
+    "ar-EG": "خطوة AI = قراءة وفهم وكتابة — مش نقل بس: \"نقل بس\" في مقابل \"خطوة AI\" — قبل كده: Trigger (الحاجة اللي بتبدأ التشغيل) → Action (خطوة أو تصرف حصل فعلًا) → حفظ. البيانات بتتحرك بس مافيش «فهم»."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Clarity of Step\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m5-l1-llm-in-flow.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Connection to Workflow\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m5-l1-llm-in-flow.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"وضوح الخطوة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l1-llm-in-flow.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"ربط بالسير\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l1-llm-in-flow.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"وضوح الخطوة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m5-l1-llm-in-flow.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"ربط بالسير\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m5-l1-llm-in-flow.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"وضوح الخطوة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m5-l1-llm-in-flow.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"ربط بالسير\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m5-l1-llm-in-flow.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "d4979292d2c7299482f5a0ae3f4590bebabab3c8cccf242ab5c2e97c60590e98"
+}

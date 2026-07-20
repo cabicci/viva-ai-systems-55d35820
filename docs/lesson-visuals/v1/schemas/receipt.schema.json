@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://masaarat.local/schemas/lesson-visual-receipt/v1",
+  "title": "LessonVisualCellReceipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "receiptVersion",
+    "cellId",
+    "lessonId",
+    "locale",
+    "method",
+    "status",
+    "sourceSha",
+    "masterChecksum",
+    "fingerprint",
+    "producedAt"
+  ],
+  "properties": {
+    "receiptVersion": {
+      "const": "lesson-visual-receipt/v1"
+    },
+    "cellId": {
+      "type": "string",
+      "minLength": 8
+    },
+    "lessonId": {
+      "type": "string",
+      "minLength": 8
+    },
+    "locale": {
+      "type": "string",
+      "enum": ["ar-EG", "ar-MSA", "ar-Gulf", "en"]
+    },
+    "method": {
+      "type": "integer",
+      "enum": [1, 2, 3, 4]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["ACCEPTED", "FAILED", "SKIPPED"]
+    },
+    "sourceSha": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "masterChecksum": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "fingerprint": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "sha256 of canonical skip-contract inputs for this cell"
+    },
+    "artifactSha256": {
+      "type": ["string", "null"],
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "producedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "error": {
+      "type": ["string", "null"]
+    }
+  }
+}

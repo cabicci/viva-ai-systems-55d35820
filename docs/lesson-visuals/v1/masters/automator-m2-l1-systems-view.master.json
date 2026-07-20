@@ -1,0 +1,326 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "automator-m2-l1-systems-view",
+  "pathId": "automator",
+  "moduleId": "automator-m2",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Systems View",
+    "ar-MSA": "رؤية الأنظمة",
+    "ar-Gulf": "نظرة على الأنظمة",
+    "ar-EG": "مُشغّل → عملية → نتيجة"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/automator-m2-l1-systems-view.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l1-systems-view.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l1-systems-view.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/automator-m2-l1-systems-view.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "What will you understand? Any repeated task = system: Trigger → Process → Output. When you see it this way, you can hand it over to the virtual worker.",
+        "Why now? After identifying which tasks consume your time, the next step is to break one of them down into clear parts.",
+        "What after the lesson? You will convert one repeated task into a Trigger + Process + Output."
+      ],
+      "ar-MSA": [
+        "ماذا ستفهم؟ أي مهمة متكررة = نظام: مُشغّل (Trigger) → عملية → نتيجة (Output). عندما تراها هكذا، تستطيع تسليمها للعامل الافتراضي.",
+        "لماذا الآن؟ بعد أن عرفت أي مهام تستهلك وقتك، الخطوة التالية: تفكيك واحدة منها إلى أجزاء واضحة.",
+        "ماذا بعد الدرس؟ ستحوّل مهمة متكررة واحدة إلى مُشغّل + عملية + نتيجة."
+      ],
+      "ar-Gulf": [
+        "وش راح تفهم؟ أي مهمة متكررة = نظام: مُشغّل (Trigger) → عملية → نتيجة (Output). لما تشوفها كذا، تقدر تسلمها للعامل الافتراضي.",
+        "ليش الحين؟ بعد ما عرفت أي مهام تستهلك وقتك، الخطوة الجاية: فكك واحدة منها لأجزاء واضحة.",
+        "وش بعد الدرس؟ راح تحول مهمة متكررة واحدة إلى مُشغّل + عملية + نتيجة."
+      ],
+      "ar-EG": [
+        "هتفهم إيه؟ أي مهمة متكرّرة = نظام: مُشغّل → عملية → نتيجة. لما تشوفها كده، تقدر تسلّمها للعامل الافتراضي.",
+        "ليه دلوقتي؟ بعد ما عرفت أنهي مهام بتاكل وقتك، الخطوة الجاية: تفكّك واحدة منهم لأجزاء واضحة.",
+        "هتعمل إيه بعد الدرس؟ هتحوّل مهمة متكرّرة واحدة لـ مُشغّل + عملية + نتيجة."
+      ]
+    },
+    "coreIdea": {
+      "en": "Trigger:",
+      "ar-MSA": "المُشغّل (Trigger):",
+      "ar-Gulf": "المُشغّل (Trigger):",
+      "ar-EG": "المُشغّل (Trigger): إيه اللي بيبدأ الشغل؟ — رسالة واتساب، فورم جديد، موعد محدّد."
+    },
+    "tension": {
+      "en": "\"Reply to this message\" — every day from the start: new message → think → search → respond → forget to log it. Think of separate tasks — not as a system. The result: the same work repeats, and nothing accumulates.",
+      "ar-MSA": "«أرد على هذه الرسالة» — كل يوم من البداية: رسالة جديدة → تفكّر → تبحث → ترد → تنسى التسجيل. تفكّر في مهام منفصلة — لا في نظام. النتيجة: نفس الشغل يتكرر، ولا شيء يتراكم.",
+      "ar-Gulf": "«أرد على هذه الرسالة» — كل يوم من البداية: رسالة جديدة → تفكر → تبحث → ترد → تنسى التسجيل. فكر في مهام منفصلة — مو في نظام. النتيجة: نفس الشغل يتكرر، ولا شيء يتراكم.",
+      "ar-EG": "كل يوم بتبدأ من الصفر: رسالة جديدة → تفكر → تدوّر → ترد → تنسى تسجّل."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Task Thinking",
+        "rightLabel": "System Thinking",
+        "leftBody": "\"I need to reply to the message\" — every time from the start, with no fixed steps. Hard to hand over to someone or a tool.",
+        "rightBody": "\"Inquiry Response System\": Trigger = Message → Process = 4 fixed steps → Output = Response + CRM. Can be improved or automated."
+      },
+      "ar-MSA": {
+        "leftLabel": "تفكير مهام",
+        "rightLabel": "تفكير نظام",
+        "leftBody": "«أحتاج أن أرد على الرسالة» — كل مرة من البداية، بلا خطوات ثابتة. صعب تسليمه لأحد أو لأداة.",
+        "rightBody": "«نظام رد الاستفسارات»: مُشغّل = رسالة → عملية = ٤ خطوات ثابتة → نتيجة = رد + CRM. يمكن تحسينه أو أتمتته."
+      },
+      "ar-Gulf": {
+        "leftLabel": "تفكير مهام",
+        "rightLabel": "تفكير نظام",
+        "leftBody": "«أحتاج أن أرد على الرسالة» — كل مرة من البداية، بلا خطوات ثابتة. صعب تسليمه لأحد أو لأداة.",
+        "rightBody": "«نظام رد الاستفسارات»: مُشغّل = رسالة → عملية = ٤ خطوات ثابتة → نتيجة = رد + CRM. يمكن تحسينه أو أتمتته."
+      },
+      "ar-EG": {
+        "leftLabel": "تفكير مهام",
+        "leftBody": "«محتاج أرد على الرسالة» — كل مرة من الأول، من غير خطوات ثابتة. صعب تسلّمه لحد (أو لأداة).",
+        "rightLabel": "تفكير نظام",
+        "rightBody": "«نظام رد الاستفسارات»: مُشغّل = رسالة → عملية = ٤ خطوات ثابتة → نتيجة = رد + CRM. تقدر تحسّنه أو تأتمته."
+      }
+    },
+    "missionIntro": {
+      "en": "Choose one task you do every week (from Time Inventory). Break it down into Trigger + Process + Output — this is design, not tool building. 10–15 minutes is enough.",
+      "ar-MSA": "اختر مهمة واحدة تعملها كل أسبوع (من جرد الوقت). فكّكها إلى مُشغّل + عملية + نتيجة — هذا تصميم، لا بناء أداة. ١٠–١٥ دقيقة كافية.",
+      "ar-Gulf": "اختر مهمة واحدة تسويها كل أسبوع (من جرد الوقت). فككها إلى مُشغّل + عملية + نتيجة — هذا تصميم، مو بناء أداة. ١٠–١٥ دقيقة كافية.",
+      "ar-EG": "اختار مهمة واحدة بتعملها كل أسبوع (من الـ Audit بتاعك). فكّكها لمُشغّل + عملية + نتيجة — ده تصميم، مش بناء أداة.\n\n١٠–١٥ دقيقة كفاية."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "Connected layers — each layer has an input, processing, and output. Any repeated work = layers stacked: something enters → steps transform → something exits. Th",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m2-l1-systems-view.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "Connected layers — each layer has an input, processing, and output. Any repeated work = layers stacked: something enters → steps transform →"
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l1-systems-view.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "طبقات متصلة — كل طبقة فيها مدخل ومعالجة ومخرج. أي شغل متكرر = طبقات وراء بعض: شيء يدخل → خطوات تتحوّل → شيء يخرج. نفس الفكرة على مهمة من عمل"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l1-systems-view.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "طبقات متصلة — كل طبقة فيها مدخل ومعالجة ومخرج. أي شغل متكرر = طبقات وراء بعض: شيء يدخل → خطوات تتحول → شيء يخرج. نفس الفكرة على مهمة من عملك"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/automator-m2-l1-systems-view.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "أي شغل متكرّر = طبقات ورا بعض: حاجة تدخل → خطوات تتحوّل → حاجة تطلع. نفس الفكرة هتطبّقها على مهمة من شغلك — مش لازم تكون"
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "automator-m2-l1-systems-view's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Task Thinking / System Thinking) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Task Thinking\" vs \"System Thinking\" for automator-m2-l1-systems-view.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Task Thinking",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m2-l1-systems-view.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "System Thinking",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m2-l1-systems-view.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Trigger",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/automator-m2-l1-systems-view.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "تفكير مهام",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l1-systems-view.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تفكير نظام",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l1-systems-view.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Trigger (المُشغّل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l1-systems-view.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Output (النتيجة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l1-systems-view.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "تفكير مهام",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l1-systems-view.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تفكير نظام",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l1-systems-view.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Trigger (المُشغّل)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l1-systems-view.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Output (النتيجة)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l1-systems-view.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "تفكير مهام",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m2-l1-systems-view.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "تفكير نظام",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m2-l1-systems-view.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Trigger (المُشغّل)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m2-l1-systems-view.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Output (النتيجة)",
+        "source": {
+          "path": "src/components/intro/lessons/automator-m2-l1-systems-view.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Systems View: \"Task Thinking\" versus \"System Thinking\" — Trigger:",
+    "ar-MSA": "رؤية الأنظمة: \"تفكير مهام\" في مقابل \"تفكير نظام\" — المُشغّل (Trigger):",
+    "ar-Gulf": "نظرة على الأنظمة: \"تفكير مهام\" في مقابل \"تفكير نظام\" — المُشغّل (Trigger):",
+    "ar-EG": "مُشغّل → عملية → نتيجة: \"تفكير مهام\" في مقابل \"تفكير نظام\" — المُشغّل (Trigger): إيه اللي بيبدأ الشغل؟ — رسالة واتساب، فورم جديد، موعد محدّد."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"System Breakdown\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m2-l1-systems-view.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"Automation Step\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/automator-m2-l1-systems-view.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"تفكيك النظام\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l1-systems-view.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"خطوة الأتمتة\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l1-systems-view.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"تفكيك النظام\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l1-systems-view.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"خطوة الأتمتة\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l1-systems-view.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 30"
+    },
+    {
+      "claim": "70% of the mission rubric weight is assigned to \"تفكيك النظام\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m2-l1-systems-view.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 70"
+    },
+    {
+      "claim": "30% of the mission rubric weight is assigned to \"خطوة الأتمتة\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/automator-m2-l1-systems-view.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 30"
+    }
+  ],
+  "checksum": "e0207d03820e13d4a0861a001618840e359792b81557c461a721e5b3ab18ebe7"
+}

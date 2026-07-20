@@ -1,0 +1,322 @@
+{
+  "schemaVersion": "lesson-visual-master/v1",
+  "lessonId": "creator-m1-l1-why-content",
+  "pathId": "creator",
+  "moduleId": "creator-m1",
+  "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+  "titles": {
+    "en": "Why Content Is Not Posting",
+    "ar-MSA": "لماذا المحتوى ليس مجرد نشر",
+    "ar-Gulf": "ليش المحتوى مو مجرد نشر",
+    "ar-EG": "سيستم محتوى = قرارات ثابتة"
+  },
+  "sourcePackages": {
+    "en": {
+      "path": "src/lib/locale-lessons/en/lessons/creator-m1-l1-why-content.json",
+      "kind": "json"
+    },
+    "ar-MSA": {
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m1-l1-why-content.json",
+      "kind": "json"
+    },
+    "ar-Gulf": {
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m1-l1-why-content.json",
+      "kind": "json"
+    },
+    "ar-EG": {
+      "path": "src/components/intro/lessons/creator-m1-l1-why-content.ts",
+      "kind": "ts-blocks"
+    }
+  },
+  "contentBrief": {
+    "orientation": {
+      "en": [
+        "In this lesson, you will discover that the real work is not just posting frequently, but building a Content System that gives every piece a purpose.",
+        "You will leave with a simple framework: Who you are talking to, What the problem is, and What type of content you can consistently repeat."
+      ],
+      "ar-MSA": [
+        "في هذا الدرس ستكتشف أن العمل الحقيقي ليس النشر كثيرًا، بل بناء نظام محتوى (Content System) يجعل كل قطعة لها هدف.",
+        "ستخرج بإطار بسيط: لمن تتحدث، ما المشكلة، وما نوع المحتوى الذي يمكنك تكراره بثبات."
+      ],
+      "ar-Gulf": [
+        "في هذا الدرس، راح تكتشف أن العمل الحقيقي مو بس نشر كثير، بل بناء نظام محتوى (Content System) يخلي كل قطعة لها هدف.",
+        "راح تطلع بإطار بسيط: لمن تتحدث، ما المشكلة، وما نوع المحتوى اللي تقدر تكرره بثبات."
+      ],
+      "ar-EG": [
+        "في الدرس ده هتكتشف إن الشغل الحقيقي مش إنك تنشر كتير، لكن إنك تبني نظام يخلي كل قطعة محتوى ليها هدف.",
+        "الهدف إنك تخرج بإطار بسيط: لمين بتتكلم، إيه المشكلة، وإيه نوع المحتوى اللي تقدر تكرره بثبات."
+      ]
+    },
+    "coreIdea": {
+      "en": "Content System = Fixed Decisions",
+      "ar-MSA": "نظام محتوى = قرارات ثابتة",
+      "ar-Gulf": "نظام محتوى = قرارات ثابتة",
+      "ar-EG": "لما المحتوى يبقى سيستم، كل بوست بيخدم وعد واضح لجمهور محدد."
+    },
+    "tension": {
+      "en": "Many people post daily, but there is no real engagement or serious messages. The problem is often not the effort — the issue is that posting happens without a clear direction.",
+      "ar-MSA": "كثيرون ينشرون يوميًا، لكن لا تفاعل حقيقي ولا رسائل جدية. المشكلة غالبًا ليست في الجهد — المشكلة أن النشر يحدث من دون اتجاه ثابت.",
+      "ar-Gulf": "كثير من الناس ينشرون يوميًا، لكن ما في تفاعل حقيقي ولا رسائل جدية. المشكلة غالبًا مو في الجهد — المشكلة أن النشر يصير من دون اتجاه ثابت.",
+      "ar-EG": "ناس كتير بتنشر يوميًا، بس مفيش تفاعل حقيقي ولا رسايل جدية."
+    },
+    "comparison": {
+      "en": {
+        "leftLabel": "Random Posting",
+        "rightLabel": "Content System",
+        "leftBody": "Idea every day from scratch — more effort and fluctuating results",
+        "rightBody": "Consistent message and repeatable content type — the audience understands you faster and trusts you more"
+      },
+      "ar-MSA": {
+        "leftLabel": "نشر عابر",
+        "rightLabel": "نظام محتوى",
+        "leftBody": "فكرة كل يوم من الصفر — تعب أعلى ونتائج متذبذبة",
+        "rightBody": "رسالة ثابتة ونوع محتوى متكرر — الجمهور يفهمك أسرع ويثق بك أكثر"
+      },
+      "ar-Gulf": {
+        "leftLabel": "نشر عابر",
+        "rightLabel": "نظام محتوى",
+        "leftBody": "فكرة كل يوم من الصفر — تعب أعلى ونتائج متذبذبة",
+        "rightBody": "رسالة ثابتة ونوع محتوى متكرر — الجمهور يفهمك أسرع ويثق بك أكثر"
+      },
+      "ar-EG": {
+        "leftLabel": "نشر عابر",
+        "leftBody": "فكرة كل يوم من الصفر، فتعب أعلى ونتائج متذبذبة.",
+        "rightLabel": "نظام محتوى",
+        "rightBody": "رسالة ثابتة ونوع محتوى متكرر، فالجمهور يفهمك أسرع ويثق فيك أكتر."
+      }
+    },
+    "missionIntro": {
+      "en": "This mission is a practical exercise — not a test. Write a content promise that specifies: who, the problem, and the type of content you will repeat.",
+      "ar-MSA": "المهمة تدريب عملي — لا اختبار. اكتب وعد محتوى يحدد: لمن، المشكلة، نوع محتوى تكرره.",
+      "ar-Gulf": "المهمة تدريب عملي — مو اختبار. اكتب وعد محتوى يحدد: لمن، المشكلة، نوع محتوى تكرره.",
+      "ar-EG": "المهمة تدريب عملي مش اختبار. اكتب وعد محتوى واضح يحدد: لمين، المشكلة، ونوع محتوى تقدر تكرره."
+    },
+    "visualIntent": {
+      "kind": "screenshot",
+      "summary": "A screenshot showing the content arrangement as a clear path instead of random posting — every part has a role.",
+      "packageQuotes": {
+        "en": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m1-l1-why-content.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "A screenshot showing the content arrangement as a clear path instead of random posting — every part has a role."
+        },
+        "ar-MSA": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m1-l1-why-content.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "نظام محتوى = قرارات ثابتة"
+        },
+        "ar-Gulf": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m1-l1-why-content.json",
+          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "quote": "لقطة توضح ترتيب المحتوى كمسار واضح بدل نشر عشوائي — كل جزء له دور. (الأصل البصري يبقى كما هو.)"
+        },
+        "ar-EG": {
+          "path": "src/components/intro/lessons/creator-m1-l1-why-content.ts",
+          "field": "block.caption (screenshot)",
+          "quote": "الترتيب ده بيوضح إن كل جزء ليه دور، وده بالظبط معنى إن المحتوى يبقى نظام."
+        }
+      }
+    }
+  },
+  "method": 4,
+  "methodRationale": "creator-m1-l1-why-content's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Random Posting / Content System) instead of fabricating a UI capture.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Random Posting\" vs \"Content System\" for creator-m1-l1-why-content.",
+  "labelPacks": {
+    "en": [
+      {
+        "id": "comparison-left",
+        "text": "Random Posting",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m1-l1-why-content.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "Content System",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m1-l1-why-content.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Content Promise",
+        "source": {
+          "path": "src/lib/locale-lessons/en/lessons/creator-m1-l1-why-content.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-MSA": [
+      {
+        "id": "comparison-left",
+        "text": "نشر عابر",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m1-l1-why-content.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "نظام محتوى",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m1-l1-why-content.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Content System (نظام محتوى)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m1-l1-why-content.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Content Promise (وعد المحتوى)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m1-l1-why-content.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-Gulf": [
+      {
+        "id": "comparison-left",
+        "text": "نشر عابر",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m1-l1-why-content.json",
+          "field": "sections[role=Comparison].tables[0].headers[0]"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "نظام محتوى",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m1-l1-why-content.json",
+          "field": "sections[role=Comparison].tables[0].headers[1]"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Content System (نظام محتوى)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m1-l1-why-content.json",
+          "field": "sections[role=Glossary].tables[0].rows[0][0]"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Content Promise (وعد المحتوى)",
+        "source": {
+          "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m1-l1-why-content.json",
+          "field": "sections[role=Glossary].tables[0].rows[1][0]"
+        }
+      }
+    ],
+    "ar-EG": [
+      {
+        "id": "comparison-left",
+        "text": "نشر عابر",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m1-l1-why-content.ts",
+          "field": "block.left.label"
+        }
+      },
+      {
+        "id": "comparison-right",
+        "text": "نظام محتوى",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m1-l1-why-content.ts",
+          "field": "block.right.label"
+        }
+      },
+      {
+        "id": "term-0",
+        "text": "Content System",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m1-l1-why-content.ts",
+          "field": "block.items[0].term"
+        }
+      },
+      {
+        "id": "term-1",
+        "text": "Content Promise",
+        "source": {
+          "path": "src/components/intro/lessons/creator-m1-l1-why-content.ts",
+          "field": "block.items[1].term"
+        }
+      }
+    ]
+  },
+  "altTexts": {
+    "en": "Why Content Is Not Posting: \"Random Posting\" versus \"Content System\" — Content System = Fixed Decisions",
+    "ar-MSA": "لماذا المحتوى ليس مجرد نشر: \"نشر عابر\" في مقابل \"نظام محتوى\" — نظام محتوى = قرارات ثابتة",
+    "ar-Gulf": "ليش المحتوى مو مجرد نشر: \"نشر عابر\" في مقابل \"نظام محتوى\" — نظام محتوى = قرارات ثابتة",
+    "ar-EG": "سيستم محتوى = قرارات ثابتة: \"نشر عابر\" في مقابل \"نظام محتوى\" — لما المحتوى يبقى سيستم، كل بوست بيخدم وعد واضح لجمهور محدد."
+  },
+  "aiPromptContract": null,
+  "screenshotSpec": null,
+  "factualClaims": [
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"Clarity of Promise\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m1-l1-why-content.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"Repeatability\"",
+      "locale": "en",
+      "path": "src/lib/locale-lessons/en/lessons/creator-m1-l1-why-content.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"وضوح الوعد\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m1-l1-why-content.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قابلية التكرار\"",
+      "locale": "ar-MSA",
+      "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m1-l1-why-content.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"وضوح الوعد\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m1-l1-why-content.json",
+      "field": "mission.rubric[0].weight",
+      "quote": "\"weight\": 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قابلية التكرار\"",
+      "locale": "ar-Gulf",
+      "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m1-l1-why-content.json",
+      "field": "mission.rubric[1].weight",
+      "quote": "\"weight\": 40"
+    },
+    {
+      "claim": "60% of the mission rubric weight is assigned to \"وضوح الوعد\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m1-l1-why-content.ts",
+      "field": "block.rubric[0].weight",
+      "quote": "weight: 60"
+    },
+    {
+      "claim": "40% of the mission rubric weight is assigned to \"قابلية التكرار\"",
+      "locale": "ar-EG",
+      "path": "src/components/intro/lessons/creator-m1-l1-why-content.ts",
+      "field": "block.rubric[1].weight",
+      "quote": "weight: 40"
+    }
+  ],
+  "checksum": "b9ba697675fa2259e185ffe2bc78355a3c358e6b14b66170d200167656352021"
+}
