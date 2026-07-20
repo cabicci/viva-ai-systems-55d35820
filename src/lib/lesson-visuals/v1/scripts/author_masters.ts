@@ -130,6 +130,26 @@ function cleanQuoteCandidate(s: string, maxLen = 120): string {
   return t;
 }
 
+/**
+ * Evidence-safe section quote: draws from exactly ONE contiguous raw span
+ * (one bold capture, or one bullet, or the markdown's first line) — never
+ * joins multiple bullets, since that join character doesn't exist in the
+ * raw file between two separately-quoted JSON array items.
+ */
+function sectionEvidenceQuote(section: LessonSection | undefined, maxLen = 140): string {
+  if (!section) return "";
+  const bold = firstBold(section.contentMarkdown ?? "");
+  if (bold) {
+    const c = cleanQuoteCandidate(bold, maxLen);
+    if (c.length >= 2) return c;
+  }
+  if (section.bullets && section.bullets.length > 0) {
+    const c = cleanQuoteCandidate(section.bullets[0], maxLen);
+    if (c.length >= 2) return c;
+  }
+  return cleanQuoteCandidate(section.contentMarkdown ?? "", maxLen);
+}
+
 function isBanned(text: string): boolean {
   const t = text.trim();
   if (t.length === 0) return true;
@@ -163,16 +183,21 @@ function jsonComparisonFallback(data: LocaleLessonJson): ComparisonPack | null {
   const orientSec = findSectionByRole(data, /^Orientation$/);
   const quizSec = findSectionByRole(data, /^Quiz$/);
 
+  // NOTE: deliberately NOT stripBold()-ing subtitles here — some subtitles
+  // wrap only part of the phrase in "**" (e.g. "Helpful Response + **Handoff**"),
+  // and stripping just the markers would desync the label from the literal
+  // file text that the evidence gate searches for. firstBold() is safe since
+  // its capture group is exactly the text between one matched "**...**" pair.
   const leftLabel =
-    stripBold(tensionSec?.subtitle ?? "") ||
+    (tensionSec?.subtitle && tensionSec.subtitle.length >= 2 && tensionSec.subtitle) ||
     firstBold(tensionSec?.contentMarkdown ?? "") ||
     tensionSec?.heading ||
-    stripBold(orientSec?.subtitle ?? "") ||
+    (orientSec?.subtitle && orientSec.subtitle.length >= 2 && orientSec.subtitle) ||
     firstBold(orientSec?.contentMarkdown ?? "") ||
     orientSec?.heading ||
     `${data.title} — the friction`;
   const rightLabel =
-    stripBold(coreSec?.subtitle ?? "") ||
+    (coreSec?.subtitle && coreSec.subtitle.length >= 2 && coreSec.subtitle) ||
     firstBold(coreSec?.contentMarkdown ?? "") ||
     coreSec?.heading ||
     `${data.title} — the resolution`;
@@ -453,10 +478,17 @@ function main() {
       "ar-EG": arEg.coreIdeaParagraphs[0] || arEg.coreIdeaTitle,
     };
 
+    function tensionOrFallback(data: LocaleLessonJson): string {
+      const direct = sectionSummary(findSectionByRole(data, /^Tension$/));
+      if (direct.length >= 2) return direct;
+      const orient = sectionSummary(findSectionByRole(data, /^Orientation$/));
+      if (orient.length >= 2) return orient;
+      return coreIdeaFromSection(findSectionByRole(data, /^Core idea$/)) || data.title;
+    }
     const tension: Record<Locale, string> = {
-      en: sectionSummary(findSectionByRole(en, /^Tension$/)),
-      "ar-MSA": sectionSummary(findSectionByRole(arMsa, /^Tension$/)),
-      "ar-Gulf": sectionSummary(findSectionByRole(arGulf, /^Tension$/)),
+      en: tensionOrFallback(en),
+      "ar-MSA": tensionOrFallback(arMsa),
+      "ar-Gulf": tensionOrFallback(arGulf),
       "ar-EG": arEg.tensionParagraphs[0] || arEg.orientationParagraphs[0] || titles["ar-EG"],
     };
 
@@ -474,11 +506,17 @@ function main() {
       parseFailures.push(`${lessonId}: missing structured Comparison table in a JSON locale`);
       continue;
     }
+    // When ar-EG has no comparison block, derive labels from ar-EG's OWN
+    // orientation/core-idea text (never borrow another locale's text here —
+    // the evidence gate requires labelPacks["ar-EG"] text to literally
+    // appear in the ar-EG .ts file, not in the en/ar-MSA/ar-Gulf JSON).
+    const arEgLeftLabelFallback = cleanQuoteCandidate(arEg.tensionParagraphs[0] || arEg.orientationParagraphs[0] || arEg.coreIdeaTitle, 70);
+    const arEgRightLabelFallback = cleanQuoteCandidate(arEg.coreIdeaParagraphs[0] || arEg.coreIdeaTitle, 70);
     const cmpArEg: ComparisonPack = arEg.comparison ?? {
-      leftLabel: cmpEn.leftLabel,
-      rightLabel: cmpEn.rightLabel,
-      leftBody: arEg.tensionParagraphs[0] ?? cmpEn.leftBody,
-      rightBody: arEg.coreIdeaParagraphs[0] ?? cmpEn.rightBody,
+      leftLabel: arEgLeftLabelFallback || titles["ar-EG"],
+      rightLabel: arEgRightLabelFallback || titles["ar-EG"],
+      leftBody: arEg.tensionParagraphs[0] || arEg.orientationParagraphs[0] || cmpEn.leftBody,
+      rightBody: arEg.coreIdeaParagraphs[0] || cmpEn.rightBody,
     };
     const comparison: Record<Locale, ComparisonPack> = {
       en: cmpEn,
@@ -508,8 +546,10 @@ function main() {
     }
 
     const visSectionEn = visualSection(en);
-    const visSummarySource = visSectionEn?.contentMarkdown ?? coreIdea.en;
-    const visualSummary = cleanQuoteCandidate(visSummarySource, 160) || `Visual relationship for ${lessonId}`;
+    const visualSummary =
+      [cleanQuoteCandidate(visSectionEn?.contentMarkdown ?? "", 160), cleanQuoteCandidate(coreIdea.en, 160), cleanQuoteCandidate(titles.en, 160)].find(
+        (s) => s.length >= 8,
+      ) ?? `Visual relationship for ${lessonId}`;
 
     function packageQuoteFor(locale: Locale): { path: string; field: string; quote: string } {
       const path = sourcePackages[locale].path;
@@ -520,9 +560,13 @@ function main() {
       }
       const data = locale === "en" ? en : locale === "ar-MSA" ? arMsa : arGulf;
       const sec = visualSection(data);
-      const roleLabel = sec?.role ?? "Screenshot block (intent)";
-      const quote = cleanQuoteCandidate(sec?.contentMarkdown ?? "", 140) || cleanQuoteCandidate(coreIdea[locale], 100);
-      return { path, field: `sections[role=${roleLabel}].contentMarkdown`, quote: quote || coreIdea[locale].slice(0, 40) };
+      if (sec) {
+        const quote = sectionEvidenceQuote(sec, 140) || cleanQuoteCandidate(titles[locale], 60);
+        return { path, field: `sections[role=${sec.role}].contentMarkdown`, quote: quote || titles[locale].slice(0, 40) };
+      }
+      const coreSec = findSectionByRole(data, /^Core idea$/);
+      const quote = sectionEvidenceQuote(coreSec, 100) || cleanQuoteCandidate(titles[locale], 60);
+      return { path, field: `sections[role=${coreSec?.role ?? "Core idea"}].contentMarkdown`, quote: quote || titles[locale].slice(0, 40) };
     }
 
     const packageQuotes = {
