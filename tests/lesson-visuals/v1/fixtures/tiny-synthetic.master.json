@@ -28,6 +28,12 @@
       "kind": "json"
     }
   },
+  "packageChecksums": {
+    "ar-EG": "bfdf77a09068ce90d8bc61d719ee9dc920e00973cab786aa02cd1c55792d200e",
+    "ar-MSA": "c5fdf608456dd77887afa64669eaa7f24b77adfda16491c0f6ad066a088191f2",
+    "ar-Gulf": "e581f8ef093ac7ada4010a18273342f2ff1a83796e0817d6115926d0f18d3eae",
+    "en": "c192c885a4967e93b7cbb9a1c375e8daca0f03d56b8dc55bbc1c4ea56a2088d5"
+  },
   "contentBrief": {
     "orientation": {
       "ar-EG": [
@@ -57,6 +63,22 @@
       "ar-Gulf": "الـ AI برنامج يتعلم من أمثلة كثيرة، ويعطيك رد قريب مما طلبته. مثل الآلة الحاسبة: يوفر وقت، لكن القرار في يدك.",
       "en": "AI is a program that learns from many examples and gives you a response close to what you asked for. Like a calculator: it saves time, but the decision is yours."
     },
+    "instructionalPurpose": {
+      "ar-EG": "هتفهم إيه؟ الـ AI مش سحر — هو أداة بتاخد طلب منك وترجعلك رد. زي مساعد ذكي على الموبايل.",
+      "ar-MSA": "ماذا ستفهم؟ الـ AI (ذكاء اصطناعي) ليس سحرًا — هو أداة تأخذ طلبًا منك وترجع ردًا. مثل مساعد ذكي على الهاتف.",
+      "ar-Gulf": "وش راح تفهم؟ الـ AI (ذكاء اصطناعي) مو سحر — هو أداة تأخذ طلب منك وترجع رد. مثل مساعد ذكي على الجوال.",
+      "en": "What Will You Understand? AI (artificial intelligence) is not magic — it’s a tool that takes a request from you and returns a response."
+    },
+    "lessonObjects": [
+      "AI",
+      "calculator metaphor",
+      "If You Misunderstand It",
+      "If You Understand It"
+    ],
+    "relationships": [
+      "If You Misunderstand It → If You Understand It",
+      "request → response → adjust"
+    ],
     "tension": {
       "ar-EG": "بتسمع عن AI كتير ومش واضح تبدأ منين؟",
       "ar-MSA": "هل تسمع عن الذكاء الاصطناعي كثيرًا ولا يتضح لك من أين تبدأ؟",

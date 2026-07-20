@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "67ceffca1a2a9e83180b2559b2d2d66be6f0ca8bf61ddd4bf82ad2cf000871a7",
+    "ar-MSA": "9adb8e2c4248f1f19b9f90b4deee6b75077109a5793b4aa923e99a2992985799",
+    "ar-Gulf": "cda3924dd414f7d3846cc09f660c7d2df85ecc74541026aa6bd460fca8626b6a",
+    "ar-EG": "cf2e40bf71360714ee80d1216d1dc26ca6e159a49217d22cf7cdf144644e0c5e"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Instead of one table with everything",
-      "ar-MSA": "بدل جدول واحد فيه كل شيء",
-      "ar-Gulf": "بدل جدول واحد فيه كل شيء",
+      "en": "Relations answer real questions",
+      "ar-MSA": "العلاقات تجاوب على أسئلة حقيقية",
+      "ar-Gulf": "العلاقات تجاوب على أسئلة حقيقية",
       "ar-EG": "بدل جدول واحد فيه كل حاجة — جدولين: `users` و `conversations`. كل محادثة فيها `user_id` بيشاور على صاحبها."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Relations between tables answer real questions — like \"this client's conversations\" or \"this user's files\".",
+      "ar-MSA": "ماذا ستفهم؟ العلاقات بين الجداول تجاوب على أسئلة حقيقية — مثل «محادثات هذا العميل» أو «ملفات هذا المستخدم».",
+      "ar-Gulf": "وش راح تفهم؟ العلاقات بين الجداول تجاوب على أسئلة حقيقية — مثل «محادثات هذا العميل» أو «ملفات هذا المستخدم».",
+      "ar-EG": "هتفهم إيه؟ العلاقات بين الجداول بتجاوب على أسئلة حقيقية — زي «محادثات العميل ده» أو «ملفات المستخدم ده»."
+    },
+    "lessonObjects": [
+      "Foreign Key",
+      "One-to-Many",
+      "Everything in one table",
+      "Two linked tables",
+      "Relations answer real questions"
+    ],
+    "relationships": [
+      "Everything in one table → Two linked tables",
+      "**The link between the tables:**",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "AI talks to Ahmed and then to Sarah — and suddenly sends Sarah a summary of Ahmed's conversation. Privacy disaster. The problem: All conversations are in one pile with no official link between each conversation and its o",
       "ar-MSA": "الذكاء الاصطناعي يكلم أحمد ثم سارة — وفجأة يرسل لسارة ملخص محادثة أحمد. كارثة خصوصية. المشكلة: كل المحادثات في كومة واحدة ولا وصلة رسمية بين كل محادثة وصاحبها.",
@@ -102,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m7-l2-relations.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**The link between the tables:**"
+          "quote": "The link between the tables:"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l2-relations.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**الوصلة بين الجداول:**"
+          "quote": "الوصلة بين الجداول:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l2-relations.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**الوصلة بين الجداول:**"
+          "quote": "الوصلة بين الجداول:"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m7-l2-relations.ts",
@@ -123,9 +147,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "builder-m7-l2-relations's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Everything in one table / Two linked tables) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Everything in one table\" vs \"Two linked tables\" for builder-m7-l2-relations.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Everything in one table\" vs \"Two linked tables\" for builder-m7-l2-relations.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Relations between Tables: \"Everything in one table\" versus \"Two linked tables\" — Instead of one table with everything",
-    "ar-MSA": "العلاقات بين الجداول: \"كل شيء في جدول واحد\" في مقابل \"جدولان مربوطان\" — بدل جدول واحد فيه كل شيء",
-    "ar-Gulf": "العلاقات بين الجداول: \"كل شيء في جدول واحد\" في مقابل \"جدولان مربوطان\" — بدل جدول واحد فيه كل شيء",
+    "en": "Relations between Tables: \"Everything in one table\" versus \"Two linked tables\" — Relations answer real questions",
+    "ar-MSA": "العلاقات بين الجداول: \"كل شيء في جدول واحد\" في مقابل \"جدولان مربوطان\" — العلاقات تجاوب على أسئلة حقيقية",
+    "ar-Gulf": "العلاقات بين الجداول: \"كل شيء في جدول واحد\" في مقابل \"جدولان مربوطان\" — العلاقات تجاوب على أسئلة حقيقية",
     "ar-EG": "العلاقات بتجاوب على أسئلة حقيقية: \"غلط — كل حاجة في جدول واحد\" في مقابل \"صح — جدولين مربوطين\" — بدل جدول واحد فيه كل حاجة — جدولين: `users` و `conversations`. كل محادثة فيها `user_id` بيشاور على صاحبها."
   },
   "aiPromptContract": null,
@@ -330,5 +354,5 @@
       "quote": "weight: 30"
     }
   ],
-  "checksum": "128398f7e2ff066381092a91bbad4e463154aa9972a11e047616a92031c8170c"
+  "checksum": "805edb861254de917cc67d1cf50d94d3954f6c7b70ce023b018f5b65522fca5f"
 }

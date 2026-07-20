@@ -3,6 +3,11 @@
 # workflow_dispatch ONLY — never push/PR triggers.
 # Does NOT auto-commit mappings, Gallery, main, or publish.
 #
+# DISPATCH ROUTING (fail-closed):
+#   Masaarat Control Room → Lovable → this workflow_dispatch
+#   Cursor / CLI / unauth API MUST fail dispatch-authority.
+# See docs/lesson-visuals/v1/DISPATCH_AUTHORIZATION.md
+#
 # FUTURE PROMOTION STAGE (manual / serialized after approval):
 # A separate, human-gated workflow will promote accepted QA artifacts
 # into Gallery / CDN mappings. That stage is intentionally NOT this file
@@ -14,7 +19,19 @@ on:
   workflow_dispatch:
     inputs:
       source_sha:
-        description: Immutable git SHA the authorized manifest was authored against
+        description: Immutable git SHA the authorized manifest was authored against (must match approved)
+        required: true
+        type: string
+      control_room_authorization_id:
+        description: Control Room authorization id (CR-…)
+        required: true
+        type: string
+      approved_manifest_sha256:
+        description: sha256 hex of AUTHORIZED_MANIFEST.json file bytes at source_sha
+        required: true
+        type: string
+      dispatch_actor:
+        description: Must be an allowlisted Lovable actor (never cursor/cli)
         required: true
         type: string
       mode:
@@ -40,8 +57,88 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  dispatch-authority:
+    name: Lovable-only dispatch authority (fail-closed)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source_sha
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.source_sha }}
+
+      - name: Fail-closed Control Room + Lovable authorization
+        shell: bash
+        env:
+          SOURCE_SHA: ${{ github.event.inputs.source_sha }}
+          CONTROL_ROOM_AUTHORIZATION_ID: ${{ github.event.inputs.control_room_authorization_id }}
+          APPROVED_MANIFEST_SHA256: ${{ github.event.inputs.approved_manifest_sha256 }}
+          DISPATCH_ACTOR: ${{ github.event.inputs.dispatch_actor }}
+          GITHUB_ACTOR_NAME: ${{ github.actor }}
+          # Repository variable preferred; secret accepted as fallback. Empty = fail closed.
+          LOVABLE_DISPATCH_ACTORS: ${{ vars.LOVABLE_DISPATCH_ACTORS || secrets.LOVABLE_DISPATCH_ACTORS }}
+        run: |
+          set -euo pipefail
+          ALLOW_RAW="${LOVABLE_DISPATCH_ACTORS:-}"
+          if [[ -z "${ALLOW_RAW// }" ]]; then
+            echo "LOVABLE_DISPATCH_ACTORS allowlist is empty — fail closed"
+            echo "Cursor/CLI/unauth API cannot dispatch. Only Lovable after Control Room auth."
+            exit 1
+          fi
+          # Normalize allowlist to lowercase tokens
+          mapfile -t ALLOW < <(echo "$ALLOW_RAW" | tr '[,;]' ' ' | tr '[:upper:]' '[:lower:]' | xargs -n1)
+          in_allow() {
+            local needle
+            needle="$(echo "$1" | tr '[:upper:]' '[:lower:]')"
+            for a in "${ALLOW[@]}"; do
+              [[ "$a" == "$needle" ]] && return 0
+            done
+            return 1
+          }
+          for banned in cursor cli cursor-agent github-ui unauthenticated api; do
+            if [[ "$(echo "$DISPATCH_ACTOR" | tr '[:upper:]' '[:lower:]')" == "$banned" ]]; then
+              echo "dispatch_actor='$DISPATCH_ACTOR' is banned"
+              exit 1
+            fi
+            if [[ "$(echo "$GITHUB_ACTOR_NAME" | tr '[:upper:]' '[:lower:]')" == "$banned" ]]; then
+              echo "github.actor='$GITHUB_ACTOR_NAME' is banned"
+              exit 1
+            fi
+          done
+          if ! in_allow "$DISPATCH_ACTOR"; then
+            echo "dispatch_actor='$DISPATCH_ACTOR' not in LOVABLE_DISPATCH_ACTORS allowlist"
+            exit 1
+          fi
+          if ! in_allow "$GITHUB_ACTOR_NAME"; then
+            echo "github.actor='$GITHUB_ACTOR_NAME' not in LOVABLE_DISPATCH_ACTORS allowlist"
+            exit 1
+          fi
+          if [[ -z "${CONTROL_ROOM_AUTHORIZATION_ID:-}" ]]; then
+            echo "control_room_authorization_id missing"
+            exit 1
+          fi
+          if [[ ! "$CONTROL_ROOM_AUTHORIZATION_ID" =~ ^CR-[A-Za-z0-9][A-Za-z0-9._-]{2,127}$ ]]; then
+            echo "control_room_authorization_id must match CR-… format"
+            exit 1
+          fi
+          ACTUAL_HEAD="$(git rev-parse HEAD)"
+          if [[ "$ACTUAL_HEAD" != "$SOURCE_SHA" ]]; then
+            echo "HEAD $ACTUAL_HEAD != source_sha $SOURCE_SHA"
+            exit 1
+          fi
+          MANIFEST="docs/lesson-visuals/v1/AUTHORIZED_MANIFEST.json"
+          test -f "$MANIFEST"
+          ACTUAL_MANIFEST_SHA="$(sha256sum "$MANIFEST" | awk '{print $1}')"
+          EXPECTED_MANIFEST_SHA="$(echo "$APPROVED_MANIFEST_SHA256" | tr '[:upper:]' '[:lower:]')"
+          if [[ "$ACTUAL_MANIFEST_SHA" != "$EXPECTED_MANIFEST_SHA" ]]; then
+            echo "AUTHORIZED_MANIFEST.json sha256 mismatch"
+            echo "actual=$ACTUAL_MANIFEST_SHA approved=$EXPECTED_MANIFEST_SHA"
+            exit 1
+          fi
+          echo "dispatch-authority PASSED (Lovable + Control Room)"
+
   guard:
     name: Guard source SHA + immutable manifest
+    needs: [dispatch-authority]
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.matrix.outputs.matrix }}

@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "d529abc0c2bb1c79ab91f7c4cf40758860ba9667155be5b49673ae32a52b241c",
+    "ar-MSA": "a853b4f734423c82aab7dcd13b0f4042c392ac33fd6b99cb18daf9bf4a1d8ac2",
+    "ar-Gulf": "c8d51aeeeb3cdaaf2bab913247cedfc17067855f16635d2df93d7305614e7c52",
+    "ar-EG": "d07e12668b9dd7aabade33e473f1fea49d735de79521873c405740bcb8ef5ee7"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -46,40 +52,57 @@
       ]
     },
     "coreIdea": {
-      "en": "Correlation",
-      "ar-MSA": "Correlation (ارتباط)",
-      "ar-Gulf": "الارتباط (Correlation)",
-      "ar-EG": "Correlation ≠ Causation: حاجتين بيتحركوا مع بعض مش معناه واحد سبب التاني. اسأل: في حاجة تالتة؟"
-    },
-    "tension": {
       "en": "Correlation ≠ Causation Small Sample — 3 customers is not the 'market'",
       "ar-MSA": "Correlation (ارتباط) ≠ سببية عيّنة صغيرة — ٣ عملاء ليس «السوق»",
       "ar-Gulf": "الارتباط (Correlation) ≠ السببية عيّنة صغيرة — ٣ عملاء مو «السوق»",
+      "ar-EG": "Correlation ≠ Causation: حاجتين بيتحركوا مع بعض مش معناه واحد سبب التاني. اسأل: في حاجة تالتة؟"
+    },
+    "instructionalPurpose": {
+      "en": "What Will You Understand? The data is correct — the decision is wrong if interpreted incorrectly.",
+      "ar-MSA": "ماذا ستفهم؟ البيانات صحيحة — والقرار خطأ إذا قرأتها خطأ.",
+      "ar-Gulf": "وش راح تفهم؟ البيانات صحيحة — والقرار يكون خاطئ إذا قرأتها بشكل خاطئ.",
+      "ar-EG": "هتفهم إيه؟ البيانات ممكن تكون صح — والقرار غلط لو قرأتها غلط."
+    },
+    "lessonObjects": [
+      "Lesson Start",
+      "4 Traps",
+      "Correlation ≠ Causation Small Sample",
+      "3 customers is not the 'market'"
+    ],
+    "relationships": [
+      "Lesson Start → 4 Traps",
+      "Correlation ≠ Causation Small Sample — 3 customers is not the 'market'",
+      "visual relationship kind: screenshot"
+    ],
+    "tension": {
+      "en": "What Will You Understand? The data is correct — the decision is wrong if interpreted incorrectly.",
+      "ar-MSA": "ماذا ستفهم؟ البيانات صحيحة — والقرار خطأ إذا قرأتها خطأ.",
+      "ar-Gulf": "وش راح تفهم؟ البيانات صحيحة — والقرار يكون خاطئ إذا قرأتها بشكل خاطئ.",
       "ar-EG": "«المبيعات زادت لما شغّلنا أغاني هادية» — قررت تعتمدها طول الوقت. بعد شهر نزلت."
     },
     "comparison": {
       "en": {
         "leftLabel": "Lesson Start",
         "rightLabel": "4 Traps",
-        "leftBody": "The data is correct — the decision is wrong if interpreted incorrectly.",
-        "rightBody": "Correlation"
+        "leftBody": "Analysis Paralysis — delays in decision-making.",
+        "rightBody": "Correlation ≠ Causation — there could be a third reason (time of day, type of customers)."
       },
       "ar-MSA": {
         "leftLabel": "بداية الدرس",
         "rightLabel": "٤ فخاخ",
-        "leftBody": "البيانات صحيحة — والقرار خطأ إذا قرأتها خطأ.",
-        "rightBody": "Correlation (ارتباط)"
+        "leftBody": "الموسيقى الهادئة هي السبب المباشر، والأفضل تشغيلها طوال اليوم.",
+        "rightBody": "يوجد ارتباط، لكن لا يمكن الجزم بأن الموسيقى سببت الزيادة؛ قد يكون وقت الصباح أو نوع العملاء هو السبب."
       },
       "ar-Gulf": {
         "leftLabel": "بداية الدرس",
         "rightLabel": "٤ فخاخ",
-        "leftBody": "البيانات صحيحة — والقرار يكون خاطئ إذا قرأتها بشكل خاطئ.",
-        "rightBody": "الارتباط (Correlation)"
+        "leftBody": "الموسيقى الهادئة هي السبب المباشر، والأفضل تشغيلها طول اليوم.",
+        "rightBody": "فيه ارتباط، بس ما نقدر نقول إن الموسيقى سببت الزيادة؛ ممكن وقت الصباح أو نوع العملاء هو السبب."
       },
       "ar-EG": {
         "leftLabel": "«الأغاني سبب الزيادة»",
-        "rightLabel": "«هجرّب أسبوع واحد»",
         "leftBody": "Correlation اتعاملت كـ Causation. ممكن الصبح = زبائن أكتر — مش الموسيقى.",
+        "rightLabel": "«هجرّب أسبوع واحد»",
         "rightBody": "تجربة صغيرة: أغاني vs بدون — نفس الوقت — تقيس المبيعات. بيانات جديدة الأسبوع الجاي."
       }
     },
@@ -91,22 +114,22 @@
     },
     "visualIntent": {
       "kind": "screenshot",
-      "summary": "- Recency Bias — The last week is not the whole story",
+      "summary": "Correlation ≠ Causation Small Sample — 3 customers is not the 'market'",
       "packageQuotes": {
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/analyst-m6-l2-interpretation-mistakes.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "- Recency Bias — The last week is not the whole story"
+          "field": "sections[role=Core idea].contentMarkdown",
+          "quote": "Correlation"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m6-l2-interpretation-mistakes.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "- **Vanity Metric (رقم شكلي)** — لايكات ≠ مبيعات"
+          "field": "sections[role=Core idea].contentMarkdown",
+          "quote": "Correlation (ارتباط)"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m6-l2-interpretation-mistakes.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "- **رقم شكلي (Vanity Metric)** — لايكات ≠ مبيعات"
+          "field": "sections[role=Core idea].contentMarkdown",
+          "quote": "الارتباط (Correlation)"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/analyst-m6-l2-interpretation-mistakes.ts",
@@ -117,9 +140,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "analyst-m6-l2-interpretation-mistakes's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Lesson Start / 4 Traps) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 60 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Lesson Start\" vs \"4 Traps\" for analyst-m6-l2-interpretation-mistakes.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Lesson Start\" vs \"4 Traps\" for analyst-m6-l2-interpretation-mistakes.",
   "labelPacks": {
     "en": [
       {
@@ -127,7 +150,7 @@
         "text": "Lesson Start",
         "source": {
           "path": "src/lib/locale-lessons/en/lessons/analyst-m6-l2-interpretation-mistakes.json",
-          "field": "sections[role=Tension].subtitle"
+          "field": "sections[role=Comparison].tables[0].headers[0]"
         }
       },
       {
@@ -135,7 +158,7 @@
         "text": "4 Traps",
         "source": {
           "path": "src/lib/locale-lessons/en/lessons/analyst-m6-l2-interpretation-mistakes.json",
-          "field": "sections[role=Core idea].subtitle"
+          "field": "sections[role=Comparison].tables[0].headers[1]"
         }
       }
     ],
@@ -145,7 +168,7 @@
         "text": "بداية الدرس",
         "source": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m6-l2-interpretation-mistakes.json",
-          "field": "sections[role=Tension].subtitle"
+          "field": "sections[role=Comparison].tables[0].headers[0]"
         }
       },
       {
@@ -153,7 +176,7 @@
         "text": "٤ فخاخ",
         "source": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m6-l2-interpretation-mistakes.json",
-          "field": "sections[role=Core idea].subtitle"
+          "field": "sections[role=Comparison].tables[0].headers[1]"
         }
       }
     ],
@@ -163,7 +186,7 @@
         "text": "بداية الدرس",
         "source": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m6-l2-interpretation-mistakes.json",
-          "field": "sections[role=Tension].subtitle"
+          "field": "sections[role=Comparison].tables[0].headers[0]"
         }
       },
       {
@@ -171,7 +194,7 @@
         "text": "٤ فخاخ",
         "source": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m6-l2-interpretation-mistakes.json",
-          "field": "sections[role=Core idea].subtitle"
+          "field": "sections[role=Comparison].tables[0].headers[1]"
         }
       }
     ],
@@ -211,9 +234,9 @@
     ]
   },
   "altTexts": {
-    "en": "Interpretation Mistakes: \"Lesson Start\" versus \"4 Traps\" — Correlation",
-    "ar-MSA": "أخطاء تفسير البيانات: \"بداية الدرس\" في مقابل \"٤ فخاخ\" — Correlation (ارتباط)",
-    "ar-Gulf": "أخطاء التفسير: \"بداية الدرس\" في مقابل \"٤ فخاخ\" — الارتباط (Correlation)",
+    "en": "Interpretation Mistakes: \"Lesson Start\" versus \"4 Traps\" — Correlation ≠ Causation Small Sample — 3 customers is not the 'market'",
+    "ar-MSA": "أخطاء تفسير البيانات: \"بداية الدرس\" في مقابل \"٤ فخاخ\" — Correlation (ارتباط) ≠ سببية عيّنة صغيرة — ٣ عملاء ليس «السوق»",
+    "ar-Gulf": "أخطاء التفسير: \"بداية الدرس\" في مقابل \"٤ فخاخ\" — الارتباط (Correlation) ≠ السببية عيّنة صغيرة — ٣ عملاء مو «السوق»",
     "ar-EG": "٤ فخاخ تفسير — وعلاجهم: \"«الأغاني سبب الزيادة»\" في مقابل \"«هجرّب أسبوع واحد»\" — Correlation ≠ Causation: حاجتين بيتحركوا مع بعض مش معناه واحد سبب التاني. اسأل: في حاجة تالتة؟"
   },
   "aiPromptContract": null,
@@ -234,5 +257,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "2a604f500d1e7485d2a3bf8f41477a3a9c4570e5dc35c31ecd652c0d883942db"
+  "checksum": "175557950cac826cbf74fa59d86aedde558e139920f3cfb14070dd28b8485d12"
 }

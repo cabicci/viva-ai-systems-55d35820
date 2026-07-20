@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "bafcdf195d04b6f83c403b3dafb3853f3578b627d7874bbfb69fee0db7f50e97",
+    "ar-MSA": "55ef823fd6da83aae024478627fd6fee45a84ed30ab9102dc46906616e6dc97f",
+    "ar-Gulf": "b3ae24f2725a241b93178340ff4d1ac772158ac758d155b79def7066c6e0f75d",
+    "ar-EG": "1e3da1891609d4439f63162d5916449f952a773145a614f64fab83b7840ada88"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Frontend",
-      "ar-MSA": "Frontend",
-      "ar-Gulf": "Frontend",
+      "en": "Frontend = what you see — Backend = what works",
+      "ar-MSA": "Frontend = ترى — Backend = يعمل",
+      "ar-Gulf": "Frontend = ترى — Backend = يعمل",
       "ar-EG": "Frontend = كل حاجة على الشاشة: زراير، نصوص، ألوان، مربعات الكتابة."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Frontend = what the user sees and clicks on. Backend = the work that happens behind the screen.",
+      "ar-MSA": "ماذا ستفهم؟ Frontend (الواجهة) = ما يراه العميل وينقر عليه. Backend (الكواليس) = العمل الذي يحدث خلف الشاشة.",
+      "ar-Gulf": "وش راح تفهم؟ Frontend (الواجهة) = ما يراه العميل وينقر عليه. Backend (الكواليس) = العمل الذي يحدث خلف الشاشة.",
+      "ar-EG": "هتفهم إيه؟ Frontend = اللي العميل يشوفه ويدوس عليه. Backend = الشغل اللي بيحصل ورا."
+    },
+    "lessonObjects": [
+      "Frontend",
+      "Backend",
+      "Frontend Issue",
+      "Backend Issue",
+      "Frontend = what you see",
+      "Backend = what works"
+    ],
+    "relationships": [
+      "Frontend Issue → Backend Issue",
+      "**Open any AI application → right-click → Inspect**. **What you see is Frontend** — **the code that built the screen**. **Try it yourself (F12 or Inspect)**.",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "The client says 'the application is not working' — but what exactly? Is the button not clickable? Or does it click but there is no response? 'Not working' is a vague statement. Without knowing: appearance or functionalit",
       "ar-MSA": "يقول العميل «التطبيق لا يعمل» — لكن ماذا بالضبط؟ الزر لا ينقر؟ أم ينقر ولا يوجد رد؟ «لا يعمل» جملة عامة. بدون معرفة: شكل أم عمل — ستضيع وقتًا في إصلاح خاطئ.",
@@ -102,17 +127,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m5-l2-frontend.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**Open any AI application → right-click → Inspect**. **What you see is Frontend** — **the code that built the screen**. **Try it yourself (F"
+          "quote": "Open any AI application → right-click → Inspect"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l2-frontend.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**افتح أي تطبيق AI → انقر يمين → Inspect**. **ما تراه Frontend** — **الكود الذي بنى الشاشة**. **جرّب بنفسك (F12 أو Inspect)**."
+          "quote": "افتح أي تطبيق AI → انقر يمين → Inspect"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l2-frontend.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**افتح أي تطبيق AI → انقر يمين → Inspect**. **وش تشوف في Frontend** — **الكود اللي بنى الشاشة**. **جرّب بنفسك (F12 أو Inspect)**."
+          "quote": "افتح أي تطبيق AI → انقر يمين → Inspect"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m5-l2-frontend.ts",
@@ -123,9 +148,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "builder-m5-l2-frontend's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Frontend Issue / Backend Issue) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent describes a schematic/layout illustration rather than recognizing a named public product UI; hybrid/deterministic carries real locale labels without fabricating chrome.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Frontend Issue\" vs \"Backend Issue\" for builder-m5-l2-frontend.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Frontend Issue\" vs \"Backend Issue\" for builder-m5-l2-frontend.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "Frontend (Application Interface): \"Frontend Issue\" versus \"Backend Issue\" — Frontend",
-    "ar-MSA": "الواجهة الأمامية للتطبيق: \"مشكلة Frontend\" في مقابل \"مشكلة Backend\" — Frontend",
-    "ar-Gulf": "واجهة التطبيق: \"مشكلة Frontend\" في مقابل \"مشكلة Backend\" — Frontend",
+    "en": "Frontend (Application Interface): \"Frontend Issue\" versus \"Backend Issue\" — Frontend = what you see — Backend = what works",
+    "ar-MSA": "الواجهة الأمامية للتطبيق: \"مشكلة Frontend\" في مقابل \"مشكلة Backend\" — Frontend = ترى — Backend = يعمل",
+    "ar-Gulf": "واجهة التطبيق: \"مشكلة Frontend\" في مقابل \"مشكلة Backend\" — Frontend = ترى — Backend = يعمل",
     "ar-EG": "Frontend = تشوف — Backend = يشتغل: \"مشكلة Frontend\" في مقابل \"مشكلة Backend\" — Frontend = كل حاجة على الشاشة: زراير، نصوص، ألوان، مربعات الكتابة."
   },
   "aiPromptContract": null,
@@ -330,5 +355,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "dba1bc8bf55c75c95e06d48109dc2e7e280c6efc1953f3b0e49e4eac7cd0e9ae"
+  "checksum": "6fe0f75cfe830d719d53e0684e2f62199c7bb97dc8fbd3b34afccc24b8c320c0"
 }

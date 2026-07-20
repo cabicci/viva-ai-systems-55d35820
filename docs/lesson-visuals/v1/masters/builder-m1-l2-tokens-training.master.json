@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "311072a2f8ff9da5f73bdf3ff8a341667aa4cf33269c2917a4e0cdf68fc01959",
+    "ar-MSA": "2bc01a539009fe853a87e5ef24b68a22127b393fcd5fbd84ebb245b9a7fec8d0",
+    "ar-Gulf": "cb692366e79431775ce51f88c75b35da8a1c00a5d746afe5baa4315b3a723baf",
+    "ar-EG": "89f530af3391a61bf1d558a5d3185585ae0649b8872ea78f31f39eb15e7e0268"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "AI",
-      "ar-MSA": "الذكاء الاصطناعي",
-      "ar-Gulf": "الذكاء الاصطناعي",
+      "en": "Long Inputs and Outputs = More Time and Cost",
+      "ar-MSA": "المدخلات والمخرجات الطويلة = وقت وتكلفة أكبر",
+      "ar-Gulf": "المدخلات والمخرجات الطويلة = وقت وتكلفة أكبر",
       "ar-EG": "الـ AI بيقسّم كلامك لقطع صغيرة (Tokens) — مش لازم تحفظ التفاصيل دلوقتي."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Why do long prompts take more time and cost more — and how does this affect every prompt you write?",
+      "ar-MSA": "ماذا ستفهم؟ لماذا الطلب الطويل يأخذ وقتًا أطول وتكلفة أكبر — وكيف يؤثر ذلك على كل Prompt (طلب) ستكتبه.",
+      "ar-Gulf": "وش راح تفهم؟ ليش الطلب الطويل يأخذ وقت أكثر وتكلفة أعلى — وكيف يؤثر ذلك على كل Prompt (طلب) تكتبه.",
+      "ar-EG": "هتفهم إيه؟ ليه الطلب الطويل بياخد وقت أطول وتكلفة أكتر — وإزاي ده يأثر على كل Prompt هتكتبه."
+    },
+    "lessonObjects": [
+      "Token",
+      "Training",
+      "Fluff and Introductions",
+      "Direct",
+      "Long Inputs and Outputs = More Time and Cost"
+    ],
+    "relationships": [
+      "Fluff and Introductions → Direct",
+      "**From prompt to response — every step counts** (ID: `ai-summarization-flow`):",
+      "visual relationship kind: process"
+    ],
     "tension": {
       "en": "You wrote a long introduction and said \"please\" and \"my friend\" — and the response came after a while, or your API bill increased. It’s not necessarily that the model is \"slow\" — often you sent too much text.",
       "ar-MSA": "كتبت مقدمة طويلة و«من فضلك» و«يا صديقي» — والرد جاء بعد وقت، أو فاتورة API زادت. ليس بالضرورة أن النموذج «بطيء» — غالبًا أنت أرسلت كلامًا أكثر من اللازم.",
@@ -102,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m1-l2-tokens-training.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**From prompt to response — every step counts** (ID: `ai-summarization-flow`):"
+          "quote": "From prompt to response — every step counts"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m1-l2-tokens-training.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**من الطلب إلى الرد — كل خطوة تُحاسَب** (معرّف: `ai-summarization-flow`):"
+          "quote": "من الطلب إلى الرد — كل خطوة تُحاسَب"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m1-l2-tokens-training.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**من الطلب إلى الرد — كل خطوة تُحاسَب** (معرّف: `ai-summarization-flow`):"
+          "quote": "من الطلب إلى الرد — كل خطوة تُحاسَب"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m1-l2-tokens-training.ts",
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Tokens and Training: \"Fluff and Introductions\" versus \"Direct\" — AI",
-    "ar-MSA": "التوكنز والتدريب: \"حشو ومقدمات\" في مقابل \"مباشر\" — الذكاء الاصطناعي",
-    "ar-Gulf": "التوكنز والتدريب: \"حشو ومقدمات\" في مقابل \"مباشر\" — الذكاء الاصطناعي",
+    "en": "Tokens and Training: \"Fluff and Introductions\" versus \"Direct\" — Long Inputs and Outputs = More Time and Cost",
+    "ar-MSA": "التوكنز والتدريب: \"حشو ومقدمات\" في مقابل \"مباشر\" — المدخلات والمخرجات الطويلة = وقت وتكلفة أكبر",
+    "ar-Gulf": "التوكنز والتدريب: \"حشو ومقدمات\" في مقابل \"مباشر\" — المدخلات والمخرجات الطويلة = وقت وتكلفة أكبر",
     "ar-EG": "المدخلات والمخرجات الطويلة = وقت وتكلفة أكتر: \"حشو ومقدمات\" في مقابل \"مباشر\" — الـ AI بيقسّم كلامك لقطع صغيرة (Tokens) — مش لازم تحفظ التفاصيل دلوقتي."
   },
   "aiPromptContract": null,
@@ -330,5 +354,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "bb9c3291cec3b6d2ec96bd923d6cec5d535498f27b2843309800c508ec2066e7"
+  "checksum": "80934e3ddb13a4594c1061d917e765ed79072a381f513bd7990b3d051ed8090d"
 }

@@ -18,6 +18,7 @@ const REQUIRED_KEYS = [
   "sourceSha",
   "titles",
   "sourcePackages",
+  "packageChecksums",
   "contentBrief",
   "method",
   "methodRationale",

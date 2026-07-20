@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "04fc9dc5620dcab0b04183cc6880a93c0ccaa9642faee8147befbef3a1677ef0",
+    "ar-MSA": "90743bcfb19e96fdf10f860665e4ac41e124b2e9498e869097e53e4d2ebadae3",
+    "ar-Gulf": "72dd7992f11dc198926f8cafd40366693a0e46343dd69e031c2a9c528cefaff1",
+    "ar-EG": "712aa2a2cf96d1476855dfed0cb78cf39c39a88af4c1c5832249a86e82bd82d9"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Iteration Loop = 4 steps",
-      "ar-MSA": "Iteration Loop (حلقة التحسين) = ٤ خطوات",
-      "ar-Gulf": "Iteration Loop (حلقة التحسين) = ٤ خطوات",
+      "en": "One edit at a time — Iteration Loop = 4 steps: Request → See the result → Review → Edit. Each loop brings you closer to the desired outcome. Surgical Edit: 'Make the submit button orange #FF6B35 — do not change anything else.'",
+      "ar-MSA": "تعديل واحد كل مرة — لفة التحسين",
+      "ar-Gulf": "تعديل واحد في كل مرة — لفة التحسين",
       "ar-EG": "Iteration Loop = ٤ خطوات: اطلب → شوف النتيجة → راجع → عدّل. كل لفة بتقربك للشكل المطلوب."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Improvement = one edit at a time — not 'change everything' or 'wipe and start over'.",
+      "ar-MSA": "ماذا ستفهم؟ التحسين = تعديل واحد كل مرة — ليس «غيّر كل شيء» ولا «امسح وابدأ من الأول».",
+      "ar-Gulf": "وش راح تفهم؟ التحسين = تعديل واحد في كل مرة — مو «غيّر كل شيء» ولا «امسح وابدأ من جديد».",
+      "ar-EG": "هتفهم إيه؟ التحسين = تعديل واحد كل مرة — مش «غيّر كل حاجة» ولا «امسح وابدأ من الأول»."
+    },
+    "lessonObjects": [
+      "Iteration",
+      "Regression",
+      "Wrong — 'The interface looks bad'",
+      "Right — One specific edit",
+      "One edit at a time",
+      "Iteration Loop = 4 steps"
+    ],
+    "relationships": [
+      "Wrong — 'The interface looks bad' → Right — One specific edit",
+      "**4 circular steps**: **Request → See → Review → Edit**. **Each loop = only one edit**.",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "AI built the interface — the colors don't match and the button is misplaced. First reaction: 'wipe everything'. But this is the slowest way. Every professional interface takes 4–7 improvement loops — not just one version",
       "ar-MSA": "AI بنى واجهة — الألوان لا تناسب والزر ليس في مكانه. أول رد: «أمسح كل شيء». لكن هذا أبطأ طريق. كل واجهة محترفة تأخذ ٤–٧ لفات تحسين — ليس نسخة واحدة.",
@@ -102,17 +127,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m6-l5-iteration.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**4 circular steps**: **Request → See → Review → Edit**. **Each loop = only one edit**."
+          "quote": "4 circular steps"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l5-iteration.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**٤ خطوات دائرية**: **اطلب → شاهد → راجع → عدّل**. **كل لفة = تعديل واحد فقط**."
+          "quote": "٤ خطوات دائرية"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l5-iteration.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**٤ خطوات دائرية**: **اطلب → شوف → راجع → عدّل**. **كل لفة = تعديل واحد فقط**."
+          "quote": "٤ خطوات دائرية"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m6-l5-iteration.ts",
@@ -123,9 +148,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "builder-m6-l5-iteration's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Wrong — 'The interface looks bad' / Right — One specific edit) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Wrong — 'The interface looks bad'\" vs \"Right — One specific edit\" for builder-m6-l5-iteration.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Wrong — 'The interface looks bad'\" vs \"Right — One specific edit\" for builder-m6-l5-iteration.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "Iteration Loop: \"Wrong — 'The interface looks bad'\" versus \"Right — One specific edit\" — Iteration Loop = 4 steps",
-    "ar-MSA": "حلقة التحسين: \"خطأ — «الواجهة شكلها سيء»\" في مقابل \"صح — تعديل واحد محدد\" — Iteration Loop (حلقة التحسين) = ٤ خطوات",
-    "ar-Gulf": "حلقة التحسين: \"خطأ — «الواجهة شكلها مو زين»\" في مقابل \"صح — تعديل واحد محدد\" — Iteration Loop (حلقة التحسين) = ٤ خطوات",
+    "en": "Iteration Loop: \"Wrong — 'The interface looks bad'\" versus \"Right — One specific edit\" — One edit at a time — Iteration Loop = 4 steps: Request → See the result → Review → Edit. Each loop brings you closer to the desired outcome. Surgical Edit: 'Make the submit button orange #FF6B35 — do not change ",
+    "ar-MSA": "حلقة التحسين: \"خطأ — «الواجهة شكلها سيء»\" في مقابل \"صح — تعديل واحد محدد\" — تعديل واحد كل مرة — لفة التحسين",
+    "ar-Gulf": "حلقة التحسين: \"خطأ — «الواجهة شكلها مو زين»\" في مقابل \"صح — تعديل واحد محدد\" — تعديل واحد في كل مرة — لفة التحسين",
     "ar-EG": "تعديل واحد كل مرة — لفة التحسين: \"غلط — «الواجهة شكلها وحش»\" في مقابل \"صح — تعديل واحد محدد\" — Iteration Loop = ٤ خطوات: اطلب → شوف النتيجة → راجع → عدّل. كل لفة بتقربك للشكل المطلوب."
   },
   "aiPromptContract": null,
@@ -330,5 +355,5 @@
       "quote": "weight: 30"
     }
   ],
-  "checksum": "64cf3edc14314700a08eb3cd4e29c8091b6c4ae93db8a16655244a3ac005047c"
+  "checksum": "dfd68dda5d22fd9dab11b61cb69a5b4fe47dfe744f671945a1aa3b35a7aba254"
 }

@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "b82f302424dc89575d6bc5f93a259a65f8e7173d8bc9109244bc3ca525e0b4aa",
+    "ar-MSA": "60610fda00d78d8eebe5a2d57be1103c50a3e76f6cb772c5bc0b4db5e5679459",
+    "ar-Gulf": "300329f23884df581ef77f8ced0707aff751bfb5b94ea6742809906f525748b1",
+    "ar-EG": "ddf4215cd562e6dac9cc05038d4b88577fbf0f8fa61b383692ef695292d85cbf"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,28 @@
       ]
     },
     "coreIdea": {
-      "en": "The question:",
-      "ar-MSA": "السؤال:",
-      "ar-Gulf": "السؤال:",
+      "en": "A useful summary = Question + Context + Possible Decision",
+      "ar-MSA": "ملخّص مفيد = سؤال + سياق + قرار محتمل",
+      "ar-Gulf": "ملخص مفيد = سؤال + سياق + قرار محتمل",
       "ar-EG": "السؤال: مش «لخّصل» — «إيه أكتر ٣ مشاكل تكرّرت؟» أو «إيه اللي اتغيّر عن الأسبوع اللي فات؟»"
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? AI can summarize your data in seconds — but you need to provide it with a clear question and a specific context.",
+      "ar-MSA": "ماذا ستفهم؟ الذكاء الاصطناعي يستطيع تلخيص بياناتك في ثوانٍ — لكن يجب أن تعطيه سؤالًا واضحًا وContext (سياقًا) محدّدًا.",
+      "ar-Gulf": "وش راح تفهم؟ الذكاء الاصطناعي يقدر يلخّص بياناتك في ثوانٍ — لكن لازم تعطيه سؤال واضح وسياق محدد.",
+      "ar-EG": "هتفهم إيه؟ الـ AI يقدر يلخّص بياناتك في ثواني — بس لازم تديله سؤال واضح وسياق محدّد."
+    },
+    "lessonObjects": [
+      "Summarization",
+      "Context",
+      "Empty Question",
+      "Question + Context"
+    ],
+    "relationships": [
+      "Empty Question → Question + Context",
+      "**From data to decision** (ID: `ai-summarization-flow`): **Data + Question + Context → 3 Notes → One Decision**. The same process works on messages, invoices, o",
+      "visual relationship kind: process"
+    ],
     "tension": {
       "en": "Many people send 50 messages to AI and say 'summarize'. The result: vague sentences that do not help in making a decision. The problem is not AI — the problem is that the question is empty. Without context and without a",
       "ar-MSA": "كثيرون يرسلون ٥٠ رسالة للذكاء الاصطناعي ويقولون «لخّص». النتيجة: جمل عامة لا تساعد في قرار. المشكلة ليس الذكاء الاصطناعي — المشكلة أن السؤال فارغ. من دون سياق ومن دون سؤال محدّد، أي ملخّص يبدو «جميلًا» لكنه غير مفيد.",
@@ -102,17 +125,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/analyst-m3-l2-ai-summarization.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**From data to decision** (ID: `ai-summarization-flow`): **Data + Question + Context → 3 Notes → One Decision**. The same process works on m"
+          "quote": "From data to decision"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m3-l2-ai-summarization.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**من البيانات إلى القرار** (معرّف: `ai-summarization-flow`): **بيانات + سؤال + سياق → ٣ ملاحظات → قرار واحد**. نفس المسار يعمل على رسائل، فو"
+          "quote": "من البيانات إلى القرار"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m3-l2-ai-summarization.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**من البيانات إلى القرار** (معرّف: `ai-summarization-flow`): **بيانات + سؤال + سياق → ٣ ملاحظات → قرار واحد**. نفس المسار ينطبق على رسائل، ف"
+          "quote": "من البيانات إلى القرار"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/analyst-m3-l2-ai-summarization.ts",
@@ -265,9 +288,9 @@
     ]
   },
   "altTexts": {
-    "en": "AI Summarization: \"Empty Question\" versus \"Question + Context\" — The question:",
-    "ar-MSA": "التلخيص بالذكاء الاصطناعي: \"سؤال فارغ\" في مقابل \"سؤال + سياق\" — السؤال:",
-    "ar-Gulf": "تلخيص بالـ AI: \"سؤال فارغ\" في مقابل \"سؤال + سياق\" — السؤال:",
+    "en": "AI Summarization: \"Empty Question\" versus \"Question + Context\" — A useful summary = Question + Context + Possible Decision",
+    "ar-MSA": "التلخيص بالذكاء الاصطناعي: \"سؤال فارغ\" في مقابل \"سؤال + سياق\" — ملخّص مفيد = سؤال + سياق + قرار محتمل",
+    "ar-Gulf": "تلخيص بالـ AI: \"سؤال فارغ\" في مقابل \"سؤال + سياق\" — ملخص مفيد = سؤال + سياق + قرار محتمل",
     "ar-EG": "ملخّص مفيد = سؤال + سياق + قرار محتمل: \"سؤال فاضي\" في مقابل \"سؤال + سياق\" — السؤال: مش «لخّصل» — «إيه أكتر ٣ مشاكل تكرّرت؟» أو «إيه اللي اتغيّر عن الأسبوع اللي فات؟»"
   },
   "aiPromptContract": null,
@@ -330,5 +353,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "9630a394e4b9a2c89d4dce2af54dd328c95b10a4b34bac8e3d8489ea58c6c110"
+  "checksum": "0c49f3a8ed51868426f2d439e5ec3cbd1857ac9f00eb0ef45376ac9a331f0234"
 }

@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "f8197e911488dd94283ff8c4e436da048c73c4eea0621b63dcfcf567a898afb7",
+    "ar-MSA": "6b49970e78c4bae7b6c5212b96eb4af31ba683ede2845141028c2eb64cdf987b",
+    "ar-Gulf": "9dcca58951613a8a2c94b5676c712275591c6e95b01f71a544afd8d3eb9b4a79",
+    "ar-EG": "7ffa5e1bd31b17ec0f5930ce2137d249ee654dd7dc261739bdf2ac5b55cb9ccd"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Choose the path that solves your problem — not what looks prettier",
-      "ar-MSA": "اختر المسار الذي يحل مشكلتك — لا ما يبدو أجمل",
-      "ar-Gulf": "اختر المسار اللي يحل مشكلتك — مو اللي يبدو أجمل",
+      "en": "The Core Idea — The platform is organized into three levels. Intro (which you completed) = the starting point for everyone. Level 1 — AI User: Business (running your business with AI), Creator (content and audience with AI), Analyst (smarter decisions with numbers and AI).",
+      "ar-MSA": "الفكرة الأساسية — المنصة مرتبة على ٣ مستويات. Intro (الذي أكملته) = البداية للجميع. المستوى ١ — AI User: Business (تشغيل عملك بـ AI)، Creator (محتوى وجمهور بـ AI)، Analyst (قرارات أذكى بالأرقام وAI).",
+      "ar-Gulf": "الفكرة الأساسية — المنصة مرتبة على ٣ مستويات. Intro (اللي أكملته) = البداية للجميع. المستوى ١ — AI User: Business (تشغيل عملك بـ AI)، Creator (محتوى وجمهور بـ AI)، Analyst (قرارات أذكى بالأرقام وAI).",
       "ar-EG": "المنصة مرتبة على ٣ مستويات. Intro (اللي خلّصته) = البداية لكل الناس."
     },
+    "instructionalPurpose": {
+      "en": "What Will You Understand? The five paths are not a popularity contest — each one solves a different type of problem.",
+      "ar-MSA": "ماذا ستفهم؟ المسارات الخمسة ليست سباق شعبية — كل واحد يحل نوع مشكلة مختلف.",
+      "ar-Gulf": "وش راح تفهم؟ المسارات الخمسة مو سباق — كل واحد يحل نوع مختلف من المشاكل.",
+      "ar-EG": "هتفهم إيه؟ المسارات الخمسة مش سباق شعبية — كل واحد يحل نوع مشكلة مختلف."
+    },
+    "lessonObjects": [
+      "Path",
+      "Builder",
+      "All paths at once",
+      "One path for one result",
+      "The Core Idea",
+      "The platform is organized into three levels"
+    ],
+    "relationships": [
+      "All paths at once → One path for one result",
+      "The map of paths by level: above Intro, below it are Level 1 paths (Business, Creator, Analyst), then Automator, and finally Builder for optional depth. Choosin",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "Do you want to start all five paths at once?",
       "ar-MSA": "هل تريد البدء في الـ ٥ مسارات معًا؟",
@@ -96,7 +121,7 @@
       "ar-EG": "دي مهمة اختيار المسار — ختام Intro. اختار مسار واحد: Business أو Creator أو Analyst أو Automator أو Builder.\n\nاكتب ٢–٣ جمل ليه اخترته بناءً على هدف حقيقي عندك. مش مطلوب إجابة مثالية — مطلوب قرار واضح."
     },
     "visualIntent": {
-      "kind": "concept-scene",
+      "kind": "screenshot",
       "summary": "The map of paths by level: above Intro, below it are Level 1 paths (Business, Creator, Analyst), then Automator, and finally Builder for optional depth. Choosin",
       "packageQuotes": {
         "en": {
@@ -122,10 +147,10 @@
       }
     }
   },
-  "method": 2,
-  "methodRationale": "intro-m1-l7-choose-your-path's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 2), so a text-free AI illustration communicates \"Choose the path that solves your problem — not what looks prettier\" without inventing UI chrome or rendering paid text.",
-  "compositionPattern": "concept-scene-metaphor",
-  "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"All paths at once\" vs \"One path for one result\" for intro-m1-l7-choose-your-path.",
+  "method": 4,
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"All paths at once\" vs \"One path for one result\" for intro-m1-l7-choose-your-path.",
   "labelPacks": {
     "en": [
       {
@@ -265,23 +290,12 @@
     ]
   },
   "altTexts": {
-    "en": "Choose Your Path: \"All paths at once\" versus \"One path for one result\" — Choose the path that solves your problem — not what looks prettier",
-    "ar-MSA": "اختيار مسارك: \"كل المسارات مرة واحدة\" في مقابل \"مسار واحد لنتيجة واحدة\" — اختر المسار الذي يحل مشكلتك — لا ما يبدو أجمل",
-    "ar-Gulf": "اختر مسارك: \"كل المسارات مرة وحدة\" في مقابل \"مسار واحد لنتيجة واحدة\" — اختر المسار اللي يحل مشكلتك — مو اللي يبدو أجمل",
+    "en": "Choose Your Path: \"All paths at once\" versus \"One path for one result\" — The Core Idea — The platform is organized into three levels. Intro (which you completed) = the starting point for everyone. Level 1 — AI User: Business (running your business with AI), Creator (content and audience with AI), An",
+    "ar-MSA": "اختيار مسارك: \"كل المسارات مرة واحدة\" في مقابل \"مسار واحد لنتيجة واحدة\" — الفكرة الأساسية — المنصة مرتبة على ٣ مستويات. Intro (الذي أكملته) = البداية للجميع. المستوى ١ — AI User: Business (تشغيل عملك بـ AI)، Creator (محتوى وجمهور بـ AI)، Analyst (قرارات أذكى بالأرقام وAI).",
+    "ar-Gulf": "اختر مسارك: \"كل المسارات مرة وحدة\" في مقابل \"مسار واحد لنتيجة واحدة\" — الفكرة الأساسية — المنصة مرتبة على ٣ مستويات. Intro (اللي أكملته) = البداية للجميع. المستوى ١ — AI User: Business (تشغيل عملك بـ AI)، Creator (محتوى وجمهور بـ AI)، Analyst (قرارات أذكى بالأرقام وAI).",
     "ar-EG": "اختار المسار اللي يحل مشكلتك — مش اللي يبان أجمل: \"كل المسارات مرة واحدة\" في مقابل \"مسار واحد لنتيجة واحدة\" — المنصة مرتبة على ٣ مستويات. Intro (اللي خلّصته) = البداية لكل الناس."
   },
-  "aiPromptContract": {
-    "providerClass": "text-free-illustration",
-    "paidAllowed": false,
-    "textFree": true,
-    "promptRules": [
-      "No embedded text, letters, numbers, or UI chrome anywhere in the image.",
-      "Depict the idea behind \"Choose Your Path\" as a literal scene or metaphor, not as software.",
-      "Use a calm editorial illustration style consistent with a warm, minimal brand palette.",
-      "Keep the composition balanced so it still reads when mirrored for RTL locales."
-    ],
-    "costCeilingUsd": 0
-  },
+  "aiPromptContract": null,
   "screenshotSpec": null,
   "factualClaims": [
     {
@@ -341,5 +355,5 @@
       "quote": "weight: 30"
     }
   ],
-  "checksum": "2b24344e22e7629c14cddf6fc52e3934167ebe6463a1a37830a3767de306fc41"
+  "checksum": "1b00cfb5a873c03e1a7f70f7af3b4bab8690948b2e253a23e61888d535f0dcd6"
 }

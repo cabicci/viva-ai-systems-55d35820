@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "49523f7f6a6d0d41aa813a84266114f0517d92cabaf6b0e922f53489902d9bd2",
+    "ar-MSA": "7b81cfc1f214c36cb570e3e26ba0781ab716826775d0d5913dfb71d669b0939c",
+    "ar-Gulf": "9329802840fe8412ef4abc06b2409bbc9941d2cf47bf27039616bdb0eca78882",
+    "ar-EG": "654b7dbf9db4fec3f66be22055c1480bf52f8a5f610e7001471f63d205e8e64e"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,28 @@
       ]
     },
     "coreIdea": {
-      "en": "Step 1 — Symptom",
-      "ar-MSA": "الخطوة ١ — Symptom (العرض)",
-      "ar-Gulf": "الخطوة ١ — Symptom (الأعراض)",
+      "en": "Show the symptom → isolate the cause → request a fix",
+      "ar-MSA": "اعرض العرض → اعزل السبب → اطلب الإصلاح",
+      "ar-Gulf": "اعرض الأعراض → اعزل السبب → اطلب الإصلاح",
       "ar-EG": "الخطوة ١ — Symptom: «لما العميل يدوس Send في صفحة الشات، الشاشة بتلف ومفيش رد.»"
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? When the app fails: Identify the symptom → isolate the cause (last change) → then request a fix.",
+      "ar-MSA": "ماذا ستفهم؟ عندما يخطئ التطبيق: صفّي العرض (Symptom) → اعزل السبب (آخر تعديل) → بعدها اطلب الإصلاح.",
+      "ar-Gulf": "وش راح تفهم؟ عندما يخطئ التطبيق: صفّي الأعراض (Symptom) → اعزل السبب (آخر تعديل) → بعدها اطلب الإصلاح.",
+      "ar-EG": "هتفهم إيه؟ لما التطبيق يغلط: صفّي العرض (Symptom) → اعزل السبب (آخر تعديل) → بعدين اطلب الإصلاح."
+    },
+    "lessonObjects": [
+      "Symptom",
+      "Expected vs Actual",
+      "Error — 'The app is down'",
+      "Correct — 3 precise pieces of information"
+    ],
+    "relationships": [
+      "Error — 'The app is down' → Correct — 3 precise pieces of information",
+      "**3 steps**: **Identify the symptom → go back to the last change → send 3 pieces of information**. **You don't need to understand code — you need a description*",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "You click Send and the screen spins with no response. First response: 'The app is down' — but this doesn't help anyone fix it. The biggest companies have apps that fail every day. The difference: they have a clear method",
       "ar-MSA": "تضغط Send والشاشة تدور بلا رد. أول رد: «التطبيق معطّل» — لكن هذا لا يساعد أحدًا على الإصلاح. أكبر الشركات تطبيقاتها تخطئ كل يوم. الفرق: لديهم طريقة واضحة.",
@@ -102,17 +125,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m6-l6-debugging.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**3 steps**: **Identify the symptom → go back to the last change → send 3 pieces of information**. **You don't need to understand code — you"
+          "quote": "3 steps"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l6-debugging.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**٣ خطوات**: **صفّي العرض → ارجع لآخر تعديل → أرسل ٣ معلومات**. **لا تحتاج فهم كود — تحتاج وصفًا**."
+          "quote": "٣ خطوات"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l6-debugging.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**٣ خطوات**: **صفّي الأعراض → ارجع لآخر تعديل → أرسل ٣ معلومات**. **ما تحتاج تفهم كود — تحتاج وصف**."
+          "quote": "٣ خطوات"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m6-l6-debugging.ts",
@@ -123,9 +146,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "builder-m6-l6-debugging's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Error — 'The app is down' / Correct — 3 precise pieces of information) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Error — 'The app is down'\" vs \"Correct — 3 precise pieces of information\" for builder-m6-l6-debugging.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Error — 'The app is down'\" vs \"Correct — 3 precise pieces of information\" for builder-m6-l6-debugging.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +288,9 @@
     ]
   },
   "altTexts": {
-    "en": "Debugging — When Things Break: \"Error — 'The app is down'\" versus \"Correct — 3 precise pieces of information\" — Step 1 — Symptom",
-    "ar-MSA": "تصحيح الأعطال: \"خطأ — «التطبيق معطّل»\" في مقابل \"صح — ٣ معلومات بالضبط\" — الخطوة ١ — Symptom (العرض)",
-    "ar-Gulf": "تصحيح الأخطاء: \"خطأ — «التطبيق معطّل»\" في مقابل \"صح — ٣ معلومات بالضبط\" — الخطوة ١ — Symptom (الأعراض)",
+    "en": "Debugging — When Things Break: \"Error — 'The app is down'\" versus \"Correct — 3 precise pieces of information\" — Show the symptom → isolate the cause → request a fix",
+    "ar-MSA": "تصحيح الأعطال: \"خطأ — «التطبيق معطّل»\" في مقابل \"صح — ٣ معلومات بالضبط\" — اعرض العرض → اعزل السبب → اطلب الإصلاح",
+    "ar-Gulf": "تصحيح الأخطاء: \"خطأ — «التطبيق معطّل»\" في مقابل \"صح — ٣ معلومات بالضبط\" — اعرض الأعراض → اعزل السبب → اطلب الإصلاح",
     "ar-EG": "اعرض العرض → اعزل السبب → اطلب الإصلاح: \"غلط — «التطبيق بايظ»\" في مقابل \"صح — ٣ معلومات بالظبط\" — الخطوة ١ — Symptom: «لما العميل يدوس Send في صفحة الشات، الشاشة بتلف ومفيش رد.»"
   },
   "aiPromptContract": null,
@@ -330,5 +353,5 @@
       "quote": "weight: 30"
     }
   ],
-  "checksum": "1462f44a383ce783e7e7ab8a4e3e6c4eb9948d2a06067384df94be485021805e"
+  "checksum": "576dd4f6a7cc4f8960ed14e6692d2c6883248f2fc2796a512e934402f2c41e79"
 }

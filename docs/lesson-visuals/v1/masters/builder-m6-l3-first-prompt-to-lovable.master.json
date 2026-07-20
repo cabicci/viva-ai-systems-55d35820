@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "7c6a0144f67385aacaee0d45296fee2e7c460b6df1ba954374e9790e92dc5c85",
+    "ar-MSA": "dc90e4b0995126868a0f12690005994d4553cb6b257246fa31dbc07f368eeea0",
+    "ar-Gulf": "140d79b01a3fd95503ee3238cdcc6dba1adc88f0251e66f6b14ad50b3f91270d",
+    "ar-EG": "f9fb6e02aae155309d5265132986d2f6b5e178e56c5856684a0ec233752e19cb"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -56,11 +62,28 @@
       ]
     },
     "coreIdea": {
-      "en": "Goal",
-      "ar-MSA": "Goal (الهدف)",
-      "ar-Gulf": "الهدف",
+      "en": "The first prompt = 5 parts",
+      "ar-MSA": "أول prompt = ٥ أجزاء — Goal (الهدف): ما نوع الواجهة ولأجل ماذا؟ Users (المستخدمون): من سيستخدمها؟",
+      "ar-Gulf": "أول برومبت = ٥ أجزاء — الهدف: وش نوع الواجهة ولأجل وش؟ المستخدمون: من راح يستخدمها؟",
       "ar-EG": "Goal: الهدف — إيه نوع الواجهة ولإيه؟"
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? The first prompt needs 5 parts: goal + users + pages + style + constraints.",
+      "ar-MSA": "ماذا ستفهم؟ أول Prompt (طلب) يحتاج ٥ أجزاء: goal + users + pages + style + constraints.",
+      "ar-Gulf": "وش راح تفهم؟ أول برومبت يحتاج ٥ أجزاء: الهدف + المستخدمين + الصفحات + الأسلوب + القيود.",
+      "ar-EG": "هتفهم إيه؟ أول prompt محتاج ٥ أجزاء بس: goal + users + pages + style + constraints."
+    },
+    "lessonObjects": [
+      "Prompt Spec",
+      "Scope",
+      "3 Words",
+      "The first prompt = 5 parts"
+    ],
+    "relationships": [
+      "3 Words → Prompt Spec",
+      "**Prompt on the left — preview on the right**. **The prompt is not 'Build an Interface'** — **it includes goal, activity, sections by name, and style**. **The r",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "I wrote 'Build an AI Interface' — it produced bright colors and sections I didn’t want. Lovable builds exactly what you write — not what you wish for. 3 words = complete guess.",
       "ar-MSA": "كتبت «ابنِ واجهة AI» — خرجت ألوان فاقعة وأقسام لا تريدها. Lovable يبني ما تكتبه حرفيًا — ليس ما تتمنى. ٣ كلمات = تخمين كامل.",
@@ -106,17 +129,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m6-l3-first-prompt-to-lovable.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**Prompt on the left — preview on the right**. **The prompt is not 'Build an Interface'** — **it includes goal, activity, sections by name,"
+          "quote": "Prompt on the left — preview on the right"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l3-first-prompt-to-lovable.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**Prompt على اليسار — preview على اليمين**. **الـ prompt ليس «اعمل واجهة»** — **فيه goal، نشاط، أقسام بالاسم، وstyle**. **النتيجة أقرب من أو"
+          "quote": "Prompt على اليسار — preview على اليمين"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l3-first-prompt-to-lovable.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**البرومبت على اليسار — المعاينة على اليمين**. **البرومبت مو «ابنِ واجهة»** — **فيه هدف، نشاط، أقسام بالاسم، والأسلوب**. **النتيجة أقرب من أ"
+          "quote": "البرومبت على اليسار — المعاينة على اليمين"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m6-l3-first-prompt-to-lovable.ts",
@@ -126,10 +149,10 @@
       }
     }
   },
-  "method": 4,
-  "methodRationale": "builder-m6-l3-first-prompt-to-lovable's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (3 Words / Prompt Spec) instead of fabricating a UI capture.",
-  "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"3 Words\" vs \"Prompt Spec\" for builder-m6-l3-first-prompt-to-lovable.",
+  "method": 3,
+  "methodRationale": "Recognize Lovable's public prompt-left / preview-right builder chrome so learners match the lesson's first-prompt workflow to the real product surface.",
+  "compositionPattern": "authentic-screenshot-frame",
+  "duplicationJustification": "Shares the \"authentic-screenshot-frame\" layout template with 2 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"3 Words\" vs \"Prompt Spec\" for builder-m6-l3-first-prompt-to-lovable.",
   "labelPacks": {
     "en": [
       {
@@ -253,13 +276,33 @@
     ]
   },
   "altTexts": {
-    "en": "First Prompt to Lovable: \"3 Words\" versus \"Prompt Spec\" — Goal",
-    "ar-MSA": "أول برومبت في Lovable: \"٣ كلمات\" في مقابل \"Prompt Spec\" — Goal (الهدف)",
-    "ar-Gulf": "أول برومبت في Lovable: \"٣ كلمات\" في مقابل \"مواصفات البرومبت\" — الهدف",
+    "en": "First Prompt to Lovable: \"3 Words\" versus \"Prompt Spec\" — The first prompt = 5 parts",
+    "ar-MSA": "أول برومبت في Lovable: \"٣ كلمات\" في مقابل \"Prompt Spec\" — أول prompt = ٥ أجزاء — Goal (الهدف): ما نوع الواجهة ولأجل ماذا؟ Users (المستخدمون): من سيستخدمها؟",
+    "ar-Gulf": "أول برومبت في Lovable: \"٣ كلمات\" في مقابل \"مواصفات البرومبت\" — أول برومبت = ٥ أجزاء — الهدف: وش نوع الواجهة ولأجل وش؟ المستخدمون: من راح يستخدمها؟",
     "ar-EG": "أول prompt = goal + users + pages + style + constraints: \"٣ كلمات\" في مقابل \"Prompt Spec\" — Goal: الهدف — إيه نوع الواجهة ولإيه؟"
   },
   "aiPromptContract": null,
-  "screenshotSpec": null,
+  "screenshotSpec": {
+    "url": "https://lovable.dev/",
+    "exactUrl": "https://lovable.dev/",
+    "product": "Lovable",
+    "publicState": "public-marketing",
+    "capturePurpose": "Recognize Lovable's public prompt-left / preview-right builder chrome so learners match the lesson's first-prompt workflow to the real product surface.",
+    "rightsStatus": "vendor-public-docs",
+    "rightsRationale": "lovable.dev is the vendor's public marketing site; no login required for the landing experience used for recognition.",
+    "rightsNote": "Public Lovable marketing page — instructional recognition only; no login, no PII capture.",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "requiredRedactions": [
+      "any signed-in avatar",
+      "any project-private preview content if present"
+    ],
+    "deterministicFallbackMethod": 4,
+    "failOnLoginRedirect": true,
+    "allowlisted": true
+  },
   "factualClaims": [
     {
       "claim": "60% of the mission rubric weight is assigned to \"All five present\"",
@@ -318,5 +361,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "f5bbf8250a92386559d0f1aa6fbed2659fe7c4a4889c44e68d1f26aa36368246"
+  "checksum": "fd004120f0226db6ca914d650970efb74fd96f92860ba3481ffe2b536e4e6662"
 }

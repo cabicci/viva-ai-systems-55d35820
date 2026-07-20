@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "ea34621f1d898c1bb09ebb7338330f95fa01b11db657a13cbd9aa6418c38bdd5",
+    "ar-MSA": "77d9b327d5abf3f6985b40b528bfa9493e66b53e32e426fe0be656f16b1f9ec3",
+    "ar-Gulf": "6cfe6a03e06f6c8df16a9e241ddd9404964e76a41a7ed4479d89ecd6fe3ca433",
+    "ar-EG": "f011f920fd842d24888de79b22c9cbc936c13f32af460a3e3c2ea23d25ab7861"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Learning = Small Attempts — Not Complete Knowledge",
-      "ar-MSA": "التعلم = محاولات صغيرة — لا معرفة كاملة",
-      "ar-Gulf": "التعلم = محاولات صغيرة — مو معرفة كاملة",
+      "en": "The Core Idea — The top 3 fears that stop beginners: “I’m behind,” “I’m not technical,” “Everyone understands except me.” The solution is simple: a small experience today. You don’t need to understand the Model or API. You need to write a sentence, see the response, and say “chan",
+      "ar-MSA": "الفكرة الأساسية — أكثر ٣ مخاوف توقف المبتدئين: «أنا متأخر»، «أنا غير تقني»، «الجميع يفهم إلا أنا». الحل واحد: تجربة صغيرة اليوم. لا تحتاج فهم Model أو API. تحتاج كتابة جملة، رؤية الرد، وقول «عدّله هكذا» — كما تعلمت في دروس الـ Prompt (طلب) والتجربة الأولى.",
+      "ar-Gulf": "الفكرة الأساسية — أكثر ٣ مخاوف توقف المبتدئين: «أنا متأخر»، «أنا مو تقني»، «الكل يفهم إلا أنا». الحل واحد: تجربة صغيرة اليوم. مو لازم تفهم Model أو API. تحتاج تكتب جملة، تشوف الرد، وتقول «عدّله كذا» — مثل ما تعلمت في دروس الـ Prompt (طلب) والتجربة الأولى.",
       "ar-EG": "أكتر ٣ مخاوف بتوقف المبتدئين: «أنا متأخر»، «أنا مش تقني»، «الكل فاهم إلا أنا». التلاتة نفس الحل: تجربة صغيرة النهاردة."
     },
+    "instructionalPurpose": {
+      "en": "What Will You Understand? You don’t need to be technical — you need useful small experiences that repeat.",
+      "ar-MSA": "ماذا ستفهم؟ لا تحتاج أن تكون تقنيًا — تحتاج تجارب صغيرة مفيدة تتكرر.",
+      "ar-Gulf": "وش راح تفهم؟ مو لازم تكون تقني — تحتاج تجارب صغيرة مفيدة تتكرر.",
+      "ar-EG": "هتفهم إيه؟ مش محتاج تبقى تقني — محتاج تجارب صغيرة مفيدة تتكرر."
+    },
+    "lessonObjects": [
+      "Iteration",
+      "Waiting to Understand Everything",
+      "Small Experience",
+      "The Core Idea",
+      "The top 3 fears that stop beginners",
+      "“I’m behind"
+    ],
+    "relationships": [
+      "Waiting to Understand Everything → Small Experience",
+      "Step path: Try → Observe → Adjust → Repeat. Each small step builds confidence. If the response is weak — adjust the question and learn.",
+      "visual relationship kind: concept-scene"
+    ],
     "tension": {
       "en": "Do you feel like you’re behind — or that everyone understands except you?",
       "ar-MSA": "هل تشعر أنك متأخر — أو أن الجميع يفهم إلا أنت؟",
@@ -123,7 +148,7 @@
     }
   },
   "method": 2,
-  "methodRationale": "intro-m1-l6-learn-without-fear's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 4), so a text-free AI illustration communicates \"Learning = Small Attempts — Not Complete Knowledge\" without inventing UI chrome or rendering paid text.",
+  "methodRationale": "intro-m1-l6-learn-without-fear's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 4), so a text-free AI illustration communicates \"The Core Idea — The top 3 fears that stop beginners: “I’m behind,” “I’m not technical,” “Everyone understands except me.” The solution is simple: a small experience today. You don’t need to understand the Model or API. You need to write a sentence, see the response, and say “chan\" without inventing UI chrome or rendering paid text.",
   "compositionPattern": "concept-scene-metaphor",
   "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Waiting to Understand Everything\" vs \"Small Experience\" for intro-m1-l6-learn-without-fear.",
   "labelPacks": {
@@ -233,9 +258,9 @@
     ]
   },
   "altTexts": {
-    "en": "Learn Without Fear: \"Waiting to Understand Everything\" versus \"Small Experience\" — Learning = Small Attempts — Not Complete Knowledge",
-    "ar-MSA": "التعلم دون خوف: \"تنتظر فهم كل شيء\" في مقابل \"تجربة صغيرة\" — التعلم = محاولات صغيرة — لا معرفة كاملة",
-    "ar-Gulf": "تعلم بدون خوف: \"تنتظر فهم كل شيء\" في مقابل \"تجربة صغيرة\" — التعلم = محاولات صغيرة — مو معرفة كاملة",
+    "en": "Learn Without Fear: \"Waiting to Understand Everything\" versus \"Small Experience\" — The Core Idea — The top 3 fears that stop beginners: “I’m behind,” “I’m not technical,” “Everyone understands except me.” The solution is simple: a small experience today. You don’t need to understand the Model or API",
+    "ar-MSA": "التعلم دون خوف: \"تنتظر فهم كل شيء\" في مقابل \"تجربة صغيرة\" — الفكرة الأساسية — أكثر ٣ مخاوف توقف المبتدئين: «أنا متأخر»، «أنا غير تقني»، «الجميع يفهم إلا أنا». الحل واحد: تجربة صغيرة اليوم. لا تحتاج فهم Model أو API. تحتاج كتابة جملة، رؤية الرد، وقول «عدّله هكذا» — كما تعلمت في دروس الـ Prompt (طلب) ",
+    "ar-Gulf": "تعلم بدون خوف: \"تنتظر فهم كل شيء\" في مقابل \"تجربة صغيرة\" — الفكرة الأساسية — أكثر ٣ مخاوف توقف المبتدئين: «أنا متأخر»، «أنا مو تقني»، «الكل يفهم إلا أنا». الحل واحد: تجربة صغيرة اليوم. مو لازم تفهم Model أو API. تحتاج تكتب جملة، تشوف الرد، وتقول «عدّله كذا» — مثل ما تعلمت في دروس الـ Prompt (طلب) وا",
     "ar-EG": "التعلم = محاولات صغيرة — مش معرفة كاملة: \"تستنى تفهم كل حاجة\" في مقابل \"تجربة صغيرة\" — أكتر ٣ مخاوف بتوقف المبتدئين: «أنا متأخر»، «أنا مش تقني»، «الكل فاهم إلا أنا». التلاتة نفس الحل: تجربة صغيرة النهاردة."
   },
   "aiPromptContract": {
@@ -309,5 +334,5 @@
       "quote": "weight: 30"
     }
   ],
-  "checksum": "0f91c79a438eeeb0de38eec780179355355550b5f75d8cc5afe0a18063258fab"
+  "checksum": "69c4f69c02f0014207ff39ddc7bf5d8a9421f6b9a670d218ffcc6b7a9dcbc3ea"
 }

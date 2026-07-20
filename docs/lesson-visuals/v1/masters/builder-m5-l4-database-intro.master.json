@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "0bf0a6105c5f92196b923f7eabe5a4cf1d2660206ddc0d534ffc365e331e710d",
+    "ar-MSA": "525cb3f21ee5e50fb3698505d72b442cd8819c54d904a6fa9daa88924bce1b5f",
+    "ar-Gulf": "6a57e42cd1fad08667071973b95bf1cd566c1ec44abe9d6c3d723ffa582771a5",
+    "ar-EG": "ea1b8ea1ef08961a097220a850d651a8b61af7c9e897e192c1a2e5c94a17ddc2"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Frontend = what you see",
-      "ar-MSA": "Frontend = ترى",
-      "ar-Gulf": "Frontend = تشوف",
+      "en": "The app needs memory — Frontend = what you see. Backend = what works. Database (the storage) = what remembers. Any information that needs to stay tomorrow — conversations, names, requests — belongs in storage.",
+      "ar-MSA": "التطبيق يحتاج ذاكرة — Frontend = ترى. Backend = يعمل. Database (المخزن) = يتذكر. أي معلومة يجب أن تبقى غدًا — محادثات، أسماء، طلبات — مكانها المخزن.",
+      "ar-Gulf": "التطبيق يحتاج ذاكرة — Frontend = تشوف. Backend = يشتغل. Database (المخزن) = يتذكر. أي معلومة لازم تبقى بكرة — محادثات، أسماء، طلبات — مكانها المخزن.",
       "ar-EG": "Frontend = تشوف. Backend = يشتغل. Database = يفتكر."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Any app needs memory — a place to save customers and conversations.",
+      "ar-MSA": "ماذا ستفهم؟ أي تطبيق يحتاج «ذاكرة» — مكانًا يحفظ فيه العملاء والمحادثات.",
+      "ar-Gulf": "وش راح تفهم؟ أي تطبيق يحتاج «ذاكرة» — مكان يحفظ فيه العملاء والمحادثات.",
+      "ar-EG": "هتفهم إيه؟ أي تطبيق محتاج «ذاكرة» — مكان يحفظ فيه العملاء والمحادثات."
+    },
+    "lessonObjects": [
+      "Database",
+      "Table",
+      "Stored Only in the Browser",
+      "Stored on the Server",
+      "The app needs memory",
+      "Frontend = what you see"
+    ],
+    "relationships": [
+      "Stored Only in the Browser → Stored on the Server",
+      "**Progress is not on your device** — **if you open from another phone, you will find it**. **Because it is stored in the archive**. **Your app works on the same",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "The customer talked to AI, got an excellent answer, and closed the app. After a week, they opened it again — no conversation, no name, as if it was the first time.",
       "ar-MSA": "العميل تحدّث مع AI، حصل على إجابة ممتازة، وأغلق التطبيق. بعد أسبوع فتح مرة أخرى — لا محادثة، لا اسمه، كأنه أول مرة.",
@@ -102,17 +127,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m5-l4-database-intro.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**Progress is not on your device** — **if you open from another phone, you will find it**. **Because it is stored in the archive**. **Your a"
+          "quote": "Progress is not on your device"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l4-database-intro.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**التقدّم ليس على جهازك** — **لو فتحت من هاتف آخر تجده**. **لأنه محفوظ في مخزن**. **تطبيقك يعمل بنفس الفكرة**."
+          "quote": "التقدّم ليس على جهازك"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l4-database-intro.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**التقدم مو على جهازك** — **لو فتحت من هاتف ثاني تلاقيه**. **لأنه محفوظ في المخزن**. **تطبيقك يعمل بنفس الفكرة**."
+          "quote": "التقدم مو على جهازك"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m5-l4-database-intro.ts",
@@ -123,9 +148,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "builder-m5-l4-database-intro's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Stored Only in the Browser / Stored on the Server) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Stored Only in the Browser\" vs \"Stored on the Server\" for builder-m5-l4-database-intro.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Stored Only in the Browser\" vs \"Stored on the Server\" for builder-m5-l4-database-intro.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "Database Intro (Smart Storage): \"Stored Only in the Browser\" versus \"Stored on the Server\" — Frontend = what you see",
-    "ar-MSA": "مقدّمة قاعدة البيانات: \"تخزين في المتصفح فقط\" في مقابل \"مخزن على السيرفر\" — Frontend = ترى",
-    "ar-Gulf": "مقدمة عن قاعدة البيانات: \"تخزين في المتصفح فقط\" في مقابل \"مخزن على السيرفر\" — Frontend = تشوف",
+    "en": "Database Intro (Smart Storage): \"Stored Only in the Browser\" versus \"Stored on the Server\" — The app needs memory — Frontend = what you see. Backend = what works. Database (the storage) = what remembers. Any information that needs to stay tomorrow — conversations, names, requests — belongs in storag",
+    "ar-MSA": "مقدّمة قاعدة البيانات: \"تخزين في المتصفح فقط\" في مقابل \"مخزن على السيرفر\" — التطبيق يحتاج ذاكرة — Frontend = ترى. Backend = يعمل. Database (المخزن) = يتذكر. أي معلومة يجب أن تبقى غدًا — محادثات، أسماء، طلبات — مكانها المخزن.",
+    "ar-Gulf": "مقدمة عن قاعدة البيانات: \"تخزين في المتصفح فقط\" في مقابل \"مخزن على السيرفر\" — التطبيق يحتاج ذاكرة — Frontend = تشوف. Backend = يشتغل. Database (المخزن) = يتذكر. أي معلومة لازم تبقى بكرة — محادثات، أسماء، طلبات — مكانها المخزن.",
     "ar-EG": "التطبيق محتاج ذاكرة — مش بس شاشة وشغل: \"تخزين في المتصفح بس\" في مقابل \"مخزن على السيرفر\" — Frontend = تشوف. Backend = يشتغل. Database = يفتكر."
   },
   "aiPromptContract": null,
@@ -330,5 +355,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "0c9e642d95a920c6ce212c9c79ec6ef5c8633566304e54bce673b95eadff85ad"
+  "checksum": "90ad0bec99c9b536acc76038ce13b7f91421a062f022a93ba58e428900ff2d63"
 }

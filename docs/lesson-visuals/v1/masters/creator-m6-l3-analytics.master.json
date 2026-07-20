@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "e4f6fbc7d4e53fb0714b7cf0eb6be03c8ec976120edc876124bf58999c95a836",
+    "ar-MSA": "84fc65f8a2064cec37dbcc70c100afc4672b37eedfd7058380d57a2130adc529",
+    "ar-Gulf": "d78a7caff1101dd99466fad9095a14247c34fb30c05f7679ec1d64bc595696aa",
+    "ar-EG": "5bc5c0ffab886f31d22290e15609044a7b8ffabacec31496680116893f8b5f3d"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -51,11 +57,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Focus on 3 indicators:",
-      "ar-MSA": "ثبّت على ٣ مؤشرات:",
-      "ar-Gulf": "ثبّت على ٣ مؤشرات:",
+      "en": "Read the Post with Three Signals",
+      "ar-MSA": "اقرأ المنشور بثلاث إشارات",
+      "ar-Gulf": "اقرأ المنشور بثلاث إشارات",
       "ar-EG": "خليك ثابت على 3 مؤشرات: Watch Time، Save Rate، Follow/Action Rate. دول اللي يوضحوا جودة المحتوى."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Views alone are not enough.",
+      "ar-MSA": "ماذا ستفهم؟ المشاهدات (views) وحدها ليست كافية.",
+      "ar-Gulf": "وش راح تفهم؟ المشاهدات (views) وحدها مو كافية.",
+      "ar-EG": "رقم الـ views ممكن يفرحك، بس ما يقولش الحقيقة كاملة. في بوستات مشاهداتها أقل لكن تأثيرها أعلى بكتير."
+    },
+    "lessonObjects": [
+      "Watch Time",
+      "Save Rate",
+      "Action Metric",
+      "Superficial Reading",
+      "Smart Reading",
+      "Read the Post with Three Signals"
+    ],
+    "relationships": [
+      "Superficial Reading → Smart Reading",
+      "Visual diagram — **Triangle of Key Indicators**. **Balance the three signals** **instead of relying on views alone** — **to make your judgment more accurate**.",
+      "visual relationship kind: data-relationship"
+    ],
     "tension": {
       "en": "Focusing on a single number can mislead you. When all your decisions are based on views — you might repeat a type of content that brings traffic without trust or conversion.",
       "ar-MSA": "التركيز على رقم واحد يُضلّلك. عندما كل قرارك مبني على views — قد تكرر نوع محتوى يجلب زحمة من دون ثقة أو تحويل.",
@@ -101,16 +126,16 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/creator-m6-l3-analytics.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "Visual diagram — **Triangle of Key Indicators**. **Balance the three signals** **instead of relying on views alone** — **to make your judgme"
+          "quote": "Triangle of Key Indicators"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l3-analytics.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "ثبّت على ٣ مؤشرات:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l3-analytics.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "ثبّت على ٣ مؤشرات:"
         },
         "ar-EG": {
@@ -264,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Simple Analytics Reading: \"Superficial Reading\" versus \"Smart Reading\" — Focus on 3 indicators:",
-    "ar-MSA": "قراءة تحليلات بسيطة: \"قراءة سطحية\" في مقابل \"قراءة ذكية\" — ثبّت على ٣ مؤشرات:",
-    "ar-Gulf": "تحليل بسيط: \"قراءة سطحية\" في مقابل \"قراءة ذكية\" — ثبّت على ٣ مؤشرات:",
+    "en": "Simple Analytics Reading: \"Superficial Reading\" versus \"Smart Reading\" — Read the Post with Three Signals",
+    "ar-MSA": "قراءة تحليلات بسيطة: \"قراءة سطحية\" في مقابل \"قراءة ذكية\" — اقرأ المنشور بثلاث إشارات",
+    "ar-Gulf": "تحليل بسيط: \"قراءة سطحية\" في مقابل \"قراءة ذكية\" — اقرأ المنشور بثلاث إشارات",
     "ar-EG": "اقرأ البوست بثلاث إشارات: \"قراءة سطحية\" في مقابل \"قراءة ذكية\" — خليك ثابت على 3 مؤشرات: Watch Time، Save Rate، Follow/Action Rate. دول اللي يوضحوا جودة المحتوى."
   },
   "aiPromptContract": null,
@@ -329,5 +354,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "f89ec26fbed2c8e746ea779cce429ba6097783a41ac5e8fd95d740da5b0dc7d1"
+  "checksum": "607d0ba9303ab442f748b14590c70f4ef695e2a29ab86cf19f1a46e9212f379d"
 }

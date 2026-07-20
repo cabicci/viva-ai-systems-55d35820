@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "55154a5d1a674eb84a6b02f79fd5e93ca04f4f575c3b4644169f4c10ea30ae4f",
+    "ar-MSA": "86ab406ae1fc29cf9bd9bd261275bc02436f24dc0f41f8ade0176519756bd3a7",
+    "ar-Gulf": "e366d3d8f3a8745db7791596ec472c9e42a51cd29a7599a222b30b571660b284",
+    "ar-EG": "229ed7eed23c36694e36c8990d70e8e9954a8464ff00da5c67594578a23b99e8"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Any AI application = a journey",
-      "ar-MSA": "أي تطبيق AI = رحلة",
-      "ar-Gulf": "أي تطبيق AI = رحلة",
+      "en": "The Idea = Screens + Steps",
+      "ar-MSA": "الفكرة = شاشات + خطوات — أي تطبيق AI = رحلة: العميل يفتح → يفعل شيئًا → يصل للهدف. كل خطوة = شاشة. ٣ شاشات كافية للبداية: بداية، وسط، نهاية.",
+      "ar-Gulf": "الفكرة = شاشات + خطوات — أي تطبيق AI = رحلة: العميل يفتح → يسوي شيء → يوصل للهدف. كل خطوة = شاشة. ٣ شاشات كافية للبداية: بداية، وسط، نهاية.",
       "ar-EG": "أي تطبيق AI = رحلة: العميل يفتح → يعمل حاجة → يوصل لهدف."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Any AI idea can be built as screens + steps — before any code.",
+      "ar-MSA": "ماذا ستفهم؟ أي فكرة AI تستطيع بناؤها كشاشات + خطوات — قبل أي كود.",
+      "ar-Gulf": "وش راح تفهم؟ أي فكرة AI تقدر تبنيها كشاشات + خطوات — قبل أي كود.",
+      "ar-EG": "هتفهم إيه؟ أي فكرة AI تقدر تتبني كشاشات + خطوات — قبل أي كود."
+    },
+    "lessonObjects": [
+      "User Flow",
+      "Screen",
+      "Start with Design",
+      "Start with the Journey",
+      "The Idea = Screens + Steps"
+    ],
+    "relationships": [
+      "Start with Design → Start with the Journey",
+      "**Any page = one goal + clear steps**. **The user enters → sees the map → selects**. **The same logic applies to your application**.",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "You have a great AI idea — but when you open the building tool, you don't know the first step. Do you start with colors? Or with the model? Or with the prompt? — and you waste hours.",
       "ar-MSA": "لديك فكرة AI رائعة — لكن عند فتح أداة البناء لا تعرف أول خطوة. تبدأ بالألوان؟ أم بالـ model؟ أم بالـ Prompt؟ — وتضيع ساعات.",
@@ -96,23 +120,23 @@
       "ar-EG": "المهمة دي تخطيط — مش كود. ورقة وقلم أو notes.\n\n٥–١٠ دقايق كفاية."
     },
     "visualIntent": {
-      "kind": "concept-scene",
+      "kind": "screenshot",
       "summary": "**Any page = one goal + clear steps**. **The user enters → sees the map → selects**. **The same logic applies to your application**.",
       "packageQuotes": {
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m6-l1-idea-to-page.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**Any page = one goal + clear steps**. **The user enters → sees the map → selects**. **The same logic applies to your application**."
+          "quote": "Any page = one goal + clear steps"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l1-idea-to-page.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**أي صفحة = هدف واحد + خطوات واضحة**. **المستخدم يدخل → يرى الخريطة → يختار**. **نفس المنطق لتطبيقك**."
+          "quote": "أي صفحة = هدف واحد + خطوات واضحة"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l1-idea-to-page.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**أي صفحة = هدف واحد + خطوات واضحة**. **المستخدم يدخل → يشوف الخريطة → يختار**. **نفس المنطق لتطبيقك**."
+          "quote": "أي صفحة = هدف واحد + خطوات واضحة"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m6-l1-idea-to-page.ts",
@@ -122,10 +146,10 @@
       }
     }
   },
-  "method": 2,
-  "methodRationale": "builder-m6-l1-idea-to-page's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"Any AI application = a journey\" without inventing UI chrome or rendering paid text.",
-  "compositionPattern": "concept-scene-metaphor",
-  "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Start with Design\" vs \"Start with the Journey\" for builder-m6-l1-idea-to-page.",
+  "method": 4,
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
+  "compositionPattern": "hybrid-frame-with-labels",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Start with Design\" vs \"Start with the Journey\" for builder-m6-l1-idea-to-page.",
   "labelPacks": {
     "en": [
       {
@@ -265,23 +289,12 @@
     ]
   },
   "altTexts": {
-    "en": "Idea to Page: \"Start with Design\" versus \"Start with the Journey\" — Any AI application = a journey",
-    "ar-MSA": "من الفكرة إلى الصفحة: \"تبدأ بالشكل\" في مقابل \"تبدأ بالرحلة\" — أي تطبيق AI = رحلة",
-    "ar-Gulf": "من الفكرة للصفحة: \"تبدأ بالشكل\" في مقابل \"تبدأ بالرحلة\" — أي تطبيق AI = رحلة",
+    "en": "Idea to Page: \"Start with Design\" versus \"Start with the Journey\" — The Idea = Screens + Steps",
+    "ar-MSA": "من الفكرة إلى الصفحة: \"تبدأ بالشكل\" في مقابل \"تبدأ بالرحلة\" — الفكرة = شاشات + خطوات — أي تطبيق AI = رحلة: العميل يفتح → يفعل شيئًا → يصل للهدف. كل خطوة = شاشة. ٣ شاشات كافية للبداية: بداية، وسط، نهاية.",
+    "ar-Gulf": "من الفكرة للصفحة: \"تبدأ بالشكل\" في مقابل \"تبدأ بالرحلة\" — الفكرة = شاشات + خطوات — أي تطبيق AI = رحلة: العميل يفتح → يسوي شيء → يوصل للهدف. كل خطوة = شاشة. ٣ شاشات كافية للبداية: بداية، وسط، نهاية.",
     "ar-EG": "الفكرة = شاشات + خطوات: \"تبدأ بالشكل\" في مقابل \"تبدأ بالرحلة\" — أي تطبيق AI = رحلة: العميل يفتح → يعمل حاجة → يوصل لهدف."
   },
-  "aiPromptContract": {
-    "providerClass": "text-free-illustration",
-    "paidAllowed": false,
-    "textFree": true,
-    "promptRules": [
-      "No embedded text, letters, numbers, or UI chrome anywhere in the image.",
-      "Depict the idea behind \"Idea to Page\" as a literal scene or metaphor, not as software.",
-      "Use a calm editorial illustration style consistent with a warm, minimal brand palette.",
-      "Keep the composition balanced so it still reads when mirrored for RTL locales."
-    ],
-    "costCeilingUsd": 0
-  },
+  "aiPromptContract": null,
   "screenshotSpec": null,
   "factualClaims": [
     {
@@ -341,5 +354,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "54354fbdb945c35499c5dbc333ddfa90dea6e6ca2a653d500e57c4ba6be7c909"
+  "checksum": "70424bd0419781c0aff64bf1365091653f88684352c8149c8ab87d0448c8c651"
 }

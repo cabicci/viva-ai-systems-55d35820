@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "6d9dee14f863755ba0cd9f217e44855ababb3b8b4e2a28af7560326e0958eba3",
+    "ar-MSA": "c8918bc6a16373f9b5def90c5b315967da5bf420ca7848ed9914df21785e6c72",
+    "ar-Gulf": "895f76ff2669297fe67f242c9c27945bdb48a4b002478031909ff2aafcd9d14a",
+    "ar-EG": "c31dbe60c6f97ef644ab6ac8fed52b7c358d164683219b1e250b8fde3c8b3836"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Awareness:",
-      "ar-MSA": "Awareness (وعي):",
-      "ar-Gulf": "Awareness (وعي):",
+      "en": "5 Stages — Each Stage is an Opportunity",
+      "ar-MSA": "٥ محطات — وكل محطة فرصة — Awareness (وعي): العميل عرف أنك موجود — إعلان، صديق، بحث. Consideration (تفكير): يقارن — السعر، الثقة، المراجعات.",
+      "ar-Gulf": "٥ مراحل — وكل مرحلة فرصة",
       "ar-EG": "Awareness (وعي): العميل عرف إنك موجود — إعلان، صديق، بحث."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? A customer is not a single transaction — it is a Customer Journey from the first time they hear about you until they recommend you. AI can enhance every stage.",
+      "ar-MSA": "ماذا ستفهم؟ العميل ليس صفقة واحدة — هو رحلة (Customer Journey) من أول ما يسمع عنك حتى يرشّحك. AI يمكن أن يحسّن كل محطة.",
+      "ar-Gulf": "وش راح تفهم؟ العميل مو صفقة وحدة — هو رحلة (Customer Journey) من أول ما يسمع عنك لين يرشّحك. AI يقدر يحسّن كل مرحلة.",
+      "ar-EG": "هتفهم إيه؟ العميل مش صفقة واحدة — هو رحلة من أول ما يسمع عنك لحد ما يرشّحك. والـ AI يقدر يحسّن كل محطة."
+    },
+    "lessonObjects": [
+      "Customer Journey",
+      "Weakest Stage",
+      "Focus on bringing in new customers only",
+      "Fix the weakest stage",
+      "5 Stages",
+      "Each Stage is an Opportunity"
+    ],
+    "relationships": [
+      "Focus on bringing in new customers only → Fix the weakest stage",
+      "Map of **5 Stages** — funnel: each stage has those who continue and those who stop. The goal is to know **where the leak is**. (The visual original remains unch",
+      "visual relationship kind: process"
+    ],
     "tension": {
       "en": "Many see the customer as 'buy and done'. They bring in new customers through ads — but the return rate is low and costs are rising. The problem is often not 'we need more ads' — the issue lies in a Weak Stage in the jour",
       "ar-MSA": "كثيرون يرون العميل = «اشترى وانتهى». يجلبون جددًا بالإعلانات — لكن نسبة الرجوع ضعيفة والتكلفة تزيد. المشكلة غالبًا ليست «نحتاج إعلانات أكثر» — المشكلة في محطة ضعيفة في الرحلة: Awareness (وعي)، Consideration (تفكير)، Purc",
@@ -102,16 +127,16 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/business-m2-l1-customer-lifecycle.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "Map of **5 Stages** — funnel: each stage has those who continue and those who stop. The goal is to know **where the leak is**. (The visual o"
+          "quote": "5 Stages"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l1-customer-lifecycle.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Awareness (وعي):"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l1-customer-lifecycle.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Awareness (وعي):"
         },
         "ar-EG": {
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "Customer Lifecycle: \"Focus on bringing in new customers only\" versus \"Fix the weakest stage\" — Awareness:",
-    "ar-MSA": "دورة حياة العميل: \"تركّز على جلب جدد فقط\" في مقابل \"تصلّح أضعف محطة\" — Awareness (وعي):",
-    "ar-Gulf": "رحلة العميل: \"تركّز على جلب جدد فقط\" في مقابل \"تصلّح أضعف مرحلة\" — Awareness (وعي):",
+    "en": "Customer Lifecycle: \"Focus on bringing in new customers only\" versus \"Fix the weakest stage\" — 5 Stages — Each Stage is an Opportunity",
+    "ar-MSA": "دورة حياة العميل: \"تركّز على جلب جدد فقط\" في مقابل \"تصلّح أضعف محطة\" — ٥ محطات — وكل محطة فرصة — Awareness (وعي): العميل عرف أنك موجود — إعلان، صديق، بحث. Consideration (تفكير): يقارن — السعر، الثقة، المراجعات.",
+    "ar-Gulf": "رحلة العميل: \"تركّز على جلب جدد فقط\" في مقابل \"تصلّح أضعف مرحلة\" — ٥ مراحل — وكل مرحلة فرصة",
     "ar-EG": "٥ محطات — وكل محطة فرصة: \"تركّز على جلب جداد بس\" في مقابل \"تصلّح أضعف محطة\" — Awareness (وعي): العميل عرف إنك موجود — إعلان، صديق، بحث."
   },
   "aiPromptContract": null,
@@ -330,5 +355,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "e32d60879501fad9d9c8ae6af4c46300d7feb10a3bb0371d1ec551811fb93ef8"
+  "checksum": "12d40ba09c8a6ac18e1bb1c3af5cbdf15aca84e38af6797dcbf0517419383876"
 }

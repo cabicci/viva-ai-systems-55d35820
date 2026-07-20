@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "dcc7cda318dfcad132c370318ade991b3e0d730e0b5901a6351e5ff8d3b26ac9",
+    "ar-MSA": "6960e6c6963216db25137adc9d35460062c21c95091df3b5ee3caccbd99d7bdf",
+    "ar-Gulf": "1914ab54ae329b3a7f1c242269e79ea535915638aeb30ef1bf87c36427d34ddf",
+    "ar-EG": "23f97d3f61282ff2943bab0e46b601277c58d08ae8b7a97ad1bb2f356fad4b02"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -48,11 +54,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Choose one Primary Platform",
-      "ar-MSA": "اختر Primary Platform (منصة رئيسية) واحدة",
-      "ar-Gulf": "اختر منصة رئيسية واحدة",
+      "en": "Main Platform + Simple Echo",
+      "ar-MSA": "منصة رئيسية + صدى بسيط — اختر Primary Platform (منصة رئيسية) واحدة بناءً على ٣ أمور: أين جمهورك، صيغتك المفضلة، وقدرتك على الالتزام أسبوعيًا. بعد الالتزام شهرين على المنصة الرئيسية — يمكنك Echo Platform (منصة صدى) تعيد فيها نفس الفكرة بتعديل بسيط.",
+      "ar-Gulf": "منصة رئيسية + صدى بسيط — اختر منصة رئيسية واحدة بناءً على ٣ أمور: أين جمهورك، صيغتك المفضلة، وقدرتك على الالتزام أسبوعيًا. بعد الالتزام شهرين على المنصة الرئيسية — تقدر تستخدم منصة صدى تعيد فيها نفس الفكرة بتعديل بسيط.",
       "ar-EG": "اختار منصة رئيسية واحدة بناء على 3 حاجات: جمهورك موجود فين، فورماتك المفضل إيه، وقدرتك على الالتزام أسبوعيا."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? You don’t need to be everywhere. You need to be clear and strong in one place where people listen to you.",
+      "ar-MSA": "ماذا ستفهم؟ ليس مطلوبًا أن تكون موجودًا في كل مكان. المطلوب أن تكون واضحًا وقويًا في مكان واحد يستمع إليك فيه الناس.",
+      "ar-Gulf": "وش راح تفهم؟ مو لازم تكون موجود في كل مكان. المطلوب تكون واضح وقوي في مكان واحد يستمع لك فيه الناس.",
+      "ar-EG": "مش المطلوب تبقى موجود في كل حتة. المطلوب تكون واضح وقوي في حتة واحدة الناس بتسمعك فيها."
+    },
+    "lessonObjects": [
+      "Primary Platform",
+      "Echo Platform",
+      "Native Format",
+      "Scattered Choice",
+      "Focused Choice",
+      "Main Platform + Simple Echo"
+    ],
+    "relationships": [
+      "Scattered Choice → Focused Choice",
+      "Visual diagram — **a map of platforms based on attention type**. **Identify where your audience makes decisions faster:** **quick video**, **longer explanation*",
+      "visual relationship kind: system"
+    ],
     "tension": {
       "en": "Being scattered across many platforms breaks continuity. When you post on 4 platforms with the same energy — often no platform gets its due. Each platform has a different format and audience behavior.",
       "ar-MSA": "التشتت بين منصات كثيرة يكسر الاستمرارية. عندما تنشر في ٤ منصات بنفس الطاقة — غالبًا لا منصة تأخذ حقها. كل منصة لها Format (صيغة) وسلوك جمهور مختلف.",
@@ -98,16 +123,16 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/creator-m6-l1-platforms.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "Visual diagram — **a map of platforms based on attention type**. **Identify where your audience makes decisions faster:** **quick video**, *"
+          "quote": "a map of platforms based on attention type"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l1-platforms.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "اختر Primary Platform (منصة رئيسية) واحدة"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l1-platforms.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "اختر منصة رئيسية واحدة"
         },
         "ar-EG": {
@@ -261,9 +286,9 @@
     ]
   },
   "altTexts": {
-    "en": "Choosing Platforms: \"Scattered Choice\" versus \"Focused Choice\" — Choose one Primary Platform",
-    "ar-MSA": "اختيار المنصات: \"اختيار مشتت\" في مقابل \"اختيار مركّز\" — اختر Primary Platform (منصة رئيسية) واحدة",
-    "ar-Gulf": "اختيار المنصات: \"اختيار مشتت\" في مقابل \"اختيار مركّز\" — اختر منصة رئيسية واحدة",
+    "en": "Choosing Platforms: \"Scattered Choice\" versus \"Focused Choice\" — Main Platform + Simple Echo",
+    "ar-MSA": "اختيار المنصات: \"اختيار مشتت\" في مقابل \"اختيار مركّز\" — منصة رئيسية + صدى بسيط — اختر Primary Platform (منصة رئيسية) واحدة بناءً على ٣ أمور: أين جمهورك، صيغتك المفضلة، وقدرتك على الالتزام أسبوعيًا. بعد الالتزام شهرين على المنصة الرئيسية — يمكنك Echo Platform (منصة صدى) تعيد فيها نفس الفكرة بتعديل بس",
+    "ar-Gulf": "اختيار المنصات: \"اختيار مشتت\" في مقابل \"اختيار مركّز\" — منصة رئيسية + صدى بسيط — اختر منصة رئيسية واحدة بناءً على ٣ أمور: أين جمهورك، صيغتك المفضلة، وقدرتك على الالتزام أسبوعيًا. بعد الالتزام شهرين على المنصة الرئيسية — تقدر تستخدم منصة صدى تعيد فيها نفس الفكرة بتعديل بسيط.",
     "ar-EG": "منصة رئيسية + صدى بسيط: \"اختيار مشتت\" في مقابل \"اختيار مركز\" — اختار منصة رئيسية واحدة بناء على 3 حاجات: جمهورك موجود فين، فورماتك المفضل إيه، وقدرتك على الالتزام أسبوعيا."
   },
   "aiPromptContract": null,
@@ -326,5 +351,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "1f0244aeef08afbeddcf1275bdf4b2de99896fa125b6ac494ec56de73d5fdac5"
+  "checksum": "0474c4a5611bedd9451d63eb3a67e3dd08a43df40ef07827ee2ecff6cb99c78b"
 }

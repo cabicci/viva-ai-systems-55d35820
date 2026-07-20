@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "34f5205f6d7876acabc1969865274c9181f8ca1900de5a90aa7a311929b40703",
+    "ar-MSA": "101c3f4f8665af55bbd5169e1f288a0d3c9f5198aee727a28699a0ca59f1303c",
+    "ar-Gulf": "e202f809c985a1caf2ac81d6389d5fdd08b72e7946d94c94443477e6c3ae62e5",
+    "ar-EG": "71764007e40f5bf43887b0d8881973edff93df28aa72079986375081c75a0f9a"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Behavior",
-      "ar-MSA": "سلوك (Behavior)",
-      "ar-Gulf": "السلوك",
+      "en": "Three Sources Complement Each Other",
+      "ar-MSA": "٣ مصادر تكمّل بعضها — 1. سلوك (Behavior) — ما يفعله الناس: زيارات، clicks، طلبات، رسائل واتساب. 2. نتائج (Results) — ما حدث فعلًا: مبيعات، فواتير، إيرادات، conversions. 3. كلام (Words) — ما يقوله الناس: شكاوى، استفسارات، ملاحظاتك، آراء العملاء. 4. مصدر واحد يعطيك جزءًا من الصورة",
+      "ar-Gulf": "٣ مصادر تكمل بعضها — 1. السلوك — وش يسوي الناس: زيارات، نقرات، طلبات، رسائل واتساب. 2. النتائج — وش صار فعلًا: مبيعات، فواتير، إيرادات، تحويلات. 3. الكلام — وش يقولون الناس: شكاوى، استفسارات، ملاحظاتك، آراء العملاء. 4. مصدر واحد يعطيك جزء من الصورة — الثلاثة معًا يعطونك قرار أقوى",
       "ar-EG": "فهمت إيه؟ القرار الكويس محتاج سلوك + نتائج + كلام — مصدر واحد بيديك جزء بس."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? A good decision often needs three sources: what people do, what actually happened, and what people say.",
+      "ar-MSA": "ماذا ستفهم؟ القرار الجيد غالبًا يحتاج ٣ مصادر: ما يفعله الناس، ما حدث فعلًا، وما يقوله الناس.",
+      "ar-Gulf": "وش راح تفهم؟ القرار الجيد يحتاج غالبًا ٣ مصادر: وش يسوي الناس، وش صار فعلًا، ووش يقولون الناس.",
+      "ar-EG": "هتفهم إيه؟ القرار الكويس غالبًا محتاج ٣ مصادر: إيه اللي الناس بتعمله، إيه النتائج، وإيه اللي الناس بتقوله."
+    },
+    "lessonObjects": [
+      "Source",
+      "SSOT (Single Source of Truth)",
+      "One Source",
+      "Three Sources",
+      "Three Sources Complement Each Other"
+    ],
+    "relationships": [
+      "One Source → Three Sources",
+      "**Three Sources → One Decision** (ID: `three-sources-merge`): **Behavior + Results + Words** in one place — **One Question = Stronger Answer**. Use it in the mi",
+      "visual relationship kind: process"
+    ],
     "tension": {
       "en": "WhatsApp in one place, invoices in another, your notes in a notebook — each source alone. You miss half the context. You decide based on just one invoice — and don’t hear that customers are talking about something else o",
       "ar-MSA": "واتساب في مكان، الفواتير في مكان، ملاحظاتك في دفتر — كل مصدر لوحده. تنسى نصف Context (السياق). تقرّر من فاتورة فقط — ولا تسمع أن العملاء يتحدّثون عن شيء آخر على الواتساب.",
@@ -102,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/analyst-m3-l1-three-sources.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**Three Sources → One Decision** (ID: `three-sources-merge`): **Behavior + Results + Words** in one place — **One Question = Stronger Answer"
+          "quote": "Three Sources → One Decision"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m3-l1-three-sources.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**٣ مصادر → قرار واحد** (معرّف: `three-sources-merge`): **سلوك + نتائج + كلام** في مكان واحد — **سؤال واحد = إجابة أقوى**. استخدمه في المهمة"
+          "quote": "٣ مصادر → قرار واحد"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m3-l1-three-sources.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**٣ مصادر → قرار واحد** (معرّف: `three-sources-merge`): **سلوك + نتائج + كلام** في مكان واحد — **سؤال واحد = إجابة أقوى**. استخدمه في المهمة"
+          "quote": "٣ مصادر → قرار واحد"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/analyst-m3-l1-three-sources.ts",
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Three Sources: \"One Source\" versus \"Three Sources\" — Behavior",
-    "ar-MSA": "المصادر الثلاثة: \"مصدر واحد\" في مقابل \"ثلاث مصادر\" — سلوك (Behavior)",
-    "ar-Gulf": "ثلاث مصادر: \"مصدر واحد\" في مقابل \"ثلاث مصادر\" — السلوك",
+    "en": "Three Sources: \"One Source\" versus \"Three Sources\" — Three Sources Complement Each Other",
+    "ar-MSA": "المصادر الثلاثة: \"مصدر واحد\" في مقابل \"ثلاث مصادر\" — ٣ مصادر تكمّل بعضها — 1. سلوك (Behavior) — ما يفعله الناس: زيارات، clicks، طلبات، رسائل واتساب. 2. نتائج (Results) — ما حدث فعلًا: مبيعات، فواتير، إيرادات، conversions. 3. كلام (Words) — ما يقوله الناس: شكاوى، استفسارات، ملاحظاتك، آراء العملاء. 4.",
+    "ar-Gulf": "ثلاث مصادر: \"مصدر واحد\" في مقابل \"ثلاث مصادر\" — ٣ مصادر تكمل بعضها — 1. السلوك — وش يسوي الناس: زيارات، نقرات، طلبات، رسائل واتساب. 2. النتائج — وش صار فعلًا: مبيعات، فواتير، إيرادات، تحويلات. 3. الكلام — وش يقولون الناس: شكاوى، استفسارات، ملاحظاتك، آراء العملاء. 4. مصدر واحد يعطيك جزء من الصورة — ا",
     "ar-EG": "إيه اللي عندك دلوقتي؟: \"مصدر واحد\" في مقابل \"تلات مصادر\" — فهمت إيه؟ القرار الكويس محتاج سلوك + نتائج + كلام — مصدر واحد بيديك جزء بس."
   },
   "aiPromptContract": null,
@@ -330,5 +354,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "7ea395420d0f8b1c72bf5b881cd583dad5d6ea34c4ac6698acc638b21f892429"
+  "checksum": "35be50bdb1139b6e74ff4a7d366b1de9d5fdfd1ad8583eaf78efae0b7224ed05"
 }

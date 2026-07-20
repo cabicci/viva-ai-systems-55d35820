@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "8b4dfa1101b8297272d89754f2687662bd8c4edd4c482ef42e50768a0dc3aebb",
+    "ar-MSA": "4a362ea9068424e1a57a8cfca94571364f5b50f4fc6f8c1b33333fe6a82405fb",
+    "ar-Gulf": "31ba1943af7c7f351ea8a8776ca0599e882c3c90a7e532c44714c6ab33a8eeba",
+    "ar-EG": "a085d0d327481312865bee89a1dab781dbfb8c3a0cd0f6e4f2c269f764dd7ccc"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -51,11 +57,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Consistency does not mean",
-      "ar-MSA": "الاتساق لا يعني",
-      "ar-Gulf": "الاتساق مو يعني",
+      "en": "Simple Consistency Delivers Meaning Faster",
+      "ar-MSA": "ثبات بسيط يوصل المعنى أسرع",
+      "ar-Gulf": "ثبات بسيط يوصل المعنى أسرع",
       "ar-EG": "الاتساق مش معناه كل بوست نسخة من التاني، لكنه يعني نفس الروح: ألوان قريبة، خط ثابت، ونوع أغلفة مفهوم."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Consistency helps strangers understand you quickly.",
+      "ar-MSA": "ماذا ستفهم؟ الاتساق يساعد الغريب أن يفهمك بسرعة.",
+      "ar-Gulf": "وش راح تفهم؟ الاتساق يساعد الغريب يفهمك بسرعة.",
+      "ar-EG": "أي شخص جديد بيدخل بروفايلك بياخد قرار سريع جدا: أكمل متابعة ولا أمشي."
+    },
+    "lessonObjects": [
+      "Grid Pattern",
+      "Cover Consistency",
+      "Visual Checklist",
+      "Inconsistent Grid",
+      "Consistent Grid",
+      "Simple Consistency Delivers Meaning Faster"
+    ],
+    "relationships": [
+      "Inconsistent Grid → Consistent Grid",
+      "Visual example — **a consistent grid**. **Consistency makes the message clear** **even before reading the details**.",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "A random grid = a confusing message. If each post has a different color and style — the visitor feels the account lacks direction even if the content is strong.",
       "ar-MSA": "شبكة عشوائية = رسالة مشوشة. إن كان لكل منشور لون وستايل مختلف — يشعر الزائر أن الحساب بلا اتجاه حتى لو المحتوى قوي.",
@@ -101,16 +126,16 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/creator-m7-l2-grid-consistency.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "Visual example — **a consistent grid**. **Consistency makes the message clear** **even before reading the details**."
+          "quote": "a consistent grid"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m7-l2-grid-consistency.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "الاتساق لا يعني"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m7-l2-grid-consistency.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "الاتساق مو يعني"
         },
         "ar-EG": {
@@ -122,9 +147,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "creator-m7-l2-grid-consistency's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Inconsistent Grid / Consistent Grid) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Inconsistent Grid\" vs \"Consistent Grid\" for creator-m7-l2-grid-consistency.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Inconsistent Grid\" vs \"Consistent Grid\" for creator-m7-l2-grid-consistency.",
   "labelPacks": {
     "en": [
       {
@@ -264,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Grid Consistency on Profile: \"Inconsistent Grid\" versus \"Consistent Grid\" — Consistency does not mean",
-    "ar-MSA": "اتساق شبكة الملف الشخصي: \"شبكة غير متسقة\" في مقابل \"شبكة متسقة\" — الاتساق لا يعني",
-    "ar-Gulf": "اتساق الشبكة في البروفايل: \"شبكة غير متسقة\" في مقابل \"شبكة متسقة\" — الاتساق مو يعني",
+    "en": "Grid Consistency on Profile: \"Inconsistent Grid\" versus \"Consistent Grid\" — Simple Consistency Delivers Meaning Faster",
+    "ar-MSA": "اتساق شبكة الملف الشخصي: \"شبكة غير متسقة\" في مقابل \"شبكة متسقة\" — ثبات بسيط يوصل المعنى أسرع",
+    "ar-Gulf": "اتساق الشبكة في البروفايل: \"شبكة غير متسقة\" في مقابل \"شبكة متسقة\" — ثبات بسيط يوصل المعنى أسرع",
     "ar-EG": "ثبات بسيط يوصل المعنى أسرع: \"جريد غير متسق\" في مقابل \"جريد متسق\" — الاتساق مش معناه كل بوست نسخة من التاني، لكنه يعني نفس الروح: ألوان قريبة، خط ثابت، ونوع أغلفة مفهوم."
   },
   "aiPromptContract": null,
@@ -329,5 +354,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "4c7dd58d8659f942598c2b8c691af12b98496fe1f40df0d1fba5988783cf79df"
+  "checksum": "d44702d0b41e423101be3aed97c4c19086489807182c47c301cea94b90aa80a8"
 }

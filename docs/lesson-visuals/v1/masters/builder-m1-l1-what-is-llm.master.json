@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "6378960b02a33f1f4d9ee8302ba8b248faee98013f1837b9f595221b61512f21",
+    "ar-MSA": "b4154d152ec7c8c57a4c047e6ed24ddf9d64fe3db0e367ea98a645ff9738034d",
+    "ar-Gulf": "477184d8ef09b992a55ea89915d2b7bc1df108999e306cc4087716c28741f3bb",
+    "ar-EG": "d8a95ba248ff9019fd4f857de46d9562fd6cfcf440a6a3a2029ee0f73d56cd12"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -53,11 +59,30 @@
       ]
     },
     "coreIdea": {
-      "en": "It predicts the most suitable text — it does not verify truth",
-      "ar-MSA": "يخمّن الكلام الأنسب — لا يتحقق من الحقيقة",
-      "ar-Gulf": "يخمّن الكلام الأنسب — مو يتحقق من الحقيقة",
+      "en": "The Core Idea — LLM (Large Language Model) = smart autocomplete at the level of complete sentences. It predicts the most suitable text — it does not search Google. When it responds confidently, this does not mean it \"understands\" — it means the sentence sounds logical.",
+      "ar-MSA": "الفكرة الأساسية — LLM (نموذج لغوي كبير) = autocomplete (إكمال تلقائي) ذكي على مستوى جمل كاملة. يتوقّع الكلام الأنسب — لا يبحث في Google. عندما يردّ بثقة، هذا ليس دليلًا أنه «يفهم» — بل أن الجملة شكلها منطقي.",
+      "ar-Gulf": "الفكرة الأساسية — LLM (نموذج لغوي كبير) = autocomplete (إكمال تلقائي) ذكي على مستوى جمل كاملة. يتوقع الكلام الأنسب — مو يبحث في Google. لما يردّ بثقة، هذا مو دليل إنه «يفهم» — بل إن الجملة شكلها منطقي.",
       "ar-EG": "تشبيه بسيط: LLM (نموذج لغوي كبير) = autocomplete ذكي على مستوى جمل كاملة. بيتوقّع الكلام الأنسب — مش بيبحث في Google."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? How an \"intelligent assistant\" completes text — like smart autocomplete — and does not guarantee truth.",
+      "ar-MSA": "ماذا ستفهم؟ كيف «المساعد الذكي» يكمّل الكلام — مثل autocomplete (إكمال تلقائي) ذكي — ولا يضمن الحقيقة.",
+      "ar-Gulf": "وش راح تفهم؟ كيف «المساعد الذكي» يكمل الكلام — مثل autocomplete (إكمال تلقائي) ذكي — مو مضمون الحقيقة.",
+      "ar-EG": "هتفهم إيه؟ إزاي «المساعد الذكي» بيكمّل الكلام — زي autocomplete ذكي — ومش بيضمن الحقيقة."
+    },
+    "lessonObjects": [
+      "LLM (Large Language Model)",
+      "Hallucination",
+      "Incorrect: Like Google",
+      "Correct: As a Language Assistant",
+      "The Core Idea",
+      "It predicts the most suitable text"
+    ],
+    "relationships": [
+      "Incorrect: Like Google → Correct: As a Language Assistant",
+      "AI assistant interface — Question + context + predicted response. The assistant is not programmed with ready-made answers.",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "I asked ChatGPT or Gemini a question — it confidently replied with information — and an hour later I found it incorrect. It seems like it \"knows\" — but the truth is it completes the most suitable text like an advanced au",
       "ar-MSA": "سألت ChatGPT أو Gemini سؤالًا — ردّ بثقة بمعلومة — وبعد ساعة وجدتها غير صحيحة. يبدو أنه «يعرف» — لكن الحقيقة أنه يكمل الكلام الأنسب مثل autocomplete متطوّر.",
@@ -107,12 +132,12 @@
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m1-l1-what-is-llm.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "يخمّن الكلام الأنسب — لا يتحقق من الحقيقة"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m1-l1-what-is-llm.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "يخمّن الكلام الأنسب — مو يتحقق من الحقيقة"
         },
         "ar-EG": {
@@ -124,9 +149,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "builder-m1-l1-what-is-llm's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Incorrect: Like Google / Correct: As a Language Assistant) instead of fabricating a UI capture.",
+  "methodRationale": "Authentic chatbot/product UI recognition would help, but no safe public URL verified HTTP 200 without login/bot wall (OpenAI/ChatGPT endpoints returned 403 from audit). Refusing to fabricate UI; using deterministic/hybrid with package labels.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Incorrect: Like Google\" vs \"Correct: As a Language Assistant\" for builder-m1-l1-what-is-llm.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Incorrect: Like Google\" vs \"Correct: As a Language Assistant\" for builder-m1-l1-what-is-llm.",
   "labelPacks": {
     "en": [
       {
@@ -266,9 +291,9 @@
     ]
   },
   "altTexts": {
-    "en": "What Is an LLM: \"Incorrect: Like Google\" versus \"Correct: As a Language Assistant\" — It predicts the most suitable text — it does not verify truth",
-    "ar-MSA": "ما هو نموذج اللغة الكبير: \"خطأ: كأنه Google\" في مقابل \"صح: كمساعد لغوي\" — يخمّن الكلام الأنسب — لا يتحقق من الحقيقة",
-    "ar-Gulf": "ما هو LLM: \"خطأ: كأنه Google\" في مقابل \"صح: كمساعد لغوي\" — يخمّن الكلام الأنسب — مو يتحقق من الحقيقة",
+    "en": "What Is an LLM: \"Incorrect: Like Google\" versus \"Correct: As a Language Assistant\" — The Core Idea — LLM (Large Language Model) = smart autocomplete at the level of complete sentences. It predicts the most suitable text — it does not search Google. When it responds confidently, this does not mean it",
+    "ar-MSA": "ما هو نموذج اللغة الكبير: \"خطأ: كأنه Google\" في مقابل \"صح: كمساعد لغوي\" — الفكرة الأساسية — LLM (نموذج لغوي كبير) = autocomplete (إكمال تلقائي) ذكي على مستوى جمل كاملة. يتوقّع الكلام الأنسب — لا يبحث في Google. عندما يردّ بثقة، هذا ليس دليلًا أنه «يفهم» — بل أن الجملة شكلها منطقي.",
+    "ar-Gulf": "ما هو LLM: \"خطأ: كأنه Google\" في مقابل \"صح: كمساعد لغوي\" — الفكرة الأساسية — LLM (نموذج لغوي كبير) = autocomplete (إكمال تلقائي) ذكي على مستوى جمل كاملة. يتوقع الكلام الأنسب — مو يبحث في Google. لما يردّ بثقة، هذا مو دليل إنه «يفهم» — بل إن الجملة شكلها منطقي.",
     "ar-EG": "بيخمّن الكلام الأنسب — مش بيتحقّق من الحقيقة: \"غلط: بتتعامل معاه كأنه Google\" في مقابل \"صح: بتتعامل معاه كمساعد لغوي\" — تشبيه بسيط: LLM (نموذج لغوي كبير) = autocomplete ذكي على مستوى جمل كاملة. بيتوقّع الكلام الأنسب — مش بيبحث في Google."
   },
   "aiPromptContract": null,
@@ -331,5 +356,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "b6560523142aae7e63247ae11d6e7cb2c85b7c7ee937ad8f680e61a50aab0fb8"
+  "checksum": "c1612c7bf66ca5d630afe497a3df2a02d967a428167d417451a4a4891724e4ae"
 }

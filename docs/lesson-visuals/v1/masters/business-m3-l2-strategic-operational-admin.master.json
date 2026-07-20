@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "7f602389fd17a9a5658689ca1400e61df6958480e15c4e811b85c25ac037a6a4",
+    "ar-MSA": "652161625050fd3098f79266bea5320df8f8e3a5de7a1d91475481658cbef673",
+    "ar-Gulf": "daea5d93bcc80a94fa109a351d81ca0522c8c04c8566a54c4878e5ba6eec9559",
+    "ar-EG": "44e4cf80ae7cca95fb7ba159f15d2f63732f78e29f2fc5191af0572cc8ba370b"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Strategic:",
-      "ar-MSA": "Strategic (استراتيجي):",
-      "ar-Gulf": "استراتيجي:",
+      "en": "3 Types of Work — Each with a Role for AI",
+      "ar-MSA": "٣ أنواع شغل — ولكل نوع دور للذكاء الاصطناعي",
+      "ar-Gulf": "٣ أنواع شغل — ولكل نوع دور للذكاء الاصطناعي",
       "ar-EG": "Strategic (استراتيجي): اتجاه، تسعير، شراكات، عرض جديد — قرارات نادرة وعالية التأثير. الـ AI شريك تفكير."
     },
+    "instructionalPurpose": {
+      "en": "What Will You Understand? Business owners struggle when administrative and operational tasks consume strategy — AI can lighten the administrative load.",
+      "ar-MSA": "ماذا ستفهم؟ أصحاب الأعمال يعلقون عندما يأكل الإداري والتشغيلي الاستراتيجية — والذكاء الاصطناعي يخفّف الحمل الإداري.",
+      "ar-Gulf": "وش راح تفهم؟ أصحاب الأعمال يواجهون صعوبة عندما تأخذ الأعمال الإدارية والتشغيلية من الاستراتيجية — والذكاء الاصطناعي يخفف العبء الإداري.",
+      "ar-EG": "هتفهم إيه؟ أصحاب البيزنس بيتعلّقوا لما الإداري والتشغيل ياكلوا الاستراتيجية — والـ AI يخفّف الحمل الإداري."
+    },
+    "lessonObjects": [
+      "Strategic",
+      "Administrative",
+      "80% Administrative",
+      "Reduced Administrative with AI",
+      "3 Types of Work",
+      "Each with a Role for AI"
+    ],
+    "relationships": [
+      "80% Administrative → Reduced Administrative with AI",
+      "Distribution of work types — Strategic · Operational · Admin. If the administrative column is longer than the others — start with one administrative task for AI",
+      "visual relationship kind: data-relationship"
+    ],
     "tension": {
       "en": "Bills, responses, coordination, files — by the end of the week, you realize you haven't thought about pricing, proposals, or expansion. Administration is essential — but when it takes up 80% of the week, work slows down",
       "ar-MSA": "فواتير، ردود، تنسيق، ملفات — نهاية الأسبوع تكتشف أنك لم تفكر في التسعير ولا العرض ولا التوسّع. الإداري ضروري — لكن عندما يأخذ ٨٠٪ من الأسبوع، يتحرّك العمل ببطء حتى لو كنت «تعمل كثيرًا».",
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "Strategic / Operational / Admin: \"80% Administrative\" versus \"Reduced Administrative with AI\" — Strategic:",
-    "ar-MSA": "استراتيجي وتشغيلي وإداري: \"٨٠٪ إداري\" في مقابل \"إداري مخفّض بالذكاء الاصطناعي\" — Strategic (استراتيجي):",
-    "ar-Gulf": "استراتيجي وتشغيلي وإداري: \"٨٠٪ إداري\" في مقابل \"إداري مخفّض بالذكاء الاصطناعي\" — استراتيجي:",
+    "en": "Strategic / Operational / Admin: \"80% Administrative\" versus \"Reduced Administrative with AI\" — 3 Types of Work — Each with a Role for AI",
+    "ar-MSA": "استراتيجي وتشغيلي وإداري: \"٨٠٪ إداري\" في مقابل \"إداري مخفّض بالذكاء الاصطناعي\" — ٣ أنواع شغل — ولكل نوع دور للذكاء الاصطناعي",
+    "ar-Gulf": "استراتيجي وتشغيلي وإداري: \"٨٠٪ إداري\" في مقابل \"إداري مخفّض بالذكاء الاصطناعي\" — ٣ أنواع شغل — ولكل نوع دور للذكاء الاصطناعي",
     "ar-EG": "٣ أنواع شغل — ولكل نوع دور AI: \"٨٠٪ إداري\" في مقابل \"إداري مخفّض بالـ AI\" — Strategic (استراتيجي): اتجاه، تسعير، شراكات، عرض جديد — قرارات نادرة وعالية التأثير. الـ AI شريك تفكير."
   },
   "aiPromptContract": null,
@@ -330,5 +355,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "5260cedcb24f2a2fa40b1add35ea158d6a56807585683c22aa1b3ce3e007e509"
+  "checksum": "737aa84a7225563032afb887785e03fc6f63b824ab814681ad821530d32d30f3"
 }

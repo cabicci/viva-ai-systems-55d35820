@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "0ebe2572ee79af461c2c67bf25b5b105a716b9d7345d56cbbdde192f4c452e75",
+    "ar-MSA": "52747fba763889f75cc0383ac16641d695b38918b403f96d4a551dde792c7e10",
+    "ar-Gulf": "22b30c60cfe6fd846aa212bd0fc13e134990755b64f54ac1c4289456b7ad4789",
+    "ar-EG": "c33f25a4c596c5d00b8693590062e261092702e53c9446bfe3f0b136e4b4f5e1"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Choose only 4 numbers",
-      "ar-MSA": "اختر ٤ أرقام فقط",
-      "ar-Gulf": "اختر ٤ أرقام بس",
+      "en": "4 decision numbers — not 40 metrics",
+      "ar-MSA": "٤ أرقام قرار — ليس ٤٠ metric (مقياس)",
+      "ar-Gulf": "٤ أرقام قرار — مو ٤٠ مقياس",
       "ar-EG": "اختار ٤ أرقام بس — لو واحد فيهم اتغيّر، قرارك يتغيّر. مش أي رقم «حلو يتعرض»."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? A Dashboard (a screen showing key numbers) starts with a few decision numbers — not 50 charts.",
+      "ar-MSA": "ماذا ستفهم؟ Dashboard (شاشة فيها أهم الأرقام) المفيد يبدأ بأرقام قرار قليلة — ليس ٥٠ رسمًا.",
+      "ar-Gulf": "وش راح تفهم؟ Dashboard (شاشة فيها أهم الأرقام) المفيد يبدأ بأرقام قرار قليلة — مو ٥٠ رسمًا.",
+      "ar-EG": "هتفهم إيه؟ الـ Dashboard (شاشة فيها أهم الأرقام) المفيد يبدأ بأرقام قرار قليلة — مش ٥٠ رسم."
+    },
+    "lessonObjects": [
+      "KPI (Key Performance Indicator)",
+      "Threshold",
+      "Full Dashboard",
+      "4 Clear Numbers",
+      "4 decision numbers",
+      "not 40 metrics"
+    ],
+    "relationships": [
+      "Full Dashboard → 4 Clear Numbers",
+      "**Weekly Dashboard with 4 slots** (identifier: `four-kpi-dashboard`): **4 numbers** — **each one:** **this week**, **last week**, **and the arrow**. **If one is",
+      "visual relationship kind: data-relationship"
+    ],
     "tension": {
       "en": "You open a sheet or tool with many charts — spend 10 minutes — and close it without knowing, \"What should I do?\". The problem is not lack of data — the problem is overload. Every extra number delays decision-making.",
       "ar-MSA": "تفتح Sheet أو أداة فيها charts كثيرة — تقضي ١٠ دقائق — وتغلق من دون أن تعرف «ماذا يجب أن أفعل؟» المشكلة ليس نقص بيانات — المشكلة ازدحام. كل رقم إضافي يؤخّر القرار.",
@@ -102,17 +127,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/analyst-m5-l1-four-numbers-dashboard.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**Weekly Dashboard with 4 slots** (identifier: `four-kpi-dashboard`): **4 numbers** — **each one:** **this week**, **last week**, **and the"
+          "quote": "Weekly Dashboard with 4 slots"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-l1-four-numbers-dashboard.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**Dashboard أسبوعي من ٤ خانات** (معرّف: `four-kpi-dashboard`): **٤ أرقام** — **كل واحد:** **هذا الأسبوع**، **السابق**، **والسهم**. **إذا واح"
+          "quote": "Dashboard أسبوعي من ٤ خانات"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-l1-four-numbers-dashboard.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**Dashboard أسبوعي من ٤ خانات** (معرّف: `four-kpi-dashboard`): **٤ أرقام** — **كل واحد:** **هذا الأسبوع**، **السابق**، **والسهم**. **إذا واح"
+          "quote": "Dashboard أسبوعي من ٤ خانات"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/analyst-m5-l1-four-numbers-dashboard.ts",
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "Four Numbers Dashboard: \"Full Dashboard\" versus \"4 Clear Numbers\" — Choose only 4 numbers",
-    "ar-MSA": "لوحة الأرقام الأربعة: \"Dashboard مليء\" في مقابل \"٤ أرقام واضحة\" — اختر ٤ أرقام فقط",
-    "ar-Gulf": "لوحة الأرقام الأربعة: \"Dashboard مليء\" في مقابل \"٤ أرقام واضحة\" — اختر ٤ أرقام بس",
+    "en": "Four Numbers Dashboard: \"Full Dashboard\" versus \"4 Clear Numbers\" — 4 decision numbers — not 40 metrics",
+    "ar-MSA": "لوحة الأرقام الأربعة: \"Dashboard مليء\" في مقابل \"٤ أرقام واضحة\" — ٤ أرقام قرار — ليس ٤٠ metric (مقياس)",
+    "ar-Gulf": "لوحة الأرقام الأربعة: \"Dashboard مليء\" في مقابل \"٤ أرقام واضحة\" — ٤ أرقام قرار — مو ٤٠ مقياس",
     "ar-EG": "٤ أرقام قرار — مش ٤٠ metric: \"Dashboard مليان\" في مقابل \"٤ أرقام واضحة\" — اختار ٤ أرقام بس — لو واحد فيهم اتغيّر، قرارك يتغيّر. مش أي رقم «حلو يتعرض»."
   },
   "aiPromptContract": null,
@@ -330,5 +355,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "1fba58a3025bc232a1964a3bbfdf28362a2b13cb993c7be09c5775fe6edfba0d"
+  "checksum": "24c6ef39eec5ebdff002543265512dfed1d331d85a837b367f01e0c337e071a7"
 }

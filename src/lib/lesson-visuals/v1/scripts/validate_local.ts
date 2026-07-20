@@ -12,8 +12,11 @@ import { validateEvidence } from "../validators/evidence";
 import { validateGenericLabelBan } from "../validators/genericLabelBan";
 import { validateLocaleIntegrity } from "../validators/localeIntegrity";
 import { validateManifest } from "../validators/manifest";
+import { validateGrounding } from "../validators/grounding";
 import { MANIFEST_PATH, MASTERS_DIR, REPO_ROOT, loadJson, quoteInFile, type ValidationIssue } from "../validators/shared";
 import { canonicalChecksum } from "./canonical";
+import { validateDispatchAuthorization, DEFAULT_FIXTURE_DISPATCH_ACTORS } from "../dispatch/authorizationContract";
+import { loadScreenshotAllowlist } from "../screenshotAssessment";
 
 const WORKFLOW_PATH = resolve(REPO_ROOT, ".github/workflows/lesson-driven-400-visual-pipeline.yml");
 
@@ -83,6 +86,15 @@ function validateMasterSchema(master: LessonVisualMaster): ValidationIssue[] {
     }
   }
 
+  if (typeof master.packageChecksums !== "object" || master.packageChecksums === null) {
+    issues.push({ gate: "schema", lessonId: id, message: "packageChecksums missing" });
+  } else {
+    for (const locale of LOCALES) {
+      const sum = (master.packageChecksums as Record<string, unknown>)[locale];
+      pushIf(issues, !isStr(sum as string) || !/^[a-f0-9]{64}$/.test(String(sum)), id, `packageChecksums.${locale} invalid`);
+    }
+  }
+
   const cb = master.contentBrief;
   if (!cb) {
     issues.push({ gate: "schema", lessonId: id, message: "contentBrief missing" });
@@ -99,8 +111,21 @@ function validateMasterSchema(master: LessonVisualMaster): ValidationIssue[] {
       }
     }
     checkLocaleStringMap(issues, id, "contentBrief.coreIdea", cb.coreIdea);
+    checkLocaleStringMap(issues, id, "contentBrief.instructionalPurpose", cb.instructionalPurpose);
     checkLocaleStringMap(issues, id, "contentBrief.tension", cb.tension);
     checkLocaleStringMap(issues, id, "contentBrief.missionIntro", cb.missionIntro);
+    pushIf(
+      issues,
+      !Array.isArray(cb.lessonObjects) || cb.lessonObjects.length < 2,
+      id,
+      "contentBrief.lessonObjects must have >=2 items",
+    );
+    pushIf(
+      issues,
+      !Array.isArray(cb.relationships) || cb.relationships.length < 1,
+      id,
+      "contentBrief.relationships must be non-empty",
+    );
 
     if (typeof cb.comparison !== "object" || cb.comparison === null) {
       issues.push({ gate: "schema", lessonId: id, message: "contentBrief.comparison missing" });
@@ -173,10 +198,14 @@ function validateMasterSchema(master: LessonVisualMaster): ValidationIssue[] {
   if (master.screenshotSpec !== null) {
     const s = master.screenshotSpec;
     pushIf(issues, !s || !isStr(s.rightsNote, 8), id, "screenshotSpec.rightsNote invalid");
+    pushIf(issues, !s || !isStr(s.exactUrl ?? s.url, 8), id, "screenshotSpec.exactUrl/url invalid");
+    pushIf(issues, !s || !isStr(s.product, 2), id, "screenshotSpec.product invalid");
+    pushIf(issues, !s || !isStr(s.capturePurpose, 8), id, "screenshotSpec.capturePurpose invalid");
+    pushIf(issues, !s || !isStr(s.rightsRationale, 8), id, "screenshotSpec.rightsRationale invalid");
     pushIf(issues, !s || s.failOnLoginRedirect !== true, id, "screenshotSpec.failOnLoginRedirect must be true");
     pushIf(issues, !s || s.allowlisted !== true, id, "screenshotSpec.allowlisted must be true");
     try {
-      if (s?.url) new URL(s.url);
+      if (s?.exactUrl || s?.url) new URL(s.exactUrl || s.url);
     } catch {
       issues.push({ gate: "schema", lessonId: id, message: "screenshotSpec.url is not a valid URI" });
     }
@@ -328,6 +357,101 @@ function validateWorkflowYaml(): ValidationIssue[] {
   return issues;
 }
 
+function validateScreenshotLedger(masters: LessonVisualMaster[]): ValidationIssue[] {
+  const issues: ValidationIssue[] = [];
+  const ledgerPath = resolve(REPO_ROOT, "docs/lesson-visuals/v1/ledgers/screenshot_rights_ledger.json");
+  const allowlistPath = resolve(REPO_ROOT, "src/lib/lesson-visuals/v1/screenshotAllowlist.json");
+  if (!existsSync(allowlistPath)) {
+    issues.push({ gate: "screenshotAudit", message: `missing allowlist ${allowlistPath}` });
+  } else {
+    try {
+      loadScreenshotAllowlist(allowlistPath);
+    } catch (e) {
+      issues.push({ gate: "screenshotAudit", message: `allowlist unreadable: ${String(e)}` });
+    }
+  }
+  if (!existsSync(ledgerPath)) {
+    issues.push({ gate: "screenshotAudit", message: `missing screenshot_rights_ledger.json` });
+    return issues;
+  }
+  const ledger = loadJson<{ entries?: { lessonId: string }[] }>(ledgerPath);
+  const entryIds = new Set((ledger.entries ?? []).map((e) => e.lessonId));
+  for (const m of masters) {
+    if (!entryIds.has(m.lessonId)) {
+      issues.push({
+        gate: "screenshotAudit",
+        lessonId: m.lessonId,
+        message: "missing from screenshot_rights_ledger (all 100 required)",
+      });
+    }
+    if (m.method === 3) {
+      if (!m.screenshotSpec?.exactUrl && !m.screenshotSpec?.url) {
+        issues.push({
+          gate: "screenshotAudit",
+          lessonId: m.lessonId,
+          message: "method 3 requires screenshotSpec with exactUrl",
+        });
+      }
+    }
+  }
+  if ((ledger.entries ?? []).length < 100) {
+    issues.push({
+      gate: "screenshotAudit",
+      message: `screenshot ledger must cover 100 lessons, found ${(ledger.entries ?? []).length}`,
+    });
+  }
+  return issues;
+}
+
+function validateDispatchContractSyntax(): ValidationIssue[] {
+  const issues: ValidationIssue[] = [];
+  const doc = resolve(REPO_ROOT, "docs/lesson-visuals/v1/DISPATCH_AUTHORIZATION.md");
+  if (!existsSync(doc)) {
+    issues.push({ gate: "dispatch", message: "missing DISPATCH_AUTHORIZATION.md" });
+  }
+  // Pure contract smoke: authorized lovable passes; cursor fails
+  const ok = validateDispatchAuthorization({
+    controlRoomAuthorizationId: "CR-VALIDATE-SMOKE-001",
+    approvedSourceSha: "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+    approvedManifestSha256: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    runMode: "full",
+    dispatchActor: "lovable",
+    githubActor: "lovable",
+    actualSourceSha: "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+    actualManifestSha256: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    allowedDispatchActors: DEFAULT_FIXTURE_DISPATCH_ACTORS,
+  });
+  if (!ok.ok) {
+    issues.push({ gate: "dispatch", message: `authorized lovable smoke failed: ${ok.errors.join("; ")}` });
+  }
+  const bad = validateDispatchAuthorization({
+    controlRoomAuthorizationId: "CR-VALIDATE-SMOKE-001",
+    approvedSourceSha: "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+    approvedManifestSha256: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    runMode: "full",
+    dispatchActor: "cursor",
+    allowedDispatchActors: DEFAULT_FIXTURE_DISPATCH_ACTORS,
+  });
+  if (bad.ok) {
+    issues.push({ gate: "dispatch", message: "cursor dispatch_actor must fail contract validation" });
+  }
+
+  if (existsSync(WORKFLOW_PATH)) {
+    const yaml = readFileSync(WORKFLOW_PATH, "utf8");
+    for (const key of [
+      "control_room_authorization_id",
+      "approved_manifest_sha256",
+      "dispatch_actor",
+      "dispatch-authority",
+    ]) {
+      if (!yaml.includes(key)) {
+        issues.push({ gate: "dispatch", message: `workflow missing ${key}` });
+      }
+    }
+  }
+  return issues;
+}
+
 // ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
@@ -353,8 +477,11 @@ function main() {
   allIssues.push(...validateGenericLabelBan());
   allIssues.push(...validateLocaleIntegrity());
   allIssues.push(...validateEvidence());
+  allIssues.push(...validateGrounding({ writeAuditLedger: true }));
   allIssues.push(...validateDuplicateTemplates(masters));
   allIssues.push(...validateWorkflowYaml());
+  allIssues.push(...validateScreenshotLedger(masters));
+  allIssues.push(...validateDispatchContractSyntax());
 
   const byGate = new Map<string, number>();
   for (const issue of allIssues) byGate.set(issue.gate, (byGate.get(issue.gate) ?? 0) + 1);

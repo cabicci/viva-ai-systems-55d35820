@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "b28d65441ac967dee53d37b3ccd6de3a245aaa94e17ae334f8f9f03caba140a5",
+    "ar-MSA": "fb9b0801d07672f2433f1ca01940706f87921e29b5efc78374e8cba02749ea6f",
+    "ar-Gulf": "9e14bbf68f1feb3b5be1016a2ddec97589462a28ffe4fff5321a4d1bac1ea0f8",
+    "ar-EG": "78214b86244da68ba74beb8719087b8632c9ef592a2457266435ee54c3936848"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Retry:",
-      "ar-MSA": "Retry (إعادة محاولة):",
-      "ar-Gulf": "Retry (إعادة محاولة):",
+      "en": "Expected Failure + Alert Before Pain",
+      "ar-MSA": "فشل متوقّع + تنبيه قبل الألم",
+      "ar-Gulf": "فشل متوقّع + تنبيه قبل الألم",
       "ar-EG": "Retry: جرّب تاني — كتير من الأخطاء مؤقتة (شبكة، timeout). ٢–٣ محاولات كفاية."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Automation fails — the question is, \"How will you know before the customer is hurt?\"",
+      "ar-MSA": "ماذا ستفهم؟ الأتمتة تفشل — السؤال «كيف ستعرف قبل أن يتأذى العميل؟»",
+      "ar-Gulf": "وش راح تفهم؟ الأتمتة تفشل — السؤال «كيف راح تعرف قبل أن يتأذى العميل؟»",
+      "ar-EG": "هتفهم إيه؟ الأتمتة بتفشل — السؤال مش «لو»، السؤال «إزاي هتعرف قبل ما العميل يتأذى»."
+    },
+    "lessonObjects": [
+      "Retry",
+      "Alert",
+      "Silent Failure",
+      "Immediate Alert",
+      "Expected Failure + Alert Before Pain"
+    ],
+    "relationships": [
+      "Silent Failure → Immediate Alert",
+      "Every layer in the **workflow** needs a backup plan: if it fails → what is the alternative?",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "\"200 customers received no response\" — and no one knew. API messages failed for a week — no email, no WhatsApp, no alert.",
       "ar-MSA": "«٢٠٠ عميل لم يجدوا ردًا» — ولم يعرف أحد. API الرسائل فشل أسبوعًا — لا بريد، لا واتساب، لا تنبيه.",
@@ -102,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/automator-m4-l3-error-handling.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "Every layer in the **workflow** needs a backup plan: if it fails → what is the alternative?"
+          "quote": "workflow"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l3-error-handling.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "كل طبقة في **مسار العمل (workflow)** تحتاج خطة بديلة: لو فشلت → ما البديل؟"
+          "quote": "مسار العمل (workflow)"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l3-error-handling.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "كل طبقة في **مسار العمل (workflow)** تحتاج خطة بديلة: لو فشلت → ما البديل؟"
+          "quote": "مسار العمل (workflow)"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/automator-m4-l3-error-handling.ts",
@@ -123,9 +147,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "automator-m4-l3-error-handling's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Silent Failure / Immediate Alert) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Silent Failure\" vs \"Immediate Alert\" for automator-m4-l3-error-handling.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Silent Failure\" vs \"Immediate Alert\" for automator-m4-l3-error-handling.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Error Handling: \"Silent Failure\" versus \"Immediate Alert\" — Retry:",
-    "ar-MSA": "معالجة الأخطاء: \"فشل صامت\" في مقابل \"تنبيه فوري\" — Retry (إعادة محاولة):",
-    "ar-Gulf": "إدارة الأخطاء: \"فشل صامت\" في مقابل \"تنبيه فوري\" — Retry (إعادة محاولة):",
+    "en": "Error Handling: \"Silent Failure\" versus \"Immediate Alert\" — Expected Failure + Alert Before Pain",
+    "ar-MSA": "معالجة الأخطاء: \"فشل صامت\" في مقابل \"تنبيه فوري\" — فشل متوقّع + تنبيه قبل الألم",
+    "ar-Gulf": "إدارة الأخطاء: \"فشل صامت\" في مقابل \"تنبيه فوري\" — فشل متوقّع + تنبيه قبل الألم",
     "ar-EG": "فشل متوقّع + تنبيه قبل الألم: \"فشل صامت\" في مقابل \"تنبيه فوري\" — Retry: جرّب تاني — كتير من الأخطاء مؤقتة (شبكة، timeout). ٢–٣ محاولات كفاية."
   },
   "aiPromptContract": null,
@@ -330,5 +354,5 @@
       "quote": "weight: 60"
     }
   ],
-  "checksum": "64ea3fd852644cddd6e76a807eca6de672918a11a4d54db1e7e111734b9d516d"
+  "checksum": "0eadd35a747571ace29dada6ecc8cbbbfa883a6572252d5ace0a43a190d764a5"
 }

@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "15bfb09160aa688a3e0ffa1c2961b7bc147161190319391b8bcc1729471df9c1",
+    "ar-MSA": "29ee46f462dac52e46fec9d924d0baba7654b6665ff569590865bae4723a6ec6",
+    "ar-Gulf": "cd8f5889b82467004cc1eebf6c4429f51827552034ed57215ccf76538585d760",
+    "ar-EG": "94263877acb5d3befb7cd0b23c976c87b94ab50a79ec9efec7a3c5c86fd58ed6"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Style",
-      "ar-MSA": "Style (الأسلوب)",
-      "ar-Gulf": "الأسلوب",
+      "en": "AI in Your Voice = Personalized Experience",
+      "ar-MSA": "الذكاء الاصطناعي بصوتك = تجربة مخصّصة",
+      "ar-Gulf": "الذكاء الاصطناعي بصوتك = تجربة مخصصة",
       "ar-EG": "Style = الشكل: رسمي ولا كاجوال؟ نقط ولا فقرات؟"
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? How to make AI speak in your voice — not in the voice of general ChatGPT.",
+      "ar-MSA": "ماذا ستفهم؟ كيف تجعل الذكاء الاصطناعي يتكلم بصوتك — ليس بصوت «ChatGPT العام».",
+      "ar-Gulf": "وش راح تفهم؟ كيف تخلي الذكاء الاصطناعي يتكلم بصوتك — مو بصوت «ChatGPT العام».",
+      "ar-EG": "هتفهم إيه؟ إزاي تخلي AI يتكلم بصوتك — مش بصوت «ChatGPT العام»."
+    },
+    "lessonObjects": [
+      "Tone",
+      "Voice Profile",
+      "General Request",
+      "Tone Request",
+      "AI in Your Voice = Personalized Experience"
+    ],
+    "relationships": [
+      "General Request → Tone Request",
+      "**Clear tone — not by chance:**",
+      "visual relationship kind: concept-scene"
+    ],
     "tension": {
       "en": "I requested a perfume description — and got: «Discover the magic of the luxurious scent that captivates hearts...» This is not your voice — this is a canned marketing voice. Every AI product without a Style Guide produce",
       "ar-MSA": "طلبت وصف برفان — وطلع: «اكتشف سحر الرائحة الفاخرة التي تأسر القلوب...» هذا ليس صوتك — هذا صوت تسويقي محفوظ. كل منتج ذكاء اصطناعي بدون Style Guide (دليل أسلوب) يخرج نفس الكلام.",
@@ -102,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m2-l3-style-control.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**Clear tone — not by chance:**"
+          "quote": "Clear tone — not by chance:"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l3-style-control.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**نبرة واضحة — ليست صدفة:**"
+          "quote": "نبرة واضحة — ليست صدفة:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l3-style-control.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**نبرة واضحة — مو صدفة:**"
+          "quote": "نبرة واضحة — مو صدفة:"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m2-l3-style-control.ts",
@@ -123,7 +147,7 @@
     }
   },
   "method": 2,
-  "methodRationale": "builder-m2-l3-style-control's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"Style\" without inventing UI chrome or rendering paid text.",
+  "methodRationale": "builder-m2-l3-style-control's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"AI in Your Voice = Personalized Experience\" without inventing UI chrome or rendering paid text.",
   "compositionPattern": "concept-scene-metaphor",
   "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"General Request\" vs \"Tone Request\" for builder-m2-l3-style-control.",
   "labelPacks": {
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Style Control: \"General Request\" versus \"Tone Request\" — Style",
-    "ar-MSA": "التحكّم في الأسلوب: \"طلب عام\" في مقابل \"طلب بنبرة\" — Style (الأسلوب)",
-    "ar-Gulf": "أساسيات التحكم في الأسلوب: \"طلب عام\" في مقابل \"طلب بنبرة\" — الأسلوب",
+    "en": "Style Control: \"General Request\" versus \"Tone Request\" — AI in Your Voice = Personalized Experience",
+    "ar-MSA": "التحكّم في الأسلوب: \"طلب عام\" في مقابل \"طلب بنبرة\" — الذكاء الاصطناعي بصوتك = تجربة مخصّصة",
+    "ar-Gulf": "أساسيات التحكم في الأسلوب: \"طلب عام\" في مقابل \"طلب بنبرة\" — الذكاء الاصطناعي بصوتك = تجربة مخصصة",
     "ar-EG": "AI بصوتك = تجربة مخصّصة: \"طلب عايم\" في مقابل \"طلب بنبرة\" — Style = الشكل: رسمي ولا كاجوال؟ نقط ولا فقرات؟"
   },
   "aiPromptContract": {
@@ -341,5 +365,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "308e6a61eb4f6b98cdeffc939d57392dbeabd3c46c8231251c1108e3cfb74918"
+  "checksum": "6bdcd8cb52f7a4e60353da8c99f1c137d1d7b19b284bc28548d52da2bb47a8ec"
 }

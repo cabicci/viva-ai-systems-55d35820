@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "21e5ef1a5fc6cb998ab381909dfb50842e1d36251080330ff364c40fe28b07a1",
+    "ar-MSA": "f6f4bc9d9a644f8842bb5cc543bdcc9da8b94623f446ab5c64f403d1a7df0587",
+    "ar-Gulf": "930ac56bccec433045b25bac1c6ff3443c04ec81f51f60cf85e8dc748ba8a084",
+    "ar-EG": "a7ce19cf80e9d77730bcfef6fcfd0e5d4c3d4463fddd341dd0ac308f396e8fd2"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -51,11 +57,30 @@
       ]
     },
     "coreIdea": {
-      "en": "not a reduction of opportunities",
-      "ar-MSA": "ليس تقليلًا للفرص",
-      "ar-Gulf": "ما يعني تقليل الفرص",
+      "en": "One Clear Audience is Better",
+      "ar-MSA": "جمهور واحد واضح أفضل — تحديد الجمهور ليس تقليلًا للفرص — بل تركيز يجعلك تصل بوضوح أسرع. الذكاء الاصطناعي قد يساعدك على ترتيب أفكار Persona (شخصية الجمهور) — لكن قرار من جمهورك الحقيقي يجب أن يخرج من ملاحظتك وخبرتك.",
+      "ar-Gulf": "جمهور واحد واضح أفضل — تحديد الجمهور ما يعني تقليل الفرص — بل تركيز يخليك توصل بوضوح أسرع. الذكاء الاصطناعي ممكن يساعدك في ترتيب أفكار شخصية الجمهور — لكن قرار من جمهورك الحقيقي لازم يجي من ملاحظتك وخبرتك.",
       "ar-EG": "تحديد الجمهور مش تقليل للفرص، ده تركيز يخليك توصل بوضوح أسرع."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? The most significant shift in content happens when you define who you are really addressing.",
+      "ar-MSA": "ماذا ستفهم؟ أقوى نقلة في المحتوى تحدث عندما تحدّد من الشخص الذي تخاطبه فعلًا.",
+      "ar-Gulf": "وش راح تفهم؟ أقوى نقلة في المحتوى تصير لما تحدد من الشخص اللي تخاطبه.",
+      "ar-EG": "أقوى نقلة في المحتوى بتحصل لما تحدد مين الشخص اللي بتخاطبه فعلًا."
+    },
+    "lessonObjects": [
+      "Persona",
+      "Pain Point",
+      "Audience Sentence",
+      "General Content",
+      "Targeted Content",
+      "One Clear Audience is Better"
+    ],
+    "relationships": [
+      "General Content → Targeted Content",
+      "**Audience Persona Map** — the diagram captures the complete picture: **the person**, **their problems**, and **the goal** they are looking for. (Production ID:",
+      "visual relationship kind: system"
+    ],
     "tension": {
       "en": "If you speak to everyone — you are not addressing anyone deeply. When the message is general, the recipient does not feel that the content is made for them.",
       "ar-MSA": "إذا تحدّثت إلى الجميع — فأنت لا تخاطب أحدًا بعمق. عندما يكون الكلام عامًا، لا يشعر المتلقي أن المحتوى صُنع له.",
@@ -101,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/creator-m2-l1-know-audience.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**Audience Persona Map** — the diagram captures the complete picture: **the person**, **their problems**, and **the goal** they are looking"
+          "quote": "Audience Persona Map"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m2-l1-know-audience.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**خريطة شخصية الجمهور** — الرسم يجمع الصورة كاملة: **الشخص**، **مشاكله**، **هدفه** الذي يبحث عنه. (معرّف الإنتاج: `audience-persona`.)"
+          "quote": "خريطة شخصية الجمهور"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m2-l1-know-audience.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**خريطة شخصية الجمهور** — الرسم يجمع الصورة كاملة: **الشخص**، **مشاكله**، **هدفه** اللي يبحث عنه. (معرّف الإنتاج: `audience-persona`.)"
+          "quote": "خريطة شخصية الجمهور"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/creator-m2-l1-know-audience.ts",
@@ -264,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Know Your Audience: \"General Content\" versus \"Targeted Content\" — not a reduction of opportunities",
-    "ar-MSA": "اعرف جمهورك: \"محتوى عام\" في مقابل \"محتوى موجّه\" — ليس تقليلًا للفرص",
-    "ar-Gulf": "تعرف على جمهورك: \"محتوى عام\" في مقابل \"محتوى موجه\" — ما يعني تقليل الفرص",
+    "en": "Know Your Audience: \"General Content\" versus \"Targeted Content\" — One Clear Audience is Better",
+    "ar-MSA": "اعرف جمهورك: \"محتوى عام\" في مقابل \"محتوى موجّه\" — جمهور واحد واضح أفضل — تحديد الجمهور ليس تقليلًا للفرص — بل تركيز يجعلك تصل بوضوح أسرع. الذكاء الاصطناعي قد يساعدك على ترتيب أفكار Persona (شخصية الجمهور) — لكن قرار من جمهورك الحقيقي يجب أن يخرج من ملاحظتك وخبرتك.",
+    "ar-Gulf": "تعرف على جمهورك: \"محتوى عام\" في مقابل \"محتوى موجه\" — جمهور واحد واضح أفضل — تحديد الجمهور ما يعني تقليل الفرص — بل تركيز يخليك توصل بوضوح أسرع. الذكاء الاصطناعي ممكن يساعدك في ترتيب أفكار شخصية الجمهور — لكن قرار من جمهورك الحقيقي لازم يجي من ملاحظتك وخبرتك.",
     "ar-EG": "جمهور واحد واضح أحسن: \"محتوى عام\" في مقابل \"محتوى موجه\" — تحديد الجمهور مش تقليل للفرص، ده تركيز يخليك توصل بوضوح أسرع."
   },
   "aiPromptContract": null,
@@ -329,5 +354,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "070187b557fc180d56a5bb96b4cefa98b32cb6a735681b9328ce28c5bf5e2a32"
+  "checksum": "4bb4fc3c3f81fd75d9defce13cf72d181de54f28d20a3bab8cbd738057c333d2"
 }

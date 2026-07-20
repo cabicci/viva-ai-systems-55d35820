@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "cdd49647d2a11e55094e0ccd7a13067b04f2158f72f9113c822fab4c68e258b1",
+    "ar-MSA": "21b7889a070c93a423e0614a56eb23172af88df911103637513bb12b6f0ad6d9",
+    "ar-Gulf": "c028033745f3f997f2edfeab1ff3310f70def2e941d1904e5efd359a91bfac1c",
+    "ar-EG": "0cc8a2579af07de1e154b7f547713f4d26464120c71cd9b90988a0499701bc8b"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Keep:",
-      "ar-MSA": "احتفظ:",
-      "ar-Gulf": "احتفظ:",
+      "en": "Matrix: Keep — Delegate — Automate",
+      "ar-MSA": "مصفوفة: احتفظ — فوّض — أتمت",
+      "ar-Gulf": "مصفوفة: احتفظ — فوّض — أتمت",
       "ar-EG": "احتفظ: قرارات نادرة، ثقة عالية، علاقة حساسة — ما تسلّمهاش لـ AI من غير مراجعة."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Not every task needs to stay with you — repetitive tasks can be delegated or automated, and AI can classify, summarize, and draft.",
+      "ar-MSA": "ماذا ستفهم؟ ليست كل مهمة يجب أن تبقى معك — المتكرر يُفوَّض أو يُؤتمت، والذكاء الاصطناعي يصنّف ويلخّص ويكتب مسودات.",
+      "ar-Gulf": "وش راح تفهم؟ مو كل مهمة لازم تبقى عندك — المتكررة تُفوَّض أو تُؤتمت، والذكاء الاصطناعي يصنّف ويلخّص ويكتب مسودات.",
+      "ar-EG": "هتفهم إيه؟ مش كل مهمة لازم تفضل معاك — المتكرر يتفوّض أو يتؤتمت، والـ AI يصنّف ويلخّص ويكتب مسودات."
+    },
+    "lessonObjects": [
+      "Delegate",
+      "Automate with AI",
+      "Everything with You",
+      "Smart Distribution",
+      "Matrix",
+      "Keep"
+    ],
+    "relationships": [
+      "Everything with You → Smart Distribution",
+      "The delegation and automation matrix — the two axes: task repetition and level of judgment. Start with one task in the 'Automate with AI' quadrant.",
+      "visual relationship kind: decision"
+    ],
     "tension": {
       "en": "A business owner writes every response, checks every invoice, reviews every post — then wonders why there’s no time to expand. Not every task deserves your time. Strategic decisions and sensitive relationships — those ar",
       "ar-MSA": "صاحب عمل يكتب كل رد، يحاسب كل فاتورة، يراجع كل منشور — ثم يتعجب لماذا لا وقت للتوسّع. ليست كل مهمة تستحق وقتك. القرارات الاستراتيجية والعلاقات الحساسة — معك. التكرار — للنظام أو للفريق أو للذكاء الاصطناعي.",
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "Delegate or Automate: \"Everything with You\" versus \"Smart Distribution\" — Keep:",
-    "ar-MSA": "التفويض أم الأتمتة: \"كل شيء معك\" في مقابل \"توزيع ذكي\" — احتفظ:",
-    "ar-Gulf": "التفويض أو الأتمتة: \"كل شيء معك\" في مقابل \"توزيع ذكي\" — احتفظ:",
+    "en": "Delegate or Automate: \"Everything with You\" versus \"Smart Distribution\" — Matrix: Keep — Delegate — Automate",
+    "ar-MSA": "التفويض أم الأتمتة: \"كل شيء معك\" في مقابل \"توزيع ذكي\" — مصفوفة: احتفظ — فوّض — أتمت",
+    "ar-Gulf": "التفويض أو الأتمتة: \"كل شيء معك\" في مقابل \"توزيع ذكي\" — مصفوفة: احتفظ — فوّض — أتمت",
     "ar-EG": "مصفوفة: احتفظ — فوّض — أتمت: \"كل حاجة معاك\" في مقابل \"توزيع ذكي\" — احتفظ: قرارات نادرة، ثقة عالية، علاقة حساسة — ما تسلّمهاش لـ AI من غير مراجعة."
   },
   "aiPromptContract": null,
@@ -330,5 +355,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "9b14d67fd9f018d05616371f90edb23a5612a4ee8ecb96dae42bd1c77dddef19"
+  "checksum": "86f886d1c90dbf5a5b146b093e0464085411b17b723374ad1439e88cc612b2b8"
 }

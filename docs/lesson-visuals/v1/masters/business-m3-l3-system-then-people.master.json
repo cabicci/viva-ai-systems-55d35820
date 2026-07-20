@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "823679442b4321194161436949e184d324216e65e0a8a733c947f028757a30a2",
+    "ar-MSA": "92ee234c7c3346eb354d5e17cd52aa7dbbfcbb42ad164e5e9b0c05433855f63f",
+    "ar-Gulf": "c084e0dcbdf9ea8e6a26d599820a6fe706f204f7f01a0597c3d29268df448b36",
+    "ar-EG": "ac591bb0e23d8d175ea4a6de3f7899c12239aef9a4b80b126c4ab5f23acf93e3"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,28 @@
       ]
     },
     "coreIdea": {
-      "en": "Step 1:",
-      "ar-MSA": "الخطوة ١:",
-      "ar-Gulf": "الخطوة ١:",
+      "en": "System → SOP → Testing → People",
+      "ar-MSA": "نظام → SOP → اختبار → ناس",
+      "ar-Gulf": "نظام → SOP → اختبار → ناس",
       "ar-EG": "الخطوة ١: اكتب العملية زي ما بتشرحها لصاحبك — حتى لو فوضوي."
     },
+    "instructionalPurpose": {
+      "en": "What Will You Understand? People perform better when the system is clear first — and AI transforms your explanation into a simple SOP (Standard Operating Procedure).",
+      "ar-MSA": "ماذا ستفهم؟ الناس تعمل أفضل عندما يكون النظام واضحًا أولًا — والذكاء الاصطناعي يحوّل شرحك إلى SOP (إجراء قياسي) بسيط.",
+      "ar-Gulf": "وش راح تفهم؟ الناس تشتغل أفضل لما يكون النظام واضح أولًا — والذكاء الاصطناعي يحوّل شرحك إلى SOP (إجراء قياسي) بسيط.",
+      "ar-EG": "هتفهم إيه؟ الناس بتشتغل أحسن لما النظام واضح الأول — والـ AI يحوّل شرحك لـ SOP بسيط."
+    },
+    "lessonObjects": [
+      "SOP (Standard Operating Procedure)",
+      "People Before System",
+      "SOP Then People",
+      "System → SOP → Testing → People"
+    ],
+    "relationships": [
+      "People Before System → SOP Then People",
+      "Order: **System → People**. A clear **SOP** is stronger than employees without guidance. Test the process before scaling the team.",
+      "visual relationship kind: system"
+    ],
     "tension": {
       "en": "A new employee asks, \"What should I do if the client says this?\" — and you respond from memory. The same explanation every day. This is not the employee's failure — it’s the absence of a system. Without an SOP, every hir",
       "ar-MSA": "موظف جديد يسأل «ماذا أفعل إذا قال العميل كذا؟» — وأنت ترد من الذاكرة. كل يوم نفس الشرح. هذا ليس فشل الموظف — بل غياب نظام. من دون SOP، كل توظيف يضيف شغل إدارة على رأسك.",
@@ -102,17 +125,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/business-m3-l3-system-then-people.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "Order: **System → People**. A clear **SOP** is stronger than employees without guidance. Test the process before scaling the team."
+          "quote": "System → People"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m3-l3-system-then-people.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "الترتيب: **System → People (نظام ثم ناس)**. **SOP** واحد واضح أقوى من موظفين بلا دليل. اختبر العملية قبل أن تكبّر الفريق."
+          "quote": "System → People (نظام ثم ناس)"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m3-l3-system-then-people.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "الترتيب: **System → People (نظام ثم ناس)**. **SOP** واحد واضح أقوى من موظفين بلا دليل. اختبر العملية قبل ما تكبّر الفريق."
+          "quote": "System → People (نظام ثم ناس)"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/business-m3-l3-system-then-people.ts",
@@ -233,9 +256,9 @@
     ]
   },
   "altTexts": {
-    "en": "System Then People: \"People Before System\" versus \"SOP Then People\" — Step 1:",
-    "ar-MSA": "النظام أولًا ثم الأشخاص: \"ناس قبل نظام\" في مقابل \"SOP ثم ناس\" — الخطوة ١:",
-    "ar-Gulf": "نظام ثم ناس: \"ناس قبل نظام\" في مقابل \"SOP ثم ناس\" — الخطوة ١:",
+    "en": "System Then People: \"People Before System\" versus \"SOP Then People\" — System → SOP → Testing → People",
+    "ar-MSA": "النظام أولًا ثم الأشخاص: \"ناس قبل نظام\" في مقابل \"SOP ثم ناس\" — نظام → SOP → اختبار → ناس",
+    "ar-Gulf": "نظام ثم ناس: \"ناس قبل نظام\" في مقابل \"SOP ثم ناس\" — نظام → SOP → اختبار → ناس",
     "ar-EG": "نظام → SOP → اختبار → ناس: \"ناس قبل نظام\" في مقابل \"SOP ثم ناس\" — الخطوة ١: اكتب العملية زي ما بتشرحها لصاحبك — حتى لو فوضوي."
   },
   "aiPromptContract": null,
@@ -298,5 +321,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "2d4f79250726d6514f23a7d4b19495fa4df59eface28df0ed8e5c3dc43969a0a"
+  "checksum": "b051022d8d8eabf5f1137e840e8abdf801543c7895273373f30de6787944cd2d"
 }

@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "a53aaf7939bd7955e7cc38c1bc749d5333be538391c7fe580edbe70b8da8e823",
+    "ar-MSA": "f09e97fcabaf0e85e6e99489049840373126d2dbae80c74f7932d17394320e3f",
+    "ar-Gulf": "fab289bfc99417114fc79f9db2426cb7f4fa5afb7ad3db0fbfebebf88d1ce205",
+    "ar-EG": "dac7a0ee4556c353d8312e66e8054b4f8380a77aab58f99800ceaa57275fe12e"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Context Window",
-      "ar-MSA": "Context Window (شباك الذاكرة)",
-      "ar-Gulf": "Context Window (شباك الذاكرة)",
+      "en": "AI does not remember forever",
+      "ar-MSA": "الذكاء الاصطناعي لا يتذكّر للأبد",
+      "ar-Gulf": "الذكاء الاصطناعي مو يتذكر للأبد",
       "ar-EG": "Context Window = «شباك ذاكرة» — الـ AI شايف آخر كم كلمة بس. اللي قبل كده وقع من المكتب."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Why does AI ‘forget’? — And how to design your product to remember what needs to be remembered.",
+      "ar-MSA": "ماذا ستفهم؟ لماذا الذكاء الاصطناعي «ينسى» — وكيف تصمّم منتجك ليحفظ ما يجب أن يُحفظ.",
+      "ar-Gulf": "وش راح تفهم؟ ليش الذكاء الاصطناعي «ينسى» — وكيف تصمّم منتجك عشان يحفظ الأشياء المهمة.",
+      "ar-EG": "هتفهم إيه؟ ليه AI «بينسى» — وإزاي تصمّم منتجك يحفظ اللي لازم يتحفظ."
+    },
+    "lessonObjects": [
+      "Context Window",
+      "State Snapshot",
+      "‘Continue from the beginning’",
+      "Summary + passing from the app",
+      "AI does not remember forever"
+    ],
+    "relationships": [
+      "‘Continue from the beginning’ → Summary + passing from the app",
+      "**Limited memory — explicit design:**",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "You explained an idea, you agreed on a plan — and soon the AI started suggesting the opposite of what you said. It’s not you — the AI really forgets. This isn’t a personal flaw — it’s a design limitation.",
       "ar-MSA": "شرحت فكرة، اتفقتم على خطة — وبعد قليل الذكاء الاصطناعي بدأ يقترح عكس ما قلته. ليس أنت — الذكاء الاصطناعي ينسى فعلًا. هذا ليس عيبًا شخصيًا — هذا حد في التصميم.",
@@ -102,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m3-l2-memory-limits.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**Limited memory — explicit design:**"
+          "quote": "Limited memory — explicit design:"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m3-l2-memory-limits.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**ذاكرة محدودة — تصميم صريح:**"
+          "quote": "ذاكرة محدودة — تصميم صريح:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m3-l2-memory-limits.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**ذاكرة محدودة — تصميم صريح:**"
+          "quote": "ذاكرة محدودة — تصميم صريح:"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m3-l2-memory-limits.ts",
@@ -123,9 +147,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "builder-m3-l2-memory-limits's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (‘Continue from the beginning’ / Summary + passing from the app) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"‘Continue from the beginning’\" vs \"Summary + passing from the app\" for builder-m3-l2-memory-limits.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"‘Continue from the beginning’\" vs \"Summary + passing from the app\" for builder-m3-l2-memory-limits.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Memory Limits: \"‘Continue from the beginning’\" versus \"Summary + passing from the app\" — Context Window",
-    "ar-MSA": "حدود الذاكرة: \"«كمّل من الأول»\" في مقابل \"ملخّص + تمرير من التطبيق\" — Context Window (شباك الذاكرة)",
-    "ar-Gulf": "حدود الذاكرة: \"«كمّل من الأول»\" في مقابل \"ملخّص + تمرير من التطبيق\" — Context Window (شباك الذاكرة)",
+    "en": "Memory Limits: \"‘Continue from the beginning’\" versus \"Summary + passing from the app\" — AI does not remember forever",
+    "ar-MSA": "حدود الذاكرة: \"«كمّل من الأول»\" في مقابل \"ملخّص + تمرير من التطبيق\" — الذكاء الاصطناعي لا يتذكّر للأبد",
+    "ar-Gulf": "حدود الذاكرة: \"«كمّل من الأول»\" في مقابل \"ملخّص + تمرير من التطبيق\" — الذكاء الاصطناعي مو يتذكر للأبد",
     "ar-EG": "AI مش بيفتكر للأبد: \"«كمّل من الأول»\" في مقابل \"ملخّص + تمرير من التطبيق\" — Context Window = «شباك ذاكرة» — الـ AI شايف آخر كم كلمة بس. اللي قبل كده وقع من المكتب."
   },
   "aiPromptContract": null,
@@ -330,5 +354,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "a4c3c80b76d93eecb7f9b1b230e40f967c57c2534ae241b06cfe6b61d42ef155"
+  "checksum": "bb7d417c643b27419f323943d920f0104a1e3e3ba9125554949c3f39fa9329eb"
 }

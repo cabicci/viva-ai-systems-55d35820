@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "309fc5debb43d581ba9f84bfb4f0ac3bf4d0378e3b4030799e759e37792c661e",
+    "ar-MSA": "e065a5ca07d2457adb572d8cf4738b47c3670ba735918bfe74fbab459d4fee3b",
+    "ar-Gulf": "97fbfc9888e2ba1be55b6e5326c6d25292195ee7c97a1713f10eac8e9fcdf485",
+    "ar-EG": "0f474311df9cb467e27288d38daa97e5cad29bd6f85ea56b7755cd7de09515af"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -56,11 +62,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Embedding",
-      "ar-MSA": "Embedding",
-      "ar-Gulf": "التضمين",
+      "en": "Embeddings find meaning — not words",
+      "ar-MSA": "Embeddings تجد المعنى — ليس الكلمات",
+      "ar-Gulf": "التضمينات تكتشف المعنى — مو الكلمات",
       "ar-EG": "Embedding (تحويل الكلام لأرقام تمثّل المعنى) = تحوّل أي نص لقايمة أرقام بتمثّل «مكانه على خريطة المعاني»."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Embedding (transforming text into numbers that represent meaning) finds meaning — not the literal word.",
+      "ar-MSA": "ماذا ستفهم؟ Embedding (تحويل الكلام لأرقام تمثّل المعنى) يجد المعنى — ليس الكلمة الحرفية.",
+      "ar-Gulf": "وش راح تفهم؟ التضمين (تحويل الكلام لأرقام تمثّل المعنى) يكتشف المعنى — مو الكلمة الحرفية.",
+      "ar-EG": "هتفهم إيه؟ الـ Embedding (تحويل الكلام لأرقام تمثّل المعنى) يلاقي المعنى — مش الكلمة الحرفية."
+    },
+    "lessonObjects": [
+      "Embedding (transforming text into numbers that represent meaning)",
+      "Vector Search (meaning-based search)",
+      "Word Search",
+      "Embedding",
+      "Embeddings find meaning",
+      "not words"
+    ],
+    "relationships": [
+      "Word Search → Embedding",
+      "**From text to vector to map:**",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "Traditional search looks for words literally. ‘Respond’ is not written in the article — even though the article explains the topic! The storage is good at comparing texts — but it doesn’t understand that ‘respond’, ‘answ",
       "ar-MSA": "البحث التقليدي يبحث عن الكلمات حرفيًا. «يرد» غير مكتوبة في المقال — رغم أن المقال يشرح الموضوع! المخزن جيد في مقارنة النصوص — لكنه لا يفهم أن «يرد» و«يجيب» و«يولّد ردًا» نفس الفكرة.",
@@ -106,17 +131,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m9-l2-embeddings.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**From text to vector to map:**"
+          "quote": "From text to vector to map:"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l2-embeddings.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**من نص إلى vector إلى خريطة:**"
+          "quote": "من نص إلى vector إلى خريطة:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l2-embeddings.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**من نص إلى Vector إلى خريطة:**"
+          "quote": "من نص إلى Vector إلى خريطة:"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m9-l2-embeddings.ts",
@@ -127,9 +152,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "builder-m9-l2-embeddings's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Word Search / Embedding) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Word Search\" vs \"Embedding\" for builder-m9-l2-embeddings.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Word Search\" vs \"Embedding\" for builder-m9-l2-embeddings.",
   "labelPacks": {
     "en": [
       {
@@ -269,9 +294,9 @@
     ]
   },
   "altTexts": {
-    "en": "Embeddings — How AI Finds Information: \"Word Search\" versus \"Embedding\" — Embedding",
-    "ar-MSA": "التضمينات — كيف يجد الذكاء الاصطناعي المعلومة: \"بحث بالكلمة\" في مقابل \"embedding\" — Embedding",
-    "ar-Gulf": "التضمينات — كيف يجد الـ AI المعلومة: \"بحث بالكلمة\" في مقابل \"التضمين\" — التضمين",
+    "en": "Embeddings — How AI Finds Information: \"Word Search\" versus \"Embedding\" — Embeddings find meaning — not words",
+    "ar-MSA": "التضمينات — كيف يجد الذكاء الاصطناعي المعلومة: \"بحث بالكلمة\" في مقابل \"embedding\" — Embeddings تجد المعنى — ليس الكلمات",
+    "ar-Gulf": "التضمينات — كيف يجد الـ AI المعلومة: \"بحث بالكلمة\" في مقابل \"التضمين\" — التضمينات تكتشف المعنى — مو الكلمات",
     "ar-EG": "Embeddings تلاقي المعنى — مش الكلمات: \"غلط — بحث بالكلمة\" في مقابل \"صح — embedding\" — Embedding (تحويل الكلام لأرقام تمثّل المعنى) = تحوّل أي نص لقايمة أرقام بتمثّل «مكانه على خريطة المعاني»."
   },
   "aiPromptContract": null,
@@ -334,5 +359,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "21a8347d69fbffcfb8e02ce642088ff4dca35095e34dfc08d34b9dbaa38e2149"
+  "checksum": "4557d3542bc5caae94f025409ee8c86006ead82452b6212cc0cd677e46390490"
 }

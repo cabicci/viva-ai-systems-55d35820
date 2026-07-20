@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "1bfd89e568bf2cb3ee0b3844e445d12d21391dd16dd7acb47052f9f16527264e",
+    "ar-MSA": "016a88586a8fa7fa66115413c59752852ba36ddd420b1d03f24bc20951aade83",
+    "ar-Gulf": "71b23ea20944b00e2aed7e6f3633aa43c7a59fb04b9079a2e4b2809abbafe6e2",
+    "ar-EG": "8b0eb3b3318047f76faad97f6bb17fa540a9b1bfe7b0ceb286a66b8ff760c47a"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -51,11 +57,30 @@
       ]
     },
     "coreIdea": {
-      "en": "sentence",
-      "ar-MSA": "بجملة",
-      "ar-Gulf": "بجملة",
+      "en": "Hook, Value, Proof, and CTA",
+      "ar-MSA": "خطاف ثم قيمة ثم دليل ثم CTA",
+      "ar-Gulf": "خطاف ثم قيمة ثم دليل ثم CTA",
       "ar-EG": "ابدأ بجملة توقف المشاهد، بعدها قدم القيمة الأساسية بوضوح."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? A script is not complicated — it is an order that prevents confusion during filming.",
+      "ar-MSA": "ماذا ستفهم؟ السكربت (Script) ليس تعقيدًا — هو ترتيب يمنع اللبس وقت التصوير.",
+      "ar-Gulf": "وش راح تفهم؟ السكربت (Script) مو معقد — هو ترتيب يمنع اللبس وقت التصوير.",
+      "ar-EG": "السكربت مش تعقيد، هو ترتيب يمنع اللخبطة وقت التصوير."
+    },
+    "lessonObjects": [
+      "Value Block",
+      "Proof",
+      "CTA",
+      "Without Structure",
+      "With Clear Structure",
+      "Hook"
+    ],
+    "relationships": [
+      "Without Structure → With Clear Structure",
+      "Visual snapshot — **the balanced script structure**. A **clear distribution** into **short parts** makes the script **focused** and **easy to execute**.",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "Improvisation loses the idea. Without structure: the video becomes long and loses its purpose.",
       "ar-MSA": "الارتجال يضيع الفكرة. من دون بنية: الفيديو يطول ويضيع منه الهدف.",
@@ -101,16 +126,16 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/creator-m3-l2-script-structure.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "Visual snapshot — **the balanced script structure**. A **clear distribution** into **short parts** makes the script **focused** and **easy t"
+          "quote": "the balanced script structure"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l2-script-structure.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "بجملة"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l2-script-structure.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "بجملة"
         },
         "ar-EG": {
@@ -122,9 +147,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "creator-m3-l2-script-structure's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Without Structure / With Clear Structure) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Without Structure\" vs \"With Clear Structure\" for creator-m3-l2-script-structure.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Without Structure\" vs \"With Clear Structure\" for creator-m3-l2-script-structure.",
   "labelPacks": {
     "en": [
       {
@@ -264,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Script Structure: \"Without Structure\" versus \"With Clear Structure\" — sentence",
-    "ar-MSA": "بنية السكربت: \"بدون بنية\" في مقابل \"ببنية واضحة\" — بجملة",
-    "ar-Gulf": "بنية السكربت: \"بدون هيكل\" في مقابل \"ببنية واضحة\" — بجملة",
+    "en": "Script Structure: \"Without Structure\" versus \"With Clear Structure\" — Hook, Value, Proof, and CTA",
+    "ar-MSA": "بنية السكربت: \"بدون بنية\" في مقابل \"ببنية واضحة\" — خطاف ثم قيمة ثم دليل ثم CTA",
+    "ar-Gulf": "بنية السكربت: \"بدون هيكل\" في مقابل \"ببنية واضحة\" — خطاف ثم قيمة ثم دليل ثم CTA",
     "ar-EG": "خطاف ثم قيمة ثم دليل ثم CTA: \"بدون بنية\" في مقابل \"ببنية واضحة\" — ابدأ بجملة توقف المشاهد، بعدها قدم القيمة الأساسية بوضوح."
   },
   "aiPromptContract": null,
@@ -329,5 +354,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "c2fcea48c4114860ad4e705d8ca46c8c673fd12dcbac6bdf39149503cfed9bff"
+  "checksum": "1ecfb117a689df3a96055e935b11b41b5326bcd557283c5cb4c6ad6b71f96f51"
 }

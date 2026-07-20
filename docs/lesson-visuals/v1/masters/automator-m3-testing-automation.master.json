@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "1daa6167a7145f2c234fd76b09a9416c34aeb2c8c8ced4e3198ae220ed32fe9d",
+    "ar-MSA": "76da44ba9f19ccd6dcc4e8872a1289f3f8fd74f70cd8899554aeaad27a7b5aad",
+    "ar-Gulf": "3c9c225c7d5c1c35f0d105b38ee4ef8b30e7a49c46e985ae8e9166fd2bc724a3",
+    "ar-EG": "707907af07361b1f21391613972fdb0bbeb4f7284c6ebf723b857f0787fcfd22"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Unit Test:",
-      "ar-MSA": "Unit Test (اختبار خطوة):",
-      "ar-Gulf": "اختبار الوحدة:",
+      "en": "4 Levels of Testing — Unit Test: If the name is empty, what happens? Integration Test: Run the entire Flow with test data.",
+      "ar-MSA": "٤ مستويات اختبار — Unit Test (اختبار خطوة): لو الاسم فارغ، ماذا يحدث؟ Integration Test (اختبار التدفق): شغّل Flow (تدفق عمل) كاملًا ببيانات تجريبية.",
+      "ar-Gulf": "٤ مستويات اختبار — اختبار الوحدة: لو الاسم فارغ، وش يصير؟ اختبار التكامل: شغّل التدفق كامل ببيانات تجريبية.",
       "ar-EG": "اختبار خطوة واحدة (Unit test): لو الاسم فاضي، إيه اللي يحصل؟"
     },
+    "instructionalPurpose": {
+      "en": "What Will You Understand? Testing prevents embarrassing mistakes in Automation — it's not just a technical luxury.",
+      "ar-MSA": "ماذا ستفهم؟ الاختبار يمنع أخطاء محرجة في الأتمتة (Automation) — ليس رفاهية تقنية.",
+      "ar-Gulf": "وش راح تفهم؟ الاختبار يمنع الأخطاء المحرجة في الأتمتة — مو مجرد رفاهية تقنية.",
+      "ar-EG": "هتفهم إيه؟ الاختبار بيمنع أخطاء محرجة في الأتمتة (Automation = حاجة شغالة تلقائي) — مش رفاهية تقنية."
+    },
+    "lessonObjects": [
+      "Unit Test",
+      "Integration Test",
+      "'We try on customers'",
+      "Checklist before going live",
+      "4 Levels of Testing",
+      "If the name is empty"
+    ],
+    "relationships": [
+      "'We try on customers' → Checklist before going live",
+      "Unit → Full flow → Edge cases → Manual review → Live",
+      "visual relationship kind: process"
+    ],
     "tension": {
       "en": "'The automation sent 'Hello undefined' to all customers' I ran the workflow in production without testing — 300 customers, trust lost in an hour.",
       "ar-MSA": "«الأتمتة أرسلت «مرحبًا undefined» لكل العملاء» شغّلت workflow على production من دون اختبار — ٣٠٠ عميل، ثقة ضاعت في ساعة.",
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "Testing Automation: \"'We try on customers'\" versus \"Checklist before going live\" — Unit Test:",
-    "ar-MSA": "اختبار الأتمتة: \"«نجرب على العملاء»\" في مقابل \"Checklist قبل live\" — Unit Test (اختبار خطوة):",
-    "ar-Gulf": "اختبار الأتمتة: \"«نجرب على العملاء»\" في مقابل \"قائمة التحقق قبل التشغيل\" — اختبار الوحدة:",
+    "en": "Testing Automation: \"'We try on customers'\" versus \"Checklist before going live\" — 4 Levels of Testing — Unit Test: If the name is empty, what happens? Integration Test: Run the entire Flow with test data.",
+    "ar-MSA": "اختبار الأتمتة: \"«نجرب على العملاء»\" في مقابل \"Checklist قبل live\" — ٤ مستويات اختبار — Unit Test (اختبار خطوة): لو الاسم فارغ، ماذا يحدث؟ Integration Test (اختبار التدفق): شغّل Flow (تدفق عمل) كاملًا ببيانات تجريبية.",
+    "ar-Gulf": "اختبار الأتمتة: \"«نجرب على العملاء»\" في مقابل \"قائمة التحقق قبل التشغيل\" — ٤ مستويات اختبار — اختبار الوحدة: لو الاسم فارغ، وش يصير؟ اختبار التكامل: شغّل التدفق كامل ببيانات تجريبية.",
     "ar-EG": "٤ مستويات اختبار — من خطوة لـ flow كامل: \"«نجرب على العملاء»\" في مقابل \"Checklist قبل live\" — اختبار خطوة واحدة (Unit test): لو الاسم فاضي، إيه اللي يحصل؟"
   },
   "aiPromptContract": null,
@@ -330,5 +355,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "4bd74ba60544a51db6d5d3f0c928c0f7e431f06853eedb1014dc448ce93bfbb2"
+  "checksum": "cbba4dbfa9dd093b42a61fb8de2c7bb12af270be3c58160bce1d117360a96529"
 }

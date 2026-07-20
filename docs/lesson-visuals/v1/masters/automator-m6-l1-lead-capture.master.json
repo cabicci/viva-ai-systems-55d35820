@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "085361b5ba22eeb1ec7e8fd980fc8ae2a50c46d4d620b378580fd3aae82324a7",
+    "ar-MSA": "4d382f1b570d78dae490fa9c5f7e98aeda7342a7c0850d0ec5f5366d15ec8a76",
+    "ar-Gulf": "ab042931a4805cf3602daff8ee1730a1876fd6518ee429991537b49dc2dd7659",
+    "ar-EG": "90a6c8b923dfaa18bf91eb3dd91b3fe6e0dbf90ca60189507f588bfb21061225"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -49,11 +55,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Webhook",
-      "ar-MSA": "Webhook (إشعار فوري)",
-      "ar-Gulf": "Webhook (إشعار فوري)",
+      "en": "Every lead equals a record, reply, and alert",
+      "ar-MSA": "كل lead = تسجيل + رد + تنبيه",
+      "ar-Gulf": "كل عميل محتمل = تسجيل + رد + تنبيه",
       "ar-EG": "Lead = أي حد أبدى اهتمام: فورم، واتساب، طلب حجز، استفسار خدمة."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Lead capture automation prevents losing potential customers — it records, replies, and alerts.",
+      "ar-MSA": "ماذا ستفهم؟ Lead capture automation يمنع ضياع المهتمين — تسجيل ورد وتنبيه.",
+      "ar-Gulf": "وش راح تفهم؟ أتمتة التقاط العملاء المحتملين تمنع ضياع المهتمين — تسجيل ورد وتنبيه.",
+      "ar-EG": "هتفهم إيه؟ Lead capture automation يمنع الناس المهتمة تضيع — كل استفسار يتسجّل ويترد عليه من غير نسيان."
+    },
+    "lessonObjects": [
+      "'They were interested — then they disappeared'",
+      "Every lead equals a record, reply, and alert",
+      "Every lead equals a record",
+      "reply",
+      "and alert"
+    ],
+    "relationships": [
+      "'They were interested — then they disappeared' → Every lead equals a record, reply, and alert",
+      "Every lead equals a record, reply, and alert",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "A form or message saying 'I want the price' — seen too late or forgotten. No system captures every Lead immediately.",
       "ar-MSA": "فورم أو رسالة «أريد السعر» — رُئيت متأخرًا أو نُسيت. لا نظام يمسك كل Lead (عميل محتمل) فورًا.",
@@ -94,22 +118,22 @@
     },
     "visualIntent": {
       "kind": "screenshot",
-      "summary": "send a welcome reply → alert",
+      "summary": "Every lead equals a record, reply, and alert",
       "packageQuotes": {
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/automator-m6-l1-lead-capture.json",
           "field": "sections[role=Core idea].contentMarkdown",
-          "quote": "**Webhook** for instant notification when the form is submitted."
+          "quote": "Webhook"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l1-lead-capture.json",
           "field": "sections[role=Core idea].contentMarkdown",
-          "quote": "**Webhook (إشعار فوري)** عند إرسال الفورم."
+          "quote": "Webhook (إشعار فوري)"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l1-lead-capture.json",
           "field": "sections[role=Core idea].contentMarkdown",
-          "quote": "**Webhook (إشعار فوري)** عند إرسال النموذج."
+          "quote": "Webhook (إشعار فوري)"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/automator-m6-l1-lead-capture.ts",
@@ -120,9 +144,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "automator-m6-l1-lead-capture's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels ('They were interested — then they disappeared' / Every lead equals a record, reply, and alert) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"'They were interested — then they disappeared'\" vs \"Every lead equals a record, reply, and alert\" for automator-m6-l1-lead-capture.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"'They were interested — then they disappeared'\" vs \"Every lead equals a record, reply, and alert\" for automator-m6-l1-lead-capture.",
   "labelPacks": {
     "en": [
       {
@@ -214,9 +238,9 @@
     ]
   },
   "altTexts": {
-    "en": "Lead Capture: \"'They were interested — then they disappeared'\" versus \"Every lead equals a record, reply, and alert\" — Webhook",
-    "ar-MSA": "التقاط العملاء المحتملين: \"«كان مهتمًا — ثم ضاع»\" في مقابل \"كل lead = تسجيل + رد + تنبيه\" — Webhook (إشعار فوري)",
-    "ar-Gulf": "انطلاق الدرس: \"«كان مهتمًا — ثم ضاع»\" في مقابل \"كل عميل محتمل = تسجيل + رد + تنبيه\" — Webhook (إشعار فوري)",
+    "en": "Lead Capture: \"'They were interested — then they disappeared'\" versus \"Every lead equals a record, reply, and alert\" — Every lead equals a record, reply, and alert",
+    "ar-MSA": "التقاط العملاء المحتملين: \"«كان مهتمًا — ثم ضاع»\" في مقابل \"كل lead = تسجيل + رد + تنبيه\" — كل lead = تسجيل + رد + تنبيه",
+    "ar-Gulf": "انطلاق الدرس: \"«كان مهتمًا — ثم ضاع»\" في مقابل \"كل عميل محتمل = تسجيل + رد + تنبيه\" — كل عميل محتمل = تسجيل + رد + تنبيه",
     "ar-EG": "كل lead = تسجيل فوري + رد + تنبيه: \"استقبال يدوي\" في مقابل \"Lead capture automation\" — Lead = أي حد أبدى اهتمام: فورم، واتساب، طلب حجز، استفسار خدمة."
   },
   "aiPromptContract": null,
@@ -237,5 +261,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "63e2bd5c20d908df052103b309914b2dfca5ca38c3c25ad9a9c7b7f0fbd0072e"
+  "checksum": "041e62ce7616f00182272122d3381380f87f7cb67303e4f943e98eda36d92b98"
 }

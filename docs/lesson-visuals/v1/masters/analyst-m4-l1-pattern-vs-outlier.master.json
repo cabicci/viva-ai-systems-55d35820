@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "9f1a9187c20e8f7fd32d1ac51492305d165489356ea36d291259a117e37e626b",
+    "ar-MSA": "269d26977454b5105e1fc8a9c519f9b625ee58196e6c4942fbe2dd4a1456b01e",
+    "ar-Gulf": "2a82d91a0a72abc7f680f884feb4453603ec224f6f8141fea73a92be510c4689",
+    "ar-EG": "a36e8f939afb883fe8fc9c1317dced56be75552daa6ee4c0796045da793e1a12"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Pattern:",
-      "ar-MSA": "Pattern (نمط):",
-      "ar-Gulf": "Pattern (نمط):",
+      "en": "Pattern = plan — Exception = understand",
+      "ar-MSA": "نمط = خطّط — استثناء = افهم",
+      "ar-Gulf": "نمط = خطط — استثناء = افهم",
       "ar-EG": "Pattern (نمط): حاجة بتتكرّر في فترات مختلفة — يستاهل تخطّط عليها (ميزانية، SOP، توقع)."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Not every strange number warrants changing your plan — you need to know: Is this a recurring pattern or an exception this one time?",
+      "ar-MSA": "ماذا ستفهم؟ ليس كل رقم غريب يستحق تغيير خطتك — يجب أن تعرف: هل هذا نمط يتكرّر أم استثناء لمرّة واحدة؟",
+      "ar-Gulf": "وش راح تفهم؟ مو كل رقم غريب يستحق تغيير خطتك — لازم تعرف: هل هذا نمط يتكرّر أو استثناء لمرة وحدة؟",
+      "ar-EG": "هتفهم إيه؟ مش كل رقم غريب يستاهل تغيّر خطتك — لازم تعرف: ده نمط بيتكرّر ولا استثناء لمرّة واحدة؟"
+    },
+    "lessonObjects": [
+      "Pattern",
+      "Outlier",
+      "Decision on one number",
+      "Reading before the decision",
+      "Pattern = plan",
+      "Exception = understand"
+    ],
+    "relationships": [
+      "Decision on one number → Reading before the decision",
+      "**Stable pattern and one-time jump** (ID: `pattern-vs-outlier`): **The stable line = pattern** you plan for. **The one-time jump = exception** you understand **",
+      "visual relationship kind: comparison"
+    ],
     "tension": {
       "en": "One day, sales tripled — so I decided to double the ads. The following week, they returned to normal. The problem: A strategic decision was made based on an exception. A one-time campaign, a big client, or a recording er",
       "ar-MSA": "يوم واحد المبيعات تضاعفت ٣ مرات — فقررت مضاعفة الإعلانات. الأسبوع التالي عادت للطبيعي. المشكلة: قرار استراتيجي اتُخذ على استثناء. حملة لمرّة واحدة، عميل كبير، أو خطأ تسجيل — ليس بالضرورة «نظامًا جديدًا».",
@@ -102,17 +127,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/analyst-m4-l1-pattern-vs-outlier.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**Stable pattern and one-time jump** (ID: `pattern-vs-outlier`): **The stable line = pattern** you plan for. **The one-time jump = exception"
+          "quote": "Stable pattern and one-time jump"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-l1-pattern-vs-outlier.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**نمط مستقر وقفزة لمرّة واحدة** (معرّف: `pattern-vs-outlier`): **الخط المستقر = نمط** تخطّط عليه. **القفزة الواحدة = استثناء** تفهم **سببه**"
+          "quote": "نمط مستقر وقفزة لمرّة واحدة"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-l1-pattern-vs-outlier.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**نمط مستقر وقفزة لمرة وحدة** (معرّف: `pattern-vs-outlier`): **الخط المستقر = نمط** تخطط عليه. **القفزة الواحدة = استثناء** تفهم **سببه** —"
+          "quote": "نمط مستقر وقفزة لمرة وحدة"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/analyst-m4-l1-pattern-vs-outlier.ts",
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "Pattern vs Outlier: \"Decision on one number\" versus \"Reading before the decision\" — Pattern:",
-    "ar-MSA": "النمط مقابل الشاذّ: \"قرار على رقم واحد\" في مقابل \"قراءة قبل القرار\" — Pattern (نمط):",
-    "ar-Gulf": "النمط مقابل الشذوذ: \"قرار على رقم واحد\" في مقابل \"قراءة قبل القرار\" — Pattern (نمط):",
+    "en": "Pattern vs Outlier: \"Decision on one number\" versus \"Reading before the decision\" — Pattern = plan — Exception = understand",
+    "ar-MSA": "النمط مقابل الشاذّ: \"قرار على رقم واحد\" في مقابل \"قراءة قبل القرار\" — نمط = خطّط — استثناء = افهم",
+    "ar-Gulf": "النمط مقابل الشذوذ: \"قرار على رقم واحد\" في مقابل \"قراءة قبل القرار\" — نمط = خطط — استثناء = افهم",
     "ar-EG": "نمط = خطّط — استثناء = افهم: \"قرار على رقم واحد\" في مقابل \"قراءة قبل القرار\" — Pattern (نمط): حاجة بتتكرّر في فترات مختلفة — يستاهل تخطّط عليها (ميزانية، SOP، توقع)."
   },
   "aiPromptContract": null,
@@ -330,5 +355,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "aae13df5d0876a25ac9abdb9a1ec20cbf340b142caae8241cf7d9875e5ce6670"
+  "checksum": "3f75422fd4d816c8961099efa54501b081135071aea768e9221045e506767c60"
 }

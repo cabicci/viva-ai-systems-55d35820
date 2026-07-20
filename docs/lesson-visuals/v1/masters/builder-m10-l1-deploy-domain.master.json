@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "609361a47332ee607a799fb82ae5f66b3de961c01f5402852235676da8174fcd",
+    "ar-MSA": "36cc048fdc6d4f86bfb0eb144bef67f27c26e04a0c7337247d2e6834fc08c1d4",
+    "ar-Gulf": "0b312ce5238769fb2b9f203c178202108ed5565059c2d7c74a02718a4c1b9fb6",
+    "ar-EG": "ddd2f3dfb2c6366eb33d1fb6b10a24a1e1d9030cddbf60885d7722b983e984fa"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Deploy",
-      "ar-MSA": "Deploy",
-      "ar-Gulf": "النشر (Deploy)",
+      "en": "Public link + Protected secrets",
+      "ar-MSA": "لينك عام + أسرار محمية — Deploy = الكود يذهب إلى سيرفر — الناس تفتحه من URL عام (مثل `my-app.com`). الأسرار (API keys، مفاتيح المخزن) تذهب إلى «خزنة» على السيرفر — Environment Variables (متغيرات البيئة) — ليس في GitHub.",
+      "ar-Gulf": "رابط عام + أسرار محمية — النشر (Deploy) = الكود يروح لسيرفر — الناس يقدرون يفتحه من URL عام (مثل `my-app.com`). الأسرار (مفاتيح API، مفاتيح المخزن) تروح لخزنة على السيرفر — متغيرات البيئة (Environment Variables) — مو في GitHub.",
       "ar-EG": "Deploy = الكود يروح سيرفر — الناس تفتحه من URL عام (زي `my-app.com`)."
     },
+    "instructionalPurpose": {
+      "en": "What will you learn? How to make your app accessible via a public link — and keep secrets safe.",
+      "ar-MSA": "ماذا ستفهم؟ كيف تطلّع تطبيقك بلينك عام — وتبقي الأسرار في مكان محمي.",
+      "ar-Gulf": "وش راح تفهم؟ كيف تطلّع تطبيقك برابط عام — وتخلي الأسرار في مكان آمن.",
+      "ar-EG": "هتفهم إيه؟ إزاي تطلّع تطبيقك بلينك عام — وتخلي الأسرار في مكان محمي."
+    },
+    "lessonObjects": [
+      "Deploy",
+      "Environment Variables",
+      "Secret in code",
+      "Secret in Env Vars",
+      "Public link + Protected secrets"
+    ],
+    "relationships": [
+      "Secret in code → Secret in Env Vars",
+      "**Build log — Successful deployment:**",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "Everything works on `localhost` — but no one in the world can access it. You send `localhost:5173` to your friend — it won't open for them. The app is still just an idea on your device.",
       "ar-MSA": "كل شيء يعمل على `localhost` — لكن لا أحد في العالم يستطيع فتحه. ترسل `localhost:5173` لصديقك — لن يفتح عنده. التطبيق ما زال فكرة على جهازك.",
@@ -102,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m10-l1-deploy-domain.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**Build log — Successful deployment:**"
+          "quote": "Build log — Successful deployment:"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m10-l1-deploy-domain.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**سجل البناء — إطلاق ناجح:**"
+          "quote": "سجل البناء — إطلاق ناجح:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m10-l1-deploy-domain.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**سجل البناء — إطلاق ناجح:**"
+          "quote": "سجل البناء — إطلاق ناجح:"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m10-l1-deploy-domain.ts",
@@ -123,9 +147,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "builder-m10-l1-deploy-domain's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Secret in code / Secret in Env Vars) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Secret in code\" vs \"Secret in Env Vars\" for builder-m10-l1-deploy-domain.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Secret in code\" vs \"Secret in Env Vars\" for builder-m10-l1-deploy-domain.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Deploy & Domain: \"Secret in code\" versus \"Secret in Env Vars\" — Deploy",
-    "ar-MSA": "النشر والدومين: \"سر في الكود\" في مقابل \"سر في Env Vars\" — Deploy",
-    "ar-Gulf": "إطلاق وتوزيع: \"سر في الكود\" في مقابل \"سر في متغيرات البيئة\" — النشر (Deploy)",
+    "en": "Deploy & Domain: \"Secret in code\" versus \"Secret in Env Vars\" — Public link + Protected secrets",
+    "ar-MSA": "النشر والدومين: \"سر في الكود\" في مقابل \"سر في Env Vars\" — لينك عام + أسرار محمية — Deploy = الكود يذهب إلى سيرفر — الناس تفتحه من URL عام (مثل `my-app.com`). الأسرار (API keys، مفاتيح المخزن) تذهب إلى «خزنة» على السيرفر — Environment Variables (متغيرات البيئة) — ليس في GitHub.",
+    "ar-Gulf": "إطلاق وتوزيع: \"سر في الكود\" في مقابل \"سر في متغيرات البيئة\" — رابط عام + أسرار محمية — النشر (Deploy) = الكود يروح لسيرفر — الناس يقدرون يفتحه من URL عام (مثل `my-app.com`). الأسرار (مفاتيح API، مفاتيح المخزن) تروح لخزنة على السيرفر — متغيرات البيئة (Environment Variables) — مو في GitHub.",
     "ar-EG": "لينك عام + أسرار محمية: \"غلط — سر في الكود\" في مقابل \"صح — سر في Env Vars\" — Deploy = الكود يروح سيرفر — الناس تفتحه من URL عام (زي `my-app.com`)."
   },
   "aiPromptContract": null,
@@ -330,5 +354,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "4754afd768673eff356f5a2dabcb6a0f4831960cb9a86cca2a3afb66871a4113"
+  "checksum": "9308d5c6a8de25ade8653e8bea499e86d9c80cd8739a1ad1a8d5433dbec2b4dd"
 }

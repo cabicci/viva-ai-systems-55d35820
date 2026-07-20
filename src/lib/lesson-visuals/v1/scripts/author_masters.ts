@@ -6,6 +6,7 @@
  * Does NOT generate production visual assets. Does NOT commit/push/dispatch.
  * Run: bun run src/lib/lesson-visuals/v1/scripts/author_masters.ts
  */
+import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import type {
@@ -17,7 +18,12 @@ import type {
   Locale,
   Method,
 } from "../types";
-import { BANNED_GENERIC_LABELS, LOCALES } from "../types";
+import { BANNED_GENERIC_LABELS, LOCALES, MIN_MEANINGFUL_BRIEF_CHARS } from "../types";
+import {
+  assessScreenshotDecision,
+  loadScreenshotAllowlist,
+  type ScreenshotDecision,
+} from "../screenshotAssessment";
 import { canonicalChecksum } from "./canonical";
 import { parseArEgLessonFile, unescapeJsString, type ArEgParseResult } from "./parse_ar_eg";
 
@@ -109,11 +115,96 @@ function sectionSummary(section: LessonSection | undefined, maxLen = 220): strin
   return text.length > maxLen ? text.slice(0, maxLen).trim() : text;
 }
 
-function coreIdeaFromSection(section: LessonSection | undefined, maxLen = 220): string {
+/**
+ * Prefer substantive core-idea text from packages. Never keep a thin firstBold
+ * token like "workflow" / "Zapier" when a subtitle or bullet paragraph exists.
+ */
+function coreIdeaFromSection(section: LessonSection | undefined, maxLen = 280): string {
   if (!section) return "";
+  const subtitle = stripBold(section.subtitle ?? "").trim();
+  const summary = sectionSummary(section, maxLen);
   const bold = firstBold(section.contentMarkdown ?? "");
-  if (bold) return bold.length > maxLen ? bold.slice(0, maxLen).trim() : bold;
-  return sectionSummary(section, maxLen);
+
+  const candidates = [
+    subtitle.length >= MIN_MEANINGFUL_BRIEF_CHARS
+      ? subtitle
+      : subtitle.length >= 8 && summary.length >= 12 && !summary.startsWith(subtitle)
+        ? `${subtitle} — ${summary}`
+        : "",
+    summary.length >= MIN_MEANINGFUL_BRIEF_CHARS ? summary : "",
+    bold && bold.length >= MIN_MEANINGFUL_BRIEF_CHARS ? bold : "",
+    subtitle.length >= 8 && bold && bold.length >= 4 && bold.toLowerCase() !== subtitle.toLowerCase()
+      ? `${subtitle}: ${bold}`
+      : "",
+    summary,
+    subtitle,
+    bold ?? "",
+  ]
+    .map((s) => s.trim())
+    .filter((s) => s.length >= 2);
+
+  for (const c of candidates) {
+    if ((BANNED_GENERIC_LABELS as readonly string[]).some((b) => b.toLowerCase() === c.toLowerCase())) {
+      continue;
+    }
+    if (c.length >= MIN_MEANINGFUL_BRIEF_CHARS || candidates.every((x) => x.length < MIN_MEANINGFUL_BRIEF_CHARS)) {
+      return c.length > maxLen ? c.slice(0, maxLen).trim() : c;
+    }
+  }
+  return (summary || subtitle || bold || "").slice(0, maxLen).trim();
+}
+
+function instructionalPurposeFrom(
+  data: LocaleLessonJson,
+  title: string,
+  coreIdea: string,
+): string {
+  const orient = findSectionByRole(data, /^Orientation$/);
+  const firstBullet = stripBold(orient?.bullets?.[0] ?? "");
+  if (firstBullet.length >= MIN_MEANINGFUL_BRIEF_CHARS) return firstBullet.slice(0, 280);
+  const orientSummary = sectionSummary(orient, 280);
+  if (orientSummary.length >= MIN_MEANINGFUL_BRIEF_CHARS) return orientSummary;
+  const mission = stripBold(findSectionByRole(data, /^Mission$/)?.mission?.intro ?? "");
+  if (mission.length >= MIN_MEANINGFUL_BRIEF_CHARS) return mission.slice(0, 280);
+  const combined = `Understand ${title}: ${coreIdea}`.trim();
+  return combined.slice(0, 280);
+}
+
+function lessonObjectsFrom(en: LocaleLessonJson, comparison: ComparisonPack, coreIdea: string): string[] {
+  const terms = jsonGlossaryTerms(en).slice(0, 4);
+  const objects = [
+    ...terms,
+    comparison.leftLabel,
+    comparison.rightLabel,
+    ...coreIdea
+      .split(/[—–:,.]+/)
+      .map((s) => s.trim())
+      .filter((s) => s.length >= 3 && s.length <= 48),
+  ]
+    .map(stripBold)
+    .filter((t) => t.length >= 2 && !isBanned(t));
+  const uniq: string[] = [];
+  for (const o of objects) {
+    if (!uniq.some((u) => u.toLowerCase() === o.toLowerCase())) uniq.push(o);
+    if (uniq.length >= 6) break;
+  }
+  while (uniq.length < 2) {
+    uniq.push(uniq.length === 0 ? comparison.leftLabel : comparison.rightLabel);
+  }
+  return uniq;
+}
+
+function relationshipsFrom(comparison: ComparisonPack, visualSummary: string, kind: string): string[] {
+  const rels = [
+    `${comparison.leftLabel} → ${comparison.rightLabel}`,
+    visualSummary.length >= 8 ? visualSummary.slice(0, 160) : "",
+    kind ? `visual relationship kind: ${kind}` : "",
+  ].filter((s) => s.length >= 4);
+  return rels.length > 0 ? rels : [`${comparison.leftLabel} versus ${comparison.rightLabel}`];
+}
+
+function sha256FileBytes(absPath: string): string {
+  return createHash("sha256").update(readFileSync(absPath)).digest("hex");
 }
 
 /**
@@ -437,6 +528,7 @@ function main() {
 
   type MasterDraft = Omit<LessonVisualMaster, "checksum">;
   const drafts: MasterDraft[] = [];
+  const screenshotDecisions = new Map<string, ScreenshotDecision>();
 
   for (const bundle of bundles) {
     const { lessonId, en, arMsa, arGulf, arEg } = bundle;
@@ -457,6 +549,13 @@ function main() {
       "ar-EG": { path: arEgRelPath(lessonId), kind: "ts-blocks" },
     };
 
+    const packageChecksums: Record<Locale, string> = {
+      en: sha256FileBytes(resolve(REPO_ROOT, sourcePackages.en.path)),
+      "ar-MSA": sha256FileBytes(resolve(REPO_ROOT, sourcePackages["ar-MSA"].path)),
+      "ar-Gulf": sha256FileBytes(resolve(REPO_ROOT, sourcePackages["ar-Gulf"].path)),
+      "ar-EG": sha256FileBytes(resolve(REPO_ROOT, sourcePackages["ar-EG"].path)),
+    };
+
     // ---- contentBrief -----------------------------------------------------
     const orientation: Record<Locale, string[]> = {
       en: (findSectionByRole(en, /^Orientation$/)?.bullets ?? []).map(stripBold).filter(Boolean),
@@ -475,7 +574,37 @@ function main() {
       en: coreIdeaFromSection(findSectionByRole(en, /^Core idea$/)),
       "ar-MSA": coreIdeaFromSection(findSectionByRole(arMsa, /^Core idea$/)),
       "ar-Gulf": coreIdeaFromSection(findSectionByRole(arGulf, /^Core idea$/)),
-      "ar-EG": arEg.coreIdeaParagraphs[0] || arEg.coreIdeaTitle,
+      "ar-EG": (() => {
+        const para = (arEg.coreIdeaParagraphs[0] || "").trim();
+        const title = (arEg.coreIdeaTitle || "").trim();
+        if (para.length >= MIN_MEANINGFUL_BRIEF_CHARS) return para;
+        if (title.length >= MIN_MEANINGFUL_BRIEF_CHARS) return title;
+        if (para && title && para !== title) return `${title} — ${para}`.slice(0, 280);
+        return para || title || titles["ar-EG"];
+      })(),
+    };
+    for (const locale of LOCALES) {
+      if (coreIdea[locale].trim().length < MIN_MEANINGFUL_BRIEF_CHARS) {
+        const orientBits = orientation[locale].join(" ");
+        coreIdea[locale] = (
+          orientBits.length >= MIN_MEANINGFUL_BRIEF_CHARS
+            ? orientBits
+            : `${titles[locale]}: ${coreIdea[locale] || orientBits}`
+        ).slice(0, 280);
+      }
+    }
+
+    const instructionalPurpose: Record<Locale, string> = {
+      en: instructionalPurposeFrom(en, titles.en, coreIdea.en),
+      "ar-MSA": instructionalPurposeFrom(arMsa, titles["ar-MSA"], coreIdea["ar-MSA"]),
+      "ar-Gulf": instructionalPurposeFrom(arGulf, titles["ar-Gulf"], coreIdea["ar-Gulf"]),
+      "ar-EG": (() => {
+        const o = arEg.orientationParagraphs[0] || "";
+        if (o.length >= MIN_MEANINGFUL_BRIEF_CHARS) return o.slice(0, 280);
+        const m = arEg.missionIntro || "";
+        if (m.length >= MIN_MEANINGFUL_BRIEF_CHARS) return m.slice(0, 280);
+        return `فهم ${titles["ar-EG"]}: ${coreIdea["ar-EG"]}`.slice(0, 280);
+      })(),
     };
 
     function tensionOrFallback(data: LocaleLessonJson): string {
@@ -532,6 +661,7 @@ function main() {
     let kind: ContentBrief["visualIntent"]["kind"];
     let method: Method;
     let diagramId: string | undefined;
+    let screenshotDecision: ScreenshotDecision | null = null;
 
     if (intentRaw === "diagram") {
       diagramId = arEg.visual.id;
@@ -550,6 +680,23 @@ function main() {
       [cleanQuoteCandidate(visSectionEn?.contentMarkdown ?? "", 160), cleanQuoteCandidate(coreIdea.en, 160), cleanQuoteCandidate(titles.en, 160)].find(
         (s) => s.length >= 8,
       ) ?? `Visual relationship for ${lessonId}`;
+
+    // Reassess screenshot method 3 with conclusive per-lesson evidence (no capture).
+    const packageIntentForShot: "screenshot" | "diagram" | "none" =
+      intentRaw === "diagram" ? "diagram" : intentRaw === "screenshot" ? "screenshot" : "none";
+    screenshotDecision = assessScreenshotDecision({
+      lessonId,
+      packageIntent: packageIntentForShot,
+      visualSummary: `${visualSummary} ${visSectionEn?.contentMarkdown ?? ""}`,
+      fallbackMethod: method,
+    });
+    if (screenshotDecision.method === 3 && screenshotDecision.screenshotSpec) {
+      method = 3;
+      kind = "screenshot";
+    }
+
+    const lessonObjects = lessonObjectsFrom(en, cmpEn, coreIdea.en);
+    const relationships = relationshipsFrom(cmpEn, visualSummary, kind);
 
     function packageQuoteFor(locale: Locale): { path: string; field: string; quote: string } {
       const path = sourcePackages[locale].path;
@@ -585,6 +732,9 @@ function main() {
     const contentBrief: ContentBrief = {
       orientation,
       coreIdea,
+      instructionalPurpose,
+      lessonObjects,
+      relationships,
       tension,
       comparison,
       missionIntro,
@@ -592,15 +742,22 @@ function main() {
     };
 
     // ---- composition pattern + rationale -----------------------------------
-    const compositionPattern = COMPOSITION_PATTERN_BY_KIND[kind];
+    const compositionPattern =
+      method === 3 ? "authentic-screenshot-frame" : COMPOSITION_PATTERN_BY_KIND[kind];
 
     let methodRationale: string;
     if (method === 1) {
       methodRationale = `${lessonId}'s package marks a Diagram intent (${diagramId ?? "unlabeled"}); the underlying relationship reads as ${kind}, so a deterministic SVG panel keeps the real ${cmpEn.leftLabel}/${cmpEn.rightLabel} labels crisp in Arabic and English without any paid generation step.`;
     } else if (method === 2) {
       methodRationale = `${lessonId}'s screenshot intent centers on an abstract idea rather than a literal interface (metaphor score ${metaphorScore(bundle)}), so a text-free AI illustration communicates "${coreIdea.en}" without inventing UI chrome or rendering paid text.`;
+    } else if (method === 3) {
+      methodRationale =
+        screenshotDecision?.reason ??
+        `${lessonId}: authentic public product UI recognition selected (method 3) with allowlisted URL.`;
     } else {
-      methodRationale = `${lessonId}'s package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (${cmpEn.leftLabel} / ${cmpEn.rightLabel}) instead of fabricating a UI capture.`;
+      methodRationale =
+        screenshotDecision?.reason ??
+        `${lessonId}'s package marks a Screenshot intent but authentic capture is not selected; a hybrid deterministic frame carries the real locale labels (${cmpEn.leftLabel} / ${cmpEn.rightLabel}) instead of fabricating a UI capture.`;
     }
 
     // ---- label packs --------------------------------------------------------
@@ -700,7 +857,8 @@ function main() {
             costCeilingUsd: 0,
           }
         : null;
-    const screenshotSpec: LessonVisualMaster["screenshotSpec"] = null;
+    const screenshotSpec: LessonVisualMaster["screenshotSpec"] =
+      method === 3 ? screenshotDecision?.screenshotSpec ?? null : null;
 
     // ---- factual claims (rubric weights only) ---------------------------------
     const factualClaims: FactualClaim[] = [];
@@ -729,6 +887,10 @@ function main() {
       });
     });
 
+    if (screenshotDecision) {
+      screenshotDecisions.set(lessonId, screenshotDecision);
+    }
+
     drafts.push({
       schemaVersion: "lesson-visual-master/v1",
       lessonId,
@@ -737,6 +899,7 @@ function main() {
       sourceSha: SOURCE_SHA,
       titles,
       sourcePackages,
+      packageChecksums,
       contentBrief,
       method,
       methodRationale,
@@ -809,16 +972,38 @@ function main() {
         ledgerVersion: "lesson-visuals-screenshot-rights/v1",
         sourceSha: SOURCE_SHA,
         generatedAt,
-        allowlistHostsChecked: ["masaarat.ai", "www.masaarat.ai", "learn.masaarat.ai", "docs.masaarat.ai"],
-        note: "No safe, allowlisted Masaarat public lesson-screenshot URL is known for this candidate pipeline; method 3 is never selected, and every lesson's screenshot intent is assessed but not used.",
-        entries: finalMasters
-          .filter((m) => m.contentBrief.visualIntent.kind === "screenshot" || m.contentBrief.visualIntent.kind === "concept-scene" || m.method === 2 || m.method === 4)
-          .map((m) => ({
+        allowlist: loadScreenshotAllowlist(),
+        allowlistHostsChecked: loadScreenshotAllowlist().entries.map((e) => e.host),
+        method3Selected: finalMasters.filter((m) => m.method === 3).length,
+        assessedNotUsed: [...screenshotDecisions.values()].filter((d) => d.status !== "method-3-selected").length,
+        note: "Full 100-lesson screenshot reassessment. Method 3 only when authentic UI recognition is necessary AND a verified public no-auth URL is allowlisted. No images captured in authoring.",
+        entries: finalMasters.map((m) => {
+          const d =
+            screenshotDecisions.get(m.lessonId) ??
+            assessScreenshotDecision({
+              lessonId: m.lessonId,
+              packageIntent:
+                m.contentBrief.visualIntent.kind === "screenshot" || m.contentBrief.visualIntent.kind === "concept-scene"
+                  ? "screenshot"
+                  : m.method === 1
+                    ? "diagram"
+                    : "none",
+              visualSummary: m.contentBrief.visualIntent.summary,
+              fallbackMethod: m.method === 3 ? 4 : m.method,
+            });
+          return {
             lessonId: m.lessonId,
-            status: "assessed-not-used",
-            reason: "No known allowlisted Masaarat public URL for this lesson's screenshot intent.",
-            fallbackMethod: m.method,
-          })),
+            packageIntent: d.packageIntent,
+            authenticScreenNecessary: d.authenticScreenNecessary,
+            status: m.method === 3 ? "method-3-selected" : d.status,
+            method: m.method,
+            reason: m.method === 3 ? m.methodRationale : d.reason,
+            exactUrl: m.screenshotSpec?.exactUrl ?? null,
+            product: m.screenshotSpec?.product ?? null,
+            rightsStatus: m.screenshotSpec?.rightsStatus ?? null,
+            fallbackMethod: m.method === 3 ? m.screenshotSpec?.deterministicFallbackMethod ?? 4 : m.method,
+          };
+        }),
       },
       null,
       2,

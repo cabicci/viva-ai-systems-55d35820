@@ -3,6 +3,7 @@ import { validateManifest } from "./manifest";
 import { validateLocaleIntegrity } from "./localeIntegrity";
 import { validateEvidence } from "./evidence";
 import { validateGenericLabelBan } from "./genericLabelBan";
+import { validateGrounding } from "./grounding";
 import {
   templateSimilarityReport,
   validateTemplateSimilarity,
@@ -29,6 +30,7 @@ export function runAllValidators(options?: {
     ...validateLocaleIntegrity(),
     ...validateEvidence(),
     ...validateGenericLabelBan(),
+    ...validateGrounding({ writeAuditLedger: true }),
     ...validateTemplateSimilarity(),
     ...validateFontsPresent(),
   ];
@@ -55,8 +57,15 @@ export function runAllValidators(options?: {
         message: "workflow must not trigger on push/pull_request",
       });
     }
-    // Basic YAML structure: balanced-ish key presence
-    for (const key of ["source_sha", "max_parallel", "fail-fast"]) {
+    for (const key of [
+      "source_sha",
+      "max_parallel",
+      "fail-fast",
+      "control_room_authorization_id",
+      "approved_manifest_sha256",
+      "dispatch_actor",
+      "dispatch-authority",
+    ]) {
       if (!yaml.includes(key)) {
         issues.push({
           gate: "workflow",
@@ -66,6 +75,11 @@ export function runAllValidators(options?: {
     }
   } else {
     issues.push({ gate: "workflow", message: `missing workflow ${workflow}` });
+  }
+
+  const dispatchDoc = resolve(REPO_ROOT, "docs/lesson-visuals/v1/DISPATCH_AUTHORIZATION.md");
+  if (!existsSync(dispatchDoc)) {
+    issues.push({ gate: "dispatch", message: "missing DISPATCH_AUTHORIZATION.md" });
   }
 
   return {
@@ -85,6 +99,7 @@ export {
   validateLocaleIntegrity,
   validateEvidence,
   validateGenericLabelBan,
+  validateGrounding,
   validateTemplateSimilarity,
   validateFontsPresent,
   validateSvgSafety,

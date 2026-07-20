@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "7b4999fa63558e00ae3847c7dae7019d9c0cfe91b318333bec237f6fd345cea6",
+    "ar-MSA": "2880c8d8eb39f829ec16f0ca29363becf0997b5463425a58f54ae07bd28825da",
+    "ar-Gulf": "e5de178bf9cd38fcfc10020e0b946b8d30f2ae7ae9c2c6c5875eb95b32996a8f",
+    "ar-EG": "d7e2de8a97e8b2072292ab61f0bbed9969a89d46274849c3d7a681ac79d61407"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "3 Criteria for Priority:",
-      "ar-MSA": "٣ معايير للأولوية:",
-      "ar-Gulf": "٣ معايير للأولوية:",
+      "en": "Repetitive + Simple + Low Risk = Priority",
+      "ar-MSA": "متكرّر + بسيط + مخاطرة قليلة = أولوية",
+      "ar-Gulf": "متكرّر + بسيط + مخاطرة قليلة = أولوية",
       "ar-EG": "٣ معايير للأولوية: التكرار (كام مرة/أسبوع؟)، البساطة (٢–٣ خطوات ثابتة؟)، المخاطرة (لو غلط — إيه الضرر؟)."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? The best first automation is a repetitive, simple task with low risk — not the hardest or most complex Workflow.",
+      "ar-MSA": "ماذا ستفهم؟ أفضل أول أتمتة = مهمة متكرّرة + بسيطة + مخاطرة قليلة — وليست أصعب حاجة ولا أروع تدفق عمل (Flow).",
+      "ar-Gulf": "وش راح تفهم؟ أفضل أول أتمتة = مهمة متكرّرة + بسيطة + مخاطرة قليلة — مو أصعب شيء ولا أروع تدفق عمل (Flow).",
+      "ar-EG": "هتفهم إيه؟ أحسن أول أتمتة = مهمة متكرّرة + بسيطة + مخاطرة قليلة — مش أصعب حاجة ولا أروع Flow."
+    },
+    "lessonObjects": [
+      "Task Candidate",
+      "ROI (Return on Investment)",
+      "First Workflow = Hardest",
+      "First Workflow = Easiest Repetitive",
+      "Repetitive + Simple + Low Risk = Priority"
+    ],
+    "relationships": [
+      "First Workflow = Hardest → First Workflow = Easiest Repetitive",
+      "Decision matrix — horizontal axis = easy or hard. Vertical axis = high or low frequency. The corner",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "\"I will automate this — it looks great!\" — and after 3 hours, no benefit. You choose the hardest task — or the rarest pattern — and build a complex Workflow. It runs once a month.",
       "ar-MSA": "«سأؤتمت هذا — يبدو رائعًا!» — وبعد ٣ ساعات لا فائدة. تختار أصعب مهمة — أو أندر نمط — وتبني تدفق عمل (Flow) معقّدًا. يعمل مرة في الشهر.",
@@ -123,9 +147,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "automator-m2-l3-decide-what-to-automate's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (First Workflow = Hardest / First Workflow = Easiest Repetitive) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"First Workflow = Hardest\" vs \"First Workflow = Easiest Repetitive\" for automator-m2-l3-decide-what-to-automate.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"First Workflow = Hardest\" vs \"First Workflow = Easiest Repetitive\" for automator-m2-l3-decide-what-to-automate.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Decide What to Automate: \"First Workflow = Hardest\" versus \"First Workflow = Easiest Repetitive\" — 3 Criteria for Priority:",
-    "ar-MSA": "اختيار ما يُؤتمت: \"أول Flow = الأصعب\" في مقابل \"أول Flow = الأسهل المتكرّر\" — ٣ معايير للأولوية:",
-    "ar-Gulf": "اختيار ما يجب أتمتته: \"أول Flow = الأصعب\" في مقابل \"أول Flow = الأسهل المتكرّر\" — ٣ معايير للأولوية:",
+    "en": "Decide What to Automate: \"First Workflow = Hardest\" versus \"First Workflow = Easiest Repetitive\" — Repetitive + Simple + Low Risk = Priority",
+    "ar-MSA": "اختيار ما يُؤتمت: \"أول Flow = الأصعب\" في مقابل \"أول Flow = الأسهل المتكرّر\" — متكرّر + بسيط + مخاطرة قليلة = أولوية",
+    "ar-Gulf": "اختيار ما يجب أتمتته: \"أول Flow = الأصعب\" في مقابل \"أول Flow = الأسهل المتكرّر\" — متكرّر + بسيط + مخاطرة قليلة = أولوية",
     "ar-EG": "متكرّر + بسيط + مخاطرة قليلة = أولوية: \"أول Flow = الأصعب\" في مقابل \"أول Flow = الأسهل المتكرّر\" — ٣ معايير للأولوية: التكرار (كام مرة/أسبوع؟)، البساطة (٢–٣ خطوات ثابتة؟)، المخاطرة (لو غلط — إيه الضرر؟)."
   },
   "aiPromptContract": null,
@@ -330,5 +354,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "148f6f2a7e52b54d0ee44c9ea75f13eded22fbf3dfa7d97ac22d8dd98a1aec7f"
+  "checksum": "1eb3ee9f492ba40245319a3a27c4d846230e703da94805c235edc09b1f29f6ea"
 }

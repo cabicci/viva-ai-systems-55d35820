@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "a410356363744477f68f2390f9c6ab5287bc83ec3553bba5ca6d742afefc3be3",
+    "ar-MSA": "a2768d574488e55db42384defc0532f2edd425c8fc6005b60798c05609511e2d",
+    "ar-Gulf": "ee4c2c34a24eb4fa3f53981f825f0fe2045d029d953e1cd2fcb9d45ce7ebbd91",
+    "ar-EG": "caa0e19ed8fa89f7cf17d1716dcfc46cc23ca6e52421322ea0e1146e97ca59e7"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "A clear Prompt = Role + Context + Task + Format",
-      "ar-MSA": "الـ Prompt الواضح = دور + سياق + مهمة + شكل",
-      "ar-Gulf": "البرومبت الواضح = دور + سياق + مهمة + شكل",
+      "en": "Core Idea — Role: Who is the AI in this message? (Editor, Consultant, Assistant…) Context: What is the situation? (Who are you, who are you writing to, why now?)",
+      "ar-MSA": "الفكرة الأساسية — Role (الدور): من يكون الذكاء الاصطناعي في هذه الرسالة؟ (محرر، مستشار، مساعد…) Context (السياق): ما الموقف؟ (من أنت، لمن تكتب، لماذا الآن؟)",
+      "ar-Gulf": "الفكرة الأساسية — الدور: من يكون الذكاء الاصطناعي في هذه الرسالة؟ (محرر، مستشار، مساعد…) السياق: وش الموقف؟ (من أنت، لمن تكتب، ليش الحين؟)",
       "ar-EG": "الـ Prompt (الطلب) هو الرسالة اللي بتبعتها للـ AI. كل ما الطلب أوضح، الرد أنفع."
     },
+    "instructionalPurpose": {
+      "en": "What Will You Understand? The Prompt (the request or instruction you send to the AI) is not a magic sentence, but a clear request that specifies what is needed from the model.",
+      "ar-MSA": "ماذا ستفهم؟ الـ Prompt (الطلب أو التعليمة التي ترسلها للذكاء الاصطناعي) ليس جملة سحرية، بل طلبًا واضحًا يحدد ما المطلوب من النموذج.",
+      "ar-Gulf": "وش راح تفهم؟ البرومبت (الطلب أو التعليمة اللي ترسلها للذكاء الاصطناعي) مو جملة سحرية، بل طلب واضح يحدد المطلوب من النموذج.",
+      "ar-EG": "هتفهم إيه؟ الـ Prompt مش جملة سحرية — هو طلب واضح بيخلي الـ AI يعرف يعمل إيه."
+    },
+    "lessonObjects": [
+      "Prompt",
+      "Context",
+      "Vague Request",
+      "Clear Request",
+      "Role",
+      "Who is the AI in this message? (Editor"
+    ],
+    "relationships": [
+      "Vague Request → Clear Request",
+      "Illustration: Four fields in one message — Who is the AI? What is the situation? What do you want? In what format should the response be?",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "You wrote: \"Write something about marketing\" — and got a general text?",
       "ar-MSA": "كتبت: «اكتب لي شيئًا عن التسويق» — فحصلت على نص عام؟",
@@ -106,12 +131,12 @@
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/intro-m1-l2-first-prompt.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "الـ Prompt الواضح = دور + سياق + مهمة + شكل"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/intro-m1-l2-first-prompt.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "البرومبت الواضح = دور + سياق + مهمة + شكل"
         },
         "ar-EG": {
@@ -123,9 +148,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "intro-m1-l2-first-prompt's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Vague Request / Clear Request) instead of fabricating a UI capture.",
+  "methodRationale": "Authentic chatbot/product UI recognition would help, but no safe public URL verified HTTP 200 without login/bot wall (OpenAI/ChatGPT endpoints returned 403 from audit). Refusing to fabricate UI; using deterministic/hybrid with package labels.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Vague Request\" vs \"Clear Request\" for intro-m1-l2-first-prompt.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Vague Request\" vs \"Clear Request\" for intro-m1-l2-first-prompt.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "First Prompt: \"Vague Request\" versus \"Clear Request\" — A clear Prompt = Role + Context + Task + Format",
-    "ar-MSA": "أول برومبت: \"طلب غامض\" في مقابل \"طلب واضح\" — الـ Prompt الواضح = دور + سياق + مهمة + شكل",
-    "ar-Gulf": "الطلب الواضح: \"طلب غامض\" في مقابل \"طلب واضح\" — البرومبت الواضح = دور + سياق + مهمة + شكل",
+    "en": "First Prompt: \"Vague Request\" versus \"Clear Request\" — Core Idea — Role: Who is the AI in this message? (Editor, Consultant, Assistant…) Context: What is the situation? (Who are you, who are you writing to, why now?)",
+    "ar-MSA": "أول برومبت: \"طلب غامض\" في مقابل \"طلب واضح\" — الفكرة الأساسية — Role (الدور): من يكون الذكاء الاصطناعي في هذه الرسالة؟ (محرر، مستشار، مساعد…) Context (السياق): ما الموقف؟ (من أنت، لمن تكتب، لماذا الآن؟)",
+    "ar-Gulf": "الطلب الواضح: \"طلب غامض\" في مقابل \"طلب واضح\" — الفكرة الأساسية — الدور: من يكون الذكاء الاصطناعي في هذه الرسالة؟ (محرر، مستشار، مساعد…) السياق: وش الموقف؟ (من أنت، لمن تكتب، ليش الحين؟)",
     "ar-EG": "الـ Prompt الواضح = دور + سياق + مهمة + شكل: \"طلب مبهم\" في مقابل \"طلب واضح\" — الـ Prompt (الطلب) هو الرسالة اللي بتبعتها للـ AI. كل ما الطلب أوضح، الرد أنفع."
   },
   "aiPromptContract": null,
@@ -330,5 +355,5 @@
       "quote": "weight: 30"
     }
   ],
-  "checksum": "79a8d6b9386f6a1e45ea6dda4c99fb3554af179c5ca4409ef606ef69729465ac"
+  "checksum": "b9dc023436b832077852c1650e2665c753a5252c57428f6dcb12796096594166"
 }

@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "457b4667f4979e9f3b51ee11116d54c88565af7ce996c135d992482591fe84d1",
+    "ar-MSA": "4bc39caa12c20a4586317506ec70e79ba0ba765800a82d1d1f99533ab1231b76",
+    "ar-Gulf": "8faad849a9889201d7cb7c9fc5aa90b5fc2e8b830d6de5c030f5c87420ad475f",
+    "ar-EG": "e1671e54727646a4fafebcccece955d44ee86720be360879a7ce5c25324b93bf"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Automator",
-      "ar-MSA": "Automator",
-      "ar-Gulf": "Automator",
+      "en": "Identify Wasted Time, Then Hand Over to the Virtual Worker",
+      "ar-MSA": "شوف الوقت الضائع — بعدين سلّم للعامل الافتراضي",
+      "ar-Gulf": "شوف الوقت الضائع — بعدين سلّم للعامل الافتراضي",
       "ar-EG": "Automator = بناء «عامل افتراضي» يكرّر شغلك المتكرّر: ردود، نقل بيانات، تذكيرات، متابعة."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Before building any automation, you need to know which repetitive tasks take up your time each week.",
+      "ar-MSA": "ماذا ستفهم؟ قبل بناء أي أتمتة، يجب أن تعرف أي مهام متكررة تستهلك وقتك كل أسبوع.",
+      "ar-Gulf": "وش راح تفهم؟ قبل ما تبني أي أتمتة، لازم تعرف أي مهام متكررة تستهلك وقتك كل أسبوع.",
+      "ar-EG": "هتفهم إيه؟ قبل ما تبني أي أتمتة، لازم تعرف أنهي مهام متكرّرة بتاكل وقتك كل أسبوع."
+    },
+    "lessonObjects": [
+      "Time Audit",
+      "Building Without Audit",
+      "Audit First",
+      "Identify Wasted Time",
+      "Then Hand Over to the Virtual Worker"
+    ],
+    "relationships": [
+      "Building Without Audit → Audit First",
+      "Journey map — 5 connected paths. **Builder** → **Creator** → **Automator**.",
+      "visual relationship kind: concept-scene"
+    ],
     "tension": {
       "en": "You hear about Make, Zapier, and n8n — you open YouTube and build a Flow — and after a week, you are still doing the same work manually. The problem is not the tool. The problem is you did not identify which tasks are re",
       "ar-MSA": "تسمع عن Make و Zapier و n8n — تفتح يوتيوب وتبني Flow (تدفق عمل) — وبعد أسبوع ما زلت تعمل نفس الشغل بيدك. المشكلة ليست الأداة. المشكلة أنك لم تعرف أي مهمة تتكرر وتضيع وقتك فعلًا.",
@@ -102,16 +126,16 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/automator-m1-l1-where-you-are.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "Journey map — 5 connected paths. **Builder** → **Creator** → **Automator**."
+          "quote": "Builder"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m1-l1-where-you-are.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Automator"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m1-l1-where-you-are.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Automator"
         },
         "ar-EG": {
@@ -123,7 +147,7 @@
     }
   },
   "method": 2,
-  "methodRationale": "automator-m1-l1-where-you-are's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"Automator\" without inventing UI chrome or rendering paid text.",
+  "methodRationale": "automator-m1-l1-where-you-are's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"Identify Wasted Time, Then Hand Over to the Virtual Worker\" without inventing UI chrome or rendering paid text.",
   "compositionPattern": "concept-scene-metaphor",
   "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Building Without Audit\" vs \"Audit First\" for automator-m1-l1-where-you-are.",
   "labelPacks": {
@@ -150,14 +174,6 @@
         "source": {
           "path": "src/lib/locale-lessons/en/lessons/automator-m1-l1-where-you-are.json",
           "field": "sections[role=Glossary].tables[0].rows[0][0]"
-        }
-      },
-      {
-        "id": "term-1",
-        "text": "Workflow",
-        "source": {
-          "path": "src/lib/locale-lessons/en/lessons/automator-m1-l1-where-you-are.json",
-          "field": "sections[role=Glossary].tables[0].rows[1][0]"
         }
       }
     ],
@@ -265,9 +281,9 @@
     ]
   },
   "altTexts": {
-    "en": "Where You Are on the Map: \"Building Without Audit\" versus \"Audit First\" — Automator",
-    "ar-MSA": "موقعك على الخريطة: \"بناء من دون Audit\" في مقابل \"Audit أولًا\" — Automator",
-    "ar-Gulf": "مكانك على الخريطة: \"بناء من دون Audit\" في مقابل \"Audit أولًا\" — Automator",
+    "en": "Where You Are on the Map: \"Building Without Audit\" versus \"Audit First\" — Identify Wasted Time, Then Hand Over to the Virtual Worker",
+    "ar-MSA": "موقعك على الخريطة: \"بناء من دون Audit\" في مقابل \"Audit أولًا\" — شوف الوقت الضائع — بعدين سلّم للعامل الافتراضي",
+    "ar-Gulf": "مكانك على الخريطة: \"بناء من دون Audit\" في مقابل \"Audit أولًا\" — شوف الوقت الضائع — بعدين سلّم للعامل الافتراضي",
     "ar-EG": "شوف الوقت الضايع — بعدين سلّم للعامل الافتراضي: \"بناء من غير Audit\" في مقابل \"Audit الأول\" — Automator = بناء «عامل افتراضي» يكرّر شغلك المتكرّر: ردود، نقل بيانات، تذكيرات، متابعة."
   },
   "aiPromptContract": {
@@ -341,5 +357,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "034d69789444fca5d588ceb61ad1552eed20ba676946d9e4e6dbedd0b8cd1a54"
+  "checksum": "125421e078cdf629815695779ef46b04dc639d530d32dc23afec015b8e55e2db"
 }

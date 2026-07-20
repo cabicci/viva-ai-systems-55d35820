@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "2cbc341021795df607eee208261a22b7eb1630801314c80c68c718e50b5073af",
+    "ar-MSA": "7b0b0c1bef7ba8e647f22163ca6aa22f7f8b7fd6ddaea33b5ea739413963289f",
+    "ar-Gulf": "32f69727d564d5eb1218641a4e8a06df60e13c02be9c19b158880a9d54bf9e18",
+    "ar-EG": "d4359de99f978448bbefce6378fa96de19957ee7ebe43dd93afceed43ab30026"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -56,11 +62,29 @@
       ]
     },
     "coreIdea": {
-      "en": "An Agent",
-      "ar-MSA": "Agent",
-      "ar-Gulf": "الوكيل",
+      "en": "Agent = Goal + Tools + Boundaries",
+      "ar-MSA": "Agent = هدف + أدوات + حدود",
+      "ar-Gulf": "الوكيل = هدف + أدوات + حدود",
       "ar-EG": "Agent = AI ياخد قرارات ويستخدم tools (functions) عشان ينفّذ في العالم الحقيقي."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? An AI Agent needs a goal + tools + boundaries — not just responses.",
+      "ar-MSA": "ماذا ستفهم؟ الـ Agent (وكيل ذكاء اصطناعي) يحتاج هدفًا + أدوات + حدود — ليس ردود كلام فقط.",
+      "ar-Gulf": "وش راح تفهم؟ الوكيل (Agent) يحتاج هدف + أدوات + حدود — مو بس ردود كلام.",
+      "ar-EG": "هتفهم إيه؟ الـ Agent محتاج هدف + أدوات + حدود — مش بس ردود كلام."
+    },
+    "lessonObjects": [
+      "Agent",
+      "Tool",
+      "Chatbot — Just words",
+      "Agent — Executes",
+      "Agent = Goal + Tools + Boundaries"
+    ],
+    "relationships": [
+      "Chatbot — Just words → Agent — Executes",
+      "**The Agent's thought process:**",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "Customer: \"I want to cancel my subscription\". AI: \"Go to Settings → Billing → Cancel\". The customer closed the chat angrily — I gave instructions instead of resolving the issue.",
       "ar-MSA": "العميل: «أريد إلغاء اشتراكي». الذكاء الاصطناعي: «اذهب إلى Settings → Billing → Cancel». العميل أغلق المحادثة غاضبًا — أعطيته تعليمات بدل إنهاء المشكلة.",
@@ -106,17 +130,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m9-l3-agents.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**The Agent's thought process:**"
+          "quote": "The Agent's thought process:"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l3-agents.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**دائرة تفكير الـ Agent:**"
+          "quote": "دائرة تفكير الـ Agent:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l3-agents.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**دائرة تفكير الوكيل:**"
+          "quote": "دائرة تفكير الوكيل:"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m9-l3-agents.ts",
@@ -127,9 +151,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "builder-m9-l3-agents's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Chatbot — Just words / Agent — Executes) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Chatbot — Just words\" vs \"Agent — Executes\" for builder-m9-l3-agents.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Chatbot — Just words\" vs \"Agent — Executes\" for builder-m9-l3-agents.",
   "labelPacks": {
     "en": [
       {
@@ -269,9 +293,9 @@
     ]
   },
   "altTexts": {
-    "en": "Agents — AI Takes Decisions: \"Chatbot — Just words\" versus \"Agent — Executes\" — An Agent",
-    "ar-MSA": "الوكلاء — قرارات الذكاء الاصطناعي: \"Chatbot — كلام فقط\" في مقابل \"Agent — تنفيذ\" — Agent",
-    "ar-Gulf": "الوكلاء وقرارات الـ AI: \"Chatbot — كلام فقط\" في مقابل \"الوكيل — تنفيذ\" — الوكيل",
+    "en": "Agents — AI Takes Decisions: \"Chatbot — Just words\" versus \"Agent — Executes\" — Agent = Goal + Tools + Boundaries",
+    "ar-MSA": "الوكلاء — قرارات الذكاء الاصطناعي: \"Chatbot — كلام فقط\" في مقابل \"Agent — تنفيذ\" — Agent = هدف + أدوات + حدود",
+    "ar-Gulf": "الوكلاء وقرارات الـ AI: \"Chatbot — كلام فقط\" في مقابل \"الوكيل — تنفيذ\" — الوكيل = هدف + أدوات + حدود",
     "ar-EG": "Agent = هدف + أدوات + حدود: \"Chatbot — كلام بس\" في مقابل \"Agent — تنفيذ\" — Agent = AI ياخد قرارات ويستخدم tools (functions) عشان ينفّذ في العالم الحقيقي."
   },
   "aiPromptContract": null,
@@ -334,5 +358,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "f77bbe66dbba5516c5a4a3552e04507644c4396bc2c540fe6f84734dd77390c8"
+  "checksum": "b8cccda8469be15df4b6ee5442aa55127024ec7cd29569fb6e0126e5c80ca4b1"
 }

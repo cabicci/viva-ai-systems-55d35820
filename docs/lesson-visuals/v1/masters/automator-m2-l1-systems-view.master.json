@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "b6f61bda601dcc15960d8c8e9186d8948bda128b3d92b3b50fe5eb250e887aff",
+    "ar-MSA": "c7d1c012075e07be88b640e7d71566dbf5df4a4b5e3856e06a7a94b93f681eab",
+    "ar-Gulf": "21cc3b502ad38e244bb3ae14dbe833cb80d5af75a4fca560a25e277e8aadf5a0",
+    "ar-EG": "ca131f2a4d786fe1ab74c45d6db3ac6628dd4637372ef07a6ca98851632f0ac3"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,28 @@
       ]
     },
     "coreIdea": {
-      "en": "Trigger:",
-      "ar-MSA": "المُشغّل (Trigger):",
-      "ar-Gulf": "المُشغّل (Trigger):",
+      "en": "Trigger → Process → Output",
+      "ar-MSA": "مُشغّل → عملية → نتيجة — المُشغّل (Trigger): ما الذي يبدأ العمل؟ — رسالة واتساب، نموذج جديد، موعد محدّد. العملية (Process): ما الخطوات التي تمشي كل مرة؟ — تفهم الطلب، تبحث عن السعر، تتخذ قرارًا.",
+      "ar-Gulf": "مُشغّل → عملية → نتيجة — المُشغّل (Trigger): وش اللي يبدأ العمل؟ — رسالة واتساب، نموذج جديد، موعد محدد. العملية (Process): وش الخطوات اللي تمشي كل مرة؟ — تفهم الطلب، تبحث عن السعر، تتخذ قرار.",
       "ar-EG": "المُشغّل (Trigger): إيه اللي بيبدأ الشغل؟ — رسالة واتساب، فورم جديد، موعد محدّد."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Any repeated task = system: Trigger → Process → Output. When you see it this way, you can hand it over to the virtual worker.",
+      "ar-MSA": "ماذا ستفهم؟ أي مهمة متكررة = نظام: مُشغّل (Trigger) → عملية → نتيجة (Output). عندما تراها هكذا، تستطيع تسليمها للعامل الافتراضي.",
+      "ar-Gulf": "وش راح تفهم؟ أي مهمة متكررة = نظام: مُشغّل (Trigger) → عملية → نتيجة (Output). لما تشوفها كذا، تقدر تسلمها للعامل الافتراضي.",
+      "ar-EG": "هتفهم إيه؟ أي مهمة متكرّرة = نظام: مُشغّل → عملية → نتيجة. لما تشوفها كده، تقدر تسلّمها للعامل الافتراضي."
+    },
+    "lessonObjects": [
+      "Trigger",
+      "Task Thinking",
+      "System Thinking",
+      "Trigger → Process → Output"
+    ],
+    "relationships": [
+      "Task Thinking → System Thinking",
+      "Connected layers — each layer has an input, processing, and output. Any repeated work = layers stacked: something enters → steps transform → something exits. Th",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "\"Reply to this message\" — every day from the start: new message → think → search → respond → forget to log it. Think of separate tasks — not as a system. The result: the same work repeats, and nothing accumulates.",
       "ar-MSA": "«أرد على هذه الرسالة» — كل يوم من البداية: رسالة جديدة → تفكّر → تبحث → ترد → تنسى التسجيل. تفكّر في مهام منفصلة — لا في نظام. النتيجة: نفس الشغل يتكرر، ولا شيء يتراكم.",
@@ -123,9 +146,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "automator-m2-l1-systems-view's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Task Thinking / System Thinking) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Task Thinking\" vs \"System Thinking\" for automator-m2-l1-systems-view.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Task Thinking\" vs \"System Thinking\" for automator-m2-l1-systems-view.",
   "labelPacks": {
     "en": [
       {
@@ -257,9 +280,9 @@
     ]
   },
   "altTexts": {
-    "en": "Systems View: \"Task Thinking\" versus \"System Thinking\" — Trigger:",
-    "ar-MSA": "رؤية الأنظمة: \"تفكير مهام\" في مقابل \"تفكير نظام\" — المُشغّل (Trigger):",
-    "ar-Gulf": "نظرة على الأنظمة: \"تفكير مهام\" في مقابل \"تفكير نظام\" — المُشغّل (Trigger):",
+    "en": "Systems View: \"Task Thinking\" versus \"System Thinking\" — Trigger → Process → Output",
+    "ar-MSA": "رؤية الأنظمة: \"تفكير مهام\" في مقابل \"تفكير نظام\" — مُشغّل → عملية → نتيجة — المُشغّل (Trigger): ما الذي يبدأ العمل؟ — رسالة واتساب، نموذج جديد، موعد محدّد. العملية (Process): ما الخطوات التي تمشي كل مرة؟ — تفهم الطلب، تبحث عن السعر، تتخذ قرارًا.",
+    "ar-Gulf": "نظرة على الأنظمة: \"تفكير مهام\" في مقابل \"تفكير نظام\" — مُشغّل → عملية → نتيجة — المُشغّل (Trigger): وش اللي يبدأ العمل؟ — رسالة واتساب، نموذج جديد، موعد محدد. العملية (Process): وش الخطوات اللي تمشي كل مرة؟ — تفهم الطلب، تبحث عن السعر، تتخذ قرار.",
     "ar-EG": "مُشغّل → عملية → نتيجة: \"تفكير مهام\" في مقابل \"تفكير نظام\" — المُشغّل (Trigger): إيه اللي بيبدأ الشغل؟ — رسالة واتساب، فورم جديد، موعد محدّد."
   },
   "aiPromptContract": null,
@@ -322,5 +345,5 @@
       "quote": "weight: 30"
     }
   ],
-  "checksum": "e0207d03820e13d4a0861a001618840e359792b81557c461a721e5b3ab18ebe7"
+  "checksum": "8c1cd08b296fa8671c843bc4eca0a7a590fe2d2ddf5f9811cb5747f0319fee33"
 }

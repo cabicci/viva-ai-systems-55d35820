@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "1ec5598950caa20f7571a93da6fea0b4bb21002fb1a992316f4164590f202856",
+    "ar-MSA": "ef4f6cd0aa1c1bb357c3cf3c270488c6e1191d3fcd2ffb68d0c34950b68388ce",
+    "ar-Gulf": "34da3d726bf10b7fd33ebd45723bab2429ac06fb9406cd8645a06a6f432dc65a",
+    "ar-EG": "78ba555ec6cb547a464b8209b15e7ed670cc826a840d79fe21562be3a6ad8ff8"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -51,11 +57,30 @@
       ]
     },
     "coreIdea": {
-      "en": "POV (Point of View)",
-      "ar-MSA": "POV (Point of View — وجهة نظر)",
-      "ar-Gulf": "POV (Point of View — وجهة نظر)",
+      "en": "A Consistent POV = Stronger Memory",
+      "ar-MSA": "POV ثابت = ذاكرة أقوى — POV (Point of View — وجهة نظر) هي الجملة التي تلخص كيف ترى العالم في مجالك — وتجعل المحتوى كله يمشي في خط واحد. الألوان تخدم POV لا العكس. أولًا تعرف موقفك — ثم تختار شكلًا يخدمه.",
+      "ar-Gulf": "POV ثابت = ذاكرة أقوى — POV (Point of View — وجهة نظر) هي الجملة اللي تلخص كيف تشوف العالم في مجالك — وتخلي المحتوى كله يمشي في خط واحد. الألوان تخدم POV مو العكس. أول شيء تعرف موقفك — بعدين تختار شكل يخدمه.",
       "ar-EG": "الـ POV هو الجملة اللي تلخص أنت شايف الدنيا إزاي في مجالك، وبتخلي المحتوى كله يمشي في خط واحد."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? People remember you for your stance — not for your colors.",
+      "ar-MSA": "ماذا ستفهم؟ الناس تتذكرك من موقفك — لا من ألوانك.",
+      "ar-Gulf": "وش راح تفهم؟ الناس تتذكرك من موقفك — مو من ألوانك.",
+      "ar-EG": "الهوية البصرية مهمة، بس اللي بيخلي الناس تفتكرك فعلا هو وجهة نظرك الثابتة في الموضوع اللي بتتكلم فيه."
+    },
+    "lessonObjects": [
+      "POV (Point of View)",
+      "Brand Promise",
+      "Consistency",
+      "Form-Based Brand",
+      "Stance-Based Brand",
+      "A Consistent POV = Stronger Memory"
+    ],
+    "relationships": [
+      "Form-Based Brand → Stance-Based Brand",
+      "A visual snapshot — **a practical example of a clear identity**. **The form serves the core idea** — **it does not overshadow it**.",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "Beautiful content in form but lacking a signature. Many content creators change colors and fonts — but no one can say a single distinctive phrase about them.",
       "ar-MSA": "محتوى جميل شكلًا لكن بلا بصمة. كثير من صنّاع المحتوى يغيّرون ألوانًا وخطوطًا — لكن لا يُقال عنهم جملة واحدة مميزة.",
@@ -101,16 +126,16 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/creator-m7-l1-brand-basics.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "A visual snapshot — **a practical example of a clear identity**. **The form serves the core idea** — **it does not overshadow it**."
+          "quote": "a practical example of a clear identity"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m7-l1-brand-basics.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "POV (Point of View — وجهة نظر)"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m7-l1-brand-basics.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "POV (Point of View — وجهة نظر)"
         },
         "ar-EG": {
@@ -122,9 +147,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "creator-m7-l1-brand-basics's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Form-Based Brand / Stance-Based Brand) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Form-Based Brand\" vs \"Stance-Based Brand\" for creator-m7-l1-brand-basics.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Form-Based Brand\" vs \"Stance-Based Brand\" for creator-m7-l1-brand-basics.",
   "labelPacks": {
     "en": [
       {
@@ -264,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Brand Basics — Colors, Fonts, Logo: \"Form-Based Brand\" versus \"Stance-Based Brand\" — POV (Point of View)",
-    "ar-MSA": "أساسيات الهوية — الألوان والخطوط والشعار: \"براند شكلي فقط\" في مقابل \"براند بموقف واضح\" — POV (Point of View — وجهة نظر)",
-    "ar-Gulf": "أساسيات العلامة التجارية: \"براند شكلي فقط\" في مقابل \"براند بموقف واضح\" — POV (Point of View — وجهة نظر)",
+    "en": "Brand Basics — Colors, Fonts, Logo: \"Form-Based Brand\" versus \"Stance-Based Brand\" — A Consistent POV = Stronger Memory",
+    "ar-MSA": "أساسيات الهوية — الألوان والخطوط والشعار: \"براند شكلي فقط\" في مقابل \"براند بموقف واضح\" — POV ثابت = ذاكرة أقوى — POV (Point of View — وجهة نظر) هي الجملة التي تلخص كيف ترى العالم في مجالك — وتجعل المحتوى كله يمشي في خط واحد. الألوان تخدم POV لا العكس. أولًا تعرف موقفك — ثم تختار شكلًا يخدمه.",
+    "ar-Gulf": "أساسيات العلامة التجارية: \"براند شكلي فقط\" في مقابل \"براند بموقف واضح\" — POV ثابت = ذاكرة أقوى — POV (Point of View — وجهة نظر) هي الجملة اللي تلخص كيف تشوف العالم في مجالك — وتخلي المحتوى كله يمشي في خط واحد. الألوان تخدم POV مو العكس. أول شيء تعرف موقفك — بعدين تختار شكل يخدمه.",
     "ar-EG": "POV ثابت = ذاكرة أقوى: \"براند شكلي فقط\" في مقابل \"براند بموقف واضح\" — الـ POV هو الجملة اللي تلخص أنت شايف الدنيا إزاي في مجالك، وبتخلي المحتوى كله يمشي في خط واحد."
   },
   "aiPromptContract": null,
@@ -329,5 +354,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "dbe5017ff6be1040d89326b5d61a7b5349aecfbb296ea34b6a6b7ec3ad8ebc75"
+  "checksum": "a936efa511f49a3945b34d7cd1c6326ad16db09f42aab13ec78d428feb866441"
 }

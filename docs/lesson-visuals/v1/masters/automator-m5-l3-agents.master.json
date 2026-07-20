@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "86ca21de7fab7a25c52e973da6aafbe42f3f145178574ddf57c483cf7b8145c6",
+    "ar-MSA": "b3dcaaf7eea6062532ae8a2912a3d3856bf5e89e4e52b85df9781a3305c456df",
+    "ar-Gulf": "308346d3ee9f5c420cc045914062266d0c3461a65bdd4c5362919248c8e2eafc",
+    "ar-EG": "32da28664b2e13d8b6ea9c0f49434ab06f8c64e09f9c5876a60ca52eae2e3dbf"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -49,11 +55,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Workflow:",
-      "ar-MSA": "Workflow:",
-      "ar-Gulf": "سير العمل:",
+      "en": "Fixed Workflow vs Agent — Workflow: A → B → C — great for known repetitive tasks. Agent: Goal + tools — decides the order until the goal is reached or stopped.",
+      "ar-MSA": "Workflow ثابت vs Agent — Workflow: أ → ب → ج — ممتاز للمتكرر المعروف. Agent: هدف + أدوات — يقرر الترتيب حتى الهدف أو التوقف.",
+      "ar-Gulf": "سير العمل الثابت مقابل الوكيل",
       "ar-EG": "Workflow عادي: أ → ب → ج. كل مرة نفس المسار. ممتاز للشغل المتكرر المعروف."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? An Agent chooses steps towards a goal — with boundaries and specific tools.",
+      "ar-MSA": "ماذا ستفهم؟ Agent (وكيل) يختار خطوات نحو هدف — بحدود وأدوات محددة.",
+      "ar-Gulf": "وش راح تفهم؟ الوكيل يختار خطوات نحو هدف — بحدود وأدوات محددة.",
+      "ar-EG": "هتفهم إيه؟ الـ Agent يختار الخطوات نحو هدف — بس محتاج حدود وأدوات محددة عشان يفضل آمن."
+    },
+    "lessonObjects": [
+      "Automated responses to unrequested actions",
+      "Fixed Workflow vs Agent",
+      "A → B → C",
+      "great for known repetitive tasks",
+      "Agent",
+      "Goal + tools"
+    ],
+    "relationships": [
+      "Automated responses to unrequested actions → Fixed Workflow vs Agent",
+      "Fixed Workflow vs Agent — Workflow: A → B → C — great for known repetitive tasks. Agent: Goal + tools — decides the order until the goal is reached or stopped.",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "Confirmation messages for all clients — even those who did not complain. Or a never-ending loop. An Agent without a Boundary = risk.",
       "ar-MSA": "رسائل تأكيد لكل العملاء — حتى من لم يشتكِ. أو حلقة بلا نهاية. Agent بلا Boundary (حد) = مخاطرة.",
@@ -94,21 +119,21 @@
     },
     "visualIntent": {
       "kind": "screenshot",
-      "summary": "Workflow:",
+      "summary": "Fixed Workflow vs Agent — Workflow: A → B → C — great for known repetitive tasks. Agent: Goal + tools — decides the order until the goal is reached or stopped.",
       "packageQuotes": {
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/automator-m5-l3-agents.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Workflow:"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l3-agents.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Workflow:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m5-l3-agents.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "سير العمل:"
         },
         "ar-EG": {
@@ -120,9 +145,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "automator-m5-l3-agents's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Automated responses to unrequested actions / Fixed Workflow vs Agent) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Automated responses to unrequested actions\" vs \"Fixed Workflow vs Agent\" for automator-m5-l3-agents.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Automated responses to unrequested actions\" vs \"Fixed Workflow vs Agent\" for automator-m5-l3-agents.",
   "labelPacks": {
     "en": [
       {
@@ -214,9 +239,9 @@
     ]
   },
   "altTexts": {
-    "en": "Agents: \"Automated responses to unrequested actions\" versus \"Fixed Workflow vs Agent\" — Workflow:",
-    "ar-MSA": "الوكلاء الذكيّون: \"الرد الآلي فعل ما لم يُطلب\" في مقابل \"Workflow ثابت vs Agent\" — Workflow:",
-    "ar-Gulf": "الوكلاء الذكيّين: \"الرد الآلي فعل ما لم يُطلب\" في مقابل \"سير العمل الثابت مقابل الوكيل\" — سير العمل:",
+    "en": "Agents: \"Automated responses to unrequested actions\" versus \"Fixed Workflow vs Agent\" — Fixed Workflow vs Agent — Workflow: A → B → C — great for known repetitive tasks. Agent: Goal + tools — decides the order until the goal is reached or stopped.",
+    "ar-MSA": "الوكلاء الذكيّون: \"الرد الآلي فعل ما لم يُطلب\" في مقابل \"Workflow ثابت vs Agent\" — Workflow ثابت vs Agent — Workflow: أ → ب → ج — ممتاز للمتكرر المعروف. Agent: هدف + أدوات — يقرر الترتيب حتى الهدف أو التوقف.",
+    "ar-Gulf": "الوكلاء الذكيّين: \"الرد الآلي فعل ما لم يُطلب\" في مقابل \"سير العمل الثابت مقابل الوكيل\" — سير العمل الثابت مقابل الوكيل",
     "ar-EG": "Workflow ثابت vs Agent يختار الخطوة: \"بدون حدود\" في مقابل \"بحدود وأدوات\" — Workflow عادي: أ → ب → ج. كل مرة نفس المسار. ممتاز للشغل المتكرر المعروف."
   },
   "aiPromptContract": null,
@@ -237,5 +262,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "e22d20b01d4379805d314acfc581a48892e1ef22a21c930620344c6d83060c7e"
+  "checksum": "2f213bb467e01a74a67362c14ff316a63b84239b21f4d39416806abca4b70e87"
 }
