@@ -492,5 +492,280 @@ class ZeroBunnyOperationProof(unittest.TestCase):
         self.assertIn(PLAIN_ANALYST_GUID, result.text)
 
 
+# Exact final-three repair cells (Run 29688980041).
+REPAIR_CELLS = (
+    ("creator-m4-repurposing__en", "c34060de-ed17-4b2c-9ad7-d53a1d2818c9"),
+    ("intro-m1-l1-what-is-ai__en", "de6aa7f5-a863-46e3-86ca-3da9489ae601"),
+    ("automator-m7-l1-closing-loop__ar-Gulf", "aa1d9464-c58d-4e8c-a6dc-f29d7b924565"),
+)
+
+
+class RepairSourcePolicyTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        from video_finalize.source_policy import (
+            REPAIR_SOURCE_LOGICAL_KEYS,
+            REPAIR_SOURCE_SHA_PIN,
+            required_promotion_source_sha,
+        )
+
+        cls.REPAIR_SOURCE_SHA_PIN = REPAIR_SOURCE_SHA_PIN
+        cls.REPAIR_SOURCE_LOGICAL_KEYS = REPAIR_SOURCE_LOGICAL_KEYS
+        cls.required_promotion_source_sha = staticmethod(required_promotion_source_sha)
+
+    def test_each_exact_repair_receipt_accepted(self):
+        expected = {k for k, _ in REPAIR_CELLS}
+        for key, guid in REPAIR_CELLS:
+            with self.subTest(key=key):
+                receipt = _finalized_receipt(
+                    logical_key=key,
+                    guid=guid,
+                    source_sha=self.REPAIR_SOURCE_SHA_PIN,
+                )
+                receipt["workflowRunId"] = "29688980041"
+                got, err = validate_receipt_for_promotion(
+                    receipt,
+                    logical_key=key,
+                    expected_logical_keys=expected,
+                    branch_logical_key=key,
+                )
+                self.assertIsNone(err)
+                self.assertEqual(got, guid)
+
+    def test_repair_sha_on_unrelated_future_cell_rejected(self):
+        key = "future-m9-l4-synthetic-ops-check__en"
+        receipt = _finalized_receipt(
+            logical_key=key,
+            guid=_guid_for_index(77),
+            source_sha=self.REPAIR_SOURCE_SHA_PIN,
+        )
+        got, err = validate_receipt_for_promotion(
+            receipt,
+            logical_key=key,
+            expected_logical_keys={key},
+        )
+        self.assertIsNone(got)
+        self.assertIn("repair sourceSha not authorized", err or "")
+
+    def test_unknown_source_sha_rejected(self):
+        key = "builder-m1-l1-what-is-llm__en"
+        receipt = _finalized_receipt(
+            logical_key=key,
+            guid=_guid_for_index(78),
+            source_sha="deadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+        )
+        got, err = validate_receipt_for_promotion(
+            receipt, logical_key=key, expected_logical_keys={key}
+        )
+        self.assertIsNone(got)
+        self.assertIn("sourceSha", err or "")
+
+    def test_missing_source_sha_rejected(self):
+        key = "builder-m1-l1-what-is-llm__en"
+        receipt = _finalized_receipt(
+            logical_key=key,
+            guid=_guid_for_index(79),
+        )
+        del receipt["sourceSha"]
+        # Incomplete schema fails first; also cover empty string path.
+        got, err = validate_receipt_for_promotion(
+            receipt, logical_key=key, expected_logical_keys={key}
+        )
+        self.assertIsNone(got)
+        self.assertIsNotNone(err)
+
+        receipt2 = _finalized_receipt(
+            logical_key=key,
+            guid=_guid_for_index(80),
+        )
+        receipt2["sourceSha"] = ""
+        got2, err2 = validate_receipt_for_promotion(
+            receipt2, logical_key=key, expected_logical_keys={key}
+        )
+        self.assertIsNone(got2)
+        self.assertIsNotNone(err2)
+
+    def test_ordinary_full_300_source_still_accepted(self):
+        key = "builder-m1-l1-what-is-llm__en"
+        receipt = _finalized_receipt(
+            logical_key=key,
+            guid=_guid_for_index(81),
+            source_sha=FULL_300_SOURCE_SHA_PIN,
+        )
+        got, err = validate_receipt_for_promotion(
+            receipt, logical_key=key, expected_logical_keys={key}
+        )
+        self.assertIsNone(err)
+        self.assertEqual(got, receipt["bunnyGuid"])
+
+    def test_historical_full_300_rejected_for_each_repair_key(self):
+        for key, guid in REPAIR_CELLS:
+            with self.subTest(key=key):
+                receipt = _finalized_receipt(
+                    logical_key=key,
+                    guid=guid,
+                    source_sha=FULL_300_SOURCE_SHA_PIN,
+                )
+                got, err = validate_receipt_for_promotion(
+                    receipt,
+                    logical_key=key,
+                    expected_logical_keys={k for k, _ in REPAIR_CELLS},
+                )
+                self.assertIsNone(got)
+                self.assertIn("repair-source", err or "")
+
+    def test_carry_forward_unchanged(self):
+        receipt = _accepted_carry_forward_receipt()
+        got, err = validate_receipt_for_promotion(
+            receipt,
+            logical_key=ACCEPTED_CARRY_FORWARD_LOGICAL_KEY,
+            expected_logical_keys={ACCEPTED_CARRY_FORWARD_LOGICAL_KEY},
+            branch_logical_key=ACCEPTED_CARRY_FORWARD_LOGICAL_KEY,
+        )
+        self.assertIsNone(err)
+        self.assertEqual(got, ACCEPTED_CARRY_FORWARD_CELL["bunnyGuid"])
+
+    def test_carry_forward_source_on_unauthorized_key_rejected(self):
+        key = "builder-m1-l1-what-is-llm__en"
+        receipt = _finalized_receipt(
+            logical_key=key,
+            guid=_guid_for_index(82),
+            source_sha=SOURCE_SHA_PIN,
+        )
+        got, err = validate_receipt_for_promotion(
+            receipt, logical_key=key, expected_logical_keys={key}
+        )
+        self.assertIsNone(got)
+        self.assertIn("carry-forward sourceSha not authorized", err or "")
+
+    def test_shortened_repair_sha_rejected(self):
+        key = REPAIR_CELLS[0][0]
+        receipt = _finalized_receipt(
+            logical_key=key,
+            guid=REPAIR_CELLS[0][1],
+            source_sha=self.REPAIR_SOURCE_SHA_PIN[:12],
+        )
+        got, err = validate_receipt_for_promotion(
+            receipt,
+            logical_key=key,
+            expected_logical_keys={k for k, _ in REPAIR_CELLS},
+        )
+        self.assertIsNone(got)
+        self.assertIn("malformed", err or "")
+
+    def test_policy_not_keyed_only_to_run_id_or_guid(self):
+        key = REPAIR_CELLS[0][0]
+        # Wrong source but correct run id + GUID must still fail.
+        receipt = _finalized_receipt(
+            logical_key=key,
+            guid=REPAIR_CELLS[0][1],
+            source_sha=FULL_300_SOURCE_SHA_PIN,
+        )
+        receipt["workflowRunId"] = "29688980041"
+        got, err = validate_receipt_for_promotion(
+            receipt,
+            logical_key=key,
+            expected_logical_keys={k for k, _ in REPAIR_CELLS},
+        )
+        self.assertIsNone(got)
+        self.assertIsNotNone(err)
+
+    def test_shared_policy_parity_with_planner_pins(self):
+        from video_finalize import unresolved_generation_plan as ugp
+        from video_finalize import source_policy as sp
+
+        self.assertEqual(ugp.REPAIR_SOURCE_SHA_PIN, sp.REPAIR_SOURCE_SHA_PIN)
+        self.assertEqual(ugp.ACCEPTED_FINALIZED_SOURCE_SHAS, sp.ACCEPTED_FINALIZED_SOURCE_SHAS)
+        self.assertEqual(
+            self.required_promotion_source_sha(REPAIR_CELLS[0][0]),
+            sp.REPAIR_SOURCE_SHA_PIN,
+        )
+        self.assertEqual(
+            self.required_promotion_source_sha("builder-m1-l1-what-is-llm__en"),
+            FULL_300_SOURCE_SHA_PIN,
+        )
+
+
+class FinalThreePromotionSimulationTests(unittest.TestCase):
+    """Simulate 297 preserved + exact 3 repair promotions → 300 / 0 unresolved."""
+
+    def test_297_preserved_three_added_idempotent(self):
+        from video_finalize.recovery_plan import load_authoritative_logical_keys
+        from video_finalize.source_policy import REPAIR_SOURCE_SHA_PIN
+
+        repo_root = Path(__file__).resolve().parents[3]
+        auth = load_authoritative_logical_keys(repo_root)
+        self.assertEqual(len(auth), 300)
+        repair_keys = {k for k, _ in REPAIR_CELLS}
+        repair_guids = dict(REPAIR_CELLS)
+
+        registry_path = repo_root / REGISTRY_REL_PATH
+        original_registry = registry_path.read_text(encoding="utf-8")
+        # Existing localized composites in production registry (must be 297).
+        existing = re.findall(r'^  "([^"]+__[^"]+)": "([^"]+)",\s*$', original_registry, re.M)
+        existing_map = {k: v for k, v in existing}
+        self.assertEqual(len(existing_map), 297)
+        for k in repair_keys:
+            self.assertNotIn(k, existing_map)
+
+        with tempfile.TemporaryDirectory(dir="E:\\Temp") as tmp:
+            root = Path(tmp)
+            # Write historical full-300 receipts for all non-repair keys.
+            for i, key in enumerate(auth):
+                if key in repair_keys:
+                    continue
+                repo = root / key
+                if key == ACCEPTED_CARRY_FORWARD_LOGICAL_KEY:
+                    _write_receipt(repo, key, _accepted_carry_forward_receipt())
+                else:
+                    _write_receipt(
+                        repo,
+                        key,
+                        _finalized_receipt(
+                            logical_key=key,
+                            guid=_guid_for_index(1000 + i),
+                            source_sha=FULL_300_SOURCE_SHA_PIN,
+                        ),
+                    )
+            # Write exact repair receipts.
+            for key, guid in REPAIR_CELLS:
+                receipt = _finalized_receipt(
+                    logical_key=key,
+                    guid=guid,
+                    source_sha=REPAIR_SOURCE_SHA_PIN,
+                )
+                receipt["workflowRunId"] = "29688980041"
+                _write_receipt(root / key, key, receipt)
+
+            plan = build_promotion_plan(
+                expected_logical_keys=auth,
+                receipt_roots=list(root.iterdir()),
+            )
+            self.assertEqual(plan.promotable_count, 300)
+            self.assertEqual(plan.unresolved_keys(auth), [])
+            self.assertEqual(plan.rejected, {})
+            for key, guid in REPAIR_CELLS:
+                self.assertEqual(plan.promotable[key], guid)
+
+            # Apply only the three new mappings onto the real registry text (in memory).
+            first = apply_promotions_to_registry(original_registry, repair_guids)
+            self.assertTrue(first.changed)
+            self.assertEqual(sorted(first.updated_keys), sorted(repair_keys))
+            for key, guid in REPAIR_CELLS:
+                self.assertIn(f'"{key}": "{guid}"', first.text)
+
+            # Existing 297 composite mappings preserved byte-for-byte as lines.
+            for key, guid in existing_map.items():
+                self.assertIn(f'"{key}": "{guid}"', first.text)
+
+            # Second application idempotent.
+            second = apply_promotions_to_registry(first.text, repair_guids)
+            self.assertFalse(second.changed)
+            self.assertEqual(second.text, first.text)
+
+            after = re.findall(r'^  "([^"]+__[^"]+)": "([^"]+)",\s*$', first.text, re.M)
+            self.assertEqual(len(after), 300)
+
+
 if __name__ == "__main__":
     unittest.main()

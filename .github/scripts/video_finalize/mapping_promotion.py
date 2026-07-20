@@ -12,13 +12,12 @@ from typing import Any, Callable
 from .constants import (
     ACCEPTED_CARRY_FORWARD_CELL,
     ACCEPTED_CARRY_FORWARD_LOGICAL_KEY,
-    ACCEPTED_CARRY_FORWARD_PROTECTED_FIELDS,
     BATCH_ID,
-    FULL_300_SOURCE_SHA_PIN,
     receipt_relpath,
     result_branch_name,
 )
 from .receipt import ReceiptError, validate_receipt
+from .source_policy import validate_promotion_source_sha
 
 LOCALIZED_LOCALES = frozenset({"en", "ar-MSA", "ar-Gulf"})
 REGISTRY_REL_PATH = "src/lib/bunny-videos.ts"
@@ -135,8 +134,12 @@ def validate_receipt_for_promotion(
     if logical_key == ACCEPTED_CARRY_FORWARD_LOGICAL_KEY:
         if not _receipt_matches_carry_forward(receipt):
             return None, "accepted carry-forward identity mismatch"
-    elif receipt.get("sourceSha") != FULL_300_SOURCE_SHA_PIN:
-        return None, "sourceSha mismatch for full-300 production pin"
+    else:
+        source_err = validate_promotion_source_sha(
+            logical_key, receipt.get("sourceSha")
+        )
+        if source_err:
+            return None, source_err
 
     return guid, None
 

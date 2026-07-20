@@ -23,15 +23,9 @@ from .constants import (
 from .mapping_promotion import is_valid_uuid
 from .receipt import ReceiptError, validate_receipt
 from .recovery_plan import load_authoritative_logical_keys
-
-# Immutable production source for the repaired final-three generation path.
-# Historical receipts remain accepted under FULL_300_SOURCE_SHA_PIN / carry-forward.
-REPAIR_SOURCE_SHA_PIN = "71fbe483b931cba91bedb1feadb1941092518890"
-ACCEPTED_FINALIZED_SOURCE_SHAS = frozenset(
-    {
-        FULL_300_SOURCE_SHA_PIN,
-        REPAIR_SOURCE_SHA_PIN,
-    }
+from .source_policy import (  # noqa: F401 — re-exported for tests / shared pin
+    ACCEPTED_FINALIZED_SOURCE_SHAS,
+    REPAIR_SOURCE_SHA_PIN,
 )
 
 # Immutable approved generation universe (deterministic order).
