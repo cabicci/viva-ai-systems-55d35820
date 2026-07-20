@@ -686,6 +686,31 @@ class RepairSourcePolicyTests(unittest.TestCase):
         )
 
 
+def _pre_completion_297_registry_fixture(live_registry_text: str) -> str:
+    """Build an isolated 297-entry fixture by removing only the final-three lines.
+
+    The live production registry may already contain 300 mappings; this fixture
+    reconstructs the deterministic pre-completion state without mutating disk.
+    """
+    repair_lines = {
+        f'  "{key}": "{guid}",'
+        for key, guid in REPAIR_CELLS
+    }
+    out_lines: list[str] = []
+    removed = 0
+    for line in live_registry_text.splitlines(keepends=True):
+        stripped = line.rstrip("\r\n")
+        if stripped in repair_lines:
+            removed += 1
+            continue
+        out_lines.append(line)
+    if removed != 3:
+        raise AssertionError(
+            f"expected to strip exactly 3 final-three lines, removed={removed}"
+        )
+    return "".join(out_lines)
+
+
 class FinalThreePromotionSimulationTests(unittest.TestCase):
     """Simulate 297 preserved + exact 3 repair promotions → 300 / 0 unresolved."""
 
@@ -700,16 +725,34 @@ class FinalThreePromotionSimulationTests(unittest.TestCase):
         repair_guids = dict(REPAIR_CELLS)
 
         registry_path = repo_root / REGISTRY_REL_PATH
-        original_registry = registry_path.read_text(encoding="utf-8")
-        # Existing localized composites in production registry (must be 297).
-        existing = re.findall(r'^  "([^"]+__[^"]+)": "([^"]+)",\s*$', original_registry, re.M)
+        live_registry = registry_path.read_text(encoding="utf-8")
+        live_map = dict(
+            re.findall(r'^  "([^"]+__[^"]+)": "([^"]+)",\s*$', live_registry, re.M)
+        )
+        # Live production registry may correctly remain at 300 after completion.
+        self.assertEqual(len(live_map), 300)
+        for key, guid in REPAIR_CELLS:
+            self.assertEqual(live_map.get(key), guid)
+
+        # Isolated deterministic 297-entry pre-completion fixture (temp/out-of-repo).
+        fixture_registry = _pre_completion_297_registry_fixture(live_registry)
+        existing = re.findall(
+            r'^  "([^"]+__[^"]+)": "([^"]+)",\s*$', fixture_registry, re.M
+        )
         existing_map = {k: v for k, v in existing}
         self.assertEqual(len(existing_map), 297)
         for k in repair_keys:
             self.assertNotIn(k, existing_map)
+        self.assertEqual(len(set(existing_map.values())), 297)
 
         with tempfile.TemporaryDirectory(dir="E:\\Temp") as tmp:
             root = Path(tmp)
+            fixture_path = root / "pre-completion-297-bunny-videos.ts"
+            fixture_path.write_text(fixture_registry, encoding="utf-8")
+            self.assertEqual(
+                fixture_path.read_text(encoding="utf-8"), fixture_registry
+            )
+
             # Write historical full-300 receipts for all non-repair keys.
             for i, key in enumerate(auth):
                 if key in repair_keys:
@@ -739,7 +782,7 @@ class FinalThreePromotionSimulationTests(unittest.TestCase):
 
             plan = build_promotion_plan(
                 expected_logical_keys=auth,
-                receipt_roots=list(root.iterdir()),
+                receipt_roots=[p for p in root.iterdir() if p.is_dir()],
             )
             self.assertEqual(plan.promotable_count, 300)
             self.assertEqual(plan.unresolved_keys(auth), [])
@@ -747,8 +790,8 @@ class FinalThreePromotionSimulationTests(unittest.TestCase):
             for key, guid in REPAIR_CELLS:
                 self.assertEqual(plan.promotable[key], guid)
 
-            # Apply only the three new mappings onto the real registry text (in memory).
-            first = apply_promotions_to_registry(original_registry, repair_guids)
+            # Apply only the three new mappings onto the isolated 297 fixture.
+            first = apply_promotions_to_registry(fixture_registry, repair_guids)
             self.assertTrue(first.changed)
             self.assertEqual(sorted(first.updated_keys), sorted(repair_keys))
             for key, guid in REPAIR_CELLS:
@@ -757,14 +800,34 @@ class FinalThreePromotionSimulationTests(unittest.TestCase):
             # Existing 297 composite mappings preserved byte-for-byte as lines.
             for key, guid in existing_map.items():
                 self.assertIn(f'"{key}": "{guid}"', first.text)
+                self.assertEqual(
+                    existing_map[key],
+                    dict(
+                        re.findall(
+                            r'^  "([^"]+__[^"]+)": "([^"]+)",\s*$', first.text, re.M
+                        )
+                    )[key],
+                )
 
-            # Second application idempotent.
+            # Second application idempotent (no text/byte change).
             second = apply_promotions_to_registry(first.text, repair_guids)
             self.assertFalse(second.changed)
             self.assertEqual(second.text, first.text)
+            self.assertEqual(
+                second.text.encode("utf-8"), first.text.encode("utf-8")
+            )
 
             after = re.findall(r'^  "([^"]+__[^"]+)": "([^"]+)",\s*$', first.text, re.M)
-            self.assertEqual(len(after), 300)
+            after_map = {k: v for k, v in after}
+            self.assertEqual(len(after_map), 300)
+            self.assertEqual(len(set(after_map.values())), 300)
+            for key, guid in REPAIR_CELLS:
+                self.assertEqual(after_map[key], guid)
+
+            # Live production registry remains unchanged at 300.
+            live_after = registry_path.read_text(encoding="utf-8")
+            self.assertEqual(live_after, live_registry)
+            self.assertEqual(len(live_map), 300)
 
 
 if __name__ == "__main__":
