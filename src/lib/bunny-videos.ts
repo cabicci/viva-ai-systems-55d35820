@@ -407,6 +407,9 @@ export const BUNNY_VIDEO_GUIDS: Record<string, string> = {
   "builder-m8-l2-rls__ar-Gulf": "ceca9822-720a-44d7-a23c-3cc93dd4dd02",
   "creator-m3-l2-script-structure__en": "55cf06a0-5c95-4539-990a-ce23a445d5c4",
   "intro-m1-l6-learn-without-fear__en": "1c48dab5-109b-4c21-a9d2-81f6108b2ed9",
+  "automator-m7-l1-closing-loop__ar-Gulf": "aa1d9464-c58d-4e8c-a6dc-f29d7b924565",
+  "creator-m4-repurposing__en": "c34060de-ed17-4b2c-9ad7-d53a1d2818c9",
+  "intro-m1-l1-what-is-ai__en": "de6aa7f5-a863-46e3-86ca-3da9489ae601",
 
 };
 
