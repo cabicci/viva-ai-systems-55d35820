@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "56e0c34525cd8d4e71becd1f2cba5b32006a04a233c031d792fd8bfb821e6add",
+    "ar-MSA": "929e9ba470e60e47931c119a25012e32f922f7fdfbd5e6577eec2caca952068a",
+    "ar-Gulf": "3f00849e9039149e9ecde72260983c58ca2641c09d15cab12772c94e9b3a71a5",
+    "ar-EG": "4e73fb328abdd91cc1fcc5a05fb03e71bd17ca6495a08e945959b699aa711fef"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -51,11 +57,30 @@
       ]
     },
     "coreIdea": {
-      "en": "failed",
-      "ar-MSA": "فشل",
-      "ar-Gulf": "فشل",
+      "en": "Work with Small Experiments and Simple Data",
+      "ar-MSA": "اشتغل بتجارب صغيرة وبيانات بسيطة",
+      "ar-Gulf": "اشتغل بتجارب صغيرة وبيانات بسيطة",
       "ar-EG": "بدل ما تقول الفيديو فشل، اسأل: إيه اللي اتعلمته من أول ٥ ثواني؟"
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Consistency wins — not just one hit.",
+      "ar-MSA": "ماذا ستفهم؟ الاستمرارية تكسب — ليس الضربة الواحدة.",
+      "ar-Gulf": "وش راح تفهم؟ الاستمرارية تكسب — مو الضربة الواحدة.",
+      "ar-EG": "كتير يبدأ بحماس جامد ويقف بسرعة لأنه مستني نتيجة كبيرة من أول فيديوهين."
+    },
+    "lessonObjects": [
+      "Iteration",
+      "Signal",
+      "Small Data",
+      "Exhausting Approach",
+      "Practical Approach",
+      "Work with Small Experiments and Simple Data"
+    ],
+    "relationships": [
+      "Exhausting Approach → Practical Approach",
+      "Visual snapshot — **a simple review of ideas**. **Instead of randomness:** look at **each idea** on a **clear scale:** does it **solve a real problem** for a **",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "Few numbers at the start can be intimidating. In the beginning, the numbers are small — and this is very normal even for good accounts.",
       "ar-MSA": "أرقام قليلة في البداية تُخيف. أول فترة الأرقام صغيرة — وهذا طبيعي جدًا حتى للحسابات الجيدة.",
@@ -101,16 +126,16 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/creator-m4-l1-reality-check.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "Visual snapshot — **a simple review of ideas**. **Instead of randomness:** look at **each idea** on a **clear scale:** does it **solve a rea"
+          "quote": "a simple review of ideas"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l1-reality-check.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "فشل"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l1-reality-check.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "فشل"
         },
         "ar-EG": {
@@ -122,9 +147,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "creator-m4-l1-reality-check's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Exhausting Approach / Practical Approach) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Exhausting Approach\" vs \"Practical Approach\" for creator-m4-l1-reality-check.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Exhausting Approach\" vs \"Practical Approach\" for creator-m4-l1-reality-check.",
   "labelPacks": {
     "en": [
       {
@@ -264,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Reality Check: \"Exhausting Approach\" versus \"Practical Approach\" — failed",
-    "ar-MSA": "مراجعة الواقع: \"الأسلوب المرهق\" في مقابل \"الأسلوب العملي\" — فشل",
-    "ar-Gulf": "مراجعة الواقع: \"الأسلوب المرهق\" في مقابل \"الأسلوب العملي\" — فشل",
+    "en": "Reality Check: \"Exhausting Approach\" versus \"Practical Approach\" — Work with Small Experiments and Simple Data",
+    "ar-MSA": "مراجعة الواقع: \"الأسلوب المرهق\" في مقابل \"الأسلوب العملي\" — اشتغل بتجارب صغيرة وبيانات بسيطة",
+    "ar-Gulf": "مراجعة الواقع: \"الأسلوب المرهق\" في مقابل \"الأسلوب العملي\" — اشتغل بتجارب صغيرة وبيانات بسيطة",
     "ar-EG": "اشتغل بتجارب صغيرة وبيانات بسيطة: \"الأسلوب المرهق\" في مقابل \"الأسلوب العملي\" — بدل ما تقول الفيديو فشل، اسأل: إيه اللي اتعلمته من أول ٥ ثواني؟"
   },
   "aiPromptContract": null,
@@ -329,5 +354,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "8d6aa79aa38525b00dceb5bd3d0b5c72dbfc9340bec3b88037d8dd059d69002e"
+  "checksum": "c23c27a16006f6b54e2b96f2a06fb5a804f7e6c5ca11f8938f272d7e4848f5e3"
 }

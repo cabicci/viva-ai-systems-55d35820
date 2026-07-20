@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "68729a72550af617deb1520196bc3b4b5dfc633d5d056b4b54c2b6f5b588998e",
+    "ar-MSA": "6ee5131f3eb02d76ea3364de58fcd3f257ca28d31c4cf3a59743e43083402e1a",
+    "ar-Gulf": "0ae8d535eb01c366dfc7642e0ca6a2c3b87d9e912cd429a26e408378f01d88f6",
+    "ar-EG": "fadd1bf553a594bd7ada4cac14fc5d696efa306dae6e2a22b541a8dd77ef80c1"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Reduce the Repetitive — Open the Door to Proactive",
-      "ar-MSA": "قلّل المتكرر — افتح باب الاستباقي",
-      "ar-Gulf": "قلل المتكرر — افتح باب الاستباقي",
+      "en": "The Main Concept — Reactive: Tasks that come to you — messages, problems, urgent requests. They need to be done, but they do not build the business on their own. Proactive: Tasks you choose — pricing, new proposals, following up with important clients, improving processes. This i",
+      "ar-MSA": "الفكرة الأساسية — Reactive (رد فعل): عمل يأتيك — رسالة، مشكلة، طلب عاجل. يجب أن يُنجَز، لكنه لا يبني العمل وحده. Proactive (استباقي): عمل تختاره أنت — تسعير، عرض جديد، متابعة عميل مهم، تحسين عملية. هذا ما يحرّك العمل.",
+      "ar-Gulf": "الفكرة الأساسية — Reactive (رد فعل): عمل يجيك — رسالة، مشكلة، طلب عاجل. لازم يُنجز، لكنه ما يبني العمل لوحده. Proactive (استباقي): عمل تختاره أنت — تسعير، عرض جديد، متابعة عميل مهم، تحسين عملية. هذا اللي يحرك العمل.",
       "ar-EG": "Reactive: شغل بييجي لك — رسالة، مشكلة، طلب عاجل. لازم يتعمل، بس ما بيبنيش البيزنس لوحده."
     },
+    "instructionalPurpose": {
+      "en": "What Will You Understand? Repetitive tasks that require your response every day consume your thinking time — AI can help reduce some of this.",
+      "ar-MSA": "ماذا ستفهم؟ العمل المتكرر الذي ينتظر ردك كل يوم يأكل وقت التفكير — والذكاء الاصطناعي (AI) يستطيع تخفيف جزء منه.",
+      "ar-Gulf": "وش راح تفهم؟ العمل المتكرر اللي ينتظر ردك كل يوم ياخذ وقت التفكير — والذكاء الاصطناعي (AI) يقدر يخفف جزء منه.",
+      "ar-EG": "هتفهم إيه؟ الشغل المتكرر اللي بيستنى ردك كل يوم بياكل وقت التفكير — والـ AI يقدر يخفّف جزء منه."
+    },
+    "lessonObjects": [
+      "Reactive",
+      "Proactive",
+      "Reactive Week",
+      "Proactive Week",
+      "The Main Concept",
+      "Tasks that come to you"
+    ],
+    "relationships": [
+      "Reactive Week → Proactive Week",
+      "Illustration: A Reactive Day vs. A Proactive Day — distribution of the day. The goal is not to eliminate reactive tasks — but to reduce the repetitive to free u",
+      "visual relationship kind: comparison"
+    ],
     "tension": {
       "en": "You end your day feeling like you've been 'busy' — but nothing has been built.",
       "ar-MSA": "تُغلق يومك وأنت «اشتغلت» — لكن لا شيء بُني.",
@@ -106,12 +131,12 @@
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m1-l2-reactive-vs-proactive.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "قلّل المتكرر — افتح باب الاستباقي"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m1-l2-reactive-vs-proactive.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "قلل المتكرر — افتح باب الاستباقي"
         },
         "ar-EG": {
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "Reactive vs Proactive: \"Reactive Week\" versus \"Proactive Week\" — Reduce the Repetitive — Open the Door to Proactive",
-    "ar-MSA": "رد الفعل مقابل الاستباقية: \"أسبوع Reactive\" في مقابل \"أسبوع فيه Proactive\" — قلّل المتكرر — افتح باب الاستباقي",
-    "ar-Gulf": "رد الفعل مقابل الاستباقية: \"أسبوع Reactive\" في مقابل \"أسبوع فيه Proactive\" — قلل المتكرر — افتح باب الاستباقي",
+    "en": "Reactive vs Proactive: \"Reactive Week\" versus \"Proactive Week\" — The Main Concept — Reactive: Tasks that come to you — messages, problems, urgent requests. They need to be done, but they do not build the business on their own. Proactive: Tasks you choose — pricing, new proposals, following up with i",
+    "ar-MSA": "رد الفعل مقابل الاستباقية: \"أسبوع Reactive\" في مقابل \"أسبوع فيه Proactive\" — الفكرة الأساسية — Reactive (رد فعل): عمل يأتيك — رسالة، مشكلة، طلب عاجل. يجب أن يُنجَز، لكنه لا يبني العمل وحده. Proactive (استباقي): عمل تختاره أنت — تسعير، عرض جديد، متابعة عميل مهم، تحسين عملية. هذا ما يحرّك العمل.",
+    "ar-Gulf": "رد الفعل مقابل الاستباقية: \"أسبوع Reactive\" في مقابل \"أسبوع فيه Proactive\" — الفكرة الأساسية — Reactive (رد فعل): عمل يجيك — رسالة، مشكلة، طلب عاجل. لازم يُنجز، لكنه ما يبني العمل لوحده. Proactive (استباقي): عمل تختاره أنت — تسعير، عرض جديد، متابعة عميل مهم، تحسين عملية. هذا اللي يحرك العمل.",
     "ar-EG": "قلّل المتكرر — افتح باب الاستباقي: \"أسبوع Reactive\" في مقابل \"أسبوع فيه Proactive\" — Reactive: شغل بييجي لك — رسالة، مشكلة، طلب عاجل. لازم يتعمل، بس ما بيبنيش البيزنس لوحده."
   },
   "aiPromptContract": null,
@@ -330,5 +355,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "c0cc30d5d7965b5b7724233c4dde52f286873657fb48cfa5c02293fbedeb8e8f"
+  "checksum": "3ad019d2215bc5369a49199c9ffb31133f8f40865b6eb19f3757afdc3804e7a6"
 }

@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "77792ced22a1bec5632571302593b02d0afe48a8f756860067cbc460a43993b7",
+    "ar-MSA": "f2231f8423bc51bdd09b20c11c2f5d0ed6f9cae0916d36d44ed4ea80219dd2cb",
+    "ar-Gulf": "57e34165cf3a44cbad64c56ebcaeafa646c806769032e1b54523e0eead834e5e",
+    "ar-EG": "f56f508b3b65cb1ae4cd7f4dcfe7c4eda4e2d489d6f403a6a000f49ecbd26fe2"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Every word",
-      "ar-MSA": "كل كلمة",
-      "ar-Gulf": "كل كلمة",
+      "en": "Temperature = Stability vs Creativity",
+      "ar-MSA": "Temperature = ثبات vs إبداع",
+      "ar-Gulf": "درجة الحرارة = ثبات vs إبداع",
       "ar-EG": "كل كلمة الـ AI بيختارها من احتمالات. Temperature بتقول: خُد الأكثر توقّعًا (ثبات) ولا جرّأة (إبداع)؟"
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Temperature = a balance between response stability and creativity — and when to adjust it for each AI feature.",
+      "ar-MSA": "ماذا ستفهم؟ Temperature (درجة الحرارة) = توازن بين ثبات الردود وإبداعها — ومتى تضبطها في كل ميزة ذكاء اصطناعي.",
+      "ar-Gulf": "وش راح تفهم؟ درجة الحرارة = توازن بين ثبات الردود وإبداعها — ومتى تضبطها في كل ميزة ذكاء اصطناعي.",
+      "ar-EG": "هتفهم إيه؟ Temperature = توازن بين ثبات الردود وإبداعها — وإمتى تظبطها في كل ميزة AI."
+    },
+    "lessonObjects": [
+      "Temperature",
+      "Parameters",
+      "Low Temperature",
+      "High Temperature",
+      "Temperature = Stability vs Creativity"
+    ],
+    "relationships": [
+      "Low Temperature → High Temperature",
+      "**Same format — because stability is needed:**",
+      "visual relationship kind: concept-scene"
+    ],
     "tension": {
       "en": "I asked the AI the same question twice — and got two different responses. It feels 'unreliable'. Sometimes you want variety (ad ideas). And sometimes you want the same answer (code, numbers).",
       "ar-MSA": "سألت الذكاء الاصطناعي نفس السؤال مرتين — وخرج ردّان مختلفان. تشعر أنه «غير موثوق». أحيانًا تريد تنوّعًا (أفكار إعلانات). وأحيانًا تريد نفس الإجابة (كود، أرقام).",
@@ -102,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m4-l1-parameters.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**Same format — because stability is needed:**"
+          "quote": "Same format — because stability is needed:"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m4-l1-parameters.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**نفس الشكل — لأن الثبات مطلوب:**"
+          "quote": "نفس الشكل — لأن الثبات مطلوب:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m4-l1-parameters.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**نفس الشكل — لأن الثبات مطلوب:**"
+          "quote": "نفس الشكل — لأن الثبات مطلوب:"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m4-l1-parameters.ts",
@@ -123,7 +147,7 @@
     }
   },
   "method": 2,
-  "methodRationale": "builder-m4-l1-parameters's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"Every word\" without inventing UI chrome or rendering paid text.",
+  "methodRationale": "builder-m4-l1-parameters's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"Temperature = Stability vs Creativity\" without inventing UI chrome or rendering paid text.",
   "compositionPattern": "concept-scene-metaphor",
   "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Low Temperature\" vs \"High Temperature\" for builder-m4-l1-parameters.",
   "labelPacks": {
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Parameters (Temperature): \"Low Temperature\" versus \"High Temperature\" — Every word",
-    "ar-MSA": "الوسائط — درجة الحرارة: \"Temperature منخفضة\" في مقابل \"Temperature عالية\" — كل كلمة",
-    "ar-Gulf": "معايير (درجة الحرارة): \"درجة الحرارة منخفضة\" في مقابل \"درجة الحرارة عالية\" — كل كلمة",
+    "en": "Parameters (Temperature): \"Low Temperature\" versus \"High Temperature\" — Temperature = Stability vs Creativity",
+    "ar-MSA": "الوسائط — درجة الحرارة: \"Temperature منخفضة\" في مقابل \"Temperature عالية\" — Temperature = ثبات vs إبداع",
+    "ar-Gulf": "معايير (درجة الحرارة): \"درجة الحرارة منخفضة\" في مقابل \"درجة الحرارة عالية\" — درجة الحرارة = ثبات vs إبداع",
     "ar-EG": "Temperature = ثبات vs إبداع: \"Temperature واطية\" في مقابل \"Temperature عالية\" — كل كلمة الـ AI بيختارها من احتمالات. Temperature بتقول: خُد الأكثر توقّعًا (ثبات) ولا جرّأة (إبداع)؟"
   },
   "aiPromptContract": {
@@ -341,5 +365,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "b7bd706ddc18da44c64a0fb4a356ccd4d069e443d58a33be63d3fb3350fc684d"
+  "checksum": "7140f281298e15d52135b468342dd7adfea142ebf14867f210d5d80ff52b93de"
 }

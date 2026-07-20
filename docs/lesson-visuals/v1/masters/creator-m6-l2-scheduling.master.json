@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "a6c2e2607a8b6d9113f8ee3087b324f7585735777133689f83af7387119311eb",
+    "ar-MSA": "c2581ee60590f406567fb3bc9e807fe2a9c7e83b4525de9d2293daee08add7be",
+    "ar-Gulf": "c074865316a321ebed7ad808f459ac99335451997a20c21a0b79aac6a7c9a88a",
+    "ar-EG": "371bb5003299895ca179d6b5d91f34c9a7fddad05f3921632626e4e14852a05d"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -48,11 +54,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Set a fixed weekly slot",
-      "ar-MSA": "خصص Slot (فترة) أسبوعيًا ثابتًا",
-      "ar-Gulf": "خصص فترة أسبوعيًا ثابتة",
+      "en": "A Simple System: Batch + Calendar",
+      "ar-MSA": "نظام بسيط: Batch + Calendar",
+      "ar-Gulf": "نظام بسيط: تجميع + تقويم",
       "ar-EG": "خصص Slot أسبوعي ثابت للتصوير أو التحضير بالجملة. ده يحل مشكلة الوقت بدل ما تفضل تطفي حرائق يومية."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Consistency wins over bursts. Success in content comes not from posting once with great impact — but from having a steady rhythm that people can rely on.",
+      "ar-MSA": "ماذا ستفهم؟ الاستمرارية تكسب أمام الدفعات. من ينجح في المحتوى ليس من ينشر مرة واحدة بقوة — بل من له إيقاع ثابت تعتاد عليه الناس.",
+      "ar-Gulf": "وش راح تفهم؟ الاستمرارية تكسب أمام الانفجارات. اللي ينجح في المحتوى مو اللي ينشر مرة وحدة بقوة — لكن اللي له إيقاع ثابت يتعود عليه الناس.",
+      "ar-EG": "اللي بيكسب في المحتوى مش اللي بينشر مرة جامدة، اللي بيكسب هو اللي عنده إيقاع ثابت الناس تتعود عليه."
+    },
+    "lessonObjects": [
+      "Batching",
+      "Content Calendar",
+      "Cadence",
+      "Without a System",
+      "With a Clear System",
+      "A Simple System"
+    ],
+    "relationships": [
+      "Without a System → With a Clear System",
+      "Visual diagram — **A weekly calendar for posting and preparation**. **A fixed preparation day reduces chaos** — **and fixed posting days build expectation and t",
+      "visual relationship kind: process"
+    ],
     "tension": {
       "en": "Temporary excitement breaks your plan. Most disruptions start from a daily exhausting question: “What should I post today?” When it repeats every day — the decision itself becomes a burden.",
       "ar-MSA": "الحماس المؤقت يكسر خطتك. أغلب التعطيل يبدأ من سؤال يومي مرهق: «ماذا أنشر اليوم؟» عندما يتكرر كل يوم — القرار نفسه يصبح حملًا.",
@@ -98,16 +123,16 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/creator-m6-l2-scheduling.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "Visual diagram — **A weekly calendar for posting and preparation**. **A fixed preparation day reduces chaos** — **and fixed posting days bui"
+          "quote": "A weekly calendar for posting and preparation"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l2-scheduling.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "خصص Slot (فترة) أسبوعيًا ثابتًا"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l2-scheduling.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "خصص فترة أسبوعيًا ثابتة"
         },
         "ar-EG": {
@@ -261,9 +286,9 @@
     ]
   },
   "altTexts": {
-    "en": "Scheduling and Consistency: \"Without a System\" versus \"With a Clear System\" — Set a fixed weekly slot",
-    "ar-MSA": "الجدولة والاستمرارية: \"بدون نظام\" في مقابل \"بنظام واضح\" — خصص Slot (فترة) أسبوعيًا ثابتًا",
-    "ar-Gulf": "جدولة واستمرارية: \"بدون نظام\" في مقابل \"بنظام واضح\" — خصص فترة أسبوعيًا ثابتة",
+    "en": "Scheduling and Consistency: \"Without a System\" versus \"With a Clear System\" — A Simple System: Batch + Calendar",
+    "ar-MSA": "الجدولة والاستمرارية: \"بدون نظام\" في مقابل \"بنظام واضح\" — نظام بسيط: Batch + Calendar",
+    "ar-Gulf": "جدولة واستمرارية: \"بدون نظام\" في مقابل \"بنظام واضح\" — نظام بسيط: تجميع + تقويم",
     "ar-EG": "نظام بسيط: Batch + Calendar: \"بدون نظام\" في مقابل \"بنظام واضح\" — خصص Slot أسبوعي ثابت للتصوير أو التحضير بالجملة. ده يحل مشكلة الوقت بدل ما تفضل تطفي حرائق يومية."
   },
   "aiPromptContract": null,
@@ -326,5 +351,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "280ac862c65a16ee69e14a3460ae7795e75c5974c88ad48c39c6d07a9426f4e8"
+  "checksum": "ad328e5fa0246a30a5a202a00cb9a2812adf169c810ff0175166e5e0822aa317"
 }

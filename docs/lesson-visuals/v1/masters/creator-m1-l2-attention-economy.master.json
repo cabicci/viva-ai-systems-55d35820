@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "e37e1da4e4472c16e3b3c24b1ca73c1e87963cb6545d7689817794b4daf5d67f",
+    "ar-MSA": "0e3ab969c38a4cadedc6b67e1f5637dd3aef938a94137646e5d44ea4f8e191af",
+    "ar-Gulf": "5e821d0feeca32dc0cdd1f7ca93572090348c64f35c43bc182aea2bde53feca4",
+    "ar-EG": "b081f536dd96a81d1c181cef79acf57ad6cadb6a88799e08ea07f529af4c5a52"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -51,11 +57,30 @@
       ]
     },
     "coreIdea": {
-      "en": "attention",
-      "ar-MSA": "الانتباه",
-      "ar-Gulf": "الانتباه",
+      "en": "Clear Value Wins — The content that usually wins attention is the one that promises clear value from the very first moment. AI can help you generate opening formats quickly — but choosing the best for your audience still relies on your judgment and experience.",
+      "ar-MSA": "المفيد الواضح يفوز — الذي يربح الانتباه عادةً هو المحتوى الذي يعدّ بفائدة واضحة من أول لحظة. الذكاء الاصطناعي قد يساعدك على توليد صيغ بدايات بسرعة — لكن اختيار الأنسب لجمهورك يبقى مبنيًا على حكمك وتجربتك.",
+      "ar-Gulf": "المفيد الواضح يفوز — اللي يكسب الانتباه عادةً هو المحتوى اللي يعد بفائدة واضحة من أول لحظة. الذكاء الاصطناعي ممكن يساعدك في توليد صيغ بدايات بسرعة — لكن اختيار الأنسب لجمهورك يبقى مبني على حكمك وتجربتك.",
       "ar-EG": "اللي يربح الانتباه عادة هو المحتوى اللي يوعد بفايدة واضحة من أول لحظة."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? On social media, people decide in seconds: Do they continue or skip?",
+      "ar-MSA": "ماذا ستفهم؟ على وسائل التواصل يقرّر الناس في ثوانٍ: هل يكملون أم يتخطّون.",
+      "ar-Gulf": "وش راح تفهم؟ على وسائل التواصل، يقرر الناس في ثوانٍ: هل يكملون أو يتخطون.",
+      "ar-EG": "في السوشيال ميديا الناس بتقرر في ثواني: تكمل ولا تتخطى."
+    },
+    "lessonObjects": [
+      "Attention Economy",
+      "Scroll Stop",
+      "Useful Angle",
+      "Distracting Content",
+      "Useful Content",
+      "Clear Value Wins"
+    ],
+    "relationships": [
+      "Distracting Content → Useful Content",
+      "A visual snapshot — an example of content that is **clear and easy to grasp** visually. Visual clarity and a focused message help the viewer understand quickly",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "No matter how much effort you put into preparation, if the beginning is not engaging — people will skip. Therefore, understanding the Attention Economy comes before any publishing plan or production.",
       "ar-MSA": "مهما بذلت جهدًا في الإعداد، إذا البداية غير جذّابة — الناس ستتخطّى. لذلك فهم Attention Economy (اقتصاد الانتباه) يسبق أي خطة نشر أو إنتاج.",
@@ -101,16 +126,16 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/creator-m1-l2-attention-economy.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "A visual snapshot — an example of content that is **clear and easy to grasp** visually. Visual clarity and a focused message help the viewer"
+          "quote": "clear and easy to grasp"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m1-l2-attention-economy.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "الانتباه"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m1-l2-attention-economy.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "الانتباه"
         },
         "ar-EG": {
@@ -122,9 +147,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "creator-m1-l2-attention-economy's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Distracting Content / Useful Content) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Distracting Content\" vs \"Useful Content\" for creator-m1-l2-attention-economy.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Distracting Content\" vs \"Useful Content\" for creator-m1-l2-attention-economy.",
   "labelPacks": {
     "en": [
       {
@@ -264,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Attention Economy: \"Distracting Content\" versus \"Useful Content\" — attention",
-    "ar-MSA": "اقتصاد الانتباه: \"محتوى مشتت\" في مقابل \"محتوى مفيد\" — الانتباه",
-    "ar-Gulf": "اقتصاد الانتباه: \"محتوى مشتت\" في مقابل \"محتوى مفيد\" — الانتباه",
+    "en": "Attention Economy: \"Distracting Content\" versus \"Useful Content\" — Clear Value Wins — The content that usually wins attention is the one that promises clear value from the very first moment. AI can help you generate opening formats quickly — but choosing the best for your audience still relies on yo",
+    "ar-MSA": "اقتصاد الانتباه: \"محتوى مشتت\" في مقابل \"محتوى مفيد\" — المفيد الواضح يفوز — الذي يربح الانتباه عادةً هو المحتوى الذي يعدّ بفائدة واضحة من أول لحظة. الذكاء الاصطناعي قد يساعدك على توليد صيغ بدايات بسرعة — لكن اختيار الأنسب لجمهورك يبقى مبنيًا على حكمك وتجربتك.",
+    "ar-Gulf": "اقتصاد الانتباه: \"محتوى مشتت\" في مقابل \"محتوى مفيد\" — المفيد الواضح يفوز — اللي يكسب الانتباه عادةً هو المحتوى اللي يعد بفائدة واضحة من أول لحظة. الذكاء الاصطناعي ممكن يساعدك في توليد صيغ بدايات بسرعة — لكن اختيار الأنسب لجمهورك يبقى مبني على حكمك وتجربتك.",
     "ar-EG": "المفيد الواضح بيفوز: \"محتوى مشتت\" في مقابل \"محتوى مفيد\" — اللي يربح الانتباه عادة هو المحتوى اللي يوعد بفايدة واضحة من أول لحظة."
   },
   "aiPromptContract": null,
@@ -329,5 +354,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "37226242aa8e2d0dae8c4d061816cdd5a5cc6556b60441f29786b2e57ade2bdd"
+  "checksum": "3730ef49108fae28fe255db1e4cbe5d3ce40ee1204fe0f67b8a8b6095cf9ae0a"
 }

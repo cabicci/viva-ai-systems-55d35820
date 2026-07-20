@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "7c7e688152beb2fd43c07c67429761e209297c23973ca36cf696c6ce761eb3f1",
+    "ar-MSA": "37621eec4c553b0755818d29346888b9dfdafe360875a3c9ad22426b59079d8e",
+    "ar-Gulf": "8272cdf9cee649dbadc764cee820d709f59b76b48856b09a69f778355688c16c",
+    "ar-EG": "d547480b77a87f5c053b0ae8ae0e58347715d0866735c2bee17d9ed0012f84a5"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Instructions",
-      "ar-MSA": "Instructions (تعليمات)",
-      "ar-Gulf": "Instructions (تعليمات)",
+      "en": "Examples Teach Better Than Adjectives",
+      "ar-MSA": "المثال يعلّم أفضل من الصفة",
+      "ar-Gulf": "المثال يعلّم أفضل من الصفة",
       "ar-EG": "Instructions = خطوات أو قواعد بالكلام: «اعمل ١، ٢، ٣»."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? When to describe with words and when to show an example — and how this affects the quality of AI outputs in your product.",
+      "ar-MSA": "ماذا ستفهم؟ متى تصف بالكلام ومتى تُري مثالًا — وكيف يفرّق ذلك في جودة مخرجات الذكاء الاصطناعي في منتجك.",
+      "ar-Gulf": "وش راح تفهم؟ متى تصف بالكلام ومتى تُري مثالًا — وكيف يفرق ذلك في جودة مخرجات الذكاء الاصطناعي في منتجك.",
+      "ar-EG": "هتفهم إيه؟ إمتى توصف بالكلام وإمتى تورّي مثال — وإزاي ده يفرّق في جودة مخرجات AI في منتجك."
+    },
+    "lessonObjects": [
+      "Instructions",
+      "Few-shot Prompting",
+      "Description in Words",
+      "Example to Mimic",
+      "Examples Teach Better Than Adjectives"
+    ],
+    "relationships": [
+      "Description in Words → Example to Mimic",
+      "**Matching Cards — From One Example:**",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "I wrote 'Write in an engaging and unique style' — and the response was clichés: 'Discover the magic' and 'A unique experience'. AI is better at mimicking than understanding general qualities.",
       "ar-MSA": "كتبت «اكتب بأسلوب جذّاب ومميز» — والرد جاء كليشيهات: «اكتشف السحر» و«تجربة فريدة». الذكاء الاصطناعي بارع في التقليد أكثر من فهم الصفات العامة.",
@@ -102,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m2-l2-instructions-examples.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**Matching Cards — From One Example:**"
+          "quote": "Matching Cards — From One Example:"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l2-instructions-examples.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**كروت متطابقة — من مثال واحد:**"
+          "quote": "كروت متطابقة — من مثال واحد:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l2-instructions-examples.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**كروت متطابقة — من مثال واحد:**"
+          "quote": "كروت متطابقة — من مثال واحد:"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m2-l2-instructions-examples.ts",
@@ -123,9 +147,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "builder-m2-l2-instructions-examples's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Description in Words / Example to Mimic) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Description in Words\" vs \"Example to Mimic\" for builder-m2-l2-instructions-examples.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Description in Words\" vs \"Example to Mimic\" for builder-m2-l2-instructions-examples.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Instructions vs Examples: \"Description in Words\" versus \"Example to Mimic\" — Instructions",
-    "ar-MSA": "التعليمات مقابل الأمثلة: \"وصف بالكلام\" في مقابل \"مثال يقلّده\" — Instructions (تعليمات)",
-    "ar-Gulf": "التعليمات مقابل الأمثلة: \"وصف بالكلام\" في مقابل \"مثال يقلّده\" — Instructions (تعليمات)",
+    "en": "Instructions vs Examples: \"Description in Words\" versus \"Example to Mimic\" — Examples Teach Better Than Adjectives",
+    "ar-MSA": "التعليمات مقابل الأمثلة: \"وصف بالكلام\" في مقابل \"مثال يقلّده\" — المثال يعلّم أفضل من الصفة",
+    "ar-Gulf": "التعليمات مقابل الأمثلة: \"وصف بالكلام\" في مقابل \"مثال يقلّده\" — المثال يعلّم أفضل من الصفة",
     "ar-EG": "المثال يعلّم أحسن من الصفة: \"وصف بالكلام\" في مقابل \"مثال يقلّده\" — Instructions = خطوات أو قواعد بالكلام: «اعمل ١، ٢، ٣»."
   },
   "aiPromptContract": null,
@@ -330,5 +354,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "7b6c7725893f27f8525c0b9c42606f2c2041ae9322ff91b3245f7f8ec5e6aa70"
+  "checksum": "a4c92269df3996f8098c4d5af41e1479ad7bd7610e312d7d81ac70744150d72d"
 }

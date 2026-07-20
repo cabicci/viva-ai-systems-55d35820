@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "1316edace51451b55d8f8bbd86a55864b15fd293d7a2424046e77df492c59bb7",
+    "ar-MSA": "035f114830668a4cffe65f4403faf6fbf27de393a025f76eab3b3d1ffd9c6b97",
+    "ar-Gulf": "871fa9c11d46c1b646bec684705b11c94f0cc555e3f7578a760cd950cc9779dd",
+    "ar-EG": "8e72a62f849cd31fa6321e049d3ef92ad33864e8f737808e62eaa9155ec0e900"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -51,11 +57,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Content builds trust",
-      "ar-MSA": "المحتوى يبني ثقة",
-      "ar-Gulf": "المحتوى يبني ثقة",
+      "en": "Create a Clear Bridge — Content builds trust — and the CTA leads the person to a specific step: download a simple gift, or send a keyword message, or a short registration. The goal at this stage is not immediate selling — but gathering serious leads that you follow up with respec",
+      "ar-MSA": "اعمل كوبريًا صغيرًا وواضحًا",
+      "ar-Gulf": "اعمل كوبري واضح وبسيط — المحتوى يبني ثقة — والدعوة لاتخاذ إجراء تنقل الشخص لخطوة محددة: تحميل هدية بسيطة، أو رسالة بكلمة مفتاحية، أو تسجيل قصير. الهدف في هذه المرحلة مو البيع الفوري — بل جمع عملاء محتملين جادين تتابع معهم باحترام.",
       "ar-EG": "المحتوى يبني ثقة، والـ CTA ينقل الشخص لخطوة محددة: تحميل هدية بسيطة، أو رسالة بكلمة مفتاحية، أو تسجيل قصير."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? A follower is not a client without a bridge.",
+      "ar-MSA": "ماذا ستفهم؟ المتابع ليس عميلًا من دون كوبري (جسر).",
+      "ar-Gulf": "وش راح تفهم؟ المتابع مو عميل بدون كوبري (جسر).",
+      "ar-EG": "عدد المتابعين مهم، بس لو مفيش انتقال منطقي لعرضك هيفضل التأثير شكله حلو بس من غير نتيجة."
+    },
+    "lessonObjects": [
+      "Lead",
+      "Lead Magnet",
+      "CTA",
+      "Without a Bridge",
+      "With a Clear Bridge",
+      "Create a Clear Bridge"
+    ],
+    "relationships": [
+      "Without a Bridge → With a Clear Bridge",
+      "Visual Diagram — **The conversion funnel from content to leads**. **Each stage reduces the number** **but increases quality**. **The important thing** **is that",
+      "visual relationship kind: process"
+    ],
     "tension": {
       "en": "A gap between attention and purchase. Many follow you and benefit — but the decision moment is lost because the next step is unclear.",
       "ar-MSA": "فجوة بين الانتباه والشراء. كثيرون يتابعونك ويستفيدون — لكن لحظة القرار تضيع لأن الخطوة التالية غير واضحة.",
@@ -101,16 +126,16 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/creator-m6-l4-leads.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "Visual Diagram — **The conversion funnel from content to leads**. **Each stage reduces the number** **but increases quality**. **The importa"
+          "quote": "The conversion funnel from content to leads"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m6-l4-leads.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "المحتوى يبني ثقة"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m6-l4-leads.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "المحتوى يبني ثقة"
         },
         "ar-EG": {
@@ -264,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "From Views to Leads: \"Without a Bridge\" versus \"With a Clear Bridge\" — Content builds trust",
-    "ar-MSA": "من المشاهدات إلى العملاء: \"من دون كوبري\" في مقابل \"بكوبري واضح\" — المحتوى يبني ثقة",
-    "ar-Gulf": "من المشاهدات للعملاء: \"بدون كوبري\" في مقابل \"بكوبري واضح\" — المحتوى يبني ثقة",
+    "en": "From Views to Leads: \"Without a Bridge\" versus \"With a Clear Bridge\" — Create a Clear Bridge — Content builds trust — and the CTA leads the person to a specific step: download a simple gift, or send a keyword message, or a short registration. The goal at this stage is not immediate selling — but gat",
+    "ar-MSA": "من المشاهدات إلى العملاء: \"من دون كوبري\" في مقابل \"بكوبري واضح\" — اعمل كوبريًا صغيرًا وواضحًا",
+    "ar-Gulf": "من المشاهدات للعملاء: \"بدون كوبري\" في مقابل \"بكوبري واضح\" — اعمل كوبري واضح وبسيط — المحتوى يبني ثقة — والدعوة لاتخاذ إجراء تنقل الشخص لخطوة محددة: تحميل هدية بسيطة، أو رسالة بكلمة مفتاحية، أو تسجيل قصير. الهدف في هذه المرحلة مو البيع الفوري — بل جمع عملاء محتملين جادين تتابع معهم باحترام.",
     "ar-EG": "اعمل كوبري صغير وواضح: \"من غير كوبري\" في مقابل \"بكوبري واضح\" — المحتوى يبني ثقة، والـ CTA ينقل الشخص لخطوة محددة: تحميل هدية بسيطة، أو رسالة بكلمة مفتاحية، أو تسجيل قصير."
   },
   "aiPromptContract": null,
@@ -329,5 +354,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "e8ca525b33886090b744bab51c4a9e6e5e804d7c04b8300eaadaa45d5e19eeec"
+  "checksum": "12b213beae245ad625b2fbbc3ff71d1bf149c28d32b9bc6ef99eea3da6b48f9f"
 }

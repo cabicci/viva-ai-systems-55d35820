@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "f33a758695ce6b61df5f7b15c881ed97cbf6774b7aaf2a07a4beab0587cb0d9b",
+    "ar-MSA": "a03201b71b53a9db393284ccd2446f7b2ed3e652c2517c20387762549e7c92ca",
+    "ar-Gulf": "5e550572cca5285566ac82d46f2078ed94dcdba4816d0739e1508a34735d65b0",
+    "ar-EG": "4527394e7f918fbf9d2c39e5f5f0ad71d94ded5e48c954a4277f5238a07022c4"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -49,11 +55,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Stop Condition:",
-      "ar-MSA": "Stop Condition (شرط التوقف):",
-      "ar-Gulf": "شرط التوقف:",
+      "en": "Follow-up Sequence — Day 0: Welcome, Day 2: Reminder, Day 5: Question — different goals. Stop Condition: Response, purchase, or cancellation.",
+      "ar-MSA": "Follow-up Sequence (تسلسل متابعة)",
+      "ar-Gulf": "تسلسل المتابعة — يوم ٠ ترحيب، يوم ٢ تذكير، يوم ٥ سؤال — أهداف مختلفة. شرط التوقف: رد، شراء، أو إلغاء.",
       "ar-EG": "Follow-up مش رسالة واحدة — تسلسل: يوم ٠ ترحيب، يوم ٢ تذكير، يوم ٥ سؤال واحد."
     },
+    "instructionalPurpose": {
+      "en": "What Will You Understand? Follow-up is where sales can be lost — automation makes it systematic.",
+      "ar-MSA": "ماذا ستفهم؟ Follow-up (متابعة) حيث تضيع المبيعات — الأتمتة تجعلها منتظمة.",
+      "ar-Gulf": "وش راح تفهم؟ متابعة وين تضيع المبيعات — الأتمتة تخليها منتظمة.",
+      "ar-EG": "هتفهم إيه؟ المتابعة هي اللي بتضيع فيها المبيعات — الأوتوميشن يخليها منتظمة مش معتمدة على ذاكرتك."
+    },
+    "lessonObjects": [
+      "I replied once — and you went silent",
+      "Follow-up Sequence",
+      "Day 0",
+      "Welcome",
+      "Day 2",
+      "Reminder"
+    ],
+    "relationships": [
+      "I replied once — and you went silent → **Follow-up Sequence**",
+      "Follow-up Sequence — Day 0: Welcome, Day 2: Reminder, Day 5: Question — different goals. Stop Condition: Response, purchase, or cancellation.",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "\"I’ll talk to him tomorrow\" — a week has passed. The deal is gone.",
       "ar-MSA": "«أكلمه غدًا» — الأسبوع مضى. الصفقة راحت.",
@@ -63,19 +88,19 @@
     "comparison": {
       "en": {
         "leftLabel": "I replied once — and you went silent",
-        "rightLabel": "Follow-up Sequence",
+        "rightLabel": "**Follow-up Sequence**",
         "leftBody": "Send the same welcome message again.",
         "rightBody": "A gentle reminder through a different channel or one question — not sales pressure."
       },
       "ar-MSA": {
         "leftLabel": "ردّيت مرة — وسكتتم",
-        "rightLabel": "Follow-up Sequence (تسلسل متابعة)",
+        "rightLabel": "**Follow-up Sequence (تسلسل متابعة)**",
         "leftBody": "إعادة نفس رسالة الترحيب.",
         "rightBody": "تذكير لطيف عبر قناة مختلفة أو سؤال واحد — لا ضغط بيع."
       },
       "ar-Gulf": {
         "leftLabel": "رديت مرة — وسكتوا",
-        "rightLabel": "تسلسل المتابعة",
+        "rightLabel": "**تسلسل المتابعة**",
         "leftBody": "نفس رسالة الترحيب مرة ثانية.",
         "rightBody": "تذكير لطيف بقناة مختلفة أو بسؤال واحد — مو ضغط بيع."
       },
@@ -94,21 +119,21 @@
     },
     "visualIntent": {
       "kind": "screenshot",
-      "summary": "Stop Condition:",
+      "summary": "Follow-up Sequence — Day 0: Welcome, Day 2: Reminder, Day 5: Question — different goals. Stop Condition: Response, purchase, or cancellation.",
       "packageQuotes": {
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/automator-m6-l3-follow-up.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Stop Condition:"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l3-follow-up.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Stop Condition (شرط التوقف):"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l3-follow-up.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "شرط التوقف:"
         },
         "ar-EG": {
@@ -120,9 +145,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "automator-m6-l3-follow-up's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (I replied once — and you went silent / Follow-up Sequence) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"I replied once — and you went silent\" vs \"Follow-up Sequence\" for automator-m6-l3-follow-up.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"I replied once — and you went silent\" vs \"**Follow-up Sequence**\" for automator-m6-l3-follow-up.",
   "labelPacks": {
     "en": [
       {
@@ -135,7 +160,7 @@
       },
       {
         "id": "comparison-right",
-        "text": "Follow-up Sequence",
+        "text": "**Follow-up Sequence**",
         "source": {
           "path": "src/lib/locale-lessons/en/lessons/automator-m6-l3-follow-up.json",
           "field": "sections[role=Comparison].tables[0].headers[1]"
@@ -153,7 +178,7 @@
       },
       {
         "id": "comparison-right",
-        "text": "Follow-up Sequence (تسلسل متابعة)",
+        "text": "**Follow-up Sequence (تسلسل متابعة)**",
         "source": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m6-l3-follow-up.json",
           "field": "sections[role=Comparison].tables[0].headers[1]"
@@ -171,7 +196,7 @@
       },
       {
         "id": "comparison-right",
-        "text": "تسلسل المتابعة",
+        "text": "**تسلسل المتابعة**",
         "source": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m6-l3-follow-up.json",
           "field": "sections[role=Comparison].tables[0].headers[1]"
@@ -214,9 +239,9 @@
     ]
   },
   "altTexts": {
-    "en": "Follow-up Automation: \"I replied once — and you went silent\" versus \"Follow-up Sequence\" — Stop Condition:",
-    "ar-MSA": "أتمتة المتابعة: \"ردّيت مرة — وسكتتم\" في مقابل \"Follow-up Sequence (تسلسل متابعة)\" — Stop Condition (شرط التوقف):",
-    "ar-Gulf": "أتمتة المتابعة: \"رديت مرة — وسكتوا\" في مقابل \"تسلسل المتابعة\" — شرط التوقف:",
+    "en": "Follow-up Automation: \"I replied once — and you went silent\" versus \"**Follow-up Sequence**\" — Follow-up Sequence — Day 0: Welcome, Day 2: Reminder, Day 5: Question — different goals. Stop Condition: Response, purchase, or cancellation.",
+    "ar-MSA": "أتمتة المتابعة: \"ردّيت مرة — وسكتتم\" في مقابل \"**Follow-up Sequence (تسلسل متابعة)**\" — Follow-up Sequence (تسلسل متابعة)",
+    "ar-Gulf": "أتمتة المتابعة: \"رديت مرة — وسكتوا\" في مقابل \"**تسلسل المتابعة**\" — تسلسل المتابعة — يوم ٠ ترحيب، يوم ٢ تذكير، يوم ٥ سؤال — أهداف مختلفة. شرط التوقف: رد، شراء، أو إلغاء.",
     "ar-EG": "تسلسل متابعة = خطوات بوقت وسلوك: \"حسب المزاج\" في مقابل \"تسلسل أوتوماتيك\" — Follow-up مش رسالة واحدة — تسلسل: يوم ٠ ترحيب، يوم ٢ تذكير، يوم ٥ سؤال واحد."
   },
   "aiPromptContract": null,
@@ -237,5 +262,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "cf7367e2b20b73142bc6508eda417c6880c68037db0908d0e628f3d6b5bc7bdd"
+  "checksum": "fcd601512f0d7e6bf7b50535184dbd8c668af8bbbdbe471d5f1a9ee18336269c"
 }

@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "48ebd50ebf094e093159e2e0272042644318473ca4bc9de676834a06c4f1e489",
+    "ar-MSA": "4339ff332cd3974d3c884a846487a017d4d7513c3ce88bd01766cb319dec8c8a",
+    "ar-Gulf": "31322af383535c2499dc050684a5d8b06a73092496a28232186163cfde2729f2",
+    "ar-EG": "942b3f7bba3bc4ff1ed0019950a5cc56c9ea3e5e204058109218af0223c66612"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Pattern",
-      "ar-MSA": "النمط",
-      "ar-Gulf": "النمط",
+      "en": "\"Whenever X, do Y\" = Opportunity for Automation",
+      "ar-MSA": "«كلما X، أفعل Y» = فرصة أتمتة",
+      "ar-Gulf": "«كلما X، أفعل Y» = فرصة أتمتة",
       "ar-EG": "النمط = مُشغّل ثابت (X) + خطوات ثابتة (Y). ده بالظبط اللي العامل الافتراضي بيعمله."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? \"Whenever X happens, I do Y\" = Pattern — this is the first signal that the virtual worker can operate.",
+      "ar-MSA": "ماذا ستفهم؟ «كلما X يحدث، أفعل Y» = نمط (Pattern) — وهذه أول إشارة أن العامل الافتراضي يستطيع العمل.",
+      "ar-Gulf": "وش راح تفهم؟ «كلما حدث X، أفعل Y» = نمط — وهذه أول إشارة أن العامل الافتراضي يقدر يشتغل.",
+      "ar-EG": "هتفهم إيه؟ «كل ما X يحصل، أعمل Y» = نمط — وده أول إشارة إن العامل الافتراضي يقدر يشتغل."
+    },
+    "lessonObjects": [
+      "Pattern",
+      "Automation",
+      "Without a Pattern",
+      "Clear Pattern",
+      "\"Whenever X",
+      "do Y\" = Opportunity for Automation"
+    ],
+    "relationships": [
+      "Without a Pattern → Clear Pattern",
+      "Monitoring patterns — the same idea as **time tracking**: record what repeats (time, task, timing) and extract patterns. The same exercise applies to your work:",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "Whenever a client asks, \"What is my account number?\" — you copy the same number and send it. Whenever there is a new booking — you write a welcome email. You do this without thinking — but the virtual worker needs to see",
       "ar-MSA": "كلما سأل عميل «رقم الحساب؟» — تنسخ نفس الرقم وترسله. كلما حجز جديد — تكتب إيميل ترحيب. تفعل ذلك دون أن تشعر — لكن العامل الافتراضي يحتاج أن يرى النمط قبل أن ينفّذه.",
@@ -102,17 +127,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/automator-m2-l2-spot-patterns.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "Monitoring patterns — the same idea as **time tracking**: record what repeats (time, task, timing) and extract patterns. The same exercise a"
+          "quote": "time tracking"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m2-l2-spot-patterns.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "مراقبة الأنماط — نفس فكرة **جرد الوقت**: تسجّل ما يتكرر (وقت، مهمة، توقيت) وتستخرج أنماطًا. نفس التمرين على عملك: يدويًا في البداية، ثم العا"
+          "quote": "جرد الوقت"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m2-l2-spot-patterns.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "مراقبة الأنماط — نفس فكرة **جرد الوقت**: تسجل ما يتكرر (وقت، مهمة، توقيت) وتستخرج أنماط. نفس التمرين على عملك: يدويًا في البداية، ثم العامل"
+          "quote": "جرد الوقت"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/automator-m2-l2-spot-patterns.ts",
@@ -123,9 +148,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "automator-m2-l2-spot-patterns's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Without a Pattern / Clear Pattern) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Without a Pattern\" vs \"Clear Pattern\" for automator-m2-l2-spot-patterns.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Without a Pattern\" vs \"Clear Pattern\" for automator-m2-l2-spot-patterns.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "Spot Patterns: \"Without a Pattern\" versus \"Clear Pattern\" — Pattern",
-    "ar-MSA": "اكتشاف الأنماط: \"بلا نمط\" في مقابل \"نمط واضح\" — النمط",
-    "ar-Gulf": "أنماط الكشف: \"بلا نمط\" في مقابل \"نمط واضح\" — النمط",
+    "en": "Spot Patterns: \"Without a Pattern\" versus \"Clear Pattern\" — \"Whenever X, do Y\" = Opportunity for Automation",
+    "ar-MSA": "اكتشاف الأنماط: \"بلا نمط\" في مقابل \"نمط واضح\" — «كلما X، أفعل Y» = فرصة أتمتة",
+    "ar-Gulf": "أنماط الكشف: \"بلا نمط\" في مقابل \"نمط واضح\" — «كلما X، أفعل Y» = فرصة أتمتة",
     "ar-EG": "«كل ما X، أعمل Y» = فرصة أتمتة: \"بدون نمط\" في مقابل \"نمط واضح\" — النمط = مُشغّل ثابت (X) + خطوات ثابتة (Y). ده بالظبط اللي العامل الافتراضي بيعمله."
   },
   "aiPromptContract": null,
@@ -330,5 +355,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "72753bf884d7ab6e15462db0b6d07c2107c6ff1ab2d8508f66b1280924d87ae8"
+  "checksum": "741713e992b255998e560964b5bf49b36554671fd87dd843ecc4733a5598c929"
 }

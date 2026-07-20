@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "898ee5ba2ab7bd2bc593b451542cba1e8e39153edd3822ec7e533d8136cfb73a",
+    "ar-MSA": "58e1b1342ef3d2fa60d5f3251053da994de8ac8bd26167873b3a001225a457a4",
+    "ar-Gulf": "92782863046dec4d8ddbcc387f1083eea48cce3ab2e81d7538d24f6a7ae1d14e",
+    "ar-EG": "075d06befd0e95554dd4c5b35aa162f6d688b31e2eb58d6b38a49a873c3a447f"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Context",
-      "ar-MSA": "Context (السياق)",
-      "ar-Gulf": "Context (السياق)",
+      "en": "The Right Context at the Right Time",
+      "ar-MSA": "السياق الصحيح في الوقت الصحيح",
+      "ar-Gulf": "السياق الصحيح في الوقت المناسب",
       "ar-EG": "Context = كل المعلومات اللي الـ AI يعرفها قبل ما يرد: من أنت، إيه مشروعك، إيه اللي حصل قبل كده."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? How to provide AI with the right context — at the right time — so that any feature in your product responds to you and not to anyone else.",
+      "ar-MSA": "ماذا ستفهم؟ كيف تعطي الذكاء الاصطناعي السياق الصحيح — في الوقت الصحيح — حتى ترد أي ميزة في منتجك «لك» وليس «لأي شخص».",
+      "ar-Gulf": "وش راح تفهم؟ كيف تعطي الذكاء الاصطناعي السياق الصحيح — في الوقت المناسب — حتى ترد أي ميزة في منتجك «لك» وليس «لأي شخص».",
+      "ar-EG": "هتفهم إيه؟ إزاي تدي AI السياق الصح — في الوقت الصح — عشان أي ميزة في منتجك تردّ «ليك» مش «لأي حد»."
+    },
+    "lessonObjects": [
+      "Context",
+      "Context Card",
+      "Without Context",
+      "Context Before the Request",
+      "The Right Context at the Right Time"
+    ],
+    "relationships": [
+      "Without Context → Context Before the Request",
+      "**Context appears before the question:**",
+      "visual relationship kind: concept-scene"
+    ],
     "tension": {
       "en": "\"Create a content plan\" — and the response is a generic copied plan not tailored to your project. The problem is not the question — the problem is that the AI does not know: Who are you? For whom? How much? On which plat",
       "ar-MSA": "«اعملي خطة محتوى» — والرد خطة عامة منسوخة ليست لمشروعك. المشكلة ليست السؤال — المشكلة أن الذكاء الاصطناعي لا يعرف: من أنت؟ لمن؟ بكم؟ على أي منصة؟",
@@ -102,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m3-l1-context-layer.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**Context appears before the question:**"
+          "quote": "Context appears before the question:"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m3-l1-context-layer.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**سياق يظهر قبل السؤال:**"
+          "quote": "سياق يظهر قبل السؤال:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m3-l1-context-layer.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**السياق يظهر قبل السؤال:**"
+          "quote": "السياق يظهر قبل السؤال:"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m3-l1-context-layer.ts",
@@ -123,7 +147,7 @@
     }
   },
   "method": 2,
-  "methodRationale": "builder-m3-l1-context-layer's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 3), so a text-free AI illustration communicates \"Context\" without inventing UI chrome or rendering paid text.",
+  "methodRationale": "builder-m3-l1-context-layer's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 3), so a text-free AI illustration communicates \"The Right Context at the Right Time\" without inventing UI chrome or rendering paid text.",
   "compositionPattern": "concept-scene-metaphor",
   "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Without Context\" vs \"Context Before the Request\" for builder-m3-l1-context-layer.",
   "labelPacks": {
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Context Layer: \"Without Context\" versus \"Context Before the Request\" — Context",
-    "ar-MSA": "طبقة السياق: \"بدون سياق\" في مقابل \"سياق قبل الطلب\" — Context (السياق)",
-    "ar-Gulf": "السياق الصحيح: \"بدون سياق\" في مقابل \"سياق قبل الطلب\" — Context (السياق)",
+    "en": "Context Layer: \"Without Context\" versus \"Context Before the Request\" — The Right Context at the Right Time",
+    "ar-MSA": "طبقة السياق: \"بدون سياق\" في مقابل \"سياق قبل الطلب\" — السياق الصحيح في الوقت الصحيح",
+    "ar-Gulf": "السياق الصحيح: \"بدون سياق\" في مقابل \"سياق قبل الطلب\" — السياق الصحيح في الوقت المناسب",
     "ar-EG": "السياق الصح في الوقت الصح: \"من غير سياق\" في مقابل \"سياق قبل الطلب\" — Context = كل المعلومات اللي الـ AI يعرفها قبل ما يرد: من أنت، إيه مشروعك، إيه اللي حصل قبل كده."
   },
   "aiPromptContract": {
@@ -341,5 +365,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "a4ce8065ed8b8bf5dac13f662bdc273f275a686e6a3a8b2608cc85f1568b9d40"
+  "checksum": "b7ac14087d32a22288609a12fa80eeff5801a1ee31c1b6fa86bc9b4e78d87c7d"
 }

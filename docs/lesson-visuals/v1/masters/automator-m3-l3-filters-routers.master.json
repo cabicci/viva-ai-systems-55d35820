@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "1198c576e3b7c870b799dc873490945dcda11f1a89ca6ca3d18aa35c62530e58",
+    "ar-MSA": "0526d2c4fac24d7e9b0347f8b406785e214f84998a2cc7f364bac31e7f5a7c89",
+    "ar-Gulf": "54c316595d6c3b00534fbb9f241029b19683b8c70a57a4453354fbac9c9c17aa",
+    "ar-EG": "e6561870708a6f619c6f8acbf4d6ef80b9978ed5f2ecd44736e8187f89f79b4d"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Filter:",
-      "ar-MSA": "Filter (فلتر):",
-      "ar-Gulf": "فلتر (Filter):",
+      "en": "Filter = Gate. Router = Fork",
+      "ar-MSA": "Filter = بوابة. Router = مفترق طرق",
+      "ar-Gulf": "فلتر = بوابة. موزّع = مفترق طرق",
       "ar-EG": "Filter: لو الشرط اتحقّق → البيانات تعدّي. لو لأ → الـ workflow يقف هنا. مثال: «لو فيه رقم تليفون → كمّل»."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Automation becomes useful when you choose the correct path based on conditions — not when everything flows in a single line.",
+      "ar-MSA": "ماذا ستفهم؟ الأتمتة تصبح مفيدة عندما تختار المسار الصحيح حسب الشرط — وليس عندما يمرّ كل شيء في خط واحد.",
+      "ar-Gulf": "وش راح تفهم؟ الأتمتة تصير مفيدة لما تختار المسار الصحيح حسب الشرط — مو لما يمر كل شيء في خط واحد.",
+      "ar-EG": "هتفهم إيه؟ الأتمتة بتبقى مفيدة لما تختار المسار الصح حسب الشرط — مش لما كل حاجة تمشي في خط واحد."
+    },
+    "lessonObjects": [
+      "Filter",
+      "Router",
+      "One Path for Everything",
+      "One if/then",
+      "Filter = Gate",
+      "Router = Fork"
+    ],
+    "relationships": [
+      "One Path for Everything → One if/then",
+      "The same event (user entered) — but the path changes based on the choice. The same idea applies in your work: new lead → path. Complaint → another path.",
+      "visual relationship kind: concept-scene"
+    ],
     "tension": {
       "en": "\"The same response for all messages\" — and the customer is angry. You have automation responding to WhatsApp messages. Someone asks about the price — they receive \"Thank you for reaching out.\" Someone complains — they ge",
       "ar-MSA": "«نفس الرد لكل الرسائل» — والعميل غاضب. لديك أتمتة ترد على رسائل واتساب. أحد يسأل عن السعر — يصله «شكرًا لتواصلك». أحد يشتكي — نفس الرد.",
@@ -123,7 +148,7 @@
     }
   },
   "method": 2,
-  "methodRationale": "automator-m3-l3-filters-routers's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"Filter:\" without inventing UI chrome or rendering paid text.",
+  "methodRationale": "automator-m3-l3-filters-routers's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"Filter = Gate. Router = Fork\" without inventing UI chrome or rendering paid text.",
   "compositionPattern": "concept-scene-metaphor",
   "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"One Path for Everything\" vs \"One if/then\" for automator-m3-l3-filters-routers.",
   "labelPacks": {
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "Filters and Routers: \"One Path for Everything\" versus \"One if/then\" — Filter:",
-    "ar-MSA": "الفلاتر والموجّهات: \"مسار واحد لكل شيء\" في مقابل \"if/then واحد\" — Filter (فلتر):",
-    "ar-Gulf": "فلاتر وموزّعات: \"مسار واحد لكل شيء\" في مقابل \"if/then واحد\" — فلتر (Filter):",
+    "en": "Filters and Routers: \"One Path for Everything\" versus \"One if/then\" — Filter = Gate. Router = Fork",
+    "ar-MSA": "الفلاتر والموجّهات: \"مسار واحد لكل شيء\" في مقابل \"if/then واحد\" — Filter = بوابة. Router = مفترق طرق",
+    "ar-Gulf": "فلاتر وموزّعات: \"مسار واحد لكل شيء\" في مقابل \"if/then واحد\" — فلتر = بوابة. موزّع = مفترق طرق",
     "ar-EG": "Filter = بوّابة. Router = مفترق طرق: \"مسار واحد لكل حاجة\" في مقابل \"if/then واحد\" — Filter: لو الشرط اتحقّق → البيانات تعدّي. لو لأ → الـ workflow يقف هنا. مثال: «لو فيه رقم تليفون → كمّل»."
   },
   "aiPromptContract": {
@@ -341,5 +366,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "8081e47a3d70873c1d1ccd69728e6a4ac616a2f87e0293c66c108ce97a0f591e"
+  "checksum": "914dc4889fa6d9b8368b818f48f0dd8069f4299a9823fa6d7ad932b13225935c"
 }

@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "142e749564a12b4e9b0b039ee8f59fbed96fd1cdaf7209b8511b9120fa1893dc",
+    "ar-MSA": "ce83ebe6540d62b161708114ade2f5171033abe267dde457b4c4e04a772d24f7",
+    "ar-Gulf": "877dc12167047e03a8ac3f8a89bd7d623778f7583df35b310a553e1c049129f9",
+    "ar-EG": "8d9ff4bf7fd5830c57c1c005a7e7f11096fca31cc6d27881ef8a6f1b17761fc6"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,27 @@
       ]
     },
     "coreIdea": {
-      "en": "Trigger",
-      "ar-MSA": "Trigger (مُشغّل)",
-      "ar-Gulf": "مُشغّل",
+      "en": "AI Step = Understanding and Writing",
+      "ar-MSA": "خطوة AI = فهم وكتابة — قبل: Trigger (مُشغّل) → Action (فعل) → حفظ. بيانات تتحرك بلا «فهم». مع LLM Step (خطوة ذكاء): تصنيف، ملخص، مسودة رد — Structured Output (رد منظم) للخطوة التالية.",
+      "ar-Gulf": "خطوة AI = فهم وكتابة — قبل: مُشغّل → فعل → حفظ. بيانات تتحرك بدون «فهم». مع خطوة LLM: تصنيف، ملخص، مسودة رد — رد منظم للخطوة التالية.",
       "ar-EG": "قبل كده: Trigger (الحاجة اللي بتبدأ التشغيل) → Action (خطوة أو تصرف حصل فعلًا) → حفظ. البيانات بتتحرك بس مافيش «فهم»."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? In Automation, AI reads, classifies, and summarizes — it doesn't just transfer data.",
+      "ar-MSA": "ماذا ستفهم؟ في الأتمتة (Automation) الذكاء الاصطناعي يقرأ ويصنّف ويلخّص — لا ينقل بيانات فقط.",
+      "ar-Gulf": "وش راح تفهم؟ في الأتمتة، الذكاء الاصطناعي يقرأ ويصنّف ويلخّص — مو بس ينقل بيانات.",
+      "ar-EG": "هتفهم إيه؟ في الأتمتة (Automation = حاجة شغالة تلقائي) الـ AI يقدر يقرأ ويصنّف ويلخّص — مش بس ينقل بيانات."
+    },
+    "lessonObjects": [
+      "Transfer Only",
+      "AI Step",
+      "AI Step = Understanding and Writing"
+    ],
+    "relationships": [
+      "Transfer Only → AI Step",
+      "AI Step = Understanding and Writing",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "A long WhatsApp message → recorded in a spreadsheet — the team reads and classifies it manually every day. Automation moved the data — it didn't do the time-consuming work.",
       "ar-MSA": "رسالة واتساب طويلة → تُسجَّل في جدول — الفريق يقرأ ويصنّف يدويًا كل يوم. الأتمتة (Automation) نقلت البيانات — لم تفعل الشغل الذي يستهلك الوقت.",
@@ -97,22 +119,22 @@
     },
     "visualIntent": {
       "kind": "screenshot",
-      "summary": "Classification, summary, draft response",
+      "summary": "AI Step = Understanding and Writing",
       "packageQuotes": {
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/automator-m5-l1-llm-in-flow.json",
           "field": "sections[role=Core idea].contentMarkdown",
-          "quote": "Before: **Trigger** → **Action** → Save. Data moves without 'understanding'."
+          "quote": "Trigger"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l1-llm-in-flow.json",
           "field": "sections[role=Core idea].contentMarkdown",
-          "quote": "قبل: **Trigger (مُشغّل)** → **Action (فعل)** → حفظ."
+          "quote": "Trigger (مُشغّل)"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m5-l1-llm-in-flow.json",
           "field": "sections[role=Core idea].contentMarkdown",
-          "quote": "قبل: **مُشغّل** → **فعل** → حفظ."
+          "quote": "مُشغّل"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/automator-m5-l1-llm-in-flow.ts",
@@ -123,9 +145,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "automator-m5-l1-llm-in-flow's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Transfer Only / AI Step) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Transfer Only\" vs \"AI Step\" for automator-m5-l1-llm-in-flow.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Transfer Only\" vs \"AI Step\" for automator-m5-l1-llm-in-flow.",
   "labelPacks": {
     "en": [
       {
@@ -217,9 +239,9 @@
     ]
   },
   "altTexts": {
-    "en": "LLM in Flow: \"Transfer Only\" versus \"AI Step\" — Trigger",
-    "ar-MSA": "نموذج اللغة داخل التدفّق: \"نقل فقط\" في مقابل \"خطوة AI\" — Trigger (مُشغّل)",
-    "ar-Gulf": "نموذج اللغة داخل التدفق: \"نقل فقط\" في مقابل \"خطوة AI\" — مُشغّل",
+    "en": "LLM in Flow: \"Transfer Only\" versus \"AI Step\" — AI Step = Understanding and Writing",
+    "ar-MSA": "نموذج اللغة داخل التدفّق: \"نقل فقط\" في مقابل \"خطوة AI\" — خطوة AI = فهم وكتابة — قبل: Trigger (مُشغّل) → Action (فعل) → حفظ. بيانات تتحرك بلا «فهم». مع LLM Step (خطوة ذكاء): تصنيف، ملخص، مسودة رد — Structured Output (رد منظم) للخطوة التالية.",
+    "ar-Gulf": "نموذج اللغة داخل التدفق: \"نقل فقط\" في مقابل \"خطوة AI\" — خطوة AI = فهم وكتابة — قبل: مُشغّل → فعل → حفظ. بيانات تتحرك بدون «فهم». مع خطوة LLM: تصنيف، ملخص، مسودة رد — رد منظم للخطوة التالية.",
     "ar-EG": "خطوة AI = قراءة وفهم وكتابة — مش نقل بس: \"نقل بس\" في مقابل \"خطوة AI\" — قبل كده: Trigger (الحاجة اللي بتبدأ التشغيل) → Action (خطوة أو تصرف حصل فعلًا) → حفظ. البيانات بتتحرك بس مافيش «فهم»."
   },
   "aiPromptContract": null,
@@ -282,5 +304,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "644e1d68a39e4fffe50fcf9024f1ce41ccfb1e6d2191da8713adbc951db281e9"
+  "checksum": "ae4e9dac6943dd04eee71a7a4c71001e96811f7a7c01c01a032b693db8835dd4"
 }

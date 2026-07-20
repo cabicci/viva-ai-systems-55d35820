@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "985a05501269b5e1b897ed1e1e0b2987a66b85b59014aaeb10ca42645acce1a6",
+    "ar-MSA": "863935932f3a89c21abad196d05d6f5223712c69545c8437bccfbf4a7061fc67",
+    "ar-Gulf": "83baac765d2dcf61741dddf974974bd1e94acec292923a81ce4b2948ac3d46ec",
+    "ar-EG": "c2142c18f5ced2636577a879e3206fae208c5f97218cb3c2c7ebc38964bf920c"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -53,11 +59,30 @@
       ]
     },
     "coreIdea": {
-      "en": "RAG:",
-      "ar-MSA": "RAG:",
-      "ar-Gulf": "RAG:",
+      "en": "RAG = Search then Write — Without RAG: Question → AI → Guess. With RAG: Question → Retrieval from FAQs → AI formulates from the excerpt.",
+      "ar-MSA": "RAG = ابحث ثم اكتب — بدون RAG: سؤال → AI → تخمين. مع RAG: سؤال → Retrieval (استرجاع) من FAQ → AI يصوغ من المقتطف.",
+      "ar-Gulf": "RAG = ابحث ثم اكتب — بدون RAG: سؤال → AI → تخمين. مع RAG: سؤال → Retrieval (استرجاع) من الأسئلة الشائعة → AI يصوغ من المقتطف.",
       "ar-EG": "بدون RAG: السؤال → AI → رد من تخمين. ممكن يكون صح — وممكن يخترع."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? RAG = automated response from your documents (FAQs, prices) — not from guessing.",
+      "ar-MSA": "ماذا ستفهم؟ RAG = الرد الآلي من مستنداتك (FAQ، أسعار) — لا من تخمين.",
+      "ar-Gulf": "وش راح تفهم؟ RAG = الرد الآلي من مستنداتك (أسئلة شائعة، أسعار) — مو من تخمين.",
+      "ar-EG": "هتفهم إيه؟ في Automator، RAG = الرد الآلي يجاوب من مستندات شغلك (FAQ، أسعار، سياسات) — مش من تخمين."
+    },
+    "lessonObjects": [
+      "AI without RAG",
+      "AI + RAG",
+      "RAG = Search then Write",
+      "Without RAG",
+      "Question → AI → Guess",
+      "With RAG"
+    ],
+    "relationships": [
+      "AI without RAG → AI + RAG",
+      "RAG = Search then Write — Without RAG: Question → AI → Guess. With RAG: Question → Retrieval from FAQs → AI formulates from the excerpt.",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "A client asked about the package — the bot responded with a number it had. The number was wrong. AI answers from general knowledge — RAG searches your sources first.",
       "ar-MSA": "عميل سأل عن الباقة — البوت رد برقم من عنده. الرقم خطأ. AI يجيب من معرفة عامة — RAG يبحث في مصادرك أولًا.",
@@ -98,22 +123,22 @@
     },
     "visualIntent": {
       "kind": "screenshot",
-      "summary": "Question → AI → Guess",
+      "summary": "RAG = Search then Write — Without RAG: Question → AI → Guess. With RAG: Question → Retrieval from FAQs → AI formulates from the excerpt.",
       "packageQuotes": {
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/automator-m5-l2-rag-in-n8n.json",
           "field": "sections[role=Core idea].contentMarkdown",
-          "quote": "Without **RAG:** Question → AI → Guess."
+          "quote": "RAG:"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m5-l2-rag-in-n8n.json",
           "field": "sections[role=Core idea].contentMarkdown",
-          "quote": "بدون **RAG:** سؤال → AI → تخمين."
+          "quote": "RAG:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m5-l2-rag-in-n8n.json",
           "field": "sections[role=Core idea].contentMarkdown",
-          "quote": "بدون **RAG:** سؤال → AI → تخمين."
+          "quote": "RAG:"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/automator-m5-l2-rag-in-n8n.ts",
@@ -124,9 +149,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "automator-m5-l2-rag-in-n8n's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (AI without RAG / AI + RAG) instead of fabricating a UI capture.",
+  "methodRationale": "Automation concepts are taught as Trigger/Action/Filter relationships; a schematic panel is clearer than a vendor screenshot for this lesson's objective.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"AI without RAG\" vs \"AI + RAG\" for automator-m5-l2-rag-in-n8n.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"AI without RAG\" vs \"AI + RAG\" for automator-m5-l2-rag-in-n8n.",
   "labelPacks": {
     "en": [
       {
@@ -218,9 +243,9 @@
     ]
   },
   "altTexts": {
-    "en": "RAG in Automation: \"AI without RAG\" versus \"AI + RAG\" — RAG:",
-    "ar-MSA": "RAG داخل الأتمتة: \"AI بدون RAG\" في مقابل \"AI + RAG\" — RAG:",
-    "ar-Gulf": "RAG داخل الأتمتة: \"AI بدون RAG\" في مقابل \"AI + RAG\" — RAG:",
+    "en": "RAG in Automation: \"AI without RAG\" versus \"AI + RAG\" — RAG = Search then Write — Without RAG: Question → AI → Guess. With RAG: Question → Retrieval from FAQs → AI formulates from the excerpt.",
+    "ar-MSA": "RAG داخل الأتمتة: \"AI بدون RAG\" في مقابل \"AI + RAG\" — RAG = ابحث ثم اكتب — بدون RAG: سؤال → AI → تخمين. مع RAG: سؤال → Retrieval (استرجاع) من FAQ → AI يصوغ من المقتطف.",
+    "ar-Gulf": "RAG داخل الأتمتة: \"AI بدون RAG\" في مقابل \"AI + RAG\" — RAG = ابحث ثم اكتب — بدون RAG: سؤال → AI → تخمين. مع RAG: سؤال → Retrieval (استرجاع) من الأسئلة الشائعة → AI يصوغ من المقتطف.",
     "ar-EG": "RAG = ابحث في معرفتك — وبعدين اكتب الرد: \"AI بدون RAG\" في مقابل \"AI + RAG\" — بدون RAG: السؤال → AI → رد من تخمين. ممكن يكون صح — وممكن يخترع."
   },
   "aiPromptContract": null,
@@ -241,5 +266,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "2125722b51a50c396f7fea9db87813c27fec6437cf1739645f60e839037d3678"
+  "checksum": "01c835b5576873eb29f4392092a7befcd17076f41a8efec4e979bea4acf79070"
 }

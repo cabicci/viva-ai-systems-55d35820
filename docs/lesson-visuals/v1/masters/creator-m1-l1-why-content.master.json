@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "ccf21e06c26467152e1cdd90b12fbec4f3637019c9e9f6912a4b0113fcc21164",
+    "ar-MSA": "001195fa4d75a0a44995408751197dfab56d966b8baf18202e8d0b38734744c0",
+    "ar-Gulf": "c5c34d23842ead171c6114566e3c93c9e58f8f895f13dbb4234d0d55d1513c5c",
+    "ar-EG": "b3946c44bdf636bb151ff34116f2b10193cc9422a2c5611691a8505f95c5bfdb"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -48,11 +54,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Content System = Fixed Decisions",
-      "ar-MSA": "نظام محتوى = قرارات ثابتة",
-      "ar-Gulf": "نظام محتوى = قرارات ثابتة",
+      "en": "The Fundamental Concept — When content becomes a system, every post serves a clear Content Promise to a specific audience. AI (artificial intelligence) helps you generate ideas and rephrase quickly — but deciding what works for you should be your decision.",
+      "ar-MSA": "الفكرة الأساسية — عندما يصبح المحتوى نظامًا، كل منشور يخدم وعد محتوى (Content Promise) واضحًا لجمهور محدد. الذكاء الاصطناعي (AI) يساعدك على إخراج أفكار وإعادة صياغة بسرعة — لكن الحكم على ما يناسبك يجب أن يكون قرارك أنت.",
+      "ar-Gulf": "الفكرة الأساسية — لما يصير المحتوى نظام، كل منشور يخدم وعد محتوى (Content Promise) واضح لجمهور محدد. الذكاء الاصطناعي (AI) يساعدك على إخراج أفكار وإعادة صياغة بسرعة — لكن الحكم على ما يناسبك لازم يكون قرارك أنت.",
       "ar-EG": "لما المحتوى يبقى سيستم، كل بوست بيخدم وعد واضح لجمهور محدد."
     },
+    "instructionalPurpose": {
+      "en": "In this lesson, you will discover that the real work is not just posting frequently, but building a Content System that gives every piece a purpose.",
+      "ar-MSA": "في هذا الدرس ستكتشف أن العمل الحقيقي ليس النشر كثيرًا، بل بناء نظام محتوى (Content System) يجعل كل قطعة لها هدف.",
+      "ar-Gulf": "في هذا الدرس، راح تكتشف أن العمل الحقيقي مو بس نشر كثير، بل بناء نظام محتوى (Content System) يخلي كل قطعة لها هدف.",
+      "ar-EG": "في الدرس ده هتكتشف إن الشغل الحقيقي مش إنك تنشر كتير، لكن إنك تبني نظام يخلي كل قطعة محتوى ليها هدف."
+    },
+    "lessonObjects": [
+      "Content System",
+      "Content Promise",
+      "Repeatable Format",
+      "Random Posting",
+      "The Fundamental Concept",
+      "When content becomes a system"
+    ],
+    "relationships": [
+      "Random Posting → Content System",
+      "A screenshot showing the content arrangement as a clear path instead of random posting — every part has a role.",
+      "visual relationship kind: concept-scene"
+    ],
     "tension": {
       "en": "Many people post daily, but there is no real engagement or serious messages. The problem is often not the effort — the issue is that posting happens without a clear direction.",
       "ar-MSA": "كثيرون ينشرون يوميًا، لكن لا تفاعل حقيقي ولا رسائل جدية. المشكلة غالبًا ليست في الجهد — المشكلة أن النشر يحدث من دون اتجاه ثابت.",
@@ -92,7 +117,7 @@
       "ar-EG": "المهمة تدريب عملي مش اختبار. اكتب وعد محتوى واضح يحدد: لمين، المشكلة، ونوع محتوى تقدر تكرره."
     },
     "visualIntent": {
-      "kind": "screenshot",
+      "kind": "concept-scene",
       "summary": "A screenshot showing the content arrangement as a clear path instead of random posting — every part has a role.",
       "packageQuotes": {
         "en": {
@@ -102,7 +127,7 @@
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m1-l1-why-content.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "نظام محتوى = قرارات ثابتة"
         },
         "ar-Gulf": {
@@ -118,10 +143,10 @@
       }
     }
   },
-  "method": 4,
-  "methodRationale": "creator-m1-l1-why-content's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Random Posting / Content System) instead of fabricating a UI capture.",
-  "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Random Posting\" vs \"Content System\" for creator-m1-l1-why-content.",
+  "method": 2,
+  "methodRationale": "creator-m1-l1-why-content's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"The Fundamental Concept — When content becomes a system, every post serves a clear Content Promise to a specific audience. AI (artificial intelligence) helps you generate ideas and rephrase quickly — but deciding what works for you should be your decision.\" without inventing UI chrome or rendering paid text.",
+  "compositionPattern": "concept-scene-metaphor",
+  "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Random Posting\" vs \"Content System\" for creator-m1-l1-why-content.",
   "labelPacks": {
     "en": [
       {
@@ -253,12 +278,23 @@
     ]
   },
   "altTexts": {
-    "en": "Why Content Is Not Posting: \"Random Posting\" versus \"Content System\" — Content System = Fixed Decisions",
-    "ar-MSA": "لماذا المحتوى ليس مجرد نشر: \"نشر عابر\" في مقابل \"نظام محتوى\" — نظام محتوى = قرارات ثابتة",
-    "ar-Gulf": "ليش المحتوى مو مجرد نشر: \"نشر عابر\" في مقابل \"نظام محتوى\" — نظام محتوى = قرارات ثابتة",
+    "en": "Why Content Is Not Posting: \"Random Posting\" versus \"Content System\" — The Fundamental Concept — When content becomes a system, every post serves a clear Content Promise to a specific audience. AI (artificial intelligence) helps you generate ideas and rephrase quickly — but deciding what works for y",
+    "ar-MSA": "لماذا المحتوى ليس مجرد نشر: \"نشر عابر\" في مقابل \"نظام محتوى\" — الفكرة الأساسية — عندما يصبح المحتوى نظامًا، كل منشور يخدم وعد محتوى (Content Promise) واضحًا لجمهور محدد. الذكاء الاصطناعي (AI) يساعدك على إخراج أفكار وإعادة صياغة بسرعة — لكن الحكم على ما يناسبك يجب أن يكون قرارك أنت.",
+    "ar-Gulf": "ليش المحتوى مو مجرد نشر: \"نشر عابر\" في مقابل \"نظام محتوى\" — الفكرة الأساسية — لما يصير المحتوى نظام، كل منشور يخدم وعد محتوى (Content Promise) واضح لجمهور محدد. الذكاء الاصطناعي (AI) يساعدك على إخراج أفكار وإعادة صياغة بسرعة — لكن الحكم على ما يناسبك لازم يكون قرارك أنت.",
     "ar-EG": "سيستم محتوى = قرارات ثابتة: \"نشر عابر\" في مقابل \"نظام محتوى\" — لما المحتوى يبقى سيستم، كل بوست بيخدم وعد واضح لجمهور محدد."
   },
-  "aiPromptContract": null,
+  "aiPromptContract": {
+    "providerClass": "text-free-illustration",
+    "paidAllowed": false,
+    "textFree": true,
+    "promptRules": [
+      "No embedded text, letters, numbers, or UI chrome anywhere in the image.",
+      "Depict the idea behind \"Why Content Is Not Posting\" as a literal scene or metaphor, not as software.",
+      "Use a calm editorial illustration style consistent with a warm, minimal brand palette.",
+      "Keep the composition balanced so it still reads when mirrored for RTL locales."
+    ],
+    "costCeilingUsd": 0
+  },
   "screenshotSpec": null,
   "factualClaims": [
     {
@@ -318,5 +354,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "b9ba697675fa2259e185ffe2bc78355a3c358e6b14b66170d200167656352021"
+  "checksum": "3cf9a3edf2f3c644ca4ca23c2cb1e51ddc706427569473936d65f43b8a9adffd"
 }

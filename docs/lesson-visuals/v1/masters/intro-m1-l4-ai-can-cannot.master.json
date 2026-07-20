@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "c3b3db47467f621f59bb22b09acc856dce9924c297feaaf714937574897de2e2",
+    "ar-MSA": "81c5c9a214f3b47c72533e3e739d9a0015c9e136ad3645cd7e77f9d0e6a06d25",
+    "ar-Gulf": "993b35aed86fcb590f24c937fd1ffb342e220d8a3dc4164ee1892cc9d4e82af7",
+    "ar-EG": "c3bc31e71f084cc5c461bfda1bf7e0c1d04f95d7e692763e2d4961bc020029c8"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "AI is strong in language — but be cautious with facts",
-      "ar-MSA": "الـ AI قوي في اللغة — يحتاج حذرًا في الحقائق",
-      "ar-Gulf": "الذكاء الاصطناعي قوي في اللغة — يحتاج حذر في الحقائق",
+      "en": "The Core Idea — Works well for: drafting, summarizing, organizing ideas, brainstorming, explaining simply. Requires caution with: precise numbers, current news, law, medicine, finance, personal data about you or your company.",
+      "ar-MSA": "الفكرة الأساسية — يعمل جيدًا في: صياغة، تلخيص، ترتيب أفكار، عصف ذهني، شرح بأسلوب بسيط. يحتاج حذرًا في: أرقام دقيقة، أخبار اليوم، قانون وطب ومال، بيانات خاصة عنك أو شركتك.",
+      "ar-Gulf": "الفكرة الأساسية — يعمل بشكل جيد في: صياغة، تلخيص، ترتيب أفكار، عصف ذهني، شرح بأسلوب بسيط. يحتاج حذر في: أرقام دقيقة، أخبار اليوم، قانون وطب ومال، بيانات خاصة عنك أو عن شركتك.",
       "ar-EG": "الـ AI شغّاله كويس في: صياغة، تلخيص، ترتيب أفكار، عصف ذهني، شرح بأسلوب بسيط."
     },
+    "instructionalPurpose": {
+      "en": "What Will You Understand? AI is very useful, but it is not infallible. A smart user knows when to trust it and when to verify.",
+      "ar-MSA": "ماذا ستفهم؟ الـ AI مفيد جدًا — لكنه ليس معصومًا من الخطأ. المستخدم الذكي يعرف متى يثق ومتى يراجع.",
+      "ar-Gulf": "وش راح تفهم؟ الذكاء الاصطناعي مفيد جدًا — لكنه مو معصوم من الخطأ. المستخدم الذكي يعرف متى يثق ومتى يراجع.",
+      "ar-EG": "هتفهم إيه؟ الـ AI مفيد جدًا — بس مش معصوم من الغلط. المستخدم الذكي يعرف إمتى يثق وإمتى يراجع."
+    },
+    "lessonObjects": [
+      "Hallucination",
+      "Verification",
+      "Use Quickly",
+      "Verify Before Relying",
+      "The Core Idea",
+      "Works well for"
+    ],
+    "relationships": [
+      "Use Quickly → Verify Before Relying",
+      "A simple map: on one side — writing, summarizing, and ideas (use confidently). On the other side — numbers and changing facts (verify before relying). The image",
+      "visual relationship kind: concept-scene"
+    ],
     "tension": {
       "en": "Did AI respond confidently, only to reveal an error?",
       "ar-MSA": "هل رد الـ AI بثقة — ثم ظهر فيه خطأ؟",
@@ -123,7 +148,7 @@
     }
   },
   "method": 2,
-  "methodRationale": "intro-m1-l4-ai-can-cannot's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 2), so a text-free AI illustration communicates \"AI is strong in language — but be cautious with facts\" without inventing UI chrome or rendering paid text.",
+  "methodRationale": "intro-m1-l4-ai-can-cannot's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 2), so a text-free AI illustration communicates \"The Core Idea — Works well for: drafting, summarizing, organizing ideas, brainstorming, explaining simply. Requires caution with: precise numbers, current news, law, medicine, finance, personal data about you or your company.\" without inventing UI chrome or rendering paid text.",
   "compositionPattern": "concept-scene-metaphor",
   "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Use Quickly\" vs \"Verify Before Relying\" for intro-m1-l4-ai-can-cannot.",
   "labelPacks": {
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "AI Can and Cannot: \"Use Quickly\" versus \"Verify Before Relying\" — AI is strong in language — but be cautious with facts",
-    "ar-MSA": "ما يستطيعه الذكاء الاصطناعي وما لا يستطيعه: \"استخدم بسرعة\" في مقابل \"راجع قبل الاعتماد\" — الـ AI قوي في اللغة — يحتاج حذرًا في الحقائق",
-    "ar-Gulf": "الذكاء الاصطناعي: ما يمكنه وما لا يمكنه: \"استخدم بسرعة\" في مقابل \"راجع قبل الاعتماد\" — الذكاء الاصطناعي قوي في اللغة — يحتاج حذر في الحقائق",
+    "en": "AI Can and Cannot: \"Use Quickly\" versus \"Verify Before Relying\" — The Core Idea — Works well for: drafting, summarizing, organizing ideas, brainstorming, explaining simply. Requires caution with: precise numbers, current news, law, medicine, finance, personal data about you or your company.",
+    "ar-MSA": "ما يستطيعه الذكاء الاصطناعي وما لا يستطيعه: \"استخدم بسرعة\" في مقابل \"راجع قبل الاعتماد\" — الفكرة الأساسية — يعمل جيدًا في: صياغة، تلخيص، ترتيب أفكار، عصف ذهني، شرح بأسلوب بسيط. يحتاج حذرًا في: أرقام دقيقة، أخبار اليوم، قانون وطب ومال، بيانات خاصة عنك أو شركتك.",
+    "ar-Gulf": "الذكاء الاصطناعي: ما يمكنه وما لا يمكنه: \"استخدم بسرعة\" في مقابل \"راجع قبل الاعتماد\" — الفكرة الأساسية — يعمل بشكل جيد في: صياغة، تلخيص، ترتيب أفكار، عصف ذهني، شرح بأسلوب بسيط. يحتاج حذر في: أرقام دقيقة، أخبار اليوم، قانون وطب ومال، بيانات خاصة عنك أو عن شركتك.",
     "ar-EG": "الـ AI قوي في اللغة — محتاج حذر في الحقائق: \"استخدم بسرعة\" في مقابل \"راجع قبل الاعتماد\" — الـ AI شغّاله كويس في: صياغة، تلخيص، ترتيب أفكار، عصف ذهني، شرح بأسلوب بسيط."
   },
   "aiPromptContract": {
@@ -341,5 +366,5 @@
       "quote": "weight: 30"
     }
   ],
-  "checksum": "a5bc44b85dead4102df6baae23e0a77d7ce9878ec958641fd71e378c0c861fb9"
+  "checksum": "5f5ef239a7c354ed916c47b2967dde7bfecd93d42877202e7a35951facc12b02"
 }

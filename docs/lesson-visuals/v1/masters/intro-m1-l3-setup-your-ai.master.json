@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "eb2d1b28003e37860d0ca6542da30d8ae676dbb48ea92c0ff838adfff673d868",
+    "ar-MSA": "a12781a43e651b99bf2d372980e693ec596705545073d3dad8239c84f970c059",
+    "ar-Gulf": "f7d5fb4000f245c71db5c7d75bd477f51e2e9cb1d1a68049acdcf57b1568c5d3",
+    "ar-EG": "b7c8b6f578ce6fe3f729d226935df66b3f85a8abab54a8a4fb9c5d023249f475"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Open One — Try It — And You’ve Started",
-      "ar-MSA": "افتح واحدًا — جرّب — وقد بدأت",
-      "ar-Gulf": "افتح واحد — جرّب — وبهذا تكون بدأت",
+      "en": "The Main Idea — The Chatbot looks simple: a text box at the bottom, and the response appears at the top. Like any chat app — but the other side is AI. You don’t need to choose the 'perfect tool'. ChatGPT, Gemini, or Claude — any free one is enough to start.",
+      "ar-MSA": "الفكرة الأساسية — الـ Chatbot شكله بسيط: مربع كتابة في الأسفل، والرد يظهر في الأعلى. مثل أي تطبيق محادثة — لكن الطرف الآخر ذكاء اصطناعي. لا تحتاج اختيار «الأداة المثالية». ChatGPT أو Gemini أو Claude — أي واحد مجاني يكفي للبداية.",
+      "ar-Gulf": "الفكرة الأساسية — شكل الـ Chatbot بسيط: مربع كتابة في الأسفل، والرد يظهر في الأعلى. مثل أي تطبيق محادثة — لكن الطرف الثاني هو ذكاء اصطناعي. ما تحتاج تختار «الأداة المثالية». ChatGPT أو Gemini أو Claude — أي واحد مجاني يكفي للبداية.",
       "ar-EG": "الـ Chatbot (واجهة محادثة) شكلها بسيط: مربع كتابة تحت، والرد يظهر فوق. زي أي واتساب — بس الطرف التاني AI."
     },
+    "instructionalPurpose": {
+      "en": "What Will You Understand? Your first real win = open one AI tool and send a simple message — no complications.",
+      "ar-MSA": "ماذا ستفهم؟ أول فوز حقيقي = تفتح أداة ذكاء اصطناعي واحدة وترسل رسالة بسيطة — دون تعقيد.",
+      "ar-Gulf": "وش راح تفهم؟ أول فوز حقيقي = تفتح أداة ذكاء اصطناعي واحدة وترسل رسالة بسيطة — بدون تعقيد.",
+      "ar-EG": "هتفهم إيه؟ أول فوز حقيقي = تفتح AI واحد وتبعت رسالة بسيطة — من غير تعقيد."
+    },
+    "lessonObjects": [
+      "Chatbot",
+      "Compare and Wait",
+      "Open and Try",
+      "The Main Idea",
+      "The Chatbot looks simple",
+      "a text box at the bottom"
+    ],
+    "relationships": [
+      "Compare and Wait → Open and Try",
+      "Three Chatbot interfaces: a text box at the bottom and a conversation appears at the top. The interface doesn’t need a long explanation. Your first message is m",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "Are you watching lessons without opening an AI tool?",
       "ar-MSA": "هل تشاهد الدروس دون أن تفتح أداة ذكاء اصطناعي؟",
@@ -123,9 +148,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "intro-m1-l3-setup-your-ai's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Compare and Wait / Open and Try) instead of fabricating a UI capture.",
+  "methodRationale": "Authentic chatbot/product UI recognition would help, but no safe public URL verified HTTP 200 without login/bot wall (OpenAI/ChatGPT endpoints returned 403 from audit). Refusing to fabricate UI; using deterministic/hybrid with package labels.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Compare and Wait\" vs \"Open and Try\" for intro-m1-l3-setup-your-ai.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Compare and Wait\" vs \"Open and Try\" for intro-m1-l3-setup-your-ai.",
   "labelPacks": {
     "en": [
       {
@@ -233,9 +258,9 @@
     ]
   },
   "altTexts": {
-    "en": "Setup Your AI: \"Compare and Wait\" versus \"Open and Try\" — Open One — Try It — And You’ve Started",
-    "ar-MSA": "إعداد الذكاء الاصطناعي: \"تقارن وتنتظر\" في مقابل \"تفتح وتجرّب\" — افتح واحدًا — جرّب — وقد بدأت",
-    "ar-Gulf": "إعداد الذكاء الاصطناعي الخاص بك: \"تقارن وتنتظر\" في مقابل \"تفتح وتجرّب\" — افتح واحد — جرّب — وبهذا تكون بدأت",
+    "en": "Setup Your AI: \"Compare and Wait\" versus \"Open and Try\" — The Main Idea — The Chatbot looks simple: a text box at the bottom, and the response appears at the top. Like any chat app — but the other side is AI. You don’t need to choose the 'perfect tool'. ChatGPT, Gemini, or Claude — any free one is e",
+    "ar-MSA": "إعداد الذكاء الاصطناعي: \"تقارن وتنتظر\" في مقابل \"تفتح وتجرّب\" — الفكرة الأساسية — الـ Chatbot شكله بسيط: مربع كتابة في الأسفل، والرد يظهر في الأعلى. مثل أي تطبيق محادثة — لكن الطرف الآخر ذكاء اصطناعي. لا تحتاج اختيار «الأداة المثالية». ChatGPT أو Gemini أو Claude — أي واحد مجاني يكفي للبداية.",
+    "ar-Gulf": "إعداد الذكاء الاصطناعي الخاص بك: \"تقارن وتنتظر\" في مقابل \"تفتح وتجرّب\" — الفكرة الأساسية — شكل الـ Chatbot بسيط: مربع كتابة في الأسفل، والرد يظهر في الأعلى. مثل أي تطبيق محادثة — لكن الطرف الثاني هو ذكاء اصطناعي. ما تحتاج تختار «الأداة المثالية». ChatGPT أو Gemini أو Claude — أي واحد مجاني يكفي للبد",
     "ar-EG": "افتح واحد — جرّب — وخلاص بدأت: \"تقارن وتستنى\" في مقابل \"تفتح وتجرّب\" — الـ Chatbot (واجهة محادثة) شكلها بسيط: مربع كتابة تحت، والرد يظهر فوق. زي أي واتساب — بس الطرف التاني AI."
   },
   "aiPromptContract": null,
@@ -298,5 +323,5 @@
       "quote": "weight: 30"
     }
   ],
-  "checksum": "8ebf3dbeebbc73ec7d2544846b63ca5387c726cde77f02b8f254f05dc1055ef5"
+  "checksum": "edf0786246f9826c4d5f30d577bb51d9d95aa34ee46dcec000a0e5ea83c06f70"
 }

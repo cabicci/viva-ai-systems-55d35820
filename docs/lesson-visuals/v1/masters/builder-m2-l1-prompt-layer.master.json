@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "13385c7f20da4ec774ced848b3e25b3c91b66adbd12cf380f453d129c0ad4270",
+    "ar-MSA": "e8706a9dcf94ae354af4467a743b1cb88e709f387b7023e531a3696baab9dd27",
+    "ar-Gulf": "764ff64670184516e6affffd1a42a9eb6f88915d40422ba431b0cd7633cd92a8",
+    "ar-EG": "481c9de4bac41d100675a0f9b05be5181144b139b90579c350d2b44d684e45cb"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Prompt",
-      "ar-MSA": "Prompt",
-      "ar-Gulf": "Prompt",
+      "en": "Prompt = Product Behavior",
+      "ar-MSA": "Prompt = سلوك المنتج — Prompt = كل ما تكتبه للذكاء الاصطناعي: System Instruction (من هو وكيف يرد) + طلب المستخدم. في Builder: System Prompt ثابت خلف الكواليس — المستخدم يرى مربع السؤال فقط. أنت تحدّد السلوك.",
+      "ar-Gulf": "Prompt = سلوك المنتج — Prompt = كل اللي تكتبه للذكاء الاصطناعي: System Instruction (من هو وكيف يرد) + طلب المستخدم. في Builder: System Prompt ثابت خلف الكواليس — المستخدم يشوف مربع السؤال بس. أنت تحدد السلوك.",
       "ar-EG": "Prompt = كل اللي بتكتبه للـ AI: System Instruction (مين هو وإزاي يرد) + طلب المستخدم."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? A Prompt is not just a single question — it is the layer that defines the behavior of any AI feature in your product.",
+      "ar-MSA": "ماذا ستفهم؟ Prompt (الطلب) ليس «سؤالًا واحدًا» — بل الطبقة التي تحدّد سلوك أي ميزة ذكاء اصطناعي في منتجك.",
+      "ar-Gulf": "وش راح تفهم؟ Prompt (الطلب) مو «سؤال واحد» — بل الطبقة اللي تحدد سلوك أي ميزة ذكاء اصطناعي في منتجك.",
+      "ar-EG": "هتفهم إيه؟ الـ Prompt مش «سؤال واحد» — ده الطبقة اللي بتحدّد سلوك أي ميزة AI في منتجك."
+    },
+    "lessonObjects": [
+      "Prompt",
+      "System Instruction",
+      "Vague Request",
+      "Clear Request",
+      "Prompt = Product Behavior"
+    ],
+    "relationships": [
+      "Vague Request → Clear Request",
+      "An organized curriculum page — header, progress bar, and numbered stages. Built with a **Prompt** that includes structure, order, and the format of each stage.",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "You asked the AI for something general — and received a vague, unhelpful response. It's like asking a friend, \"What should we eat?\" and they reply, \"Anything.\" The problem is not the intelligence — the problem is the lac",
       "ar-MSA": "طلبت من الذكاء الاصطناعي شيئًا عامًا — فخرج رد عام بلا فائدة. كأنك تسأل صديقك «ماذا نأكل؟» فيجيب «أي شيء». المشكلة ليست الذكاء — المشكلة نقص التفاصيل.",
@@ -102,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m2-l1-prompt-layer.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "An organized curriculum page — header, progress bar, and numbered stages. Built with a **Prompt** that includes structure, order, and the fo"
+          "quote": "Prompt"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m2-l1-prompt-layer.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "صفحة منهج منظمة — هيدر، شريط تقدّم، ومراحل مرقّمة. بُنيت بـ **Prompt** فيه الهيكل والترتيب وشكل كل مرحلة. لو كان الطلب «اعمل صفحة منهج» فقط،"
+          "quote": "Prompt"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m2-l1-prompt-layer.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "صفحة منهج منظمة — هيدر، شريط تقدم، ومراحل مرقمة. بُنيت بـ **Prompt** فيه الهيكل والترتيب وشكل كل مرحلة. لو كان الطلب «اعمل صفحة منهج» بس، لك"
+          "quote": "Prompt"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m2-l1-prompt-layer.ts",
@@ -123,9 +147,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "builder-m2-l1-prompt-layer's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Vague Request / Clear Request) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Vague Request\" vs \"Clear Request\" for builder-m2-l1-prompt-layer.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Vague Request\" vs \"Clear Request\" for builder-m2-l1-prompt-layer.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "The Prompt Layer: \"Vague Request\" versus \"Clear Request\" — Prompt",
-    "ar-MSA": "طبقة البرومبت: \"طلب غامض\" في مقابل \"طلب واضح\" — Prompt",
-    "ar-Gulf": "الطبقة التفاعلية: \"طلب غامض\" في مقابل \"طلب واضح\" — Prompt",
+    "en": "The Prompt Layer: \"Vague Request\" versus \"Clear Request\" — Prompt = Product Behavior",
+    "ar-MSA": "طبقة البرومبت: \"طلب غامض\" في مقابل \"طلب واضح\" — Prompt = سلوك المنتج — Prompt = كل ما تكتبه للذكاء الاصطناعي: System Instruction (من هو وكيف يرد) + طلب المستخدم. في Builder: System Prompt ثابت خلف الكواليس — المستخدم يرى مربع السؤال فقط. أنت تحدّد السلوك.",
+    "ar-Gulf": "الطبقة التفاعلية: \"طلب غامض\" في مقابل \"طلب واضح\" — Prompt = سلوك المنتج — Prompt = كل اللي تكتبه للذكاء الاصطناعي: System Instruction (من هو وكيف يرد) + طلب المستخدم. في Builder: System Prompt ثابت خلف الكواليس — المستخدم يشوف مربع السؤال بس. أنت تحدد السلوك.",
     "ar-EG": "الـ Prompt = سلوك المنتج: \"طلب غامض\" في مقابل \"طلب واضح\" — Prompt = كل اللي بتكتبه للـ AI: System Instruction (مين هو وإزاي يرد) + طلب المستخدم."
   },
   "aiPromptContract": null,
@@ -330,5 +354,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "b916af015e38b7c6dbbd833f4633a7147a58c5d585ecfa1dee8604958beb17b9"
+  "checksum": "de5f2ed694482dd9567c121fc4dabcb55ca6cdc20c3ecbb5d42a8f2137f88cc1"
 }

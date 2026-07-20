@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "a88c937791ee94f42d5060971edcc41847c18667e39532fe2f6538d1d0c75317",
+    "ar-MSA": "80d38736a31e3bcaf106d23bee58400330efd046fef2858facfaa92a99bc1431",
+    "ar-Gulf": "1c0b38b94cb9d69e859bdb47b981b38377f51e5fbc9d1914658c4d9109832bd6",
+    "ar-EG": "23fa8e1cbdc77181982afd761672aa75ed8b6765364f0e57fa89b4b6b059982b"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Component = a small lego piece",
-      "ar-MSA": "Component (مكوّن) = قطعة lego صغيرة",
-      "ar-Gulf": "Component (مكوّن) = قطعة lego صغيرة",
+      "en": "A reusable piece + a route for each page",
+      "ar-MSA": "قطعة قابلة لإعادة الاستخدام + مسار لكل صفحة",
+      "ar-Gulf": "مكوّن قابل لإعادة الاستخدام + مسار لكل صفحة",
       "ar-EG": "Component = قطعة ليجو: زرار، فقاعة رسالة، كارت محادثة. بتصممها مرة وتستخدمها ببيانات مختلفة (Props)."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? The app = reusable small pieces (Components) + pages with titles (Routes).",
+      "ar-MSA": "ماذا ستفهم؟ التطبيق = قطع صغيرة قابلة لإعادة الاستخدام (Components) + صفحات لها عنوان (Routes).",
+      "ar-Gulf": "وش راح تفهم؟ التطبيق = مكوّنات قابلة لإعادة الاستخدام (Components) + صفحات لها عنوان (Routes).",
+      "ar-EG": "هتفهم إيه؟ التطبيق = قطع صغيرة قابلة لإعادة الاستخدام (Components) + صفحات لها عنوان (Routes)."
+    },
+    "lessonObjects": [
+      "Component",
+      "Route",
+      "Error — same design in 3 places",
+      "Correct — Component once",
+      "A reusable piece + a route for each page"
+    ],
+    "relationships": [
+      "Error — same design in 3 places → Correct — Component once",
+      "**Any professional interface looks complex** — **but it is a repetition of 3-4 templates**. **ModuleCard and LessonRow = Components that repeat with different d",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "Each page looks a bit different. The submit button is blue in chat and green in settings. The problem: You repeated the same code by copying and pasting. Any small change = a change in the entire app.",
       "ar-MSA": "كل صفحة شكلها مختلف قليلًا. زر الإرسال أزرق في الشات وأخضر في الإعدادات. المشكلة: كرّرت نفس الكود بنسخ ولصق. أي تعديل بسيط = تعديل في التطبيق كله.",
@@ -102,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m6-l4-components-routes.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**Any professional interface looks complex** — **but it is a repetition of 3-4 templates**. **ModuleCard and LessonRow = Components that rep"
+          "quote": "Any professional interface looks complex"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l4-components-routes.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**أي واجهة احترافية تبدو معقدة** — **لكنها تكرار لـ ٣–٤ قوالب**. **ModuleCard و LessonRow = Components تتكرر ببيانات مختلفة**."
+          "quote": "أي واجهة احترافية تبدو معقدة"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l4-components-routes.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**أي واجهة احترافية تبدو معقدة** — **لكنها تكرار لـ ٣–٤ قوالب**. **ModuleCard و LessonRow = مكوّنات تتكرر ببيانات مختلفة**."
+          "quote": "أي واجهة احترافية تبدو معقدة"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m6-l4-components-routes.ts",
@@ -123,9 +147,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "builder-m6-l4-components-routes's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Error — same design in 3 places / Correct — Component once) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent describes a schematic/layout illustration rather than recognizing a named public product UI; hybrid/deterministic carries real locale labels without fabricating chrome.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Error — same design in 3 places\" vs \"Correct — Component once\" for builder-m6-l4-components-routes.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Error — same design in 3 places\" vs \"Correct — Component once\" for builder-m6-l4-components-routes.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Components & Routes: \"Error — same design in 3 places\" versus \"Correct — Component once\" — Component = a small lego piece",
-    "ar-MSA": "المكوّنات والمسارات: \"خطأ — نفس الشكل في ٣ أماكن\" في مقابل \"صح — Component مرة واحدة\" — Component (مكوّن) = قطعة lego صغيرة",
-    "ar-Gulf": "مكونات ومسارات: \"خطأ — نفس الشكل في ٣ أماكن\" في مقابل \"صح — مكوّن مرة واحدة\" — Component (مكوّن) = قطعة lego صغيرة",
+    "en": "Components & Routes: \"Error — same design in 3 places\" versus \"Correct — Component once\" — A reusable piece + a route for each page",
+    "ar-MSA": "المكوّنات والمسارات: \"خطأ — نفس الشكل في ٣ أماكن\" في مقابل \"صح — Component مرة واحدة\" — قطعة قابلة لإعادة الاستخدام + مسار لكل صفحة",
+    "ar-Gulf": "مكونات ومسارات: \"خطأ — نفس الشكل في ٣ أماكن\" في مقابل \"صح — مكوّن مرة واحدة\" — مكوّن قابل لإعادة الاستخدام + مسار لكل صفحة",
     "ar-EG": "قطعة قابلة لإعادة الاستخدام + مسار لكل صفحة: \"غلط — نفس الشكل في ٣ أماكن\" في مقابل \"صح — Component مرة واحدة\" — Component = قطعة ليجو: زرار، فقاعة رسالة، كارت محادثة. بتصممها مرة وتستخدمها ببيانات مختلفة (Props)."
   },
   "aiPromptContract": null,
@@ -330,5 +354,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "8b053b3c949a5997f0f3546a614da251e347b5875027ba95fe2c3e154f96ffb9"
+  "checksum": "66c595953e1ce23356ee3c7fbbc1272a812ed9198b818dbc7d33c726b5091518"
 }

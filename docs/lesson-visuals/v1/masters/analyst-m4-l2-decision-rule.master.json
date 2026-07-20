@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "1d2c6633f198fec8da2de8fd495b2e434d5360bc58ab70776c1aa55276a8a926",
+    "ar-MSA": "1f484c2b5d111a6784f2b23e6c26ac214b1e3932e2ebbf146d8f6c355577944b",
+    "ar-Gulf": "54fa12256e0774a7b1444258774e8f4ecf9b4fa9bfd29a866a46baad46deca59",
+    "ar-EG": "865c2cce8ba18b25d48325512336b9b41a514f944474a7c960e3aa470cf4e65d"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Compared to what?",
-      "ar-MSA": "Compared to what? — مقارنة بماذا؟",
-      "ar-Gulf": "مقارنة بماذا؟",
+      "en": "Decision Rule: 3 Questions Before Any Action",
+      "ar-MSA": "قاعدة القرار: ٣ أسئلة قبل أي Action (إجراء)",
+      "ar-Gulf": "قاعدة القرار: ٣ أسئلة قبل أي إجراء",
       "ar-EG": "١) Compared to what? — مقارنة بإيه؟ (الأسبوع اللي فات، نفس الفترة السنة اللي فاتت، الهدف)"
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? A single number can mislead you — a decision requires comparison and related numbers.",
+      "ar-MSA": "ماذا ستفهم؟ رقم واحد قد يُضلّلك — القرار يحتاج مقارنة وأرقامًا مرتبطة.",
+      "ar-Gulf": "وش راح تفهم؟ رقم واحد ممكن يخدعك — القرار يحتاج مقارنة وأرقام مرتبطة.",
+      "ar-EG": "هتفهم إيه؟ رقم واحد ممكن يضلّلك — القرار محتاج مقارنة وأرقام مرتبطة."
+    },
+    "lessonObjects": [
+      "Baseline",
+      "Decision Rule",
+      "A number without comparison",
+      "A number + comparison + action",
+      "3 Questions Before Any Action"
+    ],
+    "relationships": [
+      "A number without comparison → A number + comparison + action",
+      "**Decision chain** (ID: `decision-chain`): **Number → Compared to what → Related number → Action**. **Without** this **chain**, the **decision will not be execu",
+      "visual relationship kind: decision"
+    ],
     "tension": {
       "en": "A manager says: 'Sales dropped by 10%'. The team panics — discounts, advertisements, emergency meetings. Someone asks: 'Dropped compared to what?' — It turns out it was compared to a week with a special offer. Compared t",
       "ar-MSA": "مدير يقول: «المبيعات نزلت ١٠٪». الفريق يدخل في الذعر — خصومات، إعلانات، اجتماعات طوارئ. أحد يسأل: «نزلت مقارنة بماذا؟» — تبيّن أنها مقارنة بأسبوع فيه عرض خاص. مقارنة بالشهر الماضي: ثابتة.",
@@ -102,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/analyst-m4-l2-decision-rule.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**Decision chain** (ID: `decision-chain`): **Number → Compared to what → Related number → Action**. **Without** this **chain**, the **decisi"
+          "quote": "Decision chain"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-l2-decision-rule.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**سلسلة القرار** (معرّف: `decision-chain`): **رقم → مقارنة بماذا → رقم مرتبط → Action**. **من دون** هذه **السلسلة** **القرار لن يُنفَّذ**."
+          "quote": "سلسلة القرار"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-l2-decision-rule.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**سلسلة القرار** (معرّف: `decision-chain`): **رقم → مقارنة بماذا → رقم مرتبط → إجراء**. **من دون** هالسلسلة **القرار ما راح يُنفّذ**."
+          "quote": "سلسلة القرار"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/analyst-m4-l2-decision-rule.ts",
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Decision Rule: \"A number without comparison\" versus \"A number + comparison + action\" — Compared to what?",
-    "ar-MSA": "قاعدة القرار: \"رقم من دون مقارنة\" في مقابل \"رقم + مقارنة + Action\" — Compared to what? — مقارنة بماذا؟",
-    "ar-Gulf": "قاعدة القرار: \"رقم من دون مقارنة\" في مقابل \"رقم + مقارنة + إجراء\" — مقارنة بماذا؟",
+    "en": "Decision Rule: \"A number without comparison\" versus \"A number + comparison + action\" — Decision Rule: 3 Questions Before Any Action",
+    "ar-MSA": "قاعدة القرار: \"رقم من دون مقارنة\" في مقابل \"رقم + مقارنة + Action\" — قاعدة القرار: ٣ أسئلة قبل أي Action (إجراء)",
+    "ar-Gulf": "قاعدة القرار: \"رقم من دون مقارنة\" في مقابل \"رقم + مقارنة + إجراء\" — قاعدة القرار: ٣ أسئلة قبل أي إجراء",
     "ar-EG": "قاعدة القرار: ٣ أسئلة قبل أي action: \"رقم من غير مقارنة\" في مقابل \"رقم + مقارنة + action\" — ١) Compared to what? — مقارنة بإيه؟ (الأسبوع اللي فات، نفس الفترة السنة اللي فاتت، الهدف)"
   },
   "aiPromptContract": null,
@@ -330,5 +354,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "736381c8a7ba5212b4e8314bb18210433797357cb654e8a48ac1996162e60c60"
+  "checksum": "13210b3b3f20014dc23f368a5ee3dcdc8f6bba18fa9d0cbf29550b9991e4a57a"
 }

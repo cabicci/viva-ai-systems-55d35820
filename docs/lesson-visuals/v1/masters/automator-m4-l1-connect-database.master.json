@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "e5aa3f05c4f7c3ce60f3100ef0bf5401a69342b78072ee44ddba306a3a40f000",
+    "ar-MSA": "7c978477bdd1185fdb38afea0ec9cd63721262ada54c5fb814f85d08ee1ab2e6",
+    "ar-Gulf": "7c67b744adde65d8af01fc4b9134110d52b874fd9ce187c823aa56dc1e89b2ee",
+    "ar-EG": "273b20b715f75529466198d697ce0238be4b805a62aedb8e2b9fb978d7aea640"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "workflow",
-      "ar-MSA": "مسار العمل (workflow)",
-      "ar-Gulf": "مسار العمل (workflow)",
+      "en": "DB = Automation Memory — Every lead or request needs to be recorded in one place — a table or organized sheet with fixed fields. Write: When is the data written? (After registration) — When is it read? (Daily report, follow-up).",
+      "ar-MSA": "DB = ذاكرة الأتمتة — كل lead أو طلب يحتاج تسجيلًا في مكان واحد — جدول أو شيت منظم بحقول ثابتة. اكتب: متى تُكتب البيانات؟ (بعد التسجيل) — متى تُقرأ؟ (تقرير يومي، متابعة).",
+      "ar-Gulf": "قاعدة البيانات = ذاكرة الأتمتة",
       "ar-EG": "كل lead أو طلب محتاج يتسجّل في مكان واحد — جدول أو شيت منظم بحقول ثابتة."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Automation becomes more powerful when it stores organized data — not just sends a message and forgets.",
+      "ar-MSA": "ماذا ستفهم؟ الأتمتة تصبح أقوى عندما تحفظ بيانات منظمة — وليس فقط ترسل رسالة وتنسى.",
+      "ar-Gulf": "وش راح تفهم؟ الأتمتة تصير أقوى لما تخزن بيانات منظمة — مو بس ترسل رسالة وتنسى.",
+      "ar-EG": "هتفهم إيه؟ الأتمتة بتبقى أقوى لما تحفظ بيانات منظمة — مش بس تبعت رسالة وتنسى."
+    },
+    "lessonObjects": [
+      "Schema",
+      "CRUD",
+      "Email Only",
+      "Record + Email",
+      "DB = Automation Memory",
+      "a table or organized sheet with fixed fields"
+    ],
+    "relationships": [
+      "Email Only → Record + Email",
+      "Every event (registration, progress, request) is recorded in one place. The **workflow** reads and writes from the same source — not scattered files.",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "\"The client registered — but we can't find their data.\". Automation sends a welcome email — good. But when sales asks, \"Who is this client?\" — there’s no record.",
       "ar-MSA": "«العميل سجّل — ولا نجد بياناته». الأتمتة ترسل بريد ترحيب — جيد. لكن عندما تسأل المبيعات «من هذا العميل؟» — لا سجل.",
@@ -102,17 +127,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/automator-m4-l1-connect-database.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "Every event (registration, progress, request) is recorded in one place. The **workflow** reads and writes from the same source — not scatter"
+          "quote": "workflow"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l1-connect-database.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "كل حدث (تسجيل، تقدّم، طلب) يُسجّل في مكان واحد. **مسار العمل (workflow)** يقرأ ويكتب من نفس المصدر — وليس ملفات متفرقة."
+          "quote": "مسار العمل (workflow)"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l1-connect-database.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "كل حدث (تسجيل، تقدّم، طلب) يُسجّل في مكان واحد. **مسار العمل (workflow)** يقرأ ويكتب من نفس المصدر — مو ملفات متفرقة."
+          "quote": "مسار العمل (workflow)"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/automator-m4-l1-connect-database.ts",
@@ -123,9 +148,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "automator-m4-l1-connect-database's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Email Only / Record + Email) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Email Only\" vs \"Record + Email\" for automator-m4-l1-connect-database.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Email Only\" vs \"Record + Email\" for automator-m4-l1-connect-database.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "Connect Database: \"Email Only\" versus \"Record + Email\" — workflow",
-    "ar-MSA": "ربط قاعدة البيانات: \"بريد فقط\" في مقابل \"سجل + بريد\" — مسار العمل (workflow)",
-    "ar-Gulf": "ربط قاعدة البيانات: \"بريد فقط\" في مقابل \"سجل + بريد\" — مسار العمل (workflow)",
+    "en": "Connect Database: \"Email Only\" versus \"Record + Email\" — DB = Automation Memory — Every lead or request needs to be recorded in one place — a table or organized sheet with fixed fields. Write: When is the data written? (After registration) — When is it read? (Daily report, follow-up).",
+    "ar-MSA": "ربط قاعدة البيانات: \"بريد فقط\" في مقابل \"سجل + بريد\" — DB = ذاكرة الأتمتة — كل lead أو طلب يحتاج تسجيلًا في مكان واحد — جدول أو شيت منظم بحقول ثابتة. اكتب: متى تُكتب البيانات؟ (بعد التسجيل) — متى تُقرأ؟ (تقرير يومي، متابعة).",
+    "ar-Gulf": "ربط قاعدة البيانات: \"بريد فقط\" في مقابل \"سجل + بريد\" — قاعدة البيانات = ذاكرة الأتمتة",
     "ar-EG": "DB = ذاكرة الأتمتة: \"إيميل بس\" في مقابل \"سجل + إيميل\" — كل lead أو طلب محتاج يتسجّل في مكان واحد — جدول أو شيت منظم بحقول ثابتة."
   },
   "aiPromptContract": null,
@@ -330,5 +355,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "6804bfd89068a62ec88ce9bfe04b15e2df282e71a182457313667af17ef8f303"
+  "checksum": "491799eac82433537d86a2814f890231d8ee13ba4e5d9b5d70600215fa503afd"
 }

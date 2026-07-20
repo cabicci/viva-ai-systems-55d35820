@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "f2f6fec75add124c14a8c46f52157203e93aac09413f51afd02ac3c7826fdb3c",
+    "ar-MSA": "10bc4845bbb353af96ae177db3b5691a5f20d253c25ec4a8319360424963ee3f",
+    "ar-Gulf": "94260a59889f972de8414346b3b9ef82b5597b55863f6fffd014d52fe16b42dd",
+    "ar-EG": "92debe5680e37fbab0b1bea48dd56b7a486caaf8eed8f28b04e62bc49c0ec027"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Relapse",
-      "ar-MSA": "Relapse",
-      "ar-Gulf": "الانتكاسة",
+      "en": "Monitor the Trigger — Not Just «Be Disciplined»",
+      "ar-MSA": "راقب المحفّز — وليس فقط «كن منضبطًا»",
+      "ar-Gulf": "راقب المحفز — مو بس «كن منضبط»",
       "ar-EG": "Relapse يبدأ صغير: تفتح رسالة «بس دي» قبل بلوك الاستراتيجية — وبعدين اليوم كله Reactive."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Even after building a system, pressure can push you back into Reactive Mode — and AI helps you monitor signals and summarize warnings.",
+      "ar-MSA": "ماذا ستفهم؟ حتى بعد بناء نظام، الضغط قد يعيدك إلى Reactive Mode (وضع الإطفاء) — والذكاء الاصطناعي (AI) يساعدك على مراقبة الإشارات وتلخيص التحذيرات.",
+      "ar-Gulf": "وش راح تفهم؟ حتى بعد بناء نظام، الضغط ممكن يرجعك إلى وضع الإطفاء — والذكاء الاصطناعي يساعدك على مراقبة الإشارات وتلخيص التحذيرات.",
+      "ar-EG": "هتفهم إيه؟ حتى بعد بناء نظام، الضغط يرجّعك Reactive — والـ AI يساعدك تراقب الإشارات وتلخّص التحذيرات."
+    },
+    "lessonObjects": [
+      "Reactive Relapse",
+      "SOP (Standard Operating Procedure)",
+      "AI monitoring",
+      "Without Rules",
+      "With Rules + AI",
+      "Monitor the Trigger"
+    ],
+    "relationships": [
+      "Without Rules → With Rules + AI",
+      "**Reactive Relapse Cycle** (ID: `reactive-relapse-cycle`): **trigger** → **shutdown** → **fatigue** → **postponing the system**. **Break the cycle** with **one",
+      "visual relationship kind: process"
+    ],
     "tension": {
       "en": "Two weeks of a good system — then a successful campaign, a big complaint, or cash pressure — and suddenly you are back in reactions and firefighting. Reactive Relapse is not a moral failure — it is a signal that a pressu",
       "ar-MSA": "أسبوعان من نظام جيد — ثم حملة ناجحة، شكوى كبيرة، أو ضغط كاش — وفجأة أنت مجددًا في ردود ومطافئ. Reactive Relapse (رجوع للإطفاء) ليس فشلًا أخلاقيًا — إنه إشارة أن محفّز ضغط كسر الحماية.",
@@ -102,17 +127,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/business-m4-l2-reactive-relapse.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**Reactive Relapse Cycle** (ID: `reactive-relapse-cycle`): **trigger** → **shutdown** → **fatigue** → **postponing the system**. **Break the"
+          "quote": "Reactive Relapse Cycle"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l2-reactive-relapse.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**دورة الرجوع للإطفاء** (معرّف: `reactive-relapse-cycle`): **المحفّز** → **إطفاء** → **تعب** → **تأجيل النظام**. **اقطع الدورة** بـ **قاعدة"
+          "quote": "دورة الرجوع للإطفاء"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l2-reactive-relapse.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**دورة الانتكاسة إلى وضع الإطفاء** (معرّف: `reactive-relapse-cycle`): **المحفز** → **إطفاء** → **تعب** → **تأجيل النظام**. **اقطع الدورة** ب"
+          "quote": "دورة الانتكاسة إلى وضع الإطفاء"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/business-m4-l2-reactive-relapse.ts",
@@ -257,9 +282,9 @@
     ]
   },
   "altTexts": {
-    "en": "Reactive Relapse: \"Without Rules\" versus \"With Rules + AI\" — Relapse",
-    "ar-MSA": "الانتكاسة إلى ردّ الفعل: \"بدون قواعد\" في مقابل \"مع قواعد + AI\" — Relapse",
-    "ar-Gulf": "الرجوع للإطفاء: \"بدون قواعد\" في مقابل \"مع قواعد + الذكاء الاصطناعي\" — الانتكاسة",
+    "en": "Reactive Relapse: \"Without Rules\" versus \"With Rules + AI\" — Monitor the Trigger — Not Just «Be Disciplined»",
+    "ar-MSA": "الانتكاسة إلى ردّ الفعل: \"بدون قواعد\" في مقابل \"مع قواعد + AI\" — راقب المحفّز — وليس فقط «كن منضبطًا»",
+    "ar-Gulf": "الرجوع للإطفاء: \"بدون قواعد\" في مقابل \"مع قواعد + الذكاء الاصطناعي\" — راقب المحفز — مو بس «كن منضبط»",
     "ar-EG": "راقب المحفّز — مش بس «كون منضبط»: \"بدون قواعد\" في مقابل \"مع قواعد + AI\" — Relapse يبدأ صغير: تفتح رسالة «بس دي» قبل بلوك الاستراتيجية — وبعدين اليوم كله Reactive."
   },
   "aiPromptContract": null,
@@ -322,5 +347,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "e8b732b513104e3f3832a24cb4063db81ec7d702fa7654734b676dec1c64b29c"
+  "checksum": "3bf491e41cb842e9acbc09a848b5c63763693685baa4297726093d1fb42c2385"
 }

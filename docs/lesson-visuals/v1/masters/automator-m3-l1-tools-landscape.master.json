@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "ceb85ff7edebbc5b9e677088126134782365ea0bb874b8fc27cd18ea17fd140d",
+    "ar-MSA": "9174ee619f26c1a852d5b85979ceafd7fbcb56ffa672781940882aa5c0b02c90",
+    "ar-Gulf": "a40491a91b631003bd7416ad81d952a3f9127f6bec4f8e3ad06eaf248a193d9b",
+    "ar-EG": "ffcf37fc0d58585576782ff2f36c13e32a9c6e735f14e20950a13a853c341ddc"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Zapier",
-      "ar-MSA": "Zapier",
-      "ar-Gulf": "Zapier",
+      "en": "Tools Differ — Thought Process is the Same",
+      "ar-MSA": "الأدوات مختلفة — التفكير واحد",
+      "ar-Gulf": "الأدوات مختلفة — التفكير واحد",
       "ar-EG": "Zapier — الأسهل، integrations جاهزة كتير، مناسب لـ workflows بسيطة وقليلة. أغلى نسبيًا."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? The tools differ — Zapier, Make, n8n — but the thought process is the same: Trigger → steps → Output.",
+      "ar-MSA": "ماذا ستفهم؟ الأدوات مختلفة — Zapier، Make، n8n — لكن التفكير واحد: مُشغّل (Trigger) → خطوات → نتيجة (Output).",
+      "ar-Gulf": "وش راح تفهم؟ الأدوات مختلفة — Zapier، Make، n8n — لكن التفكير واحد: مُشغّل (Trigger) → خطوات → نتيجة (Output).",
+      "ar-EG": "هتفهم إيه؟ الأدوات مختلفة — Zapier، Make، n8n — بس التفكير واحد: مُشغّل → خطوات → نتيجة."
+    },
+    "lessonObjects": [
+      "No-Code",
+      "Integration",
+      "\"Zapier because it’s popular\"",
+      "\"Make because the size is medium\"",
+      "Tools Differ",
+      "Thought Process is the Same"
+    ],
+    "relationships": [
+      "\"Zapier because it’s popular\" → \"Make because the size is medium\"",
+      "Any automation tool = layers: something enters (**Trigger**) → steps → something exits. Zapier, Make, and n8n share the same idea — differing in ease, price, an",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "\"Zapier is popular\" — and after a month, the subscription is expensive. You choose a tool because it’s famous — or because it’s free — without asking: How many tasks per month? Do you need logic or simple steps?",
       "ar-MSA": "«Zapier أشهر» — وبعد شهر الاشتراك غالٍ. تختار أداة لأنها مشهورة — أو لأنها مجانية — دون أن تسأل: كم مهمة/شهر؟ هل تحتاج منطقًا أم خطوات بسيطة؟",
@@ -102,17 +127,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/automator-m3-l1-tools-landscape.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "Any automation tool = layers: something enters (**Trigger**) → steps → something exits. Zapier, Make, and n8n share the same idea — differin"
+          "quote": "Trigger"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m3-l1-tools-landscape.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "أي أداة أتمتة = طبقات: شيء يدخل (**مُشغّل**) → خطوات → شيء يخرج. Zapier و Make و n8n نفس الفكرة — اختلاف في السهولة والسعر والقوة."
+          "quote": "مُشغّل"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m3-l1-tools-landscape.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "أي أداة أتمتة = طبقات: شيء يدخل (**مُشغّل**) → خطوات → شيء يخرج. Zapier و Make و n8n نفس الفكرة — اختلاف في السهولة والسعر والقوة."
+          "quote": "مُشغّل"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/automator-m3-l1-tools-landscape.ts",
@@ -122,10 +147,10 @@
       }
     }
   },
-  "method": 4,
-  "methodRationale": "automator-m3-l1-tools-landscape's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (\"Zapier because it’s popular\" / \"Make because the size is medium\") instead of fabricating a UI capture.",
-  "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"\"Zapier because it’s popular\"\" vs \"\"Make because the size is medium\"\" for automator-m3-l1-tools-landscape.",
+  "method": 3,
+  "methodRationale": "Recognize a real automation-product surface (n8n) so learners map Trigger → steps → exit layers named in the lesson to an authentic tool UI, not a fabricated mock.",
+  "compositionPattern": "authentic-screenshot-frame",
+  "duplicationJustification": "Shares the \"authentic-screenshot-frame\" layout template with 2 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"\"Zapier because it’s popular\"\" vs \"\"Make because the size is medium\"\" for automator-m3-l1-tools-landscape.",
   "labelPacks": {
     "en": [
       {
@@ -249,13 +274,33 @@
     ]
   },
   "altTexts": {
-    "en": "Tools Landscape: \"\"Zapier because it’s popular\"\" versus \"\"Make because the size is medium\"\" — Zapier",
-    "ar-MSA": "خارطة أدوات الأتمتة: \"«Zapier لأنه مشهور»\" في مقابل \"«Make لأن الحجم متوسط»\" — Zapier",
-    "ar-Gulf": "أدوات الأتمتة: \"«Zapier لأنه مشهور»\" في مقابل \"«Make لأن الحجم متوسط»\" — Zapier",
+    "en": "Tools Landscape: \"\"Zapier because it’s popular\"\" versus \"\"Make because the size is medium\"\" — Tools Differ — Thought Process is the Same",
+    "ar-MSA": "خارطة أدوات الأتمتة: \"«Zapier لأنه مشهور»\" في مقابل \"«Make لأن الحجم متوسط»\" — الأدوات مختلفة — التفكير واحد",
+    "ar-Gulf": "أدوات الأتمتة: \"«Zapier لأنه مشهور»\" في مقابل \"«Make لأن الحجم متوسط»\" — الأدوات مختلفة — التفكير واحد",
     "ar-EG": "الأدوات مختلفة — التفكير واحد: \"«Zapier لأنه مشهور»\" في مقابل \"«Make لأن الحجم متوسط»\" — Zapier — الأسهل، integrations جاهزة كتير، مناسب لـ workflows بسيطة وقليلة. أغلى نسبيًا."
   },
   "aiPromptContract": null,
-  "screenshotSpec": null,
+  "screenshotSpec": {
+    "url": "https://n8n.io/",
+    "exactUrl": "https://n8n.io/",
+    "product": "n8n",
+    "publicState": "public-marketing",
+    "capturePurpose": "Recognize a real automation-product surface (n8n) so learners map Trigger → steps → exit layers named in the lesson to an authentic tool UI, not a fabricated mock.",
+    "rightsStatus": "vendor-public-docs",
+    "rightsRationale": "n8n.io is the vendor public marketing site verified HTTP 200 without auth; suitable for tool-landscape recognition.",
+    "rightsNote": "Public n8n marketing page — instructional recognition only; no login, no PII capture.",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "requiredRedactions": [
+      "cookie banners with emails",
+      "any demo workspace private data"
+    ],
+    "deterministicFallbackMethod": 4,
+    "failOnLoginRedirect": true,
+    "allowlisted": true
+  },
   "factualClaims": [
     {
       "claim": "60% of the mission rubric weight is assigned to \"Justified Choice\"",
@@ -314,5 +359,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "5dc5baa4448926daa8ff2a23f63f82c24ef87b81c439a69a5b07452504b84415"
+  "checksum": "7f75a3ee695893269b606f8ffb7151c6d834dc5e1f26091ac171bda6bad4d77e"
 }

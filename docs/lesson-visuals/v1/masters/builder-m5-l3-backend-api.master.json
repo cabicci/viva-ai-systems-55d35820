@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "0901b7004e1af2b16c1b7ad307eadc420103b2d3aee08f277725fee5a5ac28be",
+    "ar-MSA": "641df3c341e5426f93ab0cba505e0fd409eda37812634f350542fc87e9ea04e6",
+    "ar-Gulf": "f4b99bb1b7277d00d947476947ee2446687457335bacae2813a1f66683c3f71f",
+    "ar-EG": "9dd42105690f2ff0dc71abb13d35c2e1741c1e46bf453b9269943b3e63ca1936"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "The client types in the interface and clicks a button",
-      "ar-MSA": "العميل يكتب في الواجهة وينقر زرًا",
-      "ar-Gulf": "العميل يكتب في الواجهة وينقر زر",
+      "en": "API connects the visible to the hidden",
+      "ar-MSA": "API تربط الظاهر بالمخفي — العميل يكتب في الواجهة وينقر زرًا — هذا ما يراه. الكواليس تستقبل الطلب، تكلّم AI، وترجع الرد — هذا ما لا يراه.",
+      "ar-Gulf": "API تربط الظاهر بالمخفي — العميل يكتب في الواجهة وينقر زر — هذا اللي يشوفه. الكواليس تستقبل الطلب، تتكلم مع AI، وترجع الرد — هذا اللي ما يشوفه.",
       "ar-EG": "العميل بيكتب في الواجهة ويدوس زرار — ده اللي يشوفه."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? API (Application Programming Interface / Mail Carrier) connects what the client sees to the work happening behind the scenes.",
+      "ar-MSA": "ماذا ستفهم؟ API (واجهة برمجة التطبيقات / ساعي البريد) تربط ما يراه العميل بالعمل الذي يحدث خلف الشاشة.",
+      "ar-Gulf": "وش راح تفهم؟ واجهة البرمجة (API) تربط ما يراه العميل بالعمل الذي يحدث خلف الشاشة.",
+      "ar-EG": "هتفهم إيه؟ الـ API بتوصّل اللي العميل يشوفه بالشغل اللي بيحصل ورا."
+    },
+    "lessonObjects": [
+      "Backend",
+      "API (Mail Carrier)",
+      "Without API",
+      "With API",
+      "API connects the visible to the hidden"
+    ],
+    "relationships": [
+      "Without API → With API",
+      "**Type a message and click Send**: **the interface sends a request → the backend talks to AI → the response returns to the screen**. **This is the API path**.",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "The button works. The screen loads. But the response doesn't arrive — or an error appears. The interface did its job: It took your input and clicked 'Send'. But no one connects it to the backend.",
       "ar-MSA": "الزر يعمل. الشاشة تحمّل. لكن الرد لا يصل — أو يظهر خطأ. الواجهة أدت عملها: أخذت كلامك ونقر «إرسال». لكن لا أحد يربطها بالكواليس.",
@@ -102,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m5-l3-backend-api.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**Type a message and click Send**: **the interface sends a request → the backend talks to AI → the response returns to the screen**. **This"
+          "quote": "Type a message and click Send"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l3-backend-api.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**اكتب رسالة وانقر إرسال**: **الواجهة ترسل طلبًا → الكواليس تكلّم AI → الرد يعود للشاشة**. **هذا مسار API**."
+          "quote": "اكتب رسالة وانقر إرسال"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l3-backend-api.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**اكتب رسالة وانقر إرسال**: **الواجهة ترسل طلب → الكواليس تتكلم مع AI → الرد يرجع للشاشة**. **هذا مسار API**."
+          "quote": "اكتب رسالة وانقر إرسال"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m5-l3-backend-api.ts",
@@ -123,9 +147,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "builder-m5-l3-backend-api's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Without API / With API) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent describes a schematic/layout illustration rather than recognizing a named public product UI; hybrid/deterministic carries real locale labels without fabricating chrome.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Without API\" vs \"With API\" for builder-m5-l3-backend-api.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Without API\" vs \"With API\" for builder-m5-l3-backend-api.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Backend & API (Mail Carrier): \"Without API\" versus \"With API\" — The client types in the interface and clicks a button",
-    "ar-MSA": "الخادم وواجهات البرمجة: \"بدون API\" في مقابل \"مع API\" — العميل يكتب في الواجهة وينقر زرًا",
-    "ar-Gulf": "الـ Backend والـ API: \"بدون API\" في مقابل \"مع API\" — العميل يكتب في الواجهة وينقر زر",
+    "en": "Backend & API (Mail Carrier): \"Without API\" versus \"With API\" — API connects the visible to the hidden",
+    "ar-MSA": "الخادم وواجهات البرمجة: \"بدون API\" في مقابل \"مع API\" — API تربط الظاهر بالمخفي — العميل يكتب في الواجهة وينقر زرًا — هذا ما يراه. الكواليس تستقبل الطلب، تكلّم AI، وترجع الرد — هذا ما لا يراه.",
+    "ar-Gulf": "الـ Backend والـ API: \"بدون API\" في مقابل \"مع API\" — API تربط الظاهر بالمخفي — العميل يكتب في الواجهة وينقر زر — هذا اللي يشوفه. الكواليس تستقبل الطلب، تتكلم مع AI، وترجع الرد — هذا اللي ما يشوفه.",
     "ar-EG": "الـ API بتوصّل اللي ظاهر بالشغل المخفي: \"من غير API\" في مقابل \"مع API\" — العميل بيكتب في الواجهة ويدوس زرار — ده اللي يشوفه."
   },
   "aiPromptContract": null,
@@ -330,5 +354,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "ba36f1b9854ce4b911b861d8611e0d337f2f9d5a821488dce3e0a4d02bcb9882"
+  "checksum": "05bd3b455e7395a5da2a63c06d9ded50caaebcbb6d940e7b0260681a993cd724"
 }

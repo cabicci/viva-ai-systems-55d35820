@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "8667c32308505c5833ca99f786390d598495e2e5e78f71af3279e83803474ee1",
+    "ar-MSA": "ba7f8a28dc97c666021abeb012307d147509ec39faa99da7f8c9812b7a1d13b3",
+    "ar-Gulf": "d9022932b796c4ca9bf4de8fe44860d5515ac79f304440d002585789e3af017e",
+    "ar-EG": "9ad71b6e914f930c574661c68a7e12808b37bc79aef61c2753b2b6c9f8e3f091"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -56,11 +62,29 @@
       ]
     },
     "coreIdea": {
-      "en": "JWT verifies your identity",
-      "ar-MSA": "JWT يثبت هويتك",
-      "ar-Gulf": "JWT يثبت هويتك",
+      "en": "Rules determine which rows the user sees",
+      "ar-MSA": "القواعد تحدد أي صفوف يرى المستخدم",
+      "ar-Gulf": "القواعد تحدد أي صفوف يشوفها المستخدم",
       "ar-EG": "JWT (كارت دخول مؤقت) بيثبت هويتك. RLS Policy (سياسة أمان على السطر) بتركّب فلتر على كل سؤال للمخزن: «ارجّع بس الصفوف اللي user_id بتاعها = أنا»."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? How to set rules at the database level for which rows each user can see — even if there is a mistake in the code.",
+      "ar-MSA": "ماذا ستفهم؟ كيف تحدّد قواعد على مستوى المخزن أي صفوف يرى كل مستخدم — حتى لو كان هناك خطأ في الكود.",
+      "ar-Gulf": "وش راح تفهم؟ كيف تحدد قواعد على مستوى المخزن أي صفوف يشوفها كل مستخدم — حتى لو كان فيه خطأ في الكود.",
+      "ar-EG": "هتفهم إيه؟ إزاي قواعد على مستوى المخزن تحدّد أنهي صفوف كل مستخدم يشوفها — حتى لو في غلطة في الكود."
+    },
+    "lessonObjects": [
+      "RLS (Row Level Security)",
+      "Policy",
+      "WHERE in code only",
+      "RLS on the database",
+      "Rules determine which rows the user sees"
+    ],
+    "relationships": [
+      "WHERE in code only → RLS on the database",
+      "**A magic lens for each user:**",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "Imagine a personal AI learning from each client's notes. Another client opened the app and found the first client's secrets in front of them. Knowing the ID does not mean you can see it. And the correct code in 9 places",
       "ar-MSA": "تخيّل ذكاءًا اصطناعيًا شخصيًا يتعلم من ملاحظات كل عميل. عميل آخر فتح التطبيق فوجد أسرار الأول أمامه. معرفة ID شيء لا تعني أنك تستطيع رؤيته. والكود الصحيح في ٩ أماكن لا يكفي إن نسيت المكان العاشر.",
@@ -106,17 +130,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m8-l2-rls.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**A magic lens for each user:**"
+          "quote": "A magic lens for each user:"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m8-l2-rls.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**نظارة سحرية لكل مستخدم:**"
+          "quote": "نظارة سحرية لكل مستخدم:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m8-l2-rls.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**نظارة سحرية لكل مستخدم:**"
+          "quote": "نظارة سحرية لكل مستخدم:"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m8-l2-rls.ts",
@@ -127,9 +151,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "builder-m8-l2-rls's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (WHERE in code only / RLS on the database) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"WHERE in code only\" vs \"RLS on the database\" for builder-m8-l2-rls.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"WHERE in code only\" vs \"RLS on the database\" for builder-m8-l2-rls.",
   "labelPacks": {
     "en": [
       {
@@ -269,9 +293,9 @@
     ]
   },
   "altTexts": {
-    "en": "RLS — Row Level Security: \"WHERE in code only\" versus \"RLS on the database\" — JWT verifies your identity",
-    "ar-MSA": "أمان الصفوف — RLS: \"WHERE في الكود فقط\" في مقابل \"RLS على المخزن\" — JWT يثبت هويتك",
-    "ar-Gulf": "RLS — أمان الصفوف: \"WHERE في الكود بس\" في مقابل \"RLS على المخزن\" — JWT يثبت هويتك",
+    "en": "RLS — Row Level Security: \"WHERE in code only\" versus \"RLS on the database\" — Rules determine which rows the user sees",
+    "ar-MSA": "أمان الصفوف — RLS: \"WHERE في الكود فقط\" في مقابل \"RLS على المخزن\" — القواعد تحدد أي صفوف يرى المستخدم",
+    "ar-Gulf": "RLS — أمان الصفوف: \"WHERE في الكود بس\" في مقابل \"RLS على المخزن\" — القواعد تحدد أي صفوف يشوفها المستخدم",
     "ar-EG": "القواعد تحدّد أنهي صفوف المستخدم يشوف: \"غلط — WHERE في الكود بس\" في مقابل \"صح — RLS على المخزن\" — JWT (كارت دخول مؤقت) بيثبت هويتك. RLS Policy (سياسة أمان على السطر) بتركّب فلتر على كل سؤال للمخزن: «ارجّع بس الصفوف اللي user_id بتاعها = أنا»."
   },
   "aiPromptContract": null,
@@ -334,5 +358,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "d7fd1b52f12c7de1ccd96054e4b606d1681c42652097204bfd500cbf42659c39"
+  "checksum": "10beb5a2e700c075ba0db5fc6c66eb4e8a3b189adf826befa8fc4a93c0857fa3"
 }

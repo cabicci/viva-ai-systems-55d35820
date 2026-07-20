@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "24ce58a067b80caa776fb3598cef442335c4c180fd8859fd7c2acc20ef56f1d4",
+    "ar-MSA": "5ede7f6a35455754b4bca2878feceed3653ee2effda3739a01acc6df113a22af",
+    "ar-Gulf": "b1061a9ca696192c228243f054abdecc848e45abe64e5c19d1f9821c8f29cb84",
+    "ar-EG": "988389bd36026ae8fddaed0e619d26dc38e08d50897888ff6197823e177de857"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Mini Win = the smallest version of your app that you publish and test with a real user",
-      "ar-MSA": "Mini Win = أصغر نسخة من تطبيقك تنشرها وتجربها مع مستخدم حقيقي",
-      "ar-Gulf": "Mini Win = أصغر نسخة من تطبيقك تنشرها وتجربها مع مستخدم حقيقي",
+      "en": "Small and Shipped > Complete and Untested",
+      "ar-MSA": "صغير ومنشور > كامل وغير مجرب",
+      "ar-Gulf": "صغير ومنشور > كامل وغير مجرب",
       "ar-EG": "Mini Win = أصغر نسخة من تطبيقك تقدر تنشرها وتجربها مع مستخدم حقيقي."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? ‘Small and shipped’ is better than ‘complete and untested’ — Mini Win before perfection.",
+      "ar-MSA": "ماذا ستفهم؟ «صغير ومنشور» أفضل من «كامل وغير مجرب» — Mini Win (انتصار صغير) قبل الكمال.",
+      "ar-Gulf": "وش راح تفهم؟ «صغير ومنشور» أفضل من «كامل وغير مجرب» — Mini Win (انتصار صغير) قبل الكمال.",
+      "ar-EG": "هتفهم إيه؟ «صغير ومنشور» أحسن من «كامل ومش متجرب» — Mini Win قبل الكمال."
+    },
+    "lessonObjects": [
+      "Mini Win",
+      "MVP (Minimum Viable Product)",
+      "‘I will do everything first’",
+      "Mini Win in a Week",
+      "Small and Shipped > Complete and Untested"
+    ],
+    "relationships": [
+      "‘I will do everything first’ → Mini Win in a Week",
+      "Small and Shipped > Complete and Untested",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "You have 20 features in mind: login, payment, 5 languages, dashboard, notifications... After a month, you are still planning — and nothing works in front of a real user.",
       "ar-MSA": "لديك ٢٠ ميزة في ذهنك: login، دفع، ٥ لغات، dashboard، notifications... بعد شهر ما زلت تخطّط — ولا شيء يعمل أمام مستخدم حقيقي.",
@@ -97,21 +121,21 @@
     },
     "visualIntent": {
       "kind": "screenshot",
-      "summary": "Mini Win = the smallest version of your app that you publish and test with a real user",
+      "summary": "Small and Shipped > Complete and Untested",
       "packageQuotes": {
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m5-l5-mini-win.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Mini Win = the smallest version of your app that you publish and test with a real user"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l5-mini-win.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Mini Win = أصغر نسخة من تطبيقك تنشرها وتجربها مع مستخدم حقيقي"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l5-mini-win.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Mini Win = أصغر نسخة من تطبيقك تنشرها وتجربها مع مستخدم حقيقي"
         },
         "ar-EG": {
@@ -123,9 +147,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "builder-m5-l5-mini-win's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (‘I will do everything first’ / Mini Win in a Week) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"‘I will do everything first’\" vs \"Mini Win in a Week\" for builder-m5-l5-mini-win.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"‘I will do everything first’\" vs \"Mini Win in a Week\" for builder-m5-l5-mini-win.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Mini Win — Check What You Learned: \"‘I will do everything first’\" versus \"Mini Win in a Week\" — Mini Win = the smallest version of your app that you publish and test with a real user",
-    "ar-MSA": "انتصار صغير — تحقّق ممّا تعلّمت: \"«سأفعل كل شيء أولًا»\" في مقابل \"Mini Win في أسبوع\" — Mini Win = أصغر نسخة من تطبيقك تنشرها وتجربها مع مستخدم حقيقي",
-    "ar-Gulf": "الانتصار الصغير: \"«راح أسوي كل شيء أولًا»\" في مقابل \"Mini Win في أسبوع\" — Mini Win = أصغر نسخة من تطبيقك تنشرها وتجربها مع مستخدم حقيقي",
+    "en": "Mini Win — Check What You Learned: \"‘I will do everything first’\" versus \"Mini Win in a Week\" — Small and Shipped > Complete and Untested",
+    "ar-MSA": "انتصار صغير — تحقّق ممّا تعلّمت: \"«سأفعل كل شيء أولًا»\" في مقابل \"Mini Win في أسبوع\" — صغير ومنشور > كامل وغير مجرب",
+    "ar-Gulf": "الانتصار الصغير: \"«راح أسوي كل شيء أولًا»\" في مقابل \"Mini Win في أسبوع\" — صغير ومنشور > كامل وغير مجرب",
     "ar-EG": "صغير ومنشور > كامل ومش متجرب: \"«هعمل كل حاجة الأول»\" في مقابل \"Mini Win في أسبوع\" — Mini Win = أصغر نسخة من تطبيقك تقدر تنشرها وتجربها مع مستخدم حقيقي."
   },
   "aiPromptContract": null,
@@ -330,5 +354,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "81fdcda080d52f76fc3c763ce6deb8ed2d380079ba9c151b7ffdd35d9d15f890"
+  "checksum": "48613208889de0ff93ed3bab11e23e4f9510f97856e0e4e902288fe89033dd51"
 }

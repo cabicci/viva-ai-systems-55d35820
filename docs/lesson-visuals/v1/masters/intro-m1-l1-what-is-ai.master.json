@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "c192c885a4967e93b7cbb9a1c375e8daca0f03d56b8dc55bbc1c4ea56a2088d5",
+    "ar-MSA": "c5fdf608456dd77887afa64669eaa7f24b77adfda16491c0f6ad066a088191f2",
+    "ar-Gulf": "e581f8ef093ac7ada4010a18273342f2ff1a83796e0817d6115926d0f18d3eae",
+    "ar-EG": "bfdf77a09068ce90d8bc61d719ee9dc920e00973cab786aa02cd1c55792d200e"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "AI is a helpful tool — it’s not magic and not a replacement for you",
-      "ar-MSA": "الـ AI أداة مساعدة — ليس سحرًا ولا بديلًا عنك",
-      "ar-Gulf": "الـ AI أداة مساعدة — مو سحر ولا بديل عنك",
+      "en": "The Basic Idea — AI is a program that learns from many examples and gives you a response close to what you asked for. Like a calculator: it saves time, but the decision is yours. It doesn’t think like a human — it calculates the best response based on what it has seen before. So",
+      "ar-MSA": "الفكرة الأساسية — الـ AI برنامج تعلّم من أمثلة كثيرة، ويُعطيك ردًا قريبًا مما طلبته. مثل الآلة الحاسبة: يوفر وقتًا، لكن القرار في يدك. لا يفكّر كالإنسان — يحسب أنسب رد مما رآه من قبل. لذلك يخطئ أحيانًا، وهذا طبيعي.",
+      "ar-Gulf": "الفكرة الأساسية — الـ AI برنامج يتعلم من أمثلة كثيرة، ويعطيك رد قريب مما طلبته. مثل الآلة الحاسبة: يوفر وقت، لكن القرار في يدك. مو يفكر مثل الإنسان — يحسب أنسب رد مما شافه قبل. لذلك يخطئ أحيانًا، وهذا طبيعي.",
       "ar-EG": "الـ AI برنامج اتعلّم من أمثلة كتير، وبيطلّعلك رد قريب من اللي طلبته. زي الآلة الحاسبة: بتوفر وقت، بس القرار في إيدك."
     },
+    "instructionalPurpose": {
+      "en": "What Will You Understand? AI (artificial intelligence) is not magic — it’s a tool that takes a request from you and returns a response. Like a smart assistant on your phone.",
+      "ar-MSA": "ماذا ستفهم؟ الـ AI (ذكاء اصطناعي) ليس سحرًا — هو أداة تأخذ طلبًا منك وترجع ردًا. مثل مساعد ذكي على الهاتف.",
+      "ar-Gulf": "وش راح تفهم؟ الـ AI (ذكاء اصطناعي) مو سحر — هو أداة تأخذ طلب منك وترجع رد. مثل مساعد ذكي على الجوال.",
+      "ar-EG": "هتفهم إيه؟ الـ AI مش سحر — هو أداة بتاخد طلب منك وترجعلك رد. زي مساعد ذكي على الموبايل."
+    },
+    "lessonObjects": [
+      "AI (artificial intelligence)",
+      "Model",
+      "If You Misunderstand It",
+      "If You Understand It",
+      "The Basic Idea",
+      "Like a calculator"
+    ],
+    "relationships": [
+      "If You Misunderstand It → If You Understand It",
+      "Illustration: A simple loop — Question → Response → Adjustment. A question box above and the AI's response below — like any AI conversation. The image shows the",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "Do you hear a lot about AI but don’t know where to start?",
       "ar-MSA": "هل تسمع عن الذكاء الاصطناعي كثيرًا ولا يتضح لك من أين تبدأ؟",
@@ -123,9 +148,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "intro-m1-l1-what-is-ai's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (If You Misunderstand It / If You Understand It) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent describes a schematic/layout illustration rather than recognizing a named public product UI; hybrid/deterministic carries real locale labels without fabricating chrome.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"If You Misunderstand It\" vs \"If You Understand It\" for intro-m1-l1-what-is-ai.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"If You Misunderstand It\" vs \"If You Understand It\" for intro-m1-l1-what-is-ai.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "What Is AI: \"If You Misunderstand It\" versus \"If You Understand It\" — AI is a helpful tool — it’s not magic and not a replacement for you",
-    "ar-MSA": "ما هو الذكاء الاصطناعي: \"لو فهمته خطأ\" في مقابل \"لو فهمته صح\" — الـ AI أداة مساعدة — ليس سحرًا ولا بديلًا عنك",
-    "ar-Gulf": "ما هو الذكاء الاصطناعي: \"لو فهمته خطأ\" في مقابل \"لو فهمته صح\" — الـ AI أداة مساعدة — مو سحر ولا بديل عنك",
+    "en": "What Is AI: \"If You Misunderstand It\" versus \"If You Understand It\" — The Basic Idea — AI is a program that learns from many examples and gives you a response close to what you asked for. Like a calculator: it saves time, but the decision is yours. It doesn’t think like a human — it calculates the b",
+    "ar-MSA": "ما هو الذكاء الاصطناعي: \"لو فهمته خطأ\" في مقابل \"لو فهمته صح\" — الفكرة الأساسية — الـ AI برنامج تعلّم من أمثلة كثيرة، ويُعطيك ردًا قريبًا مما طلبته. مثل الآلة الحاسبة: يوفر وقتًا، لكن القرار في يدك. لا يفكّر كالإنسان — يحسب أنسب رد مما رآه من قبل. لذلك يخطئ أحيانًا، وهذا طبيعي.",
+    "ar-Gulf": "ما هو الذكاء الاصطناعي: \"لو فهمته خطأ\" في مقابل \"لو فهمته صح\" — الفكرة الأساسية — الـ AI برنامج يتعلم من أمثلة كثيرة، ويعطيك رد قريب مما طلبته. مثل الآلة الحاسبة: يوفر وقت، لكن القرار في يدك. مو يفكر مثل الإنسان — يحسب أنسب رد مما شافه قبل. لذلك يخطئ أحيانًا، وهذا طبيعي.",
     "ar-EG": "الـ AI أداة مساعدة — مش سحر ولا بديل عنك: \"لو فهمته غلط\" في مقابل \"لو فهمته صح\" — الـ AI برنامج اتعلّم من أمثلة كتير، وبيطلّعلك رد قريب من اللي طلبته. زي الآلة الحاسبة: بتوفر وقت، بس القرار في إيدك."
   },
   "aiPromptContract": null,
@@ -330,5 +355,5 @@
       "quote": "weight: 30"
     }
   ],
-  "checksum": "00a4c44610af3fa40d67c3b5920e4eeb095b90765d1c86d81791339f36aae8e6"
+  "checksum": "df0eca473b79fbecd110e582f3016d974e8173c0100e12802656b0145faae4fd"
 }

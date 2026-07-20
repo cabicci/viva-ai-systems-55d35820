@@ -52,6 +52,12 @@ export interface VisualIntent {
 export interface ContentBrief {
   orientation: Record<Locale, string[]>;
   coreIdea: Record<Locale, string>;
+  /** Lesson-specific instructional purpose grounded in packages (not generic chrome). */
+  instructionalPurpose: Record<Locale, string>;
+  /** Concrete objects the visual must depict (from glossary / comparison / core). */
+  lessonObjects: string[];
+  /** Relationships / steps the visual must show. */
+  relationships: string[];
   tension: Record<Locale, string>;
   comparison: Record<Locale, ComparisonPack>;
   missionIntro: Record<Locale, string>;
@@ -67,8 +73,18 @@ export interface AiPromptContract {
 }
 
 export interface ScreenshotSpec {
+  /** Canonical capture URL (same as exactUrl). */
   url: string;
+  exactUrl: string;
+  product: string;
+  publicState: "public-no-auth" | "public-marketing" | "public-docs";
+  capturePurpose: string;
+  rightsStatus: "authorized-public" | "vendor-public-docs" | "masaarat-owned-public";
+  rightsRationale: string;
   rightsNote: string;
+  viewport: { width: number; height: number };
+  requiredRedactions: string[];
+  deterministicFallbackMethod: 1 | 2 | 4;
   failOnLoginRedirect: true;
   allowlisted: true;
 }
@@ -89,6 +105,8 @@ export interface LessonVisualMaster {
   sourceSha: string;
   titles: Record<Locale, string>;
   sourcePackages: Record<Locale, SourcePackageRef>;
+  /** sha256 hex of each source package file's raw bytes. */
+  packageChecksums: Record<Locale, string>;
   contentBrief: ContentBrief;
   method: Method;
   methodRationale: string;
@@ -168,12 +186,24 @@ export const BANNED_GENERIC_LABELS = [
   "Check",
   "Output",
   "Empty",
+  "workflow",
+  "Workflow",
+  "Screenshot",
+  "Diagram",
+  "Label",
+  "Title",
 ] as const;
 
-/** Masaarat-owned public hosts allowed for authentic screenshots. */
+/** Minimum meaningful length for coreIdea / instructionalPurpose (en). */
+export const MIN_MEANINGFUL_BRIEF_CHARS = 24;
+
+/** Masaarat-owned public hosts (always eligible when path allowlisted). */
 export const SCREENSHOT_ALLOWLIST_HOSTS = [
   "masaarat.ai",
   "www.masaarat.ai",
   "learn.masaarat.ai",
   "docs.masaarat.ai",
 ] as const;
+
+/** Default Lovable dispatch actor allowlist used when repo vars are unset (tests/local). */
+export const DEFAULT_LOVABLE_DISPATCH_ACTORS = ["lovable"] as const;

@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "0e0abef65c610b786a3d77b59094d2ff62341ba1c2a27f86e24219fb94d1e1ca",
+    "ar-MSA": "1d9b3c9c7cf63625298fa93b85a2cf696e208155f1e4120effe537ee5955adc9",
+    "ar-Gulf": "5b4e9732896ed67d1b52fe49f258c98c2b68860599c385156279b2634b4a5d7a",
+    "ar-EG": "8da86e30cabf9ed95e88d9d79a5d7111a244aeef2d5c8222f6e636e9cc3f2aa2"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -51,11 +57,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Content Pillar:",
-      "ar-MSA": "Content Pillar (عمود محتوى):",
-      "ar-Gulf": "عمود المحتوى (Content Pillar):",
+      "en": "3 Pillars Are Enough — Content Pillar: A main fixed topic — every content idea should follow one of them. 3 pillars are more than enough — you don't need a long list.",
+      "ar-MSA": "٣ أعمدة كافية — Content Pillar (عمود محتوى): موضوع رئيسي ثابت — وكل فكرة محتوى يجب أن تتبع أحدها. ٣ أعمدة كافية جدًا — لا تحتاج قائمة طويلة.",
+      "ar-Gulf": "٣ أعمدة كافية — عمود المحتوى (Content Pillar): موضوع رئيسي ثابت — وكل فكرة محتوى لازم تتبع أحدها. ٣ أعمدة كافية جدًا — ما تحتاج قائمة طويلة.",
       "ar-EG": "الأعمدة هي مواضيع رئيسية ثابتة، وكل فكرة محتوى لازم تتبع واحد منها."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? When you define your Content Pillars, it makes publishing decisions easier and faster.",
+      "ar-MSA": "ماذا ستفهم؟ عندما تحدّد أعمدة محتواك (Content Pillars)، يصبح قرار النشر أسهل وأسرع.",
+      "ar-Gulf": "وش راح تفهم؟ لما تحدد أعمدة محتواك (Content Pillars)، يصير قرار النشر أسهل وأسرع.",
+      "ar-EG": "لما تحدد أعمدة محتواك، قرار النشر يبقى أسهل وأسرع."
+    },
+    "lessonObjects": [
+      "Content Pillar",
+      "Topic Idea",
+      "Content Mix",
+      "Without Pillars",
+      "With Pillars",
+      "3 Pillars Are Enough"
+    ],
+    "relationships": [
+      "Without Pillars → With Pillars",
+      "Illustration — **Distribution of the pillars**. It shows how **one pillar** branches into **multiple ideas** without losing the **identity of the content**.",
+      "visual relationship kind: system"
+    ],
     "tension": {
       "en": "Daily question: \"What should I post?\" Without pillars: Ideas seem random and overwhelming.",
       "ar-MSA": "كل يوم سؤال: «عن ماذا أنشر؟» من دون أعمدة: الأفكار تبدو عشوائية ومُجهِدة.",
@@ -101,16 +126,16 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/creator-m2-l2-content-pillars.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "Illustration — **Distribution of the pillars**. It shows how **one pillar** branches into **multiple ideas** without losing the **identity o"
+          "quote": "Distribution of the pillars"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m2-l2-content-pillars.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Content Pillar (عمود محتوى):"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m2-l2-content-pillars.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "عمود المحتوى (Content Pillar):"
         },
         "ar-EG": {
@@ -264,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Content Pillars: \"Without Pillars\" versus \"With Pillars\" — Content Pillar:",
-    "ar-MSA": "أعمدة المحتوى: \"من دون أعمدة\" في مقابل \"مع أعمدة\" — Content Pillar (عمود محتوى):",
-    "ar-Gulf": "أعمدة المحتوى: \"من دون أعمدة\" في مقابل \"مع أعمدة\" — عمود المحتوى (Content Pillar):",
+    "en": "Content Pillars: \"Without Pillars\" versus \"With Pillars\" — 3 Pillars Are Enough — Content Pillar: A main fixed topic — every content idea should follow one of them. 3 pillars are more than enough — you don't need a long list.",
+    "ar-MSA": "أعمدة المحتوى: \"من دون أعمدة\" في مقابل \"مع أعمدة\" — ٣ أعمدة كافية — Content Pillar (عمود محتوى): موضوع رئيسي ثابت — وكل فكرة محتوى يجب أن تتبع أحدها. ٣ أعمدة كافية جدًا — لا تحتاج قائمة طويلة.",
+    "ar-Gulf": "أعمدة المحتوى: \"من دون أعمدة\" في مقابل \"مع أعمدة\" — ٣ أعمدة كافية — عمود المحتوى (Content Pillar): موضوع رئيسي ثابت — وكل فكرة محتوى لازم تتبع أحدها. ٣ أعمدة كافية جدًا — ما تحتاج قائمة طويلة.",
     "ar-EG": "٣ أعمدة كفاية جدًا: \"من غير أعمدة\" في مقابل \"مع أعمدة\" — الأعمدة هي مواضيع رئيسية ثابتة، وكل فكرة محتوى لازم تتبع واحد منها."
   },
   "aiPromptContract": null,
@@ -329,5 +354,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "79b008fdfb52db14f13626f92e2f7825d8a0b23e426a02c1d1159337879a1a51"
+  "checksum": "1b180c422fdc188bc9fd4489ccbe0eb3fea3ae4537d25cd14b9d8261809e2a3f"
 }

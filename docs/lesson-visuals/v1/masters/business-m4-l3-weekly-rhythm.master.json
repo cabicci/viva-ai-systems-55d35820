@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "727768f7834046ea7400fb142b9cdaced9625cc586069d14e0f398ee0ad8f37d",
+    "ar-MSA": "975733731bfdcbad4b4c4aa1d1e3e77ecb00fd981514f52c137751a82e3c64e7",
+    "ar-Gulf": "a616743ee2fdefdca5ed350052341f35d338a69ff4850451bf7729f3b89c5a49",
+    "ar-EG": "800e89c743af1ecdc40741f93f533fd50240d9d453f1dad5ea93e64fc0417531"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -46,40 +52,57 @@
       ]
     },
     "coreIdea": {
-      "en": "3 numbers + 3 AI questions + one written decision. Deepening on the foundational rhythm — not a new schedule from scratch.",
-      "ar-MSA": "AI",
-      "ar-Gulf": "AI",
+      "en": "30 minutes — 3 numbers + 3 AI questions + one written decision. Deepening on the foundational rhythm — not a new schedule from scratch.",
+      "ar-MSA": "٣٠ دقيقة — ٣ أرقام + ٣ أسئلة AI + قرار واحد مكتوب. تعميق على إيقاع الأساس — ليس جدولًا جديدًا من الصفر.",
+      "ar-Gulf": "30 دقيقة — 3 أرقام + 3 أسئلة AI + قرار واحد مكتوب. تعميق على إيقاع الأساس — مو جدول جديد من الصفر.",
       "ar-EG": "٣ أرقام: اختار اللي يهم بيزنسك (مبيعات، هامش، عملاء راجعين، كاش، طلبات) — مش ٢٠ رقم."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Weekly Review prevents business drift.",
+      "ar-MSA": "ماذا ستفهم؟ Weekly Review (مراجعة أسبوعية) تمنع انجراف البيزنس.",
+      "ar-Gulf": "وش راح تفهم؟ مراجعة أسبوعية تمنع انجراف البيزنس.",
+      "ar-EG": "هتفهم إيه؟ المراجعة الأسبوعية تمنع انجراف البيزنس للفوضى — والـ AI يلخّص الأرقام والمهام وإشارات العملاء."
+    },
+    "lessonObjects": [
+      "Introduction",
+      "30 minutes",
+      "Deepening on the foundational rhythm",
+      "not a new schedule from scratch"
+    ],
+    "relationships": [
+      "Introduction → 30 minutes",
+      "30 minutes — 3 numbers + 3 AI questions + one written decision. Deepening on the foundational rhythm — not a new schedule from scratch.",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
-      "en": "3 numbers + 3 AI questions + one written decision. Deepening on the foundational rhythm — not a new schedule from scratch.",
-      "ar-MSA": "٣ أرقام + ٣ أسئلة AI + قرار واحد مكتوب. تعميق على إيقاع الأساس — ليس جدولًا جديدًا من الصفر.",
-      "ar-Gulf": "3 أرقام + 3 أسئلة AI + قرار واحد مكتوب. تعميق على إيقاع الأساس — مو جدول جديد من الصفر.",
+      "en": "What will you understand? Weekly Review prevents business drift.",
+      "ar-MSA": "ماذا ستفهم؟ Weekly Review (مراجعة أسبوعية) تمنع انجراف البيزنس.",
+      "ar-Gulf": "وش راح تفهم؟ مراجعة أسبوعية تمنع انجراف البيزنس.",
       "ar-EG": "شغل، ردود، طلبات — نهاية الشهر تكتشف إنك ما راجعتش الأرقام ولا قررت حاجة مهمة."
     },
     "comparison": {
       "en": {
         "leftLabel": "Introduction",
         "rightLabel": "30 minutes",
-        "leftBody": "What will you understand?",
-        "rightBody": "Deepening on the foundational rhythm — not a new schedule from scratch."
+        "leftBody": "Open all messages and respond — to 'clear' things up.",
+        "rightBody": "3 numbers → ask AI about the change and the pending item → record one decision."
       },
       "ar-MSA": {
         "leftLabel": "بداية الدرس",
         "rightLabel": "٣٠ دقيقة",
-        "leftBody": "Weekly Review (مراجعة أسبوعية)",
-        "rightBody": "AI"
+        "leftBody": "فتح كل الرسائل والرد عليها — «لتصفية» البريد.",
+        "rightBody": "ثلاثة أرقام → سؤال للذكاء الاصطناعي عن التغيّر والمعلّق → تسجيل قرار واحد."
       },
       "ar-Gulf": {
         "leftLabel": "بداية الدرس",
         "rightLabel": "30 دقيقة",
-        "leftBody": "تمنع انجراف البيزنس.",
-        "rightBody": "AI"
+        "leftBody": "تفتح كل الرسائل وترد — عشان «تخلص».",
+        "rightBody": "3 أرقام → تسأل AI عن التغيّر والمعلّق → تسجّل قرار واحد."
       },
       "ar-EG": {
         "leftLabel": "بدون مراجعة",
-        "rightLabel": "مراجعة + AI",
         "leftBody": "نفس المشاكل تتكرر. القرارات «لما يفضى وقت» — ومش بيفضى.",
+        "rightLabel": "مراجعة + AI",
         "rightBody": "٣٠ دقيقة. ملخص واضح. قرار واحد مكتوب — الأسبوع الجاي عنده اتجاه."
       }
     },
@@ -91,22 +114,22 @@
     },
     "visualIntent": {
       "kind": "screenshot",
-      "summary": "- Deepening on the foundational rhythm — not a new schedule from scratch.",
+      "summary": "30 minutes — 3 numbers + 3 AI questions + one written decision. Deepening on the foundational rhythm — not a new schedule from scratch.",
       "packageQuotes": {
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/business-m4-l3-weekly-rhythm.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "- Deepening on the foundational rhythm — not a new schedule from scratch."
+          "field": "sections[role=Core idea].contentMarkdown",
+          "quote": "3 numbers + 3 AI questions + one written decision."
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l3-weekly-rhythm.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "- تعميق على إيقاع الأساس — ليس جدولًا جديدًا من الصفر."
+          "field": "sections[role=Core idea].contentMarkdown",
+          "quote": "AI"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l3-weekly-rhythm.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "- تعميق على إيقاع الأساس — مو جدول جديد من الصفر."
+          "field": "sections[role=Core idea].contentMarkdown",
+          "quote": "AI"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/business-m4-l3-weekly-rhythm.ts",
@@ -117,9 +140,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "business-m4-l3-weekly-rhythm's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Introduction / 30 minutes) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 60 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Introduction\" vs \"30 minutes\" for business-m4-l3-weekly-rhythm.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Introduction\" vs \"30 minutes\" for business-m4-l3-weekly-rhythm.",
   "labelPacks": {
     "en": [
       {
@@ -127,7 +150,7 @@
         "text": "Introduction",
         "source": {
           "path": "src/lib/locale-lessons/en/lessons/business-m4-l3-weekly-rhythm.json",
-          "field": "sections[role=Tension].subtitle"
+          "field": "sections[role=Comparison].tables[0].headers[0]"
         }
       },
       {
@@ -135,7 +158,7 @@
         "text": "30 minutes",
         "source": {
           "path": "src/lib/locale-lessons/en/lessons/business-m4-l3-weekly-rhythm.json",
-          "field": "sections[role=Core idea].subtitle"
+          "field": "sections[role=Comparison].tables[0].headers[1]"
         }
       }
     ],
@@ -145,7 +168,7 @@
         "text": "بداية الدرس",
         "source": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l3-weekly-rhythm.json",
-          "field": "sections[role=Tension].subtitle"
+          "field": "sections[role=Comparison].tables[0].headers[0]"
         }
       },
       {
@@ -153,7 +176,7 @@
         "text": "٣٠ دقيقة",
         "source": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l3-weekly-rhythm.json",
-          "field": "sections[role=Core idea].subtitle"
+          "field": "sections[role=Comparison].tables[0].headers[1]"
         }
       }
     ],
@@ -163,7 +186,7 @@
         "text": "بداية الدرس",
         "source": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l3-weekly-rhythm.json",
-          "field": "sections[role=Tension].subtitle"
+          "field": "sections[role=Comparison].tables[0].headers[0]"
         }
       },
       {
@@ -171,7 +194,7 @@
         "text": "30 دقيقة",
         "source": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l3-weekly-rhythm.json",
-          "field": "sections[role=Core idea].subtitle"
+          "field": "sections[role=Comparison].tables[0].headers[1]"
         }
       }
     ],
@@ -203,9 +226,9 @@
     ]
   },
   "altTexts": {
-    "en": "Weekly Rhythm: \"Introduction\" versus \"30 minutes\" — 3 numbers + 3 AI questions + one written decision. Deepening on the foundational rhythm — not a new schedule from scratch.",
-    "ar-MSA": "الإيقاع الأسبوعي: \"بداية الدرس\" في مقابل \"٣٠ دقيقة\" — AI",
-    "ar-Gulf": "إيقاع أسبوعي: \"بداية الدرس\" في مقابل \"30 دقيقة\" — AI",
+    "en": "Weekly Rhythm: \"Introduction\" versus \"30 minutes\" — 30 minutes — 3 numbers + 3 AI questions + one written decision. Deepening on the foundational rhythm — not a new schedule from scratch.",
+    "ar-MSA": "الإيقاع الأسبوعي: \"بداية الدرس\" في مقابل \"٣٠ دقيقة\" — ٣٠ دقيقة — ٣ أرقام + ٣ أسئلة AI + قرار واحد مكتوب. تعميق على إيقاع الأساس — ليس جدولًا جديدًا من الصفر.",
+    "ar-Gulf": "إيقاع أسبوعي: \"بداية الدرس\" في مقابل \"30 دقيقة\" — 30 دقيقة — 3 أرقام + 3 أسئلة AI + قرار واحد مكتوب. تعميق على إيقاع الأساس — مو جدول جديد من الصفر.",
     "ar-EG": "٣٠ دقيقة — ٣ أرقام — ٣ أسئلة — قرار واحد: \"بدون مراجعة\" في مقابل \"مراجعة + AI\" — ٣ أرقام: اختار اللي يهم بيزنسك (مبيعات، هامش، عملاء راجعين، كاش، طلبات) — مش ٢٠ رقم."
   },
   "aiPromptContract": null,
@@ -226,5 +249,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "ce7d0dea3fde413912184977143bd0fc76c3c26662e88637b005ad4ae42e94ab"
+  "checksum": "249ecbb0e3ce72d7b9d7887ff6f35ad6828b1f526976a8536c67d863a9225672"
 }

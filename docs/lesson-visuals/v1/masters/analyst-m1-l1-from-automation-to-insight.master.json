@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "c0479fb1c08ac3d71166017394ddb294dd3d208a03eac7576f7fe64df19f5385",
+    "ar-MSA": "b3411e836df82abe8e8fb23d099f267a3f2df22a15dc9e0d4a55cc427e58f9d9",
+    "ar-Gulf": "1945b282bceabdb74a0bbb91e729c2d93beb376dbba3b165638cb2458acfe0ea",
+    "ar-EG": "b31b70178c679b865638c746f65a4cd184a863910fb2c0c7373f8fc689e382cd"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Automator collects — Analyst asks",
-      "ar-MSA": "Automator يجمع — Analyst يسأل",
-      "ar-Gulf": "Automator يجمع — Analyst يسأل",
+      "en": "The Core Idea — The Builder created the product — every click and every request is recorded. The Creator brought Reach — every view and every lead is saved. Automator brought all of this together in one place: CRM, Sheet, or database.",
+      "ar-MSA": "الفكرة الأساسية — Builder بنى المنتج — كل نقرة وكل طلب يُسجّل. Creator جلب Reach (الوصول) — كل مشاهدة وكل lead يُحفظ. Automator وصل كل ذلك في مكان واحد: CRM أو Sheet أو قاعدة بيانات.",
+      "ar-Gulf": "الفكرة الأساسية — Builder بنى المنتج — كل نقرة وكل طلب يُسجّل. Creator جلب Reach — كل مشاهدة وكل lead يُحفظ. Automator جمع كل هذا في مكان واحد: CRM أو Sheet أو قاعدة بيانات.",
       "ar-EG": "Builder بنى المنتج — كل click وكل order بيتسجّل. Creator جاب الـ Reach — كل view وكل lead بيتحفظ."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Having numbers is not the same as knowing what to do with them — Data is just the beginning, not the end.",
+      "ar-MSA": "ماذا ستفهم؟ وجود أرقام ليس مثل فهم ما الذي ستفعله — البيانات (Data) الجاهزة بداية لا نهاية.",
+      "ar-Gulf": "وش راح تفهم؟ وجود أرقام مو مثل فهم وش تسوي — البيانات الجاهزة بداية مو نهاية.",
+      "ar-EG": "هتفهم إيه؟ وجود أرقام مش نفس فهمك إيه اللي تعمله — البيانات الجاهزة بداية مش نهاية."
+    },
+    "lessonObjects": [
+      "Data",
+      "Insight",
+      "Just looking",
+      "Asking a question",
+      "The Core Idea",
+      "The Builder created the product"
+    ],
+    "relationships": [
+      "Just looking → Asking a question",
+      "Decision loop — 5 stages: **Dashboard** without a question = decoration. Specific question → Answer → Decision → Implementation → Review. (The visual original r",
+      "visual relationship kind: decision"
+    ],
     "tension": {
       "en": "A Dashboard has 20 charts. You open it daily and say, \"Looks good\" — but nothing has changed in your work because of it. The data has become decoration — not a decision-making tool. Automator has increased the pile, but",
       "ar-MSA": "Dashboard (لوحة متابعة) فيها ٢٠ رسمًا بيانيًا. تفتحه يوميًا وتقول «جميل» — لكن لا شيء تغيّر في عملك بسببه. البيانات أصبحت ديكورًا — لا أداة قرار. Automator كبّر الكومة، لكن من دون سؤال محدد لن تعرف كيف تتحرك.",
@@ -102,16 +127,16 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/analyst-m1-l1-from-automation-to-insight.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "Decision loop — 5 stages: **Dashboard** without a question = decoration. Specific question → Answer → Decision → Implementation → Review. (T"
+          "quote": "Dashboard"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m1-l1-from-automation-to-insight.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Automator يجمع — Analyst يسأل"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m1-l1-from-automation-to-insight.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Automator يجمع — Analyst يسأل"
         },
         "ar-EG": {
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "From Automation to Insight: \"Just looking\" versus \"Asking a question\" — Automator collects — Analyst asks",
-    "ar-MSA": "من الأتمتة إلى الاستبصار: \"تتفرج فقط\" في مقابل \"تدخل بسؤال\" — Automator يجمع — Analyst يسأل",
-    "ar-Gulf": "من الأتمتة للاستبصار: \"تتفرج بس\" في مقابل \"تدخل بسؤال\" — Automator يجمع — Analyst يسأل",
+    "en": "From Automation to Insight: \"Just looking\" versus \"Asking a question\" — The Core Idea — The Builder created the product — every click and every request is recorded. The Creator brought Reach — every view and every lead is saved. Automator brought all of this together in one place: CRM, Sheet, or dat",
+    "ar-MSA": "من الأتمتة إلى الاستبصار: \"تتفرج فقط\" في مقابل \"تدخل بسؤال\" — الفكرة الأساسية — Builder بنى المنتج — كل نقرة وكل طلب يُسجّل. Creator جلب Reach (الوصول) — كل مشاهدة وكل lead يُحفظ. Automator وصل كل ذلك في مكان واحد: CRM أو Sheet أو قاعدة بيانات.",
+    "ar-Gulf": "من الأتمتة للاستبصار: \"تتفرج بس\" في مقابل \"تدخل بسؤال\" — الفكرة الأساسية — Builder بنى المنتج — كل نقرة وكل طلب يُسجّل. Creator جلب Reach — كل مشاهدة وكل lead يُحفظ. Automator جمع كل هذا في مكان واحد: CRM أو Sheet أو قاعدة بيانات.",
     "ar-EG": "Automator بيجمع — Analyst بيسأل: \"بتتفرّج بس\" في مقابل \"بتدخل بسؤال\" — Builder بنى المنتج — كل click وكل order بيتسجّل. Creator جاب الـ Reach — كل view وكل lead بيتحفظ."
   },
   "aiPromptContract": null,
@@ -330,5 +355,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "5ecb58fe9f5cf6335004b37047cba3b6dc5008609dada4fa91d26b30a2104abe"
+  "checksum": "f0f5895e9e333a2a96bd6345932682b454887993dc94573aa81020b4d150c18b"
 }

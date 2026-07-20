@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "33beb34664dc4d9489741502316f18329cf8c467e606b59455f736f3b239543f",
+    "ar-MSA": "0d0a4e0ad6e875907c174e72f9758cd965fb7f1123f57abfdd8c27d81e1d8c44",
+    "ar-Gulf": "51126a6f276bb014be470026f8aac1fe81badcf041b4a8b94cafb6dbfcb2d2ff",
+    "ar-EG": "9f06c4520eeb1590d8e3f5e2c5b7b39ee5d7c23e5ae446cbf1b8ce14f72e5930"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "The first 10 are not for numbers",
-      "ar-MSA": "أول ١٠ ليسوا للأرقام",
-      "ar-Gulf": "أول ١٠ مو للأرقام",
+      "en": "The First 10 Users Teach You Reality",
+      "ar-MSA": "أول ١٠ مستخدمين يعلّمونك الواقع",
+      "ar-Gulf": "أول ١٠ مستخدمين يعلّمونك الواقع",
       "ar-EG": "أول ١٠ مش للأرقام — للتعلّم. هما اللي يقولولك: ده بيحل مشكلة؟ ولا شكل حلو بس؟"
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Why the first 10 users teach you reality — more than any plan on paper.",
+      "ar-MSA": "ماذا ستفهم؟ لماذا أول ١٠ مستخدمين يعلّمونك الواقع — أكثر من أي خطة على ورق.",
+      "ar-Gulf": "وش راح تفهم؟ ليش أول ١٠ مستخدمين يعلّمونك الواقع — أكثر من أي خطة على ورق.",
+      "ar-EG": "هتفهم إيه؟ ليه أول ١٠ مستخدمين يعلّموك الواقع — أكتر من أي خطة على ورق."
+    },
+    "lessonObjects": [
+      "Early Adopters",
+      "Feedback Loop",
+      "Launch and Wait",
+      "10 Early Users + Listening",
+      "The First 10 Users Teach You Reality"
+    ],
+    "relationships": [
+      "Launch and Wait → 10 Early Users + Listening",
+      "**Measuring Progress — Not Just for Looks:**",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "The link works. Technically, everything is fine. But there are no sign-ups — no feedback. You post on Facebook and wait. 500 visitors, 20 sign up, and no one returns.",
       "ar-MSA": "اللينك يعمل. تقنيًا كل شيء تمام. لكن لا تسجيلات — لا feedback. تكتب منشورًا على فيسبوك وتنتظر. ٥٠٠ زائر، ٢٠ يسجّلون، ولا أحد يعود.",
@@ -102,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m10-l2-first-users.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**Measuring Progress — Not Just for Looks:**"
+          "quote": "Measuring Progress — Not Just for Looks:"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m10-l2-first-users.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**قياس التقدّم — ليس للمنظر:**"
+          "quote": "قياس التقدّم — ليس للمنظر:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m10-l2-first-users.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**قياس التقدّم — مو للمنظر:**"
+          "quote": "قياس التقدّم — مو للمنظر:"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m10-l2-first-users.ts",
@@ -123,9 +147,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "builder-m10-l2-first-users's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Launch and Wait / 10 Early Users + Listening) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent describes a schematic/layout illustration rather than recognizing a named public product UI; hybrid/deterministic carries real locale labels without fabricating chrome.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Launch and Wait\" vs \"10 Early Users + Listening\" for builder-m10-l2-first-users.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Launch and Wait\" vs \"10 Early Users + Listening\" for builder-m10-l2-first-users.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "First Users: \"Launch and Wait\" versus \"10 Early Users + Listening\" — The first 10 are not for numbers",
-    "ar-MSA": "المستخدمون الأوائل: \"إطلاق وتنتظر\" في مقابل \"١٠ أوائل + استماع\" — أول ١٠ ليسوا للأرقام",
-    "ar-Gulf": "المستخدمون الأوائل: \"إطلاق وتنتظر\" في مقابل \"١٠ أوائل + استماع\" — أول ١٠ مو للأرقام",
+    "en": "First Users: \"Launch and Wait\" versus \"10 Early Users + Listening\" — The First 10 Users Teach You Reality",
+    "ar-MSA": "المستخدمون الأوائل: \"إطلاق وتنتظر\" في مقابل \"١٠ أوائل + استماع\" — أول ١٠ مستخدمين يعلّمونك الواقع",
+    "ar-Gulf": "المستخدمون الأوائل: \"إطلاق وتنتظر\" في مقابل \"١٠ أوائل + استماع\" — أول ١٠ مستخدمين يعلّمونك الواقع",
     "ar-EG": "أول ١٠ مستخدمين يعلّموك الواقع: \"غلط — إطلاق وتستنى\" في مقابل \"صح — ١٠ أوائل + استماع\" — أول ١٠ مش للأرقام — للتعلّم. هما اللي يقولولك: ده بيحل مشكلة؟ ولا شكل حلو بس؟"
   },
   "aiPromptContract": null,
@@ -330,5 +354,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "39db7e9bee15e02824ca6ef54356aa7a69ad80d9de3a5cc8be91c5ab51fa18f6"
+  "checksum": "5fbd132e605e29ae7039101384df682f86c5470622ec987472a0fc84e0233a6f"
 }

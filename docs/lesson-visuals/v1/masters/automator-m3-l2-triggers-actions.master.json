@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "8c879c439b6221d8a7e3d20ca5d841225284b4908d9bdd1dee5e0def81bc4352",
+    "ar-MSA": "acb4aa48c4c1590576bdb112e88fd311f7c0e9268f5108bc68d959f3f80434b1",
+    "ar-Gulf": "e64cd7bc1a201157e3449fadfa7d87e8e6894f6e4cd6bd6014d7633137a8e4e5",
+    "ar-EG": "04cd0214fb4f8f84d4ceb1405500be4bef37ea45fbd8328a46c2e01430a3b206"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "When this happens → do that",
-      "ar-MSA": "لما هذا يحصل → افعل ذلك",
-      "ar-Gulf": "لما هذا يحصل → افعل ذلك",
+      "en": "The Core Idea — Trigger: The event that starts the action — a form is completed, a message is received, 9 AM. Action: What the automation does — sends an email, adds a row, sends a WhatsApp message.",
+      "ar-MSA": "الفكرة الأساسية — Trigger (المُشغّل): الحدث الذي يبدأ العمل — نموذج اكتمل، رسالة وصلت، الساعة ٩ صباحًا. Action (الفعل): ما ينفّذه العامل الافتراضي — يرسل بريدًا، يضيف صفًا، يرسل واتساب.",
+      "ar-Gulf": "الفكرة الأساسية — مُشغّل: الحدث اللي يبدأ العمل — نموذج اكتمل، رسالة وصلت، الساعة ٩ صباحًا. فعل: وش يسويه العامل الافتراضي — يرسل بريد، يضيف صف، يرسل واتساب.",
       "ar-EG": "Trigger (المُشغّل): الحدث اللي يبدأ الشغل — فورم اتملّى، رسالة وصلت، الساعة ٩ الصبح."
     },
+    "instructionalPurpose": {
+      "en": "What Will You Understand? Every automation = \"When this happens, do that\" — Trigger + one or more Actions.",
+      "ar-MSA": "ماذا ستفهم؟ كل أتمتة = «لما هذا يحصل، افعل ذلك» — Trigger (المُشغّل) + Action (فعل) واحد أو أكثر.",
+      "ar-Gulf": "وش راح تفهم؟ كل أتمتة = «لما هذا يحصل، افعل ذلك» — مُشغّل + فعل واحد أو أكثر.",
+      "ar-EG": "هتفهم إيه؟ كل أتمتة = «لما ده يحصل، اعمل كده» — مُشغّل (Trigger) + فعل أو أكتر (Action)."
+    },
+    "lessonObjects": [
+      "Trigger",
+      "Action",
+      "Actions only",
+      "Trigger + Actions",
+      "The Core Idea",
+      "The event that starts the action"
+    ],
+    "relationships": [
+      "Actions only → Trigger + Actions",
+      "Illustration: Each step = **Trigger** → **Action**. Example:",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "You build a Flow — without knowing \"For what?\"",
       "ar-MSA": "تبني تدفق عمل (Flow) — من دون أن تعرف «لما ماذا؟»",
@@ -102,17 +127,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/automator-m3-l2-triggers-actions.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "Illustration: Each step = **Trigger** → **Action**. Example:"
+          "quote": "Trigger"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m3-l2-triggers-actions.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "لما هذا يحصل → افعل ذلك"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m3-l2-triggers-actions.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "صورة توضيحية: كل خطوة = **مُشغّل** → **فعل**. مثال: «أنهيت مهمة» → «سجّل» + «افتح التالية» + «ذكّر». (الأصل البصري يبقى كما هو.)"
+          "quote": "مُشغّل"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/automator-m3-l2-triggers-actions.ts",
@@ -122,10 +147,10 @@
       }
     }
   },
-  "method": 4,
-  "methodRationale": "automator-m3-l2-triggers-actions's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Actions only / Trigger + Actions) instead of fabricating a UI capture.",
-  "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Actions only\" vs \"Trigger + Actions\" for automator-m3-l2-triggers-actions.",
+  "method": 3,
+  "methodRationale": "Recognize public n8n workflow documentation UI so Trigger → Action composition is grounded in a real automation product docs surface.",
+  "compositionPattern": "authentic-screenshot-frame",
+  "duplicationJustification": "Shares the \"authentic-screenshot-frame\" layout template with 2 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Actions only\" vs \"Trigger + Actions\" for automator-m3-l2-triggers-actions.",
   "labelPacks": {
     "en": [
       {
@@ -265,13 +290,32 @@
     ]
   },
   "altTexts": {
-    "en": "Triggers and Actions: \"Actions only\" versus \"Trigger + Actions\" — When this happens → do that",
-    "ar-MSA": "المحفّزات والإجراءات: \"أفعال (Actions) فقط\" في مقابل \"Trigger (مُشغّل) + Actions (أفعال)\" — لما هذا يحصل → افعل ذلك",
-    "ar-Gulf": "المشغّلات والأفعال: \"أفعال فقط\" في مقابل \"مُشغّل + أفعال\" — لما هذا يحصل → افعل ذلك",
+    "en": "Triggers and Actions: \"Actions only\" versus \"Trigger + Actions\" — The Core Idea — Trigger: The event that starts the action — a form is completed, a message is received, 9 AM. Action: What the automation does — sends an email, adds a row, sends a WhatsApp message.",
+    "ar-MSA": "المحفّزات والإجراءات: \"أفعال (Actions) فقط\" في مقابل \"Trigger (مُشغّل) + Actions (أفعال)\" — الفكرة الأساسية — Trigger (المُشغّل): الحدث الذي يبدأ العمل — نموذج اكتمل، رسالة وصلت، الساعة ٩ صباحًا. Action (الفعل): ما ينفّذه العامل الافتراضي — يرسل بريدًا، يضيف صفًا، يرسل واتساب.",
+    "ar-Gulf": "المشغّلات والأفعال: \"أفعال فقط\" في مقابل \"مُشغّل + أفعال\" — الفكرة الأساسية — مُشغّل: الحدث اللي يبدأ العمل — نموذج اكتمل، رسالة وصلت، الساعة ٩ صباحًا. فعل: وش يسويه العامل الافتراضي — يرسل بريد، يضيف صف، يرسل واتساب.",
     "ar-EG": "لما ده يحصل → اعمل كده: \"Actions بس\" في مقابل \"Trigger + Actions\" — Trigger (المُشغّل): الحدث اللي يبدأ الشغل — فورم اتملّى، رسالة وصلت، الساعة ٩ الصبح."
   },
   "aiPromptContract": null,
-  "screenshotSpec": null,
+  "screenshotSpec": {
+    "url": "https://docs.n8n.io/workflows/",
+    "exactUrl": "https://docs.n8n.io/workflows/",
+    "product": "n8n",
+    "publicState": "public-docs",
+    "capturePurpose": "Recognize public n8n workflow documentation UI so Trigger → Action composition is grounded in a real automation product docs surface.",
+    "rightsStatus": "vendor-public-docs",
+    "rightsRationale": "docs.n8n.io/workflows/ is public vendor documentation (verified 200 / redirects to public docs path) with no login wall.",
+    "rightsNote": "Public n8n docs — instructional recognition only; no login, no PII capture.",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "requiredRedactions": [
+      "account menus if any"
+    ],
+    "deterministicFallbackMethod": 4,
+    "failOnLoginRedirect": true,
+    "allowlisted": true
+  },
   "factualClaims": [
     {
       "claim": "60% of the mission rubric weight is assigned to \"Trigger + Actions\"",
@@ -330,5 +374,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "69b08aeb4f15f0d372406ab0fa78a9d77713211f7868bd6d06d991481488400e"
+  "checksum": "1fefd1078e43e294ef5b4614bea6f057859599038f4bbc4937faf63c8742e564"
 }

@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "95454549d459c517a8770593bb155560cc17b72bd28b386c5c4c2d31e8e7bbe3",
+    "ar-MSA": "d7ab4ccf8ade8d08c052fbe1d604e606864f111691d62d84c23129c027419839",
+    "ar-Gulf": "cbfbd368a592b0079047947f0058020bd6ce89f37ed0f3c2a6703d70db9354d6",
+    "ar-EG": "86a2be9cb502a543f8cb5845f3389528841316f3df056c29cd21751b894de9cf"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -48,11 +54,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Light:",
-      "ar-MSA": "النور:",
-      "ar-Gulf": "الضوء:",
+      "en": "Set the Basics Before Any Effects",
+      "ar-MSA": "اضبط الأساسيات قبل أي مؤثرات",
+      "ar-Gulf": "اضبط الأساسيات قبل أي مؤثرات",
       "ar-EG": "النور: خلي المصدر قدامك مش وراك، والشباك غالبا أحسن حل مجاني."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Your phone can produce decent video — the issue is not the lack of an expensive camera.",
+      "ar-MSA": "ماذا ستفهم؟ هاتفك يستطيع أن يُنتج فيديو محترمًا — المشكلة ليست غياب كاميرا غالية.",
+      "ar-Gulf": "وش راح تفهم؟ هاتفك يقدر يطلع فيديو ممتاز — المشكلة مو عدم وجود كاميرا غالية.",
+      "ar-EG": "المشكلة مش في إنك معندكش كاميرا غالية، المشكلة في أساسيات التصوير."
+    },
+    "lessonObjects": [
+      "Framing",
+      "Hook",
+      "Ambient Noise",
+      "Disruptive Approach",
+      "Practical Approach",
+      "Set the Basics Before Any Effects"
+    ],
+    "relationships": [
+      "Disruptive Approach → Practical Approach",
+      "Visual snapshot — **Practical shooting setup**. **Simple preparation makes a difference:** **Light in front of you**, **stable phone**, **and a strong start fro",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "Strong content can be lost due to a dark face, distracting noise, or a slow start. The audience gives the video a few seconds to decide whether to continue or skip.",
       "ar-MSA": "محتوى قوي قد يضيع بسبب وجه مظلم، صوت مزعج، أو بداية بطيئة. الجمهور يمنح الفيديو ثوانٍ قليلة ليقرّر هل يكمل أم يتخطّى.",
@@ -98,16 +123,16 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/creator-m4-l2-mobile-shooting.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "Visual snapshot — **Practical shooting setup**. **Simple preparation makes a difference:** **Light in front of you**, **stable phone**, **an"
+          "quote": "Practical shooting setup"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l2-mobile-shooting.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "النور:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l2-mobile-shooting.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "الضوء:"
         },
         "ar-EG": {
@@ -119,9 +144,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "creator-m4-l2-mobile-shooting's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Disruptive Approach / Practical Approach) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Disruptive Approach\" vs \"Practical Approach\" for creator-m4-l2-mobile-shooting.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Disruptive Approach\" vs \"Practical Approach\" for creator-m4-l2-mobile-shooting.",
   "labelPacks": {
     "en": [
       {
@@ -261,9 +286,9 @@
     ]
   },
   "altTexts": {
-    "en": "Mobile Shooting: \"Disruptive Approach\" versus \"Practical Approach\" — Light:",
-    "ar-MSA": "التصوير بالهاتف: \"الأسلوب المعطّل\" في مقابل \"الأسلوب العملي\" — النور:",
-    "ar-Gulf": "أساسيات التصوير بالهاتف: \"الأسلوب المعطل\" في مقابل \"الأسلوب العملي\" — الضوء:",
+    "en": "Mobile Shooting: \"Disruptive Approach\" versus \"Practical Approach\" — Set the Basics Before Any Effects",
+    "ar-MSA": "التصوير بالهاتف: \"الأسلوب المعطّل\" في مقابل \"الأسلوب العملي\" — اضبط الأساسيات قبل أي مؤثرات",
+    "ar-Gulf": "أساسيات التصوير بالهاتف: \"الأسلوب المعطل\" في مقابل \"الأسلوب العملي\" — اضبط الأساسيات قبل أي مؤثرات",
     "ar-EG": "اضبط الأساسيات قبل أي مؤثرات: \"الأسلوب المعطل\" في مقابل \"الأسلوب العملي\" — النور: خلي المصدر قدامك مش وراك، والشباك غالبا أحسن حل مجاني."
   },
   "aiPromptContract": null,
@@ -326,5 +351,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "ab7e8ee50b78203d5a2b390fe468b74d2137e991b406babb98c9e929d8dfd208"
+  "checksum": "4c001e999ef58e462f2341ff2026f7807a2e2a0477a92ac138a9801db9651728"
 }

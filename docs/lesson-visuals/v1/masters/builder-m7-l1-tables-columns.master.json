@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "bdec354cc7c281e60f7c60bc29826b19360a4092915d3aa29d8767f6a349dc70",
+    "ar-MSA": "4c3c632fef9e7eafce6c9909a0d832e40e2b8f64149e63fe90000a0a4e0c102d",
+    "ar-Gulf": "b4057e633f0b1a96118de3e140014386541d7be57bf6886ba3043adf05c8a95b",
+    "ar-EG": "aee857f560d813f01f884ccdb91f6237ce29617ae7a2c4d6eef3aa793d20ed6b"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Each table represents one type",
-      "ar-MSA": "كل جدول يمثّل نوعًا واحدًا",
-      "ar-Gulf": "كل جدول يمثّل نوعًا واحدًا",
+      "en": "Table = type — Column = attribute with its type",
+      "ar-MSA": "الجدول = نوع — العمود = صفة بنوعها",
+      "ar-Gulf": "الجدول = نوع — العمود = صفة بنوعها",
       "ar-EG": "كل جدول بيمثّل نوع واحد: `users`، `conversations`، `documents` — مش «كل حاجة في جدول واحد»."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Table = data type (users, conversations). Column = attribute for each row (name, date, rating).",
+      "ar-MSA": "ماذا ستفهم؟ Table (جدول) = نوع بيانات (مستخدمون، محادثات). Column (عمود) = صفة لكل صف (اسم، تاريخ، تقييم).",
+      "ar-Gulf": "وش راح تفهم؟ Table (جدول) = نوع بيانات (مستخدمون، محادثات). Column (عمود) = صفة لكل صف (اسم، تاريخ، تقييم).",
+      "ar-EG": "هتفهم إيه؟ الجدول = نوع بيانات (مستخدمين، محادثات). العمود = صفة لكل صف (اسم، تاريخ، تقييم)."
+    },
+    "lessonObjects": [
+      "Table",
+      "Column",
+      "All columns as text",
+      "Each column with its type",
+      "Table = type",
+      "Column = attribute with its type"
+    ],
+    "relationships": [
+      "All columns as text → Each column with its type",
+      "**AI reads tables to understand context:**",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "You design the first table in the database — and every column is of type `text`. Easy at first, but after months the app is slow. User rating as `text`? The system won't calculate average ratings. Date as `text`? It won'",
       "ar-MSA": "تصمم أول جدول في المخزن الذكي (Database) — وكل عمود نوعه `text`. سهل في البداية، لكن بعد شهور التطبيق بطيء. تقييم المستخدم في `text`؟ النظام لن يحسب متوسط التقييمات. التاريخ في `text`؟ لن يرتّب من الأحدث.",
@@ -102,17 +127,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m7-l1-tables-columns.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**AI reads tables to understand context:**"
+          "quote": "AI reads tables to understand context:"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l1-tables-columns.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**الذكاء الاصطناعي يقرأ الجداول لفهم السياق:**"
+          "quote": "الذكاء الاصطناعي يقرأ الجداول لفهم السياق:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l1-tables-columns.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**الذكاء الاصطناعي يقرأ الجداول لفهم السياق:**"
+          "quote": "الذكاء الاصطناعي يقرأ الجداول لفهم السياق:"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m7-l1-tables-columns.ts",
@@ -123,9 +148,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "builder-m7-l1-tables-columns's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (All columns as text / Each column with its type) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"All columns as text\" vs \"Each column with its type\" for builder-m7-l1-tables-columns.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"All columns as text\" vs \"Each column with its type\" for builder-m7-l1-tables-columns.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "Tables & Columns: \"All columns as text\" versus \"Each column with its type\" — Each table represents one type",
-    "ar-MSA": "الجداول والأعمدة: \"كل الأعمدة text\" في مقابل \"كل عمود بنوعه\" — كل جدول يمثّل نوعًا واحدًا",
-    "ar-Gulf": "الجداول والأعمدة: \"كل الأعمدة نص\" في مقابل \"كل عمود بنوعه\" — كل جدول يمثّل نوعًا واحدًا",
+    "en": "Tables & Columns: \"All columns as text\" versus \"Each column with its type\" — Table = type — Column = attribute with its type",
+    "ar-MSA": "الجداول والأعمدة: \"كل الأعمدة text\" في مقابل \"كل عمود بنوعه\" — الجدول = نوع — العمود = صفة بنوعها",
+    "ar-Gulf": "الجداول والأعمدة: \"كل الأعمدة نص\" في مقابل \"كل عمود بنوعه\" — الجدول = نوع — العمود = صفة بنوعها",
     "ar-EG": "الجدول = نوع — العمود = صفة بنوعها: \"غلط — كل الأعمدة text\" في مقابل \"صح — كل عمود بنوعه\" — كل جدول بيمثّل نوع واحد: `users`، `conversations`، `documents` — مش «كل حاجة في جدول واحد»."
   },
   "aiPromptContract": null,
@@ -330,5 +355,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "44a6f1dc34f46e2d7052ebd1d936057bcdbb1d9f3372ee5a092ed63fcb0c97fa"
+  "checksum": "05fd789e91c0601204ebfb6cb02d1d4f8ed2cefc457acda013a67b3fa44c840c"
 }

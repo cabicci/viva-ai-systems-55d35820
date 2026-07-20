@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "ed60bdd9bd2bd5e3d8d54e43d7073c9450d6c79e6e4d74b69c81848d23aa616d",
+    "ar-MSA": "18fd8d1ceb4b38cd966c7fb958500683df7119a4328bbdebae912309b27f8bac",
+    "ar-Gulf": "8151b64af236810eb85d5c0f1c88f2f3252c227e3a49f7066154976f9cbde587",
+    "ar-EG": "38235065526d29e75068e6da1ce7b5364bde1064c5c885e6d695a66f3920b157"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Specific",
-      "ar-MSA": "محدّد",
-      "ar-Gulf": "محدد",
+      "en": "A good question = its answer changes a decision",
+      "ar-MSA": "السؤال الصح = إجابته تغيّر قرار",
+      "ar-Gulf": "السؤال الصح = إجابته تغير قرار",
       "ar-EG": "فهمت إيه؟ السؤال يستاهل التحليل بس لو الإجابة تقدر تغيّر قرارك — ده الفلتر قبل أي تحليل."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? A question is worth analyzing only if the answer can change your decision — not every question is worth your time.",
+      "ar-MSA": "ماذا ستفهم؟ السؤال يستحق التحليل فقط إذا الإجابة تستطيع أن تغيّر قرارك — ليس أي سؤال يستحق وقتك.",
+      "ar-Gulf": "وش راح تفهم؟ السؤال يستحق التحليل فقط إذا الإجابة تقدر تغيّر قرارك — مو أي سؤال يستحق وقتك.",
+      "ar-EG": "هتفهم إيه؟ السؤال يستاهل التحليل بس لو الإجابة تقدر تغيّر قرارك — مش أي سؤال يستاهل وقتك."
+    },
+    "lessonObjects": [
+      "Threshold",
+      "Actionable",
+      "General Question",
+      "Specific Question",
+      "A good question = its answer changes a decision"
+    ],
+    "relationships": [
+      "General Question → Specific Question",
+      "**Same topic · Two formulations · Two results** (Identifier: `question-scorecard`): A **general question** fails the criteria — a **specific question** succeeds",
+      "visual relationship kind: data-relationship"
+    ],
     "tension": {
       "en": "A general question brings a long and vague answer. You open the data, look around, close it — and nothing changes. Ask wrong → gather wrong data → interpret wrong → decide wrong. The question directs everything that foll",
       "ar-MSA": "السؤال العام يجلب إجابة طويلة ومبهمة. تفتح البيانات، تتفرّج، تغلق — ولا شيء يتغيّر. اسأل خطأ → تجمع بيانات خطأ → تفسّر خطأ → تقرّر خطأ. السؤال يوجّه كل شيء بعده.",
@@ -102,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/analyst-m2-l2-right-question-rule.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**Same topic · Two formulations · Two results** (Identifier: `question-scorecard`): A **general question** fails the criteria — a **specific"
+          "quote": "Same topic · Two formulations · Two results"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m2-l2-right-question-rule.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**نفس الموضوع · صياغتان · نتيجتان** (معرّف: `question-scorecard`): سؤال **عام** يفشل في الشروط — سؤال **محدّد** ينجح. استخدم **البطاقة** في"
+          "quote": "نفس الموضوع · صياغتان · نتيجتان"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m2-l2-right-question-rule.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**نفس الموضوع · صياغتان · نتيجتان** (معرّف: `question-scorecard`): سؤال **عام** يفشل في الشروط — سؤال **محدد** ينجح. استخدم **البطاقة** في ا"
+          "quote": "نفس الموضوع · صياغتان · نتيجتان"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/analyst-m2-l2-right-question-rule.ts",
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Right Question Rule: \"General Question\" versus \"Specific Question\" — Specific",
-    "ar-MSA": "قاعدة السؤال الصحيح: \"سؤال عام\" في مقابل \"سؤال محدّد\" — محدّد",
-    "ar-Gulf": "قواعد السؤال الصحيح: \"سؤال عام\" في مقابل \"سؤال محدد\" — محدد",
+    "en": "Right Question Rule: \"General Question\" versus \"Specific Question\" — A good question = its answer changes a decision",
+    "ar-MSA": "قاعدة السؤال الصحيح: \"سؤال عام\" في مقابل \"سؤال محدّد\" — السؤال الصح = إجابته تغيّر قرار",
+    "ar-Gulf": "قواعد السؤال الصحيح: \"سؤال عام\" في مقابل \"سؤال محدد\" — السؤال الصح = إجابته تغير قرار",
     "ar-EG": "إيه اللي عندك دلوقتي؟: \"سؤال عام\" في مقابل \"سؤال محدّد\" — فهمت إيه؟ السؤال يستاهل التحليل بس لو الإجابة تقدر تغيّر قرارك — ده الفلتر قبل أي تحليل."
   },
   "aiPromptContract": null,
@@ -330,5 +354,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "53afdbc5cea98716fdb772a559f87cc1ac2bbb07d7e30e4164537359f4ab072c"
+  "checksum": "b52558e5c3092ab559aabe84d58be77dd7bc0384cbff7c34068a66239f533cd2"
 }

@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "e5d618fb43159bb0bc9e230316a74948d51661df4520d477a6aae9900a698baf",
+    "ar-MSA": "e69e775074a8bc9e38de1b601106c67ccf7e1276eff798046ab40c86c4c1fc0d",
+    "ar-Gulf": "46ec7f1927e0a78510752fab339da39643a2d135630e7df4d24bb190a2f1cc26",
+    "ar-EG": "bb1caa16d658bc081cfc6f5853819471a726c4b9d5a53f62aef0f271f7cf48dc"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Touchpoint 1 — A few days later:",
-      "ar-MSA": "لمسة ١ — بعد أيام قليلة:",
-      "ar-Gulf": "لمسة ١ — بعد أيام قليلة:",
+      "en": "3 Post-Purchase Touchpoints",
+      "ar-MSA": "٣ لمسات بعد الشراء — مش حملة ضخمة",
+      "ar-Gulf": "٣ لمسات بعد الشراء — مو حملة ضخمة",
       "ar-EG": "لمسة ١ — بعد أيام قليلة: «كله تمام؟ محتاج حاجة؟» — تأكيد + باب للشكوى المبكرة."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Customer retention is not luck — following up after a purchase keeps the relationship alive, and AI helps you write it quickly.",
+      "ar-MSA": "ماذا ستفهم؟ الاحتفاظ بالعميل ليس حظًا — المتابعة بعد الشراء تُبقي العلاقة حية، والذكاء الاصطناعي يساعدك تكتبها بسرعة.",
+      "ar-Gulf": "وش راح تفهم؟ الاحتفاظ بالعملاء مو حظ — المتابعة بعد الشراء تحافظ على العلاقة، والذكاء الاصطناعي يساعدك تكتبها بسرعة.",
+      "ar-EG": "هتفهم إيه؟ الاحتفاظ بالعميل مش حظ — متابعة بعد الشراء تخلي العلاقة حية، والـ AI يساعدك تكتبها بسرعة."
+    },
+    "lessonObjects": [
+      "Retention Flow",
+      "Touchpoint",
+      "Without Flow",
+      "With Flow + AI",
+      "3 Post-Purchase Touchpoints"
+    ],
+    "relationships": [
+      "Without Flow → With Flow + AI",
+      "Follow-up Rhythm — **Cadence**. Timing is more important than quantity. Start with 3 steps — and let AI draft the messages, you review before sending.",
+      "visual relationship kind: process"
+    ],
     "tension": {
       "en": "You attract new customers, but the same people do not return. It's not always because the product is bad — sometimes it's because there is no follow-up after the purchase. Follow-up does not mean being annoying. It means",
       "ar-MSA": "تجلب عملاء جددًا، لكن نفس الأشخاص لا يعودون. ليس دائمًا لأن المنتج سيئ — أحيانًا لأنه لا متابعة بعد الشراء. المتابعة لا تعني إزعاجًا. معناها: تأكد أنه راضٍ، قدّم مساعدة، وذكّره في الوقت المناسب.",
@@ -102,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/business-m2-l2-retention-flow.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "Follow-up Rhythm — **Cadence**. Timing is more important than quantity. Start with 3 steps — and let AI draft the messages, you review befor"
+          "quote": "Cadence"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l2-retention-flow.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "إيقاع المتابعة — **Cadence (إيقاع)**. التوقيت أهم من الكمية. ابدأ بـ ٣ خطوات — ودع الذكاء الاصطناعي يصوغ المسودات، أنت تراجع قبل الإرسال."
+          "quote": "Cadence (إيقاع)"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l2-retention-flow.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "إيقاع المتابعة — **Cadence (الإيقاع)**. التوقيت أهم من الكمية. ابدأ بـ ٣ خطوات — ودع الذكاء الاصطناعي يصوغ المسودات، أنت تراجع قبل الإرسال."
+          "quote": "Cadence (الإيقاع)"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/business-m2-l2-retention-flow.ts",
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Retention Flow: \"Without Flow\" versus \"With Flow + AI\" — Touchpoint 1 — A few days later:",
-    "ar-MSA": "مسار الاحتفاظ بالعميل: \"بدون Flow\" في مقابل \"مع Flow + AI\" — لمسة ١ — بعد أيام قليلة:",
-    "ar-Gulf": "مسار الاحتفاظ: \"بدون Flow\" في مقابل \"مع Flow + AI\" — لمسة ١ — بعد أيام قليلة:",
+    "en": "Retention Flow: \"Without Flow\" versus \"With Flow + AI\" — 3 Post-Purchase Touchpoints",
+    "ar-MSA": "مسار الاحتفاظ بالعميل: \"بدون Flow\" في مقابل \"مع Flow + AI\" — ٣ لمسات بعد الشراء — مش حملة ضخمة",
+    "ar-Gulf": "مسار الاحتفاظ: \"بدون Flow\" في مقابل \"مع Flow + AI\" — ٣ لمسات بعد الشراء — مو حملة ضخمة",
     "ar-EG": "٣ لمسات بعد الشراء — مش حملة ضخمة: \"بدون Flow\" في مقابل \"مع Flow + AI\" — لمسة ١ — بعد أيام قليلة: «كله تمام؟ محتاج حاجة؟» — تأكيد + باب للشكوى المبكرة."
   },
   "aiPromptContract": null,
@@ -330,5 +354,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "31fd3f2a278c14934da7ac461c5bf07861a22cb0655638b3fe349cb549de77ce"
+  "checksum": "5c751fdd0c993f2b740adc85d11c818b1dcf4275c514763e665b397b35e98740"
 }

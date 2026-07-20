@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "4fa9e52d4f043eb0c1653db31159df31821dfd937a6d08c9ea9baede9c6a1890",
+    "ar-MSA": "c4963ed0de9e1d41a92c117cd4ba3136e7e54eed8d24742c8b104d3156eb7810",
+    "ar-Gulf": "2afa5bec4bfbd73c5fc55a155ec0873366a34be8f33a793ce2b40530f64b14d3",
+    "ar-EG": "4f08a83f0eabd1f7b781ea91aac247de420be3b6b32f80d5c8b8fd427a55aa26"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -51,11 +57,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Hook",
-      "ar-MSA": "Hook (خطاف)",
-      "ar-Gulf": "Hook (خطاف)",
+      "en": "A Hook is a Quick and Clear Promise",
+      "ar-MSA": "الخطاف وعد سريع وواضح — Hook (خطاف) ليس مجرد جملة جميلة — هو وعد سريع بفائدة أو فضول يجعل المشاهد يكمل. الذكاء الاصطناعي (AI) قد يقترح صيغًا متعددة للخطاف — لكن اختيار الأنسب لنبرة جمهورك ومساحة الفيديو يبقى حكمك.",
+      "ar-Gulf": "الخطاف وعد سريع وواضح — Hook (خطاف) مو بس جملة جميلة — هو وعد سريع بفائدة أو فضول يخلي المشاهد يكمل. الذكاء الاصطناعي (AI) ممكن يقترح صيغ متعددة للخطاف — لكن اختيار الأنسب لنبرة جمهورك ومساحة الفيديو يبقى حكمك.",
       "ar-EG": "الخطاف مش مجرد جملة حلوة، هو وعد سريع بفايدة أو فضول يخلي المشاهد يكمّل."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Before value is reached, the viewer must decide to continue.",
+      "ar-MSA": "ماذا ستفهم؟ قبل أن تصل القيمة، يجب أن يقرّر المشاهد أن يكمل.",
+      "ar-Gulf": "وش راح تفهم؟ قبل ما توصل القيمة، لازم يقرر المشاهد إذا بيكمل.",
+      "ar-EG": "قبل ما القيمة توصل، لازم المشاهد يقرر يكمل."
+    },
+    "lessonObjects": [
+      "Hook",
+      "Pattern Break",
+      "Retention Start",
+      "Traditional Beginning",
+      "Direct Hook",
+      "A Hook is a Quick and Clear Promise"
+    ],
+    "relationships": [
+      "Traditional Beginning → Direct Hook",
+      "Visual snapshot — **Example of an eye-catching hook**. The idea: The **first second** should be **different** and **clear** enough to give you a **chance**.",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "Strong content — Weak beginning. Many start with a long introduction — losing the first critical moment.",
       "ar-MSA": "محتوى قوي — وبداية ضعيفة. كثيرون يبدأون بمقدمة طويلة — فتضيع أول لحظة حاسمة.",
@@ -101,16 +126,16 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/creator-m3-l1-hook.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "Visual snapshot — **Example of an eye-catching hook**. The idea: The **first second** should be **different** and **clear** enough to give y"
+          "quote": "Example of an eye-catching hook"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l1-hook.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Hook (خطاف)"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l1-hook.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Hook (خطاف)"
         },
         "ar-EG": {
@@ -122,9 +147,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "creator-m3-l1-hook's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Traditional Beginning / Direct Hook) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Traditional Beginning\" vs \"Direct Hook\" for creator-m3-l1-hook.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Traditional Beginning\" vs \"Direct Hook\" for creator-m3-l1-hook.",
   "labelPacks": {
     "en": [
       {
@@ -264,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Hook — First Seconds: \"Traditional Beginning\" versus \"Direct Hook\" — Hook",
-    "ar-MSA": "الخطّاف — الثواني الأولى: \"بداية تقليدية\" في مقابل \"خطاف مباشر\" — Hook (خطاف)",
-    "ar-Gulf": "الهوك في أول ثواني: \"بداية تقليدية\" في مقابل \"خطاف مباشر\" — Hook (خطاف)",
+    "en": "Hook — First Seconds: \"Traditional Beginning\" versus \"Direct Hook\" — A Hook is a Quick and Clear Promise",
+    "ar-MSA": "الخطّاف — الثواني الأولى: \"بداية تقليدية\" في مقابل \"خطاف مباشر\" — الخطاف وعد سريع وواضح — Hook (خطاف) ليس مجرد جملة جميلة — هو وعد سريع بفائدة أو فضول يجعل المشاهد يكمل. الذكاء الاصطناعي (AI) قد يقترح صيغًا متعددة للخطاف — لكن اختيار الأنسب لنبرة جمهورك ومساحة الفيديو يبقى حكمك.",
+    "ar-Gulf": "الهوك في أول ثواني: \"بداية تقليدية\" في مقابل \"خطاف مباشر\" — الخطاف وعد سريع وواضح — Hook (خطاف) مو بس جملة جميلة — هو وعد سريع بفائدة أو فضول يخلي المشاهد يكمل. الذكاء الاصطناعي (AI) ممكن يقترح صيغ متعددة للخطاف — لكن اختيار الأنسب لنبرة جمهورك ومساحة الفيديو يبقى حكمك.",
     "ar-EG": "الخطاف وعد سريع وواضح: \"بداية تقليدية\" في مقابل \"خطاف مباشر\" — الخطاف مش مجرد جملة حلوة، هو وعد سريع بفايدة أو فضول يخلي المشاهد يكمّل."
   },
   "aiPromptContract": null,
@@ -329,5 +354,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "2f3fd4153b997a370bf50783171e9aa1cb5bd4ed7b0ad055cd9cda5660eb913c"
+  "checksum": "667d861c5cd210186dc571e623f0f77b495d81ef68aaefc5e2c173c8a8be184c"
 }

@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "d296fa42d6f264178b968b455c7e925a2e5bd03d0b2dec165417a7b58635ff8a",
+    "ar-MSA": "35e67b6f0cbb8061ad479c4808e4f5be89b7ba1c0de071f70f53a2232748da90",
+    "ar-Gulf": "80ec4b5049cf70d3b35ef54cbce187cf21cdb1320d10b837cf2ab222428eb427",
+    "ar-EG": "36ac245afed9015c5100d1e5a767da2df67adede4f42da4fba4ecd85234732af"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -51,11 +57,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Start with a Prompt",
-      "ar-MSA": "ابدأ بـ Prompt (طلب)",
-      "ar-Gulf": "ابدأ بـ Prompt (طلب)",
+      "en": "Write Clear Context and Then Edit the Text",
+      "ar-MSA": "اكتب Context واضحًا ثم عدّل النص",
+      "ar-Gulf": "اكتب سياق واضح ثم عدّل النص",
       "ar-EG": "ابدأ ببرومبت فيه الجمهور، الهدف، النبرة، وطول المحتوى المطلوب."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? AI (artificial intelligence) as a writing assistant — not a replacement for you.",
+      "ar-MSA": "ماذا ستفهم؟ الذكاء الاصطناعي (AI) مساعد كتابة — ليس بديلًا عنك.",
+      "ar-Gulf": "وش راح تفهم؟ الذكاء الاصطناعي (AI) مساعد كتابة — مو بديل عنك.",
+      "ar-EG": "AI يقدر يسرع الشغل، لكن لو سبتله كل حاجة هيطلع كلام عام شبه غيرك."
+    },
+    "lessonObjects": [
+      "Context",
+      "Draft",
+      "Edit Pass",
+      "Weak Style",
+      "Stronger Style",
+      "Write Clear Context and Then Edit the Text"
+    ],
+    "relationships": [
+      "Weak Style → Stronger Style",
+      "Visual snapshot — **the draft before and after editing**. **Use AI to speed up the beginning** — **but the final version** **must go through your personal editi",
+      "visual relationship kind: concept-scene"
+    ],
     "tension": {
       "en": "Copying AI text as is kills your personality. When you publish without editing — the audience feels the text is artificial and repetitive.",
       "ar-MSA": "نسخ نص AI كما هو يقتل شخصيتك. عندما تنشر من دون تعديل — المتابع يشعر أن الكلام متصنع ومكرّر.",
@@ -95,22 +120,22 @@
       "ar-EG": "المهمة فيها خطوتين واضحين: مسودة من AI، وبعدها تعديل بشري منك على ٣ سطور عشان تبان شخصيتك."
     },
     "visualIntent": {
-      "kind": "screenshot",
+      "kind": "concept-scene",
       "summary": "Visual snapshot — **the draft before and after editing**. **Use AI to speed up the beginning** — **but the final version** **must go through your personal editi",
       "packageQuotes": {
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/creator-m4-l3-ai-writing.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "Visual snapshot — **the draft before and after editing**. **Use AI to speed up the beginning** — **but the final version** **must go through"
+          "quote": "the draft before and after editing"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-l3-ai-writing.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "ابدأ بـ Prompt (طلب)"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-l3-ai-writing.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "ابدأ بـ Prompt (طلب)"
         },
         "ar-EG": {
@@ -121,10 +146,10 @@
       }
     }
   },
-  "method": 4,
-  "methodRationale": "creator-m4-l3-ai-writing's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Weak Style / Stronger Style) instead of fabricating a UI capture.",
-  "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Weak Style\" vs \"Stronger Style\" for creator-m4-l3-ai-writing.",
+  "method": 2,
+  "methodRationale": "creator-m4-l3-ai-writing's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"Write Clear Context and Then Edit the Text\" without inventing UI chrome or rendering paid text.",
+  "compositionPattern": "concept-scene-metaphor",
+  "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Weak Style\" vs \"Stronger Style\" for creator-m4-l3-ai-writing.",
   "labelPacks": {
     "en": [
       {
@@ -264,12 +289,23 @@
     ]
   },
   "altTexts": {
-    "en": "AI as Writing Assistant: \"Weak Style\" versus \"Stronger Style\" — Start with a Prompt",
-    "ar-MSA": "الذكاء الاصطناعي مساعدًا للكتابة: \"الأسلوب الضعيف\" في مقابل \"الأسلوب الأقوى\" — ابدأ بـ Prompt (طلب)",
-    "ar-Gulf": "الذكاء الاصطناعي كمساعد في الكتابة: \"الأسلوب الضعيف\" في مقابل \"الأسلوب الأقوى\" — ابدأ بـ Prompt (طلب)",
+    "en": "AI as Writing Assistant: \"Weak Style\" versus \"Stronger Style\" — Write Clear Context and Then Edit the Text",
+    "ar-MSA": "الذكاء الاصطناعي مساعدًا للكتابة: \"الأسلوب الضعيف\" في مقابل \"الأسلوب الأقوى\" — اكتب Context واضحًا ثم عدّل النص",
+    "ar-Gulf": "الذكاء الاصطناعي كمساعد في الكتابة: \"الأسلوب الضعيف\" في مقابل \"الأسلوب الأقوى\" — اكتب سياق واضح ثم عدّل النص",
     "ar-EG": "اكتب Context واضح ثم عدّل النص: \"الأسلوب الضعيف\" في مقابل \"الأسلوب الأقوى\" — ابدأ ببرومبت فيه الجمهور، الهدف، النبرة، وطول المحتوى المطلوب."
   },
-  "aiPromptContract": null,
+  "aiPromptContract": {
+    "providerClass": "text-free-illustration",
+    "paidAllowed": false,
+    "textFree": true,
+    "promptRules": [
+      "No embedded text, letters, numbers, or UI chrome anywhere in the image.",
+      "Depict the idea behind \"AI as Writing Assistant\" as a literal scene or metaphor, not as software.",
+      "Use a calm editorial illustration style consistent with a warm, minimal brand palette.",
+      "Keep the composition balanced so it still reads when mirrored for RTL locales."
+    ],
+    "costCeilingUsd": 0
+  },
   "screenshotSpec": null,
   "factualClaims": [
     {
@@ -329,5 +365,5 @@
       "quote": "weight: 60"
     }
   ],
-  "checksum": "4d76d88d0e3d60b19d3e079d4d5450b05116f685098ae01e4b81cdba7e24f3f7"
+  "checksum": "965d9ddc92a77a33a90cdc24a3bcdf4391c1e9107bb397648f8d78b7f625748c"
 }

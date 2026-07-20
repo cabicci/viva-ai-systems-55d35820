@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "59b172c4b04a643b116ca1b3a8aa099163b8fbaf56a7bafc0505d67336f6c61d",
+    "ar-MSA": "3c23b8394ce38a97ac5fc0db52607d6ad5582c7b4a7d5bfd8f6d6846eef14cdf",
+    "ar-Gulf": "1eadbc9a881928c3975004a2f95a7e88224e9961f8b3475a7783439e49441125",
+    "ar-EG": "0c22682e179f524a8cc8cf8da9da5b35227a9afdfbc37b306488ad4d7bdc9fee"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Any question has 4 parts:",
-      "ar-MSA": "أي سؤال = ٤ أجزاء:",
-      "ar-Gulf": "أي سؤال = ٤ أجزاء:",
+      "en": "A query is a specific question to the database",
+      "ar-MSA": "Query = سؤال محدد للمخزن",
+      "ar-Gulf": "الاستعلام = سؤال محدد للمخزن",
       "ar-EG": "أي سؤال = ٤ أجزاء: عايز إيه (SELECT) — منين (FROM) — بشروط إيه (WHERE) — مترتب إزاي (ORDER + LIMIT)."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? A query is a specific question — for example, \"Get this client's conversations from the last week\" instead of \"Get everything\".",
+      "ar-MSA": "ماذا ستفهم؟ Query (سؤال للمخزن) = سؤال محدد — «أحضر محادثات هذا العميل من آخر أسبوع» وليس «أحضر كل شيء».",
+      "ar-Gulf": "وش راح تفهم؟ الاستعلام (سؤال للمخزن) = سؤال محدد — «أحضر محادثات هذا العميل من الأسبوع الماضي» مو «أحضر كل شيء».",
+      "ar-EG": "هتفهم إيه؟ Query = سؤال للمخزن — «هاتلي محادثات العميل ده من آخر أسبوع» مش «هات كل حاجة»."
+    },
+    "lessonObjects": [
+      "Query",
+      "WHERE",
+      "Get everything and then filter",
+      "Specific question",
+      "A query is a specific question to the database"
+    ],
+    "relationships": [
+      "Get everything and then filter → Specific question",
+      "**Every number has a question for the database:**",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "The client opens their conversation history — and waits for 6 seconds. They think AI is slow, but the problem is with the question to the database. The wrong question: \"Get all conversations\" — the server returns 100,000",
       "ar-MSA": "العميل يفتح سجل محادثاته — وينتظر ٦ ثوانٍ. يظن أن الذكاء الاصطناعي بطيء، لكن المشكلة في السؤال للمخزن. السؤال الخطأ: «أحضر كل المحادثات» — السيرفر يرجع ١٠٠ ألف سطر وأنت تحتاج ٢٠ فقط.",
@@ -102,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m7-l3-queries.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**Every number has a question for the database:**"
+          "quote": "Every number has a question for the database:"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m7-l3-queries.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**كل رقم وراءه سؤال للمخزن:**"
+          "quote": "كل رقم وراءه سؤال للمخزن:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m7-l3-queries.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**كل رقم وراه سؤال للمخزن:**"
+          "quote": "كل رقم وراه سؤال للمخزن:"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m7-l3-queries.ts",
@@ -123,9 +147,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "builder-m7-l3-queries's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Get everything and then filter / Specific question) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Get everything and then filter\" vs \"Specific question\" for builder-m7-l3-queries.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Get everything and then filter\" vs \"Specific question\" for builder-m7-l3-queries.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Queries — How to Fetch Data: \"Get everything and then filter\" versus \"Specific question\" — Any question has 4 parts:",
-    "ar-MSA": "الاستعلامات — كيف تُجلب البيانات: \"أحضر كل شيء ثم فلتر\" في مقابل \"سؤال محدد\" — أي سؤال = ٤ أجزاء:",
-    "ar-Gulf": "استعلامات — كيفية جلب البيانات: \"أحضر كل شيء ثم فلتر\" في مقابل \"سؤال محدد\" — أي سؤال = ٤ أجزاء:",
+    "en": "Queries — How to Fetch Data: \"Get everything and then filter\" versus \"Specific question\" — A query is a specific question to the database",
+    "ar-MSA": "الاستعلامات — كيف تُجلب البيانات: \"أحضر كل شيء ثم فلتر\" في مقابل \"سؤال محدد\" — Query = سؤال محدد للمخزن",
+    "ar-Gulf": "استعلامات — كيفية جلب البيانات: \"أحضر كل شيء ثم فلتر\" في مقابل \"سؤال محدد\" — الاستعلام = سؤال محدد للمخزن",
     "ar-EG": "Query = سؤال محدد للمخزن: \"غلط — هات كل حاجة وبعدين فلتر\" في مقابل \"صح — سؤال محدد\" — أي سؤال = ٤ أجزاء: عايز إيه (SELECT) — منين (FROM) — بشروط إيه (WHERE) — مترتب إزاي (ORDER + LIMIT)."
   },
   "aiPromptContract": null,
@@ -330,5 +354,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "b12939a52c3efc0300f1d3d60084b7c99fd05b9ecf0f63d7874968a6f8e8577c"
+  "checksum": "b07d87f8aede12304c0379f45fa235bcad19cc0c4aaca9b1c2943b1d70846973"
 }

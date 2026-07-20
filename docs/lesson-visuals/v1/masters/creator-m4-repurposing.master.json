@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "5e18ed9a3360c589f5cce76c0a49353e02ba2d9fbb04f587f856bced23d67b7f",
+    "ar-MSA": "21cfbd419a1ef3ca06eaad19c6184a4089d2de065e3ba659484213e2f2a18e01",
+    "ar-Gulf": "81b890fd5f23bed77e83dde5598908204bc0e29d0953b9c58260d0eaecc23725",
+    "ar-EG": "da15584ad0cca769e134a97184670a6d9f4e3b1ec3c51dbcd4d9df61a1825332"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Repurposing",
-      "ar-MSA": "Repurposing",
-      "ar-Gulf": "إعادة التوظيف",
+      "en": "Adaptation — No Copying — Repurposing means keeping the same core idea but in formats that suit each platform: short reel, LinkedIn post, X thread, newsletter paragraph, story questions. A single long video or post can produce: three short scripts, a professional post, five engag",
+      "ar-MSA": "تكييف — لا نسخ — Repurposing = نفس الفكرة الأساسية بأشكال تناسب كل منصة: ريل قصير، منشور LinkedIn، ثريد X، فقرة نشرة، أسئلة ستوري. فيديو أو منشور طويل واحد قد يُنتج: ٣ سكريبتات قصيرة، منشورًا مهنيًا، ٥ أسئلة تفاعل.",
+      "ar-Gulf": "تكييف — لا نسخ — إعادة التوظيف = نفس الفكرة الأساسية بأشكال تناسب كل منصة: ريل قصير، منشور LinkedIn، ثريد X، فقرة نشرة، أسئلة ستوري. فيديو أو منشور طويل واحد ممكن ينتج: ٣ سكريبتات قصيرة، منشور مهني، ٥ أسئلة تفاعل.",
       "ar-EG": "Repurposing = نفس الفكرة الأساسية بأشكال تناسب كل منصة: ريل قصير، بوست LinkedIn، ثريد X، فقرة نشرة، أسئلة ستوري."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? A strong piece of content can become several — but each platform has its own format — no copy-pasting.",
+      "ar-MSA": "ماذا ستفهم؟ قطعة محتوى قوية واحدة قد تصبح عدة قطع — لكن لكل منصة شكلها المناسب — لا نسخ ولصق.",
+      "ar-Gulf": "وش راح تفهم؟ قطعة محتوى قوية واحدة ممكن تتحول لعدة قطع — لكن لكل منصة شكلها المناسب — لا نسخ ولصق.",
+      "ar-EG": "هتفهم إيه؟ قطعة محتوى قوية واحدة ممكن تبقى عدة قطع — بس لكل منصة شكلها المناسب، مش نسخ ولصق."
+    },
+    "lessonObjects": [
+      "Repurposing",
+      "Format Adaptation",
+      "Copying the Same Text",
+      "Adapting with AI",
+      "Adaptation",
+      "No Copying"
+    ],
+    "relationships": [
+      "Copying the Same Text → Adapting with AI",
+      "Adaptation — No Copying — Repurposing means keeping the same core idea but in formats that suit each platform: short reel, LinkedIn post, X thread, newsletter p",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "You take the same long post and share it on Facebook, LinkedIn, and X — and the result is weak on every platform. This is not Repurposing — it’s copy-pasting. Each platform has a different rhythm, length, and tone.",
       "ar-MSA": "تأخذ نفس المنشور الطويل وتضعه على فيسبوك وLinkedIn وX — والنتيجة ضعيفة على كل منصة. هذا ليس Repurposing — بل copy-paste (نسخ ولصق). كل منصة لها إيقاع وطول ونبرة مختلفة.",
@@ -97,21 +122,21 @@
     },
     "visualIntent": {
       "kind": "screenshot",
-      "summary": "Repurposing",
+      "summary": "Adaptation — No Copying — Repurposing means keeping the same core idea but in formats that suit each platform: short reel, LinkedIn post, X thread, newsletter p",
       "packageQuotes": {
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/creator-m4-repurposing.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Repurposing"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m4-repurposing.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Repurposing"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m4-repurposing.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "إعادة التوظيف"
         },
         "ar-EG": {
@@ -123,9 +148,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "creator-m4-repurposing's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Copying the Same Text / Adapting with AI) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Copying the Same Text\" vs \"Adapting with AI\" for creator-m4-repurposing.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Copying the Same Text\" vs \"Adapting with AI\" for creator-m4-repurposing.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "Repurposing — Content Multiplier: \"Copying the Same Text\" versus \"Adapting with AI\" — Repurposing",
-    "ar-MSA": "إعادة توظيف المحتوى: \"نسخ نفس النص\" في مقابل \"تكييف بالـ AI\" — Repurposing",
-    "ar-Gulf": "إعادة توظيف المحتوى: \"نسخ نفس النص\" في مقابل \"تكييف بالذكاء الاصطناعي\" — إعادة التوظيف",
+    "en": "Repurposing — Content Multiplier: \"Copying the Same Text\" versus \"Adapting with AI\" — Adaptation — No Copying — Repurposing means keeping the same core idea but in formats that suit each platform: short reel, LinkedIn post, X thread, newsletter paragraph, story questions. A single long video or post",
+    "ar-MSA": "إعادة توظيف المحتوى: \"نسخ نفس النص\" في مقابل \"تكييف بالـ AI\" — تكييف — لا نسخ — Repurposing = نفس الفكرة الأساسية بأشكال تناسب كل منصة: ريل قصير، منشور LinkedIn، ثريد X، فقرة نشرة، أسئلة ستوري. فيديو أو منشور طويل واحد قد يُنتج: ٣ سكريبتات قصيرة، منشورًا مهنيًا، ٥ أسئلة تفاعل.",
+    "ar-Gulf": "إعادة توظيف المحتوى: \"نسخ نفس النص\" في مقابل \"تكييف بالذكاء الاصطناعي\" — تكييف — لا نسخ — إعادة التوظيف = نفس الفكرة الأساسية بأشكال تناسب كل منصة: ريل قصير، منشور LinkedIn، ثريد X، فقرة نشرة، أسئلة ستوري. فيديو أو منشور طويل واحد ممكن ينتج: ٣ سكريبتات قصيرة، منشور مهني، ٥ أسئلة تفاعل.",
     "ar-EG": "تكييف — مش نسخ: \"نسخ نفس النص\" في مقابل \"تكييف بالـ AI\" — Repurposing = نفس الفكرة الأساسية بأشكال تناسب كل منصة: ريل قصير، بوست LinkedIn، ثريد X، فقرة نشرة، أسئلة ستوري."
   },
   "aiPromptContract": null,
@@ -330,5 +355,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "cc40f71179d2b0dc5daa60ec9724dcf142e03bace060cda2d818d5b91f9e0b0e"
+  "checksum": "29b43e8d26e02b22e2157a78d0fec990467191b53ae72fa93815480249aafe4e"
 }

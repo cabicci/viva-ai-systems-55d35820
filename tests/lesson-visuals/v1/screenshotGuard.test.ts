@@ -16,9 +16,12 @@ const base = JSON.parse(
 ) as LessonVisualMaster;
 
 describe("screenshot guards", () => {
-  it("allowlists only Masaarat public hosts", () => {
+  it("allowlists Masaarat and verified vendor public hosts from allowlist JSON", () => {
     expect(isAllowlistedUrl("https://masaarat.ai/learn")).toBe(true);
     expect(isAllowlistedUrl("https://www.masaarat.ai/x")).toBe(true);
+    expect(isAllowlistedUrl("https://lovable.dev/")).toBe(true);
+    expect(isAllowlistedUrl("https://n8n.io/")).toBe(true);
+    expect(isAllowlistedUrl("https://docs.n8n.io/workflows/")).toBe(true);
     expect(isAllowlistedUrl("https://evil.example/login")).toBe(false);
     expect(isAllowlistedUrl("http://masaarat.ai/x")).toBe(false);
   });
@@ -43,7 +46,16 @@ describe("screenshot guards", () => {
       ...base,
       screenshotSpec: {
         url: "https://evil.example/shot",
+        exactUrl: "https://evil.example/shot",
+        product: "Evil",
+        publicState: "public-marketing",
+        capturePurpose: "should fail allowlist",
+        rightsStatus: "vendor-public-docs",
+        rightsRationale: "not authorized",
         rightsNote: "not owned",
+        viewport: { width: 1280, height: 720 },
+        requiredRedactions: [],
+        deterministicFallbackMethod: 4,
         failOnLoginRedirect: true,
         allowlisted: true,
       },

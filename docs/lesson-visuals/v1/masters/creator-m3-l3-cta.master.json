@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "904857ed705b58dade0f34d40d32578926cb9c6a2a44d9c005a89ed7411bba38",
+    "ar-MSA": "11706474d15bbb51f0acdf5a816e725b6ab4a4b662cc481f3e7475d4a900506e",
+    "ar-Gulf": "7b97bd1a186fa03a7f37b6d4af3afcc70eacc8e918c1eef070ce954141b2f912",
+    "ar-EG": "5ec7b1f02f948e4e91677536ad5a1c751c96c2ee0b82207a9e49367364756040"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -51,11 +57,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Each video",
-      "ar-MSA": "كل فيديو",
-      "ar-Gulf": "كل فيديو",
+      "en": "Choose One CTA Based on the Video Goal",
+      "ar-MSA": "اختر CTA واحدًا على قد هدف الفيديو",
+      "ar-Gulf": "اختر CTA واحد يتناسب مع هدف الفيديو",
       "ar-EG": "كل فيديو ليه هدف واحد: تفاعل، حفظ ومشاركة، أو محادثة بيع."
     },
+    "instructionalPurpose": {
+      "en": "What Will You Understand? CTA (Call to Action) — If it’s not present, the viewer will leave — even if the video is good.",
+      "ar-MSA": "ماذا ستفهم؟ CTA (طلب واضح للمشاهد) — إذا لم يكن موجودًا، المشاهد يغلق — حتى لو الفيديو جيد.",
+      "ar-Gulf": "وش راح تفهم؟ CTA (طلب واضح للمشاهد) — إذا ما كان موجود، المشاهد راح يغلق — حتى لو الفيديو كان ممتاز.",
+      "ar-EG": "الـ CTA (طلب واضح للمشاهد يعمل خطوة بعد المحتوى) لو مش موجود، المشاهد هيقفل وخلاص — حتى لو الفيديو حلو."
+    },
+    "lessonObjects": [
+      "CTA (Call to Action)",
+      "Save/Share CTA",
+      "Lead CTA",
+      "Distracting Approach",
+      "Smart Approach",
+      "Choose One CTA Based on the Video Goal"
+    ],
+    "relationships": [
+      "Distracting Approach → Smart Approach",
+      "Visual snapshot — **Example of a clear CTA**. The **request is clear and specific:** **only one step** — **in simple language** that any viewer can **quickly**",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "Too many requests confuse the viewer. ‘Follow me and like and comment and share and save’ — at the same time — so often they do nothing.",
       "ar-MSA": "الطلبات الكثيرة تلخبط المشاهد. «تابعني وأعجب وعلّق وشارك واحفظ» — في نفس اللحظة — فغالبًا لا يفعل شيئًا.",
@@ -101,16 +126,16 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/creator-m3-l3-cta.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "Visual snapshot — **Example of a clear CTA**. The **request is clear and specific:** **only one step** — **in simple language** that any vie"
+          "quote": "Example of a clear CTA"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m3-l3-cta.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "كل فيديو"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m3-l3-cta.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "كل فيديو"
         },
         "ar-EG": {
@@ -122,9 +147,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "creator-m3-l3-cta's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Distracting Approach / Smart Approach) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Distracting Approach\" vs \"Smart Approach\" for creator-m3-l3-cta.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Distracting Approach\" vs \"Smart Approach\" for creator-m3-l3-cta.",
   "labelPacks": {
     "en": [
       {
@@ -264,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "CTA — Move the Viewer: \"Distracting Approach\" versus \"Smart Approach\" — Each video",
-    "ar-MSA": "دعوة الفعل — تحريك المشاهد: \"الأسلوب المشتت\" في مقابل \"الأسلوب الذكي\" — كل فيديو",
-    "ar-Gulf": "CTA يحرك المشاهد: \"الأسلوب المشتت\" في مقابل \"الأسلوب الذكي\" — كل فيديو",
+    "en": "CTA — Move the Viewer: \"Distracting Approach\" versus \"Smart Approach\" — Choose One CTA Based on the Video Goal",
+    "ar-MSA": "دعوة الفعل — تحريك المشاهد: \"الأسلوب المشتت\" في مقابل \"الأسلوب الذكي\" — اختر CTA واحدًا على قد هدف الفيديو",
+    "ar-Gulf": "CTA يحرك المشاهد: \"الأسلوب المشتت\" في مقابل \"الأسلوب الذكي\" — اختر CTA واحد يتناسب مع هدف الفيديو",
     "ar-EG": "اختار CTA واحد على قد هدف الفيديو: \"الأسلوب المشتت\" في مقابل \"الأسلوب الذكي\" — كل فيديو ليه هدف واحد: تفاعل، حفظ ومشاركة، أو محادثة بيع."
   },
   "aiPromptContract": null,
@@ -329,5 +354,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "9ea3754146b3a462801a039eb1c6d13e7898cec122b8866a7124ec969df88b08"
+  "checksum": "68cd76ba4e65ca884d433f8dbd61a697d17825325fd8774e6d3bdb1944b484fb"
 }

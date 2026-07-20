@@ -1,7 +1,7 @@
 {
   "ledgerVersion": "lesson-visuals-factual-evidence/v1",
   "sourceSha": "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
-  "generatedAt": "2026-07-20T14:12:52.090Z",
+  "generatedAt": "2026-07-20T14:43:51.885Z",
   "entries": [
     {
       "lessonId": "analyst-m1-l1-from-automation-to-insight",
@@ -578,6 +578,86 @@
           "path": "src/components/intro/lessons/analyst-m5-l1-four-numbers-dashboard.ts",
           "field": "block.rubric[1].weight",
           "quote": "weight: 50"
+        }
+      ]
+    },
+    {
+      "lessonId": "analyst-m5-l2-weekly-review-ritual",
+      "claimCount": 2,
+      "claims": [
+        {
+          "claim": "60% of the mission rubric weight is assigned to \"٤ أرقام + ٣ أسئلة\"",
+          "locale": "ar-EG",
+          "path": "src/components/intro/lessons/analyst-m5-l2-weekly-review-ritual.ts",
+          "field": "block.rubric[0].weight",
+          "quote": "weight: 60"
+        },
+        {
+          "claim": "40% of the mission rubric weight is assigned to \"قرار واحد\"",
+          "locale": "ar-EG",
+          "path": "src/components/intro/lessons/analyst-m5-l2-weekly-review-ritual.ts",
+          "field": "block.rubric[1].weight",
+          "quote": "weight: 40"
+        }
+      ]
+    },
+    {
+      "lessonId": "analyst-m6-l1-question-mistakes",
+      "claimCount": 2,
+      "claims": [
+        {
+          "claim": "50% of the mission rubric weight is assigned to \"تشخيص صحيح\"",
+          "locale": "ar-EG",
+          "path": "src/components/intro/lessons/analyst-m6-l1-question-mistakes.ts",
+          "field": "block.rubric[0].weight",
+          "quote": "weight: 50"
+        },
+        {
+          "claim": "50% of the mission rubric weight is assigned to \"صياغة تخدم قرار\"",
+          "locale": "ar-EG",
+          "path": "src/components/intro/lessons/analyst-m6-l1-question-mistakes.ts",
+          "field": "block.rubric[1].weight",
+          "quote": "weight: 50"
+        }
+      ]
+    },
+    {
+      "lessonId": "analyst-m6-l2-interpretation-mistakes",
+      "claimCount": 2,
+      "claims": [
+        {
+          "claim": "50% of the mission rubric weight is assigned to \"تشخيص الفخ\"",
+          "locale": "ar-EG",
+          "path": "src/components/intro/lessons/analyst-m6-l2-interpretation-mistakes.ts",
+          "field": "block.rubric[0].weight",
+          "quote": "weight: 50"
+        },
+        {
+          "claim": "50% of the mission rubric weight is assigned to \"قرار أصح\"",
+          "locale": "ar-EG",
+          "path": "src/components/intro/lessons/analyst-m6-l2-interpretation-mistakes.ts",
+          "field": "block.rubric[1].weight",
+          "quote": "weight: 50"
+        }
+      ]
+    },
+    {
+      "lessonId": "analyst-m7-l1-from-decisions-to-business",
+      "claimCount": 2,
+      "claims": [
+        {
+          "claim": "60% of the mission rubric weight is assigned to \"هدف + أرقام\"",
+          "locale": "ar-EG",
+          "path": "src/components/intro/lessons/analyst-m7-l1-from-decisions-to-business.ts",
+          "field": "block.rubric[0].weight",
+          "quote": "weight: 60"
+        },
+        {
+          "claim": "40% of the mission rubric weight is assigned to \"ربط أسبوعي\"",
+          "locale": "ar-EG",
+          "path": "src/components/intro/lessons/analyst-m7-l1-from-decisions-to-business.ts",
+          "field": "block.rubric[1].weight",
+          "quote": "weight: 40"
         }
       ]
     },
@@ -3844,6 +3924,26 @@
       ]
     },
     {
+      "lessonId": "business-m4-l1-premature-scaling",
+      "claimCount": 2,
+      "claims": [
+        {
+          "claim": "60% of the mission rubric weight is assigned to \"فحص صادق\"",
+          "locale": "ar-EG",
+          "path": "src/components/intro/lessons/business-m4-l1-premature-scaling.ts",
+          "field": "block.rubric[0].weight",
+          "quote": "weight: 60"
+        },
+        {
+          "claim": "40% of the mission rubric weight is assigned to \"قرار واضح\"",
+          "locale": "ar-EG",
+          "path": "src/components/intro/lessons/business-m4-l1-premature-scaling.ts",
+          "field": "block.rubric[1].weight",
+          "quote": "weight: 40"
+        }
+      ]
+    },
+    {
       "lessonId": "business-m4-l2-reactive-relapse",
       "claimCount": 8,
       "claims": [
@@ -3902,6 +4002,46 @@
           "path": "src/components/intro/lessons/business-m4-l2-reactive-relapse.ts",
           "field": "block.rubric[1].weight",
           "quote": "weight: 40"
+        }
+      ]
+    },
+    {
+      "lessonId": "business-m4-l3-weekly-rhythm",
+      "claimCount": 2,
+      "claims": [
+        {
+          "claim": "60% of the mission rubric weight is assigned to \"طقس كامل\"",
+          "locale": "ar-EG",
+          "path": "src/components/intro/lessons/business-m4-l3-weekly-rhythm.ts",
+          "field": "block.rubric[0].weight",
+          "quote": "weight: 60"
+        },
+        {
+          "claim": "40% of the mission rubric weight is assigned to \"قرار قابل للتسجيل\"",
+          "locale": "ar-EG",
+          "path": "src/components/intro/lessons/business-m4-l3-weekly-rhythm.ts",
+          "field": "block.rubric[1].weight",
+          "quote": "weight: 40"
+        }
+      ]
+    },
+    {
+      "lessonId": "business-m4-l4-full-ecosystem",
+      "claimCount": 2,
+      "claims": [
+        {
+          "claim": "50% of the mission rubric weight is assigned to \"هدف حقيقي\"",
+          "locale": "ar-EG",
+          "path": "src/components/intro/lessons/business-m4-l4-full-ecosystem.ts",
+          "field": "block.rubric[0].weight",
+          "quote": "weight: 50"
+        },
+        {
+          "claim": "50% of the mission rubric weight is assigned to \"ربط منطقي\"",
+          "locale": "ar-EG",
+          "path": "src/components/intro/lessons/business-m4-l4-full-ecosystem.ts",
+          "field": "block.rubric[1].weight",
+          "quote": "weight: 50"
         }
       ]
     },

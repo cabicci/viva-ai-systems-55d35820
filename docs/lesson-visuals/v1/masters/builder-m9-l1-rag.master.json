@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "e075c69f0b3d89a151b43e73ae906cbfd1f1ce42ebfc191e26c480a956f3256e",
+    "ar-MSA": "f22f9c307f3f8f640ebab1b1a217caec88d5c9cb56d869f663460672f9db69d7",
+    "ar-Gulf": "fee66e13a111a39b63843481aa344e4f693a5d4ac7a83560c1906a8e9a444820",
+    "ar-EG": "f9080ba962c23c6bc251ececde16a2a99dd103ddcc8aefb9729a323fbde1e149"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -56,11 +62,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Before the AI answers",
-      "ar-MSA": "قبل أن يجيب الذكاء الاصطناعي",
-      "ar-Gulf": "قبل ما يجاوب الذكاء الاصطناعي",
+      "en": "RAG = Answers from Your Files — Not Guessing",
+      "ar-MSA": "RAG = يرد من ملفاتك — ليس من تخمين",
+      "ar-Gulf": "RAG = يرد من ملفاتك — مو من تخمين",
       "ar-EG": "قبل ما الـ AI يجاوب، النظام بيدوّر في ملفاتك، يلاقي الحتة الصح، ويقول للـ AI: «جاوب من الورقة دي بس»."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? RAG (AI answers from your files) = answers from your data instead of guessing.",
+      "ar-MSA": "ماذا ستفهم؟ RAG (الذكاء الاصطناعي يجيب من ملفاتك) = يجيب من بياناتك بدل التخمين.",
+      "ar-Gulf": "وش راح تفهم؟ RAG (الذكاء الاصطناعي يجيب من ملفاتك) = يجيب من بياناتك بدل التخمين.",
+      "ar-EG": "هتفهم إيه؟ RAG = الـ AI يجاوب من ملفاتك بدل ما يخمّن."
+    },
+    "lessonObjects": [
+      "RAG",
+      "RAG is not Fine-tuning",
+      "AI Question from Memory",
+      "RAG from Your Files",
+      "RAG = Answers from Your Files",
+      "Not Guessing"
+    ],
+    "relationships": [
+      "AI Question from Memory → RAG from Your Files",
+      "**3 Steps in the Background:**",
+      "visual relationship kind: concept-scene"
+    ],
     "tension": {
       "en": "You ask GPT for the price of your product — it replies «29 dollars». You never sent this price! The AI guesses an answer that seems logical — this is hallucination (fabrication). The customer loses trust.",
       "ar-MSA": "تسأل GPT عن سعر منتجك — يرد «٢٩ دولارًا». لم ترسل هذا السعر أبدًا! الذكاء الاصطناعي يخمّن إجابة تبدو منطقية — هذا hallucination (تأليف). العميل يفقد الثقة.",
@@ -106,17 +131,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m9-l1-rag.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**3 Steps in the Background:**"
+          "quote": "3 Steps in the Background:"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m9-l1-rag.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**٣ خطوات في الخلفية:**"
+          "quote": "٣ خطوات في الخلفية:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m9-l1-rag.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**٣ خطوات في الخلفية:**"
+          "quote": "٣ خطوات في الخلفية:"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m9-l1-rag.ts",
@@ -127,7 +152,7 @@
     }
   },
   "method": 2,
-  "methodRationale": "builder-m9-l1-rag's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"Before the AI answers\" without inventing UI chrome or rendering paid text.",
+  "methodRationale": "builder-m9-l1-rag's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"RAG = Answers from Your Files — Not Guessing\" without inventing UI chrome or rendering paid text.",
   "compositionPattern": "concept-scene-metaphor",
   "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"AI Question from Memory\" vs \"RAG from Your Files\" for builder-m9-l1-rag.",
   "labelPacks": {
@@ -269,9 +294,9 @@
     ]
   },
   "altTexts": {
-    "en": "RAG — AI Answers from Your Files: \"AI Question from Memory\" versus \"RAG from Your Files\" — Before the AI answers",
-    "ar-MSA": "RAG — إجابات من ملفاتك: \"سؤال للذكاء الاصطناعي من ذاكرته\" في مقابل \"RAG من ملفاتك\" — قبل أن يجيب الذكاء الاصطناعي",
-    "ar-Gulf": "RAG — إجابات من ملفاتك: \"سؤال للذكاء الاصطناعي من ذاكرته\" في مقابل \"RAG من ملفاتك\" — قبل ما يجاوب الذكاء الاصطناعي",
+    "en": "RAG — AI Answers from Your Files: \"AI Question from Memory\" versus \"RAG from Your Files\" — RAG = Answers from Your Files — Not Guessing",
+    "ar-MSA": "RAG — إجابات من ملفاتك: \"سؤال للذكاء الاصطناعي من ذاكرته\" في مقابل \"RAG من ملفاتك\" — RAG = يرد من ملفاتك — ليس من تخمين",
+    "ar-Gulf": "RAG — إجابات من ملفاتك: \"سؤال للذكاء الاصطناعي من ذاكرته\" في مقابل \"RAG من ملفاتك\" — RAG = يرد من ملفاتك — مو من تخمين",
     "ar-EG": "RAG = يرد من ملفاتك — مش من تخمين: \"غلط — سؤال للـ AI من دماغه\" في مقابل \"صح — RAG من ملفاتك\" — قبل ما الـ AI يجاوب، النظام بيدوّر في ملفاتك، يلاقي الحتة الصح، ويقول للـ AI: «جاوب من الورقة دي بس»."
   },
   "aiPromptContract": {
@@ -345,5 +370,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "798651fec3a5f3e9261a9055cc640e459d737d1a0be04a32bc5e09dc0ec5cd7a"
+  "checksum": "4bde91e74c65ab389dff5a071867d34bbba427b8fb0429aeb18902b91da4757e"
 }

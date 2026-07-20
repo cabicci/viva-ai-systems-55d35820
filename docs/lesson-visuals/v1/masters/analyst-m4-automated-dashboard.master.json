@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "8ae373640e8e86a9d8f5f8609a59673d85ca36d6b3b38e5c6edb4e9dc875c917",
+    "ar-MSA": "576779fc1c6c64ce8471b1ccc2ca781ba41c915b074f0238a94937d9081d5869",
+    "ar-Gulf": "f80953a0ffe5d2e92048b120d2a85e95d90a78ab0c5ef2bad6b0d414fc78612e",
+    "ar-EG": "f6f93283aa3456c394cab6b55a382d4b1d52780dfaa632fe279c59b95de84919"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -49,11 +55,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Update Frequency:",
-      "ar-MSA": "Update Frequency (تكرار التحديث):",
-      "ar-Gulf": "تكرار التحديث:",
+      "en": "One Number = Success — Collect manually for two weeks — if you read it and make a decision, automate it. Update Frequency: Daily, weekly, real-time — based on the decision.",
+      "ar-MSA": "رقم واحد = فوز — اجمع يدويًا أسبوعين — إن قرأته واتخذت قرارًا، أتمته. Update Frequency (تكرار التحديث): يومي، أسبوعي، لحظي — حسب القرار.",
+      "ar-Gulf": "رقم واحد = فوز — اجمع يدويًا لمدة أسبوعين — إذا قرأته واتخذت قرارًا، أتمته. تكرار التحديث: يومي، أسبوعي، لحظي — حسب القرار.",
       "ar-EG": "القاعدة: اجمع الرقم يدوي أسبوعين — لو قرأته واتخذت قرار، أتمته."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? An automated dashboard saves time on data collection — if you know which number is important.",
+      "ar-MSA": "ماذا ستفهم؟ Dashboard (لوحة) أوتوماتيك يوفر وقت الجمع — إذا عرفت أي رقم مهم.",
+      "ar-Gulf": "وش راح تفهم؟ Dashboard (لوحة) أوتوماتيك يوفر وقت الجمع — إذا عرفت أي رقم مهم.",
+      "ar-EG": "هتفهم إيه؟ الـ Dashboard الأوتوماتيك يوفر وقت جمع البيانات — بس بس لو عارف إيه الأرقام اللي مهمة."
+    },
+    "lessonObjects": [
+      "Automate Everything — Without Decision",
+      "One Number = Success",
+      "Collect manually for two weeks",
+      "if you read it and make a decision",
+      "automate it",
+      "Update Frequency"
+    ],
+    "relationships": [
+      "Automate Everything — Without Decision → One Number = Success",
+      "One Number = Success — Collect manually for two weeks — if you read it and make a decision, automate it. Update Frequency: Daily, weekly, real-time — based on t",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "20 charts — you don't know which number matters. Manual First before automation.",
       "ar-MSA": "٢٠ رسمًا — لا تعرف أي رقم يهم. Manual First (يدوي أولًا) قبل الأتمتة.",
@@ -94,21 +119,21 @@
     },
     "visualIntent": {
       "kind": "screenshot",
-      "summary": "Update Frequency:",
+      "summary": "One Number = Success — Collect manually for two weeks — if you read it and make a decision, automate it. Update Frequency: Daily, weekly, real-time — based on t",
       "packageQuotes": {
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/analyst-m4-automated-dashboard.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Update Frequency:"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m4-automated-dashboard.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Update Frequency (تكرار التحديث):"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m4-automated-dashboard.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "تكرار التحديث:"
         },
         "ar-EG": {
@@ -120,9 +145,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "analyst-m4-automated-dashboard's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Automate Everything — Without Decision / One Number = Success) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent describes a schematic/layout illustration rather than recognizing a named public product UI; hybrid/deterministic carries real locale labels without fabricating chrome.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Automate Everything — Without Decision\" vs \"One Number = Success\" for analyst-m4-automated-dashboard.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Automate Everything — Without Decision\" vs \"One Number = Success\" for analyst-m4-automated-dashboard.",
   "labelPacks": {
     "en": [
       {
@@ -214,9 +239,9 @@
     ]
   },
   "altTexts": {
-    "en": "Automated Dashboard: \"Automate Everything — Without Decision\" versus \"One Number = Success\" — Update Frequency:",
-    "ar-MSA": "لوحة تحكم مؤتمتة: \"أتمتة كل شيء — بلا قرار\" في مقابل \"رقم واحد = فوز\" — Update Frequency (تكرار التحديث):",
-    "ar-Gulf": "لوحة التحكم الأوتوماتيكية: \"أتمتة كل شيء — بلا قرار\" في مقابل \"رقم واحد = فوز\" — تكرار التحديث:",
+    "en": "Automated Dashboard: \"Automate Everything — Without Decision\" versus \"One Number = Success\" — One Number = Success — Collect manually for two weeks — if you read it and make a decision, automate it. Update Frequency: Daily, weekly, real-time — based on the decision.",
+    "ar-MSA": "لوحة تحكم مؤتمتة: \"أتمتة كل شيء — بلا قرار\" في مقابل \"رقم واحد = فوز\" — رقم واحد = فوز — اجمع يدويًا أسبوعين — إن قرأته واتخذت قرارًا، أتمته. Update Frequency (تكرار التحديث): يومي، أسبوعي، لحظي — حسب القرار.",
+    "ar-Gulf": "لوحة التحكم الأوتوماتيكية: \"أتمتة كل شيء — بلا قرار\" في مقابل \"رقم واحد = فوز\" — رقم واحد = فوز — اجمع يدويًا لمدة أسبوعين — إذا قرأته واتخذت قرارًا، أتمته. تكرار التحديث: يومي، أسبوعي، لحظي — حسب القرار.",
     "ar-EG": "يدوي الأول — أوتوماتيك تاني — رقم واحد = فوز: \"أتمتة كل حاجة\" في مقابل \"رقم واحد أوتوماتيك\" — القاعدة: اجمع الرقم يدوي أسبوعين — لو قرأته واتخذت قرار، أتمته."
   },
   "aiPromptContract": null,
@@ -237,5 +262,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "f7afbff204ae32c5b2f1df7a51df5381ef458aee08973f9e547abf0aae185147"
+  "checksum": "7eaa9bc6487c858c16cd3fbc36316dfb0e7d7526ae70bcdcc89f10fe77f33048"
 }

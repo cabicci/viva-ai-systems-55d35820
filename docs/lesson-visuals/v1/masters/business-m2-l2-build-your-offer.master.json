@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "ff1b0c7e11f0d78a40597532e3ad4ba1f0daa2069831ce925a0720ac1295cca7",
+    "ar-MSA": "3cae6b2b1440015b583bccb005b74ed17082194bbcc14d76f23f01511ffd63f6",
+    "ar-Gulf": "0d43ae736d4ebd40545e3a7b8c34beca033d42598d2cffb6b64e823ab28f8aee",
+    "ar-EG": "26fa95406df6aa5c4f272f3fc2f7fcfc3af59c927287b4d15575fb9f6f4ee888"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Product/Service:",
-      "ar-MSA": "المنتج/الخدمة:",
-      "ar-Gulf": "المنتج/الخدمة:",
+      "en": "Product ≠ Offer — The Offer is the Understood Promise",
+      "ar-MSA": "المنتج ≠ العرض — العرض هو الوعد المفهوم",
+      "ar-Gulf": "المنتج ≠ العرض — العرض هو الوعد المفهوم",
       "ar-EG": "المنتج/الخدمة: إيه اللي بتسلّمه — جلسة، وجبة، كورس، صيانة."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? The customer does not buy the product — they buy the transformation they understand. A clear offer is more important than a vague price.",
+      "ar-MSA": "ماذا ستفهم؟ العميل لا يشتري المنتج — يشتري التحويل الذي يفهمه. Offer (العرض) الواضح أهم من سعر «شبه المناسب».",
+      "ar-Gulf": "وش راح تفهم؟ العميل ما يشتري المنتج — يشتري التحويل اللي يفهمه. العرض الواضح أهم من سعر «مو واضح».",
+      "ar-EG": "هتفهم إيه؟ العميل مش بيشتري المنتج — بيشتري التحويل اللي يفهمه. العرض الواضح أهم من سعر «شبه المناسب»."
+    },
+    "lessonObjects": [
+      "Offer",
+      "Risk Reducer",
+      "Product Only",
+      "Clear Offer",
+      "Product ≠ Offer",
+      "The Offer is the Understood Promise"
+    ],
+    "relationships": [
+      "Product Only → Clear Offer",
+      "The **offer** formula in one line: I help [who] achieve [outcome] in [time/context] using [method] — even if [objection] — with [risk reducer]. Fill in the blan",
+      "visual relationship kind: decision"
+    ],
     "tension": {
       "en": "Many say, \"Customers don’t pay.\" You ask the customer — they don’t understand the outcome, the duration, or why they should trust you. The problem is often not the price — the issue is the clarity of the offer. A product",
       "ar-MSA": "كثيرون يقولون «العملاء لا يدفعون». تسأل العميل — تجده لا يفهم النتيجة، ولا المدة، ولا لماذا يثق بك. المشكلة غالبًا ليست السعر دائمًا — المشكلة وضوح Offer. منتج بلا عرض = قائمة مميزات بلا وعد مفهوم.",
@@ -102,17 +127,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/business-m2-l2-build-your-offer.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "The **offer** formula in one line: I help [who] achieve [outcome] in [time/context] using [method] — even if [objection] — with [risk reduce"
+          "quote": "offer"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m2-l2-build-your-offer.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "صيغة **Offer** في سطر واحد: بساعد [مين] يوصلوا إلى [نتيجة] في [وقت/سياق] باستخدام [طريقة] — حتى لو [اعتراض] — مع [مقلّل مخاطرة]. املأ الفراغ"
+          "quote": "Offer"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m2-l2-build-your-offer.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "صيغة **العرض** في سطر واحد: أساعد [مين] يوصلوا إلى [نتيجة] في [وقت/سياق] باستخدام [طريقة] — حتى لو [اعتراض] — مع [مقلّل مخاطرة]. املأ الفراغ"
+          "quote": "العرض"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/business-m2-l2-build-your-offer.ts",
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "Build Your Offer: \"Product Only\" versus \"Clear Offer\" — Product/Service:",
-    "ar-MSA": "بناء عرضك: \"منتج فقط\" في مقابل \"عرض واضح\" — المنتج/الخدمة:",
-    "ar-Gulf": "بناء عرضك: \"منتج فقط\" في مقابل \"عرض واضح\" — المنتج/الخدمة:",
+    "en": "Build Your Offer: \"Product Only\" versus \"Clear Offer\" — Product ≠ Offer — The Offer is the Understood Promise",
+    "ar-MSA": "بناء عرضك: \"منتج فقط\" في مقابل \"عرض واضح\" — المنتج ≠ العرض — العرض هو الوعد المفهوم",
+    "ar-Gulf": "بناء عرضك: \"منتج فقط\" في مقابل \"عرض واضح\" — المنتج ≠ العرض — العرض هو الوعد المفهوم",
     "ar-EG": "منتج ≠ عرض — العرض هو الوعد المفهوم: \"منتج بس\" في مقابل \"عرض واضح\" — المنتج/الخدمة: إيه اللي بتسلّمه — جلسة، وجبة، كورس، صيانة."
   },
   "aiPromptContract": null,
@@ -330,5 +355,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "5d716d2718403af7b49432d670da8819c8b5b297f528496e690cbbc4477f32d9"
+  "checksum": "ac8d276e3dd50f03672e3998c091c5fe0fd341242f2f9091e2b001a76fbb2995"
 }

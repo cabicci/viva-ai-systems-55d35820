@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "890562c3e113b683a6b79c2abb205106cbd34757d81d0d46d29ab8f0e8d8cbc2",
+    "ar-MSA": "5c08d4d1055cef7cfd9f9be89525df72e2aed89ab33c89fe6627b0e8ae05d6a4",
+    "ar-Gulf": "6ab8714da68534b6247eeb6eb85f641b00ba65e66a2aaa75e3a4a384c57b9577",
+    "ar-EG": "9131bce7f2a2ef13a94d7efa938547f92e98cad577f71a1d542de6c4a82d97ae"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Lead capture:",
-      "ar-MSA": "Lead capture:",
-      "ar-Gulf": "استقبال العميل المحتمل:",
+      "en": "One Journey = Lead → Response → Follow-up → Data",
+      "ar-MSA": "رحلة واحدة = Lead → رد → متابعة → بيانات",
+      "ar-Gulf": "رحلة واحدة = عميل محتمل → رد → متابعة → بيانات",
       "ar-EG": "Lead capture: يمسك الاهتمام ويسجّله."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Powerful standalone automations — but when linked in a single Customer Journey, they become a system.",
+      "ar-MSA": "ماذا ستفهم؟ أتمتات منفصلة قوية — لكن عندما تتربط في رحلة عميل (Customer Journey) واحدة تصبح نظامًا.",
+      "ar-Gulf": "وش راح تفهم؟ أتمتات منفصلة قوية — لكن لما تتربط في رحلة عميل واحدة تصير نظام.",
+      "ar-EG": "هتفهم إيه؟ أوتوميشنات منفصلة قوية — لكن لما تتربط في رحلة عميل واحدة بتبقى نظام."
+    },
+    "lessonObjects": [
+      "Customer Journey",
+      "Feedback Loop",
+      "Standalone Automations",
+      "One Customer Journey",
+      "One Journey = Lead → Response → Follow-up → Data"
+    ],
+    "relationships": [
+      "Standalone Automations → One Customer Journey",
+      "Each stage feeds into the next and records data. **The connected journey** = questions that the **Analyst** will answer.",
+      "visual relationship kind: concept-scene"
+    ],
     "tension": {
       "en": "Everything works — but there is no complete picture. You have a form capturing leads. WhatsApp responds. Follow-ups send messages. Each one works.",
       "ar-MSA": "كل شيء يعمل — لكن لا صورة كاملة. لديك نموذج يستقبل leads. واتساب يرد. متابعة ترسل رسائل. كل واحد يعمل.",
@@ -102,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/automator-m7-l1-closing-loop.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "Each stage feeds into the next and records data. **The connected journey** = questions that the **Analyst** will answer."
+          "quote": "The connected journey"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m7-l1-closing-loop.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "كل مرحلة تغذّي التي بعدها وتسجّل بيانات. **الرحلة المتصلة** = أسئلة **Analyst** سيجيب عليها."
+          "quote": "الرحلة المتصلة"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m7-l1-closing-loop.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "كل مرحلة تغذي اللي بعدها وتسجل بيانات. **الرحلة المتصلة** = أسئلة **المحلل** اللي راح يجاوب عليها."
+          "quote": "الرحلة المتصلة"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/automator-m7-l1-closing-loop.ts",
@@ -123,7 +147,7 @@
     }
   },
   "method": 2,
-  "methodRationale": "automator-m7-l1-closing-loop's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"Lead capture:\" without inventing UI chrome or rendering paid text.",
+  "methodRationale": "automator-m7-l1-closing-loop's screenshot intent centers on an abstract idea rather than a literal interface (metaphor score 1), so a text-free AI illustration communicates \"One Journey = Lead → Response → Follow-up → Data\" without inventing UI chrome or rendering paid text.",
   "compositionPattern": "concept-scene-metaphor",
   "duplicationJustification": "Shares the \"concept-scene-metaphor\" layout template with 11 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Standalone Automations\" vs \"One Customer Journey\" for automator-m7-l1-closing-loop.",
   "labelPacks": {
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Closing the Loop: \"Standalone Automations\" versus \"One Customer Journey\" — Lead capture:",
-    "ar-MSA": "إغلاق الحلقة: \"أتمتات منفصلة\" في مقابل \"رحلة عميل واحدة\" — Lead capture:",
-    "ar-Gulf": "إغلاق الحلقة: \"أتمتات منفصلة\" في مقابل \"رحلة عميل واحدة\" — استقبال العميل المحتمل:",
+    "en": "Closing the Loop: \"Standalone Automations\" versus \"One Customer Journey\" — One Journey = Lead → Response → Follow-up → Data",
+    "ar-MSA": "إغلاق الحلقة: \"أتمتات منفصلة\" في مقابل \"رحلة عميل واحدة\" — رحلة واحدة = Lead → رد → متابعة → بيانات",
+    "ar-Gulf": "إغلاق الحلقة: \"أتمتات منفصلة\" في مقابل \"رحلة عميل واحدة\" — رحلة واحدة = عميل محتمل → رد → متابعة → بيانات",
     "ar-EG": "رحلة واحدة = Lead → رد → متابعة → بيانات: \"أوتوميشنات منفصلة\" في مقابل \"رحلة عميل واحدة\" — Lead capture: يمسك الاهتمام ويسجّله."
   },
   "aiPromptContract": {
@@ -341,5 +365,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "bb7531d2d6362637cf9de72c0dfa2a4612681ff0d19b807a0c15177b711c6938"
+  "checksum": "898c623b33429df71375459bfc632e6e22b349b16ffdc1925f7f5dbd5fe18935"
 }

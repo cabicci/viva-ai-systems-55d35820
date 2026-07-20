@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "837fd54e32331563e0178a308c91859f5dc4e089926a4e6960bd90c6653e6117",
+    "ar-MSA": "5ea972b2141826650b2318a39050cb1d69a5d2b64e70ccc6901d5917b34c33fe",
+    "ar-Gulf": "0daa975f49046de2829aa4d11efd6e0699b96900f6efedb4141c23cbb77dd1c5",
+    "ar-EG": "25be16ec265e41865047f9da17f52aaed0baaef1f41a800fcae59e8ce60bc3f0"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -51,11 +57,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Start with a simple question:",
-      "ar-MSA": "ابدأ بسؤال بسيط:",
-      "ar-Gulf": "ابدأ بسؤال بسيط:",
+      "en": "Cut the Excess and Keep the Path Clear",
+      "ar-MSA": "قص الزائد وخلي المسار واضحًا",
+      "ar-Gulf": "قص الزائد وخلي المسار واضح",
       "ar-EG": "ابدأ بسؤال بسيط: كل جملة في الفيديو بتخدم الفكرة ولا لا؟"
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Editing clarifies your message — it does not just beautify it.",
+      "ar-MSA": "ماذا ستفهم؟ المونتاج يُوضّح رسالتك — ليس فقط يجمّلها.",
+      "ar-Gulf": "وش راح تفهم؟ المونتاج يوضح رسالتك — مو بس يجمّلها.",
+      "ar-EG": "حتى لو الفكرة ممتازة، العرض الضعيف بيخلي الرسالة تضيع."
+    },
+    "lessonObjects": [
+      "Pacing",
+      "Cut for Clarity",
+      "Confusing Style",
+      "Clear Style",
+      "Cut the Excess and Keep the Path Clear"
+    ],
+    "relationships": [
+      "Confusing Style → Clear Style",
+      "Visual snapshot — **the difference before and after editing**. **The edited version is shorter and clearer** — **each part has a purpose** **and there is no flu",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "The raw version is often distracting. Repetitive dialogue, long pauses, and slow starts make viewers leave.",
       "ar-MSA": "النسخة الخام غالبًا مشتتة. كلام مكرّر، سكتات طويلة، وبدايات بطيئة تجعل المشاهد يغادر.",
@@ -101,16 +125,16 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/creator-m5-l1-editing.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "Visual snapshot — **the difference before and after editing**. **The edited version is shorter and clearer** — **each part has a purpose** *"
+          "quote": "the difference before and after editing"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m5-l1-editing.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "ابدأ بسؤال بسيط:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m5-l1-editing.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "ابدأ بسؤال بسيط:"
         },
         "ar-EG": {
@@ -122,9 +146,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "creator-m5-l1-editing's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Confusing Style / Clear Style) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Confusing Style\" vs \"Clear Style\" for creator-m5-l1-editing.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Confusing Style\" vs \"Clear Style\" for creator-m5-l1-editing.",
   "labelPacks": {
     "en": [
       {
@@ -264,9 +288,9 @@
     ]
   },
   "altTexts": {
-    "en": "Editing — Cut, Caption, Pace: \"Confusing Style\" versus \"Clear Style\" — Start with a simple question:",
-    "ar-MSA": "المونتاج — قصّ وتعليق وإيقاع: \"الأسلوب المربك\" في مقابل \"الأسلوب الواضح\" — ابدأ بسؤال بسيط:",
-    "ar-Gulf": "تحرير — قص، تعليق، إيقاع: \"الأسلوب المربك\" في مقابل \"الأسلوب الواضح\" — ابدأ بسؤال بسيط:",
+    "en": "Editing — Cut, Caption, Pace: \"Confusing Style\" versus \"Clear Style\" — Cut the Excess and Keep the Path Clear",
+    "ar-MSA": "المونتاج — قصّ وتعليق وإيقاع: \"الأسلوب المربك\" في مقابل \"الأسلوب الواضح\" — قص الزائد وخلي المسار واضحًا",
+    "ar-Gulf": "تحرير — قص، تعليق، إيقاع: \"الأسلوب المربك\" في مقابل \"الأسلوب الواضح\" — قص الزائد وخلي المسار واضح",
     "ar-EG": "قص الزايد وخلي المسار واضح: \"الأسلوب المربك\" في مقابل \"الأسلوب الواضح\" — ابدأ بسؤال بسيط: كل جملة في الفيديو بتخدم الفكرة ولا لا؟"
   },
   "aiPromptContract": null,
@@ -329,5 +353,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "9d29b1c707cf3947e6b020040cabae0e4e2cd4e0df6bca8e8f135440ed088372"
+  "checksum": "436fca3cdff52d8dcd7ca4ac2aca8614f2eb959baabfeaae40a0a0264d0cddfb"
 }

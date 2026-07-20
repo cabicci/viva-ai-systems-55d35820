@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "438c36ae300f23c4deb430db403c835b8d075be26c82061fe88fc51c9c3cb4f6",
+    "ar-MSA": "2cae0b8440830fec790ac3de37738142fce9713af143ec0df9b5851eab9a3481",
+    "ar-Gulf": "116dfc71f090ab7a430042a165b30670e1834809ab081ae992211441b7198235",
+    "ar-EG": "3d4ded20653ddfeb07b71b0372d4b40267787281cbd15810f6f350a46866df6d"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -48,11 +54,30 @@
       ]
     },
     "coreIdea": {
-      "en": "A good thumbnail:",
-      "ar-MSA": "Thumbnail جيد:",
-      "ar-Gulf": "Thumbnail جيد:",
+      "en": "Make the entry clear and easy to understand",
+      "ar-MSA": "اجعل الباب واضحًا وسريع الفهم",
+      "ar-Gulf": "اجعل الباب واضح وسهل الفهم",
       "ar-EG": "Thumbnail جيد: نص قليل، تباين قوي، وفكرة واضحة من أول نظرة."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? After creating multiple content forms from a single idea — the question now is: How do you make each version visible and engaging?",
+      "ar-MSA": "ماذا ستفهم؟ بعد أن تُنتج من فكرة واحدة أكثر من شكل محتوى — السؤال الآن: كيف تجعل كل نسخة تُرى وتُفتح؟",
+      "ar-Gulf": "وش راح تفهم؟ بعد ما تنتج من فكرة وحدة أكثر من شكل محتوى — السؤال الحين: كيف تخلي كل نسخة تُشوف وتُفتح؟",
+      "ar-EG": "بعد ما عرفت تطلع من فكرة واحدة أكتر من شكل محتوى، السؤال دلوقتي: إزاي تخلي كل نسخة منهم تتشاف وتتفتح؟"
+    },
+    "lessonObjects": [
+      "Hook Line",
+      "Thumbnail Text",
+      "CTR (Click-Through Rate)",
+      "Weak Style",
+      "Stronger Style",
+      "Make the entry clear and easy to understand"
+    ],
+    "relationships": [
+      "Weak Style → Stronger Style",
+      "Visual snapshot — **Examples of thumbnails and captions**. **The message is clear from the first second:** **minimal text**, **easy to read**, **and a clear pro",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "A weak entry loses excellent content. If the image is dull or the text is long and unclear — the viewer won't give the video a chance.",
       "ar-MSA": "باب ضعيف يخسر محتوى ممتازًا. إن كانت الصورة باهتة أو النص طويلًا وغير واضح — المشاهد لن يمنح الفيديو فرصة.",
@@ -98,16 +123,16 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/creator-m5-l2-thumbnails-captions.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "Visual snapshot — **Examples of thumbnails and captions**. **The message is clear from the first second:** **minimal text**, **easy to read*"
+          "quote": "Examples of thumbnails and captions"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/creator-m5-l2-thumbnails-captions.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Thumbnail جيد:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/creator-m5-l2-thumbnails-captions.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
+          "field": "sections[role=Core idea].contentMarkdown",
           "quote": "Thumbnail جيد:"
         },
         "ar-EG": {
@@ -119,9 +144,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "creator-m5-l2-thumbnails-captions's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Weak Style / Stronger Style) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Weak Style\" vs \"Stronger Style\" for creator-m5-l2-thumbnails-captions.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Weak Style\" vs \"Stronger Style\" for creator-m5-l2-thumbnails-captions.",
   "labelPacks": {
     "en": [
       {
@@ -261,9 +286,9 @@
     ]
   },
   "altTexts": {
-    "en": "Thumbnails and Captions: \"Weak Style\" versus \"Stronger Style\" — A good thumbnail:",
-    "ar-MSA": "الصور المصغّرة والعناوين: \"الأسلوب الضعيف\" في مقابل \"الأسلوب الأقوى\" — Thumbnail جيد:",
-    "ar-Gulf": "الثمبنيلز والكابشنز: \"الأسلوب الضعيف\" في مقابل \"الأسلوب الأقوى\" — Thumbnail جيد:",
+    "en": "Thumbnails and Captions: \"Weak Style\" versus \"Stronger Style\" — Make the entry clear and easy to understand",
+    "ar-MSA": "الصور المصغّرة والعناوين: \"الأسلوب الضعيف\" في مقابل \"الأسلوب الأقوى\" — اجعل الباب واضحًا وسريع الفهم",
+    "ar-Gulf": "الثمبنيلز والكابشنز: \"الأسلوب الضعيف\" في مقابل \"الأسلوب الأقوى\" — اجعل الباب واضح وسهل الفهم",
     "ar-EG": "خلي الباب واضح وسريع الفهم: \"الأسلوب الضعيف\" في مقابل \"الأسلوب الأقوى\" — Thumbnail جيد: نص قليل، تباين قوي، وفكرة واضحة من أول نظرة."
   },
   "aiPromptContract": null,
@@ -326,5 +351,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "f8fc595be50262854656ddb55953622d252262344d299d926336c13e6c09992a"
+  "checksum": "a7c1c7d40ae7ab989c88d8a249dd70fbf72bc98dca286a68e640cdd5a9c5ea35"
 }

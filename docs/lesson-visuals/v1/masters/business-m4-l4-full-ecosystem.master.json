@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "8eefd07526a7606cce97b6196523e194071317d66b01c666282cf0a2307d3c93",
+    "ar-MSA": "92fc5a220dbc9821cf4db3e4a56e9075dd62abb43fe826b8d164c82b7e69efef",
+    "ar-Gulf": "0f5252ad0b2f6069f683ff28fedf57693bf0f011676c19c3a8a6ea34905b603d",
+    "ar-EG": "ce7f79ad8b6f6e03b6390e57b5456f6a1455b3cc3a9c749d5f407d746f64a510"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -46,40 +52,59 @@
       ]
     },
     "coreIdea": {
-      "en": "Business:",
-      "ar-MSA": "Business:",
-      "ar-Gulf": "Business:",
+      "en": "Business: Direction, decision-making, and operations. Creator: Content and trust.",
+      "ar-MSA": "٥ مسارات — Business: اتجاه وقرار وتشغيل. Creator: محتوى وثقة.",
+      "ar-Gulf": "٥ مسارات — Business: اتجاه وقرار وتشغيل. Creator: محتوى وثقة.",
       "ar-EG": "Business: اتجاه، قرار، تشغيل، عميل، نظام — القائد."
     },
+    "instructionalPurpose": {
+      "en": "What Will You Understand? The five paths function as an operating system — Business OS leads.",
+      "ar-MSA": "ماذا ستفهم؟ المسارات الخمسة كنظام تشغيل — Business OS (نظام التشغيل) يقود.",
+      "ar-Gulf": "وش راح تفهم؟ المسارات الخمسة كنظام تشغيل — Business OS (نظام التشغيل) يقود.",
+      "ar-EG": "هتفهم إيه؟ المسارات الخمسة تشتغل مع بعض كنظام تشغيل بالـ AI — مش مسارات منفصلة للتباهي."
+    },
+    "lessonObjects": [
+      "Lesson Start",
+      "5 Paths",
+      "Business",
+      "Direction",
+      "decision-making",
+      "and operations"
+    ],
+    "relationships": [
+      "Lesson Start → 5 Paths",
+      "Business: Direction, decision-making, and operations. Creator: Content and trust.",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
-      "en": "Business: Direction, decision-making, and operations. Creator: Content and trust.",
-      "ar-MSA": "Business: اتجاه وقرار وتشغيل. Creator: محتوى وثقة.",
-      "ar-Gulf": "Business: اتجاه وقرار وتشغيل. Creator: محتوى وثقة.",
+      "en": "What Will You Understand? The five paths function as an operating system — Business OS leads.",
+      "ar-MSA": "ماذا ستفهم؟ المسارات الخمسة كنظام تشغيل — Business OS (نظام التشغيل) يقود.",
+      "ar-Gulf": "وش راح تفهم؟ المسارات الخمسة كنظام تشغيل — Business OS (نظام التشغيل) يقود.",
       "ar-EG": "الحماس يخليك تفتح كل المسارات — وبعد شهر مفيش نتيجة ملموسة في أي اتجاه."
     },
     "comparison": {
       "en": {
         "leftLabel": "Lesson Start",
         "rightLabel": "5 Paths",
-        "leftBody": "The five paths function as an operating system —",
-        "rightBody": "Business:"
+        "leftBody": "Builder — Builds an application immediately.",
+        "rightBody": "Automator — Automates repetitive follow-ups."
       },
       "ar-MSA": {
         "leftLabel": "بداية الدرس",
         "rightLabel": "٥ مسارات",
-        "leftBody": "المسارات الخمسة كنظام تشغيل —",
-        "rightBody": "Business:"
+        "leftBody": "Builder — بناء تطبيق فورًا.",
+        "rightBody": "Automator — أتمتة المتابعة المتكررة."
       },
       "ar-Gulf": {
         "leftLabel": "التوجيه",
         "rightLabel": "٥ مسارات",
-        "leftBody": "المسارات الخمسة كنظام تشغيل —",
-        "rightBody": "Business:"
+        "leftBody": "Builder — تبني تطبيق فورًا.",
+        "rightBody": "Automator — أتمتة المتابعة المتكررة."
       },
       "ar-EG": {
         "leftLabel": "تشتت",
-        "rightLabel": "تركيز + دعم",
         "leftBody": "أول درس من كل مسار. مفيش مشروع ولا محتوى ولا أتمتة واضحة.",
+        "rightLabel": "تركيز + دعم",
         "rightBody": "هدف واحد. مساران يخدمونه — الباقي لاحقًا."
       }
     },
@@ -91,22 +116,22 @@
     },
     "visualIntent": {
       "kind": "screenshot",
-      "summary": "- **Business:** Direction, decision-making, and operations.",
+      "summary": "Business: Direction, decision-making, and operations. Creator: Content and trust.",
       "packageQuotes": {
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/business-m4-l4-full-ecosystem.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "- **Business:** Direction, decision-making, and operations."
+          "field": "sections[role=Core idea].contentMarkdown",
+          "quote": "Business:"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l4-full-ecosystem.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "- **Builder (باني — اختياري):** أدوات مخصصة عند الحاجة."
+          "field": "sections[role=Core idea].contentMarkdown",
+          "quote": "Business:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l4-full-ecosystem.json",
-          "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "- **Builder (باني — اختياري):** أدوات مخصصة عند الحاجة."
+          "field": "sections[role=Core idea].contentMarkdown",
+          "quote": "Business:"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/business-m4-l4-full-ecosystem.ts",
@@ -117,9 +142,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "business-m4-l4-full-ecosystem's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Lesson Start / 5 Paths) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 60 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Lesson Start\" vs \"5 Paths\" for business-m4-l4-full-ecosystem.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Lesson Start\" vs \"5 Paths\" for business-m4-l4-full-ecosystem.",
   "labelPacks": {
     "en": [
       {
@@ -127,7 +152,7 @@
         "text": "Lesson Start",
         "source": {
           "path": "src/lib/locale-lessons/en/lessons/business-m4-l4-full-ecosystem.json",
-          "field": "sections[role=Tension].subtitle"
+          "field": "sections[role=Comparison].tables[0].headers[0]"
         }
       },
       {
@@ -135,7 +160,7 @@
         "text": "5 Paths",
         "source": {
           "path": "src/lib/locale-lessons/en/lessons/business-m4-l4-full-ecosystem.json",
-          "field": "sections[role=Core idea].subtitle"
+          "field": "sections[role=Comparison].tables[0].headers[1]"
         }
       }
     ],
@@ -145,7 +170,7 @@
         "text": "بداية الدرس",
         "source": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l4-full-ecosystem.json",
-          "field": "sections[role=Tension].subtitle"
+          "field": "sections[role=Comparison].tables[0].headers[0]"
         }
       },
       {
@@ -153,7 +178,7 @@
         "text": "٥ مسارات",
         "source": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/business-m4-l4-full-ecosystem.json",
-          "field": "sections[role=Core idea].subtitle"
+          "field": "sections[role=Comparison].tables[0].headers[1]"
         }
       }
     ],
@@ -163,7 +188,7 @@
         "text": "التوجيه",
         "source": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l4-full-ecosystem.json",
-          "field": "sections[role=Tension].subtitle"
+          "field": "sections[role=Comparison].tables[0].headers[0]"
         }
       },
       {
@@ -171,7 +196,7 @@
         "text": "٥ مسارات",
         "source": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/business-m4-l4-full-ecosystem.json",
-          "field": "sections[role=Core idea].subtitle"
+          "field": "sections[role=Comparison].tables[0].headers[1]"
         }
       }
     ],
@@ -211,9 +236,9 @@
     ]
   },
   "altTexts": {
-    "en": "Full Ecosystem: \"Lesson Start\" versus \"5 Paths\" — Business:",
-    "ar-MSA": "المنظومة المتكاملة: \"بداية الدرس\" في مقابل \"٥ مسارات\" — Business:",
-    "ar-Gulf": "المنظومة الكاملة: \"التوجيه\" في مقابل \"٥ مسارات\" — Business:",
+    "en": "Full Ecosystem: \"Lesson Start\" versus \"5 Paths\" — Business: Direction, decision-making, and operations. Creator: Content and trust.",
+    "ar-MSA": "المنظومة المتكاملة: \"بداية الدرس\" في مقابل \"٥ مسارات\" — ٥ مسارات — Business: اتجاه وقرار وتشغيل. Creator: محتوى وثقة.",
+    "ar-Gulf": "المنظومة الكاملة: \"التوجيه\" في مقابل \"٥ مسارات\" — ٥ مسارات — Business: اتجاه وقرار وتشغيل. Creator: محتوى وثقة.",
     "ar-EG": "٥ مسارات — دور واحد لكل واحد: \"تشتت\" في مقابل \"تركيز + دعم\" — Business: اتجاه، قرار، تشغيل، عميل، نظام — القائد."
   },
   "aiPromptContract": null,
@@ -234,5 +259,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "392010d4fc891b1516c3911446fa1d71c388486ec6853bb373504ea261ba6764"
+  "checksum": "66a77f6397fa5ca7595a1584c116c9fcf54a65ae3b12f120f1aec35a4261a4ca"
 }

@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "3259f320b9ed5469660c5fcdeffb2fc6277cca18072c694c5990cd0491d51d5f",
+    "ar-MSA": "39d86e7890f1fbc26c4ef97449a5cf356914a3b2f1acbf1198f9ce03f53e197b",
+    "ar-Gulf": "be20b8f71093913b6a50745e1759f07af9452c48f14eb6e2d6d4cfcb38ac0f8e",
+    "ar-EG": "90ff036bec33566be8643ba3db8899e4af216aa5fa98e26fb885c5fe84cdcda3"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Feeling",
-      "ar-MSA": "Feeling (الشعور)",
-      "ar-Gulf": "Feeling (الشعور)",
+      "en": "The question opens the door — the feeling closes it",
+      "ar-MSA": "السؤال يفتح الباب — الشعور يغلقه",
+      "ar-Gulf": "السؤال يفتح الباب — الشعور يغلقه",
       "ar-EG": "فهمت إيه؟ الشعور بيبقى مفيد لما يتحوّل لسؤال البيانات تجاوبه — مش لما يفضل «حاسس إن»."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? General feelings about work are not enough — they must turn into a question answered by data.",
+      "ar-MSA": "ماذا ستفهم؟ الشعور العام عن العمل لا يكفي — يجب أن يتحوّل إلى سؤال تجيب عليه البيانات.",
+      "ar-Gulf": "وش راح تفهم؟ الشعور العام عن العمل ما يكفي — لازم يتحوّل إلى سؤال تجيب عليه البيانات.",
+      "ar-EG": "هتفهم إيه؟ الشعور العام عن الشغل مش كفاية — لازم يتحوّل لسؤال البيانات تقدر تجاوبه."
+    },
+    "lessonObjects": [
+      "Feeling",
+      "Baseline",
+      "Question",
+      "The question opens the door",
+      "the feeling closes it"
+    ],
+    "relationships": [
+      "Feeling → Question",
+      "**4 examples — from feeling to decision** (ID: `feeling-to-question-table`): for each feeling — a **specific question**, **Baseline** for comparison, **clear ac",
+      "visual relationship kind: comparison"
+    ],
     "tension": {
       "en": "'Sales are bad' is not a question — it’s a feeling. 'The ads are not working' — also a feeling. Everyone talks — but no one can answer with numbers.",
       "ar-MSA": "«المبيعات سيئة» ليس سؤالًا — إنه شعور. «الإعلان لا يعمل» — أيضًا شعور. الجميع يتكلّم — لكن لا أحد يستطيع الإجابة بأرقام.",
@@ -102,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/analyst-m2-l1-feeling-to-question.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**4 examples — from feeling to decision** (ID: `feeling-to-question-table`): for each feeling — a **specific question**, **Baseline** for co"
+          "quote": "4 examples — from feeling to decision"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m2-l1-feeling-to-question.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**٤ أمثلة — من شعور إلى قرار** (معرّف: `feeling-to-question-table`): لكل شعور — **سؤال محدّد**، **Baseline** للمقارنة، **إجراء واضح**. استخد"
+          "quote": "٤ أمثلة — من شعور إلى قرار"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m2-l1-feeling-to-question.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**٤ أمثلة — من شعور إلى قرار** (معرّف: `feeling-to-question-table`): لكل شعور — **سؤال محدد**، **Baseline** للمقارنة، **إجراء واضح**. استخدم"
+          "quote": "٤ أمثلة — من شعور إلى قرار"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/analyst-m2-l1-feeling-to-question.ts",
@@ -257,9 +281,9 @@
     ]
   },
   "altTexts": {
-    "en": "Feeling to Question: \"Feeling\" versus \"Question\" — Feeling",
-    "ar-MSA": "من الإحساس إلى السؤال: \"شعور\" في مقابل \"سؤال\" — Feeling (الشعور)",
-    "ar-Gulf": "من الإحساس للسؤال: \"شعور\" في مقابل \"سؤال\" — Feeling (الشعور)",
+    "en": "Feeling to Question: \"Feeling\" versus \"Question\" — The question opens the door — the feeling closes it",
+    "ar-MSA": "من الإحساس إلى السؤال: \"شعور\" في مقابل \"سؤال\" — السؤال يفتح الباب — الشعور يغلقه",
+    "ar-Gulf": "من الإحساس للسؤال: \"شعور\" في مقابل \"سؤال\" — السؤال يفتح الباب — الشعور يغلقه",
     "ar-EG": "إيه اللي عندك دلوقتي؟: \"شعور\" في مقابل \"سؤال\" — فهمت إيه؟ الشعور بيبقى مفيد لما يتحوّل لسؤال البيانات تجاوبه — مش لما يفضل «حاسس إن»."
   },
   "aiPromptContract": null,
@@ -322,5 +346,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "575c9278016bc86f6b71aa6ade6e324365107bca596079f93000a79afcc6b2f0"
+  "checksum": "e29125f3e7dde8f040b4f9178edebbe066299a05b3462232ffbf897972791201"
 }

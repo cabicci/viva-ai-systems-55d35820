@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "5c954fc9735ba48707f3d69ca9c249488f183d4393878288e63d25de68060aaf",
+    "ar-MSA": "63ad4bfcc66348f9dfddbce684765666d25e4da410c99b0c52f3d64cb8db6e14",
+    "ar-Gulf": "64fcebb9fde4d3652869d89f52966d21e499d68dd71ab9834c318064220cc1d1",
+    "ar-EG": "d9c92b746771eef14733a799771ecf5a3d219ac56a7cfe698cf9fe102b204f93"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "Fixed Software for Calculations — Flexible AI for Language",
-      "ar-MSA": "برنامج ثابت للحساب — AI مرن للكلام",
-      "ar-Gulf": "برنامج ثابت للحساب — ذكاء اصطناعي مرن للكلام",
+      "en": "The Core Idea — Fixed Software: Calculator, Excel, CRM, calendar, billing system — the same input gives the same result. Great when the process is clear and repetitive. Flexible AI: Helps you with writing, summarizing, thinking, comparing, explaining — great when the task needs l",
+      "ar-MSA": "الفكرة الأساسية — Software ثابت: آلة حاسبة، Excel، CRM، تقويم، نظام فواتير — نفس المدخل يعطي نفس النتيجة. ممتاز عندما العملية واضحة ومتكررة. AI مرن: يساعدك في الكتابة، التلخيص، التفكير، المقارنة، الشرح — ممتاز عندما المهمة تحتاج لغة أو حكمًا أو تنويعًا.",
+      "ar-Gulf": "الفكرة الأساسية — برنامج ثابت: آلة حاسبة، Excel، CRM، تقويم، نظام فواتير — نفس المدخل يعطي نفس النتيجة. ممتاز لما تكون العملية واضحة ومتكررة. ذكاء اصطناعي مرن: يساعدك في الكتابة، التلخيص، التفكير، المقارنة، الشرح — ممتاز لما تحتاج لغة أو حكم أو تنويع.",
       "ar-EG": "Software ثابت: آلة حاسبة، Excel، CRM، تقويم، نظام فواتير — نفس المدخل يطلع نفس النتيجة. ممتاز لما العملية واضحة ومتكررة."
     },
+    "instructionalPurpose": {
+      "en": "What Will You Understand? Not every task needs AI — regular software isn't weaker, just different.",
+      "ar-MSA": "ماذا ستفهم؟ ليست كل مهمة تحتاج AI — والبرنامج العادي ليس أضعف، بل مختلف.",
+      "ar-Gulf": "وش راح تفهم؟ مو كل مهمة تحتاج ذكاء اصطناعي — والبرمجيات العادية مو أضعف، بل مختلفة.",
+      "ar-EG": "هتفهم إيه؟ مش كل مهمة محتاجة AI — والبرنامج العادي مش أضعف، هو بس مختلف."
+    },
+    "lessonObjects": [
+      "Software",
+      "AI",
+      "AI for Everything",
+      "Every Tool in Its Place",
+      "The Core Idea",
+      "Fixed Software"
+    ],
+    "relationships": [
+      "AI for Everything → Every Tool in Its Place",
+      "A column for fixed software (calculating, scheduling, archiving) and a column for AI (writing, summarizing, brainstorming). Much real work uses both — not just",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "Do you use AI for everything — and get surprised when the result is strange?",
       "ar-MSA": "هل تستخدم AI في كل شيء — وتتفاجأ عندما تكون النتيجة غريبة؟",
@@ -123,9 +148,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "intro-m1-l5-ai-vs-software's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (AI for Everything / Every Tool in Its Place) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"AI for Everything\" vs \"Every Tool in Its Place\" for intro-m1-l5-ai-vs-software.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"AI for Everything\" vs \"Every Tool in Its Place\" for intro-m1-l5-ai-vs-software.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "AI vs Software: \"AI for Everything\" versus \"Every Tool in Its Place\" — Fixed Software for Calculations — Flexible AI for Language",
-    "ar-MSA": "الذكاء الاصطناعي مقابل البرمجيات: \"AI لكل شيء\" في مقابل \"كل أداة في مكانها\" — برنامج ثابت للحساب — AI مرن للكلام",
-    "ar-Gulf": "الذكاء الاصطناعي مقابل البرمجيات: \"الذكاء الاصطناعي لكل شيء\" في مقابل \"كل أداة في مكانها\" — برنامج ثابت للحساب — ذكاء اصطناعي مرن للكلام",
+    "en": "AI vs Software: \"AI for Everything\" versus \"Every Tool in Its Place\" — The Core Idea — Fixed Software: Calculator, Excel, CRM, calendar, billing system — the same input gives the same result. Great when the process is clear and repetitive. Flexible AI: Helps you with writing, summarizing, thinking, ",
+    "ar-MSA": "الذكاء الاصطناعي مقابل البرمجيات: \"AI لكل شيء\" في مقابل \"كل أداة في مكانها\" — الفكرة الأساسية — Software ثابت: آلة حاسبة، Excel، CRM، تقويم، نظام فواتير — نفس المدخل يعطي نفس النتيجة. ممتاز عندما العملية واضحة ومتكررة. AI مرن: يساعدك في الكتابة، التلخيص، التفكير، المقارنة، الشرح — ممتاز عندما المهمة",
+    "ar-Gulf": "الذكاء الاصطناعي مقابل البرمجيات: \"الذكاء الاصطناعي لكل شيء\" في مقابل \"كل أداة في مكانها\" — الفكرة الأساسية — برنامج ثابت: آلة حاسبة، Excel، CRM، تقويم، نظام فواتير — نفس المدخل يعطي نفس النتيجة. ممتاز لما تكون العملية واضحة ومتكررة. ذكاء اصطناعي مرن: يساعدك في الكتابة، التلخيص، التفكير، المقارنة، ا",
     "ar-EG": "برنامج ثابت للحساب — AI مرن للكلام: \"AI لكل حاجة\" في مقابل \"كل أداة في مكانها\" — Software ثابت: آلة حاسبة، Excel، CRM، تقويم، نظام فواتير — نفس المدخل يطلع نفس النتيجة. ممتاز لما العملية واضحة ومتكررة."
   },
   "aiPromptContract": null,
@@ -330,5 +355,5 @@
       "quote": "weight: 30"
     }
   ],
-  "checksum": "85a35864b18da6707bd46ab3b593e99e0c954de02c1649fedd3a869503696d22"
+  "checksum": "d1e71ab93010745e30b7588038b189474b1aeac88bee08fae396e9ac3ebac925"
 }

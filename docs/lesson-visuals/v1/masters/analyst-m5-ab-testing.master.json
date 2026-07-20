@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "dba382504ad2e2b4dca062b3499252b4483b59094ed79b13cbea0fffff17532c",
+    "ar-MSA": "a4040aef7684f4ffadee0e2bd2f497dd5552949b552fa8f465317ddf7eef7a94",
+    "ar-Gulf": "04acf527d1334f376fd5581f496821e55c200c1b69949a4e41f49e8b9728d554",
+    "ar-EG": "eb51b9cc9d6037cd0fd280aba3c2f8819f9bed4a26ae5ef74249f65b5680fbc5"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "A/B",
-      "ar-MSA": "A/B",
-      "ar-Gulf": "A/B",
+      "en": "A vs B — One Variable — Metric Before Starting",
+      "ar-MSA": "A مقابل B — متغيّر واحد — مقياس قبل البداية",
+      "ar-Gulf": "A مقابل B — متغيّر واحد — مقياس قبل البداية",
       "ar-EG": "A/B = نسخة A (زي ما هي) vs نسخة B (تغيير واحد بس). الباقي ثابت."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? An A/B Test means changing one thing and measuring one result — not multiple random experiments at the same time.",
+      "ar-MSA": "ماذا ستفهم؟ A/B Test (اختبار A/B) يعني أن تغيّر شيئًا واحدًا وتقيس نتيجة واحدة — وليس تجارب عشوائية متعددة في نفس الوقت.",
+      "ar-Gulf": "وش راح تفهم؟ اختبار A/B يعني أنك تغيّر شيء واحد وتقيس نتيجة واحدة — مو تجارب عشوائية كثيرة في نفس الوقت.",
+      "ar-EG": "هتفهم إيه؟ A/B Testing = غيّر حاجة واحدة، قيس نتيجة واحدة — مش تجارب عشوائية."
+    },
+    "lessonObjects": [
+      "A/B Test",
+      "Sample Size",
+      "\"We tried everything\" (chaos)",
+      "One A/B (organized)",
+      "A vs B",
+      "One Variable"
+    ],
+    "relationships": [
+      "\"We tried everything\" (chaos) → One A/B (organized)",
+      "**Pattern vs Outlier** (identifier: `pattern-vs-outlier`): An **A/B** result needs a stable **pattern** — **not** a one-day **outlier**. **Use** this distinctio",
+      "visual relationship kind: comparison"
+    ],
     "tension": {
       "en": "You changed the title, price, and image in the same week — sales increased. You might say, \"So everything worked!\" This is not an A/B test — this is chaos. Too many variables = no lesson can be learned from the experimen",
       "ar-MSA": "غيّرت العنوان والسعر والصورة في نفس الأسبوع — زادت المبيعات. قد تقول: «إذن كل شيء نفع!» هذا ليس A/B test — هذا فوضى (chaos). متغيّرات كثيرة = لا درس يمكن استخلاصه من التجربة.",
@@ -102,17 +127,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/analyst-m5-ab-testing.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**Pattern vs Outlier** (identifier: `pattern-vs-outlier`): An **A/B** result needs a stable **pattern** — **not** a one-day **outlier**. **U"
+          "quote": "Pattern vs Outlier"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/analyst-m5-ab-testing.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**Pattern (نمط) مقابل Outlier (قيمة شاذة)** (معرّف: `pattern-vs-outlier`): نتيجة **A/B** تحتاج **نمطًا** مستقرًا — **وليس** قفزة **يوم واحد*"
+          "quote": "Pattern (نمط) مقابل Outlier (قيمة شاذة)"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/analyst-m5-ab-testing.json",
           "field": "sections[role=Diagram block (intent)].contentMarkdown",
-          "quote": "**النمط** مقابل **قيمة شاذة** (معرّف: `pattern-vs-outlier`): نتيجة **A/B** تحتاج **نمطًا** مستقرًا — **مو** قفزة **يوم واحد** شاذة. **استخدم"
+          "quote": "النمط"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/analyst-m5-ab-testing.ts",
@@ -257,9 +282,9 @@
     ]
   },
   "altTexts": {
-    "en": "A/B Testing: \"\"We tried everything\" (chaos)\" versus \"One A/B (organized)\" — A/B",
-    "ar-MSA": "اختبار A/B: \"«جرّبنا كل شيء» (فوضى)\" في مقابل \"A/B واحد (منظّم)\" — A/B",
-    "ar-Gulf": "اختبار A/B: \"«جرّبنا كل شيء» (فوضى)\" في مقابل \"A/B واحد (منظّم)\" — A/B",
+    "en": "A/B Testing: \"\"We tried everything\" (chaos)\" versus \"One A/B (organized)\" — A vs B — One Variable — Metric Before Starting",
+    "ar-MSA": "اختبار A/B: \"«جرّبنا كل شيء» (فوضى)\" في مقابل \"A/B واحد (منظّم)\" — A مقابل B — متغيّر واحد — مقياس قبل البداية",
+    "ar-Gulf": "اختبار A/B: \"«جرّبنا كل شيء» (فوضى)\" في مقابل \"A/B واحد (منظّم)\" — A مقابل B — متغيّر واحد — مقياس قبل البداية",
     "ar-EG": "A vs B — متغيّر واحد — مقياس قبل البداية: \"«جرّبنا كل حاجة»\" في مقابل \"A/B واحد\" — A/B = نسخة A (زي ما هي) vs نسخة B (تغيير واحد بس). الباقي ثابت."
   },
   "aiPromptContract": null,
@@ -322,5 +347,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "70b0b765ca132ce377ab038b67bc9582589b2bc43c42e140667978ec9317c2ff"
+  "checksum": "0e012d69be9295fd76a9f857dfe8557f3b122af977a3c16c2744a637ea3950cd"
 }

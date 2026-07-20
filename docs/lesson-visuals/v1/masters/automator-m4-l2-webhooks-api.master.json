@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "528d17d13730339eecdf8c3f8bd84abbb2ccfe5c8f56d3b418cba0385cfb643e",
+    "ar-MSA": "968fe04c029e4ccc1890e3dbbd43ceb1ad19a7313fc1963b26312c035ffe6fe4",
+    "ar-Gulf": "3ad066f46677b52bd69ee326aee316591423e9d52bac5c860abe30ff1963880e",
+    "ar-EG": "1c61ed97453cbefeefdb7dd7f6e70296ed530d4b5044ee7d7285f2dcf93737bd"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,30 @@
       ]
     },
     "coreIdea": {
-      "en": "API:",
-      "ar-MSA": "API:",
-      "ar-Gulf": "API:",
+      "en": "API = You Ask. Webhook = They Notify You",
+      "ar-MSA": "API = أنت تسأل. Webhook = هم يُبلّغونك",
+      "ar-Gulf": "API = أنت تسأل. Webhook = هم يُبلغونك",
       "ar-EG": "API: إنت بتبعت request — «هاتلي الطلبات النهارده». إنت اللي بدأت."
     },
+    "instructionalPurpose": {
+      "en": "What will you learn? Webhook = An application tells another application, \"Something happened\" — without you having to ask repeatedly.",
+      "ar-MSA": "ماذا ستفهم؟ Webhook (إشعار فوري) = تطبيق يقول لتطبيق آخر «حدث شيء» — من دون أن تسأل كل فترة.",
+      "ar-Gulf": "وش راح تفهم؟ Webhook (إشعار فوري) = تطبيق يقول لتطبيق ثاني «صار شيء» — من دون ما تسأل كل فترة.",
+      "ar-EG": "هتفهم إيه؟ Webhook = تطبيق يقول لتطبيق تاني «حصل حاجة» — من غير ما تسأل كل شوية."
+    },
+    "lessonObjects": [
+      "Webhook",
+      "Payload",
+      "Polling — Asks Every Minute",
+      "Webhook — Notifies You",
+      "API = You Ask",
+      "Webhook = They Notify You"
+    ],
+    "relationships": [
+      "Polling — Asks Every Minute → Webhook — Notifies You",
+      "**Endpoint** — Applications communicate through endpoints: **Webhook** receives, **API** sends. Data = **Payload**.",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "\"Workflow asks every minute: Is there anything new?\" Workflow asks the site 1,440 times a day — most responses are \"no\". It wastes time.",
       "ar-MSA": "«مسار العمل (workflow) يسأل كل دقيقة: هل هناك جديد؟» مسار العمل (workflow) يسأل الموقع ١٤٤٠ مرة في اليوم — معظم الردود «لا». يستهلك وقتًا بلا فائدة.",
@@ -102,17 +127,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/automator-m4-l2-webhooks-api.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**Endpoint** — Applications communicate through endpoints: **Webhook** receives, **API** sends. Data = **Payload**."
+          "quote": "Endpoint"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/automator-m4-l2-webhooks-api.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**Endpoint (نقطة استقبال)** — التطبيقات تتكلم عبر نقاط استقبال: **Webhook** يستقبل، **API** يرسل. البيانات = **Payload**."
+          "quote": "Endpoint (نقطة استقبال)"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/automator-m4-l2-webhooks-api.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**Endpoint (نقطة استقبال)** — التطبيقات تتواصل عبر نقاط استقبال: **Webhook** يستقبل، **API** يرسل. البيانات = **Payload**."
+          "quote": "Endpoint (نقطة استقبال)"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/automator-m4-l2-webhooks-api.ts",
@@ -123,9 +148,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "automator-m4-l2-webhooks-api's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Polling — Asks Every Minute / Webhook — Notifies You) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent assessed; authentic screen recognition is not instructionally necessary — schematic or hybrid teaches the package comparison more clearly.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Polling — Asks Every Minute\" vs \"Webhook — Notifies You\" for automator-m4-l2-webhooks-api.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Polling — Asks Every Minute\" vs \"Webhook — Notifies You\" for automator-m4-l2-webhooks-api.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +290,9 @@
     ]
   },
   "altTexts": {
-    "en": "Webhooks & APIs: \"Polling — Asks Every Minute\" versus \"Webhook — Notifies You\" — API:",
-    "ar-MSA": "الويب هوكس وواجهات البرمجة: \"Polling — تسأل كل دقيقة\" في مقابل \"Webhook — يُبلّغك\" — API:",
-    "ar-Gulf": "الويب هوكس وواجهات البرمجة: \"Polling — تسأل كل دقيقة\" في مقابل \"Webhook — يُبلغك\" — API:",
+    "en": "Webhooks & APIs: \"Polling — Asks Every Minute\" versus \"Webhook — Notifies You\" — API = You Ask. Webhook = They Notify You",
+    "ar-MSA": "الويب هوكس وواجهات البرمجة: \"Polling — تسأل كل دقيقة\" في مقابل \"Webhook — يُبلّغك\" — API = أنت تسأل. Webhook = هم يُبلّغونك",
+    "ar-Gulf": "الويب هوكس وواجهات البرمجة: \"Polling — تسأل كل دقيقة\" في مقابل \"Webhook — يُبلغك\" — API = أنت تسأل. Webhook = هم يُبلغونك",
     "ar-EG": "API = إنت بتسأل. Webhook = هما بيقولولك: \"Polling — تسأل كل دقيقة\" في مقابل \"Webhook — يتبلّغك\" — API: إنت بتبعت request — «هاتلي الطلبات النهارده». إنت اللي بدأت."
   },
   "aiPromptContract": null,
@@ -330,5 +355,5 @@
       "quote": "weight: 50"
     }
   ],
-  "checksum": "b2e30e3cd8e858fb40105381560b904945e755b7b984557288363a67694cebd1"
+  "checksum": "df32d45d3cf3772d6c95a5d8a7a4705d34be54bfe86b0b31e49fb38330070bcb"
 }

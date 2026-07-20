@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "ae500060fb513cb2335141352371cca85b35ac9a19b1f253cd58757a5d275510",
+    "ar-MSA": "807f04acc1428d23905a29427185dd5ef8e3597d0858a3c1b016f9287f8ee3ae",
+    "ar-Gulf": "6058e53363b85e8bcf4fe97e05d74d73fbc0784299f88b200572ae5452aab257",
+    "ar-EG": "5b2a34427072168099cd9a1f9eaf14f972cf8a5c83fa09f16833b1d7b71ecc3b"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -52,11 +58,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Wireframe = boxes + names",
-      "ar-MSA": "Wireframe = مربعات + أسماء",
-      "ar-Gulf": "Wireframe = مربعات + أسماء",
+      "en": "The sketch prevents confusion",
+      "ar-MSA": "الرسمة الكروكية تمنع اللخبطة",
+      "ar-Gulf": "الرسمة الكروكية تمنع اللخبطة",
       "ar-EG": "Wireframe = مربعات + أسماء — من غير ألوان ولا صور."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Wireframe = sketch before building — it prevents confusion.",
+      "ar-MSA": "ماذا ستفهم؟ Wireframe (إطار سلكي / رسمة كروكية) = رسم قبل البناء — يمنع اللخبطة.",
+      "ar-Gulf": "وش راح تفهم؟ Wireframe (إطار سلكي / رسمة كروكية) = رسم قبل البناء — يمنع اللخبطة.",
+      "ar-EG": "هتفهم إيه؟ Wireframe = رسمة كروكي قبل البناء — بتمنع اللخبطة."
+    },
+    "lessonObjects": [
+      "Wireframe",
+      "CTA (Call to Action)",
+      "Without Wireframe",
+      "With Wireframe",
+      "The sketch prevents confusion"
+    ],
+    "relationships": [
+      "Without Wireframe → With Wireframe",
+      "**Boxes + Labels**. **'Header', 'Text Box', 'Button', '3 Cards'**. **This is the language that AI understands**.",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "You ask AI to build an interface — it produces something generic, not what you had in mind. You revise 5 times. Each time is a new guess. 3 hours wasted.",
       "ar-MSA": "تطلب من AI أن يبني واجهة — فيخرج شيء عام ليس ما في ذهنك. تعدّل ٥ مرات. كل مرة تخمين جديد. ٣ ساعات ضاعت.",
@@ -102,17 +126,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m6-l2-wireframe.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**Boxes + Labels**. **'Header', 'Text Box', 'Button', '3 Cards'**. **This is the language that AI understands**."
+          "quote": "Boxes + Labels"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m6-l2-wireframe.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**مربعات + أسماء**. **«هيدر»، «مربع نص»، «زر»، «٣ كروت»**. **هذه اللغة التي يفهمها AI**."
+          "quote": "مربعات + أسماء"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m6-l2-wireframe.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**مربعات + أسماء**. **«هيدر»، «مربع نص»، «زر»، «٣ كروت»**. **هذه اللغة اللي يفهمها AI**."
+          "quote": "مربعات + أسماء"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m6-l2-wireframe.ts",
@@ -123,9 +147,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "builder-m6-l2-wireframe's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Without Wireframe / With Wireframe) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent describes a schematic/layout illustration rather than recognizing a named public product UI; hybrid/deterministic carries real locale labels without fabricating chrome.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Without Wireframe\" vs \"With Wireframe\" for builder-m6-l2-wireframe.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Without Wireframe\" vs \"With Wireframe\" for builder-m6-l2-wireframe.",
   "labelPacks": {
     "en": [
       {
@@ -265,9 +289,9 @@
     ]
   },
   "altTexts": {
-    "en": "Wireframe — Sketch Before You Build: \"Without Wireframe\" versus \"With Wireframe\" — Wireframe = boxes + names",
-    "ar-MSA": "الوايرفريم — الرسم قبل البناء: \"بدون Wireframe\" في مقابل \"مع Wireframe\" — Wireframe = مربعات + أسماء",
-    "ar-Gulf": "الوايرفريم قبل البناء: \"بدون Wireframe\" في مقابل \"مع Wireframe\" — Wireframe = مربعات + أسماء",
+    "en": "Wireframe — Sketch Before You Build: \"Without Wireframe\" versus \"With Wireframe\" — The sketch prevents confusion",
+    "ar-MSA": "الوايرفريم — الرسم قبل البناء: \"بدون Wireframe\" في مقابل \"مع Wireframe\" — الرسمة الكروكية تمنع اللخبطة",
+    "ar-Gulf": "الوايرفريم قبل البناء: \"بدون Wireframe\" في مقابل \"مع Wireframe\" — الرسمة الكروكية تمنع اللخبطة",
     "ar-EG": "الرسمة الكروكي بتمنع اللخبطة: \"من غير Wireframe\" في مقابل \"مع Wireframe\" — Wireframe = مربعات + أسماء — من غير ألوان ولا صور."
   },
   "aiPromptContract": null,
@@ -330,5 +354,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "94e04ebd7d2339cfb932e3f0d71477181e49211feb4b1cf3fd5de8a2cfd9ab09"
+  "checksum": "aa7875c8fa1d48f54cd74b3bbf7e999edb979b8b015dddaca8d74964b8aecf39"
 }

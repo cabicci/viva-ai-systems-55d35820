@@ -28,6 +28,12 @@
       "kind": "ts-blocks"
     }
   },
+  "packageChecksums": {
+    "en": "9b8f174987f202711a5ff6d8760c68f81fd2bf030b28626b9210aac3008c2988",
+    "ar-MSA": "d28ae6783c8dc379f52017be4adedefbcef7455286c0270e72c0b344ae1fb1ed",
+    "ar-Gulf": "c0de22daba587d52d40626d6c34d4eb04bf21c7d2076b39bd97999f7f7934418",
+    "ar-EG": "1546dd11abbfee8ae3f35a8465f9fd014396e8b96a772a1ccc8d1d41967ed693"
+  },
   "contentBrief": {
     "orientation": {
       "en": [
@@ -56,11 +62,29 @@
       ]
     },
     "coreIdea": {
-      "en": "Any app = 3 simple layers",
-      "ar-MSA": "أي تطبيق = ٣ طبقات بسيطة",
-      "ar-Gulf": "أي تطبيق = ٣ طبقات بسيطة",
+      "en": "Building Starts with a Clear Product Request",
+      "ar-MSA": "البناء يبدأ بطلب منتج واضح",
+      "ar-Gulf": "البناء يبدأ بطلب منتج واضح",
       "ar-EG": "أي تطبيق = ٣ طبقات بسيطة: واجهة (اللي العميل يشوفه)، كواليس (اللي يشتغل ورا)، مخزن (اللي يفتكر)."
     },
+    "instructionalPurpose": {
+      "en": "What will you understand? Building starts with a clear description — not code. What is the app? For whom? What is the goal?",
+      "ar-MSA": "ماذا ستفهم؟ البناء يبدأ بوصف واضح — ليس بالكود. ما التطبيق؟ لمن؟ وما الهدف؟",
+      "ar-Gulf": "وش راح تفهم؟ البناء يبدأ بوصف واضح — مو بالكود. وش التطبيق؟ لمن؟ وش الهدف؟",
+      "ar-EG": "هتفهم إيه؟ البناء يبدأ بوصف واضح — مش بكود. إيه التطبيق؟ لمين؟ وإيه الهدف؟"
+    },
+    "lessonObjects": [
+      "Product Request",
+      "Phase 2",
+      "Vague Request",
+      "Clear Product Request",
+      "Building Starts with a Clear Product Request"
+    ],
+    "relationships": [
+      "Vague Request → Clear Product Request",
+      "**The bridge — from Prompts to App Layers:**",
+      "visual relationship kind: screenshot"
+    ],
     "tension": {
       "en": "You open Lovable or any tool and type 'Create an AI app' — and it produces something general that is not what you had in mind. The problem is not the tool. The problem is that you haven't specified: Who will use it? What",
       "ar-MSA": "تفتح Lovable أو أي أداة وتكتب «اعمل تطبيق ذكاء اصطناعي» — فيخرج شيء عام ليس ما في ذهنك. المشكلة ليست الأداة. المشكلة أنك لم تحدّد: من سيستخدمه؟ وماذا يريد أن يصل إليه؟",
@@ -106,17 +130,17 @@
         "en": {
           "path": "src/lib/locale-lessons/en/lessons/builder-m5-l1-transition.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**The bridge — from Prompts to App Layers:**"
+          "quote": "The bridge — from Prompts to App Layers:"
         },
         "ar-MSA": {
           "path": "src/lib/locale-lessons/ar-MSA/lessons/builder-m5-l1-transition.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**الجسر — من Prompts (طلبات) إلى طبقات التطبيق:**"
+          "quote": "الجسر — من Prompts (طلبات) إلى طبقات التطبيق:"
         },
         "ar-Gulf": {
           "path": "src/lib/locale-lessons/ar-Gulf/lessons/builder-m5-l1-transition.json",
           "field": "sections[role=Screenshot block (intent)].contentMarkdown",
-          "quote": "**الجسر — من الطلبات إلى طبقات التطبيق:**"
+          "quote": "الجسر — من الطلبات إلى طبقات التطبيق:"
         },
         "ar-EG": {
           "path": "src/components/intro/lessons/builder-m5-l1-transition.ts",
@@ -127,9 +151,9 @@
     }
   },
   "method": 4,
-  "methodRationale": "builder-m5-l1-transition's package marks a Screenshot intent but no allowlisted Masaarat public URL exists for this lesson, so a hybrid deterministic frame carries the real locale labels (Vague Request / Clear Product Request) instead of fabricating a UI capture.",
+  "methodRationale": "Screenshot intent describes a schematic/layout illustration rather than recognizing a named public product UI; hybrid/deterministic carries real locale labels without fabricating chrome.",
   "compositionPattern": "hybrid-frame-with-labels",
-  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 53 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Vague Request\" vs \"Clear Product Request\" for builder-m5-l1-transition.",
+  "duplicationJustification": "Shares the \"hybrid-frame-with-labels\" layout template with 57 other lesson(s) in this pipeline; the frame is reused for visual consistency across the path while the content stays lesson-specific — here: \"Vague Request\" vs \"Clear Product Request\" for builder-m5-l1-transition.",
   "labelPacks": {
     "en": [
       {
@@ -269,9 +293,9 @@
     ]
   },
   "altTexts": {
-    "en": "Transition — From Language to App: \"Vague Request\" versus \"Clear Product Request\" — Any app = 3 simple layers",
-    "ar-MSA": "الانتقال — من اللغة إلى التطبيق: \"طلب غامض\" في مقابل \"طلب منتج واضح\" — أي تطبيق = ٣ طبقات بسيطة",
-    "ar-Gulf": "من اللغة للتطبيق: \"طلب غامض\" في مقابل \"طلب منتج واضح\" — أي تطبيق = ٣ طبقات بسيطة",
+    "en": "Transition — From Language to App: \"Vague Request\" versus \"Clear Product Request\" — Building Starts with a Clear Product Request",
+    "ar-MSA": "الانتقال — من اللغة إلى التطبيق: \"طلب غامض\" في مقابل \"طلب منتج واضح\" — البناء يبدأ بطلب منتج واضح",
+    "ar-Gulf": "من اللغة للتطبيق: \"طلب غامض\" في مقابل \"طلب منتج واضح\" — البناء يبدأ بطلب منتج واضح",
     "ar-EG": "البناء يبدأ بطلب منتج واضح — مش بكود: \"طلب غامض\" في مقابل \"طلب منتج واضح\" — أي تطبيق = ٣ طبقات بسيطة: واجهة (اللي العميل يشوفه)، كواليس (اللي يشتغل ورا)، مخزن (اللي يفتكر)."
   },
   "aiPromptContract": null,
@@ -334,5 +358,5 @@
       "quote": "weight: 40"
     }
   ],
-  "checksum": "2630c99a9db81cf4527d3f502137d82c4cfe299f928d2d3118ba8411a05d40f6"
+  "checksum": "1babf94371cbc231469f50089da1e2290d20e2cbbd9bfdc28bf24f1a8b65bf41"
 }
