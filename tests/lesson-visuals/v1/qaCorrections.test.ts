@@ -530,6 +530,7 @@ describe("Fix8-9 provider identity and response binding", () => {
     const c = cfg({
       LESSON_VISUALS_EXECUTION_MODE: "production",
       LESSON_VISUALS_PROVIDER_API_KEY: "k",
+      LESSON_VISUALS_PROVIDER_ENDPOINT: "https://provider.example.invalid/v1/generate",
     });
     expect(c.executionMode).toBe("production");
   });

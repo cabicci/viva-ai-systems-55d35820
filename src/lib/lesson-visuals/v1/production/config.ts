@@ -22,6 +22,8 @@ export interface ProductionEnv {
   LESSON_VISUALS_PROVIDER_ACCOUNT_ID?: string;
   LESSON_VISUALS_PROVIDER_PROJECT_ID?: string;
   LESSON_VISUALS_AI_AUTH_ID?: string;
+  LESSON_VISUALS_PROVIDER_ENDPOINT?: string;
+  LESSON_VISUALS_PROVIDER_TIMEOUT_MS?: string;
   LESSON_VISUALS_STORAGE_CREDENTIAL?: string;
   LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS?: string;
   LESSON_VISUALS_CELL_COST_CEILING_USD_MICROS?: string;
@@ -88,6 +90,29 @@ export function loadProductionConfig(env: ProductionEnv): ConfigLoadResult {
   }
   if (executionMode === "production") {
     if (!providerApiKeyPresent) errors.push("LESSON_VISUALS_PROVIDER_API_KEY missing (production)");
+  }
+
+  const providerEndpoint = (env.LESSON_VISUALS_PROVIDER_ENDPOINT ?? "").trim();
+  let providerTimeoutMs = 60_000;
+  try {
+    if ((env.LESSON_VISUALS_PROVIDER_TIMEOUT_MS ?? "").trim()) {
+      providerTimeoutMs = parsePositiveInt(
+        env.LESSON_VISUALS_PROVIDER_TIMEOUT_MS,
+        "LESSON_VISUALS_PROVIDER_TIMEOUT_MS",
+      );
+      if (providerTimeoutMs <= 0) {
+        errors.push("LESSON_VISUALS_PROVIDER_TIMEOUT_MS must be > 0");
+      }
+    }
+  } catch (e) {
+    errors.push(e instanceof Error ? e.message : String(e));
+  }
+  if (executionMode === "production") {
+    if (!providerEndpoint) {
+      errors.push("LESSON_VISUALS_PROVIDER_ENDPOINT missing (production)");
+    } else if (!/^https:\/\//i.test(providerEndpoint)) {
+      errors.push("LESSON_VISUALS_PROVIDER_ENDPOINT must be https://");
+    }
   }
 
   const storageTarget = (env.LESSON_VISUALS_OUTPUT_STORAGE_TARGET ?? "").trim();
@@ -203,6 +228,8 @@ export function loadProductionConfig(env: ProductionEnv): ConfigLoadResult {
       providerProjectIdPresent,
       providerAuthIdPresent,
       storageCredentialPresent,
+      providerEndpoint,
+      providerTimeoutMs,
       runCostCeilingMicros: runCeiling,
       cellCostCeilingMicros: cellCeiling,
       maxOutputBytes,
@@ -226,6 +253,8 @@ export function redactConfigForLog(config: ProductionConfig): Record<string, unk
     providerProjectId: config.providerProjectId || null,
     providerAuthIdPresent: config.providerAuthIdPresent,
     providerApiKeyPresent: config.providerApiKeyPresent,
+    providerEndpointConfigured: config.providerEndpoint.length > 0,
+    providerTimeoutMs: config.providerTimeoutMs,
     storageCredentialPresent: config.storageCredentialPresent,
     runCostCeilingMicros: config.runCostCeilingMicros.toString(),
     cellCostCeilingMicros: config.cellCostCeilingMicros.toString(),

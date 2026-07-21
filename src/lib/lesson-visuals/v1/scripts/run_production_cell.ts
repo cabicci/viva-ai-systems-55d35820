@@ -1,6 +1,6 @@
 /**
- * Workflow cell entry — mock transport only when EXECUTION_MODE=dry-run.
- * Production mode requires a non-mock transport (not enabled in this candidate).
+ * Workflow cell entry — dry-run uses mock; production uses real HTTP transport.
+ * Never logs secret values. No automatic mock/production fallback.
  */
 import { existsSync, mkdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
@@ -12,14 +12,14 @@ import {
   cellPriorEvidencePath,
   cellReceiptPath,
 } from "../production/cellPaths";
-import { createMockProvider } from "../production/mockProvider";
 import { runProductionCell } from "../production/cellRunner";
 import { loadPriorAcceptedReceipts } from "../production/priorReceipts";
 import {
   validateRuntimeQuotaContext,
   type RuntimeQuotaContext,
 } from "../production/quotaContext";
-import type { ProductionCellReceipt } from "../production/types";
+import { selectProviderTransport } from "../production/selectTransport";
+import type { ProductionCellReceipt, ProductionRunMode } from "../production/types";
 
 function env(): ProductionEnv {
   return {
@@ -30,6 +30,8 @@ function env(): ProductionEnv {
     LESSON_VISUALS_PROVIDER_ACCOUNT_ID: process.env.LESSON_VISUALS_PROVIDER_ACCOUNT_ID,
     LESSON_VISUALS_PROVIDER_PROJECT_ID: process.env.LESSON_VISUALS_PROVIDER_PROJECT_ID,
     LESSON_VISUALS_AI_AUTH_ID: process.env.LESSON_VISUALS_AI_AUTH_ID,
+    LESSON_VISUALS_PROVIDER_ENDPOINT: process.env.LESSON_VISUALS_PROVIDER_ENDPOINT,
+    LESSON_VISUALS_PROVIDER_TIMEOUT_MS: process.env.LESSON_VISUALS_PROVIDER_TIMEOUT_MS,
     LESSON_VISUALS_STORAGE_CREDENTIAL: process.env.LESSON_VISUALS_STORAGE_CREDENTIAL,
     LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS:
       process.env.LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS,
@@ -58,7 +60,7 @@ function loadQuotaContext(): RuntimeQuotaContext {
     controlRoomAuthorizationId: process.env.CONTROL_ROOM_AUTHORIZATION_ID,
     sourceSha: process.env.SOURCE_SHA,
     approvedManifestSha256: (process.env.APPROVED_MANIFEST_SHA256 ?? "").toLowerCase(),
-    mode: (process.env.MODE ?? "full") as "full" | "failed-only",
+    mode: (process.env.MODE ?? "full") as ProductionRunMode,
   });
   if (!v.ok || !v.context) {
     throw new Error(`quota context invalid: ${v.errors.join("; ")}`);
@@ -67,48 +69,38 @@ function loadQuotaContext(): RuntimeQuotaContext {
 }
 
 async function main(): Promise<void> {
-  const loaded = loadProductionConfig(env());
+  const e = env();
+  const loaded = loadProductionConfig(e);
   if (!loaded.ok || !loaded.config) {
     console.error(JSON.stringify({ ok: false, errors: loaded.errors }));
     process.exit(1);
   }
   const config = loaded.config;
 
-  if (config.executionMode === "production") {
+  let cellId: string;
+  try {
+    cellId = assertSafeCellId(process.env.CELL_ID ?? "");
+  } catch (err) {
     console.error(
-      JSON.stringify({
-        ok: false,
-        errors: [
-          "production provider transport is not enabled in this candidate — no paid network generation",
-        ],
-      }),
+      JSON.stringify({ ok: false, errors: [err instanceof Error ? err.message : String(err)] }),
     );
     process.exit(1);
   }
 
-  let cellId: string;
-  try {
-    cellId = assertSafeCellId(process.env.CELL_ID ?? "");
-  } catch (e) {
-    console.error(JSON.stringify({ ok: false, errors: [e instanceof Error ? e.message : String(e)] }));
+  const selected = selectProviderTransport({
+    config,
+    apiKey: e.LESSON_VISUALS_PROVIDER_API_KEY ?? "",
+  });
+  if (!selected.ok || !selected.transport) {
+    console.error(JSON.stringify({ ok: false, errors: selected.errors }));
     process.exit(1);
   }
-
-  const transport = createMockProvider({
-    providerName: config.providerName,
-    model: config.providerModel,
-    accountId: config.providerAccountId,
-    projectId: config.providerProjectId || null,
-    authId: config.providerAuthId,
-    width: config.requiredWidth,
-    height: config.requiredHeight,
-    costMicros: "1000",
-  });
+  const transport = selected.transport;
 
   const artifactsRoot = resolve(process.cwd(), "artifacts");
   mkdirSync(artifactsRoot, { recursive: true });
 
-  const mode = (process.env.MODE ?? "full") as "full" | "failed-only";
+  const mode = (process.env.MODE ?? "full") as ProductionRunMode;
   let prior: ProductionCellReceipt | null = null;
 
   if (mode === "failed-only") {
@@ -138,9 +130,22 @@ async function main(): Promise<void> {
   let quotaContext: RuntimeQuotaContext;
   try {
     quotaContext = loadQuotaContext();
-  } catch (e) {
-    console.error(JSON.stringify({ ok: false, errors: [e instanceof Error ? e.message : String(e)] }));
+  } catch (err) {
+    console.error(
+      JSON.stringify({ ok: false, errors: [err instanceof Error ? err.message : String(err)] }),
+    );
     process.exit(1);
+  }
+
+  if (mode === "pilot") {
+    if (quotaContext.mode !== "pilot" || quotaContext.totalAuthorizedCells !== 12) {
+      console.error(JSON.stringify({ ok: false, errors: ["pilot quota context scope invalid"] }));
+      process.exit(1);
+    }
+    if (!quotaContext.allCellIds.includes(cellId)) {
+      console.error(JSON.stringify({ ok: false, errors: [`cell ${cellId} not in pilot scope`] }));
+      process.exit(1);
+    }
   }
 
   let attempts = 0;
@@ -179,11 +184,11 @@ async function main(): Promise<void> {
       attemptSlotIndex: result.attemptSlotIndex,
       status: result.receipt.status,
     });
-  } catch (e) {
+  } catch (err) {
     console.error(
       JSON.stringify({
         ok: false,
-        errors: [`attempt-meta write failed: ${e instanceof Error ? e.message : String(e)}`],
+        errors: [`attempt-meta write failed: ${err instanceof Error ? err.message : String(err)}`],
       }),
     );
     process.exit(1);
@@ -213,7 +218,8 @@ async function main(): Promise<void> {
       costMicros: result.costMicros.toString(),
       providerAttempted: result.providerAttempted,
       attemptSlotKey: result.attemptSlotKey,
-      mockGenerateCalls: transport.generateCallCount,
+      transportKind: selected.kind,
+      generateCallCount: transport.generateCallCount ?? null,
     }),
   );
   if (
@@ -226,6 +232,9 @@ async function main(): Promise<void> {
 }
 
 main().catch((e) => {
-  console.error(e instanceof Error ? e.message : String(e));
+  const msg = e instanceof Error ? e.message : String(e);
+  // Never echo env secrets if somehow present in message.
+  const key = process.env.LESSON_VISUALS_PROVIDER_API_KEY ?? "";
+  console.error(key ? msg.split(key).join("[REDACTED]") : msg);
   process.exit(1);
 });
