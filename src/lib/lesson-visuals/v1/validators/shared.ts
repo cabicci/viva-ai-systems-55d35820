@@ -1,18 +1,19 @@
 /** Shared paths + primitives for the lesson-visuals v1 local validators. */
 import { existsSync, readFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { LessonVisualMaster } from "../types";
 import { BANNED_GENERIC_LABELS, LOCALES } from "../types";
-import { canonicalChecksum } from "../scripts/canonical";
+import { canonicalChecksum, canonicalStringify } from "../scripts/canonical";
 
-function moduleDir(): string {
-  if (typeof import.meta.dirname === "string") return import.meta.dirname;
-  if (typeof import.meta.dir === "string") return import.meta.dir;
-  return fileURLToPath(new URL(".", import.meta.url));
+const MODULE_DIR = dirname(fileURLToPath(import.meta.url));
+
+/** Re-export authoritative canonical JSON serializer (stable key ordering). */
+export function canonicalJson(value: unknown): string {
+  return canonicalStringify(value);
 }
 
-export const REPO_ROOT = resolve(moduleDir(), "../../../../..");
+export const REPO_ROOT = resolve(MODULE_DIR, "../../../../..");
 export const DOCS_V1 = resolve(REPO_ROOT, "docs/lesson-visuals/v1");
 export const MASTERS_DIR = resolve(REPO_ROOT, "docs/lesson-visuals/v1/masters");
 export const MANIFEST_PATH = resolve(REPO_ROOT, "docs/lesson-visuals/v1/AUTHORIZED_MANIFEST.json");

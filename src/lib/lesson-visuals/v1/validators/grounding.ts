@@ -131,9 +131,6 @@ export function validateGrounding(
           });
           passed = false;
         }
-        if (!cb.altTexts && !master.altTexts?.[locale]) {
-          /* altTexts on master */
-        }
         if (!master.altTexts?.[locale] || master.altTexts[locale].trim().length < 8) {
           issues.push({
             gate: "grounding",

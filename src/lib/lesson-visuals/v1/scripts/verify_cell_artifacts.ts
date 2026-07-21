@@ -11,7 +11,14 @@ function main(): void {
   try {
     const result = verifyCellArtifacts({ artifactsRoot: root, cellId, status });
     if (!result.ok) {
-      console.error(JSON.stringify({ ok: false, ...result }));
+      console.error(
+        JSON.stringify({
+          ok: false,
+          required: result.required,
+          missing: result.missing,
+          unexpected: result.unexpected,
+        }),
+      );
       process.exit(1);
     }
     console.log(JSON.stringify({ ok: true, required: result.required }));

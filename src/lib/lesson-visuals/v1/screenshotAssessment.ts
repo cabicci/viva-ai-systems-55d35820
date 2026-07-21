@@ -4,15 +4,11 @@
  * only encodes the authorized decisions + allowlist matching.
  */
 import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
-import type { Method, ScreenshotSpec } from "../types";
+import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import type { Method, ScreenshotSpec } from "./types";
 
-function moduleDir(): string {
-  if (typeof import.meta.dirname === "string") return import.meta.dirname;
-  if (typeof import.meta.dir === "string") return import.meta.dir;
-  return fileURLToPath(new URL(".", import.meta.url));
-}
+const MODULE_DIR = dirname(fileURLToPath(import.meta.url));
 
 export interface AllowlistEntry {
   host: string;
@@ -101,7 +97,7 @@ const CHATGPT_UI_LESSONS = new Set([
 ]);
 
 export function loadScreenshotAllowlist(
-  absPath = resolve(moduleDir(), "screenshotAllowlist.json"),
+  absPath = resolve(MODULE_DIR, "screenshotAllowlist.json"),
 ): ScreenshotAllowlistFile {
   return JSON.parse(readFileSync(absPath, "utf8")) as ScreenshotAllowlistFile;
 }

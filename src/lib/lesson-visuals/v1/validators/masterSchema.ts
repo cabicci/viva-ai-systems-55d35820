@@ -43,7 +43,7 @@ export function validateMasterSchema(
     });
   }
   for (const k of REQUIRED_KEYS) {
-    if ((master as Record<string, unknown>)[k] === undefined) {
+    if ((master as unknown as Record<string, unknown>)[k] === undefined) {
       issues.push({
         gate: "masterSchema",
         lessonId: id,

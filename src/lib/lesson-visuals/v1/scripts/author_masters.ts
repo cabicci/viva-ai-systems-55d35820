@@ -8,7 +8,8 @@
  */
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import type {
   ComparisonPack,
   ContentBrief,
@@ -27,8 +28,9 @@ import {
 import { canonicalChecksum } from "./canonical";
 import { parseArEgLessonFile, unescapeJsString, type ArEgParseResult } from "./parse_ar_eg";
 
+const MODULE_DIR = dirname(fileURLToPath(import.meta.url));
 const SOURCE_SHA = "b211cd43ed8378dcc9921d85b19a7e8ef6c7b70d";
-const REPO_ROOT = resolve(import.meta.dir, "../../../../..");
+const REPO_ROOT = resolve(MODULE_DIR, "../../../../..");
 const MASTERS_DIR = resolve(REPO_ROOT, "docs/lesson-visuals/v1/masters");
 const LEDGERS_DIR = resolve(REPO_ROOT, "docs/lesson-visuals/v1/ledgers");
 const EN_MANIFEST_PATH = resolve(REPO_ROOT, "src/lib/locale-lessons/en/manifest.json");

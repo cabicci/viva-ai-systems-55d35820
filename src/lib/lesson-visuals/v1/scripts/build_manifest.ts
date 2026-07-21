@@ -4,12 +4,14 @@
  * Run: bun run src/lib/lesson-visuals/v1/scripts/build_manifest.ts
  */
 import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import type { AuthorizedManifest, LessonVisualMaster, ManifestCell } from "../types";
 import { LOCALES } from "../types";
 
+const MODULE_DIR = dirname(fileURLToPath(import.meta.url));
 const SOURCE_SHA = "b211cd43ed8378dcc9921d85b19a7e8ef6c7b70d";
-const REPO_ROOT = resolve(import.meta.dir, "../../../../..");
+const REPO_ROOT = resolve(MODULE_DIR, "../../../../..");
 const MASTERS_DIR = resolve(REPO_ROOT, "docs/lesson-visuals/v1/masters");
 const MANIFEST_OUT_PATH = resolve(REPO_ROOT, "docs/lesson-visuals/v1/AUTHORIZED_MANIFEST.json");
 const EN_MANIFEST_PATH = resolve(REPO_ROOT, "src/lib/locale-lessons/en/manifest.json");
