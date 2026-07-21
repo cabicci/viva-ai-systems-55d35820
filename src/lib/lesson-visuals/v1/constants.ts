@@ -3,7 +3,7 @@
  * Always the approved origin/main SHA used to author/repin masters — never the candidate tip.
  */
 export const AUTHORITATIVE_BASE_SOURCE_SHA =
-  "1041fae1a6db81c1cfdcb4f7904850df418b93b3" as const;
+  "b211cd43ed8378dcc9921d85b19a7e8ef6c7b70d" as const;
 
 export const AUTHORIZED_MANIFEST_RELATIVE_PATH =
   "docs/lesson-visuals/v1/AUTHORIZED_MANIFEST.json" as const;

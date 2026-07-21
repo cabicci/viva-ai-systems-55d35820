@@ -8,7 +8,7 @@ import { resolve } from "node:path";
 import type { AuthorizedManifest, LessonVisualMaster, ManifestCell } from "../types";
 import { LOCALES } from "../types";
 
-const SOURCE_SHA = "1041fae1a6db81c1cfdcb4f7904850df418b93b3";
+const SOURCE_SHA = "b211cd43ed8378dcc9921d85b19a7e8ef6c7b70d";
 const REPO_ROOT = resolve(import.meta.dir, "../../../../..");
 const MASTERS_DIR = resolve(REPO_ROOT, "docs/lesson-visuals/v1/masters");
 const MANIFEST_OUT_PATH = resolve(REPO_ROOT, "docs/lesson-visuals/v1/AUTHORIZED_MANIFEST.json");
