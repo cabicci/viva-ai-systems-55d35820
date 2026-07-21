@@ -54,8 +54,16 @@ export interface RunCellArgs {
   priorAcceptedReceipt?: ProductionCellReceipt | null;
   /** Immutable preflight quota context (required before provider calls). */
   quotaContext?: RuntimeQuotaContext | null;
-  /** Called once when a provider generate() is about to be invoked (after quota gate). */
+  /** Called once when an external provider generate() is about to be invoked (after quota gate). */
   onProviderAttempt?: () => void;
+  /**
+   * When false (Methods 1/4 local), generate still runs locally but is not an
+   * external provider/HTTP attempt.
+   */
+  countsAsExternalProviderAttempt?: boolean;
+  /** Override expected provider identity (local / screenshot routers). */
+  expectedProviderName?: string;
+  expectedModel?: string;
 }
 
 export interface RunCellResult {
@@ -433,16 +441,30 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
     expectedProviderAuthId: args.config.providerAuthId,
   };
 
-  const configForCall =
-    args.config.executionMode === "dry-run" && !args.config.providerApiKeyPresent
-      ? { ...args.config, providerApiKeyPresent: true }
-      : args.config;
+  const countsExternal = args.countsAsExternalProviderAttempt !== false;
+  const expectedProviderName = args.expectedProviderName ?? args.config.providerName;
+  const expectedModel = args.expectedModel ?? args.config.providerModel;
+  let configForCall: ProductionConfig = {
+    ...args.config,
+    providerName: expectedProviderName,
+    providerModel: expectedModel,
+  };
+  if (
+    (args.config.executionMode === "dry-run" && !args.config.providerApiKeyPresent) ||
+    args.method === 1 ||
+    args.method === 3 ||
+    args.method === 4
+  ) {
+    configForCall = { ...configForCall, providerApiKeyPresent: true };
+  }
 
-  args.onProviderAttempt?.();
+  if (countsExternal) {
+    args.onProviderAttempt?.();
+  }
   const result = await executeProviderContract(request, {
     config: configForCall,
     transport: args.transport,
-    expectedProviderName: args.config.providerName,
+    expectedProviderName,
     remainingRunBudgetMicros: args.remainingRunBudgetMicros,
     seenProviderRequestIds: args.seenProviderRequestIds,
   });
@@ -507,7 +529,7 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
       args,
       receipt,
       result.errors,
-      true,
+      countsExternal,
       slot.slot.slotKey,
       slot.slot.slotIndex,
     );
@@ -555,7 +577,7 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
       args,
       receipt,
       gfStorage.errors,
-      true,
+      countsExternal,
       slot.slot.slotKey,
       slot.slot.slotIndex,
     );
@@ -614,7 +636,7 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
       args,
       receipt,
       rightsSchema.errors,
-      true,
+      countsExternal,
       slot.slot.slotKey,
       slot.slot.slotIndex,
     );
@@ -678,7 +700,7 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
       completedAt: new Date().toISOString(),
       fixtureMarker,
     });
-    return writeFailure(args, receipt, errs, true, slot.slot.slotKey, slot.slot.slotIndex);
+    return writeFailure(args, receipt, errs, countsExternal, slot.slot.slotKey, slot.slot.slotIndex);
   }
 
   // Only after schema gates pass: write bytes + accepted artifacts (same validated objects).
@@ -740,7 +762,7 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
     receipt,
     mapping,
     costMicros: result.costMicros ?? 0n,
-    providerAttempted: true,
+    providerAttempted: countsExternal,
     attemptSlotKey: slot.slot.slotKey,
     attemptSlotIndex: slot.slot.slotIndex,
   };

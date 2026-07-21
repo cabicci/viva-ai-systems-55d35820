@@ -275,16 +275,16 @@ describe("provider contract + output validation (offline mock)", () => {
     expect(result.bytes?.length).toBeGreaterThan(0);
   });
 
-  it("rejects missing credentials in production", async () => {
+  it("rejects missing credentials in production for Method 2", async () => {
     const config = requireConfig({
       ...dryRunEnv(),
       LESSON_VISUALS_EXECUTION_MODE: "production",
       LESSON_VISUALS_PROVIDER_API_KEY: "k",
-      LESSON_VISUALS_PROVIDER_ENDPOINT: "https://provider.example.invalid/v1/generate",
+      LESSON_VISUALS_PROVIDER_ENDPOINT: "https://api.openai.com/v1/images/generations",
     });
     const broken = { ...config, providerApiKeyPresent: false, executionMode: "production" as const };
     const transport = createMockProvider(mockOpts(broken, { costMicros: "1" }));
-    const result = await executeProviderContract(baseRequest(), {
+    const result = await executeProviderContract(baseRequest({ method: 2 }), {
       config: broken,
       transport,
       expectedProviderName: broken.providerName,
@@ -293,6 +293,19 @@ describe("provider contract + output validation (offline mock)", () => {
     });
     expect(result.ok).toBe(false);
     expect(result.errors.join(" ")).toMatch(/missing provider credentials/);
+  });
+
+  it("allows Method 1 local path without provider API key", async () => {
+    const config = requireConfig();
+    const transport = createMockProvider(mockOpts(config));
+    const result = await executeProviderContract(baseRequest({ method: 1 }), {
+      config: { ...config, providerApiKeyPresent: false, executionMode: "production" },
+      transport,
+      expectedProviderName: config.providerName,
+      remainingRunBudgetMicros: config.runCostCeilingMicros,
+      seenProviderRequestIds: new Set(),
+    });
+    expect(result.ok, result.errors.join("; ")).toBe(true);
   });
 
   it("rejects empty output", async () => {

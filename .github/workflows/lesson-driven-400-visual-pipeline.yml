@@ -199,6 +199,38 @@ jobs:
       - name: Install deps
         run: bun install --frozen-lockfile
 
+      - name: Install renderer OS fonts and browser libs
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            fonts-noto-core \
+            fonts-noto-ui-core \
+            fonts-liberation \
+            fontconfig \
+            libnss3 \
+            libatk-bridge2.0-0 \
+            libdrm2 \
+            libxkbcommon0 \
+            libgbm1 \
+            libasound2 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxfixes3 \
+            libxrandr2
+          fc-cache -f || true
+          # Ship bundled Tajawal into the fontconfig path for local master/hybrid rendering.
+          mkdir -p "$HOME/.local/share/fonts/masaarat-lesson-visuals"
+          cp -f src/lib/lesson-visuals/v1/fonts/Tajawal-*.ttf "$HOME/.local/share/fonts/masaarat-lesson-visuals/" || true
+          fc-cache -f || true
+
+      - name: Install Playwright Chromium for Method 3 capture
+        shell: bash
+        run: |
+          set -euo pipefail
+          bunx playwright install chromium
+
       - name: Bound max_parallel
         shell: bash
         run: |
@@ -410,6 +442,38 @@ jobs:
       - name: Install deps
         run: bun install --frozen-lockfile
 
+      - name: Install renderer OS fonts and browser libs
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            fonts-noto-core \
+            fonts-noto-ui-core \
+            fonts-liberation \
+            fontconfig \
+            libnss3 \
+            libatk-bridge2.0-0 \
+            libdrm2 \
+            libxkbcommon0 \
+            libgbm1 \
+            libasound2 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxfixes3 \
+            libxrandr2
+          fc-cache -f || true
+          # Ship bundled Tajawal into the fontconfig path for local master/hybrid rendering.
+          mkdir -p "$HOME/.local/share/fonts/masaarat-lesson-visuals"
+          cp -f src/lib/lesson-visuals/v1/fonts/Tajawal-*.ttf "$HOME/.local/share/fonts/masaarat-lesson-visuals/" || true
+          fc-cache -f || true
+
+      - name: Install Playwright Chromium for Method 3 capture
+        shell: bash
+        run: |
+          set -euo pipefail
+          bunx playwright install chromium
+
       - name: Download runtime quota context
         uses: actions/download-artifact@v4
         with:
@@ -528,6 +592,38 @@ jobs:
 
       - name: Install deps
         run: bun install --frozen-lockfile
+
+      - name: Install renderer OS fonts and browser libs
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            fonts-noto-core \
+            fonts-noto-ui-core \
+            fonts-liberation \
+            fontconfig \
+            libnss3 \
+            libatk-bridge2.0-0 \
+            libdrm2 \
+            libxkbcommon0 \
+            libgbm1 \
+            libasound2 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxfixes3 \
+            libxrandr2
+          fc-cache -f || true
+          # Ship bundled Tajawal into the fontconfig path for local master/hybrid rendering.
+          mkdir -p "$HOME/.local/share/fonts/masaarat-lesson-visuals"
+          cp -f src/lib/lesson-visuals/v1/fonts/Tajawal-*.ttf "$HOME/.local/share/fonts/masaarat-lesson-visuals/" || true
+          fc-cache -f || true
+
+      - name: Install Playwright Chromium for Method 3 capture
+        shell: bash
+        run: |
+          set -euo pipefail
+          bunx playwright install chromium
 
       - name: Download all cell artifacts
         uses: actions/download-artifact@v4

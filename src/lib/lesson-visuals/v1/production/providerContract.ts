@@ -51,7 +51,14 @@ export async function executeProviderContract(
   const errors: string[] = [];
   errors.push(...validateRequestIdentity(request));
 
-  if (!ctx.config.providerApiKeyPresent && ctx.config.executionMode === "production") {
+  // Methods 1/4 are local (zero provider). Method 3 is screenshot capture (no API key).
+  // Only Method 2 (OpenAI Images) requires provider credentials.
+  const requiresProviderApiKey = request.method === 2;
+  if (
+    requiresProviderApiKey &&
+    !ctx.config.providerApiKeyPresent &&
+    ctx.config.executionMode === "production"
+  ) {
     errors.push("missing provider credentials");
   }
   if (!ctx.config.providerName) errors.push("unsupported provider configuration: name missing");

@@ -17,7 +17,19 @@ export * from "./providerContract";
 export * from "./mockProvider";
 export * from "./httpProvider";
 export * from "./selectTransport";
+export * from "./methodRouter";
 export * from "./pilotManifest";
+export {
+  defaultRepoRoot,
+  loadLessonMaster,
+  resolveMasterAbsolutePath,
+} from "./masterLoader";
+export * from "./renderingSpec";
+export * from "./localMasterRenderer";
+export * from "./localMasterTransport";
+export * from "./openaiImagesAdapter";
+export * from "./openaiImagesTransport";
+export * from "./screenshotCapture";
 export * from "./receipts";
 export * from "./mappings";
 export * from "./runSummary";

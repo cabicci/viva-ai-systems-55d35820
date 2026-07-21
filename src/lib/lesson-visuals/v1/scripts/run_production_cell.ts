@@ -1,6 +1,8 @@
 /**
- * Workflow cell entry — dry-run uses mock; production uses real HTTP transport.
- * Never logs secret values. No automatic mock/production fallback.
+ * Workflow cell entry — method-aware production router.
+ * Method 1/4: local master PNG (zero provider/HTTP).
+ * Method 2: OpenAI Images API. Method 3: allowlisted screenshot.
+ * dry-run: mock only. Never logs secret values.
  */
 import { existsSync, mkdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
@@ -13,12 +15,17 @@ import {
   cellReceiptPath,
 } from "../production/cellPaths";
 import { runProductionCell } from "../production/cellRunner";
+import { loadLessonMaster } from "../production/masterLoader";
+import { selectMethodAwareTransport } from "../production/methodRouter";
 import { loadPriorAcceptedReceipts } from "../production/priorReceipts";
 import {
   validateRuntimeQuotaContext,
   type RuntimeQuotaContext,
 } from "../production/quotaContext";
-import { selectProviderTransport } from "../production/selectTransport";
+import {
+  buildLocaleRenderingSpec,
+  serializeRenderingSpec,
+} from "../production/renderingSpec";
 import {
   resolveContentShaFromEnv,
   resolveExecutionShaFromEnv,
@@ -96,9 +103,41 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
-  const selected = selectProviderTransport({
+  const lessonId = process.env.LESSON_ID ?? "";
+  const locale = (process.env.LOCALE ?? "en") as Locale;
+  const method = Number(process.env.METHOD) as Method;
+
+  let master;
+  try {
+    master = loadLessonMaster({
+      lessonId,
+      repoRoot: process.cwd(),
+      masterRelativePath: process.env.MASTER_RELATIVE_PATH ?? null,
+    });
+  } catch (err) {
+    console.error(
+      JSON.stringify({ ok: false, errors: [err instanceof Error ? err.message : String(err)] }),
+    );
+    process.exit(1);
+  }
+
+  let promptOrRenderingSpec: string;
+  try {
+    promptOrRenderingSpec = serializeRenderingSpec(
+      buildLocaleRenderingSpec(master, locale, method),
+    );
+  } catch (err) {
+    console.error(
+      JSON.stringify({ ok: false, errors: [err instanceof Error ? err.message : String(err)] }),
+    );
+    process.exit(1);
+  }
+
+  const selected = selectMethodAwareTransport({
     config,
+    method,
     apiKey: e.LESSON_VISUALS_PROVIDER_API_KEY ?? "",
+    master,
   });
   if (!selected.ok || !selected.transport) {
     console.error(JSON.stringify({ ok: false, errors: selected.errors }));
@@ -169,15 +208,18 @@ async function main(): Promise<void> {
     executionSha,
     approvedManifestSha256: (process.env.APPROVED_MANIFEST_SHA256 ?? "").toLowerCase(),
     cellId,
-    lessonId: process.env.LESSON_ID ?? "",
-    locale: (process.env.LOCALE ?? "en") as Locale,
-    method: Number(process.env.METHOD) as Method,
-    promptOrRenderingSpec: `lesson-visual:${process.env.LESSON_ID}:${process.env.LOCALE}`,
+    lessonId,
+    locale,
+    method,
+    promptOrRenderingSpec,
     attemptNumber,
     remainingRunBudgetMicros: config.runCostCeilingMicros,
     seenProviderRequestIds: new Set(),
     priorAcceptedReceipt: prior,
     quotaContext,
+    countsAsExternalProviderAttempt: selected.countsAsExternalProviderAttempt,
+    expectedProviderName: selected.expectedProviderName ?? undefined,
+    expectedModel: selected.expectedModel ?? undefined,
     onProviderAttempt: () => {
       attempts += 1;
     },
@@ -230,6 +272,7 @@ async function main(): Promise<void> {
       attemptSlotKey: result.attemptSlotKey,
       transportKind: selected.kind,
       generateCallCount: transport.generateCallCount ?? null,
+      httpCallCount: transport.httpCallCount ?? null,
     }),
   );
   if (

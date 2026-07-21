@@ -27,33 +27,129 @@ function chunk(type: string, data: Buffer): Buffer {
   return Buffer.concat([len, typeBuf, data, crcBuf]);
 }
 
-export function encodeSolidPng(width: number, height: number, rgb: [number, number, number]): Buffer {
+function buildIhdr(width: number, height: number): Buffer {
+  const ihdr = Buffer.alloc(13);
+  ihdr.writeUInt32BE(width, 0);
+  ihdr.writeUInt32BE(height, 4);
+  ihdr[8] = 8; // bit depth
+  ihdr[9] = 2; // RGB
+  ihdr[10] = 0;
+  ihdr[11] = 0;
+  ihdr[12] = 0;
+  return ihdr;
+}
+
+/** Encode an RGB buffer (width*height*3, row-major, no filter bytes) as PNG. */
+export function encodeRgbPng(width: number, height: number, rgb: Buffer): Buffer {
   if (width < 1 || height < 1 || width > 8192 || height > 8192) {
     throw new Error("unsupported PNG dimensions");
   }
-  const [r, g, b] = rgb;
+  if (rgb.length !== width * height * 3) {
+    throw new Error("RGB buffer length mismatch");
+  }
   const rowSize = 1 + width * 3;
   const raw = Buffer.alloc(rowSize * height);
   for (let y = 0; y < height; y++) {
     const rowStart = y * rowSize;
     raw[rowStart] = 0;
-    for (let x = 0; x < width; x++) {
-      const i = rowStart + 1 + x * 3;
-      raw[i] = r;
-      raw[i + 1] = g;
-      raw[i + 2] = b;
+    rgb.copy(raw, rowStart + 1, y * width * 3, (y + 1) * width * 3);
+  }
+  const idat = deflateSync(raw);
+  return Buffer.concat([
+    PNG_SIG,
+    chunk("IHDR", buildIhdr(width, height)),
+    chunk("IDAT", idat),
+    chunk("IEND", Buffer.alloc(0)),
+  ]);
+}
+
+export function encodeSolidPng(width: number, height: number, rgb: [number, number, number]): Buffer {
+  if (width < 1 || height < 1 || width > 8192 || height > 8192) {
+    throw new Error("unsupported PNG dimensions");
+  }
+  const [r, g, b] = rgb;
+  const pixels = Buffer.alloc(width * height * 3);
+  for (let i = 0; i < pixels.length; i += 3) {
+    pixels[i] = r;
+    pixels[i + 1] = g;
+    pixels[i + 2] = b;
+  }
+  return encodeRgbPng(width, height, pixels);
+}
+
+/** Decode RGB PNG (color type 2, 8-bit) to raw RGB bytes. */
+export function decodeRgbPng(bytes: Buffer): { width: number; height: number; rgb: Buffer } | null {
+  const info = inspectPng(bytes);
+  if (!info || !info.decodable || info.bitDepth !== 8 || info.colorType !== 2) return null;
+  let offset = 8;
+  const idatParts: Buffer[] = [];
+  while (offset + 12 <= bytes.length) {
+    const len = bytes.readUInt32BE(offset);
+    const t = bytes.subarray(offset + 4, offset + 8).toString("ascii");
+    const d = bytes.subarray(offset + 8, offset + 8 + len);
+    if (t === "IDAT") idatParts.push(d);
+    if (t === "IEND") break;
+    offset += 12 + len;
+  }
+  let raw: Buffer;
+  try {
+    raw = inflateSync(Buffer.concat(idatParts));
+  } catch {
+    return null;
+  }
+  const rowSize = 1 + info.width * 3;
+  if (raw.length !== rowSize * info.height) return null;
+  const rgb = Buffer.alloc(info.width * info.height * 3);
+  for (let y = 0; y < info.height; y++) {
+    const rowStart = y * rowSize;
+    if (raw[rowStart] !== 0) return null; // only filter-none
+    raw.copy(rgb, y * info.width * 3, rowStart + 1, rowStart + rowSize);
+  }
+  return { width: info.width, height: info.height, rgb };
+}
+
+/** Nearest-neighbor scale of an RGB buffer to exact target dimensions. */
+export function scaleRgbNearest(
+  src: Buffer,
+  srcW: number,
+  srcH: number,
+  dstW: number,
+  dstH: number,
+): Buffer {
+  if (src.length !== srcW * srcH * 3) throw new Error("source RGB length mismatch");
+  const dst = Buffer.alloc(dstW * dstH * 3);
+  for (let y = 0; y < dstH; y++) {
+    const sy = Math.min(srcH - 1, Math.floor((y * srcH) / dstH));
+    for (let x = 0; x < dstW; x++) {
+      const sx = Math.min(srcW - 1, Math.floor((x * srcW) / dstW));
+      const si = (sy * srcW + sx) * 3;
+      const di = (y * dstW + x) * 3;
+      dst[di] = src[si]!;
+      dst[di + 1] = src[si + 1]!;
+      dst[di + 2] = src[si + 2]!;
     }
   }
-  const ihdr = Buffer.alloc(13);
-  ihdr.writeUInt32BE(width, 0);
-  ihdr.writeUInt32BE(height, 4);
-  ihdr[8] = 8;
-  ihdr[9] = 2;
-  ihdr[10] = 0;
-  ihdr[11] = 0;
-  ihdr[12] = 0;
-  const idat = deflateSync(raw);
-  return Buffer.concat([PNG_SIG, chunk("IHDR", ihdr), chunk("IDAT", idat), chunk("IEND", Buffer.alloc(0))]);
+  return dst;
+}
+
+/**
+ * Normalize any accepted PNG to exact configured dimensions.
+ * RGB PNGs are scaled; non-decodable inputs fail closed.
+ */
+export function normalizePngToExactSize(
+  bytes: Buffer,
+  width: number,
+  height: number,
+): { ok: true; bytes: Buffer } | { ok: false; errors: string[] } {
+  const decoded = decodeRgbPng(bytes);
+  if (!decoded) {
+    return { ok: false, errors: ["PNG normalize requires decodable 8-bit RGB PNG"] };
+  }
+  if (decoded.width === width && decoded.height === height) {
+    return { ok: true, bytes };
+  }
+  const scaled = scaleRgbNearest(decoded.rgb, decoded.width, decoded.height, width, height);
+  return { ok: true, bytes: encodeRgbPng(width, height, scaled) };
 }
 
 export interface PngInfo {
