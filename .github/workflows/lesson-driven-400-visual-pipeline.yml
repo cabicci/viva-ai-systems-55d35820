@@ -305,9 +305,9 @@ jobs:
           pathlib.Path("all-cell-ids.json").write_text(json.dumps(ids), encoding="utf-8")
           print(f"all_cells={len(ids)}")
           PY
-          echo "all_cell_ids_json<<EOF" >> "$GITHUB_OUTPUT"
-          cat all-cell-ids.json >> "$GITHUB_OUTPUT"
-          echo "EOF" >> "$GITHUB_OUTPUT"
+          # Compact single-line JSON — use printf (not <<EOF) so a missing trailing
+          # newline cannot glue the closing delimiter onto the JSON line.
+          printf 'all_cell_ids_json=%s\n' "$(cat all-cell-ids.json)" >> "$GITHUB_OUTPUT"
 
       - name: Upload immutable runtime quota context
         uses: actions/upload-artifact@v4
@@ -381,11 +381,9 @@ jobs:
           pathlib.Path("matrix.json").write_text(json.dumps(out), encoding="utf-8")
           print(f"matrix_cells={len(out)} content={content_sha} execution={execution_sha}")
           PY
-          {
-            echo "matrix<<EOF"
-            cat matrix.json
-            echo "EOF"
-          } >> "$GITHUB_OUTPUT"
+          # Compact single-line JSON — use printf (not <<EOF) so a missing trailing
+          # newline cannot glue the closing delimiter onto the JSON line.
+          printf 'matrix=%s\n' "$(cat matrix.json)" >> "$GITHUB_OUTPUT"
           echo "run_id=lv-${{ github.event.inputs.execution_sha }}-${{ github.run_id }}" >> "$GITHUB_OUTPUT"
 
   cells:

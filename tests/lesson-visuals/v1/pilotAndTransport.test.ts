@@ -560,3 +560,59 @@ describe("Production HTTP transport selection", () => {
     await expect(empty.generate(request)).rejects.toThrow(/empty output|missing image/);
   });
 });
+
+describe("GitHub Actions matrix output delimiter safety", () => {
+  const workflowPath = resolve(
+    repoRoot,
+    ".github/workflows/lesson-driven-400-visual-pipeline.yml",
+  );
+
+  function writeGithubOutputLine(key: string, jsonBody: string): string {
+    // Mirrors workflow: printf 'key=%s\n' "$(cat file)" >> "$GITHUB_OUTPUT"
+    return `${key}=${jsonBody}\n`;
+  }
+
+  function parseGithubOutput(raw: string): Record<string, string> {
+    const out: Record<string, string> = {};
+    for (const line of raw.split("\n")) {
+      if (!line) continue;
+      const eq = line.indexOf("=");
+      expect(eq).toBeGreaterThan(0);
+      out[line.slice(0, eq)] = line.slice(eq + 1);
+    }
+    return out;
+  }
+
+  it("writes newline-free compact JSON as valid single-line GITHUB_OUTPUT for all_cell_ids_json and matrix", () => {
+    const allCellIds = JSON.stringify(["a__en", "b__en"]);
+    const matrix = JSON.stringify([{ cellId: "a__en", lessonId: "a", locale: "en", method: 1 }]);
+    expect(allCellIds.includes("\n")).toBe(false);
+    expect(matrix.includes("\n")).toBe(false);
+    expect(allCellIds.endsWith("\n")).toBe(false);
+    expect(matrix.endsWith("\n")).toBe(false);
+
+    const githubOutput =
+      writeGithubOutputLine("all_cell_ids_json", allCellIds) +
+      writeGithubOutputLine("matrix", matrix);
+
+    // Broken <<EOF pattern would concatenate: ...json]EOF with no standalone delimiter line.
+    expect(githubOutput.includes("<<EOF")).toBe(false);
+    expect(githubOutput.split("\n").some((l) => l === "EOF")).toBe(false);
+
+    const parsed = parseGithubOutput(githubOutput);
+    expect(JSON.parse(parsed.all_cell_ids_json)).toEqual(["a__en", "b__en"]);
+    expect(JSON.parse(parsed.matrix)).toEqual([
+      { cellId: "a__en", lessonId: "a", locale: "en", method: 1 },
+    ]);
+  });
+
+  it("workflow no longer uses <<EOF for all_cell_ids_json or matrix; uses printf instead", () => {
+    const yaml = readFileSync(workflowPath, "utf8");
+    expect(yaml).not.toMatch(/all_cell_ids_json<<EOF/);
+    expect(yaml).not.toMatch(/matrix<<EOF/);
+    expect(yaml).toMatch(
+      /printf 'all_cell_ids_json=%s\\n' "\$\(cat all-cell-ids\.json\)" >> "\$GITHUB_OUTPUT"/,
+    );
+    expect(yaml).toMatch(/printf 'matrix=%s\\n' "\$\(cat matrix\.json\)" >> "\$GITHUB_OUTPUT"/);
+  });
+});
