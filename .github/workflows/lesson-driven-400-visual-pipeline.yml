@@ -1,4 +1,4 @@
-# Lesson-driven 400-visual pipeline (candidate)
+# Lesson-driven 400-visual production pipeline
 #
 # workflow_dispatch ONLY — never push/PR triggers.
 # Does NOT auto-commit mappings, Gallery, main, or publish.
@@ -8,10 +8,9 @@
 #   Cursor / CLI / unauth API MUST fail dispatch-authority.
 # See docs/lesson-visuals/v1/DISPATCH_AUTHORIZATION.md
 #
-# FUTURE PROMOTION STAGE (manual / serialized after approval):
-# A separate, human-gated workflow will promote accepted QA artifacts
-# into Gallery / CDN mappings. That stage is intentionally NOT this file
-# and must never be auto-chained from matrix completion.
+# Production configuration (vars/secrets) must be present before matrix expansion.
+# dry-run uses the offline mock provider transport (no network / no paid calls).
+# production mode refuses mock transport in this candidate (no paid generation enabled).
 
 name: lesson-driven-400-visual-pipeline
 
@@ -19,7 +18,7 @@ on:
   workflow_dispatch:
     inputs:
       source_sha:
-        description: Immutable git SHA the authorized manifest was authored against (must match approved)
+        description: Immutable git SHA (must equal authoritative base + checked-out HEAD)
         required: true
         type: string
       control_room_authorization_id:
@@ -35,7 +34,7 @@ on:
         required: true
         type: string
       mode:
-        description: full = all 400 cells; failed-only = retry non-ACCEPTED receipts
+        description: full = all 400 cells; failed-only = retry non-ACCEPTED receipts against the same matrix
         required: true
         type: choice
         options:
@@ -43,7 +42,7 @@ on:
           - failed-only
         default: full
       max_parallel:
-        description: Max parallel matrix jobs
+        description: Max parallel matrix jobs (bounded 1–50)
         required: true
         type: number
         default: 20
@@ -61,7 +60,7 @@ jobs:
     name: Lovable-only dispatch authority (fail-closed)
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source_sha
+      - name: Checkout immutable source_sha
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.inputs.source_sha }}
@@ -74,7 +73,6 @@ jobs:
           APPROVED_MANIFEST_SHA256: ${{ github.event.inputs.approved_manifest_sha256 }}
           DISPATCH_ACTOR: ${{ github.event.inputs.dispatch_actor }}
           GITHUB_ACTOR_NAME: ${{ github.actor }}
-          # Repository variable preferred; secret accepted as fallback. Empty = fail closed.
           LOVABLE_DISPATCH_ACTORS: ${{ vars.LOVABLE_DISPATCH_ACTORS || secrets.LOVABLE_DISPATCH_ACTORS }}
         run: |
           set -euo pipefail
@@ -84,7 +82,6 @@ jobs:
             echo "Cursor/CLI/unauth API cannot dispatch. Only Lovable after Control Room auth."
             exit 1
           fi
-          # Normalize allowlist to lowercase tokens
           mapfile -t ALLOW < <(echo "$ALLOW_RAW" | tr '[,;]' ' ' | tr '[:upper:]' '[:lower:]' | xargs -n1)
           in_allow() {
             local needle
@@ -136,75 +133,16 @@ jobs:
           fi
           echo "dispatch-authority PASSED (Lovable + Control Room)"
 
-  guard:
-    name: Guard source SHA + immutable manifest
+  preflight:
+    name: Global production preflight (before matrix)
     needs: [dispatch-authority]
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.matrix.outputs.matrix }}
+      run_id: ${{ steps.matrix.outputs.run_id }}
+      manifest_sha256: ${{ steps.preflight.outputs.manifest_sha256 }}
     steps:
-      - name: Checkout source_sha
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.inputs.source_sha }}
-
-      - name: Verify HEAD matches source_sha
-        shell: bash
-        run: |
-          set -euo pipefail
-          EXPECTED="${{ github.event.inputs.source_sha }}"
-          ACTUAL="$(git rev-parse HEAD)"
-          if [[ "$ACTUAL" != "$EXPECTED" ]]; then
-            echo "HEAD $ACTUAL != source_sha $EXPECTED"
-            exit 1
-          fi
-
-      - name: Load immutable authorized manifest
-        id: matrix
-        shell: bash
-        run: |
-          set -euo pipefail
-          MANIFEST="docs/lesson-visuals/v1/AUTHORIZED_MANIFEST.json"
-          test -f "$MANIFEST"
-          python3 - <<'PY'
-          import json, os, pathlib
-          m = json.loads(pathlib.Path("docs/lesson-visuals/v1/AUTHORIZED_MANIFEST.json").read_text(encoding="utf-8"))
-          assert m["manifestVersion"] == "lesson-visuals-authorized/v1"
-          assert m["sourceSha"] == os.environ["SOURCE_SHA"]
-          assert len(m["lessonIds"]) == 100
-          assert len(m["cells"]) == 400
-          mode = os.environ["MODE"]
-          cells = m["cells"]
-          if mode == "failed-only":
-              # Without prior receipts artifact, failed-only still uses full matrix;
-              # cell job will skip on ACCEPTED fingerprint match when receipts present.
-              pass
-          # Compact matrix payload
-          out = [{"cellId": c["cellId"], "lessonId": c["lessonId"], "locale": c["locale"], "method": c["method"]} for c in cells]
-          pathlib.Path("matrix.json").write_text(json.dumps(out), encoding="utf-8")
-          print(f"matrix_cells={len(out)}")
-          PY
-          {
-            echo "matrix<<EOF"
-            cat matrix.json
-            echo "EOF"
-          } >> "$GITHUB_OUTPUT"
-        env:
-          SOURCE_SHA: ${{ github.event.inputs.source_sha }}
-          MODE: ${{ github.event.inputs.mode }}
-
-  cells:
-    name: Cell ${{ matrix.cell.cellId }}
-    needs: guard
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    strategy:
-      fail-fast: false
-      max-parallel: ${{ fromJSON(github.event.inputs.max_parallel) }}
-      matrix:
-        cell: ${{ fromJSON(needs.guard.outputs.matrix) }}
-    steps:
-      - name: Checkout source_sha
+      - name: Checkout immutable source_sha
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.inputs.source_sha }}
@@ -217,25 +155,106 @@ jobs:
       - name: Install deps
         run: bun install --frozen-lockfile
 
-      - name: Resolve skip via ACCEPTED receipt fingerprint
-        id: skip
+      - name: Bound max_parallel
         shell: bash
         run: |
           set -euo pipefail
-          CELL_ID="${{ matrix.cell.cellId }}"
-          RECEIPT="artifacts/receipts/${CELL_ID}.receipt.json"
-          if [[ "${{ github.event.inputs.mode }}" == "failed-only" && -f "$RECEIPT" ]]; then
-            STATUS=$(python3 -c "import json;print(json.load(open('$RECEIPT'))['status'])")
-            if [[ "$STATUS" == "ACCEPTED" ]]; then
-              # Fingerprint match checked in adapter runner; mark skip tentative
-              echo "skip=true" >> "$GITHUB_OUTPUT"
-              exit 0
-            fi
+          MP="${{ github.event.inputs.max_parallel }}"
+          if ! [[ "$MP" =~ ^[0-9]+$ ]] || (( MP < 1 || MP > 50 )); then
+            echo "max_parallel out of bounds [1,50]: $MP"
+            exit 1
           fi
-          echo "skip=false" >> "$GITHUB_OUTPUT"
 
-      - name: Run method adapter
-        if: steps.skip.outputs.skip != 'true'
+      - name: Run typed global preflight
+        id: preflight
+        shell: bash
+        env:
+          SOURCE_SHA: ${{ github.event.inputs.source_sha }}
+          ACTUAL_SOURCE_SHA: ${{ github.event.inputs.source_sha }}
+          CONTROL_ROOM_AUTHORIZATION_ID: ${{ github.event.inputs.control_room_authorization_id }}
+          APPROVED_MANIFEST_SHA256: ${{ github.event.inputs.approved_manifest_sha256 }}
+          DISPATCH_ACTOR: ${{ github.event.inputs.dispatch_actor }}
+          GITHUB_ACTOR_NAME: ${{ github.actor }}
+          MODE: ${{ github.event.inputs.mode }}
+          MAX_PARALLEL: ${{ github.event.inputs.max_parallel }}
+          LOVABLE_DISPATCH_ACTORS: ${{ vars.LOVABLE_DISPATCH_ACTORS || secrets.LOVABLE_DISPATCH_ACTORS }}
+          LESSON_VISUALS_EXECUTION_MODE: ${{ vars.LESSON_VISUALS_EXECUTION_MODE }}
+          LESSON_VISUALS_PROVIDER_NAME: ${{ vars.LESSON_VISUALS_PROVIDER_NAME }}
+          LESSON_VISUALS_PROVIDER_MODEL: ${{ vars.LESSON_VISUALS_PROVIDER_MODEL }}
+          LESSON_VISUALS_PROVIDER_API_KEY: ${{ secrets.LESSON_VISUALS_PROVIDER_API_KEY }}
+          LESSON_VISUALS_PROVIDER_ACCOUNT_ID: ${{ secrets.LESSON_VISUALS_PROVIDER_ACCOUNT_ID }}
+          LESSON_VISUALS_AI_AUTH_ID: ${{ secrets.LESSON_VISUALS_AI_AUTH_ID }}
+          LESSON_VISUALS_STORAGE_CREDENTIAL: ${{ secrets.LESSON_VISUALS_STORAGE_CREDENTIAL }}
+          LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS: ${{ vars.LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS }}
+          LESSON_VISUALS_CELL_COST_CEILING_USD_MICROS: ${{ vars.LESSON_VISUALS_CELL_COST_CEILING_USD_MICROS }}
+          LESSON_VISUALS_MAX_OUTPUT_BYTES: ${{ vars.LESSON_VISUALS_MAX_OUTPUT_BYTES }}
+          LESSON_VISUALS_ALLOWED_MIME_TYPES: ${{ vars.LESSON_VISUALS_ALLOWED_MIME_TYPES }}
+          LESSON_VISUALS_REQUIRED_WIDTH: ${{ vars.LESSON_VISUALS_REQUIRED_WIDTH }}
+          LESSON_VISUALS_REQUIRED_HEIGHT: ${{ vars.LESSON_VISUALS_REQUIRED_HEIGHT }}
+          LESSON_VISUALS_QUOTA_CELLS: ${{ vars.LESSON_VISUALS_QUOTA_CELLS }}
+          LESSON_VISUALS_MAX_RETRIES: ${{ vars.LESSON_VISUALS_MAX_RETRIES }}
+          LESSON_VISUALS_OUTPUT_STORAGE_TARGET: ${{ vars.LESSON_VISUALS_OUTPUT_STORAGE_TARGET }}
+        run: |
+          set -euo pipefail
+          MANIFEST="docs/lesson-visuals/v1/AUTHORIZED_MANIFEST.json"
+          ACTUAL_MANIFEST_SHA="$(sha256sum "$MANIFEST" | awk '{print $1}')"
+          export ACTUAL_MANIFEST_SHA256="$ACTUAL_MANIFEST_SHA"
+          bun run src/lib/lesson-visuals/v1/scripts/run_production_preflight.ts
+          echo "manifest_sha256=$ACTUAL_MANIFEST_SHA" >> "$GITHUB_OUTPUT"
+
+      - name: Build immutable 400-cell matrix
+        id: matrix
+        shell: bash
+        env:
+          SOURCE_SHA: ${{ github.event.inputs.source_sha }}
+          MODE: ${{ github.event.inputs.mode }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, os, pathlib
+          m = json.loads(pathlib.Path("docs/lesson-visuals/v1/AUTHORIZED_MANIFEST.json").read_text(encoding="utf-8"))
+          assert m["manifestVersion"] == "lesson-visuals-authorized/v1"
+          assert m["sourceSha"] == os.environ["SOURCE_SHA"]
+          assert len(m["lessonIds"]) == 100
+          assert len(m["cells"]) == 400
+          assert m["locales"] == ["ar-EG", "ar-MSA", "ar-Gulf", "en"]
+          cells = m["cells"]
+          out = [{"cellId": c["cellId"], "lessonId": c["lessonId"], "locale": c["locale"], "method": c["method"]} for c in cells]
+          pathlib.Path("matrix.json").write_text(json.dumps(out), encoding="utf-8")
+          print(f"matrix_cells={len(out)}")
+          PY
+          {
+            echo "matrix<<EOF"
+            cat matrix.json
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+          echo "run_id=lv-${{ github.event.inputs.source_sha }}-${{ github.run_id }}" >> "$GITHUB_OUTPUT"
+
+  cells:
+    name: Cell ${{ matrix.cell.cellId }}
+    needs: preflight
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: ${{ fromJSON(github.event.inputs.max_parallel) }}
+      matrix:
+        cell: ${{ fromJSON(needs.preflight.outputs.matrix) }}
+    steps:
+      - name: Checkout immutable source_sha
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.source_sha }}
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install deps
+        run: bun install --frozen-lockfile
+
+      - name: Run production cell adapter contract
         shell: bash
         env:
           CELL_ID: ${{ matrix.cell.cellId }}
@@ -243,50 +262,31 @@ jobs:
           LOCALE: ${{ matrix.cell.locale }}
           METHOD: ${{ matrix.cell.method }}
           SOURCE_SHA: ${{ github.event.inputs.source_sha }}
-          # Paid AI disabled unless both secrets present — adapter still refuses without ceiling
-          AI_AUTH_ID: ${{ secrets.LESSON_VISUALS_AI_AUTH_ID }}
-          AI_COST_CEILING_USD: ${{ secrets.LESSON_VISUALS_AI_COST_CEILING_USD }}
+          APPROVED_MANIFEST_SHA256: ${{ github.event.inputs.approved_manifest_sha256 }}
+          CONTROL_ROOM_AUTHORIZATION_ID: ${{ github.event.inputs.control_room_authorization_id }}
+          MODE: ${{ github.event.inputs.mode }}
+          RUN_ID: ${{ needs.preflight.outputs.run_id }}
+          ATTEMPT_NUMBER: "1"
+          LOVABLE_DISPATCH_ACTORS: ${{ vars.LOVABLE_DISPATCH_ACTORS || secrets.LOVABLE_DISPATCH_ACTORS }}
+          LESSON_VISUALS_EXECUTION_MODE: ${{ vars.LESSON_VISUALS_EXECUTION_MODE }}
+          LESSON_VISUALS_PROVIDER_NAME: ${{ vars.LESSON_VISUALS_PROVIDER_NAME }}
+          LESSON_VISUALS_PROVIDER_MODEL: ${{ vars.LESSON_VISUALS_PROVIDER_MODEL }}
+          LESSON_VISUALS_PROVIDER_API_KEY: ${{ secrets.LESSON_VISUALS_PROVIDER_API_KEY }}
+          LESSON_VISUALS_PROVIDER_ACCOUNT_ID: ${{ secrets.LESSON_VISUALS_PROVIDER_ACCOUNT_ID }}
+          LESSON_VISUALS_AI_AUTH_ID: ${{ secrets.LESSON_VISUALS_AI_AUTH_ID }}
+          LESSON_VISUALS_STORAGE_CREDENTIAL: ${{ secrets.LESSON_VISUALS_STORAGE_CREDENTIAL }}
+          LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS: ${{ vars.LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS }}
+          LESSON_VISUALS_CELL_COST_CEILING_USD_MICROS: ${{ vars.LESSON_VISUALS_CELL_COST_CEILING_USD_MICROS }}
+          LESSON_VISUALS_MAX_OUTPUT_BYTES: ${{ vars.LESSON_VISUALS_MAX_OUTPUT_BYTES }}
+          LESSON_VISUALS_ALLOWED_MIME_TYPES: ${{ vars.LESSON_VISUALS_ALLOWED_MIME_TYPES }}
+          LESSON_VISUALS_REQUIRED_WIDTH: ${{ vars.LESSON_VISUALS_REQUIRED_WIDTH }}
+          LESSON_VISUALS_REQUIRED_HEIGHT: ${{ vars.LESSON_VISUALS_REQUIRED_HEIGHT }}
+          LESSON_VISUALS_QUOTA_CELLS: ${{ vars.LESSON_VISUALS_QUOTA_CELLS }}
+          LESSON_VISUALS_MAX_RETRIES: ${{ vars.LESSON_VISUALS_MAX_RETRIES }}
+          LESSON_VISUALS_OUTPUT_STORAGE_TARGET: ${{ vars.LESSON_VISUALS_OUTPUT_STORAGE_TARGET }}
         run: |
           set -euo pipefail
-          mkdir -p "artifacts/cells/${CELL_ID}" artifacts/receipts
-          # Candidate pipeline: produce receipt + placeholder comparison sheet metadata only.
-          # Full pixel production belongs to approved workflow runs; no Gallery publish here.
-          bun -e '
-            import { readFileSync, writeFileSync, mkdirSync } from "fs";
-            import { createHash } from "crypto";
-            const lessonId = process.env.LESSON_ID!;
-            const locale = process.env.LOCALE!;
-            const method = Number(process.env.METHOD);
-            const cellId = process.env.CELL_ID!;
-            const sourceSha = process.env.SOURCE_SHA!;
-            const master = JSON.parse(readFileSync(`docs/lesson-visuals/v1/masters/${lessonId}.master.json`,"utf8"));
-            if (master.method !== method) throw new Error("method mismatch");
-            if (master.sourceSha !== sourceSha) throw new Error("sourceSha mismatch");
-            const canonical = JSON.stringify({
-              cellId, lessonId, locale,
-              masterChecksum: master.checksum, method,
-              receiptVersion: "lesson-visual-receipt/v1", sourceSha
-            });
-            const fingerprint = createHash("sha256").update(canonical).digest("hex");
-            const receipt = {
-              receiptVersion: "lesson-visual-receipt/v1",
-              cellId, lessonId, locale, method,
-              status: "ACCEPTED",
-              sourceSha,
-              masterChecksum: master.checksum,
-              fingerprint,
-              artifactSha256: null,
-              producedAt: new Date().toISOString(),
-              error: null,
-              note: "candidate run — comparison sheet stub only; no production publish"
-            };
-            mkdirSync(`artifacts/cells/${cellId}`, { recursive: true });
-            writeFileSync(`artifacts/receipts/${cellId}.receipt.json`, JSON.stringify(receipt, null, 2));
-            writeFileSync(`artifacts/cells/${cellId}/comparison-sheet.json`, JSON.stringify({
-              cellId, lessonId, locale, method, masterChecksum: master.checksum
-            }, null, 2));
-            console.log("wrote receipt", cellId);
-          '
+          bun run src/lib/lesson-visuals/v1/scripts/run_production_cell.ts
 
       - name: Upload cell artifacts
         if: always()
@@ -296,19 +296,30 @@ jobs:
           path: |
             artifacts/cells/${{ matrix.cell.cellId }}/
             artifacts/receipts/${{ matrix.cell.cellId }}.receipt.json
+            artifacts/mappings/${{ matrix.cell.cellId }}.mapping.json
+            artifacts/rights/${{ matrix.cell.cellId }}.rights.json
+            artifacts/validations/${{ matrix.cell.cellId }}.validation.json
           if-no-files-found: warn
           retention-days: 14
 
   aggregate:
-    name: Aggregate QA + ledgers + contact sheets
-    needs: [guard, cells]
+    name: Aggregate validation + integrity
+    needs: [preflight, cells]
     if: always()
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source_sha
+      - name: Checkout immutable source_sha
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.inputs.source_sha }}
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install deps
+        run: bun install --frozen-lockfile
 
       - name: Download all cell artifacts
         uses: actions/download-artifact@v4
@@ -317,57 +328,29 @@ jobs:
           pattern: cell-*
           merge-multiple: false
 
-      - name: Build contact sheets, ledgers, QA package + sha256 sidecar
+      - name: Build aggregate validation (fail-closed)
         shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p artifacts/qa artifacts/ledgers artifacts/contact-sheets
-          python3 - <<'PY'
-          import hashlib, json, pathlib, os
-          root = pathlib.Path("collected")
-          receipts = list(root.rglob("*.receipt.json"))
-          cells = []
-          for r in receipts:
-              cells.append(json.loads(r.read_text(encoding="utf-8")))
-          qa = {
-              "sourceSha": os.environ["SOURCE_SHA"],
-              "mode": os.environ["MODE"],
-              "receiptCount": len(cells),
-              "accepted": sum(1 for c in cells if c.get("status")=="ACCEPTED"),
-              "failed": sum(1 for c in cells if c.get("status")=="FAILED"),
-              "cells": cells,
-              "promotionNote": "FUTURE PROMOTION STAGE is manual/serialized after approval — this job never commits Gallery/main/publish."
-          }
-          qa_path = pathlib.Path("artifacts/qa/qa-report.json")
-          qa_path.write_text(json.dumps(qa, indent=2, ensure_ascii=False), encoding="utf-8")
-          digest = hashlib.sha256(qa_path.read_bytes()).hexdigest()
-          pathlib.Path("artifacts/qa/qa-report.json.sha256").write_text(digest + "  qa-report.json\n", encoding="utf-8")
-          # Contact sheet index (metadata only — no production pixels required here)
-          contact = {"cells": [{"cellId": c["cellId"], "status": c["status"], "method": c["method"]} for c in cells]}
-          pathlib.Path("artifacts/contact-sheets/index.json").write_text(json.dumps(contact, indent=2), encoding="utf-8")
-          # Copy authored ledgers into artifact bundle
-          for name in ["method_decision_ledger.json", "screenshot_rights_ledger.json", "factual_evidence_ledger.json"]:
-              src = pathlib.Path("docs/lesson-visuals/v1/ledgers") / name
-              if src.exists():
-                  pathlib.Path("artifacts/ledgers").mkdir(parents=True, exist_ok=True)
-                  pathlib.Path("artifacts/ledgers", name).write_text(src.read_text(encoding="utf-8"), encoding="utf-8")
-          print("qa ok", digest)
-          PY
         env:
           SOURCE_SHA: ${{ github.event.inputs.source_sha }}
+          APPROVED_MANIFEST_SHA256: ${{ github.event.inputs.approved_manifest_sha256 }}
           MODE: ${{ github.event.inputs.mode }}
+          RUN_ID: ${{ needs.preflight.outputs.run_id }}
+          LESSON_VISUALS_EXECUTION_MODE: ${{ vars.LESSON_VISUALS_EXECUTION_MODE }}
+          LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS: ${{ vars.LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS }}
+          LESSON_VISUALS_QUOTA_CELLS: ${{ vars.LESSON_VISUALS_QUOTA_CELLS }}
+        run: |
+          set -euo pipefail
+          bun run src/lib/lesson-visuals/v1/scripts/run_production_aggregate.ts
 
       - name: Upload QA aggregate
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: lesson-visuals-qa-${{ github.event.inputs.source_sha }}
           path: |
             artifacts/qa/
-            artifacts/ledgers/
-            artifacts/contact-sheets/
           retention-days: 30
 
-      # NEVER auto-commit mappings / Gallery / main / publish
       - name: Promotion gate reminder
         run: |
           echo "FUTURE PROMOTION STAGE: manual/serialized after approval."
