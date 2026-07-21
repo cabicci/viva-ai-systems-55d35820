@@ -228,6 +228,7 @@ jobs:
           GITHUB_ACTOR_NAME: ${{ github.actor }}
           MODE: ${{ github.event.inputs.mode }}
           MAX_PARALLEL: ${{ github.event.inputs.max_parallel }}
+          RUN_ID: lv-${{ github.event.inputs.source_sha }}-${{ github.run_id }}
           PRIOR_RECEIPT_BUNDLE_PATH: ${{ steps.prior.outputs.need_prior == 'true' && 'prior-receipt-bundle' || '' }}
           LOVABLE_DISPATCH_ACTORS: ${{ vars.LOVABLE_DISPATCH_ACTORS || secrets.LOVABLE_DISPATCH_ACTORS }}
           LESSON_VISUALS_EXECUTION_MODE: ${{ vars.LESSON_VISUALS_EXECUTION_MODE }}
@@ -254,6 +255,7 @@ jobs:
           export ACTUAL_MANIFEST_SHA256="$ACTUAL_MANIFEST_SHA"
           bun run src/lib/lesson-visuals/v1/scripts/run_production_preflight.ts
           echo "manifest_sha256=$ACTUAL_MANIFEST_SHA" >> "$GITHUB_OUTPUT"
+          test -f artifacts/qa/runtime-quota-context.json
           python3 - <<'PY'
           import json, pathlib, os
           m = json.loads(pathlib.Path("docs/lesson-visuals/v1/AUTHORIZED_MANIFEST.json").read_text(encoding="utf-8"))
@@ -264,6 +266,14 @@ jobs:
           echo "all_cell_ids_json<<EOF" >> "$GITHUB_OUTPUT"
           cat all-cell-ids.json >> "$GITHUB_OUTPUT"
           echo "EOF" >> "$GITHUB_OUTPUT"
+
+      - name: Upload immutable runtime quota context
+        uses: actions/upload-artifact@v4
+        with:
+          name: runtime-quota-context-${{ github.event.inputs.source_sha }}-${{ github.run_id }}
+          path: artifacts/qa/runtime-quota-context.json
+          if-no-files-found: error
+          retention-days: 14
 
       - name: Build immutable 400-cell matrix
         id: matrix
@@ -317,6 +327,12 @@ jobs:
       - name: Install deps
         run: bun install --frozen-lockfile
 
+      - name: Download runtime quota context
+        uses: actions/download-artifact@v4
+        with:
+          name: runtime-quota-context-${{ github.event.inputs.source_sha }}-${{ github.run_id }}
+          path: artifacts/qa
+
       - name: Download authorized prior receipt bundle
         if: needs.preflight.outputs.need_prior == 'true'
         uses: actions/download-artifact@v4
@@ -341,6 +357,7 @@ jobs:
           MODE: ${{ github.event.inputs.mode }}
           RUN_ID: ${{ needs.preflight.outputs.run_id }}
           ATTEMPT_NUMBER: "1"
+          QUOTA_CONTEXT_PATH: artifacts/qa/runtime-quota-context.json
           PRIOR_RECEIPT_BUNDLE_PATH: ${{ needs.preflight.outputs.need_prior == 'true' && 'prior-receipt-bundle' || '' }}
           ALL_CELL_IDS_JSON: ${{ needs.preflight.outputs.all_cell_ids_json }}
           LOVABLE_DISPATCH_ACTORS: ${{ vars.LOVABLE_DISPATCH_ACTORS || secrets.LOVABLE_DISPATCH_ACTORS }}
@@ -363,6 +380,7 @@ jobs:
           LESSON_VISUALS_OUTPUT_STORAGE_TARGET: ${{ vars.LESSON_VISUALS_OUTPUT_STORAGE_TARGET }}
         run: |
           set -euo pipefail
+          test -f artifacts/qa/runtime-quota-context.json
           set +e
           OUT="$(bun run src/lib/lesson-visuals/v1/scripts/run_production_cell.ts)"
           CODE=$?
@@ -422,6 +440,12 @@ jobs:
           pattern: cell-*
           merge-multiple: false
 
+      - name: Download runtime quota context
+        uses: actions/download-artifact@v4
+        with:
+          name: runtime-quota-context-${{ github.event.inputs.source_sha }}-${{ github.run_id }}
+          path: artifacts/qa
+
       - name: Build aggregate validation (fail-closed)
         shell: bash
         env:
@@ -429,16 +453,19 @@ jobs:
           APPROVED_MANIFEST_SHA256: ${{ github.event.inputs.approved_manifest_sha256 }}
           MODE: ${{ github.event.inputs.mode }}
           RUN_ID: ${{ needs.preflight.outputs.run_id }}
+          QUOTA_CONTEXT_PATH: artifacts/qa/runtime-quota-context.json
           LESSON_VISUALS_EXECUTION_MODE: ${{ vars.LESSON_VISUALS_EXECUTION_MODE }}
           LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS: ${{ vars.LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS }}
           LESSON_VISUALS_PROVIDER_ATTEMPT_QUOTA: ${{ vars.LESSON_VISUALS_PROVIDER_ATTEMPT_QUOTA }}
         run: |
           set -euo pipefail
           test -d collected
+          test -f artifacts/qa/runtime-quota-context.json
           bun run src/lib/lesson-visuals/v1/scripts/run_production_aggregate.ts
           test -f artifacts/qa/aggregate-validation.json
           test -f artifacts/qa/aggregate-validation.json.sha256
           test -f artifacts/qa/run-summary.json
+          test -f artifacts/qa/runtime-quota-context.json
 
       - name: Upload QA aggregate
         if: always()

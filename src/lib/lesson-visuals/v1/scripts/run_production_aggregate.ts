@@ -11,7 +11,14 @@ import { join, resolve } from "node:path";
 import { EXPECTED_CELL_COUNT } from "../constants";
 import { validateArtifactRelationships } from "../production/artifactIntegrity";
 import {
+  reconcileAttemptRecords,
+  validateRuntimeQuotaContext,
+} from "../production/quotaContext";
+import {
   validateAggregateReportSchema,
+  validateMappingSchema,
+  validateOutputValidationSchema,
+  validateReceiptSchema,
   validateRunSummarySchema,
 } from "../production/schemaValidator";
 import type { ProductionCellReceipt, ProductionMapping } from "../production/types";
@@ -39,18 +46,76 @@ function main(): void {
 
   const receipts: ProductionCellReceipt[] = [];
   const mappings: ProductionMapping[] = [];
+  const attemptRecords: Array<{
+    cellId: string;
+    attemptNumber: number;
+    slotKey?: string;
+    providerAttempted: boolean;
+  }> = [];
   let providerAttemptsUsed = 0;
 
   for (const abs of walkFiles(collected)) {
     if (abs.endsWith(".receipt.json")) {
-      receipts.push(JSON.parse(readFileSync(abs, "utf8")) as ProductionCellReceipt);
+      const r = JSON.parse(readFileSync(abs, "utf8")) as ProductionCellReceipt;
+      const schema = validateReceiptSchema(r);
+      if (!schema.ok) {
+        // still collect; integrity report will fail
+      }
+      receipts.push(r);
     }
     if (abs.endsWith(".mapping.json")) {
-      mappings.push(JSON.parse(readFileSync(abs, "utf8")) as ProductionMapping);
+      const m = JSON.parse(readFileSync(abs, "utf8")) as ProductionMapping;
+      validateMappingSchema(m);
+      mappings.push(m);
+    }
+    if (abs.endsWith(".validation.json")) {
+      const v = JSON.parse(readFileSync(abs, "utf8"));
+      const schema = validateOutputValidationSchema(v);
+      if (!schema.ok) {
+        // collected for report errors via relationships
+      }
     }
     if (abs.endsWith("attempt-meta.json")) {
-      const meta = JSON.parse(readFileSync(abs, "utf8")) as { attempts?: number };
-      providerAttemptsUsed += Number(meta.attempts ?? 0);
+      const meta = JSON.parse(readFileSync(abs, "utf8")) as {
+        cellId?: string;
+        attempts?: number;
+        providerAttempted?: boolean;
+        attemptSlotKey?: string | null;
+        attemptNumber?: number;
+      };
+      const attempts = Number(meta.attempts ?? 0);
+      providerAttemptsUsed += attempts;
+      attemptRecords.push({
+        cellId: meta.cellId ?? "",
+        attemptNumber: Number(meta.attemptNumber ?? attempts > 0 ? 1 : 0) || (attempts > 0 ? 1 : 0),
+        slotKey: meta.attemptSlotKey ?? undefined,
+        providerAttempted: Boolean(meta.providerAttempted) || attempts > 0,
+      });
+    }
+  }
+
+  // Prefer attempt-claim for slot identity when present
+  for (const abs of walkFiles(collected)) {
+    if (!abs.endsWith("attempt-claim.json")) continue;
+    const claim = JSON.parse(readFileSync(abs, "utf8")) as {
+      cellId: string;
+      attemptNumber: number;
+      slotKey: string;
+      providerInvoked?: boolean;
+    };
+    const existing = attemptRecords.find(
+      (r) => r.cellId === claim.cellId && r.attemptNumber === claim.attemptNumber,
+    );
+    if (existing) {
+      existing.slotKey = claim.slotKey;
+      existing.providerAttempted = Boolean(claim.providerInvoked);
+    } else {
+      attemptRecords.push({
+        cellId: claim.cellId,
+        attemptNumber: claim.attemptNumber,
+        slotKey: claim.slotKey,
+        providerAttempted: Boolean(claim.providerInvoked),
+      });
     }
   }
 
@@ -80,6 +145,34 @@ function main(): void {
     providerAttemptQuota: attemptQuota,
     providerAttemptsUsed,
   });
+
+  const quotaPath =
+    process.env.QUOTA_CONTEXT_PATH ??
+    resolve(process.cwd(), "artifacts/qa/runtime-quota-context.json");
+  if (existsSync(quotaPath)) {
+    const q = validateRuntimeQuotaContext(JSON.parse(readFileSync(quotaPath, "utf8")), {
+      runId: process.env.RUN_ID,
+      sourceSha: process.env.SOURCE_SHA,
+      approvedManifestSha256: (process.env.APPROVED_MANIFEST_SHA256 ?? "").toLowerCase(),
+      mode,
+    });
+    if (!q.ok || !q.context) {
+      report.ok = false;
+      report.errors.push(...q.errors.map((e) => `quota-context: ${e}`));
+    } else {
+      const recon = reconcileAttemptRecords(
+        q.context,
+        attemptRecords.filter((r) => r.cellId),
+      );
+      if (!recon.ok) {
+        report.ok = false;
+        report.errors.push(...recon.errors.map((e) => `attempt-reconcile: ${e}`));
+      }
+    }
+  } else {
+    report.ok = false;
+    report.errors.push("runtime quota context missing for aggregate reconciliation");
+  }
 
   const rs = validateRunSummarySchema(report.runSummary);
   const ag = validateAggregateReportSchema(report);

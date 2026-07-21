@@ -2,13 +2,23 @@
  * Workflow cell entry — mock transport only when EXECUTION_MODE=dry-run.
  * Production mode requires a non-mock transport (not enabled in this candidate).
  */
-import { existsSync, mkdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import type { Locale, Method } from "../types";
+import { writeCellAttemptMeta } from "../production/attemptMeta";
 import { loadProductionConfig, type ProductionEnv } from "../production/config";
+import {
+  assertSafeCellId,
+  cellPriorEvidencePath,
+  cellReceiptPath,
+} from "../production/cellPaths";
 import { createMockProvider } from "../production/mockProvider";
 import { runProductionCell } from "../production/cellRunner";
 import { loadPriorAcceptedReceipts } from "../production/priorReceipts";
+import {
+  validateRuntimeQuotaContext,
+  type RuntimeQuotaContext,
+} from "../production/quotaContext";
 import type { ProductionCellReceipt } from "../production/types";
 
 function env(): ProductionEnv {
@@ -36,6 +46,26 @@ function env(): ProductionEnv {
   };
 }
 
+function loadQuotaContext(): RuntimeQuotaContext {
+  const path = process.env.QUOTA_CONTEXT_PATH ?? "artifacts/qa/runtime-quota-context.json";
+  const abs = resolve(process.cwd(), path);
+  if (!existsSync(abs)) {
+    throw new Error(`quota context missing: ${abs}`);
+  }
+  const parsed = JSON.parse(readFileSync(abs, "utf8"));
+  const v = validateRuntimeQuotaContext(parsed, {
+    runId: process.env.RUN_ID,
+    controlRoomAuthorizationId: process.env.CONTROL_ROOM_AUTHORIZATION_ID,
+    sourceSha: process.env.SOURCE_SHA,
+    approvedManifestSha256: (process.env.APPROVED_MANIFEST_SHA256 ?? "").toLowerCase(),
+    mode: (process.env.MODE ?? "full") as "full" | "failed-only",
+  });
+  if (!v.ok || !v.context) {
+    throw new Error(`quota context invalid: ${v.errors.join("; ")}`);
+  }
+  return v.context;
+}
+
 async function main(): Promise<void> {
   const loaded = loadProductionConfig(env());
   if (!loaded.ok || !loaded.config) {
@@ -56,6 +86,14 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
+  let cellId: string;
+  try {
+    cellId = assertSafeCellId(process.env.CELL_ID ?? "");
+  } catch (e) {
+    console.error(JSON.stringify({ ok: false, errors: [e instanceof Error ? e.message : String(e)] }));
+    process.exit(1);
+  }
+
   const transport = createMockProvider({
     providerName: config.providerName,
     model: config.providerModel,
@@ -71,7 +109,6 @@ async function main(): Promise<void> {
   mkdirSync(artifactsRoot, { recursive: true });
 
   const mode = (process.env.MODE ?? "full") as "full" | "failed-only";
-  const cellId = process.env.CELL_ID ?? "";
   let prior: ProductionCellReceipt | null = null;
 
   if (mode === "failed-only") {
@@ -98,7 +135,16 @@ async function main(): Promise<void> {
     prior = one.acceptedByCellId.get(cellId) ?? null;
   }
 
+  let quotaContext: RuntimeQuotaContext;
+  try {
+    quotaContext = loadQuotaContext();
+  } catch (e) {
+    console.error(JSON.stringify({ ok: false, errors: [e instanceof Error ? e.message : String(e)] }));
+    process.exit(1);
+  }
+
   let attempts = 0;
+  const attemptNumber = Number(process.env.ATTEMPT_NUMBER ?? "1");
   const result = await runProductionCell({
     artifactsRoot,
     config,
@@ -112,19 +158,51 @@ async function main(): Promise<void> {
     locale: (process.env.LOCALE ?? "en") as Locale,
     method: Number(process.env.METHOD) as Method,
     promptOrRenderingSpec: `lesson-visual:${process.env.LESSON_ID}:${process.env.LOCALE}`,
-    attemptNumber: Number(process.env.ATTEMPT_NUMBER ?? "1"),
+    attemptNumber,
     remainingRunBudgetMicros: config.runCostCeilingMicros,
     seenProviderRequestIds: new Set(),
     priorAcceptedReceipt: prior,
+    quotaContext,
     onProviderAttempt: () => {
       attempts += 1;
     },
   });
 
-  writeFileSync(
-    resolve(artifactsRoot, "cells", cellId, "attempt-meta.json"),
-    `${JSON.stringify({ providerAttempted: result.providerAttempted, attempts }, null, 2)}\n`,
-  );
+  try {
+    writeCellAttemptMeta({
+      artifactsRoot,
+      cellId,
+      providerAttempted: result.providerAttempted,
+      attempts,
+      attemptNumber,
+      attemptSlotKey: result.attemptSlotKey,
+      attemptSlotIndex: result.attemptSlotIndex,
+      status: result.receipt.status,
+    });
+  } catch (e) {
+    console.error(
+      JSON.stringify({
+        ok: false,
+        errors: [`attempt-meta write failed: ${e instanceof Error ? e.message : String(e)}`],
+      }),
+    );
+    process.exit(1);
+  }
+
+  if (result.receipt.status === "SKIPPED") {
+    if (!existsSync(cellReceiptPath(artifactsRoot, cellId))) {
+      console.error(JSON.stringify({ ok: false, errors: ["skipped receipt missing after write"] }));
+      process.exit(1);
+    }
+    if (!existsSync(cellPriorEvidencePath(artifactsRoot, cellId))) {
+      console.error(JSON.stringify({ ok: false, errors: ["prior-evidence missing after skip"] }));
+      process.exit(1);
+    }
+    if (result.mapping) {
+      console.error(JSON.stringify({ ok: false, errors: ["skipped cell must not produce mapping"] }));
+      process.exit(1);
+    }
+  }
 
   console.log(
     JSON.stringify({
@@ -134,6 +212,8 @@ async function main(): Promise<void> {
       mapping: Boolean(result.mapping),
       costMicros: result.costMicros.toString(),
       providerAttempted: result.providerAttempted,
+      attemptSlotKey: result.attemptSlotKey,
+      mockGenerateCalls: transport.generateCallCount,
     }),
   );
   if (

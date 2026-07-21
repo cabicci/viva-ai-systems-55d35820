@@ -40,10 +40,13 @@ export interface MockProviderOptions {
 
 export function createMockProvider(opts: MockProviderOptions): ProviderTransport & {
   isMock: true;
+  generateCallCount: number;
 } {
-  return {
-    isMock: true,
+  const transport = {
+    isMock: true as const,
+    generateCallCount: 0,
     async generate(request: ProviderGenerationRequest): Promise<ProviderGenerationResponse> {
+      transport.generateCallCount += 1;
       const providerRequestId = createHash("sha256")
         .update(`${request.idempotencyKey}:${request.attemptNumber}`)
         .digest("hex")
@@ -193,4 +196,5 @@ export function createMockProvider(opts: MockProviderOptions): ProviderTransport
       };
     },
   };
+  return transport;
 }

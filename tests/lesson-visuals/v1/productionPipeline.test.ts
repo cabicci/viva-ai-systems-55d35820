@@ -15,9 +15,36 @@ import { encodeSolidPng, sha256Hex } from "../../../src/lib/lesson-visuals/v1/pr
 import { validateRepinState } from "../../../src/lib/lesson-visuals/v1/scripts/repin_source_sha";
 import { fingerprintProductionReceipt } from "../../../src/lib/lesson-visuals/v1/production/receipts";
 import { buildMappingFromAcceptedReceipt } from "../../../src/lib/lesson-visuals/v1/production/mappings";
+import { buildRuntimeQuotaContext } from "../../../src/lib/lesson-visuals/v1/production/quotaContext";
 import type { ProductionConfig, ProviderGenerationRequest } from "../../../src/lib/lesson-visuals/v1/production/types";
 
 const MANIFEST_PATH = "docs/lesson-visuals/v1/AUTHORIZED_MANIFEST.json";
+
+function padCellIds(seed: string[]): string[] {
+  const out = [...seed];
+  let i = 0;
+  while (out.length < 400) {
+    out.push(`pad-lesson-${i}__en`);
+    i += 1;
+  }
+  return out;
+}
+
+function quotaCtx(cellIds: string[] = ["intro-m1-l1-what-is-ai__en", "intro-m1-l2-first-prompt__en"]) {
+  const built = buildRuntimeQuotaContext({
+    runId: "run-test-1",
+    controlRoomAuthorizationId: "CR-TEST-001",
+    sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    approvedManifestSha256: "a".repeat(64),
+    mode: "full",
+    allCellIds: padCellIds(cellIds),
+    skippedCellIds: [],
+    maxRetries: 1,
+    configuredProviderAttemptQuota: 800,
+  });
+  if (!built.ok || !built.context) throw new Error(built.errors.join("; "));
+  return built.context;
+}
 
 function dryRunEnv(overrides: Partial<ProductionEnv> = {}): ProductionEnv {
   return {
@@ -391,6 +418,10 @@ describe("provider contract + output validation (offline mock)", () => {
       declaredByteLength: tainted.length,
       config,
       cellId: "intro-m1-l1-what-is-ai__en",
+      lessonId: "intro-m1-l1-what-is-ai",
+      locale: "en",
+      runId: "run-test-1",
+      controlRoomAuthorizationId: "CR-TEST-001",
       sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
       approvedManifestSha256: "a".repeat(64),
       forceProductionGates: true,
@@ -418,10 +449,28 @@ describe("receipts and mappings", () => {
       lessonId: "intro-m1-l1-what-is-ai",
       locale: "en",
       method: 1,
-      promptOrRenderingSpec: "x",
+      promptOrRenderingSpec: "master:intro-m1-l1-what-is-ai",
       attemptNumber: 1,
       remainingRunBudgetMicros: config.runCostCeilingMicros,
       seenProviderRequestIds: new Set(),
+      quotaContext: (() => {
+        const b = buildRuntimeQuotaContext({
+          runId: "run-map-1",
+          controlRoomAuthorizationId: "CR-MAP-1",
+          sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+          approvedManifestSha256: "d".repeat(64),
+          mode: "full",
+          allCellIds: padCellIds([
+            "intro-m1-l1-what-is-ai__en",
+            "intro-m1-l2-first-prompt__en",
+          ]),
+          skippedCellIds: [],
+          maxRetries: 1,
+          configuredProviderAttemptQuota: 800,
+        });
+        if (!b.context) throw new Error(b.errors.join("; "));
+        return b.context;
+      })(),
     });
     expect(ok.receipt.status).toBe("ACCEPTED");
     expect(ok.mapping).not.toBeNull();
@@ -442,10 +491,28 @@ describe("receipts and mappings", () => {
       lessonId: "intro-m1-l2-first-prompt",
       locale: "en",
       method: 1,
-      promptOrRenderingSpec: "x",
+      promptOrRenderingSpec: "master:intro-m1-l2-first-prompt",
       attemptNumber: 1,
       remainingRunBudgetMicros: config.runCostCeilingMicros,
       seenProviderRequestIds: new Set(),
+      quotaContext: (() => {
+        const b = buildRuntimeQuotaContext({
+          runId: "run-map-2",
+          controlRoomAuthorizationId: "CR-MAP-2",
+          sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+          approvedManifestSha256: "d".repeat(64),
+          mode: "full",
+          allCellIds: padCellIds([
+            "intro-m1-l1-what-is-ai__en",
+            "intro-m1-l2-first-prompt__en",
+          ]),
+          skippedCellIds: [],
+          maxRetries: 1,
+          configuredProviderAttemptQuota: 800,
+        });
+        if (!b.context) throw new Error(b.errors.join("; "));
+        return b.context;
+      })(),
     });
     expect(fail.receipt.status).not.toBe("ACCEPTED");
     expect(fail.mapping).toBeNull();
@@ -499,10 +566,11 @@ describe("receipts and mappings", () => {
       lessonId: "intro-m1-l1-what-is-ai",
       locale: "en",
       method: 1,
-      promptOrRenderingSpec: "x",
+      promptOrRenderingSpec: "master:intro-m1-l1-what-is-ai",
       attemptNumber: 1,
       remainingRunBudgetMicros: config.runCostCeilingMicros,
       seenProviderRequestIds: new Set(),
+      quotaContext: quotaCtx(),
     });
     expect(result.receipt.status).toBe("NON_RETRYABLE_FAILURE");
     expect(result.receipt.failureCode).toBe("MOCK_IN_PRODUCTION");

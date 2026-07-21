@@ -1,12 +1,16 @@
 /**
  * Workflow entry: global preflight before matrix expansion.
  * Fail-closed. Never logs secret values.
+ * Writes immutable runtime-quota-context.json for cell jobs.
  */
-import { resolve } from "node:path";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { AUTHORITATIVE_BASE_SOURCE_SHA } from "../constants";
+import { AUTHORITATIVE_BASE_SOURCE_SHA, AUTHORIZED_MANIFEST_RELATIVE_PATH } from "../constants";
 import { parseDispatchActorAllowlist } from "../dispatch/authorizationContract";
 import { loadProductionConfig, redactConfigForLog, type ProductionEnv } from "../production/config";
+import { loadPriorAcceptedReceipts } from "../production/priorReceipts";
+import { buildRuntimeQuotaContext } from "../production/quotaContext";
 import { runGlobalPreflight } from "../production/preflight";
 
 function moduleDir(): string {
@@ -51,9 +55,11 @@ function main(): void {
   const actualSource = process.env.ACTUAL_SOURCE_SHA ?? "";
   const actors = parseDispatchActorAllowlist(e.LOVABLE_DISPATCH_ACTORS);
   const priorPath = process.env.PRIOR_RECEIPT_BUNDLE_PATH ?? null;
+  const repoRoot = resolve(moduleDir(), "../../../../..");
+  const runId = process.env.RUN_ID ?? `lv-${sourceSha}-local`;
 
   const result = runGlobalPreflight({
-    repoRoot: resolve(moduleDir(), "../../../../.."),
+    repoRoot,
     env: e,
     mode,
     maxParallel,
@@ -76,24 +82,85 @@ function main(): void {
   });
 
   const cfg = loadProductionConfig(e);
+  if (!result.ok || !cfg.config || !result.manifestSha256) {
+    console.log(
+      JSON.stringify(
+        {
+          ok: false,
+          errors: result.errors,
+          manifestSha256: result.manifestSha256,
+          cellCount: result.cellCount,
+          eligibleCells: result.eligibleCells,
+          validSkippedCells: result.validSkippedCells,
+          maxProviderAttempts: result.maxProviderAttempts,
+          authoritativeBaseSourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+          config: cfg.config ? redactConfigForLog(cfg.config) : null,
+        },
+        null,
+        2,
+      ),
+    );
+    process.exit(1);
+  }
+
+  const manifest = JSON.parse(
+    readFileSync(resolve(repoRoot, AUTHORIZED_MANIFEST_RELATIVE_PATH), "utf8"),
+  ) as { cells: { cellId: string }[] };
+  const allCellIds = manifest.cells.map((c) => c.cellId);
+
+  const prior = loadPriorAcceptedReceipts({
+    mode,
+    priorReceiptBundlePath: priorPath,
+    expectedSourceSha: sourceSha,
+    expectedManifestSha256: result.manifestSha256,
+    expectedCellIds: allCellIds,
+    executionMode: cfg.config.executionMode,
+  });
+  if (!prior.ok) {
+    console.log(JSON.stringify({ ok: false, errors: prior.errors }, null, 2));
+    process.exit(1);
+  }
+
+  const quota = buildRuntimeQuotaContext({
+    runId,
+    controlRoomAuthorizationId: process.env.CONTROL_ROOM_AUTHORIZATION_ID ?? "",
+    sourceSha,
+    approvedManifestSha256: result.manifestSha256,
+    mode,
+    allCellIds,
+    skippedCellIds: [...prior.acceptedByCellId.keys()],
+    maxRetries: cfg.config.maxRetries,
+    configuredProviderAttemptQuota: cfg.config.providerAttemptQuota,
+  });
+  if (!quota.ok || !quota.context) {
+    console.log(JSON.stringify({ ok: false, errors: quota.errors }, null, 2));
+    process.exit(1);
+  }
+
+  const qaDir = resolve(process.cwd(), "artifacts", "qa");
+  mkdirSync(qaDir, { recursive: true });
+  const quotaPath = join(qaDir, "runtime-quota-context.json");
+  writeFileSync(quotaPath, `${JSON.stringify(quota.context, null, 2)}\n`, "utf8");
+
   console.log(
     JSON.stringify(
       {
-        ok: result.ok,
-        errors: result.errors,
+        ok: true,
+        errors: [],
         manifestSha256: result.manifestSha256,
         cellCount: result.cellCount,
-        eligibleCells: result.eligibleCells,
-        validSkippedCells: result.validSkippedCells,
-        maxProviderAttempts: result.maxProviderAttempts,
+        eligibleCells: quota.context.eligibleCells,
+        validSkippedCells: quota.context.validSkippedCells,
+        maxProviderAttempts: quota.context.maxProviderAttempts,
+        quotaContextPath: quotaPath,
+        quotaFingerprint: quota.context.fingerprint,
         authoritativeBaseSourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
-        config: cfg.config ? redactConfigForLog(cfg.config) : null,
+        config: redactConfigForLog(cfg.config),
       },
       null,
       2,
     ),
   );
-  if (!result.ok) process.exit(1);
 }
 
 main();
