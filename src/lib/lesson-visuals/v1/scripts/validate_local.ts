@@ -6,6 +6,7 @@
  */
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
+import { AUTHORITATIVE_BASE_SOURCE_SHA } from "../constants";
 import type { AuthorizedManifest, LessonVisualMaster } from "../types";
 import { LOCALES } from "../types";
 import { validateEvidence } from "../validators/evidence";
@@ -412,12 +413,12 @@ function validateDispatchContractSyntax(): ValidationIssue[] {
   // Pure contract smoke: authorized lovable passes; cursor fails
   const ok = validateDispatchAuthorization({
     controlRoomAuthorizationId: "CR-VALIDATE-SMOKE-001",
-    approvedSourceSha: "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+    approvedSourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
     approvedManifestSha256: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
     runMode: "full",
     dispatchActor: "lovable",
     githubActor: "lovable",
-    actualSourceSha: "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+    actualSourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
     actualManifestSha256: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
     allowedDispatchActors: DEFAULT_FIXTURE_DISPATCH_ACTORS,
   });
@@ -426,7 +427,7 @@ function validateDispatchContractSyntax(): ValidationIssue[] {
   }
   const bad = validateDispatchAuthorization({
     controlRoomAuthorizationId: "CR-VALIDATE-SMOKE-001",
-    approvedSourceSha: "540582d10d12ca1e0aa3c7246daf7a70972c9ba5",
+    approvedSourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
     approvedManifestSha256: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
     runMode: "full",
     dispatchActor: "cursor",
