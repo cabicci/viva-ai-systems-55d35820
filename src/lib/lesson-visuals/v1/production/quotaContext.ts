@@ -16,7 +16,7 @@ export interface RuntimeQuotaContext {
   controlRoomAuthorizationId: string;
   sourceSha: string;
   approvedManifestSha256: string;
-  mode: "full" | "failed-only";
+  mode: "full" | "failed-only" | "pilot";
   totalAuthorizedCells: number;
   validSkippedCells: number;
   eligibleCells: number;
@@ -24,12 +24,14 @@ export interface RuntimeQuotaContext {
   attemptsPerEligibleCell: number;
   maxProviderAttempts: number;
   configuredProviderAttemptQuota: number;
-  /** Authoritative matrix order (400). */
+  /** Authoritative matrix order (400 full/failed-only, or 12 pilot). */
   allCellIds: string[];
   /** Cells eligible for provider calls (ordered subset of allCellIds). */
   eligibleCellIds: string[];
   /** Cells with fully validated prior ACCEPTED receipts. */
   skippedCellIds: string[];
+  /** Present when mode=pilot — SHA-256 of AUTHORIZED_PILOT_12.json bytes. */
+  approvedPilotManifestSha256: string | null;
   /** SHA-256 of canonical context body excluding fingerprint field. */
   fingerprint: string;
 }
@@ -60,17 +62,32 @@ export function buildRuntimeQuotaContext(input: {
   controlRoomAuthorizationId: string;
   sourceSha: string;
   approvedManifestSha256: string;
-  mode: "full" | "failed-only";
+  mode: "full" | "failed-only" | "pilot";
   allCellIds: readonly string[];
   skippedCellIds: readonly string[];
   maxRetries: number;
   configuredProviderAttemptQuota: number;
+  approvedPilotManifestSha256?: string | null;
 }): { ok: boolean; errors: string[]; context: RuntimeQuotaContext | null } {
   const errors: string[] = [];
   const allCellIds = [...input.allCellIds];
   const skippedSet = new Set(input.skippedCellIds);
   for (const id of skippedSet) {
     if (!allCellIds.includes(id)) errors.push(`skipped cell not in matrix: ${id}`);
+  }
+  if (input.mode === "pilot") {
+    if (allCellIds.length !== 12) {
+      errors.push(`pilot quota matrix must be 12 cells, got ${allCellIds.length}`);
+    }
+    if (skippedSet.size !== 0) {
+      errors.push("pilot mode must not mix failed-only skips");
+    }
+    const pilotDigest = (input.approvedPilotManifestSha256 ?? "").toLowerCase();
+    if (!/^[a-f0-9]{64}$/.test(pilotDigest)) {
+      errors.push("approvedPilotManifestSha256 required for pilot");
+    }
+  } else if (input.approvedPilotManifestSha256) {
+    errors.push("approvedPilotManifestSha256 only allowed for pilot mode");
   }
   const eligibleCellIds = allCellIds.filter((id) => !skippedSet.has(id));
   const envelope = computeAttemptQuotaEnvelope({
@@ -107,6 +124,8 @@ export function buildRuntimeQuotaContext(input: {
     allCellIds,
     eligibleCellIds,
     skippedCellIds: allCellIds.filter((id) => skippedSet.has(id)),
+    approvedPilotManifestSha256:
+      input.mode === "pilot" ? (input.approvedPilotManifestSha256 ?? "").toLowerCase() : null,
   };
   const fingerprint = fingerprintQuotaContext(base);
   return { ok: true, errors: [], context: { ...base, fingerprint } };
@@ -147,8 +166,22 @@ export function validateRuntimeQuotaContext(
     allCellIds: c.allCellIds,
     eligibleCellIds: c.eligibleCellIds,
     skippedCellIds: c.skippedCellIds,
+    approvedPilotManifestSha256: c.approvedPilotManifestSha256 ?? null,
   });
   if (c.fingerprint !== rebuilt) errors.push("quota context fingerprint mismatch");
+  if (c.mode !== "full" && c.mode !== "failed-only" && c.mode !== "pilot") {
+    errors.push("quota context mode invalid");
+  }
+  if (c.mode === "pilot") {
+    if (!c.approvedPilotManifestSha256 || !/^[a-f0-9]{64}$/.test(c.approvedPilotManifestSha256)) {
+      errors.push("pilot quota context missing approvedPilotManifestSha256");
+    }
+    if (c.totalAuthorizedCells !== 12) {
+      errors.push("pilot quota context totalAuthorizedCells must be 12");
+    }
+  } else if (c.approvedPilotManifestSha256) {
+    errors.push("non-pilot quota context must not carry pilot digest");
+  }
   if (expected?.runId && c.runId !== expected.runId) errors.push("quota context runId mismatch");
   if (
     expected?.controlRoomAuthorizationId &&

@@ -208,7 +208,7 @@ export function validateRunSummarySchema(obj: unknown): { ok: boolean; errors: s
   reqStr(s.runId, "runId", errors);
   reqSha40(s.sourceSha, "sourceSha", errors);
   reqSha64(s.approvedManifestSha256, "approvedManifestSha256", errors);
-  if (s.mode !== "full" && s.mode !== "failed-only") errors.push("mode invalid");
+  if (s.mode !== "full" && s.mode !== "failed-only" && s.mode !== "pilot") errors.push("mode invalid");
   if (s.executionMode !== "production" && s.executionMode !== "dry-run") {
     errors.push("executionMode invalid");
   }

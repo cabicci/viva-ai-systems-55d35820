@@ -6,6 +6,7 @@ import {
   AUTHORIZED_MANIFEST_RELATIVE_PATH,
   EXPECTED_CELL_COUNT,
   EXPECTED_LESSON_COUNT,
+  EXPECTED_PILOT_CELL_COUNT,
   MAX_PARALLEL_CEILING,
   MIN_PARALLEL,
 } from "../constants";
@@ -18,6 +19,11 @@ import { validateRepinState } from "../scripts/repin_source_sha";
 import { computeAttemptQuotaEnvelope } from "./attemptQuota";
 import { preflightBudgetAndQuota } from "./budget";
 import { loadProductionConfig, type ProductionEnv } from "./config";
+import {
+  AUTHORIZED_PILOT_MANIFEST_RELATIVE_PATH,
+  sha256Utf8,
+  validatePilotManifest,
+} from "./pilotManifest";
 import { loadPriorAcceptedReceipts } from "./priorReceipts";
 import type { ProductionRunMode } from "./types";
 
@@ -29,13 +35,17 @@ export interface GlobalPreflightInput {
   maxParallel: number;
   priorReceiptBundlePath?: string | null;
   requireSourceShaEqualsBase?: boolean;
+  /** Required when mode=pilot — sha256 of AUTHORIZED_PILOT_12.json bytes. */
+  approvedPilotManifestSha256?: string | null;
 }
 
 export interface GlobalPreflightResult {
   ok: boolean;
   errors: string[];
   manifestSha256: string | null;
+  pilotManifestSha256: string | null;
   cellCount: number;
+  matrixCellIds: string[];
   eligibleCells: number;
   validSkippedCells: number;
   maxProviderAttempts: number;
@@ -59,10 +69,19 @@ export function validateMaxParallel(maxParallel: number): string[] {
 export function runGlobalPreflight(input: GlobalPreflightInput): GlobalPreflightResult {
   const errors: string[] = [];
 
-  if (input.mode !== "full" && input.mode !== "failed-only") {
+  if (input.mode !== "full" && input.mode !== "failed-only" && input.mode !== "pilot") {
     errors.push("unsupported mode");
   }
   errors.push(...validateMaxParallel(input.maxParallel));
+
+  if (input.mode === "pilot") {
+    const dig = (input.approvedPilotManifestSha256 ?? "").toLowerCase();
+    if (!/^[a-f0-9]{64}$/.test(dig)) {
+      errors.push("approved_pilot_manifest_sha256 required for pilot mode");
+    }
+  } else if ((input.approvedPilotManifestSha256 ?? "").trim()) {
+    errors.push("approved_pilot_manifest_sha256 only allowed for pilot mode");
+  }
 
   const dispatch = validateDispatchAuthorization(input.dispatch);
   if (!dispatch.ok) errors.push(...dispatch.errors.map((e) => `dispatch: ${e}`));
@@ -77,8 +96,8 @@ export function runGlobalPreflight(input: GlobalPreflightInput): GlobalPreflight
 
   const manifestPath = resolve(input.repoRoot, AUTHORIZED_MANIFEST_RELATIVE_PATH);
   let manifestSha256: string | null = null;
-  let cellCount = 0;
-  let cellIds: string[] = [];
+  let fullCellCount = 0;
+  let fullCellIds: string[] = [];
   try {
     const bytes = readFileSync(manifestPath);
     manifestSha256 = createHash("sha256").update(bytes).digest("hex");
@@ -87,13 +106,13 @@ export function runGlobalPreflight(input: GlobalPreflightInput): GlobalPreflight
       lessonIds: unknown[];
       sourceSha: string;
     };
-    cellCount = manifest.cells.length;
-    cellIds = manifest.cells.map((c) => c.cellId);
+    fullCellCount = manifest.cells.length;
+    fullCellIds = manifest.cells.map((c) => c.cellId);
     if (manifest.lessonIds.length !== EXPECTED_LESSON_COUNT) {
       errors.push(`lesson count ${manifest.lessonIds.length} != ${EXPECTED_LESSON_COUNT}`);
     }
-    if (cellCount !== EXPECTED_CELL_COUNT) {
-      errors.push(`cell count ${cellCount} != ${EXPECTED_CELL_COUNT}`);
+    if (fullCellCount !== EXPECTED_CELL_COUNT) {
+      errors.push(`cell count ${fullCellCount} != ${EXPECTED_CELL_COUNT}`);
     }
     if (input.requireSourceShaEqualsBase !== false) {
       if (manifest.sourceSha !== AUTHORITATIVE_BASE_SOURCE_SHA) {
@@ -123,22 +142,86 @@ export function runGlobalPreflight(input: GlobalPreflightInput): GlobalPreflight
     errors.push(`manifest read failed: ${e instanceof Error ? e.message : String(e)}`);
   }
 
+  let pilotManifestSha256: string | null = null;
+  let matrixCellIds = fullCellIds;
+  let cellCount = fullCellCount || EXPECTED_CELL_COUNT;
+
+  if (input.mode === "pilot" && manifestSha256) {
+    try {
+      const pilotPath = resolve(input.repoRoot, AUTHORIZED_PILOT_MANIFEST_RELATIVE_PATH);
+      const pilotBytes = readFileSync(pilotPath);
+      const pilotText = pilotBytes.toString("utf8");
+      pilotManifestSha256 = sha256Utf8(pilotText);
+      const approvedPilot = (input.approvedPilotManifestSha256 ?? "").toLowerCase();
+      if (approvedPilot && approvedPilot !== pilotManifestSha256) {
+        errors.push("approved_pilot_manifest_sha256 does not match AUTHORIZED_PILOT_12.json");
+      }
+      const parsed = JSON.parse(pilotText) as unknown;
+      const v = validatePilotManifest(parsed, {
+        sourceSha: input.dispatch.approvedSourceSha,
+        fullManifestSha256: manifestSha256,
+        fullCellIds,
+      });
+      if (!v.ok || !v.manifest) {
+        errors.push(...v.errors.map((e) => `pilot: ${e}`));
+      } else {
+        matrixCellIds = v.manifest.cells.map((c) => c.cellId);
+        cellCount = matrixCellIds.length;
+        if (cellCount !== EXPECTED_PILOT_CELL_COUNT) {
+          errors.push(`pilot matrix size ${cellCount} != ${EXPECTED_PILOT_CELL_COUNT}`);
+        }
+      }
+    } catch (e) {
+      errors.push(`pilot manifest read failed: ${e instanceof Error ? e.message : String(e)}`);
+    }
+  }
+
   let priorOk = true;
   let validSkippedCells = 0;
-  let eligibleCells = cellCount || EXPECTED_CELL_COUNT;
+  let eligibleCells = cellCount;
   if (config.config && manifestSha256) {
-    const prior = loadPriorAcceptedReceipts({
-      mode: input.mode,
-      priorReceiptBundlePath: input.priorReceiptBundlePath,
-      expectedSourceSha: input.dispatch.approvedSourceSha,
-      expectedManifestSha256: manifestSha256,
-      expectedCellIds: cellIds,
-      executionMode: config.config.executionMode,
-    });
-    priorOk = prior.ok;
-    if (!prior.ok) errors.push(...prior.errors.map((e) => `prior-receipts: ${e}`));
-    validSkippedCells = prior.skippedEligibleCount;
-    eligibleCells = (cellCount || EXPECTED_CELL_COUNT) - validSkippedCells;
+    if (input.mode === "failed-only") {
+      const prior = loadPriorAcceptedReceipts({
+        mode: input.mode,
+        priorReceiptBundlePath: input.priorReceiptBundlePath,
+        expectedSourceSha: input.dispatch.approvedSourceSha,
+        expectedManifestSha256: manifestSha256,
+        expectedCellIds: fullCellIds,
+        executionMode: config.config.executionMode,
+      });
+      priorOk = prior.ok;
+      if (!prior.ok) errors.push(...prior.errors.map((e) => `prior-receipts: ${e}`));
+      validSkippedCells = prior.skippedEligibleCount;
+      eligibleCells = (fullCellCount || EXPECTED_CELL_COUNT) - validSkippedCells;
+      cellCount = fullCellCount || EXPECTED_CELL_COUNT;
+      matrixCellIds = fullCellIds;
+    } else if (input.mode === "pilot") {
+      // Pilot never loads prior receipts / failed-only skips.
+      const prior = loadPriorAcceptedReceipts({
+        mode: "full",
+        priorReceiptBundlePath: null,
+        expectedSourceSha: input.dispatch.approvedSourceSha,
+        expectedManifestSha256: manifestSha256,
+        expectedCellIds: matrixCellIds,
+        executionMode: config.config.executionMode,
+      });
+      priorOk = prior.ok;
+      validSkippedCells = 0;
+      eligibleCells = cellCount;
+    } else {
+      const prior = loadPriorAcceptedReceipts({
+        mode: input.mode,
+        priorReceiptBundlePath: input.priorReceiptBundlePath,
+        expectedSourceSha: input.dispatch.approvedSourceSha,
+        expectedManifestSha256: manifestSha256,
+        expectedCellIds: fullCellIds,
+        executionMode: config.config.executionMode,
+      });
+      priorOk = prior.ok;
+      if (!prior.ok) errors.push(...prior.errors.map((e) => `prior-receipts: ${e}`));
+      validSkippedCells = 0;
+      eligibleCells = cellCount;
+    }
   } else if (input.mode === "failed-only") {
     priorOk = false;
     errors.push("prior-receipts: cannot validate without config/manifest");
@@ -150,7 +233,7 @@ export function runGlobalPreflight(input: GlobalPreflightInput): GlobalPreflight
     const budget = preflightBudgetAndQuota({
       eligibleCellCount: eligibleCells,
       validSkippedCells,
-      authoritativeCells: cellCount || EXPECTED_CELL_COUNT,
+      authoritativeCells: cellCount,
       cellCostCeilingMicros: config.config.cellCostCeilingMicros,
       runCostCeilingMicros: config.config.runCostCeilingMicros,
       providerAttemptQuota: config.config.providerAttemptQuota,
@@ -161,7 +244,7 @@ export function runGlobalPreflight(input: GlobalPreflightInput): GlobalPreflight
     if (!budget.ok) errors.push(...budget.errors.map((e) => `budget: ${e}`));
 
     const envelope = computeAttemptQuotaEnvelope({
-      authoritativeCells: cellCount || EXPECTED_CELL_COUNT,
+      authoritativeCells: cellCount,
       eligibleCells,
       validSkippedCells,
       maxRetries: config.config.maxRetries,
@@ -177,7 +260,9 @@ export function runGlobalPreflight(input: GlobalPreflightInput): GlobalPreflight
     ok: errors.length === 0,
     errors,
     manifestSha256,
+    pilotManifestSha256,
     cellCount,
+    matrixCellIds,
     eligibleCells,
     validSkippedCells,
     maxProviderAttempts,

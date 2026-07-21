@@ -1,4 +1,4 @@
-import { EXPECTED_CELL_COUNT, MAX_RETRIES_HARD_CEILING } from "../constants";
+import { MAX_RETRIES_HARD_CEILING } from "../constants";
 
 export interface AttemptQuotaInput {
   authoritativeCells: number;
@@ -19,7 +19,8 @@ export interface AttemptQuotaResult {
 
 /**
  * eligible_cells × (1 + max_retries) must be ≤ configured provider-attempt quota.
- * Resumed/skipped + eligible must reconcile to authoritative 400.
+ * Resumed/skipped + eligible must reconcile to the mode's authoritative cell count
+ * (400 for full/failed-only; 12 for pilot).
  */
 export function computeAttemptQuotaEnvelope(input: AttemptQuotaInput): AttemptQuotaResult {
   const errors: string[] = [];
@@ -31,8 +32,8 @@ export function computeAttemptQuotaEnvelope(input: AttemptQuotaInput): AttemptQu
     configuredProviderAttemptQuota,
   } = input;
 
-  if (authoritativeCells !== EXPECTED_CELL_COUNT) {
-    errors.push(`authoritativeCells ${authoritativeCells} != ${EXPECTED_CELL_COUNT}`);
+  if (!Number.isSafeInteger(authoritativeCells) || authoritativeCells < 0) {
+    errors.push("authoritativeCells unsafe/negative");
   }
   if (!Number.isSafeInteger(eligibleCells) || eligibleCells < 0) {
     errors.push("eligibleCells unsafe/negative");

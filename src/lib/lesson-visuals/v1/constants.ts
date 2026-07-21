@@ -8,6 +8,11 @@ export const AUTHORITATIVE_BASE_SOURCE_SHA =
 export const AUTHORIZED_MANIFEST_RELATIVE_PATH =
   "docs/lesson-visuals/v1/AUTHORIZED_MANIFEST.json" as const;
 
+export const AUTHORIZED_PILOT_MANIFEST_RELATIVE_PATH =
+  "docs/lesson-visuals/v1/AUTHORIZED_PILOT_12.json" as const;
+
+export const EXPECTED_PILOT_CELL_COUNT = 12;
+
 export const PRODUCTION_LOCALES = ["ar-EG", "ar-MSA", "ar-Gulf", "en"] as const;
 
 export const EXPECTED_LESSON_COUNT = 100;

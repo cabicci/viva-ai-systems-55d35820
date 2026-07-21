@@ -17,7 +17,7 @@ export function validateArtifactRelationships(args: {
   runId: string;
   sourceSha: string;
   approvedManifestSha256: string;
-  mode: "full" | "failed-only";
+  mode: "full" | "failed-only" | "pilot";
   executionMode: "production" | "dry-run";
   expectedCells: number;
   receipts: ProductionCellReceipt[];

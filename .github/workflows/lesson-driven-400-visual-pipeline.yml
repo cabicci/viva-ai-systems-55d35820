@@ -9,8 +9,9 @@
 # See docs/lesson-visuals/v1/DISPATCH_AUTHORIZATION.md
 #
 # Production configuration (vars/secrets) must be present before matrix expansion.
+# When LESSON_VISUALS_EXECUTION_MODE=production, the pipeline uses real HTTP provider transport.
 # dry-run uses the offline mock provider transport (no network / no paid calls).
-# production mode refuses mock transport in this candidate (no paid generation enabled).
+# Modes: pilot (authoritative 12-cell matrix) | full (400 cells) | failed-only (retry non-ACCEPTED).
 
 name: lesson-driven-400-visual-pipeline
 
@@ -29,15 +30,21 @@ on:
         description: sha256 hex of AUTHORIZED_MANIFEST.json file bytes at source_sha
         required: true
         type: string
+      approved_pilot_manifest_sha256:
+        description: Required for mode=pilot — sha256 hex of AUTHORIZED_PILOT_12.json file bytes. Leave empty for full/failed-only.
+        required: false
+        type: string
+        default: ""
       dispatch_actor:
         description: Must be an allowlisted Lovable actor (never cursor/cli)
         required: true
         type: string
       mode:
-        description: full = all 400 cells; failed-only = retry non-ACCEPTED receipts against the same matrix
+        description: pilot = authoritative 12-cell matrix; full = all 400 cells; failed-only = retry non-ACCEPTED receipts against the same matrix
         required: true
         type: choice
         options:
+          - pilot
           - full
           - failed-only
         default: full
@@ -47,7 +54,7 @@ on:
         type: number
         default: 20
       prior_receipt_bundle_artifact:
-        description: Required for failed-only — GitHub Actions artifact name containing authorized *.receipt.json files (immutable prior-run evidence). Leave empty for full mode.
+        description: Required for failed-only — GitHub Actions artifact name containing authorized *.receipt.json files (immutable prior-run evidence). Leave empty for pilot/full mode.
         required: false
         type: string
         default: ""
@@ -224,6 +231,7 @@ jobs:
           ACTUAL_SOURCE_SHA: ${{ github.event.inputs.source_sha }}
           CONTROL_ROOM_AUTHORIZATION_ID: ${{ github.event.inputs.control_room_authorization_id }}
           APPROVED_MANIFEST_SHA256: ${{ github.event.inputs.approved_manifest_sha256 }}
+          APPROVED_PILOT_MANIFEST_SHA256: ${{ github.event.inputs.approved_pilot_manifest_sha256 }}
           DISPATCH_ACTOR: ${{ github.event.inputs.dispatch_actor }}
           GITHUB_ACTOR_NAME: ${{ github.actor }}
           MODE: ${{ github.event.inputs.mode }}
@@ -237,6 +245,8 @@ jobs:
           LESSON_VISUALS_PROVIDER_API_KEY: ${{ secrets.LESSON_VISUALS_PROVIDER_API_KEY }}
           LESSON_VISUALS_PROVIDER_ACCOUNT_ID: ${{ vars.LESSON_VISUALS_PROVIDER_ACCOUNT_ID }}
           LESSON_VISUALS_PROVIDER_PROJECT_ID: ${{ vars.LESSON_VISUALS_PROVIDER_PROJECT_ID }}
+          LESSON_VISUALS_PROVIDER_ENDPOINT: ${{ vars.LESSON_VISUALS_PROVIDER_ENDPOINT }}
+          LESSON_VISUALS_PROVIDER_TIMEOUT_MS: ${{ vars.LESSON_VISUALS_PROVIDER_TIMEOUT_MS }}
           LESSON_VISUALS_AI_AUTH_ID: ${{ secrets.LESSON_VISUALS_AI_AUTH_ID }}
           LESSON_VISUALS_STORAGE_CREDENTIAL: ${{ secrets.LESSON_VISUALS_STORAGE_CREDENTIAL }}
           LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS: ${{ vars.LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS }}
@@ -281,18 +291,54 @@ jobs:
         env:
           SOURCE_SHA: ${{ github.event.inputs.source_sha }}
           MODE: ${{ github.event.inputs.mode }}
+          APPROVED_PILOT_MANIFEST_SHA256: ${{ github.event.inputs.approved_pilot_manifest_sha256 }}
         run: |
           set -euo pipefail
           python3 - <<'PY'
-          import json, os, pathlib
-          m = json.loads(pathlib.Path("docs/lesson-visuals/v1/AUTHORIZED_MANIFEST.json").read_text(encoding="utf-8"))
+          import hashlib, json, os, pathlib
+
+          mode = os.environ["MODE"]
+          source_sha = os.environ["SOURCE_SHA"]
+          full_path = pathlib.Path("docs/lesson-visuals/v1/AUTHORIZED_MANIFEST.json")
+          full_bytes = full_path.read_bytes()
+          full_sha = hashlib.sha256(full_bytes).hexdigest()
+          m = json.loads(full_bytes.decode("utf-8"))
           assert m["manifestVersion"] == "lesson-visuals-authorized/v1"
-          assert m["sourceSha"] == os.environ["SOURCE_SHA"]
+          assert m["sourceSha"] == source_sha
           assert len(m["lessonIds"]) == 100
           assert len(m["cells"]) == 400
           assert m["locales"] == ["ar-EG", "ar-MSA", "ar-Gulf", "en"]
-          cells = m["cells"]
+
+          if mode == "pilot":
+              pilot_path = pathlib.Path("docs/lesson-visuals/v1/AUTHORIZED_PILOT_12.json")
+              pilot_bytes = pilot_path.read_bytes()
+              pilot_digest = hashlib.sha256(pilot_bytes).hexdigest()
+              expected_pilot = (os.environ.get("APPROVED_PILOT_MANIFEST_SHA256") or "").strip().lower()
+              if not expected_pilot:
+                  raise SystemExit("APPROVED_PILOT_MANIFEST_SHA256 required for mode=pilot")
+              if pilot_digest != expected_pilot:
+                  raise SystemExit(
+                      f"AUTHORIZED_PILOT_12.json sha256 mismatch actual={pilot_digest} approved={expected_pilot}"
+                  )
+              p = json.loads(pilot_bytes.decode("utf-8"))
+              assert p["pilotCount"] == 12
+              assert len(p["cells"]) == 12
+              assert p["fullManifestSha256"] == full_sha
+              assert p["sourceSha"] == source_sha
+              cells = p["cells"]
+              if len(cells) == 400:
+                  raise SystemExit("pilot mode must not expand to 400 cells")
+              if len(cells) != 12:
+                  raise SystemExit(f"pilot matrix must be exactly 12 cells, got {len(cells)}")
+          else:
+              cells = m["cells"]
+              assert len(cells) == 400
+
           out = [{"cellId": c["cellId"], "lessonId": c["lessonId"], "locale": c["locale"], "method": c["method"]} for c in cells]
+          if mode == "pilot" and len(out) != 12:
+              raise SystemExit(f"pilot mode refused expanded matrix size={len(out)}")
+          if mode == "pilot" and len(out) == 400:
+              raise SystemExit("pilot mode must not expand to 400 cells")
           pathlib.Path("matrix.json").write_text(json.dumps(out), encoding="utf-8")
           print(f"matrix_cells={len(out)}")
           PY
@@ -353,6 +399,7 @@ jobs:
           METHOD: ${{ matrix.cell.method }}
           SOURCE_SHA: ${{ github.event.inputs.source_sha }}
           APPROVED_MANIFEST_SHA256: ${{ github.event.inputs.approved_manifest_sha256 }}
+          APPROVED_PILOT_MANIFEST_SHA256: ${{ github.event.inputs.approved_pilot_manifest_sha256 }}
           CONTROL_ROOM_AUTHORIZATION_ID: ${{ github.event.inputs.control_room_authorization_id }}
           MODE: ${{ github.event.inputs.mode }}
           RUN_ID: ${{ needs.preflight.outputs.run_id }}
@@ -367,6 +414,8 @@ jobs:
           LESSON_VISUALS_PROVIDER_API_KEY: ${{ secrets.LESSON_VISUALS_PROVIDER_API_KEY }}
           LESSON_VISUALS_PROVIDER_ACCOUNT_ID: ${{ vars.LESSON_VISUALS_PROVIDER_ACCOUNT_ID }}
           LESSON_VISUALS_PROVIDER_PROJECT_ID: ${{ vars.LESSON_VISUALS_PROVIDER_PROJECT_ID }}
+          LESSON_VISUALS_PROVIDER_ENDPOINT: ${{ vars.LESSON_VISUALS_PROVIDER_ENDPOINT }}
+          LESSON_VISUALS_PROVIDER_TIMEOUT_MS: ${{ vars.LESSON_VISUALS_PROVIDER_TIMEOUT_MS }}
           LESSON_VISUALS_AI_AUTH_ID: ${{ secrets.LESSON_VISUALS_AI_AUTH_ID }}
           LESSON_VISUALS_STORAGE_CREDENTIAL: ${{ secrets.LESSON_VISUALS_STORAGE_CREDENTIAL }}
           LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS: ${{ vars.LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS }}
@@ -451,6 +500,7 @@ jobs:
         env:
           SOURCE_SHA: ${{ github.event.inputs.source_sha }}
           APPROVED_MANIFEST_SHA256: ${{ github.event.inputs.approved_manifest_sha256 }}
+          APPROVED_PILOT_MANIFEST_SHA256: ${{ github.event.inputs.approved_pilot_manifest_sha256 }}
           MODE: ${{ github.event.inputs.mode }}
           RUN_ID: ${{ needs.preflight.outputs.run_id }}
           QUOTA_CONTEXT_PATH: artifacts/qa/runtime-quota-context.json

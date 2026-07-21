@@ -197,9 +197,17 @@ describe("dispatch authorization fail-closed", () => {
     const r = validateDispatchAuthorization({
       ...base,
       // @ts-expect-error intentional
-      runMode: "pilot",
+      runMode: "subset",
     });
     expect(r.ok).toBe(false);
+  });
+
+  it("accepts pilot mode", () => {
+    const r = validateDispatchAuthorization({
+      ...base,
+      runMode: "pilot",
+    });
+    expect(r.ok).toBe(true);
   });
 });
 
@@ -267,6 +275,7 @@ describe("provider contract + output validation (offline mock)", () => {
       ...dryRunEnv(),
       LESSON_VISUALS_EXECUTION_MODE: "production",
       LESSON_VISUALS_PROVIDER_API_KEY: "k",
+      LESSON_VISUALS_PROVIDER_ENDPOINT: "https://provider.example.invalid/v1/generate",
     });
     const broken = { ...config, providerApiKeyPresent: false, executionMode: "production" as const };
     const transport = createMockProvider(mockOpts(broken, { costMicros: "1" }));
@@ -406,6 +415,7 @@ describe("provider contract + output validation (offline mock)", () => {
       ...dryRunEnv(),
       LESSON_VISUALS_EXECUTION_MODE: "production",
       LESSON_VISUALS_PROVIDER_API_KEY: "k",
+      LESSON_VISUALS_PROVIDER_ENDPOINT: "https://provider.example.invalid/v1/generate",
     });
     const png = encodeSolidPng(64, 36, [1, 2, 3]);
     const tainted = Buffer.concat([png, Buffer.from("LESSON_VISUALS_FIXTURE_MARKER")]);
@@ -550,6 +560,7 @@ describe("receipts and mappings", () => {
       ...dryRunEnv(),
       LESSON_VISUALS_EXECUTION_MODE: "production",
       LESSON_VISUALS_PROVIDER_API_KEY: "k",
+      LESSON_VISUALS_PROVIDER_ENDPOINT: "https://provider.example.invalid/v1/generate",
     });
     const dir = mkdtempSync(join(tmpdir(), "lv-prod-mock-"));
     tempDirs.push(dir);

@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lesson-visual-pilot-manifest/v1",
+  "title": "Lesson Visual Authoritative 12-Cell Pilot Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "sourceSha",
+    "fullManifestSha256",
+    "selectionAlgorithm",
+    "selectionParams",
+    "pilotCount",
+    "locales",
+    "cells",
+    "counts"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "lesson-visual-pilot-manifest/v1" },
+    "sourceSha": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "fullManifestSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "selectionAlgorithm": { "const": "locale-first-n/v1" },
+    "selectionParams": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["perLocale"],
+      "properties": {
+        "perLocale": { "const": 3 }
+      }
+    },
+    "pilotCount": { "const": 12 },
+    "locales": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": { "type": "string", "enum": ["ar-EG", "ar-MSA", "ar-Gulf", "en"] }
+    },
+    "cells": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "cellId",
+          "lessonId",
+          "locale",
+          "method",
+          "masterRelativePath"
+        ],
+        "properties": {
+          "cellId": { "type": "string", "minLength": 1 },
+          "lessonId": { "type": "string", "minLength": 1 },
+          "locale": { "type": "string", "enum": ["ar-EG", "ar-MSA", "ar-Gulf", "en"] },
+          "method": { "type": "integer", "minimum": 1, "maximum": 4 },
+          "masterRelativePath": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cells", "perLocale"],
+      "properties": {
+        "cells": { "const": 12 },
+        "perLocale": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["ar-EG", "ar-MSA", "ar-Gulf", "en"],
+          "properties": {
+            "ar-EG": { "const": 3 },
+            "ar-MSA": { "const": 3 },
+            "ar-Gulf": { "const": 3 },
+            "en": { "const": 3 }
+          }
+        }
+      }
+    }
+  }
+}

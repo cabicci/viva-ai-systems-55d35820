@@ -12,6 +12,7 @@ import { loadProductionConfig, redactConfigForLog, type ProductionEnv } from "..
 import { loadPriorAcceptedReceipts } from "../production/priorReceipts";
 import { buildRuntimeQuotaContext } from "../production/quotaContext";
 import { runGlobalPreflight } from "../production/preflight";
+import type { ProductionRunMode } from "../production/types";
 
 function moduleDir(): string {
   if (typeof import.meta.dirname === "string") return import.meta.dirname;
@@ -29,6 +30,8 @@ function env(): ProductionEnv {
     LESSON_VISUALS_PROVIDER_ACCOUNT_ID: process.env.LESSON_VISUALS_PROVIDER_ACCOUNT_ID,
     LESSON_VISUALS_PROVIDER_PROJECT_ID: process.env.LESSON_VISUALS_PROVIDER_PROJECT_ID,
     LESSON_VISUALS_AI_AUTH_ID: process.env.LESSON_VISUALS_AI_AUTH_ID,
+    LESSON_VISUALS_PROVIDER_ENDPOINT: process.env.LESSON_VISUALS_PROVIDER_ENDPOINT,
+    LESSON_VISUALS_PROVIDER_TIMEOUT_MS: process.env.LESSON_VISUALS_PROVIDER_TIMEOUT_MS,
     LESSON_VISUALS_STORAGE_CREDENTIAL: process.env.LESSON_VISUALS_STORAGE_CREDENTIAL,
     LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS:
       process.env.LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS,
@@ -47,10 +50,11 @@ function env(): ProductionEnv {
 
 function main(): void {
   const e = env();
-  const mode = (process.env.MODE ?? "full") as "full" | "failed-only";
+  const mode = (process.env.MODE ?? "full") as ProductionRunMode;
   const maxParallel = Number(process.env.MAX_PARALLEL ?? "20");
   const sourceSha = process.env.SOURCE_SHA ?? "";
   const approvedManifest = (process.env.APPROVED_MANIFEST_SHA256 ?? "").toLowerCase();
+  const approvedPilot = (process.env.APPROVED_PILOT_MANIFEST_SHA256 ?? "").toLowerCase();
   const actualManifest = (process.env.ACTUAL_MANIFEST_SHA256 ?? "").toLowerCase();
   const actualSource = process.env.ACTUAL_SOURCE_SHA ?? "";
   const actors = parseDispatchActorAllowlist(e.LOVABLE_DISPATCH_ACTORS);
@@ -65,6 +69,7 @@ function main(): void {
     maxParallel,
     priorReceiptBundlePath: priorPath,
     requireSourceShaEqualsBase: true,
+    approvedPilotManifestSha256: mode === "pilot" ? approvedPilot : null,
     dispatch: {
       controlRoomAuthorizationId: process.env.CONTROL_ROOM_AUTHORIZATION_ID ?? "",
       approvedSourceSha: sourceSha,
@@ -89,6 +94,7 @@ function main(): void {
           ok: false,
           errors: result.errors,
           manifestSha256: result.manifestSha256,
+          pilotManifestSha256: result.pilotManifestSha256,
           cellCount: result.cellCount,
           eligibleCells: result.eligibleCells,
           validSkippedCells: result.validSkippedCells,
@@ -103,17 +109,16 @@ function main(): void {
     process.exit(1);
   }
 
-  const manifest = JSON.parse(
-    readFileSync(resolve(repoRoot, AUTHORIZED_MANIFEST_RELATIVE_PATH), "utf8"),
-  ) as { cells: { cellId: string }[] };
-  const allCellIds = manifest.cells.map((c) => c.cellId);
-
+  const matrixCellIds = result.matrixCellIds;
+  const priorMode = mode === "pilot" ? "full" : mode;
   const prior = loadPriorAcceptedReceipts({
-    mode,
-    priorReceiptBundlePath: priorPath,
+    mode: priorMode,
+    priorReceiptBundlePath: mode === "failed-only" ? priorPath : null,
     expectedSourceSha: sourceSha,
     expectedManifestSha256: result.manifestSha256,
-    expectedCellIds: allCellIds,
+    expectedCellIds: mode === "pilot" ? matrixCellIds : JSON.parse(
+      readFileSync(resolve(repoRoot, AUTHORIZED_MANIFEST_RELATIVE_PATH), "utf8"),
+    ).cells.map((c: { cellId: string }) => c.cellId),
     executionMode: cfg.config.executionMode,
   });
   if (!prior.ok) {
@@ -127,10 +132,11 @@ function main(): void {
     sourceSha,
     approvedManifestSha256: result.manifestSha256,
     mode,
-    allCellIds,
-    skippedCellIds: [...prior.acceptedByCellId.keys()],
+    allCellIds: matrixCellIds,
+    skippedCellIds: mode === "failed-only" ? [...prior.acceptedByCellId.keys()] : [],
     maxRetries: cfg.config.maxRetries,
     configuredProviderAttemptQuota: cfg.config.providerAttemptQuota,
+    approvedPilotManifestSha256: mode === "pilot" ? result.pilotManifestSha256 : null,
   });
   if (!quota.ok || !quota.context) {
     console.log(JSON.stringify({ ok: false, errors: quota.errors }, null, 2));
@@ -142,13 +148,19 @@ function main(): void {
   const quotaPath = join(qaDir, "runtime-quota-context.json");
   writeFileSync(quotaPath, `${JSON.stringify(quota.context, null, 2)}\n`, "utf8");
 
+  const matrixPath = join(qaDir, "matrix-cells.json");
+  writeFileSync(matrixPath, `${JSON.stringify(matrixCellIds, null, 2)}\n`, "utf8");
+
   console.log(
     JSON.stringify(
       {
         ok: true,
         errors: [],
+        mode,
         manifestSha256: result.manifestSha256,
+        pilotManifestSha256: result.pilotManifestSha256,
         cellCount: result.cellCount,
+        matrixCellCount: matrixCellIds.length,
         eligibleCells: quota.context.eligibleCells,
         validSkippedCells: quota.context.validSkippedCells,
         maxProviderAttempts: quota.context.maxProviderAttempts,

@@ -3,7 +3,7 @@
  * Pure functions — no network. Cursor/CLI/unauth actors must fail.
  */
 
-export type DispatchRunMode = "full" | "failed-only";
+export type DispatchRunMode = "full" | "failed-only" | "pilot";
 
 export interface DispatchAuthorizationInput {
   controlRoomAuthorizationId: string;
@@ -88,8 +88,8 @@ export function validateDispatchAuthorization(
     errors.push("approvedManifestSha256 must be 64-char lowercase hex");
   }
 
-  if (input.runMode !== "full" && input.runMode !== "failed-only") {
-    errors.push("runMode must be full | failed-only");
+  if (input.runMode !== "full" && input.runMode !== "failed-only" && input.runMode !== "pilot") {
+    errors.push("runMode must be full | failed-only | pilot");
   }
 
   if (input.maxParallel !== undefined) {

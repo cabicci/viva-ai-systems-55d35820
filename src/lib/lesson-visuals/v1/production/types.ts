@@ -2,7 +2,7 @@ import type { Locale, Method } from "../types";
 import type { UsdMicros } from "./money";
 
 export type ExecutionMode = "production" | "dry-run";
-export type ProductionRunMode = "full" | "failed-only";
+export type ProductionRunMode = "full" | "failed-only" | "pilot";
 export type CellRunStatus =
   | "ACCEPTED"
   | "FAILED"
@@ -236,6 +236,9 @@ export interface ProductionConfig {
   providerProjectIdPresent: boolean;
   providerAuthIdPresent: boolean;
   storageCredentialPresent: boolean;
+  /** Non-secret HTTP endpoint for production transport (required in production). */
+  providerEndpoint: string;
+  providerTimeoutMs: number;
   runCostCeilingMicros: UsdMicros;
   cellCostCeilingMicros: UsdMicros;
   maxOutputBytes: number;

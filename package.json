@@ -43,7 +43,9 @@
     "lesson-visuals:validate": "bun run src/lib/lesson-visuals/v1/scripts/validate_local.ts",
     "lesson-visuals:test": "bun run test:run -- tests/lesson-visuals/v1",
     "lesson-visuals:repin": "bun run src/lib/lesson-visuals/v1/scripts/repin_source_sha.ts",
-    "lesson-visuals:repin:check": "bun run src/lib/lesson-visuals/v1/scripts/repin_source_sha.ts --check"
+    "lesson-visuals:repin:check": "bun run src/lib/lesson-visuals/v1/scripts/repin_source_sha.ts --check",
+    "lesson-visuals:pilot:write": "bun run src/lib/lesson-visuals/v1/scripts/pilot_manifest.ts --write",
+    "lesson-visuals:pilot:check": "bun run src/lib/lesson-visuals/v1/scripts/pilot_manifest.ts --check"
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.25.5",

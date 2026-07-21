@@ -126,10 +126,15 @@ function main(): void {
 
   const runCostCeiling = BigInt(process.env.LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS ?? "0");
   const attemptQuota = Number(process.env.LESSON_VISUALS_PROVIDER_ATTEMPT_QUOTA ?? "0");
-  const mode = (process.env.MODE ?? "full") as "full" | "failed-only";
+  const mode = (process.env.MODE ?? "full") as "full" | "failed-only" | "pilot";
   const executionMode = (process.env.LESSON_VISUALS_EXECUTION_MODE ?? "dry-run") as
     | "production"
     | "dry-run";
+
+  let expectedCells = EXPECTED_CELL_COUNT;
+  if (mode === "pilot") {
+    expectedCells = 12;
+  }
 
   const report = validateArtifactRelationships({
     runId: process.env.RUN_ID ?? "unknown",
@@ -137,7 +142,7 @@ function main(): void {
     approvedManifestSha256: (process.env.APPROVED_MANIFEST_SHA256 ?? "").toLowerCase(),
     mode,
     executionMode,
-    expectedCells: EXPECTED_CELL_COUNT,
+    expectedCells,
     receipts,
     mappings,
     totalCostMicros: totalCost,
@@ -145,6 +150,22 @@ function main(): void {
     providerAttemptQuota: attemptQuota,
     providerAttemptsUsed,
   });
+
+  if (mode === "pilot") {
+    const approvedPilot = (process.env.APPROVED_PILOT_MANIFEST_SHA256 ?? "").toLowerCase();
+    if (!/^[a-f0-9]{64}$/.test(approvedPilot)) {
+      report.ok = false;
+      report.errors.push("aggregate pilot requires approved_pilot_manifest_sha256");
+    }
+    if (receipts.length > 12) {
+      report.ok = false;
+      report.errors.push(`pilot receipt count ${receipts.length} exceeds 12`);
+    }
+    if (mappings.length > 12) {
+      report.ok = false;
+      report.errors.push(`pilot mapping count ${mappings.length} exceeds 12`);
+    }
+  }
 
   const quotaPath =
     process.env.QUOTA_CONTEXT_PATH ??
