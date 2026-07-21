@@ -26,6 +26,10 @@ export interface DispatchAuthorizationInput {
   allowedGithubActors?: readonly string[];
   /** Optional future signed payload / token placeholder. */
   signedPayload?: string | null;
+  /** Optional bounded max_parallel (validated when provided). */
+  maxParallel?: number;
+  maxParallelMin?: number;
+  maxParallelMax?: number;
 }
 
 export interface DispatchAuthorizationResult {
@@ -86,6 +90,14 @@ export function validateDispatchAuthorization(
 
   if (input.runMode !== "full" && input.runMode !== "failed-only") {
     errors.push("runMode must be full | failed-only");
+  }
+
+  if (input.maxParallel !== undefined) {
+    const min = input.maxParallelMin ?? 1;
+    const max = input.maxParallelMax ?? 50;
+    if (!Number.isInteger(input.maxParallel) || input.maxParallel < min || input.maxParallel > max) {
+      errors.push(`maxParallel must be an integer in [${min},${max}]`);
+    }
   }
 
   const dispatchActor = normalizeActor(input.dispatchActor);
