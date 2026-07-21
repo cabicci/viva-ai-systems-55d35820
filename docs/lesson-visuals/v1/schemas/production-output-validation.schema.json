@@ -16,8 +16,19 @@
     "fixtureRejected",
     "stubRejected",
     "cellId",
+    "lessonId",
+    "locale",
+    "runId",
+    "controlRoomAuthorizationId",
     "sourceSha",
-    "approvedManifestSha256"
+    "approvedManifestSha256",
+    "providerName",
+    "providerAccountId",
+    "providerProjectId",
+    "providerAuthId",
+    "providerRequestId",
+    "rightsProvenanceRef",
+    "validatedAt"
   ],
   "properties": {
     "schemaVersion": { "const": "lesson-visual-output-validation/v1" },
@@ -27,11 +38,22 @@
     "width": { "type": ["integer", "null"] },
     "height": { "type": ["integer", "null"] },
     "byteLength": { "type": "integer", "minimum": 0 },
-    "contentChecksumSha256": { "type": ["string", "null"] },
+    "contentChecksumSha256": { "type": ["string", "null"], "pattern": "^([a-f0-9]{64})?$" },
     "fixtureRejected": { "type": "boolean" },
     "stubRejected": { "type": "boolean" },
     "cellId": { "type": "string", "minLength": 1 },
+    "lessonId": { "type": "string", "minLength": 1 },
+    "locale": { "type": "string", "enum": ["ar-EG", "ar-MSA", "ar-Gulf", "en"] },
+    "runId": { "type": "string", "minLength": 1 },
+    "controlRoomAuthorizationId": { "type": "string", "minLength": 1 },
     "sourceSha": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
-    "approvedManifestSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+    "approvedManifestSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "providerName": { "type": ["string", "null"] },
+    "providerAccountId": { "type": ["string", "null"] },
+    "providerProjectId": { "type": ["string", "null"] },
+    "providerAuthId": { "type": ["string", "null"] },
+    "providerRequestId": { "type": ["string", "null"] },
+    "rightsProvenanceRef": { "type": ["string", "null"] },
+    "validatedAt": { "type": "string", "minLength": 1 }
   }
 }

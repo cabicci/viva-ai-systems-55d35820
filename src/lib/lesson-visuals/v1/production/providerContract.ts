@@ -147,8 +147,18 @@ export async function executeProviderContract(
       declaredByteLength: response.byteLength,
       config: ctx.config,
       cellId: request.cellId,
+      lessonId: request.lessonId,
+      locale: request.locale,
+      runId: request.runId,
+      controlRoomAuthorizationId: request.controlRoomAuthorizationId,
       sourceSha: request.sourceSha,
       approvedManifestSha256: request.approvedManifestSha256,
+      providerName: response.providerName,
+      providerAccountId: response.providerAccountId,
+      providerProjectId: response.providerProjectId,
+      providerAuthId: response.providerAuthId,
+      providerRequestId: response.providerRequestId,
+      rightsProvenanceRef: null,
       forceProductionGates: ctx.config.executionMode === "production",
     });
     if (!validation.ok) errors.push(...validation.errors);

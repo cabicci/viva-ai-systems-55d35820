@@ -1,40 +1,24 @@
 /**
  * Fail-closed required artifact presence check before upload.
  */
-import { existsSync, statSync } from "node:fs";
-import { resolve } from "node:path";
+import { resolve as resolvePath } from "node:path";
+import { verifyCellArtifacts } from "../production/verifyCellArtifacts";
 
 function main(): void {
   const cellId = process.env.CELL_ID ?? "";
   const status = process.env.CELL_STATUS ?? "";
-  const root = resolve(process.cwd(), "artifacts");
-  const required: string[] = [`receipts/${cellId}.receipt.json`];
-
-  if (status === "ACCEPTED") {
-    required.push(
-      `cells/${cellId}/output.png`,
-      `mappings/${cellId}.mapping.json`,
-      `rights/${cellId}.rights.json`,
-      `validations/${cellId}.validation.json`,
-    );
-  } else if (status === "SKIPPED") {
-    // receipt only
-  } else {
-    required.push(`cells/${cellId}/failure.json`);
-  }
-
-  const missing: string[] = [];
-  for (const rel of required) {
-    const abs = resolve(root, rel);
-    if (!existsSync(abs) || !statSync(abs).isFile() || statSync(abs).size <= 0) {
-      missing.push(rel);
+  const root = resolvePath(process.cwd(), "artifacts");
+  try {
+    const result = verifyCellArtifacts({ artifactsRoot: root, cellId, status });
+    if (!result.ok) {
+      console.error(JSON.stringify({ ok: false, ...result }));
+      process.exit(1);
     }
-  }
-  if (missing.length) {
-    console.error(JSON.stringify({ ok: false, missing }));
+    console.log(JSON.stringify({ ok: true, required: result.required }));
+  } catch (e) {
+    console.error(JSON.stringify({ ok: false, errors: [e instanceof Error ? e.message : String(e)] }));
     process.exit(1);
   }
-  console.log(JSON.stringify({ ok: true, required }));
 }
 
 main();

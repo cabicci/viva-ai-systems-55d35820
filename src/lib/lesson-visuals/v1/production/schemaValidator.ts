@@ -159,9 +159,25 @@ export function validateOutputValidationSchema(obj: unknown): { ok: boolean; err
   if (typeof v.fixtureRejected !== "boolean" || typeof v.stubRejected !== "boolean") {
     errors.push("fixture/stub flags required");
   }
+  reqStr(v.cellId, "cellId", errors);
+  reqStr(v.lessonId, "lessonId", errors);
+  if (!LOCALES.has(v.locale as string)) errors.push("locale invalid");
+  reqStr(v.runId, "runId", errors);
+  reqStr(v.controlRoomAuthorizationId, "controlRoomAuthorizationId", errors);
+  reqSha40(v.sourceSha, "sourceSha", errors);
+  reqSha64(v.approvedManifestSha256, "approvedManifestSha256", errors);
+  reqStr(v.validatedAt, "validatedAt", errors);
   if (v.ok) {
     reqSha64(v.contentChecksumSha256, "contentChecksumSha256", errors);
     reqStr(v.detectedMime, "detectedMime", errors);
+    reqStr(v.providerName, "providerName", errors);
+    reqStr(v.providerAccountId, "providerAccountId", errors);
+    reqStr(v.providerAuthId, "providerAuthId", errors);
+    reqStr(v.providerRequestId, "providerRequestId", errors);
+    reqStr(v.rightsProvenanceRef, "rightsProvenanceRef", errors);
+    if (typeof v.width !== "number" || typeof v.height !== "number") {
+      errors.push("dimensions required when ok");
+    }
   }
   return { ok: errors.length === 0, errors };
 }

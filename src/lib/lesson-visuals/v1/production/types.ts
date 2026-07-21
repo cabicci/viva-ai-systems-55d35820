@@ -106,8 +106,19 @@ export interface OutputValidationRecord {
   fixtureRejected: boolean;
   stubRejected: boolean;
   cellId: string;
+  lessonId: string;
+  locale: Locale;
+  runId: string;
+  controlRoomAuthorizationId: string;
   sourceSha: string;
   approvedManifestSha256: string;
+  providerName: string | null;
+  providerAccountId: string | null;
+  providerProjectId: string | null;
+  providerAuthId: string | null;
+  providerRequestId: string | null;
+  rightsProvenanceRef: string | null;
+  validatedAt: string;
 }
 
 export interface ProductionCellReceipt {
