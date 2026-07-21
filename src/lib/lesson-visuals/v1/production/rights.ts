@@ -1,47 +1,40 @@
+import { assertGreenfieldReferences } from "./greenfield";
+import { validateRightsSchema } from "./schemaValidator";
 import type { RightsProvenanceRecord } from "./types";
 
 export function validateRightsProvenance(
   rights: RightsProvenanceRecord | null | undefined,
+  expected: {
+    cellId: string;
+    sourceSha: string;
+    approvedManifestSha256: string;
+    providerRequestId: string;
+    outputContentSha256: string;
+  },
 ): { ok: boolean; errors: string[] } {
-  const errors: string[] = [];
-  if (!rights) {
-    return { ok: false, errors: ["rights/provenance record missing"] };
+  const schema = validateRightsSchema(rights);
+  if (!schema.ok || !rights) {
+    return { ok: false, errors: schema.errors.length ? schema.errors : ["rights/provenance missing"] };
   }
-  if (rights.schemaVersion !== "lesson-visual-rights/v1") {
-    errors.push(`bad rights schemaVersion ${rights.schemaVersion}`);
+  const errors: string[] = [...schema.errors];
+  if (rights.cellId !== expected.cellId) errors.push("rights cellId mismatch");
+  if (rights.sourceSha !== expected.sourceSha) errors.push("rights sourceSha mismatch");
+  if (rights.approvedManifestSha256 !== expected.approvedManifestSha256) {
+    errors.push("rights manifest digest mismatch");
   }
-  if (![1, 2, 3, 4].includes(rights.generationMethod)) {
-    errors.push("generationMethod invalid");
+  if (rights.providerRequestId !== expected.providerRequestId) {
+    errors.push("rights providerRequestId mismatch");
   }
-  if (!rights.providerOrSource?.trim()) errors.push("providerOrSource missing");
-  if (!rights.providerModelOrRenderer?.trim()) errors.push("providerModelOrRenderer missing");
-  if (!rights.generatedAt?.trim()) errors.push("generatedAt missing");
-  if (!rights.providerRequestId?.trim()) errors.push("providerRequestId missing");
-  if (!Array.isArray(rights.sourceReferences)) errors.push("sourceReferences missing");
-  if (!rights.licenseOrUsageBasis?.trim()) errors.push("licenseOrUsageBasis missing");
-  if (
-    rights.humanReviewRequirement !== "required" &&
-    rights.humanReviewRequirement !== "not-required"
-  ) {
-    errors.push("humanReviewRequirement invalid");
+  if (rights.outputContentSha256 !== expected.outputContentSha256) {
+    errors.push("rights outputContentSha256 mismatch vs accepted bytes");
   }
-  if (
-    !["pending", "approved", "rejected", "not-applicable"].includes(rights.humanReviewStatus)
-  ) {
-    errors.push("humanReviewStatus invalid");
-  }
-  if (rights.prohibitedLegacySource !== false) {
-    errors.push("prohibitedLegacySource must be false (greenfield/no-legacy)");
-  }
-  if (!Array.isArray(rights.transformationRecord)) errors.push("transformationRecord missing");
-  if (!Array.isArray(rights.evidenceReferences)) errors.push("evidenceReferences missing");
-  if (!Array.isArray(rights.evidenceChecksums)) errors.push("evidenceChecksums missing");
-  if (
-    rights.evidenceReferences.length > 0 &&
-    rights.evidenceReferences.length !== rights.evidenceChecksums.length
-  ) {
-    errors.push("evidenceReferences/checksums length mismatch");
-  }
+  const refs = [
+    ...rights.sourceReferences,
+    ...rights.evidenceReferences,
+    ...(rights.screenshotSiteIdentity ? [rights.screenshotSiteIdentity] : []),
+  ];
+  const gf = assertGreenfieldReferences(refs);
+  if (!gf.ok) errors.push(...gf.errors);
   return { ok: errors.length === 0, errors };
 }
 
@@ -51,6 +44,10 @@ export function buildGreenfieldRights(args: {
   model: string;
   providerRequestId: string;
   generatedAt: string;
+  cellId: string;
+  sourceSha: string;
+  approvedManifestSha256: string;
+  outputContentSha256: string;
   screenshotSiteIdentity?: string | null;
   sourceReferences?: string[];
   evidenceChecksums?: string[];
@@ -62,6 +59,10 @@ export function buildGreenfieldRights(args: {
     providerModelOrRenderer: args.model,
     generatedAt: args.generatedAt,
     providerRequestId: args.providerRequestId,
+    cellId: args.cellId,
+    sourceSha: args.sourceSha,
+    approvedManifestSha256: args.approvedManifestSha256,
+    outputContentSha256: args.outputContentSha256,
     sourceReferences: args.sourceReferences ?? [],
     screenshotSiteIdentity: args.screenshotSiteIdentity ?? null,
     licenseOrUsageBasis: "greenfield-generated-for-masaarat-lesson-visuals",

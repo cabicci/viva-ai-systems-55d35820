@@ -1,10 +1,8 @@
-/**
- * Provider-neutral production adapter contract.
- * No network calls in this module — transport is injected.
- */
 import { assertProviderCostWithinLimit } from "./budget";
+import { assertGreenfieldReferences } from "./greenfield";
 import { validateRequestIdentity, validateResponseIdentity } from "./identity";
 import { validateOutputBytes } from "./outputValidation";
+import { sha256Hex } from "./pngCodec";
 import { validateRightsProvenance } from "./rights";
 import type { UsdMicros } from "./money";
 import type {
@@ -16,7 +14,6 @@ import type {
 } from "./types";
 
 export interface ProviderTransport {
-  /** Must not perform network I/O in unit tests. Mock implements this. */
   generate(request: ProviderGenerationRequest): Promise<ProviderGenerationResponse>;
   resolveSecureBytes?(
     reference: string,
@@ -29,7 +26,6 @@ export interface ProviderAdapterContext {
   transport: ProviderTransport;
   expectedProviderName: string;
   remainingRunBudgetMicros: UsdMicros;
-  /** Seen provider request IDs in this run (mutated). */
   seenProviderRequestIds: Set<string>;
 }
 
@@ -40,6 +36,7 @@ export interface ProviderAdapterResult {
   bytes: Buffer | null;
   validation: OutputValidationRecord | null;
   costMicros: UsdMicros | null;
+  independentChecksum: string | null;
 }
 
 function parseCost(raw: string): UsdMicros {
@@ -57,18 +54,25 @@ export async function executeProviderContract(
   if (!ctx.config.providerApiKeyPresent && ctx.config.executionMode === "production") {
     errors.push("missing provider credentials");
   }
-  if (ctx.config.executionMode === "dry-run" && !ctx.config.providerApiKeyPresent) {
-    // dry-run may use mock transport without real key — allowed only when transport is mock
-  }
   if (!ctx.config.providerName) errors.push("unsupported provider configuration: name missing");
   if (ctx.expectedProviderName !== ctx.config.providerName) {
     errors.push(
       `unexpected provider identity expected=${ctx.expectedProviderName} configured=${ctx.config.providerName}`,
     );
   }
+  const gfPrompt = assertGreenfieldReferences([request.promptOrRenderingSpec]);
+  if (!gfPrompt.ok) errors.push(...gfPrompt.errors);
 
   if (errors.length > 0) {
-    return { ok: false, errors, response: null, bytes: null, validation: null, costMicros: null };
+    return {
+      ok: false,
+      errors,
+      response: null,
+      bytes: null,
+      validation: null,
+      costMicros: null,
+      independentChecksum: null,
+    };
   }
 
   const response = await ctx.transport.generate(request);
@@ -84,9 +88,6 @@ export async function executeProviderContract(
   if (ctx.seenProviderRequestIds.has(response.providerRequestId)) {
     errors.push(`duplicate provider request ID ${response.providerRequestId}`);
   }
-
-  const rights = validateRightsProvenance(response.rightsProvenance);
-  if (!rights.ok) errors.push(...rights.errors);
 
   let costMicros: UsdMicros | null = null;
   try {
@@ -105,6 +106,8 @@ export async function executeProviderContract(
   if (response.outputBytesBase64) {
     bytes = Buffer.from(response.outputBytesBase64, "base64");
   } else if (response.secureByteReference) {
+    const gf = assertGreenfieldReferences([response.secureByteReference]);
+    if (!gf.ok) errors.push(...gf.errors);
     if (!ctx.transport.resolveSecureBytes) {
       errors.push("URL/secure reference response rejected — no authorized byte resolver");
     } else {
@@ -119,22 +122,38 @@ export async function executeProviderContract(
     bytes = null;
   }
 
+  let independentChecksum: string | null = null;
   let validation: OutputValidationRecord | null = null;
   if (bytes) {
+    independentChecksum = sha256Hex(bytes);
+    if (response.contentChecksumSha256 !== independentChecksum) {
+      errors.push("provider-reported checksum mismatch vs independently calculated bytes");
+    }
+    const rights = validateRightsProvenance(response.rightsProvenance, {
+      cellId: request.cellId,
+      sourceSha: request.sourceSha,
+      approvedManifestSha256: request.approvedManifestSha256,
+      providerRequestId: response.providerRequestId,
+      outputContentSha256: independentChecksum,
+    });
+    if (!rights.ok) errors.push(...rights.errors);
+
     validation = validateOutputBytes({
       bytes,
       declaredMime: response.mimeType,
       declaredWidth: response.width,
       declaredHeight: response.height,
-      declaredChecksum: response.contentChecksumSha256,
+      declaredChecksum: independentChecksum,
       declaredByteLength: response.byteLength,
       config: ctx.config,
+      cellId: request.cellId,
+      sourceSha: request.sourceSha,
+      approvedManifestSha256: request.approvedManifestSha256,
       forceProductionGates: ctx.config.executionMode === "production",
     });
     if (!validation.ok) errors.push(...validation.errors);
   }
 
-  // Malformed metadata checks
   if (response.schemaVersion !== "lesson-visual-provider-response/v1") {
     errors.push("malformed metadata: schemaVersion");
   }
@@ -151,6 +170,7 @@ export async function executeProviderContract(
     bytes,
     validation,
     costMicros,
+    independentChecksum,
   };
 }
 

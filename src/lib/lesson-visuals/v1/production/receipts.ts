@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 import type { Locale, Method } from "../types";
+import { validateReceiptSchema } from "./schemaValidator";
 import type { CellRunStatus, ProductionCellReceipt } from "./types";
 
 export function fingerprintProductionReceipt(input: {
@@ -40,6 +41,9 @@ export function buildReceipt(args: {
   providerName: string | null;
   providerRequestId: string | null;
   modelOrRenderer: string | null;
+  providerAccountId: string | null;
+  providerProjectId: string | null;
+  providerAuthId: string | null;
   idempotencyKey: string;
   attemptNumber: number;
   outputPathOrStorageKey: string | null;
@@ -56,6 +60,7 @@ export function buildReceipt(args: {
   error: string | null;
   producedAt: string;
   completedAt: string;
+  fixtureMarker: string | null;
 }): ProductionCellReceipt {
   const fingerprint = fingerprintProductionReceipt({
     runId: args.runId,
@@ -68,7 +73,7 @@ export function buildReceipt(args: {
     idempotencyKey: args.idempotencyKey,
     contentSha256: args.contentSha256,
   });
-  return {
+  const receipt: ProductionCellReceipt = {
     schemaVersion: "lesson-visual-production-receipt/v1",
     status: args.status,
     runId: args.runId,
@@ -82,6 +87,9 @@ export function buildReceipt(args: {
     providerName: args.providerName,
     providerRequestId: args.providerRequestId,
     modelOrRenderer: args.modelOrRenderer,
+    providerAccountId: args.providerAccountId,
+    providerProjectId: args.providerProjectId,
+    providerAuthId: args.providerAuthId,
     idempotencyKey: args.idempotencyKey,
     attemptNumber: args.attemptNumber,
     outputPathOrStorageKey: args.outputPathOrStorageKey,
@@ -99,15 +107,11 @@ export function buildReceipt(args: {
     failureCode: args.failureCode,
     retryable: args.retryable,
     error: args.error,
+    fixtureMarker: args.fixtureMarker,
   };
-}
-
-export function assertReceiptReplaySafe(
-  existing: ProductionCellReceipt,
-  expectedFingerprint: string,
-): string | null {
-  if (existing.status === "ACCEPTED" && existing.fingerprint !== expectedFingerprint) {
-    return "reused receipt with mismatched fingerprint";
+  const schema = validateReceiptSchema(receipt);
+  if (!schema.ok && args.status === "ACCEPTED") {
+    throw new Error(`ACCEPTED receipt failed schema: ${schema.errors.join("; ")}`);
   }
-  return null;
+  return receipt;
 }

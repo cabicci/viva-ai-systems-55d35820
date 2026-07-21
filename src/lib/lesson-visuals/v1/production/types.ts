@@ -17,6 +17,11 @@ export interface RightsProvenanceRecord {
   providerModelOrRenderer: string;
   generatedAt: string;
   providerRequestId: string;
+  cellId: string;
+  sourceSha: string;
+  approvedManifestSha256: string;
+  /** Independently calculated final accepted output SHA-256. */
+  outputContentSha256: string;
   sourceReferences: string[];
   screenshotSiteIdentity: string | null;
   licenseOrUsageBasis: string;
@@ -50,8 +55,11 @@ export interface ProviderGenerationRequest {
   };
   idempotencyKey: string;
   attemptNumber: number;
-  budgetAllocationMicros: string; // decimal-safe integer string
+  budgetAllocationMicros: string;
   maxCostMicros: string;
+  expectedProviderAccountId: string;
+  expectedProviderProjectId: string | null;
+  expectedProviderAuthId: string;
 }
 
 export interface ProviderGenerationResponse {
@@ -59,9 +67,10 @@ export interface ProviderGenerationResponse {
   providerName: string;
   providerRequestId: string;
   modelOrRenderer: string;
-  /** Inline bytes (preferred for validated local/mock). Secure refs must be resolved before validation. */
+  providerAccountId: string;
+  providerProjectId: string | null;
+  providerAuthId: string;
   outputBytesBase64: string | null;
-  /** Optional secure reference — must be fetched by authorized adapter before acceptance. */
   secureByteReference: string | null;
   mimeType: string;
   width: number;
@@ -71,11 +80,16 @@ export interface ProviderGenerationResponse {
   generationTimestamp: string;
   providerMetadata: Record<string, string>;
   rightsProvenance: RightsProvenanceRecord;
+  /** Provider-reported checksum — must match independently calculated bytes. */
   contentChecksumSha256: string;
   cellId: string;
   lessonId: string;
   locale: Locale;
+  method: Method;
   runId: string;
+  controlRoomAuthorizationId: string;
+  sourceSha: string;
+  approvedManifestSha256: string;
   idempotencyKey: string;
   attemptNumber: number;
 }
@@ -91,6 +105,9 @@ export interface OutputValidationRecord {
   contentChecksumSha256: string | null;
   fixtureRejected: boolean;
   stubRejected: boolean;
+  cellId: string;
+  sourceSha: string;
+  approvedManifestSha256: string;
 }
 
 export interface ProductionCellReceipt {
@@ -107,6 +124,9 @@ export interface ProductionCellReceipt {
   providerName: string | null;
   providerRequestId: string | null;
   modelOrRenderer: string | null;
+  providerAccountId: string | null;
+  providerProjectId: string | null;
+  providerAuthId: string | null;
   idempotencyKey: string;
   attemptNumber: number;
   outputPathOrStorageKey: string | null;
@@ -124,6 +144,8 @@ export interface ProductionCellReceipt {
   failureCode: string | null;
   retryable: boolean | null;
   error: string | null;
+  /** Explicit dry-run/fixture marker; production reuse rejected when set. */
+  fixtureMarker: string | null;
 }
 
 export interface ProductionMapping {
@@ -140,8 +162,19 @@ export interface ProductionMapping {
   approvedManifestSha256: string;
   receiptRef: string;
   rightsProvenanceRef: string;
+  validationRef: string;
   acceptedValidationStatus: "ACCEPTED";
   runId: string;
+}
+
+export interface CellFailureRecord {
+  schemaVersion: "lesson-visual-failure/v1";
+  cellId: string;
+  runId: string;
+  failureCode: string;
+  errors: string[];
+  retryable: boolean;
+  producedAt: string;
 }
 
 export interface ProductionRunSummary {
@@ -161,6 +194,8 @@ export interface ProductionRunSummary {
   totalCostMicros: string;
   quotaUsage: number;
   quotaCeiling: number;
+  providerAttemptQuota: number;
+  providerAttemptsUsed: number;
   receiptCount: number;
   mappingCount: number;
   artifactIndexSha256: string;
@@ -168,12 +203,26 @@ export interface ProductionRunSummary {
   errors: string[];
 }
 
+export interface AggregateValidationReportShape {
+  schemaVersion: "lesson-visual-aggregate-validation/v1";
+  ok: boolean;
+  errors: string[];
+  runSummary: ProductionRunSummary;
+  reportSha256: string;
+}
+
 export interface ProductionConfig {
   executionMode: ExecutionMode;
   providerName: string;
   providerModel: string;
+  /** Explicit expected account identity (never secret value). */
+  providerAccountId: string;
+  /** Explicit expected project identity; empty string means unused. */
+  providerProjectId: string;
+  providerAuthId: string;
   providerApiKeyPresent: boolean;
   providerAccountIdPresent: boolean;
+  providerProjectIdPresent: boolean;
   providerAuthIdPresent: boolean;
   storageCredentialPresent: boolean;
   runCostCeilingMicros: UsdMicros;
@@ -182,17 +231,18 @@ export interface ProductionConfig {
   allowedMimeTypes: string[];
   requiredWidth: number;
   requiredHeight: number;
-  quotaCells: number;
+  /** Provider-attempt quota (max total generate calls). */
+  providerAttemptQuota: number;
   maxRetries: number;
   outputStorageTarget: string;
   lovableDispatchActorsRaw: string;
 }
 
 export interface BudgetPreflightInput {
-  cellCount: number;
+  eligibleCellCount: number;
   cellCostCeilingMicros: UsdMicros;
   runCostCeilingMicros: UsdMicros;
-  quotaCells: number;
+  providerAttemptQuota: number;
   maxRetries: number;
 }
 
@@ -200,5 +250,5 @@ export interface BudgetPreflightResult {
   ok: boolean;
   errors: string[];
   projectedMaxCostMicros: UsdMicros;
-  projectedMaxAttempts: number;
+  projectedMaxProviderAttempts: number;
 }

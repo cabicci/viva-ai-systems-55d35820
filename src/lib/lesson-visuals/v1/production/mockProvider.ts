@@ -11,10 +11,12 @@ import type { ProviderGenerationRequest, ProviderGenerationResponse } from "./ty
 export interface MockProviderOptions {
   providerName: string;
   model: string;
+  accountId: string;
+  projectId: string | null;
+  authId: string;
   width: number;
   height: number;
   costMicros: string;
-  /** Force failures for tests */
   failMode?:
     | "empty-bytes"
     | "wrong-mime"
@@ -25,6 +27,14 @@ export interface MockProviderOptions {
     | "missing-rights"
     | "url-only"
     | "high-cost"
+    | "wrong-account"
+    | "wrong-project"
+    | "wrong-auth"
+    | "wrong-source-sha"
+    | "wrong-manifest"
+    | "wrong-run"
+    | "wrong-attempt"
+    | "legacy-source-ref"
     | null;
 }
 
@@ -40,33 +50,26 @@ export function createMockProvider(opts: MockProviderOptions): ProviderTransport
         .slice(0, 32);
 
       const generatedAt = new Date("2026-07-21T00:00:00.000Z").toISOString();
-      const rights = buildGreenfieldRights({
-        method: request.method,
-        providerName: opts.providerName,
-        model: opts.model,
-        providerRequestId,
-        generatedAt,
-        sourceReferences: [`master:${request.lessonId}`],
-        evidenceChecksums: [
-          createHash("sha256").update(request.lessonId).digest("hex"),
-        ],
-      });
-
-      if (opts.failMode === "missing-rights") {
-        rights.licenseOrUsageBasis = "";
-      }
-
+      const hue = createHash("sha256").update(request.cellId).digest();
+      const rgb: [number, number, number] = [hue[0]!, hue[1]!, hue[2]!];
       let width = opts.width;
       let height = opts.height;
       let mimeType = "image/png";
-      // Deterministic unique raster per cell (avoids duplicate checksum across cells).
-      const hue = createHash("sha256").update(request.cellId).digest();
-      const rgb: [number, number, number] = [hue[0]!, hue[1]!, hue[2]!];
       let bytes = encodeSolidPng(width, height, rgb);
       let cost = opts.costMicros;
       let cellId = request.cellId;
       let lessonId = request.lessonId;
       let locale = request.locale;
+      let method = request.method;
+      let runId = request.runId;
+      let controlRoomAuthorizationId = request.controlRoomAuthorizationId;
+      let sourceSha = request.sourceSha;
+      let approvedManifestSha256 = request.approvedManifestSha256;
+      let attemptNumber = request.attemptNumber;
+      let accountId = opts.accountId;
+      let projectId = opts.projectId;
+      let authId = opts.authId;
+      let sourceReferences = [`master:${request.lessonId}`];
       let outputBytesBase64: string | null = bytes.toString("base64");
       let secureByteReference: string | null = null;
       let checksum = sha256Hex(bytes);
@@ -102,13 +105,60 @@ export function createMockProvider(opts: MockProviderOptions): ProviderTransport
           break;
         case "url-only":
           outputBytesBase64 = null;
-          secureByteReference = "https://example.invalid/image.png";
+          secureByteReference = "https://example.invalid/legacy/image.png";
           break;
         case "high-cost":
           cost = "999999999999";
           break;
+        case "wrong-account":
+          accountId = "wrong-account";
+          break;
+        case "wrong-project":
+          projectId = "wrong-project";
+          break;
+        case "wrong-auth":
+          authId = "wrong-auth";
+          break;
+        case "wrong-source-sha":
+          sourceSha = "0".repeat(40);
+          break;
+        case "wrong-manifest":
+          approvedManifestSha256 = "1".repeat(64);
+          break;
+        case "wrong-run":
+          runId = "wrong-run";
+          break;
+        case "wrong-attempt":
+          attemptNumber = request.attemptNumber + 1;
+          break;
+        case "legacy-source-ref":
+          sourceReferences = ["docs/lesson-visuals/legacy/gallery/old.png"];
+          break;
+        case "missing-rights":
+          break;
         default:
           break;
+      }
+
+      const rights = buildGreenfieldRights({
+        method: request.method,
+        providerName: opts.providerName,
+        model: opts.model,
+        providerRequestId,
+        generatedAt,
+        cellId: request.cellId,
+        sourceSha: request.sourceSha,
+        approvedManifestSha256: request.approvedManifestSha256,
+        outputContentSha256: checksum === "0".repeat(64) ? sha256Hex(bytes) : checksum,
+        sourceReferences,
+        evidenceChecksums: [createHash("sha256").update(request.lessonId).digest("hex")],
+      });
+      if (opts.failMode === "missing-rights") {
+        rights.licenseOrUsageBasis = "";
+      }
+      if (opts.failMode === "checksum-mismatch") {
+        // rights bind to real bytes; response checksum is wrong — contract must reject
+        rights.outputContentSha256 = sha256Hex(bytes);
       }
 
       return {
@@ -116,6 +166,9 @@ export function createMockProvider(opts: MockProviderOptions): ProviderTransport
         providerName: opts.providerName,
         providerRequestId,
         modelOrRenderer: opts.model,
+        providerAccountId: accountId,
+        providerProjectId: projectId,
+        providerAuthId: authId,
         outputBytesBase64,
         secureByteReference,
         mimeType,
@@ -130,9 +183,13 @@ export function createMockProvider(opts: MockProviderOptions): ProviderTransport
         cellId,
         lessonId,
         locale,
-        runId: request.runId,
+        method,
+        runId,
+        controlRoomAuthorizationId,
+        sourceSha,
+        approvedManifestSha256,
         idempotencyKey: request.idempotencyKey,
-        attemptNumber: request.attemptNumber,
+        attemptNumber,
       };
     },
   };

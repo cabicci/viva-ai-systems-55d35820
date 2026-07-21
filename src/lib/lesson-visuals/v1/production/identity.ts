@@ -28,6 +28,8 @@ export function validateRequestIdentity(req: ProviderGenerationRequest): string[
   if (!Number.isInteger(req.attemptNumber) || req.attemptNumber < 1) {
     errors.push("attemptNumber invalid");
   }
+  if (!req.expectedProviderAccountId?.trim()) errors.push("expectedProviderAccountId missing");
+  if (!req.expectedProviderAuthId?.trim()) errors.push("expectedProviderAuthId missing");
   return errors;
 }
 
@@ -39,10 +41,29 @@ export function validateResponseIdentity(
   if (res.cellId !== req.cellId) errors.push("response cellId mismatch");
   if (res.lessonId !== req.lessonId) errors.push("response lessonId mismatch");
   if (res.locale !== req.locale) errors.push("response locale mismatch / cross-locale output");
+  if (res.method !== req.method) errors.push("response method mismatch");
   if (res.runId !== req.runId) errors.push("response runId mismatch");
+  if (res.controlRoomAuthorizationId !== req.controlRoomAuthorizationId) {
+    errors.push("response controlRoomAuthorizationId mismatch");
+  }
+  if (res.sourceSha !== req.sourceSha) errors.push("response sourceSha mismatch");
+  if (res.approvedManifestSha256 !== req.approvedManifestSha256) {
+    errors.push("response manifest digest mismatch");
+  }
   if (res.idempotencyKey !== req.idempotencyKey) errors.push("response idempotencyKey mismatch");
   if (res.attemptNumber !== req.attemptNumber) errors.push("response attemptNumber mismatch");
   if (!res.providerRequestId?.trim()) errors.push("missing provider request ID");
+  if (!res.providerAccountId?.trim()) errors.push("missing provider account identity");
+  if (res.providerAccountId !== req.expectedProviderAccountId) {
+    errors.push("provider account identity mismatch");
+  }
+  if ((res.providerProjectId ?? "") !== (req.expectedProviderProjectId ?? "")) {
+    errors.push("provider project identity mismatch");
+  }
+  if (!res.providerAuthId?.trim()) errors.push("missing provider authorization identity");
+  if (res.providerAuthId !== req.expectedProviderAuthId) {
+    errors.push("provider authorization identity mismatch");
+  }
   return errors;
 }
 

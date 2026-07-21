@@ -1,3 +1,4 @@
+import { validateMappingSchema } from "./schemaValidator";
 import type { ProductionCellReceipt, ProductionMapping } from "./types";
 
 export function buildMappingFromAcceptedReceipt(
@@ -10,11 +11,12 @@ export function buildMappingFromAcceptedReceipt(
     !receipt.mimeType ||
     receipt.width == null ||
     receipt.height == null ||
-    !receipt.rightsProvenanceRef
+    !receipt.rightsProvenanceRef ||
+    !receipt.validationRef
   ) {
     return null;
   }
-  return {
+  const mapping: ProductionMapping = {
     schemaVersion: "lesson-visual-production-mapping/v1",
     cellId: receipt.cellId,
     lessonId: receipt.lessonId,
@@ -28,7 +30,11 @@ export function buildMappingFromAcceptedReceipt(
     approvedManifestSha256: receipt.approvedManifestSha256,
     receiptRef: `receipts/${receipt.cellId}.receipt.json`,
     rightsProvenanceRef: receipt.rightsProvenanceRef,
+    validationRef: receipt.validationRef,
     acceptedValidationStatus: "ACCEPTED",
     runId: receipt.runId,
   };
+  const schema = validateMappingSchema(mapping);
+  if (!schema.ok) return null;
+  return mapping;
 }

@@ -1,11 +1,20 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { FIXTURE_RECEIPT_MARKER } from "../constants";
 import type { Locale, Method } from "../types";
+import { assertGreenfieldReferences } from "./greenfield";
 import { assertExecutionAllowsMock, executeProviderContract } from "./providerContract";
 import type { ProviderTransport } from "./providerContract";
 import { buildMappingFromAcceptedReceipt } from "./mappings";
 import { buildReceipt, fingerprintProductionReceipt } from "./receipts";
+import {
+  validateFailureRecordSchema,
+  validateMappingSchema,
+  validateReceiptSchema,
+  validateRightsSchema,
+} from "./schemaValidator";
 import type {
+  CellFailureRecord,
   ProductionCellReceipt,
   ProductionConfig,
   ProductionMapping,
@@ -29,12 +38,21 @@ export interface RunCellArgs {
   remainingRunBudgetMicros: bigint;
   seenProviderRequestIds: Set<string>;
   priorAcceptedReceipt?: ProductionCellReceipt | null;
+  /** Called once when a provider generate() is invoked. */
+  onProviderAttempt?: () => void;
 }
 
 export interface RunCellResult {
   receipt: ProductionCellReceipt;
   mapping: ProductionMapping | null;
   costMicros: bigint;
+  providerAttempted: boolean;
+}
+
+function writeValidatedJson(path: string, obj: unknown, validate: (o: unknown) => { ok: boolean; errors: string[] }): void {
+  const v = validate(obj);
+  if (!v.ok) throw new Error(`refusing to write invalid artifact ${path}: ${v.errors.join("; ")}`);
+  writeFileSync(path, `${JSON.stringify(obj, null, 2)}\n`, "utf8");
 }
 
 export async function runProductionCell(args: RunCellArgs): Promise<RunCellResult> {
@@ -46,6 +64,8 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
     args.approvedManifestSha256,
     String(args.method),
   ].join(":");
+  const fixtureMarker =
+    args.config.executionMode === "dry-run" ? FIXTURE_RECEIPT_MARKER : null;
 
   if (args.priorAcceptedReceipt?.status === "ACCEPTED") {
     const expectedFp = fingerprintProductionReceipt({
@@ -73,6 +93,9 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
         providerName: args.priorAcceptedReceipt.providerName,
         providerRequestId: args.priorAcceptedReceipt.providerRequestId,
         modelOrRenderer: args.priorAcceptedReceipt.modelOrRenderer,
+        providerAccountId: args.priorAcceptedReceipt.providerAccountId,
+        providerProjectId: args.priorAcceptedReceipt.providerProjectId,
+        providerAuthId: args.priorAcceptedReceipt.providerAuthId,
         idempotencyKey,
         attemptNumber: args.attemptNumber,
         outputPathOrStorageKey: args.priorAcceptedReceipt.outputPathOrStorageKey,
@@ -89,8 +112,15 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
         error: null,
         producedAt: now,
         completedAt: now,
+        fixtureMarker: args.priorAcceptedReceipt.fixtureMarker,
       });
-      return { receipt: skip, mapping: null, costMicros: 0n };
+      mkdirSync(join(args.artifactsRoot, "receipts"), { recursive: true });
+      writeValidatedJson(
+        join(args.artifactsRoot, "receipts", `${args.cellId}.receipt.json`),
+        skip,
+        validateReceiptSchema,
+      );
+      return { receipt: skip, mapping: null, costMicros: 0n, providerAttempted: false };
     }
   }
 
@@ -112,6 +142,9 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
       providerName: null,
       providerRequestId: null,
       modelOrRenderer: null,
+      providerAccountId: null,
+      providerProjectId: null,
+      providerAuthId: null,
       idempotencyKey,
       attemptNumber: args.attemptNumber,
       outputPathOrStorageKey: null,
@@ -128,8 +161,51 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
       error: mockGate,
       producedAt: now,
       completedAt: now,
+      fixtureMarker: null,
     });
-    return { receipt, mapping: null, costMicros: 0n };
+    return writeFailure(args, receipt, [mockGate], false);
+  }
+
+  const gf = assertGreenfieldReferences([
+    args.promptOrRenderingSpec,
+    args.config.outputStorageTarget,
+  ]);
+  if (!gf.ok) {
+    const receipt = buildReceipt({
+      status: "NON_RETRYABLE_FAILURE",
+      runId: args.runId,
+      controlRoomAuthorizationId: args.controlRoomAuthorizationId,
+      sourceSha: args.sourceSha,
+      approvedManifestSha256: args.approvedManifestSha256,
+      cellId: args.cellId,
+      lessonId: args.lessonId,
+      locale: args.locale,
+      method: args.method,
+      providerName: null,
+      providerRequestId: null,
+      modelOrRenderer: null,
+      providerAccountId: null,
+      providerProjectId: null,
+      providerAuthId: null,
+      idempotencyKey,
+      attemptNumber: args.attemptNumber,
+      outputPathOrStorageKey: null,
+      mimeType: null,
+      width: null,
+      height: null,
+      byteLength: null,
+      contentSha256: null,
+      costMicros: null,
+      rightsProvenanceRef: null,
+      validationRef: null,
+      failureCode: "LEGACY_REFERENCE",
+      retryable: false,
+      error: gf.errors.join("; "),
+      producedAt: now,
+      completedAt: now,
+      fixtureMarker: null,
+    });
+    return writeFailure(args, receipt, gf.errors, false);
   }
 
   const request: ProviderGenerationRequest = {
@@ -156,14 +232,17 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
     attemptNumber: args.attemptNumber,
     budgetAllocationMicros: args.config.cellCostCeilingMicros.toString(),
     maxCostMicros: args.config.cellCostCeilingMicros.toString(),
+    expectedProviderAccountId: args.config.providerAccountId,
+    expectedProviderProjectId: args.config.providerProjectId || null,
+    expectedProviderAuthId: args.config.providerAuthId,
   };
 
-  // dry-run without API key: mock transport is the authorized path
   const configForCall =
     args.config.executionMode === "dry-run" && !args.config.providerApiKeyPresent
       ? { ...args.config, providerApiKeyPresent: true }
       : args.config;
 
+  args.onProviderAttempt?.();
   const result = await executeProviderContract(request, {
     config: configForCall,
     transport: args.transport,
@@ -179,7 +258,7 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
   mkdirSync(join(args.artifactsRoot, "rights"), { recursive: true });
   mkdirSync(join(args.artifactsRoot, "validations"), { recursive: true });
 
-  if (!result.ok || !result.response || !result.bytes || !result.validation) {
+  if (!result.ok || !result.response || !result.bytes || !result.validation || !result.independentChecksum) {
     const receipt = buildReceipt({
       status: "RETRYABLE_FAILURE",
       runId: args.runId,
@@ -193,6 +272,9 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
       providerName: result.response?.providerName ?? null,
       providerRequestId: result.response?.providerRequestId ?? null,
       modelOrRenderer: result.response?.modelOrRenderer ?? null,
+      providerAccountId: result.response?.providerAccountId ?? null,
+      providerProjectId: result.response?.providerProjectId ?? null,
+      providerAuthId: result.response?.providerAuthId ?? null,
       idempotencyKey,
       attemptNumber: args.attemptNumber,
       outputPathOrStorageKey: null,
@@ -209,35 +291,68 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
       error: result.errors.join("; "),
       producedAt: now,
       completedAt: new Date().toISOString(),
+      fixtureMarker,
     });
-    writeFileSync(
-      join(args.artifactsRoot, "receipts", `${args.cellId}.receipt.json`),
-      `${JSON.stringify(receipt, null, 2)}\n`,
-      "utf8",
-    );
-    writeFileSync(
-      join(cellDir, "failure.json"),
-      `${JSON.stringify({ errors: result.errors }, null, 2)}\n`,
-      "utf8",
-    );
-    return { receipt, mapping: null, costMicros: result.costMicros ?? 0n };
+    return writeFailure(args, receipt, result.errors, true);
   }
 
   const storageKey = `${args.config.outputStorageTarget.replace(/\/$/, "")}/${args.cellId}.png`;
-  const outPath = join(cellDir, "output.png");
-  writeFileSync(outPath, result.bytes);
+  const gfStorage = assertGreenfieldReferences([storageKey]);
+  if (!gfStorage.ok) {
+    const receipt = buildReceipt({
+      status: "NON_RETRYABLE_FAILURE",
+      runId: args.runId,
+      controlRoomAuthorizationId: args.controlRoomAuthorizationId,
+      sourceSha: args.sourceSha,
+      approvedManifestSha256: args.approvedManifestSha256,
+      cellId: args.cellId,
+      lessonId: args.lessonId,
+      locale: args.locale,
+      method: args.method,
+      providerName: result.response.providerName,
+      providerRequestId: result.response.providerRequestId,
+      modelOrRenderer: result.response.modelOrRenderer,
+      providerAccountId: result.response.providerAccountId,
+      providerProjectId: result.response.providerProjectId,
+      providerAuthId: result.response.providerAuthId,
+      idempotencyKey,
+      attemptNumber: args.attemptNumber,
+      outputPathOrStorageKey: null,
+      mimeType: null,
+      width: null,
+      height: null,
+      byteLength: null,
+      contentSha256: null,
+      costMicros: result.costMicros?.toString() ?? null,
+      rightsProvenanceRef: null,
+      validationRef: null,
+      failureCode: "LEGACY_STORAGE_TARGET",
+      retryable: false,
+      error: gfStorage.errors.join("; "),
+      producedAt: now,
+      completedAt: new Date().toISOString(),
+      fixtureMarker,
+    });
+    return writeFailure(args, receipt, gfStorage.errors, true);
+  }
 
+  writeFileSync(join(cellDir, "output.png"), result.bytes);
+
+  // Bind rights to independently calculated checksum before write
+  const rights = {
+    ...result.response.rightsProvenance,
+    outputContentSha256: result.independentChecksum,
+    cellId: args.cellId,
+    sourceSha: args.sourceSha,
+    approvedManifestSha256: args.approvedManifestSha256,
+  };
   const rightsRef = `rights/${args.cellId}.rights.json`;
   const validationRef = `validations/${args.cellId}.validation.json`;
-  writeFileSync(
-    join(args.artifactsRoot, rightsRef),
-    `${JSON.stringify(result.response.rightsProvenance, null, 2)}\n`,
-    "utf8",
-  );
-  writeFileSync(
+  writeValidatedJson(join(args.artifactsRoot, rightsRef), rights, validateRightsSchema);
+  writeValidatedJson(
     join(args.artifactsRoot, validationRef),
-    `${JSON.stringify(result.validation, null, 2)}\n`,
-    "utf8",
+    result.validation,
+    (o) => ({ ok: (o as { ok?: boolean }).ok === true || Array.isArray((o as { errors?: unknown }).errors), errors: [] }),
   );
 
   const receipt = buildReceipt({
@@ -253,6 +368,9 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
     providerName: result.response.providerName,
     providerRequestId: result.response.providerRequestId,
     modelOrRenderer: result.response.modelOrRenderer,
+    providerAccountId: result.response.providerAccountId,
+    providerProjectId: result.response.providerProjectId,
+    providerAuthId: result.response.providerAuthId,
     idempotencyKey,
     attemptNumber: args.attemptNumber,
     outputPathOrStorageKey: storageKey,
@@ -260,7 +378,7 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
     width: result.validation.width,
     height: result.validation.height,
     byteLength: result.validation.byteLength,
-    contentSha256: result.validation.contentChecksumSha256,
+    contentSha256: result.independentChecksum,
     costMicros: result.costMicros!.toString(),
     rightsProvenanceRef: rightsRef,
     validationRef,
@@ -269,21 +387,49 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
     error: null,
     producedAt: now,
     completedAt: new Date().toISOString(),
+    fixtureMarker,
   });
 
   const mapping = buildMappingFromAcceptedReceipt(receipt);
-  writeFileSync(
+  writeValidatedJson(
     join(args.artifactsRoot, "receipts", `${args.cellId}.receipt.json`),
-    `${JSON.stringify(receipt, null, 2)}\n`,
-    "utf8",
+    receipt,
+    validateReceiptSchema,
   );
   if (mapping) {
-    writeFileSync(
+    writeValidatedJson(
       join(args.artifactsRoot, "mappings", `${args.cellId}.mapping.json`),
-      `${JSON.stringify(mapping, null, 2)}\n`,
-      "utf8",
+      mapping,
+      validateMappingSchema,
     );
   }
 
-  return { receipt, mapping, costMicros: result.costMicros ?? 0n };
+  return { receipt, mapping, costMicros: result.costMicros ?? 0n, providerAttempted: true };
+}
+
+function writeFailure(
+  args: RunCellArgs,
+  receipt: ProductionCellReceipt,
+  errors: string[],
+  providerAttempted: boolean,
+): RunCellResult {
+  const cellDir = join(args.artifactsRoot, "cells", args.cellId);
+  mkdirSync(cellDir, { recursive: true });
+  mkdirSync(join(args.artifactsRoot, "receipts"), { recursive: true });
+  const failure: CellFailureRecord = {
+    schemaVersion: "lesson-visual-failure/v1",
+    cellId: args.cellId,
+    runId: args.runId,
+    failureCode: receipt.failureCode ?? "FAILED",
+    errors,
+    retryable: Boolean(receipt.retryable),
+    producedAt: new Date().toISOString(),
+  };
+  writeValidatedJson(join(cellDir, "failure.json"), failure, validateFailureRecordSchema);
+  writeValidatedJson(
+    join(args.artifactsRoot, "receipts", `${args.cellId}.receipt.json`),
+    receipt,
+    validateReceiptSchema,
+  );
+  return { receipt, mapping: null, costMicros: 0n, providerAttempted };
 }
