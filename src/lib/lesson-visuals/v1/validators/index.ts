@@ -30,7 +30,7 @@ export function runAllValidators(options?: {
     ...validateLocaleIntegrity(),
     ...validateEvidence(),
     ...validateGenericLabelBan(),
-    ...validateGrounding({ writeAuditLedger: true }),
+    ...validateGrounding({ writeAuditLedger: false }),
     ...validateTemplateSimilarity(),
     ...validateFontsPresent(),
   ];

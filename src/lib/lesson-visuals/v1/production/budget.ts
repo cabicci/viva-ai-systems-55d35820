@@ -1,48 +1,56 @@
 import type { BudgetPreflightInput, BudgetPreflightResult } from "./types";
 import type { UsdMicros } from "./money";
+import { computeAttemptQuotaEnvelope } from "./attemptQuota";
 
 /**
- * Fail-closed budget/quota preflight using integer micro-USD.
- * Projected max cost = cellCount * (maxRetries + 1) * cellCeiling.
+ * Fail-closed budget + attempt-quota preflight using integer micro-USD.
+ * Projected max cost = eligibleCells * (maxRetries + 1) * cellCeiling.
  */
-export function preflightBudgetAndQuota(input: BudgetPreflightInput): BudgetPreflightResult {
+export function preflightBudgetAndQuota(
+  input: BudgetPreflightInput & { validSkippedCells?: number; authoritativeCells?: number },
+): BudgetPreflightResult {
   const errors: string[] = [];
-  const { cellCount, cellCostCeilingMicros, runCostCeilingMicros, quotaCells, maxRetries } = input;
+  const {
+    eligibleCellCount,
+    cellCostCeilingMicros,
+    runCostCeilingMicros,
+    providerAttemptQuota,
+    maxRetries,
+  } = input;
 
   if (runCostCeilingMicros <= 0n) errors.push("missing or non-positive run budget ceiling");
   if (cellCostCeilingMicros <= 0n) errors.push("missing or non-positive per-cell cost ceiling");
   if (cellCostCeilingMicros > runCostCeilingMicros) {
     errors.push("per-cell cost ceiling above run ceiling");
   }
-  if (!Number.isInteger(quotaCells) || quotaCells <= 0) {
-    errors.push("missing or invalid quota configuration");
-  }
-  if (cellCount > quotaCells) {
-    errors.push(`requested cells ${cellCount} above quota ${quotaCells}`);
-  }
-  if (!Number.isInteger(maxRetries) || maxRetries < 0) {
-    errors.push("invalid maxRetries");
-  }
+
+  const authoritativeCells = input.authoritativeCells ?? eligibleCellCount + (input.validSkippedCells ?? 0);
+  const validSkippedCells = input.validSkippedCells ?? 0;
+  const quota = computeAttemptQuotaEnvelope({
+    authoritativeCells,
+    eligibleCells: eligibleCellCount,
+    validSkippedCells,
+    maxRetries,
+    configuredProviderAttemptQuota: providerAttemptQuota,
+  });
+  if (!quota.ok) errors.push(...quota.errors.map((e) => `attempt-quota: ${e}`));
 
   const attemptsPerCell = BigInt(maxRetries + 1);
-  const projectedMaxAttempts = cellCount * (maxRetries + 1);
-  const projectedMaxCostMicros = BigInt(cellCount) * attemptsPerCell * cellCostCeilingMicros;
+  const projectedMaxProviderAttempts = quota.maxProviderAttempts;
+  const projectedMaxCostMicros =
+    BigInt(eligibleCellCount) * attemptsPerCell * cellCostCeilingMicros;
 
   if (projectedMaxCostMicros > runCostCeilingMicros) {
     errors.push(
       `projected maximum cost ${projectedMaxCostMicros} exceeds run ceiling ${runCostCeilingMicros}`,
     );
   }
-  if (projectedMaxAttempts > quotaCells * (maxRetries + 1) && cellCount > quotaCells) {
-    // already covered; keep for clarity on retry multiplication
-    errors.push("retry multiplication causes projected quota overrun");
-  }
 
   return {
     ok: errors.length === 0,
     errors,
     projectedMaxCostMicros,
-    projectedMaxAttempts,
+    projectedMaxProviderAttempts,
   };
 }
 

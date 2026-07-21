@@ -29,3 +29,12 @@ export const USD_MICROS_PER_DOLLAR = 1_000_000n;
 
 export const FIXTURE_BYTE_MARKER = "LESSON_VISUALS_FIXTURE_MARKER" as const;
 export const STUB_RECEIPT_MARKER = "candidate run — comparison sheet stub only" as const;
+
+/** Only MIME types with implemented magic-byte + decode + dimension validators. */
+export const SUPPORTED_PRODUCTION_MIME_TYPES = ["image/png"] as const;
+
+/** Max retries per eligible cell (initial attempt is separate). */
+export const MAX_RETRIES_HARD_CEILING = 5;
+
+/** Explicit fixture/mock marker on receipts for production reuse rejection. */
+export const FIXTURE_RECEIPT_MARKER = "LESSON_VISUALS_FIXTURE_RECEIPT" as const;

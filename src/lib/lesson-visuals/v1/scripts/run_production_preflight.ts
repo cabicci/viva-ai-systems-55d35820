@@ -1,15 +1,12 @@
 /**
  * Workflow entry: global preflight before matrix expansion.
  * Fail-closed. Never logs secret values.
- *
- * bun run src/lib/lesson-visuals/v1/scripts/run_production_preflight.ts
  */
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { AUTHORITATIVE_BASE_SOURCE_SHA } from "../constants";
 import { parseDispatchActorAllowlist } from "../dispatch/authorizationContract";
-import { redactConfigForLog, type ProductionEnv } from "../production/config";
-import { loadProductionConfig } from "../production/config";
+import { loadProductionConfig, redactConfigForLog, type ProductionEnv } from "../production/config";
 import { runGlobalPreflight } from "../production/preflight";
 
 function moduleDir(): string {
@@ -26,6 +23,7 @@ function env(): ProductionEnv {
     LESSON_VISUALS_PROVIDER_MODEL: process.env.LESSON_VISUALS_PROVIDER_MODEL,
     LESSON_VISUALS_PROVIDER_API_KEY: process.env.LESSON_VISUALS_PROVIDER_API_KEY,
     LESSON_VISUALS_PROVIDER_ACCOUNT_ID: process.env.LESSON_VISUALS_PROVIDER_ACCOUNT_ID,
+    LESSON_VISUALS_PROVIDER_PROJECT_ID: process.env.LESSON_VISUALS_PROVIDER_PROJECT_ID,
     LESSON_VISUALS_AI_AUTH_ID: process.env.LESSON_VISUALS_AI_AUTH_ID,
     LESSON_VISUALS_STORAGE_CREDENTIAL: process.env.LESSON_VISUALS_STORAGE_CREDENTIAL,
     LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS:
@@ -36,7 +34,7 @@ function env(): ProductionEnv {
     LESSON_VISUALS_ALLOWED_MIME_TYPES: process.env.LESSON_VISUALS_ALLOWED_MIME_TYPES,
     LESSON_VISUALS_REQUIRED_WIDTH: process.env.LESSON_VISUALS_REQUIRED_WIDTH,
     LESSON_VISUALS_REQUIRED_HEIGHT: process.env.LESSON_VISUALS_REQUIRED_HEIGHT,
-    LESSON_VISUALS_QUOTA_CELLS: process.env.LESSON_VISUALS_QUOTA_CELLS,
+    LESSON_VISUALS_PROVIDER_ATTEMPT_QUOTA: process.env.LESSON_VISUALS_PROVIDER_ATTEMPT_QUOTA,
     LESSON_VISUALS_MAX_RETRIES: process.env.LESSON_VISUALS_MAX_RETRIES,
     LESSON_VISUALS_OUTPUT_STORAGE_TARGET: process.env.LESSON_VISUALS_OUTPUT_STORAGE_TARGET,
     LOVABLE_DISPATCH_ACTORS: process.env.LOVABLE_DISPATCH_ACTORS,
@@ -52,12 +50,14 @@ function main(): void {
   const actualManifest = (process.env.ACTUAL_MANIFEST_SHA256 ?? "").toLowerCase();
   const actualSource = process.env.ACTUAL_SOURCE_SHA ?? "";
   const actors = parseDispatchActorAllowlist(e.LOVABLE_DISPATCH_ACTORS);
+  const priorPath = process.env.PRIOR_RECEIPT_BUNDLE_PATH ?? null;
 
   const result = runGlobalPreflight({
     repoRoot: resolve(moduleDir(), "../../../../.."),
     env: e,
     mode,
     maxParallel,
+    priorReceiptBundlePath: priorPath,
     requireSourceShaEqualsBase: true,
     dispatch: {
       controlRoomAuthorizationId: process.env.CONTROL_ROOM_AUTHORIZATION_ID ?? "",
@@ -83,6 +83,9 @@ function main(): void {
         errors: result.errors,
         manifestSha256: result.manifestSha256,
         cellCount: result.cellCount,
+        eligibleCells: result.eligibleCells,
+        validSkippedCells: result.validSkippedCells,
+        maxProviderAttempts: result.maxProviderAttempts,
         authoritativeBaseSourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
         config: cfg.config ? redactConfigForLog(cfg.config) : null,
       },

@@ -478,7 +478,8 @@ function main() {
   allIssues.push(...validateGenericLabelBan());
   allIssues.push(...validateLocaleIntegrity());
   allIssues.push(...validateEvidence());
-  allIssues.push(...validateGrounding({ writeAuditLedger: true }));
+  // Validation is strictly read-only — never rewrite grounding_audit.json or any ledger.
+  allIssues.push(...validateGrounding({ writeAuditLedger: false }));
   allIssues.push(...validateDuplicateTemplates(masters));
   allIssues.push(...validateWorkflowYaml());
   allIssues.push(...validateScreenshotLedger(masters));

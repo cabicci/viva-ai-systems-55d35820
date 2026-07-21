@@ -48,7 +48,7 @@ function containsBannedChrome(text: string): boolean {
 }
 
 export function validateGrounding(
-  options: { writeAuditLedger?: boolean } = { writeAuditLedger: true },
+  options: { writeAuditLedger?: boolean } = { writeAuditLedger: false },
 ): ValidationIssue[] {
   const issues: ValidationIssue[] = [];
   if (!existsSync(MASTERS_DIR)) {
