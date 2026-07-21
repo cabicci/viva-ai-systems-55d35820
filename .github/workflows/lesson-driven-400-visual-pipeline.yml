@@ -46,6 +46,16 @@ on:
         required: true
         type: number
         default: 20
+      prior_receipt_bundle_artifact:
+        description: Required for failed-only — GitHub Actions artifact name containing authorized *.receipt.json files (immutable prior-run evidence). Leave empty for full mode.
+        required: false
+        type: string
+        default: ""
+      prior_receipt_bundle_run_id:
+        description: Required for failed-only — source workflow run id that uploaded prior_receipt_bundle_artifact
+        required: false
+        type: string
+        default: ""
 
 permissions:
   contents: read
@@ -141,6 +151,10 @@ jobs:
       matrix: ${{ steps.matrix.outputs.matrix }}
       run_id: ${{ steps.matrix.outputs.run_id }}
       manifest_sha256: ${{ steps.preflight.outputs.manifest_sha256 }}
+      all_cell_ids_json: ${{ steps.preflight.outputs.all_cell_ids_json }}
+      need_prior: ${{ steps.prior.outputs.need_prior }}
+      prior_artifact_name: ${{ steps.prior.outputs.artifact_name }}
+      prior_run_id: ${{ steps.prior.outputs.run_id }}
     steps:
       - name: Checkout immutable source_sha
         uses: actions/checkout@v4
@@ -165,6 +179,43 @@ jobs:
             exit 1
           fi
 
+      - name: Resolve prior receipt bundle (failed-only)
+        id: prior
+        shell: bash
+        env:
+          MODE: ${{ github.event.inputs.mode }}
+          PRIOR_ARTIFACT: ${{ github.event.inputs.prior_receipt_bundle_artifact }}
+          PRIOR_RUN_ID: ${{ github.event.inputs.prior_receipt_bundle_run_id }}
+        run: |
+          set -euo pipefail
+          if [[ "$MODE" == "failed-only" ]]; then
+            if [[ -z "${PRIOR_ARTIFACT// }" || -z "${PRIOR_RUN_ID// }" ]]; then
+              echo "failed-only requires prior_receipt_bundle_artifact and prior_receipt_bundle_run_id"
+              exit 1
+            fi
+            if ! [[ "$PRIOR_RUN_ID" =~ ^[0-9]+$ ]]; then
+              echo "prior_receipt_bundle_run_id must be numeric"
+              exit 1
+            fi
+            echo "need_prior=true" >> "$GITHUB_OUTPUT"
+            echo "artifact_name=$PRIOR_ARTIFACT" >> "$GITHUB_OUTPUT"
+            echo "run_id=$PRIOR_RUN_ID" >> "$GITHUB_OUTPUT"
+          else
+            echo "need_prior=false" >> "$GITHUB_OUTPUT"
+            echo "artifact_name=" >> "$GITHUB_OUTPUT"
+            echo "run_id=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Download authorized prior receipt bundle
+        if: steps.prior.outputs.need_prior == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ steps.prior.outputs.artifact_name }}
+          path: prior-receipt-bundle
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: ${{ steps.prior.outputs.run_id }}
+
       - name: Run typed global preflight
         id: preflight
         shell: bash
@@ -177,12 +228,14 @@ jobs:
           GITHUB_ACTOR_NAME: ${{ github.actor }}
           MODE: ${{ github.event.inputs.mode }}
           MAX_PARALLEL: ${{ github.event.inputs.max_parallel }}
+          PRIOR_RECEIPT_BUNDLE_PATH: ${{ steps.prior.outputs.need_prior == 'true' && 'prior-receipt-bundle' || '' }}
           LOVABLE_DISPATCH_ACTORS: ${{ vars.LOVABLE_DISPATCH_ACTORS || secrets.LOVABLE_DISPATCH_ACTORS }}
           LESSON_VISUALS_EXECUTION_MODE: ${{ vars.LESSON_VISUALS_EXECUTION_MODE }}
           LESSON_VISUALS_PROVIDER_NAME: ${{ vars.LESSON_VISUALS_PROVIDER_NAME }}
           LESSON_VISUALS_PROVIDER_MODEL: ${{ vars.LESSON_VISUALS_PROVIDER_MODEL }}
           LESSON_VISUALS_PROVIDER_API_KEY: ${{ secrets.LESSON_VISUALS_PROVIDER_API_KEY }}
-          LESSON_VISUALS_PROVIDER_ACCOUNT_ID: ${{ secrets.LESSON_VISUALS_PROVIDER_ACCOUNT_ID }}
+          LESSON_VISUALS_PROVIDER_ACCOUNT_ID: ${{ vars.LESSON_VISUALS_PROVIDER_ACCOUNT_ID }}
+          LESSON_VISUALS_PROVIDER_PROJECT_ID: ${{ vars.LESSON_VISUALS_PROVIDER_PROJECT_ID }}
           LESSON_VISUALS_AI_AUTH_ID: ${{ secrets.LESSON_VISUALS_AI_AUTH_ID }}
           LESSON_VISUALS_STORAGE_CREDENTIAL: ${{ secrets.LESSON_VISUALS_STORAGE_CREDENTIAL }}
           LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS: ${{ vars.LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS }}
@@ -191,7 +244,7 @@ jobs:
           LESSON_VISUALS_ALLOWED_MIME_TYPES: ${{ vars.LESSON_VISUALS_ALLOWED_MIME_TYPES }}
           LESSON_VISUALS_REQUIRED_WIDTH: ${{ vars.LESSON_VISUALS_REQUIRED_WIDTH }}
           LESSON_VISUALS_REQUIRED_HEIGHT: ${{ vars.LESSON_VISUALS_REQUIRED_HEIGHT }}
-          LESSON_VISUALS_QUOTA_CELLS: ${{ vars.LESSON_VISUALS_QUOTA_CELLS }}
+          LESSON_VISUALS_PROVIDER_ATTEMPT_QUOTA: ${{ vars.LESSON_VISUALS_PROVIDER_ATTEMPT_QUOTA }}
           LESSON_VISUALS_MAX_RETRIES: ${{ vars.LESSON_VISUALS_MAX_RETRIES }}
           LESSON_VISUALS_OUTPUT_STORAGE_TARGET: ${{ vars.LESSON_VISUALS_OUTPUT_STORAGE_TARGET }}
         run: |
@@ -201,6 +254,16 @@ jobs:
           export ACTUAL_MANIFEST_SHA256="$ACTUAL_MANIFEST_SHA"
           bun run src/lib/lesson-visuals/v1/scripts/run_production_preflight.ts
           echo "manifest_sha256=$ACTUAL_MANIFEST_SHA" >> "$GITHUB_OUTPUT"
+          python3 - <<'PY'
+          import json, pathlib, os
+          m = json.loads(pathlib.Path("docs/lesson-visuals/v1/AUTHORIZED_MANIFEST.json").read_text(encoding="utf-8"))
+          ids = [c["cellId"] for c in m["cells"]]
+          pathlib.Path("all-cell-ids.json").write_text(json.dumps(ids), encoding="utf-8")
+          print(f"all_cells={len(ids)}")
+          PY
+          echo "all_cell_ids_json<<EOF" >> "$GITHUB_OUTPUT"
+          cat all-cell-ids.json >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
 
       - name: Build immutable 400-cell matrix
         id: matrix
@@ -254,7 +317,18 @@ jobs:
       - name: Install deps
         run: bun install --frozen-lockfile
 
+      - name: Download authorized prior receipt bundle
+        if: needs.preflight.outputs.need_prior == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ needs.preflight.outputs.prior_artifact_name }}
+          path: prior-receipt-bundle
+          github-token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          run-id: ${{ needs.preflight.outputs.prior_run_id }}
+
       - name: Run production cell adapter contract
+        id: cellrun
         shell: bash
         env:
           CELL_ID: ${{ matrix.cell.cellId }}
@@ -267,12 +341,15 @@ jobs:
           MODE: ${{ github.event.inputs.mode }}
           RUN_ID: ${{ needs.preflight.outputs.run_id }}
           ATTEMPT_NUMBER: "1"
+          PRIOR_RECEIPT_BUNDLE_PATH: ${{ needs.preflight.outputs.need_prior == 'true' && 'prior-receipt-bundle' || '' }}
+          ALL_CELL_IDS_JSON: ${{ needs.preflight.outputs.all_cell_ids_json }}
           LOVABLE_DISPATCH_ACTORS: ${{ vars.LOVABLE_DISPATCH_ACTORS || secrets.LOVABLE_DISPATCH_ACTORS }}
           LESSON_VISUALS_EXECUTION_MODE: ${{ vars.LESSON_VISUALS_EXECUTION_MODE }}
           LESSON_VISUALS_PROVIDER_NAME: ${{ vars.LESSON_VISUALS_PROVIDER_NAME }}
           LESSON_VISUALS_PROVIDER_MODEL: ${{ vars.LESSON_VISUALS_PROVIDER_MODEL }}
           LESSON_VISUALS_PROVIDER_API_KEY: ${{ secrets.LESSON_VISUALS_PROVIDER_API_KEY }}
-          LESSON_VISUALS_PROVIDER_ACCOUNT_ID: ${{ secrets.LESSON_VISUALS_PROVIDER_ACCOUNT_ID }}
+          LESSON_VISUALS_PROVIDER_ACCOUNT_ID: ${{ vars.LESSON_VISUALS_PROVIDER_ACCOUNT_ID }}
+          LESSON_VISUALS_PROVIDER_PROJECT_ID: ${{ vars.LESSON_VISUALS_PROVIDER_PROJECT_ID }}
           LESSON_VISUALS_AI_AUTH_ID: ${{ secrets.LESSON_VISUALS_AI_AUTH_ID }}
           LESSON_VISUALS_STORAGE_CREDENTIAL: ${{ secrets.LESSON_VISUALS_STORAGE_CREDENTIAL }}
           LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS: ${{ vars.LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS }}
@@ -281,12 +358,29 @@ jobs:
           LESSON_VISUALS_ALLOWED_MIME_TYPES: ${{ vars.LESSON_VISUALS_ALLOWED_MIME_TYPES }}
           LESSON_VISUALS_REQUIRED_WIDTH: ${{ vars.LESSON_VISUALS_REQUIRED_WIDTH }}
           LESSON_VISUALS_REQUIRED_HEIGHT: ${{ vars.LESSON_VISUALS_REQUIRED_HEIGHT }}
-          LESSON_VISUALS_QUOTA_CELLS: ${{ vars.LESSON_VISUALS_QUOTA_CELLS }}
+          LESSON_VISUALS_PROVIDER_ATTEMPT_QUOTA: ${{ vars.LESSON_VISUALS_PROVIDER_ATTEMPT_QUOTA }}
           LESSON_VISUALS_MAX_RETRIES: ${{ vars.LESSON_VISUALS_MAX_RETRIES }}
           LESSON_VISUALS_OUTPUT_STORAGE_TARGET: ${{ vars.LESSON_VISUALS_OUTPUT_STORAGE_TARGET }}
         run: |
           set -euo pipefail
-          bun run src/lib/lesson-visuals/v1/scripts/run_production_cell.ts
+          set +e
+          OUT="$(bun run src/lib/lesson-visuals/v1/scripts/run_production_cell.ts)"
+          CODE=$?
+          set -e
+          echo "$OUT"
+          STATUS="$(echo "$OUT" | python3 -c 'import sys,json; print(json.load(sys.stdin).get("status",""))' 2>/dev/null || true)"
+          echo "status=$STATUS" >> "$GITHUB_OUTPUT"
+          exit "$CODE"
+
+      - name: Verify required cell artifacts
+        if: always()
+        shell: bash
+        env:
+          CELL_ID: ${{ matrix.cell.cellId }}
+          CELL_STATUS: ${{ steps.cellrun.outputs.status }}
+        run: |
+          set -euo pipefail
+          bun run src/lib/lesson-visuals/v1/scripts/verify_cell_artifacts.ts
 
       - name: Upload cell artifacts
         if: always()
@@ -299,7 +393,7 @@ jobs:
             artifacts/mappings/${{ matrix.cell.cellId }}.mapping.json
             artifacts/rights/${{ matrix.cell.cellId }}.rights.json
             artifacts/validations/${{ matrix.cell.cellId }}.validation.json
-          if-no-files-found: warn
+          if-no-files-found: error
           retention-days: 14
 
   aggregate:
@@ -337,10 +431,14 @@ jobs:
           RUN_ID: ${{ needs.preflight.outputs.run_id }}
           LESSON_VISUALS_EXECUTION_MODE: ${{ vars.LESSON_VISUALS_EXECUTION_MODE }}
           LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS: ${{ vars.LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS }}
-          LESSON_VISUALS_QUOTA_CELLS: ${{ vars.LESSON_VISUALS_QUOTA_CELLS }}
+          LESSON_VISUALS_PROVIDER_ATTEMPT_QUOTA: ${{ vars.LESSON_VISUALS_PROVIDER_ATTEMPT_QUOTA }}
         run: |
           set -euo pipefail
+          test -d collected
           bun run src/lib/lesson-visuals/v1/scripts/run_production_aggregate.ts
+          test -f artifacts/qa/aggregate-validation.json
+          test -f artifacts/qa/aggregate-validation.json.sha256
+          test -f artifacts/qa/run-summary.json
 
       - name: Upload QA aggregate
         if: always()
@@ -349,6 +447,7 @@ jobs:
           name: lesson-visuals-qa-${{ github.event.inputs.source_sha }}
           path: |
             artifacts/qa/
+          if-no-files-found: error
           retention-days: 30
 
       - name: Promotion gate reminder

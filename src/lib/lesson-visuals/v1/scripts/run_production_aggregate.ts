@@ -1,6 +1,3 @@
-/**
- * Aggregate receipts/mappings into run summary + validation report (fail-closed).
- */
 import { createHash } from "node:crypto";
 import {
   mkdirSync,
@@ -13,6 +10,10 @@ import {
 import { join, resolve } from "node:path";
 import { EXPECTED_CELL_COUNT } from "../constants";
 import { validateArtifactRelationships } from "../production/artifactIntegrity";
+import {
+  validateAggregateReportSchema,
+  validateRunSummarySchema,
+} from "../production/schemaValidator";
 import type { ProductionCellReceipt, ProductionMapping } from "../production/types";
 
 function walkFiles(root: string): string[] {
@@ -38,6 +39,7 @@ function main(): void {
 
   const receipts: ProductionCellReceipt[] = [];
   const mappings: ProductionMapping[] = [];
+  let providerAttemptsUsed = 0;
 
   for (const abs of walkFiles(collected)) {
     if (abs.endsWith(".receipt.json")) {
@@ -45,6 +47,10 @@ function main(): void {
     }
     if (abs.endsWith(".mapping.json")) {
       mappings.push(JSON.parse(readFileSync(abs, "utf8")) as ProductionMapping);
+    }
+    if (abs.endsWith("attempt-meta.json")) {
+      const meta = JSON.parse(readFileSync(abs, "utf8")) as { attempts?: number };
+      providerAttemptsUsed += Number(meta.attempts ?? 0);
     }
   }
 
@@ -54,7 +60,7 @@ function main(): void {
   }
 
   const runCostCeiling = BigInt(process.env.LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS ?? "0");
-  const quota = Number(process.env.LESSON_VISUALS_QUOTA_CELLS ?? String(EXPECTED_CELL_COUNT));
+  const attemptQuota = Number(process.env.LESSON_VISUALS_PROVIDER_ATTEMPT_QUOTA ?? "0");
   const mode = (process.env.MODE ?? "full") as "full" | "failed-only";
   const executionMode = (process.env.LESSON_VISUALS_EXECUTION_MODE ?? "dry-run") as
     | "production"
@@ -71,8 +77,16 @@ function main(): void {
     mappings,
     totalCostMicros: totalCost,
     runCostCeilingMicros: runCostCeiling,
-    quotaCeiling: quota,
+    providerAttemptQuota: attemptQuota,
+    providerAttemptsUsed,
   });
+
+  const rs = validateRunSummarySchema(report.runSummary);
+  const ag = validateAggregateReportSchema(report);
+  if (!rs.ok || !ag.ok) {
+    report.ok = false;
+    report.errors.push(...rs.errors, ...ag.errors);
+  }
 
   const reportPath = join(artifactsRoot, "qa", "aggregate-validation.json");
   writeFileSync(reportPath, `${JSON.stringify(report, null, 2)}\n`, "utf8");
@@ -96,6 +110,7 @@ function main(): void {
         reportSha256: digest,
         accepted: report.runSummary.accepted,
         mappingCount: report.runSummary.mappingCount,
+        providerAttemptsUsed,
         finalRunStatus: report.runSummary.finalRunStatus,
       },
       null,
