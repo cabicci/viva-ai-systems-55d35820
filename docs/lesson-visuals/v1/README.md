@@ -63,10 +63,11 @@ bun run lesson-visuals:repin:check
 
 | Mode | Behavior |
 |------|----------|
-| `full` | Entire 400-cell matrix |
-| `failed-only` | Same 400-cell matrix; skip cells with fingerprint-matched ACCEPTED receipts |
+| `full` | Entire 400-cell matrix evaluated for generation |
+| `failed-only` | Same 400-cell matrix validated; skip only cells with fully validated prior ACCEPTED receipts from an authorized prior-run artifact (`prior_receipt_bundle_artifact` + `prior_receipt_bundle_run_id`) |
 
 Smallest valid production scope: the **full 400-cell** authorized matrix.
+See `CONFIGURATION.md` for failed-only contract, schema enforcement, PNG-only MIME, checksum binding, provider identity, and retry-aware attempt quota.
 
 ## Lovable-only dispatch
 
@@ -79,7 +80,9 @@ See `DISPATCH_AUTHORIZATION.md` and `CONFIGURATION.md`.
 
 Typed request/response in `src/lib/lesson-visuals/v1/production/`:
 
-- Rejects missing credentials, unexpected provider identity, empty bytes, URL-only without secure fetch, MIME spoof, wrong dimensions, malformed metadata, missing request IDs, cost over ceiling, identity/locale mismatch, incomplete rights, checksum mismatch
+- Binds run ID, Control Room auth, source SHA, manifest digest, cell/lesson/locale/method, idempotency key, attempt, provider name/model, account/project/auth identity, request ID, and independently calculated output checksum
+- Rejects missing credentials, identity mismatch, empty bytes, URL-only without secure fetch, MIME spoof, wrong dimensions, malformed metadata, incomplete rights, legacy references, checksum mismatch
+- Runtime schema validation before write/upload/reuse
 - **dry-run**: offline mock transport (no network)
 - **production**: mock transport rejected; paid network generation is not enabled in this candidate
 
@@ -100,7 +103,13 @@ Accepted receipts and mappings are 1:1. Failed cells produce failure artifacts a
 ## Greenfield / no-legacy
 
 - Fresh generation only; `prohibitedLegacySource` must be `false`
+- Normalized rejection of Gallery/legacy/Bunny/rollback paths, known legacy checksums, and obfuscated path bypasses
 - Workflow never publishes to Gallery, Bunny, Lovable runtime, or production storage
+- Production MIME: **PNG only** until other format validators exist
+
+## Validation cleanliness
+
+`bun run lesson-visuals:validate` is **strictly read-only** — it must not rewrite `grounding_audit.json` or any tracked artifact.
 
 ## QA / launch sequence (expected)
 

@@ -25,8 +25,9 @@ function dryRunEnv(overrides: Partial<ProductionEnv> = {}): ProductionEnv {
     LESSON_VISUALS_PROVIDER_NAME: "mock-provider",
     LESSON_VISUALS_PROVIDER_MODEL: "mock-renderer-v1",
     LESSON_VISUALS_PROVIDER_API_KEY: "",
-    LESSON_VISUALS_PROVIDER_ACCOUNT_ID: "",
-    LESSON_VISUALS_AI_AUTH_ID: "",
+    LESSON_VISUALS_PROVIDER_ACCOUNT_ID: "acct-test",
+    LESSON_VISUALS_PROVIDER_PROJECT_ID: "proj-test",
+    LESSON_VISUALS_AI_AUTH_ID: "auth-test",
     LESSON_VISUALS_STORAGE_CREDENTIAL: "",
     LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS: "1000000000",
     LESSON_VISUALS_CELL_COST_CEILING_USD_MICROS: "100000",
@@ -34,11 +35,28 @@ function dryRunEnv(overrides: Partial<ProductionEnv> = {}): ProductionEnv {
     LESSON_VISUALS_ALLOWED_MIME_TYPES: "image/png",
     LESSON_VISUALS_REQUIRED_WIDTH: "64",
     LESSON_VISUALS_REQUIRED_HEIGHT: "36",
-    LESSON_VISUALS_QUOTA_CELLS: "400",
+    LESSON_VISUALS_PROVIDER_ATTEMPT_QUOTA: "800",
     LESSON_VISUALS_MAX_RETRIES: "1",
     LESSON_VISUALS_OUTPUT_STORAGE_TARGET: "artifact://lesson-visuals",
     LOVABLE_DISPATCH_ACTORS: "lovable",
     ...overrides,
+  };
+}
+
+function mockOpts(
+  config: ProductionConfig,
+  over: Partial<Parameters<typeof createMockProvider>[0]> = {},
+) {
+  return {
+    providerName: config.providerName,
+    model: config.providerModel,
+    accountId: config.providerAccountId,
+    projectId: config.providerProjectId || null,
+    authId: config.providerAuthId,
+    width: 64,
+    height: 36,
+    costMicros: "1000",
+    ...over,
   };
 }
 
@@ -73,6 +91,9 @@ function baseRequest(overrides: Partial<ProviderGenerationRequest> = {}): Provid
     attemptNumber: 1,
     budgetAllocationMicros: "100000",
     maxCostMicros: "100000",
+    expectedProviderAccountId: "acct-test",
+    expectedProviderProjectId: "proj-test",
+    expectedProviderAuthId: "auth-test",
     ...overrides,
   };
 }
@@ -158,35 +179,41 @@ describe("dispatch authorization fail-closed", () => {
 describe("budget and quota", () => {
   it("fails when projected max cost exceeds run ceiling", () => {
     const r = preflightBudgetAndQuota({
-      cellCount: 400,
+      eligibleCellCount: 400,
       cellCostCeilingMicros: 10_000n,
       runCostCeilingMicros: 1000n,
-      quotaCells: 400,
+      providerAttemptQuota: 800,
       maxRetries: 1,
+      authoritativeCells: 400,
+      validSkippedCells: 0,
     });
     expect(r.ok).toBe(false);
     expect(r.errors.join(" ")).toMatch(/projected maximum cost/);
   });
 
-  it("fails when cells above quota", () => {
+  it("fails when attempt envelope above provider-attempt quota", () => {
     const r = preflightBudgetAndQuota({
-      cellCount: 401,
+      eligibleCellCount: 400,
       cellCostCeilingMicros: 1n,
       runCostCeilingMicros: 1_000_000n,
-      quotaCells: 400,
+      providerAttemptQuota: 399,
       maxRetries: 0,
+      authoritativeCells: 400,
+      validSkippedCells: 0,
     });
     expect(r.ok).toBe(false);
-    expect(r.errors.join(" ")).toMatch(/above quota/);
+    expect(r.errors.join(" ")).toMatch(/attempt-quota|exceeds quota/);
   });
 
   it("fails when run budget missing/non-positive", () => {
     const r = preflightBudgetAndQuota({
-      cellCount: 1,
+      eligibleCellCount: 400,
       cellCostCeilingMicros: 1n,
       runCostCeilingMicros: 0n,
-      quotaCells: 400,
+      providerAttemptQuota: 400,
       maxRetries: 0,
+      authoritativeCells: 400,
+      validSkippedCells: 0,
     });
     expect(r.ok).toBe(false);
   });
@@ -195,13 +222,7 @@ describe("budget and quota", () => {
 describe("provider contract + output validation (offline mock)", () => {
   it("valid mocked provider success", async () => {
     const config = requireConfig();
-    const transport = createMockProvider({
-      providerName: config.providerName,
-      model: config.providerModel,
-      width: 64,
-      height: 36,
-      costMicros: "1000",
-    });
+    const transport = createMockProvider(mockOpts(config));
     const cfg = { ...config, providerApiKeyPresent: true };
     const result = await executeProviderContract(baseRequest(), {
       config: cfg,
@@ -219,17 +240,9 @@ describe("provider contract + output validation (offline mock)", () => {
       ...dryRunEnv(),
       LESSON_VISUALS_EXECUTION_MODE: "production",
       LESSON_VISUALS_PROVIDER_API_KEY: "k",
-      LESSON_VISUALS_PROVIDER_ACCOUNT_ID: "a",
-      LESSON_VISUALS_AI_AUTH_ID: "auth",
     });
     const broken = { ...config, providerApiKeyPresent: false, executionMode: "production" as const };
-    const transport = createMockProvider({
-      providerName: broken.providerName,
-      model: broken.providerModel,
-      width: 64,
-      height: 36,
-      costMicros: "1",
-    });
+    const transport = createMockProvider(mockOpts(broken, { costMicros: "1" }));
     const result = await executeProviderContract(baseRequest(), {
       config: broken,
       transport,
@@ -243,14 +256,7 @@ describe("provider contract + output validation (offline mock)", () => {
 
   it("rejects empty output", async () => {
     const config = requireConfig();
-    const transport = createMockProvider({
-      providerName: config.providerName,
-      model: config.providerModel,
-      width: 64,
-      height: 36,
-      costMicros: "1",
-      failMode: "empty-bytes",
-    });
+    const transport = createMockProvider(mockOpts(config, { costMicros: "1", failMode: "empty-bytes" }));
     const result = await executeProviderContract(baseRequest(), {
       config: { ...config, providerApiKeyPresent: true },
       transport,
@@ -264,14 +270,7 @@ describe("provider contract + output validation (offline mock)", () => {
 
   it("rejects MIME spoof", async () => {
     const config = requireConfig();
-    const transport = createMockProvider({
-      providerName: config.providerName,
-      model: config.providerModel,
-      width: 64,
-      height: 36,
-      costMicros: "1",
-      failMode: "wrong-mime",
-    });
+    const transport = createMockProvider(mockOpts(config, { costMicros: "1", failMode: "wrong-mime" }));
     const result = await executeProviderContract(baseRequest(), {
       config: { ...config, providerApiKeyPresent: true },
       transport,
@@ -280,19 +279,14 @@ describe("provider contract + output validation (offline mock)", () => {
       seenProviderRequestIds: new Set(),
     });
     expect(result.ok).toBe(false);
-    expect(result.errors.join(" ").toLowerCase()).toMatch(/mime|html/);
+    expect(result.errors.join(" ").toLowerCase()).toMatch(/mime|html|png|detect/);
   });
 
   it("rejects invalid dimensions", async () => {
     const config = requireConfig();
-    const transport = createMockProvider({
-      providerName: config.providerName,
-      model: config.providerModel,
-      width: 64,
-      height: 36,
-      costMicros: "1",
-      failMode: "wrong-dimensions",
-    });
+    const transport = createMockProvider(
+      mockOpts(config, { costMicros: "1", failMode: "wrong-dimensions" }),
+    );
     const result = await executeProviderContract(baseRequest(), {
       config: { ...config, providerApiKeyPresent: true },
       transport,
@@ -306,14 +300,9 @@ describe("provider contract + output validation (offline mock)", () => {
 
   it("rejects checksum mismatch", async () => {
     const config = requireConfig();
-    const transport = createMockProvider({
-      providerName: config.providerName,
-      model: config.providerModel,
-      width: 64,
-      height: 36,
-      costMicros: "1",
-      failMode: "checksum-mismatch",
-    });
+    const transport = createMockProvider(
+      mockOpts(config, { costMicros: "1", failMode: "checksum-mismatch" }),
+    );
     const result = await executeProviderContract(baseRequest(), {
       config: { ...config, providerApiKeyPresent: true },
       transport,
@@ -327,14 +316,7 @@ describe("provider contract + output validation (offline mock)", () => {
 
   it("rejects cell identity mismatch", async () => {
     const config = requireConfig();
-    const transport = createMockProvider({
-      providerName: config.providerName,
-      model: config.providerModel,
-      width: 64,
-      height: 36,
-      costMicros: "1",
-      failMode: "wrong-cell",
-    });
+    const transport = createMockProvider(mockOpts(config, { costMicros: "1", failMode: "wrong-cell" }));
     const result = await executeProviderContract(baseRequest(), {
       config: { ...config, providerApiKeyPresent: true },
       transport,
@@ -348,14 +330,9 @@ describe("provider contract + output validation (offline mock)", () => {
 
   it("rejects locale mismatch", async () => {
     const config = requireConfig();
-    const transport = createMockProvider({
-      providerName: config.providerName,
-      model: config.providerModel,
-      width: 64,
-      height: 36,
-      costMicros: "1",
-      failMode: "wrong-locale",
-    });
+    const transport = createMockProvider(
+      mockOpts(config, { costMicros: "1", failMode: "wrong-locale" }),
+    );
     const result = await executeProviderContract(baseRequest(), {
       config: { ...config, providerApiKeyPresent: true },
       transport,
@@ -369,14 +346,9 @@ describe("provider contract + output validation (offline mock)", () => {
 
   it("rejects missing rights/provenance", async () => {
     const config = requireConfig();
-    const transport = createMockProvider({
-      providerName: config.providerName,
-      model: config.providerModel,
-      width: 64,
-      height: 36,
-      costMicros: "1",
-      failMode: "missing-rights",
-    });
+    const transport = createMockProvider(
+      mockOpts(config, { costMicros: "1", failMode: "missing-rights" }),
+    );
     const result = await executeProviderContract(baseRequest(), {
       config: { ...config, providerApiKeyPresent: true },
       transport,
@@ -390,14 +362,7 @@ describe("provider contract + output validation (offline mock)", () => {
 
   it("rejects high provider cost / budget failure", async () => {
     const config = requireConfig();
-    const transport = createMockProvider({
-      providerName: config.providerName,
-      model: config.providerModel,
-      width: 64,
-      height: 36,
-      costMicros: "1",
-      failMode: "high-cost",
-    });
+    const transport = createMockProvider(mockOpts(config, { costMicros: "1", failMode: "high-cost" }));
     const result = await executeProviderContract(baseRequest(), {
       config: { ...config, providerApiKeyPresent: true },
       transport,
@@ -414,8 +379,6 @@ describe("provider contract + output validation (offline mock)", () => {
       ...dryRunEnv(),
       LESSON_VISUALS_EXECUTION_MODE: "production",
       LESSON_VISUALS_PROVIDER_API_KEY: "k",
-      LESSON_VISUALS_PROVIDER_ACCOUNT_ID: "a",
-      LESSON_VISUALS_AI_AUTH_ID: "auth",
     });
     const png = encodeSolidPng(64, 36, [1, 2, 3]);
     const tainted = Buffer.concat([png, Buffer.from("LESSON_VISUALS_FIXTURE_MARKER")]);
@@ -427,6 +390,9 @@ describe("provider contract + output validation (offline mock)", () => {
       declaredChecksum: sha256Hex(tainted),
       declaredByteLength: tainted.length,
       config,
+      cellId: "intro-m1-l1-what-is-ai__en",
+      sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      approvedManifestSha256: "a".repeat(64),
       forceProductionGates: true,
     });
     expect(v.ok).toBe(false);
@@ -439,13 +405,7 @@ describe("receipts and mappings", () => {
     const config = requireConfig();
     const dir = mkdtempSync(join(tmpdir(), "lv-prod-"));
     tempDirs.push(dir);
-    const transport = createMockProvider({
-      providerName: config.providerName,
-      model: config.providerModel,
-      width: 64,
-      height: 36,
-      costMicros: "1000",
-    });
+    const transport = createMockProvider(mockOpts(config));
     const ok = await runProductionCell({
       artifactsRoot: dir,
       config,
@@ -467,14 +427,9 @@ describe("receipts and mappings", () => {
     expect(ok.mapping).not.toBeNull();
     expect(buildMappingFromAcceptedReceipt(ok.receipt)?.cellId).toBe(ok.receipt.cellId);
 
-    const badTransport = createMockProvider({
-      providerName: config.providerName,
-      model: config.providerModel,
-      width: 64,
-      height: 36,
-      costMicros: "1",
-      failMode: "empty-bytes",
-    });
+    const badTransport = createMockProvider(
+      mockOpts(config, { costMicros: "1", failMode: "empty-bytes" }),
+    );
     const fail = await runProductionCell({
       artifactsRoot: dir,
       config,
@@ -528,18 +483,10 @@ describe("receipts and mappings", () => {
       ...dryRunEnv(),
       LESSON_VISUALS_EXECUTION_MODE: "production",
       LESSON_VISUALS_PROVIDER_API_KEY: "k",
-      LESSON_VISUALS_PROVIDER_ACCOUNT_ID: "a",
-      LESSON_VISUALS_AI_AUTH_ID: "auth",
     });
     const dir = mkdtempSync(join(tmpdir(), "lv-prod-mock-"));
     tempDirs.push(dir);
-    const transport = createMockProvider({
-      providerName: config.providerName,
-      model: config.providerModel,
-      width: 64,
-      height: 36,
-      costMicros: "1",
-    });
+    const transport = createMockProvider(mockOpts(config, { costMicros: "1" }));
     const result = await runProductionCell({
       artifactsRoot: dir,
       config,

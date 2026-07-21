@@ -24,6 +24,8 @@ There is **no** local or Cursor dispatch command for this workflow.
 | `dispatch_actor` | Must be in Lovable allowlist (e.g. `lovable`) |
 | `mode` | `full` \| `failed-only` only |
 | `max_parallel` | Integer in `[1, 50]` |
+| `prior_receipt_bundle_artifact` | Required for `failed-only` — prior-run artifact name with `*.receipt.json` |
+| `prior_receipt_bundle_run_id` | Required for `failed-only` — numeric source workflow run id |
 
 ## Fail-closed checks
 
@@ -39,9 +41,10 @@ There is **no** local or Cursor dispatch command for this workflow.
 
 1. Required production variables/secrets present for the selected `LESSON_VISUALS_EXECUTION_MODE` (see `CONFIGURATION.md`).
 2. Manifest structure: 100 lessons, 4 locales, 400 cells; `sourceSha` equals authoritative base.
-3. Budget/quota projection fail-closed (integer micro-USD).
+3. Budget + retry-aware provider-attempt quota projection fail-closed (integer micro-USD; `eligible × (1 + max_retries)`).
 4. Bounded `max_parallel`.
 5. Typed dispatch authorization validation.
+6. For `failed-only`: download and schema-validate the authorized prior receipt bundle before computing eligible cells / attempt quota.
 
 Any failure stops the workflow before cell work.
 
