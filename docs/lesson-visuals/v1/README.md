@@ -2,16 +2,16 @@
 
 Authoritative production scope: **100 lesson masters × 4 locales = 400 cells**.
 
-There is **no** authoritative 12-asset pilot. Do not invent subset modes.
+Authoritative **12-cell pilot** is checked in at `AUTHORIZED_PILOT_12.json` (deterministic `locale-first-n/v1` selection). Modes: `pilot` | `full` | `failed-only`.
 
 ## Scope
 
 | In scope | Out of scope |
 |----------|--------------|
-| Master briefs from locale packages | Arbitrary cell/lesson subsets |
-| Authorized 400-cell manifest | Invented 12-asset pilot |
-| Provider-neutral production adapter contract | Cursor / local workflow dispatch |
-| Offline dry-run mocks / fixtures for tests | Paid image generation in this candidate |
+| Master briefs from locale packages | Arbitrary user-supplied cell lists |
+| Authorized 400-cell manifest + 12-cell pilot | Invented ad-hoc subsets |
+| Provider-neutral production adapter + real HTTP transport | Cursor / local workflow dispatch |
+| Offline dry-run mocks / fixtures for tests | Secret values in docs or logs |
 | Receipts, mappings, rights, validation artifacts | Auto-commit to Gallery / main / Bunny |
 | Budget/quota fail-closed gates | Legacy visual asset reuse |
 

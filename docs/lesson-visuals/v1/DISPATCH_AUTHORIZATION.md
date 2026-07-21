@@ -21,8 +21,9 @@ There is **no** local or Cursor dispatch command for this workflow.
 | `control_room_authorization_id` | Non-empty Control Room id with `CR-` prefix |
 | `source_sha` | 40-char hex; must equal approved source and checked-out HEAD (immutable checkout; no branch-head fallback) |
 | `approved_manifest_sha256` | 64-char hex of `docs/lesson-visuals/v1/AUTHORIZED_MANIFEST.json` **file bytes** |
+| `approved_pilot_manifest_sha256` | Required for `mode=pilot` — 64-char hex of `AUTHORIZED_PILOT_12.json` bytes; empty for full/failed-only |
 | `dispatch_actor` | Must be in Lovable allowlist (e.g. `lovable`) |
-| `mode` | `full` \| `failed-only` only |
+| `mode` | `pilot` \| `full` \| `failed-only` |
 | `max_parallel` | Integer in `[1, 50]` |
 | `prior_receipt_bundle_artifact` | Required for `failed-only` — prior-run artifact name with `*.receipt.json` |
 | `prior_receipt_bundle_run_id` | Required for `failed-only` — numeric source workflow run id |

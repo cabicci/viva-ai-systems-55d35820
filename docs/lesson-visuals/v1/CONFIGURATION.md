@@ -7,11 +7,11 @@ Secret values must never be logged or committed.
 ## Scope
 
 - Authoritative production target: **100 lessons × 4 locales = 400 cells**
-- There is **no** authoritative 12-asset pilot mode
-- Supported run modes: `full` | `failed-only` (both operate on the full 400-cell matrix)
+- Authoritative **12-cell pilot** via `docs/lesson-visuals/v1/AUTHORIZED_PILOT_12.json` (deterministic subset of the 400)
+- Supported run modes: `pilot` | `full` | `failed-only`
 - Dispatch: **Lovable-only** after Control Room authorization (Cursor/local fail-closed)
 - Production MIME policy: **`image/png` only** until equivalent validators exist for other formats
-- Live provider transport is **not** enabled in this candidate (dry-run mock only)
+- Production execution uses the configured **real HTTP provider transport**; dry-run uses the offline mock only
 
 ## Required repository variables
 
@@ -24,6 +24,8 @@ Secret values must never be logged or committed.
 | `LESSON_VISUALS_PROVIDER_ACCOUNT_ID` | Expected provider account ID (non-secret identity; required) |
 | `LESSON_VISUALS_PROVIDER_PROJECT_ID` | Expected provider project ID when the provider uses projects (may be empty) |
 | `LESSON_VISUALS_AI_AUTH_ID` | Expected provider authorization ID (non-secret identity; required) |
+| `LESSON_VISUALS_PROVIDER_ENDPOINT` | HTTPS provider generate endpoint (**required in production**) |
+| `LESSON_VISUALS_PROVIDER_TIMEOUT_MS` | Provider HTTP timeout in ms (optional; default 60000) |
 | `LESSON_VISUALS_RUN_COST_CEILING_USD_MICROS` | Run budget ceiling (integer micro-USD) |
 | `LESSON_VISUALS_CELL_COST_CEILING_USD_MICROS` | Per-cell ceiling (integer micro-USD; must be ≤ run) |
 | `LESSON_VISUALS_MAX_OUTPUT_BYTES` | Max accepted output bytes |
@@ -42,7 +44,28 @@ Secret values must never be logged or committed.
 | `LESSON_VISUALS_PROVIDER_API_KEY` | Provider API credential (**required in production**) |
 | `LESSON_VISUALS_STORAGE_CREDENTIAL` | Required when `LESSON_VISUALS_OUTPUT_STORAGE_TARGET` starts with `external:` |
 
-Account / project / auth IDs are **variables** (identity), not secrets. Secrets must never be logged.
+Account / project / auth IDs and the provider endpoint are **variables** (identity/config), not secrets. Secrets must never be logged.
+
+## Authoritative 12-cell pilot
+
+| Item | Value |
+|------|-------|
+| Manifest path | `docs/lesson-visuals/v1/AUTHORIZED_PILOT_12.json` |
+| Schema | `lesson-visual-pilot-manifest/v1` |
+| Selection | `locale-first-n/v1` — first 3 cells per locale from full manifest order |
+| Count | exactly **12** (3 × 4 locales) |
+| Digest input | `approved_pilot_manifest_sha256` (**required when `mode=pilot`**) |
+| Full digest | still requires `approved_manifest_sha256` of the 400-cell file |
+
+Commands:
+
+```bash
+bun run lesson-visuals:pilot:check   # read-only verification (no mutation)
+bun run lesson-visuals:pilot:write   # regenerate checked-in pilot bytes (commit intentionally)
+```
+
+Pilot mode expands **only** the 12 pilot cells. It is not an arbitrary subset facility.
+`full` remains 400. `failed-only` validates the 400-cell matrix and does not use the pilot manifest.
 
 ## Money representation
 
@@ -59,15 +82,16 @@ max_provider_attempts = eligible_cells × (1 + max_retries)
 
 | Mode | Eligible cells |
 |------|----------------|
+| `pilot` | 12 (pilot matrix; no failed-only skips) |
 | `full` | 400 |
 | `failed-only` | 400 − count of fully validated ACCEPTED prior receipts |
 
 Rules:
 
-- `skipped + eligible` must reconcile to **400**
+- `skipped + eligible` must reconcile to the mode's authoritative scope (12 or 400)
 - Invalid prior evidence **cannot** reduce the quota envelope
 - Configured `LESSON_VISUALS_PROVIDER_ATTEMPT_QUOTA` must be ≥ `max_provider_attempts`
-- Runtime attempts exceeding the envelope fail closed
+- Runtime attempts exceeding the envelope fail closed before provider invoke
 - Budget projection remains a separate gate: `eligible × (1 + max_retries) × cell_ceiling ≤ run_ceiling`
 
 ## failed-only prior receipt bundle
@@ -102,6 +126,7 @@ Semantics:
 
 - `full`: evaluate all 400 cells for generation
 - `failed-only`: still validate the authoritative 400-cell matrix; skip only cells backed by fully valid prior ACCEPTED evidence
+- `pilot`: evaluate exactly the 12 pilot cells; does not load prior receipts
 - Missing receipt for a cell ⇒ regenerate (does not shrink scope)
 - No smaller user-selected target set is permitted
 
@@ -161,10 +186,15 @@ Optional diagnostics must be explicitly named optional and excluded from success
 
 ## dry-run vs production
 
-| Mode | Mock transport | Paid network generation | Fixture/stub |
-|------|----------------|-------------------------|--------------|
-| `dry-run` | Allowed (offline) | Forbidden in this candidate | Fixture marker on receipts; production reuse rejected |
-| `production` | **Rejected** | Not enabled (workflow cell step fails closed until non-mock transport is approved) | Rejected |
+| Mode | Transport | Paid network generation | Fixture/stub |
+|------|-----------|-------------------------|--------------|
+| `dry-run` | Offline mock only | Forbidden | Fixture marker on receipts; production reuse rejected |
+| `production` | Real HTTP transport (`LESSON_VISUALS_PROVIDER_ENDPOINT` + API key) | Allowed when configured | Rejected |
+
+No automatic fallback from production → dry-run or real → mock.
+
+Transport: `src/lib/lesson-visuals/v1/production/httpProvider.ts` via `selectProviderTransport`.
+Response must satisfy the typed provider contract; output/rights/schema/checksum/quota/budget gates remain fail-closed.
 
 ## Local scripts
 
@@ -172,9 +202,10 @@ Optional diagnostics must be explicitly named optional and excluded from success
 bun run lesson-visuals:validate   # strictly read-only
 bun run lesson-visuals:test
 bun run lesson-visuals:repin:check
+bun run lesson-visuals:pilot:check
 ```
 
 `lesson-visuals:validate` must not rewrite ledgers, manifests, masters, fixtures, or any tracked file.
 
-Local unit tests may exercise mocks. There is **no** supported Cursor/local workflow dispatch path.
+Local unit tests may exercise mocks and injected HTTP doubles. There is **no** supported Cursor/local workflow dispatch path.
 Do not document or use a Cursor dispatch command.
