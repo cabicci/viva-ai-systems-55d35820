@@ -5,7 +5,7 @@ import {
   validateDispatchAuthorization,
 } from "../../../src/lib/lesson-visuals/v1/dispatch/authorizationContract";
 
-const VALID_SHA = "540582d10d12ca1e0aa3c7246daf7a70972c9ba5";
+const VALID_SHA = "1041fae1a6db81c1cfdcb4f7904850df418b93b3";
 const VALID_MANIFEST_SHA =
   "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 

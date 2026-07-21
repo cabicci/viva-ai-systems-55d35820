@@ -1,84 +1,118 @@
 # Lesson-driven 400-visual pipeline (v1)
 
-Fresh candidate pipeline: **100 lesson masters × 4 locales = 400 cells**.
+Authoritative production scope: **100 lesson masters × 4 locales = 400 cells**.
 
-This tree documents authoring contracts only. It does **not** ship production assets.
+There is **no** authoritative 12-asset pilot. Do not invent subset modes.
 
 ## Scope
 
 | In scope | Out of scope |
 |----------|--------------|
-| Master briefs from locale packages | Generating the final 400 assets locally |
-| Authorized 400-cell manifest | Dispatching GitHub Actions from authoring |
-| Local validators + fixture adapters | Paid AI generation |
-| Skip/retry receipts | Auto-commit to Gallery / main / Bunny |
-| Method decision + rights ledgers | Legacy visual asset mutation |
+| Master briefs from locale packages | Arbitrary cell/lesson subsets |
+| Authorized 400-cell manifest | Invented 12-asset pilot |
+| Provider-neutral production adapter contract | Cursor / local workflow dispatch |
+| Offline dry-run mocks / fixtures for tests | Paid image generation in this candidate |
+| Receipts, mappings, rights, validation artifacts | Auto-commit to Gallery / main / Bunny |
+| Budget/quota fail-closed gates | Legacy visual asset reuse |
+
+## Locales
+
+| Locale | Package source |
+|--------|----------------|
+| ar-EG | `src/components/intro/lessons/{id}.ts` |
+| ar-MSA | `src/lib/locale-lessons/ar-MSA/lessons/{id}.json` |
+| ar-Gulf | `src/lib/locale-lessons/ar-Gulf/lessons/{id}.json` |
+| en | `src/lib/locale-lessons/en/lessons/{id}.json` |
 
 ## Layout
 
 ```
 docs/lesson-visuals/v1/
   README.md
-  schemas/          # master, manifest, receipt JSON Schema
-  masters/          # exactly 100 *.master.json
-  AUTHORIZED_MANIFEST.json
-  ledgers/          # method, screenshot rights, factual evidence
+  CONFIGURATION.md
+  DISPATCH_AUTHORIZATION.md
+  schemas/
+  masters/                 # exactly 100 *.master.json
+  AUTHORIZED_MANIFEST.json # exactly 400 cells
+  ledgers/
 
 src/lib/lesson-visuals/v1/
-  types.ts
-  fonts/            # vendored Tajawal (validators only — never Segoe UI)
-  adapters/         # deterministic / screenshot / ai / hybrid
-  validators/
-  receipts/
-  scripts/          # author_masters, validate_local, build_manifest
+  constants.ts             # AUTHORITATIVE_BASE_SOURCE_SHA
+  production/              # provider contract, budget, validation, receipts
+  dispatch/
+  adapters/                # method adapters (authoring / local)
+  scripts/                 # repin_source_sha, preflight, cell, aggregate
 ```
 
-## Methods (no quotas)
+## Authoritative base pin
 
-1. **Deterministic SVG** — processes, systems, comparisons, decisions, data relationships
-2. **AI text-free illustration** — conceptual scene only; paid refused without auth id + cost ceiling
-3. **Authentic screenshot** — only with package Screenshot intent + allowlisted Masaarat public URL
-4. **Hybrid** — illustration base + deterministic labels from locale packs
+Masters and the authorized manifest are deterministically pinned to:
 
-If a package has screenshot intent but no safe public Masaarat URL, fall back to method 1 or 4 and record `assessed-not-used` in the screenshot rights ledger.
+`1041fae1a6db81c1cfdcb4f7904850df418b93b3`
 
-## Locales
+Never pin to a candidate tip SHA (circular). Repin / validate:
 
-| Locale | Package source |
-|--------|----------------|
-| ar-EG | `src/components/intro/lessons/{id}.ts` (block TS for all paths) |
-| ar-MSA | `src/lib/locale-lessons/ar-MSA/lessons/{id}.json` |
-| ar-Gulf | `src/lib/locale-lessons/ar-Gulf/lessons/{id}.json` |
-| en | `src/lib/locale-lessons/en/lessons/{id}.json` |
+```bash
+bun run lesson-visuals:repin
+bun run lesson-visuals:repin:check
+```
 
-Arabic labels and alt texts **must** come from each locale package — never English literal translation.
-
-## Banned chrome labels
-
-Reject: `Core idea`, `Option A/B`, `Before/After`, `Step 1/2`, `Input/Check/Output`, empty cards.
-
-## Checksums
-
-Master `checksum` = SHA-256 of canonical JSON **without** the `checksum` field.
-
-## Workflow
+## Supported workflow modes
 
 `.github/workflows/lesson-driven-400-visual-pipeline.yml` is **workflow_dispatch only**.
 
-- Inputs: `source_sha` (required), `mode` (`full` \| `failed-only`), `max_parallel`
-- Matrix over immutable authorized manifest (400 cells, `fail-fast: false`)
-- Skip only on valid `ACCEPTED` receipt fingerprint match
-- Emits comparison sheets, contact sheets, ledgers, QA artifact + sha256 sidecar
-- **Never** auto-commits mappings / Gallery / main / publish
-- Promotion to production is a **separate manual/serialized** stage after approval
+| Mode | Behavior |
+|------|----------|
+| `full` | Entire 400-cell matrix |
+| `failed-only` | Same 400-cell matrix; skip cells with fingerprint-matched ACCEPTED receipts |
 
-## Scripts (Bun)
+Smallest valid production scope: the **full 400-cell** authorized matrix.
+
+## Lovable-only dispatch
+
+Control Room → Lovable → Actions. Cursor/CLI/unauthenticated sources fail closed.
+See `DISPATCH_AUTHORIZATION.md` and `CONFIGURATION.md`.
+
+**Do not dispatch from Cursor or local scripts.**
+
+## Provider adapter contract
+
+Typed request/response in `src/lib/lesson-visuals/v1/production/`:
+
+- Rejects missing credentials, unexpected provider identity, empty bytes, URL-only without secure fetch, MIME spoof, wrong dimensions, malformed metadata, missing request IDs, cost over ceiling, identity/locale mismatch, incomplete rights, checksum mismatch
+- **dry-run**: offline mock transport (no network)
+- **production**: mock transport rejected; paid network generation is not enabled in this candidate
+
+## Artifacts (per cell / per run)
+
+| Artifact | Path pattern |
+|----------|----------------|
+| Output bytes | `artifacts/cells/{cellId}/output.png` |
+| Receipt | `artifacts/receipts/{cellId}.receipt.json` |
+| Mapping (accepted only) | `artifacts/mappings/{cellId}.mapping.json` |
+| Rights | `artifacts/rights/{cellId}.rights.json` |
+| Output validation | `artifacts/validations/{cellId}.validation.json` |
+| Aggregate report | `artifacts/qa/aggregate-validation.json` (+ `.sha256`) |
+| Run summary | `artifacts/qa/run-summary.json` |
+
+Accepted receipts and mappings are 1:1. Failed cells produce failure artifacts and **no** mapping.
+
+## Greenfield / no-legacy
+
+- Fresh generation only; `prohibitedLegacySource` must be `false`
+- Workflow never publishes to Gallery, Bunny, Lovable runtime, or production storage
+
+## QA / launch sequence (expected)
+
+1. Independent read-only QA of candidate vs base `1041fae1…`
+2. Configure GitHub variables/secrets (see `CONFIGURATION.md`) — **not assumed present**
+3. Lovable-only `workflow_dispatch` with Control Room authorization (after config proven)
+4. Manual serialized promotion stage (separate; not this workflow)
+
+## Scripts
 
 ```bash
 bun run lesson-visuals:validate
 bun run lesson-visuals:test
+bun run lesson-visuals:repin:check
 ```
-
-## Fonts
-
-Validators measure text with vendored **Tajawal** under `src/lib/lesson-visuals/v1/fonts/`. Segoe UI is forbidden for validation.

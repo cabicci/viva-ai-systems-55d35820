@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://masaarat.local/schemas/lesson-visual-production-mapping/v1",
+  "title": "LessonVisualProductionMapping",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "cellId",
+    "lessonId",
+    "locale",
+    "immutableOutputStorageId",
+    "contentSha256",
+    "mimeType",
+    "width",
+    "height",
+    "sourceSha",
+    "approvedManifestSha256",
+    "receiptRef",
+    "rightsProvenanceRef",
+    "acceptedValidationStatus",
+    "runId"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "lesson-visual-production-mapping/v1" },
+    "cellId": { "type": "string", "minLength": 8 },
+    "lessonId": { "type": "string", "minLength": 8 },
+    "locale": { "type": "string", "enum": ["ar-EG", "ar-MSA", "ar-Gulf", "en"] },
+    "immutableOutputStorageId": { "type": "string", "minLength": 1 },
+    "contentSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "mimeType": { "type": "string", "minLength": 3 },
+    "width": { "type": "integer", "minimum": 1 },
+    "height": { "type": "integer", "minimum": 1 },
+    "sourceSha": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "approvedManifestSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "receiptRef": { "type": "string", "minLength": 1 },
+    "rightsProvenanceRef": { "type": "string", "minLength": 1 },
+    "acceptedValidationStatus": { "const": "ACCEPTED" },
+    "runId": { "type": "string", "minLength": 1 }
+  }
+}
