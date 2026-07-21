@@ -8,6 +8,11 @@
 #   Cursor / CLI / unauth API MUST fail dispatch-authority.
 # See docs/lesson-visuals/v1/DISPATCH_AUTHORIZATION.md
 #
+# SHA CONTRACT (two independent identities):
+#   approved_content_sha — immutable content/base pin (manifest/master sourceSha)
+#   execution_sha — authorized checkout commit (must equal git rev-parse HEAD)
+#   Content SHA may differ from execution SHA; do not repin for a new execution tip.
+#
 # Production configuration (vars/secrets) must be present before matrix expansion.
 # When LESSON_VISUALS_EXECUTION_MODE=production, the pipeline uses real HTTP provider transport.
 # dry-run uses the offline mock provider transport (no network / no paid calls).
@@ -18,8 +23,12 @@ name: lesson-driven-400-visual-pipeline
 on:
   workflow_dispatch:
     inputs:
-      source_sha:
-        description: Immutable git SHA (must equal authoritative base + checked-out HEAD)
+      execution_sha:
+        description: Authorized immutable execution commit SHA to check out (full 40-char hex; must equal HEAD; not a branch/tag)
+        required: true
+        type: string
+      approved_content_sha:
+        description: Immutable content/base SHA (must equal AUTHORITATIVE_BASE_SOURCE_SHA and manifest/pilot sourceSha)
         required: true
         type: string
       control_room_authorization_id:
@@ -27,7 +36,7 @@ on:
         required: true
         type: string
       approved_manifest_sha256:
-        description: sha256 hex of AUTHORIZED_MANIFEST.json file bytes at source_sha
+        description: sha256 hex of AUTHORIZED_MANIFEST.json file bytes (content-pinned; independent of execution tip)
         required: true
         type: string
       approved_pilot_manifest_sha256:
@@ -69,7 +78,7 @@ permissions:
   actions: read
 
 concurrency:
-  group: lesson-driven-400-visual-${{ github.event.inputs.source_sha }}-${{ github.event.inputs.mode }}
+  group: lesson-driven-400-visual-${{ github.event.inputs.execution_sha }}-${{ github.event.inputs.approved_content_sha }}-${{ github.event.inputs.mode }}
   cancel-in-progress: false
 
 jobs:
@@ -77,15 +86,16 @@ jobs:
     name: Lovable-only dispatch authority (fail-closed)
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout immutable source_sha
+      - name: Checkout immutable execution_sha
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.inputs.source_sha }}
+          ref: ${{ github.event.inputs.execution_sha }}
 
       - name: Fail-closed Control Room + Lovable authorization
         shell: bash
         env:
-          SOURCE_SHA: ${{ github.event.inputs.source_sha }}
+          EXECUTION_SHA: ${{ github.event.inputs.execution_sha }}
+          APPROVED_CONTENT_SHA: ${{ github.event.inputs.approved_content_sha }}
           CONTROL_ROOM_AUTHORIZATION_ID: ${{ github.event.inputs.control_room_authorization_id }}
           APPROVED_MANIFEST_SHA256: ${{ github.event.inputs.approved_manifest_sha256 }}
           DISPATCH_ACTOR: ${{ github.event.inputs.dispatch_actor }}
@@ -134,9 +144,17 @@ jobs:
             echo "control_room_authorization_id must match CR-… format"
             exit 1
           fi
+          if [[ ! "$EXECUTION_SHA" =~ ^[a-f0-9]{40}$ ]]; then
+            echo "execution_sha must be a full 40-char lowercase hex commit SHA (not a branch/tag)"
+            exit 1
+          fi
+          if [[ ! "$APPROVED_CONTENT_SHA" =~ ^[a-f0-9]{40}$ ]]; then
+            echo "approved_content_sha must be a full 40-char lowercase hex commit SHA (not a branch/tag)"
+            exit 1
+          fi
           ACTUAL_HEAD="$(git rev-parse HEAD)"
-          if [[ "$ACTUAL_HEAD" != "$SOURCE_SHA" ]]; then
-            echo "HEAD $ACTUAL_HEAD != source_sha $SOURCE_SHA"
+          if [[ "$ACTUAL_HEAD" != "$EXECUTION_SHA" ]]; then
+            echo "HEAD $ACTUAL_HEAD != execution_sha $EXECUTION_SHA"
             exit 1
           fi
           MANIFEST="docs/lesson-visuals/v1/AUTHORIZED_MANIFEST.json"
@@ -148,7 +166,12 @@ jobs:
             echo "actual=$ACTUAL_MANIFEST_SHA approved=$EXPECTED_MANIFEST_SHA"
             exit 1
           fi
-          echo "dispatch-authority PASSED (Lovable + Control Room)"
+          MANIFEST_CONTENT_SHA="$(python3 -c 'import json; print(json.load(open("docs/lesson-visuals/v1/AUTHORIZED_MANIFEST.json",encoding="utf-8"))["sourceSha"])')"
+          if [[ "$MANIFEST_CONTENT_SHA" != "$APPROVED_CONTENT_SHA" ]]; then
+            echo "manifest sourceSha $MANIFEST_CONTENT_SHA != approved_content_sha $APPROVED_CONTENT_SHA"
+            exit 1
+          fi
+          echo "dispatch-authority PASSED (Lovable + Control Room; content!=execution allowed)"
 
   preflight:
     name: Global production preflight (before matrix)
@@ -163,10 +186,10 @@ jobs:
       prior_artifact_name: ${{ steps.prior.outputs.artifact_name }}
       prior_run_id: ${{ steps.prior.outputs.run_id }}
     steps:
-      - name: Checkout immutable source_sha
+      - name: Checkout immutable execution_sha
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.inputs.source_sha }}
+          ref: ${{ github.event.inputs.execution_sha }}
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
@@ -227,8 +250,11 @@ jobs:
         id: preflight
         shell: bash
         env:
-          SOURCE_SHA: ${{ github.event.inputs.source_sha }}
-          ACTUAL_SOURCE_SHA: ${{ github.event.inputs.source_sha }}
+          CONTENT_SHA: ${{ github.event.inputs.approved_content_sha }}
+          APPROVED_CONTENT_SHA: ${{ github.event.inputs.approved_content_sha }}
+          EXECUTION_SHA: ${{ github.event.inputs.execution_sha }}
+          APPROVED_EXECUTION_SHA: ${{ github.event.inputs.execution_sha }}
+          ACTUAL_EXECUTION_SHA: ${{ github.event.inputs.execution_sha }}
           CONTROL_ROOM_AUTHORIZATION_ID: ${{ github.event.inputs.control_room_authorization_id }}
           APPROVED_MANIFEST_SHA256: ${{ github.event.inputs.approved_manifest_sha256 }}
           APPROVED_PILOT_MANIFEST_SHA256: ${{ github.event.inputs.approved_pilot_manifest_sha256 }}
@@ -236,7 +262,7 @@ jobs:
           GITHUB_ACTOR_NAME: ${{ github.actor }}
           MODE: ${{ github.event.inputs.mode }}
           MAX_PARALLEL: ${{ github.event.inputs.max_parallel }}
-          RUN_ID: lv-${{ github.event.inputs.source_sha }}-${{ github.run_id }}
+          RUN_ID: lv-${{ github.event.inputs.execution_sha }}-${{ github.run_id }}
           PRIOR_RECEIPT_BUNDLE_PATH: ${{ steps.prior.outputs.need_prior == 'true' && 'prior-receipt-bundle' || '' }}
           LOVABLE_DISPATCH_ACTORS: ${{ vars.LOVABLE_DISPATCH_ACTORS || secrets.LOVABLE_DISPATCH_ACTORS }}
           LESSON_VISUALS_EXECUTION_MODE: ${{ vars.LESSON_VISUALS_EXECUTION_MODE }}
@@ -260,6 +286,12 @@ jobs:
           LESSON_VISUALS_OUTPUT_STORAGE_TARGET: ${{ vars.LESSON_VISUALS_OUTPUT_STORAGE_TARGET }}
         run: |
           set -euo pipefail
+          ACTUAL_HEAD="$(git rev-parse HEAD)"
+          if [[ "$ACTUAL_HEAD" != "$EXECUTION_SHA" ]]; then
+            echo "HEAD $ACTUAL_HEAD != execution_sha $EXECUTION_SHA"
+            exit 1
+          fi
+          export ACTUAL_EXECUTION_SHA="$ACTUAL_HEAD"
           MANIFEST="docs/lesson-visuals/v1/AUTHORIZED_MANIFEST.json"
           ACTUAL_MANIFEST_SHA="$(sha256sum "$MANIFEST" | awk '{print $1}')"
           export ACTUAL_MANIFEST_SHA256="$ACTUAL_MANIFEST_SHA"
@@ -280,31 +312,38 @@ jobs:
       - name: Upload immutable runtime quota context
         uses: actions/upload-artifact@v4
         with:
-          name: runtime-quota-context-${{ github.event.inputs.source_sha }}-${{ github.run_id }}
+          name: runtime-quota-context-${{ github.event.inputs.execution_sha }}-${{ github.run_id }}
           path: artifacts/qa/runtime-quota-context.json
           if-no-files-found: error
           retention-days: 14
 
-      - name: Build immutable 400-cell matrix
+      - name: Build immutable cell matrix
         id: matrix
         shell: bash
         env:
-          SOURCE_SHA: ${{ github.event.inputs.source_sha }}
+          CONTENT_SHA: ${{ github.event.inputs.approved_content_sha }}
+          EXECUTION_SHA: ${{ github.event.inputs.execution_sha }}
           MODE: ${{ github.event.inputs.mode }}
           APPROVED_PILOT_MANIFEST_SHA256: ${{ github.event.inputs.approved_pilot_manifest_sha256 }}
         run: |
           set -euo pipefail
           python3 - <<'PY'
-          import hashlib, json, os, pathlib
+          import hashlib, json, os, pathlib, re
 
           mode = os.environ["MODE"]
-          source_sha = os.environ["SOURCE_SHA"]
+          content_sha = os.environ["CONTENT_SHA"]
+          execution_sha = os.environ["EXECUTION_SHA"]
+          if not re.fullmatch(r"[a-f0-9]{40}", content_sha):
+              raise SystemExit("approved_content_sha must be full 40-char hex")
+          if not re.fullmatch(r"[a-f0-9]{40}", execution_sha):
+              raise SystemExit("execution_sha must be full 40-char hex")
+
           full_path = pathlib.Path("docs/lesson-visuals/v1/AUTHORIZED_MANIFEST.json")
           full_bytes = full_path.read_bytes()
           full_sha = hashlib.sha256(full_bytes).hexdigest()
           m = json.loads(full_bytes.decode("utf-8"))
           assert m["manifestVersion"] == "lesson-visuals-authorized/v1"
-          assert m["sourceSha"] == source_sha
+          assert m["sourceSha"] == content_sha, f"manifest sourceSha {m['sourceSha']} != content {content_sha}"
           assert len(m["lessonIds"]) == 100
           assert len(m["cells"]) == 400
           assert m["locales"] == ["ar-EG", "ar-MSA", "ar-Gulf", "en"]
@@ -324,7 +363,7 @@ jobs:
               assert p["pilotCount"] == 12
               assert len(p["cells"]) == 12
               assert p["fullManifestSha256"] == full_sha
-              assert p["sourceSha"] == source_sha
+              assert p["sourceSha"] == content_sha, f"pilot sourceSha {p['sourceSha']} != content {content_sha}"
               cells = p["cells"]
               if len(cells) == 400:
                   raise SystemExit("pilot mode must not expand to 400 cells")
@@ -340,14 +379,14 @@ jobs:
           if mode == "pilot" and len(out) == 400:
               raise SystemExit("pilot mode must not expand to 400 cells")
           pathlib.Path("matrix.json").write_text(json.dumps(out), encoding="utf-8")
-          print(f"matrix_cells={len(out)}")
+          print(f"matrix_cells={len(out)} content={content_sha} execution={execution_sha}")
           PY
           {
             echo "matrix<<EOF"
             cat matrix.json
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
-          echo "run_id=lv-${{ github.event.inputs.source_sha }}-${{ github.run_id }}" >> "$GITHUB_OUTPUT"
+          echo "run_id=lv-${{ github.event.inputs.execution_sha }}-${{ github.run_id }}" >> "$GITHUB_OUTPUT"
 
   cells:
     name: Cell ${{ matrix.cell.cellId }}
@@ -360,10 +399,10 @@ jobs:
       matrix:
         cell: ${{ fromJSON(needs.preflight.outputs.matrix) }}
     steps:
-      - name: Checkout immutable source_sha
+      - name: Checkout immutable execution_sha
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.inputs.source_sha }}
+          ref: ${{ github.event.inputs.execution_sha }}
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
@@ -376,7 +415,7 @@ jobs:
       - name: Download runtime quota context
         uses: actions/download-artifact@v4
         with:
-          name: runtime-quota-context-${{ github.event.inputs.source_sha }}-${{ github.run_id }}
+          name: runtime-quota-context-${{ github.event.inputs.execution_sha }}-${{ github.run_id }}
           path: artifacts/qa
 
       - name: Download authorized prior receipt bundle
@@ -397,7 +436,11 @@ jobs:
           LESSON_ID: ${{ matrix.cell.lessonId }}
           LOCALE: ${{ matrix.cell.locale }}
           METHOD: ${{ matrix.cell.method }}
-          SOURCE_SHA: ${{ github.event.inputs.source_sha }}
+          CONTENT_SHA: ${{ github.event.inputs.approved_content_sha }}
+          APPROVED_CONTENT_SHA: ${{ github.event.inputs.approved_content_sha }}
+          EXECUTION_SHA: ${{ github.event.inputs.execution_sha }}
+          APPROVED_EXECUTION_SHA: ${{ github.event.inputs.execution_sha }}
+          ACTUAL_EXECUTION_SHA: ${{ github.event.inputs.execution_sha }}
           APPROVED_MANIFEST_SHA256: ${{ github.event.inputs.approved_manifest_sha256 }}
           APPROVED_PILOT_MANIFEST_SHA256: ${{ github.event.inputs.approved_pilot_manifest_sha256 }}
           CONTROL_ROOM_AUTHORIZATION_ID: ${{ github.event.inputs.control_room_authorization_id }}
@@ -429,6 +472,12 @@ jobs:
           LESSON_VISUALS_OUTPUT_STORAGE_TARGET: ${{ vars.LESSON_VISUALS_OUTPUT_STORAGE_TARGET }}
         run: |
           set -euo pipefail
+          ACTUAL_HEAD="$(git rev-parse HEAD)"
+          if [[ "$ACTUAL_HEAD" != "$EXECUTION_SHA" ]]; then
+            echo "HEAD $ACTUAL_HEAD != execution_sha $EXECUTION_SHA"
+            exit 1
+          fi
+          export ACTUAL_EXECUTION_SHA="$ACTUAL_HEAD"
           test -f artifacts/qa/runtime-quota-context.json
           set +e
           OUT="$(bun run src/lib/lesson-visuals/v1/scripts/run_production_cell.ts)"
@@ -469,10 +518,10 @@ jobs:
     if: always()
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout immutable source_sha
+      - name: Checkout immutable execution_sha
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.inputs.source_sha }}
+          ref: ${{ github.event.inputs.execution_sha }}
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
@@ -492,13 +541,17 @@ jobs:
       - name: Download runtime quota context
         uses: actions/download-artifact@v4
         with:
-          name: runtime-quota-context-${{ github.event.inputs.source_sha }}-${{ github.run_id }}
+          name: runtime-quota-context-${{ github.event.inputs.execution_sha }}-${{ github.run_id }}
           path: artifacts/qa
 
       - name: Build aggregate validation (fail-closed)
         shell: bash
         env:
-          SOURCE_SHA: ${{ github.event.inputs.source_sha }}
+          CONTENT_SHA: ${{ github.event.inputs.approved_content_sha }}
+          APPROVED_CONTENT_SHA: ${{ github.event.inputs.approved_content_sha }}
+          EXECUTION_SHA: ${{ github.event.inputs.execution_sha }}
+          APPROVED_EXECUTION_SHA: ${{ github.event.inputs.execution_sha }}
+          ACTUAL_EXECUTION_SHA: ${{ github.event.inputs.execution_sha }}
           APPROVED_MANIFEST_SHA256: ${{ github.event.inputs.approved_manifest_sha256 }}
           APPROVED_PILOT_MANIFEST_SHA256: ${{ github.event.inputs.approved_pilot_manifest_sha256 }}
           MODE: ${{ github.event.inputs.mode }}
@@ -509,6 +562,12 @@ jobs:
           LESSON_VISUALS_PROVIDER_ATTEMPT_QUOTA: ${{ vars.LESSON_VISUALS_PROVIDER_ATTEMPT_QUOTA }}
         run: |
           set -euo pipefail
+          ACTUAL_HEAD="$(git rev-parse HEAD)"
+          if [[ "$ACTUAL_HEAD" != "$EXECUTION_SHA" ]]; then
+            echo "HEAD $ACTUAL_HEAD != execution_sha $EXECUTION_SHA"
+            exit 1
+          fi
+          export ACTUAL_EXECUTION_SHA="$ACTUAL_HEAD"
           test -d collected
           test -f artifacts/qa/runtime-quota-context.json
           bun run src/lib/lesson-visuals/v1/scripts/run_production_aggregate.ts
@@ -521,7 +580,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: lesson-visuals-qa-${{ github.event.inputs.source_sha }}
+          name: lesson-visuals-qa-${{ github.event.inputs.execution_sha }}
           path: |
             artifacts/qa/
           if-no-files-found: error

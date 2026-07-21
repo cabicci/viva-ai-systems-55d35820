@@ -11,6 +11,10 @@ import { join, resolve } from "node:path";
 import { EXPECTED_CELL_COUNT } from "../constants";
 import { validateArtifactRelationships } from "../production/artifactIntegrity";
 import {
+  resolveContentShaFromEnv,
+  resolveExecutionShaFromEnv,
+} from "../production/shaEnv";
+import {
   reconcileAttemptRecords,
   validateRuntimeQuotaContext,
 } from "../production/quotaContext";
@@ -136,9 +140,13 @@ function main(): void {
     expectedCells = 12;
   }
 
+  const contentSha = resolveContentShaFromEnv(process.env);
+  const executionSha = resolveExecutionShaFromEnv(process.env);
+
   const report = validateArtifactRelationships({
     runId: process.env.RUN_ID ?? "unknown",
-    sourceSha: process.env.SOURCE_SHA ?? "",
+    contentSha,
+    executionSha,
     approvedManifestSha256: (process.env.APPROVED_MANIFEST_SHA256 ?? "").toLowerCase(),
     mode,
     executionMode,
@@ -173,7 +181,8 @@ function main(): void {
   if (existsSync(quotaPath)) {
     const q = validateRuntimeQuotaContext(JSON.parse(readFileSync(quotaPath, "utf8")), {
       runId: process.env.RUN_ID,
-      sourceSha: process.env.SOURCE_SHA,
+      contentSha,
+      executionSha,
       approvedManifestSha256: (process.env.APPROVED_MANIFEST_SHA256 ?? "").toLowerCase(),
       mode,
     });

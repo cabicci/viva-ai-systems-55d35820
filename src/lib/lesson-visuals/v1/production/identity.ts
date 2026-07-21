@@ -12,7 +12,8 @@ export function validateRequestIdentity(req: ProviderGenerationRequest): string[
   const errors: string[] = [];
   if (!req.runId?.trim()) errors.push("runId missing");
   if (!req.controlRoomAuthorizationId?.trim()) errors.push("controlRoomAuthorizationId missing");
-  if (!/^[a-f0-9]{40}$/.test(req.sourceSha)) errors.push("sourceSha invalid");
+  if (!/^[a-f0-9]{40}$/.test(req.contentSha)) errors.push("contentSha invalid");
+  if (!/^[a-f0-9]{40}$/.test(req.executionSha)) errors.push("executionSha invalid");
   if (!/^[a-f0-9]{64}$/.test(req.approvedManifestSha256)) {
     errors.push("approvedManifestSha256 invalid");
   }
@@ -46,7 +47,8 @@ export function validateResponseIdentity(
   if (res.controlRoomAuthorizationId !== req.controlRoomAuthorizationId) {
     errors.push("response controlRoomAuthorizationId mismatch");
   }
-  if (res.sourceSha !== req.sourceSha) errors.push("response sourceSha mismatch");
+  if (res.contentSha !== req.contentSha) errors.push("response contentSha mismatch");
+  if (res.executionSha !== req.executionSha) errors.push("response executionSha mismatch");
   if (res.approvedManifestSha256 !== req.approvedManifestSha256) {
     errors.push("response manifest digest mismatch");
   }

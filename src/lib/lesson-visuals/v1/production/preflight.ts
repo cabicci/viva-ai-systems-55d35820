@@ -34,9 +34,11 @@ export interface GlobalPreflightInput {
   mode: ProductionRunMode;
   maxParallel: number;
   priorReceiptBundlePath?: string | null;
-  requireSourceShaEqualsBase?: boolean;
+  requireContentShaEqualsBase?: boolean;
   /** Required when mode=pilot — sha256 of AUTHORIZED_PILOT_12.json bytes. */
   approvedPilotManifestSha256?: string | null;
+  /** When true (default), require actualExecutionSha on dispatch input for all modes. */
+  requireActualExecutionSha?: boolean;
 }
 
 export interface GlobalPreflightResult {
@@ -44,6 +46,8 @@ export interface GlobalPreflightResult {
   errors: string[];
   manifestSha256: string | null;
   pilotManifestSha256: string | null;
+  contentSha: string | null;
+  executionSha: string | null;
   cellCount: number;
   matrixCellIds: string[];
   eligibleCells: number;
@@ -83,6 +87,10 @@ export function runGlobalPreflight(input: GlobalPreflightInput): GlobalPreflight
     errors.push("approved_pilot_manifest_sha256 only allowed for pilot mode");
   }
 
+  if (input.requireActualExecutionSha !== false && !input.dispatch.actualExecutionSha?.trim()) {
+    errors.push("actualExecutionSha required for dispatch validation (must equal approvedExecutionSha / HEAD)");
+  }
+
   const dispatch = validateDispatchAuthorization(input.dispatch);
   if (!dispatch.ok) errors.push(...dispatch.errors.map((e) => `dispatch: ${e}`));
 
@@ -98,6 +106,9 @@ export function runGlobalPreflight(input: GlobalPreflightInput): GlobalPreflight
   let manifestSha256: string | null = null;
   let fullCellCount = 0;
   let fullCellIds: string[] = [];
+  const approvedContentSha = input.dispatch.approvedContentSha;
+  const approvedExecutionSha = input.dispatch.approvedExecutionSha;
+
   try {
     const bytes = readFileSync(manifestPath);
     manifestSha256 = createHash("sha256").update(bytes).digest("hex");
@@ -114,17 +125,22 @@ export function runGlobalPreflight(input: GlobalPreflightInput): GlobalPreflight
     if (fullCellCount !== EXPECTED_CELL_COUNT) {
       errors.push(`cell count ${fullCellCount} != ${EXPECTED_CELL_COUNT}`);
     }
-    if (input.requireSourceShaEqualsBase !== false) {
+    if (input.requireContentShaEqualsBase !== false) {
       if (manifest.sourceSha !== AUTHORITATIVE_BASE_SOURCE_SHA) {
         errors.push(
           `manifest sourceSha ${manifest.sourceSha} != base ${AUTHORITATIVE_BASE_SOURCE_SHA}`,
         );
       }
-      if (input.dispatch.approvedSourceSha !== AUTHORITATIVE_BASE_SOURCE_SHA) {
+      if (approvedContentSha !== AUTHORITATIVE_BASE_SOURCE_SHA) {
         errors.push(
-          `approvedSourceSha ${input.dispatch.approvedSourceSha} != base ${AUTHORITATIVE_BASE_SOURCE_SHA}`,
+          `approvedContentSha ${approvedContentSha} != base ${AUTHORITATIVE_BASE_SOURCE_SHA}`,
         );
       }
+    }
+    if (manifest.sourceSha !== approvedContentSha) {
+      errors.push(
+        `manifest sourceSha ${manifest.sourceSha} != approved content ${approvedContentSha}`,
+      );
     }
     if (
       input.dispatch.actualManifestSha256 &&
@@ -158,7 +174,7 @@ export function runGlobalPreflight(input: GlobalPreflightInput): GlobalPreflight
       }
       const parsed = JSON.parse(pilotText) as unknown;
       const v = validatePilotManifest(parsed, {
-        sourceSha: input.dispatch.approvedSourceSha,
+        sourceSha: approvedContentSha,
         fullManifestSha256: manifestSha256,
         fullCellIds,
       });
@@ -184,7 +200,7 @@ export function runGlobalPreflight(input: GlobalPreflightInput): GlobalPreflight
       const prior = loadPriorAcceptedReceipts({
         mode: input.mode,
         priorReceiptBundlePath: input.priorReceiptBundlePath,
-        expectedSourceSha: input.dispatch.approvedSourceSha,
+        expectedContentSha: approvedContentSha,
         expectedManifestSha256: manifestSha256,
         expectedCellIds: fullCellIds,
         executionMode: config.config.executionMode,
@@ -196,11 +212,10 @@ export function runGlobalPreflight(input: GlobalPreflightInput): GlobalPreflight
       cellCount = fullCellCount || EXPECTED_CELL_COUNT;
       matrixCellIds = fullCellIds;
     } else if (input.mode === "pilot") {
-      // Pilot never loads prior receipts / failed-only skips.
       const prior = loadPriorAcceptedReceipts({
         mode: "full",
         priorReceiptBundlePath: null,
-        expectedSourceSha: input.dispatch.approvedSourceSha,
+        expectedContentSha: approvedContentSha,
         expectedManifestSha256: manifestSha256,
         expectedCellIds: matrixCellIds,
         executionMode: config.config.executionMode,
@@ -212,7 +227,7 @@ export function runGlobalPreflight(input: GlobalPreflightInput): GlobalPreflight
       const prior = loadPriorAcceptedReceipts({
         mode: input.mode,
         priorReceiptBundlePath: input.priorReceiptBundlePath,
-        expectedSourceSha: input.dispatch.approvedSourceSha,
+        expectedContentSha: approvedContentSha,
         expectedManifestSha256: manifestSha256,
         expectedCellIds: fullCellIds,
         executionMode: config.config.executionMode,
@@ -261,6 +276,8 @@ export function runGlobalPreflight(input: GlobalPreflightInput): GlobalPreflight
     errors,
     manifestSha256,
     pilotManifestSha256,
+    contentSha: approvedContentSha,
+    executionSha: approvedExecutionSha,
     cellCount,
     matrixCellIds,
     eligibleCells,

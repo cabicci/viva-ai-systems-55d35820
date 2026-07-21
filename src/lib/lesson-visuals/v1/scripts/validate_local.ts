@@ -413,12 +413,13 @@ function validateDispatchContractSyntax(): ValidationIssue[] {
   // Pure contract smoke: authorized lovable passes; cursor fails
   const ok = validateDispatchAuthorization({
     controlRoomAuthorizationId: "CR-VALIDATE-SMOKE-001",
-    approvedSourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    approvedContentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    approvedExecutionSha: AUTHORITATIVE_BASE_SOURCE_SHA,
     approvedManifestSha256: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
     runMode: "full",
     dispatchActor: "lovable",
     githubActor: "lovable",
-    actualSourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    actualExecutionSha: AUTHORITATIVE_BASE_SOURCE_SHA,
     actualManifestSha256: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
     allowedDispatchActors: DEFAULT_FIXTURE_DISPATCH_ACTORS,
   });
@@ -427,7 +428,8 @@ function validateDispatchContractSyntax(): ValidationIssue[] {
   }
   const bad = validateDispatchAuthorization({
     controlRoomAuthorizationId: "CR-VALIDATE-SMOKE-001",
-    approvedSourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    approvedContentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    approvedExecutionSha: AUTHORITATIVE_BASE_SOURCE_SHA,
     approvedManifestSha256: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
     runMode: "full",
     dispatchActor: "cursor",
@@ -440,6 +442,8 @@ function validateDispatchContractSyntax(): ValidationIssue[] {
   if (existsSync(WORKFLOW_PATH)) {
     const yaml = readFileSync(WORKFLOW_PATH, "utf8");
     for (const key of [
+      "execution_sha",
+      "approved_content_sha",
       "control_room_authorization_id",
       "approved_manifest_sha256",
       "dispatch_actor",

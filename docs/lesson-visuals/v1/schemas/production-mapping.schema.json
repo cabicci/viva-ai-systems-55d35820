@@ -14,7 +14,8 @@
     "mimeType",
     "width",
     "height",
-    "sourceSha",
+    "contentSha",
+    "executionSha",
     "approvedManifestSha256",
     "receiptRef",
     "rightsProvenanceRef",
@@ -31,10 +32,12 @@
     "mimeType": { "type": "string", "minLength": 3 },
     "width": { "type": "integer", "minimum": 1 },
     "height": { "type": "integer", "minimum": 1 },
-    "sourceSha": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "contentSha": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+    "executionSha": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
     "approvedManifestSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
     "receiptRef": { "type": "string", "minLength": 1 },
     "rightsProvenanceRef": { "type": "string", "minLength": 1 },
+    "validationRef": { "type": "string", "minLength": 1 },
     "acceptedValidationStatus": { "const": "ACCEPTED" },
     "runId": { "type": "string", "minLength": 1 }
   }

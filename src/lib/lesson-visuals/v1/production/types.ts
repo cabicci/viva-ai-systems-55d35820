@@ -18,7 +18,10 @@ export interface RightsProvenanceRecord {
   generatedAt: string;
   providerRequestId: string;
   cellId: string;
-  sourceSha: string;
+  /** Immutable content/base SHA (= manifest `sourceSha` semantics). */
+  contentSha: string;
+  /** Authorized execution commit SHA for this production run. */
+  executionSha: string;
   approvedManifestSha256: string;
   /** Independently calculated final accepted output SHA-256. */
   outputContentSha256: string;
@@ -37,7 +40,8 @@ export interface ProviderGenerationRequest {
   schemaVersion: "lesson-visual-provider-request/v1";
   runId: string;
   controlRoomAuthorizationId: string;
-  sourceSha: string;
+  contentSha: string;
+  executionSha: string;
   approvedManifestSha256: string;
   cellId: string;
   lessonId: string;
@@ -88,7 +92,8 @@ export interface ProviderGenerationResponse {
   method: Method;
   runId: string;
   controlRoomAuthorizationId: string;
-  sourceSha: string;
+  contentSha: string;
+  executionSha: string;
   approvedManifestSha256: string;
   idempotencyKey: string;
   attemptNumber: number;
@@ -110,7 +115,8 @@ export interface OutputValidationRecord {
   locale: Locale;
   runId: string;
   controlRoomAuthorizationId: string;
-  sourceSha: string;
+  contentSha: string;
+  executionSha: string;
   approvedManifestSha256: string;
   providerName: string | null;
   providerAccountId: string | null;
@@ -126,7 +132,8 @@ export interface ProductionCellReceipt {
   status: CellRunStatus;
   runId: string;
   controlRoomAuthorizationId: string;
-  sourceSha: string;
+  contentSha: string;
+  executionSha: string;
   approvedManifestSha256: string;
   cellId: string;
   lessonId: string;
@@ -169,7 +176,8 @@ export interface ProductionMapping {
   mimeType: string;
   width: number;
   height: number;
-  sourceSha: string;
+  contentSha: string;
+  executionSha: string;
   approvedManifestSha256: string;
   receiptRef: string;
   rightsProvenanceRef: string;
@@ -182,6 +190,8 @@ export interface CellFailureRecord {
   schemaVersion: "lesson-visual-failure/v1";
   cellId: string;
   runId: string;
+  contentSha?: string;
+  executionSha?: string;
   failureCode: string;
   errors: string[];
   retryable: boolean;
@@ -191,7 +201,8 @@ export interface CellFailureRecord {
 export interface ProductionRunSummary {
   schemaVersion: "lesson-visual-run-summary/v1";
   runId: string;
-  sourceSha: string;
+  contentSha: string;
+  executionSha: string;
   approvedManifestSha256: string;
   mode: ProductionRunMode;
   executionMode: ExecutionMode;

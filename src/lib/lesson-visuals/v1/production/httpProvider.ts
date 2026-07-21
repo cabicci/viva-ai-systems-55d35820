@@ -156,7 +156,8 @@ export function createHttpProvider(opts: HttpProviderOptions): ProviderTransport
       if (r.controlRoomAuthorizationId !== request.controlRoomAuthorizationId) {
         throw new Error("response authorization mismatch");
       }
-      if (r.sourceSha !== request.sourceSha) throw new Error("response sourceSha mismatch");
+      if (r.contentSha !== request.contentSha) throw new Error("response contentSha mismatch");
+      if (r.executionSha !== request.executionSha) throw new Error("response executionSha mismatch");
       if (r.approvedManifestSha256 !== request.approvedManifestSha256) {
         throw new Error("response manifest digest mismatch");
       }

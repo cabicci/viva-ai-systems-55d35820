@@ -17,7 +17,8 @@ export interface ValidateOutputInput {
   locale: Locale;
   runId: string;
   controlRoomAuthorizationId: string;
-  sourceSha: string;
+  contentSha: string;
+  executionSha: string;
   approvedManifestSha256: string;
   providerName?: string | null;
   providerAccountId?: string | null;
@@ -37,7 +38,8 @@ function identityBase(input: ValidateOutputInput) {
     locale: input.locale,
     runId: input.runId,
     controlRoomAuthorizationId: input.controlRoomAuthorizationId,
-    sourceSha: input.sourceSha,
+    contentSha: input.contentSha,
+    executionSha: input.executionSha,
     approvedManifestSha256: input.approvedManifestSha256,
     providerName: input.providerName ?? null,
     providerAccountId: input.providerAccountId ?? null,

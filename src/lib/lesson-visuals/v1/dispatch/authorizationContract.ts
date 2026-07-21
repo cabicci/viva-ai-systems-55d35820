@@ -1,5 +1,6 @@
 /**
  * Lovable-only dispatch authorization contract (fail-closed).
+ * Separates immutable content identity from workflow execution identity.
  * Pure functions — no network. Cursor/CLI/unauth actors must fail.
  */
 
@@ -7,7 +8,16 @@ export type DispatchRunMode = "full" | "failed-only" | "pilot";
 
 export interface DispatchAuthorizationInput {
   controlRoomAuthorizationId: string;
-  approvedSourceSha: string;
+  /**
+   * Immutable content/base SHA (AUTHORITATIVE_BASE_SOURCE_SHA).
+   * Must match manifest/master `sourceSha` semantics — not checkout HEAD.
+   */
+  approvedContentSha: string;
+  /**
+   * Explicitly authorized execution commit SHA to check out and run.
+   * Must equal actualExecutionSha (HEAD). May differ from content SHA.
+   */
+  approvedExecutionSha: string;
   approvedManifestSha256: string;
   runMode: DispatchRunMode;
   dispatchActor: string;
@@ -15,8 +25,8 @@ export interface DispatchAuthorizationInput {
   githubActor?: string;
   /** sha256 hex of checked-out AUTHORIZED_MANIFEST.json bytes. */
   actualManifestSha256?: string;
-  /** Checked-out HEAD / input source_sha that must match approvedSourceSha. */
-  actualSourceSha?: string;
+  /** Checked-out HEAD — must equal approvedExecutionSha. */
+  actualExecutionSha?: string;
   /**
    * Allowlisted dispatch actors. Empty/undefined in production sense = fail closed.
    * Local tests pass an explicit fixture list.
@@ -57,6 +67,17 @@ function normalizeActor(actor: string | undefined): string {
   return (actor ?? "").trim().toLowerCase();
 }
 
+function looksLikeMovingRef(raw: string): boolean {
+  const s = raw.trim();
+  if (!s) return true;
+  if (/^(refs\/)?heads\//i.test(s)) return true;
+  if (/^(refs\/)?tags\//i.test(s)) return true;
+  if (s === "main" || s === "master" || s === "HEAD") return true;
+  if (/^[a-f0-9]{40}$/.test(s)) return false;
+  // Non-hex full SHA → reject as non-immutable ref/name.
+  return true;
+}
+
 /**
  * Fail-closed validation of a Control Room → Lovable → Actions dispatch attempt.
  */
@@ -80,8 +101,21 @@ export function validateDispatchAuthorization(
     );
   }
 
-  if (!SHA1_RE.test(input.approvedSourceSha ?? "")) {
-    errors.push("approvedSourceSha must be 40-char lowercase hex");
+  if (!input.approvedContentSha?.trim()) {
+    errors.push("approvedContentSha missing");
+  } else if (looksLikeMovingRef(input.approvedContentSha) || !SHA1_RE.test(input.approvedContentSha)) {
+    errors.push("approvedContentSha must be a full 40-char lowercase hex commit SHA (not a branch/tag)");
+  }
+
+  if (!input.approvedExecutionSha?.trim()) {
+    errors.push("approvedExecutionSha missing");
+  } else if (
+    looksLikeMovingRef(input.approvedExecutionSha) ||
+    !SHA1_RE.test(input.approvedExecutionSha)
+  ) {
+    errors.push(
+      "approvedExecutionSha must be a full 40-char lowercase hex commit SHA (not a branch/tag)",
+    );
   }
 
   if (!SHA256_RE.test(input.approvedManifestSha256 ?? "")) {
@@ -116,10 +150,14 @@ export function validateDispatchAuthorization(
     }
   }
 
-  if (input.actualSourceSha !== undefined) {
-    if (!SHA1_RE.test(input.actualSourceSha) || input.actualSourceSha !== input.approvedSourceSha) {
+  // Execution authorization: approved execution SHA must equal checked-out HEAD.
+  // Content SHA is NOT required to equal execution SHA.
+  if (input.actualExecutionSha !== undefined) {
+    if (!SHA1_RE.test(input.actualExecutionSha)) {
+      errors.push("actualExecutionSha must be 40-char lowercase hex");
+    } else if (input.actualExecutionSha !== input.approvedExecutionSha) {
       errors.push(
-        `source_sha mismatch: actual ${input.actualSourceSha} != approved ${input.approvedSourceSha}`,
+        `execution_sha mismatch: HEAD ${input.actualExecutionSha} != approved ${input.approvedExecutionSha}`,
       );
     }
   }

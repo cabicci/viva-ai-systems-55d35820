@@ -12,6 +12,11 @@ import { loadProductionConfig, redactConfigForLog, type ProductionEnv } from "..
 import { loadPriorAcceptedReceipts } from "../production/priorReceipts";
 import { buildRuntimeQuotaContext } from "../production/quotaContext";
 import { runGlobalPreflight } from "../production/preflight";
+import {
+  resolveActualExecutionShaFromEnv,
+  resolveContentShaFromEnv,
+  resolveExecutionShaFromEnv,
+} from "../production/shaEnv";
 import type { ProductionRunMode } from "../production/types";
 
 function moduleDir(): string {
@@ -52,15 +57,16 @@ function main(): void {
   const e = env();
   const mode = (process.env.MODE ?? "full") as ProductionRunMode;
   const maxParallel = Number(process.env.MAX_PARALLEL ?? "20");
-  const sourceSha = process.env.SOURCE_SHA ?? "";
+  const contentSha = resolveContentShaFromEnv(process.env);
+  const executionSha = resolveExecutionShaFromEnv(process.env);
+  const actualExecutionSha = resolveActualExecutionShaFromEnv(process.env);
   const approvedManifest = (process.env.APPROVED_MANIFEST_SHA256 ?? "").toLowerCase();
   const approvedPilot = (process.env.APPROVED_PILOT_MANIFEST_SHA256 ?? "").toLowerCase();
   const actualManifest = (process.env.ACTUAL_MANIFEST_SHA256 ?? "").toLowerCase();
-  const actualSource = process.env.ACTUAL_SOURCE_SHA ?? "";
   const actors = parseDispatchActorAllowlist(e.LOVABLE_DISPATCH_ACTORS);
   const priorPath = process.env.PRIOR_RECEIPT_BUNDLE_PATH ?? null;
   const repoRoot = resolve(moduleDir(), "../../../../..");
-  const runId = process.env.RUN_ID ?? `lv-${sourceSha}-local`;
+  const runId = process.env.RUN_ID ?? `lv-${contentSha}-local`;
 
   const result = runGlobalPreflight({
     repoRoot,
@@ -68,17 +74,19 @@ function main(): void {
     mode,
     maxParallel,
     priorReceiptBundlePath: priorPath,
-    requireSourceShaEqualsBase: true,
+    requireContentShaEqualsBase: true,
     approvedPilotManifestSha256: mode === "pilot" ? approvedPilot : null,
+    requireActualExecutionSha: true,
     dispatch: {
       controlRoomAuthorizationId: process.env.CONTROL_ROOM_AUTHORIZATION_ID ?? "",
-      approvedSourceSha: sourceSha,
+      approvedContentSha: contentSha,
+      approvedExecutionSha: executionSha,
       approvedManifestSha256: approvedManifest,
       runMode: mode,
       dispatchActor: process.env.DISPATCH_ACTOR ?? "",
       githubActor: process.env.GITHUB_ACTOR_NAME,
       actualManifestSha256: actualManifest || undefined,
-      actualSourceSha: actualSource || undefined,
+      actualExecutionSha: actualExecutionSha || undefined,
       allowedDispatchActors: actors,
       maxParallel,
       maxParallelMin: 1,
@@ -114,7 +122,7 @@ function main(): void {
   const prior = loadPriorAcceptedReceipts({
     mode: priorMode,
     priorReceiptBundlePath: mode === "failed-only" ? priorPath : null,
-    expectedSourceSha: sourceSha,
+    expectedContentSha: contentSha,
     expectedManifestSha256: result.manifestSha256,
     expectedCellIds: mode === "pilot" ? matrixCellIds : JSON.parse(
       readFileSync(resolve(repoRoot, AUTHORIZED_MANIFEST_RELATIVE_PATH), "utf8"),
@@ -129,7 +137,8 @@ function main(): void {
   const quota = buildRuntimeQuotaContext({
     runId,
     controlRoomAuthorizationId: process.env.CONTROL_ROOM_AUTHORIZATION_ID ?? "",
-    sourceSha,
+    contentSha,
+    executionSha,
     approvedManifestSha256: result.manifestSha256,
     mode,
     allCellIds: matrixCellIds,

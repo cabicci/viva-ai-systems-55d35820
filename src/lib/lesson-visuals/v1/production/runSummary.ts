@@ -12,7 +12,8 @@ import type {
 
 export function buildRunSummary(args: {
   runId: string;
-  sourceSha: string;
+  contentSha: string;
+  executionSha: string;
   approvedManifestSha256: string;
   mode: ProductionRunMode;
   executionMode: ExecutionMode;
@@ -97,7 +98,8 @@ export function buildRunSummary(args: {
   const summary: ProductionRunSummary = {
     schemaVersion: "lesson-visual-run-summary/v1",
     runId: args.runId,
-    sourceSha: args.sourceSha,
+    contentSha: args.contentSha,
+    executionSha: args.executionSha,
     approvedManifestSha256: args.approvedManifestSha256,
     mode: args.mode,
     executionMode: args.executionMode,

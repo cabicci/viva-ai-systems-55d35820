@@ -19,6 +19,10 @@ import {
   type RuntimeQuotaContext,
 } from "../production/quotaContext";
 import { selectProviderTransport } from "../production/selectTransport";
+import {
+  resolveContentShaFromEnv,
+  resolveExecutionShaFromEnv,
+} from "../production/shaEnv";
 import type { ProductionCellReceipt, ProductionRunMode } from "../production/types";
 
 function env(): ProductionEnv {
@@ -55,10 +59,13 @@ function loadQuotaContext(): RuntimeQuotaContext {
     throw new Error(`quota context missing: ${abs}`);
   }
   const parsed = JSON.parse(readFileSync(abs, "utf8"));
+  const contentSha = resolveContentShaFromEnv(process.env);
+  const executionSha = resolveExecutionShaFromEnv(process.env);
   const v = validateRuntimeQuotaContext(parsed, {
     runId: process.env.RUN_ID,
     controlRoomAuthorizationId: process.env.CONTROL_ROOM_AUTHORIZATION_ID,
-    sourceSha: process.env.SOURCE_SHA,
+    contentSha,
+    executionSha,
     approvedManifestSha256: (process.env.APPROVED_MANIFEST_SHA256 ?? "").toLowerCase(),
     mode: (process.env.MODE ?? "full") as ProductionRunMode,
   });
@@ -70,6 +77,8 @@ function loadQuotaContext(): RuntimeQuotaContext {
 
 async function main(): Promise<void> {
   const e = env();
+  const contentSha = resolveContentShaFromEnv(process.env);
+  const executionSha = resolveExecutionShaFromEnv(process.env);
   const loaded = loadProductionConfig(e);
   if (!loaded.ok || !loaded.config) {
     console.error(JSON.stringify({ ok: false, errors: loaded.errors }));
@@ -115,7 +124,7 @@ async function main(): Promise<void> {
     const one = loadPriorAcceptedReceipts({
       mode: "failed-only",
       priorReceiptBundlePath: bundle,
-      expectedSourceSha: process.env.SOURCE_SHA ?? "",
+      expectedContentSha: contentSha,
       expectedManifestSha256: (process.env.APPROVED_MANIFEST_SHA256 ?? "").toLowerCase(),
       expectedCellIds: allCellIds,
       executionMode: config.executionMode,
@@ -154,9 +163,10 @@ async function main(): Promise<void> {
     artifactsRoot,
     config,
     transport,
-    runId: process.env.RUN_ID ?? `run-${process.env.SOURCE_SHA ?? "unknown"}`,
+    runId: process.env.RUN_ID ?? `run-${contentSha || "unknown"}`,
     controlRoomAuthorizationId: process.env.CONTROL_ROOM_AUTHORIZATION_ID ?? "",
-    sourceSha: process.env.SOURCE_SHA ?? "",
+    contentSha,
+    executionSha,
     approvedManifestSha256: (process.env.APPROVED_MANIFEST_SHA256 ?? "").toLowerCase(),
     cellId,
     lessonId: process.env.LESSON_ID ?? "",

@@ -18,6 +18,8 @@ import { buildMappingFromAcceptedReceipt } from "../../../src/lib/lesson-visuals
 import { buildRuntimeQuotaContext } from "../../../src/lib/lesson-visuals/v1/production/quotaContext";
 import type { ProductionConfig, ProviderGenerationRequest } from "../../../src/lib/lesson-visuals/v1/production/types";
 
+const EXECUTION_SHA = "2c441e449d57dd834366c260a2dd37b251a5583b";
+
 const MANIFEST_PATH = "docs/lesson-visuals/v1/AUTHORIZED_MANIFEST.json";
 
 function padCellIds(seed: string[]): string[] {
@@ -34,7 +36,8 @@ function quotaCtx(cellIds: string[] = ["intro-m1-l1-what-is-ai__en", "intro-m1-l
   const built = buildRuntimeQuotaContext({
     runId: "run-test-1",
     controlRoomAuthorizationId: "CR-TEST-001",
-    sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    contentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    executionSha: EXECUTION_SHA,
     approvedManifestSha256: "a".repeat(64),
     mode: "full",
     allCellIds: padCellIds(cellIds),
@@ -98,7 +101,8 @@ function baseRequest(overrides: Partial<ProviderGenerationRequest> = {}): Provid
     schemaVersion: "lesson-visual-provider-request/v1",
     runId: "run-test-1",
     controlRoomAuthorizationId: "CR-TEST-001",
-    sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    contentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    executionSha: EXECUTION_SHA,
     approvedManifestSha256: "a".repeat(64),
     cellId: "intro-m1-l1-what-is-ai__en",
     lessonId: "intro-m1-l1-what-is-ai",
@@ -154,12 +158,13 @@ describe("dispatch authorization fail-closed", () => {
   const manifestSha = "b".repeat(64);
   const base = {
     controlRoomAuthorizationId: "CR-2026-07-21-TEST",
-    approvedSourceSha: sha,
+    approvedContentSha: sha,
+    approvedExecutionSha: EXECUTION_SHA,
     approvedManifestSha256: manifestSha,
     runMode: "full" as const,
     dispatchActor: "lovable",
     githubActor: "lovable",
-    actualSourceSha: sha,
+    actualExecutionSha: EXECUTION_SHA,
     actualManifestSha256: manifestSha,
     allowedDispatchActors: ["lovable"] as const,
     maxParallel: 20,
@@ -176,13 +181,13 @@ describe("dispatch authorization fail-closed", () => {
     expect(r.ok).toBe(false);
   });
 
-  it("rejects source SHA mismatch", () => {
+  it("rejects execution SHA mismatch", () => {
     const r = validateDispatchAuthorization({
       ...base,
-      actualSourceSha: "0".repeat(40),
+      actualExecutionSha: "0".repeat(40),
     });
     expect(r.ok).toBe(false);
-    expect(r.errors.join(" ")).toMatch(/source_sha mismatch/);
+    expect(r.errors.join(" ")).toMatch(/execution_sha mismatch/);
   });
 
   it("rejects manifest digest mismatch", () => {
@@ -432,7 +437,8 @@ describe("provider contract + output validation (offline mock)", () => {
       locale: "en",
       runId: "run-test-1",
       controlRoomAuthorizationId: "CR-TEST-001",
-      sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      contentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    executionSha: EXECUTION_SHA,
       approvedManifestSha256: "a".repeat(64),
       forceProductionGates: true,
     });
@@ -453,7 +459,8 @@ describe("receipts and mappings", () => {
       transport,
       runId: "run-map-1",
       controlRoomAuthorizationId: "CR-MAP-1",
-      sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      contentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    executionSha: EXECUTION_SHA,
       approvedManifestSha256: "d".repeat(64),
       cellId: "intro-m1-l1-what-is-ai__en",
       lessonId: "intro-m1-l1-what-is-ai",
@@ -467,7 +474,8 @@ describe("receipts and mappings", () => {
         const b = buildRuntimeQuotaContext({
           runId: "run-map-1",
           controlRoomAuthorizationId: "CR-MAP-1",
-          sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+          contentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    executionSha: EXECUTION_SHA,
           approvedManifestSha256: "d".repeat(64),
           mode: "full",
           allCellIds: padCellIds([
@@ -495,7 +503,8 @@ describe("receipts and mappings", () => {
       transport: badTransport,
       runId: "run-map-2",
       controlRoomAuthorizationId: "CR-MAP-2",
-      sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      contentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    executionSha: EXECUTION_SHA,
       approvedManifestSha256: "d".repeat(64),
       cellId: "intro-m1-l2-first-prompt__en",
       lessonId: "intro-m1-l2-first-prompt",
@@ -509,7 +518,8 @@ describe("receipts and mappings", () => {
         const b = buildRuntimeQuotaContext({
           runId: "run-map-2",
           controlRoomAuthorizationId: "CR-MAP-2",
-          sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+          contentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    executionSha: EXECUTION_SHA,
           approvedManifestSha256: "d".repeat(64),
           mode: "full",
           allCellIds: padCellIds([
@@ -536,7 +546,8 @@ describe("receipts and mappings", () => {
       lessonId: "intro-m1-l1-what-is-ai",
       locale: "en",
       method: 1,
-      sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      contentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    executionSha: EXECUTION_SHA,
       approvedManifestSha256: "e".repeat(64),
       idempotencyKey: "k1",
       contentSha256: "f".repeat(64),
@@ -547,7 +558,8 @@ describe("receipts and mappings", () => {
       lessonId: "intro-m1-l1-what-is-ai",
       locale: "en",
       method: 1,
-      sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      contentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    executionSha: EXECUTION_SHA,
       approvedManifestSha256: "e".repeat(64),
       idempotencyKey: "k1",
       contentSha256: "0".repeat(64),
@@ -571,7 +583,8 @@ describe("receipts and mappings", () => {
       transport,
       runId: "run-prod-mock",
       controlRoomAuthorizationId: "CR-P",
-      sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      contentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    executionSha: EXECUTION_SHA,
       approvedManifestSha256: "a".repeat(64),
       cellId: "intro-m1-l1-what-is-ai__en",
       lessonId: "intro-m1-l1-what-is-ai",

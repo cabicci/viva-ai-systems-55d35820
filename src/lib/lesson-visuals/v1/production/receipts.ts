@@ -9,7 +9,8 @@ export function fingerprintProductionReceipt(input: {
   lessonId: string;
   locale: Locale;
   method: Method;
-  sourceSha: string;
+  contentSha: string;
+  executionSha: string;
   approvedManifestSha256: string;
   idempotencyKey: string;
   contentSha256: string | null;
@@ -17,13 +18,14 @@ export function fingerprintProductionReceipt(input: {
   const canonical = JSON.stringify({
     approvedManifestSha256: input.approvedManifestSha256,
     cellId: input.cellId,
+    contentSha: input.contentSha,
     contentSha256: input.contentSha256,
+    executionSha: input.executionSha,
     idempotencyKey: input.idempotencyKey,
     lessonId: input.lessonId,
     locale: input.locale,
     method: input.method,
     runId: input.runId,
-    sourceSha: input.sourceSha,
   });
   return createHash("sha256").update(canonical, "utf8").digest("hex");
 }
@@ -32,7 +34,8 @@ export function buildReceipt(args: {
   status: CellRunStatus;
   runId: string;
   controlRoomAuthorizationId: string;
-  sourceSha: string;
+  contentSha: string;
+  executionSha: string;
   approvedManifestSha256: string;
   cellId: string;
   lessonId: string;
@@ -68,7 +71,8 @@ export function buildReceipt(args: {
     lessonId: args.lessonId,
     locale: args.locale,
     method: args.method,
-    sourceSha: args.sourceSha,
+    contentSha: args.contentSha,
+    executionSha: args.executionSha,
     approvedManifestSha256: args.approvedManifestSha256,
     idempotencyKey: args.idempotencyKey,
     contentSha256: args.contentSha256,
@@ -78,7 +82,8 @@ export function buildReceipt(args: {
     status: args.status,
     runId: args.runId,
     controlRoomAuthorizationId: args.controlRoomAuthorizationId,
-    sourceSha: args.sourceSha,
+    contentSha: args.contentSha,
+    executionSha: args.executionSha,
     approvedManifestSha256: args.approvedManifestSha256,
     cellId: args.cellId,
     lessonId: args.lessonId,

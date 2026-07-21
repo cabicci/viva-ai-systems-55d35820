@@ -76,11 +76,13 @@ See `DISPATCH_AUTHORIZATION.md` and `CONFIGURATION.md`.
 
 **Do not dispatch from Cursor or local scripts.**
 
+**Content vs execution SHA:** Manifest/master `sourceSha` is the immutable content pin only. Runtime artifacts use separate `contentSha` and `executionSha` fields; a new authorized execution commit does not require repinning when content is unchanged. See `DISPATCH_AUTHORIZATION.md`.
+
 ## Provider adapter contract
 
 Typed request/response in `src/lib/lesson-visuals/v1/production/`:
 
-- Binds run ID, Control Room auth, source SHA, manifest digest, cell/lesson/locale/method, idempotency key, attempt, provider name/model, account/project/auth identity, request ID, and independently calculated output checksum
+- Binds run ID, Control Room auth, content SHA, execution SHA, manifest digest, cell/lesson/locale/method, idempotency key, attempt, provider name/model, account/project/auth identity, request ID, and independently calculated output checksum (`contentSha256`)
 - Rejects missing credentials, identity mismatch, empty bytes, URL-only without secure fetch, MIME spoof, wrong dimensions, malformed metadata, incomplete rights, legacy references, checksum mismatch
 - Runtime schema validation before write/upload/reuse
 - **dry-run**: offline mock transport (no network)

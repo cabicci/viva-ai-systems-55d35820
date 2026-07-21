@@ -15,7 +15,8 @@ export type AggregateValidationReport = AggregateValidationReportShape;
 
 export function validateArtifactRelationships(args: {
   runId: string;
-  sourceSha: string;
+  contentSha: string;
+  executionSha: string;
   approvedManifestSha256: string;
   mode: "full" | "failed-only" | "pilot";
   executionMode: "production" | "dry-run";

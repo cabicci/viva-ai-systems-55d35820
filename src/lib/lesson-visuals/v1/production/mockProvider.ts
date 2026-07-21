@@ -30,7 +30,7 @@ export interface MockProviderOptions {
     | "wrong-account"
     | "wrong-project"
     | "wrong-auth"
-    | "wrong-source-sha"
+    | "wrong-content-sha"
     | "wrong-manifest"
     | "wrong-run"
     | "wrong-attempt"
@@ -66,7 +66,8 @@ export function createMockProvider(opts: MockProviderOptions): ProviderTransport
       let method = request.method;
       let runId = request.runId;
       let controlRoomAuthorizationId = request.controlRoomAuthorizationId;
-      let sourceSha = request.sourceSha;
+      let contentSha = request.contentSha;
+      let executionSha = request.executionSha;
       let approvedManifestSha256 = request.approvedManifestSha256;
       let attemptNumber = request.attemptNumber;
       let accountId = opts.accountId;
@@ -122,8 +123,8 @@ export function createMockProvider(opts: MockProviderOptions): ProviderTransport
         case "wrong-auth":
           authId = "wrong-auth";
           break;
-        case "wrong-source-sha":
-          sourceSha = "0".repeat(40);
+        case "wrong-content-sha":
+          contentSha = "0".repeat(40);
           break;
         case "wrong-manifest":
           approvedManifestSha256 = "1".repeat(64);
@@ -150,7 +151,8 @@ export function createMockProvider(opts: MockProviderOptions): ProviderTransport
         providerRequestId,
         generatedAt,
         cellId: request.cellId,
-        sourceSha: request.sourceSha,
+        contentSha: request.contentSha,
+        executionSha: request.executionSha,
         approvedManifestSha256: request.approvedManifestSha256,
         outputContentSha256: checksum === "0".repeat(64) ? sha256Hex(bytes) : checksum,
         sourceReferences,
@@ -189,7 +191,8 @@ export function createMockProvider(opts: MockProviderOptions): ProviderTransport
         method,
         runId,
         controlRoomAuthorizationId,
-        sourceSha,
+        contentSha,
+        executionSha,
         approvedManifestSha256,
         idempotencyKey: request.idempotencyKey,
         attemptNumber,

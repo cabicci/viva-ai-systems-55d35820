@@ -22,6 +22,8 @@ import { validateOutputBytes } from "../../../src/lib/lesson-visuals/v1/producti
 import type { ProductionCellReceipt, ProductionConfig, ProviderGenerationRequest } from "../../../src/lib/lesson-visuals/v1/production/types";
 import { assertRuntimeAttemptWithinQuota } from "../../../src/lib/lesson-visuals/v1/production/attemptQuota";
 
+const EXECUTION_SHA = "2c441e449d57dd834366c260a2dd37b251a5583b";
+
 const temps: string[] = [];
 afterEach(() => {
   while (temps.length) rmSync(temps.pop()!, { recursive: true, force: true });
@@ -62,7 +64,8 @@ function req(over: Partial<ProviderGenerationRequest> = {}): ProviderGenerationR
     schemaVersion: "lesson-visual-provider-request/v1",
     runId: "run-1",
     controlRoomAuthorizationId: "CR-TEST-1",
-    sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    contentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    executionSha: EXECUTION_SHA,
     approvedManifestSha256: "a".repeat(64),
     cellId: "intro-m1-l1-what-is-ai__en",
     lessonId: "intro-m1-l1-what-is-ai",
@@ -98,7 +101,8 @@ function makeAcceptedReceipt(cellId: string, lessonId: string, locale: "en" | "a
     lessonId,
     locale,
     method: 1,
-    sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    contentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    executionSha: EXECUTION_SHA,
     approvedManifestSha256: sha,
     idempotencyKey,
     contentSha256,
@@ -108,7 +112,8 @@ function makeAcceptedReceipt(cellId: string, lessonId: string, locale: "en" | "a
     status: "ACCEPTED",
     runId: "prior-run",
     controlRoomAuthorizationId: "CR-PRIOR",
-    sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    contentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    executionSha: EXECUTION_SHA,
     approvedManifestSha256: sha,
     cellId,
     lessonId,
@@ -161,7 +166,7 @@ describe("Fix2 failed-only prior receipts", () => {
     const out = loadPriorAcceptedReceipts({
       mode: "failed-only",
       priorReceiptBundlePath: dir,
-      expectedSourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      expectedContentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
       expectedManifestSha256: manifestSha,
       expectedCellIds: cells,
       executionMode: "dry-run",
@@ -174,7 +179,7 @@ describe("Fix2 failed-only prior receipts", () => {
     const out = loadPriorAcceptedReceipts({
       mode: "failed-only",
       priorReceiptBundlePath: "",
-      expectedSourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      expectedContentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
       expectedManifestSha256: manifestSha,
       expectedCellIds: cells,
       executionMode: "dry-run",
@@ -189,7 +194,7 @@ describe("Fix2 failed-only prior receipts", () => {
     const out = loadPriorAcceptedReceipts({
       mode: "failed-only",
       priorReceiptBundlePath: dir,
-      expectedSourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      expectedContentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
       expectedManifestSha256: manifestSha,
       expectedCellIds: cells,
       executionMode: "dry-run",
@@ -207,7 +212,7 @@ describe("Fix2 failed-only prior receipts", () => {
     const out = loadPriorAcceptedReceipts({
       mode: "failed-only",
       priorReceiptBundlePath: dir,
-      expectedSourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      expectedContentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
       expectedManifestSha256: manifestSha,
       expectedCellIds: cells,
       executionMode: "dry-run",
@@ -222,7 +227,7 @@ describe("Fix2 failed-only prior receipts", () => {
     const out = loadPriorAcceptedReceipts({
       mode: "failed-only",
       priorReceiptBundlePath: dir,
-      expectedSourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      expectedContentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
       expectedManifestSha256: manifestSha,
       expectedCellIds: cells,
       executionMode: "dry-run",
@@ -234,14 +239,15 @@ describe("Fix2 failed-only prior receipts", () => {
     const dir = mkdtempSync(join(tmpdir(), "prior-"));
     temps.push(dir);
     const r = makeAcceptedReceipt(cells[0]!, "intro-m1-l1-what-is-ai", "en", manifestSha);
-    r.sourceSha = "0".repeat(40);
+    r.contentSha = "0".repeat(40);
     r.fingerprint = fingerprintProductionReceipt({
       runId: r.runId,
       cellId: r.cellId,
       lessonId: r.lessonId,
       locale: r.locale,
       method: r.method,
-      sourceSha: r.sourceSha,
+      contentSha: r.contentSha,
+      executionSha: r.executionSha ?? EXECUTION_SHA,
       approvedManifestSha256: r.approvedManifestSha256,
       idempotencyKey: r.idempotencyKey,
       contentSha256: r.contentSha256,
@@ -250,7 +256,7 @@ describe("Fix2 failed-only prior receipts", () => {
     const out = loadPriorAcceptedReceipts({
       mode: "failed-only",
       priorReceiptBundlePath: dir,
-      expectedSourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      expectedContentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
       expectedManifestSha256: manifestSha,
       expectedCellIds: cells,
       executionMode: "dry-run",
@@ -266,7 +272,7 @@ describe("Fix2 failed-only prior receipts", () => {
     const out = loadPriorAcceptedReceipts({
       mode: "failed-only",
       priorReceiptBundlePath: dir,
-      expectedSourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      expectedContentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
       expectedManifestSha256: manifestSha,
       expectedCellIds: cells,
       executionMode: "dry-run",
@@ -283,7 +289,7 @@ describe("Fix2 failed-only prior receipts", () => {
     const out = loadPriorAcceptedReceipts({
       mode: "failed-only",
       priorReceiptBundlePath: dir,
-      expectedSourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      expectedContentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
       expectedManifestSha256: manifestSha,
       expectedCellIds: cells,
       executionMode: "dry-run",
@@ -300,7 +306,7 @@ describe("Fix2 failed-only prior receipts", () => {
     const out = loadPriorAcceptedReceipts({
       mode: "failed-only",
       priorReceiptBundlePath: dir,
-      expectedSourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      expectedContentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
       expectedManifestSha256: manifestSha,
       expectedCellIds: cells,
       executionMode: "dry-run",
@@ -317,7 +323,7 @@ describe("Fix2 failed-only prior receipts", () => {
     const out = loadPriorAcceptedReceipts({
       mode: "failed-only",
       priorReceiptBundlePath: dir,
-      expectedSourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      expectedContentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
       expectedManifestSha256: manifestSha,
       expectedCellIds: cells,
       executionMode: "dry-run",
@@ -334,7 +340,7 @@ describe("Fix2 failed-only prior receipts", () => {
     const out = loadPriorAcceptedReceipts({
       mode: "failed-only",
       priorReceiptBundlePath: dir,
-      expectedSourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      expectedContentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
       expectedManifestSha256: manifestSha,
       expectedCellIds: cells,
       executionMode: "dry-run",
@@ -351,7 +357,7 @@ describe("Fix2 failed-only prior receipts", () => {
     const out = loadPriorAcceptedReceipts({
       mode: "failed-only",
       priorReceiptBundlePath: dir,
-      expectedSourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      expectedContentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
       expectedManifestSha256: manifestSha,
       expectedCellIds: cells,
       executionMode: "production",
@@ -412,7 +418,8 @@ describe("Fix6 MIME", () => {
       locale: "en",
       runId: "run-1",
       controlRoomAuthorizationId: "CR-TEST-1",
-      sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      contentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    executionSha: EXECUTION_SHA,
       approvedManifestSha256: "a".repeat(64),
     });
     expect(ok.ok).toBe(true);
@@ -431,7 +438,8 @@ describe("Fix6 MIME", () => {
       locale: "en",
       runId: "run-1",
       controlRoomAuthorizationId: "CR-TEST-1",
-      sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      contentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    executionSha: EXECUTION_SHA,
       approvedManifestSha256: "a".repeat(64),
     });
     expect(spoof.ok).toBe(false);
@@ -450,7 +458,8 @@ describe("Fix6 MIME", () => {
       locale: "en",
       runId: "run-1",
       controlRoomAuthorizationId: "CR-TEST-1",
-      sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      contentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    executionSha: EXECUTION_SHA,
       approvedManifestSha256: "a".repeat(64),
     });
     expect(dims.ok).toBe(false);
@@ -469,7 +478,8 @@ describe("Fix6 MIME", () => {
       locale: "en",
       runId: "run-1",
       controlRoomAuthorizationId: "CR-TEST-1",
-      sourceSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+      contentSha: AUTHORITATIVE_BASE_SOURCE_SHA,
+    executionSha: EXECUTION_SHA,
       approvedManifestSha256: "a".repeat(64),
     });
     expect(over.ok).toBe(false);
@@ -519,7 +529,7 @@ describe("Fix8-9 provider identity and response binding", () => {
     expect((await runFail("wrong-account")).ok).toBe(false);
     expect((await runFail("wrong-project")).ok).toBe(false);
     expect((await runFail("wrong-auth")).ok).toBe(false);
-    expect((await runFail("wrong-source-sha")).ok).toBe(false);
+    expect((await runFail("wrong-content-sha")).ok).toBe(false);
     expect((await runFail("wrong-manifest")).ok).toBe(false);
     expect((await runFail("wrong-run")).ok).toBe(false);
     expect((await runFail("wrong-attempt")).ok).toBe(false);

@@ -14,7 +14,8 @@ export interface RuntimeQuotaContext {
   schemaVersion: typeof QUOTA_CONTEXT_SCHEMA;
   runId: string;
   controlRoomAuthorizationId: string;
-  sourceSha: string;
+  contentSha: string;
+  executionSha: string;
   approvedManifestSha256: string;
   mode: "full" | "failed-only" | "pilot";
   totalAuthorizedCells: number;
@@ -60,7 +61,8 @@ export function fingerprintQuotaContext(
 export function buildRuntimeQuotaContext(input: {
   runId: string;
   controlRoomAuthorizationId: string;
-  sourceSha: string;
+  contentSha: string;
+  executionSha: string;
   approvedManifestSha256: string;
   mode: "full" | "failed-only" | "pilot";
   allCellIds: readonly string[];
@@ -100,7 +102,8 @@ export function buildRuntimeQuotaContext(input: {
   if (!envelope.ok) errors.push(...envelope.errors);
   if (!input.runId.trim()) errors.push("runId missing");
   if (!input.controlRoomAuthorizationId.trim()) errors.push("controlRoomAuthorizationId missing");
-  if (!/^[a-f0-9]{40}$/.test(input.sourceSha)) errors.push("sourceSha invalid");
+  if (!/^[a-f0-9]{40}$/.test(input.contentSha)) errors.push("contentSha invalid");
+  if (!/^[a-f0-9]{40}$/.test(input.executionSha)) errors.push("executionSha invalid");
   if (!/^[a-f0-9]{64}$/.test(input.approvedManifestSha256)) {
     errors.push("approvedManifestSha256 invalid");
   }
@@ -111,7 +114,8 @@ export function buildRuntimeQuotaContext(input: {
     schemaVersion: QUOTA_CONTEXT_SCHEMA,
     runId: input.runId,
     controlRoomAuthorizationId: input.controlRoomAuthorizationId,
-    sourceSha: input.sourceSha,
+    contentSha: input.contentSha,
+    executionSha: input.executionSha,
     approvedManifestSha256: input.approvedManifestSha256,
     mode: input.mode,
     totalAuthorizedCells: allCellIds.length,
@@ -136,7 +140,7 @@ export function validateRuntimeQuotaContext(
   expected?: Partial<
     Pick<
       RuntimeQuotaContext,
-      "runId" | "controlRoomAuthorizationId" | "sourceSha" | "approvedManifestSha256" | "mode"
+      "runId" | "controlRoomAuthorizationId" | "contentSha" | "executionSha" | "approvedManifestSha256" | "mode"
     >
   >,
 ): { ok: boolean; errors: string[]; context: RuntimeQuotaContext | null } {
@@ -144,7 +148,9 @@ export function validateRuntimeQuotaContext(
   if (!raw || typeof raw !== "object") {
     return { ok: false, errors: ["quota context not an object"], context: null };
   }
-  const c = raw as RuntimeQuotaContext;
+  const c = raw as RuntimeQuotaContext & { sourceSha?: string };
+  const contentSha = c.contentSha ?? c.sourceSha ?? "";
+  const executionSha = c.executionSha ?? c.sourceSha ?? "";
   if (c.schemaVersion !== QUOTA_CONTEXT_SCHEMA) errors.push("unsupported quota context schemaVersion");
   if (!Array.isArray(c.allCellIds) || !Array.isArray(c.eligibleCellIds) || !Array.isArray(c.skippedCellIds)) {
     errors.push("quota context cell id arrays malformed");
@@ -153,7 +159,8 @@ export function validateRuntimeQuotaContext(
     schemaVersion: c.schemaVersion,
     runId: c.runId,
     controlRoomAuthorizationId: c.controlRoomAuthorizationId,
-    sourceSha: c.sourceSha,
+    contentSha,
+    executionSha,
     approvedManifestSha256: c.approvedManifestSha256,
     mode: c.mode,
     totalAuthorizedCells: c.totalAuthorizedCells,
@@ -189,8 +196,11 @@ export function validateRuntimeQuotaContext(
   ) {
     errors.push("quota context authorization mismatch");
   }
-  if (expected?.sourceSha && c.sourceSha !== expected.sourceSha) {
-    errors.push("quota context sourceSha mismatch");
+  if (expected?.contentSha && contentSha !== expected.contentSha) {
+    errors.push("quota context contentSha mismatch");
+  }
+  if (expected?.executionSha && executionSha !== expected.executionSha) {
+    errors.push("quota context executionSha mismatch");
   }
   if (
     expected?.approvedManifestSha256 &&

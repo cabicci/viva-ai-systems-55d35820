@@ -6,7 +6,8 @@ export function validateRightsProvenance(
   rights: RightsProvenanceRecord | null | undefined,
   expected: {
     cellId: string;
-    sourceSha: string;
+    contentSha: string;
+    executionSha: string;
     approvedManifestSha256: string;
     providerRequestId: string;
     outputContentSha256: string;
@@ -18,7 +19,8 @@ export function validateRightsProvenance(
   }
   const errors: string[] = [...schema.errors];
   if (rights.cellId !== expected.cellId) errors.push("rights cellId mismatch");
-  if (rights.sourceSha !== expected.sourceSha) errors.push("rights sourceSha mismatch");
+  if (rights.contentSha !== expected.contentSha) errors.push("rights contentSha mismatch");
+  if (rights.executionSha !== expected.executionSha) errors.push("rights executionSha mismatch");
   if (rights.approvedManifestSha256 !== expected.approvedManifestSha256) {
     errors.push("rights manifest digest mismatch");
   }
@@ -45,7 +47,8 @@ export function buildGreenfieldRights(args: {
   providerRequestId: string;
   generatedAt: string;
   cellId: string;
-  sourceSha: string;
+  contentSha: string;
+  executionSha: string;
   approvedManifestSha256: string;
   outputContentSha256: string;
   screenshotSiteIdentity?: string | null;
@@ -60,7 +63,8 @@ export function buildGreenfieldRights(args: {
     generatedAt: args.generatedAt,
     providerRequestId: args.providerRequestId,
     cellId: args.cellId,
-    sourceSha: args.sourceSha,
+    contentSha: args.contentSha,
+    executionSha: args.executionSha,
     approvedManifestSha256: args.approvedManifestSha256,
     outputContentSha256: args.outputContentSha256,
     sourceReferences: args.sourceReferences ?? [],

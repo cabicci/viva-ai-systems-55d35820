@@ -13,7 +13,7 @@ export interface PriorReceiptLoadInput {
   mode: ProductionRunMode;
   /** Absolute or cwd-relative path to authorized prior-receipt bundle directory. */
   priorReceiptBundlePath: string | null | undefined;
-  expectedSourceSha: string;
+  expectedContentSha: string;
   expectedManifestSha256: string;
   expectedCellIds: readonly string[];
   executionMode: ExecutionMode;
@@ -47,6 +47,11 @@ function listReceiptFiles(dir: string): string[] {
   };
   walk(dir);
   return out;
+}
+
+/** Accept legacy receipts that used `sourceSha` for immutable content identity. */
+function receiptContentSha(receipt: ProductionCellReceipt & { sourceSha?: string }): string {
+  return receipt.contentSha ?? receipt.sourceSha ?? "";
 }
 
 export function loadPriorAcceptedReceipts(input: PriorReceiptLoadInput): PriorReceiptLoadResult {
@@ -102,7 +107,7 @@ export function loadPriorAcceptedReceipts(input: PriorReceiptLoadInput): PriorRe
       errors.push(`schema-invalid receipt ${basename(file)}: ${schema.errors.join("; ")}`);
       continue;
     }
-    const receipt = parsed as ProductionCellReceipt;
+    const receipt = parsed as ProductionCellReceipt & { sourceSha?: string };
     const expectedName = `${receipt.cellId}.receipt.json`;
     if (basename(file) !== expectedName) {
       errors.push(`receipt filename ${basename(file)} does not match cellId ${receipt.cellId}`);
@@ -122,8 +127,9 @@ export function loadPriorAcceptedReceipts(input: PriorReceiptLoadInput): PriorRe
       errors.push(`receipt ${receipt.cellId} status ${receipt.status} not ACCEPTED`);
       continue;
     }
-    if (receipt.sourceSha !== input.expectedSourceSha) {
-      errors.push(`receipt ${receipt.cellId} stale/wrong sourceSha`);
+    const contentSha = receiptContentSha(receipt);
+    if (contentSha !== input.expectedContentSha) {
+      errors.push(`receipt ${receipt.cellId} stale/wrong contentSha`);
       continue;
     }
     if (receipt.approvedManifestSha256 !== input.expectedManifestSha256) {
@@ -151,7 +157,8 @@ export function loadPriorAcceptedReceipts(input: PriorReceiptLoadInput): PriorRe
       lessonId: receipt.lessonId,
       locale: receipt.locale,
       method: receipt.method,
-      sourceSha: receipt.sourceSha,
+      contentSha,
+      executionSha: receipt.executionSha ?? contentSha,
       approvedManifestSha256: receipt.approvedManifestSha256,
       idempotencyKey: receipt.idempotencyKey,
       contentSha256: receipt.contentSha256,

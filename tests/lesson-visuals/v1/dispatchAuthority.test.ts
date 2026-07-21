@@ -5,18 +5,20 @@ import {
   validateDispatchAuthorization,
 } from "../../../src/lib/lesson-visuals/v1/dispatch/authorizationContract";
 
-const VALID_SHA = "1041fae1a6db81c1cfdcb4f7904850df418b93b3";
+const VALID_CONTENT_SHA = "1041fae1a6db81c1cfdcb4f7904850df418b93b3";
+const VALID_EXECUTION_SHA = "2c441e449d57dd834366c260a2dd37b251a5583b";
 const VALID_MANIFEST_SHA =
   "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
 
 const base = {
   controlRoomAuthorizationId: "CR-2026-07-20-INTEGRATION-001",
-  approvedSourceSha: VALID_SHA,
+  approvedContentSha: VALID_CONTENT_SHA,
+  approvedExecutionSha: VALID_EXECUTION_SHA,
   approvedManifestSha256: VALID_MANIFEST_SHA,
   runMode: "full" as const,
   dispatchActor: "lovable",
   githubActor: "lovable",
-  actualSourceSha: VALID_SHA,
+  actualExecutionSha: VALID_EXECUTION_SHA,
   actualManifestSha256: VALID_MANIFEST_SHA,
   allowedDispatchActors: DEFAULT_FIXTURE_DISPATCH_ACTORS,
 };

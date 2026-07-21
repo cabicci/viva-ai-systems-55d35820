@@ -131,7 +131,8 @@ export async function executeProviderContract(
     }
     const rights = validateRightsProvenance(response.rightsProvenance, {
       cellId: request.cellId,
-      sourceSha: request.sourceSha,
+      contentSha: request.contentSha,
+      executionSha: request.executionSha,
       approvedManifestSha256: request.approvedManifestSha256,
       providerRequestId: response.providerRequestId,
       outputContentSha256: independentChecksum,
@@ -151,7 +152,8 @@ export async function executeProviderContract(
       locale: request.locale,
       runId: request.runId,
       controlRoomAuthorizationId: request.controlRoomAuthorizationId,
-      sourceSha: request.sourceSha,
+      contentSha: request.contentSha,
+      executionSha: request.executionSha,
       approvedManifestSha256: request.approvedManifestSha256,
       providerName: response.providerName,
       providerAccountId: response.providerAccountId,

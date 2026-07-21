@@ -54,7 +54,8 @@ export function validateRightsSchema(obj: unknown): { ok: boolean; errors: strin
   reqStr(r.providerRequestId, "providerRequestId", errors);
   reqStr(r.licenseOrUsageBasis, "licenseOrUsageBasis", errors);
   reqStr(r.cellId, "cellId", errors);
-  reqSha40(r.sourceSha, "sourceSha", errors);
+  reqSha40(r.contentSha, "contentSha", errors);
+  reqSha40(r.executionSha, "executionSha", errors);
   reqSha64(r.approvedManifestSha256, "approvedManifestSha256", errors);
   reqSha64(r.outputContentSha256, "outputContentSha256", errors);
   if (r.prohibitedLegacySource !== false) {
@@ -82,14 +83,20 @@ export function validateRightsSchema(obj: unknown): { ok: boolean; errors: strin
 export function validateReceiptSchema(obj: unknown): { ok: boolean; errors: string[] } {
   const errors: string[] = [];
   if (!obj || typeof obj !== "object") return { ok: false, errors: ["receipt not an object"] };
-  const r = obj as Partial<ProductionCellReceipt>;
+  const raw = obj as Partial<ProductionCellReceipt> & { sourceSha?: string };
+  const r: Partial<ProductionCellReceipt> = {
+    ...raw,
+    contentSha: raw.contentSha ?? raw.sourceSha,
+    executionSha: raw.executionSha ?? raw.sourceSha ?? raw.contentSha,
+  };
   if (r.schemaVersion !== "lesson-visual-production-receipt/v1") {
     errors.push("unsupported receipt schemaVersion");
   }
   if (!RECEIPT_STATUSES.has(r.status as string)) errors.push("status invalid enum");
   reqStr(r.runId, "runId", errors);
   reqStr(r.controlRoomAuthorizationId, "controlRoomAuthorizationId", errors);
-  reqSha40(r.sourceSha, "sourceSha", errors);
+  reqSha40(r.contentSha, "contentSha", errors);
+  reqSha40(r.executionSha, "executionSha", errors);
   reqSha64(r.approvedManifestSha256, "approvedManifestSha256", errors);
   reqStr(r.cellId, "cellId", errors);
   reqStr(r.lessonId, "lessonId", errors);
@@ -129,7 +136,8 @@ export function validateMappingSchema(obj: unknown): { ok: boolean; errors: stri
   reqStr(m.immutableOutputStorageId, "immutableOutputStorageId", errors);
   reqSha64(m.contentSha256, "contentSha256", errors);
   reqStr(m.mimeType, "mimeType", errors);
-  reqSha40(m.sourceSha, "sourceSha", errors);
+  reqSha40(m.contentSha, "contentSha", errors);
+  reqSha40(m.executionSha, "executionSha", errors);
   reqSha64(m.approvedManifestSha256, "approvedManifestSha256", errors);
   reqStr(m.receiptRef, "receiptRef", errors);
   reqStr(m.rightsProvenanceRef, "rightsProvenanceRef", errors);
@@ -164,7 +172,8 @@ export function validateOutputValidationSchema(obj: unknown): { ok: boolean; err
   if (!LOCALES.has(v.locale as string)) errors.push("locale invalid");
   reqStr(v.runId, "runId", errors);
   reqStr(v.controlRoomAuthorizationId, "controlRoomAuthorizationId", errors);
-  reqSha40(v.sourceSha, "sourceSha", errors);
+  reqSha40(v.contentSha, "contentSha", errors);
+  reqSha40(v.executionSha, "executionSha", errors);
   reqSha64(v.approvedManifestSha256, "approvedManifestSha256", errors);
   reqStr(v.validatedAt, "validatedAt", errors);
   if (v.ok) {
@@ -206,7 +215,8 @@ export function validateRunSummarySchema(obj: unknown): { ok: boolean; errors: s
     errors.push("unsupported run summary schemaVersion");
   }
   reqStr(s.runId, "runId", errors);
-  reqSha40(s.sourceSha, "sourceSha", errors);
+  reqSha40(s.contentSha, "contentSha", errors);
+  reqSha40(s.executionSha, "executionSha", errors);
   reqSha64(s.approvedManifestSha256, "approvedManifestSha256", errors);
   if (s.mode !== "full" && s.mode !== "failed-only" && s.mode !== "pilot") errors.push("mode invalid");
   if (s.executionMode !== "production" && s.executionMode !== "dry-run") {

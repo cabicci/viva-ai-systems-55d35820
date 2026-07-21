@@ -58,7 +58,8 @@ export function runAllValidators(options?: {
       });
     }
     for (const key of [
-      "source_sha",
+      "execution_sha",
+      "approved_content_sha",
       "max_parallel",
       "fail-fast",
       "control_room_authorization_id",
