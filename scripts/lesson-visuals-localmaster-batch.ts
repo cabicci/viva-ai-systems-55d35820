@@ -1,4 +1,4 @@
-ï»¿/**
+/**
  * LocalMaster batch runner for Method 1 + 4 production cells.
  * Batches of 20; continues on failure; maintains artifacts/qa/blocker-ledger.json.
  *
@@ -130,10 +130,14 @@ function main(): void {
     cells: ManifestCell[];
   };
   const contentSha = manifest.sourceSha;
-  const executionSha = spawnSync("git", ["rev-parse", "HEAD"], {
-    encoding: "utf8",
-    cwd: repoRoot,
-  }).stdout.trim();
+  const executionSha = (
+    process.env.EXECUTION_SHA ??
+    process.env.APPROVED_EXECUTION_SHA ??
+    spawnSync("git", ["rev-parse", "HEAD"], {
+      encoding: "utf8",
+      cwd: repoRoot,
+    }).stdout.trim()
+  ).trim();
   const approvedManifestSha256 = createHash("sha256").update(bytes).digest("hex");
 
   const allM14 = manifest.cells.filter((c) => c.method === 1 || c.method === 4);
@@ -197,8 +201,8 @@ function main(): void {
   ledger.method3Plan = {
     status: playwrightOk ? "PLANNED_CAPTURE_IF_BROWSERS" : "BLOCKED_NO_PLAYWRIGHT",
     detail: playwrightOk
-      ? "Playwright package present; rights already in screenshot_rights_ledger â€” prefer capture once chromium browsers are installed (bunx playwright install chromium). Do not remethod to diagram while rights are proven."
-      : "Playwright package missing; Method 3 blocked until install. Rights ledger already present â€” do not remethod under Control Room rule 8.",
+      ? "Playwright package present; rights already in screenshot_rights_ledger — prefer capture once chromium browsers are installed (bunx playwright install chromium). Do not remethod to diagram while rights are proven."
+      : "Playwright package missing; Method 3 blocked until install. Rights ledger already present — do not remethod under Control Room rule 8.",
   };
 
   const cellScript = resolve(
