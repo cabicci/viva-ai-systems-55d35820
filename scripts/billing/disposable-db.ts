@@ -161,13 +161,16 @@ export function psqlConcurrent(sqls: string[]): Promise<{ ok: boolean; out: stri
 }
 
 export function resetLocalDatabase(): { ok: boolean; output: string } {
-  return runAllowFail("npx supabase db reset --yes");
+  const result = runAllowFail("npx supabase db reset --yes");
+  return { ok: result.ok, output: result.out };
 }
 
 export function startLocalSupabase(): { ok: boolean; output: string } {
-  return runAllowFail("npx supabase start");
+  const result = runAllowFail("npx supabase start");
+  return { ok: result.ok, output: result.out };
 }
 
 export function stopLocalSupabase(): { ok: boolean; output: string } {
-  return runAllowFail("npx supabase stop --no-backup");
+  const result = runAllowFail("npx supabase stop --no-backup");
+  return { ok: result.ok, output: result.out };
 }
