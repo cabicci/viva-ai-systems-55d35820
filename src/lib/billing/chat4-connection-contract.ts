@@ -42,6 +42,7 @@ export interface Chat4ReserveOutput {
 export const CHAT4_RPC = {
   reserve: "billing.reserve_learner_ai_access",
   registerProviderAttempt: "billing.register_provider_attempt",
+  finalizeProviderAttempt: "billing.finalize_provider_attempt",
   commit: "billing.commit_ai_quota",
   release: "billing.release_ai_quota",
 } as const;
@@ -51,16 +52,25 @@ export const CHAT4_RPC = {
  *
  *  1. reserve            -> `reserve_learner_ai_access`
  *                           If denied, STOP (do not call the provider).
- *  2. register attempt 1 -> `register_provider_attempt(reservation, 1, ...)`
- *                           MUST run before the provider is invoked. Commits the
- *                           logical quota unit exactly once (reserved -> used).
+ *  2. register attempt   -> `register_provider_attempt(reservation, provider,
+ *                           providerRequestId, attemptIdempotencyKey?)`.
+ *                           MUST run before each provider invocation. The DB
+ *                           allocates the attempt_index server-side (1, 2, 3 ...)
+ *                           and writes a DURABLE per-attempt ledger row. The
+ *                           logical quota unit is committed exactly once, on the
+ *                           FIRST provider start (reserved -> used).
  *  3. generate           -> call the AI provider.
- *  4. commit             -> `commit_ai_quota` exactly once with final token
+ *  4. finalize attempt   -> `finalize_provider_attempt(reservation, attemptIndex,
+ *                           status, ...)` records the terminal per-attempt
+ *                           outcome (succeeded/failed/timed_out/canceled/
+ *                           provider_rejected). Never moves quota.
+ *  5. commit             -> `commit_ai_quota` exactly once with final token
  *                           counts (idempotent; no double counting).
- *  5. retries            -> `register_provider_attempt(reservation, 2+, ...)`
+ *  6. retries            -> `register_provider_attempt(reservation, ...)` again
  *                           for subsequent provider attempts under the same
- *                           reservation; the unit is never re-charged.
- *  6. release            -> `release_ai_quota` ONLY if the provider never began
+ *                           reservation; the unit is never re-charged. Each
+ *                           retry is its own durable ledger row.
+ *  7. release            -> `release_ai_quota` ONLY if the provider never began
  *                           (no attempt registered). A started reservation is
  *                           committed, never released.
  */
