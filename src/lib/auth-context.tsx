@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 import type { Session, User } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
+import { syncAccessTokenCookie } from "@/lib/auth-access-token-cookie";
 import { captureError, captureWarn } from "@/lib/error-capture";
 
 const DEVICE_KEY = "lovable.device_id";
@@ -8,19 +9,31 @@ const DEVICE_KEY = "lovable.device_id";
 // Silence cosmetic supabase-js refresh-token console noise (e.g. anonymous
 // visitors with a stale local token). Real auth errors still surface via
 // onAuthStateChange / signIn responses. Browser-only, install once.
-if (typeof window !== "undefined" && !(window as { __vivaAuthNoiseFilter?: boolean }).__vivaAuthNoiseFilter) {
+if (
+  typeof window !== "undefined" &&
+  !(window as { __vivaAuthNoiseFilter?: boolean }).__vivaAuthNoiseFilter
+) {
   (window as { __vivaAuthNoiseFilter?: boolean }).__vivaAuthNoiseFilter = true;
   const origError = console.error.bind(console);
-  const NOISY = /(Invalid Refresh Token|refresh_token_not_found|Refresh Token Not Found|Auth session missing)/i;
+  const NOISY =
+    /(Invalid Refresh Token|refresh_token_not_found|Refresh Token Not Found|Auth session missing)/i;
   console.error = (...args: unknown[]) => {
     try {
-      const msg = args.map((a) => {
-        if (a instanceof Error) return a.message;
-        if (typeof a === "string") return a;
-        try { return JSON.stringify(a); } catch { return String(a); }
-      }).join(" ");
+      const msg = args
+        .map((a) => {
+          if (a instanceof Error) return a.message;
+          if (typeof a === "string") return a;
+          try {
+            return JSON.stringify(a);
+          } catch {
+            return String(a);
+          }
+        })
+        .join(" ");
       if (NOISY.test(msg)) return;
-    } catch { /* fall through */ }
+    } catch {
+      /* fall through */
+    }
     origError(...args);
   };
 }
@@ -35,7 +48,7 @@ function getDeviceId(): string {
   }
   let id = localStorage.getItem(DEVICE_KEY);
   if (!id) {
-    id = (crypto.randomUUID?.() ?? Math.random().toString(36).slice(2) + Date.now().toString(36));
+    id = crypto.randomUUID?.() ?? Math.random().toString(36).slice(2) + Date.now().toString(36);
     localStorage.setItem(DEVICE_KEY, id);
   }
   return id;
@@ -48,7 +61,12 @@ type AuthCtx = {
   signOut: () => Promise<void>;
 };
 
-const Ctx = createContext<AuthCtx>({ user: null, session: null, loading: true, signOut: async () => {} });
+const Ctx = createContext<AuthCtx>({
+  user: null,
+  session: null,
+  loading: true,
+  signOut: async () => {},
+});
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<Session | null>(null);
@@ -68,10 +86,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       // dot-separated segments — anything else means a stale storage row.
       if (s?.access_token && s.access_token.split(".").length !== 3) {
         supabase.auth.signOut();
+        syncAccessTokenCookie(null);
         setSession(null);
         setLoading(false);
         return;
       }
+      syncAccessTokenCookie(s?.access_token);
       setSession(s);
       setLoading(false);
       if (e === "SIGNED_IN" && s?.user && !claimedUserIds.current.has(s.user.id)) {
@@ -83,19 +103,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           if (error) captureError("auth:claim_active_device", error);
         });
         claimPromises.current.set(s.user.id, p);
-
       }
       if (e === "SIGNED_OUT") {
         claimedUserIds.current.clear();
         claimPromises.current.clear();
+        syncAccessTokenCookie(null);
       }
     });
     supabase.auth.getSession().then(({ data }) => {
       const s = data.session;
       if (s?.access_token && s.access_token.split(".").length !== 3) {
         supabase.auth.signOut();
+        syncAccessTokenCookie(null);
         setSession(null);
       } else {
+        syncAccessTokenCookie(s?.access_token);
         setSession(s);
         // Also claim the device on initial load — otherwise the device
         // watcher reads a stale row (from a previous device/origin) and
@@ -152,7 +174,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       .channel(`uad:${userId}`)
       .on(
         "postgres_changes",
-        { event: "*", schema: "public", table: "user_active_device", filter: `user_id=eq.${userId}` },
+        {
+          event: "*",
+          schema: "public",
+          table: "user_active_device",
+          filter: `user_id=eq.${userId}`,
+        },
         (payload) => {
           const row = (payload.new ?? payload.old) as { device_id?: string } | null;
           enforce(row?.device_id);
@@ -166,14 +193,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     };
   }, [session?.user?.id]);
 
-
   return (
     <Ctx.Provider
       value={{
         user: session?.user ?? null,
         session,
         loading,
-        signOut: async () => { await supabase.auth.signOut(); },
+        signOut: async () => {
+          await supabase.auth.signOut();
+          syncAccessTokenCookie(null);
+        },
       }}
     >
       {children}
