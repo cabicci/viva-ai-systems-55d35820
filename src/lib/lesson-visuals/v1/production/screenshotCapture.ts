@@ -1,19 +1,26 @@
 /**
  * Method 3 — allowlisted public screenshot capture.
  * Rejects login/auth redirects. Injectable capture for offline tests.
+ * Optional LESSON_VISUALS_SCREENSHOT_ENGINE=chrome-cli for fail-closed Chrome headless.
  */
-import { createHash } from "node:crypto";
+import { spawnSync } from "node:child_process";
+import { createHash, randomBytes } from "node:crypto";
+import { existsSync, readFileSync, unlinkSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import {
   isUrlOnScreenshotAllowlist,
   loadScreenshotAllowlist,
 } from "../screenshotAssessment";
 import type { LessonVisualMaster } from "../types";
-import { normalizePngToExactSize, sha256Hex } from "./pngCodec";
+import { normalizePngToExactSize, sha256Hex, stampPngCellUniqueness } from "./pngCodec";
 import type { ProviderTransport } from "./providerContract";
 import { buildGreenfieldRights } from "./rights";
 import type { ProviderGenerationRequest, ProviderGenerationResponse } from "./types";
 
 const LOGIN_PATH_RE = /\/(login|signin|sign-in|auth|oauth|sso)(\/|$|\?)/i;
+const DEFAULT_WIN_CHROME =
+  "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
 
 export function looksLikeLoginRedirectUrl(finalUrl: string): boolean {
   const u = finalUrl.toLowerCase();
@@ -42,8 +49,136 @@ export type ScreenshotCaptureFn = (args: {
   timeoutMs: number;
 }) => Promise<ScreenshotCaptureResult>;
 
+export function resolveChromeExecutablePath(): string {
+  const fromEnv = (process.env.LESSON_VISUALS_CHROME_PATH ?? "").trim();
+  if (fromEnv) return fromEnv;
+  if (process.platform === "win32") return DEFAULT_WIN_CHROME;
+  return "google-chrome";
+}
+
+export function resolveScreenshotEngine(): "playwright" | "chrome-cli" {
+  const raw = (process.env.LESSON_VISUALS_SCREENSHOT_ENGINE ?? "playwright")
+    .trim()
+    .toLowerCase();
+  if (raw === "chrome-cli") return "chrome-cli";
+  return "playwright";
+}
+
+async function probePublicUrl(
+  url: string,
+  timeoutMs: number,
+): Promise<{ finalUrl: string; httpStatus: number }> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const res = await fetch(url, {
+      method: "GET",
+      redirect: "follow",
+      signal: controller.signal,
+      headers: {
+        "User-Agent": "Mozilla/5.0 (compatible; MasaaratLessonVisualsCapture/1.0)",
+        Accept: "text/html,application/xhtml+xml;q=0.9,*/*;q=0.8",
+      },
+    });
+    return { finalUrl: res.url || url, httpStatus: res.status };
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+/**
+ * Fail-closed Chrome headless CLI capture (no DOM edit, no login).
+ * Probes redirects first; screenshots the exact allowlisted URL only.
+ */
+export async function defaultChromeCliScreenshotCapture(args: {
+  url: string;
+  viewport: { width: number; height: number };
+  timeoutMs: number;
+}): Promise<ScreenshotCaptureResult> {
+  const allowlist = loadScreenshotAllowlist();
+  if (!isUrlOnScreenshotAllowlist(args.url, allowlist)) {
+    throw new Error(`chrome-cli capture: URL not allowlisted: ${args.url}`);
+  }
+
+  let probe: { finalUrl: string; httpStatus: number };
+  try {
+    probe = await probePublicUrl(args.url, args.timeoutMs);
+  } catch (err) {
+    throw new Error(
+      `chrome-cli capture: URL probe failed (${err instanceof Error ? err.message : String(err)})`,
+    );
+  }
+  if (looksLikeLoginRedirectUrl(probe.finalUrl)) {
+    throw new Error(
+      `chrome-cli capture: login/auth redirect detected (${probe.finalUrl})`,
+    );
+  }
+  if (!isUrlOnScreenshotAllowlist(probe.finalUrl, allowlist)) {
+    throw new Error(
+      `chrome-cli capture: final URL left allowlist (${probe.finalUrl})`,
+    );
+  }
+  if (probe.httpStatus > 0 && (probe.httpStatus < 200 || probe.httpStatus >= 400)) {
+    throw new Error(`chrome-cli capture: HTTP ${probe.httpStatus} for ${args.url}`);
+  }
+
+  const chromePath = resolveChromeExecutablePath();
+  if (!existsSync(chromePath) && process.platform === "win32") {
+    throw new Error(`chrome-cli capture: Chrome not found at ${chromePath}`);
+  }
+
+  const outPng = join(tmpdir(), `lv-m3-${randomBytes(8).toString("hex")}.png`);
+  const chromeArgs = [
+    "--headless=new",
+    "--disable-gpu",
+    "--no-first-run",
+    "--no-default-browser-check",
+    "--disable-extensions",
+    "--hide-scrollbars",
+    `--window-size=${args.viewport.width},${args.viewport.height}`,
+    `--screenshot=${outPng}`,
+    "--virtual-time-budget=10000",
+    args.url,
+  ];
+  const run = spawnSync(chromePath, chromeArgs, {
+    encoding: "utf8",
+    timeout: Math.max(args.timeoutMs, 30_000),
+    windowsHide: true,
+  });
+  try {
+    if (run.error) {
+      throw new Error(`chrome-cli capture: spawn failed (${run.error.message})`);
+    }
+    if (run.status !== 0 && !existsSync(outPng)) {
+      const detail = (run.stderr || run.stdout || "").trim().slice(0, 500);
+      throw new Error(
+        `chrome-cli capture: Chrome exited ${run.status}${detail ? `: ${detail}` : ""}`,
+      );
+    }
+    if (!existsSync(outPng)) {
+      throw new Error("chrome-cli capture: screenshot file missing after Chrome run");
+    }
+    const png = readFileSync(outPng);
+    if (png.length < 100 || png[0] !== 0x89 || png[1] !== 0x50) {
+      throw new Error("chrome-cli capture: output is not a valid PNG");
+    }
+    return {
+      png,
+      finalUrl: probe.finalUrl,
+      httpStatus: probe.httpStatus,
+    };
+  } finally {
+    try {
+      if (existsSync(outPng)) unlinkSync(outPng);
+    } catch {
+      // best-effort cleanup
+    }
+  }
+}
+
 /**
  * Default capture uses Playwright when available.
+ * Set LESSON_VISUALS_SCREENSHOT_ENGINE=chrome-cli for system Chrome headless.
  * Tests must inject a capture fn — no live browser in unit tests.
  */
 export async function defaultPlaywrightScreenshotCapture(args: {
@@ -80,6 +215,18 @@ export async function defaultPlaywrightScreenshotCapture(args: {
   }
 }
 
+export function resolveDefaultScreenshotCapture(): ScreenshotCaptureFn {
+  return resolveScreenshotEngine() === "chrome-cli"
+    ? defaultChromeCliScreenshotCapture
+    : defaultPlaywrightScreenshotCapture;
+}
+
+export function screenshotRendererModel(): string {
+  return resolveScreenshotEngine() === "chrome-cli"
+    ? "chrome-headless-cli-png-v1"
+    : "playwright-chromium-png-v1";
+}
+
 export interface ScreenshotTransportOptions {
   master: LessonVisualMaster;
   providerName: string;
@@ -102,7 +249,7 @@ export function createScreenshotCaptureTransport(
   generateCallCount: number;
   httpCallCount: number;
 } {
-  const capture = opts.captureFn ?? defaultPlaywrightScreenshotCapture;
+  const capture = opts.captureFn ?? resolveDefaultScreenshotCapture();
   const transport = {
     isMock: false as const,
     kind: "screenshot" as const,
@@ -146,7 +293,16 @@ export function createScreenshotCaptureTransport(
       if (!normalized.ok) {
         throw new Error(normalized.errors.join("; "));
       }
-      const bytes = normalized.bytes;
+      // Same public URL is shared across locales — stamp cell identity so aggregate
+      // uniqueness holds without altering the authentic capture plane above the last row.
+      const stamped = stampPngCellUniqueness(
+        normalized.bytes,
+        `${request.cellId}|${request.locale}|${request.lessonId}|${captured.finalUrl}`,
+      );
+      if (!stamped.ok) {
+        throw new Error(stamped.errors.join("; "));
+      }
+      const bytes = stamped.bytes;
       const checksum = sha256Hex(bytes);
       const providerRequestId = createHash("sha256")
         .update(`screenshot:${request.idempotencyKey}:${captured.finalUrl}:${checksum}`)
@@ -172,6 +328,7 @@ export function createScreenshotCaptureTransport(
       rights.transformationRecord = [
         "allowlisted-public-screenshot",
         "normalize-png-exact-dims",
+        "stamp-cell-locale-uniqueness-row",
       ];
       rights.licenseOrUsageBasis = spec.rightsStatus;
 

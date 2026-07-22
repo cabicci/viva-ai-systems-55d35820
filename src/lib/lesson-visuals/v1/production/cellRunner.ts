@@ -453,7 +453,9 @@ export async function runProductionCell(args: RunCellArgs): Promise<RunCellResul
     (args.config.executionMode === "dry-run" && !args.config.providerApiKeyPresent) ||
     args.method === 1 ||
     args.method === 3 ||
-    args.method === 4
+    args.method === 4 ||
+    // Method 2 local-master fallback (and any future zero-provider route)
+    args.countsAsExternalProviderAttempt === false
   ) {
     configForCall = { ...configForCall, providerApiKeyPresent: true };
   }

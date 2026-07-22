@@ -17,6 +17,7 @@ import { runProductionCell } from "../../../src/lib/lesson-visuals/v1/production
 import { loadLessonMaster } from "../../../src/lib/lesson-visuals/v1/production/masterLoader";
 import {
   classifyMethodRoute,
+  isMissingOrPlaceholderProviderApiKey,
   selectMethodAwareTransport,
 } from "../../../src/lib/lesson-visuals/v1/production/methodRouter";
 import {
@@ -254,6 +255,83 @@ describe("Method 2 OpenAI Images contract (offline)", () => {
     });
     expect(mapped.ok).toBe(false);
     expect(mapped.errors.join(" ")).toMatch(/request id/i);
+  });
+});
+
+describe("Method 2 local-master fallback (offline)", () => {
+  it("routes to local hybrid when FALLBACK=local-master and key is placeholder", async () => {
+    const master = loadLessonMaster({
+      lessonId: "automator-m1-l1-where-you-are",
+      repoRoot,
+    });
+    expect(master.method).toBe(2);
+    expect(isMissingOrPlaceholderProviderApiKey("sk-test-not-real")).toBe(true);
+
+    const prev = process.env.LESSON_VISUALS_METHOD2_FALLBACK;
+    process.env.LESSON_VISUALS_METHOD2_FALLBACK = "local-master";
+    try {
+      const config = requireConfig();
+      const selected = selectMethodAwareTransport({
+        config,
+        method: 2,
+        apiKey: "sk-test-not-real",
+        master,
+        fetchImpl: (async () => {
+          throw new Error("HTTP must not be called for Method 2 local-master fallback");
+        }) as typeof fetch,
+      });
+      expect(selected.ok, selected.errors.join("; ")).toBe(true);
+      expect(selected.kind).toBe("local-hybrid-method2-fallback");
+      expect(selected.countsAsExternalProviderAttempt).toBe(false);
+      expect(selected.expectedProviderName).toBe("local-master-renderer");
+
+      const response = await selected.transport!.generate(
+        baseRequest({
+          method: 2,
+          lessonId: master.lessonId,
+          cellId: `${master.lessonId}__en`,
+          locale: "en",
+          promptOrRenderingSpec: serializeRenderingSpec(
+            buildLocaleRenderingSpec(master, "en", 2),
+          ),
+        }),
+      );
+      expect(selected.transport!.httpCallCount).toBe(0);
+      expect(response.providerName).toBe("local-master-renderer");
+      expect(response.modelOrRenderer).toBe("hybrid-master-png-v1-method2-fallback");
+      expect(response.providerMetadata?.method2Fallback).toBe("local-master");
+      expect(response.rightsProvenance.transformationRecord).toContain(
+        "method2-fallback-local-master",
+      );
+      const info = inspectPng(Buffer.from(response.outputBytesBase64!, "base64"));
+      expect(info?.width).toBe(DEFAULT_REQUIRED_WIDTH);
+      expect(info?.height).toBe(DEFAULT_REQUIRED_HEIGHT);
+    } finally {
+      if (prev === undefined) delete process.env.LESSON_VISUALS_METHOD2_FALLBACK;
+      else process.env.LESSON_VISUALS_METHOD2_FALLBACK = prev;
+    }
+  });
+
+  it("refuses placeholder key without FALLBACK gate (no OpenAI call)", () => {
+    const master = loadLessonMaster({
+      lessonId: "automator-m1-l1-where-you-are",
+      repoRoot,
+    });
+    const prev = process.env.LESSON_VISUALS_METHOD2_FALLBACK;
+    delete process.env.LESSON_VISUALS_METHOD2_FALLBACK;
+    try {
+      const selected = selectMethodAwareTransport({
+        config: requireConfig(),
+        method: 2,
+        apiKey: "sk-test-not-real",
+        master,
+      });
+      expect(selected.ok).toBe(false);
+      expect(selected.errors.join(" ")).toMatch(/placeholder|FALLBACK/i);
+    } finally {
+      if (prev === undefined) delete process.env.LESSON_VISUALS_METHOD2_FALLBACK;
+      else process.env.LESSON_VISUALS_METHOD2_FALLBACK = prev;
+    }
   });
 });
 

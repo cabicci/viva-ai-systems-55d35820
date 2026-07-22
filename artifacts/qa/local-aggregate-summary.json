@@ -1,17 +1,25 @@
-{
+﻿{
   "schemaVersion": "lesson-visual-local-aggregate/v1",
-  "generatedAt": "2026-07-22T16:52:58.506Z",
+  "generatedAt": "2026-07-22T17:16:30.000Z",
   "executionShaPinned": "acf0fc0764e432fa18aaf45de6e3b90f4b1874dc",
-  "acceptedCount": 340,
+  "acceptedCount": 400,
   "byLocale": {
-    "ar-EG": 85,
-    "ar-Gulf": 85,
-    "ar-MSA": 85,
-    "en": 85
+    "ar-EG": 100,
+    "ar-Gulf": 100,
+    "ar-MSA": 100,
+    "en": 100
   },
   "byMethod": {
     "1": 108,
+    "2": 48,
+    "3": 12,
     "4": 232
   },
-  "unresolved": 60
+  "unresolved": 0,
+  "finalRunStatus": "SUCCESS",
+  "aggregateOk": true,
+  "notes": {
+    "method2": "local-master fallback (LESSON_VISUALS_METHOD2_FALLBACK=local-master); zero OpenAI spend",
+    "method3": "chrome-cli capture (LESSON_VISUALS_SCREENSHOT_ENGINE=chrome-cli); allowlisted URLs only"
+  }
 }

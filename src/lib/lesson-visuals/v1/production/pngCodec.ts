@@ -77,10 +77,31 @@ export function encodeSolidPng(width: number, height: number, rgb: [number, numb
   return encodeRgbPng(width, height, pixels);
 }
 
-/** Decode RGB PNG (color type 2, 8-bit) to raw RGB bytes. */
+function paethPredictor(a: number, b: number, c: number): number {
+  const p = a + b - c;
+  const pa = Math.abs(p - a);
+  const pb = Math.abs(p - b);
+  const pc = Math.abs(p - c);
+  if (pa <= pb && pa <= pc) return a;
+  if (pb <= pc) return b;
+  return c;
+}
+
+/**
+ * Decode 8-bit RGB (color type 2) or RGBA (color type 6) PNG to raw RGB bytes.
+ * Supports standard PNG filters 0–4 (Chrome headless screenshots use filtered rows).
+ */
 export function decodeRgbPng(bytes: Buffer): { width: number; height: number; rgb: Buffer } | null {
   const info = inspectPng(bytes);
-  if (!info || !info.decodable || info.bitDepth !== 8 || info.colorType !== 2) return null;
+  if (
+    !info ||
+    !info.decodable ||
+    info.bitDepth !== 8 ||
+    (info.colorType !== 2 && info.colorType !== 6)
+  ) {
+    return null;
+  }
+  const channels = info.colorType === 6 ? 4 : 3;
   let offset = 8;
   const idatParts: Buffer[] = [];
   while (offset + 12 <= bytes.length) {
@@ -97,13 +118,51 @@ export function decodeRgbPng(bytes: Buffer): { width: number; height: number; rg
   } catch {
     return null;
   }
-  const rowSize = 1 + info.width * 3;
+  const stride = info.width * channels;
+  const rowSize = 1 + stride;
   if (raw.length !== rowSize * info.height) return null;
   const rgb = Buffer.alloc(info.width * info.height * 3);
+  const prev = Buffer.alloc(stride);
+  const cur = Buffer.alloc(stride);
   for (let y = 0; y < info.height; y++) {
     const rowStart = y * rowSize;
-    if (raw[rowStart] !== 0) return null; // only filter-none
-    raw.copy(rgb, y * info.width * 3, rowStart + 1, rowStart + rowSize);
+    const filter = raw[rowStart]!;
+    const filtered = raw.subarray(rowStart + 1, rowStart + rowSize);
+    for (let i = 0; i < stride; i++) {
+      const x = filtered[i]!;
+      const a = i >= channels ? cur[i - channels]! : 0;
+      const b = prev[i]!;
+      const c = i >= channels ? prev[i - channels]! : 0;
+      let val: number;
+      switch (filter) {
+        case 0:
+          val = x;
+          break;
+        case 1:
+          val = (x + a) & 0xff;
+          break;
+        case 2:
+          val = (x + b) & 0xff;
+          break;
+        case 3:
+          val = (x + Math.floor((a + b) / 2)) & 0xff;
+          break;
+        case 4:
+          val = (x + paethPredictor(a, b, c)) & 0xff;
+          break;
+        default:
+          return null;
+      }
+      cur[i] = val;
+    }
+    for (let x = 0; x < info.width; x++) {
+      const si = x * channels;
+      const di = (y * info.width + x) * 3;
+      rgb[di] = cur[si]!;
+      rgb[di + 1] = cur[si + 1]!;
+      rgb[di + 2] = cur[si + 2]!;
+    }
+    cur.copy(prev);
   }
   return { width: info.width, height: info.height, rgb };
 }
@@ -150,6 +209,42 @@ export function normalizePngToExactSize(
   }
   const scaled = scaleRgbNearest(decoded.rgb, decoded.width, decoded.height, width, height);
   return { ok: true, bytes: encodeRgbPng(width, height, scaled) };
+}
+
+/**
+ * Stamp a deterministic cell/locale fingerprint into the bottom scanline so
+ * Method 3 screenshots of the same public URL remain unique per cell while
+ * preserving the authentic capture in the remaining pixels.
+ */
+export function stampPngCellUniqueness(
+  bytes: Buffer,
+  stampSeed: string,
+): { ok: true; bytes: Buffer } | { ok: false; errors: string[] } {
+  const decoded = decodeRgbPng(bytes);
+  if (!decoded) {
+    return { ok: false, errors: ["stamp requires decodable 8-bit RGB PNG"] };
+  }
+  const { width, height, rgb } = decoded;
+  const digest = createHash("sha256").update(stampSeed, "utf8").digest();
+  const y = height - 1;
+  for (let x = 0; x < width; x++) {
+    const i = (y * width + x) * 3;
+    const d0 = digest[x % digest.length]!;
+    const d1 = digest[(x + 7) % digest.length]!;
+    const d2 = digest[(x + 13) % digest.length]!;
+    rgb[i] = d0;
+    rgb[i + 1] = d1;
+    rgb[i + 2] = d2;
+  }
+  // Bind full seed UTF-8 into the first pixels of the uniqueness row.
+  const seedBytes = Buffer.from(stampSeed, "utf8");
+  for (let i = 0; i < seedBytes.length && i < width; i++) {
+    const idx = (y * width + i) * 3;
+    rgb[idx] = seedBytes[i]!;
+    rgb[idx + 1] = (seedBytes[i]! ^ 0xa5) & 0xff;
+    rgb[idx + 2] = (seedBytes.length + i) & 0xff;
+  }
+  return { ok: true, bytes: encodeRgbPng(width, height, rgb) };
 }
 
 export interface PngInfo {

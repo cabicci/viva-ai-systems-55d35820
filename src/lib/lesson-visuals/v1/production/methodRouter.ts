@@ -2,6 +2,8 @@
  * Method-aware production transport router.
  * Method 1/4: local master PNG (zero provider/HTTP).
  * Method 2: OpenAI Images API (official format only).
+ *   Gated fallback: LESSON_VISUALS_METHOD2_FALLBACK=local-master when API key
+ *   missing/placeholder → localMaster hybrid (same visual path as method 4).
  * Method 3: allowlisted public screenshot capture.
  * dry-run: mock only (unchanged).
  */
@@ -16,6 +18,7 @@ import {
 import type { ProviderTransport } from "./providerContract";
 import {
   createScreenshotCaptureTransport,
+  screenshotRendererModel,
   type ScreenshotCaptureFn,
 } from "./screenshotCapture";
 import type { ProductionConfig } from "./types";
@@ -24,6 +27,7 @@ export type MethodTransportKind =
   | "mock"
   | "local-deterministic"
   | "local-hybrid"
+  | "local-hybrid-method2-fallback"
   | "openai-images"
   | "screenshot";
 
@@ -41,6 +45,24 @@ export interface MethodTransportSelection {
   countsAsExternalProviderAttempt: boolean;
   expectedProviderName: string | null;
   expectedModel: string | null;
+}
+
+/** Placeholder / absent keys must never trigger paid OpenAI spend. */
+export function isMissingOrPlaceholderProviderApiKey(apiKey: string): boolean {
+  const k = apiKey.trim();
+  if (!k) return true;
+  const lower = k.toLowerCase();
+  if (lower === "sk-test-not-real") return true;
+  if (/^sk-(test|fake|dummy|placeholder)/i.test(k)) return true;
+  if (lower.includes("not-real") || lower.includes("placeholder")) return true;
+  if (lower === "changeme" || lower === "todo") return true;
+  return false;
+}
+
+export function isMethod2LocalMasterFallbackEnabled(
+  env: NodeJS.ProcessEnv = process.env,
+): boolean {
+  return (env.LESSON_VISUALS_METHOD2_FALLBACK ?? "").trim() === "local-master";
 }
 
 export function selectMethodAwareTransport(args: {
@@ -125,6 +147,31 @@ export function selectMethodAwareTransport(args: {
   }
 
   if (method === 2) {
+    const wantFallback = isMethod2LocalMasterFallbackEnabled();
+    const missingOrPlaceholder = isMissingOrPlaceholderProviderApiKey(args.apiKey);
+    if (wantFallback && missingOrPlaceholder) {
+      const identity = localRendererIdentity(2, { method2Fallback: true });
+      const transport = createLocalMasterTransport({
+        method: 2,
+        master,
+        accountId: config.providerAccountId,
+        projectId: config.providerProjectId || null,
+        authId: config.providerAuthId,
+        requiredWidth: config.requiredWidth,
+        requiredHeight: config.requiredHeight,
+        method2Fallback: true,
+      });
+      return {
+        ok: true,
+        errors: [],
+        transport,
+        kind: "local-hybrid-method2-fallback",
+        countsAsExternalProviderAttempt: false,
+        expectedProviderName: identity.providerName,
+        expectedModel: identity.modelOrRenderer,
+      };
+    }
+
     if (!args.apiKey.trim()) {
       return {
         ok: false,
@@ -140,6 +187,19 @@ export function selectMethodAwareTransport(args: {
       return {
         ok: false,
         errors: ["Method 2 requires provider API key present in config"],
+        transport: null,
+        kind: null,
+        countsAsExternalProviderAttempt: true,
+        expectedProviderName: null,
+        expectedModel: null,
+      };
+    }
+    if (isMissingOrPlaceholderProviderApiKey(args.apiKey)) {
+      return {
+        ok: false,
+        errors: [
+          "Method 2 refuses placeholder API key (set LESSON_VISUALS_METHOD2_FALLBACK=local-master for unpaid localMaster hybrid, or provide a real key)",
+        ],
         transport: null,
         kind: null,
         countsAsExternalProviderAttempt: true,
@@ -186,10 +246,11 @@ export function selectMethodAwareTransport(args: {
   }
 
   if (method === 3) {
+    const model = screenshotRendererModel();
     const transport = createScreenshotCaptureTransport({
       master,
       providerName: "screenshot-capture",
-      model: "playwright-chromium-png-v1",
+      model,
       accountId: config.providerAccountId,
       projectId: config.providerProjectId || null,
       authId: config.providerAuthId,
@@ -205,7 +266,7 @@ export function selectMethodAwareTransport(args: {
       kind: "screenshot",
       countsAsExternalProviderAttempt: true,
       expectedProviderName: "screenshot-capture",
-      expectedModel: "playwright-chromium-png-v1",
+      expectedModel: model,
     };
   }
 

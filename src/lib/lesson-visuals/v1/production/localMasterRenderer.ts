@@ -81,12 +81,20 @@ function paintTextBand(
 export function renderLocalMasterPng(args: {
   master: LessonVisualMaster;
   locale: Locale;
-  method: 1 | 4;
+  /** Method 2 is accepted only for gated local-master fallback (renders as hybrid). */
+  method: 1 | 2 | 4;
   width: number;
   height: number;
+  /** When method=2, force hybrid visual path (method 4 layout). */
+  method2Fallback?: boolean;
 }): Buffer {
-  const { master, locale, method, width, height } = args;
-  const spec = buildLocaleRenderingSpec(master, locale, method);
+  const { master, locale, width, height } = args;
+  if (args.method === 2 && !args.method2Fallback) {
+    throw new Error("renderLocalMasterPng method 2 requires method2Fallback");
+  }
+  const renderMethod: 1 | 4 = args.method === 2 || args.method === 4 ? 4 : 1;
+  const method = renderMethod;
+  const spec = buildLocaleRenderingSpec(master, locale, args.method);
   const rgb = Buffer.alloc(width * height * 3, 245);
 
   const headerH = Math.floor(height * 0.14);
@@ -182,7 +190,10 @@ export function renderLocalMasterPng(args: {
   return encodeRgbPng(width, height, rgb);
 }
 
-export function localRendererIdentity(method: Method): {
+export function localRendererIdentity(
+  method: Method,
+  opts?: { method2Fallback?: boolean },
+): {
   providerName: string;
   modelOrRenderer: string;
 } {
@@ -198,5 +209,11 @@ export function localRendererIdentity(method: Method): {
       modelOrRenderer: "hybrid-master-png-v1",
     };
   }
-  throw new Error(`localRendererIdentity only for methods 1|4, got ${method}`);
+  if (method === 2 && opts?.method2Fallback) {
+    return {
+      providerName: "local-master-renderer",
+      modelOrRenderer: "hybrid-master-png-v1-method2-fallback",
+    };
+  }
+  throw new Error(`localRendererIdentity only for methods 1|4|2-fallback, got ${method}`);
 }

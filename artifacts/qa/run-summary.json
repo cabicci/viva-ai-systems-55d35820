@@ -7,24 +7,20 @@
   "mode": "full",
   "executionMode": "production",
   "expectedCells": 400,
-  "attempted": 340,
-  "accepted": 340,
+  "attempted": 400,
+  "accepted": 400,
   "skipped": 0,
   "failed": 0,
   "retryable": 0,
   "nonRetryable": 0,
   "totalCostMicros": "0",
-  "quotaUsage": 0,
+  "quotaUsage": 12,
   "quotaCeiling": 800,
   "providerAttemptQuota": 800,
-  "providerAttemptsUsed": 0,
-  "receiptCount": 340,
-  "mappingCount": 340,
-  "artifactIndexSha256": "1e7f0d61704acde92829dc9c62d22effaf3645f2f2db1cc6a764580509390ddd",
-  "finalRunStatus": "PARTIAL",
-  "errors": [
-    "full mode receipt count 340 != expected 400",
-    "receipt count 340 != authoritative 400",
-    "full mode accepted 340 != expected 400"
-  ]
+  "providerAttemptsUsed": 12,
+  "receiptCount": 400,
+  "mappingCount": 400,
+  "artifactIndexSha256": "bbc3a224382dc8f5af3150bee81609f61107612265cccf0f3bcbbb9ce0556a51",
+  "finalRunStatus": "SUCCESS",
+  "errors": []
 }
