@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "lesson-visual-aggregate-validation/v1",
+  "ok": false,
+  "errors": [
+    "full mode receipt count 340 != expected 400",
+    "receipt count 340 != authoritative 400",
+    "full mode accepted 340 != expected 400"
+  ],
+  "runSummary": {
+    "schemaVersion": "lesson-visual-run-summary/v1",
+    "runId": "lv-localmaster-m14-acf0fc07",
+    "contentSha": "b211cd43ed8378dcc9921d85b19a7e8ef6c7b70d",
+    "executionSha": "acf0fc0764e432fa18aaf45de6e3b90f4b1874dc",
+    "approvedManifestSha256": "4b0307e53f1ebcb4be2f39acf5c6d659b5a9086afbaf412631dc0ad76b0768cb",
+    "mode": "full",
+    "executionMode": "production",
+    "expectedCells": 400,
+    "attempted": 340,
+    "accepted": 340,
+    "skipped": 0,
+    "failed": 0,
+    "retryable": 0,
+    "nonRetryable": 0,
+    "totalCostMicros": "0",
+    "quotaUsage": 0,
+    "quotaCeiling": 800,
+    "providerAttemptQuota": 800,
+    "providerAttemptsUsed": 0,
+    "receiptCount": 340,
+    "mappingCount": 340,
+    "artifactIndexSha256": "1e7f0d61704acde92829dc9c62d22effaf3645f2f2db1cc6a764580509390ddd",
+    "finalRunStatus": "PARTIAL",
+    "errors": [
+      "full mode receipt count 340 != expected 400",
+      "receipt count 340 != authoritative 400",
+      "full mode accepted 340 != expected 400"
+    ]
+  },
+  "reportSha256": "adeefb34fa867dd109824c17e06d94df0a34dca632f5171a0b15ea5d96e1cab1"
+}
