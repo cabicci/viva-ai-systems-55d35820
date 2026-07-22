@@ -1,6 +1,6 @@
 {
   "schemaVersion": "lesson-visuals-blocker-ledger/v1",
-  "updatedAt": "2026-07-22T16:27:19.583Z",
+  "updatedAt": "2026-07-22T16:52:51.187Z",
   "executionSha": "acf0fc0764e432fa18aaf45de6e3b90f4b1874dc",
   "contentSha": "b211cd43ed8378dcc9921d85b19a7e8ef6c7b70d",
   "approvedManifestSha256": "4b0307e53f1ebcb4be2f39acf5c6d659b5a9086afbaf412631dc0ad76b0768cb",
@@ -11,13 +11,625 @@
     "failed": 0,
     "skipped": 0
   },
-  "blockers": [],
+  "blockers": [
+    {
+      "cellId": "automator-m3-l1-tools-landscape__ar-EG",
+      "lessonId": "automator-m3-l1-tools-landscape",
+      "locale": "ar-EG",
+      "method": 3,
+      "code": "BLOCKED_PLAYWRIGHT_LAUNCH",
+      "message": "Playwright chromium launch TimeoutError after install; allowlisted public URLs only; rights proven; no remethod",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "automator-m3-l1-tools-landscape__ar-MSA",
+      "lessonId": "automator-m3-l1-tools-landscape",
+      "locale": "ar-MSA",
+      "method": 3,
+      "code": "BLOCKED_PLAYWRIGHT_LAUNCH",
+      "message": "Playwright chromium launch TimeoutError after install; allowlisted public URLs only; rights proven; no remethod",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "automator-m3-l1-tools-landscape__ar-Gulf",
+      "lessonId": "automator-m3-l1-tools-landscape",
+      "locale": "ar-Gulf",
+      "method": 3,
+      "code": "BLOCKED_PLAYWRIGHT_LAUNCH",
+      "message": "Playwright chromium launch TimeoutError after install; allowlisted public URLs only; rights proven; no remethod",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "automator-m3-l1-tools-landscape__en",
+      "lessonId": "automator-m3-l1-tools-landscape",
+      "locale": "en",
+      "method": 3,
+      "code": "BLOCKED_PLAYWRIGHT_LAUNCH",
+      "message": "Playwright chromium launch TimeoutError after install; allowlisted public URLs only; rights proven; no remethod",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "automator-m3-l2-triggers-actions__ar-EG",
+      "lessonId": "automator-m3-l2-triggers-actions",
+      "locale": "ar-EG",
+      "method": 3,
+      "code": "BLOCKED_PLAYWRIGHT_LAUNCH",
+      "message": "Playwright chromium launch TimeoutError after install; allowlisted public URLs only; rights proven; no remethod",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "automator-m3-l2-triggers-actions__ar-MSA",
+      "lessonId": "automator-m3-l2-triggers-actions",
+      "locale": "ar-MSA",
+      "method": 3,
+      "code": "BLOCKED_PLAYWRIGHT_LAUNCH",
+      "message": "Playwright chromium launch TimeoutError after install; allowlisted public URLs only; rights proven; no remethod",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "automator-m3-l2-triggers-actions__ar-Gulf",
+      "lessonId": "automator-m3-l2-triggers-actions",
+      "locale": "ar-Gulf",
+      "method": 3,
+      "code": "BLOCKED_PLAYWRIGHT_LAUNCH",
+      "message": "Playwright chromium launch TimeoutError after install; allowlisted public URLs only; rights proven; no remethod",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "automator-m3-l2-triggers-actions__en",
+      "lessonId": "automator-m3-l2-triggers-actions",
+      "locale": "en",
+      "method": 3,
+      "code": "BLOCKED_PLAYWRIGHT_LAUNCH",
+      "message": "Playwright chromium launch TimeoutError after install; allowlisted public URLs only; rights proven; no remethod",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m6-l3-first-prompt-to-lovable__ar-EG",
+      "lessonId": "builder-m6-l3-first-prompt-to-lovable",
+      "locale": "ar-EG",
+      "method": 3,
+      "code": "BLOCKED_PLAYWRIGHT_LAUNCH",
+      "message": "Playwright chromium launch TimeoutError after install; allowlisted public URLs only; rights proven; no remethod",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m6-l3-first-prompt-to-lovable__ar-MSA",
+      "lessonId": "builder-m6-l3-first-prompt-to-lovable",
+      "locale": "ar-MSA",
+      "method": 3,
+      "code": "BLOCKED_PLAYWRIGHT_LAUNCH",
+      "message": "Playwright chromium launch TimeoutError after install; allowlisted public URLs only; rights proven; no remethod",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m6-l3-first-prompt-to-lovable__ar-Gulf",
+      "lessonId": "builder-m6-l3-first-prompt-to-lovable",
+      "locale": "ar-Gulf",
+      "method": 3,
+      "code": "BLOCKED_PLAYWRIGHT_LAUNCH",
+      "message": "Playwright chromium launch TimeoutError after install; allowlisted public URLs only; rights proven; no remethod",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m6-l3-first-prompt-to-lovable__en",
+      "lessonId": "builder-m6-l3-first-prompt-to-lovable",
+      "locale": "en",
+      "method": 3,
+      "code": "BLOCKED_PLAYWRIGHT_LAUNCH",
+      "message": "Playwright chromium launch TimeoutError after install; allowlisted public URLs only; rights proven; no remethod",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "automator-m1-l1-where-you-are__ar-EG",
+      "lessonId": "automator-m1-l1-where-you-are",
+      "locale": "ar-EG",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "automator-m1-l1-where-you-are__ar-MSA",
+      "lessonId": "automator-m1-l1-where-you-are",
+      "locale": "ar-MSA",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "automator-m1-l1-where-you-are__ar-Gulf",
+      "lessonId": "automator-m1-l1-where-you-are",
+      "locale": "ar-Gulf",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "automator-m1-l1-where-you-are__en",
+      "lessonId": "automator-m1-l1-where-you-are",
+      "locale": "en",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "automator-m3-l3-filters-routers__ar-EG",
+      "lessonId": "automator-m3-l3-filters-routers",
+      "locale": "ar-EG",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "automator-m3-l3-filters-routers__ar-MSA",
+      "lessonId": "automator-m3-l3-filters-routers",
+      "locale": "ar-MSA",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "automator-m3-l3-filters-routers__ar-Gulf",
+      "lessonId": "automator-m3-l3-filters-routers",
+      "locale": "ar-Gulf",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "automator-m3-l3-filters-routers__en",
+      "lessonId": "automator-m3-l3-filters-routers",
+      "locale": "en",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "automator-m7-l1-closing-loop__ar-EG",
+      "lessonId": "automator-m7-l1-closing-loop",
+      "locale": "ar-EG",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "automator-m7-l1-closing-loop__ar-MSA",
+      "lessonId": "automator-m7-l1-closing-loop",
+      "locale": "ar-MSA",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "automator-m7-l1-closing-loop__ar-Gulf",
+      "lessonId": "automator-m7-l1-closing-loop",
+      "locale": "ar-Gulf",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "automator-m7-l1-closing-loop__en",
+      "lessonId": "automator-m7-l1-closing-loop",
+      "locale": "en",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m2-l3-style-control__ar-EG",
+      "lessonId": "builder-m2-l3-style-control",
+      "locale": "ar-EG",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m2-l3-style-control__ar-MSA",
+      "lessonId": "builder-m2-l3-style-control",
+      "locale": "ar-MSA",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m2-l3-style-control__ar-Gulf",
+      "lessonId": "builder-m2-l3-style-control",
+      "locale": "ar-Gulf",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m2-l3-style-control__en",
+      "lessonId": "builder-m2-l3-style-control",
+      "locale": "en",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m3-l1-context-layer__ar-EG",
+      "lessonId": "builder-m3-l1-context-layer",
+      "locale": "ar-EG",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m3-l1-context-layer__ar-MSA",
+      "lessonId": "builder-m3-l1-context-layer",
+      "locale": "ar-MSA",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m3-l1-context-layer__ar-Gulf",
+      "lessonId": "builder-m3-l1-context-layer",
+      "locale": "ar-Gulf",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m3-l1-context-layer__en",
+      "lessonId": "builder-m3-l1-context-layer",
+      "locale": "en",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m4-l1-parameters__ar-EG",
+      "lessonId": "builder-m4-l1-parameters",
+      "locale": "ar-EG",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m4-l1-parameters__ar-MSA",
+      "lessonId": "builder-m4-l1-parameters",
+      "locale": "ar-MSA",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m4-l1-parameters__ar-Gulf",
+      "lessonId": "builder-m4-l1-parameters",
+      "locale": "ar-Gulf",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m4-l1-parameters__en",
+      "lessonId": "builder-m4-l1-parameters",
+      "locale": "en",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m8-l1-sessions-jwt__ar-EG",
+      "lessonId": "builder-m8-l1-sessions-jwt",
+      "locale": "ar-EG",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m8-l1-sessions-jwt__ar-MSA",
+      "lessonId": "builder-m8-l1-sessions-jwt",
+      "locale": "ar-MSA",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m8-l1-sessions-jwt__ar-Gulf",
+      "lessonId": "builder-m8-l1-sessions-jwt",
+      "locale": "ar-Gulf",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m8-l1-sessions-jwt__en",
+      "lessonId": "builder-m8-l1-sessions-jwt",
+      "locale": "en",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m9-l1-rag__ar-EG",
+      "lessonId": "builder-m9-l1-rag",
+      "locale": "ar-EG",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m9-l1-rag__ar-MSA",
+      "lessonId": "builder-m9-l1-rag",
+      "locale": "ar-MSA",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m9-l1-rag__ar-Gulf",
+      "lessonId": "builder-m9-l1-rag",
+      "locale": "ar-Gulf",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "builder-m9-l1-rag__en",
+      "lessonId": "builder-m9-l1-rag",
+      "locale": "en",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "creator-m1-l1-why-content__ar-EG",
+      "lessonId": "creator-m1-l1-why-content",
+      "locale": "ar-EG",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "creator-m1-l1-why-content__ar-MSA",
+      "lessonId": "creator-m1-l1-why-content",
+      "locale": "ar-MSA",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "creator-m1-l1-why-content__ar-Gulf",
+      "lessonId": "creator-m1-l1-why-content",
+      "locale": "ar-Gulf",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "creator-m1-l1-why-content__en",
+      "lessonId": "creator-m1-l1-why-content",
+      "locale": "en",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "creator-m4-l3-ai-writing__ar-EG",
+      "lessonId": "creator-m4-l3-ai-writing",
+      "locale": "ar-EG",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "creator-m4-l3-ai-writing__ar-MSA",
+      "lessonId": "creator-m4-l3-ai-writing",
+      "locale": "ar-MSA",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "creator-m4-l3-ai-writing__ar-Gulf",
+      "lessonId": "creator-m4-l3-ai-writing",
+      "locale": "ar-Gulf",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "creator-m4-l3-ai-writing__en",
+      "lessonId": "creator-m4-l3-ai-writing",
+      "locale": "en",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "intro-m1-l4-ai-can-cannot__ar-EG",
+      "lessonId": "intro-m1-l4-ai-can-cannot",
+      "locale": "ar-EG",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "intro-m1-l4-ai-can-cannot__ar-MSA",
+      "lessonId": "intro-m1-l4-ai-can-cannot",
+      "locale": "ar-MSA",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "intro-m1-l4-ai-can-cannot__ar-Gulf",
+      "lessonId": "intro-m1-l4-ai-can-cannot",
+      "locale": "ar-Gulf",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "intro-m1-l4-ai-can-cannot__en",
+      "lessonId": "intro-m1-l4-ai-can-cannot",
+      "locale": "en",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "intro-m1-l6-learn-without-fear__ar-EG",
+      "lessonId": "intro-m1-l6-learn-without-fear",
+      "locale": "ar-EG",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "intro-m1-l6-learn-without-fear__ar-MSA",
+      "lessonId": "intro-m1-l6-learn-without-fear",
+      "locale": "ar-MSA",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "intro-m1-l6-learn-without-fear__ar-Gulf",
+      "lessonId": "intro-m1-l6-learn-without-fear",
+      "locale": "ar-Gulf",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    },
+    {
+      "cellId": "intro-m1-l6-learn-without-fear__en",
+      "lessonId": "intro-m1-l6-learn-without-fear",
+      "locale": "en",
+      "method": 2,
+      "code": "BLOCKED_NO_PROVIDER",
+      "message": "No real provider key / unpaid Method 2 path; paid OpenAI disabled",
+      "at": "2026-07-22T16:52:51.187Z",
+      "batchIndex": 0
+    }
+  ],
   "method2Plan": {
     "status": "BLOCKED_NO_PROVIDER",
-    "detail": "OPENAI_API_KEY / real LESSON_VISUALS_PROVIDER_API_KEY absent; Method 2 deferred"
+    "detail": "No authorized unpaid local Method 2 path; real OpenAI spend forbidden. 48 cells unresolved."
   },
   "method3Plan": {
-    "status": "PLANNED_CAPTURE_IF_BROWSERS",
-    "detail": "Playwright package present; rights already in screenshot_rights_ledger  prefer capture once chromium browsers are installed (bunx playwright install chromium). Do not remethod to diagram while rights are proven."
+    "status": "BLOCKED_PLAYWRIGHT_LAUNCH",
+    "detail": "Playwright Chromium installed but browser launch times out on this host (TimeoutError launch >20-30s after process spawn; channel=chrome and headless-shell both fail). Rights allowlisted (n8n.io, docs.n8n.io, lovable.dev) — do not remethod to diagram. Capture blocked environmentally until Playwright can attach CDP."
+  },
+  "summary": {
+    "method1_4_accepted": 340,
+    "method3_accepted": 0,
+    "method2_accepted": 0,
+    "totalAccepted": 340,
+    "totalAuthorized": 400,
+    "completionBlockedBy": [
+      "METHOD2_NO_PROVIDER",
+      "METHOD3_PLAYWRIGHT_LAUNCH"
+    ]
   }
 }
