@@ -30,8 +30,14 @@ import type {
 } from "@/lib/locale-lessons/types";
 import { LocaleProvider } from "@/lib/locale/locale-context";
 import { getUiString } from "@/lib/locale/ui-strings";
-import { getLocalizedBunnyEmbedUrl } from "@/lib/bunny-videos";
-import { renderLocalizedLesson } from "@/lib/__tests__/locale-test-utils";
+import {
+  BUNNY_VIDEO_GUIDS,
+  getLocalizedBunnyEmbedUrl,
+} from "@/lib/bunny-videos";
+import {
+  renderLocalizedLesson,
+  withAbsentLocalizedVideoMapping,
+} from "@/lib/__tests__/locale-test-utils";
 
 vi.mock("@tanstack/react-router", () => ({
   Link: ({
@@ -52,7 +58,10 @@ vi.mock("@tanstack/react-router", () => ({
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
 const PACKAGE_LOCALES = STRICT_LOCALIZED_VISUAL_LOCALES;
 const SAMPLE_LESSON_ID = "intro-m1-l1-what-is-ai";
-/** Known package lesson without localized Bunny composite. */
+/**
+ * Package lesson used to prove missing-video UI + no ar-EG fallback.
+ * Production composites exist for all 300 cells; tests temporarily clear the mapping.
+ */
 const MISSING_VIDEO_LESSON_ID = "analyst-m1-l1-from-automation-to-insight";
 
 function readLocalizedPackage(
@@ -260,26 +269,36 @@ describe("strict localized visual policy", () => {
       });
 
       it("renders neutral Block 2 missing state without ar-EG chrome", async () => {
-        expect(getLocalizedBunnyEmbedUrl(MISSING_VIDEO_LESSON_ID, locale)).toBeFalsy();
-        const pkg = readLocalizedPackage(locale, MISSING_VIDEO_LESSON_ID);
-        const { container } = await renderLocalizedLesson(pkg);
-        const html = container.innerHTML;
+        expect(BUNNY_VIDEO_GUIDS[MISSING_VIDEO_LESSON_ID]).toBeTruthy();
+        await withAbsentLocalizedVideoMapping(
+          MISSING_VIDEO_LESSON_ID,
+          locale,
+          async () => {
+            expect(
+              getLocalizedBunnyEmbedUrl(MISSING_VIDEO_LESSON_ID, locale),
+            ).toBeFalsy();
+            const pkg = readLocalizedPackage(locale, MISSING_VIDEO_LESSON_ID);
+            const { container } = await renderLocalizedLesson(pkg);
+            const html = container.innerHTML;
 
-        expect(html).not.toContain("E:\\");
-        expect(html).not.toContain("E:/Masaarat/Artifacts");
-        expect(container.querySelector("iframe")).toBeNull();
-        expect(html).not.toContain("/lessons/intro/");
-        expect(
-          container.textContent?.includes(
-            getUiString(locale, "intro.video.optionalBadge"),
-          ) ||
-            container.textContent?.includes(
-              getUiString(locale, "intro.video.skipBody"),
-            ) ||
-            container.textContent?.includes(
-              getUiString(locale, "safety.video.title"),
-            ),
-        ).toBe(true);
+            expect(html).not.toContain("E:\\");
+            expect(html).not.toContain("E:/Masaarat/Artifacts");
+            expect(container.querySelector("iframe")).toBeNull();
+            expect(html).not.toContain("/lessons/intro/");
+            expect(html).not.toContain(BUNNY_VIDEO_GUIDS[MISSING_VIDEO_LESSON_ID]!);
+            expect(
+              container.textContent?.includes(
+                getUiString(locale, "intro.video.optionalBadge"),
+              ) ||
+                container.textContent?.includes(
+                  getUiString(locale, "intro.video.skipBody"),
+                ) ||
+                container.textContent?.includes(
+                  getUiString(locale, "safety.video.title"),
+                ),
+            ).toBe(true);
+          },
+        );
       });
 
       it("never renders canonical LESSON_DIAGRAMS; missing Block 7 uses neutral state", async () => {
