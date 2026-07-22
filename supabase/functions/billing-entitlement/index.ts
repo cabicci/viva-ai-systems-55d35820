@@ -12,22 +12,17 @@ function corsHeadersFor(req: Request): Record<string, string> {
   const allowOrigin = ALLOWED_ORIGINS.has(origin) ? origin : "";
   return {
     "Access-Control-Allow-Origin": allowOrigin,
-    "Access-Control-Allow-Headers":
-      "authorization, x-client-info, apikey, content-type",
+    "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
     Vary: "Origin",
   };
 }
 
-async function verifyJwt(
-  req: Request,
-): Promise<{ ok: true; userId: string } | { ok: false }> {
+async function verifyJwt(req: Request): Promise<{ ok: true; userId: string } | { ok: false }> {
   const authHeader = req.headers.get("Authorization");
   if (!authHeader?.startsWith("Bearer ")) return { ok: false };
   const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
-  const ANON =
-    Deno.env.get("SUPABASE_ANON_KEY") ??
-    Deno.env.get("SUPABASE_PUBLISHABLE_KEY");
+  const ANON = Deno.env.get("SUPABASE_ANON_KEY") ?? Deno.env.get("SUPABASE_PUBLISHABLE_KEY");
   if (!SUPABASE_URL || !ANON) return { ok: false };
   try {
     const res = await fetch(`${SUPABASE_URL}/auth/v1/user`, {
@@ -42,6 +37,16 @@ async function verifyJwt(
   }
 }
 
+function billingRpcHeaders(serviceKey: string): Record<string, string> {
+  return {
+    Authorization: `Bearer ${serviceKey}`,
+    apikey: serviceKey,
+    "Content-Type": "application/json",
+    "Accept-Profile": "billing",
+    "Content-Profile": "billing",
+  };
+}
+
 async function fetchSnapshot(userId: string): Promise<Record<string, unknown>> {
   const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
   const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
@@ -54,13 +59,7 @@ async function fetchSnapshot(userId: string): Promise<Record<string, unknown>> {
 
   const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/get_entitlement_snapshot`, {
     method: "POST",
-    headers: {
-      Authorization: `Bearer ${SERVICE_KEY}`,
-      apikey: SERVICE_KEY,
-      "Content-Type": "application/json",
-      "Accept-Profile": "billing",
-      "Content-Profile": "billing",
-    },
+    headers: billingRpcHeaders(SERVICE_KEY),
     body: JSON.stringify({ p_user_id: userId }),
   });
 
@@ -76,6 +75,42 @@ async function fetchSnapshot(userId: string): Promise<Record<string, unknown>> {
     paid_content_entitled: false,
     denial_reason_code: "ENTITLEMENT_UNAVAILABLE",
   }) as Record<string, unknown>;
+}
+
+async function evaluateAccessRpc(
+  userId: string,
+  resourceType: string,
+  resourceId: string | undefined,
+): Promise<{ allowed: boolean; denial_reason_code: string | null } | null> {
+  const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
+  const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+  if (!SUPABASE_URL || !SERVICE_KEY) return null;
+
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/evaluate_access`, {
+    method: "POST",
+    headers: billingRpcHeaders(SERVICE_KEY),
+    body: JSON.stringify({
+      p_user_id: userId,
+      p_resource_type: resourceType,
+      p_resource_id: resourceId ?? "",
+    }),
+  });
+
+  if (!res.ok) return null;
+
+  const data = (await res.json()) as {
+    allowed?: boolean;
+    denial_reason_code?: string | null;
+  } | null;
+
+  if (!data || typeof data.allowed !== "boolean") return null;
+
+  return {
+    allowed: data.allowed,
+    denial_reason_code: data.allowed
+      ? null
+      : (data.denial_reason_code ?? "ENTITLEMENT_UNAVAILABLE"),
+  };
 }
 
 Deno.serve(async (req: Request) => {
@@ -117,40 +152,26 @@ Deno.serve(async (req: Request) => {
     }
   }
 
-  const snapshot = await fetchSnapshot(auth.userId);
-
   if (resourceType) {
-    const entitled = snapshot.paid_content_entitled === true;
-    const lessonIds = Array.isArray(
-        (snapshot.lessons as { entitled_lesson_ids?: string[] } | undefined)
-          ?.entitled_lesson_ids,
-      )
-      ? ((snapshot.lessons as { entitled_lesson_ids: string[] })
-          .entitled_lesson_ids)
-      : [];
+    const decision = await evaluateAccessRpc(auth.userId, resourceType, resourceId);
 
-    let allowed = entitled;
-    let denial = snapshot.denial_reason_code ?? "ENTITLEMENT_UNAVAILABLE";
-
-    if (entitled && resourceType === "lesson" && resourceId) {
-      allowed = lessonIds.includes(resourceId);
-      denial = allowed ? null : "LESSON_NOT_ENTITLED";
-    }
-
-    if (!entitled) allowed = false;
+    // Fail closed when the authoritative evaluate_access RPC is unavailable.
+    const allowed = decision?.allowed === true;
+    const denial = allowed ? null : (decision?.denial_reason_code ?? "ENTITLEMENT_UNAVAILABLE");
 
     return new Response(
       JSON.stringify({
         allowed,
-        denial_reason_code: allowed ? null : denial,
-        snapshot_version: snapshot.snapshot_version ?? null,
-        generated_at: snapshot.generated_at ?? null,
-        expires_at: snapshot.expires_at ?? null,
+        denial_reason_code: denial,
       }),
-      { status: allowed ? 200 : 403, headers: { ...cors, "Content-Type": "application/json" } },
+      {
+        status: allowed ? 200 : 403,
+        headers: { ...cors, "Content-Type": "application/json" },
+      },
     );
   }
 
+  const snapshot = await fetchSnapshot(auth.userId);
   return new Response(JSON.stringify(snapshot), {
     status: 200,
     headers: { ...cors, "Content-Type": "application/json" },
