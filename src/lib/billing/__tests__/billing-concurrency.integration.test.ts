@@ -125,7 +125,7 @@ describe.skipIf(!ENABLED)("billing concurrency proofs (disposable DB)", () => {
       expect(countOk(res)).toBeLessThanOrEqual(1);
       const total = Number(
         psql(
-          `SELECT COALESCE(SUM(amount_minor), 0) FROM billing.refunds r
+          `SELECT COALESCE(SUM(r.amount_minor), 0) FROM billing.refunds r
            JOIN billing.payment_transactions p ON p.id = r.payment_transaction_id
            WHERE p.user_id='${USER_REFUND}' AND r.status IN ('pending','processing','succeeded')`,
         ) || "0",
