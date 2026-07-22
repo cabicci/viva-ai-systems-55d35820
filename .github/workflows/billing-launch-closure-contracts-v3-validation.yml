@@ -1,0 +1,93 @@
+# DO NOT MERGE — billing-only validation harness for Launch Closure Contracts V3.
+# Validates the exact PR head commit against a disposable Supabase database.
+name: "DO NOT MERGE — Billing Launch Closure Contracts V3 Validation"
+
+on:
+  workflow_dispatch:
+    inputs:
+      expected_product_sha:
+        description: "Expected product SHA to validate against"
+        required: true
+        type: string
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: billing-v3-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.pull_request.draft == true }}
+    runs-on: ubuntu-latest
+    env:
+      EXPECTED_PRODUCT_SHA: ${{ github.event.inputs.expected_product_sha || github.event.pull_request.head.sha }}
+      BILLING_DISPOSABLE_DB: "1"
+      DOCKER_BIN: docker
+      PGPASSWORD: postgres
+    steps:
+      - name: Checkout exact PR head (not merge ref)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Assert HEAD matches expected product SHA
+        run: |
+          echo "HEAD=$(git rev-parse HEAD)"
+          echo "EXPECTED=${EXPECTED_PRODUCT_SHA}"
+          test "$(git rev-parse HEAD)" = "$EXPECTED_PRODUCT_SHA"
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Setup Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: 2.109.1
+
+      - name: Start disposable Supabase
+        run: supabase start
+
+      - name: Apply complete migration chain
+        run: supabase db reset --yes
+
+      - name: Export local DB connection for concurrency proofs
+        run: |
+          echo "PGHOST=127.0.0.1" >> "$GITHUB_ENV"
+          echo "PGPORT=54322" >> "$GITHUB_ENV"
+          echo "PGUSER=postgres" >> "$GITHUB_ENV"
+          echo "PGDATABASE=postgres" >> "$GITHUB_ENV"
+          echo "PGPASSWORD=postgres" >> "$GITHUB_ENV"
+
+      - name: Typecheck
+        run: bunx tsc --noEmit
+
+      - name: Focused ESLint (billing)
+        run: bunx eslint src/lib/billing supabase/functions/billing-entitlement/index.ts --max-warnings 0
+
+      - name: Run billing validation harness (unit + concurrency)
+        run: |
+          chmod +x .github/scripts/billing_contracts_v3_validation/run.sh
+          .github/scripts/billing_contracts_v3_validation/run.sh
+
+      - name: Upload sanitized validation report
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: billing-v3-validation-report
+          path: billing-v3-validation/
+          if-no-files-found: warn
