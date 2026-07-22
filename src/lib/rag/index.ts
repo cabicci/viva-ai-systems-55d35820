@@ -110,3 +110,4 @@ export * from "./indexing";
 export * from "./embedding-dry-run";
 export * from "./exact-token-count";
 export * from "./resolve-assistant-locale";
+export * from "./assistant-grounding-security";

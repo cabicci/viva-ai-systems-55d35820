@@ -43,9 +43,10 @@ describe("assistant-runtime locale integration", () => {
 
   it("uses locale-aware RPC without cross-locale fallback", () => {
     expect(source).toContain("match_locale_knowledge_chunks");
-    expect(source).toContain("APPROVED_LOCALES");
-    expect(source).not.toMatch(
-      /semanticChunks = await semanticRetrieve\([\s\S]*resolvedLessonId,\s*null/,
+    expect(source).toContain("RUNTIME_SUPPORTED_LOCALES");
+    expect(source).toContain("validateRuntimeLocale");
+    expect(source).not.toContain(
+      "Legacy Egyptian corpus path when locale not provided",
     );
   });
 
