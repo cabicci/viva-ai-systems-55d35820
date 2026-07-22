@@ -1,14 +1,14 @@
 /** Approved Content Freeze SHA — sole curriculum source of truth for RAG indexing. */
 export const CONTENT_FREEZE_SHA = "3e1ef5aaf0ca4f3dbcf28650751e0dd1de70bfc2";
 
-/** Locales in the approved 300-package corpus. */
-export const APPROVED_LOCALES = ["en", "ar-MSA", "ar-Gulf"] as const;
+/** Locales in the approved 400-package corpus (100 per locale). */
+export const APPROVED_LOCALES = ["ar-EG", "en", "ar-MSA", "ar-Gulf"] as const;
 
 export type ApprovedLocale = (typeof APPROVED_LOCALES)[number];
 
 /** Expected package count per locale and total. */
 export const EXPECTED_PACKAGES_PER_LOCALE = 100;
-export const EXPECTED_TOTAL_PACKAGES = 300;
+export const EXPECTED_TOTAL_PACKAGES = 400;
 
 /** Agent 4 scientific correction record count. */
 export const EXPECTED_AG4_RECORD_COUNT = 40;

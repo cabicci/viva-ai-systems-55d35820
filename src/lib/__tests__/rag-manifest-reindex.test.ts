@@ -2,14 +2,8 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { discoverApprovedPackages } from "@/lib/rag/corpus-discovery";
 import { generateAllChunks } from "@/lib/rag/manifests";
-import {
-  buildPackageManifest,
-  buildChunkManifest,
-} from "@/lib/rag/manifests";
-import {
-  planReindex,
-  planSupersededChunkCleanup,
-} from "@/lib/rag/reindex-planning";
+import { buildPackageManifest, buildChunkManifest } from "@/lib/rag/manifests";
+import { planReindex, planSupersededChunkCleanup } from "@/lib/rag/reindex-planning";
 import { CONTENT_FREEZE_SHA } from "@/lib/rag/constants";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
@@ -22,7 +16,7 @@ describe("RAG manifest and reindex planning", () => {
     const m1 = buildPackageManifest(REPO_ROOT, packages, chunks);
     const m2 = buildPackageManifest(REPO_ROOT, packages, chunks);
     expect(m1.manifestChecksum).toBe(m2.manifestChecksum);
-    expect(m1.packageCount).toBe(300);
+    expect(m1.packageCount).toBe(400);
     expect(m1.sourceSha).toBe(CONTENT_FREEZE_SHA);
   });
 
@@ -37,7 +31,7 @@ describe("RAG manifest and reindex planning", () => {
   it("skips unchanged packages on checksum match", () => {
     const manifest = buildPackageManifest(REPO_ROOT, packages, chunks);
     const plan = planReindex(manifest, manifest, { dryRun: true });
-    expect(plan.skipCount).toBe(300);
+    expect(plan.skipCount).toBe(400);
     expect(plan.reindexCount).toBe(0);
     expect(plan.deleteCount).toBe(0);
   });
@@ -51,7 +45,7 @@ describe("RAG manifest and reindex planning", () => {
     };
     const plan = planReindex(modified, manifest, { dryRun: true });
     expect(plan.reindexCount).toBe(1);
-    expect(plan.skipCount).toBe(299);
+    expect(plan.skipCount).toBe(399);
   });
 
   it("detects new packages not in previous manifest", () => {
@@ -60,7 +54,7 @@ describe("RAG manifest and reindex planning", () => {
     reduced.packages = reduced.packages.slice(1);
     const plan = planReindex(manifest, reduced, { dryRun: true });
     expect(plan.reindexCount).toBe(1);
-    expect(plan.skipCount).toBe(299);
+    expect(plan.skipCount).toBe(399);
     expect(plan.deleteCount).toBe(0);
   });
 
@@ -89,7 +83,7 @@ describe("RAG manifest and reindex planning", () => {
       retryOnlyFailed: true,
     });
     expect(plan.retryCount).toBe(1);
-    expect(plan.skipCount).toBe(299);
+    expect(plan.skipCount).toBe(399);
   });
 
   it("identifies superseded chunk IDs for cleanup", () => {

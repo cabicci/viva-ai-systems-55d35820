@@ -17,16 +17,20 @@ import type {
   PackageManifestEntry,
   RagChunkRecord,
 } from "./types";
-import type { LessonPackageLocale } from "@/lib/locale-lessons/types";
+import type { RagPackageLocale } from "@/lib/locale-lessons/types";
+import { APPROVED_LOCALES, type ApprovedLocale } from "./constants";
 
-function countByLocale<T extends { locale: LessonPackageLocale }>(
-  items: T[],
-): Record<LessonPackageLocale, number> {
-  return {
-    en: items.filter((i) => i.locale === "en").length,
-    "ar-MSA": items.filter((i) => i.locale === "ar-MSA").length,
-    "ar-Gulf": items.filter((i) => i.locale === "ar-Gulf").length,
-  };
+function countByLocale<T extends { locale: string }>(items: T[]): Record<ApprovedLocale, number> {
+  const counts = Object.fromEntries(APPROVED_LOCALES.map((l) => [l, 0])) as Record<
+    ApprovedLocale,
+    number
+  >;
+  for (const item of items) {
+    if ((APPROVED_LOCALES as readonly string[]).includes(item.locale)) {
+      counts[item.locale as ApprovedLocale] += 1;
+    }
+  }
+  return counts;
 }
 
 /** Generate all chunks for the approved corpus. */
@@ -58,10 +62,7 @@ export function buildPackageManifest(
 
   const chunkCountByPath = new Map<string, number>();
   for (const chunk of allChunks) {
-    chunkCountByPath.set(
-      chunk.packagePath,
-      (chunkCountByPath.get(chunk.packagePath) ?? 0) + 1,
-    );
+    chunkCountByPath.set(chunk.packagePath, (chunkCountByPath.get(chunk.packagePath) ?? 0) + 1);
   }
 
   const packagesEntries: PackageManifestEntry[] = records.map((r) => ({
@@ -78,9 +79,7 @@ export function buildPackageManifest(
   }));
 
   packagesEntries.sort((a, b) =>
-    a.locale === b.locale
-      ? a.lessonId.localeCompare(b.lessonId)
-      : a.locale.localeCompare(b.locale),
+    a.locale === b.locale ? a.lessonId.localeCompare(b.lessonId) : a.locale.localeCompare(b.locale),
   );
 
   const body = {

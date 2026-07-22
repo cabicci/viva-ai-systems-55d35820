@@ -1,6 +1,6 @@
 import type { LearnerContext } from "@/lib/learner-context";
 import type { AssistantRuntimeRequestPayload } from "@/lib/assistant-runtime";
-import type { LessonPackageLocale } from "@/lib/locale-lessons/types";
+import type { RagPackageLocale } from "@/lib/locale-lessons/types";
 import { resolveAssistantPackageLocale } from "@/lib/rag/resolve-assistant-locale";
 import type { SupportedLocale } from "@/lib/locale/types";
 
@@ -20,7 +20,7 @@ export type AssistantContextOverride = {
 };
 
 export type ResolvedAssistantLearnerContext = {
-  locale: LessonPackageLocale | null;
+  locale: RagPackageLocale | null;
   currentPath: string | null;
   currentModule: string | null;
   currentLesson: string | null;

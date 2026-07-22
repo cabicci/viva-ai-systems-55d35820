@@ -13,7 +13,7 @@ describe("RAG embedding dry-run report", () => {
   const report = buildEmbeddingDryRunReport(chunks);
 
   it("uses exact approved chunk count", () => {
-    expect(report.chunkCount).toBe(2692);
+    expect(report.chunkCount).toBe(3700);
   });
 
   it("produces exact cl100k_base token counts without API calls", () => {
@@ -23,7 +23,7 @@ describe("RAG embedding dry-run report", () => {
     expect(report.tokenStats.avg).toBeGreaterThan(0);
     expect(report.tokenizerLibrary).toBe("js-tiktoken");
     expect(report.tokenizerEncoding).toBe("cl100k_base");
-    expect(report.estimatedRequestCount).toBe(Math.ceil(2692 / 64));
+    expect(report.estimatedRequestCount).toBe(Math.ceil(3700 / 64));
     expect(report.embeddingModel).toBe("text-embedding-3-small");
     expect(report.vectorDimensions).toBe(1536);
   });
@@ -37,21 +37,25 @@ describe("RAG embedding dry-run report", () => {
 
 describe("assistant-runtime locale integration", () => {
   const source = readFileSync(
-    path.join(REPO_ROOT, "supabase/functions/assistant-runtime/index.ts"),
+    path.join(REPO_ROOT, "supabase/functions/assistant-runtime/handler.ts"),
     "utf8",
   );
 
   it("uses locale-aware RPC without cross-locale fallback", () => {
-    expect(source).toContain("match_locale_knowledge_chunks");
+    const indexSrc = readFileSync(
+      path.join(REPO_ROOT, "supabase/functions/assistant-runtime/index.ts"),
+      "utf8",
+    );
+    expect(source).toContain("localeSemanticRetrieve");
     expect(source).toContain("RUNTIME_SUPPORTED_LOCALES");
     expect(source).toContain("validateRuntimeLocale");
-    expect(source).not.toContain(
-      "Legacy Egyptian corpus path when locale not provided",
-    );
+    expect(source).not.toContain("Legacy Egyptian corpus path when locale not provided");
+    expect(indexSrc).toContain("match_locale_knowledge_chunks");
+    expect(indexSrc).not.toContain("match_knowledge_chunks");
   });
 
   it("returns citation metadata in response contract", () => {
-    expect(source).toContain("citations: citationBundle.citations");
+    expect(source).toContain("citations");
     expect(source).toContain("crossLocaleLeakage");
     expect(source).toContain("crossLessonLeakage");
     expect(source).toContain("activeIndexOnly");
@@ -60,9 +64,9 @@ describe("assistant-runtime locale integration", () => {
 
 describe("package.json and lockfile boundaries", () => {
   it("adds only RAG scripts without dependency changes", () => {
-    const pkg = JSON.parse(
-      readFileSync(path.join(REPO_ROOT, "package.json"), "utf8"),
-    ) as { scripts: Record<string, string> };
+    const pkg = JSON.parse(readFileSync(path.join(REPO_ROOT, "package.json"), "utf8")) as {
+      scripts: Record<string, string>;
+    };
     expect(pkg.scripts["rag:verify-corpus"]).toBeTruthy();
     expect(pkg.scripts["rag:generate-manifests"]).toBeTruthy();
     expect(pkg.scripts["rag:mock-index"]).toBeTruthy();

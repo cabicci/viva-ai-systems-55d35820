@@ -1,18 +1,15 @@
 import { discoverApprovedPackages } from "./corpus-discovery";
 import { verifyCorpus } from "./corpus-verification";
 import { analyzeChunkQuality } from "./chunking";
-import { generateAllChunks, buildPackageManifest, buildChunkManifest, writeRagArtifacts } from "./manifests";
 import {
-  planReindex,
-  loadPreviousManifests,
-  planSupersededChunkCleanup,
-} from "./reindex-planning";
+  generateAllChunks,
+  buildPackageManifest,
+  buildChunkManifest,
+  writeRagArtifacts,
+} from "./manifests";
+import { planReindex, loadPreviousManifests, planSupersededChunkCleanup } from "./reindex-planning";
 import { RAG_ARTIFACTS_DIR } from "./constants";
-import type {
-  CorpusVerificationReport,
-  ChunkQualityReport,
-  ReindexPlanReport,
-} from "./types";
+import type { CorpusVerificationReport, ChunkQualityReport, ReindexPlanReport } from "./types";
 
 export interface RagPipelineReport {
   corpus: CorpusVerificationReport;
@@ -45,17 +42,13 @@ export function runRagPipeline(
   const chunksRun1 = generateAllChunks(repoRoot, packages);
   const chunksRun2 = generateAllChunks(repoRoot, packages);
 
-  const deterministicRerunEqual =
-    JSON.stringify(chunksRun1) === JSON.stringify(chunksRun2);
+  const deterministicRerunEqual = JSON.stringify(chunksRun1) === JSON.stringify(chunksRun2);
 
   const quality = analyzeChunkQuality(chunksRun1);
   const packageManifest = buildPackageManifest(repoRoot, packages, chunksRun1);
   const chunkManifest = buildChunkManifest(chunksRun1);
 
-  const { packageManifest: previousPackage } = loadPreviousManifests(
-    repoRoot,
-    artifactsDir,
-  );
+  const { packageManifest: previousPackage } = loadPreviousManifests(repoRoot, artifactsDir);
 
   const reindexPlan = planReindex(packageManifest, previousPackage, {
     dryRun: options?.dryRun ?? true,
@@ -63,14 +56,8 @@ export function runRagPipeline(
     retryOnlyFailed: options?.retryOnlyFailed,
   });
 
-  const { chunkManifest: previousChunk } = loadPreviousManifests(
-    repoRoot,
-    artifactsDir,
-  );
-  const supersededChunkIds = planSupersededChunkCleanup(
-    chunkManifest,
-    previousChunk,
-  );
+  const { chunkManifest: previousChunk } = loadPreviousManifests(repoRoot, artifactsDir);
+  const supersededChunkIds = planSupersededChunkCleanup(chunkManifest, previousChunk);
 
   if (!options?.dryRun) {
     writeRagArtifacts(repoRoot, artifactsDir);

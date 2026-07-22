@@ -12,13 +12,14 @@ import { verifyCorpus } from "@/lib/rag/corpus-verification";
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
 
 describe("RAG corpus verification", () => {
-  it("discovers exactly 300 approved runtime packages", () => {
+  it("discovers exactly 400 approved runtime packages", () => {
     const packages = discoverApprovedPackages(REPO_ROOT);
     expect(packages).toHaveLength(EXPECTED_TOTAL_PACKAGES);
   });
 
   it("has 100 packages per locale", () => {
     const report = verifyCorpus(REPO_ROOT);
+    expect(report.localeCounts["ar-EG"]).toBe(EXPECTED_PACKAGES_PER_LOCALE);
     expect(report.localeCounts.en).toBe(EXPECTED_PACKAGES_PER_LOCALE);
     expect(report.localeCounts["ar-MSA"]).toBe(EXPECTED_PACKAGES_PER_LOCALE);
     expect(report.localeCounts["ar-Gulf"]).toBe(EXPECTED_PACKAGES_PER_LOCALE);
@@ -28,6 +29,7 @@ describe("RAG corpus verification", () => {
     const report = verifyCorpus(REPO_ROOT);
     expect(report.duplicateLessonLocalePairs).toHaveLength(0);
     expect(report.duplicatePaths).toHaveLength(0);
+    expect(report.uniqueLessonCounts["ar-EG"]).toBe(100);
     expect(report.uniqueLessonCounts.en).toBe(100);
     expect(report.uniqueLessonCounts["ar-MSA"]).toBe(100);
     expect(report.uniqueLessonCounts["ar-Gulf"]).toBe(100);

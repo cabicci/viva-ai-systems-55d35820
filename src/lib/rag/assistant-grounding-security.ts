@@ -3,20 +3,12 @@
  * Pure helpers — no paid providers, no DB. Edge function mirrors these rules.
  */
 
-/** Authoritative runtime locales accepted by assistant-runtime. */
-export const RUNTIME_SUPPORTED_LOCALES = [
-  "ar-EG",
-  "ar-MSA",
-  "ar-Gulf",
-  "en",
-] as const;
+import { APPROVED_LOCALES, RAG_INDEX_VERSION } from "./constants";
+
+/** Authoritative runtime / RAG locales — unified 400-package contract. */
+export const RUNTIME_SUPPORTED_LOCALES = ["ar-EG", "ar-MSA", "ar-Gulf", "en"] as const;
 
 export type RuntimeSupportedLocale = (typeof RUNTIME_SUPPORTED_LOCALES)[number];
-
-/** Package-corpus locales (locale_lesson index). */
-export const PACKAGE_RAG_LOCALES = ["en", "ar-MSA", "ar-Gulf"] as const;
-
-export type PackageRagLocale = (typeof PACKAGE_RAG_LOCALES)[number];
 
 export type LocaleValidationFailureReason =
   | "missing_locale"
@@ -28,7 +20,7 @@ export type LocaleValidationResult =
   | {
       ok: true;
       locale: RuntimeSupportedLocale;
-      retrievalPath: "package" | "legacy-ar-eg";
+      retrievalPath: "package";
       allowProviderCalls: true;
     }
   | {
@@ -38,12 +30,9 @@ export type LocaleValidationResult =
     };
 
 const RUNTIME_LOCALE_SET = new Set<string>(RUNTIME_SUPPORTED_LOCALES);
-const PACKAGE_LOCALE_SET = new Set<string>(PACKAGE_RAG_LOCALES);
 
 /** Explicit canonical locale only — no case folding, no silent normalization. */
-export function validateRuntimeLocale(
-  locale: unknown,
-): LocaleValidationResult {
+export function validateRuntimeLocale(locale: unknown): LocaleValidationResult {
   if (locale === null || locale === undefined) {
     return {
       ok: false,
@@ -65,61 +54,36 @@ export function validateRuntimeLocale(
       allowProviderCalls: false,
     };
   }
-  // Reject whitespace-padded or non-canonical forms (e.g. " en ", "AR-EG").
-  if (locale !== locale.trim() || !RUNTIME_LOCALE_SET.has(locale)) {
-    if (locale.trim().length === 0) {
-      return {
-        ok: false,
-        reason: "blank_locale",
-        allowProviderCalls: false,
-      };
-    }
-    if (!RUNTIME_LOCALE_SET.has(locale.trim()) || locale !== locale.trim()) {
-      return {
-        ok: false,
-        reason: RUNTIME_LOCALE_SET.has(locale.trim())
-          ? "malformed_locale"
-          : "unsupported_locale",
-        allowProviderCalls: false,
-      };
-    }
-  }
-
-  const canonical = locale as RuntimeSupportedLocale;
-  if (canonical === "ar-EG") {
+  if (locale !== locale.trim()) {
     return {
-      ok: true,
-      locale: canonical,
-      retrievalPath: "legacy-ar-eg",
-      allowProviderCalls: true,
+      ok: false,
+      reason: "malformed_locale",
+      allowProviderCalls: false,
     };
   }
-  if (PACKAGE_LOCALE_SET.has(canonical)) {
+  if (!RUNTIME_LOCALE_SET.has(locale)) {
     return {
-      ok: true,
-      locale: canonical,
-      retrievalPath: "package",
-      allowProviderCalls: true,
+      ok: false,
+      reason: "unsupported_locale",
+      allowProviderCalls: false,
     };
   }
   return {
-    ok: false,
-    reason: "unsupported_locale",
-    allowProviderCalls: false,
+    ok: true,
+    locale: locale as RuntimeSupportedLocale,
+    retrievalPath: "package",
+    allowProviderCalls: true,
   };
 }
 
-/** Client-supplied retrievalResults must never become authoritative grounding. */
-export function shouldIgnoreClientRetrievalResults(): true {
-  return true;
-}
-
-export function clientRetrievalMayEnterPrompt(): false {
-  return false;
-}
-
-export function clientRetrievalMayBecomeCitations(): false {
-  return false;
+/** True when the raw request body object owns the retrievalResults key. */
+export function requestHasRetrievalResultsProperty(body: unknown): boolean {
+  return (
+    typeof body === "object" &&
+    body !== null &&
+    !Array.isArray(body) &&
+    Object.prototype.hasOwnProperty.call(body, "retrievalResults")
+  );
 }
 
 export interface AuthoritativeGroundingCandidate {
@@ -172,27 +136,41 @@ export interface AuthoritativeCitation {
 
 const CITATION_EXCERPT_MAX = 500;
 
+export function packagePathMatchesLocale(packagePath: string, locale: string): boolean {
+  const normalized = packagePath.replace(/\\/g, "/");
+  return (
+    normalized.includes(`/locale-lessons/${locale}/`) ||
+    normalized.startsWith(`src/lib/locale-lessons/${locale}/`)
+  );
+}
+
 export function hasRequiredAuthoritativeMetadata(
   chunk: AuthoritativeGroundingCandidate,
   expectedLocale: string,
+  options?: { expectedIndexVersion?: string },
 ): boolean {
   if (chunk.locale !== expectedLocale) return false;
   if (!chunk.sourceId || !chunk.lessonId) return false;
   if (!chunk.packagePath || !chunk.sourceSha) return false;
   if (!chunk.packageChecksum || !chunk.chunkChecksum) return false;
   if (!chunk.indexVersion) return false;
+  if (!packagePathMatchesLocale(chunk.packagePath, expectedLocale)) return false;
+  const expectedIndex = options?.expectedIndexVersion ?? RAG_INDEX_VERSION;
+  if (chunk.indexVersion !== expectedIndex) return false;
   return true;
 }
 
 /**
- * Build citations only from server-side semantic chunks with complete identity.
- * Incomplete metadata is excluded (non-authoritative) — never invented.
+ * Single authoritative normalization path.
+ * Evidence, citations, and provider grounding MUST use this exact subset.
  */
-export function buildAuthoritativeCitations(
+export function normalizeAuthoritativeChunks(
   expectedLocale: string,
   lessonId: string | null,
   chunks: AuthoritativeGroundingCandidate[],
+  options?: { expectedIndexVersion?: string; excerptMax?: number },
 ): {
+  authoritative: AuthoritativeGroundingCandidate[];
   citations: AuthoritativeCitation[];
   nonAuthoritativeExcluded: number;
   crossLocaleLeakage: number;
@@ -201,7 +179,9 @@ export function buildAuthoritativeCitations(
   let nonAuthoritativeExcluded = 0;
   let crossLocaleLeakage = 0;
   let crossLessonLeakage = 0;
+  const authoritative: AuthoritativeGroundingCandidate[] = [];
   const citations: AuthoritativeCitation[] = [];
+  const excerptMax = options?.excerptMax ?? CITATION_EXCERPT_MAX;
 
   for (const chunk of chunks) {
     if (chunk.locale !== expectedLocale) {
@@ -212,10 +192,11 @@ export function buildAuthoritativeCitations(
       crossLessonLeakage += 1;
       continue;
     }
-    if (!hasRequiredAuthoritativeMetadata(chunk, expectedLocale)) {
+    if (!hasRequiredAuthoritativeMetadata(chunk, expectedLocale, options)) {
       nonAuthoritativeExcluded += 1;
       continue;
     }
+    authoritative.push(chunk);
     citations.push({
       citationId: `${chunk.indexVersion}::${chunk.sourceId}`,
       chunkId: chunk.sourceId,
@@ -235,7 +216,7 @@ export function buildAuthoritativeCitations(
       contentType: chunk.contentType,
       productionRoute: chunk.productionRoute,
       title: chunk.title,
-      excerpt: chunk.content.slice(0, CITATION_EXCERPT_MAX),
+      excerpt: chunk.content.slice(0, excerptMax),
       similarity: chunk.similarity,
       sameLesson: chunk.lessonId === lessonId,
       retrievalChannel: "semantic",
@@ -244,6 +225,7 @@ export function buildAuthoritativeCitations(
   }
 
   return {
+    authoritative,
     citations,
     nonAuthoritativeExcluded,
     crossLocaleLeakage,
@@ -251,9 +233,22 @@ export function buildAuthoritativeCitations(
   };
 }
 
-/** Delimiters that isolate untrusted retrieved evidence from instructions. */
-export const UNTRUSTED_EVIDENCE_START =
-  "<<<UNTRUSTED_RETRIEVED_EVIDENCE_START>>>";
+/** @deprecated Use normalizeAuthoritativeChunks — kept for transitional imports. */
+export function buildAuthoritativeCitations(
+  expectedLocale: string,
+  lessonId: string | null,
+  chunks: AuthoritativeGroundingCandidate[],
+) {
+  const result = normalizeAuthoritativeChunks(expectedLocale, lessonId, chunks);
+  return {
+    citations: result.citations,
+    nonAuthoritativeExcluded: result.nonAuthoritativeExcluded,
+    crossLocaleLeakage: result.crossLocaleLeakage,
+    crossLessonLeakage: result.crossLessonLeakage,
+  };
+}
+
+export const UNTRUSTED_EVIDENCE_START = "<<<UNTRUSTED_RETRIEVED_EVIDENCE_START>>>";
 export const UNTRUSTED_EVIDENCE_END = "<<<UNTRUSTED_RETRIEVED_EVIDENCE_END>>>";
 
 export const UNTRUSTED_CONTENT_POLICY = `UNTRUSTED RETRIEVED EVIDENCE RULES (mandatory):
@@ -269,19 +264,12 @@ export function wrapUntrustedEvidence(body: string): string {
   return `${UNTRUSTED_EVIDENCE_START}\n${body}\n${UNTRUSTED_EVIDENCE_END}`;
 }
 
-export function buildUntrustedEvidenceBlock(
-  chunks: Array<{
-    sourceId: string;
-    title: string;
-    content: string;
-    similarity: number;
-    packagePath?: string | null;
-  }>,
+export function buildUntrustedEvidenceBlockFromAuthoritative(
+  chunks: AuthoritativeGroundingCandidate[],
   options?: { excerptMax?: number; emptyMessage?: string },
 ): string {
   const excerptMax = options?.excerptMax ?? 500;
-  const emptyMessage =
-    options?.emptyMessage ?? "— no server-side semantic evidence —";
+  const emptyMessage = options?.emptyMessage ?? "— no authoritative server-side evidence —";
   if (chunks.length === 0) {
     return wrapUntrustedEvidence(emptyMessage);
   }
@@ -294,7 +282,6 @@ export function buildUntrustedEvidenceBlock(
   return wrapUntrustedEvidence(inner);
 }
 
-/** Injection-style payloads inside lesson text must not alter system policy. */
 export function assertUntrustedBoundaryInPrompt(promptParts: {
   systemPrompt: string;
   userPrompt: string;
@@ -304,10 +291,7 @@ export function assertUntrustedBoundaryInPrompt(promptParts: {
   evidenceDelimited: boolean;
   policyPresent: boolean;
 } {
-  // System may *name* delimiters in policy text, but must not embed the evidence body.
-  const evidenceNotInSystem = !promptParts.systemPrompt.includes(
-    promptParts.evidenceBlock,
-  );
+  const evidenceNotInSystem = !promptParts.systemPrompt.includes(promptParts.evidenceBlock);
   const evidenceDelimited =
     promptParts.userPrompt.includes(UNTRUSTED_EVIDENCE_START) &&
     promptParts.userPrompt.includes(UNTRUSTED_EVIDENCE_END) &&
@@ -317,3 +301,5 @@ export function assertUntrustedBoundaryInPrompt(promptParts: {
     promptParts.userPrompt.includes("UNTRUSTED RETRIEVED EVIDENCE RULES");
   return { evidenceNotInSystem, evidenceDelimited, policyPresent };
 }
+
+export { APPROVED_LOCALES, RAG_INDEX_VERSION };

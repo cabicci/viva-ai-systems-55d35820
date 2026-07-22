@@ -10,7 +10,7 @@ describe("AssistantPanel locale wiring", () => {
     expect(resolveAssistantPackageLocale("en")).toBe("en");
     expect(resolveAssistantPackageLocale("ar-MSA")).toBe("ar-MSA");
     expect(resolveAssistantPackageLocale("ar-Gulf")).toBe("ar-Gulf");
-    expect(resolveAssistantPackageLocale("ar-EG")).toBeNull();
+    expect(resolveAssistantPackageLocale("ar-EG")).toBe("ar-EG");
   });
 
   it("resolves localized runtime context via resolveAssistantLearnerContext", () => {
@@ -24,10 +24,7 @@ describe("AssistantPanel locale wiring", () => {
   });
 
   it("declares locale on assistant runtime client payload", () => {
-    const source = readFileSync(
-      path.join(REPO_ROOT, "src/lib/assistant-runtime.ts"),
-      "utf8",
-    );
+    const source = readFileSync(path.join(REPO_ROOT, "src/lib/assistant-runtime.ts"), "utf8");
     expect(source).toContain("locale?: string | null");
   });
 });
