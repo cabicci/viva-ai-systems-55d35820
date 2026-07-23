@@ -4,11 +4,18 @@ import {
   CONTENT_FREEZE_SHA,
   EMBEDDING_DIMENSIONS,
   EMBEDDING_MODEL_PLACEHOLDER,
+  RAG_ARTIFACTS_DIR,
   RAG_INDEX_VERSION,
+  RAG_MANIFEST_GENERATED_AT,
 } from "./constants";
 import { sha256Json } from "./checksum";
 import { discoverApprovedPackages, loadPackageByPath } from "./corpus-discovery";
 import { generateChunksForPackage } from "./chunking";
+import {
+  buildAuthoritativeLookupFromManifests,
+  serializeAuthoritativeLookup,
+  type AuthoritativeCorpusLookup,
+} from "./authoritative-manifest-lookup";
 import type {
   ApprovedPackageRecord,
   ChunkManifest,
@@ -17,7 +24,6 @@ import type {
   PackageManifestEntry,
   RagChunkRecord,
 } from "./types";
-import type { RagPackageLocale } from "@/lib/locale-lessons/types";
 import { APPROVED_LOCALES, type ApprovedLocale } from "./constants";
 
 function countByLocale<T extends { locale: string }>(items: T[]): Record<ApprovedLocale, number> {
@@ -86,7 +92,7 @@ export function buildPackageManifest(
     schemaVersion: "package-manifest-v1" as const,
     indexVersion: RAG_INDEX_VERSION,
     sourceSha: CONTENT_FREEZE_SHA,
-    generatedAt: new Date(0).toISOString(),
+    generatedAt: RAG_MANIFEST_GENERATED_AT,
     packageCount: packagesEntries.length,
     localeCounts: countByLocale(records),
     packages: packagesEntries,
@@ -94,7 +100,6 @@ export function buildPackageManifest(
 
   return {
     ...body,
-    generatedAt: new Date().toISOString(),
     manifestChecksum: sha256Json({ ...body, manifestChecksum: undefined }),
   };
 }
@@ -120,7 +125,7 @@ export function buildChunkManifest(chunks: RagChunkRecord[]): ChunkManifest {
     schemaVersion: "chunk-manifest-v1" as const,
     indexVersion: RAG_INDEX_VERSION,
     sourceSha: CONTENT_FREEZE_SHA,
-    generatedAt: new Date(0).toISOString(),
+    generatedAt: RAG_MANIFEST_GENERATED_AT,
     embeddingModel: EMBEDDING_MODEL_PLACEHOLDER,
     embeddingDimensions: EMBEDDING_DIMENSIONS,
     chunkCount: entries.length,
@@ -130,12 +135,15 @@ export function buildChunkManifest(chunks: RagChunkRecord[]): ChunkManifest {
 
   return {
     ...body,
-    generatedAt: new Date().toISOString(),
     manifestChecksum: sha256Json({ ...body, manifestChecksum: undefined }),
   };
 }
 
-/** Write manifests and chunk payload to artifacts directory. */
+function writeJsonDeterministic(filePath: string, value: unknown): void {
+  fs.writeFileSync(filePath, `${JSON.stringify(value, null, 2)}\n`);
+}
+
+/** Write manifests, chunk payload, and authoritative lookup artifacts. */
 export function writeRagArtifacts(
   repoRoot: string,
   outputDir: string,
@@ -144,33 +152,59 @@ export function writeRagArtifacts(
   packageManifest: PackageManifest;
   chunkManifest: ChunkManifest;
   chunks: RagChunkRecord[];
-  outputPaths: { packageManifest: string; chunkManifest: string; chunks: string };
+  authoritativeLookup: AuthoritativeCorpusLookup;
+  outputPaths: {
+    packageManifest: string;
+    chunkManifest: string;
+    chunks: string;
+    authoritativeLookup: string;
+    edgeAuthoritativeLookup: string;
+  };
 } {
   const packages = discoverApprovedPackages(repoRoot);
   const chunks = generateAllChunks(repoRoot, packages);
   const packageManifest = buildPackageManifest(repoRoot, packages, chunks);
   const chunkManifest = buildChunkManifest(chunks);
+  const authoritativeLookup = buildAuthoritativeLookupFromManifests(packageManifest, chunkManifest);
 
   const absOutput = path.join(repoRoot, outputDir);
   const packageManifestPath = path.join(absOutput, "package-manifest.json");
   const chunkManifestPath = path.join(absOutput, "chunk-manifest.json");
   const chunksPath = path.join(absOutput, "chunks.json");
+  const authoritativeLookupPath = path.join(absOutput, "authoritative-lookup.json");
+  const edgeAuthoritativeLookupPath = path.join(
+    repoRoot,
+    "supabase/functions/assistant-runtime/authoritative-corpus-lookup.json",
+  );
 
   if (!options?.dryRun) {
     fs.mkdirSync(absOutput, { recursive: true });
-    fs.writeFileSync(packageManifestPath, `${JSON.stringify(packageManifest, null, 2)}\n`);
-    fs.writeFileSync(chunkManifestPath, `${JSON.stringify(chunkManifest, null, 2)}\n`);
-    fs.writeFileSync(chunksPath, `${JSON.stringify(chunks, null, 2)}\n`);
+    writeJsonDeterministic(packageManifestPath, packageManifest);
+    writeJsonDeterministic(chunkManifestPath, chunkManifest);
+    writeJsonDeterministic(chunksPath, chunks);
+    const lookupJson = serializeAuthoritativeLookup(authoritativeLookup);
+    writeJsonDeterministic(authoritativeLookupPath, lookupJson);
+    // Only refresh the Edge runtime twin when writing the canonical artifacts dir.
+    const normalizedOutput = outputDir.replace(/\\/g, "/").replace(/^\.\//, "");
+    if (normalizedOutput === RAG_ARTIFACTS_DIR) {
+      fs.mkdirSync(path.dirname(edgeAuthoritativeLookupPath), { recursive: true });
+      writeJsonDeterministic(edgeAuthoritativeLookupPath, lookupJson);
+    }
   }
 
   return {
     packageManifest,
     chunkManifest,
     chunks,
+    authoritativeLookup,
     outputPaths: {
       packageManifest: path.relative(repoRoot, packageManifestPath).replace(/\\/g, "/"),
       chunkManifest: path.relative(repoRoot, chunkManifestPath).replace(/\\/g, "/"),
       chunks: path.relative(repoRoot, chunksPath).replace(/\\/g, "/"),
+      authoritativeLookup: path.relative(repoRoot, authoritativeLookupPath).replace(/\\/g, "/"),
+      edgeAuthoritativeLookup: path
+        .relative(repoRoot, edgeAuthoritativeLookupPath)
+        .replace(/\\/g, "/"),
     },
   };
 }

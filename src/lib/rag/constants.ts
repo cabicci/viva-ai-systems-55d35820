@@ -37,5 +37,11 @@ export const EMBEDDING_DIMENSIONS = 1536;
 /** RAG index version schema identifier. */
 export const RAG_INDEX_VERSION = "rag-index-v1";
 
+/**
+ * Fixed generatedAt for deterministic committed manifest bytes.
+ * Must be used for both written JSON and checksum input — never Date.now().
+ */
+export const RAG_MANIFEST_GENERATED_AT = "1970-01-01T00:00:00.000Z";
+
 /** Default artifact output directory (relative to repo root). */
 export const RAG_ARTIFACTS_DIR = "artifacts/rag";

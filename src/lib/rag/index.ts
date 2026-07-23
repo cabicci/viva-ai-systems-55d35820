@@ -85,6 +85,8 @@ export function runRagPipeline(
 export * from "./constants";
 export * from "./types";
 export * from "./checksum";
+export * from "./canonical-checksum";
+export * from "./authoritative-manifest-lookup";
 export * from "./corpus-discovery";
 export * from "./corpus-verification";
 export * from "./section-extraction";

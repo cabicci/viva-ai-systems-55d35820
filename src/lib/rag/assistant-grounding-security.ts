@@ -3,7 +3,15 @@
  * Pure helpers — no paid providers, no DB. Edge function mirrors these rules.
  */
 
-import { APPROVED_LOCALES, RAG_INDEX_VERSION } from "./constants";
+import { APPROVED_LOCALES, CONTENT_FREEZE_SHA, RAG_INDEX_VERSION } from "./constants";
+import { isValidSha256Digest, sha256CanonicalHex } from "./canonical-checksum";
+import {
+  hydrateAuthoritativeLookup,
+  loadAuthoritativeLookupFromRepo,
+  lookupAuthoritativeChunk,
+  type AuthoritativeCorpusLookup,
+  type AuthoritativeLookupJson,
+} from "./authoritative-manifest-lookup";
 
 /** Authoritative runtime / RAG locales — unified 400-package contract. */
 export const RUNTIME_SUPPORTED_LOCALES = ["ar-EG", "ar-MSA", "ar-Gulf", "en"] as const;
@@ -136,6 +144,33 @@ export interface AuthoritativeCitation {
 
 const CITATION_EXCERPT_MAX = 500;
 
+let cachedRepoLookup: AuthoritativeCorpusLookup | null | undefined;
+
+/** Resolve default lookup from repo artifacts when available (Node tests / tooling). */
+export function resolveDefaultAuthoritativeLookup(
+  repoRoot?: string,
+): AuthoritativeCorpusLookup | null {
+  if (cachedRepoLookup !== undefined) return cachedRepoLookup;
+  try {
+    const root = repoRoot ?? process.cwd();
+    cachedRepoLookup = loadAuthoritativeLookupFromRepo(root);
+  } catch {
+    cachedRepoLookup = null;
+  }
+  return cachedRepoLookup;
+}
+
+/** Test helper — reset cached default lookup. */
+export function resetDefaultAuthoritativeLookupCache(): void {
+  cachedRepoLookup = undefined;
+}
+
+export function authoritativeLookupFromJson(
+  json: AuthoritativeLookupJson,
+): AuthoritativeCorpusLookup {
+  return hydrateAuthoritativeLookup(json);
+}
+
 export function packagePathMatchesLocale(packagePath: string, locale: string): boolean {
   const normalized = packagePath.replace(/\\/g, "/");
   return (
@@ -144,20 +179,75 @@ export function packagePathMatchesLocale(packagePath: string, locale: string): b
   );
 }
 
-export function hasRequiredAuthoritativeMetadata(
+/**
+ * Cryptographic admission gates A–E for a retrieved candidate.
+ * Returns true only when the chunk may enter the single authoritative subset.
+ */
+export function admitsAuthoritativeChunk(
   chunk: AuthoritativeGroundingCandidate,
   expectedLocale: string,
-  options?: { expectedIndexVersion?: string },
+  lookup: AuthoritativeCorpusLookup,
+  options?: { expectedIndexVersion?: string; expectedSourceSha?: string },
 ): boolean {
+  const expectedIndex = options?.expectedIndexVersion ?? RAG_INDEX_VERSION;
+  const expectedSourceSha = options?.expectedSourceSha ?? CONTENT_FREEZE_SHA;
+
   if (chunk.locale !== expectedLocale) return false;
   if (!chunk.sourceId || !chunk.lessonId) return false;
   if (!chunk.packagePath || !chunk.sourceSha) return false;
   if (!chunk.packageChecksum || !chunk.chunkChecksum) return false;
   if (!chunk.indexVersion) return false;
   if (!packagePathMatchesLocale(chunk.packagePath, expectedLocale)) return false;
-  const expectedIndex = options?.expectedIndexVersion ?? RAG_INDEX_VERSION;
   if (chunk.indexVersion !== expectedIndex) return false;
+
+  // A. sourceSha equals approved content-freeze SHA (git SHA-1) + registered lookup
+  // Note: CONTENT_FREEZE_SHA is a 40-char git commit id, not a SHA-256 digest.
+  if (typeof chunk.sourceSha !== "string" || chunk.sourceSha.length === 0) return false;
+  if (chunk.sourceSha !== expectedSourceSha) return false;
+  if (lookup.sourceSha !== expectedSourceSha) return false;
+
+  // B/C. package + chunk identity in lookup (joint key)
+  if (!isValidSha256Digest(chunk.packageChecksum)) return false;
+  if (!isValidSha256Digest(chunk.chunkChecksum)) return false;
+
+  const registered = lookupAuthoritativeChunk(lookup, {
+    locale: expectedLocale,
+    lessonId: chunk.lessonId,
+    chunkId: chunk.sourceId,
+    packagePath: chunk.packagePath,
+    indexVersion: expectedIndex,
+  });
+  if (!registered) return false;
+  if (registered.packageChecksum !== chunk.packageChecksum) return false;
+  if (registered.chunkChecksum !== chunk.chunkChecksum) return false;
+  if (registered.sourceSha !== expectedSourceSha) return false;
+  if (registered.locale !== expectedLocale) return false;
+  if (registered.lessonId !== chunk.lessonId) return false;
+  if (registered.packagePath.replace(/\\/g, "/") !== chunk.packagePath.replace(/\\/g, "/")) {
+    return false;
+  }
+  if (registered.indexVersion !== expectedIndex) return false;
+
+  // D. recompute content checksum equals retrieved AND registered
+  const recomputed = sha256CanonicalHex(chunk.content);
+  if (recomputed !== chunk.chunkChecksum) return false;
+  if (recomputed !== registered.chunkChecksum) return false;
+
   return true;
+}
+
+export function hasRequiredAuthoritativeMetadata(
+  chunk: AuthoritativeGroundingCandidate,
+  expectedLocale: string,
+  options?: {
+    expectedIndexVersion?: string;
+    lookup?: AuthoritativeCorpusLookup;
+    expectedSourceSha?: string;
+  },
+): boolean {
+  const lookup = options?.lookup ?? resolveDefaultAuthoritativeLookup();
+  if (!lookup) return false;
+  return admitsAuthoritativeChunk(chunk, expectedLocale, lookup, options);
 }
 
 /**
@@ -168,7 +258,12 @@ export function normalizeAuthoritativeChunks(
   expectedLocale: string,
   lessonId: string | null,
   chunks: AuthoritativeGroundingCandidate[],
-  options?: { expectedIndexVersion?: string; excerptMax?: number },
+  options?: {
+    expectedIndexVersion?: string;
+    excerptMax?: number;
+    lookup?: AuthoritativeCorpusLookup;
+    expectedSourceSha?: string;
+  },
 ): {
   authoritative: AuthoritativeGroundingCandidate[];
   citations: AuthoritativeCitation[];
@@ -182,6 +277,7 @@ export function normalizeAuthoritativeChunks(
   const authoritative: AuthoritativeGroundingCandidate[] = [];
   const citations: AuthoritativeCitation[] = [];
   const excerptMax = options?.excerptMax ?? CITATION_EXCERPT_MAX;
+  const lookup = options?.lookup ?? resolveDefaultAuthoritativeLookup();
 
   for (const chunk of chunks) {
     if (chunk.locale !== expectedLocale) {
@@ -192,7 +288,7 @@ export function normalizeAuthoritativeChunks(
       crossLessonLeakage += 1;
       continue;
     }
-    if (!hasRequiredAuthoritativeMetadata(chunk, expectedLocale, options)) {
+    if (!lookup || !admitsAuthoritativeChunk(chunk, expectedLocale, lookup, options)) {
       nonAuthoritativeExcluded += 1;
       continue;
     }
@@ -302,4 +398,5 @@ export function assertUntrustedBoundaryInPrompt(promptParts: {
   return { evidenceNotInSystem, evidenceDelimited, policyPresent };
 }
 
-export { APPROVED_LOCALES, RAG_INDEX_VERSION };
+export { APPROVED_LOCALES, CONTENT_FREEZE_SHA, RAG_INDEX_VERSION };
+export type { AuthoritativeCorpusLookup, AuthoritativeLookupJson };

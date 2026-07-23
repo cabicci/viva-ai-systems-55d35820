@@ -12,11 +12,16 @@
 //      retrieval (localeSemanticRetrieve) — there is no legacy retrieval path.
 //   4) Retrieved lesson text is untrusted data, delimited outside system policy.
 //   5) Evidence AND citations are built from the exact same authoritative subset.
+//   6) Cryptographic admission requires registered freeze SHA, package/chunk
+//      identity, and recomputed canonical content checksums.
 //
 // Chat 2 integration boundary (NOT implemented here):
 //   After successful JWT verification and BEFORE any embedding, retrieval RPC,
 //   or LLM provider call — insert entitlement verification then quota reservation.
 //   Fixed rate-limit buckets are NOT a substitute for entitlement/quota.
+
+import { isValidSha256Digest, sha256CanonicalHex } from "./canonical-checksum.ts";
+import AUTHORITATIVE_CORPUS_LOOKUP_JSON from "./authoritative-corpus-lookup.json" with { type: "json" };
 
 // Restrict CORS to known origins (preview + published + local dev).
 const ALLOWED_ORIGINS = new Set<string>([
@@ -180,6 +185,8 @@ interface AssistantRuntimeRequest {
 
 /** Must match src/lib/rag/assistant-grounding-security.ts RUNTIME_SUPPORTED_LOCALES. */
 const RUNTIME_SUPPORTED_LOCALES = new Set(["ar-EG", "ar-MSA", "ar-Gulf", "en"]);
+/** Must match src/lib/rag/constants.ts CONTENT_FREEZE_SHA. */
+const CONTENT_FREEZE_SHA = "3e1ef5aaf0ca4f3dbcf28650751e0dd1de70bfc2";
 const RAG_INDEX_VERSION = "rag-index-v1";
 const CITATION_EXCERPT_MAX = 500;
 const UNTRUSTED_EVIDENCE_START = "<<<UNTRUSTED_RETRIEVED_EVIDENCE_START>>>";
@@ -188,6 +195,58 @@ const UNTRUSTED_EVIDENCE_END = "<<<UNTRUSTED_RETRIEVED_EVIDENCE_END>>>";
 const SEMANTIC_MAX = 5;
 const SEMANTIC_MIN_SIMILARITY = 0.35;
 const SEMANTIC_STRONG_SIMILARITY = 0.45;
+
+type AuthoritativeChunkRecord = {
+  locale: string;
+  lessonId: string;
+  chunkId: string;
+  packagePath: string;
+  sourceSha: string;
+  packageChecksum: string;
+  chunkChecksum: string;
+  indexVersion: string;
+  sectionIndex: number | null;
+  chunkIndex: number | null;
+  sectionRole: string | null;
+};
+
+type AuthoritativeLookupJson = {
+  schemaVersion: string;
+  sourceSha: string;
+  indexVersion: string;
+  recordCount: number;
+  records: Record<string, AuthoritativeChunkRecord>;
+};
+
+/** Module-scope server-owned authoritative corpus lookup (Edge + tests). */
+const AUTHORITATIVE_LOOKUP = AUTHORITATIVE_CORPUS_LOOKUP_JSON as AuthoritativeLookupJson;
+
+function composeLookupKey(parts: {
+  locale: string;
+  lessonId: string;
+  chunkId: string;
+  packagePath: string;
+  indexVersion: string;
+}): string {
+  return [
+    parts.locale,
+    parts.lessonId,
+    parts.chunkId,
+    parts.packagePath.replace(/\\/g, "/"),
+    parts.indexVersion,
+  ].join("|");
+}
+
+function lookupRegisteredChunk(parts: {
+  locale: string;
+  lessonId: string;
+  chunkId: string;
+  packagePath: string;
+  indexVersion: string;
+}): AuthoritativeChunkRecord | null {
+  const key = composeLookupKey(parts);
+  return AUTHORITATIVE_LOOKUP.records[key] ?? null;
+}
 
 type LocaleValidationFailureReason =
   | "missing_locale"
@@ -237,7 +296,8 @@ function packagePathMatchesLocale(packagePath: string, locale: string): boolean 
   );
 }
 
-function hasRequiredAuthoritativeMetadata(chunk: SemanticChunk, expectedLocale: string): boolean {
+/** Cryptographic admission — mirrors admitsAuthoritativeChunk in src/lib/rag. */
+function admitsAuthoritativeChunk(chunk: SemanticChunk, expectedLocale: string): boolean {
   if (chunk.locale !== expectedLocale) return false;
   if (!chunk.sourceId || !chunk.lessonId) return false;
   if (!chunk.packagePath || !chunk.sourceSha) return false;
@@ -245,6 +305,38 @@ function hasRequiredAuthoritativeMetadata(chunk: SemanticChunk, expectedLocale: 
   if (!chunk.indexVersion) return false;
   if (!packagePathMatchesLocale(chunk.packagePath, expectedLocale)) return false;
   if (chunk.indexVersion !== RAG_INDEX_VERSION) return false;
+
+  // CONTENT_FREEZE_SHA is a 40-char git commit id, not a SHA-256 digest.
+  if (typeof chunk.sourceSha !== "string" || chunk.sourceSha.length === 0) return false;
+  if (chunk.sourceSha !== CONTENT_FREEZE_SHA) return false;
+  if (AUTHORITATIVE_LOOKUP.sourceSha !== CONTENT_FREEZE_SHA) return false;
+  if (AUTHORITATIVE_LOOKUP.indexVersion !== RAG_INDEX_VERSION) return false;
+
+  if (!isValidSha256Digest(chunk.packageChecksum)) return false;
+  if (!isValidSha256Digest(chunk.chunkChecksum)) return false;
+
+  const registered = lookupRegisteredChunk({
+    locale: expectedLocale,
+    lessonId: chunk.lessonId,
+    chunkId: chunk.sourceId,
+    packagePath: chunk.packagePath,
+    indexVersion: RAG_INDEX_VERSION,
+  });
+  if (!registered) return false;
+  if (registered.packageChecksum !== chunk.packageChecksum) return false;
+  if (registered.chunkChecksum !== chunk.chunkChecksum) return false;
+  if (registered.sourceSha !== CONTENT_FREEZE_SHA) return false;
+  if (registered.locale !== expectedLocale) return false;
+  if (registered.lessonId !== chunk.lessonId) return false;
+  if (registered.packagePath.replace(/\\/g, "/") !== chunk.packagePath.replace(/\\/g, "/")) {
+    return false;
+  }
+  if (registered.indexVersion !== RAG_INDEX_VERSION) return false;
+
+  const recomputed = sha256CanonicalHex(chunk.content);
+  if (recomputed !== chunk.chunkChecksum) return false;
+  if (recomputed !== registered.chunkChecksum) return false;
+
   return true;
 }
 
@@ -279,7 +371,7 @@ function normalizeAuthoritativeChunks(
       crossLessonLeakage += 1;
       continue;
     }
-    if (!hasRequiredAuthoritativeMetadata(chunk, expectedLocale)) {
+    if (!admitsAuthoritativeChunk(chunk, expectedLocale)) {
       nonAuthoritativeExcluded += 1;
       continue;
     }
