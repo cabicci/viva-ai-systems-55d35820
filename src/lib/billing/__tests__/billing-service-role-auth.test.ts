@@ -3,10 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 
-const REPO_ROOT = path.resolve(
-  path.dirname(fileURLToPath(import.meta.url)),
-  "../../../..",
-);
+const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../../..");
 
 function readRepoFile(relPath: string): string {
   return readFileSync(path.join(REPO_ROOT, relPath), "utf8");
@@ -21,8 +18,7 @@ function readAllMigrations(): string {
     .join("\n");
 }
 
-const FIX_MIGRATION =
-  "supabase/migrations/20260710153000_billing_service_role_auth_fix.sql";
+const FIX_MIGRATION = "supabase/migrations/20260710153000_billing_service_role_auth_fix.sql";
 
 const SERVICE_ONLY_RPCS = [
   "billing.evaluate_access",
@@ -47,28 +43,20 @@ describe("billing service-role RPC authorization", () => {
     expect(fixSql).toContain("auth.jwt() ->> 'role'");
     expect(fixSql).not.toMatch(/current_setting\('request\.jwt\.claim\.role'/);
     expect(fixSql).toContain("CREATE OR REPLACE FUNCTION billing.get_entitlement_snapshot");
-    expect(
-      readdirSync(path.join(REPO_ROOT, "supabase/migrations")),
-    ).toContain("20260710153000_billing_service_role_auth_fix.sql");
+    expect(readdirSync(path.join(REPO_ROOT, "supabase/migrations"))).toContain(
+      "20260710153000_billing_service_role_auth_fix.sql",
+    );
   });
 
   it("defines internal helpers without PUBLIC EXECUTE", () => {
     expect(fixSql).toContain("CREATE OR REPLACE FUNCTION billing.jwt_role()");
-    expect(fixSql).toContain(
-      "CREATE OR REPLACE FUNCTION billing.is_service_role_caller()",
-    );
-    expect(fixSql).toMatch(
-      /REVOKE ALL ON FUNCTION billing\.jwt_role\(\) FROM PUBLIC/,
-    );
+    expect(fixSql).toContain("CREATE OR REPLACE FUNCTION billing.is_service_role_caller()");
+    expect(fixSql).toMatch(/REVOKE ALL ON FUNCTION billing\.jwt_role\(\) FROM PUBLIC/);
     expect(fixSql).toMatch(
       /REVOKE ALL ON FUNCTION billing\.is_service_role_caller\(\) FROM PUBLIC/,
     );
-    expect(fixSql).not.toMatch(
-      /GRANT EXECUTE ON FUNCTION billing\.jwt_role\(\)/,
-    );
-    expect(fixSql).not.toMatch(
-      /GRANT EXECUTE ON FUNCTION billing\.is_service_role_caller\(\)/,
-    );
+    expect(fixSql).not.toMatch(/GRANT EXECUTE ON FUNCTION billing\.jwt_role\(\)/);
+    expect(fixSql).not.toMatch(/GRANT EXECUTE ON FUNCTION billing\.is_service_role_caller\(\)/);
   });
 
   it("keeps hardened search_path on billing RPCs", () => {
@@ -105,9 +93,7 @@ describe("billing service-role RPC authorization", () => {
   });
 
   it("denies cross-user entitlement reads for authenticated callers", () => {
-    expect(fixSql).toMatch(
-      /v_caller IS NOT NULL AND v_caller IS DISTINCT FROM p_user_id/,
-    );
+    expect(fixSql).toMatch(/v_caller IS NOT NULL AND v_caller IS DISTINCT FROM p_user_id/);
     expect(fixSql).toContain("ENTITLEMENT_FORBIDDEN");
   });
 

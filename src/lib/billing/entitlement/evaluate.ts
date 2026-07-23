@@ -18,7 +18,21 @@ export interface SubscriptionContext {
   paidActivationAt: string | null;
   entitlementActiveAt: string | null;
   cancelAtPeriodEnd: boolean;
+  /**
+   * Expiry of an active admin 72h access grant, if any. When the grant is
+   * active (expiresAt > now) the user receives full learner entitlement for
+   * paid-content evaluation WITHOUT mutating the subscription access state.
+   */
+  adminGrantExpiresAt?: string | null;
   now?: Date;
+}
+
+export function hasActiveAdminGrant(
+  adminGrantExpiresAt: string | null | undefined,
+  now: Date = new Date(),
+): boolean {
+  if (!adminGrantExpiresAt) return false;
+  return new Date(adminGrantExpiresAt) > now;
 }
 
 const NO_PAID_ACCESS_STATES: ReadonlySet<AccessState> = new Set([
@@ -31,13 +45,23 @@ const NO_PAID_ACCESS_STATES: ReadonlySet<AccessState> = new Set([
   "suspended",
 ]);
 
-export function resolvePaidContentEntitled(
-  ctx: SubscriptionContext,
-): { entitled: boolean; denial: DenialReasonCode | null } {
+export function resolvePaidContentEntitled(ctx: SubscriptionContext): {
+  entitled: boolean;
+  denial: DenialReasonCode | null;
+} {
   const now = ctx.now ?? new Date();
 
-  if (ctx.accessState === "free_active") {
+  // An active admin grant confers full learner entitlement regardless of the
+  // subscription access state (state itself is left untouched).
+  if (hasActiveAdminGrant(ctx.adminGrantExpiresAt, now)) {
     return { entitled: true, denial: null };
+  }
+
+  // V3: free_active is NOT full paid access. Public lessons are gated by the
+  // separate public allowlist (see buildEntitlementSnapshot); paid content is
+  // denied here without a hard error code.
+  if (ctx.accessState === "free_active") {
+    return { entitled: false, denial: null };
   }
 
   if (ctx.accessState === "paid_scheduled") {
@@ -84,7 +108,10 @@ export function buildEntitlementSnapshot(
   const now = ctx.now ?? new Date();
   const paid = resolvePaidContentEntitled(ctx);
   const defaults = PLAN_ENTITLEMENT_DEFAULTS[ctx.planKey];
-  const lessonIds = paid.entitled
+  // Paid/admin-grant users get the full entitled set; free_active users get the
+  // limited public catalogue capped by the free lesson_count_cap.
+  const exposeLessons = paid.entitled || ctx.accessState === "free_active";
+  const lessonIds = exposeLessons
     ? ctx.entitledLessonIds.slice(0, defaults.lessonCountCap ?? undefined)
     : [];
 
@@ -117,8 +144,7 @@ export function buildEntitlementSnapshot(
       remainingPeriod: Math.max(0, (periodQuota ?? 0) - usage.usedPeriod),
     },
     aiTopupBalanceUnits: usage.aiTopupBalance,
-    missionEvaluationEligible:
-      paid.entitled && ctx.policy.missionEvaluationEnabled,
+    missionEvaluationEligible: paid.entitled && ctx.policy.missionEvaluationEnabled,
     revealAnswerEligible: paid.entitled && ctx.policy.revealAnswerEnabled,
     wowPathEligible: paid.entitled && ctx.policy.wowPathEnabled,
     market: { marketCode: "INTL", currencyCode: "USD", localeDisplay: "en-US" },
@@ -135,26 +161,28 @@ export function evaluateAccess(
   resourceType: "lesson" | "video" | "builder" | "rag" | "assistant_runtime",
   resourceId?: string,
 ): { allowed: boolean; denialReasonCode: DenialReasonCode | null } {
-  if (!snapshot.paidContentEntitled && snapshot.accessState !== "free_active") {
-    return {
-      allowed: false,
-      denialReasonCode:
-        snapshot.denialReasonCode ?? "ENTITLEMENT_UNAVAILABLE",
-    };
-  }
-
+  // Lessons may be reachable via the public free catalogue even without full
+  // paid entitlement, so consult the entitled/public id set first.
   if (resourceType === "lesson" && resourceId) {
     const allowed = snapshot.lessons.entitledLessonIds.includes(resourceId);
     return {
       allowed,
-      denialReasonCode: allowed ? null : "LESSON_NOT_ENTITLED",
+      denialReasonCode: allowed ? null : (snapshot.denialReasonCode ?? "LESSON_NOT_ENTITLED"),
+    };
+  }
+
+  // Every other resource requires full paid-content entitlement (paid OR an
+  // active admin grant). free_active is not full access.
+  if (!snapshot.paidContentEntitled) {
+    return {
+      allowed: false,
+      denialReasonCode: snapshot.denialReasonCode ?? "ENTITLEMENT_UNAVAILABLE",
     };
   }
 
   if (resourceType === "video") {
     const allowed =
-      snapshot.videoAccess &&
-      (!resourceId || snapshot.ragAllowedLessonIds.includes(resourceId));
+      snapshot.videoAccess && (!resourceId || snapshot.ragAllowedLessonIds.includes(resourceId));
     return {
       allowed,
       denialReasonCode: allowed ? null : "VIDEO_NOT_ENTITLED",
