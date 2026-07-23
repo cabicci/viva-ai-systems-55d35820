@@ -1,13 +1,34 @@
 # Default-branch registration stub for controlled-400-visual-pipeline.
+#
+# DISPATCH ROUTING (fail-closed):
+#   Masaarat Control Room → Lovable → GitHub Actions
+#   Cursor / CLI / GitHub UI / unauthorized API / unauthenticated sources fail closed.
+#
 # This file NEVER runs the visual pipeline. It exists only so GitHub can
-# register workflow_dispatch for branch-ref invocation of the real candidate.
-# Every invocation terminates intentionally without executing any pipeline mode.
+# register workflow_dispatch for branch-ref invocation of the real candidate on
+# feat/ar-eg-next-lesson-visual. It evaluates Lovable dispatch authority only,
+# then always terminates intentionally with a non-zero exit.
+#
+# No checkout. No installs. No artifacts. No external actions. No provider
+# credentials. No visual-pipeline modes. No paid generation.
 
 name: controlled-400-visual-pipeline
 
 on:
   workflow_dispatch:
     inputs:
+      control_room_authorization_id:
+        description: Control Room authorization id (CR-…)
+        required: true
+        type: string
+      dispatch_actor:
+        description: Must be an allowlisted Lovable actor (never cursor/cli)
+        required: true
+        type: string
+      checkout_sha:
+        description: Authorized immutable commit SHA to check out (full 40-char lowercase hex; not a branch/tag)
+        required: true
+        type: string
       mode:
         description: Pipeline mode
         required: true
@@ -24,11 +45,6 @@ on:
         required: false
         type: string
         default: ""
-      checkout_sha:
-        description: Optional explicit commit SHA to check out (defaults to the ref that triggered dispatch)
-        required: false
-        type: string
-        default: ""
 
 permissions: {}
 
@@ -37,12 +53,79 @@ jobs:
     name: fail-closed registration stub
     runs-on: ubuntu-latest
     steps:
-      - name: Fail closed — registration stub only
+      - name: Evaluate Lovable dispatch authority then terminate (no pipeline)
+        shell: bash
+        env:
+          CONTROL_ROOM_AUTHORIZATION_ID: ${{ github.event.inputs.control_room_authorization_id }}
+          DISPATCH_ACTOR: ${{ github.event.inputs.dispatch_actor }}
+          CHECKOUT_SHA: ${{ github.event.inputs.checkout_sha }}
+          PIPELINE_MODE: ${{ github.event.inputs.mode }}
+          CONFIRM_FULL_400: ${{ github.event.inputs.confirm_full_400 }}
+          GITHUB_ACTOR_NAME: ${{ github.actor }}
+          LOVABLE_DISPATCH_ACTORS: ${{ vars.LOVABLE_DISPATCH_ACTORS || secrets.LOVABLE_DISPATCH_ACTORS }}
         run: |
-          echo "This file is the default-branch registration stub for controlled-400-visual-pipeline."
-          echo "It never runs the visual pipeline."
-          echo "An explicitly authorized candidate ref is required for pipeline execution."
-          echo "Execution is intentionally blocked."
-          echo "Inputs preserved for dispatch compatibility only: mode='${{ inputs.mode }}' confirm_full_400='${{ inputs.confirm_full_400 }}' checkout_sha='${{ inputs.checkout_sha }}'"
-          echo "No checkout, no secrets, no installs, no artifacts, no external actions, no preflight/pilot/failed-only/report-only/full-400."
+          set -euo pipefail
+          AUTHORITY_STATUS="FAIL"
+          ALLOW_RAW="${LOVABLE_DISPATCH_ACTORS:-}"
+          if [[ -z "${ALLOW_RAW// }" ]]; then
+            printf '%s\n' "dispatch-authority: LOVABLE_DISPATCH_ACTORS allowlist is empty — fail closed"
+          else
+            mapfile -t ALLOW < <(printf '%s\n' "$ALLOW_RAW" | tr '[,;]' ' ' | tr '[:upper:]' '[:lower:]' | xargs -n1)
+            in_allow() {
+              local needle
+              needle="$(printf '%s' "$1" | tr '[:upper:]' '[:lower:]')"
+              for a in "${ALLOW[@]}"; do
+                [[ "$a" == "$needle" ]] && return 0
+              done
+              return 1
+            }
+            BANNED=0
+            for banned in cursor cli cursor-agent github-ui unauthenticated api; do
+              if [[ "$(printf '%s' "$DISPATCH_ACTOR" | tr '[:upper:]' '[:lower:]')" == "$banned" ]]; then
+                BANNED=1
+              fi
+              if [[ "$(printf '%s' "$GITHUB_ACTOR_NAME" | tr '[:upper:]' '[:lower:]')" == "$banned" ]]; then
+                BANNED=1
+              fi
+            done
+            if [[ "$BANNED" -eq 1 ]]; then
+              printf '%s\n' "dispatch-authority: banned actor rejected"
+            elif ! in_allow "$DISPATCH_ACTOR"; then
+              printf '%s\n' "dispatch-authority: dispatch_actor not in allowlist"
+            elif ! in_allow "$GITHUB_ACTOR_NAME"; then
+              printf '%s\n' "dispatch-authority: github.actor not in allowlist"
+            elif [[ -z "${CONTROL_ROOM_AUTHORIZATION_ID:-}" ]]; then
+              printf '%s\n' "dispatch-authority: control_room_authorization_id missing"
+            elif [[ ! "$CONTROL_ROOM_AUTHORIZATION_ID" =~ ^CR-[A-Za-z0-9][A-Za-z0-9._-]{2,127}$ ]]; then
+              printf '%s\n' "dispatch-authority: control_room_authorization_id must match CR-… format"
+            elif [[ ! "$CHECKOUT_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+              printf '%s\n' "dispatch-authority: checkout_sha must be full 40-char lowercase hex"
+            else
+              case "$PIPELINE_MODE" in
+                preflight|pilot|failed-only|full-400|report-only)
+                  if [[ "$PIPELINE_MODE" == "full-400" ]]; then
+                    if [[ "$CONFIRM_FULL_400" != "RUN_AUTHORIZED_400" ]]; then
+                      printf '%s\n' "dispatch-authority: full-400 requires confirm_full_400=RUN_AUTHORIZED_400"
+                    else
+                      AUTHORITY_STATUS="PASS"
+                    fi
+                  else
+                    if [[ -n "${CONFIRM_FULL_400}" && "$CONFIRM_FULL_400" == "RUN_AUTHORIZED_400" ]]; then
+                      printf '%s\n' "dispatch-authority: RUN_AUTHORIZED_400 is not authorized for non-full-400 modes"
+                    else
+                      AUTHORITY_STATUS="PASS"
+                    fi
+                  fi
+                  ;;
+                *)
+                  printf '%s\n' "dispatch-authority: mode is not an authorized choice"
+                  ;;
+              esac
+            fi
+          fi
+          printf '%s\n' "This is the default-branch registration stub for controlled-400-visual-pipeline."
+          printf '%s\n' "Dispatch authority was evaluated fail-closed (status=${AUTHORITY_STATUS})."
+          printf '%s\n' "Pipeline execution is unavailable from this stub."
+          printf '%s\n' "An explicitly authorized candidate ref (feat/ar-eg-next-lesson-visual) and separate Control Room authorization are required."
+          printf '%s\n' "No checkout, no installs, no artifacts, no provider credentials, no visual-pipeline execution."
           exit 1
