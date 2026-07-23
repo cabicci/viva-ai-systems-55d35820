@@ -1,5 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
+import type { SupabaseClient } from "@supabase/supabase-js";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+import type { Database } from "@/integrations/supabase/types";
 import { z } from "zod";
 
 // IMPORTANT: do NOT import `@/integrations/supabase/client.server` at the top
@@ -17,7 +19,7 @@ async function loadSupabaseAdmin() {
  *  3. Uses supabaseAdmin to bypass RLS for aggregate reads
  */
 
-async function assertAdmin(context: { supabase: any; userId: string }) {
+async function assertAdmin(context: { supabase: SupabaseClient<Database>; userId: string }) {
   const { data, error } = await context.supabase.rpc("has_role", {
     _user_id: context.userId,
     _role: "admin",
@@ -32,20 +34,29 @@ async function assertAdmin(context: { supabase: any; userId: string }) {
 
 /**
  * Returns { isAdmin: true } only for authenticated admins.
- * Throws Unauthorized (401) if no session → caller treats as "go to /login".
+ * Throws Unauthorized if no verified identity → caller treats as "go to /login".
  * Returns { isAdmin: false } if authenticated but not admin → caller redirects to /dashboard.
- * Used by the /admin route's beforeLoad so the page never renders without server-verified admin role.
+ *
+ * Identity sources (both verified via getClaims, never client role claims):
+ * - Authorization Bearer (client server-fn RPC via attachSupabaseAuth)
+ * - masaarat_access_token cookie (SSR document requests after client sync)
  */
-export const assertAdminAccess = createServerFn({ method: "GET" })
-  .middleware([requireSupabaseAuth])
-  .handler(async ({ context }): Promise<{ isAdmin: boolean; userId: string }> => {
-    const { data, error } = await context.supabase.rpc("has_role", {
-      _user_id: context.userId,
+export const assertAdminAccess = createServerFn({ method: "GET" }).handler(
+  async (): Promise<{ isAdmin: boolean; userId: string }> => {
+    const { resolveVerifiedRequestUser } = await import("@/lib/ssr-request-auth.server");
+    const auth = await resolveVerifiedRequestUser();
+    if (!auth) {
+      throw new Error("Unauthorized: No valid session");
+    }
+
+    const { data, error } = await auth.supabase.rpc("has_role", {
+      _user_id: auth.userId,
       _role: "admin",
     });
     if (error) throw new Error("Authorization check failed");
-    return { isAdmin: Boolean(data), userId: context.userId };
-  });
+    return { isAdmin: Boolean(data), userId: auth.userId };
+  },
+);
 
 /* -------------------------------------------------------------- */
 /* Overview stats                                                  */
@@ -71,12 +82,12 @@ export const getAdminOverview = createServerFn({ method: "GET" })
     const row = (data ?? {}) as Record<string, number | string | null>;
     const n = (v: unknown) => Number(v ?? 0) || 0;
     return {
-      totalUsers:        n(row.total_users),
-      newUsers7d:        n(row.new_users_7d),
-      activeToday:       n(row.active_today),
-      lessonsCompleted:  n(row.lessons_completed),
+      totalUsers: n(row.total_users),
+      newUsers7d: n(row.new_users_7d),
+      activeToday: n(row.active_today),
+      lessonsCompleted: n(row.lessons_completed),
       missionsSubmitted: n(row.missions_submitted),
-      proUsers:          n(row.pro_users),
+      proUsers: n(row.pro_users),
     };
   });
 
@@ -133,10 +144,7 @@ export const getAdminActivity = createServerFn({ method: "GET" })
       if (batch.length < 100) break;
     }
     const signups: RecentSignup[] = collected
-      .sort(
-        (a, b) =>
-          new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
-      )
+      .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
       .slice(0, 20)
       .map((u) => ({
         id: u.id,
@@ -221,8 +229,7 @@ export const listUsers = createServerFn({ method: "GET" })
 
     const totalRaw = (res as unknown as { total?: number })?.total;
     const total = typeof totalRaw === "number" ? totalRaw : null;
-    const hasMore =
-      total != null ? page * pageSize < total : users.length === pageSize;
+    const hasMore = total != null ? page * pageSize < total : users.length === pageSize;
 
     return { users, page, pageSize, total, hasMore };
   });
@@ -256,7 +263,11 @@ export const getAdminInsights = createServerFn({ method: "GET" })
     const { data, error } = await context.supabase.rpc("get_admin_insights");
     if (error) throw new Error(`Failed to load admin insights: ${error.message}`);
     const payload = (data ?? {}) as {
-      path_distribution?: Array<{ path_id: string; completed_lessons: number | string; active_users: number | string }>;
+      path_distribution?: Array<{
+        path_id: string;
+        completed_lessons: number | string;
+        active_users: number | string;
+      }>;
       drop_off_lessons?: Array<{ lesson_id: string; started_count: number | string }>;
     };
     const n = (v: unknown) => Number(v ?? 0) || 0;
