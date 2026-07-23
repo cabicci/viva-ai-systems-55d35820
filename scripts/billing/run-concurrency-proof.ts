@@ -1,6 +1,7 @@
 #!/usr/bin/env bun
 /**
  * CI entrypoint for billing concurrency proofs against a disposable database.
+ * Must run only against a clean migrated database (Phase B harness resets first).
  */
 import { spawnSync } from "node:child_process";
 import path from "node:path";
@@ -17,8 +18,6 @@ if (!disposableDbReady()) {
   process.exit(2);
 }
 
-// Both suites share one disposable DB; disable file-level parallelism so they
-// never interleave global-state mutations (e.g. admin_grant_policy_versions).
 const result = spawnSync("bunx", ["vitest", "run", "--no-file-parallelism", ...TESTS], {
   cwd: REPO_ROOT,
   stdio: "inherit",

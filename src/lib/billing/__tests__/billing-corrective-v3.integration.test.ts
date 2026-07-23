@@ -84,6 +84,12 @@ describe("V3 corrective — static SQL assertions", () => {
     expect(sql).toContain("FUNCTION billing.publish_admin_grant_policy_version(");
     expect(sql).toContain("ADMIN_GRANT_POLICY_UNAVAILABLE");
     expect(sql).toContain("ADMIN_GRANT_POLICY_AMBIGUOUS");
+    const hist = readRepoFile(
+      "supabase/migrations/20260723120000_billing_historical_admin_policy_resolve.sql",
+    );
+    expect(hist).toContain("status = 'deprecated'");
+    expect(hist).toContain("published_at IS NOT NULL");
+    expect(hist).toContain("p_as_of < effective_to");
   });
 
   it("serializes per-user coupon grants with an advisory xact lock", () => {
@@ -171,6 +177,17 @@ function reserve(userId: string, req: string, idem: string): string {
 
 describe.skipIf(!ENABLED)("V3 corrective — DB proofs (disposable DB)", () => {
   beforeAll(() => {
+    // Prefer an already-provisioned disposable DB (CI exports PG*; local Docker
+    // may already be migrated). Avoid a second concurrent `db reset` when the
+    // concurrency suite's beforeAll is also resetting under file parallelism.
+    if (disposableDbReady()) {
+      try {
+        const probe = psql("SELECT to_regnamespace('billing') IS NOT NULL");
+        if (probe.trim() === "t") return;
+      } catch {
+        // Fall through to start/reset.
+      }
+    }
     if (!process.env.PGHOST && !process.env.DATABASE_URL) {
       const start = startLocalSupabase();
       expect(start.ok).toBe(true);
@@ -313,16 +330,47 @@ describe.skipIf(!ENABLED)("V3 corrective — DB proofs (disposable DB)", () => {
   });
 
   // -------------------------------------------------------------------------
-  // B. Versioned admin-grant AI quota policy.
+  // B. Versioned admin-grant AI quota policy (hermetic fixtures per scenario).
   // -------------------------------------------------------------------------
   describe("B. versioned admin-grant policy", () => {
+    const POLICY_KEY = "admin_learner_grant";
+
+    /** Wipe and re-seed a single published v1 with a deterministic past effective_from. */
+    function resetPolicyToPublishedV1(quota = 500): {
+      id: string;
+      version_number: string;
+      effective_from: string;
+      quota: string;
+      duration: string;
+    } {
+      psql(`DELETE FROM billing.admin_access_grants WHERE policy_version_id IN (
+        SELECT id FROM billing.admin_grant_policy_versions WHERE policy_key='${POLICY_KEY}')`);
+      psql(`DELETE FROM billing.admin_user_grant_state WHERE policy_version_id IN (
+        SELECT id FROM billing.admin_grant_policy_versions WHERE policy_key='${POLICY_KEY}')`);
+      psql(`DELETE FROM billing.admin_grant_policy_versions WHERE policy_key='${POLICY_KEY}'`);
+      // effective_from two hours ago so a later publish can close a non-empty interval.
+      psql(`INSERT INTO billing.admin_grant_policy_versions
+        (policy_key, version_number, status, effective_from, effective_to,
+         ai_assistant_quota_limit, grant_duration_hours, published_at)
+        VALUES ('${POLICY_KEY}', 1, 'published', now() - interval '2 hours', NULL,
+          ${quota}, 72, now() - interval '2 hours')`);
+      const row = psql(
+        `SELECT id || '|' || version_number || '|' || effective_from || '|' ||
+                ai_assistant_quota_limit || '|' || grant_duration_hours
+         FROM billing.admin_grant_policy_versions
+         WHERE policy_key='${POLICY_KEY}' AND version_number=1`,
+      ).trim();
+      const [id, version_number, effective_from, q, duration] = row.split("|");
+      return { id, version_number, effective_from, quota: q, duration };
+    }
+
     function policyVersionId(version: number): string {
       return psql(
-        `SELECT id FROM billing.admin_grant_policy_versions WHERE policy_key='admin_learner_grant' AND version_number=${version}`,
+        `SELECT id FROM billing.admin_grant_policy_versions WHERE policy_key='${POLICY_KEY}' AND version_number=${version}`,
       ).trim();
     }
 
-    function seedCouponAndRedeem(userId: string, code: string, idem: string) {
+    function seedCouponAndRedeem(userId: string, code: string, idem: string): string {
       psql(`DELETE FROM billing.admin_access_grants WHERE user_id='${userId}'`);
       psql(`DELETE FROM billing.admin_user_grant_state WHERE user_id='${userId}'`);
       psql(`DELETE FROM billing.admin_access_coupons WHERE code_hash='${code}'`);
@@ -336,10 +384,14 @@ describe.skipIf(!ENABLED)("V3 corrective — DB proofs (disposable DB)", () => {
     }
 
     it("seeds exactly one published v1 (quota 500, duration 72)", () => {
-      const row = psql(
-        `SELECT ai_assistant_quota_limit || ':' || grant_duration_hours || ':' || status FROM billing.admin_grant_policy_versions WHERE policy_key='admin_learner_grant' AND version_number=1`,
-      );
-      expect(row.trim()).toBe("500:72:published");
+      const v1 = resetPolicyToPublishedV1(500);
+      expect(v1.version_number).toBe("1");
+      expect(v1.quota).toBe("500");
+      expect(v1.duration).toBe("72");
+      const status = psql(
+        `SELECT status FROM billing.admin_grant_policy_versions WHERE id='${v1.id}'`,
+      ).trim();
+      expect(status).toBe("published");
       const resolved = tx(
         SERVICE,
         `SELECT (billing.resolve_admin_grant_policy(now())).version_number`,
@@ -348,72 +400,176 @@ describe.skipIf(!ENABLED)("V3 corrective — DB proofs (disposable DB)", () => {
     }, 120000);
 
     it("stores the resolved policy_version_id on redemption and resolves its quota", () => {
-      const v1 = policyVersionId(1);
+      const v1 = resetPolicyToPublishedV1(500);
       const stored = seedCouponAndRedeem(USER_POLICY_A, "policy-code-a", "redeem-a");
-      expect(stored).toBe(v1);
+      expect(stored).toBe(v1.id);
       const limit = tx(SERVICE, `SELECT billing.resolve_ai_assistant_limit('${USER_POLICY_A}')`);
       expect(limit).toBe("500");
     }, 120000);
 
-    it("publishing a newer version changes future resolution but retains history", () => {
-      const v1 = policyVersionId(1);
-      // Publish v2 with a different quota via service role.
+    it("historical closed-interval resolution retains v1 grants after v2 publish", () => {
+      const v1 = resetPolicyToPublishedV1(500);
+      expect(v1.id).toMatch(/^[0-9a-f-]{36}$/);
+
+      // Create a grant governed by version 1.
+      seedCouponAndRedeem(USER_POLICY_A, "policy-hist-a", "redeem-hist-a");
+      const grantId = psql(
+        `SELECT id FROM billing.admin_access_grants WHERE user_id='${USER_POLICY_A}' AND status='active' ORDER BY created_at DESC LIMIT 1`,
+      ).trim();
+      const grantPolicyId = psql(
+        `SELECT policy_version_id FROM billing.admin_user_grant_state WHERE user_id='${USER_POLICY_A}'`,
+      ).trim();
+      const grantQuota = tx(
+        SERVICE,
+        `SELECT billing.resolve_ai_assistant_limit('${USER_POLICY_A}')`,
+      );
+      const grantDuration = psql(
+        `SELECT grant_duration_hours FROM billing.admin_grant_policy_versions WHERE id='${v1.id}'`,
+      ).trim();
+      expect(grantId).toMatch(/^[0-9a-f-]{36}$/);
+      expect(grantPolicyId).toBe(v1.id);
+      expect(grantQuota).toBe("500");
+      expect(grantDuration).toBe("72");
+
+      // Publish v2 with a later deterministic boundary (now), closing v1.
       const pub = tx(
         SERVICE,
-        `SELECT (billing.publish_admin_grant_policy_version(999, 72, 'admin_learner_grant', now())->>'version_number')`,
+        `SELECT (billing.publish_admin_grant_policy_version(999, 72, '${POLICY_KEY}', now())->>'version_number')`,
       );
       expect(pub).toBe("2");
 
-      // Current resolution is v2; a historical timestamp still resolves v1.
+      const v1After = psql(
+        `SELECT status || '|' || effective_from || '|' || effective_to || '|' ||
+                ai_assistant_quota_limit || '|' || grant_duration_hours
+         FROM billing.admin_grant_policy_versions WHERE id='${v1.id}'`,
+      ).trim();
+      const [v1Status, v1From, v1To, v1Quota, v1Dur] = v1After.split("|");
+      expect(v1Status).toBe("deprecated");
+      expect(v1To).toBeTruthy();
+      expect(v1To).not.toBe("");
+      expect(v1Quota).toBe("500");
+      expect(v1Dur).toBe("72");
+
+      // Timestamp strictly inside version 1's closed interval.
+      const historicalTs = psql(
+        `SELECT (effective_from + (effective_to - effective_from) / 2)
+         FROM billing.admin_grant_policy_versions WHERE id='${v1.id}'`,
+      ).trim();
+      const insideOk = psql(
+        `SELECT ('${historicalTs}'::timestamptz > effective_from
+             AND '${historicalTs}'::timestamptz < effective_to)
+         FROM billing.admin_grant_policy_versions WHERE id='${v1.id}'`,
+      ).trim();
+      expect(insideOk).toBe("t");
+
+      const histVersion = tx(
+        SERVICE,
+        `SELECT (billing.resolve_admin_grant_policy('${historicalTs}'::timestamptz)).version_number`,
+      );
+      expect(histVersion).toBe("1");
+
       const nowVersion = tx(
         SERVICE,
         `SELECT (billing.resolve_admin_grant_policy(now())).version_number`,
       );
       expect(nowVersion).toBe("2");
-      const pastVersion = tx(
+      const futureVersion = tx(
         SERVICE,
-        `SELECT (billing.resolve_admin_grant_policy(now() - interval '1000 years')).version_number`,
+        `SELECT (billing.resolve_admin_grant_policy(now() + interval '1 day')).version_number`,
       );
-      expect(pastVersion).toBe("1");
+      expect(futureVersion).toBe("2");
 
-      // The pre-existing grant retains the v1 snapshot (limit stays 500).
-      const retained = tx(SERVICE, `SELECT billing.resolve_ai_assistant_limit('${USER_POLICY_A}')`);
-      expect(retained).toBe("500");
+      // Existing grant still references version 1; quota/duration unchanged.
       expect(
         psql(
           `SELECT policy_version_id FROM billing.admin_user_grant_state WHERE user_id='${USER_POLICY_A}'`,
         ).trim(),
-      ).toBe(v1);
+      ).toBe(v1.id);
+      expect(tx(SERVICE, `SELECT billing.resolve_ai_assistant_limit('${USER_POLICY_A}')`)).toBe(
+        "500",
+      );
+      expect(
+        psql(
+          `SELECT ai_assistant_quota_limit || ':' || grant_duration_hours FROM billing.admin_grant_policy_versions WHERE id='${v1.id}'`,
+        ).trim(),
+      ).toBe("500:72");
 
-      // A new redemption snapshots v2 and resolves the new quota.
+      // Future grant uses version 2.
       const v2 = policyVersionId(2);
-      const stored = seedCouponAndRedeem(USER_POLICY_B, "policy-code-b", "redeem-b");
-      expect(stored).toBe(v2);
-      const newLimit = tx(SERVICE, `SELECT billing.resolve_ai_assistant_limit('${USER_POLICY_B}')`);
-      expect(newLimit).toBe("999");
+      seedCouponAndRedeem(USER_POLICY_B, "policy-hist-b", "redeem-hist-b");
+      expect(
+        psql(
+          `SELECT policy_version_id FROM billing.admin_user_grant_state WHERE user_id='${USER_POLICY_B}'`,
+        ).trim(),
+      ).toBe(v2);
+      expect(tx(SERVICE, `SELECT billing.resolve_ai_assistant_limit('${USER_POLICY_B}')`)).toBe(
+        "999",
+      );
+
+      // Pre-history (before earliest effective_from) fails closed.
+      const preHistory = txAllowFail(
+        SERVICE,
+        `SELECT billing.resolve_admin_grant_policy(('${v1From}'::timestamptz - interval '1 second'))`,
+      );
+      expect(preHistory.ok).toBe(false);
+      expect(preHistory.out).toContain("ADMIN_GRANT_POLICY_UNAVAILABLE");
     }, 120000);
 
-    it("fails closed when the policy is unavailable or ambiguous", () => {
+    it("fails closed for missing, draft, never-published, and ambiguous policies", () => {
+      resetPolicyToPublishedV1(500);
+      const earliest = psql(
+        `SELECT effective_from FROM billing.admin_grant_policy_versions WHERE policy_key='${POLICY_KEY}' AND version_number=1`,
+      ).trim();
+
       const unavailable = txAllowFail(
         SERVICE,
-        `SELECT billing.resolve_admin_grant_policy(now() - interval '2000 years')`,
+        `SELECT billing.resolve_admin_grant_policy(('${earliest}'::timestamptz - interval '1 hour'))`,
       );
       expect(unavailable.ok).toBe(false);
       expect(unavailable.out).toContain("ADMIN_GRANT_POLICY_UNAVAILABLE");
 
-      // Force ambiguity by inserting a second overlapping published row directly.
+      // Draft row must never resolve even if its window covers now.
       psql(`INSERT INTO billing.admin_grant_policy_versions
-        (policy_key, version_number, status, effective_from, effective_to, ai_assistant_quota_limit, grant_duration_hours, published_at)
-        VALUES ('admin_learner_grant', 9999, 'published', now() - interval '1 day', NULL, 123, 72, now())`);
+        (policy_key, version_number, status, effective_from, effective_to,
+         ai_assistant_quota_limit, grant_duration_hours, published_at)
+        VALUES ('${POLICY_KEY}', 50, 'draft', now() - interval '1 day', NULL, 111, 72, NULL)`);
+      // Current published v1 still uniquely resolves; draft ignored.
+      expect(tx(SERVICE, `SELECT (billing.resolve_admin_grant_policy(now())).version_number`)).toBe(
+        "1",
+      );
+
+      // Never-published deprecated (no published_at, closed window) must not resolve.
+      psql(`DELETE FROM billing.admin_grant_policy_versions WHERE policy_key='${POLICY_KEY}'`);
+      psql(`INSERT INTO billing.admin_grant_policy_versions
+        (policy_key, version_number, status, effective_from, effective_to,
+         ai_assistant_quota_limit, grant_duration_hours, published_at)
+        VALUES ('${POLICY_KEY}', 60, 'deprecated', now() - interval '2 hours', now() + interval '2 hours',
+          222, 72, NULL)`);
+      const neverPublished = txAllowFail(
+        SERVICE,
+        `SELECT billing.resolve_admin_grant_policy(now())`,
+      );
+      expect(neverPublished.ok).toBe(false);
+      expect(neverPublished.out).toContain("ADMIN_GRANT_POLICY_UNAVAILABLE");
+
+      // Ambiguity: two overlapping eligible published windows.
+      psql(`DELETE FROM billing.admin_grant_policy_versions WHERE policy_key='${POLICY_KEY}'`);
+      psql(`INSERT INTO billing.admin_grant_policy_versions
+        (policy_key, version_number, status, effective_from, effective_to,
+         ai_assistant_quota_limit, grant_duration_hours, published_at)
+        VALUES
+          ('${POLICY_KEY}', 1, 'published', now() - interval '2 days', NULL, 500, 72, now()),
+          ('${POLICY_KEY}', 9999, 'published', now() - interval '1 day', NULL, 123, 72, now())`);
       const ambiguous = txAllowFail(SERVICE, `SELECT billing.resolve_admin_grant_policy(now())`);
       expect(ambiguous.ok).toBe(false);
       expect(ambiguous.out).toContain("ADMIN_GRANT_POLICY_AMBIGUOUS");
-      psql(
-        `DELETE FROM billing.admin_grant_policy_versions WHERE policy_key='admin_learner_grant' AND version_number=9999`,
-      );
+
+      // Restore a clean published v1 for subsequent describes in this file.
+      resetPolicyToPublishedV1(500);
     }, 120000);
 
     it("a paid plan still resolves the plan quota, not the admin-grant quota", () => {
+      resetPolicyToPublishedV1(500);
       seedPaidSubscription(USER_POLICY_PAID, "corr_paid", 97, 272);
       const limit = tx(SERVICE, `SELECT billing.resolve_ai_assistant_limit('${USER_POLICY_PAID}')`);
       expect(limit).toBe("272");

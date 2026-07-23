@@ -62,10 +62,7 @@ jobs:
       - name: Start disposable Supabase
         run: supabase start
 
-      - name: Apply complete migration chain
-        run: supabase db reset --yes
-
-      - name: Export local DB connection for concurrency proofs
+      - name: Export local DB connection for disposable proofs
         run: |
           echo "PGHOST=127.0.0.1" >> "$GITHUB_ENV"
           echo "PGPORT=54322" >> "$GITHUB_ENV"
@@ -79,7 +76,8 @@ jobs:
       - name: Focused ESLint (billing)
         run: bunx eslint src/lib/billing supabase/functions/billing-entitlement/index.ts --max-warnings 0
 
-      - name: Run billing validation harness (unit + concurrency)
+      # Harness performs independent clean db-reset before Phase A and again before Phase B.
+      - name: Run billing validation harness (Phase A suite + Phase B concurrency)
         run: |
           chmod +x .github/scripts/billing_contracts_v3_validation/run.sh
           .github/scripts/billing_contracts_v3_validation/run.sh
