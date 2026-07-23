@@ -111,8 +111,9 @@ describe("entitlement evaluation", () => {
     expect(snapshot.paidContentEntitled).toBe(false);
   });
 
-  it("models Free, Pro, and Pro+ quota shapes", () => {
-    expect(PLAN_ENTITLEMENT_DEFAULTS.free.assistantRuntimePeriodQuota).toBe(24);
+  it("models Free, Pro, and Pro+ quota shapes (no automatic free trial)", () => {
+    expect(PLAN_ENTITLEMENT_DEFAULTS.free.assistantRuntimePeriodQuota).toBeNull();
+    expect(PLAN_ENTITLEMENT_DEFAULTS.free.assistantRuntimePeriodDays).toBeNull();
     expect(PLAN_ENTITLEMENT_DEFAULTS.pro.assistantRuntimeGeneralMonthlyQuota).toBe(272);
     expect(PLAN_ENTITLEMENT_DEFAULTS.pro_plus.lessonCountCap).toBe(100);
   });
@@ -150,9 +151,9 @@ describe("coupon lifecycle", () => {
         reactivationApprovedAt: null,
       },
     ];
-    expect(() =>
-      assertCouponIdentityUnique(existing, "email-hash", null),
-    ).toThrow(/COUPON_IDENTITY_ALREADY_ASSIGNED/);
+    expect(() => assertCouponIdentityUnique(existing, "email-hash", null)).toThrow(
+      /COUPON_IDENTITY_ALREADY_ASSIGNED/,
+    );
 
     const expired = {
       id: "2",
@@ -188,9 +189,7 @@ describe("credit separation and quota", () => {
       idempotencyKey: "req:2",
     });
     releaseAiQuota(reservation2.reservationId);
-    expect(() => commitAiQuota(reservation2.reservationId)).toThrow(
-      /RESERVATION_NOT_FOUND/,
-    );
+    expect(() => commitAiQuota(reservation2.reservationId)).toThrow(/RESERVATION_NOT_FOUND/);
   });
 
   it("is idempotent for duplicate keys", () => {
@@ -207,9 +206,7 @@ describe("credit separation and quota", () => {
       idempotencyKey: "dup",
     });
     expect(second.reservationId).toBe(first.reservationId);
-    expect(
-      isDuplicateIdempotencyKey([{ idempotencyKey: "x" }], "x"),
-    ).toBe(true);
+    expect(isDuplicateIdempotencyKey([{ idempotencyKey: "x" }], "x")).toBe(true);
   });
 });
 
@@ -217,8 +214,18 @@ describe("refund policy and gateway capabilities", () => {
   it("selects latest refund policy version and computes 45-day eligibility", () => {
     const policy = selectRefundPolicyVersion(
       [
-        { policyKey: "default", versionNumber: 1, unusedMonetaryCreditAutoRefundDays: 45, prorationMethod: "daily" },
-        { policyKey: "default", versionNumber: 2, unusedMonetaryCreditAutoRefundDays: 45, prorationMethod: "daily" },
+        {
+          policyKey: "default",
+          versionNumber: 1,
+          unusedMonetaryCreditAutoRefundDays: 45,
+          prorationMethod: "daily",
+        },
+        {
+          policyKey: "default",
+          versionNumber: 2,
+          unusedMonetaryCreditAutoRefundDays: 45,
+          prorationMethod: "daily",
+        },
       ],
       "default",
     );
@@ -240,14 +247,8 @@ describe("refund policy and gateway capabilities", () => {
 
 describe("RLS migration static assertions", () => {
   const root = resolve(process.cwd(), "supabase/migrations");
-  const rlsSql = readFileSync(
-    resolve(root, "20260709190100_billing_rls_policies.sql"),
-    "utf8",
-  );
-  const schemaSql = readFileSync(
-    resolve(root, "20260709190000_billing_schema_phase1.sql"),
-    "utf8",
-  );
+  const rlsSql = readFileSync(resolve(root, "20260709190100_billing_rls_policies.sql"), "utf8");
+  const schemaSql = readFileSync(resolve(root, "20260709190000_billing_schema_phase1.sql"), "utf8");
 
   const requiredTables = [
     "billing.subscriptions",
@@ -268,9 +269,7 @@ describe("RLS migration static assertions", () => {
   });
 
   it("revokes broad client table access", () => {
-    expect(rlsSql).toContain(
-      "REVOKE ALL ON ALL TABLES IN SCHEMA billing FROM anon, authenticated",
-    );
+    expect(rlsSql).toContain("REVOKE ALL ON ALL TABLES IN SCHEMA billing FROM anon, authenticated");
   });
 
   it("does not grant authenticated write policies on sensitive tables", () => {
