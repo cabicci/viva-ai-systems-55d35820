@@ -4,6 +4,7 @@ import { describe, expect, it, vi } from "vitest";
 import {
   handleAssistantRuntimeRequest,
   type AssistantRuntimeDeps,
+  type BillingRpcResult,
   type SemanticChunk,
 } from "../../../supabase/functions/assistant-runtime/handler.ts";
 import { CONTENT_FREEZE_SHA, RAG_INDEX_VERSION } from "@/lib/rag/constants";
@@ -95,6 +96,50 @@ function loadArEgSample(): SemanticChunk {
   return loadRegisteredSample(ar.chunkId);
 }
 
+const RESERVATION_ID = "aaaaaaaa-0000-4000-8000-000000000001";
+
+/** Realistic default billing mock: reserve/register/finalize/commit/release all succeed. */
+function createDefaultBillingRpc(): AssistantRuntimeDeps["billingRpc"] {
+  let attemptIndex = 0;
+  return vi.fn(async (fnName: string, body: Record<string, unknown>): Promise<BillingRpcResult> => {
+    switch (fnName) {
+      case "reserve_learner_ai_access":
+        return {
+          ok: true,
+          data: { reservation_id: RESERVATION_ID, status: "reserved", idempotent_replay: false },
+        };
+      case "register_provider_attempt":
+        attemptIndex += 1;
+        return {
+          ok: true,
+          data: {
+            reservation_id: body.p_reservation_id,
+            attempt_index: attemptIndex,
+            attempt_status: "registered",
+            quota_committed: attemptIndex === 1,
+            idempotent_replay: false,
+          },
+        };
+      case "finalize_provider_attempt":
+        return {
+          ok: true,
+          data: {
+            reservation_id: body.p_reservation_id,
+            attempt_index: body.p_attempt_index,
+            attempt_status: body.p_attempt_status,
+            idempotent_replay: false,
+          },
+        };
+      case "commit_ai_quota":
+        return { ok: true, data: { reservation_id: body.p_reservation_id, action: "committed" } };
+      case "release_ai_quota":
+        return { ok: true, data: { released: true, idempotent_replay: false } };
+      default:
+        return { ok: false, status: 404, error: `unknown billing rpc: ${fnName}` };
+    }
+  });
+}
+
 function buildDeps(overrides: Partial<AssistantRuntimeDeps> = {}): AssistantRuntimeDeps {
   return {
     verifyJwt: vi.fn(async () => ({ ok: true as const, userId: "user-1" })),
@@ -102,10 +147,16 @@ function buildDeps(overrides: Partial<AssistantRuntimeDeps> = {}): AssistantRunt
       allowed: true,
       resetAt: new Date(FIXED_NOW.getTime() + 3_600_000).toISOString(),
     })),
+    billingRpc: createDefaultBillingRpc(),
     embedQuery: vi.fn(async () => [0.1, 0.2, 0.3]),
     localeSemanticRetrieve: vi.fn(async () => [] as SemanticChunk[]),
     callLlm: vi.fn(async () => ({ ok: true as const, answer: "default answer" })),
-    env: { LOVABLE_API_KEY: "lovable-key", OPENAI_API_KEY: "openai-key" },
+    env: {
+      LOVABLE_API_KEY: "lovable-key",
+      OPENAI_API_KEY: "openai-key",
+      SUPABASE_URL: "https://project.supabase.co",
+      SUPABASE_SERVICE_ROLE_KEY: "service-role-key",
+    },
     now: () => FIXED_NOW,
     ...overrides,
   };
@@ -133,6 +184,12 @@ function callCounts(deps: AssistantRuntimeDeps) {
   };
 }
 
+function billingCallNames(deps: AssistantRuntimeDeps): string[] {
+  return (deps.billingRpc as ReturnType<typeof vi.fn>).mock.calls.map(
+    (call: unknown[]) => call[0] as string,
+  );
+}
+
 async function runWithChunks(chunks: SemanticChunk[]) {
   const deps = buildDeps({
     localeSemanticRetrieve: vi.fn(async () => chunks),
@@ -156,6 +213,7 @@ describe("handleAssistantRuntimeRequest — transport basics", () => {
     );
     expect(res.status).toBe(200);
     expect(callCounts(deps)).toEqual({ embed: 0, retrieve: 0, llm: 0, rateLimit: 0 });
+    expect(deps.billingRpc as ReturnType<typeof vi.fn>).not.toHaveBeenCalled();
   });
 
   it("rejects non-POST methods", async () => {
@@ -175,6 +233,7 @@ describe("handleAssistantRuntimeRequest — transport basics", () => {
     );
     expect(res.status).toBe(401);
     expect(callCounts(deps)).toEqual({ embed: 0, retrieve: 0, llm: 0, rateLimit: 0 });
+    expect(deps.billingRpc as ReturnType<typeof vi.fn>).not.toHaveBeenCalled();
   });
 });
 
@@ -370,6 +429,7 @@ describe("handleAssistantRuntimeRequest — integrity cases 1–24", () => {
     const json = await res.json();
     expect(json.reason).toBe("retrievalResults_forbidden");
     expect(callCounts(deps)).toEqual({ embed: 0, retrieve: 0, llm: 0, rateLimit: 0 });
+    expect(deps.billingRpc as ReturnType<typeof vi.fn>).not.toHaveBeenCalled();
   });
 
   it("22: invalid locale yields zero protected/provider calls", async () => {
@@ -380,6 +440,7 @@ describe("handleAssistantRuntimeRequest — integrity cases 1–24", () => {
     );
     expect(res.status).toBe(400);
     expect(callCounts(deps)).toEqual({ embed: 0, retrieve: 0, llm: 0, rateLimit: 0 });
+    expect(deps.billingRpc as ReturnType<typeof vi.fn>).not.toHaveBeenCalled();
   });
 
   it("23: explicit ar-EG uses the same manifest-backed locale-aware path", async () => {
@@ -422,24 +483,333 @@ describe("handleAssistantRuntimeRequest — rate limiting and provider gating", 
     );
     expect(res.status).toBe(429);
     expect((deps.callLlm as ReturnType<typeof vi.fn>).mock.calls.length).toBe(0);
+    expect(deps.billingRpc as ReturnType<typeof vi.fn>).not.toHaveBeenCalled();
   });
 
-  it("returns 500 when LOVABLE_API_KEY is missing", async () => {
-    const deps = buildDeps({ env: { OPENAI_API_KEY: "openai-key" } });
+  it("returns 500 when LOVABLE_API_KEY is missing, before any reservation", async () => {
+    const deps = buildDeps({
+      env: {
+        OPENAI_API_KEY: "openai-key",
+        SUPABASE_URL: "https://project.supabase.co",
+        SUPABASE_SERVICE_ROLE_KEY: "service-role-key",
+      },
+    });
     const res = await handleAssistantRuntimeRequest(
       buildRequest({ query: "what is AI?", learnerContext: { locale: "en" } }),
       deps,
     );
     expect(res.status).toBe(500);
     expect((deps.callLlm as ReturnType<typeof vi.fn>).mock.calls.length).toBe(0);
+    expect(deps.billingRpc as ReturnType<typeof vi.fn>).not.toHaveBeenCalled();
+  });
+
+  it("returns 500 when SUPABASE_SERVICE_ROLE_KEY is missing, before any reservation", async () => {
+    const deps = buildDeps({
+      env: {
+        LOVABLE_API_KEY: "lovable-key",
+        OPENAI_API_KEY: "openai-key",
+        SUPABASE_URL: "https://project.supabase.co",
+      },
+    });
+    const res = await handleAssistantRuntimeRequest(
+      buildRequest({ query: "what is AI?", learnerContext: { locale: "en" } }),
+      deps,
+    );
+    expect(res.status).toBe(500);
+    expect((deps.callLlm as ReturnType<typeof vi.fn>).mock.calls.length).toBe(0);
+    expect(deps.billingRpc as ReturnType<typeof vi.fn>).not.toHaveBeenCalled();
   });
 });
 
-describe("Chat 2 boundary documentation", () => {
-  it("documents entitlement/quota hook after JWT without implementing billing", () => {
-    expect(HANDLER_SRC).toContain("CHAT 2 INTEGRATION BOUNDARY");
-    expect(HANDLER_SRC).toContain("authentication → entitlement → quota → retrieval → generation");
+describe("Chat 4 Billing bridge documentation", () => {
+  it("documents the implemented billing lifecycle after JWT, before providers", () => {
+    expect(HANDLER_SRC).toContain("CHAT 4 BILLING BRIDGE");
+    expect(HANDLER_SRC).toContain("authentication (above) → rate limit → server env checks");
+    expect(HANDLER_SRC).toContain("reserve_learner_ai_access");
+    expect(HANDLER_SRC).toContain("register_provider_attempt");
+    expect(HANDLER_SRC).toContain("finalize_provider_attempt");
+    expect(HANDLER_SRC).toContain("commit_ai_quota");
+    expect(HANDLER_SRC).toContain("release_ai_quota");
+    // Entitlement evaluation (evaluate_access) is a separate edge
+    // (billing-entitlement) — assistant-runtime never calls it directly.
     expect(HANDLER_SRC).not.toContain("evaluateAccess");
-    expect(HANDLER_SRC).not.toContain("reserve_ai_quota");
+  });
+});
+
+describe("Chat 4 Billing bridge — lifecycle", () => {
+  const sample = loadRegisteredSample();
+
+  function buildBillingSpy(
+    overrides: Record<string, (body: Record<string, unknown>) => BillingRpcResult> = {},
+  ) {
+    let attemptIndex = 0;
+    return vi.fn(
+      async (fnName: string, body: Record<string, unknown>): Promise<BillingRpcResult> => {
+        if (overrides[fnName]) return overrides[fnName](body);
+        switch (fnName) {
+          case "reserve_learner_ai_access":
+            return { ok: true, data: { reservation_id: RESERVATION_ID } };
+          case "register_provider_attempt":
+            attemptIndex += 1;
+            return {
+              ok: true,
+              data: { reservation_id: body.p_reservation_id, attempt_index: attemptIndex },
+            };
+          case "finalize_provider_attempt":
+            return { ok: true, data: { reservation_id: body.p_reservation_id } };
+          case "commit_ai_quota":
+            return {
+              ok: true,
+              data: { reservation_id: body.p_reservation_id, action: "committed" },
+            };
+          case "release_ai_quota":
+            return { ok: true, data: { released: true } };
+          default:
+            return { ok: false, status: 404, error: `unknown billing rpc: ${fnName}` };
+        }
+      },
+    );
+  }
+
+  it("never calls billingRpc for auth/method/locale/retrievalResults rejections", async () => {
+    const cases: Array<{
+      body: unknown;
+      opts?: Parameters<typeof buildRequest>[1];
+      depsOverrides?: Partial<AssistantRuntimeDeps>;
+    }> = [
+      { body: undefined, opts: { method: "OPTIONS", noBody: true } },
+      { body: undefined, opts: { method: "GET", noBody: true } },
+      {
+        body: { query: "hi", learnerContext: { locale: "en" } },
+        opts: { skipAuth: true },
+        depsOverrides: { verifyJwt: vi.fn(async () => ({ ok: false as const })) },
+      },
+      {
+        body: {
+          query: "hi",
+          learnerContext: { locale: "en" },
+          retrievalResults: [{ x: 1 }],
+        },
+      },
+      { body: { query: "hi", learnerContext: { locale: "fr-FR" } } },
+    ];
+    for (const { body, opts, depsOverrides } of cases) {
+      const deps = buildDeps(depsOverrides);
+      await handleAssistantRuntimeRequest(buildRequest(body, opts), deps);
+      expect(deps.billingRpc as ReturnType<typeof vi.fn>).not.toHaveBeenCalled();
+    }
+  });
+
+  it("fails closed before any provider when service-role/Supabase env is missing", async () => {
+    const deps = buildDeps({
+      env: { LOVABLE_API_KEY: "lovable-key", OPENAI_API_KEY: "openai-key" },
+    });
+    const res = await handleAssistantRuntimeRequest(
+      buildRequest({ query: "what is AI?", learnerContext: { locale: "en" } }),
+      deps,
+    );
+    expect(res.status).toBe(500);
+    expect(deps.billingRpc as ReturnType<typeof vi.fn>).not.toHaveBeenCalled();
+    expect(callCounts(deps)).toMatchObject({ embed: 0, retrieve: 0, llm: 0 });
+  });
+
+  it("reserve denial yields zero embed/retrieve/llm calls and propagates status", async () => {
+    const billingRpc = buildBillingSpy({
+      reserve_learner_ai_access: () => ({ ok: false, status: 403, error: "AI_ACCESS_DENIED" }),
+    });
+    const deps = buildDeps({ billingRpc });
+    const res = await handleAssistantRuntimeRequest(
+      buildRequest({ query: "what is AI?", learnerContext: { locale: "en" } }),
+      deps,
+    );
+    expect(res.status).toBe(403);
+    const json = await res.json();
+    expect(json.ok).toBe(false);
+    expect(json.error).toBe("AI_ACCESS_DENIED");
+    expect(callCounts(deps)).toMatchObject({ embed: 0, retrieve: 0, llm: 0 });
+    expect(billingCallNames(deps)).toEqual(["reserve_learner_ai_access"]);
+  });
+
+  it("reserves with category assistant_runtime and the JWT-verified user id, ignoring client userId", async () => {
+    const billingRpc = buildBillingSpy();
+    const deps = buildDeps({ billingRpc });
+    await handleAssistantRuntimeRequest(
+      buildRequest({
+        query: "what is AI?",
+        learnerContext: { locale: "en" },
+        // Not part of the request contract — must never influence billing.
+        userId: "attacker-supplied-id",
+      } as unknown as Record<string, unknown>),
+      deps,
+    );
+    const reserveCall = (billingRpc as ReturnType<typeof vi.fn>).mock.calls.find(
+      (c: unknown[]) => c[0] === "reserve_learner_ai_access",
+    );
+    expect(reserveCall).toBeDefined();
+    const reserveBody = reserveCall![1] as Record<string, unknown>;
+    expect(reserveBody.p_category).toBe("assistant_runtime");
+    expect(reserveBody.p_user_id).toBe("user-1");
+    expect(reserveBody.p_units).toBe(1);
+  });
+
+  it("successful order: reserve → register embed → embed → finalize embed → retrieve → register answer → llm → finalize answer → commit", async () => {
+    const order: string[] = [];
+    let embedAttemptIndex = -1;
+    let answerAttemptIndex = -1;
+    let nextIndex = 0;
+    const billingRpc = vi.fn(
+      async (fnName: string, body: Record<string, unknown>): Promise<BillingRpcResult> => {
+        switch (fnName) {
+          case "reserve_learner_ai_access":
+            order.push(fnName);
+            return { ok: true, data: { reservation_id: RESERVATION_ID } };
+          case "register_provider_attempt": {
+            order.push(fnName);
+            nextIndex += 1;
+            if (body.p_provider === "openai_embedding") embedAttemptIndex = nextIndex;
+            if (body.p_provider === "lovable_llm") answerAttemptIndex = nextIndex;
+            return {
+              ok: true,
+              data: { reservation_id: body.p_reservation_id, attempt_index: nextIndex },
+            };
+          }
+          case "finalize_provider_attempt":
+            order.push(
+              body.p_attempt_index === embedAttemptIndex ? "finalize:embed" : "finalize:answer",
+            );
+            return { ok: true, data: { reservation_id: body.p_reservation_id } };
+          case "commit_ai_quota":
+            order.push(fnName);
+            return { ok: true, data: { reservation_id: body.p_reservation_id } };
+          case "release_ai_quota":
+            order.push(fnName);
+            return { ok: true, data: { released: true } };
+          default:
+            return { ok: false, status: 404, error: `unknown rpc ${fnName}` };
+        }
+      },
+    );
+    const embedQuery = vi.fn(async () => {
+      order.push("embedQuery");
+      return [0.1, 0.2, 0.3];
+    });
+    const localeSemanticRetrieve = vi.fn(async () => {
+      order.push("localeSemanticRetrieve");
+      return [sample] as SemanticChunk[];
+    });
+    const callLlm = vi.fn(async () => {
+      order.push("callLlm");
+      return { ok: true as const, answer: "ok" };
+    });
+    const deps = buildDeps({ billingRpc, embedQuery, localeSemanticRetrieve, callLlm });
+
+    const res = await handleAssistantRuntimeRequest(
+      buildRequest({ query: "what is AI?", learnerContext: { locale: "en" } }),
+      deps,
+    );
+    expect(res.status).toBe(200);
+    expect(order).toEqual([
+      "reserve_learner_ai_access",
+      "register_provider_attempt",
+      "embedQuery",
+      "finalize:embed",
+      "localeSemanticRetrieve",
+      "register_provider_attempt",
+      "callLlm",
+      "finalize:answer",
+      "commit_ai_quota",
+    ]);
+    expect(embedAttemptIndex).toBe(1);
+    expect(answerAttemptIndex).toBe(2);
+  });
+
+  it("skips the embedding attempt entirely (no billing call) when OPENAI_API_KEY is absent, still answers", async () => {
+    const billingRpc = buildBillingSpy();
+    const embedQuery = vi.fn(async () => [0.1, 0.2, 0.3]);
+    const localeSemanticRetrieve = vi.fn(async () => [] as SemanticChunk[]);
+    const deps = buildDeps({
+      billingRpc,
+      embedQuery,
+      localeSemanticRetrieve,
+      env: {
+        LOVABLE_API_KEY: "lovable-key",
+        SUPABASE_URL: "https://project.supabase.co",
+        SUPABASE_SERVICE_ROLE_KEY: "service-role-key",
+      },
+    });
+    const res = await handleAssistantRuntimeRequest(
+      buildRequest({ query: "what is AI?", learnerContext: { locale: "en" } }),
+      deps,
+    );
+    expect(res.status).toBe(200);
+    expect(embedQuery).not.toHaveBeenCalled();
+    expect(localeSemanticRetrieve).not.toHaveBeenCalled();
+    const names = billingCallNames(deps);
+    expect(names.filter((n) => n === "register_provider_attempt")).toHaveLength(1);
+    expect(names).toContain("commit_ai_quota");
+    expect(names).not.toContain("release_ai_quota");
+  });
+
+  it("releases exactly once when no provider attempt is ever registered", async () => {
+    const billingRpc = buildBillingSpy({
+      register_provider_attempt: () => ({
+        ok: false,
+        status: 500,
+        error: "PROVIDER_ATTEMPT_REGISTRATION_FAILED",
+      }),
+    });
+    const callLlm = vi.fn(async () => ({ ok: true as const, answer: "should not be called" }));
+    const deps = buildDeps({
+      billingRpc,
+      callLlm,
+      env: {
+        LOVABLE_API_KEY: "lovable-key",
+        SUPABASE_URL: "https://project.supabase.co",
+        SUPABASE_SERVICE_ROLE_KEY: "service-role-key",
+        // No OPENAI_API_KEY — embedding is skipped, so the only registration
+        // attempted is for the answer, and it fails below.
+      },
+    });
+    const res = await handleAssistantRuntimeRequest(
+      buildRequest({ query: "what is AI?", learnerContext: { locale: "en" } }),
+      deps,
+    );
+    expect(res.status).toBeGreaterThanOrEqual(400);
+    expect(callLlm).not.toHaveBeenCalled();
+    const names = billingCallNames(deps);
+    expect(names.filter((n) => n === "release_ai_quota")).toHaveLength(1);
+    expect(names).not.toContain("commit_ai_quota");
+  });
+
+  it("never releases once a provider started, even when the LLM call fails; commits exactly once", async () => {
+    const billingRpc = buildBillingSpy();
+    const callLlm = vi.fn(async () => ({
+      ok: false as const,
+      status: 502,
+      error: "AI provider error",
+    }));
+    const deps = buildDeps({ billingRpc, callLlm });
+    const res = await handleAssistantRuntimeRequest(
+      buildRequest({ query: "what is AI?", learnerContext: { locale: "en" } }),
+      deps,
+    );
+    expect(res.status).toBe(502);
+    const names = billingCallNames(deps);
+    expect(names.filter((n) => n === "commit_ai_quota")).toHaveLength(1);
+    expect(names).not.toContain("release_ai_quota");
+  });
+
+  it("two provider attempts (embed + answer) result in exactly one commit", async () => {
+    const billingRpc = buildBillingSpy();
+    const deps = buildDeps({ billingRpc });
+    const res = await handleAssistantRuntimeRequest(
+      buildRequest({ query: "what is AI?", learnerContext: { locale: "en" } }),
+      deps,
+    );
+    expect(res.status).toBe(200);
+    const names = billingCallNames(deps);
+    expect(names.filter((n) => n === "register_provider_attempt")).toHaveLength(2);
+    expect(names.filter((n) => n === "commit_ai_quota")).toHaveLength(1);
+    expect(names.filter((n) => n === "release_ai_quota")).toHaveLength(0);
   });
 });

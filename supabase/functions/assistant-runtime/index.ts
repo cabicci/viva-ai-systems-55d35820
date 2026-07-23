@@ -9,6 +9,7 @@
 import {
   handleAssistantRuntimeRequest,
   type AssistantRuntimeDeps,
+  type BillingRpcResult,
   type LlmResult,
   type SemanticChunk,
 } from "./handler.ts";
@@ -81,6 +82,55 @@ async function consumeRateLimit(
   }
 }
 
+// Invokes a billing-schema RPC (Chat 4 Billing bridge). Same pattern as
+// billing-entitlement/index.ts: service-role auth plus Accept-Profile /
+// Content-Profile: billing so PostgREST resolves the function in the
+// `billing` schema rather than `public`. Never throws — failures (missing
+// env, network error, non-2xx from PostgREST) surface as `{ ok: false }` so
+// the handler can fail closed without leaking the service-role key.
+async function billingRpc(
+  fnName: string,
+  body: Record<string, unknown>,
+): Promise<BillingRpcResult> {
+  const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
+  const SERVICE_ROLE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+  if (!SUPABASE_URL || !SERVICE_ROLE) {
+    return { ok: false, status: 500, error: "Billing RPC unavailable: missing supabase env" };
+  }
+
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fnName}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        apikey: SERVICE_ROLE,
+        Authorization: `Bearer ${SERVICE_ROLE}`,
+        "Accept-Profile": "billing",
+        "Content-Profile": "billing",
+      },
+      body: JSON.stringify(body),
+    });
+
+    if (!res.ok) {
+      let message = `Billing RPC ${fnName} failed (${res.status})`;
+      try {
+        const errJson = await res.json();
+        if (typeof errJson?.message === "string") message = errJson.message;
+      } catch {
+        // Non-JSON error body — keep the generic message above.
+      }
+      console.error(`[assistant-runtime] billing rpc ${fnName} failed`, res.status, message);
+      return { ok: false, status: res.status, error: message };
+    }
+
+    const data = (await res.json()) as Record<string, unknown> | null;
+    return { ok: true, data: data ?? {} };
+  } catch (e) {
+    console.error(`[assistant-runtime] billing rpc ${fnName} exception`, (e as Error).message);
+    return { ok: false, status: 500, error: "Billing RPC unavailable" };
+  }
+}
+
 async function embedQuery(text: string, apiKey: string): Promise<number[] | null> {
   try {
     const res = await fetch("https://api.openai.com/v1/embeddings", {
@@ -111,16 +161,16 @@ async function embedQuery(text: string, apiKey: string): Promise<number[] | null
 
 // Locale-aware semantic retrieval — the only retrieval path (unified
 // 400-package contract). Invokes match_locale_knowledge_chunks with
-// service_role only (least privilege); embeds the query internally.
+// service_role only (least privilege). Takes an already-computed embedding —
+// embedding happens once, as its own billed provider attempt, in the handler.
 async function localeSemanticRetrieve(
-  query: string,
+  embedding: number[],
   locale: string,
   pathId: string | null,
   moduleId: string | null,
   lessonId: string | null,
   contentVersion: string | null,
   allowModuleFallback: boolean,
-  apiKey: string,
 ): Promise<SemanticChunk[]> {
   const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
   const SERVICE_ROLE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
@@ -128,9 +178,6 @@ async function localeSemanticRetrieve(
     console.warn("[assistant-runtime] locale semantic disabled: missing supabase env");
     return [];
   }
-
-  const embedding = await embedQuery(query, apiKey);
-  if (!embedding) return [];
 
   try {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/match_locale_knowledge_chunks`, {
@@ -254,12 +301,15 @@ function buildRealDeps(): AssistantRuntimeDeps {
   return {
     verifyJwt,
     consumeRateLimit,
+    billingRpc,
     embedQuery,
     localeSemanticRetrieve,
     callLlm,
     env: {
       LOVABLE_API_KEY: Deno.env.get("LOVABLE_API_KEY") ?? undefined,
       OPENAI_API_KEY: Deno.env.get("OPENAI_API_KEY") ?? undefined,
+      SUPABASE_URL: Deno.env.get("SUPABASE_URL") ?? undefined,
+      SUPABASE_SERVICE_ROLE_KEY: Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? undefined,
     },
   };
 }
