@@ -1,0 +1,407 @@
+# ar-EG Media Map — 100 Lessons
+
+Agent: **2 — ar-EG Media Map — 100 Lessons** · Classification-only · Verified live `origin/main` `a9b31c53aee45a9498f89f1301987f684ff1bae9`
+
+### A. Verification evidence
+
+| Field | Value |
+| --- | --- |
+| Repository root | `E:/Masaarat/viva-ai-systems-55d35820` |
+| Git common directory | `E:/Masaarat/viva-ai-systems-55d35820/.git` |
+| Origin remote URL | `https://github.com/cabicci/viva-ai-systems-55d35820.git` |
+| Direct `git ls-remote origin refs/heads/main` SHA | `a9b31c53aee45a9498f89f1301987f684ff1bae9` |
+| Verified `refs/remotes/origin/main` SHA | `a9b31c53aee45a9498f89f1301987f684ff1bae9` |
+| Authoritative curriculum source | `src/lib/curriculum-data.ts` (`PATHS`, order Intro → Business → Creator → Analyst → Automator → Builder; `state: "available"`) |
+| Authoritative ar-EG content source pattern | `src/components/intro/lessons/{lessonId}.ts` (loaded via `src/components/intro/lessons/lesson-registry.ts`) |
+| Confirmed active lesson count | **100** unique `available` lessons |
+
+SHA match: `git ls-remote` and `refs/remotes/origin/main` both equal `a9b31c53aee45a9498f89f1301987f684ff1bae9`. Local `HEAD` also equals this SHA. No checkout/reset/merge/rebase/pull of `main` was performed; only `git fetch origin --no-prune` (read-only remote update of tracking refs).
+
+### B. Ordered 100-lesson classification table
+
+| # | Lesson ID | Title | Cat | Reason | Visual must communicate | Evidence path(s) | Production spec | Blocker / uncertainty |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | `intro-m1-l1-what-is-ai` | AI يعني إيه فعلًا؟ | C | يشرح حلقة سؤال→رد→تعديل كمفهوم عام بلا أداة أو واجهة مسارات مطلوبة. | ثلاث عقد: المستخدم يسأل → AI يرد → المستخدم يعدّل ويعيد السؤال. | `src/components/intro/lessons/intro-m1-l1-what-is-ai.ts` | Diagram: حلقة سؤال المستخدم → رد AI → تعديل، مع سهم رجوع. | None |
+| 2 | `intro-m1-l2-first-prompt` | أول Prompt ليك | C | يركز على تركيب Prompt من أربعة عناصر — نموذج مفاهيمي. | بطاقة Prompt مقسمة إلى Role / Context / Task / Format. | `src/components/intro/lessons/intro-m1-l2-first-prompt.ts` | Diagram: أربعة حقول Prompt مع مثال قصير داخل كل حقل. | None |
+| 3 | `intro-m1-l3-setup-your-ai` | افتح أول AI ليك في دقيقتين | B | الهدف العملي فتح Chatbot حقيقي وإرسال أول رسالة؛ التعرف على واجهة الأداة الخارجية جزء من إزالة عائق البدء. | واجهة ChatGPT أو Gemini أو Claude بعد الدخول: منطقة المحادثة + حقل إدخال أسفل الشاشة + زر إرسال، جاهزة لأول رسالة. | `src/components/intro/lessons/intro-m1-l3-setup-your-ai.ts` | External: ChatGPT أو Gemini أو Claude — صفحة الشات بعد تسجيل الدخول؛ يظهر حقل الرسالة وزر الإرسال ومحادثة فارغة/تجريبية بلا بيانات شخصية. | Authenticated access + particular account state: حساب مجاني على الأداة المختارة؛ أخفِ أي محادثات شخصية. |
+| 4 | `intro-m1-l4-ai-can-cannot` | الـ AI يقدر يعمل إيه ومينفعش يعمل إيه؟ | C | يفرّق بين مهام مناسبة للـ AI ومهام تحتاج مراجعة بشرية. | عمودان: استخدم بسرعة vs استخدم مع مراجعة، مع أمثلة. | `src/components/intro/lessons/intro-m1-l4-ai-can-cannot.ts` | Diagram: مقارنة مهام لغوية آمنة مقابل حقائق/طب/قانون تحتاج تحققًا. | None |
+| 5 | `intro-m1-l5-ai-vs-software` | AI مش زي البرامج العادية | C | مقارنة قواعد ثابتة (برامج) بمرونة لغوية (AI). | مساران: Software نتيجة ثابتة vs AI رد مرن، ولقائهما في عمل مشترك. | `src/components/intro/lessons/intro-m1-l5-ai-vs-software.ts` | Diagram: مساران متوازيان يلتقيان في مثال Excel+AI. | None |
+| 6 | `intro-m1-l6-learn-without-fear` | اتعلم AI من غير خوف | C | يبني عقلية التعلّم التكراري بلا واجهة محددة. | حلقة جرّب → لاحظ → عدّل → كرّر. | `src/components/intro/lessons/intro-m1-l6-learn-without-fear.ts` | Diagram: دورة من أربع خطوات مع سهم نمو ثقة. | None |
+| 7 | `intro-m1-l7-choose-your-path` | اختار مسارك | C | يعلّم مطابقة المشكلة بمسار؛ خريطة المستويات مفاهيمية ولا تتطلب التقاط داشبورد مسارات. | Intro ثم User paths ثم Automator ثم Builder الاختياري. | `src/components/intro/lessons/intro-m1-l7-choose-your-path.ts` | Diagram: خريطة مستويات المسارات الخمسة مع مشكلة مختصرة لكل مسار. | None |
+| 8 | `business-m1-l1-from-decisions-to-leadership` | القرارات بقت بتنفّذ نفسها — دورك إيه؟ | C | انتقال مفاهيمي Operator → System builder → Leader. | طيف ثلاث مراحل لدور القائد مع AI. | `src/components/intro/lessons/business-m1-l1-from-decisions-to-leadership.ts` | Diagram: طيف Operator → System builder → Leader. | None |
+| 9 | `business-m1-l2-reactive-vs-proactive` | Reactive vs Proactive | C | مقارنة توزيع يوم Reactive مقابل Proactive. | خطان زمنيان: يوم رسائل طارئة vs يوم فيه بلوك تخطيط محمي. | `src/components/intro/lessons/business-m1-l2-reactive-vs-proactive.ts` | Diagram: يومان متوازيان يبرزان بلوك التخطيط. | None |
+| 10 | `business-m2-l1-customer-lifecycle` | دورة حياة العميل | C | مراحل رحلة العميل وتحديد التسريب — بنية قمع عامة. | Awareness→Consideration→Purchase→Retention→Advocacy مع نقاط تسرب. | `src/components/intro/lessons/business-m2-l1-customer-lifecycle.ts` | Diagram: قمع/مسار خمس محطات مع تمييز أضعف محطة. | None |
+| 11 | `business-m2-l2-build-your-offer` | ابني عرضك — التحويل مش المنتج | C | قالب صياغة عرض — لا صفحة منتج حقيقية. | سلسلة: مين→نتيجة→سياق→طريقة→اعتراض→مقلل مخاطرة. | `src/components/intro/lessons/business-m2-l2-build-your-offer.ts` | Diagram: قالب تعبئة لصيغة العرض. | None |
+| 12 | `business-m2-l2-retention-flow` | Retention Flow | C | تسلسل متابعة زمني من ثلاث لمسات. | يوم 3 / يوم 14 / يوم 30 بأهداف مختلفة. | `src/components/intro/lessons/business-m2-l2-retention-flow.ts` | Diagram: خط زمني بعد الشراء بثلاث نقاط اتصال. | None |
+| 13 | `business-m2-l3-readiness-signals` | علامات الجاهزية للتوسع | C | فحص جاهزية العملية قبل AI — قائمة مفاهيمية. | أربعة فحوص → جاهزة للـAI أو نظّم العملية أولًا. | `src/components/intro/lessons/business-m2-l3-readiness-signals.ts` | Diagram: checklist جاهزية بأربعة محاور ومخرجين. | None |
+| 14 | `business-m3-l1-delegate-or-automate` | Delegate ولا Automate؟ | C | مصفوفة قرار احتفظ/فوّض/أتمت. | مصفوفة تكرار × حكم بشري. | `src/components/intro/lessons/business-m3-l1-delegate-or-automate.ts` | Diagram: مصفوفة 2×2 للتفويض والأتمتة. | None |
+| 15 | `business-m3-l2-strategic-operational-admin` | Strategic / Operational / Admin | C | تصنيف أنواع العمل ودور AI في كل نوع. | ثلاثة أعمدة Strategic / Operational / Admin. | `src/components/intro/lessons/business-m3-l2-strategic-operational-admin.ts` | Diagram: ثلاثة أعمدة مع أمثلة ودور AI. | None |
+| 16 | `business-m3-l3-system-then-people` | System الأول — الناس بعدين | C | تسلسل شرح خام → SOP → اختبار → ناس. | تدفق System قبل People. | `src/components/intro/lessons/business-m3-l3-system-then-people.ts` | Diagram: أربع مراحل خطية System→People. | None |
+| 17 | `business-m4-l1-premature-scaling` | توسع قبل الأوان | C | خطر التوسع قبل جاهزية الأساس. | حافة توسع + فحوص عملية/كاش/جودة/طلب. | `src/components/intro/lessons/business-m4-l1-premature-scaling.ts` | Diagram: scaling cliff مع أربع نقاط فحص. | None |
+| 18 | `business-m4-l2-reactive-relapse` | الرجوع لـ Reactive Mode | C | دورة الرجوع لوضع الإطفاء وقاعدة الحماية. | حلقة محفز→إطفاء→تعب→تأجيل + قاطع قاعدة حماية. | `src/components/intro/lessons/business-m4-l2-reactive-relapse.ts` | Diagram: relapse cycle مع قاطع حماية. | None |
+| 19 | `business-m4-l3-weekly-rhythm` | الإيقاع الأسبوعي = ٤ مسارات | C | طقس مراجعة أسبوعية أرقام→أسئلة→قرار. | خط زمني لمراجعة ≈30 دقيقة بثلاث مراحل. | `src/components/intro/lessons/business-m4-l3-weekly-rhythm.ts` | Diagram: weekly review timeline. | None |
+| 20 | `business-m4-l4-full-ecosystem` | الـ ٥ مسارات في يومك | C | أدوار المسارات الخمسة كنظام تشغيل واحد — علاقة نظامية. | Business في المركز والمسارات الأخرى تغذّيه؛ Builder اختياري. | `src/components/intro/lessons/business-m4-l4-full-ecosystem.ts` | Diagram: ecosystem loop للمسارات الخمسة. | None |
+| 21 | `creator-m1-l1-why-content` | ليه المحتوى مش Posting؟ | C | فرق مفاهيمي بين النشر العشوائي ونظام محتوى. | جمهور→مشكلة→وعد→صيغة قابلة للتكرار. | `src/components/intro/lessons/creator-m1-l1-why-content.ts` | Diagram: نظام محتوى من أربعة عناصر مقابل عشوائية. | None |
+| 22 | `creator-m1-l2-attention-economy` | إيه هو اقتصاد الانتباه؟ | C | قرار التوقف/التخطي في ثوانٍ — يُرسم دون Feed حقيقي. | Scroll→Hook واضح→متابعة مقابل مقدمة مشتتة→تخطٍ. | `src/components/intro/lessons/creator-m1-l2-attention-economy.ts` | Diagram: تدفق انتباه ثنائي المسار. | None |
+| 23 | `creator-m2-l1-know-audience` | اعرف جمهورك فعلًا | C | بناء Persona وآلام/هدف — خريطة كافية. | Persona مركزية تتفرع لآلام وهدف ورسالة. | `src/components/intro/lessons/creator-m2-l1-know-audience.ts` | Diagram: audience-persona map. | None |
+| 24 | `creator-m2-l2-content-pillars` | اختار ٣ Pillars | C | ثلاثة أعمدة موضوعية لتنظيم الأفكار. | ٣ pillars مع أفكار متفرعة من كل عمود. | `src/components/intro/lessons/creator-m2-l2-content-pillars.ts` | Diagram: content-pillars. | None |
+| 25 | `creator-m3-l1-hook` | Hook: أول ٣ ثواني | C | نافذة 0–3 ثوانٍ وفرق افتتاحية ضعيفة/قوية — زمني مفاهيمي. | تايملاين أول ٣ ثوانٍ: وعد مباشر vs مقدمة طويلة. | `src/components/intro/lessons/creator-m3-l1-hook.ts` | Diagram: timeline 0–3s للمقارنة. | None |
+| 26 | `creator-m3-l2-script-structure` | بنية السكريبت الكاملة | C | تسلسل Hook→Value→Proof→CTA. | أربع مراحل السكريبت ووظيفة كل مرحلة. | `src/components/intro/lessons/creator-m3-l2-script-structure.ts` | Diagram: script structure timeline. | None |
+| 27 | `creator-m3-l3-cta` | CTA: ازاي تخلّي المتفرّج يتحرّك | C | مطابقة هدف المحتوى بـ CTA واحد. | شجرة هدف→CTA واحد (تعليق/حفظ/DM). | `src/components/intro/lessons/creator-m3-l3-cta.ts` | Diagram: decision tree للـ CTA. | None |
+| 28 | `creator-m4-l1-reality-check` | Reality Check | C | حلقة اختبار فكرة وقراءة إشارة وتعديل. | Iteration: انشر→اقرأ إشارة→عدّل واحد→أعد. | `src/components/intro/lessons/creator-m4-l1-reality-check.ts` | Diagram: reality-check iteration loop. | None |
+| 29 | `creator-m4-l2-mobile-shooting` | التصوير بالموبايل | C | أساسيات نور/صوت/كادر تُشرح برسم إعداد تصوير؛ صورة واقعية ليست ضرورية لفهم القواعد. | غرفة: ضوء أمامي، هاتف بمستوى العين، منطقة صوت هادئة. | `src/components/intro/lessons/creator-m4-l2-mobile-shooting.ts` | Diagram: مخطط إعداد تصوير موبايل (نور/هاتف/شخص/صوت). | None |
+| 30 | `creator-m4-l3-ai-writing` | AI كمساعد كتابة | C | Workflow Context→Draft→تحرير بشري — بلا أداة محددة. | ثلاث مراحل Prompt→Draft→Human edit. | `src/components/intro/lessons/creator-m4-l3-ai-writing.ts` | Diagram: AI writing workflow مع إبراز التعديل البشري. | None |
+| 31 | `creator-m5-l1-editing` | المونتاج — Cut, Caption, Pace | C | مبادئ Cut/Caption/Pace لا تتطلب UI محرر بعينه. | تايملاين قبل/بعد: حذف حشو وإيقاع أوضح. | `src/components/intro/lessons/creator-m5-l1-editing.ts` | Diagram: before/after editing timeline. | None |
+| 32 | `creator-m4-repurposing` | Repurposing — مضاعف المحتوى | C | تكييف أصل واحد لصيغ متعددة. | أصل مركزي→Reel/Post/Thread/Story ثم مراجعة. | `src/components/intro/lessons/creator-m4-repurposing.ts` | Diagram: repurposing hub-and-spokes. | None |
+| 33 | `creator-m5-l2-thumbnails-captions` | Thumbnails & Captions | C | وعد Thumbnail وHook أول سطر — نماذج مصممة تكفي. | قبل/بعد: نص مزدحم vs وعد مختصر واضح. | `src/components/intro/lessons/creator-m5-l2-thumbnails-captions.ts` | Diagram: thumbnail/caption before-after cards. | None |
+| 34 | `creator-m6-l1-platforms` | اختيار المنصات | C | قرار منصة رئيسية بالمقارنة — لا تشغيل واجهات المنصات. | مصفوفة جمهور/فورمات→منصة رئيسية→منصة صدى. | `src/components/intro/lessons/creator-m6-l1-platforms.ts` | Diagram: platforms-grid decision map. | None |
+| 35 | `creator-m6-l2-scheduling` | الجدولة والاستمرارية | C | إيقاع Batch وجدولة — تقويم مرسوم يكفي. | أسبوع: Slot تحضير + ٣ أيام نشر. | `src/components/intro/lessons/creator-m6-l2-scheduling.ts` | Diagram: scheduling-calendar. | None |
+| 36 | `creator-m6-l3-analytics` | قراءة Analytics بسيطة | C | ثلاث مؤشرات قرار — لا لوحة Insights حقيقية. | مثلث Watch Time / Save / Follow-Action مقابل Views فقط. | `src/components/intro/lessons/creator-m6-l3-analytics.ts` | Diagram: analytics-triangle. | None |
+| 37 | `creator-m6-l4-leads` | من Views لـ Leads | C | قمع Views→CTA→Lead مفاهيمي. | قمع أربع مراحل يقلّ العدد وترتفع الجودة. | `src/components/intro/lessons/creator-m6-l4-leads.ts` | Diagram: leads-funnel. | None |
+| 38 | `creator-m7-l1-brand-basics` | Brand Basics — Colors, Fonts, Logo | C | POV ووعد قبل الألوان/الخطوط — هرم مفاهيمي. | هرم: POV→Promise→Colors/Fonts/Logo. | `src/components/intro/lessons/creator-m7-l1-brand-basics.ts` | Diagram: brand basics hierarchy. | None |
+| 39 | `creator-m7-l2-grid-consistency` | Grid Consistency على الـ Profile | C | اتساق شبكة البروفايل يُوضَّح بشبكتين مصممتين 3×3. | جريد عشوائي vs جريد متسق لون/خط/غلاف. | `src/components/intro/lessons/creator-m7-l2-grid-consistency.ts` | Diagram: two 3×3 grids comparing consistency. | None |
+| 40 | `analyst-m1-l1-from-automation-to-insight` | بياناتك جاهزة — دلوقتي بتسأل | C | دورة قرار عامة من بيانات الأتمتة. | سؤال→إجابة→قرار→تنفيذ→مراجعة. | `src/components/intro/lessons/analyst-m1-l1-from-automation-to-insight.ts` | Diagram: decision-loop. | None |
+| 41 | `analyst-m2-l1-feeling-to-question` | حوّل الشعور لسؤال | C | تحويل شعور لسؤال قابل للقياس. | جدول شعور \| سؤال \| خط أساس \| إجراء. | `src/components/intro/lessons/analyst-m2-l1-feeling-to-question.ts` | Diagram: feeling-to-question-table. | None |
+| 42 | `analyst-m2-l2-right-question-rule` | السؤال الصح أهم من الإجابة | C | معايير تقييم جودة السؤال. | بطاقة: محدد/قابل للقياس/مرتبط بقرار/مقيّد بزمن. | `src/components/intro/lessons/analyst-m2-l2-right-question-rule.ts` | Diagram: question-scorecard. | None |
+| 43 | `analyst-m3-l1-three-sources` | المصادر الثلاثة | C | دمج سلوك+نتائج+كلام عملاء. | ثلاثة مصادر تتقاطع→قرار. | `src/components/intro/lessons/analyst-m3-l1-three-sources.ts` | Diagram: three-sources-merge. | None |
+| 44 | `analyst-m3-l2-ai-summarization` | AI = أسرع محلّل عندك | C | بنية تلخيص AI→ملاحظات→قرار بلا واجهة محددة. | بيانات+سؤال+سياق→٣ ملاحظات→قرار. | `src/components/intro/lessons/analyst-m3-l2-ai-summarization.ts` | Diagram: ai-summarization-flow. | None |
+| 45 | `analyst-m4-l1-pattern-vs-outlier` | Pattern أم Outlier؟ | C | تمييز نمط vs استثناء على سلسلة مبسطة. | خط باتجاه متكرر مقابل قفزة شاذة. | `src/components/intro/lessons/analyst-m4-l1-pattern-vs-outlier.ts` | Diagram: pattern-vs-outlier chart. | None |
+| 46 | `analyst-m4-l2-decision-rule` | كل تفسير ينتهي بـ «إذًا هعمل…» | C | سلسلة رقم→مقارنة→إجراء. | أربع مربعات قرار متصلة. | `src/components/intro/lessons/analyst-m4-l2-decision-rule.ts` | Diagram: decision-chain. | None |
+| 47 | `analyst-m5-l1-four-numbers-dashboard` | ٤ أرقام بس | C | تصميم ٤ KPI للقرار — لا أداة Dashboard معينة. | أربع بطاقات: الحالي/السابق/اتجاه/حد قرار. | `src/components/intro/lessons/analyst-m5-l1-four-numbers-dashboard.ts` | Diagram: four-kpi-dashboard layout. | None |
+| 48 | `analyst-m4-automated-dashboard` | رقم واحد يتحدّث لوحده | C | أتمتة رقم واحد كمخطط تدفق عام (حتى مع ذكر Sheets/n8n). | KPI واحد: مصدر→تحديث→تخزين→عرض/ملخص. | `src/components/intro/lessons/analyst-m4-automated-dashboard.ts` | Diagram: single-KPI automation flow. | None |
+| 49 | `analyst-m5-l2-weekly-review-ritual` | Review أسبوعي = ١٥ دقيقة | C | روتين ٣٠/١٥ دقيقة — خط زمني. | مراحل الريفيو بدقائق + قرار بمالك وموعد. | `src/components/intro/lessons/analyst-m5-l2-weekly-review-ritual.ts` | Diagram: weekly-review-timeline. | None |
+| 50 | `analyst-m6-l1-question-mistakes` | أخطاء الأسئلة | C | أخطاء صياغة السؤال وإعادة الصياغة. | جدول خطأ→نقص→صياغة مصححة لثلاثة أنماط. | `src/components/intro/lessons/analyst-m6-l1-question-mistakes.ts` | Diagram: question-rewrite table. | None |
+| 51 | `analyst-m5-ab-testing` | اختبار A/B بسيط | C | مبدأ متغير واحد ومقياس واحد. | A vs B مع متغير وحيد ومدة ومقياس. | `src/components/intro/lessons/analyst-m5-ab-testing.ts` | Diagram: A/B comparison with one variable. | None |
+| 52 | `analyst-m6-l2-interpretation-mistakes` | أخطاء التفسير | C | ارتباط ≠ سببية مع عامل ثالث. | متغيران مرتبطان + عامل ثالث محتمل. | `src/components/intro/lessons/analyst-m6-l2-interpretation-mistakes.ts` | Diagram: correlation-causation. | None |
+| 53 | `analyst-m7-l1-from-decisions-to-business` | قراراتك جاهزة → Business بيشغّلها | C | من قرار أسبوعي إلى backlog وتنفيذ. | قرار→مالك/موعد→تنفيذ→مراجعة هدف. | `src/components/intro/lessons/analyst-m7-l1-from-decisions-to-business.ts` | Diagram: decision-backlog flow. | None |
+| 54 | `automator-m1-l1-where-you-are` | أنت فين في الخريطة؟ | C | موضع Automator في الرحلة — خريطة مفاهيمية لا لقطة داشبورد. | ترابط Builder/Creator/Automator/Analyst. | `src/components/intro/lessons/automator-m1-l1-where-you-are.ts` | Diagram: journey map تبرز Automator. | None |
+| 55 | `automator-m2-l1-systems-view` | كل شغل = System | C | نموذج Trigger→Process→Output. | ثلاث طبقات نظام. | `src/components/intro/lessons/automator-m2-l1-systems-view.ts` | Diagram: IPO / trigger-process-output. | None |
+| 56 | `automator-m2-l2-spot-patterns` | شوف الأنماط في يومك | C | نمط «كلما X افعل Y». | بطاقات حدث متكرر→خطوات ثابتة→فرصة أتمتة. | `src/components/intro/lessons/automator-m2-l2-spot-patterns.ts` | Diagram: pattern cards X→Y. | None |
+| 57 | `automator-m2-l3-decide-what-to-automate` | قرّر إيه يتأتمت | C | مصفوفة سهولة×تكرار لاختيار أول أتمتة. | 2×2 مع ربع السهل/المتكرر مظلّل. | `src/components/intro/lessons/automator-m2-l3-decide-what-to-automate.ts` | Diagram: automate-priority matrix. | None |
+| 58 | `automator-m3-l1-tools-landscape` | Make vs n8n vs Zapier | C | مقارنة Zapier/Make/n8n مفاهيمية؛ الدرس يؤكد التفكير المشترك لا تشغيل واجهة. | مقارنة سهولة/تكلفة/تعقيد فوق طبقة Trigger→Steps→Output مشتركة. | `src/components/intro/lessons/automator-m3-l1-tools-landscape.ts` | Diagram: tools comparison + shared workflow layer. | None |
+| 59 | `automator-m3-l2-triggers-actions` | Triggers + Actions | C | تصميم Trigger وActions قبل فتح أداة. | Trigger→Action1→Action2→Success. | `src/components/intro/lessons/automator-m3-l2-triggers-actions.ts` | Diagram: linear trigger-actions chain. | None |
+| 60 | `automator-m3-l3-filters-routers` | Filters & Routers | C | منطق Filter vs Router عام. | بوابة تمرير/إيقاف مقابل مفترق مسارين. | `src/components/intro/lessons/automator-m3-l3-filters-routers.ts` | Diagram: filter vs router comparison. | None |
+| 61 | `automator-m4-l1-connect-database` | وصّل الـ DB من Builder | C | اختيار مكان حفظ وحقول — لا Supabase UI مطلوب. | Workflow يكتب/يقرأ سجل بحقول name/contact/status. | `src/components/intro/lessons/automator-m4-l1-connect-database.ts` | Diagram: workflow + mini table schema. | None |
+| 62 | `automator-m4-l2-webhooks-api` | Webhooks & APIs | C | مقارنة polling vs webhook مفاهيمية. | طلبات متكررة مقابل دفع حدث فوري مع payload. | `src/components/intro/lessons/automator-m4-l2-webhooks-api.ts` | Diagram: API polling vs webhook. | None |
+| 63 | `automator-m4-l3-error-handling` | Error Handling | C | Retry + log + alert كمخطط حماية. | فشل→3 retries→log+alert+owner. | `src/components/intro/lessons/automator-m4-l3-error-handling.ts` | Diagram: error-handling recovery path. | None |
+| 64 | `automator-m3-testing-automation` | اختبر قبل ما تطلع | C | سلم اختبار قبل live — checklist. | Unit→full flow→edges→مراجعة بشرية→live. | `src/components/intro/lessons/automator-m3-testing-automation.ts` | Diagram: testing gate ladder. | None |
+| 65 | `automator-m5-l1-llm-in-flow` | LLM جوه الـ Flow | C | موضع خطوة LLM داخل تدفق — لا node UI. | وارد→تصنيف AI→توجيه/مسودة. | `src/components/intro/lessons/automator-m5-l1-llm-in-flow.ts` | Diagram: LLM step inside automation flow. | None |
+| 66 | `automator-m5-l2-rag-in-n8n` | RAG جوه الـ Automation | C | الدرس ينص أن بناء n8n غير مطلوب؛ دورة RAG مفاهيمية. | سؤال→بحث معرفة→مقتطف→رد أو fallback. | `src/components/intro/lessons/automator-m5-l2-rag-in-n8n.ts` | Diagram: RAG reply path (tool-agnostic). | None |
+| 67 | `automator-m5-l3-agents` | Agents بياخدوا قرارات | C | Agent بحدود vs workflow ثابت — مفهوم. | Agent + هدف + أدوات قليلة + حدود + تصعيد بشري. | `src/components/intro/lessons/automator-m5-l3-agents.ts` | Diagram: bounded agent map. | None |
+| 68 | `automator-m6-l1-lead-capture` | استقبال Leads من Creator | C | مسار استقبال lead عام. | قناة→تخزين→ترحيب→تنبيه فريق. | `src/components/intro/lessons/automator-m6-l1-lead-capture.ts` | Diagram: lead-capture four stages. | None |
+| 69 | `automator-m6-l2-whatsapp-flow` | WhatsApp Flow ذكي | C | منطق موافقة/نية/handoff — لا WhatsApp Business UI مطلوب. | رسالة+consent→نية→رد أو تحويل بشري. | `src/components/intro/lessons/automator-m6-l2-whatsapp-flow.ts` | Diagram: WhatsApp flow with consent and handoff. | None |
+| 70 | `automator-m6-l3-follow-up` | المتابعة التلقائية + CRM | C | إيقاع متابعة زمني وشرط توقف. | يوم0/2/5 + شرط إيقاف عند رد/شراء/إلغاء. | `src/components/intro/lessons/automator-m6-l3-follow-up.ts` | Diagram: follow-up cadence timeline. | None |
+| 71 | `automator-m7-l1-closing-loop` | بياناتك جاهزة — اللي جاي | C | ربط رحلة الأتمتة ببيانات Analyst. | Lead→رد→متابعة→تحويل مع نقاط بيانات→Analyst. | `src/components/intro/lessons/automator-m7-l1-closing-loop.ts` | Diagram: closed-loop journey to Analyst. | None |
+| 72 | `builder-m1-l1-what-is-llm` | إيه هو الـ LLM؟ | C | تنبؤ لغوي وهلوسة — مفهوم بلا واجهة. | مدخلات→تنبؤ LLM→تحقق خارجي من الحقيقة. | `src/components/intro/lessons/builder-m1-l1-what-is-llm.ts` | Diagram: LLM prediction vs fact-check. | None |
+| 73 | `builder-m1-l2-tokens-training` | Tokens والتدريب | C | علاقة طول المدخل بـ tokens/تكلفة/سرعة. | Prompt قصير vs طويل مع عدّاد tokens. | `src/components/intro/lessons/builder-m1-l2-tokens-training.ts` | Diagram: tokens cost/speed comparison. | None |
+| 74 | `builder-m2-l1-prompt-layer` | تشريح الـ Prompt | A | الدرس يثبت أثر Prompt المفصّل بنتيجة صفحة منهج منظمة داخل مسارات (هيدر + تقدّم + مراحل). | صفحة خريطة منهج مسارات: هيدر واضح، شريط تقدّم، ومراحل/دروس مرقّمة بنفس الهيكل. | `src/components/intro/lessons/builder-m2-l1-prompt-layer.ts` | Masaarat: صفحة خريطة المنهج/المسار (curriculum path view) بحالة متعلّم فيها تقدّم ظاهر؛ التقط الهيدر وشريط التقدّم والمراحل المرقّمة معًا. | Account state: متعلّم بحساب فيه مسار مفتوح وتقدّم غير صفري ليظهر شريط التقدّم بصدق. |
+| 75 | `builder-m2-l2-instructions-examples` | Instructions vs Examples | A | يثبت Few-shot عبر كروت المسارات الخمسة المتطابقة على الصفحة الرئيسية لمسارات كدليل حي. | الصفحة الرئيسية/لوحة المسارات: خمس كروت مسارات بنفس التخطيط (أيقونة/عنوان/وصف) جنبًا إلى جنب. | `src/components/intro/lessons/builder-m2-l2-instructions-examples.ts` | Masaarat: /dashboard أو الصفحة الرئيسية التي تعرض كروت المسارات الخمسة؛ حالة مسارات مفتوحة؛ التقط الصف الكامل للكروت المتطابقة. | None |
+| 76 | `builder-m2-l3-style-control` | Style & Tone | C | Style/Tone/Voice Profile — مقارنة نصية مصممة. | نفس المعنى بصوت عام vs صوت منتج محدد. | `src/components/intro/lessons/builder-m2-l3-style-control.ts` | Diagram: style before/after voice profile. | None |
+| 77 | `builder-m3-l1-context-layer` | إيه السياق؟ | A | يُظهر أن المساعد داخل مسارات يعرف المسار/الدرس الحالي قبل السؤال؛ واجهة السياق داخل المنصة هي الدليل. | مساعد AI في مسارات: صندوق «سياقك الحالي» (مسار/درس) ظاهر فوق مربع كتابة السؤال. | `src/components/intro/lessons/builder-m3-l1-context-layer.ts` | Masaarat: واجهة المساعد/الشات داخل درس مفتوح؛ الحالة = متعلّم داخل مسار ودرس محددين بحيث يظهر سياق المسار والدرس فوق حقل الإدخال. | Account state: جلسة متعلّم داخل درس محدد؛ تأكد أن UI السياق مفعّل في البيئة المصوّرة. |
+| 78 | `builder-m3-l2-memory-limits` | حدود الذاكرة | C | Context window وState snapshot مفهوميان. | شريط سياق محدود + حقائق محفوظة تُعاد. | `src/components/intro/lessons/builder-m3-l2-memory-limits.ts` | Diagram: context window vs snapshot memory. | None |
+| 79 | `builder-m4-l1-parameters` | Parameters: Temperature + Top-p + Max tokens | C | Temperature/Top-p/Max tokens تُفهم بمقياس وأمثلة مخرجات؛ كروت المنهج استعارة فقط وليست واجهة لازمة. | مقياس Temperature منخفض/متوسط/مرتفع مع أمثلة مخرجات. | `src/components/intro/lessons/builder-m4-l1-parameters.ts` | Diagram: parameter dials + sample outputs. | None |
+| 80 | `builder-m5-l1-transition` | Transition — من اللغة للـ App | C | جسر من الشات إلى طبقات التطبيق. | Prompt/AI → Frontend + Backend + Database. | `src/components/intro/lessons/builder-m5-l1-transition.ts` | Diagram: transition bridge to three app layers. | None |
+| 81 | `builder-m5-l2-frontend` | واجهة التطبيق (Frontend) | B | ينص على فتح Inspect/F12 ورؤية HTML/CSS؛ التعرف على Chrome DevTools الفعلية مطلوب للفهم العملي. | Chrome DevTools مفتوح على Elements مع عنصر واجهة محدّد في صفحة تطبيق AI وStyles ظاهرة. | `src/components/intro/lessons/builder-m5-l2-frontend.ts` | External: متصفح Chrome على أي واجهة AI (مثل ChatGPT)؛ كليك يمين → Inspect؛ العنصر المحدّد + لوحة Elements/Styles ظاهران معًا. | Particular tool/page: Chrome (أو متصفح بدعم DevTools) + صفحة AI قابلة للفحص؛ قد تختلف الواجهة حسب الإصدار. |
+| 82 | `builder-m5-l3-backend-api` | كواليس التطبيق وساعي البريد | C | مسار طلب/استجابة API عام. | UI→API→Backend/AI→API→UI. | `src/components/intro/lessons/builder-m5-l3-backend-api.ts` | Diagram: request/response through API. | None |
+| 83 | `builder-m5-l4-database-intro` | المخزن الذكي (Database) | C | استعارة المخزن الدائم والجداول — لا Dashboard DB. | أجهزة متعددة ↔ جدول مركزي دائم. | `src/components/intro/lessons/builder-m5-l4-database-intro.ts` | Diagram: apps connected to central table. | None |
+| 84 | `builder-m5-l5-mini-win` | Mini-Win: شوف إنت فهمت إيه | C | تضييق MVP لصفحة+فعل+نتيجة. | قمع features→أصغر رحلة end-to-end. | `src/components/intro/lessons/builder-m5-l5-mini-win.ts` | Diagram: MVP scope funnel. | None |
+| 85 | `builder-m6-l1-idea-to-page` | من فكرة لصفحة | C | User Flow من ثلاث شاشات؛ صفحة curriculum مثال تشبيهي والرسم التدفقي يكفي. | بداية→خطوة وسطى→نتيجة مع أفعال المستخدم. | `src/components/intro/lessons/builder-m6-l1-idea-to-page.ts` | Diagram: three-screen user flow. | None |
+| 86 | `builder-m6-l2-wireframe` | Wireframe — ارسم قبل ما تبني | C | الرسم الكروكي هو موضوع الدرس. | Wireframe B/W: header وحقل وزر وكروت. | `src/components/intro/lessons/builder-m6-l2-wireframe.ts` | Diagram: low-fidelity wireframe layout. | None |
+| 87 | `builder-m6-l3-first-prompt-to-lovable` | أول Prompt لـ Lovable | B | يعرّف Lovable ويشرح علاقة Prompt Spec في الجانب الأيسر بـ Preview في الأيمن؛ واجهة Lovable الحقيقية ضرورية. | Lovable: Composer/محادثة فيها Prompt Spec مقروء + Preview لواجهة ناتجة على الجانب الآخر. | `src/components/intro/lessons/builder-m6-l3-first-prompt-to-lovable.ts` | External: lovable.dev — مشروع أو شاشة إنشاء تعرض لوحة الـ prompt ولوحة الـ preview معًا؛ Prompt يتضمن goal/users/pages/style/constraints. | Authenticated access + account state: حساب Lovable ومشروع/معاينة متاحة؛ الواجهة قد تتغير. |
+| 88 | `builder-m6-l4-components-routes` | Components & Routes | A | يثبت Components المتكررة عبر صفحة /curriculum في مسارات (ModuleCard و LessonRow داخل كروت المسارات). | صفحة curriculum: كرت مسار يحتوي ModuleCard ودروس LessonRow متكررة ببيانات مختلفة. | `src/components/intro/lessons/builder-m6-l4-components-routes.ts` | Masaarat: /curriculum أو عرض مسار يُظهر تداخل ModuleCard + LessonRow داخل كرتين مسار على الأقل (مثل Creator و Automator). | None |
+| 89 | `builder-m6-l5-iteration` | Iteration Loop | C | دورة تحسين بتعديل واحد — مفهوم بلا Lovable UI. | اطلب→راجع→عدّل واحد→أعد مع تجنب Regression. | `src/components/intro/lessons/builder-m6-l5-iteration.ts` | Diagram: iteration loop four stages. | None |
+| 90 | `builder-m6-l6-debugging` | لو الدنيا بازت — Debugging | C | Playbook تشخيص — لا Console حقيقية مطلوبة. | Symptom→عزل آخر تغيير→Bug report واضح. | `src/components/intro/lessons/builder-m6-l6-debugging.ts` | Diagram: debugging playbook steps. | None |
+| 91 | `builder-m7-l1-tables-columns` | Tables & Columns | A | يربط جداول السياق بصفحة /system-state داخل مسارات (currentUser / currentPath) كدليل أن الـ AI يقرأ جداول منظمة. | صفحة /system-state: كروت حالة المنصة مثل currentUser و currentPath ظاهرة كحقول جدول/حالة. | `src/components/intro/lessons/builder-m7-l1-tables-columns.ts` | Masaarat: صفحة /system-state (أو المكافئ التشغيلي الحالي) بحالة منصة حقيقية؛ التقط كروت/حقول currentUser و currentPath بوضوح. | Authenticated access + particular page: قد تكون /system-state داخلية/مقيدة بالبيئة؛ أكّد المسار الحي قبل التصوير. |
+| 92 | `builder-m7-l2-relations` | Relations بين الجداول | C | FK وOne-to-Many — ERD. | users.id → conversations.user_id. | `src/components/intro/lessons/builder-m7-l2-relations.ts` | Diagram: simple ERD one-to-many. | None |
+| 93 | `builder-m7-l3-queries` | Queries: ازاي بتجيب البيانات | A | يثبت أن كل رقم = Query منفصل عبر لوحة تقرير مسارات بأربعة كروت إحصائية للمنصة. | صفحة تقرير/لوحة: ٤ كروت (جداول DB، Edge Functions، دروس منشورة، نسبة تغطية) كأمثلة queries. | `src/components/intro/lessons/builder-m7-l3-queries.ts` | Masaarat: صفحة التقرير/الإحصاء الداخلية التي تعرض الكروت الأربعة المذكورة؛ التقط الأربعة في إطار واحد مع عناوين مقروءة. | Authenticated access + particular dashboard page: تأكيد مسار صفحة التقرير الحي وصلاحية الحساب. |
+| 94 | `builder-m8-l1-sessions-jwt` | كارت الدخول (Sessions & JWT) | C | دورة Login/Token مفهومية. | Login→Token→طلبات لاحقة→تحقق خادم. | `src/components/intro/lessons/builder-m8-l1-sessions-jwt.ts` | Diagram: session/JWT flow. | None |
+| 95 | `builder-m8-l2-rls` | الحارس الشخصي (RLS) | C | Policy فلترة الصفوف — رسم يكفي (النص يصف رسمًا). | جدول مشترك + درع Policy → كل مستخدم يرى صفوفه. | `src/components/intro/lessons/builder-m8-l2-rls.ts` | Diagram: RLS filter per user_id. | None |
+| 96 | `builder-m9-l1-rag` | AI يرد من ملفاتك (RAG) | C | دورة استرجاع من مستندات المستخدم. | سؤال→بحث→مقتطفات→إجابة من المصدر أو اعتذار. | `src/components/intro/lessons/builder-m9-l1-rag.ts` | Diagram: RAG four-stage path. | None |
+| 97 | `builder-m9-l2-embeddings` | إزاي الـ AI بيلاقي المعلومة | C | تقارب معنوي في فضاء vectors — رسم. | نقاط جمل متشابهة متجاورة رغم اختلاف الكلمات. | `src/components/intro/lessons/builder-m9-l2-embeddings.ts` | Diagram: embedding space near/far points. | None |
+| 98 | `builder-m9-l3-agents` | AI بياخد قرارات لوحده (Agents) | C | حلقة Think→Tool→Observe مع بوابة تأكيد. | Agent loop + أدوات + حد فعل حساس. | `src/components/intro/lessons/builder-m9-l3-agents.ts` | Diagram: agent loop with safety gate. | None |
+| 99 | `builder-m10-l1-deploy-domain` | Deploy و Domain | C | الفرق بين URL عام وأسرار البيئة مفهومي؛ سجل البناء داعِم وليس شرطًا تعليميًا لفهم Deploy/Domain. | localhost→server→public URL مع Secret Vault منفصل عن الكود. | `src/components/intro/lessons/builder-m10-l1-deploy-domain.ts` | Diagram: deploy path + environment secrets vault. | None |
+| 100 | `builder-m10-l2-first-users` | أول مستخدمين | A | يعلّم إظهار تقدّم المستخدم بأرقام تحرّك السلوك؛ داشبورد تقدّم المتعلّم في مسارات هو المثال الحي. | داشبورد متعلّم: كروت تقدّم مثل السلسلة/Streak ودروس مكتملة ومؤشر Introduction. | `src/components/intro/lessons/builder-m10-l2-first-users.ts` | Masaarat: داشبورد تقدّم المتعلّم بعد إكمال دروس Intro على الأقل؛ التقط كروت السلسلة والدروس المكتملة ومؤشر المسار معًا. | Account state: حساب متعلّم بتقدّم حقيقي (ليست أصفار) ليكون المثال صادقًا. |
+
+### C. Category totals
+
+| Category | Total |
+| --- | ---: |
+| A — Masaarat screenshot | 7 |
+| B — External screenshot or real image | 3 |
+| C — Diagram | 90 |
+| **All categories** | **100** |
+
+### D. Category A production queue
+
+74. `builder-m2-l1-prompt-layer` — **تشريح الـ Prompt**  
+   Required Masaarat capture: Masaarat: صفحة خريطة المنهج/المسار (curriculum path view) بحالة متعلّم فيها تقدّم ظاهر؛ التقط الهيدر وشريط التقدّم والمراحل المرقّمة معًا.
+75. `builder-m2-l2-instructions-examples` — **Instructions vs Examples**  
+   Required Masaarat capture: Masaarat: /dashboard أو الصفحة الرئيسية التي تعرض كروت المسارات الخمسة؛ حالة مسارات مفتوحة؛ التقط الصف الكامل للكروت المتطابقة.
+77. `builder-m3-l1-context-layer` — **إيه السياق؟**  
+   Required Masaarat capture: Masaarat: واجهة المساعد/الشات داخل درس مفتوح؛ الحالة = متعلّم داخل مسار ودرس محددين بحيث يظهر سياق المسار والدرس فوق حقل الإدخال.
+88. `builder-m6-l4-components-routes` — **Components & Routes**  
+   Required Masaarat capture: Masaarat: /curriculum أو عرض مسار يُظهر تداخل ModuleCard + LessonRow داخل كرتين مسار على الأقل (مثل Creator و Automator).
+91. `builder-m7-l1-tables-columns` — **Tables & Columns**  
+   Required Masaarat capture: Masaarat: صفحة /system-state (أو المكافئ التشغيلي الحالي) بحالة منصة حقيقية؛ التقط كروت/حقول currentUser و currentPath بوضوح.
+93. `builder-m7-l3-queries` — **Queries: ازاي بتجيب البيانات**  
+   Required Masaarat capture: Masaarat: صفحة التقرير/الإحصاء الداخلية التي تعرض الكروت الأربعة المذكورة؛ التقط الأربعة في إطار واحد مع عناوين مقروءة.
+100. `builder-m10-l2-first-users` — **أول مستخدمين**  
+   Required Masaarat capture: Masaarat: داشبورد تقدّم المتعلّم بعد إكمال دروس Intro على الأقل؛ التقط كروت السلسلة والدروس المكتملة ومؤشر المسار معًا.
+
+### E. Category B production queue
+
+3. `intro-m1-l3-setup-your-ai` — **افتح أول AI ليك في دقيقتين**  
+   Platform/subject + visible evidence: External: ChatGPT أو Gemini أو Claude — صفحة الشات بعد تسجيل الدخول؛ يظهر حقل الرسالة وزر الإرسال ومحادثة فارغة/تجريبية بلا بيانات شخصية.  
+   Access flags: Authenticated access + particular account state: حساب مجاني على الأداة المختارة؛ أخفِ أي محادثات شخصية.
+81. `builder-m5-l2-frontend` — **واجهة التطبيق (Frontend)**  
+   Platform/subject + visible evidence: External: متصفح Chrome على أي واجهة AI (مثل ChatGPT)؛ كليك يمين → Inspect؛ العنصر المحدّد + لوحة Elements/Styles ظاهران معًا.  
+   Access flags: Particular tool/page: Chrome (أو متصفح بدعم DevTools) + صفحة AI قابلة للفحص؛ قد تختلف الواجهة حسب الإصدار.
+87. `builder-m6-l3-first-prompt-to-lovable` — **أول Prompt لـ Lovable**  
+   Platform/subject + visible evidence: External: lovable.dev — مشروع أو شاشة إنشاء تعرض لوحة الـ prompt ولوحة الـ preview معًا؛ Prompt يتضمن goal/users/pages/style/constraints.  
+   Access flags: Authenticated access + account state: حساب Lovable ومشروع/معاينة متاحة؛ الواجهة قد تتغير.
+
+### F. Category C production queue
+
+1. `intro-m1-l1-what-is-ai` — **AI يعني إيه فعلًا؟**  
+   Diagram subject: Diagram: حلقة سؤال المستخدم → رد AI → تعديل، مع سهم رجوع.
+2. `intro-m1-l2-first-prompt` — **أول Prompt ليك**  
+   Diagram subject: Diagram: أربعة حقول Prompt مع مثال قصير داخل كل حقل.
+4. `intro-m1-l4-ai-can-cannot` — **الـ AI يقدر يعمل إيه ومينفعش يعمل إيه؟**  
+   Diagram subject: Diagram: مقارنة مهام لغوية آمنة مقابل حقائق/طب/قانون تحتاج تحققًا.
+5. `intro-m1-l5-ai-vs-software` — **AI مش زي البرامج العادية**  
+   Diagram subject: Diagram: مساران متوازيان يلتقيان في مثال Excel+AI.
+6. `intro-m1-l6-learn-without-fear` — **اتعلم AI من غير خوف**  
+   Diagram subject: Diagram: دورة من أربع خطوات مع سهم نمو ثقة.
+7. `intro-m1-l7-choose-your-path` — **اختار مسارك**  
+   Diagram subject: Diagram: خريطة مستويات المسارات الخمسة مع مشكلة مختصرة لكل مسار.
+8. `business-m1-l1-from-decisions-to-leadership` — **القرارات بقت بتنفّذ نفسها — دورك إيه؟**  
+   Diagram subject: Diagram: طيف Operator → System builder → Leader.
+9. `business-m1-l2-reactive-vs-proactive` — **Reactive vs Proactive**  
+   Diagram subject: Diagram: يومان متوازيان يبرزان بلوك التخطيط.
+10. `business-m2-l1-customer-lifecycle` — **دورة حياة العميل**  
+   Diagram subject: Diagram: قمع/مسار خمس محطات مع تمييز أضعف محطة.
+11. `business-m2-l2-build-your-offer` — **ابني عرضك — التحويل مش المنتج**  
+   Diagram subject: Diagram: قالب تعبئة لصيغة العرض.
+12. `business-m2-l2-retention-flow` — **Retention Flow**  
+   Diagram subject: Diagram: خط زمني بعد الشراء بثلاث نقاط اتصال.
+13. `business-m2-l3-readiness-signals` — **علامات الجاهزية للتوسع**  
+   Diagram subject: Diagram: checklist جاهزية بأربعة محاور ومخرجين.
+14. `business-m3-l1-delegate-or-automate` — **Delegate ولا Automate؟**  
+   Diagram subject: Diagram: مصفوفة 2×2 للتفويض والأتمتة.
+15. `business-m3-l2-strategic-operational-admin` — **Strategic / Operational / Admin**  
+   Diagram subject: Diagram: ثلاثة أعمدة مع أمثلة ودور AI.
+16. `business-m3-l3-system-then-people` — **System الأول — الناس بعدين**  
+   Diagram subject: Diagram: أربع مراحل خطية System→People.
+17. `business-m4-l1-premature-scaling` — **توسع قبل الأوان**  
+   Diagram subject: Diagram: scaling cliff مع أربع نقاط فحص.
+18. `business-m4-l2-reactive-relapse` — **الرجوع لـ Reactive Mode**  
+   Diagram subject: Diagram: relapse cycle مع قاطع حماية.
+19. `business-m4-l3-weekly-rhythm` — **الإيقاع الأسبوعي = ٤ مسارات**  
+   Diagram subject: Diagram: weekly review timeline.
+20. `business-m4-l4-full-ecosystem` — **الـ ٥ مسارات في يومك**  
+   Diagram subject: Diagram: ecosystem loop للمسارات الخمسة.
+21. `creator-m1-l1-why-content` — **ليه المحتوى مش Posting؟**  
+   Diagram subject: Diagram: نظام محتوى من أربعة عناصر مقابل عشوائية.
+22. `creator-m1-l2-attention-economy` — **إيه هو اقتصاد الانتباه؟**  
+   Diagram subject: Diagram: تدفق انتباه ثنائي المسار.
+23. `creator-m2-l1-know-audience` — **اعرف جمهورك فعلًا**  
+   Diagram subject: Diagram: audience-persona map.
+24. `creator-m2-l2-content-pillars` — **اختار ٣ Pillars**  
+   Diagram subject: Diagram: content-pillars.
+25. `creator-m3-l1-hook` — **Hook: أول ٣ ثواني**  
+   Diagram subject: Diagram: timeline 0–3s للمقارنة.
+26. `creator-m3-l2-script-structure` — **بنية السكريبت الكاملة**  
+   Diagram subject: Diagram: script structure timeline.
+27. `creator-m3-l3-cta` — **CTA: ازاي تخلّي المتفرّج يتحرّك**  
+   Diagram subject: Diagram: decision tree للـ CTA.
+28. `creator-m4-l1-reality-check` — **Reality Check**  
+   Diagram subject: Diagram: reality-check iteration loop.
+29. `creator-m4-l2-mobile-shooting` — **التصوير بالموبايل**  
+   Diagram subject: Diagram: مخطط إعداد تصوير موبايل (نور/هاتف/شخص/صوت).
+30. `creator-m4-l3-ai-writing` — **AI كمساعد كتابة**  
+   Diagram subject: Diagram: AI writing workflow مع إبراز التعديل البشري.
+31. `creator-m5-l1-editing` — **المونتاج — Cut, Caption, Pace**  
+   Diagram subject: Diagram: before/after editing timeline.
+32. `creator-m4-repurposing` — **Repurposing — مضاعف المحتوى**  
+   Diagram subject: Diagram: repurposing hub-and-spokes.
+33. `creator-m5-l2-thumbnails-captions` — **Thumbnails & Captions**  
+   Diagram subject: Diagram: thumbnail/caption before-after cards.
+34. `creator-m6-l1-platforms` — **اختيار المنصات**  
+   Diagram subject: Diagram: platforms-grid decision map.
+35. `creator-m6-l2-scheduling` — **الجدولة والاستمرارية**  
+   Diagram subject: Diagram: scheduling-calendar.
+36. `creator-m6-l3-analytics` — **قراءة Analytics بسيطة**  
+   Diagram subject: Diagram: analytics-triangle.
+37. `creator-m6-l4-leads` — **من Views لـ Leads**  
+   Diagram subject: Diagram: leads-funnel.
+38. `creator-m7-l1-brand-basics` — **Brand Basics — Colors, Fonts, Logo**  
+   Diagram subject: Diagram: brand basics hierarchy.
+39. `creator-m7-l2-grid-consistency` — **Grid Consistency على الـ Profile**  
+   Diagram subject: Diagram: two 3×3 grids comparing consistency.
+40. `analyst-m1-l1-from-automation-to-insight` — **بياناتك جاهزة — دلوقتي بتسأل**  
+   Diagram subject: Diagram: decision-loop.
+41. `analyst-m2-l1-feeling-to-question` — **حوّل الشعور لسؤال**  
+   Diagram subject: Diagram: feeling-to-question-table.
+42. `analyst-m2-l2-right-question-rule` — **السؤال الصح أهم من الإجابة**  
+   Diagram subject: Diagram: question-scorecard.
+43. `analyst-m3-l1-three-sources` — **المصادر الثلاثة**  
+   Diagram subject: Diagram: three-sources-merge.
+44. `analyst-m3-l2-ai-summarization` — **AI = أسرع محلّل عندك**  
+   Diagram subject: Diagram: ai-summarization-flow.
+45. `analyst-m4-l1-pattern-vs-outlier` — **Pattern أم Outlier؟**  
+   Diagram subject: Diagram: pattern-vs-outlier chart.
+46. `analyst-m4-l2-decision-rule` — **كل تفسير ينتهي بـ «إذًا هعمل…»**  
+   Diagram subject: Diagram: decision-chain.
+47. `analyst-m5-l1-four-numbers-dashboard` — **٤ أرقام بس**  
+   Diagram subject: Diagram: four-kpi-dashboard layout.
+48. `analyst-m4-automated-dashboard` — **رقم واحد يتحدّث لوحده**  
+   Diagram subject: Diagram: single-KPI automation flow.
+49. `analyst-m5-l2-weekly-review-ritual` — **Review أسبوعي = ١٥ دقيقة**  
+   Diagram subject: Diagram: weekly-review-timeline.
+50. `analyst-m6-l1-question-mistakes` — **أخطاء الأسئلة**  
+   Diagram subject: Diagram: question-rewrite table.
+51. `analyst-m5-ab-testing` — **اختبار A/B بسيط**  
+   Diagram subject: Diagram: A/B comparison with one variable.
+52. `analyst-m6-l2-interpretation-mistakes` — **أخطاء التفسير**  
+   Diagram subject: Diagram: correlation-causation.
+53. `analyst-m7-l1-from-decisions-to-business` — **قراراتك جاهزة → Business بيشغّلها**  
+   Diagram subject: Diagram: decision-backlog flow.
+54. `automator-m1-l1-where-you-are` — **أنت فين في الخريطة؟**  
+   Diagram subject: Diagram: journey map تبرز Automator.
+55. `automator-m2-l1-systems-view` — **كل شغل = System**  
+   Diagram subject: Diagram: IPO / trigger-process-output.
+56. `automator-m2-l2-spot-patterns` — **شوف الأنماط في يومك**  
+   Diagram subject: Diagram: pattern cards X→Y.
+57. `automator-m2-l3-decide-what-to-automate` — **قرّر إيه يتأتمت**  
+   Diagram subject: Diagram: automate-priority matrix.
+58. `automator-m3-l1-tools-landscape` — **Make vs n8n vs Zapier**  
+   Diagram subject: Diagram: tools comparison + shared workflow layer.
+59. `automator-m3-l2-triggers-actions` — **Triggers + Actions**  
+   Diagram subject: Diagram: linear trigger-actions chain.
+60. `automator-m3-l3-filters-routers` — **Filters & Routers**  
+   Diagram subject: Diagram: filter vs router comparison.
+61. `automator-m4-l1-connect-database` — **وصّل الـ DB من Builder**  
+   Diagram subject: Diagram: workflow + mini table schema.
+62. `automator-m4-l2-webhooks-api` — **Webhooks & APIs**  
+   Diagram subject: Diagram: API polling vs webhook.
+63. `automator-m4-l3-error-handling` — **Error Handling**  
+   Diagram subject: Diagram: error-handling recovery path.
+64. `automator-m3-testing-automation` — **اختبر قبل ما تطلع**  
+   Diagram subject: Diagram: testing gate ladder.
+65. `automator-m5-l1-llm-in-flow` — **LLM جوه الـ Flow**  
+   Diagram subject: Diagram: LLM step inside automation flow.
+66. `automator-m5-l2-rag-in-n8n` — **RAG جوه الـ Automation**  
+   Diagram subject: Diagram: RAG reply path (tool-agnostic).
+67. `automator-m5-l3-agents` — **Agents بياخدوا قرارات**  
+   Diagram subject: Diagram: bounded agent map.
+68. `automator-m6-l1-lead-capture` — **استقبال Leads من Creator**  
+   Diagram subject: Diagram: lead-capture four stages.
+69. `automator-m6-l2-whatsapp-flow` — **WhatsApp Flow ذكي**  
+   Diagram subject: Diagram: WhatsApp flow with consent and handoff.
+70. `automator-m6-l3-follow-up` — **المتابعة التلقائية + CRM**  
+   Diagram subject: Diagram: follow-up cadence timeline.
+71. `automator-m7-l1-closing-loop` — **بياناتك جاهزة — اللي جاي**  
+   Diagram subject: Diagram: closed-loop journey to Analyst.
+72. `builder-m1-l1-what-is-llm` — **إيه هو الـ LLM؟**  
+   Diagram subject: Diagram: LLM prediction vs fact-check.
+73. `builder-m1-l2-tokens-training` — **Tokens والتدريب**  
+   Diagram subject: Diagram: tokens cost/speed comparison.
+76. `builder-m2-l3-style-control` — **Style & Tone**  
+   Diagram subject: Diagram: style before/after voice profile.
+78. `builder-m3-l2-memory-limits` — **حدود الذاكرة**  
+   Diagram subject: Diagram: context window vs snapshot memory.
+79. `builder-m4-l1-parameters` — **Parameters: Temperature + Top-p + Max tokens**  
+   Diagram subject: Diagram: parameter dials + sample outputs.
+80. `builder-m5-l1-transition` — **Transition — من اللغة للـ App**  
+   Diagram subject: Diagram: transition bridge to three app layers.
+82. `builder-m5-l3-backend-api` — **كواليس التطبيق وساعي البريد**  
+   Diagram subject: Diagram: request/response through API.
+83. `builder-m5-l4-database-intro` — **المخزن الذكي (Database)**  
+   Diagram subject: Diagram: apps connected to central table.
+84. `builder-m5-l5-mini-win` — **Mini-Win: شوف إنت فهمت إيه**  
+   Diagram subject: Diagram: MVP scope funnel.
+85. `builder-m6-l1-idea-to-page` — **من فكرة لصفحة**  
+   Diagram subject: Diagram: three-screen user flow.
+86. `builder-m6-l2-wireframe` — **Wireframe — ارسم قبل ما تبني**  
+   Diagram subject: Diagram: low-fidelity wireframe layout.
+89. `builder-m6-l5-iteration` — **Iteration Loop**  
+   Diagram subject: Diagram: iteration loop four stages.
+90. `builder-m6-l6-debugging` — **لو الدنيا بازت — Debugging**  
+   Diagram subject: Diagram: debugging playbook steps.
+92. `builder-m7-l2-relations` — **Relations بين الجداول**  
+   Diagram subject: Diagram: simple ERD one-to-many.
+94. `builder-m8-l1-sessions-jwt` — **كارت الدخول (Sessions & JWT)**  
+   Diagram subject: Diagram: session/JWT flow.
+95. `builder-m8-l2-rls` — **الحارس الشخصي (RLS)**  
+   Diagram subject: Diagram: RLS filter per user_id.
+96. `builder-m9-l1-rag` — **AI يرد من ملفاتك (RAG)**  
+   Diagram subject: Diagram: RAG four-stage path.
+97. `builder-m9-l2-embeddings` — **إزاي الـ AI بيلاقي المعلومة**  
+   Diagram subject: Diagram: embedding space near/far points.
+98. `builder-m9-l3-agents` — **AI بياخد قرارات لوحده (Agents)**  
+   Diagram subject: Diagram: agent loop with safety gate.
+99. `builder-m10-l1-deploy-domain` — **Deploy و Domain**  
+   Diagram subject: Diagram: deploy path + environment secrets vault.
+
+### G. Unresolved items
+
+Classification remains **confident** for every item below; blockers are production-access constraints, not category doubt.
+
+- `intro-m1-l3-setup-your-ai` (Category B): Authenticated access + particular account state: حساب مجاني على الأداة المختارة؛ أخفِ أي محادثات شخصية. — Resolve with: حساب/أداة/حالة الحساب المطلوبة للالتقاط الخارجي. Classification confident: **yes**.
+- `builder-m2-l1-prompt-layer` (Category A): Account state: متعلّم بحساب فيه مسار مفتوح وتقدّم غير صفري ليظهر شريط التقدّم بصدق. — Resolve with: وصول متعلّم مصرّح + تأكيد المسار/الحالة الحية داخل مسارات. Classification confident: **yes**.
+- `builder-m3-l1-context-layer` (Category A): Account state: جلسة متعلّم داخل درس محدد؛ تأكد أن UI السياق مفعّل في البيئة المصوّرة. — Resolve with: وصول متعلّم مصرّح + تأكيد المسار/الحالة الحية داخل مسارات. Classification confident: **yes**.
+- `builder-m5-l2-frontend` (Category B): Particular tool/page: Chrome (أو متصفح بدعم DevTools) + صفحة AI قابلة للفحص؛ قد تختلف الواجهة حسب الإصدار. — Resolve with: حساب/أداة/حالة الحساب المطلوبة للالتقاط الخارجي. Classification confident: **yes**.
+- `builder-m6-l3-first-prompt-to-lovable` (Category B): Authenticated access + account state: حساب Lovable ومشروع/معاينة متاحة؛ الواجهة قد تتغير. — Resolve with: حساب/أداة/حالة الحساب المطلوبة للالتقاط الخارجي. Classification confident: **yes**.
+- `builder-m7-l1-tables-columns` (Category A): Authenticated access + particular page: قد تكون /system-state داخلية/مقيدة بالبيئة؛ أكّد المسار الحي قبل التصوير. — Resolve with: وصول متعلّم مصرّح + تأكيد المسار/الحالة الحية داخل مسارات. Classification confident: **yes**.
+- `builder-m7-l3-queries` (Category A): Authenticated access + particular dashboard page: تأكيد مسار صفحة التقرير الحي وصلاحية الحساب. — Resolve with: وصول متعلّم مصرّح + تأكيد المسار/الحالة الحية داخل مسارات. Classification confident: **yes**.
+- `builder-m10-l2-first-users` (Category A): Account state: حساب متعلّم بتقدّم حقيقي (ليست أصفار) ليكون المثال صادقًا. — Resolve with: وصول متعلّم مصرّح + تأكيد المسار/الحالة الحية داخل مسارات. Classification confident: **yes**.
+
+### H. Recommended first production candidates
+
+#### Category A candidate
+
+- Curriculum position: **91**
+- Lesson ID: `builder-m7-l1-tables-columns`
+- Title: Tables & Columns
+- Category: **A**
+- Why representative: Clearest Masaarat-native proof: the lesson explicitly teaches structured context tables by pointing at the live `/system-state` page fields (`currentUser`, `currentPath`). Validates authentic in-platform capture, not a decorative dashboard shot.
+- Exact visual to produce later: صفحة /system-state: كروت حالة المنصة مثل currentUser و currentPath ظاهرة كحقول جدول/حالة.
+- Production spec: Masaarat: صفحة /system-state (أو المكافئ التشغيلي الحالي) بحالة منصة حقيقية؛ التقط كروت/حقول currentUser و currentPath بوضوح.
+
+#### Category B candidate
+
+- Curriculum position: **87**
+- Lesson ID: `builder-m6-l3-first-prompt-to-lovable`
+- Title: أول Prompt لـ Lovable
+- Category: **B**
+- Why representative: Clearest external-tool dependency: the lesson’s core visual is Lovable’s prompt↔preview split. Validates licensed/authenticated external capture workflow without confusing it with Masaarat UI.
+- Exact visual to produce later: Lovable: Composer/محادثة فيها Prompt Spec مقروء + Preview لواجهة ناتجة على الجانب الآخر.
+- Production spec: External: lovable.dev — مشروع أو شاشة إنشاء تعرض لوحة الـ prompt ولوحة الـ preview معًا؛ Prompt يتضمن goal/users/pages/style/constraints.
+
+#### Category C candidate
+
+- Curriculum position: **10**
+- Lesson ID: `business-m2-l1-customer-lifecycle`
+- Title: دورة حياة العميل
+- Category: **C**
+- Why representative: Clearest pure diagram need: a five-stage customer journey with leak points. No platform UI is required; validates Arabic-first conceptual diagram production against a concrete funnel subject.
+- Exact visual to produce later: Awareness→Consideration→Purchase→Retention→Advocacy مع نقاط تسرب.
+- Production spec: Diagram: قمع/مسار خمس محطات مع تمييز أضعف محطة.
+
+### I. Final validation
+
+| Check | Result |
+| --- | --- |
+| Exactly 100 table rows | PASS |
+| Exactly 100 unique active lesson IDs | PASS |
+| No duplicate lesson IDs | PASS |
+| Every lesson has exactly one category A/B/C | PASS |
+| A+B+C totals equal 100 | 7+3+90=100 PASS |
+| Three queues jointly equal the same 100 lessons | PASS |
+| No queue duplicates or omissions | PASS |
+| Every decision cites ≥1 authoritative lesson-content path | PASS |
+| No legacy-image or rejected-visual evidence used | PASS (judgments from current `.ts` lesson packages + `curriculum-data.ts` order only; asset imports ignored as production artifacts) |
+
+---
+
+Report location (outside Git): `E:/Masaarat/Worktrees/_external-audits/ar-eg-100-media-map/ar-eg-media-map.md`

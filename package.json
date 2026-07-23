@@ -45,7 +45,14 @@
     "lesson-visuals:repin": "bun run src/lib/lesson-visuals/v1/scripts/repin_source_sha.ts",
     "lesson-visuals:repin:check": "bun run src/lib/lesson-visuals/v1/scripts/repin_source_sha.ts --check",
     "lesson-visuals:pilot:write": "bun run src/lib/lesson-visuals/v1/scripts/pilot_manifest.ts --write",
-    "lesson-visuals:pilot:check": "bun run src/lib/lesson-visuals/v1/scripts/pilot_manifest.ts --check"
+    "lesson-visuals:pilot:check": "bun run src/lib/lesson-visuals/v1/scripts/pilot_manifest.ts --check",
+    "controlled-visuals:build": "bun run src/lib/lesson-visuals/controlled-v1/scripts/build_all.ts",
+    "controlled-visuals:preflight": "bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts preflight",
+    "controlled-visuals:pilot": "bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts pilot",
+    "controlled-visuals:failed-only": "bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts failed-only",
+    "controlled-visuals:report-only": "bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts report-only",
+    "controlled-visuals:test": "bun run test:run -- tests/lesson-visuals/controlled-v1",
+    "controlled-visuals:verify-golden": "bun run src/lib/lesson-visuals/controlled-v1/scripts/verify_golden.ts"
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.25.5",

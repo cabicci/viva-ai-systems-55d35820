@@ -1,0 +1,155 @@
+# Controlled-v1 400-visual pipeline (Agent-1 Control Room controlled pipeline).
+#
+# This is a NEW, separate pipeline from lesson-driven-400-visual-pipeline.yml
+# (legacy v1). It never reads/writes docs/lesson-visuals/v1/ledgers/method_decision_ledger.json
+# and never reuses rejected candidate outputs.
+#
+# workflow_dispatch ONLY. No Lovable-only dispatch gate — this workflow is the
+# Agent-1 Control Room controlled pipeline itself, invoked directly.
+#
+# Modes:
+#   preflight    — validate classification/manifest/golden refs; no generation.
+#   pilot        — 12-cell pilot matrix (see docs/lesson-visuals/controlled-v1/PILOT_MANIFEST.json).
+#   failed-only  — reprocess only cells whose latest known receipt is FAILED.
+#   full-400     — all 400 cells. Requires confirm_full_400 === "RUN_AUTHORIZED_400" exactly.
+#   report-only  — read latest receipts + verify golden refs; no generation.
+#
+# No Docker. No paid generation (INSTRUCTIONAL_COMPOSITION cells are rendered
+# by a pure-TS deterministic PNG encoder; MASAARAT_SCREENSHOT and
+# AUTHORIZED_EXTERNAL_SCREENSHOT cells fail closed to BLOCKED_UNRESOLVED_SPEC
+# until real capture/rights evidence exists).
+
+name: controlled-400-visual-pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Pipeline mode
+        required: true
+        type: choice
+        options:
+          - preflight
+          - pilot
+          - failed-only
+          - full-400
+          - report-only
+        default: preflight
+      confirm_full_400:
+        description: Required ONLY for mode=full-400 — must equal RUN_AUTHORIZED_400 exactly
+        required: false
+        type: string
+        default: ""
+      checkout_sha:
+        description: Optional explicit commit SHA to check out (defaults to the ref that triggered dispatch)
+        required: false
+        type: string
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: controlled-400-visual-pipeline-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  run:
+    name: controlled-v1 (${{ inputs.mode }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Guard full-400 confirmation before checkout
+        if: inputs.mode == 'full-400'
+        run: |
+          if [ "${{ inputs.confirm_full_400 }}" != "RUN_AUTHORIZED_400" ]; then
+            echo "::error::mode=full-400 requires confirm_full_400 to equal RUN_AUTHORIZED_400 exactly. Received: '${{ inputs.confirm_full_400 }}'"
+            exit 1
+          fi
+
+      - name: Checkout (branch SHA)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.checkout_sha != '' && inputs.checkout_sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Record checked-out SHA
+        run: |
+          echo "Checked out: $(git rev-parse HEAD)"
+          if [ -n "${{ inputs.checkout_sha }}" ] && [ "$(git rev-parse HEAD)" != "${{ inputs.checkout_sha }}" ]; then
+            echo "::error::checked-out HEAD does not match requested checkout_sha"
+            exit 1
+          fi
+
+      - name: Install Chromium for composition render
+        if: inputs.mode == 'pilot' || inputs.mode == 'failed-only' || inputs.mode == 'full-400'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser || sudo apt-get install -y chromium
+          if command -v chromium-browser >/dev/null; then
+            echo "CHROME_PATH=$(command -v chromium-browser)" >> "$GITHUB_ENV"
+          elif command -v chromium >/dev/null; then
+            echo "CHROME_PATH=$(command -v chromium)" >> "$GITHUB_ENV"
+          elif command -v google-chrome >/dev/null; then
+            echo "CHROME_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            echo "::error::No Chromium/Chrome binary found after install"
+            exit 1
+          fi
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Verify golden references BEFORE run
+        run: bun run controlled-visuals:verify-golden
+
+      - name: Run controlled-v1 unit tests
+        run: bun run controlled-visuals:test
+
+      - name: Build manifests (classification + 400-cell manifest + golden verification)
+        if: inputs.mode == 'preflight' || inputs.mode == 'pilot' || inputs.mode == 'full-400'
+        run: bun run controlled-visuals:build
+
+      - name: Run preflight
+        if: inputs.mode == 'preflight'
+        run: bun run controlled-visuals:preflight
+
+      - name: Run pilot
+        if: inputs.mode == 'pilot'
+        run: bun run controlled-visuals:pilot
+
+      - name: Run failed-only
+        if: inputs.mode == 'failed-only'
+        run: bun run controlled-visuals:failed-only
+
+      - name: Run full-400 (requires exact confirm token)
+        if: inputs.mode == 'full-400'
+        run: bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts full-400 --confirm_full_400="${{ inputs.confirm_full_400 }}"
+
+      - name: Run report-only
+        if: inputs.mode == 'report-only'
+        run: bun run controlled-visuals:report-only
+
+      - name: Verify golden references AFTER run (must be byte-identical to BEFORE)
+        run: bun run controlled-visuals:verify-golden
+
+      - name: Upload artifacts (receipts, reports, contact sheets, cells)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: controlled-v1-${{ inputs.mode }}-${{ github.run_id }}
+          path: |
+            artifacts/controlled-v1/receipts/**
+            artifacts/controlled-v1/reports/**
+            artifacts/controlled-v1/contact-sheets/**
+            artifacts/controlled-v1/provenance/**
+            docs/lesson-visuals/controlled-v1/PRODUCTION_MANIFEST.json
+            docs/lesson-visuals/controlled-v1/PILOT_MANIFEST.json
+            docs/lesson-visuals/controlled-v1/UNRESOLVED_LEDGER.json
+          if-no-files-found: warn
+          retention-days: 30

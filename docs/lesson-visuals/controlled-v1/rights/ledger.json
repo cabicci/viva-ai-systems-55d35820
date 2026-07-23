@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "controlled-v1-rights-ledger/1",
+  "status": "EMPTY_NO_GRANTS",
+  "statement": "No cell has Control-Room-approved explicit external rights for production AUTHORIZED_EXTERNAL_SCREENSHOT capture yet. The Category B methodology sample under docs/lesson-visuals/controlled-v1/golden/methodology-b-builder-m6-l3.png (and the pilot-methodology evidence it was copied from) is a quality/format reference only — it does NOT constitute a production rights grant for capturing lovable.dev or any other third-party surface.",
+  "consequence": "Every AUTHORIZED_EXTERNAL_SCREENSHOT cell in PRODUCTION_MANIFEST.json and PILOT_MANIFEST.json routes through src/lib/lesson-visuals/controlled-v1/routes/authorizedExternal.ts, which fails closed to status BLOCKED_UNRESOLVED_SPEC whenever no per-cell (or per-lesson) rights evidence file exists under this rights/ directory.",
+  "grants": [],
+  "howToGrantRights": "To unblock a specific cell, a Control-Room-approved rights evidence file must be added at docs/lesson-visuals/controlled-v1/rights/{lessonId}__{locale}.rights.json (or docs/lesson-visuals/controlled-v1/rights/{lessonId}.rights.json to cover all locales) matching the schema documented in src/lib/lesson-visuals/controlled-v1/routes/authorizedExternal.ts. No such file currently exists for any lesson.",
+  "affectedLessonIds": [
+    "intro-m1-l3-setup-your-ai",
+    "builder-m5-l2-frontend",
+    "builder-m6-l3-first-prompt-to-lovable"
+  ],
+  "lastUpdated": "2026-07-23T15:36:42.000Z"
+}

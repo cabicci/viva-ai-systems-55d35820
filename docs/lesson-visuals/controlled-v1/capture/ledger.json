@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "controlled-v1-capture-ledger/1",
+  "status": "EMPTY_NO_AUTHORIZED_SESSION",
+  "statement": "No non-Production Masaarat capture session has been authorized for controlled-v1. MASAARAT_SCREENSHOT cells require a real, authenticated, non-Production Masaarat learner/admin session (e.g. a staging or seeded QA account) explicitly authorized by Control Room for screenshot capture; none currently exists.",
+  "consequence": "Every MASAARAT_SCREENSHOT cell in PRODUCTION_MANIFEST.json and PILOT_MANIFEST.json routes through src/lib/lesson-visuals/controlled-v1/routes/masaaratScreenshot.ts, which fails closed to status BLOCKED_UNRESOLVED_SPEC whenever no capture session config file exists under this capture/ directory.",
+  "authorizedSessions": [],
+  "howToAuthorizeCapture": "To unblock a specific cell, a Control-Room-approved capture config file must be added at docs/lesson-visuals/controlled-v1/capture/{lessonId}__{locale}.capture.json (or docs/lesson-visuals/controlled-v1/capture/{lessonId}.capture.json to cover all locales) matching the schema documented in src/lib/lesson-visuals/controlled-v1/routes/masaaratScreenshot.ts, pointing at a non-Production environment/session. No such file currently exists for any lesson.",
+  "affectedLessonIds": [
+    "builder-m2-l1-prompt-layer",
+    "builder-m2-l2-instructions-examples",
+    "builder-m3-l1-context-layer",
+    "builder-m6-l4-components-routes",
+    "builder-m7-l1-tables-columns",
+    "builder-m7-l3-queries",
+    "builder-m10-l2-first-users"
+  ],
+  "lastUpdated": "2026-07-23T15:36:42.000Z"
+}
