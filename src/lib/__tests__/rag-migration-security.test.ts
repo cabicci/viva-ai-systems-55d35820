@@ -76,7 +76,7 @@ describe("RAG migration security and idempotency", () => {
 });
 
 const LEAST_PRIVILEGE = readFileSync(
-  path.join(REPO_ROOT, "supabase/migrations/20260722180000_rag_retrieval_rpc_least_privilege.sql"),
+  path.join(REPO_ROOT, "supabase/migrations/20260722180001_rag_retrieval_rpc_least_privilege.sql"),
   "utf8",
 );
 
