@@ -2,9 +2,7 @@ import { describe, expect, it } from "vitest";
 import { buildLocaleRetrievalResponse } from "@/lib/rag/retrieval";
 import type { SemanticChunkInput } from "@/lib/rag/retrieval";
 
-const baseChunk = (
-  overrides: Partial<SemanticChunkInput>,
-): SemanticChunkInput => ({
+const baseChunk = (overrides: Partial<SemanticChunkInput>): SemanticChunkInput => ({
   id: "1",
   sourceId: "en/intro-m1-l1/s0/c0",
   locale: "en",
@@ -119,7 +117,7 @@ describe("RAG locale retrieval contract", () => {
 
   it("returns explicit no-result for invalid locale", () => {
     const res = buildLocaleRetrievalResponse({
-      locale: "ar-EG",
+      locale: "fr-FR",
       lessonId: null,
       moduleId: null,
       pathId: null,

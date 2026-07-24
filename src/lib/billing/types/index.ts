@@ -29,6 +29,8 @@ export type DenialReasonCode =
   | "RAG_NOT_ENTITLED"
   | "AI_QUOTA_EXCEEDED"
   | "AI_TOPUP_INSUFFICIENT"
+  | "AI_ACCESS_DENIED"
+  | "ADMIN_GRANT_REQUIRED"
   | "MISSION_EVALUATION_NOT_ENTITLED"
   | "REVEAL_ANSWER_NOT_ENTITLED"
   | "WOW_PATH_NOT_ENTITLED"
@@ -45,10 +47,37 @@ export type BillingErrorCode =
   | "COUPON_IDENTITY_ALREADY_ASSIGNED"
   | "COUPON_ALREADY_REDEEMED"
   | "COUPON_EXPIRED"
+  | "ADMIN_COUPON_INVALID"
   | "REACTIVATION_NOT_ALLOWED"
   | "GATEWAY_NOT_SUPPORTED"
   | "OPERATION_NOT_SUPPORTED"
   | "ENTITLEMENT_UNAVAILABLE";
+
+/** Canonical AI quota bucket. All AI-consuming categories map here. */
+export type QuotaBucket = "ai_assistant";
+
+/** Admin 72-hour access grant lifecycle (mirrors billing.admin_access_grants). */
+export type AdminAccessGrantStatus = "active" | "expired" | "revoked";
+
+/** Admin access coupon lifecycle (mirrors billing.admin_access_coupons). */
+export type AdminAccessCouponStatus = "active" | "redeemed" | "revoked" | "expired";
+
+export interface AdminAccessGrant {
+  userId: string;
+  status: AdminAccessGrantStatus;
+  startsAt: string;
+  expiresAt: string;
+}
+
+export interface AdminAccessCoupon {
+  intendedUserId: string;
+  status: AdminAccessCouponStatus;
+  /** Optional coupon validity window; null means no window. */
+  expiresAt: string | null;
+}
+
+/** Purchase-discount coupon reservation lifecycle. */
+export type PurchaseCouponReservationStatus = "reserved" | "consumed" | "released";
 
 export interface EntitlementPolicy {
   policyKey: string;
@@ -115,11 +144,13 @@ export const PLAN_ENTITLEMENT_DEFAULTS: Record<
     | "assistantRuntimePeriodDays"
   >
 > = {
+  // V3: no automatic 14-day trial. Free grants a limited public catalogue only
+  // and NO automatic AI quota — period days/quota are null (fail closed).
   free: {
     lessonCountCap: 12,
     assistantRuntimeGeneralMonthlyQuota: null,
-    assistantRuntimePeriodQuota: 24,
-    assistantRuntimePeriodDays: 14,
+    assistantRuntimePeriodQuota: null,
+    assistantRuntimePeriodDays: null,
   },
   pro: {
     lessonCountCap: 74,

@@ -1,0 +1,158 @@
+{
+  "locale": "ar-EG",
+  "lessonId": "builder-m6-l3-first-prompt-to-lovable",
+  "canonicalVersion": "curriculum-freeze-ar-eg-ts-v1",
+  "pathId": "builder",
+  "moduleId": "builder-m6",
+  "productionRoute": "/learn/builder/builder-m6-l3-first-prompt-to-lovable",
+  "title": "أول Prompt لـ Lovable",
+  "nextLessonId": "builder-m6-l4-components-routes",
+  "sections": [
+    {
+      "role": "بداية الدرس",
+      "heading": "هتفهم إيه النهاردة؟",
+      "subtitle": "بداية الدرس",
+      "contentMarkdown": "هتفهم إيه؟ أول prompt محتاج ٥ أجزاء بس: goal + users + pages + style + constraints.\n\nليه دلوقتي؟ عندك Wireframe — دلوقتي حوّله لطلب Lovable يفهمك من أول مرة.\n\nهتعمل إيه بعد الدرس؟ مسودة prompt جاهزة للنسخ — مش كود ولا برمجة.\n\nLovable = مساعد بناء يقرأ وصفك ويطلعلك واجهة. إنت بتوصف — مش بتبرمج.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "موقف مألوف",
+      "heading": "«اعملي واجهة» — ويطلع مش اللي في بالك",
+      "subtitle": "موقف مألوف",
+      "contentMarkdown": "كتبت «ابنيلي واجهة AI» — طلع ألوان فاقعة وأقسام مش عايزها.\n\nLovable بيبني اللي بتكتبه حرفيًا — مش اللي بتتمناه. ٣ كلمات = تخمين كامل.\n\nالحل آمن وبسيط: اكتب وصفة ٥ أجزاء — انسخها في Lovable وشوف النتيجة. غلط؟ عدّل الوصف وجرّب تاني.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "الفكرة الأساسية",
+      "heading": "أول prompt = goal + users + pages + style + constraints",
+      "subtitle": "الفكرة الأساسية",
+      "contentMarkdown": "Goal: الهدف — إيه نوع الواجهة ولإيه؟\n\nUsers: لمين — مين هيستخدمها؟\n\nPages: الأقسام — اذكر Wireframe بالاسم.\n\nStyle: الستايل — ألوان، نبرة، mood.\n\nConstraints: الحدود — إيه اللي مش عايزه في النسخة الأولى.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "مثال من الحياة",
+      "heading": "«ابني واجهة» vs Prompt Spec",
+      "subtitle": "مثال من الحياة",
+      "contentMarkdown": "| ٣ كلمات | Prompt Spec |\n\n| «ابنيلي واجهة كافيه» — AI يخمّن كل حاجة. ٦ تعديلات. لسه مش مظبوط. | Goal: landing page لكافيه + AI باريستا. Users: زباين ٢٠–٣٥. Pages: hero + منيو ٦ مشروبات + تواصل. Style: دافي، بنّي وبيج. Constraints: من غير login. |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "٣ كلمات",
+            "Prompt Spec"
+          ],
+          "rows": [
+            [
+              "«ابنيلي واجهة كافيه» — AI يخمّن كل حاجة. ٦ تعديلات. لسه مش مظبوط.",
+              "Goal: landing page لكافيه + AI باريستا. Users: زباين ٢٠–٣٥. Pages: hero + منيو ٦ مشروبات + تواصل. Style: دافي، بنّي وبيج. Constraints: من غير login."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "كلمتين بس",
+      "heading": "مصطلحين للبداية",
+      "subtitle": "كلمتين بس",
+      "contentMarkdown": "Prompt Spec (مواصفات الواجهة): الوصفة الكاملة — goal, users, pages, style, constraints. (زي مواصفات بدلة للترزي: مقاس، لون، عدد زراير.)\n\nScope (النطاق): إيه اللي في النسخة دي — وإيه اللي بعدين. («صفحة واحدة بس — Home» — مش «موقع كامل».)",
+      "bullets": [
+        "Prompt Spec (مواصفات الواجهة): الوصفة الكاملة — goal, users, pages, style, constraints. (زي مواصفات بدلة للترزي: مقاس، لون، عدد زراير.)",
+        "Scope (النطاق): إيه اللي في النسخة دي — وإيه اللي بعدين. («صفحة واحدة بس — Home» — مش «موقع كامل».)"
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Prompt Spec (مواصفات الواجهة)",
+              "الوصفة الكاملة — goal, users, pages, style, constraints.",
+              "زي مواصفات بدلة للترزي: مقاس، لون، عدد زراير."
+            ],
+            [
+              "Scope (النطاق)",
+              "إيه اللي في النسخة دي — وإيه اللي بعدين.",
+              "«صفحة واحدة بس — Home» — مش «موقع كامل»."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "فيديو الدرس",
+      "heading": "اتفرّج — prompt غامض vs واضح",
+      "subtitle": "فيديو الدرس",
+      "contentMarkdown": "مثال حي — الفرق في الناتج لما Prompt Spec كامل. لو معندكش وقت، كمل قراية.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "شوفها ببساطة",
+      "heading": "Prompt → Preview",
+      "subtitle": "شوفها ببساطة",
+      "contentMarkdown": "الـ prompt مش «اعملي واجهة» — فيه goal، نشاط، أقسام بالاسم، وستايل. النتيجة أقرب من أول مرة.\n\nLovable — prompt على الشمال، preview على اليمين.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "تأكيد سريع",
+      "heading": "سؤال واحد — مش امتحان",
+      "subtitle": "تأكيد سريع",
+      "contentMarkdown": "عايز Lovable يبني Home Page بس — من غير login. إيه أحسن جزء في Prompt Spec؟\n\n1. Constraints: صفحة واحدة (Home) — من غير login في النسخة الأولى.\n\n2. «اعملي موقع كامل».\n\n3. Style: ألوان حلوة.\n\nConstraints + Scope بيحدّدوا الحدود — AI مش يخمّن features زيادة.",
+      "bullets": [],
+      "tables": [],
+      "quiz": {
+        "question": "عايز Lovable يبني Home Page بس — من غير login. إيه أحسن جزء في Prompt Spec؟",
+        "correctIndex": 0,
+        "options": [
+          "Constraints: صفحة واحدة (Home) — من غير login في النسخة الأولى.",
+          "«اعملي موقع كامل».",
+          "Style: ألوان حلوة."
+        ],
+        "explanation": "Constraints + Scope بيحدّدوا الحدود — AI مش يخمّن features زيادة."
+      }
+    },
+    {
+      "role": "مهمتك",
+      "heading": "اكتب أول prompt لـ Lovable",
+      "subtitle": "مهمتك",
+      "contentMarkdown": "المهمة مسودة للنسخ — مش تنفيذ ولا كود. استخدم Wireframe من الدرس اللي فات.\n\n١٠–١٥ دقيقة. انسخ الناتج في Lovable لما تحب — مش مطلوب دلوقتي.\n\nفي تسليمك اكتب مسودة prompt للنسخ:\n\n**Goal:** [نوع الواجهة + إيه اللي بتعمله]\n**Users:** [مين هيستخدمها]\n**Pages:** [اذكر أقسام Wireframe — hero، أقسام، إلخ]\n**Style:** [لونين + mood — مثلاً: modern، أزرق فاتح]\n**Constraints:** [إيه اللي مش في النسخة الأولى — مثلاً: من غير login]\n\n(جاهز للنسخ في Lovable — مش مطلوب تفتح الأداة دلوقتي)",
+      "bullets": [],
+      "tables": [],
+      "mission": {
+        "intro": "المهمة مسودة للنسخ — مش تنفيذ ولا كود. استخدم Wireframe من الدرس اللي فات.\n\n١٠–١٥ دقيقة. انسخ الناتج في Lovable لما تحب — مش مطلوب دلوقتي.",
+        "delivery": [
+          "في تسليمك اكتب مسودة prompt للنسخ:\n\n**Goal:** [نوع الواجهة + إيه اللي بتعمله]\n**Users:** [مين هيستخدمها]\n**Pages:** [اذكر أقسام Wireframe — hero، أقسام، إلخ]\n**Style:** [لونين + mood — مثلاً: modern، أزرق فاتح]\n**Constraints:** [إيه اللي مش في النسخة الأولى — مثلاً: من غير login]\n\n(جاهز للنسخ في Lovable — مش مطلوب تفتح الأداة دلوقتي)"
+        ],
+        "rubric": [
+          {
+            "dimension": "الخمسة موجودين",
+            "weight": 60,
+            "criteria": "Goal, Users, Pages, Style, Constraints — كلهم مكتوبين.; Pages مربوطة بـ Wireframe — مش عامة."
+          },
+          {
+            "dimension": "جاهز للنسخ",
+            "weight": 40,
+            "criteria": "Style فيه لونين على الأقل.; Constraints تحدّد إيه «مش دلوقتي»."
+          }
+        ]
+      }
+    },
+    {
+      "role": "خلّصت البداية",
+      "heading": "إيه اللي عندك دلوقتي؟",
+      "subtitle": "خلّصت البداية",
+      "contentMarkdown": "فهمت إيه؟ أول prompt = ٥ أجزاء. Lovable مساعد بناء — إنت بتوصف مش بتبرمج.\n\nتقدر تعمل إيه؟ عندك مسودة جاهزة للنسخ في Lovable لما تحب.\n\nاللي جاي: Components & Routes — إزاي الصفحات تتربط ببعض.",
+      "bullets": [],
+      "tables": []
+    }
+  ],
+  "sourceFile": "src/components/intro/lessons/builder-m6-l3-first-prompt-to-lovable.ts",
+  "generatedAt": "2026-07-22T00:00:00.000Z"
+}

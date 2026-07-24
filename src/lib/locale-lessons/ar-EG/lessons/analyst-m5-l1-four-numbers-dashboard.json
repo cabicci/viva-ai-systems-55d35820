@@ -1,0 +1,158 @@
+{
+  "locale": "ar-EG",
+  "lessonId": "analyst-m5-l1-four-numbers-dashboard",
+  "canonicalVersion": "curriculum-freeze-ar-eg-ts-v1",
+  "pathId": "analyst",
+  "moduleId": "analyst-m5",
+  "productionRoute": "/learn/analyst/analyst-m5-l1-four-numbers-dashboard",
+  "title": "٤ أرقام بس",
+  "nextLessonId": "analyst-m4-automated-dashboard",
+  "sections": [
+    {
+      "role": "بداية الدرس",
+      "heading": "هتفهم إيه النهاردة؟",
+      "subtitle": "بداية الدرس",
+      "contentMarkdown": "هتفهم إيه؟ الـ Dashboard (شاشة فيها أهم الأرقام) المفيد يبدأ بأرقام قرار قليلة — مش ٥٠ رسم.\n\nليه دلوقتي؟ في الموديول اللي فات كل استنتاج بقى له Action (خطوة أو تصرف حصل فعلًا). دلوقتي محتاج ٤ أرقام تلخّص «هل شغلي ماشي؟» كل أسبوع.\n\nهتعمل إيه بعد الدرس؟ هترسم Dashboard من ٤ أرقام لمشروعك أو شغلك.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "موقف مألوف",
+      "heading": "Dashboard فيه ٢٠ رقم — ومفيش قرار",
+      "subtitle": "موقف مألوف",
+      "contentMarkdown": "بتفتح Sheet أو أداة فيها charts كتير — بتقعد ١٠ دقايق — وتقفل من غير ما تعرف «إيه اللي محتاج أعمله؟»\n\nالمشكلة مش نقص بيانات — المشكلة زحمة. كل رقم إضافي بيأخّر القرار.\n\nالـ Dashboard (شاشة فيها أهم الأرقام) مش عشان تبان محترف — عشان في ثواني تعرف: في مشكلة ولا لأ؟",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "الفكرة الأساسية",
+      "heading": "٤ أرقام قرار — مش ٤٠ metric",
+      "subtitle": "الفكرة الأساسية",
+      "contentMarkdown": "اختار ٤ أرقام بس — لو واحد فيهم اتغيّر، قرارك يتغيّر. مش أي رقم «حلو يتعرض».\n\nكل رقم جنبه: قيمة الأسبوع ده، الأسبوع اللي فات، وسهم (↑/↓) — عشان المقارنة جزء من العرض.\n\nبيزنس: Leads (ناس أبدت اهتمام وممكن تبقى عميل) · Conversion · Revenue · Retention (الناس كملت ورجعت تاني). مش بيزنس: Progress · Responses · Results · Repeat.\n\nلو عندك أكتر من ٤ — اسأل: «لو شلت ده، هقرّر إزاي؟» اللي مش بيجاوب = مش dashboard.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "مثال من الحياة",
+      "heading": "٢٠ رقم vs ٤ أرقام قرار",
+      "subtitle": "مثال من الحياة",
+      "contentMarkdown": "| Dashboard مليان | ٤ أرقام واضحة |\n\n| ١٥ chart — views، clicks، time on page، bounce… بتفتحه وتقفله. نهاية الأسبوع: «حاسس إن في حاجة غلط» بس مش عارف إيه. | Leads ١٢٠ (↑) · Conversion ٨٪ (↓) · Revenue ١٥k (↑) · Retention (الناس كملت ورجعت تاني) ٣٠٪ (↓). في ثانية: Conversion و Retention محتاجين قرار. |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Dashboard مليان",
+            "٤ أرقام واضحة"
+          ],
+          "rows": [
+            [
+              "١٥ chart — views، clicks، time on page، bounce… بتفتحه وتقفله. نهاية الأسبوع: «حاسس إن في حاجة غلط» بس مش عارف إيه.",
+              "Leads ١٢٠ (↑) · Conversion ٨٪ (↓) · Revenue ١٥k (↑) · Retention (الناس كملت ورجعت تاني) ٣٠٪ (↓). في ثانية: Conversion و Retention محتاجين قرار."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "كلمتين بس",
+      "heading": "مصطلحين للـ Dashboard",
+      "subtitle": "كلمتين بس",
+      "contentMarkdown": "KPI (مؤشر قرار): رقم محدّد — لو اتغيّر، قرارك يتغيّر. (Conversion % — لو نزل، محتاج تراجع خطوة البيع.)\n\nThreshold (حد قرار): الرقم اللي لو عدّاه — لازم Action (خطوة أو تصرف حصل فعلًا). (لو Retention (الناس كملت ورجعت تاني) نزل عن ٣٥٪ → اجتماع متابعة عملاء.)",
+      "bullets": [
+        "KPI (مؤشر قرار): رقم محدّد — لو اتغيّر، قرارك يتغيّر. (Conversion % — لو نزل، محتاج تراجع خطوة البيع.)",
+        "Threshold (حد قرار): الرقم اللي لو عدّاه — لازم Action (خطوة أو تصرف حصل فعلًا). (لو Retention (الناس كملت ورجعت تاني) نزل عن ٣٥٪ → اجتماع متابعة عملاء.)"
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "KPI (مؤشر قرار)",
+              "رقم محدّد — لو اتغيّر، قرارك يتغيّر.",
+              "Conversion % — لو نزل، محتاج تراجع خطوة البيع."
+            ],
+            [
+              "Threshold (حد قرار)",
+              "الرقم اللي لو عدّاه — لازم Action (خطوة أو تصرف حصل فعلًا).",
+              "لو Retention (الناس كملت ورجعت تاني) نزل عن ٣٥٪ → اجتماع متابعة عملاء."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "فيديو الدرس",
+      "heading": "اتفرّج — ٤ أرقام بس",
+      "subtitle": "فيديو الدرس",
+      "contentMarkdown": "إزاي تختار ٤ أرقام بتلخّص شغلك — وتقرأهم كل أسبوع.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "شوفها ببساطة",
+      "heading": "Dashboard أسبوعي من ٤ خانات",
+      "subtitle": "شوفها ببساطة",
+      "contentMarkdown": "Four KPI Dashboard\n\n٤ أرقام — كل واحد: الأسبوع ده، اللي فات، والسهم. لو واحد أحمر، تعرف فين القرار.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "تأكيد سريع",
+      "heading": "سؤال واحد — مش امتحان",
+      "subtitle": "تأكيد سريع",
+      "contentMarkdown": "Leads زادت ٢٠٪ — Conversion نزل من ١٢٪ لـ ٨٪ — Revenue ثابت. إيه أول رقم تركّز عليه في الـ ٤؟\n\n1. Leads — لأنها زادت.\n\n2. Conversion — لأنه نزل رغم زيادة الطلبات، وده بيأثّر على Revenue.\n\n3. Revenue — لأنه ثابت فمفيش مشكلة.\n\nLeads و Conversion مع بعض يوضّحوا الصورة. Conversion نزل = مشكلة في التحويل — ده رقم قرار.",
+      "bullets": [],
+      "tables": [],
+      "quiz": {
+        "question": "Leads زادت ٢٠٪ — Conversion نزل من ١٢٪ لـ ٨٪ — Revenue ثابت. إيه أول رقم تركّز عليه في الـ ٤؟",
+        "correctIndex": 1,
+        "options": [
+          "Leads — لأنها زادت.",
+          "Conversion — لأنه نزل رغم زيادة الطلبات، وده بيأثّر على Revenue.",
+          "Revenue — لأنه ثابت فمفيش مشكلة."
+        ],
+        "explanation": "Leads و Conversion مع بعض يوضّحوا الصورة. Conversion نزل = مشكلة في التحويل — ده رقم قرار."
+      }
+    },
+    {
+      "role": "مهمتك",
+      "heading": "ارسم Dashboard من ٤ أرقام",
+      "subtitle": "مهمتك",
+      "contentMarkdown": "المهمة دي تصميم عملي — مش ديكور. اختار ٤ أرقام تناسب سياقك — بيزنس، تعلّم، محتوى، شخصي، أو فريق — واكتبهم في dashboard بسيط (Sheet، Notion، ورقة).\n\nمش مطلوب أداة معقّدة — مطلوب ٤ أرقام تقدر تقراهم كل أسبوع وتقرّر.\n\nفي تسليمك اكتب:\n\n١) المشروع/الشغل اللي الـ Dashboard ليه:\n٢) الأربع أرقام (Metric + ليه اخترته):\n٣) لكل رقم: قيمة الأسبوع ده · الأسبوع اللي فات · Threshold:\n٤) لو رقم واحد طلع أحمر — إيه القرار؟\n٥) لينك أو وصف بسيط لشكل الـ Dashboard:",
+      "bullets": [],
+      "tables": [],
+      "mission": {
+        "intro": "المهمة دي تصميم عملي — مش ديكور. اختار ٤ أرقام تناسب سياقك — بيزنس، تعلّم، محتوى، شخصي، أو فريق — واكتبهم في dashboard بسيط (Sheet، Notion، ورقة).\n\nمش مطلوب أداة معقّدة — مطلوب ٤ أرقام تقدر تقراهم كل أسبوع وتقرّر.",
+        "delivery": [
+          "في تسليمك اكتب:\n\n١) المشروع/الشغل اللي الـ Dashboard ليه:\n٢) الأربع أرقام (Metric + ليه اخترته):\n٣) لكل رقم: قيمة الأسبوع ده · الأسبوع اللي فات · Threshold:\n٤) لو رقم واحد طلع أحمر — إيه القرار؟\n٥) لينك أو وصف بسيط لشكل الـ Dashboard:"
+        ],
+        "rubric": [
+          {
+            "dimension": "تركيز واختيار",
+            "weight": 50,
+            "criteria": "أربع أرقام بالظبط — كل واحد مبرّر.; الأرقام مناسبة لسياق المتعلم (بيزنس، تعلّم، محتوى، شخصي، أو فريق) — مش لازم Leads/Revenue.; كل رقم مربوط بقرار محتمل."
+          },
+          {
+            "dimension": "مقارنة وThreshold",
+            "weight": 50,
+            "criteria": "في قيمة الأسبوع ده واللي فات.; في Threshold أو حد قرار لكل رقم."
+          }
+        ]
+      }
+    },
+    {
+      "role": "خلّصت الـ Dashboard",
+      "heading": "إيه اللي عندك دلوقتي؟",
+      "subtitle": "خلّصت الـ Dashboard",
+      "contentMarkdown": "فهمت إيه؟ Dashboard مفيد = ٤ أرقام قرار تقراهم كل أسبوع — مش زحمة charts.\n\nتقدر تعمل إيه؟ عندك ٤ أرقام تبدأ بيهم أي مراجعة أسبوعية.\n\nاللي جاي: Automated Dashboard — خلّي رقم واحد من الأربعة يتحدّث لوحده.",
+      "bullets": [],
+      "tables": []
+    }
+  ],
+  "sourceFile": "src/components/intro/lessons/analyst-m5-l1-four-numbers-dashboard.ts",
+  "generatedAt": "2026-07-22T00:00:00.000Z"
+}

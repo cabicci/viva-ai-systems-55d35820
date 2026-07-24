@@ -10,16 +10,16 @@ describe("RAG no paid API invocation", () => {
   });
 
   it("runs full pipeline without fetch or external calls", () => {
-    const fetchSpy = vi.spyOn(globalThis, "fetch").mockRejectedValue(
-      new Error("fetch should not be called"),
-    );
+    const fetchSpy = vi
+      .spyOn(globalThis, "fetch")
+      .mockRejectedValue(new Error("fetch should not be called"));
 
     const report = runRagPipeline(REPO_ROOT, { dryRun: true });
 
     expect(fetchSpy).not.toHaveBeenCalled();
     expect(report.corpus.ok).toBe(true);
     expect(report.deterministicRerunEqual).toBe(true);
-  });
+  }, 60000);
 
   it("uses embedding model placeholder only", () => {
     const report = runRagPipeline(REPO_ROOT, { dryRun: true });

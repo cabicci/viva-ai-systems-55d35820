@@ -1,23 +1,17 @@
 import fs from "node:fs";
 import path from "node:path";
 import { CONTENT_FREEZE_SHA } from "./constants";
-import type {
-  ChunkManifest,
-  PackageManifest,
-  ReindexPlanEntry,
-  ReindexPlanReport,
-} from "./types";
-import type { LessonPackageLocale } from "@/lib/locale-lessons/types";
+import type { ChunkManifest, PackageManifest, ReindexPlanEntry, ReindexPlanReport } from "./types";
+import type { ApprovedLocale } from "./constants";
+import { APPROVED_LOCALES } from "./constants";
 
 function emptyLocaleReport(): Record<
-  LessonPackageLocale,
+  ApprovedLocale,
   { skip: number; reindex: number; delete: number; retry: number }
 > {
-  return {
-    en: { skip: 0, reindex: 0, delete: 0, retry: 0 },
-    "ar-MSA": { skip: 0, reindex: 0, delete: 0, retry: 0 },
-    "ar-Gulf": { skip: 0, reindex: 0, delete: 0, retry: 0 },
-  };
+  return Object.fromEntries(
+    APPROVED_LOCALES.map((l) => [l, { skip: 0, reindex: 0, delete: 0, retry: 0 }]),
+  ) as Record<ApprovedLocale, { skip: number; reindex: number; delete: number; retry: number }>;
 }
 
 function loadManifestFile<T>(filePath: string): T | null {
@@ -40,9 +34,7 @@ export function planReindex(
   const failedSet = new Set(options?.failedUnits ?? []);
   const retryOnlyFailed = options?.retryOnlyFailed ?? false;
 
-  const previousByPath = new Map(
-    (previous?.packages ?? []).map((p) => [p.packagePath, p]),
-  );
+  const previousByPath = new Map((previous?.packages ?? []).map((p) => [p.packagePath, p]));
   const currentByPath = new Map(current.packages.map((p) => [p.packagePath, p]));
 
   for (const pkg of current.packages) {
@@ -124,9 +116,7 @@ export function loadPreviousManifests(
     packageManifest: loadManifestFile<PackageManifest>(
       path.join(base, "package-manifest.previous.json"),
     ),
-    chunkManifest: loadManifestFile<ChunkManifest>(
-      path.join(base, "chunk-manifest.previous.json"),
-    ),
+    chunkManifest: loadManifestFile<ChunkManifest>(path.join(base, "chunk-manifest.previous.json")),
   };
 }
 

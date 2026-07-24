@@ -1,0 +1,158 @@
+{
+  "locale": "ar-EG",
+  "lessonId": "automator-m3-l2-triggers-actions",
+  "canonicalVersion": "curriculum-freeze-ar-eg-ts-v1",
+  "pathId": "automator",
+  "moduleId": "automator-m3",
+  "productionRoute": "/learn/automator/automator-m3-l2-triggers-actions",
+  "title": "Triggers + Actions",
+  "nextLessonId": "automator-m3-l3-filters-routers",
+  "sections": [
+    {
+      "role": "بداية الدرس",
+      "heading": "هتفهم إيه النهاردة؟",
+      "subtitle": "بداية الدرس",
+      "contentMarkdown": "هتفهم إيه؟ كل أتمتة = «لما ده يحصل، اعمل كده» — مُشغّل (Trigger) + فعل أو أكتر (Action).\n\nليه دلوقتي؟ بعد ما اخترت الأداة، محتاج تصمّم أول workflow للعامل الافتراضي — قبل ما تفتح أي شاشة.\n\nهتعمل إيه بعد الدرس؟ هتصمّم workflow واحد: مُشغّل → ٢–٣ actions.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "موقف مألوف",
+      "heading": "بتبني Flow — من غير ما تعرف «لما إيه؟»",
+      "subtitle": "موقف مألوف",
+      "contentMarkdown": "بتفتح الأداة وتضيف actions — بس المُشغّل مش واضح. الـ Flow يشتغل… بس مش في الوقت الصح.\n\nالعامل الافتراضي محتاج يعرف: إيه الحدث اللي يصحّيه؟ وإيه اللي ينفّذه بعد ما يصحى؟\n\n«لما X → اعمل Y» — ده جملة واحدة تصمّم بيها أي أتمتة.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "الفكرة الأساسية",
+      "heading": "لما ده يحصل → اعمل كده",
+      "subtitle": "الفكرة الأساسية",
+      "contentMarkdown": "Trigger (المُشغّل): الحدث اللي يبدأ الشغل — فورم اتملّى، رسالة وصلت، الساعة ٩ الصبح.\n\nAction (الفعل): اللي العامل الافتراضي ينفّذه — يبعت إيميل، يضيف صف، يرسل واتساب.\n\nأنواع Triggers شائعة: Schedule (موعد)، Webhook (إشعار فوري لما حاجة تحصل)، Event (حدث في تطبيق).\n\nActions متسلسلة: output الـ action الأول = input للتاني. زي سير ورا بعض.\n\nمثال: «لما حد يملى فورم → سجّل في شيت → ابعت واتساب ترحيب».",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "مثال من الحياة",
+      "heading": "Actions من غير Trigger vs «لما… اعمل…»",
+      "subtitle": "مثال من الحياة",
+      "contentMarkdown": "| Actions بس | Trigger + Actions |\n\n| هبة بنت Flow يبعت إيميل — بس مش عارفة «إمتى». بتضغط تشغيل يدوي كل مرة. ده مش عامل افتراضي. | «لما فورم جديد → إيميل ترحيب». هبة ما بتفتحش الأداة — العامل الافتراضي يشتغل لوحده. |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "Actions بس",
+            "Trigger + Actions"
+          ],
+          "rows": [
+            [
+              "هبة بنت Flow يبعت إيميل — بس مش عارفة «إمتى». بتضغط تشغيل يدوي كل مرة. ده مش عامل افتراضي.",
+              "«لما فورم جديد → إيميل ترحيب». هبة ما بتفتحش الأداة — العامل الافتراضي يشتغل لوحده."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "كلمتين بس",
+      "heading": "مصطلحين للـ workflow",
+      "subtitle": "كلمتين بس",
+      "contentMarkdown": "Trigger (المُشغّل): «لما…» — الحدث اللي يصحّي العامل الافتراضي. (عميل اشترى كورس (Webhook من بوابة الدفع).)\n\nAction (الفعل): «اعمل…» — الخطوة اللي بتتنفّذ بعد المُشغّل. (ابعت واتساب فيه رابط الكورس.)",
+      "bullets": [
+        "Trigger (المُشغّل): «لما…» — الحدث اللي يصحّي العامل الافتراضي. (عميل اشترى كورس (Webhook من بوابة الدفع).)",
+        "Action (الفعل): «اعمل…» — الخطوة اللي بتتنفّذ بعد المُشغّل. (ابعت واتساب فيه رابط الكورس.)"
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Trigger (المُشغّل)",
+              "«لما…» — الحدث اللي يصحّي العامل الافتراضي.",
+              "عميل اشترى كورس (Webhook من بوابة الدفع)."
+            ],
+            [
+              "Action (الفعل)",
+              "«اعمل…» — الخطوة اللي بتتنفّذ بعد المُشغّل.",
+              "ابعت واتساب فيه رابط الكورس."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "فيديو الدرس",
+      "heading": "اتفرّج — Triggers و Actions",
+      "subtitle": "فيديو الدرس",
+      "contentMarkdown": "أنواع المُشغّلات والأفعال — وإزاي تركّب «لما… اعمل…». لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "شوفها ببساطة",
+      "heading": "كل خطوة = مُشغّل → action",
+      "subtitle": "شوفها ببساطة",
+      "contentMarkdown": "أي مسار = حدث (مُشغّل) → action أو أكتر. مثال: «خلّصت مهمة» → «سجّل» + «افتح التالية» + «ذكّر». نفس الفكرة على شغلك.\n\nرسم خطوات متسلسلة — حدث يبدأ سلسلة أفعال.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "تأكيد سريع",
+      "heading": "سؤال واحد — مش امتحان",
+      "subtitle": "تأكيد سريع",
+      "contentMarkdown": "عايز أول ما عميل يشتري كورس، يوصله واتساب فورًا فيه رابط الدخول. إيه التصميم الصح؟\n\n1. Trigger: Webhook من بوابة الدفع (شراء جديد). Action: إرسال واتساب.\n\n2. Trigger: Schedule كل ساعة. Action: دور على مشتريات جديدة.\n\n3. Trigger: Manual — أنت تدوس زرار لكل عميل.\n\nشراء = حدث فوري → Webhook. «لما يشتري → ابعت واتساب» — ده تصميم العامل الافتراضي.",
+      "bullets": [],
+      "tables": [],
+      "quiz": {
+        "question": "عايز أول ما عميل يشتري كورس، يوصله واتساب فورًا فيه رابط الدخول. إيه التصميم الصح؟",
+        "correctIndex": 0,
+        "options": [
+          "Trigger: Webhook من بوابة الدفع (شراء جديد). Action: إرسال واتساب.",
+          "Trigger: Schedule كل ساعة. Action: دور على مشتريات جديدة.",
+          "Trigger: Manual — أنت تدوس زرار لكل عميل."
+        ],
+        "explanation": "شراء = حدث فوري → Webhook. «لما يشتري → ابعت واتساب» — ده تصميم العامل الافتراضي."
+      }
+    },
+    {
+      "role": "مهمتك",
+      "heading": "صمّم workflow: مُشغّل → actions",
+      "subtitle": "مهمتك",
+      "contentMarkdown": "صمّم workflow لمرشّح الأتمتة بتاعك — Trigger واحد + ٢–٣ Actions. تصميم على ورقة — مش بناء في الأداة.\n\n١٠–١٥ دقيقة كفاية.\n\nفي تسليمك:\n\n١) الهدف في سطر:\n\n٢) Trigger:\n   - النوع (Schedule / Webhook / Event):\n   - «لما…» (بالتفصيل):\n   - البيانات اللي هتيجي (اسم، إيميل، …):\n\n٣) Action 1:\n   - «اعمل…»:\n   - Input من الـ Trigger:\n\n٤) Action 2:\n   - «اعمل…»:\n   - Input من Action 1:\n\n٥) (اختياري) Action 3\n\n٦) Success — إزاي تعرف إنه اشتغل؟",
+      "bullets": [],
+      "tables": [],
+      "mission": {
+        "intro": "صمّم workflow لمرشّح الأتمتة بتاعك — Trigger واحد + ٢–٣ Actions. تصميم على ورقة — مش بناء في الأداة.\n\n١٠–١٥ دقيقة كفاية.",
+        "delivery": [
+          "في تسليمك:\n\n١) الهدف في سطر:\n\n٢) Trigger:\n   - النوع (Schedule / Webhook / Event):\n   - «لما…» (بالتفصيل):\n   - البيانات اللي هتيجي (اسم، إيميل، …):\n\n٣) Action 1:\n   - «اعمل…»:\n   - Input من الـ Trigger:\n\n٤) Action 2:\n   - «اعمل…»:\n   - Input من Action 1:\n\n٥) (اختياري) Action 3\n\n٦) Success — إزاي تعرف إنه اشتغل؟"
+        ],
+        "rubric": [
+          {
+            "dimension": "Trigger + Actions",
+            "weight": 60,
+            "criteria": "Trigger واضح بنوع و«لما…».; Action 1 + 2 مربوطين بالبيانات اللي قبلهم."
+          },
+          {
+            "dimension": "Success",
+            "weight": 40,
+            "criteria": "معيار نجاح قابل للقياس.; الهدف مربوط بالـ Success."
+          }
+        ]
+      }
+    },
+    {
+      "role": "خلّصت التصميم",
+      "heading": "إيه اللي عندك دلوقتي؟",
+      "subtitle": "خلّصت التصميم",
+      "contentMarkdown": "فهمت إيه؟ كل أتمتة = «لما ده يحصل → اعمل كده» — مُشغّل + actions.\n\nتقدر تعمل إيه؟ عندك workflow مصمّم جاهز — تقدر تبنيه في الأداة اللي اخترتها.\n\nاللي جاي: Filters & Routers — لما «لما…» يحتاج قرار: روح فين؟",
+      "bullets": [],
+      "tables": []
+    }
+  ],
+  "sourceFile": "src/components/intro/lessons/automator-m3-l2-triggers-actions.ts",
+  "generatedAt": "2026-07-22T00:00:00.000Z"
+}

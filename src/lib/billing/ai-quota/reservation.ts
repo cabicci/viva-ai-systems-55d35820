@@ -1,9 +1,42 @@
+import type { QuotaBucket } from "../types";
+
+/** Provider attempts are 1-indexed; the first attempt is registered as 1. */
+export const FIRST_ATTEMPT_INDEX = 1;
+
 export interface QuotaReservation {
   reservationId: string;
   userId: string;
   units: number;
   status: "reserved" | "committed" | "released";
   idempotencyKey: string;
+  attemptIndex: number;
+}
+
+/**
+ * Map an AI ledger usage category to its canonical quota bucket. Mirrors
+ * billing.map_ledger_category_to_quota_bucket; unsupported categories throw.
+ */
+export function mapLedgerCategoryToQuotaBucket(category: string): QuotaBucket {
+  if (
+    category === "assistant_runtime" ||
+    category === "mission_evaluation" ||
+    category === "reveal_answer" ||
+    category === "wow_path"
+  ) {
+    return "ai_assistant";
+  }
+  throw new Error(`QUOTA_CATEGORY_UNSUPPORTED:${category}`);
+}
+
+/**
+ * A reservation is releasable only while still reserved and before the provider
+ * began. Once the provider started, the logical unit is committed, never freed.
+ */
+export function canReleaseReservation(input: {
+  status: "reserved" | "committed" | "released" | "stale_reconciled";
+  providerStartedAt: string | null;
+}): boolean {
+  return input.status === "reserved" && input.providerStartedAt === null;
 }
 
 const reservationStore = new Map<string, QuotaReservation>();
@@ -29,6 +62,7 @@ export function reserveAiQuota(input: {
     units: input.units,
     status: "reserved",
     idempotencyKey: input.idempotencyKey,
+    attemptIndex: FIRST_ATTEMPT_INDEX,
   };
   reservationStore.set(reservation.reservationId, reservation);
   return reservation;

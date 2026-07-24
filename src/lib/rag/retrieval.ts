@@ -1,7 +1,7 @@
 import type { RagCitation, RagCitationResponseContract } from "./citation-contract";
 import { buildCitationId, CITATION_EXCERPT_MAX_CHARS } from "./citation-contract";
 
-export const APPROVED_PACKAGE_LOCALES = ["en", "ar-MSA", "ar-Gulf"] as const;
+export const APPROVED_PACKAGE_LOCALES = ["ar-EG", "en", "ar-MSA", "ar-Gulf"] as const;
 export type PackageLocale = (typeof APPROVED_PACKAGE_LOCALES)[number];
 
 export interface SemanticChunkInput {
@@ -52,8 +52,7 @@ export interface LocaleRetrievalRequest {
 
 export function isValidPackageLocale(locale: string | null | undefined): locale is PackageLocale {
   return (
-    typeof locale === "string" &&
-    (APPROVED_PACKAGE_LOCALES as readonly string[]).includes(locale)
+    typeof locale === "string" && (APPROVED_PACKAGE_LOCALES as readonly string[]).includes(locale)
   );
 }
 
@@ -207,11 +206,7 @@ export function buildLocaleRetrievalResponse(
   }
 
   const noResultReason =
-    deduped.length === 0
-      ? lessonScoped
-        ? "no_lesson_scoped_results"
-        : "no_locale_results"
-      : null;
+    deduped.length === 0 ? (lessonScoped ? "no_lesson_scoped_results" : "no_locale_results") : null;
 
   return {
     citations: deduped,

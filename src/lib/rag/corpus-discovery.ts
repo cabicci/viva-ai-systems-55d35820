@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { ARCHIVED_LESSON_ID_SET } from "@/lib/archived-lessons";
-import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
+import type { RagLocalizedLessonPackage } from "@/lib/locale-lessons/types";
 import {
   APPROVED_LOCALES,
   CONTENT_FREEZE_SHA,
@@ -21,19 +21,13 @@ export function isExcludedPackagePath(relativePath: string): boolean {
   return false;
 }
 
-export function runtimePackagePath(
-  locale: string,
-  lessonId: string,
-): string {
+export function runtimePackagePath(locale: string, lessonId: string): string {
   return `${LOCALE_LESSONS_ROOT}/${locale}/lessons/${lessonId}.json`;
 }
 
-function parsePackage(
-  absolutePath: string,
-  relativePath: string,
-): ApprovedPackageRecord | null {
+function parsePackage(absolutePath: string, relativePath: string): ApprovedPackageRecord | null {
   const raw = fs.readFileSync(absolutePath, "utf8");
-  const pkg = JSON.parse(raw) as LocalizedLessonPackage;
+  const pkg = JSON.parse(raw) as RagLocalizedLessonPackage;
 
   if (!pkg.lessonId || !pkg.locale) return null;
   if (ARCHIVED_LESSON_ID_SET.has(pkg.lessonId)) return null;
@@ -70,9 +64,7 @@ export function discoverApprovedPackages(repoRoot: string): ApprovedPackageRecor
 
     for (const file of files) {
       const absolutePath = path.join(lessonsDir, file);
-      const relativePath = path
-        .relative(repoRoot, absolutePath)
-        .replace(/\\/g, "/");
+      const relativePath = path.relative(repoRoot, absolutePath).replace(/\\/g, "/");
 
       if (isExcludedPackagePath(relativePath)) continue;
 
@@ -82,9 +74,7 @@ export function discoverApprovedPackages(repoRoot: string): ApprovedPackageRecor
   }
 
   packages.sort((a, b) =>
-    a.locale === b.locale
-      ? a.lessonId.localeCompare(b.lessonId)
-      : a.locale.localeCompare(b.locale),
+    a.locale === b.locale ? a.lessonId.localeCompare(b.lessonId) : a.locale.localeCompare(b.locale),
   );
 
   return packages;
@@ -94,7 +84,7 @@ export function discoverApprovedPackages(repoRoot: string): ApprovedPackageRecor
 export function loadPackageByPath(
   repoRoot: string,
   packagePath: string,
-): LocalizedLessonPackage {
+): RagLocalizedLessonPackage {
   const absolute = path.join(repoRoot, packagePath);
-  return JSON.parse(fs.readFileSync(absolute, "utf8")) as LocalizedLessonPackage;
+  return JSON.parse(fs.readFileSync(absolute, "utf8")) as RagLocalizedLessonPackage;
 }
