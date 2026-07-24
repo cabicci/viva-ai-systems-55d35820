@@ -7,7 +7,7 @@ import {
 import { normalizeText, sha256Hex } from "./checksum";
 import { extractPackageSegments } from "./section-extraction";
 import type { ApprovedPackageRecord, ChunkQualityReport, RagChunkRecord } from "./types";
-import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
+import type { RagLocalizedLessonPackage } from "@/lib/locale-lessons/types";
 
 export function buildChunkId(
   locale: string,
@@ -40,7 +40,7 @@ export function splitTextIntoChunks(text: string): string[] {
 
 /** Generate deterministic chunks for a single approved package. */
 export function generateChunksForPackage(
-  pkg: LocalizedLessonPackage,
+  pkg: RagLocalizedLessonPackage,
   record: ApprovedPackageRecord,
 ): RagChunkRecord[] {
   const segments = extractPackageSegments(pkg);

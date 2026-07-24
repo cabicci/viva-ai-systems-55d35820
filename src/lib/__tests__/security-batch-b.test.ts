@@ -3,10 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 
-const REPO_ROOT = path.resolve(
-  path.dirname(fileURLToPath(import.meta.url)),
-  "../../..",
-);
+const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 
 function readRepoFile(relPath: string): string {
   return readFileSync(path.join(REPO_ROOT, relPath), "utf8");
@@ -50,25 +47,62 @@ describe("security batch B hardening", () => {
       "mark_roadmap_done(uuid)",
     ]) {
       expect(source).toMatch(
-        new RegExp(`REVOKE EXECUTE ON FUNCTION public\\.${fn.replace(/[()]/g, "\\$&")} FROM PUBLIC, anon`),
+        new RegExp(
+          `REVOKE EXECUTE ON FUNCTION public\\.${fn.replace(/[()]/g, "\\$&")} FROM PUBLIC, anon`,
+        ),
       );
     }
   });
 
   it("assistant-runtime verifies JWT before rate limiting in the request handler", () => {
-    const source = readRepoFile("supabase/functions/assistant-runtime/index.ts");
-    const handlerStart = source.indexOf("Deno.serve(async (req) => {");
-    expect(handlerStart).toBeGreaterThan(-1);
-    const handler = source.slice(handlerStart);
-    const authIdx = handler.indexOf("const auth = await verifyJwt(req)");
-    const rateIdx = handler.indexOf("const rl = await consumeRateLimit(auth.userId");
-    const bodyIdx = handler.indexOf("body = (await req.json())");
-    expect(authIdx).toBeGreaterThan(-1);
-    expect(rateIdx).toBeGreaterThan(authIdx);
-    expect(bodyIdx).toBeGreaterThan(rateIdx);
-    expect(source).not.toMatch(
-      /rate-limit disabled: missing supabase env[\s\S]*allowed: true/,
+    const entry = readRepoFile("supabase/functions/assistant-runtime/index.ts");
+    const handlerSrc = readRepoFile("supabase/functions/assistant-runtime/handler.ts");
+
+    // Thin Deno entrypoint must delegate into the injectable handler.
+    expect(entry).toMatch(
+      /Deno\.serve\(\s*\(\s*req\s*\)\s*=>\s*handleAssistantRuntimeRequest\(\s*req\s*,\s*buildRealDeps\(\)\s*\)\s*\)/,
     );
+
+    const handlerStart = handlerSrc.indexOf("export async function handleAssistantRuntimeRequest");
+    expect(handlerStart).toBeGreaterThan(-1);
+    const handler = handlerSrc.slice(handlerStart);
+
+    const verifyIdx = handler.indexOf("deps.verifyJwt(req)");
+    const authFailIdx = handler.indexOf("if (!auth.ok)");
+    const unauthorizedIdx = handler.indexOf('"Unauthorized"');
+    const bodyIdx = handler.indexOf("req.json()");
+    const retrievalIdx = handler.indexOf("requestHasRetrievalResultsProperty(");
+    const localeIdx = handler.indexOf("validateRuntimeLocale(");
+    const queryIdx = handler.indexOf('typeof body.query === "string"');
+    const rateNeedle = "deps.consumeRateLimit(";
+
+    expect(verifyIdx).toBeGreaterThan(-1);
+    expect(authFailIdx).toBeGreaterThan(verifyIdx);
+    expect(unauthorizedIdx).toBeGreaterThan(authFailIdx);
+    expect(bodyIdx).toBeGreaterThan(authFailIdx);
+    expect(retrievalIdx).toBeGreaterThan(bodyIdx);
+    expect(localeIdx).toBeGreaterThan(retrievalIdx);
+    expect(queryIdx).toBeGreaterThan(localeIdx);
+
+    // Every rate-limit call is after JWT + body/locale/query validation and
+    // always uses the verified JWT user id (never a client-supplied id).
+    let searchFrom = 0;
+    let rateCount = 0;
+    let firstRateIdx = -1;
+    while (true) {
+      const idx = handler.indexOf(rateNeedle, searchFrom);
+      if (idx < 0) break;
+      rateCount += 1;
+      if (firstRateIdx < 0) firstRateIdx = idx;
+      expect(idx).toBeGreaterThan(queryIdx);
+      expect(idx).toBeGreaterThan(verifyIdx);
+      expect(handler.slice(idx, idx + 80)).toMatch(/deps\.consumeRateLimit\(\s*auth\.userId\b/);
+      searchFrom = idx + rateNeedle.length;
+    }
+    expect(rateCount).toBeGreaterThan(0);
+    expect(firstRateIdx).toBeGreaterThan(verifyIdx);
+
+    expect(entry).not.toMatch(/rate-limit disabled: missing supabase env[\s\S]*allowed: true/);
   });
 
   it("error-log rate limit fails closed on RPC errors", () => {
@@ -94,11 +128,7 @@ describe("security batch B hardening", () => {
           continue;
         }
         const text = readFileSync(full, "utf8");
-        if (
-          /^import\s+.*from\s+["']@\/integrations\/supabase\/client\.server["']/m.test(
-            text,
-          )
-        ) {
+        if (/^import\s+.*from\s+["']@\/integrations\/supabase\/client\.server["']/m.test(text)) {
           offenders.push(path.relative(REPO_ROOT, full));
         }
       }

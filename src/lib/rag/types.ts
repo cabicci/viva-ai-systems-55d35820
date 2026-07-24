@@ -1,5 +1,5 @@
 import type { ApprovedLocale } from "./constants";
-import type { LessonPackageLocale } from "@/lib/locale-lessons/types";
+import type { RagPackageLocale } from "@/lib/locale-lessons/types";
 
 /** Content-type tags for indexed chunks. */
 export type ChunkContentType =
@@ -14,7 +14,7 @@ export type ChunkContentType =
 /** Approved package record discovered from locale-lessons runtime paths. */
 export interface ApprovedPackageRecord {
   lessonId: string;
-  locale: LessonPackageLocale;
+  locale: RagPackageLocale;
   moduleId: string;
   trackId: string;
   packagePath: string;
@@ -29,7 +29,7 @@ export interface ApprovedPackageRecord {
 export interface RagChunkRecord {
   chunkId: string;
   lessonId: string;
-  locale: LessonPackageLocale;
+  locale: RagPackageLocale;
   moduleId: string;
   trackId: string;
   sectionIndex: number;
@@ -47,7 +47,7 @@ export interface RagChunkRecord {
 /** Package-level manifest entry. */
 export interface PackageManifestEntry {
   lessonId: string;
-  locale: LessonPackageLocale;
+  locale: RagPackageLocale;
   moduleId: string;
   trackId: string;
   packagePath: string;
@@ -65,7 +65,7 @@ export interface PackageManifest {
   sourceSha: string;
   generatedAt: string;
   packageCount: number;
-  localeCounts: Record<LessonPackageLocale, number>;
+  localeCounts: Record<ApprovedLocale, number>;
   packages: PackageManifestEntry[];
   manifestChecksum: string;
 }
@@ -74,7 +74,7 @@ export interface PackageManifest {
 export interface ChunkManifestEntry {
   chunkId: string;
   lessonId: string;
-  locale: LessonPackageLocale;
+  locale: RagPackageLocale;
   moduleId: string;
   trackId: string;
   sectionIndex: number;
@@ -95,7 +95,7 @@ export interface ChunkManifest {
   embeddingModel: string;
   embeddingDimensions: number;
   chunkCount: number;
-  localeCounts: Record<LessonPackageLocale, number>;
+  localeCounts: Record<ApprovedLocale, number>;
   chunks: ChunkManifestEntry[];
   manifestChecksum: string;
 }
@@ -124,7 +124,7 @@ export type ReindexAction = "skip" | "reindex" | "delete" | "retry";
 export interface ReindexPlanEntry {
   packagePath: string;
   lessonId: string;
-  locale: LessonPackageLocale;
+  locale: RagPackageLocale;
   action: ReindexAction;
   previousChecksum: string | null;
   currentChecksum: string | null;
@@ -141,7 +141,7 @@ export interface ReindexPlanReport {
   retryCount: number;
   entries: ReindexPlanEntry[];
   localeReports: Record<
-    LessonPackageLocale,
+    ApprovedLocale,
     { skip: number; reindex: number; delete: number; retry: number }
   >;
 }
