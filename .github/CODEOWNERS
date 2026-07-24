@@ -1,0 +1,15 @@
+# Masaarat repository ownership - P0 GitHub governance
+# Authorization: CR-PG-GITHUB-GOVERNANCE-20260724-01
+# Sole verified eligible CODEOWNER: @cabicci (repository admin collaborator)
+
+# Repository-wide fallback ownership
+* @cabicci
+
+# Explicit coverage for high-impact surfaces
+.github/ @cabicci
+.github/workflows/ @cabicci
+supabase/migrations/ @cabicci
+supabase/functions/ @cabicci
+src/ @cabicci
+scripts/ @cabicci
+docs/operations/ @cabicci
