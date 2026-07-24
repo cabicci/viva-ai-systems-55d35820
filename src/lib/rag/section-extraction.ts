@@ -1,5 +1,5 @@
 import type {
-  LocalizedLessonPackage,
+  RagLocalizedLessonPackage,
   LocalizedLessonSection,
   LocalizedLessonTable,
 } from "@/lib/locale-lessons/types";
@@ -78,9 +78,7 @@ export function extractSectionSegments(
   if (section.mission) {
     pushIfNonEmpty(segments, section.mission.intro);
     if (section.mission.delivery?.length) {
-      segments.push(
-        section.mission.delivery.map((d, i) => `${i + 1}. ${d}`).join("\n"),
-      );
+      segments.push(section.mission.delivery.map((d, i) => `${i + 1}. ${d}`).join("\n"));
     }
     if (section.mission.rubric?.length) {
       const rubric = section.mission.rubric
@@ -97,9 +95,7 @@ export function extractSectionSegments(
 }
 
 /** Extract all section segments from a localized lesson package. */
-export function extractPackageSegments(
-  pkg: LocalizedLessonPackage,
-): Array<{
+export function extractPackageSegments(pkg: RagLocalizedLessonPackage): Array<{
   sectionIndex: number;
   sectionRole: string;
   sectionHeading: string;

@@ -67,12 +67,49 @@ describe("RAG migration security and idempotency", () => {
     expect(MIGRATION).toContain("match_locale_knowledge_chunks");
     expect(MIGRATION).toContain("kc.index_state = 'active'");
     expect(MIGRATION).toContain("kc.locale = p_locale");
-    expect(MIGRATION).toContain("GRANT EXECUTE ON FUNCTION public.match_locale_knowledge_chunks");
-    expect(MIGRATION).toContain("TO authenticated, service_role");
   });
 
   it("denies incomplete staging activation", () => {
     expect(MIGRATION).toContain("Incomplete staging index");
     expect(MIGRATION).toContain("failed units");
+  });
+});
+
+const LEAST_PRIVILEGE = readFileSync(
+  path.join(REPO_ROOT, "supabase/migrations/20260722180001_rag_retrieval_rpc_least_privilege.sql"),
+  "utf8",
+);
+
+describe("RAG retrieval RPC least privilege", () => {
+  it("denies authenticated and anon execute on match_locale_knowledge_chunks", () => {
+    expect(LEAST_PRIVILEGE).toMatch(
+      /REVOKE ALL ON FUNCTION public\.match_locale_knowledge_chunks\([\s\S]*?\) FROM PUBLIC, anon, authenticated/,
+    );
+    expect(LEAST_PRIVILEGE).toMatch(
+      /GRANT EXECUTE ON FUNCTION public\.match_locale_knowledge_chunks\([\s\S]*?\) TO service_role/,
+    );
+    expect(LEAST_PRIVILEGE).not.toMatch(
+      /GRANT EXECUTE ON FUNCTION public\.match_locale_knowledge_chunks\([\s\S]*?\) TO authenticated/,
+    );
+  });
+
+  it("denies authenticated execute on legacy match_knowledge_chunks", () => {
+    expect(LEAST_PRIVILEGE).toMatch(
+      /REVOKE ALL ON FUNCTION public\.match_knowledge_chunks\([\s\S]*?\) FROM PUBLIC, anon, authenticated/,
+    );
+    expect(LEAST_PRIVILEGE).toMatch(
+      /GRANT EXECUTE ON FUNCTION public\.match_knowledge_chunks\([\s\S]*?\) TO service_role/,
+    );
+  });
+
+  it("leaves activation and rollback grants unchanged in prior migration", () => {
+    expect(MIGRATION).toMatch(
+      /GRANT EXECUTE ON FUNCTION public\.activate_rag_index_version\(text\) TO service_role/,
+    );
+    expect(MIGRATION).toMatch(
+      /GRANT EXECUTE ON FUNCTION public\.rollback_rag_index_version\(text\) TO service_role/,
+    );
+    expect(LEAST_PRIVILEGE).not.toContain("activate_rag_index_version");
+    expect(LEAST_PRIVILEGE).not.toContain("rollback_rag_index_version");
   });
 });

@@ -1,6 +1,10 @@
 /** Runtime-ready localized lesson packages (not wired to live routes). */
 
+/** Live learner package locales (JSON packages served when localized lessons enabled). */
 export type LessonPackageLocale = "ar-MSA" | "ar-Gulf" | "en";
+
+/** RAG portable package locales â€” includes frozen ar-EG projections. */
+export type RagPackageLocale = LessonPackageLocale | "ar-EG";
 
 /** Source locale for contextual adaptation (Phase 2B+). */
 export type AdaptationSourceLocale = "ar-MSA";
@@ -65,6 +69,11 @@ export interface LocalizedLessonPackage {
   sourceFile: string;
   generatedAt: string;
 }
+
+/** RAG corpus packages — may include frozen ar-EG projections (not live lesson routes). */
+export type RagLocalizedLessonPackage = Omit<LocalizedLessonPackage, "locale"> & {
+  locale: RagPackageLocale;
+};
 
 export interface LocalizedLessonManifest {
   locale: LessonPackageLocale;

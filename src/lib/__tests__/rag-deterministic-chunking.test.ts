@@ -1,11 +1,7 @@
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { discoverApprovedPackages } from "@/lib/rag/corpus-discovery";
-import {
-  analyzeChunkQuality,
-  buildChunkId,
-  splitTextIntoChunks,
-} from "@/lib/rag/chunking";
+import { analyzeChunkQuality, buildChunkId, splitTextIntoChunks } from "@/lib/rag/chunking";
 import { generateAllChunks } from "@/lib/rag/manifests";
 import { sha256Hex } from "@/lib/rag/checksum";
 
@@ -60,9 +56,9 @@ describe("RAG deterministic chunking", () => {
     expect(parts1.length).toBeGreaterThan(1);
   });
 
-  it("generates chunks for all 300 packages", () => {
+  it("generates chunks for all 400 packages", () => {
     const chunks = generateAllChunks(REPO_ROOT, packages);
     const packagePaths = new Set(chunks.map((c) => c.packagePath));
-    expect(packagePaths.size).toBe(300);
+    expect(packagePaths.size).toBe(400);
   });
 });

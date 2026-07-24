@@ -1,0 +1,158 @@
+{
+  "locale": "ar-EG",
+  "lessonId": "builder-m7-l1-tables-columns",
+  "canonicalVersion": "curriculum-freeze-ar-eg-ts-v1",
+  "pathId": "builder",
+  "moduleId": "builder-m7",
+  "productionRoute": "/learn/builder/builder-m7-l1-tables-columns",
+  "title": "Tables & Columns",
+  "nextLessonId": "builder-m7-l2-relations",
+  "sections": [
+    {
+      "role": "بداية الدرس",
+      "heading": "هتفهم إيه النهاردة؟",
+      "subtitle": "بداية الدرس",
+      "contentMarkdown": "هتفهم إيه؟ الجدول = نوع بيانات (مستخدمين، محادثات). العمود = صفة لكل صف (اسم، تاريخ، تقييم).\n\nليه دلوقتي؟ Builder عمق اختياري — بس لو تطبيقك بيخزّن بيانات، التصميم الصح من الأول بيوفر مشاكل بعدين.\n\nهتعمل إيه بعد الدرس؟ هتصمّم ٣ جداول لبيانات تطبيقك — كل جدول بأعمدته وأنواعها.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "موقف مألوف",
+      "heading": "كل حاجة text — والتطبيق بطيء ومش دقيق",
+      "subtitle": "موقف مألوف",
+      "contentMarkdown": "بتصمم أول جدول في المخزن الذكي (Database) — وكل عمود نوعه `text`. سهل في البداية، بس بعد شهور التطبيق بطيء.\n\nتقييم المستخدم في `text`؟ السيستم مش هيعرف يحسب متوسط التقييمات. التاريخ في `text`؟ مش هيعرف يرتّب من الأحدث.\n\nالجدول = إيه نوع البيانات. العمود = إيه الصفة. النوع الغلط = مشاكل من أول يوم.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "الفكرة الأساسية",
+      "heading": "الجدول = نوع — العمود = صفة بنوعها",
+      "subtitle": "الفكرة الأساسية",
+      "contentMarkdown": "كل جدول بيمثّل نوع واحد: `users`، `conversations`، `documents` — مش «كل حاجة في جدول واحد».\n\nكل عمود = صفة + نوع بيانات: `id` = uuid، `rating` = integer، `created_at` = timestamptz.\n\nقواعد مهمة: `not null` للحقول الأساسية. `uuid` للـ IDs. `numeric` للفلوس. `timestamptz` للتواريخ.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "مثال من الحياة",
+      "heading": "كل حاجة text vs أنواع مظبوطة",
+      "subtitle": "مثال من الحياة",
+      "contentMarkdown": "| غلط — كل الأعمدة text | صح — كل عمود بنوعه |\n\n| `user_rating text` — السيستم مش هيعرف يحسب متوسط. `created_at text` — مش هيعرف يرتّب زمنيًا. بطيء ومش دقيق. | `user_rating integer`، `created_at timestamptz default now()`، `id uuid primary key`. تقدر تحلل وتطوّر بسهولة. |",
+      "bullets": [],
+      "tables": [
+        {
+          "headers": [
+            "غلط — كل الأعمدة text",
+            "صح — كل عمود بنوعه"
+          ],
+          "rows": [
+            [
+              "`user_rating text` — السيستم مش هيعرف يحسب متوسط. `created_at text` — مش هيعرف يرتّب زمنيًا. بطيء ومش دقيق.",
+              "`user_rating integer`، `created_at timestamptz default now()`، `id uuid primary key`. تقدر تحلل وتطوّر بسهولة."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "كلمتين بس",
+      "heading": "مصطلحين للمخزن",
+      "subtitle": "كلمتين بس",
+      "contentMarkdown": "Table (جدول): مكان تخزّن فيه نوع واحد من البيانات — زي شيت Excel لموضوع واحد. (جدول `conversations` — كل صف = محادثة واحدة.)\n\nColumn (عمود): صفة لكل صف — ليها نوع بيانات محدد. (`title text not null` — عنوان إجباري نصي.)",
+      "bullets": [
+        "Table (جدول): مكان تخزّن فيه نوع واحد من البيانات — زي شيت Excel لموضوع واحد. (جدول `conversations` — كل صف = محادثة واحدة.)",
+        "Column (عمود): صفة لكل صف — ليها نوع بيانات محدد. (`title text not null` — عنوان إجباري نصي.)"
+      ],
+      "tables": [
+        {
+          "headers": [
+            "Term",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Table (جدول)",
+              "مكان تخزّن فيه نوع واحد من البيانات — زي شيت Excel لموضوع واحد.",
+              "جدول `conversations` — كل صف = محادثة واحدة."
+            ],
+            [
+              "Column (عمود)",
+              "صفة لكل صف — ليها نوع بيانات محدد.",
+              "`title text not null` — عنوان إجباري نصي."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "فيديو الدرس",
+      "heading": "اتفرّج — تصميم جدول صح",
+      "subtitle": "فيديو الدرس",
+      "contentMarkdown": "إزاي تبني جدول بأنواع وأعمدة مظبوطة من الأول. لو معندكش وقت، كمل قراية — الدرس مكتفي لوحده.",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "شوفها ببساطة",
+      "heading": "الـ AI بيقرأ الجداول عشان يفهم السياق",
+      "subtitle": "شوفها ببساطة",
+      "contentMarkdown": "قبل ما الـ AI يجاوب، بيبص على جداول زي دي: مين اللي بيسأل (`currentUser`) وفاتح أنهي صفحة (`currentPath`). التصميم الصح = ذاكرة سريعة ودقيقة.\n\nصفحة /system-state بتعرض حالة المنصة الحالية في شكل كروت زي currentPath و currentUser",
+      "bullets": [],
+      "tables": []
+    },
+    {
+      "role": "تأكيد سريع",
+      "heading": "سؤال واحد — مش امتحان",
+      "subtitle": "تأكيد سريع",
+      "contentMarkdown": "بتعمل جدول `services` وفيه عمود `price` (سعر الخدمة). إيه أنسب نوع؟\n\n1. `numeric not null` — الفلوس لازم تكون دقيقة ومينفعش خدمة من غير سعر.\n\n2. `integer nullable` — رقم صحيح وممكن السعر يكون لسه متسعّرش.\n\n3. `text not null` — عشان أكتب السعر بصيغة زي «١٠٠ جنيه».\n\n`numeric` للفلوس عشان الكسور العشرية. `not null` لأن كل خدمة معروضة لازم يكون ليها سعر.",
+      "bullets": [],
+      "tables": [],
+      "quiz": {
+        "question": "بتعمل جدول `services` وفيه عمود `price` (سعر الخدمة). إيه أنسب نوع؟",
+        "correctIndex": 0,
+        "options": [
+          "`numeric not null` — الفلوس لازم تكون دقيقة ومينفعش خدمة من غير سعر.",
+          "`integer nullable` — رقم صحيح وممكن السعر يكون لسه متسعّرش.",
+          "`text not null` — عشان أكتب السعر بصيغة زي «١٠٠ جنيه»."
+        ],
+        "explanation": "`numeric` للفلوس عشان الكسور العشرية. `not null` لأن كل خدمة معروضة لازم يكون ليها سعر."
+      }
+    },
+    {
+      "role": "مهمتك",
+      "heading": "صمّم ٣ جداول لتطبيقك",
+      "subtitle": "مهمتك",
+      "contentMarkdown": "فكّر في بيانات تطبيقك — إيه اللي محتاج يتخزّن؟ صمّم ٣ جداول بأعمدتها وأنواعها.\n\n١٠–١٥ دقيقة كفاية.\n\nفي تسليمك اكتب ٣ جداول — لكل جدول:\n\n١) اسم الجدول (مثال: `users`):\n\n٢) إيه نوع البيانات اللي بيمثّله؟\n\n٣) الأعمدة — لكل عمود:\n   - الاسم:\n   - النوع (uuid / text / integer / timestamptz / numeric...):\n   - not null ولا nullable؟\n\n٤) فيه `id uuid primary key`؟",
+      "bullets": [],
+      "tables": [],
+      "mission": {
+        "intro": "فكّر في بيانات تطبيقك — إيه اللي محتاج يتخزّن؟ صمّم ٣ جداول بأعمدتها وأنواعها.\n\n١٠–١٥ دقيقة كفاية.",
+        "delivery": [
+          "في تسليمك اكتب ٣ جداول — لكل جدول:\n\n١) اسم الجدول (مثال: `users`):\n\n٢) إيه نوع البيانات اللي بيمثّله؟\n\n٣) الأعمدة — لكل عمود:\n   - الاسم:\n   - النوع (uuid / text / integer / timestamptz / numeric...):\n   - not null ولا nullable؟\n\n٤) فيه `id uuid primary key`؟"
+        ],
+        "rubric": [
+          {
+            "dimension": "٣ جداول منطقية",
+            "weight": 50,
+            "criteria": "كل جدول بيمثّل نوع بيانات واحد — مش كل حاجة في جدول.; فيه `id uuid primary key` في كل جدول."
+          },
+          {
+            "dimension": "أنواع الأعمدة صح",
+            "weight": 50,
+            "criteria": "التواريخ `timestamptz` — مش text.; الأرقام والتقييمات integer أو numeric — مش text.; الحقول الأساسية `not null` حيث يناسب."
+          }
+        ]
+      }
+    },
+    {
+      "role": "خلّصت التصميم",
+      "heading": "إيه اللي عندك دلوقتي؟",
+      "subtitle": "خلّصت التصميم",
+      "contentMarkdown": "فهمت إيه؟ الجدول = نوع بيانات. العمود = صفة بنوعها. النوع الصح من الأول = تطبيق سريع ودقيق.\n\nتقدر تعمل إيه؟ عندك ٣ جداول مصمّمة — جاهزة تربطها ببعض.\n\nاللي جاي: Relations — إزاي تربط الجداول عشان تجاوب على أسئلة حقيقية زي «محادثات العميل ده».",
+      "bullets": [],
+      "tables": []
+    }
+  ],
+  "sourceFile": "src/components/intro/lessons/builder-m7-l1-tables-columns.ts",
+  "generatedAt": "2026-07-22T00:00:00.000Z"
+}

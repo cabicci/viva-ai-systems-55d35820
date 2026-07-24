@@ -10,10 +10,10 @@ const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
 describe("RAG mock indexing and activation", () => {
   it("runs full staging → activation → rollback flow", () => {
     const report = runMockIndexingFlow(REPO_ROOT);
-    expect(report.packageCount).toBe(300);
-    expect(report.chunkCount).toBe(2692);
-    expect(report.inserted).toBe(2692);
-    expect(report.skipped).toBe(2692);
+    expect(report.packageCount).toBe(400);
+    expect(report.chunkCount).toBe(3700);
+    expect(report.inserted).toBe(3700);
+    expect(report.skipped).toBe(3700);
     expect(report.activationOk).toBe(true);
     expect(report.rollbackOk).toBe(true);
     expect(report.singleActiveEnforced).toBe(true);
@@ -28,7 +28,7 @@ describe("RAG mock indexing and activation", () => {
     });
     expect(report.failedActivationDenied).toBe(true);
     expect(report.activationOk).toBe(true);
-  });
+  }, 120000);
 
   it("enforces single active version", () => {
     const store = new MockRagIndexStore();
