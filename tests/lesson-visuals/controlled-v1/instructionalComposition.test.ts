@@ -1,82 +1,147 @@
-import { describe, expect, it } from "vitest";
+import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { createHash } from "node:crypto";
-import { generateInstructionalComposition } from "../../../src/lib/lesson-visuals/controlled-v1/routes/instructionalComposition";
+import {
+  CHROME_RENDER_TIMEOUT_MS,
+  generateInstructionalComposition,
+  resolveChromeExecutable,
+} from "../../../src/lib/lesson-visuals/controlled-v1/routes/instructionalComposition";
 import { readPngDimensions } from "../../../src/lib/lesson-visuals/controlled-v1/goldenRefs";
-import { writeFileSync, mkdtempSync, rmSync, readFileSync } from "node:fs";
+import { writeFileSync, mkdtempSync, rmSync, readFileSync, existsSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { resolve } from "node:path";
+
+/**
+ * Cold Chrome on GitHub-hosted runners often exceeds Vitest's 5s default.
+ * Suite timeout = spawn bound + flush margin + assertion budget.
+ * Keep global Vitest default unchanged for static/zero-render suites.
+ */
+const RENDER_SUITE_TIMEOUT_MS = CHROME_RENDER_TIMEOUT_MS + 30_000;
+const RENDER_TEST_TIMEOUT_MS = CHROME_RENDER_TIMEOUT_MS + 15_000;
 
 function sha(buf: Buffer): string {
   return createHash("sha256").update(buf).digest("hex");
 }
 
-describe("controlled-v1 instructionalComposition generator", () => {
-  it("produces a valid 1280x720 PNG with joined Arabic for ar-EG", () => {
-    const result = generateInstructionalComposition({
-      lessonId: "intro-m1-l4-ai-can-cannot",
-      locale: "ar-EG",
-      position: 4,
-      title: "الـ AI يقدر يعمل إيه ومينفعش يعمل إيه؟",
+const disposableDirs: string[] = [];
+
+describe(
+  "controlled-v1 instructionalComposition generator",
+  { timeout: RENDER_SUITE_TIMEOUT_MS },
+  () => {
+    let chromePath: string;
+
+    beforeAll(() => {
+      delete process.env.CONTROLLED_V1_ZERO_RENDER;
+      chromePath = resolveChromeExecutable();
+      expect(existsSync(chromePath)).toBe(true);
     });
-    expect(result.width).toBe(1280);
-    expect(result.height).toBe(720);
-    expect(result.direction).toBe("rtl");
-    expect(result.png.subarray(0, 8)).toEqual(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]));
-    const html = readFileSync(result.htmlPath, "utf8");
-    expect(html).toContain("الـ AI قوي في اللغة");
-    expect(html).toContain("dir=\"rtl\"");
-    expect(html).toContain("Tajawal");
 
-    const dir = mkdtempSync(resolve(tmpdir(), "controlled-v1-test-"));
-    const path = resolve(dir, "out.png");
-    try {
-      writeFileSync(path, result.png);
-      expect(readPngDimensions(path)).toEqual({ width: 1280, height: 720 });
-    } finally {
-      rmSync(dir, { recursive: true, force: true });
-    }
-  });
-
-  it("is byte-for-byte deterministic given identical inputs (same Chrome)", () => {
-    const input = {
-      lessonId: "intro-m1-l4-ai-can-cannot" as const,
-      locale: "en" as const,
-      position: 4,
-      title: "AI Can and Cannot",
-    };
-    const a = generateInstructionalComposition(input);
-    const b = generateInstructionalComposition(input);
-    expect(sha(a.png)).toBe(sha(b.png));
-    expect(a.direction).toBe("ltr");
-  });
-
-  it("produces different pixel content across locales for the same lesson", () => {
-    const a = generateInstructionalComposition({
-      lessonId: "intro-m1-l4-ai-can-cannot",
-      locale: "ar-EG",
-      position: 4,
-      title: "x",
+    afterAll(() => {
+      for (const dir of disposableDirs) {
+        rmSync(dir, { recursive: true, force: true });
+      }
     });
-    const b = generateInstructionalComposition({
-      lessonId: "intro-m1-l4-ai-can-cannot",
-      locale: "en",
-      position: 4,
-      title: "x",
-    });
-    expect(sha(a.png)).not.toBe(sha(b.png));
-    const htmlEn = readFileSync(b.htmlPath, "utf8");
-    expect(htmlEn).toContain("AI is strong in language");
-    expect(htmlEn).not.toContain("النهاردة");
-  });
 
-  it("fails closed when locale package is missing", () => {
-    expect(() =>
-      generateInstructionalComposition({
-        lessonId: "__no-such-lesson-id-for-test",
-        locale: "ar-MSA",
-        position: 999,
-        title: "عنوان احتياطي",
-      }),
-    ).toThrow(/BLOCKED_UNRESOLVED_SPEC|locale package missing/);
-  });
-});
+    it(
+      "produces a valid 1280x720 PNG with joined Arabic for ar-EG",
+      { timeout: RENDER_TEST_TIMEOUT_MS },
+      () => {
+        const result = generateInstructionalComposition({
+          lessonId: "intro-m1-l4-ai-can-cannot",
+          locale: "ar-EG",
+          position: 4,
+          title: "الـ AI يقدر يعمل إيه ومينفعش يعمل إيه؟",
+        });
+        expect(result.width).toBe(1280);
+        expect(result.height).toBe(720);
+        expect(result.direction).toBe("rtl");
+        expect(result.png.subarray(0, 8)).toEqual(
+          Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]),
+        );
+        const html = readFileSync(result.htmlPath, "utf8");
+        expect(html).toContain("الـ AI قوي في اللغة");
+        expect(html).toContain('dir="rtl"');
+        expect(html).toContain("Tajawal");
+
+        const dir = mkdtempSync(resolve(tmpdir(), "controlled-v1-test-"));
+        disposableDirs.push(dir);
+        const path = resolve(dir, "out.png");
+        try {
+          writeFileSync(path, result.png);
+          expect(readPngDimensions(path)).toEqual({ width: 1280, height: 720 });
+        } finally {
+          rmSync(dir, { recursive: true, force: true });
+          const idx = disposableDirs.indexOf(dir);
+          if (idx >= 0) disposableDirs.splice(idx, 1);
+        }
+      },
+    );
+
+    it(
+      "is byte-for-byte deterministic given identical inputs (same Chrome)",
+      { timeout: RENDER_TEST_TIMEOUT_MS },
+      () => {
+        const input = {
+          lessonId: "intro-m1-l4-ai-can-cannot" as const,
+          locale: "en" as const,
+          position: 4,
+          title: "AI Can and Cannot",
+        };
+        const a = generateInstructionalComposition(input);
+        const b = generateInstructionalComposition(input);
+        expect(sha(a.png)).toBe(sha(b.png));
+        expect(a.direction).toBe("ltr");
+      },
+    );
+
+    it(
+      "produces different pixel content across locales for the same lesson",
+      { timeout: RENDER_TEST_TIMEOUT_MS },
+      () => {
+        const a = generateInstructionalComposition({
+          lessonId: "intro-m1-l4-ai-can-cannot",
+          locale: "ar-EG",
+          position: 4,
+          title: "x",
+        });
+        const b = generateInstructionalComposition({
+          lessonId: "intro-m1-l4-ai-can-cannot",
+          locale: "en",
+          position: 4,
+          title: "x",
+        });
+        expect(sha(a.png)).not.toBe(sha(b.png));
+        const htmlEn = readFileSync(b.htmlPath, "utf8");
+        expect(htmlEn).toContain("AI is strong in language");
+        expect(htmlEn).not.toContain("النهاردة");
+      },
+    );
+
+    it("fails closed when locale package is missing", () => {
+      expect(() =>
+        generateInstructionalComposition({
+          lessonId: "__no-such-lesson-id-for-test",
+          locale: "ar-MSA",
+          position: 999,
+          title: "عنوان احتياطي",
+        }),
+      ).toThrow(/BLOCKED_UNRESOLVED_SPEC|locale package missing/);
+    });
+
+    it("fails closed under CONTROLLED_V1_ZERO_RENDER without launching Chrome", () => {
+      process.env.CONTROLLED_V1_ZERO_RENDER = "1";
+      try {
+        expect(() =>
+          generateInstructionalComposition({
+            lessonId: "intro-m1-l4-ai-can-cannot",
+            locale: "en",
+            position: 4,
+            title: "blocked",
+          }),
+        ).toThrow(/BLOCKED_ZERO_RENDER/);
+      } finally {
+        delete process.env.CONTROLLED_V1_ZERO_RENDER;
+      }
+    });
+  },
+);

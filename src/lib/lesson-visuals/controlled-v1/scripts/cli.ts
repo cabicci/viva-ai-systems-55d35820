@@ -7,7 +7,9 @@ function parseArgs(argv: string[]): { mode: RunnerMode; confirm?: string } {
   const mode = argv[0] as RunnerMode | undefined;
   const validModes: RunnerMode[] = ["preflight", "pilot", "full-400", "failed-only", "report-only"];
   if (!mode || !validModes.includes(mode)) {
-    console.error(`usage: cli.ts <${validModes.join("|")}> [--confirm_full_400=RUN_AUTHORIZED_400]`);
+    console.error(
+      `usage: cli.ts <${validModes.join("|")}> [--confirm_full_400=RUN_AUTHORIZED_400]`,
+    );
     process.exit(2);
   }
 
@@ -22,6 +24,11 @@ function parseArgs(argv: string[]): { mode: RunnerMode; confirm?: string } {
 
 async function main() {
   const { mode, confirm } = parseArgs(process.argv.slice(2));
+
+  // Defense in depth: preflight/report-only must never launch Chrome or write PNGs.
+  if (mode === "preflight" || mode === "report-only") {
+    process.env.CONTROLLED_V1_ZERO_RENDER = "1";
+  }
 
   let result;
   switch (mode) {
@@ -47,7 +54,13 @@ async function main() {
       throw new Error(`unreachable mode: ${mode}`);
   }
 
-  console.log(JSON.stringify({ mode: result.mode, ok: result.ok, summary: result.summary, errors: result.errors }, null, 2));
+  console.log(
+    JSON.stringify(
+      { mode: result.mode, ok: result.ok, summary: result.summary, errors: result.errors },
+      null,
+      2,
+    ),
+  );
 
   if (!result.ok) {
     process.exit(1);

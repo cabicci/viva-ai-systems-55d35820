@@ -39,14 +39,8 @@ export interface InstructionalCompositionResult {
   direction: "rtl" | "ltr";
 }
 
-const FONT_REGULAR = resolve(
-  REPO_ROOT,
-  "src/lib/lesson-visuals/v1/fonts/Tajawal-Regular.ttf",
-);
-const FONT_BOLD = resolve(
-  REPO_ROOT,
-  "src/lib/lesson-visuals/v1/fonts/Tajawal-Bold.ttf",
-);
+const FONT_REGULAR = resolve(REPO_ROOT, "src/lib/lesson-visuals/v1/fonts/Tajawal-Regular.ttf");
+const FONT_BOLD = resolve(REPO_ROOT, "src/lib/lesson-visuals/v1/fonts/Tajawal-Bold.ttf");
 const LOGO = resolve(REPO_ROOT, "public/brand/masaarat-logo-lockup.png");
 
 function isArabicLocale(locale: Locale): boolean {
@@ -85,12 +79,12 @@ function extractTeachingCopy(
       }>;
     };
     const title = parsed.title?.trim() || fallbackTitle;
-    const core = parsed.sections?.find((s) =>
-      /core/i.test(s.role ?? "") || /الفكرة/.test(s.subtitle ?? ""),
+    const core = parsed.sections?.find(
+      (s) => /core/i.test(s.role ?? "") || /الفكرة/.test(s.subtitle ?? ""),
     );
-    const comparison = parsed.sections?.find((s) =>
-      /comparison|مثال|Example/i.test(s.role ?? "") ||
-      /comparison|مثال/i.test(s.subtitle ?? ""),
+    const comparison = parsed.sections?.find(
+      (s) =>
+        /comparison|مثال|Example/i.test(s.role ?? "") || /comparison|مثال/i.test(s.subtitle ?? ""),
     );
     const subtitle =
       core?.subtitle?.replace(/^Core idea\s*[—–-]\s*/i, "").trim() ||
@@ -99,7 +93,12 @@ function extractTeachingCopy(
 
     // Prefer comparison two-column content when present in markdown tables / bullets.
     const bullets = (core?.bullets ?? [])
-      .map((b) => b.replace(/^\*\*?/, "").replace(/\*\*?$/, "").trim())
+      .map((b) =>
+        b
+          .replace(/^\*\*?/, "")
+          .replace(/\*\*?$/, "")
+          .trim(),
+      )
       .filter(Boolean);
 
     // Lesson-specific known structure for intro-m1-l4 (trust map) from package wording.
@@ -170,10 +169,10 @@ function extractTeachingCopy(
       title: subtitle.length > 8 ? subtitle : title,
       subtitle: parsed.summary?.trim() || title,
       leftLabel: isArabicLocale(locale) ? "الفكرة" : "Idea",
-      leftBody: leftItems[0] ?? (parsed.summary ?? title),
+      leftBody: leftItems[0] ?? parsed.summary ?? title,
       leftItems: leftItems.length ? leftItems : [title],
       rightLabel: isArabicLocale(locale) ? "التطبيق" : "Apply",
-      rightBody: rightItems[0] ?? (comparison?.subtitle ?? title),
+      rightBody: rightItems[0] ?? comparison?.subtitle ?? title,
       rightItems: rightItems.length ? rightItems : [parsed.summary ?? title],
       footer: isArabicLocale(locale)
         ? "محتوى مبني على حزمة الدرس المحلية فقط"
@@ -239,7 +238,10 @@ function escapeHtml(s: string): string {
     .replace(/"/g, "&quot;");
 }
 
-function buildHtml(input: InstructionalCompositionInput, copy: ReturnType<typeof extractTeachingCopy>): string {
+function buildHtml(
+  input: InstructionalCompositionInput,
+  copy: ReturnType<typeof extractTeachingCopy>,
+): string {
   const dir = isArabicLocale(input.locale) ? "rtl" : "ltr";
   const lang = input.locale === "en" ? "en" : "ar";
   const fontReg = pathToFileURL(FONT_REGULAR).href;
@@ -250,13 +252,18 @@ function buildHtml(input: InstructionalCompositionInput, copy: ReturnType<typeof
     ? "خريطة الثقة — نفس الأداة، استخدامين مختلفين"
     : "Trust map — same tool, two different uses";
 
-  const leftItems = copy.leftItems.map((i) => `<div class="item">${escapeHtml(i)}</div>`).join("\n");
-  const rightItems = copy.rightItems.map((i) => `<div class="item">${escapeHtml(i)}</div>`).join("\n");
+  const leftItems = copy.leftItems
+    .map((i) => `<div class="item">${escapeHtml(i)}</div>`)
+    .join("\n");
+  const rightItems = copy.rightItems
+    .map((i) => `<div class="item">${escapeHtml(i)}</div>`)
+    .join("\n");
 
   // RTL: first grid cell appears on the right. Put caution first so it sits on the right (يمين),
   // strength second on the left (شمال) — matches approved ar-EG lesson-4 map.
-  const cols = dir === "rtl"
-    ? `
+  const cols =
+    dir === "rtl"
+      ? `
         <div class="col c2">
           <div class="badge">${escapeHtml(copy.rightLabel)}</div>
           <div class="ar">${escapeHtml(copy.rightBody)}</div>
@@ -267,7 +274,7 @@ function buildHtml(input: InstructionalCompositionInput, copy: ReturnType<typeof
           <div class="ar">${escapeHtml(copy.leftBody)}</div>
           <div class="items">${leftItems}</div>
         </div>`
-    : `
+      : `
         <div class="col c1">
           <div class="badge">${escapeHtml(copy.leftLabel)}</div>
           <div class="ar">${escapeHtml(copy.leftBody)}</div>
@@ -335,7 +342,39 @@ function buildHtml(input: InstructionalCompositionInput, copy: ReturnType<typeof
 </html>`;
 }
 
-function findChrome(): string {
+/**
+ * Bounded Chrome spawn timeout (ms). Sized for cold start on GitHub-hosted
+ * runners (apt-installed Chromium) while remaining finite and explicit.
+ * Do not raise Vitest's global default for unrelated tests — apply per suite.
+ */
+export const CHROME_RENDER_TIMEOUT_MS = 60_000;
+/** Max wait for Chrome to flush screenshot file after process exit (ms). */
+export const CHROME_PNG_FLUSH_TIMEOUT_MS = 3_000;
+
+/** Deterministic counters for zero-render proofs (preflight / report-only). */
+export const renderTelemetry = {
+  rendererCalls: 0,
+  browserLaunches: 0,
+  paidProviderCalls: 0,
+};
+
+export function resetRenderTelemetry(): void {
+  renderTelemetry.rendererCalls = 0;
+  renderTelemetry.browserLaunches = 0;
+  renderTelemetry.paidProviderCalls = 0;
+}
+
+/** Fail-closed when preflight/report-only (or tests) set CONTROLLED_V1_ZERO_RENDER=1. */
+export function assertRenderAuthorized(context: string): void {
+  if (process.env.CONTROLLED_V1_ZERO_RENDER === "1") {
+    throw new Error(
+      `BLOCKED_ZERO_RENDER: ${context} refused — CONTROLLED_V1_ZERO_RENDER=1 (preflight/report-only must not render)`,
+    );
+  }
+}
+
+/** Resolve Chrome/Chromium executable; throw with precise classification if missing. */
+export function resolveChromeExecutable(): string {
   const candidates = [
     process.env.CHROME_PATH,
     process.env.GOOGLE_CHROME_BIN,
@@ -352,14 +391,23 @@ function findChrome(): string {
     if (existsSync(c)) return c;
   }
   throw new Error(
-    "Chrome/Chromium not found for INSTRUCTIONAL_COMPOSITION render. Set CHROME_PATH.",
+    "BLOCKED_CHROME_MISSING: Chrome/Chromium not found for INSTRUCTIONAL_COMPOSITION render. Set CHROME_PATH.",
   );
 }
 
+function findChrome(): string {
+  return resolveChromeExecutable();
+}
+
 function renderHtmlToPng(htmlPath: string, pngPath: string): void {
+  assertRenderAuthorized("renderHtmlToPng");
+  renderTelemetry.browserLaunches += 1;
   const chrome = findChrome();
   mkdirSync(dirname(pngPath), { recursive: true });
-  const userData = join(tmpdir(), `controlled-v1-chrome-${createHash("sha1").update(htmlPath).digest("hex").slice(0, 10)}`);
+  const userData = join(
+    tmpdir(),
+    `controlled-v1-chrome-${createHash("sha1").update(htmlPath).digest("hex").slice(0, 10)}`,
+  );
   mkdirSync(userData, { recursive: true });
   const uri = pathToFileURL(htmlPath).href;
   const args = [
@@ -372,15 +420,23 @@ function renderHtmlToPng(htmlPath: string, pngPath: string): void {
     `--screenshot=${pngPath}`,
     uri,
   ];
-  const result = spawnSync(chrome, args, { encoding: "utf8", timeout: 60000 });
+  const result = spawnSync(chrome, args, {
+    encoding: "utf8",
+    timeout: CHROME_RENDER_TIMEOUT_MS,
+  });
+  if (result.error && (result.error as NodeJS.ErrnoException).code === "ETIMEDOUT") {
+    throw new Error(
+      `BLOCKED_CHROME_COLD_START_TIMEOUT: Chrome spawn exceeded ${CHROME_RENDER_TIMEOUT_MS}ms`,
+    );
+  }
   if (result.status !== 0 && !existsSync(pngPath)) {
     throw new Error(
       `Chrome screenshot failed (status=${result.status}): ${result.stderr || result.stdout}`,
     );
   }
-  const deadline = Date.now() + 3000;
+  const deadline = Date.now() + CHROME_PNG_FLUSH_TIMEOUT_MS;
   while (!existsSync(pngPath) && Date.now() < deadline) {
-    // Chrome may flush asynchronously on Windows.
+    // Bounded wait for Chrome flush on Windows (no sleep; short busy poll).
   }
   if (!existsSync(pngPath)) {
     throw new Error(`Chrome did not write PNG: ${pngPath}`);
@@ -390,6 +446,8 @@ function renderHtmlToPng(htmlPath: string, pngPath: string): void {
 export function generateInstructionalComposition(
   input: InstructionalCompositionInput,
 ): InstructionalCompositionResult {
+  assertRenderAuthorized("generateInstructionalComposition");
+  renderTelemetry.rendererCalls += 1;
   if (!existsSync(FONT_REGULAR) || !existsSync(FONT_BOLD)) {
     throw new Error("Tajawal fonts missing under src/lib/lesson-visuals/v1/fonts/");
   }

@@ -198,15 +198,22 @@ jobs:
       - name: Verify golden references BEFORE run
         run: bun run controlled-visuals:verify-golden
 
-      - name: Run controlled-v1 unit tests
+      - name: Run zero-render static tests (preflight / report-only)
+        if: github.event.inputs.mode == 'preflight' || github.event.inputs.mode == 'report-only'
+        run: bun run controlled-visuals:test-static
+
+      - name: Run static + renderer tests (render-authorized modes)
+        if: github.event.inputs.mode == 'pilot' || github.event.inputs.mode == 'failed-only' || github.event.inputs.mode == 'full-400'
         run: bun run controlled-visuals:test
 
       - name: Build manifests (classification + 400-cell manifest + golden verification)
         if: github.event.inputs.mode == 'preflight' || github.event.inputs.mode == 'pilot' || github.event.inputs.mode == 'full-400'
         run: bun run controlled-visuals:build
 
-      - name: Run preflight
+      - name: Run preflight (zero-render)
         if: github.event.inputs.mode == 'preflight'
+        env:
+          CONTROLLED_V1_ZERO_RENDER: "1"
         run: bun run controlled-visuals:preflight
 
       - name: Run pilot
@@ -230,8 +237,10 @@ jobs:
           fi
           bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts full-400 --confirm_full_400="$CONFIRM_FULL_400"
 
-      - name: Run report-only
+      - name: Run report-only (zero-render)
         if: github.event.inputs.mode == 'report-only'
+        env:
+          CONTROLLED_V1_ZERO_RENDER: "1"
         run: bun run controlled-visuals:report-only
 
       - name: Verify golden references AFTER run (must be byte-identical to BEFORE)
