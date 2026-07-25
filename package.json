@@ -37,6 +37,8 @@
     "rag:validate-local": "bun run test:run -- src/lib/__tests__/rag-",
     "rag:db-replay": "bun run scripts/rag/disposable-db-replay.ts",
     "rag:db-lifecycle": "bun run test:run -- src/lib/__tests__/rag-db-lifecycle.integration.test.ts",
+    "rag:inactive-import": "bun run scripts/rag/inactive-import.ts",
+    "rag:inactive-import:disposable-validate": "bun run scripts/rag/inactive-import-disposable-validate.ts",
     "test": "vitest",
     "test:run": "vitest run",
     "test:ui": "vitest --ui",
