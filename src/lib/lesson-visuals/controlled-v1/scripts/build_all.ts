@@ -1,7 +1,16 @@
 #!/usr/bin/env bun
 import { existsSync } from "node:fs";
-import { buildPilotManifest, buildProductionManifest, buildUnresolvedLedger, writeJson } from "../buildManifest";
-import { loadClassification100, validateClassification100, verifyMediaMapCopyChecksum } from "../loadClassification";
+import {
+  buildPilotManifest,
+  buildProductionManifest,
+  buildUnresolvedLedger,
+  writeJson,
+} from "../buildManifest";
+import {
+  loadClassification100,
+  validateClassification100,
+  verifyMediaMapCopyChecksum,
+} from "../loadClassification";
 import { allGoldenReferencesOk, loadGoldenReferences, verifyGoldenReferences } from "../goldenRefs";
 import { CLASSIFICATION_SOURCE_SHA256 } from "../constants";
 import {
@@ -23,7 +32,9 @@ function main() {
   );
 
   const mediaMapCheck = verifyMediaMapCopyChecksum(CLASSIFICATION_SOURCE_SHA256);
-  console.log(`media-map repo copy checksum ok=${mediaMapCheck.ok} sha256=${mediaMapCheck.actualSha256}`);
+  console.log(
+    `media-map repo copy checksum ok=${mediaMapCheck.ok} sha256=${mediaMapCheck.actualSha256}`,
+  );
   if (!mediaMapCheck.ok) {
     console.error("media-map repo copy checksum MISMATCH — refusing to build manifest");
     process.exit(1);

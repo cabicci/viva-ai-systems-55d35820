@@ -11,15 +11,11 @@ export interface ManifestValidationResult {
   errors: string[];
 }
 
-export function validateProductionManifest(
-  manifest: ProductionManifest,
-): ManifestValidationResult {
+export function validateProductionManifest(manifest: ProductionManifest): ManifestValidationResult {
   const errors: string[] = [];
 
   if (manifest.cells.length !== EXPECTED_TOTAL_CELLS) {
-    errors.push(
-      `expected ${EXPECTED_TOTAL_CELLS} cells, found ${manifest.cells.length}`,
-    );
+    errors.push(`expected ${EXPECTED_TOTAL_CELLS} cells, found ${manifest.cells.length}`);
   }
 
   const seenCellIds = new Set<string>();
@@ -56,9 +52,7 @@ export function validateProductionManifest(
 
     const expectedCellId = `${cell.lessonId}__${cell.locale}`;
     if (cell.cellId !== expectedCellId) {
-      errors.push(
-        `cell ${cell.cellId} does not match expected shape ${expectedCellId}`,
-      );
+      errors.push(`cell ${cell.cellId} does not match expected shape ${expectedCellId}`);
     }
   }
 
@@ -70,9 +64,7 @@ export function validateProductionManifest(
 
   for (const [lessonId, locales] of lessonLocaleCoverage) {
     if (locales.size !== LOCALES.length) {
-      errors.push(
-        `lesson ${lessonId} has ${locales.size}/${LOCALES.length} locales`,
-      );
+      errors.push(`lesson ${lessonId} has ${locales.size}/${LOCALES.length} locales`);
     }
     for (const locale of LOCALES) {
       if (!locales.has(locale)) {

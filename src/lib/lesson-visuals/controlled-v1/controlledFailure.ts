@@ -52,10 +52,7 @@ export function markControlledFailureTriggered(
   cid: string,
   path: string = CONTROLLED_FAILURE_STATE_PATH,
 ): void {
-  writeState(
-    { triggered: true, triggeredAt: new Date().toISOString(), cellId: cid },
-    path,
-  );
+  writeState({ triggered: true, triggeredAt: new Date().toISOString(), cellId: cid }, path);
 }
 
 export function getControlledFailureState(
@@ -64,8 +61,6 @@ export function getControlledFailureState(
   return readState(path);
 }
 
-export function resetControlledFailureState(
-  path: string = CONTROLLED_FAILURE_STATE_PATH,
-): void {
+export function resetControlledFailureState(path: string = CONTROLLED_FAILURE_STATE_PATH): void {
   if (existsSync(path)) rmSync(path, { force: true });
 }

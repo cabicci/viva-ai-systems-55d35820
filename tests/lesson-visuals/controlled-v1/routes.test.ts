@@ -3,7 +3,10 @@ import { mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { runMasaaratScreenshotRoute } from "../../../src/lib/lesson-visuals/controlled-v1/routes/masaaratScreenshot";
 import { runAuthorizedExternalRoute } from "../../../src/lib/lesson-visuals/controlled-v1/routes/authorizedExternal";
-import { DOCS_CONTROLLED_V1_CAPTURE, DOCS_CONTROLLED_V1_RIGHTS } from "../../../src/lib/lesson-visuals/controlled-v1/paths";
+import {
+  DOCS_CONTROLLED_V1_CAPTURE,
+  DOCS_CONTROLLED_V1_RIGHTS,
+} from "../../../src/lib/lesson-visuals/controlled-v1/paths";
 
 const tempFiles: string[] = [];
 afterEach(() => {

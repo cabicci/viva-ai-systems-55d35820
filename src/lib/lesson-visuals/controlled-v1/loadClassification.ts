@@ -54,9 +54,7 @@ export function validateClassification100(
     seen.add(lesson.lessonId);
 
     if (!(lesson.route in counts)) {
-      errors.push(
-        `lesson ${lesson.lessonId} has invalid route: ${lesson.route}`,
-      );
+      errors.push(`lesson ${lesson.lessonId} has invalid route: ${lesson.route}`);
       continue;
     }
     counts[lesson.route] += 1;
@@ -70,9 +68,7 @@ export function validateClassification100(
 
   for (const [route, expected] of Object.entries(EXPECTED_COUNTS)) {
     if (counts[route] !== expected) {
-      errors.push(
-        `route ${route}: expected ${expected}, found ${counts[route] ?? 0}`,
-      );
+      errors.push(`route ${route}: expected ${expected}, found ${counts[route] ?? 0}`);
     }
   }
 

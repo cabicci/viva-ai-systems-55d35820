@@ -25,10 +25,7 @@ const STATUS_COLORS: Record<string, string> = {
  * (no sharp/canvas/resvg — see package.json), so the contact sheet is HTML,
  * not a single flattened raster montage.
  */
-export function generateContactSheetHtml(
-  mode: RunnerMode,
-  receipts: CellReceipt[],
-): string {
+export function generateContactSheetHtml(mode: RunnerMode, receipts: CellReceipt[]): string {
   const rows = receipts
     .map((r) => {
       const color = STATUS_COLORS[r.status] ?? "#333333";

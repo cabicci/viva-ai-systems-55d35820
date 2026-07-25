@@ -69,8 +69,7 @@ export function runMasaaratScreenshotRoute(
     if (!isValidNonProdConfig(config)) {
       return {
         status: "BLOCKED_UNRESOLVED_SPEC",
-        reason:
-          "capture config found but failed non-Production / schema validation",
+        reason: "capture config found but failed non-Production / schema validation",
         configPath,
       };
     }

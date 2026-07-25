@@ -8,7 +8,9 @@ function main() {
 
   for (const r of results) {
     const status = r.ok ? "OK" : "MISMATCH";
-    console.log(`[${status}] ${r.id} sha256=${r.actualSha256 ?? "MISSING"} expected=${r.expectedSha256}`);
+    console.log(
+      `[${status}] ${r.id} sha256=${r.actualSha256 ?? "MISSING"} expected=${r.expectedSha256}`,
+    );
   }
 
   console.log(JSON.stringify({ ok, count: results.length, results }, null, 2));

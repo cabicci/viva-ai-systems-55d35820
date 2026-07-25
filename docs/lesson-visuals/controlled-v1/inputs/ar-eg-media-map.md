@@ -133,214 +133,214 @@ SHA match: `git ls-remote` and `refs/remotes/origin/main` both equal `a9b31c53ae
 
 ### D. Category A production queue
 
-74. `builder-m2-l1-prompt-layer` — **تشريح الـ Prompt**  
+74. `builder-m2-l1-prompt-layer` — **تشريح الـ Prompt**
    Required Masaarat capture: Masaarat: صفحة خريطة المنهج/المسار (curriculum path view) بحالة متعلّم فيها تقدّم ظاهر؛ التقط الهيدر وشريط التقدّم والمراحل المرقّمة معًا.
-75. `builder-m2-l2-instructions-examples` — **Instructions vs Examples**  
+75. `builder-m2-l2-instructions-examples` — **Instructions vs Examples**
    Required Masaarat capture: Masaarat: /dashboard أو الصفحة الرئيسية التي تعرض كروت المسارات الخمسة؛ حالة مسارات مفتوحة؛ التقط الصف الكامل للكروت المتطابقة.
-77. `builder-m3-l1-context-layer` — **إيه السياق؟**  
+77. `builder-m3-l1-context-layer` — **إيه السياق؟**
    Required Masaarat capture: Masaarat: واجهة المساعد/الشات داخل درس مفتوح؛ الحالة = متعلّم داخل مسار ودرس محددين بحيث يظهر سياق المسار والدرس فوق حقل الإدخال.
-88. `builder-m6-l4-components-routes` — **Components & Routes**  
+88. `builder-m6-l4-components-routes` — **Components & Routes**
    Required Masaarat capture: Masaarat: /curriculum أو عرض مسار يُظهر تداخل ModuleCard + LessonRow داخل كرتين مسار على الأقل (مثل Creator و Automator).
-91. `builder-m7-l1-tables-columns` — **Tables & Columns**  
+91. `builder-m7-l1-tables-columns` — **Tables & Columns**
    Required Masaarat capture: Masaarat: صفحة /system-state (أو المكافئ التشغيلي الحالي) بحالة منصة حقيقية؛ التقط كروت/حقول currentUser و currentPath بوضوح.
-93. `builder-m7-l3-queries` — **Queries: ازاي بتجيب البيانات**  
+93. `builder-m7-l3-queries` — **Queries: ازاي بتجيب البيانات**
    Required Masaarat capture: Masaarat: صفحة التقرير/الإحصاء الداخلية التي تعرض الكروت الأربعة المذكورة؛ التقط الأربعة في إطار واحد مع عناوين مقروءة.
-100. `builder-m10-l2-first-users` — **أول مستخدمين**  
+100. `builder-m10-l2-first-users` — **أول مستخدمين**
    Required Masaarat capture: Masaarat: داشبورد تقدّم المتعلّم بعد إكمال دروس Intro على الأقل؛ التقط كروت السلسلة والدروس المكتملة ومؤشر المسار معًا.
 
 ### E. Category B production queue
 
-3. `intro-m1-l3-setup-your-ai` — **افتح أول AI ليك في دقيقتين**  
-   Platform/subject + visible evidence: External: ChatGPT أو Gemini أو Claude — صفحة الشات بعد تسجيل الدخول؛ يظهر حقل الرسالة وزر الإرسال ومحادثة فارغة/تجريبية بلا بيانات شخصية.  
+3. `intro-m1-l3-setup-your-ai` — **افتح أول AI ليك في دقيقتين**
+   Platform/subject + visible evidence: External: ChatGPT أو Gemini أو Claude — صفحة الشات بعد تسجيل الدخول؛ يظهر حقل الرسالة وزر الإرسال ومحادثة فارغة/تجريبية بلا بيانات شخصية.
    Access flags: Authenticated access + particular account state: حساب مجاني على الأداة المختارة؛ أخفِ أي محادثات شخصية.
-81. `builder-m5-l2-frontend` — **واجهة التطبيق (Frontend)**  
-   Platform/subject + visible evidence: External: متصفح Chrome على أي واجهة AI (مثل ChatGPT)؛ كليك يمين → Inspect؛ العنصر المحدّد + لوحة Elements/Styles ظاهران معًا.  
+81. `builder-m5-l2-frontend` — **واجهة التطبيق (Frontend)**
+   Platform/subject + visible evidence: External: متصفح Chrome على أي واجهة AI (مثل ChatGPT)؛ كليك يمين → Inspect؛ العنصر المحدّد + لوحة Elements/Styles ظاهران معًا.
    Access flags: Particular tool/page: Chrome (أو متصفح بدعم DevTools) + صفحة AI قابلة للفحص؛ قد تختلف الواجهة حسب الإصدار.
-87. `builder-m6-l3-first-prompt-to-lovable` — **أول Prompt لـ Lovable**  
-   Platform/subject + visible evidence: External: lovable.dev — مشروع أو شاشة إنشاء تعرض لوحة الـ prompt ولوحة الـ preview معًا؛ Prompt يتضمن goal/users/pages/style/constraints.  
+87. `builder-m6-l3-first-prompt-to-lovable` — **أول Prompt لـ Lovable**
+   Platform/subject + visible evidence: External: lovable.dev — مشروع أو شاشة إنشاء تعرض لوحة الـ prompt ولوحة الـ preview معًا؛ Prompt يتضمن goal/users/pages/style/constraints.
    Access flags: Authenticated access + account state: حساب Lovable ومشروع/معاينة متاحة؛ الواجهة قد تتغير.
 
 ### F. Category C production queue
 
-1. `intro-m1-l1-what-is-ai` — **AI يعني إيه فعلًا؟**  
+1. `intro-m1-l1-what-is-ai` — **AI يعني إيه فعلًا؟**
    Diagram subject: Diagram: حلقة سؤال المستخدم → رد AI → تعديل، مع سهم رجوع.
-2. `intro-m1-l2-first-prompt` — **أول Prompt ليك**  
+2. `intro-m1-l2-first-prompt` — **أول Prompt ليك**
    Diagram subject: Diagram: أربعة حقول Prompt مع مثال قصير داخل كل حقل.
-4. `intro-m1-l4-ai-can-cannot` — **الـ AI يقدر يعمل إيه ومينفعش يعمل إيه؟**  
+4. `intro-m1-l4-ai-can-cannot` — **الـ AI يقدر يعمل إيه ومينفعش يعمل إيه؟**
    Diagram subject: Diagram: مقارنة مهام لغوية آمنة مقابل حقائق/طب/قانون تحتاج تحققًا.
-5. `intro-m1-l5-ai-vs-software` — **AI مش زي البرامج العادية**  
+5. `intro-m1-l5-ai-vs-software` — **AI مش زي البرامج العادية**
    Diagram subject: Diagram: مساران متوازيان يلتقيان في مثال Excel+AI.
-6. `intro-m1-l6-learn-without-fear` — **اتعلم AI من غير خوف**  
+6. `intro-m1-l6-learn-without-fear` — **اتعلم AI من غير خوف**
    Diagram subject: Diagram: دورة من أربع خطوات مع سهم نمو ثقة.
-7. `intro-m1-l7-choose-your-path` — **اختار مسارك**  
+7. `intro-m1-l7-choose-your-path` — **اختار مسارك**
    Diagram subject: Diagram: خريطة مستويات المسارات الخمسة مع مشكلة مختصرة لكل مسار.
-8. `business-m1-l1-from-decisions-to-leadership` — **القرارات بقت بتنفّذ نفسها — دورك إيه؟**  
+8. `business-m1-l1-from-decisions-to-leadership` — **القرارات بقت بتنفّذ نفسها — دورك إيه؟**
    Diagram subject: Diagram: طيف Operator → System builder → Leader.
-9. `business-m1-l2-reactive-vs-proactive` — **Reactive vs Proactive**  
+9. `business-m1-l2-reactive-vs-proactive` — **Reactive vs Proactive**
    Diagram subject: Diagram: يومان متوازيان يبرزان بلوك التخطيط.
-10. `business-m2-l1-customer-lifecycle` — **دورة حياة العميل**  
+10. `business-m2-l1-customer-lifecycle` — **دورة حياة العميل**
    Diagram subject: Diagram: قمع/مسار خمس محطات مع تمييز أضعف محطة.
-11. `business-m2-l2-build-your-offer` — **ابني عرضك — التحويل مش المنتج**  
+11. `business-m2-l2-build-your-offer` — **ابني عرضك — التحويل مش المنتج**
    Diagram subject: Diagram: قالب تعبئة لصيغة العرض.
-12. `business-m2-l2-retention-flow` — **Retention Flow**  
+12. `business-m2-l2-retention-flow` — **Retention Flow**
    Diagram subject: Diagram: خط زمني بعد الشراء بثلاث نقاط اتصال.
-13. `business-m2-l3-readiness-signals` — **علامات الجاهزية للتوسع**  
+13. `business-m2-l3-readiness-signals` — **علامات الجاهزية للتوسع**
    Diagram subject: Diagram: checklist جاهزية بأربعة محاور ومخرجين.
-14. `business-m3-l1-delegate-or-automate` — **Delegate ولا Automate؟**  
+14. `business-m3-l1-delegate-or-automate` — **Delegate ولا Automate؟**
    Diagram subject: Diagram: مصفوفة 2×2 للتفويض والأتمتة.
-15. `business-m3-l2-strategic-operational-admin` — **Strategic / Operational / Admin**  
+15. `business-m3-l2-strategic-operational-admin` — **Strategic / Operational / Admin**
    Diagram subject: Diagram: ثلاثة أعمدة مع أمثلة ودور AI.
-16. `business-m3-l3-system-then-people` — **System الأول — الناس بعدين**  
+16. `business-m3-l3-system-then-people` — **System الأول — الناس بعدين**
    Diagram subject: Diagram: أربع مراحل خطية System→People.
-17. `business-m4-l1-premature-scaling` — **توسع قبل الأوان**  
+17. `business-m4-l1-premature-scaling` — **توسع قبل الأوان**
    Diagram subject: Diagram: scaling cliff مع أربع نقاط فحص.
-18. `business-m4-l2-reactive-relapse` — **الرجوع لـ Reactive Mode**  
+18. `business-m4-l2-reactive-relapse` — **الرجوع لـ Reactive Mode**
    Diagram subject: Diagram: relapse cycle مع قاطع حماية.
-19. `business-m4-l3-weekly-rhythm` — **الإيقاع الأسبوعي = ٤ مسارات**  
+19. `business-m4-l3-weekly-rhythm` — **الإيقاع الأسبوعي = ٤ مسارات**
    Diagram subject: Diagram: weekly review timeline.
-20. `business-m4-l4-full-ecosystem` — **الـ ٥ مسارات في يومك**  
+20. `business-m4-l4-full-ecosystem` — **الـ ٥ مسارات في يومك**
    Diagram subject: Diagram: ecosystem loop للمسارات الخمسة.
-21. `creator-m1-l1-why-content` — **ليه المحتوى مش Posting؟**  
+21. `creator-m1-l1-why-content` — **ليه المحتوى مش Posting؟**
    Diagram subject: Diagram: نظام محتوى من أربعة عناصر مقابل عشوائية.
-22. `creator-m1-l2-attention-economy` — **إيه هو اقتصاد الانتباه؟**  
+22. `creator-m1-l2-attention-economy` — **إيه هو اقتصاد الانتباه؟**
    Diagram subject: Diagram: تدفق انتباه ثنائي المسار.
-23. `creator-m2-l1-know-audience` — **اعرف جمهورك فعلًا**  
+23. `creator-m2-l1-know-audience` — **اعرف جمهورك فعلًا**
    Diagram subject: Diagram: audience-persona map.
-24. `creator-m2-l2-content-pillars` — **اختار ٣ Pillars**  
+24. `creator-m2-l2-content-pillars` — **اختار ٣ Pillars**
    Diagram subject: Diagram: content-pillars.
-25. `creator-m3-l1-hook` — **Hook: أول ٣ ثواني**  
+25. `creator-m3-l1-hook` — **Hook: أول ٣ ثواني**
    Diagram subject: Diagram: timeline 0–3s للمقارنة.
-26. `creator-m3-l2-script-structure` — **بنية السكريبت الكاملة**  
+26. `creator-m3-l2-script-structure` — **بنية السكريبت الكاملة**
    Diagram subject: Diagram: script structure timeline.
-27. `creator-m3-l3-cta` — **CTA: ازاي تخلّي المتفرّج يتحرّك**  
+27. `creator-m3-l3-cta` — **CTA: ازاي تخلّي المتفرّج يتحرّك**
    Diagram subject: Diagram: decision tree للـ CTA.
-28. `creator-m4-l1-reality-check` — **Reality Check**  
+28. `creator-m4-l1-reality-check` — **Reality Check**
    Diagram subject: Diagram: reality-check iteration loop.
-29. `creator-m4-l2-mobile-shooting` — **التصوير بالموبايل**  
+29. `creator-m4-l2-mobile-shooting` — **التصوير بالموبايل**
    Diagram subject: Diagram: مخطط إعداد تصوير موبايل (نور/هاتف/شخص/صوت).
-30. `creator-m4-l3-ai-writing` — **AI كمساعد كتابة**  
+30. `creator-m4-l3-ai-writing` — **AI كمساعد كتابة**
    Diagram subject: Diagram: AI writing workflow مع إبراز التعديل البشري.
-31. `creator-m5-l1-editing` — **المونتاج — Cut, Caption, Pace**  
+31. `creator-m5-l1-editing` — **المونتاج — Cut, Caption, Pace**
    Diagram subject: Diagram: before/after editing timeline.
-32. `creator-m4-repurposing` — **Repurposing — مضاعف المحتوى**  
+32. `creator-m4-repurposing` — **Repurposing — مضاعف المحتوى**
    Diagram subject: Diagram: repurposing hub-and-spokes.
-33. `creator-m5-l2-thumbnails-captions` — **Thumbnails & Captions**  
+33. `creator-m5-l2-thumbnails-captions` — **Thumbnails & Captions**
    Diagram subject: Diagram: thumbnail/caption before-after cards.
-34. `creator-m6-l1-platforms` — **اختيار المنصات**  
+34. `creator-m6-l1-platforms` — **اختيار المنصات**
    Diagram subject: Diagram: platforms-grid decision map.
-35. `creator-m6-l2-scheduling` — **الجدولة والاستمرارية**  
+35. `creator-m6-l2-scheduling` — **الجدولة والاستمرارية**
    Diagram subject: Diagram: scheduling-calendar.
-36. `creator-m6-l3-analytics` — **قراءة Analytics بسيطة**  
+36. `creator-m6-l3-analytics` — **قراءة Analytics بسيطة**
    Diagram subject: Diagram: analytics-triangle.
-37. `creator-m6-l4-leads` — **من Views لـ Leads**  
+37. `creator-m6-l4-leads` — **من Views لـ Leads**
    Diagram subject: Diagram: leads-funnel.
-38. `creator-m7-l1-brand-basics` — **Brand Basics — Colors, Fonts, Logo**  
+38. `creator-m7-l1-brand-basics` — **Brand Basics — Colors, Fonts, Logo**
    Diagram subject: Diagram: brand basics hierarchy.
-39. `creator-m7-l2-grid-consistency` — **Grid Consistency على الـ Profile**  
+39. `creator-m7-l2-grid-consistency` — **Grid Consistency على الـ Profile**
    Diagram subject: Diagram: two 3×3 grids comparing consistency.
-40. `analyst-m1-l1-from-automation-to-insight` — **بياناتك جاهزة — دلوقتي بتسأل**  
+40. `analyst-m1-l1-from-automation-to-insight` — **بياناتك جاهزة — دلوقتي بتسأل**
    Diagram subject: Diagram: decision-loop.
-41. `analyst-m2-l1-feeling-to-question` — **حوّل الشعور لسؤال**  
+41. `analyst-m2-l1-feeling-to-question` — **حوّل الشعور لسؤال**
    Diagram subject: Diagram: feeling-to-question-table.
-42. `analyst-m2-l2-right-question-rule` — **السؤال الصح أهم من الإجابة**  
+42. `analyst-m2-l2-right-question-rule` — **السؤال الصح أهم من الإجابة**
    Diagram subject: Diagram: question-scorecard.
-43. `analyst-m3-l1-three-sources` — **المصادر الثلاثة**  
+43. `analyst-m3-l1-three-sources` — **المصادر الثلاثة**
    Diagram subject: Diagram: three-sources-merge.
-44. `analyst-m3-l2-ai-summarization` — **AI = أسرع محلّل عندك**  
+44. `analyst-m3-l2-ai-summarization` — **AI = أسرع محلّل عندك**
    Diagram subject: Diagram: ai-summarization-flow.
-45. `analyst-m4-l1-pattern-vs-outlier` — **Pattern أم Outlier؟**  
+45. `analyst-m4-l1-pattern-vs-outlier` — **Pattern أم Outlier؟**
    Diagram subject: Diagram: pattern-vs-outlier chart.
-46. `analyst-m4-l2-decision-rule` — **كل تفسير ينتهي بـ «إذًا هعمل…»**  
+46. `analyst-m4-l2-decision-rule` — **كل تفسير ينتهي بـ «إذًا هعمل…»**
    Diagram subject: Diagram: decision-chain.
-47. `analyst-m5-l1-four-numbers-dashboard` — **٤ أرقام بس**  
+47. `analyst-m5-l1-four-numbers-dashboard` — **٤ أرقام بس**
    Diagram subject: Diagram: four-kpi-dashboard layout.
-48. `analyst-m4-automated-dashboard` — **رقم واحد يتحدّث لوحده**  
+48. `analyst-m4-automated-dashboard` — **رقم واحد يتحدّث لوحده**
    Diagram subject: Diagram: single-KPI automation flow.
-49. `analyst-m5-l2-weekly-review-ritual` — **Review أسبوعي = ١٥ دقيقة**  
+49. `analyst-m5-l2-weekly-review-ritual` — **Review أسبوعي = ١٥ دقيقة**
    Diagram subject: Diagram: weekly-review-timeline.
-50. `analyst-m6-l1-question-mistakes` — **أخطاء الأسئلة**  
+50. `analyst-m6-l1-question-mistakes` — **أخطاء الأسئلة**
    Diagram subject: Diagram: question-rewrite table.
-51. `analyst-m5-ab-testing` — **اختبار A/B بسيط**  
+51. `analyst-m5-ab-testing` — **اختبار A/B بسيط**
    Diagram subject: Diagram: A/B comparison with one variable.
-52. `analyst-m6-l2-interpretation-mistakes` — **أخطاء التفسير**  
+52. `analyst-m6-l2-interpretation-mistakes` — **أخطاء التفسير**
    Diagram subject: Diagram: correlation-causation.
-53. `analyst-m7-l1-from-decisions-to-business` — **قراراتك جاهزة → Business بيشغّلها**  
+53. `analyst-m7-l1-from-decisions-to-business` — **قراراتك جاهزة → Business بيشغّلها**
    Diagram subject: Diagram: decision-backlog flow.
-54. `automator-m1-l1-where-you-are` — **أنت فين في الخريطة؟**  
+54. `automator-m1-l1-where-you-are` — **أنت فين في الخريطة؟**
    Diagram subject: Diagram: journey map تبرز Automator.
-55. `automator-m2-l1-systems-view` — **كل شغل = System**  
+55. `automator-m2-l1-systems-view` — **كل شغل = System**
    Diagram subject: Diagram: IPO / trigger-process-output.
-56. `automator-m2-l2-spot-patterns` — **شوف الأنماط في يومك**  
+56. `automator-m2-l2-spot-patterns` — **شوف الأنماط في يومك**
    Diagram subject: Diagram: pattern cards X→Y.
-57. `automator-m2-l3-decide-what-to-automate` — **قرّر إيه يتأتمت**  
+57. `automator-m2-l3-decide-what-to-automate` — **قرّر إيه يتأتمت**
    Diagram subject: Diagram: automate-priority matrix.
-58. `automator-m3-l1-tools-landscape` — **Make vs n8n vs Zapier**  
+58. `automator-m3-l1-tools-landscape` — **Make vs n8n vs Zapier**
    Diagram subject: Diagram: tools comparison + shared workflow layer.
-59. `automator-m3-l2-triggers-actions` — **Triggers + Actions**  
+59. `automator-m3-l2-triggers-actions` — **Triggers + Actions**
    Diagram subject: Diagram: linear trigger-actions chain.
-60. `automator-m3-l3-filters-routers` — **Filters & Routers**  
+60. `automator-m3-l3-filters-routers` — **Filters & Routers**
    Diagram subject: Diagram: filter vs router comparison.
-61. `automator-m4-l1-connect-database` — **وصّل الـ DB من Builder**  
+61. `automator-m4-l1-connect-database` — **وصّل الـ DB من Builder**
    Diagram subject: Diagram: workflow + mini table schema.
-62. `automator-m4-l2-webhooks-api` — **Webhooks & APIs**  
+62. `automator-m4-l2-webhooks-api` — **Webhooks & APIs**
    Diagram subject: Diagram: API polling vs webhook.
-63. `automator-m4-l3-error-handling` — **Error Handling**  
+63. `automator-m4-l3-error-handling` — **Error Handling**
    Diagram subject: Diagram: error-handling recovery path.
-64. `automator-m3-testing-automation` — **اختبر قبل ما تطلع**  
+64. `automator-m3-testing-automation` — **اختبر قبل ما تطلع**
    Diagram subject: Diagram: testing gate ladder.
-65. `automator-m5-l1-llm-in-flow` — **LLM جوه الـ Flow**  
+65. `automator-m5-l1-llm-in-flow` — **LLM جوه الـ Flow**
    Diagram subject: Diagram: LLM step inside automation flow.
-66. `automator-m5-l2-rag-in-n8n` — **RAG جوه الـ Automation**  
+66. `automator-m5-l2-rag-in-n8n` — **RAG جوه الـ Automation**
    Diagram subject: Diagram: RAG reply path (tool-agnostic).
-67. `automator-m5-l3-agents` — **Agents بياخدوا قرارات**  
+67. `automator-m5-l3-agents` — **Agents بياخدوا قرارات**
    Diagram subject: Diagram: bounded agent map.
-68. `automator-m6-l1-lead-capture` — **استقبال Leads من Creator**  
+68. `automator-m6-l1-lead-capture` — **استقبال Leads من Creator**
    Diagram subject: Diagram: lead-capture four stages.
-69. `automator-m6-l2-whatsapp-flow` — **WhatsApp Flow ذكي**  
+69. `automator-m6-l2-whatsapp-flow` — **WhatsApp Flow ذكي**
    Diagram subject: Diagram: WhatsApp flow with consent and handoff.
-70. `automator-m6-l3-follow-up` — **المتابعة التلقائية + CRM**  
+70. `automator-m6-l3-follow-up` — **المتابعة التلقائية + CRM**
    Diagram subject: Diagram: follow-up cadence timeline.
-71. `automator-m7-l1-closing-loop` — **بياناتك جاهزة — اللي جاي**  
+71. `automator-m7-l1-closing-loop` — **بياناتك جاهزة — اللي جاي**
    Diagram subject: Diagram: closed-loop journey to Analyst.
-72. `builder-m1-l1-what-is-llm` — **إيه هو الـ LLM؟**  
+72. `builder-m1-l1-what-is-llm` — **إيه هو الـ LLM؟**
    Diagram subject: Diagram: LLM prediction vs fact-check.
-73. `builder-m1-l2-tokens-training` — **Tokens والتدريب**  
+73. `builder-m1-l2-tokens-training` — **Tokens والتدريب**
    Diagram subject: Diagram: tokens cost/speed comparison.
-76. `builder-m2-l3-style-control` — **Style & Tone**  
+76. `builder-m2-l3-style-control` — **Style & Tone**
    Diagram subject: Diagram: style before/after voice profile.
-78. `builder-m3-l2-memory-limits` — **حدود الذاكرة**  
+78. `builder-m3-l2-memory-limits` — **حدود الذاكرة**
    Diagram subject: Diagram: context window vs snapshot memory.
-79. `builder-m4-l1-parameters` — **Parameters: Temperature + Top-p + Max tokens**  
+79. `builder-m4-l1-parameters` — **Parameters: Temperature + Top-p + Max tokens**
    Diagram subject: Diagram: parameter dials + sample outputs.
-80. `builder-m5-l1-transition` — **Transition — من اللغة للـ App**  
+80. `builder-m5-l1-transition` — **Transition — من اللغة للـ App**
    Diagram subject: Diagram: transition bridge to three app layers.
-82. `builder-m5-l3-backend-api` — **كواليس التطبيق وساعي البريد**  
+82. `builder-m5-l3-backend-api` — **كواليس التطبيق وساعي البريد**
    Diagram subject: Diagram: request/response through API.
-83. `builder-m5-l4-database-intro` — **المخزن الذكي (Database)**  
+83. `builder-m5-l4-database-intro` — **المخزن الذكي (Database)**
    Diagram subject: Diagram: apps connected to central table.
-84. `builder-m5-l5-mini-win` — **Mini-Win: شوف إنت فهمت إيه**  
+84. `builder-m5-l5-mini-win` — **Mini-Win: شوف إنت فهمت إيه**
    Diagram subject: Diagram: MVP scope funnel.
-85. `builder-m6-l1-idea-to-page` — **من فكرة لصفحة**  
+85. `builder-m6-l1-idea-to-page` — **من فكرة لصفحة**
    Diagram subject: Diagram: three-screen user flow.
-86. `builder-m6-l2-wireframe` — **Wireframe — ارسم قبل ما تبني**  
+86. `builder-m6-l2-wireframe` — **Wireframe — ارسم قبل ما تبني**
    Diagram subject: Diagram: low-fidelity wireframe layout.
-89. `builder-m6-l5-iteration` — **Iteration Loop**  
+89. `builder-m6-l5-iteration` — **Iteration Loop**
    Diagram subject: Diagram: iteration loop four stages.
-90. `builder-m6-l6-debugging` — **لو الدنيا بازت — Debugging**  
+90. `builder-m6-l6-debugging` — **لو الدنيا بازت — Debugging**
    Diagram subject: Diagram: debugging playbook steps.
-92. `builder-m7-l2-relations` — **Relations بين الجداول**  
+92. `builder-m7-l2-relations` — **Relations بين الجداول**
    Diagram subject: Diagram: simple ERD one-to-many.
-94. `builder-m8-l1-sessions-jwt` — **كارت الدخول (Sessions & JWT)**  
+94. `builder-m8-l1-sessions-jwt` — **كارت الدخول (Sessions & JWT)**
    Diagram subject: Diagram: session/JWT flow.
-95. `builder-m8-l2-rls` — **الحارس الشخصي (RLS)**  
+95. `builder-m8-l2-rls` — **الحارس الشخصي (RLS)**
    Diagram subject: Diagram: RLS filter per user_id.
-96. `builder-m9-l1-rag` — **AI يرد من ملفاتك (RAG)**  
+96. `builder-m9-l1-rag` — **AI يرد من ملفاتك (RAG)**
    Diagram subject: Diagram: RAG four-stage path.
-97. `builder-m9-l2-embeddings` — **إزاي الـ AI بيلاقي المعلومة**  
+97. `builder-m9-l2-embeddings` — **إزاي الـ AI بيلاقي المعلومة**
    Diagram subject: Diagram: embedding space near/far points.
-98. `builder-m9-l3-agents` — **AI بياخد قرارات لوحده (Agents)**  
+98. `builder-m9-l3-agents` — **AI بياخد قرارات لوحده (Agents)**
    Diagram subject: Diagram: agent loop with safety gate.
-99. `builder-m10-l1-deploy-domain` — **Deploy و Domain**  
+99. `builder-m10-l1-deploy-domain` — **Deploy و Domain**
    Diagram subject: Diagram: deploy path + environment secrets vault.
 
 ### G. Unresolved items

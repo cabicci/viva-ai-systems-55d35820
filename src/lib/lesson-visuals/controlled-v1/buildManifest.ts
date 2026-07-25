@@ -102,9 +102,7 @@ export function buildPilotManifest(
 }
 
 /** Every MASAARAT_SCREENSHOT / AUTHORIZED_EXTERNAL_SCREENSHOT cell starts unresolved (fail-closed by design). */
-export function buildUnresolvedLedger(
-  manifest: ProductionManifest,
-): UnresolvedLedger {
+export function buildUnresolvedLedger(manifest: ProductionManifest): UnresolvedLedger {
   const entries: UnresolvedLedgerEntry[] = manifest.cells
     .filter((cell) => cell.route !== "INSTRUCTIONAL_COMPOSITION")
     .map((cell) => ({

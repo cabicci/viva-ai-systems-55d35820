@@ -85,16 +85,7 @@ export function drawText(
       const line = glyph[row];
       for (let col = 0; col < GLYPH_WIDTH; col++) {
         if (line[col] === "#") {
-          fillRect(
-            canvas,
-            cursorX + col * scale,
-            y + row * scale,
-            scale,
-            scale,
-            r,
-            g,
-            b,
-          );
+          fillRect(canvas, cursorX + col * scale, y + row * scale, scale, scale, r, g, b);
         }
       }
     }

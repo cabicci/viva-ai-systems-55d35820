@@ -29,9 +29,7 @@ export function readPngDimensions(path: string): {
   return { width, height };
 }
 
-export function loadGoldenReferences(
-  path: string = GOLDEN_REFERENCES_PATH,
-): GoldenReferencesFile {
+export function loadGoldenReferences(path: string = GOLDEN_REFERENCES_PATH): GoldenReferencesFile {
   return JSON.parse(readFile(path, "utf8")) as GoldenReferencesFile;
 }
 
@@ -47,9 +45,7 @@ export function verifyGoldenReferences(
     try {
       const st = stat(abs);
       const actualSha256 = sha256HexOfFile(abs);
-      const ok =
-        actualSha256.toUpperCase() === ref.sha256.toUpperCase() &&
-        st.size === ref.size;
+      const ok = actualSha256.toUpperCase() === ref.sha256.toUpperCase() && st.size === ref.size;
       return {
         id: ref.id,
         path: abs,

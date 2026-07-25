@@ -44,11 +44,7 @@ export interface Classification100 {
   authorizedExternalScreenshotLessonIds: string[];
 }
 
-export type CellStatus =
-  | "PENDING"
-  | "ACCEPTED"
-  | "FAILED"
-  | "BLOCKED_UNRESOLVED_SPEC";
+export type CellStatus = "PENDING" | "ACCEPTED" | "FAILED" | "BLOCKED_UNRESOLVED_SPEC";
 
 export interface ManifestCell {
   cellId: string;
@@ -98,12 +94,7 @@ export interface CellReceipt {
   producedAt: string;
 }
 
-export type RunnerMode =
-  | "preflight"
-  | "pilot"
-  | "full-400"
-  | "failed-only"
-  | "report-only";
+export type RunnerMode = "preflight" | "pilot" | "full-400" | "failed-only" | "report-only";
 
 export interface GoldenReferenceEntry {
   id: string;

@@ -1,7 +1,12 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { dirname } from "node:path";
-import { buildProductionManifest, buildPilotManifest, buildUnresolvedLedger, writeJson } from "./buildManifest";
+import {
+  buildProductionManifest,
+  buildPilotManifest,
+  buildUnresolvedLedger,
+  writeJson,
+} from "./buildManifest";
 import { FULL_400_CONFIRM_TOKEN } from "./constants";
 import {
   getControlledFailureState,
@@ -180,7 +185,11 @@ export function runPreflight(): RunResult {
   const report = {
     mode: "preflight" as const,
     generatedAt: new Date().toISOString(),
-    classification: { ok: classificationCheck.ok, errors: classificationCheck.errors, counts: classification.counts },
+    classification: {
+      ok: classificationCheck.ok,
+      errors: classificationCheck.errors,
+      counts: classification.counts,
+    },
     manifest: { ok: manifestCheck.ok, errors: manifestCheck.errors, counts: manifest.counts },
     goldenReferences: { ok: goldenOk, results: goldenResults },
     ok: errors.length === 0,
@@ -278,7 +287,9 @@ export function runFull400(confirmToken: string | undefined): RunResult {
 
 function collectAllReceipts(): CellReceipt[] {
   if (!existsSync(ARTIFACTS_RECEIPTS_DIR)) return [];
-  const byMode = readdirSync(ARTIFACTS_RECEIPTS_DIR, { withFileTypes: true }).filter((d) => d.isDirectory());
+  const byMode = readdirSync(ARTIFACTS_RECEIPTS_DIR, { withFileTypes: true }).filter((d) =>
+    d.isDirectory(),
+  );
   const all: CellReceipt[] = [];
   for (const dirEntry of byMode) {
     const modeDir = `${ARTIFACTS_RECEIPTS_DIR}/${dirEntry.name}`;

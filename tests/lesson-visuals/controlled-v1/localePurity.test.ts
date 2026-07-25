@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { checkLocalePurity, checkLocalePurityBatch } from "../../../src/lib/lesson-visuals/controlled-v1/localePurity";
+import {
+  checkLocalePurity,
+  checkLocalePurityBatch,
+} from "../../../src/lib/lesson-visuals/controlled-v1/localePurity";
 
 describe("controlled-v1 localePurity smoke checks", () => {
   it("does not flag clean ar-MSA text", () => {
