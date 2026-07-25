@@ -17,7 +17,6 @@ import {
 export const IMPLEMENTATION_AUTHORIZATION_ID = "CR-RAG-INACTIVE-IMPORTER-20260724-01";
 
 export const EXPECTED_REPOSITORY = "cabicci/viva-ai-systems-55d35820";
-export const EXPECTED_MAIN_SHA = "6202e9ef8f7dc2f3c1266d3c0812015fd8557447";
 
 /** Repo-tracked Supabase project_id — Production confirmation is a separate Control Room gate. */
 export const EXPECTED_PROJECT_REF = "abyqqeboyrkkwhjpwmtd";
