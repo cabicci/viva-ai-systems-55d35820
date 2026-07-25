@@ -8,6 +8,7 @@ import {
   MAX_EMBEDDING_REQUESTS,
   admitCorpusArtifacts,
   assertActivationUnavailable,
+  assertExpectedMatchesObservedSourceSha,
   assertReportRedacted,
   buildReport,
   buildStagingVersionKey,
@@ -15,29 +16,38 @@ import {
   createMockEmbeddingProvider,
   emptyRowProgress,
   EXPECTED_CHUNK_COUNT,
-  EXPECTED_MAIN_SHA,
   EXPECTED_PACKAGE_COUNT,
   EXPECTED_PROJECT_REF,
   EXPECTED_REPOSITORY,
+  LockError,
   MemorySqlExecutor,
   ModeError,
+  normalizeFullGitSha,
   parseOperation,
+  readLocksFromEnv,
   redactSecrets,
+  resolveCheckedOutSourceSha,
   runImporter,
   runInactiveImport,
+  type ImporterConfig,
   type TargetLocks,
 } from "@/lib/rag/inactive-importer";
 import { createOpenAIEmbeddingProvider } from "@/lib/rag/inactive-importer/embeddings";
 import { loadAdmittedCorpus } from "@/lib/rag/inactive-importer/admission";
+import * as inactiveConstants from "@/lib/rag/inactive-importer/constants";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
+
+/** Deterministic test SHA — not a hard-coded live main lock. */
+const TEST_SOURCE_SHA = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+const OTHER_SOURCE_SHA = "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb";
 
 function baseLocks(overrides: Partial<TargetLocks> = {}): TargetLocks {
   const digests = computeArtifactDigests(REPO_ROOT);
   return {
     controlRoomAuthorizationId: IMPLEMENTATION_AUTHORIZATION_ID,
     expectedRepository: EXPECTED_REPOSITORY,
-    expectedMainSha: EXPECTED_MAIN_SHA,
+    expectedMainSha: TEST_SOURCE_SHA,
     expectedProjectRef: EXPECTED_PROJECT_REF,
     expectedSourceSha: CONTENT_FREEZE_SHA,
     expectedIndexVersion: RAG_INDEX_VERSION,
@@ -54,6 +64,16 @@ function baseLocks(overrides: Partial<TargetLocks> = {}): TargetLocks {
     providerCredentialEnvName: "OPENAI_API_KEY",
     executionId: "test-execution-1",
     ...overrides,
+  };
+}
+
+function withMatchingSourceSha(
+  config: ImporterConfig,
+  sha: string = TEST_SOURCE_SHA,
+): ImporterConfig {
+  return {
+    ...config,
+    resolveObservedSourceSha: () => sha,
   };
 }
 
@@ -123,6 +143,71 @@ describe("RAG inactive importer — admission", () => {
   });
 });
 
+describe("RAG inactive importer — runtime source SHA lock", () => {
+  it("passes when EXPECTED_MAIN_SHA matches checked-out source SHA", () => {
+    expect(() =>
+      assertExpectedMatchesObservedSourceSha(TEST_SOURCE_SHA, TEST_SOURCE_SHA),
+    ).not.toThrow();
+    expect(normalizeFullGitSha(TEST_SOURCE_SHA.toUpperCase(), "Expected")).toBe(TEST_SOURCE_SHA);
+  });
+
+  it("fails closed on missing, malformed, or mismatched SHAs", () => {
+    expect(() => normalizeFullGitSha("", "Expected")).toThrow(LockError);
+    expect(() => normalizeFullGitSha("abc", "Expected")).toThrow(/40-character/);
+    expect(() => assertExpectedMatchesObservedSourceSha(TEST_SOURCE_SHA, OTHER_SOURCE_SHA)).toThrow(
+      /does not match checked-out source SHA/,
+    );
+    expect(() =>
+      resolveCheckedOutSourceSha({
+        resolveSha: () => {
+          throw new Error("git unavailable");
+        },
+      }),
+    ).toThrow();
+  });
+
+  it("requires EXPECTED_MAIN_SHA at runtime and does not hard-code a live main SHA", () => {
+    expect(Object.prototype.hasOwnProperty.call(inactiveConstants, "EXPECTED_MAIN_SHA")).toBe(
+      false,
+    );
+    expect(JSON.stringify(inactiveConstants)).not.toContain(
+      "6202e9ef8f7dc2f3c1266d3c0812015fd8557447",
+    );
+
+    expect(() =>
+      readLocksFromEnv({
+        CONTROL_ROOM_AUTHORIZATION_ID: IMPLEMENTATION_AUTHORIZATION_ID,
+        EXECUTION_ID: "x",
+        EXPECTED_PACKAGE_MANIFEST_SHA256: "a".repeat(64),
+        EXPECTED_CHUNK_MANIFEST_SHA256: "b".repeat(64),
+        EXPECTED_CHUNKS_SHA256: "c".repeat(64),
+        EXPECTED_AUTHORITATIVE_LOOKUP_SHA256: "d".repeat(64),
+      }),
+    ).toThrow(/EXPECTED_MAIN_SHA/);
+  });
+
+  it("ignores caller-supplied OBSERVED_MAIN_SHA and uses injected/git observed SHA", async () => {
+    await expect(
+      runImporter(
+        {
+          repoRoot: REPO_ROOT,
+          operation: "preflight",
+          environment: "disposable",
+          dryRun: true,
+          locks: baseLocks({ expectedMainSha: TEST_SOURCE_SHA }),
+          resolveObservedSourceSha: () => OTHER_SOURCE_SHA,
+        },
+        {
+          CONTROL_ROOM_AUTHORIZATION_ID: IMPLEMENTATION_AUTHORIZATION_ID,
+          // Must not be trusted even if it matches the expected lock.
+          OBSERVED_MAIN_SHA: TEST_SOURCE_SHA,
+          OBSERVED_PROJECT_REF: "local-disposable",
+        },
+      ),
+    ).rejects.toThrow(/does not match checked-out source SHA/);
+  });
+});
+
 describe("RAG inactive importer — modes and locks", () => {
   it("forbids activation and destructive modes", () => {
     expect(() => parseOperation("activate")).toThrow(ModeError);
@@ -134,16 +219,15 @@ describe("RAG inactive importer — modes and locks", () => {
 
   it("defaults to dry-run zero-write preflight", async () => {
     const report = await runImporter(
-      {
+      withMatchingSourceSha({
         repoRoot: REPO_ROOT,
         operation: "import",
         environment: "disposable",
         dryRun: true,
         locks: baseLocks(),
-      },
+      }),
       {
         CONTROL_ROOM_AUTHORIZATION_ID: IMPLEMENTATION_AUTHORIZATION_ID,
-        OBSERVED_MAIN_SHA: EXPECTED_MAIN_SHA,
         OBSERVED_PROJECT_REF: "local-disposable",
       },
     );
@@ -155,65 +239,77 @@ describe("RAG inactive importer — modes and locks", () => {
 
   it("rejects missing / wrong authorization and wrong locks", async () => {
     await expect(
-      runImporter({
-        repoRoot: REPO_ROOT,
-        operation: "preflight",
-        environment: "disposable",
-        dryRun: true,
-        locks: baseLocks({ controlRoomAuthorizationId: "WRONG" }),
-      }),
+      runImporter(
+        withMatchingSourceSha({
+          repoRoot: REPO_ROOT,
+          operation: "preflight",
+          environment: "disposable",
+          dryRun: true,
+          locks: baseLocks({ controlRoomAuthorizationId: "WRONG" }),
+        }),
+      ),
     ).rejects.toThrow(/Disposable mode requires/);
 
     await expect(
-      runImporter({
-        repoRoot: REPO_ROOT,
-        operation: "preflight",
-        environment: "disposable",
-        dryRun: true,
-        locks: baseLocks({ expectedMainSha: "0".repeat(40) }),
-      }),
-    ).rejects.toThrow(/Main SHA/);
+      runImporter(
+        withMatchingSourceSha({
+          repoRoot: REPO_ROOT,
+          operation: "preflight",
+          environment: "disposable",
+          dryRun: true,
+          locks: baseLocks({ expectedMainSha: "0".repeat(40) }),
+        }),
+      ),
+    ).rejects.toThrow(/Main SHA|checked-out source SHA/);
 
     await expect(
-      runImporter({
-        repoRoot: REPO_ROOT,
-        operation: "preflight",
-        environment: "disposable",
-        dryRun: true,
-        locks: baseLocks({ expectedProjectRef: "other" }),
-      }),
+      runImporter(
+        withMatchingSourceSha({
+          repoRoot: REPO_ROOT,
+          operation: "preflight",
+          environment: "disposable",
+          dryRun: true,
+          locks: baseLocks({ expectedProjectRef: "other" }),
+        }),
+      ),
     ).rejects.toThrow(/Project ref/);
 
     await expect(
-      runImporter({
-        repoRoot: REPO_ROOT,
-        operation: "preflight",
-        environment: "disposable",
-        dryRun: true,
-        locks: baseLocks({ expectedEmbeddingModel: "wrong-model" }),
-      }),
+      runImporter(
+        withMatchingSourceSha({
+          repoRoot: REPO_ROOT,
+          operation: "preflight",
+          environment: "disposable",
+          dryRun: true,
+          locks: baseLocks({ expectedEmbeddingModel: "wrong-model" }),
+        }),
+      ),
     ).rejects.toThrow(/model/i);
 
     await expect(
-      runImporter({
-        repoRoot: REPO_ROOT,
-        operation: "preflight",
-        environment: "disposable",
-        dryRun: true,
-        locks: baseLocks({ expectedEmbeddingDimensions: 768 }),
-      }),
+      runImporter(
+        withMatchingSourceSha({
+          repoRoot: REPO_ROOT,
+          operation: "preflight",
+          environment: "disposable",
+          dryRun: true,
+          locks: baseLocks({ expectedEmbeddingDimensions: 768 }),
+        }),
+      ),
     ).rejects.toThrow(/dimension/i);
 
     await expect(
-      runImporter({
-        repoRoot: REPO_ROOT,
-        operation: "preflight",
-        environment: "production",
-        dryRun: true,
-        locks: baseLocks({
-          controlRoomAuthorizationId: IMPLEMENTATION_AUTHORIZATION_ID,
+      runImporter(
+        withMatchingSourceSha({
+          repoRoot: REPO_ROOT,
+          operation: "preflight",
+          environment: "production",
+          dryRun: true,
+          locks: baseLocks({
+            controlRoomAuthorizationId: IMPLEMENTATION_AUTHORIZATION_ID,
+          }),
         }),
-      }),
+      ),
     ).rejects.toThrow(/cannot authorize Production/);
   });
 
@@ -221,7 +317,6 @@ describe("RAG inactive importer — modes and locks", () => {
     const { chunks, packageManifest, admission } = loadAdmittedCorpus(REPO_ROOT);
     const sql = new MemorySqlExecutor();
     const provider = createMockEmbeddingProvider();
-    // Force ceiling by pretending attempts already near max with a wrapper
     const capped = {
       ...provider,
       async embedBatch() {
@@ -373,7 +468,7 @@ describe("RAG inactive importer — reports redaction", () => {
       dryRun: true,
       redactedTargetId: "x",
       repository: EXPECTED_REPOSITORY,
-      mainSha: EXPECTED_MAIN_SHA,
+      mainSha: TEST_SOURCE_SHA,
       sourceSha: CONTENT_FREEZE_SHA,
       indexVersion: RAG_INDEX_VERSION,
       artifactDigests: computeArtifactDigests(REPO_ROOT),

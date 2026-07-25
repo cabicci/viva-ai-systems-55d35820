@@ -1,12 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { loadAdmittedCorpus } from "./admission";
-import {
-  EXPECTED_MAIN_SHA,
-  EXPECTED_PROJECT_REF,
-  EXPECTED_REPOSITORY,
-  type ImporterEnvironment,
-} from "./constants";
+import { EXPECTED_PROJECT_REF, EXPECTED_REPOSITORY, type ImporterEnvironment } from "./constants";
 import { buildStagingVersionKey } from "./digests";
 import {
   assertProviderMatchesEnvironment,
@@ -14,7 +9,7 @@ import {
   createOpenAIEmbeddingProvider,
 } from "./embeddings";
 import { runInactiveImport } from "./import-engine";
-import { assertLocksAgainstAdmission, LockError } from "./locks";
+import { assertLocksAgainstAdmission, LockError, resolveCheckedOutSourceSha } from "./locks";
 import { ModeError, parseOperation } from "./modes";
 import { assertReportRedacted, buildReport, emptyRowProgress, redactSecrets } from "./reports";
 import type {
@@ -91,8 +86,14 @@ export async function runImporter(
   const providerCred = env[config.locks.providerCredentialEnvName] ?? "";
 
   try {
+    // Observed SHA is always derived from checked-out Git (or test DI).
+    // Never trust caller-supplied OBSERVED_MAIN_SHA from the environment.
+    const observedSourceSha = resolveCheckedOutSourceSha({
+      cwd: config.repoRoot,
+      resolveSha: config.resolveObservedSourceSha,
+    });
     assertLocksAgainstAdmission(config.locks, admission.digests, config.environment, {
-      observedMainSha: env.OBSERVED_MAIN_SHA ?? EXPECTED_MAIN_SHA,
+      observedSourceSha,
       observedProjectRef: env.OBSERVED_PROJECT_REF ?? EXPECTED_PROJECT_REF,
       databaseUrlPresent: Boolean(databaseUrl),
       providerCredentialPresent: Boolean(providerCred),
@@ -298,4 +299,5 @@ export * from "./embeddings";
 export * from "./import-engine";
 export * from "./validate-staging";
 export * from "./memory-sql";
+export * from "./types";
 export type * from "./types";

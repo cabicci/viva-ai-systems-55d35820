@@ -36,7 +36,9 @@ Working directory:
 ```powershell
 $env:CONTROL_ROOM_AUTHORIZATION_ID = "<NEW_PRODUCTION_EXECUTION_AUTH_ID>"
 $env:EXPECTED_REPOSITORY = "cabicci/viva-ai-systems-55d35820"
-$env:EXPECTED_MAIN_SHA = "<LOCKED_LIVE_MAIN_SHA>"
+# Authorized expected SHA must match the checked-out source (`git rev-parse HEAD`).
+# Do not set OBSERVED_MAIN_SHA — the importer derives the observed SHA from Git.
+$env:EXPECTED_MAIN_SHA = "<LOCKED_CHECKED_OUT_SOURCE_SHA>"
 $env:EXPECTED_PROJECT_REF = "abyqqeboyrkkwhjpwmtd"
 $env:EXPECTED_SOURCE_SHA = "3e1ef5aaf0ca4f3dbcf28650751e0dd1de70bfc2"
 $env:EXPECTED_INDEX_VERSION = "rag-index-v1"
@@ -52,7 +54,6 @@ $env:MAX_EMBEDDING_REQUESTS = "67"
 $env:DATABASE_URL_ENV_NAME = "SUPABASE_DB_URL"
 $env:PROVIDER_CREDENTIAL_ENV_NAME = "OPENAI_API_KEY"
 $env:EXECUTION_ID = "<CONTROL_ROOM_EXECUTION_ID>"
-$env:OBSERVED_MAIN_SHA = "<LOCKED_LIVE_MAIN_SHA>"
 $env:OBSERVED_PROJECT_REF = "abyqqeboyrkkwhjpwmtd"
 
 bun run scripts/rag/inactive-import.ts --op preflight --env production --report-dir E:/Temp/rag-inactive-preflight

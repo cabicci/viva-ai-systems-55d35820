@@ -1,9 +1,9 @@
+import { spawnSync } from "node:child_process";
 import {
   EXPECTED_CHUNK_COUNT,
   EXPECTED_EMBEDDING_DIMENSIONS,
   EXPECTED_EMBEDDING_MODEL,
   EXPECTED_INDEX_VERSION,
-  EXPECTED_MAIN_SHA,
   EXPECTED_PACKAGE_COUNT,
   EXPECTED_PROJECT_REF,
   EXPECTED_REPOSITORY,
@@ -14,12 +14,77 @@ import {
 } from "./constants";
 import type { ArtifactDigests, TargetLocks } from "./types";
 
+/** Full Git object SHA (SHA-1). Fail closed on short / non-hex values. */
+const FULL_GIT_SHA = /^[0-9a-f]{40}$/;
+
 export class LockError extends Error {
   readonly code: string;
   constructor(code: string, message: string) {
     super(message);
     this.name = "LockError";
     this.code = code;
+  }
+}
+
+export function normalizeFullGitSha(raw: string | undefined, label: string): string {
+  const value = (raw ?? "").trim().toLowerCase();
+  if (!value) {
+    throw new LockError("MISSING_MAIN_SHA", `${label} SHA is required`);
+  }
+  if (!FULL_GIT_SHA.test(value)) {
+    throw new LockError(
+      "INVALID_MAIN_SHA",
+      `${label} SHA must be a full 40-character lowercase hex Git SHA`,
+    );
+  }
+  return value;
+}
+
+/**
+ * Observed source SHA must come from the checked-out Git tree.
+ * Callers must not supply OBSERVED_MAIN_SHA from the environment.
+ * Tests may inject resolveSha only.
+ */
+export function resolveCheckedOutSourceSha(options?: {
+  cwd?: string;
+  resolveSha?: () => string;
+}): string {
+  if (options?.resolveSha) {
+    return normalizeFullGitSha(options.resolveSha(), "Observed source");
+  }
+  const cwd = options?.cwd ?? process.cwd();
+  const result = spawnSync("git", ["rev-parse", "HEAD"], {
+    cwd,
+    encoding: "utf8",
+    shell: false,
+  });
+  if (result.error) {
+    throw new LockError(
+      "UNAVAILABLE_MAIN_SHA",
+      `Unable to resolve checked-out source SHA: ${result.error.message}`,
+    );
+  }
+  if (result.status !== 0) {
+    const detail = (result.stderr || result.stdout || "git rev-parse failed").trim();
+    throw new LockError(
+      "UNAVAILABLE_MAIN_SHA",
+      `Unable to resolve checked-out source SHA: ${detail}`,
+    );
+  }
+  return normalizeFullGitSha(result.stdout, "Observed source");
+}
+
+export function assertExpectedMatchesObservedSourceSha(
+  expectedMainSha: string,
+  observedSourceSha: string,
+): void {
+  const expected = normalizeFullGitSha(expectedMainSha, "Expected");
+  const observed = normalizeFullGitSha(observedSourceSha, "Observed source");
+  if (expected !== observed) {
+    throw new LockError(
+      "WRONG_MAIN_SHA",
+      "Expected EXPECTED_MAIN_SHA does not match checked-out source SHA (git rev-parse HEAD)",
+    );
   }
 }
 
@@ -48,7 +113,8 @@ export function readLocksFromEnv(env: NodeJS.ProcessEnv = process.env): TargetLo
   return {
     controlRoomAuthorizationId: req("CONTROL_ROOM_AUTHORIZATION_ID"),
     expectedRepository: req("EXPECTED_REPOSITORY", EXPECTED_REPOSITORY),
-    expectedMainSha: req("EXPECTED_MAIN_SHA", EXPECTED_MAIN_SHA),
+    // Authorized expected SHA is runtime-only — never a compile-time constant.
+    expectedMainSha: normalizeFullGitSha(req("EXPECTED_MAIN_SHA"), "Expected"),
     expectedProjectRef: req("EXPECTED_PROJECT_REF", EXPECTED_PROJECT_REF),
     expectedSourceSha: req("EXPECTED_SOURCE_SHA", EXPECTED_SOURCE_SHA),
     expectedIndexVersion: req("EXPECTED_INDEX_VERSION", EXPECTED_INDEX_VERSION),
@@ -77,7 +143,8 @@ export function assertLocksAgainstAdmission(
   digests: ArtifactDigests,
   environment: ImporterEnvironment,
   options: {
-    observedMainSha?: string;
+    /** Must be derived from git rev-parse HEAD (or test DI). Never from OBSERVED_MAIN_SHA env. */
+    observedSourceSha: string;
     observedProjectRef?: string;
     databaseUrlPresent: boolean;
     providerCredentialPresent: boolean;
@@ -118,12 +185,7 @@ export function assertLocksAgainstAdmission(
   if (locks.expectedRepository !== EXPECTED_REPOSITORY) {
     throw new LockError("WRONG_REPOSITORY", "Repository lock mismatch");
   }
-  if (locks.expectedMainSha !== EXPECTED_MAIN_SHA) {
-    throw new LockError("WRONG_MAIN_SHA", "Main SHA lock mismatch vs candidate base");
-  }
-  if (options.observedMainSha && options.observedMainSha !== locks.expectedMainSha) {
-    throw new LockError("WRONG_MAIN_SHA", "Observed main SHA does not match lock");
-  }
+  assertExpectedMatchesObservedSourceSha(locks.expectedMainSha, options.observedSourceSha);
   if (locks.expectedProjectRef !== EXPECTED_PROJECT_REF) {
     throw new LockError("WRONG_PROJECT_REF", "Project ref lock mismatch");
   }
