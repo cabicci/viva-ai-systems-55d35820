@@ -10,12 +10,12 @@
   "reconciledOriginMainSha": "aca5ad018b7d47238959bc0ee91a195d142cd348",
   "reconciliationTimestamp": "2026-07-23T15:36:42.000Z",
   "normalizationRule": "DIAGRAM -> INSTRUCTIONAL_COMPOSITION",
-  "normalizationRationale": "The classification-source route enum used DIAGRAM/MASAARAT_SCREENSHOT/AUTHORIZED_EXTERNAL_SCREENSHOT. Controlled-v1 renames DIAGRAM to INSTRUCTIONAL_COMPOSITION only (label rename); MASAARAT_SCREENSHOT and AUTHORIZED_EXTERNAL_SCREENSHOT are carried through unchanged. No lesson changed category and no lesson membership changed.",
-  "membershipUnchanged": true,
+  "normalizationRationale": "Original controlled-v1 rename: DIAGRAM -> INSTRUCTIONAL_COMPOSITION (label only). CR-VIS-PILOT-MANIFEST-RECLASSIFICATION-20260725-01 additionally reclassified two pilot lessons (builder-m6-l3-first-prompt-to-lovable, builder-m7-l1-tables-columns) from screenshot routes to INSTRUCTIONAL_COMPOSITION so the 12-cell pilot is fully locally renderable without capture/rights dependencies. Remaining non-pilot screenshot membership is unchanged.",
+  "membershipUnchanged": false,
   "expectedCounts": {
-    "MASAARAT_SCREENSHOT": 7,
-    "AUTHORIZED_EXTERNAL_SCREENSHOT": 3,
-    "INSTRUCTIONAL_COMPOSITION": 90,
+    "MASAARAT_SCREENSHOT": 6,
+    "AUTHORIZED_EXTERNAL_SCREENSHOT": 2,
+    "INSTRUCTIONAL_COMPOSITION": 92,
     "total": 100
   },
   "doNotTouch": [

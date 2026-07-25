@@ -162,6 +162,156 @@ function extractTeachingCopy(
       };
     }
 
+    // Prompt-anatomy teaching panel (not a third-party UI imitation).
+    if (lessonId === "builder-m6-l3-first-prompt-to-lovable") {
+      if (locale === "en") {
+        return {
+          title: "First prompt = five parts",
+          subtitle: "Describe the build — do not guess with three vague words",
+          leftLabel: "Prompt anatomy",
+          leftBody: "Goal · Users · Pages · Style · Constraints",
+          leftItems: [
+            "Goal: what interface and why",
+            "Users: who uses it",
+            "Pages: wireframe sections by name",
+          ],
+          rightLabel: "Why it works",
+          rightBody: "Clear scope beats a vague 'build an interface' request",
+          rightItems: [
+            "Style: colors and mood",
+            "Constraints: what is out of v1",
+            "Result: a copy-ready recipe",
+          ],
+          footer: "Abstract teaching panel — no third-party interface chrome",
+          caption: "Recipe before preview: goal + users + pages + style + constraints",
+        };
+      }
+      if (locale === "ar-MSA") {
+        return {
+          title: "أول prompt = خمسة أجزاء",
+          subtitle: "صف البناء بوصفة واضحة — لا تترك التخمين لثلاث كلمات",
+          leftLabel: "تشريح الـ Prompt",
+          leftBody: "الهدف · المستخدمون · الصفحات · الأسلوب · الحدود",
+          leftItems: [
+            "الهدف: نوع الواجهة ولماذا",
+            "المستخدمون: من سيستخدمها",
+            "الصفحات: أقسام الـ wireframe بالاسم",
+          ],
+          rightLabel: "لماذا ينجح",
+          rightBody: "النطاق الواضح أفضل من «ابنِ واجهة» المبهم",
+          rightItems: [
+            "الأسلوب: ألوان ومزاج",
+            "الحدود: ما خارج النسخة الأولى",
+            "النتيجة: وصفة جاهزة للنسخ",
+          ],
+          footer: "لوحة تعليمية مجرّدة — بلا محاكاة لواجهة طرف ثالث",
+          caption: "الوصفة قبل المعاينة: هدف + مستخدمون + صفحات + أسلوب + حدود",
+        };
+      }
+      if (locale === "ar-Gulf") {
+        return {
+          title: "أول برومبت = خمسة أجزاء",
+          subtitle: "صف البناء بوصفة واضحة — لا تخلي التخمين بثلاث كلمات",
+          leftLabel: "تشريح البرومبت",
+          leftBody: "الهدف · المستخدمون · الصفحات · الأسلوب · القيود",
+          leftItems: [
+            "الهدف: وش نوع الواجهة ولماذا",
+            "المستخدمون: من راح يستخدمها",
+            "الصفحات: أقسام الـ wireframe بالاسم",
+          ],
+          rightLabel: "ليش ينجح",
+          rightBody: "النطاق الواضح أحسن من «سوّ واجهة» المبهم",
+          rightItems: [
+            "الأسلوب: ألوان ومزاج",
+            "القيود: وش برا النسخة الأولى",
+            "النتيجة: وصفة جاهزة للنسخ",
+          ],
+          footer: "لوحة تعليمية مجرّدة — بدون محاكاة لواجهة طرف ثالث",
+          caption: "الوصفة قبل المعاينة: هدف + مستخدمون + صفحات + أسلوب + قيود",
+        };
+      }
+      // ar-EG
+      return {
+        title: "أول Prompt = خمسة أجزاء",
+        subtitle: "وصف البناء بوصفة واضحة — متسيّبش التخمين لتلات كلمات",
+        leftLabel: "تشريح الـ Prompt",
+        leftBody: "الهدف · المستخدمين · الصفحات · الأسلوب · الحدود",
+        leftItems: [
+          "الهدف: نوع الواجهة وليه",
+          "المستخدمين: مين هيستخدمها",
+          "الصفحات: أقسام الـ wireframe بالاسم",
+        ],
+        rightLabel: "ليه بينجح",
+        rightBody: "النطاق الواضح أحسن من «اعمل واجهة» المبهم",
+        rightItems: [
+          "الأسلوب: ألوان ومود",
+          "الحدود: إيه برّه النسخة الأولى",
+          "النتيجة: وصفة جاهزة للنسخ",
+        ],
+        footer: "لوحة تعليمية مجرّدة — من غير محاكاة لواجهة طرف تالت",
+        caption: "الوصفة قبل المعاينة: هدف + مستخدمين + صفحات + أسلوب + حدود",
+      };
+    }
+
+    // Table/column anatomy (not a Production or database-product UI imitation).
+    if (lessonId === "builder-m7-l1-tables-columns") {
+      if (locale === "en") {
+        return {
+          title: "Table = data type · Column = typed attribute",
+          subtitle: "Correct types from day one keep analysis and sorting possible",
+          leftLabel: "Table anatomy",
+          leftBody: "One table = one kind of row (users, conversations, documents)",
+          leftItems: ["id → uuid primary key", "rating → integer", "created_at → timestamptz"],
+          rightLabel: "Wrong type cost",
+          rightBody: "Everything-as-text blocks averages, sorting, and money math",
+          rightItems: ["not null for essentials", "numeric for money", "uuid for identifiers"],
+          footer: "Abstract data-grid teaching composition — not an app screenshot",
+          caption: "Design the table shape before storing rows",
+        };
+      }
+      if (locale === "ar-MSA") {
+        return {
+          title: "الجدول = نوع · العمود = صفة بنوعها",
+          subtitle: "الأنواع الصحيحة من اليوم الأول تحفظ التحليل والترتيب",
+          leftLabel: "تشريح الجدول",
+          leftBody: "جدول واحد = نوع صف واحد (مستخدمون، محادثات، مستندات)",
+          leftItems: ["id → uuid مفتاح أساسي", "rating → integer", "created_at → timestamptz"],
+          rightLabel: "ثمن النوع الخاطئ",
+          rightBody: "كل شيء كنص يمنع المتوسطات والترتيب وحساب المال",
+          rightItems: ["not null للأساسيات", "numeric للأموال", "uuid للمعرّفات"],
+          footer: "تركيبة تعليمية مجرّدة لشبكة بيانات — ليست لقطة تطبيق",
+          caption: "صمّم شكل الجدول قبل تخزين الصفوف",
+        };
+      }
+      if (locale === "ar-Gulf") {
+        return {
+          title: "الجدول = نوع · العمود = صفة بنوعها",
+          subtitle: "الأنواع الصحيحة من أول يوم تحفظ التحليل والترتيب",
+          leftLabel: "تشريح الجدول",
+          leftBody: "جدول واحد = نوع صف واحد (مستخدمين، محادثات، مستندات)",
+          leftItems: ["id → uuid مفتاح أساسي", "rating → integer", "created_at → timestamptz"],
+          rightLabel: "تكلفة النوع الغلط",
+          rightBody: "كل شيء كنص يمنع المتوسطات والترتيب وحساب الفلوس",
+          rightItems: ["not null للأساسيات", "numeric للأموال", "uuid للمعرّفات"],
+          footer: "تركيبة تعليمية مجرّدة لشبكة بيانات — مو سكرين شوت لتطبيق",
+          caption: "صمّم شكل الجدول قبل ما تخزّن الصفوف",
+        };
+      }
+      // ar-EG
+      return {
+        title: "الجدول = نوع · العمود = صفة بنوعها",
+        subtitle: "الأنواع الصحيحة من أول يوم بتحفظ التحليل والترتيب",
+        leftLabel: "تشريح الجدول",
+        leftBody: "جدول واحد = نوع صف واحد (مستخدمين، محادثات، مستندات)",
+        leftItems: ["id → uuid مفتاح أساسي", "rating → integer", "created_at → timestamptz"],
+        rightLabel: "تمن النوع الغلط",
+        rightBody: "كل حاجة كنص بتمنع المتوسطات والترتيب وحساب الفلوس",
+        rightItems: ["not null للأساسيات", "numeric للفلوس", "uuid للمعرّفات"],
+        footer: "تركيبة تعليمية مجرّدة لشبكة بيانات — مش سكرين شوت لتطبيق",
+        caption: "صمّم شكل الجدول قبل ما تخزّن الصفوف",
+      };
+    }
+
     // Generic two-panel composition from package summary + bullets (no invented facts).
     const leftItems = bullets.slice(0, 3);
     const rightItems = bullets.slice(3, 6);
@@ -194,6 +344,52 @@ function extractTeachingCopy(
       rightItems: ["سعر خامة النهاردة", "نصيحة قانونية أو طبية", "رقم مالي في تقرير"],
       footer: "أخطر حاجة مش الغلط — أخطر حاجة الغلط بثقة بدون مراجعة",
       caption: "قاعدة بسيطة: سرعة في الكتابة والأفكار · مراجعة لما فيه رقم أو قرار مهم",
+    };
+  }
+
+  if (
+    kind === "ts-blocks" &&
+    existsSync(packagePath) &&
+    lessonId === "builder-m6-l3-first-prompt-to-lovable"
+  ) {
+    return {
+      title: "أول Prompt = خمسة أجزاء",
+      subtitle: "وصف البناء بوصفة واضحة — متسيّبش التخمين لتلات كلمات",
+      leftLabel: "تشريح الـ Prompt",
+      leftBody: "الهدف · المستخدمين · الصفحات · الأسلوب · الحدود",
+      leftItems: [
+        "الهدف: نوع الواجهة وليه",
+        "المستخدمين: مين هيستخدمها",
+        "الصفحات: أقسام الـ wireframe بالاسم",
+      ],
+      rightLabel: "ليه بينجح",
+      rightBody: "النطاق الواضح أحسن من «اعمل واجهة» المبهم",
+      rightItems: [
+        "الأسلوب: ألوان ومود",
+        "الحدود: إيه برّه النسخة الأولى",
+        "النتيجة: وصفة جاهزة للنسخ",
+      ],
+      footer: "لوحة تعليمية مجرّدة — من غير محاكاة لواجهة طرف تالت",
+      caption: "الوصفة قبل المعاينة: هدف + مستخدمين + صفحات + أسلوب + حدود",
+    };
+  }
+
+  if (
+    kind === "ts-blocks" &&
+    existsSync(packagePath) &&
+    lessonId === "builder-m7-l1-tables-columns"
+  ) {
+    return {
+      title: "الجدول = نوع · العمود = صفة بنوعها",
+      subtitle: "الأنواع الصحيحة من أول يوم بتحفظ التحليل والترتيب",
+      leftLabel: "تشريح الجدول",
+      leftBody: "جدول واحد = نوع صف واحد (مستخدمين، محادثات، مستندات)",
+      leftItems: ["id → uuid مفتاح أساسي", "rating → integer", "created_at → timestamptz"],
+      rightLabel: "تمن النوع الغلط",
+      rightBody: "كل حاجة كنص بتمنع المتوسطات والترتيب وحساب الفلوس",
+      rightItems: ["not null للأساسيات", "numeric للفلوس", "uuid للمعرّفات"],
+      footer: "تركيبة تعليمية مجرّدة لشبكة بيانات — مش سكرين شوت لتطبيق",
+      caption: "صمّم شكل الجدول قبل ما تخزّن الصفوف",
     };
   }
 
