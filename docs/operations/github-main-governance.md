@@ -1,8 +1,8 @@
-# GitHub `main` governance — P0
+# GitHub `main` governance - P0
 
-**Authorization ID:** `CR-PG-GITHUB-GOVERNANCE-20260724-01`  
-**Repository:** `cabicci/viva-ai-systems-55d35820`  
-**Authorized live `main` at creation:** `6202e9ef8f7dc2f3c1266d3c0812015fd8557447`  
+**Authorization ID:** `CR-PG-GITHUB-GOVERNANCE-20260725-02`
+**Repository:** `cabicci/viva-ai-systems-55d35820`
+**Authorized live `main` (active base):** `a8528ee139dbf947e474c6b42f118f0467f59b8a`
 **Owner of this contract:** repository administrator `@cabicci`
 
 This document describes the authorized Production-governance controls for the default branch. It does not authorize changes to Production hosting, Supabase, Lovable, Cloudflare, secrets, variables, environments, backups, staging, or monitoring.
@@ -13,7 +13,8 @@ This document describes the authorized Production-governance controls for the de
 
 | Field | Value |
 |---|---|
-| Name | `Masaarat main protection — P0` |
+| Name | `main-governance` |
+| Immutable ruleset ID | `19713130` |
 | Enforcement | Active |
 | Target type | Branch |
 | Exact include pattern | `refs/heads/main` |
@@ -21,6 +22,8 @@ This document describes the authorized Production-governance controls for the de
 | Tags | Not targeted |
 
 Only `main` is protected by this ruleset. Feature-branch creation and pushes remain permitted outside `refs/heads/main`.
+
+Historical evidence (not the active authorized base): original governance candidate was authored against `6202e9ef8f7dc2f3c1266d3c0812015fd8557447` before controlled replay onto the active base above.
 
 ---
 
@@ -33,7 +36,7 @@ Required PR controls:
 1. Exactly **one** approving review.
 2. Stale approvals are **dismissed** after new commits are pushed.
 3. **Code Owner** review is required (see `.github/CODEOWNERS`).
-4. The most recent reviewable push must be approved by someone **other than** its pusher.
+4. Independent approval of the most recent reviewable push by someone other than its pusher is **not** enabled in ruleset `19713130` (verified `require_last_push_approval=false`). That control remains outside the currently verified contract and may be considered only as a future strengthening option.
 5. All review conversations must be **resolved**.
 6. The exact successful CI check **`verify`** must pass.
    - Workflow name: `CI`
@@ -140,7 +143,7 @@ Review cadence:
 
 If the ruleset causes a genuine lockout:
 
-1. Identify the exact ruleset by its **immutable ID**.
+1. Identify the exact ruleset by its **immutable ID** (`19713130` for the active `main-governance` contract).
 2. Capture its full JSON before changing it.
 3. Prove the lockout with API evidence (do not force-push).
 4. Obtain repository-owner authorization.
@@ -161,6 +164,7 @@ Direct-push recovery is **not** an approved workflow under this authorization.
 
 ## Related artifacts
 
-- `.github/CODEOWNERS` — repository ownership map
-- `.github/workflows/ci.yml` — source of the required `verify` check
-- Authorization: `CR-PG-GITHUB-GOVERNANCE-20260724-01`
+- `.github/CODEOWNERS` - repository ownership map
+- `.github/workflows/ci.yml` - source of the required `verify` check
+- Active ruleset: `main-governance` (ID `19713130`)
+- Authorization: `CR-PG-GITHUB-GOVERNANCE-20260725-02`
