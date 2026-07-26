@@ -25,12 +25,9 @@ export {
 };
 
 async function assertAdmin(context: {
-  supabase: {
-    rpc: (
-      fn: string,
-      args?: Record<string, unknown>,
-    ) => Promise<{ data: unknown; error: { message: string } | null }>;
-  };
+  // Matches existing admin serverFn pattern (assistant-seed.functions.ts).
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- Supabase client rpc generics are narrower than has_role
+  supabase: any;
   userId: string;
 }) {
   const { data, error } = await context.supabase.rpc("has_role", {
