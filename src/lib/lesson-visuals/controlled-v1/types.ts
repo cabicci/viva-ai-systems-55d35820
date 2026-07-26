@@ -100,7 +100,8 @@ export type RunnerMode =
   | "full-400"
   | "failed-only"
   | "report-only"
-  | "method-c-remaining";
+  | "method-c-remaining"
+  | "method-c-canonical-repair";
 
 export interface GoldenReferenceEntry {
   id: string;

@@ -3,6 +3,7 @@ import { writeContactSheet } from "../contactSheets";
 import {
   runFailedOnly,
   runFull400,
+  runMethodCCanonicalRepair,
   runMethodCRemaining,
   runPilot,
   runPreflight,
@@ -10,7 +11,13 @@ import {
 } from "../runner";
 import type { RunnerMode } from "../types";
 
-function parseArgs(argv: string[]): { mode: RunnerMode; confirm?: string } {
+function parseArgs(argv: string[]): {
+  mode: RunnerMode;
+  confirm?: string;
+  sourceArtifactRoot?: string;
+  stagingRoot?: string;
+  priorArtifactRunId?: string;
+} {
   const mode = argv[0] as RunnerMode | undefined;
   const validModes: RunnerMode[] = [
     "preflight",
@@ -19,27 +26,44 @@ function parseArgs(argv: string[]): { mode: RunnerMode; confirm?: string } {
     "failed-only",
     "report-only",
     "method-c-remaining",
+    "method-c-canonical-repair",
   ];
   if (!mode || !validModes.includes(mode)) {
-    console.error(`usage: cli.ts <${validModes.join("|")}> [--confirm_full_400=<token>]`);
+    console.error(
+      `usage: cli.ts <${validModes.join("|")}> [--confirm_full_400=<token>] [--source_artifact_root=<path>] [--staging_root=<path>] [--prior_artifact_run_id=<id>]`,
+    );
     process.exit(2);
   }
 
   let confirm: string | undefined = process.env.CONFIRM_FULL_400;
+  let sourceArtifactRoot: string | undefined =
+    process.env.METHOD_C_CANONICAL_SOURCE_ROOT ?? process.env.SOURCE_ARTIFACT_ROOT;
+  let stagingRoot: string | undefined =
+    process.env.METHOD_C_CANONICAL_STAGING_ROOT ?? process.env.STAGING_ROOT;
+  let priorArtifactRunId: string | undefined =
+    process.env.PRIOR_ARTIFACT_RUN_ID ?? process.env.prior_artifact_run_id;
+
   for (const arg of argv.slice(1)) {
-    const m = arg.match(/^--confirm_full_400=(.*)$/);
-    if (m) confirm = m[1];
+    const confirmMatch = arg.match(/^--confirm_full_400=(.*)$/);
+    if (confirmMatch) confirm = confirmMatch[1];
+    const sourceMatch = arg.match(/^--source_artifact_root=(.*)$/);
+    if (sourceMatch) sourceArtifactRoot = sourceMatch[1];
+    const stagingMatch = arg.match(/^--staging_root=(.*)$/);
+    if (stagingMatch) stagingRoot = stagingMatch[1];
+    const priorMatch = arg.match(/^--prior_artifact_run_id=(.*)$/);
+    if (priorMatch) priorArtifactRunId = priorMatch[1];
   }
 
-  return { mode, confirm };
+  return { mode, confirm, sourceArtifactRoot, stagingRoot, priorArtifactRunId };
 }
 
 async function main() {
-  const { mode, confirm } = parseArgs(process.argv.slice(2));
+  const { mode, confirm, sourceArtifactRoot, stagingRoot, priorArtifactRunId } = parseArgs(
+    process.argv.slice(2),
+  );
 
-  // Defense in depth: preflight/report-only must never launch Chrome or write PNGs.
-  // method-c-remaining dry-select also uses ZERO_RENDER when set by the caller.
-  if (mode === "preflight" || mode === "report-only") {
+  // Defense in depth: preflight/report-only/canonical-repair must never launch Chrome.
+  if (mode === "preflight" || mode === "report-only" || mode === "method-c-canonical-repair") {
     process.env.CONTROLLED_V1_ZERO_RENDER = "1";
   }
 
@@ -61,6 +85,22 @@ async function main() {
       if (result.ok && result.receipts.length > 0) {
         writeContactSheet("method-c-remaining", result.receipts);
       }
+      break;
+    case "method-c-canonical-repair":
+      if (!sourceArtifactRoot) {
+        console.error(
+          "method-c-canonical-repair requires --source_artifact_root=<path> or METHOD_C_CANONICAL_SOURCE_ROOT",
+        );
+        process.exit(2);
+      }
+      result = runMethodCCanonicalRepair({
+        confirmToken: confirm,
+        sourceArtifactRoot,
+        stagingRoot,
+        priorArtifactRunId,
+        repairExecutionSha: process.env.GITHUB_SHA ?? null,
+        sourceExecutionSha: process.env.METHOD_C_SOURCE_EXECUTION_SHA ?? "6d01bbe07e0e97a02a84cdd38a7a722daad95d75",
+      });
       break;
     case "failed-only":
       result = runFailedOnly();

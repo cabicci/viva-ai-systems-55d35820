@@ -16,6 +16,13 @@ export interface ResolvedLocalePackage {
   summary: string | null;
 }
 
+export interface LocalePackageResolveOptions {
+  /** Override root for JSON locale packages (tests / synthetic fixtures). */
+  localeLessonsRoot?: string;
+  /** Resolve ar-EG as JSON under localeLessonsRoot instead of production TS blocks. */
+  treatArEgAsJsonPackage?: boolean;
+}
+
 /**
  * Resolves the source content package for a given lesson + locale.
  * - ar-MSA / ar-Gulf / en: JSON packages under src/lib/locale-lessons/{locale}/lessons/{lessonId}.json
@@ -25,15 +32,17 @@ export interface ResolvedLocalePackage {
 export function resolveLocalePackagePath(
   lessonId: string,
   locale: Locale,
+  options: LocalePackageResolveOptions = {},
 ): { path: string; kind: "json" | "ts-blocks" } {
-  if (locale === "ar-EG") {
+  const localeRoot = options.localeLessonsRoot ?? LOCALE_LESSONS_DIR;
+  if (locale === "ar-EG" && !options.treatArEgAsJsonPackage) {
     return {
       path: resolve(AR_EG_LESSON_TS_DIR, `${lessonId}.ts`),
       kind: "ts-blocks",
     };
   }
   return {
-    path: resolve(LOCALE_LESSONS_DIR, locale, "lessons", `${lessonId}.json`),
+    path: resolve(localeRoot, locale, "lessons", `${lessonId}.json`),
     kind: "json",
   };
 }
@@ -53,8 +62,9 @@ export function resolveLocalePackage(
   lessonId: string,
   locale: Locale,
   fallbackTitle: string | null = null,
+  options: LocalePackageResolveOptions = {},
 ): ResolvedLocalePackage {
-  const { path, kind } = resolveLocalePackagePath(lessonId, locale);
+  const { path, kind } = resolveLocalePackagePath(lessonId, locale, options);
   const exists = existsSync(path);
 
   if (!exists) {

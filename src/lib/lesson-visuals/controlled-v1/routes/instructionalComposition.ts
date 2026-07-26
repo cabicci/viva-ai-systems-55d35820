@@ -11,7 +11,7 @@
  */
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync, mkdtempSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
@@ -25,6 +25,12 @@ export interface InstructionalCompositionInput {
   locale: Locale;
   position: number;
   title: string;
+  /** Isolated output directory. Defaults to a unique OS temp dir (never artifacts/controlled-v1). */
+  outputDir?: string;
+  /** Optional locale-packages root override for synthetic test fixtures. */
+  localeLessonsRoot?: string;
+  /** When true with localeLessonsRoot, resolve ar-EG as JSON under that root (tests only). */
+  treatArEgAsJsonPackage?: boolean;
 }
 
 export interface InstructionalCompositionResult {
@@ -651,7 +657,10 @@ export function generateInstructionalComposition(
     throw new Error("Official logo missing: public/brand/masaarat-logo-lockup.png");
   }
 
-  const pkg = resolveLocalePackage(input.lessonId, input.locale, input.title);
+  const pkg = resolveLocalePackage(input.lessonId, input.locale, input.title, {
+    localeLessonsRoot: input.localeLessonsRoot,
+    treatArEgAsJsonPackage: input.treatArEgAsJsonPackage,
+  });
   if (!pkg.exists) {
     throw new Error(
       `BLOCKED_UNRESOLVED_SPEC: locale package missing for ${input.lessonId} / ${input.locale} at ${pkg.path}`,
@@ -666,11 +675,16 @@ export function generateInstructionalComposition(
     pkg.title ?? input.title,
   );
 
-  const outDir = resolve(
-    REPO_ROOT,
-    "artifacts/controlled-v1/cells",
-    `${input.lessonId}__${input.locale}`,
-  );
+  const outDir =
+    input.outputDir ??
+    mkdtempSync(join(tmpdir(), "controlled-v1-compose-"));
+  // Never write intermediate HTML/PNG under artifacts/controlled-v1 — production
+  // runner copies result.png into the cell path; tests must stay outside production trees.
+  if (outDir.replace(/\\/g, "/").includes("/artifacts/controlled-v1")) {
+    throw new Error(
+      "BLOCKED: instructional composition outputDir must not be under artifacts/controlled-v1",
+    );
+  }
   mkdirSync(outDir, { recursive: true });
   const htmlPath = join(outDir, "final-review.html");
   const pngPath = join(outDir, "final.png");

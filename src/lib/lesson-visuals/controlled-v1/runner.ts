@@ -1,14 +1,26 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
-import { dirname } from "node:path";
+import { dirname, resolve } from "node:path";
 import {
   buildProductionManifest,
   buildPilotManifest,
   buildUnresolvedLedger,
   writeJson,
 } from "./buildManifest";
-import { FULL_400_CONFIRM_TOKEN, METHOD_C_REMAINING_CONFIRM_TOKEN } from "./constants";
+import {
+  FULL_400_CONFIRM_TOKEN,
+  METHOD_C_CANONICAL_REPAIR_CONFIRM_TOKEN,
+  METHOD_C_CANONICAL_SOURCE_ARTIFACT_DIGEST,
+  METHOD_C_CANONICAL_SOURCE_RUN_ID,
+  METHOD_C_REMAINING_CONFIRM_TOKEN,
+} from "./constants";
 import { selectMethodCRemainingCells } from "./methodCRemaining";
+import {
+  assertSourceUnchanged,
+  buildSourceHashLedger,
+  resolveAuthorizedAllowlist,
+  stageCanonicalMethodCArtifact,
+} from "./methodCCanonicalRepair";
 import { resolveLocalePackage } from "./localePackages";
 import {
   getControlledFailureState,
@@ -19,6 +31,7 @@ import {
 import { loadClassification100, validateClassification100 } from "./loadClassification";
 import { allGoldenReferencesOk, loadGoldenReferences, verifyGoldenReferences } from "./goldenRefs";
 import {
+  ARTIFACTS_CANONICAL_STAGING_DIR,
   ARTIFACTS_RECEIPTS_DIR,
   ARTIFACTS_REPORTS_DIR,
   cellFinalPngPath,
@@ -26,7 +39,11 @@ import {
 } from "./paths";
 import { runAuthorizedExternalRoute } from "./routes/authorizedExternal";
 import { runMasaaratScreenshotRoute } from "./routes/masaaratScreenshot";
-import { generateInstructionalComposition } from "./routes/instructionalComposition";
+import {
+  generateInstructionalComposition,
+  renderTelemetry,
+  resetRenderTelemetry,
+} from "./routes/instructionalComposition";
 import type { CellReceipt, ManifestCell, ProductionManifest, RunnerMode } from "./types";
 import { validateProductionManifest } from "./validateManifest";
 import { reconcileFailedOnlyIntoPilot } from "./reconcileFailedOnlyIntoPilot";
@@ -579,5 +596,147 @@ export function runReportOnly(): RunResult {
     summary: `report-only: ${receipts.length} known cell receipts, counts=${JSON.stringify(receiptCounts(receipts))}`,
     receipts,
     errors: [],
+  };
+}
+
+/**
+ * Packaging-only repair: sanitize the locked historical Method-C-remaining artifact
+ * into a clean canonical staging tree. Zero renderer / provider calls.
+ */
+export function runMethodCCanonicalRepair(options: {
+  confirmToken: string | undefined;
+  sourceArtifactRoot: string;
+  stagingRoot?: string;
+  priorArtifactRunId?: string;
+  sourceExecutionSha?: string | null;
+  repairExecutionSha?: string | null;
+  sourceArtifactSizeBytes?: number | null;
+  historicalApiDigest?: string;
+}): RunResult {
+  resetRenderTelemetry();
+
+  if (options.confirmToken !== METHOD_C_CANONICAL_REPAIR_CONFIRM_TOKEN) {
+    const msg = `method-c-canonical-repair requires confirm_full_400 === "${METHOD_C_CANONICAL_REPAIR_CONFIRM_TOKEN}" exactly; received ${JSON.stringify(options.confirmToken)}`;
+    return {
+      mode: "method-c-canonical-repair",
+      ok: false,
+      summary: msg,
+      receipts: [],
+      errors: [msg],
+    };
+  }
+
+  if (
+    options.priorArtifactRunId &&
+    options.priorArtifactRunId !== METHOD_C_CANONICAL_SOURCE_RUN_ID
+  ) {
+    const msg = `method-c-canonical-repair requires prior_artifact_run_id === "${METHOD_C_CANONICAL_SOURCE_RUN_ID}" exactly; received ${JSON.stringify(options.priorArtifactRunId)}`;
+    return {
+      mode: "method-c-canonical-repair",
+      ok: false,
+      summary: msg,
+      receipts: [],
+      errors: [msg],
+    };
+  }
+
+  const sourceRoot = options.sourceArtifactRoot;
+  if (!sourceRoot || !existsSync(sourceRoot)) {
+    const msg = `method-c-canonical-repair source artifact root missing: ${sourceRoot}`;
+    return {
+      mode: "method-c-canonical-repair",
+      ok: false,
+      summary: msg,
+      receipts: [],
+      errors: [msg],
+    };
+  }
+
+  const cv1 = existsSync(resolve(sourceRoot, "artifacts/controlled-v1"))
+    ? resolve(sourceRoot, "artifacts/controlled-v1")
+    : resolve(sourceRoot);
+  const selectionPath = resolve(cv1, "reports/method-c-remaining-selection.json");
+
+  // Prefer historical selection evidence; fall back to live manifest selection for dry tests.
+  let allow = resolveAuthorizedAllowlist({ selectionJsonPath: selectionPath });
+  if (!allow.ok || allow.cellIds.length === 0) {
+    const classification = loadClassification100();
+    const manifest = buildProductionManifest(classification);
+    allow = resolveAuthorizedAllowlist({ productionManifest: manifest });
+  }
+  if (!allow.ok) {
+    return {
+      mode: "method-c-canonical-repair",
+      ok: false,
+      summary: "allowlist resolution failed closed",
+      receipts: [],
+      errors: allow.errors,
+    };
+  }
+
+  const ledger = buildSourceHashLedger(sourceRoot, allow.cellIds);
+  if (!ledger.ok) {
+    return {
+      mode: "method-c-canonical-repair",
+      ok: false,
+      summary: "source hash ledger failed closed",
+      receipts: [],
+      errors: ledger.errors,
+    };
+  }
+
+  const stagingRoot = options.stagingRoot ?? ARTIFACTS_CANONICAL_STAGING_DIR;
+  const staged = stageCanonicalMethodCArtifact({
+    sourceArtifactRoot: sourceRoot,
+    stagingRoot,
+    allowlist: allow.cellIds,
+    sourceLedger: ledger.ledger,
+    sourceExecutionSha: options.sourceExecutionSha ?? null,
+    repairExecutionSha: options.repairExecutionSha ?? null,
+    sourceArtifactSizeBytes: options.sourceArtifactSizeBytes ?? null,
+    historicalApiDigest:
+      options.historicalApiDigest ?? METHOD_C_CANONICAL_SOURCE_ARTIFACT_DIGEST,
+  });
+
+  const sourceCheck = assertSourceUnchanged(sourceRoot, ledger.ledger);
+  const errors = [...staged.errors, ...sourceCheck.errors];
+
+  if (
+    renderTelemetry.rendererCalls !== 0 ||
+    renderTelemetry.browserLaunches !== 0 ||
+    renderTelemetry.paidProviderCalls !== 0
+  ) {
+    errors.push(
+      `repair mode must make zero renderer/provider calls; got renderer=${renderTelemetry.rendererCalls} browser=${renderTelemetry.browserLaunches} paid=${renderTelemetry.paidProviderCalls}`,
+    );
+  }
+
+  writeJson(`${stagingRoot}/artifacts/controlled-v1/reports/method-c-canonical-repair-report.json`, {
+    generatedAt: new Date().toISOString(),
+    ok: errors.length === 0,
+    mode: "method-c-canonical-repair",
+    confirmToken: METHOD_C_CANONICAL_REPAIR_CONFIRM_TOKEN,
+    sourceArtifactRoot: sourceRoot,
+    stagingRoot,
+    allowlistCount: allow.cellIds.length,
+    validation: staged.validation.counts,
+    rendererCalls: renderTelemetry.rendererCalls,
+    browserLaunches: renderTelemetry.browserLaunches,
+    paidProviderCalls: renderTelemetry.paidProviderCalls,
+    sanitationReportPath: staged.sanitationReportPath,
+    provenancePath: staged.provenancePath,
+    hashLedgerPath: staged.hashLedgerPath,
+    errors,
+  });
+
+  return {
+    mode: "method-c-canonical-repair",
+    ok: errors.length === 0,
+    summary:
+      errors.length === 0
+        ? `method-c-canonical-repair: staged ${allow.cellIds.length} cells (0 renderer / 0 provider); staging=${stagingRoot}`
+        : `method-c-canonical-repair failed closed (${errors.length} error(s))`,
+    receipts: [],
+    errors,
   };
 }

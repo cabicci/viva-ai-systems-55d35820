@@ -38,6 +38,11 @@ export const ARTIFACTS_PROVENANCE_DIR = resolve(ARTIFACTS_ROOT, "provenance");
 export const ARTIFACTS_REPORTS_DIR = resolve(ARTIFACTS_ROOT, "reports");
 export const ARTIFACTS_CONTACT_SHEETS_DIR = resolve(ARTIFACTS_ROOT, "contact-sheets");
 export const ARTIFACTS_STATE_DIR = resolve(ARTIFACTS_ROOT, "state");
+/** Canonical Method-C packaging tree — outside production artifacts/controlled-v1. */
+export const ARTIFACTS_CANONICAL_STAGING_DIR = resolve(
+  REPO_ROOT,
+  "artifacts/controlled-v1-canonical",
+);
 export const CONTROLLED_FAILURE_STATE_PATH = resolve(
   ARTIFACTS_STATE_DIR,
   "controlled-failure-state.json",

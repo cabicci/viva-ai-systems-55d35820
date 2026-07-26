@@ -144,6 +144,9 @@ describe("method-c-remaining workflow contract", () => {
   it("does not wire method-c-remaining to prior_artifact_run_id or full-400", () => {
     expect(yml).toContain("prior_artifact_run_id is not authorized for method-c-remaining");
     expect(yml).toMatch(/mode=full-400 requires confirm_full_400 to equal RUN_AUTHORIZED_400/);
+    expect(yml).toContain(
+      "prior_artifact_run_id is only authorized for mode=failed-only or mode=method-c-canonical-repair",
+    );
   });
 
   it("uploads selection reports and successful cell artifacts", () => {
