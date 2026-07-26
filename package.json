@@ -53,7 +53,7 @@
     "controlled-visuals:pilot": "bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts pilot",
     "controlled-visuals:failed-only": "bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts failed-only",
     "controlled-visuals:report-only": "bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts report-only",
-    "controlled-visuals:test-static": "bun run test:run -- tests/lesson-visuals/controlled-v1/classification.test.ts tests/lesson-visuals/controlled-v1/manifest.test.ts tests/lesson-visuals/controlled-v1/goldenRefs.test.ts tests/lesson-visuals/controlled-v1/localePurity.test.ts tests/lesson-visuals/controlled-v1/routes.test.ts tests/lesson-visuals/controlled-v1/controlledFailure.test.ts tests/lesson-visuals/controlled-v1/full400Gate.test.ts",
+    "controlled-visuals:test-static": "bun run test:run -- tests/lesson-visuals/controlled-v1/classification.test.ts tests/lesson-visuals/controlled-v1/manifest.test.ts tests/lesson-visuals/controlled-v1/goldenRefs.test.ts tests/lesson-visuals/controlled-v1/localePurity.test.ts tests/lesson-visuals/controlled-v1/routes.test.ts tests/lesson-visuals/controlled-v1/controlledFailure.test.ts tests/lesson-visuals/controlled-v1/failedOnlyRecovery.test.ts tests/lesson-visuals/controlled-v1/full400Gate.test.ts",
     "controlled-visuals:test-render": "bun run test:run -- tests/lesson-visuals/controlled-v1/instructionalComposition.test.ts",
     "controlled-visuals:test": "bun run controlled-visuals:test-static && bun run controlled-visuals:test-render",
     "controlled-visuals:verify-golden": "bun run src/lib/lesson-visuals/controlled-v1/scripts/verify_golden.ts"

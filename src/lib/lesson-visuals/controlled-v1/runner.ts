@@ -306,18 +306,26 @@ function collectAllReceipts(): CellReceipt[] {
   return all;
 }
 
-/** Reprocesses only cells whose latest known receipt has status FAILED. */
-export function runFailedOnly(manifest: ProductionManifest = buildProductionManifest()): RunResult {
-  const all = collectAllReceipts();
+/**
+ * Latest receipt per cellId (by producedAt), then only FAILED cells.
+ * Successful ACCEPTED cells are never selected for failed-only rerun.
+ */
+export function selectFailedCellIdsFromReceipts(all: CellReceipt[]): string[] {
   const latestByCell = new Map<string, CellReceipt>();
   for (const r of all) {
     const existing = latestByCell.get(r.cellId);
     if (!existing || r.producedAt > existing.producedAt) latestByCell.set(r.cellId, r);
   }
-
-  const failedCellIds = [...latestByCell.values()]
+  return [...latestByCell.values()]
     .filter((r) => r.status === "FAILED")
-    .map((r) => r.cellId);
+    .map((r) => r.cellId)
+    .sort();
+}
+
+/** Reprocesses only cells whose latest known receipt has status FAILED. */
+export function runFailedOnly(manifest: ProductionManifest = buildProductionManifest()): RunResult {
+  const all = collectAllReceipts();
+  const failedCellIds = selectFailedCellIdsFromReceipts(all);
 
   const cellsById = new Map(manifest.cells.map((c) => [c.cellId, c]));
   const toRerun = failedCellIds

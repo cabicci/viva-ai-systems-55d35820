@@ -14,6 +14,8 @@
 #   preflight    — validate classification/manifest/golden refs; no generation.
 #   pilot        — 12-cell pilot matrix (see docs/lesson-visuals/controlled-v1/PILOT_MANIFEST.json).
 #   failed-only  — reprocess only cells whose latest known receipt is FAILED.
+#                  Requires prior_artifact_run_id so the prior pilot (or failed-only)
+#                  artifact bundle can be restored before selection/rerun.
 #   full-400     — all 400 cells. Requires confirm_full_400 === "RUN_AUTHORIZED_400" exactly.
 #   report-only  — read latest receipts + verify golden refs; no generation.
 #
@@ -55,9 +57,15 @@ on:
         required: false
         type: string
         default: ""
+      prior_artifact_run_id:
+        description: Required ONLY for mode=failed-only — numeric GitHub Actions run id of the prior pilot (or failed-only) artifact upload to restore
+        required: false
+        type: string
+        default: ""
 
 permissions:
   contents: read
+  actions: read
 
 concurrency:
   group: controlled-400-visual-pipeline-${{ github.event.inputs.checkout_sha }}-${{ github.event.inputs.mode }}
@@ -76,6 +84,7 @@ jobs:
           CHECKOUT_SHA: ${{ github.event.inputs.checkout_sha }}
           PIPELINE_MODE: ${{ github.event.inputs.mode }}
           CONFIRM_FULL_400: ${{ github.event.inputs.confirm_full_400 }}
+          PRIOR_ARTIFACT_RUN_ID: ${{ github.event.inputs.prior_artifact_run_id }}
           GITHUB_ACTOR_NAME: ${{ github.actor }}
           LOVABLE_DISPATCH_ACTORS: ${{ vars.LOVABLE_DISPATCH_ACTORS || secrets.LOVABLE_DISPATCH_ACTORS }}
         run: |
@@ -140,6 +149,17 @@ jobs:
           else
             if [[ -n "${CONFIRM_FULL_400}" && "$CONFIRM_FULL_400" == "RUN_AUTHORIZED_400" ]]; then
               printf '%s\n' "confirm_full_400=RUN_AUTHORIZED_400 is not authorized for non-full-400 modes"
+              exit 1
+            fi
+          fi
+          if [[ "$PIPELINE_MODE" == "failed-only" ]]; then
+            if [[ ! "$PRIOR_ARTIFACT_RUN_ID" =~ ^[0-9]+$ ]]; then
+              printf '%s\n' "mode=failed-only requires prior_artifact_run_id to be a numeric GitHub Actions run id"
+              exit 1
+            fi
+          else
+            if [[ -n "${PRIOR_ARTIFACT_RUN_ID}" ]]; then
+              printf '%s\n' "prior_artifact_run_id is only authorized for mode=failed-only"
               exit 1
             fi
           fi
@@ -210,6 +230,32 @@ jobs:
         if: github.event.inputs.mode == 'preflight' || github.event.inputs.mode == 'pilot' || github.event.inputs.mode == 'full-400'
         run: bun run controlled-visuals:build
 
+      - name: Restore prior controlled-v1 artifacts for failed-only recovery
+        if: github.event.inputs.mode == 'failed-only'
+        uses: actions/download-artifact@v4
+        with:
+          pattern: controlled-v1-*
+          run-id: ${{ github.event.inputs.prior_artifact_run_id }}
+          github-token: ${{ github.token }}
+          merge-multiple: true
+          path: .
+
+      - name: Verify restored FAILED receipts exist before failed-only
+        if: github.event.inputs.mode == 'failed-only'
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ ! -d artifacts/controlled-v1/receipts ]]; then
+            printf '%s\n' "restored artifacts missing receipts/ — cannot select failed cells"
+            exit 1
+          fi
+          FAILED_COUNT="$(find artifacts/controlled-v1/receipts -type f -name '*.receipt.json' -print0 | xargs -0 -r grep -l '"status": "FAILED"' | wc -l | tr -d ' ')"
+          if [[ "$FAILED_COUNT" -lt 1 ]]; then
+            printf '%s\n' "no FAILED receipts found in restored prior artifacts — refusing empty failed-only"
+            exit 1
+          fi
+          printf '%s\n' "restored prior artifacts with FAILED receipt files=$FAILED_COUNT"
+
       - name: Run preflight (zero-render)
         if: github.event.inputs.mode == 'preflight'
         env:
@@ -256,6 +302,7 @@ jobs:
             artifacts/controlled-v1/reports/**
             artifacts/controlled-v1/contact-sheets/**
             artifacts/controlled-v1/provenance/**
+            artifacts/controlled-v1/cells/**
             docs/lesson-visuals/controlled-v1/PRODUCTION_MANIFEST.json
             docs/lesson-visuals/controlled-v1/PILOT_MANIFEST.json
             docs/lesson-visuals/controlled-v1/UNRESOLVED_LEDGER.json
