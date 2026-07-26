@@ -7,7 +7,9 @@ import {
   buildUnresolvedLedger,
   writeJson,
 } from "./buildManifest";
-import { FULL_400_CONFIRM_TOKEN } from "./constants";
+import { FULL_400_CONFIRM_TOKEN, METHOD_C_REMAINING_CONFIRM_TOKEN } from "./constants";
+import { selectMethodCRemainingCells } from "./methodCRemaining";
+import { resolveLocalePackage } from "./localePackages";
 import {
   getControlledFailureState,
   markControlledFailureTriggered,
@@ -283,6 +285,152 @@ export function runFull400(confirmToken: string | undefined): RunResult {
     errors: anyControlledFailure
       ? ["controlled failure was injected during full-400 — this must never happen"]
       : [],
+  };
+}
+
+/**
+ * Produce the remaining 356 Method C cells (exclude 4 preserved pilot C cells and all A/B).
+ * Confirmation must equal METHOD_C_REMAINING_CONFIRM_TOKEN exactly.
+ * Under CONTROLLED_V1_ZERO_RENDER=1, performs dry selection only (no Chrome / no PNGs).
+ */
+export function runMethodCRemaining(confirmToken: string | undefined): RunResult {
+  if (confirmToken !== METHOD_C_REMAINING_CONFIRM_TOKEN) {
+    const msg = `method-c-remaining requires confirm_full_400 === "${METHOD_C_REMAINING_CONFIRM_TOKEN}" exactly; received ${JSON.stringify(confirmToken)}`;
+    return { mode: "method-c-remaining", ok: false, summary: msg, receipts: [], errors: [msg] };
+  }
+
+  const classification = loadClassification100();
+  const manifest = buildProductionManifest(classification);
+  const manifestCheck = validateProductionManifest(manifest);
+  if (!manifestCheck.ok) {
+    return {
+      mode: "method-c-remaining",
+      ok: false,
+      summary: "manifest validation failed; refusing method-c-remaining",
+      receipts: [],
+      errors: manifestCheck.errors,
+    };
+  }
+
+  const selection = selectMethodCRemainingCells(manifest);
+  writeJson(`${ARTIFACTS_REPORTS_DIR}/method-c-remaining-selection.json`, {
+    generatedAt: new Date().toISOString(),
+    ok: selection.ok,
+    counts: selection.counts,
+    excludedPreservedPilotCellIds: selection.excludedPreservedPilotCellIds,
+    excludedAbCellCount: selection.excludedAbCellIds.length,
+    cellIds: selection.cells.map((c) => c.cellId),
+    errors: selection.errors,
+  });
+
+  if (!selection.ok) {
+    return {
+      mode: "method-c-remaining",
+      ok: false,
+      summary: "method-c-remaining selection failed closed",
+      receipts: [],
+      errors: selection.errors,
+    };
+  }
+
+  // Locale isolation gate before any render.
+  const localeErrors: string[] = [];
+  for (const cell of selection.cells) {
+    const pkg = resolveLocalePackage(cell.lessonId, cell.locale, cell.title);
+    if (!pkg.exists) {
+      localeErrors.push(
+        `missing locale package for ${cell.cellId}: expected ${pkg.path} (no cross-locale fallback)`,
+      );
+    }
+    if (pkg.locale !== cell.locale) {
+      localeErrors.push(`locale package mismatch for ${cell.cellId}`);
+    }
+  }
+  if (localeErrors.length > 0) {
+    return {
+      mode: "method-c-remaining",
+      ok: false,
+      summary: "method-c-remaining locale isolation failed closed",
+      receipts: [],
+      errors: localeErrors,
+    };
+  }
+
+  if (process.env.CONTROLLED_V1_ZERO_RENDER === "1") {
+    writeRunReport("method-c-remaining", {
+      generatedAt: new Date().toISOString(),
+      confirmToken,
+      drySelectOnly: true,
+      counts: selection.counts,
+      selectedCellIds: selection.cells.map((c) => c.cellId),
+    });
+    return {
+      mode: "method-c-remaining",
+      ok: true,
+      summary: `method-c-remaining dry-select: ${selection.cells.length} cells (0 A / 0 B / 356 C); no render`,
+      receipts: [],
+      errors: [],
+    };
+  }
+
+  const receipts: CellReceipt[] = [];
+  for (const cell of selection.cells) {
+    // Never select or render A/B; selection already excludes them.
+    if (cell.route !== "INSTRUCTIONAL_COMPOSITION") {
+      return {
+        mode: "method-c-remaining",
+        ok: false,
+        summary: `refusing A/B-to-C fallback for ${cell.cellId}`,
+        receipts,
+        errors: [`non-Method-C cell reached renderer: ${cell.cellId}`],
+      };
+    }
+    const receipt = runCell(cell, "method-c-remaining");
+    writeReceipt(receipt);
+    receipts.push(receipt);
+    // Do not retry ACCEPTED cells; runCell is invoked once per selected cell.
+  }
+
+  const counts = receiptCounts(receipts);
+  const failed = receipts.filter((r) => r.status !== "ACCEPTED");
+  writeJson(`${ARTIFACTS_RECEIPTS_DIR}/method-c-remaining/_summary.json`, {
+    generatedAt: new Date().toISOString(),
+    counts,
+    selection: {
+      total: selection.counts.total,
+      perLocale: selection.counts.perLocale,
+      excludedPreservedPilotCellIds: selection.excludedPreservedPilotCellIds,
+      excludedAbCellCount: selection.excludedAbCellIds.length,
+    },
+    failedCellLedger: failed.map((r) => ({
+      cellId: r.cellId,
+      status: r.status,
+      reason: r.reason,
+    })),
+    receipts,
+  });
+  writeRunReport("method-c-remaining", {
+    generatedAt: new Date().toISOString(),
+    confirmToken,
+    drySelectOnly: false,
+    counts,
+    selectionCounts: selection.counts,
+    failedCount: failed.length,
+  });
+
+  const anyControlledFailure = receipts.some((r) => r.controlledFailureInjected);
+  const ok = !anyControlledFailure && failed.length === 0;
+  return {
+    mode: "method-c-remaining",
+    ok,
+    summary: `method-c-remaining: ${receipts.length} cells, counts=${JSON.stringify(counts)}`,
+    receipts,
+    errors: [
+      ...(anyControlledFailure
+        ? ["controlled failure was injected during method-c-remaining — must never happen"]
+        : []),
+      ...failed.map((r) => `${r.cellId}: ${r.reason ?? r.status}`),
+    ],
   };
 }
 

@@ -20,7 +20,7 @@ describe("controlled-v1 classification-100.json", () => {
     expect(ids.size).toBe(100);
   });
 
-  it("has the expected counts: 6 MASAARAT_SCREENSHOT, 2 AUTHORIZED_EXTERNAL_SCREENSHOT, 92 INSTRUCTIONAL_COMPOSITION", () => {
+  it("has the expected counts: 7 MASAARAT_SCREENSHOT, 3 AUTHORIZED_EXTERNAL_SCREENSHOT, 90 INSTRUCTIONAL_COMPOSITION", () => {
     const classification = loadClassification100({ useCache: false });
     const counts = {
       MASAARAT_SCREENSHOT: 0,
@@ -75,18 +75,25 @@ describe("controlled-v1 classification-100.json", () => {
     expect(externalIds).toEqual([...classification.authorizedExternalScreenshotLessonIds].sort());
   });
 
-  it("reclassified pilot lessons are instructional compositions and no longer screenshot members", () => {
+  it("restores authoritative A/B routes for the two previously drifted pilot lessons", () => {
     const classification = loadClassification100({ useCache: false });
-    for (const id of [PILOT_AUTHORIZED_EXTERNAL_LESSON_ID, PILOT_MASAARAT_LESSON_ID]) {
-      const lesson = classification.lessons.find((l) => l.lessonId === id);
-      expect(lesson?.route).toBe("INSTRUCTIONAL_COMPOSITION");
-      expect(lesson?.cat).toBe("C");
-    }
-    expect(classification.masaaratScreenshotLessonIds).not.toContain(PILOT_MASAARAT_LESSON_ID);
-    expect(classification.authorizedExternalScreenshotLessonIds).not.toContain(
+    const masaarat = classification.lessons.find((l) => l.lessonId === PILOT_MASAARAT_LESSON_ID);
+    const external = classification.lessons.find(
+      (l) => l.lessonId === PILOT_AUTHORIZED_EXTERNAL_LESSON_ID,
+    );
+    expect(masaarat?.cat).toBe("A");
+    expect(masaarat?.route).toBe("MASAARAT_SCREENSHOT");
+    expect(external?.cat).toBe("B");
+    expect(external?.route).toBe("AUTHORIZED_EXTERNAL_SCREENSHOT");
+    expect(classification.masaaratScreenshotLessonIds).toContain(PILOT_MASAARAT_LESSON_ID);
+    expect(classification.authorizedExternalScreenshotLessonIds).toContain(
       PILOT_AUTHORIZED_EXTERNAL_LESSON_ID,
     );
     const intro = classification.lessons.find((l) => l.lessonId === PILOT_INSTRUCTIONAL_LESSON_ID);
     expect(intro?.route).toBe("INSTRUCTIONAL_COMPOSITION");
+    expect(intro?.cat).toBe("C");
+    const setup = classification.lessons.find((l) => l.lessonId === "intro-m1-l3-setup-your-ai");
+    expect(setup?.route).toBe("AUTHORIZED_EXTERNAL_SCREENSHOT");
+    expect(setup?.cat).toBe("B");
   });
 });

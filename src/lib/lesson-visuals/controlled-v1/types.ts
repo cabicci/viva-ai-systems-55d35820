@@ -94,7 +94,13 @@ export interface CellReceipt {
   producedAt: string;
 }
 
-export type RunnerMode = "preflight" | "pilot" | "full-400" | "failed-only" | "report-only";
+export type RunnerMode =
+  | "preflight"
+  | "pilot"
+  | "full-400"
+  | "failed-only"
+  | "report-only"
+  | "method-c-remaining";
 
 export interface GoldenReferenceEntry {
   id: string;

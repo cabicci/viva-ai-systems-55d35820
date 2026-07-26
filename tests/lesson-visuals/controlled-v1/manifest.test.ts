@@ -50,7 +50,7 @@ describe("controlled-v1 PRODUCTION_MANIFEST (400 cells)", () => {
     }
   });
 
-  it("has route counts: 24 MASAARAT_SCREENSHOT, 8 AUTHORIZED_EXTERNAL_SCREENSHOT, 368 INSTRUCTIONAL_COMPOSITION", () => {
+  it("has route counts: 28 MASAARAT_SCREENSHOT, 12 AUTHORIZED_EXTERNAL_SCREENSHOT, 360 INSTRUCTIONAL_COMPOSITION", () => {
     const manifest = buildProductionManifest(loadClassification100({ useCache: false }));
     expect(manifest.counts.perRoute.MASAARAT_SCREENSHOT).toBe(
       EXPECTED_COUNTS.MASAARAT_SCREENSHOT * 4,
@@ -78,21 +78,23 @@ describe("controlled-v1 PRODUCTION_MANIFEST (400 cells)", () => {
     expect(result.errors.some((e) => e.includes("duplicate cellId"))).toBe(true);
   });
 
-  it("does not change non-pilot screenshot lesson routes", () => {
+  it("does not change non-pilot screenshot lesson routes besides the two restored lessons", () => {
     const classification = loadClassification100({ useCache: false });
-    const nonPilotScreenshot = classification.lessons.filter(
-      (l) =>
-        (l.route === "MASAARAT_SCREENSHOT" || l.route === "AUTHORIZED_EXTERNAL_SCREENSHOT") &&
-        l.lessonId !== PILOT_MASAARAT_LESSON_ID &&
-        l.lessonId !== PILOT_AUTHORIZED_EXTERNAL_LESSON_ID,
-    );
-    expect(nonPilotScreenshot.map((l) => l.lessonId).sort()).toEqual(
+    const screenshot = classification.lessons
+      .filter(
+        (l) => l.route === "MASAARAT_SCREENSHOT" || l.route === "AUTHORIZED_EXTERNAL_SCREENSHOT",
+      )
+      .map((l) => l.lessonId)
+      .sort();
+    expect(screenshot).toEqual(
       [
         "builder-m2-l1-prompt-layer",
         "builder-m2-l2-instructions-examples",
         "builder-m3-l1-context-layer",
         "builder-m5-l2-frontend",
+        "builder-m6-l3-first-prompt-to-lovable",
         "builder-m6-l4-components-routes",
+        "builder-m7-l1-tables-columns",
         "builder-m7-l3-queries",
         "builder-m10-l2-first-users",
         "intro-m1-l3-setup-your-ai",
@@ -101,7 +103,7 @@ describe("controlled-v1 PRODUCTION_MANIFEST (400 cells)", () => {
   });
 });
 
-describe("controlled-v1 PILOT_MANIFEST eligibility after reclassification", () => {
+describe("controlled-v1 PILOT_MANIFEST after authoritative A/B restore", () => {
   it("has 3 lessons x 4 locales = 12 cells", () => {
     const pilot = buildPilotManifest(loadClassification100({ useCache: false }));
     expect(pilot.cells.length).toBe(12);
@@ -120,44 +122,18 @@ describe("controlled-v1 PILOT_MANIFEST eligibility after reclassification", () =
     expect(pilot.cells.some((c) => c.cellId === pilot.controlledFailureTargetCellId)).toBe(true);
   });
 
-  it("routes all 12 pilot cells as INSTRUCTIONAL_COMPOSITION with zero screenshot dependencies", () => {
+  it("routes restored A/B pilot lessons to screenshot routes and keeps intro as Method C", () => {
     const pilot = buildPilotManifest(loadClassification100({ useCache: false }));
-    expect(pilot.cells.every((c) => c.route === "INSTRUCTIONAL_COMPOSITION")).toBe(true);
-    expect(pilot.cells.filter((c) => c.route !== "INSTRUCTIONAL_COMPOSITION")).toHaveLength(0);
-
-    const screenshotRoutes = pilot.cells.filter(
-      (c) => c.route === "MASAARAT_SCREENSHOT" || c.route === "AUTHORIZED_EXTERNAL_SCREENSHOT",
-    );
-    expect(screenshotRoutes).toHaveLength(0);
-
-    // Eligibility contract: instructional composition needs none of these.
-    expect(pilot.cells).toHaveLength(12);
-    const browserCaptureRequired = 0;
-    const externalRightsRequired = 0;
-    const authenticatedCaptureRequired = 0;
-    const productionRequired = 0;
-    const supabaseRequired = 0;
-    const paidProviderRequired = 0;
-    const externalProviderRequired = 0;
-    expect(browserCaptureRequired).toBe(0);
-    expect(externalRightsRequired).toBe(0);
-    expect(authenticatedCaptureRequired).toBe(0);
-    expect(productionRequired).toBe(0);
-    expect(supabaseRequired).toBe(0);
-    expect(paidProviderRequired).toBe(0);
-    expect(externalProviderRequired).toBe(0);
-    expect(pilot.cells.length).toBe(12); // deterministic local-render eligible 12/12
+    const intro = pilot.cells.filter((c) => c.lessonId === PILOT_INSTRUCTIONAL_LESSON_ID);
+    const external = pilot.cells.filter((c) => c.lessonId === PILOT_AUTHORIZED_EXTERNAL_LESSON_ID);
+    const masaarat = pilot.cells.filter((c) => c.lessonId === PILOT_MASAARAT_LESSON_ID);
+    expect(intro).toHaveLength(4);
+    expect(intro.every((c) => c.route === "INSTRUCTIONAL_COMPOSITION")).toBe(true);
+    expect(external.every((c) => c.route === "AUTHORIZED_EXTERNAL_SCREENSHOT")).toBe(true);
+    expect(masaarat.every((c) => c.route === "MASAARAT_SCREENSHOT")).toBe(true);
   });
 
-  it("keeps the original four instructional-composition cells unchanged", () => {
-    const pilot = buildPilotManifest(loadClassification100({ useCache: false }));
-    const introCells = pilot.cells.filter((c) => c.lessonId === PILOT_INSTRUCTIONAL_LESSON_ID);
-    expect(introCells).toHaveLength(4);
-    expect(introCells.every((c) => c.route === "INSTRUCTIONAL_COMPOSITION")).toBe(true);
-    expect(introCells.map((c) => c.locale)).toEqual([...LOCALES]);
-  });
-
-  it("lists the three pilot lessons including the former screenshot lessons", () => {
+  it("lists the three pilot lessons including the restored screenshot lessons", () => {
     const pilot = buildPilotManifest(loadClassification100({ useCache: false }));
     const lessons = new Set(pilot.cells.map((c) => c.lessonId));
     expect(lessons).toEqual(
@@ -171,14 +147,14 @@ describe("controlled-v1 PILOT_MANIFEST eligibility after reclassification", () =
 });
 
 describe("controlled-v1 UNRESOLVED_LEDGER", () => {
-  it("lists exactly the non-INSTRUCTIONAL_COMPOSITION cells (32 of 400)", () => {
+  it("lists exactly the non-INSTRUCTIONAL_COMPOSITION cells (40 of 400)", () => {
     const manifest = buildProductionManifest(loadClassification100({ useCache: false }));
     const ledger = buildUnresolvedLedger(manifest);
-    expect(ledger.entries.length).toBe(32);
+    expect(ledger.entries.length).toBe(40);
     expect(ledger.entries.every((e) => e.route !== "INSTRUCTIONAL_COMPOSITION")).toBe(true);
-    expect(ledger.entries.some((e) => e.lessonId === PILOT_MASAARAT_LESSON_ID)).toBe(false);
+    expect(ledger.entries.some((e) => e.lessonId === PILOT_MASAARAT_LESSON_ID)).toBe(true);
     expect(ledger.entries.some((e) => e.lessonId === PILOT_AUTHORIZED_EXTERNAL_LESSON_ID)).toBe(
-      false,
+      true,
     );
   });
 });

@@ -41,7 +41,7 @@ export function shouldInjectControlledFailure(
   cid: string,
   path: string = CONTROLLED_FAILURE_STATE_PATH,
 ): boolean {
-  if (mode === "full-400") return false;
+  if (mode === "full-400" || mode === "method-c-remaining") return false;
   if (mode !== "pilot") return false;
   if (cid !== CONTROLLED_FAILURE_TARGET_CELL_ID) return false;
   const state = readState(path);

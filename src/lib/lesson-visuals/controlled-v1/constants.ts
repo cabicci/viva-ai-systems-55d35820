@@ -12,12 +12,29 @@ export const PILOT_AUTHORIZED_EXTERNAL_LESSON_ID = "builder-m6-l3-first-prompt-t
 
 export const FULL_400_CONFIRM_TOKEN = "RUN_AUTHORIZED_400";
 
-/** After CR-VIS-PILOT-MANIFEST-RECLASSIFICATION-20260725-01: pilot screenshot lessons → INSTRUCTIONAL_COMPOSITION. */
+/** Exact confirmation sentinel for mode=method-c-remaining (reuses confirm_full_400 input). */
+export const METHOD_C_REMAINING_CONFIRM_TOKEN = "RUN_AUTHORIZED_METHOD_C_356";
+
+/**
+ * Authoritative counts restored by CR-LV-METHOD-C-356-PRODUCTION-20260727-01
+ * (undoes the temporary pilot reclassification of two A/B lessons to Method C).
+ */
 export const EXPECTED_COUNTS = {
-  MASAARAT_SCREENSHOT: 6,
-  AUTHORIZED_EXTERNAL_SCREENSHOT: 2,
-  INSTRUCTIONAL_COMPOSITION: 92,
+  MASAARAT_SCREENSHOT: 7,
+  AUTHORIZED_EXTERNAL_SCREENSHOT: 3,
+  INSTRUCTIONAL_COMPOSITION: 90,
 } as const;
+
+/** Four human-accepted Method C pilot cells excluded from method-c-remaining rendering. */
+export const PRESERVED_METHOD_C_PILOT_CELL_IDS = [
+  "intro-m1-l4-ai-can-cannot__ar-EG",
+  "intro-m1-l4-ai-can-cannot__ar-MSA",
+  "intro-m1-l4-ai-can-cannot__ar-Gulf",
+  "intro-m1-l4-ai-can-cannot__en",
+] as const;
+
+export const METHOD_C_REMAINING_EXPECTED_TOTAL = 356;
+export const METHOD_C_REMAINING_EXPECTED_PER_LOCALE = 89;
 
 export const EXPECTED_TOTAL_LESSONS = 100;
 export const EXPECTED_TOTAL_CELLS = EXPECTED_TOTAL_LESSONS * LOCALES.length;

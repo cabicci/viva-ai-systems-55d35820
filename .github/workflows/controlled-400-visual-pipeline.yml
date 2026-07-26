@@ -5,24 +5,25 @@
 # and never reuses rejected candidate outputs.
 #
 # DISPATCH ROUTING (fail-closed):
-#   Masaarat Control Room → Lovable → this workflow_dispatch
-#   Cursor / CLI / GitHub UI / unauthorized API / unauthenticated sources MUST fail
-#   at the dispatch-authority job. See docs/lesson-visuals/v1/DISPATCH_AUTHORIZATION.md
-#   for the authoritative LOVABLE_DISPATCH_ACTORS / CR-… contract (read-only reference).
+#   Default modes: Masaarat Control Room → Lovable → this workflow_dispatch
+#   method-c-remaining: Masaarat Control Room → repository-owner actor (cabicci) → CLI/API
+#   Cursor / unauthenticated / banned actors MUST fail at the dispatch-authority job.
 #
 # Modes:
-#   preflight    — validate classification/manifest/golden refs; no generation.
-#   pilot        — 12-cell pilot matrix (see docs/lesson-visuals/controlled-v1/PILOT_MANIFEST.json).
-#   failed-only  — reprocess only cells whose latest known receipt is FAILED.
-#                  Requires prior_artifact_run_id so the prior pilot (or failed-only)
-#                  artifact bundle can be restored before selection/rerun.
-#   full-400     — all 400 cells. Requires confirm_full_400 === "RUN_AUTHORIZED_400" exactly.
-#   report-only  — read latest receipts + verify golden refs; no generation.
+#   preflight            — validate classification/manifest/golden refs; no generation.
+#   pilot                — 12-cell pilot matrix (see docs/lesson-visuals/controlled-v1/PILOT_MANIFEST.json).
+#   failed-only          — reprocess only cells whose latest known receipt is FAILED.
+#                          Requires prior_artifact_run_id so the prior pilot (or failed-only)
+#                          artifact bundle can be restored before selection/rerun.
+#   full-400             — all 400 cells. Requires confirm_full_400 === "RUN_AUTHORIZED_400" exactly.
+#   method-c-remaining   — remaining 356 Method C cells (excludes 4 preserved pilot C cells + all A/B).
+#                          Requires confirm_full_400 === "RUN_AUTHORIZED_METHOD_C_356" exactly.
+#                          Owner actor cabicci only (not Lovable).
+#   report-only          — read latest receipts + verify golden refs; no generation.
 #
-# No Docker. No paid generation (INSTRUCTIONAL_COMPOSITION cells are rendered
-# by Chrome/Tajawal HTML composition; MASAARAT_SCREENSHOT and
-# AUTHORIZED_EXTERNAL_SCREENSHOT cells fail closed to BLOCKED_UNRESOLVED_SPEC
-# until real capture/rights evidence exists).
+# No Docker. INSTRUCTIONAL_COMPOSITION cells are rendered by Chrome/Tajawal HTML composition.
+# MASAARAT_SCREENSHOT and AUTHORIZED_EXTERNAL_SCREENSHOT cells fail closed to
+# BLOCKED_UNRESOLVED_SPEC until real capture/rights evidence exists.
 
 name: controlled-400-visual-pipeline
 
@@ -34,7 +35,7 @@ on:
         required: true
         type: string
       dispatch_actor:
-        description: Must be an allowlisted Lovable actor (never cursor/cli)
+        description: Allowlisted Lovable actor for default modes; must be cabicci for method-c-remaining
         required: true
         type: string
       checkout_sha:
@@ -50,10 +51,11 @@ on:
           - pilot
           - failed-only
           - full-400
+          - method-c-remaining
           - report-only
         default: preflight
       confirm_full_400:
-        description: Required ONLY for mode=full-400 — must equal RUN_AUTHORIZED_400 exactly
+        description: full-400 requires RUN_AUTHORIZED_400; method-c-remaining requires RUN_AUTHORIZED_METHOD_C_356
         required: false
         type: string
         default: ""
@@ -73,10 +75,10 @@ concurrency:
 
 jobs:
   dispatch-authority:
-    name: Lovable-only dispatch authority (fail-closed)
+    name: Dispatch authority (fail-closed)
     runs-on: ubuntu-latest
     steps:
-      - name: Fail-closed Control Room + Lovable authorization
+      - name: Fail-closed Control Room authorization
         shell: bash
         env:
           CONTROL_ROOM_AUTHORIZATION_ID: ${{ github.event.inputs.control_room_authorization_id }}
@@ -89,39 +91,7 @@ jobs:
           LOVABLE_DISPATCH_ACTORS: ${{ vars.LOVABLE_DISPATCH_ACTORS || secrets.LOVABLE_DISPATCH_ACTORS }}
         run: |
           set -euo pipefail
-          ALLOW_RAW="${LOVABLE_DISPATCH_ACTORS:-}"
-          if [[ -z "${ALLOW_RAW// }" ]]; then
-            printf '%s\n' "LOVABLE_DISPATCH_ACTORS allowlist is empty — fail closed"
-            printf '%s\n' "Only Control Room → Lovable → GitHub Actions may dispatch."
-            exit 1
-          fi
-          mapfile -t ALLOW < <(printf '%s\n' "$ALLOW_RAW" | tr '[,;]' ' ' | tr '[:upper:]' '[:lower:]' | xargs -n1)
-          in_allow() {
-            local needle
-            needle="$(printf '%s' "$1" | tr '[:upper:]' '[:lower:]')"
-            for a in "${ALLOW[@]}"; do
-              [[ "$a" == "$needle" ]] && return 0
-            done
-            return 1
-          }
-          for banned in cursor cli cursor-agent github-ui unauthenticated api; do
-            if [[ "$(printf '%s' "$DISPATCH_ACTOR" | tr '[:upper:]' '[:lower:]')" == "$banned" ]]; then
-              printf '%s\n' "dispatch_actor is banned"
-              exit 1
-            fi
-            if [[ "$(printf '%s' "$GITHUB_ACTOR_NAME" | tr '[:upper:]' '[:lower:]')" == "$banned" ]]; then
-              printf '%s\n' "github.actor is banned"
-              exit 1
-            fi
-          done
-          if ! in_allow "$DISPATCH_ACTOR"; then
-            printf '%s\n' "dispatch_actor not in LOVABLE_DISPATCH_ACTORS allowlist"
-            exit 1
-          fi
-          if ! in_allow "$GITHUB_ACTOR_NAME"; then
-            printf '%s\n' "github.actor not in LOVABLE_DISPATCH_ACTORS allowlist"
-            exit 1
-          fi
+          lower() { printf '%s' "$1" | tr '[:upper:]' '[:lower:]'; }
           if [[ -z "${CONTROL_ROOM_AUTHORIZATION_ID:-}" ]]; then
             printf '%s\n' "control_room_authorization_id missing"
             exit 1
@@ -135,20 +105,75 @@ jobs:
             exit 1
           fi
           case "$PIPELINE_MODE" in
-            preflight|pilot|failed-only|full-400|report-only) ;;
+            preflight|pilot|failed-only|full-400|method-c-remaining|report-only) ;;
             *)
               printf '%s\n' "mode is not an authorized choice"
               exit 1
               ;;
           esac
+          for banned in cursor cli cursor-agent github-ui unauthenticated api; do
+            if [[ "$(lower "$DISPATCH_ACTOR")" == "$banned" ]]; then
+              printf '%s\n' "dispatch_actor is banned"
+              exit 1
+            fi
+            if [[ "$(lower "$GITHUB_ACTOR_NAME")" == "$banned" ]]; then
+              printf '%s\n' "github.actor is banned"
+              exit 1
+            fi
+          done
+
+          if [[ "$PIPELINE_MODE" == "method-c-remaining" ]]; then
+            if [[ "$(lower "$DISPATCH_ACTOR")" != "cabicci" ]]; then
+              printf '%s\n' "mode=method-c-remaining requires dispatch_actor=cabicci"
+              exit 1
+            fi
+            if [[ "$(lower "$GITHUB_ACTOR_NAME")" != "cabicci" ]]; then
+              printf '%s\n' "mode=method-c-remaining requires github.actor=cabicci"
+              exit 1
+            fi
+            if [[ "$CONFIRM_FULL_400" != "RUN_AUTHORIZED_METHOD_C_356" ]]; then
+              printf '%s\n' "mode=method-c-remaining requires confirm_full_400 to equal RUN_AUTHORIZED_METHOD_C_356 exactly"
+              exit 1
+            fi
+            if [[ -n "${PRIOR_ARTIFACT_RUN_ID}" ]]; then
+              printf '%s\n' "prior_artifact_run_id is not authorized for method-c-remaining"
+              exit 1
+            fi
+            printf '%s\n' "dispatch-authority PASSED (Control Room → owner cabicci → method-c-remaining)"
+            exit 0
+          fi
+
+          ALLOW_RAW="${LOVABLE_DISPATCH_ACTORS:-}"
+          if [[ -z "${ALLOW_RAW// }" ]]; then
+            printf '%s\n' "LOVABLE_DISPATCH_ACTORS allowlist is empty — fail closed"
+            printf '%s\n' "Only Control Room → Lovable → GitHub Actions may dispatch default modes."
+            exit 1
+          fi
+          mapfile -t ALLOW < <(printf '%s\n' "$ALLOW_RAW" | tr '[,;]' ' ' | tr '[:upper:]' '[:lower:]' | xargs -n1)
+          in_allow() {
+            local needle
+            needle="$(lower "$1")"
+            for a in "${ALLOW[@]}"; do
+              [[ "$a" == "$needle" ]] && return 0
+            done
+            return 1
+          }
+          if ! in_allow "$DISPATCH_ACTOR"; then
+            printf '%s\n' "dispatch_actor not in LOVABLE_DISPATCH_ACTORS allowlist"
+            exit 1
+          fi
+          if ! in_allow "$GITHUB_ACTOR_NAME"; then
+            printf '%s\n' "github.actor not in LOVABLE_DISPATCH_ACTORS allowlist"
+            exit 1
+          fi
           if [[ "$PIPELINE_MODE" == "full-400" ]]; then
             if [[ "$CONFIRM_FULL_400" != "RUN_AUTHORIZED_400" ]]; then
               printf '%s\n' "mode=full-400 requires confirm_full_400 to equal RUN_AUTHORIZED_400 exactly"
               exit 1
             fi
           else
-            if [[ -n "${CONFIRM_FULL_400}" && "$CONFIRM_FULL_400" == "RUN_AUTHORIZED_400" ]]; then
-              printf '%s\n' "confirm_full_400=RUN_AUTHORIZED_400 is not authorized for non-full-400 modes"
+            if [[ -n "${CONFIRM_FULL_400}" && ( "$CONFIRM_FULL_400" == "RUN_AUTHORIZED_400" || "$CONFIRM_FULL_400" == "RUN_AUTHORIZED_METHOD_C_356" ) ]]; then
+              printf '%s\n' "confirm_full_400 production sentinel is not authorized for this mode"
               exit 1
             fi
           fi
@@ -169,7 +194,7 @@ jobs:
     name: controlled-v1 (${{ github.event.inputs.mode }})
     needs: [dispatch-authority]
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 240
     steps:
       - name: Checkout immutable checkout_sha
         uses: actions/checkout@v4
@@ -191,7 +216,7 @@ jobs:
           printf '%s\n' "immutable checkout verified"
 
       - name: Install Chromium for composition render
-        if: github.event.inputs.mode == 'pilot' || github.event.inputs.mode == 'failed-only' || github.event.inputs.mode == 'full-400'
+        if: github.event.inputs.mode == 'pilot' || github.event.inputs.mode == 'failed-only' || github.event.inputs.mode == 'full-400' || github.event.inputs.mode == 'method-c-remaining'
         run: |
           set -euo pipefail
           sudo apt-get update
@@ -223,11 +248,11 @@ jobs:
         run: bun run controlled-visuals:test-static
 
       - name: Run static + renderer tests (render-authorized modes)
-        if: github.event.inputs.mode == 'pilot' || github.event.inputs.mode == 'failed-only' || github.event.inputs.mode == 'full-400'
+        if: github.event.inputs.mode == 'pilot' || github.event.inputs.mode == 'failed-only' || github.event.inputs.mode == 'full-400' || github.event.inputs.mode == 'method-c-remaining'
         run: bun run controlled-visuals:test
 
       - name: Build manifests (classification + 400-cell manifest + golden verification)
-        if: github.event.inputs.mode == 'preflight' || github.event.inputs.mode == 'pilot' || github.event.inputs.mode == 'full-400'
+        if: github.event.inputs.mode == 'preflight' || github.event.inputs.mode == 'pilot' || github.event.inputs.mode == 'full-400' || github.event.inputs.mode == 'method-c-remaining'
         run: bun run controlled-visuals:build
 
       - name: Restore prior controlled-v1 artifacts for failed-only recovery
@@ -282,6 +307,19 @@ jobs:
             exit 1
           fi
           bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts full-400 --confirm_full_400="$CONFIRM_FULL_400"
+
+      - name: Run method-c-remaining (requires exact confirm token)
+        if: github.event.inputs.mode == 'method-c-remaining'
+        shell: bash
+        env:
+          CONFIRM_FULL_400: ${{ github.event.inputs.confirm_full_400 }}
+        run: |
+          set -euo pipefail
+          if [[ "$CONFIRM_FULL_400" != "RUN_AUTHORIZED_METHOD_C_356" ]]; then
+            printf '%s\n' "mode=method-c-remaining requires confirm_full_400 to equal RUN_AUTHORIZED_METHOD_C_356 exactly"
+            exit 1
+          fi
+          bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts method-c-remaining --confirm_full_400="$CONFIRM_FULL_400"
 
       - name: Run report-only (zero-render)
         if: github.event.inputs.mode == 'report-only'

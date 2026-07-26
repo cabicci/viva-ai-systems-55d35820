@@ -1,15 +1,27 @@
 #!/usr/bin/env bun
 import { writeContactSheet } from "../contactSheets";
-import { runFailedOnly, runFull400, runPilot, runPreflight, runReportOnly } from "../runner";
+import {
+  runFailedOnly,
+  runFull400,
+  runMethodCRemaining,
+  runPilot,
+  runPreflight,
+  runReportOnly,
+} from "../runner";
 import type { RunnerMode } from "../types";
 
 function parseArgs(argv: string[]): { mode: RunnerMode; confirm?: string } {
   const mode = argv[0] as RunnerMode | undefined;
-  const validModes: RunnerMode[] = ["preflight", "pilot", "full-400", "failed-only", "report-only"];
+  const validModes: RunnerMode[] = [
+    "preflight",
+    "pilot",
+    "full-400",
+    "failed-only",
+    "report-only",
+    "method-c-remaining",
+  ];
   if (!mode || !validModes.includes(mode)) {
-    console.error(
-      `usage: cli.ts <${validModes.join("|")}> [--confirm_full_400=RUN_AUTHORIZED_400]`,
-    );
+    console.error(`usage: cli.ts <${validModes.join("|")}> [--confirm_full_400=<token>]`);
     process.exit(2);
   }
 
@@ -26,6 +38,7 @@ async function main() {
   const { mode, confirm } = parseArgs(process.argv.slice(2));
 
   // Defense in depth: preflight/report-only must never launch Chrome or write PNGs.
+  // method-c-remaining dry-select also uses ZERO_RENDER when set by the caller.
   if (mode === "preflight" || mode === "report-only") {
     process.env.CONTROLLED_V1_ZERO_RENDER = "1";
   }
@@ -42,6 +55,12 @@ async function main() {
     case "full-400":
       result = runFull400(confirm);
       if (result.ok) writeContactSheet("full-400", result.receipts);
+      break;
+    case "method-c-remaining":
+      result = runMethodCRemaining(confirm);
+      if (result.ok && result.receipts.length > 0) {
+        writeContactSheet("method-c-remaining", result.receipts);
+      }
       break;
     case "failed-only":
       result = runFailedOnly();

@@ -6,9 +6,9 @@
   "acceptedClassificationBaselineSha": "a9b31c53aee45a9498f89f1301987f684ff1bae9",
   "normalizationRule": "DIAGRAM -> INSTRUCTIONAL_COMPOSITION",
   "counts": {
-    "MASAARAT_SCREENSHOT": 6,
-    "AUTHORIZED_EXTERNAL_SCREENSHOT": 2,
-    "INSTRUCTIONAL_COMPOSITION": 92
+    "MASAARAT_SCREENSHOT": 7,
+    "AUTHORIZED_EXTERNAL_SCREENSHOT": 3,
+    "INSTRUCTIONAL_COMPOSITION": 90
   },
   "lessons": [
     {
@@ -617,8 +617,8 @@
       "position": 87,
       "lessonId": "builder-m6-l3-first-prompt-to-lovable",
       "title": "أول Prompt لـ Lovable",
-      "cat": "C",
-      "route": "INSTRUCTIONAL_COMPOSITION"
+      "cat": "B",
+      "route": "AUTHORIZED_EXTERNAL_SCREENSHOT"
     },
     {
       "position": 88,
@@ -645,8 +645,8 @@
       "position": 91,
       "lessonId": "builder-m7-l1-tables-columns",
       "title": "Tables & Columns",
-      "cat": "C",
-      "route": "INSTRUCTIONAL_COMPOSITION"
+      "cat": "A",
+      "route": "MASAARAT_SCREENSHOT"
     },
     {
       "position": 92,
@@ -717,8 +717,13 @@
     "builder-m2-l2-instructions-examples",
     "builder-m3-l1-context-layer",
     "builder-m6-l4-components-routes",
+    "builder-m7-l1-tables-columns",
     "builder-m7-l3-queries",
     "builder-m10-l2-first-users"
   ],
-  "authorizedExternalScreenshotLessonIds": ["intro-m1-l3-setup-your-ai", "builder-m5-l2-frontend"]
+  "authorizedExternalScreenshotLessonIds": [
+    "intro-m1-l3-setup-your-ai",
+    "builder-m5-l2-frontend",
+    "builder-m6-l3-first-prompt-to-lovable"
+  ]
 }
