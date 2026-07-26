@@ -67,6 +67,11 @@ export interface ImporterConfig {
   sql?: SqlExecutor;
   /** Test-only: inject embedding provider */
   embeddings?: EmbeddingProvider;
+  /**
+   * Test-only: inject observed source SHA resolver.
+   * Production/disposable runtime must use git rev-parse HEAD via locks.resolveCheckedOutSourceSha.
+   */
+  resolveObservedSourceSha?: () => string;
 }
 
 export interface StagingChunkInsert {
