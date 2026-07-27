@@ -16,6 +16,9 @@ import {
 } from "./buildManifest";
 import {
   FULL_400_CONFIRM_TOKEN,
+  METHOD_A_M7L1_FOUR_PILOT_AUTH_ID,
+  METHOD_A_M7L1_FOUR_PILOT_CONFIRM_TOKEN,
+  METHOD_A_M7L1_FOUR_PILOT_EXPECTED_TOTAL,
   METHOD_C_B6L3_FOUR_PILOT_AUTH_ID,
   METHOD_C_B6L3_FOUR_PILOT_CONFIRM_TOKEN,
   METHOD_C_B6L3_FOUR_PILOT_EXPECTED_TOTAL,
@@ -27,6 +30,7 @@ import {
   METHOD_C_REMAINING_EIGHT_CONFIRM_TOKEN,
   METHOD_C_REMAINING_EIGHT_EXPECTED_TOTAL,
 } from "./constants";
+import { selectMethodAFourCellPilot } from "./methodAFourCellPilot";
 import { selectMethodBToCFourCellPilot } from "./methodBToCFourCellPilot";
 import { selectMethodBToCRemainingEight } from "./methodBToCRemainingEight";
 import { selectMethodCRemainingCells } from "./methodCRemaining";
@@ -56,6 +60,7 @@ import {
   cellReceiptPath,
 } from "./paths";
 import { runAuthorizedExternalRoute } from "./routes/authorizedExternal";
+import { captureMethodAPilotCell, writeCaptureEvidenceJson } from "./routes/methodALiveCapture";
 import { runMasaaratScreenshotRoute } from "./routes/masaaratScreenshot";
 import {
   generateInstructionalComposition,
@@ -680,6 +685,250 @@ export function runMethodBToCFourCellPilot(confirmToken: string | undefined): Ru
             `telemetry gate failed: renderer=${renderTelemetry.rendererCalls} paid=${renderTelemetry.paidProviderCalls}`,
           ]
         : []),
+      ...failed.map((r) => `${r.cellId}: ${r.reason ?? r.status}`),
+    ],
+  };
+}
+
+/**
+ * Exact four-cell Method A capture pilot:
+ * builder-m7-l1-tables-columns × {ar-EG, ar-MSA, ar-Gulf, en}.
+ * Live capture against local-dev /system-state only. Receipts stay PENDING_HUMAN_REVIEW.
+ */
+export async function runMethodAFourCellPilot(
+  confirmToken: string | undefined,
+): Promise<RunResult> {
+  if (confirmToken !== METHOD_A_M7L1_FOUR_PILOT_CONFIRM_TOKEN) {
+    const msg = `method-a-m7l1-four-pilot requires confirm_full_400 === "${METHOD_A_M7L1_FOUR_PILOT_CONFIRM_TOKEN}" exactly; received ${JSON.stringify(confirmToken)}`;
+    return {
+      mode: "method-a-m7l1-four-pilot",
+      ok: false,
+      summary: msg,
+      receipts: [],
+      errors: [msg],
+    };
+  }
+
+  const classification = loadClassification100();
+  const manifest = buildProductionManifest(classification);
+  const manifestCheck = validateProductionManifest(manifest);
+  if (!manifestCheck.ok) {
+    return {
+      mode: "method-a-m7l1-four-pilot",
+      ok: false,
+      summary: "manifest validation failed; refusing Method A four-locale pilot",
+      receipts: [],
+      errors: manifestCheck.errors,
+    };
+  }
+
+  const selection = selectMethodAFourCellPilot(manifest);
+  writeJson(`${ARTIFACTS_REPORTS_DIR}/method-a-m7l1-four-pilot-selection.json`, {
+    generatedAt: new Date().toISOString(),
+    authorizationId: METHOD_A_M7L1_FOUR_PILOT_AUTH_ID,
+    ok: selection.ok,
+    counts: selection.counts,
+    cellIds: selection.cells.map((c) => c.cellId),
+    errors: selection.errors,
+  });
+
+  if (!selection.ok) {
+    return {
+      mode: "method-a-m7l1-four-pilot",
+      ok: false,
+      summary: "method-a-m7l1-four-pilot selection failed closed",
+      receipts: [],
+      errors: selection.errors,
+    };
+  }
+
+  if (
+    process.env.CONTROLLED_V1_ZERO_CAPTURE === "1" ||
+    process.env.CONTROLLED_V1_ZERO_RENDER === "1"
+  ) {
+    writeRunReport("method-a-m7l1-four-pilot", {
+      generatedAt: new Date().toISOString(),
+      confirmToken,
+      drySelectOnly: true,
+      authorizationId: METHOD_A_M7L1_FOUR_PILOT_AUTH_ID,
+      counts: selection.counts,
+      selectedCellIds: selection.cells.map((c) => c.cellId),
+    });
+    return {
+      mode: "method-a-m7l1-four-pilot",
+      ok: true,
+      summary: `method-a-m7l1-four-pilot dry-select: ${selection.cells.length} cells; Method B 0; Method C 0; other Method A 0; no capture`,
+      receipts: [],
+      errors: [],
+    };
+  }
+
+  const receipts: CellReceipt[] = [];
+  const captureErrors: string[] = [];
+
+  for (const cell of selection.cells) {
+    if (cell.route !== "MASAARAT_SCREENSHOT" || cell.category !== "A") {
+      return {
+        mode: "method-a-m7l1-four-pilot",
+        ok: false,
+        summary: `refusing non-Method-A cell ${cell.cellId}`,
+        receipts,
+        errors: [`non-Method-A cell reached capture: ${cell.cellId}`],
+      };
+    }
+
+    const producedAt = new Date().toISOString();
+    const cellDir = cellArtifactDir(cell.cellId);
+    const outPath = cellFinalPngPath(cell.cellId);
+    const capture = await captureMethodAPilotCell({
+      lessonId: cell.lessonId,
+      locale: cell.locale,
+      cellId: cell.cellId,
+      outputDir: cellDir,
+    });
+
+    if (!capture.ok) {
+      const reason = capture.errors.join("; ");
+      captureErrors.push(`${cell.cellId}: ${reason}`);
+      const failedReceipt: CellReceipt = {
+        receiptVersion: "controlled-v1-receipt/1",
+        cellId: cell.cellId,
+        lessonId: cell.lessonId,
+        locale: cell.locale,
+        route: cell.route,
+        mode: "method-a-m7l1-four-pilot",
+        status: "FAILED",
+        reason,
+        artifactPath: null,
+        artifactSha256: null,
+        bytesWritten: null,
+        controlledFailureInjected: false,
+        producedAt,
+      };
+      writeReceipt(failedReceipt);
+      if (capture.evidence) {
+        writeCaptureEvidenceJson(
+          join(ARTIFACTS_REPORTS_DIR, `method-a-capture-evidence-${cell.cellId}.json`),
+          cell.cellId,
+          capture.evidence,
+          null,
+        );
+      }
+      receipts.push(failedReceipt);
+      // Fail closed: do not continue finalizing further cells after a failed assertion.
+      break;
+    }
+
+    writeCaptureEvidenceJson(
+      join(ARTIFACTS_REPORTS_DIR, `method-a-capture-evidence-${cell.cellId}.json`),
+      cell.cellId,
+      capture.evidence,
+      capture.sha256,
+    );
+
+    mkdirSync(ARTIFACTS_PROVENANCE_DIR, { recursive: true });
+    writeJson(join(ARTIFACTS_PROVENANCE_DIR, `${cell.cellId}.provenance.json`), {
+      schemaVersion: "controlled-v1-pilot-cell-provenance/1",
+      authorizationId: METHOD_A_M7L1_FOUR_PILOT_AUTH_ID,
+      cellId: cell.cellId,
+      lessonId: cell.lessonId,
+      locale: cell.locale,
+      classification: { category: cell.category, route: cell.route },
+      capture: {
+        kind: "masaarat-authenticated-local-dev-screenshot",
+        route: capture.evidence.route,
+        resolvedLocale: capture.evidence.resolvedLocale,
+        direction: capture.evidence.direction,
+        sessionUrl: capture.evidence.finalUrl,
+        readiness: capture.evidence.readiness,
+        redaction: capture.evidence.redaction,
+        networkAudit: capture.evidence.networkAudit,
+        providerCalls: 0,
+        paidProviderCalls: 0,
+      },
+      rights: {
+        basis: "FIRST_PARTY_MASAARAT_LOCAL_DEV_CAPTURE",
+        externalScreenshotSource: null,
+      },
+      artifactSha256: capture.sha256,
+      status: "PENDING",
+      reason: "PENDING_HUMAN_REVIEW",
+      productionAccepted: false,
+      producedAt,
+    });
+
+    const receipt: CellReceipt = {
+      receiptVersion: "controlled-v1-receipt/1",
+      cellId: cell.cellId,
+      lessonId: cell.lessonId,
+      locale: cell.locale,
+      route: cell.route,
+      mode: "method-a-m7l1-four-pilot",
+      status: "PENDING",
+      reason: "PENDING_HUMAN_REVIEW",
+      artifactPath: outPath,
+      artifactSha256: capture.sha256,
+      bytesWritten: capture.png.length,
+      controlledFailureInjected: false,
+      producedAt,
+    };
+    writeReceipt(receipt);
+    receipts.push(receipt);
+  }
+
+  const counts = receiptCounts(receipts);
+  const failed = receipts.filter(
+    (r) => r.status === "FAILED" || r.status === "BLOCKED_UNRESOLVED_SPEC",
+  );
+  const pending = receipts.filter(
+    (r) => r.status === "PENDING" && r.reason === "PENDING_HUMAN_REVIEW",
+  );
+  const accepted = receipts.filter((r) => r.status === "ACCEPTED");
+
+  writeJson(`${ARTIFACTS_RECEIPTS_DIR}/method-a-m7l1-four-pilot/_summary.json`, {
+    generatedAt: new Date().toISOString(),
+    authorizationId: METHOD_A_M7L1_FOUR_PILOT_AUTH_ID,
+    counts,
+    selection: selection.counts,
+    pendingHumanReview: pending.map((r) => r.cellId),
+    receipts,
+  });
+  writeRunReport("method-a-m7l1-four-pilot", {
+    generatedAt: new Date().toISOString(),
+    confirmToken,
+    authorizationId: METHOD_A_M7L1_FOUR_PILOT_AUTH_ID,
+    drySelectOnly: false,
+    counts,
+    selectionCounts: selection.counts,
+    pendingCount: pending.length,
+    failedCount: failed.length,
+    acceptedCount: accepted.length,
+  });
+
+  const ok =
+    receipts.length === METHOD_A_M7L1_FOUR_PILOT_EXPECTED_TOTAL &&
+    pending.length === METHOD_A_M7L1_FOUR_PILOT_EXPECTED_TOTAL &&
+    failed.length === 0 &&
+    accepted.length === 0 &&
+    captureErrors.length === 0;
+
+  return {
+    mode: "method-a-m7l1-four-pilot",
+    ok,
+    summary: ok
+      ? `method-a-m7l1-four-pilot: ${receipts.length} cells PENDING_HUMAN_REVIEW; Method B 0; Method C 0; other Method A 0; providerCalls=0`
+      : `method-a-m7l1-four-pilot failed closed: pending=${pending.length} failed=${failed.length}`,
+    receipts,
+    errors: [
+      ...(accepted.length > 0
+        ? [`pilot must not mark cells ACCEPTED; got ${accepted.length}`]
+        : []),
+      ...(pending.length !== METHOD_A_M7L1_FOUR_PILOT_EXPECTED_TOTAL
+        ? [
+            `expected ${METHOD_A_M7L1_FOUR_PILOT_EXPECTED_TOTAL} PENDING receipts, got ${pending.length}`,
+          ]
+        : []),
+      ...captureErrors,
       ...failed.map((r) => `${r.cellId}: ${r.reason ?? r.status}`),
     ],
   };

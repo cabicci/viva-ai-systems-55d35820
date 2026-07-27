@@ -1,10 +1,20 @@
 {
   "schemaVersion": "controlled-v1-capture-ledger/1",
-  "status": "EMPTY_NO_AUTHORIZED_SESSION",
-  "statement": "No non-Production Masaarat capture session has been authorized for controlled-v1. MASAARAT_SCREENSHOT cells require a real, authenticated, non-Production Masaarat learner/admin session (e.g. a staging or seeded QA account) explicitly authorized by Control Room for screenshot capture; none currently exists.",
-  "consequence": "Every MASAARAT_SCREENSHOT cell in PRODUCTION_MANIFEST.json and PILOT_MANIFEST.json routes through src/lib/lesson-visuals/controlled-v1/routes/masaaratScreenshot.ts, which fails closed to status BLOCKED_UNRESOLVED_SPEC whenever no capture session config file exists under this capture/ directory.",
-  "authorizedSessions": [],
-  "howToAuthorizeCapture": "To unblock a specific cell, a Control-Room-approved capture config file must be added at docs/lesson-visuals/controlled-v1/capture/{lessonId}__{locale}.capture.json (or docs/lesson-visuals/controlled-v1/capture/{lessonId}.capture.json to cover all locales) matching the schema documented in src/lib/lesson-visuals/controlled-v1/routes/masaaratScreenshot.ts, pointing at a non-Production environment/session. No such file currently exists for any lesson.",
+  "status": "AUTHORIZED_LOCAL_DEV_METHOD_A_FOUR_LOCALE_PILOT",
+  "statement": "A Control-Room-authorized non-Production local-dev Masaarat capture session exists for the Method A four-locale pilot lesson builder-m7-l1-tables-columns only (CR-LV-METHOD-A-FOUR-LOCALE-CAPTURE-PILOT-20260728-01). Other MASAARAT_SCREENSHOT lessons remain without authorized capture sessions.",
+  "consequence": "runMasaaratScreenshotRoute still fails closed for pipeline modes that do not perform live capture. Live browser capture is executed only by mode=method-a-m7l1-four-pilot against http://127.0.0.1:55440/system-state.",
+  "authorizedSessions": [
+    {
+      "lessonId": "builder-m7-l1-tables-columns",
+      "locales": ["ar-EG", "ar-MSA", "ar-Gulf", "en"],
+      "environment": "local-dev",
+      "sessionUrl": "http://127.0.0.1:55440/system-state",
+      "configPath": "docs/lesson-visuals/controlled-v1/capture/builder-m7-l1-tables-columns.capture.json",
+      "authorizedBy": "CR-LV-METHOD-A-FOUR-LOCALE-CAPTURE-PILOT-20260728-01",
+      "captureExecutionMode": "method-a-m7l1-four-pilot"
+    }
+  ],
+  "howToAuthorizeCapture": "To unblock a specific cell, a Control-Room-approved capture config file must be added at docs/lesson-visuals/controlled-v1/capture/{lessonId}__{locale}.capture.json (or docs/lesson-visuals/controlled-v1/capture/{lessonId}.capture.json to cover all locales) matching the schema documented in src/lib/lesson-visuals/controlled-v1/routes/masaaratScreenshot.ts, pointing at a non-Production environment/session.",
   "affectedLessonIds": [
     "builder-m2-l1-prompt-layer",
     "builder-m2-l2-instructions-examples",
@@ -14,5 +24,6 @@
     "builder-m7-l3-queries",
     "builder-m10-l2-first-users"
   ],
-  "lastUpdated": "2026-07-27T00:00:00.000Z"
+  "pilotAuthorizedLessonIds": ["builder-m7-l1-tables-columns"],
+  "lastUpdated": "2026-07-28T00:00:00.000Z"
 }

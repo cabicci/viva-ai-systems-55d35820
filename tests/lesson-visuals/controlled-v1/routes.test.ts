@@ -16,9 +16,17 @@ afterEach(() => {
 
 describe("controlled-v1 routes/masaaratScreenshot (fail-closed)", () => {
   it("blocks with BLOCKED_UNRESOLVED_SPEC when no capture config exists", () => {
-    const result = runMasaaratScreenshotRoute("builder-m7-l1-tables-columns", "ar-EG");
+    // Use a Method A lesson outside the authorized four-locale pilot.
+    const result = runMasaaratScreenshotRoute("builder-m2-l1-prompt-layer", "ar-EG");
     expect(result.status).toBe("BLOCKED_UNRESOLVED_SPEC");
     expect(result.configPath).toBeNull();
+  });
+
+  it("pilot lesson has authorized local-dev capture config but default route still fails closed (live capture is pilot-mode only)", () => {
+    const result = runMasaaratScreenshotRoute("builder-m7-l1-tables-columns", "ar-EG");
+    expect(result.status).toBe("BLOCKED_UNRESOLVED_SPEC");
+    expect(result.configPath).toContain("builder-m7-l1-tables-columns");
+    expect(result.reason).toMatch(/live capture|not implemented/i);
   });
 
   it("still blocks (capture-not-implemented) even with a valid non-Production capture config present", () => {
