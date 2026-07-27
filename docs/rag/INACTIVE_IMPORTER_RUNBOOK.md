@@ -105,3 +105,58 @@ SELECT public.activate_rag_index_version('<authorized staging version>');
 ```
 
 Requires service_role and a separate Control Room activation authorization. The importer never calls this.
+
+---
+
+# Lovable-native resumable importer
+
+**Authorization (implementation / disposable only):** `CR-RAG-LOVABLE-NATIVE-RESUMABLE-IMPORTER-20260727-01`
+
+## Complementary execution identities
+
+| Path                                       | Lock                                                                               |
+| ------------------------------------------ | ---------------------------------------------------------------------------------- |
+| Bun CLI (`scripts/rag/inactive-import.ts`) | Git checkout SHA via `git rev-parse HEAD` + digest locks                           |
+| Lovable-native Worker                      | Corpus provenance (four artifact digests + frozen source SHA + migration contract) |
+
+No caller-supplied observed SHA is trusted on either path.
+
+## Admin control surface
+
+Admin route: `/assistant-runtime` → **RAG LOVABLE-NATIVE IMPORT** panel.
+
+Authorized actions only:
+
+- Refresh status
+- Initialize or resume
+- Execute next batch (exactly one embedding batch per invocation)
+- Validate staging
+- View sanitized evidence
+
+Activation and rollback UI controls are disabled and have no callable handlers in this PR.
+
+## Server contract
+
+- TanStack `createServerFn` + `requireSupabaseAuth` + admin `has_role`
+- Service-role RPCs only (`rag_initialize_or_resume_import`, `rag_claim_next_import_batch`, …)
+- Server-private `?raw` corpus imports under `src/lib/rag/lovable-native/corpus.server.ts`
+- Batch plan: 64 chunks × 57 + final 52 = 58 batches; max 67 provider attempts
+- Progress is DB session state (survives browser close)
+
+## Post-merge Control Room sequence (do not execute in this PR)
+
+1. Merge the approved PR through normal governance.
+2. Reverify merged main and candidate path inventory.
+3. Ask Lovable to pull/synchronize the approved repository state.
+4. Apply only `20260727010000_rag_lovable_native_resumable_importer.sql`.
+5. Publish the approved server code only after migration verification.
+6. Run a read-only Lovable-native preflight (673 legacy / 0 locale / no active / digests / admin boundary / zero provider / zero writes).
+7. Obtain separate Control Room authorization for initialization and paid batch execution.
+8. Initialize or resume one staging session.
+9. Execute one explicit bounded batch per authorized admin action.
+10. Validate after all 58 batches complete.
+11. Obtain separate activation authorization.
+12. Activate transactionally.
+13. Run Production retrieval and assistant smoke tests.
+14. Use application-level rollback if required (`rag_deactivate_first_active_version` only when no prior superseded version).
+15. Never use Lovable destructive full-database restore without Khalil’s explicit approval.
