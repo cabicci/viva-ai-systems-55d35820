@@ -10,6 +10,7 @@ import {
   handleAssistantRuntimeRequest,
   type AssistantRuntimeDeps,
   type BillingRpcResult,
+  type LocaleRetrieveResult,
   type LlmResult,
   type SemanticChunk,
 } from "./handler.ts";
@@ -163,6 +164,7 @@ async function embedQuery(text: string, apiKey: string): Promise<number[] | null
 // 400-package contract). Invokes match_locale_knowledge_chunks with
 // service_role only (least privilege). Takes an already-computed embedding —
 // embedding happens once, as its own billed provider attempt, in the handler.
+// RPC failures must not be collapsed into an empty success list.
 async function localeSemanticRetrieve(
   embedding: number[],
   locale: string,
@@ -171,15 +173,16 @@ async function localeSemanticRetrieve(
   lessonId: string | null,
   contentVersion: string | null,
   allowModuleFallback: boolean,
-): Promise<SemanticChunk[]> {
+): Promise<LocaleRetrieveResult> {
   const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
   const SERVICE_ROLE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
   if (!SUPABASE_URL || !SERVICE_ROLE) {
     console.warn("[assistant-runtime] locale semantic disabled: missing supabase env");
-    return [];
+    return { ok: false, status: 500, error: "Missing required server configuration" };
   }
 
   try {
+    // PostgREST pgvector args are accepted as a JSON-encoded vector string.
     const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/match_locale_knowledge_chunks`, {
       method: "POST",
       headers: {
@@ -188,7 +191,7 @@ async function localeSemanticRetrieve(
         Authorization: `Bearer ${SERVICE_ROLE}`,
       },
       body: JSON.stringify({
-        query_embedding: embedding,
+        query_embedding: JSON.stringify(embedding),
         p_locale: locale,
         match_count: SEMANTIC_MAX,
         p_lesson_id: lessonId,
@@ -200,42 +203,48 @@ async function localeSemanticRetrieve(
       }),
     });
     if (!res.ok) {
-      console.warn(
-        "[assistant-runtime] locale semantic rpc failed",
-        res.status,
-        (await res.text()).slice(0, 200),
-      );
-      return [];
+      const detail = (await res.text()).slice(0, 200);
+      console.warn("[assistant-runtime] locale semantic rpc failed", res.status, detail);
+      return {
+        ok: false,
+        status: res.status >= 400 ? res.status : 502,
+        error: "Retrieval RPC failed",
+      };
     }
     const rows = await res.json();
-    if (!Array.isArray(rows)) return [];
-    return rows.slice(0, SEMANTIC_MAX).map((r: Record<string, unknown>) => ({
-      id: String(r.id ?? ""),
-      sourceId: String(r.source_id ?? ""),
-      locale: (r.locale as string) ?? null,
-      lessonId: (r.lesson_id as string) ?? null,
-      moduleId: (r.module_id as string) ?? null,
-      pathId: (r.path_id as string) ?? null,
-      title: String(r.title ?? ""),
-      content: String(r.content ?? ""),
-      similarity: Number(r.similarity ?? 0),
-      packagePath: (r.package_path as string) ?? null,
-      sourceSha: (r.source_sha as string) ?? null,
-      packageChecksum: (r.package_checksum as string) ?? null,
-      chunkChecksum: (r.chunk_checksum as string) ?? null,
-      contentVersion: (r.content_version as string) ?? null,
-      indexVersion: (r.index_version as string) ?? null,
-      sectionIndex: (r.section_index as number) ?? null,
-      sectionRole: (r.section_role as string) ?? null,
-      chunkPosition: (r.chunk_position as number) ?? null,
-      contentType: (r.content_type as string) ?? null,
-      productionRoute: (r.production_route as string) ?? null,
-      indexState: "active",
-      sameLessonRank: Number(r.same_lesson_rank ?? 1),
-    }));
+    if (!Array.isArray(rows)) {
+      return { ok: false, status: 502, error: "Malformed retrieval RPC response" };
+    }
+    const chunks: SemanticChunk[] = rows
+      .slice(0, SEMANTIC_MAX)
+      .map((r: Record<string, unknown>) => ({
+        id: String(r.id ?? ""),
+        sourceId: String(r.source_id ?? ""),
+        locale: (r.locale as string) ?? null,
+        lessonId: (r.lesson_id as string) ?? null,
+        moduleId: (r.module_id as string) ?? null,
+        pathId: (r.path_id as string) ?? null,
+        title: String(r.title ?? ""),
+        content: String(r.content ?? ""),
+        similarity: Number(r.similarity ?? 0),
+        packagePath: (r.package_path as string) ?? null,
+        sourceSha: (r.source_sha as string) ?? null,
+        packageChecksum: (r.package_checksum as string) ?? null,
+        chunkChecksum: (r.chunk_checksum as string) ?? null,
+        contentVersion: (r.content_version as string) ?? null,
+        indexVersion: (r.index_version as string) ?? null,
+        sectionIndex: (r.section_index as number) ?? null,
+        sectionRole: (r.section_role as string) ?? null,
+        chunkPosition: (r.chunk_position as number) ?? null,
+        contentType: (r.content_type as string) ?? null,
+        productionRoute: (r.production_route as string) ?? null,
+        indexState: "active",
+        sameLessonRank: Number(r.same_lesson_rank ?? 1),
+      }));
+    return { ok: true, chunks };
   } catch (e) {
     console.warn("[assistant-runtime] locale semantic exception", (e as Error).message);
-    return [];
+    return { ok: false, status: 500, error: "Retrieval RPC exception" };
   }
 }
 

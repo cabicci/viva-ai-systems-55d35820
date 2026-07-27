@@ -149,7 +149,10 @@ function buildDeps(overrides: Partial<AssistantRuntimeDeps> = {}): AssistantRunt
     })),
     billingRpc: createDefaultBillingRpc(),
     embedQuery: vi.fn(async () => [0.1, 0.2, 0.3]),
-    localeSemanticRetrieve: vi.fn(async () => [] as SemanticChunk[]),
+    localeSemanticRetrieve: vi.fn(async () => ({
+      ok: true as const,
+      chunks: [] as SemanticChunk[],
+    })),
     callLlm: vi.fn(async () => ({ ok: true as const, answer: "default answer" })),
     env: {
       LOVABLE_API_KEY: "lovable-key",
@@ -192,7 +195,7 @@ function billingCallNames(deps: AssistantRuntimeDeps): string[] {
 
 async function runWithChunks(chunks: SemanticChunk[]) {
   const deps = buildDeps({
-    localeSemanticRetrieve: vi.fn(async () => chunks),
+    localeSemanticRetrieve: vi.fn(async () => ({ ok: true as const, chunks })),
   });
   const res = await handleAssistantRuntimeRequest(
     buildRequest({ query: "what is AI?", learnerContext: { locale: "en" } }),
@@ -261,105 +264,152 @@ describe("handleAssistantRuntimeRequest — integrity cases 1–24", () => {
     expect(json.citations[0].chunkChecksum).toBe(sample.chunkChecksum);
   });
 
-  it("3: fabricated package checksum is rejected", async () => {
-    const { json, userPrompt } = await runWithChunks([
+  it("3: fabricated package checksum is rejected — fail-closed, no LLM", async () => {
+    const { json, deps, res } = await runWithChunks([
       { ...sample, packageChecksum: fabricatedPkg },
     ]);
+    expect(res.status).toBe(422);
+    expect(json.ok).toBe(false);
+    expect(json.reason).toBe("insufficient_grounding");
     expect(json.citations).toHaveLength(0);
     expect(json.retrieval.nonAuthoritativeExcluded).toBe(1);
-    expect(userPrompt).not.toContain(sample.content.slice(0, 40));
+    expect(callCounts(deps).llm).toBe(0);
+    expect(json.answer).toBeUndefined();
   });
 
-  it("4: fabricated chunk checksum is rejected", async () => {
-    const { json } = await runWithChunks([{ ...sample, chunkChecksum: fabricatedChunk }]);
+  it("4: fabricated chunk checksum is rejected — fail-closed, no LLM", async () => {
+    const { json, deps, res } = await runWithChunks([
+      { ...sample, chunkChecksum: fabricatedChunk },
+    ]);
+    expect(res.status).toBe(422);
+    expect(json.ok).toBe(false);
     expect(json.citations).toHaveLength(0);
     expect(json.retrieval.nonAuthoritativeExcluded).toBe(1);
+    expect(callCounts(deps).llm).toBe(0);
   });
 
-  it("5: content tamper with old checksum is rejected", async () => {
-    const { json, userPrompt } = await runWithChunks([
+  it("5: content tamper with old checksum is rejected — fail-closed, no LLM", async () => {
+    const { json, deps, res } = await runWithChunks([
       { ...sample, content: `${sample.content}\nTAMPERED` },
     ]);
+    expect(res.status).toBe(422);
+    expect(json.ok).toBe(false);
     expect(json.citations).toHaveLength(0);
-    expect(userPrompt).not.toContain("TAMPERED");
+    expect(callCounts(deps).llm).toBe(0);
+    expect(JSON.stringify(json)).not.toContain("TAMPERED");
   });
 
-  it("6: recomputed checksum mismatch vs registered is rejected", async () => {
+  it("6: recomputed checksum mismatch vs registered is rejected — fail-closed", async () => {
     const altered = "entirely different content for mismatch";
-    const { json } = await runWithChunks([
+    const { json, deps, res } = await runWithChunks([
       {
         ...sample,
         content: altered,
         chunkChecksum: sha256CanonicalHex(altered),
       },
     ]);
+    expect(res.status).toBe(422);
+    expect(json.ok).toBe(false);
     expect(json.citations).toHaveLength(0);
+    expect(callCounts(deps).llm).toBe(0);
   });
 
-  it("7: valid checksums with unknown chunk ID are rejected", async () => {
-    const { json } = await runWithChunks([
+  it("7: valid checksums with unknown chunk ID are rejected — fail-closed", async () => {
+    const { json, deps, res } = await runWithChunks([
       { ...sample, sourceId: "en/analyst-m1-l1-from-automation-to-insight/s0/c999" },
     ]);
+    expect(res.status).toBe(422);
+    expect(json.ok).toBe(false);
     expect(json.citations).toHaveLength(0);
+    expect(callCounts(deps).llm).toBe(0);
   });
 
-  it("8: valid chunk ID attached to wrong package is rejected", async () => {
-    const { json } = await runWithChunks([
+  it("8: valid chunk ID attached to wrong package is rejected — fail-closed", async () => {
+    const { json, deps, res } = await runWithChunks([
       {
         ...sample,
         packagePath: "src/lib/locale-lessons/en/lessons/intro-m1-l1-what-is-ai.json",
       },
     ]);
+    expect(res.status).toBe(422);
+    expect(json.ok).toBe(false);
     expect(json.citations).toHaveLength(0);
+    expect(callCounts(deps).llm).toBe(0);
   });
 
-  it("9: valid chunk ID attached to wrong lesson is rejected", async () => {
-    const { json } = await runWithChunks([{ ...sample, lessonId: "intro-m1-l1-what-is-ai" }]);
+  it("9: valid chunk ID attached to wrong lesson is rejected — fail-closed", async () => {
+    const { json, deps, res } = await runWithChunks([
+      { ...sample, lessonId: "intro-m1-l1-what-is-ai" },
+    ]);
+    expect(res.status).toBe(422);
+    expect(json.ok).toBe(false);
     expect(json.citations).toHaveLength(0);
+    expect(callCounts(deps).llm).toBe(0);
   });
 
-  it("10: valid chunk ID attached to wrong locale is rejected", async () => {
-    const { json } = await runWithChunks([
+  it("10: valid chunk ID attached to wrong locale is rejected — fail-closed", async () => {
+    const { json, deps, res } = await runWithChunks([
       {
         ...sample,
         locale: "ar-MSA",
         packagePath: (sample.packagePath ?? "").replace("/en/", "/ar-MSA/"),
       },
     ]);
+    expect(res.status).toBe(422);
+    expect(json.ok).toBe(false);
     expect(json.citations).toHaveLength(0);
     expect(json.retrieval.crossLocaleLeakage).toBe(1);
+    expect(callCounts(deps).llm).toBe(0);
   });
 
-  it("11: wrong sourceSha is rejected", async () => {
-    const { json } = await runWithChunks([{ ...sample, sourceSha: "e".repeat(64) }]);
+  it("11: wrong sourceSha is rejected — fail-closed", async () => {
+    const { json, deps, res } = await runWithChunks([{ ...sample, sourceSha: "e".repeat(64) }]);
+    expect(res.status).toBe(422);
+    expect(json.ok).toBe(false);
     expect(json.citations).toHaveLength(0);
+    expect(callCounts(deps).llm).toBe(0);
   });
 
-  it("12: wrong indexVersion is rejected", async () => {
-    const { json } = await runWithChunks([{ ...sample, indexVersion: "rag-index-v0" }]);
+  it("12: wrong indexVersion is rejected — fail-closed", async () => {
+    const { json, deps, res } = await runWithChunks([{ ...sample, indexVersion: "rag-index-v0" }]);
+    expect(res.status).toBe(422);
+    expect(json.ok).toBe(false);
     expect(json.citations).toHaveLength(0);
+    expect(callCounts(deps).llm).toBe(0);
   });
 
-  it("13: malformed sourceSha is rejected", async () => {
-    const { json } = await runWithChunks([{ ...sample, sourceSha: "abc123" }]);
+  it("13: malformed sourceSha is rejected — fail-closed", async () => {
+    const { json, deps, res } = await runWithChunks([{ ...sample, sourceSha: "abc123" }]);
+    expect(res.status).toBe(422);
+    expect(json.ok).toBe(false);
     expect(json.citations).toHaveLength(0);
+    expect(callCounts(deps).llm).toBe(0);
   });
 
-  it("14: malformed package checksum is rejected", async () => {
-    const { json } = await runWithChunks([{ ...sample, packageChecksum: "abc123" }]);
+  it("14: malformed package checksum is rejected — fail-closed", async () => {
+    const { json, deps, res } = await runWithChunks([{ ...sample, packageChecksum: "abc123" }]);
+    expect(res.status).toBe(422);
+    expect(json.ok).toBe(false);
     expect(json.citations).toHaveLength(0);
+    expect(callCounts(deps).llm).toBe(0);
   });
 
-  it("15: malformed chunk checksum is rejected", async () => {
-    const { json } = await runWithChunks([{ ...sample, chunkChecksum: "def456" }]);
+  it("15: malformed chunk checksum is rejected — fail-closed", async () => {
+    const { json, deps, res } = await runWithChunks([{ ...sample, chunkChecksum: "def456" }]);
+    expect(res.status).toBe(422);
+    expect(json.ok).toBe(false);
     expect(json.citations).toHaveLength(0);
+    expect(callCounts(deps).llm).toBe(0);
   });
 
-  it("16: uppercase digest format is rejected", async () => {
-    const { json } = await runWithChunks([
+  it("16: uppercase digest format is rejected — fail-closed", async () => {
+    const { json, deps, res } = await runWithChunks([
       { ...sample, chunkChecksum: sample.chunkChecksum!.toUpperCase() },
     ]);
+    expect(res.status).toBe(422);
+    expect(json.ok).toBe(false);
     expect(json.citations).toHaveLength(0);
+    expect(callCounts(deps).llm).toBe(0);
   });
 
   it("17: duplicate/ambiguous registration fails closed at lookup build (source check)", () => {
@@ -367,8 +417,8 @@ describe("handleAssistantRuntimeRequest — integrity cases 1–24", () => {
     expect(HANDLER_SRC).toContain("isValidSha256Digest");
   });
 
-  it("18: cross-locale manifest attachment is rejected", async () => {
-    const { json, userPrompt } = await runWithChunks([
+  it("18: cross-locale manifest attachment is rejected — fail-closed, no LLM", async () => {
+    const { json, deps, res } = await runWithChunks([
       {
         ...sample,
         locale: "ar-Gulf",
@@ -377,8 +427,11 @@ describe("handleAssistantRuntimeRequest — integrity cases 1–24", () => {
         content: "CROSS_LOCALE_MARKER",
       },
     ]);
+    expect(res.status).toBe(422);
+    expect(json.ok).toBe(false);
     expect(json.citations).toHaveLength(0);
-    expect(userPrompt).not.toContain("CROSS_LOCALE_MARKER");
+    expect(callCounts(deps).llm).toBe(0);
+    expect(JSON.stringify(json)).not.toContain("CROSS_LOCALE_MARKER");
   });
 
   it("19: rejected chunk never appears in prompt, citations, or response metadata", async () => {
@@ -445,7 +498,10 @@ describe("handleAssistantRuntimeRequest — integrity cases 1–24", () => {
 
   it("23: explicit ar-EG uses the same manifest-backed locale-aware path", async () => {
     const arEg = loadArEgSample();
-    const retrieveSpy = vi.fn<AssistantRuntimeDeps["localeSemanticRetrieve"]>(async () => [arEg]);
+    const retrieveSpy = vi.fn<AssistantRuntimeDeps["localeSemanticRetrieve"]>(async () => ({
+      ok: true as const,
+      chunks: [arEg],
+    }));
     const deps = buildDeps({ localeSemanticRetrieve: retrieveSpy });
     const res = await handleAssistantRuntimeRequest(
       buildRequest({ query: "الذكاء الاصطناعي إيه؟", learnerContext: { locale: "ar-EG" } }),
@@ -695,7 +751,7 @@ describe("Chat 4 Billing bridge — lifecycle", () => {
     });
     const localeSemanticRetrieve = vi.fn(async () => {
       order.push("localeSemanticRetrieve");
-      return [sample] as SemanticChunk[];
+      return { ok: true as const, chunks: [sample] as SemanticChunk[] };
     });
     const callLlm = vi.fn(async () => {
       order.push("callLlm");
@@ -723,14 +779,19 @@ describe("Chat 4 Billing bridge — lifecycle", () => {
     expect(answerAttemptIndex).toBe(2);
   });
 
-  it("skips the embedding attempt entirely (no billing call) when OPENAI_API_KEY is absent, still answers", async () => {
+  it("requires OPENAI_API_KEY and fails closed without LLM when absent", async () => {
     const billingRpc = buildBillingSpy();
     const embedQuery = vi.fn(async () => [0.1, 0.2, 0.3]);
-    const localeSemanticRetrieve = vi.fn(async () => [] as SemanticChunk[]);
+    const localeSemanticRetrieve = vi.fn(async () => ({
+      ok: true as const,
+      chunks: [] as SemanticChunk[],
+    }));
+    const callLlm = vi.fn(async () => ({ ok: true as const, answer: "should not run" }));
     const deps = buildDeps({
       billingRpc,
       embedQuery,
       localeSemanticRetrieve,
+      callLlm,
       env: {
         LOVABLE_API_KEY: "lovable-key",
         SUPABASE_URL: "https://project.supabase.co",
@@ -741,16 +802,17 @@ describe("Chat 4 Billing bridge — lifecycle", () => {
       buildRequest({ query: "what is AI?", learnerContext: { locale: "en" } }),
       deps,
     );
-    expect(res.status).toBe(200);
+    expect(res.status).toBe(500);
+    const json = await res.json();
+    expect(json.ok).toBe(false);
+    expect(json.error).toBe("Missing required server configuration");
     expect(embedQuery).not.toHaveBeenCalled();
     expect(localeSemanticRetrieve).not.toHaveBeenCalled();
-    const names = billingCallNames(deps);
-    expect(names.filter((n) => n === "register_provider_attempt")).toHaveLength(1);
-    expect(names).toContain("commit_ai_quota");
-    expect(names).not.toContain("release_ai_quota");
+    expect(callLlm).not.toHaveBeenCalled();
+    expect(deps.billingRpc as ReturnType<typeof vi.fn>).not.toHaveBeenCalled();
   });
 
-  it("releases exactly once when no provider attempt is ever registered", async () => {
+  it("releases exactly once when embed registration fails before any attempt starts", async () => {
     const billingRpc = buildBillingSpy({
       register_provider_attempt: () => ({
         ok: false,
@@ -762,13 +824,6 @@ describe("Chat 4 Billing bridge — lifecycle", () => {
     const deps = buildDeps({
       billingRpc,
       callLlm,
-      env: {
-        LOVABLE_API_KEY: "lovable-key",
-        SUPABASE_URL: "https://project.supabase.co",
-        SUPABASE_SERVICE_ROLE_KEY: "service-role-key",
-        // No OPENAI_API_KEY — embedding is skipped, so the only registration
-        // attempted is for the answer, and it fails below.
-      },
     });
     const res = await handleAssistantRuntimeRequest(
       buildRequest({ query: "what is AI?", learnerContext: { locale: "en" } }),
@@ -781,19 +836,28 @@ describe("Chat 4 Billing bridge — lifecycle", () => {
     expect(names).not.toContain("commit_ai_quota");
   });
 
-  it("never releases once a provider started, even when the LLM call fails; commits exactly once", async () => {
+  it("never releases once a provider started, even when grounding fails closed after embed; commits exactly once", async () => {
     const billingRpc = buildBillingSpy();
     const callLlm = vi.fn(async () => ({
-      ok: false as const,
-      status: 502,
-      error: "AI provider error",
+      ok: true as const,
+      answer: "should not be called",
     }));
-    const deps = buildDeps({ billingRpc, callLlm });
+    const deps = buildDeps({
+      billingRpc,
+      callLlm,
+      localeSemanticRetrieve: vi.fn(async () => ({
+        ok: true as const,
+        chunks: [] as SemanticChunk[],
+      })),
+    });
     const res = await handleAssistantRuntimeRequest(
       buildRequest({ query: "what is AI?", learnerContext: { locale: "en" } }),
       deps,
     );
-    expect(res.status).toBe(502);
+    expect(res.status).toBe(422);
+    const json = await res.json();
+    expect(json.reason).toBe("insufficient_grounding");
+    expect(callLlm).not.toHaveBeenCalled();
     const names = billingCallNames(deps);
     expect(names.filter((n) => n === "commit_ai_quota")).toHaveLength(1);
     expect(names).not.toContain("release_ai_quota");
@@ -801,7 +865,13 @@ describe("Chat 4 Billing bridge — lifecycle", () => {
 
   it("two provider attempts (embed + answer) result in exactly one commit", async () => {
     const billingRpc = buildBillingSpy();
-    const deps = buildDeps({ billingRpc });
+    const deps = buildDeps({
+      billingRpc,
+      localeSemanticRetrieve: vi.fn(async () => ({
+        ok: true as const,
+        chunks: [sample] as SemanticChunk[],
+      })),
+    });
     const res = await handleAssistantRuntimeRequest(
       buildRequest({ query: "what is AI?", learnerContext: { locale: "en" } }),
       deps,
