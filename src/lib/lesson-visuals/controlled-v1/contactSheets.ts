@@ -89,16 +89,18 @@ export function writeContactSheet(mode: RunnerMode, receipts: CellReceipt[]): st
       "utf8",
     );
   }
-  const fourLocaleLesson = "intro-m1-l4-ai-can-cannot";
-  const four = locales
-    .map((locale) => receipts.find((r) => r.lessonId === fourLocaleLesson && r.locale === locale))
-    .filter((r): r is CellReceipt => Boolean(r));
-  if (four.length > 0) {
-    writeFileSync(
-      `${ARTIFACTS_CONTACT_SHEETS_DIR}/${mode}-four-locale-${fourLocaleLesson}.html`,
-      generateContactSheetHtml(mode, four),
-      "utf8",
-    );
+  const fourLocaleLessons = ["intro-m1-l4-ai-can-cannot", "builder-m6-l3-first-prompt-to-lovable"];
+  for (const fourLocaleLesson of fourLocaleLessons) {
+    const four = locales
+      .map((locale) => receipts.find((r) => r.lessonId === fourLocaleLesson && r.locale === locale))
+      .filter((r): r is CellReceipt => Boolean(r));
+    if (four.length === 4) {
+      writeFileSync(
+        `${ARTIFACTS_CONTACT_SHEETS_DIR}/${mode}-four-locale-${fourLocaleLesson}.html`,
+        generateContactSheetHtml(mode, four),
+        "utf8",
+      );
+    }
   }
   return path;
 }

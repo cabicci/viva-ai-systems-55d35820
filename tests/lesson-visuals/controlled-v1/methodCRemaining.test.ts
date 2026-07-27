@@ -7,7 +7,9 @@ import {
 } from "../../../src/lib/lesson-visuals/controlled-v1/buildManifest";
 import {
   LOCALES,
+  METHOD_B_TO_C_REPLACEMENT_CELL_IDS,
   METHOD_C_REMAINING_CONFIRM_TOKEN,
+  METHOD_C_REMAINING_EXPECTED_EXCLUDED_A_CELLS,
   METHOD_C_REMAINING_EXPECTED_PER_LOCALE,
   METHOD_C_REMAINING_EXPECTED_TOTAL,
   PRESERVED_METHOD_C_PILOT_CELL_IDS,
@@ -17,15 +19,11 @@ import { resolveLocalePackage } from "../../../src/lib/lesson-visuals/controlled
 import { selectMethodCRemainingCells } from "../../../src/lib/lesson-visuals/controlled-v1/methodCRemaining";
 import { runMethodCRemaining } from "../../../src/lib/lesson-visuals/controlled-v1/runner";
 
-const HISTORICAL_AB_PILOT_CELLS = [
+const HISTORICAL_A_PILOT_CELLS = [
   "builder-m7-l1-tables-columns__ar-EG",
   "builder-m7-l1-tables-columns__ar-MSA",
   "builder-m7-l1-tables-columns__ar-Gulf",
   "builder-m7-l1-tables-columns__en",
-  "builder-m6-l3-first-prompt-to-lovable__ar-EG",
-  "builder-m6-l3-first-prompt-to-lovable__ar-MSA",
-  "builder-m6-l3-first-prompt-to-lovable__ar-Gulf",
-  "builder-m6-l3-first-prompt-to-lovable__en",
 ] as const;
 
 describe("method-c-remaining selection", () => {
@@ -57,21 +55,31 @@ describe("method-c-remaining selection", () => {
     }
   });
 
-  it("excludes all A/B cells including the eight historical pilot A/B cells", () => {
+  it("excludes Method A cells and the twelve B→C replacement cells", () => {
     const ids = new Set(selection.cells.map((c) => c.cellId));
-    expect(selection.excludedAbCellIds).toHaveLength(40);
-    for (const id of HISTORICAL_AB_PILOT_CELLS) {
+    expect(selection.excludedAbCellIds).toHaveLength(METHOD_C_REMAINING_EXPECTED_EXCLUDED_A_CELLS);
+    expect(selection.excludedReplacementCellIds).toHaveLength(
+      METHOD_B_TO_C_REPLACEMENT_CELL_IDS.length,
+    );
+    for (const id of HISTORICAL_A_PILOT_CELLS) {
       expect(ids.has(id)).toBe(false);
       expect(selection.excludedAbCellIds).toContain(id);
     }
+    for (const id of METHOD_B_TO_C_REPLACEMENT_CELL_IDS) {
+      expect(ids.has(id)).toBe(false);
+      expect(selection.excludedReplacementCellIds).toContain(id);
+    }
   });
 
-  it("preserves production-manifest Method C order", () => {
+  it("preserves production-manifest Method C order excluding preserved + replacements", () => {
+    const preserved = new Set<string>(PRESERVED_METHOD_C_PILOT_CELL_IDS);
+    const replacements = new Set<string>(METHOD_B_TO_C_REPLACEMENT_CELL_IDS);
     const expected = manifest.cells
       .filter(
         (c) =>
           c.route === "INSTRUCTIONAL_COMPOSITION" &&
-          !(PRESERVED_METHOD_C_PILOT_CELL_IDS as readonly string[]).includes(c.cellId),
+          !preserved.has(c.cellId) &&
+          !replacements.has(c.cellId),
       )
       .map((c) => c.cellId);
     expect(selection.cells.map((c) => c.cellId)).toEqual(expected);
@@ -116,11 +124,11 @@ describe("method-c-remaining gates", () => {
     }
   });
 
-  it("pilot manifest no longer treats the two restored lessons as Method C", () => {
+  it("pilot manifest treats former Method B lesson as Method C and masaarat as Method A", () => {
     const pilot = buildPilotManifest(loadClassification100({ useCache: false }));
     const m6 = pilot.cells.filter((c) => c.lessonId === "builder-m6-l3-first-prompt-to-lovable");
     const m7 = pilot.cells.filter((c) => c.lessonId === "builder-m7-l1-tables-columns");
-    expect(m6.every((c) => c.route === "AUTHORIZED_EXTERNAL_SCREENSHOT")).toBe(true);
+    expect(m6.every((c) => c.route === "INSTRUCTIONAL_COMPOSITION")).toBe(true);
     expect(m7.every((c) => c.route === "MASAARAT_SCREENSHOT")).toBe(true);
   });
 });

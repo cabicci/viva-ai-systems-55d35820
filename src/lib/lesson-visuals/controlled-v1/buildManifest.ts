@@ -3,7 +3,12 @@ import { dirname } from "node:path";
 import {
   ACCEPTED_CLASSIFICATION_BASELINE_SHA,
   CLASSIFICATION_SOURCE_SHA256,
+  CONTROLLED_FAILURE_TARGET_CELL_ID,
   LOCALES,
+  METHOD_B_TO_C_REPLACEMENT_CELL_IDS,
+  PILOT_AUTHORIZED_EXTERNAL_LESSON_ID,
+  PILOT_INSTRUCTIONAL_LESSON_ID,
+  PILOT_MASAARAT_LESSON_ID,
   RECONCILED_ORIGIN_MAIN_SHA,
 } from "./constants";
 import { loadClassification100 } from "./loadClassification";
@@ -18,12 +23,6 @@ import type {
   UnresolvedLedger,
   UnresolvedLedgerEntry,
 } from "./types";
-import {
-  CONTROLLED_FAILURE_TARGET_CELL_ID,
-  PILOT_AUTHORIZED_EXTERNAL_LESSON_ID,
-  PILOT_INSTRUCTIONAL_LESSON_ID,
-  PILOT_MASAARAT_LESSON_ID,
-} from "./constants";
 
 /** Expands the 100-lesson classification × 4 locales into the 400-cell production manifest. */
 export function buildProductionManifest(
@@ -101,24 +100,45 @@ export function buildPilotManifest(
   };
 }
 
-/** Every MASAARAT_SCREENSHOT / AUTHORIZED_EXTERNAL_SCREENSHOT cell starts unresolved (fail-closed by design). */
+const REPLACEMENT_CELL_SET = new Set<string>(METHOD_B_TO_C_REPLACEMENT_CELL_IDS);
+
+/**
+ * Unresolved = all Method A cells (28) + twelve Method B→C replacement Method C cells.
+ * Existing accepted Method C population (360) is never re-added.
+ */
 export function buildUnresolvedLedger(manifest: ProductionManifest): UnresolvedLedger {
-  const entries: UnresolvedLedgerEntry[] = manifest.cells
-    .filter((cell) => cell.route !== "INSTRUCTIONAL_COMPOSITION")
-    .map((cell) => ({
-      cellId: cell.cellId,
-      lessonId: cell.lessonId,
-      locale: cell.locale,
-      route: cell.route,
-      reason:
-        cell.route === "MASAARAT_SCREENSHOT"
-          ? "no authorized non-Production Masaarat capture session (see docs/lesson-visuals/controlled-v1/capture/ledger.json)"
-          : "no Control-Room-approved external rights grant (see docs/lesson-visuals/controlled-v1/rights/ledger.json)",
-      resolutionPath:
-        cell.route === "MASAARAT_SCREENSHOT"
-          ? "docs/lesson-visuals/controlled-v1/capture/"
-          : "docs/lesson-visuals/controlled-v1/rights/",
-    }));
+  const entries: UnresolvedLedgerEntry[] = [];
+
+  for (const cell of manifest.cells) {
+    if (cell.route !== "INSTRUCTIONAL_COMPOSITION") {
+      entries.push({
+        cellId: cell.cellId,
+        lessonId: cell.lessonId,
+        locale: cell.locale,
+        route: cell.route,
+        reason:
+          cell.route === "MASAARAT_SCREENSHOT"
+            ? "no authorized non-Production Masaarat capture session (see docs/lesson-visuals/controlled-v1/capture/ledger.json)"
+            : "no Control-Room-approved external rights grant (see docs/lesson-visuals/controlled-v1/rights/ledger.json)",
+        resolutionPath:
+          cell.route === "MASAARAT_SCREENSHOT"
+            ? "docs/lesson-visuals/controlled-v1/capture/"
+            : "docs/lesson-visuals/controlled-v1/rights/",
+      });
+      continue;
+    }
+    if (REPLACEMENT_CELL_SET.has(cell.cellId)) {
+      entries.push({
+        cellId: cell.cellId,
+        lessonId: cell.lessonId,
+        locale: cell.locale,
+        route: cell.route,
+        reason:
+          "NO_VALID_RIGHTS_BASIS reclassification — original instructional composition pending human visual review (CR-LV-METHOD-B-TO-C-FOUR-CELL-PILOT-20260727-01)",
+        resolutionPath: "docs/lesson-visuals/controlled-v1/",
+      });
+    }
+  }
 
   return {
     ledgerVersion: "controlled-v1-unresolved-ledger/1",

@@ -7,6 +7,7 @@ import {
 import {
   CLASSIFICATION_SOURCE_SHA256,
   EXPECTED_COUNTS,
+  METHOD_B_TO_C_REPLACEMENT_LESSON_IDS,
   PILOT_AUTHORIZED_EXTERNAL_LESSON_ID,
   PILOT_INSTRUCTIONAL_LESSON_ID,
   PILOT_MASAARAT_LESSON_ID,
@@ -20,7 +21,7 @@ describe("controlled-v1 classification-100.json", () => {
     expect(ids.size).toBe(100);
   });
 
-  it("has the expected counts: 7 MASAARAT_SCREENSHOT, 3 AUTHORIZED_EXTERNAL_SCREENSHOT, 90 INSTRUCTIONAL_COMPOSITION", () => {
+  it("has the expected counts: 7 MASAARAT_SCREENSHOT, 0 AUTHORIZED_EXTERNAL_SCREENSHOT, 93 INSTRUCTIONAL_COMPOSITION", () => {
     const classification = loadClassification100({ useCache: false });
     const counts = {
       MASAARAT_SCREENSHOT: 0,
@@ -73,27 +74,30 @@ describe("controlled-v1 classification-100.json", () => {
       .sort();
     expect(masaaratIds).toEqual([...classification.masaaratScreenshotLessonIds].sort());
     expect(externalIds).toEqual([...classification.authorizedExternalScreenshotLessonIds].sort());
+    expect(externalIds).toEqual([]);
   });
 
-  it("restores authoritative A/B routes for the two previously drifted pilot lessons", () => {
+  it("reclassifies the three former Method B lessons to Method C and keeps Method A masaarat pilot", () => {
     const classification = loadClassification100({ useCache: false });
     const masaarat = classification.lessons.find((l) => l.lessonId === PILOT_MASAARAT_LESSON_ID);
-    const external = classification.lessons.find(
+    const formerExternal = classification.lessons.find(
       (l) => l.lessonId === PILOT_AUTHORIZED_EXTERNAL_LESSON_ID,
     );
     expect(masaarat?.cat).toBe("A");
     expect(masaarat?.route).toBe("MASAARAT_SCREENSHOT");
-    expect(external?.cat).toBe("B");
-    expect(external?.route).toBe("AUTHORIZED_EXTERNAL_SCREENSHOT");
+    expect(formerExternal?.cat).toBe("C");
+    expect(formerExternal?.route).toBe("INSTRUCTIONAL_COMPOSITION");
     expect(classification.masaaratScreenshotLessonIds).toContain(PILOT_MASAARAT_LESSON_ID);
-    expect(classification.authorizedExternalScreenshotLessonIds).toContain(
-      PILOT_AUTHORIZED_EXTERNAL_LESSON_ID,
-    );
+    expect(classification.authorizedExternalScreenshotLessonIds).toEqual([]);
+
+    for (const lessonId of METHOD_B_TO_C_REPLACEMENT_LESSON_IDS) {
+      const lesson = classification.lessons.find((l) => l.lessonId === lessonId);
+      expect(lesson?.cat).toBe("C");
+      expect(lesson?.route).toBe("INSTRUCTIONAL_COMPOSITION");
+    }
+
     const intro = classification.lessons.find((l) => l.lessonId === PILOT_INSTRUCTIONAL_LESSON_ID);
     expect(intro?.route).toBe("INSTRUCTIONAL_COMPOSITION");
     expect(intro?.cat).toBe("C");
-    const setup = classification.lessons.find((l) => l.lessonId === "intro-m1-l3-setup-your-ai");
-    expect(setup?.route).toBe("AUTHORIZED_EXTERNAL_SCREENSHOT");
-    expect(setup?.cat).toBe("B");
   });
 });

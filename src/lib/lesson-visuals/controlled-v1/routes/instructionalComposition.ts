@@ -168,94 +168,94 @@ function extractTeachingCopy(
       };
     }
 
-    // Prompt-anatomy teaching panel (not a third-party UI imitation).
+    // Prompt-to-application instructional flow (original composition — not a vendor UI).
     if (lessonId === "builder-m6-l3-first-prompt-to-lovable") {
       if (locale === "en") {
         return {
-          title: "First prompt = five parts",
-          subtitle: "Describe the build — do not guess with three vague words",
-          leftLabel: "Prompt anatomy",
-          leftBody: "Goal · Users · Pages · Style · Constraints",
+          title: "From prompt to application",
+          subtitle: "Five steps: state → constrain → submit → review → refine",
+          leftLabel: "Build the prompt",
+          leftBody: "State the desired result, then add context and constraints",
           leftItems: [
-            "Goal: what interface and why",
-            "Users: who uses it",
-            "Pages: wireframe sections by name",
+            "1. State the desired result",
+            "2. Add context and constraints",
+            "3. Submit the prompt to the app-building tool",
           ],
-          rightLabel: "Why it works",
-          rightBody: "Clear scope beats a vague 'build an interface' request",
+          rightLabel: "Review and iterate",
+          rightBody: "Check the generated result, then refine the prompt",
           rightItems: [
-            "Style: colors and mood",
-            "Constraints: what is out of v1",
-            "Result: a copy-ready recipe",
+            "4. Review the generated application result",
+            "5. Refine the prompt and iterate",
+            "Product name appears only as ordinary lesson context",
           ],
-          footer: "Abstract teaching panel — no third-party interface chrome",
-          caption: "Recipe before preview: goal + users + pages + style + constraints",
+          footer: "Original instructional flow — no vendor screenshot or fake browser chrome",
+          caption: "Prompt → tool → result → refine (educational composition)",
         };
       }
       if (locale === "ar-MSA") {
         return {
-          title: "أول prompt = خمسة أجزاء",
-          subtitle: "صف البناء بوصفة واضحة — لا تترك التخمين لثلاث كلمات",
-          leftLabel: "تشريح الـ Prompt",
-          leftBody: "الهدف · المستخدمون · الصفحات · الأسلوب · الحدود",
+          title: "من الـ Prompt إلى التطبيق",
+          subtitle: "خمس خطوات: حدّد → قيّد → أرسل → راجع → حسّن",
+          leftLabel: "ابنِ الـ Prompt",
+          leftBody: "حدّد النتيجة المطلوبة ثم أضف السياق والقيود",
           leftItems: [
-            "الهدف: نوع الواجهة ولماذا",
-            "المستخدمون: من سيستخدمها",
-            "الصفحات: أقسام الـ wireframe بالاسم",
+            "١. حدّد النتيجة المطلوبة",
+            "٢. أضف السياق والقيود",
+            "٣. أرسل الـ Prompt إلى أداة بناء التطبيق",
           ],
-          rightLabel: "لماذا ينجح",
-          rightBody: "النطاق الواضح أفضل من «ابنِ واجهة» المبهم",
+          rightLabel: "راجع وكرّر",
+          rightBody: "افحص النتيجة المولَّدة ثم حسّن الـ Prompt",
           rightItems: [
-            "الأسلوب: ألوان ومزاج",
-            "الحدود: ما خارج النسخة الأولى",
-            "النتيجة: وصفة جاهزة للنسخ",
+            "٤. راجع نتيجة التطبيق المولَّدة",
+            "٥. حسّن الـ Prompt وكرّر",
+            "اسم المنتج يظهر كنص سياق تعليمي فقط",
           ],
-          footer: "لوحة تعليمية مجرّدة — بلا محاكاة لواجهة طرف ثالث",
-          caption: "الوصفة قبل المعاينة: هدف + مستخدمون + صفحات + أسلوب + حدود",
+          footer: "تدفّق تعليمي أصلي — بلا لقطة بائع أو متصفح مزيّف",
+          caption: "Prompt → أداة → نتيجة → تحسين (تركيب تعليمي)",
         };
       }
       if (locale === "ar-Gulf") {
         return {
-          title: "أول برومبت = خمسة أجزاء",
-          subtitle: "صف البناء بوصفة واضحة — لا تخلي التخمين بثلاث كلمات",
-          leftLabel: "تشريح البرومبت",
-          leftBody: "الهدف · المستخدمون · الصفحات · الأسلوب · القيود",
+          title: "من البرومبت إلى التطبيق",
+          subtitle: "خمس خطوات: حدّد → قيّد → أرسل → راجع → حسّن",
+          leftLabel: "ابنِ البرومبت",
+          leftBody: "حدّد النتيجة المطلوبة بعدين أضف السياق والقيود",
           leftItems: [
-            "الهدف: وش نوع الواجهة ولماذا",
-            "المستخدمون: من راح يستخدمها",
-            "الصفحات: أقسام الـ wireframe بالاسم",
+            "١. حدّد النتيجة المطلوبة",
+            "٢. أضف السياق والقيود",
+            "٣. أرسل البرومبت لأداة بناء التطبيق",
           ],
-          rightLabel: "ليش ينجح",
-          rightBody: "النطاق الواضح أحسن من «سوّ واجهة» المبهم",
+          rightLabel: "راجع وكرّر",
+          rightBody: "افحص النتيجة المولَّدة بعدين حسّن البرومبت",
           rightItems: [
-            "الأسلوب: ألوان ومزاج",
-            "القيود: وش برا النسخة الأولى",
-            "النتيجة: وصفة جاهزة للنسخ",
+            "٤. راجع نتيجة التطبيق المولَّدة",
+            "٥. حسّن البرومبت وكرّر",
+            "اسم المنتج يظهر كنص سياق تعليمي بس",
           ],
-          footer: "لوحة تعليمية مجرّدة — بدون محاكاة لواجهة طرف ثالث",
-          caption: "الوصفة قبل المعاينة: هدف + مستخدمون + صفحات + أسلوب + قيود",
+          footer: "تدفّق تعليمي أصلي — بدون لقطة بائع أو متصفح مزيّف",
+          caption: "برومبت → أداة → نتيجة → تحسين (تركيب تعليمي)",
         };
       }
       // ar-EG
       return {
-        title: "أول Prompt = خمسة أجزاء",
-        subtitle: "وصف البناء بوصفة واضحة — متسيّبش التخمين لتلات كلمات",
-        leftLabel: "تشريح الـ Prompt",
-        leftBody: "الهدف · المستخدمين · الصفحات · الأسلوب · الحدود",
+        title: "من الـ Prompt للتطبيق",
+        subtitle: "خمس خطوات: حدّد → قيّد → ابعت → راجع → حسّن",
+        leftLabel: "ابنِ الـ Prompt",
+        leftBody: "حدّد النتيجة المطلوبة وبعدين ضيف السياق والقيود",
         leftItems: [
-          "الهدف: نوع الواجهة وليه",
-          "المستخدمين: مين هيستخدمها",
-          "الصفحات: أقسام الـ wireframe بالاسم",
+          "١. حدّد النتيجة المطلوبة",
+          "٢. ضيف السياق والقيود",
+          "٣. ابعت الـ Prompt لأداة بناء التطبيق",
         ],
-        rightLabel: "ليه بينجح",
-        rightBody: "النطاق الواضح أحسن من «اعمل واجهة» المبهم",
+        rightLabel: "راجع وكرّر",
+        rightBody: "افحص النتيجة المتولدة وبعدين حسّن الـ Prompt",
         rightItems: [
-          "الأسلوب: ألوان ومود",
-          "الحدود: إيه برّه النسخة الأولى",
-          "النتيجة: وصفة جاهزة للنسخ",
+          "٤. راجع نتيجة التطبيق المتولدة",
+          "٥. حسّن الـ Prompt وكرّر",
+          "اسم المنتج يظهر كنص سياق تعليمي بس",
         ],
-        footer: "لوحة تعليمية مجرّدة — من غير محاكاة لواجهة طرف تالت",
-        caption: "الوصفة قبل المعاينة: هدف + مستخدمين + صفحات + أسلوب + حدود",
+        footer: "تدفّق تعليمي أصلي — من غير لقطة بائع أو متصفح مزيّف",
+        caption: "Prompt → أداة → نتيجة → تحسين (تركيب تعليمي)",
       };
     }
 
@@ -675,9 +675,7 @@ export function generateInstructionalComposition(
     pkg.title ?? input.title,
   );
 
-  const outDir =
-    input.outputDir ??
-    mkdtempSync(join(tmpdir(), "controlled-v1-compose-"));
+  const outDir = input.outputDir ?? mkdtempSync(join(tmpdir(), "controlled-v1-compose-"));
   // Never write intermediate HTML/PNG under artifacts/controlled-v1 — production
   // runner copies result.png into the cell path; tests must stay outside production trees.
   if (outDir.replace(/\\/g, "/").includes("/artifacts/controlled-v1")) {

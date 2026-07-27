@@ -1,6 +1,13 @@
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import {
+  copyFileSync,
+  existsSync,
+  mkdirSync,
+  readdirSync,
+  readFileSync,
+  writeFileSync,
+} from "node:fs";
 import { createHash } from "node:crypto";
-import { dirname, resolve } from "node:path";
+import { dirname, join, resolve } from "node:path";
 import {
   buildProductionManifest,
   buildPilotManifest,
@@ -9,12 +16,17 @@ import {
 } from "./buildManifest";
 import {
   FULL_400_CONFIRM_TOKEN,
+  METHOD_C_B6L3_FOUR_PILOT_AUTH_ID,
+  METHOD_C_B6L3_FOUR_PILOT_CONFIRM_TOKEN,
+  METHOD_C_B6L3_FOUR_PILOT_EXPECTED_TOTAL,
   METHOD_C_CANONICAL_REPAIR_CONFIRM_TOKEN,
   METHOD_C_CANONICAL_SOURCE_ARTIFACT_DIGEST,
   METHOD_C_CANONICAL_SOURCE_RUN_ID,
   METHOD_C_REMAINING_CONFIRM_TOKEN,
 } from "./constants";
+import { selectMethodBToCFourCellPilot } from "./methodBToCFourCellPilot";
 import { selectMethodCRemainingCells } from "./methodCRemaining";
+
 import {
   assertSourceUnchanged,
   buildSourceHashLedger,
@@ -32,8 +44,10 @@ import { loadClassification100, validateClassification100 } from "./loadClassifi
 import { allGoldenReferencesOk, loadGoldenReferences, verifyGoldenReferences } from "./goldenRefs";
 import {
   ARTIFACTS_CANONICAL_STAGING_DIR,
+  ARTIFACTS_PROVENANCE_DIR,
   ARTIFACTS_RECEIPTS_DIR,
   ARTIFACTS_REPORTS_DIR,
+  cellArtifactDir,
   cellFinalPngPath,
   cellReceiptPath,
 } from "./paths";
@@ -127,9 +141,49 @@ export function runCell(cell: ManifestCell, mode: RunnerMode): CellReceipt {
       position: cell.position,
       title: cell.title,
     });
+    const cellDir = cellArtifactDir(cell.cellId);
     const outPath = cellFinalPngPath(cell.cellId);
-    mkdirSync(dirname(outPath), { recursive: true });
+    mkdirSync(cellDir, { recursive: true });
     writeFileSync(outPath, result.png);
+    copyFileSync(result.htmlPath, join(cellDir, "final-review.html"));
+
+    const artifactSha256 = sha256HexOfBuffer(result.png);
+    const isFourCellPilot = mode === "method-c-b6l3-four-pilot";
+    const status = isFourCellPilot ? ("PENDING" as const) : ("ACCEPTED" as const);
+    const reason = isFourCellPilot ? "PENDING_HUMAN_REVIEW" : null;
+
+    if (isFourCellPilot) {
+      mkdirSync(ARTIFACTS_PROVENANCE_DIR, { recursive: true });
+      writeJson(join(ARTIFACTS_PROVENANCE_DIR, `${cell.cellId}.provenance.json`), {
+        schemaVersion: "controlled-v1-pilot-cell-provenance/1",
+        authorizationId: METHOD_C_B6L3_FOUR_PILOT_AUTH_ID,
+        cellId: cell.cellId,
+        lessonId: cell.lessonId,
+        locale: cell.locale,
+        classification: { category: cell.category, route: cell.route },
+        rights: {
+          basis: "ORIGINAL_INSTRUCTIONAL_COMPOSITION",
+          externalScreenshotSource: null,
+          noValidRightsBasisReason: "NO_VALID_RIGHTS_BASIS",
+        },
+        localeEvidence: {
+          packagePath: result.packagePath,
+          packageExists: result.packageExists,
+          direction: result.direction,
+          localizedTitle: result.localizedTitle,
+        },
+        renderer: {
+          kind: "instructional-composition-chrome-html-to-png",
+          providerCalls: 0,
+          paidProviderCalls: 0,
+        },
+        artifactSha256,
+        status,
+        reason,
+        producedAt,
+      });
+    }
+
     return {
       receiptVersion: "controlled-v1-receipt/1",
       cellId: cell.cellId,
@@ -137,10 +191,10 @@ export function runCell(cell: ManifestCell, mode: RunnerMode): CellReceipt {
       locale: cell.locale,
       route: cell.route,
       mode,
-      status: "ACCEPTED",
-      reason: null,
+      status,
+      reason,
       artifactPath: outPath,
-      artifactSha256: sha256HexOfBuffer(result.png),
+      artifactSha256,
       bytesWritten: result.png.length,
       controlledFailureInjected: false,
       producedAt,
@@ -336,6 +390,7 @@ export function runMethodCRemaining(confirmToken: string | undefined): RunResult
     counts: selection.counts,
     excludedPreservedPilotCellIds: selection.excludedPreservedPilotCellIds,
     excludedAbCellCount: selection.excludedAbCellIds.length,
+    excludedReplacementCellCount: selection.excludedReplacementCellIds.length,
     cellIds: selection.cells.map((c) => c.cellId),
     errors: selection.errors,
   });
@@ -445,6 +500,176 @@ export function runMethodCRemaining(confirmToken: string | undefined): RunResult
     errors: [
       ...(anyControlledFailure
         ? ["controlled failure was injected during method-c-remaining — must never happen"]
+        : []),
+      ...failed.map((r) => `${r.cellId}: ${r.reason ?? r.status}`),
+    ],
+  };
+}
+
+/**
+ * Exact four-cell Method B→C pilot for builder-m6-l3-first-prompt-to-lovable × 4 locales.
+ * Receipts remain PENDING / PENDING_HUMAN_REVIEW — never production-accepted.
+ */
+export function runMethodBToCFourCellPilot(confirmToken: string | undefined): RunResult {
+  if (confirmToken !== METHOD_C_B6L3_FOUR_PILOT_CONFIRM_TOKEN) {
+    const msg = `method-c-b6l3-four-pilot requires confirm_full_400 === "${METHOD_C_B6L3_FOUR_PILOT_CONFIRM_TOKEN}" exactly; received ${JSON.stringify(confirmToken)}`;
+    return {
+      mode: "method-c-b6l3-four-pilot",
+      ok: false,
+      summary: msg,
+      receipts: [],
+      errors: [msg],
+    };
+  }
+
+  resetRenderTelemetry();
+  const classification = loadClassification100();
+  const manifest = buildProductionManifest(classification);
+  const manifestCheck = validateProductionManifest(manifest);
+  if (!manifestCheck.ok) {
+    return {
+      mode: "method-c-b6l3-four-pilot",
+      ok: false,
+      summary: "manifest validation failed; refusing four-cell pilot",
+      receipts: [],
+      errors: manifestCheck.errors,
+    };
+  }
+
+  const selection = selectMethodBToCFourCellPilot(manifest);
+  writeJson(`${ARTIFACTS_REPORTS_DIR}/method-c-b6l3-four-pilot-selection.json`, {
+    generatedAt: new Date().toISOString(),
+    authorizationId: METHOD_C_B6L3_FOUR_PILOT_AUTH_ID,
+    ok: selection.ok,
+    counts: selection.counts,
+    cellIds: selection.cells.map((c) => c.cellId),
+    errors: selection.errors,
+  });
+
+  if (!selection.ok) {
+    return {
+      mode: "method-c-b6l3-four-pilot",
+      ok: false,
+      summary: "method-c-b6l3-four-pilot selection failed closed",
+      receipts: [],
+      errors: selection.errors,
+    };
+  }
+
+  const localeErrors: string[] = [];
+  for (const cell of selection.cells) {
+    const pkg = resolveLocalePackage(cell.lessonId, cell.locale, cell.title);
+    if (!pkg.exists) {
+      localeErrors.push(
+        `missing locale package for ${cell.cellId}: expected ${pkg.path} (no cross-locale fallback)`,
+      );
+    }
+    if (pkg.locale !== cell.locale) {
+      localeErrors.push(`locale package mismatch for ${cell.cellId}`);
+    }
+  }
+  if (localeErrors.length > 0) {
+    return {
+      mode: "method-c-b6l3-four-pilot",
+      ok: false,
+      summary: "method-c-b6l3-four-pilot locale isolation failed closed",
+      receipts: [],
+      errors: localeErrors,
+    };
+  }
+
+  if (process.env.CONTROLLED_V1_ZERO_RENDER === "1") {
+    writeRunReport("method-c-b6l3-four-pilot", {
+      generatedAt: new Date().toISOString(),
+      confirmToken,
+      drySelectOnly: true,
+      authorizationId: METHOD_C_B6L3_FOUR_PILOT_AUTH_ID,
+      counts: selection.counts,
+      selectedCellIds: selection.cells.map((c) => c.cellId),
+    });
+    return {
+      mode: "method-c-b6l3-four-pilot",
+      ok: true,
+      summary: `method-c-b6l3-four-pilot dry-select: ${selection.cells.length} cells; Method A 0; other replacements 0; accepted Method C 0; no render`,
+      receipts: [],
+      errors: [],
+    };
+  }
+
+  const receipts: CellReceipt[] = [];
+  for (const cell of selection.cells) {
+    if (cell.route !== "INSTRUCTIONAL_COMPOSITION" || cell.category !== "C") {
+      return {
+        mode: "method-c-b6l3-four-pilot",
+        ok: false,
+        summary: `refusing non-Method-C cell ${cell.cellId}`,
+        receipts,
+        errors: [`non-Method-C cell reached renderer: ${cell.cellId}`],
+      };
+    }
+    const receipt = runCell(cell, "method-c-b6l3-four-pilot");
+    writeReceipt(receipt);
+    receipts.push(receipt);
+  }
+
+  const counts = receiptCounts(receipts);
+  const failed = receipts.filter(
+    (r) => r.status === "FAILED" || r.status === "BLOCKED_UNRESOLVED_SPEC",
+  );
+  const pending = receipts.filter(
+    (r) => r.status === "PENDING" && r.reason === "PENDING_HUMAN_REVIEW",
+  );
+  const accepted = receipts.filter((r) => r.status === "ACCEPTED");
+
+  writeJson(`${ARTIFACTS_RECEIPTS_DIR}/method-c-b6l3-four-pilot/_summary.json`, {
+    generatedAt: new Date().toISOString(),
+    authorizationId: METHOD_C_B6L3_FOUR_PILOT_AUTH_ID,
+    counts,
+    selection: selection.counts,
+    pendingHumanReview: pending.map((r) => r.cellId),
+    receipts,
+    renderTelemetry: { ...renderTelemetry },
+  });
+  writeRunReport("method-c-b6l3-four-pilot", {
+    generatedAt: new Date().toISOString(),
+    confirmToken,
+    authorizationId: METHOD_C_B6L3_FOUR_PILOT_AUTH_ID,
+    drySelectOnly: false,
+    counts,
+    selectionCounts: selection.counts,
+    pendingCount: pending.length,
+    failedCount: failed.length,
+    acceptedCount: accepted.length,
+    renderTelemetry: { ...renderTelemetry },
+  });
+
+  const telemetryOk =
+    renderTelemetry.paidProviderCalls === 0 && renderTelemetry.rendererCalls === receipts.length;
+  const ok =
+    receipts.length === METHOD_C_B6L3_FOUR_PILOT_EXPECTED_TOTAL &&
+    pending.length === METHOD_C_B6L3_FOUR_PILOT_EXPECTED_TOTAL &&
+    failed.length === 0 &&
+    accepted.length === 0 &&
+    telemetryOk;
+
+  return {
+    mode: "method-c-b6l3-four-pilot",
+    ok,
+    summary: `method-c-b6l3-four-pilot: ${receipts.length} cells PENDING_HUMAN_REVIEW; Method A 0; other replacements 0; accepted Method C 0; providerCalls=0`,
+    receipts,
+    errors: [
+      ...(accepted.length > 0
+        ? [`pilot must not mark cells ACCEPTED; got ${accepted.length}`]
+        : []),
+      ...(pending.length !== METHOD_C_B6L3_FOUR_PILOT_EXPECTED_TOTAL
+        ? [
+            `expected ${METHOD_C_B6L3_FOUR_PILOT_EXPECTED_TOTAL} PENDING receipts, got ${pending.length}`,
+          ]
+        : []),
+      ...(!telemetryOk
+        ? [
+            `telemetry gate failed: renderer=${renderTelemetry.rendererCalls} paid=${renderTelemetry.paidProviderCalls}`,
+          ]
         : []),
       ...failed.map((r) => `${r.cellId}: ${r.reason ?? r.status}`),
     ],
@@ -694,8 +919,7 @@ export function runMethodCCanonicalRepair(options: {
     sourceExecutionSha: options.sourceExecutionSha ?? null,
     repairExecutionSha: options.repairExecutionSha ?? null,
     sourceArtifactSizeBytes: options.sourceArtifactSizeBytes ?? null,
-    historicalApiDigest:
-      options.historicalApiDigest ?? METHOD_C_CANONICAL_SOURCE_ARTIFACT_DIGEST,
+    historicalApiDigest: options.historicalApiDigest ?? METHOD_C_CANONICAL_SOURCE_ARTIFACT_DIGEST,
   });
 
   const sourceCheck = assertSourceUnchanged(sourceRoot, ledger.ledger);
@@ -711,23 +935,26 @@ export function runMethodCCanonicalRepair(options: {
     );
   }
 
-  writeJson(`${stagingRoot}/artifacts/controlled-v1/reports/method-c-canonical-repair-report.json`, {
-    generatedAt: new Date().toISOString(),
-    ok: errors.length === 0,
-    mode: "method-c-canonical-repair",
-    confirmToken: METHOD_C_CANONICAL_REPAIR_CONFIRM_TOKEN,
-    sourceArtifactRoot: sourceRoot,
-    stagingRoot,
-    allowlistCount: allow.cellIds.length,
-    validation: staged.validation.counts,
-    rendererCalls: renderTelemetry.rendererCalls,
-    browserLaunches: renderTelemetry.browserLaunches,
-    paidProviderCalls: renderTelemetry.paidProviderCalls,
-    sanitationReportPath: staged.sanitationReportPath,
-    provenancePath: staged.provenancePath,
-    hashLedgerPath: staged.hashLedgerPath,
-    errors,
-  });
+  writeJson(
+    `${stagingRoot}/artifacts/controlled-v1/reports/method-c-canonical-repair-report.json`,
+    {
+      generatedAt: new Date().toISOString(),
+      ok: errors.length === 0,
+      mode: "method-c-canonical-repair",
+      confirmToken: METHOD_C_CANONICAL_REPAIR_CONFIRM_TOKEN,
+      sourceArtifactRoot: sourceRoot,
+      stagingRoot,
+      allowlistCount: allow.cellIds.length,
+      validation: staged.validation.counts,
+      rendererCalls: renderTelemetry.rendererCalls,
+      browserLaunches: renderTelemetry.browserLaunches,
+      paidProviderCalls: renderTelemetry.paidProviderCalls,
+      sanitationReportPath: staged.sanitationReportPath,
+      provenancePath: staged.provenancePath,
+      hashLedgerPath: staged.hashLedgerPath,
+      errors,
+    },
+  );
 
   return {
     mode: "method-c-canonical-repair",

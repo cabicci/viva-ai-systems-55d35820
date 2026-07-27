@@ -3,6 +3,7 @@ import { writeContactSheet } from "../contactSheets";
 import {
   runFailedOnly,
   runFull400,
+  runMethodBToCFourCellPilot,
   runMethodCCanonicalRepair,
   runMethodCRemaining,
   runPilot,
@@ -27,6 +28,7 @@ function parseArgs(argv: string[]): {
     "report-only",
     "method-c-remaining",
     "method-c-canonical-repair",
+    "method-c-b6l3-four-pilot",
   ];
   if (!mode || !validModes.includes(mode)) {
     console.error(
@@ -86,6 +88,12 @@ async function main() {
         writeContactSheet("method-c-remaining", result.receipts);
       }
       break;
+    case "method-c-b6l3-four-pilot":
+      result = runMethodBToCFourCellPilot(confirm);
+      if (result.ok && result.receipts.length > 0) {
+        writeContactSheet("method-c-b6l3-four-pilot", result.receipts);
+      }
+      break;
     case "method-c-canonical-repair":
       if (!sourceArtifactRoot) {
         console.error(
@@ -99,7 +107,8 @@ async function main() {
         stagingRoot,
         priorArtifactRunId,
         repairExecutionSha: process.env.GITHUB_SHA ?? null,
-        sourceExecutionSha: process.env.METHOD_C_SOURCE_EXECUTION_SHA ?? "6d01bbe07e0e97a02a84cdd38a7a722daad95d75",
+        sourceExecutionSha:
+          process.env.METHOD_C_SOURCE_EXECUTION_SHA ?? "6d01bbe07e0e97a02a84cdd38a7a722daad95d75",
       });
       break;
     case "failed-only":

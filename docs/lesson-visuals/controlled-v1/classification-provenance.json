@@ -3,30 +3,31 @@
   "pipeline": "controlled-v1",
   "classificationSourcePath": "E:/Masaarat/Worktrees/_external-audits/ar-eg-100-media-map/ar-eg-media-map.md",
   "classificationSourceRepoRelativeCopyPath": "docs/lesson-visuals/controlled-v1/inputs/ar-eg-media-map.md",
-  "classificationSourceSha256": "19401FA59DA7A592C9BD81D74C59CF501D6CE182D7B71A9CA10801D166FE093B",
-  "classificationSourceCopySha256": "19401FA59DA7A592C9BD81D74C59CF501D6CE182D7B71A9CA10801D166FE093B",
+  "classificationSourceSha256": "37AD4297CB948803A726D6B63A406636C71A8EABBE26423C2D4A70BFF77B6AE1",
+  "classificationSourceCopySha256": "37AD4297CB948803A726D6B63A406636C71A8EABBE26423C2D4A70BFF77B6AE1",
   "reconcileResultSourcePath": "E:/Masaarat/Worktrees/_external-audits/ar-eg-100-media-map/_reconcile-result.json",
   "acceptedClassificationBaselineSha": "a9b31c53aee45a9498f89f1301987f684ff1bae9",
   "reconciledOriginMainSha": "aca5ad018b7d47238959bc0ee91a195d142cd348",
-  "reconciliationTimestamp": "2026-07-23T15:36:42.000Z",
+  "reconciliationTimestamp": "2026-07-27T12:00:00.000Z",
   "normalizationRule": "DIAGRAM -> INSTRUCTIONAL_COMPOSITION",
-  "normalizationRationale": "Original controlled-v1 rename: DIAGRAM -> INSTRUCTIONAL_COMPOSITION (label only). CR-LV-METHOD-C-356-PRODUCTION-20260727-01 restores builder-m6-l3-first-prompt-to-lovable and builder-m7-l1-tables-columns to their authoritative media-map routes (B/AUTHORIZED_EXTERNAL_SCREENSHOT and A/MASAARAT_SCREENSHOT), undoing the temporary CR-VIS-PILOT-MANIFEST-RECLASSIFICATION-20260725-01 Method-C drift used only for locally renderable pilot cells.",
+  "normalizationRationale": "CR-LV-METHOD-B-TO-C-FOUR-CELL-PILOT-20260727-01 permanently reclassifies intro-m1-l3-setup-your-ai, builder-m5-l2-frontend, and builder-m6-l3-first-prompt-to-lovable from Method B / AUTHORIZED_EXTERNAL_SCREENSHOT to Method C / INSTRUCTIONAL_COMPOSITION due to NO_VALID_RIGHTS_BASIS. Original instructional compositions replace uncertain external-rights material. Existing accepted Method C population (360 cells / artifact 8637748753) is unchanged; the 12 replacement cells remain unresolved pending human review.",
   "membershipUnchanged": false,
   "expectedCounts": {
     "MASAARAT_SCREENSHOT": 7,
-    "AUTHORIZED_EXTERNAL_SCREENSHOT": 3,
-    "INSTRUCTIONAL_COMPOSITION": 90,
+    "AUTHORIZED_EXTERNAL_SCREENSHOT": 0,
+    "INSTRUCTIONAL_COMPOSITION": 93,
     "total": 100
   },
   "doNotTouch": [
-    "docs/lesson-visuals/v1/ledgers/method_decision_ledger.json (legacy v1 classification ledger; controlled-v1 is a separate, additive pipeline and must never modify it)"
+    "docs/lesson-visuals/v1/ledgers/method_decision_ledger.json (legacy v1 classification ledger; controlled-v1 is a separate, additive pipeline and must never modify it)",
+    "canonical Method C artifact 8637748753 (immutable accepted 360-cell population)"
   ],
   "excludedRejectedCandidates": [
     "df4bf761b17b7f3da262f340f600e08ce0c1fa43 (feat/lesson-driven-400-visual-pipeline-refresh) - rejected candidate outputs are not reused as visual source or template for controlled-v1"
   ],
   "notes": [
-    "This file records provenance only. The authoritative frozen classification used at build/runtime is docs/lesson-visuals/controlled-v1/classification-100.json, generated once from the reconcile-result above and committed to the repo so CI does not depend on E:/Masaarat/Worktrees/_external-audits being present.",
-    "src/lib/lesson-visuals/controlled-v1/loadClassification.ts always reads the committed classification-100.json. A local-only regeneration path in scripts/build_all.ts re-derives it from the external audit path when that path exists on disk, then re-verifies checksums; this never runs in CI.",
-    "Media-map markdown already contained 7 A / 3 B / 90 C; only classification-100.json membership was corrected for the two drifted lessons."
+    "This file records provenance only. The authoritative frozen classification used at build/runtime is docs/lesson-visuals/controlled-v1/classification-100.json.",
+    "Media-map markdown and classification-100.json now encode 7 A / 0 B / 93 C.",
+    "Unresolved ledger = 28 Method A + 12 Method B→C replacement Method C cells (40 total)."
   ]
 }

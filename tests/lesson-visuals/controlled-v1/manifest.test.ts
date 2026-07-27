@@ -8,6 +8,8 @@ import { validateProductionManifest } from "../../../src/lib/lesson-visuals/cont
 import {
   EXPECTED_COUNTS,
   LOCALES,
+  METHOD_B_TO_C_REPLACEMENT_CELL_IDS,
+  METHOD_B_TO_C_REPLACEMENT_LESSON_IDS,
   PILOT_AUTHORIZED_EXTERNAL_LESSON_ID,
   PILOT_INSTRUCTIONAL_LESSON_ID,
   PILOT_MASAARAT_LESSON_ID,
@@ -50,7 +52,7 @@ describe("controlled-v1 PRODUCTION_MANIFEST (400 cells)", () => {
     }
   });
 
-  it("has route counts: 28 MASAARAT_SCREENSHOT, 12 AUTHORIZED_EXTERNAL_SCREENSHOT, 360 INSTRUCTIONAL_COMPOSITION", () => {
+  it("has route counts: 28 MASAARAT_SCREENSHOT, 0 AUTHORIZED_EXTERNAL_SCREENSHOT, 372 INSTRUCTIONAL_COMPOSITION", () => {
     const manifest = buildProductionManifest(loadClassification100({ useCache: false }));
     expect(manifest.counts.perRoute.MASAARAT_SCREENSHOT).toBe(
       EXPECTED_COUNTS.MASAARAT_SCREENSHOT * 4,
@@ -78,7 +80,7 @@ describe("controlled-v1 PRODUCTION_MANIFEST (400 cells)", () => {
     expect(result.errors.some((e) => e.includes("duplicate cellId"))).toBe(true);
   });
 
-  it("does not change non-pilot screenshot lesson routes besides the two restored lessons", () => {
+  it("keeps only Method A screenshot lessons after B→C reclassification", () => {
     const classification = loadClassification100({ useCache: false });
     const screenshot = classification.lessons
       .filter(
@@ -91,19 +93,16 @@ describe("controlled-v1 PRODUCTION_MANIFEST (400 cells)", () => {
         "builder-m2-l1-prompt-layer",
         "builder-m2-l2-instructions-examples",
         "builder-m3-l1-context-layer",
-        "builder-m5-l2-frontend",
-        "builder-m6-l3-first-prompt-to-lovable",
         "builder-m6-l4-components-routes",
         "builder-m7-l1-tables-columns",
         "builder-m7-l3-queries",
         "builder-m10-l2-first-users",
-        "intro-m1-l3-setup-your-ai",
       ].sort(),
     );
   });
 });
 
-describe("controlled-v1 PILOT_MANIFEST after authoritative A/B restore", () => {
+describe("controlled-v1 PILOT_MANIFEST after Method B→C", () => {
   it("has 3 lessons x 4 locales = 12 cells", () => {
     const pilot = buildPilotManifest(loadClassification100({ useCache: false }));
     expect(pilot.cells.length).toBe(12);
@@ -122,18 +121,20 @@ describe("controlled-v1 PILOT_MANIFEST after authoritative A/B restore", () => {
     expect(pilot.cells.some((c) => c.cellId === pilot.controlledFailureTargetCellId)).toBe(true);
   });
 
-  it("routes restored A/B pilot lessons to screenshot routes and keeps intro as Method C", () => {
+  it("routes former Method B pilot lesson as Method C and keeps masaarat as Method A", () => {
     const pilot = buildPilotManifest(loadClassification100({ useCache: false }));
     const intro = pilot.cells.filter((c) => c.lessonId === PILOT_INSTRUCTIONAL_LESSON_ID);
-    const external = pilot.cells.filter((c) => c.lessonId === PILOT_AUTHORIZED_EXTERNAL_LESSON_ID);
+    const formerExternal = pilot.cells.filter(
+      (c) => c.lessonId === PILOT_AUTHORIZED_EXTERNAL_LESSON_ID,
+    );
     const masaarat = pilot.cells.filter((c) => c.lessonId === PILOT_MASAARAT_LESSON_ID);
     expect(intro).toHaveLength(4);
     expect(intro.every((c) => c.route === "INSTRUCTIONAL_COMPOSITION")).toBe(true);
-    expect(external.every((c) => c.route === "AUTHORIZED_EXTERNAL_SCREENSHOT")).toBe(true);
+    expect(formerExternal.every((c) => c.route === "INSTRUCTIONAL_COMPOSITION")).toBe(true);
     expect(masaarat.every((c) => c.route === "MASAARAT_SCREENSHOT")).toBe(true);
   });
 
-  it("lists the three pilot lessons including the restored screenshot lessons", () => {
+  it("lists the three pilot lessons", () => {
     const pilot = buildPilotManifest(loadClassification100({ useCache: false }));
     const lessons = new Set(pilot.cells.map((c) => c.lessonId));
     expect(lessons).toEqual(
@@ -147,14 +148,26 @@ describe("controlled-v1 PILOT_MANIFEST after authoritative A/B restore", () => {
 });
 
 describe("controlled-v1 UNRESOLVED_LEDGER", () => {
-  it("lists exactly the non-INSTRUCTIONAL_COMPOSITION cells (40 of 400)", () => {
+  it("lists 28 Method A + 12 B→C replacement Method C cells (40 total)", () => {
     const manifest = buildProductionManifest(loadClassification100({ useCache: false }));
     const ledger = buildUnresolvedLedger(manifest);
     expect(ledger.entries.length).toBe(40);
-    expect(ledger.entries.every((e) => e.route !== "INSTRUCTIONAL_COMPOSITION")).toBe(true);
+
+    const methodA = ledger.entries.filter((e) => e.route === "MASAARAT_SCREENSHOT");
+    const methodB = ledger.entries.filter((e) => e.route === "AUTHORIZED_EXTERNAL_SCREENSHOT");
+    const replacementC = ledger.entries.filter((e) => e.route === "INSTRUCTIONAL_COMPOSITION");
+    expect(methodA).toHaveLength(28);
+    expect(methodB).toHaveLength(0);
+    expect(replacementC).toHaveLength(12);
+
+    const replacementIds = new Set(replacementC.map((e) => e.cellId));
+    for (const id of METHOD_B_TO_C_REPLACEMENT_CELL_IDS) {
+      expect(replacementIds.has(id)).toBe(true);
+    }
+    for (const lessonId of METHOD_B_TO_C_REPLACEMENT_LESSON_IDS) {
+      expect(ledger.entries.some((e) => e.lessonId === lessonId)).toBe(true);
+    }
     expect(ledger.entries.some((e) => e.lessonId === PILOT_MASAARAT_LESSON_ID)).toBe(true);
-    expect(ledger.entries.some((e) => e.lessonId === PILOT_AUTHORIZED_EXTERNAL_LESSON_ID)).toBe(
-      true,
-    );
+    expect(ledger.entries.every((e) => e.reason.length > 0)).toBe(true);
   });
 });

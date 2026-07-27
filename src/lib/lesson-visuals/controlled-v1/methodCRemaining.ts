@@ -1,5 +1,7 @@
 import {
   LOCALES,
+  METHOD_B_TO_C_REPLACEMENT_CELL_IDS,
+  METHOD_C_REMAINING_EXPECTED_EXCLUDED_A_CELLS,
   METHOD_C_REMAINING_EXPECTED_PER_LOCALE,
   METHOD_C_REMAINING_EXPECTED_TOTAL,
   PRESERVED_METHOD_C_PILOT_CELL_IDS,
@@ -17,14 +19,18 @@ export interface MethodCRemainingSelection {
   };
   excludedPreservedPilotCellIds: string[];
   excludedAbCellIds: string[];
+  excludedReplacementCellIds: string[];
 }
 
 const PRESERVED_SET = new Set<string>(PRESERVED_METHOD_C_PILOT_CELL_IDS);
+const REPLACEMENT_SET = new Set<string>(METHOD_B_TO_C_REPLACEMENT_CELL_IDS);
 
 /**
  * Deterministic Method-C-remaining selection:
- * all INSTRUCTIONAL_COMPOSITION cells from the production manifest except the
- * four preserved accepted Method C pilot cell IDs. Never selects A/B cells.
+ * all INSTRUCTIONAL_COMPOSITION cells from the production manifest except:
+ * - the four preserved accepted Method C pilot cell IDs, and
+ * - the twelve Method B→C replacement cells (not yet accepted).
+ * Never selects A/B cells.
  */
 export function selectMethodCRemainingCells(
   manifest: ProductionManifest,
@@ -32,6 +38,7 @@ export function selectMethodCRemainingCells(
   const errors: string[] = [];
   const excludedPreservedPilotCellIds: string[] = [];
   const excludedAbCellIds: string[] = [];
+  const excludedReplacementCellIds: string[] = [];
   const selected: ManifestCell[] = [];
 
   for (const cell of manifest.cells) {
@@ -41,6 +48,10 @@ export function selectMethodCRemainingCells(
     }
     if (PRESERVED_SET.has(cell.cellId)) {
       excludedPreservedPilotCellIds.push(cell.cellId);
+      continue;
+    }
+    if (REPLACEMENT_SET.has(cell.cellId)) {
+      excludedReplacementCellIds.push(cell.cellId);
       continue;
     }
     selected.push(cell);
@@ -59,6 +70,9 @@ export function selectMethodCRemainingCells(
     }
     if (PRESERVED_SET.has(cell.cellId)) {
       errors.push(`preserved pilot cell was selected: ${cell.cellId}`);
+    }
+    if (REPLACEMENT_SET.has(cell.cellId)) {
+      errors.push(`B→C replacement cell was selected: ${cell.cellId}`);
     }
     perLocale[cell.locale] = (perLocale[cell.locale] ?? 0) + 1;
     perRoute[cell.route] = (perRoute[cell.route] ?? 0) + 1;
@@ -88,13 +102,25 @@ export function selectMethodCRemainingCells(
       `expected to exclude ${PRESERVED_METHOD_C_PILOT_CELL_IDS.length} preserved pilot cells, excluded ${excludedPreservedPilotCellIds.length}`,
     );
   }
-  if (excludedAbCellIds.length !== 40) {
-    errors.push(`expected to exclude 40 A/B cells, excluded ${excludedAbCellIds.length}`);
+  if (excludedAbCellIds.length !== METHOD_C_REMAINING_EXPECTED_EXCLUDED_A_CELLS) {
+    errors.push(
+      `expected to exclude ${METHOD_C_REMAINING_EXPECTED_EXCLUDED_A_CELLS} A cells, excluded ${excludedAbCellIds.length}`,
+    );
+  }
+  if (excludedReplacementCellIds.length !== METHOD_B_TO_C_REPLACEMENT_CELL_IDS.length) {
+    errors.push(
+      `expected to exclude ${METHOD_B_TO_C_REPLACEMENT_CELL_IDS.length} B→C replacement cells, excluded ${excludedReplacementCellIds.length}`,
+    );
   }
 
   // Manifest order must be preserved (selected is already in manifest order).
   const expectedOrder = manifest.cells
-    .filter((c) => c.route === "INSTRUCTIONAL_COMPOSITION" && !PRESERVED_SET.has(c.cellId))
+    .filter(
+      (c) =>
+        c.route === "INSTRUCTIONAL_COMPOSITION" &&
+        !PRESERVED_SET.has(c.cellId) &&
+        !REPLACEMENT_SET.has(c.cellId),
+    )
     .map((c) => c.cellId);
   if (JSON.stringify(selected.map((c) => c.cellId)) !== JSON.stringify(expectedOrder)) {
     errors.push(`selection order does not match production manifest Method C order`);
@@ -107,5 +133,6 @@ export function selectMethodCRemainingCells(
     counts: { total: selected.length, perLocale, perRoute },
     excludedPreservedPilotCellIds,
     excludedAbCellIds,
+    excludedReplacementCellIds,
   };
 }
