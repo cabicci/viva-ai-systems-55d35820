@@ -1,19 +1,69 @@
 import { useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Database } from "lucide-react";
 import {
-  ACTIVATION_DISABLED,
-  ROLLBACK_DISABLED,
+  ACTIVATION_CONFIRMATION,
+  AUTHORIZED_STAGING_VERSION_KEY,
+  activateAuthorizedRagIndexVersion,
   executeNextRagImportBatch,
   getRagImportEvidence,
   getRagImportStatus,
   initializeOrResumeRagImport,
+  rollbackAuthorizedRagIndexVersion,
+  ROLLBACK_CONFIRMATION,
   validateRagImportStaging,
 } from "@/lib/rag-production-lifecycle.functions";
-import { LOVABLE_NATIVE_AUTHORIZATION_ID } from "@/lib/rag/lovable-native/public-ids";
+import {
+  AUTHORIZED_BATCH_COUNT,
+  AUTHORIZED_CHUNK_COUNT,
+  AUTHORIZED_EXECUTION_ID,
+  AUTHORIZED_MAX_PROVIDER_ATTEMPTS,
+  AUTHORIZED_SOURCE_SHA,
+  FIRST_ACTIVATION_AUTHORIZATION_ID,
+  LOVABLE_NATIVE_AUTHORIZATION_ID,
+} from "@/lib/rag/lovable-native/public-ids";
 
 type StatusPayload = Awaited<ReturnType<typeof getRagImportStatus>>;
+
+type ValidationView = {
+  ok?: boolean;
+  errors?: string[];
+  versionKey?: string;
+  sourceSha?: string;
+  stagingChunkCount?: number;
+  executionId?: string;
+};
+
+function isFreshSuccessfulStatus(status: StatusPayload | null): boolean {
+  if (!status) return false;
+  return (
+    status.executionId === AUTHORIZED_EXECUTION_ID &&
+    status.stagingVersionKey === AUTHORIZED_STAGING_VERSION_KEY &&
+    status.lockedCorpus.sourceSha === AUTHORIZED_SOURCE_SHA &&
+    status.sessionState === "completed" &&
+    status.completedBatchCount === AUTHORIZED_BATCH_COUNT &&
+    status.plannedBatchCount === AUTHORIZED_BATCH_COUNT &&
+    status.acceptedChunkCount === AUTHORIZED_CHUNK_COUNT &&
+    status.providerAttemptCount >= 0 &&
+    status.providerAttemptCount <= AUTHORIZED_MAX_PROVIDER_ATTEMPTS &&
+    status.lastErrorCode === null &&
+    status.currentActiveVersionKey === null
+  );
+}
+
+function isFreshSuccessfulValidation(validation: ValidationView | null): boolean {
+  if (!validation) return false;
+  return (
+    validation.ok === true &&
+    Array.isArray(validation.errors) &&
+    validation.errors.length === 0 &&
+    validation.versionKey === AUTHORIZED_STAGING_VERSION_KEY &&
+    validation.sourceSha === AUTHORIZED_SOURCE_SHA &&
+    validation.stagingChunkCount === AUTHORIZED_CHUNK_COUNT
+  );
+}
 
 export function RagLovableNativeImportPanel() {
   const statusFn = useServerFn(getRagImportStatus);
@@ -21,27 +71,75 @@ export function RagLovableNativeImportPanel() {
   const batchFn = useServerFn(executeNextRagImportBatch);
   const validateFn = useServerFn(validateRagImportStaging);
   const evidenceFn = useServerFn(getRagImportEvidence);
+  const activateFn = useServerFn(activateAuthorizedRagIndexVersion);
+  const rollbackFn = useServerFn(rollbackAuthorizedRagIndexVersion);
 
   const [status, setStatus] = useState<StatusPayload | null>(null);
   const [evidence, setEvidence] = useState<unknown>(null);
-  const [validation, setValidation] = useState<unknown>(null);
+  const [validation, setValidation] = useState<ValidationView | null>(null);
+  const [statusFresh, setStatusFresh] = useState(false);
+  const [validationFresh, setValidationFresh] = useState(false);
+  const [activationConfirmation, setActivationConfirmation] = useState("");
+  const [rollbackConfirmation, setRollbackConfirmation] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  function invalidateEligibility() {
+    setStatusFresh(false);
+    setValidationFresh(false);
+  }
 
   async function run(label: string, fn: () => Promise<unknown>) {
     setBusy(true);
     setError(null);
     try {
+      if (
+        label === "status" ||
+        label === "init" ||
+        label === "batch" ||
+        label === "activate" ||
+        label === "rollback"
+      ) {
+        invalidateEligibility();
+      }
+      if (label === "validate") {
+        setValidationFresh(false);
+      }
+
       const result = await fn();
-      if (label === "status" || label === "init" || label === "batch") {
+
+      if (label === "status") {
+        const next = result as StatusPayload;
+        setStatus(next);
+        setStatusFresh(true);
+        setValidationFresh(false);
+        setValidation(null);
+      }
+      if (label === "init" || label === "batch") {
         const refreshed = (await statusFn()) as StatusPayload;
         setStatus(refreshed);
+        setStatusFresh(true);
+        setValidationFresh(false);
+        setValidation(null);
       }
-      if (label === "validate") setValidation(result);
+      if (label === "validate") {
+        const view = result as ValidationView;
+        setValidation(view);
+        setValidationFresh(true);
+      }
       if (label === "evidence") setEvidence(result);
-      if (label === "status") setStatus(result as StatusPayload);
+      if (label === "activate" || label === "rollback") {
+        const refreshed = (await statusFn()) as StatusPayload;
+        setStatus(refreshed);
+        setStatusFresh(true);
+        setValidationFresh(false);
+        setValidation(null);
+        setActivationConfirmation("");
+        setRollbackConfirmation("");
+      }
       return result;
     } catch (err) {
+      invalidateEligibility();
       setError(err instanceof Error ? err.message.slice(0, 120) : "INTERNAL");
       return null;
     } finally {
@@ -50,6 +148,18 @@ export function RagLovableNativeImportPanel() {
   }
 
   const locked = status?.lockedCorpus;
+  const importCompleted = status?.sessionState === "completed";
+  const activateEligible =
+    statusFresh &&
+    validationFresh &&
+    isFreshSuccessfulStatus(status) &&
+    isFreshSuccessfulValidation(validation) &&
+    activationConfirmation === ACTIVATION_CONFIRMATION;
+
+  const rollbackEligible =
+    statusFresh &&
+    status?.currentActiveVersionKey === AUTHORIZED_STAGING_VERSION_KEY &&
+    rollbackConfirmation === ROLLBACK_CONFIRMATION;
 
   return (
     <section className="glass rounded-2xl p-6 border border-border/40 mb-6">
@@ -62,11 +172,15 @@ export function RagLovableNativeImportPanel() {
             RAG LOVABLE-NATIVE IMPORT
           </p>
           <p className="text-sm text-foreground/90 leading-relaxed">
-            Admin-only resumable staging importer. One embedding batch per explicit action.
-            Activation and rollback are disabled in this authorization.
+            Admin-only resumable staging importer. One embedding batch per explicit action. First
+            activation requires fresh status, fresh validation, and exact confirmation. Server
+            repeats every trusted check.
           </p>
           <p className="mt-1 font-mono text-[10px] text-muted-foreground" dir="ltr">
             {LOVABLE_NATIVE_AUTHORIZATION_ID}
+          </p>
+          <p className="mt-1 font-mono text-[10px] text-muted-foreground" dir="ltr">
+            {FIRST_ACTIVATION_AUTHORIZATION_ID}
           </p>
         </div>
       </div>
@@ -83,10 +197,24 @@ export function RagLovableNativeImportPanel() {
           {status ? `${status.plannedBatchCount}/${status.maxProviderAttempts}` : "58/67"}
         </div>
         <div className="sm:col-span-2 break-all">
+          authorized version: {AUTHORIZED_STAGING_VERSION_KEY}
+        </div>
+        <div className="sm:col-span-2 break-all">
           pkg digest:{" "}
           {locked ? `${locked.digests.packageManifestSha256.slice(0, 16)}…` : "(refresh status)"}
         </div>
       </div>
+
+      {importCompleted && (
+        <div
+          className="mb-4 rounded-md border border-border/40 bg-background/50 p-3 text-xs font-mono"
+          dir="ltr"
+        >
+          Import execution complete ({status?.completedBatchCount}/{status?.plannedBatchCount}{" "}
+          batches, {status?.acceptedChunkCount}/{AUTHORIZED_CHUNK_COUNT} chunks). Initialize and
+          Execute next batch are blocked for this completed session.
+        </div>
+      )}
 
       <div className="flex flex-wrap gap-2 mb-4">
         <Button
@@ -100,14 +228,16 @@ export function RagLovableNativeImportPanel() {
         <Button
           size="sm"
           variant="outline"
-          disabled={busy}
+          disabled={busy || importCompleted}
+          title={importCompleted ? "Import already completed" : undefined}
           onClick={() => void run("init", () => initFn({ data: {} }))}
         >
           Initialize or resume
         </Button>
         <Button
           size="sm"
-          disabled={busy}
+          disabled={busy || importCompleted}
+          title={importCompleted ? "Import already completed" : undefined}
           onClick={() => void run("batch", () => batchFn({ data: {} }))}
         >
           Execute next batch
@@ -128,22 +258,78 @@ export function RagLovableNativeImportPanel() {
         >
           View sanitized evidence
         </Button>
-        <Button
-          size="sm"
-          variant="ghost"
-          disabled
-          title="Requires separate Control Room authorization"
-        >
-          Activate (disabled)
-        </Button>
-        <Button
-          size="sm"
-          variant="ghost"
-          disabled
-          title="Requires separate Control Room authorization"
-        >
-          Rollback (disabled)
-        </Button>
+      </div>
+
+      <div className="grid sm:grid-cols-2 gap-3 mb-4" dir="ltr">
+        <div className="space-y-2">
+          <label className="text-[11px] font-mono text-muted-foreground">
+            Activation confirmation
+          </label>
+          <Input
+            value={activationConfirmation}
+            onChange={(e) => setActivationConfirmation(e.target.value)}
+            placeholder={ACTIVATION_CONFIRMATION}
+            autoComplete="off"
+            spellCheck={false}
+            disabled={busy}
+          />
+          <Button
+            size="sm"
+            disabled={busy || !activateEligible}
+            title={
+              activateEligible
+                ? "Activate authorized staging version"
+                : "Requires fresh status, fresh validation, and exact confirmation"
+            }
+            onClick={() =>
+              void run("activate", () =>
+                activateFn({
+                  data: {
+                    versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+                    confirmation: activationConfirmation,
+                  },
+                }),
+              )
+            }
+          >
+            Activate
+          </Button>
+        </div>
+        <div className="space-y-2">
+          <label className="text-[11px] font-mono text-muted-foreground">
+            Rollback confirmation
+          </label>
+          <Input
+            value={rollbackConfirmation}
+            onChange={(e) => setRollbackConfirmation(e.target.value)}
+            placeholder={ROLLBACK_CONFIRMATION}
+            autoComplete="off"
+            spellCheck={false}
+            disabled={busy}
+          />
+          <Button
+            size="sm"
+            variant="outline"
+            disabled={busy || !rollbackEligible}
+            title={
+              rollbackEligible
+                ? "Reverse first activation only"
+                : "Unavailable until the authorized version is the sole active version"
+            }
+            onClick={() =>
+              void run("rollback", () =>
+                rollbackFn({
+                  data: {
+                    versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+                    confirmation: rollbackConfirmation,
+                  },
+                }),
+              )
+            }
+          >
+            Rollback
+          </Button>
+        </div>
       </div>
 
       {error && (
@@ -170,8 +356,10 @@ export function RagLovableNativeImportPanel() {
           <div>lastError: {status.lastErrorCode ?? "—"}</div>
           <div>legacy lessons: {status.legacyLessonCount ?? "—"}</div>
           <div>locale rows: {status.localeLessonCount ?? "—"}</div>
-          <div>activationEnabled: {String(status.activationEnabled ?? !ACTIVATION_DISABLED)}</div>
-          <div>rollbackEnabled: {String(status.rollbackEnabled ?? !ROLLBACK_DISABLED)}</div>
+          <div>statusFresh: {String(statusFresh)}</div>
+          <div>validationFresh: {String(validationFresh)}</div>
+          <div>activateEligible: {String(activateEligible)}</div>
+          <div>rollbackEligible: {String(rollbackEligible)}</div>
         </div>
       )}
 

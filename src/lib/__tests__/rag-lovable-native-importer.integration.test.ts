@@ -427,19 +427,28 @@ describe.skipIf(!dockerUp)("RAG Lovable-native resumable importer (disposable)",
     expect(fp2).toBe(fp);
   });
 
-  it("activation boundary: product server actions do not call activate/rollback", () => {
+  it("activation boundary: product server actions wrap activate/deactivate with guards", () => {
     const lifecycle = fs.readFileSync(
       path.join(REPO_ROOT, "src/lib/rag-production-lifecycle.functions.ts"),
+      "utf8",
+    );
+    const executor = fs.readFileSync(
+      path.join(REPO_ROOT, "src/lib/rag/lovable-native/executor.server.ts"),
       "utf8",
     );
     const panel = fs.readFileSync(
       path.join(REPO_ROOT, "src/components/admin/RagLovableNativeImportPanel.tsx"),
       "utf8",
     );
-    expect(lifecycle).not.toMatch(/activate_rag_index_version/);
-    expect(lifecycle).not.toMatch(/rollback_rag_index_version/);
-    expect(panel).toContain("Activate (disabled)");
-    expect(panel).toContain("Rollback (disabled)");
+    expect(executor).toContain("activate_rag_index_version");
+    expect(executor).toContain("rag_deactivate_first_active_version");
+    expect(lifecycle).toContain("activateAuthorizedRagIndexVersion");
+    expect(lifecycle).toContain("rollbackAuthorizedRagIndexVersion");
+    expect(lifecycle).not.toContain("rollback_rag_index_version");
+    expect(lifecycle).toContain("await assertAdmin(context)");
+    expect(panel).toContain("Activate");
+    expect(panel).toContain("Rollback");
+    expect(panel).toContain("activateEligible");
     expect(panel).not.toMatch(/activate_rag_index_version/);
   });
 

@@ -1,15 +1,20 @@
 import fs from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it, vi, beforeEach } from "vitest";
 import {
+  ACTIVATION_CONFIRMATION,
   ACTIVATION_DISABLED,
+  AUTHORIZED_STAGING_VERSION_KEY,
+  ROLLBACK_CONFIRMATION,
   ROLLBACK_DISABLED,
+  activateAuthorizedRagIndexVersion,
   getDisabledLifecycleControls,
   getRagImportEvidence,
   getRagImportStatus,
   initializeOrResumeRagImport,
   executeNextRagImportBatch,
+  rollbackAuthorizedRagIndexVersion,
   validateRagImportStaging,
 } from "@/lib/rag-production-lifecycle.functions";
 import {
@@ -25,12 +30,25 @@ import {
 } from "@/lib/rag/lovable-native/contracts";
 import { admitLockedCorpusFromRaw, sha256Utf8 } from "@/lib/rag/lovable-native/admission";
 import {
+  activateAuthorizedRagIndexVersion as activateGate,
+  assertImportMutationAllowed,
   buildCommitRows,
   createOpenAiEmbeddingFetcher,
+  emptyStatusView,
   executeNextImportBatch,
+  LifecycleGateError,
   mapStatusRpc,
+  rollbackAuthorizedRagIndexVersion as rollbackGate,
 } from "@/lib/rag/lovable-native/executor.server";
-import { LOVABLE_NATIVE_AUTHORIZATION_ID } from "@/lib/rag/lovable-native/public-ids";
+import {
+  AUTHORIZED_BATCH_COUNT,
+  AUTHORIZED_CHUNK_COUNT,
+  AUTHORIZED_EXECUTION_ID,
+  AUTHORIZED_MAX_PROVIDER_ATTEMPTS,
+  AUTHORIZED_SOURCE_SHA,
+  FIRST_ACTIVATION_AUTHORIZATION_ID,
+  LOVABLE_NATIVE_AUTHORIZATION_ID,
+} from "@/lib/rag/lovable-native/public-ids";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
 
@@ -40,6 +58,62 @@ function readArtifact(name: string): string {
 
 function nodeSha(text: string): string {
   return createHash("sha256").update(text, "utf8").digest("hex");
+}
+
+function lockedCompletedStatus(overrides: Record<string, unknown> = {}) {
+  return {
+    ok: true,
+    executionId: AUTHORIZED_EXECUTION_ID,
+    stagingVersionKey: AUTHORIZED_STAGING_VERSION_KEY,
+    sessionState: "completed",
+    completedBatchCount: AUTHORIZED_BATCH_COUNT,
+    pendingBatchCount: 0,
+    failedBatchCount: 0,
+    acceptedChunkCount: AUTHORIZED_CHUNK_COUNT,
+    providerAttemptCount: 58,
+    nextBatchOrdinal: null,
+    currentActiveVersionKey: null,
+    legacyLessonCount: 673,
+    localeLessonCount: 3700,
+    lastErrorCode: null,
+    plannedBatchCount: AUTHORIZED_BATCH_COUNT,
+    maxProviderAttempts: AUTHORIZED_MAX_PROVIDER_ATTEMPTS,
+    ...overrides,
+  };
+}
+
+function lockedValidation(overrides: Record<string, unknown> = {}) {
+  return {
+    ok: true,
+    errors: [],
+    executionId: AUTHORIZED_EXECUTION_ID,
+    versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+    stagingChunkCount: AUTHORIZED_CHUNK_COUNT,
+    completedBatches: AUTHORIZED_BATCH_COUNT,
+    providerAttemptTotal: 58,
+    activeVersionCount: 0,
+    sourceSha: AUTHORIZED_SOURCE_SHA,
+    indexVersion: "rag-index-v1",
+    ...overrides,
+  };
+}
+
+function mockAdmin(handlers: Record<string, (args?: Record<string, unknown>) => unknown>) {
+  return {
+    rpc: vi.fn(async (fn: string, args?: Record<string, unknown>) => {
+      if (!(fn in handlers)) {
+        return { data: null, error: { message: `UNEXPECTED_RPC:${fn}` } };
+      }
+      try {
+        return { data: handlers[fn]!(args), error: null };
+      } catch (err) {
+        return {
+          data: null,
+          error: { message: err instanceof Error ? err.message : "INTERNAL" },
+        };
+      }
+    }),
+  };
 }
 
 describe("lovable-native corpus admission", () => {
@@ -120,28 +194,54 @@ describe("lovable-native deterministic batching", () => {
 });
 
 describe("lovable-native provenance and auth surface", () => {
-  it("browser schemas do not accept provenance fields", () => {
+  it("browser schemas do not accept provenance fields as authoritative overrides", () => {
     const src = fs.readFileSync(
       path.join(REPO_ROOT, "src/lib/rag-production-lifecycle.functions.ts"),
       "utf8",
     );
+    const executor = fs.readFileSync(
+      path.join(REPO_ROOT, "src/lib/rag/lovable-native/executor.server.ts"),
+      "utf8",
+    );
     expect(src).not.toMatch(/sourceSha.*z\./);
     expect(src).not.toMatch(/executionId.*z\./);
-    expect(src).not.toMatch(/versionKey.*z\./);
-    expect(src).not.toMatch(/activate_rag_index_version/);
-    expect(src).not.toMatch(/rollback_rag_index_version/);
-    expect(ACTIVATION_DISABLED).toBe(true);
-    expect(ROLLBACK_DISABLED).toBe(true);
-    expect(getDisabledLifecycleControls().activate).toBeNull();
-    expect(getDisabledLifecycleControls().rollback).toBeNull();
+    expect(executor).toContain('rpc("activate_rag_index_version"');
+    expect(executor).toContain('rpc("rag_deactivate_first_active_version"');
+    expect(src).not.toContain("rollback_rag_index_version");
+    expect(executor).not.toContain("rollback_rag_index_version");
+    expect(ACTIVATION_DISABLED).toBe(false);
+    expect(ROLLBACK_DISABLED).toBe(false);
+    expect(getDisabledLifecycleControls().activate).toBe("activateAuthorizedRagIndexVersion");
+    expect(getDisabledLifecycleControls().rollback).toBe("rollbackAuthorizedRagIndexVersion");
   });
 
-  it("exports only the five authorized server actions", () => {
+  it("exports the five import actions plus guarded activate/rollback", () => {
     expect(typeof getRagImportStatus).toBe("function");
     expect(typeof initializeOrResumeRagImport).toBe("function");
     expect(typeof executeNextRagImportBatch).toBe("function");
     expect(typeof validateRagImportStaging).toBe("function");
     expect(typeof getRagImportEvidence).toBe("function");
+    expect(typeof activateAuthorizedRagIndexVersion).toBe("function");
+    expect(typeof rollbackAuthorizedRagIndexVersion).toBe("function");
+  });
+
+  it("activation and rollback serverFns require auth middleware and admin checks", () => {
+    const src = fs.readFileSync(
+      path.join(REPO_ROOT, "src/lib/rag-production-lifecycle.functions.ts"),
+      "utf8",
+    );
+    expect(src).toMatch(
+      /export const activateAuthorizedRagIndexVersion = createServerFn\(\{ method: "POST" \}\)[\s\S]*?\.middleware\(\[requireSupabaseAuth\]\)/,
+    );
+    expect(src).toMatch(
+      /export const rollbackAuthorizedRagIndexVersion = createServerFn\(\{ method: "POST" \}\)[\s\S]*?\.middleware\(\[requireSupabaseAuth\]\)/,
+    );
+    const activateBlock = src.slice(src.indexOf("export const activateAuthorizedRagIndexVersion"));
+    expect(activateBlock).toContain("await assertAdmin(context)");
+    const rollbackBlock = src.slice(src.indexOf("export const rollbackAuthorizedRagIndexVersion"));
+    expect(rollbackBlock).toContain("await assertAdmin(context)");
+    expect(src).toContain('if (error) throw new Error("UNAUTHORIZED")');
+    expect(src).toContain('if (!data) throw new Error("FORBIDDEN")');
   });
 });
 
@@ -166,6 +266,27 @@ describe("lovable-native executor batch lifecycle (mocked)", () => {
     let completed = false;
     const admin = {
       rpc: vi.fn(async (fn: string) => {
+        if (fn === "rag_get_import_status") {
+          return {
+            data: {
+              ok: true,
+              executionId: "exec-1",
+              stagingVersionKey: "rag-index-v1-3e1ef5aa-aaaaaaaaaaaaaaaa",
+              sessionState: "running",
+              completedBatchCount: 0,
+              pendingBatchCount: 58,
+              failedBatchCount: 0,
+              acceptedChunkCount: 0,
+              providerAttemptCount: 0,
+              nextBatchOrdinal: 0,
+              currentActiveVersionKey: null,
+              lastErrorCode: null,
+              plannedBatchCount: 58,
+              maxProviderAttempts: 67,
+            },
+            error: null,
+          };
+        }
         if (fn === "rag_claim_next_import_batch") {
           if (completed) {
             return {
@@ -310,15 +431,548 @@ describe("lovable-native migration security surface", () => {
 });
 
 describe("lovable-native admin UI activation boundary", () => {
-  it("panel exposes disabled activate/rollback only", () => {
+  it("panel gates Activate/Rollback and never embeds secrets or corpus", () => {
     const panel = fs.readFileSync(
       path.join(REPO_ROOT, "src/components/admin/RagLovableNativeImportPanel.tsx"),
       "utf8",
     );
-    expect(panel).toContain("Activate (disabled)");
-    expect(panel).toContain("Rollback (disabled)");
+    expect(panel).toContain("Activate");
+    expect(panel).toContain("Rollback");
+    expect(panel).toContain("activateEligible");
+    expect(panel).toContain("rollbackEligible");
+    expect(panel).toContain("Import execution complete");
+    expect(panel).toContain("statusFresh");
+    expect(panel).toContain("validationFresh");
     expect(panel).not.toMatch(/activate_rag_index_version/);
-    expect(panel).not.toMatch(/rollback_rag_index_version/);
+    expect(panel).not.toMatch(/rag_deactivate_first_active_version/);
     expect(panel).not.toContain("Run all batches");
+    expect(panel).not.toContain("SUPABASE_SERVICE_ROLE_KEY");
+    expect(panel).not.toContain("OPENAI_API_KEY");
+    expect(panel).not.toContain("sk-proj-");
+    expect(panel).toContain("ACTIVATION_CONFIRMATION");
+    expect(panel).toContain("ROLLBACK_CONFIRMATION");
+    expect(panel).toContain("FIRST_ACTIVATION_AUTHORIZATION_ID");
+    expect(panel).toContain("LOVABLE_NATIVE_AUTHORIZATION_ID");
+    const publicIds = fs.readFileSync(
+      path.join(REPO_ROOT, "src/lib/rag/lovable-native/public-ids.ts"),
+      "utf8",
+    );
+    expect(publicIds).toContain(`"${ACTIVATION_CONFIRMATION}"`);
+    expect(publicIds).toContain(`"${ROLLBACK_CONFIRMATION}"`);
+    expect(publicIds).toContain(FIRST_ACTIVATION_AUTHORIZATION_ID);
+    expect(publicIds).toContain(LOVABLE_NATIVE_AUTHORIZATION_ID);
+  });
+
+  it("panel does not auto-invoke lifecycle handlers on render", () => {
+    const panel = fs.readFileSync(
+      path.join(REPO_ROOT, "src/components/admin/RagLovableNativeImportPanel.tsx"),
+      "utf8",
+    );
+    expect(panel).not.toMatch(/useEffect\s*\(/);
+    expect(panel).toMatch(/onClick=\{\(\) => void run\("status"/);
+    expect(panel).toMatch(/onClick=\{\(\) => void run\("validate"/);
+    // statusFn may be used after explicit actions, never on mount.
+    expect(panel.indexOf("useState")).toBeLessThan(panel.indexOf("statusFn()"));
+  });
+});
+
+describe("first-activation fail-closed gates (mocked)", () => {
+  beforeEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  async function expectGate(
+    run: () => Promise<unknown>,
+    code: string,
+    admin?: { rpc: ReturnType<typeof vi.fn> },
+  ) {
+    await expect(run()).rejects.toMatchObject({ code });
+    if (admin) {
+      const activateCalls = admin.rpc.mock.calls.filter(
+        (c) => c[0] === "activate_rag_index_version",
+      );
+      const claimCalls = admin.rpc.mock.calls.filter((c) => c[0] === "rag_claim_next_import_batch");
+      const initCalls = admin.rpc.mock.calls.filter(
+        (c) => c[0] === "rag_initialize_or_resume_import",
+      );
+      expect(activateCalls).toHaveLength(0);
+      expect(claimCalls).toHaveLength(0);
+      expect(initCalls).toHaveLength(0);
+    }
+  }
+
+  it("rejects wrong version key", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus(),
+      rag_validate_staging_import: () => lockedValidation(),
+    });
+    await expectGate(
+      () =>
+        activateGate(admin, {
+          versionKey: "wrong-version",
+          confirmation: ACTIVATION_CONFIRMATION,
+        }),
+      "WRONG_VERSION",
+      admin,
+    );
+  });
+
+  it("rejects wrong confirmation", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus(),
+      rag_validate_staging_import: () => lockedValidation(),
+    });
+    await expectGate(
+      () =>
+        activateGate(admin, {
+          versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+          confirmation: "activate_rag_index_v1",
+        }),
+      "WRONG_CONFIRMATION",
+      admin,
+    );
+  });
+
+  it("rejects wrong execution ID", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus({ executionId: "rag-lovable-other" }),
+      rag_validate_staging_import: () => lockedValidation(),
+    });
+    await expectGate(
+      () =>
+        activateGate(admin, {
+          versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+          confirmation: ACTIVATION_CONFIRMATION,
+        }),
+      "EXECUTION_MISMATCH",
+      admin,
+    );
+  });
+
+  it("rejects wrong source SHA via locked corpus constant mismatch path", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus(),
+      rag_validate_staging_import: () =>
+        lockedValidation({ sourceSha: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" }),
+    });
+    await expectGate(
+      () =>
+        activateGate(admin, {
+          versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+          confirmation: ACTIVATION_CONFIRMATION,
+        }),
+      "SOURCE_MISMATCH",
+      admin,
+    );
+  });
+
+  it("rejects session not completed", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus({ sessionState: "running" }),
+      rag_validate_staging_import: () => lockedValidation(),
+    });
+    await expectGate(
+      () =>
+        activateGate(admin, {
+          versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+          confirmation: ACTIVATION_CONFIRMATION,
+        }),
+      "SESSION_NOT_COMPLETED",
+      admin,
+    );
+  });
+
+  it("rejects completed batch count below 58", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus({ completedBatchCount: 57 }),
+      rag_validate_staging_import: () => lockedValidation(),
+    });
+    await expectGate(
+      () =>
+        activateGate(admin, {
+          versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+          confirmation: ACTIVATION_CONFIRMATION,
+        }),
+      "BATCH_COUNT_MISMATCH",
+      admin,
+    );
+  });
+
+  it("rejects planned batch count not equal to 58", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus({ plannedBatchCount: 57 }),
+      rag_validate_staging_import: () => lockedValidation(),
+    });
+    await expectGate(
+      () =>
+        activateGate(admin, {
+          versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+          confirmation: ACTIVATION_CONFIRMATION,
+        }),
+      "BATCH_COUNT_MISMATCH",
+      admin,
+    );
+  });
+
+  it("rejects accepted chunk count below 3700", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus({ acceptedChunkCount: 3699 }),
+      rag_validate_staging_import: () => lockedValidation(),
+    });
+    await expectGate(
+      () =>
+        activateGate(admin, {
+          versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+          confirmation: ACTIVATION_CONFIRMATION,
+        }),
+      "CHUNK_COUNT_MISMATCH",
+      admin,
+    );
+  });
+
+  it("rejects staging chunk count below 3700", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus(),
+      rag_validate_staging_import: () => lockedValidation({ stagingChunkCount: 3699 }),
+    });
+    await expectGate(
+      () =>
+        activateGate(admin, {
+          versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+          confirmation: ACTIVATION_CONFIRMATION,
+        }),
+      "STAGING_COUNT_MISMATCH",
+      admin,
+    );
+  });
+
+  it("rejects provider attempts above 67", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus({ providerAttemptCount: 68 }),
+      rag_validate_staging_import: () => lockedValidation(),
+    });
+    await expectGate(
+      () =>
+        activateGate(admin, {
+          versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+          confirmation: ACTIVATION_CONFIRMATION,
+        }),
+      "PROVIDER_ATTEMPT_CEILING_EXCEEDED",
+      admin,
+    );
+  });
+
+  it("rejects lastError non-null", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus({ lastErrorCode: "PROVIDER_FAILED" }),
+      rag_validate_staging_import: () => lockedValidation(),
+    });
+    await expectGate(
+      () =>
+        activateGate(admin, {
+          versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+          confirmation: ACTIVATION_CONFIRMATION,
+        }),
+      "LAST_ERROR_PRESENT",
+      admin,
+    );
+  });
+
+  it("rejects validation ok=false", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus(),
+      rag_validate_staging_import: () => lockedValidation({ ok: false }),
+    });
+    await expectGate(
+      () =>
+        activateGate(admin, {
+          versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+          confirmation: ACTIVATION_CONFIRMATION,
+        }),
+      "VALIDATION_FAILED",
+      admin,
+    );
+  });
+
+  it("rejects non-empty validation errors", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus(),
+      rag_validate_staging_import: () =>
+        lockedValidation({ ok: false, errors: ["STAGING_COUNT_MISMATCH"] }),
+    });
+    await expectGate(
+      () =>
+        activateGate(admin, {
+          versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+          confirmation: ACTIVATION_CONFIRMATION,
+        }),
+      "VALIDATION_FAILED",
+      admin,
+    );
+  });
+
+  it("rejects validation version mismatch", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus(),
+      rag_validate_staging_import: () => lockedValidation({ versionKey: "rag-index-v1-other" }),
+    });
+    await expectGate(
+      () =>
+        activateGate(admin, {
+          versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+          confirmation: ACTIVATION_CONFIRMATION,
+        }),
+      "WRONG_VERSION",
+      admin,
+    );
+  });
+
+  it("rejects validation source mismatch", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus(),
+      rag_validate_staging_import: () =>
+        lockedValidation({ sourceSha: "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" }),
+    });
+    await expectGate(
+      () =>
+        activateGate(admin, {
+          versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+          confirmation: ACTIVATION_CONFIRMATION,
+        }),
+      "SOURCE_MISMATCH",
+      admin,
+    );
+  });
+
+  it("rejects existing active version", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () =>
+        lockedCompletedStatus({ currentActiveVersionKey: AUTHORIZED_STAGING_VERSION_KEY }),
+      rag_validate_staging_import: () => lockedValidation({ activeVersionCount: 1 }),
+    });
+    await expectGate(
+      () =>
+        activateGate(admin, {
+          versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+          confirmation: ACTIVATION_CONFIRMATION,
+        }),
+      "ACTIVE_VERSION_EXISTS",
+      admin,
+    );
+  });
+
+  it("rejects multiple active versions", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus(),
+      rag_validate_staging_import: () => lockedValidation({ activeVersionCount: 2 }),
+    });
+    await expectGate(
+      () =>
+        activateGate(admin, {
+          versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+          confirmation: ACTIVATION_CONFIRMATION,
+        }),
+      "ACTIVE_VERSION_COUNT_INVALID",
+      admin,
+    );
+  });
+
+  it("rejects malformed activation RPC response", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus(),
+      rag_validate_staging_import: () => lockedValidation(),
+      activate_rag_index_version: () => ({ ok: true, version_key: AUTHORIZED_STAGING_VERSION_KEY }),
+    });
+    await expect(
+      activateGate(admin, {
+        versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+        confirmation: ACTIVATION_CONFIRMATION,
+      }),
+    ).rejects.toMatchObject({ code: "MALFORMED_RPC_RESPONSE" });
+  });
+
+  it("succeeds for exact locked state and calls activate exactly once", async () => {
+    let activateArgs: Record<string, unknown> | undefined;
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus(),
+      rag_validate_staging_import: () => lockedValidation(),
+      activate_rag_index_version: (args) => {
+        activateArgs = args;
+        return {
+          ok: true,
+          version_key: AUTHORIZED_STAGING_VERSION_KEY,
+          activated_chunks: AUTHORIZED_CHUNK_COUNT,
+        };
+      },
+    });
+
+    const evidence = await activateGate(admin, {
+      versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+      confirmation: ACTIVATION_CONFIRMATION,
+    });
+
+    expect(evidence).toEqual({
+      ok: true,
+      activated: true,
+      versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+      executionId: AUTHORIZED_EXECUTION_ID,
+      sourceSha: AUTHORIZED_SOURCE_SHA,
+      activatedChunks: AUTHORIZED_CHUNK_COUNT,
+      activeVersionCountAfter: 1,
+    });
+    const activateCalls = admin.rpc.mock.calls.filter((c) => c[0] === "activate_rag_index_version");
+    expect(activateCalls).toHaveLength(1);
+    expect(activateArgs).toEqual({ p_version_key: AUTHORIZED_STAGING_VERSION_KEY });
+    expect(admin.rpc.mock.calls.some((c) => c[0] === "rag_initialize_or_resume_import")).toBe(
+      false,
+    );
+    expect(admin.rpc.mock.calls.some((c) => c[0] === "rag_claim_next_import_batch")).toBe(false);
+    const json = JSON.stringify(evidence);
+    expect(json).not.toContain("SERVICE_ROLE");
+    expect(json).not.toContain("sk-");
+    expect(json).not.toContain("displayText");
+    expect(json).not.toContain("embedding");
+  });
+
+  it("completed importer cannot create another mocked provider request", async () => {
+    let providerCalls = 0;
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus(),
+      rag_claim_next_import_batch: () => {
+        throw new Error("SHOULD_NOT_CLAIM");
+      },
+    });
+    await expect(
+      executeNextImportBatch({
+        admin,
+        embed: async () => {
+          providerCalls += 1;
+          return { vectors: [] };
+        },
+      }),
+    ).rejects.toMatchObject({ code: "SESSION_ALREADY_COMPLETED" });
+    expect(providerCalls).toBe(0);
+    expect(admin.rpc.mock.calls.some((c) => c[0] === "rag_claim_next_import_batch")).toBe(false);
+  });
+
+  it("assertImportMutationAllowed blocks completed sessions", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus(),
+    });
+    await expect(assertImportMutationAllowed(admin)).rejects.toBeInstanceOf(LifecycleGateError);
+  });
+
+  it("activation path makes zero embedding-provider requests", async () => {
+    const providerCalls = 0;
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus(),
+      rag_validate_staging_import: () => lockedValidation(),
+      activate_rag_index_version: () => ({
+        ok: true,
+        version_key: AUTHORIZED_STAGING_VERSION_KEY,
+        activated_chunks: AUTHORIZED_CHUNK_COUNT,
+      }),
+    });
+    await activateGate(admin, {
+      versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+      confirmation: ACTIVATION_CONFIRMATION,
+    });
+    expect(providerCalls).toBe(0);
+  });
+});
+
+describe("first-activation rollback wrapper (mocked)", () => {
+  it("rollback unavailable before activation (zero active)", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () => lockedCompletedStatus({ currentActiveVersionKey: null }),
+      rag_validate_staging_import: () => lockedValidation({ activeVersionCount: 0 }),
+    });
+    await expect(
+      rollbackGate(admin, {
+        versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+        confirmation: ROLLBACK_CONFIRMATION,
+      }),
+    ).rejects.toMatchObject({ code: "ROLLBACK_UNAVAILABLE" });
+    expect(admin.rpc.mock.calls.some((c) => c[0] === "rag_deactivate_first_active_version")).toBe(
+      false,
+    );
+  });
+
+  it("rejects wrong rollback confirmation", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () =>
+        lockedCompletedStatus({ currentActiveVersionKey: AUTHORIZED_STAGING_VERSION_KEY }),
+    });
+    await expect(
+      rollbackGate(admin, {
+        versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+        confirmation: "rollback_rag_index_v1",
+      }),
+    ).rejects.toMatchObject({ code: "ROLLBACK_CONFIRMATION_MISMATCH" });
+  });
+
+  it("rejects wrong active version", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () =>
+        lockedCompletedStatus({ currentActiveVersionKey: "rag-index-v1-other" }),
+      rag_validate_staging_import: () => lockedValidation({ activeVersionCount: 1 }),
+    });
+    await expect(
+      rollbackGate(admin, {
+        versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+        confirmation: ROLLBACK_CONFIRMATION,
+      }),
+    ).rejects.toMatchObject({ code: "WRONG_VERSION" });
+  });
+
+  it("rejects more than one active version", async () => {
+    const admin = mockAdmin({
+      rag_get_import_status: () =>
+        lockedCompletedStatus({ currentActiveVersionKey: AUTHORIZED_STAGING_VERSION_KEY }),
+      rag_validate_staging_import: () => lockedValidation({ activeVersionCount: 2, ok: false }),
+    });
+    await expect(
+      rollbackGate(admin, {
+        versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+        confirmation: ROLLBACK_CONFIRMATION,
+      }),
+    ).rejects.toMatchObject({ code: "ACTIVE_VERSION_COUNT_INVALID" });
+  });
+
+  it("authorized rollback wrapper uses existing RPC exactly once", async () => {
+    let deactivateArgs: Record<string, unknown> | undefined;
+    const admin = mockAdmin({
+      rag_get_import_status: () =>
+        lockedCompletedStatus({ currentActiveVersionKey: AUTHORIZED_STAGING_VERSION_KEY }),
+      rag_validate_staging_import: () => lockedValidation({ activeVersionCount: 1, ok: false }),
+      rag_deactivate_first_active_version: (args) => {
+        deactivateArgs = args;
+        return { ok: true, versionKey: AUTHORIZED_STAGING_VERSION_KEY, activeVersions: 0 };
+      },
+    });
+    const evidence = await rollbackGate(admin, {
+      versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+      confirmation: ROLLBACK_CONFIRMATION,
+    });
+    expect(evidence).toEqual({
+      ok: true,
+      rolledBack: true,
+      versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+      activeVersions: 0,
+    });
+    const calls = admin.rpc.mock.calls.filter(
+      (c) => c[0] === "rag_deactivate_first_active_version",
+    );
+    expect(calls).toHaveLength(1);
+    expect(deactivateArgs).toEqual({ p_version_key: AUTHORIZED_STAGING_VERSION_KEY });
+  });
+});
+
+describe("client eligibility helpers (static contract)", () => {
+  it("requires exact confirmation values without case/whitespace normalization", () => {
+    expect(ACTIVATION_CONFIRMATION).toBe("ACTIVATE_RAG_INDEX_V1");
+    expect(ROLLBACK_CONFIRMATION).toBe("ROLLBACK_RAG_INDEX_V1");
+    expect(ACTIVATION_CONFIRMATION.toLowerCase()).not.toBe(ACTIVATION_CONFIRMATION);
+    expect(` ${ACTIVATION_CONFIRMATION} `).not.toBe(ACTIVATION_CONFIRMATION);
   });
 });

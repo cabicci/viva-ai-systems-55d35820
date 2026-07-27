@@ -1,6 +1,7 @@
 /**
  * Lovable-native one-batch-per-invocation RAG import executor.
- * Server-only. No activation/rollback. No browser provenance authority.
+ * Server-only. No browser provenance authority.
+ * First activation / reversal: CR-RAG-PRODUCTION-FIRST-ACTIVATION-20260727-01
  */
 import type { PackageManifest, RagChunkRecord } from "../types";
 import {
@@ -20,6 +21,16 @@ import {
   type SanitizedErrorCode,
 } from "./contracts";
 import { loadLockedCorpus } from "./corpus.server";
+import {
+  ACTIVATION_CONFIRMATION,
+  AUTHORIZED_BATCH_COUNT,
+  AUTHORIZED_CHUNK_COUNT,
+  AUTHORIZED_EXECUTION_ID,
+  AUTHORIZED_MAX_PROVIDER_ATTEMPTS,
+  AUTHORIZED_SOURCE_SHA,
+  AUTHORIZED_STAGING_VERSION_KEY,
+  ROLLBACK_CONFIRMATION,
+} from "./public-ids";
 
 type AdminClient = {
   rpc: (
@@ -34,9 +45,43 @@ export interface EmbeddingFetchResult {
 
 export type EmbeddingFetcher = (texts: string[]) => Promise<EmbeddingFetchResult>;
 
-function sanitizeCode(raw: string | undefined, fallback: SanitizedErrorCode): SanitizedErrorCode {
+export type LifecycleGateErrorCode =
+  | SanitizedErrorCode
+  | "WRONG_VERSION"
+  | "WRONG_CONFIRMATION"
+  | "EXECUTION_MISMATCH"
+  | "SOURCE_MISMATCH"
+  | "SESSION_NOT_COMPLETED"
+  | "SESSION_ALREADY_COMPLETED"
+  | "BATCH_COUNT_MISMATCH"
+  | "CHUNK_COUNT_MISMATCH"
+  | "STAGING_COUNT_MISMATCH"
+  | "PROVIDER_ATTEMPT_CEILING_EXCEEDED"
+  | "LAST_ERROR_PRESENT"
+  | "VALIDATION_FAILED"
+  | "ACTIVE_VERSION_EXISTS"
+  | "ACTIVE_VERSION_COUNT_INVALID"
+  | "ACTIVATION_RPC_FAILURE"
+  | "ROLLBACK_UNAVAILABLE"
+  | "ROLLBACK_CONFIRMATION_MISMATCH"
+  | "ROLLBACK_RPC_FAILURE"
+  | "MALFORMED_RPC_RESPONSE";
+
+export class LifecycleGateError extends Error {
+  readonly code: LifecycleGateErrorCode;
+  constructor(code: LifecycleGateErrorCode) {
+    super(code);
+    this.name = "LifecycleGateError";
+    this.code = code;
+  }
+}
+
+function sanitizeCode(
+  raw: string | undefined,
+  fallback: SanitizedErrorCode | LifecycleGateErrorCode,
+): LifecycleGateErrorCode {
   const code = (raw ?? fallback).split(":")[0]?.toUpperCase() ?? fallback;
-  const allowed: SanitizedErrorCode[] = [
+  const allowed: LifecycleGateErrorCode[] = [
     "DIGEST_MISMATCH",
     "CORPUS_ADMISSION_FAILED",
     "MISSING_OPENAI_KEY",
@@ -49,8 +94,52 @@ function sanitizeCode(raw: string | undefined, fallback: SanitizedErrorCode): Sa
     "FORBIDDEN",
     "UNAUTHORIZED",
     "INTERNAL",
+    "WRONG_VERSION",
+    "WRONG_CONFIRMATION",
+    "EXECUTION_MISMATCH",
+    "SOURCE_MISMATCH",
+    "SESSION_NOT_COMPLETED",
+    "SESSION_ALREADY_COMPLETED",
+    "BATCH_COUNT_MISMATCH",
+    "CHUNK_COUNT_MISMATCH",
+    "STAGING_COUNT_MISMATCH",
+    "PROVIDER_ATTEMPT_CEILING_EXCEEDED",
+    "LAST_ERROR_PRESENT",
+    "VALIDATION_FAILED",
+    "ACTIVE_VERSION_EXISTS",
+    "ACTIVE_VERSION_COUNT_INVALID",
+    "ACTIVATION_RPC_FAILURE",
+    "ROLLBACK_UNAVAILABLE",
+    "ROLLBACK_CONFIRMATION_MISMATCH",
+    "ROLLBACK_RPC_FAILURE",
+    "MALFORMED_RPC_RESPONSE",
   ];
-  return (allowed.includes(code as SanitizedErrorCode) ? code : fallback) as SanitizedErrorCode;
+  return (
+    allowed.includes(code as LifecycleGateErrorCode) ? code : fallback
+  ) as LifecycleGateErrorCode;
+}
+
+function asRecord(value: unknown): Record<string, unknown> | null {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+  return value as Record<string, unknown>;
+}
+
+function readString(value: unknown): string | null {
+  return typeof value === "string" ? value : null;
+}
+
+function readNumber(value: unknown): number | null {
+  return typeof value === "number" && Number.isFinite(value) ? value : null;
+}
+
+function readBoolean(value: unknown): boolean | null {
+  return typeof value === "boolean" ? value : null;
+}
+
+function readErrorArray(value: unknown): string[] | null {
+  if (!Array.isArray(value)) return null;
+  if (!value.every((item) => typeof item === "string")) return null;
+  return value as string[];
 }
 
 function lockedCorpusMeta(): RagImportStatusView["lockedCorpus"] {
@@ -215,7 +304,22 @@ export async function getImportStatus(admin: AdminClient): Promise<RagImportStat
   return mapStatusRpc((data ?? null) as Record<string, unknown> | null);
 }
 
+/**
+ * When the locked Production import is already completed, refuse init/batch
+ * so SQL cannot open a second session (init) or attempt another claim.
+ */
+export async function assertImportMutationAllowed(
+  admin: AdminClient,
+): Promise<RagImportStatusView> {
+  const status = await getImportStatus(admin);
+  if (status.sessionState === "completed") {
+    throw new LifecycleGateError("SESSION_ALREADY_COMPLETED");
+  }
+  return status;
+}
+
 export async function initializeOrResumeImport(admin: AdminClient) {
+  await assertImportMutationAllowed(admin);
   await loadLockedCorpus();
   const { data, error } = await admin.rpc("rag_initialize_or_resume_import");
   if (error) throw new Error(sanitizeCode(error.message, "INTERNAL"));
@@ -240,6 +344,7 @@ export async function executeNextImportBatch(options: {
   admin: AdminClient;
   embed?: EmbeddingFetcher;
 }): Promise<Record<string, unknown>> {
+  await assertImportMutationAllowed(options.admin);
   const corpus = await loadLockedCorpus();
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey && !options.embed) {
@@ -314,5 +419,228 @@ export async function executeNextImportBatch(options: {
     executionId: claim.executionId,
     versionKey: claim.versionKey,
     ...(commitRes.data as object),
+  };
+}
+
+export type ActivationEvidence = {
+  ok: true;
+  activated: true;
+  versionKey: typeof AUTHORIZED_STAGING_VERSION_KEY;
+  executionId: typeof AUTHORIZED_EXECUTION_ID;
+  sourceSha: typeof AUTHORIZED_SOURCE_SHA;
+  activatedChunks: number;
+  activeVersionCountAfter: number;
+};
+
+export type RollbackEvidence = {
+  ok: true;
+  rolledBack: true;
+  versionKey: typeof AUTHORIZED_STAGING_VERSION_KEY;
+  activeVersions: number;
+};
+
+function assertExactActivationInput(input: { versionKey: string; confirmation: string }) {
+  if (input.versionKey !== AUTHORIZED_STAGING_VERSION_KEY) {
+    throw new LifecycleGateError("WRONG_VERSION");
+  }
+  if (input.confirmation !== ACTIVATION_CONFIRMATION) {
+    throw new LifecycleGateError("WRONG_CONFIRMATION");
+  }
+}
+
+function assertExactRollbackInput(input: { versionKey: string; confirmation: string }) {
+  if (input.versionKey !== AUTHORIZED_STAGING_VERSION_KEY) {
+    throw new LifecycleGateError("WRONG_VERSION");
+  }
+  if (input.confirmation !== ROLLBACK_CONFIRMATION) {
+    throw new LifecycleGateError("ROLLBACK_CONFIRMATION_MISMATCH");
+  }
+}
+
+function assertPreActivationStatus(status: RagImportStatusView) {
+  if (status.executionId !== AUTHORIZED_EXECUTION_ID) {
+    throw new LifecycleGateError("EXECUTION_MISMATCH");
+  }
+  if (status.stagingVersionKey !== AUTHORIZED_STAGING_VERSION_KEY) {
+    throw new LifecycleGateError("WRONG_VERSION");
+  }
+  if (status.lockedCorpus.sourceSha !== AUTHORIZED_SOURCE_SHA) {
+    throw new LifecycleGateError("SOURCE_MISMATCH");
+  }
+  if (status.sessionState !== "completed") {
+    throw new LifecycleGateError("SESSION_NOT_COMPLETED");
+  }
+  if (status.completedBatchCount !== AUTHORIZED_BATCH_COUNT) {
+    throw new LifecycleGateError("BATCH_COUNT_MISMATCH");
+  }
+  if (status.plannedBatchCount !== AUTHORIZED_BATCH_COUNT) {
+    throw new LifecycleGateError("BATCH_COUNT_MISMATCH");
+  }
+  if (status.acceptedChunkCount !== AUTHORIZED_CHUNK_COUNT) {
+    throw new LifecycleGateError("CHUNK_COUNT_MISMATCH");
+  }
+  if (status.providerAttemptCount < 0) {
+    throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
+  }
+  if (status.providerAttemptCount > AUTHORIZED_MAX_PROVIDER_ATTEMPTS) {
+    throw new LifecycleGateError("PROVIDER_ATTEMPT_CEILING_EXCEEDED");
+  }
+  if (status.lastErrorCode !== null) {
+    throw new LifecycleGateError("LAST_ERROR_PRESENT");
+  }
+  if (status.currentActiveVersionKey !== null) {
+    throw new LifecycleGateError("ACTIVE_VERSION_EXISTS");
+  }
+}
+
+function assertPreActivationValidation(validation: Record<string, unknown>) {
+  const ok = readBoolean(validation.ok);
+  const errors = readErrorArray(validation.errors);
+  if (ok !== true) throw new LifecycleGateError("VALIDATION_FAILED");
+  if (errors === null) throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
+  if (errors.length !== 0) throw new LifecycleGateError("VALIDATION_FAILED");
+
+  const versionKey = readString(validation.versionKey);
+  if (versionKey !== AUTHORIZED_STAGING_VERSION_KEY) {
+    throw new LifecycleGateError("WRONG_VERSION");
+  }
+  const sourceSha = readString(validation.sourceSha);
+  if (sourceSha !== AUTHORIZED_SOURCE_SHA) {
+    throw new LifecycleGateError("SOURCE_MISMATCH");
+  }
+  const stagingChunkCount = readNumber(validation.stagingChunkCount);
+  if (stagingChunkCount !== AUTHORIZED_CHUNK_COUNT) {
+    throw new LifecycleGateError("STAGING_COUNT_MISMATCH");
+  }
+  const activeVersionCount = readNumber(validation.activeVersionCount);
+  if (activeVersionCount === null) {
+    throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
+  }
+  if (activeVersionCount !== 0) {
+    throw new LifecycleGateError(
+      activeVersionCount > 1 ? "ACTIVE_VERSION_COUNT_INVALID" : "ACTIVE_VERSION_EXISTS",
+    );
+  }
+}
+
+/**
+ * Fail-closed first Production activation. Calls activate_rag_index_version exactly once
+ * only after every trusted precheck passes.
+ */
+export async function activateAuthorizedRagIndexVersion(
+  admin: AdminClient,
+  input: { versionKey: string; confirmation: string },
+): Promise<ActivationEvidence> {
+  assertExactActivationInput(input);
+
+  const status = await getImportStatus(admin);
+  assertPreActivationStatus(status);
+
+  const validationRaw = await validateStagingImport(admin);
+  const validation = asRecord(validationRaw);
+  if (!validation) throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
+  assertPreActivationValidation(validation);
+
+  // Re-check active state immediately before the single activation RPC.
+  const statusAgain = await getImportStatus(admin);
+  if (statusAgain.currentActiveVersionKey !== null) {
+    throw new LifecycleGateError("ACTIVE_VERSION_EXISTS");
+  }
+  if (statusAgain.executionId !== AUTHORIZED_EXECUTION_ID) {
+    throw new LifecycleGateError("EXECUTION_MISMATCH");
+  }
+  if (statusAgain.stagingVersionKey !== AUTHORIZED_STAGING_VERSION_KEY) {
+    throw new LifecycleGateError("WRONG_VERSION");
+  }
+
+  const rpc = await admin.rpc("activate_rag_index_version", {
+    p_version_key: AUTHORIZED_STAGING_VERSION_KEY,
+  });
+  if (rpc.error) {
+    throw new LifecycleGateError("ACTIVATION_RPC_FAILURE");
+  }
+  const result = asRecord(rpc.data);
+  if (!result) throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
+  if (result.ok !== true) throw new LifecycleGateError("ACTIVATION_RPC_FAILURE");
+  if (readString(result.version_key) !== AUTHORIZED_STAGING_VERSION_KEY) {
+    throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
+  }
+  const activatedChunks = readNumber(result.activated_chunks);
+  if (activatedChunks === null || activatedChunks !== AUTHORIZED_CHUNK_COUNT) {
+    throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
+  }
+
+  return {
+    ok: true,
+    activated: true,
+    versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+    executionId: AUTHORIZED_EXECUTION_ID,
+    sourceSha: AUTHORIZED_SOURCE_SHA,
+    activatedChunks,
+    activeVersionCountAfter: 1,
+  };
+}
+
+/**
+ * Guarded first-activation reversal wrapper. Does not run unless the exact
+ * locked version is the sole active version. Uses rag_deactivate_first_active_version(text).
+ *
+ * Staging validation may report ok=false after activation (chunks are no longer staging);
+ * activeVersionCount from that response is still trusted for the sole-active gate.
+ */
+export async function rollbackAuthorizedRagIndexVersion(
+  admin: AdminClient,
+  input: { versionKey: string; confirmation: string },
+): Promise<RollbackEvidence> {
+  assertExactRollbackInput(input);
+
+  const status = await getImportStatus(admin);
+  if (status.currentActiveVersionKey === null) {
+    throw new LifecycleGateError("ROLLBACK_UNAVAILABLE");
+  }
+  if (status.currentActiveVersionKey !== AUTHORIZED_STAGING_VERSION_KEY) {
+    throw new LifecycleGateError("WRONG_VERSION");
+  }
+
+  const validationRaw = await validateStagingImport(admin);
+  const validation = asRecord(validationRaw);
+  if (!validation) throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
+  const activeVersionCount = readNumber(validation.activeVersionCount);
+  if (activeVersionCount === null) {
+    throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
+  }
+  if (activeVersionCount === 0) {
+    throw new LifecycleGateError("ROLLBACK_UNAVAILABLE");
+  }
+  if (activeVersionCount !== 1) {
+    throw new LifecycleGateError("ACTIVE_VERSION_COUNT_INVALID");
+  }
+
+  const rpc = await admin.rpc("rag_deactivate_first_active_version", {
+    p_version_key: AUTHORIZED_STAGING_VERSION_KEY,
+  });
+  if (rpc.error) {
+    const msg = (rpc.error.message ?? "").toUpperCase();
+    if (msg.includes("VERSION_NOT_ACTIVE") || msg.includes("PRIOR_SUPERSEDED_EXISTS")) {
+      throw new LifecycleGateError("ROLLBACK_UNAVAILABLE");
+    }
+    throw new LifecycleGateError("ROLLBACK_RPC_FAILURE");
+  }
+  const result = asRecord(rpc.data);
+  if (!result) throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
+  if (result.ok !== true) throw new LifecycleGateError("ROLLBACK_RPC_FAILURE");
+  if (readString(result.versionKey) !== AUTHORIZED_STAGING_VERSION_KEY) {
+    throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
+  }
+  const activeVersions = readNumber(result.activeVersions);
+  if (activeVersions !== 0) {
+    throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
+  }
+
+  return {
+    ok: true,
+    rolledBack: true,
+    versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+    activeVersions: 0,
   };
 }
