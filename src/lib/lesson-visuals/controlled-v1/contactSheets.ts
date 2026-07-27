@@ -89,7 +89,12 @@ export function writeContactSheet(mode: RunnerMode, receipts: CellReceipt[]): st
       "utf8",
     );
   }
-  const fourLocaleLessons = ["intro-m1-l4-ai-can-cannot", "builder-m6-l3-first-prompt-to-lovable"];
+  const fourLocaleLessons = [
+    "intro-m1-l4-ai-can-cannot",
+    "builder-m6-l3-first-prompt-to-lovable",
+    "intro-m1-l3-setup-your-ai",
+    "builder-m5-l2-frontend",
+  ];
   for (const fourLocaleLesson of fourLocaleLessons) {
     const four = locales
       .map((locale) => receipts.find((r) => r.lessonId === fourLocaleLesson && r.locale === locale))

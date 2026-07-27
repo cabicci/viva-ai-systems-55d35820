@@ -148,24 +148,32 @@ describe("controlled-v1 PILOT_MANIFEST after Method B→C", () => {
 });
 
 describe("controlled-v1 UNRESOLVED_LEDGER", () => {
-  it("lists 28 Method A + 12 B→C replacement Method C cells (40 total)", () => {
+  it("lists 28 Method A + 8 remaining B→C replacement Method C cells (36 total)", () => {
     const manifest = buildProductionManifest(loadClassification100({ useCache: false }));
     const ledger = buildUnresolvedLedger(manifest);
-    expect(ledger.entries.length).toBe(40);
+    expect(ledger.entries.length).toBe(36);
 
     const methodA = ledger.entries.filter((e) => e.route === "MASAARAT_SCREENSHOT");
     const methodB = ledger.entries.filter((e) => e.route === "AUTHORIZED_EXTERNAL_SCREENSHOT");
     const replacementC = ledger.entries.filter((e) => e.route === "INSTRUCTIONAL_COMPOSITION");
     expect(methodA).toHaveLength(28);
     expect(methodB).toHaveLength(0);
-    expect(replacementC).toHaveLength(12);
+    expect(replacementC).toHaveLength(8);
 
     const replacementIds = new Set(replacementC.map((e) => e.cellId));
     for (const id of METHOD_B_TO_C_REPLACEMENT_CELL_IDS) {
-      expect(replacementIds.has(id)).toBe(true);
+      if (id.startsWith("builder-m6-l3-first-prompt-to-lovable__")) {
+        expect(replacementIds.has(id)).toBe(false);
+      } else {
+        expect(replacementIds.has(id)).toBe(true);
+      }
     }
     for (const lessonId of METHOD_B_TO_C_REPLACEMENT_LESSON_IDS) {
-      expect(ledger.entries.some((e) => e.lessonId === lessonId)).toBe(true);
+      if (lessonId === "builder-m6-l3-first-prompt-to-lovable") {
+        expect(ledger.entries.some((e) => e.lessonId === lessonId)).toBe(false);
+      } else {
+        expect(ledger.entries.some((e) => e.lessonId === lessonId)).toBe(true);
+      }
     }
     expect(ledger.entries.some((e) => e.lessonId === PILOT_MASAARAT_LESSON_ID)).toBe(true);
     expect(ledger.entries.every((e) => e.reason.length > 0)).toBe(true);

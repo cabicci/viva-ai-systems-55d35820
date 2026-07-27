@@ -23,8 +23,12 @@ import {
   METHOD_C_CANONICAL_SOURCE_ARTIFACT_DIGEST,
   METHOD_C_CANONICAL_SOURCE_RUN_ID,
   METHOD_C_REMAINING_CONFIRM_TOKEN,
+  METHOD_C_REMAINING_EIGHT_AUTH_ID,
+  METHOD_C_REMAINING_EIGHT_CONFIRM_TOKEN,
+  METHOD_C_REMAINING_EIGHT_EXPECTED_TOTAL,
 } from "./constants";
 import { selectMethodBToCFourCellPilot } from "./methodBToCFourCellPilot";
+import { selectMethodBToCRemainingEight } from "./methodBToCRemainingEight";
 import { selectMethodCRemainingCells } from "./methodCRemaining";
 
 import {
@@ -148,15 +152,20 @@ export function runCell(cell: ManifestCell, mode: RunnerMode): CellReceipt {
     copyFileSync(result.htmlPath, join(cellDir, "final-review.html"));
 
     const artifactSha256 = sha256HexOfBuffer(result.png);
-    const isFourCellPilot = mode === "method-c-b6l3-four-pilot";
-    const status = isFourCellPilot ? ("PENDING" as const) : ("ACCEPTED" as const);
-    const reason = isFourCellPilot ? "PENDING_HUMAN_REVIEW" : null;
+    const isPendingPilot =
+      mode === "method-c-b6l3-four-pilot" || mode === "method-c-b-to-c-remaining-eight";
+    const status = isPendingPilot ? ("PENDING" as const) : ("ACCEPTED" as const);
+    const reason = isPendingPilot ? "PENDING_HUMAN_REVIEW" : null;
 
-    if (isFourCellPilot) {
+    if (isPendingPilot) {
       mkdirSync(ARTIFACTS_PROVENANCE_DIR, { recursive: true });
+      const authId =
+        mode === "method-c-b-to-c-remaining-eight"
+          ? METHOD_C_REMAINING_EIGHT_AUTH_ID
+          : METHOD_C_B6L3_FOUR_PILOT_AUTH_ID;
       writeJson(join(ARTIFACTS_PROVENANCE_DIR, `${cell.cellId}.provenance.json`), {
         schemaVersion: "controlled-v1-pilot-cell-provenance/1",
-        authorizationId: METHOD_C_B6L3_FOUR_PILOT_AUTH_ID,
+        authorizationId: authId,
         cellId: cell.cellId,
         lessonId: cell.lessonId,
         locale: cell.locale,
@@ -664,6 +673,177 @@ export function runMethodBToCFourCellPilot(confirmToken: string | undefined): Ru
       ...(pending.length !== METHOD_C_B6L3_FOUR_PILOT_EXPECTED_TOTAL
         ? [
             `expected ${METHOD_C_B6L3_FOUR_PILOT_EXPECTED_TOTAL} PENDING receipts, got ${pending.length}`,
+          ]
+        : []),
+      ...(!telemetryOk
+        ? [
+            `telemetry gate failed: renderer=${renderTelemetry.rendererCalls} paid=${renderTelemetry.paidProviderCalls}`,
+          ]
+        : []),
+      ...failed.map((r) => `${r.cellId}: ${r.reason ?? r.status}`),
+    ],
+  };
+}
+
+/**
+ * Exact eight-cell remaining Method B→C replacements:
+ * intro-m1-l3-setup-your-ai × 4 + builder-m5-l2-frontend × 4.
+ * Receipts remain PENDING / PENDING_HUMAN_REVIEW.
+ */
+export function runMethodBToCRemainingEight(confirmToken: string | undefined): RunResult {
+  if (confirmToken !== METHOD_C_REMAINING_EIGHT_CONFIRM_TOKEN) {
+    const msg = `method-c-b-to-c-remaining-eight requires confirm_full_400 === "${METHOD_C_REMAINING_EIGHT_CONFIRM_TOKEN}" exactly; received ${JSON.stringify(confirmToken)}`;
+    return {
+      mode: "method-c-b-to-c-remaining-eight",
+      ok: false,
+      summary: msg,
+      receipts: [],
+      errors: [msg],
+    };
+  }
+
+  resetRenderTelemetry();
+  const classification = loadClassification100();
+  const manifest = buildProductionManifest(classification);
+  const manifestCheck = validateProductionManifest(manifest);
+  if (!manifestCheck.ok) {
+    return {
+      mode: "method-c-b-to-c-remaining-eight",
+      ok: false,
+      summary: "manifest validation failed; refusing remaining-eight",
+      receipts: [],
+      errors: manifestCheck.errors,
+    };
+  }
+
+  const selection = selectMethodBToCRemainingEight(manifest);
+  writeJson(`${ARTIFACTS_REPORTS_DIR}/method-c-b-to-c-remaining-eight-selection.json`, {
+    generatedAt: new Date().toISOString(),
+    authorizationId: METHOD_C_REMAINING_EIGHT_AUTH_ID,
+    ok: selection.ok,
+    counts: selection.counts,
+    cellIds: selection.cells.map((c) => c.cellId),
+    errors: selection.errors,
+  });
+
+  if (!selection.ok) {
+    return {
+      mode: "method-c-b-to-c-remaining-eight",
+      ok: false,
+      summary: "method-c-b-to-c-remaining-eight selection failed closed",
+      receipts: [],
+      errors: selection.errors,
+    };
+  }
+
+  const localeErrors: string[] = [];
+  for (const cell of selection.cells) {
+    const pkg = resolveLocalePackage(cell.lessonId, cell.locale, cell.title);
+    if (!pkg.exists) {
+      localeErrors.push(
+        `missing locale package for ${cell.cellId}: expected ${pkg.path} (no cross-locale fallback)`,
+      );
+    }
+    if (pkg.locale !== cell.locale) {
+      localeErrors.push(`locale package mismatch for ${cell.cellId}`);
+    }
+  }
+  if (localeErrors.length > 0) {
+    return {
+      mode: "method-c-b-to-c-remaining-eight",
+      ok: false,
+      summary: "method-c-b-to-c-remaining-eight locale isolation failed closed",
+      receipts: [],
+      errors: localeErrors,
+    };
+  }
+
+  if (process.env.CONTROLLED_V1_ZERO_RENDER === "1") {
+    writeRunReport("method-c-b-to-c-remaining-eight", {
+      generatedAt: new Date().toISOString(),
+      confirmToken,
+      drySelectOnly: true,
+      authorizationId: METHOD_C_REMAINING_EIGHT_AUTH_ID,
+      counts: selection.counts,
+      selectedCellIds: selection.cells.map((c) => c.cellId),
+    });
+    return {
+      mode: "method-c-b-to-c-remaining-eight",
+      ok: true,
+      summary: `method-c-b-to-c-remaining-eight dry-select: ${selection.cells.length} cells; Method A 0; accepted four-cell pilot 0; accepted Method C 0; no render`,
+      receipts: [],
+      errors: [],
+    };
+  }
+
+  const receipts: CellReceipt[] = [];
+  for (const cell of selection.cells) {
+    if (cell.route !== "INSTRUCTIONAL_COMPOSITION" || cell.category !== "C") {
+      return {
+        mode: "method-c-b-to-c-remaining-eight",
+        ok: false,
+        summary: `refusing non-Method-C cell ${cell.cellId}`,
+        receipts,
+        errors: [`non-Method-C cell reached renderer: ${cell.cellId}`],
+      };
+    }
+    const receipt = runCell(cell, "method-c-b-to-c-remaining-eight");
+    writeReceipt(receipt);
+    receipts.push(receipt);
+  }
+
+  const counts = receiptCounts(receipts);
+  const failed = receipts.filter(
+    (r) => r.status === "FAILED" || r.status === "BLOCKED_UNRESOLVED_SPEC",
+  );
+  const pending = receipts.filter(
+    (r) => r.status === "PENDING" && r.reason === "PENDING_HUMAN_REVIEW",
+  );
+  const accepted = receipts.filter((r) => r.status === "ACCEPTED");
+
+  writeJson(`${ARTIFACTS_RECEIPTS_DIR}/method-c-b-to-c-remaining-eight/_summary.json`, {
+    generatedAt: new Date().toISOString(),
+    authorizationId: METHOD_C_REMAINING_EIGHT_AUTH_ID,
+    counts,
+    selection: selection.counts,
+    pendingHumanReview: pending.map((r) => r.cellId),
+    receipts,
+    renderTelemetry: { ...renderTelemetry },
+  });
+  writeRunReport("method-c-b-to-c-remaining-eight", {
+    generatedAt: new Date().toISOString(),
+    confirmToken,
+    authorizationId: METHOD_C_REMAINING_EIGHT_AUTH_ID,
+    drySelectOnly: false,
+    counts,
+    selectionCounts: selection.counts,
+    pendingCount: pending.length,
+    failedCount: failed.length,
+    acceptedCount: accepted.length,
+    renderTelemetry: { ...renderTelemetry },
+  });
+
+  const telemetryOk =
+    renderTelemetry.paidProviderCalls === 0 && renderTelemetry.rendererCalls === receipts.length;
+  const ok =
+    receipts.length === METHOD_C_REMAINING_EIGHT_EXPECTED_TOTAL &&
+    pending.length === METHOD_C_REMAINING_EIGHT_EXPECTED_TOTAL &&
+    failed.length === 0 &&
+    accepted.length === 0 &&
+    telemetryOk;
+
+  return {
+    mode: "method-c-b-to-c-remaining-eight",
+    ok,
+    summary: `method-c-b-to-c-remaining-eight: ${receipts.length} cells PENDING_HUMAN_REVIEW; Method A 0; accepted four-cell pilot 0; accepted Method C 0; providerCalls=0`,
+    receipts,
+    errors: [
+      ...(accepted.length > 0
+        ? [`remaining-eight must not mark cells ACCEPTED; got ${accepted.length}`]
+        : []),
+      ...(pending.length !== METHOD_C_REMAINING_EIGHT_EXPECTED_TOTAL
+        ? [
+            `expected ${METHOD_C_REMAINING_EIGHT_EXPECTED_TOTAL} PENDING receipts, got ${pending.length}`,
           ]
         : []),
       ...(!telemetryOk

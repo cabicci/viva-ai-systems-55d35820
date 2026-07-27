@@ -168,6 +168,160 @@ function extractTeachingCopy(
       };
     }
 
+    // Start-with-AI instructional flow (original — no vendor chat UI).
+    if (lessonId === "intro-m1-l3-setup-your-ai") {
+      if (locale === "en") {
+        return {
+          title: "Start your first AI chat safely",
+          subtitle: "Five steps: choose → open → write → review → improve",
+          leftLabel: "Get started",
+          leftBody: "Pick an assistant, open a fresh conversation, write a simple first prompt",
+          leftItems: [
+            "1. Choose an AI assistant",
+            "2. Open a new conversation",
+            "3. Write a simple first prompt",
+          ],
+          rightLabel: "Stay in control",
+          rightBody: "Read the answer carefully, then improve the prompt and continue",
+          rightItems: [
+            "4. Review the answer",
+            "5. Improve the prompt and continue",
+            "Product names appear only as ordinary lesson context",
+          ],
+          footer: "Original instructional flow — no ChatGPT/Gemini/Claude interface imitation",
+          caption: "Choose → open → prompt → review → improve",
+        };
+      }
+      if (locale === "ar-MSA") {
+        return {
+          title: "ابدأ أول محادثة AI بأمان",
+          subtitle: "خمس خطوات: اختر → افتح → اكتب → راجع → حسّن",
+          leftLabel: "ابدأ",
+          leftBody: "اختر مساعدًا، افتح محادثة جديدة، واكتب أول Prompt بسيط",
+          leftItems: ["١. اختر مساعد AI", "٢. افتح محادثة جديدة", "٣. اكتب أول Prompt بسيط"],
+          rightLabel: "ابقَ مسيطرًا",
+          rightBody: "اقرأ الرد بعناية ثم حسّن الـ Prompt وتابع",
+          rightItems: [
+            "٤. راجع الإجابة",
+            "٥. حسّن الـ Prompt وتابع",
+            "أسماء المنتجات تظهر كنص سياق تعليمي فقط",
+          ],
+          footer: "تدفّق تعليمي أصلي — بلا محاكاة لواجهة ChatGPT/Gemini/Claude",
+          caption: "اختر → افتح → Prompt → راجع → حسّن",
+        };
+      }
+      if (locale === "ar-Gulf") {
+        return {
+          title: "ابدأ أول محادثة AI بأمان",
+          subtitle: "خمس خطوات: اختر → افتح → اكتب → راجع → حسّن",
+          leftLabel: "ابدأ",
+          leftBody: "اختر مساعد، افتح محادثة جديدة، واكتب أول برومبت بسيط",
+          leftItems: ["١. اختر مساعد AI", "٢. افتح محادثة جديدة", "٣. اكتب أول برومبت بسيط"],
+          rightLabel: "خلّك مسيطر",
+          rightBody: "اقرأ الرد بتمعن بعدين حسّن البرومبت وكمل",
+          rightItems: [
+            "٤. راجع الإجابة",
+            "٥. حسّن البرومبت وكمل",
+            "أسماء المنتجات تظهر كنص سياق تعليمي بس",
+          ],
+          footer: "تدفّق تعليمي أصلي — بدون محاكاة لواجهة ChatGPT/Gemini/Claude",
+          caption: "اختر → افتح → برومبت → راجع → حسّن",
+        };
+      }
+      // ar-EG
+      return {
+        title: "ابدأ أول محادثة AI بأمان",
+        subtitle: "خمس خطوات: اختار → افتح → اكتب → راجع → حسّن",
+        leftLabel: "ابدأ",
+        leftBody: "اختار مساعد، افتح محادثة جديدة، واكتب أول Prompt بسيط",
+        leftItems: ["١. اختار مساعد AI", "٢. افتح محادثة جديدة", "٣. اكتب أول Prompt بسيط"],
+        rightLabel: "فضّل مسيطر",
+        rightBody: "اقرأ الرد كويس وبعدين حسّن الـ Prompt وكمّل",
+        rightItems: [
+          "٤. راجع الإجابة",
+          "٥. حسّن الـ Prompt وكمّل",
+          "أسماء المنتجات تظهر كنص سياق تعليمي بس",
+        ],
+        footer: "تدفّق تعليمي أصلي — من غير محاكاة لواجهة ChatGPT/Gemini/Claude",
+        caption: "اختار → افتح → Prompt → راجع → حسّن",
+      };
+    }
+
+    // Frontend layer instructional flow (original — no DevTools / branded UI).
+    if (lessonId === "builder-m5-l2-frontend") {
+      if (locale === "en") {
+        return {
+          title: "Frontend = what the user sees and triggers",
+          subtitle: "Five steps: action → component → state → request → result",
+          leftLabel: "User side",
+          leftBody: "A click or input hits a visible component and updates application state",
+          leftItems: ["1. User action", "2. Interface component", "3. Application state"],
+          rightLabel: "Visible outcome",
+          rightBody: "State drives a request or data flow, then the UI shows the updated result",
+          rightItems: [
+            "4. Request or data flow",
+            "5. Updated visible result",
+            "Conceptual layers only — not a browser DevTools shot",
+          ],
+          footer: "Original instructional diagram — no Chrome DevTools or vendor UI imitation",
+          caption: "Action → component → state → flow → visible result",
+        };
+      }
+      if (locale === "ar-MSA") {
+        return {
+          title: "الـ Frontend = ما يراه المستخدم ويُفعّله",
+          subtitle: "خمس خطوات: فعل → مكوّن → حالة → طلب → نتيجة",
+          leftLabel: "جانب المستخدم",
+          leftBody: "نقرة أو إدخال يصل مكوّنًا ظاهرًا ويحدّث حالة التطبيق",
+          leftItems: ["١. فعل المستخدم", "٢. مكوّن الواجهة", "٣. حالة التطبيق"],
+          rightLabel: "النتيجة الظاهرة",
+          rightBody: "الحالة تحرّك طلبًا أو تدفق بيانات ثم تظهر الواجهة النتيجة المحدَّثة",
+          rightItems: [
+            "٤. طلب أو تدفق بيانات",
+            "٥. نتيجة ظاهرة محدَّثة",
+            "طبقات مفاهيمية فقط — ليست لقطة DevTools",
+          ],
+          footer: "رسم تعليمي أصلي — بلا محاكاة لـ Chrome DevTools أو واجهة بائع",
+          caption: "فعل → مكوّن → حالة → تدفق → نتيجة ظاهرة",
+        };
+      }
+      if (locale === "ar-Gulf") {
+        return {
+          title: "الـ Frontend = اللي يشوفه المستخدم ويضغطه",
+          subtitle: "خمس خطوات: فعل → مكوّن → حالة → طلب → نتيجة",
+          leftLabel: "جانب المستخدم",
+          leftBody: "ضغطة أو إدخال توصل مكوّن ظاهر وتحدّث حالة التطبيق",
+          leftItems: ["١. فعل المستخدم", "٢. مكوّن الواجهة", "٣. حالة التطبيق"],
+          rightLabel: "النتيجة الظاهرة",
+          rightBody: "الحالة تحرّك طلب أو تدفق بيانات بعدين الواجهة تبين النتيجة المحدَّثة",
+          rightItems: [
+            "٤. طلب أو تدفق بيانات",
+            "٥. نتيجة ظاهرة محدَّثة",
+            "طبقات مفاهيمية بس — مو لقطة DevTools",
+          ],
+          footer: "رسم تعليمي أصلي — بدون محاكاة لـ Chrome DevTools أو واجهة بائع",
+          caption: "فعل → مكوّن → حالة → تدفق → نتيجة ظاهرة",
+        };
+      }
+      // ar-EG
+      return {
+        title: "الـ Frontend = اللي المستخدم بيشوفه وبيضغطه",
+        subtitle: "خمس خطوات: فعل → مكوّن → حالة → طلب → نتيجة",
+        leftLabel: "جانب المستخدم",
+        leftBody: "ضغطة أو إدخال توصل لمكوّن ظاهر وتحدّث حالة التطبيق",
+        leftItems: ["١. فعل المستخدم", "٢. مكوّن الواجهة", "٣. حالة التطبيق"],
+        rightLabel: "النتيجة الظاهرة",
+        rightBody: "الحالة تحرّك طلب أو تدفق بيانات وبعدين الواجهة توري النتيجة المحدَّثة",
+        rightItems: [
+          "٤. طلب أو تدفق بيانات",
+          "٥. نتيجة ظاهرة محدَّثة",
+          "طبقات مفاهيمية بس — مش لقطة DevTools",
+        ],
+        footer: "رسم تعليمي أصلي — من غير محاكاة لـ Chrome DevTools أو واجهة بائع",
+        caption: "فعل → مكوّن → حالة → تدفق → نتيجة ظاهرة",
+      };
+    }
+
     // Prompt-to-application instructional flow (original composition — not a vendor UI).
     if (lessonId === "builder-m6-l3-first-prompt-to-lovable") {
       if (locale === "en") {

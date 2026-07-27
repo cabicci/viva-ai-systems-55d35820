@@ -6,6 +6,7 @@ import {
   CONTROLLED_FAILURE_TARGET_CELL_ID,
   LOCALES,
   METHOD_B_TO_C_REPLACEMENT_CELL_IDS,
+  METHOD_C_B6L3_FOUR_PILOT_CELL_IDS,
   PILOT_AUTHORIZED_EXTERNAL_LESSON_ID,
   PILOT_INSTRUCTIONAL_LESSON_ID,
   PILOT_MASAARAT_LESSON_ID,
@@ -101,10 +102,11 @@ export function buildPilotManifest(
 }
 
 const REPLACEMENT_CELL_SET = new Set<string>(METHOD_B_TO_C_REPLACEMENT_CELL_IDS);
+const ACCEPTED_FOUR_CELL_PILOT_SET = new Set<string>(METHOD_C_B6L3_FOUR_PILOT_CELL_IDS);
 
 /**
- * Unresolved = all Method A cells (28) + twelve Method B→C replacement Method C cells.
- * Existing accepted Method C population (360) is never re-added.
+ * Unresolved = all Method A cells (28) + remaining Method B→C replacement Method C cells (8).
+ * Human-accepted four-cell pilot (m6×4) and the existing accepted 360 Method C are never re-added.
  */
 export function buildUnresolvedLedger(manifest: ProductionManifest): UnresolvedLedger {
   const entries: UnresolvedLedgerEntry[] = [];
@@ -127,14 +129,14 @@ export function buildUnresolvedLedger(manifest: ProductionManifest): UnresolvedL
       });
       continue;
     }
-    if (REPLACEMENT_CELL_SET.has(cell.cellId)) {
+    if (REPLACEMENT_CELL_SET.has(cell.cellId) && !ACCEPTED_FOUR_CELL_PILOT_SET.has(cell.cellId)) {
       entries.push({
         cellId: cell.cellId,
         lessonId: cell.lessonId,
         locale: cell.locale,
         route: cell.route,
         reason:
-          "NO_VALID_RIGHTS_BASIS reclassification — original instructional composition pending human visual review (CR-LV-METHOD-B-TO-C-FOUR-CELL-PILOT-20260727-01)",
+          "NO_VALID_RIGHTS_BASIS reclassification — original instructional composition pending human visual review (CR-LV-METHOD-B-TO-C-REMAINING-EIGHT-EXECUTION-20260727-01)",
         resolutionPath: "docs/lesson-visuals/controlled-v1/",
       });
     }

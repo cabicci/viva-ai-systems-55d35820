@@ -4,6 +4,7 @@ import {
   runFailedOnly,
   runFull400,
   runMethodBToCFourCellPilot,
+  runMethodBToCRemainingEight,
   runMethodCCanonicalRepair,
   runMethodCRemaining,
   runPilot,
@@ -29,6 +30,7 @@ function parseArgs(argv: string[]): {
     "method-c-remaining",
     "method-c-canonical-repair",
     "method-c-b6l3-four-pilot",
+    "method-c-b-to-c-remaining-eight",
   ];
   if (!mode || !validModes.includes(mode)) {
     console.error(
@@ -92,6 +94,12 @@ async function main() {
       result = runMethodBToCFourCellPilot(confirm);
       if (result.ok && result.receipts.length > 0) {
         writeContactSheet("method-c-b6l3-four-pilot", result.receipts);
+      }
+      break;
+    case "method-c-b-to-c-remaining-eight":
+      result = runMethodBToCRemainingEight(confirm);
+      if (result.ok && result.receipts.length > 0) {
+        writeContactSheet("method-c-b-to-c-remaining-eight", result.receipts);
       }
       break;
     case "method-c-canonical-repair":

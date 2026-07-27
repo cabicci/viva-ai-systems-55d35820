@@ -81,6 +81,40 @@ export const METHOD_C_B6L3_FOUR_PILOT_CONFIRM_TOKEN =
   "RUN_AUTHORIZED_METHOD_B_TO_C_FOUR_CELL_PILOT";
 export const METHOD_C_B6L3_FOUR_PILOT_AUTH_ID = "CR-LV-METHOD-B-TO-C-FOUR-CELL-PILOT-20260727-01";
 
+/**
+ * Khalil human acceptance of the four-cell Method B→C pilot (ACCEPT ALL 4).
+ * PNG bytes are immutable; only acceptance metadata may change.
+ */
+export const METHOD_C_B6L3_FOUR_PILOT_HUMAN_DECISION = "ACCEPT ALL 4" as const;
+export const METHOD_C_B6L3_FOUR_PILOT_ACCEPTED_PNG_SHA256 = {
+  "builder-m6-l3-first-prompt-to-lovable__ar-EG":
+    "C37DB9371483878D5558AD5250BDEED59177687680A17B0E859AFFB4B9352FAF",
+  "builder-m6-l3-first-prompt-to-lovable__ar-MSA":
+    "784A4A7BC9531B060A3CF92D203A15C7DF8A6B9A4FBEC74D5BF59AF5B15BCAF0",
+  "builder-m6-l3-first-prompt-to-lovable__ar-Gulf":
+    "9F1CC4EC3F3B89B088979590FF5726CDABD9A631B112DB34C5ED4C91247F72DF",
+  "builder-m6-l3-first-prompt-to-lovable__en":
+    "0110DC1FD6DB95C616F51CA3DD81D3486D0E0C20ADB54D3A6A78FA8E1488847D",
+} as const;
+
+/** Remaining eight Method B→C replacement cells (excludes human-accepted m6×4). */
+export const METHOD_C_REMAINING_EIGHT_LESSON_IDS = [
+  "intro-m1-l3-setup-your-ai",
+  "builder-m5-l2-frontend",
+] as const;
+export const METHOD_C_REMAINING_EIGHT_CELL_IDS = METHOD_C_REMAINING_EIGHT_LESSON_IDS.flatMap(
+  (lessonId) => LOCALES.map((locale) => `${lessonId}__${locale}`),
+) as readonly string[];
+export const METHOD_C_REMAINING_EIGHT_EXPECTED_TOTAL = 8;
+export const METHOD_C_REMAINING_EIGHT_EXPECTED_PER_LOCALE = 2;
+export const METHOD_C_REMAINING_EIGHT_CONFIRM_TOKEN =
+  "RUN_AUTHORIZED_METHOD_B_TO_C_REMAINING_EIGHT";
+export const METHOD_C_REMAINING_EIGHT_AUTH_ID =
+  "CR-LV-METHOD-B-TO-C-REMAINING-EIGHT-EXECUTION-20260727-01";
+
+/** Accepted Method C after four-cell pilot human acceptance (360 + 4). */
+export const ACCEPTED_METHOD_C_CELLS_AFTER_B6L3_ACCEPTANCE = 364;
+
 export const EXPECTED_TOTAL_LESSONS = 100;
 export const EXPECTED_TOTAL_CELLS = EXPECTED_TOTAL_LESSONS * LOCALES.length;
 
