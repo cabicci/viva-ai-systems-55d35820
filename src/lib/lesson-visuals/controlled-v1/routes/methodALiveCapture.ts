@@ -556,16 +556,191 @@ async function liveBrowserCapture(args: {
       await sleep(1500);
     }
 
+    // Frame Runtime Context as the dominant subject; clear retrieval matches;
+    // apply established opaque privacy masks over currentUser value + emails.
+    const frame = (await sessionSend("Runtime.evaluate", {
+      returnByValue: true,
+      expression: `(() => {
+        const ARABIC = /[\\u0600-\\u06FF]/;
+        const EGYPTIAN = /(أيوه|دلوقتي|مفيش|هيتفعّل|لسه|هنعلن|بتاخدك)/;
+        // Clear Retrieval input so corpus Arabic/English matches are not in frame.
+        const input = document.querySelector("input");
+        if (input) {
+          const setNative = Object.getOwnPropertyDescriptor(
+            window.HTMLInputElement.prototype,
+            "value",
+          )?.set;
+          const last = input.value;
+          if (setNative) setNative.call(input, "");
+          else input.value = "";
+          const tracker = input._valueTracker;
+          if (tracker) tracker.setValue(last);
+          input.dispatchEvent(new Event("input", { bubbles: true }));
+          input.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+        // Minimize generic System State hero/summary so Runtime Context dominates.
+        document
+          .querySelectorAll("[data-method-a-frame-hide]")
+          .forEach((n) => n.remove());
+        for (const sel of ["header.glass", "[data-print-hide]"]) {
+          for (const el of document.querySelectorAll(sel)) {
+            el.setAttribute("data-method-a-frame-hide", "1");
+            el.style.setProperty("display", "none", "important");
+          }
+        }
+        const findLabel = (key) =>
+          [...document.querySelectorAll("*")].find(
+            (el) =>
+              el.children.length === 0 && (el.textContent || "").trim() === key,
+          );
+        const userLab = findLabel("currentUser");
+        const pathLab = findLabel("currentPath");
+        const section =
+          userLab?.closest("section") ||
+          [...document.querySelectorAll("section")].find((el) =>
+            /Runtime Context|طبقة سياق التشغيل/i.test(el.innerText || ""),
+          );
+        if (section) {
+          section.scrollIntoView({ block: "start", inline: "nearest" });
+        }
+        window.scrollTo(0, Math.max(0, window.scrollY - 8));
+        document
+          .querySelectorAll("[data-method-a-privacy-mask]")
+          .forEach((n) => n.remove());
+        const maskRect = (r, id) => {
+          if (!r || r.width < 4 || r.height < 4) return false;
+          const mask = document.createElement("div");
+          mask.setAttribute("data-method-a-privacy-mask", id);
+          mask.style.cssText = [
+            "position:fixed",
+            "left:" + Math.max(0, r.x - 2) + "px",
+            "top:" + Math.max(0, r.y - 2) + "px",
+            "width:" + (r.width + 4) + "px",
+            "height:" + (r.height + 4) + "px",
+            "background:#111827",
+            "border-radius:6px",
+            "z-index:2147483647",
+            "pointer-events:none",
+          ].join(";");
+          document.documentElement.appendChild(mask);
+          return true;
+        };
+        let maskedUser = false;
+        let maskedEmails = 0;
+        if (userLab) {
+          const card = userLab.closest("div");
+          const valueEl = card
+            ? [...card.querySelectorAll("*")].find(
+                (n) =>
+                  n.children.length === 0 &&
+                  (n.textContent || "").trim() &&
+                  (n.textContent || "").trim() !== "currentUser",
+              )
+            : null;
+          if (valueEl) maskedUser = maskRect(valueEl.getBoundingClientRect(), "currentUser");
+        }
+        for (const el of document.querySelectorAll("*")) {
+          if (el.children.length !== 0) continue;
+          const t = (el.textContent || "").trim();
+          if (t.includes("@") && /synth-admin|@local\\.test/i.test(t)) {
+            if (maskRect(el.getBoundingClientRect(), "email-" + maskedEmails)) {
+              maskedEmails += 1;
+            }
+          }
+        }
+        const root =
+          document.querySelector("[dir]") || document.documentElement;
+        const main = document.querySelector("main");
+        const chromeText = [
+          document.title,
+          main?.querySelector("header")?.innerText || "",
+          [...(main?.querySelectorAll("h1,h2") || [])]
+            .slice(0, 6)
+            .map((n) => n.textContent || "")
+            .join("\\n"),
+        ].join("\\n");
+        const userRect = userLab
+          ? userLab.closest("div")?.getBoundingClientRect()
+          : null;
+        const pathLab2 = findLabel("currentPath");
+        const pathCard = pathLab2?.closest("div");
+        const pathVal = pathCard
+          ? [...pathCard.querySelectorAll("*")]
+              .filter((n) => n.children.length === 0)
+              .map((n) => (n.textContent || "").trim())
+              .find((t) => t && t !== "currentPath") || null
+          : null;
+        const pathRect = pathCard?.getBoundingClientRect();
+        const vh = window.innerHeight || 720;
+        const fullyVisible = (r) =>
+          !!r && r.top >= 8 && r.bottom <= vh - 24 && r.width > 0 && r.height > 0;
+        return {
+          maskedUser,
+          maskedEmails,
+          dir: root.getAttribute("dir"),
+          chromeText,
+          chromeHasArabic: ARABIC.test(chromeText),
+          chromeHasEgyptian: EGYPTIAN.test(chromeText),
+          userInViewport: fullyVisible(userRect),
+          pathInViewport: fullyVisible(pathRect),
+          pathLabelVisible: !!pathLab2,
+          pathValueLen: pathVal ? pathVal.length : 0,
+          pathValueIsDash: pathVal === "—" || pathVal === "-" || pathVal === "–",
+        };
+      })()`,
+    })) as {
+      result?: {
+        value?: {
+          maskedUser?: boolean;
+          maskedEmails?: number;
+          dir?: string | null;
+          chromeText?: string;
+          chromeHasArabic?: boolean;
+          chromeHasEgyptian?: boolean;
+          userInViewport?: boolean;
+          pathInViewport?: boolean;
+          pathLabelVisible?: boolean;
+          pathValueLen?: number;
+          pathValueIsDash?: boolean;
+        };
+      };
+    };
+
+    const frameState = frame.result?.value;
+    if (!frameState?.maskedUser) {
+      assertionErrors.push("currentUser privacy mask was not applied");
+    }
+    if ((frameState?.maskedEmails ?? 0) < 1) {
+      assertionErrors.push("synthetic email privacy mask was not applied");
+    }
+    if (!frameState?.userInViewport) {
+      assertionErrors.push("currentUser not fully in capture viewport after framing");
+    }
+    if (!frameState?.pathInViewport || !frameState?.pathLabelVisible) {
+      assertionErrors.push("currentPath not fully in capture viewport after framing");
+    }
+    if (args.locale === "en" && frameState?.chromeHasArabic) {
+      assertionErrors.push("en chrome contains Arabic");
+    }
+    if ((args.locale === "ar-MSA" || args.locale === "ar-Gulf") && frameState?.chromeHasEgyptian) {
+      assertionErrors.push(`${args.locale} chrome contains Egyptian markers`);
+    }
+    if (args.locale !== "en" && frameState && !frameState.chromeHasArabic) {
+      assertionErrors.push(`${args.locale} chrome missing Arabic`);
+    }
+    await sleep(300);
+
     const probe = (await sessionSend("Runtime.evaluate", {
       returnByValue: true,
       expression: `(() => {
         const bodyText = document.body ? document.body.innerText : "";
         const html = document.documentElement ? document.documentElement.outerHTML : "";
+        const root = document.querySelector("[dir]") || document.documentElement;
         return {
           href: location.href,
           pathname: location.pathname,
           locale: new URLSearchParams(location.search).get("locale"),
-          direction: document.documentElement.getAttribute("dir"),
+          direction: root.getAttribute("dir"),
           lang: document.documentElement.getAttribute("lang"),
           title: document.title,
           bodyText,
@@ -620,6 +795,9 @@ async function liveBrowserCapture(args: {
       no_password_literal: !/SYNTH_PASSWORD|password\s*[:=]/i.test(bodyText),
       no_forbidden_markers_in_dom: !containsForbidden(html) && !containsForbidden(bodyText),
       no_google_fonts_link: !/fonts\.googleapis|fonts\.gstatic/i.test(html),
+      current_user_masked: Boolean(frameState?.maskedUser),
+      synthetic_email_masked: (frameState?.maskedEmails ?? 0) >= 1,
+      runtime_context_framed: Boolean(frameState?.userInViewport && frameState?.pathInViewport),
     };
 
     const expectedDir = expectedDirection(args.locale);
@@ -649,6 +827,11 @@ async function liveBrowserCapture(args: {
     if (!redaction.no_password_literal) assertions.push("password material visible");
     if (!redaction.no_forbidden_markers_in_dom) assertions.push("forbidden markers in DOM");
     if (!redaction.no_google_fonts_link) assertions.push("Google Fonts link present");
+    if (!redaction.current_user_masked) assertions.push("currentUser value not masked");
+    if (!redaction.synthetic_email_masked) assertions.push("synthetic email not masked");
+    if (!redaction.runtime_context_framed) {
+      assertions.push("Runtime Context currentUser not framed in viewport");
+    }
     if (forbidden > 0) assertions.push(`forbidden network requests: ${forbidden}`);
     assertions.push(...assertionErrors);
 

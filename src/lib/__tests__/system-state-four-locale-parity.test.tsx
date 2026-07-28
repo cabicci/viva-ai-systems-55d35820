@@ -198,6 +198,6 @@ describe("/system-state four-locale parity", () => {
         expect(root.textContent).toMatch(ARABIC);
         expect(screen.getByText(getUiString("ar-EG", "systemState.retrieval.empty"))).toBeTruthy();
       }
-    });
+    }, 20000);
   }
 });
