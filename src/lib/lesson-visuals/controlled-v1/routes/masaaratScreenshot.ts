@@ -13,6 +13,26 @@ export interface CaptureSessionConfig {
   authorizedAt: string;
   sessionUrl: string;
   notes?: string;
+  /** App-relative path to navigate to (e.g. "/dashboard"). Optional metadata only. */
+  path?: string;
+  /** Extra query string appended after `?locale=<locale>&`, without a leading "?" or "&". */
+  search?: string;
+  /** Free-text description of what the cell is intended to depict. */
+  concept?: string;
+  /** Exact set of cellIds this config authorizes capture for. */
+  cellAllowlist?: string[];
+  /** Human-readable readiness checks the capturer must satisfy before screenshotting. */
+  readiness?: string[];
+  /** CSS selectors the capturer may use to locate/frame subject matter. */
+  selectors?: string[];
+  /** Free-text framing/composition instructions for the capturer. */
+  framing?: string;
+  /** Categories of sensitive content the capturer must mask before screenshotting. */
+  masking?: string[];
+  /** Page states that must NOT be present (e.g. "login", "loading", "error", "guest"). */
+  forbiddenStates?: string[];
+  /** Expected text direction per locale, used for locale-purity assertions. */
+  directionByLocale?: Partial<Record<Locale, "rtl" | "ltr">>;
 }
 
 export interface MasaaratScreenshotRouteResult {

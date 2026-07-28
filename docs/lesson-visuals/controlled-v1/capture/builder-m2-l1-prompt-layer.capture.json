@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "controlled-v1-capture-config/1",
+  "lessonId": "builder-m2-l1-prompt-layer",
+  "environment": "local-dev",
+  "authorizedBy": "CR-LV-METHOD-A-QUERY-CONCEPT-NORMALIZATION-SIX-LESSON-SINGLE-RUN-20260728-01",
+  "authorizedAt": "2026-07-28T00:00:00.000Z",
+  "sessionUrl": "http://127.0.0.1:55440/dashboard?path=builder",
+  "path": "/dashboard",
+  "search": "path=builder",
+  "concept": "Learner curriculum/path view: Builder path expanded with header, numbered stages, and genuine non-zero progress.",
+  "cellAllowlist": [
+    "builder-m2-l1-prompt-layer__ar-EG",
+    "builder-m2-l1-prompt-layer__ar-MSA",
+    "builder-m2-l1-prompt-layer__ar-Gulf",
+    "builder-m2-l1-prompt-layer__en"
+  ],
+  "readiness": [
+    "authenticated",
+    "path=#path-builder expanded",
+    "progress>0",
+    "numbered module stages visible"
+  ],
+  "selectors": ["#path-builder", "[id^=module-]", "[id^=lesson-]"],
+  "framing": "Frame expanded Builder path card with header, progress bar, and numbered stages; hide PhaseRibbon via data-method-a-frame-hide.",
+  "masking": ["synthetic email", "currentUser", "tokens", "UUIDs"],
+  "forbiddenStates": ["login", "loading", "blank", "error", "denied", "guest"],
+  "directionByLocale": { "ar-EG": "rtl", "ar-MSA": "rtl", "ar-Gulf": "rtl", "en": "ltr" },
+  "notes": "Disposable masaarat-lv-method-a-pilot-20260727; fixture lesson_progress for builder lessons. Live capture via method-a-remaining-six-lessons-24 only."
+}

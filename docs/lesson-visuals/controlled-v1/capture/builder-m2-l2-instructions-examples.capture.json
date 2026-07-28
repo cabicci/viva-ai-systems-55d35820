@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "controlled-v1-capture-config/1",
+  "lessonId": "builder-m2-l2-instructions-examples",
+  "environment": "local-dev",
+  "authorizedBy": "CR-LV-METHOD-A-QUERY-CONCEPT-NORMALIZATION-SIX-LESSON-SINGLE-RUN-20260728-01",
+  "authorizedAt": "2026-07-28T00:00:00.000Z",
+  "sessionUrl": "http://127.0.0.1:55440/dashboard",
+  "path": "/dashboard",
+  "search": "",
+  "concept": "Authenticated dashboard showing five genuine learning-path cards (may span existing tier sections).",
+  "cellAllowlist": [
+    "builder-m2-l2-instructions-examples__ar-EG",
+    "builder-m2-l2-instructions-examples__ar-MSA",
+    "builder-m2-l2-instructions-examples__ar-Gulf",
+    "builder-m2-l2-instructions-examples__en"
+  ],
+  "readiness": [
+    "authenticated",
+    "#path-business",
+    "#path-creator",
+    "#path-analyst",
+    "#path-automator",
+    "#path-builder"
+  ],
+  "selectors": [
+    "#path-business",
+    "#path-creator",
+    "#path-analyst",
+    "#path-automator",
+    "#path-builder"
+  ],
+  "framing": "Scroll/frame so all five path cards are the dominant readable subject across tier sections; do not fabricate a single row; hide PhaseRibbon via data-method-a-frame-hide.",
+  "masking": ["synthetic email", "currentUser", "tokens", "UUIDs"],
+  "forbiddenStates": ["login", "loading", "blank", "error", "denied", "guest"],
+  "directionByLocale": { "ar-EG": "rtl", "ar-MSA": "rtl", "ar-Gulf": "rtl", "en": "ltr" },
+  "notes": "Disposable masaarat-lv-method-a-pilot-20260727. Live capture via method-a-remaining-six-lessons-24 only."
+}

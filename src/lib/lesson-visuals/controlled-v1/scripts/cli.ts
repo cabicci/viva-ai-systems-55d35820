@@ -4,6 +4,7 @@ import {
   runFailedOnly,
   runFull400,
   runMethodAFourCellPilot,
+  runMethodARemainingSixLessons,
   runMethodBToCFourCellPilot,
   runMethodBToCRemainingEight,
   runMethodCCanonicalRepair,
@@ -33,6 +34,7 @@ function parseArgs(argv: string[]): {
     "method-c-b6l3-four-pilot",
     "method-c-b-to-c-remaining-eight",
     "method-a-m7l1-four-pilot",
+    "method-a-remaining-six-lessons-24",
   ];
   if (!mode || !validModes.includes(mode)) {
     console.error(
@@ -108,6 +110,12 @@ async function main() {
       result = await runMethodAFourCellPilot(confirm);
       if (result.ok && result.receipts.length > 0) {
         writeContactSheet("method-a-m7l1-four-pilot", result.receipts);
+      }
+      break;
+    case "method-a-remaining-six-lessons-24":
+      result = await runMethodARemainingSixLessons(confirm);
+      if (result.ok && result.receipts.length > 0) {
+        writeContactSheet("method-a-remaining-six-lessons-24", result.receipts);
       }
       break;
     case "method-c-canonical-repair":

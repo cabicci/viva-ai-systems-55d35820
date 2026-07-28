@@ -104,7 +104,8 @@ export type RunnerMode =
   | "method-c-canonical-repair"
   | "method-c-b6l3-four-pilot"
   | "method-c-b-to-c-remaining-eight"
-  | "method-a-m7l1-four-pilot";
+  | "method-a-m7l1-four-pilot"
+  | "method-a-remaining-six-lessons-24";
 
 export interface GoldenReferenceEntry {
   id: string;

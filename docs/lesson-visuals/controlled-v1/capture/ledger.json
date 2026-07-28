@@ -1,8 +1,8 @@
 {
   "schemaVersion": "controlled-v1-capture-ledger/1",
-  "status": "AUTHORIZED_LOCAL_DEV_METHOD_A_FOUR_LOCALE_PILOT",
-  "statement": "A Control-Room-authorized non-Production local-dev Masaarat capture session exists for the Method A four-locale pilot lesson builder-m7-l1-tables-columns only (CR-LV-METHOD-A-FOUR-LOCALE-CAPTURE-PILOT-20260728-01). Other MASAARAT_SCREENSHOT lessons remain without authorized capture sessions.",
-  "consequence": "runMasaaratScreenshotRoute still fails closed for pipeline modes that do not perform live capture. Live browser capture is executed only by mode=method-a-m7l1-four-pilot against http://127.0.0.1:55440/system-state.",
+  "status": "AUTHORIZED_LOCAL_DEV_METHOD_A_REMAINING_SIX_AND_PILOT",
+  "statement": "Control-Room-authorized non-Production local-dev Masaarat capture sessions exist for (1) Method A four-locale pilot builder-m7-l1-tables-columns and (2) the six remaining Method A lessons under CR-LV-METHOD-A-QUERY-CONCEPT-NORMALIZATION-SIX-LESSON-SINGLE-RUN-20260728-01. Accepted pilot recapture is not part of method-a-remaining-six-lessons-24.",
+  "consequence": "Live browser capture for the remaining six lessons executes solely via mode=method-a-remaining-six-lessons-24. Pilot live capture remains mode=method-a-m7l1-four-pilot against /system-state.",
   "authorizedSessions": [
     {
       "lessonId": "builder-m7-l1-tables-columns",
@@ -12,6 +12,60 @@
       "configPath": "docs/lesson-visuals/controlled-v1/capture/builder-m7-l1-tables-columns.capture.json",
       "authorizedBy": "CR-LV-METHOD-A-FOUR-LOCALE-CAPTURE-PILOT-20260728-01",
       "captureExecutionMode": "method-a-m7l1-four-pilot"
+    },
+    {
+      "lessonId": "builder-m2-l1-prompt-layer",
+      "locales": ["ar-EG", "ar-MSA", "ar-Gulf", "en"],
+      "environment": "local-dev",
+      "sessionUrl": "http://127.0.0.1:55440/dashboard?path=builder",
+      "configPath": "docs/lesson-visuals/controlled-v1/capture/builder-m2-l1-prompt-layer.capture.json",
+      "authorizedBy": "CR-LV-METHOD-A-QUERY-CONCEPT-NORMALIZATION-SIX-LESSON-SINGLE-RUN-20260728-01",
+      "captureExecutionMode": "method-a-remaining-six-lessons-24"
+    },
+    {
+      "lessonId": "builder-m2-l2-instructions-examples",
+      "locales": ["ar-EG", "ar-MSA", "ar-Gulf", "en"],
+      "environment": "local-dev",
+      "sessionUrl": "http://127.0.0.1:55440/dashboard",
+      "configPath": "docs/lesson-visuals/controlled-v1/capture/builder-m2-l2-instructions-examples.capture.json",
+      "authorizedBy": "CR-LV-METHOD-A-QUERY-CONCEPT-NORMALIZATION-SIX-LESSON-SINGLE-RUN-20260728-01",
+      "captureExecutionMode": "method-a-remaining-six-lessons-24"
+    },
+    {
+      "lessonId": "builder-m3-l1-context-layer",
+      "locales": ["ar-EG", "ar-MSA", "ar-Gulf", "en"],
+      "environment": "local-dev",
+      "sessionUrl": "http://127.0.0.1:55440/learn/builder/builder-m3-l1-context-layer",
+      "configPath": "docs/lesson-visuals/controlled-v1/capture/builder-m3-l1-context-layer.capture.json",
+      "authorizedBy": "CR-LV-METHOD-A-QUERY-CONCEPT-NORMALIZATION-SIX-LESSON-SINGLE-RUN-20260728-01",
+      "captureExecutionMode": "method-a-remaining-six-lessons-24"
+    },
+    {
+      "lessonId": "builder-m6-l4-components-routes",
+      "locales": ["ar-EG", "ar-MSA", "ar-Gulf", "en"],
+      "environment": "local-dev",
+      "sessionUrl": "http://127.0.0.1:55440/curriculum",
+      "configPath": "docs/lesson-visuals/controlled-v1/capture/builder-m6-l4-components-routes.capture.json",
+      "authorizedBy": "CR-LV-METHOD-A-QUERY-CONCEPT-NORMALIZATION-SIX-LESSON-SINGLE-RUN-20260728-01",
+      "captureExecutionMode": "method-a-remaining-six-lessons-24"
+    },
+    {
+      "lessonId": "builder-m7-l3-queries",
+      "locales": ["ar-EG", "ar-MSA", "ar-Gulf", "en"],
+      "environment": "local-dev",
+      "sessionUrl": "http://127.0.0.1:55440/analytics",
+      "configPath": "docs/lesson-visuals/controlled-v1/capture/builder-m7-l3-queries.capture.json",
+      "authorizedBy": "CR-LV-METHOD-A-QUERY-CONCEPT-NORMALIZATION-SIX-LESSON-SINGLE-RUN-20260728-01",
+      "captureExecutionMode": "method-a-remaining-six-lessons-24"
+    },
+    {
+      "lessonId": "builder-m10-l2-first-users",
+      "locales": ["ar-EG", "ar-MSA", "ar-Gulf", "en"],
+      "environment": "local-dev",
+      "sessionUrl": "http://127.0.0.1:55440/dashboard",
+      "configPath": "docs/lesson-visuals/controlled-v1/capture/builder-m10-l2-first-users.capture.json",
+      "authorizedBy": "CR-LV-METHOD-A-QUERY-CONCEPT-NORMALIZATION-SIX-LESSON-SINGLE-RUN-20260728-01",
+      "captureExecutionMode": "method-a-remaining-six-lessons-24"
     }
   ],
   "howToAuthorizeCapture": "To unblock a specific cell, a Control-Room-approved capture config file must be added at docs/lesson-visuals/controlled-v1/capture/{lessonId}__{locale}.capture.json (or docs/lesson-visuals/controlled-v1/capture/{lessonId}.capture.json to cover all locales) matching the schema documented in src/lib/lesson-visuals/controlled-v1/routes/masaaratScreenshot.ts, pointing at a non-Production environment/session.",
@@ -25,5 +79,13 @@
     "builder-m10-l2-first-users"
   ],
   "pilotAuthorizedLessonIds": ["builder-m7-l1-tables-columns"],
+  "remainingSixAuthorizedLessonIds": [
+    "builder-m2-l1-prompt-layer",
+    "builder-m2-l2-instructions-examples",
+    "builder-m3-l1-context-layer",
+    "builder-m6-l4-components-routes",
+    "builder-m7-l3-queries",
+    "builder-m10-l2-first-users"
+  ],
   "lastUpdated": "2026-07-28T00:00:00.000Z"
 }

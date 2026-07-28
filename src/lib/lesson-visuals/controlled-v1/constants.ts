@@ -129,6 +129,24 @@ export const METHOD_A_M7L1_FOUR_PILOT_CONFIRM_TOKEN =
 export const METHOD_A_M7L1_FOUR_PILOT_AUTH_ID =
   "CR-LV-METHOD-A-FOUR-LOCALE-CAPTURE-PILOT-20260728-01";
 
+/** Exact six remaining Method A lessons × 4 locales (24 cells). Order is authoritative. */
+export const METHOD_A_REMAINING_SIX_LESSON_IDS = [
+  "builder-m2-l1-prompt-layer",
+  "builder-m2-l2-instructions-examples",
+  "builder-m3-l1-context-layer",
+  "builder-m6-l4-components-routes",
+  "builder-m7-l3-queries",
+  "builder-m10-l2-first-users",
+] as const;
+export const METHOD_A_REMAINING_SIX_CELL_IDS = METHOD_A_REMAINING_SIX_LESSON_IDS.flatMap(
+  (lessonId) => LOCALES.map((locale) => `${lessonId}__${locale}`),
+) as readonly string[];
+export const METHOD_A_REMAINING_SIX_EXPECTED_TOTAL = 24;
+export const METHOD_A_REMAINING_SIX_CONFIRM_TOKEN =
+  "RUN_AUTHORIZED_METHOD_A_REMAINING_SIX_LESSONS_24";
+export const METHOD_A_REMAINING_SIX_AUTH_ID =
+  "CR-LV-METHOD-A-QUERY-CONCEPT-NORMALIZATION-SIX-LESSON-SINGLE-RUN-20260728-01";
+
 export const CANVAS_WIDTH = 1280;
 export const CANVAS_HEIGHT = 720;
 

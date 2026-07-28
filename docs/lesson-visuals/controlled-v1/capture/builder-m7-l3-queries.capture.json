@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "controlled-v1-capture-config/1",
+  "lessonId": "builder-m7-l3-queries",
+  "environment": "local-dev",
+  "authorizedBy": "CR-LV-METHOD-A-QUERY-CONCEPT-NORMALIZATION-SIX-LESSON-SINGLE-RUN-20260728-01",
+  "authorizedAt": "2026-07-28T00:00:00.000Z",
+  "sessionUrl": "http://127.0.0.1:55440/analytics",
+  "path": "/analytics",
+  "search": "",
+  "concept": "Genuine query-backed four-card learner analytics report: streak, learning time, completed lessons, completed missions.",
+  "cellAllowlist": [
+    "builder-m7-l3-queries__ar-EG",
+    "builder-m7-l3-queries__ar-MSA",
+    "builder-m7-l3-queries__ar-Gulf",
+    "builder-m7-l3-queries__en"
+  ],
+  "readiness": [
+    "authenticated",
+    "four KPI cards visible",
+    "streak",
+    "learning time",
+    "completed lessons",
+    "completed missions"
+  ],
+  "selectors": ["section.grid.grid-cols-2", "main"],
+  "framing": "Frame the four analytics KPI cards as the dominant readable report content.",
+  "masking": ["synthetic email", "currentUser", "tokens", "UUIDs"],
+  "forbiddenStates": ["login", "loading", "blank", "error", "denied", "guest"],
+  "directionByLocale": { "ar-EG": "rtl", "ar-MSA": "rtl", "ar-Gulf": "rtl", "en": "ltr" },
+  "notes": "Concept normalized under CR-LV-METHOD-A-QUERY-CONCEPT-NORMALIZATION-SIX-LESSON-SINGLE-RUN-20260728-01 to /analytics four-KPI learner report. Live capture via method-a-remaining-six-lessons-24 only."
+}

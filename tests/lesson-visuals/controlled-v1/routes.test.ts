@@ -16,8 +16,8 @@ afterEach(() => {
 
 describe("controlled-v1 routes/masaaratScreenshot (fail-closed)", () => {
   it("blocks with BLOCKED_UNRESOLVED_SPEC when no capture config exists", () => {
-    // Use a Method A lesson outside the authorized four-locale pilot.
-    const result = runMasaaratScreenshotRoute("builder-m2-l1-prompt-layer", "ar-EG");
+    // Use a non-Method-A lesson, which never has (or needs) a Masaarat capture config.
+    const result = runMasaaratScreenshotRoute("creator-m1-l1-why-content", "ar-EG");
     expect(result.status).toBe("BLOCKED_UNRESOLVED_SPEC");
     expect(result.configPath).toBeNull();
   });
@@ -27,6 +27,22 @@ describe("controlled-v1 routes/masaaratScreenshot (fail-closed)", () => {
     expect(result.status).toBe("BLOCKED_UNRESOLVED_SPEC");
     expect(result.configPath).toContain("builder-m7-l1-tables-columns");
     expect(result.reason).toMatch(/live capture|not implemented/i);
+  });
+
+  it("remaining-six lessons have authorized local-dev capture configs but default route still fails closed (live capture is remaining-six-mode only)", () => {
+    for (const lessonId of [
+      "builder-m2-l1-prompt-layer",
+      "builder-m2-l2-instructions-examples",
+      "builder-m3-l1-context-layer",
+      "builder-m6-l4-components-routes",
+      "builder-m7-l3-queries",
+      "builder-m10-l2-first-users",
+    ]) {
+      const result = runMasaaratScreenshotRoute(lessonId, "ar-EG");
+      expect(result.status).toBe("BLOCKED_UNRESOLVED_SPEC");
+      expect(result.configPath).toContain(lessonId);
+      expect(result.reason).toMatch(/live capture|not implemented/i);
+    }
   });
 
   it("still blocks (capture-not-implemented) even with a valid non-Production capture config present", () => {
