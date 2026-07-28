@@ -1,29 +1,28 @@
 import { CheckCircle2, Circle, type LucideIcon } from "lucide-react";
+import { useUiString } from "@/lib/locale/use-ui-strings";
+import type { UiStringKey } from "@/lib/locale/ui-strings";
 import type { Status } from "./types";
 
+const STATUS_LABEL_KEY: Record<Status, UiStringKey> = {
+  live: "systemState.status.live",
+  partial: "systemState.status.partial",
+  placeholder: "systemState.status.placeholder",
+};
+
+const STATUS_CLS: Record<Status, string> = {
+  live: "bg-accent/15 text-accent border-accent/30",
+  partial: "bg-primary/15 text-primary border-primary/30",
+  placeholder: "bg-muted/40 text-muted-foreground border-border/40",
+};
+
 export function StatusPill({ status }: { status: Status }) {
-  const map = {
-    live: { label: "LIVE", cls: "bg-accent/15 text-accent border-accent/30" },
-    partial: {
-      label: "PARTIAL",
-      cls: "bg-primary/15 text-primary border-primary/30",
-    },
-    placeholder: {
-      label: "PLACEHOLDER",
-      cls: "bg-muted/40 text-muted-foreground border-border/40",
-    },
-  } as const;
-  const m = map[status];
+  const t = useUiString();
   return (
     <span
-      className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 text-[10px] font-mono ${m.cls}`}
+      className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 text-[10px] font-mono ${STATUS_CLS[status]}`}
     >
-      {status === "live" ? (
-        <CheckCircle2 className="h-3 w-3" />
-      ) : (
-        <Circle className="h-3 w-3" />
-      )}
-      {m.label}
+      {status === "live" ? <CheckCircle2 className="h-3 w-3" /> : <Circle className="h-3 w-3" />}
+      {t(STATUS_LABEL_KEY[status])}
     </span>
   );
 }
@@ -44,13 +43,9 @@ export function Section({
   return (
     <section className="mb-12">
       <div className="flex items-center gap-3 mb-5">
-        <span className="font-mono text-[11px] tracking-widest text-primary">
-          {no}
-        </span>
+        <span className="font-mono text-[11px] tracking-widest text-primary">{no}</span>
         <span className="h-px flex-1 bg-border/40" />
-        <span className="font-mono text-[11px] tracking-widest text-muted-foreground">
-          {label}
-        </span>
+        <span className="font-mono text-[11px] tracking-widest text-muted-foreground">{label}</span>
       </div>
       <div className="flex items-center gap-3 mb-5">
         <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/15 border border-primary/20">
@@ -66,9 +61,7 @@ export function Section({
 export function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div className="glass rounded-xl p-3 border border-border/40">
-      <p className="font-mono text-[10px] tracking-widest text-muted-foreground">
-        {label}
-      </p>
+      <p className="font-mono text-[10px] tracking-widest text-muted-foreground">{label}</p>
       <p className="text-xl font-black text-foreground mt-1">{value}</p>
     </div>
   );
@@ -83,15 +76,7 @@ export function Info({ title, body }: { title: string; body: string }) {
   );
 }
 
-export function AIRow({
-  title,
-  body,
-  status,
-}: {
-  title: string;
-  body: string;
-  status: Status;
-}) {
+export function AIRow({ title, body, status }: { title: string; body: string; status: Status }) {
   return (
     <div className="glass rounded-xl p-5 border border-border/40">
       <div className="flex items-center justify-between gap-2 mb-2">
@@ -103,38 +88,20 @@ export function AIRow({
   );
 }
 
-export function CompRow({
-  area,
-  files,
-  items,
-}: {
-  area: string;
-  files: string;
-  items: string;
-}) {
+export function CompRow({ area, files, items }: { area: string; files: string; items: string }) {
   return (
     <div className="glass rounded-xl p-5 border border-border/40">
       <p className="font-bold text-foreground text-sm mb-1">{area}</p>
-      <code className="font-mono text-[11px] text-primary block mb-2">
-        {files}
-      </code>
+      <code className="font-mono text-[11px] text-primary block mb-2">{files}</code>
       <p className="text-xs text-muted-foreground leading-loose">{items}</p>
     </div>
   );
 }
 
-export function Field({
-  label,
-  value,
-}: {
-  label: string;
-  value: React.ReactNode;
-}) {
+export function Field({ label, value }: { label: string; value: React.ReactNode }) {
   return (
     <div className="rounded-lg border border-border/40 p-3 bg-background/40">
-      <p className="font-mono text-[10px] tracking-widest text-muted-foreground mb-1">
-        {label}
-      </p>
+      <p className="font-mono text-[10px] tracking-widest text-muted-foreground mb-1">{label}</p>
       <div className="text-sm text-foreground/90 break-words font-mono">
         {value ?? <span className="text-muted-foreground">—</span>}
       </div>
