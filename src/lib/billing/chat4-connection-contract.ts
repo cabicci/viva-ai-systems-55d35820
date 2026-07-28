@@ -5,9 +5,16 @@ import type { DenialReasonCode, QuotaBucket } from "./types";
  *
  * This module is DOCUMENTATION-ONLY. It declares the types and the required
  * call sequence for the Chat 4 assistant runtime. It is intentionally NOT
- * imported by supabase/functions/assistant-runtime/index.ts (that edge function
- * must not be modified here); the entitlement edge only ever calls
- * `evaluate_access`. The reserve/commit path below is the Chat 4 path.
+ * imported by supabase/functions/assistant-runtime/index.ts; the entitlement
+ * edge only ever calls `evaluate_access` / `get_entitlement_snapshot`.
+ *
+ * PostgREST transport (Lovable Cloud): Edge Functions call **public.***
+ * thin wrappers via the default exposed schema (`/rest/v1/rpc/...` with
+ * service-role auth and **no** Accept-Profile / Content-Profile headers).
+ * Each public wrapper is service_role-only and delegates to the matching
+ * private `billing.*` implementation (see migration
+ * `20260728140000_public_billing_rpc_bridge.sql`). Private billing tables
+ * and private functions are not browser-accessible.
  *
  * Caller: service_role ONLY. userId is always server-derived from the verified
  * JWT — never trusted from the request body.
@@ -37,9 +44,19 @@ export interface Chat4ReserveOutput {
 }
 
 /**
- * Canonical billing RPC names used by Chat 4. All are service_role only.
+ * Canonical PostgREST RPC names used by Chat 4 (public wrappers).
+ * All are service_role only and delegate to matching billing.* functions.
  */
 export const CHAT4_RPC = {
+  reserve: "public.reserve_learner_ai_access",
+  registerProviderAttempt: "public.register_provider_attempt",
+  finalizeProviderAttempt: "public.finalize_provider_attempt",
+  commit: "public.commit_ai_quota",
+  release: "public.release_ai_quota",
+} as const;
+
+/** Private billing implementations behind the public wrappers. */
+export const CHAT4_PRIVATE_RPC = {
   reserve: "billing.reserve_learner_ai_access",
   registerProviderAttempt: "billing.register_provider_attempt",
   finalizeProviderAttempt: "billing.finalize_provider_attempt",

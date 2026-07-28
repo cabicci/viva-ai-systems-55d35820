@@ -83,12 +83,13 @@ async function consumeRateLimit(
   }
 }
 
-// Invokes a billing-schema RPC (Chat 4 Billing bridge). Same pattern as
-// billing-entitlement/index.ts: service-role auth plus Accept-Profile /
-// Content-Profile: billing so PostgREST resolves the function in the
-// `billing` schema rather than `public`. Never throws — failures (missing
-// env, network error, non-2xx from PostgREST) surface as `{ ok: false }` so
-// the handler can fail closed without leaking the service-role key.
+// Invokes a public PostgREST RPC that thin-wraps the private billing.*
+// Chat-4 contract (see migration 20260728140000_public_billing_rpc_bridge).
+// Default public schema only — no Accept-Profile / Content-Profile headers
+// (Lovable Cloud cannot expose custom schemas in Data API db-schemas).
+// Never throws — failures (missing env, network error, non-2xx from PostgREST)
+// surface as `{ ok: false }` so the handler can fail closed without leaking
+// the service-role key.
 async function billingRpc(
   fnName: string,
   body: Record<string, unknown>,
@@ -106,8 +107,6 @@ async function billingRpc(
         "Content-Type": "application/json",
         apikey: SERVICE_ROLE,
         Authorization: `Bearer ${SERVICE_ROLE}`,
-        "Accept-Profile": "billing",
-        "Content-Profile": "billing",
       },
       body: JSON.stringify(body),
     });

@@ -357,11 +357,12 @@ describe("V3 — AI quota bucket mapping and release rules", () => {
 });
 
 describe("V3 — Chat 4 connection contract shape", () => {
-  it("exposes the canonical service-role RPC names", () => {
-    expect(CHAT4_RPC.reserve).toBe("billing.reserve_learner_ai_access");
-    expect(CHAT4_RPC.registerProviderAttempt).toBe("billing.register_provider_attempt");
-    expect(CHAT4_RPC.commit).toBe("billing.commit_ai_quota");
-    expect(CHAT4_RPC.release).toBe("billing.release_ai_quota");
+  it("exposes the canonical service-role public-wrapper RPC names", () => {
+    expect(CHAT4_RPC.reserve).toBe("public.reserve_learner_ai_access");
+    expect(CHAT4_RPC.registerProviderAttempt).toBe("public.register_provider_attempt");
+    expect(CHAT4_RPC.finalizeProviderAttempt).toBe("public.finalize_provider_attempt");
+    expect(CHAT4_RPC.commit).toBe("public.commit_ai_quota");
+    expect(CHAT4_RPC.release).toBe("public.release_ai_quota");
   });
 
   it("documents the reserve -> commit -> release sequence", () => {
