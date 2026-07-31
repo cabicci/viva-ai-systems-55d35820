@@ -1,6 +1,4 @@
 import { describe, expect, it } from "vitest";
-import { existsSync } from "node:fs";
-import { join } from "node:path";
 import {
   METHOD_C_B6L3_FOUR_PILOT_ACCEPTED_PNG_SHA256,
   METHOD_C_B6L3_FOUR_PILOT_CELL_IDS,
@@ -11,6 +9,7 @@ import {
   validateFourCellPilotAcceptance,
   verifyAcceptedFourCellPilotPngHashes,
 } from "../../../src/lib/lesson-visuals/controlled-v1/fourCellPilotAcceptance";
+import { resolveAcceptedFourCellPilotPngPath } from "../../../src/lib/lesson-visuals/controlled-v1/materializeAcceptedFourCellPilotPngs";
 
 describe("four-cell pilot human acceptance metadata", () => {
   it("records ACCEPT ALL 4 with exact cell IDs and immutable PNG SHA-256 values", () => {
@@ -32,17 +31,7 @@ describe("four-cell pilot human acceptance metadata", () => {
   });
 
   it("verifies on-disk accepted PNG hashes remain byte-identical", () => {
-    const roots = [
-      "E:/Temp/method-b-to-c-four-cell-pilot-1d4389721abaa1467a2461b7d294f0936c6c5e01/cells",
-      "artifacts/controlled-v1/cells",
-    ];
-    const result = verifyAcceptedFourCellPilotPngHashes((cellId) => {
-      for (const root of roots) {
-        const path = join(root, cellId, "final.png");
-        if (existsSync(path)) return path;
-      }
-      return null;
-    });
+    const result = verifyAcceptedFourCellPilotPngHashes(resolveAcceptedFourCellPilotPngPath);
     expect(result.errors).toEqual([]);
     expect(result.ok).toBe(true);
     for (const cellId of METHOD_C_B6L3_FOUR_PILOT_CELL_IDS) {

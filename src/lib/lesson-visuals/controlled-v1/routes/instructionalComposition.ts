@@ -11,7 +11,14 @@
  */
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
-import { existsSync, mkdirSync, readFileSync, writeFileSync, mkdtempSync } from "node:fs";
+import {
+  existsSync,
+  mkdirSync,
+  readFileSync,
+  readdirSync,
+  writeFileSync,
+  mkdtempSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
@@ -729,6 +736,53 @@ export function assertRenderAuthorized(context: string): void {
   }
 }
 
+/** Discover Playwright-managed Chromium installs (ms-playwright cache). */
+function discoverPlaywrightChromiumCandidates(): string[] {
+  const homes = [process.env.LOCALAPPDATA, process.env.HOME, process.env.USERPROFILE].filter(
+    Boolean,
+  ) as string[];
+  const bases = new Set<string>();
+  for (const home of homes) {
+    bases.add(join(home, "ms-playwright"));
+    bases.add(join(home, ".cache", "ms-playwright"));
+    bases.add(join(home, "Library", "Caches", "ms-playwright"));
+    bases.add(join(home, "AppData", "Local", "ms-playwright"));
+  }
+  bases.add(join(REPO_ROOT, "node_modules", ".cache", "ms-playwright"));
+
+  const found: string[] = [];
+  const exeNames = ["chrome.exe", "chrome", "chromium", "chromium.exe"];
+  for (const base of bases) {
+    if (!existsSync(base)) continue;
+    let entries: string[] = [];
+    try {
+      entries = readdirSync(base);
+    } catch {
+      continue;
+    }
+    for (const entry of entries) {
+      if (!entry.startsWith("chromium")) continue;
+      const root = join(base, entry);
+      const nested = [
+        join(root, "chrome-win64"),
+        join(root, "chrome-win"),
+        join(root, "chrome-linux"),
+        join(root, "chrome-linux64"),
+        join(root, "chrome-mac"),
+        join(root, "chrome-mac-arm64"),
+        root,
+      ];
+      for (const dir of nested) {
+        for (const exe of exeNames) {
+          const candidate = join(dir, exe);
+          if (existsSync(candidate)) found.push(candidate);
+        }
+      }
+    }
+  }
+  return found;
+}
+
 /** Resolve Chrome/Chromium executable; throw with precise classification if missing. */
 export function resolveChromeExecutable(): string {
   const candidates = [
@@ -742,12 +796,13 @@ export function resolveChromeExecutable(): string {
     "/usr/bin/chromium",
     "/usr/bin/chromium-browser",
     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    ...discoverPlaywrightChromiumCandidates(),
   ].filter(Boolean) as string[];
   for (const c of candidates) {
     if (existsSync(c)) return c;
   }
   throw new Error(
-    "BLOCKED_CHROME_MISSING: Chrome/Chromium not found for INSTRUCTIONAL_COMPOSITION render. Set CHROME_PATH.",
+    "BLOCKED_CHROME_MISSING: Chrome/Chromium not found for INSTRUCTIONAL_COMPOSITION render. Set CHROME_PATH or run bun run controlled-visuals:ensure-chrome.",
   );
 }
 
