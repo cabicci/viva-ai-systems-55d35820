@@ -69,10 +69,12 @@ else
     overall_status=1
     echo "- Result: FAIL (database reset before Phase A)" >> "$REPORT"
   elif bunx vitest run --no-file-parallelism src/lib/billing/__tests__/ > "${REPORT_DIR}/unit.log" 2>&1; then
+    # Strip ANSI so count matching is stable under CI color output.
+    sed -E 's/\x1B\[[0-9;]*[A-Za-z]//g' "${REPORT_DIR}/unit.log" > "${REPORT_DIR}/unit.plain.log"
     # Count must stay in lockstep with the billing vitest inventory (static + disposable).
     # Refuse any skipped mandatory disposable proofs.
-    if assert_no_mandatory_skips "${REPORT_DIR}/unit.log" \
-      && grep -EEq 'Tests[[:space:]]+95 passed' "${REPORT_DIR}/unit.log"; then
+    if assert_no_mandatory_skips "${REPORT_DIR}/unit.plain.log" \
+      && grep -EEq 'Tests[[:space:]]+95 passed' "${REPORT_DIR}/unit.plain.log"; then
       echo "- Result: PASS (95 / 95, 0 skipped)" >> "$REPORT"
     else
       overall_status=1
