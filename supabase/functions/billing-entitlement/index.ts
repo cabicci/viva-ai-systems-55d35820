@@ -47,14 +47,14 @@ async function fetchSnapshot(userId: string): Promise<Record<string, unknown>> {
     };
   }
 
+  // Public service_role-only wrapper → billing.get_entitlement_snapshot.
+  // Default PostgREST schema (no Accept-Profile / Content-Profile).
   const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/get_entitlement_snapshot`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${SERVICE_KEY}`,
       apikey: SERVICE_KEY,
       "Content-Type": "application/json",
-      "Accept-Profile": "billing",
-      "Content-Profile": "billing",
     },
     body: JSON.stringify({ p_user_id: userId }),
   });
@@ -73,10 +73,10 @@ async function fetchSnapshot(userId: string): Promise<Record<string, unknown>> {
   }) as Record<string, unknown>;
 }
 
-// Route resource checks through the server-authoritative evaluate_access RPC.
-// Assistant/quota consumption is NOT handled here — that is the Chat 4 path via
-// billing.reserve_learner_ai_access. This edge only evaluates access and fails
-// closed on any error.
+// Route resource checks through the public evaluate_access wrapper
+// (delegates to billing.evaluate_access). Assistant/quota consumption is NOT
+// handled here — that is the Chat 4 path via public.reserve_learner_ai_access.
+// This edge only evaluates access and fails closed on any error.
 async function evaluateAccessRpc(
   userId: string,
   resourceType: string,
@@ -92,14 +92,13 @@ async function evaluateAccessRpc(
   if (!SUPABASE_URL || !SERVICE_KEY) return FAIL_CLOSED;
 
   try {
+    // Public service_role-only wrapper; default PostgREST schema.
     const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/evaluate_access`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${SERVICE_KEY}`,
         apikey: SERVICE_KEY,
         "Content-Type": "application/json",
-        "Accept-Profile": "billing",
-        "Content-Profile": "billing",
       },
       body: JSON.stringify({
         p_user_id: userId,

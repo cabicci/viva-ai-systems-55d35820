@@ -590,6 +590,14 @@ describe("Chat 4 Billing bridge documentation", () => {
     // (billing-entitlement) — assistant-runtime never calls it directly.
     expect(HANDLER_SRC).not.toContain("evaluateAccess");
   });
+
+  it("wires billingRpc over default public PostgREST without billing schema profiles", () => {
+    expect(INDEX_SRC).toContain("/rest/v1/rpc/${fnName}");
+    expect(INDEX_SRC).toContain("apikey: SERVICE_ROLE");
+    expect(INDEX_SRC).toContain("Authorization: `Bearer ${SERVICE_ROLE}`");
+    expect(INDEX_SRC).not.toContain('"Accept-Profile": "billing"');
+    expect(INDEX_SRC).not.toContain('"Content-Profile": "billing"');
+  });
 });
 
 describe("Chat 4 Billing bridge — lifecycle", () => {
