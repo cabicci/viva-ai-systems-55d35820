@@ -96,6 +96,25 @@ export function dockerReady(): boolean {
 
 function findSupabaseDbContainer(): string | null {
   if (!dockerReady()) return null;
+  const preferred = process.env.SUPABASE_DB_CONTAINER?.trim();
+  if (preferred) {
+    const check = runArgv(dockerBin(), [
+      "ps",
+      "--filter",
+      `name=^${preferred}$`,
+      "--format",
+      "{{.Names}}",
+    ]);
+    if (
+      check.ok &&
+      check.out
+        .split(/\r?\n/)
+        .map((s) => s.trim())
+        .includes(preferred)
+    ) {
+      return preferred;
+    }
+  }
   const result = runArgv(dockerBin(), [
     "ps",
     "--filter",

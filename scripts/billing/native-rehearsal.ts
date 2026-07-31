@@ -813,76 +813,398 @@ async function main(): Promise<void> {
     pushTest(22, "invalid provider status rejection", r.status >= 400, `status=${r.status}`);
   }
 
-  // 23 legacy zero-row (already recorded)
+  // ---- Legacy compatibility matrix (fail-closed) ----
+  function clearLegacy(userId: string) {
+    mustPsql(`
+      DELETE FROM billing.legacy_subscription_import_audit WHERE legacy_user_id='${userId}';
+      DELETE FROM billing.subscriptions WHERE user_id='${userId}';
+      DELETE FROM public.user_subscriptions WHERE user_id='${userId}';
+    `);
+  }
+
+  function assertNoPaidCapability(userId: string): { ok: boolean; detail: string } {
+    const billingCount = mustPsql(
+      `SELECT COUNT(*)::text FROM billing.subscriptions WHERE user_id='${userId}' AND access_state='paid_active'`,
+    );
+    const snapCount = mustPsql(
+      `SELECT COUNT(*)::text FROM billing.user_entitlement_snapshots WHERE user_id='${userId}'`,
+    );
+    const usage = mustPsql(
+      `SELECT COALESCE(SUM(used_count),0)::text FROM billing.entitlement_usage WHERE user_id='${userId}'`,
+    );
+    const reserve = psql(`
+      BEGIN;
+      SET LOCAL ROLE service_role;
+      SET LOCAL request.jwt.claims = '{"role":"service_role"}';
+      SELECT public.reserve_learner_ai_access(
+        '${userId}','assistant_runtime',NULL,
+        '11111111-1111-1111-1111-111111119901',1,'no-paid-${userId}'
+      );
+      COMMIT;
+    `);
+    const ok = billingCount === "0" && snapCount === "0" && usage === "0" && !reserve.ok;
+    return {
+      ok,
+      detail: `paid=${billingCount} snap=${snapCount} usage=${usage} reserveOk=${reserve.ok}`,
+    };
+  }
+
+  // L1 zero-row
   pushTest(
     23,
-    "legacy zero-row compatibility",
-    report.legacy.zeroRow.legacyCount === "0" && report.legacy.zeroRow.billingCount === "0",
+    "L1 zero-row Production-shaped baseline",
+    report.legacy.zeroRow.legacyCount === "0" &&
+      report.legacy.zeroRow.billingCount === "0" &&
+      report.legacy.zeroRow.auditCount === "0",
     JSON.stringify(report.legacy.zeroRow),
   );
 
-  // 24 valid legacy rows
-  const legacyUser = "cccc3333-3333-3333-3333-333333333333";
+  const stripeUser = "cccc3333-3333-3333-3333-333333333301";
+  const paypalUser = "cccc3333-3333-3333-3333-333333333302";
+
+  // L2 valid Stripe
   {
+    clearLegacy(stripeUser);
     mustPsql(`
-      DELETE FROM billing.legacy_subscription_import_audit WHERE legacy_user_id='${legacyUser}';
-      DELETE FROM billing.subscriptions WHERE user_id='${legacyUser}';
-      DELETE FROM public.user_subscriptions WHERE user_id='${legacyUser}';
-      INSERT INTO public.user_subscriptions (user_id, tier, status, current_period_end, provider, provider_subscription_id)
-      VALUES ('${legacyUser}', 'pro', 'active', now() + interval '20 days', 'stripe', 'sub_legacy_valid_1');
+      INSERT INTO public.user_subscriptions
+        (user_id, tier, status, current_period_end, provider, provider_subscription_id)
+      VALUES ('${stripeUser}', 'pro', 'active', now() + interval '20 days', 'stripe', 'sub_stripe_valid_1');
     `);
     const r = psql(`SELECT billing.import_legacy_user_subscriptions()::text`);
     const access = mustPsql(
-      `SELECT access_state FROM billing.subscriptions WHERE user_id='${legacyUser}'`,
-    );
-    const legacyStill = mustPsql(
-      `SELECT COUNT(*)::text FROM public.user_subscriptions WHERE user_id='${legacyUser}'`,
-    );
-    // idempotent replay
-    const r2 = psql(`SELECT billing.import_legacy_user_subscriptions()::text`);
-    const countSubs = mustPsql(
-      `SELECT COUNT(*)::text FROM billing.subscriptions WHERE user_id='${legacyUser}'`,
+      `SELECT access_state FROM billing.subscriptions WHERE user_id='${stripeUser}'`,
     );
     pushTest(
       24,
-      "legacy valid-row compatibility",
-      r.ok && r2.ok && access === "paid_active" && legacyStill === "1" && countSubs === "1",
-      `access=${access} legacy=${legacyStill} billing=${countSubs}`,
+      "L2 valid active Stripe legacy subscription",
+      r.ok && access === "paid_active",
+      `ok=${r.ok} access=${access}`,
     );
   }
 
-  // 25 unmappable fail-closed
+  // L3 valid PayPal
   {
-    const badUser = "dddd4444-4444-4444-4444-444444444444";
+    clearLegacy(paypalUser);
     mustPsql(`
-      DELETE FROM billing.legacy_subscription_import_audit WHERE legacy_user_id='${badUser}';
-      DELETE FROM billing.subscriptions WHERE user_id='${badUser}';
-      DELETE FROM public.user_subscriptions WHERE user_id='${badUser}';
+      INSERT INTO public.user_subscriptions
+        (user_id, tier, status, current_period_end, provider, provider_subscription_id)
+      VALUES ('${paypalUser}', 'pro', 'active', now() + interval '20 days', 'paypal', 'sub_paypal_valid_1');
     `);
-    // Table CHECK rejects unknown tiers (fail-closed at write). Import must also
-    // fail closed on unknown status for an otherwise valid tier.
-    const insertOk = psql(`
-      INSERT INTO public.user_subscriptions (user_id, tier, status, current_period_end)
-      VALUES ('${badUser}', 'pro', 'weird_unknown_status', now() + interval '10 days');
-    `);
-    const importFail = psql(`SELECT billing.import_legacy_user_subscriptions()::text`);
-    const noBillingRow = mustPsql(
-      `SELECT COUNT(*)::text FROM billing.subscriptions WHERE user_id='${badUser}'`,
+    const r = psql(`SELECT billing.import_legacy_user_subscriptions()::text`);
+    const access = mustPsql(
+      `SELECT access_state FROM billing.subscriptions WHERE user_id='${paypalUser}'`,
     );
     pushTest(
       25,
-      "legacy unmappable-row fail-closed behavior",
-      insertOk.ok &&
-        !importFail.ok &&
-        /LEGACY_SUB_UNMAPPABLE|unknown status/i.test(importFail.out) &&
-        noBillingRow === "0",
-      `insert=${insertOk.ok} importOk=${importFail.ok} billing=${noBillingRow} out=${importFail.out.slice(0, 200)}`,
+      "L3 valid active PayPal legacy subscription",
+      r.ok && access === "paid_active",
+      `ok=${r.ok} access=${access}`,
     );
-    // cleanup bad row so later tests are clean
-    mustPsql(`DELETE FROM public.user_subscriptions WHERE user_id='${badUser}'`);
   }
 
-  // 26 reservation-only canary via exact assistant-runtime transport
+  // L4 idempotency
+  {
+    const before = mustPsql(
+      `SELECT COUNT(*)::text FROM billing.subscriptions WHERE user_id='${stripeUser}'`,
+    );
+    const r2 = psql(`SELECT billing.import_legacy_user_subscriptions()::text`);
+    const after = mustPsql(
+      `SELECT COUNT(*)::text FROM billing.subscriptions WHERE user_id='${stripeUser}'`,
+    );
+    pushTest(
+      26,
+      "L4 duplicate import idempotency",
+      r2.ok && before === "1" && after === "1",
+      `before=${before} after=${after}`,
+    );
+  }
+
+  function expectReject(
+    id: number,
+    name: string,
+    setupSql: string,
+    userId: string,
+    pattern: RegExp,
+  ) {
+    clearLegacy(userId);
+    // Also clear any leftover from prior batch partners
+    const setup = psql(setupSql);
+    const beforeBilling = mustPsql(`SELECT COUNT(*)::text FROM billing.subscriptions`);
+    const beforeAudit = mustPsql(
+      `SELECT COUNT(*)::text FROM billing.legacy_subscription_import_audit`,
+    );
+    const beforeLegacy = mustPsql(
+      `SELECT COUNT(*)::text FROM public.user_subscriptions WHERE user_id='${userId}'`,
+    );
+    const imp = psql(`SELECT billing.import_legacy_user_subscriptions()::text`);
+    const afterBilling = mustPsql(`SELECT COUNT(*)::text FROM billing.subscriptions`);
+    const afterAudit = mustPsql(
+      `SELECT COUNT(*)::text FROM billing.legacy_subscription_import_audit`,
+    );
+    const afterLegacy = mustPsql(
+      `SELECT COUNT(*)::text FROM public.user_subscriptions WHERE user_id='${userId}'`,
+    );
+    const userBilling = mustPsql(
+      `SELECT COUNT(*)::text FROM billing.subscriptions WHERE user_id='${userId}'`,
+    );
+    const paid = assertNoPaidCapability(userId);
+    const ok =
+      setup.ok &&
+      !imp.ok &&
+      pattern.test(imp.out) &&
+      userBilling === "0" &&
+      afterLegacy === beforeLegacy &&
+      afterBilling === beforeBilling &&
+      afterAudit === beforeAudit &&
+      paid.ok;
+    pushTest(
+      id,
+      name,
+      ok,
+      `setup=${setup.ok} importOk=${imp.ok} userBilling=${userBilling} billingDelta=${beforeBilling}->${afterBilling} auditDelta=${beforeAudit}->${afterAudit} legacy=${afterLegacy} paid=${paid.detail} out=${imp.out.slice(0, 180)}`,
+    );
+    clearLegacy(userId);
+  }
+
+  expectReject(
+    27,
+    "L5 pro + NULL status rejection",
+    `INSERT INTO public.user_subscriptions (user_id, tier, status, current_period_end, provider, provider_subscription_id)
+     VALUES ('dddd4444-4444-4444-4444-444444444401', 'pro', NULL, now() + interval '10 days', 'stripe', 'sub_null_status');`,
+    "dddd4444-4444-4444-4444-444444444401",
+    /NULL status|pro with NULL/i,
+  );
+
+  expectReject(
+    28,
+    "L6 pro + trialing rejection",
+    `INSERT INTO public.user_subscriptions (user_id, tier, status, current_period_end, provider, provider_subscription_id)
+     VALUES ('dddd4444-4444-4444-4444-444444444402', 'pro', 'trialing', now() + interval '10 days', 'stripe', 'sub_trialing');`,
+    "dddd4444-4444-4444-4444-444444444402",
+    /trialing/i,
+  );
+
+  expectReject(
+    29,
+    "L7 active Pro without provider reference rejection",
+    `INSERT INTO public.user_subscriptions (user_id, tier, status, current_period_end, provider, provider_subscription_id)
+     VALUES ('dddd4444-4444-4444-4444-444444444403', 'pro', 'active', now() + interval '10 days', 'stripe', NULL);`,
+    "dddd4444-4444-4444-4444-444444444403",
+    /provider subscription reference/i,
+  );
+
+  expectReject(
+    30,
+    "L8 active Pro with both provider references rejection",
+    `INSERT INTO public.user_subscriptions (user_id, tier, status, current_period_end, provider, provider_subscription_id)
+     VALUES ('dddd4444-4444-4444-4444-444444444404', 'pro', 'active', now() + interval '10 days', 'stripe,paypal', 'sub_both');`,
+    "dddd4444-4444-4444-4444-444444444404",
+    /both Stripe and PayPal/i,
+  );
+
+  expectReject(
+    31,
+    "L9 active Pro with expired period rejection",
+    `INSERT INTO public.user_subscriptions (user_id, tier, status, current_period_end, provider, provider_subscription_id)
+     VALUES ('dddd4444-4444-4444-4444-444444444405', 'pro', 'active', now() - interval '1 day', 'stripe', 'sub_expired');`,
+    "dddd4444-4444-4444-4444-444444444405",
+    /not in the future|expired/i,
+  );
+
+  expectReject(
+    32,
+    "L10 active Pro with null period rejection",
+    `INSERT INTO public.user_subscriptions (user_id, tier, status, current_period_end, provider, provider_subscription_id)
+     VALUES ('dddd4444-4444-4444-4444-444444444406', 'pro', 'active', NULL, 'stripe', 'sub_null_period');`,
+    "dddd4444-4444-4444-4444-444444444406",
+    /requires current_period_end/i,
+  );
+
+  // L11 unknown tier — table CHECK may block insert; also prove mapper rejects.
+  {
+    const u = "dddd4444-4444-4444-4444-444444444407";
+    clearLegacy(u);
+    const mapFail = psql(
+      `SELECT * FROM billing.map_legacy_user_subscription_row('${u}', 'enterprise', 'active', now() + interval '5 days', 'stripe', 'sub_x')`,
+    );
+    pushTest(
+      33,
+      "L11 unknown tier rejection",
+      !mapFail.ok && /unknown plan\/tier/i.test(mapFail.out),
+      mapFail.out.slice(0, 180),
+    );
+  }
+
+  expectReject(
+    34,
+    "L12 unknown status rejection",
+    `INSERT INTO public.user_subscriptions (user_id, tier, status, current_period_end, provider, provider_subscription_id)
+     VALUES ('dddd4444-4444-4444-4444-444444444408', 'pro', 'weird_unknown_status', now() + interval '10 days', 'stripe', 'sub_unknown_status');`,
+    "dddd4444-4444-4444-4444-444444444408",
+    /unknown or unsupported status|UNMAPPABLE/i,
+  );
+
+  // L13 missing user identity
+  {
+    const mapFail = psql(
+      `SELECT * FROM billing.map_legacy_user_subscription_row(NULL, 'pro', 'active', now() + interval '5 days', 'stripe', 'sub_noid')`,
+    );
+    pushTest(
+      35,
+      "L13 missing user identity rejection",
+      !mapFail.ok && /missing user identity/i.test(mapFail.out),
+      mapFail.out.slice(0, 180),
+    );
+  }
+
+  // L14 duplicate provider reference
+  {
+    const u1 = "dddd4444-4444-4444-4444-444444444409";
+    const u2 = "dddd4444-4444-4444-4444-44444444440a";
+    clearLegacy(u1);
+    clearLegacy(u2);
+    mustPsql(`
+      INSERT INTO public.user_subscriptions (user_id, tier, status, current_period_end, provider, provider_subscription_id)
+      VALUES
+        ('${u1}', 'pro', 'active', now() + interval '10 days', 'stripe', 'sub_dup_shared'),
+        ('${u2}', 'pro', 'active', now() + interval '10 days', 'stripe', 'sub_dup_shared');
+    `);
+    const before = mustPsql(`SELECT COUNT(*)::text FROM billing.subscriptions`);
+    const imp = psql(`SELECT billing.import_legacy_user_subscriptions()::text`);
+    const after = mustPsql(`SELECT COUNT(*)::text FROM billing.subscriptions`);
+    pushTest(
+      36,
+      "L14 duplicate provider reference rejection",
+      !imp.ok && /duplicate provider/i.test(imp.out) && before === after,
+      `billing=${before}->${after} out=${imp.out.slice(0, 160)}`,
+    );
+    clearLegacy(u1);
+    clearLegacy(u2);
+  }
+
+  // L15 conflicting billing.subscriptions
+  {
+    const u = "dddd4444-4444-4444-4444-44444444440b";
+    clearLegacy(u);
+    mustPsql(`
+      INSERT INTO public.user_subscriptions (user_id, tier, status, current_period_end, provider, provider_subscription_id)
+      VALUES ('${u}', 'pro', 'active', now() + interval '10 days', 'stripe', 'sub_conflict_1');
+      INSERT INTO billing.subscriptions
+        (user_id, plan_version_id, access_state, billing_state, market_code, currency_code, billing_interval, idempotency_key, current_period_end)
+      SELECT '${u}', pv.id, 'free_active', 'none', 'INTL', 'USD', 'none', 'preexisting-${u}', NULL
+      FROM billing.plan_versions pv
+      JOIN billing.plan_catalog pc ON pc.id = pv.plan_id
+      WHERE pc.plan_key='free' AND pv.billing_interval='none'
+      LIMIT 1;
+    `);
+    const imp = psql(`SELECT billing.import_legacy_user_subscriptions()::text`);
+    const access = mustPsql(`SELECT access_state FROM billing.subscriptions WHERE user_id='${u}'`);
+    pushTest(
+      37,
+      "L15 existing conflicting billing.subscriptions rejection",
+      !imp.ok && /already authoritative|CONFLICT/i.test(imp.out) && access === "free_active",
+      `access=${access} out=${imp.out.slice(0, 160)}`,
+    );
+    clearLegacy(u);
+  }
+
+  // L16 user-controlled legacy Pro cannot grant paid entitlement without import
+  {
+    const u = "dddd4444-4444-4444-4444-44444444440c";
+    clearLegacy(u);
+    mustPsql(`
+      INSERT INTO public.user_subscriptions (user_id, tier, status, current_period_end, provider, provider_subscription_id)
+      VALUES ('${u}', 'pro', 'active', now() + interval '30 days', 'stripe', 'sub_user_controlled');
+    `);
+    // Do NOT run import — legacy row alone must not enable reservation / paid access.
+    const paid = assertNoPaidCapability(u);
+    pushTest(
+      38,
+      "L16 user-controlled legacy Pro row cannot grant paid entitlement",
+      paid.ok,
+      paid.detail,
+    );
+    clearLegacy(u);
+  }
+
+  // L17 failed batch leaves zero partial authoritative rows
+  {
+    const good = "dddd4444-4444-4444-4444-44444444440d";
+    const bad = "dddd4444-4444-4444-4444-44444444440e";
+    clearLegacy(good);
+    clearLegacy(bad);
+    // Remove prior successful stripe/paypal imports that would confuse counts
+    clearLegacy(stripeUser);
+    clearLegacy(paypalUser);
+    mustPsql(`
+      DELETE FROM billing.legacy_subscription_import_audit;
+      DELETE FROM billing.subscriptions WHERE idempotency_key LIKE 'legacy-user-sub:%';
+      INSERT INTO public.user_subscriptions (user_id, tier, status, current_period_end, provider, provider_subscription_id)
+      VALUES
+        ('${good}', 'pro', 'active', now() + interval '20 days', 'stripe', 'sub_batch_good'),
+        ('${bad}', 'pro', 'trialing', now() + interval '20 days', 'stripe', 'sub_batch_bad');
+    `);
+    const beforeSubs = mustPsql(
+      `SELECT COUNT(*)::text FROM billing.subscriptions WHERE idempotency_key LIKE 'legacy-user-sub:%'`,
+    );
+    const beforeAudit = mustPsql(
+      `SELECT COUNT(*)::text FROM billing.legacy_subscription_import_audit`,
+    );
+    const imp = psql(`SELECT billing.import_legacy_user_subscriptions()::text`);
+    const afterSubs = mustPsql(
+      `SELECT COUNT(*)::text FROM billing.subscriptions WHERE idempotency_key LIKE 'legacy-user-sub:%'`,
+    );
+    const afterAudit = mustPsql(
+      `SELECT COUNT(*)::text FROM billing.legacy_subscription_import_audit`,
+    );
+    const legacyGood = mustPsql(
+      `SELECT COUNT(*)::text FROM public.user_subscriptions WHERE user_id='${good}'`,
+    );
+    const legacyBad = mustPsql(
+      `SELECT COUNT(*)::text FROM public.user_subscriptions WHERE user_id='${bad}'`,
+    );
+    pushTest(
+      39,
+      "L17 failed batch leaves zero partial authoritative rows",
+      !imp.ok &&
+        /trialing/i.test(imp.out) &&
+        beforeSubs === "0" &&
+        afterSubs === "0" &&
+        beforeAudit === "0" &&
+        afterAudit === "0" &&
+        legacyGood === "1" &&
+        legacyBad === "1",
+      `subs=${beforeSubs}->${afterSubs} audit=${beforeAudit}->${afterAudit} legacy=${legacyGood}/${legacyBad} out=${imp.out.slice(0, 140)}`,
+    );
+    clearLegacy(good);
+    clearLegacy(bad);
+  }
+
+  // L18 free legacy remains non-paid
+  {
+    const u = "dddd4444-4444-4444-4444-44444444440f";
+    clearLegacy(u);
+    mustPsql(`
+      INSERT INTO public.user_subscriptions (user_id, tier, status, current_period_end)
+      VALUES ('${u}', 'free', 'active', NULL);
+    `);
+    const r = psql(`SELECT billing.import_legacy_user_subscriptions()::text`);
+    const access = mustPsql(`SELECT access_state FROM billing.subscriptions WHERE user_id='${u}'`);
+    const paidCount = mustPsql(
+      `SELECT COUNT(*)::text FROM billing.subscriptions WHERE user_id='${u}' AND access_state='paid_active'`,
+    );
+    const paid = assertNoPaidCapability(u);
+    // free_active exists but is not paid — assertNoPaidCapability checks paid_active only; reservation should still deny.
+    pushTest(
+      40,
+      "L18 free legacy row remains non-paid",
+      r.ok && access === "free_active" && paidCount === "0" && paid.ok,
+      `access=${access} paidCount=${paidCount} ${paid.detail}`,
+    );
+    clearLegacy(u);
+  }
+
+  // 41 reservation-only canary via exact assistant-runtime transport
   {
     const counters = { retrieval: 0, embedding: 0, generation: 0, provider: 0 };
     const body = {
@@ -947,25 +1269,25 @@ async function main(): Promise<void> {
       responsePreview: text.slice(0, 240),
     };
     pushTest(
-      26,
+      41,
       "exact assistant-runtime reservation-only transport",
       Boolean(report.canary.ok),
       JSON.stringify(report.canary),
     );
   }
 
-  // 27 no 406 Invalid schema billing on public path
+  // 42 no 406 Invalid schema billing on public path
   {
     const r = await postgrestRpc(api, service, "get_entitlement_snapshot", {
       p_user_id: USER,
     });
     const no406 = r.status !== 406 && !/Invalid schema:\s*billing/i.test(r.text);
-    pushTest(27, "absence of 406 Invalid schema: billing", no406, `status=${r.status}`);
+    pushTest(42, "absence of 406 Invalid schema: billing", no406, `status=${r.status}`);
   }
 
-  // 28 zero provider/embed/retrieval/generation on canary
+  // 43 zero provider/embed/retrieval/generation on canary
   pushTest(
-    28,
+    43,
     "zero provider, embedding, retrieval and generation calls",
     report.canary.retrieval_calls === 0 &&
       report.canary.embedding_calls === 0 &&

@@ -1,5 +1,5 @@
 -- Legacy subscription compatibility: one-way fail-closed backfill into Billing V3.
--- Authorization: CR-BILLING-RAG-NATIVE-REHEARSAL-CORRECTION-20260801-01
+-- Authorization: CR-BILLING-RAG-PR15-FAIL-CLOSED-CORRECTION-20260801-02
 --
 -- AUTHORITATIVE AFTER THIS MIGRATION:
 --   billing.subscriptions is authoritative for Billing, entitlement, quota,
@@ -10,12 +10,22 @@
 --   It is retained only as a frozen legacy compatibility archive. It is not an
 --   independent paid-entitlement source of truth after cutover.
 --
--- BEHAVIOR:
---   * Zero legacy rows → success; no synthetic paid subscription is created.
---   * Mappable free/pro rows → deterministic insert into billing.subscriptions.
---   * Unmappable or conflicting rows → RAISE (transaction aborts; fail closed).
---   * Never silently grants paid entitlement for unknown/contradictory state.
---   * Does not expose the private billing schema through PostgREST.
+-- PAID_ACTIVE CONTRACT (strict — fail closed otherwise):
+--   tier = 'pro'
+--   AND status = 'active'
+--   AND exactly one supported provider: Stripe XOR PayPal
+--   AND provider_subscription_id present
+--   AND current_period_end present AND current_period_end > now()
+--   AND no conflicting billing.subscriptions row
+--   AND no duplicate provider subscription reference
+--
+-- Explicitly NEVER map to paid_active:
+--   pro + NULL status, pro + trialing, missing/dual provider refs,
+--   missing/expired period, unknown tier/status, ambiguous paid states.
+-- Do not silently downgrade ambiguous paid rows to free — reject and leave
+-- the legacy row unchanged for manual disposition.
+--
+-- Free rows map only to non-paid free_active (never paid entitlement / AI quota).
 
 CREATE TABLE IF NOT EXISTS billing.legacy_subscription_import_audit (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -35,17 +45,60 @@ REVOKE ALL ON TABLE billing.legacy_subscription_import_audit FROM PUBLIC;
 REVOKE ALL ON TABLE billing.legacy_subscription_import_audit FROM anon, authenticated;
 GRANT SELECT, INSERT ON TABLE billing.legacy_subscription_import_audit TO service_role;
 
+-- Normalize provider to exactly one of: stripe | paypal | NULL (unmappable).
+CREATE OR REPLACE FUNCTION billing.normalize_legacy_provider(p_provider text)
+RETURNS text
+LANGUAGE plpgsql
+IMMUTABLE
+SECURITY DEFINER
+SET search_path = billing, public, pg_temp
+AS $$
+DECLARE
+  v text := lower(nullif(btrim(COALESCE(p_provider, '')), ''));
+BEGIN
+  IF v IS NULL THEN
+    RETURN NULL;
+  END IF;
+
+  -- Dual / composite references are never accepted.
+  IF (v LIKE '%stripe%' AND v LIKE '%paypal%')
+     OR v IN ('stripe,paypal', 'paypal,stripe', 'stripe+paypal', 'paypal+stripe',
+              'stripe/paypal', 'paypal/stripe', 'both') THEN
+    RAISE EXCEPTION 'LEGACY_SUB_UNMAPPABLE: both Stripe and PayPal subscription references'
+      USING ERRCODE = '22023';
+  END IF;
+
+  IF v IN ('stripe', 'stripe_us', 'stripe.com') THEN
+    RETURN 'stripe';
+  END IF;
+
+  IF v IN ('paypal', 'paypal_us', 'paypal.com') THEN
+    RETURN 'paypal';
+  END IF;
+
+  RAISE EXCEPTION 'LEGACY_SUB_UNMAPPABLE: unsupported provider %', p_provider
+    USING ERRCODE = '22023';
+END;
+$$;
+
+REVOKE ALL ON FUNCTION billing.normalize_legacy_provider(text) FROM PUBLIC;
+REVOKE ALL ON FUNCTION billing.normalize_legacy_provider(text) FROM anon, authenticated;
+GRANT EXECUTE ON FUNCTION billing.normalize_legacy_provider(text) TO service_role;
+
 CREATE OR REPLACE FUNCTION billing.map_legacy_user_subscription_row(
   p_user_id uuid,
   p_tier text,
   p_status text,
-  p_current_period_end timestamptz
+  p_current_period_end timestamptz,
+  p_provider text DEFAULT NULL,
+  p_provider_subscription_id text DEFAULT NULL
 )
 RETURNS TABLE (
   access_state text,
   billing_state text,
   billing_interval text,
-  plan_key text
+  plan_key text,
+  provider_code text
 )
 LANGUAGE plpgsql
 STABLE
@@ -55,7 +108,8 @@ AS $$
 DECLARE
   v_status text := lower(nullif(btrim(COALESCE(p_status, '')), ''));
   v_tier text := lower(nullif(btrim(COALESCE(p_tier, '')), ''));
-  v_period_active boolean := (p_current_period_end IS NULL OR p_current_period_end > now());
+  v_provider text;
+  v_prov_sub text := nullif(btrim(COALESCE(p_provider_subscription_id, '')), '');
 BEGIN
   IF p_user_id IS NULL THEN
     RAISE EXCEPTION 'LEGACY_SUB_UNMAPPABLE: missing user identity'
@@ -68,56 +122,70 @@ BEGIN
   END IF;
 
   IF v_tier = 'free' THEN
-    -- Free never becomes paid, regardless of legacy status text.
+    -- Free never becomes paid, regardless of legacy status / provider text.
     access_state := 'free_active';
     billing_state := 'none';
     billing_interval := 'none';
     plan_key := 'free';
+    provider_code := NULL;
     RETURN NEXT;
     RETURN;
   END IF;
 
-  -- tier = pro
-  IF v_status IS NOT NULL AND v_status NOT IN (
-    'active', 'trialing', 'past_due', 'canceled', 'cancelled', 'expired', 'inactive'
-  ) THEN
-    RAISE EXCEPTION 'LEGACY_SUB_UNMAPPABLE: unknown status %', p_status
+  -- tier = pro: only the strict paid_active contract is accepted.
+  -- Ambiguous paid states (NULL status, trialing, etc.) fail closed — never
+  -- silently downgrade to free.
+  IF v_status IS NULL THEN
+    RAISE EXCEPTION 'LEGACY_SUB_UNMAPPABLE: pro with NULL status is not proven paid'
       USING ERRCODE = '22023';
   END IF;
 
-  IF v_status IN ('expired', 'inactive') OR NOT v_period_active THEN
-    access_state := 'expired';
-    billing_state := 'inactive';
-    billing_interval := 'month';
-    plan_key := 'pro';
-  ELSIF v_status IN ('canceled', 'cancelled') THEN
-    access_state := 'canceled_at_period_end';
-    billing_state := 'cancel_at_period_end';
-    billing_interval := 'month';
-    plan_key := 'pro';
-  ELSIF v_status = 'past_due' THEN
-    access_state := 'past_due';
-    billing_state := 'past_due';
-    billing_interval := 'month';
-    plan_key := 'pro';
-  ELSIF v_status IS NULL OR v_status IN ('active', 'trialing') THEN
-    access_state := 'paid_active';
-    billing_state := 'active';
-    billing_interval := 'month';
-    plan_key := 'pro';
-  ELSE
-    RAISE EXCEPTION 'LEGACY_SUB_UNMAPPABLE: contradictory paid/free state (tier=%, status=%)',
-      p_tier, p_status
+  IF v_status = 'trialing' THEN
+    RAISE EXCEPTION 'LEGACY_SUB_UNMAPPABLE: pro trialing is not paid (V3 abolished automatic trial)'
       USING ERRCODE = '22023';
   END IF;
 
+  IF v_status IS DISTINCT FROM 'active' THEN
+    RAISE EXCEPTION 'LEGACY_SUB_UNMAPPABLE: unknown or unsupported status %', p_status
+      USING ERRCODE = '22023';
+  END IF;
+
+  IF p_current_period_end IS NULL THEN
+    RAISE EXCEPTION 'LEGACY_SUB_UNMAPPABLE: active pro requires current_period_end'
+      USING ERRCODE = '22023';
+  END IF;
+
+  IF p_current_period_end <= now() THEN
+    RAISE EXCEPTION 'LEGACY_SUB_UNMAPPABLE: active pro current_period_end is not in the future'
+      USING ERRCODE = '22023';
+  END IF;
+
+  IF v_prov_sub IS NULL THEN
+    RAISE EXCEPTION 'LEGACY_SUB_UNMAPPABLE: active pro requires a provider subscription reference'
+      USING ERRCODE = '22023';
+  END IF;
+
+  v_provider := billing.normalize_legacy_provider(p_provider);
+  IF v_provider IS NULL THEN
+    RAISE EXCEPTION 'LEGACY_SUB_UNMAPPABLE: active pro requires Stripe XOR PayPal provider'
+      USING ERRCODE = '22023';
+  END IF;
+
+  access_state := 'paid_active';
+  billing_state := 'active';
+  billing_interval := 'month';
+  plan_key := 'pro';
+  provider_code := v_provider;
   RETURN NEXT;
 END;
 $$;
 
-REVOKE ALL ON FUNCTION billing.map_legacy_user_subscription_row(uuid, text, text, timestamptz) FROM PUBLIC;
-REVOKE ALL ON FUNCTION billing.map_legacy_user_subscription_row(uuid, text, text, timestamptz) FROM anon, authenticated;
-GRANT EXECUTE ON FUNCTION billing.map_legacy_user_subscription_row(uuid, text, text, timestamptz) TO service_role;
+REVOKE ALL ON FUNCTION billing.map_legacy_user_subscription_row(uuid, text, text, timestamptz, text, text) FROM PUBLIC;
+REVOKE ALL ON FUNCTION billing.map_legacy_user_subscription_row(uuid, text, text, timestamptz, text, text) FROM anon, authenticated;
+GRANT EXECUTE ON FUNCTION billing.map_legacy_user_subscription_row(uuid, text, text, timestamptz, text, text) TO service_role;
+
+-- Drop prior 4-arg overload from the first PR15 revision if present.
+DROP FUNCTION IF EXISTS billing.map_legacy_user_subscription_row(uuid, text, text, timestamptz);
 
 CREATE OR REPLACE FUNCTION billing.import_legacy_user_subscriptions()
 RETURNS jsonb
@@ -150,7 +218,6 @@ BEGIN
       USING ERRCODE = '23505';
   END IF;
 
-  -- Duplicate user rows cannot exist (PK), but guard anyway.
   IF EXISTS (
     SELECT 1 FROM public.user_subscriptions GROUP BY user_id HAVING COUNT(*) > 1
   ) THEN
@@ -171,7 +238,12 @@ BEGIN
   LOOP
     SELECT * INTO v_map
     FROM billing.map_legacy_user_subscription_row(
-      r.user_id, r.tier, r.status, r.current_period_end
+      r.user_id,
+      r.tier,
+      r.status,
+      r.current_period_end,
+      r.provider,
+      r.provider_subscription_id
     );
 
     SELECT * INTO v_prior
@@ -182,6 +254,8 @@ BEGIN
       IF v_prior.mapped_access_state IS DISTINCT FROM v_map.access_state
          OR v_prior.legacy_tier IS DISTINCT FROM r.tier
          OR v_prior.legacy_status IS DISTINCT FROM r.status
+         OR v_prior.legacy_provider IS DISTINCT FROM r.provider
+         OR v_prior.legacy_provider_subscription_id IS DISTINCT FROM r.provider_subscription_id
          OR v_prior.legacy_current_period_end IS DISTINCT FROM r.current_period_end THEN
         RAISE EXCEPTION
           'LEGACY_SUB_CONFLICT: contradictory re-import for user % (prior %, new %)',
@@ -197,13 +271,14 @@ BEGIN
     WHERE user_id = r.user_id;
 
     IF FOUND THEN
+      -- Any pre-existing authoritative row with a legacy candidate is a conflict
+      -- unless it already matches this exact fail-closed mapping (idempotent).
       IF v_existing.access_state IS DISTINCT FROM v_map.access_state THEN
         RAISE EXCEPTION
           'LEGACY_SUB_CONFLICT: billing.subscriptions already authoritative for user % (%, legacy maps to %)',
           r.user_id, v_existing.access_state, v_map.access_state
           USING ERRCODE = '23505';
       END IF;
-      -- Same access state already present — record audit only.
       INSERT INTO billing.legacy_subscription_import_audit (
         legacy_user_id, legacy_tier, legacy_status, legacy_provider,
         legacy_provider_subscription_id, legacy_current_period_end,
@@ -250,19 +325,19 @@ BEGIN
       v_plan_version_id,
       v_map.access_state,
       v_map.billing_state,
-      (v_map.access_state = 'canceled_at_period_end'),
+      false,
       r.current_period_end,
       'INTL',
       'USD',
       v_map.billing_interval,
       'legacy-user-sub:' || r.user_id::text,
       CASE
-        WHEN v_map.access_state IN ('paid_active', 'canceled_at_period_end', 'past_due')
+        WHEN v_map.access_state = 'paid_active'
           THEN COALESCE(r.current_period_end - interval '30 days', now())
         ELSE NULL
       END,
       CASE
-        WHEN v_map.access_state IN ('paid_active', 'canceled_at_period_end', 'past_due')
+        WHEN v_map.access_state = 'paid_active'
           THEN COALESCE(r.current_period_end - interval '30 days', now())
         ELSE NULL
       END
@@ -308,7 +383,6 @@ END;
 $cutover$;
 
 -- Client-readable own-tier helper over the authoritative Billing table.
--- Does not expose billing schema via PostgREST profiles; public RPC only.
 CREATE OR REPLACE FUNCTION public.get_my_billing_access_tier()
 RETURNS text
 LANGUAGE plpgsql
@@ -318,27 +392,18 @@ SET search_path = public, billing, pg_temp
 AS $$
 DECLARE
   v_uid uuid := auth.uid();
-  v_access text;
 BEGIN
   IF v_uid IS NULL THEN
     RAISE EXCEPTION 'Not authenticated' USING ERRCODE = '42501';
   END IF;
 
-  SELECT s.access_state INTO v_access
-  FROM billing.subscriptions s
-  WHERE s.user_id = v_uid;
-
-  IF NOT FOUND THEN
-    RETURN 'free';
-  END IF;
-
-  IF v_access IN ('paid_active', 'canceled_at_period_end')
-     AND EXISTS (
-       SELECT 1 FROM billing.subscriptions s2
-       WHERE s2.user_id = v_uid
-         AND s2.access_state IN ('paid_active', 'canceled_at_period_end')
-         AND (s2.current_period_end IS NULL OR s2.current_period_end > now())
-     ) THEN
+  IF EXISTS (
+    SELECT 1 FROM billing.subscriptions s
+    WHERE s.user_id = v_uid
+      AND s.access_state = 'paid_active'
+      AND s.current_period_end IS NOT NULL
+      AND s.current_period_end > now()
+  ) THEN
     RETURN 'pro';
   END IF;
 
@@ -351,8 +416,6 @@ REVOKE ALL ON FUNCTION public.get_my_billing_access_tier() FROM anon;
 GRANT EXECUTE ON FUNCTION public.get_my_billing_access_tier() TO authenticated, service_role;
 
 -- Account wipe must clear the authoritative Billing subscription when present.
--- Replaces the public wipe body with Billing-aware cleanup while retaining the
--- legacy public.user_subscriptions delete (table preserved until row removal).
 CREATE OR REPLACE FUNCTION public.delete_my_account_data()
 RETURNS void
 LANGUAGE plpgsql
@@ -371,7 +434,6 @@ BEGIN
   DELETE FROM billing.subscriptions WHERE user_id = v_user;
   DELETE FROM public.user_subscriptions WHERE user_id = v_user;
 
-  -- Best-effort wipe of known user-owned public relations when present.
   FOREACH v_rel IN ARRAY ARRAY[
     'lesson_progress',
     'user_lesson_status',

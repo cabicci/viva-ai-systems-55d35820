@@ -69,12 +69,14 @@ else
     overall_status=1
     echo "- Result: FAIL (database reset before Phase A)" >> "$REPORT"
   elif bunx vitest run --no-file-parallelism src/lib/billing/__tests__/ > "${REPORT_DIR}/unit.log" 2>&1; then
+    # Count must stay in lockstep with the billing vitest inventory (static + disposable).
+    # Refuse any skipped mandatory disposable proofs.
     if assert_no_mandatory_skips "${REPORT_DIR}/unit.log" \
-      && grep -Eq '80 passed' "${REPORT_DIR}/unit.log"; then
-      echo "- Result: PASS (80 / 80, 0 skipped)" >> "$REPORT"
+      && grep -EEq 'Tests[[:space:]]+95 passed' "${REPORT_DIR}/unit.log"; then
+      echo "- Result: PASS (95 / 95, 0 skipped)" >> "$REPORT"
     else
       overall_status=1
-      echo "- Result: FAIL (expected 80 passed / 0 skipped)" >> "$REPORT"
+      echo "- Result: FAIL (expected 95 passed / 0 skipped)" >> "$REPORT"
     fi
   else
     overall_status=1
