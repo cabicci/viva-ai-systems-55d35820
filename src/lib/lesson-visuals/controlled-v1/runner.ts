@@ -1113,10 +1113,8 @@ export async function runMethodARemainingSixLessons(
       outputDir: cellDir,
     });
 
-    if (!capture.ok || ("readinessOnly" in capture && capture.readinessOnly)) {
-      const reason = !capture.ok
-        ? capture.errors.join("; ")
-        : "readiness-only result returned during capture phase";
+    if (!capture.ok) {
+      const reason = capture.errors.join("; ");
       captureErrors.push(`${cell.cellId}: ${reason}`);
       const failedReceipt: CellReceipt = {
         receiptVersion: "controlled-v1-receipt/1",
@@ -1134,7 +1132,7 @@ export async function runMethodARemainingSixLessons(
         producedAt,
       };
       writeReceipt(failedReceipt);
-      if (!capture.ok && capture.evidence) {
+      if (capture.evidence) {
         writeRemainingSixCaptureEvidenceJson(
           join(
             ARTIFACTS_REPORTS_DIR,
@@ -1147,6 +1145,29 @@ export async function runMethodARemainingSixLessons(
       }
       receipts.push(failedReceipt);
       // Fail closed: do not continue finalizing further cells after a failed assertion.
+      break;
+    }
+
+    if ("readinessOnly" in capture) {
+      const reason = "readiness-only result returned during capture phase";
+      captureErrors.push(`${cell.cellId}: ${reason}`);
+      const failedReceipt: CellReceipt = {
+        receiptVersion: "controlled-v1-receipt/1",
+        cellId: cell.cellId,
+        lessonId: cell.lessonId,
+        locale: cell.locale,
+        route: cell.route,
+        mode: "method-a-remaining-six-lessons-24",
+        status: "FAILED",
+        reason,
+        artifactPath: null,
+        artifactSha256: null,
+        bytesWritten: null,
+        controlledFailureInjected: false,
+        producedAt,
+      };
+      writeReceipt(failedReceipt);
+      receipts.push(failedReceipt);
       break;
     }
 

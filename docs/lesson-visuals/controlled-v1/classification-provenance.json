@@ -3,8 +3,8 @@
   "pipeline": "controlled-v1",
   "classificationSourcePath": "E:/Masaarat/Worktrees/_external-audits/ar-eg-100-media-map/ar-eg-media-map.md",
   "classificationSourceRepoRelativeCopyPath": "docs/lesson-visuals/controlled-v1/inputs/ar-eg-media-map.md",
-  "classificationSourceSha256": "37AD4297CB948803A726D6B63A406636C71A8EABBE26423C2D4A70BFF77B6AE1",
-  "classificationSourceCopySha256": "37AD4297CB948803A726D6B63A406636C71A8EABBE26423C2D4A70BFF77B6AE1",
+  "classificationSourceSha256": "A5F3F5F5937584C5A646115AF2652F8DD0011D3079B0D0F1D04CD758D9B6EA9F",
+  "classificationSourceCopySha256": "A5F3F5F5937584C5A646115AF2652F8DD0011D3079B0D0F1D04CD758D9B6EA9F",
   "reconcileResultSourcePath": "E:/Masaarat/Worktrees/_external-audits/ar-eg-100-media-map/_reconcile-result.json",
   "acceptedClassificationBaselineSha": "a9b31c53aee45a9498f89f1301987f684ff1bae9",
   "reconciledOriginMainSha": "aca5ad018b7d47238959bc0ee91a195d142cd348",
@@ -28,6 +28,7 @@
   "notes": [
     "This file records provenance only. The authoritative frozen classification used at build/runtime is docs/lesson-visuals/controlled-v1/classification-100.json.",
     "Media-map markdown and classification-100.json now encode 7 A / 0 B / 93 C.",
-    "Unresolved ledger = 28 Method A + 12 Method B→C replacement Method C cells (40 total)."
+    "Unresolved ledger historically tracked Method A + Method B→C cells before human acceptance finalization; Method A is now 28/28 and Method C is 372/372 under CR-LV-400-CONTROLLED-MAIN-INTEGRATION-20260731-02.",
+    "Media-map copy checksum refreshed during controlled main integration to match the accepted Method A query-concept normalization edit on docs/lesson-visuals/controlled-v1/inputs/ar-eg-media-map.md (bytes unchanged from candidate 5239a25e)."
   ]
 }
