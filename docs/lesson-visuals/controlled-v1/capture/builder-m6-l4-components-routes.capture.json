@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "controlled-v1-capture-config/1",
+  "lessonId": "builder-m6-l4-components-routes",
+  "environment": "local-dev",
+  "authorizedBy": "CR-LV-METHOD-A-QUERY-CONCEPT-NORMALIZATION-SIX-LESSON-SINGLE-RUN-20260728-01",
+  "authorizedAt": "2026-07-28T00:00:00.000Z",
+  "sessionUrl": "http://127.0.0.1:55440/curriculum",
+  "path": "/curriculum",
+  "search": "",
+  "concept": "Curriculum view showing repeated ModuleCard and LessonRow structures across at least two path sections.",
+  "cellAllowlist": [
+    "builder-m6-l4-components-routes__ar-EG",
+    "builder-m6-l4-components-routes__ar-MSA",
+    "builder-m6-l4-components-routes__ar-Gulf",
+    "builder-m6-l4-components-routes__en"
+  ],
+  "readiness": [
+    "#module-* present",
+    "#lesson-* present",
+    ">=2 PATH · section.rounded-3xl path cards"
+  ],
+  "selectors": ["[id^=module-]", "[id^=lesson-]", "section.rounded-3xl"],
+  "framing": "CDP scroll so at least two path module grids are meaningfully framed in 1280x720.",
+  "masking": ["synthetic email", "currentUser", "tokens", "UUIDs"],
+  "forbiddenStates": ["login", "loading", "blank", "error", "denied"],
+  "directionByLocale": { "ar-EG": "rtl", "ar-MSA": "rtl", "ar-Gulf": "rtl", "en": "ltr" },
+  "notes": "Public curriculum route; auth preferred for unlocked look. Live capture via method-a-remaining-six-lessons-24 only."
+}

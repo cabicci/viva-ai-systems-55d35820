@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "controlled-v1-human-acceptance/1",
+  "authorizationId": "CR-LV-METHOD-A-FOUR-LOCALE-PILOT-METADATA-ONLY-FINALIZATION-20260728-01",
+  "priorAuthorizationId": "CR-LV-METHOD-A-FOUR-LOCALE-CORRECTED-RECAPTURE-20260728-01",
+  "decision": "ACCEPT ALL 4",
+  "decidedBy": "Khalil",
+  "decidedAt": "2026-07-28T00:00:00.000Z",
+  "accepted": 4,
+  "rejected": 0,
+  "corrections": "none",
+  "producingCandidateSha": "3adc053c8245eccbcbedbd649bb4bd703bd499b6",
+  "lessonId": "builder-m7-l1-tables-columns",
+  "route": "MASAARAT_SCREENSHOT",
+  "category": "A",
+  "pngBytesImmutable": true,
+  "acceptedCells": [
+    {
+      "cellId": "builder-m7-l1-tables-columns__ar-EG",
+      "lessonId": "builder-m7-l1-tables-columns",
+      "locale": "ar-EG",
+      "status": "ACCEPTED",
+      "pngSha256": "21D8C039997D2E302E7E178978D61C5A096B5245B7F0C548F93165598460C9B9"
+    },
+    {
+      "cellId": "builder-m7-l1-tables-columns__ar-MSA",
+      "lessonId": "builder-m7-l1-tables-columns",
+      "locale": "ar-MSA",
+      "status": "ACCEPTED",
+      "pngSha256": "D809707C54B09BF9C62FEB1C2233BE46EAB8F562A533DB1758816402F274A85B"
+    },
+    {
+      "cellId": "builder-m7-l1-tables-columns__ar-Gulf",
+      "lessonId": "builder-m7-l1-tables-columns",
+      "locale": "ar-Gulf",
+      "status": "ACCEPTED",
+      "pngSha256": "59D97360811658D2A1DC974FEBE08CBDFDD608F17C26A673FCFDA6371F5838F9"
+    },
+    {
+      "cellId": "builder-m7-l1-tables-columns__en",
+      "lessonId": "builder-m7-l1-tables-columns",
+      "locale": "en",
+      "status": "ACCEPTED",
+      "pngSha256": "0F08DBDD267127E934E3A41A5500FF23C1CF411F143C58391623E3E00CE4845B"
+    }
+  ],
+  "notes": [
+    "Human visual acceptance of the Method A four-locale pilot (ACCEPT ALL 4) under CR-LV-METHOD-A-FOUR-LOCALE-PILOT-METADATA-ONLY-FINALIZATION-20260728-01.",
+    "Capture authorization: CR-LV-METHOD-A-FOUR-LOCALE-CORRECTED-RECAPTURE-20260728-01. Contract-normalization authorization: CR-LV-METHOD-A-PILOT-CURRENTPATH-CONTRACT-NORMALIZATION-20260728-01.",
+    "Normalized contract: visible currentRoute=/system-state satisfies the meaningful route/path requirement; currentPath=— is permitted and accurately represents unavailable runtime state on /system-state; established English technical identifiers and module names are permitted and are not locale contamination by themselves.",
+    "This tracked acceptance metadata is the canonical human-acceptance evidence for these four cells.",
+    "Runtime receipts under artifacts/controlled-v1/receipts/ are execution evidence only; gitignored receipt status does not override this canonical human-acceptance metadata.",
+    "No image was modified during acceptance; PNG bytes must remain byte-identical to the recorded SHA-256 values.",
+    "Review ZIP method-a-builder-m7-l1-four-locale-corrected-recapture-final-pngs.zip SHA-256 27F0D9FD7A833658F3DEBB54C3D9795532B4E8AA1C68831FCE5A4A9B35CAB95C remains immutable.",
+    "Method A authoritative totals after this decision: accepted 4 / 28; unresolved 24 across 6 remaining lessons. Pending human review among the accepted pilot: 0.",
+    "Canonical Method C artifact 8637748753 remains immutable; Method C human acceptance remains 372 / 372."
+  ]
+}

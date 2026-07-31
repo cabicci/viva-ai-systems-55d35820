@@ -24,7 +24,11 @@ export default defineConfig({
     environment: "jsdom",
     globals: true,
     setupFiles: ["./src/test/setup.ts"],
-    include: ["src/**/*.{test,spec}.{ts,tsx}", "tests/lesson-visuals/v1/**/*.{test,spec}.{ts,tsx}"],
+    include: [
+      "src/**/*.{test,spec}.{ts,tsx}",
+      "tests/lesson-visuals/v1/**/*.{test,spec}.{ts,tsx}",
+      "tests/lesson-visuals/controlled-v1/**/*.{test,spec}.{ts,tsx}",
+    ],
     css: false,
   },
 });

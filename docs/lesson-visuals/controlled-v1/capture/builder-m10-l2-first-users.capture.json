@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "controlled-v1-capture-config/1",
+  "lessonId": "builder-m10-l2-first-users",
+  "environment": "local-dev",
+  "authorizedBy": "CR-LV-METHOD-A-QUERY-CONCEPT-NORMALIZATION-SIX-LESSON-SINGLE-RUN-20260728-01",
+  "authorizedAt": "2026-07-28T00:00:00.000Z",
+  "sessionUrl": "http://127.0.0.1:55440/dashboard",
+  "path": "/dashboard",
+  "search": "",
+  "concept": "Learner progress dashboard: OverallProgressCard, StreakCard, and Introduction path with genuine non-zero progress.",
+  "cellAllowlist": [
+    "builder-m10-l2-first-users__ar-EG",
+    "builder-m10-l2-first-users__ar-MSA",
+    "builder-m10-l2-first-users__ar-Gulf",
+    "builder-m10-l2-first-users__en"
+  ],
+  "readiness": ["OverallProgressCard", "StreakCard", "#path-intro", "progress>0", "streak>0"],
+  "selectors": ["#path-intro"],
+  "framing": "Frame top progress/streak cards with Introduction path card; hide PhaseRibbon via data-method-a-frame-hide.",
+  "masking": ["synthetic email", "currentUser", "tokens", "UUIDs"],
+  "forbiddenStates": ["login", "loading", "blank", "error", "denied", "guest"],
+  "directionByLocale": { "ar-EG": "rtl", "ar-MSA": "rtl", "ar-Gulf": "rtl", "en": "ltr" },
+  "notes": "Fixtures: lesson_progress intro lessons + user_streaks. Live capture via method-a-remaining-six-lessons-24 only."
+}

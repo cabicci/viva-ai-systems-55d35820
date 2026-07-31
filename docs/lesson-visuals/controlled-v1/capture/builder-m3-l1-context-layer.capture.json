@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "controlled-v1-capture-config/1",
+  "lessonId": "builder-m3-l1-context-layer",
+  "environment": "local-dev",
+  "authorizedBy": "CR-LV-METHOD-A-QUERY-CONCEPT-NORMALIZATION-SIX-LESSON-SINGLE-RUN-20260728-01",
+  "authorizedAt": "2026-07-28T00:00:00.000Z",
+  "sessionUrl": "http://127.0.0.1:55440/learn/builder/builder-m3-l1-context-layer",
+  "path": "/learn/builder/builder-m3-l1-context-layer",
+  "search": "",
+  "concept": "Open lesson with floating assistant showing genuine current path/lesson context above the input; no assistant message submitted.",
+  "cellAllowlist": [
+    "builder-m3-l1-context-layer__ar-EG",
+    "builder-m3-l1-context-layer__ar-MSA",
+    "builder-m3-l1-context-layer__ar-Gulf",
+    "builder-m3-l1-context-layer__en"
+  ],
+  "readiness": [
+    "authenticated",
+    "FAB aria-controls=lesson-assistant",
+    "#lesson-assistant open",
+    "compact context visible",
+    "no submit"
+  ],
+  "selectors": ["[aria-controls=\"lesson-assistant\"]", "#lesson-assistant", "textarea"],
+  "framing": "Open floating assistant panel; frame compact current-context box above textarea; never click submit.",
+  "masking": ["synthetic email", "currentUser", "tokens", "UUIDs", "conversation IDs"],
+  "forbiddenStates": ["login", "loading", "blank", "error", "denied", "paywall", "guest"],
+  "directionByLocale": { "ar-EG": "rtl", "ar-MSA": "rtl", "ar-Gulf": "rtl", "en": "ltr" },
+  "notes": "Requires Pro/admin unlock. Live capture via method-a-remaining-six-lessons-24 only."
+}

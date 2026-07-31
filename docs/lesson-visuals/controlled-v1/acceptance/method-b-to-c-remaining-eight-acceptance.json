@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "controlled-v1-human-acceptance/1",
+  "authorizationId": "CR-LV-METHOD-C-REMAINING-EIGHT-METADATA-ONLY-FINALIZATION-20260727-02",
+  "priorAuthorizationId": "CR-LV-METHOD-B-TO-C-REMAINING-EIGHT-EXECUTION-20260727-01",
+  "decision": "ACCEPT ALL 8",
+  "decidedBy": "Khalil",
+  "decidedAt": "2026-07-27T00:00:00.000Z",
+  "accepted": 8,
+  "rejected": 0,
+  "corrections": "none",
+  "producingCandidateSha": "31d0dde32cd783ba01621d3a87a637729ffc0f28",
+  "route": "INSTRUCTIONAL_COMPOSITION",
+  "category": "C",
+  "pngBytesImmutable": true,
+  "acceptedCells": [
+    {
+      "cellId": "intro-m1-l3-setup-your-ai__ar-EG",
+      "lessonId": "intro-m1-l3-setup-your-ai",
+      "locale": "ar-EG",
+      "status": "ACCEPTED",
+      "pngSha256": "5D56CF4E93C83D3AF291732EDF32AE8C79DFD799CD4D3AA595BA987B0A2A9267"
+    },
+    {
+      "cellId": "intro-m1-l3-setup-your-ai__ar-MSA",
+      "lessonId": "intro-m1-l3-setup-your-ai",
+      "locale": "ar-MSA",
+      "status": "ACCEPTED",
+      "pngSha256": "E4C6B9C8F15D4A393FDEF7617FA25B14444680C8AAF0E62816368AADF8EE47E5"
+    },
+    {
+      "cellId": "intro-m1-l3-setup-your-ai__ar-Gulf",
+      "lessonId": "intro-m1-l3-setup-your-ai",
+      "locale": "ar-Gulf",
+      "status": "ACCEPTED",
+      "pngSha256": "A1F42E77EB8D598E67B63307794ACA05873501DB7CA0A3AB2CF5FB0EDF9B0B9A"
+    },
+    {
+      "cellId": "intro-m1-l3-setup-your-ai__en",
+      "lessonId": "intro-m1-l3-setup-your-ai",
+      "locale": "en",
+      "status": "ACCEPTED",
+      "pngSha256": "D7435D80C73774EB69BF17AD7C4A8E22E2C894E8E182325988730CA280EDA088"
+    },
+    {
+      "cellId": "builder-m5-l2-frontend__ar-EG",
+      "lessonId": "builder-m5-l2-frontend",
+      "locale": "ar-EG",
+      "status": "ACCEPTED",
+      "pngSha256": "1598D1E16CDC7D00DDAE4F2B61A0B94E3DC75A06B4AF426E2974E56153EAC544"
+    },
+    {
+      "cellId": "builder-m5-l2-frontend__ar-MSA",
+      "lessonId": "builder-m5-l2-frontend",
+      "locale": "ar-MSA",
+      "status": "ACCEPTED",
+      "pngSha256": "7DA5A2B1540EA59DE977728A78151D72CB40A9A409EE3EF347E85D47A34EC890"
+    },
+    {
+      "cellId": "builder-m5-l2-frontend__ar-Gulf",
+      "lessonId": "builder-m5-l2-frontend",
+      "locale": "ar-Gulf",
+      "status": "ACCEPTED",
+      "pngSha256": "86E2D339238632FB78B302DDA88086A505A4CDA85B326080DF74D88608A1EC24"
+    },
+    {
+      "cellId": "builder-m5-l2-frontend__en",
+      "lessonId": "builder-m5-l2-frontend",
+      "locale": "en",
+      "status": "ACCEPTED",
+      "pngSha256": "CD3B872E301E399C525E6FCBD2EBB18F010F6BD45D10E04AA62C791717E2B09F"
+    }
+  ],
+  "notes": [
+    "Human visual acceptance of the remaining eight Method B→C replacement cells (ACCEPT ALL 8).",
+    "This tracked acceptance metadata is the canonical human-acceptance evidence for these eight cells.",
+    "Runtime receipts under artifacts/controlled-v1/receipts/ are execution evidence only; gitignored receipt status does not override this canonical human-acceptance metadata.",
+    "No image was modified during acceptance; PNG bytes must remain byte-identical to the recorded SHA-256 values.",
+    "Canonical Method C artifact 8637748753 and the prior accepted 360 Method C cells remain immutable.",
+    "Together with the four-cell pilot acceptance metadata, Method C human acceptance is 372 / 372."
+  ]
+}

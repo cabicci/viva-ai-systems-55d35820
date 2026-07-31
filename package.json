@@ -47,7 +47,21 @@
     "lesson-visuals:repin": "bun run src/lib/lesson-visuals/v1/scripts/repin_source_sha.ts",
     "lesson-visuals:repin:check": "bun run src/lib/lesson-visuals/v1/scripts/repin_source_sha.ts --check",
     "lesson-visuals:pilot:write": "bun run src/lib/lesson-visuals/v1/scripts/pilot_manifest.ts --write",
-    "lesson-visuals:pilot:check": "bun run src/lib/lesson-visuals/v1/scripts/pilot_manifest.ts --check"
+    "lesson-visuals:pilot:check": "bun run src/lib/lesson-visuals/v1/scripts/pilot_manifest.ts --check",
+    "controlled-visuals:build": "bun run src/lib/lesson-visuals/controlled-v1/scripts/build_all.ts",
+    "controlled-visuals:preflight": "bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts preflight",
+    "controlled-visuals:pilot": "bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts pilot",
+    "controlled-visuals:failed-only": "bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts failed-only",
+    "controlled-visuals:method-c-remaining": "bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts method-c-remaining",
+    "controlled-visuals:method-c-b6l3-four-pilot": "bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts method-c-b6l3-four-pilot",
+    "controlled-visuals:method-c-b-to-c-remaining-eight": "bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts method-c-b-to-c-remaining-eight",
+    "controlled-visuals:method-c-canonical-repair": "bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts method-c-canonical-repair",
+    "controlled-visuals:method-a-remaining-six-lessons-24": "bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts method-a-remaining-six-lessons-24",
+    "controlled-visuals:report-only": "bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts report-only",
+    "controlled-visuals:test-static": "bun run test:run -- tests/lesson-visuals/controlled-v1/classification.test.ts tests/lesson-visuals/controlled-v1/manifest.test.ts tests/lesson-visuals/controlled-v1/goldenRefs.test.ts tests/lesson-visuals/controlled-v1/localePurity.test.ts tests/lesson-visuals/controlled-v1/routes.test.ts tests/lesson-visuals/controlled-v1/controlledFailure.test.ts tests/lesson-visuals/controlled-v1/failedOnlyRecovery.test.ts tests/lesson-visuals/controlled-v1/canonicalReconciliation.test.ts tests/lesson-visuals/controlled-v1/methodCRemaining.test.ts tests/lesson-visuals/controlled-v1/methodBToCFourCellPilot.test.ts tests/lesson-visuals/controlled-v1/methodBToCRemainingEight.test.ts tests/lesson-visuals/controlled-v1/fourCellPilotAcceptance.test.ts tests/lesson-visuals/controlled-v1/methodCCanonicalRepair.test.ts tests/lesson-visuals/controlled-v1/full400Gate.test.ts",
+    "controlled-visuals:test-render": "bun run test:run -- tests/lesson-visuals/controlled-v1/instructionalComposition.test.ts",
+    "controlled-visuals:test": "bun run controlled-visuals:test-static && bun run controlled-visuals:test-render",
+    "controlled-visuals:verify-golden": "bun run src/lib/lesson-visuals/controlled-v1/scripts/verify_golden.ts"
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.25.5",

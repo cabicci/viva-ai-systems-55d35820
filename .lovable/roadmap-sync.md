@@ -1,10 +1,10 @@
 # Roadmap sync marker
 
-[roadmap:cr-rag-grounding-p0-corrective-pr-20260728-01]
-date: 2026-07-28
-scope: infra
+[roadmap:cr-lv-400-controlled-main-integration-20260731-02]
+date: 2026-07-31
+scope: lessons
 source: user
-summary: Fail-closed assistant grounding — require embeddings, block LLM without valid citations, surface retrieval RPC failures
+summary: Integrate accepted Lesson Visuals 400-cell mapping onto main (Method A 28/28 + Method C 372/372)
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
