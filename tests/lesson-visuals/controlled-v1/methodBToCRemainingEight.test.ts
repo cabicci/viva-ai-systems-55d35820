@@ -1,6 +1,4 @@
 import { describe, expect, it } from "vitest";
-import { existsSync } from "node:fs";
-import { join } from "node:path";
 import { buildProductionManifest } from "../../../src/lib/lesson-visuals/controlled-v1/buildManifest";
 import {
   LOCALES,
@@ -14,6 +12,7 @@ import {
 } from "../../../src/lib/lesson-visuals/controlled-v1/constants";
 import { loadClassification100 } from "../../../src/lib/lesson-visuals/controlled-v1/loadClassification";
 import { resolveLocalePackage } from "../../../src/lib/lesson-visuals/controlled-v1/localePackages";
+import { resolveAcceptedFourCellPilotPngPath } from "../../../src/lib/lesson-visuals/controlled-v1/materializeAcceptedFourCellPilotPngs";
 import { selectMethodBToCRemainingEight } from "../../../src/lib/lesson-visuals/controlled-v1/methodBToCRemainingEight";
 import { runMethodBToCRemainingEight } from "../../../src/lib/lesson-visuals/controlled-v1/runner";
 import type {
@@ -148,13 +147,8 @@ describe("preservation of accepted four-cell pilot PNGs", () => {
   });
 
   it("accepted pilot PNG sources remain present for hash verification", () => {
-    const roots = [
-      "E:/Temp/method-b-to-c-four-cell-pilot-1d4389721abaa1467a2461b7d294f0936c6c5e01/cells",
-      "artifacts/controlled-v1/cells",
-    ];
     for (const id of METHOD_C_B6L3_FOUR_PILOT_CELL_IDS) {
-      const found = roots.some((r) => existsSync(join(r, id, "final.png")));
-      expect(found).toBe(true);
+      expect(resolveAcceptedFourCellPilotPngPath(id)).not.toBeNull();
     }
   });
 });
