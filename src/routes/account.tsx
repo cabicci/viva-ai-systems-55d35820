@@ -73,10 +73,7 @@ function formatDate(iso: string | null | undefined, locale: SupportedLocale) {
   }
 }
 
-function formatDuration(
-  totalSeconds: number,
-  t: (key: UiStringKey) => string,
-) {
+function formatDuration(totalSeconds: number, t: (key: UiStringKey) => string) {
   const h = Math.floor(totalSeconds / 3600);
   const m = Math.floor((totalSeconds % 3600) / 60);
   if (h > 0) {
@@ -128,6 +125,8 @@ function AccountContent() {
     queryKey: ["account-subscription", userId],
     queryFn: async () => {
       if (!userId) return null;
+      // Legacy archive metadata only — paid entitlement uses useEntitlement()
+      // (billing.subscriptions via get_my_billing_access_tier), not this table.
       const { data } = await supabase
         .from("user_subscriptions")
         .select("tier, status, provider, current_period_end, created_at")
@@ -162,9 +161,7 @@ function AccountContent() {
         .eq("user_id", userId)
         .eq("status", "completed");
       const unique = new Set(
-        (data ?? [])
-          .map((r) => r.lesson_id as string)
-          .filter((id) => ALL_LESSON_IDS.has(id)),
+        (data ?? []).map((r) => r.lesson_id as string).filter((id) => ALL_LESSON_IDS.has(id)),
       );
       return unique.size;
     },
@@ -219,9 +216,7 @@ function AccountContent() {
       <main className="flex-1 px-4 sm:px-6 lg:px-10 py-8 max-w-5xl mx-auto w-full">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="text-3xl sm:text-4xl font-black tracking-tight">
-              {t("account.title")}
-            </h1>
+            <h1 className="text-3xl sm:text-4xl font-black tracking-tight">{t("account.title")}</h1>
             <p className="text-sm text-muted-foreground mt-1">{t("account.subtitle")}</p>
           </div>
           <Button asChild variant="glass" size="sm">
@@ -366,12 +361,7 @@ function AccountContent() {
                 ? t("account.manage.resetPasswordSending")
                 : t("account.manage.resetPassword")}
             </Button>
-            <Button
-              variant="glass"
-              size="lg"
-              onClick={() => signOut()}
-              className="justify-start"
-            >
+            <Button variant="glass" size="lg" onClick={() => signOut()} className="justify-start">
               <LogOut className="h-4 w-4" /> {t("sidebar.signOut")}
             </Button>
             <Button
@@ -393,11 +383,7 @@ function AccountContent() {
               <DialogDescription>{t("account.deleteDialog.description")}</DialogDescription>
             </DialogHeader>
             <DialogFooter className="gap-2">
-              <Button
-                variant="glass"
-                onClick={() => setConfirmDelete(false)}
-                disabled={deleting}
-              >
+              <Button variant="glass" onClick={() => setConfirmDelete(false)} disabled={deleting}>
                 {t("account.deleteDialog.cancel")}
               </Button>
               <Button variant="destructive" onClick={handleDelete} disabled={deleting}>
@@ -413,15 +399,7 @@ function AccountContent() {
   );
 }
 
-function StatTile({
-  icon,
-  label,
-  value,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  value: string;
-}) {
+function StatTile({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
   return (
     <div className="rounded-xl border border-border/50 bg-white/[0.02] p-4">
       <div className="flex items-center gap-2 text-xs text-muted-foreground">

@@ -831,6 +831,7 @@ export type Database = {
       get_admin_insights: { Args: never; Returns: Json }
       get_admin_overview: { Args: never; Returns: Json }
       get_kpi_funnel: { Args: never; Returns: Json }
+      get_my_billing_access_tier: { Args: never; Returns: string }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]

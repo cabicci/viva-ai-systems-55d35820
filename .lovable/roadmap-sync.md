@@ -1,10 +1,10 @@
 # Roadmap sync marker
 
-[roadmap:cr-lv-400-controlled-main-integration-20260731-02]
+[roadmap:local-billing-native-reh-20260801]
 date: 2026-07-31
-scope: lessons
+scope: db
 source: user
-summary: Integrate accepted Lesson Visuals 400-cell mapping onto main; pin media-map checksum and narrow Method A capture result types for CI TypeScript
+summary: Native Supabase/PostgREST billing rehearsal correction: format bridge test, additive legacy user_subscriptions compatibility, native contract harness
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
