@@ -32,19 +32,34 @@ import { ROUTES, GAPS } from "@/components/system-state/data";
 import { RuntimeContextPanel } from "@/components/system-state/RuntimeContextPanel";
 import { MissionRuntimePanel } from "@/components/system-state/MissionRuntimePanel";
 import { RetrievalPanel } from "@/components/system-state/RetrievalPanel";
+import { useLocale } from "@/lib/locale/locale-context";
+import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
+import { getUiString } from "@/lib/locale/ui-strings";
+import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
+import { useUiString } from "@/lib/locale/use-ui-strings";
+import {
+  getCurriculumLessonLabel,
+  getCurriculumModuleLabel,
+  getCurriculumPathLabel,
+} from "@/lib/locale-curriculum/resolve-curriculum-label";
 
 export const Route = createFileRoute("/system-state")({
   beforeLoad: requireAdminBeforeLoad,
-  head: () => ({
-    meta: [
-      { title: "مسارات — System State" },
-      {
-        name: "description",
-        content:
-          "لقطة داخلية كاملة عن الحالة الحالية للمنصة: الراوتس، الدروس، التقدّم، والأنظمة المتصلة.",
-      },
-    ],
-  }),
+  validateSearch: (raw: Record<string, unknown>) => parseLocaleSearchParam(raw),
+  head: async ({ match }) => {
+    const locale = await resolveRouteHeadLocale({
+      searchLocale: match.search.locale,
+    });
+    return {
+      meta: [
+        { title: getUiString(locale, "systemState.meta.title") },
+        {
+          name: "description",
+          content: getUiString(locale, "systemState.meta.description"),
+        },
+      ],
+    };
+  },
   component: () => (
     <AdminGate>
       <SystemStatePage />
@@ -52,11 +67,13 @@ export const Route = createFileRoute("/system-state")({
   ),
 });
 
-function SystemStatePage() {
+export function SystemStatePage() {
+  const t = useUiString();
+  const { locale, dir } = useLocale();
   const liveLessons = LESSONS.length;
 
   return (
-    <div className="min-h-dvh flex" dir="rtl">
+    <div className="min-h-dvh flex" dir={dir}>
       <style>{`
         /* Print/export — semantic theme tokens for reliable PDF output. */
         @media print {
@@ -88,11 +105,12 @@ function SystemStatePage() {
             to="/dashboard"
             className="text-sm text-muted-foreground hover:text-foreground inline-flex items-center gap-1"
           >
-            <ArrowLeft className="h-3.5 w-3.5 rotate-180" /> العودة للوحة
+            <ArrowLeft className={`h-3.5 w-3.5 ${dir === "rtl" ? "rotate-180" : ""}`} />{" "}
+            {t("common.backToDashboard")}
           </Link>
           <Button size="sm" onClick={() => window.print()} className="gap-2">
             <Download className="h-4 w-4" />
-            تصدير PDF
+            {t("systemState.exportPdf")}
           </Button>
         </div>
 
@@ -101,19 +119,24 @@ function SystemStatePage() {
           <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-accent/15 blur-3xl" />
           <div className="relative">
             <p className="font-mono text-[11px] tracking-widest text-primary mb-4">
-              INTERNAL · SYSTEM SNAPSHOT
+              {t("systemState.eyebrow")}
             </p>
             <h1 className="text-3xl md:text-5xl font-black leading-[1.3] mb-5">
-              System State
+              {t("systemState.title")}
             </h1>
             <p className="text-muted-foreground leading-loose max-w-2xl text-[15px] md:text-base">
-              لقطة داخلية للمنصة بحالتها الحقيقية الحالية — للمراجعة المعمارية
-              فقط، بدون أي تعديل أو إصلاح تلقائي.
+              {t("systemState.intro")}
             </p>
             <div className="grid sm:grid-cols-3 gap-3 mt-6 max-w-xl">
-              <Stat label="Routes" value={String(ROUTES.length)} />
-              <Stat label="Active Lessons" value={`${liveLessons} / 100`} />
-              <Stat label="Paths (live)" value={`${PATHS.length}`} />
+              <Stat label={t("systemState.stat.routes")} value={String(ROUTES.length)} />
+              <Stat
+                label={t("systemState.stat.activeLessons")}
+                value={t("systemState.stat.activeLessonsValue").replace(
+                  "{count}",
+                  String(liveLessons),
+                )}
+              />
+              <Stat label={t("systemState.stat.pathsLive")} value={`${PATHS.length}`} />
             </div>
           </div>
         </header>
@@ -122,7 +145,12 @@ function SystemStatePage() {
         <RetrievalPanel />
         <MissionRuntimePanel />
 
-        <Section no="01" icon={RouteIcon} label="ROUTES" title="الراوتس الحالية">
+        <Section
+          no="01"
+          icon={RouteIcon}
+          label={t("systemState.section.routes.label")}
+          title={t("systemState.section.routes.title")}
+        >
           <div className="space-y-2">
             {ROUTES.map((r) => (
               <div
@@ -133,8 +161,8 @@ function SystemStatePage() {
                   {r.path}
                 </code>
                 <div>
-                  <p className="font-bold text-foreground text-sm mb-1">{r.title}</p>
-                  <p className="text-xs text-muted-foreground leading-loose">{r.purpose}</p>
+                  <p className="font-bold text-foreground text-sm mb-1">{t(r.titleKey)}</p>
+                  <p className="text-xs text-muted-foreground leading-loose">{t(r.purposeKey)}</p>
                 </div>
                 <StatusPill status={r.status} />
               </div>
@@ -142,61 +170,76 @@ function SystemStatePage() {
           </div>
         </Section>
 
-        <Section no="02" icon={BookOpen} label="LESSON SYSTEM STATE" title="حالة نظام الدروس">
+        <Section
+          no="02"
+          icon={BookOpen}
+          label={t("systemState.section.lessons.label")}
+          title={t("systemState.section.lessons.title")}
+        >
           <p className="text-sm text-muted-foreground leading-loose">
-            مصدر الحقيقة:{" "}
+            {t("systemState.section.lessons.bodyBefore")}{" "}
             <code className="font-mono text-primary">src/lib/unified-lessons.ts</code>{" "}
-            · الراوت{" "}
+            {t("systemState.section.lessons.bodyRoute")}{" "}
             <code className="font-mono text-primary">/learn/$pathId/$lessonId</code>{" "}
-            · العرض عبر{" "}
-            <code className="font-mono text-primary">IntroLessonRenderer</code>.
-            الهدف: 100 درس نشط للمتعلم — 4 دروس Business مؤرشفة داخليًا (
+            {t("systemState.section.lessons.bodyRender")}{" "}
+            <code className="font-mono text-primary">IntroLessonRenderer</code>
+            {t("systemState.section.lessons.bodyGoal")}
             <code className="font-mono text-primary">archived-lessons</code>
-            ) ولا تُحسب. legacy متوقف:{" "}
+            {t("systemState.section.lessons.bodyLegacy")}{" "}
             <code className="font-mono text-primary">lessons-data.ts</code> ·{" "}
-            <code className="font-mono text-primary">LessonEngine.tsx</code> — لا
-            تُوسَّع.
+            <code className="font-mono text-primary">LessonEngine.tsx</code>{" "}
+            {t("systemState.section.lessons.bodyNoExpand")}
           </p>
           {PATHS.map((path) => (
             <div key={path.id} className="space-y-3">
               <div className="flex items-center gap-2 flex-wrap">
-                <h3 className="font-bold text-foreground">{path.title}</h3>
+                <h3 className="font-bold text-foreground">
+                  {getCurriculumPathLabel(locale, path.id, "title")}
+                </h3>
                 <StatusPill status="live" />
                 <code className="font-mono text-[10px] text-muted-foreground">{path.id}</code>
               </div>
               {path.modules.map((m) => (
-            <div key={m.id} className="glass rounded-2xl p-5 border border-border/30">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="font-mono text-[10px] text-muted-foreground">
-                  MODULE {String(m.order).padStart(2, "0")}
-                </span>
-                <h3 className="font-bold text-foreground">{m.title}</h3>
-              </div>
-              <div className="space-y-2">
-                {m.lessons.map((l) => (
-                  <div
-                    key={l.id}
-                    className="grid md:grid-cols-[40px_1fr_auto_auto] items-center gap-3 rounded-lg border border-border/30 p-3"
-                  >
-                    <span className="font-mono text-[10px] text-muted-foreground">0{l.order}</span>
-                    <div>
-                      <p className="text-sm font-bold text-foreground">{l.title}</p>
-                      <code className="font-mono text-[11px] text-muted-foreground">{l.id}</code>
-                    </div>
-                    <StatusPill status={l.state === "available" ? "live" : "placeholder"} />
-                    {l.route && (
-                      <code className="font-mono text-[10px] text-primary">{l.route}</code>
-                    )}
+                <div key={m.id} className="glass rounded-2xl p-5 border border-border/30">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="font-mono text-[10px] text-muted-foreground">
+                      {t("systemState.modulePrefix")} {String(m.order).padStart(2, "0")}
+                    </span>
+                    <h3 className="font-bold text-foreground">
+                      {getCurriculumModuleLabel(locale, m.id, "title")}
+                    </h3>
                   </div>
-                ))}
-              </div>
-            </div>
+                  <div className="space-y-2">
+                    {m.lessons.map((l) => (
+                      <div
+                        key={l.id}
+                        className="grid md:grid-cols-[40px_1fr_auto_auto] items-center gap-3 rounded-lg border border-border/30 p-3"
+                      >
+                        <span className="font-mono text-[10px] text-muted-foreground">
+                          0{l.order}
+                        </span>
+                        <div>
+                          <p className="text-sm font-bold text-foreground">
+                            {getCurriculumLessonLabel(locale, l.id)}
+                          </p>
+                          <code className="font-mono text-[11px] text-muted-foreground">
+                            {l.id}
+                          </code>
+                        </div>
+                        <StatusPill status={l.state === "available" ? "live" : "placeholder"} />
+                        {l.route && (
+                          <code className="font-mono text-[10px] text-primary">{l.route}</code>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           ))}
           <div className="glass rounded-xl p-5 border border-border/40">
             <p className="text-sm text-foreground/90 mb-2 font-bold">
-              مكونات الدرس المتصلة (لكل lesson)
+              {t("systemState.section.lessons.componentsTitle")}
             </p>
             <p className="text-xs text-muted-foreground leading-loose">
               <code className="font-mono text-primary">Concept</code> ·{" "}
@@ -212,20 +255,28 @@ function SystemStatePage() {
           </div>
         </Section>
 
-        <Section no="03" icon={MapIcon} label="CURRICULUM MAP STATE" title="حالة خريطة المنهج">
+        <Section
+          no="03"
+          icon={MapIcon}
+          label={t("systemState.section.curriculum.label")}
+          title={t("systemState.section.curriculum.title")}
+        >
           <div className="grid md:grid-cols-2 gap-4">
             {PATHS.map((p) => (
               <div key={p.id} className="glass rounded-2xl p-5 border border-border/40">
                 <div className="flex items-center gap-2 mb-2">
-                  <h3 className="font-bold">{p.title}</h3>
+                  <h3 className="font-bold">{getCurriculumPathLabel(locale, p.id, "title")}</h3>
                   <StatusPill status="live" />
                 </div>
-                <p className="text-xs text-muted-foreground mb-3">{p.tagline}</p>
+                <p className="text-xs text-muted-foreground mb-3">
+                  {getCurriculumPathLabel(locale, p.id, "tagline")}
+                </p>
                 <ul className="space-y-1 text-sm text-muted-foreground">
                   {p.modules.map((m) => (
                     <li key={m.id}>
-                      <span className="font-mono text-[10px] text-primary mr-2">M{m.order}</span>
-                      {m.title} — {m.lessons.length} lessons
+                      <span className="font-mono text-[10px] text-primary me-2">M{m.order}</span>
+                      {getCurriculumModuleLabel(locale, m.id, "title")} —{" "}
+                      {t("systemState.lessonsCount").replace("{count}", String(m.lessons.length))}
                     </li>
                   ))}
                 </ul>
@@ -233,84 +284,228 @@ function SystemStatePage() {
             ))}
           </div>
           <div className="glass rounded-xl p-5 border border-border/40">
-            <p className="text-sm font-bold mb-2">Navigation Hierarchy</p>
+            <p className="text-sm font-bold mb-2">{t("systemState.section.curriculum.navTitle")}</p>
             <p className="text-xs text-muted-foreground leading-loose font-mono">
               /dashboard → /curriculum → Module → /learn/&#123;pathId&#125;/&#123;lessonId&#125;
             </p>
           </div>
         </Section>
 
-        <Section no="04" icon={TrendingUp} label="PROGRESSION SYSTEM STATE" title="حالة نظام التقدّم">
+        <Section
+          no="04"
+          icon={TrendingUp}
+          label={t("systemState.section.progression.label")}
+          title={t("systemState.section.progression.title")}
+        >
           <div className="grid md:grid-cols-2 gap-4">
-            <Info title="مصدر الحقيقة" body="src/lib/lesson-progress.ts — Hook عبر React Query متصل بجدول lesson_progress في Lovable Cloud." />
-            <Info title="الحالات المدعومة" body="not-started · in-progress · completed (مخزّنة per user_id + lesson_id)." />
-            <Info title="ما الذي يُكمل الدرس؟" body="setStatus('completed') من داخل /learn/$pathId/$lessonId (IntroLessonRenderer) — عند وصول المتعلم لنهاية الدرس وضغط زر الإتمام." />
-            <Info title="Unlock Logic" body="حاليًا غير مفعّل — isUnlocked() ترجع true دائمًا؛ كل الدروس المتاحة مفتوحة بدون gating تدريجي." />
-            <Info title="Saved Progress" body="Persisted server-side per user. عند تسجيل الدخول التقدّم بيتحمّل أوتوماتيك." />
-            <Info title="Learner Flow" body="Landing → Sign up → Dashboard → Curriculum → /learn/$pathId/$lessonId → Mark Complete. (/onboarding legacy redirect فقط.)" />
+            <Info
+              title={t("systemState.progression.source.title")}
+              body={t("systemState.progression.source.body")}
+            />
+            <Info
+              title={t("systemState.progression.states.title")}
+              body={t("systemState.progression.states.body")}
+            />
+            <Info
+              title={t("systemState.progression.complete.title")}
+              body={t("systemState.progression.complete.body")}
+            />
+            <Info
+              title={t("systemState.progression.unlock.title")}
+              body={t("systemState.progression.unlock.body")}
+            />
+            <Info
+              title={t("systemState.progression.saved.title")}
+              body={t("systemState.progression.saved.body")}
+            />
+            <Info
+              title={t("systemState.progression.flow.title")}
+              body={t("systemState.progression.flow.body")}
+            />
           </div>
         </Section>
 
-        <Section no="05" icon={Sparkles} label="AI SYSTEM STATE" title="حالة أنظمة الـ AI">
+        <Section
+          no="05"
+          icon={Sparkles}
+          label={t("systemState.section.ai.label")}
+          title={t("systemState.section.ai.title")}
+        >
           <div className="grid md:grid-cols-2 gap-4">
-            <AIRow title="Assistant" status="live" body="/ai-assistant + assistant-runtime Edge Function — implemented; live smoke test not performed in this cleanup." />
-            <AIRow title="Retrieval (RAG)" status="live" body="knowledge_chunks (pgvector) + match_knowledge_chunks() + searchPlatformContent() — implemented; live smoke test not performed in this cleanup." />
-            <AIRow title="Contextual Logic" status="live" body="useLearnerContext() — يقرأ المسار/الوحدة/الدرس/التقدّم لحظيًا." />
-            <AIRow title="Multimodal" status="partial" body="درس + Assistant نصّي — vision pipeline غير متصل بعد." />
-            <AIRow title="Mission Guidance" status="partial" body="Mission blocks ثابتة داخل الدرس + Mission Runtime Foundation — بدون AI guidance حي بعد." />
-            <AIRow title="Workflow / Agents" status="placeholder" body="Agent runtime و tool-use — خارج النطاق الحالي." />
+            <AIRow
+              title={t("systemState.ai.assistant.title")}
+              status="live"
+              body={t("systemState.ai.assistant.body")}
+            />
+            <AIRow
+              title={t("systemState.ai.retrieval.title")}
+              status="live"
+              body={t("systemState.ai.retrieval.body")}
+            />
+            <AIRow
+              title={t("systemState.ai.contextual.title")}
+              status="live"
+              body={t("systemState.ai.contextual.body")}
+            />
+            <AIRow
+              title={t("systemState.ai.multimodal.title")}
+              status="partial"
+              body={t("systemState.ai.multimodal.body")}
+            />
+            <AIRow
+              title={t("systemState.ai.missionGuidance.title")}
+              status="partial"
+              body={t("systemState.ai.missionGuidance.body")}
+            />
+            <AIRow
+              title={t("systemState.ai.workflow.title")}
+              status="placeholder"
+              body={t("systemState.ai.workflow.body")}
+            />
           </div>
         </Section>
 
-        <Section no="06" icon={Target} label="MISSION SYSTEM STATE" title="حالة نظام المهام">
+        <Section
+          no="06"
+          icon={Target}
+          label={t("systemState.section.missions.label")}
+          title={t("systemState.section.missions.title")}
+        >
           <div className="grid md:grid-cols-2 gap-4">
-            <Info title="هيكل المهمة" body="Mission block داخل محتوى الدرس (unified-lessons + INTRO_LESSON_CONTENT) — عنوان + خطوات أو نص قصير." />
-            <Info title="الاتصال بالدرس" body="كل درس متاح فيه Mission واحدة في نهايته." />
-            <Info title="إكمال المهمة" body="Mission Runtime Foundation موجود — تتبّع مستقل وحفظ DB ما زال جزئيًا (راجع Mission Runtime Panel)." />
-            <Info title="Mission Library" body="لا توجد صفحة /missions منفصلة — admin/internal — needs operational decision." />
+            <Info
+              title={t("systemState.missions.structure.title")}
+              body={t("systemState.missions.structure.body")}
+            />
+            <Info
+              title={t("systemState.missions.link.title")}
+              body={t("systemState.missions.link.body")}
+            />
+            <Info
+              title={t("systemState.missions.completion.title")}
+              body={t("systemState.missions.completion.body")}
+            />
+            <Info
+              title={t("systemState.missions.library.title")}
+              body={t("systemState.missions.library.body")}
+            />
           </div>
         </Section>
 
-        <Section no="07" icon={Film} label="VIDEO SYSTEM STATE" title="حالة نظام الفيديو">
+        <Section
+          no="07"
+          icon={Film}
+          label={t("systemState.section.video.label")}
+          title={t("systemState.section.video.title")}
+        >
           <div className="grid md:grid-cols-2 gap-4">
-            <AIRow title="Lesson Videos (Bunny)" status="live" body="Bunny embed عبر IntroLessonRenderer — documented as 100/100 learner videos; fresh Bunny probe not performed in this cleanup." />
-            <AIRow title="Remotion Pipeline" status="live" body="طبقة إنتاج Remotion موجودة — خارج نطاق هذا الـ snapshot." />
-            <AIRow title="Lesson ↔ Video Relationship" status="live" body="video block داخل rhythm الدرس — مربوط بـ getBunnyEmbedUrl()." />
-            <AIRow title="Cinematic / Build / Failure Videos" status="partial" body="أنواع فيديو إضافية (cinematic / build / failure) — ليست كلها مدمجة في كل درس." />
+            <AIRow
+              title={t("systemState.video.bunny.title")}
+              status="live"
+              body={t("systemState.video.bunny.body")}
+            />
+            <AIRow
+              title={t("systemState.video.remotion.title")}
+              status="live"
+              body={t("systemState.video.remotion.body")}
+            />
+            <AIRow
+              title={t("systemState.video.relationship.title")}
+              status="live"
+              body={t("systemState.video.relationship.body")}
+            />
+            <AIRow
+              title={t("systemState.video.variants.title")}
+              status="partial"
+              body={t("systemState.video.variants.body")}
+            />
           </div>
         </Section>
 
-        <Section no="08" icon={Layers} label="UI COMPONENT MAP" title="خريطة المكوّنات المعاد استخدامها">
+        <Section
+          no="08"
+          icon={Layers}
+          label={t("systemState.section.components.label")}
+          title={t("systemState.section.components.title")}
+        >
           <div className="grid md:grid-cols-2 gap-3">
-            <CompRow area="Lesson Renderer" files="src/components/intro/IntroLessonRenderer.tsx" items="عرض الدرس + video blocks + completion." />
-            <CompRow area="Lesson Content" files="src/lib/unified-lessons.ts · src/components/intro/lessons/*" items="100 active learner lessons + intro content modules." />
-            <CompRow area="Assistant" files="src/components/assistant/AssistantPanel.tsx" items="مساعد المنصة — Context + Retrieval + Edge Function." />
-            <CompRow area="Dashboard / Nav" files="src/components/dashboard/Sidebar.tsx" items="Sidebar الرئيسي للصفحات الداخلية." />
-            <CompRow area="Site / Landing" files="src/components/site/*" items="Hero · Journey · Paths · Philosophy · CTA · Navbar · Footer." />
-            <CompRow area="UI Primitives" files="src/components/ui/*" items="shadcn primitives (button, card, dialog, ...)." />
+            <CompRow
+              area={t("systemState.components.lessonRenderer.area")}
+              files="src/components/intro/IntroLessonRenderer.tsx"
+              items={t("systemState.components.lessonRenderer.items")}
+            />
+            <CompRow
+              area={t("systemState.components.lessonContent.area")}
+              files="src/lib/unified-lessons.ts · src/components/intro/lessons/*"
+              items={t("systemState.components.lessonContent.items")}
+            />
+            <CompRow
+              area={t("systemState.components.assistant.area")}
+              files="src/components/assistant/AssistantPanel.tsx"
+              items={t("systemState.components.assistant.items")}
+            />
+            <CompRow
+              area={t("systemState.components.dashboard.area")}
+              files="src/components/dashboard/Sidebar.tsx"
+              items={t("systemState.components.dashboard.items")}
+            />
+            <CompRow
+              area={t("systemState.components.site.area")}
+              files="src/components/site/*"
+              items={t("systemState.components.site.items")}
+            />
+            <CompRow
+              area={t("systemState.components.ui.area")}
+              files="src/components/ui/*"
+              items={t("systemState.components.ui.items")}
+            />
           </div>
         </Section>
 
-        <Section no="09" icon={Database} label="DATABASE / STORAGE" title="مصادر البيانات">
+        <Section
+          no="09"
+          icon={Database}
+          label={t("systemState.section.data.label")}
+          title={t("systemState.section.data.title")}
+        >
           <div className="grid md:grid-cols-2 gap-4">
-            <Info title="Lessons" body="Static — unified-lessons.ts + intro lesson modules (مفيش lessons table في الـ DB)." />
-            <Info title="Missions" body="Static — جزء من بيانات الدرس؛ Mission Runtime Foundation للقراءة." />
-            <Info title="Progress" body="جدول lesson_progress في Lovable Cloud (user_id, lesson_id, status) مع RLS." />
-            <Info title="User State" body="Supabase Auth + auth-context + user_roles للـ admin." />
-            <Info title="AI Systems" body="knowledge_chunks (pgvector) + match_knowledge_chunks() + assistant-runtime Edge Function." />
-            <Info title="Notes" body="جدول lesson_notes في DB بدون واجهة حاليًا — متروك لميزة لاحقة." />
+            <Info
+              title={t("systemState.data.lessons.title")}
+              body={t("systemState.data.lessons.body")}
+            />
+            <Info
+              title={t("systemState.data.missions.title")}
+              body={t("systemState.data.missions.body")}
+            />
+            <Info
+              title={t("systemState.data.progress.title")}
+              body={t("systemState.data.progress.body")}
+            />
+            <Info
+              title={t("systemState.data.userState.title")}
+              body={t("systemState.data.userState.body")}
+            />
+            <Info title={t("systemState.data.ai.title")} body={t("systemState.data.ai.body")} />
+            <Info
+              title={t("systemState.data.notes.title")}
+              body={t("systemState.data.notes.body")}
+            />
           </div>
         </Section>
 
-        <Section no="10" icon={AlertTriangle} label="ECOSYSTEM GAPS" title="فجوات المنظومة الحالية">
+        <Section
+          no="10"
+          icon={AlertTriangle}
+          label={t("systemState.section.gaps.label")}
+          title={t("systemState.section.gaps.title")}
+        >
           <div className="grid md:grid-cols-2 gap-3">
             {GAPS.map((g) => (
-              <div key={g.title} className="glass rounded-xl p-5 border border-destructive/25">
+              <div key={g.titleKey} className="glass rounded-xl p-5 border border-destructive/25">
                 <div className="flex items-center gap-2 mb-2">
                   <AlertTriangle className="h-4 w-4 text-destructive" />
-                  <p className="font-bold text-foreground text-sm">{g.title}</p>
+                  <p className="font-bold text-foreground text-sm">{t(g.titleKey)}</p>
                 </div>
-                <p className="text-xs text-muted-foreground leading-loose">{g.body}</p>
+                <p className="text-xs text-muted-foreground leading-loose">{t(g.bodyKey)}</p>
               </div>
             ))}
           </div>
@@ -323,31 +518,31 @@ function SystemStatePage() {
             <div className="flex items-center gap-2 mb-5 justify-center">
               <FileText className="h-4 w-4 text-primary-foreground/80" />
               <p className="font-mono text-[11px] tracking-widest text-primary-foreground/70">
-                FINAL SYSTEM SUMMARY
+                {t("systemState.summary.label")}
               </p>
             </div>
             <div className="text-primary-foreground space-y-4 max-w-3xl mx-auto leading-loose text-[15px] md:text-base">
               <div>
-                <p className="font-bold mb-2">Completed runtime foundations:</p>
-                <ul className="list-disc pr-5 space-y-1 text-primary-foreground/95">
-                  <li>100 active learner lessons via unified-lessons (5 live paths)</li>
-                  <li>Context Layer + useLearnerContext()</li>
-                  <li>Retrieval Layer + RAG (knowledge_chunks / pgvector)</li>
-                  <li>Assistant Runtime + assistant-runtime Edge Function</li>
-                  <li>Video runtime (Bunny embed in IntroLessonRenderer — documented 100/100)</li>
-                  <li>Mission Runtime Foundation</li>
-                  <li>Build Logs Runtime Foundation + admin /build-logs</li>
-                  <li>Cloud sync hydration for build logs + missions</li>
-                  <li>Admin role via user_roles + has_role()</li>
+                <p className="font-bold mb-2">{t("systemState.summary.completedTitle")}</p>
+                <ul className="list-disc ps-5 space-y-1 text-primary-foreground/95">
+                  <li>{t("systemState.summary.completed.1")}</li>
+                  <li>{t("systemState.summary.completed.2")}</li>
+                  <li>{t("systemState.summary.completed.3")}</li>
+                  <li>{t("systemState.summary.completed.4")}</li>
+                  <li>{t("systemState.summary.completed.5")}</li>
+                  <li>{t("systemState.summary.completed.6")}</li>
+                  <li>{t("systemState.summary.completed.7")}</li>
+                  <li>{t("systemState.summary.completed.8")}</li>
+                  <li>{t("systemState.summary.completed.9")}</li>
                 </ul>
               </div>
               <div>
-                <p className="font-bold mb-2">Open / pending:</p>
-                <ul className="list-disc pr-5 space-y-1 text-primary-foreground/95">
-                  <li>Sequential unlock gating (isUnlocked always true)</li>
-                  <li>Agent runtime + multimodal vision</li>
-                  <li>Build Logs learner visibility — admin/internal — needs operational decision</li>
-                  <li>Mission persistence — partial (see Mission Runtime Panel)</li>
+                <p className="font-bold mb-2">{t("systemState.summary.openTitle")}</p>
+                <ul className="list-disc ps-5 space-y-1 text-primary-foreground/95">
+                  <li>{t("systemState.summary.open.1")}</li>
+                  <li>{t("systemState.summary.open.2")}</li>
+                  <li>{t("systemState.summary.open.3")}</li>
+                  <li>{t("systemState.summary.open.4")}</li>
                 </ul>
               </div>
             </div>

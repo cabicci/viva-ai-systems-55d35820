@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "controlled-v1-classification-provenance/1",
+  "pipeline": "controlled-v1",
+  "classificationSourcePath": "E:/Masaarat/Worktrees/_external-audits/ar-eg-100-media-map/ar-eg-media-map.md",
+  "classificationSourceRepoRelativeCopyPath": "docs/lesson-visuals/controlled-v1/inputs/ar-eg-media-map.md",
+  "classificationSourceSha256": "A5F3F5F5937584C5A646115AF2652F8DD0011D3079B0D0F1D04CD758D9B6EA9F",
+  "classificationSourceCopySha256": "A5F3F5F5937584C5A646115AF2652F8DD0011D3079B0D0F1D04CD758D9B6EA9F",
+  "reconcileResultSourcePath": "E:/Masaarat/Worktrees/_external-audits/ar-eg-100-media-map/_reconcile-result.json",
+  "acceptedClassificationBaselineSha": "a9b31c53aee45a9498f89f1301987f684ff1bae9",
+  "reconciledOriginMainSha": "aca5ad018b7d47238959bc0ee91a195d142cd348",
+  "reconciliationTimestamp": "2026-07-27T12:00:00.000Z",
+  "normalizationRule": "DIAGRAM -> INSTRUCTIONAL_COMPOSITION",
+  "normalizationRationale": "CR-LV-METHOD-B-TO-C-FOUR-CELL-PILOT-20260727-01 permanently reclassifies intro-m1-l3-setup-your-ai, builder-m5-l2-frontend, and builder-m6-l3-first-prompt-to-lovable from Method B / AUTHORIZED_EXTERNAL_SCREENSHOT to Method C / INSTRUCTIONAL_COMPOSITION due to NO_VALID_RIGHTS_BASIS. Original instructional compositions replace uncertain external-rights material. Existing accepted Method C population (360 cells / artifact 8637748753) is unchanged; the 12 replacement cells remain unresolved pending human review.",
+  "membershipUnchanged": false,
+  "expectedCounts": {
+    "MASAARAT_SCREENSHOT": 7,
+    "AUTHORIZED_EXTERNAL_SCREENSHOT": 0,
+    "INSTRUCTIONAL_COMPOSITION": 93,
+    "total": 100
+  },
+  "doNotTouch": [
+    "docs/lesson-visuals/v1/ledgers/method_decision_ledger.json (legacy v1 classification ledger; controlled-v1 is a separate, additive pipeline and must never modify it)",
+    "canonical Method C artifact 8637748753 (immutable accepted 360-cell population)"
+  ],
+  "excludedRejectedCandidates": [
+    "df4bf761b17b7f3da262f340f600e08ce0c1fa43 (feat/lesson-driven-400-visual-pipeline-refresh) - rejected candidate outputs are not reused as visual source or template for controlled-v1"
+  ],
+  "notes": [
+    "This file records provenance only. The authoritative frozen classification used at build/runtime is docs/lesson-visuals/controlled-v1/classification-100.json.",
+    "Media-map markdown and classification-100.json now encode 7 A / 0 B / 93 C.",
+    "Unresolved ledger historically tracked Method A + Method B→C cells before human acceptance finalization; Method A is now 28/28 and Method C is 372/372 under CR-LV-400-CONTROLLED-MAIN-INTEGRATION-20260731-02.",
+    "Media-map copy checksum refreshed during controlled main integration to match the accepted Method A query-concept normalization edit on docs/lesson-visuals/controlled-v1/inputs/ar-eg-media-map.md (bytes unchanged from candidate 5239a25e)."
+  ]
+}

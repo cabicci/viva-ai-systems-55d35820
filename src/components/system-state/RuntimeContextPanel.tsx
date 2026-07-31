@@ -1,24 +1,49 @@
 import { Activity } from "lucide-react";
 import { useLearnerContext } from "@/lib/learner-context";
+import { useLocale } from "@/lib/locale/locale-context";
+import { useUiString } from "@/lib/locale/use-ui-strings";
+import {
+  getCurriculumLessonLabel,
+  getCurriculumModuleLabel,
+  getCurriculumPathLabel,
+} from "@/lib/locale-curriculum/resolve-curriculum-label";
+import type { PathId } from "@/lib/curriculum-data";
 import { Section, StatusPill, Field } from "./primitives";
 
 export function RuntimeContextPanel() {
+  const t = useUiString();
+  const { locale } = useLocale();
   const ctx = useLearnerContext();
+
+  const pathTitle = ctx.currentPath
+    ? getCurriculumPathLabel(locale, ctx.currentPath.id as PathId, "title")
+    : null;
+  const moduleTitle = ctx.currentModule
+    ? getCurriculumModuleLabel(locale, ctx.currentModule.id, "title")
+    : null;
+  const lessonTitle = ctx.currentLesson
+    ? getCurriculumLessonLabel(locale, ctx.currentLesson.id)
+    : null;
+  const nextLessonTitle = ctx.nextLesson
+    ? getCurriculumLessonLabel(locale, ctx.nextLesson.id)
+    : null;
+  const lastLessonTitle = ctx.lastCompletedLesson
+    ? getCurriculumLessonLabel(locale, ctx.lastCompletedLesson.id)
+    : null;
+
   return (
     <Section
       no="00"
       icon={Activity}
-      label="RUNTIME CONTEXT LAYER"
-      title="Runtime Context Layer"
+      label={t("systemState.runtime.label")}
+      title={t("systemState.runtime.title")}
     >
       <div className="glass rounded-2xl p-5 border border-primary/25">
         <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
           <p className="text-xs text-muted-foreground leading-loose max-w-2xl">
-            مخرجات{" "}
+            {t("systemState.runtime.bodyBefore")}{" "}
             <code className="font-mono text-primary">useLearnerContext()</code>{" "}
-            — Context Layer متصل ويغذّي Retrieval و Assistant Runtime. غير ظاهر
-            للمتعلم مباشرة؛ implemented; live smoke test not performed in this
-            cleanup.
+            {t("systemState.runtime.bodyAfter")}
           </p>
           <StatusPill status={ctx.isReady ? "live" : "partial"} />
         </div>
@@ -27,25 +52,17 @@ export function RuntimeContextPanel() {
             label="currentUser"
             value={
               ctx.currentUser.isAuthenticated
-                ? ctx.currentUser.email ?? ctx.currentUser.id
-                : "guest"
+                ? (ctx.currentUser.email ?? ctx.currentUser.id)
+                : t("systemState.guest")
             }
           />
           <Field label="currentRoute" value={ctx.currentRoute} />
-          <Field
-            label="currentPath"
-            value={ctx.currentPath ? ctx.currentPath.title : null}
-          />
-          <Field
-            label="currentModule"
-            value={ctx.currentModule ? ctx.currentModule.title : null}
-          />
+          <Field label="currentPath" value={pathTitle} />
+          <Field label="currentModule" value={moduleTitle} />
           <Field
             label="currentLesson"
             value={
-              ctx.currentLesson
-                ? `${ctx.currentLesson.title} · ${ctx.currentLesson.id}`
-                : null
+              ctx.currentLesson && lessonTitle ? `${lessonTitle} · ${ctx.currentLesson.id}` : null
             }
           />
           <Field label="currentLessonStatus" value={ctx.currentLessonStatus} />
@@ -56,16 +73,14 @@ export function RuntimeContextPanel() {
           <Field
             label="nextLesson"
             value={
-              ctx.nextLesson
-                ? `${ctx.nextLesson.title} · ${ctx.nextLesson.id}`
-                : null
+              ctx.nextLesson && nextLessonTitle ? `${nextLessonTitle} · ${ctx.nextLesson.id}` : null
             }
           />
           <Field
             label="lastCompletedLesson"
             value={
-              ctx.lastCompletedLesson
-                ? `${ctx.lastCompletedLesson.title} · ${ctx.lastCompletedLesson.id}`
+              ctx.lastCompletedLesson && lastLessonTitle
+                ? `${lastLessonTitle} · ${ctx.lastCompletedLesson.id}`
                 : null
             }
           />
@@ -73,10 +88,10 @@ export function RuntimeContextPanel() {
             label="currentMission"
             value={
               ctx.currentMission
-                ? ctx.currentMission.title ??
+                ? (ctx.currentMission.title ??
                   ctx.currentMission.prompt ??
                   ctx.currentMission.intro ??
-                  "—"
+                  "—")
                 : null
             }
           />

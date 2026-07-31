@@ -1,16 +1,34 @@
-# Default-branch registration stub for controlled-400-visual-pipeline.
+# Controlled-v1 400-visual pipeline (Agent-1 Control Room controlled pipeline).
+#
+# This is a NEW, separate pipeline from lesson-driven-400-visual-pipeline.yml
+# (legacy v1). It never reads/writes docs/lesson-visuals/v1/ledgers/method_decision_ledger.json
+# and never reuses rejected candidate outputs.
 #
 # DISPATCH ROUTING (fail-closed):
-#   Masaarat Control Room → Lovable → GitHub Actions
-#   Cursor / CLI / GitHub UI / unauthorized API / unauthenticated sources fail closed.
+#   Default modes: Masaarat Control Room → Lovable → this workflow_dispatch
+#   method-c-remaining / method-c-canonical-repair:
+#     Masaarat Control Room → repository-owner actor (cabicci) → CLI/API
+#   Cursor / unauthenticated / banned actors MUST fail at the dispatch-authority job.
 #
-# This file NEVER runs the visual pipeline. It exists only so GitHub can
-# register workflow_dispatch for branch-ref invocation of the real candidate on
-# feat/ar-eg-next-lesson-visual. It evaluates Lovable dispatch authority only,
-# then always terminates intentionally with a non-zero exit.
+# Modes:
+#   preflight            — validate classification/manifest/golden refs; no generation.
+#   pilot                — 12-cell pilot matrix (see docs/lesson-visuals/controlled-v1/PILOT_MANIFEST.json).
+#   failed-only          — reprocess only cells whose latest known receipt is FAILED.
+#                          Requires prior_artifact_run_id so the prior pilot (or failed-only)
+#                          artifact bundle can be restored before selection/rerun.
+#   full-400             — all 400 cells. Requires confirm_full_400 === "RUN_AUTHORIZED_400" exactly.
+#   method-c-remaining   — remaining 356 Method C cells (excludes 4 preserved pilot C cells + all A/B).
+#                          Requires confirm_full_400 === "RUN_AUTHORIZED_METHOD_C_356" exactly.
+#                          Owner actor cabicci only (not Lovable).
+#   method-c-canonical-repair — packaging-only sanitation of historical run 30221875344.
+#                          Requires confirm_full_400 === "RUN_AUTHORIZED_METHOD_C_CANONICAL_REPAIR".
+#                          Requires prior_artifact_run_id === "30221875344".
+#                          Owner actor cabicci only. Zero renderer / zero provider.
+#   report-only          — read latest receipts + verify golden refs; no generation.
 #
-# No checkout. No installs. No artifacts. No external actions. No provider
-# credentials. No visual-pipeline modes. No paid generation.
+# No Docker. INSTRUCTIONAL_COMPOSITION cells are rendered by Chrome/Tajawal HTML composition.
+# MASAARAT_SCREENSHOT and AUTHORIZED_EXTERNAL_SCREENSHOT cells fail closed to
+# BLOCKED_UNRESOLVED_SPEC until real capture/rights evidence exists.
 
 name: controlled-400-visual-pipeline
 
@@ -22,7 +40,7 @@ on:
         required: true
         type: string
       dispatch_actor:
-        description: Must be an allowlisted Lovable actor (never cursor/cli)
+        description: Allowlisted Lovable actor for default modes; must be cabicci for method-c-remaining / method-c-canonical-repair
         required: true
         type: string
       checkout_sha:
@@ -38,22 +56,35 @@ on:
           - pilot
           - failed-only
           - full-400
+          - method-c-remaining
+          - method-c-canonical-repair
           - report-only
         default: preflight
       confirm_full_400:
-        description: Required ONLY for mode=full-400 — must equal RUN_AUTHORIZED_400 exactly
+        description: full-400=RUN_AUTHORIZED_400; method-c-remaining=RUN_AUTHORIZED_METHOD_C_356; method-c-canonical-repair=RUN_AUTHORIZED_METHOD_C_CANONICAL_REPAIR
+        required: false
+        type: string
+        default: ""
+      prior_artifact_run_id:
+        description: Required for failed-only (prior pilot/failed-only run) or method-c-canonical-repair (must be 30221875344)
         required: false
         type: string
         default: ""
 
-permissions: {}
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: controlled-400-visual-pipeline-${{ github.event.inputs.checkout_sha }}-${{ github.event.inputs.mode }}
+  cancel-in-progress: false
 
 jobs:
-  registration-stub:
-    name: fail-closed registration stub
+  dispatch-authority:
+    name: Dispatch authority (fail-closed)
     runs-on: ubuntu-latest
     steps:
-      - name: Evaluate Lovable dispatch authority then terminate (no pipeline)
+      - name: Fail-closed Control Room authorization
         shell: bash
         env:
           CONTROL_ROOM_AUTHORIZATION_ID: ${{ github.event.inputs.control_room_authorization_id }}
@@ -61,71 +92,380 @@ jobs:
           CHECKOUT_SHA: ${{ github.event.inputs.checkout_sha }}
           PIPELINE_MODE: ${{ github.event.inputs.mode }}
           CONFIRM_FULL_400: ${{ github.event.inputs.confirm_full_400 }}
+          PRIOR_ARTIFACT_RUN_ID: ${{ github.event.inputs.prior_artifact_run_id }}
           GITHUB_ACTOR_NAME: ${{ github.actor }}
           LOVABLE_DISPATCH_ACTORS: ${{ vars.LOVABLE_DISPATCH_ACTORS || secrets.LOVABLE_DISPATCH_ACTORS }}
         run: |
           set -euo pipefail
-          AUTHORITY_STATUS="FAIL"
+          lower() { printf '%s' "$1" | tr '[:upper:]' '[:lower:]'; }
+          if [[ -z "${CONTROL_ROOM_AUTHORIZATION_ID:-}" ]]; then
+            printf '%s\n' "control_room_authorization_id missing"
+            exit 1
+          fi
+          if [[ ! "$CONTROL_ROOM_AUTHORIZATION_ID" =~ ^CR-[A-Za-z0-9][A-Za-z0-9._-]{2,127}$ ]]; then
+            printf '%s\n' "control_room_authorization_id must match CR-… format"
+            exit 1
+          fi
+          if [[ ! "$CHECKOUT_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            printf '%s\n' "checkout_sha must be a full 40-char lowercase hex commit SHA (not a branch/tag)"
+            exit 1
+          fi
+          case "$PIPELINE_MODE" in
+            preflight|pilot|failed-only|full-400|method-c-remaining|method-c-canonical-repair|report-only) ;;
+            *)
+              printf '%s\n' "mode is not an authorized choice"
+              exit 1
+              ;;
+          esac
+          for banned in cursor cli cursor-agent github-ui unauthenticated api; do
+            if [[ "$(lower "$DISPATCH_ACTOR")" == "$banned" ]]; then
+              printf '%s\n' "dispatch_actor is banned"
+              exit 1
+            fi
+            if [[ "$(lower "$GITHUB_ACTOR_NAME")" == "$banned" ]]; then
+              printf '%s\n' "github.actor is banned"
+              exit 1
+            fi
+          done
+
+          if [[ "$PIPELINE_MODE" == "method-c-remaining" ]]; then
+            if [[ "$(lower "$DISPATCH_ACTOR")" != "cabicci" ]]; then
+              printf '%s\n' "mode=method-c-remaining requires dispatch_actor=cabicci"
+              exit 1
+            fi
+            if [[ "$(lower "$GITHUB_ACTOR_NAME")" != "cabicci" ]]; then
+              printf '%s\n' "mode=method-c-remaining requires github.actor=cabicci"
+              exit 1
+            fi
+            if [[ "$CONFIRM_FULL_400" != "RUN_AUTHORIZED_METHOD_C_356" ]]; then
+              printf '%s\n' "mode=method-c-remaining requires confirm_full_400 to equal RUN_AUTHORIZED_METHOD_C_356 exactly"
+              exit 1
+            fi
+            if [[ -n "${PRIOR_ARTIFACT_RUN_ID}" ]]; then
+              printf '%s\n' "prior_artifact_run_id is not authorized for method-c-remaining"
+              exit 1
+            fi
+            printf '%s\n' "dispatch-authority PASSED (Control Room → owner cabicci → method-c-remaining)"
+            exit 0
+          fi
+
+          if [[ "$PIPELINE_MODE" == "method-c-canonical-repair" ]]; then
+            if [[ "$(lower "$DISPATCH_ACTOR")" != "cabicci" ]]; then
+              printf '%s\n' "mode=method-c-canonical-repair requires dispatch_actor=cabicci"
+              exit 1
+            fi
+            if [[ "$(lower "$GITHUB_ACTOR_NAME")" != "cabicci" ]]; then
+              printf '%s\n' "mode=method-c-canonical-repair requires github.actor=cabicci"
+              exit 1
+            fi
+            if [[ "$CONFIRM_FULL_400" != "RUN_AUTHORIZED_METHOD_C_CANONICAL_REPAIR" ]]; then
+              printf '%s\n' "mode=method-c-canonical-repair requires confirm_full_400 to equal RUN_AUTHORIZED_METHOD_C_CANONICAL_REPAIR exactly"
+              exit 1
+            fi
+            if [[ "$PRIOR_ARTIFACT_RUN_ID" != "30221875344" ]]; then
+              printf '%s\n' "mode=method-c-canonical-repair requires prior_artifact_run_id to equal 30221875344 exactly"
+              exit 1
+            fi
+            if [[ "$CONTROL_ROOM_AUTHORIZATION_ID" != "CR-LV-METHOD-C-356-CANONICAL-ARTIFACT-REPAIR-20260727-01" ]]; then
+              printf '%s\n' "mode=method-c-canonical-repair requires control_room_authorization_id CR-LV-METHOD-C-356-CANONICAL-ARTIFACT-REPAIR-20260727-01"
+              exit 1
+            fi
+            printf '%s\n' "dispatch-authority PASSED (Control Room → owner cabicci → method-c-canonical-repair)"
+            exit 0
+          fi
+
           ALLOW_RAW="${LOVABLE_DISPATCH_ACTORS:-}"
           if [[ -z "${ALLOW_RAW// }" ]]; then
-            printf '%s\n' "dispatch-authority: LOVABLE_DISPATCH_ACTORS allowlist is empty — fail closed"
-          else
-            mapfile -t ALLOW < <(printf '%s\n' "$ALLOW_RAW" | tr '[,;]' ' ' | tr '[:upper:]' '[:lower:]' | xargs -n1)
-            in_allow() {
-              local needle
-              needle="$(printf '%s' "$1" | tr '[:upper:]' '[:lower:]')"
-              for a in "${ALLOW[@]}"; do
-                [[ "$a" == "$needle" ]] && return 0
-              done
-              return 1
-            }
-            BANNED=0
-            for banned in cursor cli cursor-agent github-ui unauthenticated api; do
-              if [[ "$(printf '%s' "$DISPATCH_ACTOR" | tr '[:upper:]' '[:lower:]')" == "$banned" ]]; then
-                BANNED=1
-              fi
-              if [[ "$(printf '%s' "$GITHUB_ACTOR_NAME" | tr '[:upper:]' '[:lower:]')" == "$banned" ]]; then
-                BANNED=1
-              fi
+            printf '%s\n' "LOVABLE_DISPATCH_ACTORS allowlist is empty — fail closed"
+            printf '%s\n' "Only Control Room → Lovable → GitHub Actions may dispatch default modes."
+            exit 1
+          fi
+          mapfile -t ALLOW < <(printf '%s\n' "$ALLOW_RAW" | tr '[,;]' ' ' | tr '[:upper:]' '[:lower:]' | xargs -n1)
+          in_allow() {
+            local needle
+            needle="$(lower "$1")"
+            for a in "${ALLOW[@]}"; do
+              [[ "$a" == "$needle" ]] && return 0
             done
-            if [[ "$BANNED" -eq 1 ]]; then
-              printf '%s\n' "dispatch-authority: banned actor rejected"
-            elif ! in_allow "$DISPATCH_ACTOR"; then
-              printf '%s\n' "dispatch-authority: dispatch_actor not in allowlist"
-            elif ! in_allow "$GITHUB_ACTOR_NAME"; then
-              printf '%s\n' "dispatch-authority: github.actor not in allowlist"
-            elif [[ -z "${CONTROL_ROOM_AUTHORIZATION_ID:-}" ]]; then
-              printf '%s\n' "dispatch-authority: control_room_authorization_id missing"
-            elif [[ ! "$CONTROL_ROOM_AUTHORIZATION_ID" =~ ^CR-[A-Za-z0-9][A-Za-z0-9._-]{2,127}$ ]]; then
-              printf '%s\n' "dispatch-authority: control_room_authorization_id must match CR-… format"
-            elif [[ ! "$CHECKOUT_SHA" =~ ^[0-9a-f]{40}$ ]]; then
-              printf '%s\n' "dispatch-authority: checkout_sha must be full 40-char lowercase hex"
-            else
-              case "$PIPELINE_MODE" in
-                preflight|pilot|failed-only|full-400|report-only)
-                  if [[ "$PIPELINE_MODE" == "full-400" ]]; then
-                    if [[ "$CONFIRM_FULL_400" != "RUN_AUTHORIZED_400" ]]; then
-                      printf '%s\n' "dispatch-authority: full-400 requires confirm_full_400=RUN_AUTHORIZED_400"
-                    else
-                      AUTHORITY_STATUS="PASS"
-                    fi
-                  else
-                    if [[ -n "${CONFIRM_FULL_400}" && "$CONFIRM_FULL_400" == "RUN_AUTHORIZED_400" ]]; then
-                      printf '%s\n' "dispatch-authority: RUN_AUTHORIZED_400 is not authorized for non-full-400 modes"
-                    else
-                      AUTHORITY_STATUS="PASS"
-                    fi
-                  fi
-                  ;;
-                *)
-                  printf '%s\n' "dispatch-authority: mode is not an authorized choice"
-                  ;;
-              esac
+            return 1
+          }
+          if ! in_allow "$DISPATCH_ACTOR"; then
+            printf '%s\n' "dispatch_actor not in LOVABLE_DISPATCH_ACTORS allowlist"
+            exit 1
+          fi
+          if ! in_allow "$GITHUB_ACTOR_NAME"; then
+            printf '%s\n' "github.actor not in LOVABLE_DISPATCH_ACTORS allowlist"
+            exit 1
+          fi
+          if [[ "$PIPELINE_MODE" == "full-400" ]]; then
+            if [[ "$CONFIRM_FULL_400" != "RUN_AUTHORIZED_400" ]]; then
+              printf '%s\n' "mode=full-400 requires confirm_full_400 to equal RUN_AUTHORIZED_400 exactly"
+              exit 1
+            fi
+          else
+            if [[ -n "${CONFIRM_FULL_400}" && ( "$CONFIRM_FULL_400" == "RUN_AUTHORIZED_400" || "$CONFIRM_FULL_400" == "RUN_AUTHORIZED_METHOD_C_356" || "$CONFIRM_FULL_400" == "RUN_AUTHORIZED_METHOD_C_CANONICAL_REPAIR" ) ]]; then
+              printf '%s\n' "confirm_full_400 production sentinel is not authorized for this mode"
+              exit 1
             fi
           fi
-          printf '%s\n' "This is the default-branch registration stub for controlled-400-visual-pipeline."
-          printf '%s\n' "Dispatch authority was evaluated fail-closed (status=${AUTHORITY_STATUS})."
-          printf '%s\n' "Pipeline execution is unavailable from this stub."
-          printf '%s\n' "An explicitly authorized candidate ref (feat/ar-eg-next-lesson-visual) and separate Control Room authorization are required."
-          printf '%s\n' "No checkout, no installs, no artifacts, no provider credentials, no visual-pipeline execution."
-          exit 1
+          if [[ "$PIPELINE_MODE" == "failed-only" ]]; then
+            if [[ ! "$PRIOR_ARTIFACT_RUN_ID" =~ ^[0-9]+$ ]]; then
+              printf '%s\n' "mode=failed-only requires prior_artifact_run_id to be a numeric GitHub Actions run id"
+              exit 1
+            fi
+          else
+            if [[ -n "${PRIOR_ARTIFACT_RUN_ID}" ]]; then
+              printf '%s\n' "prior_artifact_run_id is only authorized for mode=failed-only or mode=method-c-canonical-repair"
+              exit 1
+            fi
+          fi
+          printf '%s\n' "dispatch-authority PASSED (Control Room → Lovable → GitHub Actions)"
+
+  run:
+    name: controlled-v1 (${{ github.event.inputs.mode }})
+    needs: [dispatch-authority]
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - name: Checkout immutable checkout_sha
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.checkout_sha }}
+          fetch-depth: 0
+
+      - name: Verify checked-out HEAD equals checkout_sha
+        shell: bash
+        env:
+          CHECKOUT_SHA: ${{ github.event.inputs.checkout_sha }}
+        run: |
+          set -euo pipefail
+          ACTUAL_HEAD="$(git rev-parse HEAD)"
+          if [[ "$ACTUAL_HEAD" != "$CHECKOUT_SHA" ]]; then
+            printf '%s\n' "HEAD does not equal validated checkout_sha"
+            exit 1
+          fi
+          printf '%s\n' "immutable checkout verified"
+
+      - name: Install Chromium for composition render
+        if: github.event.inputs.mode == 'pilot' || github.event.inputs.mode == 'failed-only' || github.event.inputs.mode == 'full-400' || github.event.inputs.mode == 'method-c-remaining'
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser || sudo apt-get install -y chromium
+          if command -v chromium-browser >/dev/null; then
+            printf 'CHROME_PATH=%s\n' "$(command -v chromium-browser)" >> "$GITHUB_ENV"
+          elif command -v chromium >/dev/null; then
+            printf 'CHROME_PATH=%s\n' "$(command -v chromium)" >> "$GITHUB_ENV"
+          elif command -v google-chrome >/dev/null; then
+            printf 'CHROME_PATH=%s\n' "$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            printf '%s\n' "No Chromium/Chrome binary found after install"
+            exit 1
+          fi
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Verify golden references BEFORE run
+        run: bun run controlled-visuals:verify-golden
+
+      - name: Run zero-render static tests (preflight / report-only / canonical-repair)
+        if: github.event.inputs.mode == 'preflight' || github.event.inputs.mode == 'report-only' || github.event.inputs.mode == 'method-c-canonical-repair'
+        run: bun run controlled-visuals:test-static
+
+      - name: Run static + renderer tests (render-authorized modes)
+        if: github.event.inputs.mode == 'pilot' || github.event.inputs.mode == 'failed-only' || github.event.inputs.mode == 'full-400' || github.event.inputs.mode == 'method-c-remaining'
+        run: bun run controlled-visuals:test
+
+      - name: Build manifests (classification + 400-cell manifest + golden verification)
+        if: github.event.inputs.mode == 'preflight' || github.event.inputs.mode == 'pilot' || github.event.inputs.mode == 'full-400' || github.event.inputs.mode == 'method-c-remaining'
+        run: bun run controlled-visuals:build
+
+      - name: Restore prior controlled-v1 artifacts for failed-only recovery
+        if: github.event.inputs.mode == 'failed-only'
+        uses: actions/download-artifact@v4
+        with:
+          pattern: controlled-v1-*
+          run-id: ${{ github.event.inputs.prior_artifact_run_id }}
+          github-token: ${{ github.token }}
+          merge-multiple: true
+          path: .
+
+      - name: Verify restored FAILED receipts exist before failed-only
+        if: github.event.inputs.mode == 'failed-only'
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ ! -d artifacts/controlled-v1/receipts ]]; then
+            printf '%s\n' "restored artifacts missing receipts/ — cannot select failed cells"
+            exit 1
+          fi
+          FAILED_COUNT="$(find artifacts/controlled-v1/receipts -type f -name '*.receipt.json' -print0 | xargs -0 -r grep -l '"status": "FAILED"' | wc -l | tr -d ' ')"
+          if [[ "$FAILED_COUNT" -lt 1 ]]; then
+            printf '%s\n' "no FAILED receipts found in restored prior artifacts — refusing empty failed-only"
+            exit 1
+          fi
+          printf '%s\n' "restored prior artifacts with FAILED receipt files=$FAILED_COUNT"
+
+      - name: Download historical Method-C artifact into isolated source directory
+        if: github.event.inputs.mode == 'method-c-canonical-repair'
+        uses: actions/download-artifact@v4
+        with:
+          name: controlled-v1-method-c-remaining-30221875344
+          run-id: ${{ github.event.inputs.prior_artifact_run_id }}
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/method-c-canonical-source
+
+      - name: Verify historical artifact digest and identity
+        if: github.event.inputs.mode == 'method-c-canonical-repair'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PRIOR_ARTIFACT_RUN_ID: ${{ github.event.inputs.prior_artifact_run_id }}
+          SOURCE_ROOT: ${{ runner.temp }}/method-c-canonical-source
+        run: |
+          set -euo pipefail
+          EXPECTED_DIGEST="914F985ABC45051943A8CCE5D72E43A6B5892017556877317F3A0225468528B7"
+          EXPECTED_ID="8637507763"
+          EXPECTED_NAME="controlled-v1-method-c-remaining-30221875344"
+          META="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${PRIOR_ARTIFACT_RUN_ID}/artifacts" --jq '.artifacts[] | select(.name=="'"$EXPECTED_NAME"'") | {id,name,digest,size_in_bytes,expired}')"
+          printf '%s\n' "$META"
+          DIGEST="$(printf '%s' "$META" | jq -r '.digest // empty' | sed 's/^sha256://I')"
+          ART_ID="$(printf '%s' "$META" | jq -r '.id')"
+          EXPIRED="$(printf '%s' "$META" | jq -r '.expired')"
+          if [[ "$EXPIRED" == "true" ]]; then
+            printf '%s\n' "historical artifact is expired"
+            exit 1
+          fi
+          if [[ "$ART_ID" != "$EXPECTED_ID" ]]; then
+            printf '%s\n' "historical artifact id mismatch: got $ART_ID expected $EXPECTED_ID"
+            exit 1
+          fi
+          # GitHub may report digest as sha256:HEX or bare HEX; normalize to uppercase HEX
+          DIGEST_U="$(printf '%s' "$DIGEST" | tr '[:lower:]' '[:upper:]' | sed 's/^SHA256://')"
+          if [[ -n "$DIGEST_U" && "$DIGEST_U" != "$EXPECTED_DIGEST" ]]; then
+            printf '%s\n' "historical API digest mismatch: got $DIGEST_U expected $EXPECTED_DIGEST"
+            exit 1
+          fi
+          if [[ ! -d "$SOURCE_ROOT/artifacts/controlled-v1/cells" && ! -d "$SOURCE_ROOT/cells" ]]; then
+            printf '%s\n' "downloaded source missing cells directory under $SOURCE_ROOT"
+            exit 1
+          fi
+          printf '%s\n' "historical artifact identity verified"
+
+      - name: Run preflight (zero-render)
+        if: github.event.inputs.mode == 'preflight'
+        env:
+          CONTROLLED_V1_ZERO_RENDER: "1"
+        run: bun run controlled-visuals:preflight
+
+      - name: Run pilot
+        if: github.event.inputs.mode == 'pilot'
+        run: bun run controlled-visuals:pilot
+
+      - name: Run failed-only
+        if: github.event.inputs.mode == 'failed-only'
+        run: bun run controlled-visuals:failed-only
+
+      - name: Run full-400 (requires exact confirm token)
+        if: github.event.inputs.mode == 'full-400'
+        shell: bash
+        env:
+          CONFIRM_FULL_400: ${{ github.event.inputs.confirm_full_400 }}
+        run: |
+          set -euo pipefail
+          if [[ "$CONFIRM_FULL_400" != "RUN_AUTHORIZED_400" ]]; then
+            printf '%s\n' "mode=full-400 requires confirm_full_400 to equal RUN_AUTHORIZED_400 exactly"
+            exit 1
+          fi
+          bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts full-400 --confirm_full_400="$CONFIRM_FULL_400"
+
+      - name: Run method-c-remaining (requires exact confirm token)
+        if: github.event.inputs.mode == 'method-c-remaining'
+        shell: bash
+        env:
+          CONFIRM_FULL_400: ${{ github.event.inputs.confirm_full_400 }}
+        run: |
+          set -euo pipefail
+          if [[ "$CONFIRM_FULL_400" != "RUN_AUTHORIZED_METHOD_C_356" ]]; then
+            printf '%s\n' "mode=method-c-remaining requires confirm_full_400 to equal RUN_AUTHORIZED_METHOD_C_356 exactly"
+            exit 1
+          fi
+          bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts method-c-remaining --confirm_full_400="$CONFIRM_FULL_400"
+
+      - name: Run method-c-canonical-repair (packaging only; zero renderer)
+        if: github.event.inputs.mode == 'method-c-canonical-repair'
+        shell: bash
+        env:
+          CONFIRM_FULL_400: ${{ github.event.inputs.confirm_full_400 }}
+          PRIOR_ARTIFACT_RUN_ID: ${{ github.event.inputs.prior_artifact_run_id }}
+          METHOD_C_CANONICAL_SOURCE_ROOT: ${{ runner.temp }}/method-c-canonical-source
+          METHOD_C_CANONICAL_STAGING_ROOT: ${{ runner.temp }}/method-c-canonical-staging
+          METHOD_C_SOURCE_EXECUTION_SHA: 6d01bbe07e0e97a02a84cdd38a7a722daad95d75
+          CONTROLLED_V1_ZERO_RENDER: "1"
+        run: |
+          set -euo pipefail
+          if [[ "$CONFIRM_FULL_400" != "RUN_AUTHORIZED_METHOD_C_CANONICAL_REPAIR" ]]; then
+            printf '%s\n' "mode=method-c-canonical-repair requires confirm_full_400 to equal RUN_AUTHORIZED_METHOD_C_CANONICAL_REPAIR exactly"
+            exit 1
+          fi
+          mkdir -p "$METHOD_C_CANONICAL_STAGING_ROOT"
+          bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts method-c-canonical-repair \
+            --confirm_full_400="$CONFIRM_FULL_400" \
+            --source_artifact_root="$METHOD_C_CANONICAL_SOURCE_ROOT" \
+            --staging_root="$METHOD_C_CANONICAL_STAGING_ROOT" \
+            --prior_artifact_run_id="$PRIOR_ARTIFACT_RUN_ID"
+          # Fail closed if production tree was polluted or residue leaked into staging
+          if [[ -d artifacts/controlled-v1/cells ]]; then
+            printf '%s\n' "repair must not write production cells under artifacts/controlled-v1"
+            exit 1
+          fi
+          if [[ -e "$METHOD_C_CANONICAL_STAGING_ROOT/artifacts/controlled-v1/cells/intro-m1-l4-ai-can-cannot__ar-EG/final.png" ]]; then
+            printf '%s\n' "excluded residue PNG present in canonical staging"
+            exit 1
+          fi
+          if [[ -e "$METHOD_C_CANONICAL_STAGING_ROOT/artifacts/controlled-v1/cells/intro-m1-l4-ai-can-cannot__en/final.png" ]]; then
+            printf '%s\n' "excluded residue PNG present in canonical staging"
+            exit 1
+          fi
+          printf 'CANONICAL_STAGING_ROOT=%s\n' "$METHOD_C_CANONICAL_STAGING_ROOT" >> "$GITHUB_ENV"
+
+      - name: Run report-only (zero-render)
+        if: github.event.inputs.mode == 'report-only'
+        env:
+          CONTROLLED_V1_ZERO_RENDER: "1"
+        run: bun run controlled-visuals:report-only
+
+      - name: Verify golden references AFTER run (must be byte-identical to BEFORE)
+        run: bun run controlled-visuals:verify-golden
+
+      - name: Upload artifacts (receipts, reports, contact sheets, cells)
+        if: always() && github.event.inputs.mode != 'method-c-canonical-repair'
+        uses: actions/upload-artifact@v4
+        with:
+          name: controlled-v1-${{ github.event.inputs.mode }}-${{ github.run_id }}
+          path: |
+            artifacts/controlled-v1/receipts/**
+            artifacts/controlled-v1/reports/**
+            artifacts/controlled-v1/contact-sheets/**
+            artifacts/controlled-v1/provenance/**
+            artifacts/controlled-v1/cells/**
+            docs/lesson-visuals/controlled-v1/PRODUCTION_MANIFEST.json
+            docs/lesson-visuals/controlled-v1/PILOT_MANIFEST.json
+            docs/lesson-visuals/controlled-v1/UNRESOLVED_LEDGER.json
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Upload canonical Method-C artifact only
+        if: success() && github.event.inputs.mode == 'method-c-canonical-repair'
+        uses: actions/upload-artifact@v4
+        with:
+          name: controlled-v1-method-c-canonical-${{ github.run_id }}
+          path: ${{ runner.temp }}/method-c-canonical-staging
+          if-no-files-found: error
+          retention-days: 30
