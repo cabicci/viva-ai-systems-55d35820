@@ -91,43 +91,85 @@ export type Database = {
       }
       knowledge_chunks: {
         Row: {
+          chunk_checksum: string | null
+          chunk_position: number | null
           content: string
+          content_type: string | null
+          content_version: string | null
           created_at: string
           embedding: string | null
           id: string
+          index_state: string | null
+          index_version: string | null
+          indexing_failed: boolean
           lesson_id: string | null
+          locale: string | null
           metadata: Json
           module_id: string | null
+          package_checksum: string | null
+          package_path: string | null
           path_id: string | null
+          production_route: string | null
+          section_index: number | null
+          section_role: string | null
           source_id: string
+          source_sha: string | null
           source_type: string
           title: string
           updated_at: string
         }
         Insert: {
+          chunk_checksum?: string | null
+          chunk_position?: number | null
           content: string
+          content_type?: string | null
+          content_version?: string | null
           created_at?: string
           embedding?: string | null
           id?: string
+          index_state?: string | null
+          index_version?: string | null
+          indexing_failed?: boolean
           lesson_id?: string | null
+          locale?: string | null
           metadata?: Json
           module_id?: string | null
+          package_checksum?: string | null
+          package_path?: string | null
           path_id?: string | null
+          production_route?: string | null
+          section_index?: number | null
+          section_role?: string | null
           source_id: string
+          source_sha?: string | null
           source_type: string
           title: string
           updated_at?: string
         }
         Update: {
+          chunk_checksum?: string | null
+          chunk_position?: number | null
           content?: string
+          content_type?: string | null
+          content_version?: string | null
           created_at?: string
           embedding?: string | null
           id?: string
+          index_state?: string | null
+          index_version?: string | null
+          indexing_failed?: boolean
           lesson_id?: string | null
+          locale?: string | null
           metadata?: Json
           module_id?: string | null
+          package_checksum?: string | null
+          package_path?: string | null
           path_id?: string | null
+          production_route?: string | null
+          section_index?: number | null
+          section_role?: string | null
           source_id?: string
+          source_sha?: string | null
           source_type?: string
           title?: string
           updated_at?: string
@@ -419,6 +461,176 @@ export type Database = {
           submitted_at?: string | null
           updated_at?: string
           user_id?: string
+        }
+        Relationships: []
+      }
+      rag_import_batches: {
+        Row: {
+          accepted_row_count: number
+          attempt_count: number
+          batch_ordinal: number
+          chunk_count: number
+          chunk_offset: number
+          created_at: string
+          id: string
+          last_error_code: string | null
+          lease_expires_at: string | null
+          lease_token: string | null
+          session_id: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          accepted_row_count?: number
+          attempt_count?: number
+          batch_ordinal: number
+          chunk_count: number
+          chunk_offset: number
+          created_at?: string
+          id?: string
+          last_error_code?: string | null
+          lease_expires_at?: string | null
+          lease_token?: string | null
+          session_id: string
+          status: string
+          updated_at?: string
+        }
+        Update: {
+          accepted_row_count?: number
+          attempt_count?: number
+          batch_ordinal?: number
+          chunk_count?: number
+          chunk_offset?: number
+          created_at?: string
+          id?: string
+          last_error_code?: string | null
+          lease_expires_at?: string | null
+          lease_token?: string | null
+          session_id?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "rag_import_batches_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "rag_import_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      rag_import_sessions: {
+        Row: {
+          accepted_chunk_count: number
+          authoritative_lookup_sha256: string
+          chunk_manifest_sha256: string
+          chunks_sha256: string
+          created_at: string
+          embedding_dimensions: number
+          embedding_model: string
+          execution_id: string
+          expected_chunk_count: number
+          expected_package_count: number
+          id: string
+          index_version: string
+          last_error_code: string | null
+          package_manifest_sha256: string
+          planned_batch_count: number
+          provider_attempt_total: number
+          source_sha: string
+          status: string
+          updated_at: string
+          version_key: string
+        }
+        Insert: {
+          accepted_chunk_count?: number
+          authoritative_lookup_sha256: string
+          chunk_manifest_sha256: string
+          chunks_sha256: string
+          created_at?: string
+          embedding_dimensions: number
+          embedding_model: string
+          execution_id: string
+          expected_chunk_count: number
+          expected_package_count: number
+          id?: string
+          index_version: string
+          last_error_code?: string | null
+          package_manifest_sha256: string
+          planned_batch_count?: number
+          provider_attempt_total?: number
+          source_sha: string
+          status: string
+          updated_at?: string
+          version_key: string
+        }
+        Update: {
+          accepted_chunk_count?: number
+          authoritative_lookup_sha256?: string
+          chunk_manifest_sha256?: string
+          chunks_sha256?: string
+          created_at?: string
+          embedding_dimensions?: number
+          embedding_model?: string
+          execution_id?: string
+          expected_chunk_count?: number
+          expected_package_count?: number
+          id?: string
+          index_version?: string
+          last_error_code?: string | null
+          package_manifest_sha256?: string
+          planned_batch_count?: number
+          provider_attempt_total?: number
+          source_sha?: string
+          status?: string
+          updated_at?: string
+          version_key?: string
+        }
+        Relationships: []
+      }
+      rag_index_versions: {
+        Row: {
+          activated_at: string | null
+          chunk_count: number
+          chunk_manifest_checksum: string
+          created_at: string
+          embedding_model: string
+          failure_reason: string | null
+          id: string
+          package_count: number
+          source_sha: string
+          status: string
+          superseded_at: string | null
+          version_key: string
+        }
+        Insert: {
+          activated_at?: string | null
+          chunk_count?: number
+          chunk_manifest_checksum: string
+          created_at?: string
+          embedding_model?: string
+          failure_reason?: string | null
+          id?: string
+          package_count?: number
+          source_sha: string
+          status: string
+          superseded_at?: string | null
+          version_key: string
+        }
+        Update: {
+          activated_at?: string | null
+          chunk_count?: number
+          chunk_manifest_checksum?: string
+          created_at?: string
+          embedding_model?: string
+          failure_reason?: string | null
+          id?: string
+          package_count?: number
+          source_sha?: string
+          status?: string
+          superseded_at?: string | null
+          version_key?: string
         }
         Relationships: []
       }
@@ -808,6 +1020,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      activate_rag_index_version: {
+        Args: { p_version_key: string }
+        Returns: Json
+      }
       apply_review_outcome: {
         Args: { p_lesson_id: string; p_passed: boolean; p_user_id: string }
         Returns: undefined
@@ -831,7 +1047,6 @@ export type Database = {
       get_admin_insights: { Args: never; Returns: Json }
       get_admin_overview: { Args: never; Returns: Json }
       get_kpi_funnel: { Args: never; Returns: Json }
-      get_my_billing_access_tier: { Args: never; Returns: string }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -866,7 +1081,85 @@ export type Database = {
           title: string
         }[]
       }
+      match_locale_knowledge_chunks: {
+        Args: {
+          match_count?: number
+          min_similarity?: number
+          p_allow_module_fallback?: boolean
+          p_content_version?: string
+          p_lesson_id?: string
+          p_locale: string
+          p_module_id?: string
+          p_path_id?: string
+          query_embedding: string
+        }
+        Returns: {
+          chunk_checksum: string
+          chunk_position: number
+          content: string
+          content_type: string
+          content_version: string
+          id: string
+          index_version: string
+          lesson_id: string
+          locale: string
+          metadata: Json
+          module_id: string
+          package_checksum: string
+          package_path: string
+          path_id: string
+          production_route: string
+          same_lesson_rank: number
+          section_index: number
+          section_role: string
+          similarity: number
+          source_id: string
+          source_sha: string
+          source_type: string
+          title: string
+        }[]
+      }
+      rag_claim_next_import_batch: { Args: never; Returns: Json }
+      rag_commit_import_batch: {
+        Args: { p_lease_token: string; p_rows: Json }
+        Returns: Json
+      }
+      rag_deactivate_first_active_version: {
+        Args: { p_version_key: string }
+        Returns: Json
+      }
+      rag_fail_import_batch: {
+        Args: { p_error_code: string; p_lease_token: string }
+        Returns: Json
+      }
+      rag_get_import_evidence: { Args: never; Returns: Json }
+      rag_get_import_status: { Args: never; Returns: Json }
+      rag_initialize_or_resume_import: { Args: never; Returns: Json }
+      rag_locked_provenance: {
+        Args: never
+        Returns: {
+          authoritative_lookup_sha256: string
+          batch_size: number
+          chunk_manifest_sha256: string
+          chunks_sha256: string
+          embedding_dimensions: number
+          embedding_model: string
+          expected_chunk_count: number
+          expected_package_count: number
+          index_version: string
+          max_provider_attempts: number
+          package_manifest_sha256: string
+          planned_batch_count: number
+          source_sha: string
+        }[]
+      }
+      rag_require_service_role: { Args: never; Returns: undefined }
+      rag_validate_staging_import: { Args: never; Returns: Json }
       record_user_activity: { Args: never; Returns: Json }
+      rollback_rag_index_version: {
+        Args: { p_version_key: string }
+        Returns: Json
+      }
       skip_mission_for_user: {
         Args: { p_lesson_id: string; p_mission_id: string }
         Returns: {
