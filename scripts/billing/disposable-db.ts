@@ -1,5 +1,10 @@
 import { spawn, spawnSync } from "node:child_process";
+import { existsSync } from "node:fs";
 import path from "node:path";
+import {
+  EXPECTED_HIST_BLOB,
+  prepareDisposableSupabaseTree,
+} from "./prepare-disposable-supabase-tree.ts";
 
 /**
  * Disposable Postgres helpers for billing concurrency proofs.
@@ -8,6 +13,10 @@ import path from "node:path";
  *
  * SQL is never interpolated into a shell command string. All SQL is delivered
  * via process stdin (or argv when already using spawn without a shell).
+ *
+ * Local db reset/start use an isolated disposable migration tree so the
+ * immutable Product historical migration is never rewritten in-repo
+ * (CR-BILLING-RAG-PR15-BOUNDED-CORRECTION-20260801-04).
  */
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../..");
@@ -96,6 +105,25 @@ export function dockerReady(): boolean {
 
 function findSupabaseDbContainer(): string | null {
   if (!dockerReady()) return null;
+  const preferred = process.env.SUPABASE_DB_CONTAINER?.trim();
+  if (preferred) {
+    const check = runArgv(dockerBin(), [
+      "ps",
+      "--filter",
+      `name=^${preferred}$`,
+      "--format",
+      "{{.Names}}",
+    ]);
+    if (
+      check.ok &&
+      check.out
+        .split(/\r?\n/)
+        .map((s) => s.trim())
+        .includes(preferred)
+    ) {
+      return preferred;
+    }
+  }
   const result = runArgv(dockerBin(), [
     "ps",
     "--filter",
@@ -234,17 +262,52 @@ export function psqlConcurrent(sqls: string[]): Promise<{ ok: boolean; out: stri
   return Promise.all(sqls.map((s) => psqlAsync(s)));
 }
 
+function disposableSupabaseRoot(): string {
+  const fromEnv = process.env.DISPOSABLE_SUPABASE_ROOT?.trim();
+  if (fromEnv) return path.resolve(fromEnv);
+  return path.join(REPO_ROOT, "billing-v3-validation", "disposable-supabase");
+}
+
+/**
+ * Reset the local disposable DB using an isolated migration tree that omits
+ * only the local-owner-incompatible realtime.messages operation.
+ * Never mutates repository supabase/migrations/.
+ */
 export function resetLocalDatabase(): { ok: boolean; output: string } {
-  const result = runAllowFail("npx supabase db reset --yes");
+  const dest = disposableSupabaseRoot();
+  try {
+    const prepared = prepareDisposableSupabaseTree({
+      repoRoot: REPO_ROOT,
+      destRoot: dest,
+    });
+    if (prepared.sourceBlob !== EXPECTED_HIST_BLOB) {
+      return {
+        ok: false,
+        output: `historical blob mismatch after prepare: ${prepared.sourceBlob}`,
+      };
+    }
+  } catch (e) {
+    return { ok: false, output: `disposable prepare failed: ${String(e)}` };
+  }
+  const result = runAllowFail("npx supabase db reset --yes", dest);
   return { ok: result.ok, output: result.out };
 }
 
 export function startLocalSupabase(): { ok: boolean; output: string } {
-  const result = runAllowFail("npx supabase start");
+  const dest = disposableSupabaseRoot();
+  try {
+    prepareDisposableSupabaseTree({ repoRoot: REPO_ROOT, destRoot: dest });
+  } catch (e) {
+    return { ok: false, output: `disposable prepare failed: ${String(e)}` };
+  }
+  const result = runAllowFail("npx supabase start", dest);
   return { ok: result.ok, output: result.out };
 }
 
 export function stopLocalSupabase(): { ok: boolean; output: string } {
-  const result = runAllowFail("npx supabase stop --no-backup");
+  const dest = disposableSupabaseRoot();
+  const result = existsSync(dest)
+    ? runAllowFail("npx supabase stop --no-backup", dest)
+    : runAllowFail("npx supabase stop --no-backup");
   return { ok: result.ok, output: result.out };
 }

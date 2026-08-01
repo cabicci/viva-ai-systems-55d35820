@@ -2,6 +2,9 @@
 # Billing Launch Closure Contracts V3 — validation harness.
 # Phase A and Phase B each start from an independent clean disposable database.
 # Produces a sanitized markdown report. DO NOT MERGE gate only.
+#
+# Local realtime.messages ownership accommodation lives only in the disposable
+# Supabase tree prepared under REPORT_DIR (never in repo supabase/migrations/).
 set -uo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
@@ -9,6 +12,7 @@ cd "$REPO_ROOT"
 
 REPORT_DIR="${REPORT_DIR:-billing-v3-validation}"
 REPORT="${REPORT_DIR}/report.md"
+DISPOSABLE_ROOT="${DISPOSABLE_SUPABASE_ROOT:-${REPORT_DIR}/disposable-supabase}"
 mkdir -p "$REPORT_DIR"
 
 HEAD_SHA="$(git rev-parse HEAD)"
@@ -19,14 +23,39 @@ HEAD_SHA="$(git rev-parse HEAD)"
   echo "- Generated: $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
   echo "- HEAD SHA: \`${HEAD_SHA}\`"
   echo "- Expected product SHA: \`${EXPECTED_PRODUCT_SHA:-<unset>}\`"
+  echo "- Disposable Supabase root: \`${DISPOSABLE_ROOT}\`"
   echo
 } > "$REPORT"
 
 overall_status=0
 
+prepare_disposable_supabase_tree() {
+  echo "[billing-v3-harness] Preparing disposable Supabase tree (realtime.messages ownership omit)…"
+  rm -rf "$DISPOSABLE_ROOT"
+  if ! bun scripts/billing/prepare-disposable-supabase-tree.ts --dest "$DISPOSABLE_ROOT" \
+    > "${REPORT_DIR}/disposable-prepare.log" 2>&1; then
+    echo "[billing-v3-harness] disposable tree prepare FAILED"
+    cat "${REPORT_DIR}/disposable-prepare.log" || true
+    return 1
+  fi
+  # Prove committed Product migration remains immutable (expected protected blob).
+  local hist="supabase/migrations/20260526105117_25fc4182-0343-4234-a231-0cf38569014a.sql"
+  local blob
+  blob="$(git hash-object "$hist")"
+  if [[ "$blob" != "d185dd59549f611fcb984bcb3459c9d5d6969ef5" ]]; then
+    echo "[billing-v3-harness] committed historical migration blob mismatch: $blob"
+    return 1
+  fi
+  return 0
+}
+
 reset_disposable_db() {
   echo "[billing-v3-harness] Resetting disposable database (clean migration replay)…"
-  if ! npx supabase db reset --yes > "${REPORT_DIR}/db-reset.log" 2>&1; then
+  if ! prepare_disposable_supabase_tree; then
+    return 1
+  fi
+  if ! (cd "$DISPOSABLE_ROOT" && npx supabase db reset --yes) \
+    > "${REPORT_DIR}/db-reset.log" 2>&1; then
     echo "[billing-v3-harness] db reset FAILED"
     tail -n 40 "${REPORT_DIR}/db-reset.log" || true
     return 1
@@ -69,12 +98,16 @@ else
     overall_status=1
     echo "- Result: FAIL (database reset before Phase A)" >> "$REPORT"
   elif bunx vitest run --no-file-parallelism src/lib/billing/__tests__/ > "${REPORT_DIR}/unit.log" 2>&1; then
-    if assert_no_mandatory_skips "${REPORT_DIR}/unit.log" \
-      && grep -Eq '80 passed' "${REPORT_DIR}/unit.log"; then
-      echo "- Result: PASS (80 / 80, 0 skipped)" >> "$REPORT"
+    # Strip ANSI so count matching is stable under CI color output.
+    sed -E 's/\x1B\[[0-9;]*[A-Za-z]//g' "${REPORT_DIR}/unit.log" > "${REPORT_DIR}/unit.plain.log"
+    # Count must stay in lockstep with the billing vitest inventory (static + disposable).
+    # Refuse any skipped mandatory disposable proofs.
+    if assert_no_mandatory_skips "${REPORT_DIR}/unit.plain.log" \
+      && grep -EEq 'Tests[[:space:]]+95 passed' "${REPORT_DIR}/unit.plain.log"; then
+      echo "- Result: PASS (95 / 95, 0 skipped)" >> "$REPORT"
     else
       overall_status=1
-      echo "- Result: FAIL (expected 80 passed / 0 skipped)" >> "$REPORT"
+      echo "- Result: FAIL (expected 95 passed / 0 skipped)" >> "$REPORT"
     fi
   else
     overall_status=1
@@ -114,6 +147,9 @@ else
   echo "- Result: FAIL (BILLING_DISPOSABLE_DB != 1; concurrency proofs required)" >> "$REPORT"
 fi
 echo >> "$REPORT"
+
+# Remove disposable tree from the repository worktree after validation.
+rm -rf "$DISPOSABLE_ROOT"
 
 echo "Report written to ${REPORT}"
 exit "$overall_status"

@@ -110,21 +110,15 @@ export function useEntitlement(): {
     queryKey: [...SUB_QK, userId],
     queryFn: async (): Promise<Tier> => {
       if (!userId) return "free";
-      const { data, error } = await supabase
-        .from("user_subscriptions")
-        .select("tier, status, current_period_end")
-        .eq("user_id", userId)
-        .maybeSingle();
+      // Authoritative paid-access source after Billing cutover:
+      // billing.subscriptions via public.get_my_billing_access_tier.
+      // Legacy public.user_subscriptions is not independently authoritative.
+      const { data, error } = await supabase.rpc("get_my_billing_access_tier");
       if (error) {
-        captureWarn("entitlements:subscription", error);
+        captureWarn("entitlements:billing_access_tier", error);
         return "free";
       }
-      if (!data) return "free";
-      const active =
-        data.tier === "pro" &&
-        (!data.current_period_end ||
-          new Date(data.current_period_end) > new Date());
-      return active ? "pro" : "free";
+      return data === "pro" ? "pro" : "free";
     },
     enabled: !!userId,
     staleTime: 60_000,
@@ -169,9 +163,7 @@ export function useStreak() {
         .select("current_streak, longest_streak, last_activity_date")
         .eq("user_id", userId)
         .maybeSingle();
-      return (
-        data ?? { current_streak: 0, longest_streak: 0, last_activity_date: null }
-      );
+      return data ?? { current_streak: 0, longest_streak: 0, last_activity_date: null };
     },
     enabled: !!userId,
     staleTime: 30_000,

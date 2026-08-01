@@ -125,11 +125,15 @@ describe("public billing RPC bridge — static", () => {
   const entitlementIndex = readRepoFile("supabase/functions/billing-entitlement/index.ts");
   const handler = readRepoFile("supabase/functions/assistant-runtime/handler.ts");
 
-  it("is the latest migration and defines exactly seven public wrappers", () => {
+  it("defines exactly seven public wrappers and remains the terminal Billing bridge before additive compat", () => {
     const migrations = readdirSync(path.join(REPO_ROOT, "supabase/migrations"))
       .filter((f) => f.endsWith(".sql"))
       .sort();
-    expect(migrations[migrations.length - 1]).toBe("20260728140000_public_billing_rpc_bridge.sql");
+    const bridgeIdx = migrations.indexOf("20260728140000_public_billing_rpc_bridge.sql");
+    expect(bridgeIdx).toBeGreaterThanOrEqual(0);
+    const afterBridge = migrations.slice(bridgeIdx + 1);
+    // Only the additive legacy-compat migration may follow the public bridge.
+    expect(afterBridge).toEqual(["20260801120000_billing_legacy_user_subscriptions_compat.sql"]);
     expect(PUBLIC_WRAPPERS).toHaveLength(7);
     for (const w of PUBLIC_WRAPPERS) {
       expect(bridgeSql).toContain(w.createSig);
@@ -262,11 +266,9 @@ describe.skipIf(!ENABLED)("public billing RPC bridge — disposable DB", () => {
       WHERE epv.policy_key='bridge_public_v1' AND pv.version_number=9101`);
   }
 
-  it(
-    "creates billing schema, private functions, and seven public wrappers",
-    () => {
-      const row = lastValue(
-        psql(`SELECT
+  it("creates billing schema, private functions, and seven public wrappers", () => {
+    const row = lastValue(
+      psql(`SELECT
           (SELECT COUNT(*)::text FROM information_schema.schemata WHERE schema_name='billing')
           || ',' ||
           (SELECT COUNT(*)::text FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace
@@ -278,17 +280,13 @@ describe.skipIf(!ENABLED)("public billing RPC bridge — disposable DB", () => {
             WHERE n.nspname='billing' AND p.proname IN (
               'reserve_learner_ai_access','register_provider_attempt','finalize_provider_attempt',
               'commit_ai_quota','release_ai_quota','get_entitlement_snapshot','evaluate_access'))`),
-      );
-      expect(row).toBe("1,7,7");
-    },
-    60_000,
-  );
+    );
+    expect(row).toBe("1,7,7");
+  }, 60_000);
 
-  it(
-    "catalog: SECURITY DEFINER, search_path, and role grants",
-    () => {
-      const report = lastValue(
-        psql(`WITH fns(name, args) AS (
+  it("catalog: SECURITY DEFINER, search_path, and role grants", () => {
+    const report = lastValue(
+      psql(`WITH fns(name, args) AS (
           VALUES
             ('reserve_learner_ai_access','uuid, text, text, uuid, integer, text'),
             ('register_provider_attempt','uuid, text, text, text'),
@@ -310,152 +308,134 @@ describe.skipIf(!ENABLED)("public billing RPC bridge — disposable DB", () => {
         FROM fns
         JOIN pg_proc p ON p.proname = fns.name
         JOIN pg_namespace n ON n.oid=p.pronamespace AND n.nspname='public'`),
-      );
-      for (const name of [
-        "reserve_learner_ai_access",
-        "register_provider_attempt",
-        "finalize_provider_attempt",
-        "commit_ai_quota",
-        "release_ai_quota",
-        "get_entitlement_snapshot",
-        "evaluate_access",
-      ]) {
-        expect(report).toContain(`${name}:D:S:1000`);
-      }
-    },
-    60_000,
-  );
+    );
+    for (const name of [
+      "reserve_learner_ai_access",
+      "register_provider_attempt",
+      "finalize_provider_attempt",
+      "commit_ai_quota",
+      "release_ai_quota",
+      "get_entitlement_snapshot",
+      "evaluate_access",
+    ]) {
+      expect(report).toContain(`${name}:D:S:1000`);
+    }
+  }, 60_000);
 
-  it(
-    "role denial: anon and authenticated cannot call reserve wrapper",
-    () => {
-      seedPaid(5);
-      const req = "11111111-1111-1111-1111-111111111101";
-      const anonFail = psqlAllowFail(
-        `BEGIN; ${ANON} SELECT public.reserve_learner_ai_access('${USER}','assistant_runtime',NULL,'${req}',1,'idem-anon'); COMMIT;`,
-      );
-      expect(anonFail.ok).toBe(false);
-      const authFail = psqlAllowFail(
-        `BEGIN; ${AUTH} SELECT public.reserve_learner_ai_access('${USER}','assistant_runtime',NULL,'${req}',1,'idem-auth'); COMMIT;`,
-      );
-      expect(authFail.ok).toBe(false);
-    },
-    60_000,
-  );
+  it("role denial: anon and authenticated cannot call reserve wrapper", () => {
+    seedPaid(5);
+    const req = "11111111-1111-1111-1111-111111111101";
+    const anonFail = psqlAllowFail(
+      `BEGIN; ${ANON} SELECT public.reserve_learner_ai_access('${USER}','assistant_runtime',NULL,'${req}',1,'idem-anon'); COMMIT;`,
+    );
+    expect(anonFail.ok).toBe(false);
+    const authFail = psqlAllowFail(
+      `BEGIN; ${AUTH} SELECT public.reserve_learner_ai_access('${USER}','assistant_runtime',NULL,'${req}',1,'idem-auth'); COMMIT;`,
+    );
+    expect(authFail.ok).toBe(false);
+  }, 60_000);
 
-  it(
-    "service_role reserve lifecycle: idempotency, commit path, release path",
-    () => {
-      seedPaid(5);
-      const req1 = "11111111-1111-1111-1111-111111111111";
-      const idem = "bridge-idem-1";
-      const r1 = lastValue(
-        psql(
-          `BEGIN; ${SERVICE} SELECT (public.reserve_learner_ai_access('${USER}','assistant_runtime',NULL,'${req1}',1,'${idem}')->>'reservation_id'); COMMIT;`,
-        ),
-      );
-      expect(r1).toMatch(/^[0-9a-f-]{36}$/i);
-      const r2 = lastValue(
-        psql(
-          `BEGIN; ${SERVICE} SELECT (public.reserve_learner_ai_access('${USER}','assistant_runtime',NULL,'${req1}',1,'${idem}')->>'reservation_id'); COMMIT;`,
-        ),
-      );
-      expect(r2).toBe(r1);
-      const replay = lastValue(
-        psql(
-          `BEGIN; ${SERVICE} SELECT (public.reserve_learner_ai_access('${USER}','assistant_runtime',NULL,'${req1}',1,'${idem}')->>'idempotent_replay'); COMMIT;`,
-        ),
-      );
-      expect(replay).toBe("true");
+  it("service_role reserve lifecycle: idempotency, commit path, release path", () => {
+    seedPaid(5);
+    const req1 = "11111111-1111-1111-1111-111111111111";
+    const idem = "bridge-idem-1";
+    const r1 = lastValue(
+      psql(
+        `BEGIN; ${SERVICE} SELECT (public.reserve_learner_ai_access('${USER}','assistant_runtime',NULL,'${req1}',1,'${idem}')->>'reservation_id'); COMMIT;`,
+      ),
+    );
+    expect(r1).toMatch(/^[0-9a-f-]{36}$/i);
+    const r2 = lastValue(
+      psql(
+        `BEGIN; ${SERVICE} SELECT (public.reserve_learner_ai_access('${USER}','assistant_runtime',NULL,'${req1}',1,'${idem}')->>'reservation_id'); COMMIT;`,
+      ),
+    );
+    expect(r2).toBe(r1);
+    const replay = lastValue(
+      psql(
+        `BEGIN; ${SERVICE} SELECT (public.reserve_learner_ai_access('${USER}','assistant_runtime',NULL,'${req1}',1,'${idem}')->>'idempotent_replay'); COMMIT;`,
+      ),
+    );
+    expect(replay).toBe("true");
 
-      const req2 = "11111111-1111-1111-1111-111111111112";
-      const rid2 = lastValue(
-        psql(
-          `BEGIN; ${SERVICE} SELECT (public.reserve_learner_ai_access('${USER}','assistant_runtime',NULL,'${req2}',1,'bridge-idem-release')->>'reservation_id'); COMMIT;`,
-        ),
-      );
-      const released = lastValue(
-        psql(
-          `BEGIN; ${SERVICE} SELECT (public.release_ai_quota('${rid2}','bridge-release-1')->>'released'); COMMIT;`,
-        ),
-      );
-      expect(released).toBe("true");
+    const req2 = "11111111-1111-1111-1111-111111111112";
+    const rid2 = lastValue(
+      psql(
+        `BEGIN; ${SERVICE} SELECT (public.reserve_learner_ai_access('${USER}','assistant_runtime',NULL,'${req2}',1,'bridge-idem-release')->>'reservation_id'); COMMIT;`,
+      ),
+    );
+    const released = lastValue(
+      psql(
+        `BEGIN; ${SERVICE} SELECT (public.release_ai_quota('${rid2}','bridge-release-1')->>'released'); COMMIT;`,
+      ),
+    );
+    expect(released).toBe("true");
 
-      const req3 = "11111111-1111-1111-1111-111111111113";
-      const rid3 = lastValue(
-        psql(
-          `BEGIN; ${SERVICE} SELECT (public.reserve_learner_ai_access('${USER}','assistant_runtime',NULL,'${req3}',1,'bridge-idem-commit')->>'reservation_id'); COMMIT;`,
-        ),
-      );
-      const attempt = lastValue(
-        psql(
-          `BEGIN; ${SERVICE} SELECT (public.register_provider_attempt('${rid3}','openai_embedding','prov-1','att-1')->>'attempt_index'); COMMIT;`,
-        ),
-      );
-      expect(Number(attempt)).toBeGreaterThanOrEqual(1);
-      const fin = lastValue(
-        psql(
-          `BEGIN; ${SERVICE} SELECT (public.finalize_provider_attempt('${rid3}',${attempt},'succeeded',1,1,0)->>'attempt_status'); COMMIT;`,
-        ),
-      );
-      expect(fin).toBe("succeeded");
-      const committed = lastValue(
-        psql(
-          `BEGIN; ${SERVICE} SELECT (public.commit_ai_quota('${rid3}',10,20,'bridge-commit-1')->>'committed'); COMMIT;`,
-        ),
-      );
-      expect(committed).toBe("true");
-    },
-    90_000,
-  );
+    const req3 = "11111111-1111-1111-1111-111111111113";
+    const rid3 = lastValue(
+      psql(
+        `BEGIN; ${SERVICE} SELECT (public.reserve_learner_ai_access('${USER}','assistant_runtime',NULL,'${req3}',1,'bridge-idem-commit')->>'reservation_id'); COMMIT;`,
+      ),
+    );
+    const attempt = lastValue(
+      psql(
+        `BEGIN; ${SERVICE} SELECT (public.register_provider_attempt('${rid3}','openai_embedding','prov-1','att-1')->>'attempt_index'); COMMIT;`,
+      ),
+    );
+    expect(Number(attempt)).toBeGreaterThanOrEqual(1);
+    const fin = lastValue(
+      psql(
+        `BEGIN; ${SERVICE} SELECT (public.finalize_provider_attempt('${rid3}',${attempt},'succeeded',1,1,0)->>'attempt_status'); COMMIT;`,
+      ),
+    );
+    expect(fin).toBe("succeeded");
+    const committed = lastValue(
+      psql(
+        `BEGIN; ${SERVICE} SELECT (public.commit_ai_quota('${rid3}',10,20,'bridge-commit-1')->>'committed'); COMMIT;`,
+      ),
+    );
+    expect(committed).toBe("true");
+  }, 90_000);
 
-  it(
-    "fail-closed AI_ACCESS_DENIED and QUOTA_EXCEEDED via public wrappers",
-    () => {
-      const deniedUser = "ffff2222-2222-2222-2222-222222222222";
-      psql(`DELETE FROM billing.subscriptions WHERE user_id='${deniedUser}'`);
-      psql(`DELETE FROM billing.admin_access_grants WHERE user_id='${deniedUser}'`);
-      psql(`DELETE FROM billing.admin_user_grant_state WHERE user_id='${deniedUser}'`);
-      const denied = psqlAllowFail(
-        `BEGIN; ${SERVICE} SELECT public.reserve_learner_ai_access('${deniedUser}','assistant_runtime',NULL,'22222222-2222-2222-2222-222222222221',1,'deny-1'); COMMIT;`,
-      );
-      expect(denied.ok).toBe(false);
-      expect(denied.out).toMatch(/AI_ACCESS_DENIED/);
+  it("fail-closed AI_ACCESS_DENIED and QUOTA_EXCEEDED via public wrappers", () => {
+    const deniedUser = "ffff2222-2222-2222-2222-222222222222";
+    psql(`DELETE FROM billing.subscriptions WHERE user_id='${deniedUser}'`);
+    psql(`DELETE FROM billing.admin_access_grants WHERE user_id='${deniedUser}'`);
+    psql(`DELETE FROM billing.admin_user_grant_state WHERE user_id='${deniedUser}'`);
+    const denied = psqlAllowFail(
+      `BEGIN; ${SERVICE} SELECT public.reserve_learner_ai_access('${deniedUser}','assistant_runtime',NULL,'22222222-2222-2222-2222-222222222221',1,'deny-1'); COMMIT;`,
+    );
+    expect(denied.ok).toBe(false);
+    expect(denied.out).toMatch(/AI_ACCESS_DENIED/);
 
-      seedPaid(1);
-      const reqA = "33333333-3333-3333-3333-333333333331";
-      const reqB = "33333333-3333-3333-3333-333333333332";
-      lastValue(
-        psql(
-          `BEGIN; ${SERVICE} SELECT (public.reserve_learner_ai_access('${USER}','assistant_runtime',NULL,'${reqA}',1,'q-a')->>'reservation_id'); COMMIT;`,
-        ),
-      );
-      const exceeded = psqlAllowFail(
-        `BEGIN; ${SERVICE} SELECT public.reserve_learner_ai_access('${USER}','assistant_runtime',NULL,'${reqB}',1,'q-b'); COMMIT;`,
-      );
-      expect(exceeded.ok).toBe(false);
-      expect(exceeded.out).toMatch(/QUOTA_EXCEEDED/);
-    },
-    90_000,
-  );
+    seedPaid(1);
+    const reqA = "33333333-3333-3333-3333-333333333331";
+    const reqB = "33333333-3333-3333-3333-333333333332";
+    lastValue(
+      psql(
+        `BEGIN; ${SERVICE} SELECT (public.reserve_learner_ai_access('${USER}','assistant_runtime',NULL,'${reqA}',1,'q-a')->>'reservation_id'); COMMIT;`,
+      ),
+    );
+    const exceeded = psqlAllowFail(
+      `BEGIN; ${SERVICE} SELECT public.reserve_learner_ai_access('${USER}','assistant_runtime',NULL,'${reqB}',1,'q-b'); COMMIT;`,
+    );
+    expect(exceeded.ok).toBe(false);
+    expect(exceeded.out).toMatch(/QUOTA_EXCEEDED/);
+  }, 90_000);
 
-  it(
-    "entitlement wrappers respond under service_role",
-    () => {
-      seedPaid(5);
-      const snap = lastValue(
-        psql(
-          `BEGIN; ${SERVICE} SELECT jsonb_typeof(public.get_entitlement_snapshot('${USER}')); COMMIT;`,
-        ),
-      );
-      expect(snap).toBe("object");
-      const evalOut = lastValue(
-        psql(
-          `BEGIN; ${SERVICE} SELECT (public.evaluate_access('${USER}','assistant_runtime',NULL)->>'allowed'); COMMIT;`,
-        ),
-      );
-      expect(["true", "false"]).toContain(evalOut);
-    },
-    60_000,
-  );
+  it("entitlement wrappers respond under service_role", () => {
+    seedPaid(5);
+    const snap = lastValue(
+      psql(
+        `BEGIN; ${SERVICE} SELECT jsonb_typeof(public.get_entitlement_snapshot('${USER}')); COMMIT;`,
+      ),
+    );
+    expect(snap).toBe("object");
+    const evalOut = lastValue(
+      psql(
+        `BEGIN; ${SERVICE} SELECT (public.evaluate_access('${USER}','assistant_runtime',NULL)->>'allowed'); COMMIT;`,
+      ),
+    );
+    expect(["true", "false"]).toContain(evalOut);
+  }, 60_000);
 });

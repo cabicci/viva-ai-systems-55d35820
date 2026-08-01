@@ -1,10 +1,10 @@
 # Roadmap sync marker
 
-[roadmap:CR-LV-RUNTIME-INTEGRATION-CORRECTION-20260801-11]
+[roadmap:CR-BILLING-RAG-PR15-BOUNDED-INTEGRATION-UPDATE-20260801-06]
 date: 2026-08-01
-scope: lessons
+scope: infra
 source: user
-summary: Integrate exact accepted controlled-v1 lesson visuals into Product screenshot/diagram runtime (400-cell materializer + browser-safe resolver)
+summary: Merge authorized protected main 7e3c1ab4 into PR #15; preserve Lesson Visuals runtime integration and Billing fail-closed correction
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
