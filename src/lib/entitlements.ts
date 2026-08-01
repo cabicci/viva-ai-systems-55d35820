@@ -106,6 +106,7 @@ export function useEntitlement(): {
       return !!data;
     },
     enabled: !!userId,
+    retry: false,
     staleTime: 5 * 60_000,
   });
   const admin = !!adminData;
@@ -141,9 +142,8 @@ export function useEntitlement(): {
     // Settled = fetched OR errored. A failing RPC (e.g. billing schema not
     // deployed) must never wedge the lesson gate on "loading" forever.
     isLoaded:
-      !loading ||
-      (!userId ||
-        ((isFetched || isError) && (adminFetched || adminErrored))),
+      !loading &&
+      (!userId || ((isFetched || isError) && (adminFetched || adminErrored))),
   };
 }
 
