@@ -113,7 +113,11 @@ export function useEntitlement(): {
       // Authoritative paid-access source after Billing cutover:
       // billing.subscriptions via public.get_my_billing_access_tier.
       // Legacy public.user_subscriptions is not independently authoritative.
-      const { data, error } = await supabase.rpc("get_my_billing_access_tier");
+      // Not present in generated types until the billing schema is deployed.
+      const rpc = supabase.rpc as unknown as (
+        fn: string,
+      ) => Promise<{ data: unknown; error: unknown }>;
+      const { data, error } = await rpc("get_my_billing_access_tier");
       if (error) {
         captureWarn("entitlements:billing_access_tier", error);
         return "free";
