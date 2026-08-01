@@ -1,10 +1,10 @@
 # Roadmap sync marker
 
-[roadmap:CR-BILLING-RAG-PR15-BOUNDED-INTEGRATION-UPDATE-20260801-06]
+[roadmap:88a84803-c95e-481f-9ba1-70567d64eadd]
 date: 2026-08-01
-scope: infra
+scope: other
 source: user
-summary: Merge authorized protected main 7e3c1ab4 into PR #15; preserve Lesson Visuals runtime integration and Billing fail-closed correction
+summary: [scope:ui] تنقّل داخلي بعد الدخول + skeleton للوحة التحكم بدل السبينر
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
