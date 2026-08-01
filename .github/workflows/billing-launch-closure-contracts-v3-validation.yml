@@ -59,11 +59,22 @@ jobs:
         with:
           version: 2.109.1
 
+      # Disposable tree adapts only realtime.messages ownership for local reset.
+      # Committed Product migrations under supabase/migrations/ remain immutable.
+      - name: Prepare disposable Supabase tree
+        run: |
+          bun scripts/billing/prepare-disposable-supabase-tree.ts \
+            --dest billing-v3-validation/disposable-supabase
+          test "$(git hash-object supabase/migrations/20260526105117_25fc4182-0343-4234-a231-0cf38569014a.sql)" \
+            = "d185dd59549f611fcb984bcb3459c9d5d6969ef5"
+
       - name: Start disposable Supabase
+        working-directory: billing-v3-validation/disposable-supabase
         run: supabase start
 
       - name: Export local DB connection for disposable proofs
         run: |
+          echo "DISPOSABLE_SUPABASE_ROOT=${GITHUB_WORKSPACE}/billing-v3-validation/disposable-supabase" >> "$GITHUB_ENV"
           echo "PGHOST=127.0.0.1" >> "$GITHUB_ENV"
           echo "PGPORT=54322" >> "$GITHUB_ENV"
           echo "PGUSER=postgres" >> "$GITHUB_ENV"

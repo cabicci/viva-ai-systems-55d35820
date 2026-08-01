@@ -1,6 +1,7 @@
 /**
  * Bootstrap an isolated native Supabase stack for billing rehearsal.
  * Authorization: CR-BILLING-RAG-NATIVE-REHEARSAL-CORRECTION-20260801-01
+ * Ownership accommodation: CR-BILLING-RAG-PR15-BOUNDED-CORRECTION-20260801-04
  */
 import { spawnSync } from "node:child_process";
 import {
@@ -14,6 +15,13 @@ import {
 } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  EXPECTED_HIST_BLOB,
+  HIST_MIGRATION_NAME,
+  disposableOmitRealtimeMessagesSql,
+  gitBlobSha1,
+  verifyHistoricalRealtimeMigration,
+} from "./prepare-disposable-supabase-tree.ts";
 
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const PROJECT_ID = "billing-native-reh-20260801";
@@ -103,19 +111,41 @@ function main() {
 
   const srcMig = path.join(REPO_ROOT, "supabase/migrations");
   let copied = 0;
-  let skippedRealtime = 0;
+  let adaptedRealtime = 0;
+  let verifiedBlob = "";
+
   for (const name of readdirSync(srcMig).sort()) {
     if (!name.endsWith(".sql")) continue;
     if (name.slice(0, 14) > BASELINE_CUTOFF) continue;
-    const body = readFileSync(path.join(srcMig, name), "utf8");
-    // Local supabase_db role is not owner of realtime.messages; skip that
-    // non-Billing migration so the production-shaped baseline can boot.
-    if (/realtime\.messages/i.test(body)) {
-      skippedRealtime += 1;
+
+    const srcPath = path.join(srcMig, name);
+    const destPath = path.join(migDir, name);
+
+    if (name === HIST_MIGRATION_NAME) {
+      const bytes = verifyHistoricalRealtimeMigration(srcPath);
+      verifiedBlob = gitBlobSha1(bytes);
+      if (verifiedBlob !== EXPECTED_HIST_BLOB) {
+        throw new Error(`blob assertion failed: ${verifiedBlob}`);
+      }
+      // Disposable ISO tree only — never write this into repo supabase/migrations/.
+      writeFileSync(destPath, disposableOmitRealtimeMessagesSql(verifiedBlob), "utf8");
+      adaptedRealtime += 1;
+      copied += 1;
       continue;
     }
-    copyFileSync(path.join(srcMig, name), path.join(migDir, name));
+
+    const body = readFileSync(srcPath, "utf8");
+    if (/realtime\.messages/i.test(body)) {
+      throw new Error(
+        `unexpected realtime.messages migration ${name}; only ${HIST_MIGRATION_NAME} is authorized for disposable adaptation`,
+      );
+    }
+    copyFileSync(srcPath, destPath);
     copied += 1;
+  }
+
+  if (adaptedRealtime !== 1) {
+    throw new Error(`expected exactly one disposable realtime adaptation, got ${adaptedRealtime}`);
   }
 
   console.log(
@@ -124,7 +154,8 @@ function main() {
         isoRoot: ISO_ROOT,
         projectId: PROJECT_ID,
         baselineMigrationsCopied: copied,
-        skippedRealtimeMigrations: skippedRealtime,
+        disposableRealtimeAdaptations: adaptedRealtime,
+        verifiedHistoricalBlob: verifiedBlob,
         productionLedgerAccepted: "20260603221716",
         repoHasRoleMigration: "20260603221717",
       },
