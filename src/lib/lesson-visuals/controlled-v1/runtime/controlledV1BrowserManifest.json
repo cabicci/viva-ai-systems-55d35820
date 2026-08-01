@@ -1,0 +1,3617 @@
+{
+  "schemaVersion": "controlled-v1-browser-runtime-manifest/1",
+  "authorizationId": "CR-LV-RUNTIME-INTEGRATION-CORRECTION-20260801-11",
+  "counts": {
+    "cells": 400,
+    "methodA": 28,
+    "methodC": 372,
+    "locales": {
+      "ar-EG": 100,
+      "ar-MSA": 100,
+      "ar-Gulf": 100,
+      "en": 100
+    }
+  },
+  "entries": [
+    {
+      "cellId": "intro-m1-l1-what-is-ai__ar-EG",
+      "lessonId": "intro-m1-l1-what-is-ai",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "606C0AF601C5F742BC7A8BE8CBFC91AD36DD6D0ED612523B3A01AD7E5711D1BE",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/intro-m1-l1-what-is-ai.png"
+    },
+    {
+      "cellId": "intro-m1-l1-what-is-ai__ar-MSA",
+      "lessonId": "intro-m1-l1-what-is-ai",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "FA66A6815578077617F3BD39A4F9C6EE003315C989FD58D08D0A1F5168B77465",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/intro-m1-l1-what-is-ai.png"
+    },
+    {
+      "cellId": "intro-m1-l1-what-is-ai__ar-Gulf",
+      "lessonId": "intro-m1-l1-what-is-ai",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "0F51A95D4E85A35A7AED0E17B66724EE360E3F3763CD031B8A78104C2E72FBE9",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/intro-m1-l1-what-is-ai.png"
+    },
+    {
+      "cellId": "intro-m1-l1-what-is-ai__en",
+      "lessonId": "intro-m1-l1-what-is-ai",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "53CF33CAEC684203E7E84956F596AAA8F445095B92FC93D3EDB5DB98504E345D",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/intro-m1-l1-what-is-ai.png"
+    },
+    {
+      "cellId": "intro-m1-l2-first-prompt__ar-EG",
+      "lessonId": "intro-m1-l2-first-prompt",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "7188C99E3B7C9CBF075E28C3CF5AD890DB69A48C9930AF84572E0B88FE523721",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/intro-m1-l2-first-prompt.png"
+    },
+    {
+      "cellId": "intro-m1-l2-first-prompt__ar-MSA",
+      "lessonId": "intro-m1-l2-first-prompt",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "28CC5967E146391913946C1959798F7252FEC4D903825C1D757FDCE97058BD82",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/intro-m1-l2-first-prompt.png"
+    },
+    {
+      "cellId": "intro-m1-l2-first-prompt__ar-Gulf",
+      "lessonId": "intro-m1-l2-first-prompt",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "85C7A533C20A0B424B79E7387D7A14A96117CADE203FCD9272A191768B89ABE2",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/intro-m1-l2-first-prompt.png"
+    },
+    {
+      "cellId": "intro-m1-l2-first-prompt__en",
+      "lessonId": "intro-m1-l2-first-prompt",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "CF746A9DB655085FD610006FAE638535B945E48B2D4235D30EEF96263DE6ED04",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/intro-m1-l2-first-prompt.png"
+    },
+    {
+      "cellId": "intro-m1-l3-setup-your-ai__ar-EG",
+      "lessonId": "intro-m1-l3-setup-your-ai",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "5D56CF4E93C83D3AF291732EDF32AE8C79DFD799CD4D3AA595BA987B0A2A9267",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/intro-m1-l3-setup-your-ai.png"
+    },
+    {
+      "cellId": "intro-m1-l3-setup-your-ai__ar-MSA",
+      "lessonId": "intro-m1-l3-setup-your-ai",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "E4C6B9C8F15D4A393FDEF7617FA25B14444680C8AAF0E62816368AADF8EE47E5",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/intro-m1-l3-setup-your-ai.png"
+    },
+    {
+      "cellId": "intro-m1-l3-setup-your-ai__ar-Gulf",
+      "lessonId": "intro-m1-l3-setup-your-ai",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "A1F42E77EB8D598E67B63307794ACA05873501DB7CA0A3AB2CF5FB0EDF9B0B9A",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/intro-m1-l3-setup-your-ai.png"
+    },
+    {
+      "cellId": "intro-m1-l3-setup-your-ai__en",
+      "lessonId": "intro-m1-l3-setup-your-ai",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "D7435D80C73774EB69BF17AD7C4A8E22E2C894E8E182325988730CA280EDA088",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/intro-m1-l3-setup-your-ai.png"
+    },
+    {
+      "cellId": "intro-m1-l4-ai-can-cannot__ar-EG",
+      "lessonId": "intro-m1-l4-ai-can-cannot",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "176420CF055B481D8BF777388ACD37B994D89A9ABE4D31FE5CA3664AA25477E5",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/intro-m1-l4-ai-can-cannot.png"
+    },
+    {
+      "cellId": "intro-m1-l4-ai-can-cannot__ar-MSA",
+      "lessonId": "intro-m1-l4-ai-can-cannot",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "354667DF7498BAA05DA256E123D9704D7A58C58DD9174937FF9C70A7B8C27D9F",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/intro-m1-l4-ai-can-cannot.png"
+    },
+    {
+      "cellId": "intro-m1-l4-ai-can-cannot__ar-Gulf",
+      "lessonId": "intro-m1-l4-ai-can-cannot",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "7CB0691ADF2EAA85B60790BC75CDB058701D68DA3580AA4A20A4EABEEE5C2831",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/intro-m1-l4-ai-can-cannot.png"
+    },
+    {
+      "cellId": "intro-m1-l4-ai-can-cannot__en",
+      "lessonId": "intro-m1-l4-ai-can-cannot",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "1AB25D663E9F081EE6C03545D6F47FC788CA7EFE2A3330A6CAC8784532AB6A6D",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/intro-m1-l4-ai-can-cannot.png"
+    },
+    {
+      "cellId": "intro-m1-l5-ai-vs-software__ar-EG",
+      "lessonId": "intro-m1-l5-ai-vs-software",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "CEC9C572AF951DF3BE47C9CE7D0C231D080EE978995A7BB7ADE491F19B7E6A36",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/intro-m1-l5-ai-vs-software.png"
+    },
+    {
+      "cellId": "intro-m1-l5-ai-vs-software__ar-MSA",
+      "lessonId": "intro-m1-l5-ai-vs-software",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "49E925E6AFC481E1D055BF83E64F6CF51FC9F11EE0C517A5EDFC6222547B7B83",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/intro-m1-l5-ai-vs-software.png"
+    },
+    {
+      "cellId": "intro-m1-l5-ai-vs-software__ar-Gulf",
+      "lessonId": "intro-m1-l5-ai-vs-software",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "FE48610CB80CC77D8C78890A05FDDC9541CE49C7AFDBC0010357D3C3D80794AF",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/intro-m1-l5-ai-vs-software.png"
+    },
+    {
+      "cellId": "intro-m1-l5-ai-vs-software__en",
+      "lessonId": "intro-m1-l5-ai-vs-software",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "4DBB5E0EFAF9F4CCB1E1BF435C2AA0A06156A07791125318D87C8B9034F7F070",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/intro-m1-l5-ai-vs-software.png"
+    },
+    {
+      "cellId": "intro-m1-l6-learn-without-fear__ar-EG",
+      "lessonId": "intro-m1-l6-learn-without-fear",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "DAFE5F978CBD9D559EB67CECEB3860DF888FF8EDEBA5839969234444A7FDBF7F",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/intro-m1-l6-learn-without-fear.png"
+    },
+    {
+      "cellId": "intro-m1-l6-learn-without-fear__ar-MSA",
+      "lessonId": "intro-m1-l6-learn-without-fear",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "BBA635B64FD04812E2439E96C9BEBBA1AC95619BE7E3A463BBDDA859479C4A11",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/intro-m1-l6-learn-without-fear.png"
+    },
+    {
+      "cellId": "intro-m1-l6-learn-without-fear__ar-Gulf",
+      "lessonId": "intro-m1-l6-learn-without-fear",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "41BC4CEBFABC00E33789CDF74CABB4B0C436A2F845E4B55E9DF3F3313769FF3E",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/intro-m1-l6-learn-without-fear.png"
+    },
+    {
+      "cellId": "intro-m1-l6-learn-without-fear__en",
+      "lessonId": "intro-m1-l6-learn-without-fear",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "FEA4E39E41DFE3BB0FDCBD4795256EB2C6EC6CDBCC57C02F294EE445EEE5859F",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/intro-m1-l6-learn-without-fear.png"
+    },
+    {
+      "cellId": "intro-m1-l7-choose-your-path__ar-EG",
+      "lessonId": "intro-m1-l7-choose-your-path",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "BBB379200013B71298FE60344B35BC538613D546A4FD57430E6573923CB86207",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/intro-m1-l7-choose-your-path.png"
+    },
+    {
+      "cellId": "intro-m1-l7-choose-your-path__ar-MSA",
+      "lessonId": "intro-m1-l7-choose-your-path",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "2E868B72850F84B8CE1EB021F7429CD76C8E114F4EDCCADC8312D60AE75E403A",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/intro-m1-l7-choose-your-path.png"
+    },
+    {
+      "cellId": "intro-m1-l7-choose-your-path__ar-Gulf",
+      "lessonId": "intro-m1-l7-choose-your-path",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "5878F4238B9CC7F1CF6172BE8822A8C03ADF667F928DCABA453E2121E1091455",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/intro-m1-l7-choose-your-path.png"
+    },
+    {
+      "cellId": "intro-m1-l7-choose-your-path__en",
+      "lessonId": "intro-m1-l7-choose-your-path",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "2FF56C4687D0391283C4980D59FADB256BD647E4FF47D215A5FED0D82A34C0C5",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/intro-m1-l7-choose-your-path.png"
+    },
+    {
+      "cellId": "business-m1-l1-from-decisions-to-leadership__ar-EG",
+      "lessonId": "business-m1-l1-from-decisions-to-leadership",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "98BF1AAED14B12E4EFBEFB9AE0F6103FF3D46E7F9DE0ED56F0D3E21A22EC035D",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/business-m1-l1-from-decisions-to-leadership.png"
+    },
+    {
+      "cellId": "business-m1-l1-from-decisions-to-leadership__ar-MSA",
+      "lessonId": "business-m1-l1-from-decisions-to-leadership",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "5FC49BAB41532CBBA11E74171BB9D337449EE5A12013DF5016003EC4F063F8D7",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/business-m1-l1-from-decisions-to-leadership.png"
+    },
+    {
+      "cellId": "business-m1-l1-from-decisions-to-leadership__ar-Gulf",
+      "lessonId": "business-m1-l1-from-decisions-to-leadership",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "316438A2F420DB64CE20AD8311793D24A33A355E945D8A0DCED21D19C98FEEAD",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/business-m1-l1-from-decisions-to-leadership.png"
+    },
+    {
+      "cellId": "business-m1-l1-from-decisions-to-leadership__en",
+      "lessonId": "business-m1-l1-from-decisions-to-leadership",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "E76EAA4C33B9FEF6DB8A9851DCC8FFA9E4B1A54C63E29499AB5D014A2A6DB9FF",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/business-m1-l1-from-decisions-to-leadership.png"
+    },
+    {
+      "cellId": "business-m1-l2-reactive-vs-proactive__ar-EG",
+      "lessonId": "business-m1-l2-reactive-vs-proactive",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "C9D758EED5030DD321FF565772F2D073281CC5945D5EA91AF1A4118BED8D584E",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/business-m1-l2-reactive-vs-proactive.png"
+    },
+    {
+      "cellId": "business-m1-l2-reactive-vs-proactive__ar-MSA",
+      "lessonId": "business-m1-l2-reactive-vs-proactive",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "0181CEA08730684D92CCC9CB1055AA16590F27226CBFE0850EB0C84218E0B2CB",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/business-m1-l2-reactive-vs-proactive.png"
+    },
+    {
+      "cellId": "business-m1-l2-reactive-vs-proactive__ar-Gulf",
+      "lessonId": "business-m1-l2-reactive-vs-proactive",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "EC8F455B596D19B7BE8450F7A54F41E643469586A87FB72938F0EEAE18A192CD",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/business-m1-l2-reactive-vs-proactive.png"
+    },
+    {
+      "cellId": "business-m1-l2-reactive-vs-proactive__en",
+      "lessonId": "business-m1-l2-reactive-vs-proactive",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "2003E0419F3EBC718CF31EABE8AB768EDE9E90C1C609F0FC09CF342CE84DCA8B",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/business-m1-l2-reactive-vs-proactive.png"
+    },
+    {
+      "cellId": "business-m2-l1-customer-lifecycle__ar-EG",
+      "lessonId": "business-m2-l1-customer-lifecycle",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "DDB1EB20AEE4DADF897BCED991A5611DAAAF534E22B9B7485177846458404683",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/business-m2-l1-customer-lifecycle.png"
+    },
+    {
+      "cellId": "business-m2-l1-customer-lifecycle__ar-MSA",
+      "lessonId": "business-m2-l1-customer-lifecycle",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "B6F1B6136BBBE0C11496B5B885D93B4F96A85A9BFA71C33CC2BAA2F341D70811",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/business-m2-l1-customer-lifecycle.png"
+    },
+    {
+      "cellId": "business-m2-l1-customer-lifecycle__ar-Gulf",
+      "lessonId": "business-m2-l1-customer-lifecycle",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "993567E29FE36D860BB197B13D998720578EE01B358F85CD5D7B35FD6F221407",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/business-m2-l1-customer-lifecycle.png"
+    },
+    {
+      "cellId": "business-m2-l1-customer-lifecycle__en",
+      "lessonId": "business-m2-l1-customer-lifecycle",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "146505AB33EF11A307CA4C424F3522E40A7146D52FBCC06FCF258C8C19B443C5",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/business-m2-l1-customer-lifecycle.png"
+    },
+    {
+      "cellId": "business-m2-l2-build-your-offer__ar-EG",
+      "lessonId": "business-m2-l2-build-your-offer",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "D9B51671E865A9012610F9E46EA9E4DA74CEED94FB7C06A044CEEC60FB482E75",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/business-m2-l2-build-your-offer.png"
+    },
+    {
+      "cellId": "business-m2-l2-build-your-offer__ar-MSA",
+      "lessonId": "business-m2-l2-build-your-offer",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "22E45C13F00CEA7B69F0323E30A64F9DFC34805A787DA87A6D82B5E1BB847A0D",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/business-m2-l2-build-your-offer.png"
+    },
+    {
+      "cellId": "business-m2-l2-build-your-offer__ar-Gulf",
+      "lessonId": "business-m2-l2-build-your-offer",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "15189B33006784B10CDCB3519F41B23A3ED1A7CC7842276A377E8A9B6819C988",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/business-m2-l2-build-your-offer.png"
+    },
+    {
+      "cellId": "business-m2-l2-build-your-offer__en",
+      "lessonId": "business-m2-l2-build-your-offer",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "BF0C29D941D2B60B10A7AA4E408FA46EB6B0820EB91A59628C3C2AA660F7DC37",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/business-m2-l2-build-your-offer.png"
+    },
+    {
+      "cellId": "business-m2-l2-retention-flow__ar-EG",
+      "lessonId": "business-m2-l2-retention-flow",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "30FBFC555C9E1B725BF0625FB65E79C2AD228C9027F92450D88F6C0613AF0D6C",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/business-m2-l2-retention-flow.png"
+    },
+    {
+      "cellId": "business-m2-l2-retention-flow__ar-MSA",
+      "lessonId": "business-m2-l2-retention-flow",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "3E252E171A973FE6C707BF9D8CCE43AD6CD2B2F443BEF9EF1269A34A32104F46",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/business-m2-l2-retention-flow.png"
+    },
+    {
+      "cellId": "business-m2-l2-retention-flow__ar-Gulf",
+      "lessonId": "business-m2-l2-retention-flow",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "92DC398E6CE8EACA7D1E1EDC492C9B4108B7C44530D7219BB924F7964052681E",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/business-m2-l2-retention-flow.png"
+    },
+    {
+      "cellId": "business-m2-l2-retention-flow__en",
+      "lessonId": "business-m2-l2-retention-flow",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "AB705A8BA377A56F2CFD428A1249551101392208193F14F64C09BD970925E9CD",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/business-m2-l2-retention-flow.png"
+    },
+    {
+      "cellId": "business-m2-l3-readiness-signals__ar-EG",
+      "lessonId": "business-m2-l3-readiness-signals",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "777CD38070B17838F45F0EAC40030260F792FD431F69B0FEF442C5A9B6F9B442",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/business-m2-l3-readiness-signals.png"
+    },
+    {
+      "cellId": "business-m2-l3-readiness-signals__ar-MSA",
+      "lessonId": "business-m2-l3-readiness-signals",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "7DF887AA4B172F0AFF10268D187AC93703E941DB43536FA82D70A1050B0E9605",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/business-m2-l3-readiness-signals.png"
+    },
+    {
+      "cellId": "business-m2-l3-readiness-signals__ar-Gulf",
+      "lessonId": "business-m2-l3-readiness-signals",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "04FC9548A5D79768F05BB9A60CF50DFE52803A76D3E47BF4B53A6F96901F6457",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/business-m2-l3-readiness-signals.png"
+    },
+    {
+      "cellId": "business-m2-l3-readiness-signals__en",
+      "lessonId": "business-m2-l3-readiness-signals",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "A139E7FFA15348CD1C30938C34304D08B3135B44547F034042C3DB41BBC58A47",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/business-m2-l3-readiness-signals.png"
+    },
+    {
+      "cellId": "business-m3-l1-delegate-or-automate__ar-EG",
+      "lessonId": "business-m3-l1-delegate-or-automate",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "05F5C80069DFD9113881007DE93C01C7754FC91E4759B7209A64BEE232DCB025",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/business-m3-l1-delegate-or-automate.png"
+    },
+    {
+      "cellId": "business-m3-l1-delegate-or-automate__ar-MSA",
+      "lessonId": "business-m3-l1-delegate-or-automate",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "B9C753171A1AA33CA8CE30C57071C1858758026F36CFD905A09A54F10AF96C9F",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/business-m3-l1-delegate-or-automate.png"
+    },
+    {
+      "cellId": "business-m3-l1-delegate-or-automate__ar-Gulf",
+      "lessonId": "business-m3-l1-delegate-or-automate",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "50F087C381A99B933ED581340EC093769FCA37F7D8ED697EA5E848FB00B76623",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/business-m3-l1-delegate-or-automate.png"
+    },
+    {
+      "cellId": "business-m3-l1-delegate-or-automate__en",
+      "lessonId": "business-m3-l1-delegate-or-automate",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "357A0519CAFD4FE1741E16D776E23438D9A1499C5745B363BFF1DDF1F094CAAF",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/business-m3-l1-delegate-or-automate.png"
+    },
+    {
+      "cellId": "business-m3-l2-strategic-operational-admin__ar-EG",
+      "lessonId": "business-m3-l2-strategic-operational-admin",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "13672119EB8058105D9C9A59AFFCF095315D5155EDA34E3A25DC32C63E7F2647",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/business-m3-l2-strategic-operational-admin.png"
+    },
+    {
+      "cellId": "business-m3-l2-strategic-operational-admin__ar-MSA",
+      "lessonId": "business-m3-l2-strategic-operational-admin",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "8C2820FB4D04B07CDCA2753316AF1FDE1621206757822ABADC14F1CC8D054182",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/business-m3-l2-strategic-operational-admin.png"
+    },
+    {
+      "cellId": "business-m3-l2-strategic-operational-admin__ar-Gulf",
+      "lessonId": "business-m3-l2-strategic-operational-admin",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "29223C3B347A912FD5AF4B40D40BF7374F02EC614CFF5341708D81EFCEA7302D",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/business-m3-l2-strategic-operational-admin.png"
+    },
+    {
+      "cellId": "business-m3-l2-strategic-operational-admin__en",
+      "lessonId": "business-m3-l2-strategic-operational-admin",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "0F47CFEF2CB6AC0D687A55BFBA4227A4F11580FC69209E47F061C46626101585",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/business-m3-l2-strategic-operational-admin.png"
+    },
+    {
+      "cellId": "business-m3-l3-system-then-people__ar-EG",
+      "lessonId": "business-m3-l3-system-then-people",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "0C9D731BFABE80B76B47717460AED0219EB0AEF7C57BD0DD3EF85BDF403C860E",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/business-m3-l3-system-then-people.png"
+    },
+    {
+      "cellId": "business-m3-l3-system-then-people__ar-MSA",
+      "lessonId": "business-m3-l3-system-then-people",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "7D9CCD5CE5DA79C052BF0F0648324FA73874648D9AA05F6A892258DF5227B59C",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/business-m3-l3-system-then-people.png"
+    },
+    {
+      "cellId": "business-m3-l3-system-then-people__ar-Gulf",
+      "lessonId": "business-m3-l3-system-then-people",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "1DD1A9A66344D535ADEC60236EAA70429A8A153499E978D3756DE49D53FFF04F",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/business-m3-l3-system-then-people.png"
+    },
+    {
+      "cellId": "business-m3-l3-system-then-people__en",
+      "lessonId": "business-m3-l3-system-then-people",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "33BE8693AB43B6D1608D9630F72D6A19F4F63B1420B293BDAB466DA8FFE112D1",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/business-m3-l3-system-then-people.png"
+    },
+    {
+      "cellId": "business-m4-l1-premature-scaling__ar-EG",
+      "lessonId": "business-m4-l1-premature-scaling",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "B632C9E270A8036D983597F31FF35158B384572619B337FC23CD6727D9CF2D95",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/business-m4-l1-premature-scaling.png"
+    },
+    {
+      "cellId": "business-m4-l1-premature-scaling__ar-MSA",
+      "lessonId": "business-m4-l1-premature-scaling",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "AD9288CD265D4BA70CA751031A4865685DF685246D86976642B0070BD2477C75",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/business-m4-l1-premature-scaling.png"
+    },
+    {
+      "cellId": "business-m4-l1-premature-scaling__ar-Gulf",
+      "lessonId": "business-m4-l1-premature-scaling",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "E863A0F9E2369361DC732C218D06ED56E966707BC05AF2E3D0577184FD2A0A57",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/business-m4-l1-premature-scaling.png"
+    },
+    {
+      "cellId": "business-m4-l1-premature-scaling__en",
+      "lessonId": "business-m4-l1-premature-scaling",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "1AA162A6D78524D951640D3081818E7E898B0084D4A99E495EB9C331C0B24A69",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/business-m4-l1-premature-scaling.png"
+    },
+    {
+      "cellId": "business-m4-l2-reactive-relapse__ar-EG",
+      "lessonId": "business-m4-l2-reactive-relapse",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "277FD7873C664938EBF293339ECD68B9570EBF4CA1011DA17F8787014158DE27",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/business-m4-l2-reactive-relapse.png"
+    },
+    {
+      "cellId": "business-m4-l2-reactive-relapse__ar-MSA",
+      "lessonId": "business-m4-l2-reactive-relapse",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "ACB7BD6FCDC5BE91C4397E546F2C15CE9F50BC2E08665226D427ADEADA98B421",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/business-m4-l2-reactive-relapse.png"
+    },
+    {
+      "cellId": "business-m4-l2-reactive-relapse__ar-Gulf",
+      "lessonId": "business-m4-l2-reactive-relapse",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "0F03B115DA19C36BDF00139C728DB20F3706790E4EBBDF1A3BBE1502C38D8B40",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/business-m4-l2-reactive-relapse.png"
+    },
+    {
+      "cellId": "business-m4-l2-reactive-relapse__en",
+      "lessonId": "business-m4-l2-reactive-relapse",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "EF37140D05E6D76802BD6919F6B7F03F57951953E303A98484E0701B08E2E7FA",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/business-m4-l2-reactive-relapse.png"
+    },
+    {
+      "cellId": "business-m4-l3-weekly-rhythm__ar-EG",
+      "lessonId": "business-m4-l3-weekly-rhythm",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "B5FBB396155D7E51172F33B2E17A47653D72A5ED904EBD561B9F6CABED122B50",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/business-m4-l3-weekly-rhythm.png"
+    },
+    {
+      "cellId": "business-m4-l3-weekly-rhythm__ar-MSA",
+      "lessonId": "business-m4-l3-weekly-rhythm",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "16970451516974D262ED8D96E351769A2655EFB5FB5558C56F85FC89B4632594",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/business-m4-l3-weekly-rhythm.png"
+    },
+    {
+      "cellId": "business-m4-l3-weekly-rhythm__ar-Gulf",
+      "lessonId": "business-m4-l3-weekly-rhythm",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "5C4ADC5054C46196252B692665B25770867882EB4ACC2DDA29D8F10579C699CC",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/business-m4-l3-weekly-rhythm.png"
+    },
+    {
+      "cellId": "business-m4-l3-weekly-rhythm__en",
+      "lessonId": "business-m4-l3-weekly-rhythm",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "6A406E198F37C10A7F14AFBE2529196598F50897C9D101B1270353AD1DAAECA8",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/business-m4-l3-weekly-rhythm.png"
+    },
+    {
+      "cellId": "business-m4-l4-full-ecosystem__ar-EG",
+      "lessonId": "business-m4-l4-full-ecosystem",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "90E1AE596568F5F8E8020FFAE02D31689CECF9818EA2194D28931954C3B7416E",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/business-m4-l4-full-ecosystem.png"
+    },
+    {
+      "cellId": "business-m4-l4-full-ecosystem__ar-MSA",
+      "lessonId": "business-m4-l4-full-ecosystem",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "09CC6204A9E7709B4D19AEF5755C511737CD3FAF59B14877B63D825345DBA9B2",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/business-m4-l4-full-ecosystem.png"
+    },
+    {
+      "cellId": "business-m4-l4-full-ecosystem__ar-Gulf",
+      "lessonId": "business-m4-l4-full-ecosystem",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "CF051F8FFC5AD375A8AA71D8198316BEF49514F06F69BBE7AD3F95418B6DD6E6",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/business-m4-l4-full-ecosystem.png"
+    },
+    {
+      "cellId": "business-m4-l4-full-ecosystem__en",
+      "lessonId": "business-m4-l4-full-ecosystem",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "405847204982AD90608508945241D9B61DFB865F7E40CE9506F62F8DD34984C2",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/business-m4-l4-full-ecosystem.png"
+    },
+    {
+      "cellId": "creator-m1-l1-why-content__ar-EG",
+      "lessonId": "creator-m1-l1-why-content",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "DC8B9D79E8FBBA263EB0D98D1B980D55D96EDCF515792EA13FC948024D3FBBF5",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/creator-m1-l1-why-content.png"
+    },
+    {
+      "cellId": "creator-m1-l1-why-content__ar-MSA",
+      "lessonId": "creator-m1-l1-why-content",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "289DBB70A39CE9AB60E8845FD8BD3CB9BB5AB246FF50A80BE93B44F9E2FAC46A",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/creator-m1-l1-why-content.png"
+    },
+    {
+      "cellId": "creator-m1-l1-why-content__ar-Gulf",
+      "lessonId": "creator-m1-l1-why-content",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "18F65C97E045C1D3A2BFFB2B2549A280D5D354A22C7D26E057F52E1E56AB289A",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/creator-m1-l1-why-content.png"
+    },
+    {
+      "cellId": "creator-m1-l1-why-content__en",
+      "lessonId": "creator-m1-l1-why-content",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "B2AB4776EBC926BAC26C197A0B2808E36D2A768FF7255827A6DBD1ACFF7C53FA",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/creator-m1-l1-why-content.png"
+    },
+    {
+      "cellId": "creator-m1-l2-attention-economy__ar-EG",
+      "lessonId": "creator-m1-l2-attention-economy",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "0B2D7C2A12EF521A0BDF46D834F5C099D62119AEAAE26FD38A9C433CF5A0FB30",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/creator-m1-l2-attention-economy.png"
+    },
+    {
+      "cellId": "creator-m1-l2-attention-economy__ar-MSA",
+      "lessonId": "creator-m1-l2-attention-economy",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "6721DEF919D5302DD6F3ECA25165B24AC6FD45A9626BFF49793DC8617E050CE9",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/creator-m1-l2-attention-economy.png"
+    },
+    {
+      "cellId": "creator-m1-l2-attention-economy__ar-Gulf",
+      "lessonId": "creator-m1-l2-attention-economy",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "F822A482FE9514EA6CEE3E64376474E521C2BB22D0D6747420BCF483A25E3774",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/creator-m1-l2-attention-economy.png"
+    },
+    {
+      "cellId": "creator-m1-l2-attention-economy__en",
+      "lessonId": "creator-m1-l2-attention-economy",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "A6D96C09C6031692037E60AD93BEC345C8F9F184F196716B95C59012DBC147A5",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/creator-m1-l2-attention-economy.png"
+    },
+    {
+      "cellId": "creator-m2-l1-know-audience__ar-EG",
+      "lessonId": "creator-m2-l1-know-audience",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "FA8C69768DB35A3C5A14D5E56D992677026B42515BCAD428B9444B5788E63D6D",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/creator-m2-l1-know-audience.png"
+    },
+    {
+      "cellId": "creator-m2-l1-know-audience__ar-MSA",
+      "lessonId": "creator-m2-l1-know-audience",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "F77E2DF025C7708F4666F4AFC05B7B5829A3B89155E9F2ECC509ADE87AB557E0",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/creator-m2-l1-know-audience.png"
+    },
+    {
+      "cellId": "creator-m2-l1-know-audience__ar-Gulf",
+      "lessonId": "creator-m2-l1-know-audience",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "EC28E7EA2ED331AED0DA4B4297A858BD216DA9A9C8E1252C949E9613EDAC2E33",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/creator-m2-l1-know-audience.png"
+    },
+    {
+      "cellId": "creator-m2-l1-know-audience__en",
+      "lessonId": "creator-m2-l1-know-audience",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "5922E064F99C6FF201C61810F43DEF74A105E1E425BE91DD3B9C76CB65EADB9C",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/creator-m2-l1-know-audience.png"
+    },
+    {
+      "cellId": "creator-m2-l2-content-pillars__ar-EG",
+      "lessonId": "creator-m2-l2-content-pillars",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "510EBB8A5E06CD283FB3A8171CA74C21A0C2713E1BFF3E9DCE63C2B8C7D98890",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/creator-m2-l2-content-pillars.png"
+    },
+    {
+      "cellId": "creator-m2-l2-content-pillars__ar-MSA",
+      "lessonId": "creator-m2-l2-content-pillars",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "65B5E7B6926603D43DC9C5BACA128BE4F691A6246CAC54101BC205BDBA63D43E",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/creator-m2-l2-content-pillars.png"
+    },
+    {
+      "cellId": "creator-m2-l2-content-pillars__ar-Gulf",
+      "lessonId": "creator-m2-l2-content-pillars",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "7F56557E8A0711FFD5746709D5D2A087DBB59362C734020BCC817B9443C76053",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/creator-m2-l2-content-pillars.png"
+    },
+    {
+      "cellId": "creator-m2-l2-content-pillars__en",
+      "lessonId": "creator-m2-l2-content-pillars",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "74A8F38743C8965682E0A9131CC03A8778F2D5557184A7FDD88A3813A8D8D99E",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/creator-m2-l2-content-pillars.png"
+    },
+    {
+      "cellId": "creator-m3-l1-hook__ar-EG",
+      "lessonId": "creator-m3-l1-hook",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "323206227ECDE72EA0A076229A796EB79EC2B07C25EED1D458D886E26FA696E8",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/creator-m3-l1-hook.png"
+    },
+    {
+      "cellId": "creator-m3-l1-hook__ar-MSA",
+      "lessonId": "creator-m3-l1-hook",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "AD4B89A6728CD4C97FFE298528BF1ED9E16BCB9A67D28D41DA75DB76A3AAED64",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/creator-m3-l1-hook.png"
+    },
+    {
+      "cellId": "creator-m3-l1-hook__ar-Gulf",
+      "lessonId": "creator-m3-l1-hook",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "551282F2C8FD41C0E519EED9A200909126AE25A1B78CA94EA47B7E9918B50A71",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/creator-m3-l1-hook.png"
+    },
+    {
+      "cellId": "creator-m3-l1-hook__en",
+      "lessonId": "creator-m3-l1-hook",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "59E633233239567CB47E3A210943E038172AE8A32E1F852C97C30DEDBC36F7C3",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/creator-m3-l1-hook.png"
+    },
+    {
+      "cellId": "creator-m3-l2-script-structure__ar-EG",
+      "lessonId": "creator-m3-l2-script-structure",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "DAFE770F0EF82899D2F6B625D879F068377710449F7D36FE1E3647CC4E110A34",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/creator-m3-l2-script-structure.png"
+    },
+    {
+      "cellId": "creator-m3-l2-script-structure__ar-MSA",
+      "lessonId": "creator-m3-l2-script-structure",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "B85E0CA88D7F8A2DD10C36912C8A2D778E20395AD56B78C739EF10610A984734",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/creator-m3-l2-script-structure.png"
+    },
+    {
+      "cellId": "creator-m3-l2-script-structure__ar-Gulf",
+      "lessonId": "creator-m3-l2-script-structure",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "16F31B67BEF690766DED2A0337E6BF1C9B6C5A4C84D74A39DB2836903A91B5C8",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/creator-m3-l2-script-structure.png"
+    },
+    {
+      "cellId": "creator-m3-l2-script-structure__en",
+      "lessonId": "creator-m3-l2-script-structure",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "264C0B5BA40864BD5B36E40A003DF45E28E5FE906607BB1BEF22C219616F728B",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/creator-m3-l2-script-structure.png"
+    },
+    {
+      "cellId": "creator-m3-l3-cta__ar-EG",
+      "lessonId": "creator-m3-l3-cta",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "BAEFFEF0FA6431985BB61F198E17F9AAF0B11AFFB009FC6B4BCF3FAB2F659063",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/creator-m3-l3-cta.png"
+    },
+    {
+      "cellId": "creator-m3-l3-cta__ar-MSA",
+      "lessonId": "creator-m3-l3-cta",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "758A47FD48E640812107818ADD0374D0755DEAA0AE2C56FAFA8B2854589739DA",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/creator-m3-l3-cta.png"
+    },
+    {
+      "cellId": "creator-m3-l3-cta__ar-Gulf",
+      "lessonId": "creator-m3-l3-cta",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "51EF6CC1DD38A2D1BC04DDDD646E83D6D874656DCD212F562B3DC8B05191FB4F",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/creator-m3-l3-cta.png"
+    },
+    {
+      "cellId": "creator-m3-l3-cta__en",
+      "lessonId": "creator-m3-l3-cta",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "93B7157D8014D3B0DAC280616351ECBC5B238DC18DE52B2B98B8065CDC3828E3",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/creator-m3-l3-cta.png"
+    },
+    {
+      "cellId": "creator-m4-l1-reality-check__ar-EG",
+      "lessonId": "creator-m4-l1-reality-check",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "73B7EBBCB4932DFE3BD459633E2ABE1D34778CAEC59B983E3B6B1CBC630011FF",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/creator-m4-l1-reality-check.png"
+    },
+    {
+      "cellId": "creator-m4-l1-reality-check__ar-MSA",
+      "lessonId": "creator-m4-l1-reality-check",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "76CFBCB3F5D7E6C8F682557D334B80741F26415569D1351BC22319AA5FE3FE25",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/creator-m4-l1-reality-check.png"
+    },
+    {
+      "cellId": "creator-m4-l1-reality-check__ar-Gulf",
+      "lessonId": "creator-m4-l1-reality-check",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "9F40D15B9299CD0EE66F79028448B5EFC84A85DBDF9F289251D1AE85F8027494",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/creator-m4-l1-reality-check.png"
+    },
+    {
+      "cellId": "creator-m4-l1-reality-check__en",
+      "lessonId": "creator-m4-l1-reality-check",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "85C3A8DCDCB99786FA4B5FA3B0611F50CED6FA2608A55DBC19357B7D14AE73B0",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/creator-m4-l1-reality-check.png"
+    },
+    {
+      "cellId": "creator-m4-l2-mobile-shooting__ar-EG",
+      "lessonId": "creator-m4-l2-mobile-shooting",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "2FE67969CD16F850D9E04ABFB58BA5234D46C092DF03E249150022B59D5CE3A2",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/creator-m4-l2-mobile-shooting.png"
+    },
+    {
+      "cellId": "creator-m4-l2-mobile-shooting__ar-MSA",
+      "lessonId": "creator-m4-l2-mobile-shooting",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "CD2B900B176CD0E6CAB99ACB118B832DD0C66EA5BBA7C99AFCB7BA2C18CD51E2",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/creator-m4-l2-mobile-shooting.png"
+    },
+    {
+      "cellId": "creator-m4-l2-mobile-shooting__ar-Gulf",
+      "lessonId": "creator-m4-l2-mobile-shooting",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "C119C5FE95B1997B784900A1D77E2306EA7B20325EB5DDD32BC6252DE10FD9F1",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/creator-m4-l2-mobile-shooting.png"
+    },
+    {
+      "cellId": "creator-m4-l2-mobile-shooting__en",
+      "lessonId": "creator-m4-l2-mobile-shooting",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "DCAE7EBED5937C98DD3F6B8CF906BC80908A4C91DE5A7CFAD94AF6537870ADAB",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/creator-m4-l2-mobile-shooting.png"
+    },
+    {
+      "cellId": "creator-m4-l3-ai-writing__ar-EG",
+      "lessonId": "creator-m4-l3-ai-writing",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "8C395EAD481682936FDC3F2B5DD9ACF998B1BD20BA5F5B7E1CAEFC05906F9BA4",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/creator-m4-l3-ai-writing.png"
+    },
+    {
+      "cellId": "creator-m4-l3-ai-writing__ar-MSA",
+      "lessonId": "creator-m4-l3-ai-writing",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "6089DA830723CCFD6F22D5B89F9A1D3421ED6F5805DF912FD4C870311AC60C60",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/creator-m4-l3-ai-writing.png"
+    },
+    {
+      "cellId": "creator-m4-l3-ai-writing__ar-Gulf",
+      "lessonId": "creator-m4-l3-ai-writing",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "F5CE5DB9CD52EDC83D2F71806821F1EC5AAECA565657126C2199FB40B26D0114",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/creator-m4-l3-ai-writing.png"
+    },
+    {
+      "cellId": "creator-m4-l3-ai-writing__en",
+      "lessonId": "creator-m4-l3-ai-writing",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "CC545311789EABBAF7FB66B74DFB45100F1DD798B71C231B6B3CAE89B493C0F6",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/creator-m4-l3-ai-writing.png"
+    },
+    {
+      "cellId": "creator-m5-l1-editing__ar-EG",
+      "lessonId": "creator-m5-l1-editing",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "E6F5B9617ECED05DB106713BDAC49A4B96A5B581B29D7B25673C4B2761C0BE34",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/creator-m5-l1-editing.png"
+    },
+    {
+      "cellId": "creator-m5-l1-editing__ar-MSA",
+      "lessonId": "creator-m5-l1-editing",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "83E3988060CF55EDA8E1BF44E1EEF66C47CD294FAB163FB307E2E0249E12EF74",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/creator-m5-l1-editing.png"
+    },
+    {
+      "cellId": "creator-m5-l1-editing__ar-Gulf",
+      "lessonId": "creator-m5-l1-editing",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "6F4F8964945A7AFD3137666BC21F0D8A99CD43D85FDF559D5C0809C02506AD3A",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/creator-m5-l1-editing.png"
+    },
+    {
+      "cellId": "creator-m5-l1-editing__en",
+      "lessonId": "creator-m5-l1-editing",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "180C031E2058D8F268EC456C7EC87C0F06E0CF5702194C3D12AB74B617432380",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/creator-m5-l1-editing.png"
+    },
+    {
+      "cellId": "creator-m4-repurposing__ar-EG",
+      "lessonId": "creator-m4-repurposing",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "532B0FB5F7B33F5CF5FDBD79471A123ADB0F981312FF0D38C80C4CECBA24EAAA",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/creator-m4-repurposing.png"
+    },
+    {
+      "cellId": "creator-m4-repurposing__ar-MSA",
+      "lessonId": "creator-m4-repurposing",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "17AA30D34B4F222C24A7585441B244F65AC40AFFF048C770E490C7186CBEA551",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/creator-m4-repurposing.png"
+    },
+    {
+      "cellId": "creator-m4-repurposing__ar-Gulf",
+      "lessonId": "creator-m4-repurposing",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "D5488AD21CF8ED240B4831FD8B2633BF0B9F8BFAF3FBA8A74ECC471C8413D4DA",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/creator-m4-repurposing.png"
+    },
+    {
+      "cellId": "creator-m4-repurposing__en",
+      "lessonId": "creator-m4-repurposing",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "03FA16E9029DFDCE6DA43E77841E38668DA6B064E59A3086491292DC0549C081",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/creator-m4-repurposing.png"
+    },
+    {
+      "cellId": "creator-m5-l2-thumbnails-captions__ar-EG",
+      "lessonId": "creator-m5-l2-thumbnails-captions",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "240B8B7A2B4FCE5EE408A63970F24EA80A8ECBD6275479F92765C92E64A9F325",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/creator-m5-l2-thumbnails-captions.png"
+    },
+    {
+      "cellId": "creator-m5-l2-thumbnails-captions__ar-MSA",
+      "lessonId": "creator-m5-l2-thumbnails-captions",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "28849ACC73D14F88818C3AF564A7917FA7907C06DE88CAA6231F51C6EF8A2EB4",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/creator-m5-l2-thumbnails-captions.png"
+    },
+    {
+      "cellId": "creator-m5-l2-thumbnails-captions__ar-Gulf",
+      "lessonId": "creator-m5-l2-thumbnails-captions",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "3CAE1BE6AE1A1B9860509DE58D9946FE329AC70B55CE4810CFEA42F62119E01C",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/creator-m5-l2-thumbnails-captions.png"
+    },
+    {
+      "cellId": "creator-m5-l2-thumbnails-captions__en",
+      "lessonId": "creator-m5-l2-thumbnails-captions",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "73059AB29E71000D13F16F1FD9CCC7F456D274240121B3F6B7C3C03149BDF1F9",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/creator-m5-l2-thumbnails-captions.png"
+    },
+    {
+      "cellId": "creator-m6-l1-platforms__ar-EG",
+      "lessonId": "creator-m6-l1-platforms",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "5BEAB90F4A906C5F5CE9CC2E0FE0B2795D421AD77DAEE11668D2AD7C3DC77441",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/creator-m6-l1-platforms.png"
+    },
+    {
+      "cellId": "creator-m6-l1-platforms__ar-MSA",
+      "lessonId": "creator-m6-l1-platforms",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "48C59E1FA65EF925E839987BFE1FD95302191224CE7ABA60855052A205794D23",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/creator-m6-l1-platforms.png"
+    },
+    {
+      "cellId": "creator-m6-l1-platforms__ar-Gulf",
+      "lessonId": "creator-m6-l1-platforms",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "41C3806582B35B028E27C9E2EF956AB8987EEF0FB81649FF55973E556C3EE26A",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/creator-m6-l1-platforms.png"
+    },
+    {
+      "cellId": "creator-m6-l1-platforms__en",
+      "lessonId": "creator-m6-l1-platforms",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "A182401CD625935476A54812FF6020D8E9E4AEEEFD8FAD0DB06056519D5CF06D",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/creator-m6-l1-platforms.png"
+    },
+    {
+      "cellId": "creator-m6-l2-scheduling__ar-EG",
+      "lessonId": "creator-m6-l2-scheduling",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "615B654367120A0981FF5FD5C0D0C930F0D3686007DCEC59AB766294890E1E53",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/creator-m6-l2-scheduling.png"
+    },
+    {
+      "cellId": "creator-m6-l2-scheduling__ar-MSA",
+      "lessonId": "creator-m6-l2-scheduling",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "02D005FBA8794DCD720560D5E6236CA6627361C5F858217CCA3DDC5D624080FF",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/creator-m6-l2-scheduling.png"
+    },
+    {
+      "cellId": "creator-m6-l2-scheduling__ar-Gulf",
+      "lessonId": "creator-m6-l2-scheduling",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "1FF071B02D8E12A636D09B897AED91C8B0E4892E645C7004F56956207D0DDEF1",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/creator-m6-l2-scheduling.png"
+    },
+    {
+      "cellId": "creator-m6-l2-scheduling__en",
+      "lessonId": "creator-m6-l2-scheduling",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "F464ECB10F4AC015E622C5722B8AD3240DF8F5A0CFB454EE9188DA05C14A4874",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/creator-m6-l2-scheduling.png"
+    },
+    {
+      "cellId": "creator-m6-l3-analytics__ar-EG",
+      "lessonId": "creator-m6-l3-analytics",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "C3A98A3DE066F3B008FAA4CDD5F1B261C4120D63A277910EF916B36AEAD103BE",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/creator-m6-l3-analytics.png"
+    },
+    {
+      "cellId": "creator-m6-l3-analytics__ar-MSA",
+      "lessonId": "creator-m6-l3-analytics",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "10A5A4813223710642806181764726C5D6ACC26401238AFAAE86EAF448993070",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/creator-m6-l3-analytics.png"
+    },
+    {
+      "cellId": "creator-m6-l3-analytics__ar-Gulf",
+      "lessonId": "creator-m6-l3-analytics",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "99082D059F6CCDE4029242FDA4142AB6CA81844A04F7C5A3E0A020E3CD531541",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/creator-m6-l3-analytics.png"
+    },
+    {
+      "cellId": "creator-m6-l3-analytics__en",
+      "lessonId": "creator-m6-l3-analytics",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "87FEB6619525A72B6FAFB2E37455271016E1E8F88AA4D3852616C23D2D6FDE07",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/creator-m6-l3-analytics.png"
+    },
+    {
+      "cellId": "creator-m6-l4-leads__ar-EG",
+      "lessonId": "creator-m6-l4-leads",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "563DE713711D315D9C592B8B9C9F5D4FA46395E97B1C21E4765A3C317D03121B",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/creator-m6-l4-leads.png"
+    },
+    {
+      "cellId": "creator-m6-l4-leads__ar-MSA",
+      "lessonId": "creator-m6-l4-leads",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "34CAF7EC23A8C238A194612D43FBCA03D4D0E4FAAC57CE75F933D60933020411",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/creator-m6-l4-leads.png"
+    },
+    {
+      "cellId": "creator-m6-l4-leads__ar-Gulf",
+      "lessonId": "creator-m6-l4-leads",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "C2084BF4A482AC1FE8941FFFCBC0AB117661B8E5C92464CDCDBD64E639BC7973",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/creator-m6-l4-leads.png"
+    },
+    {
+      "cellId": "creator-m6-l4-leads__en",
+      "lessonId": "creator-m6-l4-leads",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "DAF4EC4AEF9214B1EF7F3C566EA5F0A0BC5DEED238905A6FA726BC0C5CAD78D5",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/creator-m6-l4-leads.png"
+    },
+    {
+      "cellId": "creator-m7-l1-brand-basics__ar-EG",
+      "lessonId": "creator-m7-l1-brand-basics",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "BF934CA93097DE533EA2A2A73B72D16037FE08162C411326A2E71D82C6514921",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/creator-m7-l1-brand-basics.png"
+    },
+    {
+      "cellId": "creator-m7-l1-brand-basics__ar-MSA",
+      "lessonId": "creator-m7-l1-brand-basics",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "58CC7CF97BB9CCF018DB0C112E25B5AB5096247A3D4BE15E790A063754BFCC25",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/creator-m7-l1-brand-basics.png"
+    },
+    {
+      "cellId": "creator-m7-l1-brand-basics__ar-Gulf",
+      "lessonId": "creator-m7-l1-brand-basics",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "C481EDB9F2E1290F50CD217E6C57EDA8B077D6BFD17F2C9AD42601A82570D1D7",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/creator-m7-l1-brand-basics.png"
+    },
+    {
+      "cellId": "creator-m7-l1-brand-basics__en",
+      "lessonId": "creator-m7-l1-brand-basics",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "06F357732B4FA645F5EF6C4380BB519552F338393E077F3A640F6F92474D41A5",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/creator-m7-l1-brand-basics.png"
+    },
+    {
+      "cellId": "creator-m7-l2-grid-consistency__ar-EG",
+      "lessonId": "creator-m7-l2-grid-consistency",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "17C006B8556AD2D63BD452D13DF380D81A99F3418AA59D1FC183E4AB246C5DC5",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/creator-m7-l2-grid-consistency.png"
+    },
+    {
+      "cellId": "creator-m7-l2-grid-consistency__ar-MSA",
+      "lessonId": "creator-m7-l2-grid-consistency",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "E8919ED8ACAAFA77FF954EF21974284262E3CC78A18D86F7101F230E31D53794",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/creator-m7-l2-grid-consistency.png"
+    },
+    {
+      "cellId": "creator-m7-l2-grid-consistency__ar-Gulf",
+      "lessonId": "creator-m7-l2-grid-consistency",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "353FD1540D366F375DE6A244F7F5D96963F333CD47F2BB0793A1786BCCF11705",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/creator-m7-l2-grid-consistency.png"
+    },
+    {
+      "cellId": "creator-m7-l2-grid-consistency__en",
+      "lessonId": "creator-m7-l2-grid-consistency",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "30230C72FA241BDDE450F9A95808BE236497EAE40AD9794255DDCA82CE226305",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/creator-m7-l2-grid-consistency.png"
+    },
+    {
+      "cellId": "analyst-m1-l1-from-automation-to-insight__ar-EG",
+      "lessonId": "analyst-m1-l1-from-automation-to-insight",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "3F719C22C2A5BD78FC16F41426931999B54ED3374E52F444D64768C3A01F1727",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/analyst-m1-l1-from-automation-to-insight.png"
+    },
+    {
+      "cellId": "analyst-m1-l1-from-automation-to-insight__ar-MSA",
+      "lessonId": "analyst-m1-l1-from-automation-to-insight",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "595BBB930B08B25144796221ABBF784389DF74F61DAC261D0C40CB8796DFA660",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/analyst-m1-l1-from-automation-to-insight.png"
+    },
+    {
+      "cellId": "analyst-m1-l1-from-automation-to-insight__ar-Gulf",
+      "lessonId": "analyst-m1-l1-from-automation-to-insight",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "039FABFA94479AB343FB506CF9A2643B15E52CE07BB2414911B5A5E9EF6402B7",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/analyst-m1-l1-from-automation-to-insight.png"
+    },
+    {
+      "cellId": "analyst-m1-l1-from-automation-to-insight__en",
+      "lessonId": "analyst-m1-l1-from-automation-to-insight",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "626A5485FF9CBECABADC5E59A6916EFA57B8C9576B89B33A4ECB463481A84FAC",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/analyst-m1-l1-from-automation-to-insight.png"
+    },
+    {
+      "cellId": "analyst-m2-l1-feeling-to-question__ar-EG",
+      "lessonId": "analyst-m2-l1-feeling-to-question",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "43E79B6F8E689CD0F53B3F72B1735B6ACBFEDAC64127A9369D3DC59381937BFF",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/analyst-m2-l1-feeling-to-question.png"
+    },
+    {
+      "cellId": "analyst-m2-l1-feeling-to-question__ar-MSA",
+      "lessonId": "analyst-m2-l1-feeling-to-question",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "726207B3BEABFFB1AC55BAE8E360CC5CCE3E98BEFECD0869B9E0657BE430964E",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/analyst-m2-l1-feeling-to-question.png"
+    },
+    {
+      "cellId": "analyst-m2-l1-feeling-to-question__ar-Gulf",
+      "lessonId": "analyst-m2-l1-feeling-to-question",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "0FE14B4714A639104DC617CF4B01C1E18A5972C0273BA3C50E36248561B0362C",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/analyst-m2-l1-feeling-to-question.png"
+    },
+    {
+      "cellId": "analyst-m2-l1-feeling-to-question__en",
+      "lessonId": "analyst-m2-l1-feeling-to-question",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "58FC86CB250FD08C78E163A5B22A11FC18E53C1A59C66E299F1C5B4A1372564B",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/analyst-m2-l1-feeling-to-question.png"
+    },
+    {
+      "cellId": "analyst-m2-l2-right-question-rule__ar-EG",
+      "lessonId": "analyst-m2-l2-right-question-rule",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "B929BD00B7EDC84F079EFE424E22F36902EA98E3CCC61DA93EC04670AFB475C1",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/analyst-m2-l2-right-question-rule.png"
+    },
+    {
+      "cellId": "analyst-m2-l2-right-question-rule__ar-MSA",
+      "lessonId": "analyst-m2-l2-right-question-rule",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "EB48494A319A8E281EC903ACEA4FCDD437A092D8BDC57984D7F86BD41D30ADB5",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/analyst-m2-l2-right-question-rule.png"
+    },
+    {
+      "cellId": "analyst-m2-l2-right-question-rule__ar-Gulf",
+      "lessonId": "analyst-m2-l2-right-question-rule",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "BB6E9CFBBB83C4CBD9E8385CD1AD24A4B87BC6F66FE0A04B2389C2029141476B",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/analyst-m2-l2-right-question-rule.png"
+    },
+    {
+      "cellId": "analyst-m2-l2-right-question-rule__en",
+      "lessonId": "analyst-m2-l2-right-question-rule",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "480590E90EDE5297999B5C91C907EEB2DD2BE1EE23D217B745F5FEB9A955AF07",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/analyst-m2-l2-right-question-rule.png"
+    },
+    {
+      "cellId": "analyst-m3-l1-three-sources__ar-EG",
+      "lessonId": "analyst-m3-l1-three-sources",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "567B5E18F6E9B775725468138BD5A2C210FA0DAF87821A7D69C14AD4AA2DC9A2",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/analyst-m3-l1-three-sources.png"
+    },
+    {
+      "cellId": "analyst-m3-l1-three-sources__ar-MSA",
+      "lessonId": "analyst-m3-l1-three-sources",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "678C6DDC465FC068EFF0469ED864BA51525C6086AD5C83ACE13F153A60453785",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/analyst-m3-l1-three-sources.png"
+    },
+    {
+      "cellId": "analyst-m3-l1-three-sources__ar-Gulf",
+      "lessonId": "analyst-m3-l1-three-sources",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "6098B81590CEEE422987A260B4FF9E5E76AF3CE297D3D41F8147F35B94A23129",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/analyst-m3-l1-three-sources.png"
+    },
+    {
+      "cellId": "analyst-m3-l1-three-sources__en",
+      "lessonId": "analyst-m3-l1-three-sources",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "71CC5728D300C50A158E5D44B6792FFF6963439DE7EDEEB4C5EA57FFAA0D8BC0",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/analyst-m3-l1-three-sources.png"
+    },
+    {
+      "cellId": "analyst-m3-l2-ai-summarization__ar-EG",
+      "lessonId": "analyst-m3-l2-ai-summarization",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "8F983997118328EF4E9E3FACD7C14CE5AFFF40A70F4BBC5E1A9ACD1B37B87E0B",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/analyst-m3-l2-ai-summarization.png"
+    },
+    {
+      "cellId": "analyst-m3-l2-ai-summarization__ar-MSA",
+      "lessonId": "analyst-m3-l2-ai-summarization",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "11494B1E3EEFB95EDE01D6922218EA47AB8825DD08D52E31293A14A36C1C9166",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/analyst-m3-l2-ai-summarization.png"
+    },
+    {
+      "cellId": "analyst-m3-l2-ai-summarization__ar-Gulf",
+      "lessonId": "analyst-m3-l2-ai-summarization",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "E229ECC2470EAD588E357017C068514EA675CC3123305480AE2B68CEF81290D8",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/analyst-m3-l2-ai-summarization.png"
+    },
+    {
+      "cellId": "analyst-m3-l2-ai-summarization__en",
+      "lessonId": "analyst-m3-l2-ai-summarization",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "BCB0CF87EF1111727427D855B18D557099128B222F1985D319DD0F211652E664",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/analyst-m3-l2-ai-summarization.png"
+    },
+    {
+      "cellId": "analyst-m4-l1-pattern-vs-outlier__ar-EG",
+      "lessonId": "analyst-m4-l1-pattern-vs-outlier",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "BD80EB302A4EC12111F19D4BE0C8F4CE1A32DB7A5A0939E7EC049A56C7B519DE",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/analyst-m4-l1-pattern-vs-outlier.png"
+    },
+    {
+      "cellId": "analyst-m4-l1-pattern-vs-outlier__ar-MSA",
+      "lessonId": "analyst-m4-l1-pattern-vs-outlier",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "FA982B7C2051E3129F1DC18931E893CDF3C71BDC12384D6BA7034266EE8A2D8B",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/analyst-m4-l1-pattern-vs-outlier.png"
+    },
+    {
+      "cellId": "analyst-m4-l1-pattern-vs-outlier__ar-Gulf",
+      "lessonId": "analyst-m4-l1-pattern-vs-outlier",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "71F5A789F488114E545B647BFC2674164A44BC3214D1C6A194D7A5A8DA471AEF",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/analyst-m4-l1-pattern-vs-outlier.png"
+    },
+    {
+      "cellId": "analyst-m4-l1-pattern-vs-outlier__en",
+      "lessonId": "analyst-m4-l1-pattern-vs-outlier",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "4AED43182BD307F6FE52354CCF75545B72758F1720E03F835B5699EC800C576C",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/analyst-m4-l1-pattern-vs-outlier.png"
+    },
+    {
+      "cellId": "analyst-m4-l2-decision-rule__ar-EG",
+      "lessonId": "analyst-m4-l2-decision-rule",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "E51694F358A649665A2275A58A190C0DD69943B715C07ED9BD113D7079DDAF80",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/analyst-m4-l2-decision-rule.png"
+    },
+    {
+      "cellId": "analyst-m4-l2-decision-rule__ar-MSA",
+      "lessonId": "analyst-m4-l2-decision-rule",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "43CDAD06D7E248D96AF9AAB6BB7262F01638CE57577FFA2D12FC98580DD30B6D",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/analyst-m4-l2-decision-rule.png"
+    },
+    {
+      "cellId": "analyst-m4-l2-decision-rule__ar-Gulf",
+      "lessonId": "analyst-m4-l2-decision-rule",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "A12155500D1EF128E836CBF8849BA2E7E4FC71331F157702B27950519DAA5865",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/analyst-m4-l2-decision-rule.png"
+    },
+    {
+      "cellId": "analyst-m4-l2-decision-rule__en",
+      "lessonId": "analyst-m4-l2-decision-rule",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "D74B492DA2477FF423FBC8216C93D875102FEADF836531E8C50E40CFC46F7C99",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/analyst-m4-l2-decision-rule.png"
+    },
+    {
+      "cellId": "analyst-m5-l1-four-numbers-dashboard__ar-EG",
+      "lessonId": "analyst-m5-l1-four-numbers-dashboard",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "15185C9F5619244EB00F26DF69082F5E0FAB6FC916D86C87958AB514C3CED7D0",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/analyst-m5-l1-four-numbers-dashboard.png"
+    },
+    {
+      "cellId": "analyst-m5-l1-four-numbers-dashboard__ar-MSA",
+      "lessonId": "analyst-m5-l1-four-numbers-dashboard",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "EA1F9330D184F5762688D3DA4C1878F3DB41A7FBDD5BCC3E52F4AD03A4692E9A",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/analyst-m5-l1-four-numbers-dashboard.png"
+    },
+    {
+      "cellId": "analyst-m5-l1-four-numbers-dashboard__ar-Gulf",
+      "lessonId": "analyst-m5-l1-four-numbers-dashboard",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "2519EADF90B58BD40FD05E3FD7076477C98A550F82DA2344044DCE94393F7827",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/analyst-m5-l1-four-numbers-dashboard.png"
+    },
+    {
+      "cellId": "analyst-m5-l1-four-numbers-dashboard__en",
+      "lessonId": "analyst-m5-l1-four-numbers-dashboard",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "86E405677FB694F5F6C58F284754D49C4A88A7E5B81B06E5744D11E4674FC1A5",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/analyst-m5-l1-four-numbers-dashboard.png"
+    },
+    {
+      "cellId": "analyst-m4-automated-dashboard__ar-EG",
+      "lessonId": "analyst-m4-automated-dashboard",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "1D4A190FBA9A77AB6C1E53DD2E898BD4A32CFB4EB2A14D42FCB6F05B4A914B91",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/analyst-m4-automated-dashboard.png"
+    },
+    {
+      "cellId": "analyst-m4-automated-dashboard__ar-MSA",
+      "lessonId": "analyst-m4-automated-dashboard",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "5537DA0A2939CFBB23BC999B9B4C383D606E0083E65CF87E8A3A931DFACBCCBC",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/analyst-m4-automated-dashboard.png"
+    },
+    {
+      "cellId": "analyst-m4-automated-dashboard__ar-Gulf",
+      "lessonId": "analyst-m4-automated-dashboard",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "700AE436335CFB0DFEC91408B3BDAA08FB2303A7B5B4C37749CC7DB3B3FADF63",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/analyst-m4-automated-dashboard.png"
+    },
+    {
+      "cellId": "analyst-m4-automated-dashboard__en",
+      "lessonId": "analyst-m4-automated-dashboard",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "26BB1B32D16F74789D9C4933793BA0FE57B63E279108404F2F942B613DB7DE6D",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/analyst-m4-automated-dashboard.png"
+    },
+    {
+      "cellId": "analyst-m5-l2-weekly-review-ritual__ar-EG",
+      "lessonId": "analyst-m5-l2-weekly-review-ritual",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "037C460F5206773C845CDCE6E2E5BCC1CEA39079BF7C30504FAAD25C50FF62D9",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/analyst-m5-l2-weekly-review-ritual.png"
+    },
+    {
+      "cellId": "analyst-m5-l2-weekly-review-ritual__ar-MSA",
+      "lessonId": "analyst-m5-l2-weekly-review-ritual",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "0FCFF4743721535A3152B1AD33286ED3F84B9BFDAFD17D59118B27FD105FDB33",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/analyst-m5-l2-weekly-review-ritual.png"
+    },
+    {
+      "cellId": "analyst-m5-l2-weekly-review-ritual__ar-Gulf",
+      "lessonId": "analyst-m5-l2-weekly-review-ritual",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "9C8333691113755AB26810A6F13A73B6251B409B73863DDCFDDA5B005CDBAF01",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/analyst-m5-l2-weekly-review-ritual.png"
+    },
+    {
+      "cellId": "analyst-m5-l2-weekly-review-ritual__en",
+      "lessonId": "analyst-m5-l2-weekly-review-ritual",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "6FEC41B865B3E93D03DB647975BC934F27457DE255049DA730073AB166B1B515",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/analyst-m5-l2-weekly-review-ritual.png"
+    },
+    {
+      "cellId": "analyst-m6-l1-question-mistakes__ar-EG",
+      "lessonId": "analyst-m6-l1-question-mistakes",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "E44DE24021689600870C1C63F6D8F543579F7291E31B57CD160664BAF72A7EDF",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/analyst-m6-l1-question-mistakes.png"
+    },
+    {
+      "cellId": "analyst-m6-l1-question-mistakes__ar-MSA",
+      "lessonId": "analyst-m6-l1-question-mistakes",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "C52D6D78E078541B52C84E2937018CDA0B51E5C325C04CF89EDAA7257C79EDF5",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/analyst-m6-l1-question-mistakes.png"
+    },
+    {
+      "cellId": "analyst-m6-l1-question-mistakes__ar-Gulf",
+      "lessonId": "analyst-m6-l1-question-mistakes",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "C8D7DBDBA65D8C6FC76ADF7F778E6CB3BF6C3A488BE8BFC5397D29A4AE0BA8F5",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/analyst-m6-l1-question-mistakes.png"
+    },
+    {
+      "cellId": "analyst-m6-l1-question-mistakes__en",
+      "lessonId": "analyst-m6-l1-question-mistakes",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "8E4E7D7127B0B320860C14AC9513849470FB6CB0F141D61F1A2AF748DACA19AC",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/analyst-m6-l1-question-mistakes.png"
+    },
+    {
+      "cellId": "analyst-m5-ab-testing__ar-EG",
+      "lessonId": "analyst-m5-ab-testing",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "B8F4AA960391A6789105E44EFD4BE2EC975A20317BE1091E0788601030E342B0",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/analyst-m5-ab-testing.png"
+    },
+    {
+      "cellId": "analyst-m5-ab-testing__ar-MSA",
+      "lessonId": "analyst-m5-ab-testing",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "D4E33E370472C4465E77060E92901F8C84B053D88DDF348BF8A9E3F71C687D31",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/analyst-m5-ab-testing.png"
+    },
+    {
+      "cellId": "analyst-m5-ab-testing__ar-Gulf",
+      "lessonId": "analyst-m5-ab-testing",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "CFD65BDD86584EEB7A80ED6FE5EF57DA05F2926840C259FE3B09E1D39124653F",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/analyst-m5-ab-testing.png"
+    },
+    {
+      "cellId": "analyst-m5-ab-testing__en",
+      "lessonId": "analyst-m5-ab-testing",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "10E941EC2F108CA276740D1D6C10B75C91A9074A02C76E6244A009B74E5E8FE2",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/analyst-m5-ab-testing.png"
+    },
+    {
+      "cellId": "analyst-m6-l2-interpretation-mistakes__ar-EG",
+      "lessonId": "analyst-m6-l2-interpretation-mistakes",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "D7C1E32F4291E95433C3712FE16AE99886A419A338BCBB2EF7ACCD9A14627B58",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/analyst-m6-l2-interpretation-mistakes.png"
+    },
+    {
+      "cellId": "analyst-m6-l2-interpretation-mistakes__ar-MSA",
+      "lessonId": "analyst-m6-l2-interpretation-mistakes",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "F2926C8DBC2D8E7D1BCFF2AA20994B9780470697A70E8E3987687A435C110914",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/analyst-m6-l2-interpretation-mistakes.png"
+    },
+    {
+      "cellId": "analyst-m6-l2-interpretation-mistakes__ar-Gulf",
+      "lessonId": "analyst-m6-l2-interpretation-mistakes",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "B160A015E41C4A4D953EB3720F23EF6669019A52AEDDA0C676A474CEDEC92D0F",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/analyst-m6-l2-interpretation-mistakes.png"
+    },
+    {
+      "cellId": "analyst-m6-l2-interpretation-mistakes__en",
+      "lessonId": "analyst-m6-l2-interpretation-mistakes",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "5B2EBD0FF1A4C227E87D7D218D31DDD27180B0B374EDFA2E1AB83841238909CA",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/analyst-m6-l2-interpretation-mistakes.png"
+    },
+    {
+      "cellId": "analyst-m7-l1-from-decisions-to-business__ar-EG",
+      "lessonId": "analyst-m7-l1-from-decisions-to-business",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "B8907B8944D0EF514DD9B716F327E8B72DEB76017A83D1BBDA97B1917DFFB686",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/analyst-m7-l1-from-decisions-to-business.png"
+    },
+    {
+      "cellId": "analyst-m7-l1-from-decisions-to-business__ar-MSA",
+      "lessonId": "analyst-m7-l1-from-decisions-to-business",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "B444CC1A74588C6A198A2B690B2B5FF5C384A8D243646DB9E0E38E8DECC9B8C6",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/analyst-m7-l1-from-decisions-to-business.png"
+    },
+    {
+      "cellId": "analyst-m7-l1-from-decisions-to-business__ar-Gulf",
+      "lessonId": "analyst-m7-l1-from-decisions-to-business",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "A87FBED13DDEED7CB626828F59E582E0A0EB9C58E21E012CA175469939FC1335",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/analyst-m7-l1-from-decisions-to-business.png"
+    },
+    {
+      "cellId": "analyst-m7-l1-from-decisions-to-business__en",
+      "lessonId": "analyst-m7-l1-from-decisions-to-business",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "1643EF71A5444B9358FA4D94E7BB2B859A9540CB439167F3243CF4047BEC5FEA",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/analyst-m7-l1-from-decisions-to-business.png"
+    },
+    {
+      "cellId": "automator-m1-l1-where-you-are__ar-EG",
+      "lessonId": "automator-m1-l1-where-you-are",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "CB551CD533E39A9D93CD5E3A3ACCE15B7DDE846DD0C8FC8C73359F46A89AFB97",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/automator-m1-l1-where-you-are.png"
+    },
+    {
+      "cellId": "automator-m1-l1-where-you-are__ar-MSA",
+      "lessonId": "automator-m1-l1-where-you-are",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "5BCE5BF97E38F4E8FB06FEC7FD274C108CB2734B15B867B621954FB02D26784D",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/automator-m1-l1-where-you-are.png"
+    },
+    {
+      "cellId": "automator-m1-l1-where-you-are__ar-Gulf",
+      "lessonId": "automator-m1-l1-where-you-are",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "9D7C4909FE144F24904020ACE40A35B8BCC1DD1F1E1B9EB0DD25EBD1AB9D0863",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/automator-m1-l1-where-you-are.png"
+    },
+    {
+      "cellId": "automator-m1-l1-where-you-are__en",
+      "lessonId": "automator-m1-l1-where-you-are",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "CB087CBDE185713925C9FBC5EC343764834C5A4D6B8CBC2F94401E90366CF3C8",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/automator-m1-l1-where-you-are.png"
+    },
+    {
+      "cellId": "automator-m2-l1-systems-view__ar-EG",
+      "lessonId": "automator-m2-l1-systems-view",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "C25985D16F29FEF70F6A4852205E09EF17E9A3B416F6C5DE4FE51D0BF3D53CE2",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/automator-m2-l1-systems-view.png"
+    },
+    {
+      "cellId": "automator-m2-l1-systems-view__ar-MSA",
+      "lessonId": "automator-m2-l1-systems-view",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "6FB66F587B1C26689234B38CEA46D136008E098E4503D18BEFB18E29DB2C1E0E",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/automator-m2-l1-systems-view.png"
+    },
+    {
+      "cellId": "automator-m2-l1-systems-view__ar-Gulf",
+      "lessonId": "automator-m2-l1-systems-view",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "80AD2B25F220FEFAE483FE8679BCF7CF0F631DF57F44E0B5D3D0B1990D133FC2",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/automator-m2-l1-systems-view.png"
+    },
+    {
+      "cellId": "automator-m2-l1-systems-view__en",
+      "lessonId": "automator-m2-l1-systems-view",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "D89FA15129F63FD4ED1EC9FD31133660B0833FC139D7A340EC3E866E4EAA36CC",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/automator-m2-l1-systems-view.png"
+    },
+    {
+      "cellId": "automator-m2-l2-spot-patterns__ar-EG",
+      "lessonId": "automator-m2-l2-spot-patterns",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "E509D5CC4599978129C79BE314675C834910EBB081A8263AEF9FE0555541B66A",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/automator-m2-l2-spot-patterns.png"
+    },
+    {
+      "cellId": "automator-m2-l2-spot-patterns__ar-MSA",
+      "lessonId": "automator-m2-l2-spot-patterns",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "253BB488329EABF118936EA983329A8A477395F8A1952A0DF8CD7193B6A7E715",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/automator-m2-l2-spot-patterns.png"
+    },
+    {
+      "cellId": "automator-m2-l2-spot-patterns__ar-Gulf",
+      "lessonId": "automator-m2-l2-spot-patterns",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "6C1198C97A6E1BF44EFB3589CF9BFF6B25D2C615D9BE2EBC454823F72FEEFF9C",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/automator-m2-l2-spot-patterns.png"
+    },
+    {
+      "cellId": "automator-m2-l2-spot-patterns__en",
+      "lessonId": "automator-m2-l2-spot-patterns",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "1A3AD9FDE9436680B27778B69148F0629F9B68261C432A6A6474AB9FB44E9DE1",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/automator-m2-l2-spot-patterns.png"
+    },
+    {
+      "cellId": "automator-m2-l3-decide-what-to-automate__ar-EG",
+      "lessonId": "automator-m2-l3-decide-what-to-automate",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "D3A0B17DC71A37275CCF0D82F8FBC5C5F0F201FE55A4CCF49725BCBBA740EC23",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/automator-m2-l3-decide-what-to-automate.png"
+    },
+    {
+      "cellId": "automator-m2-l3-decide-what-to-automate__ar-MSA",
+      "lessonId": "automator-m2-l3-decide-what-to-automate",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "4D592E1856103ABDF23D83CD7D97DAD23083A8AAD13F0EC9C7D984A6EA946FD9",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/automator-m2-l3-decide-what-to-automate.png"
+    },
+    {
+      "cellId": "automator-m2-l3-decide-what-to-automate__ar-Gulf",
+      "lessonId": "automator-m2-l3-decide-what-to-automate",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "4071FC33A11E14A4A0188737B17FB7AC55C4D789C23A5934BAFF63CB7AE4A6B3",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/automator-m2-l3-decide-what-to-automate.png"
+    },
+    {
+      "cellId": "automator-m2-l3-decide-what-to-automate__en",
+      "lessonId": "automator-m2-l3-decide-what-to-automate",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "95CAD099641EFEB76608F88BD52318302E1469EAE3EB5CAFCF9C07913D84FF17",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/automator-m2-l3-decide-what-to-automate.png"
+    },
+    {
+      "cellId": "automator-m3-l1-tools-landscape__ar-EG",
+      "lessonId": "automator-m3-l1-tools-landscape",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "BA7C998A321E42AC4E7FED457FC7BDD59FB336669CEFFFCC9C676871E530E246",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/automator-m3-l1-tools-landscape.png"
+    },
+    {
+      "cellId": "automator-m3-l1-tools-landscape__ar-MSA",
+      "lessonId": "automator-m3-l1-tools-landscape",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "CBD2247580A1A7A6F0FD1713020B4ECC8EC0344230170B1BE5B3561694FE75B8",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/automator-m3-l1-tools-landscape.png"
+    },
+    {
+      "cellId": "automator-m3-l1-tools-landscape__ar-Gulf",
+      "lessonId": "automator-m3-l1-tools-landscape",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "ED69FE46F72E4FB9A1D391633F2DFE9129079CA99C99BE04CBBC235CFB3519C8",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/automator-m3-l1-tools-landscape.png"
+    },
+    {
+      "cellId": "automator-m3-l1-tools-landscape__en",
+      "lessonId": "automator-m3-l1-tools-landscape",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "0A67F0696C243D872B8633C3391C7C0C420025D123C068573FBC0142249CE857",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/automator-m3-l1-tools-landscape.png"
+    },
+    {
+      "cellId": "automator-m3-l2-triggers-actions__ar-EG",
+      "lessonId": "automator-m3-l2-triggers-actions",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "7DEDED346AD131D109C04A83192F8597EEB1FE467BF61702260A44066C4E56D5",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/automator-m3-l2-triggers-actions.png"
+    },
+    {
+      "cellId": "automator-m3-l2-triggers-actions__ar-MSA",
+      "lessonId": "automator-m3-l2-triggers-actions",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "D3A2DA410A1848774DDE19D435DA1CBA327F13E188EA97B0A24472076B2E9ED2",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/automator-m3-l2-triggers-actions.png"
+    },
+    {
+      "cellId": "automator-m3-l2-triggers-actions__ar-Gulf",
+      "lessonId": "automator-m3-l2-triggers-actions",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "273E7C6CF784B74E42486ED5805C2A72A7A9071D05A7F19D81182DB77B28647C",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/automator-m3-l2-triggers-actions.png"
+    },
+    {
+      "cellId": "automator-m3-l2-triggers-actions__en",
+      "lessonId": "automator-m3-l2-triggers-actions",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "2BB8A33E2FE8E8EC20A44FD94E3121CDDE3B07AD908EACA53E3AD8CEE9B0E569",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/automator-m3-l2-triggers-actions.png"
+    },
+    {
+      "cellId": "automator-m3-l3-filters-routers__ar-EG",
+      "lessonId": "automator-m3-l3-filters-routers",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "60DCBA854F3799BD374D3071D7D4B2E1DF7027BA38EC89404A0BFE9A0626EB07",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/automator-m3-l3-filters-routers.png"
+    },
+    {
+      "cellId": "automator-m3-l3-filters-routers__ar-MSA",
+      "lessonId": "automator-m3-l3-filters-routers",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "FEF12CB39BAFCDBBEBBAD5F5979922C47CB066B043E204B76B8DC24102174ADB",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/automator-m3-l3-filters-routers.png"
+    },
+    {
+      "cellId": "automator-m3-l3-filters-routers__ar-Gulf",
+      "lessonId": "automator-m3-l3-filters-routers",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "EDBB96FCBB5C38452BA8AB32079A4588C73BD9A60F1C7DC6055B8F675566A66C",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/automator-m3-l3-filters-routers.png"
+    },
+    {
+      "cellId": "automator-m3-l3-filters-routers__en",
+      "lessonId": "automator-m3-l3-filters-routers",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "FBA57BD136D85F25399216B64B53712A78CA742D145B8E098A2815C793F0AD5C",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/automator-m3-l3-filters-routers.png"
+    },
+    {
+      "cellId": "automator-m4-l1-connect-database__ar-EG",
+      "lessonId": "automator-m4-l1-connect-database",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "5602D9AE364619B67715CF2DD4313F66DAFC7671C9EDD33905F7969E3BABB7D7",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/automator-m4-l1-connect-database.png"
+    },
+    {
+      "cellId": "automator-m4-l1-connect-database__ar-MSA",
+      "lessonId": "automator-m4-l1-connect-database",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "54E2EFB2575A6882F8BB7CA31E3FEA52AF22F5A0307DBF2E2DFB1721B20B5B4B",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/automator-m4-l1-connect-database.png"
+    },
+    {
+      "cellId": "automator-m4-l1-connect-database__ar-Gulf",
+      "lessonId": "automator-m4-l1-connect-database",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "1D0F24C95F5C2D93426493FE1DF78764706EE74916AF97B086D8465A9B532629",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/automator-m4-l1-connect-database.png"
+    },
+    {
+      "cellId": "automator-m4-l1-connect-database__en",
+      "lessonId": "automator-m4-l1-connect-database",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "FC839CDB23FD2B9CD501AC3AC980E25EA6A87227D009C3C4BF3FFE2245068985",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/automator-m4-l1-connect-database.png"
+    },
+    {
+      "cellId": "automator-m4-l2-webhooks-api__ar-EG",
+      "lessonId": "automator-m4-l2-webhooks-api",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "1D90F56BAC966CDD98A49D0E265184712C02F4C8D6DE19318BC4819CB2CA4987",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/automator-m4-l2-webhooks-api.png"
+    },
+    {
+      "cellId": "automator-m4-l2-webhooks-api__ar-MSA",
+      "lessonId": "automator-m4-l2-webhooks-api",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "FA03578ED17B205350F693055870550B91BA34F13CDA9F188A4580CCAFB9E0BC",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/automator-m4-l2-webhooks-api.png"
+    },
+    {
+      "cellId": "automator-m4-l2-webhooks-api__ar-Gulf",
+      "lessonId": "automator-m4-l2-webhooks-api",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "88130089A853ACAC44B466FE3C4A580F846B047FA25043F0748B4D427E0DBDE3",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/automator-m4-l2-webhooks-api.png"
+    },
+    {
+      "cellId": "automator-m4-l2-webhooks-api__en",
+      "lessonId": "automator-m4-l2-webhooks-api",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "468A291E516C9330643B2B793BF674C50A132B172E54B1D2570B34ED5BD06E89",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/automator-m4-l2-webhooks-api.png"
+    },
+    {
+      "cellId": "automator-m4-l3-error-handling__ar-EG",
+      "lessonId": "automator-m4-l3-error-handling",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "F9C866820A4BCE5599EDD23DC832A603E6B57A1A126904892CEC0C766D05B625",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/automator-m4-l3-error-handling.png"
+    },
+    {
+      "cellId": "automator-m4-l3-error-handling__ar-MSA",
+      "lessonId": "automator-m4-l3-error-handling",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "C49F2CA3548EDE6CE32986A823CBD89EF64ACFEACCBF6D54D4C31F27E8EB2AE7",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/automator-m4-l3-error-handling.png"
+    },
+    {
+      "cellId": "automator-m4-l3-error-handling__ar-Gulf",
+      "lessonId": "automator-m4-l3-error-handling",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "326A7F6780FE716FCD7ECBDCD09747C497D5C3E836E706EDFF063BFB35C0EB9A",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/automator-m4-l3-error-handling.png"
+    },
+    {
+      "cellId": "automator-m4-l3-error-handling__en",
+      "lessonId": "automator-m4-l3-error-handling",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "20835CC8703A88B21B24D5F25B7354F4F9743366D056E338AB5B08B2AC52CB16",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/automator-m4-l3-error-handling.png"
+    },
+    {
+      "cellId": "automator-m3-testing-automation__ar-EG",
+      "lessonId": "automator-m3-testing-automation",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "BF2E233F3C5D2DE3899A65775F470DFC0FEF7C2D955BA55524DC5059F32C3D07",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/automator-m3-testing-automation.png"
+    },
+    {
+      "cellId": "automator-m3-testing-automation__ar-MSA",
+      "lessonId": "automator-m3-testing-automation",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "2EF2416FB038F65EE72E598073AA35401181766FB16FD506F682BBAA96F3540B",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/automator-m3-testing-automation.png"
+    },
+    {
+      "cellId": "automator-m3-testing-automation__ar-Gulf",
+      "lessonId": "automator-m3-testing-automation",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "7B6A7BD20AFF8C77F43690437C88F96C8BB539CAD9AB060E777C5F29F322DA34",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/automator-m3-testing-automation.png"
+    },
+    {
+      "cellId": "automator-m3-testing-automation__en",
+      "lessonId": "automator-m3-testing-automation",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "1F736F7EDBDA78DA984643E21189D3D27D6CFF3751E9D4C6FA5C8E2237992D2A",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/automator-m3-testing-automation.png"
+    },
+    {
+      "cellId": "automator-m5-l1-llm-in-flow__ar-EG",
+      "lessonId": "automator-m5-l1-llm-in-flow",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "E703DCE7DDCA3C5E67862332671BC5F4739A588A50AE74485B857BDA9BAF12EF",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/automator-m5-l1-llm-in-flow.png"
+    },
+    {
+      "cellId": "automator-m5-l1-llm-in-flow__ar-MSA",
+      "lessonId": "automator-m5-l1-llm-in-flow",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "11136A2408201771AAB7DFB5D89F9C6CD44B7648FD33CFDF76C597FEDEF3D49E",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/automator-m5-l1-llm-in-flow.png"
+    },
+    {
+      "cellId": "automator-m5-l1-llm-in-flow__ar-Gulf",
+      "lessonId": "automator-m5-l1-llm-in-flow",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "6CF49DA509F8E69847F031D7AB9A527DB41A4A90E4DDB95E65BDEEDB7C5DE9CB",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/automator-m5-l1-llm-in-flow.png"
+    },
+    {
+      "cellId": "automator-m5-l1-llm-in-flow__en",
+      "lessonId": "automator-m5-l1-llm-in-flow",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "F0C53B25A75A4D5BF1F7947448BEEEB8E0162C7EAA5C2ABBEF0A277283A52953",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/automator-m5-l1-llm-in-flow.png"
+    },
+    {
+      "cellId": "automator-m5-l2-rag-in-n8n__ar-EG",
+      "lessonId": "automator-m5-l2-rag-in-n8n",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "4D0379A144C842A1789C4A004BD3E286006A24AF3AD7F6D4FCA2D4488A5565F4",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/automator-m5-l2-rag-in-n8n.png"
+    },
+    {
+      "cellId": "automator-m5-l2-rag-in-n8n__ar-MSA",
+      "lessonId": "automator-m5-l2-rag-in-n8n",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "6519D0B5E8DBFD828717276F9B850CC7A121F4287E2B71BE75828C866A4E23C4",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/automator-m5-l2-rag-in-n8n.png"
+    },
+    {
+      "cellId": "automator-m5-l2-rag-in-n8n__ar-Gulf",
+      "lessonId": "automator-m5-l2-rag-in-n8n",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "0DC4A551D7FB659F3B615E4262D6B699EEAF1021F1C36A32812943614FFA1966",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/automator-m5-l2-rag-in-n8n.png"
+    },
+    {
+      "cellId": "automator-m5-l2-rag-in-n8n__en",
+      "lessonId": "automator-m5-l2-rag-in-n8n",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "220E524D55DFCE8CA392EA0F704B3823402D9A315E4CD77A461EDA6D30EF2253",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/automator-m5-l2-rag-in-n8n.png"
+    },
+    {
+      "cellId": "automator-m5-l3-agents__ar-EG",
+      "lessonId": "automator-m5-l3-agents",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "224A7A64892FC6280BC29832F87629DC16F4EC0D70D9691E7436A57F334C76FE",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/automator-m5-l3-agents.png"
+    },
+    {
+      "cellId": "automator-m5-l3-agents__ar-MSA",
+      "lessonId": "automator-m5-l3-agents",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "EEBBC2CA5322D65CE93D230045FF780B91C34770D92535EED0CED2F4E4981E0C",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/automator-m5-l3-agents.png"
+    },
+    {
+      "cellId": "automator-m5-l3-agents__ar-Gulf",
+      "lessonId": "automator-m5-l3-agents",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "4EDDFEBB8379AD0192D6978AEBB0008AE2018FD6A998B9A029BFCA21955A4AAA",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/automator-m5-l3-agents.png"
+    },
+    {
+      "cellId": "automator-m5-l3-agents__en",
+      "lessonId": "automator-m5-l3-agents",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "09FEF93EC14E129F0AEFADDCE6AD1E47853085310E5D709AEA53BABB9B14EFE1",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/automator-m5-l3-agents.png"
+    },
+    {
+      "cellId": "automator-m6-l1-lead-capture__ar-EG",
+      "lessonId": "automator-m6-l1-lead-capture",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "B19142F77FB23DA982906ED22B1F18A8312D2D2685763B1C3C95D76747DF492D",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/automator-m6-l1-lead-capture.png"
+    },
+    {
+      "cellId": "automator-m6-l1-lead-capture__ar-MSA",
+      "lessonId": "automator-m6-l1-lead-capture",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "F09AABE9A022D04EB4E2364CCAC353F5BC5B7DFC1D17ADAE02F42F29B400D823",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/automator-m6-l1-lead-capture.png"
+    },
+    {
+      "cellId": "automator-m6-l1-lead-capture__ar-Gulf",
+      "lessonId": "automator-m6-l1-lead-capture",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "1B5EBC9575CFBA266CC19017E845053B6885C0F4773AA860C55523518DB6588F",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/automator-m6-l1-lead-capture.png"
+    },
+    {
+      "cellId": "automator-m6-l1-lead-capture__en",
+      "lessonId": "automator-m6-l1-lead-capture",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "EF32DFC789BDC8A3D010FE7B1026957EB8C280B2E07124CA305A75F29926A078",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/automator-m6-l1-lead-capture.png"
+    },
+    {
+      "cellId": "automator-m6-l2-whatsapp-flow__ar-EG",
+      "lessonId": "automator-m6-l2-whatsapp-flow",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "D9E5F8872493C44564EE1AE00F4211CDA4151DEC270052D1BADC002F85839FEF",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/automator-m6-l2-whatsapp-flow.png"
+    },
+    {
+      "cellId": "automator-m6-l2-whatsapp-flow__ar-MSA",
+      "lessonId": "automator-m6-l2-whatsapp-flow",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "884585C3DDEFB9C37A8523497EB9D531E5CB41E4205F90701505A27DCB7F60ED",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/automator-m6-l2-whatsapp-flow.png"
+    },
+    {
+      "cellId": "automator-m6-l2-whatsapp-flow__ar-Gulf",
+      "lessonId": "automator-m6-l2-whatsapp-flow",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "3707B7E9C6CD61BDB59F0DF7661EB1EE3EACE38023FC066A781ED124C1A076FF",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/automator-m6-l2-whatsapp-flow.png"
+    },
+    {
+      "cellId": "automator-m6-l2-whatsapp-flow__en",
+      "lessonId": "automator-m6-l2-whatsapp-flow",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "4AB3283B4469DFF3CF9DF1D7FB111B6C3A85D17AE534DF94EFD3A5DCAC3F6F33",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/automator-m6-l2-whatsapp-flow.png"
+    },
+    {
+      "cellId": "automator-m6-l3-follow-up__ar-EG",
+      "lessonId": "automator-m6-l3-follow-up",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "1E87565D4DF43DCBFB68BD3A94C537E43880FADAA32E9CFCCAA0EFF0B2687F47",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/automator-m6-l3-follow-up.png"
+    },
+    {
+      "cellId": "automator-m6-l3-follow-up__ar-MSA",
+      "lessonId": "automator-m6-l3-follow-up",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "52F59A9E5E9826730A6E5B2E3686B699EE36DBC648B089DEE59752E3B7E7F29A",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/automator-m6-l3-follow-up.png"
+    },
+    {
+      "cellId": "automator-m6-l3-follow-up__ar-Gulf",
+      "lessonId": "automator-m6-l3-follow-up",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "AACEAFB54973AF024C2CE69F4DCE54C2CD47451DBEF914AAC1FBAE1CBFF549A3",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/automator-m6-l3-follow-up.png"
+    },
+    {
+      "cellId": "automator-m6-l3-follow-up__en",
+      "lessonId": "automator-m6-l3-follow-up",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "C512EDAE2C6DA922677AA614C451C7DD57D4A8652E0E5945F86DE0A20B247160",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/automator-m6-l3-follow-up.png"
+    },
+    {
+      "cellId": "automator-m7-l1-closing-loop__ar-EG",
+      "lessonId": "automator-m7-l1-closing-loop",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "7D7BD484E6D731D555A513EEFC0209BF82F57BF4E3A4A03E86A6BA8FD49C6796",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/automator-m7-l1-closing-loop.png"
+    },
+    {
+      "cellId": "automator-m7-l1-closing-loop__ar-MSA",
+      "lessonId": "automator-m7-l1-closing-loop",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "3680890CF095299BB735A60893820A064F6A2EAF59C13E52669EF5A63D221847",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/automator-m7-l1-closing-loop.png"
+    },
+    {
+      "cellId": "automator-m7-l1-closing-loop__ar-Gulf",
+      "lessonId": "automator-m7-l1-closing-loop",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "C0F55640E93D78B5100BA7ED86455429C464BAF9EB788373D7000023EEB2BB00",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/automator-m7-l1-closing-loop.png"
+    },
+    {
+      "cellId": "automator-m7-l1-closing-loop__en",
+      "lessonId": "automator-m7-l1-closing-loop",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "A0F0DE078C628340F0E9E9F6402D73E4B17EDF098327662B975010CDD4450D48",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/automator-m7-l1-closing-loop.png"
+    },
+    {
+      "cellId": "builder-m1-l1-what-is-llm__ar-EG",
+      "lessonId": "builder-m1-l1-what-is-llm",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "62A53051AFC81314FBDCA859E0D0FC4283E8D0E8A682C155926BAAF67F78220C",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m1-l1-what-is-llm.png"
+    },
+    {
+      "cellId": "builder-m1-l1-what-is-llm__ar-MSA",
+      "lessonId": "builder-m1-l1-what-is-llm",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "179EE8CEADFF050C445ACF25407EBDBE6C498D1D7FADCA1ECE9D6025C5163416",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m1-l1-what-is-llm.png"
+    },
+    {
+      "cellId": "builder-m1-l1-what-is-llm__ar-Gulf",
+      "lessonId": "builder-m1-l1-what-is-llm",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "0E0FF14874C327421CC4BB3246C3A9BCC85A92B68697BB52B2B806FBE0AFFC5B",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m1-l1-what-is-llm.png"
+    },
+    {
+      "cellId": "builder-m1-l1-what-is-llm__en",
+      "lessonId": "builder-m1-l1-what-is-llm",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "983D2FB7AF7878EE57AE7BA0DB6484B72DAFFC26F2C9F58C165D9C10ABFE10E4",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m1-l1-what-is-llm.png"
+    },
+    {
+      "cellId": "builder-m1-l2-tokens-training__ar-EG",
+      "lessonId": "builder-m1-l2-tokens-training",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "EA14F960DC61B3455830D6ED815C6E4E84033814B974AFF9929213FC47A28ECF",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m1-l2-tokens-training.png"
+    },
+    {
+      "cellId": "builder-m1-l2-tokens-training__ar-MSA",
+      "lessonId": "builder-m1-l2-tokens-training",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "35EECAFF1B697EA63CA1B0BCB742DDB20B148B19EDFACE58D708B5897B67D96A",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m1-l2-tokens-training.png"
+    },
+    {
+      "cellId": "builder-m1-l2-tokens-training__ar-Gulf",
+      "lessonId": "builder-m1-l2-tokens-training",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "DFA40B50E95E06EDB86CD1E870F4F1A5D2D5D310FF09799AB880D4D5BD829AFB",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m1-l2-tokens-training.png"
+    },
+    {
+      "cellId": "builder-m1-l2-tokens-training__en",
+      "lessonId": "builder-m1-l2-tokens-training",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "41C132F2D86B01BCD2021BC43B18A981BEF3BC2C5E821352FDBACBAA0165778B",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m1-l2-tokens-training.png"
+    },
+    {
+      "cellId": "builder-m2-l1-prompt-layer__ar-EG",
+      "lessonId": "builder-m2-l1-prompt-layer",
+      "locale": "ar-EG",
+      "method": "A",
+      "acceptedSha256": "3F34460BE94A56FE98D227BF8631E7819534B74E6FD9ED5E15165EA7B78C9DA3",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m2-l1-prompt-layer.png"
+    },
+    {
+      "cellId": "builder-m2-l1-prompt-layer__ar-MSA",
+      "lessonId": "builder-m2-l1-prompt-layer",
+      "locale": "ar-MSA",
+      "method": "A",
+      "acceptedSha256": "47CFF34E4529DC7BEC7CE571BF19519252B91AD41508DE406B915B78CD4ABEA9",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m2-l1-prompt-layer.png"
+    },
+    {
+      "cellId": "builder-m2-l1-prompt-layer__ar-Gulf",
+      "lessonId": "builder-m2-l1-prompt-layer",
+      "locale": "ar-Gulf",
+      "method": "A",
+      "acceptedSha256": "31994FF98009A5B1DA9B907E8E95C809E0A1AB5D08152A3A67733E1C398AC70A",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m2-l1-prompt-layer.png"
+    },
+    {
+      "cellId": "builder-m2-l1-prompt-layer__en",
+      "lessonId": "builder-m2-l1-prompt-layer",
+      "locale": "en",
+      "method": "A",
+      "acceptedSha256": "F5965560A334A95492B5C4DA3A09789694E7352A61A4A7384EAFEC260C5DDB75",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m2-l1-prompt-layer.png"
+    },
+    {
+      "cellId": "builder-m2-l2-instructions-examples__ar-EG",
+      "lessonId": "builder-m2-l2-instructions-examples",
+      "locale": "ar-EG",
+      "method": "A",
+      "acceptedSha256": "5F6D5B2FC1D2CC92710C4C116C72EEA610D6C3F4DA377492F39067B9A093775D",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m2-l2-instructions-examples.png"
+    },
+    {
+      "cellId": "builder-m2-l2-instructions-examples__ar-MSA",
+      "lessonId": "builder-m2-l2-instructions-examples",
+      "locale": "ar-MSA",
+      "method": "A",
+      "acceptedSha256": "1A44BE132B02254FA813F7EF325C6338C1BBC1FF38ACEED0E3234BAA01F45D53",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m2-l2-instructions-examples.png"
+    },
+    {
+      "cellId": "builder-m2-l2-instructions-examples__ar-Gulf",
+      "lessonId": "builder-m2-l2-instructions-examples",
+      "locale": "ar-Gulf",
+      "method": "A",
+      "acceptedSha256": "965001180EEB7C2796B84B477CDEA955E9940C8D089DDB16C4FBC0B697721445",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m2-l2-instructions-examples.png"
+    },
+    {
+      "cellId": "builder-m2-l2-instructions-examples__en",
+      "lessonId": "builder-m2-l2-instructions-examples",
+      "locale": "en",
+      "method": "A",
+      "acceptedSha256": "51B98A12823A61A981CF8D7327117E1A4B6133AB58666B8DA21D11F426A7856D",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m2-l2-instructions-examples.png"
+    },
+    {
+      "cellId": "builder-m2-l3-style-control__ar-EG",
+      "lessonId": "builder-m2-l3-style-control",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "0A78A660187B79AB0910B01BDC4E13759FF1E3217B8D063D7AEED40F5DEC3B2D",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m2-l3-style-control.png"
+    },
+    {
+      "cellId": "builder-m2-l3-style-control__ar-MSA",
+      "lessonId": "builder-m2-l3-style-control",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "771728B176621A6AFD8C8C9510ECFD2BDA0644E8D300D9233B56493E2C621E0E",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m2-l3-style-control.png"
+    },
+    {
+      "cellId": "builder-m2-l3-style-control__ar-Gulf",
+      "lessonId": "builder-m2-l3-style-control",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "7234C57AAA39D86E1EA6ABB1E6DA32E35176B785A418FF2A1961FCE7E48F7F56",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m2-l3-style-control.png"
+    },
+    {
+      "cellId": "builder-m2-l3-style-control__en",
+      "lessonId": "builder-m2-l3-style-control",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "867716007E1B99090ABA5D914D41F138713636BA9F38711ACF204932D211160E",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m2-l3-style-control.png"
+    },
+    {
+      "cellId": "builder-m3-l1-context-layer__ar-EG",
+      "lessonId": "builder-m3-l1-context-layer",
+      "locale": "ar-EG",
+      "method": "A",
+      "acceptedSha256": "B4D9A999C8CEDF1462A6C5907814A002EF6DC5E892D31916BE1B7782B0C1BB69",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m3-l1-context-layer.png"
+    },
+    {
+      "cellId": "builder-m3-l1-context-layer__ar-MSA",
+      "lessonId": "builder-m3-l1-context-layer",
+      "locale": "ar-MSA",
+      "method": "A",
+      "acceptedSha256": "788E1896D4DE4AB0AF8B8A5F45851881AA564C34E44E62B701343F5C05F1E53A",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m3-l1-context-layer.png"
+    },
+    {
+      "cellId": "builder-m3-l1-context-layer__ar-Gulf",
+      "lessonId": "builder-m3-l1-context-layer",
+      "locale": "ar-Gulf",
+      "method": "A",
+      "acceptedSha256": "9BA76D031EFEB3A4F5EB03116AFFB1BA3E88464DFDF8F8DF7C717CB2687ECDA9",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m3-l1-context-layer.png"
+    },
+    {
+      "cellId": "builder-m3-l1-context-layer__en",
+      "lessonId": "builder-m3-l1-context-layer",
+      "locale": "en",
+      "method": "A",
+      "acceptedSha256": "54091020498B62F3808345D48DDDA72F258F091E4E45DC5928FEF11AECECD577",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m3-l1-context-layer.png"
+    },
+    {
+      "cellId": "builder-m3-l2-memory-limits__ar-EG",
+      "lessonId": "builder-m3-l2-memory-limits",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "B35A8715BCE56EE8CC487674AEBA6A770FBFD5563BD27C34D7BB3661AEE2C983",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m3-l2-memory-limits.png"
+    },
+    {
+      "cellId": "builder-m3-l2-memory-limits__ar-MSA",
+      "lessonId": "builder-m3-l2-memory-limits",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "4DE4A97F2E2AE898B36DD4B1059E04CB022F05141D764AD04739AE3DB851F1E1",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m3-l2-memory-limits.png"
+    },
+    {
+      "cellId": "builder-m3-l2-memory-limits__ar-Gulf",
+      "lessonId": "builder-m3-l2-memory-limits",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "803DCEBD93AF51BC555A2AB12FB72FB14EC48DB440DBD42C38ED79753F72B409",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m3-l2-memory-limits.png"
+    },
+    {
+      "cellId": "builder-m3-l2-memory-limits__en",
+      "lessonId": "builder-m3-l2-memory-limits",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "B8016123C8090E1032756C8293FB451B1AA5EB17DE73DC21370C7AC310315FE2",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m3-l2-memory-limits.png"
+    },
+    {
+      "cellId": "builder-m4-l1-parameters__ar-EG",
+      "lessonId": "builder-m4-l1-parameters",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "8044C92D72FEB6A3D2B772BFEFB31ACF2B760FC489B5C924958453079C81527A",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m4-l1-parameters.png"
+    },
+    {
+      "cellId": "builder-m4-l1-parameters__ar-MSA",
+      "lessonId": "builder-m4-l1-parameters",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "69CC9BB7679F439B458C6A949FAF12378562B674B030FCA806B225E1B77C163D",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m4-l1-parameters.png"
+    },
+    {
+      "cellId": "builder-m4-l1-parameters__ar-Gulf",
+      "lessonId": "builder-m4-l1-parameters",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "598EFC3E893486150A174A88D6DAA6129F2FD28CFF70443D777DA975725627FD",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m4-l1-parameters.png"
+    },
+    {
+      "cellId": "builder-m4-l1-parameters__en",
+      "lessonId": "builder-m4-l1-parameters",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "BC5D6624F2B6E0F9266A104D363F0A7D8C771C10231745C3028BFA356F371346",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m4-l1-parameters.png"
+    },
+    {
+      "cellId": "builder-m5-l1-transition__ar-EG",
+      "lessonId": "builder-m5-l1-transition",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "BFB58EC9806F8FE540B1397F6B8B9EC7AFB8DE8944EF2F22C6D7ACF3A496250E",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m5-l1-transition.png"
+    },
+    {
+      "cellId": "builder-m5-l1-transition__ar-MSA",
+      "lessonId": "builder-m5-l1-transition",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "3BF5A8EBC92142B5FF3F58B7BC1A12810703923A2FFF650974707B0D0D0B3519",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m5-l1-transition.png"
+    },
+    {
+      "cellId": "builder-m5-l1-transition__ar-Gulf",
+      "lessonId": "builder-m5-l1-transition",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "F2A74010C2201F123B93EB08B712D817FBEDE9418C6240D2CC100210B01E1F1D",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m5-l1-transition.png"
+    },
+    {
+      "cellId": "builder-m5-l1-transition__en",
+      "lessonId": "builder-m5-l1-transition",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "8BDE43878A488BC97774077C6CBB17C4A04E4AF8FBEAA4A4DC621B7BD7656B88",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m5-l1-transition.png"
+    },
+    {
+      "cellId": "builder-m5-l2-frontend__ar-EG",
+      "lessonId": "builder-m5-l2-frontend",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "1598D1E16CDC7D00DDAE4F2B61A0B94E3DC75A06B4AF426E2974E56153EAC544",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m5-l2-frontend.png"
+    },
+    {
+      "cellId": "builder-m5-l2-frontend__ar-MSA",
+      "lessonId": "builder-m5-l2-frontend",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "7DA5A2B1540EA59DE977728A78151D72CB40A9A409EE3EF347E85D47A34EC890",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m5-l2-frontend.png"
+    },
+    {
+      "cellId": "builder-m5-l2-frontend__ar-Gulf",
+      "lessonId": "builder-m5-l2-frontend",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "86E2D339238632FB78B302DDA88086A505A4CDA85B326080DF74D88608A1EC24",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m5-l2-frontend.png"
+    },
+    {
+      "cellId": "builder-m5-l2-frontend__en",
+      "lessonId": "builder-m5-l2-frontend",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "CD3B872E301E399C525E6FCBD2EBB18F010F6BD45D10E04AA62C791717E2B09F",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m5-l2-frontend.png"
+    },
+    {
+      "cellId": "builder-m5-l3-backend-api__ar-EG",
+      "lessonId": "builder-m5-l3-backend-api",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "0F24CE5C63C57AA93AFD8F945EE1448042AC44F256844056C5AC8625DF4BD16E",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m5-l3-backend-api.png"
+    },
+    {
+      "cellId": "builder-m5-l3-backend-api__ar-MSA",
+      "lessonId": "builder-m5-l3-backend-api",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "41E94454A830FF9590563262BA0E88F8D90C3DE4F7FDE094D9F4EEC2934048AF",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m5-l3-backend-api.png"
+    },
+    {
+      "cellId": "builder-m5-l3-backend-api__ar-Gulf",
+      "lessonId": "builder-m5-l3-backend-api",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "0AD999AD2B9124886414538BDE5B6ABA2F9D0720B1B3BD635C98A7D0531A0312",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m5-l3-backend-api.png"
+    },
+    {
+      "cellId": "builder-m5-l3-backend-api__en",
+      "lessonId": "builder-m5-l3-backend-api",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "F3DEDA42E816FA43D125660DD0552291A472CDA1F695DC7378804560D06CF693",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m5-l3-backend-api.png"
+    },
+    {
+      "cellId": "builder-m5-l4-database-intro__ar-EG",
+      "lessonId": "builder-m5-l4-database-intro",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "38109307AF584E3DEB4539E96DB1097F101E50908872B92080B539F6806B7854",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m5-l4-database-intro.png"
+    },
+    {
+      "cellId": "builder-m5-l4-database-intro__ar-MSA",
+      "lessonId": "builder-m5-l4-database-intro",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "85584CF26AF181BA138F7627E34751C15EC3472EB5E5B3AB0129E60B6886B3F6",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m5-l4-database-intro.png"
+    },
+    {
+      "cellId": "builder-m5-l4-database-intro__ar-Gulf",
+      "lessonId": "builder-m5-l4-database-intro",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "AE2A2AFD8C8D496C8581B4FA9F29287736AD261FDB956D9F1E3FC67BE98FBBAF",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m5-l4-database-intro.png"
+    },
+    {
+      "cellId": "builder-m5-l4-database-intro__en",
+      "lessonId": "builder-m5-l4-database-intro",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "D036AB4DCCD2D4EC9B81C1ED7CE7F26EFDB59AD909C99C02E1787B0D7ED78A7D",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m5-l4-database-intro.png"
+    },
+    {
+      "cellId": "builder-m5-l5-mini-win__ar-EG",
+      "lessonId": "builder-m5-l5-mini-win",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "D45315C6D05FCEAF2338F4F822AF456A25E4E9D47505A8C83A4C5710A9127E9F",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m5-l5-mini-win.png"
+    },
+    {
+      "cellId": "builder-m5-l5-mini-win__ar-MSA",
+      "lessonId": "builder-m5-l5-mini-win",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "D030A5D90F676C4162E58A96442175224576B95BE8069C9AD189EC1730F8ECA4",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m5-l5-mini-win.png"
+    },
+    {
+      "cellId": "builder-m5-l5-mini-win__ar-Gulf",
+      "lessonId": "builder-m5-l5-mini-win",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "B77E42D28C2DAEAA7BDF20B9005B0E592AB5DC161682F939EBCA0D07FE889801",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m5-l5-mini-win.png"
+    },
+    {
+      "cellId": "builder-m5-l5-mini-win__en",
+      "lessonId": "builder-m5-l5-mini-win",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "43C6594EC0BA994B2EA506FBA2E25A1AE33A8010EEF81D3909E71BF72BDA2E39",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m5-l5-mini-win.png"
+    },
+    {
+      "cellId": "builder-m6-l1-idea-to-page__ar-EG",
+      "lessonId": "builder-m6-l1-idea-to-page",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "1667B4DD0A105B7B68452F9F1B41112287B16D568B1448D334FFAB30E1118436",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m6-l1-idea-to-page.png"
+    },
+    {
+      "cellId": "builder-m6-l1-idea-to-page__ar-MSA",
+      "lessonId": "builder-m6-l1-idea-to-page",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "96FA24EF59240959A926612C0937FF11AB973799869B9F9DBF8D65C55F7A03F2",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m6-l1-idea-to-page.png"
+    },
+    {
+      "cellId": "builder-m6-l1-idea-to-page__ar-Gulf",
+      "lessonId": "builder-m6-l1-idea-to-page",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "7F15B43F87B9BFF39C1E4A311E7594F6E654DD650C4EB852B2AF732E5271B67D",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m6-l1-idea-to-page.png"
+    },
+    {
+      "cellId": "builder-m6-l1-idea-to-page__en",
+      "lessonId": "builder-m6-l1-idea-to-page",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "359D531911755BA560500C47A6AC1DD3740FCE35892B45AAEE22EEB0DDBD8D87",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m6-l1-idea-to-page.png"
+    },
+    {
+      "cellId": "builder-m6-l2-wireframe__ar-EG",
+      "lessonId": "builder-m6-l2-wireframe",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "1CDD069B6D98743083B6AD85B906017CB7B227B4ECDB6237D588B52236C5DE07",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m6-l2-wireframe.png"
+    },
+    {
+      "cellId": "builder-m6-l2-wireframe__ar-MSA",
+      "lessonId": "builder-m6-l2-wireframe",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "EFF5A7D5BF4B2514ACBAF71C507885A75AB1D6230A6DD7FB3586BADF11756362",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m6-l2-wireframe.png"
+    },
+    {
+      "cellId": "builder-m6-l2-wireframe__ar-Gulf",
+      "lessonId": "builder-m6-l2-wireframe",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "10F77094ABD95CD33FB1620D1F18F9645DF18A426D59004596452EFEC9F03E01",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m6-l2-wireframe.png"
+    },
+    {
+      "cellId": "builder-m6-l2-wireframe__en",
+      "lessonId": "builder-m6-l2-wireframe",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "EDF9EC246E4BA275A0C054E85129F786F4C3F12748CD9566B6819C453125755C",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m6-l2-wireframe.png"
+    },
+    {
+      "cellId": "builder-m6-l3-first-prompt-to-lovable__ar-EG",
+      "lessonId": "builder-m6-l3-first-prompt-to-lovable",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "C37DB9371483878D5558AD5250BDEED59177687680A17B0E859AFFB4B9352FAF",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m6-l3-first-prompt-to-lovable.png"
+    },
+    {
+      "cellId": "builder-m6-l3-first-prompt-to-lovable__ar-MSA",
+      "lessonId": "builder-m6-l3-first-prompt-to-lovable",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "784A4A7BC9531B060A3CF92D203A15C7DF8A6B9A4FBEC74D5BF59AF5B15BCAF0",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m6-l3-first-prompt-to-lovable.png"
+    },
+    {
+      "cellId": "builder-m6-l3-first-prompt-to-lovable__ar-Gulf",
+      "lessonId": "builder-m6-l3-first-prompt-to-lovable",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "9F1CC4EC3F3B89B088979590FF5726CDABD9A631B112DB34C5ED4C91247F72DF",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m6-l3-first-prompt-to-lovable.png"
+    },
+    {
+      "cellId": "builder-m6-l3-first-prompt-to-lovable__en",
+      "lessonId": "builder-m6-l3-first-prompt-to-lovable",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "0110DC1FD6DB95C616F51CA3DD81D3486D0E0C20ADB54D3A6A78FA8E1488847D",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m6-l3-first-prompt-to-lovable.png"
+    },
+    {
+      "cellId": "builder-m6-l4-components-routes__ar-EG",
+      "lessonId": "builder-m6-l4-components-routes",
+      "locale": "ar-EG",
+      "method": "A",
+      "acceptedSha256": "DC3CDC1CBF4FCDA4CCD3193B0C6602D5B568F12F22388FADFDD22CFBCACB515D",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m6-l4-components-routes.png"
+    },
+    {
+      "cellId": "builder-m6-l4-components-routes__ar-MSA",
+      "lessonId": "builder-m6-l4-components-routes",
+      "locale": "ar-MSA",
+      "method": "A",
+      "acceptedSha256": "665399D7A496C7BCF33E58ED72F04BF9D5A4089D5ED0BA7CE344D24859C3E951",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m6-l4-components-routes.png"
+    },
+    {
+      "cellId": "builder-m6-l4-components-routes__ar-Gulf",
+      "lessonId": "builder-m6-l4-components-routes",
+      "locale": "ar-Gulf",
+      "method": "A",
+      "acceptedSha256": "C29F021C3B57A05749E6927A98D751FEFAA4F5ACAF02A8FC7D5DE67B6A6DCBDD",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m6-l4-components-routes.png"
+    },
+    {
+      "cellId": "builder-m6-l4-components-routes__en",
+      "lessonId": "builder-m6-l4-components-routes",
+      "locale": "en",
+      "method": "A",
+      "acceptedSha256": "5F67D5C52061CC1CE73FAFBD81E3CB0E66B5A552D82ECAE4255C3A202F75F61A",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m6-l4-components-routes.png"
+    },
+    {
+      "cellId": "builder-m6-l5-iteration__ar-EG",
+      "lessonId": "builder-m6-l5-iteration",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "F844777A143C1C0D7ED633D5D0BC6FB79099C22E00564F6D9BE0765613540857",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m6-l5-iteration.png"
+    },
+    {
+      "cellId": "builder-m6-l5-iteration__ar-MSA",
+      "lessonId": "builder-m6-l5-iteration",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "6A8EE9AD2677AC6EE9FF5C552857B7BF4D6D0C4E8F2B3A624CEBF4158E9E898F",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m6-l5-iteration.png"
+    },
+    {
+      "cellId": "builder-m6-l5-iteration__ar-Gulf",
+      "lessonId": "builder-m6-l5-iteration",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "36B385EF1912DEBEC9B73AA2A7BD665D1331A282111A2187E733AECCF14320ED",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m6-l5-iteration.png"
+    },
+    {
+      "cellId": "builder-m6-l5-iteration__en",
+      "lessonId": "builder-m6-l5-iteration",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "A12BA5DDD9297EC68F01555EB3198F8691E08FC59B53CB4456E59759967E0D28",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m6-l5-iteration.png"
+    },
+    {
+      "cellId": "builder-m6-l6-debugging__ar-EG",
+      "lessonId": "builder-m6-l6-debugging",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "1BC5E75A022F249B1880A7C0660CAA40BFA51AE459B11D1ADBDA530B2F4AAB91",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m6-l6-debugging.png"
+    },
+    {
+      "cellId": "builder-m6-l6-debugging__ar-MSA",
+      "lessonId": "builder-m6-l6-debugging",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "1BA4449AEB65BD755B5D3666E31CDC41CA12B3196EA1A1E990E873D7C5CF33AF",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m6-l6-debugging.png"
+    },
+    {
+      "cellId": "builder-m6-l6-debugging__ar-Gulf",
+      "lessonId": "builder-m6-l6-debugging",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "9A099B64BC40C307CFD6EC5C9A221835D77933601820C74F66EC6F4D348F46B6",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m6-l6-debugging.png"
+    },
+    {
+      "cellId": "builder-m6-l6-debugging__en",
+      "lessonId": "builder-m6-l6-debugging",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "C644E710A1FDE5B79408A0AD64EC681A6B64924C364F7153FD4CE2A8FC0B93F9",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m6-l6-debugging.png"
+    },
+    {
+      "cellId": "builder-m7-l1-tables-columns__ar-EG",
+      "lessonId": "builder-m7-l1-tables-columns",
+      "locale": "ar-EG",
+      "method": "A",
+      "acceptedSha256": "21D8C039997D2E302E7E178978D61C5A096B5245B7F0C548F93165598460C9B9",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m7-l1-tables-columns.png"
+    },
+    {
+      "cellId": "builder-m7-l1-tables-columns__ar-MSA",
+      "lessonId": "builder-m7-l1-tables-columns",
+      "locale": "ar-MSA",
+      "method": "A",
+      "acceptedSha256": "D809707C54B09BF9C62FEB1C2233BE46EAB8F562A533DB1758816402F274A85B",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m7-l1-tables-columns.png"
+    },
+    {
+      "cellId": "builder-m7-l1-tables-columns__ar-Gulf",
+      "lessonId": "builder-m7-l1-tables-columns",
+      "locale": "ar-Gulf",
+      "method": "A",
+      "acceptedSha256": "59D97360811658D2A1DC974FEBE08CBDFDD608F17C26A673FCFDA6371F5838F9",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m7-l1-tables-columns.png"
+    },
+    {
+      "cellId": "builder-m7-l1-tables-columns__en",
+      "lessonId": "builder-m7-l1-tables-columns",
+      "locale": "en",
+      "method": "A",
+      "acceptedSha256": "0F08DBDD267127E934E3A41A5500FF23C1CF411F143C58391623E3E00CE4845B",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m7-l1-tables-columns.png"
+    },
+    {
+      "cellId": "builder-m7-l2-relations__ar-EG",
+      "lessonId": "builder-m7-l2-relations",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "C850BA325E13BA87DC310A5DDAD6AFD858531D71F149625D9325B163FAF48065",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m7-l2-relations.png"
+    },
+    {
+      "cellId": "builder-m7-l2-relations__ar-MSA",
+      "lessonId": "builder-m7-l2-relations",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "3BEF3EB496BBFA6954C0649319342BDC137CB38FE13DD3C6C2BDA71B51EEC9A9",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m7-l2-relations.png"
+    },
+    {
+      "cellId": "builder-m7-l2-relations__ar-Gulf",
+      "lessonId": "builder-m7-l2-relations",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "3C85781C2ACB8984A80F4BA2F6E976225383A02FCB18A7A2113650EF3967BAB9",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m7-l2-relations.png"
+    },
+    {
+      "cellId": "builder-m7-l2-relations__en",
+      "lessonId": "builder-m7-l2-relations",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "7B07FFD813661342951756588A3021BA96C708B7E25A1DABFC0AD72E0C2AE6C5",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m7-l2-relations.png"
+    },
+    {
+      "cellId": "builder-m7-l3-queries__ar-EG",
+      "lessonId": "builder-m7-l3-queries",
+      "locale": "ar-EG",
+      "method": "A",
+      "acceptedSha256": "37745D571B032F19DD761D48128ABCCE822C2CADD521B6A1BC17B022A445B79E",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m7-l3-queries.png"
+    },
+    {
+      "cellId": "builder-m7-l3-queries__ar-MSA",
+      "lessonId": "builder-m7-l3-queries",
+      "locale": "ar-MSA",
+      "method": "A",
+      "acceptedSha256": "06A95D9377A1DC72680DD65977AA0DCAC1B669F4913DB406DBE9B4B98DD4A392",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m7-l3-queries.png"
+    },
+    {
+      "cellId": "builder-m7-l3-queries__ar-Gulf",
+      "lessonId": "builder-m7-l3-queries",
+      "locale": "ar-Gulf",
+      "method": "A",
+      "acceptedSha256": "1D477D1769D9FD0B83664000412230A7341696E2058D882E7D947FFF52B05351",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m7-l3-queries.png"
+    },
+    {
+      "cellId": "builder-m7-l3-queries__en",
+      "lessonId": "builder-m7-l3-queries",
+      "locale": "en",
+      "method": "A",
+      "acceptedSha256": "B148E131B9023209E528FEFC88BED8E4DD518CA1367A1BE52DCE066C787A9290",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m7-l3-queries.png"
+    },
+    {
+      "cellId": "builder-m8-l1-sessions-jwt__ar-EG",
+      "lessonId": "builder-m8-l1-sessions-jwt",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "4FC7AEF05ABEE200146BA86FEC34A28E9361A996C2BDE23CC8EF4434352C7159",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m8-l1-sessions-jwt.png"
+    },
+    {
+      "cellId": "builder-m8-l1-sessions-jwt__ar-MSA",
+      "lessonId": "builder-m8-l1-sessions-jwt",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "04DD5A6686CB3EE5A508ABFF1E52EBD1D2C21276611620F61BFF88ABB76085BD",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m8-l1-sessions-jwt.png"
+    },
+    {
+      "cellId": "builder-m8-l1-sessions-jwt__ar-Gulf",
+      "lessonId": "builder-m8-l1-sessions-jwt",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "F85754B4624B3365F8B7FD570C0147300E239554B1A1F844ED36F48CBA767D45",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m8-l1-sessions-jwt.png"
+    },
+    {
+      "cellId": "builder-m8-l1-sessions-jwt__en",
+      "lessonId": "builder-m8-l1-sessions-jwt",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "AC4F04EBEF79696E93063096C3C437747518DF4D58473068BCD28EB434BC83DB",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m8-l1-sessions-jwt.png"
+    },
+    {
+      "cellId": "builder-m8-l2-rls__ar-EG",
+      "lessonId": "builder-m8-l2-rls",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "733F1DDDE9BCF4DFDABD21B9F01D0400C97AA14E63DBADBA85726F503CEB6D90",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m8-l2-rls.png"
+    },
+    {
+      "cellId": "builder-m8-l2-rls__ar-MSA",
+      "lessonId": "builder-m8-l2-rls",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "0EB40277192C26EF4D59D3F2FD114997C3E3EE41454A025F7C0A8C33191CD362",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m8-l2-rls.png"
+    },
+    {
+      "cellId": "builder-m8-l2-rls__ar-Gulf",
+      "lessonId": "builder-m8-l2-rls",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "DBB361CD5BA6096545F76DB80C1593C55322FE7EE4661167D2F9575D90422927",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m8-l2-rls.png"
+    },
+    {
+      "cellId": "builder-m8-l2-rls__en",
+      "lessonId": "builder-m8-l2-rls",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "57047C1451F152B3EB959C36BC7D10DDDF15BBD6EF9AE16DBFD69ECFEE9BE7EC",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m8-l2-rls.png"
+    },
+    {
+      "cellId": "builder-m9-l1-rag__ar-EG",
+      "lessonId": "builder-m9-l1-rag",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "EB2CA759C08D07BFD4E6BD52243689BBBA83C34C0DD8D3B048858F6B4CE1B2B4",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m9-l1-rag.png"
+    },
+    {
+      "cellId": "builder-m9-l1-rag__ar-MSA",
+      "lessonId": "builder-m9-l1-rag",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "DEB3C1385F464E1A7C7CB2E87C03F8439C150B8AE46A40A2BFB3533F60F0F8EF",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m9-l1-rag.png"
+    },
+    {
+      "cellId": "builder-m9-l1-rag__ar-Gulf",
+      "lessonId": "builder-m9-l1-rag",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "DCCB1D57C90C3C9E421252C411580CE989C72BC32070EE4FFB35F1B949BB79E6",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m9-l1-rag.png"
+    },
+    {
+      "cellId": "builder-m9-l1-rag__en",
+      "lessonId": "builder-m9-l1-rag",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "AA1F9F84EDD14A73EF9D19FAA0FFE480D63752BD03D336D3A5A4D8F8EA27BD21",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m9-l1-rag.png"
+    },
+    {
+      "cellId": "builder-m9-l2-embeddings__ar-EG",
+      "lessonId": "builder-m9-l2-embeddings",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "86FDD44672128338B5E032043F9446A05F882C33204C6D97B583AFF49BBC4CA0",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m9-l2-embeddings.png"
+    },
+    {
+      "cellId": "builder-m9-l2-embeddings__ar-MSA",
+      "lessonId": "builder-m9-l2-embeddings",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "7C91F1F1928A227D56867B2CC4217F00E8FDD57A2A63830B071D95D04538A674",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m9-l2-embeddings.png"
+    },
+    {
+      "cellId": "builder-m9-l2-embeddings__ar-Gulf",
+      "lessonId": "builder-m9-l2-embeddings",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "09811D8CAC491FFF9D1633866C9E42AC358CC7EF54E0BC8A879F9803F14BC393",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m9-l2-embeddings.png"
+    },
+    {
+      "cellId": "builder-m9-l2-embeddings__en",
+      "lessonId": "builder-m9-l2-embeddings",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "1BE3F5A651627CB0EE81279AC127EB7871B0E7155697AAFEFDBDAE781C6CE490",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m9-l2-embeddings.png"
+    },
+    {
+      "cellId": "builder-m9-l3-agents__ar-EG",
+      "lessonId": "builder-m9-l3-agents",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "52B5B29BC099CD7A9B7CBD8B56DB18346AC5DA05B190103D5653C7A128A814E3",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m9-l3-agents.png"
+    },
+    {
+      "cellId": "builder-m9-l3-agents__ar-MSA",
+      "lessonId": "builder-m9-l3-agents",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "8171AEE5032A33D9FE1868A5E38F6D6226C1231891197B119A1B928CBE618E02",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m9-l3-agents.png"
+    },
+    {
+      "cellId": "builder-m9-l3-agents__ar-Gulf",
+      "lessonId": "builder-m9-l3-agents",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "E1C20BFD075C30168BBBC113DF4AEFEAFA1F649B6C3D2FEE715CCA10D78017DA",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m9-l3-agents.png"
+    },
+    {
+      "cellId": "builder-m9-l3-agents__en",
+      "lessonId": "builder-m9-l3-agents",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "AE418719DCE0CEA51E82EA0C56DD0BAA747BEBF86DCE1D65BDA8364915702E6C",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m9-l3-agents.png"
+    },
+    {
+      "cellId": "builder-m10-l1-deploy-domain__ar-EG",
+      "lessonId": "builder-m10-l1-deploy-domain",
+      "locale": "ar-EG",
+      "method": "C",
+      "acceptedSha256": "E27C9FE62A6EB3F67075C8834200DEFEF5D9ADCABA86CFCEC1AC67A1301C1C83",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m10-l1-deploy-domain.png"
+    },
+    {
+      "cellId": "builder-m10-l1-deploy-domain__ar-MSA",
+      "lessonId": "builder-m10-l1-deploy-domain",
+      "locale": "ar-MSA",
+      "method": "C",
+      "acceptedSha256": "640289E8BAC05D6A064BF661C5309563CE407C8CE1136852EEDB14D77B8B9192",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m10-l1-deploy-domain.png"
+    },
+    {
+      "cellId": "builder-m10-l1-deploy-domain__ar-Gulf",
+      "lessonId": "builder-m10-l1-deploy-domain",
+      "locale": "ar-Gulf",
+      "method": "C",
+      "acceptedSha256": "3E905A71A74814B9C561E25E4BAD79DB1894BB95672A3BB2F61B226C643EAAEA",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m10-l1-deploy-domain.png"
+    },
+    {
+      "cellId": "builder-m10-l1-deploy-domain__en",
+      "lessonId": "builder-m10-l1-deploy-domain",
+      "locale": "en",
+      "method": "C",
+      "acceptedSha256": "5E6D3DD46168C957F705089BA37B20641B6AED3AFAD572FC3D51CA82D1711E5A",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m10-l1-deploy-domain.png"
+    },
+    {
+      "cellId": "builder-m10-l2-first-users__ar-EG",
+      "lessonId": "builder-m10-l2-first-users",
+      "locale": "ar-EG",
+      "method": "A",
+      "acceptedSha256": "D155549B891D9A1F146341F8DA769301232FE66E2507D818A9888C15527A8EF8",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-EG/builder-m10-l2-first-users.png"
+    },
+    {
+      "cellId": "builder-m10-l2-first-users__ar-MSA",
+      "lessonId": "builder-m10-l2-first-users",
+      "locale": "ar-MSA",
+      "method": "A",
+      "acceptedSha256": "8110EC9E8D2B9A5014661171A3C334EC0B2B7526956ED9A9E7291DD4D6F98793",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-MSA/builder-m10-l2-first-users.png"
+    },
+    {
+      "cellId": "builder-m10-l2-first-users__ar-Gulf",
+      "lessonId": "builder-m10-l2-first-users",
+      "locale": "ar-Gulf",
+      "method": "A",
+      "acceptedSha256": "C0C9791EAA956D54CAA438979538CB69B7F1EFC5753FB41BB9E57BE21151CB16",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/ar-Gulf/builder-m10-l2-first-users.png"
+    },
+    {
+      "cellId": "builder-m10-l2-first-users__en",
+      "lessonId": "builder-m10-l2-first-users",
+      "locale": "en",
+      "method": "A",
+      "acceptedSha256": "F365B25D08C7D9AB045598EAFA2B979D639F4CFCD6ECFE19EED8C450BFFC6FF5",
+      "realFormat": "png",
+      "assetKey": "src/assets/lesson-visuals/controlled-v1/en/builder-m10-l2-first-users.png"
+    }
+  ]
+}

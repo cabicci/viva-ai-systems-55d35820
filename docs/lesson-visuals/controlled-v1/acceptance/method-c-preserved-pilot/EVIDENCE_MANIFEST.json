@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "controlled-v1-method-c-preserved-pilot-evidence/1",
+  "authorizationId": "PRESERVED_METHOD_C_PILOT",
+  "runtimeIntegrationAuthorizationId": "CR-LV-RUNTIME-INTEGRATION-CORRECTION-20260801-11",
+  "producingWorkflowRunId": "30207382476",
+  "acceptedCellCount": 2,
+  "bytesImmutable": true,
+  "cells": [
+    {
+      "cellId": "intro-m1-l4-ai-can-cannot__ar-MSA",
+      "relativePath": "cells/intro-m1-l4-ai-can-cannot__ar-MSA/final.png",
+      "pngSha256": "354667DF7498BAA05DA256E123D9704D7A58C58DD9174937FF9C70A7B8C27D9F",
+      "receiptStatus": "ACCEPTED",
+      "note": "Preserved Method C pilot; not present in historical SOURCE zip residue (EG/en only)."
+    },
+    {
+      "cellId": "intro-m1-l4-ai-can-cannot__ar-Gulf",
+      "relativePath": "cells/intro-m1-l4-ai-can-cannot__ar-Gulf/final.png",
+      "pngSha256": "7CB0691ADF2EAA85B60790BC75CDB058701D68DA3580AA4A20A4EABEEE5C2831",
+      "receiptStatus": "ACCEPTED",
+      "note": "Preserved Method C pilot; not present in historical SOURCE zip residue (EG/en only)."
+    }
+  ],
+  "relatedResidueInHistoricalSourceZip": [
+    {
+      "cellId": "intro-m1-l4-ai-can-cannot__ar-EG",
+      "pngSha256": "176420CF055B481D8BF777388ACD37B994D89A9ABE4D31FE5CA3664AA25477E5",
+      "source": "controlled-v1-method-c-remaining-30221875344.zip residue"
+    },
+    {
+      "cellId": "intro-m1-l4-ai-can-cannot__en",
+      "pngSha256": "1AB25D663E9F081EE6C03545D6F47FC788CA7EFE2A3330A6CAC8784532AB6A6D",
+      "source": "controlled-v1-method-c-remaining-30221875344.zip residue; failed-only ACCEPTED recovery"
+    }
+  ],
+  "notes": [
+    "Do not regenerate preserved pilot PNG bytes.",
+    "ar-EG and en authentic bytes remain the excluded residue inside the committed Method C historical SOURCE zip."
+  ]
+}
