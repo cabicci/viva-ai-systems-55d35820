@@ -54,7 +54,7 @@ export const Route = createFileRoute("/dashboard")({
 
 function DashboardPage() {
   return (
-    <AuthSessionGate>
+    <AuthSessionGate fallback={<DashboardSkeleton />}>
       <Dashboard />
     </AuthSessionGate>
   );
