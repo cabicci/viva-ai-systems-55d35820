@@ -817,6 +817,52 @@ function findChrome(): string {
   return resolveChromeExecutable();
 }
 
+/**
+ * Root detection for controlled Lesson Visuals Chromium screenshot validation.
+ * Uses process.getuid when available (POSIX). Never inferred from OS family alone.
+ */
+export function isControlledVisualsRenderRoot(
+  getUid: () => number | undefined = () => process.getuid?.(),
+): boolean {
+  return getUid() === 0;
+}
+
+/**
+ * Append Chromium root-safe args only when the validation process runs as root.
+ * Deduplicates; leaves non-root sandbox behavior unchanged.
+ */
+export function appendRootChromiumSandboxArgs(
+  args: readonly string[],
+  options?: { getUid?: () => number | undefined },
+): string[] {
+  const out = [...args];
+  if (!isControlledVisualsRenderRoot(options?.getUid)) return out;
+  if (!out.includes("--no-sandbox")) out.push("--no-sandbox");
+  if (!out.includes("--disable-setuid-sandbox")) out.push("--disable-setuid-sandbox");
+  return out;
+}
+
+/** Deterministic Chrome screenshot argv for controlled-v1 Method C validation renders. */
+export function buildChromeScreenshotArgs(input: {
+  htmlPath: string;
+  pngPath: string;
+  userDataDir: string;
+  getUid?: () => number | undefined;
+}): string[] {
+  const uri = pathToFileURL(input.htmlPath).href;
+  const base = [
+    "--headless=new",
+    "--disable-gpu",
+    "--hide-scrollbars",
+    "--force-device-scale-factor=1",
+    `--window-size=${CANVAS_WIDTH},${CANVAS_HEIGHT}`,
+    `--user-data-dir=${input.userDataDir}`,
+    `--screenshot=${input.pngPath}`,
+    uri,
+  ];
+  return appendRootChromiumSandboxArgs(base, { getUid: input.getUid });
+}
+
 function renderHtmlToPng(htmlPath: string, pngPath: string): void {
   assertRenderAuthorized("renderHtmlToPng");
   renderTelemetry.browserLaunches += 1;
@@ -827,17 +873,7 @@ function renderHtmlToPng(htmlPath: string, pngPath: string): void {
     `controlled-v1-chrome-${createHash("sha1").update(htmlPath).digest("hex").slice(0, 10)}`,
   );
   mkdirSync(userData, { recursive: true });
-  const uri = pathToFileURL(htmlPath).href;
-  const args = [
-    "--headless=new",
-    "--disable-gpu",
-    "--hide-scrollbars",
-    "--force-device-scale-factor=1",
-    `--window-size=${CANVAS_WIDTH},${CANVAS_HEIGHT}`,
-    `--user-data-dir=${userData}`,
-    `--screenshot=${pngPath}`,
-    uri,
-  ];
+  const args = buildChromeScreenshotArgs({ htmlPath, pngPath, userDataDir: userData });
   const result = spawnSync(chrome, args, {
     encoding: "utf8",
     timeout: CHROME_RENDER_TIMEOUT_MS,
