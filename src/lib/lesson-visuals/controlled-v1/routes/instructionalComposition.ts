@@ -783,9 +783,9 @@ function discoverPlaywrightChromiumCandidates(): string[] {
   return found;
 }
 
-/** Resolve Chrome/Chromium executable; throw with precise classification if missing. */
-export function resolveChromeExecutable(): string {
-  const candidates = [
+/** Ordered Chrome/Chromium candidate paths (validation-only discovery). */
+export function listChromeExecutableCandidates(): string[] {
+  return [
     process.env.CHROME_PATH,
     process.env.GOOGLE_CHROME_BIN,
     "C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe",
@@ -795,9 +795,16 @@ export function resolveChromeExecutable(): string {
     "/usr/bin/google-chrome-stable",
     "/usr/bin/chromium",
     "/usr/bin/chromium-browser",
+    "/bin/chromium",
+    "/bin/chromium-browser",
     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
     ...discoverPlaywrightChromiumCandidates(),
   ].filter(Boolean) as string[];
+}
+
+/** Resolve Chrome/Chromium executable; throw with precise classification if missing. */
+export function resolveChromeExecutable(): string {
+  const candidates = listChromeExecutableCandidates();
   for (const c of candidates) {
     if (existsSync(c)) return c;
   }

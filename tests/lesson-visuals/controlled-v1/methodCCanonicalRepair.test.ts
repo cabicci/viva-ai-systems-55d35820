@@ -16,6 +16,7 @@ import {
   METHOD_C_CANONICAL_SOURCE_RUN_ID,
   METHOD_C_REMAINING_EXPECTED_PER_LOCALE,
   METHOD_C_REMAINING_EXPECTED_TOTAL,
+  METHOD_C_REMAINING_SELECTION_JSON_SHA256,
 } from "../../../src/lib/lesson-visuals/controlled-v1/constants";
 import {
   assertSourceUnchanged,
@@ -24,16 +25,13 @@ import {
   stageCanonicalMethodCArtifact,
   validateCanonicalStaging,
 } from "../../../src/lib/lesson-visuals/controlled-v1/methodCCanonicalRepair";
+import { resolveMethodCHistoricalSourceRoot } from "../../../src/lib/lesson-visuals/controlled-v1/materializeMethodCHistoricalSource";
 import { runMethodCCanonicalRepair } from "../../../src/lib/lesson-visuals/controlled-v1/runner";
 import {
   renderTelemetry,
   resetRenderTelemetry,
 } from "../../../src/lib/lesson-visuals/controlled-v1/routes/instructionalComposition";
 import { ARTIFACTS_ROOT } from "../../../src/lib/lesson-visuals/controlled-v1/paths";
-
-const HISTORICAL_SOURCE =
-  process.env.METHOD_C_CANONICAL_SOURCE_ROOT ??
-  "E:/Temp/method-c-356-canonical-repair/source-30221875344";
 
 const TINY_PNG = Buffer.from(
   "89504e470d0a1a0a0000000d49484452000000010000000108060000001f15c4890000000a49444154789c63000100000500010d0a2db40000000049454e44ae426082",
@@ -536,28 +534,28 @@ describe("method-c-canonical-repair packaging", () => {
 });
 
 describe("method-c-canonical-repair real historical artifact", () => {
-  const available = existsSync(
-    join(HISTORICAL_SOURCE, "artifacts/controlled-v1/reports/method-c-remaining-selection.json"),
-  );
-
-  it.skipIf(!available)(
+  it(
     "stages exactly 356/356 with source hash identity and excludes residue",
     () => {
+      const historicalSource = resolveMethodCHistoricalSourceRoot();
       const selectionPath = join(
-        HISTORICAL_SOURCE,
+        historicalSource,
         "artifacts/controlled-v1/reports/method-c-remaining-selection.json",
       );
+      expect(existsSync(selectionPath)).toBe(true);
+      expect(sha(readFileSync(selectionPath))).toBe(METHOD_C_REMAINING_SELECTION_JSON_SHA256);
+
       const allow = resolveAuthorizedAllowlist({ selectionJsonPath: selectionPath });
       expect(allow.ok).toBe(true);
       expect(allow.cellIds).toHaveLength(METHOD_C_REMAINING_EXPECTED_TOTAL);
 
-      const ledger = buildSourceHashLedger(HISTORICAL_SOURCE, allow.cellIds);
+      const ledger = buildSourceHashLedger(historicalSource, allow.cellIds);
       expect(ledger.ok).toBe(true);
       expect(ledger.ledger).toHaveLength(METHOD_C_REMAINING_EXPECTED_TOTAL * 2);
 
       const staging = tempDir("mcc-hist-");
       const staged = stageCanonicalMethodCArtifact({
-        sourceArtifactRoot: HISTORICAL_SOURCE,
+        sourceArtifactRoot: historicalSource,
         stagingRoot: staging,
         allowlist: allow.cellIds,
         sourceLedger: ledger.ledger,
@@ -592,7 +590,7 @@ describe("method-c-canonical-repair real historical artifact", () => {
           join(staging, "artifacts/controlled-v1/cells/intro-m1-l4-ai-can-cannot__en/final.png"),
         ),
       ).toBe(false);
-      expect(assertSourceUnchanged(HISTORICAL_SOURCE, ledger.ledger).ok).toBe(true);
+      expect(assertSourceUnchanged(historicalSource, ledger.ledger).ok).toBe(true);
       expect(renderTelemetry.rendererCalls).toBe(0);
 
       // Disposable staging removed by afterEach
