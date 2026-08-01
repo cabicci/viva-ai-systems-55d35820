@@ -23,6 +23,7 @@ import {
 } from "@/lib/locale-lessons/strict-localized-visual-policy";
 import type { LessonPackageLocale } from "@/lib/locale-lessons/types";
 import type { SupportedLocale } from "@/lib/locale/types";
+import { resolveControlledV1Visual } from "@/lib/lesson-visuals/controlled-v1/runtime/controlledV1BrowserResolver";
 
 function lessonVideoHasSource(
   block: Extract<IntroBlock, { kind: "lessonVideo" }>,
@@ -546,6 +547,64 @@ function BlockBody({
     }
 
     case "screenshot": {
+      const activeLocale = (videoLocale ?? locale) as SupportedLocale;
+      const controlled = lessonId
+        ? resolveControlledV1Visual({ lessonId, locale: activeLocale })
+        : null;
+      if (controlled?.ok) {
+        const label =
+          block.label ?? getUiString(locale, "intro.block.screenshotLabel");
+        return (
+          <figure
+            className="space-y-2"
+            data-locale-screenshot="asset"
+            data-controlled-v1="screenshot"
+            data-controlled-v1-cell={controlled.cellId}
+            data-controlled-v1-method={controlled.method}
+          >
+            <div className="overflow-hidden rounded-2xl border border-primary/25 ring-1 ring-primary/5 bg-card shadow-[0_8px_30px_-12px_hsl(var(--primary)/0.2)]">
+              <div className="flex items-center gap-1.5 bg-primary/10 border-b border-primary/20 px-3 py-2">
+                <Monitor className="h-3.5 w-3.5 text-primary" />
+                <span className="text-[11px] font-mono text-primary">{label}</span>
+              </div>
+              <img
+                src={controlled.url}
+                alt={
+                  block.alt ??
+                  block.caption ??
+                  getUiString(locale, "intro.block.screenshotAlt")
+                }
+                className="w-full h-auto block"
+                loading="lazy"
+                data-controlled-v1-img="1"
+              />
+            </div>
+            {block.caption && (
+              <figcaption className="text-xs text-muted-foreground flex items-center gap-1.5">
+                <ImageIcon className="h-3.5 w-3.5 text-primary" /> {block.caption}
+              </figcaption>
+            )}
+          </figure>
+        );
+      }
+      if (
+        controlled &&
+        controlled.reason !== "missing_lesson" &&
+        controlled.reason !== "unsupported_locale"
+      ) {
+        return (
+          <div
+            className="rounded-2xl border border-destructive/30 bg-destructive/5 p-4"
+            data-locale-screenshot="fail-closed"
+            data-controlled-v1-error={controlled.reason}
+          >
+            <p className="text-sm text-destructive">
+              Controlled visual unavailable for this lesson locale.
+            </p>
+          </div>
+        );
+      }
+
       const strictVisual = usesStrictLocalizedVisualPolicy(videoLocale);
       const src = strictVisual
         ? lessonId
@@ -656,6 +715,60 @@ function BlockBody({
     }
 
     case "diagram": {
+      const activeLocale = (videoLocale ?? locale) as SupportedLocale;
+      const controlled = lessonId
+        ? resolveControlledV1Visual({ lessonId, locale: activeLocale })
+        : null;
+      if (controlled?.ok) {
+        const label = block.label ?? getUiString(locale, "intro.block.diagramLabel");
+        return (
+          <figure
+            className="space-y-2"
+            data-locale-diagram="asset"
+            data-controlled-v1="diagram"
+            data-controlled-v1-cell={controlled.cellId}
+            data-controlled-v1-method={controlled.method}
+          >
+            <div className="overflow-hidden rounded-2xl border border-primary/20 bg-card">
+              <img
+                src={controlled.url}
+                alt={
+                  block.caption ??
+                  getUiString(locale, "intro.block.diagramLabel")
+                }
+                className="w-full h-auto block"
+                loading="lazy"
+                data-controlled-v1-img="1"
+              />
+            </div>
+            {block.caption && (
+              <figcaption className="text-xs text-muted-foreground flex items-center gap-1.5">
+                <ImageIcon className="h-3.5 w-3.5 text-primary" />{" "}
+                {block.caption}
+              </figcaption>
+            )}
+            <p className="text-[10px] font-mono text-primary/70">{label}</p>
+          </figure>
+        );
+      }
+      if (
+        controlled &&
+        controlled.reason !== "missing_lesson" &&
+        controlled.reason !== "unsupported_locale"
+      ) {
+        return (
+          <div
+            className="rounded-2xl border border-destructive/30 bg-destructive/5 p-4"
+            data-locale-diagram="fail-closed"
+            data-controlled-v1-error={controlled.reason}
+          >
+            <p className="text-sm text-destructive">
+              Controlled visual unavailable for this lesson locale.
+            </p>
+          </div>
+        );
+      }
+
       // Localized packages must never mount canonical LESSON_DIAGRAMS.
       if (usesStrictLocalizedVisualPolicy(videoLocale)) {
         const svgSrc = lessonId

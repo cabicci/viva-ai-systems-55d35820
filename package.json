@@ -4,9 +4,9 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
-    "build": "bun run roadmap:guard && vite build",
-    "build:dev": "bun run roadmap:guard && vite build --mode development",
+    "dev": "bun run controlled-visuals:materialize-runtime-assets && vite dev",
+    "build": "bun run roadmap:guard && bun run controlled-visuals:materialize-runtime-assets && vite build",
+    "build:dev": "bun run roadmap:guard && bun run controlled-visuals:materialize-runtime-assets && vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
@@ -59,10 +59,13 @@
     "controlled-visuals:method-a-remaining-six-lessons-24": "bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts method-a-remaining-six-lessons-24",
     "controlled-visuals:report-only": "bun run src/lib/lesson-visuals/controlled-v1/scripts/cli.ts report-only",
     "controlled-visuals:materialize-accepted-four-pilot-pngs": "bun run src/lib/lesson-visuals/controlled-v1/scripts/materialize_accepted_four_cell_pilot_pngs.ts",
+    "controlled-visuals:materialize-method-c-historical-source": "bun run src/lib/lesson-visuals/controlled-v1/scripts/materialize_method_c_historical_source.ts",
+    "controlled-visuals:materialize-runtime-assets": "bun run src/lib/lesson-visuals/controlled-v1/scripts/materialize_controlled_v1_runtime_assets.ts",
     "controlled-visuals:ensure-chrome": "bun run src/lib/lesson-visuals/controlled-v1/scripts/ensure_chrome.ts",
-    "controlled-visuals:test-static": "bun run controlled-visuals:materialize-accepted-four-pilot-pngs && bun run test:run -- tests/lesson-visuals/controlled-v1/classification.test.ts tests/lesson-visuals/controlled-v1/manifest.test.ts tests/lesson-visuals/controlled-v1/goldenRefs.test.ts tests/lesson-visuals/controlled-v1/localePurity.test.ts tests/lesson-visuals/controlled-v1/routes.test.ts tests/lesson-visuals/controlled-v1/controlledFailure.test.ts tests/lesson-visuals/controlled-v1/failedOnlyRecovery.test.ts tests/lesson-visuals/controlled-v1/canonicalReconciliation.test.ts tests/lesson-visuals/controlled-v1/methodCRemaining.test.ts tests/lesson-visuals/controlled-v1/methodBToCFourCellPilot.test.ts tests/lesson-visuals/controlled-v1/methodBToCRemainingEight.test.ts tests/lesson-visuals/controlled-v1/fourCellPilotAcceptance.test.ts tests/lesson-visuals/controlled-v1/methodCCanonicalRepair.test.ts tests/lesson-visuals/controlled-v1/full400Gate.test.ts",
+    "controlled-visuals:test-static": "bun run controlled-visuals:materialize-accepted-four-pilot-pngs && bun run controlled-visuals:materialize-method-c-historical-source && bun run controlled-visuals:materialize-runtime-assets && bun run test:run -- tests/lesson-visuals/controlled-v1/classification.test.ts tests/lesson-visuals/controlled-v1/manifest.test.ts tests/lesson-visuals/controlled-v1/goldenRefs.test.ts tests/lesson-visuals/controlled-v1/localePurity.test.ts tests/lesson-visuals/controlled-v1/routes.test.ts tests/lesson-visuals/controlled-v1/controlledFailure.test.ts tests/lesson-visuals/controlled-v1/failedOnlyRecovery.test.ts tests/lesson-visuals/controlled-v1/canonicalReconciliation.test.ts tests/lesson-visuals/controlled-v1/methodCRemaining.test.ts tests/lesson-visuals/controlled-v1/methodBToCFourCellPilot.test.ts tests/lesson-visuals/controlled-v1/methodBToCRemainingEight.test.ts tests/lesson-visuals/controlled-v1/fourCellPilotAcceptance.test.ts tests/lesson-visuals/controlled-v1/methodCCanonicalRepair.test.ts tests/lesson-visuals/controlled-v1/chromeRootSandboxArgs.test.ts tests/lesson-visuals/controlled-v1/full400Gate.test.ts tests/lesson-visuals/controlled-v1/runtimeIntegration.test.ts tests/lesson-visuals/controlled-v1/controlledV1ProductRenderer.test.tsx",
     "controlled-visuals:test-render": "bun run controlled-visuals:ensure-chrome && bun run test:run -- tests/lesson-visuals/controlled-v1/instructionalComposition.test.ts",
     "controlled-visuals:test": "bun run controlled-visuals:test-static && bun run controlled-visuals:test-render",
+    "controlled-visuals:test-runtime-integration": "bun run controlled-visuals:materialize-runtime-assets && bun run test:run -- tests/lesson-visuals/controlled-v1/runtimeIntegration.test.ts tests/lesson-visuals/controlled-v1/controlledV1ProductRenderer.test.tsx",
     "controlled-visuals:verify-golden": "bun run src/lib/lesson-visuals/controlled-v1/scripts/verify_golden.ts"
   },
   "dependencies": {

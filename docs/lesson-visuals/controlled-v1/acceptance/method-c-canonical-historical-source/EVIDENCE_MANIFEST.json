@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "controlled-v1-method-c-historical-source-evidence/1",
+  "authorizationId": "CR-LV-METHOD-C-356-CANONICAL-ARTIFACT-REPAIR-20260727-01",
+  "recoveryAuthorizationId": "CR-LV-METHOD-C-FIXTURE-REPRODUCIBILITY-RECOVERY-20260801-06",
+  "selectionJsonRelativePath": "method-c-remaining-selection.json",
+  "selectionJsonByteSize": 15864,
+  "selectionJsonSha256": "BA0EEFA91B15354682B13668198D1AD60F0B1D85300F1FD566039E245E0D7FE3",
+  "selectionJsonProvenance": {
+    "artifactId": "8637748753",
+    "artifactName": "controlled-v1-method-c-canonical-30222995912",
+    "artifactDigest": "9DBB6750EDC8E398C1A60A72DF37FD36EF039BCA95E45EC84F21C09CD2A5932D",
+    "workflowRunId": "30222995912",
+    "headSha": "67dcced033dfbbd66dd2d7324fc2396c421949f3",
+    "internalPath": "artifacts/controlled-v1/reports/method-c-remaining-selection.json",
+    "relationship": "Byte-identical selection JSON inside immutable accepted canonical Method C artifact 8637748753; staging relationship 356/356."
+  },
+  "sourceArchiveRelativePath": "controlled-v1-method-c-remaining-30221875344.zip",
+  "sourceArchiveByteSize": 94331043,
+  "sourceArchiveSha256": "914F985ABC45051943A8CCE5D72E43A6B5892017556877317F3A0225468528B7",
+  "sourceArchiveProvenance": {
+    "artifactId": "8637507763",
+    "artifactName": "controlled-v1-method-c-remaining-30221875344",
+    "artifactDigest": "914F985ABC45051943A8CCE5D72E43A6B5892017556877317F3A0225468528B7",
+    "workflowRunId": "30221875344",
+    "headSha": "6d01bbe07e0e97a02a84cdd38a7a722daad95d75",
+    "relationship": "Exact GitHub Actions artifact zip bytes used as METHOD_C canonical-repair historical source; contains the same selection JSON bytes and the 356 authorized cells plus excluded residue."
+  },
+  "bytesImmutable": true,
+  "notes": [
+    "Do not regenerate, reformat, or rewrite method-c-remaining-selection.json.",
+    "Materialize by verifying SHA-256 of the committed zip and selection JSON, then extracting the zip offline."
+  ]
+}

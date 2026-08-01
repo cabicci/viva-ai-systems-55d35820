@@ -39,7 +39,7 @@ public/**/*.mp4
 .env.local
 .env.*.local
 
-# Persona-sim — internal QA only; never deploy to public/
+# Persona-sim â€” internal QA only; never deploy to public/
 public/persona-sim/
 public/lesson-audit/
 scripts/persona-sim/output/
@@ -52,7 +52,7 @@ scripts/persona-sim/**/*-raw.json
 scripts/persona-sim/**/*checkpoint*.json
 scripts/persona-sim/**/*.heatmap.csv
 
-# Canonical API audit local reports (regenerate locally; gate recorded in ADAPTIVE_LESSON_ENGINE.md §9f–§9g)
+# Canonical API audit local reports (regenerate locally; gate recorded in ADAPTIVE_LESSON_ENGINE.md Â§9fâ€“Â§9g)
 docs/playbooks/adaptive-canonical/reports/*.md
 docs/playbooks/adaptive-canonical/reports/*.json
 docs/playbooks/adaptive-canonical/reports/.audit.lock
@@ -70,4 +70,12 @@ artifacts/controlled-v1/provenance/
 artifacts/controlled-v1/reports/
 artifacts/controlled-v1/contact-sheets/
 artifacts/controlled-v1/state/
+artifacts/controlled-v1/.method-c-historical-source/
+artifacts/controlled-v1/.runtime-materialize-cache/
+artifacts/controlled-v1/.runtime-inventory-gen/
 !artifacts/controlled-v1/.gitkeep
+
+# Deterministic controlled-v1 runtime assets (materialized before Vite)
+src/assets/lesson-visuals/controlled-v1/**
+!src/assets/lesson-visuals/controlled-v1/.gitkeep
+!src/assets/lesson-visuals/.gitkeep

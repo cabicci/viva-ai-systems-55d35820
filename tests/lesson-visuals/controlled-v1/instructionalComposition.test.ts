@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import {
   CHROME_RENDER_TIMEOUT_MS,
   generateInstructionalComposition,
+  listChromeExecutableCandidates,
   resolveChromeExecutable,
 } from "../../../src/lib/lesson-visuals/controlled-v1/routes/instructionalComposition";
 import { readPngDimensions } from "../../../src/lib/lesson-visuals/controlled-v1/goldenRefs";
@@ -55,6 +56,9 @@ describe(
 
     beforeAll(() => {
       delete process.env.CONTROLLED_V1_ZERO_RENDER;
+      const candidates = listChromeExecutableCandidates();
+      expect(candidates).toContain("/bin/chromium");
+      expect(candidates).toContain("/usr/bin/chromium");
       chromePath = resolveChromeExecutable();
       expect(existsSync(chromePath)).toBe(true);
     });
