@@ -25,6 +25,7 @@ export const Route = createFileRoute("/login")({
 
 function LoginPage() {
   const t = useUiString();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -40,7 +41,9 @@ function LoginPage() {
       return toast.error(error.message);
     }
     toast.success(t("auth.login.toast.success"));
-    window.location.assign("/dashboard");
+    // Client-side navigation: a full reload re-runs the whole auth boot
+    // sequence and leaves the user staring at a blank screen.
+    navigate({ to: "/dashboard", replace: true });
   }
 
   return (
