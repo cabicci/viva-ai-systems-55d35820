@@ -110,7 +110,7 @@ export function useEntitlement(): {
   });
   const admin = !!adminData;
 
-  const { data, isSuccess } = useQuery({
+  const { data, isFetched, isError } = useQuery({
     queryKey: [...SUB_QK, userId],
     queryFn: async (): Promise<Tier> => {
       if (!userId) return "free";
@@ -129,6 +129,7 @@ export function useEntitlement(): {
       return data === "pro" ? "pro" : "free";
     },
     enabled: !!userId,
+    retry: false,
     staleTime: 60_000,
   });
 
@@ -137,9 +138,12 @@ export function useEntitlement(): {
     tier,
     isPro: tier === "pro",
     isAdmin: admin,
-    // C6 fix: simplified — when there's no user we're loaded; when there is,
-    // we need BOTH the subscription query and the admin query to have settled.
-    isLoaded: !loading && (!userId || (isSuccess && adminLoaded)),
+    // Settled = fetched OR errored. A failing RPC (e.g. billing schema not
+    // deployed) must never wedge the lesson gate on "loading" forever.
+    isLoaded:
+      !loading ||
+      (!userId ||
+        ((isFetched || isError) && (adminFetched || adminErrored))),
   };
 }
 
