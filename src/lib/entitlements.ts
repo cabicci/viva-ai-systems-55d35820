@@ -87,7 +87,11 @@ export function useEntitlement(): {
   const { user, loading } = useAuth();
   const userId = user?.id ?? null;
 
-  const { data: adminData, isSuccess: adminLoaded } = useQuery({
+  const {
+    data: adminData,
+    isFetched: adminFetched,
+    isError: adminErrored,
+  } = useQuery({
     queryKey: [...ADMIN_QK, userId],
     queryFn: async (): Promise<boolean> => {
       if (!userId) return false;
