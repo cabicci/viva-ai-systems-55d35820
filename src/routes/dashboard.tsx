@@ -26,6 +26,7 @@ import { getLesson } from "@/lib/unified-lessons";
 import { WelcomeHint } from "@/components/dashboard/WelcomeHint";
 import { WelcomeChecklist } from "@/components/dashboard/WelcomeChecklist";
 import { StartWowBanner } from "@/components/dashboard/StartWowBanner";
+import { DashboardSkeleton } from "@/components/dashboard/DashboardSkeleton";
 import { ReviewsDueCard } from "@/components/dashboard/ReviewsDueCard";
 import { useCountUp } from "@/hooks/use-count-up";
 
@@ -54,7 +55,7 @@ export const Route = createFileRoute("/dashboard")({
 
 function DashboardPage() {
   return (
-    <AuthSessionGate>
+    <AuthSessionGate fallback={<DashboardSkeleton />}>
       <Dashboard />
     </AuthSessionGate>
   );
