@@ -1,20 +1,7 @@
-## الهدف
-تجميع الـ 400 صورة الخاصة بالدروس في ملف ZIP واحد جاهز للتنزيل من لوحة الملفات.
+Plan: Refresh the preview
 
-## المحتوى
-- المصدر: `src/assets/lesson-visuals/controlled-v1/` (400 صورة PNG).
-- المخرج: `/mnt/documents/lesson-visuals-400.zip`.
-- الصور تتحفظ بأسمائها الأصلية (اللي فيها lessonId + locale) عشان الربط يفضل واضح.
-- هيتضاف جوه الـ ZIP ملف `index.csv` فيه: اسم الملف، الدرس، اللغة، المسار — كفهرس مرجعي.
+1. Send a browser reload command to the active preview viewer via `execute_preview_javascript`.
+2. If the reload does not restore the preview (e.g. dev server is stuck), restart the Vite dev server and then reload.
+3. Confirm the preview is back online by reading the current route/state.
 
-## الخطوات
-1. جرد الملفات والتأكد من العدد = 400 وإن كل ملف حجمه > 0.
-2. توليد `index.csv` من المانيفست/أسماء الملفات.
-3. ضغط المجلد + الفهرس في ZIP واحد داخل `/mnt/documents`.
-4. التحقق: فتح الـ ZIP وقراءة قائمة محتوياته للتأكد من 401 عنصر (400 صورة + الفهرس).
-5. تقديم رابط التنزيل في الشات.
-
-## تفاصيل تقنية
-- الضغط باستخدام `zip` عبر nix (`nix run nixpkgs#zip`) أو Python `zipfile` لو أسرع.
-- صفر تعديلات على كود التطبيق أو قاعدة البيانات — العملية إخراج ملف فقط.
-- ملاحظة: الملفات مستثناة من Git، لكنها موجودة على القرص، فالضغط هيشتغل عادي.
+No file changes or database changes are required.
