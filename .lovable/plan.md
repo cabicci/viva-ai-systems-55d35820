@@ -1,45 +1,41 @@
-## الخلاصة
+## Independent Full Project Audit — Read-Only (CR-LOVABLE-INDEPENDENT-FULL-AUDIT-20260802-01)
 
-الدخول شغّال. المشكلة إن **لوحة التحكم بتفضل شاشة فاضية/سبينر لعدة ثواني** بعد الضغط على «دخول»، فحاسس إن الصفحة مش بتحمّل.
+Scope confirmed: inspection + non-mutating validation only. No edits, no commits, no publish, no DB mutation, no Billing/RAG/assistant invocation, no secret exposure.
 
-## ما تم التحقق منه فعليًا (لا افتراضات)
+### Pre-flight identity note (already observed, read-only)
+- Lovable workspace branch: `edit/edt-0f8bad60-a411-4d55-ab3c-b5bbe950f483`
+- HEAD: `4512d9c18fb385f9158ce3392c7e0553bd97d13b`
+- Sandbox `origin/main` resolves to the same SHA, ahead/behind `0/0`, clean tree — meaning the sandbox mirror does not independently evidence GitHub `main` (reported `2800792c…`). Real drift will be established by querying GitHub's API for `main` and comparing, and reported as INSUFFICIENT EVIDENCE where the API is unavailable.
 
-- `/login` بيرجع 200 والفورم شغال، ومفيش أخطاء runtime.
-- الجلسة في المتصفح صالحة (`sb-…auth-token` موجود، توكن اتجدد بنجاح 200).
-- بالانتقال لـ `/dashboard`: الصفحة تفضل عليها سبينر ونص فاضي (`تخطّى للمحتوى الأساسي` فقط)، وبعد عدة ثواني المحتوى بيظهر كامل وصحيح (اسم المستخدم، المراجعات، التقدّم).
+### Step 1 — Identity and drift
+Record workspace branch/HEAD, GitHub `main` SHA via read-only API, merge base, ahead/behind, working-tree state, changed paths, Preview identity (served build), Production identity (`masaarat.ai` read-only fetch), backend project ref. Explicitly separate "evidenced" from "assumed".
 
-## السبب الجذري
+### Step 2 — Safe validation commands
+Run and record exact command, exit code, verdict, output excerpt, artifacts produced:
+- `bun install --frozen-lockfile --dry-run` (lockfile consistency)
+- `tsgo` type check
+- `bun run lint` (no `--fix`)
+- `bunx prettier --check .`
+- `bun run test:run` (unit)
+- localization + curriculum checks (`check:curriculum`, `locale-lessons:validate-localized`, `lesson-visuals:validate`, `controlled-visuals:test-static`)
+- `bun run build` (production build)
+- dependency vulnerability scan
+- Supabase linter + read-only catalog/schema queries
+Any script that could reach Production, a provider, or mutate is skipped and reported BLOCKED with the reason.
 
-سلسلة انتظار متتابعة قبل رسم أي شيء:
+### Step 3 — Full static review
+- **Security/privacy**: auth + redirect handling, fail-open paths, RLS coverage, GRANTs, SECURITY DEFINER `search_path`/ownership, anon exposure, client-side secrets, XSS/unsafe HTML/URL, CORS, rate limiting, PII logging.
+- **Billing/entitlements**: `src/lib/entitlements.ts`, generated types, lesson/account gates, the seven public Billing wrappers, private schema boundaries, migration ordering, legacy subscription classification, fail-closed correctness, over-grant vs over-deny risk.
+- **RAG/assistant** (static only): reservation integration, wrapper usage, locale isolation, citation contract, release/error paths, quota-leak and unreleased-reservation risk.
+- **App correctness**: login/post-login navigation, dashboard skeleton, protected routes, lesson gates, async races, caching/staleness, null handling, responsive/a11y, broken routes/assets, ar-EG/ar-MSA/ar-Gulf/en localization, RTL handling, hardcoded strings.
+- **Engineering/release**: dead/duplicated code, unsafe casts, config drift, test gaps, CI gaps, env contract, migration safety, observability, rollback limits, docs-vs-behavior mismatch.
 
-1. `login.tsx` بيستخدم `window.location.assign("/dashboard")` → إعادة تحميل كاملة للتطبيق بدل تنقّل داخلي.
-2. `requireAuthBeforeLoad` بيعمل `supabase.auth.getSession()` قبل الدخول للمسار.
-3. `AuthProvider` بيعيد نفس التحقق + `claim_active_device` RPC.
-4. `AuthSessionGate` بيعرض سبينر كامل الشاشة لحد ما الاتنين يخلصوا.
-5. وبعدين لوحة التحكم بتطلب ~6 استعلامات (`lesson_progress`, `mission_submissions`, `has_role`, `get_my_billing_access_tier`, `user_streaks`, mastery) من غير أي هيكل مبدئي (skeleton).
+### Step 4 — Lovable-branch impact assessment
+Each changed path classified SAFE TO RETAIN / REQUIRES REWORK / REJECT / GENERATED-NOISE / INSUFFICIENT EVIDENCE, with behavioral effect, security+Billing effect, duplication/conflict with merged work, covering tests, smallest safe disposition. Special attention to Login, Dashboard, `entitlements.ts`, generated Supabase types. Nothing copied or merged.
 
-النتيجة: شاشة بيضا/سبينر طويل = «الصفحة مش بتحمّل».
+### Evidence format
+Each finding: ID, severity, confidence, exact file/line-range or component, reproducible evidence, actual impact, location (origin-main / Lovable-branch-only / Production-only / unlocatable), smallest correction, required tests, conflict risk with Billing/RAG/other audits. Deduplicated by root cause; no speculation reported as confirmed.
 
-## خطة التنفيذ (فرونت إند فقط)
-
-1. **تنقّل داخلي بدل reload**  
-   في `src/routes/login.tsx`: استبدال `window.location.assign("/dashboard")` بـ `navigate({ to: "/dashboard", replace: true })` — يشيل دورة boot كاملة.
-
-2. **منع ازدواج التحقق من الجلسة**  
-   في `src/lib/auth-route-guard.tsx`: `AuthSessionGate` يعرض السبينر فقط لو مفيش جلسة محليًا؛ لو `beforeLoad` عدّى بجلسة صالحة، نرسم المحتوى فورًا ونسيب `AuthProvider` يكمّل في الخلفية.
-
-3. **جعل `claim_active_device` غير حاجب**  
-   في `src/lib/auth-context.tsx`: `setLoading(false)` يحصل قبل انتظار الـ RPC (المنطق الأمني لفرض الجهاز الواحد يفضل كما هو — بيشتغل بعد ما الـ claim يستقر، بدون تغيير سلوكه).
-
-4. **هيكل تحميل (Skeleton) للوحة التحكم**  
-   في `src/routes/dashboard.tsx`: بدل السبينر الفاضي، إظهار skeleton للسايدبار + كروت التقدّم + قائمة المسارات، فالمستخدم يشوف الصفحة فورًا والبيانات تملى تدريجيًا.
-
-## تفاصيل تقنية
-
-- التغييرات كلها في طبقة العرض والتنقّل؛ مفيش تعديل على قاعدة البيانات، RLS، أو منطق الصلاحيات/الاشتراكات.
-- الملفات: `src/routes/login.tsx`، `src/lib/auth-route-guard.tsx`، `src/lib/auth-context.tsx`، `src/routes/dashboard.tsx` (+ مكوّن skeleton صغير جديد).
-- بعد التنفيذ: تسجيل التغيير في `roadmap_items` مع `[ai-edit]` وتشغيل `bun run roadmap:log` حسب قواعد المشروع.
-
-## التحقق بعد التنفيذ
-
-قياس الوقت من الضغط على «دخول» لحد أول محتوى مرسوم على الشاشة، والتأكد إنه أقل من ثانية، مع بقاء إعادة التوجيه لـ `/login` شغالة للمستخدم غير المسجّل.
+### Deliverable
+One in-chat report with all sixteen required sections, including rejected false positives, prioritized remediation sequence (not implemented), the first smallest bounded remediation batch, and the zero-mutation attestation, ending with exactly one marker:
+`LOVABLE_INDEPENDENT_FULL_AUDIT_COMPLETE` or `LOVABLE_INDEPENDENT_FULL_AUDIT_BLOCKED`.
