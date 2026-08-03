@@ -1,7 +1,28 @@
-Plan: Refresh the preview
+# لماذا لا يكتمل تسجيل الدخول في البريفيو (تشخيص ثم إصلاح)
 
-1. Send a browser reload command to the active preview viewer via `execute_preview_javascript`.
-2. If the reload does not restore the preview (e.g. dev server is stuck), restart the Vite dev server and then reload.
-3. Confirm the preview is back online by reading the current route/state.
+## ما تم التحقق منه فعلياً
+- سجلات المصادقة تُظهر تسجيل دخول ناجح وتجديد توكن ناجح (200) من أصل البريفيو `...lovableproject.com`.
+- صف الجهاز النشط للمستخدم موجود ويُحدَّث فعلاً (`user_active_device.updated_at = 10:00:17`)، أي أن `claim_active_device` يعمل.
+- الكود الحالي: `/dashboard` محمي بـ `requireAuthBeforeLoad` (يقرأ الجلسة من `localStorage`)، و`AuthSessionGate` يعيد التوجيه إلى `/login` عند غياب المستخدم، بالإضافة إلى مراقب «جهاز واحد فقط» في `auth-context.tsx` يستدعي `signOut()` عند اختلاف `device_id`.
 
-No file changes or database changes are required.
+## التشخيص غير مؤكد بعد
+الأعراض (الرجوع دائماً إلى `/login` رغم نجاح الدخول على السيرفر) تتوافق مع ثلاثة احتمالات، ولا يجوز تثبيت أحدها قبل القياس:
+1. مراقب الجهاز الواحد يسجّل خروجاً مباشرة بعد الدخول (تعارض بين نسخة البريفيو والموقع المنشور أو بين إعادة تحميل الإطار).
+2. تخزين `localStorage` داخل إطار البريفيو معزول/محجوب، فتضيع الجلسة قبل أن يقرأها `requireAuthBeforeLoad`.
+3. سباق زمني: `beforeLoad` يقرأ الجلسة قبل أن يكتب supabase-js التوكن.
+
+## الخطوة 1 — قياس (بدون تغيير سلوك)
+- إضافة تسجيل تشخيصي مؤقت في `src/lib/auth-context.tsx` و`src/lib/auth-route-guard.tsx`: سبب كل `signOut`، وقيمة `device_id` المحلي مقابل صف قاعدة البيانات، ونتيجة `getSession()` داخل `beforeLoad`، وهل `localStorage` قابل للكتابة داخل الإطار.
+- محاولة دخول واحدة في البريفيو ثم قراءة الكونسول لتحديد السبب الفعلي.
+
+## الخطوة 2 — الإصلاح حسب النتيجة
+- إن كان السبب مراقب الجهاز: تعطيل الطرد التلقائي داخل بيئة البريفيو/الإطار، والاكتفاء بالطرد عند تغيّر مؤكد بعد استقرار المطالبة (فرق زمني واضح، وليس أول قراءة بعد الدخول).
+- إن كان السبب التخزين المعزول: الاعتماد على كوكي التوكن الموجود أصلاً (`masaarat_access_token`) كمصدر احتياطي للجلسة داخل الإطار بدل الاعتماد على `localStorage` وحده.
+- إن كان السبب السباق الزمني: جعل `requireAuthBeforeLoad` ينتظر حدث المصادقة الأول بدل قراءة لقطة واحدة، وترك `AuthSessionGate` هو من يعيد التوجيه.
+
+## الخطوة 3 — التحقق والتنظيف
+- إعادة محاولة الدخول والتأكد من الوصول إلى `/dashboard` والبقاء فيه.
+- إزالة التسجيل التشخيصي المؤقت، وتسجيل التغيير في `roadmap_items` ثم `bun run roadmap:log`.
+
+## الملفات المتوقع لمسها
+`src/lib/auth-context.tsx`، `src/lib/auth-route-guard.tsx`، وربما `src/routes/login.tsx`. لا تغييرات في قاعدة البيانات ولا نشر.
