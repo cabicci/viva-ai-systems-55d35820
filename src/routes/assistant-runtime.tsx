@@ -16,6 +16,7 @@ import {
   Database,
 } from "lucide-react";
 import { useLearnerContext } from "@/lib/learner-context";
+import { useLocale } from "@/lib/locale/locale-context";
 import {
   usePlatformRetrieval,
   RETRIEVAL_CORPUS_SIZE,
@@ -24,6 +25,10 @@ import {
   callAssistantRuntime,
   type AssistantRuntimeResponsePayload,
 } from "@/lib/assistant-runtime";
+import {
+  buildAssistantRuntimePayload,
+  resolveAssistantLearnerContext,
+} from "@/lib/assistant/resolve-assistant-learner-context";
 import { Button } from "@/components/ui/button";
 import { Plug } from "lucide-react";
 import { requireAdminBeforeLoad } from "@/lib/admin-route-guard";
@@ -155,6 +160,7 @@ const FUTURE_FLOW = [
 
 function AssistantRuntimePage() {
   const ctx = useLearnerContext();
+  const { locale } = useLocale();
   const [query, setQuery] = useState("");
   const results = usePlatformRetrieval(query, { limit: 6 });
   const [backendLoading, setBackendLoading] = useState(false);
@@ -166,17 +172,10 @@ function AssistantRuntimePage() {
     setBackendLoading(true);
     setBackendError(null);
     try {
-      const resp = await callAssistantRuntime({
-        query: query.trim() || "ping",
-        learnerContext: {
-          currentPath: ctx.currentPath?.title ?? null,
-          currentModule: ctx.currentModule?.title ?? null,
-          currentLesson: ctx.currentLesson
-            ? `${ctx.currentLesson.title} · ${ctx.currentLesson.id}`
-            : null,
-        },
-        retrievalResults: results,
-      });
+      const resolved = resolveAssistantLearnerContext(locale, ctx);
+      const resp = await callAssistantRuntime(
+        buildAssistantRuntimePayload(query.trim() || "ping", resolved),
+      );
       setBackendResp(resp);
     } catch (e) {
       setBackendError(e instanceof Error ? e.message : "Unknown error");

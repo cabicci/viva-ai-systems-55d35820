@@ -25,6 +25,7 @@ describe("AssistantPanel locale wiring", () => {
 
   it("declares locale on assistant runtime client payload", () => {
     const source = readFileSync(path.join(REPO_ROOT, "src/lib/assistant-runtime.ts"), "utf8");
-    expect(source).toContain("locale?: string | null");
+    expect(source).toMatch(/locale:\s*RagPackageLocale\b/);
+    expect(source).not.toContain("locale?: string | null");
   });
 });
