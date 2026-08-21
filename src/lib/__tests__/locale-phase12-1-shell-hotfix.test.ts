@@ -62,6 +62,68 @@ describe("Phase 12.1 shell localization hotfix", () => {
         }),
       ).toBe("en");
     });
+
+    it("uses valid server URL when client URL is invalid", () => {
+      expect(
+        resolveRouterEffectiveLocale({
+          urlLocale: "fr-FR",
+          serverUrlLocale: "en",
+          serverCountryCode: "EG",
+        }),
+      ).toBe("en");
+    });
+
+    it("uses valid client cookie when client and server URL values are invalid", () => {
+      expect(
+        resolveRouterEffectiveLocale({
+          urlLocale: "fr-FR",
+          serverUrlLocale: "nope",
+          cookieLocale: "ar-MSA",
+          serverCountryCode: "US",
+        }),
+      ).toBe("ar-MSA");
+    });
+
+    it("uses valid server cookie when client cookie is invalid", () => {
+      expect(
+        resolveRouterEffectiveLocale({
+          cookieLocale: "EN",
+          serverCookieLocale: "en",
+          serverCountryCode: "EG",
+        }),
+      ).toBe("en");
+    });
+
+    it("lets valid server URL beat valid client cookie and geo", () => {
+      expect(
+        resolveRouterEffectiveLocale({
+          serverUrlLocale: "ar-Gulf",
+          cookieLocale: "en",
+          serverCountryCode: "US",
+        }),
+      ).toBe("ar-Gulf");
+    });
+
+    it("does not suppress valid US geo when URL and cookie values are invalid", () => {
+      expect(
+        resolveRouterEffectiveLocale({
+          urlLocale: "fr-FR",
+          cookieLocale: "nope",
+          serverCountryCode: "US",
+        }),
+      ).toBe("en");
+    });
+
+    it("uses existing default when all candidates are invalid and geo is missing", () => {
+      expect(
+        resolveRouterEffectiveLocale({
+          urlLocale: "fr-FR",
+          serverUrlLocale: "EN",
+          cookieLocale: "nope",
+          serverCookieLocale: "EN",
+        }),
+      ).toBe("ar-EG");
+    });
   });
 
   describe("landing hero/body copy across locales", () => {
@@ -86,9 +148,7 @@ describe("Phase 12.1 shell localization hotfix", () => {
 
     it("English hero is not Egyptian Arabic", () => {
       expect(getUiString("en", "hero.headline1")).toBe("Learn artificial intelligence");
-      expect(getUiString("en", "hero.headline1")).not.toBe(
-        getUiString("ar-EG", "hero.headline1"),
-      );
+      expect(getUiString("en", "hero.headline1")).not.toBe(getUiString("ar-EG", "hero.headline1"));
     });
 
     it("MSA and Gulf hero suffix differ from Egyptian where defined", () => {
@@ -119,9 +179,7 @@ describe("Phase 12.1 shell localization hotfix", () => {
     });
 
     it("falls back to Egyptian lesson access when package load fails", async () => {
-      const { resolveLessonAccess } = await import(
-        "@/lib/locale-lessons/resolve-lesson-access"
-      );
+      const { resolveLessonAccess } = await import("@/lib/locale-lessons/resolve-lesson-access");
       const access = resolveLessonAccess("intro-m1-l1-what-is-ai");
       expect(access.contentSource).toBe("egyptian-ts");
       expect(access.effectiveLocale).toBe("ar-EG");
@@ -138,23 +196,16 @@ describe("Phase 12.1 shell localization hotfix", () => {
           country,
         );
         expect(access.effectiveLocale).toBe("ar-EG");
-        expect(
-          resolvePublicLocale({ cookieLocale: "ar-EG", countryCode: country }).locale,
-        ).toBe("ar-EG");
+        expect(resolvePublicLocale({ cookieLocale: "ar-EG", countryCode: country }).locale).toBe(
+          "ar-EG",
+        );
       }
     });
 
     it("cookie masaarat_locale=en + geo EG resolves en", () => {
-      const access = resolveRouteLessonAccess(
-        LESSON_ID,
-        parseLessonPreviewSearch({}),
-        "en",
-        "EG",
-      );
+      const access = resolveRouteLessonAccess(LESSON_ID, parseLessonPreviewSearch({}), "en", "EG");
       expect(access.effectiveLocale).toBe("en");
-      expect(
-        resolvePublicLocale({ cookieLocale: "en", countryCode: "EG" }).locale,
-      ).toBe("en");
+      expect(resolvePublicLocale({ cookieLocale: "en", countryCode: "EG" }).locale).toBe("en");
     });
 
     it("URL ?locale=ar-Gulf + cookie en + geo US resolves ar-Gulf", () => {
