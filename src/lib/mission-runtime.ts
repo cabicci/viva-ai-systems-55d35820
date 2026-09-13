@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useMemo } from "react";
-import { LESSONS, type LessonContent, type MissionBlock } from "@/lib/unified-lessons";
+import type { LessonContent, MissionBlock } from "@/lib/lesson-catalog";
+import { useUnifiedLessonsContent } from "@/lib/unified-lessons-content";
 import { PATHS } from "@/lib/curriculum-data";
 import { useLearnerContext } from "@/lib/learner-context";
 import { addBuildLog } from "@/lib/build-logs";
@@ -102,9 +103,11 @@ function buildMission(l: LessonContent): MissionRecord | null {
   };
 }
 
-export function getMissionsFromLessons(): MissionRecord[] {
+export function getMissionsFromLessons(
+  lessons: readonly LessonContent[],
+): MissionRecord[] {
   const out: MissionRecord[] = [];
-  for (const l of LESSONS) {
+  for (const l of lessons) {
     const r = buildMission(l);
     if (r) out.push(r);
   }
@@ -117,13 +120,18 @@ export interface MissionRuntime {
   liveMissions: MissionRecord[];
   currentMission: MissionRecord | null;
   isPersisted: false;
+  isReady: boolean;
+  error: Error | null;
 }
 
 export function useMissionRuntime(): MissionRuntime {
   const ctx = useLearnerContext();
+  const content = useUnifiedLessonsContent();
 
   return useMemo<MissionRuntime>(() => {
-    const missions = getMissionsFromLessons();
+    const missions = content.lessons
+      ? getMissionsFromLessons(content.lessons)
+      : [];
     const liveMissions = missions;
     const currentLessonId = ctx.currentLesson?.id ?? null;
     const currentMission = currentLessonId
@@ -136,8 +144,10 @@ export function useMissionRuntime(): MissionRuntime {
       liveMissions,
       currentMission,
       isPersisted: false,
+      isReady: !content.isLoading && content.error === null,
+      error: content.error,
     };
-  }, [ctx.currentLesson?.id]);
+  }, [ctx.currentLesson?.id, content.lessons, content.isLoading, content.error]);
 }
 
 /* ============================================================== */

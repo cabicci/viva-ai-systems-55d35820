@@ -1,5 +1,5 @@
 import * as React from "react";
-import { getLesson } from "@/lib/unified-lessons";
+import { getLesson } from "@/lib/lesson-catalog";
 import { syncBuildLog } from "@/lib/cloud-sync";
 
 /**

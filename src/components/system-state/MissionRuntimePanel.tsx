@@ -24,10 +24,10 @@ export function MissionRuntimePanel() {
         </div>
 
         <div className="grid sm:grid-cols-3 gap-3">
-          <Stat label={t("systemState.missionRuntime.total")} value={String(mr.total)} />
+          <Stat label={t("systemState.missionRuntime.total")} value={mr.isReady ? String(mr.total) : "…"} />
           <Stat
             label={t("systemState.missionRuntime.connected")}
-            value={String(mr.liveMissions.length)}
+            value={mr.isReady ? String(mr.liveMissions.length) : "…"}
           />
           <Stat
             label={t("systemState.missionRuntime.persisted")}
@@ -39,7 +39,11 @@ export function MissionRuntimePanel() {
           <p className="font-mono text-[10px] tracking-widest text-muted-foreground mb-2">
             {t("systemState.missionRuntime.currentLabel")}
           </p>
-          {mr.currentMission ? (
+          {mr.error ? (
+            <p className="text-sm text-destructive">{mr.error.message}</p>
+          ) : !mr.isReady ? (
+            <p className="text-sm text-muted-foreground">…</p>
+          ) : mr.currentMission ? (
             <div className="space-y-2">
               <div className="flex items-center gap-2 flex-wrap">
                 <p className="text-sm font-bold text-foreground">

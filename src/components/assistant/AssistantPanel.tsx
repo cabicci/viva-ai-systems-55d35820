@@ -42,7 +42,7 @@ export function AssistantPanel({ compact = false, contextOverride = null }: Prop
     if (!q || loading) return;
     setAssistantSession({ loading: true, error: null, query: "" });
     try {
-      const retrievalResults = searchPlatformContent(q, {
+      const retrievalResults = await searchPlatformContent(q, {
         limit: 5,
         preferLessonId: resolvedContext.preferLessonId,
         preferPathId: resolvedContext.preferPathId,

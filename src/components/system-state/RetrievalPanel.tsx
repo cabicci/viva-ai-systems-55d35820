@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { Search as SearchIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { usePlatformRetrieval, RETRIEVAL_CORPUS_SIZE } from "@/lib/platform-retrieval";
+import { usePlatformRetrieval } from "@/lib/platform-retrieval";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 import { Section } from "./primitives";
 
 export function RetrievalPanel() {
   const t = useUiString();
   const [query, setQuery] = useState("Context Window");
-  const results = usePlatformRetrieval(query, { limit: 8 });
+  const retrieval = usePlatformRetrieval(query, { limit: 8 });
+  const { results } = retrieval;
 
   return (
     <Section
@@ -29,7 +30,10 @@ export function RetrievalPanel() {
             {t("systemState.retrieval.bodyAfter")}
           </p>
           <span className="font-mono text-[10px] tracking-widest text-muted-foreground">
-            {t("systemState.retrieval.corpus").replace("{count}", String(RETRIEVAL_CORPUS_SIZE))}
+            {t("systemState.retrieval.corpus").replace(
+              "{count}",
+              retrieval.isLoading ? "…" : String(retrieval.corpusSize),
+            )}
           </span>
         </div>
 
@@ -52,7 +56,15 @@ export function RetrievalPanel() {
         </div>
 
         <div className="space-y-2">
-          {results.length === 0 ? (
+          {retrieval.error ? (
+            <div className="rounded-lg border border-destructive/40 p-4 text-sm text-destructive text-center">
+              {retrieval.error.message}
+            </div>
+          ) : retrieval.isLoading ? (
+            <div className="rounded-lg border border-border/40 p-4 text-sm text-muted-foreground text-center">
+              …
+            </div>
+          ) : results.length === 0 ? (
             <div className="rounded-lg border border-border/40 p-4 text-sm text-muted-foreground text-center">
               {t("systemState.retrieval.empty")}
             </div>

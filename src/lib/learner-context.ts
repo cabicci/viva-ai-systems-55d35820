@@ -2,7 +2,8 @@ import { useMemo } from "react";
 import { useLocation } from "@tanstack/react-router";
 import { useAuth } from "@/lib/auth-context";
 import { useLessonProgress, type LessonStatus } from "@/lib/lesson-progress";
-import { LESSONS, type LessonContent, type MissionBlock } from "@/lib/unified-lessons";
+import { LESSONS, type LessonContent, type MissionBlock } from "@/lib/lesson-catalog";
+import { useUnifiedLessonsContent } from "@/lib/unified-lessons-content";
 import {
   PATHS,
   type CurriculumPath,
@@ -48,12 +49,16 @@ export interface LearnerContext {
 
   /* meta */
   isReady: boolean;
+  contentError: Error | null;
   resolvedAt: string;
 }
 
-function findLessonById(id: string | null): LessonContent | null {
+function findLessonById(
+  lessons: readonly LessonContent[],
+  id: string | null,
+): LessonContent | null {
   if (!id) return null;
-  return LESSONS.find((l) => l.id === id) ?? null;
+  return lessons.find((lesson) => lesson.id === id) ?? null;
 }
 
 function findCurriculumLocation(lessonId: string | null): {
@@ -87,11 +92,13 @@ export function useLearnerContext(): LearnerContext {
   const { user, loading: authLoading } = useAuth();
   const location = useLocation();
   const { store, getStatus, isLoaded } = useLessonProgress();
+  const content = useUnifiedLessonsContent();
 
   return useMemo<LearnerContext>(() => {
+    const lessons = content.lessons ?? LESSONS;
     const pathname = location.pathname;
     const lessonIdFromRoute = parseLessonIdFromPath(pathname);
-    const currentLesson = findLessonById(lessonIdFromRoute);
+    const currentLesson = findLessonById(lessons, lessonIdFromRoute);
 
     const { path: pathFromLesson, module: moduleFromLesson } =
       findCurriculumLocation(lessonIdFromRoute);
@@ -101,7 +108,7 @@ export function useLearnerContext(): LearnerContext {
     const currentLessonStatus = lessonIdFromRoute
       ? getStatus(lessonIdFromRoute)
       : null;
-    const currentMission = currentLesson?.mission ?? null;
+    const currentMission = content.lessons ? currentLesson?.mission ?? null : null;
 
     /* progress: count across the path the learner is currently in.
        Fallback to intro (the universal onboarding path) if we can't
@@ -124,7 +131,7 @@ export function useLearnerContext(): LearnerContext {
     let lastCompletedLesson: LessonContent | null = null;
     for (let i = availableIds.length - 1; i >= 0; i--) {
       if (store[availableIds[i]] === "completed") {
-        lastCompletedLesson = findLessonById(availableIds[i]);
+        lastCompletedLesson = findLessonById(lessons, availableIds[i]);
         break;
       }
     }
@@ -136,13 +143,13 @@ export function useLearnerContext(): LearnerContext {
     if (lessonIdFromRoute) {
       const idx = availableIds.indexOf(lessonIdFromRoute);
       if (idx >= 0 && idx + 1 < availableIds.length) {
-        nextLesson = findLessonById(availableIds[idx + 1]);
+        nextLesson = findLessonById(lessons, availableIds[idx + 1]);
       }
     } else {
       const firstUnfinished = availableIds.find(
         (id) => store[id] !== "completed",
       );
-      nextLesson = firstUnfinished ? findLessonById(firstUnfinished) : null;
+      nextLesson = firstUnfinished ? findLessonById(lessons, firstUnfinished) : null;
     }
 
     return {
@@ -161,7 +168,12 @@ export function useLearnerContext(): LearnerContext {
       totalLessonsCount,
       lastCompletedLesson,
       nextLesson,
-      isReady: !authLoading && (!!user ? isLoaded : true),
+      isReady:
+        !authLoading &&
+        (!!user ? isLoaded : true) &&
+        !content.isLoading &&
+        content.error === null,
+      contentError: content.error,
       resolvedAt: new Date().toISOString(),
     };
   }, [
@@ -171,5 +183,8 @@ export function useLearnerContext(): LearnerContext {
     store,
     getStatus,
     isLoaded,
+    content.lessons,
+    content.isLoading,
+    content.error,
   ]);
 }

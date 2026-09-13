@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sidebar } from "@/components/dashboard/Sidebar";
-import { LESSONS } from "@/lib/unified-lessons";
+import { LESSONS } from "@/lib/lesson-catalog";
 import { PATHS } from "@/lib/curriculum-data";
 import {
   Section,

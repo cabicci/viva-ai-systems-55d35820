@@ -55,12 +55,18 @@ vi.mock("@/lib/mission-runtime", () => ({
     isPersisted: false,
     currentMission: null,
     missions: [],
+    isReady: true,
+    error: null,
   }),
 }));
 
 vi.mock("@/lib/platform-retrieval", () => ({
-  RETRIEVAL_CORPUS_SIZE: 12,
-  usePlatformRetrieval: () => [],
+  usePlatformRetrieval: () => ({
+    results: [],
+    corpusSize: 12,
+    isLoading: false,
+    error: null,
+  }),
 }));
 
 async function renderSystemState(locale: SupportedLocale) {
