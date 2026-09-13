@@ -4,6 +4,13 @@ import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { enforceRateLimit } from "./rate-limit.server";
 import { callAI } from "./ai-providers.server";
 
+const MISSION_EVALUATION_LOCALES = [
+  "ar-EG",
+  "ar-MSA",
+  "ar-Gulf",
+  "en",
+] as const;
+
 // Load supabaseAdmin dynamically inside handlers so its top-level import
 // never reaches the client bundle.
 async function loadSupabaseAdmin() {
@@ -22,19 +29,10 @@ async function loadSupabaseAdmin() {
  * UI so it can render feedback without an extra round-trip.
  */
 
-const RubricCriterionSchema = z.object({
-  label: z.string().min(1).max(120),
-  weight: z.number().min(0).max(100),
-  criteria: z.array(z.string().min(1).max(400)).min(1).max(8),
-});
-
 const InputSchema = z.object({
   submissionId: z.string().uuid(),
   missionId: z.string().min(1).max(200),
-  lessonTitle: z.string().min(1).max(200),
-  missionPrompt: z.string().min(1).max(4000),
-  submissionText: z.string().min(1).max(8000),
-  rubric: z.array(RubricCriterionSchema).min(1).max(6),
+  locale: z.enum(MISSION_EVALUATION_LOCALES),
 });
 
 export type AIEvaluationResult = {
@@ -89,7 +87,7 @@ export const evaluateMissionWithAI = createServerFn({ method: "POST" })
     // injection vector into the AI evaluator).
     const { data: row, error: rowErr } = await supabaseAdmin
       .from("mission_submissions")
-      .select("id, user_id, mission_id")
+      .select("id, user_id, mission_id, lesson_id, submission_text")
       .eq("id", data.submissionId)
       .eq("user_id", userId)
       .eq("mission_id", data.missionId)
@@ -99,7 +97,18 @@ export const evaluateMissionWithAI = createServerFn({ method: "POST" })
       throw new Error("التسليم غير موجود.");
     }
 
-    const rubricText = data.rubric
+    const lessonId = z.string().min(1).max(200).parse(row.lesson_id);
+    const submissionText = z.string().min(1).max(8000).parse(row.submission_text);
+    const { resolveCanonicalMissionEvaluationSource } = await import(
+      "./mission-evaluation-source.server"
+    );
+    const source = await resolveCanonicalMissionEvaluationSource({
+      locale: data.locale,
+      lessonId,
+      missionId: data.missionId,
+    });
+
+    const rubricText = source.rubric
       .map(
         (r, i) =>
           `${i + 1}. ${r.label} (الوزن: ${r.weight}%)\n   - ${r.criteria.join("\n   - ")}`,
@@ -122,16 +131,16 @@ export const evaluateMissionWithAI = createServerFn({ method: "POST" })
 - عربية مصرية بسيطة، مفيش مصطلحات معقدة.
 - متبخلش في الدرجات لو الطالب اجتهد — درجات الـ ٧٠+ مسموحة وطبيعية لتسليم متوسط مكتمل.`;
 
-    const userPrompt = `الدرس: ${data.lessonTitle}
+    const userPrompt = `الدرس: ${source.lessonTitle}
 
 المهمة:
-${data.missionPrompt}
+${source.missionPrompt}
 
 الـ Rubric:
 ${rubricText}
 
 تسليم الطالب:
-${data.submissionText}
+${submissionText}
 
 ردّ بالـ JSON الشكل ده بالظبط:
 {
