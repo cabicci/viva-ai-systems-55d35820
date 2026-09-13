@@ -13,10 +13,7 @@ import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 
 export const Route = createFileRoute("/login")({
-  validateSearch: (raw: Record<string, unknown>) => ({
-    ...parseLocaleSearchParam(raw),
-    next: safeNextPath(raw.next),
-  }),
+  validateSearch: (raw: Record<string, unknown>) => parseLocaleSearchParam(raw),
   head: async ({ match }) => {
     const locale = await resolveRouteHeadLocale({
       searchLocale: match.search.locale,
@@ -29,7 +26,6 @@ export const Route = createFileRoute("/login")({
 function LoginPage() {
   const t = useUiString();
   const navigate = useNavigate();
-  const { next } = Route.useSearch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -47,10 +43,6 @@ function LoginPage() {
     toast.success(t("auth.login.toast.success"));
     // Client-side navigation: a full reload re-runs the whole auth boot
     // sequence and leaves the user staring at a blank screen.
-    if (next) {
-      window.location.assign(next);
-      return;
-    }
     navigate({ to: "/dashboard", replace: true });
   }
 
@@ -95,10 +87,4 @@ function LoginPage() {
       </p>
     </AuthShell>
   );
-}
-
-function safeNextPath(value: unknown): string | undefined {
-  if (typeof value !== "string") return undefined;
-  if (!value.startsWith("/") || value.startsWith("//")) return undefined;
-  return value;
 }

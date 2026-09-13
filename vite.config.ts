@@ -5,7 +5,6 @@
 //     error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
-import { mcpPlugin } from "@lovable.dev/mcp-js/stacks/tanstack/vite";
 
 const SUPABASE_URL_FALLBACK = "https://abyqqeboyrkkwhjpwmtd.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY_FALLBACK = "sb_publishable_3MyGQEicwQZylzNYIufi8g_fzNWmwgX";
@@ -14,7 +13,6 @@ const SUPABASE_PUBLISHABLE_KEY_FALLBACK = "sb_publishable_3MyGQEicwQZylzNYIufi8g
 // @cloudflare/vite-plugin builds from this — wrangler.jsonc main alone is insufficient.
 export default defineConfig({
   vite: {
-    plugins: [mcpPlugin()],
     define: {
       "import.meta.env.VITE_SUPABASE_URL": JSON.stringify(process.env.VITE_SUPABASE_URL || SUPABASE_URL_FALLBACK),
       "import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY": JSON.stringify(
