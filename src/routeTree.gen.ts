@@ -18,6 +18,7 @@ import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as McpRouteImport } from './routes/mcp'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as ImageGalleryRouteImport } from './routes/image-gallery'
 import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
@@ -34,7 +35,9 @@ import { Route as ImageGalleryIndexRouteImport } from './routes/image-gallery.in
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as RoadmapIdRouteImport } from './routes/roadmap.$id'
 import { Route as ImageGalleryPathRouteImport } from './routes/image-gallery.$path'
+import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as LearnPathIdLessonIdRouteImport } from './routes/learn.$pathId.$lessonId'
+import { Route as DotlovableOauthConsentRouteImport } from './routes/[.]lovable.oauth.consent'
 
 const Char91indexChar93Route = Char91indexChar93RouteImport.update({
   id: '/index',
@@ -79,6 +82,11 @@ const PricingRoute = PricingRouteImport.update({
 const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const McpRoute = McpRouteImport.update({
+  id: '/mcp',
+  path: '/mcp',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -161,9 +169,20 @@ const ImageGalleryPathRoute = ImageGalleryPathRouteImport.update({
   path: '/$path',
   getParentRoute: () => ImageGalleryRoute,
 } as any)
+const Char91DotwellKnownChar93OauthProtectedResourceRoute =
+  Char91DotwellKnownChar93OauthProtectedResourceRouteImport.update({
+    id: '/.well-known/oauth-protected-resource',
+    path: '/.well-known/oauth-protected-resource',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const LearnPathIdLessonIdRoute = LearnPathIdLessonIdRouteImport.update({
   id: '/learn/$pathId/$lessonId',
   path: '/learn/$pathId/$lessonId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DotlovableOauthConsentRoute = DotlovableOauthConsentRouteImport.update({
+  id: '/.lovable/oauth/consent',
+  path: '/.lovable/oauth/consent',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -180,6 +199,7 @@ export interface FileRoutesByFullPath {
   '/image-gallery': typeof ImageGalleryRouteWithChildren
   '/index': typeof Char91indexChar93Route
   '/login': typeof LoginRoute
+  '/mcp': typeof McpRoute
   '/onboarding': typeof OnboardingRoute
   '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
@@ -188,11 +208,13 @@ export interface FileRoutesByFullPath {
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
   '/terms': typeof TermsRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/roadmap/$id': typeof RoadmapIdRoute
   '/admin/': typeof AdminIndexRoute
   '/image-gallery/': typeof ImageGalleryIndexRoute
   '/roadmap/': typeof RoadmapIndexRoute
+  '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
 }
 export interface FileRoutesByTo {
@@ -207,6 +229,7 @@ export interface FileRoutesByTo {
   '/forgot-password': typeof ForgotPasswordRoute
   '/index': typeof Char91indexChar93Route
   '/login': typeof LoginRoute
+  '/mcp': typeof McpRoute
   '/onboarding': typeof OnboardingRoute
   '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
@@ -215,11 +238,13 @@ export interface FileRoutesByTo {
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
   '/terms': typeof TermsRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/roadmap/$id': typeof RoadmapIdRoute
   '/admin': typeof AdminIndexRoute
   '/image-gallery': typeof ImageGalleryIndexRoute
   '/roadmap': typeof RoadmapIndexRoute
+  '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
 }
 export interface FileRoutesById {
@@ -236,6 +261,7 @@ export interface FileRoutesById {
   '/image-gallery': typeof ImageGalleryRouteWithChildren
   '/index': typeof Char91indexChar93Route
   '/login': typeof LoginRoute
+  '/mcp': typeof McpRoute
   '/onboarding': typeof OnboardingRoute
   '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
@@ -244,11 +270,13 @@ export interface FileRoutesById {
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
   '/terms': typeof TermsRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/roadmap/$id': typeof RoadmapIdRoute
   '/admin/': typeof AdminIndexRoute
   '/image-gallery/': typeof ImageGalleryIndexRoute
   '/roadmap/': typeof RoadmapIndexRoute
+  '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
 }
 export interface FileRouteTypes {
@@ -266,6 +294,7 @@ export interface FileRouteTypes {
     | '/image-gallery'
     | '/index'
     | '/login'
+    | '/mcp'
     | '/onboarding'
     | '/pricing'
     | '/privacy'
@@ -274,11 +303,13 @@ export interface FileRouteTypes {
     | '/start'
     | '/system-state'
     | '/terms'
+    | '/.well-known/oauth-protected-resource'
     | '/image-gallery/$path'
     | '/roadmap/$id'
     | '/admin/'
     | '/image-gallery/'
     | '/roadmap/'
+    | '/.lovable/oauth/consent'
     | '/learn/$pathId/$lessonId'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -293,6 +324,7 @@ export interface FileRouteTypes {
     | '/forgot-password'
     | '/index'
     | '/login'
+    | '/mcp'
     | '/onboarding'
     | '/pricing'
     | '/privacy'
@@ -301,11 +333,13 @@ export interface FileRouteTypes {
     | '/start'
     | '/system-state'
     | '/terms'
+    | '/.well-known/oauth-protected-resource'
     | '/image-gallery/$path'
     | '/roadmap/$id'
     | '/admin'
     | '/image-gallery'
     | '/roadmap'
+    | '/.lovable/oauth/consent'
     | '/learn/$pathId/$lessonId'
   id:
     | '__root__'
@@ -321,6 +355,7 @@ export interface FileRouteTypes {
     | '/image-gallery'
     | '/index'
     | '/login'
+    | '/mcp'
     | '/onboarding'
     | '/pricing'
     | '/privacy'
@@ -329,11 +364,13 @@ export interface FileRouteTypes {
     | '/start'
     | '/system-state'
     | '/terms'
+    | '/.well-known/oauth-protected-resource'
     | '/image-gallery/$path'
     | '/roadmap/$id'
     | '/admin/'
     | '/image-gallery/'
     | '/roadmap/'
+    | '/.lovable/oauth/consent'
     | '/learn/$pathId/$lessonId'
   fileRoutesById: FileRoutesById
 }
@@ -350,6 +387,7 @@ export interface RootRouteChildren {
   ImageGalleryRoute: typeof ImageGalleryRouteWithChildren
   Char91indexChar93Route: typeof Char91indexChar93Route
   LoginRoute: typeof LoginRoute
+  McpRoute: typeof McpRoute
   OnboardingRoute: typeof OnboardingRoute
   PricingRoute: typeof PricingRoute
   PrivacyRoute: typeof PrivacyRoute
@@ -358,9 +396,11 @@ export interface RootRouteChildren {
   StartRoute: typeof StartRoute
   SystemStateRoute: typeof SystemStateRoute
   TermsRoute: typeof TermsRoute
+  Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   RoadmapIdRoute: typeof RoadmapIdRoute
   AdminIndexRoute: typeof AdminIndexRoute
   RoadmapIndexRoute: typeof RoadmapIndexRoute
+  DotlovableOauthConsentRoute: typeof DotlovableOauthConsentRoute
   LearnPathIdLessonIdRoute: typeof LearnPathIdLessonIdRoute
 }
 
@@ -427,6 +467,13 @@ declare module '@tanstack/react-router' {
       path: '/onboarding'
       fullPath: '/onboarding'
       preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mcp': {
+      id: '/mcp'
+      path: '/mcp'
+      fullPath: '/mcp'
+      preLoaderRoute: typeof McpRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -541,11 +588,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImageGalleryPathRouteImport
       parentRoute: typeof ImageGalleryRoute
     }
+    '/.well-known/oauth-protected-resource': {
+      id: '/.well-known/oauth-protected-resource'
+      path: '/.well-known/oauth-protected-resource'
+      fullPath: '/.well-known/oauth-protected-resource'
+      preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/learn/$pathId/$lessonId': {
       id: '/learn/$pathId/$lessonId'
       path: '/learn/$pathId/$lessonId'
       fullPath: '/learn/$pathId/$lessonId'
       preLoaderRoute: typeof LearnPathIdLessonIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/.lovable/oauth/consent': {
+      id: '/.lovable/oauth/consent'
+      path: '/.lovable/oauth/consent'
+      fullPath: '/.lovable/oauth/consent'
+      preLoaderRoute: typeof DotlovableOauthConsentRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -578,6 +639,7 @@ const rootRouteChildren: RootRouteChildren = {
   ImageGalleryRoute: ImageGalleryRouteWithChildren,
   Char91indexChar93Route: Char91indexChar93Route,
   LoginRoute: LoginRoute,
+  McpRoute: McpRoute,
   OnboardingRoute: OnboardingRoute,
   PricingRoute: PricingRoute,
   PrivacyRoute: PrivacyRoute,
@@ -586,9 +648,12 @@ const rootRouteChildren: RootRouteChildren = {
   StartRoute: StartRoute,
   SystemStateRoute: SystemStateRoute,
   TermsRoute: TermsRoute,
+  Char91DotwellKnownChar93OauthProtectedResourceRoute:
+    Char91DotwellKnownChar93OauthProtectedResourceRoute,
   RoadmapIdRoute: RoadmapIdRoute,
   AdminIndexRoute: AdminIndexRoute,
   RoadmapIndexRoute: RoadmapIndexRoute,
+  DotlovableOauthConsentRoute: DotlovableOauthConsentRoute,
   LearnPathIdLessonIdRoute: LearnPathIdLessonIdRoute,
 }
 export const routeTree = rootRouteImport
