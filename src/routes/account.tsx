@@ -22,7 +22,7 @@ import { useAuth } from "@/lib/auth-context";
 import { AuthSessionGate, requireAuthBeforeLoad } from "@/lib/auth-route-guard";
 import { useEntitlement, useStreak } from "@/lib/entitlements";
 import { captureError } from "@/lib/error-capture";
-import { LESSONS } from "@/lib/unified-lessons";
+import { LESSONS } from "@/lib/lesson-catalog";
 import { PATHS } from "@/lib/curriculum-data";
 import { Sidebar } from "@/components/dashboard/Sidebar";
 import { Button } from "@/components/ui/button";

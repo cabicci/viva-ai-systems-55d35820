@@ -20,7 +20,7 @@ export type AssistantContextOverride = {
 };
 
 export type ResolvedAssistantLearnerContext = {
-  locale: RagPackageLocale | null;
+  locale: RagPackageLocale;
   currentPath: string | null;
   currentModule: string | null;
   currentLesson: string | null;
@@ -38,6 +38,14 @@ export type ResolvedAssistantLearnerContext = {
   preferPathId: string | null;
 };
 
+function requireAssistantPackageLocale(locale: SupportedLocale): RagPackageLocale {
+  const assistantLocale = resolveAssistantPackageLocale(locale);
+  if (assistantLocale === null) {
+    throw new Error(`Unsupported assistant package locale: ${locale}`);
+  }
+  return assistantLocale;
+}
+
 export function resolveAssistantLearnerContext(
   locale: SupportedLocale,
   ctx: Pick<
@@ -52,7 +60,7 @@ export function resolveAssistantLearnerContext(
   >,
   override?: AssistantContextOverride | null,
 ): ResolvedAssistantLearnerContext {
-  const assistantLocale = resolveAssistantPackageLocale(locale);
+  const assistantLocale = requireAssistantPackageLocale(locale);
 
   if (override) {
     return {
@@ -102,7 +110,6 @@ export function resolveAssistantLearnerContext(
 export function buildAssistantRuntimePayload(
   query: string,
   resolved: ResolvedAssistantLearnerContext,
-  retrievalResults: unknown[],
 ): AssistantRuntimeRequestPayload {
   return {
     query,
@@ -119,7 +126,6 @@ export function buildAssistantRuntimePayload(
       nextLessonTitle: resolved.nextLessonTitle,
       currentMission: resolved.currentMission,
     },
-    retrievalResults,
   };
 }
 

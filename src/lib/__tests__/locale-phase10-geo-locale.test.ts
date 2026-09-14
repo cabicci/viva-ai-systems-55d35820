@@ -6,10 +6,7 @@ import {
 } from "@/lib/locale/locale-cookie";
 import { persistValidLocaleCookie } from "@/lib/locale/locale-search";
 import { readCountryCodeFromHeaders } from "@/lib/locale/read-request-country";
-import {
-  normalizeCountryCode,
-  resolveGeoLocale,
-} from "@/lib/locale/resolve-geo-locale";
+import { normalizeCountryCode, resolveGeoLocale } from "@/lib/locale/resolve-geo-locale";
 import { resolvePublicLocale } from "@/lib/locale/resolve-public-locale";
 import { DEFAULT_LOCALE } from "@/lib/locale/types";
 import {
@@ -65,18 +62,12 @@ describe("resolveGeoLocale", () => {
 
 describe("readCountryCodeFromHeaders", () => {
   it("reads cf-ipcountry", () => {
-    expect(
-      readCountryCodeFromHeaders(new Headers({ "cf-ipcountry": "EG" })),
-    ).toBe("EG");
+    expect(readCountryCodeFromHeaders(new Headers({ "cf-ipcountry": "EG" }))).toBe("EG");
   });
 
   it("falls back to x-vercel-ip-country and x-country-code", () => {
-    expect(
-      readCountryCodeFromHeaders(new Headers({ "x-vercel-ip-country": "SA" })),
-    ).toBe("SA");
-    expect(
-      readCountryCodeFromHeaders(new Headers({ "x-country-code": "US" })),
-    ).toBe("US");
+    expect(readCountryCodeFromHeaders(new Headers({ "x-vercel-ip-country": "SA" }))).toBe("SA");
+    expect(readCountryCodeFromHeaders(new Headers({ "x-country-code": "US" }))).toBe("US");
   });
 });
 
@@ -92,9 +83,10 @@ describe("resolvePublicLocale Phase 10 precedence", () => {
   });
 
   it("cookie ar-Gulf overrides geo EG", () => {
-    expect(
-      resolvePublicLocale({ cookieLocale: "ar-Gulf", countryCode: "EG" }),
-    ).toEqual({ locale: "ar-Gulf", source: "cookie" });
+    expect(resolvePublicLocale({ cookieLocale: "ar-Gulf", countryCode: "EG" })).toEqual({
+      locale: "ar-Gulf",
+      source: "cookie",
+    });
   });
 
   it("no cookie + EG country → ar-EG via geo", () => {
@@ -139,10 +131,87 @@ describe("resolvePublicLocale Phase 10 precedence", () => {
     });
   });
 
-  it("invalid locale query still safe fallback via url source", () => {
+  it("ignores invalid URL locale and uses valid US geo", () => {
     expect(resolvePublicLocale({ urlLocale: "fr-FR", countryCode: "US" })).toEqual({
+      locale: "en",
+      source: "geo",
+    });
+  });
+
+  it("ignores invalid URL locale and uses valid cookie", () => {
+    expect(
+      resolvePublicLocale({
+        urlLocale: "fr-FR",
+        cookieLocale: "en",
+        countryCode: "EG",
+      }),
+    ).toEqual({ locale: "en", source: "cookie" });
+  });
+
+  it("ignores invalid URL and prefers valid cookie over valid user preference", () => {
+    expect(
+      resolvePublicLocale({
+        urlLocale: "fr-FR",
+        cookieLocale: "ar-Gulf",
+        userPreferenceLocale: "ar-MSA",
+        countryCode: "US",
+      }),
+    ).toEqual({ locale: "ar-Gulf", source: "cookie" });
+  });
+
+  it("ignores invalid URL, cookie, and user preference and uses valid geo", () => {
+    expect(
+      resolvePublicLocale({
+        urlLocale: "fr-FR",
+        cookieLocale: "nope",
+        userPreferenceLocale: "EN",
+        countryCode: "US",
+      }),
+    ).toEqual({ locale: "en", source: "geo" });
+  });
+
+  it("uses existing default when every candidate is invalid", () => {
+    expect(
+      resolvePublicLocale({
+        urlLocale: "fr-FR",
+        cookieLocale: "nope",
+        userPreferenceLocale: "EN",
+        countryCode: "XX",
+      }),
+    ).toEqual({
       locale: DEFAULT_LOCALE,
+      source: "default",
+    });
+  });
+
+  it("treats uppercase EN as unsupported", () => {
+    expect(resolvePublicLocale({ urlLocale: "EN" })).toEqual({
+      locale: DEFAULT_LOCALE,
+      source: "default",
+    });
+    expect(
+      resolvePublicLocale({ urlLocale: "EN", cookieLocale: "ar-MSA", countryCode: "US" }),
+    ).toEqual({ locale: "ar-MSA", source: "cookie" });
+  });
+
+  it("preserves actual ar-EG source instead of relabeling it as default", () => {
+    expect(resolvePublicLocale({ urlLocale: "ar-EG" })).toEqual({
+      locale: "ar-EG",
       source: "url",
+    });
+    expect(resolvePublicLocale({ cookieLocale: "ar-EG", countryCode: "US" })).toEqual({
+      locale: "ar-EG",
+      source: "cookie",
+    });
+    expect(
+      resolvePublicLocale({
+        userPreferenceLocale: "ar-EG",
+        countryCode: "US",
+      }),
+    ).toEqual({ locale: "ar-EG", source: "user-preference" });
+    expect(resolvePublicLocale({ countryCode: "EG" })).toEqual({
+      locale: "ar-EG",
+      source: "geo",
     });
   });
 
@@ -186,8 +255,7 @@ describe("Phase 9.7 cookie behavior unchanged with geo present", () => {
     persistValidLocaleCookie("en");
     expect(readLocaleCookie()).toBe("en");
     expect(
-      resolvePublicLocale({ cookieLocale: readLocaleCookie(), countryCode: "EG" })
-        .locale,
+      resolvePublicLocale({ cookieLocale: readLocaleCookie(), countryCode: "EG" }).locale,
     ).toBe("en");
   });
 
@@ -196,8 +264,7 @@ describe("Phase 9.7 cookie behavior unchanged with geo present", () => {
     persistValidLocaleCookie(DEFAULT_LOCALE);
     expect(readLocaleCookie()).toBe("ar-EG");
     expect(
-      resolvePublicLocale({ cookieLocale: readLocaleCookie(), countryCode: "US" })
-        .locale,
+      resolvePublicLocale({ cookieLocale: readLocaleCookie(), countryCode: "US" }).locale,
     ).toBe("ar-EG");
   });
 });
@@ -211,9 +278,8 @@ describe("geoLocaleEnabled rollback flag", () => {
   it("skips geo when VITE_GEO_LOCALE_ENABLED=false", async () => {
     vi.stubEnv("VITE_GEO_LOCALE_ENABLED", "false");
     vi.resetModules();
-    const { resolvePublicLocale: resolveWithFlagOff } = await import(
-      "@/lib/locale/resolve-public-locale"
-    );
+    const { resolvePublicLocale: resolveWithFlagOff } =
+      await import("@/lib/locale/resolve-public-locale");
     expect(resolveWithFlagOff({ countryCode: "US" })).toEqual({
       locale: DEFAULT_LOCALE,
       source: "default",

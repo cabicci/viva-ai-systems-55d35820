@@ -16,14 +16,16 @@ import {
   Database,
 } from "lucide-react";
 import { useLearnerContext } from "@/lib/learner-context";
-import {
-  usePlatformRetrieval,
-  RETRIEVAL_CORPUS_SIZE,
-} from "@/lib/platform-retrieval";
+import { useLocale } from "@/lib/locale/locale-context";
+import { usePlatformRetrieval } from "@/lib/platform-retrieval";
 import {
   callAssistantRuntime,
   type AssistantRuntimeResponsePayload,
 } from "@/lib/assistant-runtime";
+import {
+  buildAssistantRuntimePayload,
+  resolveAssistantLearnerContext,
+} from "@/lib/assistant/resolve-assistant-learner-context";
 import { Button } from "@/components/ui/button";
 import { Plug } from "lucide-react";
 import { requireAdminBeforeLoad } from "@/lib/admin-route-guard";
@@ -155,8 +157,10 @@ const FUTURE_FLOW = [
 
 function AssistantRuntimePage() {
   const ctx = useLearnerContext();
+  const { locale } = useLocale();
   const [query, setQuery] = useState("");
-  const results = usePlatformRetrieval(query, { limit: 6 });
+  const retrieval = usePlatformRetrieval(query, { limit: 6 });
+  const { results } = retrieval;
   const [backendLoading, setBackendLoading] = useState(false);
   const [backendResp, setBackendResp] =
     useState<AssistantRuntimeResponsePayload | null>(null);
@@ -166,17 +170,10 @@ function AssistantRuntimePage() {
     setBackendLoading(true);
     setBackendError(null);
     try {
-      const resp = await callAssistantRuntime({
-        query: query.trim() || "ping",
-        learnerContext: {
-          currentPath: ctx.currentPath?.title ?? null,
-          currentModule: ctx.currentModule?.title ?? null,
-          currentLesson: ctx.currentLesson
-            ? `${ctx.currentLesson.title} · ${ctx.currentLesson.id}`
-            : null,
-        },
-        retrievalResults: results,
-      });
+      const resolved = resolveAssistantLearnerContext(locale, ctx);
+      const resp = await callAssistantRuntime(
+        buildAssistantRuntimePayload(query.trim() || "ping", resolved),
+      );
       setBackendResp(resp);
     } catch (e) {
       setBackendError(e instanceof Error ? e.message : "Unknown error");
@@ -239,7 +236,7 @@ function AssistantRuntimePage() {
               icon={SearchIcon}
               title="Retrieval Layer"
               status="connected"
-              note={`searchPlatformContent — ${RETRIEVAL_CORPUS_SIZE} chunks (frontend) + knowledge_chunks pgvector (backend).`}
+              note={`searchPlatformContent — ${retrieval.isLoading ? "loading" : retrieval.corpusSize} chunks (frontend) + knowledge_chunks pgvector (backend).`}
             />
             <StatusRow
               icon={Sparkles}
@@ -323,7 +320,15 @@ function AssistantRuntimePage() {
               <span>{results.length} results</span>
             </div>
             <div className="space-y-2">
-              {query.trim() === "" ? (
+              {retrieval.error ? (
+                <div className="rounded-lg border border-destructive/40 p-4 text-sm text-destructive text-center">
+                  {retrieval.error.message}
+                </div>
+              ) : retrieval.isLoading ? (
+                <div className="rounded-lg border border-border/40 p-4 text-sm text-muted-foreground text-center">
+                  Loading retrieval corpus…
+                </div>
+              ) : query.trim() === "" ? (
                 <div className="rounded-lg border border-border/40 p-4 text-sm text-muted-foreground text-center">
                   ابدأ بكتابة سؤال لاستعراض نتائج الاسترجاع.
                 </div>

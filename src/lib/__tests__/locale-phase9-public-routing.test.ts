@@ -1,5 +1,9 @@
 import { describe, expect, it, vi, afterEach } from "vitest";
-import { writeLocaleCookie, readLocaleCookie, LOCALE_COOKIE_NAME } from "@/lib/locale/locale-cookie";
+import {
+  writeLocaleCookie,
+  readLocaleCookie,
+  LOCALE_COOKIE_NAME,
+} from "@/lib/locale/locale-cookie";
 import { resolvePublicLocale } from "@/lib/locale/resolve-public-locale";
 import { DEFAULT_LOCALE } from "@/lib/locale/types";
 import {
@@ -11,9 +15,10 @@ const LESSON_ID = "intro-m1-l1-what-is-ai";
 
 describe("resolvePublicLocale (Phase 9)", () => {
   it("prefers URL locale over cookie", () => {
-    expect(
-      resolvePublicLocale({ urlLocale: "en", cookieLocale: "ar-Gulf" }),
-    ).toEqual({ locale: "en", source: "url" });
+    expect(resolvePublicLocale({ urlLocale: "en", cookieLocale: "ar-Gulf" })).toEqual({
+      locale: "en",
+      source: "url",
+    });
   });
 
   it("uses cookie when URL locale is absent", () => {
@@ -30,10 +35,10 @@ describe("resolvePublicLocale (Phase 9)", () => {
     });
   });
 
-  it("falls back unsupported URL locale to ar-EG", () => {
+  it("ignores unsupported URL locale and uses the default source", () => {
     expect(resolvePublicLocale({ urlLocale: "fr-FR" })).toEqual({
       locale: DEFAULT_LOCALE,
-      source: "url",
+      source: "default",
     });
   });
 });
@@ -120,9 +125,8 @@ describe("lesson route live locale rollback flag", () => {
     vi.stubEnv("VITE_LOCALIZED_LESSONS_ENABLED", "false");
     vi.resetModules();
 
-    const { resolveRouteLessonAccess: resolveWithFlagOff } = await import(
-      "@/lib/locale-lessons/lesson-preview-search"
-    );
+    const { resolveRouteLessonAccess: resolveWithFlagOff } =
+      await import("@/lib/locale-lessons/lesson-preview-search");
     const search = parseLessonPreviewSearch({ locale: "en" });
     const access = resolveWithFlagOff(LESSON_ID, search);
     expect(access.effectiveLocale).toBe("ar-EG");
@@ -133,9 +137,8 @@ describe("lesson route live locale rollback flag", () => {
     vi.stubEnv("VITE_LOCALIZED_LESSONS_ENABLED", "false");
     vi.resetModules();
 
-    const { resolveRouteLessonAccess: resolveWithFlagOff } = await import(
-      "@/lib/locale-lessons/lesson-preview-search"
-    );
+    const { resolveRouteLessonAccess: resolveWithFlagOff } =
+      await import("@/lib/locale-lessons/lesson-preview-search");
     const search = parseLessonPreviewSearch({
       locale: "en",
       previewLocale: "1",

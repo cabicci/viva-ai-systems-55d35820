@@ -87,7 +87,11 @@ export function useEntitlement(): {
   const { user, loading } = useAuth();
   const userId = user?.id ?? null;
 
-  const { data: adminData, isSuccess: adminLoaded } = useQuery({
+  const {
+    data: adminData,
+    error: adminQueryError,
+    isSuccess: adminLoaded,
+  } = useQuery({
     queryKey: [...ADMIN_QK, userId],
     queryFn: async (): Promise<boolean> => {
       if (!userId) return false;
@@ -104,9 +108,13 @@ export function useEntitlement(): {
     enabled: !!userId,
     staleTime: 5 * 60_000,
   });
-  const admin = !!adminData;
+  const admin = !adminQueryError && !!adminData;
 
-  const { data, isSuccess } = useQuery({
+  const {
+    data,
+    error: subscriptionQueryError,
+    isSuccess,
+  } = useQuery({
     queryKey: [...SUB_QK, userId],
     queryFn: async (): Promise<Tier> => {
       if (!userId) return "free";
@@ -124,7 +132,11 @@ export function useEntitlement(): {
     staleTime: 60_000,
   });
 
-  const tier: Tier = admin ? "pro" : (data ?? "free");
+  const tier: Tier = admin
+    ? "pro"
+    : subscriptionQueryError
+      ? "free"
+      : (data ?? "free");
   return {
     tier,
     isPro: tier === "pro",

@@ -1,14 +1,9 @@
 import { geoLocaleEnabled } from "./feature-flags";
 import { resolveGeoLocale } from "./resolve-geo-locale";
-import { resolveLocale } from "./resolve-locale";
+import { isSupportedLocale } from "./resolve-locale";
 import { DEFAULT_LOCALE, type SupportedLocale } from "./types";
 
-export type PublicLocaleSource =
-  | "url"
-  | "cookie"
-  | "user-preference"
-  | "geo"
-  | "default";
+export type PublicLocaleSource = "url" | "cookie" | "user-preference" | "geo" | "default";
 
 export type ResolvedPublicLocale = {
   locale: SupportedLocale;
@@ -24,6 +19,17 @@ export type ResolvePublicLocaleInput = {
   countryCode?: string | null;
 };
 
+function canonicalLocale(value?: string | null): SupportedLocale | undefined {
+  if (value == null) {
+    return undefined;
+  }
+  const trimmed = value.trim();
+  if (trimmed === "") {
+    return undefined;
+  }
+  return isSupportedLocale(trimmed) ? trimmed : undefined;
+}
+
 /**
  * Phase 10 locale precedence:
  * 1. URL ?locale=
@@ -32,29 +38,27 @@ export type ResolvePublicLocaleInput = {
  * 4. Geo/IP country
  * 5. Safe default (ar-EG)
  */
-export function resolvePublicLocale(
-  input: ResolvePublicLocaleInput,
-): ResolvedPublicLocale {
-  if (input.urlLocale != null && input.urlLocale.trim() !== "") {
+export function resolvePublicLocale(input: ResolvePublicLocaleInput): ResolvedPublicLocale {
+  const urlLocale = canonicalLocale(input.urlLocale);
+  if (urlLocale) {
     return {
-      locale: resolveLocale(input.urlLocale),
+      locale: urlLocale,
       source: "url",
     };
   }
 
-  if (input.cookieLocale != null && input.cookieLocale.trim() !== "") {
+  const cookieLocale = canonicalLocale(input.cookieLocale);
+  if (cookieLocale) {
     return {
-      locale: resolveLocale(input.cookieLocale),
+      locale: cookieLocale,
       source: "cookie",
     };
   }
 
-  if (
-    input.userPreferenceLocale != null &&
-    input.userPreferenceLocale.trim() !== ""
-  ) {
+  const userPreferenceLocale = canonicalLocale(input.userPreferenceLocale);
+  if (userPreferenceLocale) {
     return {
-      locale: resolveLocale(input.userPreferenceLocale),
+      locale: userPreferenceLocale,
       source: "user-preference",
     };
   }

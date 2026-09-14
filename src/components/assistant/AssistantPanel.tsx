@@ -13,10 +13,7 @@ import {
 } from "@/lib/assistant/resolve-assistant-learner-context";
 import { searchPlatformContent } from "@/lib/platform-retrieval";
 import { callAssistantRuntime } from "@/lib/assistant-runtime";
-import {
-  setAssistantSession,
-  useAssistantSession,
-} from "@/lib/assistant-session-store";
+import { setAssistantSession, useAssistantSession } from "@/lib/assistant-session-store";
 
 interface Props {
   /** When true, hides the Context Status Card (e.g. when used inside a lesson sheet). */
@@ -45,14 +42,12 @@ export function AssistantPanel({ compact = false, contextOverride = null }: Prop
     if (!q || loading) return;
     setAssistantSession({ loading: true, error: null, query: "" });
     try {
-      const retrievalResults = searchPlatformContent(q, {
+      const retrievalResults = await searchPlatformContent(q, {
         limit: 5,
         preferLessonId: resolvedContext.preferLessonId,
         preferPathId: resolvedContext.preferPathId,
       });
-      const res = await callAssistantRuntime(
-        buildAssistantRuntimePayload(q, resolvedContext, retrievalResults),
-      );
+      const res = await callAssistantRuntime(buildAssistantRuntimePayload(q, resolvedContext));
       setAssistantSession({ matches: retrievalResults, response: res });
     } catch (err) {
       setAssistantSession({
@@ -79,10 +74,7 @@ export function AssistantPanel({ compact = false, contextOverride = null }: Prop
             <h2 className="text-sm font-semibold text-muted-foreground">
               {getUiString(locale, "assistant.panel.context.title")}
             </h2>
-            <Badge
-              variant={ctx.isReady ? "secondary" : "outline"}
-              className="text-[10px]"
-            >
+            <Badge variant={ctx.isReady ? "secondary" : "outline"} className="text-[10px]">
               {ctx.isReady
                 ? getUiString(locale, "assistant.panel.context.ready")
                 : getUiString(locale, "assistant.panel.context.loading")}
@@ -120,8 +112,7 @@ export function AssistantPanel({ compact = false, contextOverride = null }: Prop
             <>
               {getUiString(locale, "assistant.panel.context.compactPrefix")}{" "}
               <span className="text-foreground">
-                {resolvedContext.currentModuleTitle ?? "—"} /{" "}
-                {resolvedContext.currentLessonTitle}
+                {resolvedContext.currentModuleTitle ?? "—"} / {resolvedContext.currentLessonTitle}
               </span>
             </>
           ) : (
@@ -140,11 +131,7 @@ export function AssistantPanel({ compact = false, contextOverride = null }: Prop
           dir={dir}
         />
         <div className="flex justify-end">
-          <Button
-            type="submit"
-            variant="hero"
-            disabled={loading || !query.trim()}
-          >
+          <Button type="submit" variant="hero" disabled={loading || !query.trim()}>
             {loading
               ? getUiString(locale, "assistant.panel.submit.loading")
               : getUiString(locale, "assistant.panel.submit.cta")}
@@ -223,10 +210,7 @@ export function AssistantPanel({ compact = false, contextOverride = null }: Prop
                         <Badge variant="outline" className="text-[10px]">
                           {m.matchType}
                         </Badge>
-                        <Badge
-                          variant="secondary"
-                          className="text-[10px] tabular-nums"
-                        >
+                        <Badge variant="secondary" className="text-[10px] tabular-nums">
                           {m.relevanceScore.toFixed(2)}
                         </Badge>
                       </div>
@@ -263,20 +247,10 @@ export function AssistantPanel({ compact = false, contextOverride = null }: Prop
   );
 }
 
-function ContextRow({
-  label,
-  value,
-  full,
-}: {
-  label: string;
-  value: string;
-  full?: boolean;
-}) {
+function ContextRow({ label, value, full }: { label: string; value: string; full?: boolean }) {
   return (
     <div className={full ? "sm:col-span-2" : undefined}>
-      <dt className="text-[11px] uppercase tracking-wider text-muted-foreground">
-        {label}
-      </dt>
+      <dt className="text-[11px] uppercase tracking-wider text-muted-foreground">{label}</dt>
       <dd className="mt-0.5 text-foreground">{value}</dd>
     </div>
   );

@@ -22,10 +22,11 @@ import type { CurriculumModule } from "@/lib/curriculum-data";
 import { getLessonAccess, getModuleStatus } from "@/lib/builder-runtime";
 import { useModulesMastery, type ModuleMastery } from "@/lib/mastery-gate";
 import { LessonLink } from "@/components/lesson/LessonLink";
-import { getLesson } from "@/lib/unified-lessons";
+import { getLesson } from "@/lib/lesson-catalog";
 import { WelcomeHint } from "@/components/dashboard/WelcomeHint";
 import { WelcomeChecklist } from "@/components/dashboard/WelcomeChecklist";
 import { StartWowBanner } from "@/components/dashboard/StartWowBanner";
+import { DashboardSkeleton } from "@/components/dashboard/DashboardSkeleton";
 import { ReviewsDueCard } from "@/components/dashboard/ReviewsDueCard";
 import { useCountUp } from "@/hooks/use-count-up";
 
@@ -54,7 +55,7 @@ export const Route = createFileRoute("/dashboard")({
 
 function DashboardPage() {
   return (
-    <AuthSessionGate>
+    <AuthSessionGate fallback={<DashboardSkeleton />}>
       <Dashboard />
     </AuthSessionGate>
   );

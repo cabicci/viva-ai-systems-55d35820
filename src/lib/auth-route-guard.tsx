@@ -40,7 +40,14 @@ export function AuthLoadingShell() {
  * Client gate after beforeLoad: spinner only while auth hydrates.
  * Once settled, anonymous users redirect to /login (never a permanent spinner).
  */
-export function AuthSessionGate({ children }: { children: ReactNode }) {
+export function AuthSessionGate({
+  children,
+  fallback,
+}: {
+  children: ReactNode;
+  /** Optional skeleton shown instead of the bare spinner while auth hydrates. */
+  fallback?: ReactNode;
+}) {
   const { user, loading } = useAuth();
   const navigate = useNavigate();
 
@@ -50,12 +57,8 @@ export function AuthSessionGate({ children }: { children: ReactNode }) {
     }
   }, [loading, user, navigate]);
 
-  if (loading) {
-    return <AuthLoadingShell />;
-  }
-
-  if (!user) {
-    return <AuthLoadingShell />;
+  if (loading || !user) {
+    return <>{fallback ?? <AuthLoadingShell />}</>;
   }
 
   return <>{children}</>;
