@@ -1,6 +1,7 @@
 import * as React from "react";
+import { useServerFn } from "@tanstack/react-start";
 import { CircleHelp, CheckCircle2, XCircle, RotateCcw, Eye } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { submitQuizAttempt } from "@/lib/quiz-attempt.functions";
 import { useAuth } from "@/lib/auth-context";
 import { logLearnerEvent } from "@/lib/learner-events";
 import { useLocale } from "@/lib/locale/locale-context";
@@ -69,6 +70,7 @@ function QuizQuestion({
 }) {
   const { locale } = useLocale();
   const { user } = useAuth();
+  const submitAttempt = useServerFn(submitQuizAttempt);
   const [picked, setPicked] = React.useState<number | null>(null);
   const [revealed, setRevealed] = React.useState(false);
   const submitted = picked !== null;
@@ -78,31 +80,39 @@ function QuizQuestion({
     if (submitted) return;
     setPicked(i);
     if (!user) return;
-    const correct = i === item.correctIndex;
     const [pathId, moduleId] = lessonId.split("-");
     try {
-      await supabase.from("lesson_quiz_attempts").insert({
-        user_id: user.id,
-        lesson_id: lessonId,
-        question_id: item.id,
-        selected_index: i,
-        is_correct: correct,
-        bloom_level: item.bloom,
+      const result = await submitAttempt({
+        data: {
+          locale,
+          lessonId,
+          questionId: item.id,
+          selectedIndex: i,
+        },
+      });
+      void logLearnerEvent({
+        type: "quiz_attempted",
+        pathId: pathId ?? null,
+        moduleId: moduleId ?? null,
+        lessonId,
+        metadata: {
+          question_id: item.id,
+          is_correct: result.isCorrect,
+          bloom_level: result.bloomLevel,
+        },
       });
     } catch {
-      /* ignore */
+      void logLearnerEvent({
+        type: "quiz_attempted",
+        pathId: pathId ?? null,
+        moduleId: moduleId ?? null,
+        lessonId,
+        metadata: {
+          question_id: item.id,
+          bloom_level: item.bloom,
+        },
+      });
     }
-    void logLearnerEvent({
-      type: "quiz_attempted",
-      pathId: pathId ?? null,
-      moduleId: moduleId ?? null,
-      lessonId,
-      metadata: {
-        question_id: item.id,
-        is_correct: correct,
-        bloom_level: item.bloom,
-      },
-    });
   }
 
   function reset() {
