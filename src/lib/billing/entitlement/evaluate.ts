@@ -95,7 +95,10 @@ export function resolvePaidContentEntitled(ctx: SubscriptionContext): {
   }
 
   if (ctx.accessState === "paid_active") {
-    return { entitled: true, denial: null };
+    if (ctx.periodEnd && new Date(ctx.periodEnd) > now) {
+      return { entitled: true, denial: null };
+    }
+    return { entitled: false, denial: "PERIOD_ENDED" };
   }
 
   return { entitled: false, denial: "ENTITLEMENT_UNAVAILABLE" };
