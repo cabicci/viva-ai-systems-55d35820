@@ -12,7 +12,6 @@ import {
   mkdirSync,
   readdirSync,
   readFileSync,
-  rmSync,
   statSync,
   writeFileSync,
 } from "node:fs";
@@ -381,11 +380,12 @@ export function stageCanonicalMethodCArtifact(options: {
     options.expectedPerLocale ?? METHOD_C_REMAINING_EXPECTED_PER_LOCALE;
 
   if (existsSync(stagingRoot)) {
-    const existing = readdirSync(stagingRoot);
-    if (existing.length > 0) {
-      // Require empty staging — wipe only when caller opts into force via empty marker file
-      // Auth: "starts from a new empty canonical staging directory"
-      rmSync(stagingRoot, { recursive: true, force: true });
+    const stagingStat = statSync(stagingRoot);
+    if (!stagingStat.isDirectory()) {
+      throw new Error(`canonical staging root is not a directory: ${resolve(stagingRoot)}`);
+    }
+    if (readdirSync(stagingRoot).length > 0) {
+      throw new Error(`canonical staging root must be absent or empty: ${resolve(stagingRoot)}`);
     }
   }
   mkdirSync(stagingRoot, { recursive: true });
