@@ -98,7 +98,7 @@ const PUBLIC_WRAPPERS = [
 ] as const;
 
 function readRepoFile(relPath: string): string {
-  return readFileSync(path.join(REPO_ROOT, relPath), "utf8");
+  return readFileSync(path.join(REPO_ROOT, relPath), "utf8").replace(/\r\n/g, "\n");
 }
 
 function extractFunctionBody(sql: string, fnName: string): string {
@@ -137,6 +137,7 @@ describe("public billing RPC bridge — static", () => {
     expect(afterBridge).toEqual([
       "20260801120000_billing_legacy_user_subscriptions_compat.sql",
       path.basename(SNAPSHOT_VALIDITY_MIGRATION),
+      "20260914220000_lesson_quiz_attempts_server_write_acl.sql",
     ]);
 
     const snapshotValiditySql = readRepoFile(SNAPSHOT_VALIDITY_MIGRATION);
