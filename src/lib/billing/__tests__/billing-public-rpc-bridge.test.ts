@@ -132,8 +132,11 @@ describe("public billing RPC bridge — static", () => {
     const bridgeIdx = migrations.indexOf("20260728140000_public_billing_rpc_bridge.sql");
     expect(bridgeIdx).toBeGreaterThanOrEqual(0);
     const afterBridge = migrations.slice(bridgeIdx + 1);
-    // Only the additive legacy-compat migration may follow the public bridge.
-    expect(afterBridge).toEqual(["20260801120000_billing_legacy_user_subscriptions_compat.sql"]);
+    // Preserve the terminal Billing bridge while allowing exact additive follow-ups.
+    expect(afterBridge).toEqual([
+      "20260801120000_billing_legacy_user_subscriptions_compat.sql",
+      "20260914220000_lesson_quiz_attempts_server_write_acl.sql",
+    ]);
     expect(PUBLIC_WRAPPERS).toHaveLength(7);
     for (const w of PUBLIC_WRAPPERS) {
       expect(bridgeSql).toContain(w.createSig);
