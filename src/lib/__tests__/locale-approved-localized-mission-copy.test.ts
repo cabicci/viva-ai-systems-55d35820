@@ -5,16 +5,14 @@ import {
   adaptPackageMissionToLiveShape,
   deliveryToPrompt,
 } from "@/lib/locale-lessons/adapt-package-to-live-mission";
-import type {
-  LessonPackageLocale,
-  LocalizedLessonPackage,
-} from "@/lib/locale-lessons/types";
+import type { LessonPackageLocale, LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
 
 const TARGET_LESSONS = [
   "automator-m4-l3-error-handling",
   "intro-m1-l5-ai-vs-software",
+  "analyst-m4-automated-dashboard",
 ] as const;
 
 const APPROVED: Record<
@@ -27,11 +25,50 @@ const APPROVED: Record<
       rubric: Array<{ dimension: string; weight: number; criteria: string }>;
       yamlIntent: string;
       yamlType: string;
-      changePaths: Array<"mission.intro" | "mission.delivery">;
+      contentMarkdown?: string;
+      changePaths: Array<
+        | "mission.intro"
+        | "mission.delivery"
+        | "mission.rubric"
+        | "mission.yamlIntent"
+        | "mission.yamlType"
+        | "contentMarkdown"
+      >;
     }
   >
 > = {
   "ar-MSA": {
+    "analyst-m4-automated-dashboard": {
+      intro:
+        "صمّم أتمتة لرقم واحد. لا يلزم بناء النظام كاملًا؛ اختر الرقم، وحدّد مصدره، وتكرار تحديثه، ومكان تخزينه، وما الذي يلخّصه الذكاء الاصطناعي بعد وصوله. تكفي ١٠–٢٠ دقيقة.",
+      delivery: [
+        "في تسليمك، اكتب:\n\n١) الرقم الواحد ولماذا اخترته.\n٢) مصدر الرقم (نموذج، نظام نقاط بيع، جدول بيانات، أو API).\n٣) تكرار التحديث (يومي، أسبوعي، أو لحظي).\n٤) مكان التخزين (Google Sheets، Notion، أو غيرهما).\n٥) ما الذي سيلخّصه الذكاء الاصطناعي بعد وصول الرقم (سؤال أو طلب واحد).",
+      ],
+      rubric: [
+        {
+          dimension: "رقم + مصدر",
+          weight: 50,
+          criteria: "رقم واحد واضح + مصدر محدد.",
+        },
+        {
+          dimension: "تخزين + AI",
+          weight: 50,
+          criteria: "تكرار تحديث + تخزين + سؤال أو تلخيص عملي للذكاء الاصطناعي.",
+        },
+      ],
+      yamlIntent: "Design automation for one metric: source, frequency, storage, AI summary",
+      yamlType: "practice",
+      contentMarkdown:
+        "صمّم أتمتة لرقم واحد. لا يلزم بناء النظام كاملًا؛ اختر الرقم، وحدّد مصدره، وتكرار تحديثه، ومكان تخزينه، وما الذي يلخّصه الذكاء الاصطناعي بعد وصوله. تكفي ١٠–٢٠ دقيقة.\n\n**التسليم:**\n\nفي تسليمك، اكتب:\n\n١) الرقم الواحد ولماذا اخترته.\n٢) مصدر الرقم (نموذج، نظام نقاط بيع، جدول بيانات، أو API).\n٣) تكرار التحديث (يومي، أسبوعي، أو لحظي).\n٤) مكان التخزين (Google Sheets، Notion، أو غيرهما).\n٥) ما الذي سيلخّصه الذكاء الاصطناعي بعد وصول الرقم (سؤال أو طلب واحد).\n\n| رقم + مصدر | 50% |\n| تخزين + AI | 50% |",
+      changePaths: [
+        "mission.intro",
+        "mission.delivery",
+        "mission.rubric",
+        "mission.yamlIntent",
+        "mission.yamlType",
+        "contentMarkdown",
+      ],
+    },
     "automator-m4-l3-error-handling": {
       intro:
         "صمّم قاعدة تنبيه واحدة لمسار عمل حقيقي. لا يلزم بناء الأتمتة؛ حدّد نقطة الفشل، وخطة إعادة المحاولة، ومن يتلقى التنبيه، وما الذي يُسجَّل عند الفشل. يمكن للذكاء الاصطناعي أن يقترح، لكن القرار النهائي لك.",
@@ -78,13 +115,43 @@ const APPROVED: Record<
           criteria: "المهام من حياتك أو عملك — لا أمثلة عامة فارغة",
         },
       ],
-      yamlIntent:
-        "Pick 3 small real tasks; assign AI / Software / both with one-line why each",
+      yamlIntent: "Pick 3 small real tasks; assign AI / Software / both with one-line why each",
       yamlType: "practice",
       changePaths: ["mission.delivery"],
     },
   },
   "ar-Gulf": {
+    "analyst-m4-automated-dashboard": {
+      intro:
+        "صمّم أتمتة لرقم واحد. مو لازم تبني النظام كامل؛ اختر الرقم، وحدّد مصدره، وتكرار تحديثه، ومكان تخزينه، ووش يلخّص الذكاء الاصطناعي بعد ما يوصل. تكفي ١٠–٢٠ دقيقة.",
+      delivery: [
+        "في تسليمك، اكتب:\n\n١) الرقم الواحد وليش اخترته.\n٢) مصدر الرقم (نموذج، كاشير، Sheet، أو API).\n٣) تكرار التحديث (يومي، أسبوعي، أو لحظي).\n٤) مكان التخزين (Google Sheets، Notion، أو غيرها).\n٥) وش يلخّص الذكاء الاصطناعي بعد ما يوصل الرقم (سؤال أو طلب واحد).",
+      ],
+      rubric: [
+        {
+          dimension: "رقم + مصدر",
+          weight: 50,
+          criteria: "رقم واحد واضح + مصدر محدد.",
+        },
+        {
+          dimension: "تخزين + AI",
+          weight: 50,
+          criteria: "تكرار تحديث + تخزين + سؤال أو تلخيص عملي للذكاء الاصطناعي.",
+        },
+      ],
+      yamlIntent: "Design automation for one metric: source, frequency, storage, AI summary",
+      yamlType: "practice",
+      contentMarkdown:
+        "صمّم أتمتة لرقم واحد. مو لازم تبني النظام كامل؛ اختر الرقم، وحدّد مصدره، وتكرار تحديثه، ومكان تخزينه، ووش يلخّص الذكاء الاصطناعي بعد ما يوصل. تكفي ١٠–٢٠ دقيقة.\n\n**التسليم:**\n\nفي تسليمك، اكتب:\n\n١) الرقم الواحد وليش اخترته.\n٢) مصدر الرقم (نموذج، كاشير، Sheet، أو API).\n٣) تكرار التحديث (يومي، أسبوعي، أو لحظي).\n٤) مكان التخزين (Google Sheets، Notion، أو غيرها).\n٥) وش يلخّص الذكاء الاصطناعي بعد ما يوصل الرقم (سؤال أو طلب واحد).\n\n| رقم + مصدر | 50% |\n| تخزين + AI | 50% |",
+      changePaths: [
+        "mission.intro",
+        "mission.delivery",
+        "mission.rubric",
+        "mission.yamlIntent",
+        "mission.yamlType",
+        "contentMarkdown",
+      ],
+    },
     "automator-m4-l3-error-handling": {
       intro:
         "صمّم قاعدة تنبيه وحدة لمسار عمل فعلي. مو مطلوب تبني الأتمتة؛ حدّد وين ممكن تفشل، وخطة إعادة المحاولة، ومين يوصله التنبيه، ووش ينحفظ عند الفشل. الذكاء الاصطناعي ممكن يقترح، لكن القرار الأخير لك.",
@@ -131,13 +198,43 @@ const APPROVED: Record<
           criteria: "المهام من حياتك أو عملك — مو أمثلة عامة فارغة",
         },
       ],
-      yamlIntent:
-        "Pick 3 small real tasks; assign AI / Software / both with one-line why each",
+      yamlIntent: "Pick 3 small real tasks; assign AI / Software / both with one-line why each",
       yamlType: "practice",
       changePaths: ["mission.delivery"],
     },
   },
   en: {
+    "analyst-m4-automated-dashboard": {
+      intro:
+        "Design the automation for one metric. You do not need to build the full system. Choose the metric and define its source, update frequency, storage, and what AI should summarize after the number arrives. Allow 10–20 minutes.",
+      delivery: [
+        "In your submission, write:\n\n1) The one metric and why you chose it.\n2) The metric source (form, point-of-sale system, spreadsheet, or API).\n3) The update frequency (daily, weekly, or real time).\n4) The storage location (Google Sheets, Notion, or another tool).\n5) What AI should summarize after the metric arrives (one question or prompt).",
+      ],
+      rubric: [
+        {
+          dimension: "Metric + Source",
+          weight: 50,
+          criteria: "One clear metric + a specific source.",
+        },
+        {
+          dimension: "Storage + AI",
+          weight: 50,
+          criteria: "Update frequency + storage + a practical AI question or summary.",
+        },
+      ],
+      yamlIntent: "Design automation for one metric: source, frequency, storage, AI summary",
+      yamlType: "practice",
+      contentMarkdown:
+        "Design the automation for one metric. You do not need to build the full system. Choose the metric and define its source, update frequency, storage, and what AI should summarize after the number arrives. Allow 10–20 minutes.\n\nIn your submission, write:\n\n1) The one metric and why you chose it.\n2) The metric source (form, point-of-sale system, spreadsheet, or API).\n3) The update frequency (daily, weekly, or real time).\n4) The storage location (Google Sheets, Notion, or another tool).\n5) What AI should summarize after the metric arrives (one question or prompt).\n\n| Number + Source | 50% |\n| Storage + AI | 50% |",
+      changePaths: [
+        "mission.intro",
+        "mission.delivery",
+        "mission.rubric",
+        "mission.yamlIntent",
+        "mission.yamlType",
+        "contentMarkdown",
+      ],
+    },
     "automator-m4-l3-error-handling": {
       intro:
         "Design one alert rule for a real workflow. You do not need to build the automation. Define the failure point, retry plan, alert recipient and channel, and the information that must be logged. AI may suggest options, but you make the final decision.",
@@ -184,18 +281,14 @@ const APPROVED: Record<
           criteria: "Tasks from your life or work — no empty general examples",
         },
       ],
-      yamlIntent:
-        "Pick 3 small real tasks; assign AI / Software / both with one-line why each",
+      yamlIntent: "Pick 3 small real tasks; assign AI / Software / both with one-line why each",
       yamlType: "practice",
       changePaths: ["mission.delivery"],
     },
   },
 };
 
-function readRecovered(
-  locale: LessonPackageLocale,
-  lessonId: string,
-): LocalizedLessonPackage {
+function readRecovered(locale: LessonPackageLocale, lessonId: string): LocalizedLessonPackage {
   const filePath = path.join(
     REPO_ROOT,
     "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages",
@@ -205,10 +298,7 @@ function readRecovered(
   return JSON.parse(readFileSync(filePath, "utf8")) as LocalizedLessonPackage;
 }
 
-function readRuntime(
-  locale: LessonPackageLocale,
-  lessonId: string,
-): LocalizedLessonPackage {
+function readRuntime(locale: LessonPackageLocale, lessonId: string): LocalizedLessonPackage {
   const filePath = path.join(
     REPO_ROOT,
     "src/lib/locale-lessons",
@@ -225,7 +315,7 @@ function missionSection(pkg: LocalizedLessonPackage) {
   return section!;
 }
 
-describe("Approved localized mission copy — six packages", () => {
+describe("Approved localized mission copy", () => {
   for (const locale of ["ar-MSA", "ar-Gulf", "en"] as const) {
     for (const lessonId of TARGET_LESSONS) {
       const approved = APPROVED[locale][lessonId];
@@ -239,6 +329,9 @@ describe("Approved localized mission copy — six packages", () => {
         expect(mission.rubric).toEqual(approved.rubric);
         expect(mission.yamlIntent).toBe(approved.yamlIntent);
         expect(mission.yamlType).toBe(approved.yamlType);
+        if (approved.contentMarkdown) {
+          expect(section.contentMarkdown).toBe(approved.contentMarkdown);
+        }
         expect(mission.intro).not.toMatch(/\| البعد \||\| Dimension \|/);
       });
 
@@ -262,16 +355,17 @@ describe("Approved localized mission copy — six packages", () => {
     }
   }
 
-  it("delivery counts are 5/5/5 for automator-m4-l3 and 3/3/3 for intro-m1-l5", () => {
+  it("delivery counts match the approved per-lesson contract", () => {
     for (const locale of ["ar-MSA", "ar-Gulf", "en"] as const) {
       expect(
-        missionSection(readRecovered(locale, "automator-m4-l3-error-handling"))
-          .mission!.delivery,
+        missionSection(readRecovered(locale, "automator-m4-l3-error-handling")).mission!.delivery,
       ).toHaveLength(5);
       expect(
-        missionSection(readRecovered(locale, "intro-m1-l5-ai-vs-software")).mission!
-          .delivery,
+        missionSection(readRecovered(locale, "intro-m1-l5-ai-vs-software")).mission!.delivery,
       ).toHaveLength(3);
+      expect(
+        missionSection(readRecovered(locale, "analyst-m4-automated-dashboard")).mission!.delivery,
+      ).toHaveLength(1);
     }
   });
 });

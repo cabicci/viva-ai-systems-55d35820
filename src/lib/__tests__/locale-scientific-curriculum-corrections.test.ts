@@ -2,19 +2,19 @@ import { execSync } from "node:child_process";
 import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import {
-  adaptPackageQuizzesFromSections,
-} from "@/lib/locale-lessons/adapt-package-to-live-quiz";
-import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
+import { adaptPackageQuizzesFromSections } from "@/lib/locale-lessons/adapt-package-to-live-quiz";
+import type {
+  LessonPackageLocale,
+  LocalizedLessonMission,
+  LocalizedLessonPackage,
+} from "@/lib/locale-lessons/types";
 import {
   AG4_ISSUE_ID_PATTERN,
   assertManifestInvariants,
   type ScientificCorrectionRecord,
 } from "@/lib/locale-lessons/scientific-curriculum-corrections-manifest";
 import { deepEqual } from "../../../scripts/locale-lessons/lib/phase13b-semantic-diff.ts";
-import {
-  validateRecoveredRuntimeEquivalence,
-} from "../../../scripts/locale-lessons/lib/promote-phase13b-recovered-packages-core.ts";
+import { validateRecoveredRuntimeEquivalence } from "../../../scripts/locale-lessons/lib/promote-phase13b-recovered-packages-core.ts";
 import {
   auditAllRecoveredPackages,
   validateAllRecoveredPackages,
@@ -27,17 +27,11 @@ const FIXTURES = path.join(REPO_ROOT, "src/lib/__tests__/fixtures");
 const BASE_SHA = "1a02f55c19d555c5f1e23642753828e6491fd4c3";
 
 const MANIFEST = JSON.parse(
-  readFileSync(
-    path.join(FIXTURES, "scientific-curriculum-corrections-manifest.json"),
-    "utf8",
-  ),
+  readFileSync(path.join(FIXTURES, "scientific-curriculum-corrections-manifest.json"), "utf8"),
 ) as ScientificCorrectionRecord[];
 
 const BEFORE_STATE = JSON.parse(
-  readFileSync(
-    path.join(FIXTURES, "scientific-curriculum-corrections-before-state.json"),
-    "utf8",
-  ),
+  readFileSync(path.join(FIXTURES, "scientific-curriculum-corrections-before-state.json"), "utf8"),
 ) as Record<string, LocalizedLessonPackage>;
 
 const APPROVED_RECOVERED = new Set(MANIFEST.map((r) => r.recoveredPackagePath));
@@ -50,10 +44,7 @@ function buildBasePackageCache(): Map<string, LocalizedLessonPackage> {
       cwd: REPO_ROOT,
       encoding: "utf8",
     });
-    cache.set(
-      relativePath,
-      structuredClone(JSON.parse(raw) as LocalizedLessonPackage),
-    );
+    cache.set(relativePath, structuredClone(JSON.parse(raw) as LocalizedLessonPackage));
   }
   return cache;
 }
@@ -89,6 +80,85 @@ const PLACEHOLDER_DISTRACTOR_PATTERNS = [
   "Distractor placeholder",
 ];
 
+const B019_DASHBOARD_LESSON_ID = "analyst-m4-automated-dashboard";
+const B019_DASHBOARD_MISSION_BY_LOCALE: Record<LessonPackageLocale, LocalizedLessonMission> = {
+  "ar-MSA": {
+    intro:
+      "صمّم أتمتة لرقم واحد. لا يلزم بناء النظام كاملًا؛ اختر الرقم، وحدّد مصدره، وتكرار تحديثه، ومكان تخزينه، وما الذي يلخّصه الذكاء الاصطناعي بعد وصوله. تكفي ١٠–٢٠ دقيقة.",
+    delivery: [
+      "في تسليمك، اكتب:\n\n١) الرقم الواحد ولماذا اخترته.\n٢) مصدر الرقم (نموذج، نظام نقاط بيع، جدول بيانات، أو API).\n٣) تكرار التحديث (يومي، أسبوعي، أو لحظي).\n٤) مكان التخزين (Google Sheets، Notion، أو غيرهما).\n٥) ما الذي سيلخّصه الذكاء الاصطناعي بعد وصول الرقم (سؤال أو طلب واحد).",
+    ],
+    rubric: [
+      {
+        dimension: "رقم + مصدر",
+        weight: 50,
+        criteria: "رقم واحد واضح + مصدر محدد.",
+      },
+      {
+        dimension: "تخزين + AI",
+        weight: 50,
+        criteria: "تكرار تحديث + تخزين + سؤال أو تلخيص عملي للذكاء الاصطناعي.",
+      },
+    ],
+    yamlIntent: "Design automation for one metric: source, frequency, storage, AI summary",
+    yamlType: "practice",
+  },
+  "ar-Gulf": {
+    intro:
+      "صمّم أتمتة لرقم واحد. مو لازم تبني النظام كامل؛ اختر الرقم، وحدّد مصدره، وتكرار تحديثه، ومكان تخزينه، ووش يلخّص الذكاء الاصطناعي بعد ما يوصل. تكفي ١٠–٢٠ دقيقة.",
+    delivery: [
+      "في تسليمك، اكتب:\n\n١) الرقم الواحد وليش اخترته.\n٢) مصدر الرقم (نموذج، كاشير، Sheet، أو API).\n٣) تكرار التحديث (يومي، أسبوعي، أو لحظي).\n٤) مكان التخزين (Google Sheets، Notion، أو غيرها).\n٥) وش يلخّص الذكاء الاصطناعي بعد ما يوصل الرقم (سؤال أو طلب واحد).",
+    ],
+    rubric: [
+      {
+        dimension: "رقم + مصدر",
+        weight: 50,
+        criteria: "رقم واحد واضح + مصدر محدد.",
+      },
+      {
+        dimension: "تخزين + AI",
+        weight: 50,
+        criteria: "تكرار تحديث + تخزين + سؤال أو تلخيص عملي للذكاء الاصطناعي.",
+      },
+    ],
+    yamlIntent: "Design automation for one metric: source, frequency, storage, AI summary",
+    yamlType: "practice",
+  },
+  en: {
+    intro:
+      "Design the automation for one metric. You do not need to build the full system. Choose the metric and define its source, update frequency, storage, and what AI should summarize after the number arrives. Allow 10–20 minutes.",
+    delivery: [
+      "In your submission, write:\n\n1) The one metric and why you chose it.\n2) The metric source (form, point-of-sale system, spreadsheet, or API).\n3) The update frequency (daily, weekly, or real time).\n4) The storage location (Google Sheets, Notion, or another tool).\n5) What AI should summarize after the metric arrives (one question or prompt).",
+    ],
+    rubric: [
+      {
+        dimension: "Metric + Source",
+        weight: 50,
+        criteria: "One clear metric + a specific source.",
+      },
+      {
+        dimension: "Storage + AI",
+        weight: 50,
+        criteria: "Update frequency + storage + a practical AI question or summary.",
+      },
+    ],
+    yamlIntent: "Design automation for one metric: source, frequency, storage, AI summary",
+    yamlType: "practice",
+  },
+};
+const B019_DASHBOARD_PRE_MISSION_MARKDOWN_BY_LOCALE: Record<LessonPackageLocale, string> = {
+  "ar-MSA": "| رقم + مصدر | 50% |\n| تخزين + AI | 50% |",
+  "ar-Gulf": "| رقم + مصدر | 50% |\n| تخزين + AI | 50% |",
+  en: "| Number + Source | 50% |\n| Storage + AI | 50% |",
+};
+const B019_DASHBOARD_MISSION_MARKDOWN_BY_LOCALE: Record<LessonPackageLocale, string> = {
+  "ar-MSA":
+    "صمّم أتمتة لرقم واحد. لا يلزم بناء النظام كاملًا؛ اختر الرقم، وحدّد مصدره، وتكرار تحديثه، ومكان تخزينه، وما الذي يلخّصه الذكاء الاصطناعي بعد وصوله. تكفي ١٠–٢٠ دقيقة.\n\n**التسليم:**\n\nفي تسليمك، اكتب:\n\n١) الرقم الواحد ولماذا اخترته.\n٢) مصدر الرقم (نموذج، نظام نقاط بيع، جدول بيانات، أو API).\n٣) تكرار التحديث (يومي، أسبوعي، أو لحظي).\n٤) مكان التخزين (Google Sheets، Notion، أو غيرهما).\n٥) ما الذي سيلخّصه الذكاء الاصطناعي بعد وصول الرقم (سؤال أو طلب واحد).\n\n| رقم + مصدر | 50% |\n| تخزين + AI | 50% |",
+  "ar-Gulf":
+    "صمّم أتمتة لرقم واحد. مو لازم تبني النظام كامل؛ اختر الرقم، وحدّد مصدره، وتكرار تحديثه، ومكان تخزينه، ووش يلخّص الذكاء الاصطناعي بعد ما يوصل. تكفي ١٠–٢٠ دقيقة.\n\n**التسليم:**\n\nفي تسليمك، اكتب:\n\n١) الرقم الواحد وليش اخترته.\n٢) مصدر الرقم (نموذج، كاشير، Sheet، أو API).\n٣) تكرار التحديث (يومي، أسبوعي، أو لحظي).\n٤) مكان التخزين (Google Sheets، Notion، أو غيرها).\n٥) وش يلخّص الذكاء الاصطناعي بعد ما يوصل الرقم (سؤال أو طلب واحد).\n\n| رقم + مصدر | 50% |\n| تخزين + AI | 50% |",
+  en: "Design the automation for one metric. You do not need to build the full system. Choose the metric and define its source, update frequency, storage, and what AI should summarize after the number arrives. Allow 10–20 minutes.\n\nIn your submission, write:\n\n1) The one metric and why you chose it.\n2) The metric source (form, point-of-sale system, spreadsheet, or API).\n3) The update frequency (daily, weekly, or real time).\n4) The storage location (Google Sheets, Notion, or another tool).\n5) What AI should summarize after the metric arrives (one question or prompt).\n\n| Number + Source | 50% |\n| Storage + AI | 50% |",
+};
+
 function readPackage(relativePath: string): LocalizedLessonPackage {
   return JSON.parse(
     readFileSync(path.join(REPO_ROOT, relativePath), "utf8"),
@@ -103,16 +173,31 @@ function readBasePackage(relativePath: string): LocalizedLessonPackage {
   return structuredClone(cached);
 }
 
+function normalizeExactB019DashboardMission(
+  pkg: LocalizedLessonPackage,
+  record: ScientificCorrectionRecord,
+): void {
+  if (record.lessonId !== B019_DASHBOARD_LESSON_ID) return;
+  const locale = record.locale as LessonPackageLocale;
+  const missionSection = pkg.sections[4];
+  if (
+    missionSection?.role === "Mission" &&
+    deepEqual(missionSection.mission, B019_DASHBOARD_MISSION_BY_LOCALE[locale]) &&
+    missionSection.contentMarkdown === B019_DASHBOARD_MISSION_MARKDOWN_BY_LOCALE[locale]
+  ) {
+    delete missionSection.mission;
+    missionSection.contentMarkdown = B019_DASHBOARD_PRE_MISSION_MARKDOWN_BY_LOCALE[locale];
+  }
+}
+
 function stripApprovedFields(
   pkg: LocalizedLessonPackage,
   records: ScientificCorrectionRecord[],
 ): LocalizedLessonPackage {
   const clone = structuredClone(pkg);
   for (const record of records) {
-    const section = clone.sections[record.sectionIndex] as unknown as Record<
-      string,
-      unknown
-    >;
+    normalizeExactB019DashboardMission(clone, record);
+    const section = clone.sections[record.sectionIndex] as unknown as Record<string, unknown>;
     if (record.approvedReplacementQuiz) {
       delete section.quiz;
     }
@@ -133,9 +218,7 @@ function quizMarkdownMatchesQuizObject(
 }
 
 function runtimeToRecovered(runtimePath: string): string {
-  const match = runtimePath.match(
-    /^src\/lib\/locale-lessons\/(ar-MSA|ar-Gulf|en)\/lessons\/(.+)$/,
-  );
+  const match = runtimePath.match(/^src\/lib\/locale-lessons\/(ar-MSA|ar-Gulf|en)\/lessons\/(.+)$/);
   if (!match) throw new Error(`Bad runtime path: ${runtimePath}`);
   return `src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/${match[1]}/${match[2]}`;
 }
@@ -149,6 +232,26 @@ function recoveredToRuntime(recoveredPath: string): string {
 }
 
 describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
+  it("validates the exact B019 dashboard mission allowance before normalization", () => {
+    const records = MANIFEST.filter((record) => record.lessonId === B019_DASHBOARD_LESSON_ID);
+    expect(records).toHaveLength(3);
+    expect(new Set(records.map((record) => record.locale))).toEqual(
+      new Set<LessonPackageLocale>(["ar-MSA", "ar-Gulf", "en"]),
+    );
+
+    for (const record of records) {
+      const expected = B019_DASHBOARD_MISSION_BY_LOCALE[record.locale as LessonPackageLocale];
+      const recovered = readPackage(record.recoveredPackagePath);
+      const runtime = readPackage(record.runtimePackagePath);
+      expect(recovered.sections[4]?.role).toBe("Mission");
+      expect(recovered.sections[4]?.mission).toEqual(expected);
+      expect(recovered.sections[4]?.contentMarkdown).toBe(
+        B019_DASHBOARD_MISSION_MARKDOWN_BY_LOCALE[record.locale as LessonPackageLocale],
+      );
+      expect(runtime.sections[4]).toEqual(recovered.sections[4]);
+    }
+  });
+
   it("manifest contains exactly 40 records and 39 unique packages", () => {
     assertManifestInvariants(MANIFEST);
     expect(MANIFEST).toHaveLength(40);
@@ -194,24 +297,20 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
     }
   });
 
-  it(
-    "leaves every non-approved runtime package identical to base SHA",
-    () => {
-      const changedRuntime = execSync(
-        `git diff --name-only ${BASE_SHA} HEAD -- src/lib/locale-lessons/ar-MSA/lessons src/lib/locale-lessons/ar-Gulf/lessons src/lib/locale-lessons/en/lessons`,
-        { cwd: REPO_ROOT, encoding: "utf8" },
-      )
-        .trim()
-        .split("\n")
-        .filter(Boolean)
-        .map((line) => line.replace(/\\/g, "/"))
-        .sort();
+  it("leaves every non-approved runtime package identical to base SHA", () => {
+    const changedRuntime = execSync(
+      `git diff --name-only ${BASE_SHA} HEAD -- src/lib/locale-lessons/ar-MSA/lessons src/lib/locale-lessons/ar-Gulf/lessons src/lib/locale-lessons/en/lessons`,
+      { cwd: REPO_ROOT, encoding: "utf8" },
+    )
+      .trim()
+      .split("\n")
+      .filter(Boolean)
+      .map((line) => line.replace(/\\/g, "/"))
+      .sort();
 
-      expect(changedRuntime).toHaveLength(APPROVED_RUNTIME.size);
-      expect(new Set(changedRuntime)).toEqual(APPROVED_RUNTIME);
-    },
-    30_000,
-  );
+    expect(changedRuntime).toHaveLength(APPROVED_RUNTIME.size);
+    expect(new Set(changedRuntime)).toEqual(APPROVED_RUNTIME);
+  }, 30_000);
 
   it("keeps recovered/runtime equivalence for all affected packages", () => {
     const packagePaths = [...new Set(MANIFEST.map((r) => r.recoveredPackagePath))];
@@ -234,9 +333,7 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
     for (const [packagePath, records] of recordsByPackage) {
       const base = readBasePackage(packagePath);
       const current = readPackage(packagePath);
-      expect(stripApprovedFields(current, records)).toEqual(
-        stripApprovedFields(base, records),
-      );
+      expect(stripApprovedFields(current, records)).toEqual(stripApprovedFields(base, records));
     }
   });
 
@@ -279,9 +376,7 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
         false,
       );
       if (record.locale === "ar-MSA") {
-        expect(
-          EGYPTIAN_FALLBACK_PATTERNS.some((p) => quiz.explanation.includes(p)),
-        ).toBe(false);
+        expect(EGYPTIAN_FALLBACK_PATTERNS.some((p) => quiz.explanation.includes(p))).toBe(false);
       }
     }
   });
@@ -322,9 +417,7 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
   it("requires promotion idempotence (second run writes 0 files)", async () => {
     const isolated = await runIsolatedPromotionIdempotence();
 
-    expect(isolated.firstPromotion.packagesPromoted).toBe(
-      REQUIRED_LESSON_COUNT * 3,
-    );
+    expect(isolated.firstPromotion.packagesPromoted).toBe(REQUIRED_LESSON_COUNT * 3);
     expect(isolated.firstPromotion.filesWritten).toBe(REQUIRED_LESSON_COUNT * 3);
     expect(isolated.equivalence.ok).toBe(true);
     expect(isolated.equivalence.packagesChecked).toBe(REQUIRED_LESSON_COUNT * 3);

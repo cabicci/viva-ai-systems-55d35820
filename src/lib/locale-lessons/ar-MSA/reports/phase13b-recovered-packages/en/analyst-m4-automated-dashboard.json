@@ -68,17 +68,35 @@
     {
       "role": "Mission",
       "heading": "Mission",
-      "contentMarkdown": "| Number + Source | 50% |\n| Storage + AI | 50% |",
+      "contentMarkdown": "Design the automation for one metric. You do not need to build the full system. Choose the metric and define its source, update frequency, storage, and what AI should summarize after the number arrives. Allow 10–20 minutes.\n\nIn your submission, write:\n\n1) The one metric and why you chose it.\n2) The metric source (form, point-of-sale system, spreadsheet, or API).\n3) The update frequency (daily, weekly, or real time).\n4) The storage location (Google Sheets, Notion, or another tool).\n5) What AI should summarize after the metric arrives (one question or prompt).\n\n| Number + Source | 50% |\n| Storage + AI | 50% |",
       "bullets": [],
-      "tables": []
+      "tables": [],
+      "mission": {
+        "intro": "Design the automation for one metric. You do not need to build the full system. Choose the metric and define its source, update frequency, storage, and what AI should summarize after the number arrives. Allow 10–20 minutes.",
+        "delivery": [
+          "In your submission, write:\n\n1) The one metric and why you chose it.\n2) The metric source (form, point-of-sale system, spreadsheet, or API).\n3) The update frequency (daily, weekly, or real time).\n4) The storage location (Google Sheets, Notion, or another tool).\n5) What AI should summarize after the metric arrives (one question or prompt)."
+        ],
+        "rubric": [
+          {
+            "dimension": "Metric + Source",
+            "weight": 50,
+            "criteria": "One clear metric + a specific source."
+          },
+          {
+            "dimension": "Storage + AI",
+            "weight": 50,
+            "criteria": "Update frequency + storage + a practical AI question or summary."
+          }
+        ],
+        "yamlIntent": "Design automation for one metric: source, frequency, storage, AI summary",
+        "yamlType": "practice"
+      }
     },
     {
       "role": "Confidence close",
       "heading": "Confidence Close",
       "contentMarkdown": "- **Next:** **Weekly Review Ritual**.\n\n---",
-      "bullets": [
-        "**Next:** **Weekly Review Ritual**."
-      ],
+      "bullets": ["**Next:** **Weekly Review Ritual**."],
       "tables": []
     }
   ],
