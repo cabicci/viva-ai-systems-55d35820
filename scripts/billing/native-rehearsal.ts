@@ -9,6 +9,10 @@ import { spawnSync } from "node:child_process";
 import { copyFileSync, mkdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  createDisposableCredentials,
+  isExpectedOrdinaryAuthDenial,
+} from "./native-rehearsal-contract";
 
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const WORKTREE_ROOT = path.resolve(REPO_ROOT, ".."); // scripts/billing -> repo; wait, scripts/billing is under repo
@@ -484,8 +488,7 @@ async function main(): Promise<void> {
   // ordinary authenticated requires a user JWT; mint via GoTrue if possible)
   let authedJwt = "";
   {
-    const email = `native-reh-${Date.now()}@example.com`;
-    const password = "NativeReh-Test-Only-1";
+    const { email, password } = createDisposableCredentials();
     const signup = await fetch(`${api}/auth/v1/signup`, {
       method: "POST",
       headers: { "Content-Type": "application/json", apikey: anon },
@@ -520,7 +523,7 @@ async function main(): Promise<void> {
     pushTest(
       2,
       "ordinary authenticated wrapper denial",
-      Boolean(authedJwt) && (r.status === 401 || r.status === 403 || r.status >= 400),
+      Boolean(authedJwt) && isExpectedOrdinaryAuthDenial(r),
       `status=${r.status} jwt=${Boolean(authedJwt)} body=${r.text.slice(0, 160)}`,
     );
   }
