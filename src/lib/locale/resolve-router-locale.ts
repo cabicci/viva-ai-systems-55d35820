@@ -1,3 +1,4 @@
+import { isSupportedLocale } from "./resolve-locale";
 import { resolvePublicLocale } from "./resolve-public-locale";
 import type { SupportedLocale } from "./types";
 
@@ -14,10 +15,14 @@ export type RouterLocaleInputs = {
   serverCountryCode?: string | null;
 };
 
-function pickNonEmpty(...values: Array<string | null | undefined>): string | undefined {
+function pickCanonical(...values: Array<string | null | undefined>): SupportedLocale | undefined {
   for (const value of values) {
-    if (value != null && value.trim() !== "") {
-      return value.trim();
+    if (value == null) {
+      continue;
+    }
+    const trimmed = value.trim();
+    if (isSupportedLocale(trimmed)) {
+      return trimmed;
     }
   }
   return undefined;
@@ -27,17 +32,13 @@ function pickNonEmpty(...values: Array<string | null | undefined>): string | und
  * Resolve the shell locale for LocaleRouterProvider.
  * Merges SSR loader inputs with client router/cookie so geo never beats URL/cookie.
  */
-export function resolveRouterEffectiveLocale(
-  input: RouterLocaleInputs,
-): SupportedLocale {
-  const urlForResolve = pickNonEmpty(input.urlLocale, input.serverUrlLocale);
-  const cookieForResolve = pickNonEmpty(input.cookieLocale, input.serverCookieLocale);
-  const countryForResolve =
-    urlForResolve || cookieForResolve ? undefined : input.serverCountryCode ?? undefined;
+export function resolveRouterEffectiveLocale(input: RouterLocaleInputs): SupportedLocale {
+  const urlForResolve = pickCanonical(input.urlLocale, input.serverUrlLocale);
+  const cookieForResolve = pickCanonical(input.cookieLocale, input.serverCookieLocale);
 
   return resolvePublicLocale({
     urlLocale: urlForResolve,
     cookieLocale: cookieForResolve,
-    countryCode: countryForResolve,
+    countryCode: input.serverCountryCode ?? undefined,
   }).locale;
 }

@@ -1,10 +1,10 @@
 # Roadmap sync marker
 
-[roadmap:6e1b8322-0634-4b23-bdf9-2e79231c1278]
-date: 2026-08-01
-scope: other
+[roadmap:c4ae8ef8-bfe6-490b-bfe7-c30c58b2696a]
+date: 2026-09-13
+scope: ui
 source: user
-summary: [scope:ui] entitlements.isLoaded يعتمد على isFetched/isError بدل isSuccess
+summary: B022/MEP-038: defer full lesson content loading; targeted checks passed; guarded build and browser verification pending.
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

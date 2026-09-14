@@ -3,7 +3,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { RefreshCw, ArrowLeft } from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
 import { getDueReviews } from "@/lib/spaced-repetition.functions";
-import { getLesson } from "@/lib/unified-lessons";
+import { getLesson } from "@/lib/lesson-catalog";
 import { LessonLink } from "@/components/lesson/LessonLink";
 import { PATHS } from "@/lib/curriculum-data";
 import { useLocale } from "@/lib/locale/locale-context";

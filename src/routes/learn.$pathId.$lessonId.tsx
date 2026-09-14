@@ -466,6 +466,9 @@ function UnifiedLessonPage() {
               {String(lesson.globalOrder).padStart(2, "0")}/
               {String(total).padStart(2, "0")}
             </span>
+            {isLocalizedPackagePage ? (
+              <span aria-hidden hidden data-locale-live-active={effectiveAccess.effectiveLocale} />
+            ) : null}
           </div>
           <h1 className="text-2xl md:text-4xl font-black leading-tight">
             {displayTitle}

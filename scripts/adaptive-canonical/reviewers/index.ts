@@ -5,6 +5,17 @@ import { createOpenAiReviewer } from "./openai.ts";
 
 export function resolveReviewer(): Reviewer {
   const forced = process.env.AI_REVIEW_PROVIDER?.toLowerCase();
+  if (
+    forced &&
+    forced !== "openai" &&
+    forced !== "anthropic" &&
+    forced !== "gemini"
+  ) {
+    throw new Error(
+      `Invalid AI_REVIEW_PROVIDER "${process.env.AI_REVIEW_PROVIDER}". Expected one of: anthropic, openai, gemini.`,
+    );
+  }
+
   const order =
     forced === "openai" || forced === "anthropic" || forced === "gemini"
       ? [forced]

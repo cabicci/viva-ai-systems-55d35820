@@ -89,8 +89,8 @@ export function useEntitlement(): {
 
   const {
     data: adminData,
-    isFetched: adminFetched,
-    isError: adminErrored,
+    error: adminQueryError,
+    isSuccess: adminLoaded,
   } = useQuery({
     queryKey: [...ADMIN_QK, userId],
     queryFn: async (): Promise<boolean> => {
@@ -106,23 +106,22 @@ export function useEntitlement(): {
       return !!data;
     },
     enabled: !!userId,
-    retry: false,
     staleTime: 5 * 60_000,
   });
-  const admin = !!adminData;
+  const admin = !adminQueryError && !!adminData;
 
-  const { data, isFetched, isError } = useQuery({
+  const {
+    data,
+    error: subscriptionQueryError,
+    isSuccess,
+  } = useQuery({
     queryKey: [...SUB_QK, userId],
     queryFn: async (): Promise<Tier> => {
       if (!userId) return "free";
       // Authoritative paid-access source after Billing cutover:
       // billing.subscriptions via public.get_my_billing_access_tier.
       // Legacy public.user_subscriptions is not independently authoritative.
-      // Not present in generated types until the billing schema is deployed.
-      const rpc = supabase.rpc as unknown as (
-        fn: string,
-      ) => Promise<{ data: unknown; error: unknown }>;
-      const { data, error } = await rpc("get_my_billing_access_tier");
+      const { data, error } = await supabase.rpc("get_my_billing_access_tier");
       if (error) {
         captureWarn("entitlements:billing_access_tier", error);
         return "free";
@@ -130,20 +129,21 @@ export function useEntitlement(): {
       return data === "pro" ? "pro" : "free";
     },
     enabled: !!userId,
-    retry: false,
     staleTime: 60_000,
   });
 
-  const tier: Tier = admin ? "pro" : (data ?? "free");
+  const tier: Tier = admin
+    ? "pro"
+    : subscriptionQueryError
+      ? "free"
+      : (data ?? "free");
   return {
     tier,
     isPro: tier === "pro",
     isAdmin: admin,
-    // Settled = fetched OR errored. A failing RPC (e.g. billing schema not
-    // deployed) must never wedge the lesson gate on "loading" forever.
-    isLoaded:
-      !loading &&
-      (!userId || ((isFetched || isError) && (adminFetched || adminErrored))),
+    // C6 fix: simplified — when there's no user we're loaded; when there is,
+    // we need BOTH the subscription query and the admin query to have settled.
+    isLoaded: !loading && (!userId || (isSuccess && adminLoaded)),
   };
 }
 

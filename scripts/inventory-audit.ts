@@ -1,5 +1,5 @@
 import { PATHS } from "@/lib/curriculum-data";
-import { INTRO_LESSON_CONTENT } from "@/components/intro/lessons";
+import { loadIntroLessonContent } from "@/components/intro/lessons/lesson-registry";
 import { existsSync, statSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
@@ -26,7 +26,7 @@ for (const p of PATHS) {
   for (const m of p.modules) {
     for (const l of m.lessons) {
       const blockKey = l.id;
-      const blocksResolved = INTRO_LESSON_CONTENT[blockKey];
+      const blocksResolved = await loadIntroLessonContent(blockKey);
       let hasLV = false;
       let urlOv = "";
       if (blocksResolved) {

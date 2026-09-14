@@ -8,7 +8,10 @@ import {
   buildLocalizedAssistantContextOverride,
   resolveAssistantLearnerContext,
 } from "@/lib/assistant/resolve-assistant-learner-context";
-import { adaptPackageMissionsFromSections, packageMissionId } from "@/lib/locale-lessons/adapt-package-to-live-mission";
+import {
+  adaptPackageMissionsFromSections,
+  packageMissionId,
+} from "@/lib/locale-lessons/adapt-package-to-live-mission";
 import { extractMissionFromLocalizedPackage } from "@/lib/mission-gate";
 import { LocaleProvider } from "@/lib/locale/locale-context";
 import { LOCALE_META } from "@/lib/locale/types";
@@ -115,10 +118,17 @@ describe("resolveAssistantLearnerContext", () => {
 
   it("preserves legacy Egyptian context when override is absent", () => {
     const resolved = resolveAssistantLearnerContext("ar-EG", baseCtxProvider(), null);
-    expect(resolved.locale).toBeNull();
+    expect(resolved.locale).toBe("ar-EG");
     expect(resolved.currentPathTitle).toBe("Egyptian path");
     expect(resolved.currentLessonTitle).toBe("Egyptian lesson title");
     expect(resolved.currentMission?.intro).toBe("EG intro");
+
+    const source = readFileSync(
+      path.join(REPO_ROOT, "src/lib/assistant/resolve-assistant-learner-context.ts"),
+      "utf8",
+    );
+    expect(source).toMatch(/locale:\s*RagPackageLocale\b/);
+    expect(source).not.toMatch(/locale:\s*RagPackageLocale\s*\|\s*null/);
   });
 
   it("builds runtime payload with active package locale and localized mission", () => {
@@ -135,7 +145,7 @@ describe("resolveAssistantLearnerContext", () => {
       mission: { intro: mission.intro, prompt: mission.prompt },
     });
     const resolved = resolveAssistantLearnerContext("en", baseCtxProvider(), override);
-    const payload = buildAssistantRuntimePayload("hello", resolved, []);
+    const payload = buildAssistantRuntimePayload("hello", resolved);
 
     expect(payload.learnerContext.locale).toBe("en");
     expect(payload.learnerContext.currentLessonTitle).toBe(pkg.title);
@@ -148,9 +158,7 @@ describe("AssistantPanel locale UI", () => {
   for (const locale of ALL_LOCALES) {
     it(`renders localized chrome for ${locale}`, () => {
       const { container } = renderAssistant(locale);
-      expect(container.firstElementChild?.getAttribute("dir")).toBe(
-        LOCALE_META[locale].dir,
-      );
+      expect(container.firstElementChild?.getAttribute("dir")).toBe(LOCALE_META[locale].dir);
     });
   }
 
@@ -184,7 +192,9 @@ describe("AssistantPanel locale UI", () => {
       mission: { intro: mission.intro, prompt: mission.prompt },
     });
     renderAssistant("en", override);
-    expect(screen.getByText(new RegExp(pkg.title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")))).toBeTruthy();
+    expect(
+      screen.getByText(new RegExp(pkg.title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))),
+    ).toBeTruthy();
     expect(screen.queryByText("Egyptian lesson title")).toBeNull();
   });
 });

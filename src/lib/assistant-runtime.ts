@@ -1,4 +1,6 @@
 import { supabase } from "@/integrations/supabase/client";
+import type { RagPackageLocale } from "@/lib/locale-lessons/types";
+import { validateRuntimeLocale } from "@/lib/rag/assistant-grounding-security";
 
 /**
  * Assistant Runtime — frontend service.
@@ -10,7 +12,7 @@ import { supabase } from "@/integrations/supabase/client";
 export interface AssistantRuntimeRequestPayload {
   query: string;
   learnerContext: {
-    locale?: string | null;
+    locale: RagPackageLocale;
     currentPath?: string | null;
     currentModule?: string | null;
     currentLesson?: string | null;
@@ -25,7 +27,6 @@ export interface AssistantRuntimeRequestPayload {
       prompt?: string | null;
     } | null;
   };
-  retrievalResults?: unknown[];
 }
 
 export interface AssistantRuntimeResponsePayload {
@@ -44,28 +45,36 @@ export interface AssistantRuntimeResponsePayload {
   answer?: string;
 }
 
+function assertCanonicalRequestLocale(locale: unknown): asserts locale is RagPackageLocale {
+  const result = validateRuntimeLocale(locale);
+  if (!result.ok) {
+    throw new Error(`Invalid assistant runtime locale: ${result.reason}`);
+  }
+}
+
 export async function callAssistantRuntime(
   payload: AssistantRuntimeRequestPayload,
 ): Promise<AssistantRuntimeResponsePayload> {
+  assertCanonicalRequestLocale(payload.learnerContext?.locale);
+
   const {
     data: { session },
   } = await supabase.auth.getSession();
 
   const accessToken = session?.access_token;
   if (!accessToken) {
-    throw new Error(
-      "سجّل دخولك الأول عشان مساعد المنصة يقدر يساعدك.",
-    );
+    throw new Error("سجّل دخولك الأول عشان مساعد المنصة يقدر يساعدك.");
   }
 
-  const { data, error } = await supabase.functions.invoke<
-    AssistantRuntimeResponsePayload
-  >("assistant-runtime", {
-    body: payload,
-    headers: {
-      Authorization: `Bearer ${accessToken}`,
+  const { data, error } = await supabase.functions.invoke<AssistantRuntimeResponsePayload>(
+    "assistant-runtime",
+    {
+      body: payload,
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
     },
-  });
+  );
 
   if (error) {
     throw new Error(error.message || "Assistant runtime call failed");

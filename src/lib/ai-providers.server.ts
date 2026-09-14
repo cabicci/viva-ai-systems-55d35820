@@ -101,9 +101,9 @@ async function callOpenAI(options: AICallOptions): Promise<AICallResult> {
   });
 
   if (!res.ok) {
-    const text = await res.text().catch(() => "");
-    console.error(`[callOpenAI] error ${res.status}:`, text);
-    throw new Error(`OpenAI error (${res.status}): ${text.slice(0, 200)}`);
+    await res.body?.cancel().catch(() => undefined);
+    console.error(`[callOpenAI] request failed with status ${res.status}`);
+    throw new Error(`OpenAI error (${res.status})`);
   }
 
   const json = await res.json();
@@ -154,9 +154,9 @@ async function callLovableGateway(
   });
 
   if (!res.ok) {
-    const text = await res.text().catch(() => "");
-    console.error(`[callLovableGateway] error ${res.status}:`, text);
-    throw new Error(`AI Gateway error (${res.status}): ${text.slice(0, 200)}`);
+    await res.body?.cancel().catch(() => undefined);
+    console.error(`[callLovableGateway] request failed with status ${res.status}`);
+    throw new Error(`AI Gateway error (${res.status})`);
   }
 
   const json = await res.json();

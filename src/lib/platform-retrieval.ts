@@ -1,5 +1,6 @@
-import { useMemo } from "react";
-import { LESSONS, type LessonContent } from "@/lib/unified-lessons";
+import { useEffect, useState } from "react";
+import type { LessonContent } from "@/lib/lesson-catalog";
+import { loadUnifiedLessonsContent } from "@/lib/unified-lessons-content";
 import { PATHS } from "@/lib/curriculum-data";
 import type { IntroLessonContent } from "@/components/intro/intro-lesson-types";
 
@@ -300,16 +301,37 @@ function introContentToChunks(
   return chunks;
 }
 
-/* Pre-built corpus (cheap to compute once, cached at module-load) */
-const CORPUS: RetrievalChunk[] = [
-  ...LESSONS.flatMap(lessonToChunks),
-  ...LESSONS.flatMap((l) => {
-    const blocks = l.blocks;
-    if (!blocks) return [];
-    const moduleTitle = MODULE_INDEX[l.id] ?? l.stage;
-    return introContentToChunks(l.id, l.title, moduleTitle, blocks);
-  }),
-];
+function buildCorpus(lessons: readonly LessonContent[]): RetrievalChunk[] {
+  return [
+    ...lessons.flatMap(lessonToChunks),
+    ...lessons.flatMap((lesson) => {
+      const blocks = lesson.blocks;
+      if (!blocks) return [];
+      const moduleTitle = MODULE_INDEX[lesson.id] ?? lesson.stage;
+      return introContentToChunks(
+        lesson.id,
+        lesson.title,
+        moduleTitle,
+        blocks,
+      );
+    }),
+  ];
+}
+
+let browserCorpusPromise: Promise<RetrievalChunk[]> | null = null;
+
+async function loadPlatformCorpus(): Promise<RetrievalChunk[]> {
+  if (typeof window === "undefined") {
+    return buildCorpus(await loadUnifiedLessonsContent());
+  }
+  browserCorpusPromise ??= loadUnifiedLessonsContent()
+    .then(buildCorpus)
+    .catch((error: unknown) => {
+      browserCorpusPromise = null;
+      throw error;
+    });
+  return browserCorpusPromise;
+}
 
 /* ---------- Scoring ---------- */
 
@@ -394,9 +416,10 @@ export interface SearchOptions {
   preferPathId?: string | null;
 }
 
-export function searchPlatformContent(
+function searchCorpus(
   query: string,
-  opts: SearchOptions = {},
+  opts: SearchOptions,
+  corpus: readonly RetrievalChunk[],
 ): RetrievalResult[] {
   const q = (query ?? "").trim();
   if (!q) return [];
@@ -409,7 +432,7 @@ export function searchPlatformContent(
   const preferPathId = opts.preferPathId ?? null;
 
   const scored: RetrievalResult[] = [];
-  for (const c of CORPUS) {
+  for (const c of corpus) {
     let s = scoreChunk(qTokens, qNorm, c);
     if (preferLessonId && c.lessonId === preferLessonId) s += 4;
     if (
@@ -446,20 +469,68 @@ export function searchPlatformContent(
   return out;
 }
 
+
+export async function searchPlatformContent(
+  query: string,
+  opts: SearchOptions = {},
+): Promise<RetrievalResult[]> {
+  return searchCorpus(query, opts, await loadPlatformCorpus());
+}
+
 /* ---------- Hook ---------- */
+
+export type PlatformRetrievalState = {
+  results: RetrievalResult[];
+  corpusSize: number;
+  isLoading: boolean;
+  error: Error | null;
+};
 
 export function usePlatformRetrieval(
   query: string,
   opts: SearchOptions = {},
-): RetrievalResult[] {
+): PlatformRetrievalState {
   const limit = opts.limit;
   const minScore = opts.minScore;
   const perLessonCap = opts.perLessonCap;
-  return useMemo(
-    () => searchPlatformContent(query, { limit, minScore, perLessonCap }),
-    [query, limit, minScore, perLessonCap],
-  );
-}
+  const [state, setState] = useState<PlatformRetrievalState>({
+    results: [],
+    corpusSize: 0,
+    isLoading: true,
+    error: null,
+  });
 
-/** Total searchable chunks — exposed for the system-state debug panel. */
-export const RETRIEVAL_CORPUS_SIZE = CORPUS.length;
+  useEffect(() => {
+    let cancelled = false;
+    setState((current) => ({ ...current, isLoading: true, error: null }));
+    void loadPlatformCorpus().then(
+      (corpus) => {
+        if (cancelled) return;
+        setState({
+          results: searchCorpus(
+            query,
+            { limit, minScore, perLessonCap },
+            corpus,
+          ),
+          corpusSize: corpus.length,
+          isLoading: false,
+          error: null,
+        });
+      },
+      (error: unknown) => {
+        if (cancelled) return;
+        setState({
+          results: [],
+          corpusSize: 0,
+          isLoading: false,
+          error: error instanceof Error ? error : new Error(String(error)),
+        });
+      },
+    );
+    return () => {
+      cancelled = true;
+    };
+  }, [query, limit, minScore, perLessonCap]);
+
+  return state;
+}

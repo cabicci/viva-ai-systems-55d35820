@@ -237,14 +237,7 @@ export function MissionRubricSection({
         data: {
           submissionId: submission.id,
           missionId,
-          lessonTitle,
-          missionPrompt,
-          submissionText: text,
-          rubric: rubric.map((c) => ({
-            label: c.label,
-            weight: c.weight,
-            criteria: [...c.criteria],
-          })),
+          locale,
         },
       });
       setResult(r);
@@ -276,8 +269,7 @@ export function MissionRubricSection({
         data: {
           submissionId: lastSubmissionId,
           missionId,
-          lessonTitle,
-          missionPrompt,
+          locale,
         },
       });
       setReveal(r);
