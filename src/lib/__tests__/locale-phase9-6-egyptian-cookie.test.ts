@@ -34,7 +34,7 @@ describe("Phase 9.6 ar-EG selector cookie reset", () => {
     ).toBe("ar-Gulf");
   });
 
-  it("select ar-EG clears cookie so refresh stays ar-EG default", () => {
+  it("select ar-EG resets cookie to ar-EG so refresh stays default", () => {
     writeLocaleCookie("ar-Gulf");
     persistValidLocaleCookie(DEFAULT_LOCALE);
     expect(readLocaleCookie()).toBe("ar-EG");
@@ -64,7 +64,7 @@ describe("Phase 9.6 ar-EG selector cookie reset", () => {
     ).toBe("ar-EG");
   });
 
-  it("URL locale=en overrides stale cookie until ar-EG clears it", () => {
+  it("URL locale=en overrides stale cookie until ar-EG resets it", () => {
     writeLocaleCookie("ar-Gulf");
     expect(
       resolvePublicLocale({ urlLocale: "en", cookieLocale: readLocaleCookie() }).locale,
