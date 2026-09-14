@@ -23,7 +23,7 @@ type: reference
 
 ## Lesson ID Convention
 
-`{path}-{module}-{slug}` — مثال: `automator-m1-systems-view`. الـ id نفسه بيرمز للمسار + الموديول + الترتيب جوا المسار. ممنوع أخترع رقم درس عالمي زي "الدرس 22".
+`<path>-m<module#>-l<lesson#>-<slug>` — مثال: `intro-m1-l1-what-is-ai`. رقم الدرس صريح داخل الـ id؛ الاسم القديم من غير `l<lesson#>` مهجور. ممنوع أخترع رقم درس عالمي زي "الدرس 22".
 
 ## Lesson Anatomy
 
