@@ -37,9 +37,40 @@ const BEFORE_STATE = JSON.parse(
 const APPROVED_RECOVERED = new Set(MANIFEST.map((r) => r.recoveredPackagePath));
 const APPROVED_RUNTIME = new Set(MANIFEST.map((r) => r.runtimePackagePath));
 
+const B021_ACCEPTED_LOCALIZATION_COMMIT = "9dfd7ac9366f5cb6c8c9e5e279b38124d932f5d4";
+const B021_ACCEPTED_AR_MSA_FIELDS = [
+  {
+    lessonId: "analyst-m6-l1-question-mistakes",
+    recoveredPath:
+      "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-MSA/analyst-m6-l1-question-mistakes.json",
+    runtimePath: "src/lib/locale-lessons/ar-MSA/lessons/analyst-m6-l1-question-mistakes.json",
+    runtimeBlob: "839b90f2569d900adf15215f007005b5d4aaaef7",
+    sectionIndex: 2,
+    field: "bullet",
+    itemIndex: 2,
+    accepted: "No-Data — لا توجد بيانات أصلًا.",
+    stale: "No-Data — مفيش بيانات أصلًا.",
+  },
+  {
+    lessonId: "creator-m1-l1-why-content",
+    recoveredPath:
+      "src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages/ar-MSA/creator-m1-l1-why-content.json",
+    runtimePath: "src/lib/locale-lessons/ar-MSA/lessons/creator-m1-l1-why-content.json",
+    runtimeBlob: "0a721e09e8cdf4dcf2b30757dd055bdbb84b3387",
+    sectionIndex: 6,
+    field: "subtitle",
+    accepted: "اكتب وعد المحتوى الخاص بك",
+    stale: "اكتب وعد المحتوى بتاعك",
+  },
+] as const;
+const B021_ADDITIONAL_RECOVERED = new Set([B021_ACCEPTED_AR_MSA_FIELDS[1].recoveredPath]);
+const B021_ADDITIONAL_RUNTIME = new Set([B021_ACCEPTED_AR_MSA_FIELDS[1].runtimePath]);
+const EXPECTED_RECOVERED = new Set([...APPROVED_RECOVERED, ...B021_ADDITIONAL_RECOVERED]);
+const EXPECTED_RUNTIME = new Set([...APPROVED_RUNTIME, ...B021_ADDITIONAL_RUNTIME]);
+
 function buildBasePackageCache(): Map<string, LocalizedLessonPackage> {
   const cache = new Map<string, LocalizedLessonPackage>();
-  for (const relativePath of [...APPROVED_RECOVERED].sort()) {
+  for (const relativePath of [...EXPECTED_RECOVERED].sort()) {
     const raw = execSync(`git show ${BASE_SHA}:${relativePath}`, {
       cwd: REPO_ROOT,
       encoding: "utf8",
@@ -165,6 +196,25 @@ function readPackage(relativePath: string): LocalizedLessonPackage {
   ) as LocalizedLessonPackage;
 }
 
+function normalizeExactB021AcceptedFields(pkg: LocalizedLessonPackage, relativePath: string): void {
+  const questionMistakes = B021_ACCEPTED_AR_MSA_FIELDS[0];
+  if (relativePath === questionMistakes.recoveredPath) {
+    const bullets = pkg.sections[questionMistakes.sectionIndex]?.bullets;
+    if (bullets?.[questionMistakes.itemIndex] === questionMistakes.accepted) {
+      bullets[questionMistakes.itemIndex] = questionMistakes.stale;
+    }
+    return;
+  }
+
+  const whyContent = B021_ACCEPTED_AR_MSA_FIELDS[1];
+  if (relativePath === whyContent.recoveredPath) {
+    const section = pkg.sections[whyContent.sectionIndex];
+    if (section?.subtitle === whyContent.accepted) {
+      section.subtitle = whyContent.stale;
+    }
+  }
+}
+
 function readBasePackage(relativePath: string): LocalizedLessonPackage {
   const cached = BASE_PACKAGE_CACHE.get(relativePath);
   if (!cached) {
@@ -193,8 +243,10 @@ function normalizeExactB019DashboardMission(
 function stripApprovedFields(
   pkg: LocalizedLessonPackage,
   records: ScientificCorrectionRecord[],
+  relativePath: string,
 ): LocalizedLessonPackage {
   const clone = structuredClone(pkg);
+  normalizeExactB021AcceptedFields(clone, relativePath);
   for (const record of records) {
     normalizeExactB019DashboardMission(clone, record);
     const section = clone.sections[record.sectionIndex] as unknown as Record<string, unknown>;
@@ -232,6 +284,39 @@ function recoveredToRuntime(recoveredPath: string): string {
 }
 
 describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
+  it("validates exact B021 accepted localization fields and provenance before normalization", () => {
+    expect(() =>
+      execSync("git merge-base --is-ancestor " + B021_ACCEPTED_LOCALIZATION_COMMIT + " HEAD", {
+        cwd: REPO_ROOT,
+        encoding: "utf8",
+      }),
+    ).not.toThrow();
+
+    for (const repair of B021_ACCEPTED_AR_MSA_FIELDS) {
+      expect(
+        execSync("git rev-parse HEAD:" + repair.runtimePath, {
+          cwd: REPO_ROOT,
+          encoding: "utf8",
+        }).trim(),
+      ).toBe(repair.runtimeBlob);
+
+      const runtime = readPackage(repair.runtimePath);
+      const recovered = readPackage(repair.recoveredPath);
+      if (repair.field === "bullet") {
+        expect(runtime.sections[repair.sectionIndex]?.bullets[repair.itemIndex]).toBe(
+          repair.accepted,
+        );
+        expect(recovered.sections[repair.sectionIndex]?.bullets[repair.itemIndex]).toBe(
+          repair.accepted,
+        );
+      } else {
+        expect(runtime.sections[repair.sectionIndex]?.subtitle).toBe(repair.accepted);
+        expect(recovered.sections[repair.sectionIndex]?.subtitle).toBe(repair.accepted);
+      }
+      expect(recovered).toEqual(runtime);
+    }
+  });
+
   it("validates the exact B019 dashboard mission allowance before normalization", () => {
     const records = MANIFEST.filter((record) => record.lessonId === B019_DASHBOARD_LESSON_ID);
     expect(records).toHaveLength(3);
@@ -289,6 +374,7 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
   it("keeps every bullets field at exact base SHA values on approved packages", () => {
     for (const [packagePath, beforePkg] of Object.entries(BEFORE_STATE)) {
       const current = readPackage(packagePath);
+      normalizeExactB021AcceptedFields(current, packagePath);
       for (let index = 0; index < beforePkg.sections.length; index++) {
         expect(current.sections[index]?.bullets ?? []).toEqual(
           beforePkg.sections[index]?.bullets ?? [],
@@ -297,7 +383,7 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
     }
   });
 
-  it("leaves every non-approved runtime package identical to base SHA", () => {
+  it("retains 39 historical runtime packages plus the exact B021 accepted package", () => {
     const changedRuntime = execSync(
       `git diff --name-only ${BASE_SHA} HEAD -- src/lib/locale-lessons/ar-MSA/lessons src/lib/locale-lessons/ar-Gulf/lessons src/lib/locale-lessons/en/lessons`,
       { cwd: REPO_ROOT, encoding: "utf8" },
@@ -308,8 +394,10 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
       .map((line) => line.replace(/\\/g, "/"))
       .sort();
 
-    expect(changedRuntime).toHaveLength(APPROVED_RUNTIME.size);
-    expect(new Set(changedRuntime)).toEqual(APPROVED_RUNTIME);
+    expect(APPROVED_RUNTIME.size).toBe(39);
+    expect(B021_ADDITIONAL_RUNTIME.size).toBe(1);
+    expect(changedRuntime).toHaveLength(EXPECTED_RUNTIME.size);
+    expect(new Set(changedRuntime)).toEqual(EXPECTED_RUNTIME);
   }, 30_000);
 
   it("keeps recovered/runtime equivalence for all affected packages", () => {
@@ -333,13 +421,15 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
     for (const [packagePath, records] of recordsByPackage) {
       const base = readBasePackage(packagePath);
       const current = readPackage(packagePath);
-      expect(stripApprovedFields(current, records)).toEqual(stripApprovedFields(base, records));
+      expect(stripApprovedFields(current, records, packagePath)).toEqual(
+        stripApprovedFields(base, records, packagePath),
+      );
     }
   });
 
-  it("changes only the 39 approved packages versus base SHA", () => {
+  it("retains 39 historical recovered packages plus the exact B021 accepted mirror", () => {
     const changedRecovered = execSync(
-      `git diff --name-only ${BASE_SHA} HEAD -- src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages`,
+      `git diff --name-only ${BASE_SHA} -- src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages`,
       { cwd: REPO_ROOT, encoding: "utf8" },
     )
       .trim()
@@ -348,16 +438,20 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
       .map((line) => line.replace(/\\/g, "/"))
       .sort();
 
-    expect(changedRecovered).toHaveLength(APPROVED_RECOVERED.size);
-    expect(new Set(changedRecovered)).toEqual(APPROVED_RECOVERED);
+    expect(APPROVED_RECOVERED.size).toBe(39);
+    expect(B021_ADDITIONAL_RECOVERED.size).toBe(1);
+    expect(changedRecovered).toHaveLength(EXPECTED_RECOVERED.size);
+    expect(new Set(changedRecovered)).toEqual(EXPECTED_RECOVERED);
 
     for (const recoveredPath of changedRecovered) {
       const runtimePath = recoveredToRuntime(recoveredPath);
-      expect(APPROVED_RUNTIME.has(runtimePath)).toBe(true);
+      expect(EXPECTED_RUNTIME.has(runtimePath)).toBe(true);
       const records = MANIFEST.filter((r) => r.recoveredPackagePath === recoveredPath);
       const base = readBasePackage(recoveredPath);
       const current = readPackage(recoveredPath);
-      expect(stripApprovedFields(current, records)).toEqual(stripApprovedFields(base, records));
+      expect(stripApprovedFields(current, records, recoveredPath)).toEqual(
+        stripApprovedFields(base, records, recoveredPath),
+      );
       expect(readPackage(runtimePath)).toEqual(current);
     }
   });
