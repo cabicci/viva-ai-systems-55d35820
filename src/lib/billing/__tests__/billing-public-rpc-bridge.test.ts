@@ -478,21 +478,24 @@ describe.skipIf(!ENABLED)("public billing RPC bridge — disposable DB", () => {
       expect(snapshotResult(invalidatedUser)).toBe("false:ENTITLEMENT_UNAVAILABLE");
       expect(snapshotResult(newestInvalidUser)).toBe("false:ENTITLEMENT_UNAVAILABLE");
 
-      const evalOut = lastValue(
-        psql(
-          `BEGIN; ${SERVICE}
-          SELECT concat(
-            decision->>'allowed',
-            ':',
-            decision->>'denial_reason_code'
-          )
-          FROM (
-            SELECT public.evaluate_access('${expiredUser}','lesson','lesson-1') AS decision
-          ) result;
-          COMMIT;`,
-        ),
-      );
-      expect(evalOut).toBe("false:ENTITLEMENT_UNAVAILABLE");
+      const evaluateResult = (userId: string) =>
+        lastValue(
+          psql(
+            `BEGIN; ${SERVICE}
+            SELECT concat(
+              decision->>'allowed',
+              ':',
+              decision->>'denial_reason_code'
+            )
+            FROM (
+              SELECT public.evaluate_access('${userId}','lesson','lesson-1') AS decision
+            ) result;
+            COMMIT;`,
+          ),
+        );
+
+      expect(evaluateResult(validUser)).toBe("true:");
+      expect(evaluateResult(expiredUser)).toBe("false:LESSON_NOT_ENTITLED");
     } finally {
       cleanupSnapshots();
     }
