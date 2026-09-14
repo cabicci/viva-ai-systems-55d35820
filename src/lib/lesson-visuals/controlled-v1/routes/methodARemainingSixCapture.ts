@@ -20,6 +20,7 @@ import {
 import { readPngDimensions } from "../goldenRefs";
 import { DOCS_CONTROLLED_V1_CAPTURE } from "../paths";
 import type { Locale } from "../types";
+import { normalizeLocalCaptureAppOrigin } from "./localCaptureOrigin";
 import type { CaptureSessionConfig } from "./masaaratScreenshot";
 
 export const METHOD_A_REMAINING_SIX_APP_ORIGIN = "http://127.0.0.1:55440";
@@ -1218,28 +1219,24 @@ export async function captureMethodARemainingSixCell(
     };
   }
 
-  const appOrigin =
-    input.appOrigin ?? process.env.METHOD_A_LOCAL_APP_ORIGIN ?? METHOD_A_REMAINING_SIX_APP_ORIGIN;
+  const rawAppOrigin =
+    input.appOrigin ??
+    process.env.METHOD_A_LOCAL_APP_ORIGIN ??
+    METHOD_A_REMAINING_SIX_APP_ORIGIN;
+  const appOrigin = normalizeLocalCaptureAppOrigin(rawAppOrigin);
+  if (!appOrigin) {
+    return {
+      ok: false,
+      errors: [`app origin must be an exact HTTP loopback origin; got ${rawAppOrigin}`],
+      evidence: null,
+    };
+  }
+
   const supabaseOrigin =
     input.supabaseOrigin ??
     process.env.METHOD_A_LOCAL_SUPABASE_ORIGIN ??
     METHOD_A_REMAINING_SIX_SUPABASE_ORIGIN;
   const secretsRoot = input.secretsRoot ?? defaultSecretsRoot();
-
-  if (!appOrigin.includes("127.0.0.1") && !appOrigin.includes("localhost")) {
-    return {
-      ok: false,
-      errors: [`app origin must be loopback-only; got ${appOrigin}`],
-      evidence: null,
-    };
-  }
-  if (/masaarat\.ai|abyqqeboyrkkwhjpwmtd|production/i.test(appOrigin)) {
-    return {
-      ok: false,
-      errors: ["forbidden Production / Agent-4 / masaarat.ai origin"],
-      evidence: null,
-    };
-  }
 
   try {
     const captured = input.captureFn
