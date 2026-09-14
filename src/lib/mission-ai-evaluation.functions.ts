@@ -3,13 +3,10 @@ import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { enforceRateLimit } from "./rate-limit.server";
 import { callAI } from "./ai-providers.server";
-
-const MISSION_EVALUATION_LOCALES = [
-  "ar-EG",
-  "ar-MSA",
-  "ar-Gulf",
-  "en",
-] as const;
+import {
+  buildMissionEvaluationPrompts,
+  MISSION_AI_LOCALES,
+} from "./mission-ai-prompts";
 
 // Load supabaseAdmin dynamically inside handlers so its top-level import
 // never reaches the client bundle.
@@ -32,7 +29,7 @@ async function loadSupabaseAdmin() {
 const InputSchema = z.object({
   submissionId: z.string().uuid(),
   missionId: z.string().min(1).max(200),
-  locale: z.enum(MISSION_EVALUATION_LOCALES),
+  locale: z.enum(MISSION_AI_LOCALES),
 });
 
 export type AIEvaluationResult = {
@@ -108,51 +105,14 @@ export const evaluateMissionWithAI = createServerFn({ method: "POST" })
       missionId: data.missionId,
     });
 
-    const rubricText = source.rubric
-      .map(
-        (r, i) =>
-          `${i + 1}. ${r.label} (الوزن: ${r.weight}%)\n   - ${r.criteria.join("\n   - ")}`,
-      )
-      .join("\n\n");
-
-    const systemPrompt = `أنت مدرّب داعم بيقيّم مهام تعليمية للمبتدئين بالعربية المصرية. هدفك تشجّع التجربة وتفتح الباب للدرس اللي بعده، مش تمنع التقدم.
-
-مهمتك:
-1. تقيّم تسليم الطالب حسب الـ Rubric (٠-١٠٠ لكل معيار).
-2. ابدأ feedback كل معيار بنقطة قوة واحدة (حاجة عملها صح)، بعدين نقطة تحسين واحدة محددة. سطر-سطرين بس.
-3. احسب overall score = ∑(score × weight) / 100.
-4. passed = overall ≥ ${MISSION_PASS_THRESHOLD}. لو الطالب ملا أغلب نقاط الـ rubric حتى لو ناقص تفصيلة، اعتبره pass. التسليم الفاضي أو اللي مالوش علاقة بالموضوع فقط هو اللي يفشل.
-5. summary: ٢-٣ جمل مشجّعة بتلخّص اللي اتعمل صح + اللي يقدر يحسّنه.
-6. nextStep: نصيحة عملية واحدة قابلة للتطبيق دلوقتي.
-7. socraticQuestion: سؤال واحد بس على أضعف معيار يخلّيه يفكّر. لو الإجابة قوية (٨٠+)، سيب الحقل ده "".
-
-قواعد:
-- ردّ JSON فقط، مفيش أي نص خارج JSON.
-- عربية مصرية بسيطة، مفيش مصطلحات معقدة.
-- متبخلش في الدرجات لو الطالب اجتهد — درجات الـ ٧٠+ مسموحة وطبيعية لتسليم متوسط مكتمل.`;
-
-    const userPrompt = `الدرس: ${source.lessonTitle}
-
-المهمة:
-${source.missionPrompt}
-
-الـ Rubric:
-${rubricText}
-
-تسليم الطالب:
-${submissionText}
-
-ردّ بالـ JSON الشكل ده بالظبط:
-{
-  "overallScore": <رقم ٠-١٠٠>,
-  "passed": <true|false>,
-  "perCriterion": [
-    {"label": "<اسم المعيار من الـ Rubric>", "score": <رقم ٠-١٠٠>, "feedback": "<سطر-سطرين>"}
-  ],
-  "summary": "<٢-٣ جمل>",
-  "nextStep": "<نصيحة عملية واحدة>",
-  "socraticQuestion": "<سؤال واحد محدد على أضعف معيار، أو نص فارغ لو الإجابة قوية>"
-}`;
+    const { systemPrompt, userPrompt } = buildMissionEvaluationPrompts({
+      locale: data.locale,
+      passThreshold: MISSION_PASS_THRESHOLD,
+      lessonTitle: source.lessonTitle,
+      missionPrompt: source.missionPrompt,
+      rubric: source.rubric,
+      submissionText,
+    });
 
     const { content: raw } = await callAI({
       model: "google/gemini-2.5-flash",
