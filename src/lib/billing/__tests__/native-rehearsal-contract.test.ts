@@ -43,62 +43,37 @@ describe("native rehearsal disposable credentials", () => {
 
 describe("native rehearsal ordinary-auth denial proof", () => {
   it("accepts the exact gate error when PostgreSQL reports P0001 over HTTP 400", () => {
-    expect(
-      isExpectedOrdinaryAuthDenial(denial(400, "P0001", "QUOTA_SERVICE_ONLY")),
-    ).toBe(true);
+    expect(isExpectedOrdinaryAuthDenial(denial(400, "P0001", "QUOTA_SERVICE_ONLY"))).toBe(true);
   });
 
   it("accepts the privilege-denial form emitted before the gate runs", () => {
     expect(
       isExpectedOrdinaryAuthDenial(
-        denial(
-          403,
-          "42501",
-          "permission denied for function reserve_learner_ai_access",
-        ),
+        denial(403, "42501", "permission denied for function reserve_learner_ai_access"),
       ),
     ).toBe(true);
-    expect(
-      isExpectedOrdinaryAuthDenial(denial(403, "42501", "QUOTA_SERVICE_ONLY")),
-    ).toBe(true);
+    expect(isExpectedOrdinaryAuthDenial(denial(403, "42501", "QUOTA_SERVICE_ONLY"))).toBe(true);
   });
   it("rejects statuses the old broad predicate falsely accepted", () => {
-    const oldPredicate = (status: number) =>
-      status === 401 || status === 403 || status >= 400;
+    const oldPredicate = (status: number) => status === 401 || status === 403 || status >= 400;
     expect(oldPredicate(404)).toBe(true);
     expect(oldPredicate(500)).toBe(true);
 
-    expect(
-      isExpectedOrdinaryAuthDenial(denial(404, "PGRST202", "function missing")),
-    ).toBe(false);
-    expect(
-      isExpectedOrdinaryAuthDenial(denial(500, "XX000", "internal error")),
-    ).toBe(false);
+    expect(isExpectedOrdinaryAuthDenial(denial(404, "PGRST202", "function missing"))).toBe(false);
+    expect(isExpectedOrdinaryAuthDenial(denial(500, "XX000", "internal error"))).toBe(false);
   });
 
   it("rejects bad JWTs, unrelated errors, and malformed responses", () => {
-    expect(
-      isExpectedOrdinaryAuthDenial(denial(401, "PGRST301", "JWT expired")),
-    ).toBe(false);
-    expect(
-      isExpectedOrdinaryAuthDenial(denial(400, "P0001", "OTHER_FAILURE")),
-    ).toBe(false);
+    expect(isExpectedOrdinaryAuthDenial(denial(401, "PGRST301", "JWT expired"))).toBe(false);
+    expect(isExpectedOrdinaryAuthDenial(denial(400, "P0001", "OTHER_FAILURE"))).toBe(false);
     expect(
       isExpectedOrdinaryAuthDenial(
-        denial(
-          403,
-          "42501",
-          "permission denied for function reserve_learner_ai_access_admin",
-        ),
+        denial(403, "42501", "permission denied for function reserve_learner_ai_access_admin"),
       ),
     ).toBe(false);
     expect(
       isExpectedOrdinaryAuthDenial(
-        denial(
-          403,
-          "42501",
-          "wrapped: permission denied for function reserve_learner_ai_access",
-        ),
+        denial(403, "42501", "wrapped: permission denied for function reserve_learner_ai_access"),
       ),
     ).toBe(false);
     expect(
@@ -106,11 +81,9 @@ describe("native rehearsal ordinary-auth denial proof", () => {
         denial(403, "42501", "permission denied for function evaluate_access"),
       ),
     ).toBe(false);
-    expect(
-      isExpectedOrdinaryAuthDenial({ status: 403, json: null, text: "" }),
-    ).toBe(false);
-    expect(
-      isExpectedOrdinaryAuthDenial({ status: 0, json: null, text: "transport failure" }),
-    ).toBe(false);
+    expect(isExpectedOrdinaryAuthDenial({ status: 403, json: null, text: "" })).toBe(false);
+    expect(isExpectedOrdinaryAuthDenial({ status: 0, json: null, text: "transport failure" })).toBe(
+      false,
+    );
   });
 });

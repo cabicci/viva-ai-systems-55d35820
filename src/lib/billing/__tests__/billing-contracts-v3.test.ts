@@ -125,23 +125,20 @@ describe("V3 — paid_active current period", () => {
     ["past", "2026-01-14T00:00:00.000Z", false, "PERIOD_ENDED"],
     ["missing", null, false, "PERIOD_ENDED"],
     ["invalid", "not-a-date", false, "PERIOD_ENDED"],
-  ])(
-    "%s period end resolves paid entitlement",
-    (_label, periodEnd, entitled, denialReasonCode) => {
-      const snapshot = buildEntitlementSnapshot(
-        ctx({
-          planKey: "pro",
-          accessState: "paid_active",
-          policy: paidPolicy,
-          entitledLessonIds: ["l-1"],
-          periodEnd,
-        }),
-        { usedGeneral: 0, usedPeriod: 0, aiTopupBalance: 0 },
-      );
-      expect(snapshot.paidContentEntitled).toBe(entitled);
-      expect(snapshot.denialReasonCode).toBe(denialReasonCode);
-    },
-  );
+  ])("%s period end resolves paid entitlement", (_label, periodEnd, entitled, denialReasonCode) => {
+    const snapshot = buildEntitlementSnapshot(
+      ctx({
+        planKey: "pro",
+        accessState: "paid_active",
+        policy: paidPolicy,
+        entitledLessonIds: ["l-1"],
+        periodEnd,
+      }),
+      { usedGeneral: 0, usedPeriod: 0, aiTopupBalance: 0 },
+    );
+    expect(snapshot.paidContentEntitled).toBe(entitled);
+    expect(snapshot.denialReasonCode).toBe(denialReasonCode);
+  });
 
   it.each([null, "2026-01-14T00:00:00.000Z"])(
     "preserves an active admin grant over paid period end %s",
