@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useRouter } from "@tanstack/react-router";
 import { AdminGate } from "@/components/AdminGate";
 import { requireAdminBeforeLoad } from "@/lib/admin-route-guard";
 import {
@@ -71,6 +71,8 @@ export function SystemStatePage() {
   const t = useUiString();
   const { locale, dir } = useLocale();
   const liveLessons = LESSONS.length;
+  const router = useRouter();
+  const routeCount = Object.keys(router.routesByPath).length;
 
   return (
     <div className="min-h-dvh flex" dir={dir}>
@@ -128,7 +130,7 @@ export function SystemStatePage() {
               {t("systemState.intro")}
             </p>
             <div className="grid sm:grid-cols-3 gap-3 mt-6 max-w-xl">
-              <Stat label={t("systemState.stat.routes")} value={String(ROUTES.length)} />
+              <Stat label={t("systemState.stat.routes")} value={String(routeCount)} />
               <Stat
                 label={t("systemState.stat.activeLessons")}
                 value={t("systemState.stat.activeLessonsValue").replace(

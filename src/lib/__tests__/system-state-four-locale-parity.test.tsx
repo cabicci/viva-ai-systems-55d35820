@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { LocaleProvider } from "@/lib/locale/locale-context";
 import { getUiString } from "@/lib/locale/ui-strings";
 import { SYSTEM_STATE_UI_KEYS } from "@/lib/locale/system-state-ui-keys";
@@ -13,7 +13,12 @@ const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
 const ARABIC = /[\u0600-\u06FF]/;
 const EGYPTIAN_MARKERS = /(أيوه|دلوقتي|مفيش|هيتفعّل|لسه|هنعلن|بتاخدك)/;
 
+const routerState = vi.hoisted(() => ({
+  routesByPath: { "/": {}, "/system-state": {}, "/new-page": {} },
+}));
+
 vi.mock("@tanstack/react-router", () => ({
+  useRouter: () => routerState,
   Link: ({ children, to, ...props }: { children: React.ReactNode; to?: string }) => (
     <a href={typeof to === "string" ? to : "#"} {...props}>
       {children}
@@ -175,6 +180,10 @@ describe("/system-state four-locale parity", () => {
       const { container } = await renderSystemState(locale);
       const root = container.firstElementChild as HTMLElement;
       expect(root.getAttribute("dir")).toBe(LOCALE_META[locale].dir);
+      const routeStat = within(container.querySelector("header")!).getByText(
+        getUiString(locale, "systemState.stat.routes"),
+      ).parentElement!;
+      expect(within(routeStat).getByText("3")).toBeTruthy();
 
       expect(
         screen.getByRole("heading", {
