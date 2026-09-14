@@ -269,8 +269,7 @@ export function MissionRubricSection({
         data: {
           submissionId: lastSubmissionId,
           missionId,
-          lessonTitle,
-          missionPrompt,
+          locale,
         },
       });
       setReveal(r);

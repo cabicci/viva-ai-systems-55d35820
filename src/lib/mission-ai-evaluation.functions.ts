@@ -5,6 +5,7 @@ import { enforceRateLimit } from "./rate-limit.server";
 import { callAI } from "./ai-providers.server";
 import {
   buildMissionEvaluationPrompts,
+  buildMissionRevealPrompts,
   MISSION_AI_LOCALES,
 } from "./mission-ai-prompts";
 
@@ -190,8 +191,7 @@ function clamp(n: number, min: number, max: number): number {
 const RevealInputSchema = z.object({
   submissionId: z.string().uuid(),
   missionId: z.string().min(1).max(200),
-  lessonTitle: z.string().min(1).max(200),
-  missionPrompt: z.string().min(1).max(4000),
+  locale: z.enum(MISSION_AI_LOCALES),
 });
 
 export type RevealAnswerResult = {
@@ -215,7 +215,7 @@ export const revealModelMissionAnswer = createServerFn({ method: "POST" })
 
     const { data: row, error: rowErr } = await supabaseAdmin
       .from("mission_submissions")
-      .select("id, user_id, mission_id, attempt_count, status, submission_metadata")
+      .select("id, user_id, mission_id, lesson_id, attempt_count, status, submission_metadata")
       .eq("id", data.submissionId)
       .eq("user_id", userId)
       .eq("mission_id", data.missionId)
@@ -252,23 +252,20 @@ export const revealModelMissionAnswer = createServerFn({ method: "POST" })
       throw new Error("لازم تحاول مرتين قبل ما تشوف نموذج الإجابة.");
     }
 
-    const systemPrompt = `أنت مدرّس AI بالعربية المصرية البسيطة. الطالب اتعب وحاول مرتين على المهمة دي. هتديله نموذج إجابة كامل ومفيد عشان يفهم الشكل المطلوب — مش عشان يغش، عشان يتعلم. اكتب إجابة قصيرة، عملية، تتبع الـ structure المطلوب في المهمة بالظبط.
-
-قواعد:
-- ردّ JSON فقط.
-- اللغة عربية مصرية بسيطة.
-- مفيش مقدمات زي «طبعا» أو «بكل سرور» — ادخل في الإجابة على طول.`;
-
-    const userPrompt = `الدرس: ${data.lessonTitle}
-
-المهمة:
-${data.missionPrompt}
-
-ردّ بالـ JSON ده:
-{
-  "modelAnswer": "<نموذج إجابة كامل يتبع الـ structure المطلوب>",
-  "note": "<جملة قصيرة بتفكّر الطالب إن ده نموذج للتعلّم، اقرأه وقارنه بمحاولتك>"
-}`;
+    const lessonId = z.string().min(1).max(200).parse(row.lesson_id);
+    const { resolveCanonicalMissionEvaluationSource } = await import(
+      "./mission-evaluation-source.server"
+    );
+    const source = await resolveCanonicalMissionEvaluationSource({
+      locale: data.locale,
+      lessonId,
+      missionId: data.missionId,
+    });
+    const { systemPrompt, userPrompt, defaultNote } = buildMissionRevealPrompts({
+      locale: data.locale,
+      lessonTitle: source.lessonTitle,
+      missionPrompt: source.missionPrompt,
+    });
 
     const { content: raw } = await callAI({
       model: "google/gemini-2.5-flash",
@@ -289,7 +286,7 @@ ${data.missionPrompt}
 
     const result: RevealAnswerResult = {
       modelAnswer: String(parsed.modelAnswer ?? "").slice(0, 4000),
-      note: String(parsed.note ?? "ده نموذج للتعلّم — قارنه بمحاولتك."),
+      note: String(parsed.note ?? defaultNote),
     };
 
     // Persist model answer only — do not pass/unlock; learner must resubmit.

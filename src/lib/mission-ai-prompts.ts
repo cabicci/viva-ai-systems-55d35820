@@ -183,3 +183,58 @@ ${input.submissionText}
     userPrompt,
   };
 }
+
+export function buildMissionRevealPrompts(input: {
+  locale: MissionAIPromptLocale;
+  lessonTitle: string;
+  missionPrompt: string;
+}): PromptPair & { defaultNote: string } {
+  if (input.locale === "ar-EG") {
+    const systemPrompt = `أنت مدرّس AI بالعربية المصرية البسيطة. الطالب اتعب وحاول مرتين على المهمة دي. هتديله نموذج إجابة كامل ومفيد عشان يفهم الشكل المطلوب — مش عشان يغش، عشان يتعلم. اكتب إجابة قصيرة، عملية، تتبع الـ structure المطلوب في المهمة بالظبط.
+
+قواعد:
+- ردّ JSON فقط.
+- اللغة عربية مصرية بسيطة.
+- مفيش مقدمات زي «طبعا» أو «بكل سرور» — ادخل في الإجابة على طول.`;
+
+    const userPrompt = `الدرس: ${input.lessonTitle}
+
+المهمة:
+${input.missionPrompt}
+
+ردّ بالـ JSON ده:
+{
+  "modelAnswer": "<نموذج إجابة كامل يتبع الـ structure المطلوب>",
+  "note": "<جملة قصيرة بتفكّر الطالب إن ده نموذج للتعلّم، اقرأه وقارنه بمحاولتك>"
+}`;
+
+    return { systemPrompt, userPrompt, defaultNote: "ده نموذج للتعلّم — قارنه بمحاولتك." };
+  }
+  const language = {
+    "ar-MSA": "simple Modern Standard Arabic",
+    "ar-Gulf": "simple Gulf Arabic",
+    en: "simple English",
+  }[input.locale];
+  const defaultNote = {
+    "ar-MSA": "هذا نموذج للتعلّم؛ قارنه بمحاولتك.",
+    "ar-Gulf": "هذا نموذج للتعلّم؛ قارنه بمحاولتك.",
+    en: "This is a learning example; compare it with your attempt.",
+  }[input.locale];
+  const systemPrompt = `You are a supportive AI teacher. The learner has tried this mission twice. Provide a complete, useful model answer to help them understand the expected result and learn. Keep it short and practical, and follow the mission structure exactly.
+
+Rules:
+- Return JSON only.
+- Write both modelAnswer and note in ${language}.
+- Do not use introductions such as "Of course" or "Happy to help"; begin with the answer.`;
+  const userPrompt = `Lesson: ${input.lessonTitle}
+
+Mission:
+${input.missionPrompt}
+
+Return exactly this JSON shape:
+{
+  "modelAnswer": "<a complete model answer following the required structure>",
+  "note": "<one short sentence explaining this is a learning example to read and compare with your attempt>"
+}`;
+  return { systemPrompt, userPrompt, defaultNote };
+}
