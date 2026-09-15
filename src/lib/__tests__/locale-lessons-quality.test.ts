@@ -128,9 +128,7 @@ describe("locale-lessons adaptation quality checks", () => {
   });
 
   it("flags English title mismatch for non-intro lessons from pilot artifact review", async () => {
-    const analystSource = await loadMsaLessonPackage(
-      "analyst-m1-l1-from-automation-to-insight",
-    );
+    const analystSource = await loadMsaLessonPackage("analyst-m1-l1-from-automation-to-insight");
     const analystWarning = detectEnglishTitleMismatchWarning(analystSource, {
       locale: "en",
       lessonId: analystSource.lessonId,
@@ -207,8 +205,7 @@ describe("locale-lessons adaptation quality checks", () => {
         {
           role: "Quiz",
           heading: "Quiz",
-          contentMarkdown:
-            "The correct answer is preserved from the Egyptian production.",
+          contentMarkdown: "The correct answer is preserved from the Egyptian production.",
           bullets: [],
           tables: [],
           quiz: {
@@ -229,12 +226,8 @@ describe("locale-lessons adaptation quality checks", () => {
       generatedAt: "2026-06-20T00:00:00.000Z",
     });
 
-    expect(warnings.some((warning) => warning.includes("egyptian production"))).toBe(
-      true,
-    );
-    expect(warnings.some((warning) => warning.includes("refer to the text above"))).toBe(
-      true,
-    );
+    expect(warnings.some((warning) => warning.includes("egyptian production"))).toBe(true);
+    expect(warnings.some((warning) => warning.includes("refer to the text above"))).toBe(true);
   });
 
   it("strips banned production-leak phrases from markdown", () => {
@@ -257,8 +250,7 @@ describe("locale-lessons adaptation quality checks", () => {
       quiz: {
         correctIndex: 0,
         options: ["Option B", "Option C"],
-        explanation:
-          "The correct answer is preserved from the Egyptian production.",
+        explanation: "The correct answer is preserved from the Egyptian production.",
       },
     };
 
@@ -284,15 +276,11 @@ describe("locale-lessons adaptation quality checks", () => {
       "en",
     );
 
-    expect(warnings.some((warning) => warning.includes("missing clear quiz question"))).toBe(
+    expect(warnings.some((warning) => warning.includes("missing clear quiz question"))).toBe(true);
+    expect(warnings.some((warning) => warning.includes("egyptian production"))).toBe(true);
+    expect(warnings.some((warning) => warning.includes("analyst-m4-automated-dashboard"))).toBe(
       true,
     );
-    expect(warnings.some((warning) => warning.includes("egyptian production"))).toBe(
-      true,
-    );
-    expect(
-      warnings.some((warning) => warning.includes("analyst-m4-automated-dashboard")),
-    ).toBe(true);
   });
 
   it("repairs analyst-m4 quiz question, options, and banned phrases during finalization", async () => {
@@ -335,13 +323,7 @@ describe("locale-lessons adaptation quality checks", () => {
       generatedAt: "2026-06-20T00:00:00.000Z",
     } as AdaptedLessonPackage;
 
-    const finalized = finalizeAdaptedPackage(
-      source,
-      broken,
-      "en",
-      "x",
-      "2026-06-20T00:00:00.000Z",
-    );
+    const finalized = finalizeAdaptedPackage(source, broken, "en", "x", "2026-06-20T00:00:00.000Z");
 
     const quiz = finalized.sections.find((section) => section.role === "Quiz")?.quiz;
     expect(quiz?.question).toMatch(/four numbers/i);
@@ -378,9 +360,7 @@ describe("locale-lessons adaptation quality checks", () => {
     });
 
     expect(warnings.length).toBeGreaterThan(0);
-    expect(warnings.some((warning) => warning.includes("quiz markdown leakage"))).toBe(
-      true,
-    );
+    expect(warnings.some((warning) => warning.includes("quiz markdown leakage"))).toBe(true);
   });
 
   it("strips quiz key leaks from markdown during sanitization", () => {
@@ -572,14 +552,10 @@ describe("locale-lessons adaptation quality checks", () => {
           detectQuizMarkdownLeakageWarnings(sanitized),
           `${locale}/${lessonId} leakage`,
         ).toEqual([]);
-        expect(
-          detectBannedPhraseWarnings(sanitized),
-          `${locale}/${lessonId} banned`,
-        ).toEqual([]);
-        expect(
-          detectProductionResidueWarnings(sanitized),
-          `${locale}/${lessonId} residue`,
-        ).toEqual([]);
+        expect(detectBannedPhraseWarnings(sanitized), `${locale}/${lessonId} banned`).toEqual([]);
+        expect(detectProductionResidueWarnings(sanitized), `${locale}/${lessonId} residue`).toEqual(
+          [],
+        );
         expect(
           detectInternalSectionLabelWarnings(sanitized),
           `${locale}/${lessonId} internal`,
@@ -588,10 +564,9 @@ describe("locale-lessons adaptation quality checks", () => {
           detectUnbalancedLearnerMarkdownWarnings(sanitized),
           `${locale}/${lessonId} markdown`,
         ).toEqual([]);
-        expect(
-          detectQuizOptionPrefixWarnings(sanitized),
-          `${locale}/${lessonId} prefix`,
-        ).toEqual([]);
+        expect(detectQuizOptionPrefixWarnings(sanitized), `${locale}/${lessonId} prefix`).toEqual(
+          [],
+        );
       }
     }
   });
@@ -600,9 +575,7 @@ describe("locale-lessons adaptation quality checks", () => {
     expect(stripQuizOptionPrefix("Option 1: Open ChatGPT and try something small.")).toBe(
       "Open ChatGPT and try something small.",
     );
-    expect(stripQuizOptionPrefix("Option 2: Read a long article.")).toBe(
-      "Read a long article.",
-    );
+    expect(stripQuizOptionPrefix("Option 2: Read a long article.")).toBe("Read a long article.");
     expect(stripQuizOptionPrefix("خيار ١: تفتح ChatGPT وتطلب شيء بسيط.")).toBe(
       "تفتح ChatGPT وتطلب شيء بسيط.",
     );
@@ -628,18 +601,13 @@ describe("locale-lessons adaptation quality checks", () => {
       "One small real attempt teaches you more than a long read.",
     );
 
-    expect(
-      warnings.some((warning) => warning.includes("supports option at index 0")),
-    ).toBe(true);
+    expect(warnings.some((warning) => warning.includes("supports option at index 0"))).toBe(true);
   });
 
   it("locks intro quiz structure by index and preserves correctIndex 1", async () => {
     const source = await loadMsaLessonPackage("intro-m1-l1-what-is-ai");
     const quizIndex = source.sections.findIndex((section) => section.role === "Quiz");
-    const resolved = resolveSourceQuizStructure(
-      source.sections[quizIndex],
-      source.lessonId,
-    );
+    const resolved = resolveSourceQuizStructure(source.sections[quizIndex], source.lessonId);
     expect(resolved.ok).toBe(true);
     if (!resolved.ok) return;
     expect(resolved.structure.optionCount).toBe(4);
@@ -663,8 +631,7 @@ describe("locale-lessons adaptation quality checks", () => {
               "Wait until you have taken a full course on how AI works technically.",
               "Ask a friend who already uses AI to explain everything to you first.",
             ],
-            explanation:
-              "One small real attempt teaches you more than a long read.",
+            explanation: "One small real attempt teaches you more than a long read.",
           },
         };
       }),
@@ -714,8 +681,7 @@ describe("locale-lessons adaptation quality checks", () => {
               "Wait until you finish a full course.",
               "Ask a friend to explain everything first.",
             ],
-            explanation:
-              "One small real attempt teaches you more than a long read.",
+            explanation: "One small real attempt teaches you more than a long read.",
           },
         };
       }),
@@ -755,10 +721,7 @@ describe("locale-lessons adaptation quality checks", () => {
   it("rejects model attempts to change quiz option count or correctIndex", async () => {
     const source = await loadMsaLessonPackage("builder-m6-l1-idea-to-page");
     const quizIndex = source.sections.findIndex((section) => section.role === "Quiz");
-    const resolved = resolveSourceQuizStructure(
-      source.sections[quizIndex],
-      source.lessonId,
-    );
+    const resolved = resolveSourceQuizStructure(source.sections[quizIndex], source.lessonId);
     expect(resolved.ok).toBe(true);
     if (!resolved.ok) return;
 
@@ -793,9 +756,7 @@ describe("locale-lessons adaptation quality checks", () => {
         warning.includes(`expected exactly ${resolved.structure.optionCount}`),
       ),
     ).toBe(true);
-    expect(
-      warnings.some((warning) => warning.includes("correctIndex must remain")),
-    ).toBe(true);
+    expect(warnings.some((warning) => warning.includes("correctIndex must remain"))).toBe(true);
 
     const finalized = finalizeAdaptedPackage(
       source,
@@ -818,19 +779,11 @@ describe("locale-lessons adaptation quality checks", () => {
         usesOverride: false,
         sourceOptionTextsByIndex: ["A", "B", "C"],
       },
-      [
-        "Localized A",
-        "Localized B",
-        "Localized C",
-      ],
+      ["Localized A", "Localized B", "Localized C"],
       [],
     );
 
-    expect(locked.options).toEqual([
-      "Localized A",
-      "Localized B",
-      "Localized C",
-    ]);
+    expect(locked.options).toEqual(["Localized A", "Localized B", "Localized C"]);
     expect(locked.correctIndex).toBe(1);
   });
 
@@ -838,33 +791,30 @@ describe("locale-lessons adaptation quality checks", () => {
     for (const lessonId of Object.keys(CORRUPTED_SOURCE_QUIZ_OVERRIDES)) {
       const source = await loadMsaLessonPackage(lessonId);
       const issues = identifyCorruptedSourceQuizIssues(source);
-      expect(
-        issues.some((issue) => issue.includes("explicit override")),
-      ).toBe(true);
+      expect(issues.some((issue) => issue.includes("explicit override"))).toBe(true);
     }
   });
 
-  it("intro-m1-l1-what-is-ai keeps hands-on answer at correctIndex 0 in committed EN package", async () => {
+  it("intro-m1-l1-what-is-ai keeps the hands-on answer selected in the committed EN package", async () => {
     const source = await loadMsaLessonPackage("intro-m1-l1-what-is-ai");
     const introEn = readSample("en", "intro-m1-l1-what-is-ai");
     const quiz = introEn.sections.find((section) => section.role === "Quiz")?.quiz;
 
-    expect(quiz?.correctIndex).toBe(0);
-    expect(quiz?.options?.[0]).toMatch(/ChatGPT|Gemini/i);
-    expect(detectQuizExplanationSemanticWarnings(
-      source.lessonId,
-      quiz?.question ?? "",
-      quiz?.options ?? [],
-      quiz?.correctIndex ?? -1,
-      quiz?.explanation ?? "",
-    )).toEqual([]);
+    expect(quiz?.correctIndex).toBe(1);
+    expect(quiz?.options?.[1]).toMatch(/ChatGPT|Gemini/i);
+    expect(
+      detectQuizExplanationSemanticWarnings(
+        source.lessonId,
+        quiz?.question ?? "",
+        quiz?.options ?? [],
+        quiz?.correctIndex ?? -1,
+        quiz?.explanation ?? "",
+      ),
+    ).toEqual([]);
   });
 
   it("intro ar-Gulf override provides four non-empty fallback options", () => {
-    const fallback = getCorruptedQuizFallback(
-      "intro-m1-l1-what-is-ai",
-      "ar-Gulf",
-    );
+    const fallback = getCorruptedQuizFallback("intro-m1-l1-what-is-ai", "ar-Gulf");
     expect(fallback).not.toBeNull();
     expect(fallback?.options).toHaveLength(4);
     expect(fallback?.correctIndex).toBe(1);
@@ -1040,9 +990,7 @@ describe("locale-lessons adaptation quality checks", () => {
   });
 
   it("finalizes analyst-m1-l1 ar-Gulf with swapped model options using canonical identity fallback", async () => {
-    const source = await loadMsaLessonPackage(
-      "analyst-m1-l1-from-automation-to-insight",
-    );
+    const source = await loadMsaLessonPackage("analyst-m1-l1-from-automation-to-insight");
     const quizIndex = source.sections.findIndex((section) => section.role === "Quiz");
     const fallback = getCorruptedQuizFallback(
       "analyst-m1-l1-from-automation-to-insight",
@@ -1106,12 +1054,12 @@ describe("locale-lessons adaptation quality checks", () => {
   });
 
   it("strips broken markdown emphasis from quiz options and flags unbalanced markers", () => {
-    expect(
-      normalizeQuizOptionText("Gather the data** in **one place**"),
-    ).toBe("Gather the data in one place");
-    expect(
-      stripMarkdownEmphasisFromText("متوسط وقت الرد** صار **كم دقيقة**"),
-    ).toBe("متوسط وقت الرد صار كم دقيقة");
+    expect(normalizeQuizOptionText("Gather the data** in **one place**")).toBe(
+      "Gather the data in one place",
+    );
+    expect(stripMarkdownEmphasisFromText("متوسط وقت الرد** صار **كم دقيقة**")).toBe(
+      "متوسط وقت الرد صار كم دقيقة",
+    );
     expect(hasUnbalancedMarkdownEmphasis("broken **marker only")).toBe(true);
 
     const warnings = detectUnbalancedQuizOptionMarkdownWarnings({
@@ -1143,9 +1091,7 @@ describe("locale-lessons adaptation quality checks", () => {
       generatedAt: "2026-06-20T00:00:00.000Z",
     });
 
-    expect(
-      warnings.some((warning) => warning.includes("unbalanced markdown emphasis")),
-    ).toBe(true);
+    expect(warnings.some((warning) => warning.includes("unbalanced markdown emphasis"))).toBe(true);
   });
 
   it("strips internal production references from learner-facing markdown", () => {
@@ -1164,8 +1110,7 @@ describe("locale-lessons adaptation quality checks", () => {
         {
           role: "Orientation",
           heading: "Orientation",
-          contentMarkdown:
-            "The original visual in Egyptian production remains unchanged.",
+          contentMarkdown: "The original visual in Egyptian production remains unchanged.",
           bullets: [],
           tables: [],
         },
@@ -1180,9 +1125,7 @@ describe("locale-lessons adaptation quality checks", () => {
       generatedAt: "2026-06-20T00:00:00.000Z",
     });
 
-    expect(warnings.some((warning) => warning.includes("egyptian production"))).toBe(
-      true,
-    );
+    expect(warnings.some((warning) => warning.includes("egyptian production"))).toBe(true);
 
     const sanitized = sanitizeAdaptedLessonMarkdown({
       locale: "ar-Gulf",
@@ -1241,9 +1184,7 @@ describe("locale-lessons adaptation quality checks", () => {
         warning.includes("production"),
       ),
     ).toBe(true);
-    expect(validateSanitizedAdaptedLessonWarnings(source, polluted, "en")).toEqual(
-      [],
-    );
+    expect(validateSanitizedAdaptedLessonWarnings(source, polluted, "en")).toEqual([]);
   });
 
   it("automated quality gate: repairs unbalanced ** then passes post-sanitation validation", async () => {
@@ -1286,7 +1227,8 @@ describe("locale-lessons adaptation quality checks", () => {
         {
           role: "Quiz",
           heading: "Quiz",
-          contentMarkdown: "السؤال:\nخيار ١: تفتح ChatGPT وتطلب شيء بسيط.\nChoice 2: تقرأ مقال طويل.",
+          contentMarkdown:
+            "السؤال:\nخيار ١: تفتح ChatGPT وتطلب شيء بسيط.\nChoice 2: تقرأ مقال طويل.",
           bullets: ["Option 1: Automate the weekly metric.", "A) Ignore the dashboard."],
           tables: [],
           quiz: {
@@ -1307,18 +1249,14 @@ describe("locale-lessons adaptation quality checks", () => {
       generatedAt: "2026-06-20T00:00:00.000Z",
     };
 
-    expect(detectQuizOptionPrefixWarnings(packageWithPrefixes).length).toBeGreaterThan(
-      0,
-    );
+    expect(detectQuizOptionPrefixWarnings(packageWithPrefixes).length).toBeGreaterThan(0);
 
     const sanitized = sanitizeAdaptedLessonMarkdown(packageWithPrefixes);
     const quizSection = sanitized.sections.find((section) => section.role === "Quiz");
 
     expect(quizSection?.contentMarkdown).not.toMatch(/^خيار/u);
     expect(quizSection?.contentMarkdown).not.toMatch(/^Choice\s*2/i);
-    expect(quizSection?.bullets.every((bullet) => !hasQuizOptionPrefixLeak(bullet))).toBe(
-      true,
-    );
+    expect(quizSection?.bullets.every((bullet) => !hasQuizOptionPrefixLeak(bullet))).toBe(true);
     expect(detectQuizOptionPrefixWarnings(sanitized)).toEqual([]);
   });
 
@@ -1371,15 +1309,9 @@ describe("locale-lessons adaptation quality checks", () => {
       ],
     };
 
-    expect(validateSanitizedAdaptedLessonWarnings(source, polluted, "ar-Gulf")).toEqual(
-      [],
-    );
-    expect(validateSanitizedAdaptedLessonWarnings(source, clean, "ar-Gulf")).toEqual(
-      [],
-    );
-    expect(
-      clean.sections[0]?.contentMarkdown,
-    ).toContain("الخيار الأنسب");
+    expect(validateSanitizedAdaptedLessonWarnings(source, polluted, "ar-Gulf")).toEqual([]);
+    expect(validateSanitizedAdaptedLessonWarnings(source, clean, "ar-Gulf")).toEqual([]);
+    expect(clean.sections[0]?.contentMarkdown).toContain("الخيار الأنسب");
   });
 
   it("all-9: strips quiz contentMarkdown/bullets Option and Correct answer prefixes", () => {
@@ -1420,9 +1352,7 @@ describe("locale-lessons adaptation quality checks", () => {
 
     expect(quiz?.contentMarkdown).not.toMatch(/Option\s*\d+/i);
     expect(quiz?.contentMarkdown).not.toMatch(/Correct answer/i);
-    expect(quiz?.bullets.every((bullet) => !hasQuizOptionPrefixLeak(bullet))).toBe(
-      true,
-    );
+    expect(quiz?.bullets.every((bullet) => !hasQuizOptionPrefixLeak(bullet))).toBe(true);
     expect(detectQuizOptionPrefixWarnings(sanitized)).toEqual([]);
   });
 
@@ -1462,9 +1392,7 @@ describe("locale-lessons adaptation quality checks", () => {
 
     expect(quiz?.contentMarkdown).not.toMatch(/^خيار/u);
     expect(quiz?.contentMarkdown).not.toMatch(/الإجابة الصحيحة/u);
-    expect(quiz?.bullets.every((bullet) => !hasQuizCorrectAnswerPrefixLeak(bullet))).toBe(
-      true,
-    );
+    expect(quiz?.bullets.every((bullet) => !hasQuizCorrectAnswerPrefixLeak(bullet))).toBe(true);
     expect(detectQuizOptionPrefixWarnings(sanitized)).toEqual([]);
   });
 
@@ -1502,9 +1430,9 @@ describe("locale-lessons adaptation quality checks", () => {
 
     const sanitized = sanitizeAdaptedLessonMarkdown(broken);
     expect(detectUnbalancedLearnerMarkdownWarnings(sanitized)).toEqual([]);
-    expect(
-      sanitized.sections[0]?.tables[0]?.rows[0]?.[0],
-    ).toBe("'How many customers bought twice this month?'");
+    expect(sanitized.sections[0]?.tables[0]?.rows[0]?.[0]).toBe(
+      "'How many customers bought twice this month?'",
+    );
     expect(validateSanitizedAdaptedLessonWarnings(source, broken, "en")).toEqual([]);
   });
 
@@ -1543,9 +1471,7 @@ describe("locale-lessons adaptation quality checks", () => {
     expect(detectInternalSectionLabelWarnings(raw).length).toBeGreaterThan(0);
 
     const sanitized = sanitizeAdaptedLessonMarkdown(raw);
-    expect(sanitized.sections.some((section) => section.role.includes("Video block"))).toBe(
-      false,
-    );
+    expect(sanitized.sections.some((section) => section.role.includes("Video block"))).toBe(false);
     expect(sanitized.sections).toHaveLength(1);
   });
 

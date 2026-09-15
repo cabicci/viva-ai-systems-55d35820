@@ -1,8 +1,5 @@
 import { describe, expect, it } from "vitest";
-import {
-  LOCALE_COOKIE_NAME,
-  parseLocaleCookieHeader,
-} from "@/lib/locale/locale-cookie";
+import { LOCALE_COOKIE_NAME, parseLocaleCookieHeader } from "@/lib/locale/locale-cookie";
 import { LOCALE_META } from "@/lib/locale/types";
 import {
   buildLessonLocaleSearch,
@@ -14,9 +11,7 @@ const LESSON_ID = "intro-m1-l1-what-is-ai";
 
 describe("Phase 9.1 locale runtime parity", () => {
   it("parses masaarat_locale from cookie header", () => {
-    expect(
-      parseLocaleCookieHeader(`${LOCALE_COOKIE_NAME}=en; other=value`),
-    ).toBe("en");
+    expect(parseLocaleCookieHeader(`${LOCALE_COOKIE_NAME}=en; other=value`)).toBe("en");
   });
 
   it("resolves en package from URL without previewLocale on SSR (no cookie)", () => {
@@ -26,12 +21,12 @@ describe("Phase 9.1 locale runtime parity", () => {
     expect(access.contentSource).toBe("locale-package-json");
   });
 
-  it("falls back fr-FR URL to ar-EG without package locale nav param", () => {
+  it("ignores unsupported URL locale and preserves a supported cookie locale", () => {
     const search = parseLessonPreviewSearch({ locale: "fr-FR" });
     const access = resolveRouteLessonAccess(LESSON_ID, search, "en");
-    expect(access.effectiveLocale).toBe("ar-EG");
-    expect(access.contentSource).toBe("egyptian-ts");
-    expect(buildLessonLocaleSearch(search, "en")).toBeUndefined();
+    expect(access.effectiveLocale).toBe("en");
+    expect(access.contentSource).toBe("locale-package-json");
+    expect(buildLessonLocaleSearch(search, "en")).toEqual({ locale: "en" });
   });
 
   it("URL locale overrides cookie for route access", () => {

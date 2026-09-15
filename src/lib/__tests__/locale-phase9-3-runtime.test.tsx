@@ -5,7 +5,7 @@ import { render, screen } from "@testing-library/react";
 import { LocaleAssistantUnavailable } from "@/components/locale/LocaleAssistantUnavailable";
 import { LocaleLiveSafetyMarkers } from "@/components/locale/LocaleLiveSafetyMarkers";
 import { LocalePreviewMission } from "@/components/locale/LocalePreviewMission";
-import { renderLocalizedLessonWithoutVideo } from "@/lib/__tests__/locale-test-utils";
+import { renderLocalizedLesson } from "@/lib/__tests__/locale-test-utils";
 import {
   LOCALE_COOKIE_NAME,
   readLocaleCookie,
@@ -30,14 +30,7 @@ const LESSON_ID = "intro-m1-l1-what-is-ai";
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
 
 vi.mock("@tanstack/react-router", () => ({
-  Link: ({
-    children,
-    to,
-    ...props
-  }: {
-    children: React.ReactNode;
-    to?: string;
-  }) => (
+  Link: ({ children, to, ...props }: { children: React.ReactNode; to?: string }) => (
     <a href={typeof to === "string" ? to : "#"} {...props}>
       {children}
     </a>
@@ -109,18 +102,15 @@ describe("Phase 9.3 selector navigation search", () => {
   });
 
   it("never emits previewLocale=false", () => {
-    const next = buildLocaleNavigationSearch(
-      { locale: "en", previewLocale: false },
-      "ar-MSA",
-    );
+    const next = buildLocaleNavigationSearch({ locale: "en", previewLocale: false }, "ar-MSA");
     expect(next).toEqual({ locale: "ar-MSA" });
     expect("previewLocale" in next).toBe(false);
   });
 
   it("stripFalseBooleanSearchParams removes previewLocale=false from raw search", () => {
-    expect(
-      stripFalseBooleanSearchParams({ locale: "en", previewLocale: false }),
-    ).toEqual({ locale: "en" });
+    expect(stripFalseBooleanSearchParams({ locale: "en", previewLocale: false })).toEqual({
+      locale: "en",
+    });
   });
 
   it("parseLessonPreviewSearch ignores previewLocale=false in raw URL", () => {
@@ -145,18 +135,16 @@ describe("Phase 9.3 refresh and precedence", () => {
     const search = parseLessonPreviewSearch({ locale: "ar-MSA" });
     const access = resolveRouteLessonAccess(LESSON_ID, search, "en");
     expect(access.effectiveLocale).toBe("ar-MSA");
-    expect(
-      resolvePublicLocale({ urlLocale: "ar-MSA", cookieLocale: "en" }).locale,
-    ).toBe("ar-MSA");
+    expect(resolvePublicLocale({ urlLocale: "ar-MSA", cookieLocale: "en" }).locale).toBe("ar-MSA");
   });
 
-  it("unsupported locale falls back to ar-EG without invalid cookie locale", () => {
+  it("ignores unsupported URL locale and preserves the valid cookie locale", () => {
     writeLocaleCookie("en");
     const search = parseLessonPreviewSearch({ locale: "fr-FR" });
     const access = resolveRouteLessonAccess(LESSON_ID, search, "en");
-    expect(access.effectiveLocale).toBe("ar-EG");
-    expect(access.contentSource).toBe("egyptian-ts");
-    expect(buildLessonLocaleSearch(search, "en")).toBeUndefined();
+    expect(access.effectiveLocale).toBe("en");
+    expect(access.contentSource).toBe("locale-package-json");
+    expect(buildLessonLocaleSearch(search, "en")).toEqual({ locale: "en" });
     persistValidLocaleCookie("fr-FR");
     expect(readLocaleCookie()).toBe("en");
   });
@@ -164,10 +152,7 @@ describe("Phase 9.3 refresh and precedence", () => {
 
 describe("Phase 9.3 live locale rendering", () => {
   it("loads en package from ?locale=en", () => {
-    const access = resolveRouteLessonAccess(
-      LESSON_ID,
-      parseLessonPreviewSearch({ locale: "en" }),
-    );
+    const access = resolveRouteLessonAccess(LESSON_ID, parseLessonPreviewSearch({ locale: "en" }));
     expect(access.effectiveLocale).toBe("en");
     expect(access.contentSource).toBe("locale-package-json");
   });
@@ -208,30 +193,24 @@ describe("Phase 9.3 non-ar-EG QA markers", () => {
 
   it("exposes assistant unavailable marker for en", () => {
     const { container } = render(<LocaleAssistantUnavailable locale="en" />);
-    expect(
-      container.querySelector('[data-locale-assistant="unavailable"]'),
-    ).not.toBeNull();
+    expect(container.querySelector('[data-locale-assistant="unavailable"]')).not.toBeNull();
   });
 
   it("does not expose assistant unavailable marker for ar-EG", () => {
     const { container } = render(<LocaleAssistantUnavailable locale="ar-EG" />);
-    expect(
-      container.querySelector('[data-locale-assistant="unavailable"]'),
-    ).toBeNull();
+    expect(container.querySelector('[data-locale-assistant="unavailable"]')).toBeNull();
   });
 
   it("exposes mission readonly marker in preview mission", () => {
-    const { container } = render(
-      <LocalePreviewMission intro="Intro" delivery={[]} rubric={[]} />,
-    );
+    const { container } = render(<LocalePreviewMission intro="Intro" delivery={[]} rubric={[]} />);
     expect(container.querySelector('[data-locale-mission="readonly"]')).not.toBeNull();
   });
 
-  it("shows canonical video skip notice when localized composite GUID is absent", async () => {
+  it("renders the localized video now that the complete mapping is shipped", async () => {
     const pkg = readPackage("en");
-    const { container } = await renderLocalizedLessonWithoutVideo(pkg);
+    const { container } = await renderLocalizedLesson(pkg);
     expect(container.querySelector('[data-locale-video="placeholder"]')).toBeNull();
-    expect(container.querySelector("iframe")).toBeNull();
-    expect(container.textContent).toMatch(/Optional video|Short on time\?/);
+    expect(container.querySelector('[data-locale-video="player"]')).not.toBeNull();
+    expect(container.querySelector("iframe")).not.toBeNull();
   });
 });
