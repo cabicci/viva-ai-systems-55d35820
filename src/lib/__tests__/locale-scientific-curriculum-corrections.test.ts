@@ -20,6 +20,12 @@ import {
   validateAllRecoveredPackages,
 } from "../../../scripts/locale-lessons/repair-phase13b-recovered-packages.ts";
 import { REQUIRED_LESSON_COUNT } from "@/lib/locale-lessons/types";
+import {
+  getCorruptedQuizFallback,
+  resolveSourceQuizStructure,
+  detectQuizStructureDriftWarnings,
+} from "../../../scripts/locale-lessons/lib/quiz-structure.ts";
+import { validateFinalLessonFile } from "../../../scripts/locale-lessons/lib/validate-final-lesson-package.ts";
 import { runIsolatedPromotionIdempotence } from "./helpers/isolated-promotion-idempotence.ts";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
@@ -65,8 +71,121 @@ const B021_ACCEPTED_AR_MSA_FIELDS = [
 ] as const;
 const B021_ADDITIONAL_RECOVERED = new Set([B021_ACCEPTED_AR_MSA_FIELDS[1].recoveredPath]);
 const B021_ADDITIONAL_RUNTIME = new Set([B021_ACCEPTED_AR_MSA_FIELDS[1].runtimePath]);
-const EXPECTED_RECOVERED = new Set([...APPROVED_RECOVERED, ...B021_ADDITIONAL_RECOVERED]);
-const EXPECTED_RUNTIME = new Set([...APPROVED_RUNTIME, ...B021_ADDITIONAL_RUNTIME]);
+const B021_FOLLOWUP_BASE_SHA = "dc49ae558e715283e7fd5b489894d80749edc806";
+const B021_QUIZ_REPAIRS = [
+  {
+    locale: "ar-Gulf",
+    lessonId: "business-m1-l2-reactive-vs-proactive",
+    sectionIndex: 5,
+    baselineBlob: "c443d11242adc1fc360182e1b60cf09b9da7d5bb",
+  },
+  {
+    locale: "ar-Gulf",
+    lessonId: "intro-m1-l1-what-is-ai",
+    sectionIndex: 6,
+    baselineBlob: "3add9e5ff4a2fc2031088667f1a5b1bcc12c6fc4",
+  },
+  {
+    locale: "en",
+    lessonId: "intro-m1-l1-what-is-ai",
+    sectionIndex: 6,
+    baselineBlob: "e8a1106e71afb69a4579d03fa07a210ca0ac0b9c",
+  },
+] as const;
+const B021_BOLD_REPAIRS = [
+  { locale: "en", lessonId: "analyst-m2-l2-right-question-rule", field: "intro" },
+  { locale: "en", lessonId: "builder-m10-l2-first-users", field: "criteria" },
+  { locale: "en", lessonId: "builder-m6-l2-wireframe", field: "intro" },
+] as const;
+function followupRuntimePath(repair: { locale: string; lessonId: string }): string {
+  return "src/lib/locale-lessons/" + repair.locale + "/lessons/" + repair.lessonId + ".json";
+}
+const B021_FOLLOWUP_RUNTIME = new Set(
+  [...B021_QUIZ_REPAIRS, ...B021_BOLD_REPAIRS].map(followupRuntimePath),
+);
+const B021_FOLLOWUP_RECOVERED = new Set([...B021_FOLLOWUP_RUNTIME].map(runtimeToRecovered));
+const B021_FOLLOWUP_BASE_CACHE = new Map(
+  [...B021_FOLLOWUP_RUNTIME].map((relativePath) => [
+    relativePath,
+    JSON.parse(
+      execSync("git show " + B021_FOLLOWUP_BASE_SHA + ":" + relativePath, {
+        cwd: REPO_ROOT,
+        encoding: "utf8",
+      }),
+    ) as LocalizedLessonPackage,
+  ]),
+);
+function readFollowupBase(relativePath: string): LocalizedLessonPackage {
+  const base = B021_FOLLOWUP_BASE_CACHE.get(relativePath);
+  if (!base) throw new Error("Unlisted B021 follow-up: " + relativePath);
+  return structuredClone(base);
+}
+function expectedQuizMarkdown(
+  quiz: NonNullable<LocalizedLessonPackage["sections"][number]["quiz"]>,
+  locale: string,
+): string {
+  return (
+    "**" +
+    (locale === "en" ? "Question" : "السؤال") +
+    ":** " +
+    quiz.question +
+    "\n\n" +
+    quiz.options.map((option) => "- " + option).join("\n") +
+    "\n\n**" +
+    (locale === "en" ? "Explanation" : "التفسير") +
+    ":** " +
+    quiz.explanation
+  );
+}
+function expectedFollowupQuiz(repair: (typeof B021_QUIZ_REPAIRS)[number]) {
+  const base = readFollowupBase(followupRuntimePath(repair));
+  const fallback = getCorruptedQuizFallback(repair.lessonId, repair.locale);
+  if (!fallback || !base.sections[repair.sectionIndex]?.quiz)
+    throw new Error("Missing exact quiz repair contract");
+  return {
+    ...base.sections[repair.sectionIndex].quiz!,
+    options: [...fallback.options],
+    correctIndex: fallback.correctIndex,
+  };
+}
+function normalizeExactB021FollowupFields(pkg: LocalizedLessonPackage, relativePath: string): void {
+  const quizRepair = B021_QUIZ_REPAIRS.find(
+    (repair) => runtimeToRecovered(followupRuntimePath(repair)) === relativePath,
+  );
+  if (quizRepair) {
+    const section = pkg.sections[quizRepair.sectionIndex];
+    const expected = expectedFollowupQuiz(quizRepair);
+    if (
+      deepEqual(section?.quiz, expected) &&
+      section.contentMarkdown === expectedQuizMarkdown(expected, quizRepair.locale)
+    ) {
+      const base = readBasePackage(relativePath).sections[quizRepair.sectionIndex];
+      section.quiz = structuredClone(base.quiz);
+      section.contentMarkdown = base.contentMarkdown;
+    }
+    return;
+  }
+  const boldRepair = B021_BOLD_REPAIRS.find(
+    (repair) => runtimeToRecovered(followupRuntimePath(repair)) === relativePath,
+  );
+  if (boldRepair && deepEqual(pkg, readFollowupBase(followupRuntimePath(boldRepair)))) {
+    const baseMission = readBasePackage(relativePath).sections[7].mission!;
+    const mission = pkg.sections[7].mission!;
+    if (boldRepair.field === "intro") mission.intro = baseMission.intro;
+    else mission.rubric[1].criteria = baseMission.rubric[1].criteria;
+  }
+}
+
+const EXPECTED_RECOVERED = new Set([
+  ...APPROVED_RECOVERED,
+  ...B021_ADDITIONAL_RECOVERED,
+  ...B021_FOLLOWUP_RECOVERED,
+]);
+const EXPECTED_RUNTIME = new Set([
+  ...APPROVED_RUNTIME,
+  ...B021_ADDITIONAL_RUNTIME,
+  ...B021_FOLLOWUP_RUNTIME,
+]);
 
 function buildBasePackageCache(): Map<string, LocalizedLessonPackage> {
   const cache = new Map<string, LocalizedLessonPackage>();
@@ -247,6 +366,7 @@ function stripApprovedFields(
 ): LocalizedLessonPackage {
   const clone = structuredClone(pkg);
   normalizeExactB021AcceptedFields(clone, relativePath);
+  normalizeExactB021FollowupFields(clone, relativePath);
   for (const record of records) {
     normalizeExactB019DashboardMission(clone, record);
     const section = clone.sections[record.sectionIndex] as unknown as Record<string, unknown>;
@@ -284,6 +404,86 @@ function recoveredToRuntime(recoveredPath: string): string {
 }
 
 describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
+  it.each(B021_QUIZ_REPAIRS)(
+    "repairs only the exact $locale/$lessonId quiz fields using the existing override",
+    async (repair) => {
+      const runtimePath = followupRuntimePath(repair);
+      expect(
+        execSync("git rev-parse " + B021_FOLLOWUP_BASE_SHA + ":" + runtimePath, {
+          cwd: REPO_ROOT,
+          encoding: "utf8",
+        }).trim(),
+      ).toBe(repair.baselineBlob);
+      const baseline = readFollowupBase(runtimePath);
+      const runtime = readPackage(runtimePath);
+      const recoveredPath = runtimeToRecovered(runtimePath);
+      const recovered = readPackage(recoveredPath);
+      const expected = expectedFollowupQuiz(repair);
+      const section = runtime.sections[repair.sectionIndex];
+      expect(section.quiz).toEqual(expected);
+      expect(new Set(expected.options).size).toBe(4);
+      expect(expected.correctIndex).toBe(1);
+      expect(section.contentMarkdown).toBe(expectedQuizMarkdown(expected, repair.locale));
+      expect(section.contentMarkdown).not.toMatch(/correctIndex|مفتاح الاختبار/);
+      expect(recovered).toEqual(runtime);
+      const source = readPackage(
+        "src/lib/locale-lessons/ar-MSA/lessons/" + repair.lessonId + ".json",
+      );
+      const resolved = resolveSourceQuizStructure(
+        source.sections.find((s) => s.role === "Quiz"),
+        repair.lessonId,
+      );
+      if (!resolved.ok) throw new Error("Missing existing source override");
+      expect(resolved.structure.usesOverride).toBe(true);
+      expect(
+        detectQuizStructureDriftWarnings(
+          repair.lessonId,
+          resolved.structure,
+          section.quiz!.options,
+          section.quiz!.correctIndex,
+        ),
+      ).toEqual([]);
+      const liveQuiz = adaptPackageQuizzesFromSections(runtime.lessonId, runtime.sections)[0];
+      expect(liveQuiz.correctIndex).toBe(1);
+      expect(liveQuiz.options).toEqual(expected.options);
+      const restored = structuredClone(runtime);
+      restored.sections[repair.sectionIndex].quiz = baseline.sections[repair.sectionIndex].quiz;
+      restored.sections[repair.sectionIndex].contentMarkdown =
+        baseline.sections[repair.sectionIndex].contentMarkdown;
+      expect(restored).toEqual(baseline);
+      expect((await validateFinalLessonFile(path.join(REPO_ROOT, runtimePath))).ok).toBe(true);
+      expect((await validateFinalLessonFile(path.join(REPO_ROOT, recoveredPath))).ok).toBe(true);
+    },
+  );
+
+  it.each(B021_BOLD_REPAIRS)(
+    "preserves accepted dc49 $lessonId bold repair and synchronizes its mirror",
+    async (repair) => {
+      const runtimePath = followupRuntimePath(repair);
+      const accepted = readFollowupBase(runtimePath);
+      const old = JSON.parse(
+        execSync("git show " + "b471bbdfe54c5a3ad06c61d02745026a9395f338:" + runtimePath, {
+          cwd: REPO_ROOT,
+          encoding: "utf8",
+        }),
+      ) as LocalizedLessonPackage;
+      const beforeMission = old.sections[7].mission!;
+      const afterMission = accepted.sections[7].mission!;
+      if (repair.field === "intro") {
+        expect(afterMission.intro).toBe(beforeMission.intro + "**");
+        beforeMission.intro = afterMission.intro;
+      } else {
+        expect(afterMission.rubric[1].criteria).toBe(beforeMission.rubric[1].criteria + "**");
+        beforeMission.rubric[1].criteria = afterMission.rubric[1].criteria;
+      }
+      expect(old).toEqual(accepted);
+      const recoveredPath = runtimeToRecovered(runtimePath);
+      expect(readPackage(runtimePath)).toEqual(accepted);
+      expect(readPackage(recoveredPath)).toEqual(accepted);
+      expect((await validateFinalLessonFile(path.join(REPO_ROOT, recoveredPath))).ok).toBe(true);
+    },
+  );
+
   it("validates exact B021 accepted localization fields and provenance before normalization", () => {
     expect(() =>
       execSync("git merge-base --is-ancestor " + B021_ACCEPTED_LOCALIZATION_COMMIT + " HEAD", {
@@ -383,9 +583,9 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
     }
   });
 
-  it("retains 39 historical runtime packages plus the exact B021 accepted package", () => {
+  it("retains 39 historical runtime packages plus the exact accepted B021 additions", () => {
     const changedRuntime = execSync(
-      `git diff --name-only ${BASE_SHA} HEAD -- src/lib/locale-lessons/ar-MSA/lessons src/lib/locale-lessons/ar-Gulf/lessons src/lib/locale-lessons/en/lessons`,
+      `git diff --name-only ${BASE_SHA} -- src/lib/locale-lessons/ar-MSA/lessons src/lib/locale-lessons/ar-Gulf/lessons src/lib/locale-lessons/en/lessons`,
       { cwd: REPO_ROOT, encoding: "utf8" },
     )
       .trim()
@@ -396,6 +596,7 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
 
     expect(APPROVED_RUNTIME.size).toBe(39);
     expect(B021_ADDITIONAL_RUNTIME.size).toBe(1);
+    expect(B021_FOLLOWUP_RUNTIME.size).toBe(6);
     expect(changedRuntime).toHaveLength(EXPECTED_RUNTIME.size);
     expect(new Set(changedRuntime)).toEqual(EXPECTED_RUNTIME);
   }, 30_000);
@@ -427,7 +628,7 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
     }
   });
 
-  it("retains 39 historical recovered packages plus the exact B021 accepted mirror", () => {
+  it("retains 39 historical recovered packages plus the exact accepted B021 additions", () => {
     const changedRecovered = execSync(
       `git diff --name-only ${BASE_SHA} -- src/lib/locale-lessons/ar-MSA/reports/phase13b-recovered-packages`,
       { cwd: REPO_ROOT, encoding: "utf8" },
@@ -440,6 +641,7 @@ describe("scientific curriculum corrections (Agent 4 reconciled final)", () => {
 
     expect(APPROVED_RECOVERED.size).toBe(39);
     expect(B021_ADDITIONAL_RECOVERED.size).toBe(1);
+    expect(B021_FOLLOWUP_RECOVERED.size).toBe(6);
     expect(changedRecovered).toHaveLength(EXPECTED_RECOVERED.size);
     expect(new Set(changedRecovered)).toEqual(EXPECTED_RECOVERED);
 
