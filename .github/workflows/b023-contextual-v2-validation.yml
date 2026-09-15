@@ -99,7 +99,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          setsid bun run preview -- --host 127.0.0.1 --port 4173 --strictPort \
+          setsid node node_modules/wrangler/bin/wrangler.js --cwd .output dev --ip 127.0.0.1 --port 4173 \
             > "$B023_PRIVATE_ROOT/preview.log" 2>&1 < /dev/null &
           preview_pid=$!
           printf '%s\n' "$preview_pid" > "$B023_PRIVATE_ROOT/preview.pid"
