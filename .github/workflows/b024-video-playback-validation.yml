@@ -116,6 +116,8 @@ jobs:
 
       - name: Sign in normally and prove one video plays
         timeout-minutes: 6
+        env:
+          B023_FROZEN_GATE_PATH: ${{ github.workspace }}/.github/scripts/b024_video_playback_validation/video-playback-gate.mjs
         run: node .github/scripts/b023_contextual_v2_validation/fixture-login-and-gate.mjs
 
       - name: Verify exact clean candidate
