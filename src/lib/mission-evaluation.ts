@@ -161,7 +161,8 @@ export async function getReusableSubmissionForMission(
 
 /**
  * Latest in-progress submission for hydrate (non-passed, same user/mission/lesson).
- * Prefers reusable rows; falls back to `submitted` rows left after a failed eval.
+ * Prefers reusable rows; restores submitted/evaluating answers after interruption.
+ * Retrying an evaluating row still creates a fresh draft; it does not reset a claim.
  */
 export async function getActiveSubmissionForMission(
   missionId: string,
@@ -176,7 +177,7 @@ export async function getActiveSubmissionForMission(
     .select("*")
     .eq("user_id", userId)
     .eq("mission_id", missionId)
-    .eq("status", "submitted");
+    .in("status", ["submitted", "evaluating"]);
   if (lessonId) query = query.eq("lesson_id", lessonId);
   const { data, error } = await query
     .order("created_at", { ascending: false })
