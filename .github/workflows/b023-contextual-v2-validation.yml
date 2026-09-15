@@ -26,6 +26,11 @@ jobs:
       B023_EXPECTED_GIT_HEAD: ${{ github.event.inputs.expected_product_sha || github.event.pull_request.head.sha }}
       B023_REPO_ROOT: ${{ github.workspace }}
       DOCKER_BIN: docker
+      PGHOST: 127.0.0.1
+      PGPORT: "54322"
+      PGUSER: postgres
+      PGDATABASE: postgres
+      PGPASSWORD: postgres
     steps:
       - name: Checkout exact PR head, or selected dispatch commit
         uses: actions/checkout@v4

@@ -1,6 +1,6 @@
 // DRAFT. Creates and removes one fresh disposable LOCAL auth user; never edits product code.
 import { randomBytes, randomUUID } from "node:crypto";
-import { spawn } from "node:child_process";
+import { execFileSync, spawn } from "node:child_process";
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { createRequire } from "node:module";
 import { dirname, isAbsolute, join, relative, resolve } from "node:path";
@@ -63,6 +63,18 @@ async function localAdminRequest(path, method, payload) {
   return text ? JSON.parse(text) : null;
 }
 
+function grantLocalAdminRole() {
+  if (process.env.PGHOST !== "127.0.0.1" || process.env.PGPORT !== "54322" ||
+      process.env.PGUSER !== "postgres" || process.env.PGDATABASE !== "postgres") {
+    throw new Error("Exact disposable local PostgreSQL connection required");
+  }
+  const result = execFileSync("psql", [
+    "-v", "ON_ERROR_STOP=1", "-v", `fixture_user_id=${userId}`, "-At", "-c",
+    "INSERT INTO public.user_roles (user_id, role) VALUES (:'fixture_user_id'::uuid, 'admin') RETURNING user_id::text || E'\\t' || role::text;",
+  ], { encoding: "utf8", env: process.env }).trim();
+  if (result !== `${userId}\tadmin`) throw new Error("Local admin grant readback mismatch");
+}
+
 function runFrozenGate(env) {
   return new Promise((resolveGate, reject) => {
     const child = spawn(process.execPath, [gatePath], { cwd: repo, env, stdio: ["ignore", "pipe", "pipe"] });
@@ -100,11 +112,9 @@ try {
   });
   userId = created?.id ?? created?.user?.id;
   if (!/^[a-f0-9-]{36}$/i.test(userId || "")) throw new Error("Local Auth did not return a fixture user UUID");
-  // Runtime authority: public.user_roles + has_role; no legacy subscription writes.
-  const roles = await localAdminRequest("/rest/v1/user_roles", "POST", { user_id: userId, role: "admin" });
-  if (!Array.isArray(roles) || roles.length !== 1 || roles[0].user_id !== userId || roles[0].role !== "admin") {
-    throw new Error("Local admin grant readback mismatch");
-  }
+  // Runtime authority remains public.user_roles + has_role. The fixture grant uses
+  // the exact loopback database because PostgREST has no service-role table grant.
+  grantLocalAdminRole();
   const options = { headless: true };
   if (process.env.B023_CHROME_EXECUTABLE) options.executablePath = process.env.B023_CHROME_EXECUTABLE;
   else options.channel = process.env.B023_BROWSER_CHANNEL || "chrome";
@@ -158,7 +168,7 @@ const receipt = {
   result: !failure && !cleanupError ? "PASS" : "FAIL",
   head, localSupabaseOrigin: localSupabase, baseOrigin: base, fixtureId,
   authMethod: "normal login form → password token endpoint → dashboard has_role",
-  authority: "public.user_roles(role=admin) via local service-role API",
+  authority: "public.user_roles(role=admin) via exact disposable local PostgreSQL fixture insert",
   fixtureDeleted: Boolean(userId) && !cleanupError,
   credentialFileRemoved: true,
   blockedExternalOrigins: [...blocked].sort(),
