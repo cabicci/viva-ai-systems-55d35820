@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import instructionsExamplesScreenshot from "@/assets/lessons/builder-m2-l2-instructions-examples.jpg";
 
 /** Builder · M2 · Lesson 02 — Instructions vs Examples (v3: Lesson Shape pilot) */
 export const BUILDER_M2_INSTRUCTIONS_EXAMPLES_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const BUILDER_M2_INSTRUCTIONS_EXAMPLES_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: instructionsExamplesScreenshot,
       alt: "الصفحة الرئيسية — خمس كروت مسارات بنفس الشكل.",
       caption:
         "الكروت دي كلها نفس التنسيق. مش من تعليمات طويلة — من مثال واحد: «اعمل كارت زي ده للمسارات التانية.» الـ AI فهم الـ pattern وقلّده.",

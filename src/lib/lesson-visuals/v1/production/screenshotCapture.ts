@@ -116,7 +116,8 @@ export function createScreenshotCaptureTransport(
       const spec = opts.master.screenshotSpec;
       if (!spec) throw new Error("screenshot transport: master.screenshotSpec is null");
       const url = spec.exactUrl || spec.url;
-      if (!spec.allowlisted || !isUrlOnScreenshotAllowlist(url, loadScreenshotAllowlist())) {
+      const screenshotAllowlist = loadScreenshotAllowlist();
+      if (!spec.allowlisted || !isUrlOnScreenshotAllowlist(url, screenshotAllowlist)) {
         throw new Error(`screenshot transport: URL not allowlisted: ${url}`);
       }
       if (spec.failOnLoginRedirect !== true) {
@@ -133,6 +134,9 @@ export function createScreenshotCaptureTransport(
         throw new Error(
           `screenshot transport: login/auth redirect detected (${captured.finalUrl})`,
         );
+      }
+      if (!isUrlOnScreenshotAllowlist(captured.finalUrl, screenshotAllowlist)) {
+        throw new Error(`screenshot transport: final URL not allowlisted: ${captured.finalUrl}`);
       }
       if (captured.httpStatus > 0 && (captured.httpStatus < 200 || captured.httpStatus >= 400)) {
         throw new Error(`screenshot transport: HTTP ${captured.httpStatus} for ${url}`);

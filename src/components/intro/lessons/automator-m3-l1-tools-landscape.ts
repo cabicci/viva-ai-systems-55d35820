@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM2ToolsLandscapeScreenshot from "@/assets/lessons/unique/automator-m3-l1-tools-landscape.jpg";
 
 /** Automator · M3 · Lesson 01 — Tools Landscape (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M3_L1_TOOLS_LANDSCAPE_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const AUTOMATOR_M3_L1_TOOLS_LANDSCAPE_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: automatorM2ToolsLandscapeScreenshot,
       alt: "رسم طبقات — كل طبقة تستقبل مدخل وتنفّذ وتطلع مخرج.",
       caption:
         "أي أداة أتمتة = طبقات: حاجة تدخل (مُشغّل) → خطوات → حاجة تطلع. Zapier و Make و n8n نفس الفكرة — اختلاف في السهولة والسعر والقوة.",

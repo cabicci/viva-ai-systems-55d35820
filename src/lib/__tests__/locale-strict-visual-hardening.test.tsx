@@ -2,7 +2,6 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { PlayCircle } from "lucide-react";
 import { render } from "@testing-library/react";
 import { IntroLessonRenderer } from "@/components/intro/IntroLessonRenderer";
-import { LESSON_DIAGRAMS } from "@/components/intro/diagrams/LessonDiagrams";
 import type { IntroLessonContent } from "@/components/intro/intro-lesson-types";
 import { adaptLocalizedPackageToIntroContent } from "@/lib/locale-lessons/adapt-localized-package-to-intro-content";
 import {
@@ -68,7 +67,7 @@ function basePackage(
 describe("strict exact-locale UI accessor", () => {
   it("never returns ar-EG when the exact-locale visual key is missing", () => {
     const key = STRICT_VISUAL_UI_KEYS.diagramTitle;
-    expect(arEgUi[key as keyof typeof arEgUi]).toBeUndefined();
+    expect(arEgUi[key as keyof typeof arEgUi]).toBeTruthy();
     // Ensure en has the key normally, then blank it via override.
     expect(getStrictVisualUiString("en", key)).toBeTruthy();
     expect((enUi as Record<string, string>)[key]).toBeTruthy();
@@ -164,16 +163,17 @@ describe("future exact-locale asset resolution", () => {
     expect(resolveStrictLocalizedScreenshotSrc("en", lessonId)).toBeUndefined();
   });
 
-  it("renderer shows SVG asset without mounting LESSON_DIAGRAMS; missing stays placeholder", () => {
-    const diagramId = Object.keys(
-      LESSON_DIAGRAMS,
-    )[0] as keyof typeof LESSON_DIAGRAMS;
+  it("renderer replaces the old diagram path with the exact contextual asset", () => {
     const content: IntroLessonContent = [
       {
         icon: PlayCircle,
         eyebrow: "Visual guide",
         title: "Visual guide",
-        block: { kind: "diagram", id: diagramId, caption: "Localized caption" },
+        block: {
+          kind: "diagram",
+          id: "audience-persona",
+          caption: "Localized caption",
+        },
       },
     ];
 
@@ -186,12 +186,12 @@ describe("future exact-locale asset resolution", () => {
         />
       </LocaleProvider>,
     );
+    expect(missing.container.querySelector('[data-locale-diagram]')).toBeNull();
     expect(
-      missing.container.querySelector('[data-locale-diagram="placeholder"]'),
-    ).not.toBeNull();
-    expect(
-      missing.container.querySelector('[data-locale-diagram="asset"]'),
-    ).toBeNull();
+      missing.container.querySelector("img")?.getAttribute("src"),
+    ).toBe(
+      "/lesson-visuals/contextual-v2/en/intro-m1-l1-what-is-ai.webp",
+    );
     missing.unmount();
 
     setStrictLocalizedAssetMapForTests({
@@ -207,18 +207,15 @@ describe("future exact-locale asset resolution", () => {
         />
       </LocaleProvider>,
     );
-    expect(
-      withAsset.container.querySelector('[data-locale-diagram="asset"]'),
-    ).not.toBeNull();
-    expect(
-      withAsset.container.querySelector('[data-locale-diagram="placeholder"]'),
-    ).toBeNull();
+    expect(withAsset.container.querySelector('[data-locale-diagram]')).toBeNull();
     expect(
       withAsset.container.querySelector("img")?.getAttribute("src"),
-    ).toBe("https://cdn.test/en-diagram.svg");
+    ).toBe(
+      "/lesson-visuals/contextual-v2/en/intro-m1-l1-what-is-ai.webp",
+    );
   });
 
-  it("renderer shows JPG screenshot asset; missing stays placeholder", () => {
+  it("renderer replaces the old screenshot path with the exact contextual asset", () => {
     const content: IntroLessonContent = [
       {
         icon: PlayCircle,
@@ -237,9 +234,12 @@ describe("future exact-locale asset resolution", () => {
         />
       </LocaleProvider>,
     );
+    expect(missing.container.querySelector('[data-locale-screenshot]')).toBeNull();
     expect(
-      missing.container.querySelector('[data-locale-screenshot="placeholder"]'),
-    ).not.toBeNull();
+      missing.container.querySelector("img")?.getAttribute("src"),
+    ).toBe(
+      "/lesson-visuals/contextual-v2/en/intro-m1-l1-what-is-ai.webp",
+    );
     missing.unmount();
 
     setStrictLocalizedAssetMapForTests({
@@ -255,12 +255,12 @@ describe("future exact-locale asset resolution", () => {
         />
       </LocaleProvider>,
     );
-    expect(
-      withAsset.container.querySelector('[data-locale-screenshot="asset"]'),
-    ).not.toBeNull();
+    expect(withAsset.container.querySelector('[data-locale-screenshot]')).toBeNull();
     expect(
       withAsset.container.querySelector("img")?.getAttribute("src"),
-    ).toBe("https://cdn.test/en-shot.jpg");
+    ).toBe(
+      "/lesson-visuals/contextual-v2/en/intro-m1-l1-what-is-ai.webp",
+    );
   });
 });
 

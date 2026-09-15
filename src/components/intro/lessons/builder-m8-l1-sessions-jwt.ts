@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import jwtDiagram from "@/assets/lessons/concepts/jwt-diagram.jpg";
 
 /** Builder · M8 · Lesson 01 — Sessions & JWT (v3: Lesson Shape pilot · optional depth) */
 export const BUILDER_M7_SESSIONS_JWT_BLOCKS: IntroLessonContent = [
@@ -97,7 +96,6 @@ export const BUILDER_M7_SESSIONS_JWT_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: jwtDiagram,
       alt: "رسم بياني لدورة حياة الـJWT: المستخدم بيعمل login، السيرفر بيرد بـtoken. بعد كده كل طلب للسيرفر بيتبعت معاه الـtoken في Authorization header.",
       caption:
         "اختياري: (١) Login → كارت مؤقت. (٢) المتصفح يحتفظ بيه. (٣) كل طلب يتبعت معاه. (٤) السيرفر يتأكد إنك لسه داخل.",

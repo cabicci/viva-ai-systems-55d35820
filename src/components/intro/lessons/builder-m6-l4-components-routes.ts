@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import componentsScreenshot from "@/assets/lessons/builder-m6-l4-components-routes.jpg";
 
 /** Builder · M6 · Lesson 04 — Components & Routes (v3: Lesson Shape pilot · optional depth) */
 export const BUILDER_M6_COMPONENTS_ROUTES_BLOCKS: IntroLessonContent = [
@@ -109,7 +108,6 @@ export const BUILDER_M6_COMPONENTS_ROUTES_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: componentsScreenshot,
       alt: "صفحة /curriculum — كرت Creator بداخله ModuleCard بدرسين، وكرت Automator بداخله موديولين كل واحد فيه LessonRow",
       caption:
         "أي واجهة احترافية — حتى الصفحة دي — تبان معقدة، بس في الحقيقة تكرار لـ ٣–٤ قوالب بسيطة. ModuleCard و LessonRow = Components بتتكرر ببيانات مختلفة.",

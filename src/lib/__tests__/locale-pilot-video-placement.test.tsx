@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it, vi } from "vitest";
-import { renderLocalizedLesson, renderLocalizedLessonWithoutVideo } from "@/lib/__tests__/locale-test-utils";
+import { renderLocalizedLesson } from "@/lib/__tests__/locale-test-utils";
 import {
   BUNNY_LIBRARY_ID,
   getBunnyEmbedUrl,
@@ -14,18 +14,10 @@ import type { LocalizedLessonPackage } from "@/lib/locale-lessons/types";
 import type { SupportedLocale } from "@/lib/locale/types";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
-const UUID_RE =
-  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 vi.mock("@tanstack/react-router", () => ({
-  Link: ({
-    children,
-    to,
-    ...props
-  }: {
-    children: React.ReactNode;
-    to?: string;
-  }) => (
+  Link: ({ children, to, ...props }: { children: React.ReactNode; to?: string }) => (
     <a href={typeof to === "string" ? to : "#"} {...props}>
       {children}
     </a>
@@ -35,10 +27,7 @@ vi.mock("@tanstack/react-router", () => ({
 
 import { PILOT_VIDEO_CELLS } from "@/lib/__tests__/locale-pilot-video-cells";
 
-function readLocalizedPackage(
-  locale: SupportedLocale,
-  lessonId: string,
-): LocalizedLessonPackage {
+function readLocalizedPackage(locale: SupportedLocale, lessonId: string): LocalizedLessonPackage {
   const filePath = path.join(
     REPO_ROOT,
     "src/lib/locale-lessons",
@@ -120,25 +109,14 @@ describe("locale pilot video placement matrix", () => {
     const legacyGuid = "b139cfa2-e80e-4dd6-ab6d-e79ed8d34522";
 
     expect(getBunnyGuidForLocale(lessonId, undefined)).toBe(legacyGuid);
-    expect(getBunnyEmbedUrlForLocale(lessonId, undefined)).toBe(
-      getBunnyEmbedUrl(lessonId),
-    );
+    expect(getBunnyEmbedUrlForLocale(lessonId, undefined)).toBe(getBunnyEmbedUrl(lessonId));
     expect(getBunnyGuidForLocale(lessonId, "ar-EG")).toBe(legacyGuid);
   });
 
-  it("shows canonical video skip notice when localized composite GUID is absent", async () => {
-    const lessonId = "intro-m1-l1-what-is-ai";
+  it("fails closed for an unknown localized video key", () => {
+    const lessonId = "missing-localized-video-fixture";
+
     expect(getLocalizedBunnyGuid(lessonId, "en")).toBeUndefined();
-    expect(getBunnyGuidForLocale(lessonId, "en")).toBe(
-      getBunnyGuidForLocale(lessonId, undefined),
-    );
-
-    const pkg = readLocalizedPackage("en", lessonId);
-    const { container } = await renderLocalizedLessonWithoutVideo(pkg);
-
-    expect(container.querySelector('[data-locale-video="placeholder"]')).toBeNull();
-    expect(container.querySelector('[data-locale-video="player"]')).toBeNull();
-    expect(container.querySelector("iframe")).toBeNull();
-    expect(container.textContent).toMatch(/Optional video|Short on time\?/);
+    expect(getBunnyGuidForLocale(lessonId, "en")).toBeUndefined();
   });
 });

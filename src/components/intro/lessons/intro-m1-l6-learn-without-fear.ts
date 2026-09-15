@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import stepsImage from "@/assets/lessons/intro-m1-l6-learn-without-fear.jpg";
 
 /**
  * Intro · Lesson 06 — اتعلم AI من غير خوف (v3: Lesson Shape pilot)
@@ -108,7 +107,6 @@ export const LEARN_WITHOUT_FEAR_CONTENT: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: stepsImage,
       alt: "مسار خطوات صغيرة: جرّب، لاحظ، عدّل، كرر",
       caption:
         "كل خطوة صغيرة تبني ثقة. لو الرد ضعيف — عدّل السؤال واتعلم. الصورة توضّح الحلقة — مش محتاج تكمل كل المسارات مرة واحدة.",

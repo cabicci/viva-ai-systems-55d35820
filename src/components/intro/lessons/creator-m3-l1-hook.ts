@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import hookScreenshot from "@/assets/lessons/creator-m3-l1-hook.jpg";
 
 export const CREATOR_M2_HOOK_BLOCKS: IntroLessonContent = [
   {
@@ -110,7 +109,6 @@ export const CREATOR_M2_HOOK_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: hookScreenshot,
       alt: "لقطة توضح مثال بصري لبداية قوية توقف المشاهد.",
       caption:
         "الفكرة إن أول ثانية تبقى مختلفة وواضحة كفاية تخلي المشاهد يديك فرصة.",

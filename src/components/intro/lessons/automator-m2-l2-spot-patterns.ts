@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM1SpotPatternsScreenshot from "@/assets/lessons/unique/automator-m2-l2-spot-patterns.jpg";
 
 /** Automator · M2 · Lesson 02 — شوف الأنماط (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M2_L2_SPOT_PATTERNS_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const AUTOMATOR_M2_L2_SPOT_PATTERNS_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: automatorM1SpotPatternsScreenshot,
       alt: "تقرير يلخّص أنشطة متكرّرة — وقت في مهام، أوقات فتح، أنماط استخدام.",
       caption:
         "فكرة المراقبة: تسجّل إيه اللي بيتكرّر (وقت، مهمة، توقيت) — وتطلع منه أنماط. نفس التمرين على شغلك: يدوي في الأول، بعدين العامل الافتراضي.",

@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import contextLayerScreenshot from "@/assets/lessons/builder-m3-l1-context-layer.jpg";
 
 /** Builder · M3 · Lesson 01 — Context Layer (v3: Lesson Shape pilot) */
 export const BUILDER_M3_CONTEXT_LAYER_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const BUILDER_M3_CONTEXT_LAYER_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: contextLayerScreenshot,
       alt: "مساعد AI — صندوق سياقك الحالي فوق مربع السؤال.",
       caption:
         "قبل ما تكتب، المساعد عارف إنت في أنهي مسار وأنهي درس. السياق ده بيخلّي الرد يكمّل رحلتك — مش إجابات عامة. نفس الفكرة في أي منتج: مرّر للـ AI اللي المستخدم «فيه» دلوقتي.",

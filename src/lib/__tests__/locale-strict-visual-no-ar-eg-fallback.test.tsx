@@ -14,14 +14,12 @@ import {
 } from "@/lib/locale-lessons/registry";
 import { localizedSectionEyebrow } from "@/lib/locale-lessons/package-section-labels";
 import {
-  getStrictVisualUiString,
   isStrictVisualPackageTextAllowed,
   localizedLessonDiagramAssetPath,
   localizedLessonScreenshotAssetPath,
   resolveStrictLocalizedDiagramSrc,
   resolveStrictLocalizedScreenshotSrc,
   STRICT_LOCALIZED_VISUAL_LOCALES,
-  STRICT_VISUAL_UI_KEYS,
   usesStrictLocalizedVisualPolicy,
 } from "@/lib/locale-lessons/strict-localized-visual-policy";
 import type {
@@ -30,7 +28,7 @@ import type {
 } from "@/lib/locale-lessons/types";
 import { LocaleProvider } from "@/lib/locale/locale-context";
 import { getUiString } from "@/lib/locale/ui-strings";
-import { getLocalizedBunnyEmbedUrl } from "@/lib/bunny-videos";
+import * as bunnyVideos from "@/lib/bunny-videos";
 import { renderLocalizedLesson } from "@/lib/__tests__/locale-test-utils";
 
 vi.mock("@tanstack/react-router", () => ({
@@ -52,7 +50,7 @@ vi.mock("@tanstack/react-router", () => ({
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
 const PACKAGE_LOCALES = STRICT_LOCALIZED_VISUAL_LOCALES;
 const SAMPLE_LESSON_ID = "intro-m1-l1-what-is-ai";
-/** Known package lesson without localized Bunny composite. */
+/** Real package used to simulate a missing exact-locale Bunny video. */
 const MISSING_VIDEO_LESSON_ID = "analyst-m1-l1-from-automation-to-insight";
 
 function readLocalizedPackage(
@@ -190,7 +188,7 @@ describe("strict localized visual policy", () => {
     }
   });
 
-  it("ar-EG IntroLessonRenderer still mounts LESSON_DIAGRAMS when present", () => {
+  it("ar-EG IntroLessonRenderer replaces LESSON_DIAGRAMS with contextual-v2", () => {
     const diagramId = Object.keys(LESSON_DIAGRAMS)[0] as keyof typeof LESSON_DIAGRAMS;
     expect(diagramId).toBeTruthy();
 
@@ -210,7 +208,10 @@ describe("strict localized visual policy", () => {
     );
 
     expect(container.querySelector('[data-locale-diagram="placeholder"]')).toBeNull();
-    expect(container.querySelector("figure")).not.toBeNull();
+    expect(container.querySelector("[data-locale-diagram]")).toBeNull();
+    expect(container.querySelector("img")?.getAttribute("src")).toBe(
+      "/lesson-visuals/contextual-v2/ar-EG/intro-m1-l1-what-is-ai.webp",
+    );
   });
 
   it("ar-EG lessonVideo still accepts canonical url/poster fields", () => {
@@ -260,29 +261,41 @@ describe("strict localized visual policy", () => {
       });
 
       it("renders neutral Block 2 missing state without ar-EG chrome", async () => {
-        expect(getLocalizedBunnyEmbedUrl(MISSING_VIDEO_LESSON_ID, locale)).toBeFalsy();
-        const pkg = readLocalizedPackage(locale, MISSING_VIDEO_LESSON_ID);
-        const { container } = await renderLocalizedLesson(pkg);
-        const html = container.innerHTML;
+        const actualLookup = bunnyVideos.getLocalizedBunnyEmbedUrl;
+        const missingVideo = vi
+          .spyOn(bunnyVideos, "getLocalizedBunnyEmbedUrl")
+          .mockImplementation((lessonId, requestedLocale) =>
+            lessonId === MISSING_VIDEO_LESSON_ID && requestedLocale === locale
+              ? undefined
+              : actualLookup(lessonId, requestedLocale),
+          );
+        try {
+          expect(bunnyVideos.getLocalizedBunnyEmbedUrl(MISSING_VIDEO_LESSON_ID, locale)).toBeUndefined();
+          const pkg = readLocalizedPackage(locale, MISSING_VIDEO_LESSON_ID);
+          const { container } = await renderLocalizedLesson(pkg);
+          const html = container.innerHTML;
 
-        expect(html).not.toContain("E:\\");
-        expect(html).not.toContain("E:/Masaarat/Artifacts");
-        expect(container.querySelector("iframe")).toBeNull();
-        expect(html).not.toContain("/lessons/intro/");
-        expect(
-          container.textContent?.includes(
-            getUiString(locale, "intro.video.optionalBadge"),
-          ) ||
+          expect(html).not.toContain("E:\\");
+          expect(html).not.toContain("E:/Masaarat/Artifacts");
+          expect(container.querySelector("iframe")).toBeNull();
+          expect(html).not.toContain("/lessons/intro/");
+          expect(
             container.textContent?.includes(
-              getUiString(locale, "intro.video.skipBody"),
+              getUiString(locale, "intro.video.optionalBadge"),
             ) ||
-            container.textContent?.includes(
-              getUiString(locale, "safety.video.title"),
-            ),
-        ).toBe(true);
+              container.textContent?.includes(
+                getUiString(locale, "intro.video.skipBody"),
+              ) ||
+              container.textContent?.includes(
+                getUiString(locale, "safety.video.title"),
+              ),
+          ).toBe(true);
+        } finally {
+          missingVideo.mockRestore();
+        }
       });
 
-      it("never renders canonical LESSON_DIAGRAMS; missing Block 7 uses neutral state", async () => {
+      it("renders exact-locale contextual-v2 without canonical Block 7 fallback", async () => {
         const pkg = readLocalizedPackage(locale, SAMPLE_LESSON_ID);
         const canonical = await loadIntroLessonContent(SAMPLE_LESSON_ID);
         const adapted = adaptLocalizedPackageToIntroContent(pkg, canonical);
@@ -292,26 +305,16 @@ describe("strict localized visual policy", () => {
         const { container } = await renderLocalizedLesson(pkg);
 
         if (hasDiagram) {
-          expect(
-            container.querySelector('[data-locale-diagram="placeholder"]'),
-          ).not.toBeNull();
-          expect(container.textContent).toContain(
-            getStrictVisualUiString(
-              locale,
-              STRICT_VISUAL_UI_KEYS.diagramTitle,
-            ) ?? "",
-          );
-        } else {
-          expect(
-            container.querySelector('[data-locale-diagram="placeholder"]'),
-          ).toBeNull();
+          expect(container.querySelector('[data-locale-diagram]')).toBeNull();
         }
         if (hasScreenshot) {
-          expect(
-            container.querySelector('[data-locale-screenshot="placeholder"]'),
-          ).not.toBeNull();
-          expect(container.querySelector("img")).toBeNull();
+          expect(container.querySelector('[data-locale-screenshot]')).toBeNull();
         }
+        expect(container.querySelectorAll("img[data-contextual-v2-img='1']"))
+          .toHaveLength(1);
+        expect(container.querySelector("img")?.getAttribute("src")).toBe(
+          `/lesson-visuals/contextual-v2/${locale}/${SAMPLE_LESSON_ID}.webp`,
+        );
       });
     });
   }

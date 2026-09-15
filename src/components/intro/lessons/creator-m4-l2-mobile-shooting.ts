@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import mobileShootingScreenshot from "@/assets/lessons/creator-m4-l2-mobile-shooting.jpg";
 
 export const CREATOR_M4_MOBILE_SHOOTING_BLOCKS: IntroLessonContent = [
   {
@@ -112,7 +111,6 @@ export const CREATOR_M4_MOBILE_SHOOTING_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: mobileShootingScreenshot,
       alt: "لقطة توضح إعداد تصوير موبايل بإضاءة وكادر مناسبين",
       caption:
         "المثال ده يوضح إن تجهيز بسيط يفرق: نور قدامك، موبايل ثابت، وبداية قوية من أول ثانية.",

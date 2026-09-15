@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM1DecideWhatToAutomateScreenshot from "@/assets/lessons/unique/automator-m2-l3-decide-what-to-automate.jpg";
 
 /** Automator · M2 · Lesson 03 — قرّر إيه يتأتمت (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M2_L3_DECIDE_WHAT_TO_AUTOMATE_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const AUTOMATOR_M2_L3_DECIDE_WHAT_TO_AUTOMATE_BLOCKS: IntroLessonContent 
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: automatorM1DecideWhatToAutomateScreenshot,
       alt: "مصفوفة قرارات — محاور سهولة وتكرار لترتيب مهام الأتمتة.",
       caption:
         "فكرة المصفوفة: محور = سهل أو صعب. محور = تكرار عالي أو منخفض. الزاوية «سهل + تكرار عالي» = أولوية العامل الافتراضي. استخدمها في المهمة.",

@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import realityScreenshot from "@/assets/lessons/creator-m4-l1-reality-check.jpg";
 
 export const CREATOR_M4_REALITY_CHECK_BLOCKS: IntroLessonContent = [
   {
@@ -112,7 +111,6 @@ export const CREATOR_M4_REALITY_CHECK_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: realityScreenshot,
       alt: "لقطة توضح مراجعة أفكار المحتوى بالاعتماد على بيانات بسيطة",
       caption:
         "بدل العشوائية، شوف كل فكرة على مقياس واضح: هل بتحل مشكلة حقيقية لجمهور واضح؟",

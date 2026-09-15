@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import gridImg from "@/assets/lessons/unique/creator-m7-l2-grid-consistency.jpg";
 
 export const CREATOR_M6_GRID_CONSISTENCY_BLOCKS: IntroLessonContent = [
   {
@@ -110,7 +109,6 @@ export const CREATOR_M6_GRID_CONSISTENCY_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: gridImg,
       alt: "Creator grid consistency screenshot",
       caption: "المثال يوضح إزاي التناسق يخلي الرسالة مفهومة حتى قبل قراءة التفاصيل.",
       label: "Creator Grid Consistency",

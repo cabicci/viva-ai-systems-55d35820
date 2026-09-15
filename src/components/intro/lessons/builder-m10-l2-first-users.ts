@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import firstUsersScreenshot from "@/assets/lessons/builder-m10-l2-first-users.jpg";
 
 /** Builder · M10 · Lesson 02 — First Users (v3: Lesson Shape pilot · Builder capstone) */
 export const BUILDER_M10_FIRST_USERS_BLOCKS: IntroLessonContent = [
@@ -109,7 +108,6 @@ export const BUILDER_M10_FIRST_USERS_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: firstUsersScreenshot,
       alt: "داشبورد بكروت: السلسلة، دروس مكتملة، Introduction — مقاييس تقدّم المستخدم.",
       caption:
         "لما تبني واجهة تطبيقك — فكّر: إزاي المستخدم يشوف إنه بيتقدم؟ الأرقام دي بتحرّك سلوك — مش للمنظر.",

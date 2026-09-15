@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import structureScreenshot from "@/assets/lessons/creator-m3-l2-script-structure.jpg";
 
 export const CREATOR_M2_SCRIPT_STRUCTURE_BLOCKS: IntroLessonContent = [
   {
@@ -111,7 +110,6 @@ export const CREATOR_M2_SCRIPT_STRUCTURE_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: structureScreenshot,
       alt: "لقطة توضيحية لتوزيع أجزاء السكربت داخل فيديو قصير.",
       caption:
         "التوزيع الواضح على أجزاء قصيرة بيخلي السكربت مركز وسهل التنفيذ.",

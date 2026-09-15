@@ -85,9 +85,13 @@ describe("V3 — no automatic 14-day trial", () => {
     expect(PLAN_ENTITLEMENT_DEFAULTS.free.assistantRuntimeGeneralMonthlyQuota).toBeNull();
   });
 
-  it("keeps paid plan quotas intact", () => {
-    expect(PLAN_ENTITLEMENT_DEFAULTS.pro.assistantRuntimeGeneralMonthlyQuota).toBe(272);
-    expect(PLAN_ENTITLEMENT_DEFAULTS.pro_plus.assistantRuntimeGeneralMonthlyQuota).toBe(750);
+  it("encodes the approved paid dual quotas without changing lesson caps", () => {
+    expect(PLAN_ENTITLEMENT_DEFAULTS.pro.lessonCountCap).toBe(74);
+    expect(PLAN_ENTITLEMENT_DEFAULTS.pro.assistantRuntimePerLessonQuota).toBe(3);
+    expect(PLAN_ENTITLEMENT_DEFAULTS.pro.assistantRuntimeGeneralMonthlyQuota).toBe(50);
+    expect(PLAN_ENTITLEMENT_DEFAULTS.pro_plus.lessonCountCap).toBe(100);
+    expect(PLAN_ENTITLEMENT_DEFAULTS.pro_plus.assistantRuntimePerLessonQuota).toBe(6);
+    expect(PLAN_ENTITLEMENT_DEFAULTS.pro_plus.assistantRuntimeGeneralMonthlyQuota).toBe(150);
   });
 
   it("assertNoAutomaticTrialDefaults does not throw", () => {

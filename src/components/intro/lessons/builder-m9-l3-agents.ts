@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import agentsDiagram from "@/assets/lessons/concepts/agents-diagram.jpg";
 
 /** Builder · M9 · Lesson 03 — Agents (v3: Lesson Shape pilot · optional depth) */
 export const BUILDER_M9_AGENTS_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const BUILDER_M9_AGENTS_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: agentsDiagram,
       alt: "رسم بياني لـ AI Agent: LLM في النص، وحواليه أدوات، وبيلف في دايرة فكر -> نفذ -> لاحظ -> كرر.",
       caption:
         "Think → Act (أداة) → Observe (النتيجة) → كرّر لحد ما المهمة تخلص. ده اللي يخلّيه يحل مشاكل من كذا خطوة.",

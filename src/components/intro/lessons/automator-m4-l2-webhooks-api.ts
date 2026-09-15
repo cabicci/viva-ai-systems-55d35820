@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM3WebhooksApiScreenshot from "@/assets/lessons/unique/automator-m4-l2-webhooks-api.jpg";
 
 /** Automator · M4 · L2 — Webhooks & API (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M4_L2_WEBHOOKS_API_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const AUTOMATOR_M4_L2_WEBHOOKS_API_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: automatorM3WebhooksApiScreenshot,
       alt: "مثال على endpoint يستقبل بيانات",
       caption:
         "التطبيقات بتتكلم عن طريق endpoints — نفس الفكرة في أي أوتوميشن: webhook يستقبل، API يبعت. البيانات = الـ Payload.",

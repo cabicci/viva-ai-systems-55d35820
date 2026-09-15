@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import relationsDiagram from "@/assets/lessons/concepts/relations-diagram.jpg";
 
 /** Builder · M7 · Lesson 02 — Relations (v3: Lesson Shape pilot · optional depth) */
 export const BUILDER_M8_RELATIONS_BLOCKS: IntroLessonContent = [
@@ -109,7 +108,6 @@ export const BUILDER_M8_RELATIONS_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: relationsDiagram,
       alt: "رسمة بتوضح 3 جداول: users و posts و comments، مربوطين بوصلات زي user_id و post_id",
       caption:
         "تخيّل `users` = العملا و `posts` = المحادثات. `posts.user_id` = الوصلة اللي بتقول مين صاحب المحادثة. من غيرها، التطبيق أعمى.",

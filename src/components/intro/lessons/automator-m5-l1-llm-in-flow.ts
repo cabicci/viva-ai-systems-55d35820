@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM4LlmInFlowScreenshot from "@/assets/lessons/unique/automator-m5-l1-llm-in-flow.jpg";
 
 /** Automator · M5 · LLM جوه الـ Flow (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M5_L1_LLM_IN_FLOW_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const AUTOMATOR_M5_L1_LLM_IN_FLOW_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: automatorM4LlmInFlowScreenshot,
       alt: "مخطط يوضح خطوة ذكاء بين استقبال الرسالة والرد التلقائي.",
       caption:
         "الفكرة: استقبال → فهم بالـ AI → قرار أو رد. الخطوة الوسطى هي اللي بتوفر الشغل اليدوي المتكرر.",

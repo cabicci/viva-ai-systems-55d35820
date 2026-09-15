@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import schedulingScreenshot from "@/assets/lessons/unique/automator-m6-l3-follow-up.jpg";
 
 /** Automator · M6 · المتابعة التلقائية (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M6_L3_FOLLOW_UP_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const AUTOMATOR_M6_L3_FOLLOW_UP_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: schedulingScreenshot,
       alt: "مخطط يوضح تسلسل متابعة على ثلاث خطوات بأوقات مختلفة.",
       caption:
         "كل touchpoint هدفه مختلف — مش تكرار نفس الرسالة. الوقت + المحتوى + شرط التوقف.",

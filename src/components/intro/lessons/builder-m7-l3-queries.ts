@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import queriesScreenshot from "@/assets/lessons/builder-m7-l3-queries.jpg";
 
 /** Builder · M7 · Lesson 03 — Queries (v3: Lesson Shape pilot · optional depth) */
 export const BUILDER_M8_QUERIES_BLOCKS: IntroLessonContent = [
@@ -109,7 +108,6 @@ export const BUILDER_M8_QUERIES_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: queriesScreenshot,
       alt: "صفحة تقرير فيها ٤ كروت إحصائية: عدد جداول الـ DB، عدد الـ Edge Functions، عدد الدروس المنشورة، ونسبة التغطية",
       caption:
         "الصفحة دي مش جدول خام — دي أسئلة منفصلة للمخزن. كل كارت = Query محدد. السؤال الواضح = رقم يتحدّث بسرعة.",

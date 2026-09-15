@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import aiAssistantScreenshot from "@/assets/lessons/intro-m1-l1-what-is-ai-assistant.jpg";
 
 /**
  * Intro · Lesson 01 — AI يعني إيه فعلًا (v3: Lesson Shape pilot)
@@ -112,7 +111,6 @@ export const WHAT_IS_AI_CONTENT: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: aiAssistantScreenshot,
       alt: "مثال بصري: مربع سؤال فوق ورد الـ AI تحته — زي أي شات AI.",
       caption:
         "الفكرة كلها في حلقة بسيطة: إنت تسأل → الـ AI يرد → إنت تستخدم الرد أو تعدّله. الصورة توضّح الشكل — مش محتاج تفهم برمجة ولا إعدادات.",

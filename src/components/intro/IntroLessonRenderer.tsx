@@ -1,9 +1,17 @@
 import * as React from "react";
-import { ArrowLeft, CheckCircle2, AlertTriangle, PlayCircle, Wrench, Image as ImageIcon, BookOpen, Monitor, ArrowUpLeft, Target } from "lucide-react";
+import {
+  AlertTriangle,
+  ArrowLeft,
+  ArrowUpLeft,
+  BookOpen,
+  CheckCircle2,
+  PlayCircle,
+  Target,
+  Wrench,
+} from "lucide-react";
 import { IntroSection } from "./IntroSection";
 import { IntroMissionPrompt } from "./IntroMission";
 import type { IntroBlock, IntroLessonContent } from "./intro-lesson-types";
-import { LESSON_DIAGRAMS } from "./diagrams/LessonDiagrams";
 import { QuizBlock } from "./QuizBlock";
 import {
   getBunnyEmbedUrl,
@@ -15,22 +23,34 @@ import { useLocale } from "@/lib/locale/locale-context";
 import { getUiString } from "@/lib/locale/ui-strings";
 import {
   getStrictVisualUiString,
-  resolveStrictLocalizedDiagramSrc,
-  resolveStrictLocalizedScreenshotSrc,
-  STRICT_VISUAL_UI_KEYS,
   strictVisualUiOrEmpty,
-  usesStrictLocalizedVisualPolicy,
-} from "@/lib/locale-lessons/strict-localized-visual-policy";
+} from "@/lib/locale-lessons/strict-visual-ui";
 import type { LessonPackageLocale } from "@/lib/locale-lessons/types";
 import type { SupportedLocale } from "@/lib/locale/types";
-import { resolveControlledV1Visual } from "@/lib/lesson-visuals/controlled-v1/runtime/controlledV1BrowserResolver";
+import {
+  resolveContextualV2Visual,
+  type ContextualV2ResolveResult,
+} from "@/lib/lesson-visuals/contextual-v2/runtime/contextualV2BrowserResolver";
+
+const VIDEO_UI_KEYS = {
+  videoMissingTitle: "safety.video.title",
+  videoMissingBody: "safety.video.body",
+  videoOptionalBadge: "intro.video.optionalBadge",
+  videoSkipBody: "intro.video.skipBody",
+} as const;
+
+function usesStrictLocalizedVideoPolicy(
+  locale: SupportedLocale | undefined | null,
+): locale is LessonPackageLocale {
+  return locale === "ar-MSA" || locale === "ar-Gulf" || locale === "en";
+}
 
 function lessonVideoHasSource(
   block: Extract<IntroBlock, { kind: "lessonVideo" }>,
   lessonId?: string,
   videoLocale?: SupportedLocale,
 ): boolean {
-  if (usesStrictLocalizedVisualPolicy(videoLocale)) {
+  if (usesStrictLocalizedVideoPolicy(videoLocale)) {
     return Boolean(getLocalizedBunnyEmbedUrl(lessonId, videoLocale));
   }
   return Boolean(getBunnyEmbedUrl(lessonId) || block.url);
@@ -53,10 +73,10 @@ function StrictLocaleVideoSlot({
         data-locale-video="placeholder"
       >
         <p className="text-sm font-semibold text-foreground">
-          {strictVisualUiOrEmpty(locale, STRICT_VISUAL_UI_KEYS.videoMissingTitle)}
+          {strictVisualUiOrEmpty(locale, VIDEO_UI_KEYS.videoMissingTitle)}
         </p>
         <p className="text-xs text-muted-foreground">
-          {strictVisualUiOrEmpty(locale, STRICT_VISUAL_UI_KEYS.videoMissingBody)}
+          {strictVisualUiOrEmpty(locale, VIDEO_UI_KEYS.videoMissingBody)}
         </p>
       </div>
     );
@@ -74,7 +94,7 @@ function StrictLocaleVideoSlot({
           title={
             getStrictVisualUiString(
               locale,
-              STRICT_VISUAL_UI_KEYS.videoMissingTitle,
+              VIDEO_UI_KEYS.videoMissingTitle,
             ) ?? ""
           }
         />
@@ -88,46 +108,6 @@ function StrictLocaleVideoSlot({
   );
 }
 
-function LocaleDiagramMissingState({
-  locale,
-  caption,
-}: {
-  locale: LessonPackageLocale;
-  caption?: string;
-}) {
-  return (
-    <div
-      className="rounded-2xl border border-primary/25 ring-1 ring-primary/5 bg-card overflow-hidden shadow-[0_8px_30px_-12px_hsl(var(--primary)/0.2)]"
-      data-locale-diagram="placeholder"
-    >
-      <div className="flex items-center gap-1.5 bg-primary/10 border-b border-primary/20 px-3 py-2">
-        <ImageIcon className="h-3.5 w-3.5 text-primary" />
-        <span className="text-[11px] font-mono text-primary">
-          {strictVisualUiOrEmpty(locale, STRICT_VISUAL_UI_KEYS.diagramLabel)}
-        </span>
-      </div>
-      <div className="p-6 text-center space-y-2 border border-dashed border-primary/20 m-3 rounded-xl bg-primary/[0.03]">
-        <div className="mx-auto grid h-10 w-10 place-items-center rounded-full bg-primary/10">
-          <ImageIcon className="h-5 w-5 text-primary" />
-        </div>
-        <p className="text-sm font-semibold text-foreground">
-          {strictVisualUiOrEmpty(locale, STRICT_VISUAL_UI_KEYS.diagramTitle)}
-        </p>
-        <p className="text-sm text-muted-foreground">
-          {caption ??
-            strictVisualUiOrEmpty(
-              locale,
-              STRICT_VISUAL_UI_KEYS.diagramPlaceholder,
-            )}
-        </p>
-        <p className="text-[10px] font-mono text-primary/80">
-          {strictVisualUiOrEmpty(locale, STRICT_VISUAL_UI_KEYS.comingSoon)}
-        </p>
-      </div>
-    </div>
-  );
-}
-
 function VideoSkipNotice({
   strictLocale,
 }: {
@@ -137,11 +117,11 @@ function VideoSkipNotice({
   const badge = strictLocale
     ? strictVisualUiOrEmpty(
         strictLocale,
-        STRICT_VISUAL_UI_KEYS.videoOptionalBadge,
+        VIDEO_UI_KEYS.videoOptionalBadge,
       )
     : getUiString(locale, "intro.video.optionalBadge");
   const body = strictLocale
-    ? strictVisualUiOrEmpty(strictLocale, STRICT_VISUAL_UI_KEYS.videoSkipBody)
+    ? strictVisualUiOrEmpty(strictLocale, VIDEO_UI_KEYS.videoSkipBody)
     : getUiString(locale, "intro.video.skipBody");
   return (
     <div className="text-center py-1 space-y-1.5" dir={dir}>
@@ -210,6 +190,111 @@ function linkify(text: string): React.ReactNode {
   return parts;
 }
 
+const LESSON_VISUAL_COPY: Record<
+  SupportedLocale,
+  { infographic: string; screenshot: string; unavailable: string }
+> = {
+  "ar-EG": {
+    infographic: "شرح بصري للدرس",
+    screenshot: "لقطة شاشة تعليمية",
+    unavailable: "الصورة التعليمية غير متاحة حاليًا.",
+  },
+  "ar-MSA": {
+    infographic: "شرح بصري للدرس",
+    screenshot: "لقطة شاشة تعليمية",
+    unavailable: "الصورة التعليمية غير متاحة حاليًا.",
+  },
+  "ar-Gulf": {
+    infographic: "شرح بصري للدرس",
+    screenshot: "لقطة شاشة تعليمية",
+    unavailable: "الصورة التعليمية غير متوفرة حاليًا.",
+  },
+  en: {
+    infographic: "Lesson visual",
+    screenshot: "Lesson screenshot",
+    unavailable: "The lesson visual is currently unavailable.",
+  },
+};
+
+function ContextualLessonVisual({
+  visual,
+  supportingCaption,
+  showManifestChrome = true,
+}: {
+  visual: ContextualV2ResolveResult | null;
+  supportingCaption?: string;
+  showManifestChrome?: boolean;
+}) {
+  const { locale } = useLocale();
+  if (!visual) return null;
+  if (!visual.ok) {
+    return (
+      <div
+        className="rounded-2xl border border-destructive/30 bg-destructive/5 p-4"
+        data-locale-lesson-visual="fail-closed"
+        data-contextual-v2-error={visual.reason}
+      >
+        <p className="text-sm text-destructive">
+          {LESSON_VISUAL_COPY[locale].unavailable}
+        </p>
+        {supportingCaption ? (
+          <p
+            className="mt-2 text-xs leading-relaxed text-muted-foreground"
+            data-contextual-v2-supporting-caption="1"
+          >
+            {supportingCaption}
+          </p>
+        ) : null}
+      </div>
+    );
+  }
+  return (
+    <figure
+      className="overflow-hidden rounded-2xl border border-primary/20 bg-card"
+      data-locale-lesson-visual="asset"
+      data-contextual-v2-cell={visual.cellId}
+      data-contextual-v2-source-type={visual.sourceType}
+    >
+      <img
+        src={visual.url}
+        alt={visual.title}
+        className="block h-auto w-full"
+        loading="lazy"
+        decoding="async"
+        data-contextual-v2-img="1"
+      />
+      {showManifestChrome || supportingCaption ? (
+        <figcaption className="space-y-1 border-t border-border/40 px-4 py-3">
+          {showManifestChrome ? (
+            <>
+              <span
+                className="block text-[11px] font-mono text-primary"
+                data-contextual-v2-type-label="1"
+              >
+                {LESSON_VISUAL_COPY[locale][visual.sourceType]}
+              </span>
+              <span
+                className="block text-sm font-semibold text-foreground"
+                data-contextual-v2-manifest-title="1"
+              >
+                {visual.title}
+              </span>
+            </>
+          ) : null}
+          {supportingCaption ? (
+            <span
+              className="block text-xs leading-relaxed text-muted-foreground"
+              data-contextual-v2-supporting-caption="1"
+            >
+              {supportingCaption}
+            </span>
+          ) : null}
+        </figcaption>
+      ) : null}
+    </figure>
+  );
+}
+
 /**
  * Renders a full Introduction lesson body from a content array.
  * Adding a new intro lesson = writing a new IntroLessonContent
@@ -229,7 +314,35 @@ export function IntroLessonRenderer({
 }) {
   const { locale, dir } = useLocale();
   const hook = getValueHookForLocale(lessonId, locale);
-  const hasMission = content.some((s) => s.block.kind === "mission");
+  const hasMission = content.some((section) => section.block.kind === "mission");
+  const activeLocale = (videoLocale ?? locale) as SupportedLocale;
+  const contextualVisual = lessonId
+    ? resolveContextualV2Visual({ lessonId, locale: activeLocale })
+    : null;
+  const firstLegacyVisualIndex = content.findIndex(
+    (section) =>
+      section.block.kind === "screenshot" || section.block.kind === "diagram",
+  );
+  const legacyVisualSection =
+    firstLegacyVisualIndex >= 0 ? content[firstLegacyVisualIndex] : undefined;
+  const legacyVisualCaption =
+    legacyVisualSection?.block.kind === "screenshot" ||
+    legacyVisualSection?.block.kind === "diagram"
+      ? legacyVisualSection.block.caption
+      : undefined;
+  const lessonVideoIndex = content.findIndex(
+    (section) => section.block.kind === "lessonVideo",
+  );
+  const injectedVisualAnchor = lessonVideoIndex >= 0 ? lessonVideoIndex : 0;
+  const injectedVisualEyebrow =
+    contextualVisual?.ok
+      ? LESSON_VISUAL_COPY[activeLocale][contextualVisual.sourceType]
+      : LESSON_VISUAL_COPY[activeLocale].infographic;
+  const injectedVisualTitle =
+    contextualVisual?.ok
+      ? contextualVisual.title
+      : (lessonTitle ?? LESSON_VISUAL_COPY[activeLocale].unavailable);
+
   return (
     <article className="space-y-4 md:space-y-7">
       {hook && (
@@ -261,39 +374,103 @@ export function IntroLessonRenderer({
           </a>
         </div>
       )}
+      {lessonId && content.length === 0 ? (
+        <IntroSection
+          index={1}
+          icon={BookOpen}
+          eyebrow={injectedVisualEyebrow}
+          title={injectedVisualTitle}
+          tone="primary"
+        >
+          <ContextualLessonVisual
+            visual={contextualVisual}
+            supportingCaption={legacyVisualCaption}
+            showManifestChrome={false}
+          />
+        </IntroSection>
+      ) : null}
       {content.map((section, i) => {
-        if (
-          section.block.kind === "lessonVideo" &&
-          !lessonVideoHasSource(section.block, lessonId, videoLocale)
-        ) {
+        const isLegacyVisual =
+          section.block.kind === "screenshot" || section.block.kind === "diagram";
+        if (lessonId && isLegacyVisual) {
+          if (i !== firstLegacyVisualIndex) return null;
           return (
-            <VideoSkipNotice
+            <IntroSection
               key={i}
+              index={i + 1}
+              icon={resolveLearnerLessonIcon(
+                section.icon,
+                section.block.kind,
+              )}
+              eyebrow={section.eyebrow}
+              title={section.title}
+              tone={section.tone}
+            >
+              <ContextualLessonVisual
+                visual={contextualVisual}
+                supportingCaption={legacyVisualCaption}
+              />
+            </IntroSection>
+          );
+        }
+
+        const sectionIndex =
+          i +
+          1 +
+          (lessonId &&
+          firstLegacyVisualIndex === -1 &&
+          i > injectedVisualAnchor
+            ? 1
+            : 0);
+        const sectionNode =
+          section.block.kind === "lessonVideo" &&
+          !lessonVideoHasSource(section.block, lessonId, videoLocale) ? (
+            <VideoSkipNotice
               strictLocale={
-                usesStrictLocalizedVisualPolicy(videoLocale)
+                usesStrictLocalizedVideoPolicy(videoLocale)
                   ? videoLocale
                   : undefined
               }
             />
+          ) : (
+            <IntroSection
+              index={sectionIndex}
+              icon={resolveLearnerLessonIcon(section.icon, section.block.kind)}
+              eyebrow={section.eyebrow}
+              title={section.title}
+              tone={section.tone}
+            >
+              <BlockBody
+                block={section.block}
+                lessonId={lessonId}
+                lessonTitle={lessonTitle}
+                videoLocale={videoLocale}
+              />
+            </IntroSection>
           );
-        }
-        const SectionIcon = resolveLearnerLessonIcon(section.icon, section.block.kind);
+        const insertContextualAfter =
+          Boolean(lessonId) &&
+          firstLegacyVisualIndex === -1 &&
+          i === injectedVisualAnchor;
         return (
-          <IntroSection
-            key={i}
-            index={i + 1}
-            icon={SectionIcon}
-            eyebrow={section.eyebrow}
-            title={section.title}
-            tone={section.tone}
-          >
-            <BlockBody
-              block={section.block}
-              lessonId={lessonId}
-              lessonTitle={lessonTitle}
-              videoLocale={videoLocale}
-            />
-          </IntroSection>
+          <React.Fragment key={i}>
+            {sectionNode}
+            {insertContextualAfter ? (
+              <IntroSection
+                index={i + 2}
+                icon={BookOpen}
+                eyebrow={injectedVisualEyebrow}
+                title={injectedVisualTitle}
+                tone="primary"
+              >
+                <ContextualLessonVisual
+                  visual={contextualVisual}
+                  supportingCaption={legacyVisualCaption}
+                  showManifestChrome={false}
+                />
+              </IntroSection>
+            ) : null}
+          </React.Fragment>
         );
       })}
     </article>
@@ -412,7 +589,7 @@ function BlockBody({
         return (
           <VideoSkipNotice
             strictLocale={
-              usesStrictLocalizedVisualPolicy(videoLocale)
+              usesStrictLocalizedVideoPolicy(videoLocale)
                 ? videoLocale
                 : undefined
             }
@@ -450,7 +627,7 @@ function BlockBody({
     }
 
     case "lessonVideo": {
-      if (usesStrictLocalizedVisualPolicy(videoLocale) && lessonId) {
+      if (usesStrictLocalizedVideoPolicy(videoLocale) && lessonId) {
         return (
           <StrictLocaleVideoSlot
             locale={videoLocale}
@@ -546,146 +723,26 @@ function BlockBody({
       );
     }
 
-    case "screenshot": {
-      const activeLocale = (videoLocale ?? locale) as SupportedLocale;
-      const controlled = lessonId
-        ? resolveControlledV1Visual({ lessonId, locale: activeLocale })
-        : null;
-      if (controlled?.ok) {
-        const label =
-          block.label ?? getUiString(locale, "intro.block.screenshotLabel");
-        return (
-          <figure
-            className="space-y-2"
-            data-locale-screenshot="asset"
-            data-controlled-v1="screenshot"
-            data-controlled-v1-cell={controlled.cellId}
-            data-controlled-v1-method={controlled.method}
-          >
-            <div className="overflow-hidden rounded-2xl border border-primary/25 ring-1 ring-primary/5 bg-card shadow-[0_8px_30px_-12px_hsl(var(--primary)/0.2)]">
-              <div className="flex items-center gap-1.5 bg-primary/10 border-b border-primary/20 px-3 py-2">
-                <Monitor className="h-3.5 w-3.5 text-primary" />
-                <span className="text-[11px] font-mono text-primary">{label}</span>
-              </div>
-              <img
-                src={controlled.url}
-                alt={
-                  block.alt ??
-                  block.caption ??
-                  getUiString(locale, "intro.block.screenshotAlt")
-                }
-                className="w-full h-auto block"
-                loading="lazy"
-                data-controlled-v1-img="1"
-              />
-            </div>
-            {block.caption && (
-              <figcaption className="text-xs text-muted-foreground flex items-center gap-1.5">
-                <ImageIcon className="h-3.5 w-3.5 text-primary" /> {block.caption}
-              </figcaption>
-            )}
-          </figure>
-        );
-      }
-      if (
-        controlled &&
-        controlled.reason !== "missing_lesson" &&
-        controlled.reason !== "unsupported_locale"
-      ) {
-        return (
-          <div
-            className="rounded-2xl border border-destructive/30 bg-destructive/5 p-4"
-            data-locale-screenshot="fail-closed"
-            data-controlled-v1-error={controlled.reason}
-          >
-            <p className="text-sm text-destructive">
-              Controlled visual unavailable for this lesson locale.
-            </p>
-          </div>
-        );
-      }
-
-      const strictVisual = usesStrictLocalizedVisualPolicy(videoLocale);
-      const src = strictVisual
-        ? lessonId
-          ? resolveStrictLocalizedScreenshotSrc(videoLocale, lessonId)
-          : undefined
-        : block.src;
-      const label = strictVisual
-        ? strictVisualUiOrEmpty(
-            videoLocale,
-            STRICT_VISUAL_UI_KEYS.screenshotLabel,
-          )
-        : (block.label ?? getUiString(locale, "intro.block.screenshotLabel"));
-      if (!src) {
-        return (
-          <div
-            className="rounded-2xl border border-primary/25 ring-1 ring-primary/5 bg-card overflow-hidden shadow-[0_8px_30px_-12px_hsl(var(--primary)/0.2)]"
-            data-locale-screenshot="placeholder"
-          >
-            <div className="flex items-center gap-1.5 bg-primary/10 border-b border-primary/20 px-3 py-2">
-              <Monitor className="h-3.5 w-3.5 text-primary" />
-              <span className="text-[11px] font-mono text-primary">{label}</span>
-            </div>
-            <div className="p-6 text-center space-y-2 border border-dashed border-primary/20 m-3 rounded-xl bg-primary/[0.03]">
-              <div className="mx-auto grid h-10 w-10 place-items-center rounded-full bg-primary/10">
-                <ImageIcon className="h-5 w-5 text-primary" />
-              </div>
-              <p className="text-sm text-foreground">
-                {block.caption ??
-                  (strictVisual
-                    ? strictVisualUiOrEmpty(
-                        videoLocale,
-                        STRICT_VISUAL_UI_KEYS.screenshotPlaceholder,
-                      )
-                    : getUiString(
-                        locale,
-                        "intro.block.screenshotPlaceholder",
-                      ))}
-              </p>
-              <p className="text-[10px] font-mono text-primary/80">
-                {strictVisual
-                  ? strictVisualUiOrEmpty(
-                      videoLocale,
-                      STRICT_VISUAL_UI_KEYS.comingSoon,
-                    )
-                  : getUiString(locale, "intro.block.comingSoon")}
-              </p>
-            </div>
-          </div>
-        );
+    case "screenshot":
+      if (!block.src) {
+        return block.caption ? <p>{block.caption}</p> : null;
       }
       return (
-        <figure className="space-y-2" data-locale-screenshot="asset">
-          <div className="overflow-hidden rounded-2xl border border-primary/25 ring-1 ring-primary/5 bg-card shadow-[0_8px_30px_-12px_hsl(var(--primary)/0.2)]">
-            <div className="flex items-center gap-1.5 bg-primary/10 border-b border-primary/20 px-3 py-2">
-              <Monitor className="h-3.5 w-3.5 text-primary" />
-              <span className="text-[11px] font-mono text-primary">{label}</span>
-            </div>
-            <img
-              src={src}
-              alt={
-                block.alt ??
-                block.caption ??
-                (strictVisual
-                  ? strictVisualUiOrEmpty(
-                      videoLocale,
-                      STRICT_VISUAL_UI_KEYS.screenshotAlt,
-                    )
-                  : getUiString(locale, "intro.block.screenshotAlt"))
-              }
-              className="w-full h-auto block"
-              loading="lazy"
-            />
-          </div>
-          {block.caption && (
-            <figcaption className="text-xs text-muted-foreground flex items-center gap-1.5">
-              <ImageIcon className="h-3.5 w-3.5 text-primary" /> {block.caption}
+        <figure className="space-y-2">
+          <img
+            src={block.src}
+            alt={block.alt ?? block.caption ?? ""}
+            className="block h-auto w-full rounded-xl border border-border"
+            loading="lazy"
+            decoding="async"
+          />
+          {block.caption ? (
+            <figcaption className="text-xs text-muted-foreground">
+              {block.caption}
             </figcaption>
-          )}
+          ) : null}
         </figure>
       );
-    }
 
     case "concepts": {
       if (!block.items?.length) return null;
@@ -714,122 +771,8 @@ function BlockBody({
       );
     }
 
-    case "diagram": {
-      const activeLocale = (videoLocale ?? locale) as SupportedLocale;
-      const controlled = lessonId
-        ? resolveControlledV1Visual({ lessonId, locale: activeLocale })
-        : null;
-      if (controlled?.ok) {
-        const label = block.label ?? getUiString(locale, "intro.block.diagramLabel");
-        return (
-          <figure
-            className="space-y-2"
-            data-locale-diagram="asset"
-            data-controlled-v1="diagram"
-            data-controlled-v1-cell={controlled.cellId}
-            data-controlled-v1-method={controlled.method}
-          >
-            <div className="overflow-hidden rounded-2xl border border-primary/20 bg-card">
-              <img
-                src={controlled.url}
-                alt={
-                  block.caption ??
-                  getUiString(locale, "intro.block.diagramLabel")
-                }
-                className="w-full h-auto block"
-                loading="lazy"
-                data-controlled-v1-img="1"
-              />
-            </div>
-            {block.caption && (
-              <figcaption className="text-xs text-muted-foreground flex items-center gap-1.5">
-                <ImageIcon className="h-3.5 w-3.5 text-primary" />{" "}
-                {block.caption}
-              </figcaption>
-            )}
-            <p className="text-[10px] font-mono text-primary/70">{label}</p>
-          </figure>
-        );
-      }
-      if (
-        controlled &&
-        controlled.reason !== "missing_lesson" &&
-        controlled.reason !== "unsupported_locale"
-      ) {
-        return (
-          <div
-            className="rounded-2xl border border-destructive/30 bg-destructive/5 p-4"
-            data-locale-diagram="fail-closed"
-            data-controlled-v1-error={controlled.reason}
-          >
-            <p className="text-sm text-destructive">
-              Controlled visual unavailable for this lesson locale.
-            </p>
-          </div>
-        );
-      }
-
-      // Localized packages must never mount canonical LESSON_DIAGRAMS.
-      if (usesStrictLocalizedVisualPolicy(videoLocale)) {
-        const svgSrc = lessonId
-          ? resolveStrictLocalizedDiagramSrc(videoLocale, lessonId)
-          : undefined;
-        if (svgSrc) {
-          return (
-            <figure className="space-y-2" data-locale-diagram="asset">
-              <div className="overflow-hidden rounded-2xl border border-primary/20 bg-card">
-                <img
-                  src={svgSrc}
-                  alt={
-                    block.caption ??
-                    strictVisualUiOrEmpty(
-                      videoLocale,
-                      STRICT_VISUAL_UI_KEYS.diagramTitle,
-                    )
-                  }
-                  className="w-full h-auto block"
-                  loading="lazy"
-                />
-              </div>
-              {block.caption && (
-                <figcaption className="text-xs text-muted-foreground flex items-center gap-1.5">
-                  <ImageIcon className="h-3.5 w-3.5 text-primary" />{" "}
-                  {block.caption}
-                </figcaption>
-              )}
-              <p className="text-[10px] font-mono text-primary/70">
-                {strictVisualUiOrEmpty(
-                  videoLocale,
-                  STRICT_VISUAL_UI_KEYS.diagramLabel,
-                )}
-              </p>
-            </figure>
-          );
-        }
-        return (
-          <LocaleDiagramMissingState
-            locale={videoLocale}
-            caption={block.caption}
-          />
-        );
-      }
-      const Diagram = LESSON_DIAGRAMS[block.id];
-      if (!Diagram) return null;
-      const label = block.label ?? getUiString(locale, "intro.block.diagramLabel");
-      return (
-        <figure className="space-y-2">
-          <div className="overflow-hidden rounded-2xl border border-primary/20 bg-card">
-            <Diagram />
-          </div>
-          {block.caption && (
-            <figcaption className="text-xs text-muted-foreground flex items-center gap-1.5">
-              <ImageIcon className="h-3.5 w-3.5 text-primary" /> {block.caption}
-            </figcaption>
-          )}
-          <p className="text-[10px] font-mono text-primary/70">{label}</p>
-        </figure>
-      );
-    }
+    case "diagram":
+      return block.caption ? <p>{block.caption}</p> : null;
 
     case "quiz":
       return <QuizBlock lessonId={block.lessonId} items={block.items} />;

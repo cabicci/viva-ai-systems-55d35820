@@ -1,0 +1,158 @@
+name: "B024 - Authenticated lesson video playback validation"
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+    inputs:
+      expected_product_sha:
+        description: "Exact workflow/product commit to verify"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: b024-video-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      B023_DISPOSABLE_LOCAL_ONLY: "1"
+      B023_EXPECTED_GIT_HEAD: ${{ github.event.inputs.expected_product_sha || github.event.pull_request.head.sha }}
+      B023_REPO_ROOT: ${{ github.workspace }}
+      B023_FROZEN_GATE_PATH: ${{ github.workspace }}/.github/scripts/b024_video_playback_validation/video-playback-gate.mjs
+      B023_GATE_SHA256: eb5e01d0e95ad15cb2e8eb400b6cc3b54815ae433fcfb750f6e377dca445b3f0
+      B023_EXPECTED_GATE_CASES: "1"
+      B023_GATE_RECEIPT_NAME: b024-video-playback-gate.json
+      DOCKER_BIN: docker
+      PGHOST: 127.0.0.1
+      PGPORT: "54322"
+      PGUSER: postgres
+      PGDATABASE: postgres
+      PGPASSWORD: postgres
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Bind exact clean commit and allocate disposable directories
+        run: node .github/scripts/b023_contextual_v2_validation/ci-local-environment.mjs prepare
+
+      - name: Install dependencies from the frozen lockfile
+        run: bun install --frozen-lockfile
+
+      - name: Verify video mapping and renderer contracts
+        run: |
+          node node_modules/vitest/vitest.mjs run \
+            src/lib/__tests__/locale-pilot-video-placement.test.tsx \
+            src/lib/__tests__/locale-learner-parity.test.tsx \
+            --maxWorkers=2 --reporter=json --outputFile="$B023_RECEIPTS_ROOT/video-tests.json"
+
+      - name: Install repository Playwright Chromium
+        run: node node_modules/playwright/cli.js install --with-deps chromium
+
+      - name: Setup Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: 2.109.1
+
+      - name: Prepare disposable migration tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          bun scripts/billing/prepare-disposable-supabase-tree.ts \
+            --dest "$B023_DISPOSABLE_ROOT" > "$B023_RECEIPTS_ROOT/disposable-tree.json"
+
+      - name: Start disposable Supabase
+        working-directory: ${{ env.B023_DISPOSABLE_ROOT }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          supabase start > "$B023_PRIVATE_ROOT/supabase-start.log" 2>&1
+          supabase status --output json > "$B023_PRIVATE_ROOT/supabase-status.json" 2> "$B023_PRIVATE_ROOT/supabase-status.stderr.log"
+
+      - name: Export masked local credentials and Chromium path
+        run: node .github/scripts/b023_contextual_v2_validation/ci-local-environment.mjs local-status
+
+      - name: Build product at the exact candidate
+        run: node .github/scripts/b023_contextual_v2_validation/build-with-module-graph.mjs
+
+      - name: Start localhost preview
+        shell: bash
+        run: |
+          set -euo pipefail
+          setsid node node_modules/wrangler/bin/wrangler.js --cwd .output dev --ip 127.0.0.1 --port 4173 \
+            > "$B023_PRIVATE_ROOT/preview.log" 2>&1 < /dev/null &
+          printf '%s\n' "$!" > "$B023_PRIVATE_ROOT/preview.pid"
+          node --input-type=module <<'NODE'
+          const deadline = Date.now() + 45_000;
+          while (Date.now() < deadline) {
+            try {
+              const response = await fetch(`${process.env.B023_BASE_URL}/login?locale=en`, { signal: AbortSignal.timeout(2_000) });
+              if (response.ok) process.exit(0);
+            } catch {}
+            await new Promise((resolve) => setTimeout(resolve, 500));
+          }
+          throw new Error("Preview login route was not ready");
+          NODE
+
+      - name: Sign in normally and prove one video plays
+        timeout-minutes: 6
+        env:
+          B023_FROZEN_GATE_PATH: ${{ github.workspace }}/.github/scripts/b024_video_playback_validation/video-playback-gate.mjs
+        run: node .github/scripts/b023_contextual_v2_validation/fixture-login-and-gate.mjs
+
+      - name: Verify exact clean candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$B023_EXPECTED_GIT_HEAD"
+          test -z "$(git status --porcelain=v1 --untracked-files=all)"
+
+      - name: Always stop preview and disposable database
+        if: ${{ always() }}
+        shell: bash
+        run: |
+          set -uo pipefail
+          if [ -f "${B023_PRIVATE_ROOT:-}/preview.pid" ]; then
+            preview_pid=$(cat "$B023_PRIVATE_ROOT/preview.pid")
+            [[ "$preview_pid" =~ ^[0-9]+$ ]] && kill -TERM -- "-$preview_pid" 2>/dev/null || true
+          fi
+          if [ -f "${B023_DISPOSABLE_ROOT:-}/supabase/config.toml" ]; then
+            (cd "$B023_DISPOSABLE_ROOT" && supabase stop --no-backup) > "$B023_PRIVATE_ROOT/supabase-stop.log" 2>&1 || true
+          fi
+          rm -f -- "${B023_BROWSER_RECEIPTS_DIR:-}/local-auth-storage.json"
+
+      - name: Upload sanitized B024 receipts
+        if: ${{ always() && env.B023_RECEIPTS_ROOT != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: b024-video-playback-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ env.B023_RECEIPTS_ROOT }}/candidate.json
+            ${{ env.B023_RECEIPTS_ROOT }}/video-tests.json
+            ${{ env.B023_RECEIPTS_ROOT }}/disposable-tree.json
+            ${{ env.B023_RECEIPTS_ROOT }}/build-module-graph.json
+            ${{ env.B023_RECEIPTS_ROOT }}/browser/b024-video-playback-gate.json
+            ${{ env.B023_RECEIPTS_ROOT }}/browser/fixture-and-gate-receipt.json
+            ${{ env.B023_RECEIPTS_ROOT }}/browser/gate.stderr.log
+          if-no-files-found: warn
+          retention-days: 14

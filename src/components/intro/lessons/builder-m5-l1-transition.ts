@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import transitionImage from "@/assets/lessons/unique/builder-m5-l1-transition.jpg";
 
 /** Builder · M5 · Lesson 01 — Phase 2 Transition (v3: Lesson Shape pilot) */
 export const BUILDER_M5_TRANSITION_BLOCKS: IntroLessonContent = [
@@ -111,7 +110,6 @@ export const BUILDER_M5_TRANSITION_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: transitionImage,
       alt: "رسمة: على الشمال فقاعات شات، وعلى اليمين شاشة تطبيق + سيرفر + مخزن — سهم بيوصل الاتنين.",
       caption:
         "خلّصت مرحلة «تكلّم AI». دلوقتي هتبني له بيت: واجهة يشوفها العميل، كواليس تشتغل، ومخزن يفتكر.",

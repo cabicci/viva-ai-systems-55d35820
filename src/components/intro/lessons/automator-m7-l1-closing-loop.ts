@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM6ClosingLoopScreenshot from "@/assets/lessons/unique/automator-m7-l1-closing-loop.jpg";
 
 /** Automator · M7 · Closing the Loop (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M7_L1_CLOSING_LOOP_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const AUTOMATOR_M7_L1_CLOSING_LOOP_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: automatorM6ClosingLoopScreenshot,
       alt: "مخطط يوضح رحلة عميل متصلة من lead capture للمتابعة.",
       caption:
         "كل مرحلة تغذّي اللي بعدها وتسجّل بيانات. الرحلة المتصلة = أسئلة Analyst هيجاوب عليها.",

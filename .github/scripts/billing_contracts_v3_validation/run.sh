@@ -54,13 +54,25 @@ reset_disposable_db() {
   if ! prepare_disposable_supabase_tree; then
     return 1
   fi
-  if ! (cd "$DISPOSABLE_ROOT" && npx supabase db reset --yes) \
-    > "${REPORT_DIR}/db-reset.log" 2>&1; then
-    echo "[billing-v3-harness] db reset FAILED"
-    tail -n 40 "${REPORT_DIR}/db-reset.log" || true
-    return 1
+  local reset_log="${REPORT_DIR}/db-reset.log"
+  if (cd "$DISPOSABLE_ROOT" && npx supabase db reset --yes) \
+    > "$reset_log" 2>&1; then
+    return 0
   fi
-  return 0
+
+  echo "[billing-v3-harness] db reset attempt 1 failed; retrying once"
+  tail -n 40 "$reset_log" || true
+  echo "[billing-v3-harness] retry after first reset failure" >> "$reset_log"
+
+  if (cd "$DISPOSABLE_ROOT" && npx supabase db reset --yes) \
+    >> "$reset_log" 2>&1; then
+    echo "[billing-v3-harness] db reset recovered on retry"
+    return 0
+  fi
+
+  echo "[billing-v3-harness] db reset FAILED after 2 attempts"
+  tail -n 40 "$reset_log" || true
+  return 1
 }
 
 assert_no_mandatory_skips() {
@@ -103,11 +115,11 @@ else
     # Count must stay in lockstep with the billing vitest inventory (static + disposable).
     # Refuse any skipped mandatory disposable proofs.
     if assert_no_mandatory_skips "${REPORT_DIR}/unit.plain.log" \
-      && grep -EEq 'Tests[[:space:]]+107 passed' "${REPORT_DIR}/unit.plain.log"; then
-      echo "- Result: PASS (107 / 107, 0 skipped)" >> "$REPORT"
+      && grep -EEq 'Tests[[:space:]]+121 passed' "${REPORT_DIR}/unit.plain.log"; then
+      echo "- Result: PASS (121 / 121, 0 skipped)" >> "$REPORT"
     else
       overall_status=1
-      echo "- Result: FAIL (expected 107 passed / 0 skipped)" >> "$REPORT"
+      echo "- Result: FAIL (expected 121 passed / 0 skipped)" >> "$REPORT"
     fi
   else
     overall_status=1
@@ -147,6 +159,34 @@ else
   echo "- Result: FAIL (BILLING_DISPOSABLE_DB != 1; concurrency proofs required)" >> "$REPORT"
 fi
 echo >> "$REPORT"
+
+# ---------------------------------------------------------------------------
+# Phase C — quiz write ACL, isolated fixtures on the migrated disposable database
+# ---------------------------------------------------------------------------
+echo "## Phase C — trusted quiz writes and owner-scoped reads" >> "$REPORT"
+echo >> "$REPORT"
+if [ "${BILLING_DISPOSABLE_DB:-0}" = "1" ] \
+  && MIGRATIONS_PREAPPLIED=1 bunx vitest run --no-file-parallelism src/lib/__tests__/quiz-attempt-db-acl.integration.test.ts \
+    > "${REPORT_DIR}/quiz-acl.log" 2>&1; then
+  sed -E 's/\x1B\[[0-9;]*[A-Za-z]//g' "${REPORT_DIR}/quiz-acl.log" > "${REPORT_DIR}/quiz-acl.plain.log"
+  if assert_no_mandatory_skips "${REPORT_DIR}/quiz-acl.plain.log" \
+    && grep -EEq 'Tests[[:space:]]+1 passed' "${REPORT_DIR}/quiz-acl.plain.log"; then
+    echo "- Result: PASS (1 / 1, 0 skipped; fixtures rolled back)" >> "$REPORT"
+  else
+    overall_status=1
+    echo "- Result: FAIL (expected 1 passed / 0 skipped)" >> "$REPORT"
+  fi
+else
+  overall_status=1
+  echo "- Result: FAIL (quiz ACL proof or disposable DB requirement)" >> "$REPORT"
+fi
+echo >> "$REPORT"
+echo '```' >> "$REPORT"
+tail -n 40 "${REPORT_DIR}/quiz-acl.log" 2>/dev/null \
+  | sed -E 's/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+/[redacted-email]/g' >> "$REPORT" || true
+echo '```' >> "$REPORT"
+echo >> "$REPORT"
+
 
 # Remove disposable tree from the repository worktree after validation.
 rm -rf "$DISPOSABLE_ROOT"

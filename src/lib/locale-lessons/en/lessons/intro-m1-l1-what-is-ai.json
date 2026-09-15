@@ -103,7 +103,7 @@
       "role": "Quiz",
       "heading": "Quiz",
       "subtitle": "Quick Confirmation",
-      "contentMarkdown": "**Question:** What is the best way to start understanding AI today?\n\nOpen ChatGPT or Gemini and ask it something simple from your day.\n- **Explanation:** A small experiment teaches you more than a long reading. This is exactly what you will do in the task.",
+      "contentMarkdown": "**Question:** What is the best way to start understanding AI today?\n\n- Read as many articles about AI as you can before trying anything.\n- Open ChatGPT or Gemini and ask it something simple from your day.\n- Wait until you have taken a full course on how AI works technically.\n- Ask a friend who already uses AI to explain everything to you first.\n\n**Explanation:** A small experiment teaches you more than a long reading. This is exactly what you will do in the task.",
       "bullets": [
         "Open ChatGPT or Gemini and ask it something simple from your day.",
         "Explanation: A small experiment teaches you more than a long reading. This is exactly what you will do in the task."
@@ -111,11 +111,12 @@
       "tables": [],
       "quiz": {
         "question": "What is the best way to start understanding AI today?",
-        "correctIndex": 0,
+        "correctIndex": 1,
         "options": [
+          "Read as many articles about AI as you can before trying anything.",
           "Open ChatGPT or Gemini and ask it something simple from your day.",
-          "An inappropriate option; it ignores the basic information in the section above.",
-          "A partial answer that misses the context and ignores the next step in the decision."
+          "Wait until you have taken a full course on how AI works technically.",
+          "Ask a friend who already uses AI to explain everything to you first."
         ],
         "explanation": "A small experiment teaches you more than a long reading. This is exactly what you will do in the task."
       }

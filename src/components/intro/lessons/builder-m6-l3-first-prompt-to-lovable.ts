@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import firstPromptImg from "@/assets/lessons/unique/builder-m6-l3-first-prompt-to-lovable.jpg";
 
 /** Builder · M6 · Lesson 03 — First Prompt to Lovable (v3: Lesson Shape pilot) */
 export const BUILDER_M6_FIRST_PROMPT_TO_LOVABLE_BLOCKS: IntroLessonContent = [
@@ -112,7 +111,6 @@ export const BUILDER_M6_FIRST_PROMPT_TO_LOVABLE_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: firstPromptImg,
       alt: "Lovable — prompt على الشمال، preview على اليمين.",
       caption:
         "الـ prompt مش «اعملي واجهة» — فيه goal، نشاط، أقسام بالاسم، وستايل. النتيجة أقرب من أول مرة.",

@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import creatorWhyContentScreenshot from "@/assets/lessons/creator-m1-l1-why-content.jpg";
 
 export const CREATOR_M1_WHY_CONTENT_BLOCKS: IntroLessonContent = [
   {
@@ -109,7 +108,6 @@ export const CREATOR_M1_WHY_CONTENT_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: creatorWhyContentScreenshot,
       alt: "لقطة توضح ترتيب المحتوى كمسار واضح بدل نشر عشوائي.",
       caption:
         "الترتيب ده بيوضح إن كل جزء ليه دور، وده بالظبط معنى إن المحتوى يبقى نظام.",

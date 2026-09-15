@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM2TriggersActionsScreenshot from "@/assets/lessons/unique/automator-m3-l2-triggers-actions.jpg";
 
 /** Automator · M3 · Lesson 02 — Triggers + Actions (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M3_L2_TRIGGERS_ACTIONS_BLOCKS: IntroLessonContent = [
@@ -111,7 +110,6 @@ export const AUTOMATOR_M3_L2_TRIGGERS_ACTIONS_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: automatorM2TriggersActionsScreenshot,
       alt: "رسم خطوات متسلسلة — حدث يبدأ سلسلة أفعال.",
       caption:
         "أي مسار = حدث (مُشغّل) → action أو أكتر. مثال: «خلّصت مهمة» → «سجّل» + «افتح التالية» + «ذكّر». نفس الفكرة على شغلك.",

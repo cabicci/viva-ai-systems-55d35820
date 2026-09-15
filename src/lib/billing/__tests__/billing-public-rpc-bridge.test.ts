@@ -18,6 +18,8 @@ import { CHAT4_PRIVATE_RPC, CHAT4_RPC } from "@/lib/billing";
 const ENABLED = process.env.BILLING_DISPOSABLE_DB === "1" && disposableDbReady();
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../../..");
 const BRIDGE_MIGRATION = "supabase/migrations/20260728140000_public_billing_rpc_bridge.sql";
+const SNAPSHOT_VALIDITY_MIGRATION =
+  "supabase/migrations/20260914190000_billing_entitlement_snapshot_validity.sql";
 
 const PUBLIC_WRAPPERS = [
   {
@@ -96,7 +98,7 @@ const PUBLIC_WRAPPERS = [
 ] as const;
 
 function readRepoFile(relPath: string): string {
-  return readFileSync(path.join(REPO_ROOT, relPath), "utf8");
+  return readFileSync(path.join(REPO_ROOT, relPath), "utf8").replace(/\r\n/g, "\n");
 }
 
 function extractFunctionBody(sql: string, fnName: string): string {
@@ -125,15 +127,29 @@ describe("public billing RPC bridge — static", () => {
   const entitlementIndex = readRepoFile("supabase/functions/billing-entitlement/index.ts");
   const handler = readRepoFile("supabase/functions/assistant-runtime/handler.ts");
 
-  it("defines exactly seven public wrappers and remains the terminal Billing bridge before additive compat", () => {
+  it("defines exactly seven public wrappers and tracks additive Billing migrations", () => {
     const migrations = readdirSync(path.join(REPO_ROOT, "supabase/migrations"))
       .filter((f) => f.endsWith(".sql"))
       .sort();
     const bridgeIdx = migrations.indexOf("20260728140000_public_billing_rpc_bridge.sql");
     expect(bridgeIdx).toBeGreaterThanOrEqual(0);
     const afterBridge = migrations.slice(bridgeIdx + 1);
-    // Only the additive legacy-compat migration may follow the public bridge.
-    expect(afterBridge).toEqual(["20260801120000_billing_legacy_user_subscriptions_compat.sql"]);
+    expect(afterBridge).toEqual([
+      "20260801120000_billing_legacy_user_subscriptions_compat.sql",
+      path.basename(SNAPSHOT_VALIDITY_MIGRATION),
+      "20260914220000_lesson_quiz_attempts_server_write_acl.sql",
+      "20260915070000_billing_paid_ai_quota_alignment.sql",
+    ]);
+
+    const snapshotValiditySql = readRepoFile(SNAPSHOT_VALIDITY_MIGRATION);
+    expect(snapshotValiditySql).toContain(
+      "CREATE OR REPLACE FUNCTION billing.get_entitlement_snapshot",
+    );
+    expect(snapshotValiditySql).toMatch(/ORDER BY snapshot_version DESC\s+LIMIT 1/);
+    expect(snapshotValiditySql).toMatch(
+      /v_row\.expires_at <= now\(\) OR v_row\.invalidation_reason IS NOT NULL/,
+    );
+
     expect(PUBLIC_WRAPPERS).toHaveLength(7);
     for (const w of PUBLIC_WRAPPERS) {
       expect(bridgeSql).toContain(w.createSig);
@@ -423,19 +439,67 @@ describe.skipIf(!ENABLED)("public billing RPC bridge — disposable DB", () => {
     expect(exceeded.out).toMatch(/QUOTA_EXCEEDED/);
   }, 90_000);
 
-  it("entitlement wrappers respond under service_role", () => {
-    seedPaid(5);
-    const snap = lastValue(
-      psql(
-        `BEGIN; ${SERVICE} SELECT jsonb_typeof(public.get_entitlement_snapshot('${USER}')); COMMIT;`,
-      ),
-    );
-    expect(snap).toBe("object");
-    const evalOut = lastValue(
-      psql(
-        `BEGIN; ${SERVICE} SELECT (public.evaluate_access('${USER}','assistant_runtime',NULL)->>'allowed'); COMMIT;`,
-      ),
-    );
-    expect(["true", "false"]).toContain(evalOut);
+  it("entitlement wrappers honor newest snapshot validity under service_role", () => {
+    const validUser = "ffff3333-3333-3333-3333-333333333331";
+    const expiredUser = "ffff3333-3333-3333-3333-333333333332";
+    const invalidatedUser = "ffff3333-3333-3333-3333-333333333333";
+    const newestInvalidUser = "ffff3333-3333-3333-3333-333333333334";
+    const paidSnapshot =
+      '{"paid_content_entitled":true,"denial_reason_code":null,"lessons":{"entitled_lesson_ids":["lesson-1"]}}';
+    const cleanupSnapshots = () =>
+      psql(`DELETE FROM billing.user_entitlement_snapshots
+        WHERE user_id IN ('${validUser}','${expiredUser}','${invalidatedUser}','${newestInvalidUser}')`);
+
+    cleanupSnapshots();
+    try {
+      psql(`INSERT INTO billing.user_entitlement_snapshots
+        (user_id, snapshot_version, access_state, entitlement_json, generated_at, expires_at, invalidation_reason)
+        VALUES
+          ('${validUser}', 1, 'paid_active', '${paidSnapshot}'::jsonb, now(), now() + interval '1 hour', NULL),
+          ('${expiredUser}', 1, 'paid_active', '${paidSnapshot}'::jsonb, now() - interval '2 hours', now() - interval '1 hour', NULL),
+          ('${invalidatedUser}', 1, 'paid_active', '${paidSnapshot}'::jsonb, now(), now() + interval '1 hour', 'subscription_changed'),
+          ('${newestInvalidUser}', 1, 'paid_active', '${paidSnapshot}'::jsonb, now(), now() + interval '2 hours', NULL),
+          ('${newestInvalidUser}', 2, 'paid_active', '${paidSnapshot}'::jsonb, now(), now() + interval '2 hours', 'superseded');`);
+
+      const snapshotResult = (userId: string) =>
+        lastValue(
+          psql(
+            `BEGIN; ${SERVICE}
+            SELECT concat(
+              snapshot->>'paid_content_entitled',
+              ':',
+              COALESCE(snapshot->>'denial_reason_code', '')
+            )
+            FROM (SELECT public.get_entitlement_snapshot('${userId}') AS snapshot) result;
+            COMMIT;`,
+          ),
+        );
+
+      expect(snapshotResult(validUser)).toBe("true:");
+      expect(snapshotResult(expiredUser)).toBe("false:ENTITLEMENT_UNAVAILABLE");
+      expect(snapshotResult(invalidatedUser)).toBe("false:ENTITLEMENT_UNAVAILABLE");
+      expect(snapshotResult(newestInvalidUser)).toBe("false:ENTITLEMENT_UNAVAILABLE");
+
+      const evaluateResult = (userId: string) =>
+        lastValue(
+          psql(
+            `BEGIN; ${SERVICE}
+            SELECT concat(
+              decision->>'allowed',
+              ':',
+              decision->>'denial_reason_code'
+            )
+            FROM (
+              SELECT public.evaluate_access('${userId}','lesson','lesson-1') AS decision
+            ) result;
+            COMMIT;`,
+          ),
+        );
+
+      expect(evaluateResult(validUser)).toBe("true:");
+      expect(evaluateResult(expiredUser)).toBe("false:LESSON_NOT_ENTITLED");
+    } finally {
+      cleanupSnapshots();
+    }
   }, 60_000);
 });

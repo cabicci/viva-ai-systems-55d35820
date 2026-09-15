@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import aiWritingScreenshot from "@/assets/lessons/creator-m4-l3-ai-writing.jpg";
 
 export const CREATOR_M4_AI_WRITING_BLOCKS: IntroLessonContent = [
   {
@@ -112,7 +111,6 @@ export const CREATOR_M4_AI_WRITING_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: aiWritingScreenshot,
       alt: "لقطة توضح كتابة مسودة بالذكاء الاصطناعي ثم تعديلها يدويًا",
       caption:
         "الخلاصة من المثال: استخدم AI لتسريع البداية، لكن النسخة النهائية لازم تعدي على تعديلك الشخصي.",

@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import memoryLimitsScreenshot from "@/assets/lessons/builder-m3-l2-memory-limits.jpg";
 
 /** Builder · M3 · Lesson 02 — حدود الذاكرة (v3: Lesson Shape pilot) */
 export const BUILDER_M3_MEMORY_LIMITS_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const BUILDER_M3_MEMORY_LIMITS_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: memoryLimitsScreenshot,
       alt: "مساعد AI — تنبيه إن الإجابات تعتمد على السياق المتاح.",
       caption:
         "التنبيه ده مش قانوني — ده اعتراف إن الذاكرة ليها حد. المساعد شايف سياقك + جزء من المحتوى — مش «كل حاجة». في منتجك: حدّد إيه اللي التطبيق يحفظه برّه الشات ويمرّره كل مرة.",

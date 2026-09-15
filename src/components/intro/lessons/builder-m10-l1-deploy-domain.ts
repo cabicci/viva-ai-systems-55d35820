@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import deployScreenshot from "@/assets/lessons/builder-m10-l1-deploy-domain.jpg";
 
 /** Builder · M10 · Lesson 01 — Deploy & Domain (v3: Lesson Shape pilot) */
 export const BUILDER_M10_DEPLOY_DOMAIN_BLOCKS: IntroLessonContent = [
@@ -109,7 +108,6 @@ export const BUILDER_M10_DEPLOY_DOMAIN_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: deployScreenshot,
       alt: "صفحة سجل البناء بتوضح تاريخ عمليات النشر للتطبيق.",
       caption:
         "كل deploy = نسخة جديدة على الإنترنت. سجل البناء يورّيك إيه نجح وإيه فشل — مش صندوق أسود.",

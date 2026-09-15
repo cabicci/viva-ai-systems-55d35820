@@ -139,6 +139,7 @@ export const PLAN_ENTITLEMENT_DEFAULTS: Record<
   Pick<
     EntitlementPolicy,
     | "lessonCountCap"
+    | "assistantRuntimePerLessonQuota"
     | "assistantRuntimeGeneralMonthlyQuota"
     | "assistantRuntimePeriodQuota"
     | "assistantRuntimePeriodDays"
@@ -148,19 +149,22 @@ export const PLAN_ENTITLEMENT_DEFAULTS: Record<
   // and NO automatic AI quota — period days/quota are null (fail closed).
   free: {
     lessonCountCap: 12,
+    assistantRuntimePerLessonQuota: null,
     assistantRuntimeGeneralMonthlyQuota: null,
     assistantRuntimePeriodQuota: null,
     assistantRuntimePeriodDays: null,
   },
   pro: {
     lessonCountCap: 74,
-    assistantRuntimeGeneralMonthlyQuota: 272,
+    assistantRuntimePerLessonQuota: 3,
+    assistantRuntimeGeneralMonthlyQuota: 50,
     assistantRuntimePeriodQuota: null,
     assistantRuntimePeriodDays: null,
   },
   pro_plus: {
     lessonCountCap: 100,
-    assistantRuntimeGeneralMonthlyQuota: 750,
+    assistantRuntimePerLessonQuota: 6,
+    assistantRuntimeGeneralMonthlyQuota: 150,
     assistantRuntimePeriodQuota: null,
     assistantRuntimePeriodDays: null,
   },

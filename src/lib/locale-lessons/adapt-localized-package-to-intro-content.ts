@@ -26,10 +26,8 @@ import {
 } from "./package-section-labels";
 import { adaptPackageMissionToLiveShape } from "./adapt-package-to-live-mission";
 import { adaptPackageQuizToQuizItem } from "./adapt-package-to-live-quiz";
-import {
-  acceptStrictVisualPackageText,
-  usesStrictLocalizedVisualPolicy,
-} from "./strict-localized-visual-policy";
+import { isPackageLocale } from "./registry";
+import { acceptStrictVisualPackageText } from "./strict-visual-text-policy";
 import type {
   LessonPackageLocale,
   LocalizedLessonPackage,
@@ -41,6 +39,12 @@ export type LocalizedPackageInput = Pick<
   LocalizedLessonPackage,
   "locale" | "lessonId" | "sections"
 >;
+
+function usesStrictLocalizedPackagePolicy(
+  locale: LessonPackageLocale,
+): boolean {
+  return isPackageLocale(locale);
+}
 
 function normalizeRole(role: string): string {
   return role.trim().toLowerCase();
@@ -415,7 +419,7 @@ function mergeCanonicalSection(
   pkg: LocalizedPackageInput,
 ): IntroLessonSection | null {
   const kind = canonSection.block.kind;
-  const strictVisual = usesStrictLocalizedVisualPolicy(pkg.locale);
+  const strictVisual = usesStrictLocalizedPackagePolicy(pkg.locale);
 
   if (kind === "lessonVideo") {
     const videoMeta = findVideoSectionMeta(pkg);

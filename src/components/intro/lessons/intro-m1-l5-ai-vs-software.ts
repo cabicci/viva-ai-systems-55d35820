@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import aiVsSoftwareScreenshot from "@/assets/lessons/intro-m1-l5-ai-vs-software.jpg";
 
 /**
  * Intro · Lesson 05 — AI مش زي البرامج العادية (v3: Lesson Shape pilot)
@@ -114,7 +113,6 @@ export const AI_VS_SOFTWARE_CONTENT: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: aiVsSoftwareScreenshot,
       alt: "مقارنة بصرية بين برنامج بقواعد ثابتة وAI يرد بمرونة",
       caption:
         "تخيّل عمود للبرامج الثابتة (حساب، جدولة، أرشفة) وعمود للـ AI (كتابة، تلخيص، أفكار). كثير من الشغل الحقيقي بيستخدم الاتنين — مش واحد بس.",
