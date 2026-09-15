@@ -138,6 +138,7 @@ describe("public billing RPC bridge — static", () => {
       "20260801120000_billing_legacy_user_subscriptions_compat.sql",
       path.basename(SNAPSHOT_VALIDITY_MIGRATION),
       "20260914220000_lesson_quiz_attempts_server_write_acl.sql",
+      "20260915070000_billing_paid_ai_quota_alignment.sql",
     ]);
 
     const snapshotValiditySql = readRepoFile(SNAPSHOT_VALIDITY_MIGRATION);
