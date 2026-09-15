@@ -61,39 +61,49 @@ export const evaluateMissionWithAI = createServerFn({ method: "POST" })
     const userId = context.userId;
     const supabaseAdmin = await loadSupabaseAdmin();
 
-    const releaseSubmittedRow = async () => {
-      // submit_mission_for_evaluation leaves status=submitted; on eval failure
-      // flip back so the same row can be retried (RPC only accepts draft/needs_revision/failed).
+    let claimedUpdatedAt: string | null = null;
+    const releaseClaimedRow = async () => {
+      if (claimedUpdatedAt === null) return;
+      // Release only the row claimed by this evaluator. A concurrent request
+      // that lost the submitted -> evaluating race must not release the winner.
       await supabaseAdmin
         .from("mission_submissions")
         .update({ status: "needs_revision" })
         .eq("id", data.submissionId)
         .eq("user_id", userId)
-        .eq("status", "submitted");
+        .eq("mission_id", data.missionId)
+        .eq("status", "evaluating")
+        .eq("updated_at", claimedUpdatedAt);
     };
 
     try {
-    // Rate limit: hourly + daily + monthly cost caps per user.
-    // Hourly: burst protection. Daily/monthly: cost cap.
-    await enforceRateLimit({ userId, bucketKey: "ai:evaluate-mission", maxCalls: 10, windowSeconds: 3600 });
-    await enforceRateLimit({ userId, bucketKey: "ai:evaluate-mission:daily", maxCalls: 40, windowSeconds: 86400 });
-    await enforceRateLimit({ userId, bucketKey: "ai:evaluate-mission:monthly", maxCalls: 500, windowSeconds: 2592000 });
-
     // Verify the submission belongs to the caller AND matches the claimed
     // missionId. Without the mission_id check an authed user could pair
     // their own submissionId with an attacker-controlled prompt (prompt-
     // injection vector into the AI evaluator).
     const { data: row, error: rowErr } = await supabaseAdmin
       .from("mission_submissions")
-      .select("id, user_id, mission_id, lesson_id, submission_text")
+      .update({ status: "evaluating" })
       .eq("id", data.submissionId)
       .eq("user_id", userId)
       .eq("mission_id", data.missionId)
+      .eq("status", "submitted")
+      .select("id, user_id, mission_id, lesson_id, submission_text, updated_at")
       .maybeSingle();
     if (rowErr) throw new Error("تعذّر التحقق من التسليم.");
     if (!row) {
-      throw new Error("التسليم غير موجود.");
+      throw new Error("التسليم غير متاح للتقييم.");
     }
+    // Keep the database timestamp verbatim: it is the version of this claim.
+    // A reset/resubmission must not let this evaluator write to a newer claim.
+    claimedUpdatedAt = row.updated_at;
+
+    // Claim first so a rate-limit failure can safely release this submission.
+    // Rate limit: hourly + daily + monthly cost caps per user.
+    // Hourly: burst protection. Daily/monthly: cost cap.
+    await enforceRateLimit({ userId, bucketKey: "ai:evaluate-mission", maxCalls: 10, windowSeconds: 3600 });
+    await enforceRateLimit({ userId, bucketKey: "ai:evaluate-mission:daily", maxCalls: 40, windowSeconds: 86400 });
+    await enforceRateLimit({ userId, bucketKey: "ai:evaluate-mission:monthly", maxCalls: 500, windowSeconds: 2592000 });
 
     const lessonId = z.string().min(1).max(200).parse(row.lesson_id);
     const submissionText = z.string().min(1).max(8000).parse(row.submission_text);
@@ -152,7 +162,7 @@ export const evaluateMissionWithAI = createServerFn({ method: "POST" })
 
     // Persist authoritative result with service-role (bypasses the
     // user-protection trigger that blocks writes to score/feedback/status).
-    const { error: updErr } = await supabaseAdmin
+    const { data: persisted, error: updErr } = await supabaseAdmin
       .from("mission_submissions")
       .update({
         status: result.passed ? "passed" : "needs_revision",
@@ -166,15 +176,20 @@ export const evaluateMissionWithAI = createServerFn({ method: "POST" })
         },
       })
       .eq("id", data.submissionId)
-      .eq("user_id", userId);
-    if (updErr) {
+      .eq("user_id", userId)
+      .eq("mission_id", data.missionId)
+      .eq("status", "evaluating")
+      .eq("updated_at", claimedUpdatedAt)
+      .select("id")
+      .maybeSingle();
+    if (updErr || !persisted) {
       console.error("[evaluateMissionWithAI] persist failed", updErr);
       throw new Error("تم التقييم لكن تعذّر حفظ النتيجة.");
     }
 
     return result;
     } catch (err) {
-      await releaseSubmittedRow();
+      await releaseClaimedRow();
       throw err;
     }
   });
