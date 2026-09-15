@@ -1,0 +1,170 @@
+name: "B023 — Contextual images, module graph and browser validation"
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+    inputs:
+      expected_product_sha:
+        description: "Exact workflow/product commit to verify; must equal the selected branch HEAD"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: b023-contextual-v2-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      B023_DISPOSABLE_LOCAL_ONLY: "1"
+      B023_EXPECTED_GIT_HEAD: ${{ github.event.inputs.expected_product_sha || github.event.pull_request.head.sha }}
+      B023_REPO_ROOT: ${{ github.workspace }}
+      DOCKER_BIN: docker
+    steps:
+      - name: Checkout exact PR head, or selected dispatch commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Bind exact clean commit and allocate disposable directories
+        run: node .github/scripts/b023_contextual_v2_validation/ci-local-environment.mjs prepare
+
+      - name: Install dependencies from the frozen lockfile
+        run: bun install --frozen-lockfile
+
+      - name: Verify contextual assets and focused runtime tests
+        run: |
+          bun run contextual-visuals:verify
+          node node_modules/vitest/vitest.mjs run \
+            tests/lesson-visuals/controlled-v1/contextualV2RuntimeIntegration.test.ts \
+            tests/lesson-visuals/controlled-v1/controlledV1ProductRenderer.test.tsx \
+            src/lib/__tests__/locale-strict-visual-hardening.test.tsx \
+            src/lib/__tests__/locale-strict-visual-no-ar-eg-fallback.test.tsx \
+            --maxWorkers=2 --reporter=json --outputFile="$B023_RECEIPTS_ROOT/runtime-tests.json"
+
+      - name: Install the Chromium version owned by repository Playwright
+        run: node node_modules/playwright/cli.js install --with-deps chromium
+
+      - name: Setup Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: 2.109.1
+
+      - name: Prepare the existing disposable migration tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          test ! -e "$B023_DISPOSABLE_ROOT"
+          bun scripts/billing/prepare-disposable-supabase-tree.ts \
+            --dest "$B023_DISPOSABLE_ROOT" > "$B023_RECEIPTS_ROOT/disposable-tree.json"
+          test "$(git hash-object supabase/migrations/20260526105117_25fc4182-0343-4234-a231-0cf38569014a.sql)" \
+            = "d185dd59549f611fcb984bcb3459c9d5d6969ef5"
+
+      - name: Start only the disposable Supabase instance
+        working-directory: ${{ env.B023_DISPOSABLE_ROOT }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! supabase start > "$B023_PRIVATE_ROOT/supabase-start.log" 2>&1; then
+            echo "Disposable Supabase startup failed; raw startup output is withheld because it may contain local credentials."
+            exit 1
+          fi
+          supabase status --output json > "$B023_PRIVATE_ROOT/supabase-status.json" 2> "$B023_PRIVATE_ROOT/supabase-status.stderr.log"
+
+      - name: Export masked local-only credentials and Chromium path
+        run: node .github/scripts/b023_contextual_v2_validation/ci-local-environment.mjs local-status
+
+      - name: Build the product and capture the active client module graph
+        run: node .github/scripts/b023_contextual_v2_validation/build-with-module-graph.mjs
+
+      - name: Start localhost preview and wait for the real login route
+        shell: bash
+        run: |
+          set -euo pipefail
+          setsid bun run preview -- --host 127.0.0.1 --port 4173 --strictPort \
+            > "$B023_PRIVATE_ROOT/preview.log" 2>&1 < /dev/null &
+          preview_pid=$!
+          printf '%s\n' "$preview_pid" > "$B023_PRIVATE_ROOT/preview.pid"
+          node --input-type=module <<'NODE'
+          const deadline = Date.now() + 45_000;
+          let ready = false;
+          while (Date.now() < deadline) {
+            try {
+              const response = await fetch(`${process.env.B023_BASE_URL}/login?locale=en`, {
+                redirect: "error", signal: AbortSignal.timeout(2_000),
+              });
+              if (response.ok) { ready = true; break; }
+            } catch {}
+            await new Promise((resolve) => setTimeout(resolve, 500));
+          }
+          if (!ready) throw new Error("The real local preview login route was not ready within 45 seconds");
+          NODE
+
+      - name: Create local fixture, sign in normally and run all 16 browser cases
+        timeout-minutes: 6
+        run: node .github/scripts/b023_contextual_v2_validation/fixture-login-and-gate.mjs
+
+      - name: Verify the source checkout remained clean at the exact commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$B023_EXPECTED_GIT_HEAD"
+          test -z "$(git status --porcelain=v1 --untracked-files=all)"
+
+      - name: Always stop only this preview and disposable database
+        if: ${{ always() }}
+        shell: bash
+        run: |
+          set -uo pipefail
+          cleanup_result=0
+          if [ -n "${B023_PRIVATE_ROOT:-}" ] && [ -f "$B023_PRIVATE_ROOT/preview.pid" ]; then
+            preview_pid=$(cat "$B023_PRIVATE_ROOT/preview.pid")
+            if [[ "$preview_pid" =~ ^[0-9]+$ ]]; then
+              kill -TERM -- "-$preview_pid" 2>/dev/null || true
+            fi
+          fi
+          if [ -n "${B023_DISPOSABLE_ROOT:-}" ] && [ -f "$B023_DISPOSABLE_ROOT/supabase/config.toml" ]; then
+            if ! (cd "$B023_DISPOSABLE_ROOT" && supabase stop --no-backup) \
+              > "$B023_PRIVATE_ROOT/supabase-stop.log" 2>&1; then
+              echo "Disposable database cleanup failed."
+              cleanup_result=1
+            fi
+          fi
+          if [ -n "${B023_BROWSER_RECEIPTS_DIR:-}" ]; then
+            rm -f -- "$B023_BROWSER_RECEIPTS_DIR/local-auth-storage.json"
+          fi
+          exit "$cleanup_result"
+
+      - name: Upload only sanitized verification receipts
+        if: ${{ always() && env.B023_RECEIPTS_ROOT != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: b023-contextual-v2-verification-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ env.B023_RECEIPTS_ROOT }}/candidate.json
+            ${{ env.B023_RECEIPTS_ROOT }}/runtime-tests.json
+            ${{ env.B023_RECEIPTS_ROOT }}/disposable-tree.json
+            ${{ env.B023_RECEIPTS_ROOT }}/build-module-graph.json
+            ${{ env.B023_RECEIPTS_ROOT }}/browser/browser-network-gate.json
+            ${{ env.B023_RECEIPTS_ROOT }}/browser/fixture-and-gate-receipt.json
+            ${{ env.B023_RECEIPTS_ROOT }}/browser/gate.stderr.log
+          if-no-files-found: warn
+          retention-days: 14
