@@ -19,6 +19,7 @@ const NAV_FOOTER_KEYS = [
   "nav.paths",
   "nav.curriculum",
   "nav.pricing",
+  "nav.menu",
   "footer.privacy",
   "footer.terms",
   "footer.copyright",
