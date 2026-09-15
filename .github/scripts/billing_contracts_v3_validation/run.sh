@@ -54,13 +54,25 @@ reset_disposable_db() {
   if ! prepare_disposable_supabase_tree; then
     return 1
   fi
-  if ! (cd "$DISPOSABLE_ROOT" && npx supabase db reset --yes) \
-    > "${REPORT_DIR}/db-reset.log" 2>&1; then
-    echo "[billing-v3-harness] db reset FAILED"
-    tail -n 40 "${REPORT_DIR}/db-reset.log" || true
-    return 1
+  local reset_log="${REPORT_DIR}/db-reset.log"
+  if (cd "$DISPOSABLE_ROOT" && npx supabase db reset --yes) \
+    > "$reset_log" 2>&1; then
+    return 0
   fi
-  return 0
+
+  echo "[billing-v3-harness] db reset attempt 1 failed; retrying once"
+  tail -n 40 "$reset_log" || true
+  echo "[billing-v3-harness] retry after first reset failure" >> "$reset_log"
+
+  if (cd "$DISPOSABLE_ROOT" && npx supabase db reset --yes) \
+    >> "$reset_log" 2>&1; then
+    echo "[billing-v3-harness] db reset recovered on retry"
+    return 0
+  fi
+
+  echo "[billing-v3-harness] db reset FAILED after 2 attempts"
+  tail -n 40 "$reset_log" || true
+  return 1
 }
 
 assert_no_mandatory_skips() {
