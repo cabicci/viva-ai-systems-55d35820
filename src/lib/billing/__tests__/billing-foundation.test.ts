@@ -114,7 +114,10 @@ describe("entitlement evaluation", () => {
   it("models Free, Pro, and Pro+ quota shapes (no automatic free trial)", () => {
     expect(PLAN_ENTITLEMENT_DEFAULTS.free.assistantRuntimePeriodQuota).toBeNull();
     expect(PLAN_ENTITLEMENT_DEFAULTS.free.assistantRuntimePeriodDays).toBeNull();
-    expect(PLAN_ENTITLEMENT_DEFAULTS.pro.assistantRuntimeGeneralMonthlyQuota).toBe(272);
+    expect(PLAN_ENTITLEMENT_DEFAULTS.pro.assistantRuntimePerLessonQuota).toBe(3);
+    expect(PLAN_ENTITLEMENT_DEFAULTS.pro.assistantRuntimeGeneralMonthlyQuota).toBe(50);
+    expect(PLAN_ENTITLEMENT_DEFAULTS.pro_plus.assistantRuntimePerLessonQuota).toBe(6);
+    expect(PLAN_ENTITLEMENT_DEFAULTS.pro_plus.assistantRuntimeGeneralMonthlyQuota).toBe(150);
     expect(PLAN_ENTITLEMENT_DEFAULTS.pro_plus.lessonCountCap).toBe(100);
   });
 
