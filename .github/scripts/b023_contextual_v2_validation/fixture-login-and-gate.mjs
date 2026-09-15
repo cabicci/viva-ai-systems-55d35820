@@ -69,8 +69,8 @@ function grantLocalAdminRole() {
     throw new Error("Exact disposable local PostgreSQL connection required");
   }
   const result = execFileSync("psql", [
-    "-v", "ON_ERROR_STOP=1", "-v", `fixture_user_id=${userId}`, "-At", "-c",
-    "INSERT INTO public.user_roles (user_id, role) VALUES (:'fixture_user_id'::uuid, 'admin') RETURNING user_id::text || E'\\t' || role::text;",
+    "-v", "ON_ERROR_STOP=1", "-qAt", "-c",
+    `INSERT INTO public.user_roles (user_id, role) VALUES ('${userId}'::uuid, 'admin') RETURNING user_id::text || E'\\t' || role::text;`,
   ], { encoding: "utf8", env: process.env }).trim();
   if (result !== `${userId}\tadmin`) throw new Error("Local admin grant readback mismatch");
 }
@@ -111,7 +111,9 @@ try {
     user_metadata: { b023_disposable_fixture: fixtureId },
   });
   userId = created?.id ?? created?.user?.id;
-  if (!/^[a-f0-9-]{36}$/i.test(userId || "")) throw new Error("Local Auth did not return a fixture user UUID");
+  if (!/^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$/i.test(userId || "")) {
+    throw new Error("Local Auth did not return a fixture user UUID");
+  }
   // Runtime authority remains public.user_roles + has_role. The fixture grant uses
   // the exact loopback database because PostgREST has no service-role table grant.
   grantLocalAdminRole();
