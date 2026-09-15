@@ -324,6 +324,42 @@ describe("Method 3 screenshot contract (offline)", () => {
       ),
     ).rejects.toThrow(/login|auth redirect/i);
   });
+
+  it("rejects a redirect from an allowlisted source to an off-list final host", async () => {
+    const master = loadLessonMaster({
+      lessonId: "builder-m6-l3-first-prompt-to-lovable",
+      repoRoot,
+    });
+    const transport = createScreenshotCaptureTransport({
+      master,
+      providerName: "screenshot-capture",
+      model: "playwright-chromium-png-v1",
+      accountId: "acct-test",
+      projectId: "proj-test",
+      authId: "auth-test",
+      requiredWidth: DEFAULT_REQUIRED_WIDTH,
+      requiredHeight: DEFAULT_REQUIRED_HEIGHT,
+      timeoutMs: 5000,
+      captureFn: async ({ url }) => {
+        expect(url).toMatch(/^https:\/\/lovable\.dev\//);
+        return {
+          png: encodeSolidPng(100, 100, [1, 1, 1]),
+          finalUrl: "https://evil.example/captured",
+          httpStatus: 200,
+        };
+      },
+    });
+
+    await expect(
+      transport.generate(
+        baseRequest({
+          method: 3,
+          lessonId: master.lessonId,
+          cellId: `${master.lessonId}__en`,
+        }),
+      ),
+    ).rejects.toThrow(/final URL not allowlisted/i);
+  });
 });
 
 describe("Method 4 hybrid local contract (offline)", () => {
