@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import editingScreenshot from "@/assets/lessons/unique/creator-m5-l1-editing.jpg";
 
 export const CREATOR_M4_EDITING_BLOCKS: IntroLessonContent = [
   {
@@ -107,7 +106,6 @@ export const CREATOR_M4_EDITING_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: editingScreenshot,
       alt: "لقطة توضح تايملاين تحرير فيديو قصير",
       caption:
         "النسخة المعدلة بتكون أقصر وأوضح لأن كل جزء فيها له وظيفة، ومفيش حشو يضيع التركيز.",

@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import backendScreenshot from "@/assets/lessons/builder-m5-l3-backend-api.jpg";
 
 /** Builder · M5 · Lesson 03 — Backend & API (v3: Lesson Shape pilot) */
 export const BUILDER_M5_BACKEND_API_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const BUILDER_M5_BACKEND_API_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: backendScreenshot,
       alt: "واجهة مساعد AI — مربع كتابة وزرار إرسال.",
       caption:
         "أول ما تكتب رسالة وتدوس إرسال: الواجهة تبعت طلب → الكواليس تكلّم AI → الرد يرجع على الشاشة. ده مسار API.",

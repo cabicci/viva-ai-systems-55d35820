@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import leadsScreenshot from "@/assets/lessons/unique/automator-m6-l1-lead-capture.jpg";
 
 /** Automator · M6 · استقبال Leads (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M6_L1_LEAD_CAPTURE_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const AUTOMATOR_M6_L1_LEAD_CAPTURE_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: leadsScreenshot,
       alt: "مخطط يوضح مسار lead من الفورم للتسجيل والرد والتنبيه.",
       caption:
         "التسجيل → الحفظ → الرد الفوري → التنبيه. أربع خطوات تمنع الضياع.",

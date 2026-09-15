@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import embeddingsDiagram from "@/assets/lessons/concepts/embeddings-diagram.jpg";
 
 /** Builder · M9 · Lesson 02 — Embeddings (v3: Lesson Shape pilot · optional depth) */
 export const BUILDER_M9_EMBEDDINGS_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const BUILDER_M9_EMBEDDINGS_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: embeddingsDiagram,
       alt: "رسم بياني للـ embeddings: جملة بتتحول لقايمة أرقام vector، والـ vectors بتترسم في فضاء، الجمل اللي معناها قريب بتبقى جنب بعضها.",
       caption:
         "كل جملة ليها «مكان» على الخريطة. المعنى القريب = نقاط قريبة. المعنى البعيد = حتة تانية خالص.",

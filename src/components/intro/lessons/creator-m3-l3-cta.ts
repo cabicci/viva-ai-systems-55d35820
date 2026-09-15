@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import ctaScreenshot from "@/assets/lessons/creator-m3-l3-cta.jpg";
 
 export const CREATOR_M2_CTA_BLOCKS: IntroLessonContent = [
   {
@@ -113,7 +112,6 @@ export const CREATOR_M2_CTA_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: ctaScreenshot,
       alt: "مثال عملي على CTA محدد داخل محتوى قصير",
       caption:
         "لاحظ إن الطلب واضح ومحدد: خطوة واحدة فقط، ومكتوبة بلغة بسيطة يفهمها أي مشاهد بسرعة.",

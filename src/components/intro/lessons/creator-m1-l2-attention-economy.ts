@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import attentionEconomyScreenshot from "@/assets/lessons/creator-m1-l2-attention-economy.jpg";
 
 export const CREATOR_M1_ATTENTION_ECONOMY_BLOCKS: IntroLessonContent = [
   {
@@ -110,7 +109,6 @@ export const CREATOR_M1_ATTENTION_ECONOMY_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: attentionEconomyScreenshot,
       alt: "لقطة توضح مثال محتوى واضح وسهل الالتقاط بصريًا.",
       caption:
         "الوضوح البصري والرسالة المركزة بيساعدوا المتلقي يفهم بسرعة ويقرر يكمل.",

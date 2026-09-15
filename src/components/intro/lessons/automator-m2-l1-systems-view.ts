@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import opsLayersScreenshot from "@/assets/lessons/unique/automator-m2-l1-systems-view.jpg";
 
 /** Automator · M2 · Lesson 01 — كل شغل = System (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M2_L1_SYSTEMS_VIEW_BLOCKS: IntroLessonContent = [
@@ -111,7 +110,6 @@ export const AUTOMATOR_M2_L1_SYSTEMS_VIEW_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: opsLayersScreenshot,
       alt: "رسم طبقات متصلة — كل طبقة فيها مدخل ومعالجة ومخرج.",
       caption:
         "أي شغل متكرّر = طبقات ورا بعض: حاجة تدخل → خطوات تتحوّل → حاجة تطلع. نفس الفكرة هتطبّقها على مهمة من شغلك — مش لازم تكون معقّدة.",

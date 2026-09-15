@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import strengthWeaknessImage from "@/assets/lessons/intro-m1-l4-ai-can-cannot.jpg";
 
 /**
  * Intro · Lesson 04 — الـ AI يقدر يعمل إيه ومينفعش يعمل إيه؟ (v3: Lesson Shape pilot)
@@ -113,7 +112,6 @@ export const AI_CAN_CANNOT_CONTENT: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: strengthWeaknessImage,
       alt: "خريطة توضح مناطق قوة الـ AI ومناطق تحتاج مراجعة",
       caption:
         "على الشمال: كتابة وتلخيص وأفكار — استخدم بثقة. على اليمين: أرقام وحقائق متغيرة — راجع قبل ما تعتمد. الصورة توضّح الفكرة — مش قاعدة خوف.",

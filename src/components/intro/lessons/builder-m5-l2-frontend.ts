@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import frontendScreenshot from "@/assets/lessons/builder-m5-l2-frontend.jpg";
 
 /** Builder · M5 · Lesson 02 — Frontend (v3: Lesson Shape pilot) */
 export const BUILDER_M5_FRONTEND_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const BUILDER_M5_FRONTEND_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: frontendScreenshot,
       alt: "Inspector في Chrome على موقع — HTML و CSS لواجهة التطبيق.",
       caption:
         "افتح أي تطبيق AI → كليك يمين → Inspect. اللي بتشوفه ده Frontend — الكود اللي بنى الشاشة. جرّب بنفسك.",

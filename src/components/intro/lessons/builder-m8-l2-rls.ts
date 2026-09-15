@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import rlsDiagram from "@/assets/lessons/concepts/rls-diagram.jpg";
 
 /** Builder · M8 · Lesson 02 — RLS (v3: Lesson Shape pilot · optional depth) */
 export const BUILDER_M7_RLS_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const BUILDER_M7_RLS_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: rlsDiagram,
       alt: "رسم بياني بيوضح Row Level Security: جدول فيه بيانات كل المستخدمين، وفي النص درع بيمثل RLS Policy، وكل مستخدم بيشوف بس السطور بتاعته.",
       caption:
         "المخزن واحد وفيه بيانات الكل. لما «أحمد» يطلب محادثاته، الـ Policy بتفلتر وترجّع سطوره هو بس — كأن كل واحد لابس نضارة بتورّيه حاجته بس.",

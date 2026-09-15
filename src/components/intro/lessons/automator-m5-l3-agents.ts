@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM4AgentsScreenshot from "@/assets/lessons/unique/automator-m5-l3-agents.jpg";
 
 /** Automator · M5 · Agents بياخدوا قرارات (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M5_L3_AGENTS_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const AUTOMATOR_M5_L3_AGENTS_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: automatorM4AgentsScreenshot,
       alt: "مخطط يوضح agent بيهدف لهدف واحد بأدوات محدودة وحدود واضحة.",
       caption:
         "الثلاثية: هدف واحد واضح، أدوات قليلة مسموحة، حد يوقفه لو عدّى. من غيرها الـ Agent خطر.",

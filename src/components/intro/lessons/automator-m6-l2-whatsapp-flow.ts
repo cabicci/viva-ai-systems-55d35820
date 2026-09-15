@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM5WhatsappFlowScreenshot from "@/assets/lessons/unique/automator-m6-l2-whatsapp-flow.jpg";
 
 /** Automator · M6 · WhatsApp Flow ذكي (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M6_L2_WHATSAPP_FLOW_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const AUTOMATOR_M6_L2_WHATSAPP_FLOW_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: automatorM5WhatsappFlowScreenshot,
       alt: "مخطط يوضح flow واتساب من استقبال الرسالة للرد أو التحويل لموظف.",
       caption:
         "رسالة واردة → فهم → رد أو تحويل. السياق محفوظ عشان الرد يكون مناسب مش عام.",

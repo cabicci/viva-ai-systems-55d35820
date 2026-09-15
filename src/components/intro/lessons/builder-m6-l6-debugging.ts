@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import debuggingScreenshot from "@/assets/lessons/unique/builder-m6-l6-debugging.jpg";
 
 /** Builder · M6 · Lesson 06 — Debugging (v3: Lesson Shape pilot · optional depth) */
 export const BUILDER_M6_DEBUGGING_BLOCKS: IntroLessonContent = [
@@ -109,7 +108,6 @@ export const BUILDER_M6_DEBUGGING_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: debuggingScreenshot,
       alt: "رسمة توضّح 3 خطوات debugging: صفّي العرض، اعزل السبب، اطلب الإصلاح",
       caption:
         "مش محتاج تفهم كود — محتاج توصف. صفّي العرض في جملة → ارجع لآخر تعديل → ابعت الـ ٣ معلومات.",

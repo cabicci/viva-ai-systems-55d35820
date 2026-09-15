@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM4RagInN8NScreenshot from "@/assets/lessons/unique/automator-m5-l2-rag-in-n8n.jpg";
 
 /** Automator · M5 · RAG جوه الـ Automation (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M5_L2_RAG_IN_N8N_BLOCKS: IntroLessonContent = [
@@ -111,7 +110,6 @@ export const AUTOMATOR_M5_L2_RAG_IN_N8N_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: automatorM4RagInN8NScreenshot,
       alt: "مخطط يوضح مسار السؤال عبر الاسترجاع من المعرفة ثم توليد الرد.",
       caption:
         "السؤال يمرّ على مصدرك الأول — وبعدين الـ AI يصيغ الرد. المعرفة ثابتة؛ الصياغة مرنة.",

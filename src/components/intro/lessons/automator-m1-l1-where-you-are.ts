@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import journeyScreenshot from "@/assets/lessons/unique/automator-m1-l1-where-you-are.jpg";
 
 /** Automator · M1 · Lesson 01 — أنت فين في الخريطة؟ (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M1_L1_WHERE_YOU_ARE_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const AUTOMATOR_M1_L1_WHERE_YOU_ARE_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: journeyScreenshot,
       alt: "خريطة تعلّم بخمس مسارات متصلة — Intro و Creator و Builder و Automator و Business و Analyst.",
       caption:
         "كل مسار = مرحلة في الرحلة. Builder (منتج) → Creator (جمهور) → Automator (عامل افتراضي يوفر وقت). إنت في Automator — بس الخريطة بتوريك إزاي القرارات هنا بتكمّل اللي فات.",

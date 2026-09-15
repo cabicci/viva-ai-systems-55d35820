@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import tablesScreenshot from "@/assets/lessons/builder-m7-l1-tables-columns.jpg";
 
 /** Builder · M7 · Lesson 01 — Tables & Columns (v3: Lesson Shape pilot · optional depth) */
 export const BUILDER_M8_TABLES_COLUMNS_BLOCKS: IntroLessonContent = [
@@ -109,7 +108,6 @@ export const BUILDER_M8_TABLES_COLUMNS_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: tablesScreenshot,
       alt: "صفحة /system-state بتعرض حالة المنصة الحالية في شكل كروت زي currentPath و currentUser",
       caption:
         "قبل ما الـ AI يجاوب، بيبص على جداول زي دي: مين اللي بيسأل (`currentUser`) وفاتح أنهي صفحة (`currentPath`). التصميم الصح = ذاكرة سريعة ودقيقة.",

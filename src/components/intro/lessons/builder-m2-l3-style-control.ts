@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import styleControlScreenshot from "@/assets/lessons/builder-m2-l3-style-control.jpg";
 
 /** Builder · M2 · Lesson 03 — Style Control (v3: Lesson Shape pilot) */
 export const BUILDER_M2_STYLE_CONTROL_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const BUILDER_M2_STYLE_CONTROL_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: styleControlScreenshot,
       alt: "قسم فلسفة — أربع مبادئ بجمل قصيرة.",
       caption:
         "«تنفيذ قبل التنظير»، «نظام مش فوضى» — جمل قصيرة، موقف واضح. ده نتيجة Prompt حدّد النبرة: manifesto، من غير كليشيهات. نفس المعنى بنبرة «تسويقية» كان هيبان منتج تاني.",

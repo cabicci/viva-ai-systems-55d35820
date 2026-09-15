@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import ideaToPageScreenshot from "@/assets/lessons/builder-m6-l1-idea-to-page.jpg";
 
 /** Builder · M6 · Lesson 01 — Idea to Page (v3: Lesson Shape pilot) */
 export const BUILDER_M6_IDEA_TO_PAGE_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const BUILDER_M6_IDEA_TO_PAGE_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: ideaToPageScreenshot,
       alt: "صفحة curriculum — خريطة تعلّم مع مسارات ومراحل.",
       caption:
         "أي صفحة = هدف واحد + خطوات واضحة. المستخدم يدخل → يشوف الخريطة → يختار. نفس المنطق لتطبيقك.",

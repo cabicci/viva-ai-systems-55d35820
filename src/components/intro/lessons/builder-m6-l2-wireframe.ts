@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import wireframeImg from "@/assets/lessons/unique/builder-m6-l2-wireframe.jpg";
 
 /** Builder · M6 · Lesson 02 — Wireframe (v3: Lesson Shape pilot) */
 export const BUILDER_M6_WIREFRAME_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const BUILDER_M6_WIREFRAME_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: wireframeImg,
       alt: "Wireframe مرسوم بقلم — هيدر، كارتين، أيقونات.",
       caption:
         "مربعات + أسماء. «هيدر»، «مربع نص»، «زرار»، «٣ كروت». ده اللغة اللي AI يفهمها.",

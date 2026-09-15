@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import brandImg from "@/assets/lessons/unique/creator-m7-l1-brand-basics.jpg";
 
 export const CREATOR_M6_BRAND_BASICS_BLOCKS: IntroLessonContent = [
   {
@@ -110,7 +109,6 @@ export const CREATOR_M6_BRAND_BASICS_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: brandImg,
       alt: "Creator brand basics screenshot",
       caption: "الصورة بتوضح إزاي الشكل يخدم الفكرة الأساسية، مش ياخد مكانها.",
       label: "Creator Brand Basics",

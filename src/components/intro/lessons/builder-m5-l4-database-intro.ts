@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import databaseScreenshot from "@/assets/lessons/builder-m5-l4-database-intro.jpg";
 
 /** Builder · M5 · Lesson 04 — Database Intro (v3: Lesson Shape pilot) */
 export const BUILDER_M5_DATABASE_INTRO_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const BUILDER_M5_DATABASE_INTRO_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: databaseScreenshot,
       alt: "Dashboard يعرض تقدّم في الدروس — علامات إنجاز.",
       caption:
         "التقدّم ده مش على جهازك — لو فتحت من موبايل تاني هتلاقيه. ده لأنه محفوظ في مخزن. تطبيقك هيشتغل بنفس الفكرة.",

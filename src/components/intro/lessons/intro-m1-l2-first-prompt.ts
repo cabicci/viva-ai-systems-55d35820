@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import firstPromptScreenshot from "@/assets/lessons/intro-m1-l2-first-prompt.jpg";
 
 /**
  * Intro · Lesson 02 — أول Prompt ليك (v3: Lesson Shape pilot)
@@ -112,7 +111,6 @@ export const INTRO_FIRST_PROMPT_CONTENT: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: firstPromptScreenshot,
       alt: "مثال بصري: Prompt منظم فيه دور وسياق ومهمة وشكل",
       caption:
         "تخيّل رسالتك فيها أربع خانات: مين الـ AI؟ الموقف إيه؟ عايز إيه؟ الرد يطلع بأي شكل؟ الصورة توضّح الفكرة — مش محتاج أداة معينة.",

@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import iterationImg from "@/assets/lessons/unique/builder-m6-l5-iteration.jpg";
 
 /** Builder · M6 · Lesson 05 — Iteration Loop (v3: Lesson Shape pilot · optional depth) */
 export const BUILDER_M6_ITERATION_BLOCKS: IntroLessonContent = [
@@ -109,7 +108,6 @@ export const BUILDER_M6_ITERATION_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: iterationImg,
       alt: "رسمة دائرية فيها 4 خطوات: اطلب -> شوف النتيجة -> راجع -> عدّل",
       caption:
         "اطلب → شوف النتيجة → راجع → عدّل. متستعجلش — أي واجهة محترفة بتاخد لفات. كل لفة = تعديل واحد بس.",

@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM3ErrorHandlingScreenshot from "@/assets/lessons/unique/automator-m4-l3-error-handling.jpg";
 
 /** Automator · M4 · L3 — Error Handling (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M4_L3_ERROR_HANDLING_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const AUTOMATOR_M4_L3_ERROR_HANDLING_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: automatorM3ErrorHandlingScreenshot,
       alt: "مثال على طبقات تشغيل مع معالجة أخطاء",
       caption:
         "كل طبقة في الشغل المتكرر محتاجة خطة بديلة: لو فشلت → إيه البديل؟ مش «نوقف وننسى».",

@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import setupScreenshot from "@/assets/lessons/intro-m1-l3-setup-your-ai.jpg";
 
 /**
  * Intro · Lesson 03 — افتح أول AI ليك في دقيقتين (v3: Lesson Shape pilot)
@@ -109,7 +108,6 @@ export const INTRO_SETUP_YOUR_AI_CONTENT: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: setupScreenshot,
       alt: "ثلاث واجهات Chatbot: مربع كتابة في الأسفل ومحادثة تظهر فوق",
       caption:
         "الواجهة مش محتاجة شرح طويل: مربع كتابة تحت، الرد يظهر فوق. أول رسالة أهم من اختيار الأداة المثالية.",

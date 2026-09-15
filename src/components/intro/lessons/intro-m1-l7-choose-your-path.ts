@@ -10,7 +10,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import curriculumScreenshot from "@/assets/lessons/intro-m1-l7-choose-your-path.jpg";
 
 /**
  * Intro · Lesson 07 — اختار مسارك (v3: Lesson Shape pilot · Intro capstone)
@@ -114,7 +113,6 @@ export const INTRO_CHOOSE_YOUR_PATH_CONTENT: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: curriculumScreenshot,
       alt: "خريطة المسارات مرتبة حسب المستوى: User ثم Operator ثم Builder",
       caption:
         "فكّرها كخريطة: فوق Intro، تحتها مسارات المستوى ١ (Business، Creator، Analyst)، بعدين Automator، وآخر حاجة Builder للعمق الاختياري. اختيارك = تركيز — مش قفل باقي المسارات.",

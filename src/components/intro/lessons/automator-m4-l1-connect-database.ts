@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM3ConnectDatabaseScreenshot from "@/assets/lessons/unique/automator-m4-l1-connect-database.jpg";
 
 /** Automator · M4 · L1 — Connect Database (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M4_L1_CONNECT_DATABASE_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const AUTOMATOR_M4_L1_CONNECT_DATABASE_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: automatorM3ConnectDatabaseScreenshot,
       alt: "مثال على بيانات منظمة في جدول",
       caption:
         "كل حدث (تسجيل، تقدّم، طلب) بيتسجّل في مكان واحد. الـ workflow يقرأ ويكتب من نفس المصدر — مش ملفات متفرقة.",

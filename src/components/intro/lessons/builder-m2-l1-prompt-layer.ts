@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import promptClarityScreenshot from "@/assets/lessons/builder-m2-l1-prompt-layer.jpg";
 
 /** Builder · M2 · Lesson 01 — طبقة الـ Prompt (v3: Lesson Shape pilot) */
 export const BUILDER_M2_PROMPT_LAYER_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const BUILDER_M2_PROMPT_LAYER_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: promptClarityScreenshot,
       alt: "صفحة خريطة منهج — هيدر، شريط تقدّم، ومراحل مرقّمة.",
       caption:
         "الصفحة دي اتبنت بـ Prompt فيه: الهيكل، الترتيب، وشكل كل مرحلة. لو الطلب كان «اعمل صفحة منهج» بس، كان هيطلع لستة عادية. الفرق = تفاصيل في الـ Prompt.",

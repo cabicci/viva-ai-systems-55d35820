@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import automatorM2FiltersRoutersScreenshot from "@/assets/lessons/unique/automator-m3-l3-filters-routers.jpg";
 
 /** Automator · M3 · L3 — Filters & Routers (v3: Lesson Shape pilot) */
 export const AUTOMATOR_M3_L3_FILTERS_ROUTERS_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const AUTOMATOR_M3_L3_FILTERS_ROUTERS_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: automatorM2FiltersRoutersScreenshot,
       alt: "مثال على Router بيوزّع حسب الاختيار",
       caption:
         "نفس الحدث (مستخدم دخل) — بس المسار بيتغيّر حسب الاختيار. نفس الفكرة في شغلك: lead جديد → مسار. شكوى → مسار تاني.",

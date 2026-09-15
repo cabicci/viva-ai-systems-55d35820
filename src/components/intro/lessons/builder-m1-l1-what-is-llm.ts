@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import llmScreenshot from "@/assets/lessons/builder-m1-l1-what-is-llm.jpg";
 
 /** Builder · M1 · Lesson 01 — إيه هو الـ LLM؟ (v3: Lesson Shape pilot) */
 export const BUILDER_M1_WHAT_IS_LLM_BLOCKS: IntroLessonContent = [
@@ -111,7 +110,6 @@ export const BUILDER_M1_WHAT_IS_LLM_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: llmScreenshot,
       alt: "واجهة مساعد AI — مربع سؤال مع سياق الدرس الحالي.",
       caption:
         "المساعد مش متبرمج بإجابات جاهزة. بياخد سؤالك + السياق (إنت في أنهي درس) ويخمّن أنسب رد. عشان كده يقدر يساعد في أسئلة جديدة — وعشان كده لازم تتحقّق من أي حقيقة قبل ما تعتمد عليها في منتجك.",

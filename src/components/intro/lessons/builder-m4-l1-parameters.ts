@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import temperatureScreenshot from "@/assets/lessons/builder-m4-l1-parameters.jpg";
 
 /** Builder · M4 · Lesson 01 — Temperature (v3: Lesson Shape pilot) */
 export const BUILDER_M4_TEMPERATURE_BLOCKS: IntroLessonContent = [
@@ -110,7 +109,6 @@ export const BUILDER_M4_TEMPERATURE_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: temperatureScreenshot,
       alt: "خريطة منهج — كروت دروس بنفس التنسيق.",
       caption:
         "كروت الدروس نفس الشكل — صفر مفاجآت. ده مناسب لمحتوى منظم (temp واطية). لو كانت temp عالية، كل كارت كان هيطلع بترتيب وأسلوب مختلف — صعب تمشي في المنهج.",

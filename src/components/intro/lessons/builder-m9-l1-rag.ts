@@ -10,7 +10,6 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import type { IntroLessonContent } from "../intro-lesson-types";
-import ragDiagram from "@/assets/lessons/concepts/rag-diagram.jpg";
 
 /** Builder · M9 · Lesson 01 — RAG (v3: Lesson Shape pilot · optional depth) */
 export const BUILDER_M9_RAG_BLOCKS: IntroLessonContent = [
@@ -111,7 +110,6 @@ export const BUILDER_M9_RAG_BLOCKS: IntroLessonContent = [
     tone: "primary",
     block: {
       kind: "screenshot",
-      src: ragDiagram,
       alt: "رسم بياني للـ RAG: السؤال بيتحول لـ vector ويدور في قاعدة بيانات المستندات، وأكتر chunks شبهه بترجع وتتدمج مع السؤال في prompt واحد للـ LLM.",
       caption:
         "(١) السؤال يتحوّل لبحث في ملفاتك. (٢) أقرب فقرات ترجع. (٣) السؤال + الفقرات يتبعتوا للـ AI — فيرد من ورقك مش يخمّن.",
