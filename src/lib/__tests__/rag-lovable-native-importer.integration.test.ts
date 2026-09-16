@@ -285,6 +285,23 @@ describe.skipIf(!dockerUp)("RAG Lovable-native resumable importer (disposable)",
       `SELECT count(*)::text FROM public.knowledge_chunks WHERE source_type='lesson';`,
     ).trim();
 
+    // Production upgrade regression: the same stable locale source_id may exist
+    // in the active version while its replacement is imported into staging.
+    // Identity must be unique per index_version, not globally per source_type.
+    const first = slice[0]!;
+    psql(`
+      INSERT INTO public.knowledge_chunks (
+        source_type, source_id, path_id, module_id, lesson_id, title, content,
+        embedding, locale, index_version, index_state, indexing_failed
+      ) VALUES (
+        'locale_lesson', '${first.chunkId.replace(/'/g, "''")}',
+        '${first.trackId.replace(/'/g, "''")}', '${first.moduleId.replace(/'/g, "''")}',
+        '${first.lessonId.replace(/'/g, "''")}', 'prior active', 'prior active content',
+        '${vecLiteral(fakeVec("prior-active"))}'::extensions.vector,
+        '${first.locale}', 'rag-index-prior-active', 'active', false
+      );
+    `);
+
     const rowsJson = JSON.stringify(rows).replace(/'/g, "''");
     const commit = psqlAsServiceRole(`
       SELECT public.rag_commit_import_batch('${lease}'::uuid, '${rowsJson}'::jsonb)::text;
