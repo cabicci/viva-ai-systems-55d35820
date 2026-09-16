@@ -253,6 +253,14 @@ type AuthoritativeLookupJson = {
 /** Module-scope server-owned authoritative corpus lookup (Edge + tests). */
 const AUTHORITATIVE_LOOKUP = AUTHORITATIVE_CORPUS_LOOKUP_JSON as AuthoritativeLookupJson;
 
+/** Accept the manifest base version or its content-bound deployed version key. */
+function matchesAuthoritativeIndexVersion(candidate: string): boolean {
+  if (candidate === RAG_INDEX_VERSION) return true;
+  const sourcePrefix = CONTENT_FREEZE_SHA.slice(0, 8);
+  const escapedIndex = RAG_INDEX_VERSION.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`^${escapedIndex}-${sourcePrefix}-[a-f0-9]{16}$`).test(candidate);
+}
+
 function composeLookupKey(parts: {
   locale: string;
   lessonId: string;
@@ -336,7 +344,7 @@ function admitsAuthoritativeChunk(chunk: SemanticChunk, expectedLocale: string):
   if (!chunk.packageChecksum || !chunk.chunkChecksum) return false;
   if (!chunk.indexVersion) return false;
   if (!packagePathMatchesLocale(chunk.packagePath, expectedLocale)) return false;
-  if (chunk.indexVersion !== RAG_INDEX_VERSION) return false;
+  if (!matchesAuthoritativeIndexVersion(chunk.indexVersion)) return false;
 
   // CONTENT_FREEZE_SHA is a 40-char git commit id, not a SHA-256 digest.
   if (typeof chunk.sourceSha !== "string" || chunk.sourceSha.length === 0) return false;
