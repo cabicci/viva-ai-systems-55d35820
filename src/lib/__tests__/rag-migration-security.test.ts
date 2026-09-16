@@ -80,6 +80,24 @@ const LEAST_PRIVILEGE = readFileSync(
   "utf8",
 );
 
+const VERSIONED_IDENTITY = readFileSync(
+  path.join(REPO_ROOT, "supabase/migrations/20260916090000_rag_versioned_chunk_identity.sql"),
+  "utf8",
+);
+
+describe("RAG versioned chunk identity migration", () => {
+  it("preserves legacy identity while allowing parallel locale index versions", () => {
+    expect(VERSIONED_IDENTITY).toContain("knowledge_chunks_unversioned_source_identity_unique");
+    expect(VERSIONED_IDENTITY).toMatch(
+      /WHERE source_type <> 'locale_lesson' OR index_version IS NULL/,
+    );
+    expect(VERSIONED_IDENTITY).toMatch(
+      /DROP CONSTRAINT IF EXISTS knowledge_chunks_source_identity_unique/,
+    );
+    expect(VERSIONED_IDENTITY).not.toMatch(/DROP INDEX.*knowledge_chunks_locale_version_identity/);
+  });
+});
+
 describe("RAG retrieval RPC least privilege", () => {
   it("denies authenticated and anon execute on match_locale_knowledge_chunks", () => {
     expect(LEAST_PRIVILEGE).toMatch(
