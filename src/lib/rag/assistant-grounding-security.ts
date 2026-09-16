@@ -144,6 +144,22 @@ export interface AuthoritativeCitation {
 
 const CITATION_EXCERPT_MAX = 500;
 
+/**
+ * Imported indexes use a deployment key rather than the manifest's base
+ * version: `${base}-${sourceSha.slice(0, 8)}-${digest16}`. Accept only that
+ * exact, content-bound shape (or the base version used by local fixtures).
+ */
+export function matchesAuthoritativeIndexVersion(
+  candidate: string,
+  expectedIndex: string,
+  expectedSourceSha: string,
+): boolean {
+  if (candidate === expectedIndex) return true;
+  const escapedIndex = expectedIndex.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const sourcePrefix = expectedSourceSha.slice(0, 8);
+  return new RegExp(`^${escapedIndex}-${sourcePrefix}-[a-f0-9]{16}$`).test(candidate);
+}
+
 let cachedRepoLookup: AuthoritativeCorpusLookup | null | undefined;
 
 /** Resolve default lookup from repo artifacts when available (Node tests / tooling). */
@@ -198,7 +214,9 @@ export function admitsAuthoritativeChunk(
   if (!chunk.packageChecksum || !chunk.chunkChecksum) return false;
   if (!chunk.indexVersion) return false;
   if (!packagePathMatchesLocale(chunk.packagePath, expectedLocale)) return false;
-  if (chunk.indexVersion !== expectedIndex) return false;
+  if (!matchesAuthoritativeIndexVersion(chunk.indexVersion, expectedIndex, expectedSourceSha)) {
+    return false;
+  }
 
   // A. sourceSha equals approved content-freeze SHA (git SHA-1) + registered lookup
   // Note: CONTENT_FREEZE_SHA is a 40-char git commit id, not a SHA-256 digest.
