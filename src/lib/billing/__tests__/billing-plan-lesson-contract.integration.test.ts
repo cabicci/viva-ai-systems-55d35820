@@ -44,7 +44,9 @@ describe.skipIf(!ENABLED)("paid lesson contract — disposable DB", () => {
         FROM billing.plan_versions pv
         JOIN billing.plan_catalog pc ON pc.id=pv.plan_id
         JOIN billing.entitlement_policy_versions epv ON epv.id=pv.entitlement_policy_version_id
-        WHERE pv.status='published' AND pc.plan_key IN ('pro','pro_plus')`).trim(),
+        WHERE pv.status='published'
+          AND pc.plan_key IN ('pro','pro_plus')
+          AND epv.policy_key=pc.plan_key`).trim(),
     ).toBe("pro:71,pro:71,pro_plus:100,pro_plus:100");
   });
 });
