@@ -151,7 +151,7 @@ describe.skipIf(!dockerUp)("RAG Lovable-native resumable importer (disposable)",
     }
   });
 
-  it("admits locked corpus digests and 400/3700 locale totals", async () => {
+  it("admits locked corpus digests and 400/3701 locale totals", async () => {
     expect(sha256File("package-manifest.json")).toBe(LOCKED_ARTIFACT_DIGESTS.packageManifestSha256);
     expect(sha256File("chunk-manifest.json")).toBe(LOCKED_ARTIFACT_DIGESTS.chunkManifestSha256);
     expect(sha256File("chunks.json")).toBe(LOCKED_ARTIFACT_DIGESTS.chunksSha256);
@@ -193,7 +193,7 @@ describe.skipIf(!dockerUp)("RAG Lovable-native resumable importer (disposable)",
     `);
     expect(sizes).toContain("0:64:0");
     expect(sizes).toContain("56:64:3584");
-    expect(sizes).toContain("57:52:3648");
+    expect(sizes).toContain("57:53:3648");
 
     const resume = psqlAsServiceRole(`SELECT public.rag_initialize_or_resume_import()::text;`);
     expect(resume).toContain('"resumed": true');

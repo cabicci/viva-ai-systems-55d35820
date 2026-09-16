@@ -11,9 +11,9 @@ describe("RAG mock indexing and activation", () => {
   it("runs full staging → activation → rollback flow", () => {
     const report = runMockIndexingFlow(REPO_ROOT);
     expect(report.packageCount).toBe(400);
-    expect(report.chunkCount).toBe(3700);
-    expect(report.inserted).toBe(3700);
-    expect(report.skipped).toBe(3700);
+    expect(report.chunkCount).toBe(3701);
+    expect(report.inserted).toBe(3701);
+    expect(report.skipped).toBe(3701);
     expect(report.activationOk).toBe(true);
     expect(report.rollbackOk).toBe(true);
     expect(report.singleActiveEnforced).toBe(true);

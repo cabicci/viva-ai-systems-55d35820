@@ -346,7 +346,7 @@ export function RagLovableNativeImportPanel() {
             batches: {status.completedBatchCount}/{status.plannedBatchCount}
           </div>
           <div>
-            chunks: {status.acceptedChunkCount}/{locked?.chunkCount ?? 3700}
+            chunks: {status.acceptedChunkCount}/{locked?.chunkCount ?? 3701}
           </div>
           <div>
             attempts: {status.providerAttemptCount}/{status.maxProviderAttempts}

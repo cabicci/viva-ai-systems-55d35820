@@ -24,7 +24,7 @@ export const EXPECTED_PROJECT_REF = "abyqqeboyrkkwhjpwmtd";
 export const EXPECTED_SOURCE_SHA = CONTENT_FREEZE_SHA;
 export const EXPECTED_INDEX_VERSION = RAG_INDEX_VERSION;
 export const EXPECTED_PACKAGE_COUNT = EXPECTED_TOTAL_PACKAGES;
-export const EXPECTED_CHUNK_COUNT = 3700;
+export const EXPECTED_CHUNK_COUNT = 3701;
 export const EXPECTED_EMBEDDING_MODEL = EMBEDDING_MODEL_PLACEHOLDER;
 export const EXPECTED_EMBEDDING_DIMENSIONS = EMBEDDING_DIMENSIONS;
 
@@ -39,7 +39,7 @@ export const EXPECTED_LOCALE_CHUNK_COUNTS = {
   "ar-EG": 1008,
   "ar-MSA": 866,
   "ar-Gulf": 862,
-  en: 964,
+  en: 965,
 } as const;
 
 export const PACKAGE_MANIFEST_SCHEMA = "package-manifest-v1" as const;

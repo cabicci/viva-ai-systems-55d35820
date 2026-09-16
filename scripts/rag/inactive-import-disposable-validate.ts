@@ -203,7 +203,7 @@ async function main(): Promise<void> {
       version_key, source_sha, status, package_count, chunk_count,
       chunk_manifest_checksum, embedding_model
     ) VALUES (
-      '${partialKey}', '${CONTENT_FREEZE_SHA}', 'staging', 400, 3700,
+      '${partialKey}', '${CONTENT_FREEZE_SHA}', 'staging', 400, 3701,
       '${admission.chunkManifestChecksum}', 'text-embedding-3-small'
     );
   `);
