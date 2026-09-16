@@ -378,6 +378,16 @@ describe("handleAssistantRuntimeRequest — integrity cases 1–24", () => {
     expect(callCounts(deps).llm).toBe(0);
   });
 
+  it("12b: active content-bound Production indexVersion is admitted", async () => {
+    const deployedVersion = `${RAG_INDEX_VERSION}-${CONTENT_FREEZE_SHA.slice(0, 8)}-930bc16ad0085e44`;
+    const { json, deps, res } = await runWithChunks([{ ...sample, indexVersion: deployedVersion }]);
+    expect(res.status).toBe(200);
+    expect(json.ok).toBe(true);
+    expect(json.citations).toHaveLength(1);
+    expect(json.citations[0].indexVersion).toBe(deployedVersion);
+    expect(callCounts(deps).llm).toBe(1);
+  });
+
   it("13: malformed sourceSha is rejected — fail-closed", async () => {
     const { json, deps, res } = await runWithChunks([{ ...sample, sourceSha: "abc123" }]);
     expect(res.status).toBe(422);
