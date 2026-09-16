@@ -444,7 +444,7 @@ describe.skipIf(!dockerUp)("RAG Lovable-native resumable importer (disposable)",
     expect(fp2).toBe(fp);
   });
 
-  it("activation boundary: product server actions wrap activate/deactivate with guards", () => {
+  it("activation boundary: product server actions wrap guarded upgrade/rollback RPCs", () => {
     const lifecycle = fs.readFileSync(
       path.join(REPO_ROOT, "src/lib/rag-production-lifecycle.functions.ts"),
       "utf8",
@@ -457,11 +457,11 @@ describe.skipIf(!dockerUp)("RAG Lovable-native resumable importer (disposable)",
       path.join(REPO_ROOT, "src/components/admin/RagLovableNativeImportPanel.tsx"),
       "utf8",
     );
-    expect(executor).toContain("activate_rag_index_version");
-    expect(executor).toContain("rag_deactivate_first_active_version");
+    expect(executor).toContain("rag_activate_index_upgrade");
+    expect(executor).toContain("rag_rollback_index_upgrade");
     expect(lifecycle).toContain("activateAuthorizedRagIndexVersion");
     expect(lifecycle).toContain("rollbackAuthorizedRagIndexVersion");
-    expect(lifecycle).not.toContain("rollback_rag_index_version");
+    expect(lifecycle).not.toContain('rpc("rag_rollback_index_upgrade"');
     expect(lifecycle).toContain("await assertAdmin(context)");
     expect(panel).toContain("Activate");
     expect(panel).toContain("Rollback");

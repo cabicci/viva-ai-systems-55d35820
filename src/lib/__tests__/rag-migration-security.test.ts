@@ -85,6 +85,11 @@ const VERSIONED_IDENTITY = readFileSync(
   "utf8",
 );
 
+const GUARDED_UPGRADE = readFileSync(
+  path.join(REPO_ROOT, "supabase/migrations/20260916100000_rag_guarded_upgrade_activation.sql"),
+  "utf8",
+);
+
 describe("RAG versioned chunk identity migration", () => {
   it("preserves legacy identity while allowing parallel locale index versions", () => {
     expect(VERSIONED_IDENTITY).toContain("knowledge_chunks_unversioned_source_identity_unique");
@@ -95,6 +100,29 @@ describe("RAG versioned chunk identity migration", () => {
       /DROP CONSTRAINT IF EXISTS knowledge_chunks_source_identity_unique/,
     );
     expect(VERSIONED_IDENTITY).not.toMatch(/DROP INDEX.*knowledge_chunks_locale_version_identity/);
+  });
+});
+
+describe("RAG guarded upgrade migration", () => {
+  it("locks exact active and staging versions behind service-role-only RPCs", () => {
+    expect(GUARDED_UPGRADE).toContain("rag_activate_index_upgrade");
+    expect(GUARDED_UPGRADE).toContain("rag_rollback_index_upgrade");
+    expect(GUARDED_UPGRADE).toContain("ACTIVE_VERSION_MISMATCH");
+    expect(GUARDED_UPGRADE).toContain("RESTORE_VERSION_NOT_SUPERSEDED");
+    expect(GUARDED_UPGRADE).toMatch(
+      /REVOKE ALL ON FUNCTION public\.rag_activate_index_upgrade\(text, text\)[\s\S]*?FROM PUBLIC, anon, authenticated/,
+    );
+    expect(GUARDED_UPGRADE).toMatch(
+      /GRANT EXECUTE ON FUNCTION public\.rag_rollback_index_upgrade\(text, text\) TO service_role/,
+    );
+  });
+
+  it("clears a stale session error only after successful batch completion", () => {
+    expect(GUARDED_UPGRADE).toContain("rag_clear_session_error_after_batch_success");
+    expect(GUARDED_UPGRADE).toMatch(/NEW\.status = 'completed'/);
+    expect(GUARDED_UPGRADE).toMatch(/b\.status = 'failed'/);
+    expect(GUARDED_UPGRADE).toContain("rag-lovable-cf227e066b9b4550806c40adb1e8bde5");
+    expect(GUARDED_UPGRADE).toContain("s.accepted_chunk_count = 3701");
   });
 });
 

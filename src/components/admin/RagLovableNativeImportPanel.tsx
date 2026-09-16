@@ -20,6 +20,7 @@ import {
   AUTHORIZED_CHUNK_COUNT,
   AUTHORIZED_EXECUTION_ID,
   AUTHORIZED_MAX_PROVIDER_ATTEMPTS,
+  AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY,
   AUTHORIZED_SOURCE_SHA,
   FIRST_ACTIVATION_AUTHORIZATION_ID,
   LOVABLE_NATIVE_AUTHORIZATION_ID,
@@ -34,6 +35,7 @@ type ValidationView = {
   sourceSha?: string;
   stagingChunkCount?: number;
   executionId?: string;
+  activeVersionCount?: number;
 };
 
 function isFreshSuccessfulStatus(status: StatusPayload | null): boolean {
@@ -49,7 +51,7 @@ function isFreshSuccessfulStatus(status: StatusPayload | null): boolean {
     status.providerAttemptCount >= 0 &&
     status.providerAttemptCount <= AUTHORIZED_MAX_PROVIDER_ATTEMPTS &&
     status.lastErrorCode === null &&
-    status.currentActiveVersionKey === null
+    status.currentActiveVersionKey === AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY
   );
 }
 
@@ -61,7 +63,8 @@ function isFreshSuccessfulValidation(validation: ValidationView | null): boolean
     validation.errors.length === 0 &&
     validation.versionKey === AUTHORIZED_STAGING_VERSION_KEY &&
     validation.sourceSha === AUTHORIZED_SOURCE_SHA &&
-    validation.stagingChunkCount === AUTHORIZED_CHUNK_COUNT
+    validation.stagingChunkCount === AUTHORIZED_CHUNK_COUNT &&
+    validation.activeVersionCount === 1
   );
 }
 
@@ -172,7 +175,7 @@ export function RagLovableNativeImportPanel() {
             RAG LOVABLE-NATIVE IMPORT
           </p>
           <p className="text-sm text-foreground/90 leading-relaxed">
-            Admin-only resumable staging importer. One embedding batch per explicit action. First
+            Admin-only resumable staging importer. One embedding batch per explicit action. Upgrade
             activation requires fresh status, fresh validation, and exact confirmation. Server
             repeats every trusted check.
           </p>
@@ -313,8 +316,8 @@ export function RagLovableNativeImportPanel() {
             disabled={busy || !rollbackEligible}
             title={
               rollbackEligible
-                ? "Reverse first activation only"
-                : "Unavailable until the authorized version is the sole active version"
+                ? "Restore the exact prior active version"
+                : "Unavailable until the authorized upgrade version is the sole active version"
             }
             onClick={() =>
               void run("rollback", () =>

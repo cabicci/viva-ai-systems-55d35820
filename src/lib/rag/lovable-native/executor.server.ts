@@ -27,6 +27,7 @@ import {
   AUTHORIZED_CHUNK_COUNT,
   AUTHORIZED_EXECUTION_ID,
   AUTHORIZED_MAX_PROVIDER_ATTEMPTS,
+  AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY,
   AUTHORIZED_SOURCE_SHA,
   AUTHORIZED_STAGING_VERSION_KEY,
   ROLLBACK_CONFIRMATION,
@@ -60,6 +61,7 @@ export type LifecycleGateErrorCode =
   | "LAST_ERROR_PRESENT"
   | "VALIDATION_FAILED"
   | "ACTIVE_VERSION_EXISTS"
+  | "ACTIVE_VERSION_MISMATCH"
   | "ACTIVE_VERSION_COUNT_INVALID"
   | "ACTIVATION_RPC_FAILURE"
   | "ROLLBACK_UNAVAILABLE"
@@ -107,6 +109,7 @@ function sanitizeCode(
     "LAST_ERROR_PRESENT",
     "VALIDATION_FAILED",
     "ACTIVE_VERSION_EXISTS",
+    "ACTIVE_VERSION_MISMATCH",
     "ACTIVE_VERSION_COUNT_INVALID",
     "ACTIVATION_RPC_FAILURE",
     "ROLLBACK_UNAVAILABLE",
@@ -429,6 +432,7 @@ export type ActivationEvidence = {
   executionId: typeof AUTHORIZED_EXECUTION_ID;
   sourceSha: typeof AUTHORIZED_SOURCE_SHA;
   activatedChunks: number;
+  supersededVersionKey: typeof AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY;
   activeVersionCountAfter: number;
 };
 
@@ -436,6 +440,8 @@ export type RollbackEvidence = {
   ok: true;
   rolledBack: true;
   versionKey: typeof AUTHORIZED_STAGING_VERSION_KEY;
+  restoredVersionKey: typeof AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY;
+  restoredChunks: number;
   activeVersions: number;
 };
 
@@ -488,8 +494,8 @@ function assertPreActivationStatus(status: RagImportStatusView) {
   if (status.lastErrorCode !== null) {
     throw new LifecycleGateError("LAST_ERROR_PRESENT");
   }
-  if (status.currentActiveVersionKey !== null) {
-    throw new LifecycleGateError("ACTIVE_VERSION_EXISTS");
+  if (status.currentActiveVersionKey !== AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY) {
+    throw new LifecycleGateError("ACTIVE_VERSION_MISMATCH");
   }
 }
 
@@ -516,16 +522,14 @@ function assertPreActivationValidation(validation: Record<string, unknown>) {
   if (activeVersionCount === null) {
     throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
   }
-  if (activeVersionCount !== 0) {
-    throw new LifecycleGateError(
-      activeVersionCount > 1 ? "ACTIVE_VERSION_COUNT_INVALID" : "ACTIVE_VERSION_EXISTS",
-    );
+  if (activeVersionCount !== 1) {
+    throw new LifecycleGateError("ACTIVE_VERSION_COUNT_INVALID");
   }
 }
 
 /**
- * Fail-closed first Production activation. Calls activate_rag_index_version exactly once
- * only after every trusted precheck passes.
+ * Fail-closed Production upgrade. The SQL RPC atomically verifies the exact prior active
+ * version, supersedes it, and activates the locked staging version.
  */
 export async function activateAuthorizedRagIndexVersion(
   admin: AdminClient,
@@ -541,10 +545,10 @@ export async function activateAuthorizedRagIndexVersion(
   if (!validation) throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
   assertPreActivationValidation(validation);
 
-  // Re-check active state immediately before the single activation RPC.
+  // Re-check the exact active predecessor immediately before the single activation RPC.
   const statusAgain = await getImportStatus(admin);
-  if (statusAgain.currentActiveVersionKey !== null) {
-    throw new LifecycleGateError("ACTIVE_VERSION_EXISTS");
+  if (statusAgain.currentActiveVersionKey !== AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY) {
+    throw new LifecycleGateError("ACTIVE_VERSION_MISMATCH");
   }
   if (statusAgain.executionId !== AUTHORIZED_EXECUTION_ID) {
     throw new LifecycleGateError("EXECUTION_MISMATCH");
@@ -553,8 +557,9 @@ export async function activateAuthorizedRagIndexVersion(
     throw new LifecycleGateError("WRONG_VERSION");
   }
 
-  const rpc = await admin.rpc("activate_rag_index_version", {
+  const rpc = await admin.rpc("rag_activate_index_upgrade", {
     p_version_key: AUTHORIZED_STAGING_VERSION_KEY,
+    p_expected_active_version_key: AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY,
   });
   if (rpc.error) {
     throw new LifecycleGateError("ACTIVATION_RPC_FAILURE");
@@ -562,11 +567,17 @@ export async function activateAuthorizedRagIndexVersion(
   const result = asRecord(rpc.data);
   if (!result) throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
   if (result.ok !== true) throw new LifecycleGateError("ACTIVATION_RPC_FAILURE");
-  if (readString(result.version_key) !== AUTHORIZED_STAGING_VERSION_KEY) {
+  if (readString(result.versionKey) !== AUTHORIZED_STAGING_VERSION_KEY) {
     throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
   }
-  const activatedChunks = readNumber(result.activated_chunks);
+  if (readString(result.supersededVersionKey) !== AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY) {
+    throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
+  }
+  const activatedChunks = readNumber(result.activatedChunks);
   if (activatedChunks === null || activatedChunks !== AUTHORIZED_CHUNK_COUNT) {
+    throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
+  }
+  if (readNumber(result.activeVersions) !== 1) {
     throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
   }
 
@@ -577,13 +588,14 @@ export async function activateAuthorizedRagIndexVersion(
     executionId: AUTHORIZED_EXECUTION_ID,
     sourceSha: AUTHORIZED_SOURCE_SHA,
     activatedChunks,
+    supersededVersionKey: AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY,
     activeVersionCountAfter: 1,
   };
 }
 
 /**
- * Guarded first-activation reversal wrapper. Does not run unless the exact
- * locked version is the sole active version. Uses rag_deactivate_first_active_version(text).
+ * Guarded upgrade rollback. Does not run unless the new locked version is the sole active
+ * version and the exact prior version remains superseded.
  *
  * Staging validation may report ok=false after activation (chunks are no longer staging);
  * activeVersionCount from that response is still trusted for the sole-active gate.
@@ -616,12 +628,13 @@ export async function rollbackAuthorizedRagIndexVersion(
     throw new LifecycleGateError("ACTIVE_VERSION_COUNT_INVALID");
   }
 
-  const rpc = await admin.rpc("rag_deactivate_first_active_version", {
-    p_version_key: AUTHORIZED_STAGING_VERSION_KEY,
+  const rpc = await admin.rpc("rag_rollback_index_upgrade", {
+    p_active_version_key: AUTHORIZED_STAGING_VERSION_KEY,
+    p_restore_version_key: AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY,
   });
   if (rpc.error) {
     const msg = (rpc.error.message ?? "").toUpperCase();
-    if (msg.includes("VERSION_NOT_ACTIVE") || msg.includes("PRIOR_SUPERSEDED_EXISTS")) {
+    if (msg.includes("VERSION_NOT_ACTIVE") || msg.includes("RESTORE_VERSION_NOT_SUPERSEDED")) {
       throw new LifecycleGateError("ROLLBACK_UNAVAILABLE");
     }
     throw new LifecycleGateError("ROLLBACK_RPC_FAILURE");
@@ -632,8 +645,15 @@ export async function rollbackAuthorizedRagIndexVersion(
   if (readString(result.versionKey) !== AUTHORIZED_STAGING_VERSION_KEY) {
     throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
   }
+  if (readString(result.restoredVersionKey) !== AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY) {
+    throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
+  }
+  const restoredChunks = readNumber(result.restoredChunks);
+  if (restoredChunks === null || restoredChunks <= 0) {
+    throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
+  }
   const activeVersions = readNumber(result.activeVersions);
-  if (activeVersions !== 0) {
+  if (activeVersions !== 1) {
     throw new LifecycleGateError("MALFORMED_RPC_RESPONSE");
   }
 
@@ -641,6 +661,8 @@ export async function rollbackAuthorizedRagIndexVersion(
     ok: true,
     rolledBack: true,
     versionKey: AUTHORIZED_STAGING_VERSION_KEY,
-    activeVersions: 0,
+    restoredVersionKey: AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY,
+    restoredChunks,
+    activeVersions: 1,
   };
 }
