@@ -11,11 +11,7 @@ import { Footer } from "@/components/site/Footer";
 import { LocaleProvider } from "@/lib/locale/locale-context";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { getUiString } from "@/lib/locale/ui-strings";
-import {
-  DEFAULT_LOCALE,
-  SUPPORTED_LOCALES,
-  type SupportedLocale,
-} from "@/lib/locale/types";
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES, type SupportedLocale } from "@/lib/locale/types";
 
 async function renderFooterAt(
   urlLocale: SupportedLocale,
@@ -51,15 +47,13 @@ function expectLocaleInHref(link: HTMLElement, locale: SupportedLocale) {
   const href = link.getAttribute("href");
   expect(href).toBeTruthy();
   const linkedUrl = new URL(href!, "https://masaarat.ai");
-  expect(linkedUrl.searchParams.get("locale")).toBe(
-    locale === DEFAULT_LOCALE ? null : locale,
-  );
+  expect(linkedUrl.searchParams.get("locale")).toBe(locale === DEFAULT_LOCALE ? null : locale);
 }
 
 describe("Footer locale navigation", () => {
   afterEach(() => cleanup());
 
-  it("preserves each supported locale in all three footer links", async () => {
+  it("preserves each supported locale in the public footer links and exposes support", async () => {
     for (const locale of SUPPORTED_LOCALES) {
       const rendered = await renderFooterAt(locale);
 
@@ -74,6 +68,10 @@ describe("Footer locale navigation", () => {
       expectLocaleInHref(
         screen.getByRole("link", { name: getUiString(locale, "footer.terms") }),
         locale,
+      );
+      expect(screen.getByRole("link", { name: "support@masaarat.ai" })).toHaveAttribute(
+        "href",
+        "mailto:support@masaarat.ai",
       );
 
       rendered.unmount();
