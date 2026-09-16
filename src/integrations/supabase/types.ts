@@ -1120,6 +1120,13 @@ export type Database = {
           title: string
         }[]
       }
+      rag_activate_index_upgrade: {
+        Args: {
+          p_expected_active_version_key: string
+          p_version_key: string
+        }
+        Returns: Json
+      }
       rag_claim_next_import_batch: { Args: never; Returns: Json }
       rag_commit_import_batch: {
         Args: { p_lease_token: string; p_rows: Json }
@@ -1155,6 +1162,13 @@ export type Database = {
         }[]
       }
       rag_require_service_role: { Args: never; Returns: undefined }
+      rag_rollback_index_upgrade: {
+        Args: {
+          p_active_version_key: string
+          p_restore_version_key: string
+        }
+        Returns: Json
+      }
       rag_validate_staging_import: { Args: never; Returns: Json }
       record_user_activity: { Args: never; Returns: Json }
       rollback_rag_index_version: {

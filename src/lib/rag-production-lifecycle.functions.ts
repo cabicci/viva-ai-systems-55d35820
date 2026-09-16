@@ -113,7 +113,10 @@ export type RagImportActionResponse = {
   activated?: boolean;
   rolledBack?: boolean;
   activatedChunks?: number;
+  supersededVersionKey?: string;
   activeVersions?: number;
+  restoredVersionKey?: string;
+  restoredChunks?: number;
   activeVersionCountAfter?: number;
 };
 
@@ -152,7 +155,11 @@ function toActionResponse(value: unknown): RagImportActionResponse {
     activated: typeof v.activated === "boolean" ? v.activated : undefined,
     rolledBack: typeof v.rolledBack === "boolean" ? v.rolledBack : undefined,
     activatedChunks: typeof v.activatedChunks === "number" ? v.activatedChunks : undefined,
+    supersededVersionKey:
+      typeof v.supersededVersionKey === "string" ? v.supersededVersionKey : undefined,
     activeVersions: typeof v.activeVersions === "number" ? v.activeVersions : undefined,
+    restoredVersionKey: typeof v.restoredVersionKey === "string" ? v.restoredVersionKey : undefined,
+    restoredChunks: typeof v.restoredChunks === "number" ? v.restoredChunks : undefined,
     activeVersionCountAfter:
       typeof v.activeVersionCountAfter === "number" ? v.activeVersionCountAfter : undefined,
   };
@@ -184,6 +191,7 @@ function sanitizeActionError(err: unknown): never {
     "LAST_ERROR_PRESENT",
     "VALIDATION_FAILED",
     "ACTIVE_VERSION_EXISTS",
+    "ACTIVE_VERSION_MISMATCH",
     "ACTIVE_VERSION_COUNT_INVALID",
     "ACTIVATION_RPC_FAILURE",
     "ROLLBACK_UNAVAILABLE",

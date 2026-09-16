@@ -45,6 +45,7 @@ import {
   AUTHORIZED_CHUNK_COUNT,
   AUTHORIZED_EXECUTION_ID,
   AUTHORIZED_MAX_PROVIDER_ATTEMPTS,
+  AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY,
   AUTHORIZED_SOURCE_SHA,
   FIRST_ACTIVATION_AUTHORIZATION_ID,
   LOVABLE_NATIVE_AUTHORIZATION_ID,
@@ -72,9 +73,9 @@ function lockedCompletedStatus(overrides: Record<string, unknown> = {}) {
     acceptedChunkCount: AUTHORIZED_CHUNK_COUNT,
     providerAttemptCount: 58,
     nextBatchOrdinal: null,
-    currentActiveVersionKey: null,
-    legacyLessonCount: 673,
-    localeLessonCount: 3700,
+    currentActiveVersionKey: AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY,
+    legacyLessonCount: 0,
+    localeLessonCount: 7401,
     lastErrorCode: null,
     plannedBatchCount: AUTHORIZED_BATCH_COUNT,
     maxProviderAttempts: AUTHORIZED_MAX_PROVIDER_ATTEMPTS,
@@ -91,7 +92,7 @@ function lockedValidation(overrides: Record<string, unknown> = {}) {
     stagingChunkCount: AUTHORIZED_CHUNK_COUNT,
     completedBatches: AUTHORIZED_BATCH_COUNT,
     providerAttemptTotal: 58,
-    activeVersionCount: 0,
+    activeVersionCount: 1,
     sourceSha: AUTHORIZED_SOURCE_SHA,
     indexVersion: "rag-index-v1",
     ...overrides,
@@ -205,10 +206,10 @@ describe("lovable-native provenance and auth surface", () => {
     );
     expect(src).not.toMatch(/sourceSha.*z\./);
     expect(src).not.toMatch(/executionId.*z\./);
-    expect(executor).toContain('rpc("activate_rag_index_version"');
-    expect(executor).toContain('rpc("rag_deactivate_first_active_version"');
-    expect(src).not.toContain("rollback_rag_index_version");
-    expect(executor).not.toContain("rollback_rag_index_version");
+    expect(executor).toContain('rpc("rag_activate_index_upgrade"');
+    expect(executor).toContain('rpc("rag_rollback_index_upgrade"');
+    expect(src).not.toContain('rpc("rag_activate_index_upgrade"');
+    expect(src).not.toContain('rpc("rag_rollback_index_upgrade"');
     expect(ACTIVATION_DISABLED).toBe(false);
     expect(ROLLBACK_DISABLED).toBe(false);
     expect(getDisabledLifecycleControls().activate).toBe("activateAuthorizedRagIndexVersion");
@@ -476,7 +477,7 @@ describe("lovable-native admin UI activation boundary", () => {
   });
 });
 
-describe("first-activation fail-closed gates (mocked)", () => {
+describe("upgrade-activation fail-closed gates (mocked)", () => {
   beforeEach(() => {
     vi.restoreAllMocks();
   });
@@ -489,7 +490,7 @@ describe("first-activation fail-closed gates (mocked)", () => {
     await expect(run()).rejects.toMatchObject({ code });
     if (admin) {
       const activateCalls = admin.rpc.mock.calls.filter(
-        (c) => c[0] === "activate_rag_index_version",
+        (c) => c[0] === "rag_activate_index_upgrade",
       );
       const claimCalls = admin.rpc.mock.calls.filter((c) => c[0] === "rag_claim_next_import_batch");
       const initCalls = admin.rpc.mock.calls.filter(
@@ -614,7 +615,7 @@ describe("first-activation fail-closed gates (mocked)", () => {
     );
   });
 
-  it("rejects accepted chunk count below 3700", async () => {
+  it("rejects accepted chunk count below 3701", async () => {
     const admin = mockAdmin({
       rag_get_import_status: () => lockedCompletedStatus({ acceptedChunkCount: 3699 }),
       rag_validate_staging_import: () => lockedValidation(),
@@ -630,7 +631,7 @@ describe("first-activation fail-closed gates (mocked)", () => {
     );
   });
 
-  it("rejects staging chunk count below 3700", async () => {
+  it("rejects staging chunk count below 3701", async () => {
     const admin = mockAdmin({
       rag_get_import_status: () => lockedCompletedStatus(),
       rag_validate_staging_import: () => lockedValidation({ stagingChunkCount: 3699 }),
@@ -744,7 +745,7 @@ describe("first-activation fail-closed gates (mocked)", () => {
     );
   });
 
-  it("rejects existing active version", async () => {
+  it("rejects an unexpected active predecessor", async () => {
     const admin = mockAdmin({
       rag_get_import_status: () =>
         lockedCompletedStatus({ currentActiveVersionKey: AUTHORIZED_STAGING_VERSION_KEY }),
@@ -756,7 +757,7 @@ describe("first-activation fail-closed gates (mocked)", () => {
           versionKey: AUTHORIZED_STAGING_VERSION_KEY,
           confirmation: ACTIVATION_CONFIRMATION,
         }),
-      "ACTIVE_VERSION_EXISTS",
+      "ACTIVE_VERSION_MISMATCH",
       admin,
     );
   });
@@ -781,7 +782,7 @@ describe("first-activation fail-closed gates (mocked)", () => {
     const admin = mockAdmin({
       rag_get_import_status: () => lockedCompletedStatus(),
       rag_validate_staging_import: () => lockedValidation(),
-      activate_rag_index_version: () => ({ ok: true, version_key: AUTHORIZED_STAGING_VERSION_KEY }),
+      rag_activate_index_upgrade: () => ({ ok: true, versionKey: AUTHORIZED_STAGING_VERSION_KEY }),
     });
     await expect(
       activateGate(admin, {
@@ -796,12 +797,14 @@ describe("first-activation fail-closed gates (mocked)", () => {
     const admin = mockAdmin({
       rag_get_import_status: () => lockedCompletedStatus(),
       rag_validate_staging_import: () => lockedValidation(),
-      activate_rag_index_version: (args) => {
+      rag_activate_index_upgrade: (args) => {
         activateArgs = args;
         return {
           ok: true,
-          version_key: AUTHORIZED_STAGING_VERSION_KEY,
-          activated_chunks: AUTHORIZED_CHUNK_COUNT,
+          versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+          supersededVersionKey: AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY,
+          activatedChunks: AUTHORIZED_CHUNK_COUNT,
+          activeVersions: 1,
         };
       },
     });
@@ -818,11 +821,15 @@ describe("first-activation fail-closed gates (mocked)", () => {
       executionId: AUTHORIZED_EXECUTION_ID,
       sourceSha: AUTHORIZED_SOURCE_SHA,
       activatedChunks: AUTHORIZED_CHUNK_COUNT,
+      supersededVersionKey: AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY,
       activeVersionCountAfter: 1,
     });
-    const activateCalls = admin.rpc.mock.calls.filter((c) => c[0] === "activate_rag_index_version");
+    const activateCalls = admin.rpc.mock.calls.filter((c) => c[0] === "rag_activate_index_upgrade");
     expect(activateCalls).toHaveLength(1);
-    expect(activateArgs).toEqual({ p_version_key: AUTHORIZED_STAGING_VERSION_KEY });
+    expect(activateArgs).toEqual({
+      p_version_key: AUTHORIZED_STAGING_VERSION_KEY,
+      p_expected_active_version_key: AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY,
+    });
     expect(admin.rpc.mock.calls.some((c) => c[0] === "rag_initialize_or_resume_import")).toBe(
       false,
     );
@@ -867,10 +874,12 @@ describe("first-activation fail-closed gates (mocked)", () => {
     const admin = mockAdmin({
       rag_get_import_status: () => lockedCompletedStatus(),
       rag_validate_staging_import: () => lockedValidation(),
-      activate_rag_index_version: () => ({
+      rag_activate_index_upgrade: () => ({
         ok: true,
-        version_key: AUTHORIZED_STAGING_VERSION_KEY,
-        activated_chunks: AUTHORIZED_CHUNK_COUNT,
+        versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+        supersededVersionKey: AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY,
+        activatedChunks: AUTHORIZED_CHUNK_COUNT,
+        activeVersions: 1,
       }),
     });
     await activateGate(admin, {
@@ -881,7 +890,7 @@ describe("first-activation fail-closed gates (mocked)", () => {
   });
 });
 
-describe("first-activation rollback wrapper (mocked)", () => {
+describe("guarded upgrade rollback wrapper (mocked)", () => {
   it("rollback unavailable before activation (zero active)", async () => {
     const admin = mockAdmin({
       rag_get_import_status: () => lockedCompletedStatus({ currentActiveVersionKey: null }),
@@ -893,9 +902,7 @@ describe("first-activation rollback wrapper (mocked)", () => {
         confirmation: ROLLBACK_CONFIRMATION,
       }),
     ).rejects.toMatchObject({ code: "ROLLBACK_UNAVAILABLE" });
-    expect(admin.rpc.mock.calls.some((c) => c[0] === "rag_deactivate_first_active_version")).toBe(
-      false,
-    );
+    expect(admin.rpc.mock.calls.some((c) => c[0] === "rag_rollback_index_upgrade")).toBe(false);
   });
 
   it("rejects wrong rollback confirmation", async () => {
@@ -945,9 +952,15 @@ describe("first-activation rollback wrapper (mocked)", () => {
       rag_get_import_status: () =>
         lockedCompletedStatus({ currentActiveVersionKey: AUTHORIZED_STAGING_VERSION_KEY }),
       rag_validate_staging_import: () => lockedValidation({ activeVersionCount: 1, ok: false }),
-      rag_deactivate_first_active_version: (args) => {
+      rag_rollback_index_upgrade: (args) => {
         deactivateArgs = args;
-        return { ok: true, versionKey: AUTHORIZED_STAGING_VERSION_KEY, activeVersions: 0 };
+        return {
+          ok: true,
+          versionKey: AUTHORIZED_STAGING_VERSION_KEY,
+          restoredVersionKey: AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY,
+          restoredChunks: 3700,
+          activeVersions: 1,
+        };
       },
     });
     const evidence = await rollbackGate(admin, {
@@ -958,13 +971,16 @@ describe("first-activation rollback wrapper (mocked)", () => {
       ok: true,
       rolledBack: true,
       versionKey: AUTHORIZED_STAGING_VERSION_KEY,
-      activeVersions: 0,
+      restoredVersionKey: AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY,
+      restoredChunks: 3700,
+      activeVersions: 1,
     });
-    const calls = admin.rpc.mock.calls.filter(
-      (c) => c[0] === "rag_deactivate_first_active_version",
-    );
+    const calls = admin.rpc.mock.calls.filter((c) => c[0] === "rag_rollback_index_upgrade");
     expect(calls).toHaveLength(1);
-    expect(deactivateArgs).toEqual({ p_version_key: AUTHORIZED_STAGING_VERSION_KEY });
+    expect(deactivateArgs).toEqual({
+      p_active_version_key: AUTHORIZED_STAGING_VERSION_KEY,
+      p_restore_version_key: AUTHORIZED_PRIOR_ACTIVE_VERSION_KEY,
+    });
   });
 });
 
