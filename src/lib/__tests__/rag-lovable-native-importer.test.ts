@@ -117,7 +117,7 @@ function mockAdmin(handlers: Record<string, (args?: Record<string, unknown>) => 
 }
 
 describe("lovable-native corpus admission", () => {
-  it("matches four locked artifact digests and admits 400/3700", async () => {
+  it("matches four locked artifact digests and admits 400/3701", async () => {
     const raw = {
       packageManifestRaw: readArtifact("package-manifest.json"),
       chunkManifestRaw: readArtifact("chunk-manifest.json"),
@@ -164,7 +164,7 @@ describe("lovable-native corpus admission", () => {
 });
 
 describe("lovable-native deterministic batching", () => {
-  it("plans exactly 58 batches with 64×57 + 52", () => {
+  it("plans exactly 58 batches with 64×57 + 53", () => {
     const batches = planBatchBoundaries();
     expect(batches).toHaveLength(LOCKED_PLANNED_BATCH_COUNT);
     expect(batches.slice(0, 57).every((b) => b.count === LOCKED_BATCH_SIZE)).toBe(true);

@@ -20,14 +20,14 @@ export const LOCKED_SOURCE_SHA = "3e1ef5aaf0ca4f3dbcf28650751e0dd1de70bfc2" as c
 export const LOCKED_INDEX_VERSION = "rag-index-v1" as const;
 
 export const LOCKED_ARTIFACT_DIGESTS = {
-  packageManifestSha256: "0ca5afee1c9e7ade676553cc51e3a0dd55515508a54f046dde098826b5fb510e",
-  chunkManifestSha256: "3bfb0d1a04053adc6da5580283dd14d54ade85e079dcac12ceddf5ed1ef1faca",
-  chunksSha256: "24a7ae7af60db811fab63b52604d79bc18fb5d82dd14e99e687e90a6dea216ca",
-  authoritativeLookupSha256: "6f3bad994c0d0bb8b2a92fcc3d1e729cd98bab685d68e882dab7d69c7c910f8b",
+  packageManifestSha256: "e80b2be260e4895154af76215eeb6ade62be27f63b0c145fd8e77c0ca6cebe11",
+  chunkManifestSha256: "7dc02406995711193baa6dbf83d1f180f7b840555bf4a8b066e97442064e0660",
+  chunksSha256: "5f66296aca20c4ddf6960bf343a3b563e9dba1eb0375c2eb1efc80d26f6c4be0",
+  authoritativeLookupSha256: "103a0d5c27c1020d4eeecdf72cfb1fbba63aea1787f25886f8049167b67819f4",
 } as const;
 
 export const LOCKED_PACKAGE_COUNT = 400 as const;
-export const LOCKED_CHUNK_COUNT = 3700 as const;
+export const LOCKED_CHUNK_COUNT = 3701 as const;
 export const LOCKED_LOCALE_PACKAGE_COUNTS = {
   "ar-EG": 100,
   "ar-MSA": 100,
@@ -38,14 +38,14 @@ export const LOCKED_LOCALE_CHUNK_COUNTS = {
   "ar-EG": 1008,
   "ar-MSA": 866,
   "ar-Gulf": 862,
-  en: 964,
+  en: 965,
 } as const;
 
 export const LOCKED_EMBEDDING_MODEL = "text-embedding-3-small" as const;
 export const LOCKED_EMBEDDING_DIMENSIONS = 1536 as const;
 export const LOCKED_BATCH_SIZE = 64 as const;
 export const LOCKED_PLANNED_BATCH_COUNT = 58 as const;
-export const LOCKED_LAST_BATCH_SIZE = 52 as const;
+export const LOCKED_LAST_BATCH_SIZE = 53 as const;
 export const LOCKED_MAX_PROVIDER_ATTEMPTS = 67 as const;
 
 export type SanitizedErrorCode =
@@ -134,7 +134,7 @@ export interface BatchBoundary {
   count: number;
 }
 
-/** Fixed artifact-order batch plan: 57×64 + final 52 = 58 batches. */
+/** Fixed artifact-order batch plan: 57×64 + final 53 = 58 batches. */
 export function planBatchBoundaries(
   chunkCount = LOCKED_CHUNK_COUNT,
   batchSize = LOCKED_BATCH_SIZE,

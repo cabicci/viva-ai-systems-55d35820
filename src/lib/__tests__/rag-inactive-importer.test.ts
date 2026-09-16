@@ -78,12 +78,12 @@ function withMatchingSourceSha(
 }
 
 describe("RAG inactive importer — admission", () => {
-  it("admits the accepted 400-package / 3700-chunk corpus", () => {
+  it("admits the accepted 400-package / 3701-chunk corpus", () => {
     const admission = admitCorpusArtifacts(REPO_ROOT);
     expect(admission.ok).toBe(true);
     expect(admission.errors).toEqual([]);
     expect(admission.packageCount).toBe(400);
-    expect(admission.chunkCount).toBe(3700);
+    expect(admission.chunkCount).toBe(3701);
     expect(admission.localePackageCounts).toEqual({
       "ar-EG": 100,
       "ar-MSA": 100,
@@ -94,7 +94,7 @@ describe("RAG inactive importer — admission", () => {
       "ar-EG": 1008,
       "ar-MSA": 866,
       "ar-Gulf": 862,
-      en: 964,
+      en: 965,
     });
     expect(admission.sourceSha).toBe(CONTENT_FREEZE_SHA);
     expect(admission.indexVersion).toBe(RAG_INDEX_VERSION);
@@ -418,7 +418,7 @@ describe("RAG inactive importer — memory import resume/idempotency", () => {
       (c) => c.index_version === versionKey && c.index_state === "staging",
     ).length;
     expect(midCount).toBeGreaterThan(0);
-    expect(midCount).toBeLessThan(3700);
+    expect(midCount).toBeLessThan(3701);
 
     const resume = await runInactiveImport({
       sql,
@@ -434,7 +434,7 @@ describe("RAG inactive importer — memory import resume/idempotency", () => {
     const staging = sql.chunks.filter(
       (c) => c.index_version === versionKey && c.index_state === "staging",
     );
-    expect(staging).toHaveLength(3700);
+    expect(staging).toHaveLength(3701);
     expect(
       sql.chunks.filter((c) => c.index_version === versionKey && c.index_state === "active"),
     ).toHaveLength(0);
@@ -450,9 +450,9 @@ describe("RAG inactive importer — memory import resume/idempotency", () => {
       maxEmbeddingRequests: 67,
     });
     expect(rerun.progress.inserted).toBe(0);
-    expect(rerun.progress.skippedExact).toBe(3700);
+    expect(rerun.progress.skippedExact).toBe(3701);
     expect(rerun.progress.conflicting).toBe(0);
-    expect(sql.chunks.filter((c) => c.index_version === versionKey)).toHaveLength(3700);
+    expect(sql.chunks.filter((c) => c.index_version === versionKey)).toHaveLength(3701);
     expect(sql.activeFingerprintSeed.startsWith("active-before")).toBe(true);
   }, 120_000);
 });
@@ -473,7 +473,7 @@ describe("RAG inactive importer — reports redaction", () => {
       indexVersion: RAG_INDEX_VERSION,
       artifactDigests: computeArtifactDigests(REPO_ROOT),
       packageCount: 400,
-      chunkCount: 3700,
+      chunkCount: 3701,
       embeddingModel: "text-embedding-3-small",
       embeddingDimensions: 1536,
       requestCeiling: 67,
