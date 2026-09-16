@@ -5,10 +5,7 @@ import { useUiString } from "@/lib/locale/use-ui-strings";
 export function Footer() {
   const t = useUiString();
   const localeSearch = useLocaleLinkSearch();
-  const copyright = t("footer.copyright").replace(
-    "{year}",
-    String(new Date().getFullYear()),
-  );
+  const copyright = t("footer.copyright").replace("{year}", String(new Date().getFullYear()));
 
   return (
     <footer className="border-t border-border/50 mt-16">
@@ -24,6 +21,9 @@ export function Footer() {
           <Link to="/terms" search={localeSearch()} className="hover:text-foreground transition">
             {t("footer.terms")}
           </Link>
+          <a href="mailto:support@masaarat.ai" className="hover:text-foreground transition">
+            support@masaarat.ai
+          </a>
           <span className="font-mono opacity-70">{t("footer.version")}</span>
         </nav>
       </div>
