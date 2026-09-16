@@ -1029,6 +1029,15 @@ export type Database = {
         Returns: undefined
       }
       claim_active_device: { Args: { p_device_id: string }; Returns: string }
+      commit_ai_quota: {
+        Args: {
+          p_idempotency_key: string
+          p_input_tokens: number
+          p_output_tokens: number
+          p_reservation_id: string
+        }
+        Returns: Json
+      }
       consume_rate_limit: {
         Args: {
           p_bucket_key: string
@@ -1043,9 +1052,29 @@ export type Database = {
         }[]
       }
       delete_my_account_data: { Args: never; Returns: undefined }
+      evaluate_access: {
+        Args: {
+          p_resource_id: string
+          p_resource_type: string
+          p_user_id: string
+        }
+        Returns: Json
+      }
       export_my_data: { Args: never; Returns: Json }
+      finalize_provider_attempt: {
+        Args: {
+          p_attempt_index: number
+          p_attempt_status: string
+          p_input_tokens?: number
+          p_output_tokens?: number
+          p_provider_cost_micro?: number
+          p_reservation_id: string
+        }
+        Returns: Json
+      }
       get_admin_insights: { Args: never; Returns: Json }
       get_admin_overview: { Args: never; Returns: Json }
+      get_entitlement_snapshot: { Args: { p_user_id: string }; Returns: Json }
       get_kpi_funnel: { Args: never; Returns: Json }
       get_my_billing_access_tier: { Args: never; Returns: string }
       has_role: {
@@ -1121,10 +1150,7 @@ export type Database = {
         }[]
       }
       rag_activate_index_upgrade: {
-        Args: {
-          p_expected_active_version_key: string
-          p_version_key: string
-        }
+        Args: { p_expected_active_version_key: string; p_version_key: string }
         Returns: Json
       }
       rag_claim_next_import_batch: { Args: never; Returns: Json }
@@ -1163,14 +1189,35 @@ export type Database = {
       }
       rag_require_service_role: { Args: never; Returns: undefined }
       rag_rollback_index_upgrade: {
-        Args: {
-          p_active_version_key: string
-          p_restore_version_key: string
-        }
+        Args: { p_active_version_key: string; p_restore_version_key: string }
         Returns: Json
       }
       rag_validate_staging_import: { Args: never; Returns: Json }
       record_user_activity: { Args: never; Returns: Json }
+      register_provider_attempt: {
+        Args: {
+          p_attempt_idempotency_key?: string
+          p_provider: string
+          p_provider_request_id: string
+          p_reservation_id: string
+        }
+        Returns: Json
+      }
+      release_ai_quota: {
+        Args: { p_idempotency_key: string; p_reservation_id: string }
+        Returns: Json
+      }
+      reserve_learner_ai_access: {
+        Args: {
+          p_category: string
+          p_idempotency_key: string
+          p_lesson_id: string
+          p_request_id: string
+          p_units: number
+          p_user_id: string
+        }
+        Returns: Json
+      }
       rollback_rag_index_version: {
         Args: { p_version_key: string }
         Returns: Json
