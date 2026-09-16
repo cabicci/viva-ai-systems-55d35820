@@ -94,7 +94,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       syncAccessTokenCookie(s?.access_token);
       setSession(s);
       setLoading(false);
-      if (e === "SIGNED_IN" && s?.user && !claimedUserIds.current.has(s.user.id)) {
+      // INITIAL_SESSION can reach React before the separate getSession() call
+      // settles. Register the claim now so the device watcher waits for it.
+      if ((e === "SIGNED_IN" || e === "INITIAL_SESSION") && s?.user && !claimedUserIds.current.has(s.user.id)) {
         claimedUserIds.current.add(s.user.id);
         const deviceId = getDeviceId();
         const p = Promise.resolve(
