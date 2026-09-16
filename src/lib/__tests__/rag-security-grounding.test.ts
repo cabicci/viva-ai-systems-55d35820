@@ -5,6 +5,7 @@ import {
   assertUntrustedBoundaryInPrompt,
   buildUntrustedEvidenceBlockFromAuthoritative,
   hasRequiredAuthoritativeMetadata,
+  matchesAuthoritativeIndexVersion,
   normalizeAuthoritativeChunks,
   requestHasRetrievalResultsProperty,
   resetDefaultAuthoritativeLookupCache,
@@ -172,6 +173,32 @@ describe("cryptographic authoritative admission", () => {
     expect(citations).toHaveLength(1);
     expect(citations[0]!.chunkId).toBe(authoritative[0]!.sourceId);
     expect(citations[0]!.chunkChecksum).toBe(sample.chunkChecksum);
+  });
+
+  it("admits the content-bound deployed index key used by Production", () => {
+    const deployedVersion = `${RAG_INDEX_VERSION}-${CONTENT_FREEZE_SHA.slice(0, 8)}-930bc16ad0085e44`;
+    expect(
+      matchesAuthoritativeIndexVersion(deployedVersion, RAG_INDEX_VERSION, CONTENT_FREEZE_SHA),
+    ).toBe(true);
+    expect(
+      hasRequiredAuthoritativeMetadata({ ...sample, indexVersion: deployedVersion }, "en", {
+        lookup,
+      }),
+    ).toBe(true);
+  });
+
+  it("rejects deployed index keys not bound to the approved freeze", () => {
+    const cases = [
+      `${RAG_INDEX_VERSION}-deadbeef-930bc16ad0085e44`,
+      `${RAG_INDEX_VERSION}-${CONTENT_FREEZE_SHA.slice(0, 8)}-short`,
+      `${RAG_INDEX_VERSION}-${CONTENT_FREEZE_SHA.slice(0, 8)}-930BC16AD0085E44`,
+      `${RAG_INDEX_VERSION}-${CONTENT_FREEZE_SHA.slice(0, 8)}-930bc16ad0085e44-extra`,
+    ];
+    for (const indexVersion of cases) {
+      expect(hasRequiredAuthoritativeMetadata({ ...sample, indexVersion }, "en", { lookup })).toBe(
+        false,
+      );
+    }
   });
 
   it("rejects fabricated package/chunk checksums and content tamper", () => {
