@@ -169,6 +169,7 @@ function AccountContent() {
   });
 
   const isPro = ent.isPro;
+  const planLabel = ent.tier === "pro_plus" ? "Pro Plus" : ent.tier === "pro" ? "Pro" : "Free";
 
   const handleSendReset = async () => {
     if (!email) return;
@@ -264,7 +265,7 @@ function AccountContent() {
               <div>
                 <p className="text-xs text-muted-foreground">{t("account.subscription.label")}</p>
                 <div className="mt-1 flex items-center gap-2">
-                  <h2 className="text-2xl font-black">{isPro ? "Pro" : "Free"}</h2>
+                  <h2 className="text-2xl font-black">{planLabel}</h2>
                   <span
                     className={`rounded-full px-2 py-0.5 text-[10px] font-mono uppercase tracking-widest ${
                       isPro

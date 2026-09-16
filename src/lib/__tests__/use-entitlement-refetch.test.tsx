@@ -63,8 +63,9 @@ describe("useEntitlement rejected refetch fail-closed behavior", () => {
     const { client, result } = renderEntitlement();
     await waitFor(() => expect(result.current.isLoaded).toBe(true));
     expect(result.current).toMatchObject({
-      tier: "pro",
+      tier: "pro_plus",
       isPro: true,
+      isProPlus: true,
       isAdmin: true,
     });
     mocks.adminRpc.mockRejectedValueOnce(new Error("admin transport failed"));
@@ -80,8 +81,9 @@ describe("useEntitlement rejected refetch fail-closed behavior", () => {
     mocks.adminRpc.mockResolvedValueOnce({ data: true, error: null });
     await refetch(client, ["user-is-admin", userId]);
     expect(result.current).toMatchObject({
-      tier: "pro",
+      tier: "pro_plus",
       isPro: true,
+      isProPlus: true,
       isAdmin: true,
       isLoaded: true,
     });
@@ -89,8 +91,9 @@ describe("useEntitlement rejected refetch fail-closed behavior", () => {
     mocks.tierRpc.mockRejectedValueOnce(new Error("billing transport failed"));
     await refetch(client, ["user-subscription", userId]);
     expect(result.current).toMatchObject({
-      tier: "pro",
+      tier: "pro_plus",
       isPro: true,
+      isProPlus: true,
       isAdmin: true,
       isLoaded: false,
     });
@@ -98,8 +101,9 @@ describe("useEntitlement rejected refetch fail-closed behavior", () => {
     mocks.tierRpc.mockResolvedValueOnce({ data: "pro", error: null });
     await refetch(client, ["user-subscription", userId]);
     expect(result.current).toMatchObject({
-      tier: "pro",
+      tier: "pro_plus",
       isPro: true,
+      isProPlus: true,
       isAdmin: true,
       isLoaded: true,
     });
@@ -135,6 +139,7 @@ describe("useEntitlement rejected refetch fail-closed behavior", () => {
     expect(result.current).toMatchObject({
       tier: "free",
       isPro: false,
+      isProPlus: false,
       isAdmin: false,
       isLoaded: false,
     });
@@ -144,6 +149,7 @@ describe("useEntitlement rejected refetch fail-closed behavior", () => {
     expect(result.current).toMatchObject({
       tier: "pro",
       isPro: true,
+      isProPlus: false,
       isLoaded: true,
     });
 
@@ -155,6 +161,7 @@ describe("useEntitlement rejected refetch fail-closed behavior", () => {
     expect(result.current).toMatchObject({
       tier: "free",
       isPro: false,
+      isProPlus: false,
       isAdmin: false,
       isLoaded: true,
     });

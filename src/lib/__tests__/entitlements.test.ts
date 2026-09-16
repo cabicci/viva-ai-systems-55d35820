@@ -7,6 +7,30 @@ import {
   isAdminEmail,
 } from "@/lib/entitlements";
 import { PATHS, getPath } from "@/lib/curriculum-data";
+import { lessonIdsForTier, PLAN_LESSON_COUNTS } from "@/lib/plan-entitlements";
+
+describe("entitlements: canonical plan lesson sets", () => {
+  it("keeps the approved 12 / 71 / 100 lesson counts", () => {
+    expect(lessonIdsForTier("free")).toHaveLength(PLAN_LESSON_COUNTS.free);
+    expect(lessonIdsForTier("pro")).toHaveLength(PLAN_LESSON_COUNTS.pro);
+    expect(lessonIdsForTier("pro_plus")).toHaveLength(PLAN_LESSON_COUNTS.pro_plus);
+  });
+
+  it("gives Pro every non-Builder lesson and no Builder lessons", () => {
+    const proIds = new Set(lessonIdsForTier("pro"));
+    const nonBuilder = PATHS.filter((path) => path.id !== "builder")
+      .flatMap((path) => path.modules)
+      .flatMap((module) => module.lessons)
+      .filter((lesson) => lesson.state === "available");
+    const builder = getPath("builder")!
+      .modules.flatMap((module) => module.lessons)
+      .filter((lesson) => lesson.state === "available");
+
+    expect(nonBuilder).toHaveLength(71);
+    expect(nonBuilder.every((lesson) => proIds.has(lesson.id))).toBe(true);
+    expect(builder.filter((lesson) => proIds.has(lesson.id))).toHaveLength(0);
+  });
+});
 
 describe("entitlements: free-lesson rules", () => {
   it("every available intro lesson is free", () => {
@@ -23,9 +47,7 @@ describe("entitlements: free-lesson rules", () => {
   it("each non-intro path contributes exactly one free path-intro lesson", () => {
     for (const p of PATHS) {
       if (p.id === "intro") continue;
-      const freeInPath = p.modules
-        .flatMap((m) => m.lessons)
-        .filter((l) => isLessonFree(l.id));
+      const freeInPath = p.modules.flatMap((m) => m.lessons).filter((l) => isLessonFree(l.id));
       // 0 if no available lessons exist yet, else exactly 1
       expect(freeInPath.length).toBeLessThanOrEqual(1);
     }
@@ -73,7 +95,7 @@ describe("entitlements: decideLessonGate", () => {
     expect(
       decideLessonGate({
         lessonId: paidBuilderLesson?.id ?? "anything",
-        isPro: false,
+        tier: "free",
         isAdmin: true,
         introCompletedCount: 0,
         introTotal: 10,
@@ -81,11 +103,21 @@ describe("entitlements: decideLessonGate", () => {
     ).toEqual({ kind: "open" });
   });
 
-  it("pro always opens any lesson", () => {
+  it("pro paywalls Builder while Pro Plus opens it", () => {
+    const lessonId = "builder-m1-l1-what-is-llm";
     expect(
       decideLessonGate({
-        lessonId: paidBuilderLesson?.id ?? "anything",
-        isPro: true,
+        lessonId,
+        tier: "pro",
+        isAdmin: false,
+        introCompletedCount: 0,
+        introTotal: 10,
+      }),
+    ).toEqual({ kind: "paywall" });
+    expect(
+      decideLessonGate({
+        lessonId,
+        tier: "pro_plus",
         isAdmin: false,
         introCompletedCount: 0,
         introTotal: 10,
@@ -97,7 +129,7 @@ describe("entitlements: decideLessonGate", () => {
     expect(
       decideLessonGate({
         lessonId: introLessonId,
-        isPro: false,
+        tier: "free",
         isAdmin: false,
         introCompletedCount: 0,
         introTotal: 5,
@@ -109,7 +141,7 @@ describe("entitlements: decideLessonGate", () => {
     if (!freeBuilderLesson) return;
     const gate = decideLessonGate({
       lessonId: freeBuilderLesson.id,
-      isPro: false,
+      tier: "free",
       isAdmin: false,
       introCompletedCount: 2,
       introTotal: 5,
@@ -126,7 +158,7 @@ describe("entitlements: decideLessonGate", () => {
     expect(
       decideLessonGate({
         lessonId: freeBuilderLesson.id,
-        isPro: false,
+        tier: "free",
         isAdmin: false,
         introCompletedCount: 5,
         introTotal: 5,
@@ -139,7 +171,7 @@ describe("entitlements: decideLessonGate", () => {
     expect(
       decideLessonGate({
         lessonId: paidBuilderLesson.id,
-        isPro: false,
+        tier: "free",
         isAdmin: false,
         introCompletedCount: 5,
         introTotal: 5,

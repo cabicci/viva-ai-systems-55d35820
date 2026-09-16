@@ -31,7 +31,7 @@ import { ReviewsDueCard } from "@/components/dashboard/ReviewsDueCard";
 import { useCountUp } from "@/hooks/use-count-up";
 
 import { StreakCard } from "@/components/dashboard/StreakCard";
-import { useEntitlement, decideLessonGate } from "@/lib/entitlements";
+import { useEntitlement, decideLessonGate, type Tier } from "@/lib/entitlements";
 import { PhaseRibbon } from "@/components/admin/PhaseRibbon";
 
 type DashboardSearch = { path?: string; module?: string; lesson?: string; locale?: string };
@@ -67,7 +67,7 @@ function Dashboard() {
   const t = useUiString();
   const search = Route.useSearch();
   const { store, getStatus } = useLessonProgress();
-  const { isPro, isAdmin } = useEntitlement();
+  const { tier, isPro, isAdmin } = useEntitlement();
   const [openId, setOpenId] = useState<string | null>(search.module ?? null);
   const [openPathId, setOpenPathId] = useState<string | null>(search.path ?? null);
 
@@ -133,13 +133,9 @@ function Dashboard() {
     : 0;
 
   const nextLessonData = nextLesson ? getLesson(nextLesson.id) : null;
-  const nextLessonTitle = nextLesson
-    ? getCurriculumLessonLabel(locale, nextLesson.id)
-    : undefined;
+  const nextLessonTitle = nextLesson ? getCurriculumLessonLabel(locale, nextLesson.id) : undefined;
   const nextLessonPath = nextLesson
-    ? openPaths.find((p) =>
-        p.modules.some((m) => m.lessons.some((l) => l.id === nextLesson.id)),
-      )
+    ? openPaths.find((p) => p.modules.some((m) => m.lessons.some((l) => l.id === nextLesson.id)))
     : null;
   const nextLessonPathTitle = nextLessonPath
     ? getCurriculumPathLabel(locale, nextLessonPath.id, "title")
@@ -151,152 +147,154 @@ function Dashboard() {
       <main className="flex-1 max-w-6xl mx-auto w-full min-w-0">
         <PhaseRibbon />
         <div className="p-6 md:p-10">
-        <WelcomeHint show={noProgress} />
-        <StartWowBanner />
-        {noProgress && <WelcomeChecklist />}
-        <ReviewsDueCard />
-        <div className="flex items-end justify-between flex-wrap gap-4 mb-10 animate-fade-up">
-          <div>
-            <p className="text-primary text-sm font-semibold">{t("dashboard.greeting.eyebrow")}</p>
-            <h1 className="text-3xl md:text-4xl font-black mt-1">{t("dashboard.greeting.title")} <span className="text-gradient">{name}</span></h1>
-            <p className="text-muted-foreground mt-2">{t("dashboard.greeting.subtitle")}</p>
+          <WelcomeHint show={noProgress} />
+          <StartWowBanner />
+          {noProgress && <WelcomeChecklist />}
+          <ReviewsDueCard />
+          <div className="flex items-end justify-between flex-wrap gap-4 mb-10 animate-fade-up">
+            <div>
+              <p className="text-primary text-sm font-semibold">
+                {t("dashboard.greeting.eyebrow")}
+              </p>
+              <h1 className="text-3xl md:text-4xl font-black mt-1">
+                {t("dashboard.greeting.title")} <span className="text-gradient">{name}</span>
+              </h1>
+              <p className="text-muted-foreground mt-2">{t("dashboard.greeting.subtitle")}</p>
+            </div>
+            {nextLesson && (
+              <Button asChild variant="hero" size="lg" className="group animate-glow-pulse">
+                <LessonLink lesson={nextLesson} from="dashboard">
+                  <Play className="h-4 w-4 group-hover:scale-125 transition-transform" />
+                  {t("dashboard.continueLesson")}
+                </LessonLink>
+              </Button>
+            )}
           </div>
-          {nextLesson && (
-            <Button asChild variant="hero" size="lg" className="group animate-glow-pulse">
-              <LessonLink lesson={nextLesson} from="dashboard">
-                <Play className="h-4 w-4 group-hover:scale-125 transition-transform" />
-                {t("dashboard.continueLesson")}
-              </LessonLink>
-            </Button>
-          )}
-        </div>
 
-        {/* Stat row: hide NextLessonCard when hero CTA already points to the same lesson;
+          {/* Stat row: hide NextLessonCard when hero CTA already points to the same lesson;
             still show the "all done" celebration card when nextLesson is null. */}
-        <div className={`grid gap-4 mb-8 ${nextLesson ? "md:grid-cols-2" : "md:grid-cols-3"}`}>
-          {!nextLesson && (
-            <NextLessonCard
-              lesson={null}
-              lessonTitle={nextLessonTitle}
-              duration={nextLessonData?.duration}
-              pathTitle={nextLessonPathTitle}
-              delay={0}
+          <div className={`grid gap-4 mb-8 ${nextLesson ? "md:grid-cols-2" : "md:grid-cols-3"}`}>
+            {!nextLesson && (
+              <NextLessonCard
+                lesson={null}
+                lessonTitle={nextLessonTitle}
+                duration={nextLessonData?.duration}
+                pathTitle={nextLessonPathTitle}
+                delay={0}
+              />
+            )}
+            <OverallProgressCard
+              pct={overallPct}
+              done={allAvailableDone}
+              total={allAvailableTotal}
+              delay={100}
             />
-          )}
-          <OverallProgressCard
-            pct={overallPct}
-            done={allAvailableDone}
-            total={allAvailableTotal}
-            delay={100}
-          />
-          <StreakCard delay={200} />
-        </div>
+            <StreakCard delay={200} />
+          </div>
 
-        {(() => {
-          const intros = allPaths.filter((p) => p.kind === "intro");
-          const userPaths = allPaths.filter((p) => p.kind !== "intro" && p.tier === "user");
-          const operatorPaths = allPaths.filter((p) => p.tier === "operator");
-          const builderPaths = allPaths.filter((p) => p.tier === "builder");
+          {(() => {
+            const intros = allPaths.filter((p) => p.kind === "intro");
+            const userPaths = allPaths.filter((p) => p.kind !== "intro" && p.tier === "user");
+            const operatorPaths = allPaths.filter((p) => p.tier === "operator");
+            const builderPaths = allPaths.filter((p) => p.tier === "builder");
 
-          let cardIndex = 0;
-          const renderGroup = (paths: typeof allPaths) => (
-            <div className="grid lg:grid-cols-3 gap-5">
-              {paths.map((p) => {
-                const i = cardIndex++;
-                return (
-                  <PathCard
-                    key={p.id}
-                    path={p}
-                    index={i}
-                    store={store}
-                    getStatus={getStatus}
-                    openId={openId}
-                    onToggle={(id) => setOpenId(openId === id ? null : id)}
-                    isExpanded={openPathId === p.id}
-                    onToggleExpand={() =>
-                      setOpenPathId(openPathId === p.id ? null : p.id)
-                    }
-                    isPro={isPro || isAdmin}
-                    isAdmin={isAdmin}
-                    introAllDone={introAllDone}
-                    introIds={introIds}
-                    introCompletedCount={introDone}
-                  />
-                );
-              })}
-            </div>
-          );
-
-          const TierHeader = ({
-            eyebrow,
-            title,
-            subtitle,
-          }: {
-            eyebrow: string;
-            title: string;
-            subtitle: string;
-          }) => (
-            <div className="mb-4 flex items-end justify-between gap-4 border-b border-border/40 pb-3">
-              <div>
-                <p className="text-[11px] font-semibold text-primary tracking-wider mb-1">
-                  {eyebrow}
-                </p>
-                <h2 className="text-xl md:text-2xl font-black">
-                  <span className="text-gradient">{title}</span>
-                </h2>
-                <p className="text-xs md:text-sm text-muted-foreground mt-1 max-w-2xl">
-                  {subtitle}
-                </p>
+            let cardIndex = 0;
+            const renderGroup = (paths: typeof allPaths) => (
+              <div className="grid lg:grid-cols-3 gap-5">
+                {paths.map((p) => {
+                  const i = cardIndex++;
+                  return (
+                    <PathCard
+                      key={p.id}
+                      path={p}
+                      index={i}
+                      store={store}
+                      getStatus={getStatus}
+                      openId={openId}
+                      onToggle={(id) => setOpenId(openId === id ? null : id)}
+                      isExpanded={openPathId === p.id}
+                      onToggleExpand={() => setOpenPathId(openPathId === p.id ? null : p.id)}
+                      isPro={isPro || isAdmin}
+                      tier={tier}
+                      isAdmin={isAdmin}
+                      introAllDone={introAllDone}
+                      introIds={introIds}
+                      introCompletedCount={introDone}
+                    />
+                  );
+                })}
               </div>
-            </div>
-          );
+            );
 
-          return (
-            <div className="space-y-12">
-              {intros.length > 0 && (
-                <section>
-                  <TierHeader
-                    eyebrow={t("dashboard.tier.intro.eyebrow")}
-                    title={t("dashboard.tier.intro.title")}
-                    subtitle={t("dashboard.tier.intro.subtitle")}
-                  />
-                  {renderGroup(intros)}
-                </section>
-              )}
-              {userPaths.length > 0 && (
-                <section>
-                  <TierHeader
-                    eyebrow={t("dashboard.tier.user.eyebrow")}
-                    title={t("dashboard.tier.user.title")}
-                    subtitle={t("dashboard.tier.user.subtitle")}
-                  />
-                  {renderGroup(userPaths)}
-                </section>
-              )}
-              {operatorPaths.length > 0 && (
-                <section>
-                  <TierHeader
-                    eyebrow={t("dashboard.tier.operator.eyebrow")}
-                    title={t("dashboard.tier.operator.title")}
-                    subtitle={t("dashboard.tier.operator.subtitle")}
-                  />
-                  {renderGroup(operatorPaths)}
-                </section>
-              )}
-              {builderPaths.length > 0 && (
-                <section>
-                  <TierHeader
-                    eyebrow={t("dashboard.tier.builder.eyebrow")}
-                    title={t("dashboard.tier.builder.title")}
-                    subtitle={t("dashboard.tier.builder.subtitle")}
-                  />
-                  {renderGroup(builderPaths)}
-                </section>
-              )}
-            </div>
-          );
-        })()}
+            const TierHeader = ({
+              eyebrow,
+              title,
+              subtitle,
+            }: {
+              eyebrow: string;
+              title: string;
+              subtitle: string;
+            }) => (
+              <div className="mb-4 flex items-end justify-between gap-4 border-b border-border/40 pb-3">
+                <div>
+                  <p className="text-[11px] font-semibold text-primary tracking-wider mb-1">
+                    {eyebrow}
+                  </p>
+                  <h2 className="text-xl md:text-2xl font-black">
+                    <span className="text-gradient">{title}</span>
+                  </h2>
+                  <p className="text-xs md:text-sm text-muted-foreground mt-1 max-w-2xl">
+                    {subtitle}
+                  </p>
+                </div>
+              </div>
+            );
 
+            return (
+              <div className="space-y-12">
+                {intros.length > 0 && (
+                  <section>
+                    <TierHeader
+                      eyebrow={t("dashboard.tier.intro.eyebrow")}
+                      title={t("dashboard.tier.intro.title")}
+                      subtitle={t("dashboard.tier.intro.subtitle")}
+                    />
+                    {renderGroup(intros)}
+                  </section>
+                )}
+                {userPaths.length > 0 && (
+                  <section>
+                    <TierHeader
+                      eyebrow={t("dashboard.tier.user.eyebrow")}
+                      title={t("dashboard.tier.user.title")}
+                      subtitle={t("dashboard.tier.user.subtitle")}
+                    />
+                    {renderGroup(userPaths)}
+                  </section>
+                )}
+                {operatorPaths.length > 0 && (
+                  <section>
+                    <TierHeader
+                      eyebrow={t("dashboard.tier.operator.eyebrow")}
+                      title={t("dashboard.tier.operator.title")}
+                      subtitle={t("dashboard.tier.operator.subtitle")}
+                    />
+                    {renderGroup(operatorPaths)}
+                  </section>
+                )}
+                {builderPaths.length > 0 && (
+                  <section>
+                    <TierHeader
+                      eyebrow={t("dashboard.tier.builder.eyebrow")}
+                      title={t("dashboard.tier.builder.title")}
+                      subtitle={t("dashboard.tier.builder.subtitle")}
+                    />
+                    {renderGroup(builderPaths)}
+                  </section>
+                )}
+              </div>
+            );
+          })()}
         </div>
       </main>
     </div>
@@ -319,6 +317,7 @@ function ModuleRow({
   onToggle,
   pathId,
   isPro,
+  tier,
   isAdmin,
   introAllDone,
   introIds,
@@ -335,6 +334,7 @@ function ModuleRow({
   onToggle: () => void;
   pathId: string;
   isPro: boolean;
+  tier: Tier;
   isAdmin: boolean;
   introAllDone: boolean;
   introIds: string[];
@@ -391,7 +391,10 @@ function ModuleRow({
               ? t("dashboard.module.complete")
               : moduleLocked
                 ? prevNotMastered
-                  ? t("dashboard.module.lockedMissions").replace("{count}", String(prevMissingMissionCount))
+                  ? t("dashboard.module.lockedMissions").replace(
+                      "{count}",
+                      String(prevMissingMissionCount),
+                    )
                   : t("dashboard.module.locked")
                 : soon
                   ? t("dashboard.soon")
@@ -432,7 +435,7 @@ function ModuleRow({
                 // Single source of truth — same gate the lesson page uses.
                 const gate = decideLessonGate({
                   lessonId: l.id,
-                  isPro,
+                  tier,
                   isAdmin,
                   introCompletedCount,
                   introTotal: introIds.length,
@@ -454,11 +457,7 @@ function ModuleRow({
                     key={l.id}
                     id={`lesson-${l.id}`}
                     className={`glass rounded-lg p-3 flex flex-col gap-2 ${
-                      !lUnlocked
-                        ? "opacity-60"
-                        : lDone
-                          ? "border-accent/30"
-                          : "border-primary/20"
+                      !lUnlocked ? "opacity-60" : lDone ? "border-accent/30" : "border-primary/20"
                     }`}
                   >
                     <div className="flex items-start gap-2.5">
@@ -494,7 +493,11 @@ function ModuleRow({
                       >
                         <LessonLink lesson={l} from="dashboard">
                           <Play className="h-3 w-3" />
-                          {lDone ? t("dashboard.lesson.review") : lInProgress ? t("dashboard.lesson.continue") : t("dashboard.lesson.start")}
+                          {lDone
+                            ? t("dashboard.lesson.review")
+                            : lInProgress
+                              ? t("dashboard.lesson.continue")
+                              : t("dashboard.lesson.start")}
                         </LessonLink>
                       </Button>
                     ) : (
@@ -534,6 +537,7 @@ function PathCard({
   isExpanded,
   onToggleExpand,
   isPro,
+  tier,
   isAdmin,
   introAllDone,
   introIds,
@@ -548,6 +552,7 @@ function PathCard({
   isExpanded: boolean;
   onToggleExpand: () => void;
   isPro: boolean;
+  tier: Tier;
   isAdmin: boolean;
   introAllDone: boolean;
   introIds: string[];
@@ -562,9 +567,7 @@ function PathCard({
   const allLessons = path.modules.flatMap((m) => m.lessons);
   const availableLessons = allLessons.filter((l) => l.state === "available");
   const total = availableLessons.length;
-  const done = availableLessons.filter(
-    (l) => getStatus(l.id) === "completed",
-  ).length;
+  const done = availableLessons.filter((l) => getStatus(l.id) === "completed").length;
   const pct = total ? Math.round((done / total) * 100) : 0;
   const animatedPct = useCountUp(pct, 1100);
   // One mastery query per path instead of one per module row.
@@ -619,10 +622,13 @@ function PathCard({
                 strokeWidth={1.75}
               />
             </span>
-            {path.kind === 'intro' ? t("dashboard.path.intro") : t("dashboard.path.track")} {pathTitle}
+            {path.kind === "intro" ? t("dashboard.path.intro") : t("dashboard.path.track")}{" "}
+            {pathTitle}
           </h2>
           <div className="flex items-center gap-2">
-            <span className={`text-xs text-muted-foreground glass px-3 py-1 rounded-full ${!isOpen ? "animate-pulse" : ""}`}>
+            <span
+              className={`text-xs text-muted-foreground glass px-3 py-1 rounded-full ${!isOpen ? "animate-pulse" : ""}`}
+            >
               {isOpen ? pathTagline : t("dashboard.soon")}
             </span>
             {isOpen && (
@@ -676,6 +682,7 @@ function PathCard({
               onToggle={() => onToggle(m.id)}
               pathId={path.id}
               isPro={isPro}
+              tier={tier}
               isAdmin={isAdmin}
               introAllDone={introAllDone}
               introIds={introIds}
@@ -684,16 +691,13 @@ function PathCard({
           ))}
         </div>
       ) : !isOpen ? (
-        <p className="mt-4 text-sm text-muted-foreground">
-          {pathTagline}
-        </p>
+        <p className="mt-4 text-sm text-muted-foreground">{pathTagline}</p>
       ) : null}
     </div>
   );
 }
 
-const STAT_CARD_BASE =
-  "group rounded-2xl p-5 card-lift animate-fade-up border border-border/60";
+const STAT_CARD_BASE = "group rounded-2xl p-5 card-lift animate-fade-up border border-border/60";
 const STAT_CARD_STYLE = { background: "var(--gradient-hero)" as const };
 
 function NextLessonCard({
@@ -726,7 +730,9 @@ function NextLessonCard({
       <div className="min-w-0 flex-1">
         <p className="text-xs text-muted-foreground">{t("dashboard.nextLesson.label")}</p>
         {empty ? (
-          <p className="text-base font-black leading-tight mt-0.5">{t("dashboard.nextLesson.allDone")}</p>
+          <p className="text-base font-black leading-tight mt-0.5">
+            {t("dashboard.nextLesson.allDone")}
+          </p>
         ) : (
           <>
             <p className="text-base font-black leading-tight mt-0.5 truncate">{lessonTitle}</p>
@@ -734,7 +740,9 @@ function NextLessonCard({
               {duration && (
                 <span className="inline-flex items-center gap-1">
                   <Clock className="h-3 w-3" />
-                  <span dir="ltr" className="tabular-nums">{duration}</span>
+                  <span dir="ltr" className="tabular-nums">
+                    {duration}
+                  </span>
                 </span>
               )}
               {pathTitle && <span className="opacity-70">· {pathTitle}</span>}
@@ -745,7 +753,11 @@ function NextLessonCard({
     </div>
   );
   if (empty) return content;
-  return <LessonLink lesson={lesson} from="dashboard" className="block">{content}</LessonLink>;
+  return (
+    <LessonLink lesson={lesson} from="dashboard" className="block">
+      {content}
+    </LessonLink>
+  );
 }
 
 function OverallProgressCard({

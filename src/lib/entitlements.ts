@@ -4,12 +4,17 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
 import { PATHS, getPath, type CurriculumPath } from "@/lib/curriculum-data";
 import { captureWarn } from "@/lib/error-capture";
+import {
+  isLessonIncludedInTier,
+  lessonIdsForTier,
+  type BillingTier,
+} from "@/lib/plan-entitlements";
 
 /* ============================================================== */
 /*  Entitlements + free/paid gating + admin bypass                 */
 /* ============================================================== */
 
-export type Tier = "free" | "pro";
+export type Tier = BillingTier;
 
 /**
  * Admin status is sourced from `public.user_roles` via the
@@ -27,38 +32,12 @@ export function isAdminEmail(_email: string | null | undefined): boolean {
 /*  - First lesson of every other path = free (path-intro)        */
 /* -------------------------------------------------------------- */
 
-function computeFreeLessonIds(): Set<string> {
-  const free = new Set<string>();
-  for (const p of PATHS) {
-    if (p.id === "intro") {
-      for (const m of p.modules) {
-        for (const l of m.lessons) {
-          if (l.state === "available") free.add(l.id);
-        }
-      }
-      continue;
-    }
-    // First available lesson in the first module = path-intro (free)
-    outer: for (const m of p.modules) {
-      for (const l of m.lessons) {
-        if (l.state === "available") {
-          free.add(l.id);
-          break outer;
-        }
-      }
-    }
-  }
-  return free;
-}
-
-const FREE_IDS = computeFreeLessonIds();
-
 export function isLessonFree(lessonId: string): boolean {
-  return FREE_IDS.has(lessonId);
+  return isLessonIncludedInTier(lessonId, "free");
 }
 
 export function freeLessonIds(): string[] {
-  return Array.from(FREE_IDS);
+  return [...lessonIdsForTier("free")];
 }
 
 /** The path that owns this lesson, or null. */
@@ -81,6 +60,7 @@ const ADMIN_QK = ["user-is-admin"] as const;
 export function useEntitlement(): {
   tier: Tier;
   isPro: boolean;
+  isProPlus: boolean;
   isAdmin: boolean;
   isLoaded: boolean;
 } {
@@ -126,20 +106,17 @@ export function useEntitlement(): {
         captureWarn("entitlements:billing_access_tier", error);
         return "free";
       }
-      return data === "pro" ? "pro" : "free";
+      return data === "pro" || data === "pro_plus" ? data : "free";
     },
     enabled: !!userId,
     staleTime: 60_000,
   });
 
-  const tier: Tier = admin
-    ? "pro"
-    : subscriptionQueryError
-      ? "free"
-      : (data ?? "free");
+  const tier: Tier = admin ? "pro_plus" : subscriptionQueryError ? "free" : (data ?? "free");
   return {
     tier,
-    isPro: tier === "pro",
+    isPro: tier === "pro" || tier === "pro_plus",
+    isProPlus: tier === "pro_plus",
     isAdmin: admin,
     // C6 fix: simplified — when there's no user we're loaded; when there is,
     // we need BOTH the subscription query and the admin query to have settled.
@@ -217,12 +194,18 @@ export type LessonGate =
 
 export function decideLessonGate(args: {
   lessonId: string;
-  isPro: boolean;
+  tier: Tier;
   isAdmin: boolean;
   introCompletedCount: number;
   introTotal: number;
 }): LessonGate {
-  if (args.isAdmin || args.isPro) return { kind: "open" };
+  if (args.isAdmin) return { kind: "open" };
+
+  if (args.tier !== "free") {
+    return isLessonIncludedInTier(args.lessonId, args.tier)
+      ? { kind: "open" }
+      : { kind: "paywall" };
+  }
 
   const path = findLessonPath(args.lessonId);
   // Lesson in Intro path is always free
@@ -250,7 +233,7 @@ export function useLessonGate(lessonId: string, introCompletedCount: number) {
     .filter((l) => l.state === "available").length;
   const gate = decideLessonGate({
     lessonId,
-    isPro: ent.isPro,
+    tier: ent.tier,
     isAdmin: ent.isAdmin,
     introCompletedCount,
     introTotal,

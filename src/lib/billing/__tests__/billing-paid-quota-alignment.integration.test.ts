@@ -115,7 +115,7 @@ describe("paid AI quota alignment — static contract", () => {
     const billingMigrations = readdirSync(path.join(REPO_ROOT, "supabase/migrations"))
       .filter((name) => name.endsWith(".sql") && name.includes("billing"))
       .sort();
-    expect(billingMigrations.at(-1)).toBe("20260915070000_billing_paid_ai_quota_alignment.sql");
+    expect(billingMigrations.at(-1)).toBe("20260916183000_billing_pro_71_lesson_contract.sql");
     expect(sql).toContain("attempt_index = 0");
     expect(sql).toContain("lesson_quota_reserved");
     expect(sql).toContain("usage_category = 'assistant_runtime_per_lesson'");
@@ -163,18 +163,20 @@ describe.skipIf(!ENABLED)("paid AI quota alignment — disposable DB", () => {
          WHERE policy_key IN ('pro','pro_plus') AND status='deprecated'
            AND effective_to IS NOT NULL`,
       ).trim(),
-    ).toBe("2");
+    ).toBe("4");
     expect(
       psql(`SELECT bool_and(
         (to_jsonb(current_policy) - ARRAY[
           'id','version_number','status','effective_from','effective_to',
           'created_at','published_at','published_by','policy_json',
+          'lesson_count_cap','builder_access',
           'assistant_runtime_per_lesson_quota',
           'assistant_runtime_general_monthly_quota',
           'assistant_runtime_period_quota','assistant_runtime_period_days']) =
         (to_jsonb(previous_policy) - ARRAY[
           'id','version_number','status','effective_from','effective_to',
           'created_at','published_at','published_by','policy_json',
+          'lesson_count_cap','builder_access',
           'assistant_runtime_per_lesson_quota',
           'assistant_runtime_general_monthly_quota',
           'assistant_runtime_period_quota','assistant_runtime_period_days']))
