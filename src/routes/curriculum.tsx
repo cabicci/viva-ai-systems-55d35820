@@ -3,14 +3,7 @@ import { useEffect, useMemo } from "react";
 import { Sidebar } from "@/components/dashboard/Sidebar";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
-import {
-  CheckCircle2,
-  Clock,
-  Lock,
-  Map as MapIcon,
-  Play,
-  ArrowRight,
-} from "lucide-react";
+import { CheckCircle2, Clock, Lock, Map as MapIcon, Play, ArrowRight } from "lucide-react";
 import {
   PATHS,
   pathLessonIds,
@@ -24,7 +17,7 @@ import { getLessonAccess, getModuleStatus } from "@/lib/builder-runtime";
 import { LessonLink } from "@/components/lesson/LessonLink";
 import { useModulesMastery } from "@/lib/mastery-gate";
 import type { ModuleMastery } from "@/lib/mastery-gate";
-import { useEntitlement } from "@/lib/entitlements";
+import { decideLessonGate, useEntitlement, type Tier } from "@/lib/entitlements";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { buildLocalizedLearnerMeta } from "@/lib/locale/build-learner-route-meta";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
@@ -55,14 +48,11 @@ export const Route = createFileRoute("/curriculum")({
 
 function CurriculumPage() {
   const { store, getStatus } = useLessonProgress();
-  const { isPro } = useEntitlement();
+  const { tier, isPro, isAdmin } = useEntitlement();
   const { dir } = useLocale();
   const t = useUiString();
   const search = Route.useSearch();
-  const allModules = useMemo(
-    () => PATHS.flatMap((p) => p.modules),
-    [],
-  );
+  const allModules = useMemo(() => PATHS.flatMap((p) => p.modules), []);
   const { mastery } = useModulesMastery(allModules);
 
   useEffect(() => {
@@ -81,6 +71,11 @@ function CurriculumPage() {
   const completedCount = PATHS.flatMap((p) => p.modules)
     .flatMap((m) => m.lessons)
     .filter((l) => l.state === "available" && getStatus(l.id) === "completed").length;
+  const introIds =
+    PATHS.find((path) => path.id === "intro")?.modules.flatMap((module) =>
+      module.lessons.filter((lesson) => lesson.state === "available").map((lesson) => lesson.id),
+    ) ?? [];
+  const introCompletedCount = introIds.filter((id) => getStatus(id) === "completed").length;
   const pct = available ? Math.round((completedCount / available) * 100) : 0;
 
   const progressLessons = t("curriculum.progress.lessons")
@@ -111,9 +106,7 @@ function CurriculumPage() {
               <span className="text-gradient">{t("curriculum.titleHighlight")}</span>{" "}
               {t("curriculum.title2")}
             </h1>
-            <p className="text-muted-foreground mt-3 max-w-2xl">
-              {t("curriculum.subtitle")}
-            </p>
+            <p className="text-muted-foreground mt-3 max-w-2xl">{t("curriculum.subtitle")}</p>
 
             <div className="mt-6 max-w-md">
               <div className="flex items-center justify-between text-xs text-muted-foreground mb-1.5 font-mono">
@@ -121,9 +114,7 @@ function CurriculumPage() {
                 <span>{progressLessons}</span>
               </div>
               <Progress value={pct} />
-              <p className="text-[11px] text-muted-foreground mt-2 font-mono">
-                {progressFooter}
-              </p>
+              <p className="text-[11px] text-muted-foreground mt-2 font-mono">{progressFooter}</p>
             </div>
           </div>
         </header>
@@ -144,6 +135,10 @@ function CurriculumPage() {
                 getStatus={getStatus}
                 mastery={mastery}
                 isPro={isPro}
+                tier={tier}
+                isAdmin={isAdmin}
+                introCompletedCount={introCompletedCount}
+                introTotal={introIds.length}
               />
             ));
 
@@ -195,7 +190,6 @@ function CurriculumPage() {
             </div>
           );
         })()}
-
       </main>
     </div>
   );
@@ -215,9 +209,7 @@ function SectionHeader({
   return (
     <div className="mb-5 flex items-end justify-between gap-4 border-b border-border/40 pb-3">
       <div>
-        <p className="text-[11px] font-mono text-primary tracking-widest mb-1">
-          {eyebrow}
-        </p>
+        <p className="text-[11px] font-mono text-primary tracking-widest mb-1">{eyebrow}</p>
         <h2 className="text-2xl md:text-3xl font-black">
           <span className="text-gradient">{title}</span>
         </h2>
@@ -233,12 +225,20 @@ function PathBlock({
   getStatus,
   mastery,
   isPro,
+  tier,
+  isAdmin,
+  introCompletedCount,
+  introTotal,
 }: {
   path: CurriculumPath;
   progress: Record<string, LessonStatus>;
   getStatus: (id: string) => LessonStatus;
   mastery: Record<string, ModuleMastery>;
   isPro: boolean;
+  tier: Tier;
+  isAdmin: boolean;
+  introCompletedCount: number;
+  introTotal: number;
 }) {
   const { locale, dir } = useLocale();
   const t = useUiString();
@@ -250,6 +250,8 @@ function PathBlock({
   const isOpen = path.status === "open";
   const isIntro = path.kind === "intro";
   const orderedIds = pathLessonIds(path);
+  const bypassSequenceLocks =
+    isAdmin || tier === "pro_plus" || (tier === "pro" && path.id !== "builder");
   const totalIn = orderedIds.length;
   const completed = orderedIds.filter((id) => getStatus(id) === "completed").length;
   const pct = totalIn ? Math.round((completed / totalIn) * 100) : 0;
@@ -304,10 +306,7 @@ function PathBlock({
           <p className="text-xs font-mono text-muted-foreground">
             {isIntro
               ? t("curriculum.path.introductionEyebrow")
-              : t("curriculum.path.pathEyebrow").replace(
-                  "{path}",
-                  pathTitle.toUpperCase(),
-                )}
+              : t("curriculum.path.pathEyebrow").replace("{path}", pathTitle.toUpperCase())}
           </p>
           <h2 className="text-2xl md:text-3xl font-black">{pathTitle}</h2>
           <p className="text-sm text-muted-foreground mt-1">{pathTagline}</p>
@@ -345,7 +344,7 @@ function PathBlock({
               prev,
               getStatus,
               prev ? mastery[prev.id] : undefined,
-              isPro, // bypassLocks for pro/admin
+              bypassSequenceLocks,
             );
             const moduleUnlocked = !status.moduleLocked;
             const moduleCompleted = status.moduleCompleted;
@@ -373,10 +372,7 @@ function PathBlock({
                   </span>
                   <div className="flex-1 min-w-0">
                     <p className="text-[11px] font-mono text-muted-foreground">
-                      {t("curriculum.module.eyebrow").replace(
-                        "{order}",
-                        String(mi + 1),
-                      )}
+                      {t("curriculum.module.eyebrow").replace("{order}", String(mi + 1))}
                     </p>
                     <div className="flex items-center gap-2 flex-wrap">
                       <h3 className="font-bold text-lg leading-tight">{moduleTitle}</h3>
@@ -413,6 +409,10 @@ function PathBlock({
                       orderedIds={orderedIds}
                       progress={progress}
                       getStatus={getStatus}
+                      tier={tier}
+                      isAdmin={isAdmin}
+                      introCompletedCount={introCompletedCount}
+                      introTotal={introTotal}
                     />
                   ))}
                 </ul>
@@ -452,70 +452,69 @@ function LessonRow({
   orderedIds,
   progress,
   getStatus,
+  tier,
+  isAdmin,
+  introCompletedCount,
+  introTotal,
 }: {
   lesson: CurriculumLesson;
   moduleUnlocked: boolean;
   orderedIds: string[];
   progress: Record<string, LessonStatus>;
   getStatus: (id: string) => LessonStatus;
+  tier: Tier;
+  isAdmin: boolean;
+  introCompletedCount: number;
+  introTotal: number;
 }) {
   const { locale, dir } = useLocale();
   const t = useUiString();
   const lessonTitle = getCurriculumLessonLabel(locale, lesson.id);
-  const access = getLessonAccess(
-    lesson,
-    progress,
-    orderedIds,
-    getStatus,
-    moduleUnlocked,
-  );
+  const access = getLessonAccess(lesson, progress, orderedIds, getStatus, moduleUnlocked);
   const completed = access.isCompleted;
   const inProgress = access.isInProgress;
   const isAvailable = access.isAvailable;
-  const accessible = access.isAccessible;
+  const lessonGate = decideLessonGate({
+    lessonId: lesson.id,
+    tier,
+    isAdmin,
+    introCompletedCount,
+    introTotal,
+  });
+  const accessible = access.isAccessible && lessonGate.kind === "open";
   const badge = String(orderedIds.indexOf(lesson.id) + 1);
 
   const baseClasses =
     "flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition border border-transparent";
 
-  const StateIcon = completed
-    ? CheckCircle2
-    : inProgress
-      ? Clock
-      : isAvailable
-        ? Play
-        : Lock;
+  const StateIcon = !accessible ? Lock : completed ? CheckCircle2 : inProgress ? Clock : Play;
 
   const content = (
     <>
       <span
         dir="ltr"
         className={`grid h-6 min-w-7 px-1.5 place-items-center rounded-md shrink-0 text-[11px] font-mono tabular-nums ${
-          completed
-            ? "bg-accent/20 text-accent"
-            : inProgress
-              ? "bg-primary/20 text-primary"
-              : isAvailable
-                ? "bg-foreground/5 text-foreground"
-                : "bg-foreground/5 text-muted-foreground"
+          !accessible
+            ? "bg-foreground/5 text-muted-foreground"
+            : completed
+              ? "bg-accent/20 text-accent"
+              : inProgress
+                ? "bg-primary/20 text-primary"
+                : isAvailable
+                  ? "bg-foreground/5 text-foreground"
+                  : "bg-foreground/5 text-muted-foreground"
         }`}
       >
         {badge}
       </span>
       <span
-        className={`flex-1 truncate ${
-          accessible ? "text-foreground" : "text-muted-foreground"
-        }`}
+        className={`flex-1 truncate ${accessible ? "text-foreground" : "text-muted-foreground"}`}
       >
         {lessonTitle}
       </span>
       <StateIcon
         className={`h-3.5 w-3.5 shrink-0 ${
-          completed
-            ? "text-accent"
-            : inProgress
-              ? "text-primary"
-              : "text-muted-foreground"
+          completed ? "text-accent" : inProgress ? "text-primary" : "text-muted-foreground"
         }`}
       />
     </>
@@ -543,7 +542,7 @@ function LessonRow({
   return (
     <li
       id={`lesson-${lesson.id}`}
-      className={`${baseClasses} ${isAvailable ? "" : "opacity-60"} cursor-default`}
+      className={`${baseClasses} ${accessible ? "" : "opacity-60"} cursor-default`}
       aria-disabled
     >
       {content}

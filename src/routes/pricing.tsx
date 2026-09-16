@@ -44,7 +44,7 @@ const COMPARISON_ROWS = [
   {
     labelKey: "pricing.compare.row.builder.label",
     free: false,
-    pro: true,
+    pro: false,
     proPlus: true,
   },
   {

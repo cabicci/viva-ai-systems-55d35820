@@ -115,7 +115,7 @@ describe("paid AI quota alignment — static contract", () => {
     const billingMigrations = readdirSync(path.join(REPO_ROOT, "supabase/migrations"))
       .filter((name) => name.endsWith(".sql") && name.includes("billing"))
       .sort();
-    expect(billingMigrations.at(-1)).toBe("20260915070000_billing_paid_ai_quota_alignment.sql");
+    expect(billingMigrations.at(-1)).toBe("20260916183000_billing_pro_71_lesson_contract.sql");
     expect(sql).toContain("attempt_index = 0");
     expect(sql).toContain("lesson_quota_reserved");
     expect(sql).toContain("usage_category = 'assistant_runtime_per_lesson'");

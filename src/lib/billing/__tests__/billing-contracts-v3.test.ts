@@ -48,8 +48,8 @@ const paidPolicy: EntitlementPolicy = {
   versionNumber: 1,
   lessonAllowlistMode: "curriculum_snapshot",
   lessonIds: [],
-  lessonCountCap: 74,
-  builderAccess: true,
+  lessonCountCap: 71,
+  builderAccess: false,
   videoAccess: true,
   ragEnabled: true,
   assistantRuntimePerLessonQuota: null,
@@ -86,7 +86,7 @@ describe("V3 — no automatic 14-day trial", () => {
   });
 
   it("encodes the approved paid dual quotas without changing lesson caps", () => {
-    expect(PLAN_ENTITLEMENT_DEFAULTS.pro.lessonCountCap).toBe(74);
+    expect(PLAN_ENTITLEMENT_DEFAULTS.pro.lessonCountCap).toBe(71);
     expect(PLAN_ENTITLEMENT_DEFAULTS.pro.assistantRuntimePerLessonQuota).toBe(3);
     expect(PLAN_ENTITLEMENT_DEFAULTS.pro.assistantRuntimeGeneralMonthlyQuota).toBe(50);
     expect(PLAN_ENTITLEMENT_DEFAULTS.pro_plus.lessonCountCap).toBe(100);
@@ -168,7 +168,7 @@ describe("V3 — admin grant confers full learner entitlement", () => {
   it("treats an active admin grant as full access without changing state", () => {
     const snapshot = buildEntitlementSnapshot(
       ctx({
-        policy: paidPolicy,
+        policy: { ...paidPolicy, builderAccess: true },
         entitledLessonIds: ["l-1"],
         adminGrantExpiresAt: "2026-02-01T00:00:00.000Z",
       }),

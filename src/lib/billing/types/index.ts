@@ -155,7 +155,7 @@ export const PLAN_ENTITLEMENT_DEFAULTS: Record<
     assistantRuntimePeriodDays: null,
   },
   pro: {
-    lessonCountCap: 74,
+    lessonCountCap: 71,
     assistantRuntimePerLessonQuota: 3,
     assistantRuntimeGeneralMonthlyQuota: 50,
     assistantRuntimePeriodQuota: null,
