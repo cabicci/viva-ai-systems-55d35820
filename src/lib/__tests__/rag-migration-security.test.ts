@@ -90,6 +90,11 @@ const GUARDED_UPGRADE = readFileSync(
   "utf8",
 );
 
+const GUARDED_UPGRADE_TIMEOUT = readFileSync(
+  path.join(REPO_ROOT, "supabase/migrations/20260916110000_rag_guarded_upgrade_timeout.sql"),
+  "utf8",
+);
+
 describe("RAG versioned chunk identity migration", () => {
   it("preserves legacy identity while allowing parallel locale index versions", () => {
     expect(VERSIONED_IDENTITY).toContain("knowledge_chunks_unversioned_source_identity_unique");
@@ -123,6 +128,23 @@ describe("RAG guarded upgrade migration", () => {
     expect(GUARDED_UPGRADE).toMatch(/b\.status = 'failed'/);
     expect(GUARDED_UPGRADE).toContain("rag-lovable-cf227e066b9b4550806c40adb1e8bde5");
     expect(GUARDED_UPGRADE).toContain("s.accepted_chunk_count = 3701");
+  });
+});
+
+describe("RAG guarded upgrade timeout migration", () => {
+  it("extends the timeout only for the guarded activation and rollback RPCs", () => {
+    expect(GUARDED_UPGRADE_TIMEOUT).toMatch(
+      /ALTER FUNCTION public\.rag_activate_index_upgrade\(text, text\)\s+SET statement_timeout TO '60s'/,
+    );
+    expect(GUARDED_UPGRADE_TIMEOUT).toMatch(
+      /ALTER FUNCTION public\.rag_rollback_index_upgrade\(text, text\)\s+SET statement_timeout TO '60s'/,
+    );
+  });
+
+  it("does not weaken role-wide or database-wide timeout policy", () => {
+    expect(GUARDED_UPGRADE_TIMEOUT).not.toMatch(/ALTER\s+ROLE/i);
+    expect(GUARDED_UPGRADE_TIMEOUT).not.toMatch(/ALTER\s+DATABASE/i);
+    expect(GUARDED_UPGRADE_TIMEOUT).not.toMatch(/ALTER\s+USER/i);
   });
 });
 
