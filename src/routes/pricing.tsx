@@ -3,6 +3,7 @@ import { Check } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { Button } from "@/components/ui/button";
+import { StripeCheckoutButtons } from "@/components/billing/StripeCheckoutButtons";
 import { Badge } from "@/components/ui/badge";
 import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
@@ -145,7 +146,7 @@ function PricingPage() {
                   variant="outline"
                   className="border-primary/40 bg-primary/10 text-primary text-[11px] font-semibold"
                 >
-                  {t("pricing.badge.comingSoon")}
+                  {t("pricing.badge.testMode")}
                 </Badge>
               </div>
               <div className="mb-6">
@@ -163,17 +164,7 @@ function PricingPage() {
                 ))}
               </ul>
               <PlanPrices plan="pro" />
-              <Button
-                variant="violet"
-                size="lg"
-                className="w-full"
-                disabled
-                aria-disabled
-                title={t("pricing.cta.proSoonTitle")}
-                aria-label={t("pricing.cta.proSoonAria")}
-              >
-                {t("pricing.cta.paymentPending")}
-              </Button>
+              <StripeCheckoutButtons plan="pro" variant="violet" />
             </article>
 
             <article className="glass rounded-2xl border border-accent/40 bg-accent/[0.04] p-6 md:p-8 flex flex-col relative overflow-hidden">
@@ -182,7 +173,7 @@ function PricingPage() {
                   variant="outline"
                   className="border-accent/40 bg-accent/10 text-accent text-[11px] font-semibold"
                 >
-                  {t("pricing.badge.comingSoon")}
+                  {t("pricing.badge.testMode")}
                 </Badge>
               </div>
               <div className="mb-6">
@@ -200,17 +191,7 @@ function PricingPage() {
                 ))}
               </ul>
               <PlanPrices plan="pro_plus" />
-              <Button
-                variant="outline"
-                size="lg"
-                className="w-full"
-                disabled
-                aria-disabled
-                title={t("pricing.cta.proSoonTitle")}
-                aria-label={t("pricing.cta.proSoonAria")}
-              >
-                {t("pricing.cta.paymentPending")}
-              </Button>
+              <StripeCheckoutButtons plan="pro_plus" variant="outline" />
             </article>
           </section>
 
