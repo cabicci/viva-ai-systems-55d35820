@@ -419,7 +419,7 @@ function UnifiedLessonPage() {
   }, [lesson.id, lesson.moduleId, pathId]);
 
   return (
-    <div className="min-h-dvh flex" dir={dir}>
+    <div className="min-h-dvh flex overflow-x-hidden" dir={dir}>
       <Sidebar />
       <ReadingProgressBar />
       <CompletionReward
@@ -427,16 +427,16 @@ function UnifiedLessonPage() {
         isCompleted={isCompleted}
         completedCount={completedCount}
       />
-      <main className="flex-1 max-w-[48rem] mx-auto w-full px-4 sm:px-6 py-8 md:py-12">
+      <main className="flex-1 min-w-0 max-w-[48rem] mx-auto w-full px-4 sm:px-6 py-8 md:py-12">
         {from === "curriculum" ? (
           <Link
             to="/curriculum"
             search={{ module: lesson.moduleId, lesson: lesson.id }}
             aria-label={t("learn.backToMap")}
-            className="fixed top-4 start-4 z-50 inline-flex items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md"
+            className="fixed top-4 start-16 z-50 inline-flex max-w-[calc(100vw-5rem)] items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md lg:start-4"
           >
             <ArrowLeft className="h-4 w-4" />
-            <span>{t("learn.backToMap")}</span>
+            <span className="truncate">{t("learn.backToMap")}</span>
           </Link>
         ) : (
           <Link
@@ -447,10 +447,10 @@ function UnifiedLessonPage() {
               lesson: lesson.id,
             })}
             aria-label={t("learn.backToDashboard")}
-            className="fixed top-4 start-4 z-50 inline-flex items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md"
+            className="fixed top-4 start-16 z-50 inline-flex max-w-[calc(100vw-5rem)] items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md lg:start-4"
           >
             <ArrowLeft className="h-4 w-4" />
-            <span>{t("learn.backToDashboard")}</span>
+            <span className="truncate">{t("learn.backToDashboard")}</span>
           </Link>
         )}
 
@@ -491,11 +491,11 @@ function UnifiedLessonPage() {
           )}
 
           <div className="mt-5">
-            <div className="flex items-center justify-between text-[11px] text-muted-foreground mb-1.5 font-mono">
-              <span>
+            <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 text-[11px] text-muted-foreground mb-1.5 font-mono">
+              <span className="min-w-0 truncate">
                 {t("learn.progress.path").replace("{path}", pathLabel)}
               </span>
-              <span>{progressStats}</span>
+              <span className="text-end">{progressStats}</span>
             </div>
             <Progress value={pct} />
           </div>
@@ -580,7 +580,7 @@ function UnifiedLessonPage() {
         </section>
 
         <nav className="mt-10 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-          <div className="flex gap-2">
+          <div className="flex min-w-0 flex-wrap gap-2">
             {prev ? (
               <Button asChild variant="glass" size="sm">
                 <Link
