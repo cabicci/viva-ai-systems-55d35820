@@ -1,6 +1,7 @@
 const ALLOWED_ORIGINS = new Set([
   "https://masaarat.ai",
   "https://www.masaarat.ai",
+  "https://preview--viva-ai-systems.lovable.app",
   "http://localhost:3000",
   "http://localhost:5173",
 ]);
