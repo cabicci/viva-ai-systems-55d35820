@@ -80,6 +80,35 @@ runIntegration("Stripe re-subscription generation guard", () => {
     const guard = readFileSync("docs/billing/20260918_stripe_resubscription_generation_guard.sql", "utf8");
     sql(`${setupSql}\n${baseSchema}\n${serviceRoleFunction}\n${machineSection}\n${guard}\n
       select set_config('request.jwt.claim.role','service_role',false);
+      insert into billing.entitlement_policy_versions (
+        id,policy_key,version_number,status,effective_from,lesson_allowlist_mode,
+        builder_access,video_access,rag_enabled,mission_evaluation_enabled,
+        reveal_answer_enabled,wow_path_enabled
+      ) values (
+        '00000000-0000-0000-0000-000000000011','test',1,'published',now(),
+        'explicit_list',true,true,true,true,true,true
+      );
+      insert into billing.refund_policy_versions (
+        id,policy_key,version_number,status,effective_from,
+        annual_to_monthly_conversion_enabled,proration_method
+      ) values (
+        '00000000-0000-0000-0000-000000000012','test',1,'published',now(),false,'daily'
+      );
+      insert into billing.plan_catalog (id,plan_key,display_name,plan_family)
+      values
+        ('00000000-0000-0000-0000-000000000013','pro','{}','paid'),
+        ('00000000-0000-0000-0000-000000000014','pro_plus','{}','paid');
+      insert into billing.plan_versions (
+        id,plan_id,entitlement_policy_version_id,refund_policy_version_id,
+        version_number,billing_interval,status,effective_from
+      ) values
+        ('${proPlanId}','00000000-0000-0000-0000-000000000013','00000000-0000-0000-0000-000000000011','00000000-0000-0000-0000-000000000012',1,'month','published',now()),
+        ('${plusPlanId}','00000000-0000-0000-0000-000000000014','00000000-0000-0000-0000-000000000011','00000000-0000-0000-0000-000000000012',1,'month','published',now());
+      insert into billing.market_prices (
+        id,plan_version_id,market_code,currency_code,amount_minor,tax_behavior,status,effective_from
+      ) values
+        ('${proPriceId}','${proPlanId}','EG','EGP',16900,'exclusive','active',now()),
+        ('${plusPriceId}','${plusPlanId}','EG','EGP',30900,'exclusive','active',now());
       insert into billing.subscriptions (
         id,user_id,plan_version_id,market_price_id,access_state,billing_state,
         market_code,currency_code,billing_interval,idempotency_key,expired_at
