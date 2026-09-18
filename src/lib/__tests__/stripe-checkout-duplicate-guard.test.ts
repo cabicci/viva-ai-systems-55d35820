@@ -18,11 +18,12 @@ describe("Stripe checkout duplicate-subscription guards", () => {
     expect(source).toContain('"incomplete"');
   });
 
-  it("reuses an open matching Checkout Session", () => {
-    expect(source).toContain("findReusableCheckoutSession(customerId, context)");
+  it("prepares the generation before reusing only its matching open Checkout Session", () => {
+    expect(source.indexOf('"prepare_stripe_checkout"')).toBeLessThan(source.indexOf("listOpenCheckoutSessions(customerId)"));
     expect(source).toContain('status: "open"');
-    expect(source).toContain("reusableSession.url");
-    expect(source).toContain("reusableSession.id");
+    expect(source).toContain("selectCheckoutSessionIntent");
+    expect(source).toContain("confirm_stripe_checkout_generation");
+    expect(source).toContain("expireCheckoutSession");
   });
 
   it("uses a stable short checkout window instead of a random idempotency key", () => {
