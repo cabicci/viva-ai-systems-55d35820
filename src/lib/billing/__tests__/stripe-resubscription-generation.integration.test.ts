@@ -9,7 +9,8 @@ const sql = async (statement: string): Promise<string> => {
   const rows = result.at(-1)?.rows ?? [];
   return rows.map((row) => Object.values(row as Record<string, unknown>).join("|")).join("\n");
 };
-const queryJson = async (statement: string): Promise<Record<string, unknown>> => JSON.parse(await sql(statement));
+const queryJson = async (statement: string): Promise<Record<string, unknown>> =>
+  JSON.parse(await sql(statement));
 
 const userId = randomUUID();
 const proPlanId = randomUUID();
@@ -18,7 +19,8 @@ const proPriceId = randomUUID();
 const plusPriceId = randomUUID();
 const subscriptionId = randomUUID();
 
-const checkout = (key: string) => queryJson(`select public.prepare_stripe_checkout(
+const checkout = (key: string) =>
+  queryJson(`select public.prepare_stripe_checkout(
   '${userId}','${proPlanId}','${proPriceId}','EG','EGP','month','cus_test','${key}'
 )::text`);
 
@@ -33,7 +35,8 @@ const webhook = (input: {
   gatewaySubscriptionId?: string;
   gatewayStatus?: string;
   transactionId?: string | null;
-}) => queryJson(`select public.apply_stripe_webhook_event(
+}) =>
+  queryJson(`select public.apply_stripe_webhook_event(
   '${input.eventId}','${input.eventType}','${input.effectiveAt}',${input.transition ? `'${input.transition}'` : "null"},
   '${subscriptionId}','${userId}','${input.planId ?? proPlanId}','${input.priceId ?? proPriceId}',
   'cus_test','${input.gatewaySubscriptionId ?? "sub_new"}','${input.gatewayStatus ?? "active"}',
@@ -52,16 +55,29 @@ describe("Stripe re-subscription generation guard", async () => {
         select jsonb_build_object('role', current_setting('request.jwt.claim.role', true))
       $$;
     `;
-    const baseSchema = readFileSync("supabase/migrations/20260709190000_billing_schema_phase1.sql", "utf8");
+    const baseSchema = readFileSync(
+      "supabase/migrations/20260709190000_billing_schema_phase1.sql",
+      "utf8",
+    );
     const serviceRoleFunction = `create or replace function billing.is_service_role_caller() returns boolean language sql stable as $$
       select current_setting('request.jwt.claim.role', true) = 'service_role'
     $$;`;
-    const machine = readFileSync("supabase/migrations/20260722180000_billing_launch_closure_contracts_v3.sql", "utf8");
-    const machineSection = machine.slice(
-      machine.indexOf("ALTER TABLE billing.subscriptions ADD COLUMN IF NOT EXISTS last_applied_effective_at"),
-      machine.indexOf("-- ============================================================================\n-- SECTION G."),
+    const machine = readFileSync(
+      "supabase/migrations/20260722180000_billing_launch_closure_contracts_v3.sql",
+      "utf8",
     );
-    const guard = readFileSync("docs/billing/20260918_stripe_resubscription_generation_guard.sql", "utf8");
+    const machineSection = machine.slice(
+      machine.indexOf(
+        "ALTER TABLE billing.subscriptions ADD COLUMN IF NOT EXISTS last_applied_effective_at",
+      ),
+      machine.indexOf(
+        "-- ============================================================================\n-- SECTION G.",
+      ),
+    );
+    const guard = readFileSync(
+      "docs/billing/20260918_stripe_resubscription_generation_guard.sql",
+      "utf8",
+    );
     await sql(`${setupSql}\n${baseSchema}\n${serviceRoleFunction}\n${machineSection}\n${guard}\n
       select set_config('request.jwt.claim.role','service_role',false);
       insert into billing.entitlement_policy_versions (
@@ -102,145 +118,285 @@ describe("Stripe re-subscription generation guard", async () => {
       );`);
   }, 30_000);
 
-  afterAll(async () => { await db?.close(); });
+  afterAll(async () => {
+    await db?.close();
+  });
 
   it("deduplicates unpaid Checkout, then activates the paid repurchase", async () => {
     const first = await checkout("checkout-new");
     const second = await checkout("checkout-different-time-window");
     expect(second.checkout_generation).toBe(first.checkout_generation);
-    expect(await sql(`select access_state||':'||billing_state from billing.subscriptions where id='${subscriptionId}'`))
-      .toBe("free_active:checkout_pending");
+    expect(
+      await sql(
+        `select access_state||':'||billing_state from billing.subscriptions where id='${subscriptionId}'`,
+      ),
+    ).toBe("free_active:checkout_pending");
 
     const paid = await webhook({
-      eventId: "evt_paid_new", eventType: "invoice.paid", effectiveAt: "2026-09-18T10:00:00Z",
-      transition: "payment_succeeded", generation: String(first.checkout_generation), transactionId: "in_paid_new",
+      eventId: "evt_paid_new",
+      eventType: "invoice.paid",
+      effectiveAt: "2026-09-18T10:00:00Z",
+      transition: "payment_succeeded",
+      generation: String(first.checkout_generation),
+      transactionId: "in_paid_new",
     });
     expect(paid).toMatchObject({ processed: true, plan_updated: true });
-    expect(await sql(`select access_state from billing.subscriptions where id='${subscriptionId}'`)).toBe("paid_active");
+    expect(
+      await sql(`select access_state from billing.subscriptions where id='${subscriptionId}'`),
+    ).toBe("paid_active");
   });
 
   it("keeps pending or failed Pro Plus unpaid", async () => {
-    const generation = await sql(`select checkout_generation from billing.subscriptions where id='${subscriptionId}'`);
-    expect(await webhook({
-      eventId: "evt_upgrade_pending", eventType: "customer.subscription.updated", effectiveAt: "2026-09-18T10:05:00Z",
-      transition: null, generation, planId: plusPlanId, priceId: plusPriceId,
-    })).toMatchObject({ processed: true, plan_updated: false });
-    expect(await webhook({
-      eventId: "evt_upgrade_failed", eventType: "invoice.payment_failed", effectiveAt: "2026-09-18T10:06:00Z",
-      transition: "payment_failed", generation, planId: plusPlanId, priceId: plusPriceId, gatewayStatus: "past_due",
-    })).toMatchObject({ processed: true, plan_updated: false });
-    expect(await sql(`select plan_version_id||':'||access_state from billing.subscriptions where id='${subscriptionId}'`))
-      .toBe(`${proPlanId}:past_due`);
+    const generation = await sql(
+      `select checkout_generation from billing.subscriptions where id='${subscriptionId}'`,
+    );
+    expect(
+      await webhook({
+        eventId: "evt_upgrade_pending",
+        eventType: "customer.subscription.updated",
+        effectiveAt: "2026-09-18T10:05:00Z",
+        transition: null,
+        generation,
+        planId: plusPlanId,
+        priceId: plusPriceId,
+      }),
+    ).toMatchObject({ processed: true, plan_updated: false });
+    expect(
+      await webhook({
+        eventId: "evt_upgrade_failed",
+        eventType: "invoice.payment_failed",
+        effectiveAt: "2026-09-18T10:06:00Z",
+        transition: "payment_failed",
+        generation,
+        planId: plusPlanId,
+        priceId: plusPriceId,
+        gatewayStatus: "past_due",
+      }),
+    ).toMatchObject({ processed: true, plan_updated: false });
+    expect(
+      await sql(
+        `select plan_version_id||':'||access_state from billing.subscriptions where id='${subscriptionId}'`,
+      ),
+    ).toBe(`${proPlanId}:past_due`);
   });
 
   it("applies a paid proration invoice to the same subscription", async () => {
-    const generation = await sql(`select checkout_generation from billing.subscriptions where id='${subscriptionId}'`);
-    expect(await webhook({
-      eventId: "evt_upgrade_paid", eventType: "invoice.paid", effectiveAt: "2026-09-18T10:07:00Z",
-      transition: "payment_succeeded", generation, planId: plusPlanId, priceId: plusPriceId,
-      transactionId: "in_proration_paid",
-    })).toMatchObject({ processed: true, plan_updated: true });
-    expect(await sql(`select s.plan_version_id||':'||s.access_state||':'||gs.gateway_subscription_id
+    const generation = await sql(
+      `select checkout_generation from billing.subscriptions where id='${subscriptionId}'`,
+    );
+    expect(
+      await webhook({
+        eventId: "evt_upgrade_paid",
+        eventType: "invoice.paid",
+        effectiveAt: "2026-09-18T10:07:00Z",
+        transition: "payment_succeeded",
+        generation,
+        planId: plusPlanId,
+        priceId: plusPriceId,
+        transactionId: "in_proration_paid",
+      }),
+    ).toMatchObject({ processed: true, plan_updated: true });
+    expect(
+      await sql(`select s.plan_version_id||':'||s.access_state||':'||gs.gateway_subscription_id
       from billing.subscriptions s join billing.gateway_subscriptions gs on gs.subscription_id=s.id
-      where s.id='${subscriptionId}'`)).toBe(`${plusPlanId}:paid_active:sub_new`);
+      where s.id='${subscriptionId}'`),
+    ).toBe(`${plusPlanId}:paid_active:sub_new`);
   });
 
   it("cancels and rejects an old-generation replay observably", async () => {
-    const generation = await sql(`select checkout_generation from billing.subscriptions where id='${subscriptionId}'`);
-    expect(await webhook({
-      eventId: "evt_cancel_new", eventType: "customer.subscription.deleted", effectiveAt: "2026-09-18T10:08:00Z",
-      transition: "canceled", generation, planId: plusPlanId, priceId: plusPriceId, gatewayStatus: "canceled",
-    })).toMatchObject({ processed: true });
-    expect(await webhook({
-      eventId: "evt_old_generation", eventType: "invoice.paid", effectiveAt: "2026-09-18T09:00:00Z",
-      transition: "payment_succeeded", generation: randomUUID(), gatewaySubscriptionId: "sub_old", transactionId: "in_old",
-    })).toMatchObject({ processed: false, reason: "CHECKOUT_GENERATION_MISMATCH" });
-    expect(await sql(`select w.status||':'||w.error_code||':'||s.access_state||':'||s.plan_version_id
+    const generation = await sql(
+      `select checkout_generation from billing.subscriptions where id='${subscriptionId}'`,
+    );
+    expect(
+      await webhook({
+        eventId: "evt_cancel_new",
+        eventType: "customer.subscription.deleted",
+        effectiveAt: "2026-09-18T10:08:00Z",
+        transition: "canceled",
+        generation,
+        planId: plusPlanId,
+        priceId: plusPriceId,
+        gatewayStatus: "canceled",
+      }),
+    ).toMatchObject({ processed: true });
+    expect(
+      await webhook({
+        eventId: "evt_old_generation",
+        eventType: "invoice.paid",
+        effectiveAt: "2026-09-18T09:00:00Z",
+        transition: "payment_succeeded",
+        generation: randomUUID(),
+        gatewaySubscriptionId: "sub_old",
+        transactionId: "in_old",
+      }),
+    ).toMatchObject({ processed: false, reason: "CHECKOUT_GENERATION_MISMATCH" });
+    expect(
+      await sql(`select w.status||':'||w.error_code||':'||s.access_state||':'||s.plan_version_id
       from billing.webhook_events w cross join billing.subscriptions s
-      where w.gateway_event_id='evt_old_generation' and s.id='${subscriptionId}'`))
-      .toBe(`failed:CHECKOUT_GENERATION_MISMATCH:expired:${plusPlanId}`);
+      where w.gateway_event_id='evt_old_generation' and s.id='${subscriptionId}'`),
+    ).toBe(`failed:CHECKOUT_GENERATION_MISMATCH:expired:${plusPlanId}`);
   });
 
   it("rejects an older same-generation active metadata update after cancellation", async () => {
-    const generation = await sql(`select checkout_generation from billing.subscriptions where id='${subscriptionId}'`);
-    const before = await sql(`select billing_state||':'||cancel_at_period_end||':'||coalesce(current_period_end::text,'')||':'||gs.raw_status
+    const generation = await sql(
+      `select checkout_generation from billing.subscriptions where id='${subscriptionId}'`,
+    );
+    const before =
+      await sql(`select billing_state||':'||cancel_at_period_end||':'||coalesce(current_period_end::text,'')||':'||gs.raw_status
       from billing.subscriptions s join billing.gateway_subscriptions gs on gs.subscription_id=s.id
       where s.id='${subscriptionId}'`);
-    expect(await webhook({
-      eventId: "evt_delayed_active", eventType: "customer.subscription.updated", effectiveAt: "2026-09-18T10:07:30Z",
-      transition: null, generation, planId: plusPlanId, priceId: plusPriceId, gatewayStatus: "active",
-    })).toMatchObject({ processed: false, reason: "STALE" });
-    expect(await sql(`select billing_state||':'||cancel_at_period_end||':'||coalesce(current_period_end::text,'')||':'||gs.raw_status
+    expect(
+      await webhook({
+        eventId: "evt_delayed_active",
+        eventType: "customer.subscription.updated",
+        effectiveAt: "2026-09-18T10:07:30Z",
+        transition: null,
+        generation,
+        planId: plusPlanId,
+        priceId: plusPriceId,
+        gatewayStatus: "active",
+      }),
+    ).toMatchObject({ processed: false, reason: "STALE" });
+    expect(
+      await sql(`select billing_state||':'||cancel_at_period_end||':'||coalesce(current_period_end::text,'')||':'||gs.raw_status
       from billing.subscriptions s join billing.gateway_subscriptions gs on gs.subscription_id=s.id
-      where s.id='${subscriptionId}'`)).toBe(before);
-    expect(await sql(`select status||':'||error_code from billing.webhook_events where gateway_event_id='evt_delayed_active'`))
-      .toBe("failed:STALE_SUBSCRIPTION_EVENT");
+      where s.id='${subscriptionId}'`),
+    ).toBe(before);
+    expect(
+      await sql(
+        `select status||':'||error_code from billing.webhook_events where gateway_event_id='evt_delayed_active'`,
+      ),
+    ).toBe("failed:STALE_SUBSCRIPTION_EVENT");
   });
 
   it("orders metadata-only events and prevents regression", async () => {
-    const generation = await sql(`select checkout_generation from billing.subscriptions where id='${subscriptionId}'`);
-    expect(await webhook({
-      eventId: "evt_metadata_new", eventType: "customer.subscription.updated", effectiveAt: "2026-09-18T10:09:00Z",
-      transition: null, generation, planId: plusPlanId, priceId: plusPriceId, gatewayStatus: "canceled",
-    })).toMatchObject({ processed: true });
-    expect(await webhook({
-      eventId: "evt_metadata_old", eventType: "customer.subscription.updated", effectiveAt: "2026-09-18T10:08:30Z",
-      transition: null, generation, planId: proPlanId, priceId: proPriceId, gatewayStatus: "active",
-    })).toMatchObject({ processed: false, reason: "STALE" });
-    expect(await sql(`select s.plan_version_id||':'||s.billing_state||':'||gs.raw_status
+    const generation = await sql(
+      `select checkout_generation from billing.subscriptions where id='${subscriptionId}'`,
+    );
+    expect(
+      await webhook({
+        eventId: "evt_metadata_new",
+        eventType: "customer.subscription.updated",
+        effectiveAt: "2026-09-18T10:09:00Z",
+        transition: null,
+        generation,
+        planId: plusPlanId,
+        priceId: plusPriceId,
+        gatewayStatus: "canceled",
+      }),
+    ).toMatchObject({ processed: true });
+    expect(
+      await webhook({
+        eventId: "evt_metadata_old",
+        eventType: "customer.subscription.updated",
+        effectiveAt: "2026-09-18T10:08:30Z",
+        transition: null,
+        generation,
+        planId: proPlanId,
+        priceId: proPriceId,
+        gatewayStatus: "active",
+      }),
+    ).toMatchObject({ processed: false, reason: "STALE" });
+    expect(
+      await sql(`select s.plan_version_id||':'||s.billing_state||':'||gs.raw_status
       from billing.subscriptions s join billing.gateway_subscriptions gs on gs.subscription_id=s.id
-      where s.id='${subscriptionId}'`)).toBe(`${plusPlanId}:canceled:canceled`);
+      where s.id='${subscriptionId}'`),
+    ).toBe(`${plusPlanId}:canceled:canceled`);
   });
   it("reuses one new-user intent and requires matching closed session before rotation", async () => {
     const freshUser = randomUUID();
-    const prepare = (plan = proPlanId, price = proPriceId) => queryJson(`select public.prepare_stripe_checkout(
+    const prepare = (plan = proPlanId, price = proPriceId) =>
+      queryJson(`select public.prepare_stripe_checkout(
       '${freshUser}','${plan}','${price}','EG','EGP','month','cus_fresh','fresh-${freshUser}'
     )::text`);
     const [a, b] = await Promise.all([prepare(), prepare()]);
     expect(a.checkout_generation).toBe(b.checkout_generation);
     expect(a.subscription_id).toBe(b.subscription_id);
     const conflict = await prepare(plusPlanId, plusPriceId);
-    expect(conflict).toMatchObject({ checkout_generation: a.checkout_generation, selection_matches: false });
-    expect(await sql(`select public.record_stripe_checkout_session('${freshUser}','${a.checkout_generation}','cs_fresh')`)).toBe('true');
-    expect(await sql(`select public.close_stripe_checkout_intent('${freshUser}','${randomUUID()}','cs_fresh')`)).toBe('false');
-    expect(await sql(`select public.close_stripe_checkout_intent('${freshUser}','${a.checkout_generation}','wrong_session')`)).toBe('false');
-    expect(await sql(`select public.close_stripe_checkout_intent('${freshUser}','${a.checkout_generation}','cs_fresh')`)).toBe('true');
+    expect(conflict).toMatchObject({
+      checkout_generation: a.checkout_generation,
+      selection_matches: false,
+    });
+    expect(
+      await sql(
+        `select public.record_stripe_checkout_session('${freshUser}','${a.checkout_generation}','cs_fresh')`,
+      ),
+    ).toBe("true");
+    expect(
+      await sql(
+        `select public.close_stripe_checkout_intent('${freshUser}','${randomUUID()}','cs_fresh')`,
+      ),
+    ).toBe("false");
+    expect(
+      await sql(
+        `select public.close_stripe_checkout_intent('${freshUser}','${a.checkout_generation}','wrong_session')`,
+      ),
+    ).toBe("false");
+    expect(
+      await sql(
+        `select public.close_stripe_checkout_intent('${freshUser}','${a.checkout_generation}','cs_fresh')`,
+      ),
+    ).toBe("true");
     const replacement = await prepare(plusPlanId, plusPriceId);
     expect(replacement.checkout_generation).not.toBe(a.checkout_generation);
     expect(replacement.selection_matches).toBe(true);
-    expect(await sql(`select count(*) from billing.subscriptions where user_id='${freshUser}'`)).toBe('1');
+    expect(
+      await sql(`select count(*) from billing.subscriptions where user_id='${freshUser}'`),
+    ).toBe("1");
   });
 
   it("keeps RPCs service-only and refuses a non-service caller", async () => {
-    expect(await sql(`select has_function_privilege('authenticated',
-      'public.prepare_stripe_checkout(uuid,uuid,uuid,text,text,text,text,text)', 'EXECUTE')`)).toBe('false');
-    expect(await sql(`select has_function_privilege('anon',
-      'public.record_stripe_checkout_session(uuid,uuid,text)', 'EXECUTE')`)).toBe('false');
+    expect(
+      await sql(`select has_function_privilege('authenticated',
+      'public.prepare_stripe_checkout(uuid,uuid,uuid,text,text,text,text,text)', 'EXECUTE')`),
+    ).toBe("false");
+    expect(
+      await sql(`select has_function_privilege('anon',
+      'public.record_stripe_checkout_session(uuid,uuid,text)', 'EXECUTE')`),
+    ).toBe("false");
     await sql(`select set_config('request.jwt.claim.role','authenticated',false)`);
     try {
-      await expect(checkout('forbidden')).rejects.toThrow('STRIPE_CHECKOUT_SERVICE_ONLY');
+      await expect(checkout("forbidden")).rejects.toThrow("STRIPE_CHECKOUT_SERVICE_ONLY");
     } finally {
       await sql(`select set_config('request.jwt.claim.role','service_role',false)`);
     }
   });
 
   it("does not duplicate a payment transaction on event replay", async () => {
-    const generation = await sql(`select checkout_generation from billing.subscriptions where id='${subscriptionId}'`);
-    const before = await sql('select count(*) from billing.payment_transactions');
-    expect(await webhook({ eventId: 'evt_upgrade_paid', eventType: 'invoice.paid',
-      effectiveAt: '2026-09-18T10:07:00Z', transition: 'payment_succeeded', generation,
-      transactionId: 'in_proration_paid' })).toMatchObject({ duplicate: true });
-    expect(await sql('select count(*) from billing.payment_transactions')).toBe(before);
-    expect(await sql(`select access_state from billing.subscriptions where id='${subscriptionId}'`)).toBe('expired');
+    const generation = await sql(
+      `select checkout_generation from billing.subscriptions where id='${subscriptionId}'`,
+    );
+    const before = await sql("select count(*) from billing.payment_transactions");
+    expect(
+      await webhook({
+        eventId: "evt_upgrade_paid",
+        eventType: "invoice.paid",
+        effectiveAt: "2026-09-18T10:07:00Z",
+        transition: "payment_succeeded",
+        generation,
+        transactionId: "in_proration_paid",
+      }),
+    ).toMatchObject({ duplicate: true });
+    expect(await sql("select count(*) from billing.payment_transactions")).toBe(before);
+    expect(
+      await sql(`select access_state from billing.subscriptions where id='${subscriptionId}'`),
+    ).toBe("expired");
   });
 
   it("rolls back only changed functions and preserves catalog and data", async () => {
-    const catalogBefore = await sql('select count(*) from billing.plan_versions');
-    const eventsBefore = await sql('select count(*) from billing.webhook_events');
-    await sql(readFileSync('docs/billing/20260918_stripe_resubscription_generation_guard.rollback.sql','utf8'));
-    expect(await sql('select count(*) from billing.plan_versions')).toBe(catalogBefore);
-    expect(await sql('select count(*) from billing.webhook_events')).toBe(eventsBefore);
-    expect(await sql(`select count(*) from pg_proc p join pg_namespace n on n.oid=p.pronamespace
-      where n.nspname='public' and p.proname in ('record_stripe_checkout_session','close_stripe_checkout_intent','confirm_stripe_checkout_generation')`)).toBe('0');
+    const catalogBefore = await sql("select count(*) from billing.plan_versions");
+    const eventsBefore = await sql("select count(*) from billing.webhook_events");
+    await sql(
+      readFileSync(
+        "docs/billing/20260918_stripe_resubscription_generation_guard.rollback.sql",
+        "utf8",
+      ),
+    );
+    expect(await sql("select count(*) from billing.plan_versions")).toBe(catalogBefore);
+    expect(await sql("select count(*) from billing.webhook_events")).toBe(eventsBefore);
+    expect(
+      await sql(`select count(*) from pg_proc p join pg_namespace n on n.oid=p.pronamespace
+      where n.nspname='public' and p.proname in ('record_stripe_checkout_session','close_stripe_checkout_intent','confirm_stripe_checkout_generation')`),
+    ).toBe("0");
   });
 });
