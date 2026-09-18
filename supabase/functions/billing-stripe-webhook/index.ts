@@ -160,8 +160,18 @@ Deno.serve(async (request) => {
     const metadata = subscription.metadata ?? {};
     const internalSubscriptionId = metadata.internal_subscription_id;
     const userId = metadata.user_id;
-    const planVersionId = metadata.plan_version_id;
-    const marketPriceId = metadata.market_price_id;
+    const activePriceId = idOf(subscription.items?.data?.[0]?.price);
+    const resolvedPlan = activePriceId
+      ? await rpc<{
+          plan_version_id: string;
+          market_price_id: string;
+          plan_key: string;
+          market_code: string;
+          billing_interval: string;
+        } | null>("resolve_stripe_subscription_plan", { p_gateway_price_id: activePriceId })
+      : null;
+    const planVersionId = resolvedPlan?.plan_version_id ?? metadata.plan_version_id;
+    const marketPriceId = resolvedPlan?.market_price_id ?? metadata.market_price_id;
     const gatewayCustomerId = idOf(subscription.customer);
     if (!internalSubscriptionId || !userId || !planVersionId || !marketPriceId || !gatewayCustomerId) {
       throw new Error("STRIPE_METADATA_INCOMPLETE");
@@ -179,9 +189,9 @@ Deno.serve(async (request) => {
     const minimized = {
       stripe_event_type: event.type,
       stripe_status: subscription.status,
-      plan_key: metadata.plan_key,
-      market_code: metadata.market_code,
-      billing_interval: metadata.billing_interval,
+      plan_key: resolvedPlan?.plan_key ?? metadata.plan_key,
+      market_code: resolvedPlan?.market_code ?? metadata.market_code,
+      billing_interval: resolvedPlan?.billing_interval ?? metadata.billing_interval,
       billing_reason: object.billing_reason ?? null,
       livemode: false,
     };

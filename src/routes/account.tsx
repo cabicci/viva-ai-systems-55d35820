@@ -26,6 +26,7 @@ import { LESSONS } from "@/lib/lesson-catalog";
 import { PATHS } from "@/lib/curriculum-data";
 import { Sidebar } from "@/components/dashboard/Sidebar";
 import { Button } from "@/components/ui/button";
+import { StripePortalButton } from "@/components/billing/StripePortalButton";
 import {
   Dialog,
   DialogContent,
@@ -311,12 +312,16 @@ function AccountContent() {
               )}
             </div>
 
-            {!isPro && !admin && (
-              <Button asChild variant="violet" size="lg" className="mt-5">
-                <Link to="/pricing">
-                  <CreditCard className="h-4 w-4" /> {t("account.subscription.ctaUpgrade")}
-                </Link>
-              </Button>
+            {!admin && (
+              isPro ? (
+                <StripePortalButton />
+              ) : (
+                <Button asChild variant="violet" size="lg" className="mt-5">
+                  <Link to="/pricing">
+                    <CreditCard className="h-4 w-4" /> {t("account.subscription.ctaUpgrade")}
+                  </Link>
+                </Button>
+              )
             )}
           </section>
         </div>
