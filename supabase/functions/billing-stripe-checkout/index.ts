@@ -1,3 +1,5 @@
+import { selectCheckoutSessionIntent } from "../../../src/lib/billing/stripe-generation-decisions.ts";
+
 const ALLOWED_ORIGINS = new Set([
   "https://masaarat.ai",
   "https://www.masaarat.ai",
@@ -89,25 +91,6 @@ type StripeCheckoutSession = {
   status: string | null;
   metadata?: Record<string, string>;
 };
-
-function selectCheckoutSessionIntent(input: {
-  sessions: StripeCheckoutSession[];
-  subscriptionId: string;
-  generation: string;
-}) {
-  const managed = input.sessions.filter((session) =>
-    session.metadata?.environment === "test"
-    && session.metadata?.internal_subscription_id === input.subscriptionId
-  );
-  const reusable = managed.find((session) =>
-    Boolean(session.url)
-    && session.metadata?.checkout_generation === input.generation
-  ) ?? null;
-  return {
-    reusable,
-    expireIds: managed.filter((session) => session.id !== reusable?.id).map((session) => session.id),
-  };
-}
 
 const MANAGED_STRIPE_SUBSCRIPTION_STATUSES = new Set([
   "active",
@@ -320,6 +303,11 @@ Deno.serve(async (request) => {
     });
     await Promise.all(sessionIntent.expireIds.map(expireCheckoutSession));
     if (sessionIntent.reusable?.url) {
+      const current = await supabaseRpc<boolean>("confirm_stripe_checkout_generation", {
+        p_user_id: user.id,
+        p_checkout_generation: prepared.checkout_generation,
+      });
+      if (!current) throw new Error("CHECKOUT_INTENT_SUPERSEDED");
       return json({ url: sessionIntent.reusable.url, sessionId: sessionIntent.reusable.id }, 200, origin);
     }
 
@@ -359,11 +347,20 @@ Deno.serve(async (request) => {
     });
 
     if (!session.url) throw new Error("STRIPE_CHECKOUT_URL_MISSING");
+    const current = await supabaseRpc<boolean>("confirm_stripe_checkout_generation", {
+      p_user_id: user.id,
+      p_checkout_generation: prepared.checkout_generation,
+    });
+    if (!current) {
+      await expireCheckoutSession(session.id);
+      throw new Error("CHECKOUT_INTENT_SUPERSEDED");
+    }
     return json({ url: session.url, sessionId: session.id }, 200, origin);
   } catch (error) {
     const message = error instanceof Error ? error.message : "UNKNOWN_ERROR";
     console.error("billing-stripe-checkout", message);
-    const status = message === "UNAUTHORIZED" ? 401 : 500;
-    return json({ error: status === 401 ? "UNAUTHORIZED" : "CHECKOUT_UNAVAILABLE" }, status, origin);
+    const status = message === "UNAUTHORIZED" ? 401 : message === "CHECKOUT_INTENT_SUPERSEDED" ? 409 : 500;
+    const code = status === 401 ? "UNAUTHORIZED" : status === 409 ? "CHECKOUT_INTENT_SUPERSEDED" : "CHECKOUT_UNAVAILABLE";
+    return json({ error: code }, status, origin);
   }
 });
