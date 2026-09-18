@@ -181,4 +181,35 @@ runIntegration("Stripe re-subscription generation guard", () => {
       where w.gateway_event_id='evt_old_generation' and s.id='${subscriptionId}'`))
       .toBe(`failed:CHECKOUT_GENERATION_MISMATCH:expired:${plusPlanId}`);
   });
+
+  it("rejects an older same-generation active metadata update after cancellation", () => {
+    const generation = sql(`select checkout_generation from billing.subscriptions where id='${subscriptionId}'`);
+    const before = sql(`select billing_state||':'||cancel_at_period_end||':'||coalesce(current_period_end::text,'')||':'||gs.raw_status
+      from billing.subscriptions s join billing.gateway_subscriptions gs on gs.subscription_id=s.id
+      where s.id='${subscriptionId}'`);
+    expect(webhook({
+      eventId: "evt_delayed_active", eventType: "customer.subscription.updated", effectiveAt: "2026-09-18T10:07:30Z",
+      transition: null, generation, planId: plusPlanId, priceId: plusPriceId, gatewayStatus: "active",
+    })).toMatchObject({ processed: false, reason: "STALE" });
+    expect(sql(`select billing_state||':'||cancel_at_period_end||':'||coalesce(current_period_end::text,'')||':'||gs.raw_status
+      from billing.subscriptions s join billing.gateway_subscriptions gs on gs.subscription_id=s.id
+      where s.id='${subscriptionId}'`)).toBe(before);
+    expect(sql(`select status||':'||error_code from billing.webhook_events where gateway_event_id='evt_delayed_active'`))
+      .toBe("failed:STALE_SUBSCRIPTION_EVENT");
+  });
+
+  it("orders metadata-only events and prevents regression", () => {
+    const generation = sql(`select checkout_generation from billing.subscriptions where id='${subscriptionId}'`);
+    expect(webhook({
+      eventId: "evt_metadata_new", eventType: "customer.subscription.updated", effectiveAt: "2026-09-18T10:09:00Z",
+      transition: null, generation, planId: plusPlanId, priceId: plusPriceId, gatewayStatus: "canceled",
+    })).toMatchObject({ processed: true });
+    expect(webhook({
+      eventId: "evt_metadata_old", eventType: "customer.subscription.updated", effectiveAt: "2026-09-18T10:08:30Z",
+      transition: null, generation, planId: proPlanId, priceId: proPriceId, gatewayStatus: "active",
+    })).toMatchObject({ processed: false, reason: "STALE" });
+    expect(sql(`select s.plan_version_id||':'||s.billing_state||':'||gs.raw_status
+      from billing.subscriptions s join billing.gateway_subscriptions gs on gs.subscription_id=s.id
+      where s.id='${subscriptionId}'`)).toBe(`${plusPlanId}:canceled:canceled`);
+  });
 });

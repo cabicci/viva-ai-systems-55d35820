@@ -1,3 +1,5 @@
+import { selectCheckoutSessionIntent } from "../../../src/lib/billing/stripe-generation-decisions.ts";
+
 const ALLOWED_ORIGINS = new Set([
   "https://masaarat.ai",
   "https://www.masaarat.ai",
@@ -216,10 +218,9 @@ async function hasManagedStripeSubscription(customerId: string): Promise<boolean
   );
 }
 
-async function findReusableCheckoutSession(
+async function listOpenCheckoutSessions(
   customerId: string,
-  context: CheckoutContext,
-): Promise<StripeCheckoutSession | null> {
+): Promise<StripeCheckoutSession[]> {
   const query = new URLSearchParams({
     customer: customerId,
     status: "open",
@@ -228,13 +229,15 @@ async function findReusableCheckoutSession(
   const result = await stripeRequest<{ data: StripeCheckoutSession[] }>(
     `/checkout/sessions?${query.toString()}`,
   );
-  return result.data.find((session) =>
-    Boolean(session.url)
-    && session.metadata?.environment === "test"
-    && session.metadata?.plan_key === context.plan_key
-    && session.metadata?.billing_interval === context.billing_interval
-    && session.metadata?.market_code === context.market_code
-  ) ?? null;
+  return result.data;
+}
+
+async function expireCheckoutSession(sessionId: string): Promise<void> {
+  await stripeRequest(`/checkout/sessions/${encodeURIComponent(sessionId)}/expire`, {
+    method: "POST",
+    params: new URLSearchParams(),
+    idempotencyKey: `expire-checkout-${sessionId}`,
+  });
 }
 
 Deno.serve(async (request) => {
@@ -277,11 +280,6 @@ Deno.serve(async (request) => {
       return json({ error: "SUBSCRIPTION_ALREADY_MANAGED" }, 409, origin);
     }
 
-    const reusableSession = await findReusableCheckoutSession(customerId, context);
-    if (reusableSession?.url) {
-      return json({ url: reusableSession.url, sessionId: reusableSession.id }, 200, origin);
-    }
-
     const checkoutWindow = Math.floor(Date.now() / 300_000);
     const checkoutNonce = `${user.id}:${planKey}:${billingInterval}:${marketCode}:${checkoutWindow}`;
     const prepared = await supabaseRpc<{
@@ -297,6 +295,21 @@ Deno.serve(async (request) => {
       p_gateway_customer_id: customerId,
       p_idempotency_key: `stripe-checkout:${user.id}:${checkoutNonce}`,
     });
+
+    const sessionIntent = selectCheckoutSessionIntent({
+      sessions: await listOpenCheckoutSessions(customerId),
+      subscriptionId: prepared.subscription_id,
+      generation: prepared.checkout_generation,
+    });
+    await Promise.all(sessionIntent.expireIds.map(expireCheckoutSession));
+    if (sessionIntent.reusable?.url) {
+      const current = await supabaseRpc<boolean>("confirm_stripe_checkout_generation", {
+        p_user_id: user.id,
+        p_checkout_generation: prepared.checkout_generation,
+      });
+      if (!current) throw new Error("CHECKOUT_INTENT_SUPERSEDED");
+      return json({ url: sessionIntent.reusable.url, sessionId: sessionIntent.reusable.id }, 200, origin);
+    }
 
     const appOrigin = origin && ALLOWED_ORIGINS.has(origin) ? origin : "https://masaarat.ai";
     const metadata: Record<string, string> = {
@@ -330,15 +343,24 @@ Deno.serve(async (request) => {
     const session = await stripeRequest<{ id: string; url: string | null }>("/checkout/sessions", {
       method: "POST",
       params,
-      idempotencyKey: `checkout-session-${checkoutNonce}`,
+      idempotencyKey: `checkout-session-${prepared.checkout_generation}`,
     });
 
     if (!session.url) throw new Error("STRIPE_CHECKOUT_URL_MISSING");
+    const current = await supabaseRpc<boolean>("confirm_stripe_checkout_generation", {
+      p_user_id: user.id,
+      p_checkout_generation: prepared.checkout_generation,
+    });
+    if (!current) {
+      await expireCheckoutSession(session.id);
+      throw new Error("CHECKOUT_INTENT_SUPERSEDED");
+    }
     return json({ url: session.url, sessionId: session.id }, 200, origin);
   } catch (error) {
     const message = error instanceof Error ? error.message : "UNKNOWN_ERROR";
     console.error("billing-stripe-checkout", message);
-    const status = message === "UNAUTHORIZED" ? 401 : 500;
-    return json({ error: status === 401 ? "UNAUTHORIZED" : "CHECKOUT_UNAVAILABLE" }, status, origin);
+    const status = message === "UNAUTHORIZED" ? 401 : message === "CHECKOUT_INTENT_SUPERSEDED" ? 409 : 500;
+    const code = status === 401 ? "UNAUTHORIZED" : status === 409 ? "CHECKOUT_INTENT_SUPERSEDED" : "CHECKOUT_UNAVAILABLE";
+    return json({ error: code }, status, origin);
   }
 });

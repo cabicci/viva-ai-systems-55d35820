@@ -100,6 +100,8 @@ DECLARE
   v_generation uuid;
   v_transaction_type text;
   v_paid_plan_event boolean := false;
+  v_event_type text;
+  v_metadata_event_id uuid;
 BEGIN
   IF NOT billing.is_service_role_caller() THEN
     RAISE EXCEPTION 'STRIPE_WEBHOOK_SERVICE_ONLY' USING ERRCODE = '42501';
@@ -153,22 +155,78 @@ BEGIN
     RETURN jsonb_build_object('duplicate', false, 'processed', false, 'reason', 'GATEWAY_SUBSCRIPTION_MISMATCH');
   END IF;
 
-  IF p_transition IS NOT NULL THEN
+  IF p_payload_minimized ->> 'payment_evidence_error' IS NOT NULL THEN
+    UPDATE billing.webhook_events SET status = 'failed', error_code = p_payload_minimized ->> 'payment_evidence_error'
+    WHERE id = v_inserted_id;
+    RETURN jsonb_build_object('duplicate', false, 'processed', false,
+      'reason', p_payload_minimized ->> 'payment_evidence_error');
+  END IF;
+
+  IF p_transition IS NULL THEN
+    IF p_effective_at IS NULL THEN
+      INSERT INTO billing.subscription_events (
+        subscription_id, event_type, payload, idempotency_key, occurred_at, source,
+        provider, provider_event_id, effective_at, processing_status
+      ) VALUES (
+        p_subscription_id, 'provider_metadata_updated', COALESCE(p_payload_minimized, '{}'::jsonb),
+        'stripe:event:' || p_gateway_event_id, now(), 'gateway_webhook',
+        'stripe_us', p_gateway_event_id, NULL, 'rejected'
+      ) RETURNING id INTO v_metadata_event_id;
+      v_transition_result := jsonb_build_object('event_id', v_metadata_event_id,
+        'processing_status', 'rejected', 'reason', 'AMBIGUOUS_ORDERING');
+    ELSIF v_subscription.last_applied_effective_at IS NOT NULL
+          AND p_effective_at <= v_subscription.last_applied_effective_at THEN
+      INSERT INTO billing.subscription_events (
+        subscription_id, event_type, from_access_state, to_access_state, payload,
+        idempotency_key, occurred_at, source, provider, provider_event_id,
+        effective_at, processing_status
+      ) VALUES (
+        p_subscription_id, 'provider_metadata_updated', v_subscription.access_state,
+        v_subscription.access_state, COALESCE(p_payload_minimized, '{}'::jsonb),
+        'stripe:event:' || p_gateway_event_id, p_effective_at, 'gateway_webhook',
+        'stripe_us', p_gateway_event_id, p_effective_at, 'stale'
+      ) RETURNING id INTO v_metadata_event_id;
+      v_transition_result := jsonb_build_object('event_id', v_metadata_event_id,
+        'processing_status', 'stale');
+    ELSE
+      UPDATE billing.subscriptions SET
+        last_applied_effective_at = p_effective_at,
+        last_applied_provider = 'stripe_us',
+        last_applied_event_id = p_gateway_event_id,
+        updated_at = now()
+      WHERE id = p_subscription_id;
+      INSERT INTO billing.subscription_events (
+        subscription_id, event_type, from_access_state, to_access_state, payload,
+        idempotency_key, occurred_at, source, provider, provider_event_id,
+        effective_at, processing_status
+      ) VALUES (
+        p_subscription_id, 'provider_metadata_updated', v_subscription.access_state,
+        v_subscription.access_state, COALESCE(p_payload_minimized, '{}'::jsonb),
+        'stripe:event:' || p_gateway_event_id, p_effective_at, 'gateway_webhook',
+        'stripe_us', p_gateway_event_id, p_effective_at, 'applied'
+      ) RETURNING id INTO v_metadata_event_id;
+      v_transition_result := jsonb_build_object('event_id', v_metadata_event_id,
+        'processing_status', 'applied', 'from_access_state', v_subscription.access_state,
+        'to_access_state', v_subscription.access_state);
+    END IF;
+  ELSE
+    v_event_type := p_transition;
     v_transition_result := billing.apply_subscription_event(
       p_subscription_id, 'stripe_us', p_gateway_event_id, p_effective_at, NULL,
-      p_transition, COALESCE(p_payload_minimized, '{}'::jsonb), 'stripe:event:' || p_gateway_event_id
+      v_event_type, COALESCE(p_payload_minimized, '{}'::jsonb), 'stripe:event:' || p_gateway_event_id
     );
-    v_processing_status := v_transition_result ->> 'processing_status';
-    IF v_processing_status IS DISTINCT FROM 'applied' THEN
-      UPDATE billing.webhook_events SET status = 'failed', error_code = CASE v_processing_status
-        WHEN 'stale' THEN 'STALE_SUBSCRIPTION_EVENT'
-        WHEN 'rejected' THEN COALESCE(v_transition_result ->> 'reason', 'SUBSCRIPTION_TRANSITION_REJECTED')
-        ELSE 'SUBSCRIPTION_TRANSITION_NOT_APPLIED' END
-      WHERE id = v_inserted_id;
-      RETURN jsonb_build_object('duplicate', false, 'processed', false,
-        'reason', COALESCE(v_transition_result ->> 'reason', upper(COALESCE(v_processing_status, 'not_applied'))),
-        'transition', v_transition_result);
-    END IF;
+  END IF;
+
+  v_processing_status := v_transition_result ->> 'processing_status';
+  IF v_processing_status IS DISTINCT FROM 'applied' THEN
+    UPDATE billing.webhook_events SET status = 'failed', error_code = CASE v_processing_status
+      WHEN 'stale' THEN 'STALE_SUBSCRIPTION_EVENT'
+      WHEN 'rejected' THEN COALESCE(v_transition_result ->> 'reason', 'SUBSCRIPTION_TRANSITION_REJECTED')
+      ELSE 'SUBSCRIPTION_TRANSITION_NOT_APPLIED' END
+    WHERE id = v_inserted_id;
+    RETURN jsonb_build_object('duplicate', false, 'processed', false,
+      'reason', COALESCE(v_transition_result ->> 'reason', upper(COALESCE(v_processing_status, 'not_applied'))),
+      'transition', v_transition_result);
   END IF;
 
   v_paid_plan_event := p_transition = 'payment_succeeded'
@@ -222,7 +280,34 @@ BEGIN
 END;
 $$;
 
+CREATE OR REPLACE FUNCTION public.confirm_stripe_checkout_generation(
+  p_user_id uuid,
+  p_checkout_generation uuid
+)
+RETURNS boolean
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = billing, public, pg_temp
+AS $$
+DECLARE
+  v_current boolean;
+BEGIN
+  IF NOT billing.is_service_role_caller() THEN
+    RAISE EXCEPTION 'STRIPE_CHECKOUT_SERVICE_ONLY' USING ERRCODE = '42501';
+  END IF;
+  SELECT EXISTS (
+    SELECT 1 FROM billing.subscriptions
+    WHERE user_id = p_user_id
+      AND billing_state = 'checkout_pending'
+      AND checkout_generation = p_checkout_generation
+  ) INTO v_current;
+  RETURN v_current;
+END;
+$$;
+
 REVOKE ALL ON FUNCTION public.prepare_stripe_checkout(uuid, uuid, uuid, text, text, text, text, text) FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON FUNCTION public.confirm_stripe_checkout_generation(uuid, uuid) FROM PUBLIC, anon, authenticated;
 REVOKE ALL ON FUNCTION public.apply_stripe_webhook_event(text, text, timestamptz, text, uuid, uuid, uuid, uuid, text, text, text, timestamptz, timestamptz, boolean, text, bigint, text, jsonb) FROM PUBLIC, anon, authenticated;
 GRANT EXECUTE ON FUNCTION public.prepare_stripe_checkout(uuid, uuid, uuid, text, text, text, text, text) TO service_role;
+GRANT EXECUTE ON FUNCTION public.confirm_stripe_checkout_generation(uuid, uuid) TO service_role;
 GRANT EXECUTE ON FUNCTION public.apply_stripe_webhook_event(text, text, timestamptz, text, uuid, uuid, uuid, uuid, text, text, text, timestamptz, timestamptz, boolean, text, bigint, text, jsonb) TO service_role;
