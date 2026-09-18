@@ -1,5 +1,5 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { spawn, spawnSync } from "node:child_process";
+import { spawnSync } from "node:child_process";
 import { mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -61,24 +61,25 @@ runIntegration("Stripe re-subscription generation guard", () => {
     const start = spawnSync("setpriv", ["--reuid=1000", "--regid=1000", "--init-groups", "pg_ctl", "-D", dataDirectory, "-o", `-k /tmp -p ${port} -h 127.0.0.1`, "-w", "start"], { encoding: "utf8" });
     if (start.status !== 0) throw new Error(start.stderr || start.stdout);
 
-    sql(`
+    const setupSql = `
       create role anon; create role authenticated; create role service_role;
       create schema auth;
       create or replace function auth.jwt() returns jsonb language sql stable as $$
         select jsonb_build_object('role', current_setting('request.jwt.claim.role', true))
       $$;
-    `);
-    sql(readFileSync("supabase/migrations/20260709190000_billing_schema_phase1.sql", "utf8"));
-    sql(`create or replace function billing.is_service_role_caller() returns boolean language sql stable as $$
+    `;
+    const baseSchema = readFileSync("supabase/migrations/20260709190000_billing_schema_phase1.sql", "utf8");
+    const serviceRoleFunction = `create or replace function billing.is_service_role_caller() returns boolean language sql stable as $$
       select current_setting('request.jwt.claim.role', true) = 'service_role'
-    $$`);
+    $$;`;
     const machine = readFileSync("supabase/migrations/20260722180000_billing_launch_closure_contracts_v3.sql", "utf8");
-    sql(machine.slice(
+    const machineSection = machine.slice(
       machine.indexOf("ALTER TABLE billing.subscriptions ADD COLUMN IF NOT EXISTS last_applied_effective_at"),
       machine.indexOf("-- ============================================================================\n-- SECTION G."),
-    ));
-    sql(readFileSync("docs/billing/20260918_stripe_resubscription_generation_guard.sql", "utf8"));
-    sql(`select set_config('request.jwt.claim.role','service_role',false);
+    );
+    const guard = readFileSync("docs/billing/20260918_stripe_resubscription_generation_guard.sql", "utf8");
+    sql(`${setupSql}\n${baseSchema}\n${serviceRoleFunction}\n${machineSection}\n${guard}\n
+      select set_config('request.jwt.claim.role','service_role',false);
       insert into billing.subscriptions (
         id,user_id,plan_version_id,market_price_id,access_state,billing_state,
         market_code,currency_code,billing_interval,idempotency_key,expired_at
