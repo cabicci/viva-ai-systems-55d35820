@@ -284,7 +284,10 @@ Deno.serve(async (request) => {
 
     const checkoutWindow = Math.floor(Date.now() / 300_000);
     const checkoutNonce = `${user.id}:${planKey}:${billingInterval}:${marketCode}:${checkoutWindow}`;
-    const prepared = await supabaseRpc<{ subscription_id: string }>("prepare_stripe_checkout", {
+    const prepared = await supabaseRpc<{
+      subscription_id: string;
+      checkout_generation: string;
+    }>("prepare_stripe_checkout", {
       p_user_id: user.id,
       p_plan_version_id: context.plan_version_id,
       p_market_price_id: context.market_price_id,
@@ -299,6 +302,7 @@ Deno.serve(async (request) => {
     const metadata: Record<string, string> = {
       user_id: user.id,
       internal_subscription_id: prepared.subscription_id,
+      checkout_generation: prepared.checkout_generation,
       plan_version_id: context.plan_version_id,
       market_price_id: context.market_price_id,
       plan_key: context.plan_key,

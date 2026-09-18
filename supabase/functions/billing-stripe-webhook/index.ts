@@ -116,12 +116,15 @@ function transitionFor(event: StripeEvent, subscription: Record<string, any>): s
       ? "payment_succeeded"
       : null;
   }
-  if (event.type === "invoice.paid") return "payment_succeeded";
+  if (event.type === "invoice.paid") {
+    return event.data.object.status === "paid" && subscription.status === "active"
+      ? "payment_succeeded"
+      : null;
+  }
   if (event.type === "invoice.payment_failed") return "payment_failed";
   if (event.type === "customer.subscription.deleted") return "canceled";
   if (event.type === "customer.subscription.updated") {
     if (subscription.cancel_at_period_end) return "cancel_at_period_end";
-    if (subscription.status === "active") return "payment_succeeded";
     if (["past_due", "unpaid"].includes(subscription.status)) return "payment_failed";
   }
   return null;
@@ -189,6 +192,7 @@ Deno.serve(async (request) => {
     const minimized = {
       stripe_event_type: event.type,
       stripe_status: subscription.status,
+      checkout_generation: metadata.checkout_generation ?? null,
       plan_key: resolvedPlan?.plan_key ?? metadata.plan_key,
       market_code: resolvedPlan?.market_code ?? metadata.market_code,
       billing_interval: resolvedPlan?.billing_interval ?? metadata.billing_interval,
