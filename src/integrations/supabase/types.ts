@@ -1028,6 +1028,29 @@ export type Database = {
         Args: { p_lesson_id: string; p_passed: boolean; p_user_id: string }
         Returns: undefined
       }
+      apply_stripe_webhook_event: {
+        Args: {
+          p_amount_minor?: number
+          p_cancel_at_period_end: boolean
+          p_currency_code?: string
+          p_effective_at: string
+          p_event_type: string
+          p_gateway_customer_id: string
+          p_gateway_event_id: string
+          p_gateway_status: string
+          p_gateway_subscription_id: string
+          p_gateway_transaction_id?: string
+          p_market_price_id: string
+          p_payload_minimized?: Json
+          p_period_end: string
+          p_period_start: string
+          p_plan_version_id: string
+          p_subscription_id: string
+          p_transition: string
+          p_user_id: string
+        }
+        Returns: Json
+      }
       claim_active_device: { Args: { p_device_id: string }; Returns: string }
       commit_ai_quota: {
         Args: {
@@ -1077,6 +1100,16 @@ export type Database = {
       get_entitlement_snapshot: { Args: { p_user_id: string }; Returns: Json }
       get_kpi_funnel: { Args: never; Returns: Json }
       get_my_billing_access_tier: { Args: never; Returns: string }
+      get_stripe_checkout_context: {
+        Args: {
+          p_billing_interval: string
+          p_market_code: string
+          p_plan_key: string
+          p_user_id: string
+        }
+        Returns: Json
+      }
+      get_stripe_portal_context: { Args: { p_user_id: string }; Returns: Json }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -1149,6 +1182,19 @@ export type Database = {
           title: string
         }[]
       }
+      prepare_stripe_checkout: {
+        Args: {
+          p_billing_interval: string
+          p_currency_code: string
+          p_gateway_customer_id: string
+          p_idempotency_key: string
+          p_market_code: string
+          p_market_price_id: string
+          p_plan_version_id: string
+          p_user_id: string
+        }
+        Returns: Json
+      }
       rag_activate_index_upgrade: {
         Args: { p_expected_active_version_key: string; p_version_key: string }
         Returns: Json
@@ -1203,6 +1249,14 @@ export type Database = {
         }
         Returns: Json
       }
+      register_stripe_gateway_catalog: {
+        Args: {
+          p_gateway_price_id: string
+          p_gateway_product_id: string
+          p_market_price_id: string
+        }
+        Returns: Json
+      }
       release_ai_quota: {
         Args: { p_idempotency_key: string; p_reservation_id: string }
         Returns: Json
@@ -1216,6 +1270,10 @@ export type Database = {
           p_units: number
           p_user_id: string
         }
+        Returns: Json
+      }
+      resolve_stripe_subscription_plan: {
+        Args: { p_gateway_price_id: string }
         Returns: Json
       }
       rollback_rag_index_version: {

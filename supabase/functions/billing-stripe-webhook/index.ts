@@ -1,3 +1,5 @@
+import { decidePaidPlanEvidence } from "../_shared/stripe-generation-decisions.ts";
+
 const STRIPE_API_VERSION = "2026-07-29.dahlia";
 const SIGNATURE_TOLERANCE_SECONDS = 300;
 
@@ -111,20 +113,30 @@ function subscriptionIdFrom(object: Record<string, any>): string | null {
 }
 
 function transitionFor(event: StripeEvent, subscription: Record<string, any>): string | null {
-  if (event.type === "checkout.session.completed") {
-    return event.data.object.payment_status === "paid" && subscription.status === "active"
-      ? "payment_succeeded"
-      : null;
-  }
-  if (event.type === "invoice.paid") return "payment_succeeded";
-  if (event.type === "invoice.payment_failed") return "payment_failed";
+  if (event.type === "invoice.payment_failed") return ["past_due", "unpaid"].includes(subscription.status) ? "payment_failed" : null;
   if (event.type === "customer.subscription.deleted") return "canceled";
   if (event.type === "customer.subscription.updated") {
     if (subscription.cancel_at_period_end) return "cancel_at_period_end";
-    if (subscription.status === "active") return "payment_succeeded";
     if (["past_due", "unpaid"].includes(subscription.status)) return "payment_failed";
   }
   return null;
+}
+
+async function paidPlanEvidence(
+  event: StripeEvent,
+  subscription: Record<string, any>,
+): Promise<{ transition: "payment_succeeded" | null; priceId: string | null; error: string | null }> {
+  if (!["invoice.paid", "checkout.session.completed"].includes(event.type)) {
+    return { transition: null, priceId: null, error: null };
+  }
+  const object = event.data.object;
+  const checkoutLines = event.type === "checkout.session.completed"
+    ? (await stripeGet<{ data: Record<string, any>[]; has_more: boolean }>(
+      `/checkout/sessions/${encodeURIComponent(String(object.id))}/line_items?limit=100`,
+    ))
+    : undefined;
+  if (checkoutLines?.has_more) return { transition: null, priceId: null, error: "PAID_PLAN_LINES_INCOMPLETE" };
+  return decidePaidPlanEvidence({ eventType: event.type, object, subscription, checkoutLineItems: checkoutLines?.data });
 }
 
 Deno.serve(async (request) => {
@@ -160,16 +172,18 @@ Deno.serve(async (request) => {
     const metadata = subscription.metadata ?? {};
     const internalSubscriptionId = metadata.internal_subscription_id;
     const userId = metadata.user_id;
-    const activePriceId = idOf(subscription.items?.data?.[0]?.price);
-    const resolvedPlan = activePriceId
+    const evidence = await paidPlanEvidence(event, subscription);
+    const authoritativePriceId = evidence.priceId ?? idOf(subscription.items?.data?.[0]?.price);
+    const resolvedPlan = authoritativePriceId
       ? await rpc<{
           plan_version_id: string;
           market_price_id: string;
           plan_key: string;
           market_code: string;
           billing_interval: string;
-        } | null>("resolve_stripe_subscription_plan", { p_gateway_price_id: activePriceId })
+        } | null>("resolve_stripe_subscription_plan", { p_gateway_price_id: authoritativePriceId })
       : null;
+    if (evidence.transition && !resolvedPlan) throw new Error("PAID_PRICE_MAPPING_MISSING");
     const planVersionId = resolvedPlan?.plan_version_id ?? metadata.plan_version_id;
     const marketPriceId = resolvedPlan?.market_price_id ?? metadata.market_price_id;
     const gatewayCustomerId = idOf(subscription.customer);
@@ -184,15 +198,18 @@ Deno.serve(async (request) => {
       ?? subscription.items?.data?.[0]?.current_period_end
       ?? null;
 
-    const transition = transitionFor(event, subscription);
+    const transition = ["invoice.paid", "checkout.session.completed"].includes(event.type)
+      ? evidence.transition : transitionFor(event, subscription);
     const isPaidInvoice = event.type === "invoice.paid";
     const minimized = {
       stripe_event_type: event.type,
       stripe_status: subscription.status,
+      checkout_generation: metadata.checkout_generation ?? null,
       plan_key: resolvedPlan?.plan_key ?? metadata.plan_key,
       market_code: resolvedPlan?.market_code ?? metadata.market_code,
       billing_interval: resolvedPlan?.billing_interval ?? metadata.billing_interval,
       billing_reason: object.billing_reason ?? null,
+      payment_evidence_error: evidence.error,
       livemode: false,
     };
 
