@@ -28,6 +28,7 @@ describe("Stripe checkout duplicate-subscription guards", () => {
 
   it("uses a stable short checkout window instead of a random idempotency key", () => {
     expect(source).toContain("Math.floor(Date.now() / 300_000)");
+    expect(source).toContain("`checkout-session-${prepared.checkout_generation}`");
     expect(source).not.toContain("crypto.randomUUID()");
   });
 });

@@ -343,7 +343,7 @@ Deno.serve(async (request) => {
     const session = await stripeRequest<{ id: string; url: string | null }>("/checkout/sessions", {
       method: "POST",
       params,
-      idempotencyKey: `checkout-session-${checkoutNonce}`,
+      idempotencyKey: `checkout-session-${prepared.checkout_generation}`,
     });
 
     if (!session.url) throw new Error("STRIPE_CHECKOUT_URL_MISSING");

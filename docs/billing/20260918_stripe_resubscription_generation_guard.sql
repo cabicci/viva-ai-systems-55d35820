@@ -101,6 +101,7 @@ DECLARE
   v_transaction_type text;
   v_paid_plan_event boolean := false;
   v_event_type text;
+  v_metadata_event_id uuid;
 BEGIN
   IF NOT billing.is_service_role_caller() THEN
     RAISE EXCEPTION 'STRIPE_WEBHOOK_SERVICE_ONLY' USING ERRCODE = '42501';
@@ -161,17 +162,55 @@ BEGIN
       'reason', p_payload_minimized ->> 'payment_evidence_error');
   END IF;
 
-  IF p_transition IS NULL AND p_effective_at IS NOT NULL
-     AND v_subscription.last_applied_effective_at IS NOT NULL
-     AND p_effective_at <= v_subscription.last_applied_effective_at THEN
-    v_transition_result := billing.apply_subscription_event(
-      p_subscription_id, 'stripe_us', p_gateway_event_id,
-      v_subscription.last_applied_effective_at - interval '1 microsecond', NULL,
-      'provider_metadata_updated', COALESCE(p_payload_minimized, '{}'::jsonb),
-      'stripe:event:' || p_gateway_event_id
-    );
+  IF p_transition IS NULL THEN
+    IF p_effective_at IS NULL THEN
+      INSERT INTO billing.subscription_events (
+        subscription_id, event_type, payload, idempotency_key, occurred_at, source,
+        provider, provider_event_id, effective_at, processing_status
+      ) VALUES (
+        p_subscription_id, 'provider_metadata_updated', COALESCE(p_payload_minimized, '{}'::jsonb),
+        'stripe:event:' || p_gateway_event_id, now(), 'gateway_webhook',
+        'stripe_us', p_gateway_event_id, NULL, 'rejected'
+      ) RETURNING id INTO v_metadata_event_id;
+      v_transition_result := jsonb_build_object('event_id', v_metadata_event_id,
+        'processing_status', 'rejected', 'reason', 'AMBIGUOUS_ORDERING');
+    ELSIF v_subscription.last_applied_effective_at IS NOT NULL
+          AND p_effective_at <= v_subscription.last_applied_effective_at THEN
+      INSERT INTO billing.subscription_events (
+        subscription_id, event_type, from_access_state, to_access_state, payload,
+        idempotency_key, occurred_at, source, provider, provider_event_id,
+        effective_at, processing_status
+      ) VALUES (
+        p_subscription_id, 'provider_metadata_updated', v_subscription.access_state,
+        v_subscription.access_state, COALESCE(p_payload_minimized, '{}'::jsonb),
+        'stripe:event:' || p_gateway_event_id, p_effective_at, 'gateway_webhook',
+        'stripe_us', p_gateway_event_id, p_effective_at, 'stale'
+      ) RETURNING id INTO v_metadata_event_id;
+      v_transition_result := jsonb_build_object('event_id', v_metadata_event_id,
+        'processing_status', 'stale');
+    ELSE
+      UPDATE billing.subscriptions SET
+        last_applied_effective_at = p_effective_at,
+        last_applied_provider = 'stripe_us',
+        last_applied_event_id = p_gateway_event_id,
+        updated_at = now()
+      WHERE id = p_subscription_id;
+      INSERT INTO billing.subscription_events (
+        subscription_id, event_type, from_access_state, to_access_state, payload,
+        idempotency_key, occurred_at, source, provider, provider_event_id,
+        effective_at, processing_status
+      ) VALUES (
+        p_subscription_id, 'provider_metadata_updated', v_subscription.access_state,
+        v_subscription.access_state, COALESCE(p_payload_minimized, '{}'::jsonb),
+        'stripe:event:' || p_gateway_event_id, p_effective_at, 'gateway_webhook',
+        'stripe_us', p_gateway_event_id, p_effective_at, 'applied'
+      ) RETURNING id INTO v_metadata_event_id;
+      v_transition_result := jsonb_build_object('event_id', v_metadata_event_id,
+        'processing_status', 'applied', 'from_access_state', v_subscription.access_state,
+        'to_access_state', v_subscription.access_state);
+    END IF;
   ELSE
-    v_event_type := COALESCE(p_transition, 'provider_metadata_updated');
+    v_event_type := p_transition;
     v_transition_result := billing.apply_subscription_event(
       p_subscription_id, 'stripe_us', p_gateway_event_id, p_effective_at, NULL,
       v_event_type, COALESCE(p_payload_minimized, '{}'::jsonb), 'stripe:event:' || p_gateway_event_id
@@ -264,35 +303,6 @@ BEGIN
   ) INTO v_current;
   RETURN v_current;
 END;
-$$;
-
-CREATE OR REPLACE FUNCTION billing.subscription_next_access_state(
-  p_from text,
-  p_event_type text
-)
-RETURNS text
-LANGUAGE sql
-IMMUTABLE
-SET search_path = billing, public, pg_temp
-AS $$
-  SELECT CASE
-    WHEN p_event_type = 'provider_metadata_updated' THEN p_from
-    WHEN p_event_type = 'payment_succeeded'
-      AND p_from IN ('free_pending_verification', 'free_active', 'free_expired', 'paid_scheduled', 'past_due', 'paid_active') THEN 'paid_active'
-    WHEN p_event_type = 'activation_scheduled' AND p_from IN ('free_pending_verification', 'free_active', 'free_expired') THEN 'paid_scheduled'
-    WHEN p_event_type = 'activated' AND p_from = 'paid_scheduled' THEN 'paid_active'
-    WHEN p_event_type = 'payment_failed' AND p_from IN ('paid_active', 'paid_scheduled') THEN 'past_due'
-    WHEN p_event_type = 'cancel_at_period_end' AND p_from IN ('paid_active', 'past_due') THEN 'canceled_at_period_end'
-    WHEN p_event_type = 'canceled' AND p_from IN ('paid_active', 'paid_scheduled', 'past_due', 'canceled_at_period_end') THEN 'expired'
-    WHEN p_event_type = 'period_ended' AND p_from = 'canceled_at_period_end' THEN 'expired'
-    WHEN p_event_type = 'period_ended' AND p_from = 'paid_active' THEN 'paid_active'
-    WHEN p_event_type = 'expired' AND p_from IN ('paid_active', 'paid_scheduled', 'past_due', 'canceled_at_period_end') THEN 'expired'
-    WHEN p_event_type = 'suspended' AND p_from IN ('paid_active', 'past_due') THEN 'suspended'
-    WHEN p_event_type = 'resumed' AND p_from = 'suspended' THEN 'paid_active'
-    WHEN p_event_type = 'refund_pending' AND p_from IN ('paid_active', 'past_due', 'canceled_at_period_end', 'suspended') THEN 'refund_pending'
-    WHEN p_event_type = 'refunded' AND p_from IN ('refund_pending', 'paid_active', 'past_due', 'canceled_at_period_end', 'suspended') THEN 'refunded'
-    ELSE NULL
-  END;
 $$;
 
 REVOKE ALL ON FUNCTION public.prepare_stripe_checkout(uuid, uuid, uuid, text, text, text, text, text) FROM PUBLIC, anon, authenticated;
