@@ -58,7 +58,7 @@ runIntegration("Stripe re-subscription generation guard", () => {
     spawnSync("chown", ["-R", "1000:1000", dataDirectory]);
     const init = spawnSync("setpriv", ["--reuid=1000", "--regid=1000", "--init-groups", "initdb", "-D", dataDirectory, "-A", "trust"], { encoding: "utf8" });
     if (init.status !== 0) throw new Error(init.stderr || init.stdout);
-    const start = spawnSync("setpriv", ["--reuid=1000", "--regid=1000", "--init-groups", "pg_ctl", "-D", dataDirectory, "-o", `-k /tmp -p ${port} -h 127.0.0.1`, "-w", "start"], { encoding: "utf8" });
+    const start = spawnSync("setpriv", ["--reuid=1000", "--regid=1000", "--init-groups", "pg_ctl", "-D", dataDirectory, "-l", join(dataDirectory, "postgres.log"), "-o", `-k /tmp -p ${port} -h 127.0.0.1`, "-w", "start"], { encoding: "utf8" });
     if (start.status !== 0) throw new Error(start.stderr || start.stdout);
 
     const setupSql = `
