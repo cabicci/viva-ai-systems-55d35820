@@ -433,7 +433,7 @@ function UnifiedLessonPage() {
             to="/curriculum"
             search={{ module: lesson.moduleId, lesson: lesson.id }}
             aria-label={t("learn.backToMap")}
-            className="fixed top-4 start-16 z-50 inline-flex max-w-[calc(100vw-5rem)] items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md lg:start-4"
+            className="fixed top-4 end-4 z-50 inline-flex max-w-[calc(100vw-2rem)] items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md"
           >
             <ArrowLeft className="h-4 w-4" />
             <span className="truncate">{t("learn.backToMap")}</span>
@@ -447,7 +447,7 @@ function UnifiedLessonPage() {
               lesson: lesson.id,
             })}
             aria-label={t("learn.backToDashboard")}
-            className="fixed top-4 start-16 z-50 inline-flex max-w-[calc(100vw-5rem)] items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md lg:start-4"
+            className="fixed top-4 end-4 z-50 inline-flex max-w-[calc(100vw-2rem)] items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-foreground/5 transition shadow-md"
           >
             <ArrowLeft className="h-4 w-4" />
             <span className="truncate">{t("learn.backToDashboard")}</span>
