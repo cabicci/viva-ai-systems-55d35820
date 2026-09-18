@@ -1,9 +1,12 @@
 -- FOR REVIEW ONLY. Do not apply before Backup/Restore proof is accepted.
 -- Forward migration: Stripe re-subscription generation and atomic webhook guard.
+BEGIN;
 
 ALTER TABLE billing.subscriptions
   ADD COLUMN IF NOT EXISTS checkout_generation uuid,
-  ADD COLUMN IF NOT EXISTS checkout_started_at timestamptz;
+  ADD COLUMN IF NOT EXISTS checkout_started_at timestamptz,
+  ADD COLUMN IF NOT EXISTS checkout_session_id text,
+  ADD COLUMN IF NOT EXISTS stripe_metadata_effective_at timestamptz;
 
 CREATE OR REPLACE FUNCTION public.prepare_stripe_checkout(
   p_user_id uuid, p_plan_version_id uuid, p_market_price_id uuid,
@@ -23,6 +26,8 @@ BEGIN
     RAISE EXCEPTION 'STRIPE_CHECKOUT_SERVICE_ONLY' USING ERRCODE = '42501';
   END IF;
 
+  -- Serialize initialization as well as existing-row requests.
+  PERFORM pg_advisory_xact_lock(hashtextextended('stripe-checkout:' || p_user_id::text, 0));
   SELECT * INTO v_subscription FROM billing.subscriptions
   WHERE user_id = p_user_id FOR UPDATE;
 
@@ -34,7 +39,6 @@ BEGIN
   END IF;
 
   IF FOUND AND v_subscription.billing_state = 'checkout_pending'
-     AND v_subscription.idempotency_key = p_idempotency_key
      AND v_subscription.checkout_generation IS NOT NULL THEN
     v_generation := v_subscription.checkout_generation;
   ELSE
@@ -62,7 +66,9 @@ BEGIN
       currency_code = upper(p_currency_code), billing_interval = p_billing_interval,
       idempotency_key = p_idempotency_key, checkout_generation = v_generation,
       checkout_started_at = now(), cancel_at_period_end = false,
-      current_period_start = NULL, current_period_end = NULL, updated_at = now()
+      current_period_start = NULL, current_period_end = NULL, checkout_session_id = NULL,
+      canceled_at = NULL, expired_at = NULL, paid_activation_at = NULL,
+      entitlement_active_at = NULL, payment_succeeded_at = NULL, updated_at = now()
     WHERE id = v_subscription.id RETURNING * INTO v_subscription;
   END IF;
 
@@ -72,7 +78,14 @@ BEGIN
     gateway_customer_id = EXCLUDED.gateway_customer_id, status = 'active',
     metadata = billing.gateway_customers.metadata || EXCLUDED.metadata, updated_at = now();
 
-  RETURN jsonb_build_object('subscription_id', v_subscription.id, 'checkout_generation', v_generation);
+  RETURN jsonb_build_object(
+    'subscription_id', v_subscription.id, 'checkout_generation', v_generation,
+    'checkout_session_id', v_subscription.checkout_session_id,
+    'selection_matches', v_subscription.plan_version_id = p_plan_version_id
+      AND v_subscription.market_price_id = p_market_price_id
+      AND v_subscription.market_code = p_market_code
+      AND v_subscription.currency_code = upper(p_currency_code)
+      AND v_subscription.billing_interval = p_billing_interval);
 END;
 $$;
 
@@ -162,6 +175,15 @@ BEGIN
       'reason', p_payload_minimized ->> 'payment_evidence_error');
   END IF;
 
+  IF p_transition IS NULL AND v_subscription.access_state IN ('expired', 'suspended', 'refunded', 'refund_pending')
+     AND p_gateway_status IN ('active', 'trialing')
+     AND (GREATEST(v_subscription.last_applied_effective_at, v_subscription.stripe_metadata_effective_at) IS NULL
+       OR p_effective_at > GREATEST(v_subscription.last_applied_effective_at, v_subscription.stripe_metadata_effective_at)) THEN
+    UPDATE billing.webhook_events SET status = 'failed', error_code = 'TERMINAL_SUBSCRIPTION_STATE'
+    WHERE id = v_inserted_id;
+    RETURN jsonb_build_object('duplicate', false, 'processed', false, 'reason', 'TERMINAL_SUBSCRIPTION_STATE');
+  END IF;
+
   IF p_transition IS NULL THEN
     IF p_effective_at IS NULL THEN
       INSERT INTO billing.subscription_events (
@@ -174,8 +196,7 @@ BEGIN
       ) RETURNING id INTO v_metadata_event_id;
       v_transition_result := jsonb_build_object('event_id', v_metadata_event_id,
         'processing_status', 'rejected', 'reason', 'AMBIGUOUS_ORDERING');
-    ELSIF v_subscription.last_applied_effective_at IS NOT NULL
-          AND p_effective_at <= v_subscription.last_applied_effective_at THEN
+    ELSIF p_effective_at <= GREATEST(v_subscription.last_applied_effective_at, v_subscription.stripe_metadata_effective_at) THEN
       INSERT INTO billing.subscription_events (
         subscription_id, event_type, from_access_state, to_access_state, payload,
         idempotency_key, occurred_at, source, provider, provider_event_id,
@@ -190,9 +211,7 @@ BEGIN
         'processing_status', 'stale');
     ELSE
       UPDATE billing.subscriptions SET
-        last_applied_effective_at = p_effective_at,
-        last_applied_provider = 'stripe_us',
-        last_applied_event_id = p_gateway_event_id,
+        stripe_metadata_effective_at = p_effective_at,
         updated_at = now()
       WHERE id = p_subscription_id;
       INSERT INTO billing.subscription_events (
@@ -305,9 +324,48 @@ BEGIN
 END;
 $$;
 
+-- Only call close after Stripe has confirmed this exact session is expired.
+CREATE OR REPLACE FUNCTION public.close_stripe_checkout_intent(
+  p_user_id uuid, p_checkout_generation uuid, p_session_id text
+) RETURNS boolean LANGUAGE plpgsql SECURITY DEFINER
+SET search_path = billing, public, pg_temp AS $$
+BEGIN
+  IF NOT billing.is_service_role_caller() THEN
+    RAISE EXCEPTION 'STRIPE_CHECKOUT_SERVICE_ONLY' USING ERRCODE = '42501';
+  END IF;
+  UPDATE billing.subscriptions SET billing_state = 'checkout_expired', updated_at = now()
+  WHERE user_id = p_user_id AND checkout_generation = p_checkout_generation
+    AND checkout_session_id = p_session_id AND billing_state = 'checkout_pending';
+  RETURN FOUND;
+END;
+$$;
+
+CREATE OR REPLACE FUNCTION public.record_stripe_checkout_session(
+  p_user_id uuid, p_checkout_generation uuid, p_session_id text
+) RETURNS boolean LANGUAGE plpgsql SECURITY DEFINER
+SET search_path = billing, public, pg_temp AS $$
+BEGIN
+  IF NOT billing.is_service_role_caller() THEN
+    RAISE EXCEPTION 'STRIPE_CHECKOUT_SERVICE_ONLY' USING ERRCODE = '42501';
+  END IF;
+  IF p_session_id IS NULL OR p_session_id = '' THEN RETURN false; END IF;
+  UPDATE billing.subscriptions SET checkout_session_id = p_session_id, updated_at = now()
+  WHERE user_id = p_user_id AND checkout_generation = p_checkout_generation
+    AND billing_state = 'checkout_pending'
+    AND (checkout_session_id IS NULL OR checkout_session_id = p_session_id);
+  RETURN FOUND;
+END;
+$$;
+
+REVOKE ALL ON FUNCTION public.close_stripe_checkout_intent(uuid, uuid, text) FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON FUNCTION public.record_stripe_checkout_session(uuid, uuid, text) FROM PUBLIC, anon, authenticated;
+GRANT EXECUTE ON FUNCTION public.close_stripe_checkout_intent(uuid, uuid, text) TO service_role;
+GRANT EXECUTE ON FUNCTION public.record_stripe_checkout_session(uuid, uuid, text) TO service_role;
+
 REVOKE ALL ON FUNCTION public.prepare_stripe_checkout(uuid, uuid, uuid, text, text, text, text, text) FROM PUBLIC, anon, authenticated;
 REVOKE ALL ON FUNCTION public.confirm_stripe_checkout_generation(uuid, uuid) FROM PUBLIC, anon, authenticated;
 REVOKE ALL ON FUNCTION public.apply_stripe_webhook_event(text, text, timestamptz, text, uuid, uuid, uuid, uuid, text, text, text, timestamptz, timestamptz, boolean, text, bigint, text, jsonb) FROM PUBLIC, anon, authenticated;
 GRANT EXECUTE ON FUNCTION public.prepare_stripe_checkout(uuid, uuid, uuid, text, text, text, text, text) TO service_role;
 GRANT EXECUTE ON FUNCTION public.confirm_stripe_checkout_generation(uuid, uuid) TO service_role;
 GRANT EXECUTE ON FUNCTION public.apply_stripe_webhook_event(text, text, timestamptz, text, uuid, uuid, uuid, uuid, text, text, text, timestamptz, timestamptz, boolean, text, bigint, text, jsonb) TO service_role;
+COMMIT;
