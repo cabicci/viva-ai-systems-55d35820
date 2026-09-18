@@ -215,12 +215,12 @@ function AccountContent() {
     <div className="min-h-dvh flex" dir={dir}>
       <Sidebar />
       <main className="flex-1 px-4 sm:px-6 lg:px-10 py-8 max-w-5xl mx-auto w-full">
-        <div className="flex items-center justify-between mb-8">
-          <div>
+        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 mb-8 sm:flex sm:justify-between">
+          <div className="min-w-0">
             <h1 className="text-3xl sm:text-4xl font-black tracking-tight">{t("account.title")}</h1>
             <p className="text-sm text-muted-foreground mt-1">{t("account.subtitle")}</p>
           </div>
-          <Button asChild variant="glass" size="sm">
+          <Button asChild variant="glass" size="sm" className="shrink-0">
             <Link to="/dashboard">
               <ArrowLeft className={`h-4 w-4 ${dir === "rtl" ? "rotate-180" : ""}`} />{" "}
               {t("sidebar.dashboard")}
@@ -230,8 +230,8 @@ function AccountContent() {
 
         <div className="grid gap-5 md:grid-cols-2 mb-5">
           <section className="glass rounded-2xl p-6 border border-border/50">
-            <div className="flex items-center gap-4">
-              <div className="grid h-16 w-16 place-items-center rounded-2xl bg-[image:var(--gradient-primary)] text-2xl font-black text-primary-foreground glow-primary">
+            <div className="flex min-w-0 items-center gap-4">
+              <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-[image:var(--gradient-primary)] text-2xl font-black text-primary-foreground glow-primary">
                 {avatarLetter}
               </div>
               <div className="min-w-0 flex-1">
@@ -264,7 +264,7 @@ function AccountContent() {
             <div className="flex items-start justify-between gap-3">
               <div>
                 <p className="text-xs text-muted-foreground">{t("account.subscription.label")}</p>
-                <div className="mt-1 flex items-center gap-2">
+              <div className="mt-1 flex min-w-0 flex-wrap items-center gap-2">
                   <h2 className="text-2xl font-black">{planLabel}</h2>
                   <span
                     className={`rounded-full px-2 py-0.5 text-[10px] font-mono uppercase tracking-widest ${
@@ -280,7 +280,7 @@ function AccountContent() {
                 </div>
               </div>
               <BadgeCheck
-                className={`h-5 w-5 ${isPro ? "text-primary" : "text-muted-foreground"}`}
+                className={`h-5 w-5 shrink-0 ${isPro ? "text-primary" : "text-muted-foreground"}`}
               />
             </div>
 
@@ -291,21 +291,21 @@ function AccountContent() {
                 </div>
               ) : (
                 <>
-                  <div className="flex items-center justify-between text-muted-foreground">
-                    <span>{t("account.subscription.field.status")}</span>
-                    <span className="text-foreground">
+                  <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 text-muted-foreground">
+                    <span className="min-w-0">{t("account.subscription.field.status")}</span>
+                    <span className="max-w-[55%] break-words text-end text-foreground">
                       {sub?.status ?? (isPro ? "active" : "—")}
                     </span>
                   </div>
-                  <div className="flex items-center justify-between text-muted-foreground">
-                    <span>{t("account.subscription.field.renewal")}</span>
-                    <span className="text-foreground">
+                  <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 text-muted-foreground">
+                    <span className="min-w-0">{t("account.subscription.field.renewal")}</span>
+                    <span className="max-w-[55%] break-words text-end text-foreground">
                       {formatDate(sub?.current_period_end, locale)}
                     </span>
                   </div>
-                  <div className="flex items-center justify-between text-muted-foreground">
-                    <span>{t("account.subscription.field.provider")}</span>
-                    <span className="text-foreground">{sub?.provider ?? "—"}</span>
+                  <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 text-muted-foreground">
+                    <span className="min-w-0">{t("account.subscription.field.provider")}</span>
+                    <span className="max-w-[55%] break-words text-end text-foreground">{sub?.provider ?? "—"}</span>
                   </div>
                 </>
               )}
@@ -378,7 +378,7 @@ function AccountContent() {
         </section>
 
         <Dialog open={confirmDelete} onOpenChange={setConfirmDelete}>
-          <DialogContent dir={dir}>
+          <DialogContent dir={dir} className="max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] overflow-y-auto sm:max-w-lg">
             <DialogHeader>
               <DialogTitle>{t("account.deleteDialog.title")}</DialogTitle>
               <DialogDescription>{t("account.deleteDialog.description")}</DialogDescription>

@@ -109,9 +109,9 @@ function CurriculumPage() {
             <p className="text-muted-foreground mt-3 max-w-2xl">{t("curriculum.subtitle")}</p>
 
             <div className="mt-6 max-w-md">
-              <div className="flex items-center justify-between text-xs text-muted-foreground mb-1.5 font-mono">
+              <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 text-xs text-muted-foreground mb-1.5 font-mono">
                 <span>{t("curriculum.progress.label")}</span>
-                <span>{progressLessons}</span>
+                <span className="text-end">{progressLessons}</span>
               </div>
               <Progress value={pct} />
               <p className="text-[11px] text-muted-foreground mt-2 font-mono">{progressFooter}</p>
@@ -295,7 +295,7 @@ function PathBlock({
         </div>
       )}
       {/* Path header */}
-      <div className="flex items-start gap-5 mb-6">
+        <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-start gap-3 sm:gap-5 mb-6">
         <div
           className="grid h-14 w-14 place-items-center rounded-xl shrink-0"
           style={{ background: pastel }}
@@ -429,12 +429,12 @@ function PathBlock({
             <span className="text-foreground font-semibold">{builderPathTitle}</span>
             {builderPromptParts[1] ?? ""}
           </p>
-          <Button asChild variant="violet" size="sm" className="shrink-0">
+          <Button asChild variant="violet" size="sm" className="max-w-full shrink-0">
             <Link
               to="/learn/$pathId/$lessonId"
               params={{ pathId: "builder", lessonId: "builder-m1-l1-what-is-llm" }}
             >
-              {t("curriculum.footer.builderCta").replace("{path}", builderPathTitle)}
+              <span className="truncate">{t("curriculum.footer.builderCta").replace("{path}", builderPathTitle)}</span>
               <ArrowRight className={`h-4 w-4 ${dir === "rtl" ? "rotate-180" : ""}`} />
             </Link>
           </Button>

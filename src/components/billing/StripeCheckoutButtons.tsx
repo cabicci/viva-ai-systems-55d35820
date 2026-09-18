@@ -43,7 +43,7 @@ export function StripeCheckoutButtons({
   }
 
   return (
-    <div className="grid grid-cols-2 gap-2">
+    <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
       <Button
         type="button"
         variant={variant}
@@ -52,7 +52,9 @@ export function StripeCheckoutButtons({
         onClick={() => void startCheckout("month")}
       >
         {loading === "month" && <Loader2 className="me-2 h-4 w-4 animate-spin" aria-hidden />}
-        {t("pricing.cta.payMonthly")}
+        <span className="min-w-0 whitespace-normal text-center leading-tight">
+          {t("pricing.cta.payMonthly")}
+        </span>
       </Button>
       <Button
         type="button"
@@ -62,7 +64,9 @@ export function StripeCheckoutButtons({
         onClick={() => void startCheckout("year")}
       >
         {loading === "year" && <Loader2 className="me-2 h-4 w-4 animate-spin" aria-hidden />}
-        {t("pricing.cta.payYearly")}
+        <span className="min-w-0 whitespace-normal text-center leading-tight">
+          {t("pricing.cta.payYearly")}
+        </span>
       </Button>
     </div>
   );

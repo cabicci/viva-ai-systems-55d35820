@@ -31,10 +31,10 @@ export function BackToDashboard() {
       to="/dashboard"
       search={localeSearch()}
       aria-label={t("common.backToDashboard")}
-      className="fixed top-4 left-4 z-50 inline-flex items-center gap-2 rounded-full glass border border-border/60 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-white/5 transition shadow-md"
+      className="fixed bottom-4 end-4 z-50 inline-flex max-w-[calc(100vw-2rem)] items-center gap-2 rounded-full glass border border-border/60 px-3 py-2 text-xs font-medium text-foreground/90 hover:text-foreground hover:bg-white/5 transition shadow-md"
     >
       <ArrowRight className="h-4 w-4" />
-      <span>{t("common.backToDashboard")}</span>
+      <span className="truncate">{t("common.backToDashboard")}</span>
     </Link>
   );
 }

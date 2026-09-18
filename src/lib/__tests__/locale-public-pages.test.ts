@@ -106,6 +106,37 @@ describe("public page locale (pricing, terms, privacy, home, login, root)", () =
     }
   });
 
+  it("labels paid checkout as test-only with no real charge in every locale", () => {
+    const copyKeys = [
+      "pricing.hero.subtitle",
+      "pricing.legal.note",
+      "pricing.faq.2.a",
+      "learn.paywall.body",
+      "terms.section.subscription.body",
+    ] as const;
+
+    for (const locale of SUPPORTED_LOCALES) {
+      const blob = copyKeys.map((key) => getUiString(locale, key)).join(" ");
+      if (locale === "en") {
+        expect(blob).toMatch(/test/i);
+        expect(blob).toMatch(/real money/i);
+      } else {
+        expect(blob).toMatch(/تجريبي/);
+        expect(blob).toMatch(/(?:فلوس|أموال)/);
+      }
+
+      expect(getUiString(locale, "pricing.badge.comingSoon")).not.toMatch(
+        /coming soon|قريب[اًًا]?/i,
+      );
+      expect(getUiString(locale, "pricing.cta.paymentPending")).not.toMatch(
+        /coming soon|قريب[اًًا]?/i,
+      );
+      expect(getUiString(locale, "pricing.cta.proSoon")).not.toMatch(
+        /coming soon|قريب[اًًا]?/i,
+      );
+    }
+  });
+
   it("passes locale leak scan after public page wiring", () => {
     const result = validateLocaleLeakScan();
     expect(result.errors, result.errors.join("\n")).toEqual([]);

@@ -66,7 +66,7 @@ function Dashboard() {
   const { dir, locale } = useLocale();
   const t = useUiString();
   const search = Route.useSearch();
-  const { store, getStatus } = useLessonProgress();
+  const { store, getStatus, isLoaded: isProgressLoaded } = useLessonProgress();
   const { tier, isPro, isAdmin } = useEntitlement();
   const [openId, setOpenId] = useState<string | null>(search.module ?? null);
   const [openPathId, setOpenPathId] = useState<string | null>(search.path ?? null);
@@ -141,6 +141,8 @@ function Dashboard() {
     ? getCurriculumPathLabel(locale, nextLessonPath.id, "title")
     : undefined;
 
+  if (!isProgressLoaded) return <DashboardSkeleton />;
+
   return (
     <div className="min-h-dvh flex overflow-x-hidden" dir={dir}>
       <Sidebar />
@@ -151,8 +153,8 @@ function Dashboard() {
           <StartWowBanner />
           {noProgress && <WelcomeChecklist />}
           <ReviewsDueCard />
-          <div className="flex items-end justify-between flex-wrap gap-4 mb-10 animate-fade-up">
-            <div>
+          <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4 mb-10 animate-fade-up sm:flex sm:flex-wrap sm:justify-between">
+            <div className="min-w-0">
               <p className="text-primary text-sm font-semibold">
                 {t("dashboard.greeting.eyebrow")}
               </p>
@@ -162,10 +164,10 @@ function Dashboard() {
               <p className="text-muted-foreground mt-2">{t("dashboard.greeting.subtitle")}</p>
             </div>
             {nextLesson && (
-              <Button asChild variant="hero" size="lg" className="group animate-glow-pulse">
+              <Button asChild variant="hero" size="lg" className="group max-w-full animate-glow-pulse">
                 <LessonLink lesson={nextLesson} from="dashboard">
                   <Play className="h-4 w-4 group-hover:scale-125 transition-transform" />
-                  {t("dashboard.continueLesson")}
+                  <span className="truncate">{t("dashboard.continueLesson")}</span>
                 </LessonLink>
               </Button>
             )}
