@@ -14,7 +14,7 @@ export function AuthShell({
   const brand = t("nav.brand");
 
   return (
-    <div className="min-h-dvh flex">
+    <div className="min-h-dvh flex overflow-x-hidden">
       <div className="hidden lg:flex flex-1 relative grid-bg overflow-hidden p-16 flex-col justify-between">
         <Link to="/" className="flex items-center relative z-10" aria-label={brand}>
           <img
@@ -35,7 +35,7 @@ export function AuthShell({
           <p className="mt-4 text-muted-foreground">{t("auth.shell.tagline")}</p>
         </div>
       </div>
-      <div className="flex-1 flex items-center justify-center p-6">
+      <div className="flex min-w-0 flex-1 items-center justify-center px-4 py-8 sm:p-6">
         <div className="w-full max-w-md">
           <div className="lg:hidden mb-8">
             <Link to="/" className="flex items-center" aria-label={brand}>
@@ -47,7 +47,7 @@ export function AuthShell({
               />
             </Link>
           </div>
-          <h1 className="text-3xl font-bold">{title}</h1>
+          <h1 className="text-3xl font-bold break-words">{title}</h1>
           <p className="text-muted-foreground mt-2 mb-8">{subtitle}</p>
           {children}
         </div>
