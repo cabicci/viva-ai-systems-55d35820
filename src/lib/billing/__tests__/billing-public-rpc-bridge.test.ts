@@ -144,6 +144,8 @@ describe("public billing RPC bridge — static", () => {
       "20260916100000_rag_guarded_upgrade_activation.sql",
       "20260916110000_rag_guarded_upgrade_timeout.sql",
       "20260916183000_billing_pro_71_lesson_contract.sql",
+      "20260917120000_stripe_test_checkout_bridge.sql",
+      "20260918173000_stripe_customer_portal_upgrade.sql",
     ]);
 
     const snapshotValiditySql = readRepoFile(SNAPSHOT_VALIDITY_MIGRATION);
