@@ -118,7 +118,7 @@ function PricingPage() {
             </p>
           </header>
 
-          <section className="grid lg:grid-cols-3 gap-5 items-stretch">
+          <section className="grid min-w-0 lg:grid-cols-3 gap-5 items-stretch">
             <article className="glass rounded-2xl border border-border/60 p-6 md:p-8 flex flex-col">
               <div className="mb-6">
                 <h2 className="text-2xl font-black">{t("pricing.plan.free.name")}</h2>
@@ -140,7 +140,7 @@ function PricingPage() {
               </Button>
             </article>
 
-            <article className="glass rounded-2xl border border-primary/30 bg-primary/[0.03] p-6 md:p-8 flex flex-col relative overflow-hidden">
+            <article className="glass min-w-0 rounded-2xl border border-primary/30 bg-primary/[0.03] p-6 md:p-8 flex flex-col relative overflow-hidden">
               <div className="absolute top-4 start-4">
                 <Badge
                   variant="outline"
@@ -167,7 +167,7 @@ function PricingPage() {
               <StripeCheckoutButtons plan="pro" variant="violet" />
             </article>
 
-            <article className="glass rounded-2xl border border-accent/40 bg-accent/[0.04] p-6 md:p-8 flex flex-col relative overflow-hidden">
+            <article className="glass min-w-0 rounded-2xl border border-accent/40 bg-accent/[0.04] p-6 md:p-8 flex flex-col relative overflow-hidden">
               <div className="absolute top-4 start-4">
                 <Badge
                   variant="outline"
