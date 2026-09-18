@@ -90,6 +90,25 @@ type StripeCheckoutSession = {
   metadata?: Record<string, string>;
 };
 
+function selectCheckoutSessionIntent(input: {
+  sessions: StripeCheckoutSession[];
+  subscriptionId: string;
+  generation: string;
+}) {
+  const managed = input.sessions.filter((session) =>
+    session.metadata?.environment === "test"
+    && session.metadata?.internal_subscription_id === input.subscriptionId
+  );
+  const reusable = managed.find((session) =>
+    Boolean(session.url)
+    && session.metadata?.checkout_generation === input.generation
+  ) ?? null;
+  return {
+    reusable,
+    expireIds: managed.filter((session) => session.id !== reusable?.id).map((session) => session.id),
+  };
+}
+
 const MANAGED_STRIPE_SUBSCRIPTION_STATUSES = new Set([
   "active",
   "trialing",
@@ -216,10 +235,9 @@ async function hasManagedStripeSubscription(customerId: string): Promise<boolean
   );
 }
 
-async function findReusableCheckoutSession(
+async function listOpenCheckoutSessions(
   customerId: string,
-  context: CheckoutContext,
-): Promise<StripeCheckoutSession | null> {
+): Promise<StripeCheckoutSession[]> {
   const query = new URLSearchParams({
     customer: customerId,
     status: "open",
@@ -228,13 +246,15 @@ async function findReusableCheckoutSession(
   const result = await stripeRequest<{ data: StripeCheckoutSession[] }>(
     `/checkout/sessions?${query.toString()}`,
   );
-  return result.data.find((session) =>
-    Boolean(session.url)
-    && session.metadata?.environment === "test"
-    && session.metadata?.plan_key === context.plan_key
-    && session.metadata?.billing_interval === context.billing_interval
-    && session.metadata?.market_code === context.market_code
-  ) ?? null;
+  return result.data;
+}
+
+async function expireCheckoutSession(sessionId: string): Promise<void> {
+  await stripeRequest(`/checkout/sessions/${encodeURIComponent(sessionId)}/expire`, {
+    method: "POST",
+    params: new URLSearchParams(),
+    idempotencyKey: `expire-checkout-${sessionId}`,
+  });
 }
 
 Deno.serve(async (request) => {
@@ -277,11 +297,6 @@ Deno.serve(async (request) => {
       return json({ error: "SUBSCRIPTION_ALREADY_MANAGED" }, 409, origin);
     }
 
-    const reusableSession = await findReusableCheckoutSession(customerId, context);
-    if (reusableSession?.url) {
-      return json({ url: reusableSession.url, sessionId: reusableSession.id }, 200, origin);
-    }
-
     const checkoutWindow = Math.floor(Date.now() / 300_000);
     const checkoutNonce = `${user.id}:${planKey}:${billingInterval}:${marketCode}:${checkoutWindow}`;
     const prepared = await supabaseRpc<{
@@ -297,6 +312,16 @@ Deno.serve(async (request) => {
       p_gateway_customer_id: customerId,
       p_idempotency_key: `stripe-checkout:${user.id}:${checkoutNonce}`,
     });
+
+    const sessionIntent = selectCheckoutSessionIntent({
+      sessions: await listOpenCheckoutSessions(customerId),
+      subscriptionId: prepared.subscription_id,
+      generation: prepared.checkout_generation,
+    });
+    await Promise.all(sessionIntent.expireIds.map(expireCheckoutSession));
+    if (sessionIntent.reusable?.url) {
+      return json({ url: sessionIntent.reusable.url, sessionId: sessionIntent.reusable.id }, 200, origin);
+    }
 
     const appOrigin = origin && ALLOWED_ORIGINS.has(origin) ? origin : "https://masaarat.ai";
     const metadata: Record<string, string> = {

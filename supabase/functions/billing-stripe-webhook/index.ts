@@ -111,16 +111,6 @@ function subscriptionIdFrom(object: Record<string, any>): string | null {
 }
 
 function transitionFor(event: StripeEvent, subscription: Record<string, any>): string | null {
-  if (event.type === "checkout.session.completed") {
-    return event.data.object.payment_status === "paid" && subscription.status === "active"
-      ? "payment_succeeded"
-      : null;
-  }
-  if (event.type === "invoice.paid") {
-    return event.data.object.status === "paid" && subscription.status === "active"
-      ? "payment_succeeded"
-      : null;
-  }
   if (event.type === "invoice.payment_failed") return "payment_failed";
   if (event.type === "customer.subscription.deleted") return "canceled";
   if (event.type === "customer.subscription.updated") {
@@ -128,6 +118,51 @@ function transitionFor(event: StripeEvent, subscription: Record<string, any>): s
     if (["past_due", "unpaid"].includes(subscription.status)) return "payment_failed";
   }
   return null;
+}
+
+function lineSubscriptionId(line: Record<string, any>): string | null {
+  return idOf(line.subscription)
+    ?? idOf(line.parent?.subscription_details?.subscription)
+    ?? idOf(line.parent?.subscription_item_details?.subscription);
+}
+
+function positivePaidPrice(lines: Record<string, any>[], subscriptionId: string): string | null {
+  return lines.map((line) => ({
+    amount: Number(line.amount ?? line.amount_total ?? 0),
+    priceId: idOf(line.price),
+    subscriptionId: lineSubscriptionId(line),
+  })).filter((line) => line.priceId && line.amount > 0
+    && (!line.subscriptionId || line.subscriptionId === subscriptionId))
+    .sort((left, right) => right.amount - left.amount)[0]?.priceId ?? null;
+}
+
+async function paidPlanEvidence(
+  event: StripeEvent,
+  subscription: Record<string, any>,
+): Promise<{ transition: "payment_succeeded" | null; priceId: string | null; error: string | null }> {
+  if (!["invoice.paid", "checkout.session.completed"].includes(event.type)) {
+    return { transition: null, priceId: null, error: null };
+  }
+  const object = event.data.object;
+  const subscriptionId = idOf(subscription);
+  if (!subscriptionId) return { transition: null, priceId: null, error: "PAID_PLAN_EVIDENCE_MISSING" };
+  const lines = event.type === "invoice.paid"
+    ? object.lines?.data ?? []
+    : (await stripeGet<{ data: Record<string, any>[] }>(
+      `/checkout/sessions/${encodeURIComponent(String(object.id))}/line_items?limit=100`,
+    )).data;
+  const paidPriceId = positivePaidPrice(lines, subscriptionId);
+  const paid = event.type === "invoice.paid"
+    ? object.status === "paid" && Number(object.amount_paid ?? 0) > 0
+    : object.payment_status === "paid" && Number(object.amount_total ?? 0) > 0;
+  const currentPriceId = idOf(subscription.items?.data?.[0]?.price);
+  if (!paid || subscription.status !== "active" || !paidPriceId) {
+    return { transition: null, priceId: paidPriceId, error: "PAID_PLAN_EVIDENCE_MISSING" };
+  }
+  if (paidPriceId !== currentPriceId) {
+    return { transition: null, priceId: paidPriceId, error: "PAID_PLAN_EVIDENCE_MISMATCH" };
+  }
+  return { transition: "payment_succeeded", priceId: paidPriceId, error: null };
 }
 
 Deno.serve(async (request) => {
@@ -163,15 +198,17 @@ Deno.serve(async (request) => {
     const metadata = subscription.metadata ?? {};
     const internalSubscriptionId = metadata.internal_subscription_id;
     const userId = metadata.user_id;
-    const activePriceId = idOf(subscription.items?.data?.[0]?.price);
-    const resolvedPlan = activePriceId
+    const evidence = await paidPlanEvidence(event, subscription);
+    if (evidence.error) throw new Error(evidence.error);
+    const authoritativePriceId = evidence.priceId ?? idOf(subscription.items?.data?.[0]?.price);
+    const resolvedPlan = authoritativePriceId
       ? await rpc<{
           plan_version_id: string;
           market_price_id: string;
           plan_key: string;
           market_code: string;
           billing_interval: string;
-        } | null>("resolve_stripe_subscription_plan", { p_gateway_price_id: activePriceId })
+        } | null>("resolve_stripe_subscription_plan", { p_gateway_price_id: authoritativePriceId })
       : null;
     const planVersionId = resolvedPlan?.plan_version_id ?? metadata.plan_version_id;
     const marketPriceId = resolvedPlan?.market_price_id ?? metadata.market_price_id;
@@ -187,7 +224,7 @@ Deno.serve(async (request) => {
       ?? subscription.items?.data?.[0]?.current_period_end
       ?? null;
 
-    const transition = transitionFor(event, subscription);
+    const transition = evidence.transition ?? transitionFor(event, subscription);
     const isPaidInvoice = event.type === "invoice.paid";
     const minimized = {
       stripe_event_type: event.type,
