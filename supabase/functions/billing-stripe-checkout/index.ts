@@ -77,6 +77,28 @@ async function stripeRequest<T>(
   return payload as T;
 }
 
+type StripeSubscription = {
+  id: string;
+  status: string;
+  metadata?: Record<string, string>;
+};
+
+type StripeCheckoutSession = {
+  id: string;
+  url: string | null;
+  status: string | null;
+  metadata?: Record<string, string>;
+};
+
+const MANAGED_STRIPE_SUBSCRIPTION_STATUSES = new Set([
+  "active",
+  "trialing",
+  "past_due",
+  "unpaid",
+  "paused",
+  "incomplete",
+]);
+
 type CheckoutContext = {
   plan_version_id: string;
   market_price_id: string;
@@ -178,6 +200,43 @@ async function ensureStripeCustomer(
   return customer.id;
 }
 
+
+async function hasManagedStripeSubscription(customerId: string): Promise<boolean> {
+  const query = new URLSearchParams({
+    customer: customerId,
+    status: "all",
+    limit: "100",
+  });
+  const result = await stripeRequest<{ data: StripeSubscription[] }>(
+    `/subscriptions?${query.toString()}`,
+  );
+  return result.data.some((subscription) =>
+    subscription.metadata?.environment === "test"
+    && MANAGED_STRIPE_SUBSCRIPTION_STATUSES.has(subscription.status)
+  );
+}
+
+async function findReusableCheckoutSession(
+  customerId: string,
+  context: CheckoutContext,
+): Promise<StripeCheckoutSession | null> {
+  const query = new URLSearchParams({
+    customer: customerId,
+    status: "open",
+    limit: "100",
+  });
+  const result = await stripeRequest<{ data: StripeCheckoutSession[] }>(
+    `/checkout/sessions?${query.toString()}`,
+  );
+  return result.data.find((session) =>
+    Boolean(session.url)
+    && session.metadata?.environment === "test"
+    && session.metadata?.plan_key === context.plan_key
+    && session.metadata?.billing_interval === context.billing_interval
+    && session.metadata?.market_code === context.market_code
+  ) ?? null;
+}
+
 Deno.serve(async (request) => {
   const origin = request.headers.get("Origin");
   if (request.method === "OPTIONS") {
@@ -214,7 +273,17 @@ Deno.serve(async (request) => {
       ensureStripeCustomer(context, user),
     ]);
 
-    const checkoutNonce = crypto.randomUUID();
+    if (await hasManagedStripeSubscription(customerId)) {
+      return json({ error: "SUBSCRIPTION_ALREADY_MANAGED" }, 409, origin);
+    }
+
+    const reusableSession = await findReusableCheckoutSession(customerId, context);
+    if (reusableSession?.url) {
+      return json({ url: reusableSession.url, sessionId: reusableSession.id }, 200, origin);
+    }
+
+    const checkoutWindow = Math.floor(Date.now() / 300_000);
+    const checkoutNonce = `${user.id}:${planKey}:${billingInterval}:${marketCode}:${checkoutWindow}`;
     const prepared = await supabaseRpc<{ subscription_id: string }>("prepare_stripe_checkout", {
       p_user_id: user.id,
       p_plan_version_id: context.plan_version_id,
