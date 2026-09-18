@@ -3,3 +3,4 @@
 -- dropping columns is unnecessary and would be a breaking operation.
 
 \ir ../../supabase/migrations/20260917120000_stripe_test_checkout_bridge.sql
+\ir ../../supabase/migrations/20260722180000_billing_launch_closure_contracts_v3.sql

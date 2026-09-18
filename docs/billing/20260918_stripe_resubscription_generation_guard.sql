@@ -100,6 +100,7 @@ DECLARE
   v_generation uuid;
   v_transaction_type text;
   v_paid_plan_event boolean := false;
+  v_event_type text;
 BEGIN
   IF NOT billing.is_service_role_caller() THEN
     RAISE EXCEPTION 'STRIPE_WEBHOOK_SERVICE_ONLY' USING ERRCODE = '42501';
@@ -153,22 +154,21 @@ BEGIN
     RETURN jsonb_build_object('duplicate', false, 'processed', false, 'reason', 'GATEWAY_SUBSCRIPTION_MISMATCH');
   END IF;
 
-  IF p_transition IS NOT NULL THEN
-    v_transition_result := billing.apply_subscription_event(
-      p_subscription_id, 'stripe_us', p_gateway_event_id, p_effective_at, NULL,
-      p_transition, COALESCE(p_payload_minimized, '{}'::jsonb), 'stripe:event:' || p_gateway_event_id
-    );
-    v_processing_status := v_transition_result ->> 'processing_status';
-    IF v_processing_status IS DISTINCT FROM 'applied' THEN
-      UPDATE billing.webhook_events SET status = 'failed', error_code = CASE v_processing_status
-        WHEN 'stale' THEN 'STALE_SUBSCRIPTION_EVENT'
-        WHEN 'rejected' THEN COALESCE(v_transition_result ->> 'reason', 'SUBSCRIPTION_TRANSITION_REJECTED')
-        ELSE 'SUBSCRIPTION_TRANSITION_NOT_APPLIED' END
-      WHERE id = v_inserted_id;
-      RETURN jsonb_build_object('duplicate', false, 'processed', false,
-        'reason', COALESCE(v_transition_result ->> 'reason', upper(COALESCE(v_processing_status, 'not_applied'))),
-        'transition', v_transition_result);
-    END IF;
+  v_event_type := COALESCE(p_transition, 'provider_metadata_updated');
+  v_transition_result := billing.apply_subscription_event(
+    p_subscription_id, 'stripe_us', p_gateway_event_id, p_effective_at, NULL,
+    v_event_type, COALESCE(p_payload_minimized, '{}'::jsonb), 'stripe:event:' || p_gateway_event_id
+  );
+  v_processing_status := v_transition_result ->> 'processing_status';
+  IF v_processing_status IS DISTINCT FROM 'applied' THEN
+    UPDATE billing.webhook_events SET status = 'failed', error_code = CASE v_processing_status
+      WHEN 'stale' THEN 'STALE_SUBSCRIPTION_EVENT'
+      WHEN 'rejected' THEN COALESCE(v_transition_result ->> 'reason', 'SUBSCRIPTION_TRANSITION_REJECTED')
+      ELSE 'SUBSCRIPTION_TRANSITION_NOT_APPLIED' END
+    WHERE id = v_inserted_id;
+    RETURN jsonb_build_object('duplicate', false, 'processed', false,
+      'reason', COALESCE(v_transition_result ->> 'reason', upper(COALESCE(v_processing_status, 'not_applied'))),
+      'transition', v_transition_result);
   END IF;
 
   v_paid_plan_event := p_transition = 'payment_succeeded'
@@ -220,6 +220,35 @@ BEGIN
   RETURN jsonb_build_object('duplicate', false, 'processed', true,
     'plan_updated', v_paid_plan_event, 'transition', v_transition_result);
 END;
+$$;
+
+CREATE OR REPLACE FUNCTION billing.subscription_next_access_state(
+  p_from text,
+  p_event_type text
+)
+RETURNS text
+LANGUAGE sql
+IMMUTABLE
+SET search_path = billing, public, pg_temp
+AS $$
+  SELECT CASE
+    WHEN p_event_type = 'provider_metadata_updated' THEN p_from
+    WHEN p_event_type = 'payment_succeeded'
+      AND p_from IN ('free_pending_verification', 'free_active', 'free_expired', 'paid_scheduled', 'past_due', 'paid_active') THEN 'paid_active'
+    WHEN p_event_type = 'activation_scheduled' AND p_from IN ('free_pending_verification', 'free_active', 'free_expired') THEN 'paid_scheduled'
+    WHEN p_event_type = 'activated' AND p_from = 'paid_scheduled' THEN 'paid_active'
+    WHEN p_event_type = 'payment_failed' AND p_from IN ('paid_active', 'paid_scheduled') THEN 'past_due'
+    WHEN p_event_type = 'cancel_at_period_end' AND p_from IN ('paid_active', 'past_due') THEN 'canceled_at_period_end'
+    WHEN p_event_type = 'canceled' AND p_from IN ('paid_active', 'paid_scheduled', 'past_due', 'canceled_at_period_end') THEN 'expired'
+    WHEN p_event_type = 'period_ended' AND p_from = 'canceled_at_period_end' THEN 'expired'
+    WHEN p_event_type = 'period_ended' AND p_from = 'paid_active' THEN 'paid_active'
+    WHEN p_event_type = 'expired' AND p_from IN ('paid_active', 'paid_scheduled', 'past_due', 'canceled_at_period_end') THEN 'expired'
+    WHEN p_event_type = 'suspended' AND p_from IN ('paid_active', 'past_due') THEN 'suspended'
+    WHEN p_event_type = 'resumed' AND p_from = 'suspended' THEN 'paid_active'
+    WHEN p_event_type = 'refund_pending' AND p_from IN ('paid_active', 'past_due', 'canceled_at_period_end', 'suspended') THEN 'refund_pending'
+    WHEN p_event_type = 'refunded' AND p_from IN ('refund_pending', 'paid_active', 'past_due', 'canceled_at_period_end', 'suspended') THEN 'refunded'
+    ELSE NULL
+  END;
 $$;
 
 REVOKE ALL ON FUNCTION public.prepare_stripe_checkout(uuid, uuid, uuid, text, text, text, text, text) FROM PUBLIC, anon, authenticated;
