@@ -1,10 +1,10 @@
 # Roadmap sync marker
 
-[roadmap:65aa999e-ed85-4988-a922-a2ecd4a110fd]
-date: 2026-09-16
+[roadmap:0fb74d25-8f96-4f19-8dac-0de4d1ed690b]
+date: 2026-09-18
 scope: db
 source: user
-summary: Recovered 400-package / 3701-chunk RAG corpus artifacts, contracts, tests, and compatibility migration
+summary: Prepared canceled-to-repurchase generation safety, paid-plan gating, observable stale/rejected webhooks, rollback SQL, and disposable behavioral tests; not deployed pending Backup/Restore proof
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
