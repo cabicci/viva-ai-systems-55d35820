@@ -115,11 +115,11 @@ else
     # Count must stay in lockstep with the billing vitest inventory (static + disposable).
     # Refuse any skipped mandatory disposable proofs.
     if assert_no_mandatory_skips "${REPORT_DIR}/unit.plain.log" \
-      && grep -EEq 'Tests[[:space:]]+125 passed' "${REPORT_DIR}/unit.plain.log"; then
-      echo "- Result: PASS (125 / 125, 0 skipped)" >> "$REPORT"
+      && grep -EEq 'Tests[[:space:]]+151 passed' "${REPORT_DIR}/unit.plain.log"; then
+      echo "- Result: PASS (151 / 151, 0 skipped)" >> "$REPORT"
     else
       overall_status=1
-      echo "- Result: FAIL (expected 125 passed / 0 skipped)" >> "$REPORT"
+      echo "- Result: FAIL (expected 151 passed / 0 skipped)" >> "$REPORT"
     fi
   else
     overall_status=1
