@@ -101,6 +101,6 @@ AS $function$
       THEN 'refunded'
     ELSE NULL
   END;
-$function$
+$function$;
 
 COMMIT;
