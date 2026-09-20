@@ -204,7 +204,9 @@ describe("Stripe re-subscription generation guard", async () => {
     }
     expect(await sql("select count(*) from billing.payment_transactions")).toBe(transactionsBefore);
     expect(
-      await sql(`select plan_version_id||':'||access_state from billing.subscriptions where id='${subscriptionId}'`),
+      await sql(
+        `select plan_version_id||':'||access_state from billing.subscriptions where id='${subscriptionId}'`,
+      ),
     ).toBe(`${proPlanId}:past_due`);
     expect(
       await sql(`select count(*) from (values ('expired'),('refunded'),('suspended'),('refund_pending')) states(state)
@@ -418,7 +420,9 @@ describe("Stripe re-subscription generation guard", async () => {
   it("rolls back only changed functions and preserves catalog and data", async () => {
     await sql(readFileSync("docs/billing/20260920_repeated_payment_failure.rollback.sql", "utf8"));
     expect(
-      await sql("select billing.subscription_next_access_state('past_due','payment_failed') is null"),
+      await sql(
+        "select billing.subscription_next_access_state('past_due','payment_failed') is null",
+      ),
     ).toBe("true");
     const catalogBefore = await sql("select count(*) from billing.plan_versions");
     const eventsBefore = await sql("select count(*) from billing.webhook_events");

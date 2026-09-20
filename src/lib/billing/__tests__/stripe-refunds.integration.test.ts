@@ -125,77 +125,155 @@ describe("Stripe refund database reconciliation", async () => {
   beforeAll(async () => {
     await sql(`ALTER TABLE billing.payment_transactions ADD COLUMN gross_minor bigint;
       ALTER TABLE billing.payment_transactions ADD COLUMN tax_minor bigint;`);
-    await sql(readFileSync("docs/billing/20260920_stripe_refunds.sql","utf8"));
+    await sql(readFileSync("docs/billing/20260920_stripe_refunds.sql", "utf8"));
   });
   beforeEach(async () => {
     await sql("BEGIN");
     const intent = await checkout("refund-checkout");
     await webhook({
-      eventId:"evt_refund_payment",eventType:"invoice.paid",effectiveAt:"2026-09-18T10:00:00Z",
-      transition:"payment_succeeded",generation:String(intent.checkout_generation),transactionId:"in_refund_payment",
+      eventId: "evt_refund_payment",
+      eventType: "invoice.paid",
+      effectiveAt: "2026-09-18T10:00:00Z",
+      transition: "payment_succeeded",
+      generation: String(intent.checkout_generation),
+      transactionId: "in_refund_payment",
     });
   });
-  afterEach(async () => { await sql("ROLLBACK"); });
+  afterEach(async () => {
+    await sql("ROLLBACK");
+  });
 
   afterAll(async () => {
     await db?.close();
   });
 
-
-  const refund = async (input: {event?: string; id?: string; amount?: number; status?: string;
-    time?: string; invoice?: string; current?: boolean; generation?: string; provider?: string} = {}) => {
-    const generation = input.generation ?? await sql(`select checkout_generation from billing.subscriptions where id='${subscriptionId}'`);
+  const refund = async (
+    input: {
+      event?: string;
+      id?: string;
+      amount?: number;
+      status?: string;
+      time?: string;
+      invoice?: string;
+      current?: boolean;
+      generation?: string;
+      provider?: string;
+    } = {},
+  ) => {
+    const generation =
+      input.generation ??
+      (await sql(
+        `select checkout_generation from billing.subscriptions where id='${subscriptionId}'`,
+      ));
     return queryJson(`select public.apply_stripe_refund_event(
       '${input.event ?? "evt_refund_1"}','refund.updated','${input.time ?? "2026-09-18T11:00:00Z"}',
       '${input.id ?? "re_partial"}','${input.invoice ?? "in_refund_payment"}','${input.status ?? "succeeded"}',
       ${input.amount ?? 5000},'egp','${input.provider ?? "sub_new"}','cus_test','${generation}',${input.current ?? true}
     )::text`);
   };
-  const state = () => sql(`select access_state from billing.subscriptions where id='${subscriptionId}'`);
+  const state = () =>
+    sql(`select access_state from billing.subscriptions where id='${subscriptionId}'`);
 
   it("keeps partial access and revokes cumulative full refund exactly once", async () => {
-    expect(await refund()).toMatchObject({processed:true,refunded_minor:5000,cancel_subscription:false});
+    expect(await refund()).toMatchObject({
+      processed: true,
+      refunded_minor: 5000,
+      cancel_subscription: false,
+    });
     expect(await state()).toBe("paid_active");
-    expect(await refund()).toMatchObject({duplicate:true,refunded_minor:5000});
+    expect(await refund()).toMatchObject({ duplicate: true, refunded_minor: 5000 });
     expect(await sql("select count(*) from billing.refunds")).toBe("1");
-    expect(await refund({event:"evt_refund_2",id:"re_remainder",amount:11900,time:"2026-09-18T11:01:00Z"}))
-      .toMatchObject({refunded_minor:16900,cancel_subscription:true});
+    expect(
+      await refund({
+        event: "evt_refund_2",
+        id: "re_remainder",
+        amount: 11900,
+        time: "2026-09-18T11:01:00Z",
+      }),
+    ).toMatchObject({ refunded_minor: 16900, cancel_subscription: true });
     expect(await state()).toBe("refunded");
-    expect(await refund({event:"evt_refund_2",id:"re_remainder",amount:11900,time:"2026-09-18T11:01:00Z"}))
-      .toMatchObject({duplicate:true,cancel_subscription:true});
-    expect(await sql("select count(*) from billing.subscription_events where event_type='refunded'")).toBe("1");
+    expect(
+      await refund({
+        event: "evt_refund_2",
+        id: "re_remainder",
+        amount: 11900,
+        time: "2026-09-18T11:01:00Z",
+      }),
+    ).toMatchObject({ duplicate: true, cancel_subscription: true });
+    expect(
+      await sql("select count(*) from billing.subscription_events where event_type='refunded'"),
+    ).toBe("1");
   });
 
   it("records pending, success, cancellation and late failure without granting access", async () => {
-    expect(await refund({amount:16900,status:"pending"})).toMatchObject({held_minor:16900,cancel_subscription:false});
+    expect(await refund({ amount: 16900, status: "pending" })).toMatchObject({
+      held_minor: 16900,
+      cancel_subscription: false,
+    });
     expect(await state()).toBe("refund_pending");
-    expect(await refund({event:"evt_success",amount:16900,time:"2026-09-18T11:01:00Z"}))
-      .toMatchObject({cancel_subscription:true});
+    expect(
+      await refund({ event: "evt_success", amount: 16900, time: "2026-09-18T11:01:00Z" }),
+    ).toMatchObject({ cancel_subscription: true });
     expect(await state()).toBe("refunded");
-    const generation=await sql(`select checkout_generation from billing.subscriptions where id='${subscriptionId}'`);
-    expect(await webhook({eventId:"evt_refund_cancel",eventType:"customer.subscription.deleted",
-      effectiveAt:"2026-09-18T11:02:00Z",transition:"canceled",generation,gatewayStatus:"canceled"}))
-      .toMatchObject({processed:true});
+    const generation = await sql(
+      `select checkout_generation from billing.subscriptions where id='${subscriptionId}'`,
+    );
+    expect(
+      await webhook({
+        eventId: "evt_refund_cancel",
+        eventType: "customer.subscription.deleted",
+        effectiveAt: "2026-09-18T11:02:00Z",
+        transition: "canceled",
+        generation,
+        gatewayStatus: "canceled",
+      }),
+    ).toMatchObject({ processed: true });
     expect(await state()).toBe("refunded");
-    expect(await refund({event:"evt_failed",amount:16900,status:"failed",time:"2026-09-18T11:03:00Z"}))
-      .toMatchObject({refunded_minor:0,held_minor:0,manual_review_required:true,cancel_subscription:false});
+    expect(
+      await refund({
+        event: "evt_failed",
+        amount: 16900,
+        status: "failed",
+        time: "2026-09-18T11:03:00Z",
+      }),
+    ).toMatchObject({
+      refunded_minor: 0,
+      held_minor: 0,
+      manual_review_required: true,
+      cancel_subscription: false,
+    });
     expect(await state()).toBe("refunded");
   });
 
   it("does not regress a successful refund on stale or same-second pending delivery", async () => {
-    await refund({amount:16900});
-    expect(await refund({event:"evt_old_pending",amount:16900,status:"pending",time:"2026-09-18T10:59:00Z"}))
-      .toMatchObject({stale:true,refunded_minor:16900});
-    expect(await refund({event:"evt_tied_pending",amount:16900,status:"pending"}))
-      .toMatchObject({stale:true,refunded_minor:16900});
+    await refund({ amount: 16900 });
+    expect(
+      await refund({
+        event: "evt_old_pending",
+        amount: 16900,
+        status: "pending",
+        time: "2026-09-18T10:59:00Z",
+      }),
+    ).toMatchObject({ stale: true, refunded_minor: 16900 });
+    expect(
+      await refund({ event: "evt_tied_pending", amount: 16900, status: "pending" }),
+    ).toMatchObject({ stale: true, refunded_minor: 16900 });
     expect(await sql("select status from billing.refunds")).toBe("succeeded");
   });
 
   it("does not revoke later invoices or a replacement provider generation", async () => {
-    expect(await refund({amount:16900,current:false})).toMatchObject({cancel_subscription:false});
+    expect(await refund({ amount: 16900, current: false })).toMatchObject({
+      cancel_subscription: false,
+    });
     expect(await state()).toBe("paid_active");
-    expect(await refund({event:"evt_replaced",amount:16900,generation:randomUUID(),provider:"sub_old"}))
-      .toMatchObject({cancel_subscription:false});
+    expect(
+      await refund({
+        event: "evt_replaced",
+        amount: 16900,
+        generation: randomUUID(),
+        provider: "sub_old",
+      }),
+    ).toMatchObject({ cancel_subscription: false });
     expect(await state()).toBe("paid_active");
   });
 
@@ -205,32 +283,62 @@ describe("Stripe refund database reconciliation", async () => {
       await expect(call()).rejects.toThrow(message);
       await sql("ROLLBACK TO SAVEPOINT invalid_refund");
     };
-    await rejects(()=>refund({invoice:"in_missing"}),"STRIPE_REFUND_PAYMENT_NOT_READY");
+    await rejects(() => refund({ invoice: "in_missing" }), "STRIPE_REFUND_PAYMENT_NOT_READY");
     expect(await sql("select count(*) from billing.refunds")).toBe("0");
     await refund();
-    await rejects(()=>refund({event:"evt_over",id:"re_over",amount:12000}),"STRIPE_REFUND_EXCEEDS_CAPTURED");
-    await rejects(()=>refund({event:"evt_collision",amount:5001}),"STRIPE_REFUND_ID_COLLISION");
+    await rejects(
+      () => refund({ event: "evt_over", id: "re_over", amount: 12000 }),
+      "STRIPE_REFUND_EXCEEDS_CAPTURED",
+    );
+    await rejects(
+      () => refund({ event: "evt_collision", amount: 5001 }),
+      "STRIPE_REFUND_ID_COLLISION",
+    );
     await sql("update billing.payment_transactions set currency_code='USD'");
-    await rejects(()=>refund({event:"evt_wrong_currency"}),"STRIPE_REFUND_PAYMENT_MISMATCH");
+    await rejects(() => refund({ event: "evt_wrong_currency" }), "STRIPE_REFUND_PAYMENT_MISMATCH");
     expect(await sql("select count(*) from billing.refunds")).toBe("1");
   });
 
   it("allocates tax to the cent and frees allocations after a failed refund", async () => {
     await sql("update billing.payment_transactions set tax_minor=101,gross_minor=16900");
-    await refund({amount:5000});
-    await refund({event:"evt_final",id:"re_final",amount:11900,time:"2026-09-18T11:01:00Z"});
-    expect(await sql("select sum((metadata->>'tax_allocated_minor')::bigint) from billing.refunds")).toBe("101");
-    await refund({event:"evt_failed_tax",id:"re_final",amount:11900,status:"failed",time:"2026-09-18T11:02:00Z"});
-    expect(await sql("select metadata->>'tax_allocated_minor' from billing.refunds where gateway_refund_id='re_final'")).toBe("0");
-    expect(await sql("select sum((metadata->>'tax_allocated_minor')::bigint) from billing.refunds")).toBe("29");
+    await refund({ amount: 5000 });
+    await refund({
+      event: "evt_final",
+      id: "re_final",
+      amount: 11900,
+      time: "2026-09-18T11:01:00Z",
+    });
+    expect(
+      await sql("select sum((metadata->>'tax_allocated_minor')::bigint) from billing.refunds"),
+    ).toBe("101");
+    await refund({
+      event: "evt_failed_tax",
+      id: "re_final",
+      amount: 11900,
+      status: "failed",
+      time: "2026-09-18T11:02:00Z",
+    });
+    expect(
+      await sql(
+        "select metadata->>'tax_allocated_minor' from billing.refunds where gateway_refund_id='re_final'",
+      ),
+    ).toBe("0");
+    expect(
+      await sql("select sum((metadata->>'tax_allocated_minor')::bigint) from billing.refunds"),
+    ).toBe("29");
   });
 
   it("restricts the RPC to the service caller", async () => {
-    const signature="public.apply_stripe_refund_event(text,text,timestamptz,text,text,text,bigint,text,text,text,uuid,boolean)";
-    for(const role of ["anon","authenticated"]) {
-      expect(await sql(`select has_function_privilege('${role}','${signature}','EXECUTE')`)).toBe("false");
+    const signature =
+      "public.apply_stripe_refund_event(text,text,timestamptz,text,text,text,bigint,text,text,text,uuid,boolean)";
+    for (const role of ["anon", "authenticated"]) {
+      expect(await sql(`select has_function_privilege('${role}','${signature}','EXECUTE')`)).toBe(
+        "false",
+      );
     }
-    await sql("select set_config('request.jwt.claim.role','authenticated',false); SAVEPOINT no_service");
+    await sql(
+      "select set_config('request.jwt.claim.role','authenticated',false); SAVEPOINT no_service",
+    );
     await expect(refund()).rejects.toThrow("STRIPE_REFUND_SERVICE_ONLY");
     await sql("ROLLBACK TO SAVEPOINT no_service");
   });
@@ -238,11 +346,17 @@ describe("Stripe refund database reconciliation", async () => {
   it("rolls back function additions while preserving money records", async () => {
     await refund();
     // The rollback script owns its transaction; remove wrappers inside this test transaction.
-    await sql(readFileSync("docs/billing/20260920_stripe_refunds.rollback.sql","utf8")
-      .replace(/^BEGIN;$/m,"").replace(/^COMMIT;$/m,""));
+    await sql(
+      readFileSync("docs/billing/20260920_stripe_refunds.rollback.sql", "utf8")
+        .replace(/^BEGIN;$/m, "")
+        .replace(/^COMMIT;$/m, ""),
+    );
     expect(await sql("select count(*) from billing.refunds")).toBe("1");
-    expect(await sql("select billing.subscription_next_access_state('refunded','canceled') is null")).toBe("true");
-    expect(await sql("select billing.subscription_next_access_state('past_due','payment_failed')")).toBe("past_due");
+    expect(
+      await sql("select billing.subscription_next_access_state('refunded','canceled') is null"),
+    ).toBe("true");
+    expect(
+      await sql("select billing.subscription_next_access_state('past_due','payment_failed')"),
+    ).toBe("past_due");
   });
 });
-
