@@ -1028,6 +1028,23 @@ export type Database = {
         Args: { p_lesson_id: string; p_passed: boolean; p_user_id: string }
         Returns: undefined
       }
+      apply_stripe_refund_event: {
+        Args: {
+          p_amount_minor: number
+          p_checkout_generation: string
+          p_currency_code: string
+          p_effective_at: string
+          p_event_type: string
+          p_gateway_customer_id: string
+          p_gateway_event_id: string
+          p_gateway_invoice_id: string
+          p_gateway_refund_id: string
+          p_gateway_subscription_id: string
+          p_is_latest_invoice: boolean
+          p_status: string
+        }
+        Returns: Json
+      }
       apply_stripe_webhook_event: {
         Args: {
           p_amount_minor?: number
@@ -1052,6 +1069,14 @@ export type Database = {
         Returns: Json
       }
       claim_active_device: { Args: { p_device_id: string }; Returns: string }
+      close_stripe_checkout_intent: {
+        Args: {
+          p_checkout_generation: string
+          p_session_id: string
+          p_user_id: string
+        }
+        Returns: boolean
+      }
       commit_ai_quota: {
         Args: {
           p_idempotency_key: string
@@ -1060,6 +1085,10 @@ export type Database = {
           p_reservation_id: string
         }
         Returns: Json
+      }
+      confirm_stripe_checkout_generation: {
+        Args: { p_checkout_generation: string; p_user_id: string }
+        Returns: boolean
       }
       consume_rate_limit: {
         Args: {
@@ -1239,6 +1268,14 @@ export type Database = {
         Returns: Json
       }
       rag_validate_staging_import: { Args: never; Returns: Json }
+      record_stripe_checkout_session: {
+        Args: {
+          p_checkout_generation: string
+          p_session_id: string
+          p_user_id: string
+        }
+        Returns: boolean
+      }
       record_user_activity: { Args: never; Returns: Json }
       register_provider_attempt: {
         Args: {
