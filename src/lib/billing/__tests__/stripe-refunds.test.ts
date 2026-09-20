@@ -4,7 +4,7 @@ import { resolveStripeRefund } from "../../../../supabase/functions/_shared/stri
 
 function fixture() {
   const objects: Record<string, any> = {
-    "/refunds/re_test": { id:"re_test",livemode:false,payment_intent:"pi_test",status:"succeeded",amount:5000,currency:"egp" },
+    "/refunds/re_test": { id:"re_test",payment_intent:"pi_test",status:"succeeded",amount:5000,currency:"egp" },
     "/invoices/in_test": { id:"in_test",livemode:false,customer:"cus_test",status:"paid",amount_paid:16900,currency:"egp",
       parent:{subscription_details:{subscription:"sub_test"}} },
     "/subscriptions/sub_test": { id:"sub_test",livemode:false,customer:"cus_test",latest_invoice:"in_test",
@@ -35,6 +35,13 @@ describe("Stripe refund authoritative invoice correlation",()=>{
     expect((await resolveStripeRefund("re_test",get))?.rpc).toMatchObject({
       p_gateway_invoice_id:"in_test",p_amount_minor:5000,p_is_latest_invoice:true,p_status:"succeeded",
     });
+  });
+  it("accepts the actual Refund shape without livemode while checking payment objects",async()=>{
+    const {objects,get}=fixture();
+    delete objects["/refunds/re_test"].livemode;
+    expect((await resolveStripeRefund("re_test",get))?.rpc.p_gateway_invoice_id).toBe("in_test");
+    objects["/payment_intents/pi_test"].livemode=true;
+    await expect(resolveStripeRefund("re_test",get)).rejects.toThrow("MISMATCH");
   });
   it("supports charge-linked refunds and flags old invoices",async()=>{
     const {objects,get}=fixture();
