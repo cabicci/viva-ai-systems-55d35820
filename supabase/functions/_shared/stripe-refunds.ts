@@ -6,7 +6,10 @@ const id = (value: any): string | null => typeof value === "string" ? value : va
 export async function resolveStripeRefund(refundId: string, get: StripeGet) {
   if (!/^re_[A-Za-z0-9_]+$/.test(refundId)) throw new Error("REFUND_ID_INVALID");
   const refund = await get(`/refunds/${encodeURIComponent(refundId)}`);
-  if (refund.id !== refundId || refund.livemode !== false) throw new Error("REFUND_TEST_REQUIRED");
+  // Stripe Refund objects do not promise a livemode field. The caller enforces
+  // a TEST API key and signed event; invoice/subscription/PaymentIntent below
+  // must each explicitly attest livemode=false. Never infer live mode here.
+  if (refund.id !== refundId || refund.livemode === true) throw new Error("REFUND_TEST_REQUIRED");
   if (!["pending", "requires_action", "succeeded", "failed", "canceled"].includes(refund.status)) {
     throw new Error("REFUND_STATUS_INVALID");
   }
