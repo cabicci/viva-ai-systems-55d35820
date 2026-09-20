@@ -78,7 +78,11 @@ describe("Stripe re-subscription generation guard", async () => {
       "docs/billing/20260918_stripe_resubscription_generation_guard.sql",
       "utf8",
     );
-    await sql(`${setupSql}\n${baseSchema}\n${serviceRoleFunction}\n${machineSection}\n${guard}\n
+    const repeatedFailure = readFileSync(
+      "docs/billing/20260920_repeated_payment_failure.sql",
+      "utf8",
+    );
+    await sql(`${setupSql}\n${baseSchema}\n${serviceRoleFunction}\n${machineSection}\n${guard}\n${repeatedFailure}\n
       select set_config('request.jwt.claim.role','service_role',false);
       insert into billing.entitlement_policy_versions (
         id,policy_key,version_number,status,effective_from,lesson_allowlist_mode,
@@ -178,6 +182,34 @@ describe("Stripe re-subscription generation guard", async () => {
         `select plan_version_id||':'||access_state from billing.subscriptions where id='${subscriptionId}'`,
       ),
     ).toBe(`${proPlanId}:past_due`);
+
+    const transactionsBefore = await sql("select count(*) from billing.payment_transactions");
+    for (const [eventId, eventType, effectiveAt] of [
+      ["evt_renewal_failed_again", "customer.subscription.updated", "2026-09-18T10:06:01Z"],
+      ["evt_renewal_invoice_failed_again", "invoice.payment_failed", "2026-09-18T10:06:02Z"],
+    ]) {
+      const event = {
+        eventId,
+        eventType,
+        effectiveAt,
+        transition: "payment_failed",
+        generation,
+        gatewayStatus: "past_due",
+      };
+      expect(await webhook(event)).toMatchObject({ processed: true, plan_updated: false });
+      expect(await webhook(event)).toMatchObject({ duplicate: true, processed: true });
+      expect(
+        await sql(`select status from billing.webhook_events where gateway_event_id='${eventId}'`),
+      ).toBe("processed");
+    }
+    expect(await sql("select count(*) from billing.payment_transactions")).toBe(transactionsBefore);
+    expect(
+      await sql(`select plan_version_id||':'||access_state from billing.subscriptions where id='${subscriptionId}'`),
+    ).toBe(`${proPlanId}:past_due`);
+    expect(
+      await sql(`select count(*) from (values ('expired'),('refunded'),('suspended'),('refund_pending')) states(state)
+        where billing.subscription_next_access_state(state,'payment_failed') is not null`),
+    ).toBe("0");
   });
 
   it("applies a paid proration invoice to the same subscription", async () => {
@@ -384,6 +416,10 @@ describe("Stripe re-subscription generation guard", async () => {
   });
 
   it("rolls back only changed functions and preserves catalog and data", async () => {
+    await sql(readFileSync("docs/billing/20260920_repeated_payment_failure.rollback.sql", "utf8"));
+    expect(
+      await sql("select billing.subscription_next_access_state('past_due','payment_failed') is null"),
+    ).toBe("true");
     const catalogBefore = await sql("select count(*) from billing.plan_versions");
     const eventsBefore = await sql("select count(*) from billing.webhook_events");
     await sql(
