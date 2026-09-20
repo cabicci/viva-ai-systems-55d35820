@@ -1,4 +1,5 @@
 import { decidePaidPlanEvidence } from "../_shared/stripe-generation-decisions.ts";
+import { resolveStripeRefund } from "../_shared/stripe-refunds.ts";
 
 const STRIPE_API_VERSION = "2026-07-29.dahlia";
 const SIGNATURE_TOLERANCE_SECONDS = 300;
@@ -57,11 +58,12 @@ async function verifySignature(payload: string, header: string, secret: string):
   return signatures.some((signature) => secureEqual(signature, expected));
 }
 
-async function stripeGet<T>(path: string): Promise<T> {
+async function stripeGet<T>(path: string, method = "GET"): Promise<T> {
   const secretKey = env("STRIPE_SECRET_KEY");
   if (!/^(rk|sk)_test_/.test(secretKey)) throw new Error("STRIPE_TEST_KEY_REQUIRED");
 
   const result = await fetch(`https://api.stripe.com/v1${path}`, {
+    method,
     headers: {
       Authorization: `Bearer ${secretKey}`,
       "Stripe-Version": STRIPE_API_VERSION,
@@ -151,6 +153,23 @@ Deno.serve(async (request) => {
 
     const event = JSON.parse(rawBody) as StripeEvent;
     if (event.livemode) return response({ error: "LIVE_EVENT_REJECTED" }, 400);
+
+    if (["refund.created", "refund.updated", "refund.failed"].includes(event.type)) {
+      const resolved = await resolveStripeRefund(String(event.data.object.id), stripeGet);
+      if (!resolved) return response({ received: true, ignored: true });
+      const result = await rpc<{ cancel_subscription: boolean }>("apply_stripe_refund_event", {
+        ...resolved.rpc,
+        p_gateway_event_id: event.id,
+        p_event_type: event.type,
+        p_effective_at: new Date(event.created * 1000).toISOString(),
+      });
+      // A full refund of the current invoice must also stop future collection.
+      // Retried delivery repeats this idempotent cancellation after a network failure.
+      if (result.cancel_subscription && resolved.subscription.status !== "canceled") {
+        await stripeGet(`/subscriptions/${encodeURIComponent(resolved.subscription.id)}?invoice_now=false&prorate=false`, "DELETE");
+      }
+      return response({ received: true, result });
+    }
 
     const supported = new Set([
       "checkout.session.completed",
