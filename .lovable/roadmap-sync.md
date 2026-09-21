@@ -1,10 +1,10 @@
 # Roadmap sync marker
 
-[roadmap:0fb74d25-8f96-4f19-8dac-0de4d1ed690b]
-date: 2026-09-18
-scope: db
-source: ai
-summary: Prepared canceled-to-repurchase generation safety, paid-plan gating, observable stale/rejected webhooks, rollback SQL, and disposable behavioral tests; isolated DB tests passed; deployment blocked pending Backup/Restore proof
+[roadmap:beb20d9f-672f-4cf0-9d0b-ba8c9354b6fe]
+date: 2026-09-21
+scope: ui
+source: user
+summary: auto roadmap sync for 7 changed files: public/robots.txt, src/routes/__root.tsx, docs/marketing/tracking-governance.md, src/components/site/AnalyticsConsent.tsx, src/lib/__tests__/marketing-foundation.test.ts, src/lib/analytics.ts, src/lib/seo/route-catalog.ts
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
