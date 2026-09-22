@@ -8,6 +8,8 @@ import {
   resetAnalyticsRuntimeForTests,
   trackPageViewOnce,
 } from "@/lib/analytics";
+import { ANALYTICS_CONSENT_COPY } from "@/lib/analytics-consent-copy";
+import { SUPPORTED_LOCALES } from "@/lib/locale/types";
 import { PUBLIC_SITEMAP_PATHS, ROUTE_CATALOG } from "@/lib/seo/route-catalog";
 
 const repoRoot = process.cwd();
@@ -147,5 +149,15 @@ describe("route classification and crawler files", () => {
       path === "/" ? "https://masaarat.ai/" : "https://masaarat.ai" + path,
     );
     expect(locations).toEqual(expected);
+  });
+});
+
+describe("analytics consent localization", () => {
+  it("covers every supported locale with distinct language copy", () => {
+    expect(Object.keys(ANALYTICS_CONSENT_COPY).sort()).toEqual([...SUPPORTED_LOCALES].sort());
+    expect(ANALYTICS_CONSENT_COPY["ar-EG"].description).toContain("مش هنشغّل");
+    expect(ANALYTICS_CONSENT_COPY["ar-MSA"].description).toContain("لن نشغّل");
+    expect(ANALYTICS_CONSENT_COPY["ar-Gulf"].description).toContain("ما راح نشغّل");
+    expect(ANALYTICS_CONSENT_COPY.en.description).toContain("We won't load");
   });
 });
