@@ -27,14 +27,6 @@ export function Footer() {
           <a href="mailto:support@masaarat.ai" className="hover:text-foreground transition">
             support@masaarat.ai
           </a>
-          <a
-            href="https://www.trustedsite.com/verify?host=masaarat.ai"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-foreground transition"
-          >
-            {t("trust.trustedsite.verify")}
-          </a>
           <span className="font-mono opacity-70">{t("footer.version")}</span>
         </nav>
       </div>
