@@ -1,0 +1,184 @@
+{
+  "locale": "en",
+  "title": "Order an Idea into Steps",
+  "subtitle": "Turn your creative ideas into clear, workable plans!",
+  "objectives": [
+    "Identify the correct order for a series of steps in a plan.",
+    "Recognize when a step is missing or impossible to complete.",
+    "Adjust a plan to fit available materials and ensure it is realistic."
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "title": "Ready for Action!",
+      "display": "Plan Your Display!",
+      "narration": "Have you ever had a brilliant idea, but weren't sure how to start? Today, we'll learn how to take a big idea, like creating an art display, and break it down into clear, practical steps. Let's make sure our plans are always ready for action!",
+      "visualAction": "A child character stands in front of a blank table, looking thoughtful. A lightbulb appears above their head, then fades. Three imaginary drawings float into view briefly."
+    },
+    {
+      "id": "explain",
+      "title": "Steps to Success",
+      "display": "Order, Check, Adjust!",
+      "narration": "When you plan something, it's not just about listing steps. You need to put them in the right order, check if any steps are missing, and make sure every step is actually possible with what you have. A good plan helps you succeed!",
+      "visualAction": "A checklist appears with three items: 'Order?', 'Missing?', 'Possible?'. A hand icon points to each item as it's mentioned."
+    },
+    {
+      "id": "example",
+      "title": "Art Display Challenge",
+      "display": "My Art Display Plan",
+      "narration": "Imagine you want to display your three amazing drawings. Here's a plan someone made. Let's look closely. Does it make sense? Is anything missing or out of place? We'll use paper and reusable clips.",
+      "visualAction": "Three cartoon drawings appear on screen. A table slides in. A list of jumbled steps appears next to the table."
+    },
+    {
+      "id": "review",
+      "title": "Spot the Problem",
+      "display": "What's Wrong Here?",
+      "narration": "The plan says 'Attach clips to sheets' *before* 'Choose three drawings'. Can you attach clips to drawings you haven't even picked yet? No! And it doesn't mention checking your work. We need to fix this!",
+      "visualAction": "The jumbled list from the previous scene highlights the 'Attach clips' step, then the 'Choose drawings' step, showing them out of order. A question mark appears over the list."
+    },
+    {
+      "id": "improve",
+      "title": "Build a Better Plan",
+      "display": "A Smarter Plan",
+      "narration": "First, choose your drawings. Then, label them. Next, arrange them on the table. Only then, if needed, attach clips. Finally, check everything: are labels clear? Is the display stable? This order makes sense!",
+      "visualAction": "The jumbled list transforms into the correct sequence of steps. Each step animates as it's narrated: 1. Choose drawings. 2. Label each. 3. Arrange on table. 4. Attach clips (if needed). 5. Check labels and stability."
+    },
+    {
+      "id": "practice",
+      "title": "Your Turn to Plan!",
+      "display": "Fix the Recipe!",
+      "narration": "Now it's your turn! You have a recipe for a fruit salad. The steps are mixed up, and one important step is missing. Can you reorder the steps and add the missing one to make a perfect plan?",
+      "visualAction": "A bowl of cartoon fruit appears. A jumbled recipe list slides onto the screen. A child character gestures towards the list, encouraging the viewer."
+    },
+    {
+      "id": "finish",
+      "title": "Master Planner!",
+      "display": "You're a Planner!",
+      "narration": "Great job! You've learned to review plans, check for order, spot missing steps, and ensure everything is possible. This skill will help you with school projects, hobbies, and everyday tasks. Keep planning smart!",
+      "visualAction": "The child character gives a thumbs-up. A thought bubble shows a successful art display. Confetti falls."
+    }
+  ],
+  "reading": [
+    {
+      "id": "concept",
+      "title": "Why Plan Steps?",
+      "text": "Planning steps helps you reach your goal smoothly. It's like building with blocks; you need to put them in the right order. If steps are out of place, or if you try to do something impossible, your project might get stuck. Always check if a step is realistic with your available materials."
+    },
+    {
+      "id": "example",
+      "title": "A Good Plan vs. A Tricky Plan",
+      "text": "A good plan for making a sandwich: 1. Get bread. 2. Add filling. 3. Cut. A tricky plan: 1. Cut bread. 2. Get filling. 3. Add filling. You can't cut bread before you get it! And you need to get the filling before you add it. Order matters!"
+    },
+    {
+      "id": "check",
+      "title": "Three Checks for Any Plan",
+      "text": "Before you start, ask yourself these three questions: 1. Is the order correct? Does one step need to happen before another? 2. Are there any missing steps? Did I forget something important? 3. Is every step possible? Do I have the materials and skills needed for each part?"
+    }
+  ],
+  "materials": [
+    {
+      "id": "source-card",
+      "title": "Fruit Salad Recipe Challenge",
+      "text": "Here are the steps for a fruit salad, but they're mixed up! And one step is missing. Your task is to put them in the correct order and add the missing step.\n\n**Jumbled Steps:**\n*   Cut the fruit into bite-sized pieces.\n*   Wash all the fruit thoroughly.\n*   Mix the cut fruit in a large bowl.\n*   Serve and enjoy!\n\n**Available Materials:** A variety of fresh fruits (apples, bananas, grapes), a cutting board, a safe knife (adult supervision needed), a large bowl, a spoon.",
+      "kind": "authored-teaching-example"
+    }
+  ],
+  "promptExamples": {
+    "initial": "Fix the fruit salad recipe.",
+    "improved": "Look at the jumbled fruit salad steps. What's the very first thing you need to do? Then what comes next? Is anything missing?",
+    "followup": "You put 'Cut the fruit' before 'Wash the fruit'. Why is washing first a better idea for food safety? What else should you add after mixing?"
+  },
+  "activity": {
+    "title": "Fix the Fruit Salad Recipe!",
+    "instructions": "Using the 'Fruit Salad Recipe Challenge' card, reorder the jumbled steps and add the one missing step to make a complete, logical, and safe plan for making fruit salad.",
+    "starter": "Here are the jumbled steps for a fruit salad:\n*   Cut the fruit into bite-sized pieces.\n*   Wash all the fruit thoroughly.\n*   Mix the cut fruit in a large bowl.\n*   Serve and enjoy!\n\nWhat is the correct order, and what important step is missing?",
+    "expectedEvidence": "A reordered list of steps with a new, added step. The learner should also explain why they chose that order and why the added step is important."
+  },
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "You want to build a paper airplane. Which step MUST come first?",
+      "options": [
+        "Decorate the finished plane.",
+        "Fold the paper into a plane shape.",
+        "Get a piece of paper."
+      ],
+      "answer": 2,
+      "explanation": "You can't fold or decorate a paper airplane without having the paper first. 'Get a piece of paper' is the essential first step to start the project.",
+      "source": "concept"
+    },
+    {
+      "id": "q2",
+      "question": "Your friend's plan for planting a seed says: 1. Put seed in pot. 2. Water. 3. Add soil. What's the main problem?",
+      "options": [
+        "The pot might be too small.",
+        "The soil should be added before watering.",
+        "They forgot to choose a seed."
+      ],
+      "answer": 1,
+      "explanation": "The order is incorrect. You need to add soil to the pot before you can water it effectively, especially if the seed is already in. Watering an empty pot or a pot with just a seed won't work well. Adding soil is a crucial step that needs to happen earlier.",
+      "source": "check"
+    },
+    {
+      "id": "q3",
+      "question": "You're making a drawing. Your plan is: 1. Draw picture. 2. Color picture. 3. Show to friend. What important step is missing to make sure your drawing looks its best?",
+      "options": [
+        "Choose what to draw.",
+        "Clean your art supplies.",
+        "Buy new paper."
+      ],
+      "answer": 0,
+      "explanation": "Before you can 'Draw picture', you need to decide what you are going to draw! 'Choose what to draw' is a critical planning step that ensures you have a clear idea before starting the actual drawing.",
+      "source": "concept"
+    }
+  ],
+  "mission": {
+    "title": "Plan a Paper Game!",
+    "instructions": "Imagine you want to create a simple paper matching game. You need to draw pairs of pictures on small cards, mix them up, lay them face down, and then play. Write down the steps in the correct order. Also, think: what's one important thing you should do *after* you finish drawing all the cards but *before* you mix them up? Make sure your plan is realistic and only uses materials like paper, pencils, and scissors. Adjust your plan if any step isn't possible with these materials.",
+    "rubric": [
+      "All necessary steps for creating and playing the game are included.",
+      "Steps are listed in a logical and correct sequence.",
+      "Identifies and correctly places the crucial 'check' or 'prepare' step (e.g., let ink dry, check pairs).",
+      "The plan is realistic and uses only paper, drawing tools, and scissors."
+    ]
+  },
+  "hints": [
+    {
+      "question": "I'm stuck on the fruit salad. What should I do first?",
+      "answer": "Think about food safety! Before you cut or eat any fruit, what's a very important step to make sure it's clean? Check the 'Three Checks for Any Plan' card for ideas on order.",
+      "source": "check"
+    },
+    {
+      "question": "I've reordered the fruit salad, but I can't think of a missing step.",
+      "answer": "You have the fruit, you've washed it, cut it, and mixed it. What about getting it ready to eat? Is there anything you might need to do right before serving, or even after mixing to make it tastier? Look at the 'A Good Plan vs. A Tricky Plan' card for how small details matter.",
+      "source": "example"
+    },
+    {
+      "question": "How do I know if my fruit salad plan is good?",
+      "answer": "Use the 'Three Checks for Any Plan' card. Is the order right? Did you miss anything? Is every step possible with the materials listed? Make sure your plan is clear and complete!",
+      "source": "check"
+    }
+  ],
+  "imageBrief": {
+    "title": "Paper Matching Game Prep",
+    "scenario": "A child is preparing a paper matching game. The image shows the sequence of steps for making the game cards.",
+    "composition": "A top-down view of a table. On the left, a small stack of blank paper cards and a set of colored pencils. In the center, a hand is drawing a simple picture (e.g., a star) on one card, with another identical card next to it. On the right, several pairs of finished, drawn cards are laid out neatly, face up, showing the matching pairs.",
+    "labels": [
+      "Blank Cards & Pencils",
+      "Drawing a Pair",
+      "Finished Matching Pairs"
+    ],
+    "altText": "A child's hands preparing a paper matching game. On the left are blank cards and pencils. In the middle, a hand draws a star on a card, next to its matching star card. On the right, several pairs of completed, face-up matching game cards are neatly arranged."
+  },
+  "educatorNotes": {
+    "sampleAnswer": "For the fruit salad activity:\n1.  Wash all the fruit thoroughly.\n2.  (Missing step: Gather all fruits and tools / Get all ingredients ready.)\n3.  Cut the fruit into bite-sized pieces.\n4.  Mix the cut fruit in a large bowl.\n5.  Serve and enjoy!\n\nExplanation for order: Washing comes first for hygiene. Gathering tools/ingredients is a logical prep step. Cutting comes before mixing. Serving is the final step.\n\nFor the mission (Paper Game):\n1.  Gather blank paper cards and drawing tools.\n2.  Draw pairs of matching pictures on the cards.\n3.  (Added step: Let the ink/colors dry completely and check that all pairs are correct.)\n4.  Mix all the cards up.\n5.  Lay the cards face down in a grid.\n6.  Take turns flipping two cards to find a match and play the game.",
+    "commonMisconception": "Learners might focus only on the main action steps and forget crucial preparatory or checking steps (e.g., 'gather materials,' 'let dry,' 'check work'). They may also struggle with identifying the *most* logical first step, especially when safety or foundational actions are involved.",
+    "reviewChecks": [
+      "Does the learner's reordered list for the fruit salad make logical sense from start to finish?",
+      "Is the added missing step for the fruit salad relevant and correctly placed?",
+      "For the mission, are all game creation and play steps included and correctly sequenced?",
+      "Does the mission response include a sensible 'check' or 'prep' step before mixing the game cards?"
+    ],
+    "safetyNotes": "When discussing cutting fruit in the activity, always remind learners that adult supervision is needed for using knives. Emphasize food hygiene (washing fruit) as a critical safety step."
+  }
+}

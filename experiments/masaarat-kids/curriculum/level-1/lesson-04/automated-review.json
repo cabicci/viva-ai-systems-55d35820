@@ -1,0 +1,109 @@
+{
+  "passed": false,
+  "issues": [
+    {
+      "locale": "ar-EG",
+      "path": "materials[1].text",
+      "problem": "The 'good request' example in the brief includes 'three steps' as a constraint. This is missing from the ar-EG source card example, making it less specific than the brief's full example.",
+      "fix": "Update the text to include the 'three steps' constraint: 'إيه لعبة الورق الهادية اللي ممكن نلعبها أنا وصاحبي على ترابيزة صغيرة، ومن غير ما نحتاج أي حاجة غير ورق، ونقدر نلعبها في تلات خطوات؟'"
+    },
+    {
+      "locale": "ar-EG",
+      "path": "promptExamples.improved",
+      "problem": "The 'improved' prompt example should align with the full 'good request' from the brief, which includes 'three steps'. This is missing.",
+      "fix": "Update the text to include the 'three steps' constraint: 'إيه لعبة الورق الهادية اللي ممكن نلعبها أنا وصاحبي على ترابيزة صغيرة، ومن غير ما نحتاج أي حاجة غير ورق، ونقدر نلعبها في تلات خطوات؟'"
+    },
+    {
+      "locale": "ar-EG",
+      "path": "mission.instructions",
+      "problem": "The brief specifies the image task must include 'three ideas' for a bookmark. The mission instructions only ask for 'أفكار محددة' (specific ideas) and 'سؤالين مختلفين' (two different questions), but not explicitly 'three ideas' in the question itself.",
+      "fix": "Modify the instructions to explicitly ask the learner to formulate a question that requests 'three ideas': 'صاحبك عايز يعمل علامة كتاب (bookmark) بس مش عارف يعمل إيه. هو عنده ورقة واحدة بس ومش عايز يستخدم مقص. اكتب سؤالين مختلفين ممكن تسألهم لصاحبك عشان تساعده يوصل لثلاث أفكار محددة لعلامة كتاب، بناءً على القيود دي.'"
+    },
+    {
+      "locale": "ar-EG",
+      "path": "mission.rubric[0]",
+      "problem": "The rubric item 'السؤال الأول يحدد هدفًا وقيدًا.' is too general. The brief requires the mission to ask for 'three ideas' for a bookmark. The rubric should reflect this specific requirement for the question itself.",
+      "fix": "Change to: 'السؤال الأول يطلب ثلاث أفكار لعلامة كتاب ويحدد هدفًا وقيدًا.'"
+    },
+    {
+      "locale": "ar-EG",
+      "path": "mission.rubric[1]",
+      "problem": "The rubric item 'السؤال الثاني يحدد هدفًا وقيدًا مختلفًا أو إضافيًا.' is too general. The brief requires the mission to ask for 'three ideas' for a bookmark. The rubric should reflect this specific requirement for the question itself.",
+      "fix": "Change to: 'السؤال الثاني يطلب ثلاث أفكار لعلامة كتاب ويحدد هدفًا وقيدًا مختلفًا أو إضافيًا.'"
+    },
+    {
+      "locale": "ar-EG",
+      "path": "educatorNotes.sampleAnswer",
+      "problem": "The sample answer for the mission does not explicitly ask for 'three ideas' in the suggested questions, which is a requirement from the brief for the image task.",
+      "fix": "Update the sample questions to explicitly ask for 'three ideas':\n1. سؤال: 'إيه ثلاث أفكار لعلامة كتاب ممكن نعملها من ورقة واحدة من غير ما نقصها؟'\n2. سؤال: 'إيه ثلاث أفكار لعلامة كتاب ممكن نعملها من ورقة واحدة بس، وتكون سهلة التطبيق وسريعة؟'"
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "materials[0].text",
+      "problem": "The source card example for the 'good request' includes 'يمكن لعبها في ثلاث خطوات' (can be played in three steps). This constraint is not present in the `promptExamples.improved` field, leading to inconsistency.",
+      "fix": "Update `promptExamples.improved` to match the source card: 'اقترح لعبة ورقية هادئة لشخصين يجلسان على طاولة صغيرة، يمكن لعبها في ثلاث خطوات.'"
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "mission.instructions",
+      "problem": "The instructions ask to 'اكتب سؤالاً محدداً يطلب ثلاث أفكار لإشارة مرجعية' (write a specific question that asks for three ideas for a bookmark). However, the rubric does not explicitly check if the *question itself* asks for 'three ideas'. It only checks if the question specifies 'bookmark', 'one sheet', and 'no scissors'.",
+      "fix": "Add a rubric item to explicitly check for 'three ideas': 'السؤال يطلب ثلاث أفكار.'"
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "mission.rubric[0]",
+      "problem": "The rubric item 'السؤال يطلب ثلاث أفكار.' is missing, despite the instructions explicitly asking for it.",
+      "fix": "Add a new rubric item: 'السؤال يطلب ثلاث أفكار.'"
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "promptExamples.improved",
+      "problem": "The 'good request' example in the brief includes 'three steps' as a constraint. This is missing from the ar-Gulf prompt example, making it less specific than the brief's full example.",
+      "fix": "Update the text to include the 'three steps' constraint: 'ما هي لعبة الورق الهادئة لشخصين على طاولة صغيرة، يمكن لعبها في ثلاث خطوات؟'"
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "mission.instructions",
+      "problem": "The brief specifies the image task must include 'three ideas' for a bookmark. The mission instructions only ask for 'أفكار' (ideas) and 'سؤالين مختلفين' (two different questions), but not explicitly 'three ideas' in the question itself.",
+      "fix": "Modify the instructions to explicitly ask the learner to formulate a question that requests 'three ideas': 'تخيل أنك تريد صنع إشارة مرجعية (فاصل كتاب). لديك ورقة واحدة فقط، ولا يمكنك استخدام المقص. اكتب سؤالين مختلفين يمكنك طرحهما للحصول على ثلاث أفكار.'"
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "mission.rubric[0]",
+      "problem": "The rubric item 'السؤال الأول يحدد هدفًا وقيدًا واضحين.' is too general. The brief requires the mission to ask for 'three ideas' for a bookmark. The rubric should reflect this specific requirement for the question itself.",
+      "fix": "Change to: 'السؤال الأول يطلب ثلاث أفكار لعلامة كتاب ويحدد هدفًا وقيدًا واضحين.'"
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "mission.rubric[1]",
+      "problem": "The rubric item 'السؤال الثاني يحدد هدفًا وقيدًا واضحين ومختلفين عن السؤال الأول.' is too general. The brief requires the mission to ask for 'three ideas' for a bookmark. The rubric should reflect this specific requirement for the question itself.",
+      "fix": "Change to: 'السؤال الثاني يطلب ثلاث أفكار لعلامة كتاب ويحدد هدفًا وقيدًا واضحين ومختلفين عن السؤال الأول.'"
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "educatorNotes.sampleAnswer",
+      "problem": "The sample answer for the mission does not explicitly ask for 'three ideas' in the suggested questions, which is a requirement from the brief for the image task.",
+      "fix": "Update the sample questions to explicitly ask for 'three ideas':\n1. سؤالي الأول: 'كيف أصنع ثلاث أفكار لإشارة مرجعية جميلة من ورقة واحدة بدون مقص؟'\n2. سؤالي الثاني: 'ما هي ثلاث طرق لطي الورقة لعمل إشارة مرجعية فريدة بدون استخدام المقص؟'"
+    },
+    {
+      "locale": "en",
+      "path": "promptExamples.improved",
+      "problem": "The 'improved' prompt example in the brief includes 'three steps' as a constraint. This is missing from the en prompt example, making it less specific than the brief's full example.",
+      "fix": "Update the text to include the 'three steps' constraint: 'Suggest a quiet paper game for two players at this small table that we can finish in three steps.'"
+    }
+  ],
+  "notes": [
+    "All locales successfully cover the core teaching points about narrowing vague questions with goals and constraints.",
+    "The video scenario (game, small table, quiet, paper, two players) is consistently used across all locales, though the 'three steps' constraint from the brief's 'good request' example was often missed in the prompt examples and source cards.",
+    "The image task scenario (bookmark, one sheet, no scissors, three ideas) is consistently used, but the explicit request for 'three ideas' in the *learner's question* was often missed in the mission instructions and rubrics.",
+    "The activity section in all locales correctly asks for two transfer questions for learner improvement.",
+    "The quiz questions and explanations are generally consistent with the lesson content and brief requirements across all locales.",
+    "Privacy and age suitability are well-maintained; no inappropriate content or requests are present.",
+    "The natural dialect for ar-EG, ar-MSA, and ar-Gulf appears appropriate and distinct for each region in the narration, titles, and quiz content.",
+    "The image brief scenarios are genuinely different for the video task (game) and independent image task (bookmark) as required by the brief, and the descriptions are consistent across locales.",
+    "The 'mustTeach' points are addressed in the lesson content, particularly in the 'review' scenes and 'check' reading sections.",
+    "The 'avoid' points are respected; the drafts do not resemble Lesson 1's robot, reading corner, or simple three-box introduction."
+  ],
+  "method": "separate automated editorial review; not human approval",
+  "round": 1
+}

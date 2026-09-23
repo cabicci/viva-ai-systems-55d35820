@@ -1,0 +1,109 @@
+{
+  "passed": false,
+  "issues": [
+    {
+      "locale": "ar-EG",
+      "path": "$.quiz[0].explanation",
+      "problem": "The explanation for Q1 incorrectly states that 'اسم الفنان' (artist's name) is a secondary detail, which is not mentioned in the lesson's concept or examples. The lesson focuses on subject, setting, and visual details.",
+      "fix": "Remove the irrelevant detail about the artist's name. The explanation should focus on why the subject is primary and other visual details are secondary. Correction: \"أهم شيء هو تحديد موضوع الصورة الرئيسي، لأنه أساس كل التفاصيل الأخرى. عدد الألوان تفصيل ثانوي يأتي لاحقًا.\" (The most important thing is to determine the main subject of the image, because it is the basis for all other details. The number of colors is a secondary detail that comes later.)"
+    },
+    {
+      "locale": "ar-EG",
+      "path": "$.quiz[2].explanation",
+      "problem": "The explanation for Q3 incorrectly cites 'example' as the source. The question asks to identify the most accurate description, which aligns with the 'concept' of what makes a description accurate (subject, setting, visual details), not just a specific example.",
+      "fix": "Change the source to 'concept'. Correction: \"(المصدر: مفهوم)\""
+    },
+    {
+      "locale": "ar-EG",
+      "path": "$.mission.rubric[3]",
+      "problem": "The rubric for the mission only checks for 'identifies an element achieved in the first result' and 'identifies an element needing modification in the second result', but the mission instructions do not ask for two results or comparison/correction for the user's own generated description. The brief's acceptance criteria is 'Mentions one element achieved and one needing modification' for the *teaching examples*, not the independent mission. The mission instructions only ask for a description.",
+      "fix": "Remove the rubric items related to comparing results for the mission, as the mission instructions do not require it. The mission instructions should be updated to include a comparison/correction step if this rubric is desired. If the mission is only to *describe*, then the rubric should reflect that. Based on the brief's 'independentImageScenario' and 'mustTeach' points, the mission should focus on *describing* the vehicle, not comparing results for it. Correction: Remove `\"يحدد عنصرًا تحقق في النتيجة الأولى مع الوصف الأصلي.\"` and `\"يحدد عنصرًا يحتاج تعديلًا في النتيجة الثانية مع الوصف الأصلي.\"` from `$.mission.rubric`."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "$.quiz[2].explanation",
+      "problem": "The explanation for Q3 incorrectly states that 'لون التفاح (أحمر) تحقق أيضًا.' The question asks what *achieved* and what *needs modification*. The color of the apples was indeed red in both the request and the result, so it 'achieved'. The explanation is correct, but the source is 'example' which is less precise than 'check' for comparison questions.",
+      "fix": "Change the source to 'check'. Correction: \"(المصدر: check)\""
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "$.mission.instructions",
+      "problem": "The mission instructions only ask the learner to *write a description* of the deep-sea vehicle. However, the brief's 'acceptance' criteria for the overall lesson is 'Mentions one element achieved and one needing modification' (which applies to the transfer activity). The current mission does not include a step for comparing results or suggesting corrections for the learner's own description, which is a core teaching point and part of the brief's 'mustTeach' (Compare outputs with requested features, Request one clear correction).",
+      "fix": "Add a step to the mission instructions that requires the learner to imagine two results based on their description and identify one element achieved and one needing modification for each, or at least for one of them. Correction: \"تخيل أنك تصمم مركبة لاستكشاف أعماق البحار. اكتب وصفًا دقيقًا لهذه المركبة الخيالية. يجب أن يتضمن وصفك: الموضوع (المركبة)، المكان (أعماق البحار)، وتفاصيل بصرية محددة مثل الألوان والأشكال أو أي ميزات فريدة. يجب أن يكون الوصف واضحًا ومفصلاً بما يكفي ليتمكن أي شخص من تخيلها. بعد ذلك، تخيل أنك استلمت نتيجتين مختلفتين بناءً على وصفك. اكتب جملة واحدة لكل نتيجة توضح عنصرًا تحقق من وصفك، وجملة واحدة توضح عنصرًا يحتاج تعديلًا.\" (Imagine you are designing a deep-sea exploration vehicle. Write a precise description of this fantasy vehicle. Your description must include: the subject (the vehicle), the setting (deep sea), and specific visual details such as colors, shapes, or any unique features. The description must be clear and detailed enough for anyone to imagine it. After that, imagine you received two different results based on your description. Write one sentence for each result clarifying an element that was achieved from your description, and one sentence clarifying an element that needs modification.)"
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "$.mission.rubric",
+      "problem": "The rubric for the mission only covers the description itself, not the comparison/correction step that is implied by the brief's 'acceptance' criteria and 'mustTeach' points for the transfer activity. This is a consequence of the mission instructions being incomplete.",
+      "fix": "Add rubric items to assess the learner's ability to identify achieved elements and suggest corrections for their imagined results, once the mission instructions are updated. Correction: Add `\"يحدد عنصرًا تحقق في النتيجة الأولى مع الوصف الأصلي.\"` and `\"يحدد عنصرًا يحتاج تعديلًا في النتيجة الثانية مع الوصف الأصلي.\"` to `$.mission.rubric` (assuming the mission instructions are updated as suggested above)."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "$.materials[0].text",
+      "problem": "The source card for ar-Gulf combines the original request and both results into a single text block. This makes it harder to reference specific 'source-card-1', 'source-card-2', 'source-card-3' as used in other locales and implied by the brief's structure for teaching examples. It also makes the `kind` field less precise.",
+      "fix": "Split the combined text into three separate source cards, mirroring the structure in other locales (ar-EG, ar-MSA, en) and the brief's intent for distinct examples. Correction: Create three separate `materials` entries: one for 'الوصف المطلوب' (Source Card 1), one for 'النتيجة التعليمية (أ)' (Source Card 2), and one for 'النتيجة التعليمية (ب)' (Source Card 3), each with `\"kind\": \"authored-teaching-example\"`."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "$.activity.instructions",
+      "problem": "The activity instructions refer to 'بطاقة المصدر' (the source card) in singular, which is problematic given the combined nature of the source card. It also doesn't explicitly ask for a correction, only to identify what's correct and what needs modification.",
+      "fix": "Update the instructions to refer to specific source cards (once split) and explicitly ask for a correction. Correction: \"اقرأ 'الوصف المطلوب' (بطاقة المصدر 1) جيداً. ثم، قارن هذا الوصف بـ 'النتيجة التعليمية (أ)' (بطاقة المصدر 2) و 'النتيجة التعليمية (ب)' (بطاقة المصدر 3). اختر إحدى النتيجتين، واذكر عنصراً واحداً تحقق من الوصف، وعنصراً واحداً يحتاج إلى تعديل، واقترح التعديل بوضوح.\" (Read 'The Required Description' (Source Card 1) carefully. Then, compare this description with 'Teaching Result (A)' (Source Card 2) and 'Teaching Result (B)' (Source Card 3). Choose one of the two results, state one element that was achieved from the description, one element that needs modification, and clearly suggest the correction.)"
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "$.activity.starter",
+      "problem": "The starter text for the activity is incomplete. It only provides the 'الوصف المطلوب' and then asks for the chosen result, achieved element, and element needing modification, but it doesn't provide the text for 'النتيجة التعليمية (أ)' and 'النتيجة التعليمية (ب)' separately, which are crucial for the comparison.",
+      "fix": "Include the full text for 'النتيجة التعليمية (أ)' and 'النتيجة التعليمية (ب)' in the starter text, similar to ar-EG and ar-MSA. Correction: Add the full text of 'النتيجة التعليمية (أ)' and 'النتيجة التعليمية (ب)' after 'الوصف المطلوب' in `$.activity.starter`."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "$.quiz[0].answer",
+      "problem": "The correct answer for Q1 is 'موضوع الصورة.' (Subject of the image), which corresponds to option index 0. The current answer is 0, which is correct.",
+      "fix": "No fix needed, the answer is correct."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "$.quiz[0].explanation",
+      "problem": "The explanation for Q1 incorrectly states that 'عدد الألوان ونوع الخط ليسا من أساسيات الوصف الأولي.' The lesson does not mention 'نوع الخط' (font type) as a descriptive element. This is an irrelevant detail.",
+      "fix": "Remove the irrelevant detail about 'نوع الخط'. Correction: \"أول خطوة لوصف صورة هي تحديد موضوعها الرئيسي (ماذا). هذا يساعد على بناء بقية الوصف. عدد الألوان ليس من أساسيات الوصف الأولي.\" (The first step to describing an image is to determine its main subject (what). This helps build the rest of the description. The number of colors is not among the basics of the initial description.)"
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "$.mission.instructions",
+      "problem": "The mission instructions only ask the learner to *write a description* of the deep-sea vehicle. However, the brief's 'acceptance' criteria for the overall lesson is 'Mentions one element achieved and one needing modification' (which applies to the transfer activity). The current mission does not include a step for comparing results or suggesting corrections for the learner's own description, which is a core teaching point and part of the brief's 'mustTeach' (Compare outputs with requested features, Request one clear correction).",
+      "fix": "Add a step to the mission instructions that requires the learner to imagine two results based on their description and identify one element achieved and one needing modification for each, or at least for one of them. Correction: \"تخيل أنك مصمم لمركبة بحرية خيالية. اكتب وصفاً دقيقاً لها، مع تحديد: 1. الموضوع (ما هي المركبة؟). 2. المكان (أين ستكون؟). 3. العناصر البصرية (شكلها، ألوانها، أي تفاصيل مميزة). بعد ذلك، تخيل أنك استلمت نتيجتين مختلفتين بناءً على وصفك. اكتب جملة واحدة لكل نتيجة توضح عنصرًا تحقق من وصفك، وجملة واحدة توضح عنصرًا يحتاج تعديلًا.\" (Imagine you are designing a fantasy marine vehicle. Write a precise description of it, specifying: 1. The subject (what is the vehicle?). 2. The location (where will it be?). 3. Visual elements (its shape, colors, any distinctive details). After that, imagine you received two different results based on your description. Write one sentence for each result clarifying an element that was achieved from your description, and one sentence clarifying an element that needs modification.)"
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "$.mission.rubric",
+      "problem": "The rubric for the mission only covers the description itself, not the comparison/correction step that is implied by the brief's 'acceptance' criteria and 'mustTeach' points for the transfer activity. This is a consequence of the mission instructions being incomplete.",
+      "fix": "Add rubric items to assess the learner's ability to identify achieved elements and suggest corrections for their imagined results, once the mission instructions are updated. Correction: Add `\"يحدد عنصرًا تحقق في النتيجة الأولى مع الوصف الأصلي.\"` and `\"يحدد عنصرًا يحتاج تعديلًا في النتيجة الثانية مع الوصف الأصلي.\"` to `$.mission.rubric` (assuming the mission instructions are updated as suggested above)."
+    },
+    {
+      "locale": "en",
+      "path": "$.quiz[2].explanation",
+      "problem": "The explanation for Q3 incorrectly cites 'concept' as the source. The question asks to identify the most helpful detail to add for a clear description, which aligns with the 'example' of how to build a detailed description, or 'check' for comparing details, rather than the general 'concept' of what a description is.",
+      "fix": "Change the source to 'example'. Correction: \"(Source: example)\""
+    },
+    {
+      "locale": "en",
+      "path": "$.mission.instructions",
+      "problem": "The mission instructions only ask the learner to *write a description* of the deep-sea vehicle. However, the brief's 'acceptance' criteria for the overall lesson is 'Mentions one element achieved and one needing modification' (which applies to the transfer activity). The current mission does not include a step for comparing results or suggesting corrections for the learner's own description, which is a core teaching point and part of the brief's 'mustTeach' (Compare outputs with requested features, Request one clear correction).",
+      "fix": "Add a step to the mission instructions that requires the learner to imagine two results based on their description and identify one element achieved and one needing modification for each, or at least for one of them. Correction: \"Imagine you are designing a new deep-sea exploration vehicle. Your task is to write a clear description (an 'image brief') for a picture of this vehicle. Make sure to include: Subject, Setting, Visual Details. After that, imagine you received two different results based on your description. Write one sentence for each result clarifying an element that was achieved from your description, and one sentence clarifying an element that needs modification.\" (The full text of the bullet points for Subject, Setting, and Visual Details should remain as they are.)"
+    },
+    {
+      "locale": "en",
+      "path": "$.mission.rubric",
+      "problem": "The rubric for the mission only covers the description itself, not the comparison/correction step that is implied by the brief's 'acceptance' criteria and 'mustTeach' points for the transfer activity. This is a consequence of the mission instructions being incomplete.",
+      "fix": "Add rubric items to assess the learner's ability to identify achieved elements and suggest corrections for their imagined results, once the mission instructions are updated. Correction: Add `\"Identifies an element achieved in the first result with the original description.\"` and `\"Identifies an element needing modification in the second result with the original description.\"` to `$.mission.rubric` (assuming the mission instructions are updated as suggested above)."
+    }
+  ],
+  "notes": [
+    "All locales successfully avoid requesting personal child photos and do not imply that the teaching results were generated or rendered, adhering to the 'avoid' section of the brief.",
+    "The image/video scenarios are genuinely different across the teaching examples (cup garden) and the independent activity (underwater vehicle), as required by the brief.",
+    "Factual consistency across locales is maintained for the core teaching examples and concepts.",
+    "The natural dialect for each Arabic locale (ar-EG, ar-MSA, ar-Gulf) appears appropriate and consistent within each draft."
+  ],
+  "method": "separate automated editorial review; not human approval",
+  "round": 1
+}

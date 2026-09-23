@@ -1,0 +1,198 @@
+{
+  "locale": "en",
+  "title": "Describe an Image Before Creating It",
+  "subtitle": "Learn to clearly describe what you want to see in a picture.",
+  "objectives": [
+    "Identify the main subject and setting for a fantasy image.",
+    "List specific visual details like colors, objects, and style.",
+    "Compare a description to an image result and suggest a clear correction."
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "title": "Imagine a Tiny World",
+      "display": "Picture This!",
+      "narration": "Have you ever tried to describe something amazing in your mind, but it came out all wrong when you explained it? Today, we'll learn how to describe a picture so clearly that anyone can imagine it perfectly. Let's start with a fun challenge!",
+      "visualAction": "A thought bubble appears above a cartoon character's head, showing a blurry, indistinct image. The character looks puzzled."
+    },
+    {
+      "id": "explain",
+      "title": "Be a Detail Detective",
+      "display": "What do you see?",
+      "narration": "To describe an image well, you need to be a detail detective. Think about three key things: What is the main subject? Where is it located? And what specific visual details make it unique? Colors, shapes, objects, and even the style matter.",
+      "visualAction": "A magnifying glass sweeps over a blank canvas, then highlights three distinct areas: a central spot, a background area, and then small details within the central spot."
+    },
+    {
+      "id": "example",
+      "title": "Our Fantasy Garden",
+      "display": "Mint-Green Cup Garden",
+      "narration": "Let's try describing a miniature imaginary garden inside a giant mint-green cup. We want three yellow flowers, bright daylight, and a simple cartoon style. This is our 'image brief' – a clear request for what we want to see.",
+      "visualAction": "A giant mint-green cup appears. Three yellow cartoon flowers pop up inside it. A sun icon shines brightly. The scene has a simple, clean cartoon look."
+    },
+    {
+      "id": "review",
+      "title": "Compare and Correct",
+      "display": "Did we get it right?",
+      "narration": "Sometimes, what you ask for isn't exactly what you get. That's okay! The next step is to compare the result with your original description. What's correct? What needs a change? Being specific helps improve the next try.",
+      "visualAction": "Two cartoon images of cups with flowers appear side-by-side. A question mark hovers between them, then a checkmark appears over one and an 'X' over the other."
+    },
+    {
+      "id": "improve",
+      "title": "Making it Better",
+      "display": "Clear Corrections",
+      "narration": "If something isn't right, give a clear correction. Don't just say 'it's wrong.' Say 'The cup should be mint-green, not purple.' Or 'There should be three flowers, not five.' This helps get closer to your perfect picture!",
+      "visualAction": "A speech bubble shows 'Wrong!' then changes to 'The cup color is wrong.' then changes again to 'Change the cup to mint-green.' A pencil icon draws a correction."
+    },
+    {
+      "id": "practice",
+      "title": "Your Turn to Describe!",
+      "display": "Describe and Compare",
+      "narration": "Now it's your turn! Read the description for our fantasy garden. Then, look at two example results. Which one is closer? What correction would you make to get the perfect picture? Think like a detective!",
+      "visualAction": "A notepad and pencil icon appear, then a 'play' button. The scene transitions to the activity screen."
+    },
+    {
+      "id": "finish",
+      "title": "You're a Picture Pro!",
+      "display": "Great Job!",
+      "narration": "You're getting great at describing images and giving clear feedback. This skill helps you communicate your ideas precisely, whether you're describing a drawing, a game level, or even just telling a story. Keep practicing!",
+      "visualAction": "The cartoon character from the hook scene now looks happy and confident. A thought bubble above their head shows a clear, detailed image."
+    }
+  ],
+  "reading": [
+    {
+      "id": "concept",
+      "title": "The Art of Describing",
+      "text": "To describe an image clearly, focus on three things: the main subject (what it is), the setting (where it is), and specific visual details (how it looks). Use descriptive words for colors, shapes, and actions. This helps others imagine your idea exactly as you see it."
+    },
+    {
+      "id": "example",
+      "title": "Our Fantasy Garden Brief",
+      "text": "Imagine a miniature imaginary garden. It's inside a giant mint-green cup. We want three bright yellow flowers. The lighting should be like daylight, and the overall style should be simple and cartoon-like. This is our clear request."
+    },
+    {
+      "id": "check",
+      "title": "Comparing Results",
+      "text": "After describing, compare any result to your original brief. Identify what matches and what doesn't. Then, give specific, actionable feedback. For example, 'The cup is the wrong color' is less helpful than 'Change the cup color from purple to mint-green.'"
+    }
+  ],
+  "materials": [
+    {
+      "id": "source-card-1",
+      "title": "Our Fantasy Garden Brief",
+      "text": "We want a miniature imaginary garden inside a giant mint-green cup. It should have three yellow flowers. The lighting should be daylight, and the style should be simple cartoon.",
+      "kind": "authored-teaching-example"
+    },
+    {
+      "id": "source-card-2",
+      "title": "Example Result A Description",
+      "text": "This image shows a miniature garden inside a giant purple cup. There are three yellow flowers. The lighting is bright, and the style is simple cartoon.",
+      "kind": "authored-teaching-example"
+    },
+    {
+      "id": "source-card-3",
+      "title": "Example Result B Description",
+      "text": "This image shows a miniature garden inside a giant mint-green cup. There are five yellow flowers. The lighting is bright, and the style is simple cartoon.",
+      "kind": "authored-teaching-example"
+    }
+  ],
+  "promptExamples": {
+    "initial": "Make a garden in a cup.",
+    "improved": "Create a miniature imaginary garden inside a giant mint-green cup with three yellow flowers, daylight, and a simple cartoon style.",
+    "followup": "The cup color is correct, but please change the number of flowers from five to three."
+  },
+  "activity": {
+    "title": "Fantasy Garden Challenge",
+    "instructions": "Read the 'Our Fantasy Garden Brief' (Source Card 1). Then, read the descriptions for 'Example Result A' (Source Card 2) and 'Example Result B' (Source Card 3). \n\n1. Which example result is closer to the original brief?\n2. What is one specific correction you would give for the *closer* example to make it perfect?",
+    "starter": "1. The closer example is:\n2. My specific correction for it is:",
+    "expectedEvidence": "A short text response identifying the closer example and providing one specific correction."
+  },
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "What is the most important first step when describing an image you want to create?",
+      "options": [
+        "Think about the main subject and where it is.",
+        "Pick a random color for the background.",
+        "Decide if it should be funny or serious."
+      ],
+      "answer": 0,
+      "explanation": "The first step is always to identify the main subject and its setting. This provides the core idea before adding details. Picking a random color or deciding on mood comes later.",
+      "source": "concept"
+    },
+    {
+      "id": "q2",
+      "question": "You asked for 'a red car with big wheels.' The result shows 'a blue car with big wheels.' What is the best specific correction?",
+      "options": [
+        "The car is the wrong color.",
+        "Change the car to red, not blue.",
+        "Make the car look better."
+      ],
+      "answer": 1,
+      "explanation": "Option B gives a clear, actionable instruction for the specific change needed. Option A is too general, and Option C doesn't specify what 'better' means.",
+      "source": "check"
+    },
+    {
+      "id": "q3",
+      "question": "You want a picture of a friendly robot in a space station. Which detail would be most helpful to add for a clear description?",
+      "options": [
+        "The robot should be smiling and have shiny silver arms.",
+        "The robot should be in space.",
+        "The robot should be very tall."
+      ],
+      "answer": 0,
+      "explanation": "Adding details like 'smiling' and 'shiny silver arms' gives specific visual information about the robot's appearance and expression, making the description much clearer than just its location or height.",
+      "source": "concept"
+    }
+  ],
+  "mission": {
+    "title": "Design a Deep-Sea Vehicle",
+    "instructions": "Imagine you are designing a new deep-sea exploration vehicle. Your task is to write a clear description (an 'image brief') for a picture of this vehicle. Make sure to include:\n\n*   **Subject:** What is the vehicle called? What kind of vehicle is it?\n*   **Setting:** Where is it? (e.g., deep ocean trench, coral reef)\n*   **Visual Details:** What color is it? What unique features does it have (e.g., big lights, robotic arms, a clear dome)? What is the overall style (e.g., realistic, futuristic cartoon)?",
+    "rubric": [
+      "Clearly states the subject (type of vehicle and its name/purpose).",
+      "Clearly describes the setting (where the vehicle is located).",
+      "Includes at least two specific visual details (color, features, style).",
+      "The description is easy to understand and imagine."
+    ]
+  },
+  "hints": [
+    {
+      "question": "What kind of details should I include?",
+      "answer": "Think about colors, shapes, how many of something there are, what kind of light there is, and the overall style (like cartoon or realistic).",
+      "source": "concept"
+    },
+    {
+      "question": "How do I make my correction specific?",
+      "answer": "Instead of saying 'it's wrong,' say exactly what needs to change. For example, 'The cup should be mint-green, not purple.'",
+      "source": "check"
+    },
+    {
+      "question": "I'm stuck on the deep-sea vehicle. What should I think about first?",
+      "answer": "Start with the main idea: Is it a submarine? A drone? What's its job? Then, where would it be found in the ocean?",
+      "source": "concept"
+    }
+  ],
+  "imageBrief": {
+    "title": "Deep-Sea Explorer Design",
+    "scenario": "A design board for a new deep-sea exploration vehicle.",
+    "composition": "A large, detailed blueprint-style drawing of a futuristic deep-sea submersible is centered on a grey design board. To the left, a small color palette shows dark blues, silver, and bright yellow. To the right, a small sketch of a deep ocean trench with glowing flora is visible. Text labels point to different parts of the vehicle.",
+    "labels": [
+      "\"The Nautilus Explorer\"",
+      "Armored Hull (Dark Blue)",
+      "Observation Dome (Clear)",
+      "Robotic Manipulators",
+      "Powerful Headlights (Yellow Glow)"
+    ],
+    "altText": "A design board showing a detailed blueprint of a futuristic dark blue deep-sea submersible called 'The Nautilus Explorer'. It has a clear observation dome, robotic arms, and powerful yellow headlights. A color palette and a sketch of a deep ocean trench are also on the board."
+  },
+  "educatorNotes": {
+    "sampleAnswer": "Activity Sample Answer:\n1. The closer example is: Example Result B.\n2. My specific correction for it is: Change the number of flowers from five to three.\n\nMission Sample Answer:\nSubject: A small, agile deep-sea drone called 'The Manta Ray'. It's designed for exploring tight spaces.\nSetting: It's hovering just above a vibrant, bioluminescent coral reef in a deep-sea canyon.\nVisual Details: The drone is sleek and flat, like a manta ray, colored dark blue with bright orange accents. It has two large, glowing green spotlights on the front and small, articulated arms for collecting samples. The style is futuristic and slightly cartoonish.",
+    "commonMisconception": "Learners often give vague feedback like 'make it better' or 'the color is wrong' instead of specific, actionable instructions. Emphasize using exact details from the brief (e.g., 'change the cup to mint-green, not purple').",
+    "reviewChecks": [
+      "Did the learner identify the correct closer example (Result B)?",
+      "Is the correction specific and actionable (e.g., 'change five flowers to three')?",
+      "For the mission, does the description include a clear subject, setting, and at least two visual details?",
+      "Is the mission description easy to understand without needing extra information?"
+    ],
+    "safetyNotes": "This lesson is entirely digital and text-based. No physical materials or tools are required. Learners should be reminded not to share personal information or photos online."
+  }
+}

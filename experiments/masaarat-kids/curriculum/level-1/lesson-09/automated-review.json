@@ -1,0 +1,116 @@
+{
+  "passed": false,
+  "issues": [
+    {
+      "locale": "ar-EG",
+      "path": "materials[0].text",
+      "problem": "The source card for the activity describes a faulty plan for displaying drawings, but the faulty step 'ثبت الرسومات بالمشابك' (Attach clips to drawings) is listed as step 1, while 'اختار الرسومات اللي عايز تعرضها' (Choose drawings you want to display) is step 2. This contradicts the brief's faulty list which states 'clip sheets before choosing them'. The brief's example of a faulty list is 'clip sheets before choosing them', implying the 'clip' step comes *before* 'choose'. The current text has 'ثبت الرسومات بالمشابك' (clip) as 1 and 'اختار الرسومات' (choose) as 2, which correctly reflects the brief's faulty order.",
+      "fix": "No change needed. The current text correctly reflects the brief's faulty order for the activity."
+    },
+    {
+      "locale": "ar-EG",
+      "path": "mission.instructions",
+      "problem": "The mission instructions mention 'مقص' (scissors) as an available material. The controlled brief explicitly states 'avoid: No cutting'.",
+      "fix": "Remove 'مقص' (scissors) from the list of available materials and adjust the mission instructions to avoid any cutting activities. For example, suggest tearing paper or using pre-cut cards if the activity requires separate cards."
+    },
+    {
+      "locale": "ar-EG",
+      "path": "imageBrief.altText",
+      "problem": "The altText mentions 'بطاقات مقصوصة' (cut cards), which implies cutting. The controlled brief explicitly states 'avoid: No cutting'.",
+      "fix": "Change 'بطاقات مقصوصة' to 'بطاقات مجهزة' (prepared cards) or 'بطاقات منفصلة' (separate cards) to avoid implying cutting."
+    },
+    {
+      "locale": "ar-EG",
+      "path": "educatorNotes.safetyNotes",
+      "problem": "The safety notes state 'لا توجد مخاطر خاصة في هذا الدرس' (No special risks in this lesson), which is inconsistent with the mention of 'مقص' (scissors) in the mission and imageBrief, which would typically require a safety note about adult supervision for cutting.",
+      "fix": "Remove 'مقص' from all lesson components as per the brief's 'avoid' instruction. If 'مقص' were allowed, this safety note would need to be updated to include a warning about adult supervision for scissors."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "materials[0].text",
+      "problem": "The source card for the activity describes a faulty plan for a bulletin board. The faulty step 'ألصق الرسومات على اللوحة' (Paste drawings on the board) is listed as step 1, while 'اختر الرسومات التي ستعرضها' (Choose drawings to display) is step 2. This contradicts the brief's faulty list which states 'clip sheets before choosing them'. The brief's example of a faulty list is 'clip sheets before choosing them', implying the 'clip' step comes *before* 'choose'. The current text has 'ألصق الرسومات' (paste) as 1 and 'اختر الرسومات' (choose) as 2, which correctly reflects the brief's faulty order.",
+      "fix": "No change needed. The current text correctly reflects the brief's faulty order for the activity."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "mission.instructions",
+      "problem": "The mission instructions mention 'مقص' (scissors) as an available material. The controlled brief explicitly states 'avoid: No cutting'.",
+      "fix": "Remove 'مقص' (scissors) from the list of available materials and adjust the mission instructions to avoid any cutting activities. For example, suggest tearing paper or using pre-cut cards if the activity requires separate cards."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "imageBrief.altText",
+      "problem": "The altText mentions 'قص البطاقات' (cut cards) in the description of the image scenario. The controlled brief explicitly states 'avoid: No cutting'.",
+      "fix": "Change 'قص البطاقات' to 'تجهيز البطاقات' (preparing cards) or 'فصل البطاقات' (separating cards) to avoid implying cutting."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "educatorNotes.safetyNotes",
+      "problem": "The safety notes mention 'استخدام المقص' (using scissors) and 'مواد حادة أو خطرة' (sharp or dangerous materials). This is inconsistent with the brief's 'avoid: No cutting'.",
+      "fix": "Remove 'مقص' from all lesson components as per the brief's 'avoid' instruction. If 'مقص' were allowed, this safety note would be appropriate, but it contradicts the brief."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "materials[0].text",
+      "problem": "The source card for the activity describes a faulty plan for displaying drawings. The faulty step 'ثبت الرسومات بالمشابك' (Attach clips to drawings) is listed as step 1, while 'اختر الرسومات التي تريد عرضها' (Choose drawings you want to display) is step 3. This contradicts the brief's faulty list which states 'clip sheets before choosing them'. The brief's example of a faulty list is 'clip sheets before choosing them', implying the 'clip' step comes *before* 'choose'. The current text has 'ثبت الرسومات بالمشابك' (clip) as 1 and 'اختر الرسومات' (choose) as 3, which correctly reflects the brief's faulty order.",
+      "fix": "No change needed. The current text correctly reflects the brief's faulty order for the activity."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "mission.instructions",
+      "problem": "The mission instructions mention 'مقص' (scissors) as an available material. The controlled brief explicitly states 'avoid: No cutting'.",
+      "fix": "Remove 'مقص' (scissors) from the list of available materials and adjust the mission instructions to avoid any cutting activities. For example, suggest tearing paper or using pre-cut cards if the activity requires separate cards."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "imageBrief.altText",
+      "problem": "The altText mentions 'أقلام ملونة ومقص صغير' (colored pencils and small scissors) as tools. The controlled brief explicitly states 'avoid: No cutting'.",
+      "fix": "Remove 'ومقص صغير' from the altText to align with the brief's 'avoid' instruction."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "educatorNotes.safetyNotes",
+      "problem": "The safety notes mention 'استخدام المقص' (using scissors) and 'أدوات حادة أو مواد خطرة' (sharp or dangerous tools/materials). This is inconsistent with the brief's 'avoid: No cutting'.",
+      "fix": "Remove 'مقص' from all lesson components as per the brief's 'avoid' instruction. If 'مقص' were allowed, this safety note would be appropriate, but it contradicts the brief."
+    },
+    {
+      "locale": "en",
+      "path": "materials[0].text",
+      "problem": "The source card for the activity is a 'Fruit Salad Recipe Challenge' which involves 'Cut the fruit into bite-sized pieces' and mentions 'a safe knife (adult supervision needed)'. The controlled brief explicitly states 'avoid: No cutting'. This activity directly violates the brief's constraint.",
+      "fix": "Replace the 'Fruit Salad Recipe Challenge' with an activity that does not involve cutting or sharp objects. A suitable alternative would be a 'sandwich making' activity or a 'toy assembly' activity that only uses safe, pre-prepared components."
+    },
+    {
+      "locale": "en",
+      "path": "quiz[1].explanation",
+      "problem": "The explanation for Q2 states 'You need to add soil to the pot before you can water it effectively, especially if the seed is already in. Watering an empty pot or a pot with just a seed won't work well. Adding soil is a crucial step that needs to happen earlier.' This explanation is slightly off. The problem in the question is '1. Put seed in pot. 2. Water. 3. Add soil.' The most fundamental problem is that soil must be added *before* the seed is put in the pot, not just before watering. The explanation should emphasize the order of soil and seed.",
+      "fix": "Change the explanation to: 'The order is incorrect. You cannot put the seed in the pot before adding soil. The logical sequence is to first add soil to the pot, then place the seed, and then water it. Adding soil is a crucial step that needs to happen earlier than putting the seed in the pot.'"
+    },
+    {
+      "locale": "en",
+      "path": "mission.instructions",
+      "problem": "The mission instructions mention 'scissors' as an available material. The controlled brief explicitly states 'avoid: No cutting'.",
+      "fix": "Remove 'scissors' from the list of available materials and adjust the mission instructions to avoid any cutting activities. For example, suggest tearing paper or using pre-cut cards if the activity requires separate cards."
+    },
+    {
+      "locale": "en",
+      "path": "imageBrief.altText",
+      "problem": "The altText mentions 'A child's hands preparing a paper matching game. On the left are blank cards and pencils. In the middle, a hand draws a star on a card, next to its matching star card. On the right, several pairs of completed, face-up matching game cards are neatly arranged.' This description is for the independent image scenario, which is 'prepare a paper matching game (draw pairs, mix, lay out, play)'. The altText does not mention mixing or laying out, which are key parts of the scenario. It focuses only on drawing and arranging finished pairs.",
+      "fix": "Expand the altText to better reflect the full scenario: 'A child's hands preparing a paper matching game. On the left are blank cards and pencils. In the middle, a hand draws a star on a card, next to its matching star card. On the right, several pairs of completed, face-up matching game cards are neatly arranged, with some mixed up and others laid out face down, ready for play.'"
+    },
+    {
+      "locale": "en",
+      "path": "educatorNotes.safetyNotes",
+      "problem": "The safety notes mention 'adult supervision is needed for using knives' and 'Emphasize food hygiene (washing fruit) as a critical safety step'. This is inconsistent with the brief's 'avoid: No cutting' and the general lesson focus on planning, not food preparation safety.",
+      "fix": "Remove the 'Fruit Salad Recipe Challenge' activity and mission as it violates the brief's 'avoid: No cutting' constraint. Consequently, remove all safety notes related to knives and food hygiene."
+    }
+  ],
+  "notes": [
+    "All locales consistently use the video scenario of 'displaying imaginary drawings' and the independent image scenario of 'preparing a paper matching game', aligning with the brief.",
+    "The 'mustTeach' objectives (ask for steps that fit materials, check order/missing/feasibility, change plan if materials are missing) are well-integrated into the lesson content, quizzes, and activities across all locales.",
+    "The natural dialect for each Arabic locale appears appropriate and consistent throughout the drafts.",
+    "The image/video scenarios are genuinely different as required by the brief (displaying drawings vs. preparing a matching game).",
+    "Factual consistency across locales is maintained, with the core concepts and examples being similar, adapted to the specific cultural context and dialect."
+  ],
+  "method": "separate automated editorial review; not human approval",
+  "round": 2
+}

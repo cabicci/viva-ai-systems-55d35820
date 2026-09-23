@@ -1,0 +1,185 @@
+{
+  "locale": "en",
+  "title": "My Private Info Stays Private",
+  "subtitle": "Keep your personal details safe online!",
+  "objectives": [
+    "Identify personal information that is not needed for a task.",
+    "Explain why it's important to remove unnecessary personal details from requests.",
+    "Rewrite a request to keep only essential information for the task."
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "title": "Welcome, Digital Detectives!",
+      "display": "What's the secret?",
+      "narration": "Hey there, digital detectives! Ever wanted to join a cool club or get something special online? Requests sometimes ask for lots of info. But what if some isn't needed? Let's find out how to keep your private details safe!",
+      "visualAction": "A friendly cartoon character winks, then a magnifying glass icon appears over a blurred text document."
+    },
+    {
+      "id": "explain",
+      "title": "What's Private, What's Not?",
+      "display": "Personal vs. Task Info",
+      "narration": "When you ask a tool to do something, like write an invitation, it needs details about the invitation itself. But it doesn't need your home address, password, or private photos. These are personal details; keep them private unless absolutely necessary and approved by an adult.",
+      "visualAction": "Two thought bubbles appear: one with a house icon and lock, another with a club invitation icon. A red 'X' appears over the house icon."
+    },
+    {
+      "id": "example",
+      "title": "Spotting Unnecessary Details",
+      "display": "See the difference!",
+      "narration": "Look at this club invitation request. It asks for club details, which is good. But then it asks for a home address, a password, and a private photo! These are not needed for writing an invitation. We must be careful about what we share.",
+      "visualAction": "A cartoon hand points to a screen showing a 'before' request with highlighted fields for address, password, and photo. A red circle appears around each."
+    },
+    {
+      "id": "review",
+      "title": "Why Be Careful?",
+      "display": "Your safety matters!",
+      "narration": "Sharing too much personal information can be risky. It's like leaving your diary open. We want to protect our privacy online. Always remember: if a tool asks for private info and you're unsure why, stop and ask a trusted adult.",
+      "visualAction": "A shield icon appears, then a cartoon adult figure gently nods next to a child character."
+    },
+    {
+      "id": "improve",
+      "title": "Making it Safe",
+      "display": "Rewrite for safety",
+      "narration": "Now, let's make that request safe. We'll remove the home address, password, and private photo. We'll keep only the club and invitation details. This way, the tool does its job, and your personal info stays private!",
+      "visualAction": "The 'before' request transforms into the 'after' request, with the sensitive fields visibly removed and replaced by blank space or a simple '...'."
+    },
+    {
+      "id": "practice",
+      "title": "Your Turn to Protect!",
+      "display": "Edit this request!",
+      "narration": "You're doing great! Now it's your turn to be a privacy champion. I'll give you a request; your mission is to remove any unnecessary personal details. Remember to keep the important task details so the request still makes sense. You've got this!",
+      "visualAction": "A cartoon character hands a clipboard to the viewer. A pencil icon appears, ready to write."
+    },
+    {
+      "id": "finish",
+      "title": "Privacy Power!",
+      "display": "You're a pro!",
+      "narration": "Fantastic job! You've learned to protect your personal information while getting tasks done. Always think before you share, and remember to ask an adult if unsure. Keep practicing these skills, and you'll be a privacy pro!",
+      "visualAction": "The character gives a thumbs-up. A 'star' animation plays, then a lock icon appears with a checkmark."
+    }
+  ],
+  "reading": [
+    {
+      "id": "concept",
+      "title": "What is Personal Information?",
+      "text": "Personal information is any detail that can identify you, like your home address, password, or private photos. It's important to keep these details private. A tool asking for private information doesn't mean you have to supply it. Always stop and ask a trusted adult if you are unsure about sharing any personal details."
+    },
+    {
+      "id": "example",
+      "title": "Task Details vs. Private Details",
+      "text": "When you ask a tool to help with a task, like writing an invitation, it needs details about the task itself. For an invitation, this means the club name, tone, and what to include. These are 'task details' and are useful. Your home address or password are 'private details' and are usually not needed for the task."
+    },
+    {
+      "id": "check",
+      "title": "Why Remove Unnecessary Info?",
+      "text": "Removing unnecessary personal information protects your privacy and keeps you safe online. Sharing only what's needed for the task means less risk. Always use age-appropriate, approved tools and remember that your safety is the most important thing when interacting with any digital tool."
+    }
+  ],
+  "materials": [
+    {
+      "id": "source-card",
+      "title": "Club Invitation Request: Before & After",
+      "text": "Here's an example of a request for a club invitation, first with unnecessary personal details, then rewritten to be safe.\n\n**Original Request (Needs Improvement):**\n\"Please write a friendly invitation for a new 'Paper-Games Club'. It should mention fun with origami and board games. Include three lines about joining. My home address is [HOME_ADDRESS], my password is [PASSWORD], and here's my private photo [PRIVATE_PHOTO].\"\n\n**Improved Request (Safe & Effective):**\n\"Please write a friendly invitation for a new 'Paper-Games Club'. It should mention fun with origami and board games. Include three lines about joining.\"\n\n*Invented teaching example*",
+      "kind": "authored-teaching-example"
+    }
+  ],
+  "promptExamples": {
+    "initial": "Write a club invite. My address is 123 Main St.",
+    "improved": "Write a friendly invitation for a 'Space Explorers Club'. Mention stargazing and rocket building. No personal details needed.",
+    "followup": "Great! You removed the address. Now, make sure you don't include any other personal information like a password or a private photo."
+  },
+  "activity": {
+    "title": "Edit for Safety!",
+    "instructions": "Read the request below. Your task is to rewrite it, removing any personal information that is not needed for the tool to write the invitation. Keep all the important details about the club and what the invitation should say.",
+    "starter": "Please write a fun invitation for a 'Mystery Solvers Club'. It should mention solving puzzles and secret codes. Include three lines about how to join. My secret password is [PASSWORD], and here's my private photo [PRIVATE_PHOTO].",
+    "expectedEvidence": "A rewritten request that removes '[PASSWORD]' and '[PRIVATE_PHOTO]' while keeping all other details about the 'Mystery Solvers Club' and the invitation content."
+  },
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Which of these is NOT considered personal information that you should be careful about sharing?",
+      "options": [
+        "Your home address",
+        "The name of a fictional club you want an invitation for",
+        "Your private photo"
+      ],
+      "answer": 1,
+      "explanation": "The name of a fictional club is a task detail needed for the request, not personal information. Home address and private photos are personal details.",
+      "source": "concept"
+    },
+    {
+      "id": "q2",
+      "question": "Why is it important to remove unnecessary personal details from a request?",
+      "options": [
+        "It protects your privacy and keeps you safe online.",
+        "It makes the request shorter to type.",
+        "The tool will work faster without extra words."
+      ],
+      "answer": 0,
+      "explanation": "Protecting your privacy and staying safe online is the main reason to remove unnecessary personal details. While it might make it shorter, that's not the primary safety benefit.",
+      "source": "check"
+    },
+    {
+      "id": "q3",
+      "question": "You want a tool to help you write a welcome message for a 'Nature Explorers Club'. Which detail should you definitely REMOVE from your request?",
+      "options": [
+        "Your favorite color for the message's background.",
+        "The club's focus on bird watching and plant identification.",
+        "Your personal password for a game."
+      ],
+      "answer": 2,
+      "explanation": "Your personal password is private information and is not needed for writing a welcome message. The club's focus and message background color are task details.",
+      "source": "example"
+    }
+  ],
+  "mission": {
+    "title": "Design a Safe Club Card!",
+    "instructions": "Imagine you're designing a sign-up card for a new 'Garden Friends Club'. You need to ask for some details from new members, but only what's absolutely necessary for the club. Create a list of 3-4 pieces of information you would ask for, making sure to avoid any unnecessary personal details like home addresses or passwords. Also, list 2-3 pieces of information you would *not* ask for.",
+    "rubric": [
+      "Identifies 3-4 necessary, non-personal details for a fictional club.",
+      "Identifies 2-3 unnecessary personal details to avoid.",
+      "Clearly separates 'needed' from 'not needed' information.",
+      "Maintains the goal of signing up for a garden club."
+    ]
+  },
+  "hints": [
+    {
+      "question": "What kind of information is 'personal'?",
+      "answer": "Personal information is anything that can identify you or is sensitive, like your address, password, or private photos. Think about what only *you* should know.",
+      "source": "concept"
+    },
+    {
+      "question": "How do I know what details are 'needed' for the task?",
+      "answer": "Think about the main goal of the request. If you're asking for an invitation, the tool needs to know about the club and what the invitation should say. It doesn't need to know about *you* personally.",
+      "source": "example"
+    },
+    {
+      "question": "I'm not sure if something is private or not.",
+      "answer": "If you're ever unsure, it's always best to remove it! And remember to ask a trusted adult for help. When in doubt, leave it out!",
+      "source": "check"
+    }
+  ],
+  "imageBrief": {
+    "title": "Garden Club Sign-Up Card",
+    "scenario": "A sign-up card for a fictional 'Green Thumbs Garden Club' where a child is deciding what information to include.",
+    "composition": "A cartoon child character (gender-neutral, 10-12 years old) holds a clipboard with a 'Green Thumbs Garden Club' sign-up form. On the form, some fields are clearly labeled as 'Needed' (e.g., 'Club Name Idea', 'Favorite Plant') and others are crossed out or have a 'No' symbol next to them (e.g., 'Home Address', 'Password'). The child looks thoughtful, with a pencil in hand. A trusted adult figure is subtly in the background, observing.",
+    "labels": [
+      "Green Thumbs Garden Club",
+      "Needed: Favorite Plant",
+      "Not Needed: Home Address",
+      "Not Needed: Password"
+    ],
+    "altText": "A child holds a sign-up form for a 'Green Thumbs Garden Club'. Fields like 'Favorite Plant' are marked as needed, while 'Home Address' and 'Password' are crossed out, showing a focus on privacy. An adult is in the background."
+  },
+  "educatorNotes": {
+    "sampleAnswer": "**Activity Sample Answer:**\n\"Please write a fun invitation for a 'Mystery Solvers Club'. It should mention solving puzzles and secret codes. Include three lines about how to join.\"\n\n**Mission Sample Answer:**\n*Information to Ask For (Needed):*\n1. Member's First Name\n2. Favorite Garden Activity (e.g., planting, watering)\n3. Idea for a Club Project\n\n*Information NOT to Ask For (Not Needed):*\n1. Home Address\n2. Parent's Bank Account Details\n3. Personal Photos of Family",
+    "commonMisconception": "Learners might confuse 'task-relevant' invented details (like a fictional club name or activity) with actual personal information. Emphasize that invented details for the *task* are fine, but *their own* real personal details are not.",
+    "reviewChecks": [
+      "Did the learner successfully remove all identified personal details?",
+      "Did the rewritten request still make sense and fulfill the original task?",
+      "Can the learner explain *why* certain details were removed?",
+      "For the mission, are the 'needed' details truly non-personal and relevant to a club?"
+    ],
+    "safetyNotes": "Remind learners that they should never type or share any real personal information, even as part of a learning exercise. All examples provided are fictional. Always encourage children to consult a trusted adult before sharing any information online or with digital tools."
+  }
+}
