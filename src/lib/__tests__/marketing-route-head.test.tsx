@@ -8,8 +8,11 @@ import {
   Outlet,
   RouterProvider,
 } from "@tanstack/react-router";
-import { act, cleanup, render, waitFor } from "@testing-library/react";
-import { afterEach, describe, expect, it } from "vitest";
+import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { AnalyticsConsentGate } from "@/components/site/AnalyticsConsent";
+import { ANALYTICS_CONSENT_STORAGE_KEY, resetAnalyticsRuntimeForTests } from "@/lib/analytics";
+import { ANALYTICS_CONSENT_COPY } from "@/lib/analytics-consent-copy";
 import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
 import { buildLocalizedLearnerMeta } from "@/lib/locale/build-learner-route-meta";
 import { SUPPORTED_LOCALES, type SupportedLocale } from "@/lib/locale/types";
@@ -17,13 +20,132 @@ import { PUBLIC_ROUTE_PATHS } from "@/lib/seo/public-route-identity";
 import { PUBLIC_SITEMAP_PATHS } from "@/lib/seo/route-catalog";
 import { SITE_STRUCTURED_DATA } from "@/lib/seo/site-structured-data";
 
+vi.mock("@/lib/locale/locale-context", () => ({
+  useLocale: () => ({ locale: "en", dir: "ltr", lang: "en" }),
+}));
+vi.mock("@/lib/trustedsite", () => ({ applyTrustedSiteConsent: vi.fn() }));
+
 type PublicKind = keyof typeof PUBLIC_ROUTE_PATHS;
 const publicHead = (locale: SupportedLocale, kind: PublicKind) =>
   kind === "curriculum"
     ? buildLocalizedLearnerMeta(locale, kind)
     : buildLocalizedPublicMeta(locale, kind);
 
-afterEach(cleanup);
+beforeEach(() => vi.spyOn(window, "scrollTo").mockImplementation(() => {}));
+afterEach(() => {
+  cleanup();
+  vi.restoreAllMocks();
+});
+
+describe("settled localized page-view metadata", () => {
+  beforeEach(() => {
+    localStorage.clear();
+    resetAnalyticsRuntimeForTests();
+    localStorage.setItem(ANALYTICS_CONSENT_STORAGE_KEY, "granted");
+  });
+  afterEach(() => resetAnalyticsRuntimeForTests());
+
+  function pageViews() {
+    const dataLayer = (window as unknown as { dataLayer?: Record<string, unknown>[] }).dataLayer;
+    return (dataLayer ?? []).filter((entry) => entry.event === "masaarat_page_view");
+  }
+
+  async function mountRouter() {
+    let releaseHead: (() => void) | undefined;
+    let pendingHead: Promise<void> | undefined;
+    const root = createRootRoute({
+      head: () => ({ meta: [{ title: "Root fallback" }] }),
+      component: () => (
+        <>
+          <HeadContent />
+          <Outlet />
+          <AnalyticsConsentGate />
+        </>
+      ),
+    });
+    const curriculum = createRoute({
+      getParentRoute: () => root,
+      path: "/curriculum",
+      validateSearch: (search: Record<string, unknown>) => ({
+        locale: search.locale === "en" ? ("en" as const) : ("ar-MSA" as const),
+      }),
+      head: async ({ match }) => {
+        await pendingHead;
+        return buildLocalizedLearnerMeta(match.search.locale, "curriculum");
+      },
+      component: () => <main>Curriculum</main>,
+    });
+    const router = createRouter({
+      routeTree: root.addChildren([curriculum]),
+      history: createMemoryHistory({ initialEntries: ["/curriculum?locale=ar-MSA"] }),
+    });
+    await router.load();
+    render(<RouterProvider router={router} />);
+    await waitFor(() => expect(pageViews()).toHaveLength(1));
+    return {
+      router,
+      holdHead: () => {
+        pendingHead = new Promise<void>((resolve) => {
+          releaseHead = resolve;
+        });
+      },
+      releaseHead: () => {
+        releaseHead?.();
+        pendingHead = undefined;
+      },
+    };
+  }
+
+  it("waits for asynchronous locale heads and emits one matching title per settled URL", async () => {
+    const fixture = await mountRouter();
+    expect(pageViews()[0].page_title).toBe("خريطة المنهج — مسارات");
+    for (const [locale, title] of [
+      ["en", "Curriculum map — masaarat"],
+      ["ar-MSA", "خريطة المنهج — مسارات"],
+    ] as const) {
+      const count = pageViews().length;
+      fixture.holdHead();
+      let navigation!: Promise<void>;
+      act(() => {
+        navigation = fixture.router.navigate({ to: "/curriculum", search: { locale } });
+      });
+      await waitFor(() => expect(fixture.router.state.isLoading).toBe(true));
+      expect(pageViews()).toHaveLength(count);
+      await act(async () => {
+        fixture.releaseHead();
+        await navigation;
+      });
+      await waitFor(() => expect(pageViews()).toHaveLength(count + 1));
+      expect(pageViews().at(-1)).toMatchObject({
+        page_location: `${window.location.origin}/curriculum?locale=${locale}`,
+        page_path: `/curriculum?locale=${locale}`,
+        page_title: title,
+      });
+      expect(document.title).toBe(title);
+    }
+    await act(() => fixture.router.invalidate());
+    expect(pageViews()).toHaveLength(3);
+  });
+
+  it("does not emit the destination if consent is withdrawn while its head is pending", async () => {
+    const fixture = await mountRouter();
+    fixture.holdHead();
+    let navigation!: Promise<void>;
+    act(() => {
+      navigation = fixture.router.navigate({ to: "/curriculum", search: { locale: "en" } });
+    });
+    await waitFor(() => expect(fixture.router.state.isLoading).toBe(true));
+    const copy = ANALYTICS_CONSENT_COPY.en;
+    fireEvent.click(screen.getByRole("button", { name: copy.settingsAria }));
+    fireEvent.click(screen.getByRole("button", { name: copy.withdraw }));
+    await act(async () => {
+      fixture.releaseHead();
+      await navigation;
+    });
+    expect(pageViews()).toHaveLength(1);
+    expect(localStorage.getItem(ANALYTICS_CONSENT_STORAGE_KEY)).toBe("denied");
+  });
+});
 
 describe("public route identity", () => {
   it.each(SUPPORTED_LOCALES)(
