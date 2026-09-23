@@ -6,7 +6,7 @@ const base=resolve(import.meta.dir,'..'),repo=resolve(base,'../..');
 const dependencies=process.env.MASAARAT_REVIEW_DEPS||repo;
 const dep=(name:string)=>Bun.resolveSync(name,dependencies);
 const offline=resolve(base,'src/offline-review-services.ts');
-const result=await Bun.build({entrypoints:[resolve(base,'src/review.tsx')],target:'browser',format:'iife',minify:true,plugins:[{name:'offline-review-only',setup(build){build.onResolve({filter:/^(@\/|@tanstack\/react-start$|react(?:\/.*)?$|react-dom(?:\/.*)?$|lucide-react$)/},args=>{
+const result=await Bun.build({entrypoints:[resolve(base,'src/review.tsx')],target:'browser',format:'iife',minify:true,plugins:[{name:'offline-review-only',setup(build){build.onResolve({filter:/^[^./]/},args=>{
  if(args.path==='@/lib/locale/locale-context')return {path:resolve(base,'src/review-locale.tsx')};
  if(['@/lib/auth-context','@/lib/quiz-attempt.functions','@/lib/learner-events','@tanstack/react-start'].includes(args.path))return {path:offline};
  if(args.path.startsWith('@/'))return {path:Bun.resolveSync(resolve(repo,'src',args.path.slice(2)),repo)};

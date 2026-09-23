@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-23T22:57:43.232Z",
+  "reviewedNavigationCases": 96,
+  "sourcePatterns": [
+    "dashboard.tsx ModuleRow lesson cards",
+    "learn route previous/next/back links",
+    "shared Button variants"
+  ],
+  "checks": [
+    "No lesson dropdown",
+    "dashboard opens all 12 lessons in all locales",
+    "desktop/mobile",
+    "previous/next boundaries",
+    "browser Back",
+    "deep link reload",
+    "language retains lesson",
+    "module expand/collapse",
+    "no horizontal overflow",
+    "no page errors"
+  ],
+  "productionDeployment": false
+}

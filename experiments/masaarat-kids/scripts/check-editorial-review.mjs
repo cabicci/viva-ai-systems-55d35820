@@ -8,11 +8,12 @@ const page=await browser.newPage({viewport:{width:1440,height:1000}});
 const errors=[],requests=[];page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(/^https?:/.test(r.url()))requests.push(r.url());});
 await page.goto(pathToFileURL(path.join(base,'editorial-review/index.html')).href);
 const {course}=JSON.parse(await page.locator('#data').textContent());
+async function openLesson(i){if(await page.locator('#back-dashboard').count())await page.locator('#back-dashboard').click();await page.locator('[data-open-lesson="'+(Number(i)+1)+'"]').click();await page.locator('[data-lesson="'+(Number(i)+1)+'"]').waitFor();}
 let packages=0,questions=0;
 for(const locale of ['ar-EG','ar-MSA','ar-Gulf','en']){
  await page.selectOption('#locale',locale);
  for(let i=0;i<12;i++){
-  await page.selectOption('#lesson',String(i));const d=course[i].locales[locale];
+  await openLesson(i);const d=course[i].locales[locale];
   if(await page.locator('h1').textContent()!==d.title)throw Error('Title');
   if(await page.locator('html').getAttribute('dir')!==(locale==='en'?'ltr':'rtl'))throw Error('Direction');
   const quiz=page.locator('article>div').filter({has:page.locator('button svg.lucide-eye')});
@@ -37,13 +38,13 @@ for(const locale of ['ar-EG','ar-MSA','ar-Gulf','en']){
 }
 for(const locale of ['ar-EG','ar-MSA','ar-Gulf','en']){
  await page.setViewportSize({width:390,height:844});await page.selectOption('#locale',locale);
- for(let i=0;i<12;i++){await page.selectOption('#lesson',String(i));if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1))throw Error('Overflow '+locale+'/'+i);}
+ for(let i=0;i<12;i++){await openLesson(i);if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1))throw Error('Overflow '+locale+'/'+i);}
  await page.screenshot({path:path.join(base,'editorial-review/review-'+locale+'.png'),fullPage:false});
 }
-await page.selectOption('#lesson','0');await page.locator('#next').click();if(await page.locator('#lesson').inputValue()!=='1')throw Error('Next');await page.locator('#prev').click();if(await page.locator('#lesson').inputValue()!=='0')throw Error('Previous');
+await openLesson(0);await page.locator('#next').click();if(await page.locator('[data-lesson]').getAttribute('data-lesson')!=='2')throw Error('Next');await page.locator('#prev').click();if(await page.locator('[data-lesson]').getAttribute('data-lesson')!=='1')throw Error('Previous');
 await page.selectOption('#locale','ar-EG');
 const fields=page.locator('#try textarea');for(let i=0;i<3;i++)await fields.nth(i).fill('fictional '+i);await page.locator('#try button').click();if(!await page.locator('[role=status]').textContent())throw Error('Builder');
-await page.selectOption('#lesson','2');await page.selectOption('#lesson','0');if(await page.locator('#try textarea').first().inputValue())throw Error('State leaked');
+await openLesson(2);await openLesson(0);if(await page.locator('#try textarea').first().inputValue())throw Error('State leaked');
 await browser.close();if(errors.length||requests.length)throw Error(JSON.stringify({errors,requests}));
 const record={date:new Date().toISOString(),packages,questions,sharedPlatformComponents:['IntroSection','QuizBlock'],sharedStyles:'src/styles.css',checks:['48 locale/lesson navigation','152 quiz feedback checks','4 existing video metadata loads','4 independent images','48 mobile overflow checks','state reset','previous/next','prompt builder','no network submissions','no page errors'],humanVisualApproval:'pending'};
 fs.writeFileSync(path.join(base,'evidence/editorial-viewer-qa.json'),JSON.stringify(record,null,2)+'\n');console.log(JSON.stringify(record));

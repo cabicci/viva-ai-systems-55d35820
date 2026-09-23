@@ -65,3 +65,10 @@ The content-review screen now uses the platform IntroSection and QuizBlock compo
 Build with `python scripts/build-editorial-review.py`; optional `MASAARAT_REVIEW_DEPS` points to an existing checkout with installed root dependencies. The Dell uses the existing main checkout dependency installation without changing it. `editorial-review/index.html` includes local lesson-1 videos; `portable.html` embeds the independent illustrations and states that video playback is available in the Dell copy. Later lesson media remains unproduced.
 
 Offline-only build adapters supply locale state and unauthenticated quiz behavior; no attempts, learner data or analytics are sent to production. No production components or routes were modified. Sources and editorial Markdown exports retain all preparation content. `node scripts/check-editorial-review.mjs` covers all 48 packages and 152 quiz items. Human visual approval is pending.
+
+
+### Navigation correction - no lesson selector
+
+Removed the lesson dropdown entirely. The entry page follows the platform dashboard ModuleRow card grid and Start lesson action. Reader navigation uses the shared platform Button component (glass/violet), previous/next links, a next-lesson continuity card and Back to dashboard. Hash routes support browser Back and direct lesson reload. Locale selection preserves the open lesson.
+
+Scoped verification: `node scripts/check-review-navigation.mjs` passed 96 lesson/locale/viewport cases plus browser history, deep links, module expansion, boundary links and overflow checks. Evidence: `evidence/review-navigation-qa.json`. Lesson content, media and production routes are unchanged. The existing full content QA script was adapted to the new navigation, but its full quiz/media suite was not rerun for this navigation-only change.

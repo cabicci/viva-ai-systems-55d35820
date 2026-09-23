@@ -1,8 +1,10 @@
 import React,{useState,useEffect} from 'react';
 import {createRoot} from 'react-dom/client';
-import {BookOpen,PlayCircle,Target,CheckCircle2,Wrench,Flag,MessageCircle,ArrowLeft,ArrowRight} from 'lucide-react';
+import {BookOpen,PlayCircle,Target,CheckCircle2,Wrench,Flag,MessageCircle,ArrowLeft,ArrowRight,Play,ChevronDown,Milestone} from 'lucide-react';
 import {IntroSection} from '../../../src/components/intro/IntroSection';
 import {QuizBlock} from '../../../src/components/intro/QuizBlock';
+import {Button} from '../../../src/components/ui/button';
+import {getUiString} from '../../../src/lib/locale/ui-strings';
 import {LocaleProvider} from './review-locale';
 const payload=JSON.parse(document.getElementById('data')!.textContent!);
 const {course,images,media,localMedia}=payload;
@@ -35,10 +37,42 @@ function Lesson({d,n,w,locale}:{d:any,n:number,w:any,locale:string}){
  {card(w.helper,<><p className="text-xs text-muted-foreground">{w.hint}</p>{d.hints.map((h:any,i:number)=><details key={i} className="border-b border-border pb-3"><summary className="cursor-pointer font-semibold text-sm">{h.question}</summary><div className="mt-3">{p(h.answer)}{source(h.sourceScene||h.source)}</div></details>)}</>,MessageCircle)}
  </article>;
 }
-function App(){const [locale,setLocale]=useState('ar-EG'),[selected,setSelected]=useState(0);const w={...labels[locale==='en'?'en':'ar'],...(locale==='ar-MSA'?{goals:'ماذا ستتعلّم؟',read:'افهم الفكرة',missing:'يمكنك البدء بالشرح المكتوب. فيديو الدرس قيد الإعداد.'}:locale==='ar-Gulf'?{goals:'وش بتتعلّم؟',missing:'تقدر تبدأ بالشرح المكتوب. فيديو الدرس قيد التجهيز.'}:{})},d=course[selected].locales[locale];
+
+function readRoute(){const m=location.hash.match(/^#\/learn\/(\d+)$/);return m&&Number(m[1])>=1&&Number(m[1])<=course.length?Number(m[1])-1:null;}
+function App(){
+ const [locale,setLocale]=useState('ar-EG'),[selected,setSelected]=useState<number|null>(readRoute),[expanded,setExpanded]=useState(true);
+ const w={...labels[locale==='en'?'en':'ar'],...(locale==='ar-MSA'?{goals:'ماذا ستتعلّم؟',missing:'يمكنك البدء بالشرح المكتوب. فيديو الدرس قيد الإعداد.'}:locale==='ar-Gulf'?{goals:'وش بتتعلّم؟',missing:'تقدر تبدأ بالشرح المكتوب. فيديو الدرس قيد التجهيز.'}:{})};
+ const t=(key:any)=>getUiString(locale as any,key);
+ useEffect(()=>{const change=()=>{if(location.hash==='#/dashboard'||/^#\/learn\/\d+$/.test(location.hash))setSelected(readRoute());};window.addEventListener('hashchange',change);return()=>window.removeEventListener('hashchange',change);},[]);
  useEffect(()=>{document.documentElement.lang=locale==='en'?'en':'ar';document.documentElement.dir=locale==='en'?'ltr':'rtl';window.scrollTo(0,0);},[locale,selected]);
- return <LocaleProvider effectiveLocale={locale as any}><div className="min-h-screen"><header className="review-topbar glass border-b border-border"><img src={payload.logo} alt={w.brand} className="w-28 h-12 object-contain"/><div className="flex gap-2 min-w-0 flex-wrap"><label className="sr-only" htmlFor="lesson">{w.lessons}</label><select id="lesson" className="review-select" value={selected} onChange={e=>setSelected(Number(e.target.value))}>{course.map((x:any,i:number)=><option key={i} value={i}>{i+1}. {x.locales[locale].title}</option>)}</select><select id="locale" aria-label="Language" className="review-select" value={locale} onChange={e=>setLocale(e.target.value)}>{locales.map((l,i)=><option key={l} value={l}>{names[i]}</option>)}</select></div></header>
- <main className="flex-1 min-w-0 max-w-[48rem] mx-auto w-full px-4 sm:px-6 py-8 md:py-12"><header className="mb-8"><div className="flex items-center gap-2 mb-3 flex-wrap"><span className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-[11px] font-mono"><BookOpen className="h-3 w-3"/>{w.brand}</span><span className="text-[11px] font-mono text-muted-foreground">{w.level} · {String(selected+1).padStart(2,'0')}/12</span></div><h1 className="text-2xl md:text-4xl font-black leading-tight">{d.title}</h1></header>
- <Lesson key={locale+selected} d={d} n={selected+1} w={w} locale={locale}/><nav className="flex justify-between gap-3 mt-8" aria-label={w.lessons}><button id="prev" className="review-button" disabled={!selected} onClick={()=>setSelected(selected-1)}>{w.prev}</button><button id="next" className="review-button" disabled={selected===11} onClick={()=>setSelected(selected+1)}>{w.next}</button></nav></main></div></LocaleProvider>;
+ const Previous=locale==='en'?ArrowLeft:ArrowRight,Next=locale==='en'?ArrowRight:ArrowLeft;
+ const d=selected===null?null:course[selected].locales[locale];
+ return <LocaleProvider effectiveLocale={locale as any}><div className="min-h-screen">
+ <header className="review-topbar glass border-b border-border">
+ <a href="#/dashboard" aria-label={t('learn.backToDashboard')}><img src={payload.logo} alt={w.brand} className="w-28 h-12 object-contain"/></a>
+ <select id="locale" aria-label="Language" className="review-select" value={locale} onChange={e=>setLocale(e.target.value)}>{locales.map((l,i)=><option key={l} value={l}>{names[i]}</option>)}</select>
+ </header>
+ {selected===null?<main className="flex-1 min-w-0 max-w-5xl mx-auto w-full px-4 sm:px-6 py-8 md:py-12" data-dashboard>
+ <header className="mb-8"><h1 className="text-2xl md:text-4xl font-black leading-tight">{w.brand}</h1><p className="mt-3 text-muted-foreground">{w.level}</p></header>
+ <div className="rounded-2xl p-6 border border-border/60" style={{background:'var(--pastel-cream)'}}>
+ <h2 className="text-xl font-bold flex items-center gap-2 mb-6"><BookOpen className="h-5 w-5"/>{w.brand}</h2>
+ <div className="glass rounded-xl border border-primary/20 overflow-hidden">
+ <button id="module-toggle" type="button" onClick={()=>setExpanded(!expanded)} aria-expanded={expanded} className="w-full flex items-center justify-between gap-3 p-4 text-start hover:bg-foreground/5 transition">
+ <span dir="ltr" className="grid h-8 min-w-10 px-2 place-items-center rounded-md shrink-0 bg-[image:var(--gradient-primary)] text-primary-foreground text-xs font-black">M1</span><span className="flex-1 min-w-0 font-semibold">{w.level}</span><ChevronDown className={'h-4 w-4 text-muted-foreground shrink-0 transition-transform '+(expanded?'rotate-180':'')}/>
+ </button>
+ {expanded&&<div className="px-4 pb-4 pt-2 border-t border-border/40"><div className="grid sm:grid-cols-2 gap-2.5 mt-3">
+ {course.map((item:any,i:number)=><div key={i} id={'lesson-card-'+(i+1)} className="glass rounded-lg p-3 flex flex-col gap-2 border-primary/20">
+ <div className="flex items-start gap-2.5"><div className="grid h-8 w-8 place-items-center rounded-md shrink-0 bg-[image:var(--gradient-primary)]"><span dir="ltr" className="text-xs font-black text-primary-foreground tabular-nums leading-none">{i+1}</span></div><div className="flex-1 min-w-0"><h3 className="font-semibold text-sm leading-tight">{item.locales[locale].title}</h3></div></div>
+ <Button asChild size="sm" variant="hero" className="w-full h-8 text-xs"><a data-open-lesson={i+1} href={'#/learn/'+(i+1)}><Play className="h-3 w-3"/>{t('dashboard.lesson.start')}</a></Button>
+ </div>)}</div></div>}
+ </div></div></main>:<main className="flex-1 min-w-0 max-w-[48rem] mx-auto w-full px-4 sm:px-6 py-8 md:py-12">
+ <a id="back-dashboard" href="#/dashboard" className="inline-flex items-center gap-2 rounded-full glass border border-primary/30 px-3 py-2 text-xs font-medium text-foreground/90 hover:bg-foreground/5 transition mb-6"><Previous className="h-4 w-4"/>{t('learn.backToDashboard')}</a>
+ <header className="mb-8"><div className="flex items-center gap-2 mb-3 flex-wrap"><span className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-[11px] font-mono"><BookOpen className="h-3 w-3"/>{w.brand}</span><span className="text-[11px] font-mono text-muted-foreground">{w.level} · {String(selected+1).padStart(2,'0')}/12</span></div><h1 className="text-2xl md:text-4xl font-black leading-tight">{d.title}</h1></header>
+ <Lesson key={locale+selected} d={d} n={selected+1} w={w} locale={locale}/>
+ <section className="mt-8 rounded-2xl border border-primary/25 bg-primary/[0.04] p-5"><p className="text-[11px] font-mono flex items-center gap-1.5 mb-2 text-primary"><Milestone className="h-3.5 w-3.5"/>{t(selected<11?'learn.continuity.next':'learn.continuity.lastInPath')}</p>{selected<11&&<p className="text-[15px] leading-[1.9] text-foreground/90">{course[selected+1].locales[locale].title}</p>}</section>
+ <nav className="mt-10 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between" aria-label={w.lessons}>
+ <div className="flex min-w-0 flex-wrap gap-2">{selected>0?<Button asChild variant="glass" size="sm"><a id="prev" href={'#/learn/'+selected}><Previous className="h-4 w-4"/>{t('learn.nav.previous')}</a></Button>:<span/>}</div>
+ <div className="flex gap-2"><Button asChild variant="violet" size="sm"><a id={selected<11?'next':'finish-path'} href={selected<11?'#/learn/'+(selected+2):'#/dashboard'}>{t(selected<11?'learn.nav.next':'learn.backToDashboard')}<Next className="h-4 w-4"/></a></Button></div></nav>
+ </main>}</div></LocaleProvider>;
 }
 createRoot(document.getElementById('root')!).render(<App/>);
