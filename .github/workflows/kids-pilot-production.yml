@@ -68,4 +68,4 @@ jobs:
             experiments/masaarat-kids/public/generated/videos/${{ matrix.locale }}.vtt
             experiments/masaarat-kids/public/generated/stills/${{ matrix.locale }}/
             experiments/masaarat-kids/content/media.json
-            experiments/masaarat-kids/evidence/
+            experiments/masaarat-kids/evidence/narrated-${{ matrix.locale }}.json

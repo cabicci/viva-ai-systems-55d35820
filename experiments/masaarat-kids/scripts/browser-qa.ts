@@ -11,13 +11,10 @@ for(const width of [1366,390]){
  for(const locale of locales){
   const lesson=getLesson(locale);await page.getByRole("button",{name:localeLabels[locale],exact:true}).click();
   await page.getByRole("heading",{name:lesson.title,exact:true}).waitFor();
-  const visuals=page.locator(".scene-visual img");
-  if(await visuals.count()!==3)failures.push(locale+":inline-image-count");
-  for(const img of await visuals.all()){await img.scrollIntoViewIfNeeded();await img.evaluate((e:HTMLImageElement)=>e.decode());if(!(await img.evaluate((e:HTMLImageElement)=>e.naturalWidth===1280)))failures.push(locale+":inline-image");}
-  await page.locator(".picture-gallery summary").click();
-  const gallery=page.locator(".gallery-grid img");if(await gallery.count()!==12)failures.push(locale+":gallery-count");
-  for(const img of await gallery.all()){await img.scrollIntoViewIfNeeded();await img.evaluate((e:HTMLImageElement)=>e.decode());}
-  await page.locator(".picture-gallery summary").click();
+  const visuals=page.locator(".lesson-illustration img");
+  if(await visuals.count()!==1)failures.push(locale+":illustration-count");
+  await visuals.evaluate((e:HTMLImageElement)=>e.decode());
+  if(!(await visuals.evaluate((e:HTMLImageElement)=>e.naturalWidth===1900)))failures.push(locale+":illustration-load");
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+1);
   const textareas=page.locator("textarea");for(let i=0;i<3;i++)await textareas.nth(i).fill([lesson.prompt.task,lesson.prompt.details,lesson.prompt.format][i]);
   await page.getByRole("button",{name:lesson.labels.build,exact:true}).click();
@@ -26,7 +23,7 @@ for(const width of [1366,390]){
   await page.locator(".hint-buttons button").nth(2).click();if(!(await page.locator(".hint-answer").innerText()).includes(lesson.hints[2].answer))failures.push(locale+":hint");
   await page.getByRole("button",{name:lesson.labels.clear,exact:true}).click();if(await textareas.nth(0).inputValue())failures.push(locale+":clear");
   await page.evaluate(()=>window.scrollTo(0,0));await page.screenshot({path:resolve(base,"evidence",locale+"-"+width+".png"),fullPage:true});
-  if(overflow)failures.push(locale+":"+width+":overflow");results.push({locale,width,overflow,quizPassed:5,inlineImages:3,galleryImages:12,hintSource:lesson.hints[2].sourceScene});
+  if(overflow)failures.push(locale+":"+width+":overflow");results.push({locale,width,overflow,quizPassed:5,independentIllustrations:1,hintSource:lesson.hints[2].sourceScene});
  }
  if(errors.length)failures.push(...errors);await page.close();
 }

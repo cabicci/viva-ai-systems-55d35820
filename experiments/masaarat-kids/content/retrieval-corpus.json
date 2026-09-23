@@ -6,7 +6,7 @@
     "locale": "ar-EG",
     "sceneId": "welcome",
     "title": "فكرة صغيرة ومغامرة جديدة",
-    "text": "تخيّل روبوت لطيف بيستكشف كوكب من خيالك. إنت عارف شكله ولونه وهيعمل إيه، لكن أداة الذكاء الاصطناعي مش شايفة الصورة اللي في دماغك. النهارده هنتعلّم نحوّل الفكرة دي لطلب واضح. إنت صاحب الفكرة، وإنت اللي هتراجع النتيجة وتختار إيه يتغيّر فيها.",
+    "text": "تخيّل روبوت أزرق بيجمع أحجار على كوكب غريب. جاهز تخلي أداة الذكاء الاصطناعي توصفه؟",
     "source": "content/ar-EG.json",
     "publication": "local-pilot-only"
   },
@@ -17,7 +17,7 @@
     "locale": "ar-EG",
     "sceneId": "prompt",
     "title": "يعني إيه طلب؟",
-    "text": "الطلب هو السؤال أو التعليمات اللي بتقولها لأداة الذكاء الاصطناعي. بالإنجليزي بنسمّيه برومبت. مش محتاج كلمة سحرية، ولا كلام طويل وخلاص. ابدأ بإنك تقول عايز تعمل إيه: وصف شخصية، ولا اقتراح فكرة، ولا ترتيب خطوات. الطلب الواضح بيوصل قصدك، بس مش ضمان إن كل إجابة هتبقى صح.",
+    "text": "الكلام اللي بتكتبه للأداة اسمه طلب، أو برومبت. خلّينا نجرّب واحد.",
     "source": "content/ar-EG.json",
     "publication": "local-pilot-only"
   },
@@ -28,7 +28,7 @@
     "locale": "ar-EG",
     "sceneId": "vague",
     "title": "إيه اللي ناقص؟",
-    "text": "بص على الطلب ده: قولّي عن روبوت. روبوت حقيقي ولا شخصية خيالية؟ عايز حكاية ولا وصف ولا معلومات؟ كده إحنا سايبين اختيارات كتير من غير توضيح. لو النتيجة طلعت مختلفة عن اللي في بالك، ده مش معناه إن فكرتك وحشة؛ يمكن محتاج تشرح طلبك أكتر.",
+    "text": "قولّي عن روبوت. استنى! عايزين معلومات، ولا وصف لشخصية؟ إيه اللي ناقص؟",
     "source": "content/ar-EG.json",
     "publication": "local-pilot-only"
   },
@@ -39,7 +39,7 @@
     "locale": "ar-EG",
     "sceneId": "task",
     "title": "ابدأ بالمهمة",
-    "text": "إحنا عايزين وصف لروبوت خيالي نحطّه في قصة مصوّرة. كلمة اوصف بتقول للأداة تعمل إيه. في مهمة تانية ممكن تقول اقترح، أو قارن، أو رتّب. اختار الفعل اللي يناسب فكرتك، وبعده قول الموضوع. دلوقتي الأداة عندها مهمة محدّدة تبدأ منها.",
+    "text": "أول قطعة: المهمة. اكتب: اوصف روبوت من خيالك. كده قلنا عايزين إيه.",
     "source": "content/ar-EG.json",
     "publication": "local-pilot-only"
   },
@@ -50,7 +50,7 @@
     "locale": "ar-EG",
     "sceneId": "details",
     "title": "زوّد تفاصيل ليها لازمة",
-    "text": "خلّينا نحدّد الروبوت أكتر: لونه أزرق، ولطيف، وبيجمع أحجار ملوّنة على كوكب خيالي. التفاصيل دي بتفرق في شكل الوصف وبتخدم الفكرة. مش محتاجين معلومات عن طفل حقيقي. ولو زوّدنا كلام ملوش علاقة بالمهمة، مش شرط النتيجة تتحسّن. اختار التفاصيل اللي فعلًا تهمّك.",
+    "text": "تاني قطعة: التفاصيل. أزرق، لطيف، وبيجمع أحجار ملوّنة على كوكب خيالي. دلوقتي الصورة أوضح!",
     "source": "content/ar-EG.json",
     "publication": "local-pilot-only"
   },
@@ -61,7 +61,7 @@
     "locale": "ar-EG",
     "sceneId": "format",
     "title": "عايز الإجابة شكلها إيه؟",
-    "text": "عشان الوصف يدخل في قصتنا المصوّرة، هنطلب تلات جمل قصيرة. ده اسمه شكل الإجابة. ممكن في نشاط تاني تختار قائمة، أو جدول صغير. فكّر هتستخدم النتيجة في إيه، وعلى أساسه اختار الشكل. الكلام الكتير مش دايمًا هو اللي هينفعك.",
+    "text": "تالت قطعة: شكل الإجابة. عايزين تلات جمل قصيرة، عشان الوصف يدخل في قصتنا المصوّرة.",
     "source": "content/ar-EG.json",
     "publication": "local-pilot-only"
   },
@@ -72,7 +72,7 @@
     "locale": "ar-EG",
     "sceneId": "combine",
     "title": "اجمع طلبك",
-    "text": "طلبنا بقى كده: اوصف روبوت خيالي أزرق ولطيف، بيجمع أحجار ملوّنة على كوكب خيالي. اكتب الوصف في تلات جمل قصيرة. حدّدنا المهمة، وزوّدنا تفاصيل مفيدة، وقلنا شكل الإجابة. التقسيمة دي بتساعدنا في التدريب، لكن مش لازم كل طلب في الدنيا يبقى بنفس الشكل.",
+    "text": "نجمعهم! اوصف روبوت خيالي أزرق ولطيف، بيجمع أحجار ملوّنة على كوكب خيالي. اكتب تلات جمل قصيرة.",
     "source": "content/ar-EG.json",
     "publication": "local-pilot-only"
   },
@@ -83,7 +83,7 @@
     "locale": "ar-EG",
     "sceneId": "review",
     "title": "اقرأ النتيجة الأول",
-    "text": "تخيّل إن النتيجة وصفت روبوت أحمر في خمس جمل. ده مثال إحنا كاتبينه للتعليم، مش رد طالع دلوقتي من أداة. قارن بطلبك: اللون مختلف، وعدد الجمل مختلف. ما توافقش على أول نتيجة من غير ما تقرأها. شوف إيه مناسب وإيه محتاج يتظبّط.",
+    "text": "بص على مثالنا: روبوت أحمر، وخمس جمل! لقيت الغلطتين؟ الطلب الواضح برضه محتاج مراجعة.",
     "source": "content/ar-EG.json",
     "publication": "local-pilot-only"
   },
@@ -94,7 +94,7 @@
     "locale": "ar-EG",
     "sceneId": "improve",
     "title": "عدّل حاجة واضحة",
-    "text": "تقدر تكتب متابعة: خلّي الروبوت أزرق، واختصر الوصف لتلات جمل. وبعدها راجع النتيجة الجديدة. تحسين الطلب معناه إنك توضّح قصدك أكتر. ولو في نشاط تاني سألت عن معلومة حقيقية، راجعها في مصدر موثوق، أو اطلب من شخص كبير بتثق فيه يساعدك تتأكّد.",
+    "text": "نصلّحهم: خلّي الروبوت أزرق، واختصر لتلات جمل. وبعدين نراجع تاني. والمعلومات الحقيقية؟ نتأكد منها بمصدر موثوق.",
     "source": "content/ar-EG.json",
     "publication": "local-pilot-only"
   },
@@ -105,7 +105,7 @@
     "locale": "ar-EG",
     "sceneId": "safe",
     "title": "معلوماتك ليك",
-    "text": "استخدم الأدوات اللي وليّ أمرك أو المعلّم وافق عليها، والتزم بشروط السن بتاعتها. ما تبعتش الباسورد، ولا عنوان البيت، ولا بيانات المدرسة، ولا صورة خاصة. عشان نخترع شخصية، مش محتاجين حاجة من دول. لو ظهر كلام ضايقك أو لخبطك، وقّف واسأل شخص كبير بتثق فيه.",
+    "text": "خليك في الخيال. ما تشاركش عنوانك أو باسوردك أو صورك الخاصة. استخدم أداة مناسبة لسنّك بموافقة وليّ أمرك. حاجة ضايقتك؟ وقّف واسأله.",
     "source": "content/ar-EG.json",
     "publication": "local-pilot-only"
   },
@@ -116,7 +116,7 @@
     "locale": "ar-EG",
     "sceneId": "practice",
     "title": "دلوقتي دورك",
-    "text": "وقّف الفيديو شوية وفكّر في مستكشف من خيالك. حدّد إنت عايز إيه، وزوّد تفصيلين مفيدين، واختار شكل الإجابة. تقدر تكتب على ورقة، أو تستخدم خانات تكوين الطلب تحت الدرس. الخانات بتجمع كلامك بس، ومش بتبعته لخدمة ذكاء اصطناعي. خلّي تفاصيل الشخصية كلها خيالية.",
+    "text": "دلوقتي دورك! مستكشفك هيبقى شكله إيه؟ وقّف الفيديو، واكتب مهمة وتفصيلين وشكل الإجابة.",
     "source": "content/ar-EG.json",
     "publication": "local-pilot-only"
   },
@@ -127,7 +127,7 @@
     "locale": "ar-EG",
     "sceneId": "finish",
     "title": "ورّينا فكرتك",
-    "text": "اقرأ طلبك بصوت واضح. اللي هيسمعه هيعرف المهمة والتفاصيل وشكل الإجابة؟ احكي إنت اخترت كده ليه. بعد كده جرّب الكويز وكمّل المهمة. المهم تعرف تعبّر عن فكرتك، وتراجع النتيجة، وتحسّن طلبك بأمان. ولو احتجت مساعدة، تلميحات الدرس موجودة ترجع لها.",
+    "text": "جاهز؟ اجمع طلبك تحت، وجرّب التحدّي! الخانات بتجمع كلامك بس. إنت صاحب الفكرة، وإنت اللي بتراجعها.",
     "source": "content/ar-EG.json",
     "publication": "local-pilot-only"
   },
@@ -138,7 +138,7 @@
     "locale": "ar-MSA",
     "sceneId": "welcome",
     "title": "مرحبًا أيها المستكشف",
-    "text": "تخيّل روبوتًا ودودًا يزور كوكبًا خياليًا. أنت تتصوّر لونه ومهمته، لكن أداة الذكاء الاصطناعي لا ترى ما تتخيّله. سنتعلّم اليوم كيف نحوّل الفكرة إلى طلب واضح. ستختار فكرتك بنفسك، وتراجع النتيجة، ثم تقرّر ما الذي يحتاج إلى تعديل.",
+    "text": "تخيّل روبوتًا أزرق يجمع الأحجار على كوكب غريب. كيف تطلب من أداة الذكاء الاصطناعي أن تصفه؟",
     "source": "content/ar-MSA.json",
     "publication": "local-pilot-only"
   },
@@ -149,7 +149,7 @@
     "locale": "ar-MSA",
     "sceneId": "prompt",
     "title": "ما المقصود بالطلب؟",
-    "text": "الطلب هو السؤال أو التعليمات التي توجّهها إلى أداة الذكاء الاصطناعي، ويُسمّى بالإنجليزية برومبت. لا تحتاج إلى كلمات سحرية أو كلام طويل. ابدأ بتوضيح ما تريد إنجازه، مثل وصف شخصية أو ترتيب أفكار. يساعدك الوضوح على التعبير عن هدفك، لكنه لا يضمن إجابة صحيحة دائمًا.",
+    "text": "التعليمات التي تكتبها للأداة تُسمّى طلبًا، أو برومبت. لنجرب طلبًا معًا.",
     "source": "content/ar-MSA.json",
     "publication": "local-pilot-only"
   },
@@ -160,7 +160,7 @@
     "locale": "ar-MSA",
     "sceneId": "vague",
     "title": "فكرة تحتاج إلى توضيح",
-    "text": "لنقرأ هذا الطلب: أخبرني عن روبوت. هل نريد معلومات عن روبوت حقيقي أم وصفًا لشخصية خيالية؟ وهل نريد قصة أم قائمة؟ تركنا اختيارات كثيرة دون تحديد. إذا جاءت النتيجة مختلفة عمّا نريده، فقد نحتاج إلى توضيح الطلب، وليس التخلّي عن الفكرة.",
+    "text": "أخبرني عن روبوت. لحظة! هل نريد معلومات، أم وصف شخصية؟ ما الذي ينقص الطلب؟",
     "source": "content/ar-MSA.json",
     "publication": "local-pilot-only"
   },
@@ -171,7 +171,7 @@
     "locale": "ar-MSA",
     "sceneId": "task",
     "title": "حدّد المطلوب أولًا",
-    "text": "مهمتنا هي وصف روبوت خيالي لقصة مصوّرة قصيرة. كلمة صِف تحدّد الفعل الذي نريده من الأداة. ويمكن استخدام كلمات أخرى بحسب الهدف، مثل اقترح أو قارن أو رتّب. اختر الفعل الذي يعبّر عن مهمتك، ثم حدّد الموضوع الذي تريد العمل عليه.",
+    "text": "القطعة الأولى: المهمة. اكتب: صِف روبوتًا خياليًا. هكذا حدّدنا ما نريده.",
     "source": "content/ar-MSA.json",
     "publication": "local-pilot-only"
   },
@@ -182,7 +182,7 @@
     "locale": "ar-MSA",
     "sceneId": "details",
     "title": "أضف تفاصيل مفيدة",
-    "text": "لنحدّد صفات الروبوت: لونه أزرق، وشخصيته ودودة، ويجمع أحجارًا ملوّنة على كوكب خيالي. هذه التفاصيل تؤثّر في الوصف وتخدم فكرتنا. لا نحتاج إلى معلومات عن طفل حقيقي. كثرة الكلمات وحدها لا تحسّن الطلب؛ المهم أن تكون التفاصيل مرتبطة بالمهمة.",
+    "text": "القطعة الثانية: التفاصيل. أزرق، وودود، ويجمع أحجارًا ملوّنة على كوكب خيالي. أصبحت الفكرة أوضح!",
     "source": "content/ar-MSA.json",
     "publication": "local-pilot-only"
   },
@@ -193,7 +193,7 @@
     "locale": "ar-MSA",
     "sceneId": "format",
     "title": "اختر شكل الإجابة",
-    "text": "نريد وصفًا يصلح لقصة مصوّرة، لذلك سنطلب ثلاث جمل قصيرة. هذا هو شكل الإجابة. وقد تختار في مهمة أخرى قائمة أو جدولًا صغيرًا. عندما تحدّد الشكل، توضّح كيف تريد استخدام النتيجة. الإجابة الأطول ليست بالضرورة الأنسب لكل مهمة.",
+    "text": "القطعة الثالثة: شكل الإجابة. نختار ثلاث جمل قصيرة، ليَصلح الوصف لقصتنا المصوّرة.",
     "source": "content/ar-MSA.json",
     "publication": "local-pilot-only"
   },
@@ -204,7 +204,7 @@
     "locale": "ar-MSA",
     "sceneId": "combine",
     "title": "اجمع الأجزاء",
-    "text": "أصبح طلبنا: صِف روبوتًا خياليًا أزرق اللون، ودودًا، يجمع أحجارًا ملوّنة على كوكب خيالي. اكتب الوصف في ثلاث جمل قصيرة. حدّدنا المطلوب، وأضفنا تفاصيل مفيدة، واخترنا شكل الإجابة. هذا تنظيم يساعدنا في النشاط، وليس قاعدة إلزامية لجميع الطلبات.",
+    "text": "نجمع القطع: صِف روبوتًا خياليًا أزرق وودودًا، يجمع أحجارًا ملوّنة على كوكب خيالي. اكتب ثلاث جمل قصيرة.",
     "source": "content/ar-MSA.json",
     "publication": "local-pilot-only"
   },
@@ -215,7 +215,7 @@
     "locale": "ar-MSA",
     "sceneId": "review",
     "title": "راجع النتيجة",
-    "text": "تخيّل أن الوصف الناتج يتحدّث عن روبوت أحمر في خمس جمل. هذا مثال تعليمي أعددناه للشرح، وليس إجابة مباشرة من أداة. قارن المثال بطلبك: اللون وعدد الجمل مختلفان. اقرأ النتيجة قبل قبولها، وحدّد الأجزاء المناسبة والأجزاء التي تحتاج إلى تغيير.",
+    "text": "تأمّل مثالنا: روبوت أحمر، وخمس جمل! هل اكتشفت الخطأين؟ حتى الطلب الواضح يحتاج إلى مراجعة نتيجته.",
     "source": "content/ar-MSA.json",
     "publication": "local-pilot-only"
   },
@@ -226,7 +226,7 @@
     "locale": "ar-MSA",
     "sceneId": "improve",
     "title": "حسّن طلبك",
-    "text": "يمكنك كتابة متابعة واضحة: أبقِ الروبوت أزرق اللون، واختصر الوصف إلى ثلاث جمل. ثم اقرأ النتيجة الجديدة وتحقّق منها. التحسين يعني توضيح ما تقصده. وإذا سألت في نشاط آخر عن معلومات حقيقية، فتحقّق منها بمصدر موثوق أو بمساعدة شخص بالغ تثق به.",
+    "text": "نطلب تعديلًا: اجعل الروبوت أزرق، واختصر الوصف إلى ثلاث جمل. ثم نراجع مجددًا. أما المعلومات الحقيقية، فنتحقّق منها بمصدر موثوق.",
     "source": "content/ar-MSA.json",
     "publication": "local-pilot-only"
   },
@@ -237,7 +237,7 @@
     "locale": "ar-MSA",
     "sceneId": "safe",
     "title": "احمِ معلوماتك",
-    "text": "استخدم الأدوات التي يوافق عليها وليّ أمرك أو معلّمك، وفق شروط العمر الخاصة بها. لا تشارك كلمة المرور أو عنوان المنزل أو معلومات المدرسة أو صورة خاصة. لا نحتاج إلى هذه البيانات لابتكار شخصية. إذا ظهر شيء يزعجك أو يربكك، فتوقّف واطلب مساعدة شخص بالغ تثق به.",
+    "text": "استخدم تفاصيل خيالية. احتفظ بعنوانك وكلمة مرورك وصورك الخاصة لنفسك. اختر أداة مناسبة لسنّك بموافقة وليّ أمرك. إن أزعجك شيء، توقّف واسأله.",
     "source": "content/ar-MSA.json",
     "publication": "local-pilot-only"
   },
@@ -248,7 +248,7 @@
     "locale": "ar-MSA",
     "sceneId": "practice",
     "title": "حان دورك",
-    "text": "أوقف الفيديو مؤقتًا، وفكّر في مستكشف خيالي من ابتكارك. حدّد المطلوب، وأضف تفصيلين مفيدين، واختر شكل الإجابة. يمكنك الكتابة على الورق أو استخدام نموذج تكوين الطلب أسفل الدرس. النموذج يجمع كلماتك فقط، ولا يرسلها إلى خدمة ذكاء اصطناعي. اجعل جميع التفاصيل خيالية.",
+    "text": "حان دورك! كيف يبدو مستكشفك؟ أوقف الفيديو، واكتب مهمة وتفصيلين وشكل الإجابة.",
     "source": "content/ar-MSA.json",
     "publication": "local-pilot-only"
   },
@@ -259,7 +259,7 @@
     "locale": "ar-MSA",
     "sceneId": "finish",
     "title": "اشرح اختياراتك",
-    "text": "اقرأ طلبك بصوت واضح. هل يستطيع غيرك فهم المهمة والتفاصيل وشكل الإجابة؟ اشرح سبب اختيارك لها، ثم أجب عن الأسئلة وأنجز المهمة. الهدف أن تعبّر عن فكرتك الخاصة، وتراجع النتيجة، وتحسّن طلبك بأمان. يمكنك العودة إلى تلميحات الدرس كلما احتجت إلى مساعدة.",
+    "text": "اجمع طلبك في الخانات، ثم جرّب التحدّي! الخانات تجمع كلماتك فقط. أنت صاحب الفكرة، وأنت من يراجعها.",
     "source": "content/ar-MSA.json",
     "publication": "local-pilot-only"
   },
@@ -270,7 +270,7 @@
     "locale": "ar-Gulf",
     "sceneId": "welcome",
     "title": "هلا بالمستكشف",
-    "text": "تخيّل روبوت ودود يزور كوكب من خيالك. أنت متصوّر لونه وشغله، لكن أداة الذكاء الاصطناعي ما تشوف الصورة اللي في بالك. اليوم بنتعلّم كيف نحوّل الفكرة لطلب واضح. أنت تختار الفكرة، وتراجع النتيجة، وتقرّر وش يحتاج تعديل عشان يناسب اللي تبيه.",
+    "text": "تخيّل روبوت أزرق يجمع أحجار على كوكب غريب. جاهز تخلّي أداة الذكاء الاصطناعي توصفه؟",
     "source": "content/ar-Gulf.json",
     "publication": "local-pilot-only"
   },
@@ -281,7 +281,7 @@
     "locale": "ar-Gulf",
     "sceneId": "prompt",
     "title": "وش نقصد بالطلب؟",
-    "text": "الطلب هو السؤال أو التعليمات اللي تعطيها لأداة الذكاء الاصطناعي، وبالإنجليزي نسمّيه برومبت. ما تحتاج كلمة سرّية ولا كلام طويل. ابدأ بتوضيح وش تبي الأداة تسوّي: توصف شخصية، أو تقترح فكرة، أو ترتّب خطوات. الوضوح يساعدك توصل قصدك، لكنه ما يضمن إن كل جواب صحيح.",
+    "text": "الكلام اللي تكتبه للأداة نسمّيه طلب، أو برومبت. خلّنا نجرّب طلب مع بعض.",
     "source": "content/ar-Gulf.json",
     "publication": "local-pilot-only"
   },
@@ -292,7 +292,7 @@
     "locale": "ar-Gulf",
     "sceneId": "vague",
     "title": "الطلب يحتاج تفاصيل",
-    "text": "خلّنا نشوف هالطلب: كلّمني عن روبوت. تقصد روبوت حقيقي، أو شخصية من خيالك؟ تبي قصة، أو وصف، أو معلومات؟ فيه اختيارات كثيرة ما وضّحناها. لو النتيجة ما كانت مثل اللي في بالك، يمكن تحتاج توضّح الطلب أكثر. فكرتك نفسها ممكن تكون مناسبة.",
+    "text": "قل لي عن روبوت. لحظة! نبي معلومات، ولا وصف لشخصية؟ وش ينقص الطلب؟",
     "source": "content/ar-Gulf.json",
     "publication": "local-pilot-only"
   },
@@ -303,7 +303,7 @@
     "locale": "ar-Gulf",
     "sceneId": "task",
     "title": "حدّد المهمة",
-    "text": "مهمتنا نوصف روبوت خيالي لقصة مصوّرة قصيرة. كلمة اوصف تحدّد للأداة وش تسوّي. ولو تغيّرت المهمة، ممكن تستخدم اقترح، أو قارن، أو رتّب. اختار الفعل اللي يناسب هدفك، وبعده حدّد الموضوع. بهالطريقة تبدأ بطلب له مهمة واضحة.",
+    "text": "أول قطعة: المهمة. اكتب: صف روبوت خيالي. الحين وضّحنا وش نبي.",
     "source": "content/ar-Gulf.json",
     "publication": "local-pilot-only"
   },
@@ -314,7 +314,7 @@
     "locale": "ar-Gulf",
     "sceneId": "details",
     "title": "أضف تفاصيل تخدم الفكرة",
-    "text": "خلّ روبوتنا أزرق وودود، ويجمع أحجار ملوّنة على كوكب خيالي. هالتفاصيل تأثّر في الوصف وتخدم قصتنا. ما نحتاج معلومات عن طفل حقيقي. مو كل كلمة إضافية تحسّن الطلب؛ إذا كانت بعيدة عن المهمة، ممكن تزيد التشويش. أضف التفاصيل اللي تفرق معك فعلًا.",
+    "text": "ثاني قطعة: التفاصيل. أزرق، وودود، ويجمع أحجار ملوّنة على كوكب خيالي. كذا صارت الفكرة أوضح!",
     "source": "content/ar-Gulf.json",
     "publication": "local-pilot-only"
   },
@@ -325,7 +325,7 @@
     "locale": "ar-Gulf",
     "sceneId": "format",
     "title": "اختار شكل الإجابة",
-    "text": "الوصف بيكون داخل قصة مصوّرة، فبنطلب ثلاث جمل قصيرة. هذا هو شكل الإجابة. في نشاط ثاني ممكن تحتاج قائمة أو جدول صغير. فكّر كيف بتستخدم النتيجة، واختار الشكل المناسب لها. الجواب الطويل مو دايمًا أفضل من الجواب القصير والواضح.",
+    "text": "ثالث قطعة: شكل الإجابة. نبي ثلاث جمل قصيرة، عشان يناسب الوصف قصتنا المصوّرة.",
     "source": "content/ar-Gulf.json",
     "publication": "local-pilot-only"
   },
@@ -336,7 +336,7 @@
     "locale": "ar-Gulf",
     "sceneId": "combine",
     "title": "صار طلبك جاهز",
-    "text": "نجمع الأجزاء ونقول: اوصف روبوت خيالي أزرق وودود، يجمع أحجار ملوّنة على كوكب خيالي. اكتب الوصف في ثلاث جمل قصيرة. الحين عندنا مهمة وتفاصيل وشكل للإجابة. هالترتيب يساعدنا في التدريب، لكنه مو شرط ثابت لازم تتبعه في كل طلب.",
+    "text": "نجمعها! صف روبوت خيالي أزرق وودود، يجمع أحجار ملوّنة على كوكب خيالي. اكتب ثلاث جمل قصيرة.",
     "source": "content/ar-Gulf.json",
     "publication": "local-pilot-only"
   },
@@ -347,7 +347,7 @@
     "locale": "ar-Gulf",
     "sceneId": "review",
     "title": "تأكّد قبل ما تعتمد النتيجة",
-    "text": "تخيّل إن الجواب وصف روبوت أحمر في خمس جمل. هذا مثال تعليمي كتبناه للشرح، مو جواب مباشر من أداة. قارنه بالطلب: اللون وعدد الجمل مختلفين. لا تعتمد أول نتيجة قبل ما تقرأها. حدّد وش ناسب فكرتك، ووش يحتاج تعديل.",
+    "text": "شوف مثالنا: روبوت أحمر، وخمس جمل! لقيت الغلطتين؟ حتى الطلب الواضح نحتاج نراجع نتيجته.",
     "source": "content/ar-Gulf.json",
     "publication": "local-pilot-only"
   },
@@ -358,7 +358,7 @@
     "locale": "ar-Gulf",
     "sceneId": "improve",
     "title": "وضّح التعديل",
-    "text": "ممكن تكتب: خلّ الروبوت أزرق، واختصر الوصف إلى ثلاث جمل. بعدها راجع الجواب الجديد. تحسين الطلب يعني توضّح قصدك أكثر. وإذا سألت في نشاط ثاني عن معلومة حقيقية، تأكّد منها بمصدر موثوق، أو اطلب من شخص بالغ تثق فيه يساعدك تراجعها.",
+    "text": "نعدّل: خلّ الروبوت أزرق، واختصر الوصف لثلاث جمل. وبعدها نراجع مرة ثانية. والمعلومات الحقيقية؟ نتأكّد منها بمصدر موثوق.",
     "source": "content/ar-Gulf.json",
     "publication": "local-pilot-only"
   },
@@ -369,7 +369,7 @@
     "locale": "ar-Gulf",
     "sceneId": "safe",
     "title": "خصوصيتك مهمّة",
-    "text": "استخدم الأدوات اللي وافق عليها وليّ أمرك أو معلّمك، والتزم بشروط العمر فيها. لا تشارك كلمة المرور، أو عنوان البيت، أو بيانات المدرسة، أو صورة خاصة. نشاطنا ما يحتاج هالمعلومات. إذا شفت شيء يضايقك أو يحيّرك، توقّف واسأل شخص بالغ تثق فيه.",
+    "text": "خلّ التفاصيل خيالية. لا تشارك عنوانك أو كلمة مرورك أو صورك الخاصة. استخدم أداة تناسب سنّك بموافقة وليّ أمرك. شيء ضايقك؟ وقّف واسأله.",
     "source": "content/ar-Gulf.json",
     "publication": "local-pilot-only"
   },
@@ -380,7 +380,7 @@
     "locale": "ar-Gulf",
     "sceneId": "practice",
     "title": "الحين دورك",
-    "text": "وقّف الفيديو شوي، وابتكر مستكشف خاص فيك. حدّد المهمة، وأضف تفصيلين مفيدين، واختار شكل الإجابة. تقدر تكتب على ورقة، أو تستخدم خانات تجهيز الطلب تحت الدرس. هالخانات تجمع كلامك فقط، وما ترسله إلى خدمة ذكاء اصطناعي. خلّ كل تفاصيل الشخصية من الخيال.",
+    "text": "الحين دورك! كيف بيكون مستكشفك؟ وقّف الفيديو، واكتب مهمة وتفصيلين وشكل الإجابة.",
     "source": "content/ar-Gulf.json",
     "publication": "local-pilot-only"
   },
@@ -391,7 +391,7 @@
     "locale": "ar-Gulf",
     "sceneId": "finish",
     "title": "اشرح لنا اختياراتك",
-    "text": "اقرأ طلبك بصوت واضح. هل اللي يسمعه يعرف المهمة والتفاصيل وشكل الإجابة؟ اشرح ليش اخترت هالأشياء، وبعدها جرّب الأسئلة وكمّل المهمة. المهارة إنك تعبّر عن فكرتك، وتراجع النتيجة، وتحسّن طلبك بأمان. تقدر ترجع لتلميحات الدرس متى ما احتجت مساعدة.",
+    "text": "اجمع طلبك في الخانات، وجرّب التحدّي! الخانات تجمع كلامك بس. أنت صاحب الفكرة، وأنت اللي تراجعها.",
     "source": "content/ar-Gulf.json",
     "publication": "local-pilot-only"
   },
@@ -402,7 +402,7 @@
     "locale": "en",
     "sceneId": "welcome",
     "title": "A small idea. A clearer request.",
-    "text": "Imagine a friendly robot exploring an imaginary planet. You can already picture its colour and its job. But the AI tool cannot see the picture in your head. In this lesson, you will practise turning that idea into a clear request. You choose the idea, check the result, and decide what to change.",
+    "text": "Picture a blue robot collecting stones on a strange planet. Can you get an AI tool to describe it?",
     "source": "content/en.json",
     "publication": "local-pilot-only"
   },
@@ -413,7 +413,7 @@
     "locale": "en",
     "sceneId": "prompt",
     "title": "What is a prompt?",
-    "text": "A prompt is the request or instructions you give an AI tool. You do not need a secret word or a long speech. Start by explaining what you want it to do. You might ask for a story idea, a description, or a list. Clear instructions help communicate your goal, but they do not guarantee a correct answer.",
+    "text": "The instructions you give the tool are called a prompt. Let's try one.",
     "source": "content/en.json",
     "publication": "local-pilot-only"
   },
@@ -424,7 +424,7 @@
     "locale": "en",
     "sceneId": "vague",
     "title": "Something is missing",
-    "text": "Look at this request: tell me about a robot. It leaves plenty of choices open. Is it a real robot or an invented character? Do you want a story, a drawing idea, or facts? A different result does not mean your idea was bad. It may mean that your request needs a little more information.",
+    "text": "Tell me about a robot. Hang on! Robot facts, or an invented character? What's missing?",
     "source": "content/en.json",
     "publication": "local-pilot-only"
   },
@@ -435,7 +435,7 @@
     "locale": "en",
     "sceneId": "task",
     "title": "First: choose the task",
-    "text": "Our task is to describe an invented robot for a short comic. Notice the action word: describe. It tells the tool what to do. If you wanted a list, you could say list. If you wanted a comparison, you could say compare. Choose the action that matches your own goal.",
+    "text": "First piece: the task. Describe an invented robot. Now the tool knows what to do.",
     "source": "content/en.json",
     "publication": "local-pilot-only"
   },
@@ -446,7 +446,7 @@
     "locale": "en",
     "sceneId": "details",
     "title": "Then: add useful details",
-    "text": "Now add details that change the result. Our robot is blue, friendly, and collects colourful stones on an imaginary planet. These are invented details, so we do not need information about a real child. Helpful details serve the task. Adding unrelated words can make your request harder to follow.",
+    "text": "Next: useful details. Blue, friendly, collecting colourful stones on an imaginary planet. That's a clearer picture!",
     "source": "content/en.json",
     "publication": "local-pilot-only"
   },
@@ -457,7 +457,7 @@
     "locale": "en",
     "sceneId": "format",
     "title": "Choose the answer format",
-    "text": "How should the answer look? For our comic, three short sentences will be enough. That is the answer format. You could also ask for a small table or a list. A format helps you use the result. Asking for more words is not always the same as asking for a better answer.",
+    "text": "Last piece: the format. Three short sentences will fit our comic. No giant wall of text!",
     "source": "content/en.json",
     "publication": "local-pilot-only"
   },
@@ -468,7 +468,7 @@
     "locale": "en",
     "sceneId": "combine",
     "title": "Put the pieces together",
-    "text": "Here is our combined prompt. Describe an invented blue, friendly robot that collects colourful stones on an imaginary planet. Use three short sentences. We have included the task, helpful details, and the format. This is a useful starting pattern for this activity, not a rule that every prompt must always follow.",
+    "text": "Put them together: describe an invented blue, friendly robot collecting colourful stones on an imaginary planet. Use three short sentences.",
     "source": "content/en.json",
     "publication": "local-pilot-only"
   },
@@ -479,7 +479,7 @@
     "locale": "en",
     "sceneId": "review",
     "title": "Read before you accept",
-    "text": "Suppose the answer describes a red robot in five sentences. This is a teaching example, not a live answer from an AI tool. Compare it with your request. The colour and length do not match. You do not need to accept the first result. Check what fits and what needs changing.",
+    "text": "Look at our example: a red robot, and five sentences! Spot both mistakes? A clear prompt still needs a careful reader.",
     "source": "content/en.json",
     "publication": "local-pilot-only"
   },
@@ -490,7 +490,7 @@
     "locale": "en",
     "sceneId": "improve",
     "title": "Improve one thing at a time",
-    "text": "You can reply: keep the robot blue and shorten the description to three sentences. Then read the new result again. Improving a prompt means making your intention clearer. If you ask about real facts in another activity, use a trusted source or ask a trusted adult to help check the information.",
+    "text": "Ask for a fix: keep it blue and use three sentences. Then check again. For real facts, check a trusted source too.",
     "source": "content/en.json",
     "publication": "local-pilot-only"
   },
@@ -501,7 +501,7 @@
     "locale": "en",
     "sceneId": "safe",
     "title": "Invented details are enough",
-    "text": "Before using a tool, follow its age rules and ask your parent or teacher which tools you may use. Do not put your password, home address, school details, or a private photograph into the activity. If a result worries or confuses you, stop and ask a trusted adult. You do not have to continue.",
+    "text": "Keep details imaginary. Never share your address, password or private photos. Ask a parent about age-appropriate tools. Something upsetting? Stop and tell them.",
     "source": "content/en.json",
     "publication": "local-pilot-only"
   },
@@ -512,7 +512,7 @@
     "locale": "en",
     "sceneId": "practice",
     "title": "Your turn",
-    "text": "Pause and invent your own explorer. Choose what you want the tool to do, add two useful details, and choose the answer format. You can write on paper or use the prompt builder below. The builder combines your words; it does not send them to an AI service. Keep all character details imaginary.",
+    "text": "Your turn! What will your explorer be like? Pause here. Choose a task, two details and an answer format.",
     "source": "content/en.json",
     "publication": "local-pilot-only"
   },
@@ -523,7 +523,7 @@
     "locale": "en",
     "sceneId": "finish",
     "title": "Explain your choices",
-    "text": "Read your prompt out loud. Can someone understand the task, the details, and the format? Explain why you chose them. Next, try the short quiz and complete your mission. The skill is not copying our robot prompt. It is being able to express your own idea, review an answer, and improve your request safely.",
+    "text": "Build your prompt below, then try the challenge! The boxes just combine your words. You're the inventor, and you're in charge of checking.",
     "source": "content/en.json",
     "publication": "local-pilot-only"
   }

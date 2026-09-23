@@ -7,7 +7,7 @@ DIRECTIONS = {
 "ar-EG": "اقرأ باللهجة المصرية القاهرية الطبيعية، بنبرة ودودة واضحة لعمر عشر إلى اثنتي عشرة سنة. لا تضف أي كلام.",
 "ar-MSA": "اقرأ بالعربية الفصحى الحديثة، بنبرة ودودة واضحة لعمر عشر إلى اثنتي عشرة سنة، دون لهجة عامية. لا تضف أي كلام.",
 "ar-Gulf": "اقرأ باللهجة الخليجية المحايدة الطبيعية، بنبرة ودودة واضحة لعمر عشر إلى اثنتي عشرة سنة، دون نطق مصري. لا تضف أي كلام.",
-"en": "Read in clear warm English for ages ten to twelve. Use a measured teaching pace. Read only the supplied narration."
+"en": "Read in clear warm English for ages ten to twelve. Use lively conversational pacing, curious questions, and brief pauses. Avoid a slow lecture or exaggerated baby talk. Read only the supplied narration."
 }
 def run(locale):
     key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
@@ -19,12 +19,12 @@ def run(locale):
     timings = []
     model = "gemini-2.5-flash-preview-tts"
     for index, scene in enumerate(lesson["scenes"]):
-        digest = hashlib.sha256((model + DIRECTIONS[locale] + scene["narration"]).encode()).hexdigest()
+        digest = hashlib.sha256((model + DIRECTIONS[locale] + "lively-r2" + scene["narration"]).encode()).hexdigest()
         audio = out / (str(index).zfill(2) + ".wav")
         receipt = audio.with_suffix(".json")
         cached = audio.exists() and receipt.exists() and json.loads(receipt.read_text())["sourceSha256"] == digest
         if not cached:
-            spoken_text = DIRECTIONS[locale] + "\n\n" + scene["narration"]
+            spoken_text = DIRECTIONS[locale] + " Lively conversational delivery. Sound curious at questions, smile naturally, and leave brief thinking pauses. Do not use baby talk or a slow lecture.\n\n" + scene["narration"]
             if locale == "en":
                 # Content and voice are unchanged, so completed audio stays reusable.
                 # Explicit boundaries keep teaching examples from becoming model tasks.
