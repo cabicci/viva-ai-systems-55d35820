@@ -5,8 +5,10 @@ BASE=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser()
 parser.add_argument("artifacts",type=Path)
 parser.add_argument("--run-id",required=True)
+parser.add_argument("--source-sha",required=True)
 args=parser.parse_args()
 root=args.artifacts.resolve()
+if not args.run_id.isdigit() or len(args.source_sha)!=40 or any(x not in "0123456789abcdef" for x in args.source_sha.lower()): raise SystemExit("Invalid run identity")
 if not root.is_dir(): raise SystemExit("Artifact directory missing")
 source=json.loads((BASE/"content/level1-video.json").read_text(encoding="utf-8"))
 jobs=[]
@@ -49,8 +51,8 @@ for number,locale,slug,video,captions,metadata,audio_dir,report in jobs:
       "url":f"generated/videos/level1/{slug}/{locale}.mp4",
       "captions":f"generated/videos/level1/{slug}/{locale}.vtt",
       "durationSeconds":report["durationSeconds"],
-      "sha256":report["videoSha256"],"runId":args.run_id}
+      "sha256":report["videoSha256"],"runId":args.run_id,"provenance":"local-recovery" if report.get("recovery") else "github-run"}
 (BASE/"content/media-level1.json").write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-receipt={"runId":args.run_id,"lessons":11,"locales":4,"narratedVideos":44,"allTechnicalChecksPassed":True,"spokenAccuracyReview":"pending human listening"}
+receipt={"runId":args.run_id,"sourceSha":args.source_sha,"lessons":11,"locales":4,"narratedVideos":44,"allTechnicalChecksPassed":True,"localRecoveries":[f"{number:02}/{locale}" for number,locale,slug,video,captions,metadata,audio_dir,report in jobs if report.get("recovery")],"spokenAccuracyReview":"pending human listening"}
 (BASE/"evidence/level1-production-import.json").write_text(json.dumps(receipt,indent=2)+"\n",encoding="utf-8")
 print("Imported 44 verified narrated videos with audio and captions.")

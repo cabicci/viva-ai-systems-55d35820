@@ -56,6 +56,7 @@ jobs:
           PILOT_LOCALE: ${{ matrix.locale }}
           LESSON: ${{ matrix.lesson }}
         run: |
+          python scripts/trim-level1-audio.py --lesson "$LESSON" --locale "$PILOT_LOCALE"
           bun scripts/render-level1.ts --lesson="$LESSON" --locale="$PILOT_LOCALE"
           python scripts/verify-level1.py --lesson "$LESSON" --locale "$PILOT_LOCALE"
       - name: Preserve every completed output
@@ -71,3 +72,4 @@ jobs:
             experiments/masaarat-kids/public/generated/videos/level1/lesson-*/${{ matrix.locale }}.json
             experiments/masaarat-kids/public/generated/videos/level1/lesson-*/${{ matrix.locale }}.vtt
             experiments/masaarat-kids/evidence/narrated-lesson-*-${{ matrix.locale }}.json
+            experiments/masaarat-kids/evidence/trim-lesson-*-${{ matrix.locale }}.json

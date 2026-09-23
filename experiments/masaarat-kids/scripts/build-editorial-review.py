@@ -26,10 +26,12 @@ for n in range(3,13):
 assert len(lessons)==12 and all(set(x["locales"])==set(LOCALES) for x in lessons)
 payload=json.dumps(lessons,ensure_ascii=False).replace("<","\\u003c").replace("\u2028","\\u2028").replace("\u2029","\\u2029")
 (OUT/"content.json").write_bytes((json.dumps(lessons,ensure_ascii=False,indent=2)+"\n").encode())
-counts={"lessons":12,"locales":4,"packages":48,"scenes":sum(len(d["scenes"]) for l in lessons for d in l["locales"].values()),"quizItems":sum(len(d["quiz"]) for l in lessons for d in l["locales"].values()),"mediaProducedLessons":1,"newMediaProduced":0}
+media=json.loads((BASE/"content/media-level1.json").read_text(encoding="utf-8"))
+produced=sum(len(locales) for locales in media.values())
+counts={"lessons":12,"locales":4,"packages":48,"scenes":sum(len(d["scenes"]) for l in lessons for d in l["locales"].values()),"quizItems":sum(len(d["quiz"]) for l in lessons for d in l["locales"].values()),"mediaProducedLessons":1+sum(len(locales)==4 for locales in media.values()),"newMediaProduced":produced}
 (OUT/"manifest.json").write_bytes((json.dumps(counts,indent=2)+"\n").encode())
 for locale in LOCALES:
- lines=["# Masaarat Kids | Level 1 | "+locale,"","Editorial content; new lesson media and human language review are pending.",""]
+ lines=["# Masaarat Kids | Level 1 | "+locale,"","Narrated media is in the Dell review copy; human language review is pending." if produced==44 else "Editorial content; new lesson media and human language review are pending.",""]
  for item in lessons:
   d=item["locales"][locale]
   lines+=["## "+str(item["number"])+". "+d["title"],"",d["subtitle"],"","### Objectives",""]+["- "+x for x in d["objectives"]]
@@ -54,4 +56,5 @@ print(json.dumps(counts))
 
 subprocess.run(["bun","scripts/illustrate-lesson-02.ts"],cwd=BASE,check=True)
 subprocess.run(["bun","scripts/illustrate-level1.ts"],cwd=BASE,check=True)
+subprocess.run(["bun","scripts/optimize-review-images.ts"],cwd=BASE,check=True)
 subprocess.run(["bun","scripts/build-platform-review.ts"],cwd=BASE,check=True)

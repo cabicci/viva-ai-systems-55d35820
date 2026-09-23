@@ -1,0 +1,49 @@
+{
+  "lesson": 2,
+  "locale": "ar-MSA",
+  "method": "threshold 250 PCM; retain 0.45s after last speech; trim only tails over 1.5s",
+  "segments": [
+    {
+      "scene": "hook",
+      "originalSeconds": 12.811,
+      "finalSeconds": 12.811,
+      "tailTrimmedSeconds": 0.0
+    },
+    {
+      "scene": "ideas",
+      "originalSeconds": 13.971,
+      "finalSeconds": 13.971,
+      "tailTrimmedSeconds": 0.0
+    },
+    {
+      "scene": "source",
+      "originalSeconds": 13.691,
+      "finalSeconds": 13.691,
+      "tailTrimmedSeconds": 0.0
+    },
+    {
+      "scene": "decision",
+      "originalSeconds": 14.811,
+      "finalSeconds": 14.811,
+      "tailTrimmedSeconds": 0.0
+    },
+    {
+      "scene": "sort",
+      "originalSeconds": 15.851,
+      "finalSeconds": 15.851,
+      "tailTrimmedSeconds": 0.0
+    },
+    {
+      "scene": "activity",
+      "originalSeconds": 105.891,
+      "finalSeconds": 11.55,
+      "tailTrimmedSeconds": 94.341
+    },
+    {
+      "scene": "finish",
+      "originalSeconds": 12.371,
+      "finalSeconds": 12.371,
+      "tailTrimmedSeconds": 0.0
+    }
+  ]
+}
