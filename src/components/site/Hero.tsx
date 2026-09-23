@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Compass } from "lucide-react";
+import { ArrowLeft, Compass, ShieldCheck } from "lucide-react";
 import { useAuth } from "@/lib/auth-context";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { useUiString } from "@/lib/locale/use-ui-strings";
@@ -30,11 +30,21 @@ export function Hero() {
       />
 
       <div className="container relative mx-auto px-4 py-24 md:py-32 text-center">
-        <div
-          className="mx-auto inline-flex items-center gap-2 rounded-full border border-border/60 bg-white/70 px-4 py-1.5 text-xs text-muted-foreground shadow-sm backdrop-blur"
-        >
+        <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-border/60 bg-white/70 px-4 py-1.5 text-xs text-muted-foreground shadow-sm backdrop-blur">
           <Compass className="h-3.5 w-3.5" style={{ color: "oklch(0.55 0.10 235)" }} />
           <span>{t("hero.badge")}</span>
+        </div>
+
+        <div className="mt-4">
+          <a
+            href="https://www.trustedsite.com/verify?host=masaarat.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white px-4 py-2 text-sm font-semibold text-foreground shadow-sm transition hover:border-primary hover:shadow-md"
+          >
+            <ShieldCheck aria-hidden="true" className="h-4 w-4 text-primary" />
+            {t("trust.trustedsite.verify")}
+          </a>
         </div>
 
         <h1 className="mt-8 font-black text-4xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-foreground">
@@ -54,7 +64,6 @@ export function Hero() {
         <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
           {t("hero.subtitle")}
         </p>
-
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           {loading ? null : user ? (
