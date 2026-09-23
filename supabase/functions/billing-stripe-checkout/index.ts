@@ -1,4 +1,5 @@
 import { coordinateCheckout, type CheckoutIntent } from "../_shared/stripe-checkout-intent.ts";
+import { stripeSecretKey } from "../_shared/stripe-environment.ts";
 
 const ALLOWED_ORIGINS = new Set([
   "https://masaarat.ai",
@@ -56,10 +57,7 @@ async function stripeRequest<T>(
   path: string,
   options: { method?: "GET" | "POST"; params?: URLSearchParams; idempotencyKey?: string } = {},
 ): Promise<T> {
-  const secretKey = env("STRIPE_SECRET_KEY");
-  if (!/^(rk|sk)_test_/.test(secretKey)) {
-    throw new Error("STRIPE_TEST_KEY_REQUIRED");
-  }
+  const secretKey = stripeSecretKey({ STRIPE_SECRET_KEY: Deno.env.get("STRIPE_SECRET_KEY") });
 
   const method = options.method ?? "GET";
   const response = await fetch(`https://api.stripe.com/v1${path}`, {
