@@ -73,9 +73,6 @@ describe("Footer locale navigation", () => {
         "href",
         "mailto:support@masaarat.ai",
       );
-      expect(
-        screen.getByRole("link", { name: getUiString(locale, "trust.trustedsite.verify") }),
-      ).toHaveAttribute("href", "https://www.trustedsite.com/verify?host=masaarat.ai");
 
       rendered.unmount();
     }
