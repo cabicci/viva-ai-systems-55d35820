@@ -42,7 +42,7 @@ for(const locale of ['ar-EG','ar-MSA','ar-Gulf','en']){
  for(let i=0;i<12;i++){await openLesson(i);if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1))throw Error('Overflow '+locale+'/'+i);}
  await page.screenshot({path:path.join(base,'editorial-review/review-'+locale+'.png'),fullPage:false});
 }
-await openLesson(0);await page.locator('#next').click();if(await page.locator('[data-lesson]').getAttribute('data-lesson')!=='2')throw Error('Next');await page.locator('#prev').click();if(await page.locator('[data-lesson]').getAttribute('data-lesson')!=='1')throw Error('Previous');
+await openLesson(0);await page.locator('#next').click();await page.locator('[data-lesson="2"]').waitFor();await page.locator('#prev').click();await page.locator('[data-lesson="1"]').waitFor();
 await page.selectOption('#locale','ar-EG');
 const fields=page.locator('#try textarea');for(let i=0;i<3;i++)await fields.nth(i).fill('fictional '+i);await page.locator('#try button').click();if(!await page.locator('[role=status]').textContent())throw Error('Builder');
 await openLesson(2);await openLesson(0);if(await page.locator('#try textarea').first().inputValue())throw Error('State leaked');

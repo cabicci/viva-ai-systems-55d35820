@@ -40,6 +40,7 @@ jobs:
           python -c 'import json,os; p=json.load(open("production-request-level1.json")); assert p["mode"]=="narrated" and p["publish"] is False and int(os.environ["LESSON"]) in p["lessons"] and os.environ["PILOT_LOCALE"] in p["locales"]'
           test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
           bun install --frozen-lockfile
+          bun run assets
           python scripts/prepare-level1-video.py
           bun x tsc --noEmit -p tsconfig.video.json
       - name: Generate narration
