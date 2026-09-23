@@ -21,6 +21,7 @@ for locale in ("ar-EG","ar-MSA","ar-Gulf","en"):
         shutil.copy2(source,out/"generated/videos"/source.name)
     files.append({"locale":locale,"video":media[locale]["url"],"sha256":evidence["videoSha256"]})
 shutil.copytree(BASE/"content",out/"lesson-content")
+if (BASE/"curriculum").exists(): shutil.copytree(BASE/"curriculum",out/"curriculum-editorial")
 shutil.copytree(BASE/"evidence",out/"review-evidence",ignore=shutil.ignore_patterns("*.png","*.log","audio-review-*.json"))
 (out/"START_HERE.txt").write_text("MASAARAT KIDS - FIRST LESSON REVIEW\n\nExtract the entire ZIP, then open index.html. Keep the folders beside it.\nSelect Egyptian Arabic, Modern Standard Arabic, Gulf Arabic, or English in the page.\nThe package contains four narrated videos, four independent lesson illustrations, quizzes, a prompt-building activity and sourced lesson hints.\nEverything in this review page works locally. The helper uses curated lesson answers; a generative RAG service is not connected.\nRevision 2: human pronunciation/dialect and educational approval are still pending.\nNo production release is included.\n",encoding="utf-8")
 (out/"package-manifest.json").write_text(json.dumps({"sourceSha":__import__("os").environ.get("GITHUB_SHA"),"files":files,"images":4,"status":"owner-review"},indent=2)+"\n",encoding="utf-8")

@@ -1,0 +1,554 @@
+{
+  "lessonId": "kids-l1-02-choose-ai-help",
+  "level": "level-1",
+  "ageBand": "10–12",
+  "status": "editorial-draft-not-integrated",
+  "revision": "1",
+  "prerequisites": [
+    "kids-l1-clear-prompt"
+  ],
+  "scope": "Local teaching examples; no child accounts or external AI calls required.",
+  "learningGoal": "Choose between AI idea support, checking an authoritative source, and a human decision.",
+  "videoBrief": {
+    "scenario": "Preparing a fictional science-club exhibition",
+    "style": "Existing Masaarat Kids identity; quick choices, clear comparisons and simple movement.",
+    "targetSeconds": "90–120; editorial target, not a rendered duration",
+    "beats": [
+      "hook",
+      "ideas",
+      "source",
+      "decision",
+      "sort",
+      "activity",
+      "finish"
+    ]
+  },
+  "imageBrief": {
+    "scenario": "Planning a museum visit",
+    "composition": "Independent decision map: generate an activity idea / verify opening hours / obtain adult permission",
+    "constraints": [
+      "No science-club poster or video character",
+      "Use official logo, Cairo and platform palette",
+      "Localize all text; do not use a video frame"
+    ],
+    "status": "brief only; no image generated"
+  },
+  "sourceNotes": [
+    "UNESCO AI competency framework for students — human-centred mindset and critical judgement; curriculum adaptation, not UNESCO approval.",
+    "UNICEF Guidance on AI and children v3 — safety, privacy and human oversight."
+  ],
+  "locales": {
+    "ar-EG": {
+      "title": "إمتى أستعين بالذكاء الاصطناعي؟",
+      "subtitle": "اختار المساعدة المناسبة للمهمة.",
+      "objectives": [
+        "أختار مهمة تنفع فيها مساعدة بالأفكار.",
+        "أعرف إمتى أرجع لمصدر أصلي.",
+        "أحدد قرار لازم يفضل مع شخص مسؤول."
+      ],
+      "scenes": [
+        {
+          "id": "hook",
+          "title": "عندنا معرض!",
+          "narration": "نادي العلوم بيجهّز معرض خيالي. محتاجين اسم جذّاب، وموعد الافتتاح، وموافقة على الصور. ينفع نسأل الذكاء الاصطناعي عن كل ده بنفس الطريقة؟"
+        },
+        {
+          "id": "ideas",
+          "title": "محتاج أفكار",
+          "narration": "في الأسماء، نقدر نطلب: اقترح تلات أسماء قصيرة لمعرض تجارب علمية بسيطة. الأداة تساعد بأفكار، وإحنا نختار ونعدّل. اقتراحها مش قرار لازم نمشي عليه."
+        },
+        {
+          "id": "source",
+          "title": "محتاج معلومة مؤكدة",
+          "narration": "لكن المعرض هيفتح إمتى؟ نرجع لإعلان المنظّم أو نسأله. لو الأداة قالت موعد، ما نعتمدش عليه لوحده. لازم نطابقه مع المصدر الأصلي."
+        },
+        {
+          "id": "decision",
+          "title": "محتاج موافقة",
+          "narration": "وننشر صور الزوّار؟ دي محتاجة موافقة مناسبة من الأشخاص والمسؤولين، مش إجابة من الأداة. في نشاطنا هنستخدم رسومات خيالية من غير صور شخصية."
+        },
+        {
+          "id": "sort",
+          "title": "اختار نوع المساعدة",
+          "narration": "نجرب بسرعة: اسم للمعرض؟ أفكار. موعده؟ مصدر أصلي. نشر صور الناس؟ موافقة بشرية. نفس المشروع، لكن كل مهمة ليها طريقة مناسبة."
+        },
+        {
+          "id": "activity",
+          "title": "دلوقتي دورك",
+          "narration": "عندك رحلة خيالية للمتحف. اختار: مين يساعدك في فكرة لعبة أثناء الزيارة؟ منين تتأكد من ساعات الزيارة؟ ومين يوافق إنك تروح؟ وقّف وفكّر."
+        },
+        {
+          "id": "finish",
+          "title": "إنت بتختار",
+          "narration": "اطلب مساعدة في الأفكار، واتأكد من المعلومات، وسيب الموافقات لأصحابها. لما تستخدم أداة فعلية، خليها مناسبة لسنّك وبموافقة وليّ أمرك."
+        }
+      ],
+      "reading": [
+        {
+          "id": "ideas",
+          "title": "الأفكار: اقترح واختار",
+          "text": "الأداة ممكن تقترح أسماء أو صيغ للكلام. قارن الاقتراحات بهدفك، واختار أو عدّل بنفسك."
+        },
+        {
+          "id": "source",
+          "title": "المعلومة: ارجع للمصدر",
+          "text": "موعد فعالية حقيقية نراجعه في إعلان الجهة المسؤولة. وجود موعد في إجابة الأداة مش كفاية."
+        },
+        {
+          "id": "decision",
+          "title": "الموافقة: من صاحبها",
+          "text": "الأداة مش بديل عن موافقة شخص على صورته أو موافقة وليّ الأمر على نشاط. استخدم أمثلة خيالية في التدريب."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "q1",
+          "question": "محتاج اسم لمعرض خيالي. تبدأ بإيه؟",
+          "options": [
+            "أطلب اقتراحات وأختار اللي يناسبني.",
+            "أعتبر أول اسم هو الوحيد الصح.",
+            "أبعت أسماء كل الزوّار."
+          ],
+          "answer": 0,
+          "explanation": "دي مهمة أفكار. الأداة تقترح، وإنت تقيّم وتختار.",
+          "source": "ideas"
+        },
+        {
+          "id": "q2",
+          "question": "الأداة قالت إن المعرض يوم الخميس. تتأكد إزاي؟",
+          "options": [
+            "أسأل نفس السؤال لحد ما يطمني الرد.",
+            "أشوف إعلان الجهة المنظمة أو أسألها.",
+            "أعتمد على إن الجملة مكتوبة بثقة."
+          ],
+          "answer": 1,
+          "explanation": "الجهة المنظمة هي المصدر المسؤول عن الموعد؛ إجابة الأداة وحدها مش تأكيد.",
+          "source": "source"
+        },
+        {
+          "id": "q3",
+          "question": "الأداة قالت: انشر صور أصحابك. هل دي موافقة؟",
+          "options": [
+            "آه، لأن الأداة قالت كده.",
+            "آه، لو الصور حلوة.",
+            "لأ، الموافقة من الأشخاص والمسؤولين."
+          ],
+          "answer": 2,
+          "explanation": "اقتراح الأداة ما يديكش موافقة عن حد تاني.",
+          "source": "decision"
+        }
+      ],
+      "mission": {
+        "title": "خطة رحلة خيالية",
+        "instructions": "اكتب طلبًا لأفكار نشاط في متحف. بعدها اكتب المصدر اللي هتراجع فيه ساعات الزيارة، والشخص المسؤول اللي هتطلب موافقته. ما تكتبش بيانات حقيقية.",
+        "rubric": [
+          "طلب الأفكار واضح.",
+          "حددت مصدرًا مسؤولًا عن ساعات الزيارة.",
+          "فرّقت بين الاقتراح والموافقة.",
+          "استخدمت تفاصيل خيالية."
+        ]
+      },
+      "hints": [
+        {
+          "question": "إيه ينفع أطلبه؟",
+          "answer": "أسماء أو أفكار أو صياغات تقارنها وتعدّلها بنفسك.",
+          "source": "ideas"
+        },
+        {
+          "question": "أتأكد من الموعد فين؟",
+          "answer": "في إعلان الجهة المنظمة أو بالتواصل معها عبر وسيلة مناسبة مع شخص مسؤول.",
+          "source": "source"
+        },
+        {
+          "question": "مين يوافق؟",
+          "answer": "الشخص صاحب القرار أو المسؤول عنه؛ الأداة ما تقدرش توافق نيابة عنه.",
+          "source": "decision"
+        }
+      ]
+    },
+    "ar-MSA": {
+      "title": "متى أستعين بالذكاء الاصطناعي؟",
+      "subtitle": "اختر المساعدة المناسبة للمهمة.",
+      "objectives": [
+        "أختار مهمة تستفيد من اقتراح الأفكار.",
+        "أحدّد متى أرجع إلى مصدر أصلي.",
+        "أميّز القرار الذي يحتاج إلى شخص مسؤول."
+      ],
+      "scenes": [
+        {
+          "id": "hook",
+          "title": "نجهّز معرضًا!",
+          "narration": "يستعد نادي العلوم لمعرض خيالي. نحتاج إلى اسم جذّاب، وموعد الافتتاح، وموافقة على الصور. هل نطلب هذه الأشياء من الذكاء الاصطناعي بالطريقة نفسها؟"
+        },
+        {
+          "id": "ideas",
+          "title": "أحتاج إلى أفكار",
+          "narration": "للبحث عن اسم، نكتب: اقترح ثلاثة أسماء قصيرة لمعرض تجارب علمية بسيطة. الأداة تقدّم أفكارًا، ونحن نختار ونعدّل. اقتراحها ليس قرارًا ملزمًا."
+        },
+        {
+          "id": "source",
+          "title": "أحتاج إلى معلومة مؤكدة",
+          "narration": "أما موعد الافتتاح، فنراجعه في إعلان الجهة المنظمة أو نسألها مباشرة. إذا قدّمت الأداة موعدًا، فلا نعتمد عليه وحده؛ نطابقه مع المصدر الأصلي."
+        },
+        {
+          "id": "decision",
+          "title": "أحتاج إلى موافقة",
+          "narration": "وماذا عن نشر صور الزوّار؟ نحتاج إلى الموافقات المناسبة من الأشخاص والمسؤولين، لا إلى إجابة من الأداة. في تدريبنا نستخدم رسومات خيالية دون صور شخصية."
+        },
+        {
+          "id": "sort",
+          "title": "حدّد نوع المساعدة",
+          "narration": "لنجرب: اسم للمعرض؟ نحتاج إلى أفكار. موعده؟ إلى مصدر أصلي. نشر صور أشخاص؟ إلى موافقة بشرية. لكل مهمة نوع مناسب من المساعدة."
+        },
+        {
+          "id": "activity",
+          "title": "حان دورك",
+          "narration": "تخيّل رحلة إلى متحف. من يساعدك في اقتراح لعبة أثناء الزيارة؟ أين تتحقّق من ساعات الزيارة؟ ومن يوافق على ذهابك؟ أوقف الفيديو وفكّر."
+        },
+        {
+          "id": "finish",
+          "title": "أنت تختار",
+          "narration": "استعن بالأداة في الأفكار، وتحقّق من المعلومات، واطلب الموافقة من أصحابها. وعند استخدام أداة فعلية، اختر ما يناسب سنّك بموافقة وليّ أمرك."
+        }
+      ],
+      "reading": [
+        {
+          "id": "ideas",
+          "title": "الأفكار: اقترح ثم اختر",
+          "text": "يمكن للأداة اقتراح أسماء أو صياغات. قارنها بهدفك، واتخذ قرار الاختيار أو التعديل بنفسك."
+        },
+        {
+          "id": "source",
+          "title": "المعلومة: تحقّق من أصلها",
+          "text": "نراجع موعد الفعالية الحقيقية في إعلان الجهة المسؤولة. ذكر الموعد في إجابة الأداة لا يكفي لتأكيده."
+        },
+        {
+          "id": "decision",
+          "title": "الموافقة: من صاحب القرار",
+          "text": "الأداة لا تحل محل موافقة شخص على صورته أو موافقة وليّ الأمر على نشاط. استخدم أمثلة خيالية أثناء التدريب."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "q1",
+          "question": "تحتاج إلى اسم لمعرض خيالي. ماذا تفعل؟",
+          "options": [
+            "أطلب اقتراحات وأختار المناسب.",
+            "أعتبر الاسم الأول هو الصحيح وحده.",
+            "أرسل أسماء جميع الزوّار."
+          ],
+          "answer": 0,
+          "explanation": "هذه مهمة أفكار؛ تقترح الأداة، وتقيّم أنت وتختار.",
+          "source": "ideas"
+        },
+        {
+          "id": "q2",
+          "question": "ذكرت الأداة أن المعرض يوم الخميس. كيف تتحقّق؟",
+          "options": [
+            "أكرر السؤال حتى يعجبني الرد.",
+            "أراجع إعلان الجهة المنظمة أو أسألها.",
+            "أعتمد على ثقة أسلوب الإجابة."
+          ],
+          "answer": 1,
+          "explanation": "الجهة المنظمة هي المصدر المسؤول عن الموعد؛ إجابة الأداة وحدها ليست تأكيدًا.",
+          "source": "source"
+        },
+        {
+          "id": "q3",
+          "question": "اقترحت الأداة نشر صور أصدقائك. هل يعدّ ذلك موافقة؟",
+          "options": [
+            "نعم، لأن الأداة اقترحته.",
+            "نعم، إذا كانت الصور جميلة.",
+            "لا، تُطلب الموافقة من الأشخاص والمسؤولين."
+          ],
+          "answer": 2,
+          "explanation": "لا يمنحك اقتراح الأداة موافقة نيابة عن شخص آخر.",
+          "source": "decision"
+        }
+      ],
+      "mission": {
+        "title": "خطة رحلة خيالية",
+        "instructions": "اكتب طلبًا لاقتراح نشاط في متحف. حدّد بعده المصدر الذي ستراجع فيه ساعات الزيارة، والشخص المسؤول الذي ستطلب موافقته. لا تستخدم بيانات حقيقية.",
+        "rubric": [
+          "طلب الأفكار واضح.",
+          "حدّدت مصدرًا مسؤولًا عن ساعات الزيارة.",
+          "ميّزت الاقتراح عن الموافقة.",
+          "استخدمت تفاصيل خيالية."
+        ]
+      },
+      "hints": [
+        {
+          "question": "ما الذي يمكنني طلبه؟",
+          "answer": "أسماء أو أفكار أو صياغات تقارنها وتعدّلها بنفسك.",
+          "source": "ideas"
+        },
+        {
+          "question": "أين أراجع الموعد؟",
+          "answer": "في إعلان الجهة المنظمة أو من خلال وسيلة تواصل مناسبة معها بمساعدة شخص مسؤول.",
+          "source": "source"
+        },
+        {
+          "question": "من يمنح الموافقة؟",
+          "answer": "صاحب القرار أو المسؤول عنه؛ لا توافق الأداة نيابة عنه.",
+          "source": "decision"
+        }
+      ]
+    },
+    "ar-Gulf": {
+      "title": "متى أستعين بالذكاء الاصطناعي؟",
+      "subtitle": "اختر المساعدة اللي تناسب المهمة.",
+      "objectives": [
+        "أختار مهمة يفيد فيها اقتراح الأفكار.",
+        "أعرف متى أرجع لمصدر أصلي.",
+        "أحدّد القرار اللي يحتاج شخص مسؤول."
+      ],
+      "scenes": [
+        {
+          "id": "hook",
+          "title": "عندنا معرض!",
+          "narration": "نادي العلوم يجهّز معرض خيالي. نبي اسم جذّاب، وموعد الافتتاح، وموافقة على الصور. نطلب كل هالأشياء من الذكاء الاصطناعي بنفس الطريقة؟"
+        },
+        {
+          "id": "ideas",
+          "title": "أحتاج أفكار",
+          "narration": "للأسماء، نقدر نكتب: اقترح ثلاثة أسماء قصيرة لمعرض تجارب علمية بسيطة. الأداة تعطينا أفكار، وإحنا نختار ونعدّل. اقتراحها مو قرار لازم نتّبعه."
+        },
+        {
+          "id": "source",
+          "title": "أحتاج معلومة مؤكدة",
+          "narration": "بس المعرض متى يفتح؟ نرجع لإعلان الجهة المنظّمة أو نسألها. لو الأداة عطتنا موعد، ما نعتمد عليه لحاله. نطابقه مع المصدر الأصلي."
+        },
+        {
+          "id": "decision",
+          "title": "أحتاج موافقة",
+          "narration": "وننشر صور الزوّار؟ نحتاج الموافقات المناسبة من الأشخاص والمسؤولين، مو جواب من الأداة. في تدريبنا بنستخدم رسومات خيالية بدون صور شخصية."
+        },
+        {
+          "id": "sort",
+          "title": "وش نوع المساعدة؟",
+          "narration": "خلّنا نجرّب: اسم للمعرض؟ أفكار. موعده؟ مصدر أصلي. نشر صور الناس؟ موافقة بشرية. نفس المشروع، لكن كل مهمة لها مساعدة تناسبها."
+        },
+        {
+          "id": "activity",
+          "title": "الحين دورك",
+          "narration": "تخيّل رحلة لمتحف. من يساعدك بفكرة لعبة وقت الزيارة؟ وين تتأكّد من ساعات الزيارة؟ ومن يوافق على روحتك؟ وقّف الفيديو وفكّر."
+        },
+        {
+          "id": "finish",
+          "title": "أنت تختار",
+          "narration": "استعن بالأداة في الأفكار، وتأكّد من المعلومات، وخذ الموافقة من أصحابها. وإذا استخدمت أداة فعلية، اختَر اللي تناسب سنّك بموافقة وليّ أمرك."
+        }
+      ],
+      "reading": [
+        {
+          "id": "ideas",
+          "title": "الأفكار: اقترح واختر",
+          "text": "الأداة تقدر تقترح أسماء أو صياغات. قارنها بهدفك، واختر أو عدّل بنفسك."
+        },
+        {
+          "id": "source",
+          "title": "المعلومة: ارجع لمصدرها",
+          "text": "موعد الفعالية الحقيقية نراجعه في إعلان الجهة المسؤولة. الموعد اللي تذكره الأداة مو تأكيد كافي لحاله."
+        },
+        {
+          "id": "decision",
+          "title": "الموافقة: من صاحبها",
+          "text": "الأداة ما تعطي موافقة بدل الشخص على صورته أو بدل وليّ الأمر على نشاط. خلّ أمثلة التدريب خيالية."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "q1",
+          "question": "تبي اسم لمعرض خيالي. وش تسوي؟",
+          "options": [
+            "أطلب اقتراحات وأختار المناسب.",
+            "أعتبر أول اسم هو الصح الوحيد.",
+            "أرسل أسماء كل الزوّار."
+          ],
+          "answer": 0,
+          "explanation": "هذي مهمة أفكار؛ الأداة تقترح وأنت تقيّم وتختار.",
+          "source": "ideas"
+        },
+        {
+          "id": "q2",
+          "question": "الأداة قالت إن المعرض يوم الخميس. كيف تتأكّد؟",
+          "options": [
+            "أكرّر السؤال لين يعجبني الرد.",
+            "أراجع إعلان الجهة المنظّمة أو أسألها.",
+            "أعتمد على أسلوب الإجابة الواثق."
+          ],
+          "answer": 1,
+          "explanation": "الجهة المنظّمة هي المصدر المسؤول عن الموعد؛ جواب الأداة لحاله مو تأكيد.",
+          "source": "source"
+        },
+        {
+          "id": "q3",
+          "question": "الأداة اقترحت تنشر صور أصحابك. تعتبر هذي موافقة؟",
+          "options": [
+            "إيه، لأنها اقترحت.",
+            "إيه، إذا الصور حلوة.",
+            "لا، الموافقة من الأشخاص والمسؤولين."
+          ],
+          "answer": 2,
+          "explanation": "اقتراح الأداة ما يعطيك موافقة عن شخص ثاني.",
+          "source": "decision"
+        }
+      ],
+      "mission": {
+        "title": "خطة رحلة خيالية",
+        "instructions": "اكتب طلب لأفكار نشاط في متحف. بعدها حدّد المصدر اللي بتراجع فيه ساعات الزيارة، والشخص المسؤول اللي بتطلب موافقته. لا تستخدم بيانات حقيقية.",
+        "rubric": [
+          "طلب الأفكار واضح.",
+          "حدّدت مصدر مسؤول عن ساعات الزيارة.",
+          "فرّقت بين الاقتراح والموافقة.",
+          "استخدمت تفاصيل خيالية."
+        ]
+      },
+      "hints": [
+        {
+          "question": "وش أقدر أطلب؟",
+          "answer": "أسماء أو أفكار أو صياغات تقارنها وتعدّلها بنفسك.",
+          "source": "ideas"
+        },
+        {
+          "question": "وين أتأكّد من الموعد؟",
+          "answer": "في إعلان الجهة المنظّمة أو عبر وسيلة تواصل مناسبة معها بمساعدة شخص مسؤول.",
+          "source": "source"
+        },
+        {
+          "question": "من يوافق؟",
+          "answer": "صاحب القرار أو المسؤول عنه؛ الأداة ما توافق نيابة عنه.",
+          "source": "decision"
+        }
+      ]
+    },
+    "en": {
+      "title": "When should I ask AI for help?",
+      "subtitle": "Match the kind of help to the task.",
+      "objectives": [
+        "Choose a task that benefits from ideas.",
+        "Recognise when to check an original source.",
+        "Identify a decision that belongs to a responsible person."
+      ],
+      "scenes": [
+        {
+          "id": "hook",
+          "title": "Let's plan an exhibition!",
+          "narration": "Our imaginary science club is planning an exhibition. We need a catchy name, the opening time, and permission to use photos. Should we ask AI for all three in the same way?"
+        },
+        {
+          "id": "ideas",
+          "title": "I need ideas",
+          "narration": "For names, we can ask: suggest three short names for an exhibition of simple science experiments. The tool offers possibilities. We choose and improve them. Its suggestion isn't a decision we must follow."
+        },
+        {
+          "id": "source",
+          "title": "I need a confirmed detail",
+          "narration": "But when does the exhibition open? Check the organiser's announcement or ask the organiser. If an AI answer gives a time, don't rely on that alone. Compare it with the original source."
+        },
+        {
+          "id": "decision",
+          "title": "I need permission",
+          "narration": "What about sharing visitors' photos? That needs appropriate permission from the people involved and responsible adults. An AI answer cannot grant it. We'll use imaginary illustrations in this activity."
+        },
+        {
+          "id": "sort",
+          "title": "Choose the right help",
+          "narration": "Quick check! A name? Ideas. Opening time? An original source. Sharing people's photos? Human permission. One project, three different kinds of help."
+        },
+        {
+          "id": "activity",
+          "title": "Your turn",
+          "narration": "Imagine a museum trip. Who could help suggest a game for the visit? Where would you check opening hours? Who decides whether you can go? Pause and make your choices."
+        },
+        {
+          "id": "finish",
+          "title": "You're making the choices",
+          "narration": "Get help with ideas, check information, and ask the right people for permission. Before using a real tool, ask a parent about one that's appropriate for your age."
+        }
+      ],
+      "reading": [
+        {
+          "id": "ideas",
+          "title": "Ideas: suggest, then choose",
+          "text": "A tool can suggest names or wording. Compare suggestions with your goal, then choose or improve them yourself."
+        },
+        {
+          "id": "source",
+          "title": "Information: check its source",
+          "text": "For a real event's opening time, check the organiser's announcement. A time appearing in an AI answer is not enough to confirm it."
+        },
+        {
+          "id": "decision",
+          "title": "Permission: ask the right person",
+          "text": "An AI answer cannot replace someone's permission to use their photo or a parent's permission for an activity. Keep practice examples imaginary."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "q1",
+          "question": "You need a name for an imaginary exhibition. What could you do?",
+          "options": [
+            "Ask for suggestions and choose a suitable one.",
+            "Treat the first suggestion as the only correct name.",
+            "Upload a list of every visitor's name."
+          ],
+          "answer": 0,
+          "explanation": "This is an ideas task. The tool suggests; you judge and choose.",
+          "source": "ideas"
+        },
+        {
+          "id": "q2",
+          "question": "An AI answer says the exhibition is on Thursday. How do you check?",
+          "options": [
+            "Repeat the question until the answer sounds reassuring.",
+            "Check the organiser's announcement or ask the organiser.",
+            "Trust how confident the answer sounds."
+          ],
+          "answer": 1,
+          "explanation": "The organiser is responsible for the schedule. An AI answer alone does not confirm it.",
+          "source": "source"
+        },
+        {
+          "id": "q3",
+          "question": "An AI tool suggests sharing your friends' photos. Is that permission?",
+          "options": [
+            "Yes, because the tool suggested it.",
+            "Yes, if the photos look good.",
+            "No. Permission comes from the people involved and responsible adults."
+          ],
+          "answer": 2,
+          "explanation": "A suggestion cannot give permission on someone else's behalf.",
+          "source": "decision"
+        }
+      ],
+      "mission": {
+        "title": "Plan an imaginary museum trip",
+        "instructions": "Write a prompt asking for a museum activity idea. Then name where you would check opening hours and the responsible person you would ask for permission. Use no real personal details.",
+        "rubric": [
+          "My ideas prompt is clear.",
+          "I identified an appropriate source for opening hours.",
+          "I distinguished a suggestion from permission.",
+          "I used imaginary details."
+        ]
+      },
+      "hints": [
+        {
+          "question": "What could I ask for?",
+          "answer": "Names, ideas or wording that you compare and improve yourself.",
+          "source": "ideas"
+        },
+        {
+          "question": "Where do I check the time?",
+          "answer": "Use the organiser's announcement or an appropriate way of contacting them with a responsible adult.",
+          "source": "source"
+        },
+        {
+          "question": "Who can give permission?",
+          "answer": "The person who owns the decision, or the adult responsible for it. A tool cannot consent for them.",
+          "source": "decision"
+        }
+      ]
+    }
+  }
+}
