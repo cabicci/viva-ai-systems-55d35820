@@ -34,7 +34,6 @@ jobs:
         run: |
           python -c 'import json,os; r=json.load(open("editorial-request.json")); assert r["level"]=="level-1" and r["publish"] is False and r["generateMedia"] is False and int(os.environ["LESSON_NUMBER"]) in r["lessons"]'
           python -m py_compile scripts/generate-editorial.py
-          echo "LESSON_FOLDER=$(printf 'lesson-%02d' \"$LESSON_NUMBER\")" >> "$GITHUB_ENV"
       - name: Write and review localized text from controlled materials
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -47,4 +46,4 @@ jobs:
           name: kids-editorial-lesson-${{ matrix.lesson }}-${{ github.run_id }}
           retention-days: 30
           if-no-files-found: warn
-          path: experiments/masaarat-kids/curriculum/level-1/${{ env.LESSON_FOLDER }}/
+          path: experiments/masaarat-kids/curriculum/level-1/

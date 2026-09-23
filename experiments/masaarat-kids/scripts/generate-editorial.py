@@ -64,11 +64,11 @@ REVIEW_SCHEMA={"type":"OBJECT","properties":{"passed":{"type":"BOOLEAN"},"issues
 def save(path,data):
  path.parent.mkdir(parents=True,exist_ok=True)
  path.write_bytes((json.dumps(data,ensure_ascii=False,indent=2)+"\n").encode())
-def request(prompt,temperature=.4):
+def request(prompt,temperature=.4,schema=None):
  key=os.environ.get("GEMINI_API_KEY")
  if not key: raise RuntimeError("Editorial credential unavailable")
  payload={"contents":[{"role":"user","parts":[{"text":prompt}]}],"generationConfig":{"temperature":temperature,"responseMimeType":"application/json","maxOutputTokens":12288,"thinkingConfig":{"thinkingBudget":1024}}}
- payload["generationConfig"]["responseSchema"]=REVIEW_SCHEMA if temperature==0 else CONTENT_SCHEMA
+ payload["generationConfig"]["responseSchema"]=schema if schema is not None else (REVIEW_SCHEMA if temperature==0 else CONTENT_SCHEMA)
  req=urllib.request.Request("https://generativelanguage.googleapis.com/v1beta/models/"+MODEL+":generateContent",data=json.dumps(payload).encode(),headers={"Content-Type":"application/json","x-goog-api-key":key})
  for attempt in range(3):
   try:
@@ -111,11 +111,21 @@ def validate(d,locale):
  if locale=="ar-MSA": assert not re.search(r"(دلوقتي|عايز|إزاي|كده|مش\s)",text),"Dialect leaked into MSA"
  if locale=="ar-Gulf": assert not re.search(r"(دلوقتي|عايز|إزاي|كده|ما تكتبش)",text),"Egyptian leaked into Gulf"
  return len(text.split())
+
+def shorten_narration(d,locale):
+ limit=240 if locale=="en" else 210
+ if sum(len(x["narration"].split()) for x in d["scenes"])<=limit:return d
+ schema={"type":"OBJECT","properties":{"narration":{"type":"ARRAY","minItems":7,"maxItems":7,"items":{"type":"STRING"}}},"required":["narration"]}
+ result=request("Edit ONLY the seven narration paragraphs below. Preserve their order, teaching facts, meaning and locale "+locale+". Each paragraph must contain 18 to 24 words, maximum 168 words total. Short natural sentences, not telegraphic. The lesson's reading cards carry extra details. Return narration array only. Text: "+json.dumps([x["narration"] for x in d["scenes"]],ensure_ascii=False),schema=schema)
+ assert len(result["narration"])==7
+ for scene,narration in zip(d["scenes"],result["narration"]):scene["narration"]=narration
+ return d
+
 def draft(prompt,locale,previous=None,issues=None):
  full=prompt
  if previous is not None: full+="\nRevise this draft to correct the specific problems while preserving all correct facts:\n"+json.dumps(previous,ensure_ascii=False)+"\nProblems:\n"+json.dumps(issues,ensure_ascii=False)
  for correction in range(2):
-  d=request(full)
+  d=shorten_narration(request(full),locale)
   try: validate(d,locale);return d
   except (AssertionError,KeyError,TypeError) as e:
    if correction: raise
@@ -131,7 +141,7 @@ def run(number):
   digest=hashlib.sha256(prompt.encode()).hexdigest();path=folder/(locale+".json");receipt=folder/(locale+".receipt.json")
   prompts[locale]=prompt
   if path.exists() and receipt.exists() and json.loads(receipt.read_text())["promptSha256"]==digest:
-   d=json.loads(path.read_text(encoding="utf-8"))
+   d=shorten_narration(json.loads(path.read_text(encoding="utf-8")),locale);save(path,d)
    try: validate(d,locale)
    except (AssertionError,KeyError,TypeError) as error:
     d=draft(prompt,locale,d,[str(error)]);save(path,d)
