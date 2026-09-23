@@ -77,7 +77,7 @@ def review(locale):
     error=word_error(expected,transcript)
     flags=sorted({name for d in differences for name in d["scenes"]})
     report={"locale":locale,"model":MODEL,"method":"independent full-recording transcription without reference script, then word comparison","status":"automated-review-complete","audioSegmentSha256":hashes,"normalizedWordErrorRate":error,"differences":differences,"expectedText":expected,**result,"limitations":["Automated transcription can make errors; differences are review cues, not verified defects.","Human pronunciation and dialect approval remain pending."]}
-    (BASE/"evidence"/("audio-review-"+locale+".json")).write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+    (BASE/"evidence"/("audio-review-"+locale+".json")).write_text(json.dumps(report,ensure_ascii=False,indent=2)+chr(10),encoding="utf-8")
     print(locale+": complete recording reviewed; normalized word error="+str(error),flush=True)
     return {"locale":locale,"normalizedWordErrorRate":error,"scenesWithDifferences":flags,"audibleProblems":result["audibleProblems"]}
 if __name__=="__main__":

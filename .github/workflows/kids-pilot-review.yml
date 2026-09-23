@@ -43,10 +43,12 @@ jobs:
           done
           gh run download 35871971135 --repo cabicci/viva-ai-systems-55d35820 --name kids-pilot-en-35871971135-1 --dir "$RUNNER_TEMP/kids-package/en"
           python scripts/import-artifacts.py "$RUNNER_TEMP/kids-package" --run-id 35867880239 --source-sha f065101dfc4298095b1034a8b7c7993aace13bcf --recovery-run-id 35871971135 --recovery-source-sha 1dcc0c08231e5e8d185542c7a32e6030f7aa085f
-      - name: Independently transcribe and review the existing audio
+      - name: Restore and verify completed independent audio reviews
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python -u scripts/review-audio.py
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh run download 35875690306 --repo cabicci/viva-ai-systems-55d35820 --name kids-audio-review-35875690306 --dir evidence
+          python scripts/reuse-audio-review.py
       - name: Build the complete offline review package
         run: |
           bun run build
