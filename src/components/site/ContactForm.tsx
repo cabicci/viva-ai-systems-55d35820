@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
+  contactCountryLanguage,
   getCallingCode,
   isCountryCode,
   normalizePhoneNumber,
@@ -48,16 +49,17 @@ export function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
+  const countryLanguage = contactCountryLanguage(locale);
   const countries = useMemo(() => {
-    const displayNames = new Intl.DisplayNames([locale], { type: "region" });
+    const displayNames = new Intl.DisplayNames([countryLanguage], { type: "region" });
     return getCountries()
       .map((code) => ({
         code,
         name: displayNames.of(code) ?? code,
         callingCode: getCallingCode(code),
       }))
-      .sort((left, right) => left.name.localeCompare(right.name, locale));
-  }, [locale]);
+      .sort((left, right) => left.name.localeCompare(right.name, countryLanguage));
+  }, [countryLanguage]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
