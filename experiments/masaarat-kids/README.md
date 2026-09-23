@@ -31,3 +31,9 @@ Technical generation does not certify pronunciation or spoken accuracy. Listenin
 WebVTT is aligned to scene boundaries using source scripts, not forced word-level alignment.
 The owner can review content, mascot and motion in this isolated prototype. Child-education review and provider/privacy setup are separate gates before child-facing generative use.
 The adult production workflow, main branch, platform routes, video registry, database and billing are unchanged.
+
+## Verified delivery ? 23 September 2026
+All four narrated videos have been imported into the local review page. Eight desktop/mobile browser checks and four playback checks passed.
+Arabic outputs: run 35867880239, source f065101dfc4298095b1034a8b7c7993aace13bcf. English output: run 35871971135, source 1dcc0c08231e5e8d185542c7a32e6030f7aa085f.
+English recovery reused ten completed segments after correcting transcript framing and a transient provider timeout.
+The import receipt records both production sources. Listening review is still pending; generative RAG remains disconnected.

@@ -6,6 +6,8 @@ p=argparse.ArgumentParser()
 p.add_argument("artifact_root",type=Path)
 p.add_argument("--run-id",required=True)
 p.add_argument("--source-sha",required=True)
+p.add_argument("--recovery-run-id")
+p.add_argument("--recovery-source-sha")
 args=p.parse_args()
 media=json.loads((BASE/"content/media.json").read_text(encoding="utf-8"))
 staged=[]
@@ -35,6 +37,10 @@ for locale,root,report,entry in staged:
     shutil.copy2(report,BASE/"evidence"/report.name)
     media[locale]=entry
 (BASE/"content/media.json").write_bytes((json.dumps(media,indent=2)+"\n").encode())
-receipt={"runId":args.run_id,"sourceSha":args.source_sha,"locales":list(media),"status":"downloaded-and-hashes-verified"}
+productions=[{"runId":args.run_id,"sourceSha":args.source_sha,"locales":["ar-EG","ar-MSA","ar-Gulf"] if args.recovery_run_id else list(media)}]
+if args.recovery_run_id:
+    assert args.recovery_source_sha, "Recovery source SHA required"
+    productions.append({"runId":args.recovery_run_id,"sourceSha":args.recovery_source_sha,"locales":["en"]})
+receipt={"productions":productions,"status":"downloaded-and-hashes-verified"}
 (BASE/"evidence/production-import.json").write_bytes((json.dumps(receipt,indent=2)+"\n").encode())
 print("Imported four verified narrated videos, audio segments, captions, and stills.")
