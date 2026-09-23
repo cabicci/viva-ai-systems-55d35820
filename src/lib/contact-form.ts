@@ -46,6 +46,10 @@ export function fallbackCountryForLocale(locale: SupportedLocale): CountryCode {
   return "GB";
 }
 
+export function contactCountryLanguage(locale: SupportedLocale): "ar" | "en" {
+  return locale === "en" ? "en" : "ar";
+}
+
 export function resolvePhoneCountry(
   ipCountryCode: string | undefined,
   locale: SupportedLocale,

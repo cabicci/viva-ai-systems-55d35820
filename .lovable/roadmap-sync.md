@@ -4,7 +4,7 @@
 date: 2026-09-23
 scope: ui
 source: user
-summary: PR #49 Pro 71 Billing fixtures and PR #48 localized HubSpot contact form; both database notes updated on 2026-09-23
+summary: PR #49 Pro 71 fixtures, PR #48 contact form, and contact ar-MSA locale hotfix; database notes updated on 2026-09-23
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

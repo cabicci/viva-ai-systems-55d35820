@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import {
   buildHubSpotSubmission,
+  contactCountryLanguage,
   contactFormInputSchema,
   fallbackCountryForLocale,
   normalizePhoneNumber,
@@ -23,6 +24,18 @@ const validInput = contactFormInputSchema.parse({
 });
 
 describe("contact form phone localization", () => {
+  it.each([
+    ["ar-EG", "ar"],
+    ["ar-MSA", "ar"],
+    ["ar-Gulf", "ar"],
+    ["en", "en"],
+  ] as const)("uses a valid country-name language for %s", (locale, expected) => {
+    const language = contactCountryLanguage(locale);
+    expect(language).toBe(expected);
+    expect(() => new Intl.DisplayNames([language], { type: "region" })).not.toThrow();
+    expect(() => "Egypt".localeCompare("United Kingdom", language)).not.toThrow();
+  });
+
   it("uses the request country when it is a supported phone country", () => {
     expect(resolvePhoneCountry("SA", "ar-EG")).toBe("SA");
     expect(resolvePhoneCountry("eg", "en")).toBe("EG");
