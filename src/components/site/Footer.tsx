@@ -30,6 +30,9 @@ export function Footer() {
           <span className="font-mono opacity-70">{t("footer.version")}</span>
         </nav>
       </div>
+      <div className="container mx-auto flex justify-center px-4 pb-8">
+        <div className="trustedsite-trustmark" data-type="202" data-width="120" data-height="50" />
+      </div>
     </footer>
   );
 }
