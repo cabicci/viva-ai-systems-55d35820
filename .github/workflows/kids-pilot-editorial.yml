@@ -1,0 +1,49 @@
+name: Masaarat Kids - level 1 editorial content
+on:
+  push:
+    branches: [feature/masaarat-kids-pilot]
+    paths: [experiments/masaarat-kids/editorial-request.json]
+permissions:
+  contents: read
+concurrency:
+  group: masaarat-kids-editorial
+  cancel-in-progress: false
+jobs:
+  write:
+    if: github.repository == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/feature/masaarat-kids-pilot'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        lesson: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    defaults:
+      run:
+        working-directory: experiments/masaarat-kids
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12"
+      - name: Check request scope
+        env:
+          LESSON_NUMBER: ${{ matrix.lesson }}
+        run: |
+          python -c 'import json,os; r=json.load(open("editorial-request.json")); assert r["level"]=="level-1" and r["publish"] is False and r["generateMedia"] is False and int(os.environ["LESSON_NUMBER"]) in r["lessons"]'
+          python -m py_compile scripts/generate-editorial.py
+      - name: Write and review localized text from controlled materials
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          LESSON_NUMBER: ${{ matrix.lesson }}
+        run: python -u scripts/generate-editorial.py --lesson "$LESSON_NUMBER"
+      - name: Preserve completed editorial drafts
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: kids-editorial-lesson-${{ matrix.lesson }}-${{ github.run_id }}
+          retention-days: 30
+          if-no-files-found: warn
+          path: experiments/masaarat-kids/curriculum/level-1/
