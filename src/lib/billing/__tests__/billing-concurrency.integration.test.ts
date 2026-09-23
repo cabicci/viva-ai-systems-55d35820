@@ -48,7 +48,7 @@ describe.skipIf(!ENABLED)("billing concurrency proofs (disposable DB)", () => {
        assistant_runtime_period_quota, assistant_runtime_period_days,
        mission_evaluation_enabled, reveal_answer_enabled, wow_path_enabled, policy_json, published_at)
       VALUES ('conc_test', 1, 'published', now(), 'curriculum_snapshot',
-        74, true, true, true, NULL, 1, NULL, NULL, true, true, true, '{}'::jsonb, now())
+        71, false, true, true, NULL, 1, NULL, NULL, true, true, true, '{}'::jsonb, now())
       ON CONFLICT (policy_key, version_number)
       DO UPDATE SET assistant_runtime_general_monthly_quota = 1`);
 
