@@ -21,9 +21,21 @@ export interface RateLimitResult {
   resetAt: string;
 }
 
-export async function enforceRateLimit(
-  opts: RateLimitOptions,
-): Promise<RateLimitResult> {
+export class RateLimitUnavailableError extends Error {
+  constructor() {
+    super("الخدمة غير متاحة مؤقتًا. حاول تاني بعد شوية.");
+    this.name = "RateLimitUnavailableError";
+  }
+}
+
+export class RateLimitExceededError extends Error {
+  constructor(minutes: number) {
+    super(`وصلت للحد الأقصى من المحاولات. جرّب تاني بعد حوالي ${minutes} دقيقة.`);
+    this.name = "RateLimitExceededError";
+  }
+}
+
+export async function enforceRateLimit(opts: RateLimitOptions): Promise<RateLimitResult> {
   const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
   const { data, error } = await supabaseAdmin.rpc("consume_rate_limit", {
     p_user_id: opts.userId,
@@ -36,7 +48,7 @@ export async function enforceRateLimit(
     // Fail CLOSED for cost-sensitive AI buckets — better to surface a
     // transient error than to let runaway cost through on DB instability.
     console.error("[rate-limit] consume_rate_limit failed:", error);
-    throw new Error("الخدمة غير متاحة مؤقتًا. حاول تاني بعد شوية.");
+    throw new RateLimitUnavailableError();
   }
 
   const row = Array.isArray(data) ? data[0] : data;
@@ -49,9 +61,7 @@ export async function enforceRateLimit(
   if (!result.allowed) {
     const resetMs = new Date(result.resetAt).getTime() - Date.now();
     const minutes = Math.max(1, Math.ceil(resetMs / 60000));
-    throw new Error(
-      `وصلت للحد الأقصى من المحاولات. جرّب تاني بعد حوالي ${minutes} دقيقة.`,
-    );
+    throw new RateLimitExceededError(minutes);
   }
 
   return result;

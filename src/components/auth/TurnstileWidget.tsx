@@ -49,9 +49,19 @@ type Props = {
   onVerify: (token: string) => void;
   onExpire?: () => void;
   onError?: () => void;
+  language?: string;
+  theme?: "light" | "dark" | "auto";
+  resetKey?: number;
 };
 
-export function TurnstileWidget({ onVerify, onExpire, onError }: Props) {
+export function TurnstileWidget({
+  onVerify,
+  onExpire,
+  onError,
+  language = "ar",
+  theme = "dark",
+  resetKey = 0,
+}: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const widgetIdRef = useRef<string | null>(null);
 
@@ -62,8 +72,8 @@ export function TurnstileWidget({ onVerify, onExpire, onError }: Props) {
         if (cancelled || !containerRef.current || !window.turnstile) return;
         widgetIdRef.current = window.turnstile.render(containerRef.current, {
           sitekey: TURNSTILE_SITE_KEY,
-          theme: "dark",
-          language: "ar",
+          theme,
+          language,
           callback: (token) => onVerify(token),
           "expired-callback": () => onExpire?.(),
           "error-callback": () => onError?.(),
@@ -82,6 +92,12 @@ export function TurnstileWidget({ onVerify, onExpire, onError }: Props) {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (resetKey > 0 && widgetIdRef.current && window.turnstile) {
+      window.turnstile.reset(widgetIdRef.current);
+    }
+  }, [resetKey]);
 
   return <div ref={containerRef} className="flex justify-center" />;
 }
