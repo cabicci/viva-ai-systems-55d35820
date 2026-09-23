@@ -2,7 +2,7 @@
   "revision": "r2",
   "productionRun": 35881755433,
   "productionSourceSha": "7b82e2646864c51ff6a10ba38182b359e954c8d3",
-  "status": "media-production-running",
+  "status": "ready-for-owner-review",
   "independentIllustrations": 4,
   "scriptWords": {
     "ar-EG": 174,
@@ -13,5 +13,14 @@
   "pageChecks": "8 desktop/mobile locale checks passed before media import",
   "spokenReview": "pending; R1 audio reviews do not apply",
   "ownerFeedback": "shorter lesson, independent Masaarat graphics, more lively delivery",
-  "productionDeployment": false
+  "productionDeployment": false,
+  "durationsSeconds": {
+    "ar-EG": 103,
+    "ar-MSA": 120.29166666666667,
+    "ar-Gulf": 112.45833333333333,
+    "en": 103
+  },
+  "playbackChecks": "all four passed on Dell",
+  "packageRun": 35882316117,
+  "humanListeningReview": "pending"
 }

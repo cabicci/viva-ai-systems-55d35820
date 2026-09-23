@@ -40,3 +40,5 @@ The import receipt records both production sources. Listening review is still pe
 
 ## Revision 2 ? owner feedback
 The original four-minute videos and video-still lesson gallery were rejected for length and presentation. Revision 2 uses short localized challenge scripts, animated visual examples, and four independent 1900x1000 explanatory graphics following the Masaarat contextual-card method. The page presents three key steps; extra explanation is expandable and source links open it. New narration and rendering run in GitHub Actions; R1 audio reviews do not apply to this revision.
+
+Revision 2 delivered on Dell: production run 35881755433, source 7b82e2646864c51ff6a10ba38182b359e954c8d3. Egyptian 103 seconds, MSA 120 seconds, Gulf 113 seconds, English 103 seconds. All four imported media files passed playback checks; all eight locale/viewport page checks passed. The complete offline package is E:/Masaarat/Pilot-Review/Masaarat-Kids-R2/index.html; GitHub package run 35882316117. Native-speaker listening and owner acceptance remain pending. R1 audio-review files are historical and do not certify revision 2.
