@@ -22,11 +22,13 @@ const css=compiler.build(scanner.scan())+`\n@font-face{font-family:Cairo;src:url
 const course=JSON.parse(await readFile(resolve(base,'editorial-review/content.json'),'utf8'));
 const images:any={};for(const l of ['ar-EG','ar-MSA','ar-Gulf','en'])images[l]='data:image/png;base64,'+(await readFile(resolve(base,`public/generated/illustrations/${l}.png`))).toString('base64');
 images['lesson-02']={};for(const l of ['ar-EG','ar-MSA','ar-Gulf','en'])images['lesson-02'][l]='data:image/png;base64,'+(await readFile(resolve(base,`public/generated/illustrations/lesson-02/${l}.png`))).toString('base64');
+for(let n=3;n<=12;n++){const k='lesson-'+String(n).padStart(2,'0');images[k]={};for(const l of ['ar-EG','ar-MSA','ar-Gulf','en'])images[k][l]='data:image/png;base64,'+(await readFile(resolve(base,`public/generated/illustrations/${k}/${l}.png`))).toString('base64');}
 const media=JSON.parse(await readFile(resolve(base,'content/media.json'),'utf8'));
+const level1Media=JSON.parse(await readFile(resolve(base,'content/media-level1.json'),'utf8'));
 const logo='data:image/png;base64,'+(await readFile(resolve(base,'public/brand/logo.png'))).toString('base64');
 const js=await result.outputs[0].text();
 for(const localMedia of [true,false]){
- const data=JSON.stringify({course,images,media,logo,localMedia}).replaceAll('<','\\u003c');
+ const data=JSON.stringify({course,images,media,level1Media,logo,localMedia}).replaceAll('<','\\u003c');
  const html=`<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Masaarat Kids</title><style>${css}</style></head><body><div id="root"></div><script type="application/json" id="data">${data}</script><script>${js.replaceAll('</script','<\\/script')}</script></body></html>`;
  await writeFile(resolve(base,'editorial-review',localMedia?'index.html':'portable.html'),html);
 }
