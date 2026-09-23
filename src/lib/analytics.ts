@@ -191,7 +191,7 @@ export function applyAnalyticsConsent(consent: AnalyticsConsent): void {
   doc.getElementById(META_SCRIPT_ID)?.remove();
 }
 
-export function trackPageViewOnce(url: string): boolean {
+export function trackPageViewOnce(url: string, title = browserDocument()?.title ?? ""): boolean {
   if (!analyticsGranted) return false;
 
   const win = browserWindow();
@@ -205,7 +205,7 @@ export function trackPageViewOnce(url: string): boolean {
     event: "masaarat_page_view",
     page_location: absoluteUrl.href,
     page_path: absoluteUrl.pathname + absoluteUrl.search,
-    page_title: browserDocument()?.title ?? "",
+    page_title: title,
   });
   win.fbq?.("track", "PageView");
   return true;
