@@ -28,13 +28,22 @@ def run(locale):
                     "generationConfig":{"responseModalities":["AUDIO"],"speechConfig":{"voiceConfig":{"prebuiltVoiceConfig":{"voiceName":"Charon"}}}}}
             request = urllib.request.Request("https://generativelanguage.googleapis.com/v1beta/models/" + model + ":generateContent",
                         data=json.dumps(body).encode(), headers={"Content-Type":"application/json","x-goog-api-key":key})
-            try:
-                with urllib.request.urlopen(request, timeout=120) as response:
-                    data = json.load(response)
-            except urllib.error.HTTPError as error:
-                raise SystemExit("TTS stopped: HTTP " + str(error.code) + ". No credential or response body logged.")
-            except urllib.error.URLError:
-                raise SystemExit("TTS stopped: network error.")
+            for attempt in range(3):
+                try:
+                    with urllib.request.urlopen(request, timeout=120) as response:
+                        data = json.load(response)
+                    break
+                except urllib.error.HTTPError as error:
+                    if error.code not in (429, 500, 502, 503, 504) or attempt == 2:
+                        raise SystemExit("TTS stopped: HTTP " + str(error.code) + ". No credential or response body logged.")
+                    retry_after = error.headers.get("Retry-After", "")
+                    delay = max(60 * (attempt + 1), int(retry_after) if retry_after.isdigit() else 0)
+                    if delay > 300:
+                        raise SystemExit("TTS stopped: provider requested a longer wait; resume later.")
+                    print("Temporary provider limit; waiting before retry.", flush=True)
+                    time.sleep(delay)
+                except urllib.error.URLError:
+                    raise SystemExit("TTS stopped: network error.")
             candidate = (data.get("candidates") or [{}])[0]
             if candidate.get("finishReason") not in (None, "STOP"):
                 raise SystemExit("TTS stopped: provider did not approve this segment. Review required; no automatic rewriting.")
