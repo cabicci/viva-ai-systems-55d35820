@@ -52,4 +52,5 @@ for locale in LOCALES:
  (OUT/(locale+".md")).write_bytes(("\n".join(lines)+"\n").encode())
 print(json.dumps(counts))
 
+subprocess.run(["bun","scripts/illustrate-lesson-02.ts"],cwd=BASE,check=True)
 subprocess.run(["bun","scripts/build-platform-review.ts"],cwd=BASE,check=True)
