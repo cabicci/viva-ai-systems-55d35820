@@ -457,7 +457,7 @@ describe.skipIf(!ENABLED)("paid AI quota alignment — disposable DB", () => {
        assistant_runtime_per_lesson_quota,assistant_runtime_general_monthly_quota,
        mission_evaluation_enabled,reveal_answer_enabled,wow_path_enabled,policy_json,published_at)
       VALUES ('quota_align_legacy',1,'published',now(),'curriculum_snapshot',
-        74,true,true,true,NULL,272,true,true,true,'{}'::jsonb,now())
+        71,false,true,true,NULL,272,true,true,true,'{}'::jsonb,now())
       ON CONFLICT (policy_key,version_number) DO NOTHING;
       INSERT INTO billing.plan_versions
         (plan_id,entitlement_policy_version_id,version_number,billing_interval,

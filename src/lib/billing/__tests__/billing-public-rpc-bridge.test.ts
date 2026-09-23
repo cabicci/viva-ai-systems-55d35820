@@ -265,7 +265,7 @@ describe.skipIf(!ENABLED)("public billing RPC bridge — disposable DB", () => {
        assistant_runtime_period_quota, assistant_runtime_period_days,
        mission_evaluation_enabled, reveal_answer_enabled, wow_path_enabled, policy_json, published_at)
       VALUES ('bridge_public_v1', 1, 'published', now(), 'curriculum_snapshot',
-        74, true, true, true, NULL, ${quota}, NULL, NULL, true, true, true, '{}'::jsonb, now())
+        71, false, true, true, NULL, ${quota}, NULL, NULL, true, true, true, '{}'::jsonb, now())
       ON CONFLICT (policy_key, version_number)
       DO UPDATE SET assistant_runtime_general_monthly_quota = ${quota}`);
 
