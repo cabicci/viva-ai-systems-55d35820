@@ -39,6 +39,9 @@ export function Navbar() {
       <Link to="/pricing" search={localeSearch()} className="hover:text-foreground transition">
         {t("nav.pricing")}
       </Link>
+      <Link to="/contact" search={localeSearch()} className="hover:text-foreground transition">
+        {t("nav.contact")}
+      </Link>
     </>
   );
 
@@ -109,6 +112,11 @@ export function Navbar() {
                 <SheetClose asChild>
                   <Link to="/pricing" search={localeSearch()}>
                     {t("nav.pricing")}
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link to="/contact" search={localeSearch()}>
+                    {t("nav.contact")}
                   </Link>
                 </SheetClose>
               </nav>

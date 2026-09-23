@@ -1,7 +1,14 @@
 import { getUiString } from "@/lib/locale/ui-strings";
 import type { SupportedLocale } from "./types";
 
-export type PublicRouteMetaKind = "home" | "pricing" | "terms" | "privacy" | "login" | "root";
+export type PublicRouteMetaKind =
+  | "home"
+  | "pricing"
+  | "terms"
+  | "privacy"
+  | "contact"
+  | "login"
+  | "root";
 
 export type RouteMetaTag =
   | { title: string }
@@ -38,6 +45,10 @@ const META_KEYS: Record<
   privacy: {
     title: "meta.public.privacy.title",
     description: "meta.public.privacy.description",
+  },
+  contact: {
+    title: "meta.public.contact.title",
+    description: "meta.public.contact.description",
   },
   login: {
     title: "meta.public.login.title",

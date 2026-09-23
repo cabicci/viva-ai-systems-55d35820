@@ -3,10 +3,7 @@ import { useRouterState } from "@tanstack/react-router";
 import { LocaleDocumentSync } from "@/components/locale/LocaleDocumentSync";
 import { readLocaleCookie } from "./locale-cookie";
 import { LocaleProvider } from "./locale-context";
-import {
-  persistValidLocaleCookie,
-  readUrlLocaleFromHref,
-} from "./locale-search";
+import { persistValidLocaleCookie, readUrlLocaleFromHref } from "./locale-search";
 import { isSupportedLocale } from "./resolve-locale";
 import { resolveRouterEffectiveLocale } from "./resolve-router-locale";
 import { DEFAULT_LOCALE, type SupportedLocale } from "./types";
@@ -45,9 +42,7 @@ export function LocaleRouterProvider({
     if (routerSearchLocale) return routerSearchLocale;
     return serverUrlLocale;
   }, [locationHref, routerSearchLocale, serverUrlLocale]);
-  const [cookieLocale, setCookieLocale] = useState(
-    () => serverCookieLocale ?? readLocaleCookie(),
-  );
+  const [cookieLocale, setCookieLocale] = useState(() => serverCookieLocale ?? readLocaleCookie());
 
   const effectiveLocale = useMemo(
     () =>
@@ -80,6 +75,7 @@ export function LocaleRouterProvider({
       cookieLocale={cookieLocale}
       initialLocale={initialLocale}
       effectiveLocale={effectiveLocale}
+      countryCode={serverCountryCode}
       onLocalePersisted={handleLocalePersisted}
     >
       <LocaleDocumentSync />

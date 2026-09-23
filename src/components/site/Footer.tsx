@@ -15,6 +15,9 @@ export function Footer() {
           <Link to="/pricing" search={localeSearch()} className="hover:text-foreground transition">
             {t("nav.pricing")}
           </Link>
+          <Link to="/contact" search={localeSearch()} className="hover:text-foreground transition">
+            {t("nav.contact")}
+          </Link>
           <Link to="/privacy" search={localeSearch()} className="hover:text-foreground transition">
             {t("footer.privacy")}
           </Link>

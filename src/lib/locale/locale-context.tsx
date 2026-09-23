@@ -9,16 +9,12 @@ import {
 } from "react";
 import { persistValidLocaleCookie } from "./locale-search";
 import { resolvePublicLocale } from "./resolve-public-locale";
-import {
-  DEFAULT_LOCALE,
-  LOCALE_META,
-  type LocaleDirection,
-  type SupportedLocale,
-} from "./types";
+import { DEFAULT_LOCALE, LOCALE_META, type LocaleDirection, type SupportedLocale } from "./types";
 
 export interface LocaleContextValue {
   locale: SupportedLocale;
   setLocale: (locale: SupportedLocale) => void;
+  countryCode?: string;
   lang: string;
   dir: LocaleDirection;
   displayName: string;
@@ -32,6 +28,7 @@ type LocaleProviderProps = {
   cookieLocale?: string;
   initialLocale?: SupportedLocale;
   effectiveLocale?: SupportedLocale;
+  countryCode?: string;
   onLocalePersisted?: (locale: SupportedLocale) => void;
 };
 
@@ -41,13 +38,12 @@ export function LocaleProvider({
   cookieLocale,
   initialLocale,
   effectiveLocale,
+  countryCode,
   onLocalePersisted,
 }: LocaleProviderProps) {
   const derivedLocale = useMemo(
     () =>
-      effectiveLocale ??
-      initialLocale ??
-      resolvePublicLocale({ urlLocale, cookieLocale }).locale,
+      effectiveLocale ?? initialLocale ?? resolvePublicLocale({ urlLocale, cookieLocale }).locale,
     [effectiveLocale, initialLocale, urlLocale, cookieLocale],
   );
 
@@ -73,15 +69,14 @@ export function LocaleProvider({
     return {
       locale,
       setLocale,
+      countryCode,
       lang: meta.lang,
       dir: meta.dir,
       displayName: meta.displayName,
     };
-  }, [locale, setLocale]);
+  }, [countryCode, locale, setLocale]);
 
-  return (
-    <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>
-  );
+  return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>;
 }
 
 export function useLocale(): LocaleContextValue {

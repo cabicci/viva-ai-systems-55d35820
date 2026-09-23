@@ -23,6 +23,7 @@ import { Route as ImageGalleryRouteImport } from './routes/image-gallery'
 import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as CurriculumRouteImport } from './routes/curriculum'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BuildLogsRouteImport } from './routes/build-logs'
 import { Route as AssistantRuntimeRouteImport } from './routes/assistant-runtime'
 import { Route as AnalyticsRouteImport } from './routes/analytics'
@@ -106,6 +107,11 @@ const CurriculumRoute = CurriculumRouteImport.update({
   path: '/curriculum',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BuildLogsRoute = BuildLogsRouteImport.update({
   id: '/build-logs',
   path: '/build-logs',
@@ -174,6 +180,7 @@ export interface FileRoutesByFullPath {
   '/analytics': typeof AnalyticsRoute
   '/assistant-runtime': typeof AssistantRuntimeRoute
   '/build-logs': typeof BuildLogsRoute
+  '/contact': typeof ContactRoute
   '/curriculum': typeof CurriculumRoute
   '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
@@ -202,6 +209,7 @@ export interface FileRoutesByTo {
   '/analytics': typeof AnalyticsRoute
   '/assistant-runtime': typeof AssistantRuntimeRoute
   '/build-logs': typeof BuildLogsRoute
+  '/contact': typeof ContactRoute
   '/curriculum': typeof CurriculumRoute
   '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
@@ -230,6 +238,7 @@ export interface FileRoutesById {
   '/analytics': typeof AnalyticsRoute
   '/assistant-runtime': typeof AssistantRuntimeRoute
   '/build-logs': typeof BuildLogsRoute
+  '/contact': typeof ContactRoute
   '/curriculum': typeof CurriculumRoute
   '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
@@ -260,6 +269,7 @@ export interface FileRouteTypes {
     | '/analytics'
     | '/assistant-runtime'
     | '/build-logs'
+    | '/contact'
     | '/curriculum'
     | '/dashboard'
     | '/forgot-password'
@@ -288,6 +298,7 @@ export interface FileRouteTypes {
     | '/analytics'
     | '/assistant-runtime'
     | '/build-logs'
+    | '/contact'
     | '/curriculum'
     | '/dashboard'
     | '/forgot-password'
@@ -315,6 +326,7 @@ export interface FileRouteTypes {
     | '/analytics'
     | '/assistant-runtime'
     | '/build-logs'
+    | '/contact'
     | '/curriculum'
     | '/dashboard'
     | '/forgot-password'
@@ -344,6 +356,7 @@ export interface RootRouteChildren {
   AnalyticsRoute: typeof AnalyticsRoute
   AssistantRuntimeRoute: typeof AssistantRuntimeRoute
   BuildLogsRoute: typeof BuildLogsRoute
+  ContactRoute: typeof ContactRoute
   CurriculumRoute: typeof CurriculumRoute
   DashboardRoute: typeof DashboardRoute
   ForgotPasswordRoute: typeof ForgotPasswordRoute
@@ -464,6 +477,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CurriculumRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/build-logs': {
       id: '/build-logs'
       path: '/build-logs'
@@ -572,6 +592,7 @@ const rootRouteChildren: RootRouteChildren = {
   AnalyticsRoute: AnalyticsRoute,
   AssistantRuntimeRoute: AssistantRuntimeRoute,
   BuildLogsRoute: BuildLogsRoute,
+  ContactRoute: ContactRoute,
   CurriculumRoute: CurriculumRoute,
   DashboardRoute: DashboardRoute,
   ForgotPasswordRoute: ForgotPasswordRoute,

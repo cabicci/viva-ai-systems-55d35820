@@ -55,8 +55,8 @@ reviewed and published separately.
 
 ## Route visibility
 
-Public and sitemap-eligible routes are `/`, `/curriculum`, `/pricing`,
-`/privacy`, and `/terms`.
+Public and sitemap-eligible routes are `/`, `/contact`, `/curriculum`,
+`/pricing`, `/privacy`, and `/terms`.
 
 Utility routes are `/index`, `/login`, `/signup`,
 `/forgot-password`, `/reset-password`, and `/onboarding`. They are
