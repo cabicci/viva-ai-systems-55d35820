@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ANALYTICS_CONSENT_COPY } from "@/lib/analytics-consent-copy";
+import { applyTrustedSiteConsent } from "@/lib/trustedsite";
 import { useLocale } from "@/lib/locale/locale-context";
 import {
   applyAnalyticsConsent,
@@ -28,6 +29,7 @@ export function AnalyticsConsentGate() {
   useEffect(() => {
     if (!hydrated) return;
     applyAnalyticsConsent(consent);
+    applyTrustedSiteConsent(consent);
     if (consent === "granted") {
       trackPageViewOnce(locationHref);
     }
