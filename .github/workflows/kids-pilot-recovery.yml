@@ -40,11 +40,11 @@ jobs:
           bun run check
           bun test
           bun x tsc --noEmit
-      - name: Restore the six completed English segments
+      - name: Restore the ten completed English segments
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh run download 35867880239 --repo cabicci/viva-ai-systems-55d35820 --name kids-pilot-en-35867880239-1 --dir "$RUNNER_TEMP/kids-resume"
+          gh run download 35871232831 --repo cabicci/viva-ai-systems-55d35820 --name kids-pilot-en-35871232831-1 --dir "$RUNNER_TEMP/kids-resume"
           mkdir -p public/generated/audio/en
           cp -a "$RUNNER_TEMP/kids-resume/public/generated/audio/en/." public/generated/audio/en/
       - name: Generate narration with the existing repository secret

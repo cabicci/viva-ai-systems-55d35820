@@ -58,6 +58,11 @@ def run(locale):
                         raise SystemExit("TTS stopped: provider requested a longer wait; resume later.")
                     print("Temporary provider limit; waiting before retry.", flush=True)
                     time.sleep(delay)
+                except TimeoutError:
+                    if attempt == 2:
+                        raise SystemExit("TTS stopped: provider read timed out after three attempts.")
+                    print("Temporary provider timeout; retrying this segment.", flush=True)
+                    time.sleep(15)
                 except urllib.error.URLError:
                     raise SystemExit("TTS stopped: network error.")
             candidate = (data.get("candidates") or [{}])[0]
