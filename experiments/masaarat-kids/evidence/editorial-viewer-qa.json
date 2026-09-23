@@ -1,16 +1,23 @@
 {
-  "reviewedPackages": 48,
-  "lessons": 12,
-  "locales": 4,
+  "date": "2026-09-23T22:43:52.497Z",
+  "packages": 48,
+  "questions": 152,
+  "sharedPlatformComponents": [
+    "IntroSection",
+    "QuizBlock"
+  ],
+  "sharedStyles": "src/styles.css",
   "checks": [
-    "all lesson navigation",
-    "quiz and scene count",
-    "RTL/LTR",
-    "no undefined text",
-    "show all",
-    "390px no horizontal overflow",
+    "48 locale/lesson navigation",
+    "152 quiz feedback checks",
+    "4 existing video metadata loads",
+    "4 independent images",
+    "48 mobile overflow checks",
+    "state reset",
+    "previous/next",
+    "prompt builder",
+    "no network submissions",
     "no page errors"
   ],
-  "humanLanguageApproval": "pending",
-  "date": "2026-09-23T22:23:52.106Z"
+  "humanVisualApproval": "pending"
 }

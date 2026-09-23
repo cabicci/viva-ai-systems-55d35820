@@ -1,40 +1,49 @@
-import { chromium } from 'playwright';
+import {chromium} from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 const base=path.resolve(import.meta.dirname,'..');
 const browser=await chromium.launch({channel:'chrome',headless:true});
 const page=await browser.newPage({viewport:{width:1440,height:1000}});
-const errors=[];page.on('pageerror',e=>errors.push(e.message));
+const errors=[],requests=[];page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(/^https?:/.test(r.url()))requests.push(r.url());});
 await page.goto(pathToFileURL(path.join(base,'editorial-review/index.html')).href);
-const data=await page.locator('#data').textContent();
-const course=JSON.parse(data);const results=[];
+const {course}=JSON.parse(await page.locator('#data').textContent());
+let packages=0,questions=0;
 for(const locale of ['ar-EG','ar-MSA','ar-Gulf','en']){
  await page.selectOption('#locale',locale);
  for(let i=0;i<12;i++){
-  await page.locator('nav button').nth(i).click();
-  const d=course[i].locales[locale];
-  const h=await page.locator('h1').textContent();
-  if(h!==String(i+1)+'. '+d.title)throw Error('Wrong lesson '+locale+'/'+i);
-  if(await page.locator('.question').count()!==d.quiz.length)throw Error('Missing quiz');
-  if(await page.locator('.scene').count()!==d.scenes.length)throw Error('Missing scenes');
+  await page.selectOption('#lesson',String(i));const d=course[i].locales[locale];
+  if(await page.locator('h1').textContent()!==d.title)throw Error('Title');
   if(await page.locator('html').getAttribute('dir')!==(locale==='en'?'ltr':'rtl'))throw Error('Direction');
-  const text=await page.locator('#content').innerText();
-  if(text.includes('undefined')||text.includes('[object Object]'))throw Error('Broken data rendering');
-  results.push(locale+'/'+(i+1));
+  const quiz=page.locator('article>div').filter({has:page.locator('button svg.lucide-eye')});
+  const reveals=page.locator('button').filter({has:page.locator('svg.lucide-eye')});
+  if(await reveals.count()!==d.quiz.length)throw Error('Quiz count');
+  // Shared platform quiz: predict, reveal options, select, feedback, reset on navigation.
+  for(const q of d.quiz){
+   const parent=page.locator('p').filter({hasText:q.question}).filter({hasNot:page.locator('p')}).last().locator('..').locator('..');
+   await parent.locator('button').first().click();
+   await parent.locator('li button').nth(q.answer).click();
+   if(!(await parent.innerText()).includes(q.explanation))throw Error('Feedback');
+   questions++;
+  }
+  const text=await page.locator('main').innerText();
+  if(text.includes('undefined')||text.includes('[object Object]'))throw Error('Data');
+  if(await page.locator('.scene,.script,.meta,#all').count())throw Error('Editorial chrome');
+  if(await page.locator('video').count()!==(i===0?1:0))throw Error('Media slot');
+  if(i===0){await page.locator('video').evaluate(v=>new Promise((resolve,reject)=>{if(v.readyState>=1)return resolve();v.onloadedmetadata=resolve;v.onerror=()=>reject(Error('Video source'));}));const image=page.locator('[data-lesson-image]');if(!await image.evaluate(x=>x.complete&&x.naturalWidth>0))throw Error('Independent image');}
+  if(i===9&&locale==='ar-EG')await page.screenshot({path:path.join(base,'editorial-review/desktop-ar-EG.png'),fullPage:false});
+  packages++;
  }
- await page.locator('#all').click();
- if(await page.locator('h1').count()!==12)throw Error('Show all');
- await page.locator('#all').click();
 }
-for(const locale of ['ar-EG','en']){
- await page.setViewportSize({width:390,height:844});await page.selectOption('#locale',locale);await page.locator('nav button').nth(9).click();
- const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1);
- if(overflow)throw Error('Mobile overflow '+locale);
+for(const locale of ['ar-EG','ar-MSA','ar-Gulf','en']){
+ await page.setViewportSize({width:390,height:844});await page.selectOption('#locale',locale);
+ for(let i=0;i<12;i++){await page.selectOption('#lesson',String(i));if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1))throw Error('Overflow '+locale+'/'+i);}
  await page.screenshot({path:path.join(base,'editorial-review/review-'+locale+'.png'),fullPage:false});
 }
-await browser.close();
-if(errors.length)throw Error(errors.join('\n'));
-const record={reviewedPackages:results.length,lessons:12,locales:4,checks:['all lesson navigation','quiz and scene count','RTL/LTR','no undefined text','show all','390px no horizontal overflow','no page errors'],humanLanguageApproval:'pending',date:new Date().toISOString()};
-fs.writeFileSync(path.join(base,'evidence/editorial-viewer-qa.json'),JSON.stringify(record,null,2)+'\n');
-console.log(JSON.stringify(record));
+await page.selectOption('#lesson','0');await page.locator('#next').click();if(await page.locator('#lesson').inputValue()!=='1')throw Error('Next');await page.locator('#prev').click();if(await page.locator('#lesson').inputValue()!=='0')throw Error('Previous');
+await page.selectOption('#locale','ar-EG');
+const fields=page.locator('#try textarea');for(let i=0;i<3;i++)await fields.nth(i).fill('fictional '+i);await page.locator('#try button').click();if(!await page.locator('[role=status]').textContent())throw Error('Builder');
+await page.selectOption('#lesson','2');await page.selectOption('#lesson','0');if(await page.locator('#try textarea').first().inputValue())throw Error('State leaked');
+await browser.close();if(errors.length||requests.length)throw Error(JSON.stringify({errors,requests}));
+const record={date:new Date().toISOString(),packages,questions,sharedPlatformComponents:['IntroSection','QuizBlock'],sharedStyles:'src/styles.css',checks:['48 locale/lesson navigation','152 quiz feedback checks','4 existing video metadata loads','4 independent images','48 mobile overflow checks','state reset','previous/next','prompt builder','no network submissions','no page errors'],humanVisualApproval:'pending'};
+fs.writeFileSync(path.join(base,'evidence/editorial-viewer-qa.json'),JSON.stringify(record,null,2)+'\n');console.log(JSON.stringify(record));

@@ -56,3 +56,12 @@ Build the read-only review: `python scripts/build-editorial-review.py`. Open `ed
 Source drafts: GitHub Actions run 35923832252, commit 2c6332801271e8cdf48afe2afc023444471e52d1. The generation run ended with editorial-review findings, not successful automated approval. Codex assessed those findings against the actual text and applied source, quiz, privacy, self-contained activity and consistency corrections. Original reports are retained; per-lesson editorial-resolution.json and manifests record source/final hashes. Forty new locale packages passed structural validation. Native-speaker and child-education approval remains pending. No new media was generated in this content phase.
 
 Dell review copy: E:/Masaarat/Pilot-Review/Masaarat-Kids-Level1-Content/index.html. Owner review of the text precedes media production; the accepted lesson-1 pilot remains separate.
+
+
+## Learner presentation correction - 2026-09-23
+
+The content-review screen now uses the platform IntroSection and QuizBlock components directly, the platform styles.css tokens/utilities, and the 48rem lesson column/header rhythm from the live learn route. One lesson is displayed at a time; production scripts, image briefs, teacher notes and bulk-print controls are excluded from the learner interface. All 48 content packages remain unchanged.
+
+Build with `python scripts/build-editorial-review.py`; optional `MASAARAT_REVIEW_DEPS` points to an existing checkout with installed root dependencies. The Dell uses the existing main checkout dependency installation without changing it. `editorial-review/index.html` includes local lesson-1 videos; `portable.html` embeds the independent illustrations and states that video playback is available in the Dell copy. Later lesson media remains unproduced.
+
+Offline-only build adapters supply locale state and unauthenticated quiz behavior; no attempts, learner data or analytics are sent to production. No production components or routes were modified. Sources and editorial Markdown exports retain all preparation content. `node scripts/check-editorial-review.mjs` covers all 48 packages and 152 quiz items. Human visual approval is pending.

@@ -1,5 +1,5 @@
 """Build an offline, read-only editorial review surface from all 48 packages."""
-import base64,hashlib,html,json
+import hashlib,json,subprocess
 from pathlib import Path
 BASE=Path(__file__).resolve().parents[1]
 OUT=BASE/"editorial-review"
@@ -25,11 +25,6 @@ for n in range(3,13):
  lessons.append({"number":n,"status":m["status"],"locales":package})
 assert len(lessons)==12 and all(set(x["locales"])==set(LOCALES) for x in lessons)
 payload=json.dumps(lessons,ensure_ascii=False).replace("<","\\u003c").replace("\u2028","\\u2028").replace("\u2029","\\u2029")
-logo=base64.b64encode((BASE/"public/brand/logo.png").read_bytes()).decode()
-font=base64.b64encode((BASE/"public/fonts/Cairo.ttf").read_bytes()).decode()
-template=(BASE/"scripts/editorial-review-template.html").read_text(encoding="utf-8")
-out=template.replace("__LOGO__",logo).replace("__FONT__",font).replace("__DATA__",payload)
-(OUT/"index.html").write_bytes(out.encode())
 (OUT/"content.json").write_bytes((json.dumps(lessons,ensure_ascii=False,indent=2)+"\n").encode())
 counts={"lessons":12,"locales":4,"packages":48,"scenes":sum(len(d["scenes"]) for l in lessons for d in l["locales"].values()),"quizItems":sum(len(d["quiz"]) for l in lessons for d in l["locales"].values()),"mediaProducedLessons":1,"newMediaProduced":0}
 (OUT/"manifest.json").write_bytes((json.dumps(counts,indent=2)+"\n").encode())
@@ -56,3 +51,5 @@ for locale in LOCALES:
   if d.get("educatorNotes"):lines+=["### Educator notes","",json.dumps(d["educatorNotes"],ensure_ascii=False,indent=2),""]
  (OUT/(locale+".md")).write_bytes(("\n".join(lines)+"\n").encode())
 print(json.dumps(counts))
+
+subprocess.run(["bun","scripts/build-platform-review.ts"],cwd=BASE,check=True)
