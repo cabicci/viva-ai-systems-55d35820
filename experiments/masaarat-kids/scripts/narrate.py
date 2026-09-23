@@ -35,7 +35,14 @@ def run(locale):
                     break
                 except urllib.error.HTTPError as error:
                     if error.code not in (429, 500, 502, 503, 504) or attempt == 2:
-                        raise SystemExit("TTS stopped: HTTP " + str(error.code) + ". No credential or response body logged.")
+                        detail = "No diagnostic supplied."
+                        try:
+                            payload = json.loads(error.read(65536))
+                            detail = str(payload.get("error", {}).get("message", detail))
+                        except (ValueError, OSError):
+                            pass
+                        detail = " ".join(detail.replace(key, "[REDACTED]").split())[:450]
+                        raise SystemExit("TTS stopped: HTTP " + str(error.code) + ". " + detail)
                     retry_after = error.headers.get("Retry-After", "")
                     delay = max(60 * (attempt + 1), int(retry_after) if retry_after.isdigit() else 0)
                     if delay > 300:
