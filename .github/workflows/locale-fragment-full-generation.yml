@@ -44,8 +44,8 @@ jobs:
     outputs:
       ok: ${{ steps.audit.outputs.ok }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
         with:
           bun-version: latest
       - name: Install dependencies
@@ -58,7 +58,7 @@ jobs:
           echo "ok=true" >> "$GITHUB_OUTPUT"
       - name: Upload audit report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: ar-msa-canonical-audit-${{ github.run_number }}
           if-no-files-found: error
@@ -72,8 +72,8 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
         with:
           bun-version: latest
       - run: bun install --frozen-lockfile
@@ -98,8 +98,8 @@ jobs:
       max-parallel: 12
       matrix: ${{ fromJson(needs.prepare-matrix.outputs.matrix) }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
         with:
           bun-version: latest
       - run: bun install --frozen-lockfile
@@ -118,7 +118,7 @@ jobs:
             --mode pilot
       - name: Upload lesson artifact
         if: success()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: locale-fragment-full-${{ matrix.locale }}-${{ matrix.lesson_id }}
           if-no-files-found: error
@@ -128,7 +128,7 @@ jobs:
             src/lib/locale-lessons/${{ matrix.locale }}/reports/fragment-pilot-jobs/${{ matrix.lesson_id }}.result.json
       - name: Upload failed job result
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: locale-fragment-full-${{ matrix.locale }}-${{ matrix.lesson_id }}-failed
           if-no-files-found: ignore
@@ -144,13 +144,13 @@ jobs:
       TARGET: ${{ inputs.target || 'all' }}
       LESSON_IDS: ${{ inputs.lesson_ids || '' }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
         with:
           bun-version: latest
       - run: bun install --frozen-lockfile
       - name: Download lesson artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           pattern: locale-fragment-full-*
           merge-multiple: true
@@ -163,7 +163,7 @@ jobs:
           bun run locale-lessons:collect-fragment-full -- "${ARGS[@]}"
       - name: Upload collected full bundle
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: locale-fragment-full-collected-${{ github.run_number }}
           if-no-files-found: error

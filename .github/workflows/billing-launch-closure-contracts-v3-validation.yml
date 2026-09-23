@@ -30,7 +30,7 @@ jobs:
       PGPASSWORD: postgres
     steps:
       - name: Checkout exact PR head (not merge ref)
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           fetch-depth: 0
@@ -42,12 +42,12 @@ jobs:
           test "$(git rev-parse HEAD)" = "$EXPECTED_PRODUCT_SHA"
 
       - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
         with:
           bun-version: latest
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: "20"
 
@@ -55,7 +55,7 @@ jobs:
         run: bun install --frozen-lockfile
 
       - name: Setup Supabase CLI
-        uses: supabase/setup-cli@v1
+        uses: supabase/setup-cli@ab058987d8d6c725971f6cf9d0b5c98467e30bd1
         with:
           version: 2.109.1
 
@@ -103,7 +103,7 @@ jobs:
 
       - name: Upload sanitized validation report
         if: ${{ always() }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: billing-v3-validation-report
           path: billing-v3-validation/

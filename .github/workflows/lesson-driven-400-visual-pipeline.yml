@@ -87,7 +87,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout immutable execution_sha
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ github.event.inputs.execution_sha }}
 
@@ -187,12 +187,12 @@ jobs:
       prior_run_id: ${{ steps.prior.outputs.run_id }}
     steps:
       - name: Checkout immutable execution_sha
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ github.event.inputs.execution_sha }}
 
       - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
         with:
           bun-version: latest
 
@@ -270,7 +270,7 @@ jobs:
 
       - name: Download authorized prior receipt bundle
         if: steps.prior.outputs.need_prior == 'true'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           name: ${{ steps.prior.outputs.artifact_name }}
           path: prior-receipt-bundle
@@ -342,7 +342,7 @@ jobs:
           printf 'all_cell_ids_json=%s\n' "$(cat all-cell-ids.json)" >> "$GITHUB_OUTPUT"
 
       - name: Upload immutable runtime quota context
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: runtime-quota-context-${{ github.event.inputs.execution_sha }}-${{ github.run_id }}
           path: artifacts/qa/runtime-quota-context.json
@@ -430,12 +430,12 @@ jobs:
         cell: ${{ fromJSON(needs.preflight.outputs.matrix) }}
     steps:
       - name: Checkout immutable execution_sha
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ github.event.inputs.execution_sha }}
 
       - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
         with:
           bun-version: latest
 
@@ -475,14 +475,14 @@ jobs:
           bunx playwright install chromium
 
       - name: Download runtime quota context
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           name: runtime-quota-context-${{ github.event.inputs.execution_sha }}-${{ github.run_id }}
           path: artifacts/qa
 
       - name: Download authorized prior receipt bundle
         if: needs.preflight.outputs.need_prior == 'true'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           name: ${{ needs.preflight.outputs.prior_artifact_name }}
           path: prior-receipt-bundle
@@ -562,7 +562,7 @@ jobs:
 
       - name: Upload cell artifacts
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: cell-${{ matrix.cell.cellId }}
           path: |
@@ -581,12 +581,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout immutable execution_sha
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ github.event.inputs.execution_sha }}
 
       - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
         with:
           bun-version: latest
 
@@ -626,14 +626,14 @@ jobs:
           bunx playwright install chromium
 
       - name: Download all cell artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           path: collected
           pattern: cell-*
           merge-multiple: false
 
       - name: Download runtime quota context
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           name: runtime-quota-context-${{ github.event.inputs.execution_sha }}-${{ github.run_id }}
           path: artifacts/qa
@@ -672,7 +672,7 @@ jobs:
 
       - name: Upload QA aggregate
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: lesson-visuals-qa-${{ github.event.inputs.execution_sha }}
           path: |
