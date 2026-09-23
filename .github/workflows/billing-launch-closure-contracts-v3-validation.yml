@@ -54,6 +54,9 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
+      - name: Validate exact billing inventory checker
+        run: node --test .github/scripts/billing_contracts_v3_validation/verify-inventory.test.mjs
+
       - name: Setup Supabase CLI
         uses: supabase/setup-cli@ab058987d8d6c725971f6cf9d0b5c98467e30bd1
         with:
