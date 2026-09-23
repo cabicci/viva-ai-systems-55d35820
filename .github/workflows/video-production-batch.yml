@@ -60,7 +60,7 @@ jobs:
 
     steps:
       - name: Check out immutable production source baseline
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ env.SOURCE_SHA }}
           fetch-depth: 0
@@ -250,7 +250,7 @@ jobs:
 
     steps:
       - name: Check out immutable full-300 production source
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ env.FULL_300_SOURCE_SHA }}
           fetch-depth: 0
@@ -263,7 +263,7 @@ jobs:
           test "$(git rev-parse HEAD)" = "$FULL_300_SOURCE_SHA"
 
       - name: Check out dispatched workflow control scripts
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ github.sha }}
           path: control-code
@@ -275,7 +275,7 @@ jobs:
           set -euo pipefail
           test "$(git -C control-code rev-parse HEAD)" = "${{ github.sha }}"
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: "3.11"
 
@@ -367,7 +367,7 @@ jobs:
 
     steps:
       - name: Check out immutable full-300 production source
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ env.FULL_300_SOURCE_SHA }}
           fetch-depth: 0
@@ -380,7 +380,7 @@ jobs:
           test "$(git rev-parse HEAD)" = "$FULL_300_SOURCE_SHA"
 
       - name: Check out dispatched workflow control scripts
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ github.sha }}
           path: control-code
@@ -394,7 +394,7 @@ jobs:
           test -f control-code/.github/scripts/plan_generate_unresolved_cli.py
           test -f control-code/.github/scripts/video_finalize/unresolved_generation_plan.py
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: "3.11"
 
@@ -461,7 +461,7 @@ jobs:
 
     steps:
       - name: Check out dispatched workflow control scripts
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ github.sha }}
           fetch-depth: 0
@@ -475,7 +475,7 @@ jobs:
           test -f .github/scripts/plan_uploaded_receipt_recovery_cli.py
           python3 .github/scripts/recovery_control_gate.py .
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: "3.11"
 
@@ -565,7 +565,7 @@ jobs:
 
     steps:
       - name: Check out immutable production source baseline
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ env.SOURCE_SHA }}
           fetch-depth: 0
@@ -584,7 +584,7 @@ jobs:
           ACTUAL=$(sha256sum "$OFFICIAL_LOGO_PATH" | awk '{print $1}')
           test "$ACTUAL" = "$OFFICIAL_LOGO_SHA256"
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: "3.11"
 
@@ -595,11 +595,11 @@ jobs:
           python3 .github/scripts/preflight_localized_package.py
           test -f "/tmp/${COMPOSITE_KEY}/evidence.json"
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: "20"
 
-      - uses: oven-sh/setup-bun@v2
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
         with:
           bun-version: latest
 
@@ -714,7 +714,7 @@ jobs:
           PY
 
       - name: Upload preflight-one validation artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: preflight-one-${{ env.SOURCE_SHA }}-en-analyst-m3-l2-ai-summarization
           path: |
@@ -741,7 +741,7 @@ jobs:
 
     steps:
       - name: Check out immutable production source baseline
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ env.SOURCE_SHA }}
           fetch-depth: 0
@@ -760,7 +760,7 @@ jobs:
           ACTUAL=$(sha256sum "$OFFICIAL_LOGO_PATH" | awk '{print $1}')
           test "$ACTUAL" = "$OFFICIAL_LOGO_SHA256"
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: "3.11"
 
@@ -771,11 +771,11 @@ jobs:
           python3 .github/scripts/preflight_localized_package.py
           test -f "/tmp/${COMPOSITE_KEY}/evidence.json"
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: "20"
 
-      - uses: oven-sh/setup-bun@v2
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
         with:
           bun-version: latest
 
@@ -945,7 +945,7 @@ jobs:
           PY
 
       - name: Upload generate-one validated production artifact (artifact-only output)
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: generate-one-${{ env.SOURCE_SHA }}-en-analyst-m3-l2-ai-summarization
           path: |
@@ -977,7 +977,7 @@ jobs:
 
     steps:
       - name: Check out dispatched workflow control scripts
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ github.sha }}
           fetch-depth: 0
@@ -995,7 +995,7 @@ jobs:
           test -f .github/scripts/video_finalize/finalize_cell.py
 
       - name: Check out immutable production SOURCE_SHA (read-only baseline)
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ env.SOURCE_SHA }}
           path: source-baseline
@@ -1008,7 +1008,7 @@ jobs:
           test "$SOURCE_SHA" = "6cfd019d315ec3f5a30ffc83bd551f4deb52385c"
           test "$(git -C source-baseline rev-parse HEAD)" = "$SOURCE_SHA"
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: "3.11"
 
@@ -1110,7 +1110,7 @@ jobs:
 
     steps:
       - name: Check out immutable production source baseline
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b' }}
           fetch-depth: 0
@@ -1137,7 +1137,7 @@ jobs:
           ACTUAL=$(sha256sum "$OFFICIAL_LOGO_PATH" | awk '{print $1}')
           test "$ACTUAL" = "$OFFICIAL_LOGO_SHA256"
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: "3.11"
 
@@ -1164,12 +1164,12 @@ jobs:
           python3 .github/scripts/preflight_localized_package.py
           test -f "/tmp/${COMPOSITE_KEY}/evidence.json"
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         if: steps.receipt_skip.outputs.skip != 'true'
         with:
           node-version: "20"
 
-      - uses: oven-sh/setup-bun@v2
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
         if: steps.receipt_skip.outputs.skip != 'true'
         with:
           bun-version: latest
@@ -1352,7 +1352,7 @@ jobs:
 
       - name: Upload per-cell validated production artifact (artifact-only output)
         if: steps.receipt_skip.outputs.skip != 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: full-300-${{ env.SOURCE_SHA }}-${{ matrix.locale }}-${{ matrix.lessonId }}
           path: |
@@ -1461,7 +1461,7 @@ jobs:
 
     steps:
       - name: Check out immutable production source baseline
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b' }}
           fetch-depth: 0
@@ -1488,7 +1488,7 @@ jobs:
           ACTUAL=$(sha256sum "$OFFICIAL_LOGO_PATH" | awk '{print $1}')
           test "$ACTUAL" = "$OFFICIAL_LOGO_SHA256"
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: "3.11"
 
@@ -1515,12 +1515,12 @@ jobs:
           python3 .github/scripts/preflight_localized_package.py
           test -f "/tmp/${COMPOSITE_KEY}/evidence.json"
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         if: steps.receipt_skip.outputs.skip != 'true'
         with:
           node-version: "20"
 
-      - uses: oven-sh/setup-bun@v2
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
         if: steps.receipt_skip.outputs.skip != 'true'
         with:
           bun-version: latest
@@ -1703,7 +1703,7 @@ jobs:
 
       - name: Upload per-cell validated production artifact (artifact-only output)
         if: steps.receipt_skip.outputs.skip != 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: full-300-${{ env.SOURCE_SHA }}-${{ matrix.locale }}-${{ matrix.lessonId }}
           path: |
@@ -1790,7 +1790,7 @@ jobs:
 
     steps:
       - name: Check out immutable production source baseline
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ env.FULL_300_SOURCE_SHA }}
           fetch-depth: 0
@@ -1803,7 +1803,7 @@ jobs:
           test "$(git rev-parse HEAD)" = "$FULL_300_SOURCE_SHA"
 
       - name: Check out dispatched workflow control scripts
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ github.sha }}
           path: control-code
@@ -1889,7 +1889,7 @@ jobs:
 
       - name: Collect per-cell artifacts (read-only)
         if: needs.plan.outputs.total_count != '0'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           pattern: full-300-${{ needs.plan.outputs.run_mode == 'generate-unresolved' && '71fbe483b931cba91bedb1feadb1941092518890' || '69ba815e256d6f46382c9f0fa901bb3fea88c85b' }}-*
           merge-multiple: true
