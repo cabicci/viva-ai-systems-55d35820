@@ -58,6 +58,8 @@ jobs:
           PGUSER: postgres
           PGDATABASE: postgres
         run: |
+          set -o pipefail
           bunx vitest run src/lib/__tests__/launch-account-deletion-coverage.test.ts 2>&1 | tee lc09-validation/vitest.log
-          ! grep -Eq '[1-9][0-9]* (failed|skipped|todo)' lc09-validation/vitest.log
-          grep -Eq 'Tests[[:space:]]+7 passed \(7\)' lc09-validation/vitest.log
+          sed -E 's/\x1B\[[0-9;]*[A-Za-z]//g' lc09-validation/vitest.log > lc09-validation/vitest.plain.log
+          ! grep -Eq '[1-9][0-9]* (failed|skipped|todo)' lc09-validation/vitest.plain.log
+          grep -Eq 'Tests[[:space:]]+7 passed[[:space:]]+\(7\)' lc09-validation/vitest.plain.log
