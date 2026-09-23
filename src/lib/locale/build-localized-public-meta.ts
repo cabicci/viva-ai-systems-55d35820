@@ -1,5 +1,6 @@
 import { getUiString } from "@/lib/locale/ui-strings";
 import type { SupportedLocale } from "./types";
+import { buildPublicRouteIdentity } from "@/lib/seo/public-route-identity";
 
 export type PublicRouteMetaKind =
   | "home"
@@ -63,9 +64,12 @@ const META_KEYS: Record<
 export function buildLocalizedPublicMeta(
   locale: SupportedLocale,
   kind: PublicRouteMetaKind,
-): { meta: RouteMetaTag[] } {
+): { meta: RouteMetaTag[]; links?: { rel: string; href: string }[] } {
   const keys = META_KEYS[kind];
   const title = getUiString(locale, keys.title);
   const description = getUiString(locale, keys.description);
-  return { meta: withSocialTags(title, description) };
+  const meta = withSocialTags(title, description);
+  if (kind === "root" || kind === "login") return { meta };
+  const identity = buildPublicRouteIdentity(kind);
+  return { meta: [...meta, ...identity.meta], links: identity.links };
 }

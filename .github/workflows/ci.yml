@@ -65,3 +65,11 @@ jobs:
 
       - name: Build
         run: bun run build
+
+      - name: Marketing consent and public route metadata
+        run: >-
+          bunx vitest run
+          src/lib/__tests__/marketing-foundation.test.ts
+          src/lib/__tests__/marketing-route-head.test.tsx
+          src/lib/__tests__/locale-public-pages.test.ts
+          src/lib/__tests__/locale-route-meta.test.ts
