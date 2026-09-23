@@ -16,13 +16,7 @@ export const Route = createFileRoute("/")({
     const locale = await resolveRouteHeadLocale({
       searchLocale: match.search.locale,
     });
-    const { meta } = buildLocalizedPublicMeta(locale, "home");
-    return {
-      meta: [
-        ...meta,
-        { property: "og:url", content: "https://masaarat.ai" },
-      ],
-    };
+    return buildLocalizedPublicMeta(locale, "home");
   },
   component: Index,
 });
