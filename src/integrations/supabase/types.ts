@@ -1104,6 +1104,7 @@ export type Database = {
         }[]
       }
       delete_my_account_data: { Args: never; Returns: undefined }
+      request_account_deletion: { Args: never; Returns: Json }
       evaluate_access: {
         Args: {
           p_resource_id: string
