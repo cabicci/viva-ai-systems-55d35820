@@ -1,0 +1,27 @@
+{
+  "name": "masaarat-kids-pilot",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "assets": "bun scripts/prepare.ts",
+    "check": "bun scripts/validate.ts",
+    "build": "bun scripts/build.ts",
+    "test": "bun test",
+    "render": "bun scripts/render.ts",
+    "narrate": "python scripts/narrate.py"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.466",
+    "@remotion/renderer": "4.0.466",
+    "remotion": "4.0.466",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.8.3",
+    "playwright": "1.54.1"
+  }
+}

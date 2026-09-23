@@ -1,0 +1,271 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "kids-l1-clear-prompt",
+  "level": "level-1",
+  "ageLabel": "10–12",
+  "locales": [
+    "ar-EG",
+    "ar-MSA",
+    "ar-Gulf",
+    "en"
+  ],
+  "skillIds": [
+    "identify-task",
+    "add-relevant-details",
+    "choose-format",
+    "review-and-improve",
+    "protect-private-data"
+  ],
+  "status": "pilot-editorial-draft",
+  "examplePolicy": "All example outputs are authored teaching illustrations, not recorded model responses.",
+  "sources": [
+    {
+      "id": "child-ai",
+      "url": "https://www.unicef.org/innocenti/reports/policy-guidance-ai-children",
+      "scope": "Child-centred design, privacy and safety."
+    }
+  ],
+  "production": {
+    "engine": "Remotion",
+    "narrationProvider": "Gemini TTS",
+    "voice": "Charon",
+    "automaticTranslation": false
+  },
+  "locale": "en",
+  "direction": "ltr",
+  "title": "Turn your idea into a clear prompt",
+  "subtitle": "Your first mission: invent a friendly space explorer.",
+  "objectives": [
+    "Say exactly what you want the tool to do.",
+    "Add helpful details and choose how the answer should look.",
+    "Check the answer, improve your request, and keep private information out."
+  ],
+  "labels": {
+    "brand": "Masaarat Kids",
+    "level": "Level 1 · Ages 10–12",
+    "watch": "Watch the lesson",
+    "read": "Explore the idea",
+    "try": "Build your prompt",
+    "quiz": "Quick challenge",
+    "mission": "Your mission",
+    "helper": "Lesson hints",
+    "next": "Next",
+    "check": "Check my answer",
+    "retry": "Try again",
+    "correct": "You found it!",
+    "notYet": "Take another look.",
+    "model": "Teaching example",
+    "source": "From this lesson",
+    "privacy": "Use invented details. Do not enter names, addresses, school details, photos, or passwords.",
+    "draft": "Local pilot · for review",
+    "audioPending": "Narration has not been generated yet. This is a visual preview.",
+    "video": "Video",
+    "goal": "Task",
+    "details": "Helpful details",
+    "format": "Answer format",
+    "build": "Combine my prompt",
+    "clear": "Clear my work",
+    "empty": "Complete all three boxes first.",
+    "rubric": "Check your own work",
+    "hintIntro": "These hints come from the lesson. They are not a live AI conversation.",
+    "done": "Complete",
+    "pause": "Pause the video and try.",
+    "transcript": "Read the narration"
+  },
+  "vocabulary": [
+    {
+      "term": "Prompt",
+      "meaning": "The request or instructions you give an AI tool."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "welcome",
+      "title": "A small idea. A clearer request.",
+      "display": "Invent a friendly explorer",
+      "accent": "mint",
+      "narration": "Imagine a friendly robot exploring an imaginary planet. You can already picture its colour and its job. But the AI tool cannot see the picture in your head. In this lesson, you will practise turning that idea into a clear request. You choose the idea, check the result, and decide what to change."
+    },
+    {
+      "id": "prompt",
+      "title": "What is a prompt?",
+      "display": "A request you give an AI tool",
+      "accent": "lavender",
+      "narration": "A prompt is the request or instructions you give an AI tool. You do not need a secret word or a long speech. Start by explaining what you want it to do. You might ask for a story idea, a description, or a list. Clear instructions help communicate your goal, but they do not guarantee a correct answer."
+    },
+    {
+      "id": "vague",
+      "title": "Something is missing",
+      "display": "“Tell me about a robot.”",
+      "accent": "peach",
+      "narration": "Look at this request: tell me about a robot. It leaves plenty of choices open. Is it a real robot or an invented character? Do you want a story, a drawing idea, or facts? A different result does not mean your idea was bad. It may mean that your request needs a little more information."
+    },
+    {
+      "id": "task",
+      "title": "First: choose the task",
+      "display": "Describe an invented robot",
+      "accent": "mint",
+      "narration": "Our task is to describe an invented robot for a short comic. Notice the action word: describe. It tells the tool what to do. If you wanted a list, you could say list. If you wanted a comparison, you could say compare. Choose the action that matches your own goal."
+    },
+    {
+      "id": "details",
+      "title": "Then: add useful details",
+      "display": "Blue · friendly · collects stones",
+      "accent": "lavender",
+      "narration": "Now add details that change the result. Our robot is blue, friendly, and collects colourful stones on an imaginary planet. These are invented details, so we do not need information about a real child. Helpful details serve the task. Adding unrelated words can make your request harder to follow."
+    },
+    {
+      "id": "format",
+      "title": "Choose the answer format",
+      "display": "Three short sentences",
+      "accent": "yellow",
+      "narration": "How should the answer look? For our comic, three short sentences will be enough. That is the answer format. You could also ask for a small table or a list. A format helps you use the result. Asking for more words is not always the same as asking for a better answer."
+    },
+    {
+      "id": "combine",
+      "title": "Put the pieces together",
+      "display": "Task + details + format",
+      "accent": "mint",
+      "narration": "Here is our combined prompt. Describe an invented blue, friendly robot that collects colourful stones on an imaginary planet. Use three short sentences. We have included the task, helpful details, and the format. This is a useful starting pattern for this activity, not a rule that every prompt must always follow."
+    },
+    {
+      "id": "review",
+      "title": "Read before you accept",
+      "display": "Did it follow my request?",
+      "accent": "peach",
+      "narration": "Suppose the answer describes a red robot in five sentences. This is a teaching example, not a live answer from an AI tool. Compare it with your request. The colour and length do not match. You do not need to accept the first result. Check what fits and what needs changing."
+    },
+    {
+      "id": "improve",
+      "title": "Improve one thing at a time",
+      "display": "Keep it blue. Use three sentences.",
+      "accent": "lavender",
+      "narration": "You can reply: keep the robot blue and shorten the description to three sentences. Then read the new result again. Improving a prompt means making your intention clearer. If you ask about real facts in another activity, use a trusted source or ask a trusted adult to help check the information."
+    },
+    {
+      "id": "safe",
+      "title": "Invented details are enough",
+      "display": "No private information",
+      "accent": "mint",
+      "narration": "Before using a tool, follow its age rules and ask your parent or teacher which tools you may use. Do not put your password, home address, school details, or a private photograph into the activity. If a result worries or confuses you, stop and ask a trusted adult. You do not have to continue."
+    },
+    {
+      "id": "practice",
+      "title": "Your turn",
+      "display": "Create your own explorer",
+      "accent": "yellow",
+      "narration": "Pause and invent your own explorer. Choose what you want the tool to do, add two useful details, and choose the answer format. You can write on paper or use the prompt builder below. The builder combines your words; it does not send them to an AI service. Keep all character details imaginary."
+    },
+    {
+      "id": "finish",
+      "title": "Explain your choices",
+      "display": "Write · check · improve",
+      "accent": "lavender",
+      "narration": "Read your prompt out loud. Can someone understand the task, the details, and the format? Explain why you chose them. Next, try the short quiz and complete your mission. The skill is not copying our robot prompt. It is being able to express your own idea, review an answer, and improve your request safely."
+    }
+  ],
+  "prompt": {
+    "task": "Describe an invented robot",
+    "details": "It is blue, friendly, and collects colourful stones on an imaginary planet",
+    "format": "Use three short sentences",
+    "combined": "Describe an invented blue, friendly robot that collects colourful stones on an imaginary planet. Use three short sentences.",
+    "bad": "Tell me about a robot.",
+    "mismatch": "A red robot flies through space. It spots a planet. It lands. It picks up a stone. It waves.",
+    "followup": "Keep the robot blue and shorten the description to three sentences."
+  },
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Which request makes the task clearest?",
+      "options": [
+        "Robot, please.",
+        "Describe an invented friendly robot.",
+        "Something amazing."
+      ],
+      "answer": 1,
+      "explanation": "“Describe” names the action and tells the tool what to work on.",
+      "sourceScene": "task"
+    },
+    {
+      "id": "q2",
+      "question": "Which detail helps with our invented character?",
+      "options": [
+        "Your home address.",
+        "Your password.",
+        "The robot collects colourful stones."
+      ],
+      "answer": 2,
+      "explanation": "Its activity helps shape the character. Your private information is unnecessary.",
+      "sourceScene": "details"
+    },
+    {
+      "id": "q3",
+      "question": "Which part tells the tool how the answer should look?",
+      "options": [
+        "Use three short sentences.",
+        "The robot is blue.",
+        "The robot is friendly."
+      ],
+      "answer": 0,
+      "explanation": "The number and length of the sentences specify the answer format.",
+      "sourceScene": "format"
+    },
+    {
+      "id": "q4",
+      "question": "You requested a blue robot, but the answer says red. What next?",
+      "options": [
+        "Accept it without reading.",
+        "Ask to keep it blue, then check the new result.",
+        "Share your school name."
+      ],
+      "answer": 1,
+      "explanation": "A focused follow-up can clarify the request; you still review the result.",
+      "sourceScene": "improve"
+    },
+    {
+      "id": "q5",
+      "question": "A tool asks you for a private photo. What should you do?",
+      "options": [
+        "Send it to finish faster.",
+        "Ask a friend to send theirs.",
+        "Stop and ask a trusted adult."
+      ],
+      "answer": 2,
+      "explanation": "Do not share private information to complete the activity.",
+      "sourceScene": "safe"
+    }
+  ],
+  "mission": {
+    "title": "Design a new explorer",
+    "instructions": "Write a request for an invented explorer. Include a clear task, two relevant details, and an answer format. Explain one change you would make if the result missed a detail.",
+    "rubric": [
+      "My task is clear.",
+      "I added at least two useful, invented details.",
+      "I chose an answer format.",
+      "I can explain how to check and improve a result.",
+      "I included no private information."
+    ]
+  },
+  "hints": [
+    {
+      "question": "How do I start?",
+      "answer": "Choose an action such as describe or list, then say what it should be about.",
+      "sourceScene": "task"
+    },
+    {
+      "question": "What details should I add?",
+      "answer": "Add details that affect the result, such as an invented character's colour and job.",
+      "sourceScene": "details"
+    },
+    {
+      "question": "What if the result is wrong?",
+      "answer": "Compare it with your request. Ask for one focused change and check again.",
+      "sourceScene": "improve"
+    },
+    {
+      "question": "What should I keep private?",
+      "answer": "Keep passwords, home addresses, school details and private photos out. Ask a trusted adult if unsure.",
+      "sourceScene": "safe"
+    }
+  ]
+}

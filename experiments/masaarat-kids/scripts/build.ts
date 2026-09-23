@@ -1,0 +1,10 @@
+import {mkdir,cp,writeFile} from "node:fs/promises";
+import {resolve} from "node:path";
+const base=resolve(import.meta.dir,".."),dist=resolve(base,"dist");
+await mkdir(dist,{recursive:true});
+const result=await Bun.build({entrypoints:[resolve(base,"src/app.tsx")],outdir:dist,target:"browser",format:"iife",minify:true,naming:"app.js"});
+if(!result.success) throw new Error(result.logs.join("\n"));
+await cp(resolve(base,"public"),dist,{recursive:true});
+await cp(resolve(base,"src/style.css"),resolve(dist,"style.css"));
+await writeFile(resolve(dist,"index.html"),'<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>مسارات كيدز · تجربة الدرس الأول</title><link rel="stylesheet" href="./style.css"></head><body><div id="root"></div><script defer src="./app.js"></script></body></html>');
+console.log("Built offline review page: "+resolve(dist,"index.html"));

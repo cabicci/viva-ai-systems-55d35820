@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "pilotLesson": "kids-l1-clear-prompt",
+  "pilotLevel": "level-1",
+  "levels": [
+    {
+      "id": "level-1",
+      "label": "10–12"
+    },
+    {
+      "id": "level-2",
+      "label": "12–14"
+    },
+    {
+      "id": "level-3",
+      "label": "14–16"
+    }
+  ],
+  "ageAssignment": "Labels are curriculum bands; placement at shared boundary ages is selected with the parent, not inferred automatically.",
+  "locales": [
+    "ar-EG",
+    "ar-MSA",
+    "ar-Gulf",
+    "en"
+  ],
+  "localizationPolicy": "Maintain objectives, scenario logic and rubric; author natural age-appropriate language and narration per locale. No literal-translation pipeline.",
+  "baseSha": "c4cd4d050a36c7dfbafe11225dac146e5c73c5d4",
+  "brandSources": [
+    "../../src/styles.css",
+    "../../remotion/src/theme.ts",
+    "../../public/brand/masaarat-logo-lockup.png",
+    "../../src/assets/fonts/Cairo.ttf"
+  ],
+  "publication": "Local review only. No production route, accounts, billing, database, or existing video registry integration.",
+  "assistant": {
+    "mode": "curated-retrieval-preview",
+    "generativeStatus": "not-connected",
+    "scope": [
+      "lessonId",
+      "level",
+      "locale"
+    ],
+    "noStudentDataTransmission": true
+  }
+}

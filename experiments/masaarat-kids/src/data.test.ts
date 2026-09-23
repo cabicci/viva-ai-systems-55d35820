@@ -1,0 +1,7 @@
+import {test,expect} from "bun:test";
+import {getLesson,retrieveHint,assemblePrompt,locales} from "./data";
+test("unknown locales fail closed instead of leaking another corpus",()=>expect(()=>getLesson("fr")).toThrow());
+test("retrieval requires the lesson and level scope",()=>{expect(()=>retrieveHint({lessonId:"adult",level:"level-1",locale:"en"},0)).toThrow();expect(()=>retrieveHint({lessonId:"kids-l1-clear-prompt",level:"level-3",locale:"en"},0)).toThrow();});
+test("each locale retrieves its own approved hint and citation",()=>{for(const locale of locales){const l=getLesson(locale);const result=retrieveHint({lessonId:l.lessonId,level:l.level,locale},2);expect(result.answer).toBe(l.hints[2].answer);expect(result.citation.locale).toBe(locale);expect(result.citation.sceneId).toBe("improve");}});
+test("empty prompts are not submitted and long parts are bounded",()=>{expect(assemblePrompt(["","blue","short"])).toBeNull();expect(assemblePrompt(["describe","blue","three sentences"])).toBe("describe. blue. three sentences");expect(assemblePrompt(["a".repeat(1000),"b","c"])!.length).toBeLessThan(310);});
+test("every quiz explanation resolves to a source in the same lesson",()=>{for(const locale of locales){const l=getLesson(locale);for(const q of l.quiz){expect(l.scenes.some(s=>s.id===q.sourceScene)).toBe(true);expect(q.explanation.length).toBeGreaterThan(10);expect(q.options[q.answer]).toBeTruthy();}}});
