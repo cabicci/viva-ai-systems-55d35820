@@ -1,4 +1,4 @@
-name: Masaarat Kids - audio review and complete lesson package
+name: Masaarat Kids - revision 2 complete lesson package
 on:
   push:
     branches: [feature/masaarat-kids-pilot]
@@ -38,17 +38,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          for locale in ar-EG ar-MSA ar-Gulf; do
-            gh run download 35867880239 --repo cabicci/viva-ai-systems-55d35820 --name "kids-pilot-$locale-35867880239-1" --dir "$RUNNER_TEMP/kids-package/$locale"
-          done
-          gh run download 35871971135 --repo cabicci/viva-ai-systems-55d35820 --name kids-pilot-en-35871971135-1 --dir "$RUNNER_TEMP/kids-package/en"
-          python scripts/import-artifacts.py "$RUNNER_TEMP/kids-package" --run-id 35867880239 --source-sha f065101dfc4298095b1034a8b7c7993aace13bcf --recovery-run-id 35871971135 --recovery-source-sha 1dcc0c08231e5e8d185542c7a32e6030f7aa085f
-      - name: Restore and verify completed independent audio reviews
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh run download 35875690306 --repo cabicci/viva-ai-systems-55d35820 --name kids-audio-review-35875690306 --dir evidence
-          python scripts/reuse-audio-review.py
+          gh run watch 35881755433 --repo cabicci/viva-ai-systems-55d35820 --interval 45 --exit-status > "$RUNNER_TEMP/kids-production-watch.log"
+          gh run download 35881755433 --repo cabicci/viva-ai-systems-55d35820 --dir "$RUNNER_TEMP/kids-package"
+          python scripts/import-artifacts.py "$RUNNER_TEMP/kids-package" --run-id 35881755433 --source-sha 7b82e2646864c51ff6a10ba38182b359e954c8d3
+          bun scripts/illustrate.ts
       - name: Build the complete offline review package
         run: |
           bun run build
@@ -59,11 +52,3 @@ jobs:
           path: experiments/masaarat-kids/review-package/
           retention-days: 30
           if-no-files-found: error
-      - name: Preserve completed audio review reports
-        if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        with:
-          name: kids-audio-review-${{ github.run_id }}
-          path: experiments/masaarat-kids/evidence/audio-review-*.json
-          retention-days: 30
-          if-no-files-found: warn
