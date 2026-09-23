@@ -1,0 +1,208 @@
+{
+  "passed": false,
+  "issues": [
+    {
+      "locale": "ar-EG",
+      "path": "quiz/0/explanation",
+      "problem": "The explanation for quiz question 1 references a 'common misconception' as its source, which is not a valid source type according to the brief. The source should be a section of the lesson content.",
+      "fix": "Change the source reference in the explanation to 'concept' to align with the lesson's reading section on asking for simpler explanations."
+    },
+    {
+      "locale": "ar-EG",
+      "path": "quiz/1/explanation",
+      "problem": "The explanation for quiz question 2 references 'مثال' (example) as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the explanation to 'example' to align with the lesson's reading section on comparing and confirming meaning."
+    },
+    {
+      "locale": "ar-EG",
+      "path": "quiz/2/explanation",
+      "problem": "The explanation for quiz question 3 references 'تحقق' (check) as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the explanation to 'check' to align with the lesson's reading section on explaining in your own words."
+    },
+    {
+      "locale": "ar-EG",
+      "path": "hints/0/source",
+      "problem": "The hint for question 1 references 'مفهوم' (concept) as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the hint to 'concept' to align with the lesson's reading section on asking for simpler explanations."
+    },
+    {
+      "locale": "ar-EG",
+      "path": "hints/1/source",
+      "problem": "The hint for question 2 references 'مثال' (example) as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the hint to 'example' to align with the lesson's reading section on comparing and confirming meaning."
+    },
+    {
+      "locale": "ar-EG",
+      "path": "hints/2/source",
+      "problem": "The hint for question 3 references 'تحقق' (check) as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the hint to 'check' to align with the lesson's reading section on explaining in your own words."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "materials/1/text",
+      "problem": "The simplified game rules omit the instruction to explain the order in one sentence, which is a required rule from the brief that must be retained in the simplified version.",
+      "fix": "Add 'ثم اكتب جملة واحدة تشرح هذا الترتيب.' (Then write one sentence explaining this order.) to the end of the simplified rules text."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "materials/2/text",
+      "problem": "The faulty game rules omit the instruction to explain the order in one sentence, which is a required rule from the brief that must be retained even in the faulty version.",
+      "fix": "Add 'اشرح ترتيبك في جملة واحدة.' (Explain your order in one sentence.) to the end of the faulty rules text."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "quiz/0/explanation",
+      "problem": "The explanation for quiz question 1 references 'concept' as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the explanation to 'concept' to align with the lesson's reading section on asking clearly."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "quiz/1/explanation",
+      "problem": "The explanation for quiz question 2 references 'example' as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the explanation to 'example' to align with the lesson's reading section on comparing and confirming."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "quiz/2/question",
+      "problem": "Quiz question 3 asks to identify a faulty explanation from a list, but the options provided are not explanations of the game rules; they are simplified rule sets. The question should ask to identify a faulty simplified rule set.",
+      "fix": "Reword the question to 'لقد قرأت قواعد لعبة البطاقات الأصلية والشرح المبسط. أي من الشروحات المبسطة التالية خاطئ لأنه حذف قاعدة أساسية؟' (You have read the original card game rules and the simplified explanation. Which of the following simplified explanations is faulty because it omitted a basic rule?)"
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "quiz/2/options/0",
+      "problem": "Quiz option 0 is not a simplified rule set but a statement about a rule set. It does not fit the context of identifying a faulty simplified rule set.",
+      "fix": "Change option 0 to a simplified rule set that is either correct or faulty, for example: 'ابدأ بالقمر، ثم الشمس، ثم النجمة. هذا هو الترتيب الصحيح.' (Start with Moon, then Sun, then Star. This is the correct order.)"
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "quiz/2/options/2",
+      "problem": "Quiz option 2 is not a simplified rule set but a statement about a rule set. It does not fit the context of identifying a faulty simplified rule set.",
+      "fix": "Change option 2 to a simplified rule set that is either correct or faulty, for example: 'يجب أن يكون القمر في البداية، والشمس في المنتصف، والنجمة في النهاية.' (Moon must be at the beginning, Sun in the middle, and Star at the end.)"
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "quiz/2/explanation",
+      "problem": "The explanation for quiz question 3 references 'example' as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the explanation to 'example' to align with the lesson's reading section on comparing and confirming."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "hints/0/source",
+      "problem": "The hint for question 1 references 'concept' as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the hint to 'concept' to align with the lesson's reading section on asking clearly."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "hints/1/source",
+      "problem": "The hint for question 2 references 'example' as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the hint to 'example' to align with the lesson's reading section on comparing and confirming."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "hints/2/source",
+      "problem": "The hint for question 3 references 'check' as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the hint to 'check' to align with the lesson's reading section on explaining yourself."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "reading/0/text",
+      "problem": "The 'concept' reading section combines all three 'mustTeach' points into a single paragraph, which dilutes the focus on the first point (asking for simpler words) and makes it less effective as a source for specific concepts.",
+      "fix": "Split the 'concept' reading section into distinct paragraphs or sentences, each focusing on one 'mustTeach' point, to improve clarity and allow for more precise sourcing."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "materials/1/text",
+      "problem": "The simplified game rules include an explicit parenthetical example '(القمر - الشمس - النجمة)' which is not part of the rules themselves but an interpretation. The brief requires a paraphrase retaining ALL rules, not an explicit solution.",
+      "fix": "Remove '(القمر - الشمس - النجمة)' from the simplified rules text."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "materials/2/text",
+      "problem": "The faulty game rules include an explicit parenthetical example '(القمر - الشمس)' which is not part of the rules themselves but an interpretation. The brief requires a paraphrase retaining ALL rules, not an explicit solution.",
+      "fix": "Remove '(القمر - الشمس)' from the faulty rules text."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "quiz/0/explanation",
+      "problem": "The explanation for quiz question 1 references 'مفهوم' (concept) as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the explanation to 'concept' to align with the lesson's reading section on how to ask for an explanation."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "quiz/1/explanation",
+      "problem": "The explanation for quiz question 2 references 'تحقق' (check) as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the explanation to 'check' to align with the lesson's reading section on confirming understanding."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "quiz/2/explanation",
+      "problem": "The explanation for quiz question 3 references 'مواد الدرس - قواعد اللعبة الخاطئة' (Lesson materials - faulty game rules) as its source, which is too specific and not a valid source ID. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the explanation to 'example' to align with the lesson's reading section on the card game example."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "hints/0/source",
+      "problem": "The hint for question 1 references 'مفهوم' (concept) as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the hint to 'concept' to align with the lesson's reading section on how to ask for an explanation."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "hints/1/source",
+      "problem": "The hint for question 2 references 'تحقق' (check) as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the hint to 'check' to align with the lesson's reading section on confirming understanding."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "hints/2/source",
+      "problem": "The hint for question 3 references 'مفهوم' (concept) as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the hint to 'concept' to align with the lesson's reading section on how to ask for an explanation."
+    },
+    {
+      "locale": "en",
+      "path": "quiz/0/explanation",
+      "problem": "The explanation for quiz question 1 references 'concept' as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the explanation to 'concept' to align with the lesson's reading section on getting clearer."
+    },
+    {
+      "locale": "en",
+      "path": "quiz/1/explanation",
+      "problem": "The explanation for quiz question 2 states that 'the primary rule about the placement of MOON and STAR is violated' but the question asks which rule was missed. The explanation should directly state which rule was missed.",
+      "fix": "Change the explanation to 'The original rules clearly state 'Place MOON first and STAR last.' In the order STAR, SUN, MOON, the rule 'Place MOON first and STAR last' is entirely missed.'"
+    },
+    {
+      "locale": "en",
+      "path": "quiz/1/explanation",
+      "problem": "The explanation for quiz question 2 references 'example' as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the explanation to 'example' to align with the lesson's reading section on the card game rules."
+    },
+    {
+      "locale": "en",
+      "path": "quiz/2/explanation",
+      "problem": "The explanation for quiz question 3 references 'check' as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the explanation to 'check' to align with the lesson's reading section on confirming understanding."
+    },
+    {
+      "locale": "en",
+      "path": "hints/0/source",
+      "problem": "The hint for question 1 references 'concept' as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the hint to 'concept' to align with the lesson's reading section on getting clearer."
+    },
+    {
+      "locale": "en",
+      "path": "hints/1/source",
+      "problem": "The hint for question 2 references 'example' as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the hint to 'example' to align with the lesson's reading section on the card game rules."
+    },
+    {
+      "locale": "en",
+      "path": "hints/2/source",
+      "problem": "The hint for question 3 references 'check' as its source, which is too generic. The source should be a specific section of the lesson content.",
+      "fix": "Change the source reference in the hint to 'check' to align with the lesson's reading section on confirming understanding."
+    }
+  ],
+  "notes": [
+    "All locales generally follow the brief's requirements for teaching points and activity structure. The image scenarios are distinct from the card game, as required. The video scenario for ar-EG, ar-MSA, and ar-Gulf is consistent with the outline's 'complex fictional game instructions then simplified'. The English video scenario is also consistent. The card game rules are consistently implemented across locales, with the exception of the missing 'explain in one sentence' rule in ar-MSA's simplified and faulty materials. The main recurring issue is the generic nature of source references in quizzes and hints, which should point to specific reading sections for better traceability and adherence to the schema's intent for 'source' field."
+  ],
+  "method": "separate automated editorial review; not human approval",
+  "round": 2
+}

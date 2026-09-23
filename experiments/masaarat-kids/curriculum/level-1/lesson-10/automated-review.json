@@ -1,0 +1,140 @@
+{
+  "passed": false,
+  "issues": [
+    {
+      "locale": "ar-MSA",
+      "path": "materials[1]",
+      "problem": "The brief specifies a single fictional source card for the reading activity and a different fictional museum source card for the image scenario. The ar-MSA draft includes a 'museum-card' in the main 'materials' array, which is intended for the reading activity, not just the image scenario. This is a deviation from the brief's structure where the museum card is specifically for the image scenario and transfer mission, not a general material for the main lesson.",
+      "fix": "Remove the 'museum-card' object from the 'materials' array. The museum card details should only be referenced within the 'mission' and 'imageBrief' sections, as per the brief's intent for a separate transfer mission scenario."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "mission.instructions",
+      "problem": "The mission instructions refer to 'بطاقة معلومات المتحف' (museum information card) which is not explicitly provided as a material within the main lesson's 'materials' array, but rather implicitly defined by the image brief. While the brief allows for a different museum source card for the transfer mission, it should be clearly defined within the mission context or the image brief, not as a general lesson material. The current phrasing implies it's a material the learner has access to in the same way as the library card, which is not the case for the main lesson.",
+      "fix": "Modify the mission instructions to explicitly state the content of the museum card or refer to it as a new source provided *for the mission*, rather than assuming it's a pre-existing material. For example, 'لديك ادعاء من صديق وبطاقة معلومات المتحف المرفقة أدناه للمهمة.' or 'قارن الادعاء ببطاقة معلومات المتحف التي ستظهر لك.' Given the brief's structure, the museum card is part of the mission's context, not a general lesson material."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "mission.instructions",
+      "problem": "The mission instructions include the friend's claim directly within the instructions text, which is redundant and less structured than providing it as a separate field or clearly demarcated section.",
+      "fix": "Move the friend's claim from the 'instructions' field into a dedicated 'starter' field within the 'mission' object, similar to how the 'activity' is structured. This improves clarity and consistency."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "mission.rubric[3]",
+      "problem": "The rubric item 'يصحح جميع الأخطاء المذكورة في ادعاء الصديق.' is too broad and overlaps with the other specific rubric items (day, booking, discounts). Rubrics should ideally focus on distinct, measurable aspects of the learner's performance.",
+      "fix": "Remove this rubric item as its intent is covered by the more specific rubric points. The other rubric items already ensure all errors are addressed."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "materials[1]",
+      "problem": "The brief specifies a single fictional source card for the reading activity and a different fictional museum source card for the image scenario. The ar-Gulf draft includes a 'wrong-answer' object in the main 'materials' array. The 'wrong AI-style answer' is part of the activity's 'starter' text, not a separate material card.",
+      "fix": "Remove the 'wrong-answer' object from the 'materials' array. The content of this object should be integrated into the 'activity.starter' field, as it is an example of an incorrect answer for the activity."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "materials[2]",
+      "problem": "The brief specifies a single fictional source card for the reading activity and a different fictional museum source card for the image scenario. The ar-Gulf draft includes a 'museum-announcement' in the main 'materials' array, which is intended for the reading activity, not just the image scenario. This is a deviation from the brief's structure where the museum card is specifically for the image scenario and transfer mission, not a general material for the main lesson.",
+      "fix": "Remove the 'museum-announcement' object from the 'materials' array. The museum card details should only be referenced within the 'mission' and 'imageBrief' sections, as per the brief's intent for a separate transfer mission scenario."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "activity.starter",
+      "problem": "The 'activity.starter' field duplicates the 'starter' text from the 'promptExamples' and also duplicates the 'wrong-answer' material. This is redundant and can lead to inconsistencies. The 'starter' for the activity should be concise and directly present the incorrect answer for correction.",
+      "fix": "Consolidate the 'starter' text. The 'activity.starter' should directly present the incorrect answer for correction, without the introductory phrase 'المعلومة الخاطئة:'. It should be: 'نادي مكتبة السحاب يفتح يوم الأربعاء الساعة 4 مساءً. لا يتطلب حجزاً مسبقاً، وهناك وجبات خفيفة مجانية.'"
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "quiz[0].explanation",
+      "problem": "The explanation for quiz question 1 includes '(المصدر: مثال)' which is an internal reference and should not be part of the user-facing explanation.",
+      "fix": "Remove '(المصدر: مثال)' from the explanation."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "quiz[1].explanation",
+      "problem": "The explanation for quiz question 2 includes '(المصدر: مثال)' which is an internal reference and should not be part of the user-facing explanation.",
+      "fix": "Remove '(المصدر: مثال)' from the explanation."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "quiz[2].explanation",
+      "problem": "The explanation for quiz question 3 includes '(المصدر: تحقق)' which is an internal reference and should not be part of the user-facing explanation.",
+      "fix": "Remove '(المصدر: تحقق)' from the explanation."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "mission.instructions",
+      "problem": "The mission instructions include the friend's claim directly within the instructions text, which is redundant and less structured than providing it as a separate field or clearly demarcated section.",
+      "fix": "Move the friend's claim from the 'instructions' field into a dedicated 'starter' field within the 'mission' object, similar to how the 'activity' is structured. This improves clarity and consistency."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "mission.rubric[3]",
+      "problem": "The rubric item 'يصحح جميع الأخطاء المذكورة في معلومة الصديق بناءً على المصدر.' is too broad and overlaps with the other specific rubric items (day, booking, discounts). Rubrics should ideally focus on distinct, measurable aspects of the learner's performance.",
+      "fix": "Remove this rubric item as its intent is covered by the more specific rubric points. The other rubric items already ensure all errors are addressed."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "hints[0].answer",
+      "problem": "The hint for the mission refers to 'إعلان نادي مكتبة السحاب' (Cloud Library Club Announcement) instead of the 'إعلان متحف كنوز الماضي' (Treasures of the Past Museum Announcement) which is the source for the mission. This is a factual inconsistency.",
+      "fix": "Change 'إعلان نادي مكتبة السحاب' to 'إعلان متحف كنوز الماضي' in the hint answer."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "hints[1].answer",
+      "problem": "The hint for the mission refers to 'إعلان نادي مكتبة السحاب' (Cloud Library Club Announcement) instead of the 'إعلان متحف كنوز الماضي' (Treasures of the Past Museum Announcement) which is the source for the mission. This is a factual inconsistency.",
+      "fix": "Change 'إعلان نادي مكتبة السحاب' to 'إعلان متحف كنوز الماضي' in the hint answer."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "hints[2].answer",
+      "problem": "The hint for the mission refers to 'إعلان نادي مكتبة السحاب' (Cloud Library Club Announcement) instead of the 'إعلان متحف كنوز الماضي' (Treasures of the Past Museum Announcement) which is the source for the mission. This is a factual inconsistency.",
+      "fix": "Change 'إعلان نادي مكتبة السحاب' to 'إعلان متحف كنوز الماضي' in the hint answer."
+    },
+    {
+      "locale": "en",
+      "path": "materials[1]",
+      "problem": "The brief states that the 'authored wrong AI-style answer' is part of the learner's task, not a separate material card. Including it in the 'materials' array implies it's a source document, which it is not. It's the claim to be corrected.",
+      "fix": "Remove the 'ai-style-answer' object from the 'materials' array. The content of this object should be integrated into the 'activity.starter' field, as it is an example of an incorrect answer for the activity."
+    },
+    {
+      "locale": "en",
+      "path": "materials[2]",
+      "problem": "The brief specifies a single fictional source card for the reading activity and a different fictional museum source card for the image scenario. The en draft includes a 'museum-flyer' in the main 'materials' array, which is intended for the reading activity, not just the image scenario. This is a deviation from the brief's structure where the museum card is specifically for the image scenario and transfer mission, not a general material for the main lesson.",
+      "fix": "Remove the 'museum-flyer' object from the 'materials' array. The museum card details should only be referenced within the 'mission' and 'imageBrief' sections, as per the brief's intent for a separate transfer mission scenario."
+    },
+    {
+      "locale": "en",
+      "path": "activity.starter",
+      "problem": "The 'activity.starter' field duplicates the 'starter' text from the 'promptExamples'. This is redundant and can lead to inconsistencies. The 'starter' for the activity should be concise and directly present the incorrect answer for correction.",
+      "fix": "Consolidate the 'starter' text. The 'activity.starter' should directly present the incorrect answer for correction, without the introductory phrase 'Here is an AI-style answer about the Cloud Library Club:'. It should be: ''The Cloud Library Club meets on Wednesday at 4:00 PM. No booking is needed, and free snacks are provided.''"
+    },
+    {
+      "locale": "en",
+      "path": "mission.instructions",
+      "problem": "The mission instructions include the friend's claim directly within the instructions text, which is redundant and less structured than providing it as a separate field or clearly demarcated section.",
+      "fix": "Move the friend's claim from the 'instructions' field into a dedicated 'starter' field within the 'mission' object, similar to how the 'activity' is structured. This improves clarity and consistency."
+    },
+    {
+      "locale": "en",
+      "path": "mission.rubric[2]",
+      "problem": "The rubric item 'The corrected statement includes at least one additional detail from the provided flyer not mentioned by the friend.' is not directly supported by the brief's core focus, which is to compare a claim with a source and admit when the source does not establish an answer. While adding details is good, it's not a primary 'mustTeach' point. The brief emphasizes correcting errors and identifying silence.",
+      "fix": "Remove this rubric item. The other rubric items sufficiently cover the core objectives of the brief."
+    },
+    {
+      "locale": "en",
+      "path": "mission.rubric[3]",
+      "problem": "The rubric item 'The corrected statement accurately reflects the provided flyer and identifies any information from the friend's claim not covered by the flyer.' is too broad and overlaps with the other specific rubric items (day/time, booking, silence on other claims). Rubrics should ideally focus on distinct, measurable aspects of the learner's performance.",
+      "fix": "Remove this rubric item as its intent is covered by the more specific rubric points. The other rubric items already ensure all errors are addressed."
+    }
+  ],
+  "notes": [
+    "All locales correctly implement the core facts for the library club announcement (Tuesday 4-6pm, free entry, booking required, no snacks mentioned) and the authored wrong AI-style answer (Wednesday 4pm, no booking, free snacks).",
+    "All locales correctly implement the core facts for the museum image scenario (Saturday 10am-noon, booking required).",
+    "All locales correctly address the 'mustTeach' points: confident answers can conflict, find exact supporting text, and state when the source is silent.",
+    "All locales avoid inventing real-world details, adhering to the 'avoid' section of the brief.",
+    "The ar-EG draft is the most compliant with the brief's structure for materials and mission rubrics."
+  ],
+  "method": "separate automated editorial review; not human approval",
+  "round": 2
+}

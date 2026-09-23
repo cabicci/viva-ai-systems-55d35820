@@ -22,7 +22,7 @@ for n in range(3,13):
   p=folder/(locale+".json")
   assert hashlib.sha256(p.read_bytes()).hexdigest()==m["locales"][locale]["sha256"],f"Stale manifest {n}/{locale}"
   package[locale]=json.loads(p.read_text(encoding="utf-8"))
- lessons.append({"number":n,"status":"editorial-draft-automated-reviewed","locales":package})
+ lessons.append({"number":n,"status":m["status"],"locales":package})
 assert len(lessons)==12 and all(set(x["locales"])==set(LOCALES) for x in lessons)
 payload=json.dumps(lessons,ensure_ascii=False).replace("<","\\u003c").replace("\u2028","\\u2028").replace("\u2029","\\u2029")
 logo=base64.b64encode((BASE/"public/brand/logo.png").read_bytes()).decode()

@@ -1,0 +1,35 @@
+{
+  "method": "Codex editorial assessment and correction; not human/native-speaker approval",
+  "automatedReportRetained": true,
+  "automatedPassed": false,
+  "automatedIssueCount": 21,
+  "assessment": "Supplied both fictional source cards and the wrong answer explicitly. Reject automated demands to remove transfer materials or supplied claims: offline tasks need those texts. Corrected source facts, missing mission data and unknown-versus-false assessment.",
+  "corrections": [
+    {
+      "locale": "ar-EG",
+      "beforeSha256": "f25e55f3bb368792b9800720412385a44fa7ffced15389611d3cc02d32e9b8c8",
+      "afterSha256": "ba00308549899e73f248182c6c7094d7d21db13cf0392c66354c41bc2ac94382",
+      "reason": "Provide exact fictional library and museum cards, remove invented contact/parking extras, repair missing mission evidence and keep unknown claims distinct from false claims."
+    },
+    {
+      "locale": "ar-MSA",
+      "beforeSha256": "7bb5a3b4f260efa732f5c8374cd915bd51bbc187d5a21b08f5a459bd3852ab1f",
+      "afterSha256": "4331061b8ece64aaf6e89e60eccad60b94b73b59406a4dccdbde667709a10ab2",
+      "reason": "Provide exact fictional library and museum cards, remove invented contact/parking extras, repair missing mission evidence and keep unknown claims distinct from false claims."
+    },
+    {
+      "locale": "ar-Gulf",
+      "beforeSha256": "89bf2727c0818a2f3780f9cd230d75234fece240716c957b68f633c3d1b5b552",
+      "afterSha256": "247391247e2ce11d023a49b1f553111586b930c9d438416bec80932c82ee29ce",
+      "reason": "Provide exact fictional library and museum cards, remove invented contact/parking extras, repair missing mission evidence and keep unknown claims distinct from false claims."
+    },
+    {
+      "locale": "en",
+      "beforeSha256": "548e12fa1b6dac4059edceebd7e445bb53bd3d5da6d030155291fed9c69fa3b4",
+      "afterSha256": "dca9284d61501a52caa43aa85f9b35625a72298c4fdbcda295cce23431b6eb72",
+      "reason": "Provide exact fictional library and museum cards, remove invented contact/parking extras, repair missing mission evidence and keep unknown claims distinct from false claims."
+    }
+  ],
+  "humanEditorialApproval": "pending",
+  "mediaStatus": "not-produced"
+}

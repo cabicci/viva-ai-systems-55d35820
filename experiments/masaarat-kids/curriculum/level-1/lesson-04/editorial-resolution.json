@@ -1,0 +1,35 @@
+{
+  "method": "Codex editorial assessment and correction; not human/native-speaker approval",
+  "automatedReportRetained": true,
+  "automatedPassed": false,
+  "automatedIssueCount": 27,
+  "assessment": "Restored all controlled game constraints and replaced ambiguous questions. Rejected demands to repeat all privacy points in every explanation or collapse the required four rubric items.",
+  "corrections": [
+    {
+      "locale": "ar-EG",
+      "beforeSha256": "684dd0f6fb8b6be8367582d0218e98b9a1e76c566dbcbfa74e03381831abc2f7",
+      "afterSha256": "b84e072f894d95b3c07aba3dd85acbada4b5d33e51c6191de04133b8959111b7",
+      "reason": "Keep all controlled game constraints explicit; replace ambiguous transfer questions and avoid implying that more specific prompts guarantee good answers."
+    },
+    {
+      "locale": "ar-MSA",
+      "beforeSha256": "e2c21b03e5894360796fa0cbaf77b511dd7176d1a7e805a7ede2c0d9117a80d7",
+      "afterSha256": "ef487d0e21102c58d955a0db18d58861346f89006a2559d6392847650f0d00d3",
+      "reason": "Keep all controlled game constraints explicit; replace ambiguous transfer questions and avoid implying that more specific prompts guarantee good answers."
+    },
+    {
+      "locale": "ar-Gulf",
+      "beforeSha256": "55c93b3947c4e07308dee6fdbecbc26cde327558f032f4d308e0752bb2ac73d2",
+      "afterSha256": "b5ce99d8d4671da68079b774aa5cf23f7784e7946bbd98e7bf60e5a803fdcd58",
+      "reason": "Keep all controlled game constraints explicit; replace ambiguous transfer questions and avoid implying that more specific prompts guarantee good answers."
+    },
+    {
+      "locale": "en",
+      "beforeSha256": "27979421ac0291f2a1fabb126978361757f55d85f6a37806ddedf078d62c512f",
+      "afterSha256": "109c30ee369d58b3df55fc2c279b7a33fe9cfe8b0912dc28e52ec046d8d49896",
+      "reason": "Keep all controlled game constraints explicit; replace ambiguous transfer questions and avoid implying that more specific prompts guarantee good answers."
+    }
+  ],
+  "humanEditorialApproval": "pending",
+  "mediaStatus": "not-produced"
+}

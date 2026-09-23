@@ -45,4 +45,14 @@ Revision 2 delivered on Dell: production run 35881755433, source 7b82e2646864c51
 
 ## Independent image revision and curriculum proposal
 Owner liked the R2 lesson and requested a completely different illustration. Page artwork now uses a reading-corner naming exercise, separate artwork and layout, and no video characters. Video scripts, assets and timings are unchanged. The page illustration has its own pageIllustration field, separate from the video illustration data.
-The curriculum folder contains a proposed 36-lesson map (12 per age band) and a complete four-locale editorial draft for lesson 2. These are not integrated lesson routes or produced lesson-2 media. The scope/order proposal awaits owner preference; default is level-1 content first.
+The curriculum folder contains a proposed 36-lesson map (12 per age band) and a complete four-locale editorial draft for lesson 2. These are not integrated lesson routes or produced lesson-2 media. The owner authorized completing level-1 text first in four locales.
+
+
+## Level 1 editorial content - 23 September 2026
+All 12 lessons for ages 10-12 now have four localized editorial packages (48 total). The offline review contains 356 narration scenes and 152 explained quiz items, activities, missions, hints and independent illustration briefs. Lessons 2-12 media have not been produced. Levels 2 and 3 remain curriculum outlines.
+
+Build the read-only review: `python scripts/build-editorial-review.py`. Open `editorial-review/index.html`. Verify navigation and responsive rendering: `node scripts/check-editorial-review.mjs`. This does not change platform routes or publish lessons.
+
+Source drafts: GitHub Actions run 35923832252, commit 2c6332801271e8cdf48afe2afc023444471e52d1. The generation run ended with editorial-review findings, not successful automated approval. Codex assessed those findings against the actual text and applied source, quiz, privacy, self-contained activity and consistency corrections. Original reports are retained; per-lesson editorial-resolution.json and manifests record source/final hashes. Forty new locale packages passed structural validation. Native-speaker and child-education approval remains pending. No new media was generated in this content phase.
+
+Dell review copy: E:/Masaarat/Pilot-Review/Masaarat-Kids-Level1-Content/index.html. Owner review of the text precedes media production; the accepted lesson-1 pilot remains separate.

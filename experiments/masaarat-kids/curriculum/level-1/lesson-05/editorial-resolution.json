@@ -1,0 +1,35 @@
+{
+  "method": "Codex editorial assessment and correction; not human/native-speaker approval",
+  "automatedReportRetained": true,
+  "automatedPassed": false,
+  "automatedIssueCount": 33,
+  "assessment": "Kept exact source IDs concept/example/check; these are valid IDs, not missing sources. Replaced unrelated activities and incomplete missions; aligned original/simplified/incomplete rule cards and removed mastery guarantees.",
+  "corrections": [
+    {
+      "locale": "ar-EG",
+      "beforeSha256": "6097015f804e1171737b23f1af39ca6bfb7f60801f0a3c2f2d3e9d4c8a44bdc1",
+      "afterSha256": "4c562ef6756df45d8bd58f480885a39f87a17625feecf33e9b41e9673f3971b8",
+      "reason": "Replace unrelated cooking/experiment activities and missing mission materials with a complete paper-only source-comparison task; retain every rule and remove unsupported mastery claims."
+    },
+    {
+      "locale": "ar-MSA",
+      "beforeSha256": "19c3b2bc5fd09e8b2a24bfa32b47da2dab9c568e4e10cb1705cede2d90845653",
+      "afterSha256": "30b2d6cebf00204a7e98a532d8c5537e26efdcecfb1c29420e5ef0b9c1135a28",
+      "reason": "Replace unrelated cooking/experiment activities and missing mission materials with a complete paper-only source-comparison task; retain every rule and remove unsupported mastery claims."
+    },
+    {
+      "locale": "ar-Gulf",
+      "beforeSha256": "f80d8cce2d94c86a5d42872b22ff4da031965e0ab7b746fedec00ea1aef59acd",
+      "afterSha256": "ab933fb8ac24e3f97007aa45b8c444e1f621f7a8c10b7bc90edf84b5105102a7",
+      "reason": "Replace unrelated cooking/experiment activities and missing mission materials with a complete paper-only source-comparison task; retain every rule and remove unsupported mastery claims."
+    },
+    {
+      "locale": "en",
+      "beforeSha256": "664e94c8d17dec624ff652641e69ea9ec985213824b24168c80808bcef55ffcf",
+      "afterSha256": "fe39393cee2322a1027faf55ecd531a8c8f890f02cdb10898a02029d6e5e14d4",
+      "reason": "Replace unrelated cooking/experiment activities and missing mission materials with a complete paper-only source-comparison task; retain every rule and remove unsupported mastery claims."
+    }
+  ],
+  "humanEditorialApproval": "pending",
+  "mediaStatus": "not-produced"
+}

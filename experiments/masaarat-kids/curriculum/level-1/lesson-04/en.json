@@ -26,7 +26,7 @@
       "id": "example",
       "title": "Adding Details",
       "display": "Goal + Constraint = Helpful Question",
-      "narration": "Let's try again. If you're at a small table, want a quiet game with paper, for two players, what would you ask? 'Suggest a quiet paper game for two players at this small table.' That's much better!",
+      "narration": "Let's try again. If you're at a small table, want a quiet game with paper, for two players, that can finish in three steps, what would you ask? 'Suggest a quiet paper game for two players at this small table that we can finish in three steps.' That's much better!",
       "visualAction": "The first kid's speech bubble changes to the improved question. The second kid smiles and nods, then a thought bubble shows a simple paper game."
     },
     {
@@ -67,7 +67,7 @@
     {
       "id": "example",
       "title": "Good vs. Vague Questions",
-      "text": "Vague: 'Tell me about animals.' This could be about anything! Helpful: 'Tell me three interesting facts about desert animals that can survive without much water.' This question has a clear goal (three facts) and specific constraints (desert animals, survive without water). It guides the answer."
+      "text": "Vague request: 'Suggest a game.' It has a broad goal but needs useful details to guide a suitable suggestion.\nSuggest a quiet game for two seated players at a small table, using only paper. Explain it in 3 steps."
     },
     {
       "id": "check",
@@ -77,16 +77,22 @@
   ],
   "materials": [
     {
-      "id": "source-card",
-      "title": "Invented Teaching Example: Game Request",
-      "text": "A group of friends wants to play a game. One friend says, 'Give me a game idea.'\n\nThis is a vague request. It doesn't tell anyone what kind of game, how many players, where they are, or what materials they have.\n\nAn improved request might be: 'Suggest a quiet, seated game for two players, using only paper, that we can play on this small table.'\n\nThis improved request has a clear goal (a game) and several helpful constraints (quiet, seated, two players, paper, small table).",
+      "id": "weak-request",
+      "title": "An example of a specific request",
+      "text": "Vague request: 'Suggest a game.' It has a broad goal but needs useful details to guide a suitable suggestion.",
+      "kind": "authored-teaching-example"
+    },
+    {
+      "id": "specific-request",
+      "title": "An example of a specific request",
+      "text": "Suggest a quiet game for two seated players at a small table, using only paper. Explain it in 3 steps.",
       "kind": "authored-teaching-example"
     }
   ],
   "promptExamples": {
     "initial": "Give me a game.",
-    "improved": "Suggest a quiet paper game for two players at this small table.",
-    "followup": "Can you make sure it's a game we can finish in three steps?"
+    "improved": "Suggest a quiet game for two seated players at a small table, using only paper. Explain it in 3 steps.",
+    "followup": "Check whether the suggestion works for two seated players, uses only paper, stays quiet, and has 3 steps. Revise any part that does not match."
   },
   "activity": {
     "title": "Improve These Questions!",
@@ -109,27 +115,27 @@
     },
     {
       "id": "q2",
-      "question": "What is the main problem with asking, 'What should I draw?'",
+      "question": "You only have paper and want a game idea. Which constraint should you add?",
       "options": [
-        "It's too long.",
-        "It doesn't include a goal or constraints.",
-        "It's hard to understand."
+        "Use paper only, with no extra equipment.",
+        "Use paper and building blocks.",
+        "Include the players' real names."
       ],
-      "answer": 1,
-      "explanation": "The main problem is that it's too vague; it lacks a clear goal (what kind of drawing?) and any constraints (what materials? what style?). It's not too long, and it's easy to understand, just not helpful.",
-      "source": "check"
+      "answer": 0,
+      "explanation": "Available materials are a useful constraint. Blocks are unavailable, and real names are unnecessary for suggesting a game.",
+      "source": "example"
     },
     {
       "id": "q3",
-      "question": "You want to make a bookmark from one sheet of paper, without scissors. Which question would get the best ideas?",
+      "question": "You need 3 bookmark ideas using one sheet of paper and no scissors. Which request fits?",
       "options": [
-        "How do I make a bookmark?",
-        "Give me three ideas for a bookmark I can make from one sheet of paper, without using scissors.",
-        "What are some cool crafts?"
+        "Suggest some lovely crafts.",
+        "Suggest 3 bookmark ideas using one sheet of paper and no scissors.",
+        "Make a bookmark using any equipment."
       ],
       "answer": 1,
-      "explanation": "Option B clearly states the goal (three bookmark ideas) and specific constraints (one sheet of paper, no scissors). Option A is too general about bookmarks. Option C is about 'cool crafts' which is too broad and not specific to bookmarks or materials.",
-      "source": "example"
+      "explanation": "The second request specifies the result, quantity and available materials.",
+      "source": "check"
     }
   ],
   "mission": {
@@ -176,10 +182,10 @@
     "sampleAnswer": "Activity Sample:\n1. Vague Question: \"I need a snack.\"\n   Improved Question: \"I need a healthy, crunchy snack that I can eat quickly before my soccer practice.\"\n   What I added: I added 'healthy' and 'crunchy' as qualities (goals) and 'eat quickly before soccer practice' as a time/situation constraint.\n\n2. Vague Question: \"Tell me about a book.\"\n   Improved Question: \"Tell me about a fantasy adventure book with a strong female main character, suitable for ages 10-12.\"\n   What I added: I added 'fantasy adventure' and 'strong female main character' as genre/character goals, and 'suitable for ages 10-12' as an audience constraint.\n\nMission Sample:\nQuestion: \"Can you give me three creative ideas for a bookmark that I can make using only one sheet of paper and without needing any scissors?\"\nExplanation: This question is helpful because it clearly asks for 'three ideas' for a 'bookmark' (goal). It also gives two very important limits: 'only one sheet of paper' and 'without needing any scissors' (constraints). This tells someone exactly what kind of ideas to suggest.",
     "commonMisconception": "Learners might think adding *any* details makes a question better, even if the details are irrelevant or personal. Emphasize that details must be *relevant* to the goal or constraints.",
     "reviewChecks": [
-      "Does the improved question clearly state a goal?",
-      "Does the improved question include at least one relevant constraint?",
-      "Are there any unnecessary or irrelevant details in the improved question?",
-      "Does the explanation accurately describe what was added to improve the question?"
+      "The question asks for three ideas.",
+      "The question specifies 'bookmark'.",
+      "The question includes the constraint 'one sheet of paper'.",
+      "The question includes the constraint 'no scissors'."
     ],
     "safetyNotes": "Encourage children to ask for help from a trusted adult if they are unsure about any task or instruction, especially when working on projects that might involve physical materials outside of this digital lesson."
   }

@@ -9,7 +9,7 @@
     "ar-Gulf",
     "en"
   ],
-  "defaultProductionOrder": "Owner authorized level-1 content first in four locales.",
+  "defaultProductionOrder": "Level 1 text completed in four locales. Next: owner content review, then approved media production. Levels 2 and 3 remain outlines.",
   "sources": [
     "https://www.unesco.org/en/articles/ai-competency-framework-students",
     "https://www.unicef.org/innocenti/reports/policy-guidance-ai-children"
@@ -28,7 +28,8 @@
           "independentImageScenario": "تسمية ركن القراءة؛ طلب مختصر ثم أوضح.",
           "activity": "طلب لشخصية خيالية يحدّد ثلاثة عناصر.",
           "acceptance": "يكتشف اختلافًا في الرد ويكتب تعديلًا محددًا.",
-          "status": "pilot-implemented"
+          "status": "editorial-content-ready-for-review",
+          "mediaStatus": "pilot-produced"
         },
         {
           "id": "level-1-02",
@@ -38,7 +39,8 @@
           "independentImageScenario": "رحلة متحف: فكرة نشاط، موعد رسمي، موافقة ولي الأمر.",
           "activity": "تصنيف مواقف إلى مساعدة بالأفكار، تحقق من مصدر، قرار بشري.",
           "acceptance": "يفسّر سبب الاختيار، وليس اسم الأداة فقط.",
-          "status": "four-locale-editorial-draft"
+          "status": "editorial-content-ready-for-review",
+          "mediaStatus": "not-produced"
         },
         {
           "id": "level-1-03",
@@ -48,7 +50,8 @@
           "independentImageScenario": "بطاقة طلب: تفاصيل خيالية مفيدة وبيانات تُحذف.",
           "activity": "إعادة كتابة طلب دون عنوان أو كلمة مرور أو صور خاصة.",
           "acceptance": "يحذف البيانات الحساسة ويحتفظ بهدف المهمة.",
-          "status": "outline-only"
+          "status": "editorial-content-ready-for-review",
+          "mediaStatus": "not-produced"
         },
         {
           "id": "level-1-04",
@@ -58,7 +61,8 @@
           "independentImageScenario": "عدسة تضييق السؤال: أفكار عامة إلى نشاط بمواد محددة.",
           "activity": "تحسين سؤالين مع توضيح ما أضافه الطفل.",
           "acceptance": "السؤال المعدّل يحدّد هدفًا وقيدًا مفيدًا.",
-          "status": "outline-only"
+          "status": "editorial-content-ready-for-review",
+          "mediaStatus": "not-produced"
         },
         {
           "id": "level-1-05",
@@ -68,7 +72,8 @@
           "independentImageScenario": "سلم توضيح: عبارة، مثال، خطوة عملية.",
           "activity": "كتابة طلب لتفسير تعليمات قصيرة ثم شرحها بأسلوبه.",
           "acceptance": "يستطيع إعادة الشرح، ولا يكتفي بنسخ النص.",
-          "status": "outline-only"
+          "status": "editorial-content-ready-for-review",
+          "mediaStatus": "not-produced"
         },
         {
           "id": "level-1-06",
@@ -78,7 +83,8 @@
           "independentImageScenario": "مسار تدريب: أحاول، أطلب تلميحًا، أحل، أفسّر.",
           "activity": "محاولة لغز قصير ثم تحديد التلميح المطلوب.",
           "acceptance": "يُظهر محاولته وما تغيّر بعد التلميح.",
-          "status": "outline-only"
+          "status": "editorial-content-ready-for-review",
+          "mediaStatus": "not-produced"
         },
         {
           "id": "level-1-07",
@@ -88,7 +94,8 @@
           "independentImageScenario": "ثلاث بطاقات لقصة مكتبة متنقلة: بداية، مشكلة، حل.",
           "activity": "اختيار فكرة وإعادة صياغة نهايتها بنفسه.",
           "acceptance": "توجد علاقة واضحة بين المشكلة والحل ومساهمة أصلية.",
-          "status": "outline-only"
+          "status": "editorial-content-ready-for-review",
+          "mediaStatus": "not-produced"
         },
         {
           "id": "level-1-08",
@@ -98,7 +105,8 @@
           "independentImageScenario": "لوحة تصميم لمركبة بحرية: الموضوع، المكان، الألوان.",
           "activity": "وصف صورة خيالية ومقارنته بنتيجتين تعليميتين.",
           "acceptance": "يذكر عنصرًا تحقق وآخر يحتاج تعديلًا.",
-          "status": "outline-only"
+          "status": "editorial-content-ready-for-review",
+          "mediaStatus": "not-produced"
         },
         {
           "id": "level-1-09",
@@ -108,7 +116,8 @@
           "independentImageScenario": "بطاقات تجهيز لعبة ورقية: الأدوات ثم الإعداد ثم التجربة.",
           "activity": "إعادة ترتيب قائمة واكتشاف خطوة ناقصة.",
           "acceptance": "يفسّر سبب الترتيب ولا يقبل خطوة غير ممكنة.",
-          "status": "outline-only"
+          "status": "editorial-content-ready-for-review",
+          "mediaStatus": "not-produced"
         },
         {
           "id": "level-1-10",
@@ -118,7 +127,8 @@
           "independentImageScenario": "مقارنة إجابة ببطاقة مصدر أصلية داخل الدرس.",
           "activity": "استخراج ادعاء ومقارنته بالمصدر التعليمي المرفق.",
           "acceptance": "يحدّد النص الداعم أو يصرّح بأن المصدر لا يكفي.",
-          "status": "outline-only"
+          "status": "editorial-content-ready-for-review",
+          "mediaStatus": "not-produced"
         },
         {
           "id": "level-1-11",
@@ -128,7 +138,8 @@
           "independentImageScenario": "اختيار أنشطة فريق خيالي بأدوار وطرق مشاركة مختلفة.",
           "activity": "تعديل اقتراح ليستوعب اختلاف القدرات والتفضيلات.",
           "acceptance": "يضيف بديل مشاركة ويشرح من يستفيد منه.",
-          "status": "outline-only"
+          "status": "editorial-content-ready-for-review",
+          "mediaStatus": "not-produced"
         },
         {
           "id": "level-1-12",
@@ -138,7 +149,8 @@
           "independentImageScenario": "خريطة حزمة مشروع عن حديقة تخيلية.",
           "activity": "تسليم الطلب والنتيجة المختارة والتعديل وقائمة المراجعة.",
           "acceptance": "مهمة واضحة، خصوصية، مراجعة، تعديل، وشرح مستقل.",
-          "status": "outline-only"
+          "status": "editorial-content-ready-for-review",
+          "mediaStatus": "not-produced"
         }
       ]
     },
@@ -397,5 +409,5 @@
       ]
     }
   ],
-  "level1WritingStatus": "authorized-in-progress"
+  "level1WritingStatus": "complete-editorial-draft-ready-for-owner-review"
 }

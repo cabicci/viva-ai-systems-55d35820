@@ -1,0 +1,35 @@
+{
+  "method": "Codex editorial assessment and correction; not human/native-speaker approval",
+  "automatedReportRetained": true,
+  "automatedPassed": false,
+  "automatedIssueCount": 8,
+  "assessment": "Verified quiz explanations against actual questions: automated claims of mismatched explanations were false. Independently replaced membership-data collection with a supplied fictional naming request and an unrelated-password question.",
+  "corrections": [
+    {
+      "locale": "ar-EG",
+      "beforeSha256": "194b3e114d6549367aed61a97ec9ee94a690b9abc5ca91422488efe6356e9d66",
+      "afterSha256": "e9152d2b27c7fdbb5b819336b92e15fa2e83d174c78307412902e93197d46edb",
+      "reason": "Keep privacy exercise self-contained; remove membership data collection, avoid absolute safety claims and assess an unrelated password request unambiguously."
+    },
+    {
+      "locale": "ar-MSA",
+      "beforeSha256": "6926f5b383e332afcd923a0d505fc79647f99937e84dab7711eed1a4716ff773",
+      "afterSha256": "28139e5ac12d10e22395daf3295756795cee3d9423d97e438cb05e8a5c6593f9",
+      "reason": "Keep privacy exercise self-contained; remove membership data collection, avoid absolute safety claims and assess an unrelated password request unambiguously."
+    },
+    {
+      "locale": "ar-Gulf",
+      "beforeSha256": "dcfd13d5fbf7452cf77d78a24a0122c8eec5f12f7e614b49d71ce9176b0bbbf2",
+      "afterSha256": "8187e75f09d0452aec128a2db533e4e317e15a384ce6011f704d0139e7f1790d",
+      "reason": "Keep privacy exercise self-contained; remove membership data collection, avoid absolute safety claims and assess an unrelated password request unambiguously."
+    },
+    {
+      "locale": "en",
+      "beforeSha256": "d5a47177d107a7b3947c43702ed6759de1ce282150544b61e15d63873af2f124",
+      "afterSha256": "54e265143c7aefcad8f618b0f6af7703b43aebdd56cf6e0cc5f707d50ae1a626",
+      "reason": "Keep privacy exercise self-contained; remove membership data collection, avoid absolute safety claims and assess an unrelated password request unambiguously."
+    }
+  ],
+  "humanEditorialApproval": "pending",
+  "mediaStatus": "not-produced"
+}

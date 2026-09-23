@@ -1,0 +1,35 @@
+{
+  "method": "Codex editorial assessment and correction; not human/native-speaker approval",
+  "automatedReportRetained": true,
+  "automatedPassed": false,
+  "automatedIssueCount": 26,
+  "assessment": "Unique order follows from the two constraints; it need not be stated as a third rule. A guiding question is a valid hint. Removed visible answers from prompts, isolated hints, and supplied a unique transfer puzzle and teacher solution.",
+  "corrections": [
+    {
+      "locale": "ar-EG",
+      "beforeSha256": "6c7b299cb7a3e7e2f0f35b7194b094410e81ef875accb0e259871f898d4b6311",
+      "afterSha256": "0b1daab4eaf513bf7a152679c08b17313616dbd06b6d37d5899a8e46eefd7f94",
+      "reason": "Replace an under-constrained list of nouns with a complete unique word-order task and a supplied first hint."
+    },
+    {
+      "locale": "ar-MSA",
+      "beforeSha256": "0b71f54a0dd3b777887dfccee53d92db5c4667d69d99618e2519271a596daecf",
+      "afterSha256": "61a2019e5f01d69ecded546d9e194276761276dcf4182057de54fa3be2f236c4",
+      "reason": "Replace an under-constrained list of nouns with a complete unique word-order task and a supplied first hint."
+    },
+    {
+      "locale": "ar-Gulf",
+      "beforeSha256": "fedef28c6300610de1944d6e0b5680462a3efa9ce5d9f1a8cfc15a502f088743",
+      "afterSha256": "5ef14fad48de3ed814f7ebb3206b559c34486c3b6a17e47cd44e31aab7d5d517",
+      "reason": "Replace an under-constrained list of nouns with a complete unique word-order task and a supplied first hint."
+    },
+    {
+      "locale": "en",
+      "beforeSha256": "983afe4bfa7a7db8bc45c8729a943486ab6bbfcbc42956a42539f3cae12d0695",
+      "afterSha256": "18676775bfd78f03e54308bd22f7978a339a7b56ce4cb3b351383baa443ceafa",
+      "reason": "Replace an under-constrained list of nouns with a complete unique word-order task and a supplied first hint."
+    }
+  ],
+  "humanEditorialApproval": "pending",
+  "mediaStatus": "not-produced"
+}

@@ -1,0 +1,35 @@
+{
+  "method": "Codex editorial assessment and correction; not human/native-speaker approval",
+  "automatedReportRetained": true,
+  "automatedPassed": false,
+  "automatedIssueCount": 10,
+  "assessment": "Added comparison and a specific correction to every mission. Removed subjective closer-result ranking. Source cards may support transfer questions without repeating the exact new scenario. Correct answer index 0 was not an error.",
+  "corrections": [
+    {
+      "locale": "ar-EG",
+      "beforeSha256": "b04ecf1b38fb23bc8c8fed28f693dda9b9b4f488d86de0838a38186b2f15d763",
+      "afterSha256": "59af520c629c6f0ce68af8ecf7be6bce98e4098821e25ef7b0e8f16d5fcb2ab3",
+      "reason": "Supply a complete transfer result and assess a specific mismatch rather than subjective 'most helpful' details."
+    },
+    {
+      "locale": "ar-MSA",
+      "beforeSha256": "4c66c8589eeccb5e302eb13f3d1848e6878a4d9ff3bf3f5c76f598415239239f",
+      "afterSha256": "82f1410bde36f24f035bf6220ab7d05be33e5b303c557617b14003ea1e297839",
+      "reason": "Supply a complete transfer result and assess a specific mismatch rather than subjective 'most helpful' details."
+    },
+    {
+      "locale": "ar-Gulf",
+      "beforeSha256": "27dc902d95b2d18c17a89bfcc89a2b35ebb96af0177bdf706e5c618856d1e4cc",
+      "afterSha256": "bb907f08051cf80cfada0b4cf15b07a0395e6fe42faed424cdb3e13f46c0a993",
+      "reason": "Supply a complete transfer result and assess a specific mismatch rather than subjective 'most helpful' details."
+    },
+    {
+      "locale": "en",
+      "beforeSha256": "9586d53ad402417214fda0958d350125c328283cf2ffa3a4aa2a02016db2f689",
+      "afterSha256": "51722c5b46e00e91f8928f5f79de8efdceab168965ca38e69693b9873cf73708",
+      "reason": "Supply a complete transfer result and assess a specific mismatch rather than subjective 'most helpful' details."
+    }
+  ],
+  "humanEditorialApproval": "pending",
+  "mediaStatus": "not-produced"
+}

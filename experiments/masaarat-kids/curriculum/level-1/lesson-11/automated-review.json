@@ -1,0 +1,58 @@
+{
+  "passed": false,
+  "issues": [
+    {
+      "locale": "ar-EG",
+      "path": "$.quiz[0].explanation",
+      "problem": "The explanation for Q1 incorrectly states that 'تصعيب الاقتراح ليس له علاقة بالشمولية' (making the proposal harder has no relation to inclusivity). While making it harder is not the goal, the option itself is about challenging oneself, which is not directly about inclusivity. The explanation should focus on why asking directly is better than assuming or making it harder.",
+      "fix": "Change the explanation to: \"أفضل طريقة هي إنك تسأل أصحابك مباشرة عن اللي يناسبهم، عشان تحترم اختلافاتهم وتضمن مشاركة الكل. الافتراضات ممكن تستبعد ناس، وتصعيب الاقتراح ليس هو الهدف من الشمولية، بل توفير خيارات متنوعة.\" (The best way is to ask your friends directly what suits them, to respect their differences and ensure everyone's participation. Assumptions can exclude people, and making the proposal harder is not the goal of inclusivity, but rather providing diverse options.)"
+    },
+    {
+      "locale": "ar-EG",
+      "path": "$.quiz[2].explanation",
+      "problem": "The explanation for Q3 states that providing an alternative path or activity 'يضمن الشمولية دون استبعاد أحد أو تغيير الرحلة بالكامل بشكل غير ضروري' (ensures inclusivity without excluding anyone or unnecessarily changing the entire trip). However, the correct option (1) does not fully ensure inclusivity as it still implies a 'long walk' for some, and the alternative is 'drawing or reading in a comfortable place', which is a significant change to the core activity of a 'mountain trip'. The explanation should be more precise about how this option achieves inclusivity for those who cannot walk long distances, rather than claiming it doesn't change the trip unnecessarily.",
+      "fix": "Change the explanation to: \"تقديم مسار بديل أو نشاط مختلف يسمح للكل بالمشاركة والاستمتاع بالرحلة بطريقة تناسبهم، مما يضمن الشمولية لمن لا يستطيعون المشي لمسافات طويلة. هذا يوفر خيارات دون إجبار الجميع على نفس النشاط.\" (Providing an alternative path or a different activity allows everyone to participate and enjoy the trip in a way that suits them, ensuring inclusivity for those who cannot walk long distances. This offers options without forcing everyone into the same activity.)"
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "$.quiz[0].explanation",
+      "problem": "The explanation for Q1 states that 'افتراض القدرات أو حصر المهارات يستبعد البعض، ولا يحقق الشمولية' (assuming abilities or limiting skills excludes some, and does not achieve inclusivity). This is correct, but the explanation should also directly address why the chosen correct option (1) is the best.",
+      "fix": "Change the explanation to: \"الخيار الصحيح هو تقديم خيارات متعددة والسؤال عن التفضيلات، لأنه يضمن مشاركة الجميع بطرق ذات معنى ويحترم اختلافاتهم. افتراض القدرات أو حصر المهارات يستبعد البعض، ولا يحقق الشمولية.\" (The correct option is to offer multiple choices and ask about preferences, because it ensures everyone's meaningful participation and respects their differences. Assuming abilities or limiting skills excludes some, and does not achieve inclusivity.)"
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "$.quiz[2].explanation",
+      "problem": "The explanation for Q3 states that 'جعل النشاط أسهل أو مفاجئاً ليس هو الهدف الرئيسي للشمولية، بل توفير خيارات متنوعة' (making the activity easier or surprising is not the main goal of inclusivity, but rather providing diverse options). While true, the explanation should also directly address why the chosen correct option (1) is the best.",
+      "fix": "Change the explanation to: \"عدم الافتراض يضمن الشمولية ويمنع استبعاد أي شخص، مما يعزز شعورهم بالانتماء والمساواة. جعل النشاط أسهل أو مفاجئاً ليس هو الهدف الرئيسي للشمولية، بل توفير خيارات متنوعة تسمح بمشاركة الجميع.\" (Not assuming ensures inclusivity and prevents anyone from being excluded, which enhances their sense of belonging and equality. Making the activity easier or surprising is not the main goal of inclusivity, but rather providing diverse options that allow everyone to participate.)"
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "$.quiz[2].explanation",
+      "problem": "The explanation for Q3 states that 'إضافة خيارات متعددة مثل الغناء بهدوء، أو العزف، أو التصفيق، يتيح للجميع المشاركة بطريقة تناسبهم، بدلاً من إجبارهم على الغناء بصوت عالٍ أو تغيير النشاط كلياً. هذا يعزز الشمولية.' (Adding multiple options such as singing quietly, playing an instrument, or clapping allows everyone to participate in a way that suits them, instead of forcing them to sing loudly or changing the activity entirely. This enhances inclusivity.) This explanation is correct, but it should also directly address why the chosen correct option (1) is the best.",
+      "fix": "Change the explanation to: \"إضافة خيارات متعددة مثل الغناء بهدوء، أو العزف على آلة موسيقية، أو التصفيق للإيقاع، يتيح للجميع المشاركة بطريقة تناسبهم، بدلاً من إجبارهم على الغناء بصوت عالٍ أو تغيير النشاط كلياً. هذا يعزز الشمولية ويضمن أن يشعر الجميع بالترحيب.\" (Adding multiple options such as singing quietly, playing an instrument, or clapping to the rhythm, allows everyone to participate in a way that suits them, instead of forcing them to sing loudly or changing the activity entirely. This enhances inclusivity and ensures everyone feels welcome.)"
+    },
+    {
+      "locale": "en",
+      "path": "$.quiz[0].explanation",
+      "problem": "The explanation for Q1 states that 'Option A is too drastic, and Option C excludes participants.' While true, it should also directly address why the chosen correct option (1) is the best.",
+      "fix": "Change the explanation to: \"Option B offers meaningful alternatives that allow everyone to contribute and earn points, making the game inclusive without changing its core purpose. Option A is too drastic, and Option C excludes participants, which is contrary to the goal of inclusivity.\" (Option B offers meaningful alternatives that allow everyone to contribute and earn points, making the game inclusive without changing its core purpose. Option A is too drastic, and Option C excludes participants, which is contrary to the goal of inclusivity.)"
+    },
+    {
+      "locale": "en",
+      "path": "$.quiz[1].explanation",
+      "problem": "The explanation for Q2 states that 'Option A makes assumptions, and Option C might make some feel their contribution isn't valued.' While true, it should also directly address why the chosen correct option (1) is the best.",
+      "fix": "Change the explanation to: \"Option B directly asks participants for their preferences, respecting their choices and ensuring they can contribute in a way that suits them and feels valued. Option A makes assumptions, and Option C might make some feel their contribution isn't valued.\" (Option B directly asks participants for their preferences, respecting their choices and ensuring they can contribute in a way that suits them and feels valued. Option A makes assumptions, and Option C might make some feel their contribution isn't valued.)"
+    },
+    {
+      "locale": "en",
+      "path": "$.quiz[2].explanation",
+      "problem": "The explanation for Q3 states that 'This makes the event more inclusive than just adding another performance type or forcing everyone to dance.' While true, it should also directly address why the chosen correct option (1) is the best.",
+      "fix": "Change the explanation to: \"Option B expands the ways people can contribute to the talent show, allowing those who enjoy other creative activities to participate meaningfully and feel included. This makes the event more inclusive than just adding another performance type or forcing everyone to dance.\" (Option B expands the ways people can contribute to the talent show, allowing those who enjoy other creative activities to participate meaningfully and feel included. This makes the event more inclusive than just adding another performance type or forcing everyone to dance.)"
+    }
+  ],
+  "notes": [
+    "All drafts consistently adhere to the brief's core requirements regarding inclusivity, avoiding assumptions, and offering alternatives. The video and image scenarios are correctly represented. Factual consistency is maintained across locales. The mission activities are appropriate transfer tasks. The identified issues are minor refinements to quiz explanations for better clarity and directness in justifying the correct answer."
+  ],
+  "method": "separate automated editorial review; not human approval",
+  "round": 2
+}

@@ -1,0 +1,166 @@
+{
+  "passed": false,
+  "issues": [
+    {
+      "locale": "ar-EG",
+      "path": "objectives/2",
+      "problem": "The objective does not include the requirement to use a new similar example after solving, as specified in the brief's 'mustTeach' point 3.",
+      "fix": "Change 'أن يستخدم التلميح للمحاولة مرة أخرى ويشرح طريقة تفكيره.' to 'أن يستخدم التلميح للمحاولة مرة أخرى ويشرح طريقة تفكيره، ثم يطبق ذلك على مثال مشابه جديد.'"
+    },
+    {
+      "locale": "ar-EG",
+      "path": "materials/0/text",
+      "problem": "The puzzle text does not explicitly state that the order must be unique, which is a constraint from the brief.",
+      "fix": "Add 'الترتيب الفريد هو:' or similar phrasing to emphasize the unique order. For example, 'المطلوب: رتب البطاقات دي بالترتيب الصحيح بناءً على المعلومات دي عشان توصل للترتيب الفريد:'"
+    },
+    {
+      "locale": "ar-EG",
+      "path": "activity/starter",
+      "problem": "The activity starter text does not include the full puzzle text from the materials, which is required for the activity.",
+      "fix": "Include the full puzzle text from 'materials/0/text' in the 'starter' field."
+    },
+    {
+      "locale": "ar-EG",
+      "path": "mission/title",
+      "problem": "The mission title 'لغز ترتيب الكلمات' (Word Arrangement Puzzle) is too generic and does not align with the brief's requirement for a 'new similar example after solving' which implies a transfer activity. The brief also states 'Do not impose the image scenario constraints on a different transfer mission.' The mission here is a word puzzle, which is fine, but the title could be more engaging or specific to the transfer aspect. However, the brief does not explicitly require a specific title format for the mission, so this is not a defect based on the brief. Re-evaluating, the brief states 'use a new similar example after solving', and a word puzzle is a similar example. The title is descriptive. No change needed here based on the brief. This is not a substantive defect. Removing this issue.",
+      "fix": "No change needed."
+    },
+    {
+      "locale": "ar-EG",
+      "path": "mission/rubric",
+      "problem": "The rubric does not explicitly include a check for the 'new similar example' aspect of the 'mustTeach' point 3, which is to apply the skill to a new similar example after solving. While the mission itself is a new example, the rubric should reflect the expectation of applying the learned skill to it.",
+      "fix": "Add a rubric point like 'تطبيق المهارة على مثال جديد (لغز ترتيب الكلمات).' or 'الجملة النهائية صحيحة ومنطقية وتظهر تطبيق المهارة.'"
+    },
+    {
+      "locale": "ar-EG",
+      "path": "hints/0/answer",
+      "problem": "The hint answer 'ركز على المعلومة اللي بتحدد مكان بطاقة واحدة بشكل صريح. إيه البطاقة اللي مكانها معروف أكيد؟' is a question, not a direct hint. The brief states 'The first hint only directs attention to which card is explicitly last.'",
+      "fix": "Change to a direct hint, e.g., 'ركز على المعلومة التي تحدد أن الدائرة هي آخر بطاقة.'"
+    },
+    {
+      "locale": "ar-EG",
+      "path": "hints/1/answer",
+      "problem": "The hint answer 'بعد ما عرفت مكان الدائرة، بص على المعلومة التانية اللي بتربط بين النجمة والمثلث. إيه ترتيبهم بالنسبة لبعض؟' is a question, not a direct hint. The brief states 'Second hint reminds the other two must satisfy their order.'",
+      "fix": "Change to a direct hint, e.g., 'بعد تحديد مكان الدائرة، تذكر أن النجمة تأتي قبل المثلث.'"
+    },
+    {
+      "locale": "ar-EG",
+      "path": "educatorNotes/sampleAnswer",
+      "problem": "The sample answer for the mission 'لغز ترتيب الكلمات' does not explicitly state the unique order of the words, which is 'القطة تأكل السمك'. The brief requires the unique order for the symbol puzzle, and by extension, a clear correct answer for the transfer mission.",
+      "fix": "Clearly state the unique correct order for the word puzzle, e.g., 'الجملة الصحيحة: القطة تأكل السمك.'"
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "materials/0/text",
+      "problem": "The puzzle text does not explicitly state that the order must be unique, which is a constraint from the brief.",
+      "fix": "Add 'الترتيب الفريد هو:' or similar phrasing to emphasize the unique order. For example, 'ما هو الترتيب الفريد الصحيح للبطاقات؟'"
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "activity/starter",
+      "problem": "The activity starter text does not include the full puzzle text from the materials, which is required for the activity.",
+      "fix": "Include the full puzzle text from 'materials/0/text' in the 'starter' field."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "hints/0/answer",
+      "problem": "The hint answer 'ابدأ بالمعلومة التي تعطيك موقعاً محدداً لبطاقة واحدة. أي بطاقة تعرف مكانها بالضبط؟' is a question, not a direct hint. The brief states 'The first hint only directs attention to which card is explicitly last.'",
+      "fix": "Change to a direct hint, e.g., 'ركز على المعلومة التي تحدد أن الدائرة هي البطاقة الأخيرة.'"
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "hints/1/answer",
+      "problem": "The hint answer 'بعد تحديد مكان البطاقة الأخيرة، ركز على المعلومة الثانية التي تربط البطاقتين المتبقيتين. كيف يجب أن تكون علاقتهما ببعضهما البعض؟' is a question, not a direct hint. The brief states 'Second hint reminds the other two must satisfy their order.'",
+      "fix": "Change to a direct hint, e.g., 'بعد تحديد مكان البطاقة الأخيرة، تذكر أن النجمة تأتي قبل المثلث.'"
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "educatorNotes/sampleAnswer",
+      "problem": "The sample answer for the mission 'لغز ترتيب الكلمات' does not explicitly state the unique order of the words, which is 'الولد يشرب الماء'. The brief requires the unique order for the symbol puzzle, and by extension, a clear correct answer for the transfer mission.",
+      "fix": "Clearly state the unique correct order for the word puzzle, e.g., 'الجملة الصحيحة: الولد يشرب الماء.'"
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "objectives/2",
+      "problem": "The objective does not include the requirement to use a new similar example after solving, as specified in the brief's 'mustTeach' point 3.",
+      "fix": "Change 'أن تشرح كيف ساعدك التلميح في محاولتك الثانية.' to 'أن تشرح كيف ساعدك التلميح في محاولتك الثانية، ثم تطبق ذلك على مثال مشابه جديد.'"
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "materials/0/text",
+      "problem": "The puzzle text does not explicitly state that the order must be unique, which is a constraint from the brief.",
+      "fix": "Add 'الترتيب الفريد هو:' or similar phrasing to emphasize the unique order. For example, 'ما هو الترتيب الفريد الصحيح للبطاقات؟'"
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "materials/0/text",
+      "problem": "The puzzle text includes 'تلميح 1' and 'تلميح 2' directly within the puzzle description. The brief states 'Include exact puzzle text, hint, optional answer in educatorNotes.' and implies hints are separate from the main puzzle text for the learner. The hints should be provided separately, not embedded in the puzzle text itself.",
+      "fix": "Remove 'تلميح 1: ركز على البطاقة التي يجب أن تكون في النهاية. تلميح 2: بعد وضع البطاقة الأخيرة، فكر في ترتيب البطاقتين المتبقيتين بناءً على قاعدتهما.' from 'materials/0/text'. These hints should be in the 'hints' array or provided as separate materials if intended for the learner to choose from."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "activity/starter",
+      "problem": "The activity starter text includes the hints directly within the puzzle description, which is inconsistent with the brief's implied structure of hints being separate and chosen by the learner.",
+      "fix": "Remove 'تلميح 1: ركز على البطاقة التي يجب أن تكون في النهاية. تلميح 2: بعد وضع البطاقة الأخيرة، فكر في ترتيب البطاقتين المتبقيتين بناءً على قاعدتهما.' from 'activity/starter'."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "hints/0/answer",
+      "problem": "The hint answer 'تذكر أن الدائرة هي البطاقة الأخيرة. هذا يترك لك بطاقتين فقط لترتيبهما في البداية.' is a direct hint, but the brief's first hint is 'only directs attention to which card is explicitly last.' The current hint gives a bit more information than just directing attention to the last card.",
+      "fix": "Simplify to 'ركز على المعلومة التي تحدد أن الدائرة هي البطاقة الأخيرة.'"
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "hints/1/answer",
+      "problem": "The hint answer 'القاعدة الثانية تقول إن النجمة تأتي قبل المثلث. فكر في كيفية تطبيق هذه القاعدة على البطاقتين المتبقيتين.' is a direct hint, but the brief's second hint 'reminds the other two must satisfy their order.' The current hint is slightly more directive than a reminder.",
+      "fix": "Simplify to 'تذكر أن النجمة تأتي قبل المثلث.'"
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "mission/rubric",
+      "problem": "The rubric does not explicitly include a check for the 'new similar example' aspect of the 'mustTeach' point 3, which is to apply the skill to a new similar example after solving. While the mission itself is a new example, the rubric should reflect the expectation of applying the learned skill to it.",
+      "fix": "Add a rubric point like 'تطبيق المهارة على مثال جديد (مهمة مساعدة صديق).' or 'الحل الصحيح (أو الاقتراب منه) يظهر تطبيق المهارة.'"
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "educatorNotes/sampleAnswer",
+      "problem": "The sample answer for the mission 'مهمة: مساعدة صديق' does not explicitly state the unique order of the words, which is 'القطة تجلس على السجادة'. The brief requires the unique order for the symbol puzzle, and by extension, a clear correct answer for the transfer mission.",
+      "fix": "Clearly state the unique correct order for the word puzzle, e.g., 'الجملة الصحيحة: القطة تجلس على السجادة.'"
+    },
+    {
+      "locale": "en",
+      "path": "materials/0/text",
+      "problem": "The puzzle text does not explicitly state that the order must be unique, which is a constraint from the brief.",
+      "fix": "Add 'The unique order is:' or similar phrasing to emphasize the unique order. For example, 'What is the unique correct order of the cards?'"
+    },
+    {
+      "locale": "en",
+      "path": "activity/starter",
+      "problem": "The activity starter text does not include the full puzzle text from the materials, which is required for the activity.",
+      "fix": "Include the full puzzle text from 'materials/0/text' in the 'starter' field."
+    },
+    {
+      "locale": "en",
+      "path": "hints/0/answer",
+      "problem": "The hint answer 'Start by placing the card whose position is definitely known. Which rule tells you exactly where one card goes?' is a question, not a direct hint. The brief states 'The first hint only directs attention to which card is explicitly last.'",
+      "fix": "Change to a direct hint, e.g., 'Focus on the rule that states the CIRCLE card is always last.'"
+    },
+    {
+      "locale": "en",
+      "path": "hints/1/answer",
+      "problem": "The hint answer 'You have the STAR and TRIANGLE left. The rule says STAR comes before TRIANGLE. How does that limit their arrangement in the remaining two spots?' is a question, not a direct hint. The brief states 'Second hint reminds the other two must satisfy their order.'",
+      "fix": "Change to a direct hint, e.g., 'Remember that the STAR card comes before the TRIANGLE card.'"
+    },
+    {
+      "locale": "en",
+      "path": "educatorNotes/sampleAnswer",
+      "problem": "The sample answer for the mission 'The Animal Line-Up' does not explicitly state the unique order of the animals, which is 'Monkey, Lion, Elephant'. The brief requires the unique order for the symbol puzzle, and by extension, a clear correct answer for the transfer mission.",
+      "fix": "Clearly state the unique correct order for the animal line-up, e.g., 'The final order is Monkey, Lion, Elephant.'"
+    }
+  ],
+  "notes": [
+    "All locales generally follow the structure and intent of the brief. The image scenarios are genuinely different and unrelated to the symbol puzzle, as required. The 'mustTeach' points are mostly covered, with minor adjustments needed for the 'new similar example' aspect in objectives and rubrics for the Arabic locales. The 'avoid' points are respected. The main recurring issues are the puzzle text not explicitly stating 'unique order', the activity starter not including the full puzzle text, and the hints being phrased as questions rather than direct statements as implied by the brief's description of the hints. The sample answers for the transfer missions also need to explicitly state the correct unique order."
+  ],
+  "method": "separate automated editorial review; not human approval",
+  "round": 2
+}

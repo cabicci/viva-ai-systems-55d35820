@@ -4,106 +4,173 @@
     {
       "locale": "ar-EG",
       "path": "materials[1].text",
-      "problem": "The 'good request' example in the brief includes 'three steps' as a constraint. This is missing from the ar-EG source card example, making it less specific than the brief's full example.",
-      "fix": "Update the text to include the 'three steps' constraint: 'إيه لعبة الورق الهادية اللي ممكن نلعبها أنا وصاحبي على ترابيزة صغيرة، ومن غير ما نحتاج أي حاجة غير ورق، ونقدر نلعبها في تلات خطوات؟'"
+      "problem": "The example for a specific question in the source card is missing a constraint mentioned in the brief's video task example. The brief states the good request specifies 'three steps'.",
+      "fix": "Change the text to: \"إيه لعبة الورق الهادية اللي ممكن نلعبها أنا وصاحبي على ترابيزة صغيرة، ومن غير ما نحتاج أي حاجة غير ورق، ونقدر نخلصها في تلات خطوات؟\""
     },
     {
       "locale": "ar-EG",
       "path": "promptExamples.improved",
-      "problem": "The 'improved' prompt example should align with the full 'good request' from the brief, which includes 'three steps'. This is missing.",
-      "fix": "Update the text to include the 'three steps' constraint: 'إيه لعبة الورق الهادية اللي ممكن نلعبها أنا وصاحبي على ترابيزة صغيرة، ومن غير ما نحتاج أي حاجة غير ورق، ونقدر نلعبها في تلات خطوات؟'"
+      "problem": "The improved prompt example is missing a constraint mentioned in the brief's video task example. The brief states the good request specifies 'three steps'.",
+      "fix": "Change the text to: \"إيه لعبة الورق الهادية اللي ممكن نلعبها أنا وصاحبي على ترابيزة صغيرة، ومن غير ما نحتاج أي حاجة غير ورق، ونقدر نخلصها في تلات خطوات؟\""
     },
     {
       "locale": "ar-EG",
-      "path": "mission.instructions",
-      "problem": "The brief specifies the image task must include 'three ideas' for a bookmark. The mission instructions only ask for 'أفكار محددة' (specific ideas) and 'سؤالين مختلفين' (two different questions), but not explicitly 'three ideas' in the question itself.",
-      "fix": "Modify the instructions to explicitly ask the learner to formulate a question that requests 'three ideas': 'صاحبك عايز يعمل علامة كتاب (bookmark) بس مش عارف يعمل إيه. هو عنده ورقة واحدة بس ومش عايز يستخدم مقص. اكتب سؤالين مختلفين ممكن تسألهم لصاحبك عشان تساعده يوصل لثلاث أفكار محددة لعلامة كتاب، بناءً على القيود دي.'"
+      "path": "quiz[1].explanation",
+      "problem": "The explanation for quiz question 2 is not fully consistent with the 'mustTeach' point about avoiding unrelated private details. While it correctly identifies relevant constraints, it doesn't explicitly reinforce the 'avoid unrelated private details' aspect, which is a key teaching point.",
+      "fix": "Change the text to: \"مظبوط! عشان السؤال يكون محدّد، لازم تحدد نوع الأكل اللي بتحبه، أو إيه المكونات اللي عندك، أو الوقت اللي متاح ليك للطبخ. ده بيساعد اللي بيجاوب يديك اقتراحات مفيدة، وبيتجنب التفاصيل الشخصية غير الضرورية.\""
     },
     {
       "locale": "ar-EG",
       "path": "mission.rubric[0]",
-      "problem": "The rubric item 'السؤال الأول يحدد هدفًا وقيدًا.' is too general. The brief requires the mission to ask for 'three ideas' for a bookmark. The rubric should reflect this specific requirement for the question itself.",
-      "fix": "Change to: 'السؤال الأول يطلب ثلاث أفكار لعلامة كتاب ويحدد هدفًا وقيدًا.'"
+      "problem": "The rubric for the mission is missing a key constraint from the brief's image task: 'no scissors'. The brief explicitly states the image task must be 'three ideas for a bookmark made from one sheet, no scissors'. The rubric only mentions 'هدفًا وقيدًا'.",
+      "fix": "Change the text to: \"السؤال الأول يطلب ثلاث أفكار لعلامة كتاب ويحدد هدفًا وقيدًا، ويشمل قيد 'ورقة واحدة' و'بدون مقص'.\""
     },
     {
       "locale": "ar-EG",
       "path": "mission.rubric[1]",
-      "problem": "The rubric item 'السؤال الثاني يحدد هدفًا وقيدًا مختلفًا أو إضافيًا.' is too general. The brief requires the mission to ask for 'three ideas' for a bookmark. The rubric should reflect this specific requirement for the question itself.",
-      "fix": "Change to: 'السؤال الثاني يطلب ثلاث أفكار لعلامة كتاب ويحدد هدفًا وقيدًا مختلفًا أو إضافيًا.'"
+      "problem": "The rubric for the mission is missing a key constraint from the brief's image task: 'no scissors'. The brief explicitly states the image task must be 'three ideas for a bookmark made from one sheet, no scissors'. The rubric only mentions 'قيدًا مختلفًا أو إضافيًا'.",
+      "fix": "Change the text to: \"السؤال الثاني يطلب ثلاث أفكار لعلامة كتاب ويحدد قيدًا مختلفًا أو إضافيًا عن السؤال الأول، ويشمل قيد 'ورقة واحدة' و'بدون مقص'.\""
     },
     {
       "locale": "ar-EG",
-      "path": "educatorNotes.sampleAnswer",
-      "problem": "The sample answer for the mission does not explicitly ask for 'three ideas' in the suggested questions, which is a requirement from the brief for the image task.",
-      "fix": "Update the sample questions to explicitly ask for 'three ideas':\n1. سؤال: 'إيه ثلاث أفكار لعلامة كتاب ممكن نعملها من ورقة واحدة من غير ما نقصها؟'\n2. سؤال: 'إيه ثلاث أفكار لعلامة كتاب ممكن نعملها من ورقة واحدة بس، وتكون سهلة التطبيق وسريعة؟'"
+      "path": "mission.rubric[2]",
+      "problem": "The rubric item is redundant as the 'no scissors' constraint should be integrated into the first two rubric items to ensure comprehensive coverage of the brief's requirements for each question.",
+      "fix": "Remove this rubric item."
+    },
+    {
+      "locale": "ar-EG",
+      "path": "mission.rubric[3]",
+      "problem": "The rubric item is redundant as the 'one sheet' constraint should be integrated into the first two rubric items to ensure comprehensive coverage of the brief's requirements for each question.",
+      "fix": "Remove this rubric item."
     },
     {
       "locale": "ar-MSA",
       "path": "materials[0].text",
-      "problem": "The source card example for the 'good request' includes 'يمكن لعبها في ثلاث خطوات' (can be played in three steps). This constraint is not present in the `promptExamples.improved` field, leading to inconsistency.",
-      "fix": "Update `promptExamples.improved` to match the source card: 'اقترح لعبة ورقية هادئة لشخصين يجلسان على طاولة صغيرة، يمكن لعبها في ثلاث خطوات.'"
+      "problem": "The example for a specific question in the source card is missing a constraint mentioned in the brief's video task example. The brief states the good request specifies 'three steps'.",
+      "fix": "Change the text to: \"طلب محدد: 'اقترح لعبة ورقية هادئة لشخصين يجلسان على طاولة صغيرة، يمكن إنهاؤها في ثلاث خطوات.'\""
     },
     {
       "locale": "ar-MSA",
-      "path": "mission.instructions",
-      "problem": "The instructions ask to 'اكتب سؤالاً محدداً يطلب ثلاث أفكار لإشارة مرجعية' (write a specific question that asks for three ideas for a bookmark). However, the rubric does not explicitly check if the *question itself* asks for 'three ideas'. It only checks if the question specifies 'bookmark', 'one sheet', and 'no scissors'.",
-      "fix": "Add a rubric item to explicitly check for 'three ideas': 'السؤال يطلب ثلاث أفكار.'"
+      "path": "promptExamples.improved",
+      "problem": "The improved prompt example is missing a constraint mentioned in the brief's video task example. The brief states the good request specifies 'three steps'.",
+      "fix": "Change the text to: \"اقترح لعبة ورقية هادئة لشخصين يجلسان على طاولة صغيرة، يمكن إنهاؤها في ثلاث خطوات.\""
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "quiz[0].explanation",
+      "problem": "The explanation for quiz question 1 is not fully consistent with the 'mustTeach' point about avoiding unrelated private details. While it correctly identifies relevant constraints, it doesn't explicitly reinforce the 'avoid unrelated private details' aspect, which is a key teaching point.",
+      "fix": "Change the text to: \"القيود ذات الصلة تساعد في توجيه الشخص الذي يجيب، مما يضمن أن الإجابة تلبي احتياجاتك المحددة وتكون مفيدة حقًا. طول السؤال أو عدد الكلمات لا يجعله بالضرورة أفضل، وتجنب إضافة التفاصيل الشخصية غير الضرورية.\""
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "quiz[2].explanation",
+      "problem": "The explanation for quiz question 3 is not fully consistent with the 'mustTeach' point about avoiding unrelated private details. While it correctly identifies relevant constraints, it doesn't explicitly reinforce the 'avoid unrelated private details' aspect, which is a key teaching point.",
+      "fix": "Change the text to: \"لقد أضفت قيودًا ذات صلة (عن الفضاء، للأطفال بعمر 10 سنوات، لا يزيد عن 50 صفحة) وهدفًا واضحًا (كتاب عن الفضاء). هذا يجعل السؤال محددًا ومفيدًا جدًا، ويتجنب التفاصيل الشخصية غير الضرورية.\""
     },
     {
       "locale": "ar-MSA",
       "path": "mission.rubric[0]",
-      "problem": "The rubric item 'السؤال يطلب ثلاث أفكار.' is missing, despite the instructions explicitly asking for it.",
-      "fix": "Add a new rubric item: 'السؤال يطلب ثلاث أفكار.'"
+      "problem": "The rubric for the mission is missing a key constraint from the brief's image task: 'one sheet of paper'. The brief explicitly states the image task must be 'three ideas for a bookmark made from one sheet, no scissors'. The rubric only mentions 'ثلاث أفكار'.",
+      "fix": "Change the text to: \"السؤال الأول يطلب ثلاث أفكار لعلامة كتاب من ورقة واحدة وبدون مقص.\""
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "mission.rubric[1]",
+      "problem": "The rubric item is redundant as the 'materials and tools' constraint should be integrated into the first rubric item to ensure comprehensive coverage of the brief's requirements for each question.",
+      "fix": "Remove this rubric item."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "mission.rubric[2]",
+      "problem": "The rubric for the mission is missing a key constraint from the brief's image task: 'one sheet of paper'. The brief explicitly states the image task must be 'three ideas for a bookmark made from one sheet, no scissors'. The rubric only mentions 'ثلاث أفكار'.",
+      "fix": "Change the text to: \"السؤال الثاني يطلب ثلاث أفكار لعلامة كتاب من ورقة واحدة وبدون مقص.\""
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "mission.rubric[3]",
+      "problem": "The rubric item is redundant as the 'materials and tools' constraint should be integrated into the second rubric item to ensure comprehensive coverage of the brief's requirements for each question.",
+      "fix": "Remove this rubric item."
     },
     {
       "locale": "ar-Gulf",
       "path": "promptExamples.improved",
-      "problem": "The 'good request' example in the brief includes 'three steps' as a constraint. This is missing from the ar-Gulf prompt example, making it less specific than the brief's full example.",
-      "fix": "Update the text to include the 'three steps' constraint: 'ما هي لعبة الورق الهادئة لشخصين على طاولة صغيرة، يمكن لعبها في ثلاث خطوات؟'"
+      "problem": "The improved prompt example is missing a constraint mentioned in the brief's video task example. The brief states the good request specifies 'three steps'.",
+      "fix": "Change the text to: \"ما هي لعبة الورق الهادئة لشخصين على طاولة صغيرة، يمكن إنهاؤها في ثلاث خطوات؟\""
     },
     {
       "locale": "ar-Gulf",
-      "path": "mission.instructions",
-      "problem": "The brief specifies the image task must include 'three ideas' for a bookmark. The mission instructions only ask for 'أفكار' (ideas) and 'سؤالين مختلفين' (two different questions), but not explicitly 'three ideas' in the question itself.",
-      "fix": "Modify the instructions to explicitly ask the learner to formulate a question that requests 'three ideas': 'تخيل أنك تريد صنع إشارة مرجعية (فاصل كتاب). لديك ورقة واحدة فقط، ولا يمكنك استخدام المقص. اكتب سؤالين مختلفين يمكنك طرحهما للحصول على ثلاث أفكار.'"
+      "path": "quiz[1].explanation",
+      "problem": "The explanation for quiz question 2 is not fully consistent with the 'mustTeach' point about avoiding unrelated private details. While it correctly identifies relevant constraints, it doesn't explicitly reinforce the 'avoid unrelated private details' aspect, which is a key teaching point.",
+      "fix": "Change the text to: \"إضافة الهدف والقيد تساعد على توصيل ما نحتاجه بدقة، وهذا يؤدي إلى إجابات مفيدة ومناسبة، مع تجنب التفاصيل الشخصية غير الضرورية. طول السؤال أو عدد الكلمات ليس هو الهدف الأساسي.\""
     },
     {
       "locale": "ar-Gulf",
       "path": "mission.rubric[0]",
-      "problem": "The rubric item 'السؤال الأول يحدد هدفًا وقيدًا واضحين.' is too general. The brief requires the mission to ask for 'three ideas' for a bookmark. The rubric should reflect this specific requirement for the question itself.",
-      "fix": "Change to: 'السؤال الأول يطلب ثلاث أفكار لعلامة كتاب ويحدد هدفًا وقيدًا واضحين.'"
+      "problem": "The rubric for the mission is missing a key constraint from the brief's image task: 'one sheet of paper'. The brief explicitly states the image task must be 'three ideas for a bookmark made from one sheet, no scissors'. The rubric only mentions 'هدفًا وقيدًا واضحين'.",
+      "fix": "Change the text to: \"السؤال الأول يطلب ثلاث أفكار لعلامة كتاب ويحدد هدفًا وقيدًا واضحين، ويشمل قيد 'ورقة واحدة' و'بدون مقص'.\""
     },
     {
       "locale": "ar-Gulf",
       "path": "mission.rubric[1]",
-      "problem": "The rubric item 'السؤال الثاني يحدد هدفًا وقيدًا واضحين ومختلفين عن السؤال الأول.' is too general. The brief requires the mission to ask for 'three ideas' for a bookmark. The rubric should reflect this specific requirement for the question itself.",
-      "fix": "Change to: 'السؤال الثاني يطلب ثلاث أفكار لعلامة كتاب ويحدد هدفًا وقيدًا واضحين ومختلفين عن السؤال الأول.'"
+      "problem": "The rubric for the mission is missing a key constraint from the brief's image task: 'one sheet of paper'. The brief explicitly states the image task must be 'three ideas for a bookmark made from one sheet, no scissors'. The rubric only mentions 'قيدًا مختلفًا أو إضافيًا'.",
+      "fix": "Change the text to: \"السؤال الثاني يطلب ثلاث أفكار لعلامة كتاب ويحدد قيدًا مختلفًا أو إضافيًا عن السؤال الأول، ويشمل قيد 'ورقة واحدة' و'بدون مقص'.\""
     },
     {
       "locale": "ar-Gulf",
-      "path": "educatorNotes.sampleAnswer",
-      "problem": "The sample answer for the mission does not explicitly ask for 'three ideas' in the suggested questions, which is a requirement from the brief for the image task.",
-      "fix": "Update the sample questions to explicitly ask for 'three ideas':\n1. سؤالي الأول: 'كيف أصنع ثلاث أفكار لإشارة مرجعية جميلة من ورقة واحدة بدون مقص؟'\n2. سؤالي الثاني: 'ما هي ثلاث طرق لطي الورقة لعمل إشارة مرجعية فريدة بدون استخدام المقص؟'"
+      "path": "mission.rubric[2]",
+      "problem": "The rubric item is redundant as the 'one sheet' and 'no scissors' constraints should be integrated into the first two rubric items to ensure comprehensive coverage of the brief's requirements for each question.",
+      "fix": "Remove this rubric item."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "mission.rubric[3]",
+      "problem": "The rubric item is redundant as clarity and ease of understanding should be inherent to the quality of the question and not a separate rubric item, especially when specific constraints are already being checked.",
+      "fix": "Remove this rubric item."
     },
     {
       "locale": "en",
-      "path": "promptExamples.improved",
-      "problem": "The 'improved' prompt example in the brief includes 'three steps' as a constraint. This is missing from the en prompt example, making it less specific than the brief's full example.",
-      "fix": "Update the text to include the 'three steps' constraint: 'Suggest a quiet paper game for two players at this small table that we can finish in three steps.'"
+      "path": "promptExamples.followup",
+      "problem": "The followup prompt example is missing a key teaching point from the brief's 'mustTeach' section: 'Review whether the suggestion follows the constraints.' The current followup only asks about one constraint, not a general review.",
+      "fix": "Change the text to: \"Can you make sure it's a game we can finish in three steps, and that it follows all the other constraints we mentioned?\""
+    },
+    {
+      "locale": "en",
+      "path": "quiz[1].explanation",
+      "problem": "The explanation for quiz question 2 is not fully consistent with the 'mustTeach' point about avoiding unrelated private details. While it correctly identifies relevant constraints, it doesn't explicitly reinforce the 'avoid unrelated private details' aspect, which is a key teaching point.",
+      "fix": "Change the text to: \"The main problem is that it's too vague; it lacks a clear goal (what kind of drawing?) and any constraints (what materials? what style?). It's not too long, and it's easy to understand, just not helpful, and it doesn't avoid unrelated private details.\""
+    },
+    {
+      "locale": "en",
+      "path": "mission.rubric[0]",
+      "problem": "The rubric for the mission is missing a key constraint from the brief's image task: 'no scissors'. The brief explicitly states the image task must be 'three ideas for a bookmark made from one sheet, no scissors'. The rubric only mentions 'three ideas'.",
+      "fix": "Change the text to: \"The question asks for three ideas for a bookmark, made from one sheet of paper, without scissors.\""
+    },
+    {
+      "locale": "en",
+      "path": "mission.rubric[1]",
+      "problem": "The rubric item is redundant as the 'bookmark' constraint should be integrated into the first rubric item to ensure comprehensive coverage of the brief's requirements for each question.",
+      "fix": "Remove this rubric item."
+    },
+    {
+      "locale": "en",
+      "path": "mission.rubric[2]",
+      "problem": "The rubric item is redundant as the 'one sheet of paper' constraint should be integrated into the first rubric item to ensure comprehensive coverage of the brief's requirements for each question.",
+      "fix": "Remove this rubric item."
+    },
+    {
+      "locale": "en",
+      "path": "mission.rubric[3]",
+      "problem": "The rubric item is redundant as the 'no scissors' constraint should be integrated into the first rubric item to ensure comprehensive coverage of the brief's requirements for each question.",
+      "fix": "Remove this rubric item."
     }
   ],
   "notes": [
-    "All locales successfully cover the core teaching points about narrowing vague questions with goals and constraints.",
-    "The video scenario (game, small table, quiet, paper, two players) is consistently used across all locales, though the 'three steps' constraint from the brief's 'good request' example was often missed in the prompt examples and source cards.",
-    "The image task scenario (bookmark, one sheet, no scissors, three ideas) is consistently used, but the explicit request for 'three ideas' in the *learner's question* was often missed in the mission instructions and rubrics.",
-    "The activity section in all locales correctly asks for two transfer questions for learner improvement.",
-    "The quiz questions and explanations are generally consistent with the lesson content and brief requirements across all locales.",
-    "Privacy and age suitability are well-maintained; no inappropriate content or requests are present.",
-    "The natural dialect for ar-EG, ar-MSA, and ar-Gulf appears appropriate and distinct for each region in the narration, titles, and quiz content.",
-    "The image brief scenarios are genuinely different for the video task (game) and independent image task (bookmark) as required by the brief, and the descriptions are consistent across locales.",
-    "The 'mustTeach' points are addressed in the lesson content, particularly in the 'review' scenes and 'check' reading sections.",
-    "The 'avoid' points are respected; the drafts do not resemble Lesson 1's robot, reading corner, or simple three-box introduction."
+    "All drafts successfully implement the core concept of narrowing a vague question using goals and constraints.",
+    "The video task scenario (quiet seated paper game for two players on a small table) is consistently used across all locales, but the 'three steps' constraint from the brief's example is missing in the Arabic drafts' specific question examples.",
+    "The image task scenario (three ideas for a bookmark from one sheet, no scissors) is consistently used for the mission across all locales.",
+    "The 'mustTeach' points are generally covered, but the emphasis on 'do not add unrelated private details' could be more explicitly reinforced in some quiz explanations.",
+    "The rubrics for the mission in all locales are overly granular and could be consolidated to better reflect the brief's requirements for each question, rather than breaking down each constraint into a separate item. This also led to some constraints being missed in the initial rubric items."
   ],
   "method": "separate automated editorial review; not human approval",
-  "round": 1
+  "round": 2
 }

@@ -1,0 +1,186 @@
+{
+  "locale": "en",
+  "title": "My First Project: Discovery Corner",
+  "subtitle": "Bring your ideas to life with clear instructions and smart improvements!",
+  "objectives": [
+    "Understand how to give clear instructions for a creative project.",
+    "Learn to refine project ideas using feedback and improvements.",
+    "Identify the difference between AI-assisted content and personal choices in a project."
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "title": "Imagine and Create!",
+      "display": "What will you create?",
+      "narration": "Imagine a city above the clouds where visitors draw homes to add to it. Let's turn that idea into a Discovery Corner, then inspect a draft before accepting it.",
+      "visualAction": "A paper cloud city appears with three blank home shapes."
+    },
+    {
+      "id": "explain",
+      "title": "What's a Discovery Corner?",
+      "display": "Design your own!",
+      "narration": "We need three things: a name, a two-sentence description and one paper activity. Everything is imaginary. We will use an authored example, so no live AI tool is needed.",
+      "visualAction": "Three cards show name, two sentences and paper activity."
+    },
+    {
+      "id": "example",
+      "title": "Starting with an Idea",
+      "display": "From vague to clear",
+      "narration": "The request is clear, but the draft's description has three sentences. Pause and count them on the example card. Does a catchy name make up for missing that requirement?",
+      "visualAction": "Three description sentences appear; a counter shows 3 against a requested 2."
+    },
+    {
+      "id": "review",
+      "title": "Time to Check Your Work",
+      "display": "Is it perfect? Not yet!",
+      "narration": "We found a specific mismatch: the sentence count. Our correction asks for two sentences while keeping the idea. That gives clearer direction than simply saying, make it better.",
+      "visualAction": "A correction card highlights the requested sentence count."
+    },
+    {
+      "id": "improve",
+      "title": "Making it Better",
+      "display": "Refine and enhance",
+      "narration": "After revising, check the meaning, sentence count and activity. We chose the city theme and shapes. Explain those choices separately from the wording supplied by the teaching example.",
+      "visualAction": "Three sentences combine into two; the name and activity stay visible."
+    },
+    {
+      "id": "practice",
+      "title": "Your Turn to Create!",
+      "display": "Design your own!",
+      "narration": "Now create your corner. Write a request and a draft, identify one defect, then show your correction and improved version. Explain one decision you made yourself. Use invented details.",
+      "visualAction": "Empty prompt, draft, correction and improved-version cards appear."
+    },
+    {
+      "id": "finish",
+      "title": "Share Your Masterpiece!",
+      "display": "You're a project designer!",
+      "narration": "Before submitting, check your name, two sentences, paper activity and visible improvement. Then transfer these steps to a fantasy garden exhibit. Which creative choice will you change this time?",
+      "visualAction": "A checklist completes, then a separate fantasy-garden mission card appears."
+    }
+  ],
+  "reading": [
+    {
+      "id": "concept",
+      "title": "The Power of Clear Prompts",
+      "text": "A clear prompt is like a detailed map for a treasure hunt. It tells your tool exactly what you want, including the topic, style, and any specific details. The more precise your prompt, the better and more relevant the output will be. Vague prompts lead to vague results, so be specific!"
+    },
+    {
+      "id": "example",
+      "title": "Making It Your Own",
+      "text": "The worked city example asks for two description sentences, but the first draft has three. The student notices the mismatch and combines them into two while preserving the idea. The paper activity stays intact."
+    },
+    {
+      "id": "check",
+      "title": "Review and Improve",
+      "text": "Review both the meaning and the requested format, not just attractive wording. If you use an authored example, say so. You remain responsible for your choices and changes."
+    }
+  ],
+  "materials": [
+    {
+      "id": "worked-project",
+      "title": "Complete example: Cloud City Corner",
+      "text": "Initial prompt: 'Suggest a name, a two-sentence description and one paper activity for a corner about an imaginary city above the clouds.'\nAuthored practice draft: Name: Cloud City Corner. Description: 'The city is above the clouds. Its residents draw their homes. Every visitor can add a house.' Activity: draw an imaginary home from 3 shapes and name it.\nIssue: the description has 3 sentences instead of two.\nCorrection: 'Combine the description into two sentences while keeping the city idea and the visitor's contribution.'\nImproved version: Name: Cloud City Corner. Description: 'Imagine a city above the clouds whose residents draw their own homes. Design an imaginary home to add to the city.' Activity: draw a home from 3 shapes and write its name.\nStudent decisions in this example: choose the city theme and shapes, then check the sentence count. This is authored teaching text modelling possible tool assistance, not an output from a live tool.",
+      "kind": "authored-teaching-example"
+    }
+  ],
+  "promptExamples": {
+    "initial": "Make a discovery corner.",
+    "improved": "Suggest a name, two-sentence description and one paper activity for an imaginary city above the clouds.",
+    "followup": "Combine the three description sentences into two while keeping the meaning and paper activity."
+  },
+  "activity": {
+    "title": "Build and revise your Discovery Corner",
+    "instructions": "Write a request for an imaginary Discovery Corner: a name, a two-sentence description and one paper activity. Use the supplied draft or write your own. Identify one specific defect, write a correction, produce an improved version and explain an independent choice. State whether you used the lesson example or your own draft. No live tool is required.",
+    "starter": "Start with the supplied city draft or choose a different imaginary theme. Record your prompt, first draft, defect, correction, improved version and independent choices.",
+    "expectedEvidence": "Prompt, first draft, specific defect, correction, improved project and independent decisions."
+  },
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Which of these prompts is most likely to give you the best, most specific result for a creative project?",
+      "options": [
+        "\"Write about animals.\"",
+        "\"Create a story about a brave squirrel who finds a magical acorn in a talking forest, for 8-year-olds.\"",
+        "\"Tell me a tale.\""
+      ],
+      "answer": 1,
+      "explanation": "Option B is the most specific, providing details about the character, plot, setting, and target audience. Clear prompts lead to better results. Options A and C are too vague.",
+      "source": "concept"
+    },
+    {
+      "id": "q2",
+      "question": "The example asks for two sentences, but its draft has 3. Which correction fits?",
+      "options": [
+        "Combine the description into two sentences while keeping its meaning.",
+        "Add more sentences to make it longer.",
+        "Remove the paper activity."
+      ],
+      "answer": 0,
+      "explanation": "This directly fixes the sentence count while preserving the other requested elements.",
+      "source": "example"
+    },
+    {
+      "id": "q3",
+      "question": "You've created a draft for a 'Discovery Corner' activity. The instructions are a bit confusing. What's the best next step?",
+      "options": [
+        "Just submit it as is, it's probably fine.",
+        "Identify the confusing parts, then rewrite those specific instructions to make them clearer.",
+        "Start over completely with a brand new activity idea."
+      ],
+      "answer": 1,
+      "explanation": "The best next step is to identify the specific problem (confusing instructions) and then make targeted improvements to fix it. Starting over isn't always necessary, and submitting confusing work isn't helpful.",
+      "source": "check"
+    }
+  ],
+  "mission": {
+    "title": "A fantasy garden on paper",
+    "instructions": "Design a fantasy garden exhibit different from the city example. Write a request for a name, a two-sentence description and one paper activity. Write your own first draft, identify a specific improvement, record the correction and show the improved version. Explain your own choices and the source of any help. Do not claim to have used a tool if you did not.",
+    "rubric": [
+      "The final project has a name, two-sentence description and one paper activity.",
+      "I supplied the prompt and first draft.",
+      "I identified a defect and applied a specific correction.",
+      "I explained my choices and any assistance honestly, using no private details."
+    ]
+  },
+  "hints": [
+    {
+      "question": "How can I make sure my prompt is clear enough?",
+      "answer": "Think about who, what, where, when, and why. Include the topic, target audience, format, and any specific details you want. The more information you give, the better the result.",
+      "source": "concept"
+    },
+    {
+      "question": "What if the tool gives me something I don't like?",
+      "answer": "That's okay! You are the designer. You can change any part of the output. Replace words, rewrite sentences, or even discard entire sections and create your own. Your choices matter most.",
+      "source": "example"
+    },
+    {
+      "question": "I've reviewed my project, but I'm not sure what to improve.",
+      "answer": "Pick one small thing. Is a sentence unclear? Is a word repetitive? Is an instruction too long? Even a small improvement makes a difference. Focus on clarity and engagement.",
+      "source": "check"
+    }
+  ],
+  "imageBrief": {
+    "title": "Fantasy Garden Exhibit Map",
+    "scenario": "A detailed map of a fantasy garden museum exhibit, showing different themed sections.",
+    "composition": "An overhead view of a whimsical garden map. Paths wind through various distinct areas. One area is prominently labeled 'Crystal Caverns', another 'Whispering Woods', and a third 'Floating Islands'. Each area has small, illustrative icons representing its theme (e.g., crystals, trees, balloons).",
+    "labels": [
+      "Crystal Caverns",
+      "Whispering Woods",
+      "Floating Islands",
+      "Entrance",
+      "Gift Shop"
+    ],
+    "altText": "A colorful, illustrated map of a fantasy garden museum. It shows winding paths leading to different themed sections like Crystal Caverns, Whispering Woods, and Floating Islands, with an entrance and gift shop marked."
+  },
+  "educatorNotes": {
+    "sampleAnswer": "Activity: the complete city example is supplied in materials. Mission example: 'Garden of Floating Colours.' Description: 'Imagine flowers that float above paper paths. Draw your own imaginary flower to add to the exhibit.' Activity: draw a flower from three shapes and label it. The learner must also provide an earlier draft and identify a real change; the polished example alone is insufficient.",
+    "commonMisconception": "A common misconception is that using a tool means the project is no longer 'yours.' Learners might think they can just copy whatever the tool suggests. Emphasize that the tool is an assistant, and the student's choices, corrections, and unique ideas are what truly make the project their own.",
+    "reviewChecks": [
+      "The final project has a name, two-sentence description and one paper activity.",
+      "I supplied the prompt and first draft.",
+      "I identified a defect and applied a specific correction.",
+      "I explained my choices and any assistance honestly, using no private details."
+    ],
+    "safetyNotes": "Use invented names and paper activities. Do not require a child account, personal details, photographs or live tool access."
+  }
+}

@@ -3,72 +3,56 @@
   "issues": [
     {
       "locale": "ar-EG",
-      "path": "quiz[1].answer",
-      "problem": "The correct answer for Q2 is 1 (index 1), which corresponds to 'توقف وتطلب المساعدة من شخص بالغ تثق فيه قبل ما تعمل أي حاجة.' The brief's 'mustTeach' point 'Stop and ask a trusted adult if unsure' is directly addressed by this option. The current answer 1 is correct, but the explanation is slightly off.",
-      "fix": "The current answer is correct. No change needed for the answer itself. The explanation is fine as is."
+      "path": "quiz/1/explanation",
+      "problem": "The explanation for Q2 is incorrect. It states that providing the password is not necessary and that stopping and asking an adult is the correct action, but the correct answer selected is 'توقف وتطلب المساعدة من شخص بالغ تثق فيه قبل ما تعمل أي حاجة.' (Stop and ask for help from a trusted adult before doing anything). The explanation should directly support the chosen correct answer.",
+      "fix": "Change the explanation to: \"كلمة السر معلومة حساسة جدًا. لو أداة طلبتها منك بشكل غير متوقع، يجب أن تتوقف وتطلب المساعدة من شخص بالغ تثق فيه. هذا يحميك من المخاطر.\" (The password is very sensitive information. If a tool asks for it unexpectedly, you must stop and ask for help from a trusted adult. This protects you from risks.)"
     },
     {
       "locale": "ar-EG",
-      "path": "quiz[1].explanation",
-      "problem": "The explanation for Q2 states 'كلمة السر معلومة حساسة جدًا. لو أداة طلبتها منك بشكل غير متوقع، لازم توقف وتطلب المساعدة من شخص بالغ تثق فيه. ده بيحميك من المخاطر.' This is correct, but the question asks 'إيه التصرف الصح اللي تعمله؟' and the options include 'توقف وتطلب المساعدة من شخص بالغ تثق فيه'. The explanation should directly reinforce this action as the correct one, rather than just stating it as a general truth.",
-      "fix": "The explanation is already good and directly supports the correct answer. No change needed."
-    },
-    {
-      "locale": "ar-EG",
-      "path": "imageBrief.composition",
-      "problem": "The brief states the alternative image is 'a worksheet for naming a fictional garden club'. The current composition describes a 'sign-up card' or 'request form' for joining, which is slightly different from 'naming'. While it still involves a garden club and removing fields, the core task implied by 'naming' is not explicitly reflected.",
-      "fix": "Adjust the 'composition' and 'scenario' to more explicitly reflect a 'worksheet for naming a fictional garden club' or ensure the current 'sign-up card' aligns with the spirit of 'naming' by including fields like 'Club Name Idea' or similar, as seen in the EN locale's mission. For example, 'النصف الأيسر يعرض ورقة عمل لتسمية نادي الحديقة الخضراء وتحتها حقول: 'اسم النادي المقترح: [نادي الحديقة الخضراء]، الأنشطة المقترحة: [زراعة، سقاية، تعلم عن النباتات]، عنوان بيتك: [عنوان_المنزل]، كلمة السر: [كلمة_السر]'. النصف الأيمن مكتوب عليه 'ورقة عمل آمنة' وتحته نفس الحقول، لكن حقول 'عنوان بيتك' و 'كلمة السر' فارغة أو عليها خط أحمر.'"
+      "path": "quiz/2/answer",
+      "problem": "The correct answer for Q3 is 1, which corresponds to 'كل التفاصيل اللي بتوصف النادي والأنشطة بتاعته.' (All the details that describe the club and its activities). However, the explanation provided for Q3 refers to Q2's answer and explanation, which is about passwords. The explanation is mismatched with the question and selected answer.",
+      "fix": "Change the explanation to: \"الدعوة يجب أن تحتوي على كل التفاصيل التي تصف النادي والأنشطة لكي يفهم الناس ما هو النادي وماذا سيفعلون فيه. عنوان البيت معلومة شخصية وغير ضرورية.\" (The invitation must still contain all the details that describe the club and its activities so people understand what the club is and what they will do there. The home address is personal and unnecessary information.)"
     },
     {
       "locale": "ar-MSA",
-      "path": "quiz[1].answer",
-      "problem": "The correct answer for Q2 is 1 (index 1), which corresponds to 'حذف الطلب وإعادة كتابته بدون طلب الصورة، والاحتفاظ بتفاصيل اللعبة.' However, the brief's 'mustTeach' point 'Stop and ask a trusted adult if unsure' is a primary safety instruction. While rewriting is part of the lesson, the immediate action for an unexpected private info request should prioritize stopping and asking an adult, especially for a 'private photo' for 'logging into a game'.",
-      "fix": "Change 'answer' to 2 (index 2) to correspond to 'التوقف فوراً وسؤال شخص بالغ تثق به.' This aligns with the 'mustTeach' point 'Stop and ask a trusted adult if unsure.' The explanation should then be updated to reflect this."
+      "path": "quiz/1/explanation",
+      "problem": "The explanation for Q2 is incorrect. It states that providing the picture is not necessary and that stopping and asking an adult is the correct action, but the correct answer selected is 'التوقف فوراً وسؤال شخص بالغ تثق به.' (Stop immediately and ask a trusted adult). The explanation should directly support the chosen correct answer.",
+      "fix": "Change the explanation to: \"الصورة الخاصة ليست ضرورية لتسجيل الدخول إلى لعبة. يجب عليك عدم تزويد الصورة والتوقف فوراً وسؤال شخص بالغ تثق به. هذا يحميك من المخاطر.\" (A private photo is not necessary to log in to a game. You should not provide the photo and stop immediately and ask a trusted adult. This protects your data from risks.)"
     },
     {
       "locale": "ar-MSA",
-      "path": "quiz[1].explanation",
-      "problem": "The explanation for Q2 currently supports rewriting the request. If the answer is changed to 'stop and ask an adult', the explanation must also change.",
-      "fix": "Update the explanation to: 'الصورة الخاصة ليست ضرورية لتسجيل الدخول إلى لعبة. إذا طلب منك تطبيق ما معلومات شخصية حساسة وغير ضرورية، يجب عليك التوقف فوراً وسؤال شخص بالغ تثق به قبل اتخاذ أي إجراء. هذا يحميك من المخاطر.'"
-    },
-    {
-      "locale": "ar-MSA",
-      "path": "imageBrief.composition",
-      "problem": "The brief states the alternative image is 'a worksheet for naming a fictional garden club'. The current composition describes a 'sign-up card' or 'request form' for joining, which is slightly different from 'naming'. While it still involves a garden club and removing fields, the core task implied by 'naming' is not explicitly reflected.",
-      "fix": "Adjust the 'composition' and 'scenario' to more explicitly reflect a 'worksheet for naming a fictional garden club' or ensure the current 'sign-up card' aligns with the spirit of 'naming' by including fields like 'Club Name Idea' or similar, as seen in the EN locale's mission. For example, 'بطاقة بيضاء مستطيلة في المنتصف. في الأعلى عنوان 'ورقة عمل لتسمية نادي البستنة'. تحت العنوان، حقول 'اسم النادي المقترح: [نادي البستنة]', 'النشاط المفضل: [زراعة الزهور]'. ثم تظهر حقول بخط أحمر 'عنوان المنزل: [ ]', 'كلمة المرور: [ ]'. أسفل البطاقة، زر 'إرسال'."
+      "path": "quiz/2/answer",
+      "problem": "The correct answer for Q3 is 2, which corresponds to 'التوقف فوراً وسؤال شخص بالغ تثق به.' (Stop immediately and ask a trusted adult). However, the explanation provided for Q3 refers to Q2's answer and explanation, which is about pictures. The explanation is mismatched with the question and selected answer.",
+      "fix": "Change the explanation to: \"كلمة المرور هي معلومة حساسة جداً ولا علاقة لها بمسابقة رسم. يجب التوقف فوراً وسؤال شخص بالغ موثوق به. لا تشارك كلمات مرورك أبداً في مثل هذه السياقات.\" (The password is very sensitive information and has no relation to a drawing competition. You must stop immediately and ask a trusted adult. Never share your passwords in such contexts.)"
     },
     {
       "locale": "ar-Gulf",
-      "path": "materials[1]",
-      "problem": "The brief specifies 'Show before and redacted/rebuilt safe request' for the *video scenario* (invitation request). For the *independent image scenario* (garden club worksheet), it only mentions 'task-relevant imaginary details kept and address/password fields removed'. Having a 'modified-card' in the materials for the *invitation* scenario is redundant with the 'source-card' and the lesson's focus on the student doing the modification.",
-      "fix": "Remove `materials[1]` (the 'modified-card') as the lesson's activity and prompt examples already guide the student to perform the modification. The 'source-card' is sufficient for the 'before' state."
+      "path": "quiz/1/explanation",
+      "problem": "The explanation for Q2 is incorrect. It states that stopping and thinking is the correct action, but the correct answer selected is 'تتوقف وتفكر هل هي ضرورية، وتستشير الكبار إذا لم تكن متأكداً' (Stop and think if it is necessary, and consult adults if you are unsure). The explanation should directly support the chosen correct answer.",
+      "fix": "Change the explanation to: \"يجب دائماً التوقف والتفكير في ضرورة المعلومة. كلمة المرور غالباً ليست ضرورية للانضمام لنادٍ للألعاب. استشارة الكبار هي خطوة أمان مهمة.\" (You should always stop and think about the necessity of the information. A password is often not necessary to join a game club. Consulting adults is an important safety step.)"
     },
     {
       "locale": "ar-Gulf",
-      "path": "imageBrief.composition",
-      "problem": "The brief states the alternative image is 'a worksheet for naming a fictional garden club'. The current composition describes a 'sign-up card' or 'request form' for joining, which is slightly different from 'naming'. While it still involves a garden club and removing fields, the core task implied by 'naming' is not explicitly reflected.",
-      "fix": "Adjust the 'composition' and 'scenario' to more explicitly reflect a 'worksheet for naming a fictional garden club' or ensure the current 'sign-up card' aligns with the spirit of 'naming' by including fields like 'Club Name Idea' or similar, as seen in the EN locale's mission. For example, 'ورقة عمل على شكل بطاقة طلب. في الجزء العلوي، شعار بسيط لنادي 'حديقة المستقبل' (مثل زهرة أو شجرة صغيرة). تتضمن البطاقة حقولاً مثل 'اسم العضو المقترح:'، 'اسم النادي المقترح:'، 'اهتمامات الحديقة:' (مع أمثلة مثل 'زراعة الخضروات'، 'العناية بالورود'). توجد خطوط متقطعة أو علامات 'X' على أماكن كانت تحتوي على 'عنوان المنزل' و 'كلمة المرور'."
+      "path": "quiz/2/answer",
+      "problem": "The correct answer for Q3 is 0, which corresponds to 'اسم النادي والرسالة الودية' (Club name and friendly message). However, the explanation provided for Q3 refers to Q2's answer and explanation, which is about passwords. The explanation is mismatched with the question and selected answer.",
+      "fix": "Change the explanation to: \"اسم النادي والرسالة الودية هما جوهر الدعوة وهدف المهمة. عنوان المنزل ليس ضرورياً لدعوة الأصدقاء للنادي.\" (The club name and friendly message are the essence of the invitation and the goal of the task. The home address is not necessary for inviting friends to the club.)"
     },
     {
       "locale": "en",
-      "path": "materials[0].text",
-      "problem": "The 'source-card' for the EN locale combines the 'Original Request' and 'Improved Request' into a single text block. The brief states 'Show before and redacted/rebuilt safe request' for the *video scenario* (invitation request). While this card does show both, the lesson's activity is for the student to *perform* the redaction. Providing the 'Improved Request' directly in the source material for the *activity* might preempt the student's learning process or make the activity less challenging.",
-      "fix": "Modify the `source-card` to only contain the 'Original Request' (the 'before' state) and remove the 'Improved Request' from this material. The student's activity is to create the 'improved' version. The 'Improved Request' can be part of the educator notes or a separate 'worked example' if needed, but not the primary source for the student's task."
+      "path": "quiz/1/explanation",
+      "problem": "The explanation for Q2 is incorrect. It states that protecting privacy is the main reason, but the correct answer selected is 'It protects your privacy and keeps you safe online.' The explanation should directly support the chosen correct answer.",
+      "fix": "Change the explanation to: \"Protecting your privacy and staying safe online is the main reason to remove unnecessary personal details. While it might make the request shorter, that's not the primary safety benefit.\" (Protecting your privacy and staying safe online is the main reason to remove unnecessary personal details. While it might make the request shorter, that's not the primary safety benefit.)"
     },
     {
       "locale": "en",
-      "path": "imageBrief.composition",
-      "problem": "The brief states the alternative image is 'a worksheet for naming a fictional garden club'. The current composition describes a 'sign-up card' for a 'Green Thumbs Garden Club' where a child is deciding what information to include, with fields like 'Club Name Idea' and 'Favorite Plant'. This aligns well with the 'naming' aspect.",
-      "fix": "No change needed. This composition correctly reflects the 'worksheet for naming a fictional garden club' aspect of the brief."
+      "path": "quiz/2/answer",
+      "problem": "The correct answer for Q3 is 2, which corresponds to 'Your personal password for a game.' However, the explanation provided for Q3 refers to Q2's answer and explanation, which is about privacy. The explanation is mismatched with the question and selected answer.",
+      "fix": "Change the explanation to: \"Your personal password is private information and is not needed for writing a welcome message. The club's focus is a task detail.\" (Your personal password is private information and is not needed for writing a welcome message. The club's focus is a task detail.)"
     }
   ],
   "notes": [
-    "All locales consistently teach the core concepts of identifying unnecessary personal information, the importance of privacy, and asking a trusted adult. The 'mustTeach' points are well-covered.",
-    "The natural dialect for each Arabic locale appears appropriate and consistent throughout the drafts.",
-    "The image/video scenarios are generally distinct, with the video scenario focusing on an invitation and the independent image scenario on a garden club worksheet/sign-up card. The EN locale's imageBrief composition is the most aligned with the 'naming a fictional garden club' aspect of the brief for the independent image scenario.",
-    "Factual consistency across locales is maintained for invented teaching facts.",
-    "Privacy and age suitability guidelines are followed, with no requests for real private details and consistent emphasis on asking trusted adults."
+    "All locales consistently teach the core concepts of identifying unnecessary personal information, the importance of not supplying it, and asking a trusted adult. The activity and mission scenarios are distinct and align with the brief's requirements for different image scenarios. The image briefs are genuinely different and appropriate for their respective missions. The 'avoid' constraint (not asking children to type real private details) is respected across all drafts. The dialect in each Arabic locale appears natural and appropriate. The main issues found are inconsistencies in quiz explanations, where the explanation text sometimes refers to a different question or does not directly support the selected correct answer."
   ],
   "method": "separate automated editorial review; not human approval",
-  "round": 1
+  "round": 2
 }

@@ -1,0 +1,128 @@
+{
+  "passed": false,
+  "issues": [
+    {
+      "locale": "ar-EG",
+      "path": "quiz.0.explanation",
+      "problem": "The explanation for quiz question 1 incorrectly states that 'concept' is the source, but the 'concept' reading card does not explicitly list 'اسم جذاب، وصف قصير، ونشاط ورقي' as the components. It only mentions 'اسم جذاب، وصف قصير ومثير للاهتمام، ونشاط ورقي واحد'. The explanation should refer to the 'example' reading card or the 'materials.source-card' which clearly lists these components.",
+      "fix": "Change the source reference in the explanation from 'concept' to 'example' or 'materials.source-card' to accurately reflect where these components are explicitly detailed."
+    },
+    {
+      "locale": "ar-EG",
+      "path": "quiz.2.explanation",
+      "problem": "The explanation for quiz question 3 incorrectly states that 'check' is the source. The 'check' reading card focuses on reviewing and improving, not on the distinction between student and tool work. The distinction is primarily emphasized in the 'improve' scene and the 'materials.source-card' example.",
+      "fix": "Change the source reference in the explanation from 'check' to 'scenes.4' (كيف نستخدم الأداة؟) or 'materials.source-card' to accurately reflect where the distinction between student and tool work is emphasized."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "objectives.1",
+      "problem": "The objective 'تحديد عناصر المشروع وتقديم طلبات واضحة للأداة الرقمية.' is redundant with the first objective 'تحديد عناصر مشروع صغير (الاسم، الوصف، النشاط).' and could be combined or rephrased to avoid repetition and focus on a distinct learning outcome.",
+      "fix": "Rephrase the objective to 'صياغة طلبات واضحة ومحددة للأداة الرقمية للحصول على نتائج دقيقة.' to focus on the 'clear prompting' aspect as a distinct skill."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "activity.starter",
+      "problem": "The starter text for the activity provides a complete initial prompt, suggested result, and a pre-filled 'ملاحظتي على النتيجة المقترحة' (My note on the suggested result) which is empty. The brief requires the learner to submit 'a specific correction' and 'a short account of what they chose themselves'. The current structure of the starter does not explicitly prompt for the 'specific correction' in the 'ملاحظتي' section, nor does it clearly separate the 'initial prompt' from the 'supplied authored example output or their own draft'. The 'ملاحظتي' should be a specific defect identified by the student.",
+      "fix": "Modify the 'starter' to clearly separate the initial prompt from the initial draft/result. Change 'ملاحظتي على النتيجة المقترحة:' to 'حدد عيبًا واحدًا في النتيجة المقترحة واكتب ملاحظتك هنا:' and ensure the 'expectedEvidence' aligns with this. The 'starter' should provide an example of an initial prompt and a result, then guide the student to identify a defect and write a correction."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "quiz.0.explanation",
+      "problem": "The explanation for quiz question 1 incorrectly states that 'example' is the source. The 'example' reading card shows a clear prompt and result, but the 'concept' reading card explicitly defines the importance of clear and specific details for a good request.",
+      "fix": "Change the source reference in the explanation from 'example' to 'concept' to accurately reflect where the importance of clear and specific details for a good request is defined."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "quiz.2.explanation",
+      "problem": "The explanation for quiz question 3 incorrectly states that 'check' is the source. While 'check' discusses review, the 'materials.source-card-1' provides a concrete example of a student improving an activity that was 'simple جداً بالنسبة للفئة العمرية'.",
+      "fix": "Change the source reference in the explanation from 'check' to 'materials.source-card-1' to accurately reflect where an example of improving an activity for age appropriateness is provided."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "mission.instructions.1",
+      "problem": "The mission instructions ask for 'ثلاثة أقسام رئيسية للحديقة (مثل: منطقة الزهور، منطقة الألعاب، منطقة الاسترخاء)'. However, the 'imageBrief.composition' and 'imageBrief.altText' for this mission only mention three sections without explicitly stating they are 'أقسام رئيسية' or requiring them to be 'دائرية أو مربعة'. The rubric also only mentions '3 أقسام'. This creates a slight inconsistency between the instruction's example and the visual/rubric requirements.",
+      "fix": "Remove the parenthetical example '(مثل: منطقة الزهور، منطقة الألعاب، منطقة الاسترخاء)' from the instructions to avoid implying a specific type or number of sections beyond 'ثلاثة أقسام رئيسية'."
+    },
+    {
+      "locale": "ar-MSA",
+      "path": "mission.rubric.0",
+      "problem": "The rubric for the mission states 'الطلب الأولي واضح ويتضمن جميع العناصر المطلوبة (اسم، وصف، 3 أقسام).'. However, the mission instructions ask the learner to 'اكتب طلباً واضحاً لأداة رقمية لتقترح عليك: اسم للحديقة، وصف من جملتين للحديقة، ثلاثة أقسام رئيسية للحديقة'. The rubric should reflect that the student is writing the *request* for these elements, not necessarily providing them directly in the initial request.",
+      "fix": "Change the rubric item to 'الطلب الأولي واضح ويتضمن طلب جميع العناصر المطلوبة (اسم، وصف، 3 أقسام).' to clarify that the student is requesting these elements from the tool."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "quiz.2.explanation",
+      "problem": "The explanation for quiz question 3 incorrectly states that 'example' is the source. While 'example' provides a project example, the 'check' reading card and 'scenes.3' (دورك ودور الأداة) are more relevant to the student's role in guiding the tool and making choices.",
+      "fix": "Change the source reference in the explanation from 'example' to 'check' or 'scenes.3' to accurately reflect where the student's role in guiding the tool is discussed."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "mission.instructions",
+      "problem": "The mission instructions ask the learner to 'أعطِ حديقتك اسماً، واكتب وصفاً من جملتين، ثم اقترح 3 أنواع من النباتات أو الزهور التي ستزرعها فيها. استخدم الأداة الذكية لتحسين وصفك، ثم اشرح دورك ودور الأداة.'. This structure does not align with the brief's requirement for the transfer activity to include 'initial prompt, a supplied authored example output or their own draft, a specific correction, improved version and a short account of what they chose themselves'. The current instructions only ask for a name, description, plants, tool use for description improvement, and an explanation of roles, missing the initial prompt/draft and specific correction steps.",
+      "fix": "Revise the mission instructions to explicitly include all required steps from the brief: '1. اكتب طلبًا أوليًا لأداة ذكية لتقترح عليك اسمًا ووصفًا من جملتين وثلاثة أنواع من النباتات/الزهور لحديقة خيالية. 2. اكتب النتيجة التي حصلت عليها (أو مسودتك الأولى). 3. حدد عيبًا واحدًا في النتيجة المقترحة واكتب ملاحظتك. 4. اكتب النسخة المحسنة من مشروع حديقة الأحلام. 5. اشرح باختصار: ما الأجزاء التي كانت من إبداعك، وما الأجزاء التي ساعدتك فيها الأداة؟'"
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "mission.rubric.0",
+      "problem": "The rubric for the mission states 'تم تحديد اسم الحديقة ووصفها والنباتات المقترحة بوضوح.'. This does not align with the brief's requirement for the transfer activity to include 'initial prompt, a supplied authored example output or their own draft, a specific correction, improved version and a short account of what they chose themselves'. The rubric should reflect the process of using the tool and making improvements, not just the final output.",
+      "fix": "Revise the rubric item to 'الطلب الأولي واضح ويتضمن طلب جميع العناصر المطلوبة (اسم، وصف، 3 أنواع نباتات/زهور).' to align with the revised instructions and the brief's requirements for the transfer activity."
+    },
+    {
+      "locale": "ar-Gulf",
+      "path": "mission.rubric.1",
+      "problem": "The rubric for the mission states 'تم استخدام الأداة الذكية لتحسين الوصف، وتم تقديم الوصف المحسّن.'. This is too narrow. The brief requires 'a specific correction' and 'improved version' for the *entire* project, not just the description. The mission instructions also only focus on improving the description.",
+      "fix": "Revise the rubric item to 'تم تقديم طلب تحسين واحد على الأقل (أو تعديل ذاتي) للنتيجة الأولية، وتم تقديم النسخة المحسنة.' to cover the broader improvement process as required by the brief."
+    },
+    {
+      "locale": "en",
+      "path": "activity.instructions.4",
+      "problem": "The activity instructions state 'Improve your project: Make the correction you identified. Explain what you changed and why.' This is missing the brief's requirement for the learner to submit 'a short account of what they chose themselves' which should distinguish between AI assistance and student decisions. While 'explain what you changed and why' touches on it, it doesn't explicitly ask for the AI vs. student distinction.",
+      "fix": "Add a fifth instruction to the activity: '5. Explain your independent choices: Briefly describe what parts of the project were your own decisions and what parts the tool helped you with.'"
+    },
+    {
+      "locale": "en",
+      "path": "activity.expectedEvidence",
+      "problem": "The 'expectedEvidence' for the activity lists 'Submit your initial prompt, your initial draft (or the provided starter), your identified correction, and your improved version of the Discovery Corner project. Also, include a short note explaining what parts of the project were your independent choices.' This is missing the explicit mention of the 'specific correction' as a distinct submission, which is required by the brief ('a specific correction'). The current phrasing 'your identified correction' is ambiguous.",
+      "fix": "Change 'your identified correction' to 'your specific correction request (or direct edit)' to clarify that the correction itself is a distinct piece of evidence, not just the improved version."
+    },
+    {
+      "locale": "en",
+      "path": "mission.instructions",
+      "problem": "The mission instructions ask for 'Exhibit Section Name', 'Description', and 'Interactive Element'. This structure does not explicitly align with the brief's requirement for the transfer activity to include 'initial prompt, a supplied authored example output or their own draft, a specific correction, improved version and a short account of what they chose themselves'. The current instructions only ask for the final plan elements.",
+      "fix": "Revise the mission instructions to explicitly include all required steps from the brief: '1. Write an initial prompt for a tool to suggest an Exhibit Section Name, a two-sentence Description, and a simple Interactive Element for a Fantasy Garden museum exhibit. 2. Write the initial draft you received (or your own first draft). 3. Identify one specific thing that could be improved in your draft and write your correction request (or direct edit). 4. Write the improved version of your exhibit plan. 5. Explain your independent choices: Briefly describe what parts of the plan were your own decisions and what parts the tool helped you with.'"
+    },
+    {
+      "locale": "en",
+      "path": "mission.rubric.0",
+      "problem": "The rubric for the mission states 'The exhibit section has a creative, fictional name.'. This does not align with the brief's requirement for the transfer activity to include 'initial prompt, a supplied authored example output or their own draft, a specific correction, improved version and a short account of what they chose themselves'. The rubric should reflect the process of using the tool and making improvements, not just the final output.",
+      "fix": "Revise the rubric item to 'The initial prompt clearly requests a creative, fictional name, a two-sentence description, and a simple interactive element.' to align with the revised instructions and the brief's requirements for the transfer activity."
+    },
+    {
+      "locale": "en",
+      "path": "mission.rubric.1",
+      "problem": "The rubric for the mission states 'The description is two sentences and clearly explains the visitor experience.'. This is a characteristic of the final output, not a step in the process required by the brief.",
+      "fix": "Remove this rubric item and replace it with one that reflects the process, such as 'The initial draft (or provided starter) is presented.'"
+    },
+    {
+      "locale": "en",
+      "path": "mission.rubric.2",
+      "problem": "The rubric for the mission states 'The interactive element is simple, hands-on, and clearly described with its purpose and function.'. This is a characteristic of the final output, not a step in the process required by the brief.",
+      "fix": "Remove this rubric item and replace it with one that reflects the process, such as 'A specific correction request (or direct edit) is identified and explained.'"
+    },
+    {
+      "locale": "en",
+      "path": "mission.rubric.3",
+      "problem": "The rubric for the mission states 'The plan uses fictional details and shows evidence of independent choices.'. This is too broad and doesn't explicitly cover the 'improved version' and the 'AI vs student' distinction as separate rubric items.",
+      "fix": "Revise this rubric item to 'The improved version of the exhibit plan is presented and clearly shows the applied correction.' and add a new rubric item: 'The explanation clearly distinguishes between the student's independent choices and the tool's assistance.'"
+    }
+  ],
+  "notes": [
+    "All locales generally follow the brief's core requirements for a fictional discovery corner project, including name, two-sentence description, and one paper-based activity.",
+    "The image scenarios for the independent mission (Fantasy Garden) are genuinely different from the discovery corner scene, as required.",
+    "Privacy and age suitability are consistently addressed in educator notes and through the emphasis on fictional content.",
+    "The 'mustTeach' elements (task, defect/correction, AI vs student) are present across all locales, though some explanations and activity structures need refinement to be fully explicit.",
+    "The 'avoid' requirements (no certificates, no auto-publishing, no external AI accounts) are implicitly met as no such features are included in the drafts."
+  ],
+  "method": "separate automated editorial review; not human approval",
+  "round": 2
+}

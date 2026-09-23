@@ -1,0 +1,35 @@
+{
+  "method": "Codex editorial assessment and correction; not human/native-speaker approval",
+  "automatedReportRetained": true,
+  "automatedPassed": false,
+  "automatedIssueCount": 8,
+  "assessment": "Replaced conflicting examples, cutting/food tasks and ambiguous first-step questions. Exact source IDs remain valid. Final activities and illustration brief now use supplied paper materials only.",
+  "corrections": [
+    {
+      "locale": "ar-EG",
+      "beforeSha256": "c88b9d8d480b3790a10226acb961d485d4d837e4a047919506cf7a0c8079c620",
+      "afterSha256": "bfb428971d43a00275dc8abaac99503238062bf4a5524aab495d11b05d4f94d4",
+      "reason": "Remove cutting/food/plant tasks and ambiguous planning questions; use the controlled paper display and a complete matching-card transfer task."
+    },
+    {
+      "locale": "ar-MSA",
+      "beforeSha256": "1cc65b354aa576e37beace5feab6804ae712af333e0a76d42e36ca6faaaff0f4",
+      "afterSha256": "7150139ae48eb705237e2d347f3ee3be8236146eb581ec9760f1883a253d5711",
+      "reason": "Remove cutting/food/plant tasks and ambiguous planning questions; use the controlled paper display and a complete matching-card transfer task."
+    },
+    {
+      "locale": "ar-Gulf",
+      "beforeSha256": "c30a48e3ac7726a0c1eaf5b6c5d6ee1a92110355825f01c8340284a073ee260e",
+      "afterSha256": "b12fb59f4f0f314a19dde22659b87e821bb5d34442c5576c976eb50ca2ad1a4e",
+      "reason": "Remove cutting/food/plant tasks and ambiguous planning questions; use the controlled paper display and a complete matching-card transfer task."
+    },
+    {
+      "locale": "en",
+      "beforeSha256": "405de72014116db3580f6aaef0f19ba87172f4b6cff3800724835327ea2e200d",
+      "afterSha256": "72cea47890f298e340b512cffc72bece9df6b2365900e20ea375b61bf945803d",
+      "reason": "Remove cutting/food/plant tasks and ambiguous planning questions; use the controlled paper display and a complete matching-card transfer task."
+    }
+  ],
+  "humanEditorialApproval": "pending",
+  "mediaStatus": "not-produced"
+}
