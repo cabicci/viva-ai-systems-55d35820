@@ -182,6 +182,7 @@ export type LocaleRetrieveResult =
 // ---------------------------------------------------------------------------
 
 interface LearnerContextInput {
+  product?: string | null;
   locale?: string | null;
   currentPath?: string | null;
   currentModule?: string | null;
@@ -643,6 +644,20 @@ export async function handleAssistantRuntimeRequest(
   }
 
   const learnerContext = body.learnerContext ?? {};
+  // Adult corpus and billing contract cannot serve Kids requests. The Kids
+  // product needs its own endpoint, corpus and server-authorized access gate.
+  const kidsIdentifier = [
+    learnerContext.currentPath,
+    learnerContext.currentModule,
+    learnerContext.currentLesson,
+  ].some((value) => typeof value === "string" && /(^|[-_/])kids($|[-_/])/i.test(value));
+  if ((learnerContext.product != null && learnerContext.product !== "adult") || kidsIdentifier) {
+    return jsonResponse(
+      { ok: false, error: "Unsupported product scope", reason: "product_scope_forbidden" },
+      400,
+      corsHeaders,
+    );
+  }
 
   const localeGate = validateRuntimeLocale(learnerContext.locale);
   if (!localeGate.ok) {
