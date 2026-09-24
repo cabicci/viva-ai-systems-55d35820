@@ -26,6 +26,19 @@ or publish the UI until a staffed request queue and policy are approved.
   conflict with a blanket "delete all data" promise; classify it explicitly
   before publishing final account-deletion wording.
 
+### Why the final workflow cannot safely ship from this decision alone
+
+The current schema requires `billing.subscriptions.user_id` and
+`billing.payment_transactions.user_id` (`NOT NULL`), while
+`billing.subscription_events.subscription_id` references the subscription
+without a cascading delete. The former public wipe only deletes a selected
+list of `public` tables and neither removes `auth.users` nor accounts for those
+financial dependencies or later provider events. A final deletion therefore
+needs an approved rule for each retained financial identifier and a tested
+guard against late access restoration. Keeping HubSpot records separately
+does not resolve the billing references. **Do not reinterpret the current
+request receipt as completed account deletion.**
+
 ## Contract and required final workflow
 
 1. An authenticated person requests deletion; the database records only their
