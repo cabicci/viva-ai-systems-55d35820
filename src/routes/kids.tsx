@@ -7,16 +7,13 @@ import { getKidsCopy } from "@/lib/kids/copy";
 import { useLocale } from "@/lib/locale/locale-context";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
+import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
 
 export const Route = createFileRoute("/kids")({
   validateSearch: (raw: Record<string, unknown>) => parseLocaleSearchParam(raw),
   head: async ({ match }) => {
     const locale = await resolveRouteHeadLocale({ searchLocale: match.search.locale });
-    const copy = getKidsCopy(locale);
-    return {
-      meta: [{ title: `${copy.title} — Masaarat` }, { name: "description", content: copy.intro }],
-      links: [{ rel: "canonical", href: "https://masaarat.ai/kids" }],
-    };
+    return buildLocalizedPublicMeta(locale, "kids");
   },
   component: KidsPage,
 });
