@@ -5,6 +5,7 @@ import base64
 import hashlib
 import json
 import os
+import time
 from pathlib import Path
 import urllib.error
 import urllib.parse
@@ -107,10 +108,15 @@ def main() -> None:
         }).encode("utf-8")
         api("POST", f"{BASE}/{guid}/captions/{caption_lang}", key,
             caption_payload, "application/json")
-        metadata = api("GET", f"{BASE}/{guid}", key)
-        captions = metadata.get("captions") or []
+        for attempt in range(4):
+            metadata = api("GET", f"{BASE}/{guid}", key)
+            captions = metadata.get("captions") or []
+            if any(item.get("srclang") == caption_lang for item in captions):
+                break
+            if attempt < 3:
+                time.sleep(2)
     if not any(item.get("srclang") == caption_lang for item in captions):
-        raise SystemExit("Kids caption not confirmed by Bunny")
+        raise SystemExit("Kids caption not confirmed by Bunny after four reads")
     receipt = {"lessonId": args.lesson, "locale": args.locale, "libraryId": int(LIBRARY_ID),
                "guid": guid, "sha256": digest, "bytes": entry["bytes"],
                "captionSha256": caption_digest, "captionBytes": entry["captionBytes"],
