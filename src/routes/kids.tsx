@@ -1,7 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { KidsBrand } from "@/components/kids/KidsBrand";
+import { KidsParentPanel } from "@/components/kids/KidsParentPanel";
+import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { KIDS_LEVELS } from "@/lib/kids/catalogue";
 import { getKidsCopy } from "@/lib/kids/copy";
 import { useLocale } from "@/lib/locale/locale-context";
@@ -21,6 +23,7 @@ export const Route = createFileRoute("/kids")({
 function KidsPage() {
   const { locale, dir } = useLocale();
   const copy = getKidsCopy(locale);
+  const localeSearch = useLocaleLinkSearch();
 
   return (
     <div className="min-h-dvh flex flex-col" dir={dir}>
@@ -51,9 +54,19 @@ function KidsPage() {
                 <p className="mt-4 inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
                   {copy.freeBadge}
                 </p>
+                <Link
+                  to="/kids/$levelId"
+                  params={{ levelId: level.id }}
+                  search={localeSearch()}
+                  className="mt-5 block min-h-11 rounded-full border border-primary px-5 py-3 text-center text-sm font-bold text-primary hover:bg-primary/10"
+                >
+                  {copy.details}
+                </Link>
               </article>
             ))}
           </section>
+
+          <KidsParentPanel />
 
           <section className="grid gap-5 md:grid-cols-2">
             <div className="rounded-2xl border border-border/60 bg-card p-6">

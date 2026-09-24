@@ -9,7 +9,8 @@ const arabic = {
   eyebrow: "تعلّم الذكاء الاصطناعي بحسب المرحلة العمرية",
   intro:
     "ثلاث مراحل، في كل مرحلة 12 درسًا بنسخ عربية وإنجليزية. يدير وليّ الأمر الوصول والتقدم، وتبقى باقات الكبار مستقلة.",
-  reviewNotice: "الدروس قيد التجهيز والمراجعة قبل إتاحتها للأطفال. هذه الصفحة تعريفية حاليًا.",
+  reviewNotice:
+    "محتوى الدروس مُراجع، لكن الوصول للأطفال مغلق حتى تكتمل بوابات الخصوصية والتحقق من وليّ الأمر وتشغيل المحتوى على الخادم.",
   freeBadge: "أول درسين مجانًا",
   level: "المستوى",
   lessons: "12 درسًا",
@@ -19,7 +20,7 @@ const arabic = {
   bundleDescription:
     "عند الاشتراك في كيدز مع Pro أو Pro Plus، يُخصم 10% من إجمالي الاشتراكين وفق السعر المعتمد لاحقًا.",
   parentNote:
-    "إنشاء ملفات الأطفال والوصول للدروس سيُتاحان بعد اكتمال سياسة وليّ الأمر والخصوصية والمراجعة التعليمية.",
+    "إنشاء ملفات الأطفال والوصول للدروس يتطلبان تفعيل سياسة وليّ الأمر والخصوصية والتحقق على الخادم.",
 } as const;
 
 type KidsCopy = { [K in keyof typeof arabic]: string };
@@ -34,7 +35,7 @@ const en: KidsCopy = {
   intro:
     "Three levels with 12 lessons each, in Arabic and English versions. A parent manages access and progress; adult plans stay separate.",
   reviewNotice:
-    "Lessons are being prepared and reviewed before children can use them. This page is informational for now.",
+    "Lesson content has been reviewed, but child access remains closed pending privacy controls, parental verification, and server release.",
   freeBadge: "First two lessons free",
   level: "Level",
   lessons: "12 lessons",
@@ -44,7 +45,7 @@ const en: KidsCopy = {
   bundleDescription:
     "A Kids subscription combined with Pro or Pro Plus receives 10% off the combined approved subscription price.",
   parentNote:
-    "Child profiles and lesson access open only after parent and privacy policies and educational review are completed.",
+    "Child profiles and lesson access require parental verification, approved privacy controls, and server release.",
 };
 
 export function getKidsCopy(locale: SupportedLocale): KidsCopy {
