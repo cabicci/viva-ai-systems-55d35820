@@ -147,6 +147,7 @@ describe("public billing RPC bridge — static", () => {
       "20260917120000_stripe_test_checkout_bridge.sql",
       "20260918173000_stripe_customer_portal_upgrade.sql",
       "20260924190000_kids_parent_content_access_foundation.sql",
+      "20260924191000_kids_private_lesson_content.sql",
     ]);
 
     const snapshotValiditySql = readRepoFile(SNAPSHOT_VALIDITY_MIGRATION);
