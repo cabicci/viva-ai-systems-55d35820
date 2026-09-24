@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { KidsLessonPage } from "./kids.$levelId.$lessonNumber";
+import { KidsLessonPage } from "../../routes/kids.$levelId.$lessonNumber";
 
 const mock = vi.hoisted(() => ({
   refresh: vi.fn(),
