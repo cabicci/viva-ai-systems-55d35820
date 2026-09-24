@@ -1,7 +1,7 @@
 # Masaarat Kids · Level 1 delivery
 Ages 10–12; twelve lessons; four authored locales: Egyptian Arabic, Modern Standard Arabic, Gulf Arabic, and English. This is an isolated pilot on `feature/masaarat-kids-pilot`, not a change to adult Masaarat production.
 ## Learner experience
-The offline review uses the platform's IntroSection, QuizBlock, styles, lesson cards, previous/next links, and back-to-dashboard navigation. Its header places a KIDS wordmark in the platform's blue-teal gradient beside the Masaarat logo. It presents one lesson at a time without a lesson selector.
+The offline review uses the platform's IntroSection, QuizBlock, styles, lesson cards, previous/next links, and back-to-dashboard navigation. Its header places a KIDS wordmark beside the Masaarat logo, with each letter using one of the logo's sampled mint, teal, lilac, and blue colors. It presents one lesson at a time without a lesson selector.
 Every lesson has goals, written explanation, an independent 1900×1000 teaching image, explained quiz, practice, a mission, self-review rubric, and source-linked hints. The page artwork is separate from its video scenes.
 Lessons 2–12 use seven short animated scenes per locale, the Masaarat logo, Cairo, the original mascot, narrated speech, and scene-aligned WebVTT. Lesson 1 keeps its accepted shorter narrated videos and independent reading-corner image.
 ## Build and inspect on Dell

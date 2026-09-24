@@ -49,7 +49,7 @@ function App(){
  const d=selected===null?null:course[selected].locales[locale];
  return <LocaleProvider effectiveLocale={locale as any}><div className="min-h-screen">
  <header className="review-topbar glass border-b border-border">
- <a href="#/dashboard" aria-label={t('learn.backToDashboard')} className="inline-flex items-center gap-2.5 self-start"><img src={payload.logo} alt={locale==='en'?'Masaarat':'مسارات'} className="w-28 h-12 object-contain"/><span aria-label="Kids" dir="ltr" className="text-xl sm:text-2xl font-black tracking-[0.08em] bg-[image:var(--gradient-primary)] bg-clip-text text-transparent">KIDS</span></a>
+ <a href="#/dashboard" aria-label={t('learn.backToDashboard')} className="inline-flex items-center gap-2.5 self-start"><img src={payload.logo} alt={locale==='en'?'Masaarat':'مسارات'} className="w-28 h-12 object-contain"/><span aria-label="KIDS" dir="ltr" className="inline-flex text-xl sm:text-2xl font-black tracking-[0.04em]" style={{WebkitTextStroke:'0.35px #173c4f'}}><span style={{color:'#9be3c4'}}>K</span><span style={{color:'#3dbbbf'}}>I</span><span style={{color:'#c2acda'}}>D</span><span style={{color:'#8db3e9'}}>S</span></span></a>
  <select id="locale" aria-label="Language" className="review-select" value={locale} onChange={e=>setLocale(e.target.value)}>{locales.map((l,i)=><option key={l} value={l}>{names[i]}</option>)}</select>
  </header>
  {selected===null?<main className="flex-1 min-w-0 max-w-5xl mx-auto w-full px-4 sm:px-6 py-8 md:py-12" data-dashboard>

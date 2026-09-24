@@ -12,7 +12,8 @@ async function openLesson(i){if(await page.locator('#back-dashboard').count())aw
 let packages=0,questions=0;
 for(const locale of ['ar-EG','ar-MSA','ar-Gulf','en']){
  await page.selectOption('#locale',locale);
- if(await page.locator('.review-topbar a span').textContent()!=='KIDS'||!await page.locator('.review-topbar a span').evaluate(x=>getComputedStyle(x).backgroundImage!=='none'))throw Error('Kids brand mark');
+ const mark=page.locator('.review-topbar a > span');
+ if(await mark.textContent()!=='KIDS'||JSON.stringify(await mark.locator('span').evaluateAll(xs=>xs.map(x=>getComputedStyle(x).color)))!==JSON.stringify(['rgb(155, 227, 196)','rgb(61, 187, 191)','rgb(194, 172, 218)','rgb(141, 179, 233)']))throw Error('Kids logo colors');
  for(let i=0;i<12;i++){
   await openLesson(i);const d=course[i].locales[locale];
   if(await page.locator('h1').textContent()!==d.title)throw Error('Title');
