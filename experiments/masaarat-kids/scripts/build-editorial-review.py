@@ -68,5 +68,6 @@ print(json.dumps(counts))
 
 subprocess.run(["bun","scripts/illustrate-lesson-02.ts"],cwd=BASE,check=True)
 subprocess.run(["bun","scripts/illustrate-level1.ts"],cwd=BASE,check=True)
+subprocess.run(["bun","scripts/illustrate-advanced.ts"],cwd=BASE,check=True)
 subprocess.run(["bun","scripts/optimize-review-images.ts"],cwd=BASE,check=True)
 subprocess.run(["bun","scripts/build-platform-review.ts"],cwd=BASE,check=True)
