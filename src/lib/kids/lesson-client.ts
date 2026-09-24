@@ -11,7 +11,7 @@ export type KidsLesson = {
   activity?: { title?: string; instructions?: string; starter?: string };
   quiz?: Array<{ id: string; question: string; options: string[] }>;
   mission?: { title?: string; instructions?: string; rubric?: string[] };
-  hints?: Array<{ question?: string }>;
+  hints?: Array<{ question?: string; source?: string; sourceScene?: string }>;
 };
 export function parseProtectedLesson(
   payload: unknown,

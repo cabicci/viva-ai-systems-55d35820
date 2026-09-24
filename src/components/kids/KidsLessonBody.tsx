@@ -35,6 +35,7 @@ export function KidsLessonBody({
 
   async function showHint(index: number) {
     const hintId = `hint-${index + 1}`;
+    const sourceId = lesson.hints?.[index]?.sourceScene ?? lesson.hints?.[index]?.source;
     setHint(null);
     setHintError(false);
     setLoadingHint(true);
@@ -47,11 +48,13 @@ export function KidsLessonBody({
         error ||
         typeof data?.answer !== "string" ||
         !data.answer.trim() ||
+        typeof sourceId !== "string" ||
+        data.question !== lesson.hints?.[index]?.question ||
         citation?.product !== "kids" ||
         citation?.levelId !== levelId ||
         citation?.lessonNumber !== lessonNumber ||
         citation?.locale !== locale ||
-        citation?.sourceId !== hintId
+        citation?.sourceId !== sourceId
       )
         throw new Error("Invalid protected hint");
       setHint({ id: hintId, answer: data.answer });
