@@ -41,9 +41,21 @@ try {
     ALTER TABLE storage.objects ENABLE ROW LEVEL SECURITY;
     GRANT USAGE ON SCHEMA storage TO authenticated;
     GRANT SELECT ON storage.objects TO authenticated;
-    CREATE POLICY broad_access ON storage.objects FOR SELECT TO authenticated USING (true);
+    CREATE POLICY scoped_access ON storage.objects FOR SELECT TO authenticated
+      USING (bucket_id = 'public-assets');
   `);
   await pg.exec(migration);
+  await pg.exec(
+    "CREATE POLICY broad_access ON storage.objects FOR SELECT TO authenticated USING (true)",
+  );
+  let blockedBroadPolicy = false;
+  try {
+    await pg.exec(privateMigration);
+  } catch (error) {
+    blockedBroadPolicy = String(error).includes("Kids private storage requires bucket-scoped Storage policies");
+  }
+  assert(blockedBroadPolicy, "A broad Storage policy must stop private content deployment");
+  await pg.exec("DROP POLICY broad_access ON storage.objects");
   await pg.exec(privateMigration);
   const bucket = await pg.query(
     "SELECT public FROM storage.buckets WHERE id = 'kids-lesson-content'",
@@ -59,7 +71,7 @@ try {
     const visible = await pg.query("SELECT bucket_id FROM storage.objects");
     assert(
       visible.rows.length === 1 && visible.rows[0].bucket_id === "public-assets",
-      "Existing broad storage policy must not expose Kids files",
+      "Unrelated bucket policy must not expose Kids files",
     );
   });
   let unsignedApproval = false;
