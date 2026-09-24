@@ -11,7 +11,7 @@ from pathlib import Path
 
 LIBRARY = "761387"
 BASE = f"https://video.bunnycdn.com/library/{LIBRARY}/videos"
-GUID = re.compile(r"^[0-9a-fA-F-]{36}$")
+GUID = re.compile(r"^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$")
 SHA = re.compile(r"^[0-9a-f]{64}$")
 
 
@@ -124,6 +124,6 @@ def main():
 if __name__ == "__main__":
     try:
         main()
-    except (RuntimeError, KeyError, TypeError, AttributeError) as error:
-        # The error descriptions above are generic, never provider bodies or credentials.
-        raise SystemExit(str(error)) from None
+    except (RuntimeError, KeyError, TypeError, AttributeError, ValueError):
+        # Never print provider-supplied values, response bodies, GUIDs, or credentials.
+        raise SystemExit("Kids Bunny audit incomplete; no readiness result") from None
