@@ -98,17 +98,18 @@ def main() -> None:
     if str(metadata.get("videoLibraryId")) != LIBRARY_ID:
         raise SystemExit("Staged video library mismatch")
     captions = metadata.get("captions") or []
-    if not any(item.get("srclang") == args.locale for item in captions):
+    # Each locale has its own video; Bunny's caption shortcode is the base language.
+    caption_lang = "en" if args.locale == "en" else "ar"
+    if not any(item.get("srclang") == caption_lang for item in captions):
         caption_payload = json.dumps({
             "label": args.locale,
             "captionsFile": base64.b64encode(caption.read_bytes()).decode("ascii"),
         }).encode("utf-8")
-        encoded_locale = urllib.parse.quote(args.locale, safe="")
-        api("POST", f"{BASE}/{guid}/captions/{encoded_locale}", key,
+        api("POST", f"{BASE}/{guid}/captions/{caption_lang}", key,
             caption_payload, "application/json")
         metadata = api("GET", f"{BASE}/{guid}", key)
         captions = metadata.get("captions") or []
-    if not any(item.get("srclang") == args.locale for item in captions):
+    if not any(item.get("srclang") == caption_lang for item in captions):
         raise SystemExit("Kids caption not confirmed by Bunny")
     receipt = {"lessonId": args.lesson, "locale": args.locale, "libraryId": int(LIBRARY_ID),
                "guid": guid, "sha256": digest, "bytes": entry["bytes"],
