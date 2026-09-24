@@ -12,6 +12,7 @@ export const ROUTE_CATALOG = [
   { source: "index.tsx", pattern: "/", visibility: "public", sitemap: true },
   { source: "contact.tsx", pattern: "/contact", visibility: "public", sitemap: true },
   { source: "curriculum.tsx", pattern: "/curriculum", visibility: "public", sitemap: true },
+  { source: "kids.tsx", pattern: "/kids", visibility: "public", sitemap: true },
   { source: "pricing.tsx", pattern: "/pricing", visibility: "public", sitemap: true },
   { source: "privacy.tsx", pattern: "/privacy", visibility: "public", sitemap: true },
   { source: "terms.tsx", pattern: "/terms", visibility: "public", sitemap: true },
