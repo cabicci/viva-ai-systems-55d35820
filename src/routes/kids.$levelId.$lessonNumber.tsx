@@ -30,7 +30,11 @@ export const Route = createFileRoute("/kids/$levelId/$lessonNumber")({
   },
   head: async ({ match }) => {
     const locale = await resolveRouteHeadLocale({ searchLocale: match.search.locale });
-    return buildLocalizedPublicMeta(locale, "kids");
+    const publicMeta = buildLocalizedPublicMeta(locale, "kids");
+    return {
+      ...publicMeta,
+      meta: [...publicMeta.meta, { name: "robots", content: "noindex, nofollow" }],
+    };
   },
   component: KidsLessonPage,
 });
