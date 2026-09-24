@@ -1,0 +1,192 @@
+{
+  "locale": "en",
+  "title": "Evaluate Outputs Systematically",
+  "subtitle": "Learn to test and assess AI responses with clear, limited test cases.",
+  "objectives": [
+    "Design small, focused test cases for AI outputs.",
+    "Compare AI outputs against expected results to identify successes and failures.",
+    "Understand the limitations of small test sets and avoid overgeneralization."
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "title": "Testing AI",
+      "display": "How do you know if an AI works?",
+      "narration": "How do we know if AI works correctly? It is not magic. Like testing apps, we check AI outputs carefully. Learn to systematically evaluate AI responses today.",
+      "visualAction": "A stylized AI icon appears, then a question mark. A thought bubble shows a person pondering."
+    },
+    {
+      "id": "explain",
+      "title": "Structured Testing",
+      "display": "What is a test case?",
+      "narration": "We use structured test cases to evaluate AI. A test case is an input with an expected output. This helps see if the AI understands and responds correctly.",
+      "visualAction": "A diagram shows 'Input' arrow to 'AI System' arrow to 'Output'. A 'Test Case' label appears above the input."
+    },
+    {
+      "id": "example",
+      "title": "A Simple Example",
+      "display": "Testing a Club Helper AI",
+      "narration": "Consider an AI for club rules. We ask specific questions and compare its answers to known facts. This identifies if the AI follows its programmed rules.",
+      "visualAction": "A cartoon character types into a computer. A 'Club Rules AI' interface appears on screen, showing a question and an answer field."
+    },
+    {
+      "id": "review",
+      "title": "Reviewing Results",
+      "display": "Pass or Fail?",
+      "narration": "After testing, we review AI outputs. Mark each test 'Pass' or 'Fail' based on expected results. Precision is key. This shows where the AI performs well.",
+      "visualAction": "A checklist appears with 'Expected Output' and 'Actual Output' columns. A green checkmark appears for a 'Pass', a red 'X' for a 'Fail'."
+    },
+    {
+      "id": "improve",
+      "title": "Identifying Limitations",
+      "display": "What did we learn?",
+      "narration": "Beyond passes and fails, note limitations. A small set of tests only covers specific situations. Do not assume perfect AI performance from limited testing.",
+      "visualAction": "A magnifying glass hovers over the test results. A thought bubble shows a person thinking 'What else should I test?'"
+    },
+    {
+      "id": "practice",
+      "title": "Your Turn to Test",
+      "display": "Apply what you've learned!",
+      "narration": "Now, apply these skills! Evaluate AI responses using a structured approach. Define expected output, compare it, and record your findings. Practice makes you skilled.",
+      "visualAction": "A student character is shown with a tablet, looking engaged. A 'Practice Activity' banner appears."
+    },
+    {
+      "id": "finish",
+      "title": "Conclusion",
+      "display": "Systematic Evaluation",
+      "narration": "Great job! You learned to evaluate AI outputs using test cases, compare results, and understand limitations. This skill is crucial for responsible AI use.",
+      "visualAction": "The student character gives a thumbs-up. A 'Well Done!' message appears with a stylized AI icon."
+    }
+  ],
+  "reading": [
+    {
+      "id": "concept",
+      "title": "What are Test Cases?",
+      "text": "Test cases are specific inputs given to an AI, paired with the exact output expected. They help us systematically check if an AI behaves as intended. Each test case focuses on a particular scenario or rule, making evaluation clear and objective. This method is fundamental for quality assurance in AI systems."
+    },
+    {
+      "id": "example",
+      "title": "Evaluating an AI Helper",
+      "text": "Imagine an AI helper for a school club. If the club rules state 'Meetings start at 3 PM', a test case would be: Input: 'What time does the club start?' Expected Output: 'The club starts at 3 PM.' If the AI responds '3 PM', it passes. If it says '4 PM', it fails. This direct comparison is key."
+    },
+    {
+      "id": "check",
+      "title": "Recording Results and Limitations",
+      "text": "After testing, record if each case 'Passes' or 'Fails'. It's also vital to note limitations. A small number of tests doesn't prove an AI is perfect for all situations. We can only conclude how it performed on the specific cases tested, not generalize its overall capability."
+    }
+  ],
+  "materials": [
+    {
+      "id": "club-rules-card",
+      "title": "Fictional Club Helper Rules",
+      "text": "Club Name: 'The Young Innovators'\nRule 1: Club meetings start promptly at 3:00 PM every Tuesday.\nRule 2: All creative projects must use only paper and recycled materials.\nRule 3: Final changes to project designs require approval from a staff member.\nRule 4: Members must submit project ideas by Friday 5:00 PM.\nRule 5: The club provides all necessary paper and recycled materials.",
+      "kind": "authored-teaching-example"
+    },
+    {
+      "id": "test-table-template",
+      "title": "AI Test Evaluation Table",
+      "text": "Use this table to record your findings:\n\n| Test Case Input | Expected Output | AI Output | Pass/Fail | Limitation Noted |\n|-------------------|-----------------|-----------|-----------|------------------|\n|                   |                 |           |           |                  |\n|                   |                 |           |           |                  |\n|                   |                 |           |           |                  |",
+      "kind": "authored-teaching-example"
+    }
+  ],
+  "promptExamples": {
+    "initial": "Tell me about the club.",
+    "improved": "Based on the club rules, what time do meetings start?",
+    "followup": "If I ask about project materials, what should the AI say based on Rule 2?"
+  },
+  "activity": {
+    "title": "Evaluate Club Helper AI Responses",
+    "instructions": "Using the 'Fictional Club Helper Rules' and the 'AI Test Evaluation Table', evaluate the following AI responses. For each input, determine the 'Expected Output' based on the rules. Then, compare it to the 'AI Output' and mark 'Pass' or 'Fail'. Finally, note any 'Limitation' you observe for each test case.",
+    "starter": "Test Case 1:\nInput: 'What time does the club start?'\nAI Output: 'Meetings begin at 3 PM on Tuesdays.'\n\nTest Case 2:\nInput: 'What materials should I use for projects?'\nAI Output: 'You should use paper and recycled items.'\n\nTest Case 3:\nInput: 'Who approves project changes?'\nAI Output: 'A staff member must approve final designs.'",
+    "expectedEvidence": "A completed 'AI Test Evaluation Table' with Pass/Fail and limitations for the three provided test cases."
+  },
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "What is the primary purpose of creating specific test cases for an AI?",
+      "options": [
+        "To make the AI smarter by giving it more data.",
+        "To systematically check if the AI behaves as intended for specific inputs.",
+        "To predict all possible future behaviors of the AI."
+      ],
+      "answer": 1,
+      "explanation": "Test cases are designed for systematic checking against specific expectations, not to directly make the AI smarter or predict all future behaviors. This helps ensure the AI meets its design goals for particular scenarios. (Source: concept)",
+      "source": "concept"
+    },
+    {
+      "id": "q2",
+      "question": "Based on the 'Fictional Club Helper Rules', if you ask the AI 'When do I need to submit project ideas?', what is the expected output?",
+      "options": [
+        "'Project ideas must be submitted by Friday 5:00 PM.'",
+        "'You need to submit ideas before the club meeting.'",
+        "'There is no specific deadline for project ideas.'"
+      ],
+      "answer": 0,
+      "explanation": "Rule 4 explicitly states: 'Members must submit project ideas by Friday 5:00 PM.' The other options are incorrect based on the provided rules. (Source: example)",
+      "source": "example"
+    },
+    {
+      "id": "q3",
+      "question": "After testing an AI with three specific test cases, and all of them pass, what is the most appropriate conclusion?",
+      "options": [
+        "The AI is completely perfect and will always work correctly.",
+        "The AI performed as expected for those three specific test cases.",
+        "The AI needs more training data to improve its overall performance."
+      ],
+      "answer": 1,
+      "explanation": "Passing a small number of tests only confirms performance for those specific cases. It does not guarantee overall perfection or imply a need for more training data without further analysis. It's crucial not to overgeneralize from limited testing. (Source: check)",
+      "source": "check"
+    }
+  ],
+  "mission": {
+    "title": "Evaluate a Recipe Helper AI",
+    "instructions": "Imagine you are testing a new 'Recipe Helper AI'. It has the following rules:\n\n**Recipe Helper AI Rules:**\n1. For 'Pasta Carbonara', the main ingredients are eggs, cheese, guanciale (or pancetta), and black pepper.\n2. The cooking time for 'Quick Tomato Sauce' is 20 minutes.\n3. To make 'Chocolate Chip Cookies', preheat oven to 180°C.\n\nCreate three test cases for this AI. For each test case, write the 'Input', the 'Expected Output' based on the rules, and a plausible 'AI Output'. Then, decide if it's a 'Pass' or 'Fail' and note one 'Limitation' for each test. Present your findings in a table similar to the one used in the activity.",
+    "rubric": [
+      "Creates three distinct test cases based on the provided rules.",
+      "Clearly defines the 'Expected Output' for each test case according to the rules.",
+      "Accurately marks each test case as 'Pass' or 'Fail' by comparing expected and plausible AI outputs.",
+      "Identifies and articulates a relevant 'Limitation' for each test case, avoiding overgeneralization."
+    ]
+  },
+  "hints": [
+    {
+      "question": "How do I know what the 'Expected Output' should be?",
+      "answer": "The 'Expected Output' comes directly from the specific rules provided for the AI. Read the rules carefully to find the exact information the AI should give.",
+      "source": "concept"
+    },
+    {
+      "question": "What if the AI output is slightly different but still correct?",
+      "answer": "For this exercise, focus on exact matches to the rules. If the AI output doesn't precisely match the rule's information, even if it's close, mark it as a 'Fail' and note the discrepancy in the 'Limitation' column.",
+      "source": "example"
+    },
+    {
+      "question": "What kind of 'Limitation' should I write?",
+      "answer": "A limitation means what your test *doesn't* tell you. For example, if you only tested one rule, a limitation could be 'This test doesn't tell us if the AI knows other rules.' Or, 'This test only covered one ingredient, not all of them.'",
+      "source": "check"
+    }
+  ],
+  "imageBrief": {
+    "title": "Structured AI Testing",
+    "scenario": "A student is evaluating a 'Smart Home Assistant' AI using a structured test table.",
+    "composition": "A clean, modern desk setup. On the desk, an open notebook displays a hand-drawn table with columns: 'Voice Command', 'Expected Action', 'Assistant Response', 'Result (Pass/Fail)', 'Notes'. A sleek, minimalist smart speaker device (representing the AI assistant) sits next to the notebook. A hand (implied to be the student's) holds a pen, poised over the notebook. The background is a soft, blurred home office setting.",
+    "labels": [
+      "Voice Command",
+      "Expected Action",
+      "Assistant Response",
+      "Pass/Fail",
+      "Smart Home Assistant"
+    ],
+    "altText": "A student's hand with a pen over a notebook, which shows a handwritten test evaluation table for a 'Smart Home Assistant'. The table has columns for 'Voice Command', 'Expected Action', 'Assistant Response', 'Result (Pass/Fail)', and 'Notes'. A smart speaker device is next to the notebook."
+  },
+  "educatorNotes": {
+    "sampleAnswer": "Activity Sample Answer:\n| Test Case Input             | Expected Output                                 | AI Output                                     | Pass/Fail | Limitation Noted                                                              |\n|-----------------------------|-------------------------------------------------|-----------------------------------------------|-----------|-------------------------------------------------------------------------------|\n| 'What time does the club start?' | 'The club starts at 3:00 PM every Tuesday.'     | 'Meetings begin at 3 PM on Tuesdays.'         | Pass      | Only tested the start time, not the day.                                      |\n| 'What materials should I use for projects?' | 'All creative projects must use only paper and recycled materials.' | 'You should use paper and recycled items.'    | Pass      | Did not test if AI knows about 'creative projects' specifically.              |\n| 'Who approves project changes?' | 'Final changes to project designs require approval from a staff member.' | 'A staff member must approve final designs.'  | Pass      | Did not test if AI knows about 'project designs' specifically.                |\n\nMission Sample Answer:\n| Test Case Input                  | Expected Output                                                              | AI Output                                                               | Pass/Fail | Limitation Noted                                                              |\n|----------------------------------|------------------------------------------------------------------------------|-------------------------------------------------------------------------|-----------|-------------------------------------------------------------------------------|\n| 'What are the main ingredients for Pasta Carbonara?' | 'The main ingredients are eggs, cheese, guanciale (or pancetta), and black pepper.' | 'You need eggs, cheese, and bacon for Carbonara.'                       | Fail      | AI missed 'guanciale (or pancetta)' and 'black pepper'. Used 'bacon' instead. |\n| 'How long to cook Quick Tomato Sauce?' | 'The cooking time for 'Quick Tomato Sauce' is 20 minutes.'                  | 'Cook the tomato sauce for about 20 minutes.'                           | Pass      | Only tested cooking time, not other details like ingredients or steps.        |\n| 'What temperature for Chocolate Chip Cookies?' | 'To make 'Chocolate Chip Cookies', preheat oven to 180°C.'                  | 'Preheat oven to 350 degrees Fahrenheit for cookies.'                   | Fail      | AI gave Fahrenheit instead of Celsius, and didn't specify 'Chocolate Chip'.   |",
+    "commonMisconception": "A common misconception is that if an AI passes a few tests, it is 'smart' or 'perfect' and will always perform correctly. Learners might overgeneralize from limited test results, failing to acknowledge that small test sets only confirm performance for those specific cases, not overall capability.",
+    "reviewChecks": [
+      "Are all three test cases clearly defined with input, expected output, and actual AI output?",
+      "Is the Pass/Fail decision accurate based on the comparison of expected vs. actual output?",
+      "Are the identified limitations specific to what the test *didn't* cover, rather than general statements?",
+      "Does the learner avoid making broad claims about the AI's overall intelligence or failure based on limited tests?"
+    ],
+    "safetyNotes": "When evaluating AI, remind students that they are assessing the AI's programmed responses, not its 'intelligence' in a human sense. Emphasize that AI outputs should always be reviewed by a human, especially in critical applications, as even well-tested systems can have unexpected behaviors or limitations."
+  }
+}

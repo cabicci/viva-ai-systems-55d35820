@@ -1,0 +1,193 @@
+{
+  "locale": "en",
+  "title": "Crafting Messages: Knowing Your Audience",
+  "subtitle": "Learn to tailor your words for different people and purposes.",
+  "objectives": [
+    "Identify the intended audience and purpose of a message.",
+    "Adapt language and details to suit different audiences.",
+    "Explain how audience and purpose affect communication effectiveness."
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "title": "Who are you talking to?",
+      "display": "Your words matter!",
+      "narration": "You instinctively adapt your words for different people. Explaining to a sibling, friend, or teacher changes your message. We will learn to tailor messages for various audiences.",
+      "visualAction": "A cartoon character speaks to a small child, then a peer, then an adult, with different speech bubbles appearing."
+    },
+    {
+      "id": "explain",
+      "title": "Audience and Purpose",
+      "display": "Why and for whom?",
+      "narration": "Every message has a purpose: inform, persuade, or entertain. It also has an audience. Understanding both is key for effective communication. Consider them to succeed.",
+      "visualAction": "Two thought bubbles appear: one with a question mark (purpose), another with a group of diverse cartoon people (audience)."
+    },
+    {
+      "id": "example",
+      "title": "A Reading Club Invitation",
+      "display": "Same event, different words",
+      "narration": "Imagine inviting people to a reading club. For students, focus on fun books. For parents, discuss supervision and learning benefits. Audience and purpose shape your message.",
+      "visualAction": "A split screen shows two different invitation flyers for the same reading club: one colorful for students, one formal for parents, highlighting different text areas."
+    },
+    {
+      "id": "review",
+      "title": "Check Your Understanding",
+      "display": "Quick Quiz!",
+      "narration": "Why consider audience and purpose? A message unclear or irrelevant might be ignored. A well-crafted message delivers the right information to the right people effectively.",
+      "visualAction": "A target graphic appears with an arrow hitting the bullseye, representing effective communication."
+    },
+    {
+      "id": "improve",
+      "title": "Making Messages Better",
+      "display": "From vague to clear",
+      "narration": "Start with a general idea, like 'Tell people about the club.' Refine it. Who exactly? What do we want them to do? Add details for a powerful message.",
+      "visualAction": "A cartoon character writes on a whiteboard. Text changes from simple to detailed on the board."
+    },
+    {
+      "id": "practice",
+      "title": "Your Turn to Adapt!",
+      "display": "Practice makes perfect",
+      "narration": "Now, practice these skills. Take one topic and craft two different messages, each for a distinct audience. Tailor your words to their needs and preferences.",
+      "visualAction": "A cartoon character holds a pen and paper, looking thoughtful. Two distinct speech bubbles appear, empty, waiting to be filled."
+    },
+    {
+      "id": "finish",
+      "title": "Mastering Communication",
+      "display": "You're a communication pro!",
+      "narration": "Great job! You learned to identify audience and purpose, adapting messages accordingly. This skill helps you connect, achieve goals, and become a master communicator.",
+      "visualAction": "A cartoon character gives a thumbs-up, surrounded by various communication icons like speech bubbles, envelopes, and presentation slides."
+    }
+  ],
+  "reading": [
+    {
+      "id": "concept",
+      "title": "What are Audience and Purpose?",
+      "text": "The audience is who you are communicating with. The purpose is why you are communicating. Understanding these two elements helps you choose the right words, tone, and details. A message for friends will differ from one for teachers, even on the same topic."
+    },
+    {
+      "id": "example",
+      "title": "Tailoring Your Message",
+      "text": "If your purpose is to inform, you'll use clear facts. If it's to persuade, you'll include reasons and benefits. For a young audience, use simple language. For experts, use technical terms. Always consider what your audience already knows and what they need to know."
+    },
+    {
+      "id": "check",
+      "title": "Why It Matters",
+      "text": "Ignoring your audience or purpose can lead to misunderstandings or your message being ignored. Effective communication ensures your message is clear, relevant, and achieves its intended goal. It builds connections and helps you get your point across successfully."
+    }
+  ],
+  "materials": [
+    {
+      "id": "source-card-1",
+      "title": "Reading Club Invitation (Student Version)",
+      "text": "Hey everyone! Get ready to dive into amazing stories! Join our new Reading Club, starting next Tuesday from 3:30 PM to 4:30 PM in the library. We'll read cool books, share ideas, and even have snacks! No homework, just fun. Sign up with Ms. Chen by Friday!",
+      "kind": "authored-teaching-example"
+    },
+    {
+      "id": "source-card-2",
+      "title": "Reading Club Invitation (Family Version)",
+      "text": "Dear Parents and Guardians, We are excited to announce the launch of our new After-School Reading Club, designed to foster a love of reading and improve literacy skills. The club will meet every Tuesday from 3:30 PM to 4:30 PM in the school library, supervised by Ms. Chen. Students will engage with age-appropriate literature in a supportive environment. Please register your child by this Friday to ensure their participation. For more details, contact Ms. Chen.",
+      "kind": "authored-teaching-example"
+    }
+  ],
+  "promptExamples": {
+    "initial": "Tell people about the school play.",
+    "improved": "Write an announcement for students aged 10-14 about the upcoming school play, highlighting exciting roles and encouraging them to audition.",
+    "followup": "Now, write a message for parents about the same school play, focusing on how it develops students' confidence and creativity, and inviting them to attend the performance dates."
+  },
+  "activity": {
+    "title": "Design a School Event Message",
+    "instructions": "Imagine your school is hosting a 'Science Fair'. Write two different messages about it: one for students (ages 11-14) encouraging them to participate, and another for local community members inviting them to attend and see the projects. Remember to adapt your language and focus for each audience.",
+    "starter": "Message 1 (for students): [Your message here]\nMessage 2 (for community members): [Your message here]",
+    "expectedEvidence": "Two distinct messages about a school Science Fair, each tailored to a specific audience and purpose."
+  },
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "You need to write an email asking your principal for permission to start a new school club. Which of these details is MOST important to include?",
+      "options": [
+        "The club's name and your favorite color.",
+        "The club's purpose, benefits for students, and how it will be supervised.",
+        "A list of all your friends who want to join the club."
+      ],
+      "answer": 1,
+      "explanation": "The principal needs to understand the club's educational value, student benefits, and logistical plan (supervision) to grant permission. Your favorite color is irrelevant, and a list of friends doesn't explain the club's purpose.",
+      "source": "concept"
+    },
+    {
+      "id": "q2",
+      "question": "You are writing a social media post to encourage your classmates to join a school clean-up day. Which approach is best?",
+      "options": [
+        "Use formal language and explain the long-term environmental impact in detail.",
+        "Use exciting language, emojis, and focus on teamwork and making a difference together.",
+        "Simply state the date, time, and location without any other details."
+      ],
+      "answer": 1,
+      "explanation": "For classmates on social media, an exciting, engaging tone with emojis and a focus on collective action (teamwork, making a difference) is most effective. Formal language or just basic facts might not grab their attention.",
+      "source": "example"
+    },
+    {
+      "id": "q3",
+      "question": "Why is it important to consider your audience when writing a message?",
+      "options": [
+        "Because everyone likes to read the same kind of information.",
+        "To ensure the message is understood, relevant, and achieves its goal.",
+        "To make the message as long as possible with many details."
+      ],
+      "answer": 1,
+      "explanation": "Considering your audience helps you tailor the message so it's clear, relevant to their needs, and achieves your intended purpose, like informing or persuading them. Not everyone likes the same information, and length isn't the primary goal.",
+      "source": "check"
+    }
+  ],
+  "mission": {
+    "title": "Campaign for a Cause",
+    "instructions": "Your school wants to encourage students to repair old notebooks instead of buying new ones, to save resources. Create two different short campaign messages (e.g., posters or social media posts) for this initiative:\n1. For elementary school students (ages 6-10), focusing on the fun of decorating repaired notebooks.\n2. For high school students (ages 15-18), focusing on the environmental impact and resource saving.",
+    "rubric": [
+      "Each message clearly targets its specific audience.",
+      "Language and tone are appropriate for each age group.",
+      "Each message effectively communicates the core idea (repairing notebooks).",
+      "Each message includes a clear call to action or benefit relevant to its audience."
+    ]
+  },
+  "hints": [
+    {
+      "question": "How do I make the message appealing to younger kids?",
+      "answer": "Focus on bright colors, simple words, and activities they enjoy, like drawing or decorating the repaired notebooks. Make it sound like a fun craft!",
+      "source": "example"
+    },
+    {
+      "question": "What kind of details would high schoolers care about for an environmental campaign?",
+      "answer": "High schoolers often care about global issues. Talk about reducing waste, protecting trees, and making a positive impact on the environment. Use facts about resource saving if possible.",
+      "source": "concept"
+    },
+    {
+      "question": "Should I use the same words for both age groups?",
+      "answer": "No, you should use different words. Younger kids need simpler vocabulary and shorter sentences. Older students can understand more complex ideas and formal language about environmental impact.",
+      "source": "check"
+    }
+  ],
+  "imageBrief": {
+    "title": "Repair Your Notebooks!",
+    "scenario": "A fictional school campaign to encourage elementary students to repair their damaged notebooks (Purpose: teaching the value of resource conservation, Audience: elementary students, Constraints: simple, home-available repair materials must be used).",
+    "composition": "A smiling middle-aged student (12-14 years old) sits at a bright classroom desk. In front of her is an open notebook with a slightly torn page. She holds a small adhesive tape or glue in her hand, and simple repair tools like small scissors and colored pens are visible on the desk. Behind her, on the blackboard, there is a handwritten sign encouraging 'Repair Our Notebooks'.",
+    "labels": [
+      "Student repairing notebook",
+      "Repair tools",
+      "Torn page",
+      "Blackboard sign",
+      "Simple materials"
+    ],
+    "altText": "A student at a desk repairing a torn notebook page with tape, surrounded by simple repair tools. A blackboard in the background displays a 'Repair Our Notebooks' sign."
+  },
+  "educatorNotes": {
+    "sampleAnswer": "Activity Sample Answer:\nMessage 1 (for students, ages 11-14):\n\"Get ready to be a Science Star! Our annual Science Fair is coming on May 15th! Do you have a cool experiment idea? Want to build something amazing? Sign up to participate by May 1st! You could win awesome prizes and show off your brainpower! See Ms. Lee for details.\"\n\nMessage 2 (for community members):\n\"Discover Tomorrow's Innovators! You're invited to our Annual School Science Fair on May 15th, from 4:00 PM - 6:00 PM in the school gymnasium. Witness incredible student projects, from robotics to environmental studies, showcasing their scientific curiosity and problem-solving skills. Join us to support our young scientists! Light refreshments will be served. For more information, please contact the school office.\"\n\nMission Sample Answer (for notebook campaign):\n1. For elementary school students (ages 6-10):\n   \"Don't throw it out, fix it up! ✂️🎨 Make your old notebooks NEW again! Decorate them with stickers and glitter. It's super fun and helps our planet! Ask a grown-up to help you fix your notebooks!\"\n2. For high school students (ages 15-18):\n   \"Think Green: Repair, Don't Replace! ♻️ Did you know making new notebooks uses tons of resources? Let's reduce waste by repairing our old ones. Simple fixes save trees and energy. Join the #RepairAndReuse challenge! Learn how to mend your notebooks and make a real environmental impact.\"",
+    "commonMisconception": "Students might think that a 'good' message is always the most detailed one, regardless of the audience. They may struggle to remove information that isn't relevant to a specific group.",
+    "reviewChecks": [
+      "Are there two distinct messages for each activity/mission?",
+      "Does each message clearly address the intended audience?",
+      "Is the language and tone appropriate for each audience's age and context?",
+      "Does each message effectively convey the core information/purpose?",
+      "Are unnecessary details removed for specific audiences?"
+    ],
+    "safetyNotes": "Remind students that when communicating online or in public, it's important to be respectful and mindful of privacy. Always get adult permission before sharing personal information or photos."
+  }
+}

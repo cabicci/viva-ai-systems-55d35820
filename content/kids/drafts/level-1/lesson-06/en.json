@@ -1,0 +1,185 @@
+{
+  "locale": "en",
+  "title": "Practice Before You See the Solution",
+  "subtitle": "Learn how to use hints to improve your problem-solving skills.",
+  "objectives": [
+    "Make a first attempt at a puzzle or problem.",
+    "Ask for a specific hint that helps, instead of the full answer.",
+    "Explain your reasoning after using a hint to solve a problem."
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "title": "The Mystery Box",
+      "display": "What's inside?",
+      "narration": "Imagine a mystery box. You want to know what's inside. Asking is easy, but isn't it more exciting to try figuring it out yourself first?",
+      "visualAction": "A cartoon child looks curiously at a closed mystery box. A thought bubble appears with a question mark."
+    },
+    {
+      "id": "explain",
+      "title": "The Power of Trying",
+      "display": "Try first, then hint.",
+      "narration": "Trying first helps you notice what you understand and where you get stuck. A small hint can guide another attempt without giving you the whole answer.",
+      "visualAction": "The child tries to open the box, then pauses. A lightbulb appears above their head, then a small arrow points to a keyhole on the box."
+    },
+    {
+      "id": "example",
+      "title": "A Puzzle Example",
+      "display": "Cards in order",
+      "narration": "Consider a puzzle: arrange Circle, Triangle, Star. Circle is last, Star before Triangle. Instead of the full answer, ask for a hint about the last card.",
+      "visualAction": "Three cards (Circle, Triangle, Star) appear scrambled. A child points to the Circle card, then a thought bubble shows 'last?'."
+    },
+    {
+      "id": "review",
+      "title": "What's a Good Hint?",
+      "display": "Not the answer!",
+      "narration": "A good hint helps you think, but it doesn't do all the thinking for you. It guides your next step, allowing you to learn.",
+      "visualAction": "A cartoon child walks on a path. A signpost with an arrow appears, pointing forward. The child smiles and continues walking."
+    },
+    {
+      "id": "improve",
+      "title": "Using Hints Wisely",
+      "display": "Try, hint, try again!",
+      "narration": "After a hint, try again! Don't wait for another. See how it changes your approach. This is where real learning happens.",
+      "visualAction": "The child from the previous scene tries to arrange the cards again after seeing the hint. They make a small adjustment and look thoughtful."
+    },
+    {
+      "id": "practice",
+      "title": "Your Turn to Solve!",
+      "display": "Solve with hints",
+      "narration": "Now it's your turn! Try my puzzle first. If stuck, ask for a hint. Then, use that hint to try again. You've got this!",
+      "visualAction": "A new, slightly different card puzzle appears on screen. The child gestures towards it, encouraging the viewer."
+    },
+    {
+      "id": "finish",
+      "title": "You're a Problem Solver!",
+      "display": "Great job!",
+      "narration": "Fantastic work! Trying, asking for hints, and trying again builds amazing problem-solving skills. You understand 'why,' not just 'what.' Keep practicing!",
+      "visualAction": "The child gives a thumbs-up. The mystery box from the hook scene is now open, revealing a glowing brain icon."
+    }
+  ],
+  "reading": [
+    {
+      "id": "concept",
+      "title": "Why Try First?",
+      "text": "Trying to solve a problem on your own, even if you don't succeed immediately, builds your brain's ability to think critically. It helps you understand the problem better and makes you more prepared to learn from a hint. It's like warming up before a game."
+    },
+    {
+      "id": "example",
+      "title": "How to Ask for a Hint",
+      "text": "Instead of saying, 'What's the answer?', try asking, 'Can you give me a clue about the first step?' or 'Is there a piece of information I should focus on?' A good hint points you in the right direction without giving away the solution."
+    },
+    {
+      "id": "check",
+      "title": "What to Do After a Hint",
+      "text": "After receiving a hint, don't just wait for the next one. Take a moment to understand the hint, then make another attempt at the problem. Explain to yourself how the hint helped you make progress. This reinforces your learning."
+    }
+  ],
+  "materials": [
+    {
+      "id": "symbol-puzzle",
+      "title": "Invented symbol puzzle",
+      "text": "Arrange CIRCLE, TRIANGLE and STAR from first to last. CIRCLE is last. STAR comes before TRIANGLE. Record an attempt before opening the hints.",
+      "kind": "authored-teaching-example"
+    }
+  ],
+  "promptExamples": {
+    "initial": "Give me the answer to the symbol puzzle.",
+    "improved": "Give me one hint about the card with a fixed position, without the full answer.",
+    "followup": "I used the hint and tried again. Help me check my attempt against both rules without giving the answer."
+  },
+  "activity": {
+    "title": "Solve the Card Puzzle!",
+    "instructions": "Try to solve the Symbol Card Puzzle on your own first. Write down your initial attempt. If you get stuck, choose which hint you'd like to receive. After getting the hint, try to solve the puzzle again and write down your new solution and how the hint helped you.",
+    "starter": "Arrange CIRCLE, TRIANGLE and STAR from first to last. CIRCLE is last. STAR comes before TRIANGLE. Record an attempt before opening the hints.",
+    "expectedEvidence": "A written initial attempt, a request for a specific hint, a new attempt after the hint, and a clear explanation of how the hint guided their thinking."
+  },
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Why is it important to try solving a problem before asking for a hint?",
+      "options": [
+        "It saves time for the teacher.",
+        "It helps you notice what you understand and where you get stuck.",
+        "It makes the problem easier to remember."
+      ],
+      "answer": 1,
+      "explanation": "Your first attempt shows what you can work out and which part needs a hint. The aim here is to practise your own reasoning.",
+      "source": "concept"
+    },
+    {
+      "id": "q2",
+      "question": "You have tried the symbol puzzle and want help without the full answer. Which request fits?",
+      "options": [
+        "Tell me the complete order.",
+        "Give me one hint about the card with a fixed position.",
+        "Solve the puzzle and write my explanation."
+      ],
+      "answer": 1,
+      "explanation": "A hint points to a useful rule while leaving you to work out the order. Both other requests ask someone else to finish the task.",
+      "source": "example"
+    },
+    {
+      "id": "q3",
+      "question": "You used a hint on a new puzzle. What helps you check your understanding next?",
+      "options": [
+        "Copy an answer without explaining it.",
+        "Request every hint before trying.",
+        "Try again and explain how you checked the rules."
+      ],
+      "answer": 2,
+      "explanation": "Another attempt and a rule check help you notice what you understand and where you still need help.",
+      "source": "check"
+    }
+  ],
+  "mission": {
+    "title": "One hint, another try",
+    "instructions": "Use these invented puzzle cards: 'reads', 'a story', 'The child'. Arrange them from the start of a sentence to its end. Rules: 'a story' is last, and 'The child' comes before 'reads'. Write your first attempt, then a request for one hint without the answer. Available hint: which card already has its final position specified? Try again and explain how you checked both rules.",
+    "rubric": [
+      "I recorded a first attempt.",
+      "I requested a hint without the full answer.",
+      "I checked my order against both rules.",
+      "I explained a change, or why I kept my original answer."
+    ]
+  },
+  "hints": [
+    {
+      "question": "I'm stuck on the Symbol Card Puzzle. What should I do first?",
+      "answer": "Which rule specifies one card's position?",
+      "source": "concept"
+    },
+    {
+      "question": "I know the CIRCLE is last, but I can't figure out the other two.",
+      "answer": "Check how the remaining two cards must relate under the second rule.",
+      "source": "example"
+    },
+    {
+      "question": "I've solved the puzzle. What next?",
+      "answer": "Explain how you used both rules, then try the new word-card mission.",
+      "source": "check"
+    }
+  ],
+  "imageBrief": {
+    "title": "The Path to Solving",
+    "scenario": "A child is on a learning journey, encountering challenges and using support to overcome them.",
+    "composition": "A winding path with four distinct stations. At the first station, a child looks confused at a word puzzle. At the second, they are talking to a small, friendly robot (representing a hint). At the third, the child is actively writing the solution to the puzzle. At the fourth, they are confidently explaining their answer to the robot.",
+    "labels": [
+      "Try it!",
+      "Ask for a hint",
+      "Solve it!",
+      "Explain your thinking"
+    ],
+    "altText": "A cartoon child progresses along a path. First, they try a word puzzle. Second, they ask a robot for a hint. Third, they solve the puzzle. Fourth, they explain their solution to the robot, illustrating the process of using hints to learn."
+  },
+  "educatorNotes": {
+    "sampleAnswer": "Symbol activity solution: STAR, TRIANGLE, CIRCLE. CIRCLE is last and STAR precedes TRIANGLE. Sentence mission solution: The child / reads / a story. If the first attempt was correct, the learner should explain the check rather than make an unnecessary change.",
+    "commonMisconception": "Students often ask for the full answer immediately instead of a guiding hint, or they might not attempt the problem again after receiving a hint, expecting the next hint to solve it completely.",
+    "reviewChecks": [
+      "I recorded a first attempt.",
+      "I requested a hint without the full answer.",
+      "I checked my order against both rules.",
+      "I explained a change, or why I kept my original answer."
+    ],
+    "safetyNotes": "Ensure students understand that this lesson is about learning problem-solving strategies, not about finding shortcuts for school assignments. Encourage them to apply these skills to practice problems, not to copy answers."
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "locale": "en",
+  "title": "Turn Data into a Question",
+  "subtitle": "Read a small table before asking for an explanation.",
+  "objectives": [
+    "Identify specific data points in a table.",
+    "Calculate simple comparisons between data points.",
+    "Formulate a question about data differences without guessing causes."
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "title": "What's the Story?",
+      "display": "Data tells a story. Can you read it?",
+      "narration": "Data is all around us, from scores to weather. How do we make sense of it? Today, we learn to read data carefully and ask smart questions.",
+      "visualAction": "A cartoon character looks at a simple bar chart, then points to a question mark above it."
+    },
+    {
+      "id": "explain",
+      "title": "Read the Numbers",
+      "display": "Find facts, make comparisons.",
+      "narration": "First, read data exactly as presented. Find specific numbers and understand their meaning. Then, compare them to see patterns and differences clearly.",
+      "visualAction": "A hand highlights individual numbers in a table, then draws an arrow between two numbers to show a comparison."
+    },
+    {
+      "id": "example",
+      "title": "Book Loans",
+      "display": "See a real example.",
+      "narration": "For example, if Monday had 4 loans and Tuesday 7, Tuesday had 3 more. This is a fact directly from the data.",
+      "visualAction": "A simple table appears with 'Monday: 4' and 'Tuesday: 7'. A calculation '7 - 4 = 3' appears next to it."
+    },
+    {
+      "id": "review",
+      "title": "What's Missing?",
+      "display": "Data shows 'what', not 'why'.",
+      "narration": "The data tells us *what* happened, but not *why*. It shows Tuesday had more loans, but not the reason. Stick to the numbers.",
+      "visualAction": "A cartoon character shrugs next to the book loan table, with a thought bubble showing a question mark and a 'NO' symbol over speculative reasons."
+    },
+    {
+      "id": "improve",
+      "title": "Ask Smart Questions",
+      "display": "Focus on facts, not guesses.",
+      "narration": "When asking data questions, focus on facts. Ask 'How many more books were borrowed on Tuesday?' This uses only available information.",
+      "visualAction": "The initial question 'Why...?' appears crossed out. The improved question 'How many more...?' appears with a checkmark."
+    },
+    {
+      "id": "practice",
+      "title": "Your Turn!",
+      "display": "Practice reading data and asking questions.",
+      "narration": "Now, practice! Read new data, make a simple comparison, and form a question the data can answer. Avoid guessing reasons.",
+      "visualAction": "A new, empty table appears, ready for the learner to interact with. A cartoon character gestures invitingly."
+    },
+    {
+      "id": "finish",
+      "title": "Data Detective",
+      "display": "You're a data detective!",
+      "narration": "Great job! You are a data detective. You can read tables, compare numbers, and ask precise questions based only on evidence.",
+      "visualAction": "A cartoon character wears a detective hat, holding a magnifying glass over a data table, then gives a thumbs-up."
+    }
+  ],
+  "reading": [
+    {
+      "id": "concept",
+      "title": "Reading Data Tables",
+      "text": "A data table organizes information in rows and columns. Each cell holds a specific piece of data. To read it, identify the labels for rows and columns to understand what each number represents. Always read numbers precisely, without adding your own ideas."
+    },
+    {
+      "id": "example",
+      "title": "Comparing Data Points",
+      "text": "To compare data points, find the numbers you want to compare. Then, perform a simple calculation, like subtraction, to find the difference. For example, if one value is 10 and another is 7, the difference is 10 - 7 = 3. This shows how much larger or smaller one is."
+    },
+    {
+      "id": "check",
+      "title": "Asking Data-Based Questions",
+      "text": "A good data-based question asks about what the data *shows*, not what it *explains*. The table tells you 'what' happened (e.g., a number increased), but usually not 'why' it happened. Stick to facts and observable differences when forming your questions."
+    }
+  ],
+  "materials": [
+    {
+      "id": "book-loan-data",
+      "title": "Fictional Library Book Loans",
+      "text": "This table shows the number of books borrowed from a small library over three days:\n\n| Day       | Books Borrowed |\n|-----------|----------------|\n| Monday    | 4              |\n| Tuesday   | 7              |\n| Wednesday | 5              |\n\n(Invented teaching example)",
+      "kind": "authored-teaching-example"
+    }
+  ],
+  "promptExamples": {
+    "initial": "Tell me about the book loans.",
+    "improved": "Using the book loan data, compare Tuesday's loans to Monday's loans. How many more books were borrowed on Tuesday than on Monday?",
+    "followup": "The table shows that Tuesday had 3 more loans than Monday. Can you ask a question about this difference that the table *cannot* answer?"
+  },
+  "activity": {
+    "title": "Compare and Question",
+    "instructions": "Look at the 'Fictional Library Book Loans' table. Calculate the difference in books borrowed between Wednesday and Monday. Then, write one question about this difference that the table can answer, and one question that it cannot answer.",
+    "starter": "Wednesday: 5 books. Monday: 4 books. Calculate the difference. Then, write one question about this difference that the table *can* answer, and one question that it *cannot* answer.",
+    "expectedEvidence": "A calculation showing the difference, a question answerable by the data, and a question not answerable by the data."
+  },
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Based on the 'Fictional Library Book Loans' table, what is the exact number of books borrowed on Wednesday?",
+      "options": [
+        "4 books",
+        "5 books",
+        "7 books"
+      ],
+      "answer": 1,
+      "explanation": "The table clearly shows 'Wednesday' corresponds to '5' books borrowed. This is a direct reading of the data.",
+      "source": "concept"
+    },
+    {
+      "id": "q2",
+      "question": "Using the 'Fictional Library Book Loans' table, by how many books did Tuesday's loans exceed Wednesday's loans?",
+      "options": [
+        "1 book",
+        "2 books",
+        "3 books"
+      ],
+      "answer": 1,
+      "explanation": "Tuesday had 7 books, and Wednesday had 5 books. The difference is 7 - 5 = 2 books. So, Tuesday exceeded Wednesday by 2 books.",
+      "source": "example"
+    },
+    {
+      "id": "q3",
+      "question": "Which of these is a question that the 'Fictional Library Book Loans' table *cannot* directly answer?",
+      "options": [
+        "What was the total number of books borrowed on Monday and Tuesday?",
+        "How many more books were borrowed on Tuesday than on Monday?",
+        "Why were more books borrowed on Tuesday than on Wednesday?"
+      ],
+      "answer": 2,
+      "explanation": "The table provides numbers for total and differences, but it does not give reasons or explanations for why certain numbers are higher or lower. It only shows 'what' happened, not 'why'.",
+      "source": "check"
+    }
+  ],
+  "mission": {
+    "title": "Analyze School Activity Data",
+    "instructions": "Imagine a school recorded student participation in two after-school clubs for one week. The 'Art Club' had 12 students, and the 'Chess Club' had 9 students. Create a small table to display this data. Then, write a sentence comparing the participation, including the exact difference. Finally, write one question about this data that the table can answer, and one question that it cannot.",
+    "rubric": [
+      "Table correctly shows Art Club: 12, Chess Club: 9.",
+      "Comparison sentence accurately states the difference (3 students).",
+      "Question answerable by data is clear and factual (e.g., 'How many more students joined Art Club?').",
+      "Question not answerable by data avoids causal speculation (e.g., 'Why is Art Club more popular?')."
+    ]
+  },
+  "hints": [
+    {
+      "question": "How do I find the difference between two numbers?",
+      "answer": "To find the difference, subtract the smaller number from the larger number. For example, if you have 7 and 4, the difference is 7 - 4 = 3.",
+      "source": "example"
+    },
+    {
+      "question": "What kind of questions can the table answer?",
+      "answer": "The table can answer questions about specific numbers, totals, or differences between numbers shown in the table. It answers 'what' and 'how many'.",
+      "source": "concept"
+    },
+    {
+      "question": "What kind of questions can the table NOT answer?",
+      "answer": "The table cannot answer questions about 'why' something happened, or what caused a particular difference or trend. It doesn't provide reasons or external information.",
+      "source": "check"
+    }
+  ],
+  "imageBrief": {
+    "title": "Fictional Activity Results",
+    "scenario": "A school is tracking participation in two different activities over a week.",
+    "composition": "A simple bar chart showing two bars side-by-side. One bar is labeled 'Coding Club' and is taller. The other bar is labeled 'Debate Team' and is shorter. Both bars have numbers above them indicating their height. The background is a plain, light color.",
+    "labels": [
+      "Coding Club (15)",
+      "Debate Team (10)",
+      "Number of Participants",
+      "Activity Type"
+    ],
+    "altText": "A bar chart showing 'Coding Club' with 15 participants and 'Debate Team' with 10 participants. The y-axis is 'Number of Participants' and the x-axis is 'Activity'."
+  },
+  "educatorNotes": {
+    "sampleAnswer": "Activity: Wednesday: 5 books, Monday: 4 books. Difference: 5 - 4 = 1 book. Question the table can answer: 'How many more books were borrowed on Wednesday than on Monday?' Question the table cannot answer: 'Why were fewer books borrowed on Monday than on Wednesday?'\n\nMission Sample Table:\n| Club        | Students |\n|-------------|----------|\n| Art Club    | 12       |\n| Chess Club  | 9        |\n\nComparison: The Art Club had 3 more students participating than the Chess Club (12 - 9 = 3).\nQuestion (answerable): 'What is the difference in student participation between the Art Club and the Chess Club?'\nQuestion (not answerable): 'Why did more students join the Art Club than the Chess Club?'",
+    "commonMisconception": "Students often jump to conclusions or invent reasons for observed differences in data, rather than sticking to what the data explicitly shows. They might assume external factors without evidence.",
+    "reviewChecks": [
+      "Did the student correctly identify specific data points?",
+      "Is the calculation for comparison accurate?",
+      "Is the question answerable by the data directly?",
+      "Is the question not answerable by the data clearly speculative/causal?",
+      "Are all parts of the activity/mission completed?"
+    ],
+    "safetyNotes": "Ensure students understand that data analysis is about objective observation, not personal opinions or assumptions. Remind them not to share any real personal data or information when working with examples."
+  }
+}

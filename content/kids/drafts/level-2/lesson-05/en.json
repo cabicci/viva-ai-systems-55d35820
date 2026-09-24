@@ -1,0 +1,199 @@
+{
+  "locale": "en",
+  "title": "Check the Source",
+  "subtitle": "Learn to verify information using original sources.",
+  "objectives": [
+    "Identify claims made in a given text.",
+    "Locate specific evidence in original source materials.",
+    "Evaluate whether claims are fully supported by the evidence found."
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "title": "Information Overload",
+      "display": "So much information!",
+      "narration": "Every day, we see countless facts and claims. How do you know what's true? It's easy to get lost in a sea of information.",
+      "visualAction": "A cartoon character is surrounded by floating speech bubbles with various claims and questions."
+    },
+    {
+      "id": "explain",
+      "title": "Go to the Source",
+      "display": "Don't just trust a summary.",
+      "narration": "To truly understand if something is accurate, you need to go directly to the original source. This means finding the exact document or statement where the information came from.",
+      "visualAction": "A magnifying glass moves from a summary document to an original, detailed document."
+    },
+    {
+      "id": "example",
+      "title": "A School Garden Meeting",
+      "display": "Let's check a claim.",
+      "narration": "Imagine you see a notice about a school garden meeting. An online summary says it's on Wednesday and no booking is needed. But is that really what the original notices say?",
+      "visualAction": "Two cartoon students read a digital summary, then look confused as they compare it to two physical notices."
+    },
+    {
+      "id": "review",
+      "title": "Compare and Contrast",
+      "display": "What did you find?",
+      "narration": "When we compare the summary with the original notices, we find some differences. One notice says Tuesday, not Wednesday. The other is undated. And one clearly states booking is required.",
+      "visualAction": "The two notices and the summary appear side-by-side. Key conflicting details are highlighted in red."
+    },
+    {
+      "id": "improve",
+      "title": "The Power of Specifics",
+      "display": "Be precise with your search.",
+      "narration": "A good check means looking for exact dates, times, and conditions. Don't just skim! If a detail isn't in the source, you can't claim it is.",
+      "visualAction": "A cartoon character uses a finger to trace specific words on a document, then shakes their head at a general statement."
+    },
+    {
+      "id": "practice",
+      "title": "Your Turn to Investigate",
+      "display": "Find the evidence!",
+      "narration": "Now it's your turn. You'll get a claim and some source materials. Your task is to find out what's true, what's false, and what's still unknown based *only* on the sources.",
+      "visualAction": "A cartoon character puts on a detective hat and holds a clipboard, ready for investigation."
+    },
+    {
+      "id": "finish",
+      "title": "Become a Source Detective",
+      "display": "Always verify!",
+      "narration": "Great job! By checking sources, you become a more critical thinker. This skill helps you navigate information and make informed decisions every day.",
+      "visualAction": "The cartoon character gives a thumbs-up, surrounded by verified checkmarks and question marks over unverified claims."
+    }
+  ],
+  "reading": [
+    {
+      "id": "concept",
+      "title": "What is Source Checking?",
+      "text": "Source checking means going directly to the original information to verify claims. Instead of trusting summaries, you examine the primary document, video, or statement. This helps you confirm accuracy, identify missing details, and avoid misinformation."
+    },
+    {
+      "id": "example",
+      "title": "How to Check a Claim",
+      "text": "To check a claim, first identify the specific statements being made. Then, find the original source materials. Read them carefully, looking for exact words, dates, and conditions that support or contradict each statement. Note any information that isn't present."
+    },
+    {
+      "id": "check",
+      "title": "What if Information is Missing?",
+      "text": "If a detail is not found in the original source, you cannot confirm it. It's important to state what remains unconfirmed or unresolved. Avoid making assumptions or filling in gaps with your own ideas. Stick only to what the source provides."
+    }
+  ],
+  "materials": [
+    {
+      "id": "source-card-1",
+      "title": "School Garden Meeting Notice A",
+      "text": "NOTICE: School Garden Club Meeting! All members and interested students are invited. Date: Tuesday, October 24th. Time: 4:00 PM - 5:00 PM. Location: Classroom 3B. Please RSVP by October 20th to Ms. Chen to ensure enough seating and materials. Limited spots available.",
+      "kind": "authored-teaching-example"
+    },
+    {
+      "id": "source-card-2",
+      "title": "School Garden Teaser Notice B",
+      "text": "Get ready to dig in! The School Garden Club is planning something exciting. Join us for our next big event! More details coming soon. (Undated)",
+      "kind": "authored-teaching-example"
+    },
+    {
+      "id": "ai-summary",
+      "title": "AI-Generated Summary (Invented Teaching Example)",
+      "text": "The school garden club meeting is on Wednesday, October 24th, from 4-5 PM in Classroom 3B. No booking is required, just show up!",
+      "kind": "authored-teaching-example"
+    }
+  ],
+  "promptExamples": {
+    "initial": "Tell me about the school garden meeting.",
+    "improved": "Based *only* on Source A and Source B, what are the details for the school garden meeting, including date, time, location, and booking requirements? State if any detail is not found.",
+    "followup": "Source A mentions a classroom. Which classroom is it?"
+  },
+  "activity": {
+    "title": "Verify the Garden Meeting Details",
+    "instructions": "You have an AI-generated summary and two original notices about a school garden meeting. Your task is to compare the summary with the original notices. For each detail in the summary, state whether it is confirmed by the sources, contradicted by the sources, or not mentioned in the sources. If contradicted, provide the correct information from the source.",
+    "starter": "AI Summary: The school garden club meeting is on Wednesday, October 24th, from 4-5 PM in Classroom 3B. No booking is required, just show up!",
+    "expectedEvidence": "A list of each detail from the summary, with its status (confirmed, contradicted, or not mentioned) and supporting evidence or correction from the source materials."
+  },
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Which of the following is the best reason to check original sources?",
+      "options": [
+        "To quickly get a general idea of a topic.",
+        "To confirm the accuracy of specific claims and details.",
+        "To find out what other people think about the information."
+      ],
+      "answer": 1,
+      "explanation": "Checking original sources is crucial for confirming the accuracy of specific claims and details, ensuring you have the correct information. While summaries can give a general idea, they might miss or misrepresent details. Other people's opinions are not original sources.",
+      "source": "concept"
+    },
+    {
+      "id": "q2",
+      "question": "You read a claim that 'The new library will open next month.' You check the official library website and find no mention of an opening date, only plans for construction. What should you conclude about the claim?",
+      "options": [
+        "The claim is definitely false because the website only mentions construction.",
+        "The claim is confirmed because construction means it will open soon.",
+        "The claim is unconfirmed because the source does not provide an opening date."
+      ],
+      "answer": 2,
+      "explanation": "If the official source does not provide the information, the claim remains unconfirmed. You cannot assume it's false just because it's not there, nor can you assume it's true. Stick to what the source explicitly states or doesn't state.",
+      "source": "check"
+    },
+    {
+      "id": "q3",
+      "question": "A news article states, 'The city council voted 5-2 to approve the new park budget.' You find the official meeting minutes, which show the vote was 4-3. What is the most important detail to correct?",
+      "options": [
+        "The total number of council members.",
+        "The exact vote count.",
+        "The date of the city council meeting."
+      ],
+      "answer": 1,
+      "explanation": "The most important detail to correct is the exact vote count (4-3 instead of 5-2) because it directly contradicts the claim in the news article and changes the outcome of the vote. While the date is important, the vote count is the core factual discrepancy.",
+      "source": "example"
+    }
+  ],
+  "mission": {
+    "title": "Verify the Community Fair Schedule",
+    "instructions": "You've received a flyer for a 'Community Fair' and an online summary of its schedule. Your mission is to compare the online summary with the original flyer. Identify any claims in the summary that are confirmed, contradicted, or not mentioned by the flyer. Document your findings clearly.",
+    "rubric": [
+      "Student clearly identifies specific claims from the summary.",
+      "Student accurately locates corresponding information in the flyer.",
+      "Student correctly determines if each claim is confirmed, contradicted, or unconfirmed.",
+      "Student provides direct evidence or notes lack of evidence for each determination."
+    ]
+  },
+  "hints": [
+    {
+      "question": "How do I start comparing?",
+      "answer": "Read the AI summary first and pick out each distinct piece of information it provides (e.g., date, time, location, requirements). Then, look for each of those pieces in the original notices.",
+      "source": "example"
+    },
+    {
+      "question": "What if the summary says something different from the notice?",
+      "answer": "If the summary says one thing (like 'Wednesday') and the notice says another (like 'Tuesday'), then the summary is contradicted. You should state the correct information from the notice.",
+      "source": "example"
+    },
+    {
+      "question": "What if a detail is in the summary but not in any notice?",
+      "answer": "If a detail from the summary (like 'no booking required') is not mentioned at all in either of the original notices, then that detail is unconfirmed. You should state that it's 'not mentioned in sources'.",
+      "source": "check"
+    }
+  ],
+  "imageBrief": {
+    "title": "Source Verification Card",
+    "scenario": "A student is evaluating a claim about a school event using a physical source card.",
+    "composition": "A close-up shot of a hand holding a laminated card. The card has a clear, bold title at the top. Below the title, there are distinct sections for 'Claim', 'Source', 'Date', and 'Supporting Text'. The hand is pointing to a specific line within the 'Supporting Text' section.",
+    "labels": [
+      "Claim: 'The school play is on Saturday.'",
+      "Source: 'School Newsletter, Nov 2023'",
+      "Date: 'November 1, 2023'",
+      "Supporting Text: 'Our annual school play will be held on Sunday, November 19th, at the auditorium.'",
+      "Hand pointing to 'Sunday, November 19th'"
+    ],
+    "altText": "A hand holds a card titled 'Source Verification'. The card shows a claim about a school play on Saturday, but the supporting text from a school newsletter clearly states the play is on Sunday, November 19th. The hand points to the correct date in the supporting text."
+  },
+  "educatorNotes": {
+    "sampleAnswer": "Activity Sample Answer:\nAI Summary: The school garden club meeting is on Wednesday, October 24th, from 4-5 PM in Classroom 3B. No booking is required, just show up!\n\n1.  **Meeting Day**: Summary says 'Wednesday'. Source A says 'Tuesday'.\n    *   **Status**: Contradicted. Correct day is Tuesday.\n2.  **Meeting Date**: Summary says 'October 24th'. Source A says 'October 24th'.\n    *   **Status**: Confirmed.\n3.  **Meeting Time**: Summary says '4-5 PM'. Source A says '4:00 PM - 5:00 PM'.\n    *   **Status**: Confirmed.\n4.  **Meeting Location**: Summary says 'Classroom 3B'. Source A says 'Classroom 3B'.\n    *   **Status**: Confirmed.\n5.  **Booking Required**: Summary says 'No booking is required, just show up!'. Source A says 'Please RSVP by October 20th... Limited spots available.'\n    *   **Status**: Contradicted. Booking (RSVP) is required by October 20th.\n\nMission Sample Answer (for Community Fair):\nClaim: 'The fair runs from 10 AM to 4 PM.'\nFlyer: 'Fair hours: 10:00 AM - 5:00 PM.'\nStatus: Contradicted. Correct hours are 10 AM - 5 PM.\n\nClaim: 'There will be a live music stage.'\nFlyer: 'Enjoy performances by local bands on the main stage.'\nStatus: Confirmed.\n\nClaim: 'Tickets cost $5 at the gate.'\nFlyer: (No mention of ticket price or cost.)\nStatus: Unconfirmed. Not mentioned in the flyer.",
+    "commonMisconception": "A common misconception is that if a detail is not explicitly contradicted, it must be true, or that a summary is always a reliable condensation of the original. Learners might also assume that if a source is mentioned, all claims are automatically verified by it, without checking the actual text.",
+    "reviewChecks": [
+      "Did the student identify all distinct claims in the summary?",
+      "Did the student correctly match each claim to the relevant part of the source material?",
+      "Did the student accurately categorize each claim as confirmed, contradicted, or unconfirmed?",
+      "Did the student provide specific quotes or references from the sources to justify their categorization?",
+      "For contradicted claims, did the student provide the correct information from the source?"
+    ],
+    "safetyNotes": "Ensure students understand that this exercise uses invented materials for learning purposes. In real-world scenarios, always verify the credibility of the source itself before checking its content. Remind students not to share personal information or engage with unverified online content without adult supervision."
+  }
+}

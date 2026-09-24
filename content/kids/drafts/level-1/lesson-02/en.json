@@ -1,0 +1,154 @@
+{
+  "title": "When should I ask AI for help?",
+  "subtitle": "Match the kind of help to the task.",
+  "objectives": [
+    "Choose a task that benefits from ideas.",
+    "Recognise when to check an original source.",
+    "Identify a decision that belongs to a responsible person."
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "title": "Let's plan an exhibition!",
+      "narration": "Our imaginary science club is planning an exhibition. We need a catchy name, the opening time, and permission to use photos. Should we ask AI for all three in the same way?",
+      "display": "Let's plan an exhibition!",
+      "visualAction": "Cards for an exhibition name, time and photos appear in sequence."
+    },
+    {
+      "id": "ideas",
+      "title": "I need ideas",
+      "narration": "For names, we can ask: suggest three short names for an exhibition of simple science experiments. The tool offers possibilities. We choose and improve them. Its suggestion isn't a decision we must follow.",
+      "display": "I need ideas",
+      "visualAction": "Three imaginary name cards appear, and one is selected."
+    },
+    {
+      "id": "source",
+      "title": "I need a confirmed detail",
+      "narration": "But when does the exhibition open? Check the organiser's announcement or ask the organiser. If an AI answer gives a time, don't rely on that alone. Compare it with the original source.",
+      "display": "I need a confirmed detail",
+      "visualAction": "The proposed time is placed beside the organiser's announcement."
+    },
+    {
+      "id": "decision",
+      "title": "I need permission",
+      "narration": "What about sharing visitors' photos? That needs appropriate permission from the people involved and responsible adults. An AI answer cannot grant it. We'll use imaginary illustrations in this activity.",
+      "display": "I need permission",
+      "visualAction": "A question mark appears over symbolic photos, with an arrow to a responsible adult."
+    },
+    {
+      "id": "sort",
+      "title": "Choose the right help",
+      "narration": "Quick check! A name? Ideas. Opening time? An original source. Sharing people's photos? Human permission. One project, three different kinds of help.",
+      "display": "Choose the right help",
+      "visualAction": "Cards sort into ideas, source and permission."
+    },
+    {
+      "id": "activity",
+      "title": "Your turn",
+      "narration": "Imagine a museum trip. Who could help suggest a game for the visit? Where would you check opening hours? Who decides whether you can go? Pause and make your choices.",
+      "display": "Your turn",
+      "visualAction": "Museum-trip questions appear with a pause symbol."
+    },
+    {
+      "id": "finish",
+      "title": "You're making the choices",
+      "narration": "Get help with ideas, check information, and ask the right people for permission. Before using a real tool, ask a parent about one that's appropriate for your age.",
+      "display": "You're making the choices",
+      "visualAction": "The three key phrases appear with simple motion and a review mark."
+    }
+  ],
+  "reading": [
+    {
+      "id": "ideas",
+      "title": "Ideas: suggest, then choose",
+      "text": "A tool can suggest names or wording. Compare suggestions with your goal, then choose or improve them yourself."
+    },
+    {
+      "id": "source",
+      "title": "Information: check its source",
+      "text": "For a real event's opening time, check the organiser's announcement. A time appearing in an AI answer is not enough to confirm it."
+    },
+    {
+      "id": "decision",
+      "title": "Permission: ask the right person",
+      "text": "An AI answer cannot replace someone's permission to use their photo or a parent's permission for an activity. Keep practice examples imaginary."
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "You need a name for an imaginary exhibition. What could you do?",
+      "options": [
+        "Ask for suggestions and choose a suitable one.",
+        "Treat the first suggestion as the only correct name.",
+        "Upload a list of every visitor's name."
+      ],
+      "answer": 0,
+      "explanation": "This is an ideas task. The tool suggests; you judge and choose.",
+      "source": "ideas"
+    },
+    {
+      "id": "q2",
+      "question": "An AI answer says the exhibition is on Thursday. How do you check?",
+      "options": [
+        "Repeat the question until the answer sounds reassuring.",
+        "Check the organiser's announcement or ask the organiser.",
+        "Trust how confident the answer sounds."
+      ],
+      "answer": 1,
+      "explanation": "The organiser is responsible for the schedule. An AI answer alone does not confirm it.",
+      "source": "source"
+    },
+    {
+      "id": "q3",
+      "question": "An AI tool suggests sharing your friends' photos. Is that permission?",
+      "options": [
+        "Yes, because the tool suggested it.",
+        "Yes, if the photos look good.",
+        "No. Permission comes from the people involved and responsible adults."
+      ],
+      "answer": 2,
+      "explanation": "A suggestion cannot give permission on someone else's behalf.",
+      "source": "decision"
+    }
+  ],
+  "mission": {
+    "title": "Plan an imaginary museum trip",
+    "instructions": "Write a prompt asking for a museum activity idea. Then name where you would check opening hours and the responsible person you would ask for permission. Use no real personal details.",
+    "rubric": [
+      "My ideas prompt is clear.",
+      "I identified an appropriate source for opening hours.",
+      "I distinguished a suggestion from permission.",
+      "I used imaginary details."
+    ]
+  },
+  "hints": [
+    {
+      "question": "What could I ask for?",
+      "answer": "Names, ideas or wording that you compare and improve yourself.",
+      "source": "ideas"
+    },
+    {
+      "question": "Where do I check the time?",
+      "answer": "Use the organiser's announcement or an appropriate way of contacting them with a responsible adult.",
+      "source": "source"
+    },
+    {
+      "question": "Who can give permission?",
+      "answer": "The person who owns the decision, or the adult responsible for it. A tool cannot consent for them.",
+      "source": "decision"
+    }
+  ],
+  "imageBrief": {
+    "title": "Museum trip: choose the right help",
+    "scenario": "An imaginary museum visit",
+    "composition": "A three-way map: a lightbulb for an activity idea, an announcement for visiting hours, and a responsible adult for permission. No exhibition poster or video characters.",
+    "labels": [
+      "Activity ideas: suggestions",
+      "Visiting hours: original source",
+      "Permission: responsible person"
+    ],
+    "altText": "Three needs for a museum trip, each linked to a suitable kind of help."
+  },
+  "locale": "en"
+}

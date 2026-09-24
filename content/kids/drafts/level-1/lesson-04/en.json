@@ -1,0 +1,192 @@
+{
+  "locale": "en",
+  "title": "Ask a Helpful Question",
+  "subtitle": "Make your questions clear and specific!",
+  "objectives": [
+    "Identify vague questions.",
+    "Add relevant goals and constraints to a question.",
+    "Improve a question to get more useful answers."
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "title": "What Game?",
+      "display": "What game should we play?",
+      "narration": "Imagine you want to play a game. You ask, 'What game should we play?' Is that enough information for a good suggestion? What might be missing?",
+      "visualAction": "Two cartoon kids sit at a small table. One kid asks, 'What game should we play?' The other kid looks puzzled."
+    },
+    {
+      "id": "explain",
+      "title": "Be Specific",
+      "display": "Clear questions get clear answers.",
+      "narration": "A vague question can get you many answers, but maybe not the one you need. To get a helpful answer, your question needs to be specific. Think about what you want to achieve and any limits you have.",
+      "visualAction": "A magnifying glass icon appears over the puzzled kid, then zooms in on the question text, highlighting 'specific'."
+    },
+    {
+      "id": "example",
+      "title": "Adding Details",
+      "display": "Goal + Constraint = Helpful Question",
+      "narration": "Let's try again. If you're at a small table, want a quiet game with paper, for two players, that can finish in three steps, what would you ask? 'Suggest a quiet paper game for two players at this small table that we can finish in three steps.' That's much better!",
+      "visualAction": "The first kid's speech bubble changes to the improved question. The second kid smiles and nods, then a thought bubble shows a simple paper game."
+    },
+    {
+      "id": "review",
+      "title": "Check Your Question",
+      "display": "Is it clear?",
+      "narration": "A good question has a clear goal and any important limits. It doesn't need extra details that aren't helpful. Always check: does my question tell others what I really need?",
+      "visualAction": "A checklist icon appears next to the improved question. A red 'X' briefly appears over a long, rambling question, then a green checkmark appears over a concise, specific one."
+    },
+    {
+      "id": "improve",
+      "title": "Your Turn to Improve",
+      "display": "Make it better!",
+      "narration": "Now it's your turn! We'll look at some vague questions. Your mission is to make them specific by adding a goal and any important limits. Ready to make your questions super helpful?",
+      "visualAction": "A cartoon kid holds a pencil and notepad, looking ready. A lightbulb icon flashes above their head."
+    },
+    {
+      "id": "practice",
+      "title": "Practice Time!",
+      "display": "Let's make questions helpful.",
+      "narration": "Use what you've learned to improve the questions in the activity. Remember, think about the goal and any limits. This skill helps you get exactly what you need!",
+      "visualAction": "A clock icon appears, ticking softly. The kid from the previous scene starts writing on their notepad."
+    },
+    {
+      "id": "finish",
+      "title": "Great Job!",
+      "display": "You're a question expert!",
+      "narration": "You've learned how to turn vague questions into helpful ones! This skill will help you in many ways, from asking for game ideas to finding information for school projects. Keep practicing!",
+      "visualAction": "The cartoon kid gives a thumbs-up. Confetti falls around them. The magnifying glass icon from 'explain' reappears with a sparkle."
+    }
+  ],
+  "reading": [
+    {
+      "id": "concept",
+      "title": "What Makes a Question Helpful?",
+      "text": "A helpful question is clear and specific. It tells others exactly what you need. Think about two things: your GOAL (what you want to achieve) and any CONSTRAINTS (limits or rules). For example, 'I need a game' is vague. 'I need a quiet game for two players using only paper' is helpful because it has a goal and constraints."
+    },
+    {
+      "id": "example",
+      "title": "Good vs. Vague Questions",
+      "text": "Vague request: 'Suggest a game.' It has a broad goal but needs useful details to guide a suitable suggestion.\nSuggest a quiet game for two seated players at a small table, using only paper. Explain it in 3 steps."
+    },
+    {
+      "id": "check",
+      "title": "Review Your Question",
+      "text": "Before you ask, quickly check: Does my question include a clear goal? Does it mention any important limits or rules? Is it free of extra, unhelpful details? If you can answer 'yes' to these, you're ready to ask a helpful question and get a useful answer!"
+    }
+  ],
+  "materials": [
+    {
+      "id": "weak-request",
+      "title": "An example of a specific request",
+      "text": "Vague request: 'Suggest a game.' It has a broad goal but needs useful details to guide a suitable suggestion.",
+      "kind": "authored-teaching-example"
+    },
+    {
+      "id": "specific-request",
+      "title": "An example of a specific request",
+      "text": "Suggest a quiet game for two seated players at a small table, using only paper. Explain it in 3 steps.",
+      "kind": "authored-teaching-example"
+    }
+  ],
+  "promptExamples": {
+    "initial": "Give me a game.",
+    "improved": "Suggest a quiet game for two seated players at a small table, using only paper. Explain it in 3 steps.",
+    "followup": "Check whether the suggestion works for two seated players, uses only paper, stays quiet, and has 3 steps. Revise any part that does not match."
+  },
+  "activity": {
+    "title": "Improve These Questions!",
+    "instructions": "Read each vague question below. Rewrite it to make it specific and helpful by adding a clear goal and any important constraints. Then, explain what you added to make it better.",
+    "starter": "1. Vague Question: \"I need a snack.\"\n   Improved Question: ____________________________________________________\n   What I added: ________________________________________________________\n\n2. Vague Question: \"Tell me about a book.\"\n   Improved Question: ____________________________________________________\n   What I added: ________________________________________________________",
+    "expectedEvidence": "Two improved questions with clear goals and constraints, and an explanation of the added details for each."
+  },
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Which of these questions is the most helpful for finding a specific type of story?",
+      "options": [
+        "What's a good story?",
+        "Tell me a story about a hero.",
+        "Suggest a short story about a brave animal that helps its friends."
+      ],
+      "answer": 2,
+      "explanation": "Option C is the most helpful because it specifies 'short story,' 'brave animal,' and 'helps its friends' (goal and constraints). Option A is too vague. Option B adds a goal ('hero') but lacks specific constraints.",
+      "source": "concept"
+    },
+    {
+      "id": "q2",
+      "question": "You only have paper and want a game idea. Which constraint should you add?",
+      "options": [
+        "Use paper only, with no extra equipment.",
+        "Use paper and building blocks.",
+        "Include the players' real names."
+      ],
+      "answer": 0,
+      "explanation": "Available materials are a useful constraint. Blocks are unavailable, and real names are unnecessary for suggesting a game.",
+      "source": "example"
+    },
+    {
+      "id": "q3",
+      "question": "You need 3 bookmark ideas using one sheet of paper and no scissors. Which request fits?",
+      "options": [
+        "Suggest some lovely crafts.",
+        "Suggest 3 bookmark ideas using one sheet of paper and no scissors.",
+        "Make a bookmark using any equipment."
+      ],
+      "answer": 1,
+      "explanation": "The second request specifies the result, quantity and available materials.",
+      "source": "check"
+    }
+  ],
+  "mission": {
+    "title": "Design a Bookmark Idea Request",
+    "instructions": "Imagine you need three ideas for a bookmark. You only have one sheet of paper and no scissors. Write a helpful question that would get you exactly the ideas you need. Then, explain why your question is helpful.",
+    "rubric": [
+      "The question asks for three ideas.",
+      "The question specifies 'bookmark'.",
+      "The question includes the constraint 'one sheet of paper'.",
+      "The question includes the constraint 'no scissors'."
+    ]
+  },
+  "hints": [
+    {
+      "question": "What does 'goal' mean in a question?",
+      "answer": "The 'goal' is what you want to achieve or find out. It's the main purpose of your question. For example, if you want to play a game, your goal is 'a game idea'.",
+      "source": "concept"
+    },
+    {
+      "question": "What are 'constraints'?",
+      "answer": "Constraints are the limits or rules you have. They tell others what you can or cannot use, or what conditions apply. For example, 'only paper' or 'for two players' are constraints.",
+      "source": "concept"
+    },
+    {
+      "question": "How do I know if my question is specific enough?",
+      "answer": "Read your question and imagine you're the one answering it. Would you know exactly what kind of answer is needed? Does it leave too much open to guessing? If so, add more goals or constraints.",
+      "source": "check"
+    }
+  ],
+  "imageBrief": {
+    "title": "Question-Narrowing Lens",
+    "scenario": "A child wants ideas for a bookmark but has limited materials.",
+    "composition": "A cartoon child stands in front of a whiteboard. On the left side of the whiteboard, a large, blurry question mark is drawn, surrounded by many small, vague icons (e.g., a generic book, a craft supply box). On the right side, a clear, focused image of a bookmark made from a single folded paper appears, next to a magnifying glass that is focusing on the words 'one sheet, no scissors'. The child is holding a pencil, looking thoughtfully at the whiteboard.",
+    "labels": [
+      "Vague Question",
+      "Specific Question",
+      "Goal: Bookmark",
+      "Constraint: One sheet",
+      "Constraint: No scissors"
+    ],
+    "altText": "A child looking at a whiteboard. On the left, a vague question mark with general craft ideas. On the right, a clear image of a paper bookmark and a magnifying glass highlighting specific material constraints, illustrating how to narrow a question."
+  },
+  "educatorNotes": {
+    "sampleAnswer": "Activity Sample:\n1. Vague Question: \"I need a snack.\"\n   Improved Question: \"I need a healthy, crunchy snack that I can eat quickly before my soccer practice.\"\n   What I added: I added 'healthy' and 'crunchy' as qualities (goals) and 'eat quickly before soccer practice' as a time/situation constraint.\n\n2. Vague Question: \"Tell me about a book.\"\n   Improved Question: \"Tell me about a fantasy adventure book with a strong female main character, suitable for ages 10-12.\"\n   What I added: I added 'fantasy adventure' and 'strong female main character' as genre/character goals, and 'suitable for ages 10-12' as an audience constraint.\n\nMission Sample:\nQuestion: \"Can you give me three creative ideas for a bookmark that I can make using only one sheet of paper and without needing any scissors?\"\nExplanation: This question is helpful because it clearly asks for 'three ideas' for a 'bookmark' (goal). It also gives two very important limits: 'only one sheet of paper' and 'without needing any scissors' (constraints). This tells someone exactly what kind of ideas to suggest.",
+    "commonMisconception": "Learners might think adding *any* details makes a question better, even if the details are irrelevant or personal. Emphasize that details must be *relevant* to the goal or constraints.",
+    "reviewChecks": [
+      "The question asks for three ideas.",
+      "The question specifies 'bookmark'.",
+      "The question includes the constraint 'one sheet of paper'.",
+      "The question includes the constraint 'no scissors'."
+    ],
+    "safetyNotes": "Encourage children to ask for help from a trusted adult if they are unsure about any task or instruction, especially when working on projects that might involve physical materials outside of this digital lesson."
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "locale": "en",
+  "title": "Summarize Without Changing Meaning",
+  "subtitle": "Learn to capture the core message of any text.",
+  "objectives": [
+    "Identify the main idea of a text.",
+    "Distinguish essential details from non-essential details.",
+    "Create a summary that accurately reflects the original text's meaning."
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "title": "What's the Big Idea?",
+      "display": "Can you get to the point?",
+      "narration": "Summarizing shortens long texts. It helps grasp main points quickly. This skill finds the core message without losing important details.",
+      "visualAction": "A character holds a long scroll, then it shrinks into a small, neat scroll. A question mark appears above their head."
+    },
+    {
+      "id": "explain",
+      "title": "The Art of Summarizing",
+      "display": "Main idea + essential details.",
+      "narration": "A good summary gives the main idea and essential details. It's not random cutting. The original meaning must stay the same.",
+      "visualAction": "A character points to a large text block, then circles a few key phrases, which then combine into a smaller text block. A 'check' mark appears."
+    },
+    {
+      "id": "example",
+      "title": "Exhibit Example",
+      "display": "Let's try it with an exhibit.",
+      "narration": "Imagine a text about an exhibit. It opens at noon, shows five sketches, and requires label returns. A good summary keeps these facts.",
+      "visualAction": "A character reads a text about an exhibit. Key words like 'noon' and 'return labels' are highlighted. Then, a simplified version of the text appears."
+    },
+    {
+      "id": "review",
+      "title": "Check Your Understanding",
+      "display": "What makes a good summary?",
+      "narration": "Golden rules for summarizing: Find the main topic. Identify necessary details. Do not add new information or change the original message.",
+      "visualAction": "A character holds up three fingers, each representing a rule. Text bubbles appear with 'Main Idea', 'Essential Details', 'No New Info'."
+    },
+    {
+      "id": "improve",
+      "title": "Making it Better",
+      "display": "From weak to strong summaries.",
+      "narration": "First summaries might need improvement. Compare it to the original text. Ask: 'Does this summary tell the whole story, accurately and briefly?'",
+      "visualAction": "A character writes a summary, then frowns. They compare it to the original text, then rewrite it, smiling. An 'up arrow' icon appears."
+    },
+    {
+      "id": "practice",
+      "title": "Your Turn to Summarize",
+      "display": "Practice makes perfect!",
+      "narration": "Now it's your turn! Summarize a new text. Keep all essential information without adding or changing the original meaning. Focus on accuracy.",
+      "visualAction": "A character presents a new text on a screen. A thought bubble with a pencil and paper appears, indicating a task."
+    },
+    {
+      "id": "finish",
+      "title": "Mastering the Skill",
+      "display": "You're a summarizing pro!",
+      "narration": "Great job! Summarizing is a useful skill for studying, reading, or explaining. You learned to identify main ideas and essential details for concise summaries.",
+      "visualAction": "A character gives a 'thumbs up'. Confetti falls. The character holds a small, perfectly summarized text."
+    }
+  ],
+  "reading": [
+    {
+      "id": "concept",
+      "title": "What is a Summary?",
+      "text": "A summary is a short version of a text that includes only the main idea and essential details. Essential details are facts or conditions that, if removed, would change the original meaning of the text. Non-essential details can be removed without altering the core message."
+    },
+    {
+      "id": "example",
+      "title": "Exhibit Summary Example",
+      "text": "Original: 'The Annual Paper Art Exhibit opens at noon, displaying five unique plant sketches. Visitors can use paper labels for descriptions, and the exhibit closes at three. All labels must be returned to organizers upon exit.' Good summary: 'The Paper Art Exhibit, featuring plant sketches, runs from noon to three. Visitors must return paper labels.' (Omits 'five unique' as non-essential, keeps times and label return as essential.)"
+    },
+    {
+      "id": "check",
+      "title": "Summary Checklist",
+      "text": "Before finalizing a summary, ask yourself: 1. Does it state the main idea? 2. Does it include all essential details? 3. Does it avoid adding new information? 4. Does it avoid removing information that changes the meaning? 5. Is it significantly shorter than the original?"
+    }
+  ],
+  "materials": [
+    {
+      "id": "source-card-1",
+      "title": "The Fictional Paper Art Exhibit",
+      "text": "The Annual Paper Art Exhibit opens promptly at noon today, showcasing five invented plant sketches. Visitors are encouraged to use the provided paper labels for descriptions next to each artwork. The exhibit will conclude at three in the afternoon. All visitors are kindly requested to return their used paper labels to the organizers upon exiting the exhibit hall.",
+      "kind": "authored-teaching-example"
+    }
+  ],
+  "promptExamples": {
+    "initial": "Summarize the text about the community garden.",
+    "improved": "Summarize the 'Community Garden Project' text, making sure to include the main event, date, time, and any conditions for participation, without adding new details.",
+    "followup": "Does your summary mention the date and time? Did you include the rule about children under 10?"
+  },
+  "activity": {
+    "title": "Summarize the Garden Festival",
+    "instructions": "Read the 'Community Garden Project' text carefully. Then, write a summary that includes the main event, its date and time, and any crucial conditions for attendees or participants. Ensure your summary does not add new information or remove any details that would change the core meaning.",
+    "starter": "The local community garden project is hosting its annual 'Harvest Festival' this Saturday, October 26th, from 10:00 AM to 4:00 PM. The event will feature a pumpkin carving contest, a bake sale, and a 'guess the vegetable' game. All proceeds from the bake sale will go towards purchasing new gardening tools. Participants in the pumpkin carving contest must bring their own pumpkins. Children under 10 must be accompanied by an adult. The festival will be held rain or shine.",
+    "expectedEvidence": "A written summary of the provided text."
+  },
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Which of the following is an essential detail from 'The Fictional Paper Art Exhibit' text?",
+      "options": [
+        "The exhibit displays five invented plant sketches.",
+        "The exhibit opens promptly at noon.",
+        "Visitors are encouraged to use paper labels."
+      ],
+      "answer": 1,
+      "explanation": "The opening time of noon is an essential detail because it defines when the exhibit is accessible. The number of sketches and the encouragement to use labels are descriptive details that could be shortened or omitted without changing the core meaning of the exhibit's operation.",
+      "source": "example"
+    },
+    {
+      "id": "q2",
+      "question": "Which statement best describes a good summary?",
+      "options": [
+        "It includes the main idea and all essential details, without adding new information.",
+        "It includes as many details as possible from the original text.",
+        "It only includes the first sentence of each paragraph."
+      ],
+      "answer": 0,
+      "explanation": "A good summary focuses on the main idea and essential details, ensuring accuracy and brevity. Including too many details makes it less of a summary, and just taking first sentences is an unreliable method.",
+      "source": "concept"
+    },
+    {
+      "id": "q3",
+      "question": "You are summarizing a recipe. Which detail is MOST likely essential?",
+      "options": [
+        "The brand of flour to use.",
+        "The exact baking temperature and time.",
+        "The color of the mixing bowl."
+      ],
+      "answer": 1,
+      "explanation": "The exact baking temperature and time are crucial for the recipe to work correctly; omitting or changing them would alter the outcome. The brand of flour or the color of the mixing bowl are non-essential details.",
+      "source": "check"
+    }
+  ],
+  "mission": {
+    "title": "Summarize a Historical Event",
+    "instructions": "Read the provided text about the invention of the printing press. Write a summary that captures the main idea of the invention and its impact, including only essential details. Do not add any new information or remove any facts that would change the historical significance or conditions mentioned.",
+    "rubric": [
+      "The summary accurately identifies the main idea of the text.",
+      "The summary includes all essential details from the original text.",
+      "The summary does not add any new information not present in the original text.",
+      "The summary is significantly shorter than the original text while preserving meaning."
+    ]
+  },
+  "hints": [
+    {
+      "question": "How do I know if a detail is essential?",
+      "answer": "Ask yourself: 'If I remove this detail, does the core meaning or a crucial condition of the text change?' If yes, it's essential. If no, it's likely non-essential.",
+      "source": "concept"
+    },
+    {
+      "question": "My summary is still too long. What should I do?",
+      "answer": "Review your summary against the original text. Are there any descriptive words, examples, or minor facts you can remove without altering the main message or essential conditions? Focus on the 'who, what, when, where, why, how' of the core event.",
+      "source": "check"
+    },
+    {
+      "question": "Should I use my own words or words from the text?",
+      "answer": "It's best to use your own words to show understanding, but you can use key terms from the original text. The goal is to convey the meaning accurately and concisely, not to copy sentences.",
+      "source": "concept"
+    }
+  ],
+  "imageBrief": {
+    "title": "Mapping Main Ideas and Evidence",
+    "scenario": "A student is creating a visual map to extract the main idea and supporting evidence from a short text about a fictional local animal shelter's adoption event.",
+    "composition": "A student sits at a desk, looking at a tablet displaying a short article. On the desk, a hand-drawn mind map or diagram shows the article's title branching into a central 'Main Idea' node, which then branches into several 'Evidence' nodes, with lines connecting them to specific phrases from the article on the tablet.",
+    "labels": [
+      "Student",
+      "Tablet with article",
+      "Main Idea node",
+      "Evidence nodes",
+      "Connecting lines"
+    ],
+    "altText": "A student at a desk is shown with a tablet displaying an article about an animal shelter event. A hand-drawn mind map on the desk illustrates the article's main idea branching into supporting evidence, with lines connecting them to relevant parts of the article, demonstrating how to identify key information."
+  },
+  "educatorNotes": {
+    "sampleAnswer": "For the 'Community Garden Project' activity: 'The annual Harvest Festival is this Saturday, October 26th, from 10 AM to 4 PM. Participants in the pumpkin carving contest must bring their own pumpkins, and children under 10 need an adult.' For the Mission: 'Johannes Gutenberg invented the printing press in the 15th century, which revolutionized book production and significantly increased the spread of knowledge and literacy across Europe.'",
+    "commonMisconception": "Learners often confuse summarizing with simply shortening a text by removing random sentences, rather than identifying and retaining essential information. They might also add their own opinions or interpretations.",
+    "reviewChecks": [
+      "Does the summary clearly state the main topic of the original text?",
+      "Are all critical dates, times, conditions, or outcomes preserved?",
+      "Is the summary free of new information or personal opinions?",
+      "Is the summary noticeably shorter than the original text?",
+      "Does removing any part of the summary change the original text's core meaning?"
+    ],
+    "safetyNotes": "Ensure students understand that while summarizing, they must respect the original author's intent and not distort information, especially when dealing with factual or sensitive texts."
+  }
+}
