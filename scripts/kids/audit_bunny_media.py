@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only inventory audit: output counts and missing lesson/locale keys only."""
+"""Read-only inventory audit: return only a general completion status publicly."""
 import json
 import os
 import re
@@ -118,7 +118,9 @@ def main():
     entries = inventory_entries("content/kids/media-inventory.json")
     index = get_library_index(key)
     result = summarize(entries, index, lambda video_id: get_json(f"{BASE}/{video_id}", key))
-    print(json.dumps(result, separators=(",", ":"), ensure_ascii=True))
+    if result["ready"] != result["expected"]:
+        raise RuntimeError("Kids inventory not fully ready")
+    print("Kids media audit complete")
 
 
 if __name__ == "__main__":
