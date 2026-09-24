@@ -35,12 +35,23 @@ def main() -> None:
         expected = media.get("sha256")
         if expected and digest != expected:
             raise ValueError(f"Checksum mismatch: {relative}")
+        caption_relative = Path(media.get("captions") or relative.with_suffix(".vtt"))
+        if caption_relative.is_absolute() or ".." in caption_relative.parts or caption_relative.suffix != ".vtt":
+            raise ValueError(f"Unsafe caption path: {caption_relative}")
+        caption = (media_root / caption_relative).resolve()
+        if not caption.is_relative_to(media_root) or not caption.is_file():
+            raise ValueError(f"Missing caption file: {caption_relative}")
+        with caption.open("rb") as file:
+            caption_digest = hashlib.file_digest(file, "sha256").hexdigest()
         entries.append({
             "lessonId": f"kids-l{level}-{number:02d}",
             "locale": locale,
             "source": relative.as_posix(),
             "sha256": digest,
             "bytes": path.stat().st_size,
+            "captionSource": caption_relative.as_posix(),
+            "captionSha256": caption_digest,
+            "captionBytes": caption.stat().st_size,
             "provenance": provenance,
         })
 
