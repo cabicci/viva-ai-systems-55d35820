@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export function KidsParentPanel() {
+export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () => void } = {}) {
   const { locale } = useLocale();
   const localeSearch = useLocaleLinkSearch();
   const copy = getKidsJourneyCopy(locale);
@@ -25,6 +25,7 @@ export function KidsParentPanel() {
     setError(false);
     try {
       await createProfile(name, level);
+      onProfileCreated?.();
       setName("");
     } catch {
       setError(true);

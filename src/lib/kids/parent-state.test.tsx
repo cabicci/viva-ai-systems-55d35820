@@ -62,4 +62,35 @@ describe("Kids parent privacy gate", () => {
       result.current.refresh();
     });
   });
+
+  it("clears a previously open profile on tab focus and denies it after parent approval is revoked", async () => {
+    let resolveRevocation!: (value: { data: boolean; error: null }) => void;
+    mock.rpc.mockResolvedValueOnce({ data: true, error: null });
+    mock.rpc.mockImplementationOnce(
+      () =>
+        new Promise<{ data: boolean; error: null }>((resolve) => {
+          resolveRevocation = resolve;
+        }),
+    );
+    const query = {
+      select: vi.fn().mockReturnThis(),
+      eq: vi.fn().mockResolvedValue({
+        data: [{ id: "profile-1", level_id: "level-1", display_name: "Explorer" }],
+        error: null,
+      }),
+    };
+    mock.from.mockReturnValue(query);
+    const { result } = renderHook(() => useKidsParentState());
+    await waitFor(() => expect(result.current.state).toBe("ready"));
+    expect(result.current.profiles).toHaveLength(1);
+
+    act(() => window.dispatchEvent(new Event("focus")));
+    expect(result.current.state).toBe("checking");
+    expect(result.current.profiles).toEqual([]);
+    expect(mock.rpc).toHaveBeenCalledTimes(2);
+    await act(async () => resolveRevocation({ data: false, error: null }));
+    await waitFor(() => expect(result.current.state).toBe("pending"));
+    expect(mock.from).toHaveBeenCalledTimes(1);
+    expect(result.current.profiles).toEqual([]);
+  });
 });

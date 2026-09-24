@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
 import { KIDS_LEVELS, type KidsLevelId } from "./catalogue";
@@ -24,10 +24,37 @@ export function useKidsParentState() {
   const [profiles, setProfiles] = useState<KidsProfile[]>([]);
   const [verifiedUserId, setVerifiedUserId] = useState<string | null>(null);
   const [revision, setRevision] = useState(0);
-  const refresh = useCallback(() => setRevision((current) => current + 1), []);
+  const requestEpoch = useRef(0);
+  const refresh = useCallback(() => {
+    requestEpoch.current += 1;
+    setProfiles([]);
+    setVerifiedUserId(null);
+    setState("checking");
+    setRevision((current) => current + 1);
+  }, []);
+
+  // A revoked parent approval must clear already rendered lesson content on return.
+  useEffect(() => {
+    if (!userId || authLoading) return;
+    let lastCheck = 0;
+    const recheck = () => {
+      if (document.visibilityState !== "visible") return;
+      const now = Date.now();
+      if (now - lastCheck < 250) return; // focus and visibility often fire together
+      lastCheck = now;
+      refresh();
+    };
+    window.addEventListener("focus", recheck);
+    document.addEventListener("visibilitychange", recheck);
+    return () => {
+      window.removeEventListener("focus", recheck);
+      document.removeEventListener("visibilitychange", recheck);
+    };
+  }, [userId, authLoading, refresh]);
 
   useEffect(() => {
     let cancelled = false;
+    const epoch = requestEpoch.current;
     setProfiles([]);
     setVerifiedUserId(null);
     if (authLoading) {
@@ -46,7 +73,7 @@ export function useKidsParentState() {
     (async () => {
       // The RPC returns false when either release control or parent verification is absent.
       const { data, error } = await supabase.rpc("kids_parent_can_manage_profiles" as never);
-      if (cancelled) return;
+      if (cancelled || epoch !== requestEpoch.current) return;
       if (error) {
         setState("unavailable");
         return;
@@ -59,7 +86,7 @@ export function useKidsParentState() {
         .from("kids_profiles" as never)
         .select("id, level_id, display_name")
         .eq("parent_id", userId);
-      if (cancelled) return;
+      if (cancelled || epoch !== requestEpoch.current) return;
       if (result.error || !Array.isArray(result.data) || !result.data.every(validProfile)) {
         setState("unavailable");
         return;
@@ -68,7 +95,7 @@ export function useKidsParentState() {
       setVerifiedUserId(userId);
       setState("ready");
     })().catch(() => {
-      if (!cancelled) setState("unavailable");
+      if (!cancelled && epoch === requestEpoch.current) setState("unavailable");
     });
     return () => {
       cancelled = true;

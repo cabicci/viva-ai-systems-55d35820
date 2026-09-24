@@ -39,14 +39,14 @@ export const Route = createFileRoute("/kids/$levelId/$lessonNumber")({
   component: KidsLessonPage,
 });
 
-function KidsLessonPage() {
+export function KidsLessonPage() {
   const { levelId, lessonNumber: lessonText } = Route.useParams();
   const level = levelId as KidsLevelId;
   const lessonNumber = Number(lessonText);
   const { locale, dir } = useLocale();
   const localeSearch = useLocaleLinkSearch();
   const copy = getKidsJourneyCopy(locale);
-  const { state, profiles } = useKidsParentState();
+  const { state, profiles, refresh } = useKidsParentState();
   const [profileId, setProfileId] = useState("");
   const [attempt, setAttempt] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -68,6 +68,15 @@ function KidsLessonPage() {
     setProfileId("");
     setAttempt(0);
   }, [levelId, lessonText, locale]);
+
+  // Returning to a tab rechecks the parent grant. Do not redisplay a lesson
+  // from memory after that check; its own entitlement may have changed.
+  useEffect(() => {
+    if (state === "ready") return;
+    setResult(null);
+    setAttempt(0);
+    setLoading(false);
+  }, [state]);
 
   useEffect(() => {
     let active = true;
@@ -176,7 +185,10 @@ function KidsLessonPage() {
                       </button>
                     </>
                   ) : (
-                    <p className="text-sm">{copy.noLevelProfile}</p>
+                    <div className="space-y-4">
+                      <p className="text-sm">{copy.noLevelProfile}</p>
+                      <KidsParentPanel onProfileCreated={refresh} />
+                    </div>
                   )}
                 </div>
               )}
