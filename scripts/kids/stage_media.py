@@ -5,6 +5,7 @@ import base64
 import hashlib
 import json
 import os
+import time
 from pathlib import Path
 import urllib.error
 import urllib.parse
@@ -70,7 +71,7 @@ def main() -> None:
     key = os.getenv("BUNNY_KIDS_STREAM_API_KEY", "")
     if not key:
         raise SystemExit("Kids Bunny API key missing")
-    title = f"DRAFT {args.lesson} {args.locale} {digest[:16]}"
+    title = f"DRAFT {args.lesson} {args.locale} {digest}"
     search = urllib.parse.urlencode({"search": title, "itemsPerPage": 100})
     listing = api("GET", f"{BASE}?{search}", key)
     matches = [video for video in listing.get("items", []) if video.get("title") == title]
@@ -98,18 +99,24 @@ def main() -> None:
     if str(metadata.get("videoLibraryId")) != LIBRARY_ID:
         raise SystemExit("Staged video library mismatch")
     captions = metadata.get("captions") or []
-    if not any(item.get("srclang") == args.locale for item in captions):
+    # Each locale has its own video; Bunny's caption shortcode is the base language.
+    caption_lang = "en" if args.locale == "en" else "ar"
+    if not any(item.get("srclang") == caption_lang for item in captions):
         caption_payload = json.dumps({
             "label": args.locale,
             "captionsFile": base64.b64encode(caption.read_bytes()).decode("ascii"),
         }).encode("utf-8")
-        encoded_locale = urllib.parse.quote(args.locale, safe="")
-        api("POST", f"{BASE}/{guid}/captions/{encoded_locale}", key,
+        api("POST", f"{BASE}/{guid}/captions/{caption_lang}", key,
             caption_payload, "application/json")
-        metadata = api("GET", f"{BASE}/{guid}", key)
-        captions = metadata.get("captions") or []
-    if not any(item.get("srclang") == args.locale for item in captions):
-        raise SystemExit("Kids caption not confirmed by Bunny")
+        for attempt in range(4):
+            metadata = api("GET", f"{BASE}/{guid}", key)
+            captions = metadata.get("captions") or []
+            if any(item.get("srclang") == caption_lang for item in captions):
+                break
+            if attempt < 3:
+                time.sleep(2)
+    if not any(item.get("srclang") == caption_lang for item in captions):
+        raise SystemExit("Kids caption not confirmed by Bunny after four reads")
     receipt = {"lessonId": args.lesson, "locale": args.locale, "libraryId": int(LIBRARY_ID),
                "guid": guid, "sha256": digest, "bytes": entry["bytes"],
                "captionSha256": caption_digest, "captionBytes": entry["captionBytes"],
