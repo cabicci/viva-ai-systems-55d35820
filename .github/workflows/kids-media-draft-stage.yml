@@ -34,6 +34,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
 
       - name: Resolve source artifact
+        if: ${{ !(inputs.level == '1' && inputs.lesson == '2' && inputs.locale == 'ar-MSA') }}
         id: source
         env:
           LEVEL: ${{ inputs.level }}
@@ -60,6 +61,7 @@ jobs:
           PY
 
       - name: Download exact source artifact
+        if: ${{ !(inputs.level == '1' && inputs.lesson == '2' && inputs.locale == 'ar-MSA') }}
         env:
           GH_TOKEN: ${{ github.token }}
           RUN_ID: ${{ steps.source.outputs.run_id }}
@@ -67,11 +69,19 @@ jobs:
         run: |
           gh run download "$RUN_ID" --repo "${{ github.repository }}" --name "$ARTIFACT" --dir _kids_source
 
+      - name: Recover separately reviewed local source
+        if: ${{ inputs.level == '1' && inputs.lesson == '2' && inputs.locale == 'ar-MSA' }}
+        env:
+          KIDS_L102_AR_MSA_TRANSFER_KEY: ${{ secrets.KIDS_L102_AR_MSA_TRANSFER_KEY }}
+        run: |
+          node scripts/kids/transfer_recovered_media.mjs open \
+            content/kids/recovery/kids-l1-02__ar-MSA.enc _kids_source/public
+
       - name: Verify checksum and stage one draft in isolated library
         env:
           BUNNY_KIDS_STREAM_API_KEY: ${{ secrets.BUNNY_KIDS_STREAM_API_KEY }}
           BUNNY_KIDS_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_KIDS_STREAM_LIBRARY_ID }}
-          LESSON_ID: ${{ steps.source.outputs.lesson_id }}
+          LESSON_ID: ${{ steps.source.outputs.lesson_id || 'kids-l1-02' }}
           LOCALE: ${{ inputs.locale }}
         run: |
           python3 scripts/kids/stage_media.py --media-root _kids_source/public \
@@ -81,6 +91,6 @@ jobs:
       - name: Preserve draft staging receipt
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: kids-draft-${{ steps.source.outputs.lesson_id }}-${{ inputs.locale }}
+          name: kids-draft-${{ steps.source.outputs.lesson_id || 'kids-l1-02' }}-${{ inputs.locale }}
           path: kids-receipt/*.json
           if-no-files-found: error
