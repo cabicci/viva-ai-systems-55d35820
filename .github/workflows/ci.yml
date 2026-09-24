@@ -44,6 +44,9 @@ jobs:
       - name: Stripe billing behavior (isolated PostgreSQL, no network payments)
         run: bunx vitest run --config vitest.billing.config.ts
 
+      - name: Contact rate limiter (isolated PostgreSQL)
+        run: bunx vitest run src/lib/__tests__/contact-rate-limit.integration.test.ts
+
       - name: Localization contract
         run: bun run scripts/locale-lessons/validate-localization-contract.ts
 
