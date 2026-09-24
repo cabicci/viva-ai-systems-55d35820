@@ -31,7 +31,7 @@ for(const locale of ['ar-EG','ar-MSA','ar-Gulf','en']){
   if(text.includes('undefined')||text.includes('[object Object]'))throw Error('Data');
   if(await page.locator('.scene,.script,.meta,#all').count())throw Error('Editorial chrome');
   if(await page.locator('video').count()!==(i===0||level1Media?.[String(i+1)]?.[locale]?.url?1:0))throw Error('Media slot');
-  if(await page.locator('video').count()){await page.locator('video').evaluate(v=>new Promise((resolve,reject)=>{if(v.readyState>=1)return resolve();v.onloadedmetadata=resolve;v.onerror=()=>reject(Error('Video source'));}));if(i>0&&await page.locator('track[kind=captions]').count()!==1)throw Error('Captions track');}
+  if(await page.locator('video').count()){await page.locator('video').evaluate(v=>new Promise((resolve,reject)=>{if(v.readyState>=1)return resolve();v.onloadedmetadata=resolve;v.onerror=()=>reject(Error('Video source'));}));if(await page.locator('track[kind=captions]').count()!==1)throw Error('Captions track');await page.locator('track').evaluate(async t=>{t.track.mode='showing';for(let k=0;k<30&&t.readyState!==2;k++)await new Promise(r=>setTimeout(r,50));if(t.readyState!==2||!t.track.cues?.length)throw Error('Captions source');});}
   {const image=page.locator('[data-lesson-image]');if(!await image.evaluate(x=>x.complete&&x.naturalWidth===1900))throw Error('Independent image');}
   if(i===9&&locale==='ar-EG'){await page.evaluate(()=>window.scrollTo(0,0));await page.screenshot({path:path.join(base,'editorial-review/desktop-ar-EG.png'),fullPage:false});}
   packages++;

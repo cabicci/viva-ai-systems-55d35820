@@ -25,6 +25,8 @@ images['lesson-02']={};for(const l of ['ar-EG','ar-MSA','ar-Gulf','en'])images['
 for(let n=3;n<=12;n++){const k='lesson-'+String(n).padStart(2,'0');images[k]={};for(const l of ['ar-EG','ar-MSA','ar-Gulf','en'])images[k][l]='data:image/webp;base64,'+(await readFile(resolve(base,`public/generated/illustrations/${k}/${l}.webp`))).toString('base64');}
 const media=JSON.parse(await readFile(resolve(base,'content/media.json'),'utf8'));
 const level1Media=JSON.parse(await readFile(resolve(base,'content/media-level1.json'),'utf8'));
+for(const l of ['ar-EG','ar-MSA','ar-Gulf','en'])media[l].captions='data:text/vtt;base64,'+(await readFile(resolve(base,`public/generated/videos/${l}.vtt`))).toString('base64');
+for(const locales of Object.values(level1Media) as any[])for(const item of Object.values(locales) as any[])item.captions='data:text/vtt;base64,'+(await readFile(resolve(base,'public',item.captions))).toString('base64');
 const logo='data:image/png;base64,'+(await readFile(resolve(base,'public/brand/logo.png'))).toString('base64');
 const js=await result.outputs[0].text();
 for(const localMedia of [true,false]){
