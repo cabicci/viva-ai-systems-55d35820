@@ -1,6 +1,6 @@
 """Import Kids editorial drafts as inert review data, never public assets.
 
-Usage: python scripts/kids/import_drafts.py PATH_TO_PILOT_EXPERIMENT
+Usage: python scripts/kids/import_drafts.py PATH_TO_PILOT_EXPERIMENT PRIVATE_OUTPUT_DIRECTORY
 """
 import hashlib
 import json
@@ -9,7 +9,10 @@ import sys
 from pathlib import Path
 
 SOURCE = Path(sys.argv[1]).resolve()
-DEST = Path(__file__).resolve().parents[2] / "content/kids/drafts"
+DEST = Path(sys.argv[2]).resolve()
+REPO = Path(__file__).resolve().parents[2]
+if DEST == REPO or REPO in DEST.parents:
+    raise ValueError("Kids editorial drafts must live outside the public repository")
 LOCALES = ("ar-EG", "ar-MSA", "ar-Gulf", "en")
 records = []
 
