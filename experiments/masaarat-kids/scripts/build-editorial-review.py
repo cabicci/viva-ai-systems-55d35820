@@ -24,11 +24,23 @@ for n in range(3,13):
   package[locale]=json.loads(p.read_text(encoding="utf-8"))
  lessons.append({"number":n,"status":m["status"],"locales":package})
 assert len(lessons)==12 and all(set(x["locales"])==set(LOCALES) for x in lessons)
-payload=json.dumps(lessons,ensure_ascii=False).replace("<","\\u003c").replace("\u2028","\\u2028").replace("\u2029","\\u2029")
-(OUT/"content.json").write_bytes((json.dumps(lessons,ensure_ascii=False,indent=2)+"\n").encode())
+courses={"1":lessons}
+for level in (2,3):
+ advanced=[]
+ for n in range(1,13):
+  folder=BASE/"curriculum"/f"level-{level}"/f"lesson-{n:02}"
+  m=json.loads((folder/"manifest.json").read_text(encoding="utf-8"))
+  package={}
+  for locale in LOCALES:
+   p=folder/(locale+".json")
+   assert hashlib.sha256(p.read_bytes()).hexdigest()==m["locales"][locale]["sha256"],f"Stale manifest L{level}-{n}/{locale}"
+   package[locale]=json.loads(p.read_text(encoding="utf-8"))
+  advanced.append({"number":n,"status":m["status"],"locales":package})
+ courses[str(level)]=advanced
+(OUT/"content.json").write_bytes((json.dumps(courses,ensure_ascii=False,indent=2)+"\n").encode())
 media=json.loads((BASE/"content/media-level1.json").read_text(encoding="utf-8"))
 produced=sum(len(locales) for locales in media.values())
-counts={"lessons":12,"locales":4,"packages":48,"scenes":sum(len(d["scenes"]) for l in lessons for d in l["locales"].values()),"quizItems":sum(len(d["quiz"]) for l in lessons for d in l["locales"].values()),"mediaProducedLessons":1+sum(len(locales)==4 for locales in media.values()),"newMediaProduced":produced}
+counts={"levels":3,"lessons":36,"locales":4,"packages":144,"scenes":sum(len(d["scenes"]) for course in courses.values() for l in course for d in l["locales"].values()),"quizItems":sum(len(d["quiz"]) for course in courses.values() for l in course for d in l["locales"].values()),"mediaProducedLessons":1+sum(len(locales)==4 for locales in media.values()),"newMediaProduced":produced}
 (OUT/"manifest.json").write_bytes((json.dumps(counts,indent=2)+"\n").encode())
 for locale in LOCALES:
  lines=["# Masaarat Kids | Level 1 | "+locale,"","Narrated media is in the Dell review copy; human language review is pending." if produced==44 else "Editorial content; new lesson media and human language review are pending.",""]

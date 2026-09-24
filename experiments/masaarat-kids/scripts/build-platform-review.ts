@@ -19,18 +19,21 @@ const source=(await readFile(resolve(repo,'src/styles.css'),'utf8')).replace('@s
 const compiler=await compile(source,{base:dependencies,onDependency:()=>{}});
 const scanner=new Scanner({sources:[{base:repo,pattern:'src/**/*.tsx',negated:false},{base,pattern:'src/review.tsx',negated:false}]});
 const css=compiler.build(scanner.scan())+`\n@font-face{font-family:Cairo;src:url(data:font/ttf;base64,${(await readFile(resolve(base,'public/fonts/Cairo.ttf'))).toString('base64')})}html{scroll-padding-top:24px}button,select,textarea{font:inherit}button,summary{cursor:pointer}button:disabled{opacity:.45;cursor:default}.review-topbar{padding:10px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px}.review-select{border:1px solid var(--border);border-radius:12px;padding:8px 12px;background:var(--card);font-size:12px;max-width:320px}.review-button{border:1px solid var(--primary);color:var(--primary);border-radius:12px;padding:10px 16px;font-size:13px;min-height:44px}.review-input{display:block;width:100%;border:1px solid var(--border);border-radius:12px;padding:12px;margin-top:8px;min-height:110px;background:var(--card);resize:vertical}.text-emerald-200,.text-emerald-300{color:var(--accent-success-foreground)}.text-red-200,.text-red-300{color:var(--accent-danger-foreground)}.text-accent{color:var(--accent-foreground)}p{overflow-wrap:anywhere}summary{min-height:40px}button:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--primary);outline-offset:3px}@media(max-width:640px){.review-topbar{padding:12px 16px;align-items:flex-start;flex-direction:column}.review-select{max-width:100%;width:100%}.review-topbar>div{width:100%}}`;
-const course=JSON.parse(await readFile(resolve(base,'editorial-review/content.json'),'utf8'));
+const courses=JSON.parse(await readFile(resolve(base,'editorial-review/content.json'),'utf8'));
 const images:any={};for(const l of ['ar-EG','ar-MSA','ar-Gulf','en'])images[l]='data:image/webp;base64,'+(await readFile(resolve(base,`public/generated/illustrations/${l}.webp`))).toString('base64');
 images['lesson-02']={};for(const l of ['ar-EG','ar-MSA','ar-Gulf','en'])images['lesson-02'][l]='data:image/webp;base64,'+(await readFile(resolve(base,`public/generated/illustrations/lesson-02/${l}.webp`))).toString('base64');
 for(let n=3;n<=12;n++){const k='lesson-'+String(n).padStart(2,'0');images[k]={};for(const l of ['ar-EG','ar-MSA','ar-Gulf','en'])images[k][l]='data:image/webp;base64,'+(await readFile(resolve(base,`public/generated/illustrations/${k}/${l}.webp`))).toString('base64');}
+for(const level of [2,3]){images['level-'+level]={};for(let n=1;n<=12;n++){const k='lesson-'+String(n).padStart(2,'0');images['level-'+level][k]={};for(const l of ['ar-EG','ar-MSA','ar-Gulf','en'])images['level-'+level][k][l]='data:image/webp;base64,'+(await readFile(resolve(base,`public/generated/illustrations/level-${level}/${k}/${l}.webp`))).toString('base64');}}
 const media=JSON.parse(await readFile(resolve(base,'content/media.json'),'utf8'));
 const level1Media=JSON.parse(await readFile(resolve(base,'content/media-level1.json'),'utf8'));
+const advancedMedia=JSON.parse(await readFile(resolve(base,'content/media-advanced.json'),'utf8'));
 for(const l of ['ar-EG','ar-MSA','ar-Gulf','en'])media[l].captions='data:text/vtt;base64,'+(await readFile(resolve(base,`public/generated/videos/${l}.vtt`))).toString('base64');
 for(const locales of Object.values(level1Media) as any[])for(const item of Object.values(locales) as any[])item.captions='data:text/vtt;base64,'+(await readFile(resolve(base,'public',item.captions))).toString('base64');
+for(const level of Object.values(advancedMedia) as any[])for(const locales of Object.values(level) as any[])for(const item of Object.values(locales) as any[])item.captions='data:text/vtt;base64,'+(await readFile(resolve(base,'public',item.captions))).toString('base64');
 const logo='data:image/png;base64,'+(await readFile(resolve(base,'public/brand/logo.png'))).toString('base64');
 const js=await result.outputs[0].text();
 for(const localMedia of [true,false]){
- const data=JSON.stringify({course,images,media,level1Media,logo,localMedia}).replaceAll('<','\\u003c');
+ const data=JSON.stringify({courses,images,media,level1Media,advancedMedia,logo,localMedia}).replaceAll('<','\\u003c');
  const html=`<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Masaarat Kids</title><style>${css}</style></head><body><div id="root"></div><script type="application/json" id="data">${data}</script><script>${js.replaceAll('</script','<\\/script')}</script></body></html>`;
  await writeFile(resolve(base,'editorial-review',localMedia?'index.html':'portable.html'),html);
 }
@@ -42,5 +45,10 @@ for(let n=2;n<=12;n++){
  const slug=`lesson-${String(n).padStart(2,'0')}`;
  await mkdir(resolve(reviewVideos,'level1',slug),{recursive:true});
  for(const locale of ['ar-EG','ar-MSA','ar-Gulf','en'])for(const suffix of ['.mp4','.vtt'])await cp(resolve(base,`public/generated/videos/level1/${slug}/${locale}${suffix}`),resolve(reviewVideos,'level1',slug,`${locale}${suffix}`));
+}
+for(const level of [2,3])for(let n=1;n<=12;n++){
+ const slug=`lesson-${String(n).padStart(2,'0')}`;
+ await mkdir(resolve(reviewVideos,`level${level}`,slug),{recursive:true});
+ for(const locale of ['ar-EG','ar-MSA','ar-Gulf','en'])for(const suffix of ['.mp4','.vtt'])await cp(resolve(base,`public/generated/videos/level${level}/${slug}/${locale}${suffix}`),resolve(reviewVideos,`level${level}`,slug,`${locale}${suffix}`));
 }
 console.log('Built learner review using platform IntroSection, QuizBlock and styles.css');
