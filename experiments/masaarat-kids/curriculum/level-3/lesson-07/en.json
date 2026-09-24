@@ -1,0 +1,188 @@
+{
+  "locale": "en",
+  "title": "Build a Simple Prototype",
+  "subtitle": "Design, test, and refine a basic solution model.",
+  "objectives": [
+    "Describe the inputs, outputs, and execution of a solution as a limited prototype.",
+    "Implement a functional paper or digital prototype based on a clear design.",
+    "Evaluate a prototype's effectiveness and identify areas for improvement using concrete evidence."
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "title": "What's a Prototype?",
+      "display": "Imagine a new club!",
+      "narration": "Prototypes are early, simple versions of your ideas. They help test concepts quickly. Get feedback and save time before building fully.",
+      "visualAction": "A thought bubble appears above a character's head with a lightbulb icon. Another character gestures towards it, then a simple sketch of a phone app appears."
+    },
+    {
+      "id": "explain",
+      "title": "Why Prototype?",
+      "display": "Test ideas, get feedback.",
+      "narration": "Prototypes let you test ideas and gather feedback. Refine your design early. This avoids major problems later. Spot issues quickly.",
+      "visualAction": "A character draws on a whiteboard. As they explain, a 'feedback loop' diagram animates, showing an arrow from 'idea' to 'prototype' to 'test' to 'feedback' and back to 'idea'."
+    },
+    {
+      "id": "example",
+      "title": "Club Helper Prototype",
+      "display": "Organizing club resources.",
+      "narration": "Imagine a 'Club Resource Helper' prototype. Input: activity and materials. Output: suggested materials and a note. We use rule cards.",
+      "visualAction": "A character points to a diagram showing 'Input' -> 'Rule Card' -> 'Output'. Text labels appear: 'Activity, Materials' for Input, 'Suggestion, Check' for Output."
+    },
+    {
+      "id": "review",
+      "title": "Reviewing the Design",
+      "display": "What did we learn?",
+      "narration": "After building, we review the prototype's design. Does it clearly show inputs and outputs? Is the logic easy to follow?",
+      "visualAction": "A character looks thoughtfully at the prototype diagram, then uses a magnifying glass animation to inspect parts of it. A checklist appears and ticks off items."
+    },
+    {
+      "id": "improve",
+      "title": "Improving the Prototype",
+      "display": "Refine and iterate.",
+      "narration": "Based on review, we improve the prototype. This iterative process of building, testing, and refining is key. Each step helps.",
+      "visualAction": "The character from the previous scene makes a 'lightbulb' gesture, then uses an eraser animation on the whiteboard, followed by drawing new, clearer elements on the prototype diagram."
+    },
+    {
+      "id": "practice",
+      "title": "Your Turn to Prototype!",
+      "display": "Design a simple solution.",
+      "narration": "Now, design your own simple prototype. Define inputs and outputs. Create a clear process. Think about how you would test it.",
+      "visualAction": "A character presents a blank whiteboard and a set of drawing tools to the viewer, encouraging them to start. A clock icon briefly appears, then fades."
+    },
+    {
+      "id": "finish",
+      "title": "Prototype Power!",
+      "display": "Test, learn, succeed!",
+      "narration": "You learned to build and evaluate prototypes. This skill is valuable for apps or projects. Test ideas early to build better solutions.",
+      "visualAction": "The character gives a thumbs-up. The simple app sketch from the hook scene reappears, now looking more refined. Gears animate in the background, symbolizing the design process."
+    }
+  ],
+  "reading": [
+    {
+      "id": "concept",
+      "title": "What is a Prototype?",
+      "text": "A prototype is an early, limited version of a product or system, built to test concepts, gather feedback, and identify potential issues. It focuses on demonstrating core functionality rather than being a finished, polished product. Prototypes help designers and engineers understand how users might interact with a solution."
+    },
+    {
+      "id": "example",
+      "title": "Elements of a Simple Prototype",
+      "text": "A simple prototype needs clear inputs (what information it takes in), a defined process (how it uses that information), and specific outputs (what it produces). For instance, a paper prototype for a 'book recommender' might take 'favorite genre' as input, use 'genre-to-book list' rules, and output 'book title' plus 'library location'."
+    },
+    {
+      "id": "check",
+      "title": "Evaluating Your Prototype",
+      "text": "To evaluate a prototype, check if its inputs, process, and outputs are clear and logical. Does it solve the intended problem within its defined scope? Test it with a few different scenarios to see if it behaves as expected. Concrete evidence for evaluation includes user feedback and observed functionality."
+    }
+  ],
+  "materials": [
+    {
+      "id": "club-helper-prototype-example",
+      "title": "Invented Teaching Example: Club Resource Helper Prototype",
+      "text": "Scenario: A fictional after-school club needs a simple way to suggest materials for activities.\n\n**Prototype Goal:** To provide a quick, limited suggestion for materials based on a chosen activity.\n\n**Inputs:**\n1.  **Activity Type:** (e.g., 'Art Project', 'Science Experiment', 'Board Game Session')\n2.  **Available Materials:** (e.g., 'Paper', 'Pencils', 'Clay', 'Magnets', 'Dice', 'Cards')\n\n**Process (Rule Cards - Invented Teaching Example):**\n*   **Rule Card 1: Art Project**\n    *   IF Activity Type is 'Art Project'\n    *   AND 'Paper' is Available\n    *   AND 'Pencils' is Available\n    *   THEN Suggest: 'Paper, Pencils'\n*   **Rule Card 2: Science Experiment**\n    *   IF Activity Type is 'Science Experiment'\n    *   AND 'Magnets' is Available\n    *   THEN Suggest: 'Magnets'\n*   **Rule Card 3: Board Game Session**\n    *   IF Activity Type is 'Board Game Session'\n    *   AND 'Dice' is Available\n    *   AND 'Cards' is Available\n    *   THEN Suggest: 'Dice, Cards'\n*   **Default Rule:**\n    *   IF no other rule applies\n    *   THEN Suggest: 'Check with organizer for materials.'\n\n**Outputs:**\n1.  **Suggested Materials:** (e.g., 'Paper, Pencils' or 'Magnets')\n2.  **Action Note:** 'Check with organizer.' (Always included to indicate limited scope)\n\n**Testing (Invented Teaching Example):**\n*   **Test 1:**\n    *   Input: Activity Type = 'Art Project', Available Materials = 'Paper, Pencils, Clay'\n    *   Expected Output: 'Paper, Pencils', 'Check with organizer.'\n*   **Test 2:**\n    *   Input: Activity Type = 'Science Experiment', Available Materials = 'Paper, Pencils'\n    *   Expected Output: 'Check with organizer.' (Because Magnets are not available for the Science rule)\n\nThis paper prototype helps us visualize the logic and quickly test if the suggestions make sense for different inputs.",
+      "kind": "authored-teaching-example"
+    }
+  ],
+  "promptExamples": {
+    "initial": "Make a prototype for a new app.",
+    "improved": "Design a paper prototype for an app that helps students track their homework. Clearly define its inputs, what process it follows, and what information it shows as output. Show how it would respond to a student adding a new assignment.",
+    "followup": "Can you add a step to your prototype that allows students to mark an assignment as complete, and show how the output changes?"
+  },
+  "activity": {
+    "title": "Design a 'Lunch Order Helper' Prototype",
+    "instructions": "Create a simple paper prototype for a 'Lunch Order Helper' that helps a cafeteria staff member quickly identify what ingredients are needed for a specific lunch order. Your prototype should clearly show:\n1.  **Inputs:** What information the staff member provides (e.g., 'Order: Pizza', 'Order: Salad').\n2.  **Process:** Simple rules (like our 'Rule Cards') that map orders to ingredients.\n3.  **Outputs:** The list of ingredients needed for that order, and a note about checking stock.\n\nDraw or write out your prototype on paper. Include at least two different lunch orders and show how your prototype would respond to each.",
+    "starter": "My Lunch Order Helper prototype:\nInput: Order: [student fills this in]\nProcess: [student fills this in]\nOutput: [student fills this in]\n\nTest 1:\nInput: Order: Sandwich\n[Show how your prototype responds]\n\nTest 2:\nInput: Order: Soup\n[Show how your prototype responds]",
+    "expectedEvidence": "A clearly drawn or written paper prototype showing inputs, process rules, and outputs for at least two different lunch orders, demonstrating how the prototype would function."
+  },
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "What is the primary purpose of building a prototype?",
+      "options": [
+        "To create the final, polished product for immediate use.",
+        "To test ideas and gather feedback early in the design process.",
+        "To replace the need for any further design or development work."
+      ],
+      "answer": 1,
+      "explanation": "The primary purpose of a prototype is to test ideas and gather feedback at an early stage, allowing for improvements before significant resources are committed to the final product. It's not the final product itself.",
+      "source": "concept"
+    },
+    {
+      "id": "q2",
+      "question": "A student designs a paper prototype for a 'Daily Schedule Planner'. Which of the following best represents a clear 'input' for this prototype?",
+      "options": [
+        "The final, printed schedule for the day.",
+        "The user's desired activities and their start/end times.",
+        "A list of all possible activities available in a school."
+      ],
+      "answer": 1,
+      "explanation": "Inputs are the information the prototype takes in. The user's desired activities and times are what the planner would use to create a schedule. The final schedule is an output, and a list of all activities is too broad to be a direct input for a specific schedule.",
+      "source": "example"
+    },
+    {
+      "id": "q3",
+      "question": "You've built a prototype for a 'Movie Recommender' that suggests movies based on genre. To evaluate it, you test it with 'Comedy' and it suggests a horror film. What does this concrete evidence tell you?",
+      "options": [
+        "The prototype is perfect and ready for release.",
+        "The prototype's input mechanism is broken.",
+        "There's an issue with the prototype's internal logic or rules for genre matching."
+      ],
+      "answer": 2,
+      "explanation": "If a 'Comedy' input results in a horror film output, it indicates a problem with the prototype's internal logic or the rules it uses to match genres to movies. It's not necessarily broken input, but rather incorrect processing of that input.",
+      "source": "check"
+    }
+  ],
+  "mission": {
+    "title": "Design a 'Plant Care Reminder' Prototype",
+    "instructions": "Design a simple paper prototype for a 'Plant Care Reminder' that helps someone remember when to water their plants. Your prototype should:\n1.  Clearly define the **inputs** (e.g., plant type, last watered date).\n2.  Outline the **process** (simple rules for watering frequency based on plant type).\n3.  Specify the **outputs** (e.g., 'Water today!', 'Water in 3 days').\n4.  Include a simple **test scenario** with an invented plant and its last watered date, showing the expected output.\n\nPresent your prototype on paper, including all these elements.",
+    "rubric": [
+      "Clearly defines at least two distinct inputs for the plant care reminder.",
+      "Outlines a logical process (rules) that maps inputs to appropriate watering reminders.",
+      "Specifies clear and helpful outputs for the user.",
+      "Includes a test scenario that demonstrates the prototype's functionality and expected output."
+    ]
+  },
+  "hints": [
+    {
+      "question": "What kind of information should I include as 'inputs' for my prototype?",
+      "answer": "Think about what information your prototype *needs* to do its job. For a 'Lunch Order Helper', it needs the specific lunch order. For a 'Plant Care Reminder', it needs details about the plant and its care history. Focus on the essential data.",
+      "source": "example"
+    },
+    {
+      "question": "How do I define the 'process' or 'rules' for my prototype?",
+      "answer": "The process is how your prototype turns inputs into outputs. You can use simple 'IF [condition] THEN [action]' statements, like 'IF Activity is 'Art Project' THEN Suggest 'Paper, Pencils'. Keep it straightforward and logical for each scenario.",
+      "source": "example"
+    },
+    {
+      "question": "How can I tell if my prototype is good or needs changes?",
+      "answer": "Test it! Give it different inputs and see if the outputs make sense. If you input 'Pizza' and it suggests 'Carrots', you know there's a problem with your rules. This concrete evidence helps you identify what to improve.",
+      "source": "check"
+    }
+  ],
+  "imageBrief": {
+    "title": "Paper Prototype for a 'Home Garden Manager'",
+    "scenario": "A student is designing a paper prototype for a system to manage a small home garden, tracking planting times and watering needs.",
+    "composition": "A close-up, slightly elevated view of a desk. On the desk, a hand holds a pen, pointing to a paper prototype. The prototype is made of various colored sticky notes arranged on a corkboard or large sheet of paper. Each sticky note represents a different part of the garden management system: one for 'Plant Selection' (e.g., 'Tomato', 'Basil'), another for 'Watering Schedule' (e.g., 'Every 2 days'), and a third for 'Harvest Reminder'. Surrounding the prototype are a small watering can, a few seed packets, and a gardening glove.",
+    "labels": [
+      "Plant Selection Sticky Note",
+      "Watering Schedule Sticky Note",
+      "Harvest Reminder Sticky Note",
+      "Hand-drawn UI elements",
+      "Gardening Tools"
+    ],
+    "altText": "A student's hand points to a paper prototype for a 'Home Garden Manager' system, laid out on a desk. The prototype consists of several colored sticky notes on a board, showing plant selection, watering schedules, and harvest reminders. Small gardening tools and seed packets are also on the desk."
+  },
+  "educatorNotes": {
+    "sampleAnswer": "For the 'Lunch Order Helper' Activity:\n\n**Prototype Goal:** To suggest ingredients for a specific lunch order.\n\n**Inputs:**\n1.  **Lunch Order:** (e.g., 'Pizza Slice', 'Chicken Salad', 'Veggie Wrap')\n\n**Process (Rule Cards):**\n*   **Rule Card 1: Pizza Slice**\n    *   IF Lunch Order is 'Pizza Slice'\n    *   THEN Suggest: 'Pizza Dough, Tomato Sauce, Cheese'\n*   **Rule Card 2: Chicken Salad**\n    *   IF Lunch Order is 'Chicken Salad'\n    *   THEN Suggest: 'Lettuce, Grilled Chicken, Dressing'\n*   **Rule Card 3: Veggie Wrap**\n    *   IF Lunch Order is 'Veggie Wrap'\n    *   THEN Suggest: 'Tortilla, Hummus, Mixed Vegetables'\n*   **Default Rule:**\n    *   IF no other rule applies\n    *   THEN Suggest: 'Consult menu for ingredients.'\n\n**Outputs:**\n1.  **Suggested Ingredients:** (e.g., 'Pizza Dough, Tomato Sauce, Cheese')\n2.  **Action Note:** 'Check stock levels.' (Always included)\n\n**Test 1:**\n*   Input: Order: Pizza Slice\n*   Output: Suggested Ingredients: 'Pizza Dough, Tomato Sauce, Cheese', Action Note: 'Check stock levels.'\n\n**Test 2:**\n*   Input: Order: Chicken Salad\n*   Output: Suggested Ingredients: 'Lettuce, Grilled Chicken, Dressing', Action Note: 'Check stock levels.'\n\n**Common Misconception:** Students often confuse a prototype with a finished product, trying to make it perfect or include every possible feature instead of focusing on testing a core concept.",
+    "commonMisconception": "Students often confuse a prototype with a finished product, trying to make it perfect or include every possible feature instead of focusing on testing a core concept.",
+    "reviewChecks": [
+      "Does the prototype clearly define its inputs?",
+      "Are the process rules logical and easy to follow?",
+      "Are the outputs specific and directly related to the inputs and process?",
+      "Does the prototype address the specific problem it's trying to solve?",
+      "Is the prototype limited in scope, focusing on a single core idea?",
+      "Did the student include test scenarios and show how the prototype responds?"
+    ],
+    "safetyNotes": "This lesson involves designing on paper or using basic digital tools. Ensure students are working in a safe, supervised environment and are aware of good digital citizenship practices if using online tools for design."
+  }
+}

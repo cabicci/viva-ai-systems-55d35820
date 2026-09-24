@@ -1,0 +1,185 @@
+{
+  "locale": "en",
+  "title": "Analyze Data Without Exaggeration",
+  "subtitle": "Learn to distinguish between description, explanation, and causation when analyzing data.",
+  "objectives": [
+    "Distinguish between describing data and offering an explanation for it.",
+    "Identify when a correlation is mistakenly presented as a confirmed cause.",
+    "Evaluate data conclusions to identify and challenge unsupported claims."
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "title": "Spotting Data Traps",
+      "display": "Data can trick us!",
+      "narration": "People often link unrelated events, like lucky socks and team wins. Data connections are tricky. It is vital to know if one thing truly causes another.",
+      "visualAction": "A cartoon character wearing mismatched socks, looking confused as a sports team celebrates in the background. A question mark appears above their head."
+    },
+    {
+      "id": "explain",
+      "title": "Description vs. Explanation",
+      "display": "What happened? Why did it happen?",
+      "narration": "When looking at data, first describe facts, like '8 of 12 attended.' An explanation suggests 'why.' This is not always a proven cause.",
+      "visualAction": "Two thought bubbles appear. One shows a simple bar chart with '8/12' and the word 'WHAT'. The other shows a question mark and the word 'WHY'."
+    },
+    {
+      "id": "example",
+      "title": "Correlation vs. Causation",
+      "display": "Connected isn't caused.",
+      "narration": "Two things happening together, or correlating, does not mean one caused the other. Ice cream sales and shark attacks both rise in summer.",
+      "visualAction": "A split screen. On one side, a cartoon person eats ice cream on a sunny beach. On the other, a small shark fin appears in the water. A large 'X' appears between them."
+    },
+    {
+      "id": "review",
+      "title": "Reviewing Claims",
+      "display": "Look for evidence!",
+      "narration": "Heat causes both ice cream sales and shark attacks to increase. Correlation does not equal causation. Always seek the true underlying cause.",
+      "visualAction": "A magnifying glass hovers over a text bubble that says 'Claim'. The magnifying glass then moves to highlight the word 'EVIDENCE'."
+    },
+    {
+      "id": "improve",
+      "title": "Improving Your Analysis",
+      "display": "Be precise with data.",
+      "narration": "When someone makes a data claim, ask: Is it description, explanation, or causation? Always look for strong evidence to support any claim.",
+      "visualAction": "A cartoon character is shown writing on a whiteboard. They erase a '?' and replace it with a '✓'. A thought bubble shows 'Precision'."
+    },
+    {
+      "id": "practice",
+      "title": "Practice Time!",
+      "display": "Analyze this data.",
+      "narration": "To avoid exaggeration, be precise. State what data shows, offer explanations, and identify missing information. Do not jump to conclusions without proof.",
+      "visualAction": "A digital tablet screen appears showing a simple table with two rows labeled 'Event A' and 'Event B'. A pencil icon hovers over it."
+    },
+    {
+      "id": "finish",
+      "title": "Your Data Superpower",
+      "display": "Analyze like a pro!",
+      "narration": "You have learned to analyze data critically, distinguishing description, explanation, and causation. This skill helps avoid believing unsupported claims.",
+      "visualAction": "The cartoon character from the hook scene now wears a superhero cape and confidently points to a chart with a '✓' mark. Stars twinkle around them."
+    }
+  ],
+  "reading": [
+    {
+      "id": "concept",
+      "title": "Understanding Data Claims",
+      "text": "When analyzing data, it's crucial to differentiate. A *description* states facts from the data (e.g., 'Event A had 8 attendees'). An *explanation* suggests reasons why something happened (e.g., 'Event A might have been less popular'). *Causation* means one thing directly makes another happen (e.g., 'Turning the key *causes* the car to start')."
+    },
+    {
+      "id": "example",
+      "title": "Correlation vs. Causation",
+      "text": "Just because two things are *correlated* (happen together or show a similar trend) doesn't mean one *causes* the other. For example, higher ice cream sales and more drownings both occur in summer. The heat causes both, not the ice cream causing drownings. Always look for direct evidence of cause and effect."
+    },
+    {
+      "id": "check",
+      "title": "Avoiding Exaggeration",
+      "text": "To avoid exaggerating data conclusions, stick to what the numbers *describe*. If you offer an explanation, clearly state it as a possibility, not a certainty. Always note any missing data that could provide a fuller picture. Never claim causation without strong, direct evidence."
+    }
+  ],
+  "materials": [
+    {
+      "id": "event-attendance-data",
+      "title": "Event Attendance Data",
+      "text": "Event A: 8 of 12 invited guests attended. 4 feedback forms were returned.\nEvent B: 11 of 15 invited guests attended. 5 feedback forms were returned.\n\nNote: Both events were held on weekdays in the afternoon.",
+      "kind": "authored-teaching-example"
+    }
+  ],
+  "promptExamples": {
+    "initial": "Tell me about the event attendance.",
+    "improved": "Analyze the attendance data for Event A and Event B. Describe the attendance numbers, offer a possible explanation for any differences, and identify what additional information would be helpful.",
+    "followup": "You mentioned Event B had more attendees. Can you explain why you think that happened, and what kind of evidence would confirm your idea?"
+  },
+  "activity": {
+    "title": "Analyze Event Attendance",
+    "instructions": "Using the 'Event Attendance Data' provided, write a short analysis. Your analysis should:\n1. Describe the attendance for each event.\n2. Offer one possible explanation for any difference in attendance.\n3. Identify at least one piece of missing data that could help you understand the situation better.\n\nRemember: Do not claim that one factor *caused* a specific attendance number without clear evidence.",
+    "starter": "Here is the data:\nEvent A: 8 of 12 invited guests attended. 4 feedback forms were returned.\nEvent B: 11 of 15 invited guests attended. 5 feedback forms were returned.\n\nMy analysis:",
+    "expectedEvidence": "A written analysis that describes attendance, offers a plausible explanation, and identifies missing data, without making unsupported causal claims."
+  },
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "A study shows that students who eat breakfast perform better on tests. Which statement is a description of this data?",
+      "options": [
+        "Eating breakfast causes students to get higher test scores.",
+        "Students who eat breakfast tend to have higher test scores.",
+        "Students who eat breakfast are smarter than those who don't."
+      ],
+      "answer": 1,
+      "explanation": "Option 1 claims causation, which isn't directly supported by 'perform better'. Option 2 simply states the observed correlation, which is a description. Option 3 makes an unsupported judgment. The correct answer is 1 because it describes the observed relationship without claiming cause.",
+      "source": "concept"
+    },
+    {
+      "id": "q2",
+      "question": "A news report states: 'Since the new park opened, local ice cream sales have doubled. The park is clearly making people buy more ice cream.' What is the flaw in this conclusion?",
+      "options": [
+        "The park opening and ice cream sales are not correlated.",
+        "The report doesn't provide enough evidence to prove causation.",
+        "Ice cream sales usually double in summer regardless of new parks."
+      ],
+      "answer": 1,
+      "explanation": "The report observes a correlation (park opening and increased sales) but jumps to a causal conclusion ('park is clearly making people buy more ice cream') without sufficient evidence. While other factors (like summer, option 2) might be true, the primary flaw is the unsupported leap to causation. The correct answer is 1.",
+      "source": "example"
+    },
+    {
+      "id": "q3",
+      "question": "You observe that every time you wear your lucky hat, your favorite sports team wins. You conclude, 'My lucky hat makes my team win!' What type of mistake are you making?",
+      "options": [
+        "Confusing description with explanation.",
+        "Confusing correlation with causation.",
+        "Confusing a fact with an opinion."
+      ],
+      "answer": 1,
+      "explanation": "You are observing a correlation (wearing the hat and the team winning) and incorrectly concluding that one *causes* the other. This is a classic example of confusing correlation with causation. The correct answer is 1.",
+      "source": "check"
+    }
+  ],
+  "mission": {
+    "title": "Analyze a School Survey",
+    "instructions": "Imagine your school conducted a survey asking students about their favorite after-school activity and their average weekly screen time. Here are some invented results:\n\n*   Students who reported 'Reading' as their favorite activity had an average of 8 hours of screen time per week.\n*   Students who reported 'Gaming' as their favorite activity had an average of 15 hours of screen time per week.\n\nWrite a short analysis (2-3 sentences) of these results. In your analysis, you must:\n1.  Describe the observed data.\n2.  Offer at least one *possible* explanation for the difference in screen time.\n3.  Avoid stating that one activity *causes* a specific amount of screen time.",
+    "rubric": [
+      "Clearly describes the difference in average screen time for both groups.",
+      "Offers a plausible, non-causal explanation for the observed difference.",
+      "Explicitly avoids claiming that one activity *causes* the screen time difference.",
+      "Identifies a relevant piece of missing information that would improve the analysis (e.g., age, other hobbies)."
+    ]
+  },
+  "hints": [
+    {
+      "question": "What's the difference between describing and explaining?",
+      "answer": "Describing is stating what you see in the data, like 'Event A had 8 attendees.' Explaining is suggesting *why* it might have happened, like 'Perhaps Event A was less advertised.'",
+      "source": "concept"
+    },
+    {
+      "question": "How can I tell if something is correlation or causation?",
+      "answer": "Correlation means two things happen together. Causation means one thing directly makes the other happen. If you can't prove a direct cause-and-effect link, it's likely just correlation. Think about the ice cream and shark attacks example!",
+      "source": "example"
+    },
+    {
+      "question": "What if I don't have all the data?",
+      "answer": "It's important to acknowledge missing data. State what you know, offer possible explanations, and then mention what additional information would be helpful to draw stronger conclusions. This shows good critical thinking.",
+      "source": "check"
+    }
+  ],
+  "imageBrief": {
+    "title": "The Incomplete Puzzle",
+    "scenario": "A student is trying to understand a complex problem using an unrelated dataset, but some pieces of information are missing, making it hard to form a complete picture.",
+    "composition": "A cartoon student sits at a desk, looking at a large, partially completed jigsaw puzzle. Several puzzle pieces are clearly missing from the center. Red 'X' marks or '?' symbols are floating above the empty spaces where pieces should be.",
+    "labels": [
+      "Missing Data",
+      "Incomplete Picture",
+      "Uncertainty",
+      "Critical Thinking"
+    ],
+    "altText": "A student looks at a jigsaw puzzle with several missing pieces, highlighted by question marks, symbolizing incomplete data and the challenge of drawing conclusions without all the facts."
+  },
+  "educatorNotes": {
+    "sampleAnswer": "Activity Sample Answer:\nEvent A had 8 out of 12 invited guests attend, while Event B had 11 out of 15. This means Event A had a 66% attendance rate (8/12), and Event B had a 73% attendance rate (11/15). Event B had a slightly higher proportion of attendees. A possible explanation is that Event B's topic might have been more appealing to its invitees. To understand this better, it would be helpful to know the specific topics of each event and the demographics of the invited guests.\n\nMission Sample Answer:\nThe survey shows that students who prefer reading average 8 hours of screen time weekly, while those who prefer gaming average 15 hours. This indicates a notable difference in screen time between the two groups. A possible explanation is that students who enjoy gaming naturally spend more time on screens due to the nature of the activity. However, this doesn't mean gaming *causes* higher screen time; it could be that students with more free screen time gravitate towards gaming. Knowing the students' ages or if they have other screen-based hobbies would provide a clearer picture.",
+    "commonMisconception": "A common misconception is that if two things happen together (correlation), one must cause the other (causation). Students often struggle to differentiate between a strong relationship and a direct cause-and-effect link.",
+    "reviewChecks": [
+      "Does the student clearly describe the data without interpretation?",
+      "Does the student offer an explanation as a possibility, not a certainty?",
+      "Does the student explicitly avoid making unsupported causal claims?",
+      "Does the student identify specific missing information that would improve the analysis?"
+    ],
+    "safetyNotes": "Remind students that data analysis skills are powerful and should be used responsibly. Emphasize that making false causal claims can have serious consequences in real-world situations, from scientific research to public health."
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "locale": "en",
+  "title": "Mastering Evidence: Confine Your Answers to the Source",
+  "subtitle": "Learn to use reference texts with clear answer boundaries and identify missing information.",
+  "objectives": [
+    "Formulate clear requests that specify reference materials.",
+    "Extract information from provided sources while adhering to explicit constraints.",
+    "Identify and declare when requested information is not available in the given source."
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "title": "The Power of Precision",
+      "display": "Why precise answers matter.",
+      "narration": "Imagine you're building a robot. If you give it vague instructions, it might do something unexpected! The same goes for information. Precision is key, especially when using sources.",
+      "visualAction": "A cartoon robot initially confused by vague instructions, then successfully completing a task with clear ones."
+    },
+    {
+      "id": "explain",
+      "title": "Setting Boundaries",
+      "display": "How to define your source.",
+      "narration": "When you ask for information, it's crucial to tell your tool exactly where to look. This is like giving it a map and saying, 'Only use this map to find the treasure.'",
+      "visualAction": "A magnifying glass focusing on a specific section of a document, with a boundary line appearing around it."
+    },
+    {
+      "id": "example",
+      "title": "A Museum Mystery",
+      "display": "Finding facts in a guide.",
+      "narration": "Let's look at an example. We have a museum guide, and we want to know its opening hours. We'll ask our tool to find this specific detail only within the guide.",
+      "visualAction": "A hand pointing to a digital museum guide, then highlighting the opening hours section."
+    },
+    {
+      "id": "review",
+      "title": "Check Your Work",
+      "display": "Evaluating source-based answers.",
+      "narration": "Once you get an answer, how do you know it's good? You check if it used only the source you provided and if it clearly stated anything it couldn't find.",
+      "visualAction": "A checklist appearing next to a retrieved answer, with checkmarks for 'from source' and 'missing info stated'."
+    },
+    {
+      "id": "improve",
+      "title": "Refining Your Request",
+      "display": "Making prompts better.",
+      "narration": "Sometimes, your first attempt isn't perfect. You might need to add more detail to your request, like specifying paragraph labels or asking for explicit declarations of missing data.",
+      "visualAction": "A thought bubble with an initial prompt, then transforming into a more detailed and structured prompt."
+    },
+    {
+      "id": "practice",
+      "title": "Your Turn to Try",
+      "display": "Apply what you've learned.",
+      "narration": "Now it's your turn! You'll get a new set of source materials and a task. Remember to be precise with your request and thorough in your evaluation.",
+      "visualAction": "A student character sitting at a desk, looking at a screen with source documents and a prompt field."
+    },
+    {
+      "id": "finish",
+      "title": "Mastering the Source",
+      "display": "Confidence in evidence.",
+      "narration": "Great job! You've learned how to guide your information tool to use specific sources, extract only relevant facts, and identify when information isn't available. This skill is vital for critical thinking!",
+      "visualAction": "The student character confidently presenting a well-researched answer, with a 'Mission Complete' banner appearing."
+    }
+  ],
+  "reading": [
+    {
+      "id": "concept",
+      "title": "The Importance of Bounded Design",
+      "text": "Bounded design means setting clear limits on where your information tool can search. This ensures accuracy and prevents it from 'hallucinating' or inventing facts. Always specify your sources, like a specific document or a set of paragraphs. This makes answers reliable and verifiable."
+    },
+    {
+      "id": "example",
+      "title": "How to Constrain a Search",
+      "text": "To constrain a search, clearly state the source and what to do if information is missing. For instance, 'Using only paragraphs A, B, and C, answer the following questions. If information is not found, state 'Not stated in source.' This guides the tool to be precise and transparent."
+    },
+    {
+      "id": "check",
+      "title": "Verifying Source-Based Answers",
+      "text": "After receiving an answer, verify it by comparing it directly to the specified source. Check if every piece of information comes from the allowed text. Also, confirm that any missing details are explicitly declared as 'not stated' or 'not found in source,' rather than being omitted."
+    }
+  ],
+  "materials": [
+    {
+      "id": "museum-guide-source",
+      "title": "Fictional Museum Guide Excerpts",
+      "text": "Paragraph A: The City History Museum opens its doors to visitors every Saturday and Sunday from 10:00 AM to 12:00 PM. Special weekday tours can be arranged by appointment.\n\nParagraph B: Tickets for all museum visits, including weekend hours and special tours, must be reserved in advance through our website. No tickets are sold at the door.\n\nParagraph C: Our gift shop offers a wide selection of local crafts and historical replicas. Information regarding refreshments is not available in this guide.",
+      "kind": "authored-teaching-example"
+    }
+  ],
+  "promptExamples": {
+    "initial": "Tell me about the City History Museum.",
+    "improved": "Using only Paragraphs A, B, and C from the 'Fictional Museum Guide Excerpts,' answer the following: 1. What are the weekend opening hours? 2. How are tickets purchased? 3. Are refreshments available? If any information is not found, state 'Not stated in source.'",
+    "followup": "Your answer for refreshments was incorrect. Please re-read Paragraph C carefully and state if refreshments are available, or if the guide states they are not available."
+  },
+  "activity": {
+    "title": "Club Guide Challenge",
+    "instructions": "You are given excerpts from a fictional 'Young Explorers Club Guide.' Your task is to write a precise request to find specific information, ensuring the answer only uses the provided text and declares missing details.",
+    "starter": "Write a request to find out about: 1. The club's meeting days. 2. The cost of membership. 3. What equipment is needed for expeditions. Use only the provided 'Young Explorers Club Guide Excerpts' and state 'Not stated in source' if information is missing.",
+    "expectedEvidence": "A well-formed request that specifies the source, asks for specific information, and includes instructions for declaring missing information. The request should be followed by the extracted answers, clearly labeled with their source paragraph or 'Not stated in source'."
+  },
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Based on the 'Fictional Museum Guide Excerpts,' what are the weekend opening hours for the City History Museum?",
+      "options": [
+        "Every Saturday and Sunday from 10:00 AM to 12:00 PM.",
+        "Weekdays by appointment.",
+        "Daily from 10:00 AM to 5:00 PM."
+      ],
+      "answer": 0,
+      "explanation": "Paragraph A explicitly states, 'The City History Museum opens its doors to visitors every Saturday and Sunday from 10:00 AM to 12:00 PM.' The other options are either incorrect or not stated in the provided text.",
+      "source": "concept"
+    },
+    {
+      "id": "q2",
+      "question": "According to the 'Fictional Museum Guide Excerpts,' how must tickets for the museum be purchased?",
+      "options": [
+        "Tickets are sold at the door.",
+        "Tickets must be reserved in advance through the website.",
+        "Tickets can be purchased upon arrival or online."
+      ],
+      "answer": 1,
+      "explanation": "Paragraph B clearly states, 'Tickets for all museum visits... must be reserved in advance through our website. No tickets are sold at the door.' This directly contradicts option 0 and makes option 2 partially incorrect.",
+      "source": "example"
+    },
+    {
+      "id": "q3",
+      "question": "If you were asked about the availability of parking at the City History Museum, and only had access to Paragraphs A, B, and C, what would be the correct response based on the lesson?",
+      "options": [
+        "Parking is not stated in source.",
+        "Parking is available near the museum.",
+        "The museum has a large parking lot."
+      ],
+      "answer": 0,
+      "explanation": "The lesson emphasizes declaring information as 'not stated' if it's not present in the specified source. Parking is not mentioned in Paragraphs A, B, or C, so this is the correct response.",
+      "source": "check"
+    }
+  ],
+  "mission": {
+    "title": "Design a Fictional Library Guide Prompt",
+    "instructions": "Imagine you are creating a guide for a new 'Community Library.' You have three short paragraphs of information. Your mission is to write a prompt that asks for specific details from these paragraphs, ensuring the answer is strictly limited to the provided text and clearly states if information is missing. Then, provide the answers as if an AI tool responded.",
+    "rubric": [
+      "The prompt clearly specifies the provided paragraphs as the only source.",
+      "The prompt asks for at least three distinct pieces of information.",
+      "The prompt explicitly instructs to state 'Not stated in source' for missing information.",
+      "The provided answers accurately reflect the source or correctly declare missing information."
+    ]
+  },
+  "hints": [
+    {
+      "question": "How do I make sure the answer only uses my source?",
+      "answer": "In your request, explicitly state which paragraphs or sections the answer must come from. For example, 'Using only Paragraphs 1, 2, and 3...'",
+      "source": "concept"
+    },
+    {
+      "question": "What if the information isn't in the source?",
+      "answer": "Include an instruction in your request like, 'If information is not found, state 'Not stated in source.'' This tells the tool exactly what to do.",
+      "source": "example"
+    },
+    {
+      "question": "How do I check if the answer is correct?",
+      "answer": "Read the answer and then go back to your source material. Can you find every piece of information in the exact paragraphs you specified? If not, or if something is missing but not declared, the answer needs improvement.",
+      "source": "check"
+    }
+  ],
+  "imageBrief": {
+    "title": "Mapping Questions to Sources",
+    "scenario": "A student is using a digital museum guide to answer questions, visually linking each question to the specific paragraph where the answer is found (or not found).",
+    "composition": "A split screen. On the left, a list of three questions about a museum. On the right, three distinct, labeled paragraphs from a fictional museum guide (e.g., 'History Wing Details,' 'Visitor Services,' 'Cafeteria Information'). Arrows connect each question to its corresponding source paragraph or to a 'Not Found' icon.",
+    "labels": [
+      "Question 1: Opening Hours?",
+      "Question 2: Ticket Prices?",
+      "Question 3: Gift Shop?",
+      "Paragraph A: Opening Times",
+      "Paragraph B: Admission Fees & Discounts"
+    ],
+    "altText": "An illustration showing a digital interface with three questions on the left. On the right, three paragraphs from a museum guide are labeled A, B, and C. Arrows connect Question 1 to Paragraph A, Question 2 to Paragraph B, and Question 3 to a 'Not Found' symbol, indicating the answer is not in the provided text."
+  },
+  "educatorNotes": {
+    "sampleAnswer": "**Fictional Young Explorers Club Guide Excerpts:**\nParagraph 1: The Young Explorers Club meets every Tuesday and Thursday at 4 PM in the community center. Our focus is on outdoor adventure and learning.\nParagraph 2: Annual membership costs $50, which covers all club activities and a welcome kit. Scholarships are available upon request.\nParagraph 3: For all expeditions, members are required to bring sturdy hiking boots and a water bottle. Specific equipment for each trip will be communicated a week in advance.\n\n**Student Request:**\nUsing only Paragraphs 1, 2, and 3 from the 'Young Explorers Club Guide Excerpts,' answer the following: 1. What are the club's meeting days? 2. What is the cost of membership? 3. What equipment is needed for expeditions? If any information is not found, state 'Not stated in source.'\n\n**AI Tool Response (example):**\n1. The club meets every Tuesday and Thursday (Paragraph 1).\n2. Annual membership costs $50 (Paragraph 2).\n3. Members are required to bring sturdy hiking boots and a water bottle for all expeditions (Paragraph 3).",
+    "commonMisconception": "Learners might assume that if information isn't explicitly stated as 'not available,' it implies it *is* available or can be inferred. Emphasize that 'not stated' means the source doesn't contain the answer, not that the answer is 'no.'",
+    "reviewChecks": [
+      "Did the student's request clearly specify the source material (e.g., 'Paragraphs 1, 2, and 3')?",
+      "Did the student's request include an instruction for handling missing information (e.g., 'state 'Not stated in source'')?",
+      "Are the answers provided by the student (or the simulated AI) strictly derived from the specified paragraphs?",
+      "Are all instances of missing information correctly identified and declared as 'Not stated in source'?"
+    ],
+    "safetyNotes": "Remind students that while this lesson uses fictional scenarios, the skill of critically evaluating sources and identifying information gaps is crucial for real-world research and avoiding misinformation. Always cross-reference multiple reliable sources for important topics."
+  }
+}

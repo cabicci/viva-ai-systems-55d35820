@@ -1,0 +1,192 @@
+{
+  "locale": "en",
+  "title": "Plan Your Research: Claims vs. Evidence",
+  "subtitle": "Learn to distinguish between claims and the concrete evidence that supports or refutes them.",
+  "objectives": [
+    "Identify claims and supporting evidence in research materials.",
+    "Evaluate the limitations and certainty of evidence.",
+    "Create a structured log of claims and their evidence for review."
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "title": "What's the Proof?",
+      "display": "Making smart choices needs facts.",
+      "narration": "We constantly hear claims. How do you know if a statement is true? Smart decisions require evidence. Learn to separate what is said from what can be proven.",
+      "visualAction": "A thought bubble appears with a question mark, then a magnifying glass zooms in on a document."
+    },
+    {
+      "id": "explain",
+      "title": "Claims and Evidence",
+      "display": "Claims are statements. Evidence proves them.",
+      "narration": "A claim is a statement. Evidence supports or disproves it. Think like a detective. Without solid evidence, a claim is just an opinion. Identify both.",
+      "visualAction": "Two distinct boxes appear, one labeled 'Claim' with a speech bubble, the other 'Evidence' with a stack of documents."
+    },
+    {
+      "id": "example",
+      "title": "Our Reading Circle",
+      "display": "Can we use the school hall?",
+      "narration": "Our reading circle wants the school hall. A claim: \"The hall is available.\" What is the evidence? Check the booking system and staff.",
+      "visualAction": "A calendar icon appears, then a 'booked' stamp on some dates, and a 'free' stamp on others."
+    },
+    {
+      "id": "review",
+      "title": "Checking the Facts",
+      "display": "What's the claim? What's the evidence?",
+      "narration": "First, pinpoint the main claim. Second, identify all evidence. Third, ask: Does this evidence truly support the claim? Avoid accepting claims without backing.",
+      "visualAction": "A checklist animates, showing 'Claim?', 'Evidence?', 'Limitations?' being ticked off."
+    },
+    {
+      "id": "improve",
+      "title": "Stronger Evidence",
+      "display": "Look for reliable, specific details.",
+      "narration": "Not all evidence is equal. Strong evidence is specific, verifiable, and from reliable sources. Seek multiple pieces and note contradictions for robust research.",
+      "visualAction": "A balance scale appears, with 'Strong Evidence' outweighing 'Weak Evidence.'"
+    },
+    {
+      "id": "practice",
+      "title": "Your Turn: The School Hall",
+      "display": "Find claims and evidence.",
+      "narration": "Now, practice! Use the source cards about our school hall. Identify claims and related evidence. What is stated, proven, or still uncertain? This skill is vital.",
+      "visualAction": "A student character holds a clipboard and pen, looking at a stack of cards."
+    },
+    {
+      "id": "finish",
+      "title": "Beyond the Lesson",
+      "display": "Apply this to everything you learn.",
+      "narration": "Separating claims from evidence is powerful. It helps evaluate news, papers, and conversations. Apply this critical approach to become a more informed learner.",
+      "visualAction": "A lightbulb illuminates over a student's head, then transitions to a globe with various information sources around it."
+    }
+  ],
+  "reading": [
+    {
+      "id": "concept",
+      "title": "Claims and Evidence",
+      "text": "A claim is a statement that asserts something is true. Evidence consists of facts, observations, or data that support or refute a claim. Distinguishing between them is crucial for critical thinking and making informed judgments. Without evidence, a claim remains an unsubstantiated assertion."
+    },
+    {
+      "id": "example",
+      "title": "The Reading Circle Hall",
+      "text": "Claim: The school hall is available for the reading circle. Evidence: Source Card A states 'Hall available Tuesday afternoons.' Source Card B states 'Booking required; current availability unconfirmed.' Conclusion: The hall *might* be available, but booking is needed, and current status is uncertain."
+    },
+    {
+      "id": "check",
+      "title": "Evaluating Evidence",
+      "text": "Evaluate evidence by checking its source, specificity, and relevance. Is it from a reliable authority? Does it provide concrete details? Does it directly support or contradict the claim? Also, identify limitations, such as outdated information or incomplete data, which affect the certainty of the evidence."
+    }
+  ],
+  "materials": [
+    {
+      "id": "source-card-a",
+      "title": "School Hall Schedule - Week 37",
+      "text": "School Hall Availability: Tuesday 3:00 PM - 5:00 PM (open slot). Note: All bookings require approval from the Facilities Manager.",
+      "kind": "authored-teaching-example"
+    },
+    {
+      "id": "source-card-b",
+      "title": "Facilities Booking Policy (Excerpt)",
+      "text": "All school facilities, including the main hall, must be booked at least 48 hours in advance through the online portal. Booking requests are reviewed by the Facilities Manager. Current availability shown on public schedules is indicative and not a guarantee until confirmed via email, and actual availability is unconfirmed until official booking confirmation.",
+      "kind": "authored-teaching-example"
+    }
+  ],
+  "promptExamples": {
+    "initial": "Tell me about the school hall.",
+    "improved": "Based on the provided schedule and booking policy, what is the claim about the school hall's availability for Tuesday afternoon, and what specific evidence supports or limits that claim?",
+    "followup": "What specific part of the booking policy indicates a limitation on the hall's availability, even if the schedule shows an open slot?"
+  },
+  "activity": {
+    "title": "School Hall Claims Log",
+    "instructions": "Using Source Card A and Source Card B, identify a key claim about the school hall's availability for the reading circle. Then, list all supporting evidence and any limiting evidence or uncertainties. Organize your findings in a simple table.",
+    "starter": "Claim: The school hall is available for the reading circle on Tuesday afternoon.\nSupporting Evidence:\nLimiting Evidence/Uncertainty:\n",
+    "expectedEvidence": "A table or list clearly separating a claim from supporting and limiting evidence, with references to the provided source cards."
+  },
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Which of these best describes a 'claim'?",
+      "options": [
+        "A statement that is proven true by facts.",
+        "A statement that asserts something is true, but may not yet be proven.",
+        "A list of facts and observations."
+      ],
+      "answer": 1,
+      "explanation": "A claim is an assertion that something is true, but it requires evidence to be proven. It's not automatically true, nor is it just a list of facts.",
+      "source": "concept"
+    },
+    {
+      "id": "q2",
+      "question": "Based on Source Card A and Source Card B, what is the most accurate conclusion about using the school hall on a Tuesday afternoon?",
+      "options": [
+        "The hall is definitely available, just show up.",
+        "The hall is likely available, but a confirmed booking is essential.",
+        "The hall is not available at all on Tuesdays."
+      ],
+      "answer": 1,
+      "explanation": "Source Card A shows an open slot, but Source Card B states that availability is not guaranteed until confirmed via booking. Therefore, it's likely available but needs a confirmed booking.",
+      "source": "example"
+    },
+    {
+      "id": "q3",
+      "question": "When evaluating evidence, what is a key factor to consider regarding its 'certainty'?",
+      "options": [
+        "How many people agree with the claim.",
+        "Whether the evidence is specific and from a reliable source.",
+        "If the evidence makes you feel good about the claim."
+      ],
+      "answer": 1,
+      "explanation": "The certainty of evidence is strengthened by its specificity and the reliability of its source. Popular opinion or personal feelings do not make evidence more certain.",
+      "source": "check"
+    }
+  ],
+  "mission": {
+    "title": "Evaluate a Local Park Proposal",
+    "instructions": "Imagine your local community council is proposing to build a new skate park. You've been given two documents: a 'Community Survey Summary' and a 'Park Development Budget'. Your mission is to create a claims log. Identify one key claim made about the skate park (e.g., 'It will be popular' or 'It is affordable'). Then, for that claim, list all supporting evidence and any limiting evidence or uncertainties from the documents. Explain how the evidence affects the certainty of the claim.",
+    "rubric": [
+      "Identifies a clear claim from the provided documents.",
+      "Lists at least two pieces of supporting evidence, citing sources.",
+      "Lists at least one piece of limiting evidence or uncertainty, citing sources.",
+      "Clearly explains how the evidence impacts the certainty of the claim."
+    ]
+  },
+  "hints": [
+    {
+      "question": "How do I find a claim in the school hall materials?",
+      "answer": "Look for statements that express an opinion or an assertion about the school hall's availability, like 'The hall is available on Tuesday afternoon.'",
+      "source": "concept"
+    },
+    {
+      "question": "What counts as 'supporting evidence' for the school hall claim?",
+      "answer": "Look for specific details or data from the source cards that directly back up the claim. For example, Source Card A stating 'Tuesday 3:00 PM - 5:00 PM (open slot).'",
+      "source": "example"
+    },
+    {
+      "question": "What if the evidence doesn't fully support the claim, or even contradicts it?",
+      "answer": "That's 'limiting evidence' or 'uncertainty'. Note these details, such as Source Card B stating 'Booking required; current availability unconfirmed', even if Source Card A shows an open slot. This shows a more complete picture.",
+      "source": "check"
+    }
+  ],
+  "imageBrief": {
+    "title": "Evidence Matrix for School Projects",
+    "scenario": "A student is organizing research for a school project on 'The Benefits of Outdoor Learning'. They are using a digital evidence matrix to categorize information.",
+    "composition": "A student (age 14-16, gender-neutral) is seated at a desk, looking at a tablet or laptop. On the screen, a clear, organized matrix is displayed. The matrix has columns for 'Claim', 'Supporting Evidence', 'Limiting Evidence', and 'Certainty Level'. Various icons (e.g., checkmarks, question marks, small document symbols) populate the matrix cells.",
+    "labels": [
+      "Claim: Outdoor learning improves focus.",
+      "Supporting Evidence: Study A shows 20% increase in attention span.",
+      "Limiting Evidence: Study B notes weather dependency.",
+      "Certainty Level: Moderate",
+      "Student organizing research"
+    ],
+    "altText": "A student looking at a tablet displaying an evidence matrix for a school project on outdoor learning. The matrix shows columns for claims, supporting evidence, limiting evidence, and certainty levels, with example entries about focus improvement and weather dependency."
+  },
+  "educatorNotes": {
+    "sampleAnswer": "Activity Sample Answer:\nClaim: The school hall is available for the reading circle on Tuesday afternoon.\nSupporting Evidence: Source Card A states 'Tuesday 3:00 PM - 5:00 PM (open slot)'.\nLimiting Evidence/Uncertainty: Source Card B states 'Booking requests are reviewed by the Facilities Manager. Current availability shown on public schedules is indicative and not a guarantee until confirmed via email, and actual availability is unconfirmed until official booking confirmation.' This limits the certainty of immediate availability without a confirmed booking.\n\nMission Sample Answer:\nClaim: The new skate park will be popular.\nSupporting Evidence: Community Survey Summary shows 75% of teenagers surveyed expressed 'high interest' in a skate park. (Citing 'Community Survey Summary')\nLimiting Evidence/Uncertainty: Park Development Budget shows only 10% of the budget allocated for marketing and community outreach, which might limit awareness and initial popularity. (Citing 'Park Development Budget')\nCertainty: Moderate. While initial interest is high, limited outreach could affect actual popularity. More evidence on sustained interest and accessibility would increase certainty.",
+    "commonMisconception": "Students often confuse a strong opinion or a widely held belief with evidence. They might also struggle to identify 'limiting evidence' and only focus on information that supports a claim, leading to biased conclusions.",
+    "reviewChecks": [
+      "Did the student clearly differentiate between claims and evidence?",
+      "Are the sources for evidence correctly identified?",
+      "Did the student identify both supporting and limiting evidence?",
+      "Is the assessment of certainty justified by the evidence presented?"
+    ],
+    "safetyNotes": "Remind students to use only the provided materials for the activity and mission. Encourage respectful discussion of different interpretations of evidence, reinforcing that the goal is objective analysis, not personal opinion."
+  }
+}

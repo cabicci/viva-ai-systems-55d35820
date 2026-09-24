@@ -1,0 +1,200 @@
+{
+  "locale": "en",
+  "title": "Solving Problems with Clear Limits",
+  "subtitle": "Design, test, and document your solutions responsibly.",
+  "objectives": [
+    "Identify the boundaries and constraints of a problem solution.",
+    "Evaluate a solution using concrete evidence and test cases.",
+    "Document uncertainties and limitations of a designed solution."
+  ],
+  "scenes": [
+    {
+      "id": "hook",
+      "title": "What are the limits?",
+      "display": "Every solution has limits.",
+      "narration": "Every solution, like a new app, has inherent boundaries. Understanding these limits is crucial for creating something truly useful and responsible. Recognizing constraints guides effective design.",
+      "visualAction": "A cartoon character sketches an app on a tablet, then a red circle appears around the tablet, indicating a boundary."
+    },
+    {
+      "id": "explain",
+      "title": "Bounded Design",
+      "display": "Define the problem's edges.",
+      "narration": "Bounded design clearly defines your solution's scope. It's like mapping your project, showing its exact limits. This focuses efforts and effectively manages expectations.",
+      "visualAction": "A character points to a whiteboard with a simple diagram showing a 'Problem' box connected to a 'Solution' box, with a dotted line around the solution."
+    },
+    {
+      "id": "example",
+      "title": "Evidence and Uncertainty",
+      "display": "Show your work, know your unknowns.",
+      "narration": "Show your solution works through evaluation with concrete evidence. Test it and record results. Also, document what's unknown or what your solution cannot handle.",
+      "visualAction": "A character holds a magnifying glass over a document with checkmarks and question marks. Another character nods in agreement."
+    },
+    {
+      "id": "review",
+      "title": "Why Bounded Design Matters",
+      "display": "Focus, test, trust.",
+      "narration": "Bounded design keeps you focused. Concrete evidence proves your solution works, building trust. Documenting uncertainty shows critical thinking and honesty. This approach is thorough.",
+      "visualAction": "Three thought bubbles appear above a character: 'Focus', 'Trust', 'Thorough'."
+    },
+    {
+      "id": "improve",
+      "title": "Refining Your Approach",
+      "display": "From vague to clear.",
+      "narration": "A vague task, like 'club resource helper,' needs boundaries. Ask: What resources? Which club? What actions? Defining these makes the task manageable and testable.",
+      "visualAction": "A character writes 'Club Resource Helper' on a sticky note, then crosses it out and replaces it with 'Capstone Club Resource Helper for Equipment Tracking'."
+    },
+    {
+      "id": "practice",
+      "title": "Your Turn to Define",
+      "display": "Set the stage for your project.",
+      "narration": "Now, define your project's scope. Plan how to test it, and identify any areas of uncertainty. Consider needed information and underlying assumptions carefully.",
+      "visualAction": "A character presents a blueprint to another character, who is holding a pen and notebook."
+    },
+    {
+      "id": "finish",
+      "title": "Ready for the Mission",
+      "display": "Apply your skills.",
+      "narration": "You've learned to approach problems with clear boundaries, test with evidence, and acknowledge unknowns. These vital skills prepare you for any project or mission.",
+      "visualAction": "A character gives a thumbs-up. A 'Mission' icon appears on screen."
+    }
+  ],
+  "reading": [
+    {
+      "id": "concept",
+      "title": "What is Bounded Design?",
+      "text": "Bounded design means clearly defining the scope and limitations of a solution. It involves specifying what a system or project will do, and equally important, what it will NOT do. This clarity helps manage expectations, allocate resources effectively, and prevent scope creep."
+    },
+    {
+      "id": "example",
+      "title": "Evaluating with Evidence",
+      "text": "To evaluate a solution with concrete evidence, you must design specific tests. For example, if building a calculator, tests would include '2+2=4' and '5*0=0'. Record the inputs, expected outputs, and actual outputs. This data proves whether the solution meets its defined requirements."
+    },
+    {
+      "id": "check",
+      "title": "Documenting Uncertainty",
+      "text": "Documenting uncertainty means identifying and recording aspects of your solution that are unknown, untested, or have potential limitations. This could include assumptions made, data not yet available, or scenarios the solution isn't designed to handle. It promotes transparency and responsible development."
+    }
+  ],
+  "materials": [
+    {
+      "id": "source-card-1",
+      "title": "UNESCO AI Competency Framework",
+      "text": "For students, understanding AI involves 'identifying the boundaries and limitations of AI systems' and 'evaluating AI systems based on evidence'. This includes recognizing that AI solutions are not perfect and have specific operational contexts.",
+      "kind": "authored-teaching-example"
+    },
+    {
+      "id": "source-card-2",
+      "title": "UNICEF Policy Guidance on AI for Children",
+      "text": "Responsible AI development for children requires 'transparency and explainability', which includes clearly communicating what an AI system can and cannot do, and its potential for error or bias. This aligns with documenting uncertainty and limitations.",
+      "kind": "authored-teaching-example"
+    },
+    {
+      "id": "example-project-brief",
+      "title": "Invented Teaching Example: Capstone Club Resource Helper",
+      "text": "Problem: The 'Capstone Explorers Club' needs a simple way to track borrowed equipment. Current system is paper-based and unreliable. \n\nProposed Solution (Bounded): A digital helper that tracks up to 5 unique items per member, logs borrow/return dates, and can be accessed by club leaders. It will NOT handle inventory management for items not borrowed, member registration, or financial transactions. \n\nInput/Output Sketch: \nInput: Member ID, Item ID, Borrow Date, Return Date. \nOutput: List of items currently borrowed by a member, overdue alerts. \n\nTest Cases: \n1. Test: Member 'A' borrows 'Item 1'. Expected: Item 1 assigned to Member A, borrow date logged. \n2. Test: Member 'B' tries to borrow 'Item 6' (not in scope). Expected: Error message 'Item not tracked'. \n3. Test: Member 'C' returns 'Item 2' after due date. Expected: Item 2 marked returned, overdue alert generated. \n\nSource Card: (Invented Teaching Example) Capstone Explorers Club Handbook, Section 3.2, 'Equipment Lending Policy'. \n\nChange Log: \n- V1.0 (2024-03-01): Initial design, tracking up to 5 items. \n- V1.1 (2024-03-15): Added overdue alert feature. \n\nDisclosure: This helper is a prototype. It relies on manual input and does not prevent physical loss or damage. Data is stored locally and not backed up.",
+      "kind": "authored-teaching-example"
+    }
+  ],
+  "promptExamples": {
+    "initial": "Tell me about the Capstone Club helper.",
+    "improved": "Explain the Capstone Club resource helper, including its purpose, what it does and doesn't do, and how you would test if it works.",
+    "followup": "What are some limitations or uncertainties of this helper that you would document?"
+  },
+  "activity": {
+    "title": "Design a Bounded Solution",
+    "instructions": "Choose a small, everyday problem. Design a simple solution for it, clearly defining its boundaries. Then, create at least three test cases to evaluate your solution and identify at least two uncertainties or limitations.",
+    "starter": "Problem: My friend always forgets their chores. \n\nProposed Solution (Bounded): \n\nInput/Output Sketch: \n\nTest Cases: \n1. Test: \n2. Test: \n3. Test: \n\nUncertainties/Limitations: \n1. \n2.",
+    "expectedEvidence": "A document outlining the problem, a bounded solution, input/output sketch, three test cases with expected outcomes, and at least two documented uncertainties or limitations."
+  },
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Which of the following best describes 'bounded design' for a new mobile game?",
+      "options": [
+        "Making the game available on all possible devices.",
+        "Clearly stating the game will only run on Android phones and feature 5 levels.",
+        "Adding as many features as possible to attract players."
+      ],
+      "answer": 1,
+      "explanation": "Bounded design focuses on defining what the solution WILL and WILL NOT do. Stating it will only run on Android and have 5 levels clearly sets its boundaries. The other options describe expanding scope or not setting limits.",
+      "source": "concept"
+    },
+    {
+      "id": "q2",
+      "question": "You're building a simple weather app. Which of these is the best example of 'concrete evidence' for its evaluation?",
+      "options": [
+        "Asking users if they like the app's colors.",
+        "Showing screenshots of the app working on different phones.",
+        "Comparing the app's temperature display to an official weather station's reading for the same location and time."
+      ],
+      "answer": 2,
+      "explanation": "Concrete evidence involves verifiable data. Comparing the app's output to a known accurate source (official weather station) directly proves its functionality. User opinions or screenshots don't directly verify accuracy.",
+      "source": "example"
+    },
+    {
+      "id": "q3",
+      "question": "A student designs a smart alarm clock that uses light to wake you up. They document that 'it might not work for heavy sleepers'. This is an example of:",
+      "options": [
+        "A design flaw that needs immediate fixing.",
+        "An uncertainty or limitation of the solution.",
+        "An unexpected feature of the alarm clock."
+      ],
+      "answer": 1,
+      "explanation": "Documenting that the alarm 'might not work for heavy sleepers' acknowledges a potential limitation or uncertainty of the solution's effectiveness for all users. It's not necessarily a flaw to be fixed immediately, but a known boundary.",
+      "source": "check"
+    }
+  ],
+  "mission": {
+    "title": "Develop a Bounded 'Study Buddy' Prototype",
+    "instructions": "Imagine you need a simple digital tool to help you study for a specific subject. Design a 'Study Buddy' prototype with clear boundaries. \n\n1. **Define the Problem:** What specific study challenge does it solve? \n2. **Bounded Solution:** Describe what your Study Buddy will and will not do (e.g., 'It will quiz me on vocabulary for history, but it won't grade essays'). \n3. **Input/Output Sketch:** What information does it take in, and what does it give back? \n4. **Test Cases:** Create at least three specific test cases with expected outcomes to prove your Study Buddy works within its boundaries. \n5. **Uncertainties/Limitations:** Document at least two things your Study Buddy cannot do, or situations where it might not be effective.",
+    "rubric": [
+      "The solution clearly defines its boundaries (what it does and doesn't do).",
+      "At least three relevant test cases with expected outcomes are provided.",
+      "At least two uncertainties or limitations are clearly documented.",
+      "The overall design is coherent and addresses a specific study problem."
+    ]
+  },
+  "hints": [
+    {
+      "question": "How do I decide what my solution will and won't do?",
+      "answer": "Think about the core problem you're trying to solve. Any features that don't directly address that core problem, or that make the solution too complex, can be considered outside your initial boundaries. Focus on the minimum viable solution.",
+      "source": "concept"
+    },
+    {
+      "question": "What makes a good test case?",
+      "answer": "A good test case has a clear input, a predictable expected output, and directly checks a specific function or boundary of your solution. Include tests for both expected behavior and boundary conditions (e.g., what happens if invalid input is given).",
+      "source": "example"
+    },
+    {
+      "question": "What kind of uncertainties should I look for?",
+      "answer": "Consider what assumptions you've made (e.g., 'users will always input correct data'), what data might be missing, or what scenarios your solution simply isn't designed to handle (e.g., 'this tool won't work if there's no internet connection').",
+      "source": "check"
+    }
+  ],
+  "imageBrief": {
+    "title": "Project Delivery Map",
+    "scenario": "A student is planning the final delivery of a 'School Event Planner' project, ensuring all components are accounted for.",
+    "composition": "A top-down view of a desk with a neatly organized project delivery map. The map is a flow chart showing steps and components. Various props like a laptop, a notebook, and a pen are visible around the map.",
+    "labels": [
+      "Project Scope",
+      "Test Plan",
+      "Limitations Log",
+      "User Manual",
+      "Final Report"
+    ],
+    "altText": "A project delivery map on a desk, showing a flow from 'Project Scope' to 'Final Report' with intermediate steps like 'Test Plan' and 'Limitations Log'. A laptop, notebook, and pen are nearby."
+  },
+  "educatorNotes": {
+    "sampleAnswer": "**Activity Sample Answer: Chore Reminder App**\nProblem: My younger sibling often forgets their daily chores, leading to arguments.\n\nProposed Solution (Bounded): A simple mobile app that sends three daily reminders for pre-set chores. It will NOT track chore completion, assign new chores, or communicate with other family members.\n\nInput/Output Sketch:\nInput: Chore list (e.g., 'Wash dishes', 'Take out trash'), Reminder times (e.g., 9 AM, 3 PM, 7 PM).\nOutput: Push notifications at set times displaying the chore.\n\nTest Cases:\n1. Test: Set 'Wash dishes' for 9 AM. Expected: Notification 'Wash dishes' appears at 9 AM.\n2. Test: Set a chore for a time already passed. Expected: App ignores past time, no notification sent.\n3. Test: Delete a chore from the list. Expected: No further reminders for that chore.\n\nUncertainties/Limitations:\n1. The app relies on the sibling having their phone on and notifications enabled; if not, reminders won't be seen.\n2. It doesn't verify if the chore was actually done, only reminds.\n\n**Mission Sample Answer: History Vocabulary Study Buddy**\n1. Problem: Struggling to remember key vocabulary terms for history exams.\n2. Bounded Solution: A simple web-based tool that presents history vocabulary terms and asks for definitions. It will provide instant feedback on correctness. It will NOT track progress over time, offer different quiz formats (e.g., multiple choice), or provide definitions for terms outside the pre-loaded list.\n3. Input/Output Sketch:\nInput: User types in a definition for a given term.\nOutput: 'Correct!' or 'Incorrect. The definition is...' message.\n4. Test Cases:\n   1. Test: Term 'Feudalism' displayed. User types correct definition. Expected: 'Correct!' message.\n   2. Test: Term 'Monarchy' displayed. User types incorrect definition. Expected: 'Incorrect. The definition is...' message with the correct definition.\n   3. Test: User tries to input a term not in the vocabulary list. Expected: Error message 'Term not recognized'.\n5. Uncertainties/Limitations:\n   1. The tool relies on exact matches for definitions, which might penalize slightly different but correct phrasing.\n   2. It doesn't adapt to the user's learning style or provide spaced repetition for forgotten terms.",
+    "commonMisconception": "Students often confuse 'bounded design' with 'simplistic design'. Bounded design isn't about making something basic, but about making its scope clear and manageable, even if the solution itself is complex. It's about defining the edges, not necessarily shrinking the core.",
+    "reviewChecks": [
+      "Are the solution's boundaries clearly defined (what it does and doesn't do)?",
+      "Are the test cases specific, with clear inputs and expected outputs?",
+      "Do the test cases actually evaluate the defined functionality?",
+      "Are at least two uncertainties or limitations explicitly stated?",
+      "Is the problem addressed by the solution clear and specific?",
+      "Does the documentation reflect a responsible and critical approach?"
+    ],
+    "safetyNotes": "Remind students that while designing digital solutions, they should never ask for or store personal identifying information from themselves or others. All examples should use fictional data."
+  }
+}
