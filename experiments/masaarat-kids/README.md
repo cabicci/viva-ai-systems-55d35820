@@ -1,5 +1,7 @@
-# Masaarat Kids — isolated first-lesson pilot
-One lesson: **Turn your idea into a clear prompt**, level 1 (ages 10–12).
+# Masaarat Kids — pilot history
+For the current 12-lesson Level 1 build and review instructions, see [LEVEL1-DELIVERY.md](LEVEL1-DELIVERY.md).
+
+The pilot began with **Turn your idea into a clear prompt**, level 1 (ages 10–12). The sections below record its revisions and subsequent curriculum work.
 Reserved curriculum bands: 10–12, 12–14, 14–16. Shared boundary ages are placement decisions.
 ## Content and identity
 Four authored locale packages: Egyptian Arabic, Modern Standard Arabic, neutral Gulf Arabic, and English.

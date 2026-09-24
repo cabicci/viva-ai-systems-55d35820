@@ -1,4 +1,4 @@
-import {readFile,writeFile,mkdir,cp} from 'node:fs/promises';
+import {readFile,writeFile,mkdir,cp,rm} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {pathToFileURL} from 'node:url';
 const base=resolve(import.meta.dir,'..'),repo=resolve(base,'../..');
@@ -34,5 +34,13 @@ for(const localMedia of [true,false]){
  const html=`<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Masaarat Kids</title><style>${css}</style></head><body><div id="root"></div><script type="application/json" id="data">${data}</script><script>${js.replaceAll('</script','<\\/script')}</script></body></html>`;
  await writeFile(resolve(base,'editorial-review',localMedia?'index.html':'portable.html'),html);
 }
-await cp(resolve(base,'public/generated/videos'),resolve(base,'editorial-review/generated/videos'),{recursive:true});
+const reviewVideos=resolve(base,'editorial-review/generated/videos');
+await rm(reviewVideos,{recursive:true,force:true});
+await mkdir(reviewVideos,{recursive:true});
+for(const locale of ['ar-EG','ar-MSA','ar-Gulf','en'])for(const suffix of ['.mp4','.vtt'])await cp(resolve(base,`public/generated/videos/${locale}${suffix}`),resolve(reviewVideos,`${locale}${suffix}`));
+for(let n=2;n<=12;n++){
+ const slug=`lesson-${String(n).padStart(2,'0')}`;
+ await mkdir(resolve(reviewVideos,'level1',slug),{recursive:true});
+ for(const locale of ['ar-EG','ar-MSA','ar-Gulf','en'])for(const suffix of ['.mp4','.vtt'])await cp(resolve(base,`public/generated/videos/level1/${slug}/${locale}${suffix}`),resolve(reviewVideos,'level1',slug,`${locale}${suffix}`));
+}
 console.log('Built learner review using platform IntroSection, QuizBlock and styles.css');

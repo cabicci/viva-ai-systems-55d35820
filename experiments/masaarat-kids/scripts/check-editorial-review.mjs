@@ -12,6 +12,7 @@ async function openLesson(i){if(await page.locator('#back-dashboard').count())aw
 let packages=0,questions=0;
 for(const locale of ['ar-EG','ar-MSA','ar-Gulf','en']){
  await page.selectOption('#locale',locale);
+ if(await page.locator('.review-topbar a span').textContent()!=='KIDS'||!await page.locator('.review-topbar a span').evaluate(x=>getComputedStyle(x).backgroundImage!=='none'))throw Error('Kids brand mark');
  for(let i=0;i<12;i++){
   await openLesson(i);const d=course[i].locales[locale];
   if(await page.locator('h1').textContent()!==d.title)throw Error('Title');
