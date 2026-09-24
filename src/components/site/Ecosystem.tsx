@@ -1,13 +1,50 @@
 import { Route, Workflow, Flag, Database, MessageCircle, Layers } from "lucide-react";
 import { useUiString } from "@/lib/locale/use-ui-strings";
+import { KidsPathCard } from "@/components/kids/KidsPathCard";
 
 const pillarDefs = [
-  { icon: Route, titleKey: "ecosystem.pillar1.title", descKey: "ecosystem.pillar1.desc", color: "var(--pastel-mint)", anim: "animate-float" },
-  { icon: Workflow, titleKey: "ecosystem.pillar2.title", descKey: "ecosystem.pillar2.desc", color: "var(--pastel-blue)", anim: "animate-float" },
-  { icon: MessageCircle, titleKey: "ecosystem.pillar3.title", descKey: "ecosystem.pillar3.desc", color: "var(--pastel-pink)", anim: "animate-float" },
-  { icon: Layers, titleKey: "ecosystem.pillar4.title", descKey: "ecosystem.pillar4.desc", color: "var(--pastel-yellow)", anim: "animate-float" },
-  { icon: Database, titleKey: "ecosystem.pillar5.title", descKey: "ecosystem.pillar5.desc", color: "var(--pastel-mint)", anim: "animate-chart-bounce" },
-  { icon: Flag, titleKey: "ecosystem.pillar6.title", descKey: "ecosystem.pillar6.desc", color: "var(--pastel-blue)", anim: "animate-flame" },
+  {
+    icon: Route,
+    titleKey: "ecosystem.pillar1.title",
+    descKey: "ecosystem.pillar1.desc",
+    color: "var(--pastel-mint)",
+    anim: "animate-float",
+  },
+  {
+    icon: Workflow,
+    titleKey: "ecosystem.pillar2.title",
+    descKey: "ecosystem.pillar2.desc",
+    color: "var(--pastel-blue)",
+    anim: "animate-float",
+  },
+  {
+    icon: MessageCircle,
+    titleKey: "ecosystem.pillar3.title",
+    descKey: "ecosystem.pillar3.desc",
+    color: "var(--pastel-pink)",
+    anim: "animate-float",
+  },
+  {
+    icon: Layers,
+    titleKey: "ecosystem.pillar4.title",
+    descKey: "ecosystem.pillar4.desc",
+    color: "var(--pastel-yellow)",
+    anim: "animate-float",
+  },
+  {
+    icon: Database,
+    titleKey: "ecosystem.pillar5.title",
+    descKey: "ecosystem.pillar5.desc",
+    color: "var(--pastel-mint)",
+    anim: "animate-chart-bounce",
+  },
+  {
+    icon: Flag,
+    titleKey: "ecosystem.pillar6.title",
+    descKey: "ecosystem.pillar6.desc",
+    color: "var(--pastel-blue)",
+    anim: "animate-flame",
+  },
 ] as const;
 
 const tierDefs = [
@@ -85,9 +122,7 @@ export function Ecosystem() {
           <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground">
             {t("ecosystem.tiers.title")}
           </h3>
-          <p className="mt-3 text-sm text-muted-foreground">
-            {t("ecosystem.tiers.subtitle")}
-          </p>
+          <p className="mt-3 text-sm text-muted-foreground">{t("ecosystem.tiers.subtitle")}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -116,6 +151,9 @@ export function Ecosystem() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="mt-6 max-w-2xl mx-auto">
+          <KidsPathCard />
         </div>
       </div>
     </section>

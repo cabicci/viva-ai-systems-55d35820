@@ -19,6 +19,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as KidsRouteImport } from './routes/kids'
 import { Route as ImageGalleryRouteImport } from './routes/image-gallery'
 import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as DashboardRouteImport } from './routes/dashboard'
@@ -85,6 +86,11 @@ const OnboardingRoute = OnboardingRouteImport.update({
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KidsRoute = KidsRouteImport.update({
+  id: '/kids',
+  path: '/kids',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ImageGalleryRoute = ImageGalleryRouteImport.update({
@@ -186,6 +192,7 @@ export interface FileRoutesByFullPath {
   '/forgot-password': typeof ForgotPasswordRoute
   '/image-gallery': typeof ImageGalleryRouteWithChildren
   '/index': typeof Char91indexChar93Route
+  '/kids': typeof KidsRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/pricing': typeof PricingRoute
@@ -214,6 +221,7 @@ export interface FileRoutesByTo {
   '/dashboard': typeof DashboardRoute
   '/forgot-password': typeof ForgotPasswordRoute
   '/index': typeof Char91indexChar93Route
+  '/kids': typeof KidsRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/pricing': typeof PricingRoute
@@ -244,6 +252,7 @@ export interface FileRoutesById {
   '/forgot-password': typeof ForgotPasswordRoute
   '/image-gallery': typeof ImageGalleryRouteWithChildren
   '/index': typeof Char91indexChar93Route
+  '/kids': typeof KidsRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/pricing': typeof PricingRoute
@@ -275,6 +284,7 @@ export interface FileRouteTypes {
     | '/forgot-password'
     | '/image-gallery'
     | '/index'
+    | '/kids'
     | '/login'
     | '/onboarding'
     | '/pricing'
@@ -303,6 +313,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/forgot-password'
     | '/index'
+    | '/kids'
     | '/login'
     | '/onboarding'
     | '/pricing'
@@ -332,6 +343,7 @@ export interface FileRouteTypes {
     | '/forgot-password'
     | '/image-gallery'
     | '/index'
+    | '/kids'
     | '/login'
     | '/onboarding'
     | '/pricing'
@@ -362,6 +374,7 @@ export interface RootRouteChildren {
   ForgotPasswordRoute: typeof ForgotPasswordRoute
   ImageGalleryRoute: typeof ImageGalleryRouteWithChildren
   Char91indexChar93Route: typeof Char91indexChar93Route
+  KidsRoute: typeof KidsRoute
   LoginRoute: typeof LoginRoute
   OnboardingRoute: typeof OnboardingRoute
   PricingRoute: typeof PricingRoute
@@ -447,6 +460,13 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kids': {
+      id: '/kids'
+      path: '/kids'
+      fullPath: '/kids'
+      preLoaderRoute: typeof KidsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/image-gallery': {
@@ -598,6 +618,7 @@ const rootRouteChildren: RootRouteChildren = {
   ForgotPasswordRoute: ForgotPasswordRoute,
   ImageGalleryRoute: ImageGalleryRouteWithChildren,
   Char91indexChar93Route: Char91indexChar93Route,
+  KidsRoute: KidsRoute,
   LoginRoute: LoginRoute,
   OnboardingRoute: OnboardingRoute,
   PricingRoute: PricingRoute,
