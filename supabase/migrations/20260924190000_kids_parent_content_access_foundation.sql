@@ -94,7 +94,21 @@ CREATE POLICY kids_progress_parent_read ON public.kids_lesson_progress
             WHERE id = profile_id AND parent_id = (SELECT auth.uid()))
   );
 
--- No client role may write verification, approval, entitlement, or progress records.
+CREATE TABLE public.kids_media (
+  level_id text NOT NULL CHECK (level_id IN ('level-1', 'level-2', 'level-3')),
+  lesson_number integer NOT NULL CHECK (lesson_number BETWEEN 1 AND 12),
+  locale text NOT NULL CHECK (locale IN ('ar-EG', 'ar-MSA', 'ar-Gulf', 'en')),
+  video_guid uuid NOT NULL UNIQUE,
+  video_sha256 text NOT NULL CHECK (video_sha256 ~ '^[0-9a-f]{64}$'),
+  caption_sha256 text NOT NULL CHECK (caption_sha256 ~ '^[0-9a-f]{64}$'),
+  staged_at timestamptz NOT NULL DEFAULT now(),
+  PRIMARY KEY (level_id, lesson_number, locale)
+);
+ALTER TABLE public.kids_media ENABLE ROW LEVEL SECURITY;
+REVOKE ALL ON public.kids_media FROM PUBLIC, anon, authenticated;
+
+-- No client role may write verification, approval, entitlement, media or progress records.
+GRANT ALL ON public.kids_media TO service_role;
 GRANT ALL ON public.kids_release_control, public.kids_parent_verifications,
   public.kids_content_approvals, public.kids_family_entitlements,
   public.kids_profiles, public.kids_lesson_progress TO service_role;
