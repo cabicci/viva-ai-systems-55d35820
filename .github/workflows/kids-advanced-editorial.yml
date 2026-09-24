@@ -1,0 +1,52 @@
+name: Masaarat Kids Levels 2 and 3 editorial lessons
+on:
+  push:
+    branches: [feature/masaarat-kids-levels-2-3]
+    paths: [experiments/masaarat-kids/editorial-request-advanced.json]
+permissions:
+  contents: read
+concurrency:
+  group: masaarat-kids-advanced-editorial
+  cancel-in-progress: false
+jobs:
+  write:
+    if: github.repository == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/feature/masaarat-kids-levels-2-3'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        level: [2, 3]
+        lesson: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    defaults:
+      run:
+        working-directory: experiments/masaarat-kids
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12"
+      - name: Validate isolated request
+        env:
+          LEVEL: ${{ matrix.level }}
+          LESSON: ${{ matrix.lesson }}
+        run: |
+          python -c 'import json,os; r=json.load(open("editorial-request-advanced.json")); assert r["publish"] is False and r["generateMedia"] is False and int(os.environ["LEVEL"]) in r["levels"] and int(os.environ["LESSON"]) in r["lessons"]'
+          python -m py_compile scripts/generate-editorial.py scripts/generate-editorial-advanced.py
+      - name: Draft and review four localized lessons
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          LEVEL: ${{ matrix.level }}
+          LESSON: ${{ matrix.lesson }}
+        run: python -u scripts/generate-editorial-advanced.py --level "$LEVEL" --lesson "$LESSON"
+      - name: Preserve completed drafts
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: kids-advanced-editorial-l${{ matrix.level }}-${{ matrix.lesson }}-${{ github.run_id }}-${{ github.run_attempt }}
+          retention-days: 30
+          if-no-files-found: warn
+          path: experiments/masaarat-kids/curriculum/level-*/lesson-*/
