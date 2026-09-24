@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export const TURNSTILE_SITE_KEY = "0x4AAAAAADYA0QlFntXN4rCu";
+export const TURNSTILE_SITE_KEY = "0x4AAAAAAFBsRx0alEEBP1G5";
 
 declare global {
   interface Window {
