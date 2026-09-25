@@ -16,7 +16,7 @@ const ar = {
     "نستخدم بريد حسابك المؤكد وبلد إقامتك وإقرارك لمعالجة هذا الطلب فقط. اختيار البلد لا يعني أن خدمة الأطفال مفعّلة فيه.",
   send: "إرسال طلب مراجعة وليّ الأمر",
   sending: "جارٍ إرسال الطلب...",
-  pending: "وصل طلبك وهو بانتظار مراجعة بشرية. لا تُرسل بيانات الطفل.",
+  pending: "وصل طلبك. يلزم اكتمال التحقق من وليّ الأمر قبل فتح الخدمة. لا تُرسل بيانات الطفل.",
   approved: "اعتمدت المراجعة. حدّث الصفحة للتحقق من جاهزية الخدمة.",
   rejected: "لم يُقبل طلبك. تواصل مع الدعم ببيانات حسابك فقط، دون تفاصيل الطفل.",
   offline: "خدمة طلبات أولياء الأمور غير متاحة الآن. لا تُرسل بيانات الطفل.",
@@ -35,7 +35,8 @@ const en = {
     "We use your verified account email, country of residence and acknowledgment to process this request only. Selecting a country does not mean children's services are enabled there.",
   send: "Request parent review",
   sending: "Sending request...",
-  pending: "Your request awaits human review. Do not send child details.",
+  pending:
+    "Your request was received. Parental verification must be completed before access opens. Do not send child details.",
   approved: "The review was approved. Refresh to check service readiness.",
   rejected:
     "Your request was not approved. Contact support with your account details only, without child details.",

@@ -40,7 +40,7 @@ describe("adult-only Kids parent request", () => {
         p_adult_confirmed: true,
       }),
     );
-    expect(await screen.findByText(/Your request awaits human review/)).toBeInTheDocument();
+    expect(await screen.findByText(/Your request was received/)).toBeInTheDocument();
   });
 
   it("clears residence and confirmations when the signed-in account changes", async () => {

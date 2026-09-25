@@ -65,6 +65,7 @@ try {
     "20260924190000_kids_parent_content_access_foundation.sql",
     "20260925120000_kids_parent_access_review.sql",
     "20260925140000_kids_market_release_gates.sql",
+    "20260925160000_kids_family_profile_limit.sql",
   ])
     await pg.exec(readFileSync(`supabase/migrations/${migration}`, "utf8"));
   const markets = await pg.query(
@@ -188,6 +189,44 @@ try {
     `INSERT INTO public.kids_family_entitlements VALUES ('${parent}',now()-interval '1 hour',now()+interval '1 hour','entitlement-test')`,
   );
   await allowed(parent, 3, true);
+  await asUser(parent, async () => {
+    await pg.exec(`INSERT INTO public.kids_profiles(parent_id,display_name,level_id)
+      VALUES ('${parent}','Second','level-2'),('${parent}','Third','level-3')`);
+    await denied(
+      () =>
+        pg.exec(`INSERT INTO public.kids_profiles(parent_id,display_name,level_id)
+        VALUES ('${parent}','Fourth','level-1')`),
+      "Direct client insert must not create a fourth child",
+    );
+    await pg.exec(`UPDATE public.kids_profiles SET display_name='Updated' WHERE id='${profile}'`);
+    await pg.exec(`DELETE FROM public.kids_profiles WHERE display_name='Third'`);
+    await pg.exec(`INSERT INTO public.kids_profiles(parent_id,display_name,level_id)
+      VALUES ('${parent}','Replacement','level-3')`);
+  });
+  await denied(
+    () => pg.exec(`UPDATE public.kids_profiles SET parent_id='${other}' WHERE id='${profile}'`),
+    "Even a privileged writer cannot transfer profile ownership",
+  );
+  // A multi-row insert is atomic; no partial fourth/fifth family member remains.
+  await pg.exec(`DELETE FROM public.kids_profiles WHERE display_name='Replacement'`);
+  await denied(
+    () =>
+      pg.exec(`INSERT INTO public.kids_profiles(parent_id,display_name,level_id)
+      VALUES ('${parent}','Fourth','level-1'),('${parent}','Fifth','level-2')`),
+    "Bulk inserts cannot bypass the family cap",
+  );
+  const count = await pg.query(
+    `SELECT count(*)::int AS n FROM public.kids_profiles WHERE parent_id='${parent}'`,
+  );
+  check(count.rows[0].n === 2, "Rejected bulk insert must roll back all its rows");
+  await pg.exec("BEGIN ISOLATION LEVEL REPEATABLE READ");
+  await denied(
+    () =>
+      pg.exec(`INSERT INTO public.kids_profiles(parent_id,display_name,level_id)
+      VALUES ('${parent}','Stale snapshot','level-1')`),
+    "Retained transaction snapshots must not bypass the serialized count",
+  );
+  await pg.exec("ROLLBACK");
   await pg.exec(
     "UPDATE public.kids_market_release SET accepts_child_data=false WHERE country_code='EG'",
   );
@@ -212,7 +251,7 @@ try {
   );
   check(retry.rows[0].status === "rejected", "Resubmission cannot restore revoked approval");
   console.log(
-    "Kids market release SQL gates: PASS (22 closed countries; identity, authorization, country isolation, lesson entitlement and revocation)",
+    "Kids SQL gates: PASS (22 closed countries; identity, authorization, isolation, independent entitlement, three-profile cap, atomic bulk rejection and revocation)",
   );
 } finally {
   await pg.close();

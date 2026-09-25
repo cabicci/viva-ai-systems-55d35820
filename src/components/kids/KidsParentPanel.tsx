@@ -9,6 +9,7 @@ import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { KIDS_FAMILY_POLICY } from "@/lib/kids/family-policy";
 
 export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () => void } = {}) {
   const { locale } = useLocale();
@@ -19,6 +20,7 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
   const [level, setLevel] = useState<KidsLevelId>("level-1");
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState(false);
+  const atProfileLimit = profiles.length >= KIDS_FAMILY_POLICY.maxProfiles;
 
   async function addProfile(event: React.FormEvent) {
     event.preventDefault();
@@ -104,12 +106,18 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
           </div>
           <form onSubmit={addProfile} className="space-y-3 rounded-2xl bg-muted/30 p-4">
             <h3 className="font-bold">{copy.create}</h3>
+            {atProfileLimit && (
+              <p role="status" className="text-sm">
+                {copy.profileLimit}
+              </p>
+            )}
             <Label htmlFor="kids-profile-name">{copy.name}</Label>
             <Input
               id="kids-profile-name"
               value={name}
               maxLength={40}
               required
+              disabled={atProfileLimit || saving}
               onChange={(event) => setName(event.target.value)}
               autoComplete="off"
             />
@@ -117,6 +125,7 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
             <select
               id="kids-profile-level"
               value={level}
+              disabled={atProfileLimit || saving}
               onChange={(event) => setLevel(event.target.value as KidsLevelId)}
               className="min-h-11 w-full rounded-md border border-input bg-background px-3"
             >
@@ -131,7 +140,7 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
                 {copy.profileError}
               </p>
             )}
-            <Button type="submit" disabled={saving || !name.trim()}>
+            <Button type="submit" disabled={saving || atProfileLimit || !name.trim()}>
               {copy.submit}
             </Button>
           </form>
