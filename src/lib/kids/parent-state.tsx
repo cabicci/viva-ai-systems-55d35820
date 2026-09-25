@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
 import { KIDS_LEVELS, type KidsLevelId } from "./catalogue";
+import { KIDS_FAMILY_POLICY } from "./family-policy";
 
 export type KidsProfile = { id: string; level_id: KidsLevelId; display_name: string };
 export type ParentState =
@@ -123,6 +124,8 @@ export function useKidsParentState() {
         throw new Error("Kids parent approval is required");
       }
       const name = displayName.trim();
+      if (profiles.length >= KIDS_FAMILY_POLICY.maxProfiles)
+        throw new Error("Kids family profile limit reached");
       if (!name || name.length > 40) throw new Error("Invalid profile name");
       // RLS repeats both owner and server-side release/verification checks.
       const { error } = await supabase
@@ -131,7 +134,7 @@ export function useKidsParentState() {
       if (error) throw new Error("Unable to create Kids profile");
       refresh();
     },
-    [state, verifiedUserId, userId, user, refresh],
+    [state, verifiedUserId, userId, user, profiles.length, refresh],
   );
 
   const effectiveState: ParentState = authLoading

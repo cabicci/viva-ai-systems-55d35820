@@ -18,6 +18,26 @@ beforeEach(() => {
 });
 
 describe("Kids parent privacy gate", () => {
+  it("blocks a fourth profile before sending child data", async () => {
+    mock.rpc.mockResolvedValue({ data: true, error: null });
+    const query = {
+      select: vi.fn().mockReturnThis(),
+      eq: vi.fn().mockResolvedValue({
+        data: [1, 2, 3].map((n) => ({
+          id: `profile-${n}`,
+          level_id: "level-1",
+          display_name: "Explorer",
+        })),
+        error: null,
+      }),
+      insert: vi.fn(),
+    };
+    mock.from.mockReturnValue(query);
+    const { result } = renderHook(() => useKidsParentState());
+    await waitFor(() => expect(result.current.state).toBe("ready"));
+    await expect(result.current.createProfile("Fourth", "level-1")).rejects.toThrow("limit");
+    expect(query.insert).not.toHaveBeenCalled();
+  });
   it("does not request child profiles or collect child data when release or verification is absent", async () => {
     mock.rpc.mockResolvedValue({ data: false, error: null });
     const { result } = renderHook(() => useKidsParentState());

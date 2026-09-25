@@ -18,7 +18,7 @@ const arabic = {
   familyDescription: "باقات Pro وPro Plus للكبار لا تفتح دروس كيدز تلقائيًا.",
   bundleTitle: "خصم الجمع 10%",
   bundleDescription:
-    "خصم 10% عند الجمع بين اشتراك كيدز وPro أو Pro Plus. سيُعلن السعر وشروط تطبيق الخصم بعد اعتمادها.",
+    "خصم 10% على اشتراك كيدز فقط عند الجمع مع Pro أو Pro Plus؛ لا يتغير سعر باقة الكبار.",
   parentNote:
     "إنشاء ملفات الأطفال والوصول للدروس يتطلبان تفعيل سياسة وليّ الأمر والخصوصية والتحقق على الخادم.",
 } as const;
@@ -43,7 +43,7 @@ const en: KidsCopy = {
   familyDescription: "Adult Pro and Pro Plus plans do not unlock Kids lessons automatically.",
   bundleTitle: "10% bundle discount",
   bundleDescription:
-    "A 10% discount applies when combining Kids with Pro or Pro Plus. Pricing and discount terms will be announced after approval.",
+    "Save 10% on Kids only when combined with Pro or Pro Plus; the adult plan price stays the same.",
   parentNote:
     "Child profiles and lesson access require parental verification, approved privacy controls, and server release.",
 };

@@ -3,6 +3,7 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { KidsBrand } from "@/components/kids/KidsBrand";
 import { KidsParentPanel } from "@/components/kids/KidsParentPanel";
+import { KidsFamilyPricing } from "@/components/kids/KidsFamilyPricing";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { KIDS_LEVELS } from "@/lib/kids/catalogue";
 import { getKidsCopy } from "@/lib/kids/copy";
@@ -67,6 +68,7 @@ function KidsPage() {
           </section>
 
           <KidsParentPanel />
+          <KidsFamilyPricing />
 
           <section className="grid gap-5 md:grid-cols-2">
             <div className="rounded-2xl border border-border/60 bg-card p-6">
