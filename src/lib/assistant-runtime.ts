@@ -77,7 +77,24 @@ export async function callAssistantRuntime(
   );
 
   if (error) {
-    throw new Error(error.message || "Assistant runtime call failed");
+    // Expected denials (no AI access / quota) come back as non-2xx with a JSON body.
+    let code: string | undefined;
+    try {
+      const ctx = (error as { context?: Response }).context;
+      if (ctx && typeof ctx.clone === "function") {
+        const body = (await ctx.clone().json()) as { error?: string };
+        code = body?.error;
+      }
+    } catch {
+      /* body not JSON — fall through */
+    }
+    if (code === "AI_ACCESS_DENIED") {
+      throw new Error("مساعد المنصة غير متاح في خطتك الحالية. رقّي اشتراكك لاستخدامه.");
+    }
+    if (code === "QUOTA_EXCEEDED") {
+      throw new Error("وصلت للحد المسموح من أسئلة المساعد حاليًا. حاول لاحقًا.");
+    }
+    throw new Error("تعذّر الاتصال بمساعد المنصة الآن. حاول مرة أخرى.");
   }
   if (!data) {
     throw new Error("Assistant runtime returned an empty response");
