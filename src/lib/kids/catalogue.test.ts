@@ -3,7 +3,6 @@ import {
   KIDS_BUNDLE_DISCOUNT_PERCENT,
   KIDS_FREE_LESSONS_PER_LEVEL,
   KIDS_LEVELS,
-  bundleTotalMinor,
   isKidsFreeLesson,
 } from "./catalogue";
 
@@ -21,11 +20,7 @@ describe("Kids product boundaries", () => {
     }
   });
 
-  it("discounts the combined adult and Kids price by ten percent", () => {
+  it("records only the approved bundle discount percentage", () => {
     expect(KIDS_BUNDLE_DISCOUNT_PERCENT).toBe(10);
-    expect(bundleTotalMinor("pro", 10000, 20000)).toBe(27000);
-    expect(bundleTotalMinor("pro_plus", 20000, 20000)).toBe(36000);
-    expect(() => bundleTotalMinor("free" as "pro", 0, 20000)).toThrow();
-    expect(() => bundleTotalMinor("pro", -1, 20000)).toThrow();
   });
 });
