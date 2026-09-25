@@ -8,6 +8,7 @@ const ar = {
   waiting: "التحقق من جاهزية الحساب...",
   pending: "إنشاء ملفات الأطفال والدروس مغلق حتى يكتمل تحقق وليّ الأمر واعتماد الخصوصية.",
   unavailable: "تعذّر التحقق من جاهزية كيدز الآن. حاول لاحقًا.",
+  setupPending: "خدمة كيدز قيد التجهيز. إنشاء ملفات الأطفال والدروس غير متاح الآن.",
   retryCheck: "إعادة المحاولة",
   request: "اطلب تحقق وليّ الأمر",
   requestNote: "تواصل ببريد حسابك فقط، دون بيانات الطفل.",
@@ -57,6 +58,7 @@ const en: Copy = {
   pending:
     "Child profiles and lessons remain closed until parental verification and privacy approval.",
   unavailable: "Kids readiness could not be checked. Try later.",
+  setupPending: "Kids is being prepared. Child profiles and lessons are not available yet.",
   retryCheck: "Try again",
   request: "Request parental verification",
   requestNote: "Contact us with your account email only; no child details.",

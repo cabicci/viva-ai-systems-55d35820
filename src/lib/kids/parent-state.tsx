@@ -4,7 +4,13 @@ import { useAuth } from "@/lib/auth-context";
 import { KIDS_LEVELS, type KidsLevelId } from "./catalogue";
 
 export type KidsProfile = { id: string; level_id: KidsLevelId; display_name: string };
-export type ParentState = "signed-out" | "checking" | "pending" | "ready" | "unavailable";
+export type ParentState =
+  | "signed-out"
+  | "checking"
+  | "pending"
+  | "not-released"
+  | "ready"
+  | "unavailable";
 
 function validProfile(value: unknown): value is KidsProfile {
   if (!value || typeof value !== "object") return false;
@@ -75,7 +81,11 @@ export function useKidsParentState() {
       const { data, error } = await supabase.rpc("kids_parent_can_manage_profiles" as never);
       if (cancelled || epoch !== requestEpoch.current) return;
       if (error) {
-        setState("unavailable");
+        // The service has not been installed yet: show a closed launch state,
+        // without inviting repeated retries or implying a problem with the account.
+        setState(
+          error.code === "PGRST202" || error.code === "42883" ? "not-released" : "unavailable",
+        );
         return;
       }
       if (data !== true) {

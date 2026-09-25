@@ -66,10 +66,14 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
           {copy.waiting}
         </p>
       )}
-      {(state === "pending" || state === "unavailable") && (
+      {(state === "pending" || state === "not-released" || state === "unavailable") && (
         <div className="mt-4 space-y-3">
           <p role="status" className="text-sm">
-            {state === "pending" ? copy.pending : copy.unavailable}
+            {state === "pending"
+              ? copy.pending
+              : state === "not-released"
+                ? copy.setupPending
+                : copy.unavailable}
           </p>
           {state === "pending" ? (
             <>
@@ -82,11 +86,11 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
                 {copy.request}
               </Link>
             </>
-          ) : (
+          ) : state === "unavailable" ? (
             <Button type="button" variant="outline" onClick={refresh}>
               {copy.retryCheck}
             </Button>
-          )}
+          ) : null}
         </div>
       )}
       {state === "ready" && (
