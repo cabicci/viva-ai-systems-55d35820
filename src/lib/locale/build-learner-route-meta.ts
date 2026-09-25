@@ -6,6 +6,7 @@ import {
 import { resolveLearnDisplayTitle } from "@/lib/locale/learn-display-title";
 import { getUiString } from "@/lib/locale/ui-strings";
 import type { SupportedLocale } from "./types";
+import { buildPublicRouteIdentity } from "@/lib/seo/public-route-identity";
 
 export type LearnerRouteMetaKind = "curriculum" | "dashboard" | "learn" | "account";
 
@@ -53,13 +54,17 @@ export function buildLocalizedLearnerMeta(
   locale: SupportedLocale,
   kind: LearnerRouteMetaKind,
   data: BuildLocalizedLearnerMetaData = {},
-): { meta: RouteMetaTag[] } {
+): { meta: RouteMetaTag[]; links?: { rel: string; href: string }[] } {
   const brandSuffix = getUiString(locale, "meta.brandSuffix");
 
   if (kind === "curriculum") {
     const title = getUiString(locale, "meta.curriculum.title");
     const description = getUiString(locale, "meta.curriculum.description");
-    return { meta: withSocialTags(title, description) };
+    const identity = buildPublicRouteIdentity("curriculum");
+    return {
+      meta: [...withSocialTags(title, description), ...identity.meta],
+      links: identity.links,
+    };
   }
 
   if (kind === "dashboard") {
@@ -76,10 +81,10 @@ export function buildLocalizedLearnerMeta(
 
   if (data.unknownPath || !data.pathId) {
     const title = getUiString(locale, "meta.learn.titleUnknown");
-    const description = interpolate(
-      getUiString(locale, "meta.learn.descriptionPathOnly"),
-      { pathTitle: title, brandSuffix },
-    );
+    const description = interpolate(getUiString(locale, "meta.learn.descriptionPathOnly"), {
+      pathTitle: title,
+      brandSuffix,
+    });
     return {
       meta: [
         { title },
@@ -100,10 +105,10 @@ export function buildLocalizedLearnerMeta(
       pathTitle,
       brandSuffix,
     });
-    const description = interpolate(
-      getUiString(locale, "meta.learn.descriptionPathOnly"),
-      { pathTitle, brandSuffix },
-    );
+    const description = interpolate(getUiString(locale, "meta.learn.descriptionPathOnly"), {
+      pathTitle,
+      brandSuffix,
+    });
     return {
       meta: [
         { title },
@@ -117,20 +122,17 @@ export function buildLocalizedLearnerMeta(
     };
   }
 
-  const lessonTitle = resolveLearnLessonTitle(
-    locale,
-    data.lessonId,
-    data.packageTitle,
-  );
+  const lessonTitle = resolveLearnLessonTitle(locale, data.lessonId, data.packageTitle);
   const title = interpolate(getUiString(locale, "meta.learn.titleWithLesson"), {
     lessonTitle,
     pathTitle,
     brandSuffix,
   });
-  const description = interpolate(
-    getUiString(locale, "meta.learn.descriptionWithLesson"),
-    { lessonTitle, pathTitle, brandSuffix },
-  );
+  const description = interpolate(getUiString(locale, "meta.learn.descriptionWithLesson"), {
+    lessonTitle,
+    pathTitle,
+    brandSuffix,
+  });
 
   return {
     meta: [

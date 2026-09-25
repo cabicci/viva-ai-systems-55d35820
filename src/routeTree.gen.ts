@@ -19,6 +19,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as KidsRouteImport } from './routes/kids'
 import { Route as ImageGalleryRouteImport } from './routes/image-gallery'
 import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as DashboardRouteImport } from './routes/dashboard'
@@ -31,11 +32,16 @@ import { Route as AiAssistantRouteImport } from './routes/ai-assistant'
 import { Route as AccountRouteImport } from './routes/account'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RoadmapIndexRouteImport } from './routes/roadmap.index'
+import { Route as KidsIndexRouteImport } from './routes/kids.index'
 import { Route as ImageGalleryIndexRouteImport } from './routes/image-gallery.index'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as RoadmapIdRouteImport } from './routes/roadmap.$id'
+import { Route as KidsLevelIdRouteImport } from './routes/kids.$levelId'
 import { Route as ImageGalleryPathRouteImport } from './routes/image-gallery.$path'
+import { Route as AdminKidsParentsRouteImport } from './routes/admin.kids-parents'
+import { Route as KidsLevelIdIndexRouteImport } from './routes/kids.$levelId.index'
 import { Route as LearnPathIdLessonIdRouteImport } from './routes/learn.$pathId.$lessonId'
+import { Route as KidsLevelIdLessonNumberRouteImport } from './routes/kids.$levelId.$lessonNumber'
 
 const Char91indexChar93Route = Char91indexChar93RouteImport.update({
   id: '/index',
@@ -85,6 +91,11 @@ const OnboardingRoute = OnboardingRouteImport.update({
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KidsRoute = KidsRouteImport.update({
+  id: '/kids',
+  path: '/kids',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ImageGalleryRoute = ImageGalleryRouteImport.update({
@@ -147,6 +158,11 @@ const RoadmapIndexRoute = RoadmapIndexRouteImport.update({
   path: '/roadmap/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KidsIndexRoute = KidsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => KidsRoute,
+} as any)
 const ImageGalleryIndexRoute = ImageGalleryIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -162,15 +178,35 @@ const RoadmapIdRoute = RoadmapIdRouteImport.update({
   path: '/roadmap/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KidsLevelIdRoute = KidsLevelIdRouteImport.update({
+  id: '/$levelId',
+  path: '/$levelId',
+  getParentRoute: () => KidsRoute,
+} as any)
 const ImageGalleryPathRoute = ImageGalleryPathRouteImport.update({
   id: '/$path',
   path: '/$path',
   getParentRoute: () => ImageGalleryRoute,
 } as any)
+const AdminKidsParentsRoute = AdminKidsParentsRouteImport.update({
+  id: '/admin/kids-parents',
+  path: '/admin/kids-parents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KidsLevelIdIndexRoute = KidsLevelIdIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => KidsLevelIdRoute,
+} as any)
 const LearnPathIdLessonIdRoute = LearnPathIdLessonIdRouteImport.update({
   id: '/learn/$pathId/$lessonId',
   path: '/learn/$pathId/$lessonId',
   getParentRoute: () => rootRouteImport,
+} as any)
+const KidsLevelIdLessonNumberRoute = KidsLevelIdLessonNumberRouteImport.update({
+  id: '/$lessonNumber',
+  path: '/$lessonNumber',
+  getParentRoute: () => KidsLevelIdRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -186,6 +222,7 @@ export interface FileRoutesByFullPath {
   '/forgot-password': typeof ForgotPasswordRoute
   '/image-gallery': typeof ImageGalleryRouteWithChildren
   '/index': typeof Char91indexChar93Route
+  '/kids': typeof KidsRouteWithChildren
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/pricing': typeof PricingRoute
@@ -195,12 +232,17 @@ export interface FileRoutesByFullPath {
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
   '/terms': typeof TermsRoute
+  '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
+  '/kids/$levelId': typeof KidsLevelIdRouteWithChildren
   '/roadmap/$id': typeof RoadmapIdRoute
   '/admin/': typeof AdminIndexRoute
   '/image-gallery/': typeof ImageGalleryIndexRoute
+  '/kids/': typeof KidsIndexRoute
   '/roadmap/': typeof RoadmapIndexRoute
+  '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
+  '/kids/$levelId/': typeof KidsLevelIdIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -223,12 +265,16 @@ export interface FileRoutesByTo {
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
   '/terms': typeof TermsRoute
+  '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/roadmap/$id': typeof RoadmapIdRoute
   '/admin': typeof AdminIndexRoute
   '/image-gallery': typeof ImageGalleryIndexRoute
+  '/kids': typeof KidsIndexRoute
   '/roadmap': typeof RoadmapIndexRoute
+  '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
+  '/kids/$levelId': typeof KidsLevelIdIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -244,6 +290,7 @@ export interface FileRoutesById {
   '/forgot-password': typeof ForgotPasswordRoute
   '/image-gallery': typeof ImageGalleryRouteWithChildren
   '/index': typeof Char91indexChar93Route
+  '/kids': typeof KidsRouteWithChildren
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/pricing': typeof PricingRoute
@@ -253,12 +300,17 @@ export interface FileRoutesById {
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
   '/terms': typeof TermsRoute
+  '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
+  '/kids/$levelId': typeof KidsLevelIdRouteWithChildren
   '/roadmap/$id': typeof RoadmapIdRoute
   '/admin/': typeof AdminIndexRoute
   '/image-gallery/': typeof ImageGalleryIndexRoute
+  '/kids/': typeof KidsIndexRoute
   '/roadmap/': typeof RoadmapIndexRoute
+  '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
+  '/kids/$levelId/': typeof KidsLevelIdIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -275,6 +327,7 @@ export interface FileRouteTypes {
     | '/forgot-password'
     | '/image-gallery'
     | '/index'
+    | '/kids'
     | '/login'
     | '/onboarding'
     | '/pricing'
@@ -284,12 +337,17 @@ export interface FileRouteTypes {
     | '/start'
     | '/system-state'
     | '/terms'
+    | '/admin/kids-parents'
     | '/image-gallery/$path'
+    | '/kids/$levelId'
     | '/roadmap/$id'
     | '/admin/'
     | '/image-gallery/'
+    | '/kids/'
     | '/roadmap/'
+    | '/kids/$levelId/$lessonNumber'
     | '/learn/$pathId/$lessonId'
+    | '/kids/$levelId/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -312,12 +370,16 @@ export interface FileRouteTypes {
     | '/start'
     | '/system-state'
     | '/terms'
+    | '/admin/kids-parents'
     | '/image-gallery/$path'
     | '/roadmap/$id'
     | '/admin'
     | '/image-gallery'
+    | '/kids'
     | '/roadmap'
+    | '/kids/$levelId/$lessonNumber'
     | '/learn/$pathId/$lessonId'
+    | '/kids/$levelId'
   id:
     | '__root__'
     | '/'
@@ -332,6 +394,7 @@ export interface FileRouteTypes {
     | '/forgot-password'
     | '/image-gallery'
     | '/index'
+    | '/kids'
     | '/login'
     | '/onboarding'
     | '/pricing'
@@ -341,12 +404,17 @@ export interface FileRouteTypes {
     | '/start'
     | '/system-state'
     | '/terms'
+    | '/admin/kids-parents'
     | '/image-gallery/$path'
+    | '/kids/$levelId'
     | '/roadmap/$id'
     | '/admin/'
     | '/image-gallery/'
+    | '/kids/'
     | '/roadmap/'
+    | '/kids/$levelId/$lessonNumber'
     | '/learn/$pathId/$lessonId'
+    | '/kids/$levelId/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -362,6 +430,7 @@ export interface RootRouteChildren {
   ForgotPasswordRoute: typeof ForgotPasswordRoute
   ImageGalleryRoute: typeof ImageGalleryRouteWithChildren
   Char91indexChar93Route: typeof Char91indexChar93Route
+  KidsRoute: typeof KidsRouteWithChildren
   LoginRoute: typeof LoginRoute
   OnboardingRoute: typeof OnboardingRoute
   PricingRoute: typeof PricingRoute
@@ -371,6 +440,7 @@ export interface RootRouteChildren {
   StartRoute: typeof StartRoute
   SystemStateRoute: typeof SystemStateRoute
   TermsRoute: typeof TermsRoute
+  AdminKidsParentsRoute: typeof AdminKidsParentsRoute
   RoadmapIdRoute: typeof RoadmapIdRoute
   AdminIndexRoute: typeof AdminIndexRoute
   RoadmapIndexRoute: typeof RoadmapIndexRoute
@@ -447,6 +517,13 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kids': {
+      id: '/kids'
+      path: '/kids'
+      fullPath: '/kids'
+      preLoaderRoute: typeof KidsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/image-gallery': {
@@ -533,6 +610,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RoadmapIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/kids/': {
+      id: '/kids/'
+      path: '/'
+      fullPath: '/kids/'
+      preLoaderRoute: typeof KidsIndexRouteImport
+      parentRoute: typeof KidsRoute
+    }
     '/image-gallery/': {
       id: '/image-gallery/'
       path: '/'
@@ -554,6 +638,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RoadmapIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/kids/$levelId': {
+      id: '/kids/$levelId'
+      path: '/$levelId'
+      fullPath: '/kids/$levelId'
+      preLoaderRoute: typeof KidsLevelIdRouteImport
+      parentRoute: typeof KidsRoute
+    }
     '/image-gallery/$path': {
       id: '/image-gallery/$path'
       path: '/$path'
@@ -561,12 +652,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImageGalleryPathRouteImport
       parentRoute: typeof ImageGalleryRoute
     }
+    '/admin/kids-parents': {
+      id: '/admin/kids-parents'
+      path: '/admin/kids-parents'
+      fullPath: '/admin/kids-parents'
+      preLoaderRoute: typeof AdminKidsParentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kids/$levelId/': {
+      id: '/kids/$levelId/'
+      path: '/'
+      fullPath: '/kids/$levelId/'
+      preLoaderRoute: typeof KidsLevelIdIndexRouteImport
+      parentRoute: typeof KidsLevelIdRoute
+    }
     '/learn/$pathId/$lessonId': {
       id: '/learn/$pathId/$lessonId'
       path: '/learn/$pathId/$lessonId'
       fullPath: '/learn/$pathId/$lessonId'
       preLoaderRoute: typeof LearnPathIdLessonIdRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/kids/$levelId/$lessonNumber': {
+      id: '/kids/$levelId/$lessonNumber'
+      path: '/$lessonNumber'
+      fullPath: '/kids/$levelId/$lessonNumber'
+      preLoaderRoute: typeof KidsLevelIdLessonNumberRouteImport
+      parentRoute: typeof KidsLevelIdRoute
     }
   }
 }
@@ -585,6 +697,32 @@ const ImageGalleryRouteWithChildren = ImageGalleryRoute._addFileChildren(
   ImageGalleryRouteChildren,
 )
 
+interface KidsLevelIdRouteChildren {
+  KidsLevelIdLessonNumberRoute: typeof KidsLevelIdLessonNumberRoute
+  KidsLevelIdIndexRoute: typeof KidsLevelIdIndexRoute
+}
+
+const KidsLevelIdRouteChildren: KidsLevelIdRouteChildren = {
+  KidsLevelIdLessonNumberRoute: KidsLevelIdLessonNumberRoute,
+  KidsLevelIdIndexRoute: KidsLevelIdIndexRoute,
+}
+
+const KidsLevelIdRouteWithChildren = KidsLevelIdRoute._addFileChildren(
+  KidsLevelIdRouteChildren,
+)
+
+interface KidsRouteChildren {
+  KidsLevelIdRoute: typeof KidsLevelIdRouteWithChildren
+  KidsIndexRoute: typeof KidsIndexRoute
+}
+
+const KidsRouteChildren: KidsRouteChildren = {
+  KidsLevelIdRoute: KidsLevelIdRouteWithChildren,
+  KidsIndexRoute: KidsIndexRoute,
+}
+
+const KidsRouteWithChildren = KidsRoute._addFileChildren(KidsRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AccountRoute: AccountRoute,
@@ -598,6 +736,7 @@ const rootRouteChildren: RootRouteChildren = {
   ForgotPasswordRoute: ForgotPasswordRoute,
   ImageGalleryRoute: ImageGalleryRouteWithChildren,
   Char91indexChar93Route: Char91indexChar93Route,
+  KidsRoute: KidsRouteWithChildren,
   LoginRoute: LoginRoute,
   OnboardingRoute: OnboardingRoute,
   PricingRoute: PricingRoute,
@@ -607,6 +746,7 @@ const rootRouteChildren: RootRouteChildren = {
   StartRoute: StartRoute,
   SystemStateRoute: SystemStateRoute,
   TermsRoute: TermsRoute,
+  AdminKidsParentsRoute: AdminKidsParentsRoute,
   RoadmapIdRoute: RoadmapIdRoute,
   AdminIndexRoute: AdminIndexRoute,
   RoadmapIndexRoute: RoadmapIndexRoute,

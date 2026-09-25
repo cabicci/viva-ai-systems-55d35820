@@ -1,0 +1,23 @@
+name: Kids Bunny library read-only audit
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout inventory and audit code
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+
+      - name: Verify audit contract
+        run: python3 -m unittest discover -s scripts/kids -p test_audit_bunny_media.py
+
+      - name: Read Kids library status
+        env:
+          BUNNY_KIDS_STREAM_API_KEY: ${{ secrets.BUNNY_KIDS_STREAM_API_KEY }}
+          BUNNY_KIDS_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_KIDS_STREAM_LIBRARY_ID }}
+        run: python3 scripts/kids/audit_bunny_media.py

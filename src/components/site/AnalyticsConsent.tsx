@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ANALYTICS_CONSENT_COPY } from "@/lib/analytics-consent-copy";
+import { applyTrustedSiteConsent } from "@/lib/trustedsite";
 import { useLocale } from "@/lib/locale/locale-context";
 import {
   applyAnalyticsConsent,
@@ -13,8 +14,25 @@ import {
 export function AnalyticsConsentGate() {
   const { locale, dir, lang } = useLocale();
   const copy = ANALYTICS_CONSENT_COPY[locale];
-  const locationHref = useRouterState({
-    select: (state) => state.location.href,
+  const pageView = useRouterState({
+    select: (state) => {
+      // The destination URL changes before asynchronous route heads have loaded.
+      // Read URL and title from one settled snapshot, using HeadContent's precedence.
+      if (state.status !== "idle" || state.isLoading) return null;
+      let title = "";
+      for (let i = state.matches.length - 1; i >= 0 && !title; i--) {
+        const meta = state.matches[i].meta ?? [];
+        for (let j = meta.length - 1; j >= 0; j--) {
+          const candidate = meta[j]?.title;
+          if (candidate) {
+            title = candidate;
+            break;
+          }
+        }
+      }
+      return { href: state.location.href, title };
+    },
+    structuralSharing: true,
   });
   const [hydrated, setHydrated] = useState(false);
   const [consent, setConsent] = useState<AnalyticsConsent>(null);
@@ -28,10 +46,13 @@ export function AnalyticsConsentGate() {
   useEffect(() => {
     if (!hydrated) return;
     applyAnalyticsConsent(consent);
-    if (consent === "granted") {
-      trackPageViewOnce(locationHref);
-    }
-  }, [consent, hydrated, locationHref]);
+    applyTrustedSiteConsent(consent);
+  }, [consent, hydrated]);
+
+  useEffect(() => {
+    if (!hydrated || consent !== "granted" || !pageView) return;
+    trackPageViewOnce(pageView.href, pageView.title);
+  }, [consent, hydrated, pageView]);
 
   function choose(next: Exclude<AnalyticsConsent, null>) {
     persistAnalyticsConsent(next);

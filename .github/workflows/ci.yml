@@ -44,6 +44,16 @@ jobs:
       - name: Stripe billing behavior (isolated PostgreSQL, no network payments)
         run: bunx vitest run --config vitest.billing.config.ts
 
+      - name: Contact rate limiter (isolated PostgreSQL)
+        run: bunx vitest run src/lib/__tests__/contact-rate-limit.integration.test.ts
+
+      - name: Kids country release and parent access (isolated, no child data)
+        run: |
+          node scripts/kids/test_market_release_migration.mjs
+          node scripts/kids/test_retention_migration.mjs
+          bunx vitest run src/components/kids/KidsParentRequest.test.tsx src/lib/kids/parent-state.test.tsx src/lib/kids/family-policy.test.ts src/components/kids/KidsFamilyPricing.test.tsx
+          bunx vitest run src/lib/kids/retention-worker.test.ts src/lib/__tests__/resend-transport.test.ts
+
       - name: Localization contract
         run: bun run scripts/locale-lessons/validate-localization-contract.ts
 
@@ -65,3 +75,11 @@ jobs:
 
       - name: Build
         run: bun run build
+
+      - name: Marketing consent and public route metadata
+        run: >-
+          bunx vitest run
+          src/lib/__tests__/marketing-foundation.test.ts
+          src/lib/__tests__/marketing-route-head.test.tsx
+          src/lib/__tests__/locale-public-pages.test.ts
+          src/lib/__tests__/locale-route-meta.test.ts

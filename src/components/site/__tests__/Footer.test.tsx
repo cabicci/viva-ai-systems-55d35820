@@ -73,6 +73,11 @@ describe("Footer locale navigation", () => {
         "href",
         "mailto:support@masaarat.ai",
       );
+      expect(
+        rendered.container.querySelector(
+          'footer .trustedsite-trustmark[data-type="202"][data-width="120"][data-height="50"]',
+        ),
+      ).toBeInTheDocument();
 
       rendered.unmount();
     }

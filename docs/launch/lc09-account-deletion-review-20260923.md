@@ -99,3 +99,62 @@ owner. No user-facing text promises a number before that review.
 
 Central retains ownership of the two continuation trackers. PR #52 stays
 separate and TEST remains the only active payment mode.
+
+## Finalization design against the current schema
+
+The `NOT NULL` user columns are **not, by themselves, a foreign-key blocker to
+Auth identity deletion**. In `20260709190000_billing_schema_phase1.sql`, both
+`billing.subscriptions.user_id` and `billing.payment_transactions.user_id` are
+UUID columns without a reference to `auth.users`. The concrete failure in the
+effective wipe from `20260801120000_billing_legacy_user_subscriptions_compat.sql`
+is its deletion of the subscription while financial events and gateway rows
+still reference that subscription. Do not solve this with cascading deletion
+of financial evidence.
+
+Proposed retention decision, not an approved policy:
+
+- Preserve the former user UUID and existing subscription/transaction IDs as
+  restricted financial correlation keys when financial retention is required.
+  This is pseudonymous data, not anonymous data. Remove learner and login data
+  separately; never reuse that UUID or resolve new registrations by email back
+  to it. This approach does not require making financial user IDs nullable.
+- Retain only payment/refund amounts, currency, tax evidence, status, provider
+  references and event/idempotency correlation necessary for reconciliation.
+  Classify free-text metadata, encrypted payloads, payment-method references,
+  credits and coupon allocations individually before scrubbing: some can
+  contain identifiers or unsettled monetary claims.
+- The approved schedule must state purpose, expiry trigger/duration, any active
+  dispute exception, the party responsible for expiry, and processor/backup
+  treatment. No statutory period or indefinite retention is inferred here.
+  CRM remains a separate policy under the already recorded owner decision.
+
+The next implementation must be one coherent database-and-worker change:
+
+1. Add a service-only durable lifecycle record keyed by the old UUID, with a
+   rollout switch initially off. Transition into a blocking state under a
+   per-user lock. Request submission alone must not create that state.
+2. Make Checkout preparation, subscription event application, entitlement
+   snapshot generation/reading, and AI reservation use the same lock and
+   lifecycle decision. A denied account cannot acquire fresh access through
+   an admin grant, legacy subscription mirror or an in-flight Checkout.
+3. Continue recording verified late provider events and valid financial
+   transactions idempotently, but suppress access-producing transitions.
+   Rejecting the entire webhook transaction would also roll back its audit
+   receipt and is not an adequate resurrection guard.
+4. Reconcile provider renewal cancellation and pending monetary actions before
+   learner erasure. Persist each external step so interruption is resumable.
+   Invalidate cached snapshots, delete covered learner records, and revoke and
+   delete Auth identity with the Admin API; verify each result separately.
+5. Include the new Kids dependencies explicitly: `kids.parent_access_reviews`,
+   the family/profile foundation and retention notice rows reference
+   `auth.users` with cascading deletion. A parent's explicit account-deletion
+   request is distinct from subscription-expiry retention. Do not accidentally
+   erase required processor-deletion evidence via that cascade, or claim an
+   expiry notice was sent for a user-requested deletion.
+6. Rehearse late/replayed events, concurrent Checkout, worker interruption,
+   non-requesting family isolation and independent registration with the same
+   email. Only then propose production activation with a reviewed retention
+   schedule and a named responder for exceptions.
+
+No lifecycle guard or finalizer is implemented by this design section. An
+unused tombstone table or an edge-only check would not satisfy these controls.

@@ -238,6 +238,22 @@ describe("handleAssistantRuntimeRequest — transport basics", () => {
     expect(callCounts(deps)).toEqual({ embed: 0, retrieve: 0, llm: 0, rateLimit: 0 });
     expect(deps.billingRpc as ReturnType<typeof vi.fn>).not.toHaveBeenCalled();
   });
+
+  it.each([
+    { product: "kids", currentPath: "level-1", currentLesson: "lesson-01" },
+    { currentPath: "kids", currentLesson: "lesson-01" },
+    { currentPath: "creator", currentLesson: "kids-l1-lesson-01" },
+  ])("rejects Kids scope before adult billing or retrieval: %j", async (scope) => {
+    const deps = buildDeps();
+    const res = await handleAssistantRuntimeRequest(
+      buildRequest({ query: "Explain this lesson", learnerContext: { locale: "en", ...scope } }),
+      deps,
+    );
+    expect(res.status).toBe(400);
+    expect((await res.json()).reason).toBe("product_scope_forbidden");
+    expect(callCounts(deps)).toEqual({ embed: 0, retrieve: 0, llm: 0, rateLimit: 0 });
+    expect(deps.billingRpc as ReturnType<typeof vi.fn>).not.toHaveBeenCalled();
+  });
 });
 
 describe("handleAssistantRuntimeRequest — integrity cases 1–24", () => {

@@ -1,8 +1,9 @@
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
-import { beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   GTM_CONTAINER_ID,
+  GA4_MEASUREMENT_ID,
   META_PIXEL_ID,
   applyAnalyticsConsent,
   resetAnalyticsRuntimeForTests,
@@ -29,13 +30,13 @@ function sourceLiteralCount(literal: string): number {
 }
 function dataLayerEvents(name: string) {
   const dataLayer =
-    (window as Window & { dataLayer?: Array<Record<string, unknown>> }).dataLayer ?? [];
+    (window as unknown as Window & { dataLayer?: Array<Record<string, unknown>> }).dataLayer ?? [];
   return dataLayer.filter((entry) => entry.event === name);
 }
 
 function metaPageViews(): unknown[][] {
   const fbq = (
-    window as Window & {
+    window as unknown as Window & {
       fbq?: { queue?: unknown[][] };
     }
   ).fbq;
@@ -59,10 +60,12 @@ beforeEach(() => {
   document.title = "Masaarat test";
   window.history.replaceState({}, "", "/");
 });
+afterEach(() => vi.restoreAllMocks());
 describe("marketing identifier ownership", () => {
   it("defines each GTM and Meta identifier once in application source", () => {
     expect(sourceLiteralCount(GTM_CONTAINER_ID)).toBe(1);
     expect(sourceLiteralCount(META_PIXEL_ID)).toBe(1);
+    expect(sourceLiteralCount(GA4_MEASUREMENT_ID)).toBe(1);
   });
 
   it("injects one GTM and one Meta script after repeated grants", () => {
@@ -79,6 +82,134 @@ describe("marketing identifier ownership", () => {
 });
 
 describe("consent-gated SPA page views", () => {
+  it("sets denied Google consent before tracker loading, then updates before page events", () => {
+    const append = vi.spyOn(document.head, "appendChild");
+    applyAnalyticsConsent(null);
+    expect(append).not.toHaveBeenCalled();
+    const win = window as unknown as Window & {
+      dataLayer: Array<Record<string, unknown> | IArguments>;
+    };
+    const messages = () => win.dataLayer;
+    const commands = () =>
+      messages()
+        .filter((entry) => "0" in entry)
+        .map((entry) => Array.from(entry as IArguments));
+    expect(commands()[0]).toEqual([
+      "consent",
+      "default",
+      {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+      },
+    ]);
+    applyAnalyticsConsent("granted");
+    trackPageViewOnce("/");
+    const grantedIndex = messages().findIndex(
+      (entry) =>
+        "0" in entry &&
+        (entry as IArguments)[1] === "update" &&
+        ((entry as IArguments)[2] as Record<string, string>).analytics_storage === "granted",
+    );
+    const gtmIndex = messages().findIndex((entry) => "event" in entry && entry.event === "gtm.js");
+    const pageIndex = messages().findIndex(
+      (entry) => "event" in entry && entry.event === "masaarat_page_view",
+    );
+    expect(grantedIndex).toBeGreaterThan(0);
+    expect(gtmIndex).toBeGreaterThan(grantedIndex);
+    expect(pageIndex).toBeGreaterThan(gtmIndex);
+    expect(commands().filter((entry) => entry[1] === "default")).toHaveLength(1);
+  });
+
+  it("normalizes relative SPA URLs before deduplication and keeps return visits", () => {
+    applyAnalyticsConsent("granted");
+    expect(trackPageViewOnce("/contact?locale=en")).toBe(true);
+    expect(trackPageViewOnce(new URL("/contact?locale=en", window.location.origin).href)).toBe(
+      false,
+    );
+    applyAnalyticsConsent("granted");
+    expect(trackPageViewOnce("/contact?locale=en")).toBe(false);
+    expect(trackPageViewOnce("/pricing")).toBe(true);
+    expect(trackPageViewOnce("/contact?locale=en")).toBe(true);
+    expect(dataLayerEvents("masaarat_page_view")).toHaveLength(3);
+    expect(dataLayerEvents("masaarat_consent_update")).toHaveLength(1);
+  });
+
+  it("disables the already-loaded Google tag and revokes Meta on withdrawal", () => {
+    const win = window as unknown as Window & {
+      [key: `ga-disable-${string}`]: boolean;
+      gtag: (...args: unknown[]) => void;
+      fbq: { queue: unknown[][] };
+    };
+    applyAnalyticsConsent("granted");
+    expect(win[`ga-disable-${GA4_MEASUREMENT_ID}`]).toBe(false);
+    const previousGtag = win.gtag;
+    const disableAtUpdate: boolean[] = [];
+    win.gtag = (...args) => {
+      disableAtUpdate.push(win[`ga-disable-${GA4_MEASUREMENT_ID}`]);
+      previousGtag(...args);
+    };
+    applyAnalyticsConsent("denied");
+    expect(disableAtUpdate).toEqual([true]);
+    expect(win.fbq.queue.at(-1)).toEqual(["consent", "revoke"]);
+    expect(trackPageViewOnce("/contact")).toBe(false);
+  });
+
+  it("does not bootstrap trackers twice after withdrawal and re-grant", () => {
+    const append = vi.spyOn(document.head, "appendChild");
+    applyAnalyticsConsent("granted");
+    trackPageViewOnce("/");
+    applyAnalyticsConsent("denied");
+    applyAnalyticsConsent("granted");
+    expect(trackPageViewOnce("/")).toBe(true);
+    expect(trackPageViewOnce("/")).toBe(false);
+    expect(append).toHaveBeenCalledTimes(2);
+    expect(dataLayerEvents("gtm.js")).toHaveLength(1);
+    const queue = (window as unknown as Window & { fbq: { queue: unknown[][] } }).fbq.queue;
+    expect(queue.filter((args) => args[0] === "init")).toHaveLength(1);
+  });
+
+  it("does not load trackers on a fresh denied session", () => {
+    applyAnalyticsConsent("denied");
+    expect(document.getElementById("masaarat-gtm-script")).toBeNull();
+    expect(document.getElementById("masaarat-meta-pixel-script")).toBeNull();
+    expect(trackPageViewOnce("/pricing")).toBe(false);
+    expect(
+      (window as unknown as Window & { [key: `ga-disable-${string}`]: boolean })[
+        `ga-disable-${GA4_MEASUREMENT_ID}`
+      ],
+    ).toBe(true);
+  });
+
+  it("retries failed SDK loads on re-grant without duplicating initialization", () => {
+    applyAnalyticsConsent("granted");
+    const firstGtm = document.getElementById("masaarat-gtm-script")!;
+    const firstMeta = document.getElementById("masaarat-meta-pixel-script")!;
+    firstGtm.dispatchEvent(new Event("error"));
+    firstMeta.dispatchEvent(new Event("error"));
+    applyAnalyticsConsent("denied");
+    applyAnalyticsConsent("granted");
+    expect(document.getElementById("masaarat-gtm-script")).not.toBe(firstGtm);
+    expect(document.getElementById("masaarat-meta-pixel-script")).not.toBe(firstMeta);
+    expect(document.getElementById("masaarat-gtm-script")).not.toBeNull();
+    expect(document.getElementById("masaarat-meta-pixel-script")).not.toBeNull();
+    expect(dataLayerEvents("gtm.js")).toHaveLength(1);
+    const queue = (window as unknown as Window & { fbq: { queue: unknown[][] } }).fbq.queue;
+    expect(queue.filter((args) => args[0] === "init")).toHaveLength(1);
+  });
+
+  it("drops queued Meta page views when withdrawal precedes SDK loading", () => {
+    applyAnalyticsConsent("granted");
+    trackPageViewOnce("/");
+    expect(metaPageViews()).toHaveLength(1);
+    applyAnalyticsConsent("denied");
+    expect(metaPageViews()).toHaveLength(0);
+    applyAnalyticsConsent("granted");
+    trackPageViewOnce("/contact");
+    expect(metaPageViews()).toHaveLength(1);
+  });
+
   it("does not load trackers or emit a page view before consent", () => {
     expect(trackPageViewOnce("https://masaarat.ai/")).toBe(false);
     expect(document.querySelector('script[src*="googletagmanager.com/gtm.js?id="]')).toBeNull();
@@ -135,6 +266,20 @@ describe("route classification and crawler files", () => {
     expect(isDisallowed("/image-gallery", rules)).toBe(true);
     expect(isDisallowed("/image-gallery/", rules)).toBe(true);
     expect(isDisallowed("/learn/builder/lesson-1", rules)).toBe(true);
+    expect(isDisallowed("/kids", rules)).toBe(false);
+    expect(isDisallowed("/kids/", rules)).toBe(false);
+    expect(isDisallowed("/kids/level-1", rules)).toBe(true);
+    expect(isDisallowed("/kids/level-1/2", rules)).toBe(true);
+    expect(ROUTE_CATALOG.find((route) => route.source === "kids.index.tsx")?.sitemap).toBe(true);
+    expect(ROUTE_CATALOG.find((route) => route.source === "kids.$levelId.index.tsx")?.sitemap).toBe(
+      false,
+    );
+    expect(ROUTE_CATALOG.find((route) => route.source === "kids.$levelId.tsx")?.visibility).toBe(
+      "utility",
+    );
+    expect(
+      ROUTE_CATALOG.find((route) => route.source === "kids.$levelId.$lessonNumber.tsx")?.visibility,
+    ).toBe("private");
   });
 
   it("ships valid sitemap XML with public routes only", () => {

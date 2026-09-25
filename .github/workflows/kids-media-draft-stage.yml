@@ -1,0 +1,86 @@
+name: Kids media draft staging
+
+on:
+  workflow_dispatch:
+    inputs:
+      level:
+        description: Kids level (1-3)
+        required: true
+        type: choice
+        options: ["1", "2", "3"]
+      lesson:
+        description: Lesson number (1-12)
+        required: true
+        type: string
+      locale:
+        description: Locale
+        required: true
+        type: choice
+        options: [ar-EG, ar-MSA, ar-Gulf, en]
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: kids-draft-${{ inputs.level }}-${{ inputs.lesson }}-${{ inputs.locale }}
+  cancel-in-progress: false
+
+jobs:
+  stage-one:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+
+      - name: Resolve source artifact
+        id: source
+        env:
+          LEVEL: ${{ inputs.level }}
+          NUMBER: ${{ inputs.lesson }}
+          LOCALE: ${{ inputs.locale }}
+        run: |
+          python3 <<'PY'
+          import os
+          level, number, locale = int(os.environ["LEVEL"]), int(os.environ["NUMBER"]), os.environ["LOCALE"]
+          if level not in (1, 2, 3) or number not in range(1, 13):
+              raise SystemExit("Invalid Kids level or lesson")
+          if locale not in ("ar-EG", "ar-MSA", "ar-Gulf", "en"):
+              raise SystemExit("Invalid Kids locale")
+          if level == 1 and number == 2 and locale == "ar-MSA":
+              raise SystemExit("Recovered file requires a separate verified source artifact")
+          if level == 1 and number == 1:
+              run_id, name = "35881755433", f"kids-pilot-{locale}-35881755433-1"
+          elif level == 1:
+              run_id, name = "35934649679", f"kids-level1-{number}-{locale}-35934649679-1"
+          else:
+              run_id, name = "35946203413", f"kids-advanced-video-l{level}-{number}-{locale}-35946203413-1"
+          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+              out.write(f"run_id={run_id}\nartifact={name}\nlesson_id=kids-l{level}-{number:02d}\n")
+          PY
+
+      - name: Download exact source artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ steps.source.outputs.run_id }}
+          ARTIFACT: ${{ steps.source.outputs.artifact }}
+        run: |
+          gh run download "$RUN_ID" --repo "${{ github.repository }}" --name "$ARTIFACT" --dir _kids_source
+
+      - name: Verify checksum and stage one draft in isolated library
+        env:
+          BUNNY_KIDS_STREAM_API_KEY: ${{ secrets.BUNNY_KIDS_STREAM_API_KEY }}
+          BUNNY_KIDS_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_KIDS_STREAM_LIBRARY_ID }}
+          LESSON_ID: ${{ steps.source.outputs.lesson_id }}
+          LOCALE: ${{ inputs.locale }}
+        run: |
+          python3 scripts/kids/stage_media.py --media-root _kids_source/public \
+            --lesson "$LESSON_ID" --locale "$LOCALE" \
+            --receipt "kids-receipt/${LESSON_ID}__${LOCALE}.json" --stage
+
+      - name: Preserve draft staging receipt
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: kids-draft-${{ steps.source.outputs.lesson_id }}-${{ inputs.locale }}
+          path: kids-receipt/*.json
+          if-no-files-found: error
