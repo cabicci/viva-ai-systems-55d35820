@@ -28,8 +28,16 @@ describe("Kids parent privacy gate", () => {
     expect(mock.from).not.toHaveBeenCalled();
   });
 
-  it("fails closed on missing migration or server error", async () => {
-    mock.rpc.mockResolvedValue({ data: null, error: { message: "RPC unavailable" } });
+  it("shows a closed setup state when the Kids RPC has not been deployed", async () => {
+    mock.rpc.mockResolvedValue({ data: null, error: { code: "PGRST202", message: "RPC missing" } });
+    const { result } = renderHook(() => useKidsParentState());
+    await waitFor(() => expect(result.current.state).toBe("not-released"));
+    expect(mock.from).not.toHaveBeenCalled();
+    await expect(result.current.createProfile("Child", "level-1")).rejects.toThrow();
+  });
+
+  it("keeps unexpected server failures distinct and fails closed", async () => {
+    mock.rpc.mockResolvedValue({ data: null, error: { code: "503", message: "RPC unavailable" } });
     const { result } = renderHook(() => useKidsParentState());
     await waitFor(() => expect(result.current.state).toBe("unavailable"));
     expect(mock.from).not.toHaveBeenCalled();
