@@ -53,9 +53,7 @@ function AdminPage() {
         <div className="rounded-2xl border border-destructive/30 bg-destructive/5 p-8 text-center max-w-md">
           <ShieldAlert className="h-10 w-10 mx-auto text-destructive mb-3" />
           <h1 className="text-xl font-bold mb-2">صفحة محظورة</h1>
-          <p className="text-sm text-muted-foreground mb-4">
-            دي صفحة للأدمن بس.
-          </p>
+          <p className="text-sm text-muted-foreground mb-4">دي صفحة للأدمن بس.</p>
           <Button asChild variant="outline">
             <Link to="/dashboard">رجوع للوحة</Link>
           </Button>
@@ -66,7 +64,6 @@ function AdminPage() {
 
   return <AdminDashboard />;
 }
-
 
 function AdminDashboard() {
   const overviewFn = useServerFn(getAdminOverview);
@@ -94,8 +91,7 @@ function AdminDashboard() {
 
   const users = useQuery({
     queryKey: ["admin-users", usersPage, usersPageSize],
-    queryFn: () =>
-      listUsersFn({ data: { page: usersPage, pageSize: usersPageSize } }),
+    queryFn: () => listUsersFn({ data: { page: usersPage, pageSize: usersPageSize } }),
     placeholderData: (prev) => prev,
   });
 
@@ -108,12 +104,17 @@ function AdminDashboard() {
             <Crown className="h-5 w-5 text-primary" />
             لوحة الإدارة
           </div>
-          <Button asChild variant="ghost" size="sm">
-            <Link to="/dashboard">
-              <ArrowLeft className="h-4 w-4 rotate-180 ml-1" />
-              لوحتي
+          <div className="flex items-center gap-3">
+            <Link to="/admin/kids-parents" className="text-sm font-bold text-primary">
+              طلبات أولياء الأمور
             </Link>
-          </Button>
+            <Button asChild variant="ghost" size="sm">
+              <Link to="/dashboard">
+                <ArrowLeft className="h-4 w-4 rotate-180 ml-1" />
+                لوحتي
+              </Link>
+            </Button>
+          </div>
         </div>
       </header>
 
@@ -293,9 +294,7 @@ function AdminDashboard() {
               {users.data?.users.map((u) => (
                 <li key={u.id} className="py-2 flex items-center justify-between gap-3">
                   <div className="min-w-0 flex-1">
-                    <p className="truncate font-mono text-xs">
-                      {u.email ?? u.id.slice(0, 8)}
-                    </p>
+                    <p className="truncate font-mono text-xs">{u.email ?? u.id.slice(0, 8)}</p>
                     <p className="text-[10px] text-muted-foreground">
                       آخر دخول: {formatRelative(u.lastSignInAt)}
                     </p>
@@ -321,10 +320,9 @@ function AdminDashboard() {
             <span className="text-xs text-muted-foreground tabular-nums">
               صفحة {usersPage.toLocaleString("ar-EG")}
               {users.data?.total != null
-                ? ` / ${Math.max(
-                    1,
-                    Math.ceil(users.data.total / usersPageSize),
-                  ).toLocaleString("ar-EG")}`
+                ? ` / ${Math.max(1, Math.ceil(users.data.total / usersPageSize)).toLocaleString(
+                    "ar-EG",
+                  )}`
                 : ""}
             </span>
             <Button

@@ -38,6 +38,7 @@ import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as RoadmapIdRouteImport } from './routes/roadmap.$id'
 import { Route as KidsLevelIdRouteImport } from './routes/kids.$levelId'
 import { Route as ImageGalleryPathRouteImport } from './routes/image-gallery.$path'
+import { Route as AdminKidsParentsRouteImport } from './routes/admin.kids-parents'
 import { Route as KidsLevelIdIndexRouteImport } from './routes/kids.$levelId.index'
 import { Route as LearnPathIdLessonIdRouteImport } from './routes/learn.$pathId.$lessonId'
 import { Route as KidsLevelIdLessonNumberRouteImport } from './routes/kids.$levelId.$lessonNumber'
@@ -187,6 +188,11 @@ const ImageGalleryPathRoute = ImageGalleryPathRouteImport.update({
   path: '/$path',
   getParentRoute: () => ImageGalleryRoute,
 } as any)
+const AdminKidsParentsRoute = AdminKidsParentsRouteImport.update({
+  id: '/admin/kids-parents',
+  path: '/admin/kids-parents',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KidsLevelIdIndexRoute = KidsLevelIdIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -226,6 +232,7 @@ export interface FileRoutesByFullPath {
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
   '/terms': typeof TermsRoute
+  '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/kids/$levelId': typeof KidsLevelIdRouteWithChildren
   '/roadmap/$id': typeof RoadmapIdRoute
@@ -258,6 +265,7 @@ export interface FileRoutesByTo {
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
   '/terms': typeof TermsRoute
+  '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/roadmap/$id': typeof RoadmapIdRoute
   '/admin': typeof AdminIndexRoute
@@ -292,6 +300,7 @@ export interface FileRoutesById {
   '/start': typeof StartRoute
   '/system-state': typeof SystemStateRoute
   '/terms': typeof TermsRoute
+  '/admin/kids-parents': typeof AdminKidsParentsRoute
   '/image-gallery/$path': typeof ImageGalleryPathRoute
   '/kids/$levelId': typeof KidsLevelIdRouteWithChildren
   '/roadmap/$id': typeof RoadmapIdRoute
@@ -328,6 +337,7 @@ export interface FileRouteTypes {
     | '/start'
     | '/system-state'
     | '/terms'
+    | '/admin/kids-parents'
     | '/image-gallery/$path'
     | '/kids/$levelId'
     | '/roadmap/$id'
@@ -360,6 +370,7 @@ export interface FileRouteTypes {
     | '/start'
     | '/system-state'
     | '/terms'
+    | '/admin/kids-parents'
     | '/image-gallery/$path'
     | '/roadmap/$id'
     | '/admin'
@@ -393,6 +404,7 @@ export interface FileRouteTypes {
     | '/start'
     | '/system-state'
     | '/terms'
+    | '/admin/kids-parents'
     | '/image-gallery/$path'
     | '/kids/$levelId'
     | '/roadmap/$id'
@@ -428,6 +440,7 @@ export interface RootRouteChildren {
   StartRoute: typeof StartRoute
   SystemStateRoute: typeof SystemStateRoute
   TermsRoute: typeof TermsRoute
+  AdminKidsParentsRoute: typeof AdminKidsParentsRoute
   RoadmapIdRoute: typeof RoadmapIdRoute
   AdminIndexRoute: typeof AdminIndexRoute
   RoadmapIndexRoute: typeof RoadmapIndexRoute
@@ -639,6 +652,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImageGalleryPathRouteImport
       parentRoute: typeof ImageGalleryRoute
     }
+    '/admin/kids-parents': {
+      id: '/admin/kids-parents'
+      path: '/admin/kids-parents'
+      fullPath: '/admin/kids-parents'
+      preLoaderRoute: typeof AdminKidsParentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/kids/$levelId/': {
       id: '/kids/$levelId/'
       path: '/'
@@ -726,6 +746,7 @@ const rootRouteChildren: RootRouteChildren = {
   StartRoute: StartRoute,
   SystemStateRoute: SystemStateRoute,
   TermsRoute: TermsRoute,
+  AdminKidsParentsRoute: AdminKidsParentsRoute,
   RoadmapIdRoute: RoadmapIdRoute,
   AdminIndexRoute: AdminIndexRoute,
   RoadmapIndexRoute: RoadmapIndexRoute,
