@@ -3,7 +3,6 @@ import { createAuthEmailHandler } from "@lovable.dev/email-js";
 import { createFileRoute } from "@tanstack/react-router";
 import { SignupEmail, signupCopy } from "@/lib/email-templates/signup";
 import { resolveSignupProfile } from "@/lib/email-templates/signup-profile";
-import { supabaseAdmin } from "@/integrations/supabase/client.server";
 import { InviteEmail } from "@/lib/email-templates/invite";
 import { MagicLinkEmail } from "@/lib/email-templates/magic-link";
 import { RecoveryEmail } from "@/lib/email-templates/recovery";
@@ -32,6 +31,8 @@ export const Route = createFileRoute("/lovable/email/auth/webhook")({
             signup: async (data) => {
               // The SDK verifies the webhook signature before it calls this function.
               const profile = await resolveSignupProfile(data.email, async (email) => {
+                // Load the privileged client only inside the verified server-only handler.
+                const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
                 const result = await supabaseAdmin.rpc(
                   "auth_signup_email_profile" as never,
                   {
