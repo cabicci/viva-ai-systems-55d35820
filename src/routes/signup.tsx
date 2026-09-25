@@ -8,6 +8,7 @@ import { toast } from "sonner";
 import { ArrowLeft } from "lucide-react";
 import { AuthShell } from "@/components/auth/AuthShell";
 import { useUiString } from "@/lib/locale/use-ui-strings";
+import { useLocale } from "@/lib/locale/locale-context";
 import { kidsSignupRedirect, parseAuthIntentSearch } from "@/lib/kids/auth-intent";
 
 export const Route = createFileRoute("/signup")({
@@ -18,19 +19,25 @@ export const Route = createFileRoute("/signup")({
 
 function SignupPage() {
   const t = useUiString();
+  const { locale } = useLocale();
   const navigate = useNavigate();
   const search = Route.useSearch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [fullName, setFullName] = useState("");
   const [loading, setLoading] = useState(false);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (fullName.trim().length < 2) return toast.error(t("auth.signup.nameRequired"));
     setLoading(true);
     const { error } = await supabase.auth.signUp({
       email,
       password,
-      options: { emailRedirectTo: kidsSignupRedirect(window.location.origin, search) },
+      options: {
+        emailRedirectTo: kidsSignupRedirect(window.location.origin, search),
+        data: { full_name: fullName.trim(), preferred_locale: locale },
+      },
     });
     setLoading(false);
     if (error) return toast.error(error.message);
@@ -41,6 +48,19 @@ function SignupPage() {
   return (
     <AuthShell title={t("auth.signup.title")} subtitle={t("auth.signup.subtitle")}>
       <form onSubmit={onSubmit} className="space-y-4">
+        <div className="space-y-2">
+          <Label htmlFor="signup-full-name">{t("auth.field.fullName")}</Label>
+          <Input
+            id="signup-full-name"
+            type="text"
+            autoComplete="name"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            minLength={2}
+            maxLength={80}
+            required
+          />
+        </div>
         <div className="space-y-2">
           <Label>{t("auth.field.email")}</Label>
           <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
