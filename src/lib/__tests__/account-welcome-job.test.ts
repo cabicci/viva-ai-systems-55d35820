@@ -2,13 +2,18 @@ import { describe, expect, it, vi } from "vitest";
 import {
   authorizedWelcomeJob,
   runWelcomeJob,
-  welcomeContent,
+  runSubscriptionMailJob,
+  legacyWelcomeContent,
 } from "../../../supabase/functions/account-welcome-job/handler";
+import {
+  subscriptionContent,
+  welcomeContent,
+} from "../../../supabase/functions/_shared/masaarat-mail";
 const claim = { user_id: "user-1", recipient: "confirmed@example.test", claim_token: "lease-1" };
 function db() {
   return {
     rpc: vi.fn(async (name: string) => ({
-      data: name === "claim_account_welcome_emails" ? [claim] : true,
+      data: name === "claim_account_welcome_emails_v2" ? [claim] : true,
       error: null,
     })),
   };
@@ -36,7 +41,7 @@ describe("transactional account welcome", () => {
     expect(await runWelcomeJob(database, send)).toEqual({ accepted: 1, deferred: 0 });
     expect(send).toHaveBeenCalledWith({
       to: claim.recipient,
-      ...welcomeContent,
+      ...legacyWelcomeContent,
       idempotencyKey: "account-welcome-v1/user-1",
     });
     expect(database.rpc).toHaveBeenLastCalledWith("complete_account_welcome_email", {
@@ -44,6 +49,50 @@ describe("transactional account welcome", () => {
       p_claim: "lease-1",
       p_email_id: "provider-id",
       p_block: false,
+    });
+  });
+  it("personalizes the chosen locale without rendering a name as HTML", () => {
+    const branded = welcomeContent("<img src=x onerror=alert(1)>", "en");
+    expect(branded.html).toContain("&lt;img src=x onerror=alert(1)&gt;");
+    expect(branded.html).toContain('lang="en" dir="ltr"');
+    expect(branded.html).toContain("/brand/masaarat-logo-lockup.png");
+    expect(welcomeContent("خليل", "ar-Gulf").text).toContain("خليل");
+    expect(welcomeContent("خليل", "unknown").html).toContain('lang="ar" dir="rtl"');
+  });
+  it("keeps the subscription notice distinct from a payment receipt", () => {
+    expect(subscriptionContent("pro_plus", "renewed", "Khalil", "en").text).toContain(
+      "not a payment receipt",
+    );
+    const database = {
+      rpc: vi.fn(async (name: string) => ({
+        data:
+          name === "claim_subscription_mail"
+            ? [
+                {
+                  event_id: "event-1",
+                  recipient: "buyer@example.test",
+                  claim_token: "claim-1",
+                  display_name: "Khalil",
+                  preferred_locale: "en",
+                  plan_key: "pro_plus",
+                  kind: "activated",
+                },
+              ]
+            : true,
+        error: null,
+      })),
+    };
+    return runSubscriptionMailJob(
+      database,
+      vi.fn().mockResolvedValue({ ok: true, emailId: "provider-1" }),
+    ).then((stats) => {
+      expect(stats).toEqual({ accepted: 1, deferred: 0 });
+      expect(database.rpc).toHaveBeenLastCalledWith("complete_subscription_mail", {
+        p_event: "event-1",
+        p_claim: "claim-1",
+        p_email_id: "provider-1",
+        p_block: false,
+      });
     });
   });
   it("blocks permanent provider rejections", async () => {
