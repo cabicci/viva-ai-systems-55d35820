@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { requireAdminBeforeLoad } from "@/lib/admin-route-guard";
 import { useEntitlement } from "@/lib/entitlements";
+import { KIDS_MARKETS } from "@/lib/kids/markets";
 
 export const Route = createFileRoute("/admin/kids-parents")({
   beforeLoad: requireAdminBeforeLoad,
@@ -16,12 +17,14 @@ type RequestRow = {
   status: "pending" | "approved" | "rejected";
   requested_at: string;
   reviewed_at: string | null;
+  country_code: string | null;
 };
 
 function KidsParentReviews() {
   const { isAdmin, isLoaded } = useEntitlement();
   const [rows, setRows] = useState<RequestRow[]>([]);
   const [ready, setReady] = useState(false);
+  const [releasedCountries, setReleasedCountries] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [references, setReferences] = useState<Record<string, string>>({});
@@ -33,21 +36,34 @@ function KidsParentReviews() {
     setLoading(true);
     setError("");
     try {
-      const [requests, release] = await Promise.all([
+      const [requests, release, markets] = await Promise.all([
         supabase
           .from("kids_parent_access_requests" as never)
-          .select("parent_id,parent_email,status,requested_at,reviewed_at")
+          .select("parent_id,parent_email,status,requested_at,reviewed_at,country_code")
           .order("requested_at", { ascending: false })
           .range(page * pageSize, page * pageSize + pageSize - 1),
         supabase.rpc("kids_admin_parent_review_ready" as never),
+        supabase.from("kids_market_release" as never).select("country_code,accepts_child_data"),
       ]);
-      if (requests.error || release.error || !Array.isArray(requests.data))
+      if (
+        requests.error ||
+        release.error ||
+        markets.error ||
+        !Array.isArray(requests.data) ||
+        !Array.isArray(markets.data)
+      )
         throw new Error("backend");
       setRows(requests.data as RequestRow[]);
       setReady(release.data === true);
+      setReleasedCountries(
+        (markets.data as { country_code: string; accepts_child_data: boolean }[])
+          .filter((market) => market.accepts_child_data)
+          .map((market) => market.country_code),
+      );
     } catch {
       setRows([]);
       setReady(false);
+      setReleasedCountries([]);
       setError("تعذّر تحميل المراجعات. خدمة كيدز أو صلاحية المراجعة غير جاهزة.");
     } finally {
       setLoading(false);
@@ -60,7 +76,14 @@ function KidsParentReviews() {
 
   async function decide(parentId: string, approve: boolean) {
     const reference = references[parentId]?.trim() ?? "";
-    if (reference.length < 8 || reference.length > 120 || busy || (approve && !ready)) return;
+    const country = rows.find((row) => row.parent_id === parentId)?.country_code;
+    if (
+      reference.length < 8 ||
+      reference.length > 120 ||
+      busy ||
+      (approve && (!ready || !country || !releasedCountries.includes(country)))
+    )
+      return;
     setBusy(parentId);
     setError("");
     try {
@@ -128,6 +151,16 @@ function KidsParentReviews() {
                 </span>
               </div>
               <p className="text-sm">قُدّم: {new Date(row.requested_at).toLocaleString("ar-EG")}</p>
+              <p className="text-sm">
+                بلد إقامة ولي الأمر:{" "}
+                {KIDS_MARKETS.find((market) => market.code === row.country_code)?.ar ??
+                  "غير محدد — يلزم طلب جديد"}
+              </p>
+              {(!row.country_code || !releasedCountries.includes(row.country_code)) && (
+                <p className="text-sm text-muted-foreground">
+                  اعتماد خدمة الأطفال لهذا البلد لم يكتمل بعد.
+                </p>
+              )}
               {row.status !== "rejected" && (
                 <div className="flex flex-wrap items-end gap-3">
                   <label className="min-w-64 flex-1 text-sm">
@@ -149,6 +182,8 @@ function KidsParentReviews() {
                       type="button"
                       disabled={
                         !ready ||
+                        !row.country_code ||
+                        !releasedCountries.includes(row.country_code) ||
                         busy !== null ||
                         (references[row.parent_id]?.trim().length ?? 0) < 8
                       }

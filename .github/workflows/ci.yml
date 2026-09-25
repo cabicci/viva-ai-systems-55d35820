@@ -47,6 +47,11 @@ jobs:
       - name: Contact rate limiter (isolated PostgreSQL)
         run: bunx vitest run src/lib/__tests__/contact-rate-limit.integration.test.ts
 
+      - name: Kids country release and parent access (isolated, no child data)
+        run: |
+          node scripts/kids/test_market_release_migration.mjs
+          bunx vitest run src/components/kids/KidsParentRequest.test.tsx src/lib/kids/parent-state.test.tsx
+
       - name: Localization contract
         run: bun run scripts/locale-lessons/validate-localization-contract.ts
 
