@@ -35,13 +35,14 @@ describe("Kids expiry retention policy", () => {
   });
   it("retains profiles for the full 90 days and waits for prior notification", () => {
     expect(evaluate(expiry - 1).status).toBe("active");
-    expect(evaluate(expiry + 90 * day - 1).status).toBe("retained");
+    expect(evaluate(expiry + 76 * day - 1).status).toBe("retained");
+    expect(evaluate(expiry + 76 * day).status).toBe("awaiting-notice");
     expect(evaluate(expiry + 90 * day).status).toBe("awaiting-notice");
-    expect(evaluate(expiry + 90 * day, { expiry, deliveredAt: expiry + 80 * day }).status).toBe(
+    expect(evaluate(expiry + 90 * day, { expiry, deliveredAt: expiry + 76 * day }).status).toBe(
       "eligible-for-deletion",
     );
   });
-  it("rejects notices from an old term, the future, before expiry or after the deadline", () => {
+  it("rejects notices from an old term, the future, before expiry or invalid dates", () => {
     for (const notice of [
       { expiry: expiry - day, deliveredAt: expiry + day },
       { expiry, deliveredAt: expiry - 1 },
@@ -49,6 +50,12 @@ describe("Kids expiry retention policy", () => {
       { expiry, deliveredAt: NaN },
     ])
       expect(evaluate(expiry + 90 * day, notice).status).toBe("awaiting-notice");
+  });
+  it("allows a full 14 days after late delivery, even after the original 90-day deadline", () => {
+    const notice = { expiry, deliveredAt: expiry + 100 * day };
+    expect(evaluate(expiry + 114 * day - 1, notice).status).toBe("retained");
+    expect(evaluate(expiry + 114 * day, notice).status).toBe("eligible-for-deletion");
+    expect(evaluate(expiry + 114 * day, notice).deleteAfter).toBe(expiry + 114 * day);
   });
   it("a renewed entitlement cancels the previous expiry candidate", () => {
     expect(

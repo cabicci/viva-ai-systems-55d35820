@@ -4,6 +4,8 @@ export const KIDS_FAMILY_POLICY = {
   adultPlanRequired: false,
   bundleDiscountPercent: 10,
   retentionDaysAfterExpiry: 90,
+  deletionNoticeDays: 14,
+  deletionNoticeChannel: "email",
   guardianApprovalMode: "automatic-after-verification-and-consent",
 } as const;
 
@@ -47,17 +49,30 @@ export function evaluateKidsRetention(input: RetentionInput) {
   }
   if (expiry === null) return { status: "not-applicable" as const, dueAt: null };
   const dueAt = expiry + KIDS_FAMILY_POLICY.retentionDaysAfterExpiry * 86400000;
+  const noticeDueAt = dueAt - KIDS_FAMILY_POLICY.deletionNoticeDays * 86400000;
   if (!Number.isFinite(dueAt)) return { status: "invalid" as const, dueAt: null };
-  if (now < expiry) return { status: "active" as const, dueAt };
-  if (now < dueAt) return { status: "retained" as const, dueAt };
+  if (now < expiry) return { status: "active" as const, dueAt, noticeDueAt };
   if (
     !notice ||
     notice.expiry !== expiry ||
     !Number.isFinite(notice.deliveredAt) ||
     notice.deliveredAt < expiry ||
-    notice.deliveredAt >= dueAt
+    notice.deliveredAt > now
   ) {
-    return { status: "awaiting-notice" as const, dueAt };
+    return {
+      status: now < noticeDueAt ? ("retained" as const) : ("awaiting-notice" as const),
+      dueAt,
+      noticeDueAt,
+    };
   }
-  return { status: "eligible-for-deletion" as const, dueAt };
+  const deleteAfter = Math.max(
+    dueAt,
+    notice.deliveredAt + KIDS_FAMILY_POLICY.deletionNoticeDays * 86400000,
+  );
+  return {
+    status: now < deleteAfter ? ("retained" as const) : ("eligible-for-deletion" as const),
+    dueAt,
+    noticeDueAt,
+    deleteAfter,
+  };
 }

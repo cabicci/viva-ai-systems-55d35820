@@ -2,3 +2,9 @@ project_id = "abyqqeboyrkkwhjpwmtd"
 
 [functions.billing-stripe-webhook]
 verify_jwt = false
+
+[functions.kids-retention-job]
+verify_jwt = false # Dedicated high-entropy service job secret; no client JWT authority.
+
+[functions.kids-retention-webhook]
+verify_jwt = false # Signed provider payload; verified before any database access.
