@@ -42,6 +42,8 @@ import { Route as AdminKidsParentsRouteImport } from './routes/admin.kids-parent
 import { Route as KidsLevelIdIndexRouteImport } from './routes/kids.$levelId.index'
 import { Route as LearnPathIdLessonIdRouteImport } from './routes/learn.$pathId.$lessonId'
 import { Route as KidsLevelIdLessonNumberRouteImport } from './routes/kids.$levelId.$lessonNumber'
+import { Route as LovableEmailAuthWebhookRouteImport } from './routes/lovable/email/auth/webhook'
+import { Route as LovableEmailAuthPreviewRouteImport } from './routes/lovable/email/auth/preview'
 
 const Char91indexChar93Route = Char91indexChar93RouteImport.update({
   id: '/index',
@@ -208,6 +210,16 @@ const KidsLevelIdLessonNumberRoute = KidsLevelIdLessonNumberRouteImport.update({
   path: '/$lessonNumber',
   getParentRoute: () => KidsLevelIdRoute,
 } as any)
+const LovableEmailAuthWebhookRoute = LovableEmailAuthWebhookRouteImport.update({
+  id: '/lovable/email/auth/webhook',
+  path: '/lovable/email/auth/webhook',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LovableEmailAuthPreviewRoute = LovableEmailAuthPreviewRouteImport.update({
+  id: '/lovable/email/auth/preview',
+  path: '/lovable/email/auth/preview',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -243,6 +255,8 @@ export interface FileRoutesByFullPath {
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
   '/kids/$levelId/': typeof KidsLevelIdIndexRoute
+  '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
+  '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -275,6 +289,8 @@ export interface FileRoutesByTo {
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
   '/kids/$levelId': typeof KidsLevelIdIndexRoute
+  '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
+  '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -311,6 +327,8 @@ export interface FileRoutesById {
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
   '/kids/$levelId/': typeof KidsLevelIdIndexRoute
+  '/lovable/email/auth/preview': typeof LovableEmailAuthPreviewRoute
+  '/lovable/email/auth/webhook': typeof LovableEmailAuthWebhookRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -348,6 +366,8 @@ export interface FileRouteTypes {
     | '/kids/$levelId/$lessonNumber'
     | '/learn/$pathId/$lessonId'
     | '/kids/$levelId/'
+    | '/lovable/email/auth/preview'
+    | '/lovable/email/auth/webhook'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -380,6 +400,8 @@ export interface FileRouteTypes {
     | '/kids/$levelId/$lessonNumber'
     | '/learn/$pathId/$lessonId'
     | '/kids/$levelId'
+    | '/lovable/email/auth/preview'
+    | '/lovable/email/auth/webhook'
   id:
     | '__root__'
     | '/'
@@ -415,6 +437,8 @@ export interface FileRouteTypes {
     | '/kids/$levelId/$lessonNumber'
     | '/learn/$pathId/$lessonId'
     | '/kids/$levelId/'
+    | '/lovable/email/auth/preview'
+    | '/lovable/email/auth/webhook'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -445,6 +469,8 @@ export interface RootRouteChildren {
   AdminIndexRoute: typeof AdminIndexRoute
   RoadmapIndexRoute: typeof RoadmapIndexRoute
   LearnPathIdLessonIdRoute: typeof LearnPathIdLessonIdRoute
+  LovableEmailAuthPreviewRoute: typeof LovableEmailAuthPreviewRoute
+  LovableEmailAuthWebhookRoute: typeof LovableEmailAuthWebhookRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -680,6 +706,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KidsLevelIdLessonNumberRouteImport
       parentRoute: typeof KidsLevelIdRoute
     }
+    '/lovable/email/auth/webhook': {
+      id: '/lovable/email/auth/webhook'
+      path: '/lovable/email/auth/webhook'
+      fullPath: '/lovable/email/auth/webhook'
+      preLoaderRoute: typeof LovableEmailAuthWebhookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lovable/email/auth/preview': {
+      id: '/lovable/email/auth/preview'
+      path: '/lovable/email/auth/preview'
+      fullPath: '/lovable/email/auth/preview'
+      preLoaderRoute: typeof LovableEmailAuthPreviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -751,6 +791,8 @@ const rootRouteChildren: RootRouteChildren = {
   AdminIndexRoute: AdminIndexRoute,
   RoadmapIndexRoute: RoadmapIndexRoute,
   LearnPathIdLessonIdRoute: LearnPathIdLessonIdRoute,
+  LovableEmailAuthPreviewRoute: LovableEmailAuthPreviewRoute,
+  LovableEmailAuthWebhookRoute: LovableEmailAuthWebhookRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
