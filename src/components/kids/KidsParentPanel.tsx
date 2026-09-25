@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { KIDS_LEVELS, type KidsLevelId } from "@/lib/kids/catalogue";
 import { useKidsParentState } from "@/lib/kids/parent-state";
+import { KidsParentRequest } from "./KidsParentRequest";
 import { getKidsJourneyCopy } from "@/lib/kids/journey-copy";
 import { useLocale } from "@/lib/locale/locale-context";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
@@ -76,16 +77,7 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
                 : copy.unavailable}
           </p>
           {state === "pending" ? (
-            <>
-              <p className="text-sm text-muted-foreground">{copy.requestNote}</p>
-              <Link
-                to="/contact"
-                search={localeSearch()}
-                className="inline-flex min-h-11 items-center rounded-full border border-primary px-5 text-sm font-bold text-primary"
-              >
-                {copy.request}
-              </Link>
-            </>
+            <KidsParentRequest onRefresh={refresh} />
           ) : state === "unavailable" ? (
             <Button type="button" variant="outline" onClick={refresh}>
               {copy.retryCheck}
