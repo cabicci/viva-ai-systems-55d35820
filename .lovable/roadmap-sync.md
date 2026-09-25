@@ -4,7 +4,7 @@
 date: 2026-09-25
 scope: db
 source: ai
-summary: Adult-only Kids parent review request and admin decision; child-data gates remain closed
+summary: Add 22-country Kids review gates; child data remains closed; no production DDL
 
 This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
