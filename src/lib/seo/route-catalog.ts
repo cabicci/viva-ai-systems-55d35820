@@ -95,6 +95,13 @@ export const ROUTE_CATALOG = [
     robotsPath: "/admin",
   },
   {
+    source: "admin.kids-parents.tsx",
+    pattern: "/admin/kids-parents",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/admin/kids-parents",
+  },
+  {
     source: "ai-assistant.tsx",
     pattern: "/ai-assistant",
     visibility: "private",
