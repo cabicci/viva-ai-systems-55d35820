@@ -14,6 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
+      account_welcome_outbox: {
+        Row: {
+          blocked: boolean
+          claim_token: string | null
+          created_at: string
+          display_name: string | null
+          first_attempt_at: string | null
+          lease_until: string | null
+          preferred_locale: string | null
+          provider_email_id: string | null
+          recipient: string
+          template_version: number
+          user_id: string
+        }
+        Insert: {
+          blocked?: boolean
+          claim_token?: string | null
+          created_at?: string
+          display_name?: string | null
+          first_attempt_at?: string | null
+          lease_until?: string | null
+          preferred_locale?: string | null
+          provider_email_id?: string | null
+          recipient: string
+          template_version?: number
+          user_id: string
+        }
+        Update: {
+          blocked?: boolean
+          claim_token?: string | null
+          created_at?: string
+          display_name?: string | null
+          first_attempt_at?: string | null
+          lease_until?: string | null
+          preferred_locale?: string | null
+          provider_email_id?: string | null
+          recipient?: string
+          template_version?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
       build_logs: {
         Row: {
           created_at: string
@@ -721,6 +763,54 @@ export type Database = {
         }
         Relationships: []
       }
+      subscription_mail_outbox: {
+        Row: {
+          blocked: boolean
+          claim_token: string | null
+          created_at: string
+          display_name: string | null
+          event_id: string
+          first_attempt_at: string | null
+          kind: string
+          lease_until: string | null
+          plan_key: string
+          preferred_locale: string | null
+          provider_email_id: string | null
+          recipient: string
+          user_id: string
+        }
+        Insert: {
+          blocked?: boolean
+          claim_token?: string | null
+          created_at?: string
+          display_name?: string | null
+          event_id: string
+          first_attempt_at?: string | null
+          kind: string
+          lease_until?: string | null
+          plan_key: string
+          preferred_locale?: string | null
+          provider_email_id?: string | null
+          recipient: string
+          user_id: string
+        }
+        Update: {
+          blocked?: boolean
+          claim_token?: string | null
+          created_at?: string
+          display_name?: string | null
+          event_id?: string
+          first_attempt_at?: string | null
+          kind?: string
+          lease_until?: string | null
+          plan_key?: string
+          preferred_locale?: string | null
+          provider_email_id?: string | null
+          recipient?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       user_active_device: {
         Row: {
           device_id: string
@@ -1068,7 +1158,38 @@ export type Database = {
         }
         Returns: Json
       }
+      claim_account_welcome_emails: {
+        Args: never
+        Returns: {
+          claim_token: string
+          recipient: string
+          user_id: string
+        }[]
+      }
+      claim_account_welcome_emails_v2: {
+        Args: never
+        Returns: {
+          claim_token: string
+          display_name: string
+          preferred_locale: string
+          recipient: string
+          template_version: number
+          user_id: string
+        }[]
+      }
       claim_active_device: { Args: { p_device_id: string }; Returns: string }
+      claim_subscription_mail: {
+        Args: never
+        Returns: {
+          claim_token: string
+          display_name: string
+          event_id: string
+          kind: string
+          plan_key: string
+          preferred_locale: string
+          recipient: string
+        }[]
+      }
       close_stripe_checkout_intent: {
         Args: {
           p_checkout_generation: string
@@ -1085,6 +1206,24 @@ export type Database = {
           p_reservation_id: string
         }
         Returns: Json
+      }
+      complete_account_welcome_email: {
+        Args: {
+          p_block: boolean
+          p_claim: string
+          p_email_id: string
+          p_user: string
+        }
+        Returns: boolean
+      }
+      complete_subscription_mail: {
+        Args: {
+          p_block: boolean
+          p_claim: string
+          p_email_id: string
+          p_event: string
+        }
+        Returns: boolean
       }
       confirm_stripe_checkout_generation: {
         Args: { p_checkout_generation: string; p_user_id: string }
