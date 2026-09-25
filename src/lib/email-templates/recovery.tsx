@@ -1,12 +1,12 @@
-import * as React from "react";
+import * as React from 'react'
 
-import { Text } from "@react-email/components";
+import { Text } from '@react-email/components'
 
-import { MasaaratShell, bodyText } from "./masaarat-shell";
+import { MasaaratShell, bodyText } from './masaarat-shell'
 
 interface RecoveryEmailProps {
-  siteName: string;
-  confirmationUrl: string;
+  siteName: string
+  confirmationUrl: string
 }
 
 export const RecoveryEmail = ({ confirmationUrl }: RecoveryEmailProps) => (
@@ -17,8 +17,10 @@ export const RecoveryEmail = ({ confirmationUrl }: RecoveryEmailProps) => (
     actionUrl={confirmationUrl}
     footerNote="إن لم تطلب إعادة التعيين، فتجاهل هذه الرسالة؛ كلمة مرورك الحالية تبقى كما هي."
   >
-    <Text style={bodyText}>استخدم الزر بالأسفل لاختيار كلمة مرور جديدة لحسابك في مسارات.</Text>
+    <Text style={bodyText}>
+      استخدم الزر بالأسفل لاختيار كلمة مرور جديدة لحسابك في مسارات.
+    </Text>
   </MasaaratShell>
-);
+)
 
-export default RecoveryEmail;
+export default RecoveryEmail

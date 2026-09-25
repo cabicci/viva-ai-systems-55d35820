@@ -1,13 +1,13 @@
-import * as React from "react";
+import * as React from 'react'
 
-import { Link, Text } from "@react-email/components";
+import { Link, Text } from '@react-email/components'
 
-import { MasaaratShell, bodyText } from "./masaarat-shell";
+import { MasaaratShell, bodyText } from './masaarat-shell'
 
 interface InviteEmailProps {
-  siteName: string;
-  siteUrl: string;
-  confirmationUrl: string;
+  siteName: string
+  siteUrl: string
+  confirmationUrl: string
 }
 
 export const InviteEmail = ({ siteUrl, confirmationUrl }: InviteEmailProps) => (
@@ -19,15 +19,12 @@ export const InviteEmail = ({ siteUrl, confirmationUrl }: InviteEmailProps) => (
     footerNote="إن لم تكن تتوقع هذه الدعوة، فتجاهل هذه الرسالة."
   >
     <Text style={bodyText}>
-      تمت دعوتك للانضمام إلى{" "}
-      <Link href={siteUrl} style={link}>
-        مسارات
-      </Link>
-      . اضغط على الزر بالأسفل لقبول الدعوة وإنشاء حسابك.
+      تمت دعوتك للانضمام إلى <Link href={siteUrl} style={link}>مسارات</Link>. اضغط على الزر
+      بالأسفل لقبول الدعوة وإنشاء حسابك.
     </Text>
   </MasaaratShell>
-);
+)
 
-export default InviteEmail;
+export default InviteEmail
 
-const link = { color: "#356f9a" };
+const link = { color: '#356f9a' }
