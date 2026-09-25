@@ -67,6 +67,7 @@ function mountKids(start = "/kids?locale=en") {
   const router = createRouter({
     routeTree: tree,
     history: createMemoryHistory({ initialEntries: [start] }),
+    defaultNotFoundComponent: () => <p>Kids route not found</p>,
   });
   return { router, view: render(<RouterProvider router={router} />) };
 }
@@ -116,5 +117,15 @@ describe("Kids nested routes", () => {
     } finally {
       Object.defineProperty(window, "innerWidth", { configurable: true, value: priorWidth });
     }
+  });
+
+  it("rejects a directly opened lesson with an unknown level", async () => {
+    const { router } = mountKids("/kids/unknown/1?locale=en");
+    await waitFor(() =>
+      expect(router.state.matches.some((match) => match.status === "notFound")).toBe(true),
+    );
+    expect(screen.getByText("Kids route not found")).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { level: 1, name: "Lesson 1" })).not.toBeInTheDocument();
+    expect(mock.invoke).not.toHaveBeenCalled();
   });
 });
