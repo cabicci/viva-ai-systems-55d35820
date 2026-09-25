@@ -4,10 +4,10 @@ The family subscription is independent of adult plans and covers up to three
 child profiles. The first two lessons per level remain free within the existing
 guardian, market and content gates. Adult entitlements do not unlock Kids.
 
-| Market | Monthly | Annual | Monthly with Pro/Pro Plus | Annual with Pro/Pro Plus |
-| --- | ---: | ---: | ---: | ---: |
-| Egypt (EGP) | 199.00 | 1,990.00 | 179.10 | 1,791.00 |
-| International (USD) | 7.99 | 79.90 | 7.19 | 71.91 |
+| Market              | Monthly |   Annual | Monthly with Pro/Pro Plus | Annual with Pro/Pro Plus |
+| ------------------- | ------: | -------: | ------------------------: | -----------------------: |
+| Egypt (EGP)         |  199.00 | 1,990.00 |                    179.10 |                 1,791.00 |
+| International (USD) |    7.99 |    79.90 |                      7.19 |                    71.91 |
 
 Prices exclude tax. The 10% discount affects Kids only. Final Kids amounts round
 half-up to the currency's minor unit. The UI displays catalogue quotes, not a
@@ -50,14 +50,31 @@ deletion for a newer term. Never-paid free families are outside this paid-expiry
 rule. An earlier parent erasure request follows its own process, not a forced
 90-day wait.
 
-`evaluateKidsRetention` is a side-effect-free policy evaluator. It requires a
-delivered notice for the same expiry before the 90-day deadline; missing, stale,
-invalid or late notice leaves the candidate blocked. It is not a deletion job.
-Before activation, set the notice channel/lead time, late-notice grace period,
-and treatment of continuing free use after paid expiry. Implement delivery
-receipts, retries, a server-side renewal recheck under transaction lock, processor
-and backup handling, and a tested deletion receipt. A scheduler must not call a
-delete based on a stale quote or client-supplied dates.
+The approved notice channel is email. Queue the notice 14 days before the
+90-day deadline (day 76). Actual deletion waits until the later of expiry plus
+90 days and confirmed email delivery plus 14 full days. Late delivery extends
+the deadline automatically. Provider acceptance alone never starts the grace
+period. Days use 24-hour UTC intervals in both the policy evaluator and SQL.
+
+The sixth prepared migration, `20260925190000_kids_retention_email.sql`, adds a
+private outbox, delivery-event deduplication and scoped profile deletion with a
+receipt. Both notice sending and deletion start disabled. Only service-role
+RPCs may operate these records. A separate job secret authenticates the worker;
+the webhook verifies the raw Resend signature before database access. See
+[retention operations](kids-retention-operations.md) for the activation boundary.
+
+The database binds each notice to the exact paid expiry, confirmed adult email
+and snapshot of profile IDs. Deletion locks the family and rereads its current
+entitlement and confirmed email. Renewal or an email change cancels the old
+notice. New profiles created after the notice snapshot are excluded. Progress
+for deleted profiles cascades; the parent account and unrelated adult records
+remain. A bounce, failure, complaint or suppression blocks deletion even when a
+delivery event arrives out of order.
+
+Before activation, finish the country privacy requirements, consent/withdrawal,
+continuing free-use treatment, processor and backup erasure, sender/domain setup,
+actual recipient-approved delivery verification and scheduler deployment. No
+local deletion receipt represents deletion from processors or backups.
 
 There is no payment activation, notification sending, scheduled deletion,
 production migration, guardian auto-approval or production release in this slice.
