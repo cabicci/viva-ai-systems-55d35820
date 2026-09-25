@@ -15,6 +15,7 @@ function escapeHtml(value: string) {
       ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[character]!,
   );
 }
+type WelcomeGuide = { features: string[]; plans: string[]; plansTitle: string; pricing: string };
 const logo = "https://masaarat.ai/brand/masaarat-logo-lockup.png";
 function shell(
   locale: MailLocale,
@@ -23,6 +24,7 @@ function shell(
   action: string,
   path: string,
   name: string | null,
+  guide?: WelcomeGuide,
 ) {
   const english = locale === "en";
   const url = `https://masaarat.ai${path}`;
@@ -31,7 +33,10 @@ function shell(
     : english
       ? "Hello,"
       : "أهلًا بك،";
-  return `<!doctype html><html lang="${english ? "en" : "ar"}" dir="${english ? "ltr" : "rtl"}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;padding:24px 12px;background:#f5f8fb;color:#243044;font-family:Tajawal,Arial,sans-serif"><table role="presentation" style="width:100%;max-width:560px;margin:auto;border-collapse:collapse;background:#fff;border:1px solid #dce6ed;border-radius:16px" cellpadding="0" cellspacing="0"><tr><td style="padding:30px 32px 18px;background:#e8f1f6;border-radius:16px 16px 0 0"><a href="https://masaarat.ai" style="color:#243044;text-decoration:none"><img src="${logo}" alt="مسارات | Masaarat" width="165" style="max-width:100%;height:auto;border:0;display:block"><span style="display:none">Masaarat</span></a></td></tr><tr><td style="padding:30px 32px;text-align:${english ? "left" : "right"}"><h1 style="font-size:24px;line-height:1.4;margin:0 0 18px;color:#243044">${escapeHtml(title)}</h1><p style="font-size:17px;line-height:1.8;margin:0 0 10px">${escapeHtml(greeting)}</p><p style="font-size:17px;line-height:1.8;margin:0 0 24px">${escapeHtml(body)}</p><a href="${url}" style="display:inline-block;background:#477eaa;color:#fff;padding:13px 22px;border-radius:10px;text-decoration:none;font-weight:bold">${escapeHtml(action)}</a><p style="font-size:13px;line-height:1.6;color:#566675;margin:24px 0 0"><a href="${url}" style="color:#356f9a">${url}</a></p></td></tr><tr><td style="background:#f3f8f8;padding:18px 32px;border-radius:0 0 16px 16px;color:#566675;font-size:13px;line-height:1.7">${english ? "This is an account service message. Need help?" : "هذه رسالة خدمة تخص حسابك. تحتاج مساعدة؟"} <a href="https://masaarat.ai/contact" style="color:#356f9a">${english ? "Contact Masaarat" : "تواصل مع مسارات"}</a>.</td></tr></table></body></html>`;
+  const guideHtml = guide
+    ? `<ul style="padding-${english ? "left" : "right"}:22px;line-height:1.8;font-size:15px">${guide.features.map((feature) => `<li>${escapeHtml(feature)}</li>`).join("")}</ul><h2 style="font-size:19px;color:#243044">${escapeHtml(guide.plansTitle)}</h2><ul style="padding-${english ? "left" : "right"}:22px;line-height:1.8;font-size:15px">${guide.plans.map((plan) => `<li>${escapeHtml(plan)}</li>`).join("")}</ul><p><a href="https://masaarat.ai/pricing" style="color:#356f9a">${escapeHtml(guide.pricing)}</a></p>`
+    : "";
+  return `<!doctype html><html lang="${english ? "en" : "ar"}" dir="${english ? "ltr" : "rtl"}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;padding:24px 12px;background:#f5f8fb;color:#243044;font-family:Tajawal,Arial,sans-serif"><table role="presentation" style="width:100%;max-width:560px;margin:auto;border-collapse:collapse;background:#fff;border:1px solid #dce6ed;border-radius:16px" cellpadding="0" cellspacing="0"><tr><td style="padding:30px 32px 18px;background:#e8f1f6;border-radius:16px 16px 0 0"><a href="https://masaarat.ai" style="color:#243044;text-decoration:none"><img src="${logo}" alt="مسارات | Masaarat" width="165" style="max-width:100%;height:auto;border:0;display:block"><span style="display:none">Masaarat</span></a></td></tr><tr><td style="padding:30px 32px;text-align:${english ? "left" : "right"}"><h1 style="font-size:24px;line-height:1.4;margin:0 0 18px;color:#243044">${escapeHtml(title)}</h1><p style="font-size:17px;line-height:1.8;margin:0 0 10px">${escapeHtml(greeting)}</p><p style="font-size:17px;line-height:1.8;margin:0 0 24px">${escapeHtml(body)}</p>${guideHtml}<a href="${url}" style="display:inline-block;background:#477eaa;color:#fff;padding:13px 22px;border-radius:10px;text-decoration:none;font-weight:bold">${escapeHtml(action)}</a><p style="font-size:13px;line-height:1.6;color:#566675;margin:24px 0 0"><a href="${url}" style="color:#356f9a">${url}</a></p></td></tr><tr><td style="background:#f3f8f8;padding:18px 32px;border-radius:0 0 16px 16px;color:#566675;font-size:13px;line-height:1.7">${english ? "This is an account service message. Need help?" : "هذه رسالة خدمة تخص حسابك. تحتاج مساعدة؟"} <a href="https://masaarat.ai/contact" style="color:#356f9a">${english ? "Contact Masaarat" : "تواصل مع مسارات"}</a>.</td></tr></table></body></html>`;
 }
 function personalized(
   localeInput: unknown,
@@ -40,13 +45,14 @@ function personalized(
   body: string,
   action: string,
   path: string,
+  guide?: WelcomeGuide,
 ) {
   const locale = mailLocale(localeInput);
   const name = safeName(nameInput);
   const greeting = name ? `${locale === "en" ? "Hello" : "أهلًا"} ${name}،\n` : "";
   return {
-    text: `${greeting}${body}\nhttps://masaarat.ai${path}\n${locale === "en" ? "Help" : "للمساعدة"}: https://masaarat.ai/contact`,
-    html: shell(locale, title, body, action, path, name),
+    text: `${greeting}${body}\n${guide ? `\n${guide.features.map((item) => `• ${item}`).join("\n")}\n\n${guide.plansTitle}\n${guide.plans.map((item) => `• ${item}`).join("\n")}\n${guide.pricing}: https://masaarat.ai/pricing\n` : ""}\nhttps://masaarat.ai${path}\n${locale === "en" ? "Help" : "للمساعدة"}: https://masaarat.ai/contact`,
+    html: shell(locale, title, body, action, path, name, guide),
   };
 }
 export const legacyWelcomeContent = {
@@ -77,8 +83,65 @@ export function welcomeContent(name: unknown, localeInput: unknown) {
       "Sign in",
     ],
   } as const;
+  const guides: Record<MailLocale, WelcomeGuide> = {
+    "ar-EG": {
+      features: [
+        "اتعلم الذكاء الاصطناعي بالتطبيق في مسارات مترابطة، مع دروس ومهام تقدر تنفذها بنفسك.",
+        "تابع تقدمك من لوحة حسابك، واختار المسار اللي يناسب هدفك.",
+      ],
+      plansTitle: "اختار الباقة المناسبة لك",
+      plans: [
+        "مجاني: المقدمة وأول درس من كل مسار.",
+        "Pro: كل الدروس خارج مسار Builder (٧١ درسًا).",
+        "Pro Plus: جميع الدروس الـ١٠٠، بما فيها مسار Builder.",
+      ],
+      pricing: "شوف تفاصيل الباقات والمزايا الحالية",
+    },
+    "ar-MSA": {
+      features: [
+        "تعلّم الذكاء الاصطناعي بالتطبيق عبر مسارات مترابطة، ودروس ومهام عملية.",
+        "تابع تقدّمك من لوحة حسابك، واختر المسار المناسب لهدفك.",
+      ],
+      plansTitle: "اختر الباقة المناسبة لك",
+      plans: [
+        "مجاني: المقدمة والدرس الأول من كل مسار.",
+        "Pro: جميع الدروس باستثناء مسار Builder (٧١ درسًا).",
+        "Pro Plus: جميع الدروس المئة، بما فيها مسار Builder.",
+      ],
+      pricing: "اطّلع على تفاصيل الباقات والمزايا الحالية",
+    },
+    "ar-Gulf": {
+      features: [
+        "تعلّم الذكاء الاصطناعي بالتطبيق في مسارات مترابطة، ودروس ومهام عملية.",
+        "تابع تقدّمك من لوحة حسابك، واختر المسار اللي يناسب هدفك.",
+      ],
+      plansTitle: "اختر الباقة اللي تناسبك",
+      plans: [
+        "مجاني: المقدمة وأول درس من كل مسار.",
+        "Pro: جميع الدروس عدا مسار Builder (٧١ درسًا).",
+        "Pro Plus: جميع الدروس الـ١٠٠، ومنها مسار Builder.",
+      ],
+      pricing: "اطّلع على تفاصيل الباقات والمزايا الحالية",
+    },
+    en: {
+      features: [
+        "Learn AI by doing through connected learning paths, lessons, and practical missions.",
+        "Track your progress on your dashboard and choose the path that fits your goal.",
+      ],
+      plansTitle: "Choose your plan",
+      plans: [
+        "Free: the introduction and first lesson of every path.",
+        "Pro: all 71 lessons outside the Builder path.",
+        "Pro Plus: all 100 lessons, including Builder.",
+      ],
+      pricing: "See current plan details and features",
+    },
+  };
   const [title, body, action] = copy[locale];
-  return { subject: title, ...personalized(locale, name, title, body, action, "/login") };
+  return {
+    subject: title,
+    ...personalized(locale, name, title, body, action, "/dashboard", guides[locale]),
+  };
 }
 export function subscriptionContent(
   plan: "pro" | "pro_plus",
