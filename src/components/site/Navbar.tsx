@@ -15,6 +15,7 @@ import { useLocale } from "@/lib/locale/locale-context";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 import { cn } from "@/lib/utils";
+import { KidsBrand } from "@/components/kids/KidsBrand";
 
 export function Navbar() {
   const { user } = useAuth();
@@ -36,6 +37,9 @@ export function Navbar() {
       <Link to="/curriculum" search={localeSearch()} className="hover:text-foreground transition">
         {t("nav.curriculum")}
       </Link>
+      <Link to="/kids" search={localeSearch()} className="hover:text-foreground transition">
+        <KidsBrand compact />
+      </Link>
       <Link to="/pricing" search={localeSearch()} className="hover:text-foreground transition">
         {t("nav.pricing")}
       </Link>
@@ -56,7 +60,7 @@ export function Navbar() {
             draggable={false}
           />
         </Link>
-        <nav className="hidden lg:flex items-center gap-8 text-sm text-muted-foreground">
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-8 text-sm text-muted-foreground">
           {navigation}
         </nav>
         <div className="flex items-center gap-2">
@@ -107,6 +111,11 @@ export function Navbar() {
                 <SheetClose asChild>
                   <Link to="/curriculum" search={localeSearch()}>
                     {t("nav.curriculum")}
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link to="/kids" search={localeSearch()}>
+                    <KidsBrand compact />
                   </Link>
                 </SheetClose>
                 <SheetClose asChild>

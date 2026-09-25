@@ -8,16 +8,14 @@ import { toast } from "sonner";
 import { ArrowLeft } from "lucide-react";
 import { AuthShell } from "@/components/auth/AuthShell";
 import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
-import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 import { useUiString } from "@/lib/locale/use-ui-strings";
+import { parseAuthIntentSearch } from "@/lib/kids/auth-intent";
 
 export const Route = createFileRoute("/login")({
-  validateSearch: (raw: Record<string, unknown>) => parseLocaleSearchParam(raw),
+  validateSearch: parseAuthIntentSearch,
   head: async ({ match }) => {
-    const locale = await resolveRouteHeadLocale({
-      searchLocale: match.search.locale,
-    });
+    const locale = await resolveRouteHeadLocale({ searchLocale: match.search.locale });
     return buildLocalizedPublicMeta(locale, "login");
   },
   component: LoginPage,
@@ -26,6 +24,7 @@ export const Route = createFileRoute("/login")({
 function LoginPage() {
   const t = useUiString();
   const navigate = useNavigate();
+  const search = Route.useSearch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -41,9 +40,11 @@ function LoginPage() {
       return toast.error(error.message);
     }
     toast.success(t("auth.login.toast.success"));
-    // Client-side navigation: a full reload re-runs the whole auth boot
-    // sequence and leaves the user staring at a blank screen.
-    navigate({ to: "/dashboard", replace: true });
+    if (search.intent === "kids") {
+      navigate({ to: "/kids", search: { locale: search.locale }, replace: true });
+    } else {
+      navigate({ to: "/dashboard", replace: true });
+    }
   }
 
   return (
@@ -55,7 +56,12 @@ function LoginPage() {
         </div>
         <div className="space-y-2">
           <Label>{t("auth.field.password")}</Label>
-          <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          <Input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
         </div>
         <Button type="submit" variant="hero" size="lg" className="w-full" disabled={loading}>
           {loading ? (
@@ -77,7 +83,7 @@ function LoginPage() {
       )}
       <p className="text-center text-sm text-muted-foreground mt-6">
         {t("auth.login.footerNew")}{" "}
-        <Link to="/signup" className="text-primary hover:underline">
+        <Link to="/signup" search={{ ...search }} className="text-primary hover:underline">
           {t("auth.link.signup")}
         </Link>
         <span className="mx-2">·</span>

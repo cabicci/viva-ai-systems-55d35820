@@ -28,6 +28,7 @@ import {
   getCurriculumPathLabel,
 } from "@/lib/locale-curriculum/resolve-curriculum-label";
 import { useUiString } from "@/lib/locale/use-ui-strings";
+import { KidsPathCard } from "@/components/kids/KidsPathCard";
 
 type CurriculumSearch = { module?: string; lesson?: string; locale?: string };
 
@@ -187,6 +188,9 @@ function CurriculumPage() {
                   <div className="space-y-10">{renderPaths(builderPaths)}</div>
                 </section>
               )}
+              <section aria-label="Masaarat Kids">
+                <KidsPathCard />
+              </section>
             </div>
           );
         })()}
@@ -295,7 +299,7 @@ function PathBlock({
         </div>
       )}
       {/* Path header */}
-        <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-start gap-3 sm:gap-5 mb-6">
+      <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-start gap-3 sm:gap-5 mb-6">
         <div
           className="grid h-14 w-14 place-items-center rounded-xl shrink-0"
           style={{ background: pastel }}
@@ -434,7 +438,9 @@ function PathBlock({
               to="/learn/$pathId/$lessonId"
               params={{ pathId: "builder", lessonId: "builder-m1-l1-what-is-llm" }}
             >
-              <span className="truncate">{t("curriculum.footer.builderCta").replace("{path}", builderPathTitle)}</span>
+              <span className="truncate">
+                {t("curriculum.footer.builderCta").replace("{path}", builderPathTitle)}
+              </span>
               <ArrowRight className={`h-4 w-4 ${dir === "rtl" ? "rotate-180" : ""}`} />
             </Link>
           </Button>

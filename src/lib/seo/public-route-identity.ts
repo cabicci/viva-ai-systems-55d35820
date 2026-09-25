@@ -2,6 +2,7 @@ export const PUBLIC_ROUTE_PATHS = {
   home: "/",
   contact: "/contact",
   curriculum: "/curriculum",
+  kids: "/kids",
   pricing: "/pricing",
   privacy: "/privacy",
   terms: "/terms",

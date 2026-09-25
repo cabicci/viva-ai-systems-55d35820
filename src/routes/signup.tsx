@@ -8,8 +8,10 @@ import { toast } from "sonner";
 import { ArrowLeft } from "lucide-react";
 import { AuthShell } from "@/components/auth/AuthShell";
 import { useUiString } from "@/lib/locale/use-ui-strings";
+import { kidsSignupRedirect, parseAuthIntentSearch } from "@/lib/kids/auth-intent";
 
 export const Route = createFileRoute("/signup")({
+  validateSearch: parseAuthIntentSearch,
   head: () => ({ meta: [{ title: "إنشاء حساب — مسارات" }] }),
   component: SignupPage,
 });
@@ -17,6 +19,7 @@ export const Route = createFileRoute("/signup")({
 function SignupPage() {
   const t = useUiString();
   const navigate = useNavigate();
+  const search = Route.useSearch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -27,12 +30,12 @@ function SignupPage() {
     const { error } = await supabase.auth.signUp({
       email,
       password,
-      options: { emailRedirectTo: `${window.location.origin}/dashboard` },
+      options: { emailRedirectTo: kidsSignupRedirect(window.location.origin, search) },
     });
     setLoading(false);
     if (error) return toast.error(error.message);
     toast.success(t("auth.signup.toast.success"));
-    navigate({ to: "/login" });
+    navigate({ to: "/login", search, replace: true });
   }
 
   return (
@@ -64,7 +67,7 @@ function SignupPage() {
       </form>
       <p className="text-center text-sm text-muted-foreground mt-6">
         {t("auth.signup.footerHasAccount")}{" "}
-        <Link to="/login" className="text-primary hover:underline">
+        <Link to="/login" search={search} className="text-primary hover:underline">
           {t("auth.link.login")}
         </Link>
       </p>

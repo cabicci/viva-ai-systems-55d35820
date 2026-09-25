@@ -1,9 +1,11 @@
 import { getUiString } from "@/lib/locale/ui-strings";
+import { getKidsCopy } from "@/lib/kids/copy";
 import type { SupportedLocale } from "./types";
 import { buildPublicRouteIdentity } from "@/lib/seo/public-route-identity";
 
 export type PublicRouteMetaKind =
   | "home"
+  | "kids"
   | "pricing"
   | "terms"
   | "privacy"
@@ -28,7 +30,7 @@ function withSocialTags(title: string, description: string): RouteMetaTag[] {
 }
 
 const META_KEYS: Record<
-  PublicRouteMetaKind,
+  Exclude<PublicRouteMetaKind, "kids">,
   { title: Parameters<typeof getUiString>[1]; description: Parameters<typeof getUiString>[1] }
 > = {
   home: {
@@ -65,6 +67,14 @@ export function buildLocalizedPublicMeta(
   locale: SupportedLocale,
   kind: PublicRouteMetaKind,
 ): { meta: RouteMetaTag[]; links?: { rel: string; href: string }[] } {
+  if (kind === "kids") {
+    const copy = getKidsCopy(locale);
+    const identity = buildPublicRouteIdentity(kind);
+    return {
+      meta: [...withSocialTags(`${copy.title} — Masaarat`, copy.intro), ...identity.meta],
+      links: identity.links,
+    };
+  }
   const keys = META_KEYS[kind];
   const title = getUiString(locale, keys.title);
   const description = getUiString(locale, keys.description);
