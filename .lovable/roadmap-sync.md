@@ -1,11 +1,10 @@
 # Roadmap sync marker
 
-[roadmap:cc83bcf5-3929-45ff-b3a5-8ff8abd7f5bf]
+[roadmap:5ef825a9-66b9-430f-9c03-57b161126504]
 date: 2026-09-25
-scope: db
-source: ai
-summary: Prepare child-specific consent receipts, atomic profile creation and withdrawal; all release gates remain unchanged
-sync_status: pending Central roadmap_items update
+scope: infra
+source: user
+summary: [source:user] تجهيز قوالب رسائل Auth الست (تأكيد تسجيل، استعادة كلمة مرور، رابط دخول، دعوة، تغيير بريد، رمز تحقق) عبر Lovable Emails على نطاق auth.masaarat.ai بهوية مسارات العربية RTL. [ai-edit 2026-09-25]: [scope:infra] scaffold auth templates + masaarat-shell + vite serverEnv/entities alias + /lovable/ bypass في start.ts
 
-This change is prepared locally. The matching roadmap_items update is pending Central coordination.
+This file is updated after the matching roadmap_items row is updated.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
