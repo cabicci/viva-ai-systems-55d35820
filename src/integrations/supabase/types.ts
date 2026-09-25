@@ -1158,6 +1158,13 @@ export type Database = {
         }
         Returns: Json
       }
+      auth_signup_email_profile: {
+        Args: { p_email: string }
+        Returns: {
+          full_name: string
+          preferred_locale: string
+        }[]
+      }
       claim_account_welcome_emails: {
         Args: never
         Returns: {
