@@ -1,41 +1,28 @@
-# شرح تفصيلي: ليه الموقع كان بطيء وبقى سريع (بدون أي تنفيذ)
+# Capability answer: sending Cloud Auth emails through Resend (read-only, nothing to build)
 
-القرار: **مفيش أي تعديل**. ده شرح للحالة الحالية بناءً على قراءة السجلات والملفات فقط.
+## Summary
+In this project, auth emails cannot go through Resend. Lovable Emails is required for auth emails; Resend stays available for app emails.
 
-## اللي بيحصل عند أول فتح (الإقلاع البارد)
+## What I checked in this project's tools
+1. **Custom SMTP in Cloud Auth: not available.** The auth settings tool only controls signup, auto-confirm, anonymous sign-in, leaked-password checks, the current-password requirement and the hourly email limit. It has no SMTP fields. There is no Supabase dashboard access and no screen for this in Cloud.
+2. **Send Email Hook pointed at Resend: not supported.** On Lovable Cloud, auth emails route through Lovable's email service by design. The only supported custom path is Lovable's managed auth templates, which are signed with the Lovable key. Changing the hook setting yourself (through a function, SQL or Cloud) is not supported and can break auth emails.
+3. **Another documented method: none.** The only documented options are Lovable's default templates or Lovable's branded auth templates on your own domain.
 
-التسلسل الفعلي من سجل خادم التطوير:
+## Answers
+- **Is Lovable Emails required for auth emails?** Yes, in this project.
+  - Without templates: auth emails go out from Lovable's default sender.
+  - With branded templates: they go out from `auth.masaarat.ai`.
+- **Welcome and subscription emails:** can stay on Resend through `notifications@mail.masaarat.ai`. This doesn't conflict, because `mail.` and `auth.` are separate subdomains.
+- **info@masaarat.ai (Google Workspace):** can be the Reply-To for the Resend emails and keep receiving mail. The root domain's mail records stay untouched.
+- **Does Pending `auth.masaarat.ai` change sending before DNS?** No. Until the DNS is verified and branded templates are added, auth emails keep going out from the default sender exactly as today.
 
-```text
-1) توليد الأصول قبل التشغيل  → materialized: 400  (كتابة 400 صورة PNG على القرص)
-2) Vite ready                → 2299 ms  (وفي مرة تانية 3249 ms)
-3) أول زيارة للصفحة          → new dependencies optimized: h3-v2, @tanstack/router-core, ...
-4) optimized dependencies changed → reloading   ← الصفحة بتعيد التحميل في نص أول زيارة
-5) كل route وكل صورة بتتترجم عند أول طلب لها → الصور بتظهر بالتدريج
-```
+## Smallest blocker and best option
+- **Blocker:** this project has no custom SMTP setting and no supported hook to Resend. It is a platform limit, not a missing secret.
+- **Best option inside the project:**
+  1. Add the DNS records for `auth.masaarat.ai`.
+  2. Set up Lovable's branded auth templates, matching the design and wording of `docs/email/templates`, and keep the confirmation link as is.
+  3. Keep Resend for app emails.
+  4. Set `info@masaarat.ai` as Reply-To on both.
+- **Secrets needed for auth emails:** none new. `RESEND_*` stays for app emails only.
 
-النتيجة اللي كنت شايفها: الصفحة الرئيسية بس هي اللي بتفتح (لأنها أول route اتترجم)، والصور بتفضل تتحمّل واحدة ورا التانية.
-
-## ليه بقى سريع دلوقتي
-
-- مجلد `node_modules/.vite/deps` موجود ومحدّث (آخر تحديث 10:57)، يعني خطوة optimize خلصت خلاص.
-- الـ400 صورة متولّدة بالفعل على القرص، والعلامة `.materialize-ok.json` بتقول `ok: true, materialized: 400`.
-- فمرحلة الـ`reloading` الوسطانية مش بتحصل، والصفحة بتفتح على طول.
-
-**مهم:** مفيش أي سطر كود اتغير. الفرق كله في الكاش (cache) مش في المشروع.
-
-## متى ترجع البطء تاني
-
-أي حاجة تمسح أو تبطّل الكاش:
-- إعادة تشغيل بيئة البريفيو أو الخادم
-- تغيير في `bun.lockb` — السجل شايف فعلاً: `Re-optimizing dependencies because lockfile has changed` الساعة 11:07
-- تثبيت أو تحديث أي حزمة
-
-## المصدر البنيوي للبطء (للعِلم فقط)
-
-- `src/lib/lesson-visuals/controlled-v1/runtime/controlledV1BrowserResolver.ts` بيستخدم `import.meta.glob` بـ `eager: true` على 400 أصل — في وضع التطوير ده بيخلي المتصفح يجيب مئات الموديولات كل واحد لوحده.
-- سكربت `controlled-visuals:materialize-runtime-assets` بيعيد كتابة 400 ملف في كل إقلاع حتى لو موجودين بالفعل.
-
-## الحالة
-
-مفيش أي تنفيذ مطلوب. لو حبيت بعدين نثبّت السرعة دايمًا، الحلول الثلاثة المعروفة: تخطّي إعادة التوليد لو الأصول موجودة، تحويل الـglob لـ lazy في التطوير، وإضافة الحزم لـ `optimizeDeps`.
+No changes were made.
