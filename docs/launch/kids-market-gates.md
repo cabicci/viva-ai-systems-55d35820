@@ -36,7 +36,7 @@ Country selection is self-reported residence, not geolocation or proof of reside
 
 ## Rollout boundary
 
-The six prepared migrations, in order, are:
+The seven prepared migrations, in order, are:
 
 1. `20260924190000_kids_parent_content_access_foundation.sql`
 2. `20260924191000_kids_private_lesson_content.sql`
@@ -44,6 +44,10 @@ The six prepared migrations, in order, are:
 4. `20260925140000_kids_market_release_gates.sql`
 5. `20260925160000_kids_family_profile_limit.sql`
 6. `20260925190000_kids_retention_email.sql`
+7. `20260925210000_kids_profile_consent.sql`
+
+The seventh migration requires a published, reviewed policy for each enabled
+country/locale before profile creation. See [consent lifecycle](kids-consent-lifecycle.md).
 
 See [family policy preparation](kids-family-policy.md) for approved commercial
 rules, expiry retention, and the intended automatic guardian-verification path.

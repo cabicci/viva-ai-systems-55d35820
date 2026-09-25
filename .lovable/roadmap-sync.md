@@ -4,7 +4,8 @@
 date: 2026-09-25
 scope: db
 source: ai
-summary: Prepare Kids email retention with full14-day delivery grace and Resend integration; gates remain disabled
+summary: Prepare child-specific consent receipts, atomic profile creation and withdrawal; all release gates remain unchanged
+sync_status: pending Central roadmap_items update
 
-This file is updated after the matching roadmap_items row is updated.
+This change is prepared locally. The matching roadmap_items update is pending Central coordination.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.

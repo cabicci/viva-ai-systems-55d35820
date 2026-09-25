@@ -1,3 +1,4 @@
+import { KidsConsentControl } from "./KidsConsentControl";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { KIDS_LEVELS, type KidsLevelId } from "@/lib/kids/catalogue";
@@ -17,6 +18,7 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
   const copy = getKidsJourneyCopy(locale);
   const { state, profiles, createProfile, refresh } = useKidsParentState();
   const [name, setName] = useState("");
+  const [consentPolicyId, setConsentPolicyId] = useState<string | undefined>();
   const [level, setLevel] = useState<KidsLevelId>("level-1");
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState(false);
@@ -27,7 +29,7 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
     setSaving(true);
     setError(false);
     try {
-      await createProfile(name, level);
+      await createProfile(name, level, consentPolicyId);
       onProfileCreated?.();
       setName("");
     } catch {
@@ -87,6 +89,13 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
           ) : null}
         </div>
       )}
+      {state !== "signed-out" && state !== "checking" && state !== "not-released" && (
+        <KidsConsentControl
+          canCreate={state === "ready"}
+          onConsent={setConsentPolicyId}
+          onWithdraw={refresh}
+        />
+      )}
       {state === "ready" && (
         <div className="mt-5 grid gap-6 md:grid-cols-2">
           <div>
@@ -117,7 +126,7 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
               value={name}
               maxLength={40}
               required
-              disabled={atProfileLimit || saving}
+              disabled={atProfileLimit || saving || !consentPolicyId}
               onChange={(event) => setName(event.target.value)}
               autoComplete="off"
             />
@@ -125,7 +134,7 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
             <select
               id="kids-profile-level"
               value={level}
-              disabled={atProfileLimit || saving}
+              disabled={atProfileLimit || saving || !consentPolicyId}
               onChange={(event) => setLevel(event.target.value as KidsLevelId)}
               className="min-h-11 w-full rounded-md border border-input bg-background px-3"
             >
@@ -140,7 +149,10 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
                 {copy.profileError}
               </p>
             )}
-            <Button type="submit" disabled={saving || atProfileLimit || !name.trim()}>
+            <Button
+              type="submit"
+              disabled={saving || atProfileLimit || !name.trim() || !consentPolicyId}
+            >
               {copy.submit}
             </Button>
           </form>
