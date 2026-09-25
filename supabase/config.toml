@@ -8,3 +8,6 @@ verify_jwt = false # Dedicated high-entropy service job secret; no client JWT au
 
 [functions.kids-retention-webhook]
 verify_jwt = false # Signed provider payload; verified before any database access.
+
+[functions.account-welcome-job]
+verify_jwt = false # Dedicated high-entropy service secret, checked before DB access.
