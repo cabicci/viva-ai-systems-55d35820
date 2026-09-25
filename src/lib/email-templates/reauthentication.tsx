@@ -1,58 +1,35 @@
 import * as React from 'react'
 
-import {
-  Body,
-  Container,
-  Head,
-  Heading,
-  Html,
-  Preview,
-  Text,
-} from '@react-email/components'
+import { Text } from '@react-email/components'
+
+import { MasaaratShell, bodyText } from './masaarat-shell'
 
 interface ReauthenticationEmailProps {
   token: string
 }
 
 export const ReauthenticationEmail = ({ token }: ReauthenticationEmailProps) => (
-  <Html lang="en" dir="ltr">
-    <Head />
-    <Preview>Your verification code</Preview>
-    <Body style={main}>
-      <Container style={container}>
-        <Heading style={h1}>Confirm reauthentication</Heading>
-        <Text style={text}>Use the code below to confirm your identity:</Text>
-        <Text style={codeStyle}>{token}</Text>
-        <Text style={footer}>
-          This code will expire shortly. If you didn't request this, you can
-          safely ignore this email.
-        </Text>
-      </Container>
-    </Body>
-  </Html>
+  <MasaaratShell
+    preview="رمز التحقق لحسابك في مسارات"
+    title="رمز التحقق"
+    footerNote="إن لم تطلب هذا الرمز، فتجاهل هذه الرسالة."
+  >
+    <Text style={bodyText}>استخدم الرمز التالي لإكمال التحقق من حسابك في مسارات:</Text>
+    <Text style={codeStyle}>{token}</Text>
+  </MasaaratShell>
 )
 
 export default ReauthenticationEmail
 
-const main = { backgroundColor: '#ffffff', fontFamily: 'Arial, sans-serif' }
-const container = { padding: '20px 25px' }
-const h1 = {
-  fontSize: '22px',
-  fontWeight: 'bold' as const,
-  color: '#000000',
-  margin: '0 0 20px',
-}
-const text = {
-  fontSize: '14px',
-  color: '#55575d',
-  lineHeight: '1.5',
-  margin: '0 0 25px',
-}
 const codeStyle = {
-  fontFamily: 'Courier, monospace',
-  fontSize: '22px',
+  fontSize: '28px',
   fontWeight: 'bold' as const,
-  color: '#000000',
-  margin: '0 0 30px',
+  letterSpacing: '6px',
+  color: '#243044',
+  backgroundColor: '#f3f8f8',
+  border: '1px solid #dce6ed',
+  borderRadius: '10px',
+  padding: '14px 20px',
+  textAlign: 'center' as const,
+  direction: 'ltr' as const,
 }
-const footer = { fontSize: '12px', color: '#999999', margin: '30px 0 0' }
