@@ -30,14 +30,14 @@ vi.mock("@/components/locale/LanguageSelector", () => ({
 vi.mock("@/components/kids/KidsBrand", () => ({ KidsBrand: () => <span>Kids</span> }));
 
 describe("shared top navigation", () => {
-  it("keeps the full menu across the sticky top bar from tablet width and Kids after Contact", () => {
+  it("keeps the public links in one sticky row with Kids after Contact", () => {
     render(<Navbar />);
     const header = screen.getByRole("banner");
     expect(header).toHaveClass("sticky", "top-0");
     const desktop = within(header).getByRole("navigation");
-    expect(desktop).toHaveClass("md:flex");
-    expect(desktop).toHaveClass("flex-wrap");
-    expect(screen.getByRole("button", { name: "nav.menu" })).toHaveClass("md:hidden");
+    expect(desktop).toHaveClass("whitespace-nowrap", "min-[1180px]:flex");
+    expect(desktop).not.toHaveClass("flex-wrap");
+    expect(screen.getByRole("button", { name: "nav.menu" })).toHaveClass("min-[1180px]:hidden");
     const desktopLinks = within(desktop)
       .getAllByRole("link")
       .map((link) => link.getAttribute("href"));
@@ -66,5 +66,19 @@ describe("shared top navigation", () => {
       "href",
       "/account",
     );
+  });
+
+  it("replaces the public links with account links in the same header on account pages", () => {
+    render(<Navbar variant="account" />);
+    const header = screen.getByRole("banner");
+    const accountNav = within(header).getByRole("navigation", { name: "nav.myDashboard" });
+    expect(
+      within(accountNav)
+        .getAllByRole("link")
+        .map((link) => link.getAttribute("href")),
+    ).toEqual(["/dashboard", "/ai-assistant", "/analytics", "/account"]);
+    expect(within(header).queryByRole("link", { name: "nav.contact" })).not.toBeInTheDocument();
+    expect(within(header).queryByRole("link", { name: "Kids" })).not.toBeInTheDocument();
+    expect(within(header).getByRole("button", { name: "sidebar.signOut" })).toBeInTheDocument();
   });
 });

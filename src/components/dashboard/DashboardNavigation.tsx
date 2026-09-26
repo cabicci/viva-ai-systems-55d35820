@@ -26,6 +26,21 @@ const adminLinks: { to: string; key: UiStringKey }[] = [
   { to: "/build-logs", key: "sidebar.buildLogs" },
 ];
 
+export function AccountHeaderLinks() {
+  const t = useUiString();
+  const localeSearch = useLocaleLinkSearch();
+
+  return (
+    <>
+      {accountLinks.map(({ to, key }) => (
+        <Link key={to} to={to} search={localeSearch()} className="hover:text-foreground transition">
+          {t(key)}
+        </Link>
+      ))}
+    </>
+  );
+}
+
 export function DashboardNavigation({ mobile = false }: { mobile?: boolean }) {
   const t = useUiString();
   const { signOut } = useAuth();
