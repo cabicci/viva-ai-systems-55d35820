@@ -63,6 +63,16 @@ describe("adult-only Kids parent request", () => {
       expect(await screen.findByLabelText("بلد إقامة وليّ الأمر")).toHaveValue("");
       expect(screen.getByRole("option", { name: "مصر" })).toHaveValue("EG");
       expect(screen.getByRole("option", { name: "جزر القمر" })).toHaveValue("KM");
+      expect(
+        screen.getByRole("button", {
+          name:
+            locale === "ar-EG"
+              ? "ابعت طلب مراجعة وليّ الأمر"
+              : locale === "ar-Gulf"
+                ? "أرسل طلب مراجعة وليّ الأمر"
+                : "إرسال طلب مراجعة وليّ الأمر",
+        }),
+      ).toBeDisabled();
     },
   );
 

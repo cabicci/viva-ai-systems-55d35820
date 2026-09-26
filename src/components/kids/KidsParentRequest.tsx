@@ -21,6 +21,46 @@ const ar = {
   rejected: "لم يُقبل طلبك. تواصل مع الدعم ببيانات حسابك فقط، دون تفاصيل الطفل.",
   offline: "خدمة طلبات أولياء الأمور غير متاحة الآن. لا تُرسل بيانات الطفل.",
   error: "تعذّر إرسال الطلب. حاول لاحقًا.",
+  checking: "جارٍ التحقق من حالة الطلب...",
+  refresh: "تحديث",
+};
+const eg = {
+  notice:
+    "ده طلب لمراجعة حساب وليّ الأمر بس. ما تدخلش أي بيانات للطفل دلوقتي؛ الطلب ما بيفتحش ملفات الأطفال أو دروسهم.",
+  acknowledge:
+    "بأقر إني بالغ قانونًا في بلد إقامتي وبطلب المراجعة كوليّ أمر. فاهم إن الطلب ده لوحده ما بيثبتش الولاية ولا يعتبر موافقة على معالجة بيانات طفل.",
+  country: "بلد إقامة وليّ الأمر",
+  chooseCountry: "اختار بلد إقامتك",
+  dataNotice:
+    "بنستخدم بريد حسابك المؤكد وبلد إقامتك وإقرارك عشان نعالج الطلب ده بس. اختيار البلد مش معناه إن خدمة الأطفال اتفتحت فيه.",
+  send: "ابعت طلب مراجعة وليّ الأمر",
+  sending: "بنبعت الطلب...",
+  pending: "طلبك وصل. لازم نكمّل التحقق من وليّ الأمر قبل فتح الخدمة. ما تبعتش بيانات الطفل.",
+  approved: "المراجعة اتعمدت. حدّث الصفحة عشان تتأكد إن الخدمة جاهزة.",
+  rejected: "طلبك ما اتقبلش. تواصل مع الدعم ببيانات حسابك بس، من غير تفاصيل الطفل.",
+  offline: "خدمة طلبات أولياء الأمور مش متاحة دلوقتي. ما تبعتش بيانات الطفل.",
+  error: "ما قدرناش نبعت الطلب. حاول بعدين.",
+  checking: "بنتأكد من حالة الطلب...",
+  refresh: "حدّث",
+};
+const gulf = {
+  notice:
+    "هذا طلب لمراجعة حساب وليّ الأمر بس. لا تدخل بيانات الطفل الحين؛ الطلب ما يفتح ملفات الأطفال أو دروسهم.",
+  acknowledge:
+    "أقر إني بالغ قانونًا في بلد إقامتي وأطلب المراجعة بصفتي وليّ أمر. أفهم إن الطلب بروحه ما يثبت الولاية ولا يعتبر موافقة على معالجة بيانات طفل.",
+  country: "بلد إقامة وليّ الأمر",
+  chooseCountry: "اختر بلد إقامتك",
+  dataNotice:
+    "نستخدم بريد حسابك المؤكد وبلد إقامتك وإقرارك لمعالجة هالطلب بس. اختيار البلد ما يعني إن خدمة الأطفال تفعّلت فيه.",
+  send: "أرسل طلب مراجعة وليّ الأمر",
+  sending: "جارٍ إرسال الطلب...",
+  pending: "وصل طلبك. لازم يكتمل التحقق من وليّ الأمر قبل فتح الخدمة. لا ترسل بيانات الطفل.",
+  approved: "اعتُمدت المراجعة. حدّث الصفحة عشان تتأكد من جاهزية الخدمة.",
+  rejected: "طلبك ما انقبل. تواصل مع الدعم ببيانات حسابك بس، من دون تفاصيل الطفل.",
+  offline: "خدمة طلبات أولياء الأمور مب متاحة الحين. لا ترسل بيانات الطفل.",
+  error: "ما قدرنا نرسل الطلب. جرّب بعدين.",
+  checking: "نتأكد من حالة الطلب...",
+  refresh: "حدّث",
 };
 const en = {
   notice:
@@ -40,6 +80,8 @@ const en = {
     "Your request was not approved. Contact support with your account details only, without child details.",
   offline: "The parent review service is unavailable. Do not send child details.",
   error: "The request could not be sent. Try later.",
+  checking: "Checking review status...",
+  refresh: "Refresh",
 };
 
 export function KidsParentRequest({ onRefresh }: { onRefresh: () => void }) {
@@ -51,7 +93,7 @@ export function KidsParentRequest({ onRefresh }: { onRefresh: () => void }) {
 function KidsParentRequestForAccount({ onRefresh }: { onRefresh: () => void }) {
   const { user } = useAuth();
   const { locale } = useLocale();
-  const copy = locale === "en" ? en : ar;
+  const copy = locale === "en" ? en : locale === "ar-EG" ? eg : locale === "ar-Gulf" ? gulf : ar;
   const [status, setStatus] = useState<ReviewStatus>("loading");
   const [acknowledged, setAcknowledged] = useState(false);
   const [country, setCountry] = useState("");
@@ -112,19 +154,14 @@ function KidsParentRequestForAccount({ onRefresh }: { onRefresh: () => void }) {
     }
   }
 
-  if (status === "loading")
-    return (
-      <p role="status">
-        {locale === "en" ? "Checking review status..." : "جارٍ التحقق من حالة الطلب..."}
-      </p>
-    );
+  if (status === "loading") return <p role="status">{copy.checking}</p>;
   if (status !== "available") {
     return (
       <div className="space-y-2">
         <p role="status">{copy[status]}</p>
         {status === "approved" && (
           <button type="button" className="underline" onClick={onRefresh}>
-            {locale === "en" ? "Refresh" : "تحديث"}
+            {copy.refresh}
           </button>
         )}
       </div>

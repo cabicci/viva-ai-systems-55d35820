@@ -4,20 +4,27 @@ import { KIDS_FAMILY_POLICY, quoteKidsFamily } from "@/lib/kids/family-policy";
 export function KidsFamilyPricing() {
   const { locale } = useLocale();
   const en = locale === "en";
+  const eg = locale === "ar-EG";
+  const gulf = locale === "ar-Gulf";
   const money = (minor: number, currency: string) =>
-    new Intl.NumberFormat(en ? "en-US" : "ar-EG", { style: "currency", currency }).format(
-      minor / 100,
-    );
+    new Intl.NumberFormat(en ? "en-US" : gulf ? "ar-SA" : "ar-EG", {
+      style: "currency",
+      currency,
+    }).format(minor / 100);
 
   return (
     <section className="space-y-4 rounded-2xl border border-border/60 bg-card p-6">
       <h2 className="text-xl font-bold">
-        {en ? "Kids family pricing" : "أسعار اشتراك كيدز العائلي"}
+        {en ? "Kids family pricing" : eg ? "أسعار اشتراك كيدز للعيلة" : "أسعار اشتراك كيدز العائلي"}
       </h2>
       <p className="text-sm text-muted-foreground">
         {en
           ? `One independent subscription for up to ${KIDS_FAMILY_POLICY.maxProfiles} children. Pro or Pro Plus is optional.`
-          : `اشتراك مستقل يشمل حتى ${KIDS_FAMILY_POLICY.maxProfiles} أطفال. لا يشترط الاشتراك في Pro أو Pro Plus.`}
+          : eg
+            ? `اشتراك منفصل يشمل حتى ${KIDS_FAMILY_POLICY.maxProfiles} أطفال. مش لازم تشترك في Pro أو Pro Plus.`
+            : gulf
+              ? `اشتراك مستقل يشمل حتى ${KIDS_FAMILY_POLICY.maxProfiles} أطفال. ما تحتاج تشترك في Pro أو Pro Plus.`
+              : `اشتراك مستقل يشمل حتى ${KIDS_FAMILY_POLICY.maxProfiles} أطفال. لا يشترط الاشتراك في Pro أو Pro Plus.`}
       </p>
       <div className="grid gap-4 md:grid-cols-2">
         {(["EG", "INTL"] as const).map((market) => (
@@ -48,7 +55,11 @@ export function KidsFamilyPricing() {
       <p className="text-sm text-muted-foreground">
         {en
           ? "Prices exclude tax. The 10% bundle discount applies to Kids only; adult plan prices stay the same. Annual billing costs the equivalent of 10 monthly payments. Subscriptions are not available for purchase yet."
-          : "الأسعار لا تشمل الضرائب. خصم الجمع 10% يطبق على كيدز فقط، وتبقى أسعار باقات الكبار كما هي. سعر السنة يعادل 10 أشهر. شراء الاشتراك غير متاح بعد."}
+          : eg
+            ? "الأسعار من غير ضرائب. خصم الجمع ١٠٪ على كيدز بس، وسعر باقة الكبار ما بيتغيرش. السنة بسعر ١٠ شهور. شراء الاشتراك غير متاح لسه."
+            : gulf
+              ? "الأسعار ما تشمل الضريبة. خصم الجمع ١٠٪ على كيدز بس، وسعر باقة الكبار ما يتغير. السنة بسعر ١٠ شهور. شراء الاشتراك مب متاح للحين."
+              : "الأسعار لا تشمل الضرائب. خصم الجمع 10% يطبق على كيدز فقط، وتبقى أسعار باقات الكبار كما هي. سعر السنة يعادل 10 أشهر. شراء الاشتراك غير متاح بعد."}
       </p>
     </section>
   );

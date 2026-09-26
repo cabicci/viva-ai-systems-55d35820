@@ -3,6 +3,16 @@ name: "B024 - Authenticated lesson video playback validation"
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - 'src/lib/bunny-videos.ts'
+      - 'src/lib/__tests__/locale-pilot-video-*'
+      - 'src/components/intro/IntroLessonRenderer.tsx'
+      - 'src/components/locale/LocalePackageLessonRenderer.tsx'
+      - 'src/routes/learn.$pathId.$lessonId.tsx'
+      - 'src/routes/kids.$levelId.$lessonNumber.tsx'
+      - 'src/lib/kids/lesson-client.ts'
+      - 'supabase/functions/kids-playback/**'
+      - '.github/scripts/b024_video_playback_validation/**'
   workflow_dispatch:
     inputs:
       expected_product_sha:

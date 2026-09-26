@@ -3,6 +3,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
 import { useLocale } from "@/lib/locale/locale-context";
 import { Button } from "@/components/ui/button";
+import { getKidsPrivacyCopy } from "@/lib/kids/privacy-copy";
 
 type Policy = { id: string; notice_text: string; consent_text: string; version: string };
 type Receipt = {
@@ -11,6 +12,51 @@ type Receipt = {
   withdrawn_at: string | null;
   kids_profiles: { display_name: string };
   kids_consent_policies: { version: string };
+};
+
+const words = {
+  "ar-EG": {
+    title: "الموافقة على بيانات الطفل",
+    version: "نسخة السياسة: ",
+    missing:
+      "إشعار خصوصية الطفل المعتمد لبلدك ولغتك مش متاح لسه. إنشاء الملف مقفول لحد ما يبقى جاهز.",
+    withdrawal:
+      "سحب الموافقة بيوقف وصول الملف للدروس. ده مش تأكيد بحذف البيانات المخزنة أو النسخ الاحتياطية.",
+    withdrawn: "الموافقة اتسحبت",
+    withdraw: "اسحب الموافقة",
+    error: "ما قدرناش نحدّث سجل الموافقات. تواصل مع الدعم لو المشكلة مستمرة.",
+  },
+  "ar-MSA": {
+    title: "الموافقة على بيانات الطفل",
+    version: "نسخة السياسة: ",
+    missing: "إشعار خصوصية الطفل المعتمد لبلدك ولغتك غير متاح بعد. إنشاء الملفات مغلق حتى إتاحته.",
+    withdrawal:
+      "سحب الموافقة يوقف وصول هذا الملف إلى الدروس. لا يعني ذلك تأكيد محو البيانات المخزنة أو النسخ الاحتياطية.",
+    withdrawn: "سُحبت الموافقة",
+    withdraw: "سحب الموافقة",
+    error: "تعذر تحديث سجل الموافقات. تواصل مع الدعم إذا استمر ذلك.",
+  },
+  "ar-Gulf": {
+    title: "الموافقة على بيانات الطفل",
+    version: "نسخة السياسة: ",
+    missing: "إشعار خصوصية الطفل المعتمد لبلدك ولغتك مب متاح للحين. إنشاء الملف ما يفتح لين يتوفر.",
+    withdrawal:
+      "سحب الموافقة يوقف وصول هالملف للدروس. ما يعني إن البيانات المخزنة أو النسخ الاحتياطية انحذفت فورًا.",
+    withdrawn: "انسحبت الموافقة",
+    withdraw: "اسحب الموافقة",
+    error: "ما قدرنا نحدّث سجل الموافقات. تواصل مع الدعم لو استمرت المشكلة.",
+  },
+  en: {
+    title: "Child data consent",
+    version: "Policy version: ",
+    missing:
+      "The approved child privacy notice for your country and language is not available yet. Profile creation remains closed.",
+    withdrawal:
+      "Withdrawing consent stops this profile's lesson access. It does not confirm erasure of stored data or backups.",
+    withdrawn: "Consent withdrawn",
+    withdraw: "Withdraw consent",
+    error: "Consent records could not be updated. Contact support if this continues.",
+  },
 };
 
 /** No draft notice is presented as an approved policy. RLS selects this parent's country. */
@@ -27,7 +73,7 @@ export function KidsConsentControl({
   const userId = user?.id;
   const [loadedFor, setLoadedFor] = useState<string | undefined>();
   const { locale } = useLocale();
-  const english = locale === "en";
+  const t = words[locale];
   const [policy, setPolicy] = useState<Policy | null>(null);
   const [policyContext, setPolicyContext] = useState("");
   const currentContext = `${userId}:${locale}`;
@@ -102,12 +148,15 @@ export function KidsConsentControl({
 
   return (
     <div className="mt-5 space-y-4 rounded-2xl border border-border p-4">
-      <h3 className="font-bold">{english ? "Child data consent" : "الموافقة على بيانات الطفل"}</h3>
+      <h3 className="font-bold">{t.title}</h3>
+      <a href={`/kids/privacy?locale=${locale}`} className="text-sm text-primary underline">
+        {getKidsPrivacyCopy(locale).link}
+      </a>
       {canCreate &&
         (policy && policyContext === currentContext ? (
           <>
             <p className="text-xs text-muted-foreground">
-              {english ? "Policy version: " : "نسخة السياسة: "}
+              {t.version}
               {policy.version}
             </p>
             <p className="whitespace-pre-wrap text-sm leading-relaxed">{policy.notice_text}</p>
@@ -126,18 +175,12 @@ export function KidsConsentControl({
           </>
         ) : (
           <p role="status" className="text-sm">
-            {english
-              ? "The approved child privacy notice for your country and language is not available yet. Profile creation remains closed."
-              : "إشعار خصوصية الطفل المعتمد لبلدك ولغتك غير متاح بعد. إنشاء الملفات مغلق حتى إتاحته."}
+            {t.missing}
           </p>
         ))}
       {loadedFor === userId && receipts.length > 0 && (
         <div className="space-y-2">
-          <p className="text-sm">
-            {english
-              ? "Withdrawing consent stops this profile's lesson access. It does not confirm erasure of stored data or backups."
-              : "سحب الموافقة يوقف وصول هذا الملف إلى الدروس. لا يعني ذلك تأكيد محو البيانات المخزنة أو النسخ الاحتياطية."}
-          </p>
+          <p className="text-sm">{t.withdrawal}</p>
           {receipts.map((receipt) => (
             <div key={receipt.profile_id} className="flex flex-wrap items-center gap-3">
               <span className="text-sm">
@@ -145,7 +188,7 @@ export function KidsConsentControl({
                 {receipt.kids_consent_policies.version}
               </span>
               {receipt.withdrawn_at ? (
-                <span className="text-sm">{english ? "Consent withdrawn" : "سُحبت الموافقة"}</span>
+                <span className="text-sm">{t.withdrawn}</span>
               ) : (
                 <Button
                   type="button"
@@ -153,7 +196,7 @@ export function KidsConsentControl({
                   disabled={busy !== null}
                   onClick={() => void withdraw(receipt.profile_id)}
                 >
-                  {english ? "Withdraw consent" : "سحب الموافقة"}
+                  {t.withdraw}
                 </Button>
               )}
             </div>
@@ -162,9 +205,7 @@ export function KidsConsentControl({
       )}
       {error && (
         <p role="alert" className="text-sm text-destructive">
-          {english
-            ? "Consent records could not be updated. Contact support if this continues."
-            : "تعذر تحديث سجل الموافقات. تواصل مع الدعم إذا استمر ذلك."}
+          {t.error}
         </p>
       )}
     </div>

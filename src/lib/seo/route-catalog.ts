@@ -14,6 +14,7 @@ export const ROUTE_CATALOG = [
   { source: "curriculum.tsx", pattern: "/curriculum", visibility: "public", sitemap: true },
   { source: "kids.tsx", pattern: "/kids", visibility: "public", sitemap: false },
   { source: "kids.index.tsx", pattern: "/kids", visibility: "public", sitemap: true },
+  { source: "kids.privacy.tsx", pattern: "/kids/privacy", visibility: "public", sitemap: false },
   {
     source: "kids.$levelId.tsx",
     pattern: "/kids/level-*",

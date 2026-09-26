@@ -33,6 +33,7 @@ import { Route as AccountRouteImport } from './routes/account'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RoadmapIndexRouteImport } from './routes/roadmap.index'
 import { Route as KidsIndexRouteImport } from './routes/kids.index'
+import { Route as KidsPrivacyRouteImport } from './routes/kids.privacy'
 import { Route as ImageGalleryIndexRouteImport } from './routes/image-gallery.index'
 import { Route as AdminIndexRouteImport } from './routes/admin.index'
 import { Route as RoadmapIdRouteImport } from './routes/roadmap.$id'
@@ -165,6 +166,11 @@ const KidsIndexRoute = KidsIndexRouteImport.update({
   path: '/',
   getParentRoute: () => KidsRoute,
 } as any)
+const KidsPrivacyRoute = KidsPrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => KidsRoute,
+} as any)
 const ImageGalleryIndexRoute = ImageGalleryIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -235,6 +241,7 @@ export interface FileRoutesByFullPath {
   '/image-gallery': typeof ImageGalleryRouteWithChildren
   '/index': typeof Char91indexChar93Route
   '/kids': typeof KidsRouteWithChildren
+  '/kids/privacy': typeof KidsPrivacyRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/pricing': typeof PricingRoute
@@ -285,6 +292,7 @@ export interface FileRoutesByTo {
   '/admin': typeof AdminIndexRoute
   '/image-gallery': typeof ImageGalleryIndexRoute
   '/kids': typeof KidsIndexRoute
+  '/kids/privacy': typeof KidsPrivacyRoute
   '/roadmap': typeof RoadmapIndexRoute
   '/kids/$levelId/$lessonNumber': typeof KidsLevelIdLessonNumberRoute
   '/learn/$pathId/$lessonId': typeof LearnPathIdLessonIdRoute
@@ -307,6 +315,7 @@ export interface FileRoutesById {
   '/image-gallery': typeof ImageGalleryRouteWithChildren
   '/index': typeof Char91indexChar93Route
   '/kids': typeof KidsRouteWithChildren
+  '/kids/privacy': typeof KidsPrivacyRoute
   '/login': typeof LoginRoute
   '/onboarding': typeof OnboardingRoute
   '/pricing': typeof PricingRoute
@@ -346,6 +355,7 @@ export interface FileRouteTypes {
     | '/image-gallery'
     | '/index'
     | '/kids'
+    | '/kids/privacy'
     | '/login'
     | '/onboarding'
     | '/pricing'
@@ -396,6 +406,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/image-gallery'
     | '/kids'
+    | '/kids/privacy'
     | '/roadmap'
     | '/kids/$levelId/$lessonNumber'
     | '/learn/$pathId/$lessonId'
@@ -417,6 +428,7 @@ export interface FileRouteTypes {
     | '/image-gallery'
     | '/index'
     | '/kids'
+    | '/kids/privacy'
     | '/login'
     | '/onboarding'
     | '/pricing'
@@ -664,6 +676,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RoadmapIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/kids/privacy': {
+      id: '/kids/privacy'
+      path: '/privacy'
+      fullPath: '/kids/privacy'
+      preLoaderRoute: typeof KidsPrivacyRouteImport
+      parentRoute: typeof KidsRoute
+    }
     '/kids/$levelId': {
       id: '/kids/$levelId'
       path: '/$levelId'
@@ -753,11 +772,13 @@ const KidsLevelIdRouteWithChildren = KidsLevelIdRoute._addFileChildren(
 
 interface KidsRouteChildren {
   KidsLevelIdRoute: typeof KidsLevelIdRouteWithChildren
+  KidsPrivacyRoute: typeof KidsPrivacyRoute
   KidsIndexRoute: typeof KidsIndexRoute
 }
 
 const KidsRouteChildren: KidsRouteChildren = {
   KidsLevelIdRoute: KidsLevelIdRouteWithChildren,
+  KidsPrivacyRoute: KidsPrivacyRoute,
   KidsIndexRoute: KidsIndexRoute,
 }
 
