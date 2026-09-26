@@ -3,6 +3,7 @@ import type { AssistantRuntimeRequestPayload } from "@/lib/assistant-runtime";
 import type { RagPackageLocale } from "@/lib/locale-lessons/types";
 import { resolveAssistantPackageLocale } from "@/lib/rag/resolve-assistant-locale";
 import type { SupportedLocale } from "@/lib/locale/types";
+import { getCurriculumLessonLabel } from "@/lib/locale-curriculum/resolve-curriculum-label";
 
 /** Page-level override for localized package lessons (en / ar-MSA / ar-Gulf). */
 export type AssistantContextOverride = {
@@ -57,7 +58,16 @@ export function resolveAssistantLearnerContext(
     | "completedLessonsCount"
     | "totalLessonsCount"
     | "nextLesson"
-  >,
+  > &
+    Partial<
+      Pick<
+        LearnerContext,
+        | "currentRoute"
+        | "overallCompletedLessonsCount"
+        | "overallTotalLessonsCount"
+        | "overallNextLesson"
+      >
+    >,
   override?: AssistantContextOverride | null,
 ): ResolvedAssistantLearnerContext {
   const assistantLocale = requireAssistantPackageLocale(locale);
@@ -85,6 +95,7 @@ export function resolveAssistantLearnerContext(
     };
   }
 
+  const standalone = ctx.currentRoute === "/ai-assistant";
   return {
     locale: assistantLocale,
     currentPath: ctx.currentPath?.id ?? null,
@@ -93,9 +104,16 @@ export function resolveAssistantLearnerContext(
     currentPathTitle: ctx.currentPath?.title ?? null,
     currentModuleTitle: ctx.currentModule?.title ?? null,
     currentLessonTitle: ctx.currentLesson?.title ?? null,
-    completedLessonsCount: ctx.completedLessonsCount,
-    totalLessonsCount: ctx.totalLessonsCount,
-    nextLessonTitle: ctx.nextLesson?.title ?? null,
+    completedLessonsCount: standalone
+      ? (ctx.overallCompletedLessonsCount ?? ctx.completedLessonsCount)
+      : ctx.completedLessonsCount,
+    totalLessonsCount: standalone
+      ? (ctx.overallTotalLessonsCount ?? ctx.totalLessonsCount)
+      : ctx.totalLessonsCount,
+    nextLessonTitle:
+      standalone && ctx.overallNextLesson
+        ? getCurriculumLessonLabel(locale, ctx.overallNextLesson.id)
+        : (ctx.nextLesson?.title ?? null),
     currentMission: ctx.currentMission
       ? {
           intro: ctx.currentMission.intro ?? null,

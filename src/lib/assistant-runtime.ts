@@ -1,6 +1,8 @@
 import { supabase } from "@/integrations/supabase/client";
 import type { RagPackageLocale } from "@/lib/locale-lessons/types";
 import { validateRuntimeLocale } from "@/lib/rag/assistant-grounding-security";
+import { getUiString } from "@/lib/locale/ui-strings";
+import type { AssistantCitation } from "@/lib/assistant-session-store";
 
 /**
  * Assistant Runtime — frontend service.
@@ -43,6 +45,7 @@ export interface AssistantRuntimeResponsePayload {
   message: string;
   ts: string;
   answer?: string;
+  citations?: AssistantCitation[];
 }
 
 function assertCanonicalRequestLocale(locale: unknown): asserts locale is RagPackageLocale {
@@ -62,8 +65,9 @@ export async function callAssistantRuntime(
   } = await supabase.auth.getSession();
 
   const accessToken = session?.access_token;
+  const locale = payload.learnerContext.locale;
   if (!accessToken) {
-    throw new Error("سجّل دخولك الأول عشان مساعد المنصة يقدر يساعدك.");
+    throw new Error(getUiString(locale, "assistant.panel.error.auth"));
   }
 
   const { data, error } = await supabase.functions.invoke<AssistantRuntimeResponsePayload>(
@@ -79,25 +83,34 @@ export async function callAssistantRuntime(
   if (error) {
     // Expected denials (no AI access / quota) come back as non-2xx with a JSON body.
     let code: string | undefined;
+    let reason: string | undefined;
     try {
       const ctx = (error as { context?: Response }).context;
       if (ctx && typeof ctx.clone === "function") {
-        const body = (await ctx.clone().json()) as { error?: string };
+        const body = (await ctx.clone().json()) as { error?: string; reason?: string };
         code = body?.error;
+        reason = body?.reason;
       }
     } catch {
       /* body not JSON — fall through */
     }
+    const status = (error as { context?: Response }).context?.status;
+    if (status === 401 || code === "UNAUTHORIZED") {
+      throw new Error(getUiString(locale, "assistant.panel.error.auth"));
+    }
     if (code === "AI_ACCESS_DENIED") {
-      throw new Error("مساعد المنصة غير متاح في خطتك الحالية. رقّي اشتراكك لاستخدامه.");
+      throw new Error(getUiString(locale, "assistant.panel.error.access"));
     }
-    if (code === "QUOTA_EXCEEDED") {
-      throw new Error("وصلت للحد المسموح من أسئلة المساعد حاليًا. حاول لاحقًا.");
+    if (code?.includes("QUOTA_EXCEEDED") || status === 429) {
+      throw new Error(getUiString(locale, "assistant.panel.error.quota"));
     }
-    throw new Error("تعذّر الاتصال بمساعد المنصة الآن. حاول مرة أخرى.");
+    if (reason === "insufficient_grounding") {
+      throw new Error(getUiString(locale, "assistant.panel.error.grounding"));
+    }
+    throw new Error(getUiString(locale, "assistant.panel.error.connection"));
   }
   if (!data) {
-    throw new Error("Assistant runtime returned an empty response");
+    throw new Error(getUiString(locale, "assistant.panel.error.connection"));
   }
   return data;
 }

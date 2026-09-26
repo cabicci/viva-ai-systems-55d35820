@@ -28,6 +28,10 @@ vi.mock("@/lib/learner-context", () => ({
   useLearnerContext: () => baseCtxProvider(),
 }));
 
+vi.mock("@/lib/auth-context", () => ({
+  useAuth: () => ({ user: { id: "test-user" } }),
+}));
+
 vi.mock("@/lib/assistant-session-store", () => ({
   useAssistantSession: () => ({
     query: "",
@@ -35,8 +39,12 @@ vi.mock("@/lib/assistant-session-store", () => ({
     error: null,
     response: null,
     matches: [],
+    turns: [],
   }),
   setAssistantSession: vi.fn(),
+  loadAssistantHistory: vi.fn(),
+  appendAssistantTurn: vi.fn(),
+  clearAssistantHistory: vi.fn(),
 }));
 
 function baseCtxProvider(): Pick<
@@ -129,6 +137,25 @@ describe("resolveAssistantLearnerContext", () => {
     );
     expect(source).toMatch(/locale:\s*RagPackageLocale\b/);
     expect(source).not.toMatch(/locale:\s*RagPackageLocale\s*\|\s*null/);
+  });
+
+  it("uses overall progress and a localized next lesson on the standalone page", () => {
+    const ctx = {
+      ...baseCtxProvider(),
+      currentRoute: "/ai-assistant",
+      currentPath: null,
+      currentModule: null,
+      currentLesson: null,
+      currentMission: null,
+      overallCompletedLessonsCount: 93,
+      overallTotalLessonsCount: 100,
+      overallNextLesson: { id: LESSON_ID } as LearnerContext["overallNextLesson"],
+    };
+    const resolved = resolveAssistantLearnerContext("en", ctx);
+    expect(resolved.completedLessonsCount).toBe(93);
+    expect(resolved.totalLessonsCount).toBe(100);
+    expect(resolved.nextLessonTitle).not.toBe("Egyptian next");
+    expect(resolved.currentLesson).toBeNull();
   });
 
   it("builds runtime payload with active package locale and localized mission", () => {
