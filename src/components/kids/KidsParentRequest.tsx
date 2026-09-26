@@ -8,10 +8,10 @@ type ReviewStatus = "loading" | "available" | "pending" | "approved" | "rejected
 const ar = {
   notice:
     "هذا طلب لمراجعة حساب وليّ الأمر فقط. لا تُدخل أي بيانات لطفل الآن، ولا يفتح الطلب ملفات الأطفال أو دروسهم.",
-  acknowledge: "أفهم أن الطلب لا يُعد إثباتًا للولاية أو موافقةً على معالجة بيانات طفل.",
+  acknowledge:
+    "أقرّ بأنني بالغ قانونًا في بلد إقامتي وأطلب المراجعة بصفتي وليّ أمر. أفهم أن هذا الطلب لا يُثبت الولاية ولا يُعد موافقة على معالجة بيانات طفل.",
   country: "بلد إقامة وليّ الأمر",
   chooseCountry: "اختر بلد إقامتك",
-  adult: "أقرّ بأنني بالغ قانونًا في بلد إقامتي وأطلب مراجعة حسابي بصفتي وليّ أمر.",
   dataNotice:
     "نستخدم بريد حسابك المؤكد وبلد إقامتك وإقرارك لمعالجة هذا الطلب فقط. اختيار البلد لا يعني أن خدمة الأطفال مفعّلة فيه.",
   send: "إرسال طلب مراجعة وليّ الأمر",
@@ -26,11 +26,9 @@ const en = {
   notice:
     "This requests a review of the parent's account only. Do not enter child details. A request does not open child profiles or lessons.",
   acknowledge:
-    "I understand this request does not prove guardianship or grant consent to process a child's data.",
+    "I confirm I am legally an adult in my country of residence and request review as a parent or guardian. I understand this request does not prove guardianship or grant consent to process a child's data.",
   country: "Parent's country of residence",
   chooseCountry: "Choose your country of residence",
-  adult:
-    "I confirm I am legally an adult in my country of residence and request review as a parent or guardian.",
   dataNotice:
     "We use your verified account email, country of residence and acknowledgment to process this request only. Selecting a country does not mean children's services are enabled there.",
   send: "Request parent review",
@@ -57,7 +55,6 @@ function KidsParentRequestForAccount({ onRefresh }: { onRefresh: () => void }) {
   const [status, setStatus] = useState<ReviewStatus>("loading");
   const [acknowledged, setAcknowledged] = useState(false);
   const [country, setCountry] = useState("");
-  const [adultConfirmed, setAdultConfirmed] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState(false);
 
@@ -93,14 +90,7 @@ function KidsParentRequestForAccount({ onRefresh }: { onRefresh: () => void }) {
   }, [user?.id]);
 
   async function sendRequest() {
-    if (
-      !user?.id ||
-      !acknowledged ||
-      !adultConfirmed ||
-      !isKidsMarket(country) ||
-      sending ||
-      status !== "available"
-    )
+    if (!user?.id || !acknowledged || !isKidsMarket(country) || sending || status !== "available")
       return;
     setSending(true);
     setError(false);
@@ -164,24 +154,15 @@ function KidsParentRequestForAccount({ onRefresh }: { onRefresh: () => void }) {
         <input
           type="checkbox"
           className="mt-1"
-          checked={adultConfirmed}
-          disabled={sending}
-          onChange={(event) => setAdultConfirmed(event.target.checked)}
-        />
-        <span>{copy.adult}</span>
-      </label>
-      <label className="flex items-start gap-2 text-sm">
-        <input
-          type="checkbox"
-          className="mt-1"
           checked={acknowledged}
+          disabled={sending}
           onChange={(event) => setAcknowledged(event.target.checked)}
         />
         <span>{copy.acknowledge}</span>
       </label>
       <button
         type="button"
-        disabled={!acknowledged || !adultConfirmed || !isKidsMarket(country) || sending}
+        disabled={!acknowledged || !isKidsMarket(country) || sending}
         onClick={sendRequest}
         className="rounded-full border border-primary px-5 py-2 font-bold text-primary disabled:opacity-50"
       >
