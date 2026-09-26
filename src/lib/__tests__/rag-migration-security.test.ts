@@ -3,6 +3,10 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "../../..");
+const CORPUS_SELECT_POLICY = readFileSync(
+  path.join(REPO_ROOT, "supabase/migrations/20260926180000_rag_corpus_admin_select_only.sql"),
+  "utf8",
+);
 const MIGRATION = readFileSync(
   path.join(REPO_ROOT, "supabase/migrations/20260711200000_rag_locale_index_versioning.sql"),
   "utf8",
@@ -149,6 +153,13 @@ describe("RAG guarded upgrade timeout migration", () => {
 });
 
 describe("RAG retrieval RPC least privilege", () => {
+  it("limits direct corpus reads to administrators while server retrieval uses service role", () => {
+    expect(CORPUS_SELECT_POLICY).toContain("DROP POLICY IF EXISTS kc_select_authenticated");
+    expect(CORPUS_SELECT_POLICY).toMatch(
+      /CREATE POLICY kc_select_admin[\s\S]*?FOR SELECT[\s\S]*?TO authenticated[\s\S]*?USING \(public\.has_role\(\(SELECT auth\.uid\(\)\), 'admin'::public\.app_role\)\)/,
+    );
+    expect(CORPUS_SELECT_POLICY).not.toMatch(/USING \(true\)/);
+  });
   it("denies authenticated and anon execute on match_locale_knowledge_chunks", () => {
     expect(LEAST_PRIVILEGE).toMatch(
       /REVOKE ALL ON FUNCTION public\.match_locale_knowledge_chunks\([\s\S]*?\) FROM PUBLIC, anon, authenticated/,
