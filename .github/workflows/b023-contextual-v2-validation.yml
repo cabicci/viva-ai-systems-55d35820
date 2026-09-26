@@ -3,6 +3,15 @@ name: "B023 — Contextual images, module graph and browser validation"
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - 'src/lib/lesson-visuals/**'
+      - 'src/assets/lesson-visuals/**'
+      - 'src/components/intro/IntroLessonRenderer.tsx'
+      - 'src/components/locale/LocalePackageLessonRenderer.tsx'
+      - 'src/components/image-gallery/**'
+      - 'src/lib/__tests__/locale-strict-visual*'
+      - 'tests/lesson-visuals/**'
+      - '.github/scripts/b023_contextual_v2_validation/**'
   workflow_dispatch:
     inputs:
       expected_product_sha:
