@@ -48,7 +48,7 @@ describe("assistant page question flow", () => {
           {
             lessonId: "intro-m1-l1-what-is-ai",
             title: "AI basics",
-            excerpt: "A source excerpt",
+            excerpt: "A **source** excerpt",
             productionRoute: "/learn/intro/intro-m1-l1-what-is-ai",
           },
         ],
@@ -71,6 +71,8 @@ describe("assistant page question flow", () => {
     expect(screen.getByRole("link", { name: "AI basics" }).getAttribute("href")).toBe(
       "/learn/intro/intro-m1-l1-what-is-ai?locale=en",
     );
+    expect(screen.getByText("source").tagName).toBe("STRONG");
+    expect(screen.queryByText(/\*\*source\*\*/)).toBeNull();
     expect(screen.getByText("93 / 100")).toBeTruthy();
     expect(screen.queryByText("Debug · Raw runtime payload")).toBeNull();
     await waitFor(() => expect(getAssistantSession().turns).toHaveLength(1));

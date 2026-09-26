@@ -73,6 +73,10 @@ export function AssistantAnswer({ text }: { text: string }) {
   return <div className="space-y-3 text-sm text-foreground">{blocks}</div>;
 }
 
+export function AssistantInline({ text }: { text: string }) {
+  return <>{renderInline(text)}</>;
+}
+
 function renderInline(text: string): ReactNode[] {
   return text.split(/(\*\*[^*]+\*\*|`[^`]+`)/g).map((part, index) => {
     if (part.startsWith("**") && part.endsWith("**")) {
