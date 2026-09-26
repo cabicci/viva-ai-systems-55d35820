@@ -243,6 +243,25 @@ describe("handleAssistantRuntimeRequest — transport basics", () => {
     expect(prompt).toContain(sample.sourceId);
   });
 
+  it("lets an explicit new topic replace the previous conversation topic", async () => {
+    const sample = loadRegisteredSample();
+    const deps = buildDeps({
+      localeSemanticRetrieve: vi.fn(async () => ({ ok: true as const, chunks: [sample] })),
+    });
+    await handleAssistantRuntimeRequest(
+      buildRequest({
+        query: "Tell me about business",
+        learnerContext: { locale: "en" },
+        conversationHistory: [{ question: "Explain creator", answer: "A content path." }],
+      }),
+      deps,
+    );
+    expect(deps.embedQuery).toHaveBeenCalledWith("Tell me about business", expect.any(String));
+    expect((deps.localeSemanticRetrieve as ReturnType<typeof vi.fn>).mock.calls[0]?.[2]).toBe(
+      "business",
+    );
+  });
+
   it("responds to OPTIONS without auth", async () => {
     const deps = buildDeps();
     const res = await handleAssistantRuntimeRequest(

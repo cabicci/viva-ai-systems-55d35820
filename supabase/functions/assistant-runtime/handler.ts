@@ -705,7 +705,13 @@ export async function handleAssistantRuntimeRequest(
     return jsonResponse({ ok: false, error: "Invalid conversation history" }, 400, corsHeaders);
   }
   const lastQuestion = conversationHistory.at(-1)?.question ?? "";
-  const retrievalQuery = lastQuestion && query.length < 100 ? `${lastQuestion}\n${query}` : query;
+  const currentPathResolution = resolvePathId(query, learnerContext);
+  const retrievalQuery =
+    lastQuestion &&
+    query.length < 100 &&
+    currentPathResolution.pathResolutionReason !== "explicit_message"
+      ? `${lastQuestion}\n${query}`
+      : query;
 
   // Rate limit: hourly + daily + monthly cost caps per user (not entitlement).
   for (const bucket of [
@@ -758,7 +764,9 @@ export async function handleAssistantRuntimeRequest(
     learnerContext.currentLesson
   );
 
-  const { resolvedPathId, pathResolutionReason } = resolvePathId(retrievalQuery, learnerContext);
+  const { resolvedPathId, pathResolutionReason } = currentPathResolution.resolvedPathId
+    ? currentPathResolution
+    : resolvePathId(lastQuestion, learnerContext);
   const resolvedModuleId = learnerContext.currentModule ?? null;
   // userId is ALWAYS the verified JWT subject above — request bodies never
   // supply/override the billed user.
