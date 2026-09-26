@@ -193,10 +193,12 @@ function AccountContent() {
     if (!userId) return;
     setDeleting(true);
     try {
-      const { error } = await supabase.rpc("delete_my_account_data");
+      const { data, error } = await supabase.rpc("request_account_deletion");
       if (error) throw error;
+      if (!data || typeof data !== "object" || Array.isArray(data) || data.status !== "pending_review") {
+        throw new Error("ACCOUNT_DELETION_REQUEST_UNCONFIRMED");
+      }
       toast.success(t("account.manage.toast.deleteSuccess"));
-      await signOut();
     } catch (e) {
       toast.error(t("account.manage.toast.deleteError"));
       captureError("account:delete-data", e);

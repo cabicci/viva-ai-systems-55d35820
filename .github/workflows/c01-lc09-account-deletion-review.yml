@@ -1,0 +1,65 @@
+name: "C01 LC-09 account deletion review"
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+    inputs:
+      expected_product_sha:
+        description: "Exact reviewed head SHA"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: c01-lc09-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  disposable-deletion:
+    runs-on: ubuntu-latest
+    env:
+      EXPECTED_PRODUCT_SHA: ${{ github.event.inputs.expected_product_sha || github.event.pull_request.head.sha }}
+      LC09_DISPOSABLE_DB: "1"
+      PGPASSWORD: postgres
+    steps:
+      - name: Checkout exact head
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - name: Check head
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_PRODUCT_SHA"
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6
+        with:
+          bun-version: latest
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+      - name: Setup Supabase CLI
+        uses: supabase/setup-cli@ab058987d8d6c725971f6cf9d0b5c98467e30bd1
+        with:
+          version: 2.109.1
+      - name: Prepare disposable cumulative migrations
+        run: |
+          bun scripts/billing/prepare-disposable-supabase-tree.ts --dest lc09-validation/disposable-supabase
+          test "$(git hash-object supabase/migrations/20260526105117_25fc4182-0343-4234-a231-0cf38569014a.sql)" = "d185dd59549f611fcb984bcb3459c9d5d6969ef5"
+      - name: Start and reset disposable database
+        working-directory: lc09-validation/disposable-supabase
+        run: |
+          supabase start
+          supabase db reset --yes
+      - name: Exercise effective deletion RPC and privacy contract
+        env:
+          PGHOST: 127.0.0.1
+          PGPORT: "54322"
+          PGUSER: postgres
+          PGDATABASE: postgres
+        run: |
+          set -o pipefail
+          bunx vitest run src/lib/__tests__/launch-account-deletion-coverage.test.ts 2>&1 | tee lc09-validation/vitest.log
+          sed -E 's/\x1B\[[0-9;]*[A-Za-z]//g' lc09-validation/vitest.log > lc09-validation/vitest.plain.log
+          ! grep -Eq '[1-9][0-9]* (failed|skipped|todo)' lc09-validation/vitest.plain.log
+          grep -Eq 'Tests[[:space:]]+7 passed[[:space:]]+\(7\)' lc09-validation/vitest.plain.log
