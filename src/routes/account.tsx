@@ -213,7 +213,7 @@ function AccountContent() {
   );
 
   return (
-    <div className="min-h-dvh flex" dir={dir}>
+    <div className="min-h-dvh flex flex-col" dir={dir}>
       <Sidebar />
       <main className="flex-1 px-4 sm:px-6 lg:px-10 py-8 max-w-5xl mx-auto w-full">
         <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 mb-8 sm:flex sm:justify-between">
