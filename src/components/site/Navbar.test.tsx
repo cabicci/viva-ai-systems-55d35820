@@ -76,9 +76,15 @@ describe("shared top navigation", () => {
       within(accountNav)
         .getAllByRole("link")
         .map((link) => link.getAttribute("href")),
-    ).toEqual(["/dashboard", "/ai-assistant", "/analytics", "/account"]);
+    ).toEqual(["/dashboard", "/ai-assistant", "/analytics", "/account", "/kids"]);
     expect(within(header).queryByRole("link", { name: "nav.contact" })).not.toBeInTheDocument();
-    expect(within(header).queryByRole("link", { name: "Kids" })).not.toBeInTheDocument();
+    expect(within(accountNav).getByRole("link", { name: "Kids" })).toHaveAttribute("href", "/kids");
     expect(within(header).getByRole("button", { name: "sidebar.signOut" })).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("button", { name: "nav.menu" }));
+    expect(within(screen.getByRole("dialog")).getByRole("link", { name: "Kids" })).toHaveAttribute(
+      "href",
+      "/kids",
+    );
   });
 });
