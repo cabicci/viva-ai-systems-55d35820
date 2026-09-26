@@ -3,6 +3,7 @@ import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { KidsParentPanel } from "@/components/kids/KidsParentPanel";
 import { KidsBrand } from "@/components/kids/KidsBrand";
+import { KidsReleaseNotice } from "@/components/kids/KidsReleaseNotice";
 import { KIDS_LEVELS } from "@/lib/kids/catalogue";
 import { getKidsJourneyCopy } from "@/lib/kids/journey-copy";
 import { getKidsCopy } from "@/lib/kids/copy";
@@ -58,7 +59,7 @@ function KidsLevelPage() {
             <p className="mt-2 text-lg" dir="ltr">
               {level.ages}
             </p>
-            <p className="mt-4 max-w-2xl text-sm leading-relaxed">{product.reviewNotice}</p>
+            <KidsReleaseNotice className="mt-4 max-w-2xl text-sm leading-relaxed" />
           </header>
           <KidsParentPanel />
           <section

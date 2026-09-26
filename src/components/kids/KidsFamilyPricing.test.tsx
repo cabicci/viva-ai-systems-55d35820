@@ -16,13 +16,20 @@ describe("Kids family offer", () => {
       ).toBeInTheDocument();
       expect(
         screen.getByText(
-          locale === "en" ? /not available for purchase yet/ : /شراء الاشتراك غير متاح/,
+          locale === "en"
+            ? /not available for purchase yet/
+            : locale === "ar-Gulf"
+              ? /شراء الاشتراك مب متاح/
+              : /شراء الاشتراك غير متاح/,
         ),
       ).toBeInTheDocument();
-      const formatter = new Intl.NumberFormat(locale === "en" ? "en-US" : "ar-EG", {
-        style: "currency",
-        currency: "USD",
-      });
+      const formatter = new Intl.NumberFormat(
+        locale === "en" ? "en-US" : locale === "ar-Gulf" ? "ar-SA" : "ar-EG",
+        {
+          style: "currency",
+          currency: "USD",
+        },
+      );
       expect(screen.getByText(formatter.format(7.99).replace(/\s/g, " "))).toBeInTheDocument();
       expect(
         screen.getByText(

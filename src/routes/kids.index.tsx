@@ -4,6 +4,8 @@ import { Footer } from "@/components/site/Footer";
 import { KidsBrand } from "@/components/kids/KidsBrand";
 import { KidsParentPanel } from "@/components/kids/KidsParentPanel";
 import { KidsFamilyPricing } from "@/components/kids/KidsFamilyPricing";
+import { KidsReleaseNotice } from "@/components/kids/KidsReleaseNotice";
+import { getKidsPrivacyCopy } from "@/lib/kids/privacy-copy";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { KIDS_LEVELS } from "@/lib/kids/catalogue";
 import { getKidsCopy } from "@/lib/kids/copy";
@@ -38,9 +40,14 @@ function KidsPage() {
             <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">{copy.intro}</p>
           </header>
 
-          <p role="status" className="rounded-2xl border border-accent/30 bg-accent/10 p-4 text-sm">
-            {copy.reviewNotice}
-          </p>
+          <KidsReleaseNotice className="rounded-2xl border border-accent/30 bg-accent/10 p-4 text-sm" />
+          <Link
+            to="/kids/privacy"
+            search={localeSearch()}
+            className="inline-block text-sm font-semibold text-primary underline"
+          >
+            {getKidsPrivacyCopy(locale).link}
+          </Link>
 
           <section aria-label={copy.eyebrow} className="grid gap-5 md:grid-cols-3">
             {KIDS_LEVELS.map((level, index) => (
