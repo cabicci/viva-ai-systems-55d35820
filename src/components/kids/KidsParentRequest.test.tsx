@@ -21,7 +21,7 @@ beforeEach(() => {
 });
 
 describe("adult-only Kids parent request", () => {
-  it("requires an explicit residence and both confirmations before submitting only adult fields", async () => {
+  it("requires residence and an explicit combined declaration before submitting only adult fields", async () => {
     render(<KidsParentRequest onRefresh={vi.fn()} />);
     const button = await screen.findByRole("button", { name: "Request parent review" });
     expect(button).toBeDisabled();
@@ -30,8 +30,6 @@ describe("adult-only Kids parent request", () => {
     expect(screen.getAllByRole("option")).toHaveLength(23);
     fireEvent.change(country, { target: { value: "EG" } });
     fireEvent.click(screen.getByLabelText(/I confirm I am legally an adult/));
-    expect(button).toBeDisabled();
-    fireEvent.click(screen.getByLabelText(/I understand this request/));
     fireEvent.click(button);
     await waitFor(() =>
       expect(mock.rpc).toHaveBeenCalledWith("kids_parent_request_review", {
