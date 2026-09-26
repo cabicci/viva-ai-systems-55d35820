@@ -18,7 +18,7 @@ function KidsPrivacyPage() {
   const copy = getKidsPrivacyCopy(locale);
   return (
     <div className="flex min-h-dvh flex-col" dir={dir}>
-      <Navbar />
+      <Navbar variant="account" />
       <main id="main-content" className="container mx-auto max-w-3xl flex-1 px-4 py-12">
         <Link
           to="/kids"

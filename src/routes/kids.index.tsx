@@ -30,7 +30,7 @@ function KidsPage() {
 
   return (
     <div className="min-h-dvh flex flex-col" dir={dir}>
-      <Navbar />
+      <Navbar variant="account" />
       <main id="main-content" className="flex-1">
         <div className="container mx-auto max-w-5xl space-y-10 px-4 py-12 md:py-20">
           <header className="rounded-3xl border border-primary/20 bg-card p-6 md:p-10">

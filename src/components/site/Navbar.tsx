@@ -26,7 +26,7 @@ export function Navbar({ variant = "public" }: { variant?: "public" | "account" 
   const { user, signOut } = useAuth();
   const { isAdmin } = useEntitlement();
   const t = useUiString();
-  const { dir } = useLocale();
+  const { dir, locale } = useLocale();
   const localeSearch = useLocaleLinkSearch();
   const accountView = variant === "account" && Boolean(user);
 
@@ -50,9 +50,9 @@ export function Navbar({ variant = "public" }: { variant?: "public" | "account" 
       <Link to="/contact" search={localeSearch()} className="hover:text-foreground transition">
         {t("nav.contact")}
       </Link>
-      <Link to="/kids" search={localeSearch()} className="hover:text-foreground transition">
+      <a href={`/kids?locale=${locale}`} className="hover:text-foreground transition">
         <KidsBrand compact />
-      </Link>
+      </a>
     </>
   );
 
@@ -147,9 +147,9 @@ export function Navbar({ variant = "public" }: { variant?: "public" | "account" 
                       </Link>
                     </SheetClose>
                     <SheetClose asChild>
-                      <Link to="/kids" search={localeSearch()}>
+                      <a href={`/kids?locale=${locale}`}>
                         <KidsBrand compact />
-                      </Link>
+                      </a>
                     </SheetClose>
                   </nav>
                   <div className="mt-8 grid gap-3 border-t border-border/60 pt-6">

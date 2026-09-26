@@ -1,6 +1,7 @@
 import { useSyncExternalStore } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import type { AssistantRuntimeResponsePayload } from "./assistant-runtime";
+import type { SupportedLocale } from "./locale/types";
 
 export type AssistantCitation = {
   lessonId: string;
@@ -31,17 +32,20 @@ const EMPTY_STATE: AssistantSessionState = {
   turns: [],
 };
 
-const HISTORY_PREFIX = "masaarat-assistant-history:";
+const HISTORY_PREFIX = "masaarat-assistant-history:v2:";
 const MAX_TURNS = 20;
+const HISTORY_LOCALES: SupportedLocale[] = ["ar-EG", "ar-MSA", "ar-Gulf", "en"];
 
-function historyKey(userId: string) {
-  return `${HISTORY_PREFIX}${userId}`;
+function historyKey(userId: string, locale: SupportedLocale) {
+  return `${HISTORY_PREFIX}${userId}:${locale}`;
 }
 
-export function loadAssistantHistory(userId: string) {
+export function loadAssistantHistory(userId: string, locale: SupportedLocale) {
   if (typeof window === "undefined") return;
+  // Loading another locale invalidates an in-flight response in the old language.
+  resetAssistantSession();
   try {
-    const parsed: unknown = JSON.parse(localStorage.getItem(historyKey(userId)) ?? "[]");
+    const parsed: unknown = JSON.parse(localStorage.getItem(historyKey(userId, locale)) ?? "[]");
     if (!Array.isArray(parsed)) return;
     const turns = parsed
       .filter(
@@ -67,11 +71,11 @@ export function loadAssistantHistory(userId: string) {
   }
 }
 
-export function appendAssistantTurn(userId: string, turn: AssistantTurn) {
+export function appendAssistantTurn(userId: string, locale: SupportedLocale, turn: AssistantTurn) {
   const turns = [...state.turns, turn].slice(-MAX_TURNS);
   setAssistantSession({ turns });
   try {
-    localStorage.setItem(historyKey(userId), JSON.stringify(turns));
+    localStorage.setItem(historyKey(userId, locale), JSON.stringify(turns));
   } catch {
     // A full or disabled storage area must not block the answer.
   }
@@ -80,7 +84,8 @@ export function appendAssistantTurn(userId: string, turn: AssistantTurn) {
 export function clearAssistantHistory(userId: string) {
   setAssistantSession({ turns: [], response: null, error: null });
   try {
-    localStorage.removeItem(historyKey(userId));
+    for (const locale of HISTORY_LOCALES) localStorage.removeItem(historyKey(userId, locale));
+    localStorage.removeItem(`masaarat-assistant-history:${userId}`);
   } catch {
     // In-memory history is still cleared.
   }
