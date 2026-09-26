@@ -40,17 +40,20 @@ describe("assistant page question flow", () => {
   });
 
   it("keeps the question after a failure and shows grounded sources after retry", async () => {
-    callRuntime.mockRejectedValueOnce(new Error("Temporary error")).mockResolvedValueOnce({
-      answer: "Read the lesson.",
-      citations: [
-        {
-          lessonId: "intro-m1-l1-what-is-ai",
-          title: "AI basics",
-          excerpt: "A source excerpt",
-          productionRoute: "/learn/intro/intro-m1-l1-what-is-ai",
-        },
-      ],
-    });
+    callRuntime
+      .mockRejectedValueOnce(new Error("Temporary error"))
+      .mockResolvedValueOnce({
+        answer: "Read the lesson.",
+        citations: [
+          {
+            lessonId: "intro-m1-l1-what-is-ai",
+            title: "AI basics",
+            excerpt: "A source excerpt",
+            productionRoute: "/learn/intro/intro-m1-l1-what-is-ai",
+          },
+        ],
+      })
+      .mockResolvedValueOnce({ answer: "Take the next lesson.", citations: [] });
 
     render(
       <LocaleProvider effectiveLocale="en">
@@ -71,5 +74,12 @@ describe("assistant page question flow", () => {
     expect(screen.getByText("93 / 100")).toBeTruthy();
     expect(screen.queryByText("Debug · Raw runtime payload")).toBeNull();
     await waitFor(() => expect(getAssistantSession().turns).toHaveLength(1));
+
+    fireEvent.change(question, { target: { value: "And next?" } });
+    fireEvent.click(screen.getByRole("button", { name: "Send" }));
+    await screen.findByText("Take the next lesson.");
+    expect(callRuntime.mock.calls[2]?.[0].conversationHistory).toEqual([
+      { question: "What is AI?", answer: "Read the lesson." },
+    ]);
   });
 });

@@ -269,7 +269,9 @@ describe("shared production builder and transport wiring", () => {
     expect(source).toContain("buildAssistantRuntimePayload");
     expect(source).toContain("callAssistantRuntime");
     expect(source).not.toContain("searchPlatformContent");
-    expect(source).toMatch(/buildAssistantRuntimePayload\(\s*q\s*,\s*resolvedContext\s*\)/);
+    expect(source).toMatch(
+      /buildAssistantRuntimePayload\(\s*q\s*,\s*resolvedContext\s*,\s*history\s*\)/,
+    );
     expect(source).not.toMatch(
       /buildAssistantRuntimePayload\(\s*q\s*,\s*resolvedContext\s*,\s*retrievalResults\s*\)/,
     );
@@ -299,7 +301,9 @@ describe("shared production builder and transport wiring", () => {
     const panel = read("src/components/assistant/AssistantPanel.tsx");
     expect(panel).not.toContain("searchPlatformContent");
     expect(panel).toContain("res.citations");
-    expect(panel).toMatch(/buildAssistantRuntimePayload\(\s*q\s*,\s*resolvedContext\s*\)/);
+    expect(panel).toMatch(
+      /buildAssistantRuntimePayload\(\s*q\s*,\s*resolvedContext\s*,\s*history\s*\)/,
+    );
 
     const builder = read("src/lib/assistant/resolve-assistant-learner-context.ts");
     expect(builder).toContain("export function buildAssistantRuntimePayload");

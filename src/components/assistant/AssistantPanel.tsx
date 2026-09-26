@@ -55,7 +55,15 @@ export function AssistantPanel({ compact = false, contextOverride = null }: Prop
     const version = getAssistantSessionVersion();
     setAssistantSession({ loading: true, error: null });
     try {
-      const res = await callAssistantRuntime(buildAssistantRuntimePayload(q, resolvedContext));
+      const history = compact
+        ? []
+        : turns.slice(-3).map((turn) => ({
+            question: turn.query.slice(0, 500),
+            answer: turn.answer.slice(0, 1200),
+          }));
+      const res = await callAssistantRuntime(
+        buildAssistantRuntimePayload(q, resolvedContext, history),
+      );
       if (version !== getAssistantSessionVersion()) return;
       setAssistantSession({ response: res, query: "" });
       if (!compact && user?.id) {

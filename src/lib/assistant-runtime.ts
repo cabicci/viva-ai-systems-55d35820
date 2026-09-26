@@ -13,6 +13,7 @@ import type { AssistantCitation } from "@/lib/assistant-session-store";
 
 export interface AssistantRuntimeRequestPayload {
   query: string;
+  conversationHistory?: Array<{ question: string; answer: string }>;
   learnerContext: {
     locale: RagPackageLocale;
     currentPath?: string | null;

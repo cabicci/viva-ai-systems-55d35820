@@ -128,9 +128,11 @@ export function resolveAssistantLearnerContext(
 export function buildAssistantRuntimePayload(
   query: string,
   resolved: ResolvedAssistantLearnerContext,
+  conversationHistory: Array<{ question: string; answer: string }> = [],
 ): AssistantRuntimeRequestPayload {
   return {
     query,
+    ...(conversationHistory.length > 0 ? { conversationHistory } : {}),
     learnerContext: {
       locale: resolved.locale,
       currentPath: resolved.currentPath,

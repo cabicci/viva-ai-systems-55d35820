@@ -179,6 +179,13 @@ describe("resolveAssistantLearnerContext", () => {
     expect(payload.learnerContext.currentMission?.intro).toBe(mission.intro);
     expect(payload.learnerContext.currentMission?.prompt).toBe(mission.prompt);
   });
+
+  it("passes bounded prior turns for follow-up questions", () => {
+    const resolved = resolveAssistantLearnerContext("en", baseCtxProvider());
+    const history = [{ question: "What is AI?", answer: "A learning tool." }];
+    const payload = buildAssistantRuntimePayload("And what next?", resolved, history);
+    expect(payload.conversationHistory).toEqual(history);
+  });
 });
 
 describe("AssistantPanel locale UI", () => {
