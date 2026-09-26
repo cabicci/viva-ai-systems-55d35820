@@ -1,5 +1,6 @@
 import { decidePaidPlanEvidence } from "../_shared/stripe-generation-decisions.ts";
 import { resolveStripeRefund } from "../_shared/stripe-refunds.ts";
+import { stripeSecretKey } from "../_shared/stripe-environment.ts";
 
 const STRIPE_API_VERSION = "2026-07-29.dahlia";
 const SIGNATURE_TOLERANCE_SECONDS = 300;
@@ -59,8 +60,7 @@ async function verifySignature(payload: string, header: string, secret: string):
 }
 
 async function stripeGet<T>(path: string, method = "GET"): Promise<T> {
-  const secretKey = env("STRIPE_SECRET_KEY");
-  if (!/^(rk|sk)_test_/.test(secretKey)) throw new Error("STRIPE_TEST_KEY_REQUIRED");
+  const secretKey = stripeSecretKey({ STRIPE_SECRET_KEY: Deno.env.get("STRIPE_SECRET_KEY") });
 
   const result = await fetch(`https://api.stripe.com/v1${path}`, {
     method,
