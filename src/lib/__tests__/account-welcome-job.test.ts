@@ -61,6 +61,10 @@ describe("transactional account welcome", () => {
   });
   it("explains the learning paths and approved plan boundaries in the selected language", () => {
     const arabic = welcomeContent("خليل", "ar-MSA");
+    const mixedName = welcomeContent("khalil wahi", "ar-MSA");
+    expect(mixedName.html).toContain('<bdi dir="auto">khalil wahi</bdi>');
+    expect(mixedName.html).toContain('background:#fdfefe');
+    expect(mixedName.html).toContain('<table role="presentation" dir="rtl"');
     expect(arabic.html).toContain("الدرس الأول من كل مسار");
     expect(arabic.html).toContain("باستثناء مسار Builder (٧١ درسًا)");
     expect(arabic.html).toContain("بما فيها مسار Builder");
