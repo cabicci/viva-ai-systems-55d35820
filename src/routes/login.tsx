@@ -48,7 +48,11 @@ function LoginPage() {
   }
 
   return (
-    <AuthShell title={t("auth.login.title")} subtitle={t("auth.login.subtitle")}>
+    <AuthShell
+      title={t("auth.login.title")}
+      subtitle={t("auth.login.subtitle")}
+      showLanguageSelector
+    >
       <form onSubmit={onSubmit} className="space-y-4">
         <div className="space-y-2">
           <Label>{t("auth.field.email")}</Label>

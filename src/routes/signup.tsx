@@ -46,7 +46,11 @@ function SignupPage() {
   }
 
   return (
-    <AuthShell title={t("auth.signup.title")} subtitle={t("auth.signup.subtitle")}>
+    <AuthShell
+      title={t("auth.signup.title")}
+      subtitle={t("auth.signup.subtitle")}
+      showLanguageSelector
+    >
       <form onSubmit={onSubmit} className="space-y-4">
         <div className="space-y-2">
           <Label htmlFor="signup-full-name">{t("auth.field.fullName")}</Label>

@@ -1,14 +1,17 @@
 import { Link } from "@tanstack/react-router";
 import { useUiString } from "@/lib/locale/use-ui-strings";
+import { LanguageSelector } from "@/components/locale/LanguageSelector";
 
 export function AuthShell({
   title,
   subtitle,
   children,
+  showLanguageSelector = false,
 }: {
   title: string;
   subtitle: string;
   children: React.ReactNode;
+  showLanguageSelector?: boolean;
 }) {
   const t = useUiString();
   const brand = t("nav.brand");
@@ -37,6 +40,11 @@ export function AuthShell({
       </div>
       <div className="flex min-w-0 flex-1 items-center justify-center px-4 py-8 sm:p-6">
         <div className="w-full max-w-md">
+          {showLanguageSelector && (
+            <div className="mb-6 flex justify-end">
+              <LanguageSelector />
+            </div>
+          )}
           <div className="lg:hidden mb-8">
             <Link to="/" className="flex items-center" aria-label={brand}>
               <img
