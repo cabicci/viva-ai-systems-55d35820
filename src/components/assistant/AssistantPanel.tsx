@@ -9,7 +9,7 @@ import { PATHS } from "@/lib/curriculum-data";
 import { useLearnerContext } from "@/lib/learner-context";
 import { useLocale } from "@/lib/locale/locale-context";
 import { getUiString } from "@/lib/locale/ui-strings";
-import { AssistantAnswer } from "./AssistantAnswer";
+import { AssistantAnswer, AssistantInline } from "./AssistantAnswer";
 import {
   buildAssistantRuntimePayload,
   resolveAssistantLearnerContext,
@@ -326,7 +326,9 @@ function AssistantSources({
               ) : (
                 <span>{citation.title}</span>
               )}
-              <p className="text-xs text-muted-foreground line-clamp-2">{citation.excerpt}</p>
+              <p className="text-xs text-muted-foreground line-clamp-2">
+                <AssistantInline text={citation.excerpt} />
+              </p>
             </li>
           );
         })}
