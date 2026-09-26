@@ -9,6 +9,7 @@ import type { UiStringKey } from "@/lib/locale/ui-strings";
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { SheetClose } from "@/components/ui/sheet";
+import { KidsBrand } from "@/components/kids/KidsBrand";
 
 const accountLinks: { to: string; key: UiStringKey }[] = [
   { to: "/dashboard", key: "sidebar.dashboard" },
@@ -37,6 +38,9 @@ export function AccountHeaderLinks() {
           {t(key)}
         </Link>
       ))}
+      <Link to="/kids" search={localeSearch()} className="hover:text-foreground transition">
+        <KidsBrand compact />
+      </Link>
     </>
   );
 }
@@ -73,6 +77,11 @@ export function DashboardNavigation({ mobile = false }: { mobile?: boolean }) {
       <div className="space-y-1" aria-label={t("nav.myDashboard")}>
         <p className="px-3 text-sm font-bold">{t("nav.myDashboard")}</p>
         {links}
+        <SheetClose asChild>
+          <Link to="/kids" search={localeSearch()} className="block rounded-lg px-3 py-2 text-sm">
+            <KidsBrand compact />
+          </Link>
+        </SheetClose>
         <SheetClose asChild>
           <button
             type="button"
