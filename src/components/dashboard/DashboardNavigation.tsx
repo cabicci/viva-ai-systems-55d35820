@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useAuth } from "@/lib/auth-context";
 import { useEntitlement } from "@/lib/entitlements";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
+import { useLocale } from "@/lib/locale/locale-context";
 import { useUiString } from "@/lib/locale/use-ui-strings";
 import type { UiStringKey } from "@/lib/locale/ui-strings";
 import { Button } from "@/components/ui/button";
@@ -30,6 +31,7 @@ const adminLinks: { to: string; key: UiStringKey }[] = [
 export function AccountHeaderLinks() {
   const t = useUiString();
   const localeSearch = useLocaleLinkSearch();
+  const { locale } = useLocale();
 
   return (
     <>
@@ -38,9 +40,9 @@ export function AccountHeaderLinks() {
           {t(key)}
         </Link>
       ))}
-      <Link to="/kids" search={localeSearch()} className="hover:text-foreground transition">
+      <a href={`/kids?locale=${locale}`} className="hover:text-foreground transition">
         <KidsBrand compact />
-      </Link>
+      </a>
     </>
   );
 }
@@ -50,6 +52,7 @@ export function DashboardNavigation({ mobile = false }: { mobile?: boolean }) {
   const { signOut } = useAuth();
   const { isAdmin } = useEntitlement();
   const localeSearch = useLocaleLinkSearch();
+  const { locale } = useLocale();
   const [open, setOpen] = useState(false);
 
   const links = (isAdmin ? [...accountLinks, ...adminLinks] : accountLinks).map(({ to, key }) => {
@@ -78,9 +81,9 @@ export function DashboardNavigation({ mobile = false }: { mobile?: boolean }) {
         <p className="px-3 text-sm font-bold">{t("nav.myDashboard")}</p>
         {links}
         <SheetClose asChild>
-          <Link to="/kids" search={localeSearch()} className="block rounded-lg px-3 py-2 text-sm">
+          <a href={`/kids?locale=${locale}`} className="block rounded-lg px-3 py-2 text-sm">
             <KidsBrand compact />
-          </Link>
+          </a>
         </SheetClose>
         <SheetClose asChild>
           <button

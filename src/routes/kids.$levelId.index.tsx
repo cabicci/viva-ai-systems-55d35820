@@ -41,7 +41,7 @@ function KidsLevelPage() {
 
   return (
     <div className="flex min-h-dvh flex-col" dir={dir}>
-      <Navbar />
+      <Navbar variant="account" />
       <main id="main-content" className="flex-1">
         <div className="container mx-auto max-w-5xl space-y-8 px-4 py-10 md:py-16">
           <Link

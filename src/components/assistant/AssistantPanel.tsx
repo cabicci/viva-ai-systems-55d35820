@@ -9,6 +9,7 @@ import { PATHS } from "@/lib/curriculum-data";
 import { useLearnerContext } from "@/lib/learner-context";
 import { useLocale } from "@/lib/locale/locale-context";
 import { getUiString } from "@/lib/locale/ui-strings";
+import { AssistantAnswer } from "./AssistantAnswer";
 import {
   buildAssistantRuntimePayload,
   resolveAssistantLearnerContext,
@@ -45,8 +46,8 @@ export function AssistantPanel({ compact = false, contextOverride = null }: Prop
   );
 
   useEffect(() => {
-    if (!compact && user?.id) loadAssistantHistory(user.id);
-  }, [compact, user?.id]);
+    if (!compact && user?.id) loadAssistantHistory(user.id, locale);
+  }, [compact, user?.id, locale]);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -86,7 +87,11 @@ export function AssistantPanel({ compact = false, contextOverride = null }: Prop
             excerpt: citation.excerpt,
             productionRoute: citation.productionRoute,
           }));
-        appendAssistantTurn(user.id, { query: q, answer: res.answer ?? res.message, citations });
+        appendAssistantTurn(user.id, locale, {
+          query: q,
+          answer: res.answer ?? res.message,
+          citations,
+        });
       }
     } catch (err) {
       if (version !== getAssistantSessionVersion()) return;
@@ -257,8 +262,8 @@ export function AssistantPanel({ compact = false, contextOverride = null }: Prop
           </h2>
 
           {response.answer ? (
-            <div className="rounded-md bg-muted/30 p-4 text-sm leading-loose whitespace-pre-wrap text-foreground">
-              {response.answer}
+            <div className="rounded-md bg-muted/30 p-4">
+              <AssistantAnswer text={response.answer} />
             </div>
           ) : (
             <div className="text-sm text-muted-foreground">{response.message}</div>
@@ -284,11 +289,8 @@ function AssistantTurnCard({
   return (
     <Card className="p-5 space-y-4">
       <p className="rounded-md bg-muted/30 p-3 text-sm whitespace-pre-wrap">{turn.query}</p>
-      <div
-        className="text-sm leading-loose whitespace-pre-wrap"
-        aria-label={getUiString(locale, "assistant.panel.response.title")}
-      >
-        {turn.answer}
+      <div aria-label={getUiString(locale, "assistant.panel.response.title")}>
+        <AssistantAnswer text={turn.answer} />
       </div>
       <AssistantSources citations={turn.citations} locale={locale} />
     </Card>

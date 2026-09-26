@@ -82,4 +82,31 @@ describe("assistant page question flow", () => {
       { question: "What is AI?", answer: "Read the lesson." },
     ]);
   });
+
+  it("does not send Egyptian turns as context after switching to English", async () => {
+    callRuntime.mockResolvedValue({ answer: "An answer.", citations: [] });
+    const { rerender } = render(
+      <LocaleProvider effectiveLocale="ar-EG">
+        <AssistantPanel />
+      </LocaleProvider>,
+    );
+    fireEvent.change(screen.getByRole("textbox", { name: "سؤالك للمساعد" }), {
+      target: { value: "يعني إيه الذكاء الاصطناعي؟" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: "إرسال" }));
+    await screen.findByText("An answer.");
+
+    rerender(
+      <LocaleProvider effectiveLocale="en">
+        <AssistantPanel />
+      </LocaleProvider>,
+    );
+    await waitFor(() => expect(screen.queryByText("يعني إيه الذكاء الاصطناعي؟")).toBeNull());
+    fireEvent.change(screen.getByRole("textbox", { name: "Your question for the assistant" }), {
+      target: { value: "What is AI?" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: "Send" }));
+    await waitFor(() => expect(callRuntime).toHaveBeenCalledTimes(2));
+    expect(callRuntime.mock.calls[1]?.[0].conversationHistory).toBeUndefined();
+  });
 });
