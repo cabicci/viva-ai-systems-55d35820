@@ -75,7 +75,7 @@ export function SystemStatePage() {
   const routeCount = Object.keys(router.routesByPath).length;
 
   return (
-    <div className="min-h-dvh flex" dir={dir}>
+    <div className="min-h-dvh flex flex-col" dir={dir}>
       <style>{`
         /* Print/export — semantic theme tokens for reliable PDF output. */
         @media print {

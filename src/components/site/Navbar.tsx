@@ -14,8 +14,9 @@ import { LanguageSelector } from "@/components/locale/LanguageSelector";
 import { useLocale } from "@/lib/locale/locale-context";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { useUiString } from "@/lib/locale/use-ui-strings";
-import { cn } from "@/lib/utils";
 import { KidsBrand } from "@/components/kids/KidsBrand";
+import { DashboardNavigation } from "@/components/dashboard/DashboardNavigation";
+import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const { user } = useAuth();
@@ -37,20 +38,23 @@ export function Navbar() {
       <Link to="/curriculum" search={localeSearch()} className="hover:text-foreground transition">
         {t("nav.curriculum")}
       </Link>
-      <Link to="/kids" search={localeSearch()} className="hover:text-foreground transition">
-        <KidsBrand compact />
-      </Link>
       <Link to="/pricing" search={localeSearch()} className="hover:text-foreground transition">
         {t("nav.pricing")}
       </Link>
       <Link to="/contact" search={localeSearch()} className="hover:text-foreground transition">
         {t("nav.contact")}
       </Link>
+      <Link to="/kids" search={localeSearch()} className="hover:text-foreground transition">
+        <KidsBrand compact />
+      </Link>
     </>
   );
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-surface-overlay backdrop-blur-xl">
+    <header
+      className="sticky top-0 z-50 border-b border-border/60 bg-surface-overlay backdrop-blur-xl"
+      data-print-hide
+    >
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link to="/" className="flex items-center" aria-label={t("nav.brand")}>
           <img
@@ -60,18 +64,14 @@ export function Navbar() {
             draggable={false}
           />
         </Link>
-        <nav className="hidden lg:flex items-center gap-4 xl:gap-8 text-sm text-muted-foreground">
+        <nav className="hidden xl:flex items-center gap-4 2xl:gap-8 text-sm text-muted-foreground">
           {navigation}
         </nav>
         <div className="flex items-center gap-2">
           <LanguageSelector />
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="hidden xl:flex items-center gap-2">
             {user ? (
-              <Button asChild size="sm" className="rounded-full px-5">
-                <Link to="/dashboard" search={localeSearch()}>
-                  {t("nav.myDashboard")}
-                </Link>
-              </Button>
+              <DashboardNavigation />
             ) : (
               <>
                 <Button asChild variant="ghost" size="sm" className="rounded-full">
@@ -88,7 +88,7 @@ export function Navbar() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="lg:hidden rounded-full"
+                className="xl:hidden rounded-full"
                 aria-label={t("nav.menu")}
               >
                 <Menu className="h-5 w-5" />
@@ -114,11 +114,6 @@ export function Navbar() {
                   </Link>
                 </SheetClose>
                 <SheetClose asChild>
-                  <Link to="/kids" search={localeSearch()}>
-                    <KidsBrand compact />
-                  </Link>
-                </SheetClose>
-                <SheetClose asChild>
                   <Link to="/pricing" search={localeSearch()}>
                     {t("nav.pricing")}
                   </Link>
@@ -128,18 +123,15 @@ export function Navbar() {
                     {t("nav.contact")}
                   </Link>
                 </SheetClose>
+                <SheetClose asChild>
+                  <Link to="/kids" search={localeSearch()}>
+                    <KidsBrand compact />
+                  </Link>
+                </SheetClose>
               </nav>
               <div className="mt-8 grid gap-3 border-t border-border/60 pt-6">
                 {user ? (
-                  <SheetClose asChild>
-                    <Link
-                      to="/dashboard"
-                      search={localeSearch()}
-                      className={cn(buttonVariants({ size: "lg" }), "w-full")}
-                    >
-                      {t("nav.myDashboard")}
-                    </Link>
-                  </SheetClose>
+                  <DashboardNavigation mobile />
                 ) : (
                   <>
                     <SheetClose asChild>
