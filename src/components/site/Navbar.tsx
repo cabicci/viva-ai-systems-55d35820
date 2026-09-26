@@ -64,12 +64,9 @@ export function Navbar() {
             draggable={false}
           />
         </Link>
-        <nav className="hidden xl:flex items-center gap-4 2xl:gap-8 text-sm text-muted-foreground">
-          {navigation}
-        </nav>
         <div className="flex items-center gap-2">
           <LanguageSelector />
-          <div className="hidden xl:flex items-center gap-2">
+          <div className="hidden md:flex items-center gap-2">
             {user ? (
               <DashboardNavigation />
             ) : (
@@ -88,7 +85,7 @@ export function Navbar() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="xl:hidden rounded-full"
+                className="md:hidden rounded-full"
                 aria-label={t("nav.menu")}
               >
                 <Menu className="h-5 w-5" />
@@ -154,6 +151,9 @@ export function Navbar() {
           </Sheet>
         </div>
       </div>
+      <nav className="container mx-auto hidden flex-wrap items-center justify-center gap-x-6 gap-y-2 border-t border-border/40 px-4 py-2 text-sm text-muted-foreground md:flex">
+        {navigation}
+      </nav>
     </header>
   );
 }

@@ -30,11 +30,14 @@ vi.mock("@/components/locale/LanguageSelector", () => ({
 vi.mock("@/components/kids/KidsBrand", () => ({ KidsBrand: () => <span>Kids</span> }));
 
 describe("shared top navigation", () => {
-  it("keeps Kids after Contact in the sticky desktop bar and mobile menu", () => {
+  it("keeps the full menu across the sticky top bar from tablet width and Kids after Contact", () => {
     render(<Navbar />);
     const header = screen.getByRole("banner");
     expect(header).toHaveClass("sticky", "top-0");
     const desktop = within(header).getByRole("navigation");
+    expect(desktop).toHaveClass("md:flex");
+    expect(desktop).toHaveClass("flex-wrap");
+    expect(screen.getByRole("button", { name: "nav.menu" })).toHaveClass("md:hidden");
     const desktopLinks = within(desktop)
       .getAllByRole("link")
       .map((link) => link.getAttribute("href"));
