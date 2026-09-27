@@ -85,6 +85,17 @@ afterEach(() => {
 });
 
 describe("Kids nested routes", () => {
+  it("shows level summaries and links to platform pricing without placing prices in Kids landing", async () => {
+    mountKids();
+    expect(
+      await screen.findByRole("heading", { level: 1, name: "Masaarat Kids" }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "View Kids plans and prices" })).toHaveAttribute(
+      "href",
+      "/pricing?locale=en#kids",
+    );
+    expect(screen.queryByText("Kids family pricing")).not.toBeInTheDocument();
+  });
   it("keeps parent setup on a standalone page and out of the level and lesson", async () => {
     const { router } = mountKids();
     fireEvent.click(await screen.findByRole("link", { name: "Parent space" }));
