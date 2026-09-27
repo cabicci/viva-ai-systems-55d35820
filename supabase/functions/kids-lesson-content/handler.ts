@@ -1,4 +1,4 @@
-import { parseKidsPlaybackRequest } from "../kids-playback/token.ts";
+import { parseKidsPlaybackRequest } from "./token.ts";
 import { checkQuiz, studentLesson } from "./public-lesson.ts";
 
 const ORIGINS = new Set(["https://masaarat.ai", "https://www.masaarat.ai"]);
