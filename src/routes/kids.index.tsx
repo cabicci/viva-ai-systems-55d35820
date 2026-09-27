@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { KidsBrand } from "@/components/kids/KidsBrand";
-import { KidsFamilyPricing } from "@/components/kids/KidsFamilyPricing";
 import { KidsReleaseNotice } from "@/components/kids/KidsReleaseNotice";
 import { getKidsPrivacyCopy } from "@/lib/kids/privacy-copy";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
@@ -75,33 +74,27 @@ function KidsPage() {
             ))}
           </section>
 
-          <Link
-            to="/kids/family"
-            search={localeSearch()}
-            className="inline-flex min-h-11 items-center rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground"
-          >
-            {journey.parentTitle}
-          </Link>
-          <KidsFamilyPricing />
-
-          <section className="grid gap-5 md:grid-cols-2">
-            <div className="rounded-2xl border border-border/60 bg-card p-6">
-              <h2 className="text-xl font-bold">{copy.familyTitle}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {copy.familyDescription}
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border/60 bg-card p-6">
-              <h2 className="text-xl font-bold">{copy.bundleTitle}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {copy.bundleDescription}
-              </p>
+          <section className="rounded-2xl border border-border/60 bg-card p-6 md:p-8">
+            <h2 className="text-xl font-bold">{copy.familyTitle}</h2>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{copy.parentNote}</p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Link
+                to="/kids/family"
+                search={localeSearch()}
+                className="inline-flex min-h-11 items-center rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground"
+              >
+                {journey.parentTitle}
+              </Link>
+              <Link
+                to="/pricing"
+                search={localeSearch()}
+                hash="kids"
+                className="inline-flex min-h-11 items-center rounded-full border border-primary px-6 py-3 text-sm font-bold text-primary hover:bg-primary/10"
+              >
+                {copy.viewPricing}
+              </Link>
             </div>
           </section>
-
-          <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
-            {copy.parentNote}
-          </p>
         </div>
       </main>
       <Footer />

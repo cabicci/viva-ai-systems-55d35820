@@ -14,11 +14,8 @@ const arabic = {
   freeBadge: "أول درسين مجانًا",
   level: "المستوى",
   lessons: "12 درسًا",
+  viewPricing: "عرض باقات كيدز وأسعارها",
   familyTitle: "اشتراك عائلي مستقل",
-  familyDescription: "باقات Pro وPro Plus للكبار لا تفتح دروس كيدز تلقائيًا.",
-  bundleTitle: "خصم الجمع 10%",
-  bundleDescription:
-    "خصم 10% على اشتراك كيدز فقط عند الجمع مع Pro أو Pro Plus؛ لا يتغير سعر باقة الكبار.",
   parentNote:
     "إنشاء ملفات الأطفال والوصول للدروس يتطلبان موافقة وليّ الأمر على خصوصية الطفل والتحقق على الخادم.",
 } as const;
@@ -39,11 +36,8 @@ const egyptian: KidsCopy = {
   freeBadge: "أول درسين ببلاش",
   level: "المستوى",
   lessons: "١٢ درس",
+  viewPricing: "شوف باقات كيدز وأسعارها",
   familyTitle: "اشتراك عائلي منفصل",
-  familyDescription: "باقات Pro وPro Plus للكبار مش بتفتح دروس كيدز لوحدها.",
-  bundleTitle: "خصم الجمع ١٠٪",
-  bundleDescription:
-    "خصم ١٠٪ على اشتراك كيدز بس لما تجمعه مع Pro أو Pro Plus؛ سعر باقة الكبار ما بيتغيرش.",
   parentNote:
     "إنشاء ملفات الأطفال وفتح الدروس محتاج تفعيل الخدمة وموافقة وليّ الأمر على خصوصية الطفل.",
 };
@@ -62,10 +56,8 @@ const gulf: KidsCopy = {
   freeBadge: "أول درسين مجانًا",
   level: "المستوى",
   lessons: "١٢ درس",
+  viewPricing: "شوف باقات كيدز وأسعارها",
   familyTitle: "اشتراك عائلي مستقل",
-  familyDescription: "باقات Pro وPro Plus للكبار ما تفتح دروس كيدز تلقائيًا.",
-  bundleTitle: "خصم الجمع ١٠٪",
-  bundleDescription: "خصم ١٠٪ على كيدز بس عند الجمع مع Pro أو Pro Plus؛ سعر باقة الكبار ما يتغير.",
   parentNote:
     "إنشاء ملفات الأطفال وفتح الدروس يتطلب تفعيل الخدمة وموافقة وليّ الأمر على خصوصية الطفل.",
 };
@@ -84,11 +76,8 @@ const en: KidsCopy = {
   freeBadge: "First two lessons free",
   level: "Level",
   lessons: "12 lessons",
+  viewPricing: "View Kids plans and prices",
   familyTitle: "Separate family subscription",
-  familyDescription: "Adult Pro and Pro Plus plans do not unlock Kids lessons automatically.",
-  bundleTitle: "10% bundle discount",
-  bundleDescription:
-    "Save 10% on Kids only when combined with Pro or Pro Plus; the adult plan price stays the same.",
   parentNote:
     "Child profiles and lesson access require parent consent to the children's privacy policy and server access checks.",
 };

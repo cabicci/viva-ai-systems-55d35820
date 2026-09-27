@@ -13,7 +13,10 @@ export function KidsFamilyPricing() {
     }).format(minor / 100);
 
   return (
-    <section className="space-y-4 rounded-2xl border border-border/60 bg-card p-6">
+    <section
+      id="kids"
+      className="scroll-mt-28 space-y-4 rounded-2xl border border-border/60 bg-card p-6 md:p-8"
+    >
       <h2 className="text-xl font-bold">
         {en ? "Kids family pricing" : eg ? "أسعار اشتراك كيدز للعيلة" : "أسعار اشتراك كيدز العائلي"}
       </h2>
