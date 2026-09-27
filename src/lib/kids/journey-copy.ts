@@ -6,9 +6,12 @@ const ar = {
     "من هنا توافق على سياسة الأطفال مرة واحدة، وتدير ملفاتهم من حسابك نفسه. تُحفظ اختياراتك عند العودة.",
   manageFamily: "الانتقال إلى مساحة وليّ الأمر",
   viewLevel: "عرض دروس المستوى",
+  levelStartNotice:
+    "هذه أسماء الدروس. لفتح أي درس، ادخل بحساب مسارات، ووافق على سياسة الأطفال وأنشئ ملفًا مناسبًا للمستوى.",
   signIn: "تسجيل الدخول",
-  signUp: "إنشاء حساب وليّ أمر",
-  signInNotice: "سجّل الدخول بحسابك لإدارة ملف طفلك. لا يلزم إدخال بيانات الطفل الآن.",
+  signUp: "إنشاء حساب مسارات",
+  signInNotice:
+    "استخدم حساب مسارات الحالي، أو أنشئ حسابًا واحدًا للمنصة. بعد الدخول توافق على سياسة الأطفال وتنشئ ملفاتهم؛ لا يوجد تسجيل منفصل لكيدز.",
   waiting: "التحقق من جاهزية الحساب...",
   pending: "اقرأ سياسة خصوصية الأطفال ووافق عليها من حساب وليّ الأمر لفتح الملفات والدروس.",
   unavailable: "تعذّر التحقق من جاهزية كيدز الآن. حاول لاحقًا.",
@@ -60,9 +63,12 @@ const egyptian: Copy = {
     "هنا توافق على سياسة الأطفال مرة واحدة، وتدير ملفاتهم من نفس حسابك. اختياراتك بتفضل محفوظة.",
   manageFamily: "روح لمساحة وليّ الأمر",
   viewLevel: "شوف دروس المستوى",
+  levelStartNotice:
+    "دي أسماء الدروس. عشان تفتح درس، ادخل بحساب مسارات ووافق على سياسة الأطفال واعمل ملف للمستوى ده.",
   signIn: "دخول",
-  signUp: "اعمل حساب وليّ أمر",
-  signInNotice: "ادخل بحسابك عشان تدير ملف طفلك. مش محتاج تكتب بيانات الطفل دلوقتي.",
+  signUp: "اعمل حساب مسارات",
+  signInNotice:
+    "لو عندك حساب مسارات ادخل بيه، ولو جديد اعمل حساب واحد للمنصة. بعدها توافق على سياسة الأطفال وتعمل ملفاتهم؛ مفيش تسجيل تاني لكيدز.",
   waiting: "بنتأكد إن الحساب جاهز...",
   pending: "اقرأ سياسة خصوصية الأطفال ووافق عليها من حساب وليّ الأمر عشان تفتح الملفات والدروس.",
   unavailable: "مش قادرين نتأكد من جاهزية كيدز دلوقتي. حاول بعد شوية.",
@@ -113,9 +119,12 @@ const gulf: Copy = {
     "من هنا توافق على سياسة الأطفال مرة واحدة، وتدير ملفاتهم من حسابك نفسه. تظل اختياراتك محفوظة.",
   manageFamily: "روح لمساحة وليّ الأمر",
   viewLevel: "شوف دروس المستوى",
+  levelStartNotice:
+    "هذي أسماء الدروس. عشان تفتح درس، ادخل بحساب مسارات ووافق على سياسة الأطفال وسوّ ملفًا لهالمستوى.",
   signIn: "تسجيل الدخول",
-  signUp: "سوّ حساب وليّ أمر",
-  signInNotice: "سجّل دخولك عشان تدير ملف طفلك. ما تحتاج تدخل بيانات الطفل الحين.",
+  signUp: "سوّ حساب مسارات",
+  signInNotice:
+    "إذا عندك حساب مسارات ادخل به، أو سوّ حسابًا واحدًا للمنصة. بعد الدخول توافق على سياسة الأطفال وتنشئ ملفاتهم؛ ما فيه تسجيل ثاني لكيدز.",
   waiting: "نتأكد من جاهزية الحساب...",
   pending: "اقرأ سياسة خصوصية الأطفال ووافق عليها من حساب وليّ الأمر عشان تفتح الملفات والدروس.",
   unavailable: "ما قدرنا نتأكد من جاهزية كيدز الحين. جرّب بعدين.",
@@ -166,9 +175,12 @@ const en: Copy = {
     "Accept the children's policy once and manage child profiles with your existing account. Your choices are saved when you return.",
   manageFamily: "Go to parent space",
   viewLevel: "View level lessons",
+  levelStartNotice:
+    "These are the lesson titles. To open a lesson, use your Masaarat account, accept the children's policy, and create a profile for this level.",
   signIn: "Sign in",
-  signUp: "Create parent account",
-  signInNotice: "Sign in as a parent. No child details are needed yet.",
+  signUp: "Create Masaarat account",
+  signInNotice:
+    "Use your existing Masaarat account or create one platform account. Then accept the children's policy and add child profiles. Kids does not need a second registration.",
   waiting: "Checking account readiness...",
   pending:
     "Read and accept the children’s privacy policy from your parent account to open profiles and lessons.",

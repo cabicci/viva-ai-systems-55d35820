@@ -15,9 +15,10 @@ const arabic = {
   level: "المستوى",
   lessons: "12 درسًا",
   viewPricing: "عرض باقات كيدز وأسعارها",
-  familyTitle: "اشتراك عائلي مستقل",
+  nextStep: "الخطوة التالية",
+  startKids: "ابدأ كيدز",
   parentNote:
-    "إنشاء ملفات الأطفال والوصول للدروس يتطلبان موافقة وليّ الأمر على خصوصية الطفل والتحقق على الخادم.",
+    "استخدم حساب مسارات نفسه، ثم وافق على سياسة الأطفال وأنشئ ملفًا لكل طفل. لا يحتاج كيدز إلى حساب آخر.",
 } as const;
 
 type KidsCopy = { [K in keyof typeof arabic]: string };
@@ -37,9 +38,10 @@ const egyptian: KidsCopy = {
   level: "المستوى",
   lessons: "١٢ درس",
   viewPricing: "شوف باقات كيدز وأسعارها",
-  familyTitle: "اشتراك عائلي منفصل",
+  nextStep: "الخطوة الجاية",
+  startKids: "ابدأ كيدز",
   parentNote:
-    "إنشاء ملفات الأطفال وفتح الدروس محتاج تفعيل الخدمة وموافقة وليّ الأمر على خصوصية الطفل.",
+    "استخدم نفس حساب مسارات، ووافق على سياسة الأطفال واعمل ملف لكل طفل. مفيش حساب تاني لكيدز.",
 };
 
 const gulf: KidsCopy = {
@@ -57,9 +59,10 @@ const gulf: KidsCopy = {
   level: "المستوى",
   lessons: "١٢ درس",
   viewPricing: "شوف باقات كيدز وأسعارها",
-  familyTitle: "اشتراك عائلي مستقل",
+  nextStep: "الخطوة التالية",
+  startKids: "ابدأ كيدز",
   parentNote:
-    "إنشاء ملفات الأطفال وفتح الدروس يتطلب تفعيل الخدمة وموافقة وليّ الأمر على خصوصية الطفل.",
+    "استخدم حساب مسارات نفسه، ثم وافق على سياسة الأطفال وسوّ ملفًا لكل طفل. ما تحتاج حساب ثاني لكيدز.",
 };
 
 const en: KidsCopy = {
@@ -77,9 +80,10 @@ const en: KidsCopy = {
   level: "Level",
   lessons: "12 lessons",
   viewPricing: "View Kids plans and prices",
-  familyTitle: "Separate family subscription",
+  nextStep: "Next step",
+  startKids: "Get started with Kids",
   parentNote:
-    "Child profiles and lesson access require parent consent to the children's privacy policy and server access checks.",
+    "Use your existing Masaarat account, accept the children's policy, and create a profile for each child. Kids needs no second account.",
 };
 
 export function getKidsCopy(locale: SupportedLocale): KidsCopy {

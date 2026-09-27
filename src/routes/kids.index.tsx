@@ -7,7 +7,6 @@ import { getKidsPrivacyCopy } from "@/lib/kids/privacy-copy";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { KIDS_LEVELS } from "@/lib/kids/catalogue";
 import { getKidsCopy } from "@/lib/kids/copy";
-import { getKidsJourneyCopy } from "@/lib/kids/journey-copy";
 import { useLocale } from "@/lib/locale/locale-context";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
@@ -25,7 +24,6 @@ export const Route = createFileRoute("/kids/")({
 function KidsPage() {
   const { locale, dir } = useLocale();
   const copy = getKidsCopy(locale);
-  const journey = getKidsJourneyCopy(locale);
   const localeSearch = useLocaleLinkSearch();
 
   return (
@@ -41,14 +39,6 @@ function KidsPage() {
           </header>
 
           <KidsReleaseNotice className="rounded-2xl border border-accent/30 bg-accent/10 p-4 text-sm" />
-          <Link
-            to="/kids/privacy"
-            search={localeSearch()}
-            className="inline-block text-sm font-semibold text-primary underline"
-          >
-            {getKidsPrivacyCopy(locale).link}
-          </Link>
-
           <section aria-label={copy.eyebrow} className="grid gap-5 md:grid-cols-3">
             {KIDS_LEVELS.map((level, index) => (
               <article key={level.id} className="rounded-2xl border border-border/60 bg-card p-6">
@@ -75,7 +65,7 @@ function KidsPage() {
           </section>
 
           <section className="rounded-2xl border border-border/60 bg-card p-6 md:p-8">
-            <h2 className="text-xl font-bold">{copy.familyTitle}</h2>
+            <h2 className="text-xl font-bold">{copy.nextStep}</h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{copy.parentNote}</p>
             <div className="mt-5 flex flex-wrap gap-3">
               <Link
@@ -83,17 +73,24 @@ function KidsPage() {
                 search={localeSearch()}
                 className="inline-flex min-h-11 items-center rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground"
               >
-                {journey.parentTitle}
+                {copy.startKids}
               </Link>
               <Link
                 to="/pricing"
                 search={localeSearch()}
                 hash="kids"
-                className="inline-flex min-h-11 items-center rounded-full border border-primary px-6 py-3 text-sm font-bold text-primary hover:bg-primary/10"
+                className="inline-flex min-h-11 items-center text-sm font-bold text-primary underline underline-offset-4"
               >
                 {copy.viewPricing}
               </Link>
             </div>
+            <Link
+              to="/kids/privacy"
+              search={localeSearch()}
+              className="mt-4 inline-block text-xs font-semibold text-muted-foreground underline underline-offset-4"
+            >
+              {getKidsPrivacyCopy(locale).link}
+            </Link>
           </section>
         </div>
       </main>
