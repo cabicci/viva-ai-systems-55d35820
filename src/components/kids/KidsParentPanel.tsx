@@ -108,6 +108,14 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
                   <li key={profile.id} className="rounded-xl border border-border/60 p-3 text-sm">
                     {profile.display_name} · {copy.level}{" "}
                     {KIDS_LEVELS.findIndex((item) => item.id === profile.level_id) + 1}
+                    <Link
+                      to="/kids/$levelId"
+                      params={{ levelId: profile.level_id }}
+                      search={localeSearch()}
+                      className="mt-2 block font-bold text-primary underline"
+                    >
+                      {copy.viewLevel}
+                    </Link>
                   </li>
                 ))}
               </ul>

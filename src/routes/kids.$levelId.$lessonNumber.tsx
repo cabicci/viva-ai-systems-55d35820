@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { KidsLessonBody } from "@/components/kids/KidsLessonBody";
-import { KidsParentPanel } from "@/components/kids/KidsParentPanel";
 import { KIDS_LEVELS, type KidsLevelId } from "@/lib/kids/catalogue";
 import { getKidsJourneyCopy } from "@/lib/kids/journey-copy";
 import {
@@ -46,7 +45,7 @@ export function KidsLessonPage() {
   const { locale, dir } = useLocale();
   const localeSearch = useLocaleLinkSearch();
   const copy = getKidsJourneyCopy(locale);
-  const { state, profiles, refresh } = useKidsParentState();
+  const { state, profiles } = useKidsParentState();
   const [profileId, setProfileId] = useState("");
   const [attempt, setAttempt] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -187,14 +186,26 @@ export function KidsLessonPage() {
                   ) : (
                     <div className="space-y-4">
                       <p className="text-sm">{copy.noLevelProfile}</p>
-                      <KidsParentPanel onProfileCreated={refresh} />
+                      <Link
+                        to="/kids/family"
+                        search={localeSearch()}
+                        className="inline-flex min-h-11 items-center rounded-full border border-primary px-5 py-3 text-sm font-bold text-primary"
+                      >
+                        {copy.manageFamily}
+                      </Link>
                     </div>
                   )}
                 </div>
               )}
               {state !== "ready" && (
                 <div className="mt-6">
-                  <KidsParentPanel />
+                  <Link
+                    to="/kids/family"
+                    search={localeSearch()}
+                    className="inline-flex min-h-11 items-center rounded-full bg-primary px-5 py-3 text-sm font-bold text-primary-foreground"
+                  >
+                    {copy.manageFamily}
+                  </Link>
                 </div>
               )}
             </section>

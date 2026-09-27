@@ -1,7 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
-import { KidsParentPanel } from "@/components/kids/KidsParentPanel";
 import { KidsBrand } from "@/components/kids/KidsBrand";
 import { KidsReleaseNotice } from "@/components/kids/KidsReleaseNotice";
 import { KIDS_LEVELS } from "@/lib/kids/catalogue";
@@ -61,7 +60,13 @@ function KidsLevelPage() {
             </p>
             <KidsReleaseNotice className="mt-4 max-w-2xl text-sm leading-relaxed" />
           </header>
-          <KidsParentPanel />
+          <Link
+            to="/kids/family"
+            search={localeSearch()}
+            className="inline-flex min-h-11 items-center rounded-full border border-primary px-5 py-3 text-sm font-bold text-primary hover:bg-primary/10"
+          >
+            {copy.parentTitle}
+          </Link>
           <section
             aria-label={product.lessons}
             className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"

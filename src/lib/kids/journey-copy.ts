@@ -2,6 +2,10 @@ import type { SupportedLocale } from "@/lib/locale/types";
 
 const ar = {
   parentTitle: "مساحة وليّ الأمر",
+  familyIntro:
+    "من هنا توافق على سياسة الأطفال مرة واحدة، وتدير ملفاتهم من حسابك نفسه. تُحفظ اختياراتك عند العودة.",
+  manageFamily: "الانتقال إلى مساحة وليّ الأمر",
+  viewLevel: "عرض دروس المستوى",
   signIn: "تسجيل الدخول",
   signUp: "إنشاء حساب وليّ أمر",
   signInNotice: "سجّل الدخول بحسابك لإدارة ملف طفلك. لا يلزم إدخال بيانات الطفل الآن.",
@@ -52,6 +56,10 @@ const ar = {
 type Copy = { [K in keyof typeof ar]: string };
 const egyptian: Copy = {
   parentTitle: "مساحة وليّ الأمر",
+  familyIntro:
+    "هنا توافق على سياسة الأطفال مرة واحدة، وتدير ملفاتهم من نفس حسابك. اختياراتك بتفضل محفوظة.",
+  manageFamily: "روح لمساحة وليّ الأمر",
+  viewLevel: "شوف دروس المستوى",
   signIn: "دخول",
   signUp: "اعمل حساب وليّ أمر",
   signInNotice: "ادخل بحسابك عشان تدير ملف طفلك. مش محتاج تكتب بيانات الطفل دلوقتي.",
@@ -101,6 +109,10 @@ const egyptian: Copy = {
 };
 const gulf: Copy = {
   parentTitle: "مساحة وليّ الأمر",
+  familyIntro:
+    "من هنا توافق على سياسة الأطفال مرة واحدة، وتدير ملفاتهم من حسابك نفسه. تظل اختياراتك محفوظة.",
+  manageFamily: "روح لمساحة وليّ الأمر",
+  viewLevel: "شوف دروس المستوى",
   signIn: "تسجيل الدخول",
   signUp: "سوّ حساب وليّ أمر",
   signInNotice: "سجّل دخولك عشان تدير ملف طفلك. ما تحتاج تدخل بيانات الطفل الحين.",
@@ -150,6 +162,10 @@ const gulf: Copy = {
 };
 const en: Copy = {
   parentTitle: "Parent space",
+  familyIntro:
+    "Accept the children's policy once and manage child profiles with your existing account. Your choices are saved when you return.",
+  manageFamily: "Go to parent space",
+  viewLevel: "View level lessons",
   signIn: "Sign in",
   signUp: "Create parent account",
   signInNotice: "Sign in as a parent. No child details are needed yet.",

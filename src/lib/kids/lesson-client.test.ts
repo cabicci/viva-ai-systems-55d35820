@@ -27,7 +27,7 @@ describe("Kids parent intent and protected lesson contract", () => {
       parseAuthIntentSearch({ intent: "https://evil.test", locale: "en" }).intent,
     ).toBeUndefined();
     expect(kidsSignupRedirect("https://masaarat.ai", { intent: "kids", locale: "en" })).toBe(
-      "https://masaarat.ai/kids?locale=en",
+      "https://masaarat.ai/kids/family?locale=en",
     );
   });
 

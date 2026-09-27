@@ -41,7 +41,7 @@ function LoginPage() {
     }
     toast.success(t("auth.login.toast.success"));
     if (search.intent === "kids") {
-      navigate({ to: "/kids", search: { locale: search.locale }, replace: true });
+      navigate({ to: "/kids/family", search: { locale: search.locale }, replace: true });
     } else {
       navigate({ to: "/dashboard", replace: true });
     }
