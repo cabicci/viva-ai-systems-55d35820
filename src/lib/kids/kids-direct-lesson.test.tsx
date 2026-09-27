@@ -24,11 +24,6 @@ vi.mock("@/lib/kids/lesson-client", () => ({
   parseProtectedLesson: () => ({ locale: "en", title: "Protected" }),
   parseProtectedPlayback: () => "https://player.mediadelivery.net/embed/761387/test",
 }));
-vi.mock("@/components/kids/KidsParentPanel", () => ({
-  KidsParentPanel: ({ onProfileCreated }: { onProfileCreated?: () => void }) => (
-    <button onClick={onProfileCreated}>Create profile here</button>
-  ),
-}));
 vi.mock("@/lib/kids/parent-state", () => ({ useKidsParentState: mock.useKidsParentState }));
 vi.mock("@/integrations/supabase/client", () => ({
   supabase: { functions: { invoke: mock.invoke } },
@@ -51,12 +46,11 @@ beforeEach(() => {
 });
 
 describe("Kids direct lesson route", () => {
-  it("lets an approved parent create a profile for the lesson level and then refreshes choices", () => {
+  it("sends an approved parent without a matching profile to the separate family page", () => {
     render(<KidsLessonPage />);
-    const create = screen.getByRole("button", { name: "Create profile here" });
     expect(screen.getByText("No profile for this level.")).toBeInTheDocument();
-    fireEvent.click(create);
-    expect(mock.refresh).toHaveBeenCalledOnce();
+    expect(screen.getByRole("link", { name: "Go to parent space" })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Create child profile" })).not.toBeInTheDocument();
   });
 
   it("does not restore a previously opened lesson from memory after the parent grant recheck", async () => {

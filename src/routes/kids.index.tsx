@@ -2,13 +2,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { KidsBrand } from "@/components/kids/KidsBrand";
-import { KidsParentPanel } from "@/components/kids/KidsParentPanel";
 import { KidsFamilyPricing } from "@/components/kids/KidsFamilyPricing";
 import { KidsReleaseNotice } from "@/components/kids/KidsReleaseNotice";
 import { getKidsPrivacyCopy } from "@/lib/kids/privacy-copy";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { KIDS_LEVELS } from "@/lib/kids/catalogue";
 import { getKidsCopy } from "@/lib/kids/copy";
+import { getKidsJourneyCopy } from "@/lib/kids/journey-copy";
 import { useLocale } from "@/lib/locale/locale-context";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
@@ -26,6 +26,7 @@ export const Route = createFileRoute("/kids/")({
 function KidsPage() {
   const { locale, dir } = useLocale();
   const copy = getKidsCopy(locale);
+  const journey = getKidsJourneyCopy(locale);
   const localeSearch = useLocaleLinkSearch();
 
   return (
@@ -74,7 +75,13 @@ function KidsPage() {
             ))}
           </section>
 
-          <KidsParentPanel />
+          <Link
+            to="/kids/family"
+            search={localeSearch()}
+            className="inline-flex min-h-11 items-center rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground"
+          >
+            {journey.parentTitle}
+          </Link>
           <KidsFamilyPricing />
 
           <section className="grid gap-5 md:grid-cols-2">

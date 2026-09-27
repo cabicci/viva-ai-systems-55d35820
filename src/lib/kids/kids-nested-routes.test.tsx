@@ -9,6 +9,7 @@ import {
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { Route as KidsLayout } from "@/routes/kids";
 import { Route as KidsIndex } from "@/routes/kids.index";
+import { Route as Family } from "@/routes/kids.family";
 import { Route as LevelLayout } from "@/routes/kids.$levelId";
 import { Route as LevelIndex } from "@/routes/kids.$levelId.index";
 import { Route as Lesson } from "@/routes/kids.$levelId.$lessonNumber";
@@ -17,6 +18,7 @@ const mock = vi.hoisted(() => ({ invoke: vi.fn() }));
 vi.mock("@/components/site/Navbar", () => ({ Navbar: () => null }));
 vi.mock("@/components/site/Footer", () => ({ Footer: () => null }));
 vi.mock("@/components/kids/KidsBrand", () => ({ KidsBrand: () => <div>Kids brand</div> }));
+vi.mock("@/components/kids/KidsReleaseNotice", () => ({ KidsReleaseNotice: () => null }));
 vi.mock("@/components/kids/KidsParentPanel", () => ({
   KidsParentPanel: () => <div>Parent access pending</div>,
 }));
@@ -51,6 +53,11 @@ function mountKids(start = "/kids?locale=en") {
     path: "/$levelId",
     getParentRoute: () => kids,
   } as unknown as Parameters<typeof LevelLayout.update>[0]);
+  const family = Family.update({
+    id: "/family",
+    path: "/family",
+    getParentRoute: () => kids,
+  } as unknown as Parameters<typeof Family.update>[0]);
   const levelIndex = LevelIndex.update({
     id: "/",
     path: "/",
@@ -62,7 +69,7 @@ function mountKids(start = "/kids?locale=en") {
     getParentRoute: () => level,
   } as unknown as Parameters<typeof Lesson.update>[0]);
   const tree = root.addChildren([
-    kids.addChildren([kidsIndex, level.addChildren([levelIndex, lesson])]),
+    kids.addChildren([kidsIndex, family, level.addChildren([levelIndex, lesson])]),
   ]);
   const router = createRouter({
     routeTree: tree,
@@ -78,6 +85,22 @@ afterEach(() => {
 });
 
 describe("Kids nested routes", () => {
+  it("keeps parent setup on a standalone page and out of the level and lesson", async () => {
+    const { router } = mountKids();
+    fireEvent.click(await screen.findByRole("link", { name: "Parent space" }));
+    expect(
+      await screen.findByRole("heading", { level: 1, name: "Parent space" }),
+    ).toBeInTheDocument();
+    expect(router.state.location.pathname).toBe("/kids/family");
+    expect(screen.getByText("Parent access pending")).toBeInTheDocument();
+    await act(() => router.navigate({ to: "/kids/level-1/1", search: { locale: "en" } }));
+    expect(await screen.findByRole("heading", { level: 1, name: "Lesson 1" })).toBeInTheDocument();
+    expect(screen.queryByText("Parent access pending")).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Go to parent space" })).toHaveAttribute(
+      "href",
+      "/kids/family?locale=en",
+    );
+  });
   it("replaces the landing with the chosen level and then a locked lesson", async () => {
     const { router } = mountKids();
     expect(
@@ -93,7 +116,7 @@ describe("Kids nested routes", () => {
     expect(await screen.findByRole("heading", { level: 1, name: "Lesson 1" })).toBeInTheDocument();
     expect(screen.queryByRole("heading", { level: 1, name: "Level 1" })).not.toBeInTheDocument();
     expect(router.state.location.pathname).toBe("/kids/level-1/1");
-    expect(screen.getByText(/requires parent and content approvals/)).toBeInTheDocument();
+    expect(screen.getByText(/requires parent consent and approved content/)).toBeInTheDocument();
     expect(mock.invoke).not.toHaveBeenCalled();
     await act(() => router.navigate({ to: "/kids", search: { locale: "en" } }));
     expect(
