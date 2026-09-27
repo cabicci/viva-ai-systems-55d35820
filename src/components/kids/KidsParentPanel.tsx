@@ -12,7 +12,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { KIDS_FAMILY_POLICY } from "@/lib/kids/family-policy";
 
-export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () => void } = {}) {
+export function KidsParentPanel() {
   const { locale } = useLocale();
   const localeSearch = useLocaleLinkSearch();
   const copy = getKidsJourneyCopy(locale);
@@ -30,7 +30,6 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
     setError(false);
     try {
       await createProfile(name, level, consentPolicyId);
-      onProfileCreated?.();
       setName("");
     } catch {
       setError(true);
@@ -44,7 +43,6 @@ export function KidsParentPanel({ onProfileCreated }: { onProfileCreated?: () =>
       aria-label={copy.parentTitle}
       className="rounded-3xl border border-primary/20 bg-card p-6 md:p-8"
     >
-      <h2 className="text-2xl font-black">{copy.parentTitle}</h2>
       {state === "signed-out" && (
         <div className="mt-4 space-y-4">
           <p className="text-sm leading-relaxed text-muted-foreground">{copy.signInNotice}</p>

@@ -6,6 +6,7 @@ import { KidsReleaseNotice } from "@/components/kids/KidsReleaseNotice";
 import { KIDS_LEVELS } from "@/lib/kids/catalogue";
 import { getKidsJourneyCopy } from "@/lib/kids/journey-copy";
 import { getKidsCopy } from "@/lib/kids/copy";
+import { useKidsParentState } from "@/lib/kids/parent-state";
 import { useLocale } from "@/lib/locale/locale-context";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
@@ -34,9 +35,12 @@ function KidsLevelPage() {
   const localeSearch = useLocaleLinkSearch();
   const copy = getKidsJourneyCopy(locale);
   const product = getKidsCopy(locale);
+  const { state, profiles } = useKidsParentState();
   const level = KIDS_LEVELS.find((entry) => entry.id === levelId);
   if (!level) return null;
   const levelNumber = KIDS_LEVELS.findIndex((entry) => entry.id === levelId) + 1;
+  const canOpenLessons =
+    state === "ready" && profiles.some((profile) => profile.level_id === levelId);
 
   return (
     <div className="flex min-h-dvh flex-col" dir={dir}>
@@ -60,13 +64,18 @@ function KidsLevelPage() {
             </p>
             <KidsReleaseNotice className="mt-4 max-w-2xl text-sm leading-relaxed" />
           </header>
-          <Link
-            to="/kids/family"
-            search={localeSearch()}
-            className="inline-flex min-h-11 items-center rounded-full border border-primary px-5 py-3 text-sm font-bold text-primary hover:bg-primary/10"
-          >
-            {copy.parentTitle}
-          </Link>
+          {!canOpenLessons && state !== "checking" && (
+            <div className="rounded-2xl border border-primary/20 bg-card p-5">
+              <p className="text-sm text-muted-foreground">{copy.levelStartNotice}</p>
+              <Link
+                to="/kids/family"
+                search={localeSearch()}
+                className="mt-3 inline-flex min-h-11 items-center rounded-full bg-primary px-5 py-3 text-sm font-bold text-primary-foreground"
+              >
+                {product.startKids}
+              </Link>
+            </div>
+          )}
           <section
             aria-label={product.lessons}
             className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
@@ -87,14 +96,16 @@ function KidsLevelPage() {
                   <p className="mt-3 flex-1 text-sm text-muted-foreground">
                     {lessonNumber <= 2 ? copy.free : copy.requiresPlan}
                   </p>
-                  <Link
-                    to="/kids/$levelId/$lessonNumber"
-                    params={{ levelId, lessonNumber: String(lessonNumber) }}
-                    search={localeSearch()}
-                    className="mt-5 inline-flex min-h-11 items-center justify-center rounded-full border border-primary px-4 text-sm font-bold text-primary hover:bg-primary/10"
-                  >
-                    {copy.openLesson}
-                  </Link>
+                  {canOpenLessons && (
+                    <Link
+                      to="/kids/$levelId/$lessonNumber"
+                      params={{ levelId, lessonNumber: String(lessonNumber) }}
+                      search={localeSearch()}
+                      className="mt-5 inline-flex min-h-11 items-center justify-center rounded-full border border-primary px-4 text-sm font-bold text-primary hover:bg-primary/10"
+                    >
+                      {copy.openLesson}
+                    </Link>
+                  )}
                 </article>
               );
             })}
