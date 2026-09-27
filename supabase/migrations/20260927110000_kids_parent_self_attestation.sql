@@ -135,7 +135,9 @@ BEGIN
 END;
 $$;
 
--- The manual reviewer route is obsolete. Keep historical verification rows as
--- audit data, but they no longer grant access or accept new approvals.
-DROP FUNCTION public.kids_admin_review_parent(uuid,boolean,text);
-DROP FUNCTION public.kids_admin_parent_review_ready();
+-- Keep historical verification records and function definitions for audit.
+-- Revoke access to the obsolete review route; it never grants Kids access.
+REVOKE EXECUTE ON FUNCTION public.kids_admin_review_parent(uuid,boolean,text)
+  FROM authenticated;
+REVOKE EXECUTE ON FUNCTION public.kids_admin_parent_review_ready()
+  FROM authenticated;
