@@ -10,7 +10,7 @@ const arabic = {
   intro:
     "ثلاث مراحل، في كل مرحلة 12 درسًا بنسخ عربية وإنجليزية. يدير وليّ الأمر الوصول والتقدم، وتبقى باقات الكبار مستقلة.",
   reviewNotice:
-    "الدروس والفيديوهات جاهزة. يمكن تقديم طلب وليّ الأمر، لكن إنشاء ملفات الأطفال وفتح الدروس لم يُفعّلا بعد.",
+    "خدمة الأطفال مغلقة مؤقتًا. عند إتاحتها يقرأ وليّ الأمر سياسة خصوصية الأطفال ويوافق عليها قبل إنشاء الملفات.",
   freeBadge: "أول درسين مجانًا",
   level: "المستوى",
   lessons: "12 درسًا",
@@ -20,7 +20,7 @@ const arabic = {
   bundleDescription:
     "خصم 10% على اشتراك كيدز فقط عند الجمع مع Pro أو Pro Plus؛ لا يتغير سعر باقة الكبار.",
   parentNote:
-    "إنشاء ملفات الأطفال والوصول للدروس يتطلبان تفعيل سياسة وليّ الأمر والخصوصية والتحقق على الخادم.",
+    "إنشاء ملفات الأطفال والوصول للدروس يتطلبان موافقة وليّ الأمر على خصوصية الطفل والتحقق على الخادم.",
 } as const;
 
 type KidsCopy = { [K in keyof typeof arabic]: string };
@@ -35,7 +35,7 @@ const egyptian: KidsCopy = {
   intro:
     "٣ مراحل، في كل مرحلة ١٢ درس بالعربي والإنجليزي. وليّ الأمر بيتابع الوصول والتقدم، وباقات الكبار منفصلة.",
   reviewNotice:
-    "الدروس والفيديوهات جاهزة. تقدر تطلب مراجعة حساب وليّ الأمر، لكن إنشاء ملفات الأطفال وفتح الدروس لسه ما اتفعّلوش.",
+    "خدمة الأطفال مقفولة مؤقتًا. لما تتاح، وليّ الأمر يقرأ سياسة خصوصية الأطفال ويوافق عليها قبل إنشاء الملفات.",
   freeBadge: "أول درسين ببلاش",
   level: "المستوى",
   lessons: "١٢ درس",
@@ -45,7 +45,7 @@ const egyptian: KidsCopy = {
   bundleDescription:
     "خصم ١٠٪ على اشتراك كيدز بس لما تجمعه مع Pro أو Pro Plus؛ سعر باقة الكبار ما بيتغيرش.",
   parentNote:
-    "إنشاء ملفات الأطفال وفتح الدروس محتاج تفعيل الخدمة والتحقق من وليّ الأمر والموافقة على خصوصية الطفل.",
+    "إنشاء ملفات الأطفال وفتح الدروس محتاج تفعيل الخدمة وموافقة وليّ الأمر على خصوصية الطفل.",
 };
 
 const gulf: KidsCopy = {
@@ -58,7 +58,7 @@ const gulf: KidsCopy = {
   intro:
     "ثلاث مراحل، بكل مرحلة ١٢ درس بالعربي والإنجليزي. وليّ الأمر يدير الوصول والتقدّم، وباقات الكبار منفصلة.",
   reviewNotice:
-    "الدروس والفيديوهات جاهزة. تقدر تقدم طلب وليّ الأمر، لكن إنشاء ملفات الأطفال وفتح الدروس ما تفعّلوا للحين.",
+    "خدمة الأطفال مقفولة مؤقتًا. عند إتاحتها وليّ الأمر يقرأ سياسة خصوصية الأطفال ويوافق عليها قبل إنشاء الملفات.",
   freeBadge: "أول درسين مجانًا",
   level: "المستوى",
   lessons: "١٢ درس",
@@ -67,7 +67,7 @@ const gulf: KidsCopy = {
   bundleTitle: "خصم الجمع ١٠٪",
   bundleDescription: "خصم ١٠٪ على كيدز بس عند الجمع مع Pro أو Pro Plus؛ سعر باقة الكبار ما يتغير.",
   parentNote:
-    "إنشاء ملفات الأطفال وفتح الدروس يتطلب تفعيل الخدمة والتحقق من وليّ الأمر والموافقة على خصوصية الطفل.",
+    "إنشاء ملفات الأطفال وفتح الدروس يتطلب تفعيل الخدمة وموافقة وليّ الأمر على خصوصية الطفل.",
 };
 
 const en: KidsCopy = {
@@ -80,7 +80,7 @@ const en: KidsCopy = {
   intro:
     "Three levels with 12 lessons each, in Arabic and English versions. A parent manages access and progress; adult plans stay separate.",
   reviewNotice:
-    "Lessons and videos are ready. Parents may request access, but child profiles and lessons have not been opened yet.",
+    "Kids is temporarily closed. Once available, parents read and accept the children's privacy policy before creating profiles.",
   freeBadge: "First two lessons free",
   level: "Level",
   lessons: "12 lessons",
@@ -90,7 +90,7 @@ const en: KidsCopy = {
   bundleDescription:
     "Save 10% on Kids only when combined with Pro or Pro Plus; the adult plan price stays the same.",
   parentNote:
-    "Child profiles and lesson access require parental verification, approved privacy controls, and server release.",
+    "Child profiles and lesson access require parent consent to the children's privacy policy and server access checks.",
 };
 
 export function getKidsCopy(locale: SupportedLocale): KidsCopy {

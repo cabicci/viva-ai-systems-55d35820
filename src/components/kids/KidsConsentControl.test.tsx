@@ -35,18 +35,14 @@ beforeEach(() => {
 });
 describe("Child consent control", () => {
   it.each(["en", "ar-EG", "ar-MSA", "ar-Gulf"])(
-    "requires explicit consent and displays exact server policy in %s",
+    "uses the already accepted policy without another checkbox in %s",
     async (locale) => {
       mock.locale = locale;
       const consent = vi.fn();
       render(<KidsConsentControl canCreate onConsent={consent} onWithdraw={vi.fn()} />);
-      const checkbox = await screen.findByRole("checkbox");
-      expect(checkbox).not.toBeChecked();
-      expect(screen.getByText(policy.notice_text)).toBeInTheDocument();
-      fireEvent.click(checkbox);
-      expect(consent).toHaveBeenLastCalledWith("policy-1");
-      fireEvent.click(checkbox);
-      expect(consent).toHaveBeenLastCalledWith(undefined);
+      expect(await screen.findByText(policy.notice_text)).toBeInTheDocument();
+      expect(screen.queryByRole("checkbox")).not.toBeInTheDocument();
+      await waitFor(() => expect(consent).toHaveBeenLastCalledWith("policy-1"));
     },
   );
   it("does not invent a policy when no approved version exists", async () => {

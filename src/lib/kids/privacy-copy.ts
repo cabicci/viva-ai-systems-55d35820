@@ -4,15 +4,15 @@ const ar = {
   title: "سياسة خصوصية مسارات كيدز",
   updated: "26 سبتمبر 2026",
   intro:
-    "هذه سياسة واحدة لكل أسر مسارات كيدز. نضع مصلحة الطفل وخصوصيته أولًا، ونستخدم أقل قدر من البيانات لتقديم الدروس تحت إدارة وليّ الأمر. تبدأ معالجة بيانات الطفل فقط بعد فتح الخدمة وتسجيل موافقة وليّ الأمر المطلوبة.",
+    "هذه سياسة واحدة لكل أسر مسارات كيدز. نضع مصلحة الطفل وخصوصيته أولًا، ونستخدم أقل قدر من البيانات لتقديم الدروس تحت إدارة وليّ الأمر. تبدأ معالجة بيانات الطفل بعد موافقة صاحب الحساب وليّ الأمر على هذه السياسة وإنشاء ملف الطفل.",
   sections: [
     {
       title: "من يدير الحساب؟",
-      body: "ينشئ البالغ حسابه ببريده المؤكد ويطلب إتاحة كيدز. بعد التحقق من وليّ الأمر والموافقة الصريحة على إشعار الخدمة، ينشئ ملفًا للطفل باسم عرض يختاره ومستوى تعليمي. لا نطلب من الطفل بريدًا أو رقم هاتف أو وثيقة هوية.",
+      body: "ينشئ وليّ الأمر حسابه ببريد مؤكد، ويقر بصفته، ويطّلع على هذه السياسة ثم يوافق عليها بمربع اختيار غير محدد مسبقًا. بعدها ينشئ ملفًا للطفل باسم عرض يختاره ومستوى تعليمي. لا نطلب من الطفل بريدًا أو رقم هاتف أو وثيقة هوية.",
     },
     {
       title: "ما البيانات ولماذا؟",
-      body: "نحفظ حساب وليّ الأمر وبلد إقامته ومرجع التحقق والموافقة، واسم عرض الطفل ومستواه وتقدم الدروس. نستخدمها لإدارة الوصول، عرض الدروس والنتائج، حفظ التقدم، حماية الخدمة والرد على طلبات الأسرة. لا نبيع بيانات الأطفال ولا نستخدمها للإعلانات الموجهة أو التتبع السلوكي.",
+      body: "نحفظ حساب وليّ الأمر وبلد إقامته وإقراره ونسخة موافقته وتاريخها، واسم عرض الطفل ومستواه وتقدم الدروس. نستخدمها لإدارة الوصول، عرض الدروس والنتائج، حفظ التقدم، حماية الخدمة والرد على طلبات الأسرة. لا نبيع بيانات الأطفال ولا نستخدمها للإعلانات الموجهة أو التتبع السلوكي.",
     },
     {
       title: "الدروس والفيديو والمساعدة",
@@ -24,7 +24,7 @@ const ar = {
     },
     {
       title: "الاختيار والحقوق",
-      body: "الموافقة على بيانات الطفل منفصلة عن اشتراك الكبار والتسويق، وتُسجّل بنسختها وتاريخها لكل ملف. يستطيع وليّ الأمر سحبها من لوحة كيدز، فيتوقف وصول الملف للدروس؛ ويمكنه طلب الاطلاع أو التصحيح أو المحو عبر البريد أدناه. سحب الموافقة لا يعني أن النسخ الاحتياطية أو سجلات مزودي الخدمة حُذفت فورًا؛ نتعامل مع طلب المحو وفق إجراء الحذف المعتمد.",
+      body: "الموافقة على سياسة الأطفال منفصلة عن اشتراك الكبار والتسويق، وتُسجّل بنسختها وتاريخها للحساب ولكل ملف طفل. يستطيع وليّ الأمر سحب موافقة ملف الطفل من لوحة كيدز، فيتوقف وصوله للدروس؛ ويمكنه طلب الاطلاع أو التصحيح أو المحو عبر البريد أدناه. سحب الموافقة لا يعني أن النسخ الاحتياطية أو سجلات مزودي الخدمة حُذفت فورًا؛ نتعامل مع طلب المحو وفق إجراء الحذف المعتمد.",
     },
     {
       title: "مسؤولية وليّ الأمر ومسارات",
@@ -48,15 +48,15 @@ const en = {
   title: "Masaarat Kids Privacy Policy",
   updated: "26 September 2026",
   intro:
-    "One policy for every Masaarat Kids family. We put the child's interests and privacy first and use the minimum data needed for parent-managed lessons. Child data processing starts only after the service opens and the required parent consent is recorded.",
+    "One policy for every Masaarat Kids family. We put the child's interests and privacy first and use the minimum data needed for parent-managed lessons. Child data processing starts after the parent account holder consents to this policy and creates a child profile.",
   sections: [
     {
       title: "Who manages the account?",
-      body: "An adult signs up with a confirmed email and requests Kids access. After guardian verification and explicit consent to the service notice, they create a child profile with a chosen display name and learning level. We do not ask a child for an email address, phone number or identity document.",
+      body: "A parent signs up with a confirmed email, declares their role, reads this policy and consents using a checkbox that starts unchecked. They then create a child profile with a chosen display name and learning level. We do not ask a child for an email address, phone number or identity document.",
     },
     {
       title: "What data and why?",
-      body: "We store the parent's account, country, verification reference and consent, plus the child's display name, level and lesson progress. We use these to manage access, show lessons and results, save progress, protect the service and respond to family requests. We do not sell children's data or use it for targeted advertising or behavioural tracking.",
+      body: "We store the parent's account, country, declaration, policy version and acceptance time, plus the child's display name, level and lesson progress. We use these to manage access, show lessons and results, save progress, protect the service and respond to family requests. We do not sell children's data or use it for targeted advertising or behavioural tracking.",
     },
     {
       title: "Lessons, video and help",
@@ -68,7 +68,7 @@ const en = {
     },
     {
       title: "Choice and rights",
-      body: "Child-data consent is separate from adult plans and marketing, and its version and time are recorded for each profile. A parent can withdraw it in Kids, which stops lesson access, and can request access, correction or erasure using the email below. Withdrawal does not mean backup or provider records disappear immediately; erasure requests follow the approved deletion process.",
+      body: "Children's policy consent is separate from adult plans and marketing; its version and time are recorded for the account and each child profile. A parent can withdraw consent for a profile in Kids, which stops its lesson access, and can request access, correction or erasure using the email below. Withdrawal does not mean backup or provider records disappear immediately; erasure requests follow the approved deletion process.",
     },
     {
       title: "Parent and Masaarat responsibilities",
