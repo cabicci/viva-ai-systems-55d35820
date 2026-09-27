@@ -15,12 +15,12 @@ export function KidsFamilyPricing() {
   return (
     <section
       id="kids"
-      className="scroll-mt-28 space-y-4 rounded-2xl border border-border/60 bg-card p-6 md:p-8"
+      className="glass scroll-mt-28 rounded-2xl border border-primary/30 bg-primary/[0.03] p-6 md:p-8"
     >
-      <h2 className="text-xl font-bold">
+      <h2 className="text-2xl font-black">
         {en ? "Kids family pricing" : eg ? "أسعار اشتراك كيدز للعيلة" : "أسعار اشتراك كيدز العائلي"}
       </h2>
-      <p className="text-sm text-muted-foreground">
+      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
         {en
           ? `One independent subscription for up to ${KIDS_FAMILY_POLICY.maxProfiles} children. Pro or Pro Plus is optional.`
           : eg
@@ -29,10 +29,10 @@ export function KidsFamilyPricing() {
               ? `اشتراك مستقل يشمل حتى ${KIDS_FAMILY_POLICY.maxProfiles} أطفال. ما تحتاج تشترك في Pro أو Pro Plus.`
               : `اشتراك مستقل يشمل حتى ${KIDS_FAMILY_POLICY.maxProfiles} أطفال. لا يشترط الاشتراك في Pro أو Pro Plus.`}
       </p>
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="mt-6 grid gap-4 md:grid-cols-2">
         {(["EG", "INTL"] as const).map((market) => (
-          <div key={market} className="rounded-xl border border-border/60 p-4">
-            <h3 className="font-bold">
+          <div key={market} className="rounded-xl border border-border/50 bg-background/40 p-5">
+            <h3 className="font-bold text-primary">
               {market === "EG" ? (en ? "Egypt" : "مصر") : en ? "International" : "دولي"}
             </h3>
             {(["month", "year"] as const).map((interval) => {
@@ -41,13 +41,18 @@ export function KidsFamilyPricing() {
               const period =
                 interval === "month" ? (en ? "Monthly" : "شهريًا") : en ? "Annually" : "سنويًا";
               return (
-                <div key={interval} className="mt-3 text-sm">
-                  <p>
-                    {period}: <strong>{money(base.totalMinor, base.currency)}</strong>
+                <div key={interval} className="mt-4 border-t border-border/40 pt-4 text-sm">
+                  <p className="flex flex-wrap items-baseline justify-between gap-2">
+                    <span className="text-muted-foreground">{period}</span>
+                    <strong className="text-2xl font-black text-foreground">
+                      {money(base.totalMinor, base.currency)}
+                    </strong>
                   </p>
                   <p className="mt-1 text-muted-foreground">
                     {en ? "With Pro or Pro Plus" : "مع Pro أو Pro Plus"}:{" "}
-                    {money(bundle.totalMinor, bundle.currency)}
+                    <span className="font-semibold text-primary">
+                      {money(bundle.totalMinor, bundle.currency)}
+                    </span>
                   </p>
                 </div>
               );
@@ -55,7 +60,7 @@ export function KidsFamilyPricing() {
           </div>
         ))}
       </div>
-      <p className="text-sm text-muted-foreground">
+      <p className="mt-6 border-t border-border/40 pt-5 text-sm leading-relaxed text-muted-foreground">
         {en
           ? "Prices exclude tax. The 10% bundle discount applies to Kids only; adult plan prices stay the same. Annual billing costs the equivalent of 10 monthly payments. Subscriptions are not available for purchase yet."
           : eg
