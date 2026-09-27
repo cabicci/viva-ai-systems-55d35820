@@ -5,7 +5,7 @@ import { useLocale } from "@/lib/locale/locale-context";
 import { Button } from "@/components/ui/button";
 import { getKidsPrivacyCopy } from "@/lib/kids/privacy-copy";
 
-type Policy = { id: string; notice_text: string; consent_text: string; version: string };
+type Policy = { id: string; notice_text: string; version: string };
 type Receipt = {
   profile_id: string;
   accepted_at: string;
@@ -78,7 +78,6 @@ export function KidsConsentControl({
   const [policyContext, setPolicyContext] = useState("");
   const currentContext = `${userId}:${locale}`;
   const [receipts, setReceipts] = useState<Receipt[]>([]);
-  const [checked, setChecked] = useState(false);
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState(false);
   const [revision, setRevision] = useState(0);
@@ -87,7 +86,6 @@ export function KidsConsentControl({
     let cancelled = false;
     setPolicy(null);
     setReceipts([]);
-    setChecked(false);
     setError(false);
     onConsent(undefined);
     if (!userId) return;
@@ -109,13 +107,14 @@ export function KidsConsentControl({
       if (!canCreate) return;
       const published = await supabase
         .from("kids_consent_policies" as never)
-        .select("id,notice_text,consent_text,version")
+        .select("id,notice_text,version")
         .eq("enabled", true)
         .eq("locale", locale);
       if (cancelled) return;
       if (published.error || !published.data || published.data.length !== 1) return;
       setPolicy(published.data[0] as Policy);
       setPolicyContext(`${userId}:${locale}`);
+      onConsent((published.data[0] as Policy).id);
     }
     void load().catch(() => {
       if (!cancelled) setError(true);
@@ -135,7 +134,6 @@ export function KidsConsentControl({
       );
       if (result.error) throw result.error;
       onConsent(undefined);
-      setChecked(false);
       window.dispatchEvent(new Event("kids-consent-changed"));
       onWithdraw();
       setRevision((value) => value + 1);
@@ -160,18 +158,6 @@ export function KidsConsentControl({
               {policy.version}
             </p>
             <p className="whitespace-pre-wrap text-sm leading-relaxed">{policy.notice_text}</p>
-            <label className="flex items-start gap-3 text-sm">
-              <input
-                type="checkbox"
-                checked={checked}
-                onChange={(event) => {
-                  setChecked(event.target.checked);
-                  onConsent(event.target.checked ? policy.id : undefined);
-                }}
-                className="mt-1 h-5 w-5 shrink-0"
-              />
-              <span>{policy.consent_text}</span>
-            </label>
           </>
         ) : (
           <p role="status" className="text-sm">
