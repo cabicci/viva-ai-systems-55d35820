@@ -1,6 +1,6 @@
 // Kids-only authored retrieval. The source is private Storage, never the
 // public adult corpus or a JSON bundle exposed to the browser.
-import { parseKidsPlaybackRequest } from "../kids-playback/token.ts";
+import { parseKidsPlaybackRequest } from "./token.ts";
 
 const ALLOWED_ORIGINS = new Set(["https://masaarat.ai", "https://www.masaarat.ai"]);
 const KEYS = new Set(["profileId", "levelId", "lessonNumber", "locale", "hintId"]);
