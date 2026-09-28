@@ -73,6 +73,7 @@ export function KidsLessonPage() {
   useEffect(() => {
     if (state === "ready") return;
     setResult(null);
+    setDenied(false);
     setAttempt(0);
     setLoading(false);
   }, [state]);
@@ -147,7 +148,21 @@ export function KidsLessonPage() {
                 {copy.lesson} {lessonNumber}
               </h1>
               <p role="status" className="mt-4 text-sm text-muted-foreground">
-                {loading ? copy.loading : denied ? copy.unavailableLesson : copy.lockedDetail}
+                {state === "signed-out"
+                  ? copy.signInNotice
+                  : state === "checking"
+                    ? copy.waiting
+                    : state === "pending"
+                      ? copy.pending
+                      : state === "not-released"
+                        ? copy.setupPending
+                        : state === "unavailable"
+                          ? copy.unavailable
+                          : loading
+                            ? copy.loading
+                            : denied
+                              ? copy.unavailableLesson
+                              : copy.lockedDetail}
               </p>
               {state === "ready" && (
                 <div className="mt-6 max-w-sm space-y-3">
@@ -200,11 +215,13 @@ export function KidsLessonPage() {
               {state !== "ready" && (
                 <div className="mt-6">
                   <Link
-                    to="/kids/family"
-                    search={localeSearch()}
+                    to={state === "signed-out" ? "/login" : "/kids/family"}
+                    search={
+                      state === "signed-out" ? localeSearch({ intent: "kids" }) : localeSearch()
+                    }
                     className="inline-flex min-h-11 items-center rounded-full bg-primary px-5 py-3 text-sm font-bold text-primary-foreground"
                   >
-                    {copy.manageFamily}
+                    {state === "signed-out" ? copy.signIn : copy.manageFamily}
                   </Link>
                 </div>
               )}

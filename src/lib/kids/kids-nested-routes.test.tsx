@@ -36,7 +36,7 @@ vi.mock("@/integrations/supabase/client", () => ({
 }));
 vi.mock("@/lib/locale/locale-context", () => ({ useLocale: () => ({ locale: "en", dir: "ltr" }) }));
 vi.mock("@/lib/locale/use-locale-link-search", () => ({
-  useLocaleLinkSearch: () => () => ({ locale: "en" }),
+  useLocaleLinkSearch: () => (base?: Record<string, unknown>) => ({ ...base, locale: "en" }),
 }));
 vi.mock("@/lib/locale/resolve-route-head-locale", () => ({
   resolveRouteHeadLocale: async () => "en",
@@ -124,9 +124,9 @@ describe("Kids nested routes", () => {
     );
     expect(await screen.findByRole("heading", { level: 1, name: "Lesson 1" })).toBeInTheDocument();
     expect(screen.queryByText("Parent access pending")).not.toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Go to parent space" })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: "Sign in" })).toHaveAttribute(
       "href",
-      "/kids/family?locale=en",
+      "/login?intent=kids&locale=en",
     );
   });
   it("shows lesson titles but one setup action to a visitor without an account", async () => {

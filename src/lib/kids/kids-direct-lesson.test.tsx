@@ -53,6 +53,17 @@ describe("Kids direct lesson route", () => {
     expect(screen.queryByRole("button", { name: "Create child profile" })).not.toBeInTheDocument();
   });
 
+  it("shows sign-in when the browser has no parent session", () => {
+    mock.useKidsParentState.mockReturnValue({ state: "signed-out", profiles: [] });
+    render(<KidsLessonPage />);
+    expect(screen.getByText(/Use your existing Masaarat account/)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Sign in" })).toBeInTheDocument();
+    expect(
+      screen.queryByText("This lesson is not ready. Video and content were not loaded."),
+    ).not.toBeInTheDocument();
+    expect(mock.invoke).not.toHaveBeenCalled();
+  });
+
   it("does not restore a previously opened lesson from memory after the parent grant recheck", async () => {
     const ready = {
       state: "ready",
