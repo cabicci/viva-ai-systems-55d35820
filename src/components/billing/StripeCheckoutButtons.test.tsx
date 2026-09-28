@@ -34,7 +34,7 @@ describe("adult checkout Kids notice", () => {
     fireEvent.click(screen.getByRole("button", { name: "pricing.cta.payMonthly" }));
     expect(
       screen.getByText(
-        "Kids is an optional separate plan. It will not be added to this order or charged now.",
+        "Kids is an optional, separate plan. Subscribe in its pricing section before or after this checkout.",
       ),
     ).toBeInTheDocument();
     expect(mock.invoke).not.toHaveBeenCalled();
