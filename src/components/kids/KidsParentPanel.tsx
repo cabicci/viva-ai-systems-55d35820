@@ -1,4 +1,3 @@
-import { KidsConsentControl } from "./KidsConsentControl";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { KIDS_LEVELS, type KidsLevelId } from "@/lib/kids/catalogue";
@@ -11,14 +10,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { KIDS_FAMILY_POLICY } from "@/lib/kids/family-policy";
+import { useKidsPrivacyRecord } from "@/lib/kids/privacy-record";
 
 export function KidsParentPanel() {
   const { locale } = useLocale();
   const localeSearch = useLocaleLinkSearch();
   const copy = getKidsJourneyCopy(locale);
   const { state, profiles, createProfile, refresh } = useKidsParentState();
+  const { record, loading: consentLoading, error: consentError } = useKidsPrivacyRecord();
   const [name, setName] = useState("");
-  const [consentPolicyId, setConsentPolicyId] = useState<string | undefined>();
+  const consentPolicyId = state === "ready" ? record?.policy_id : undefined;
   const [level, setLevel] = useState<KidsLevelId>("level-1");
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState(false);
@@ -87,13 +88,6 @@ export function KidsParentPanel() {
           ) : null}
         </div>
       )}
-      {state !== "signed-out" && state !== "checking" && state !== "not-released" && (
-        <KidsConsentControl
-          canCreate={state === "ready"}
-          onConsent={setConsentPolicyId}
-          onWithdraw={refresh}
-        />
-      )}
       {state === "ready" && (
         <div className="mt-5 grid gap-6 md:grid-cols-2">
           <div>
@@ -121,6 +115,11 @@ export function KidsParentPanel() {
           </div>
           <form onSubmit={addProfile} className="space-y-3 rounded-2xl bg-muted/30 p-4">
             <h3 className="font-bold">{copy.create}</h3>
+            {!consentPolicyId && !consentLoading && (
+              <p role="status" className="text-sm text-destructive">
+                {consentError ? copy.unavailable : copy.pending}
+              </p>
+            )}
             {atProfileLimit && (
               <p role="status" className="text-sm">
                 {copy.profileLimit}

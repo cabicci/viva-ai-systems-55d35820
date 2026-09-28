@@ -4,8 +4,8 @@ import { useAuth } from "@/lib/auth-context";
 import { useLocale } from "@/lib/locale/locale-context";
 import { Button } from "@/components/ui/button";
 import { getKidsPrivacyCopy } from "@/lib/kids/privacy-copy";
+import { useKidsPrivacyRecord } from "@/lib/kids/privacy-record";
 
-type Policy = { id: string; notice_text: string; version: string };
 type Receipt = {
   profile_id: string;
   accepted_at: string;
@@ -18,8 +18,7 @@ const words = {
   "ar-EG": {
     title: "الموافقة على بيانات الطفل",
     version: "نسخة السياسة: ",
-    missing:
-      "إشعار خصوصية الطفل المعتمد لبلدك ولغتك مش متاح لسه. إنشاء الملف مقفول لحد ما يبقى جاهز.",
+    accepted: "موافقة وليّ الأمر المسجلة",
     withdrawal:
       "سحب الموافقة بيوقف وصول الملف للدروس. ده مش تأكيد بحذف البيانات المخزنة أو النسخ الاحتياطية.",
     withdrawn: "الموافقة اتسحبت",
@@ -29,7 +28,7 @@ const words = {
   "ar-MSA": {
     title: "الموافقة على بيانات الطفل",
     version: "نسخة السياسة: ",
-    missing: "إشعار خصوصية الطفل المعتمد لبلدك ولغتك غير متاح بعد. إنشاء الملفات مغلق حتى إتاحته.",
+    accepted: "موافقة وليّ الأمر المسجلة",
     withdrawal:
       "سحب الموافقة يوقف وصول هذا الملف إلى الدروس. لا يعني ذلك تأكيد محو البيانات المخزنة أو النسخ الاحتياطية.",
     withdrawn: "سُحبت الموافقة",
@@ -39,7 +38,7 @@ const words = {
   "ar-Gulf": {
     title: "الموافقة على بيانات الطفل",
     version: "نسخة السياسة: ",
-    missing: "إشعار خصوصية الطفل المعتمد لبلدك ولغتك مب متاح للحين. إنشاء الملف ما يفتح لين يتوفر.",
+    accepted: "موافقة وليّ الأمر المسجلة",
     withdrawal:
       "سحب الموافقة يوقف وصول هالملف للدروس. ما يعني إن البيانات المخزنة أو النسخ الاحتياطية انحذفت فورًا.",
     withdrawn: "انسحبت الموافقة",
@@ -49,8 +48,7 @@ const words = {
   en: {
     title: "Child data consent",
     version: "Policy version: ",
-    missing:
-      "The approved child privacy notice for your country and language is not available yet. Profile creation remains closed.",
+    accepted: "Recorded parent consent",
     withdrawal:
       "Withdrawing consent stops this profile's lesson access. It does not confirm erasure of stored data or backups.",
     withdrawn: "Consent withdrawn",
@@ -59,24 +57,14 @@ const words = {
   },
 };
 
-/** No draft notice is presented as an approved policy. RLS selects this parent's country. */
-export function KidsConsentControl({
-  canCreate,
-  onConsent,
-  onWithdraw,
-}: {
-  canCreate: boolean;
-  onConsent: (id: string | undefined) => void;
-  onWithdraw: () => void;
-}) {
+/** Consent details and withdrawal live in account settings, away from lessons. */
+export function KidsConsentControl() {
   const { user } = useAuth();
   const userId = user?.id;
   const [loadedFor, setLoadedFor] = useState<string | undefined>();
   const { locale } = useLocale();
   const t = words[locale];
-  const [policy, setPolicy] = useState<Policy | null>(null);
-  const [policyContext, setPolicyContext] = useState("");
-  const currentContext = `${userId}:${locale}`;
+  const { record, error: recordError } = useKidsPrivacyRecord();
   const [receipts, setReceipts] = useState<Receipt[]>([]);
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState(false);
@@ -84,10 +72,8 @@ export function KidsConsentControl({
 
   useEffect(() => {
     let cancelled = false;
-    setPolicy(null);
     setReceipts([]);
     setError(false);
-    onConsent(undefined);
     if (!userId) return;
     const parentId = userId;
     async function load() {
@@ -104,17 +90,6 @@ export function KidsConsentControl({
       }
       setReceipts((result.data || []) as Receipt[]);
       setLoadedFor(userId);
-      if (!canCreate) return;
-      const published = await supabase
-        .from("kids_consent_policies" as never)
-        .select("id,notice_text,version")
-        .eq("enabled", true)
-        .eq("locale", locale);
-      if (cancelled) return;
-      if (published.error || !published.data || published.data.length !== 1) return;
-      setPolicy(published.data[0] as Policy);
-      setPolicyContext(`${userId}:${locale}`);
-      onConsent((published.data[0] as Policy).id);
     }
     void load().catch(() => {
       if (!cancelled) setError(true);
@@ -122,7 +97,7 @@ export function KidsConsentControl({
     return () => {
       cancelled = true;
     };
-  }, [userId, locale, canCreate, revision, onConsent]);
+  }, [userId, revision]);
 
   async function withdraw(profile: string) {
     setBusy(profile);
@@ -133,9 +108,7 @@ export function KidsConsentControl({
         { p_profile: profile } as never,
       );
       if (result.error) throw result.error;
-      onConsent(undefined);
       window.dispatchEvent(new Event("kids-consent-changed"));
-      onWithdraw();
       setRevision((value) => value + 1);
     } catch {
       setError(true);
@@ -150,20 +123,12 @@ export function KidsConsentControl({
       <a href={`/kids/privacy?locale=${locale}`} className="text-sm text-primary underline">
         {getKidsPrivacyCopy(locale).link}
       </a>
-      {canCreate &&
-        (policy && policyContext === currentContext ? (
-          <>
-            <p className="text-xs text-muted-foreground">
-              {t.version}
-              {policy.version}
-            </p>
-            <p className="whitespace-pre-wrap text-sm leading-relaxed">{policy.notice_text}</p>
-          </>
-        ) : (
-          <p role="status" className="text-sm">
-            {t.missing}
-          </p>
-        ))}
+      {record && (
+        <p className="text-sm text-muted-foreground">
+          {t.accepted} · {t.version}
+          {record.policy_version} · {record.attested_at.slice(0, 10)}
+        </p>
+      )}
       {loadedFor === userId && receipts.length > 0 && (
         <div className="space-y-2">
           <p className="text-sm">{t.withdrawal}</p>
@@ -189,7 +154,7 @@ export function KidsConsentControl({
           ))}
         </div>
       )}
-      {error && (
+      {(error || recordError) && (
         <p role="alert" className="text-sm text-destructive">
           {t.error}
         </p>

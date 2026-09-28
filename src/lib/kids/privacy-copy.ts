@@ -24,7 +24,7 @@ const ar = {
     },
     {
       title: "الاختيار والحقوق",
-      body: "الموافقة على سياسة الأطفال منفصلة عن اشتراك الكبار والتسويق، وتُسجّل بنسختها وتاريخها للحساب ولكل ملف طفل. يستطيع وليّ الأمر سحب موافقة ملف الطفل من لوحة كيدز، فيتوقف وصوله للدروس؛ ويمكنه طلب الاطلاع أو التصحيح أو المحو عبر البريد أدناه. سحب الموافقة لا يعني أن النسخ الاحتياطية أو سجلات مزودي الخدمة حُذفت فورًا؛ نتعامل مع طلب المحو وفق إجراء الحذف المعتمد.",
+      body: "الموافقة على سياسة الأطفال منفصلة عن اشتراك الكبار والتسويق، وتُسجّل بنسختها وتاريخها للحساب ولكل ملف طفل. يستطيع وليّ الأمر مراجعة سجل الموافقة وسحب موافقة ملف الطفل من بيانات الحساب، فيتوقف وصوله للدروس؛ ويمكنه طلب الاطلاع أو التصحيح أو المحو عبر البريد أدناه. سحب الموافقة لا يعني أن النسخ الاحتياطية أو سجلات مزودي الخدمة حُذفت فورًا؛ نتعامل مع طلب المحو وفق إجراء الحذف المعتمد.",
     },
     {
       title: "مسؤولية وليّ الأمر ومسارات",
@@ -68,7 +68,7 @@ const en = {
     },
     {
       title: "Choice and rights",
-      body: "Children's policy consent is separate from adult plans and marketing; its version and time are recorded for the account and each child profile. A parent can withdraw consent for a profile in Kids, which stops its lesson access, and can request access, correction or erasure using the email below. Withdrawal does not mean backup or provider records disappear immediately; erasure requests follow the approved deletion process.",
+      body: "Children's policy consent is separate from adult plans and marketing; its version and time are recorded for the account and each child profile. A parent can review the consent record and withdraw consent for a profile in account details, which stops its lesson access, and can request access, correction or erasure using the email below. Withdrawal does not mean backup or provider records disappear immediately; erasure requests follow the approved deletion process.",
     },
     {
       title: "Parent and Masaarat responsibilities",
