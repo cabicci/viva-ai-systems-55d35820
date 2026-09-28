@@ -10,15 +10,9 @@ const mock = vi.hoisted(() => ({
 vi.mock("@/integrations/supabase/client", () => ({ supabase: { from: mock.from, rpc: mock.rpc } }));
 vi.mock("@/lib/auth-context", () => ({ useAuth: () => ({ user: mock.user }) }));
 vi.mock("@/lib/locale/locale-context", () => ({ useLocale: () => ({ locale: mock.locale }) }));
-const policy = {
-  id: "policy-1",
-  notice_text: "Full published privacy notice",
-  consent_text: "I consent to learning data for this child",
-  version: "v1",
-};
-function queries(policies = [policy], receipts: unknown[] = []) {
+function queries(receipts: unknown[] = []) {
   mock.from.mockImplementation((table) => {
-    const response = { data: table === "kids_consent_policies" ? policies : receipts, error: null };
+    const response = { data: table === "kids_profile_consents" ? receipts : [], error: null };
     const query = {
       select: vi.fn().mockReturnThis(),
       eq: vi.fn().mockReturnThis(),
@@ -26,6 +20,18 @@ function queries(policies = [policy], receipts: unknown[] = []) {
     };
     return query;
   });
+  mock.rpc.mockImplementation((name) =>
+    Promise.resolve(
+      name === "kids_parent_privacy_record"
+        ? {
+            data: [
+              { policy_id: "policy-1", policy_version: "v1", attested_at: "2026-09-25T00:00:00Z" },
+            ],
+            error: null,
+          }
+        : { error: null },
+    ),
+  );
 }
 beforeEach(() => {
   vi.resetAllMocks();
@@ -35,48 +41,35 @@ beforeEach(() => {
 });
 describe("Child consent control", () => {
   it.each(["en", "ar-EG", "ar-MSA", "ar-Gulf"])(
-    "uses the already accepted policy without another checkbox in %s",
+    "shows the saved consent and policy link in account settings without repeating the notice in %s",
     async (locale) => {
       mock.locale = locale;
-      const consent = vi.fn();
-      render(<KidsConsentControl canCreate onConsent={consent} onWithdraw={vi.fn()} />);
-      expect(await screen.findByText(policy.notice_text)).toBeInTheDocument();
+      render(<KidsConsentControl />);
+      expect(await screen.findByText(/v1/)).toBeInTheDocument();
+      expect(screen.getByRole("link")).toHaveAttribute("href", `/kids/privacy?locale=${locale}`);
       expect(screen.queryByRole("checkbox")).not.toBeInTheDocument();
-      await waitFor(() => expect(consent).toHaveBeenLastCalledWith("policy-1"));
+      expect(mock.from).not.toHaveBeenCalledWith("kids_consent_policies");
     },
   );
-  it("does not invent a policy when no approved version exists", async () => {
-    queries([]);
-    render(<KidsConsentControl canCreate onConsent={vi.fn()} onWithdraw={vi.fn()} />);
-    await waitFor(() => expect(mock.from).toHaveBeenCalledWith("kids_consent_policies"));
-    expect(screen.queryByRole("checkbox")).not.toBeInTheDocument();
-    expect(screen.getByText(/creation remains closed/)).toBeInTheDocument();
-  });
-  it("allows withdrawal while the market is closed and refreshes open lesson consumers", async () => {
-    queries(
-      [],
-      [
-        {
-          profile_id: "profile-1",
-          accepted_at: "2026-09-25T00:00:00Z",
-          withdrawn_at: null,
-          kids_profiles: { display_name: "Explorer" },
-          kids_consent_policies: { version: "v1" },
-        },
-      ],
-    );
-    mock.rpc.mockResolvedValue({ error: null });
-    const withdraw = vi.fn();
+  it("allows withdrawal in account settings and refreshes open lesson consumers", async () => {
+    queries([
+      {
+        profile_id: "profile-1",
+        accepted_at: "2026-09-25T00:00:00Z",
+        withdrawn_at: null,
+        kids_profiles: { display_name: "Explorer" },
+        kids_consent_policies: { version: "v1" },
+      },
+    ]);
     const changed = vi.fn();
     window.addEventListener("kids-consent-changed", changed);
-    render(<KidsConsentControl canCreate={false} onConsent={vi.fn()} onWithdraw={withdraw} />);
+    render(<KidsConsentControl />);
     fireEvent.click(await screen.findByRole("button", { name: "Withdraw consent" }));
     await waitFor(() =>
       expect(mock.rpc).toHaveBeenCalledWith("kids_parent_withdraw_consent", {
         p_profile: "profile-1",
       }),
     );
-    expect(withdraw).toHaveBeenCalled();
     expect(changed).toHaveBeenCalled();
     window.removeEventListener("kids-consent-changed", changed);
   });
