@@ -3,7 +3,7 @@ import type { SupportedLocale } from "@/lib/locale/types";
 const ar = {
   parentTitle: "مساحة وليّ الأمر",
   familyIntro:
-    "من هنا توافق على سياسة الأطفال مرة واحدة، وتدير ملفاتهم من حسابك نفسه. تُحفظ اختياراتك عند العودة.",
+    "إذا كانت زيارتك الأولى، وافق على سياسة الأطفال لتفعيل حساب وليّ الأمر. بعدها تدير ملفاتهم من حسابك نفسه، وتجد سجل الموافقة في بيانات الحساب.",
   manageFamily: "الانتقال إلى مساحة وليّ الأمر",
   viewLevel: "عرض دروس المستوى",
   levelStartNotice:
@@ -60,7 +60,7 @@ type Copy = { [K in keyof typeof ar]: string };
 const egyptian: Copy = {
   parentTitle: "مساحة وليّ الأمر",
   familyIntro:
-    "هنا توافق على سياسة الأطفال مرة واحدة، وتدير ملفاتهم من نفس حسابك. اختياراتك بتفضل محفوظة.",
+    "لو دي أول مرة، وافق على سياسة الأطفال عشان تفعّل حساب وليّ الأمر. بعدها هتدير ملفاتهم من نفس حسابك، وسجل الموافقة في بيانات الحساب.",
   manageFamily: "روح لمساحة وليّ الأمر",
   viewLevel: "شوف دروس المستوى",
   levelStartNotice:
@@ -116,7 +116,7 @@ const egyptian: Copy = {
 const gulf: Copy = {
   parentTitle: "مساحة وليّ الأمر",
   familyIntro:
-    "من هنا توافق على سياسة الأطفال مرة واحدة، وتدير ملفاتهم من حسابك نفسه. تظل اختياراتك محفوظة.",
+    "إذا كانت زيارتك الأولى، وافق على سياسة الأطفال لتفعيل حساب وليّ الأمر. بعدها تدير ملفاتهم من حسابك نفسه، وسجل الموافقة في بيانات الحساب.",
   manageFamily: "روح لمساحة وليّ الأمر",
   viewLevel: "شوف دروس المستوى",
   levelStartNotice:
@@ -172,7 +172,7 @@ const gulf: Copy = {
 const en: Copy = {
   parentTitle: "Parent space",
   familyIntro:
-    "Accept the children's policy once and manage child profiles with your existing account. Your choices are saved when you return.",
+    "On your first visit, accept the children's policy to activate your parent account. After that, manage child profiles here and find your consent record in account details.",
   manageFamily: "Go to parent space",
   viewLevel: "View level lessons",
   levelStartNotice:
