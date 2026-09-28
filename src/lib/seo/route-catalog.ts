@@ -16,6 +16,13 @@ export const ROUTE_CATALOG = [
   { source: "kids.index.tsx", pattern: "/kids", visibility: "public", sitemap: true },
   { source: "kids.privacy.tsx", pattern: "/kids/privacy", visibility: "public", sitemap: false },
   {
+    source: "kids.family.tsx",
+    pattern: "/kids/family",
+    visibility: "private",
+    sitemap: false,
+    robotsPath: "/kids/family",
+  },
+  {
     source: "kids.$levelId.tsx",
     pattern: "/kids/level-*",
     visibility: "utility",
