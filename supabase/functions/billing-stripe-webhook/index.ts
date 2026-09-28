@@ -70,7 +70,8 @@ async function stripeGet<T>(path: string, method = "GET"): Promise<T> {
     },
   });
   const payload = await result.json();
-  if (!result.ok) throw new Error(`STRIPE_API_ERROR:${payload?.error?.message ?? "request failed"}`);
+  if (!result.ok)
+    throw new Error(`STRIPE_API_ERROR:${payload?.error?.message ?? "request failed"}`);
   return payload as T;
 }
 
@@ -88,7 +89,7 @@ async function rpc<T>(name: string, body: Record<string, unknown>): Promise<T> {
   });
   const text = await result.text();
   if (!result.ok) throw new Error(`RPC_${name}_FAILED:${text}`);
-  return text ? JSON.parse(text) as T : (null as T);
+  return text ? (JSON.parse(text) as T) : (null as T);
 }
 
 type StripeEvent = {
@@ -108,14 +109,17 @@ function idOf(value: unknown): string | null {
 }
 
 function subscriptionIdFrom(object: Record<string, any>): string | null {
-  return idOf(object.subscription)
-    ?? idOf(object.parent?.subscription_details?.subscription)
-    ?? idOf(object.lines?.data?.[0]?.parent?.subscription_item_details?.subscription)
-    ?? (object.object === "subscription" ? idOf(object) : null);
+  return (
+    idOf(object.subscription) ??
+    idOf(object.parent?.subscription_details?.subscription) ??
+    idOf(object.lines?.data?.[0]?.parent?.subscription_item_details?.subscription) ??
+    (object.object === "subscription" ? idOf(object) : null)
+  );
 }
 
 function transitionFor(event: StripeEvent, subscription: Record<string, any>): string | null {
-  if (event.type === "invoice.payment_failed") return ["past_due", "unpaid"].includes(subscription.status) ? "payment_failed" : null;
+  if (event.type === "invoice.payment_failed")
+    return ["past_due", "unpaid"].includes(subscription.status) ? "payment_failed" : null;
   if (event.type === "customer.subscription.deleted") return "canceled";
   if (event.type === "customer.subscription.updated") {
     if (subscription.cancel_at_period_end) return "cancel_at_period_end";
@@ -127,18 +131,29 @@ function transitionFor(event: StripeEvent, subscription: Record<string, any>): s
 async function paidPlanEvidence(
   event: StripeEvent,
   subscription: Record<string, any>,
-): Promise<{ transition: "payment_succeeded" | null; priceId: string | null; error: string | null }> {
+): Promise<{
+  transition: "payment_succeeded" | null;
+  priceId: string | null;
+  error: string | null;
+}> {
   if (!["invoice.paid", "checkout.session.completed"].includes(event.type)) {
     return { transition: null, priceId: null, error: null };
   }
   const object = event.data.object;
-  const checkoutLines = event.type === "checkout.session.completed"
-    ? (await stripeGet<{ data: Record<string, any>[]; has_more: boolean }>(
-      `/checkout/sessions/${encodeURIComponent(String(object.id))}/line_items?limit=100`,
-    ))
-    : undefined;
-  if (checkoutLines?.has_more) return { transition: null, priceId: null, error: "PAID_PLAN_LINES_INCOMPLETE" };
-  return decidePaidPlanEvidence({ eventType: event.type, object, subscription, checkoutLineItems: checkoutLines?.data });
+  const checkoutLines =
+    event.type === "checkout.session.completed"
+      ? await stripeGet<{ data: Record<string, any>[]; has_more: boolean }>(
+          `/checkout/sessions/${encodeURIComponent(String(object.id))}/line_items?limit=100`,
+        )
+      : undefined;
+  if (checkoutLines?.has_more)
+    return { transition: null, priceId: null, error: "PAID_PLAN_LINES_INCOMPLETE" };
+  return decidePaidPlanEvidence({
+    eventType: event.type,
+    object,
+    subscription,
+    checkoutLineItems: checkoutLines?.data,
+  });
 }
 
 Deno.serve(async (request) => {
@@ -147,7 +162,7 @@ Deno.serve(async (request) => {
   try {
     const rawBody = await request.text();
     const signature = request.headers.get("Stripe-Signature");
-    if (!signature || !await verifySignature(rawBody, signature, env("STRIPE_WEBHOOK_SECRET"))) {
+    if (!signature || !(await verifySignature(rawBody, signature, env("STRIPE_WEBHOOK_SECRET")))) {
       return response({ error: "INVALID_SIGNATURE" }, 400);
     }
 
@@ -157,6 +172,27 @@ Deno.serve(async (request) => {
     if (["refund.created", "refund.updated", "refund.failed"].includes(event.type)) {
       const resolved = await resolveStripeRefund(String(event.data.object.id), stripeGet);
       if (!resolved) return response({ received: true, ignored: true });
+      if (resolved.subscription.metadata?.product_scope === "kids") {
+        const revoked = await rpc<boolean>("apply_kids_stripe_refund", {
+          p_event_id: event.id,
+          p_parent_id: resolved.subscription.metadata.user_id,
+          p_subscription_id: resolved.subscription.id,
+          p_customer_id: idOf(resolved.subscription.customer),
+          p_invoice_id: resolved.invoice.id,
+          p_refund_id: resolved.refund.id,
+          p_refund_amount: resolved.refund.amount,
+          p_invoice_amount: resolved.invoice.amount_paid,
+          p_refund_status: resolved.refund.status,
+          p_occurred_at: new Date(event.created * 1000).toISOString(),
+        });
+        if (revoked && resolved.subscription.status !== "canceled") {
+          await stripeGet(
+            `/subscriptions/${encodeURIComponent(resolved.subscription.id)}`,
+            "DELETE",
+          );
+        }
+        return response({ received: true, revoked });
+      }
       const result = await rpc<{ cancel_subscription: boolean }>("apply_stripe_refund_event", {
         ...resolved.rpc,
         p_gateway_event_id: event.id,
@@ -166,7 +202,10 @@ Deno.serve(async (request) => {
       // A full refund of the current invoice must also stop future collection.
       // Retried delivery repeats this idempotent cancellation after a network failure.
       if (result.cancel_subscription && resolved.subscription.status !== "canceled") {
-        await stripeGet(`/subscriptions/${encodeURIComponent(resolved.subscription.id)}?invoice_now=false&prorate=false`, "DELETE");
+        await stripeGet(
+          `/subscriptions/${encodeURIComponent(resolved.subscription.id)}?invoice_now=false&prorate=false`,
+          "DELETE",
+        );
       }
       return response({ received: true, result });
     }
@@ -186,9 +225,52 @@ Deno.serve(async (request) => {
 
     const subscription = event.type.startsWith("customer.subscription.")
       ? object
-      : await stripeGet<Record<string, any>>(`/subscriptions/${encodeURIComponent(gatewaySubscriptionId)}`);
+      : await stripeGet<Record<string, any>>(
+          `/subscriptions/${encodeURIComponent(gatewaySubscriptionId)}`,
+        );
 
     const metadata = subscription.metadata ?? {};
+    if (metadata.product_scope === "kids") {
+      if (
+        metadata.environment !== "test" ||
+        !metadata.user_id ||
+        subscription.livemode !== false ||
+        idOf(subscription.customer) === null ||
+        !Array.isArray(subscription.items?.data) ||
+        subscription.items.data.length !== 1
+      ) {
+        throw new Error("KIDS_SUBSCRIPTION_EVIDENCE_MISSING");
+      }
+      const evidence = await paidPlanEvidence(event, subscription);
+      if (
+        evidence.error &&
+        (event.type === "invoice.paid" ||
+          (event.type === "checkout.session.completed" && object.payment_status === "paid"))
+      ) {
+        throw new Error(evidence.error);
+      }
+      const priceId = idOf(subscription.items.data[0].price);
+      if (!priceId || (evidence.transition && evidence.priceId !== priceId)) {
+        throw new Error("KIDS_PRICE_MISMATCH");
+      }
+      const start = subscription.items.data[0].current_period_start;
+      const end = subscription.items.data[0].current_period_end;
+      const paidInvoice = event.type === "invoice.paid" ? object.id : idOf(object.invoice);
+      const result = await rpc<boolean>("apply_kids_stripe_event", {
+        p_event_id: event.id,
+        p_parent_id: metadata.user_id,
+        p_subscription_id: gatewaySubscriptionId,
+        p_customer_id: idOf(subscription.customer),
+        p_price_id: priceId,
+        p_status: subscription.status,
+        p_occurred_at: new Date(event.created * 1000).toISOString(),
+        p_paid: evidence.transition === "payment_succeeded",
+        p_paid_invoice_id: evidence.transition ? paidInvoice : null,
+        p_period_start: evidence.transition && start ? new Date(start * 1000).toISOString() : null,
+        p_period_end: evidence.transition && end ? new Date(end * 1000).toISOString() : null,
+      });
+      return response({ received: true, result });
+    }
     const internalSubscriptionId = metadata.internal_subscription_id;
     const userId = metadata.user_id;
     const evidence = await paidPlanEvidence(event, subscription);
@@ -206,19 +288,26 @@ Deno.serve(async (request) => {
     const planVersionId = resolvedPlan?.plan_version_id ?? metadata.plan_version_id;
     const marketPriceId = resolvedPlan?.market_price_id ?? metadata.market_price_id;
     const gatewayCustomerId = idOf(subscription.customer);
-    if (!internalSubscriptionId || !userId || !planVersionId || !marketPriceId || !gatewayCustomerId) {
+    if (
+      !internalSubscriptionId ||
+      !userId ||
+      !planVersionId ||
+      !marketPriceId ||
+      !gatewayCustomerId
+    ) {
       throw new Error("STRIPE_METADATA_INCOMPLETE");
     }
 
-    const periodStart = subscription.current_period_start
-      ?? subscription.items?.data?.[0]?.current_period_start
-      ?? null;
-    const periodEnd = subscription.current_period_end
-      ?? subscription.items?.data?.[0]?.current_period_end
-      ?? null;
+    const periodStart =
+      subscription.current_period_start ??
+      subscription.items?.data?.[0]?.current_period_start ??
+      null;
+    const periodEnd =
+      subscription.current_period_end ?? subscription.items?.data?.[0]?.current_period_end ?? null;
 
     const transition = ["invoice.paid", "checkout.session.completed"].includes(event.type)
-      ? evidence.transition : transitionFor(event, subscription);
+      ? evidence.transition
+      : transitionFor(event, subscription);
     const isPaidInvoice = event.type === "invoice.paid";
     const minimized = {
       stripe_event_type: event.type,

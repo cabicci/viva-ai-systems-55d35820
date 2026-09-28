@@ -3,9 +3,9 @@ import type { SupportedLocale } from "@/lib/locale/types";
 const ar = {
   offer: "هل ترغب في إضافة باقة كيدز العائلية؟",
   prices: "عرض أسعار كيدز",
-  pending: "باقة كيدز غير متاحة للشراء بعد. الدفع الحالي يخص باقة الكبار المختارة فقط.",
+  pending: "تقدر تشترك في كيدز بشكل مستقل من قسم أسعارها. الدفع الحالي يخص باقة الكبار فقط.",
   confirm: "راجع اختيارك قبل الانتقال إلى الدفع التجريبي",
-  choice: "باقة كيدز إضافة اختيارية مستقلة. لن تُضاف إلى هذا الطلب أو يُحصّل ثمنها الآن.",
+  choice: "باقة كيدز اختيارية ومستقلة؛ يمكنك شراؤها من قسم أسعارها بعد إتمام هذا الدفع أو قبله.",
   adultOnly: "متابعة دفع باقة الكبار فقط",
   back: "العودة لاختيار الباقة",
 } as const;
@@ -14,27 +14,29 @@ type Copy = { [K in keyof typeof ar]: string };
 const eg: Copy = {
   offer: "تحب تضيف باقة كيدز للعيلة؟",
   prices: "شوف أسعار كيدز",
-  pending: "شراء باقة كيدز لسه مش متاح. الدفع الحالي لباقة الكبار اللي اخترتها بس.",
+  pending: "تقدر تشترك في كيدز لوحدها من قسم أسعارها. الدفع الحالي لباقة الكبار بس.",
   confirm: "راجع اختيارك قبل الدفع التجريبي",
-  choice: "كيدز إضافة اختيارية منفصلة، ومش هتضاف للطلب ده ولا هيتخصم تمنها دلوقتي.",
+  choice: "كيدز باقة اختيارية منفصلة؛ تقدر تشتريها من قسم أسعارها قبل الدفع ده أو بعده.",
   adultOnly: "كمّل دفع باقة الكبار بس",
   back: "ارجع لاختيار الباقة",
 };
 const gulf: Copy = {
   offer: "تبي تضيف باقة كيدز للعائلة؟",
   prices: "شوف أسعار كيدز",
-  pending: "شراء كيدز ما هو متاح للحين. الدفع الحالي لباقة الكبار المختارة بس.",
+  pending: "تقدر تشترك بكيدز لحالها من قسم أسعارها. الدفع الحالي لباقة الكبار بس.",
   confirm: "راجع اختيارك قبل الدفع التجريبي",
-  choice: "كيدز إضافة اختيارية مستقلة، وما راح تنضاف للطلب أو ينخصم سعرها الحين.",
+  choice: "كيدز باقة اختيارية مستقلة؛ تقدر تشتريها من قسم أسعارها قبل هالدفع أو بعده.",
   adultOnly: "تابع دفع باقة الكبار بس",
   back: "ارجع لاختيار الباقة",
 };
 const en: Copy = {
   offer: "Interested in adding a Kids family plan?",
   prices: "View Kids prices",
-  pending: "Kids cannot be purchased yet. This checkout is for the selected adult plan only.",
+  pending:
+    "You can subscribe to Kids separately in its pricing section. This checkout is for the adult plan only.",
   confirm: "Review your selection before test checkout",
-  choice: "Kids is an optional separate plan. It will not be added to this order or charged now.",
+  choice:
+    "Kids is an optional, separate plan. Subscribe in its pricing section before or after this checkout.",
   adultOnly: "Continue with adult plan only",
   back: "Back to plan selection",
 };

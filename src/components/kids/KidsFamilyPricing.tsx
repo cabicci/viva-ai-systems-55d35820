@@ -1,5 +1,6 @@
 import { useLocale } from "@/lib/locale/locale-context";
 import { KIDS_FAMILY_POLICY, quoteKidsFamily } from "@/lib/kids/family-policy";
+import { KidsCheckoutButtons } from "./KidsCheckoutButtons";
 
 export function KidsFamilyPricing() {
   const { locale } = useLocale();
@@ -57,17 +58,18 @@ export function KidsFamilyPricing() {
                 </div>
               );
             })}
+            <KidsCheckoutButtons market={market} />
           </div>
         ))}
       </div>
       <p className="mt-6 border-t border-border/40 pt-5 text-sm leading-relaxed text-muted-foreground">
         {en
-          ? "Prices exclude tax. The 10% bundle discount applies to Kids only; adult plan prices stay the same. Annual billing costs the equivalent of 10 monthly payments. Subscriptions are not available for purchase yet."
+          ? "Test checkout only. Prices exclude tax. The 10% discount applies to Kids while Pro or Pro Plus is active; adult prices stay the same. Annual billing costs the equivalent of 10 monthly payments. Choose the market matching the parent account's country."
           : eg
-            ? "الأسعار من غير ضرائب. خصم الجمع ١٠٪ على كيدز بس، وسعر باقة الكبار ما بيتغيرش. السنة بسعر ١٠ شهور. شراء الاشتراك غير متاح لسه."
+            ? "الدفع تجريبي فقط. الأسعار من غير ضرائب. خصم ١٠٪ على كيدز وقت ما تكون باقة Pro أو Pro Plus فعّالة، وسعر الكبار ما بيتغيرش. السنة بسعر ١٠ شهور. اختار سوق بلد حساب وليّ الأمر."
             : gulf
-              ? "الأسعار ما تشمل الضريبة. خصم الجمع ١٠٪ على كيدز بس، وسعر باقة الكبار ما يتغير. السنة بسعر ١٠ شهور. شراء الاشتراك مب متاح للحين."
-              : "الأسعار لا تشمل الضرائب. خصم الجمع 10% يطبق على كيدز فقط، وتبقى أسعار باقات الكبار كما هي. سعر السنة يعادل 10 أشهر. شراء الاشتراك غير متاح بعد."}
+              ? "الدفع تجريبي فقط. الأسعار ما تشمل الضريبة. خصم ١٠٪ على كيدز إذا باقة Pro أو Pro Plus فعّالة، وسعر الكبار ما يتغير. السنة بسعر ١٠ شهور. اختر سوق بلد حساب وليّ الأمر."
+              : "الدفع تجريبي فقط. الأسعار لا تشمل الضرائب. خصم 10% يطبق على كيدز أثناء سريان Pro أو Pro Plus، وتبقى أسعار باقات الكبار كما هي. سعر السنة يعادل 10 أشهر. اختر سوق بلد حساب وليّ الأمر."}
       </p>
     </section>
   );

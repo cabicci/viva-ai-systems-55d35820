@@ -5,6 +5,7 @@ import { useLocale } from "@/lib/locale/locale-context";
 import { Button } from "@/components/ui/button";
 import { getKidsPrivacyCopy } from "@/lib/kids/privacy-copy";
 import { useKidsPrivacyRecord } from "@/lib/kids/privacy-record";
+import { StripePortalButton } from "@/components/billing/StripePortalButton";
 
 type Receipt = {
   profile_id: string;
@@ -56,6 +57,16 @@ const words = {
     error: "Consent records could not be updated. Contact support if this continues.",
   },
 };
+const subscriptionLabels: Record<string, Record<string, string>> = {
+  active: { en: "Active", ar: "نشط" },
+  trialing: { en: "Trial", ar: "فترة تجريبية" },
+  past_due: { en: "Payment overdue", ar: "الدفع متأخر" },
+  unpaid: { en: "Unpaid", ar: "غير مدفوع" },
+  paused: { en: "Paused", ar: "متوقف مؤقتًا" },
+  canceled: { en: "Canceled", ar: "ملغي" },
+  refunded: { en: "Refunded", ar: "مسترد" },
+  incomplete: { en: "Incomplete", ar: "غير مكتمل" },
+};
 
 /** Consent details and withdrawal live in account settings, away from lessons. */
 export function KidsConsentControl() {
@@ -69,6 +80,10 @@ export function KidsConsentControl() {
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState(false);
   const [revision, setRevision] = useState(0);
+  const [subscription, setSubscription] = useState<{
+    status: string;
+    paid_through: string | null;
+  } | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -77,6 +92,11 @@ export function KidsConsentControl() {
     if (!userId) return;
     const parentId = userId;
     async function load() {
+      const paid = await supabase.rpc("get_my_kids_subscription" as never);
+      if (cancelled) return;
+      if (!paid.error && Array.isArray(paid.data)) {
+        setSubscription((paid.data[0] as typeof subscription) ?? null);
+      }
       const result = await supabase
         .from("kids_profile_consents" as never)
         .select(
@@ -128,6 +148,19 @@ export function KidsConsentControl() {
           {t.accepted} · {t.version}
           {record.policy_version} · {record.attested_at.slice(0, 10)}
         </p>
+      )}
+      {subscription && loadedFor === userId && (
+        <div className="text-sm">
+          <p>
+            {locale === "en" ? "Kids subscription" : "اشتراك كيدز"}:{" "}
+            {subscriptionLabels[subscription.status]?.[locale === "en" ? "en" : "ar"] ??
+              subscription.status}
+          </p>
+          {subscription.paid_through && <p>{subscription.paid_through.slice(0, 10)}</p>}
+          {["active", "past_due", "unpaid", "paused"].includes(subscription.status) && (
+            <StripePortalButton scope="kids" />
+          )}
+        </div>
       )}
       {loadedFor === userId && receipts.length > 0 && (
         <div className="space-y-2">
