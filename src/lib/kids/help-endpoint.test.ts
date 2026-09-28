@@ -41,6 +41,17 @@ function mocks(doc: Record<string, unknown> = lesson, allowed = true, shaOverrid
 }
 
 describe("Kids-only authored lesson help", () => {
+  it("supports the exact Lovable preview origin for preflight only", async () => {
+    const origin = "https://id-preview--658adce0-747d-4c8e-90e3-d22225070b94.lovable.app";
+    const response = await handleKidsLessonHelp(
+      new Request("https://db.example/functions/v1/kids-lesson-help", {
+        method: "OPTIONS",
+        headers: { Origin: origin },
+      }),
+      env,
+    );
+    expect(response.headers.get("Access-Control-Allow-Origin")).toBe(origin);
+  });
   it("rejects no JWT, unbounded text, locale/lesson errors before any retrieval", async () => {
     const fetcher = vi.fn();
     expect(

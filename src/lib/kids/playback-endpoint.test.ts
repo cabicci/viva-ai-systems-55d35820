@@ -29,6 +29,26 @@ function json(value: unknown, status = 200) {
 }
 
 describe("Kids playback authorization boundary", () => {
+  it("allows the exact Lovable preview origin without broadening JWT access", async () => {
+    const origin = "https://id-preview--658adce0-747d-4c8e-90e3-d22225070b94.lovable.app";
+    const response = await handleKidsPlayback(
+      new Request("https://db.example/functions/v1/kids-playback", {
+        method: "OPTIONS",
+        headers: { Origin: origin },
+      }),
+      env,
+    );
+    expect(response.headers.get("Access-Control-Allow-Origin")).toBe(origin);
+    const denied = await handleKidsPlayback(
+      new Request("https://db.example/functions/v1/kids-playback", {
+        method: "POST",
+        headers: { Origin: origin },
+        body: JSON.stringify(body),
+      }),
+      env,
+    );
+    expect(denied.status).toBe(401);
+  });
   it("rejects malformed lesson and unauthenticated requests before provider calls", async () => {
     expect(parseKidsPlaybackRequest({ ...body, lessonNumber: 13 })).toBeNull();
     expect(parseKidsPlaybackRequest({ ...body, locale: "other" })).toBeNull();
