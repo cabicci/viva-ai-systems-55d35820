@@ -33,7 +33,9 @@ export function candidate() {
   const actual = execFileSync("git", ["-C", repo, "rev-parse", "HEAD"], { encoding: "utf8" }).trim();
   if (actual !== head) throw new Error("Candidate HEAD mismatch");
   const dirty = execFileSync("git", ["-C", repo, "status", "--porcelain=v1", "--untracked-files=all"], { encoding: "utf8" });
-  if (dirty.trim()) throw new Error("A clean local atomic image commit is required for exact browser/build provenance");
+  if (dirty.trim()) {
+    throw new Error(`A clean local atomic image commit is required for exact browser/build provenance; dirty paths:\n${dirty.trimEnd()}`);
+  }
   return { repo, head };
 }
 
