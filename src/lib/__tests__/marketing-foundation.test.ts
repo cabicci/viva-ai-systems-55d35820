@@ -270,6 +270,7 @@ describe("route classification and crawler files", () => {
     expect(isDisallowed("/kids/", rules)).toBe(false);
     expect(isDisallowed("/kids/level-1", rules)).toBe(true);
     expect(isDisallowed("/kids/level-1/2", rules)).toBe(true);
+    expect(isDisallowed("/kids/family", rules)).toBe(true);
     expect(ROUTE_CATALOG.find((route) => route.source === "kids.index.tsx")?.sitemap).toBe(true);
     expect(ROUTE_CATALOG.find((route) => route.source === "kids.$levelId.index.tsx")?.sitemap).toBe(
       false,

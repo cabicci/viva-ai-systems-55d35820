@@ -11,6 +11,12 @@ import {
   type KidsLesson,
 } from "@/lib/kids/lesson-client";
 import { useKidsParentState } from "@/lib/kids/parent-state";
+import { useAuth } from "@/lib/auth-context";
+import {
+  clearActiveKidsProfile,
+  getActiveKidsProfile,
+  setActiveKidsProfile,
+} from "@/lib/kids/active-profile";
 import { supabase } from "@/integrations/supabase/client";
 import { useLocale } from "@/lib/locale/locale-context";
 import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
@@ -46,7 +52,9 @@ export function KidsLessonPage() {
   const localeSearch = useLocaleLinkSearch();
   const copy = getKidsJourneyCopy(locale);
   const { state, profiles } = useKidsParentState();
+  const { user } = useAuth();
   const [profileId, setProfileId] = useState("");
+  const [profileChecked, setProfileChecked] = useState(false);
   const [attempt, setAttempt] = useState(0);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<{
@@ -56,6 +64,8 @@ export function KidsLessonPage() {
   } | null>(null);
   const [denied, setDenied] = useState(false);
   const availableProfiles = profiles.filter((profile) => profile.level_id === level);
+  const activeProfile =
+    state === "ready" ? profiles.find((profile) => profile.id === profileId) : null;
   const selected =
     state === "ready" && availableProfiles.some((profile) => profile.id === profileId);
   const lessonKey = `${level}-${lessonNumber}-${locale}-${profileId}`;
@@ -64,9 +74,21 @@ export function KidsLessonPage() {
   useEffect(() => {
     setResult(null);
     setDenied(false);
-    setProfileId("");
     setAttempt(0);
-  }, [levelId, lessonText, locale]);
+    setProfileChecked(false);
+    if (state !== "ready" || !user?.id) {
+      setProfileId("");
+      return;
+    }
+    const stored = getActiveKidsProfile(user.id);
+    if (stored && !profiles.some((profile) => profile.id === stored)) {
+      clearActiveKidsProfile(user.id);
+    }
+    const current = profiles.find((profile) => profile.id === stored);
+    setProfileId(current?.id ?? "");
+    if (current?.level_id === level) setAttempt(1);
+    setProfileChecked(true);
+  }, [levelId, lessonText, locale, state, profiles, user?.id, level]);
 
   // Returning to a tab rechecks the parent grant. Do not redisplay a lesson
   // from memory after that check; its own entitlement may have changed.
@@ -164,9 +186,31 @@ export function KidsLessonPage() {
                               ? copy.unavailableLesson
                               : copy.lockedDetail}
               </p>
-              {state === "ready" && (
+              {state === "ready" && profileChecked && (
                 <div className="mt-6 max-w-sm space-y-3">
-                  {availableProfiles.length > 0 ? (
+                  {activeProfile ? (
+                    <div className="space-y-3">
+                      <p className="text-sm font-bold">
+                        {copy.activeProfile}: {activeProfile.display_name}
+                      </p>
+                      {activeProfile.level_id !== level && (
+                        <p className="text-sm">{copy.otherLevelProfile}</p>
+                      )}
+                      <button
+                        type="button"
+                        onClick={() => {
+                          if (user?.id) clearActiveKidsProfile(user.id);
+                          setResult(null);
+                          setDenied(false);
+                          setAttempt(0);
+                          setProfileId("");
+                        }}
+                        className="min-h-11 rounded-full border border-primary px-5 text-sm font-bold text-primary"
+                      >
+                        {copy.exitProfile}
+                      </button>
+                    </div>
+                  ) : availableProfiles.length > 0 ? (
                     <>
                       <label htmlFor="kids-profile-choice" className="block text-sm font-bold">
                         {copy.chooseProfile}
@@ -179,6 +223,9 @@ export function KidsLessonPage() {
                           setDenied(false);
                           setAttempt(0);
                           setProfileId(event.target.value);
+                          if (user?.id && event.target.value)
+                            setActiveKidsProfile(user.id, event.target.value);
+                          if (event.target.value) setAttempt(1);
                         }}
                         className="min-h-11 w-full rounded-md border border-input bg-background px-3"
                       >
@@ -189,14 +236,6 @@ export function KidsLessonPage() {
                           </option>
                         ))}
                       </select>
-                      <button
-                        type="button"
-                        disabled={!selected || loading}
-                        onClick={() => setAttempt((value) => value + 1)}
-                        className="min-h-11 rounded-full bg-primary px-5 text-sm font-bold text-primary-foreground disabled:opacity-50"
-                      >
-                        {copy.openLesson}
-                      </button>
                     </>
                   ) : (
                     <div className="space-y-4">
@@ -226,6 +265,26 @@ export function KidsLessonPage() {
                 </div>
               )}
             </section>
+          )}
+          {visibleResult && (
+            <div className="flex items-center justify-between gap-3 rounded-2xl border border-primary/20 bg-card p-4">
+              <span className="text-sm font-bold">
+                {copy.activeProfile}: {activeProfile?.display_name}
+              </span>
+              <button
+                type="button"
+                onClick={() => {
+                  if (user?.id) clearActiveKidsProfile(user.id);
+                  setResult(null);
+                  setDenied(false);
+                  setAttempt(0);
+                  setProfileId("");
+                }}
+                className="min-h-11 rounded-full border border-primary px-5 text-sm font-bold text-primary"
+              >
+                {copy.exitProfile}
+              </button>
+            </div>
           )}
           {visibleResult && (
             <nav aria-label={copy.lesson} className="flex flex-wrap gap-3">
