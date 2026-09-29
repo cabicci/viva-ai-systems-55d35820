@@ -1,5 +1,8 @@
 # Child-specific consent lifecycle
 
+> Historical preparation state. Self-attested parent consent and the published
+> shared policy are described in [Kids current state](kids-current-state.md).
+
 The seventh prepared migration records a separate consent receipt for each
 child profile. It creates no approved policy, guardian verification, country
 release, or production data. Existing privacy/editorial/deployment prerequisites

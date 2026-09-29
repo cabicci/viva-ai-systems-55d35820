@@ -16,9 +16,7 @@ describe("Kids public release notice", () => {
     mock.rpc.mockResolvedValue({ data: false, error: null });
     render(<KidsReleaseNotice />);
     expect(screen.queryByRole("status")).not.toBeInTheDocument();
-    await waitFor(() =>
-      expect(screen.getByRole("status")).toHaveTextContent("مغلقة مؤقتًا"),
-    );
+    await waitFor(() => expect(screen.getByRole("status")).toHaveTextContent("مغلقة مؤقتًا"));
     expect(mock.rpc).toHaveBeenCalledWith("kids_public_launch_open");
   });
 
@@ -33,7 +31,7 @@ describe("Kids public release notice", () => {
     mock.rpc.mockResolvedValue({ data: null, error: { message: "unavailable" } });
     render(<KidsReleaseNotice />);
     await waitFor(() =>
-      expect(screen.getByRole("status")).toHaveTextContent("temporarily closed"),
+      expect(screen.getByRole("status")).toHaveTextContent("could not be checked"),
     );
   });
 });

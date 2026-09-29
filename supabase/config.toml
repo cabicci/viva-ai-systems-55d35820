@@ -1,5 +1,8 @@
 project_id = "abyqqeboyrkkwhjpwmtd"
 
+[functions.kids-catalogue]
+verify_jwt = false # Public approved lesson names only; raw bodies stay private.
+
 [functions.billing-stripe-webhook]
 verify_jwt = false
 

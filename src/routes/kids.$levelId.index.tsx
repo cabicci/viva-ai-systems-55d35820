@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { KidsBrand } from "@/components/kids/KidsBrand";
@@ -12,6 +13,7 @@ import { useLocaleLinkSearch } from "@/lib/locale/use-locale-link-search";
 import { parseLocaleSearchParam } from "@/lib/locale/locale-search";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
 import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/kids/$levelId/")({
   validateSearch: parseLocaleSearchParam,
@@ -36,6 +38,43 @@ function KidsLevelPage() {
   const copy = getKidsJourneyCopy(locale);
   const product = getKidsCopy(locale);
   const { state, profiles } = useKidsParentState();
+  const [titles, setTitles] = useState<{ key: string; values: string[] } | null>(null);
+  const titleKey = `${levelId}:${locale}`;
+  useEffect(() => {
+    let active = true;
+    setTitles(null);
+    void (async () => {
+      const { data, error } = await supabase.functions.invoke("kids-catalogue", {
+        body: { levelId, locale },
+      });
+      if (
+        !active ||
+        error ||
+        data?.levelId !== levelId ||
+        data?.locale !== locale ||
+        !Array.isArray(data.titles) ||
+        data.titles.length !== 12
+      )
+        return;
+      const values = data.titles.map((entry: unknown, index: number) => {
+        if (!entry || typeof entry !== "object") return null;
+        const row = entry as { lessonNumber?: unknown; title?: unknown };
+        return row.lessonNumber === index + 1 &&
+          typeof row.title === "string" &&
+          row.title.trim().length > 0 &&
+          row.title.length <= 160
+          ? row.title.trim()
+          : null;
+      });
+      if (values.every((value: unknown): value is string => typeof value === "string"))
+        setTitles({ key: titleKey, values });
+    })().catch(() => {
+      /* Numbered list remains visible when catalogue is unavailable. */
+    });
+    return () => {
+      active = false;
+    };
+  }, [levelId, locale, titleKey]);
   const level = KIDS_LEVELS.find((entry) => entry.id === levelId);
   if (!level) return null;
   const levelNumber = KIDS_LEVELS.findIndex((entry) => entry.id === levelId) + 1;
@@ -93,6 +132,9 @@ function KidsLevelPage() {
                   <h2 className="mt-2 text-xl font-black">
                     {copy.lesson} {lessonNumber}
                   </h2>
+                  {titles?.key === titleKey && (
+                    <p className="mt-2 text-sm font-semibold">{titles.values[index]}</p>
+                  )}
                   <p className="mt-3 flex-1 text-sm text-muted-foreground">
                     {lessonNumber <= 2 ? copy.free : copy.requiresPlan}
                   </p>

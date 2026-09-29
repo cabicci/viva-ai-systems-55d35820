@@ -1,5 +1,8 @@
 # Kids country release preparation
 
+> Historical preparation state. For the activated journey and latest measured
+> controls, read [Kids current state](kids-current-state.md).
+
 The seven foundation migrations are applied in production. All global and
 22 market release flags remain closed. The 144 approved lesson records match
 144 private media records. This release adds one public family privacy policy

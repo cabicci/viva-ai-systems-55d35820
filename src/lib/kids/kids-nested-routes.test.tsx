@@ -147,11 +147,31 @@ describe("Kids nested routes", () => {
       "href",
       "/kids/family?locale=en",
     );
-    expect(mock.invoke).not.toHaveBeenCalled();
+    expect(mock.invoke).toHaveBeenCalledWith("kids-catalogue", {
+      body: { levelId: "level-1", locale: "en" },
+    });
     await act(() => router.navigate({ to: "/kids", search: { locale: "en" } }));
     expect(
       await screen.findByRole("heading", { level: 1, name: "Masaarat Kids" }),
     ).toBeInTheDocument();
+  });
+
+  it("shows approved localized names without exposing a lesson to a signed-out visitor", async () => {
+    mock.invoke.mockResolvedValue({
+      data: {
+        levelId: "level-1",
+        locale: "en",
+        titles: Array.from({ length: 12 }, (_, index) => ({
+          lessonNumber: index + 1,
+          title: `Approved topic ${index + 1}`,
+        })),
+      },
+      error: null,
+    });
+    mountKids("/kids/level-1?locale=en");
+    expect(await screen.findByText("Approved topic 1")).toBeInTheDocument();
+    expect(screen.getByText("Approved topic 12")).toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "View lesson status" })).not.toBeInTheDocument();
   });
 
   it("shows lesson actions after consent and a profile for the level are ready", async () => {
