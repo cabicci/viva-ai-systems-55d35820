@@ -28,6 +28,9 @@ vi.mock("@/components/kids/KidsReleaseNotice", () => ({ KidsReleaseNotice: () =>
 vi.mock("@/components/kids/KidsParentPanel", () => ({
   KidsParentPanel: () => <div>Parent access pending</div>,
 }));
+vi.mock("@/lib/kids/KidsParentStateProvider", () => ({
+  KidsParentStateProvider: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+}));
 vi.mock("@/lib/kids/parent-state", () => ({
   useKidsParentState: () => ({ ...mock.parentState, refresh: vi.fn() }),
 }));

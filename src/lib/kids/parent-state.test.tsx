@@ -1,5 +1,7 @@
-import { act, renderHook, waitFor } from "@testing-library/react";
+import { act, render, renderHook, screen, waitFor } from "@testing-library/react";
+import type { ReactNode } from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
+import { KidsParentStateProvider } from "./KidsParentStateProvider";
 import { useKidsParentState } from "./parent-state";
 
 const mock = vi.hoisted(() => ({
@@ -17,7 +19,41 @@ beforeEach(() => {
   mock.useAuth.mockReturnValue({ user: { id: "parent-1" }, loading: false });
 });
 
+function wrapper({ children }: { children: ReactNode }) {
+  return <KidsParentStateProvider>{children}</KidsParentStateProvider>;
+}
+
+function renderParentState() {
+  return renderHook(() => useKidsParentState(), { wrapper });
+}
+
 describe("Kids parent privacy gate", () => {
+  it("shares the verified parent state when a lesson view is replaced", async () => {
+    mock.rpc.mockResolvedValue({ data: true, error: null });
+    mock.from.mockReturnValue({
+      select: vi.fn().mockReturnThis(),
+      eq: vi.fn().mockResolvedValue({ data: [], error: null }),
+    });
+    function LessonView({ name }: { name: string }) {
+      const { state } = useKidsParentState();
+      return <span>{`${name}: ${state}`}</span>;
+    }
+    const { rerender } = render(
+      <KidsParentStateProvider>
+        <LessonView key="first" name="First lesson" />
+      </KidsParentStateProvider>,
+    );
+    await screen.findByText("First lesson: ready");
+    rerender(
+      <KidsParentStateProvider>
+        <LessonView key="second" name="Second lesson" />
+      </KidsParentStateProvider>,
+    );
+    expect(screen.getByText("Second lesson: ready")).toBeInTheDocument();
+    expect(mock.rpc).toHaveBeenCalledTimes(1);
+    expect(mock.from).toHaveBeenCalledTimes(1);
+  });
+
   it("blocks a fourth profile before sending child data", async () => {
     mock.rpc.mockResolvedValue({ data: true, error: null });
     const query = {
@@ -33,14 +69,14 @@ describe("Kids parent privacy gate", () => {
       insert: vi.fn(),
     };
     mock.from.mockReturnValue(query);
-    const { result } = renderHook(() => useKidsParentState());
+    const { result } = renderParentState();
     await waitFor(() => expect(result.current.state).toBe("ready"));
     await expect(result.current.createProfile("Fourth", "level-1")).rejects.toThrow("limit");
     expect(query.insert).not.toHaveBeenCalled();
   });
   it("does not request child profiles or collect child data when release or verification is absent", async () => {
     mock.rpc.mockResolvedValue({ data: false, error: null });
-    const { result } = renderHook(() => useKidsParentState());
+    const { result } = renderParentState();
     await waitFor(() => expect(result.current.state).toBe("pending"));
     expect(mock.rpc).toHaveBeenCalledWith("kids_parent_can_manage_profiles");
     expect(mock.from).not.toHaveBeenCalled();
@@ -50,7 +86,7 @@ describe("Kids parent privacy gate", () => {
 
   it("shows a closed setup state when the Kids RPC has not been deployed", async () => {
     mock.rpc.mockResolvedValue({ data: null, error: { code: "PGRST202", message: "RPC missing" } });
-    const { result } = renderHook(() => useKidsParentState());
+    const { result } = renderParentState();
     await waitFor(() => expect(result.current.state).toBe("not-released"));
     expect(mock.from).not.toHaveBeenCalled();
     await expect(result.current.createProfile("Child", "level-1")).rejects.toThrow();
@@ -58,14 +94,14 @@ describe("Kids parent privacy gate", () => {
 
   it("keeps unexpected server failures distinct and fails closed", async () => {
     mock.rpc.mockResolvedValue({ data: null, error: { code: "503", message: "RPC unavailable" } });
-    const { result } = renderHook(() => useKidsParentState());
+    const { result } = renderParentState();
     await waitFor(() => expect(result.current.state).toBe("unavailable"));
     expect(mock.from).not.toHaveBeenCalled();
   });
 
   it("never queries parent data when signed out", async () => {
     mock.useAuth.mockReturnValue({ user: null, loading: false });
-    const { result } = renderHook(() => useKidsParentState());
+    const { result } = renderParentState();
     await waitFor(() => expect(result.current.state).toBe("signed-out"));
     expect(mock.rpc).not.toHaveBeenCalled();
     expect(mock.from).not.toHaveBeenCalled();
@@ -81,7 +117,7 @@ describe("Kids parent privacy gate", () => {
       }),
     };
     mock.from.mockReturnValue(query);
-    const { result } = renderHook(() => useKidsParentState());
+    const { result } = renderParentState();
     await waitFor(() => expect(result.current.state).toBe("ready"));
     expect(mock.from).toHaveBeenCalledWith("kids_profiles");
     expect(query.eq).toHaveBeenCalledWith("parent_id", "parent-1");
@@ -108,7 +144,7 @@ describe("Kids parent privacy gate", () => {
       }),
     };
     mock.from.mockReturnValue(query);
-    const { result } = renderHook(() => useKidsParentState());
+    const { result } = renderParentState();
     await waitFor(() => expect(result.current.state).toBe("ready"));
     expect(result.current.profiles).toHaveLength(1);
 
