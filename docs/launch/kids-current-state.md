@@ -58,6 +58,17 @@ pricing page shows the monthly and annual catalogue for Egypt and
 international customers and links from Kids. No live charge or live payment
 activation is in this launch scope.
 
+The owner account has a separate, expiring administrative **test grant**. Its
+Stripe test subscription was fully refunded, so a protected lesson on that
+account does **not** prove that refunded Stripe subscriptions retain access or
+that an ordinary new parent's paid checkout has completed. The server removes
+the matching Stripe entitlement on a full refund. The later refund re-entry
+fix clears the stale paid-through field, keeps the refund terminal against
+delayed webhook events, and reports the active grant separately from payment
+history in account settings. The isolated database regression covers refund,
+retry, cancellation, and a new paid test subscription; a fresh ordinary parent
+checkout and webhook round trip on production remains a distinct release check.
+
 The retention control currently has both email notices and automatic deletion
 disabled. The public privacy text says the 90-day process is prepared and
 automatic deletion has not begun. The controls must not be turned on without

@@ -84,11 +84,18 @@ export function KidsConsentControl() {
     status: string;
     paid_through: string | null;
   } | null>(null);
+  const [access, setAccess] = useState<{
+    access_source: "stripe_test" | "test_grant";
+    active_until: string;
+  } | null>(null);
+  const [accessError, setAccessError] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
     setReceipts([]);
     setError(false);
+    setAccess(null);
+    setAccessError(false);
     if (!userId) return;
     const parentId = userId;
     async function load() {
@@ -96,6 +103,12 @@ export function KidsConsentControl() {
       if (cancelled) return;
       if (!paid.error && Array.isArray(paid.data)) {
         setSubscription((paid.data[0] as typeof subscription) ?? null);
+      }
+      const grant = await supabase.rpc("get_my_kids_access_status" as never);
+      if (cancelled) return;
+      if (grant.error) setAccessError(true);
+      else if (Array.isArray(grant.data)) {
+        setAccess((grant.data[0] as typeof access) ?? null);
       }
       const result = await supabase
         .from("kids_profile_consents" as never)
@@ -152,15 +165,42 @@ export function KidsConsentControl() {
       {subscription && loadedFor === userId && (
         <div className="text-sm">
           <p>
-            {locale === "en" ? "Kids subscription" : "اشتراك كيدز"}:{" "}
+            {locale === "en" ? "Stripe test subscription" : "اشتراك Stripe التجريبي"}:{" "}
             {subscriptionLabels[subscription.status]?.[locale === "en" ? "en" : "ar"] ??
               subscription.status}
           </p>
-          {subscription.paid_through && <p>{subscription.paid_through.slice(0, 10)}</p>}
+          {subscription.status !== "refunded" && subscription.paid_through && (
+            <p>
+              {locale === "en" ? "Last paid period through" : "آخر فترة مدفوعة حتى"}:{" "}
+              {subscription.paid_through.slice(0, 10)}
+            </p>
+          )}
           {["active", "past_due", "unpaid", "paused"].includes(subscription.status) && (
             <StripePortalButton scope="kids" />
           )}
         </div>
+      )}
+      {loadedFor === userId && (record || receipts.length > 0 || subscription) && (
+        <p className="text-sm">
+          {locale === "en" ? "Paid Kids lesson access" : "الوصول لدروس كيدز المدفوعة"}:{" "}
+          {accessError
+            ? locale === "en"
+              ? "Could not verify"
+              : "تعذر التحقق"
+            : access
+              ? `${locale === "en" ? "Active until" : "نشط حتى"} ${access.active_until.slice(0, 10)} (${
+                  access.access_source === "stripe_test"
+                    ? locale === "en"
+                      ? "Stripe test payment"
+                      : "دفع Stripe التجريبي"
+                    : locale === "en"
+                      ? "separate test grant"
+                      : "منحة اختبار منفصلة"
+                })`
+              : locale === "en"
+                ? "No active family grant"
+                : "لا توجد منحة عائلية نشطة"}
+        </p>
       )}
       {loadedFor === userId && receipts.length > 0 && (
         <div className="space-y-2">
