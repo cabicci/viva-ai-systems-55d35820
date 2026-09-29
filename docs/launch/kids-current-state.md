@@ -6,6 +6,26 @@ published site. This document supersedes the *preparation* state in
 `kids-family-policy.md`. Those documents record earlier migration boundaries;
 they are not the current launch switch or parent journey.
 
+## Handoff update — 2026-09-30
+
+The quiet lesson-navigation change merged as PR #114 at main
+`9dd2c70edc1671686a5e3de9107914b460d5c2f6`. Its neutral loading skeleton
+replaces the visible access-check text during navigation. Both protected
+endpoints still check the per-lesson grant, and no lesson appears before both
+responses succeed; the transition may still take time. Focused tests (21),
+lint, formatting, Vite build, CI #398, and the automatic B024 #142 workflow
+passed. Lovable synced that main SHA and accepted deployment request
+`eb6b0a08-220c-4a7b-8f09-5387743e18a0` with `pending` status. The exact
+deployed SHA and the new transition in an authenticated production browser
+remain **unverified**. Do not infer either from `is_published=true`.
+
+The owner paused further Kids changes to work elsewhere on the site. The 36
+Egyptian Arabic video starts below were verified before this UI-only change;
+do not repeat the full media/image sweep for it. On return, separately verify
+deployment/transition, an ordinary parent's Stripe TEST paid journey, and the
+other three locales in the browser if those release gates are in scope. Keep
+Stripe live payments off.
+
 ## Parent journey
 
 1. A visitor can see the Kids overview and all three level lists without an
