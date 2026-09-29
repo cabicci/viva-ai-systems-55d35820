@@ -70,6 +70,10 @@ export function KidsLessonPage() {
     state === "ready" && availableProfiles.some((profile) => profile.id === profileId);
   const lessonKey = `${level}-${lessonNumber}-${locale}-${profileId}`;
   const visibleResult = selected && result?.key === lessonKey ? result : null;
+  const openingLesson =
+    state === "checking" ||
+    (state === "ready" &&
+      (!profileChecked || (selected && !denied && !visibleResult && (loading || attempt > 0))));
 
   useEffect(() => {
     setResult(null);
@@ -169,23 +173,35 @@ export function KidsLessonPage() {
               <h1 className="mt-3 text-3xl font-black">
                 {copy.lesson} {lessonNumber}
               </h1>
-              <p role="status" className="mt-4 text-sm text-muted-foreground">
-                {state === "signed-out"
-                  ? copy.signInNotice
-                  : state === "checking"
-                    ? copy.waiting
+              {openingLesson ? (
+                <div role="status" className="mt-6 space-y-4" aria-label={copy.loading}>
+                  <span className="sr-only">{copy.loading}</span>
+                  <div
+                    aria-hidden="true"
+                    className="h-5 w-3/4 animate-pulse rounded-full bg-primary/10"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="aspect-video animate-pulse rounded-2xl bg-primary/10"
+                  />
+                </div>
+              ) : (
+                <p role="status" className="mt-4 text-sm text-muted-foreground">
+                  {state === "signed-out"
+                    ? copy.signInNotice
                     : state === "pending"
                       ? copy.pending
                       : state === "not-released"
                         ? copy.setupPending
                         : state === "unavailable"
                           ? copy.unavailable
-                          : loading
-                            ? copy.loading
-                            : denied
-                              ? copy.unavailableLesson
-                              : copy.lockedDetail}
-              </p>
+                          : denied
+                            ? copy.unavailableLesson
+                            : !selected && profileChecked
+                              ? copy.chooseProfile
+                              : null}
+                </p>
+              )}
               {state === "ready" && profileChecked && (
                 <div className="mt-6 max-w-sm space-y-3">
                   {activeProfile ? (
