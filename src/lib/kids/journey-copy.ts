@@ -12,7 +12,6 @@ const ar = {
   signUp: "إنشاء حساب مسارات",
   signInNotice:
     "استخدم حساب مسارات الحالي، أو أنشئ حسابًا واحدًا للمنصة. بعد الدخول توافق على سياسة الأطفال وتنشئ ملفاتهم؛ لا يوجد تسجيل منفصل لكيدز.",
-  waiting: "التحقق من جاهزية الحساب...",
   pending: "اقرأ سياسة خصوصية الأطفال ووافق عليها من حساب وليّ الأمر لفتح الملفات والدروس.",
   unavailable: "تعذّر التحقق من جاهزية كيدز الآن. حاول لاحقًا.",
   setupPending: "خدمة كيدز قيد التجهيز. إنشاء ملفات الأطفال والدروس غير متاح الآن.",
@@ -40,8 +39,7 @@ const ar = {
   back: "العودة إلى كيدز",
   backLevel: "العودة إلى المستوى",
   locked: "الدرس غير متاح حاليًا",
-  lockedDetail: "يتطلب الدرس موافقة وليّ الأمر والمحتوى والتحقق من صلاحية الملف عبر الخادم.",
-  loading: "التحقق من صلاحية الوصول...",
+  loading: "جارٍ فتح الدرس...",
   unavailableLesson: "لم تكتمل جاهزية الدرس. لم يُحمّل الفيديو أو المحتوى.",
   watch: "شاهد الدرس",
   objectives: "ماذا سنتعلم؟",
@@ -72,7 +70,6 @@ const egyptian: Copy = {
   signUp: "اعمل حساب مسارات",
   signInNotice:
     "لو عندك حساب مسارات ادخل بيه، ولو جديد اعمل حساب واحد للمنصة. بعدها توافق على سياسة الأطفال وتعمل ملفاتهم؛ مفيش تسجيل تاني لكيدز.",
-  waiting: "بنتأكد إن الحساب جاهز...",
   pending: "اقرأ سياسة خصوصية الأطفال ووافق عليها من حساب وليّ الأمر عشان تفتح الملفات والدروس.",
   unavailable: "مش قادرين نتأكد من جاهزية كيدز دلوقتي. حاول بعد شوية.",
   setupPending: "خدمة كيدز لسه بتتجهز. ملفات الأطفال والدروس مش متاحة دلوقتي.",
@@ -100,8 +97,7 @@ const egyptian: Copy = {
   back: "ارجع لكيدز",
   backLevel: "ارجع للمستوى",
   locked: "الدرس مش متاح دلوقتي",
-  lockedDetail: "فتح الدرس محتاج موافقة وليّ الأمر والمحتوى والتحقق من صلاحية الملف على الخادم.",
-  loading: "بنتأكد من صلاحية الوصول...",
+  loading: "بنفتح الدرس...",
   unavailableLesson: "الدرس لسه مش جاهز. الفيديو والمحتوى ما اتحملوش.",
   watch: "اتفرج على الدرس",
   objectives: "هنتعلم إيه؟",
@@ -131,7 +127,6 @@ const gulf: Copy = {
   signUp: "سوّ حساب مسارات",
   signInNotice:
     "إذا عندك حساب مسارات ادخل به، أو سوّ حسابًا واحدًا للمنصة. بعد الدخول توافق على سياسة الأطفال وتنشئ ملفاتهم؛ ما فيه تسجيل ثاني لكيدز.",
-  waiting: "نتأكد من جاهزية الحساب...",
   pending: "اقرأ سياسة خصوصية الأطفال ووافق عليها من حساب وليّ الأمر عشان تفتح الملفات والدروس.",
   unavailable: "ما قدرنا نتأكد من جاهزية كيدز الحين. جرّب بعدين.",
   setupPending: "خدمة كيدز قيد التجهيز. ملفات الأطفال والدروس مب متاحة الحين.",
@@ -159,8 +154,7 @@ const gulf: Copy = {
   back: "ارجع لكيدز",
   backLevel: "ارجع للمستوى",
   locked: "الدرس مب متاح الحين",
-  lockedDetail: "فتح الدرس يحتاج موافقة وليّ الأمر والمحتوى والتحقق من صلاحية الملف على الخادم.",
-  loading: "نتأكد من صلاحية الوصول...",
+  loading: "نفتح الدرس...",
   unavailableLesson: "الدرس ما اكتملت جاهزيته. الفيديو والمحتوى ما تحمّلوا.",
   watch: "شاهد الدرس",
   objectives: "وش بنتعلّم؟",
@@ -190,7 +184,6 @@ const en: Copy = {
   signUp: "Create Masaarat account",
   signInNotice:
     "Use your existing Masaarat account or create one platform account. Then accept the children's policy and add child profiles. Kids does not need a second registration.",
-  waiting: "Checking account readiness...",
   pending:
     "Read and accept the children’s privacy policy from your parent account to open profiles and lessons.",
   unavailable: "Kids readiness could not be checked. Try later.",
@@ -220,9 +213,7 @@ const en: Copy = {
   back: "Back to Kids",
   backLevel: "Back to level",
   locked: "Lesson currently unavailable",
-  lockedDetail:
-    "A lesson requires parent consent and approved content, then a server grant for this profile.",
-  loading: "Checking access...",
+  loading: "Opening lesson...",
   unavailableLesson: "This lesson is not ready. Video and content were not loaded.",
   watch: "Watch lesson",
   objectives: "What you will learn",

@@ -93,6 +93,34 @@ describe("Kids direct lesson route", () => {
     expect(screen.queryByText("Opened protected lesson")).not.toBeInTheDocument();
   });
 
+  it("opens the next lesson quietly while both protected requests run", async () => {
+    mock.useKidsParentState.mockReturnValue({
+      state: "ready",
+      profiles: [{ id: "profile-1", level_id: "level-2", display_name: "Explorer" }],
+    });
+    const page = render(<KidsLessonPage />);
+    fireEvent.change(screen.getByLabelText("Choose a profile for this level"), {
+      target: { value: "profile-1" },
+    });
+    expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
+
+    const releases: Array<(value: { data: object; error: null }) => void> = [];
+    mock.invoke.mockImplementation(
+      () =>
+        new Promise((resolve) => {
+          releases.push(resolve);
+        }),
+    );
+    mock.params = { levelId: "level-2", lessonNumber: "2" };
+    page.rerender(<KidsLessonPage />);
+    expect(await screen.findByRole("status", { name: "Opening lesson..." })).toBeInTheDocument();
+    expect(screen.queryByText(/Checking access|server grant/i)).not.toBeInTheDocument();
+    expect(screen.queryByText("Opened protected lesson")).not.toBeInTheDocument();
+    expect(mock.invoke).toHaveBeenCalledTimes(4);
+    releases.forEach((release) => release({ data: {}, error: null }));
+    expect(await screen.findByText("Opened protected lesson")).toBeInTheDocument();
+  });
+
   it("rechecks the server grant before showing a saved profile's lesson after focus", async () => {
     const ready = {
       state: "ready",
