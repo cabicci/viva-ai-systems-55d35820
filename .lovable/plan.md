@@ -1,15 +1,41 @@
-# Kids lesson diagnosis (read-only findings)
+# شرح تفصيلي: ليه الموقع كان بطيء وبقى سريع (بدون أي تنفيذ)
 
-## Observed
-- Source: 879f61c6 (PR #115). Latest build log: build OK, no build errors.
-- No runtime, console or network logs were captured from the owner's preview session, so the visible error text cannot be observed.
-- Preview /kids/level-1/1?locale=en: 401 without a Lovable login (expected, preview is private).
-- Local sandbox route: 200. masaarat.ai route: 200 (page shell only; the deployed commit is not proven).
-- The lesson itself needs a signed-in parent; no delegated session was used, so the first failing request (content or playback) is unobserved.
+القرار: **مفيش أي تعديل**. ده شرح للحالة الحالية بناءً على قراءة السجلات والملفات فقط.
 
-## Known likely cause for preview
-- Bunny library 761387 rejects the preview origin (403), confirmed earlier. The account key needed to add it is unavailable.
+## اللي بيحصل عند أول فتح (الإقلاع البارد)
 
-## Next step (needs your approval)
-1. Owner opens the lesson once in preview, then I read the new error logs. Or you allow one test with a delegated session.
-2. If the error is the video player 403: add the preview hostname under Allowed Referrers in Bunny (library 761387 → Security), or add the Bunny account key as a secret.
+التسلسل الفعلي من سجل خادم التطوير:
+
+```text
+1) توليد الأصول قبل التشغيل  → materialized: 400  (كتابة 400 صورة PNG على القرص)
+2) Vite ready                → 2299 ms  (وفي مرة تانية 3249 ms)
+3) أول زيارة للصفحة          → new dependencies optimized: h3-v2, @tanstack/router-core, ...
+4) optimized dependencies changed → reloading   ← الصفحة بتعيد التحميل في نص أول زيارة
+5) كل route وكل صورة بتتترجم عند أول طلب لها → الصور بتظهر بالتدريج
+```
+
+النتيجة اللي كنت شايفها: الصفحة الرئيسية بس هي اللي بتفتح (لأنها أول route اتترجم)، والصور بتفضل تتحمّل واحدة ورا التانية.
+
+## ليه بقى سريع دلوقتي
+
+- مجلد `node_modules/.vite/deps` موجود ومحدّث (آخر تحديث 10:57)، يعني خطوة optimize خلصت خلاص.
+- الـ400 صورة متولّدة بالفعل على القرص، والعلامة `.materialize-ok.json` بتقول `ok: true, materialized: 400`.
+- فمرحلة الـ`reloading` الوسطانية مش بتحصل، والصفحة بتفتح على طول.
+
+**مهم:** مفيش أي سطر كود اتغير. الفرق كله في الكاش (cache) مش في المشروع.
+
+## متى ترجع البطء تاني
+
+أي حاجة تمسح أو تبطّل الكاش:
+- إعادة تشغيل بيئة البريفيو أو الخادم
+- تغيير في `bun.lockb` — السجل شايف فعلاً: `Re-optimizing dependencies because lockfile has changed` الساعة 11:07
+- تثبيت أو تحديث أي حزمة
+
+## المصدر البنيوي للبطء (للعِلم فقط)
+
+- `src/lib/lesson-visuals/controlled-v1/runtime/controlledV1BrowserResolver.ts` بيستخدم `import.meta.glob` بـ `eager: true` على 400 أصل — في وضع التطوير ده بيخلي المتصفح يجيب مئات الموديولات كل واحد لوحده.
+- سكربت `controlled-visuals:materialize-runtime-assets` بيعيد كتابة 400 ملف في كل إقلاع حتى لو موجودين بالفعل.
+
+## الحالة
+
+مفيش أي تنفيذ مطلوب. لو حبيت بعدين نثبّت السرعة دايمًا، الحلول الثلاثة المعروفة: تخطّي إعادة التوليد لو الأصول موجودة، تحويل الـglob لـ lazy في التطوير، وإضافة الحزم لـ `optimizeDeps`.
