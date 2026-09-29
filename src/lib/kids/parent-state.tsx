@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/lib/auth-context";
 import { KIDS_LEVELS, type KidsLevelId } from "./catalogue";
@@ -6,12 +6,7 @@ import { KIDS_FAMILY_POLICY } from "./family-policy";
 
 export type KidsProfile = { id: string; level_id: KidsLevelId; display_name: string };
 export type ParentState =
-  | "signed-out"
-  | "checking"
-  | "pending"
-  | "not-released"
-  | "ready"
-  | "unavailable";
+  "signed-out" | "checking" | "pending" | "not-released" | "ready" | "unavailable";
 
 function validProfile(value: unknown): value is KidsProfile {
   if (!value || typeof value !== "object") return false;
@@ -24,7 +19,7 @@ function validProfile(value: unknown): value is KidsProfile {
 }
 
 /** Profile reads and creation only start after the server confirms privacy release and parent verification. */
-export function useKidsParentState() {
+export function useKidsParentStateSource() {
   const { user, loading: authLoading } = useAuth();
   const userId = user?.id;
   const [state, setState] = useState<ParentState>("checking");
@@ -159,4 +154,14 @@ export function useKidsParentState() {
     refresh,
     createProfile,
   };
+}
+
+export const KidsParentStateContext = createContext<ReturnType<
+  typeof useKidsParentStateSource
+> | null>(null);
+
+export function useKidsParentState() {
+  const value = useContext(KidsParentStateContext);
+  if (!value) throw new Error("Kids parent state requires the Kids route provider");
+  return value;
 }
