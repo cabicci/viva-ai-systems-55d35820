@@ -4,13 +4,14 @@ const arabic = {
   title: "مسارات كيدز",
   pathLabel: "مسار تعلّم مستقل للأطفال",
   cardDescription:
-    "ثلاث مراحل عمرية؛ يبدأ كل مستوى بدرسين مجانيين. يدير وليّ الأمر الحساب والتقدم.",
+    "ثلاث مراحل عمرية؛ يبدأ كل مستوى بدرسين مجانيين. يدير وليّ الأمر حساب الأطفال وملفاتهم.",
   details: "اكتشف مسارات كيدز",
   eyebrow: "تعلّم الذكاء الاصطناعي بحسب المرحلة العمرية",
   intro:
-    "ثلاث مراحل، في كل مرحلة 12 درسًا بنسخ عربية وإنجليزية. يدير وليّ الأمر الوصول والتقدم، وتبقى باقات الكبار مستقلة.",
+    "ثلاث مراحل، في كل مرحلة 12 درسًا بنسخ عربية وإنجليزية. يدير وليّ الأمر الوصول وملفات الأطفال، وتبقى باقات الكبار مستقلة.",
   reviewNotice:
     "خدمة الأطفال مغلقة مؤقتًا. عند إتاحتها يقرأ وليّ الأمر سياسة خصوصية الأطفال ويوافق عليها قبل إنشاء الملفات.",
+  releaseUnavailable: "تعذر التحقق من حالة كيدز الآن. حاول مجددًا بعد قليل.",
   freeBadge: "أول درسين مجانًا",
   level: "المستوى",
   lessons: "12 درسًا",
@@ -27,13 +28,14 @@ const egyptian: KidsCopy = {
   title: "مسارات كيدز",
   pathLabel: "مسار تعليم مخصوص للأطفال",
   cardDescription:
-    "٣ مراحل عمرية، وأول درسين في كل مستوى مجانًا. وليّ الأمر بيتابع الحساب والتقدم.",
+    "٣ مراحل عمرية، وأول درسين في كل مستوى مجانًا. وليّ الأمر بيدير حساب الأطفال وملفاتهم.",
   details: "اكتشف مسارات كيدز",
   eyebrow: "اتعلّم الذكاء الاصطناعي على قد مرحلتك العمرية",
   intro:
-    "٣ مراحل، في كل مرحلة ١٢ درس بالعربي والإنجليزي. وليّ الأمر بيتابع الوصول والتقدم، وباقات الكبار منفصلة.",
+    "٣ مراحل، في كل مرحلة ١٢ درس بالعربي والإنجليزي. وليّ الأمر بيدير الوصول وملفات الأطفال، وباقات الكبار منفصلة.",
   reviewNotice:
     "خدمة الأطفال مقفولة مؤقتًا. لما تتاح، وليّ الأمر يقرأ سياسة خصوصية الأطفال ويوافق عليها قبل إنشاء الملفات.",
+  releaseUnavailable: "مش قادرين نتأكد من حالة كيدز دلوقتي. حاول بعد شوية.",
   freeBadge: "أول درسين ببلاش",
   level: "المستوى",
   lessons: "١٢ درس",
@@ -48,13 +50,14 @@ const gulf: KidsCopy = {
   title: "مسارات كيدز",
   pathLabel: "مسار تعلّم مستقل للأطفال",
   cardDescription:
-    "ثلاث مراحل عمرية، وأول درسين بكل مستوى مجانًا. وليّ الأمر يدير الحساب ويتابع التقدّم.",
+    "ثلاث مراحل عمرية، وأول درسين بكل مستوى مجانًا. وليّ الأمر يدير حساب الأطفال وملفاتهم.",
   details: "اكتشف مسارات كيدز",
   eyebrow: "تعلّم الذكاء الاصطناعي على حسب مرحلتك العمرية",
   intro:
-    "ثلاث مراحل، بكل مرحلة ١٢ درس بالعربي والإنجليزي. وليّ الأمر يدير الوصول والتقدّم، وباقات الكبار منفصلة.",
+    "ثلاث مراحل، بكل مرحلة ١٢ درس بالعربي والإنجليزي. وليّ الأمر يدير الوصول وملفات الأطفال، وباقات الكبار منفصلة.",
   reviewNotice:
     "خدمة الأطفال مقفولة مؤقتًا. عند إتاحتها وليّ الأمر يقرأ سياسة خصوصية الأطفال ويوافق عليها قبل إنشاء الملفات.",
+  releaseUnavailable: "تعذر التحقق من حالة كيدز الحين. جرّب بعدين.",
   freeBadge: "أول درسين مجانًا",
   level: "المستوى",
   lessons: "١٢ درس",
@@ -69,13 +72,14 @@ const en: KidsCopy = {
   title: "Masaarat Kids",
   pathLabel: "A separate learning path for children",
   cardDescription:
-    "Three age levels, planned to start with two free lessons each. Parents will manage access and progress.",
+    "Three age levels with two free lessons each. Parents manage children's access and profiles.",
   details: "Explore Masaarat Kids",
   eyebrow: "AI learning for each age level",
   intro:
-    "Three levels with 12 lessons each, in Arabic and English versions. A parent manages access and progress; adult plans stay separate.",
+    "Three levels with 12 lessons each, in Arabic and English versions. A parent manages access and child profiles; adult plans stay separate.",
   reviewNotice:
     "Kids is temporarily closed. Once available, parents read and accept the children's privacy policy before creating profiles.",
+  releaseUnavailable: "Kids availability could not be checked right now. Please try again shortly.",
   freeBadge: "First two lessons free",
   level: "Level",
   lessons: "12 lessons",

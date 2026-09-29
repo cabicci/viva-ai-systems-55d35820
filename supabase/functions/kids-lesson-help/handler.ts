@@ -2,7 +2,11 @@
 // public adult corpus or a JSON bundle exposed to the browser.
 import { parseKidsPlaybackRequest } from "./token.ts";
 
-const ALLOWED_ORIGINS = new Set(["https://masaarat.ai", "https://www.masaarat.ai"]);
+const ALLOWED_ORIGINS = new Set([
+  "https://masaarat.ai",
+  "https://www.masaarat.ai",
+  "https://id-preview--658adce0-747d-4c8e-90e3-d22225070b94.lovable.app",
+]);
 const KEYS = new Set(["profileId", "levelId", "lessonNumber", "locale", "hintId"]);
 const BUCKET = "kids-lesson-content";
 function headersFor(request: Request): HeadersInit {

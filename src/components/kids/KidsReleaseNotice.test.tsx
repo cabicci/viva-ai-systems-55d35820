@@ -15,9 +15,9 @@ describe("Kids public release notice", () => {
   it("shows an accurate closed-state notice while no market is released", async () => {
     mock.rpc.mockResolvedValue({ data: false, error: null });
     render(<KidsReleaseNotice />);
-    expect(screen.getByRole("status")).toHaveTextContent("الدروس والفيديوهات جاهزة");
-    await waitFor(() => expect(mock.rpc).toHaveBeenCalledWith("kids_public_launch_open"));
-    expect(screen.getByRole("status")).toHaveTextContent("لم يُفعّلا بعد");
+    expect(screen.queryByRole("status")).not.toBeInTheDocument();
+    await waitFor(() => expect(screen.getByRole("status")).toHaveTextContent("مغلقة مؤقتًا"));
+    expect(mock.rpc).toHaveBeenCalledWith("kids_public_launch_open");
   });
 
   it("removes the closed-state claim when the server reports a launch", async () => {
@@ -30,7 +30,8 @@ describe("Kids public release notice", () => {
     mock.locale = "en";
     mock.rpc.mockResolvedValue({ data: null, error: { message: "unavailable" } });
     render(<KidsReleaseNotice />);
-    await waitFor(() => expect(mock.rpc).toHaveBeenCalledTimes(1));
-    expect(screen.getByRole("status")).toHaveTextContent("have not been opened");
+    await waitFor(() =>
+      expect(screen.getByRole("status")).toHaveTextContent("could not be checked"),
+    );
   });
 });

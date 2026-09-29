@@ -3,7 +3,7 @@ import type { SupportedLocale } from "@/lib/locale/types";
 const ar = {
   parentTitle: "مساحة وليّ الأمر",
   familyIntro:
-    "إذا كانت زيارتك الأولى، وافق على سياسة الأطفال لتفعيل حساب وليّ الأمر. بعدها تدير ملفاتهم من حسابك نفسه، وتجد سجل الموافقة في بيانات الحساب.",
+    "من هنا تدير ملفات الأطفال ودروسهم من حساب مسارات نفسه. تجد سجل الموافقة في بيانات الحساب.",
   manageFamily: "الانتقال إلى مساحة وليّ الأمر",
   viewLevel: "عرض دروس المستوى",
   levelStartNotice:
@@ -63,7 +63,7 @@ type Copy = { [K in keyof typeof ar]: string };
 const egyptian: Copy = {
   parentTitle: "مساحة وليّ الأمر",
   familyIntro:
-    "لو دي أول مرة، وافق على سياسة الأطفال عشان تفعّل حساب وليّ الأمر. بعدها هتدير ملفاتهم من نفس حسابك، وسجل الموافقة في بيانات الحساب.",
+    "من هنا تدير ملفات الأطفال ودروسهم من نفس حساب مسارات. سجل موافقتك موجود في بيانات الحساب.",
   manageFamily: "روح لمساحة وليّ الأمر",
   viewLevel: "شوف دروس المستوى",
   levelStartNotice:
@@ -122,7 +122,7 @@ const egyptian: Copy = {
 const gulf: Copy = {
   parentTitle: "مساحة وليّ الأمر",
   familyIntro:
-    "إذا كانت زيارتك الأولى، وافق على سياسة الأطفال لتفعيل حساب وليّ الأمر. بعدها تدير ملفاتهم من حسابك نفسه، وسجل الموافقة في بيانات الحساب.",
+    "من هنا تدير ملفات الأطفال ودروسهم من حساب مسارات نفسه. سجل الموافقة تلقاه في بيانات الحساب.",
   manageFamily: "روح لمساحة وليّ الأمر",
   viewLevel: "شوف دروس المستوى",
   levelStartNotice:
@@ -181,7 +181,7 @@ const gulf: Copy = {
 const en: Copy = {
   parentTitle: "Parent space",
   familyIntro:
-    "On your first visit, accept the children's policy to activate your parent account. After that, manage child profiles here and find your consent record in account details.",
+    "Manage child profiles and lessons here with your Masaarat account. Your consent record is in account details.",
   manageFamily: "Go to parent space",
   viewLevel: "View level lessons",
   levelStartNotice:

@@ -1,7 +1,11 @@
 import { parseKidsPlaybackRequest } from "./token.ts";
 import { checkQuiz, studentLesson } from "./public-lesson.ts";
 
-const ORIGINS = new Set(["https://masaarat.ai", "https://www.masaarat.ai"]);
+const ORIGINS = new Set([
+  "https://masaarat.ai",
+  "https://www.masaarat.ai",
+  "https://id-preview--658adce0-747d-4c8e-90e3-d22225070b94.lovable.app",
+]);
 const MAX_LESSON_BYTES = 262144;
 const DIGEST = /^[0-9a-f]{64}$/;
 function headers(request: Request): HeadersInit {

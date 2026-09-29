@@ -6,22 +6,26 @@ import { getKidsCopy } from "@/lib/kids/copy";
 /** The public page never infers launch from staged lessons or uploaded videos. */
 export function KidsReleaseNotice({ className }: { className?: string }) {
   const { locale } = useLocale();
-  const [open, setOpen] = useState(false);
+  // Wait for the live release signal before claiming Kids is closed. The
+  // initial HTML is otherwise a false warning on every launched page load.
+  const [status, setStatus] = useState<"checking" | "open" | "closed" | "unavailable">("checking");
 
   useEffect(() => {
     let active = true;
     supabase.rpc("kids_public_launch_open" as never).then(({ data, error }) => {
-      if (active && !error) setOpen(data === true);
+      if (active) setStatus(error ? "unavailable" : data === true ? "open" : "closed");
     });
     return () => {
       active = false;
     };
   }, []);
 
-  if (open) return null;
+  if (status === "checking" || status === "open") return null;
   return (
     <p role="status" className={className}>
-      {getKidsCopy(locale).reviewNotice}
+      {status === "closed"
+        ? getKidsCopy(locale).reviewNotice
+        : getKidsCopy(locale).releaseUnavailable}
     </p>
   );
 }
