@@ -12,6 +12,7 @@ const ar = {
   signUp: "إنشاء حساب مسارات",
   signInNotice:
     "استخدم حساب مسارات الحالي، أو أنشئ حسابًا واحدًا للمنصة. بعد الدخول توافق على سياسة الأطفال وتنشئ ملفاتهم؛ لا يوجد تسجيل منفصل لكيدز.",
+  waiting: "التحقق من جاهزية الحساب...",
   pending: "اقرأ سياسة خصوصية الأطفال ووافق عليها من حساب وليّ الأمر لفتح الملفات والدروس.",
   unavailable: "تعذّر التحقق من جاهزية كيدز الآن. حاول لاحقًا.",
   setupPending: "خدمة كيدز قيد التجهيز. إنشاء ملفات الأطفال والدروس غير متاح الآن.",
@@ -70,6 +71,7 @@ const egyptian: Copy = {
   signUp: "اعمل حساب مسارات",
   signInNotice:
     "لو عندك حساب مسارات ادخل بيه، ولو جديد اعمل حساب واحد للمنصة. بعدها توافق على سياسة الأطفال وتعمل ملفاتهم؛ مفيش تسجيل تاني لكيدز.",
+  waiting: "بنتأكد إن الحساب جاهز...",
   pending: "اقرأ سياسة خصوصية الأطفال ووافق عليها من حساب وليّ الأمر عشان تفتح الملفات والدروس.",
   unavailable: "مش قادرين نتأكد من جاهزية كيدز دلوقتي. حاول بعد شوية.",
   setupPending: "خدمة كيدز لسه بتتجهز. ملفات الأطفال والدروس مش متاحة دلوقتي.",
@@ -127,6 +129,7 @@ const gulf: Copy = {
   signUp: "سوّ حساب مسارات",
   signInNotice:
     "إذا عندك حساب مسارات ادخل به، أو سوّ حسابًا واحدًا للمنصة. بعد الدخول توافق على سياسة الأطفال وتنشئ ملفاتهم؛ ما فيه تسجيل ثاني لكيدز.",
+  waiting: "نتأكد من جاهزية الحساب...",
   pending: "اقرأ سياسة خصوصية الأطفال ووافق عليها من حساب وليّ الأمر عشان تفتح الملفات والدروس.",
   unavailable: "ما قدرنا نتأكد من جاهزية كيدز الحين. جرّب بعدين.",
   setupPending: "خدمة كيدز قيد التجهيز. ملفات الأطفال والدروس مب متاحة الحين.",
@@ -184,6 +187,7 @@ const en: Copy = {
   signUp: "Create Masaarat account",
   signInNotice:
     "Use your existing Masaarat account or create one platform account. Then accept the children's policy and add child profiles. Kids does not need a second registration.",
+  waiting: "Checking account readiness...",
   pending:
     "Read and accept the children’s privacy policy from your parent account to open profiles and lessons.",
   unavailable: "Kids readiness could not be checked. Try later.",
