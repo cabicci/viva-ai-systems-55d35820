@@ -34,7 +34,10 @@ export function candidate() {
   if (actual !== head) throw new Error("Candidate HEAD mismatch");
   const dirty = execFileSync("git", ["-C", repo, "status", "--porcelain=v1", "--untracked-files=all"], { encoding: "utf8" });
   if (dirty.trim()) {
-    throw new Error(`A clean local atomic image commit is required for exact browser/build provenance; dirty paths:\n${dirty.trimEnd()}`);
+    const routeTreeDiff = dirty.includes("src/routeTree.gen.ts")
+      ? execFileSync("git", ["-C", repo, "diff", "--", "src/routeTree.gen.ts"], { encoding: "utf8" })
+      : "";
+    throw new Error(`A clean local atomic image commit is required for exact browser/build provenance; dirty paths:\n${dirty.trimEnd()}\n${routeTreeDiff}`);
   }
   return { repo, head };
 }
