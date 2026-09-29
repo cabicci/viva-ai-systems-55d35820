@@ -73,4 +73,35 @@ describe("Child consent control", () => {
     expect(changed).toHaveBeenCalled();
     window.removeEventListener("kids-consent-changed", changed);
   });
+  it("distinguishes a refunded Stripe test payment from an independent active Kids grant", async () => {
+    mock.rpc.mockImplementation((name) => {
+      if (name === "kids_parent_privacy_record") {
+        return Promise.resolve({
+          data: [
+            { policy_id: "policy-1", policy_version: "v1", attested_at: "2026-09-25T00:00:00Z" },
+          ],
+          error: null,
+        });
+      }
+      if (name === "get_my_kids_subscription") {
+        return Promise.resolve({
+          data: [{ status: "refunded", paid_through: "2026-10-28T00:00:00Z" }],
+          error: null,
+        });
+      }
+      if (name === "get_my_kids_access_status") {
+        return Promise.resolve({
+          data: [{ access_source: "test_grant", active_until: "2027-09-27T00:00:00Z" }],
+          error: null,
+        });
+      }
+      return Promise.resolve({ error: null });
+    });
+    render(<KidsConsentControl />);
+    expect(await screen.findByText(/Stripe test subscription: Refunded/)).toBeInTheDocument();
+    expect(
+      screen.getByText(/Paid Kids lesson access: Active until 2027-09-27 \(separate test grant\)/),
+    ).toBeInTheDocument();
+    expect(screen.queryByText(/Last paid period through/)).not.toBeInTheDocument();
+  });
 });
