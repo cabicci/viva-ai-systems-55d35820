@@ -19,6 +19,8 @@ const citation = {
   locale: "en",
   sourceId: "concept",
 };
+const embedUrl =
+  "https://player.mediadelivery.net/embed/761387/123e4567-e89b-12d3-a456-426614174000?token=test-token&expires=9999999999";
 
 beforeEach(() => vi.resetAllMocks());
 
@@ -31,12 +33,16 @@ describe("Kids authored hint integration", () => {
     render(
       <KidsLessonBody
         lesson={lesson}
-        embedUrl="https://player.mediadelivery.net/embed/761387/123e4567-e89b-12d3-a456-426614174000"
+        embedUrl={embedUrl}
         locale="en"
         levelId="level-2"
         lessonNumber={2}
         profileId="parent-profile"
       />,
+    );
+    expect(screen.getByTitle("Watch lesson: A protected lesson")).toHaveAttribute(
+      "src",
+      `${embedUrl}&autoplay=false`,
     );
     fireEvent.click(screen.getByRole("button", { name: "What next?" }));
     expect(await screen.findByText("Read the concept.")).toBeInTheDocument();
@@ -63,7 +69,7 @@ describe("Kids authored hint integration", () => {
     render(
       <KidsLessonBody
         lesson={lesson}
-        embedUrl="https://player.mediadelivery.net/embed/761387/123e4567-e89b-12d3-a456-426614174000"
+        embedUrl={embedUrl}
         locale="en"
         levelId="level-2"
         lessonNumber={2}

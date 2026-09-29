@@ -32,6 +32,8 @@ export function KidsLessonBody({
   const [hint, setHint] = useState<{ id: string; answer: string } | null>(null);
   const [hintError, setHintError] = useState(false);
   const [loadingHint, setLoadingHint] = useState(false);
+  const playerUrl = new URL(embedUrl);
+  playerUrl.searchParams.set("autoplay", "false");
 
   async function showHint(index: number) {
     const hintId = `hint-${index + 1}`;
@@ -124,7 +126,7 @@ export function KidsLessonBody({
         <div className="aspect-video bg-black">
           <iframe
             key={embedUrl}
-            src={embedUrl}
+            src={playerUrl.toString()}
             title={`${copy.watch}: ${lesson.title}`}
             className="h-full w-full"
             allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
