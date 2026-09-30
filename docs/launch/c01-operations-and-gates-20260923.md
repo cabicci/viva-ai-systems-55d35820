@@ -1,5 +1,87 @@
 # C01 release operations and gate evidence — 23 September 2026
 
+## Current continuation — 30 September 2026
+
+This section supersedes the remaining-action wording in the historical handoff
+below. It preserves the accepted evidence; it does not declare commercial GO.
+
+- Main after PR #120: `559a82a7e36769e700974e102488b7e29751c241`.
+  The Billing evidence checker is fixed. CI `36703452558` and disposable
+  Billing `36703452382` passed on `a0d3dcc964b56be1f916ce56a5567fe52eab11ad`:
+  175 / 23 / 1 tests in phases A / B / C, with no skips. No deployment was
+  requested for this validation-only change.
+- LC-10/12's scoped contact acceptance is closed in Report 55: production
+  ALLOW at `2026-09-24T09:39:06.125742Z`, correlated HubSpot creation at
+  `09:39:06.267Z`, and isolated DENY without increment. PR #62/CI
+  `35989050188` passed and merged at `d69335fc53a0f1c71b8036df7cdedecaa0d272c8`.
+  Server secret operation is an inference from that successful route, not a
+  direct secret-presence inventory. Do not repeat the contact submission.
+- Khalil is the sole incident responder and rollback decision maker. A backup
+  person is not required. The existing hourly task `6aaaa016cacc8191bae3ddab4227c586`
+  was observed disabled and resumed at `2026-09-30T10:44:30Z`, changing only
+  `is_enabled` to true. Its existing read-only prompt and Africa/Cairo schedule
+  remain intact. This proves resumption, not delivery of an incident alert.
+- Recovery evidence from 18–19 September is accepted within its recorded scope.
+  The final encrypted database export is the last step after code/release
+  decisions. Key custody is Khalil's personal Google Password Manager. Convert
+  the 32-byte binary key locally to reversible text, verify the round trip,
+  and record only custody and checksum evidence, never key material.
+- Password recovery PR #117 is merged. Its deployment request was pending;
+  inbox receipt, reset-link behavior and deployed source SHA remain separate
+  final-round receipts. Project SHA and `is_published` do not prove them.
+- Kids changes are paused. Keep the accepted 36 Egyptian-Arabic lesson starts
+  for the owner test grant; do not generalize to ordinary guardian purchases
+  or repeat a complete media check. Stripe remains TEST. Live PR #52 stays
+  separate and inactive; LC-09 PR #53 remains a request-only draft.
+- The owner declined installing Codex Security. Use the available dependency
+  advisory check, relevant access-control regression tests and focused source
+  review. Never label these as a Codex Security scan or a full penetration test.
+
+### One final manual review round
+
+| Receipt | Prepared action | Evidence and failure handling |
+| --- | --- | --- |
+| Password reset | One authorized adult account receives its localized recovery message and opens the reset link | Record actual inbox/time, correct name/locale and successful reset flow; if delivery fails, inspect this one message's provider status and keep the gate open |
+| Incident notification | Khalil confirms one explicitly labelled test notification through the existing alert destination, without simulating a site outage | Record sent/received times and recipient acknowledgment; if absent, repair that destination rather than duplicate the production watcher |
+| Release and rollback | Record the final candidate SHA and hosting deployment ID, plus the previous accepted hosting version available for rollback | Require hosting evidence binding the deployment to the reviewed source; select that previous version only for a real regression or an approved nonproduction drill; never restore DB merely to revert UI |
+| Changed runtime smoke | Sign-in/session refresh and the affected adult Free/Pro/Plus routes, Builder denial/allowance, and the four locales on mobile/desktop | Use existing account grants with their limits recorded; no repeat of closed lessons/media or real payment; one scoped defect leads to one targeted correction |
+| LC-09 policy | Review the request-only draft and the financial/CRM retention schedule in its design document | Do not promise completed erasure, enable a finalizer, apply this draft, or delete Auth while parent cascades and retention are unresolved |
+| Final recovery point | After the above decisions, create one fresh encrypted DB export and verify key custody/round-trip conversion | Record schema/time/checksum/export result; reuse the accepted isolated restore; separately state Storage and runtime secrets coverage, RPO/RTO and backup expiry |
+
+### Operational response
+
+Khalil records the affected route, UTC time, deployment ID, payment mode and
+sanitized error. The technical work checks the changed component and proposes
+one concrete repair. An unverified release is never called a known-good
+rollback merely because its source compiles. Select a previous hosting version
+with accepted runtime evidence and matching source metadata. If that mapping
+is unavailable, preserve the current deployment and prepare the reviewed
+source as a candidate rather than guessing a rollback target. For billing,
+block new Checkout at the existing server gate while preserving signed webhook
+reconciliation. Do not trigger a real financial operation in this TEST work.
+
+### Prepared key custody conversion
+
+`scripts/recovery/key_text_roundtrip.py` writes a 64-character hexadecimal
+copy of an exactly 32-byte binary key to a new local file, verifies the written
+round trip, and prints no key. It creates the file with mode 0600 on POSIX and
+refuses to overwrite an existing file. Four tests use synthetic keys only.
+At the final backup step, Khalil runs it on his own device, stores the text in
+his personal Google Password Manager, then verifies decoding a retrieved copy
+back to the same original 32 bytes. Remove the temporary text copy after
+confirmed custody; preserve the binary key needed by the accepted backup tool.
+No real key or new backup was handled in this source preparation.
+
+Proposed launch recovery targets for the final review: RPO 24 hours and RTO
+4 hours for the database-backed service, with a daily encrypted export and
+30-day rolling ciphertext retention. These are planning targets, not measured
+service guarantees or an approved legal retention policy. A recurring export
+is not yet configured; one final snapshot alone cannot meet a continuing RPO.
+Confirm export automation, storage quota/owner, key retrieval, and separate
+object Storage/secrets recovery before claiming these targets are covered.
+
+Historical evidence follows unchanged.
+
 Status: **NO-GO**. This is a release handoff, not a replacement for Report 40
 or the authoritative `MASAARAT_CONTINUATION_REGISTER_2026-09-15.xlsx`.
 Central owns updates to both trackers.

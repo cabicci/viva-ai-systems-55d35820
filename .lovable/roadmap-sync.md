@@ -25,3 +25,11 @@ scope: infra
 source: user
 summary: Reuse the reviewed named-suite checker for the current 15-suite/175-test TEST inventory, and synchronize the adult quota and cumulative migration assertions.
 sync_status: source prepared; no payment, Kids runtime, database or production deployment change
+
+## 2026-09-30 — remaining nonfinancial security and operations gates
+
+[roadmap:launch-security-closure]
+scope: infra
+source: user
+summary: Repair the installed dependency advisories, prove the shipped RAG corpus RLS in disposable PostgreSQL, and reconcile the operational handoff with accepted evidence and final-round review sequencing.
+sync_status: candidate source; no production deployment, DB mutation, Kids feature change or financial action claimed
