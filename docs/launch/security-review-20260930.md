@@ -5,6 +5,23 @@ and the existing auth, grounding and server-boundary regression tests. This
 does not reopen accepted media/content/payment acceptance. The owner declined
 installing Codex Security; no result from that plugin is claimed.
 
+## Completed delivery receipts
+
+PR #121 merged at `bb6482e5bf4c587258d7c45278b6026fabda7cd3` after CI
+`36706929376` and disposable Billing `36706929434` passed on
+`bbb9c9c3d8ef276adc9a4e1ac72cfe2a860d5cb2`. CI's advisory gate checked
+635 packages with no vulnerabilities; corpus policy/migration tests passed
+21/21 and the synthetic key utility 4/4. Billing passed 175 / 23 / 1 with
+zero failures/skips/todo. Build passed. The tested tree and merged tree were
+`f66c4ddf0af9f0e4a072cfa4441f41a9e4a82849`.
+
+The single publish request `370a1afe-8fc6-48c5-9a86-d46945b93eb9` initially
+returned pending. At `2026-09-30T11:22:59Z`, six scoped public routes returned
+HTTP 200 and an `x-deployment-id` containing that request ID. This proves those
+responses are served by that deployment. It does not prove the artifact SHA,
+browser sign-in/entitlement behavior or email delivery. Do not rerun the full
+media/content acceptance; finish the changed-runtime samples in the final round.
+
 ## Dependency remediation
 
 The initial `bun audit --json` returned findings for 16 package names,
