@@ -33,3 +33,11 @@ scope: infra
 source: user
 summary: Repair the installed dependency advisories, prove the shipped RAG corpus RLS in disposable PostgreSQL, and reconcile the operational handoff with accepted evidence and final-round review sequencing.
 sync_status: candidate source; no production deployment, DB mutation, Kids feature change or financial action claimed
+
+## 2026-09-30 — completed delivery receipts
+
+[roadmap:launch-closure-receipts]
+scope: infra
+source: user
+summary: Record the accepted CI/Billing heads, ordinary merge, scoped live deployment-ID responses and current governance requirements while preserving the separate final manual gates.
+sync_status: documentation only; no new deployment, database or runtime change
