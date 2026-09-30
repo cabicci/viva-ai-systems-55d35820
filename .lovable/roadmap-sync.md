@@ -23,5 +23,5 @@ sync_status: source change prepared; roadmap_items and production delivery are n
 [roadmap:MEP-060]
 scope: ui
 source: user
-summary: Measure accepted contact leads and distinct pricing views only after analytics consent, with no submitted personal data or payment events.
+summary: Measure accepted contact leads and distinct pricing views only after analytics consent, with no submitted personal data or payment events; localize the signup document title without changing account creation or redirects.
 sync_status: source change prepared; roadmap_items production update and deployment are not claimed

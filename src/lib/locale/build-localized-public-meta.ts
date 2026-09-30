@@ -11,6 +11,7 @@ export type PublicRouteMetaKind =
   | "privacy"
   | "contact"
   | "login"
+  | "signup"
   | "root";
 
 export type RouteMetaTag =
@@ -30,7 +31,7 @@ function withSocialTags(title: string, description: string): RouteMetaTag[] {
 }
 
 const META_KEYS: Record<
-  Exclude<PublicRouteMetaKind, "kids">,
+  Exclude<PublicRouteMetaKind, "kids" | "signup">,
   { title: Parameters<typeof getUiString>[1]; description: Parameters<typeof getUiString>[1] }
 > = {
   home: {
@@ -67,6 +68,14 @@ export function buildLocalizedPublicMeta(
   locale: SupportedLocale,
   kind: PublicRouteMetaKind,
 ): { meta: RouteMetaTag[]; links?: { rel: string; href: string }[] } {
+  if (kind === "signup") {
+    return {
+      meta: withSocialTags(
+        `${getUiString(locale, "auth.signup.title")} — ${locale === "en" ? "Masaarat" : "مسارات"}`,
+        getUiString(locale, "auth.signup.subtitle"),
+      ),
+    };
+  }
   if (kind === "kids") {
     const copy = getKidsCopy(locale);
     const identity = buildPublicRouteIdentity(kind);

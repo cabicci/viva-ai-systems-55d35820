@@ -98,6 +98,9 @@ delivery acceptance after deployment. No extra contact submission is authorized.
 a signup request must not be represented as confirmed signup. Payment events and
 automated marketing mail remain deferred. This source change does not publish GTM.
 
+Signup metadata uses the existing requested-locale resolver and localized auth copy.
+This fixes the English signup document title without changing Auth submission or redirects.
+
 ## Route visibility
 
 Public and sitemap-eligible routes are `/`, `/contact`, `/curriculum`,
