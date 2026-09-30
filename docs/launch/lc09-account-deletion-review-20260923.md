@@ -20,6 +20,16 @@ TypeScript, changed-file ESLint/Prettier and the 6 GB production build passed.
 The existing GitHub disposable database gate must run on the new exact head;
 these local results do not claim that gate passed.
 
+Head `7180e594971cabf2201f7f7521283eaeac83c22e`: CI run `36697702353`
+and LC-09 run `36697702368` passed; the latter applied/reset the latest
+cumulative schema and passed all 7 request-gate tests with none skipped.
+Billing run `36697702352` failed one static assertion (174/175 Phase A
+passed): its adult-quota migration selector included the separate Kids billing
+migration. Phase B passed 23/23 and Phase C passed 1/1. The targeted correction
+excludes Kids filenames from that adult selector while the public RPC bridge
+test still tracks every cumulative migration. No runtime/migration bytes are
+changed. One corrected-head run is required; no historical result proves it.
+
 The owner asked to complete implementation and automated checks first, and
 collect manual reviews into one final round. Password-reset inbox/link checks,
 the limited incident-alert receipt, production release checks and the deletion

@@ -113,7 +113,11 @@ describe("paid AI quota alignment — static contract", () => {
 
   it("keeps public RPC signatures and mirrors lifecycle transitions to lesson counters", () => {
     const billingMigrations = readdirSync(path.join(REPO_ROOT, "supabase/migrations"))
-      .filter((name) => name.endsWith(".sql") && name.includes("billing"))
+      // Kids has its own billing namespace and does not change adult AI quotas.
+      // The public RPC bridge test tracks the complete cumulative inventory.
+      .filter(
+        (name) => name.endsWith(".sql") && name.includes("billing") && !name.includes("_kids_"),
+      )
       .sort();
     expect(billingMigrations.at(-1)).toBe("20260916183000_billing_pro_71_lesson_contract.sql");
     expect(sql).toContain("attempt_index = 0");

@@ -25,3 +25,8 @@ scope: other
 source: user
 summary: Synchronize the existing request-only deletion draft with PR #117, update the explicit cumulative migration inventory, and collect manual/policy checks for the final review round.
 sync_status: draft only; final deletion, roadmap_items update and production activation are not claimed
+
+The automatic Billing gate found one stale adult-quota inventory assertion.
+The review correction scopes that assertion to adult migrations; the complete
+cumulative inventory remains checked separately. One corrected-head run is
+pending. Kids runtime and payment behavior are unchanged.
