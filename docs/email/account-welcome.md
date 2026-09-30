@@ -1,5 +1,13 @@
 # Transactional confirmed-account welcome
 
+## 2026-09-30: hosted Auth password recovery
+
+The Lovable Auth webhook now resolves the recovery recipient's name and preferred locale through the same existing `auth_signup_email_profile(text)` lookup as signup, after SDK signature verification. The recovery subject, greeting, body and button support `ar-EG`, `ar-MSA`, `ar-Gulf` and `en`; the existing Masaarat shell supplies RTL/LTR. A failed, missing or ambiguous lookup retains a bilingual unnamed message and the original Auth recovery URL. No user profile is accepted from the browser, and no password is changed by rendering or sending this template.
+
+The function's live presence and service-role-only execution were verified read-only. No migration, DNS, secret, email flag or scheduler change is needed for this source slice. Nine signup/recovery tests, TypeScript, changed-file ESLint/Prettier and a 6 GB Node build passed locally. CI includes these email tests. First local build exhausted the default Node heap; one rerun with the larger heap succeeded.
+
+Release acceptance remains separate: verify the reviewed source reaches hosting, send one recovery request to an explicitly authorized adult recipient, verify provider delivery and actual inbox receipt, then verify the link opens the intended password-reset flow. Do not infer delivery from project `is_published` or its latest source SHA. No recovery request or actual email was sent in these tests. The prior Resend welcome delivery evidence belongs to a separate mail stream; invitation, magic-link, email-change and reauthentication templates are outside this slice.
+
 This slice sends one bilingual service welcome per newly confirmed auth account. It does not subscribe anyone to marketing, backfill old users, trigger on child profiles, or send offers. Recipient and immutable message content come from the server. No recipient/payload is accepted in the job request.
 
 Apply `20260925220000_account_welcome_email.sql` through the Supabase owner after isolated rehearsal. Deploy `account-welcome-job`. Configure `ACCOUNT_WELCOME_JOB_SECRET` (at least 32 random characters), existing `RESEND_API_KEY`, verified `RESEND_FROM_EMAIL`, and optional `RESEND_REPLY_TO_EMAIL`. Keep `ACCOUNT_WELCOME_ENABLED=false` until the approved controlled test. Enable only after sender verification and release approval; invoke POST with the dedicated bearer secret from the trusted scheduler. No scheduler is created by this migration. Choose scheduling explicitly at deployment.

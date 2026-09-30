@@ -9,3 +9,11 @@ sync_status: pending Central roadmap_items update
 
 This change is prepared locally. The matching roadmap_items update is pending Central coordination.
 The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
+
+## 2026-09-30 — account recovery email
+
+[roadmap:account-service-email]
+scope: other
+source: user
+summary: Localize password recovery in the four existing locales using the existing verified-recipient profile lookup, preserving SDK signature verification and recovery URLs.
+sync_status: source change prepared; roadmap_items and production delivery are not claimed

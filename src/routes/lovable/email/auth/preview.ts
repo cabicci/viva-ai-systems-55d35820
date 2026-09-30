@@ -40,8 +40,9 @@ const SAMPLE_DATA: Record<string, object> = {
     confirmationUrl: SAMPLE_PROJECT_URL,
   },
   recovery: {
-    siteName: SITE_NAME,
     confirmationUrl: SAMPLE_PROJECT_URL,
+    name: "سارة",
+    locale: "ar-EG",
   },
   invite: {
     siteName: SITE_NAME,
