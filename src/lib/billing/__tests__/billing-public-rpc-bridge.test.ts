@@ -136,7 +136,7 @@ describe("public billing RPC bridge — static", () => {
     const afterBridge = migrations.slice(bridgeIdx + 1);
     expect(afterBridge).toEqual([
       "20260801120000_billing_legacy_user_subscriptions_compat.sql",
-      path.basename(SNAPSHOT_VALIDITY_MIGRATION),
+      "20260914190000_billing_entitlement_snapshot_validity.sql",
       "20260914220000_lesson_quiz_attempts_server_write_acl.sql",
       "20260915070000_billing_paid_ai_quota_alignment.sql",
       "20260916080000_rag_corpus_3701_refresh.sql",

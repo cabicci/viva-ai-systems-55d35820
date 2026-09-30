@@ -30,3 +30,10 @@ The automatic Billing gate found one stale adult-quota inventory assertion.
 The review correction scopes that assertion to adult migrations; the complete
 cumulative inventory remains checked separately. One corrected-head run is
 pending. Kids runtime and payment behavior are unchanged.
+## 2026-09-30 — release evidence inventory
+
+[roadmap:billing-validation-evidence]
+scope: infra
+source: user
+summary: Reuse the reviewed named-suite checker for the current 15-suite/175-test TEST inventory, and synchronize the adult quota and cumulative migration assertions.
+sync_status: source prepared; no payment, Kids runtime, database or production deployment change

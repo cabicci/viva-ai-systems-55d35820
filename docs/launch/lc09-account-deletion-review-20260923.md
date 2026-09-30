@@ -7,6 +7,19 @@ cancel Stripe, delete login credentials, revoke sessions, erase personal data,
 or define a legal retention period. Do not apply the migration to production
 or publish the UI until a staffed request queue and policy are approved.
 
+## 30 September: validation infrastructure resolved
+
+PR #120 merged at `559a82a7e36769e700974e102488b7e29751c241` and fixes
+the stale 173-test summary check with exact named-suite and per-suite counts.
+On its exact head, CI `36703452558` and Billing `36703452382` passed:
+175 Phase A, 23 Phase B and 1 Phase C, with zero failures/skips/todo.
+This draft is now synchronized with that main. The prior corrected draft
+`29687e5035debb5efde9a767c5de61dca32569a0` passed CI `36698831224`
+and all seven LC-09 DB tests in `36698831198`; its Billing `36698831261`
+failed only the obsolete summary count after all phases passed. New-head
+results must be recorded separately. This remains a request-only draft.
+
+
 ## Continuation on 30 September 2026
 
 The review branch is synchronized with main

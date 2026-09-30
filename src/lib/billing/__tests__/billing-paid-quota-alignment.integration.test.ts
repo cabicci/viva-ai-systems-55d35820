@@ -113,8 +113,7 @@ describe("paid AI quota alignment — static contract", () => {
 
   it("keeps public RPC signatures and mirrors lifecycle transitions to lesson counters", () => {
     const billingMigrations = readdirSync(path.join(REPO_ROOT, "supabase/migrations"))
-      // Kids has its own billing namespace and does not change adult AI quotas.
-      // The public RPC bridge test tracks the complete cumulative inventory.
+      // Kids billing is separate from the adult AI quota contract.
       .filter(
         (name) => name.endsWith(".sql") && name.includes("billing") && !name.includes("_kids_"),
       )
