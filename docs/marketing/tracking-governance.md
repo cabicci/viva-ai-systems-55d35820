@@ -78,6 +78,26 @@ network traffic. C02 must obtain fresh-session, SPA, withdrawal and re-grant
 network evidence after an approved deployment and review of the existing GTM
 draft. No GTM/GA4 setting is changed by this repository slice.
 
+## Nonfinancial conversions — source contract, 30 September 2026
+
+`masaarat_view_pricing` follows an accepted, consented `/pricing` page view.
+Replayed router effects cannot produce a second conversion; leaving and returning
+counts another pricing visit. GTM maps it to GA4 `view_pricing`; it is not a lead.
+
+`masaarat_generate_lead` follows a successful server response from ContactForm.
+It carries only `form_id=contact`, with one event per mounted accepted form.
+GTM maps it to GA4 `generate_lead`; the application sends one direct Meta `Lead`.
+Rejected or failed submissions and visits to `/contact` produce no lead. No form
+values, visitor identifier, email, phone, name or message enter this event.
+Consent is checked at response time. Denied events are never replayed after grant,
+and vendor failures cannot change the successful contact UI result.
+
+These events require the corresponding consent-required GTM event tags and live
+delivery acceptance after deployment. No extra contact submission is authorized.
+`sign_up`, `lesson_start` and `lesson_complete` remain unimplemented in this slice;
+a signup request must not be represented as confirmed signup. Payment events and
+automated marketing mail remain deferred. This source change does not publish GTM.
+
 ## Route visibility
 
 Public and sitemap-eligible routes are `/`, `/contact`, `/curriculum`,

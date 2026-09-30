@@ -17,3 +17,11 @@ scope: other
 source: user
 summary: Localize password recovery in the four existing locales using the existing verified-recipient profile lookup, preserving SDK signature verification and recovery URLs.
 sync_status: source change prepared; roadmap_items and production delivery are not claimed
+
+## 2026-09-30 — marketing conversions
+
+[roadmap:MEP-060]
+scope: ui
+source: user
+summary: Measure accepted contact leads and distinct pricing views only after analytics consent, with no submitted personal data or payment events.
+sync_status: source change prepared; roadmap_items production update and deployment are not claimed

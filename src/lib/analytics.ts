@@ -39,6 +39,7 @@ let gtmStartQueued = false;
 let metaRequested = false;
 let metaInitialized = false;
 let lastTrackedUrl: string | null = null;
+let trackedLeadKeys = new WeakSet<object>();
 function browserWindow(): AnalyticsWindow | null {
   return typeof window === "undefined" ? null : (window as unknown as AnalyticsWindow);
 }
@@ -208,7 +209,27 @@ export function trackPageViewOnce(url: string, title = browserDocument()?.title 
     page_title: title,
   });
   win.fbq?.("track", "PageView");
+  if (absoluteUrl.pathname === "/pricing") {
+    win.dataLayer.push({ event: "masaarat_view_pricing" });
+  }
   return true;
+}
+
+/** Accepted contact submission, without form values or visitor identifiers. */
+export function trackAcceptedContactOnce(result: { success: boolean }, key: object): boolean {
+  if (!result.success || !analyticsGranted || trackedLeadKeys.has(key)) return false;
+  const win = browserWindow();
+  if (!win) return false;
+  // Measurement must never turn an accepted submission into a failed UI response.
+  try {
+    win.dataLayer = win.dataLayer ?? [];
+    win.dataLayer.push({ event: "masaarat_generate_lead", form_id: "contact" });
+    trackedLeadKeys.add(key);
+    win.fbq?.("track", "Lead");
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 export function resetAnalyticsRuntimeForTests(): void {
@@ -220,6 +241,7 @@ export function resetAnalyticsRuntimeForTests(): void {
   metaRequested = false;
   metaInitialized = false;
   lastTrackedUrl = null;
+  trackedLeadKeys = new WeakSet<object>();
   const win = browserWindow();
   const doc = browserDocument();
   doc?.getElementById(GTM_SCRIPT_ID)?.remove();
