@@ -1,3 +1,5 @@
+import { stripeSecretKey } from "../_shared/stripe-environment.ts";
+
 const ALLOWED_ORIGINS = new Set([
   "https://masaarat.ai",
   "https://www.masaarat.ai",
@@ -68,8 +70,7 @@ async function rpc<T>(name: string, body: Record<string, unknown>): Promise<T> {
 }
 
 async function createPortalSession(customerId: string, returnUrl: string) {
-  const secretKey = env("STRIPE_SECRET_KEY");
-  if (!/^(rk|sk)_test_/.test(secretKey)) throw new Error("STRIPE_TEST_KEY_REQUIRED");
+  const secretKey = stripeSecretKey({ STRIPE_SECRET_KEY: Deno.env.get("STRIPE_SECRET_KEY") });
 
   const params = new URLSearchParams();
   params.set("customer", customerId);

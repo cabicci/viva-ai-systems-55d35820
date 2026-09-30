@@ -75,27 +75,6 @@ reset_disposable_db() {
   return 1
 }
 
-assert_no_mandatory_skips() {
-  local log_file="$1"
-  # Fail if vitest reported any skipped tests while disposable DB is required.
-  if grep -EEq 'Tests[[:space:]]+[0-9]+ skipped|skipped \([1-9]' "$log_file"; then
-    # Allow "0 skipped" only.
-    if grep -EEq 'Tests[[:space:]].*\b0 skipped\b' "$log_file"; then
-      return 0
-    fi
-    if grep -EEq '\| [1-9][0-9]* skipped' "$log_file"; then
-      echo "[billing-v3-harness] mandatory tests were skipped — refusing PASS"
-      return 1
-    fi
-  fi
-  # Vitest summary line like: "Tests  80 passed (80)" or "80 passed | 0 skipped"
-  if grep -EEq '[1-9][0-9]* skipped' "$log_file"; then
-    echo "[billing-v3-harness] detected non-zero skipped count"
-    return 1
-  fi
-  return 0
-}
-
 # ---------------------------------------------------------------------------
 # Phase A — complete billing suite on a clean disposable database
 # ---------------------------------------------------------------------------
@@ -112,14 +91,15 @@ else
   elif bunx vitest run --no-file-parallelism src/lib/billing/__tests__/ > "${REPORT_DIR}/unit.log" 2>&1; then
     # Strip ANSI so count matching is stable under CI color output.
     sed -E 's/\x1B\[[0-9;]*[A-Za-z]//g' "${REPORT_DIR}/unit.log" > "${REPORT_DIR}/unit.plain.log"
-    # Count must stay in lockstep with the billing vitest inventory (static + disposable).
-    # Refuse any skipped mandatory disposable proofs.
-    if assert_no_mandatory_skips "${REPORT_DIR}/unit.plain.log" \
-      && grep -EEq 'Tests[[:space:]]+173 passed' "${REPORT_DIR}/unit.plain.log"; then
-      echo "- Result: PASS (173 / 173, 0 skipped)" >> "$REPORT"
+    # Verify the reviewed suite paths and per-file counts as well as the exact
+    # summary. A new, missing, failed, skipped or todo test fails this gate.
+    if node .github/scripts/billing_contracts_v3_validation/verify-inventory.mjs A \
+      "${REPORT_DIR}/unit.plain.log" > "${REPORT_DIR}/phase-a-inventory.log" 2>&1; then
+      echo "- Result: PASS (17 named suites, 178 / 178, 0 failed/skipped/todo)" >> "$REPORT"
     else
       overall_status=1
-      echo "- Result: FAIL (expected 173 passed / 0 skipped)" >> "$REPORT"
+      echo "- Result: FAIL (reviewed Phase A inventory: 17 suites, 178 tests)" >> "$REPORT"
+      cat "${REPORT_DIR}/phase-a-inventory.log" >> "$REPORT"
     fi
   else
     overall_status=1
@@ -169,12 +149,13 @@ if [ "${BILLING_DISPOSABLE_DB:-0}" = "1" ] \
   && MIGRATIONS_PREAPPLIED=1 bunx vitest run --no-file-parallelism src/lib/__tests__/quiz-attempt-db-acl.integration.test.ts \
     > "${REPORT_DIR}/quiz-acl.log" 2>&1; then
   sed -E 's/\x1B\[[0-9;]*[A-Za-z]//g' "${REPORT_DIR}/quiz-acl.log" > "${REPORT_DIR}/quiz-acl.plain.log"
-  if assert_no_mandatory_skips "${REPORT_DIR}/quiz-acl.plain.log" \
-    && grep -EEq 'Tests[[:space:]]+1 passed' "${REPORT_DIR}/quiz-acl.plain.log"; then
-    echo "- Result: PASS (1 / 1, 0 skipped; fixtures rolled back)" >> "$REPORT"
+  if node .github/scripts/billing_contracts_v3_validation/verify-inventory.mjs C \
+    "${REPORT_DIR}/quiz-acl.plain.log" > "${REPORT_DIR}/phase-c-inventory.log" 2>&1; then
+    echo "- Result: PASS (1 named suite, 1 / 1, 0 failed/skipped/todo; fixtures rolled back)" >> "$REPORT"
   else
     overall_status=1
-    echo "- Result: FAIL (expected 1 passed / 0 skipped)" >> "$REPORT"
+    echo "- Result: FAIL (reviewed Phase C inventory: 1 suite, 1 test)" >> "$REPORT"
+    cat "${REPORT_DIR}/phase-c-inventory.log" >> "$REPORT"
   fi
 else
   overall_status=1
